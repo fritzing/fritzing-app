@@ -226,6 +226,7 @@ PanelItem::PanelItem(PanelItem * from) {
 
 void Panelizer::panelize(FApplication * app, const QString & panelFilename, bool customPartsOnly) 
 {
+
 	QFile panelizerFile(panelFilename);
 
     QFileInfo info(panelFilename);
@@ -358,9 +359,11 @@ void Panelizer::panelize(FApplication * app, const QString & panelFilename, bool
         }
     }
 
+    QString custom = customPartsOnly ? "custom." : "";
+
 	foreach (PlanePair * planePair, planePairs) {
 		planePair->layoutSVG += "</svg>"; 
-		QString fname = svgDir.absoluteFilePath(QString("%1.panel_%2.layout.svg").arg(panelParams.prefix).arg(planePair->index));
+		QString fname = svgDir.absoluteFilePath(QString("%1%2.panel_%3.layout.svg").arg(custom).arg(panelParams.prefix).arg(planePair->index));
         TextUtils::writeUtf8(fname, planePair->layoutSVG);
 	}
 
@@ -380,7 +383,7 @@ void Panelizer::panelize(FApplication * app, const QString & panelFilename, bool
 
 
 		DebugDialog::debug("after placement");
-		QString prefix = QString("%1.panel_%2").arg(panelParams.prefix).arg(planePair->index);
+		QString prefix = QString("%1%2.panel_%3").arg(custom).arg(panelParams.prefix).arg(planePair->index);
 		for (int i = 0; i < planePair->svgs.count(); i++) {
 			if (planePair->svgs.at(i).isEmpty()) continue;
 

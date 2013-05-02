@@ -20,7 +20,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 $Revision: 7000 $:
 $Author: irascibl@gmail.com $:
-$Date: 2013-04-29 07:24:08 +0200 (Mo, 29. Apr 2013) $
+$Date: 2013-04-29 07:24:08 +0200 (Mon, 29 Apr 2013) $
 
 ********************************************************************/
 
@@ -3223,6 +3223,9 @@ void SketchWidget::mouseReleaseEvent(QMouseEvent *event) {
 		m_connectorDragConnector = NULL;
 		return;
 	}
+
+    // make sure this is cleared
+    m_bendpointWire = NULL;
 
 	if (m_moveEventCount == 0) {
 		if (this->m_holdingSelectItemCommand != NULL) {

@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1 Basic//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-basic.dtd'>
+<svg xmlns="http://www.w3.org/2000/svg" width="1.53194in" xml:space="preserve" xmlns:xml="http://www.w3.org/XML/1998/namespace" x="0px" version="1.1" y="0px" height="0.670833in" viewBox="0 0 110.3 48.3" baseProfile="basic" id="Layer_1" >
+ <g id="schematic" >
+ <rect width="10" x="1.15" y="23.15" fill="none" height="2" id="connector0pin" />
+ <rect width="10" x="99.15" y="23.15" fill="none" height="2" id="connector1pin" />
+ <rect width="2" x="1.15" y="23.15" fill="none" height="2" id="connector0terminal" />
+ <rect width="2" x="107.15" y="23.15" fill="none" height="2" id="connector1terminal" />
+  <g id="diagram" >
+   <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="24.15" stroke-width="2.3" x1="1.15" y2="24.15" x2="39.15" />
+   <rect width="14" x="48.15" y="1.219" fill="none" height="45.894" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="2.3" />
+   <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="6.275" stroke-width="2.0309" x1="39.643" y2="42.057" x2="39.643" />
+   <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="24.182" stroke-width="2.3" x1="109.137" y2="24.182" x2="71.137" />
+   <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="42.057" stroke-width="2.0309" x1="70.644" y2="6.275" x2="70.644" />
+  </g>
+ </g>
+</svg>

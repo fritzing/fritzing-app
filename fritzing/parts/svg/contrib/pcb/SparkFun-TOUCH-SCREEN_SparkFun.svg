@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" x="0in" y="0in" width="0.4763in" height="0.3641in" viewBox="0 0 4763 3641" >
+<title>SparkFun.mod</title>
+<desc>Kicad module 'SparkFun-TOUCH-SCREEN' from file 'SparkFun.mod' converted by Fritzing</desc>
+<metadata xmlns:fz='http://fritzing.org/kicadmetadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+<rdf:RDF><rdf:Description rdf:about=''>
+<fz:attr name='kicad filename'>SparkFun.mod</fz:attr>
+<fz:attr name='kicad module'>SparkFun-TOUCH-SCREEN</fz:attr>
+<fz:attr name='fritzing version'>0.4.1b.07.04.4318</fz:attr>
+<fz:attr name='conversion date'>17/07/2010 17:18:14</fz:attr>
+<fz:attr name='dist-license'>GPL</fz:attr>
+<fz:attr name='use-license'>unlimited</fz:attr>
+<fz:attr name='author'>KICAD project</fz:attr>
+<fz:attr name='license-url'>http://www.gnu.org/licenses/gpl.html</fz:attr>
+<fz:comment></fz:comment>
+<fz:attr name='keyword'></fz:attr>
+</rdf:Description></rdf:RDF></metadata><g id="copper1">
+ <rect width="236" x="1673" y="118" fill="#ffbf00" connectorname="P$1" height="748" id="connector0pad" stroke-width="0"/>
+ <rect width="236" x="2066" y="118" fill="#ffbf00" connectorname="P$2" height="748" id="connector1pad" stroke-width="0"/>
+ <rect width="236" x="2460" y="118" fill="#ffbf00" connectorname="P$3" height="748" id="connector2pad" stroke-width="0"/>
+ <rect width="236" x="2854" y="118" fill="#ffbf00" connectorname="P$4" height="748" id="connector3pad" stroke-width="0"/>
+ <rect width="1102" x="0" y="1004" fill="#ffbf00" connectorname="P$5" height="826" id="connector4pad" stroke-width="0"/>
+ <rect width="1102" x="3661" y="1004" fill="#ffbf00" connectorname="P$6" height="826" id="connector5pad" stroke-width="0"/>
+</g>
+<g id="silkscreen">
+ <line fill="none" stroke="white" y1="0" x1="20" y2="0" stroke-width="50" x2="4743"/>
+ <line fill="none" stroke="white" y1="0" x1="4743" y2="3641" stroke-width="50" x2="4743"/>
+ <line fill="none" stroke="white" y1="3641" x1="4743" y2="3641" stroke-width="50" x2="20"/>
+ <line fill="none" stroke="white" y1="3641" x1="20" y2="0" stroke-width="50" x2="20"/>
+</g>
+</svg>

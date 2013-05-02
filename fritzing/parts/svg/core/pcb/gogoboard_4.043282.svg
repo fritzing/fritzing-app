@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg baseProfile="basic" id="svg2" version="1.2" 
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="4in" height="2.51in"
+	 viewBox="0 0 288 180.721" xml:space="preserve">
+ <defs id="defs34"/>
+  <g id="copper1"><g id="copper0">
+<circle id="connector60pin" fill="none" style="fill:none;stroke:#ffbf00;stroke-width:1.44" cx="65.197" cy="7.185" r="1.98"/>
+<circle id="connector59pin" fill="none" style="fill:none;stroke:#ffbf00;stroke-width:1.44" cx="50.827" cy="7.185" r="1.98"/>
+<circle id="connector58pin" fill="none" style="fill:none;stroke:#ffbf00;stroke-width:1.44" cx="174.898" cy="168.863" r="1.98"/>
+<circle id="connector57pin" fill="none" style="fill:none;stroke:#ffbf00;stroke-width:1.44" cx="167.713" cy="168.863" r="1.98"/>
+<circle id="connector56pin" fill="none" style="fill:none;stroke:#ffbf00;stroke-width:1.44" cx="160.528" cy="168.863" r="1.98"/>
+<circle id="connector55pin" fill="none" style="fill:none;stroke:#ffbf00;stroke-width:1.44" cx="153.341" cy="168.863" r="1.98"/>
+<circle id="connector54pin" fill="none" style="fill:none;stroke:#ffbf00;stroke-width:1.44" cx="174.898" cy="161.677" r="1.98"/>
+<circle id="connector53pin" fill="none" style="fill:none;stroke:#ffbf00;stroke-width:1.44" cx="167.713" cy="161.677" r="1.98"/>
+<circle id="connector52pin" fill="none" style="fill:none;stroke:#ffbf00;stroke-width:1.44" cx="160.528" cy="161.677" r="1.98"/>
+<circle id="connector51pin" fill="none" style="fill:none;stroke:#ffbf00;stroke-width:1.44" cx="153.341" cy="161.677" r="1.98"/>
+<circle id="connector50pin" fill="none" style="fill:none;stroke:#ffbf00;stroke-width:1.44" cx="128.191" cy="168.863" r="1.98"/>
+<circle id="connector49pin" fill="none" style="fill:none;stroke:#ffbf00;stroke-width:1.44" cx="121.006" cy="168.863" r="1.98"/>
+<circle id="connector48pin" fill="none" style="fill:none;stroke:#ffbf00;stroke-width:1.44" cx="113.82" cy="168.863" r="1.98"/>
+<circle id="connector47pin" fill="none" style="fill:none;stroke:#ffbf00;stroke-width:1.44" cx="106.635" cy="168.863" r="1.98"/>
+<circle id="connector46pin" fill="none" style="fill:none;stroke:#ffbf00;stroke-width:1.44" cx="128.191" cy="161.677" r="1.98"/>
+<circle id="connector45pin" fill="none" style="fill:none;stroke:#ffbf00;stroke-width:1.44" cx="121.006" cy="161.677" r="1.98"/>
+<circle id="connector44pin" fill="none" style="fill:none;stroke:#ffbf00;stroke-width:1.44" cx="113.82" cy="161.677" r="1.98"/>
+<circle id="connector43pin" fill="none" style="fill:none;stroke:#ffbf00;stroke-width:1.44" cx="106.635" cy="161.677" r="1.98"/>
+<circle id="connector42pin" fill="none" style="fill:none;stroke:#ffbf00;stroke-width:1.44" cx="174.898" cy="147.306" r="1.98"/>
+<circle id="connector41pin" fill="none" style="fill:none;stroke:#ffbf00;stroke-width:1.44" cx="167.713" cy="147.306" r="1.98"/>
+<circle id="connector40pin" fill="none" style="fill:none;stroke:#ffbf00;stroke-width:1.44" cx="160.528" cy="147.306" r="1.98"/>
+<circle id="connector39pin" fill="none" style="fill:none;stroke:#ffbf00;stroke-width:1.44" cx="153.341" cy="147.306" r="1.98"/>
+<circle id="connector38pin" fill="none" style="fill:none;stroke:#ffbf00;stroke-width:1.44" cx="128.191" cy="147.306" r="1.98"/>
+<circle id="connector37pin" fill="none" style="fill:none;stroke:#ffbf00;stroke-width:1.44" cx="121.006" cy="147.306" r="1.98"/>
+<circle id="connector36pin" fill="none" style="fill:none;stroke:#ffbf00;stroke-width:1.44" cx="113.82" cy="147.306" r="1.98"/>
+<circle id="connector35pin" fill="none" style="fill:none;stroke:#ffbf00;stroke-width:1.44" cx="106.635" cy="147.306" r="1.98"/>
+<circle id="connector34pin" fill="none" style="fill:none;stroke:#ffbf00;stroke-width:1.44" cx="63.52" cy="109.581" r="1.98"/>
+<circle id="connector33pin" fill="none" style="fill:none;stroke:#ffbf00;stroke-width:1.44" cx="63.52" cy="102.395" r="1.98"/>
+<circle id="connector32pin" fill="none" style="fill:none;stroke:#ffbf00;stroke-width:1.44" cx="63.52" cy="95.21" r="1.98"/>
+<circle id="connector31pin" fill="none" style="fill:none;stroke:#ffbf00;stroke-width:1.44" cx="271.905" cy="113.174" r="1.98"/>
+<circle id="connector30pin" fill="none" style="fill:none;stroke:#ffbf00;stroke-width:1.44" cx="271.905" cy="105.988" r="1.98"/>
+<circle id="connector29pin" fill="none" style="fill:none;stroke:#ffbf00;stroke-width:1.44" cx="271.905" cy="98.802" r="1.98"/>
+<circle id="connector28pin" fill="none" style="fill:none;stroke:#ffbf00;stroke-width:1.44" cx="271.905" cy="91.617" r="1.98"/>
+<circle id="connector27pin" fill="none" style="fill:none;stroke:#ffbf00;stroke-width:1.44" cx="264.719" cy="113.174" r="1.98"/>
+<circle id="connector26pin" fill="none" style="fill:none;stroke:#ffbf00;stroke-width:1.44" cx="264.719" cy="105.988" r="1.98"/>
+<circle id="connector25pin" fill="none" style="fill:none;stroke:#ffbf00;stroke-width:1.44" cx="264.719" cy="98.802" r="1.98"/>
+<circle id="connector24pin" fill="none" style="fill:none;stroke:#ffbf00;stroke-width:1.44" cx="264.719" cy="91.617" r="1.98"/>
+<circle id="connector23pin" fill="none" style="fill:none;stroke:#ffbf00;stroke-width:1.44" cx="266.515" cy="28.743" r="1.98"/>
+<circle id="connector22pin" fill="none" style="fill:none;stroke:#ffbf00;stroke-width:1.44" cx="266.515" cy="21.557" r="1.98"/>
+<circle id="connector21pin" fill="none" style="fill:none;stroke:#ffbf00;stroke-width:1.44" cx="266.515" cy="14.371" r="1.98"/>
+<circle id="connector20pin" fill="none" style="fill:none;stroke:#ffbf00;stroke-width:1.44" cx="252.025" cy="28.742" r="1.98"/>
+<circle id="connector19pin" fill="none" style="fill:none;stroke:#ffbf00;stroke-width:1.44" cx="252.025" cy="21.557" r="1.98"/>
+<circle id="connector18pin" fill="none" style="fill:none;stroke:#ffbf00;stroke-width:1.44" cx="252.025" cy="14.371" r="1.98"/>
+<circle id="connector17pin" fill="none" style="fill:none;stroke:#ffbf00;stroke-width:1.44" cx="244.838" cy="28.742" r="1.98"/>
+<circle id="connector16pin" fill="none" style="fill:none;stroke:#ffbf00;stroke-width:1.44" cx="244.838" cy="21.557" r="1.98"/>
+<circle id="connector15pin" fill="none" style="fill:none;stroke:#ffbf00;stroke-width:1.44" cx="244.838" cy="14.371" r="1.98"/>
+<circle id="connector14pin" fill="none" style="fill:none;stroke:#ffbf00;stroke-width:1.44" cx="230.588" cy="28.743" r="1.98"/>
+<circle id="connector13pin" fill="none" style="fill:none;stroke:#ffbf00;stroke-width:1.44" cx="230.588" cy="21.557" r="1.98"/>
+<circle id="connector12pin" fill="none" style="fill:none;stroke:#ffbf00;stroke-width:1.44" cx="230.588" cy="14.371" r="1.98"/>
+<circle id="connector11pin" fill="none" style="fill:none;stroke:#ffbf00;stroke-width:1.44" cx="176.695" cy="28.743" r="1.98"/>
+<circle id="connector10pin" fill="none" style="fill:none;stroke:#ffbf00;stroke-width:1.44" cx="176.695" cy="21.557" r="1.98"/>
+<circle id="connector9pin" fill="none" style="fill:none;stroke:#ffbf00;stroke-width:1.44" cx="176.695" cy="14.371" r="1.98"/>
+<circle id="connector8pin" fill="none" style="fill:none;stroke:#ffbf00;stroke-width:1.44" cx="162.204" cy="28.742" r="1.98"/>
+<circle id="connector7pin" fill="none" style="fill:none;stroke:#ffbf00;stroke-width:1.44" cx="162.204" cy="21.557" r="1.98"/>
+<circle id="connector6pin" fill="none" style="fill:none;stroke:#ffbf00;stroke-width:1.44" cx="162.204" cy="14.371" r="1.98"/>
+<circle id="connector5pin" fill="none" style="fill:none;stroke:#ffbf00;stroke-width:1.44" cx="155.017" cy="28.742" r="1.98"/>
+<circle id="connector4pin" fill="none" style="fill:none;stroke:#ffbf00;stroke-width:1.44" cx="155.017" cy="21.557" r="1.98"/>
+<circle id="connector3pin" fill="none" style="fill:none;stroke:#ffbf00;stroke-width:1.44" cx="155.017" cy="14.371" r="1.98"/>
+<circle id="connector2pin" fill="none" style="fill:none;stroke:#ffbf00;stroke-width:1.44" cx="140.766" cy="28.743" r="1.98"/>
+<circle id="connector1pin" fill="none" style="fill:none;stroke:#ffbf00;stroke-width:1.44" cx="140.766" cy="21.557" r="1.98"/>
+<circle id="connector0pin" fill="none" style="fill:none;stroke:#ffbf00;stroke-width:1.44" cx="140.766" cy="14.371" r="1.98"/>
+<rect x="0.287" y="0" fill="none" width="287.427" height="180.721"/>
+ </g></g>
+</svg>

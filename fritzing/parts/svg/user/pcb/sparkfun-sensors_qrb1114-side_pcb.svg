@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- Created with Fritzing (http://www.fritzing.org/) -->
+<svg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' version='1.2' baseProfile='tiny' x='0in' y='0in' width='0.59022in' height='1.00344in' viewBox='0 0 14.9916 25.4874' >
+<g id='copper1'>
+<circle id='connector0pad' connectorname='A' cx='2.6416' cy='8.825' r='0.577' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<path stroke='none' stroke-width='0' d='m1.9376,8.121 1.408,0 0,1.408 -1.408,0 0,-3zM2.1916,8.825a0.45,0.45 0 1 0 0.9,0 0.45,0.45 0 1 0 -0.9,0z
+' fill='#F7BD13' />
+<circle id='connector3pad' connectorname='K' cx='2.6416' cy='11.365' r='0.577' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle id='connector2pad' connectorname='E' cx='2.6416' cy='21.525' r='0.577' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle id='connector1pad' connectorname='C' cx='2.6416' cy='24.065' r='0.577' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<g id='copper0'>
+<circle id='connector0pad' connectorname='A' cx='2.6416' cy='8.825' r='0.577' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<path stroke='none' stroke-width='0' d='m1.9376,8.121 1.408,0 0,1.408 -1.408,0 0,-3zM2.1916,8.825a0.45,0.45 0 1 0 0.9,0 0.45,0.45 0 1 0 -0.9,0z
+' fill='#F7BD13' />
+<circle id='connector3pad' connectorname='K' cx='2.6416' cy='11.365' r='0.577' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle id='connector2pad' connectorname='E' cx='2.6416' cy='21.525' r='0.577' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle id='connector1pad' connectorname='C' cx='2.6416' cy='24.065' r='0.577' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+</g>
+</g>
+<g id='silkscreen'>
+<line class='other' x1='0.1016' y1='13.524' x2='7.7216' y2='13.524' stroke='#f0f0f0' stroke-width='0.2032' stroke-linecap='round'/>
+<line class='other' x1='7.7216' y1='13.524' x2='7.7216' y2='7.5042' stroke='#f0f0f0' stroke-width='0.2032' stroke-linecap='round'/>
+<line class='other' x1='7.7216' y1='7.5042' x2='11.5316' y2='7.5042' stroke='#f0f0f0' stroke-width='0.2032' stroke-linecap='round'/>
+<line class='other' x1='11.5316' y1='25.3858' x2='7.7216' y2='25.3858' stroke='#f0f0f0' stroke-width='0.2032' stroke-linecap='round'/>
+<line class='other' x1='7.7216' y1='25.3858' x2='7.7216' y2='19.366' stroke='#f0f0f0' stroke-width='0.2032' stroke-linecap='round'/>
+<line class='other' x1='7.7216' y1='19.366' x2='0.1016' y2='19.366' stroke='#f0f0f0' stroke-width='0.2032' stroke-linecap='round'/>
+<line class='other' x1='0.1016' y1='19.366' x2='0.1016' y2='13.524' stroke='#f0f0f0' stroke-width='0.2032' stroke-linecap='round'/>
+<path class='other' fill='none' d='M4.0386,14.8194 A1.6256,1.6256 0 0 0 2.413,16.445' stroke-width='0.2032' stroke='#f0f0f0' />
+<path class='other' fill='none' d='M4.0386,18.0706 A1.6256,1.6256 0 0 1 2.413,16.445' stroke-width='0.2032' stroke='#f0f0f0' />
+<line class='other' x1='4.0386' y1='18.0706' x2='11.5316' y2='18.0706' stroke='#f0f0f0' stroke-width='0.2032' stroke-linecap='round'/>
+<line class='other' x1='4.0386' y1='14.8194' x2='11.5316' y2='14.8194' stroke='#f0f0f0' stroke-width='0.2032' stroke-linecap='round'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#f0f0f0' font-size='1.651' x='0.1016' y='9.46' text-anchor='start'>A</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#f0f0f0' font-size='1.651' x='0.1016' y='12' text-anchor='start'>K</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#f0f0f0' font-size='1.651' x='0.1016' y='22.16' text-anchor='start'>E</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#f0f0f0' font-size='1.651' x='0.1016' y='24.7' text-anchor='start'>C</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#f0f0f0' font-size='3.302' x='8.9916' y='23.43' text-anchor='start'>S</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#f0f0f0' font-size='3.302' x='8.9916' y='12' text-anchor='start'>E</text>
+</g>
+</svg>

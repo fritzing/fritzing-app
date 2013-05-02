@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="0.285in"
+   version="1.2"
+   height="0.235in"
+   viewBox="0 0 285 235"
+   baseProfile="tiny"
+   id="svg2"
+   sodipodi:version="0.32"
+   inkscape:version="0.46"
+   sodipodi:docname="to92.svg"
+   inkscape:output_extension="org.inkscape.output.svg.inkscape">
+  <metadata
+     id="metadata21">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs19">
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 10.575 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="25.65 : 10.575 : 1"
+       inkscape:persp3d-origin="12.825 : 7.0499999 : 1"
+       id="perspective23" />
+    <inkscape:perspective
+       id="perspective2403"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       sodipodi:type="inkscape:persp3d" />
+  </defs>
+  <sodipodi:namedview
+     inkscape:window-height="728"
+     inkscape:window-width="962"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     guidetolerance="10.0"
+     gridtolerance="10.0"
+     objecttolerance="10.0"
+     borderopacity="1.0"
+     bordercolor="#666666"
+     pagecolor="#ffffff"
+     id="base"
+     showgrid="false"
+     inkscape:zoom="21.208577"
+     inkscape:cx="12.825"
+     inkscape:cy="10.575"
+     inkscape:window-x="74"
+     inkscape:window-y="25"
+     inkscape:current-layer="svg2" />
+  <desc
+     id="desc4">Fritzing footprint SVG</desc>
+  <g
+     id="silkscreen">
+    <line
+       y1="50"
+       x1="80"
+       y2="50"
+       x2="220"
+       id="line7"
+       style="stroke:#ffffff;stroke-width:10" />
+    <path
+       sodipodi:type="arc"
+       style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#ffffff;stroke-width:11.11111164;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path2413"
+       d="M 228.94301,205.39981 A 84.871323,52.651653 0 0 1 59.205909,206.00169"
+       sodipodi:start="0"
+       sodipodi:end="3.130161"
+       sodipodi:open="true"
+       transform="translate(3.6672794,-49.246324)" />
+  </g>
+  <g
+     id="copper0">
+    <rect
+       width="56"
+       x="22"
+       y="86"
+       height="56"
+       id="rect10"
+       style="fill:none;stroke:#ffbf00;stroke-width:15" />
+    <circle
+       cx="50"
+       cy="114"
+       r="28"
+       id="connector0pin"
+       style="fill:none;stroke:#ffbf00;stroke-width:15" />
+    <circle
+       cx="150"
+       cy="114"
+       r="28"
+       id="connector1pin"
+       style="fill:none;stroke:#ffbf00;stroke-width:15" />
+    <circle
+       cx="250"
+       cy="114"
+       r="28"
+       id="connector2pin"
+       style="fill:none;stroke:#ffbf00;stroke-width:15" />
+  </g>
+  <g
+     id="keepout" />
+  <g
+     id="soldermask" />
+  <g
+     id="outline" />
+</svg>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Ebene_1" xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="64.693px"
+	 height="68.097px" viewBox="0 0 64.693 68.097" enable-background="new 0 0 64.693 68.097" xml:space="preserve">
+<rect x="-0.125" y="32.206" fill="#808080" width="64.818" height="3.359"/>
+<g>
+	<circle id="connector0pin" fill="none" stroke="#9A916C" stroke-width="0.254" cx="27.307" cy="32.347" r="1.21"/>
+	<circle id="connector1pin" fill="none" stroke="#9A916C" stroke-width="0.254" cx="17.227" cy="32.347" r="1.21"/>
+	<circle id="connector2pin" fill="none" stroke="#9A916C" stroke-width="0.254" cx="7.147" cy="32.347" r="1.21"/>
+	<circle id="connector3pin" fill="none" stroke="#9A916C" stroke-width="0.254" cx="20.127" cy="32.33" r="1.21"/>
+	<circle id="connector4pin" fill="none" stroke="#9A916C" stroke-width="0.254" cx="30.907" cy="12.187" r="1.21"/>
+	<circle id="connector5pin" fill="none" stroke="#9A916C" stroke-width="0.254" cx="30.907" cy="2.107" r="1.21"/>
+</g>
+<circle fill="#808080" cx="32.347" cy="35.75" r="32.347"/>
+<circle fill="#B3B3B3" cx="32.347" cy="32.347" r="32.347"/>
+<path fill="#CCCCCC" d="M64.692,32.596c0-17.864-14.48-32.346-32.346-32.346C14.482,0.25,0,14.732,0,32.596v-0.25
+	C0,14.482,14.482,0,32.346,0c17.865,0,32.346,14.482,32.346,32.346V32.596z"/>
+<path fill="#666666" d="M0,35.501c0,17.864,14.48,32.346,32.346,32.346c17.863,0,32.346-14.481,32.346-32.346v0.25
+	c0,17.863-14.482,32.346-32.346,32.346C14.481,68.097,0,53.615,0,35.751V35.501z"/>
+<circle fill="#CCCCCC" cx="32.347" cy="32.347" r="17.085"/>
+<circle fill="none" stroke="#9A916C" stroke-width="1.27" stroke-opacity="0.2" cx="32.347" cy="32.347" r="5.091"/>
+<circle fill="none" stroke="#9A916C" stroke-width="1.27" stroke-opacity="0.2" cx="32.347" cy="32.347" r="20.364"/>
+<circle fill="none" stroke="#9A916C" stroke-width="1.27" stroke-opacity="0.2" cx="32.347" cy="32.347" r="25.456"/>
+<circle fill="none" stroke="#9A916C" stroke-width="1.27" stroke-opacity="0.2" cx="32.347" cy="32.347" r="30.547"/>
+<circle fill="none" stroke="#9A916C" stroke-width="1.27" stroke-opacity="0.2" cx="32.347" cy="32.347" r="12.258"/>
+<circle fill="none" stroke="#9A916C" stroke-width="1.27" stroke-opacity="0.2" cx="32.347" cy="32.347" r="15.273"/>
+</svg>

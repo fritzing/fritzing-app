@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg"  x="0px" y="0px" width="0.25956in"
+	 height="0.3243194in" viewBox="0 0 18.688 23.351" >
+<g id="breadboard">
+	<rect id="connector2pin" x="15.437" y="17.549" fill="none" width="2.159" height="1"/>
+	<rect id="connector1pin" x="8.237" y="17.549" fill="none" width="2.16" height="1"/>
+	<rect id="connector0pin" x="1.036" y="17.549" fill="none" width="2.16" height="1"/>
+
+	<line  id="connector0leg" stroke-linecap="round" x1="2.115" y1="23.351" x2="2.115" y2="33.483" stroke="#8C8C8C" fill="none" stroke-width="2.158" />
+	<line  id="connector1leg" stroke-linecap="round" x1="9.315" y1="23.351" x2="9.315" y2="33.483" stroke="#8C8C8C" fill="none" stroke-width="2.158" />
+	<line  id="connector2leg" stroke-linecap="round" x1="16.515" y1="23.351" x2="16.515" y2="33.483" stroke="#8C8C8C" fill="none" stroke-width="2.158" />
+
+	<g>
+		<path fill="#8C8C8C" d="M1.036,20.351v3h2.16v-3"/>
+		<path fill="#8C8C8C" d="M8.237,20.351v3h2.16v-3"/>
+		<path fill="#8C8C8C" d="M17.594,20.351v3h-2.16v-3"/>
+		<rect x="1.036" y="18.172" fill="#8C8C8C" width="3.541" height="3.221"/>
+		<rect x="14.055" y="18.172" fill="#8C8C8C" width="3.541" height="3.221"/>
+		<rect x="7.545" y="18.172" fill="#8C8C8C" width="3.541" height="3.221"/>
+		<path fill="#CC7720" d="M18.285,16.691c0,0.169-0.397,0.404-0.438,0.563c0.03,1.481,0.03,1.481-1.606,1.481H2.393
+			c-1.266,0-1.479-0.109-1.479-1.595c-0.026-0.133-0.567-0.311-0.567-0.451c0,0-0.78-11.704,0-14.159
+			C0.69,1.452,1.393,0.674,2.393,0.484c2.612-0.5,11.643-0.531,13.848,0c1.098,0.266,1.671,1.031,2.045,2.045
+			C19.192,4.985,18.285,16.691,18.285,16.691z"/>
+		<path opacity="0.1" enable-background="new    " d="M0.767,1.633c0,0,0.653,0.899,0.653,2.104s0.004,8.78,0.021,9.75
+			c0.02,1.179-1.15,2.287-1.15,2.287S-0.6,3.319,0.767,1.633z"/>
+		<path opacity="0.1" enable-background="new    " d="M17.909,1.633c0,0-0.655,0.899-0.655,2.104s-0.004,8.78-0.021,9.75
+			c-0.021,1.179,1.148,2.287,1.148,2.287S19.276,3.319,17.909,1.633z"/>
+		<path opacity="0.1" enable-background="new    " d="M4.347,18.734c0,0,0.53-1.563,0.47-2.188c-0.063-0.625-0.28-0.483,0.188-0.66
+			c0.469-0.178,1.781-0.129,2.125,0c0.345,0.129,0.371-0.06,0.313,0.66c-0.062,0.719,0.313,2.188,0.313,2.188H4.347z"/>
+		<path opacity="0.1" enable-background="new    " d="M10.868,18.734c0,0,0.531-1.563,0.469-2.188
+			c-0.062-0.625-0.279-0.483,0.188-0.66c0.468-0.178,1.78-0.129,2.125,0c0.344,0.129,0.371-0.06,0.311,0.66
+			c-0.06,0.719,0.314,2.188,0.314,2.188H10.868z"/>
+		<path opacity="0.55" fill="#FFFFFF" enable-background="new    " d="M6.209,1.41C4.827,1.541,3.73,1.963,3.762,2.353
+			C3.776,2.52,4.028,2.648,4.396,2.738c1.36,0.245,2.36,0.073,3.279-0.176c0.664-0.19,1.119-0.438,1.102-0.684
+			C8.742,1.487,7.597,1.278,6.209,1.41z"/>
+		<text transform="matrix(1 0 0 1 4.2107 10.2922)" fill="#5F6160" font-family="'ocra10'" font-size="5">MHz</text>
+	</g>
+</g>
+</svg>

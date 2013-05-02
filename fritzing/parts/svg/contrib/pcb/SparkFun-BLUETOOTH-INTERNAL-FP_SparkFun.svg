@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" x="0in" y="0in" width="0.9919in" height="0.6081in" viewBox="0 0 9919 6081" >
+<title>SparkFun.mod</title>
+<desc>Kicad module 'SparkFun-BLUETOOTH-INTERNAL-FP' from file 'SparkFun.mod' converted by Fritzing</desc>
+<metadata xmlns:fz='http://fritzing.org/kicadmetadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+<rdf:RDF><rdf:Description rdf:about=''>
+<fz:attr name='kicad filename'>SparkFun.mod</fz:attr>
+<fz:attr name='kicad module'>SparkFun-BLUETOOTH-INTERNAL-FP</fz:attr>
+<fz:attr name='fritzing version'>0.4.1b.07.04.4318</fz:attr>
+<fz:attr name='conversion date'>17/07/2010 17:15:10</fz:attr>
+<fz:attr name='dist-license'>GPL</fz:attr>
+<fz:attr name='use-license'>unlimited</fz:attr>
+<fz:attr name='author'>KICAD project</fz:attr>
+<fz:attr name='license-url'>http://www.gnu.org/licenses/gpl.html</fz:attr>
+<fz:comment></fz:comment>
+<fz:attr name='keyword'></fz:attr>
+</rdf:Description></rdf:RDF></metadata><g id="copper1">
+ <g connectorname="1" id="connector0pad">
+  <rect width="314" x="3307" y="5353" fill="#ffbf00" height="571" stroke-width="0"/>
+  <path fill="#ffbf00" stroke-width="0" d="M3307,5353a157,157,0,0,1,314,0"/>
+  <path fill="#ffbf00" stroke-width="0" d="M3621,5924a157,157,0,1,1,-314,0"/>
+ </g>
+ <g connectorname="2" id="connector1pad">
+  <rect width="314" x="3780" y="5353" fill="#ffbf00" height="571" stroke-width="0"/>
+  <path fill="#ffbf00" stroke-width="0" d="M3780,5353a157,157,0,0,1,314,0"/>
+  <path fill="#ffbf00" stroke-width="0" d="M4094,5924a157,157,0,1,1,-314,0"/>
+ </g>
+ <g connectorname="3" id="connector2pad">
+  <rect width="314" x="4252" y="5353" fill="#ffbf00" height="571" stroke-width="0"/>
+  <path fill="#ffbf00" stroke-width="0" d="M4252,5353a157,157,0,0,1,314,0"/>
+  <path fill="#ffbf00" stroke-width="0" d="M4566,5924a157,157,0,1,1,-314,0"/>
+ </g>
+ <g connectorname="4" id="connector3pad">
+  <rect width="314" x="4724" y="5353" fill="#ffbf00" height="571" stroke-width="0"/>
+  <path fill="#ffbf00" stroke-width="0" d="M4724,5353a157,157,0,0,1,314,0"/>
+  <path fill="#ffbf00" stroke-width="0" d="M5038,5924a157,157,0,1,1,-314,0"/>
+ </g>
+ <g connectorname="5" id="connector4pad">
+  <rect width="314" x="5197" y="5353" fill="#ffbf00" height="571" stroke-width="0"/>
+  <path fill="#ffbf00" stroke-width="0" d="M5197,5353a157,157,0,0,1,314,0"/>
+  <path fill="#ffbf00" stroke-width="0" d="M5511,5924a157,157,0,1,1,-314,0"/>
+ </g>
+ <g connectorname="6" id="connector5pad">
+  <rect width="314" x="5669" y="5353" fill="#ffbf00" height="571" stroke-width="0"/>
+  <path fill="#ffbf00" stroke-width="0" d="M5669,5353a157,157,0,0,1,314,0"/>
+  <path fill="#ffbf00" stroke-width="0" d="M5983,5924a157,157,0,1,1,-314,0"/>
+ </g>
+ <g connectorname="7" id="connector6pad">
+  <rect width="314" x="6141" y="5353" fill="#ffbf00" height="571" stroke-width="0"/>
+  <path fill="#ffbf00" stroke-width="0" d="M6141,5353a157,157,0,0,1,314,0"/>
+  <path fill="#ffbf00" stroke-width="0" d="M6455,5924a157,157,0,1,1,-314,0"/>
+ </g>
+ <g connectorname="8" id="connector7pad">
+  <rect width="314" x="6613" y="5353" fill="#ffbf00" height="571" stroke-width="0"/>
+  <path fill="#ffbf00" stroke-width="0" d="M6613,5353a157,157,0,0,1,314,0"/>
+  <path fill="#ffbf00" stroke-width="0" d="M6927,5924a157,157,0,1,1,-314,0"/>
+ </g>
+ <g connectorname="9" id="connector8pad">
+  <rect width="314" x="7086" y="5353" fill="#ffbf00" height="571" stroke-width="0"/>
+  <path fill="#ffbf00" stroke-width="0" d="M7086,5353a157,157,0,0,1,314,0"/>
+  <path fill="#ffbf00" stroke-width="0" d="M7400,5924a157,157,0,1,1,-314,0"/>
+ </g>
+ <g connectorname="10" id="connector9pad">
+  <rect width="314" x="7558" y="5353" fill="#ffbf00" height="571" stroke-width="0"/>
+  <path fill="#ffbf00" stroke-width="0" d="M7558,5353a157,157,0,0,1,314,0"/>
+  <path fill="#ffbf00" stroke-width="0" d="M7872,5924a157,157,0,1,1,-314,0"/>
+ </g>
+ <g connectorname="11" id="connector10pad">
+  <rect width="314" x="8030" y="5353" fill="#ffbf00" height="571" stroke-width="0"/>
+  <path fill="#ffbf00" stroke-width="0" d="M8030,5353a157,157,0,0,1,314,0"/>
+  <path fill="#ffbf00" stroke-width="0" d="M8344,5924a157,157,0,1,1,-314,0"/>
+ </g>
+ <g connectorname="12" id="connector11pad">
+  <rect width="314" x="8503" y="5353" fill="#ffbf00" height="571" stroke-width="0"/>
+  <path fill="#ffbf00" stroke-width="0" d="M8503,5353a157,157,0,0,1,314,0"/>
+  <path fill="#ffbf00" stroke-width="0" d="M8817,5924a157,157,0,1,1,-314,0"/>
+ </g>
+ <g connectorname="13" id="connector12pad">
+  <rect width="314" x="8503" y="157" fill="#ffbf00" height="571" stroke-width="0"/>
+  <path fill="#ffbf00" stroke-width="0" d="M8503,157a157,157,0,0,1,314,0"/>
+  <path fill="#ffbf00" stroke-width="0" d="M8817,728a157,157,0,1,1,-314,0"/>
+ </g>
+ <g connectorname="14" id="connector13pad">
+  <rect width="314" x="8030" y="157" fill="#ffbf00" height="571" stroke-width="0"/>
+  <path fill="#ffbf00" stroke-width="0" d="M8030,157a157,157,0,0,1,314,0"/>
+  <path fill="#ffbf00" stroke-width="0" d="M8344,728a157,157,0,1,1,-314,0"/>
+ </g>
+ <g connectorname="15" id="connector14pad">
+  <rect width="314" x="7558" y="157" fill="#ffbf00" height="571" stroke-width="0"/>
+  <path fill="#ffbf00" stroke-width="0" d="M7558,157a157,157,0,0,1,314,0"/>
+  <path fill="#ffbf00" stroke-width="0" d="M7872,728a157,157,0,1,1,-314,0"/>
+ </g>
+ <g connectorname="16" id="connector15pad">
+  <rect width="314" x="7086" y="157" fill="#ffbf00" height="571" stroke-width="0"/>
+  <path fill="#ffbf00" stroke-width="0" d="M7086,157a157,157,0,0,1,314,0"/>
+  <path fill="#ffbf00" stroke-width="0" d="M7400,728a157,157,0,1,1,-314,0"/>
+ </g>
+ <g connectorname="17" id="connector16pad">
+  <rect width="314" x="6613" y="157" fill="#ffbf00" height="571" stroke-width="0"/>
+  <path fill="#ffbf00" stroke-width="0" d="M6613,157a157,157,0,0,1,314,0"/>
+  <path fill="#ffbf00" stroke-width="0" d="M6927,728a157,157,0,1,1,-314,0"/>
+ </g>
+ <g connectorname="18" id="connector17pad">
+  <rect width="314" x="6141" y="157" fill="#ffbf00" height="571" stroke-width="0"/>
+  <path fill="#ffbf00" stroke-width="0" d="M6141,157a157,157,0,0,1,314,0"/>
+  <path fill="#ffbf00" stroke-width="0" d="M6455,728a157,157,0,1,1,-314,0"/>
+ </g>
+ <g connectorname="19" id="connector18pad">
+  <rect width="314" x="5669" y="157" fill="#ffbf00" height="571" stroke-width="0"/>
+  <path fill="#ffbf00" stroke-width="0" d="M5669,157a157,157,0,0,1,314,0"/>
+  <path fill="#ffbf00" stroke-width="0" d="M5983,728a157,157,0,1,1,-314,0"/>
+ </g>
+ <g connectorname="20" id="connector19pad">
+  <rect width="314" x="5197" y="157" fill="#ffbf00" height="571" stroke-width="0"/>
+  <path fill="#ffbf00" stroke-width="0" d="M5197,157a157,157,0,0,1,314,0"/>
+  <path fill="#ffbf00" stroke-width="0" d="M5511,728a157,157,0,1,1,-314,0"/>
+ </g>
+ <g connectorname="21" id="connector20pad">
+  <rect width="314" x="4724" y="157" fill="#ffbf00" height="571" stroke-width="0"/>
+  <path fill="#ffbf00" stroke-width="0" d="M4724,157a157,157,0,0,1,314,0"/>
+  <path fill="#ffbf00" stroke-width="0" d="M5038,728a157,157,0,1,1,-314,0"/>
+ </g>
+ <g connectorname="22" id="connector21pad">
+  <rect width="314" x="4252" y="157" fill="#ffbf00" height="571" stroke-width="0"/>
+  <path fill="#ffbf00" stroke-width="0" d="M4252,157a157,157,0,0,1,314,0"/>
+  <path fill="#ffbf00" stroke-width="0" d="M4566,728a157,157,0,1,1,-314,0"/>
+ </g>
+ <g connectorname="23" id="connector22pad">
+  <rect width="314" x="3780" y="157" fill="#ffbf00" height="571" stroke-width="0"/>
+  <path fill="#ffbf00" stroke-width="0" d="M3780,157a157,157,0,0,1,314,0"/>
+  <path fill="#ffbf00" stroke-width="0" d="M4094,728a157,157,0,1,1,-314,0"/>
+ </g>
+ <g connectorname="24" id="connector23pad">
+  <rect width="314" x="3307" y="157" fill="#ffbf00" height="571" stroke-width="0"/>
+  <path fill="#ffbf00" stroke-width="0" d="M3307,157a157,157,0,0,1,314,0"/>
+  <path fill="#ffbf00" stroke-width="0" d="M3621,728a157,157,0,1,1,-314,0"/>
+ </g>
+ <g connectorname="25" id="connector24pad">
+  <rect width="314" x="2264" y="954.5" fill="#ffbf00" height="394" stroke-width="0"/>
+  <path fill="#ffbf00" stroke-width="0" d="M2264,954.5a157,157,0,0,1,314,0"/>
+  <path fill="#ffbf00" stroke-width="0" d="M2578,1348.5a157,157,0,1,1,-314,0"/>
+ </g>
+ <g connectorname="26" id="connector25pad">
+  <rect width="314" x="2264" y="1584.5" fill="#ffbf00" height="394" stroke-width="0"/>
+  <path fill="#ffbf00" stroke-width="0" d="M2264,1584.5a157,157,0,0,1,314,0"/>
+  <path fill="#ffbf00" stroke-width="0" d="M2578,1978.5a157,157,0,1,1,-314,0"/>
+ </g>
+ <g connectorname="27" id="connector26pad">
+  <rect width="314" x="2264" y="2214.5" fill="#ffbf00" height="394" stroke-width="0"/>
+  <path fill="#ffbf00" stroke-width="0" d="M2264,2214.5a157,157,0,0,1,314,0"/>
+  <path fill="#ffbf00" stroke-width="0" d="M2578,2608.5a157,157,0,1,1,-314,0"/>
+ </g>
+ <g connectorname="28" id="connector27pad">
+  <rect width="314" x="9605" y="1535" fill="#ffbf00" height="571" stroke-width="0"/>
+  <path fill="#ffbf00" stroke-width="0" d="M9605,1535a157,157,0,0,1,314,0"/>
+  <path fill="#ffbf00" stroke-width="0" d="M9919,2106a157,157,0,1,1,-314,0"/>
+ </g>
+ <g connectorname="29" id="connector28pad">
+  <rect width="314" x="9605" y="3975" fill="#ffbf00" height="571" stroke-width="0"/>
+  <path fill="#ffbf00" stroke-width="0" d="M9605,3975a157,157,0,0,1,314,0"/>
+  <path fill="#ffbf00" stroke-width="0" d="M9919,4546a157,157,0,1,1,-314,0"/>
+ </g>
+</g>
+<g id="silkscreen">
+ <line fill="none" stroke="white" y1="5638.5" x1="9762" y2="442.5" stroke-width="50" x2="9762"/>
+ <line fill="none" stroke="white" y1="442.5" x1="0" y2="5638.5" stroke-width="50" x2="0"/>
+ <line fill="none" stroke="white" y1="442.5" x1="9762" y2="442.5" stroke-width="50" x2="0"/>
+ <line fill="none" stroke="white" y1="5638.5" x1="0" y2="5638.5" stroke-width="50" x2="9762"/>
+ <line fill="none" stroke="white" y1="442.5" x1="9762" y2="442.5" stroke-width="80" x2="9369"/>
+ <line fill="none" stroke="white" y1="442.5" x1="9762" y2="836.5" stroke-width="80" x2="9762"/>
+ <line fill="none" stroke="white" y1="5638.5" x1="9762" y2="5244.5" stroke-width="80" x2="9762"/>
+ <line fill="none" stroke="white" y1="5638.5" x1="9762" y2="5638.5" stroke-width="80" x2="9369"/>
+ <line fill="none" stroke="white" y1="5638.5" x1="2755" y2="5638.5" stroke-width="80" x2="1968"/>
+ <line fill="none" stroke="white" y1="5638.5" x1="0" y2="5244.5" stroke-width="80" x2="0"/>
+ <line fill="none" stroke="white" y1="5638.5" x1="0" y2="5638.5" stroke-width="80" x2="393"/>
+ <line fill="none" stroke="white" y1="442.5" x1="0" y2="836.5" stroke-width="80" x2="0"/>
+ <line fill="none" stroke="white" y1="442.5" x1="0" y2="442.5" stroke-width="80" x2="393"/>
+ <line fill="none" stroke="white" y1="442.5" x1="1968" y2="442.5" stroke-width="80" x2="2755"/>
+</g>
+</svg>

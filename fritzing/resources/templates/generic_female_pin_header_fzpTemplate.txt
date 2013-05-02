@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?><module fritzingVersion="0.2.2.b.03.04.2550" moduleId="generic_.percent.7_pin_header_%1_.percent.2">
+    <version>4</version>
+    <author>Fritzing Part-o-matic</author>
+    <title>Generic .percent.5 header - %1 pins</title>
+    <label>J</label>
+    <date>2009-10-23</date>
+    <tags/>
+    <properties>
+        <property name="family">Pin Header</property>
+        <property name="hole size"></property>
+        <property name="Pins">%1</property>
+        <property name="Form">.percent.3</property>
+        <property name="Pin Spacing">.percent.1</property>
+         <property name="Row">.percent.8</property>
+        <property name="package">.percent.9</property>
+        <property name="Position">.percent.10</property>
+   <property name="package">THT</property></properties>
+    <description>Generic .percent.5 header</description>
+    <views>
+        <iconView>
+            <layers image="icon/generic_.percent.4_header.svg">
+                <layer layerId="icon"/>
+            </layers>
+        </iconView>
+        <breadboardView>
+            <layers image="breadboard/generic_.percent.4_pin_header_%1_100mil_bread.svg">
+                <layer layerId="breadboard"/>
+            </layers>
+        </breadboardView>
+        <schematicView fliphorizontal="true">
+            <layers image="schematic/generic_.percent.6_pin_header_%1_100mil_schem.svg">
+                <layer layerId="schematic"/>
+            </layers>
+        </schematicView>
+        <pcbView>
+            <layers image="pcb/nsjumper_%1_.percent.2_pcb.svg">
+                <layer layerId="copper0"/>
+                <layer layerId="silkscreen"/>
+	      <layer layerId="copper1"/>
+	</layers>
+        </pcbView>
+    </views>
+    <connectors>
+ %2
+    </connectors>
+</module>

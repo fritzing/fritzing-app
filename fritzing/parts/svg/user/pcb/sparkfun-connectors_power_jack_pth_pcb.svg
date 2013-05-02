@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- Created with Fritzing (http://www.fritzing.org/) -->
+<svg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' version='1.2' baseProfile='tiny' x='0in' y='0in' width='0.451205in' height='0.51026in' viewBox='0 0 11.4606 12.9606' >
+<g id='copper1'>
+<circle id='connector2pad' connectorname='PWR' cx='4.6016' cy='2.159' r='1.8288' stroke='#F7BD13' stroke-width='0.6604' fill='none' />
+<circle id='connector0pad' connectorname='GND' cx='4.6016' cy='8.159' r='1.8288' stroke='#F7BD13' stroke-width='0.6604' fill='none' />
+<circle id='connector1pad' connectorname='GNDBREAK' cx='9.3016' cy='5.159' r='1.8288' stroke='#F7BD13' stroke-width='0.6604' fill='none' />
+<g id='copper0'>
+<circle id='connector2pad' connectorname='PWR' cx='4.6016' cy='2.159' r='1.8288' stroke='#F7BD13' stroke-width='0.6604' fill='none' />
+<circle id='connector0pad' connectorname='GND' cx='4.6016' cy='8.159' r='1.8288' stroke='#F7BD13' stroke-width='0.6604' fill='none' />
+<circle id='connector1pad' connectorname='GNDBREAK' cx='9.3016' cy='5.159' r='1.8288' stroke='#F7BD13' stroke-width='0.6604' fill='none' />
+</g>
+</g>
+<g id='silkscreen'>
+<line class='other' x1='9.1016' y1='2.159' x2='7.0016' y2='2.159' stroke='#f0f0f0' stroke-width='0.2032' stroke-linecap='round'/>
+<line class='other' x1='9.1016' y1='12.859' x2='9.1016' y2='7.559' stroke='#f0f0f0' stroke-width='0.2032' stroke-linecap='round'/>
+<line class='other' x1='9.1016' y1='2.159' x2='9.1016' y2='2.859' stroke='#f0f0f0' stroke-width='0.2032' stroke-linecap='round'/>
+<line class='other' x1='0.1016' y1='12.859' x2='0.1016' y2='2.159' stroke='#f0f0f0' stroke-width='0.2032' stroke-linecap='round'/>
+<line class='other' x1='0.1016' y1='2.159' x2='2.2016' y2='2.159' stroke='#f0f0f0' stroke-width='0.2032' stroke-linecap='round'/>
+<line class='other' x1='0.1016' y1='12.859' x2='9.1016' y2='12.859' stroke='#f0f0f0' stroke-width='0.2032' stroke-linecap='round'/>
+</g>
+</svg>

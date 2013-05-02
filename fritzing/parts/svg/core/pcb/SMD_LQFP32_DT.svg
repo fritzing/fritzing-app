@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.2"
+   width="0.3856in"
+   height="0.3856in"
+   viewBox="0 0 3856 3856"
+   id="svg2">
+  <title
+     id="title4">SparkFun.mod</title>
+  <desc
+     id="desc6">Kicad module 'SparkFun-LQFP32' from file 'SparkFun.mod' converted by Fritzing</desc>
+  <defs
+     id="defs56" />
+  <g
+     id="copper1">
+      <rect
+   width="157"
+   height="472"
+   x="747.5"
+   y="3384"
+   id="connector8pin"
+   style="fill:#ffbf00;stroke-width:0" />
+<rect
+   width="157"
+   height="472"
+   x="1062.5"
+   y="3384"
+   id="connector9pin"
+   style="fill:#ffbf00;stroke-width:0" />
+<rect
+   width="157"
+   height="472"
+   x="1377.5"
+   y="3384"
+   id="connector10pin"
+   style="fill:#ffbf00;stroke-width:0" />
+<rect
+   width="157"
+   height="472"
+   x="1692.5"
+   y="3384"
+   id="connector11pin"
+   style="fill:#ffbf00;stroke-width:0" />
+<rect
+   width="157"
+   height="472"
+   x="2006.5"
+   y="3384"
+   id="connector12pin"
+   style="fill:#ffbf00;stroke-width:0" />
+<rect
+   width="157"
+   height="472"
+   x="2321.5"
+   y="3384"
+   id="connector13pin"
+   style="fill:#ffbf00;stroke-width:0" />
+<rect
+   width="157"
+   height="472"
+   x="2636.5"
+   y="3384"
+   id="connector14pin"
+   style="fill:#ffbf00;stroke-width:0" />
+<rect
+   width="157"
+   height="472"
+   x="2951.5"
+   y="3384"
+   id="connector15pin"
+   style="fill:#ffbf00;stroke-width:0" />
+<rect
+   width="472"
+   height="157"
+   x="3384"
+   y="2951.5"
+   id="connector16pin"
+   style="fill:#ffbf00;stroke-width:0" />
+<rect
+   width="472"
+   height="157"
+   x="3384"
+   y="2636.5"
+   id="connector17pin"
+   style="fill:#ffbf00;stroke-width:0" />
+<rect
+   width="472"
+   height="157"
+   x="3384"
+   y="2321.5"
+   id="connector18pin"
+   style="fill:#ffbf00;stroke-width:0" />
+<rect
+   width="472"
+   height="157"
+   x="3384"
+   y="2006.5"
+   id="connector19pin"
+   style="fill:#ffbf00;stroke-width:0" />
+<rect
+   width="472"
+   height="157"
+   x="3384"
+   y="1692.5"
+   id="connector20pin"
+   style="fill:#ffbf00;stroke-width:0" />
+<rect
+   width="472"
+   height="157"
+   x="3384"
+   y="1377.5"
+   id="connector21pin"
+   style="fill:#ffbf00;stroke-width:0" />
+<rect
+   width="472"
+   height="157"
+   x="3384"
+   y="1062.5"
+   id="connector22pin"
+   style="fill:#ffbf00;stroke-width:0" />
+<rect
+   width="472"
+   height="157"
+   x="3384"
+   y="747.5"
+   id="connector23pin"
+   style="fill:#ffbf00;stroke-width:0" />
+<rect
+   width="157"
+   height="472"
+   x="2951.5"
+   y="0"
+   id="connector24pin"
+   style="fill:#ffbf00;stroke-width:0" />
+<rect
+   width="157"
+   height="472"
+   x="2636.5"
+   y="0"
+   id="connector25pin"
+   style="fill:#ffbf00;stroke-width:0" />
+<rect
+   width="157"
+   height="472"
+   x="2321.5"
+   y="0"
+   id="connector26pin"
+   style="fill:#ffbf00;stroke-width:0" />
+<rect
+   width="157"
+   height="472"
+   x="2006.5"
+   y="0"
+   id="connector27pin"
+   style="fill:#ffbf00;stroke-width:0" />
+<rect
+   width="157"
+   height="472"
+   x="1692.5"
+   y="0"
+   id="connector28pin"
+   style="fill:#ffbf00;stroke-width:0" />
+<rect
+   width="157"
+   height="472"
+   x="1377.5"
+   y="0"
+   id="connector29pin"
+   style="fill:#ffbf00;stroke-width:0" />
+<rect
+   width="157"
+   height="472"
+   x="1062.5"
+   y="0"
+   id="connector30pin"
+   style="fill:#ffbf00;stroke-width:0" />
+<rect
+   width="157"
+   height="472"
+   x="747.5"
+   y="0"
+   id="connector31pin"
+   style="fill:#ffbf00;stroke-width:0" />
+<rect
+   width="472"
+   height="157"
+   x="0"
+   y="747.5"
+   id="connector0pin"
+   style="fill:#ffbf00;stroke-width:0" />
+<rect
+   width="472"
+   height="157"
+   x="0"
+   y="1062.5"
+   id="connector1pin"
+   style="fill:#ffbf00;stroke-width:0" />
+<rect
+   width="472"
+   height="157"
+   x="0"
+   y="1377.5"
+   id="connector2pin"
+   style="fill:#ffbf00;stroke-width:0" />
+<rect
+   width="472"
+   height="157"
+   x="0"
+   y="1692.5"
+   id="connector3pin"
+   style="fill:#ffbf00;stroke-width:0" />
+<rect
+   width="472"
+   height="157"
+   x="0"
+   y="2006.5"
+   id="connector4pin"
+   style="fill:#ffbf00;stroke-width:0" />
+<rect
+   width="472"
+   height="157"
+   x="0"
+   y="2321.5"
+   id="connector5pin"
+   style="fill:#ffbf00;stroke-width:0" />
+<rect
+   width="472"
+   height="157"
+   x="0"
+   y="2636.5"
+   id="connector6pin"
+   style="fill:#ffbf00;stroke-width:0" />
+<rect
+   width="472"
+   height="157"
+   x="0"
+   y="2951.5"
+   id="connector7pin"
+   style="fill:#ffbf00;stroke-width:0" />
+</g>
+  <g
+     id="silkscreen">
+     <g  transform="matrix(0,1,-1,0,3856,0)">
+
+    <line
+       style="fill:none;stroke:#ffffff;stroke-width:50;stroke-linecap:round"
+       id="line44"
+       x2="3305"
+       y2="551"
+       x1="551"
+       y1="551" />
+    <line
+       style="fill:none;stroke:#ffffff;stroke-width:50;stroke-linecap:round"
+       id="line46"
+       x2="3305"
+       y2="3305"
+       x1="3305"
+       y1="551" />
+    <line
+       style="fill:none;stroke:#ffffff;stroke-width:50;stroke-linecap:round"
+       id="line48"
+       x2="551"
+       y2="3126"
+       x1="551"
+       y1="551" />
+    <line
+       style="fill:none;stroke:#ffffff;stroke-width:50.00000381;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none"
+       id="line50"
+       x2="3305"
+       y2="3305"
+       x1="730.99988"
+       y1="3305" />
+    <circle
+       cx="944"
+       cy="2912"
+       r="62.225399"
+       id="circle52"
+       style="fill:none;stroke:#ffffff;stroke-width:120" />
+    <path
+       d="m 4.95,6.5789986 1.575,-1.575"
+       transform="matrix(0,-111.11112,111.11112,0,0,3856)"
+       id="path3640"
+       style="fill:none;stroke:#ffffff;stroke-width:0.44999999;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+  </g>  </g>
+</svg>

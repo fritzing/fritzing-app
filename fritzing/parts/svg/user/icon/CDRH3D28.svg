@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Ebene_1" xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="14.738px"
+	 height="18.115px" viewBox="0 0 14.738 18.115" enable-background="new 0 0 14.738 18.115" xml:space="preserve">
+<g>
+	<path fill="#1A1A1A" d="M13.034,3.018H1.705C0.767,3.018,0,3.784,0,4.721v11.433l1.704,1.704H3.41v-0.259h7.918v0.259h1.706
+		l1.704-1.704V4.721C14.738,3.784,13.972,3.018,13.034,3.018z"/>
+	<rect x="1.705" y="14.841" fill="#333333" width="1.706" height="3.017"/>
+	<rect x="11.328" y="14.841" fill="#333333" width="1.704" height="3.017"/>
+	<path fill="#333333" d="M13.034,0h-1.706v0.258H3.41V0H1.705L0,1.704v11.433l1.704,1.704H3.41v-0.258h7.918v0.258h1.706
+		l1.704-1.704V1.704L13.034,0z"/>
+	<path fill="#1A1A1A" d="M13.367,4.292l0.222-0.219l-2.836-2.835l-0.208,0.207C9.599,0.94,8.517,0.651,7.369,0.651
+		C3.631,0.651,0.6,3.681,0.6,7.42c0,1.138,0.283,2.205,0.779,3.146l-0.225,0.226l2.834,2.835l0.223-0.221
+		c0.943,0.5,2.017,0.784,3.159,0.784c3.739,0,6.767-3.032,6.767-6.77C14.137,6.291,13.855,5.229,13.367,4.292z"/>
+	<path opacity="0.7" enable-background="new    " d="M14.137,7.42c0,3.737-3.028,6.77-6.767,6.77c-1.142,0-2.216-0.284-3.159-0.784
+		l-0.223,0.22l-2.834-2.833l0.062-0.035l2.773,2.774l0.224-0.223c0.943,0.5,2.017,0.784,3.159,0.784c3.739,0,6.768-3.03,6.768-6.769
+		L14.137,7.42L14.137,7.42z"/>
+	<path opacity="0.09" fill="#FFFFFF" enable-background="new    " d="M0.601,7.419c0-3.738,3.031-6.769,6.769-6.769
+		c1.148,0,2.23,0.288,3.176,0.794l0.208-0.208l2.836,2.836l0.049-0.049L10.755,1.14l-0.208,0.207C9.6,0.843,8.519,0.553,7.37,0.553
+		c-3.737,0-6.769,3.03-6.769,6.77L0.601,7.419L0.601,7.419z"/>
+	<path opacity="0.2" fill="#FFFFFF" enable-background="new    " d="M14.738,1.799l-1.704-1.704h-1.706V0h1.706l1.704,1.704V1.799z"
+		/>
+	<path opacity="0.2" fill="#FFFFFF" enable-background="new    " d="M0,1.799l1.704-1.704H3.41V0H1.705L0,1.704V1.799z"/>
+	<rect x="3.41" y="0.258" opacity="0.2" fill="#FFFFFF" enable-background="new    " width="7.918" height="0.095"/>
+	<path opacity="0.5" enable-background="new    " d="M0,13.136l1.704,1.704H3.41v0.096H1.705L0,13.232V13.136z"/>
+	<path opacity="0.5" enable-background="new    " d="M14.738,13.136l-1.704,1.704h-1.706v0.096h1.706l1.704-1.705V13.136z"/>
+	<rect x="3.41" y="14.582" opacity="0.5" enable-background="new    " width="7.918" height="0.096"/>
+	<circle cx="7.37" cy="7.421" r="6.474"/>
+	<circle fill="#1A1A1A" cx="7.37" cy="7.419" r="6.182"/>
+	<g>
+		<path opacity="0.5" enable-background="new    " d="M0,16.058l1.704,1.705H3.41v0.094H1.705L0,16.153V16.058z"/>
+		<path opacity="0.5" enable-background="new    " d="M14.738,16.058l-1.704,1.705h-1.706v0.094h1.706l1.704-1.704V16.058z"/>
+		<rect x="3.41" y="17.503" opacity="0.5" enable-background="new    " width="7.918" height="0.095"/>
+		<rect x="3.321" y="14.936" opacity="0.5" enable-background="new    " width="0.089" height="2.826"/>
+		<rect x="11.328" y="14.936" opacity="0.5" enable-background="new    " width="0.088" height="2.826"/>
+	</g>
+	<path opacity="0.1" fill="#FFFFFF" enable-background="new    " d="M1.187,7.5c0-3.415,2.768-6.183,6.183-6.183
+		c3.414,0,6.182,2.768,6.182,6.183V7.42c0-3.414-2.769-6.182-6.182-6.182c-3.415,0-6.183,2.768-6.183,6.182V7.5z"/>
+	<path opacity="0.5" enable-background="new    " d="M13.552,7.342c0,3.415-2.769,6.185-6.182,6.185
+		c-3.415,0-6.183-2.77-6.183-6.185v0.079c0,3.416,2.768,6.182,6.183,6.182c3.414,0,6.182-2.766,6.182-6.182V7.342z"/>
+	<g>
+		<g>
+			<rect x="4.074" y="17.599" fill="#808080" width="6.599" height="0.516"/>
+		</g>
+		<g>
+			<rect x="4.074" y="17.013" fill="#999999" width="6.599" height="0.958"/>
+		</g>
+		<g>
+			<rect x="4.074" y="16.957" fill="#808080" width="6.599" height="0.057"/>
+		</g>
+	</g>
+</g>
+<text transform="matrix(1 0 0 1 1.7813 8.1345)" fill="#4D4D4D" font-family="'ArialMT'" font-size="2.6798">cdrh3d28</text>
+</svg>

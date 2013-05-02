@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Ebene_1" xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="69.725px"
+	 height="62.66px" viewBox="0 0 69.725 62.66" enable-background="new 0 0 69.725 62.66" xml:space="preserve">
+<g>
+	<rect x="0" fill="#006837" width="69.725" height="62.334"/>
+	<rect x="1.166" y="1.539" fill="#CCCCCC" width="67.393" height="55.961"/>
+	<rect x="0" opacity="0.2" fill="#FFFFFF" width="69.725" height="0.401"/>
+	<rect x="1.166" y="1.539" opacity="0.2" fill="#FFFFFF" width="67.393" height="0.401"/>
+	<rect x="1.166" y="57.5" fill="#B3B3B3" width="3.53" height="3.295"/>
+	<rect x="58.764" y="57.5" fill="#B3B3B3" width="9.793" height="3.295"/>
+	<rect x="4.696" y="57.5" opacity="0.4" width="54.069" height="3.295"/>
+	<path fill="#F2F2F2" d="M60.765,42.989c0,3.85-3.15,7-7,7H14.598c-3.85,0-7-3.15-7-7V14.098c0-3.85,3.15-7,7-7h39.167
+		c3.85,0,7,3.15,7,7V42.989z"/>
+	<text transform="matrix(1 0 0 1 13.1711 44.4707)" fill="#4D4D4D" font-family="'DroidSans'" font-size="6.0173">RS9110-N-11-22</text>
+</g>
+<line fill="#B3B3B3" x1="1.166" y1="57.5" x2="4.696" y2="57.5"/>
+<line fill="#B3B3B3" x1="58.764" y1="57.5" x2="68.557" y2="57.5"/>
+<line opacity="0.4" x1="4.696" y1="57.5" x2="58.764" y2="57.5"/>
+<path fill="#B3B3B3" d="M58.764,57.5h9.793H58.764z"/>
+<path opacity="0.4" d="M4.696,57.5h54.069H4.696z"/>
+<path opacity="0.2" d="M7.598,43.315c0,3.85,3.15,7,7,7h39.167c3.85,0,7-3.15,7-7v-0.326c0,3.85-3.15,7-7,7H14.598
+	c-3.85,0-7-3.15-7-7V43.315z"/>
+<g>
+	<rect x="1.166" y="57.5" opacity="0.2" width="3.53" height="0.326"/>
+	<rect x="58.764" y="57.5" opacity="0.2" width="9.793" height="0.326"/>
+	<rect x="4.696" y="57.5" opacity="0.4" width="54.069" height="0.326"/>
+</g>
+<g>
+	<rect x="1.166" y="60.795" opacity="0.2" width="3.53" height="0.326"/>
+	<rect x="58.764" y="60.795" opacity="0.2" width="9.793" height="0.326"/>
+	<rect x="4.696" y="60.795" opacity="0.4" width="54.069" height="0.326"/>
+</g>
+<rect x="0" y="62.334" fill="#00341C" width="69.725" height="0.326"/>
+</svg>

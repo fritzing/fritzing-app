@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" x="0in" y="0in" width="0.588in" height="0.5877in" viewBox="0 0 5880 5877" >
+<title>SparkFun.mod</title>
+<desc>Kicad module 'SparkFun-BUTTONPAD-1X1' from file 'SparkFun.mod' converted by Fritzing</desc>
+<metadata xmlns:fz='http://fritzing.org/kicadmetadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+<rdf:RDF><rdf:Description rdf:about=''>
+<fz:attr name='kicad filename'>SparkFun.mod</fz:attr>
+<fz:attr name='kicad module'>SparkFun-BUTTONPAD-1X1</fz:attr>
+<fz:attr name='fritzing version'>0.4.1b.07.04.4318</fz:attr>
+<fz:attr name='conversion date'>17/07/2010 17:15:12</fz:attr>
+<fz:attr name='dist-license'>GPL</fz:attr>
+<fz:attr name='use-license'>unlimited</fz:attr>
+<fz:attr name='author'>KICAD project</fz:attr>
+<fz:attr name='license-url'>http://www.gnu.org/licenses/gpl.html</fz:attr>
+<fz:comment></fz:comment>
+<fz:attr name='keyword'></fz:attr>
+</rdf:Description></rdf:RDF></metadata><g id="copper0">
+ <g id="copper1">
+  <g connectorname="BLU3" id="connector0pin">
+   <circle fill="none" cx="3455" cy="2948" stroke="#ff9400" r="246.5" stroke-width="100"/>
+  </g>
+  <g connectorname="GND3" id="connector1pin">
+   <circle fill="none" cx="2669" cy="2948" stroke="#ff9400" r="246.5" stroke-width="100"/>
+  </g>
+  <g connectorname="GRN3" id="connector2pin">
+   <circle fill="none" cx="4243" cy="2948" stroke="#ff9400" r="246.5" stroke-width="100"/>
+  </g>
+  <g connectorname="RED3" id="connector3pin">
+   <circle fill="none" cx="1881" cy="2948" stroke="#ff9400" r="246.5" stroke-width="100"/>
+  </g>
+  <g connectorname="SIG5" id="connector4pin">
+   <circle fill="none" cx="223" cy="1762" stroke="#ff9400" r="168" stroke-width="100"/>
+  </g>
+  <g connectorname="SIG6" id="connector5pin">
+   <circle fill="none" cx="1223" cy="2562" stroke="#ff9400" r="168" stroke-width="100"/>
+  </g>
+ </g>
+</g>
+<g id="silkscreen">
+ <line fill="none" stroke="white" y1="2263" x1="271" y2="2563" stroke-width="100" x2="1204"/>
+ <line fill="none" stroke="white" y1="2748" x1="3" y2="2803" stroke-width="100" x2="905"/>
+ <line fill="none" stroke="white" y1="3243" x1="283" y2="3184" stroke-width="100" x2="1188"/>
+ <line fill="none" stroke="white" y1="3526" x1="1019" y2="3727" stroke-width="100" x2="122"/>
+ <line fill="none" stroke="white" y1="4136" x1="578" y2="3766" stroke-width="100" x2="1366"/>
+ <line fill="none" stroke="white" y1="4633" x1="535" y2="4180" stroke-width="100" x2="1303"/>
+ <line fill="none" stroke="white" y1="4262" x1="1744" y2="4885" stroke-width="100" x2="1007"/>
+ <line fill="none" stroke="white" y1="4668" x1="1858" y2="5396" stroke-width="100" x2="1330"/>
+ <line fill="none" stroke="white" y1="5432" x1="1866" y2="4621" stroke-width="100" x2="2255"/>
+ <line fill="none" stroke="white" y1="4896" x1="2437" y2="5755" stroke-width="100" x2="2137"/>
+ <line fill="none" stroke="white" y1="5640" x1="2665" y2="4723" stroke-width="100" x2="2803"/>
+ <line fill="none" stroke="white" y1="4999" x1="3059" y2="5877" stroke-width="100" x2="3031"/>
+ <line fill="none" stroke="white" y1="5609" x1="3510" y2="4684" stroke-width="100" x2="3329"/>
+ <line fill="none" stroke="white" y1="4869" x1="3672" y2="5676" stroke-width="100" x2="3979"/>
+ <line fill="none" stroke="white" y1="5302" x1="4373" y2="4459" stroke-width="100" x2="3880"/>
+ <line fill="none" stroke="white" y1="4546" x1="4270" y2="5247" stroke-width="100" x2="4743"/>
+ <line fill="none" stroke="white" y1="4089" x1="4306" y2="4727" stroke-width="100" x2="4916"/>
+ <line fill="none" stroke="white" y1="4042" x1="4691" y2="4554" stroke-width="100" x2="5380"/>
+ <line fill="none" stroke="white" y1="3566" x1="4609" y2="3979" stroke-width="100" x2="5447"/>
+ <line fill="none" stroke="white" y1="3388" x1="4932" y2="3656" stroke-width="100" x2="5766"/>
+ <line fill="none" stroke="white" y1="3117" x1="4719" y2="3180" stroke-width="100" x2="5648"/>
+ <line fill="none" stroke="white" y1="2842" x1="4979" y2="2854" stroke-width="100" x2="5880"/>
+ <line fill="none" stroke="white" y1="2610" x1="4703" y2="2484" stroke-width="100" x2="5624"/>
+ <line fill="none" stroke="white" y1="2232" x1="4869" y2="2067" stroke-width="100" x2="5750"/>
+ <line fill="none" stroke="white" y1="2090" x1="4530" y2="1708" stroke-width="100" x2="5384"/>
+ <line fill="none" stroke="white" y1="1748" x1="4573" y2="1319" stroke-width="100" x2="5373"/>
+ <line fill="none" stroke="white" y1="1661" x1="4199" y2="1098" stroke-width="100" x2="4916"/>
+ <line fill="none" stroke="white" y1="618" x1="4727" y2="1319" stroke-width="100" x2="4113"/>
+ <line fill="none" stroke="white" y1="1334" x1="3731" y2="582" stroke-width="100" x2="4258"/>
+ <line fill="none" stroke="white" y1="972" x1="3534" y2="177" stroke-width="100" x2="3865"/>
+ <line fill="none" stroke="white" y1="1173" x1="3164" y2="275" stroke-width="100" x2="3376"/>
+ <line fill="none" stroke="white" y1="834" x1="2944" y2="0" stroke-width="100" x2="2944"/>
+ <line fill="none" stroke="white" y1="1185" x1="2716" y2="212" stroke-width="100" x2="2555"/>
+ <line fill="none" stroke="white" y1="909" x1="2425" y2="134" stroke-width="100" x2="2086"/>
+ <line fill="none" stroke="white" y1="476" x1="1822" y2="1256" stroke-width="100" x2="2259"/>
+ <line fill="none" stroke="white" y1="492" x1="1354" y2="1232" stroke-width="100" x2="1925"/>
+ <line fill="none" stroke="white" y1="886" x1="1196" y2="1563" stroke-width="100" x2="1811"/>
+ <line fill="none" stroke="white" y1="976" x1="771" y2="1571" stroke-width="100" x2="1370"/>
+ <line fill="none" stroke="white" y1="1508" x1="673" y2="1992" stroke-width="100" x2="1405"/>
+ <line fill="none" stroke="white" y1="1756" x1="251" y2="2161" stroke-width="100" x2="1062"/>
+ <line fill="none" stroke="white" y1="2161" x1="1763" y2="3735" stroke-width="50" x2="1763"/>
+ <circle fill="none" cx="2944" cy="2945" stroke="white" r="1254.41" stroke-width="50"/>
+ <circle fill="none" cx="2944" cy="2948" stroke="white" r="2087.38" stroke-width="50"/>
+ <path fill="none" stroke="white" stroke-width="25" d="M3216.71,4340.75a1419.2,1419.2,0,1,0,-1453.71,-2179.75"/>
+</g>
+</svg>

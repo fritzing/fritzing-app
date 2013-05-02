@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?><module moduleId="generic_sip_%1_.percent.1">
+ <version>4</version>
+ <author>Fritzing Part-o-matic</author>
+ <title>SIP - %1 pins</title>
+ <label>U</label>
+ <date>2009-10-20</date>
+ <tags>
+  <tag>SIP</tag>
+  <tag>fritzing core</tag>
+ </tags>
+ <properties>
+  <property name="family">Generic IC</property>
+  <property name="package">SIP (Single Inline) [THT]</property>
+  <property name="pins">%1</property>
+  <property name="pin spacing">300mil</property>
+  <property name="chip label">IC</property>
+  <property name="hole size"></property>
+ <property name='editable pin labels'>true</property>
+</properties>
+ <taxonomy>part.sip.%1.pins</taxonomy>
+ <description>A SIP stand-in part for whatever you want.  With %1 pins on a 300 mil single inline package (SIP) footprint.</description>
+ <views>
+  <iconView>
+   <layers image="icon/dip_icon.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+  <breadboardView>
+   <layers image="breadboard/generic_sip_%1_300mil_bread.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="schematic/generic_sip_%1_300mil_schem.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/jumper_%1_100mil_pcb.svg">
+    <layer layerId="silkscreen"/>
+    <layer layerId="copper0"/>
+   <layer layerId="copper1"/></layers>
+  </pcbView>
+ </views>
+ <connectors>
+  %2
+ </connectors>
+</module>

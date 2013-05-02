@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><module fritzingVersion="0.3.6b.08.14.3340" moduleId="CrystalModuleID">
+<version>4</version>
+    <author>Lionel Michel</author>
+    <title>Crystal</title>
+    <label>XTAL</label>
+    <date>2009-02-26</date>
+    <tags>
+        <tag>clock</tag>
+        <tag>crystal</tag>
+        <tag>quartz</tag>
+        <tag>oscillator</tag>
+	<tag>piezoelectric</tag>
+    </tags>
+    <properties>
+        <property name="pin spacing">5.08mm</property>
+        <property name="family">oscillator</property>
+        <property name="type">crystal</property>
+        <property name="frequency" showInLabel="yes">16 Mhz</property>
+    <property name="package">THT</property></properties>
+    <description>Crystal</description>
+    <views>
+        <iconView>
+            <layers image="icon/crystal.svg">
+                <layer layerId="icon"/>
+            </layers>
+        </iconView>
+        <breadboardView>
+            <layers image="breadboard/crystal_leg.svg">
+                <layer layerId="breadboard"/>
+            </layers>
+        </breadboardView>
+        <pcbView>
+            <layers image="pcb/crystal_HC18.svg">
+                <layer layerId="copper0"/>
+                <layer layerId="silkscreen"/>
+            <layer layerId="copper1"/></layers>
+        </pcbView>
+        <schematicView>
+            <layers image="schematic/crystal.svg">
+                <layer layerId="schematic"/>
+            </layers>
+        </schematicView>
+    </views>
+    <connectors>
+        <connector id="connector0" name="pin 0" type="male">
+            <description>pin 0</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector0pin" legId="connector0leg"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector0pin" terminalId="connector0terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector0pin"/>
+                <p layer="copper1" svgId="connector0pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector1" name="pin 1" type="male">
+            <description>pin 1</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector1pin" legId="connector1leg" />
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector1pin" terminalId="connector1terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector1pin"/>
+                <p layer="copper1" svgId="connector1pin"/></pcbView>
+            </views>
+        </connector>
+    </connectors>
+</module>

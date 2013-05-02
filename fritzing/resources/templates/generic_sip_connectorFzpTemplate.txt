@@ -1,0 +1,15 @@
+  <connector id="connector%1" name="pin%2" type="male">
+   <description>pin %2</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector%1pin" terminalId="connector%1terminal"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector%1pin" terminalId="connector%1terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector%1pin"/>
+    <p layer="copper1" svgId="connector%1pin"/></pcbView>
+   </views>
+  </connector>
+  

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><svg baseProfile="tiny" height="0.20306in" version="1.2" viewBox="0 0 46684 20306" width="0.46684in" xmlns="http://www.w3.org/2000/svg">
+ <desc>Fritzing footprint SVG</desc>
+ <g id="silkscreen">
+  <line stroke="white" stroke-width="1000" x1="1000" x2="45684" y1="1000" y2="1000"/>
+  <line stroke="white" stroke-width="1000" x1="45684" x2="45684" y1="1000" y2="19306"/>
+  <line stroke="white" stroke-width="1000" x1="45684" x2="1000" y1="19306" y2="19306"/>
+  <line stroke="white" stroke-width="1000" x1="1000" x2="1000" y1="19306" y2="1000"/>
+ </g>
+ <g id="copper1"><g id="copper0">
+  <circle cx="13736" cy="10153" fill="none" id="connector0pin" r="2750" stroke="rgb(255, 191, 0)" stroke-width="2000"/>
+  <circle cx="32948" cy="10153" fill="none" id="connector1pin" r="2750" stroke="rgb(255, 191, 0)" stroke-width="2000"/>
+ </g></g>
+</svg>

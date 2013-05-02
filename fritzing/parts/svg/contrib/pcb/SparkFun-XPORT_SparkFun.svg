@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" x="0in" y="0in" width="0.74in" height="1.335in" viewBox="0 0 7400 13350" >
+<title>SparkFun.mod</title>
+<desc>Kicad module 'SparkFun-XPORT' from file 'SparkFun.mod' converted by Fritzing</desc>
+<metadata xmlns:fz='http://fritzing.org/kicadmetadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+<rdf:RDF><rdf:Description rdf:about=''>
+<fz:attr name='kicad filename'>SparkFun.mod</fz:attr>
+<fz:attr name='kicad module'>SparkFun-XPORT</fz:attr>
+<fz:attr name='fritzing version'>0.4.1b.07.04.4318</fz:attr>
+<fz:attr name='conversion date'>17/07/2010 17:18:45</fz:attr>
+<fz:attr name='dist-license'>GPL</fz:attr>
+<fz:attr name='use-license'>unlimited</fz:attr>
+<fz:attr name='author'>KICAD project</fz:attr>
+<fz:attr name='license-url'>http://www.gnu.org/licenses/gpl.html</fz:attr>
+<fz:comment></fz:comment>
+<fz:attr name='keyword'></fz:attr>
+</rdf:Description></rdf:RDF></metadata><g id="copper0">
+ <g id="copper1">
+  <g connectorname="1" id="connector0pin">
+   <circle fill="none" cx="2450" cy="5580" stroke="#ff9400" r="272.5" stroke-width="195"/>
+  </g>
+  <g connectorname="8" id="connector7pin">
+   <circle fill="none" cx="5450" cy="5580" stroke="#ff9400" r="272.5" stroke-width="195"/>
+  </g>
+  <g connectorname="10" id="connector9pin">
+   <circle fill="none" cx="1950" cy="6580" stroke="#ff9400" r="272.5" stroke-width="195"/>
+  </g>
+  <g connectorname="GND@9" id="connector1pin">
+   <circle fill="none" cx="500" cy="4612" stroke="#ff9400" r="407.25" stroke-width="185.5"/>
+   <circle fill="black" cx="500" cy="4612" drill="0" r="314.5" stroke-width="0"/>
+  </g>
+  <g connectorname="GND@10" id="connector2pin">
+   <circle fill="none" cx="6900" cy="4612" stroke="#ff9400" r="407.25" stroke-width="185.5"/>
+   <circle fill="black" cx="6900" cy="4612" drill="0" r="314.5" stroke-width="0"/>
+  </g>
+  <g connectorname="P1" id="connector3pin">
+   <circle fill="none" cx="5450" cy="5580" stroke="#ff9400" r="272.5" stroke-width="195"/>
+  </g>
+  <g connectorname="P2" id="connector4pin">
+   <circle fill="none" cx="4950" cy="6580" stroke="#ff9400" r="272.5" stroke-width="195"/>
+  </g>
+  <g connectorname="P3" id="connector5pin">
+   <circle fill="none" cx="4450" cy="5580" stroke="#ff9400" r="272.5" stroke-width="195"/>
+  </g>
+  <g connectorname="P4" id="connector6pin">
+   <circle fill="none" cx="3950" cy="6580" stroke="#ff9400" r="272.5" stroke-width="195"/>
+  </g>
+  <g connectorname="P5" id="connector8pin">
+   <circle fill="none" cx="3450" cy="5580" stroke="#ff9400" r="272.5" stroke-width="195"/>
+  </g>
+  <g connectorname="P6" id="connector10pin">
+   <circle fill="none" cx="2950" cy="6580" stroke="#ff9400" r="272.5" stroke-width="195"/>
+  </g>
+  <g connectorname="P7" id="connector11pin">
+   <circle fill="none" cx="2450" cy="5580" stroke="#ff9400" r="272.5" stroke-width="195"/>
+  </g>
+  <g connectorname="P8" id="connector12pin">
+   <circle fill="none" cx="1950" cy="6580" stroke="#ff9400" r="272.5" stroke-width="195"/>
+  </g>
+ </g>
+</g>
+<g id="silkscreen">
+ <line fill="none" stroke="white" y1="10130" x1="6900" y2="0" stroke-width="80" x2="6900"/>
+ <line fill="none" stroke="white" y1="0" x1="6900" y2="0" stroke-width="80" x2="500"/>
+ <line fill="none" stroke="white" y1="0" x1="500" y2="10130" stroke-width="80" x2="500"/>
+ <line fill="none" stroke="white" y1="10130" x1="6900" y2="10130" stroke-width="80" x2="500"/>
+ <line fill="none" stroke="white" y1="10130" x1="500" y2="13350" stroke-width="80" x2="500"/>
+ <line fill="none" stroke="white" y1="13350" x1="500" y2="13350" stroke-width="80" x2="6900"/>
+ <line fill="none" stroke="white" y1="13350" x1="6900" y2="10130" stroke-width="80" x2="6900"/>
+ <circle fill="none" cx="1280" cy="9080" stroke="white" r="452.548" stroke-width="50"/>
+ <line fill="none" stroke="white" y1="9080" x1="640" y2="9080" stroke-width="50" x2="1920"/>
+ <line fill="none" stroke="white" y1="9720" x1="1280" y2="8440" stroke-width="50" x2="1280"/>
+ <circle fill="none" cx="6120" cy="9080" stroke="white" r="452.548" stroke-width="50"/>
+ <line fill="none" stroke="white" y1="9080" x1="5480" y2="9080" stroke-width="50" x2="6760"/>
+ <line fill="none" stroke="white" y1="9720" x1="6120" y2="8440" stroke-width="50" x2="6120"/>
+</g>
+</svg>

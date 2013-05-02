@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1 Basic//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-basic.dtd'>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+<svg xmlns="http://www.w3.org/2000/svg" width="0.228292in"  x="0px" y="0px" height="0.643862in" viewBox="0 0 16.437 46.358" version="1.2" baseProfile="tiny"  >  
+ <g id="breadboard" >
+ 
+ <rect width="1" x="14.286" y="23" fill="none" height="1" id="connector5pin" />
+ <rect width="1" x="7.143" y="23" fill="none" height="1" id="connector4pin" />
+ <rect width="1" y="23" fill="none" height="1" id="connector3pin" />
+ 
+ <rect width="1" x="14.278" y="45" fill="none" height="1" id="connector2pin" />
+ <rect width="1" x="7.122" y="45" fill="none" height="1" id="connector1pin" />
+ <rect width="1" y="45" fill="none" height="1" id="connector0pin" />
+ 
+<line  id="connector5leg" stroke-linecap="round" x1="15.437" y1="24.76" x2="15.437" y2="27.153" stroke="#8C8C8C" fill="none" stroke-width="2" />
+<line  id="connector4leg" stroke-linecap="round" x1="8.198" y1="24.76" x2="8.198" y2="27.153" stroke="#8C8C8C" fill="none" stroke-width="2" />
+<line  id="connector3leg" stroke-linecap="round" x1="1" y1="24.76" x2="1" y2="27.153" stroke="#8C8C8C" fill="none" stroke-width="2" />
+<line  id="connector2leg" stroke-linecap="round" x1="15.437" y1="46.358" x2="15.437" y2="48.752" stroke="#8C8C8C" fill="none" stroke-width="2" />
+<line  id="connector1leg" stroke-linecap="round" x1="8.198" y1="46.358" x2="8.198" y2="48.752" stroke="#8C8C8C" fill="none" stroke-width="2" />
+<line  id="connector0leg" stroke-linecap="round" x1="1" y1="46.358" x2="1" y2="48.752" stroke="#8C8C8C" fill="none" stroke-width="2" />
+
+
+  <path fill="none" stroke="#8C8C8C" stroke-width="2" d="M14.735,19.953c0.752,0.882,0.7,2.595,0.7,4.807" /> 
+  <path fill="none" stroke="#8C8C8C" stroke-width="2" d="M1.701,19.953c-0.752,0.882-0.7,2.595-0.7,4.807" /> 
+  <path fill="none" stroke="#8C8C8C" stroke-linejoin="round" stroke-width="2" d="M13.103,21.419c0,0,0,4.788,0,8.041c0,6.224,2.301,7.724,2.301,16.898" /> 19.292
+  <path fill="none" stroke="#8C8C8C" stroke-linejoin="round" stroke-width="2" d="M4.5,21.419c0,0,0-1.5,0,8.041c0,6.224-3.5,7.724-3.5,16.898" /> 19.292
+  <path fill="none" stroke="#8C8C8C" stroke-linejoin="round" stroke-width="2" d="M10.697,21.419c0,0,0-1.5,0,8.041c0,6.224-2.499,7.724-2.499,16.898" /> 19.292
+  <line fill="none" stroke="#8C8C8C" y1="21.419" stroke-width="2" x1="8.198" y2="24.759" x2="8.199" /> 
+  
+  <g>
+   <path opacity="0.9" fill="#D1D1D1" d="M14.734,13.176v3.146v0c0-2.777-3.215-5.028-7.182-5.028s-7.182,2.251-7.182,5.029c0,1.562,1.016,2.958,2.611,3.88c-1.596-0.922-2.615-2.318-2.615-3.881v3.148v1.547c1.5,1.672,4.152,2.789,7.184,2.789c4.686,0,8.48-2.658,8.48-5.938v-1.546C16.035,15.167,15.553,14.089,14.734,13.176z" />
+   <g id="breadboard_12_" >
+    <g id="rgbled_11_" >
+     <path opacity="0.9" fill="#FFFFFF" d="M14.734,13.176V7.184C14.734,3.216,11.518,0,7.551,0C3.586,0,0.369,3.216,0.369,7.184v13.834c1.5,1.674,4.152,2.789,7.184,2.789c4.686,0,8.479-2.658,8.479-5.938v-1.547C16.035,15.167,15.553,14.089,14.734,13.176z" />
+     <path opacity="0.9" fill="#FFFFFF" d="M14.734,13.176v3.146c0,2.777-3.217,5.029-7.184,5.029c-3.965,0-7.184-2.252-7.184-5.029v3.148v1.547c1.5,1.672,4.152,2.789,7.184,2.789c4.686,0,8.48-2.658,8.48-5.938v-1.546C16.035,15.167,15.553,14.089,14.734,13.176z" />
+     <path opacity="0.24" d="M14.734,13.176v3.146c0,2.777-3.217,5.029-7.184,5.029c-3.965,0-7.184-2.252-7.184-5.029v3.148c1.5,1.674,4.152,2.789,7.184,2.789c4.686,0,8.48-2.658,8.48-5.938C16.035,15.167,15.553,14.089,14.734,13.176z" />
+     <ellipse opacity="0.5" fill="#F2F2F2" cx="7.553" cy="16.323" rx="7.182" ry="5.029" />
+     <path opacity="0.6" fill="#CCCCCC" d="M10.896,3.801l1.459-0.277c-0.848-1.149-2.107-1.986-3.588-2.271L9.02,2.35C9.797,2.625,10.449,3.141,10.896,3.801z" />
+     <path opacity="0.4" fill="#CCCCCC" d="M1.148,20.196v1.546c0.66,0.536,1.447,0.989,2.34,1.334v-1.548C2.596,21.186,1.809,20.731,1.148,20.196z" />
+     <g>
+      <polygon fill="#CCCCCC" points="11.533,10.263 11.455,11.289 10.197,13.138 11.926,14.362 11.926,15.112 11.926,18.169 13.199,18.169 13.199,10.263 " />
+      <polygon fill="#CCCCCC" points="2.318,10.263 2.318,18.169 3.592,18.169 3.592,15.112 3.592,14.362 5.318,13.138 4.062,11.289 3.984,10.263 " />
+      <polygon fill="#CCCCCC" points="10.139,10.263 5.377,10.263 7.111,12.941 7.111,18.167 8.406,18.167 8.406,12.939 " />
+     </g>
+     <path opacity="0.6" fill="#CCCCCC" d="M11.59,20.481c-0.264,0.125-0.537,0.233-0.822,0.334c-0.059,0.021-0.119,0.041-0.18,0.062c-0.57,0.188-1.186,0.321-1.822,0.397c-0.076,0.011-0.154,0.019-0.229,0.025c-0.32,0.03-0.646,0.053-0.982,0.053c-0.148,0-0.312-0.01-0.479-0.024c-1.223-0.058-2.361-0.317-3.344-0.75v-8.507V7.184c0-1.49,0.859-2.766,2.104-3.396L5.814,3.737L4.549,2.203c-1.689,1.02-2.83,2.862-2.83,4.979V19.25c-0.049-0.049-0.314-0.312-0.486-0.534l-0.311,0.699c1.426,1.503,3.861,2.497,6.631,2.497c1.703,0,3.277-0.379,4.572-1.019l-0.531-0.412C11.59,20.481,11.59,20.481,11.59,20.481z" />
+    </g>
+   </g>
+  </g>
+ </g>
+</svg>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Ebene_1" xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="51.023px"
+	 height="54.728px" viewBox="0 0 51.023 54.728" enable-background="new 0 0 51.023 54.728" xml:space="preserve">
+<g>
+	<g id="breadboard">
+		<circle fill="#1A1A1A" cx="25.512" cy="29.216" r="25.512"/>
+	</g>
+	<rect y="25.511" fill="#1A1A1A" width="51.023" height="3.705"/>
+	<g id="breadboard_1_">
+		<circle fill="#333333" cx="25.512" cy="25.511" r="25.511"/>
+	</g>
+	<g>
+		<path opacity="0.2" d="M0.012,28.454c0,14.09,11.422,25.512,25.512,25.512s25.512-11.422,25.512-25.512l-0.012,0.762
+			c0,14.09-11.422,25.512-25.512,25.512S0,43.306,0,29.216"/>
+		<path opacity="0.2" fill="#FFFFFF" d="M51.035,26.055c0-14.09-11.422-25.512-25.512-25.512S0.012,11.965,0.012,26.055L0,25.512
+			C0,11.422,11.422,0,25.512,0s25.512,11.422,25.512,25.512"/>
+		<path opacity="0.2" d="M0.012,24.985c0,14.09,11.422,25.512,25.512,25.512s25.512-11.422,25.512-25.512l-0.012,0.526
+			c0,14.089-11.422,25.511-25.512,25.511S0,39.601,0,25.512"/>
+	</g>
+</g>
+</svg>

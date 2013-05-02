@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Ebene_1" xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="12.672px"
+	 height="32.977px" viewBox="0 0 12.672 32.977" enable-background="new 0 0 12.672 32.977" xml:space="preserve">
+<polygon fill="#FAFAFA" points="3.096,29.736 2.141,26.496 0,26.496 3.096,32.752 "/>
+<circle id="nonconn4" fill="#CCCCCC" cx="6.336" cy="19.944" r="2.376"/>
+<circle id="nonconn5" fill="#CCCCCC" cx="6.336" cy="10.944" r="2.376"/>
+<g>
+	<polygon fill="#F0F0F0" fill-opacity="0.74" points="12.672,26.496 12.672,6.84 10.799,0 1.872,0 0,6.84 0,26.496 	"/>
+	<polygon fill="#FAFAFA" points="1.872,0 0,6.84 0,26.496 1.813,26.496 	"/>
+	<polygon opacity="0.7" fill="#FFFFFF" points="0,7.133 1.872,0.293 10.799,0.293 12.672,7.133 12.672,6.84 10.799,0 1.872,0 
+		0,6.84 	"/>
+	<polygon fill="#DCDCDC" points="10.86,26.496 12.672,26.496 12.672,6.84 10.8,0 	"/>
+</g>
+<polygon fill="#E6E6E6" points="9.577,29.736 10.528,26.496 2.141,26.496 3.096,29.736 "/>
+<rect x="3.096" y="29.736" fill="#FFFFFF" width="6.48" height="3.016"/>
+<polygon fill="#DCDCDC" points="10.86,26.496 10.797,0 10.528,0.293 10.528,26.496 "/>
+<path opacity="0.17" fill="#FFFFFF" d="M3.35,1.543c-0.667,1.083-1.778,23.38,0.083,24c1.5,0.5,6.834,1.166,6.792,0.333
+	s-1.035-6.75-0.648-10.583c0.454-4.502,1.939-14.167-0.686-14.25C6.266,0.959,4.016,0.459,3.35,1.543z"/>
+<rect x="2.141" y="26.496" opacity="0.8" fill="#FFFFFF" width="8.387" height="0.216"/>
+<polygon fill="#DCDCDC" points="9.577,29.736 10.528,26.496 12.672,26.496 9.577,32.752 "/>
+<polygon opacity="0.8" fill="#FFFFFF" points="2.141,26.496 2.141,0.293 1.872,0 1.808,26.496 3.096,29.736 "/>
+<path opacity="0.56" fill="#F2F2F2" d="M9.163,30.376c0.065,0.248,0.25,2.25,0,2.229s-5.208,0.104-5.479-0.167
+	s4.952-0.063,5.028-0.313S9.058,31.335,9.163,30.376z"/>
+<path opacity="0.56" fill="#F2F2F2" d="M5.016,30.126c0,0-1.479-0.021-1.563,0c0.021,0.479,0.104,1.792,0.104,1.792
+	s0.604,0.219,0.542-0.422s-0.667-0.975,0-1.12s3.354-0.207,2.792-0.26S5.016,30.126,5.016,30.126z"/>
+</svg>

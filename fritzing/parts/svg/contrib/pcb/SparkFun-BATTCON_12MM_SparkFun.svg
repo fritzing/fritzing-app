@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" x="0in" y="0in" width="0.745in" height="0.51in" viewBox="0 0 7450 5100" >
+<title>SparkFun.mod</title>
+<desc>Kicad module 'SparkFun-BATTCON_12MM' from file 'SparkFun.mod' converted by Fritzing</desc>
+<metadata xmlns:fz='http://fritzing.org/kicadmetadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+<rdf:RDF><rdf:Description rdf:about=''>
+<fz:attr name='kicad filename'>SparkFun.mod</fz:attr>
+<fz:attr name='kicad module'>SparkFun-BATTCON_12MM</fz:attr>
+<fz:attr name='fritzing version'>0.4.1b.07.04.4318</fz:attr>
+<fz:attr name='conversion date'>17/07/2010 17:15:07</fz:attr>
+<fz:attr name='dist-license'>GPL</fz:attr>
+<fz:attr name='use-license'>unlimited</fz:attr>
+<fz:attr name='author'>KICAD project</fz:attr>
+<fz:attr name='license-url'>http://www.gnu.org/licenses/gpl.html</fz:attr>
+<fz:comment></fz:comment>
+<fz:attr name='keyword'></fz:attr>
+</rdf:Description></rdf:RDF></metadata><g id="copper1">
+ <rect width="1560" x="2945" y="1820" fill="#ffbf00" connectorname="GND" height="1560" id="connector0pad" stroke-width="0"/>
+ <rect width="1250" x="0" y="1975" fill="#ffbf00" connectorname="PWR@1" height="1250" id="connector1pad" stroke-width="0"/>
+ <rect width="1250" x="6200" y="1975" fill="#ffbf00" connectorname="PWR@2" height="1250" id="connector2pad" stroke-width="0"/>
+</g>
+<g id="silkscreen">
+ <line fill="none" stroke="white" y1="0" x1="2225" y2="0" stroke-width="50" x2="5225"/>
+ <line fill="none" stroke="white" y1="900" x1="6125" y2="3900" stroke-width="50" x2="6125"/>
+ <line fill="none" stroke="white" y1="3900" x1="6125" y2="5100" stroke-width="50" x2="4925"/>
+ <line fill="none" stroke="white" y1="5100" x1="4925" y2="5100" stroke-width="50" x2="2525"/>
+ <line fill="none" stroke="white" y1="5100" x1="2525" y2="3900" stroke-width="50" x2="1325"/>
+ <line fill="none" stroke="white" y1="3900" x1="1325" y2="900" stroke-width="50" x2="1325"/>
+ <path fill="none" stroke="white" stroke-width="25" d="M2225,0a900,900,0,0,0,-900,900"/>
+ <path fill="none" stroke="white" stroke-width="25" d="M6125,900a900,900,0,0,0,-900,-900"/>
+</g>
+</svg>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?><module fritzingVersion="0.2.0.b.02.26.2493" moduleId="c0e65b2d0c9003507cf4a3222e995a45">
+<version>4</version>
+    <author>Lionel Michel</author>
+    <title>Reed switch</title>
+    <label>S</label>
+    <date>2009-02-26</date>
+    <tags>
+        <tag>switch</tag>
+        <tag>magnet</tag>
+    </tags>
+    <properties>
+        <property name="family">Reed Switch</property>
+    <property name="package">THT</property>
+    </properties>
+    <description>Reed switch</description>
+    <views>
+        <iconView>
+            <layers image="icon/reed_switch.svg">
+                <layer layerId="icon"/>
+            </layers>
+        </iconView>
+        <breadboardView fliphorizontal="true" flipvertical="true">
+            <layers image="breadboard/reed_switch_leg.svg">
+                <layer layerId="breadboard"/>
+            </layers>
+        </breadboardView>
+         <schematicView fliphorizontal="true" flipvertical="true">
+            <layers image="schematic/reed_switch.svg">
+                <layer layerId="schematic"/>
+            </layers>
+        </schematicView>
+        <pcbView>
+            <layers image="pcb/axial_lay_2_500mil_pcb.svg">
+                <layer layerId="copper0"/>
+                <layer layerId="silkscreen"/>
+            <layer layerId="copper1"/></layers>
+        </pcbView>
+    </views>
+    <connectors>
+        <connector id="connector0" name="pin 1" type="male">
+            <description>Pin 1</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector0pin"  legId="connector0leg"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector0pin" terminalId="connector0terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector0pin"/>
+                <p layer="copper1" svgId="connector0pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector1" name="pin 2" type="male">
+            <description>Pin 2</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector1pin" legId="connector1leg"  />
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector1pin" terminalId="connector1terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector1pin"/>
+                <p layer="copper1" svgId="connector1pin"/></pcbView>
+            </views>
+        </connector>
+    </connectors>
+</module>

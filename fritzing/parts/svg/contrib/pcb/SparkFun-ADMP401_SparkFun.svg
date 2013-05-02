@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" x="0in" y="0in" width="0.1574in" height="0.2204in" viewBox="0 0 1574 2204" >
+<title>SparkFun.mod</title>
+<desc>Kicad module 'SparkFun-ADMP401' from file 'SparkFun.mod' converted by Fritzing</desc>
+<metadata xmlns:fz='http://fritzing.org/kicadmetadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+<rdf:RDF><rdf:Description rdf:about=''>
+<fz:attr name='kicad filename'>SparkFun.mod</fz:attr>
+<fz:attr name='kicad module'>SparkFun-ADMP401</fz:attr>
+<fz:attr name='fritzing version'>0.4.1b.07.04.4318</fz:attr>
+<fz:attr name='conversion date'>17/07/2010 17:15:04</fz:attr>
+<fz:attr name='dist-license'>GPL</fz:attr>
+<fz:attr name='use-license'>unlimited</fz:attr>
+<fz:attr name='author'>KICAD project</fz:attr>
+<fz:attr name='license-url'>http://www.gnu.org/licenses/gpl.html</fz:attr>
+<fz:comment></fz:comment>
+<fz:attr name='keyword'></fz:attr>
+</rdf:Description></rdf:RDF></metadata><g id="copper1">
+ <circle fill="#ffbf00" cx="1259" cy="315" connectorname="1" r="177" id="connector0pad" stroke-width="0"/>
+ <circle fill="#ffbf00" cx="1298" cy="1928" connectorname="2" r="137.5" id="connector1pad" stroke-width="0"/>
+ <circle fill="#ffbf00" cx="276" cy="1928" connectorname="4" r="137.5" id="connector3pad" stroke-width="0"/>
+ <circle fill="#ffbf00" cx="315" cy="315" connectorname="5" r="177" id="connector4pad" stroke-width="0"/>
+ <circle fill="#ffbf00" cx="787" cy="315" connectorname="6" r="177" id="connector5pad" stroke-width="0"/>
+</g>
+<g id="silkscreen">
+ <line fill="none" stroke="white" y1="40" x1="1535" y2="40" stroke-width="100" x2="39"/>
+ <line fill="none" stroke="white" y1="40" x1="39" y2="2165" stroke-width="100" x2="39"/>
+ <line fill="none" stroke="white" y1="2165" x1="39" y2="2165" stroke-width="100" x2="1535"/>
+ <line fill="none" stroke="white" y1="2165" x1="1535" y2="40" stroke-width="100" x2="1535"/>
+ <line fill="none" stroke="white" y1="1614" x1="0" y2="2204" stroke-width="100" x2="0"/>
+ <line fill="none" stroke="white" y1="2204" x1="0" y2="2204" stroke-width="100" x2="354"/>
+ <line fill="none" stroke="white" y1="433" x1="0" y2="0" stroke-width="100" x2="0"/>
+ <line fill="none" stroke="white" y1="0" x1="0" y2="0" stroke-width="100" x2="1574"/>
+ <line fill="none" stroke="white" y1="0" x1="1574" y2="433" stroke-width="100" x2="1574"/>
+ <line fill="none" stroke="white" y1="2204" x1="1220" y2="2204" stroke-width="100" x2="1574"/>
+ <line fill="none" stroke="white" y1="2204" x1="1574" y2="1614" stroke-width="100" x2="1574"/>
+ <circle fill="none" cx="787" cy="1614" stroke="white" r="186.676" stroke-width="104"/>
+ <circle fill="none" cx="787" cy="1614" stroke="white" r="83.4386" stroke-width="50"/>
+ <line fill="none" stroke="white" y1="1614" x1="669" y2="1614" stroke-width="50" x2="905"/>
+ <line fill="none" stroke="white" y1="1732" x1="787" y2="1496" stroke-width="50" x2="787"/>
+ <path fill="none" stroke="white" stroke-width="64.5" d="M564.724,1470.87a273.222,273.222,0,0,0,-30.7244,63.134"/>
+ <path fill="none" stroke="white" stroke-width="64.5" d="M1037.5,1528.65a273.222,273.222,0,0,0,-170.498,-167.651"/>
+ <path fill="none" stroke="white" stroke-width="64.5" d="M872.349,1864.5a273.222,273.222,0,0,0,167.651,-170.498"/>
+ <path fill="none" stroke="white" stroke-width="64.5" d="M564.724,1470.87a273.222,273.222,0,0,0,-30.7244,63.134"/>
+ <path fill="none" stroke="white" stroke-width="64.5" d="M944.134,1379.72a273.222,273.222,0,0,0,-237.134,487.276"/>
+</g>
+</svg>

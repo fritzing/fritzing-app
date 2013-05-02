@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.2" baseProfile="tiny"
+	 x="0px" y="0px" width="0.5in" height="0.5in"
+	 id="svg2">
+
+
+
+
+  <g
+     id="schematic"
+     style="display:inline">
+
+	<g>
+		<polygon points="3.291,35.879 3.291,33.879 15.123,33.879 15.123,7.796 15.125,6.795 17.124,6.795 17.124,35.879 		"/>
+		<polygon points="19.958,14.379 19.958,6.795 32.707,6.795 32.707,1.297 34.707,1.297 34.707,8.796 21.957,8.796 21.957,13.088 
+			21.957,14.379 		"/>
+		<polygon points="32.707,41.463 32.707,35.879 19.958,35.879 19.958,28.379 21.957,28.379 21.957,33.879 34.705,33.879 
+			34.705,40.463 34.707,41.463 		"/>
+		<line fill="none" x1="20.957" y1="17.254" x2="20.957" y2="25.338"/>
+		<polygon points="19.981,26.312 19.981,16.279 21.934,16.279 21.934,26.312 		"/>
+		<polygon points="30.77,17.419 20.875,21.042 30.77,25.172 		"/>
+		<line fill="none" x1="34.498" y1="21.042" x2="26.416" y2="21.042"/>
+		<polygon points="25.439,22.016 25.439,20.066 35.475,20.066 35.475,22.016 		"/>
+		<path d="M3.962,31.963h-0.75v-2.25h0.75v-0.75h3.75v0.75h-3v2.25h1.5v-0.75h-0.75v-0.75h2.25v2.25h-3.75V31.963z"/>
+		<path d="M39.67,2.213h0.75v2.25h-0.75v0.75h-3.75v-3.75h3.75V2.213z M38.92,2.213h-1.5v2.25h1.5V2.213z"/>
+		<path d="M38.006,38.297v0.75h2.25v0.75h0.75v0.75h-0.75v0.75h-3.75v-0.75h3v-0.75h-2.25v-0.75h-0.75v-0.75h0.75v-0.75h3.75v0.75
+			H38.006z"/>
+	</g>
+<rect id="connector0pin" x="3.292" y="34.083" width="8.5" height="1.584"/>
+<rect id="connector1pin" x="32.875" y="1.291" width="1.416" height="4.959"/>
+<rect id="connector1terminal" x="33.256" y="1.336" width="0.75" height="0.799"/>
+<rect id="connector0terminal" x="3.292" y="34.341" width="0.749" height="0.8"/>
+<rect id="connector2pin" x="32.891" y="36.416" width="1.416" height="4.96"/>
+<rect id="connector2terminal" x="33.271" y="40.523" width="0.75" height="0.799"/>
+</g>
+
+
+
+</svg>

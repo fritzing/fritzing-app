@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.1"
+   width="28.346457"
+   height="13.818897"
+   id="svg3617">
+  <defs
+     id="defs3619" />
+    <g
+       id="copper1">
+      <rect
+         width="9.2125988"
+         height="7.7952757"
+         x="0.70866144"
+         y="3.0118105"
+         id="connector1pad"
+         style="opacity:0.92000002;fill:#f7bd13;fill-opacity:1;stroke:none;stroke-width:0" />
+      <rect
+         width="9.2125988"
+         height="7.7952757"
+         x="18.425198"
+         y="3.0118105"
+         id="connector0pad"
+         style="opacity:0.92000002;fill:#f7bd13;fill-opacity:1;stroke:none;stroke-width:0" />
+    </g>
+    <g
+       id="silkscreen">
+      <path
+         d="m 4.4291339,0.17716496 0,2.30314964 -4.25196855,0 0,8.8582674 4.25196855,0 0,2.30315 19.4881891,0 0,-2.30315 4.251968,0 0,-8.8582674 -4.251968,0 0,-2.30314964 -19.4881891,0 z"
+         id="path4169"
+         style="fill:none;stroke:#ffffff;stroke-width:0.35433072;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <rect
+         width="3.1889763"
+         height="2.3031497"
+         x="5.3149605"
+         y="0.35433033"
+         id="rect4173"
+         style="opacity:0.92000002;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0" />
+      <rect
+         width="3.1889763"
+         height="2.3031497"
+         x="5.3149605"
+         y="11.161417"
+         id="rect4175"
+         style="opacity:0.92000002;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0" />
+    </g>
+
+</svg>

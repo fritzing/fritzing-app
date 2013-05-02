@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.1"
+   width="18.9"
+   height="18.9"
+   viewBox="0 0 210 210"
+   id="svg2">
+  <desc
+     id="desc4">Fritzing footprint SVG</desc>
+  <g id="copper1">
+    <g
+       id="copper0">
+      <rect
+         width="55"
+         height="55"
+         x="27.5"
+         y="77.5"
+         id="rect11"
+         style="fill:none;stroke:#ffbf00;stroke-width:20" />
+      <circle
+         cx="55"
+         cy="105"
+         r="27.5"
+         id="connector0pin"
+         style="fill:none;stroke:#ffbf00;stroke-width:20" />
+      <circle
+         cx="155"
+         cy="105"
+         r="27.5"
+         id="connector1pin"
+         style="fill:none;stroke:#ffbf00;stroke-width:20" />
+    </g>
+  </g>
+  <g id="keepout" />
+  <g id="soldermask" />
+  <g id="outline" />
+  <g id="silkscreen">
+      <circle
+         cx="105"
+         cy="105"
+         r="100"
+         id="circle7"
+         fill="none" stroke="#ffffff" stroke-width="10" />
+    <path
+       d="m 40,50 30,0"
+       fill="none" stroke="#ffffff" stroke-width="11" stroke-linecap="round" />
+    <path
+       d="m 40,160 30,0"
+       fill="none" stroke="#ffffff" stroke-width="11" stroke-linecap="round" />
+  </g>
+</svg>

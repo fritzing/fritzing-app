@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" x="0in" y="0in" width="2in" height="1.65in" viewBox="0 0 20000 16500" >
+<title>SparkFun.mod</title>
+<desc>Kicad module 'SparkFun-DUEMILANOVE_VIAS' from file 'SparkFun.mod' converted by Fritzing</desc>
+<metadata xmlns:fz='http://fritzing.org/kicadmetadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+<rdf:RDF><rdf:Description rdf:about=''>
+<fz:attr name='kicad filename'>SparkFun.mod</fz:attr>
+<fz:attr name='kicad module'>SparkFun-DUEMILANOVE_VIAS</fz:attr>
+<fz:attr name='fritzing version'>0.4.1b.07.04.4318</fz:attr>
+<fz:attr name='conversion date'>17/07/2010 17:15:33</fz:attr>
+<fz:attr name='dist-license'>GPL</fz:attr>
+<fz:attr name='use-license'>unlimited</fz:attr>
+<fz:attr name='author'>KICAD project</fz:attr>
+<fz:attr name='license-url'>http://www.gnu.org/licenses/gpl.html</fz:attr>
+<fz:comment></fz:comment>
+<fz:attr name='keyword'></fz:attr>
+</rdf:Description></rdf:RDF></metadata><g id="copper0">
+ <g id="copper1">
+  <g connectorname="3.3V" id="connector0pin">
+   <circle fill="none" cx="19500" cy="11500" stroke="#ff9400" r="285" stroke-width="170"/>
+  </g>
+  <g connectorname="5V" id="connector1pin">
+   <circle fill="none" cx="19500" cy="10500" stroke="#ff9400" r="285" stroke-width="170"/>
+  </g>
+  <g connectorname="A0" id="connector2pin">
+   <circle fill="none" cx="19500" cy="5500" stroke="#ff9400" r="285" stroke-width="170"/>
+  </g>
+  <g connectorname="A1" id="connector3pin">
+   <circle fill="none" cx="19500" cy="4500" stroke="#ff9400" r="285" stroke-width="170"/>
+  </g>
+  <g connectorname="A2" id="connector4pin">
+   <circle fill="none" cx="19500" cy="3500" stroke="#ff9400" r="285" stroke-width="170"/>
+  </g>
+  <g connectorname="A3" id="connector5pin">
+   <circle fill="none" cx="19500" cy="2500" stroke="#ff9400" r="285" stroke-width="170"/>
+  </g>
+  <g connectorname="A4" id="connector6pin">
+   <circle fill="none" cx="19500" cy="1500" stroke="#ff9400" r="285" stroke-width="170"/>
+  </g>
+  <g connectorname="A5" id="connector7pin">
+   <circle fill="none" cx="19500" cy="500" stroke="#ff9400" r="285" stroke-width="170"/>
+  </g>
+  <g connectorname="AREF" id="connector8pin">
+   <circle fill="none" cx="500" cy="16000" stroke="#ff9400" r="285" stroke-width="170"/>
+  </g>
+  <g connectorname="D2" id="connector9pin">
+   <circle fill="none" cx="500" cy="2500" stroke="#ff9400" r="285" stroke-width="170"/>
+  </g>
+  <g connectorname="D3" id="connector10pin">
+   <circle fill="none" cx="500" cy="3500" stroke="#ff9400" r="285" stroke-width="170"/>
+  </g>
+  <g connectorname="D4" id="connector11pin">
+   <circle fill="none" cx="500" cy="4500" stroke="#ff9400" r="285" stroke-width="170"/>
+  </g>
+  <g connectorname="D5" id="connector12pin">
+   <circle fill="none" cx="500" cy="5500" stroke="#ff9400" r="285" stroke-width="170"/>
+  </g>
+  <g connectorname="D6" id="connector13pin">
+   <circle fill="none" cx="500" cy="6500" stroke="#ff9400" r="285" stroke-width="170"/>
+  </g>
+  <g connectorname="D7" id="connector14pin">
+   <circle fill="none" cx="500" cy="7500" stroke="#ff9400" r="285" stroke-width="170"/>
+  </g>
+  <g connectorname="D8" id="connector15pin">
+   <circle fill="none" cx="500" cy="9000" stroke="#ff9400" r="285" stroke-width="170"/>
+  </g>
+  <g connectorname="D9" id="connector16pin">
+   <circle fill="none" cx="500" cy="10000" stroke="#ff9400" r="285" stroke-width="170"/>
+  </g>
+  <g connectorname="D10" id="connector17pin">
+   <circle fill="none" cx="500" cy="11000" stroke="#ff9400" r="285" stroke-width="170"/>
+  </g>
+  <g connectorname="D11" id="connector18pin">
+   <circle fill="none" cx="500" cy="12000" stroke="#ff9400" r="285" stroke-width="170"/>
+  </g>
+  <g connectorname="D12" id="connector19pin">
+   <circle fill="none" cx="500" cy="13000" stroke="#ff9400" r="285" stroke-width="170"/>
+  </g>
+  <g connectorname="D13" id="connector20pin">
+   <circle fill="none" cx="500" cy="14000" stroke="#ff9400" r="285" stroke-width="170"/>
+  </g>
+  <g connectorname="GND@0" id="connector21pin">
+   <circle fill="none" cx="19500" cy="9500" stroke="#ff9400" r="285" stroke-width="170"/>
+  </g>
+  <g connectorname="GND@1" id="connector22pin">
+   <circle fill="none" cx="19500" cy="8500" stroke="#ff9400" r="285" stroke-width="170"/>
+  </g>
+  <g connectorname="GND@2" id="connector23pin">
+   <circle fill="none" cx="500" cy="15000" stroke="#ff9400" r="285" stroke-width="170"/>
+  </g>
+  <g connectorname="RES" id="connector24pin">
+   <circle fill="none" cx="19500" cy="12500" stroke="#ff9400" r="285" stroke-width="170"/>
+  </g>
+  <g connectorname="RX" id="connector25pin">
+   <circle fill="none" cx="500" cy="500" stroke="#ff9400" r="285" stroke-width="170"/>
+  </g>
+  <g connectorname="TX" id="connector26pin">
+   <circle fill="none" cx="500" cy="1500" stroke="#ff9400" r="285" stroke-width="170"/>
+  </g>
+  <g connectorname="VIN" id="connector27pin">
+   <circle fill="none" cx="19500" cy="7500" stroke="#ff9400" r="285" stroke-width="170"/>
+  </g>
+ </g>
+</g>
+<g id="silkscreen">
+ <line fill="none" stroke="white" y1="0" x1="0" y2="0" stroke-width="50" x2="1000"/>
+ <line fill="none" stroke="white" y1="0" x1="1000" y2="8000" stroke-width="50" x2="1000"/>
+ <line fill="none" stroke="white" y1="8000" x1="1000" y2="8000" stroke-width="50" x2="0"/>
+ <line fill="none" stroke="white" y1="8000" x1="0" y2="0" stroke-width="50" x2="0"/>
+ <line fill="none" stroke="white" y1="8500" x1="0" y2="8500" stroke-width="50" x2="1000"/>
+ <line fill="none" stroke="white" y1="8500" x1="1000" y2="16500" stroke-width="50" x2="1000"/>
+ <line fill="none" stroke="white" y1="16500" x1="1000" y2="16500" stroke-width="50" x2="0"/>
+ <line fill="none" stroke="white" y1="16500" x1="0" y2="8500" stroke-width="50" x2="0"/>
+ <line fill="none" stroke="white" y1="0" x1="19000" y2="0" stroke-width="50" x2="20000"/>
+ <line fill="none" stroke="white" y1="0" x1="20000" y2="6000" stroke-width="50" x2="20000"/>
+ <line fill="none" stroke="white" y1="6000" x1="20000" y2="6000" stroke-width="50" x2="19000"/>
+ <line fill="none" stroke="white" y1="6000" x1="19000" y2="0" stroke-width="50" x2="19000"/>
+ <line fill="none" stroke="white" y1="7000" x1="19000" y2="7000" stroke-width="50" x2="20000"/>
+ <line fill="none" stroke="white" y1="7000" x1="20000" y2="13000" stroke-width="50" x2="20000"/>
+ <line fill="none" stroke="white" y1="13000" x1="20000" y2="13000" stroke-width="50" x2="19000"/>
+ <line fill="none" stroke="white" y1="13000" x1="19000" y2="7000" stroke-width="50" x2="19000"/>
+</g>
+</svg>

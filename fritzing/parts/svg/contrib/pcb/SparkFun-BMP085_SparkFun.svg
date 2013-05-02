@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" x="0in" y="0in" width="0.1968in" height="0.1968in" viewBox="0 0 1968 1968" >
+<title>SparkFun.mod</title>
+<desc>Kicad module 'SparkFun-BMP085' from file 'SparkFun.mod' converted by Fritzing</desc>
+<metadata xmlns:fz='http://fritzing.org/kicadmetadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+<rdf:RDF><rdf:Description rdf:about=''>
+<fz:attr name='kicad filename'>SparkFun.mod</fz:attr>
+<fz:attr name='kicad module'>SparkFun-BMP085</fz:attr>
+<fz:attr name='fritzing version'>0.4.1b.07.04.4318</fz:attr>
+<fz:attr name='conversion date'>17/07/2010 17:15:11</fz:attr>
+<fz:attr name='dist-license'>GPL</fz:attr>
+<fz:attr name='use-license'>unlimited</fz:attr>
+<fz:attr name='author'>KICAD project</fz:attr>
+<fz:attr name='license-url'>http://www.gnu.org/licenses/gpl.html</fz:attr>
+<fz:comment></fz:comment>
+<fz:attr name='keyword'></fz:attr>
+</rdf:Description></rdf:RDF></metadata><g id="copper1">
+ <rect width="314" x="15" y="155.5" fill="#ffbf00" connectorname="1" height="657" id="connector0pad" stroke-width="0"/>
+ <rect width="314" x="15" y="655.5" fill="#ffbf00" connectorname="2" height="657" id="connector1pad" stroke-width="0"/>
+ <rect width="314" x="15" y="1155.5" fill="#ffbf00" connectorname="3" height="657" id="connector2pad" stroke-width="0"/>
+ <rect width="657" x="655.5" y="1639" fill="#ffbf00" connectorname="4" height="314" id="connector3pad" stroke-width="0"/>
+ <rect width="314" x="1639" y="1155.5" fill="#ffbf00" connectorname="5" height="657" id="connector4pad" stroke-width="0"/>
+ <rect width="314" x="1639" y="655.5" fill="#ffbf00" connectorname="6" height="657" id="connector5pad" stroke-width="0"/>
+ <rect width="314" x="1639" y="155.5" fill="#ffbf00" connectorname="7" height="657" id="connector6pad" stroke-width="0"/>
+ <rect width="984" x="492" y="178" fill="#ffbf00" connectorname="8" height="314" id="connector7pad" stroke-width="0"/>
+</g>
+<g id="silkscreen">
+ <line fill="none" stroke="white" y1="0" x1="1968" y2="1968" stroke-width="50" x2="1968"/>
+ <line fill="none" stroke="white" y1="1968" x1="1968" y2="1968" stroke-width="50" x2="0"/>
+ <line fill="none" stroke="white" y1="0" x1="0" y2="1968" stroke-width="50" x2="0"/>
+ <line fill="none" stroke="white" y1="0" x1="1968" y2="0" stroke-width="50" x2="0"/>
+ <line fill="none" stroke="white" y1="0" x1="0" y2="236" stroke-width="50" x2="0"/>
+ <line fill="none" stroke="white" y1="0" x1="0" y2="0" stroke-width="50" x2="236"/>
+ <line fill="none" stroke="white" y1="0" x1="1968" y2="0" stroke-width="50" x2="1732"/>
+ <line fill="none" stroke="white" y1="0" x1="1968" y2="236" stroke-width="50" x2="1968"/>
+ <line fill="none" stroke="white" y1="1968" x1="0" y2="1732" stroke-width="50" x2="0"/>
+ <line fill="none" stroke="white" y1="1968" x1="0" y2="1968" stroke-width="50" x2="276"/>
+ <line fill="none" stroke="white" y1="1968" x1="1968" y2="1968" stroke-width="50" x2="1692"/>
+ <line fill="none" stroke="white" y1="1968" x1="1968" y2="1732" stroke-width="50" x2="1968"/>
+ <circle fill="none" cx="158" cy="158" stroke="white" r="55.1543" stroke-width="25"/>
+</g>
+</svg>

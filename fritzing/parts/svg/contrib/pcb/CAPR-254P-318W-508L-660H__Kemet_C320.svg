@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?> <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" x="0in" y="0in" width="0.2in" height="0.125in" viewBox="0 0 20000 12500" ><title>CAPR-254P-318W-508L-660H__Kemet_C320.fp</title><desc>Geda footprint file 'CAPR-254P-318W-508L-660H__Kemet_C320.fp' converted by Fritzing</desc><metadata xmlns:fz='http://fritzing.org/gedametadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'><rdf:RDF><rdf:Description rdf:about=''><fz:attr name='geda filename'>CAPR-254P-318W-508L-660H__Kemet_C320.fp</fz:attr>
+<fz:attr name='fritzing version'>0.4.0b.06.21.4282</fz:attr>
+<fz:attr name='conversion date'>27/06/2010 07:14:38</fz:attr>
+<fz:attr name='dist-license'>GPL</fz:attr>
+<fz:attr name='use-license'>unlimited</fz:attr>
+<fz:attr name='author'>gEDA project</fz:attr>
+<fz:attr name='license-url'>http://www.gnu.org/licenses/gpl.html</fz:attr>
+</rdf:Description></rdf:RDF></metadata><g id="copper0">
+ <g id="copper1">
+  <circle fill="none" cx="5000" cy="6250" connectorname="" stroke="#ff9400" r="2375" id="connector0pin" stroke-width="1250"/>
+  <circle fill="none" cx="15000" cy="6250" connectorname="" stroke="#ff9400" r="2375" id="connector1pin" stroke-width="1250"/>
+ </g>
+</g>
+<g id="silkscreen">
+ <line fill="none" stroke="white" y1="500" x1="500" y2="500" stroke-width="1000" x2="19500"/>
+ <line fill="none" stroke="white" y1="500" x1="500" y2="1750" stroke-width="1000" x2="500"/>
+ <line fill="none" stroke="white" y1="500" x1="19500" y2="1750" stroke-width="1000" x2="19500"/>
+ <line fill="none" stroke="white" y1="12000" x1="500" y2="12000" stroke-width="1000" x2="19500"/>
+ <line fill="none" stroke="white" y1="12000" x1="500" y2="10750" stroke-width="1000" x2="500"/>
+ <line fill="none" stroke="white" y1="12000" x1="19500" y2="10750" stroke-width="1000" x2="19500"/>
+</g>
+</svg>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="svg2" xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="36.017px"
+	 height="19.284px" viewBox="0 0 36.017 19.284" enable-background="new 0 0 36.017 19.284" xml:space="preserve">
+<g>
+	<path fill="none" stroke="#000000" stroke-width="0.9" stroke-linejoin="round" d="M28.8,12.967c0,2.2-1.8,4-4,4H11.2
+		c-2.2,0-4-1.8-4-4v-6.4c0-2.2,1.8-4,4-4h13.6c2.2,0,4,1.8,4,4V12.967z"/>
+</g>
+<g id="schematic">
+	<rect id="connector0pin" x="23.921" y="9.685" fill="none" width="4.561" height="0.882"/>
+	<rect id="connector0terminal" x="28.482" y="9.908" fill="none" width="0.318" height="0.404"/>
+	<rect id="connector1pin" x="0.287" y="9.687" fill="none" width="4.559" height="0.882"/>
+	<rect id="connector1terminal" x="-0.001" y="9.91" fill="none" width="0.32" height="0.404"/>
+	<rect id="connector2pin" x="23.921" y="9.685" fill="none" width="4.561" height="0.882"/>
+	<rect id="connector2terminal" x="28.482" y="9.908" fill="none" width="0.318" height="0.404"/>
+	<rect id="connector3pin" x="0.287" y="9.687" fill="none" width="4.559" height="0.882"/>
+	<rect id="connector3terminal" x="-0.001" y="9.91" fill="none" width="0.32" height="0.404"/>
+</g>
+<g id="schematic_1_">
+	<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="27.017" y1="10.127" x2="28.817" y2="10.127"/>
+	<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="17.754" y1="10.127" x2="27.017" y2="10.127"/>
+	<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="7.216" y1="10.127" x2="19.817" y2="6.528"/>
+	<circle fill="none" stroke="#000000" stroke-width="0.7" cx="7.216" cy="10.128" r="0.36"/>
+	<circle fill="none" stroke="#000000" stroke-width="0.7" cx="28.817" cy="10.128" r="0.36"/>
+	
+		<line id="connector0pin_1_" fill="none" stroke="#555555" stroke-width="0.7" stroke-linecap="round" x1="0.016" y1="10.127" x2="7.216" y2="10.127"/>
+	<rect id="connector0terminal_1_" x="0.016" y="10.127" fill="none" width="0.001" height="0.001"/>
+	
+		<line id="connector1pin_1_" fill="none" stroke="#555555" stroke-width="0.7" stroke-linecap="round" x1="36.017" y1="10.127" x2="28.817" y2="10.127"/>
+	<rect id="connector1terminal_1_" x="28.817" y="10.127" fill="none" width="0" height="0.001"/>
+</g>
+<text transform="matrix(1 0 0 1 2.5664 8.928)" fill="#787878" font-family="'DroidSans'" font-size="2">1</text>
+<text transform="matrix(1 0 0 1 31.437 8.928)" fill="#787878" font-family="'DroidSans'" font-size="2">2</text>
+</svg>

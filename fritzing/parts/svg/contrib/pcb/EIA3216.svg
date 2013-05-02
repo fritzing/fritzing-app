@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?> <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" x="0in" y="0in" width="0.197in" height="0.12in" viewBox="0 0 19700 12000" ><title>EIA3216.fp</title><desc>Geda footprint file 'EIA3216.fp' converted by Fritzing</desc><metadata xmlns:fz='http://fritzing.org/gedametadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'><rdf:RDF><rdf:Description rdf:about=''><fz:attr name='geda filename'>EIA3216.fp</fz:attr>
+<fz:attr name='fritzing version'>0.4.0b.06.21.4282</fz:attr>
+<fz:attr name='conversion date'>27/06/2010 07:15:35</fz:attr>
+<fz:comment>how much to grow the pads by for soldermask</fz:comment>
+<fz:comment>clearance from planes</fz:comment>
+<fz:attr name='dist-license'>GPL</fz:attr>
+<fz:attr name='use-license'>unlimited</fz:attr>
+<fz:attr name='author'>gEDA project</fz:attr>
+<fz:attr name='license-url'>http://www.gnu.org/licenses/gpl.html</fz:attr>
+</rdf:Description></rdf:RDF></metadata><g id="copper1">
+ <line fill="none" connectorname="1" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector0pad" y1="4200" x1="5600" y2="7800" stroke-width="4900" x2="5600"/>
+ <line fill="none" connectorname="2" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector1pad" y1="4200" x1="15600" y2="7800" stroke-width="4900" x2="15600"/>
+</g>
+<g id="silkscreen">
+ <line fill="none" stroke="white" y1="1700" x1="1000" y2="10300" stroke-width="2000" x2="1000"/>
+ <line fill="none" stroke="white" y1="10300" x1="1000" y2="11500" stroke-width="1000" x2="3400"/>
+ <line fill="none" stroke="white" y1="11500" x1="3400" y2="11500" stroke-width="1000" x2="19200"/>
+ <line fill="none" stroke="white" y1="11500" x1="19200" y2="500" stroke-width="1000" x2="19200"/>
+ <line fill="none" stroke="white" y1="500" x1="19200" y2="500" stroke-width="1000" x2="3400"/>
+ <line fill="none" stroke="white" y1="500" x1="3400" y2="1700" stroke-width="1000" x2="1000"/>
+</g>
+</svg>

@@ -1,0 +1,39 @@
+/* new parts editor  */
+
+#NewPartsEditorConnector0Frame {
+	background-color: #cccccc;
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+}
+
+#NewPartsEditorConnector1Frame {
+	background-color: #eeeeee;
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+}
+
+#NewPartsEditorConnectorFrame {
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+}
+
+
+#PESvgView {
+	background-color: #000000;
+	color: #000000;
+}
+
+#PEToolView {
+	background-color: #000000;
+	color: #000000;
+}
+
+QSplitter::handle {
+     height: 4px;
+     width: 4px;
+     color: #666666;
+     background-color: #666666;
+} 

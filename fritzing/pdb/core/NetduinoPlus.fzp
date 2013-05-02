@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="UTF-8"?><module fritzingVersion="0.4.2b.08.04.4392" moduleId="710CCDDF9B0340C2977584EE6F1F98F7">
+	<version>1.0</version>
+	<title>Netduino Plus</title>
+	<label>Netduino</label>
+	<date>2010-10-01</date>
+	<author>CW</author>
+	<tags>
+		<tag>Netduino</tag>
+		<tag>microcontroller</tag>
+		<tag>user part</tag>
+	</tags>
+	<properties>
+		<property name="family">Microcontroller Board (Netduino)</property>
+		<property name="processor">AT91SAM7X512</property>
+		<property name="variant">Netduino Plus</property>
+	</properties>
+	<description>An open-source electronics platform using the .NET Micro Framework</description>
+	<views>
+		<iconView>
+			<layers image="breadboard/NetduinoPlus.svg">
+				<layer layerId="icon"/>
+			</layers>
+		</iconView>
+		<breadboardView>
+			<layers image="breadboard/NetduinoPlus.svg">
+				<layer layerId="breadboardbreadboard"/>
+			</layers>
+		</breadboardView>
+		<schematicView>
+			<layers image="schematic/Netduino.svg">
+				<layer layerId="schematic"/>
+			</layers>
+		</schematicView>
+		<pcbView>
+			<layers image="pcb/pcb-arduino-diecimila-fp.svg">
+				<layer layerId="copper0"/>
+				<layer layerId="copper1"/>
+			</layers>
+		</pcbView>
+	</views>
+	<connectors>
+		<connector id="connector15" name="D0_RX0" type="female">
+			<description>Digital I/O 0 / Serial Recieve 0 [Max output current 16 mA]</description>
+			<views>
+				<breadboardView>
+					<p layer="breadboardbreadboard" svgId="connector15pin"/>
+				</breadboardView>
+				<schematicView>
+					<p layer="schematic" svgId="connector15pin" terminalId="connector15terminal"/>
+				</schematicView>
+				<pcbView>
+					<p layer="copper0" svgId="connector15pin"/>
+					<p layer="copper1" svgId="connector15pin"/>
+				</pcbView>
+			</views>
+		</connector>
+		<connector id="connector14" name="D1_TX0" type="female">
+			<description>Digital I/O 1 / Serial Transmit 0 [Max output current 16 mA]</description>
+			<views>
+				<breadboardView>
+					<p layer="breadboardbreadboard" svgId="connector14pin"/>
+				</breadboardView>
+				<schematicView>
+					<p layer="schematic" svgId="connector14pin" terminalId="connector14terminal"/>
+				</schematicView>
+				<pcbView>
+					<p layer="copper0" svgId="connector14pin"/>
+					<p layer="copper1" svgId="connector14pin"/>
+				</pcbView>
+			</views>
+		</connector>
+		<connector id="connector13" name="D2_RX1" type="female">
+			<description>Digital I/O 2 / Serial Receive 1 [Max output current 8 mA]</description>
+			<views>
+				<breadboardView>
+					<p layer="breadboardbreadboard" svgId="connector13pin"/>
+				</breadboardView>
+				<schematicView>
+					<p layer="schematic" svgId="connector13pin" terminalId="connector13terminal"/>
+				</schematicView>
+				<pcbView>
+					<p layer="copper0" svgId="connector13pin"/>
+					<p layer="copper1" svgId="connector13pin"/>
+				</pcbView>
+			</views>
+		</connector>
+		<connector id="connector12" name="D3_TX1" type="female">
+			<description>Digital I/O 3 / Serial Transmit 1 [Max output current 8 mA]</description>
+			<views>
+				<breadboardView>
+					<p layer="breadboardbreadboard" svgId="connector12pin"/>
+				</breadboardView>
+				<schematicView>
+					<p layer="schematic" svgId="connector12pin" terminalId="connector12terminal"/>
+				</schematicView>
+				<pcbView>
+					<p layer="copper0" svgId="connector12pin"/>
+					<p layer="copper1" svgId="connector12pin"/>
+				</pcbView>
+			</views>
+		</connector>
+		<connector id="connector11" name="D4_CS0" type="female">
+			<description>Digital I/O 4 / SPI Chip Select 0 / SPI Slave Select [Max output current 8 mA]</description>
+			<views>
+				<breadboardView>
+					<p layer="breadboardbreadboard" svgId="connector11pin"/>
+				</breadboardView>
+				<schematicView>
+					<p layer="schematic" svgId="connector11pin" terminalId="connector11terminal"/>
+				</schematicView>
+				<pcbView>
+					<p layer="copper0" svgId="connector11pin"/>
+					<p layer="copper1" svgId="connector11pin"/>
+				</pcbView>
+			</views>
+		</connector>
+		<connector id="connector10" name="D5_PWM0" type="female">
+			<description>Digital I/O 5 / PWM Output 0 [Max output current 8 mA]</description>
+			<views>
+				<breadboardView>
+					<p layer="breadboardbreadboard" svgId="connector10pin"/>
+				</breadboardView>
+				<schematicView>
+					<p layer="schematic" svgId="connector10pin" terminalId="connector10terminal"/>
+				</schematicView>
+				<pcbView>
+					<p layer="copper0" svgId="connector10pin"/>
+					<p layer="copper1" svgId="connector10pin"/>
+				</pcbView>
+			</views>
+		</connector>
+		<connector id="connector9" name="D6_PWM1" type="female">
+			<description>Digital I/O 6 / PWM Output 1 [Max output current 8 mA]</description>
+			<views>
+				<breadboardView>
+					<p layer="breadboardbreadboard" svgId="connector9pin"/>
+				</breadboardView>
+				<schematicView>
+					<p layer="schematic" svgId="connector9pin" terminalId="connector9terminal"/>
+				</schematicView>
+				<pcbView>
+					<p layer="copper0" svgId="connector9pin"/>
+					<p layer="copper1" svgId="connector9pin"/>
+				</pcbView>
+			</views>
+		</connector>
+		<connector id="connector8" name="D7_RTS1" type="female">
+			<description>Digital I/O 7 / Serial Request To Send 1 [Max output current 16 mA]</description>
+			<views>
+				<breadboardView>
+					<p layer="breadboardbreadboard" svgId="connector8pin"/>
+				</breadboardView>
+				<schematicView>
+					<p layer="schematic" svgId="connector8pin" terminalId="connector8terminal"/>
+				</schematicView>
+				<pcbView>
+					<p layer="copper0" svgId="connector8pin"/>
+					<p layer="copper1" svgId="connector8pin"/>
+				</pcbView>
+			</views>
+		</connector>
+		<connector id="connector7" name="D8_CTS1" type="female">
+			<description>Digital I/O 8 / Serial Clear To Send 1 [Max output current 8 mA]</description>
+			<views>
+				<breadboardView>
+					<p layer="breadboardbreadboard" svgId="connector7pin"/>
+				</breadboardView>
+				<schematicView>
+					<p layer="schematic" svgId="connector7pin" terminalId="connector7terminal"/>
+				</schematicView>
+				<pcbView>
+					<p layer="copper0" svgId="connector7pin"/>
+					<p layer="copper1" svgId="connector7pin"/>
+				</pcbView>
+			</views>
+		</connector>
+		<connector id="connector6" name="D9_PWM2" type="female">
+			<description>Digital I/O 9 / PWM Output 2 [Max output current 8 mA]</description>
+			<views>
+				<breadboardView>
+					<p layer="breadboardbreadboard" svgId="connector6pin"/>
+				</breadboardView>
+				<schematicView>
+					<p layer="schematic" svgId="connector6pin" terminalId="connector6terminal"/>
+				</schematicView>
+				<pcbView>
+					<p layer="copper0" svgId="connector6pin"/>
+					<p layer="copper1" svgId="connector6pin"/>
+				</pcbView>
+			</views>
+		</connector>
+		<connector id="connector5" name="D10_PWM3" type="female">
+			<description>Digital I/O 10 / PWM Output 3 [Max output current 8 mA]</description>
+			<views>
+				<breadboardView>
+					<p layer="breadboardbreadboard" svgId="connector5pin"/>
+				</breadboardView>
+				<schematicView>
+					<p layer="schematic" svgId="connector5pin" terminalId="connector5terminal"/>
+				</schematicView>
+				<pcbView>
+					<p layer="copper0" svgId="connector5pin"/>
+					<p layer="copper1" svgId="connector5pin"/>
+				</pcbView>
+			</views>
+		</connector>
+		<connector id="connector4" name="D11_MOSI" type="female">
+			<description>Digital I/O 11 / SPI Master Out Slave In [Max output current 8 mA]</description>
+			<views>
+				<breadboardView>
+					<p layer="breadboardbreadboard" svgId="connector4pin"/>
+				</breadboardView>
+				<schematicView>
+					<p layer="schematic" svgId="connector4pin" terminalId="connector4terminal"/>
+				</schematicView>
+				<pcbView>
+					<p layer="copper0" svgId="connector4pin"/>
+					<p layer="copper1" svgId="connector4pin"/>
+				</pcbView>
+			</views>
+		</connector>
+		<connector id="connector3" name="D12_MISO" type="female">
+			<description>Digital I/O 12 / SPI Master In Slave Out [Max output current 8 mA]</description>
+			<views>
+				<breadboardView>
+					<p layer="breadboardbreadboard" svgId="connector3pin"/>
+				</breadboardView>
+				<schematicView>
+					<p layer="schematic" svgId="connector3pin" terminalId="connector3terminal"/>
+				</schematicView>
+				<pcbView>
+					<p layer="copper0" svgId="connector3pin"/>
+					<p layer="copper1" svgId="connector3pin"/>
+				</pcbView>
+			</views>
+		</connector>
+		<connector id="connector2" name="D13_SPCK" type="female">
+			<description>Digital I/O 13 / SPI Clock [Max output current 8 mA]</description>
+			<views>
+				<breadboardView>
+					<p layer="breadboardbreadboard" svgId="connector2pin"/>
+				</breadboardView>
+				<schematicView>
+					<p layer="schematic" svgId="connector2pin" terminalId="connector2terminal"/>
+				</schematicView>
+				<pcbView>
+					<p layer="copper0" svgId="connector2pin"/>
+					<p layer="copper1" svgId="connector2pin"/>
+				</pcbView>
+			</views>
+		</connector>
+		<connector id="connector0" name="Aref" type="female">
+			<description>Analog-to-Digital Converter reference voltage [Connect to 3.3V]</description>
+			<views>
+				<breadboardView>
+					<p layer="breadboardbreadboard" svgId="connector0pin"/>
+				</breadboardView>
+				<schematicView>
+					<p layer="schematic" svgId="connector0pin" terminalId="connector0terminal"/>
+				</schematicView>
+				<pcbView>
+					<p layer="copper0" svgId="connector0pin"/>
+					<p layer="copper1" svgId="connector0pin"/>
+				</pcbView>
+			</views>
+		</connector>
+		<connector id="connector16" name="RST" type="female">
+			<description>Reset [Active logic LOW]</description>
+			<views>
+				<breadboardView>
+					<p layer="breadboardbreadboard" svgId="connector16pin"/>
+				</breadboardView>
+				<schematicView>
+					<p layer="schematic" svgId="connector16pin" terminalId="connector16terminal"/>
+				</schematicView>
+				<pcbView>
+					<p layer="copper0" svgId="connector16pin"/>
+					<p layer="copper1" svgId="connector16pin"/>
+				</pcbView>
+			</views>
+		</connector>
+		<connector id="connector17" name="3V3" type="female">
+			<description>+3.3V DC</description>
+			<views>
+				<breadboardView>
+					<p layer="breadboardbreadboard" svgId="connector17pin"/>
+				</breadboardView>
+				<schematicView>
+					<p layer="schematic" svgId="connector17pin" terminalId="connector17terminal"/>
+				</schematicView>
+				<pcbView>
+					<p layer="copper0" svgId="connector17pin"/>
+					<p layer="copper1" svgId="connector17pin"/>
+				</pcbView>
+			</views>
+		</connector>
+		<connector id="connector18" name="+5V" type="female">
+			<description>+5V Regulated DC</description>
+			<views>
+				<breadboardView>
+					<p layer="breadboardbreadboard" svgId="connector18pin"/>
+				</breadboardView>
+				<schematicView>
+					<p layer="schematic" svgId="connector18pin" terminalId="connector18terminal"/>
+				</schematicView>
+				<pcbView>
+					<p layer="copper0" svgId="connector18pin"/>
+					<p layer="copper1" svgId="connector18pin"/>
+				</pcbView>
+			</views>
+		</connector>
+		<connector id="connector19" name="GND" type="female">
+			<description>Ground</description>
+			<views>
+				<breadboardView>
+					<p layer="breadboardbreadboard" svgId="connector19pin"/>
+				</breadboardView>
+				<schematicView>
+					<p layer="schematic" svgId="connector19pin" terminalId="connector19terminal"/>
+				</schematicView>
+				<pcbView>
+					<p layer="copper0" svgId="connector19pin"/>
+					<p layer="copper1" svgId="connector19pin"/>
+				</pcbView>
+			</views>
+		</connector>
+		<connector id="connector20" name="GND" type="female">
+			<description>Ground</description>
+			<views>
+				<breadboardView>
+					<p layer="breadboardbreadboard" svgId="connector20pin"/>
+				</breadboardView>
+				<schematicView>
+					<p layer="schematic" svgId="connector20pin" terminalId="connector20terminal"/>
+				</schematicView>
+				<pcbView>
+					<p layer="copper0" svgId="connector20pin"/>
+					<p layer="copper1" svgId="connector20pin"/>
+				</pcbView>
+			</views>
+		</connector>
+		<connector id="connector21" name="VIN" type="female">
+			<description>DC Supply Voltage Input</description>
+			<views>
+				<breadboardView>
+					<p layer="breadboardbreadboard" svgId="connector21pin"/>
+				</breadboardView>
+				<schematicView>
+					<p layer="schematic" svgId="connector21pin" terminalId="connector21terminal"/>
+				</schematicView>
+				<pcbView>
+					<p layer="copper0" svgId="connector21pin"/>
+					<p layer="copper1" svgId="connector21pin"/>
+				</pcbView>
+			</views>
+		</connector>
+		<connector id="connector22" name="A0" type="female">
+			<description>Analog Input 0 / Digital I/O [Max output current 2 mA]</description>
+			<views>
+				<breadboardView>
+					<p layer="breadboardbreadboard" svgId="connector22pin"/>
+				</breadboardView>
+				<schematicView>
+					<p layer="schematic" svgId="connector22pin" terminalId="connector22terminal"/>
+				</schematicView>
+				<pcbView>
+					<p layer="copper0" svgId="connector22pin"/>
+					<p layer="copper1" svgId="connector22pin"/>
+				</pcbView>
+			</views>
+		</connector>
+		<connector id="connector23" name="A1" type="female">
+			<description>Analog Input 1 / Digital I/O [Max output current 2 mA]</description>
+			<views>
+				<breadboardView>
+					<p layer="breadboardbreadboard" svgId="connector23pin"/>
+				</breadboardView>
+				<schematicView>
+					<p layer="schematic" svgId="connector23pin" terminalId="connector23terminal"/>
+				</schematicView>
+				<pcbView>
+					<p layer="copper0" svgId="connector23pin"/>
+					<p layer="copper1" svgId="connector23pin"/>
+				</pcbView>
+			</views>
+		</connector>
+		<connector id="connector24" name="A2" type="female">
+			<description>Analog Input 2 / Digital I/O [Max output current 2 mA]</description>
+			<views>
+				<breadboardView>
+					<p layer="breadboardbreadboard" svgId="connector24pin"/>
+				</breadboardView>
+				<schematicView>
+					<p layer="schematic" svgId="connector24pin" terminalId="connector24terminal"/>
+				</schematicView>
+				<pcbView>
+					<p layer="copper0" svgId="connector24pin"/>
+					<p layer="copper1" svgId="connector24pin"/>
+				</pcbView>
+			</views>
+		</connector>
+		<connector id="connector25" name="A3" type="female">
+			<description>Analog Input 3 / Digital I/O [Max output current 2 mA]</description>
+			<views>
+				<breadboardView>
+					<p layer="breadboardbreadboard" svgId="connector25pin"/>
+				</breadboardView>
+				<schematicView>
+					<p layer="schematic" svgId="connector25pin" terminalId="connector25terminal"/>
+				</schematicView>
+				<pcbView>
+					<p layer="copper0" svgId="connector25pin"/>
+					<p layer="copper1" svgId="connector25pin"/>
+				</pcbView>
+			</views>
+		</connector>
+		<connector id="connector26" name="A4_TWD" type="female">
+			<description>Analog Input 4 / Two Wire Data [Max output current 8 mA]</description>
+			<views>
+				<breadboardView>
+					<p layer="breadboardbreadboard" svgId="connector26pin"/>
+				</breadboardView>
+				<schematicView>
+					<p layer="schematic" svgId="connector26pin" terminalId="connector26terminal"/>
+				</schematicView>
+				<pcbView>
+					<p layer="copper0" svgId="connector26pin"/>
+					<p layer="copper1" svgId="connector26pin"/>
+				</pcbView>
+			</views>
+		</connector>
+		<connector id="connector27" name="A5_TWCK" type="female">
+			<description>Analog Input 5 / Two Wire Clock [Max output current 8 mA]</description>
+			<views>
+				<breadboardView>
+					<p layer="breadboardbreadboard" svgId="connector27pin"/>
+				</breadboardView>
+				<schematicView>
+					<p layer="schematic" svgId="connector27pin" terminalId="connector27terminal"/>
+				</schematicView>
+				<pcbView>
+					<p layer="copper0" svgId="connector27pin"/>
+					<p layer="copper1" svgId="connector27pin"/>
+				</pcbView>
+			</views>
+		</connector>
+		<connector id="connector1" name="GND" type="female">
+			<description>Ground</description>
+			<views>
+				<breadboardView>
+					<p layer="breadboardbreadboard" svgId="connector1pin"/>
+				</breadboardView>
+				<schematicView>
+					<p layer="schematic" svgId="connector1pin" terminalId="connector1terminal"/>
+				</schematicView>
+				<pcbView>
+					<p layer="copper0" svgId="connector1pin"/>
+					<p layer="copper1" svgId="connector1pin"/>
+				</pcbView>
+			</views>
+		</connector>
+	</connectors>
+</module>

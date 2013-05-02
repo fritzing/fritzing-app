@@ -1,0 +1,187 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg width="2.04in" version="1.2" xmlns="http://www.w3.org/2000/svg" height="0.704in" viewBox="0 0 20400 7040" id="svg2" xmlns:svg="http://www.w3.org/2000/svg">
+ <title id="title4">teensypp.mod</title>
+ <desc id="desc6">Kicad module 'teensypp-TEENSY++' from file 'teensypp.mod' converted by Fritzing</desc>
+ <defs id="defs201"/>
+ <g id="copper0">
+  <g id="copper1">
+   <g id="connector42pin">
+    <circle cx="900" cy="520" style="fill:none;stroke:#ff9400;;stroke-width:172" r="278.46" id="circle13"/>
+   </g>
+   <g id="connector20pin">
+    <circle cx="19900" cy="4520" style="fill:none;stroke:#ff9400;;stroke-width:172" r="278.46" id="circle16"/>
+   </g>
+   <g id="connector49pin">
+    <circle cx="13900" cy="3520" style="fill:none;stroke:#ff9400;;stroke-width:172" r="278.46" id="circle19"/>
+   </g>
+   <g id="connector50pin">
+    <circle cx="14900" cy="3520" style="fill:none;stroke:#ff9400;;stroke-width:172" r="278.46" id="circle22"/>
+   </g>
+   <g id="connector51pin">
+    <circle cx="15900" cy="3520" style="fill:none;stroke:#ff9400;;stroke-width:172" r="278.46" id="circle25"/>
+   </g>
+   <g id="connector52pin">
+    <circle cx="16900" cy="3520" style="fill:none;stroke:#ff9400;;stroke-width:172" r="278.46" id="circle28"/>
+   </g>
+   <g id="connector45pin">
+    <circle cx="13900" cy="2520" style="fill:none;stroke:#ff9400;;stroke-width:172" r="278.46" id="circle31"/>
+   </g>
+   <g id="connector46pin">
+    <circle cx="14900" cy="2520" style="fill:none;stroke:#ff9400;;stroke-width:172" r="278.46" id="circle34"/>
+   </g>
+   <g id="connector47pin">
+    <circle cx="15900" cy="2520" style="fill:none;stroke:#ff9400;;stroke-width:172" r="278.46" id="circle37"/>
+   </g>
+   <g id="connector48pin">
+    <circle cx="16900" cy="2520" style="fill:none;stroke:#ff9400;;stroke-width:172" r="278.46" id="circle40"/>
+   </g>
+   <g id="connector35pin">
+    <circle cx="7900" cy="520" style="fill:none;stroke:#ff9400;;stroke-width:172" r="278.46" id="circle43"/>
+   </g>
+   <g id="connector36pin">
+    <circle cx="6900" cy="520" style="fill:none;stroke:#ff9400;;stroke-width:172" r="278.46" id="circle46"/>
+   </g>
+   <g id="connector37pin">
+    <circle cx="5900" cy="520" style="fill:none;stroke:#ff9400;;stroke-width:172" r="278.46" id="circle49"/>
+   </g>
+   <g id="connector38pin">
+    <circle cx="4900" cy="520" style="fill:none;stroke:#ff9400;;stroke-width:172" r="278.46" id="circle52"/>
+   </g>
+   <g id="connector39pin">
+    <circle cx="3900" cy="520" style="fill:none;stroke:#ff9400;;stroke-width:172" r="278.46" id="circle55"/>
+   </g>
+   <g id="connector40pin">
+    <circle cx="2900" cy="520" style="fill:none;stroke:#ff9400;;stroke-width:172" r="278.46" id="circle58"/>
+   </g>
+   <g id="connector41pin">
+    <circle cx="1900" cy="520" style="fill:none;stroke:#ff9400;;stroke-width:172" r="278.46" id="circle61"/>
+   </g>
+   <g id="connector1pin">
+    <circle cx="1900" cy="6520" style="fill:none;stroke:#ff9400;;stroke-width:172" r="278.46" id="circle64"/>
+   </g>
+   <g id="connector12pin">
+    <circle cx="12900" cy="6520" style="fill:none;stroke:#ff9400;;stroke-width:172" r="278.46" id="circle67"/>
+   </g>
+   <g id="connector13pin">
+    <circle cx="13900" cy="6520" style="fill:none;stroke:#ff9400;;stroke-width:172" r="278.46" id="circle70"/>
+   </g>
+   <g id="connector14pin">
+    <circle cx="14900" cy="6520" style="fill:none;stroke:#ff9400;;stroke-width:172" r="278.46" id="circle73"/>
+   </g>
+   <g id="connector15pin">
+    <circle cx="15900" cy="6520" style="fill:none;stroke:#ff9400;;stroke-width:172" r="278.46" id="circle76"/>
+   </g>
+   <g id="connector16pin">
+    <circle cx="16900" cy="6520" style="fill:none;stroke:#ff9400;;stroke-width:172" r="278.46" id="circle79"/>
+   </g>
+   <g id="connector17pin">
+    <circle cx="17900" cy="6520" style="fill:none;stroke:#ff9400;;stroke-width:172" r="278.46" id="circle82"/>
+   </g>
+   <g id="connector18pin">
+    <circle cx="18900" cy="6520" style="fill:none;stroke:#ff9400;;stroke-width:172" r="278.46" id="circle85"/>
+   </g>
+   <g id="connector19pin">
+    <circle cx="19900" cy="6520" style="fill:none;stroke:#ff9400;;stroke-width:172" r="278.46" id="circle88"/>
+   </g>
+   <g id="connector2pin">
+    <circle cx="2900" cy="6520" style="fill:none;stroke:#ff9400;;stroke-width:172" r="278.46" id="circle91"/>
+   </g>
+   <g id="connector3pin">
+    <circle cx="3900" cy="6520" style="fill:none;stroke:#ff9400;;stroke-width:172" r="278.46" id="circle94"/>
+   </g>
+   <g id="connector4pin">
+    <circle cx="4900" cy="6520" style="fill:none;stroke:#ff9400;;stroke-width:172" r="278.46" id="circle97"/>
+   </g>
+   <g id="connector5pin">
+    <circle cx="5900" cy="6520" style="fill:none;stroke:#ff9400;;stroke-width:172" r="278.46" id="circle100"/>
+   </g>
+   <g id="connector6pin">
+    <circle cx="6900" cy="6520" style="fill:none;stroke:#ff9400;;stroke-width:172" r="278.46" id="circle103"/>
+   </g>
+   <g id="connector7pin">
+    <circle cx="7900" cy="6520" style="fill:none;stroke:#ff9400;;stroke-width:172" r="278.46" id="circle106"/>
+   </g>
+   <g id="connector8pin">
+    <circle cx="8900" cy="6520" style="fill:none;stroke:#ff9400;;stroke-width:172" r="278.46" id="circle109"/>
+   </g>
+   <g id="connector9pin">
+    <circle cx="9900" cy="6520" style="fill:none;stroke:#ff9400;;stroke-width:172" r="278.46" id="circle112"/>
+   </g>
+   <g id="connector10pin">
+    <circle cx="10900" cy="6520" style="fill:none;stroke:#ff9400;;stroke-width:172" r="278.46" id="circle115"/>
+   </g>
+   <g id="connector11pin">
+    <circle cx="11900" cy="6520" style="fill:none;stroke:#ff9400;;stroke-width:172" r="278.46" id="circle118"/>
+   </g>
+   <g id="connector43pin">
+    <circle cx="6800" cy="3160" style="fill:none;stroke:#ff9400;stroke-width:85" r="167.5" id="circle3053"/>
+   </g>
+   <g id="connector44pin">
+    <circle cx="6800" cy="3680" style="fill:none;stroke:#ff9400;stroke-width:85" r="167.5" id="circle124"/>
+   </g>
+   <g id="connector33pin">
+    <circle cx="9900" cy="520" style="fill:none;stroke:#ff9400;;stroke-width:172" r="278.46" id="circle127"/>
+   </g>
+   <g id="connector34pin">
+    <circle cx="8900" cy="520" style="fill:none;stroke:#ff9400;;stroke-width:172" r="278.46" id="circle130"/>
+   </g>
+   <g id="connector30pin">
+    <circle cx="12900" cy="520" style="fill:none;stroke:#ff9400;;stroke-width:172" r="278.46" id="circle133"/>
+   </g>
+   <g id="connector29pin">
+    <circle cx="13900" cy="520" style="fill:none;stroke:#ff9400;;stroke-width:172" r="278.46" id="circle136"/>
+   </g>
+   <g id="connector28pin">
+    <circle cx="14900" cy="520" style="fill:none;stroke:#ff9400;;stroke-width:172" r="278.46" id="circle139"/>
+   </g>
+   <g id="connector27pin">
+    <circle cx="15900" cy="520" style="fill:none;stroke:#ff9400;;stroke-width:172" r="278.46" id="circle142"/>
+   </g>
+   <g id="connector26pin">
+    <circle cx="16900" cy="520" style="fill:none;stroke:#ff9400;;stroke-width:172" r="278.46" id="circle145"/>
+   </g>
+   <g id="connector25pin">
+    <circle cx="17900" cy="520" style="fill:none;stroke:#ff9400;;stroke-width:172" r="278.46" id="circle148"/>
+   </g>
+   <g id="connector24pin">
+    <circle cx="18900" cy="520" style="fill:none;stroke:#ff9400;;stroke-width:172" r="278.46" id="circle151"/>
+   </g>
+   <g id="connector23pin">
+    <circle cx="19900" cy="520" style="fill:none;stroke:#ff9400;;stroke-width:172" r="278.46" id="circle154"/>
+   </g>
+   <g id="connector0pin">
+    <circle cx="900" cy="6520" style="fill:none;stroke:#ff9400;;stroke-width:172" r="278.46" id="circle157"/>
+   </g>
+   <g id="connector21pin">
+    <circle cx="19900" cy="3520" style="fill:none;stroke:#ff9400;;stroke-width:172" r="278.46" id="circle160"/>
+   </g>
+   <g id="connector32pin">
+    <circle cx="10900" cy="520" style="fill:none;stroke:#ff9400;;stroke-width:172" r="278.46" id="circle163"/>
+   </g>
+   <g id="connector31pin">
+    <circle cx="11900" cy="520" style="fill:none;stroke:#ff9400;;stroke-width:172" r="278.46" id="circle166"/>
+   </g>
+   <g id="connector22pin">
+    <circle cx="19900" cy="2520" style="fill:none;stroke:#ff9400;;stroke-width:172" r="278.46" id="circle169"/>
+   </g>
+   <g id="connector53pin">
+    <circle cx="16900" cy="4520" style="fill:none;stroke:#ff9400;;stroke-width:172" r="278.46" id="circle172"/>
+   </g>
+  </g>
+ </g>
+ <g id="silkscreen">
+  <line fill="none" stroke="white" style="fill:none;stroke:#ffffff;stroke-width:60" id="line175" y1="20" x1="20400" y2="20" stroke-width="60" x2="400"/>
+  <line fill="none" stroke="white" style="fill:none;stroke:#ffffff;stroke-width:60" id="line177" y1="7020" x1="400" y2="7020" stroke-width="60" x2="20400"/>
+  <line fill="none" stroke="white" style="fill:none;stroke:#ffffff;stroke-width:60" id="line179" y1="20" x1="20400" y2="1020" stroke-width="60" x2="20400"/>
+  <line fill="none" stroke="white" style="fill:none;stroke:#ffffff;stroke-width:60" id="line181" y1="20" x1="400" y2="1020" stroke-width="60" x2="400"/>
+  <line fill="none" stroke="white" style="fill:none;stroke:#ffffff;stroke-width:60" id="line183" y1="7020" x1="400" y2="6020" stroke-width="60" x2="400"/>
+  <line fill="none" stroke="white" style="fill:none;stroke:#ffffff;stroke-width:60" id="line185" y1="1020" x1="400" y2="3120" stroke-width="60" x2="400"/>
+  <line fill="none" stroke="white" style="fill:none;stroke:#ffffff;stroke-width:60" id="line187" y1="1020" x1="20400" y2="6020" stroke-width="60" x2="20400"/>
+  <line fill="none" stroke="white" style="fill:none;stroke:#ffffff;stroke-width:60" id="line189" y1="6020" x1="400" y2="6020" stroke-width="60" x2="20400"/>
+  <line fill="none" stroke="white" style="fill:none;stroke:#ffffff;stroke-width:60" id="line191" y1="6020" x1="400" y2="3920" stroke-width="60" x2="400"/>
+  <line fill="none" stroke="white" style="fill:none;stroke:#ffffff;stroke-width:60" id="line193" y1="6020" x1="20400" y2="7020" stroke-width="60" x2="20400"/>
+  <line fill="none" stroke="white" style="fill:none;stroke:#ffffff;stroke-width:60" id="line195" y1="1020" x1="400" y2="1020" stroke-width="60" x2="20400"/>
+  <path style="fill:none;stroke:#ffffff;stroke-width:30" id="path197" d="m 400,3920 a 400,400 0 1 0 0,-800"/>
+ </g>
+</svg>

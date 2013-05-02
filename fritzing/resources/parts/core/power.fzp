@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module moduleId="JustPowerModuleID" >
+ <version replacedby="PowerLabelModuleID" >4</version>
+ <author>Brendan Howell</author>
+ <title>Power</title>
+ <date>2008-07-28</date>
+ <label>Power</label>
+ <tags>
+   <tag>power</tag>
+   <tag>symbol</tag>
+   <tag>fritzing core</tag>
+ </tags>
+ <properties>
+   <property name="family">power symbol</property>
+   <property name="type">voltage reference</property>
+   <property name="voltage">5</property>
+ </properties>
+ <taxonomy>discreteParts.power.power.power</taxonomy>
+ <description>A generic power symbol</description>
+ <views>
+  <defaultUnits>cmil</defaultUnits>
+  <iconView>
+   <layers image="icon/power.svg" >
+    <layer layerId="icon" />
+   </layers>
+  </iconView>
+  <breadboardView>
+   <layers image="schematic/power.svg" >
+    <layer layerId="schematic" />
+   </layers>
+  </breadboardView>
+   <schematicView flipvertical="true">
+   <layers image="schematic/power.svg" >
+     <layer layerId="schematic" />
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="schematic/power.svg" >
+    <layer layerId="schematic" />
+   </layers>
+  </pcbView>
+ </views>
+ <connectors>
+   <connector type="male" id="connector0" name="V+" >
+     <description>Positive Supply Voltage</description>
+     <erc etype="VCC">
+       <voltage value="5.0" />
+       <current flow="source" valueMax="0" />
+     </erc>
+     <views>
+       <breadboardView>
+         <p svgId="connector0pin" layer="schematic" />
+       </breadboardView>
+       <schematicView>
+         <p svgId="connector0pin" layer="schematic" terminalId="connector0terminal" />
+       </schematicView>
+       <pcbView>
+         <p svgId="connector0pin" layer="schematic" />
+       </pcbView>
+     </views>
+   </connector>
+ </connectors>
+ <buses>
+   <bus id="powerbus" >
+     <nodeMember connectorId="connector0" />
+   </bus>
+ </buses>
+</module>

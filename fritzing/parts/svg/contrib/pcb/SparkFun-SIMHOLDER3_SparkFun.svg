@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" x="0in" y="0in" width="1.1692in" height="0.6789in" viewBox="0 0 11692 6789" >
+<title>SparkFun.mod</title>
+<desc>Kicad module 'SparkFun-SIMHOLDER3' from file 'SparkFun.mod' converted by Fritzing</desc>
+<metadata xmlns:fz='http://fritzing.org/kicadmetadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+<rdf:RDF><rdf:Description rdf:about=''>
+<fz:attr name='kicad filename'>SparkFun.mod</fz:attr>
+<fz:attr name='kicad module'>SparkFun-SIMHOLDER3</fz:attr>
+<fz:attr name='fritzing version'>0.4.1b.07.04.4318</fz:attr>
+<fz:attr name='conversion date'>17/07/2010 17:17:28</fz:attr>
+<fz:attr name='dist-license'>GPL</fz:attr>
+<fz:attr name='use-license'>unlimited</fz:attr>
+<fz:attr name='author'>KICAD project</fz:attr>
+<fz:attr name='license-url'>http://www.gnu.org/licenses/gpl.html</fz:attr>
+<fz:comment></fz:comment>
+<fz:attr name='keyword'></fz:attr>
+</rdf:Description></rdf:RDF></metadata><g id="copper1">
+ <rect width="472" x="138" y="4463" fill="#ffbf00" connectorname="1" height="866" id="connector0pad" stroke-width="0"/>
+ <rect width="472" x="122" y="3439" fill="#ffbf00" connectorname="2" height="866" id="connector1pad" stroke-width="0"/>
+ <rect width="472" x="138" y="2475" fill="#ffbf00" connectorname="3" height="866" id="connector2pad" stroke-width="0"/>
+ <rect width="472" x="10078" y="2545.5" fill="#ffbf00" connectorname="4" height="787" id="connector3pad" stroke-width="0"/>
+ <rect width="472" x="10086" y="3506.5" fill="#ffbf00" connectorname="5" height="787" id="connector4pad" stroke-width="0"/>
+ <rect width="472" x="10086" y="4435.5" fill="#ffbf00" connectorname="6" height="787" id="connector5pad" stroke-width="0"/>
+</g>
+<g id="silkscreen">
+ <line fill="none" stroke="white" y1="0" x1="500" y2="0" stroke-width="80" x2="11692"/>
+ <line fill="none" stroke="white" y1="0" x1="11692" y2="6789" stroke-width="80" x2="11692"/>
+ <line fill="none" stroke="white" y1="6789" x1="11692" y2="6789" stroke-width="80" x2="500"/>
+ <line fill="none" stroke="white" y1="6289" x1="0" y2="5608" stroke-width="80" x2="0"/>
+ <line fill="none" stroke="white" y1="539" x1="0" y2="1278" stroke-width="80" x2="0"/>
+ <line fill="none" stroke="white" y1="6289" x1="0" y2="6289" stroke-width="80" x2="500"/>
+ <line fill="none" stroke="white" y1="6289" x1="500" y2="6789" stroke-width="80" x2="500"/>
+ <line fill="none" stroke="white" y1="39" x1="500" y2="539" stroke-width="80" x2="500"/>
+ <line fill="none" stroke="white" y1="539" x1="500" y2="539" stroke-width="80" x2="0"/>
+</g>
+</svg>

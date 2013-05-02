@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1 Basic//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-basic.dtd'><svg baseProfile="basic" height="0.59in" id="svg" version="1.1" viewBox="0 0 67.502 42.52" width="0.94in" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
+<g id="breadboard">
+<rect fill="none" height="5.372" id="connector0pin" width="2.16" x="60.644" y="32.178"/>
+<rect fill="none" height="5.309" id="connector1pin" width="2.16" x="53.496" y="5.002"/>
+<rect fill="none" height="5.309" id="connector2pin" width="2.16" x="60.644" y="5.002"/>
+<rect fill="none" height="5.372" id="connector3pin" width="2.159" x="53.506" y="32.178"/>
+<rect fill="none" height="5.372" id="connector5pin" width="2.159" x="53.506" y="32.178"/>
+<rect fill="none" height="5.372" id="connector4pin" width="2.159" x="53.506" y="32.178"/>
+<rect fill="none" height="3.714" id="connector0terminal" width="2.16" x="60.644" y="33.836"/>
+<rect fill="none" height="3.669" id="connector1terminal" width="2.16" x="53.496" y="5.002"/>
+<rect fill="none" height="3.669" id="connector2terminal" width="2.16" x="60.644" y="5.002"/>
+<rect fill="none" height="3.714" id="connector3terminal" width="2.159" x="53.506" y="33.836"/>
+<rect fill="none" height="3.714" id="connector5terminal" width="2.159" x="53.506" y="33.836"/>
+<rect fill="none" height="3.714" id="connector4terminal" width="2.159" x="53.506" y="33.836"/>
+	<g>
+		<polygon fill="#1F7A34" points="49.528,34.417 67.502,34.417 67.502,8.102 49.528,8.102 49.528,0 20.776,0 20.776,42.52     49.528,42.52   "/>
+	</g>
+	<g>
+		<g>
+			<path d="M30.783,4.96c0-1.988-1.609-3.598-3.598-3.598c-1.985,0-3.598,1.609-3.598,3.598     c0,1.985,1.612,3.598,3.598,3.598C29.173,8.558,30.783,6.945,30.783,4.96z" fill="#9A916C"/>
+		</g>
+		<g>
+			<circle cx="27.182" cy="4.96" fill="#3A3A3A" r="2.708"/>
+		</g>
+	</g>
+	<g>
+		<g>
+			<path d="M30.783,37.56c0-1.988-1.609-3.598-3.598-3.598c-1.985,0-3.598,1.609-3.598,3.598     c0,1.985,1.612,3.598,3.598,3.598C29.173,41.157,30.783,39.545,30.783,37.56z" fill="#9A916C"/>
+		</g>
+		<g>
+			<circle cx="27.182" cy="37.56" fill="#3A3A3A" r="2.708"/>
+		</g>
+	</g>
+	<g>
+		<rect fill="#898989" height="34.016" width="45.355" x="0.001" y="4.252"/>
+	</g>
+	<g>
+		<rect fill="#DDDDDD" height="0.743" width="45.355" x="0.001" y="4.252"/>
+	</g>
+	<g>
+		<rect fill="#C6C6C6" height="0.889" width="45.355" x="0.001" y="4.991"/>
+	</g>
+	<g>
+		<rect fill="#ADADAD" height="31.342" width="45.356" y="5.88"/>
+	</g>
+	<g>
+		<line fill="#919191" stroke="#4D4D4D" stroke-width="0.1" x1="34.173" x2="34.173" y1="4.252" y2="38.268"/>
+	</g>
+	<g>
+		<rect fill="#8C8C8C" height="5.349" width="4.667" x="52.252" y="4.961"/>
+	</g>
+	<g>
+		<rect fill="#8C8C8C" height="5.349" width="4.668" x="59.418" y="4.961"/>
+	</g>
+	<g>
+		<rect fill="#8C8C8C" height="5.349" width="4.667" x="52.252" y="32.177"/>
+	</g>
+	<g>
+		<rect fill="#8C8C8C" height="5.349" width="4.668" x="59.418" y="32.177"/>
+	</g>
+	<g>
+		<path d="M30.074,21.386l-2.64-1.524v1.134H13.468c0.515-0.416,1.008-0.965,1.493-1.505    c0.802-0.894,1.631-1.819,2.338-1.819h2.277c0.141,0.521,0.597,0.913,1.163,0.913c0.677,0,1.226-0.548,1.226-1.225    s-0.549-1.226-1.226-1.226c-0.566,0-1.022,0.392-1.163,0.914h-2.277c-0.985,0-1.868,0.984-2.803,2.026    c-0.744,0.83-1.509,1.675-2.255,1.922h-1.82c-0.185-1.02-1.073-1.794-2.145-1.794c-1.206,0-2.184,0.978-2.184,2.184    c0,1.207,0.978,2.184,2.184,2.184c1.072,0,1.96-0.774,2.145-1.794h5.196c0.746,0.247,1.511,1.093,2.254,1.922    c0.934,1.043,1.817,2.026,2.802,2.026h2.142v0.985h2.595v-2.595h-2.595v0.985h-2.142c-0.707,0-1.536-0.925-2.337-1.818    c-0.485-0.541-0.978-1.09-1.493-1.506h10.592v1.134L30.074,21.386z" fill="#4D4D4D"/>
+	</g>
+	<g>
+		<polyline fill="none" points="54.586,10.31 54.586,17.006 45.357,17.006   " stroke="#8C8C8C" stroke-width="1"/>
+	</g>
+	<g>
+		<polyline fill="none" points="61.732,10.31 61.732,19.841 45.357,19.841   " stroke="#8C8C8C" stroke-width="1"/>
+	</g>
+	<g>
+		<polyline fill="none" points="54.586,32.177 54.586,25.479 45.357,25.479   " stroke="#8C8C8C" stroke-width="1"/>
+	</g>
+	<g>
+		<polyline fill="none" points="61.732,32.177 61.732,22.646 45.357,22.646   " stroke="#8C8C8C" stroke-width="1"/>
+	</g>
+</g>
+</svg>

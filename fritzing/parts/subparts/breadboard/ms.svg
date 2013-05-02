@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Ebene_1" xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="39.457px"
+	 height="108.125px" viewBox="0 0 39.457 108.125" enable-background="new 0 0 39.457 108.125" xml:space="preserve">
+<g>
+	<rect y="18.092" fill="#CCCCCC" width="39.457" height="66.816"/>
+	<polyline opacity="0.2" fill="#FFFFFF" points="39.457,19.375 0,19.375 0,18.092 39.457,18.092 	"/>
+	<polyline opacity="0.2" points="39.457,85.55 0,85.55 0,84.266 39.457,84.266 	"/>
+	<rect x="12.062" y="24.5" width="15.333" height="54"/>
+	<rect x="12.062" y="37.588" fill="#333333" width="15.333" height="40.912"/>
+	<polyline opacity="0.2" fill="#FFFFFF" points="12.062,79.833 27.395,79.833 27.395,78.5 12.062,78.5 	"/>
+	<g>
+		<rect x="13.252" y="0" fill="#4D4D4D" width="12.951" height="13"/>
+		<rect x="13.252" y="13" fill="#1A1A1A" width="12.951" height="24.588"/>
+		<polyline opacity="0.2" points="26.204,38.375 13.252,38.375 13.252,37.588 26.204,37.588 		"/>
+		<polyline opacity="0.2" fill="#FFFFFF" points="13.252,11.833 26.204,11.833 26.204,13 13.252,13 		"/>
+		<rect x="13.252" y="0" fill="#333333" width="12.951" height="6.5"/>
+		<polyline opacity="0.2" points="13.252,0 26.204,0 26.204,1.166 13.252,1.166 		"/>
+	</g>
+	<rect y="84.908" fill="#B3B3B3" width="39.457" height="18.259"/>
+	<rect x="15.603" y="103.167" fill="#B3B3B3" width="8.25" height="4.958"/>
+	<polyline opacity="0.2" points="15.603,107.312 23.853,107.312 23.853,108.125 15.603,108.125 	"/>
+	<g>
+		<rect y="101.884" opacity="0.2" width="15.603" height="1.283"/>
+		<rect x="23.853" y="101.884" opacity="0.2" width="15.604" height="1.283"/>
+	</g>
+</g>
+</svg>

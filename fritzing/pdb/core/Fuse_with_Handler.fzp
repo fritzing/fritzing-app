@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module fritzingVersion="0.6.3b.08.16.5401" moduleId="fuse_with_handler_cff5">
+    <author>Carlos Hansen</author>
+    <title>Fuse with Handler</title>
+    <label>Fuse</label>
+    <date>2011-11-16</date>
+    <tags>
+        <tag>Fuse</tag>
+        <tag>FuseHandler</tag>
+        <tag>HTC-15m</tag>
+        <tag>Bussmann</tag>
+        <tag>protection</tag>
+    </tags>
+    <properties>
+        <property name="Manufacturer">Bussmann</property>
+        <property name="family">Fuse</property>
+        <property name="Part Number">Htc-15m</property>
+        <property name="Datasheet">http://www1.cooperbussmann.com/pdf/d5543d84-3b93-45e2-afde-4a74ca0255f9.pdf</property>
+        <property name="Size">5 x 20 mm</property>
+    </properties>
+    <description>Device used to protect against excessive current.</description>
+    <views>
+        <iconView>
+            <layers image="icon/Fuse_with_Handler_icon.svg">
+                <layer layerId="breadboard"/>
+                <layer layerId="icon"/>
+            </layers>
+        </iconView>
+        <breadboardView>
+            <layers image="breadboard/Fuse_with_Handler_breadboard.svg">
+                <layer layerId="breadboard"/>
+            </layers>
+        </breadboardView>
+        <schematicView>
+            <layers image="schematic/Fuse_with_Handler_schematic.svg">
+                <layer layerId="schematic"/>
+            </layers>
+        </schematicView>
+        <pcbView>
+            <layers image="pcb/Fuse_with_Handler_pcb.svg">
+                <layer layerId="copper0"/>
+                <layer layerId="copper1"/>
+                <layer layerId="silkscreen"/>
+            </layers>
+        </pcbView>
+    </views>
+    <connectors>
+        <connector id="connector0" type="male" name="Connector1">
+            <description>Connector</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector0pin" legId="connector0leg"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector0pin" terminalId="connector0terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper1" svgId="connector0pin"/>
+                    <p layer="copper0" svgId="connector0pin"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector1" type="male" name="Connector2">
+            <description>Connector</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector1pin" legId="connector1leg"/>									
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector1pin" terminalId="connector1terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper1" svgId="connector1pin"/>
+                    <p layer="copper0" svgId="connector1pin"/>
+                </pcbView>
+            </views>
+        </connector>
+    </connectors>
+</module>

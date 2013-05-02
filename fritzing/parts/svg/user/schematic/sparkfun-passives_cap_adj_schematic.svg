@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- Created with Fritzing (http://www.fritzing.org/) -->
+<svg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' version='1.2' baseProfile='tiny' x='0in' y='0in' width='0.17in' height='0.309722in' viewBox='0 0 4.318 7.86694' >
+<g id='schematic'>
+<line class='other' x1='0.127' y1='5.96547' x2='4.191' y2='1.90147' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<line class='other' x1='3.175' y1='1.90147' x2='4.191' y2='1.90147' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<line class='other' x1='4.191' y1='1.90147' x2='4.191' y2='2.91747' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<line class='other' x1='2.159' y1='2.66347' x2='2.159' y2='3.17147' stroke='#000000' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='2.159' y1='5.20347' x2='2.159' y2='4.69547' stroke='#000000' stroke-width='0.1524' stroke-linecap='round'/>
+<rect class='other' x='0.127' y='4.18747' width='4.064' height='0.508' stroke='none' stroke-width='0' fill='#000000' stroke-linecap='round'/>
+<rect class='other' x='0.127' y='3.17147' width='4.064' height='0.508' stroke='none' stroke-width='0' fill='#000000' stroke-linecap='round'/>
+<line class='pin' id='connector0pin' connectorname='3' x1='2.159' y1='0.123472' x2='2.159' y2='2.66347' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector0terminal' x='2.159' y='0.123472' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<g transform='translate(1.91206,1.39347)'><g transform='rotate(270)'>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='0' y='0' text-anchor='middle'>1</text>
+</g></g>
+<line class='pin' id='connector1pin' connectorname='4' x1='2.159' y1='7.74347' x2='2.159' y2='5.20347' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector1terminal' x='2.159' y='7.74347' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<g transform='translate(1.91206,6.47347)'><g transform='rotate(270)'>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='0' y='0' text-anchor='middle'>2</text>
+</g></g>
+</g>
+</svg>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" x="0in" y="0in" width="0.174in" height="0.16in" viewBox="0 0 1740 1600" >
+<title>SparkFun.mod</title>
+<desc>Kicad module 'SparkFun-LED3MM' from file 'SparkFun.mod' converted by Fritzing</desc>
+<metadata xmlns:fz='http://fritzing.org/kicadmetadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+<rdf:RDF><rdf:Description rdf:about=''>
+<fz:attr name='kicad filename'>SparkFun.mod</fz:attr>
+<fz:attr name='kicad module'>SparkFun-LED3MM</fz:attr>
+<fz:attr name='fritzing version'>0.4.1b.07.04.4318</fz:attr>
+<fz:attr name='conversion date'>17/07/2010 17:16:09</fz:attr>
+<fz:attr name='dist-license'>GPL</fz:attr>
+<fz:attr name='use-license'>unlimited</fz:attr>
+<fz:attr name='author'>KICAD project</fz:attr>
+<fz:attr name='license-url'>http://www.gnu.org/licenses/gpl.html</fz:attr>
+<fz:comment>LED</fz:comment>
+<fz:attr name='keyword'>LED</fz:attr>
+</rdf:Description></rdf:RDF></metadata><g id="copper0">
+ <g id="copper1">
+  <g connectorname="A" id="connector0pin">
+   <circle fill="none" cx="370" cy="800" stroke="#ff9400" r="265" stroke-width="210"/>
+  </g>
+  <g connectorname="K" id="connector1pin">
+   <circle fill="none" cx="1370" cy="800" stroke="#ff9400" r="265" stroke-width="210"/>
+  </g>
+ </g>
+</g>
+<g id="silkscreen">
+ <line fill="none" stroke="white" y1="1300" x1="1490" y2="300" stroke-width="100" x2="1490"/>
+ <line fill="none" stroke="white" y1="291" x1="1490" y2="490" stroke-width="100" x2="1490"/>
+ <line fill="none" stroke="white" y1="1309" x1="1490" y2="1130" stroke-width="100" x2="1490"/>
+ <path fill="none" stroke="white" stroke-width="50" d="M1483.73,286.84a800,800,0,0,0,-613.732,-286.84"/>
+ <path fill="none" stroke="white" stroke-width="50" d="M206.257,355.201a799,799,0,0,0,-41.2569,68.799"/>
+ <path fill="none" stroke="white" stroke-width="50" d="M871.005,1598.97a798.972,798.972,0,0,0,608.995,-282.971"/>
+ <path fill="none" stroke="white" stroke-width="50" d="M175.788,1197.58a800,800,0,0,0,694.212,402.421"/>
+ <path fill="none" stroke="white" stroke-width="50" d="M165.618,420.729a800,800,0,0,0,-95.6181,379.271"/>
+ <path fill="none" stroke="white" stroke-width="50" d="M509.524,86.292a799.576,799.576,0,0,0,-320.524,1132.71"/>
+</g>
+</svg>

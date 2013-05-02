@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.2" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0"
+	 width="0.3125in" height="0.3125in" viewBox="0 0 22.5 22.5" enable-background="new 0 0 22.5 22.5" xml:space="preserve">
+<polyline opacity="0.24" enable-background="new" points="0.976,0.907 20.075,0.915 22.579,3.421 22.575,22.507 0.976,22.507 
+	0.976,1.091 "/>
+<polyline opacity="0.5" fill="#CCCCCC" enable-background="new" points="0.08,0.009 19.18,0.017 21.686,2.522 21.684,3.946 
+	21.68,21.607 0.08,21.607 0.08,0.192 "/>
+<g id="breadboard">
+	<g>
+		<rect id="connector3pin" x="2.779" y="3.606" fill="#8C8C8C" width="3.6" height="1.802"/>
+		<rect id="connector2pin" x="17.18" y="3.608" fill="#8C8C8C" width="3.6" height="1.801"/>
+		<rect id="connector1pin" x="17.18" y="18.007" fill="#8C8C8C" width="3.6" height="1.802"/>
+		<rect id="connector0pin" x="2.779" y="18.007" fill="#8C8C8C" width="3.6" height="1.802"/>
+		
+		<rect id="connector3terminal" x="2.779" y="3.606" fill="#8C8C8C" width="3.6" height="1.802"/>
+		<rect id="connector2terminal" x="17.18" y="3.608" fill="#8C8C8C" width="3.6" height="1.801"/>
+		<rect id="connector1terminal" x="17.18" y="18.007" fill="#8C8C8C" width="3.6" height="1.802"/>
+		<rect id="connector0terminal" x="2.779" y="18.007" fill="#8C8C8C" width="3.6" height="1.802"/>
+
+		<rect x="2.779" y="3.606" fill="#8C8C8C" width="3.6" height="1.802"/>
+		<rect x="17.18" y="3.608" fill="#8C8C8C" width="3.6" height="1.801"/>
+		<rect x="17.18" y="18.007" fill="#8C8C8C" width="3.6" height="1.802"/>
+		<rect x="2.779" y="18.007" fill="#8C8C8C" width="3.6" height="1.802"/>
+		<circle fill="#8C8C8C" cx="11.779" cy="11.674" r="3.566"/>
+		<path fill="#8C8C8C" d="M5.479,6.308v-1.8h-1.8L3.666,10.25l2.184,1l1.192,0.25l1.521,0.021l0.125-1.208
+			C8.688,10.312,5.479,6.308,5.479,6.308z M5.029,9.007c-0.249,0-0.45-0.201-0.45-0.449c0-0.25,0.202-0.451,0.45-0.451
+			c0.248,0,0.45,0.201,0.45,0.451C5.479,8.806,5.278,9.007,5.029,9.007z"/>
+		<path fill="#8C8C8C" d="M18.1,4.508l0.025,3.159l-2.342,1.913l0.4,0.88l3.713-0.001l0.004-5.95H18.1z M18.551,9.008
+			c-0.25,0-0.451-0.2-0.451-0.45c0-0.248,0.203-0.449,0.451-0.449S19,8.31,19,8.558C19,8.808,18.799,9.008,18.551,9.008z"/>
+		<path fill="#8C8C8C" d="M5.467,18.896l-0.024-3.159l2.341-1.912l-0.4-0.88L3.67,12.946l-0.004,5.95H5.467z M5.017,14.396
+			c0.25,0,0.45,0.199,0.45,0.449c0,0.248-0.203,0.449-0.45,0.449c-0.248,0-0.449-0.201-0.449-0.449
+			C4.567,14.596,4.769,14.396,5.017,14.396z"/>
+		<path fill="#8C8C8C" d="M19.9,18.896l-0.004-5.95l-3.713-0.001l-0.4,0.88l2.342,1.912L18.1,18.896H19.9z M19,14.846
+			c0,0.248-0.201,0.449-0.449,0.449S18.1,15.094,18.1,14.846c0-0.25,0.201-0.449,0.451-0.449C18.799,14.396,19,14.596,19,14.846z"/>
+		<polygon fill="#FF0000" points="7.653,13.583 3.67,13.583 3.67,12.946 7.333,12.946"/>
+		<polygon fill="#001FFF" points="16.221,12.947 15.9,13.584 19.884,13.584 19.884,12.947"/>
+		<polygon fill="#00DB2E" points="15.899,9.822 19.883,9.822 19.883,10.459 16.22,10.459"/>
+	</g>
+	
+		<circle opacity="0.5" fill="#E6E6E6" stroke="#FFFFFF" stroke-width="0.5" enable-background="new    " cx="10.993" cy="10.921" r="7.087"/>
+	<path opacity="0.6" fill="#FFFFFF" enable-background="new    " d="M9.956,6.657c0.332-0.08,0.68-0.123,1.037-0.123
+		c0.303,0,0.598,0.029,0.883,0.089l0.363-1.765c-0.402-0.082-0.82-0.125-1.246-0.125c-0.453,0-1.166,0.084-1.591,0.176L9.956,6.657z
+		 M8.181,5.408c-2.003,1.024-3.374,3.108-3.374,5.513c0,0.414,0.041,0.818,0.118,1.21l1.758-0.394
+		c-0.05-0.264-0.076-0.536-0.076-0.815c0-1.649,0.911-3.088,2.258-3.837L8.181,5.408z"/>
+	<polygon opacity="0.24" enable-background="new    " points="0.08,21.607 0.976,22.507 22.575,22.507 22.579,3.421 21.686,2.522 
+		21.68,21.607 	"/>
+</g>
+</svg>

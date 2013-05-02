@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- Created with Fritzing (http://www.fritzing.org/) -->
+<svg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' version='1.2' baseProfile='tiny' x='0in' y='0in' width='0.898528in' height='0.898528in' viewBox='0 0 22.8226 22.8226' >
+<g id='copper1'>
+<circle class='other' cx='11.4113' cy='11.4113' r='1.796' stroke='#F7BD13' stroke-width='1.27' fill='none' />
+<circle class='other' cx='11.4113' cy='11.4113' r='7.1842' stroke='#F7BD13' stroke-width='1.27' fill='none' />
+<circle class='other' cx='11.4113' cy='11.4113' r='8.9802' stroke='#F7BD13' stroke-width='1.27' fill='none' />
+<circle class='other' cx='11.4113' cy='11.4113' r='10.7763' stroke='#F7BD13' stroke-width='1.27' fill='none' />
+<circle class='other' cx='11.4113' cy='11.4113' r='3.5921' stroke='#F7BD13' stroke-width='1.27' fill='none' />
+<circle class='other' cx='11.4113' cy='11.4113' r='5.3881' stroke='#F7BD13' stroke-width='1.27' fill='none' />
+<circle id='connector0pad' connectorname='P$1' cx='9.6333' cy='11.4113' r='0.427' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle id='connector1pad' connectorname='P$2' cx='6.0773' cy='11.4113' r='0.427' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle id='connector2pad' connectorname='P$3' cx='2.5213' cy='11.4113' r='0.427' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle id='connector3pad' connectorname='P$4' cx='11.1573' cy='7.8553' r='0.427' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle id='connector4pad' connectorname='P$5' cx='10.9033' cy='4.2993' r='0.427' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle id='connector5pad' connectorname='P$6' cx='10.9033' cy='0.7433' r='0.427' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<g id='copper0'>
+<circle id='connector0pad' connectorname='P$1' cx='9.6333' cy='11.4113' r='0.427' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle id='connector1pad' connectorname='P$2' cx='6.0773' cy='11.4113' r='0.427' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle id='connector2pad' connectorname='P$3' cx='2.5213' cy='11.4113' r='0.427' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle id='connector3pad' connectorname='P$4' cx='11.1573' cy='7.8553' r='0.427' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle id='connector4pad' connectorname='P$5' cx='10.9033' cy='4.2993' r='0.427' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle id='connector5pad' connectorname='P$6' cx='10.9033' cy='0.7433' r='0.427' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+</g>
+</g>
+<g id='silkscreen'>
+</g>
+</svg>

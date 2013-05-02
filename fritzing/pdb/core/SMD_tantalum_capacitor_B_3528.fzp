@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><module fritzingVersion="0.3.18" moduleId="6c575724-27cc-446c-a1f0-febb6321a5c9CapacitorModuleID">
+ <version>4</version>
+ <author>Fritzing Team</author>
+ <title>Tantalum Capacitor</title>
+ <label>C</label>
+ <date>2010-10-20</date>
+ <tags>
+  <tag>Capacitor</tag>
+  <tag>Ceramic Capacitor</tag>
+  <tag>fritzing core</tag>
+ <tag>SMD</tag></tags>
+ <properties>
+  <property name="family">Capacitor [unidirectional]</property>
+  <property name="capacitance" showInLabel="yes">1 μF</property>
+  <property name="package">B 3528 [SMD, tantalum]</property>
+   <property name="voltage" showInLabel="yes"/>
+</properties>
+ <taxonomy>discreteParts.capacitor.ceramic</taxonomy>
+ <description>1 uF multilayered Ceramic Capacitor</description>
+ <spice><line>C{instanceTitle} {net connector0} {net connector1} {capacitance} IC=0</line></spice>
+ <views>
+  <iconView>
+   <layers image="icon/capacitor_tantalum.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+  <breadboardView fliphorizontal="true" flipvertical="true">
+   <layers image="breadboard/capacitor_tantalum_leg.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="schematic/capacitor_polar.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/SMD_cap_tantal_B_3528.svg">
+    <layer layerId="copper1"/>
+    <layer layerId="silkscreen"/>
+</layers>
+  </pcbView>
+ </views>
+ <connectors>
+  <connector id="connector0" name="-" type="male">
+   <description>pin0</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector0pin" legId="connector0leg"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector0pin" terminalId="connector0terminal"/>
+    </schematicView>
+    <pcbView>
+    <p layer="copper1" svgId="connector0pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector1" name="+" type="male">
+   <description>pin1</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector1pin" legId="connector1leg"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector1pin" terminalId="connector1terminal"/>
+    </schematicView>
+    <pcbView>
+    <p layer="copper1" svgId="connector1pad"/>
+    </pcbView>
+   </views>
+  </connector>
+ </connectors>
+</module>

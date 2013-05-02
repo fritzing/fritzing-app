@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100.8px"
+	 height="129.816px" viewBox="0 0 100.8 129.816" enable-background="new 0 0 100.8 129.816" xml:space="preserve">
+<g id="Ebene_1">
+</g>
+<g id="Ebene_3">
+	<polygon fill="#1F7A34" points="84.014,111.018 84.014,116.054 61.761,116.054 58.481,114.063 41.314,114.063 38.035,116.054 
+		15.782,116.054 15.782,111.018 	"/>
+</g>
+<g id="Ebene_2">
+	<rect x="15.782" y="109.101" fill="#1F7A34" width="19.883" height="20.715"/>
+	<g>
+		<polygon fill="#FFFFFF" points="0,112.041 0.06,89.767 100.8,89.827 100.74,112.041 		"/>
+		<g>
+			<path fill="#7A7A7A" d="M100.681,89.886v22.095H0.12V89.886H100.681 M100.8,89.767H0V112.1h100.8V89.767L100.8,89.767z"/>
+		</g>
+	</g>
+	<g>
+		<rect x="0.125" y="0.125" width="100.55" height="97.35"/>
+		<g>
+			<path fill="#C9C9C9" d="M100.55,0.25v97.1H0.25V0.25H100.55 M100.8,0H0v97.6h100.8V0L100.8,0z"/>
+		</g>
+	</g>
+	<g>
+		<rect x="25.614" y="100.933" fill="#C9C9C9" width="48.706" height="4.987"/>
+		<polyline fill="none" stroke="#898989" stroke-width="0.3384" stroke-linecap="square" points="25.614,105.92 25.614,100.933 
+			74.319,100.933 		"/>
+		<polyline fill="none" stroke="#B5B5B5" stroke-width="0.3384" stroke-linecap="square" points="74.319,100.932 74.319,105.92 
+			25.617,105.92 		"/>
+	</g>
+	<g>
+		<rect fill="#FFFFFF" width="7.88" height="1.072"/>
+		<rect y="13.409" fill="#FFFFFF" width="1.072" height="7.88"/>
+		<rect y="70.409" fill="#FFFFFF" width="1.072" height="7.88"/>
+	</g>
+	<g>
+		<rect x="92.92" fill="#FFFFFF" width="7.88" height="1.072"/>
+		<rect x="99.728" y="13.409" fill="#FFFFFF" width="1.072" height="7.88"/>
+		<rect x="99.728" y="70.409" fill="#FFFFFF" width="1.072" height="7.88"/>
+	</g>
+	<rect y="112.1" fill="#FFFFFF" width="4.37" height="3.954"/>
+	<rect x="15.782" y="114.372" fill="#FFFFFF" width="4.37" height="3.954"/>
+	<rect x="33.48" y="114.372" fill="#FFFFFF" width="4.37" height="3.954"/>
+	<rect x="96.43" y="112.1" fill="#FFFFFF" width="4.37" height="3.954"/>
+	<rect x="84.014" y="112.1" fill="#FFFFFF" width="4.37" height="1.977"/>
+	<rect x="11.412" y="112.1" fill="#FFFFFF" width="4.37" height="1.977"/>
+	<rect x="88.384" y="112.1" width="8.046" height="3.954"/>
+	<rect x="4.37" y="112.1" width="7.042" height="3.954"/>
+	<rect x="20.151" y="114.371" width="13.328" height="1.978"/>
+</g>
+</svg>

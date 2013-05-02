@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" x="0in" y="0in" width="0.2697in" height="0.281in" viewBox="0 0 2697 2810" >
+<title>SparkFun.mod</title>
+<desc>Kicad module 'SparkFun-TSSOP20' from file 'SparkFun.mod' converted by Fritzing</desc>
+<metadata xmlns:fz='http://fritzing.org/kicadmetadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+<rdf:RDF><rdf:Description rdf:about=''>
+<fz:attr name='kicad filename'>SparkFun.mod</fz:attr>
+<fz:attr name='kicad module'>SparkFun-TSSOP20</fz:attr>
+<fz:attr name='fritzing version'>0.4.1b.07.04.4318</fz:attr>
+<fz:attr name='conversion date'>17/07/2010 17:18:28</fz:attr>
+<fz:attr name='dist-license'>GPL</fz:attr>
+<fz:attr name='use-license'>unlimited</fz:attr>
+<fz:attr name='author'>KICAD project</fz:attr>
+<fz:attr name='license-url'>http://www.gnu.org/licenses/gpl.html</fz:attr>
+<fz:comment></fz:comment>
+<fz:attr name='keyword'></fz:attr>
+</rdf:Description></rdf:RDF></metadata><g id="copper1">
+ <rect width="393" x="2" y="156.5" fill="#ffbf00" connectorname="1" height="157" id="connector0pad" stroke-width="0"/>
+ <rect width="393" x="2" y="416.5" fill="#ffbf00" connectorname="2" height="157" id="connector1pad" stroke-width="0"/>
+ <rect width="393" x="2" y="676.5" fill="#ffbf00" connectorname="3" height="157" id="connector2pad" stroke-width="0"/>
+ <rect width="393" x="2" y="936.5" fill="#ffbf00" connectorname="4" height="157" id="connector3pad" stroke-width="0"/>
+ <rect width="393" x="2" y="1196.5" fill="#ffbf00" connectorname="5" height="157" id="connector4pad" stroke-width="0"/>
+ <rect width="393" x="2" y="1455.5" fill="#ffbf00" connectorname="6" height="157" id="connector5pad" stroke-width="0"/>
+ <rect width="393" x="2" y="1715.5" fill="#ffbf00" connectorname="7" height="157" id="connector6pad" stroke-width="0"/>
+ <rect width="393" x="0" y="1975.5" fill="#ffbf00" connectorname="8" height="157" id="connector7pad" stroke-width="0"/>
+ <rect width="393" x="2" y="2235.5" fill="#ffbf00" connectorname="9" height="157" id="connector8pad" stroke-width="0"/>
+ <rect width="393" x="2" y="2495.5" fill="#ffbf00" connectorname="10" height="157" id="connector9pad" stroke-width="0"/>
+ <rect width="393" x="2301" y="2495.5" fill="#ffbf00" connectorname="11" height="157" id="connector10pad" stroke-width="0"/>
+ <rect width="393" x="2301" y="2235.5" fill="#ffbf00" connectorname="12" height="157" id="connector11pad" stroke-width="0"/>
+ <rect width="393" x="2304" y="1975.5" fill="#ffbf00" connectorname="13" height="157" id="connector12pad" stroke-width="0"/>
+ <rect width="393" x="2301" y="1715.5" fill="#ffbf00" connectorname="14" height="157" id="connector13pad" stroke-width="0"/>
+ <rect width="393" x="2301" y="1455.5" fill="#ffbf00" connectorname="15" height="157" id="connector14pad" stroke-width="0"/>
+ <rect width="393" x="2301" y="1196.5" fill="#ffbf00" connectorname="16" height="157" id="connector15pad" stroke-width="0"/>
+ <rect width="393" x="2301" y="936.5" fill="#ffbf00" connectorname="17" height="157" id="connector16pad" stroke-width="0"/>
+ <rect width="393" x="2301" y="676.5" fill="#ffbf00" connectorname="18" height="157" id="connector17pad" stroke-width="0"/>
+ <rect width="393" x="2301" y="416.5" fill="#ffbf00" connectorname="19" height="157" id="connector18pad" stroke-width="0"/>
+ <rect width="393" x="2301" y="156.5" fill="#ffbf00" connectorname="20" height="157" id="connector19pad" stroke-width="0"/>
+</g>
+<g id="silkscreen">
+ <line fill="none" stroke="white" y1="2810" x1="452.5" y2="2810" stroke-width="50" x2="2243.5"/>
+ <line fill="none" stroke="white" y1="2810" x1="2243.5" y2="0" stroke-width="50" x2="2243.5"/>
+ <line fill="none" stroke="white" y1="0" x1="2243.5" y2="0" stroke-width="50" x2="452.5"/>
+ <line fill="none" stroke="white" y1="0" x1="452.5" y2="2810" stroke-width="50" x2="452.5"/>
+ <line fill="none" stroke="white" y1="0" x1="452.5" y2="0" stroke-width="50" x2="2243.5"/>
+ <line fill="none" stroke="white" y1="0" x1="2243.5" y2="2810" stroke-width="50" x2="2243.5"/>
+ <line fill="none" stroke="white" y1="2810" x1="2243.5" y2="2810" stroke-width="50" x2="452.5"/>
+ <line fill="none" stroke="white" y1="2810" x1="452.5" y2="0" stroke-width="50" x2="452.5"/>
+ <circle fill="none" cx="679.5" cy="197" stroke="white" r="38.1838" stroke-width="9"/>
+</g>
+</svg>

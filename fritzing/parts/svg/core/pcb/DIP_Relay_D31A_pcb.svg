@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg width="36.900002" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" version="1.1" xmlns="http://www.w3.org/2000/svg" height="63.900002"  xmlns:svg="http://www.w3.org/2000/svg" >
+ <g style="fill:#000000" id="silkscreen" transform="matrix(0.09,0,0,0.09,-0.45,-0.45)">
+  <line style="fill:#000000;stroke:#ffffff;stroke-width:10" id="line4148" y1="10" y2="710" x1="10" x2="10"/>
+  <line style="fill:#000000;stroke:#ffffff;stroke-width:10" id="line4150" y1="710" y2="710" x1="10" x2="410"/>
+  <line style="fill:#000000;stroke:#ffffff;stroke-width:10" id="line4152" y1="710" y2="10" x1="410" x2="410"/>
+  <line style="fill:#000000;stroke:#ffffff;stroke-width:10" id="line4154" y1="10" y2="10" x1="10" x2="160"/>
+  <line style="fill:#000000;stroke:#ffffff;stroke-width:10" id="line4156" y1="10" y2="10" x1="260" x2="410"/>
+ </g>
+ <g id="copper0"> <g id="copper1">
+  <g id="g10452" transform="matrix(0.09,0,0,0.09,-0.45,-0.45)">
+   <rect id='square' width="55" x="32.5" y="32.5" height="55" style="fill:none;stroke:#ffbf00;stroke-width:20" />
+  </g>
+  <circle id="connector13pin" cx="360" cy="60" style="fill:none;stroke:#ffbf00;stroke-width:20" r="27.5" transform="matrix(0.09,0,0,0.09,-0.45,-0.45)"/>
+  <circle id="connector1pin" cx="60" cy="160" style="fill:none;stroke:#ffbf00;stroke-width:20" r="27.5" transform="matrix(0.09,0,0,0.09,-0.45,-0.45)"/>
+  <circle id="connector12pin" cx="360" cy="160" style="fill:none;stroke:#ffbf00;stroke-width:20" r="27.5"  transform="matrix(0.09,0,0,0.09,-0.45,-0.45)"/>
+  <circle id="connector5pin" cx="60" cy="560" style="fill:none;stroke:#ffbf00;stroke-width:20" r="27.5"  transform="matrix(0.09,0,0,0.09,-0.45,-0.45)"/>
+  <circle id="connector8pin" cx="360" cy="560" style="fill:none;stroke:#ffbf00;stroke-width:20" r="27.5"  transform="matrix(0.09,0,0,0.09,-0.45,-0.45)"/>
+  <circle id="connector6pin" cx="60" cy="660" style="fill:none;stroke:#ffbf00;stroke-width:20" r="27.5"  transform="matrix(0.09,0,0,0.09,-0.45,-0.45)"/>
+  <circle id="connector7pin" cx="360" cy="660" style="fill:none;stroke:#ffbf00;stroke-width:20" r="27.5"  transform="matrix(0.09,0,0,0.09,-0.45,-0.45)"/>
+  <circle id="connector0pin" cx="60" cy="60" style="fill:none;stroke:#ffbf00;stroke-width:20" r="27.5"  transform="matrix(0.09,0,0,0.09,-0.45,-0.45)"/>
+ </g> </g>
+</svg>

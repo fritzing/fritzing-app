@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1"
+	 id="svg2" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:cc="http://creativecommons.org/ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" sodipodi:docname="StepperMotor-Bipolar_schematic.svg" sodipodi:version="0.32" inkscape:version="0.46" inkscape:output_extension="org.inkscape.output.svg.inkscape"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="57.6px" height="57.601px"
+	 viewBox="0 0 57.6 57.601" enable-background="new 0 0 57.6 57.601" xml:space="preserve">
+<rect id="part_symbol" x="7.2" y="7.2" fill="#FFFFFF" stroke="#000000" stroke-width="0.7796" stroke-linecap="round" width="43.2" height="43.2"/>
+<text transform="matrix(1 0 0 1 2.7751 34.386)" fill="#787878" font-family="'DroidSans'" font-size="2">C</text>
+<defs>
+	
+	
+		<inkscape:perspective  id="perspective9295" inkscape:vp_x="0 : 40.478638 : 1" inkscape:vp_z="69.321533 : 40.478638 : 1" sodipodi:type="inkscape:persp3d" inkscape:vp_y="0 : 1000 : 0" inkscape:persp3d-origin="34.660767 : 26.985758 : 1">
+		</inkscape:perspective>
+</defs>
+<sodipodi:namedview  id="base" guidetolerance="10.0" objecttolerance="10.0" borderopacity="1.0" bordercolor="#666666" pagecolor="#ffffff" showgrid="false" gridtolerance="10.0" inkscape:cx="90.541477" inkscape:zoom="2.017628" inkscape:cy="41.621546" inkscape:current-layer="schematic" inkscape:window-y="115" inkscape:window-x="466" inkscape:object-nodes="true" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:window-width="758" inkscape:window-height="742">
+	</sodipodi:namedview>
+<g id="g3256" transform="matrix(1.2500001,0,0,1.2500001,201.9491,375.78003)">
+	<path id="path3892_2_" fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" stroke-linejoin="round" d="
+		M-155.799-271.833h4.175v-1.231c0.625,0,1.132-0.508,1.132-1.132s-0.507-1.132-1.132-1.132c0.625,0,1.132-0.506,1.132-1.132
+		c0-0.625-0.507-1.132-1.132-1.132c0.625,0,1.132-0.507,1.132-1.132s-0.507-1.132-1.132-1.132c0.625,0,1.132-0.507,1.132-1.132
+		c0-0.625-0.507-1.132-1.132-1.132h-0.055v-1.232h-4.12"/>
+	<path id="path3892_3_" fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" stroke-linejoin="round" d="
+		M-151.679-277.593h-4.12"/>
+</g>
+<line fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="0" y1="36" x2="7.2" y2="36"/>
+<line fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="0" y1="28.8" x2="7.2" y2="28.8"/>
+<line fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="0" y1="21.6" x2="7.2" y2="21.6"/>
+<g id="g3256_1_" transform="matrix(1.2500001,0,0,1.2500001,201.9491,375.78003)">
+	<path id="path3892_1_" fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" stroke-linejoin="round" d="
+		M-132.759-260.304v-4.175h-1.231c0-0.625-0.508-1.132-1.132-1.132s-1.132,0.507-1.132,1.132c0-0.625-0.506-1.132-1.132-1.132
+		c-0.625,0-1.132,0.507-1.132,1.132c0-0.625-0.507-1.132-1.132-1.132c-0.625,0-1.132,0.507-1.132,1.132
+		c0-0.625-0.507-1.132-1.132-1.132c-0.625,0-1.132,0.507-1.132,1.132v0.055h-1.232v4.12"/>
+	<path id="path3892_4_" fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" stroke-linejoin="round" d="
+		M-138.519-264.424v4.12"/>
+</g>
+<line fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="36" y1="57.6" x2="36" y2="50.4"/>
+<line fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="28.8" y1="57.6" x2="28.8" y2="50.4"/>
+<text transform="matrix(1 0 0 1 2.7751 20.0608)" fill="#787878" font-family="'DroidSans'" font-size="2">A</text>
+<text transform="matrix(1 0 0 1 2.7751 27.2605)" fill="#787878" font-family="'DroidSans'" font-size="2">0</text>
+<text transform="matrix(1 0 0 1 33.2756 55.178)" fill="#787878" font-family="'DroidSans'" font-size="2">D</text>
+<text transform="matrix(1 0 0 1 18.6921 55.178)" fill="#787878" font-family="'DroidSans'" font-size="2">B</text>
+<text transform="matrix(1 0 0 1 25.8923 55.178)" fill="#787878" font-family="'DroidSans'" font-size="2">0</text>
+<text transform="matrix(1 0 0 1 14.9714 16.4192)" font-family="'DroidSans'" font-size="5.5">ROB-08420</text>
+<path fill="none" stroke="#000000" stroke-width="0.45" d="M38.301,28.8c0,5.244-4.256,9.5-9.5,9.5s-9.5-4.256-9.5-9.5
+	c0-5.243,4.257-9.5,9.5-9.5S38.301,23.557,38.301,28.8z"/>
+<line fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="21.6" y1="57.6" x2="21.6" y2="50.4"/>
+</svg>

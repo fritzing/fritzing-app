@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+<svg xmlns="http://www.w3.org/2000/svg" width="0.916667in" xml:space="preserve" xmlns:xml="http://www.w3.org/XML/1998/namespace" x="0px" version="1.2" y="0px" height="0.777778in" viewBox="0 0 66 56" baseProfile="tiny" id="Ebene_1">
+	<g id="silkscreen"><polygon  fill="none" points="65.008,47.445 64.287,45.595 64.287,43.125 65.008,41.25 65.008,2.25 62.883,0.25 2.191,0.25 0.36,2.085 0.36,54.646 65.008,54.646 " stroke="#000000" id="Silkscreen" stroke-width="0.5"/>
+	</g>
+	<g id="copper1">
+		<g id="copper0">
+ <circle  fill="none" cx="61.542" cy="51.104" stroke="#FF9900" id="connector18pin" r="2.052" stroke-width="1.224"/>
+ <circle  fill="none" cx="54.342" cy="51.104" stroke="#FF9900" id="connector17pin" r="2.052" stroke-width="1.224"/>
+ <circle  fill="none" cx="47.142" cy="51.104" stroke="#FF9900" id="connector16pin" r="2.052" stroke-width="1.224"/>
+ <circle  fill="none" cx="39.941" cy="51.104" stroke="#FF9900" id="connector15pin" r="2.052" stroke-width="1.224"/>
+ <circle  fill="none" cx="32.741" cy="51.104" stroke="#FF9900" id="connector14pin" r="2.052" stroke-width="1.224"/>
+ <circle  fill="none" cx="25.541" cy="51.104" stroke="#FF9900" id="connector13pin" r="2.052" stroke-width="1.224"/>
+ <circle  fill="none" cx="18.341" cy="51.104" stroke="#FF9900" id="connector12pin" r="2.052" stroke-width="1.224"/>
+ <circle  fill="none" cx="11.141" cy="51.104" stroke="#FF9900" id="connector11pin" r="2.052" stroke-width="1.224"/>
+ <circle  fill="none" cx="3.94" cy="51.104" stroke="#FF9900" id="connector10pin" r="2.052" stroke-width="1.224"/>
+ <circle  fill="none" cx="61.542" cy="22.303" stroke="#FF9900" id="connector9pin" r="2.052" stroke-width="1.224"/>
+ <circle  fill="none" cx="61.542" cy="15.103" stroke="#FF9900" id="connector8pin" r="2.052" stroke-width="1.224"/>
+ <circle  fill="none" cx="61.542" cy="7.903" stroke="#FF9900" id="connector7pin" r="2.052" stroke-width="1.224"/>
+ <circle  fill="none" cx="47.142" cy="22.303" stroke="#FF9900" id="connector6pin" r="2.052" stroke-width="1.224"/>
+ <circle  fill="none" cx="47.142" cy="15.103" stroke="#FF9900" id="connector5pin" r="2.052" stroke-width="1.224"/>
+ <circle  fill="none" cx="18.341" cy="22.303" stroke="#FF9900" id="connector4pin" r="2.052" stroke-width="1.224"/>
+ <circle  fill="none" cx="18.341" cy="15.103" stroke="#FF9900" id="connector3pin" r="2.052" stroke-width="1.224"/>
+ <circle  fill="none" cx="3.94" cy="22.303" stroke="#FF9900" id="connector2pin" r="2.052" stroke-width="1.224"/>
+ <circle  fill="none" cx="3.94" cy="15.103" stroke="#FF9900" id="connector1pin" r="2.052" stroke-width="1.224"/>
+ <circle  fill="none" cx="3.94" cy="7.903" stroke="#FF9900" id="connector0pin" r="2.052" stroke-width="1.224"/>
+</g></g>
+ </svg>

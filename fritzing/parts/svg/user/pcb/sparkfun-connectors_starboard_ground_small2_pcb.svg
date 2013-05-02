@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- Created with Fritzing (http://www.fritzing.org/) -->
+<svg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' version='1.2' baseProfile='tiny' x='0in' y='0in' width='0.14in' height='0.425in' viewBox='0 0 3.556 10.795' >
+<g id='copper1'>
+<rect id='connector0pad' connectorname='GROUND' x='1.4605' y='4.7625' width='0.635' height='1.27' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<path class='other' stroke='none' fill='#F7BD13' stroke-width='0' d='M1.778,10.668L1.397,10.668A1.27,1.27 0 0 1 0.127,9.398L0.127,1.397A1.27,1.27 0 0 1 1.397,0.127L1.778,0.127L2.159,0.127A1.27,1.27 0 0 1 3.429,1.397L3.429,9.398A1.27,1.27 0 0 1 2.159,10.668z' stroke-linecap='round'/>
+<g id='copper0'>
+</g>
+</g>
+<g id='silkscreen'>
+</g>
+</svg>

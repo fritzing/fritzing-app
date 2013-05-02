@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?> <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" x="0in" y="0in" width="2.11in" height="2.01in" viewBox="0 0 211000 201000" ><title>OVEN_OSC 5.fp</title><desc>Geda footprint file 'OVEN_OSC 5.fp' converted by Fritzing</desc><metadata xmlns:fz='http://fritzing.org/gedametadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'><rdf:RDF><rdf:Description rdf:about=''><fz:attr name='geda filename'>OVEN_OSC 5.fp</fz:attr>
+<fz:attr name='fritzing version'>0.4.0b.06.21.4282</fz:attr>
+<fz:attr name='conversion date'>27/06/2010 07:15:57</fz:attr>
+<fz:attr name='dist-license'>GPL</fz:attr>
+<fz:attr name='use-license'>unlimited</fz:attr>
+<fz:attr name='author'>gEDA project</fz:attr>
+<fz:attr name='license-url'>http://www.gnu.org/licenses/gpl.html</fz:attr>
+</rdf:Description></rdf:RDF></metadata><g id="copper0">
+ <g id="copper1">
+  <circle fill="none" cx="32500" cy="32500" connectorname="NC" stroke="#ff9400" r="4625" id="nonconn0" stroke-width="5750"/>
+  <circle fill="none" cx="32500" cy="100500" connectorname="VCC" stroke="#ff9400" r="4625" id="nonconn1" stroke-width="5750"/>
+  <circle fill="none" cx="32500" cy="168500" connectorname="CLK" stroke="#ff9400" r="4625" id="nonconn2" stroke-width="5750"/>
+  <circle fill="none" cx="168500" cy="32500" connectorname="+12V" stroke="#ff9400" r="4625" id="nonconn3" stroke-width="5750"/>
+  <circle fill="none" cx="168500" cy="168500" connectorname="GND" stroke="#ff9400" r="4625" id="nonconn4" stroke-width="5750"/>
+ </g>
+</g>
+<g id="silkscreen">
+ <line fill="none" stroke="white" y1="113000" x1="202500" y2="88000" stroke-width="1000" x2="202500"/>
+ <line fill="none" stroke="white" y1="88000" x1="210500" y2="88000" stroke-width="1000" x2="202500"/>
+ <line fill="none" stroke="white" y1="98000" x1="210500" y2="88000" stroke-width="1000" x2="210500"/>
+ <line fill="none" stroke="white" y1="98000" x1="208000" y2="98000" stroke-width="1000" x2="210500"/>
+ <line fill="none" stroke="white" y1="103000" x1="208000" y2="98000" stroke-width="1000" x2="208000"/>
+ <line fill="none" stroke="white" y1="103000" x1="210500" y2="103000" stroke-width="1000" x2="208000"/>
+ <line fill="none" stroke="white" y1="113000" x1="210500" y2="103000" stroke-width="1000" x2="210500"/>
+ <line fill="none" stroke="white" y1="113000" x1="210500" y2="113000" stroke-width="1000" x2="202500"/>
+ <line fill="none" stroke="white" y1="32500" x1="200500" y2="168500" stroke-width="1000" x2="200500"/>
+ <line fill="none" stroke="white" y1="500" x1="32500" y2="500" stroke-width="1000" x2="168500"/>
+ <line fill="none" stroke="white" y1="168500" x1="500" y2="32500" stroke-width="1000" x2="500"/>
+ <line fill="none" stroke="white" y1="200500" x1="168500" y2="200500" stroke-width="1000" x2="32500"/>
+ <path fill="none" stroke="white" stroke-width="1000" d="M32500,500a32000,32000,0,0,0,-32000,32000"/>
+ <path fill="none" stroke="white" stroke-width="1000" d="M500,168500a32000,32000,0,0,0,32000,32000"/>
+ <path fill="none" stroke="white" stroke-width="1000" d="M200500,32500a32000,32000,0,0,0,-32000,-32000"/>
+ <path fill="none" stroke="white" stroke-width="1000" d="M168500,200500a32000,32000,0,0,0,32000,-32000"/>
+</g>
+</svg>

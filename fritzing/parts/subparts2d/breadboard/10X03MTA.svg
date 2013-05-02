@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1 Basic//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-basic.dtd">
+<svg version="1.1" baseProfile="basic" id="Ebene_1" xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="25.2px" height="16.258px"
+	 viewBox="0 0 25.2 16.258" xml:space="preserve">
+<g>
+	<title>MTA100_3.fp</title>
+	<desc>Geda footprint file &apos;MTA100_3.fp&apos; converted by Fritzing</desc>
+	<rect fill="#FEEFD8" width="25.2" height="16.268"/>
+	<rect x="4.536" y="13.311" fill="#FDDFB1" width="16.167" height="2.947"/>
+	<rect y="15.994" opacity="0.2" width="25.2" height="0.273"/>
+	<rect opacity="0.1" fill="#FFFFFF" width="25.2" height="0.268"/>
+	<g>
+		<rect x="4.495" y="7.447" fill="#B3B3B3" width="1.812" height="1.816"/>
+		<polygon fill="#CCCCCC" points="3.639,6.588 4.495,7.447 6.393,7.447 7.162,6.588 		"/>
+		<polygon fill="#999999" points="6.305,9.262 6.305,7.461 7.162,6.588 7.162,10.115 		"/>
+		<polygon fill="#808080" points="4.495,9.262 6.305,9.262 7.162,10.115 3.639,10.115 		"/>
+		<polygon fill="#CCCCCC" points="3.639,6.588 4.495,7.457 4.495,9.262 3.639,10.115 		"/>
+	</g>
+	<g>
+		<rect x="11.693" y="7.447" fill="#B3B3B3" width="1.813" height="1.816"/>
+		<polygon fill="#CCCCCC" points="10.837,6.588 11.693,7.447 13.592,7.447 14.362,6.588 		"/>
+		<polygon fill="#999999" points="13.504,9.262 13.504,7.461 14.362,6.588 14.362,10.115 		"/>
+		<polygon fill="#808080" points="11.693,9.262 13.504,9.262 14.362,10.115 10.837,10.115 		"/>
+		<polygon fill="#CCCCCC" points="10.837,6.588 11.693,7.457 11.693,9.262 10.837,10.115 		"/>
+	</g>
+	<g>
+		<rect x="18.895" y="7.447" fill="#B3B3B3" width="1.813" height="1.816"/>
+		<polygon fill="#CCCCCC" points="18.038,6.588 18.895,7.447 20.792,7.447 21.563,6.588 		"/>
+		<polygon fill="#999999" points="20.704,9.262 20.704,7.461 21.563,6.588 21.563,10.115 		"/>
+		<polygon fill="#808080" points="18.895,9.262 20.704,9.262 21.563,10.115 18.038,10.115 		"/>
+		<polygon fill="#CCCCCC" points="18.038,6.588 18.895,7.457 18.895,9.262 18.038,10.115 		"/>
+	</g>
+</g>
+</svg>

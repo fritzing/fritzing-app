@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1 Basic//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-basic.dtd">
+<svg version="1.1" baseProfile="basic" id="Ebene_1" xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="15.104px"
+	 height="15.102px" viewBox="0 0 15.104 15.102" xml:space="preserve">
+<g id="tactile_switch_smd_1_" transform="matrix(1, 0, 0, 1, 17.004, 77.8536)">
+	<g transform="matrix(-1, 0, 0, -1, 16.392, 16.373)">
+		<g id="tactile_switch_smd" transform="matrix(1, 0, 0, 1, 17.021, 74.628)">
+			<g transform="matrix(-1, 0, 0, -1, 16.392, 16.392)">
+				<polygon fill="#6D6D6D" points="1.071,8.747 3.164,10.844 11.976,10.844 14.069,8.747 14.069,-0.064 11.976,-2.156 
+					3.164,-2.156 1.071,-0.064 				"/>
+				<rect x="3.164" y="-3.207" fill="#6D6D6D" width="8.812" height="15.102"/>
+				<rect x="0.018" y="-0.064" fill="#6D6D6D" width="15.104" height="8.811"/>
+				<polygon fill="#7F7F7F" points="1.703,8.32 3.592,10.211 11.547,10.211 13.439,8.32 13.439,0.365 11.547,-1.525 3.592,-1.525 
+					1.703,0.365 				"/>
+				<polyline opacity="0.2" fill="none" stroke="#FFFFFF" stroke-width="0.2183" stroke-miterlimit="10" points="3.801,-1.218 
+					2.01,0.573 2.01,8.113 3.801,9.905 11.339,9.905 				"/>
+				<polyline opacity="0.2" fill="none" stroke="#606060" stroke-width="0.2183" stroke-miterlimit="10" points="11.34,9.905 
+					13.132,8.114 13.132,0.574 11.34,-1.218 3.802,-1.218 				"/>
+				<g>
+					<path fill="#BCA16A" d="M7.571,7.779c-1.894,0-3.435-1.541-3.435-3.436c0-1.893,1.541-3.435,3.435-3.435
+						c1.893,0,3.435,1.541,3.435,3.435C11.002,6.237,9.462,7.779,7.571,7.779z"/>
+					<path fill="#606060" d="M7.571,1.141c1.769,0,3.204,1.436,3.204,3.204c0,1.77-1.436,3.204-3.204,3.204
+						c-1.77,0-3.204-1.435-3.204-3.204C4.367,2.573,5.801,1.141,7.571,1.141 M7.571,0.68c-2.021,0-3.665,1.644-3.665,3.664
+						c0,2.02,1.643,3.666,3.665,3.666c2.019,0,3.665-1.645,3.665-3.666C11.233,2.322,9.589,0.68,7.571,0.68L7.571,0.68z"/>
+				</g>
+				<path opacity="0.2" fill="#BCA16A" stroke="#FFFFFF" stroke-width="0.4887" stroke-miterlimit="10" d="M9.591,6.363
+					c-1.116,1.117-2.928,1.117-4.044,0c-1.117-1.117-1.117-2.927,0-4.044"/>
+				<path opacity="0.2" fill="#BCA16A" stroke="#606060" stroke-width="0.4887" stroke-miterlimit="10" d="M5.547,2.32
+					c1.116-1.116,2.928-1.116,4.044,0c1.117,1.117,1.117,2.927,0,4.044"/>
+			</g>
+		</g>
+	</g>
+</g>
+</svg>

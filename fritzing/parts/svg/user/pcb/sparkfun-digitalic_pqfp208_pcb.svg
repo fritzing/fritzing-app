@@ -1,0 +1,276 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- Created with Fritzing (http://www.fritzing.org/) -->
+<svg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' version='1.2' baseProfile='tiny' x='0in' y='0in' width='1.24409in' height='1.24409in' viewBox='0 0 31.6 31.6' >
+<g id='copper1'>
+<rect id='connector0pad' connectorname='1' x='0' y='2.805' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector1pad' connectorname='2' x='0' y='3.305' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector2pad' connectorname='3' x='0' y='3.805' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector3pad' connectorname='4' x='0' y='4.305' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector4pad' connectorname='5' x='0' y='4.805' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector5pad' connectorname='6' x='0' y='5.305' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector6pad' connectorname='7' x='0' y='5.805' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector7pad' connectorname='8' x='0' y='6.305' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector8pad' connectorname='9' x='0' y='6.805' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector9pad' connectorname='10' x='0' y='7.305' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector10pad' connectorname='11' x='0' y='7.805' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector11pad' connectorname='12' x='0' y='8.305' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector12pad' connectorname='13' x='0' y='8.805' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector13pad' connectorname='14' x='0' y='9.305' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector14pad' connectorname='15' x='0' y='9.805' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector15pad' connectorname='16' x='0' y='10.305' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector16pad' connectorname='17' x='0' y='10.805' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector17pad' connectorname='18' x='0' y='11.305' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector18pad' connectorname='19' x='0' y='11.805' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector19pad' connectorname='20' x='0' y='12.305' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector20pad' connectorname='21' x='0' y='12.805' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector21pad' connectorname='22' x='0' y='13.305' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector22pad' connectorname='23' x='0' y='13.805' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector23pad' connectorname='24' x='0' y='14.305' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector24pad' connectorname='25' x='0' y='14.805' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector25pad' connectorname='26' x='0' y='15.305' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector26pad' connectorname='27' x='0' y='15.805' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector27pad' connectorname='28' x='0' y='16.305' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector28pad' connectorname='29' x='0' y='16.805' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector29pad' connectorname='30' x='0' y='17.305' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector30pad' connectorname='31' x='0' y='17.805' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector31pad' connectorname='32' x='0' y='18.305' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector32pad' connectorname='33' x='0' y='18.805' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector33pad' connectorname='34' x='0' y='19.305' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector34pad' connectorname='35' x='0' y='19.805' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector35pad' connectorname='36' x='0' y='20.305' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector36pad' connectorname='37' x='0' y='20.805' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector37pad' connectorname='38' x='0' y='21.305' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector38pad' connectorname='39' x='0' y='21.805' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector39pad' connectorname='40' x='0' y='22.305' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector40pad' connectorname='41' x='0' y='22.805' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector41pad' connectorname='42' x='0' y='23.305' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector42pad' connectorname='43' x='0' y='23.805' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector43pad' connectorname='44' x='0' y='24.305' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector44pad' connectorname='45' x='0' y='24.805' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector45pad' connectorname='46' x='0' y='25.305' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector46pad' connectorname='47' x='0' y='25.805' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector47pad' connectorname='48' x='0' y='26.305' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector48pad' connectorname='49' x='0' y='26.805' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector49pad' connectorname='50' x='0' y='27.305' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector50pad' connectorname='51' x='0.01' y='27.805' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector51pad' connectorname='52' x='0' y='28.305' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector52pad' connectorname='53' x='2.805' y='30.1' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector53pad' connectorname='54' x='3.305' y='30.1' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector54pad' connectorname='55' x='3.805' y='30.1' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector55pad' connectorname='56' x='4.305' y='30.1' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector56pad' connectorname='57' x='4.805' y='30.1' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector57pad' connectorname='58' x='5.305' y='30.1' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector58pad' connectorname='59' x='5.805' y='30.1' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector59pad' connectorname='60' x='6.305' y='30.1' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector60pad' connectorname='61' x='6.805' y='30.1' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector61pad' connectorname='62' x='7.305' y='30.1' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector62pad' connectorname='63' x='7.805' y='30.1' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector63pad' connectorname='64' x='8.305' y='30.1' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector64pad' connectorname='65' x='8.805' y='30.1' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector65pad' connectorname='66' x='9.305' y='30.1' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector66pad' connectorname='67' x='9.805' y='30.1' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector67pad' connectorname='68' x='10.305' y='30.1' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector68pad' connectorname='69' x='10.805' y='30.1' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector69pad' connectorname='70' x='11.305' y='30.1' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector70pad' connectorname='71' x='11.805' y='30.1' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector71pad' connectorname='72' x='12.305' y='30.1' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector72pad' connectorname='73' x='12.805' y='30.1' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector73pad' connectorname='74' x='13.305' y='30.1' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector74pad' connectorname='75' x='13.805' y='30.1' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector75pad' connectorname='76' x='14.305' y='30.1' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector76pad' connectorname='77' x='14.805' y='30.1' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector77pad' connectorname='78' x='15.305' y='30.1' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector78pad' connectorname='79' x='15.805' y='30.1' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector79pad' connectorname='80' x='16.305' y='30.1' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector80pad' connectorname='81' x='16.805' y='30.1' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector81pad' connectorname='82' x='17.305' y='30.1' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector82pad' connectorname='83' x='17.805' y='30.1' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector83pad' connectorname='84' x='18.305' y='30.1' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector84pad' connectorname='85' x='18.805' y='30.1' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector85pad' connectorname='86' x='19.305' y='30.1' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector86pad' connectorname='87' x='19.805' y='30.1' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector87pad' connectorname='88' x='20.305' y='30.1' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector88pad' connectorname='89' x='20.805' y='30.1' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector89pad' connectorname='90' x='21.305' y='30.1' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector90pad' connectorname='91' x='21.805' y='30.1' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector91pad' connectorname='92' x='22.305' y='30.1' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector92pad' connectorname='93' x='22.805' y='30.1' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector93pad' connectorname='94' x='23.305' y='30.1' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector94pad' connectorname='95' x='23.805' y='30.1' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector95pad' connectorname='96' x='24.305' y='30.1' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector96pad' connectorname='97' x='24.805' y='30.1' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector97pad' connectorname='98' x='25.305' y='30.1' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector98pad' connectorname='99' x='25.805' y='30.1' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector99pad' connectorname='100' x='26.305' y='30.1' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector100pad' connectorname='101' x='26.805' y='30.1' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector101pad' connectorname='102' x='27.305' y='30.1' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector102pad' connectorname='103' x='27.805' y='30.09' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector103pad' connectorname='104' x='28.305' y='30.1' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector104pad' connectorname='105' x='30.1' y='28.465' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector105pad' connectorname='106' x='30.1' y='27.965' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector106pad' connectorname='107' x='30.1' y='27.465' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector107pad' connectorname='108' x='30.1' y='26.965' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector108pad' connectorname='109' x='30.1' y='26.465' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector109pad' connectorname='110' x='30.1' y='25.965' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector110pad' connectorname='111' x='30.1' y='25.465' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector111pad' connectorname='112' x='30.1' y='24.965' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector112pad' connectorname='113' x='30.1' y='24.465' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector113pad' connectorname='114' x='30.1' y='23.965' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector114pad' connectorname='115' x='30.1' y='23.465' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector115pad' connectorname='116' x='30.1' y='22.965' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector116pad' connectorname='117' x='30.1' y='22.465' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector117pad' connectorname='118' x='30.1' y='21.965' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector118pad' connectorname='119' x='30.1' y='21.465' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector119pad' connectorname='120' x='30.1' y='20.965' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector120pad' connectorname='121' x='30.1' y='20.465' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector121pad' connectorname='122' x='30.1' y='19.965' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector122pad' connectorname='123' x='30.1' y='19.465' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector123pad' connectorname='124' x='30.1' y='18.965' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector124pad' connectorname='125' x='30.1' y='18.465' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector125pad' connectorname='126' x='30.1' y='17.965' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector126pad' connectorname='127' x='30.1' y='17.465' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector127pad' connectorname='128' x='30.1' y='16.965' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector128pad' connectorname='129' x='30.1' y='16.465' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector129pad' connectorname='130' x='30.1' y='15.965' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector130pad' connectorname='131' x='30.1' y='15.465' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector131pad' connectorname='132' x='30.1' y='14.965' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector132pad' connectorname='133' x='30.1' y='14.465' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector133pad' connectorname='134' x='30.1' y='13.965' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector134pad' connectorname='135' x='30.1' y='13.465' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector135pad' connectorname='136' x='30.1' y='12.965' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector136pad' connectorname='137' x='30.1' y='12.465' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector137pad' connectorname='138' x='30.1' y='11.965' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector138pad' connectorname='139' x='30.1' y='11.465' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector139pad' connectorname='140' x='30.1' y='10.965' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector140pad' connectorname='141' x='30.1' y='10.465' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector141pad' connectorname='142' x='30.1' y='9.965' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector142pad' connectorname='143' x='30.1' y='9.465' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector143pad' connectorname='144' x='30.1' y='8.965' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector144pad' connectorname='145' x='30.1' y='8.465' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector145pad' connectorname='146' x='30.1' y='7.965' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector146pad' connectorname='147' x='30.1' y='7.465' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector147pad' connectorname='148' x='30.1' y='6.965' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector148pad' connectorname='149' x='30.1' y='6.465' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector149pad' connectorname='150' x='30.1' y='5.965' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector150pad' connectorname='151' x='30.1' y='5.465' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector151pad' connectorname='152' x='30.1' y='4.965' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector152pad' connectorname='153' x='30.1' y='4.465' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector153pad' connectorname='154' x='30.1' y='3.965' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector154pad' connectorname='155' x='30.09' y='3.465' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector155pad' connectorname='156' x='30.1' y='2.965' width='1.5' height='0.33' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector156pad' connectorname='157' x='28.465' y='0' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector157pad' connectorname='158' x='27.965' y='0' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector158pad' connectorname='159' x='27.465' y='0' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector159pad' connectorname='160' x='26.965' y='0' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector160pad' connectorname='161' x='26.465' y='0' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector161pad' connectorname='162' x='25.965' y='0' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector162pad' connectorname='163' x='25.465' y='0' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector163pad' connectorname='164' x='24.965' y='0' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector164pad' connectorname='165' x='24.465' y='0' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector165pad' connectorname='166' x='23.965' y='0' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector166pad' connectorname='167' x='23.465' y='0' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector167pad' connectorname='168' x='22.965' y='0' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector168pad' connectorname='169' x='22.465' y='0' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector169pad' connectorname='170' x='21.965' y='0' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector170pad' connectorname='171' x='21.465' y='0' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector171pad' connectorname='172' x='20.965' y='0' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector172pad' connectorname='173' x='20.465' y='0' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector173pad' connectorname='174' x='19.965' y='0' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector174pad' connectorname='175' x='19.465' y='0' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector175pad' connectorname='176' x='18.965' y='0' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector176pad' connectorname='177' x='18.465' y='0' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector177pad' connectorname='178' x='17.965' y='0' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector178pad' connectorname='179' x='17.465' y='0' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector179pad' connectorname='180' x='16.965' y='0' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector180pad' connectorname='181' x='16.465' y='0' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector181pad' connectorname='182' x='15.965' y='0' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector182pad' connectorname='183' x='15.465' y='0' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector183pad' connectorname='184' x='14.965' y='0' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector184pad' connectorname='185' x='14.465' y='0' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector185pad' connectorname='186' x='13.965' y='0' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector186pad' connectorname='187' x='13.465' y='0' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector187pad' connectorname='188' x='12.965' y='0' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector188pad' connectorname='189' x='12.465' y='0' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector189pad' connectorname='190' x='11.965' y='0' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector190pad' connectorname='191' x='11.465' y='0' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector191pad' connectorname='192' x='10.965' y='0' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector192pad' connectorname='193' x='10.465' y='0' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector193pad' connectorname='194' x='9.965' y='0' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector194pad' connectorname='195' x='9.465' y='0' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector195pad' connectorname='196' x='8.965' y='0' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector196pad' connectorname='197' x='8.465' y='0' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector197pad' connectorname='198' x='7.965' y='0' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector198pad' connectorname='199' x='7.465' y='0' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector199pad' connectorname='200' x='6.965' y='0' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector200pad' connectorname='201' x='6.465' y='0' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector201pad' connectorname='202' x='5.965' y='0' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector202pad' connectorname='203' x='5.465' y='0' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector203pad' connectorname='204' x='4.965' y='0' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector204pad' connectorname='205' x='4.465' y='0' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector205pad' connectorname='206' x='3.965' y='0' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector206pad' connectorname='207' x='3.4675' y='0.0013' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector207pad' connectorname='208' x='2.965' y='0' width='0.33' height='1.5' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<g id='copper0'>
+</g>
+</g>
+<g id='silkscreen'>
+<line class='other' x1='1.8' y1='29.8' x2='29.8' y2='29.8' stroke='#f0f0f0' stroke-width='0.127' stroke-linecap='round'/>
+<line class='other' x1='29.8' y1='29.8' x2='29.8' y2='1.8' stroke='#f0f0f0' stroke-width='0.127' stroke-linecap='round'/>
+<line class='other' x1='29.8' y1='1.8' x2='1.8' y2='1.8' stroke='#f0f0f0' stroke-width='0.127' stroke-linecap='round'/>
+<line class='other' x1='1.8' y1='1.8' x2='1.8' y2='29.8' stroke='#f0f0f0' stroke-width='0.127' stroke-linecap='round'/>
+<line class='other' x1='10.966' y1='13.197' x2='11.982' y2='10.53' stroke='#f0f0f0' stroke-width='0.127' stroke-linecap='round'/>
+<line class='other' x1='11.982' y1='10.53' x2='12.49' y2='10.53' stroke='#f0f0f0' stroke-width='0.127' stroke-linecap='round'/>
+<line class='other' x1='12.49' y1='10.53' x2='13.379' y2='12.689' stroke='#f0f0f0' stroke-width='0.127' stroke-linecap='round'/>
+<line class='other' x1='13.379' y1='12.689' x2='13.379' y2='10.53' stroke='#f0f0f0' stroke-width='0.127' stroke-linecap='round'/>
+<line class='other' x1='13.379' y1='10.53' x2='13.887' y2='10.53' stroke='#f0f0f0' stroke-width='0.127' stroke-linecap='round'/>
+<line class='other' x1='13.887' y1='10.53' x2='13.887' y2='11.038' stroke='#f0f0f0' stroke-width='0.127' stroke-linecap='round'/>
+<line class='other' x1='13.887' y1='11.038' x2='13.887' y2='12.689' stroke='#f0f0f0' stroke-width='0.127' stroke-linecap='round'/>
+<line class='other' x1='13.887' y1='12.689' x2='14.776' y2='12.689' stroke='#f0f0f0' stroke-width='0.127' stroke-linecap='round'/>
+<line class='other' x1='14.776' y1='12.689' x2='14.776' y2='11.038' stroke='#f0f0f0' stroke-width='0.127' stroke-linecap='round'/>
+<line class='other' x1='14.776' y1='11.038' x2='13.887' y2='11.038' stroke='#f0f0f0' stroke-width='0.127' stroke-linecap='round'/>
+<line class='other' x1='13.887' y1='10.53' x2='16.046' y2='10.53' stroke='#f0f0f0' stroke-width='0.127' stroke-linecap='round'/>
+<line class='other' x1='16.046' y1='10.53' x2='16.046' y2='11.038' stroke='#f0f0f0' stroke-width='0.127' stroke-linecap='round'/>
+<line class='other' x1='16.046' y1='11.038' x2='15.284' y2='11.038' stroke='#f0f0f0' stroke-width='0.127' stroke-linecap='round'/>
+<line class='other' x1='15.284' y1='11.038' x2='15.284' y2='13.197' stroke='#f0f0f0' stroke-width='0.127' stroke-linecap='round'/>
+<line class='other' x1='15.284' y1='13.197' x2='12.998' y2='13.197' stroke='#f0f0f0' stroke-width='0.127' stroke-linecap='round'/>
+<line class='other' x1='12.998' y1='13.197' x2='12.744' y2='12.689' stroke='#f0f0f0' stroke-width='0.127' stroke-linecap='round'/>
+<line class='other' x1='12.744' y1='12.689' x2='11.728' y2='12.689' stroke='#f0f0f0' stroke-width='0.127' stroke-linecap='round'/>
+<line class='other' x1='11.728' y1='12.689' x2='11.474' y2='13.197' stroke='#f0f0f0' stroke-width='0.127' stroke-linecap='round'/>
+<line class='other' x1='11.474' y1='13.197' x2='10.966' y2='13.197' stroke='#f0f0f0' stroke-width='0.127' stroke-linecap='round'/>
+<line class='other' x1='12.236' y1='11.038' x2='11.855' y2='12.181' stroke='#f0f0f0' stroke-width='0.127' stroke-linecap='round'/>
+<line class='other' x1='11.855' y1='12.181' x2='12.617' y2='12.181' stroke='#f0f0f0' stroke-width='0.127' stroke-linecap='round'/>
+<line class='other' x1='12.617' y1='12.181' x2='12.236' y2='11.038' stroke='#f0f0f0' stroke-width='0.127' stroke-linecap='round'/>
+<line class='other' x1='16.046' y1='11.038' x2='16.046' y2='11.546' stroke='#f0f0f0' stroke-width='0.127' stroke-linecap='round'/>
+<line class='other' x1='16.046' y1='11.546' x2='17.062' y2='11.546' stroke='#f0f0f0' stroke-width='0.127' stroke-linecap='round'/>
+<line class='other' x1='17.062' y1='11.546' x2='17.062' y2='11.038' stroke='#f0f0f0' stroke-width='0.127' stroke-linecap='round'/>
+<line class='other' x1='17.062' y1='11.038' x2='16.046' y2='11.038' stroke='#f0f0f0' stroke-width='0.127' stroke-linecap='round'/>
+<line class='other' x1='16.046' y1='10.53' x2='18.205' y2='10.53' stroke='#f0f0f0' stroke-width='0.127' stroke-linecap='round'/>
+<line class='other' x1='21.126' y1='13.197' x2='20.11' y2='10.53' stroke='#f0f0f0' stroke-width='0.127' stroke-linecap='round'/>
+<line class='other' x1='20.11' y1='10.53' x2='19.602' y2='10.53' stroke='#f0f0f0' stroke-width='0.127' stroke-linecap='round'/>
+<line class='other' x1='19.602' y1='10.53' x2='18.84' y2='12.308' stroke='#f0f0f0' stroke-width='0.127' stroke-linecap='round'/>
+<line class='other' x1='18.205' y1='13.197' x2='19.094' y2='13.197' stroke='#f0f0f0' stroke-width='0.127' stroke-linecap='round'/>
+<line class='other' x1='19.094' y1='13.197' x2='19.348' y2='12.689' stroke='#f0f0f0' stroke-width='0.127' stroke-linecap='round'/>
+<line class='other' x1='19.348' y1='12.689' x2='20.364' y2='12.689' stroke='#f0f0f0' stroke-width='0.127' stroke-linecap='round'/>
+<line class='other' x1='20.364' y1='12.689' x2='20.618' y2='13.197' stroke='#f0f0f0' stroke-width='0.127' stroke-linecap='round'/>
+<line class='other' x1='20.618' y1='13.197' x2='21.126' y2='13.197' stroke='#f0f0f0' stroke-width='0.127' stroke-linecap='round'/>
+<line class='other' x1='19.856' y1='11.038' x2='20.237' y2='12.181' stroke='#f0f0f0' stroke-width='0.127' stroke-linecap='round'/>
+<line class='other' x1='20.237' y1='12.181' x2='19.475' y2='12.181' stroke='#f0f0f0' stroke-width='0.127' stroke-linecap='round'/>
+<line class='other' x1='19.475' y1='12.181' x2='19.856' y2='11.038' stroke='#f0f0f0' stroke-width='0.127' stroke-linecap='round'/>
+<path class='other' fill='none' d='M18.078,11.038 A0.254,0.254 0 1 1 18.078,11.546' stroke-width='0.127' stroke='#f0f0f0' />
+<line class='other' x1='18.078' y1='11.038' x2='17.697' y2='11.038' stroke='#f0f0f0' stroke-width='0.127' stroke-linecap='round'/>
+<line class='other' x1='17.697' y1='11.038' x2='17.697' y2='11.546' stroke='#f0f0f0' stroke-width='0.127' stroke-linecap='round'/>
+<line class='other' x1='17.697' y1='11.546' x2='18.078' y2='11.546' stroke='#f0f0f0' stroke-width='0.127' stroke-linecap='round'/>
+<line class='other' x1='17.697' y1='12.054' x2='17.951' y2='12.054' stroke='#f0f0f0' stroke-width='0.127' stroke-linecap='round'/>
+<line class='other' x1='17.697' y1='12.054' x2='17.697' y2='13.197' stroke='#f0f0f0' stroke-width='0.127' stroke-linecap='round'/>
+<line class='other' x1='17.697' y1='13.197' x2='15.411' y2='13.197' stroke='#f0f0f0' stroke-width='0.127' stroke-linecap='round'/>
+<line class='other' x1='16.046' y1='12.054' x2='17.062' y2='12.054' stroke='#f0f0f0' stroke-width='0.127' stroke-linecap='round'/>
+<line class='other' x1='17.062' y1='12.054' x2='17.062' y2='12.562' stroke='#f0f0f0' stroke-width='0.127' stroke-linecap='round'/>
+<line class='other' x1='17.062' y1='12.562' x2='16.046' y2='12.562' stroke='#f0f0f0' stroke-width='0.127' stroke-linecap='round'/>
+<line class='other' x1='16.046' y1='12.562' x2='16.046' y2='12.054' stroke='#f0f0f0' stroke-width='0.127' stroke-linecap='round'/>
+<path class='other' fill='none' d='M17.951,12.054 A0.254,0.254 0 0 1 18.205,12.308' stroke-width='0.127' stroke='#f0f0f0' />
+<line class='other' x1='18.205' y1='12.308' x2='18.205' y2='13.197' stroke='#f0f0f0' stroke-width='0.127' stroke-linecap='round'/>
+<path class='other' fill='none' d='M18.205,10.53 A0.771028,0.771028 0 0 1 18.5863,11.9282' stroke-width='0.127' stroke='#f0f0f0' />
+<path class='other' fill='none' d='M18.586,11.927 A0.454353,0.454353 0 0 1 18.8397,12.435' stroke-width='0.127' stroke='#f0f0f0' />
+<circle class='other' cx='3.3' cy='3.3' r='0.5' stroke='#f0f0f0' stroke-width='0.127' fill='none' />
+</g>
+</svg>

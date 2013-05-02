@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="svg2" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" width="0.2441in"
+	 height="0.2441in" viewBox="0 0 21.969 21.969" enable-background="new 0 0 21.969 21.969" xml:space="preserve">
+<g id="copper0">
+	<g id="copper1">
+		<circle id="connector1pad" fill="none" stroke="#F7BD13" stroke-width="1.4173" cx="10.984" cy="13.292" r="2.126"/>
+		<rect x="8.858" y="11.166" fill="none" stroke="#F7BD13" stroke-width="1.4173" width="4.252" height="4.252"/>
+		<circle id="connector0pad" fill="none" stroke="#F7BD13" stroke-width="1.4173" cx="10.984" cy="4.433" r="2.126"/>
+	</g>
+</g>
+<g id="silkscreen">
+	<path id="path2820_2_" fill="none" stroke="#FFFFFF" stroke-width="0.4608" stroke-linecap="round" stroke-linejoin="round" d="
+		M7.534,14.506c-0.245-0.142-0.485-0.3-0.717-0.476c-3.046-2.3-3.65-6.636-1.349-9.682C5.86,3.83,6.322,3.37,6.841,2.98"/>
+	<path id="path2820_1_" fill="none" stroke="#FFFFFF" stroke-width="0.4608" stroke-linecap="round" stroke-linejoin="round" d="
+		M15.15,2.999c3.045,2.299,3.649,6.635,1.35,9.682c-0.553,0.732-1.224,1.323-1.966,1.767"/>
+	<path id="path3707_2_" fill="none" stroke="#FFFFFF" stroke-width="0.4608" stroke-linecap="round" d="M7.984,2.983H6.837"/>
+	<path id="path3707_1_" fill="none" stroke="#FFFFFF" stroke-width="0.4608" stroke-linecap="round" d="M15.131,2.983h-1.146"/>
+</g>
+</svg>

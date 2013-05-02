@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module moduleId="LogoTextModuleID" >
+ <version>4</version>
+ <author>Brendan Howell</author>
+ <title>Silkscreen Text</title>
+ <date>2008-11-25</date>
+ <label>TXT</label>
+ <tags>
+  <tag>pcb</tag>
+  <tag>part</tag>
+  <tag>diy</tag>
+  <tag>fritzing core</tag>
+ </tags>
+ <properties>
+   <property name="family" >Logo</property>
+   <property name="logo" >logo</property>
+   <property name="shape" ></property>
+   <property name="type" >text</property>
+   <property name="layer" >silkscreen</property>
+ </properties>
+ <taxonomy>discreteParts.pcb.logo</taxonomy>
+ <description>For adding text to the silkscreen layer of the board</description>
+ <views>
+  <iconView>
+   <layers image="icon/silkscreen_text.svg" >
+    <layer layerId="icon" />
+   </layers>
+  </iconView>
+  <breadboardView>
+   <layers image="pcb/logo.svg" >
+    <layer layerId="unknown" />
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="pcb/logo.svg" >
+    <layer layerId="unknown" />
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/logo.svg" >
+    <layer layerId="silkscreen"/>
+   </layers>
+  </pcbView>
+ </views>
+ <connectors/>
+ <buses/>
+</module>

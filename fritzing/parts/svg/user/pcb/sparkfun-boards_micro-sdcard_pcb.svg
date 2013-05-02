@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- Created with Fritzing (http://www.fritzing.org/) -->
+<svg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' version='1.2' baseProfile='tiny' x='0in' y='0in' width='1.0336in' height='0.92122in' viewBox='0 0 26.2535 23.399' >
+<g id='copper1'>
+<rect id='connector1pad' connectorname='DAT1' x='9.6385' y='16.934' width='0.85' height='3.25' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector0pad' connectorname='DAT0' x='8.5385' y='16.934' width='0.85' height='3.25' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector6pad' connectorname='GND' x='7.4385' y='16.884' width='0.85' height='3.75' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector4pad' connectorname='CLK' x='6.3385' y='16.934' width='0.85' height='3.25' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector7pad' connectorname='VCC' x='5.2385' y='16.884' width='0.85' height='3.75' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector5pad' connectorname='CMD' x='4.1385' y='16.934' width='0.85' height='3.25' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector3pad' connectorname='CD/DAT3' x='3.0385' y='16.934' width='0.85' height='3.25' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector2pad' connectorname='DAT2' x='1.9385' y='16.934' width='0.85' height='3.25' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<g id='copper0'>
+</g>
+</g>
+<g id='silkscreen'>
+<line class='other' x1='11.0635' y1='20.859' x2='11.0635' y2='5.859' stroke='#f0f0f0' stroke-width='0.127' stroke-linecap='round'/>
+<line class='other' x1='11.0635' y1='5.859' x2='0.0635' y2='5.859' stroke='#f0f0f0' stroke-width='0.127' stroke-linecap='round'/>
+<line class='other' x1='0.0635' y1='11.259' x2='0.4635' y2='11.659' stroke='#f0f0f0' stroke-width='0.127' stroke-linecap='round'/>
+<line class='other' x1='0.4635' y1='11.659' x2='0.4635' y2='13.459' stroke='#f0f0f0' stroke-width='0.127' stroke-linecap='round'/>
+<line class='other' x1='0.4635' y1='13.459' x2='0.0635' y2='13.859' stroke='#f0f0f0' stroke-width='0.127' stroke-linecap='round'/>
+<line class='other' x1='0.0635' y1='13.859' x2='0.0635' y2='14.859' stroke='#f0f0f0' stroke-width='0.127' stroke-linecap='round'/>
+<line class='other' x1='0.0635' y1='14.859' x2='1.0635' y2='15.859' stroke='#f0f0f0' stroke-width='0.127' stroke-linecap='round'/>
+<line class='other' x1='1.0635' y1='15.859' x2='1.0635' y2='20.859' stroke='#f0f0f0' stroke-width='0.127' stroke-linecap='round'/>
+<line class='other' x1='1.0635' y1='20.859' x2='11.0635' y2='20.859' stroke='#f0f0f0' stroke-width='0.127' stroke-linecap='round'/>
+<line class='other' x1='0.0635' y1='5.859' x2='0.0635' y2='11.259' stroke='#f0f0f0' stroke-width='0.127' stroke-linecap='round'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#f0f0f0' font-size='1.651' x='7.2535' y='6' text-anchor='end'>&gt;Name</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#f0f0f0' font-size='1.651' x='0.9035' y='23.399' text-anchor='start'>&gt;Value</text>
+</g>
+</svg>

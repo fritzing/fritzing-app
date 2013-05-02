@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.2" baseProfile="tiny" id="Layer_1" xmlns="http://www.w3.org/2000/svg"  x="0" y="0" width="1.09in"
+	 height="0.93970in" viewBox="0 0 78.585 67.749" >  
+<g id="breadboard">
+	<rect id="connector0pin" x="34.194" y="66" fill="none" width="1" height="1"/>
+	<rect id="connector1pin" x="41.392" y="66" fill="none" width="1" height="1"/>
+	
+	<line  id="connector0leg" stroke-linecap="round" x1="35.687" y1="67.749" x2="35.687" y2="76.004" stroke="#000000" fill="none" stroke-width="3" />
+	<line  id="connector1leg" stroke-linecap="round" x1="42.928" y1="67.749" x2="42.928" y2="76.004" stroke="#FF0000" fill="none" stroke-width="3" />
+
+	
+	<path fill="none" stroke="#000000" stroke-width="3" d="M35.687,53.132v14.617"/>
+	<path fill="none" stroke="#FF0000" stroke-width="3" d="M42.928,53.132v14.617"/>
+	
+	
+	<g>
+		<path d="M3.684,23.018C1.907,23.44,0,25.81,0,28.368c0,2.558,1.779,4.867,3.684,5.35c1.906,0.48,10.304,2.602,10.304,2.602V20.416
+			L3.684,23.018z M5.494,30.423c-1.136,0-2.056-0.921-2.056-2.056c0-1.136,0.92-2.058,2.056-2.058c1.136,0,2.056,0.921,2.056,2.058
+			C7.55,29.503,6.63,30.423,5.494,30.423z"/>
+	</g>
+	<g>
+		<path d="M74.901,23.016c-1.905-0.479-10.304-2.602-10.304-2.602v15.903l10.304-2.602c1.776-0.423,3.685-2.792,3.685-5.35
+			C78.585,25.807,76.807,23.498,74.901,23.016z M73.091,30.424c-1.135,0-2.057-0.921-2.057-2.056c0-1.136,0.922-2.057,2.057-2.057
+			c1.136,0,2.057,0.921,2.057,2.057C75.148,29.503,74.227,30.424,73.091,30.424z"/>
+	</g>
+	<circle fill="#0D0D0D" cx="39.292" cy="28.367" r="28.365"/>
+	<g>
+		<circle cx="39.292" cy="28.368" r="28.366"/>
+	</g>
+	<circle fill="#D7D8D9" cx="39.293" cy="28.368" r="4.814"/>
+	<path fill="none" stroke="#58595B" stroke-width="1.8574" stroke-linecap="round" stroke-linejoin="round" d="M12.529,33.369
+		c-1.288-6.886,0.068-14.262,4.364-20.477C25.438,0.52,42.397-2.582,54.77,5.968"/>
+	<g>
+		<g>
+			<path fill="none" stroke="#3F3F41" stroke-width="0.2085" stroke-linecap="round" stroke-linejoin="round" d="M54.167,43.241
+				c8.223-8.223,8.223-21.526,0-29.748c-8.223-8.223-21.526-8.223-29.75,0c-8.222,8.222-8.221,21.525,0,29.748
+				C32.641,51.463,45.946,51.463,54.167,43.241z"/>
+			<path fill="none" stroke="#3F3F41" stroke-width="0.2085" stroke-linecap="round" stroke-linejoin="round" d="M26.075,41.587
+				c-7.306-7.307-7.306-19.131,0-26.438c7.306-7.307,19.129-7.306,26.437,0c7.306,7.308,7.305,19.129-0.001,26.437
+				C45.205,48.892,33.381,48.894,26.075,41.587z"/>
+			<path fill="none" stroke="#3F3F41" stroke-width="0.2085" stroke-linecap="round" stroke-linejoin="round" d="M50.863,39.937
+				c6.393-6.391,6.385-16.741-0.007-23.131c-6.392-6.392-16.741-6.398-23.132-0.007c-6.392,6.391-6.383,16.74,0.008,23.133
+				C34.123,46.319,44.473,46.329,50.863,39.937z"/>
+			<path fill="none" stroke="#3F3F41" stroke-width="0.2085" stroke-linecap="round" stroke-linejoin="round" d="M29.374,38.289
+				c-5.484-5.484-5.47-14.359,0.007-19.835c5.476-5.477,14.351-5.49,19.833-0.007c5.481,5.482,5.47,14.357-0.006,19.833
+				C43.731,43.758,34.856,43.771,29.374,38.289z"/>
+			<path fill="none" stroke="#3F3F41" stroke-width="0.2085" stroke-linecap="round" stroke-linejoin="round" d="M47.559,36.632
+				c4.562-4.562,4.567-11.961,0-16.53c-4.567-4.568-11.969-4.561-16.529,0c-4.561,4.562-4.569,11.961,0,16.53
+				C35.597,41.201,42.998,41.192,47.559,36.632z"/>
+			<path fill="none" stroke="#3F3F41" stroke-width="0.2085" stroke-linecap="round" stroke-linejoin="round" d="M32.685,34.976
+				c-3.653-3.652-3.661-9.557,0-13.218c3.66-3.66,9.564-3.653,13.218,0.001c3.653,3.653,3.66,9.557,0,13.217
+				C42.242,38.638,36.338,38.629,32.685,34.976z"/>
+		</g>
+	</g>
+	<path fill="none" stroke="#303032" stroke-width="1.8574" stroke-linecap="round" stroke-linejoin="round" d="M27.925,53.108
+		c13.667,6.275,29.833,0.289,36.108-13.377c3.422-7.449,3.198-15.645,0.071-22.574"/>
+</g>
+</svg>

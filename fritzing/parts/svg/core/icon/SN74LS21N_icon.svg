@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg xmlns="http://www.w3.org/2000/svg" width="0.30000001in" version="1.2" height="0.33000001in" viewBox="0 0 300 330" id="svg2863">
+ <g  id="icon">
+  <rect  width="300" x="0" y="30" height="270" style="fill:#303030;stroke-width:0" id="middle"/>
+  <rect  width="300" x="0" y="30" height="24.6" style="fill:#3d3d3d;stroke-width:0" id="top"/>
+  <rect  width="300" x="0" y="275.39999" height="24.6" style="fill:#000000;stroke-width:0" id="bottom"/>
+  <polygon  points="292.5,54.6 292.5,275.4 300,300 300,30 " style="fill:#141414;stroke-width:0" id="right"/>
+  <polygon  points="7.5,54.6 7.5,275.4 0,300 0,30 " style="fill:#1f1f1f;stroke-width:0" id="left"/>
+  <polygon  points="7.5,114.6 5.6,135.8 5.6,165 50,165 50,115 " style="fill:#1c1c1c;stroke-width:0" id="left-upper-rect"/>
+  <polygon  points="50,215.5 50,165 5.6,165 5.6,194.2 7.5,215.5 " style="fill:#383838;stroke-width:0" id="left-lower-rect"/>
+  <path  style="fill:#262626;stroke-width:0" id="slot" d="m 5.6,135.8 0,58.3 c 14.7,-1.7 26.2,-14 26.2,-29.2 0,-15.2 -11.4,-27.4 -26.2,-29.1 z"/>
+  <path  style="fill:#303030;stroke-width:0" id="cover" d="m 7.5,54.6 0,59.9 c 23.8,4.5 41.9,25.3 41.9,50.4 0,25.1 -18,46 -41.9,50.5 l 0,0.1 50,0 0,-160.9 -50,0 z"/>
+  <circle  cx="65" cy="234.7" style="fill:#212121;stroke-width:0" r="20.6" id="circle2875"/>
+  <g style="font-size:80px;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#dddddd;stroke:none;font-family:OCRA" id="label">
+   <text x="65" y="187.07158" id="tspan2966">7421</text>
+  </g>
+  <rect  width="30" x="35" y="286.60001" height="43.400002" style="fill:#8c8c8c;stroke-width:0" id="connector0pin"/>
+  <rect  width="30" x="35" y="300" height="30" style="fill:#8c8c8c;stroke-width:0" id="connector0terminal"/>
+  <polygon  points="35,306.6 65,306.6 85,297.4 85,286.6 35,286.6 " style="fill:#8c8c8c;stroke-width:0" id="polygon2880"/>
+  <rect  width="30" x="35" y="0" height="43.400002" style="fill:#8c8c8c;stroke-width:0" id="connector5pin"/>
+  <rect  width="30" x="35" y="0" height="30" style="fill:#8c8c8c;stroke-width:0" id="connector5terminal"/>
+  <polygon  points="85,32.6 65,23.4 35,23.4 35,43.4 85,43.4 " style="fill:#8c8c8c;stroke-width:0" id="polygon2884"/>
+  <rect  width="30" x="235" y="286.60001" height="43.400002" style="fill:#8c8c8c;stroke-width:0" id="connector2pin"/>
+  <rect  width="30" x="235" y="300" height="30" style="fill:#8c8c8c;stroke-width:0" id="connector2terminal"/>
+  <polygon  points="215,297.4 235,306.6 265,306.6 265,286.6 215,286.6 " style="fill:#8c8c8c;stroke-width:0" id="polygon2888"/>
+  <rect  width="30" x="235" y="0" height="43.400002" style="fill:#8c8c8c;stroke-width:0" id="connector3pin"/>
+  <rect  width="30" x="235" y="0" height="30" style="fill:#8c8c8c;stroke-width:0" id="connector3terminal"/>
+  <polygon  points="265,23.4 235,23.4 215,32.6 215,43.4 265,43.4 " style="fill:#8c8c8c;stroke-width:0" id="polygon2892"/>
+  <rect  width="30" x="135" y="286.60001" height="43.400002" style="fill:#8c8c8c;stroke-width:0" id="connector1pin"/>
+  <rect  width="30" x="135" y="300" height="30" style="fill:#8c8c8c;stroke-width:0" id="connector1terminal"/>
+  <polygon  points="115,297.4 135,306.6 165,306.6 185,297.4 185,286.6 115,286.6 " style="fill:#8c8c8c;stroke-width:0" id="polygon2896"/>
+  <rect  width="30" x="135" y="0" height="43.400002" style="fill:#8c8c8c;stroke-width:0" id="connector4pin"/>
+  <rect  width="30" x="135" y="0" height="30" style="fill:#8c8c8c;stroke-width:0" id="connector4terminal"/>
+  <polygon  points="185,32.6 165,23.4 135,23.4 115,32.6 115,43.4 185,43.4 " style="fill:#8c8c8c;stroke-width:0" id="polygon2900"/>
+  <g style="font-size:79.99999237px;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#dddddd;stroke:none;font-family:OCRA" id="label-1"/>
+ </g>
+</svg>

@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- Created with Fritzing (http://www.fritzing.org/) -->
+<svg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' version='1.2' baseProfile='tiny' x='0in' y='0in' width='1.54856in' height='0.498406in' viewBox='0 0 39.3335 12.6595' >
+<g id='breadboard'>
+<path fill='#1F7A34' stroke='none' stroke-width='0' d='M0,0l39.3335,0 0,12.6595 -39.3335,0 0,-12.6595z
+'/>
+<rect id='connector3pin' connectorname='4' x='8.4535' y='0' width='1' height='3' stroke='none' stroke-width='0' fill='#9A916C' stroke-linecap='round'/>
+<rect id='connector4pin' connectorname='5' x='10.9935' y='0' width='1' height='3' stroke='none' stroke-width='0' fill='#9A916C' stroke-linecap='round'/>
+<rect id='connector5pin' connectorname='6' x='13.5335' y='0' width='1' height='3' stroke='none' stroke-width='0' fill='#9A916C' stroke-linecap='round'/>
+<rect id='connector2pin' connectorname='3' x='5.9135' y='0' width='1' height='3' stroke='none' stroke-width='0' fill='#9A916C' stroke-linecap='round'/>
+<rect id='connector1pin' connectorname='2' x='3.3735' y='0' width='1' height='3' stroke='none' stroke-width='0' fill='#9A916C' stroke-linecap='round'/>
+<rect id='connector0pin' connectorname='1' x='0.8335' y='0' width='1' height='3' stroke='none' stroke-width='0' fill='#9A916C' stroke-linecap='round'/>
+<line class='other' x1='15.3035' y1='3.96' x2='0.0635' y2='3.96' stroke='#f8f8f8' stroke-width='0.127' stroke-linecap='round'/>
+<line class='other' x1='0.0635' y1='3.96' x2='0.0635' y2='12.596' stroke='#f8f8f8' stroke-width='0.127' stroke-linecap='round'/>
+<line class='other' x1='0.0635' y1='12.596' x2='15.3035' y2='12.596' stroke='#f8f8f8' stroke-width='0.127' stroke-linecap='round'/>
+<line class='other' x1='15.3035' y1='12.596' x2='15.3035' y2='3.96' stroke='#f8f8f8' stroke-width='0.127' stroke-linecap='round'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#f8f8f8' font-size='0.52832' x='1.3335' y='7.77' text-anchor='start'>thru-hole vertical Female Header</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#f8f8f8' font-size='0.52832' x='1.3335' y='9.04' text-anchor='start'>used as an SMD part </text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#f8f8f8' font-size='0.52832' x='1.3335' y='10.31' text-anchor='start'>(placed horizontally, at board&apos;s edge)</text>
+<rect class='other' x='0.9525' y='1.1406' width='0.762' height='2.7686' stroke='none' stroke-width='0' fill='#f8f8f8' stroke-linecap='round'/>
+<rect class='other' x='3.4925' y='1.1406' width='0.762' height='2.7686' stroke='none' stroke-width='0' fill='#f8f8f8' stroke-linecap='round'/>
+<rect class='other' x='6.0325' y='1.1406' width='0.762' height='2.7686' stroke='none' stroke-width='0' fill='#f8f8f8' stroke-linecap='round'/>
+<rect class='other' x='8.5725' y='1.1406' width='0.762' height='2.7686' stroke='none' stroke-width='0' fill='#f8f8f8' stroke-linecap='round'/>
+<rect class='other' x='11.1125' y='1.1406' width='0.762' height='2.7686' stroke='none' stroke-width='0' fill='#f8f8f8' stroke-linecap='round'/>
+<rect class='other' x='13.6525' y='1.1406' width='0.762' height='2.7686' stroke='none' stroke-width='0' fill='#f8f8f8' stroke-linecap='round'/>
+</g>
+</svg>

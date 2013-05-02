@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?> <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" x="0in" y="0in" width="4.2535in" height="3.981in" viewBox="0 0 425350 398100" ><title>ISA8.fp</title><desc>Geda footprint file 'ISA8.fp' converted by Fritzing</desc><metadata xmlns:fz='http://fritzing.org/gedametadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'><rdf:RDF><rdf:Description rdf:about=''><fz:attr name='geda filename'>ISA8.fp</fz:attr>
+<fz:attr name='fritzing version'>0.4.0b.06.21.4282</fz:attr>
+<fz:attr name='conversion date'>27/06/2010 07:15:42</fz:attr>
+<fz:comment>Pins, entspr. Anschl. auf Loetseite (b31..b1)</fz:comment>
+<fz:comment>Pins, entspr. Anschl. auf Bestueckseite</fz:comment>
+<fz:comment>Umrahmung</fz:comment>
+<fz:comment>Markierung == Pin B1</fz:comment>
+<fz:attr name='dist-license'>GPL</fz:attr>
+<fz:attr name='use-license'>unlimited</fz:attr>
+<fz:attr name='author'>gEDA project</fz:attr>
+<fz:attr name='license-url'>http://www.gnu.org/licenses/gpl.html</fz:attr>
+</rdf:Description></rdf:RDF></metadata><g id="copper0">
+ <g id="copper1">
+  <circle fill="none" cx="20100" cy="385100" connectorname="Gnd (b31)" stroke="#ff9400" r="2375" id="nonconn0" stroke-width="1250"/>
+  <circle fill="none" cx="30100" cy="385100" connectorname="Osc" stroke="#ff9400" r="2375" id="nonconn1" stroke-width="1250"/>
+  <circle fill="none" cx="40100" cy="385100" connectorname="+5V" stroke="#ff9400" r="2375" id="nonconn2" stroke-width="1250"/>
+  <circle fill="none" cx="50100" cy="385100" connectorname="BALE" stroke="#ff9400" r="2375" id="nonconn3" stroke-width="1250"/>
+  <circle fill="none" cx="60100" cy="385100" connectorname="TC" stroke="#ff9400" r="2375" id="nonconn4" stroke-width="1250"/>
+  <circle fill="none" cx="70100" cy="385100" connectorname="/DAck2" stroke="#ff9400" r="2375" id="nonconn5" stroke-width="1250"/>
+  <circle fill="none" cx="80100" cy="385100" connectorname="IRq3" stroke="#ff9400" r="2375" id="nonconn6" stroke-width="1250"/>
+  <circle fill="none" cx="90100" cy="385100" connectorname="IRq4" stroke="#ff9400" r="2375" id="nonconn7" stroke-width="1250"/>
+  <circle fill="none" cx="100100" cy="385100" connectorname="IRq5" stroke="#ff9400" r="2375" id="nonconn8" stroke-width="1250"/>
+  <circle fill="none" cx="110100" cy="385100" connectorname="IRq6" stroke="#ff9400" r="2375" id="nonconn9" stroke-width="1250"/>
+  <circle fill="none" cx="120100" cy="385100" connectorname="IRq7" stroke="#ff9400" r="2375" id="nonconn10" stroke-width="1250"/>
+  <circle fill="none" cx="130100" cy="385100" connectorname="Clock" stroke="#ff9400" r="2375" id="nonconn11" stroke-width="1250"/>
+  <circle fill="none" cx="140100" cy="385100" connectorname="/Ref" stroke="#ff9400" r="2375" id="nonconn12" stroke-width="1250"/>
+  <circle fill="none" cx="150100" cy="385100" connectorname="DRq1" stroke="#ff9400" r="2375" id="nonconn13" stroke-width="1250"/>
+  <circle fill="none" cx="160100" cy="385100" connectorname="/DAck1" stroke="#ff9400" r="2375" id="nonconn14" stroke-width="1250"/>
+  <circle fill="none" cx="170100" cy="385100" connectorname="DRq3" stroke="#ff9400" r="2375" id="nonconn15" stroke-width="1250"/>
+  <circle fill="none" cx="180100" cy="385100" connectorname="/DAck3" stroke="#ff9400" r="2375" id="nonconn16" stroke-width="1250"/>
+  <circle fill="none" cx="190100" cy="385100" connectorname="/IOR" stroke="#ff9400" r="2375" id="nonconn17" stroke-width="1250"/>
+  <circle fill="none" cx="200100" cy="385100" connectorname="/IOW" stroke="#ff9400" r="2375" id="nonconn18" stroke-width="1250"/>
+  <circle fill="none" cx="210100" cy="385100" connectorname="/SMEMR" stroke="#ff9400" r="2375" id="nonconn19" stroke-width="1250"/>
+  <circle fill="none" cx="220100" cy="385100" connectorname="/SMEMW" stroke="#ff9400" r="2375" id="nonconn20" stroke-width="1250"/>
+  <circle fill="none" cx="230100" cy="385100" connectorname="Gnd" stroke="#ff9400" r="2375" id="nonconn21" stroke-width="1250"/>
+  <circle fill="none" cx="240100" cy="385100" connectorname="+12V" stroke="#ff9400" r="2375" id="nonconn22" stroke-width="1250"/>
+  <circle fill="none" cx="250100" cy="385100" connectorname="/0WS" stroke="#ff9400" r="2375" id="nonconn23" stroke-width="1250"/>
+  <circle fill="none" cx="260100" cy="385100" connectorname="-12V" stroke="#ff9400" r="2375" id="nonconn24" stroke-width="1250"/>
+  <circle fill="none" cx="270100" cy="385100" connectorname="DRq2" stroke="#ff9400" r="2375" id="nonconn25" stroke-width="1250"/>
+  <circle fill="none" cx="280100" cy="385100" connectorname="-5V" stroke="#ff9400" r="2375" id="nonconn26" stroke-width="1250"/>
+  <circle fill="none" cx="290100" cy="385100" connectorname="IEQ2" stroke="#ff9400" r="2375" id="nonconn27" stroke-width="1250"/>
+  <circle fill="none" cx="300100" cy="385100" connectorname="+5V" stroke="#ff9400" r="2375" id="nonconn28" stroke-width="1250"/>
+  <circle fill="none" cx="310100" cy="385100" connectorname="ResDrv" stroke="#ff9400" r="2375" id="nonconn29" stroke-width="1250"/>
+  <circle fill="none" cx="320100" cy="385100" connectorname="Gnd (b1)" stroke="#ff9400" r="2375" id="nonconn30" stroke-width="1250"/>
+  <circle fill="none" cx="20100" cy="395100" connectorname="SA0 (a31)" stroke="#ff9400" r="2375" id="nonconn31" stroke-width="1250"/>
+  <circle fill="none" cx="30100" cy="395100" connectorname="SA1" stroke="#ff9400" r="2375" id="nonconn32" stroke-width="1250"/>
+  <circle fill="none" cx="40100" cy="395100" connectorname="SA2" stroke="#ff9400" r="2375" id="nonconn33" stroke-width="1250"/>
+  <circle fill="none" cx="50100" cy="395100" connectorname="SA3" stroke="#ff9400" r="2375" id="nonconn34" stroke-width="1250"/>
+  <circle fill="none" cx="60100" cy="395100" connectorname="SA4" stroke="#ff9400" r="2375" id="nonconn35" stroke-width="1250"/>
+  <circle fill="none" cx="70100" cy="395100" connectorname="SA5" stroke="#ff9400" r="2375" id="nonconn36" stroke-width="1250"/>
+  <circle fill="none" cx="80100" cy="395100" connectorname="SA6" stroke="#ff9400" r="2375" id="nonconn37" stroke-width="1250"/>
+  <circle fill="none" cx="90100" cy="395100" connectorname="SA7" stroke="#ff9400" r="2375" id="nonconn38" stroke-width="1250"/>
+  <circle fill="none" cx="100100" cy="395100" connectorname="SA8" stroke="#ff9400" r="2375" id="nonconn39" stroke-width="1250"/>
+  <circle fill="none" cx="110100" cy="395100" connectorname="SA9" stroke="#ff9400" r="2375" id="nonconn40" stroke-width="1250"/>
+  <circle fill="none" cx="120100" cy="395100" connectorname="SA10" stroke="#ff9400" r="2375" id="nonconn41" stroke-width="1250"/>
+  <circle fill="none" cx="130100" cy="395100" connectorname="SA11" stroke="#ff9400" r="2375" id="nonconn42" stroke-width="1250"/>
+  <circle fill="none" cx="140100" cy="395100" connectorname="SA12" stroke="#ff9400" r="2375" id="nonconn43" stroke-width="1250"/>
+  <circle fill="none" cx="150100" cy="395100" connectorname="SA13" stroke="#ff9400" r="2375" id="nonconn44" stroke-width="1250"/>
+  <circle fill="none" cx="160100" cy="395100" connectorname="SA14" stroke="#ff9400" r="2375" id="nonconn45" stroke-width="1250"/>
+  <circle fill="none" cx="170100" cy="395100" connectorname="SA15" stroke="#ff9400" r="2375" id="nonconn46" stroke-width="1250"/>
+  <circle fill="none" cx="180100" cy="395100" connectorname="SA16" stroke="#ff9400" r="2375" id="nonconn47" stroke-width="1250"/>
+  <circle fill="none" cx="190100" cy="395100" connectorname="SA17" stroke="#ff9400" r="2375" id="nonconn48" stroke-width="1250"/>
+  <circle fill="none" cx="200100" cy="395100" connectorname="SA18" stroke="#ff9400" r="2375" id="nonconn49" stroke-width="1250"/>
+  <circle fill="none" cx="210100" cy="395100" connectorname="SA19" stroke="#ff9400" r="2375" id="nonconn50" stroke-width="1250"/>
+  <circle fill="none" cx="220100" cy="395100" connectorname="AEN" stroke="#ff9400" r="2375" id="nonconn51" stroke-width="1250"/>
+  <circle fill="none" cx="230100" cy="395100" connectorname="IOChRdy" stroke="#ff9400" r="2375" id="nonconn52" stroke-width="1250"/>
+  <circle fill="none" cx="240100" cy="395100" connectorname="SD0" stroke="#ff9400" r="2375" id="nonconn53" stroke-width="1250"/>
+  <circle fill="none" cx="250100" cy="395100" connectorname="SD1" stroke="#ff9400" r="2375" id="nonconn54" stroke-width="1250"/>
+  <circle fill="none" cx="260100" cy="395100" connectorname="SD2" stroke="#ff9400" r="2375" id="nonconn55" stroke-width="1250"/>
+  <circle fill="none" cx="270100" cy="395100" connectorname="SD3" stroke="#ff9400" r="2375" id="nonconn56" stroke-width="1250"/>
+  <circle fill="none" cx="280100" cy="395100" connectorname="SD4" stroke="#ff9400" r="2375" id="nonconn57" stroke-width="1250"/>
+  <circle fill="none" cx="290100" cy="395100" connectorname="SD5" stroke="#ff9400" r="2375" id="nonconn58" stroke-width="1250"/>
+  <circle fill="none" cx="300100" cy="395100" connectorname="SD6" stroke="#ff9400" r="2375" id="nonconn59" stroke-width="1250"/>
+  <circle fill="none" cx="310100" cy="395100" connectorname="SD7" stroke="#ff9400" r="2375" id="nonconn60" stroke-width="1250"/>
+  <circle fill="none" cx="320100" cy="395100" connectorname="/IOChCk (a1)" stroke="#ff9400" r="2375" id="nonconn61" stroke-width="1250"/>
+ </g>
+</g>
+<g id="silkscreen">
+ <line fill="none" stroke="white" y1="10100" x1="100" y2="10100" stroke-width="200" x2="10100"/>
+ <line fill="none" stroke="white" y1="100" x1="10100" y2="10100" stroke-width="200" x2="10100"/>
+ <line fill="none" stroke="white" y1="10100" x1="10100" y2="10100" stroke-width="500" x2="425100"/>
+ <line fill="none" stroke="white" y1="10100" x1="425100" y2="381100" stroke-width="500" x2="425100"/>
+ <line fill="none" stroke="white" y1="381100" x1="425100" y2="381100" stroke-width="500" x2="362100"/>
+ <line fill="none" stroke="white" y1="381100" x1="362100" y2="351100" stroke-width="500" x2="362100"/>
+ <line fill="none" stroke="white" y1="351100" x1="362100" y2="351100" stroke-width="500" x2="330100"/>
+ <line fill="none" stroke="white" y1="351100" x1="330100" y2="381100" stroke-width="500" x2="330100"/>
+ <line fill="none" stroke="white" y1="381100" x1="330100" y2="381100" stroke-width="500" x2="10100"/>
+ <line fill="none" stroke="white" y1="381100" x1="10100" y2="351100" stroke-width="500" x2="10100"/>
+ <line fill="none" stroke="white" y1="351100" x1="10100" y2="351100" stroke-width="200" x2="100"/>
+</g>
+</svg>

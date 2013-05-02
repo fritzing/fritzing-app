@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg width="0.41999999in" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" version="1.2" xmlns="http://www.w3.org/2000/svg" height="0.72000003in" viewBox="0 0 420 720" xmlns:cc="http://creativecommons.org/ns#" id="svg2" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:svg="http://www.w3.org/2000/svg">
+ <desc id="desc4">Fritzing footprint SVG</desc>
+ <metadata id="metadata42">
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs id="defs40"/>
+ <g id="silkscreen">
+  <line stroke="white" style="stroke:#ffffff;stroke-width:10" id="line7" y1="10" stroke-width="10" x1="10" y2="710" x2="10"/>
+  <line stroke="white" style="stroke:#ffffff;stroke-width:10" id="line9" y1="710" stroke-width="10" x1="10" y2="710" x2="410"/>
+  <line stroke="white" style="stroke:#ffffff;stroke-width:10" id="line11" y1="710" stroke-width="10" x1="410" y2="10" x2="410"/>
+  <line stroke="white" style="stroke:#ffffff;stroke-width:10" id="line13" y1="10" stroke-width="10" x1="10" y2="10" x2="160"/>
+  <line stroke="white" style="stroke:#ffffff;stroke-width:10" id="line15" y1="10" stroke-width="10" x1="260" y2="10" x2="410"/>
+ </g>
+ <g id="copper1">
+  <g id="copper0">
+   <rect width="55" x="32.5" y="32.5" height="55" style="fill:none;stroke:#ffbf00;stroke-width:20" id="rect19"/>
+   <circle cx="60" cy="60" style="fill:none;stroke:#ffbf00;stroke-width:20" r="27.5" id="connector0pin"/>
+   <circle cx="360" cy="60" style="fill:none;stroke:#ffbf00;stroke-width:20" r="27.5" id="connector13pin"/>
+   <circle cx="60" cy="160" style="fill:none;stroke:#ffbf00;stroke-width:20" r="27.5" id="connector1pin"/>
+   <circle cx="360" cy="160" style="fill:none;stroke:#ffbf00;stroke-width:20" r="27.5" id="connector12pin"/>
+   <circle cx="60" cy="260" style="fill:none;stroke:#ffbf00;stroke-width:20" r="27.5" id="connector2pin"/>
+   <circle cx="360" cy="260" style="fill:none;stroke:#ffbf00;stroke-width:20" r="27.5" id="connector11pin"/>
+   <circle cx="60" cy="360" style="fill:none;stroke:#ffbf00;stroke-width:20" r="27.5" id="connector3pin"/>
+   <circle cx="360" cy="360" style="fill:none;stroke:#ffbf00;stroke-width:20" r="27.5" id="connector10pin"/>
+   <circle cx="60" cy="460" style="fill:none;stroke:#ffbf00;stroke-width:20" r="27.5" id="connector4pin"/>
+   <circle cx="360" cy="460" style="fill:none;stroke:#ffbf00;stroke-width:20" r="27.5" id="connector9pin"/>
+   <circle cx="60" cy="560" style="fill:none;stroke:#ffbf00;stroke-width:20" r="27.5" id="connector5pin"/>
+   <circle cx="360" cy="560" style="fill:none;stroke:#ffbf00;stroke-width:20" r="27.5" id="connector8pin"/>
+   <circle cx="60" cy="660" style="fill:none;stroke:#ffbf00;stroke-width:20" r="27.5" id="connector6pin"/>
+   <circle cx="360" cy="660" style="fill:none;stroke:#ffbf00;stroke-width:20" r="27.5" id="connector7pin"/>
+  </g>
+ </g>
+ <g id="keepout"/>
+ <g id="soldermask"/>
+ <g id="outline"/>
+</svg>

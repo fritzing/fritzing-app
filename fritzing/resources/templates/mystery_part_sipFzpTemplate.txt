@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?><module moduleId="mystery_part_sip_%1_.percent.2">
+ <version>4</version>
+ <author>Fritzing Part-o-matic</author>
+ <title>Mystery Part - %1 pins</title>
+ <label>U</label>
+ <date>2009-11-17</date>
+ <tags>
+  <tag>mystery part</tag>
+  <tag>fritzing core</tag>
+ </tags>
+ <properties>
+  <property name="family">Mystery Part</property>
+  <property name="pins">%1</property>
+  <property name="layout">Single Row</property>
+  <property name="pin spacing">100mil</property>
+  <property name="chip label">?</property>
+ <property name="package">THT</property>
+   <property name="hole size"></property>
+ <property name='editable pin labels'>true</property>
+ </properties>
+<taxonomy>part.mystery.magical.%1.pins</taxonomy>
+ <description>A dummy, proxy, ersatz, stand-in part for whatever you want.  With %1 pins on a 100 mil inline pin header footprint.</description>
+ <views>
+  <iconView>
+   <layers image="icon/mystery_part_icon.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+  <breadboardView>
+   <layers image="breadboard/mystery_part_%1_sip_100mil_bread.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="schematic/mystery_part_%1_schem.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/jumper_%1_100mil_pcb.svg">
+    <layer layerId="silkscreen"/>
+    <layer layerId="copper0"/>
+   <layer layerId="copper1"/></layers>
+  </pcbView>
+ </views>
+ <connectors>
+%2
+ </connectors>
+</module>

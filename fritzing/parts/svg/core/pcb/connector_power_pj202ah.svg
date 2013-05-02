@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?><svg baseProfile="tiny" height="0.445in" version="1.2" viewBox="0 0 63250 44500" width="0.6325in" xmlns="http://www.w3.org/2000/svg">
+ <desc>Fritzing footprint SVG</desc>
+ <g id="silkscreen">
+  <line stroke="white" stroke-width="1000" x1="30500" x2="1000" y1="35000" y2="35000"/>
+  <line stroke="white" stroke-width="1000" x1="1000" x2="1000" y1="35000" y2="1000"/>
+  <line stroke="white" stroke-width="1000" x1="1000" x2="57000" y1="1000" y2="1000"/>
+  <line stroke="white" stroke-width="1000" x1="57000" x2="57000" y1="1000" y2="6000"/>
+  <line stroke="white" stroke-width="1000" x1="53000" x2="57000" y1="35000" y2="35000"/>
+  <line stroke="white" stroke-width="1000" x1="57000" x2="57000" y1="35000" y2="30000"/>
+  <line stroke="white" stroke-width="1000" x1="1000" x2="1000" y1="35000" y2="1000"/>
+  <line stroke="white" stroke-width="1000" x1="1500" x2="1500" y1="35000" y2="1000"/>
+  <line stroke="white" stroke-width="1000" x1="2000" x2="2000" y1="35000" y2="1000"/>
+  <line stroke="white" stroke-width="1000" x1="2500" x2="2500" y1="35000" y2="1000"/>
+  <line stroke="white" stroke-width="1000" x1="3000" x2="3000" y1="35000" y2="1000"/>
+  <line stroke="white" stroke-width="1000" x1="3500" x2="3500" y1="35000" y2="1000"/>
+  <line stroke="white" stroke-width="1000" x1="4000" x2="4000" y1="35000" y2="1000"/>
+  <line stroke="white" stroke-width="1000" x1="4500" x2="4500" y1="35000" y2="1000"/>
+  <line stroke="white" stroke-width="1000" x1="14000" x2="14000" y1="35000" y2="1000"/>
+  <line stroke="white" stroke-width="1000" x1="13500" x2="13500" y1="35000" y2="1000"/>
+  <line stroke="white" stroke-width="1000" x1="13000" x2="13000" y1="35000" y2="1000"/>
+  <line stroke="white" stroke-width="1000" x1="12500" x2="12500" y1="35000" y2="1000"/>
+  <line stroke="white" stroke-width="1000" x1="12000" x2="12000" y1="35000" y2="1000"/>
+  <line stroke="white" stroke-width="1000" x1="11500" x2="11500" y1="35000" y2="1000"/>
+  <line stroke="white" stroke-width="1000" x1="11000" x2="11000" y1="35000" y2="1000"/>
+  <line stroke="white" stroke-width="1000" x1="10500" x2="10500" y1="35000" y2="1000"/>
+ </g>
+ <g id="copper1"><g id="copper0">
+  <circle cx="54500" cy="18000" fill="none" id="connector0pin" r="6000" stroke="rgb(255, 191, 0)" stroke-width="2000"/>
+  <circle cx="30500" cy="18000" fill="none" id="connector1pin" r="6000" stroke="rgb(255, 191, 0)" stroke-width="2000"/>
+  <circle cx="42500" cy="37000" fill="none" id="connector2pin" r="6000" stroke="rgb(255, 191, 0)" stroke-width="2000"/>
+ </g></g>
+ <g id="keepout"/>
+ <g id="soldermask"/>
+ <g id="outline"/>
+</svg>

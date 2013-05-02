@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE svg>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In  -->
+<svg xmlns="http://www.w3.org/2000/svg"  width="0.263889in" xml:space="preserve" xmlns:xml="http://www.w3.org/XML/1998/namespace" x="0px" version="1.2" y="0px" height="0.430556in" viewBox="0 0 19 31" baseProfile="tiny" id="0">
+ <desc   id="0.0" oldid="0.0">
+  <referenceFile   id="0.0.0" oldid="0.0.0">pcb.svg</referenceFile>
+ </desc>
+ <defs   id="0.1" oldid="0.1"/>
+ <g   id="copper0">
+  <g   id="copper1">
+   <circle  fill="none" cx="11.806"  cy="3.992" stroke="#FFBF00" id="connector0pin" r="2.088" stroke-width="1.1339"/>
+   <circle  fill="none" cx="11.806"  cy="11.192" stroke="#FFBF00" id="connector1pin" r="2.088" stroke-width="1.1339"/>
+   <circle  fill="none" cx="11.806"  cy="25.592" stroke="#FFBF00" id="connector2pin" r="2.088" stroke-width="1.1339"/>
+  </g>
+ </g>
+ <g   id="silkscreen">
+  <path  fill="none"  stroke="#FFFFFF" id="0.3.0" stroke-width="1" d="M17.475,28.847H6.136c0,0,0-5.647,0-5.647S0.5,21.726,0.5,14.94s5.636-8.254,5.636-8.254V0.5h11.338V28.847z"/>
+ </g>
+</svg>

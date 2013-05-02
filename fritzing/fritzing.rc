@@ -1,0 +1,47 @@
+IDI_ICON1               ICON    DISCARDABLE     "resources/images/fritzing_icon.ico"
+
+#include <windows.h>
+
+#define VER_FILEVERSION             0,7,13,0
+#define VER_FILEVERSION_STR         "0.7.13b\0"
+
+#define VER_PRODUCTVERSION          0,7,13,0
+#define VER_PRODUCTVERSION_STR      "0.7.13b\0"
+
+#define VER_COMPANYNAME_STR         "Fritzing"
+#define VER_FILEDESCRIPTION_STR     "Fritzing"
+#define VER_INTERNALNAME_STR        "Fritzing"
+#define VER_LEGALCOPYRIGHT_STR      "Copyright © 2007-2013 Fritzing"
+#define VER_LEGALTRADEMARKS1_STR    "All Rights Reserved"
+#define VER_LEGALTRADEMARKS2_STR    VER_LEGALTRADEMARKS1_STR
+#define VER_ORIGINALFILENAME_STR    "Fritzing.exe"
+#define VER_PRODUCTNAME_STR         "Fritzing"
+
+#define VER_COMPANYDOMAIN_STR       "fritzing.org"
+
+VS_VERSION_INFO VERSIONINFO
+FILEVERSION     VER_FILEVERSION
+PRODUCTVERSION  VER_PRODUCTVERSION
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904E4"
+        BEGIN
+            VALUE "CompanyName",        VER_COMPANYNAME_STR
+            VALUE "FileDescription",    VER_FILEDESCRIPTION_STR
+            VALUE "FileVersion",        VER_FILEVERSION_STR
+            VALUE "InternalName",       VER_INTERNALNAME_STR
+            VALUE "LegalCopyright",     VER_LEGALCOPYRIGHT_STR
+            VALUE "LegalTrademarks1",   VER_LEGALTRADEMARKS1_STR
+            VALUE "LegalTrademarks2",   VER_LEGALTRADEMARKS2_STR
+            VALUE "OriginalFilename",   VER_ORIGINALFILENAME_STR
+            VALUE "ProductName",        VER_PRODUCTNAME_STR
+            VALUE "ProductVersion",     VER_PRODUCTVERSION_STR
+        END
+    END
+
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252
+    END
+END

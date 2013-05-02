@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1 Basic//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-basic.dtd">
+<svg version="1.1" baseProfile="basic" id="svg" xmlns:xml="http://www.w3.org/XML/1998/namespace"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="32px" height="32px"
+	 viewBox="0 0 32 32" xml:space="preserve">
+<g id="icon">
+	<g>
+		<g>
+			<polygon fill="#0C0C0C" points="13.838,3.928 13.043,4.771 18.945,4.771 18.097,3.928 			"/>
+			<rect x="18.885" y="4.771" width="0.073" height="6.555"/>
+			<rect x="18.567" y="4.771" width="0.138" height="6.555"/>
+			<polygon fill="#101010" points="18.705,11.326 18.885,11.326 18.885,4.771 18.265,4.139 18.705,4.771 			"/>
+			<polygon fill="#202020" points="17.966,4.139 18.282,4.771 18.282,11.326 18.567,11.326 18.567,4.771 			"/>
+			<rect x="18.082" y="4.771" width="0.2" height="6.555"/>
+			<rect x="17.467" y="4.771" width="0.244" height="6.555"/>
+			<polygon fill="#303030" points="17.54,4.139 17.711,4.771 17.711,11.326 18.082,11.326 18.082,4.771 			"/>
+			<polygon fill="#404040" points="17.015,4.139 17.025,4.771 17.025,11.326 17.467,11.326 17.467,4.771 			"/>
+			<rect x="16.742" y="4.771" width="0.283" height="6.555"/>
+			<rect x="15.943" y="4.771" width="0.304" height="6.555"/>
+			<polygon fill="#515151" points="16.406,4.139 16.247,4.771 16.247,11.326 16.742,11.326 16.742,4.771 			"/>
+			<polygon fill="#515151" points="15.761,4.139 15.441,4.771 15.441,11.326 15.943,11.326 15.943,4.771 			"/>
+			<rect x="15.152" y="4.771" width="0.289" height="6.555"/>
+			<rect x="14.451" y="4.771" width="0.249" height="6.555"/>
+			<polygon fill="#404040" points="15.143,4.139 14.7,4.771 14.7,11.326 15.152,11.326 15.152,4.771 			"/>
+			<polygon fill="#303030" points="14.604,4.139 14.066,4.771 14.066,11.326 14.451,11.326 14.451,4.771 			"/>
+			<rect x="13.856" y="4.771" width="0.21" height="6.555"/>
+			<rect x="13.406" y="4.771" width="0.15" height="6.555"/>
+			<polygon fill="#202020" points="14.158,4.139 13.557,4.771 13.557,11.326 13.856,11.326 13.856,4.771 			"/>
+			<polygon fill="#101010" points="13.837,4.139 13.208,4.771 13.208,11.326 13.406,11.326 13.406,4.771 			"/>
+			<rect x="13.124" y="4.771" width="0.084" height="6.555"/>
+			<rect x="13.046" y="4.771" fill="#515151" width="0.078" height="6.555"/>
+		</g>
+		<rect x="13.046" y="11.326" width="5.912" height="13.604"/>
+		<rect x="13.493" y="11.326" fill="#202020" width="5.018" height="13.604"/>
+		<rect x="15.254" y="11.326" fill="#353535" width="2.232" height="13.604"/>
+		<rect x="16.048" y="11.326" fill="#515151" width="0.644" height="13.604"/>
+		<rect x="15.74" y="3.928" fill="#0C0C0C" width="0.71" height="3.85"/>
+		<rect x="8.933" y="24.93" fill="#1E1E1E" width="14.133" height="6.176"/>
+	</g>
+	<rect x="13.919" y="24.93" width="4.163" height="1.894"/>
+	<line opacity="0.2" fill="none" stroke="#FFFFFF" stroke-width="0.1786" x1="13.965" y1="27.043" x2="18.036" y2="27.043"/>
+	<rect x="12.661" y="24.229" fill="#B3B3B3" width="6.679" height="0.402"/>
+	<rect x="8.934" y="24.631" fill="#999999" width="14.132" height="0.299"/>
+	<rect x="10.304" y="24.483" width="0.792" height="0.297"/>
+	<rect x="20.939" y="24.483" width="0.791" height="0.297"/>
+	<rect x="20.541" y="28.981" fill="#8C8C8C" width="1.589" height="2.124"/>
+	<rect x="15.221" y="28.981" fill="#8C8C8C" width="1.589" height="2.124"/>
+	<rect x="9.906" y="28.981" fill="#8C8C8C" width="1.589" height="2.124"/>
+</g>
+</svg>

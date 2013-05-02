@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Ebene_1" xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="21.96px"
+	 height="11.879px" viewBox="0 0 21.96 11.879" enable-background="new 0 0 21.96 11.879" xml:space="preserve">
+<rect fill="#999999" width="21.973" height="11.289"/>
+<path fill="none" stroke="#FFFFFF" stroke-width="0.25" stroke-miterlimit="10" d="M16.761,7.971"/>
+<g>
+	
+		<path fill="none" stroke="#987C60" stroke-width="0.25" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+		M19.605,3.308h-0.654c-0.226,0-0.41-0.185-0.41-0.41V1.366c0-0.226-0.185-0.41-0.41-0.41H4.19c-0.226,0-0.41,0.185-0.41,0.41V8.07
+		c0,0.226,0.185,0.41,0.41,0.41h13.052c0.226,0,0.41-0.185,0.41-0.41V1.921c0-0.226-0.185-0.41-0.41-0.41H5.079
+		c-0.226,0-0.41,0.185-0.41,0.41v5.532c0,0.226,0.185,0.41,0.41,0.41h11.272c0.226,0,0.41-0.095,0.41-0.211s0-0.396,0-0.621V2.508
+		c0-0.226-0.185-0.41-0.41-0.41H5.97c-0.226,0-0.41,0.185-0.41,0.41v4.359c0,0.226,0.185,0.41,0.41,0.41h9.568
+		c0.226,0,0.41-0.185,0.41-0.41V3.062c0-0.226-0.185-0.41-0.41-0.41H6.734c-0.226,0-0.41,0.185-0.41,0.41v3.715"/>
+</g>
+<g>
+	
+		<path fill="none" stroke="#CBA580" stroke-width="0.25" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+		M19.605,3.252h-0.654c-0.226,0-0.41-0.185-0.41-0.41V1.31c0-0.226-0.185-0.41-0.41-0.41H4.19c-0.226,0-0.41,0.185-0.41,0.41v6.704
+		c0,0.226,0.185,0.41,0.41,0.41h13.052c0.226,0,0.41-0.185,0.41-0.41V1.865c0-0.226-0.185-0.41-0.41-0.41H5.079
+		c-0.226,0-0.41,0.185-0.41,0.41v5.531c0,0.226,0.185,0.41,0.41,0.41h11.272c0.226,0,0.41-0.095,0.41-0.211s0-0.396,0-0.621V2.452
+		c0-0.226-0.185-0.41-0.41-0.41H5.97c-0.226,0-0.41,0.185-0.41,0.41v4.359c0,0.226,0.185,0.41,0.41,0.41h9.568
+		c0.226,0,0.41-0.185,0.41-0.41V3.006c0-0.226-0.185-0.41-0.41-0.41H6.734c-0.226,0-0.41,0.185-0.41,0.41v3.715"/>
+</g>
+<g>
+	<g>
+		<rect opacity="0.2" fill="#FFFFFF" enable-background="new    " width="21.973" height="0.178"/>
+		<rect y="9.273" fill="#666666" width="21.973" height="2.609"/>
+	</g>
+	<g>
+		<path fill="#DCDCDC" d="M2.369,0.396V0H0v9.275h2.369c0.169-1.01,0.368-2.521,0.368-3.65C2.737,4.302,2.594,1.545,2.369,0.396z"/>
+		<path fill="#DCDCDC" d="M19.238,5.625c0,1.13,0.198,2.641,0.367,3.65h2.369V0h-2.369v0.396C19.38,1.545,19.238,4.302,19.238,5.625
+			z"/>
+		<path fill="#B3B3B3" d="M21.605,9.273h0.369v2.609h-0.369C21.605,11.883,21.49,10.202,21.605,9.273z"/>
+		<path fill="#B3B3B3" d="M0.369,11.883H0V9.273h0.369C0.484,10.202,0.369,11.883,0.369,11.883z"/>
+		<rect opacity="0.5" fill="#FFFFFF" enable-background="new    " width="2.369" height="0.178"/>
+		<rect x="19.605" opacity="0.5" fill="#FFFFFF" enable-background="new    " width="2.368" height="0.178"/>
+		<line fill="none" x1="2.104" y1="11.879" x2="2.104" y2="11.879"/>
+	</g>
+</g>
+<path fill="#B3B3B3" d="M0,11.897h2.369v-0.206H0V11.897z"/>
+<path fill="#B3B3B3" d="M21.974,11.897h-2.369v-0.206h2.369V11.897z"/>
+<rect y="11.783" opacity="0.2" enable-background="new    " width="21.973" height="0.1"/>
+<rect y="9.174" opacity="0.1" width="21.973" height="0.1"/>
+</svg>

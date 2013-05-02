@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module fritzingVersion="0.6.3b.08.16.5401" moduleId="054b3d1b56ef5470113b3e56d5dfc532">
+    <author>Carlos Hansen Mendoza</author>
+    <title>KA78R05 Low Dropout Voltage Regulator</title>
+    <label>VREG</label>
+    <date>2011-11-15</date>
+    <tags>
+        <tag>Voltage Regulator</tag>
+        <tag>Low Dropout Voltage Regulator</tag>
+        <tag>LDO</tag>
+        <tag>KA78R05</tag>
+    </tags>
+    <properties>
+        <property name="family">Voltage Regulator</property>
+        <property name="maximum dropout">0.5V</property>
+        <property name="output voltage">5V</property>
+        <property name="output current">1A</property>
+        <property name="manufacturer">Fairchild</property>
+        <property name="part number">KA78R05</property>
+        <property name="package">TO-220F-4L</property>
+    </properties>
+    <description>A low-dropout or LDO regulator is a DC linear voltage regulator which can operate with a very small input–output differential voltage. The advantages of a low dropout voltage include a lower minimum operating voltage, higher efficiency operation and lower heat dissipation. [Wikipedia]</description>
+    <views>
+        <iconView>
+            <layers image="icon/low_dropout_voltage_regulator_TO220_4_icon.svg">
+                <layer layerId="icon"/>
+            </layers>
+        </iconView>
+        <breadboardView>
+            <layers image="breadboard/low_dropout_voltage_regulator_TO220_4_breadboard.svg">
+                <layer layerId="breadboard"/>
+            </layers>
+        </breadboardView>
+        <schematicView>
+            <layers image="schematic/low_dropout_voltage_regulator_TO220_4_schematic.svg">
+                <layer layerId="schematic"/>
+            </layers>
+        </schematicView>
+        <pcbView>
+            <layers image="pcb/jumper4.svg">
+                <layer layerId="copper0"/>
+                <layer layerId="silkscreen"/>
+            </layers>
+        </pcbView>
+    </views>
+    <connectors>
+        <connector id="connector3" type="male" name="EN">
+            <description>ENABLE</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector3pin" legId="connector3leg"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector3pin" terminalId="connector3terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector3pin"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector0" type="male" name="VIN">
+            <description>Input Voltage</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector0pin" legId="connector0leg"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector0pin" terminalId="connector0terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector0pin"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector1" type="male" name="VOUT">
+            <description>Output Voltage</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector1pin" legId="connector1leg"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector1pin" terminalId="connector1terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector1pin"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector2" type="male" name="GND">
+            <description>Ground</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector2pin" legId="connector2leg"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector2pin" terminalId="connector2terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector2pin"/>
+                </pcbView>
+            </views>
+        </connector>
+    </connectors>
+</module>

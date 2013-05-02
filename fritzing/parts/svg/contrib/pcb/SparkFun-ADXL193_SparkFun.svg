@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" x="0in" y="0in" width="0.3234in" height="0.2566in" viewBox="0 0 3234 2566" >
+<title>SparkFun.mod</title>
+<desc>Kicad module 'SparkFun-ADXL193' from file 'SparkFun.mod' converted by Fritzing</desc>
+<metadata xmlns:fz='http://fritzing.org/kicadmetadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+<rdf:RDF><rdf:Description rdf:about=''>
+<fz:attr name='kicad filename'>SparkFun.mod</fz:attr>
+<fz:attr name='kicad module'>SparkFun-ADXL193</fz:attr>
+<fz:attr name='fritzing version'>0.4.1b.07.04.4318</fz:attr>
+<fz:attr name='conversion date'>17/07/2010 17:15:04</fz:attr>
+<fz:attr name='dist-license'>GPL</fz:attr>
+<fz:attr name='use-license'>unlimited</fz:attr>
+<fz:attr name='author'>KICAD project</fz:attr>
+<fz:attr name='license-url'>http://www.gnu.org/licenses/gpl.html</fz:attr>
+<fz:comment></fz:comment>
+<fz:attr name='keyword'></fz:attr>
+</rdf:Description></rdf:RDF></metadata><g id="copper1">
+ <rect width="251" x="87.5" y="709" fill="#ffbf00" connectorname="P$1" height="590" id="connector0pad" stroke-width="0"/>
+ <rect width="251" x="87.5" y="1205" fill="#ffbf00" connectorname="P$2" height="590" id="connector1pad" stroke-width="0"/>
+ <rect width="251" x="87.5" y="1701" fill="#ffbf00" connectorname="P$3" height="590" id="connector2pad" stroke-width="0"/>
+ <rect width="251" x="858.5" y="1976" fill="#ffbf00" connectorname="P$4" height="590" id="connector3pad" stroke-width="0"/>
+ <rect width="251" x="1629.5" y="1701" fill="#ffbf00" connectorname="P$5" height="590" id="connector4pad" stroke-width="0"/>
+ <rect width="251" x="1629.5" y="1205" fill="#ffbf00" connectorname="P$6" height="590" id="connector5pad" stroke-width="0"/>
+ <rect width="251" x="1629.5" y="709" fill="#ffbf00" connectorname="P$7" height="590" id="connector6pad" stroke-width="0"/>
+ <rect width="251" x="861.5" y="502" fill="#ffbf00" connectorname="P$8" height="500" id="connector7pad" stroke-width="0"/>
+</g>
+<g id="silkscreen">
+ <line fill="none" stroke="white" y1="516" x1="0" y2="752" stroke-width="80" x2="0"/>
+ <line fill="none" stroke="white" y1="1213" x1="0" y2="1292" stroke-width="80" x2="0"/>
+ <line fill="none" stroke="white" y1="1704" x1="0" y2="1787" stroke-width="80" x2="0"/>
+ <line fill="none" stroke="white" y1="2248" x1="0" y2="2484" stroke-width="80" x2="0"/>
+ <line fill="none" stroke="white" y1="2484" x1="0" y2="2484" stroke-width="80" x2="709"/>
+ <line fill="none" stroke="white" y1="2484" x1="1259" y2="2484" stroke-width="80" x2="1968"/>
+ <line fill="none" stroke="white" y1="2484" x1="1968" y2="2248" stroke-width="80" x2="1968"/>
+ <line fill="none" stroke="white" y1="1787" x1="1968" y2="1708" stroke-width="80" x2="1968"/>
+ <line fill="none" stroke="white" y1="1288" x1="1968" y2="1213" stroke-width="80" x2="1968"/>
+ <line fill="none" stroke="white" y1="752" x1="1968" y2="516" stroke-width="80" x2="1968"/>
+ <line fill="none" stroke="white" y1="516" x1="1968" y2="516" stroke-width="80" x2="1259"/>
+ <line fill="none" stroke="white" y1="516" x1="709" y2="516" stroke-width="80" x2="0"/>
+ <line fill="none" stroke="white" y1="2500" x1="2984" y2="0" stroke-width="50" x2="2984"/>
+ <line fill="none" stroke="white" y1="0" x1="2984" y2="250" stroke-width="50" x2="2734"/>
+ <line fill="none" stroke="white" y1="0" x1="2984" y2="250" stroke-width="50" x2="3234"/>
+ <circle fill="none" cx="984" cy="1200" stroke="white" r="35.3553" stroke-width="40"/>
+</g>
+</svg>

@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+<svg xmlns="http://www.w3.org/2000/svg" width="1.69271in" xml:space="preserve" xmlns:xml="http://www.w3.org/XML/1998/namespace" x="0px" inkscape:version="0.46" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" sodipodi:version="0.32" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" version="1.2" y="0px" height="1.29861in" viewBox="0 0 121.875 93.5" baseProfile="tiny" inkscape:output_extension="org.inkscape.output.svg.inkscape" sodipodi:docname="relay.svg" id="svg2" >
+
+<g id="schematic">
+  <path xmlns="http://www.w3.org/2000/svg" style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:12;stroke-width:2;" id="path4" d="M 24.955,27.172003 C 22.263,27.172003 20.099,29.350003 20.099,32.042003 C 20.099,34.730003 22.263,36.913003 24.955,36.913003 C 22.263,36.913003 20.099,39.095003 20.099,41.784003 C 20.099,44.472003 22.263,46.653003 24.955,46.653003 C 22.263,46.653003 20.099,48.835003 20.099,51.521003 C 20.099,54.203003 22.279,56.387003 24.969,56.387003 C 22.28,56.387003 20.099,58.571003 20.099,61.257003 C 20.099,63.945003 22.263,66.127003 24.955,66.127003" stroke-miterlimit="12" />
+ <line xmlns="http://www.w3.org/2000/svg" style="fill:none;stroke:#000000;stroke-linecap:round;stroke-width:2;" id="line6" y1="9.4330034" y2="83.720001" x1="120.875" x2="120.875" />
+ <polyline xmlns="http://www.w3.org/2000/svg" points="119.859,30.24 101.242,30.248   78.502,38.341 " style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:2;" id="polyline8" transform="translate(1.005,14.870003)" />
+ <line xmlns="http://www.w3.org/2000/svg" style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round" id="line10" y1="84.088005" y2="75.395004" x1="1" x2="1" />
+ <line xmlns="http://www.w3.org/2000/svg" style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round" id="line12" y1="84.088005" y2="66.219002" x1="25.125" x2="25.125" />
+ <polyline xmlns="http://www.w3.org/2000/svg" points="0,60.432 58.181,60.432   58.181,41.838 77.181,41.838 " style="fill:none;stroke-width:2;stroke:#000000;stroke-linecap:round;stroke-linejoin:round" id="polyline14" transform="translate(1.005,14.870003)" />
+ <circle xmlns="http://www.w3.org/2000/svg" cx="78.719002" cy="36.839256" style="fill:#000000" r="2.1042509" id="path2400" />
+ <circle xmlns="http://www.w3.org/2000/svg" cx="78.719704" cy="56.650002" style="fill:#000000" r="2.1042509" id="path2402" />
+ <polyline xmlns="http://www.w3.org/2000/svg" points="0,3.35 58.181,3.35 58.181,21.944   77.181,21.944 " style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round" id="polyline18" transform="translate(1.005,14.870003)" />
+ <line xmlns="http://www.w3.org/2000/svg" style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round" id="line20" y1="9.4330034" y2="27.304003" x1="25.125" x2="25.125" />
+ <line xmlns="http://www.w3.org/2000/svg" style="fill:none;stroke-width:2;stroke:#000000;stroke-linecap:round" id="line22" y1="9.4330034" y2="18.128002" x1="1" x2="1" />
+ <line xmlns="http://www.w3.org/2000/svg" style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round" id="connector0pin" y1="92.5" y2="84.416" x1="1" x2="1" />
+ <rect xmlns="http://www.w3.org/2000/svg" width="0.208" x="0.89099997" y="92.524002" height="0.207" id="connector0terminal" />
+ <line xmlns="http://www.w3.org/2000/svg" style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round" id="connector1pin" y1="92.5" y2="84.766006" x1="25.125" x2="25.125" />
+ <rect xmlns="http://www.w3.org/2000/svg" width="0.208" x="25.008999" y="92.524002" height="0.207" id="connector1terminal" />
+ <line xmlns="http://www.w3.org/2000/svg" style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round" id="connector2pin" y1="92.5" y2="84.766006" x1="120.875" x2="120.875" />
+ <rect xmlns="http://www.w3.org/2000/svg" width="0.208" x="120.77" y="92.524002" height="0.207" id="connector2terminal" />
+ <line xmlns="http://www.w3.org/2000/svg" style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round" id="connector3pin" y1="1.0220035" y2="8.7560034" x1="120.875" x2="120.875" />
+ <rect xmlns="http://www.w3.org/2000/svg" width="0.208" x="120.77" y="0.79100263" height="0.207" id="connector3terminal" />
+ <line xmlns="http://www.w3.org/2000/svg" style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round" id="connector4pin" y1="1.0220035" y2="8.7560034" x1="25.125" x2="25.125" />
+ <rect xmlns="http://www.w3.org/2000/svg" width="0.208" x="25.008999" y="0.79100263" height="0.207" id="connector4terminal" />
+ <line xmlns="http://www.w3.org/2000/svg" style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round" id="connector5pin" y1="1.0220035" y2="9.1050034" x1="1" x2="1" />
+ <rect xmlns="http://www.w3.org/2000/svg" width="0.208" x="0.89099997" y="0.79100263" height="0.207" id="connector5terminal" />
+ </g>
+</svg>

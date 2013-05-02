@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1 Basic//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-basic.dtd'>
+<!-- Generator: Adobe Illustrator 13.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 14948)  -->
+<svg width="31.182px" x="0px" version="1.1" y="0px" xmlns="http://www.w3.org/2000/svg" height="31.182px" viewBox="0 0 31.182 31.182" baseProfile="basic" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xml="http://www.w3.org/XML/1998/namespace" id="svg" xml:space="preserve">
+ <g id="icon">
+  <rect width="6.458" x="12.387" y="20.665" fill="#BF7B00" height="1.5"/>
+  <rect width="4.708" x="13.262" y="22.022" fill="#FFB600" height="0.746"/>
+  <rect width="2.152" x="7.341" y="24.16" fill="#8C8C8C" height="2.234" id="connector0pin"/>
+  <rect width="2.152" x="7.341" y="25.841" fill="#8C8C8C" height="0.558" id="connector0terminal"/>
+  <rect width="2.154" x="14.541" y="24.16" fill="#8C8C8C" height="2.234" id="connector1pin"/>
+  <rect width="2.154" x="14.541" y="25.841" fill="#8C8C8C" height="0.558" id="connector1terminal"/>
+  <rect width="2.152" x="21.747" y="24.16" fill="#8C8C8C" height="2.234" id="connector2pin"/>
+  <rect width="2.152" x="21.747" y="25.841" fill="#8C8C8C" height="0.558" id="connector2terminal"/>
+  <rect width="2.15" x="-7.066" y="24.16" fill="#8C8C8C" height="2.234" id="connector3pin"/>
+  <rect width="2.15" x="-7.066" y="25.841" fill="#8C8C8C" height="0.558" id="connector3terminal"/>
+  <rect width="2.152" x="36.154" y="24.16" fill="#8C8C8C" height="2.234" id="connector4pin"/>
+  <rect width="2.152" x="36.154" y="25.841" fill="#8C8C8C" height="0.558" id="connector4terminal"/>
+  <g id="breadboard">
+   <g>
+    <g>
+     <rect width="0.877" x="49.322" y="7.084" height="3.582"/>
+     <rect width="1.619" x="45.61" y="7.084" height="3.582"/>
+     <polygon fill="#101010" points="47.221,10.666 49.322,10.666 49.322,7.084 47.221,7.084 "/>
+     <polygon fill="#202020" points="42.285,7.084 42.285,10.666 45.61,10.666 45.61,7.084 "/>
+     <rect width="2.345" x="39.941" y="7.084" height="3.582"/>
+     <rect width="2.852" x="32.737" y="7.084" height="3.582"/>
+     <polygon fill="#303030" points="35.588,7.084 35.588,10.666 39.941,10.666 39.941,7.084 "/>
+     <polygon fill="#404040" points="27.573,7.084 27.573,10.666 32.737,10.666 32.737,7.084 "/>
+     <rect width="3.323" x="24.25" y="7.084" height="3.582"/>
+     <rect width="3.56" x="14.903" y="7.084" height="3.582"/>
+     <polygon fill="#515151" points="18.463,7.084 18.463,10.666 24.25,10.666 24.25,7.084 "/>
+     <polygon fill="#515151" points="9.032,7.084 9.032,10.666 14.903,10.666 14.903,7.084 "/>
+     <rect width="3.383" x="5.658" y="7.084" height="3.582"/>
+     <rect width="2.91" x="-2.55" y="7.084" height="3.582"/>
+     <polygon fill="#404040" points="0.368,7.084 0.368,10.666 5.658,10.666 5.658,7.084 "/>
+     <polygon fill="#303030" points="-7.047,7.084 -7.047,10.666 -2.55,10.666 -2.55,7.084 "/>
+     <rect width="2.455" x="-9.51" y="7.084" height="3.582"/>
+     <rect width="1.754" x="-14.765" y="7.084" height="3.582"/>
+     <polygon fill="#202020" points="-13.011,7.084 -13.011,10.666 -9.51,10.666 -9.51,7.084 "/>
+     <polygon fill="#101010" points="-17.085,7.084 -17.085,10.666 -14.765,10.666 -14.765,7.084 "/>
+     <rect width="0.996" x="-18.081" y="7.084" height="3.582"/>
+     <rect width="0.919" x="-19" y="7.084" fill="#515151" height="3.582"/>
+    </g>
+    <rect width="24.333" x="3.43" y="10.666" fill="#1E1E1E" height="10"/>
+   </g>
+   <path fill="#8C8C8C" d="M36.107,17.553c1.188,0,2.15,0.964,2.15,2.15l0,0v6.689h-2.15v-6.689H25.169v-2.15H36.107z"/>
+   <rect width="5.639" x="12.776" y="14.217" height="2.564"/>
+   <line opacity="0.2" fill="none" stroke="#FFFFFF" y1="17.08" stroke-width="0.242" x1="12.839" y2="17.08" x2="18.355"/>
+   <rect width="4.169" x="13.512" y="5.875" fill="#999999" height="1.209"/>
+   <rect width="2.152" x="21.747" y="19.705" fill="#8C8C8C" height="6.689"/>
+   <rect width="2.154" x="14.541" y="19.705" fill="#8C8C8C" height="6.689"/>
+   <rect width="2.152" x="7.341" y="19.705" fill="#8C8C8C" height="6.689"/>
+   <path fill="#8C8C8C" d="M-4.913,17.553c-1.188,0-2.15,0.964-2.15,2.15l0,0v6.689h2.15v-6.689H6.025v-2.15H-4.913z"/>
+   <rect width="3.692" x="6.57" y="17.553" fill="#8C8C8C" height="5.36"/>
+   <rect width="3.692" x="13.77" y="17.553" fill="#8C8C8C" height="5.36"/>
+   <rect width="3.692" x="20.971" y="17.553" fill="#8C8C8C" height="5.36"/>
+  </g>
+ </g>
+</svg>

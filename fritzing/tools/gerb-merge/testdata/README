@@ -1,0 +1,30 @@
+This directory contains example projects for demonstrating GerbMerge.
+
+Proj1 is a small board that has ovals, thermals, arcs, circles, polygons,
+and text. Hexapod is the example board that comes with Eagle.
+
+Each project has CAM data generated from its associated *.cam file,
+hence proj1.cam and hexapod.cam were used to generate drawing data.
+
+The "layout1.cfg" and "layout1.def" files demonstrate how GerbMerge can
+be used to panelize a single job, including rotation.
+
+The "layout2.cfg" and "layout2.def" files demonstrate panelizing
+different jobs.
+
+The Makefile in this directory shows an example of how to invoke
+the program and how to view the results under Linux. You need to
+have the gerbv program installed (see http://gerbv.sourceforge.net)
+for viewing the output files.
+
+The syntax for running GerbMerge is:
+
+    gerbmerge layout1.cfg layout1.def
+
+If you are running Linux and have installed the 'gerbv' Gerber previewer,
+you can view the results by typing:
+
+    gerbv *.ger *.xln
+
+On Windows systems, GC-Prevue and ViewMate should be able to Import
+the above files for previewing.

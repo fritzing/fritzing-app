@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- Created with Fritzing (http://www.fritzing.org/) -->
+<svg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' version='1.2' baseProfile='tiny' x='0in' y='0in' width='1.14173in' height='0.899192in' viewBox='0 0 29 22.8395' >
+<g id='schematic'>
+<line class='other' x1='5.08' y1='10.016' x2='15.24' y2='10.016' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<line class='other' x1='7.62' y1='12.556' x2='12.7' y2='12.556' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<line class='other' x1='5.08' y1='15.096' x2='15.24' y2='15.096' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<line class='other' x1='7.62' y1='17.636' x2='12.7' y2='17.636' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<line class='other' x1='12.7' y1='6.714' x2='12.7' y2='8.238' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<line class='other' x1='11.938' y1='7.476' x2='13.462' y2='7.476' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='2.3114' x='0' y='20.176' text-anchor='start'>&gt;VALUE</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='2.3114' x='0' y='9' text-anchor='start'>&gt;NAME</text>
+<line class='pin' id='connector0pin' connectorname='V+' x1='10.16' y1='4.936' x2='10.16' y2='10.016' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector0terminal' x='10.16' y='4.936' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<g transform='translate(9.91306,7.476)'><g transform='rotate(270)'>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='0' y='0' text-anchor='middle'>1</text>
+</g></g>
+<line class='pin' id='connector1pin' connectorname='V-' x1='10.16' y1='22.716' x2='10.16' y2='17.636' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector1terminal' x='10.16' y='22.716' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<g transform='translate(9.91306,20.176)'><g transform='rotate(270)'>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='0' y='0' text-anchor='middle'>2</text>
+</g></g>
+</g>
+</svg>

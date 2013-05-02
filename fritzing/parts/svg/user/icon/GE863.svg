@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Ebene_1" xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="117.715px"
+	 height="89.334px" viewBox="0 0 117.715 89.334" enable-background="new 0 0 117.715 89.334" xml:space="preserve">
+<g>
+	<g id="silkscreen_2_">
+		<path fill="#999999" d="M113.844,2.751c0.104,1.985,1.862,3.74,3.848,3.635V85.56c-1.985,0.102-3.734,1.795-3.632,3.779H3.851
+			C3.747,87.354,1.985,85.671,0,85.774V2.751H113.844z"/>
+	</g>
+	<rect x="3.851" y="86.614" fill="#B3B3B3" width="110.192" height="2.758"/>
+	<g id="silkscreen_3_">
+		<path fill="#CCCCCC" d="M113.844,0c0.104,1.985,1.862,3.739,3.848,3.635v79.172c-1.985,0.104-3.734,1.797-3.632,3.781H3.851
+			C3.747,84.604,1.985,82.919,0,83.024V0H113.844z"/>
+		<path opacity="0.2" fill="#FFFFFF" d="M117.715,3.929c-1.984,0.104-3.743-1.65-3.848-3.635H0.023L0,0h113.845
+			c0.104,1.985,1.862,3.739,3.848,3.635L117.715,3.929z"/>
+		<path opacity="0.2" d="M0.023,83.319c1.984-0.105,3.747,1.578,3.852,3.563h110.209c-0.104-1.984,1.646-3.678,3.631-3.779
+			l-0.022-0.295c-1.985,0.104-3.734,1.797-3.632,3.781H3.851C3.747,84.604,1.985,82.919,0,83.024L0.023,83.319z"/>
+	</g>
+	<path fill="#F2F2F2" d="M109.875,59.386c0,0.549-0.45,1-1,1H8.817c-0.55,0-1-0.451-1-1V10.432c0-0.55,0.45-1,1-1h100.058
+		c0.55,0,1,0.45,1,1V59.386z"/>
+	<path fill="#F2F2F2" d="M109.875,76.224c0,0.549-0.45,1-1,1H8.817c-0.55,0-1-0.451-1-1V62.962c0-0.551,0.45-1,1-1h100.058
+		c0.55,0,1,0.449,1,1V76.224z"/>
+	<text transform="matrix(1 0 0 1 48.1555 50.6973)" enable-background="new    "><tspan x="0" y="0" fill="#666666" font-family="'DroidSans'" font-size="5.8463">Telit quad cell module</tspan><tspan x="41.327" y="7.016" fill="#666666" font-family="'DroidSans'" font-size="5.8463">GE863</tspan></text>
+</g>
+</svg>

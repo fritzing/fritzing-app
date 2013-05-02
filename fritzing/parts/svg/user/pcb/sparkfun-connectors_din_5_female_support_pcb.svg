@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- Created with Fritzing (http://www.fritzing.org/) -->
+<svg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' version='1.2' baseProfile='tiny' x='0in' y='0in' width='1.03628in' height='0.656819in' viewBox='0 0 26.3216 16.6832' >
+<g id='copper1'>
+<circle id='connector0pad' connectorname='1' cx='10.7216' cy='4.0816' r='0.9215' stroke='#F7BD13' stroke-width='0.443' fill='none' />
+<circle id='connector2pad' connectorname='3' cx='18.2016' cy='4.0916' r='0.9215' stroke='#F7BD13' stroke-width='0.443' fill='none' />
+<circle id='connector1pad' connectorname='2' cx='3.1916' cy='4.0916' r='0.9215' stroke='#F7BD13' stroke-width='0.443' fill='none' />
+<circle id='connector3pad' connectorname='4' cx='5.7316' cy='1.5716' r='0.9215' stroke='#F7BD13' stroke-width='0.443' fill='none' />
+<circle id='connector4pad' connectorname='5' cx='15.7316' cy='1.5616' r='0.9215' stroke='#F7BD13' stroke-width='0.443' fill='none' />
+<circle id='connector5pad' connectorname='6' cx='5.7316' cy='14.0738' r='0.9215' stroke='#F7BD13' stroke-width='0.443' fill='none' />
+<circle id='connector6pad' connectorname='7' cx='15.7392' cy='14.0738' r='0.9215' stroke='#F7BD13' stroke-width='0.443' fill='none' />
+<g id='copper0'>
+<circle id='connector0pad' connectorname='1' cx='10.7216' cy='4.0816' r='0.9215' stroke='#F7BD13' stroke-width='0.443' fill='none' />
+<circle id='connector2pad' connectorname='3' cx='18.2016' cy='4.0916' r='0.9215' stroke='#F7BD13' stroke-width='0.443' fill='none' />
+<circle id='connector1pad' connectorname='2' cx='3.1916' cy='4.0916' r='0.9215' stroke='#F7BD13' stroke-width='0.443' fill='none' />
+<circle id='connector3pad' connectorname='4' cx='5.7316' cy='1.5716' r='0.9215' stroke='#F7BD13' stroke-width='0.443' fill='none' />
+<circle id='connector4pad' connectorname='5' cx='15.7316' cy='1.5616' r='0.9215' stroke='#F7BD13' stroke-width='0.443' fill='none' />
+<circle id='connector5pad' connectorname='6' cx='5.7316' cy='14.0738' r='0.9215' stroke='#F7BD13' stroke-width='0.443' fill='none' />
+<circle id='connector6pad' connectorname='7' cx='15.7392' cy='14.0738' r='0.9215' stroke='#F7BD13' stroke-width='0.443' fill='none' />
+</g>
+</g>
+<g id='silkscreen'>
+<line class='other' x1='0.1016' y1='16.5816' x2='21.3016' y2='16.5816' stroke='#f0f0f0' stroke-width='0.2032' stroke-linecap='round'/>
+<line class='other' x1='21.3016' y1='16.5816' x2='21.3016' y2='0.1016' stroke='#f0f0f0' stroke-width='0.2032' stroke-linecap='round'/>
+<line class='other' x1='21.3016' y1='0.1016' x2='0.1016' y2='0.1016' stroke='#f0f0f0' stroke-width='0.2032' stroke-linecap='round'/>
+<line class='other' x1='0.1016' y1='0.1016' x2='0.1016' y2='16.5816' stroke='#f0f0f0' stroke-width='0.2032' stroke-linecap='round'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#f0f0f0' font-size='2.17932' x='7.3216' y='10.2516' text-anchor='start'>DIN-5</text>
+</g>
+</svg>

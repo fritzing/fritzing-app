@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" x="0in" y="0in" width="0.27in" height="0.12in" viewBox="0 0 2700 1200" >
+<title>SparkFun.mod</title>
+<desc>Kicad module 'SparkFun-SJ_2W' from file 'SparkFun.mod' converted by Fritzing</desc>
+<metadata xmlns:fz='http://fritzing.org/kicadmetadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+<rdf:RDF><rdf:Description rdf:about=''>
+<fz:attr name='kicad filename'>SparkFun.mod</fz:attr>
+<fz:attr name='kicad module'>SparkFun-SJ_2W</fz:attr>
+<fz:attr name='fritzing version'>0.4.1b.07.04.4318</fz:attr>
+<fz:attr name='conversion date'>17/07/2010 17:17:32</fz:attr>
+<fz:attr name='dist-license'>GPL</fz:attr>
+<fz:attr name='use-license'>unlimited</fz:attr>
+<fz:attr name='author'>KICAD project</fz:attr>
+<fz:attr name='license-url'>http://www.gnu.org/licenses/gpl.html</fz:attr>
+<fz:comment>SOLDER JUMPER</fz:comment>
+<fz:attr name='keyword'>SOLDER</fz:attr>
+<fz:attr name='keyword'>JUMPER</fz:attr>
+</rdf:Description></rdf:RDF></metadata><g id="copper1">
+ <rect width="500" x="100" y="100" fill="#ffbf00" connectorname="1" height="1000" id="connector0pad" stroke-width="0"/>
+ <rect width="500" x="1100" y="100" fill="#ffbf00" connectorname="2" height="1000" id="connector1pad" stroke-width="0"/>
+ <rect width="500" x="2100" y="100" fill="#ffbf00" connectorname="3" height="1000" id="connector2pad" stroke-width="0"/>
+</g>
+<g id="silkscreen">
+ <line fill="none" stroke="white" y1="900" x1="1150" y2="900" stroke-width="26" x2="1550"/>
+ <line fill="none" stroke="white" y1="900" x1="1550" y2="300" stroke-width="26" x2="1550"/>
+ <line fill="none" stroke="white" y1="300" x1="1150" y2="300" stroke-width="26" x2="1550"/>
+ <line fill="none" stroke="white" y1="900" x1="1150" y2="300" stroke-width="26" x2="1150"/>
+ <line fill="none" stroke="white" y1="1200" x1="2600" y2="1200" stroke-width="60" x2="100"/>
+ <line fill="none" stroke="white" y1="1100" x1="2700" y2="100" stroke-width="60" x2="2700"/>
+ <line fill="none" stroke="white" y1="1100" x1="0" y2="100" stroke-width="60" x2="0"/>
+ <line fill="none" stroke="white" y1="0" x1="100" y2="0" stroke-width="60" x2="2600"/>
+ <line fill="none" stroke="white" y1="600" x1="2450" y2="600" stroke-width="60" x2="2650"/>
+ <line fill="none" stroke="white" y1="600" x1="250" y2="600" stroke-width="60" x2="50"/>
+ <line fill="none" stroke="white" y1="300" x1="1350" y2="50" stroke-width="60" x2="1350"/>
+ <line fill="none" stroke="white" y1="1150" x1="1350" y2="900" stroke-width="60" x2="1350"/>
+ <path fill="none" stroke="white" stroke-width="30" d="M2700,100a100,100,0,0,0,-100,-100"/>
+ <path fill="none" stroke="white" stroke-width="30" d="M100,0a100,100,0,0,0,-100,100"/>
+ <path fill="none" stroke="white" stroke-width="30" d="M0,1100a100,100,0,0,0,100,100"/>
+ <path fill="none" stroke="white" stroke-width="30" d="M2600,1200a100,100,0,0,0,100,-100"/>
+ <path fill="none" stroke="white" stroke-width="250" d="M2150,650a50,50,0,1,0,0,-100"/>
+ <path fill="none" stroke="white" stroke-width="250" d="M550,550a50,50,0,1,0,0,100"/>
+</g>
+</svg>

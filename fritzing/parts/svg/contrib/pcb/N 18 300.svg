@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?> <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" x="0in" y="0in" width="0.41in" height="0.96in" viewBox="0 0 41000 96000" ><title>N 18 300.fp</title><desc>Geda footprint file 'N 18 300.fp' converted by Fritzing</desc><metadata xmlns:fz='http://fritzing.org/gedametadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'><rdf:RDF><rdf:Description rdf:about=''><fz:attr name='geda filename'>N 18 300.fp</fz:attr>
+<fz:attr name='fritzing version'>0.4.0b.06.21.4282</fz:attr>
+<fz:attr name='conversion date'>27/06/2010 07:15:55</fz:attr>
+<fz:comment>retain backwards compatibility to older versions of PKG_DIL</fz:comment>
+<fz:comment>which did not have 100,60,28 args</fz:comment>
+<fz:attr name='dist-license'>GPL</fz:attr>
+<fz:attr name='use-license'>unlimited</fz:attr>
+<fz:attr name='author'>gEDA project</fz:attr>
+<fz:attr name='license-url'>http://www.gnu.org/licenses/gpl.html</fz:attr>
+</rdf:Description></rdf:RDF></metadata><g id="copper0">
+ <g id="copper1">
+  <circle fill="none" cx="5500" cy="10500" connectorname="1" stroke="#ff9400" r="2200" id="connector0pin" stroke-width="1600"/>
+  <circle fill="none" cx="5500" cy="20500" connectorname="2" stroke="#ff9400" r="2200" id="connector1pin" stroke-width="1600"/>
+  <circle fill="none" cx="5500" cy="30500" connectorname="3" stroke="#ff9400" r="2200" id="connector2pin" stroke-width="1600"/>
+  <circle fill="none" cx="5500" cy="40500" connectorname="4" stroke="#ff9400" r="2200" id="connector3pin" stroke-width="1600"/>
+  <circle fill="none" cx="5500" cy="50500" connectorname="5" stroke="#ff9400" r="2200" id="connector4pin" stroke-width="1600"/>
+  <circle fill="none" cx="5500" cy="60500" connectorname="6" stroke="#ff9400" r="2200" id="connector5pin" stroke-width="1600"/>
+  <circle fill="none" cx="5500" cy="70500" connectorname="7" stroke="#ff9400" r="2200" id="connector6pin" stroke-width="1600"/>
+  <circle fill="none" cx="5500" cy="80500" connectorname="8" stroke="#ff9400" r="2200" id="connector7pin" stroke-width="1600"/>
+  <circle fill="none" cx="5500" cy="90500" connectorname="9" stroke="#ff9400" r="2200" id="connector8pin" stroke-width="1600"/>
+  <circle fill="none" cx="35500" cy="90500" connectorname="10" stroke="#ff9400" r="2200" id="connector9pin" stroke-width="1600"/>
+  <circle fill="none" cx="35500" cy="80500" connectorname="11" stroke="#ff9400" r="2200" id="connector10pin" stroke-width="1600"/>
+  <circle fill="none" cx="35500" cy="70500" connectorname="12" stroke="#ff9400" r="2200" id="connector11pin" stroke-width="1600"/>
+  <circle fill="none" cx="35500" cy="60500" connectorname="13" stroke="#ff9400" r="2200" id="connector12pin" stroke-width="1600"/>
+  <circle fill="none" cx="35500" cy="50500" connectorname="14" stroke="#ff9400" r="2200" id="connector13pin" stroke-width="1600"/>
+  <circle fill="none" cx="35500" cy="40500" connectorname="15" stroke="#ff9400" r="2200" id="connector14pin" stroke-width="1600"/>
+  <circle fill="none" cx="35500" cy="30500" connectorname="16" stroke="#ff9400" r="2200" id="connector15pin" stroke-width="1600"/>
+  <circle fill="none" cx="35500" cy="20500" connectorname="17" stroke="#ff9400" r="2200" id="connector16pin" stroke-width="1600"/>
+  <circle fill="none" cx="35500" cy="10500" connectorname="18" stroke="#ff9400" r="2200" id="connector17pin" stroke-width="1600"/>
+ </g>
+</g>
+<g id="silkscreen">
+ <line fill="none" stroke="white" y1="5500" x1="500" y2="95500" stroke-width="1000" x2="500"/>
+ <line fill="none" stroke="white" y1="95500" x1="500" y2="95500" stroke-width="1000" x2="40500"/>
+ <line fill="none" stroke="white" y1="95500" x1="40500" y2="5500" stroke-width="1000" x2="40500"/>
+ <line fill="none" stroke="white" y1="5500" x1="500" y2="5500" stroke-width="1000" x2="15500"/>
+ <line fill="none" stroke="white" y1="5500" x1="25500" y2="5500" stroke-width="1000" x2="40500"/>
+ <path fill="none" stroke="white" stroke-width="1000" d="M15500,5500a5000,5000,0,1,0,10000,0"/>
+</g>
+</svg>

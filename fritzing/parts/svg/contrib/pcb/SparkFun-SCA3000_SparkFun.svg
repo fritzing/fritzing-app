@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" x="0in" y="0in" width="0.2912in" height="0.29925in" viewBox="0 0 2912 2992.5" >
+<title>SparkFun.mod</title>
+<desc>Kicad module 'SparkFun-SCA3000' from file 'SparkFun.mod' converted by Fritzing</desc>
+<metadata xmlns:fz='http://fritzing.org/kicadmetadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+<rdf:RDF><rdf:Description rdf:about=''>
+<fz:attr name='kicad filename'>SparkFun.mod</fz:attr>
+<fz:attr name='kicad module'>SparkFun-SCA3000</fz:attr>
+<fz:attr name='fritzing version'>0.4.1b.07.04.4318</fz:attr>
+<fz:attr name='conversion date'>17/07/2010 17:17:15</fz:attr>
+<fz:attr name='dist-license'>GPL</fz:attr>
+<fz:attr name='use-license'>unlimited</fz:attr>
+<fz:attr name='author'>KICAD project</fz:attr>
+<fz:attr name='license-url'>http://www.gnu.org/licenses/gpl.html</fz:attr>
+<fz:comment></fz:comment>
+<fz:attr name='keyword'></fz:attr>
+</rdf:Description></rdf:RDF></metadata><g id="copper1">
+ <rect width="169" x="111.5" y="2126.5" fill="#ffbf00" connectorname="P$1" height="866" id="connector0pad" stroke-width="0"/>
+ <rect width="169" x="425.5" y="2598" fill="#ffbf00" connectorname="P$2" height="393" id="connector1pad" stroke-width="0"/>
+ <rect width="169" x="740.5" y="2598" fill="#ffbf00" connectorname="P$3" height="393" id="connector2pad" stroke-width="0"/>
+ <rect width="169" x="1055.5" y="2598" fill="#ffbf00" connectorname="P$4" height="393" id="connector3pad" stroke-width="0"/>
+ <rect width="169" x="1370.5" y="2598" fill="#ffbf00" connectorname="P$5" height="393" id="connector4pad" stroke-width="0"/>
+ <rect width="169" x="1685.5" y="2598" fill="#ffbf00" connectorname="P$6" height="393" id="connector5pad" stroke-width="0"/>
+ <rect width="169" x="2000.5" y="2598" fill="#ffbf00" connectorname="P$7" height="393" id="connector6pad" stroke-width="0"/>
+ <rect width="169" x="2315.5" y="2598" fill="#ffbf00" connectorname="P$8" height="393" id="connector7pad" stroke-width="0"/>
+ <rect width="169" x="2630.5" y="2126.5" fill="#ffbf00" connectorname="P$9" height="866" id="connector8pad" stroke-width="0"/>
+ <rect width="169" x="2630.5" y="0.5" fill="#ffbf00" connectorname="P$10" height="866" id="connector9pad" stroke-width="0"/>
+ <rect width="169" x="2315.5" y="0" fill="#ffbf00" connectorname="P$11" height="393" id="connector10pad" stroke-width="0"/>
+ <rect width="169" x="2000.5" y="0" fill="#ffbf00" connectorname="P$12" height="393" id="connector11pad" stroke-width="0"/>
+ <rect width="169" x="1685.5" y="0" fill="#ffbf00" connectorname="P$13" height="393" id="connector12pad" stroke-width="0"/>
+ <rect width="169" x="1370.5" y="0" fill="#ffbf00" connectorname="P$14" height="393" id="connector13pad" stroke-width="0"/>
+ <rect width="169" x="1055.5" y="0" fill="#ffbf00" connectorname="P$15" height="393" id="connector14pad" stroke-width="0"/>
+ <rect width="169" x="740.5" y="0" fill="#ffbf00" connectorname="P$16" height="393" id="connector15pad" stroke-width="0"/>
+ <rect width="169" x="425.5" y="0" fill="#ffbf00" connectorname="P$17" height="393" id="connector16pad" stroke-width="0"/>
+ <rect width="169" x="111.5" y="0.5" fill="#ffbf00" connectorname="P$18" height="866" id="connector17pad" stroke-width="0"/>
+</g>
+<g id="silkscreen">
+ <line fill="none" stroke="white" y1="2991.5" x1="2912" y2="0.5" stroke-width="50" x2="2912"/>
+ <line fill="none" stroke="white" y1="0.5" x1="0" y2="2991.5" stroke-width="50" x2="0"/>
+ <line fill="none" stroke="white" y1="2991.5" x1="0" y2="2991.5" stroke-width="50" x2="2912"/>
+ <line fill="none" stroke="white" y1="2991.5" x1="2912" y2="0.5" stroke-width="50" x2="2912"/>
+ <line fill="none" stroke="white" y1="0.5" x1="2912" y2="0.5" stroke-width="50" x2="0"/>
+ <line fill="none" stroke="white" y1="0.5" x1="0" y2="2991.5" stroke-width="50" x2="0"/>
+ <line fill="none" stroke="white" y1="0.5" x1="0" y2="0.5" stroke-width="50" x2="78"/>
+ <line fill="none" stroke="white" y1="0.5" x1="2912" y2="0.5" stroke-width="50" x2="2833"/>
+ <line fill="none" stroke="white" y1="2991.5" x1="0" y2="2991.5" stroke-width="50" x2="78"/>
+ <line fill="none" stroke="white" y1="2991.5" x1="2912" y2="2991.5" stroke-width="50" x2="2833"/>
+ <line fill="none" stroke="white" y1="944.5" x1="1022" y2="2204.5" stroke-width="50" x2="1022"/>
+ <line fill="none" stroke="white" y1="2204.5" x1="1022" y2="2086.5" stroke-width="50" x2="1140"/>
+ <line fill="none" stroke="white" y1="2204.5" x1="1022" y2="2086.5" stroke-width="50" x2="904"/>
+ <line fill="none" stroke="white" y1="944.5" x1="1022" y2="944.5" stroke-width="50" x2="2282"/>
+ <line fill="none" stroke="white" y1="826.5" x1="2164" y2="944.5" stroke-width="50" x2="2282"/>
+ <line fill="none" stroke="white" y1="944.5" x1="2282" y2="1063.5" stroke-width="50" x2="2164"/>
+ <circle fill="none" cx="503" cy="2330.5" stroke="white" r="62.2254" stroke-width="25"/>
+ <circle fill="none" cx="1022" cy="944.5" stroke="white" r="55.1543" stroke-width="25"/>
+</g>
+</svg>

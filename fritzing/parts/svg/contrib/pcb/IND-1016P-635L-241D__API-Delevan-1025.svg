@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?> <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" x="0in" y="0in" width="0.455in" height="0.10472in" viewBox="0 0 45500 10472" ><title>IND-1016P-635L-241D__API-Delevan-1025.fp</title><desc>Geda footprint file 'IND-1016P-635L-241D__API-Delevan-1025.fp' converted by Fritzing</desc><metadata xmlns:fz='http://fritzing.org/gedametadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'><rdf:RDF><rdf:Description rdf:about=''><fz:attr name='geda filename'>IND-1016P-635L-241D__API-Delevan-1025.fp</fz:attr>
+<fz:attr name='fritzing version'>0.4.0b.06.21.4282</fz:attr>
+<fz:attr name='conversion date'>27/06/2010 07:15:41</fz:attr>
+<fz:attr name='dist-license'>GPL</fz:attr>
+<fz:attr name='use-license'>unlimited</fz:attr>
+<fz:attr name='author'>gEDA project</fz:attr>
+<fz:attr name='license-url'>http://www.gnu.org/licenses/gpl.html</fz:attr>
+</rdf:Description></rdf:RDF></metadata><g id="copper0">
+ <g id="copper1">
+  <circle fill="none" cx="2750" cy="5236" connectorname="" stroke="#ff9400" r="2099.75" id="connector0pin" stroke-width="1300.5"/>
+  <circle fill="none" cx="42750" cy="5236" connectorname="" stroke="#ff9400" r="2099.75" id="connector1pin" stroke-width="1300.5"/>
+ </g>
+</g>
+<g id="silkscreen">
+ <line fill="none" stroke="white" y1="9472" x1="11250" y2="1000" stroke-width="2000" x2="11250"/>
+ <line fill="none" stroke="white" y1="1000" x1="11250" y2="1000" stroke-width="2000" x2="34250"/>
+ <line fill="none" stroke="white" y1="5236" x1="11250" y2="5236" stroke-width="1000" x2="7000"/>
+ <line fill="none" stroke="white" y1="9472" x1="34250" y2="1000" stroke-width="2000" x2="34250"/>
+ <line fill="none" stroke="white" y1="9472" x1="11250" y2="9472" stroke-width="2000" x2="34250"/>
+ <line fill="none" stroke="white" y1="5236" x1="34250" y2="5236" stroke-width="1000" x2="38500"/>
+ <line fill="none" stroke="white" y1="5236" x1="13995" y2="5236" stroke-width="7488" x2="31505"/>
+</g>
+</svg>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Ebene_1" xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="29.736px"
+	 height="56.736px" viewBox="0 0 29.736 56.736" enable-background="new 0 0 29.736 56.736" xml:space="preserve">
+<path fill="#E6E6E6" d="M2.556,0L0,3.492v15.25h29.736V3.492L27.18,0H2.556z M14.976,14.616c-2.585,0-4.681-2.096-4.681-4.68
+	c0-2.585,2.096-4.681,4.681-4.681c2.584,0,4.68,2.096,4.68,4.681C19.656,12.52,17.56,14.616,14.976,14.616z"/>
+<circle id="connector1pad" fill="none" cx="7.776" cy="54.936" r="1.8"/>
+<circle id="connector0pad" fill="none" cx="14.976" cy="54.936" r="1.8"/>
+<circle id="connector2pad" fill="none" cx="22.176" cy="54.936" r="1.8"/>
+<circle id="connector1pad_1_" fill="none" cx="7.776" cy="54.936" r="1.8"/>
+<circle id="connector0pad_1_" fill="none" cx="14.976" cy="54.936" r="1.8"/>
+<circle id="connector2pad_1_" fill="none" cx="22.176" cy="54.936" r="1.8"/>
+<path fill="#CCCCCC" d="M14.976,7.193c2.251,0,4.13,1.592,4.577,3.712c0.066-0.313,0.103-0.636,0.103-0.969
+	c0-2.585-2.096-4.681-4.68-4.681c-2.585,0-4.681,2.096-4.681,4.681c0,0.333,0.037,0.656,0.103,0.969
+	C10.845,8.785,12.724,7.193,14.976,7.193z"/>
+<rect x="0" y="25.618" width="29.736" height="21.125"/>
+<rect x="0" y="46.743" opacity="0.2" width="29.736" height="0.146"/>
+<path fill="#333333" d="M27.424,31.43c0-1.277,1.035-2.313,2.313-2.313v-11.25H0v11.25c1.277,0,2.313,1.035,2.313,2.313
+	S1.277,33.743,0,33.743v6.625h29.736v-6.625C28.459,33.743,27.424,32.708,27.424,31.43z"/>
+<rect x="0" y="17.868" fill="#4D4D4D" width="29.736" height="1.625"/>
+<rect x="6.355" y="52.416" fill="#B3B3B3" width="2.842" height="4.32"/>
+<rect x="13.555" y="52.416" fill="#B3B3B3" width="2.842" height="4.32"/>
+<rect x="20.755" y="52.416" fill="#B3B3B3" width="2.842" height="4.32"/>
+<rect x="6.076" y="43.118" fill="#E6E6E6" width="3.4" height="6.25"/>
+<rect x="13.276" y="43.118" fill="#E6E6E6" width="3.4" height="6.25"/>
+<rect x="20.476" y="43.118" fill="#E6E6E6" width="3.4" height="6.25"/>
+<rect x="6.355" y="43.118" fill="#CCCCCC" width="2.842" height="9.298"/>
+<rect x="13.555" y="43.118" fill="#CCCCCC" width="2.842" height="9.298"/>
+<rect x="20.755" y="43.118" fill="#CCCCCC" width="2.842" height="9.298"/>
+<text transform="matrix(1 0 0 1 6.9275 37.8513)" fill="#CCCCCC" font-family="'MyriadPro-Regular'" font-size="7.2581">78xxl</text>
+<polygon opacity="0.2" fill="#FFFFFF" points="0,4.395 2.556,0.903 27.18,0.903 29.736,4.395 29.736,3.492 27.18,0 2.556,0 0,3.492 
+	"/>
+<path opacity="0.1" fill="#FFFFFF" d="M2.312,31.868c0-1.277-1.035-2.313-2.313-2.313v-0.438c1.277,0,2.313,1.035,2.313,2.313
+	V31.868z"/>
+<path opacity="0.1" fill="#FFFFFF" d="M29.736,29.555c-1.277,0-2.313,1.035-2.313,2.313V31.43c0-1.277,1.035-2.313,2.313-2.313
+	V29.555z"/>
+<rect x="0" y="43.133" opacity="0.2" width="29.736" height="0.283"/>
+</svg>

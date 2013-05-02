@@ -1,0 +1,57 @@
+# This layout merges a Hexapod and Proj1 boards into a single
+# panel. The layout demonstrates nested rows and columns. The
+# final arrangement looks like this (make sure you are looking
+# at this document with a fixed-width font like Courier):
+#
+#     +-----------------------------------------------------+
+#     |  Proj1  |  Proj1  |  Proj1  |  Proj1  |  Proj1 |    |
+#     |         |         |         |         |        |    |
+#     |         |         |         |         |        |    |
+#     +---------+---------+---------+---------+--------+    |
+#     |                                                     |
+#     |                                     +-------+-------+
+#     |                                     |   P   |   P   |
+#     +--------------------------------+    |   r   |   r   |
+#     |                                |    |   o   |   o   |
+#     |                                |    |   j   |   j   |
+#     |                                |    |   1   |   1   |
+#     |                                |    +-------+-------+
+#     |                                |    |   P   |   P   |
+#     |                                |    |   r   |   r   |
+#     |                                |    |   o   |   o   |
+#     |            Hexapod             |    |   j   |   j   |
+#     |                                |    |   1   |   1   |
+#     |                                |    +-------+-------+
+#     |                                |    |   P   |   P   |
+#     |                                |    |   r   |   r   |
+#     |                                |    |   o   |   o   |
+#     |                                |    |   j   |   j   |
+#     |                                |    |   1   |   1   |
+#     +--------------------------------+----+-------+-------+
+
+Row {              // First row has the hexapod and 2x3 panel of
+                   // rotated Proj1 jobs.
+  Hexapod
+  Col {            // Could also write this as two separate 1x3 columns
+    Row {          // First 1x2 row
+      Proj1 Rotate
+      Proj1 Rotate
+    }
+    Row {          // Second 1x2 row above first one
+      Proj1 Rotate
+      Proj1 Rotate
+    }
+    Row {          // Third 1x2 row above second row
+      Proj1 Rotate
+      Proj1 Rotate
+    }
+  }   // end of column
+}  // end of first row
+
+Row {              // Second row has 5x1 panel of Proj1
+  Proj1
+  Proj1
+  Proj1
+  Proj1
+  Proj1
+}

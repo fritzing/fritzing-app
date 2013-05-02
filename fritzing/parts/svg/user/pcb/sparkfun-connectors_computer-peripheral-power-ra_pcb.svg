@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- Created with Fritzing (http://www.fritzing.org/) -->
+<svg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' version='1.2' baseProfile='tiny' x='0in' y='0in' width='0.924in' height='0.564in' viewBox='0 0 23.4696 14.3256' >
+<g id='copper1'>
+<circle cx='1.5748' cy='10.2616' r='1.27' stroke='black' stroke-width='0' fill='black' id='nonconn0' />
+<circle cx='21.8948' cy='10.2616' r='1.27' stroke='black' stroke-width='0' fill='black' id='nonconn1' />
+<circle cx='6.6548' cy='2.6416' r='1.9939' stroke='black' stroke-width='0' fill='black' id='nonconn2' />
+<circle cx='16.8148' cy='2.6416' r='1.9939' stroke='black' stroke-width='0' fill='black' id='nonconn3' />
+<circle id='connector0pad' connectorname='5V' cx='4.1148' cy='12.8016' r='1.143' stroke='#F7BD13' stroke-width='0.762' fill='none' />
+<circle id='connector2pad' connectorname='GND' cx='9.1948' cy='12.8016' r='1.143' stroke='#F7BD13' stroke-width='0.762' fill='none' />
+<circle id='connector3pad' connectorname='NC' cx='14.2748' cy='12.8016' r='1.143' stroke='#F7BD13' stroke-width='0.762' fill='none' />
+<circle id='connector1pad' connectorname='12V' cx='19.3548' cy='12.8016' r='1.143' stroke='#F7BD13' stroke-width='0.762' fill='none' />
+<g id='copper0'>
+<circle cx='1.5748' cy='10.2616' r='1.27' stroke='black' stroke-width='0' fill='black' id='nonconn4' />
+<circle cx='21.8948' cy='10.2616' r='1.27' stroke='black' stroke-width='0' fill='black' id='nonconn5' />
+<circle cx='6.6548' cy='2.6416' r='1.9939' stroke='black' stroke-width='0' fill='black' id='nonconn6' />
+<circle cx='16.8148' cy='2.6416' r='1.9939' stroke='black' stroke-width='0' fill='black' id='nonconn7' />
+<circle id='connector0pad' connectorname='5V' cx='4.1148' cy='12.8016' r='1.143' stroke='#F7BD13' stroke-width='0.762' fill='none' />
+<circle id='connector2pad' connectorname='GND' cx='9.1948' cy='12.8016' r='1.143' stroke='#F7BD13' stroke-width='0.762' fill='none' />
+<circle id='connector3pad' connectorname='NC' cx='14.2748' cy='12.8016' r='1.143' stroke='#F7BD13' stroke-width='0.762' fill='none' />
+<circle id='connector1pad' connectorname='12V' cx='19.3548' cy='12.8016' r='1.143' stroke='#F7BD13' stroke-width='0.762' fill='none' />
+</g>
+</g>
+<g id='silkscreen'>
+<line class='other' x1='0.1016' y1='13.3096' x2='0.1016' y2='0.1016' stroke='#f0f0f0' stroke-width='0.2032' stroke-linecap='round'/>
+<line class='other' x1='0.1016' y1='0.1016' x2='23.368' y2='0.1016' stroke='#f0f0f0' stroke-width='0.2032' stroke-linecap='round'/>
+<line class='other' x1='23.368' y1='0.1016' x2='23.368' y2='13.3096' stroke='#f0f0f0' stroke-width='0.2032' stroke-linecap='round'/>
+<line class='other' x1='0.1016' y1='13.3096' x2='2.8448' y2='13.3096' stroke='#f0f0f0' stroke-width='0.2032' stroke-linecap='round'/>
+<line class='other' x1='5.3848' y1='13.3096' x2='7.9248' y2='13.3096' stroke='#f0f0f0' stroke-width='0.2032' stroke-linecap='round'/>
+<line class='other' x1='10.4648' y1='13.3096' x2='13.0048' y2='13.3096' stroke='#f0f0f0' stroke-width='0.2032' stroke-linecap='round'/>
+<line class='other' x1='15.5448' y1='13.3096' x2='18.0848' y2='13.3096' stroke='#f0f0f0' stroke-width='0.2032' stroke-linecap='round'/>
+<line class='other' x1='23.368' y1='13.3096' x2='20.6248' y2='13.3096' stroke='#f0f0f0' stroke-width='0.2032' stroke-linecap='round'/>
+</g>
+</svg>

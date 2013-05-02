@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Ebene_1" xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="21.336px"
+	 height="21.158px" viewBox="0 0 21.336 21.158" enable-background="new 0 0 21.336 21.158" xml:space="preserve">
+<g>
+	<rect x="5.696" y="0" fill="#CCCCCC" width="1.44" height="4.111"/>
+	<rect x="8.531" y="0" fill="#CCCCCC" width="1.44" height="4.111"/>
+	<rect x="11.365" y="0" fill="#CCCCCC" width="1.439" height="4.111"/>
+	<rect x="14.2" y="0" fill="#CCCCCC" width="1.439" height="4.111"/>
+	<rect x="5.696" y="0" opacity="0.3" fill="#FFFFFF" width="0.144" height="4.111"/>
+	<rect x="8.531" y="0" opacity="0.3" fill="#FFFFFF" width="0.144" height="4.111"/>
+	<rect x="11.365" y="0" opacity="0.3" fill="#FFFFFF" width="0.144" height="4.111"/>
+	<rect x="14.2" y="0" opacity="0.3" fill="#FFFFFF" width="0.144" height="4.111"/>
+</g>
+<polygon fill="#1A1A1A" points="15.918,0.375 15.918,1.189 5.356,1.189 5.356,0.375 0,0.375 0,17.923 21.336,17.923 21.336,0.375 
+	"/>
+<rect x="0" y="0.375" fill="#4D4D4D" width="5.085" height="19.635"/>
+<rect x="15.918" y="0.375" opacity="0.3" fill="#FFFFFF" width="5.5" height="0.144"/>
+<rect x="15.918" y="0.519" opacity="0.3" fill="#FFFFFF" width="0.144" height="0.827"/>
+<rect x="5.212" y="0.519" opacity="0.3" fill="#FFFFFF" width="0.144" height="0.827"/>
+<rect x="5.356" y="1.201" opacity="0.3" fill="#FFFFFF" width="10.563" height="0.144"/>
+<g>
+	<rect x="4.543" y="0.375" opacity="0.9" fill="#1A1A1A" width="0.542" height="19.635"/>
+	<rect x="4.001" y="0.375" opacity="0.8" fill="#1A1A1A" width="0.542" height="19.635"/>
+	<rect x="3.459" y="0.375" opacity="0.7" fill="#1A1A1A" width="0.542" height="19.635"/>
+	<rect x="2.917" y="0.375" opacity="0.6" fill="#1A1A1A" width="0.542" height="19.635"/>
+	<rect x="2.375" y="0.375" opacity="0.5" fill="#1A1A1A" width="0.542" height="19.635"/>
+	<rect x="1.833" y="0.375" opacity="0.4" fill="#1A1A1A" width="0.542" height="19.635"/>
+	<rect x="1.291" y="0.375" opacity="0.3" fill="#1A1A1A" width="0.542" height="19.635"/>
+	<rect x="0.749" y="0.375" opacity="0.2" fill="#1A1A1A" width="0.542" height="19.635"/>
+	<rect x="0.207" y="0.375" opacity="0.1" fill="#1A1A1A" width="0.542" height="19.635"/>
+</g>
+<path fill="#4D4D4D" d="M21.337,17.923H5.083l-5.085,1.854v1.382h21.339V17.923"/>
+<polyline points="19.484,19.579 1.861,19.579 1.861,19.97 19.484,19.97 19.484,19.579 "/>
+<rect x="0" y="0.375" opacity="0.3" fill="#FFFFFF" width="5.355" height="0.144"/>
+<polygon opacity="0.3" points="21.336,20.983 21.192,21.014 21.192,0.519 21.336,0.519 "/>
+<rect x="1.861" y="19.973" opacity="0.3" fill="#FFFFFF" width="17.623" height="0.072"/>
+<rect x="1.861" y="19.504" opacity="0.3" width="17.623" height="0.072"/>
+<polygon opacity="0.3" fill="#FFFFFF" points="-0.002,19.666 5.083,17.812 21.337,17.812 21.337,17.923 5.083,17.923 -0.002,19.776 
+	"/>
+<rect x="-0.002" y="21.014" opacity="0.4" width="21.338" height="0.144"/>
+</svg>

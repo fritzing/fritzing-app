@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module moduleId="PadModuleID" >
+ <version>4</version>
+ <author>Jonathan Cohen</author>
+ <title>Pad</title>
+ <date>2010-04-29</date>
+ <label>Pad</label>
+ <tags>
+  <tag>pcb</tag>
+  <tag>Pad</tag>
+  <tag>fritzing core</tag>
+ </tags>
+ <properties>
+  <property name="family" >pad</property>
+  <property name="shape" ></property>
+  <property name="connect to" ></property>
+  <property name="layer" >copper1</property>
+ </properties>
+ <taxonomy>discreteParts.pcb.pad</taxonomy>
+ <description>Pad</description>
+ <views>
+  <iconView>
+   <layers image="icon/pad.svg" >
+    <layer layerId="icon" />
+   </layers>
+  </iconView>
+  <breadboardView>
+   <layers image="pcb/pad.svg" >
+    <layer layerId="copper1" />
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="pcb/pad.svg" >
+    <layer layerId="copper1" />
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/pad.svg" >
+    <layer layerId="copper1" />
+   </layers>
+  </pcbView>
+ </views>
+  <connectors>
+    <connector type="male" id="connector0" name="pad" >
+      <description>via</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector0pad" layer="copper1" />
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector0pad" layer="copper1" />
+        </schematicView>
+        <pcbView>
+          <p svgId="connector0pad" terminalId="connector0terminal" layer="copper1" />
+        </pcbView>
+      </views>
+    </connector>  
+  </connectors>
+  <buses/>
+</module>

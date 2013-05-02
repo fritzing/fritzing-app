@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Ebene_1" xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="30.047px"
+	 height="32.229px" viewBox="0 -2.182 30.047 32.229" enable-background="new 0 -2.182 30.047 32.229" xml:space="preserve">
+<rect x="0" y="-0.056" fill="#B3B3B3" width="30.047" height="30.16"/>
+<rect x="0" y="29.522" fill="#7B735C" width="30.047" height="0.525"/>
+<g>
+	<g>
+		<path fill="#582B01" d="M21.399,29.117c0-0.191-0.226-0.348-0.5-0.348H9.149c-0.274,0-0.5,0.156-0.5,0.348s0,0.404,0,0.404h12.75
+			C21.399,29.522,21.399,29.309,21.399,29.117z"/>
+	</g>
+</g>
+<rect x="0" y="-2.182" fill="#CCCCCC" width="30.047" height="30.16"/>
+<rect x="0" y="-2.182" opacity="0.2" fill="#FFFFFF" width="30.047" height="0.581"/>
+<path fill="#F2F2F2" d="M27.858,22.781c0,1.65-1.35,3-3,3H5.19c-1.65,0-3-1.35-3-3V3.015c0-1.65,1.35-3,3-3h19.668
+	c1.65,0,3,1.35,3,3V22.781z"/>
+<rect x="21.399" y="29.117" fill="#E6E6E6" width="8.648" height="0.404"/>
+<rect x="0" y="29.117" fill="#E6E6E6" width="8.648" height="0.404"/>
+<text transform="matrix(1 0 0 1 4.3245 4.6965)" fill="#333333" font-family="'DroidSans'" font-size="3.1729">MN5010HS</text>
+<g opacity="0.2">
+	<path d="M8.649,29.465h12.75"/>
+	<rect x="0" y="29.522" width="30.047" height="0.263"/>
+	<path d="M8.649,29.38c0-0.191,0.226-0.348,0.5-0.348h11.75c0.274,0,0.5,0.156,0.5,0.348v-0.263c0-0.191-0.226-0.348-0.5-0.348
+		H9.149c-0.274,0-0.5,0.156-0.5,0.348V29.38z"/>
+	<rect x="0" y="27.978" width="30.047" height="0.263"/>
+	<path d="M2.19,22.939c0,1.65,1.35,3,3,3h19.668c1.65,0,3-1.35,3-3v-0.158c0,1.65-1.35,3-3,3H5.19c-1.65,0-3-1.35-3-3V22.939z"/>
+</g>
+</svg>

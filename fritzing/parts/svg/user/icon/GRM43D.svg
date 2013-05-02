@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Ebene_1" xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="15.602px"
+	 height="10.564px" viewBox="0 0 15.602 10.564" enable-background="new 0 0 15.602 10.564" xml:space="preserve">
+<g>
+	<g>
+		<rect x="0.001" y="0" fill="#534741" width="15.601" height="7.042"/>
+		<rect x="0.001" y="7.042" fill="#3E3531" width="15.601" height="3.522"/>
+		<rect x="0.001" y="10.503" opacity="0.2" enable-background="new    " width="15.601" height="0.056"/>
+		<rect x="0.001" y="0" opacity="0.2" fill="#FFFFFF" enable-background="new    " width="15.601" height="0.086"/>
+	</g>
+	<g>
+		<path fill="#DCDCDC" d="M13.345,0L13.345,0L13.345,0H13.16l0,0c-0.161,0.47-0.272,2.235-0.272,2.757
+			c0,0.548,0.097,3.795,0.272,4.285l0,0l0,0h2.441V0H13.345z"/>
+		<path fill="#DCDCDC" d="M2.44,0.194V0H0.001v7.042H2.44C2.614,6.547,2.82,3.31,2.82,2.758C2.82,2.113,2.671,0.758,2.44,0.194z"/>
+		<path fill="#D1C690" d="M2.44,10.565H0.001V7.042H2.44C2.589,7.634,2.44,10.565,2.44,10.565z"/>
+		<path fill="#CCCCCC" d="M2.44,10.565H0.001V7.042H2.44C2.557,7.497,2.44,10.565,2.44,10.565z"/>
+		<rect x="0.001" y="10.478" opacity="0.15" enable-background="new    " width="2.439" height="0.087"/>
+		<rect x="0.001" y="0" opacity="0.5" fill="#FFFFFF" enable-background="new    " width="2.439" height="0.086"/>
+		<path fill="#D1C690" d="M15.602,10.565H13.16c0,0-0.165-3.212,0-3.522h2.441V10.565z"/>
+		<path fill="#CCCCCC" d="M15.602,10.565H13.16c0,0-0.161-3.092,0-3.522h2.441V10.565z"/>
+		<rect x="13.16" y="10.478" opacity="0.15" enable-background="new    " width="2.441" height="0.087"/>
+		<rect x="13.16" y="0" opacity="0.5" fill="#FFFFFF" enable-background="new    " width="2.441" height="0.086"/>
+		<line fill="none" x1="1.493" y1="10.565" x2="1.493" y2="10.565"/>
+	</g>
+</g>
+</svg>

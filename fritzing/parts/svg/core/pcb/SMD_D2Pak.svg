@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.1"
+   width="61.653542"
+   height="39.330708"
+   id="svg2825">
+  <g
+     id="silkscreen">
+    <rect
+       width="42.165356"
+       height="38.976379"
+       rx="2210684"
+       ry="0"
+       x="0.17716536"
+       y="0.17716424"
+       id="rect3693"
+       style="fill:none;stroke:#ffffff;stroke-width:0.35433072;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+  </g>
+  <g
+     id="copper1">
+    <rect
+       width="29.763779"
+       height="37.913387"
+       rx="2210684"
+       ry="0"
+       x="0.70866144"
+       y="0.70864904"
+       id="connector2pad"
+       style="fill:#f7bd13;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0;" />
+    <rect
+       width="10.629921"
+       height="3.5433071"
+       rx="1000000"
+       ry="0"
+       x="50.31496"
+       y="9.0354319"
+       id="connector1pad"
+       style="fill:#f7bd13;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0;" />
+    <rect
+       width="10.629921"
+       height="3.5433071"
+       rx="1000000"
+       ry="0"
+       x="50.31496"
+       y="26.751966"
+       id="connector0pad"
+       style="fill:#f7bd13;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0;" />
+  </g>
+</svg>

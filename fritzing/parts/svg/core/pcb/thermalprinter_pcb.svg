@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><svg baseProfile="tiny" width="0.14in"  height="0.64in" version="1.2" viewBox="0 0 140 640" xmlns="http://www.w3.org/2000/svg">
+ <desc>Fritzing footprint SVG</desc>
+ <g id="silkscreen">
+  <line stroke="white" stroke-width="10" x1="20" x2="20" y1="20" y2="620"/>
+  <line stroke="white" stroke-width="10" x1="20" x2="120" y1="620" y2="620"/>
+  <line stroke="white" stroke-width="10" x1="120" x2="120" y1="620" y2="20"/>
+  <line stroke="white" stroke-width="10" x1="120" x2="20" y1="20" y2="20"/>
+  <line stroke="white" stroke-width="5" x1="20" x2="120" y1="120" y2="120"/>
+ </g>
+ <g id="copper1"><g id="copper0">
+    <rect fill='none' height='55' width='55' stroke='rgb(255, 191, 0)' stroke-width='20' x='42.5' y='42.5'/>
+<circle cx='70' cy='70' fill='none' id='connector0pin' r='27.5' stroke='rgb(255, 191, 0)' stroke-width='20'/>
+<circle cx='70' cy='170' fill='none' id='connector1pin' r='27.5' stroke='rgb(255, 191, 0)' stroke-width='20'/>
+<!-- <circle cx='70' cy='270' fill='none' id='connector2pin' r='27.5' stroke='rgb(255, 191, 0)' stroke-width='20'/> -->
+<circle cx='70' cy='370' fill='none' id='connector2pin' r='27.5' stroke='rgb(255, 191, 0)' stroke-width='20'/>
+<circle cx='70' cy='470' fill='none' id='connector3pin' r='27.5' stroke='rgb(255, 191, 0)' stroke-width='20'/>
+<circle cx='70' cy='570' fill='none' id='connector4pin' r='27.5' stroke='rgb(255, 191, 0)' stroke-width='20'/>
+
+ </g></g>
+</svg>

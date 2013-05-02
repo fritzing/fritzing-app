@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1 Basic//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-basic.dtd">
+<svg version="1.1" baseProfile="basic" id="Layer_2"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="32px" height="32px"
+	 viewBox="0 0 32 32" xml:space="preserve">
+<g id="icon_1_">
+	<rect x="6.938" y="2.039" fill="#D2F3FF" width="18.125" height="18.067"/>
+	<rect x="6.938" y="20.106" fill="#717170" width="18.125" height="0.631"/>
+	<rect x="6.938" y="20.737" fill="#F0D9C2" width="18.125" height="1.918"/>
+	<rect x="6.938" y="22.612" fill="#A56549" width="18.125" height="0.396"/>
+	<g>
+		<polygon fill="#FFFFFF" points="11.125,20.106 9.309,20.106 21.824,2.039 23.64,2.039 		"/>
+		<polygon fill="#FFFFFF" points="12.549,20.106 11.969,20.106 24.482,2.039 25.062,2.039 		"/>
+	</g>
+	<g>
+		<rect x="22.822" y="20.737" fill="#474747" width="0.986" height="1.371"/>
+		<rect x="20.732" y="20.737" fill="#474747" width="0.986" height="1.371"/>
+		<rect x="18.643" y="20.737" fill="#474747" width="0.985" height="1.371"/>
+		<rect x="14.463" y="20.737" fill="#474747" width="0.985" height="1.371"/>
+		<rect x="16.552" y="20.737" fill="#474747" width="0.987" height="1.371"/>
+		<rect x="12.372" y="20.737" fill="#474747" width="0.986" height="1.371"/>
+		<rect x="10.283" y="20.737" fill="#474747" width="0.986" height="1.371"/>
+		<rect x="8.192" y="20.737" fill="#474747" width="0.986" height="1.371"/>
+	</g>
+	<path fill="none" stroke="#000000" stroke-width="0.9672" d="M8.685,22.567c0,6.859,6.728,2.615,6.728,9.01V59.3"/>
+	<path fill="none" stroke="#FF0000" stroke-width="0.9672" d="M23.352,22.612c0,6.861-5.951,2.57-5.951,8.965V59.3"/>
+</g>
+</svg>

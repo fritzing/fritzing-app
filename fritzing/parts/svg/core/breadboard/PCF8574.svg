@@ -1,0 +1,499 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   id="svg2"
+   x="0px"
+   y="0px"
+   width="0.80in"
+   height="0.33in"
+   viewBox="0 0 57.6 23.76"
+   enable-background="new 0 0 57.6 23.76"
+   xml:space="preserve"
+   
+   ><metadata
+   id="metadata3850"><rdf:RDF><cc:Work
+       rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><defs
+   id="defs3848" /><sodipodi:namedview
+   pagecolor="#ffffff"
+   bordercolor="#666666"
+   borderopacity="1"
+   objecttolerance="10"
+   gridtolerance="10"
+   guidetolerance="10"
+   id="namedview3846"
+   showgrid="false"
+   
+   
+   
+   
+   
+   
+   
+   
+    />
+<rect
+   id="connector0pin"
+   x="2.52"
+   y="20.636"
+   fill="none"
+   width="2.16"
+   height="3.124" />
+<rect
+   id="connector1pin"
+   x="9.72"
+   y="20.636"
+   fill="none"
+   width="2.16"
+   height="3.124" />
+<rect
+   id="connector2pin"
+   x="16.92"
+   y="20.636"
+   fill="none"
+   width="2.159"
+   height="3.124" />
+<rect
+   id="connector3pin"
+   x="24.119"
+   y="20.636"
+   fill="none"
+   width="2.16"
+   height="3.124" />
+<rect
+   id="connector4pin"
+   x="31.319"
+   y="20.636"
+   fill="none"
+   width="2.16"
+   height="3.124" />
+<rect
+   id="connector5pin"
+   x="38.521"
+   y="20.636"
+   fill="none"
+   width="2.159"
+   height="3.124" />
+<rect
+   id="connector6pin"
+   x="45.719"
+   y="20.636"
+   fill="none"
+   width="2.16"
+   height="3.124" />
+<rect
+   id="connector7pin"
+   x="52.919"
+   y="20.636"
+   fill="none"
+   width="2.16"
+   height="3.124" />
+<rect
+   id="connector8pin"
+   x="52.919"
+   y="0"
+   fill="none"
+   width="2.16"
+   height="3.125" />
+<rect
+   id="connector9pin"
+   x="45.719"
+   y="0"
+   fill="none"
+   width="2.16"
+   height="3.125" />
+<rect
+   id="connector10pin"
+   x="38.521"
+   y="0"
+   fill="none"
+   width="2.159"
+   height="3.125" />
+<rect
+   id="connector11pin"
+   x="31.319"
+   y="0"
+   fill="none"
+   width="2.16"
+   height="3.125" />
+<rect
+   id="connector12pin"
+   x="24.119"
+   y="0"
+   fill="none"
+   width="2.16"
+   height="3.125" />
+<rect
+   id="connector13pin"
+   x="16.92"
+   y="0"
+   fill="none"
+   width="2.159"
+   height="3.125" />
+<rect
+   id="connector14pin"
+   x="9.72"
+   y="0"
+   fill="none"
+   width="2.16"
+   height="3.125" />
+<rect
+   id="connector15pin"
+   x="2.52"
+   y="0"
+   fill="none"
+   width="2.16"
+   height="3.125" />
+<rect
+   id="connector0terminal"
+   x="2.52"
+   y="21.601"
+   fill="none"
+   width="2.16"
+   height="2.159" />
+<rect
+   id="connector1terminal"
+   x="9.72"
+   y="21.601"
+   fill="none"
+   width="2.16"
+   height="2.159" />
+<rect
+   id="connector2terminal"
+   x="16.92"
+   y="21.601"
+   fill="none"
+   width="2.159"
+   height="2.159" />
+<rect
+   id="connector3terminal"
+   x="24.119"
+   y="21.601"
+   fill="none"
+   width="2.16"
+   height="2.159" />
+<rect
+   id="connector4terminal"
+   x="31.319"
+   y="21.601"
+   fill="none"
+   width="2.16"
+   height="2.159" />
+<rect
+   id="connector5terminal"
+   x="38.521"
+   y="21.601"
+   fill="none"
+   width="2.159"
+   height="2.159" />
+<rect
+   id="connector6terminal"
+   x="45.719"
+   y="21.601"
+   fill="none"
+   width="2.16"
+   height="2.159" />
+<rect
+   id="connector7terminal"
+   x="52.919"
+   y="21.601"
+   fill="none"
+   width="2.16"
+   height="2.159" />
+<rect
+   id="connector8terminal"
+   x="52.919"
+   y="0"
+   fill="none"
+   width="2.16"
+   height="2.16" />
+<rect
+   id="connector9terminal"
+   x="45.719"
+   y="0"
+   fill="none"
+   width="2.16"
+   height="2.16" />
+<rect
+   id="connector10terminal"
+   x="38.521"
+   y="0"
+   fill="none"
+   width="2.159"
+   height="2.16" />
+<rect
+   id="connector11terminal"
+   x="31.319"
+   y="0"
+   fill="none"
+   width="2.16"
+   height="2.16" />
+<rect
+   id="connector12terminal"
+   x="24.119"
+   y="0"
+   fill="none"
+   width="2.16"
+   height="2.16" />
+<rect
+   id="connector13terminal"
+   x="16.92"
+   y="0"
+   fill="none"
+   width="2.159"
+   height="2.16" />
+<rect
+   id="connector14terminal"
+   x="9.72"
+   y="0"
+   fill="none"
+   width="2.16"
+   height="2.16" />
+<rect
+   id="connector15terminal"
+   x="2.52"
+   y="0"
+   fill="none"
+   width="2.16"
+   height="2.16" />
+<g
+   id="breadboard">
+	<rect
+   x="2.52"
+   y="18.949"
+   fill="#8C8C8C"
+   width="2.16"
+   height="4.811"
+   id="rect3760" />
+	<rect
+   x="9.72"
+   y="18.949"
+   fill="#8C8C8C"
+   width="2.16"
+   height="4.811"
+   id="rect3762" />
+	<rect
+   x="16.92"
+   y="18.949"
+   fill="#8C8C8C"
+   width="2.159"
+   height="4.811"
+   id="rect3764" />
+	<rect
+   x="24.119"
+   y="18.949"
+   fill="#8C8C8C"
+   width="2.16"
+   height="4.811"
+   id="rect3766" />
+	<rect
+   x="31.319"
+   y="18.949"
+   fill="#8C8C8C"
+   width="2.16"
+   height="4.811"
+   id="rect3768" />
+	<rect
+   x="38.521"
+   y="18.949"
+   fill="#8C8C8C"
+   width="2.159"
+   height="4.811"
+   id="rect3770" />
+	<rect
+   x="45.719"
+   y="18.949"
+   fill="#8C8C8C"
+   width="2.16"
+   height="4.811"
+   id="rect3772" />
+	<rect
+   x="52.919"
+   y="18.949"
+   fill="#8C8C8C"
+   width="2.16"
+   height="4.811"
+   id="rect3774" />
+	<rect
+   x="52.919"
+   y="0"
+   fill="#8C8C8C"
+   width="2.16"
+   height="4.81"
+   id="rect3776" />
+	<rect
+   x="45.719"
+   y="0"
+   fill="#8C8C8C"
+   width="2.16"
+   height="4.81"
+   id="rect3778" />
+	<rect
+   x="38.521"
+   y="0"
+   fill="#8C8C8C"
+   width="2.159"
+   height="4.81"
+   id="rect3780" />
+	<rect
+   x="31.319"
+   y="0"
+   fill="#8C8C8C"
+   width="2.16"
+   height="4.81"
+   id="rect3782" />
+	<rect
+   x="24.119"
+   y="0"
+   fill="#8C8C8C"
+   width="2.16"
+   height="4.81"
+   id="rect3784" />
+	<rect
+   x="16.92"
+   y="0"
+   fill="#8C8C8C"
+   width="2.159"
+   height="4.81"
+   id="rect3786" />
+	<rect
+   x="9.72"
+   y="0"
+   fill="#8C8C8C"
+   width="2.16"
+   height="4.81"
+   id="rect3788" />
+	<rect
+   x="2.52"
+   y="0"
+   fill="#8C8C8C"
+   width="2.16"
+   height="4.81"
+   id="rect3790" />
+	<polygon
+   fill="#3D3D3D"
+   points="0,2.16 57.6,2.16 57.059,8.281 0,8.281  "
+   id="polygon3792" />
+	<polygon
+   points="0,15.479 57.059,15.479 57.6,21.601 0,21.601  "
+   id="polygon3794" />
+	<polygon
+   fill="#8C8C8C"
+   points="6.12,3.125 6.12,2.347 4.68,1.685 2.52,1.685 2.52,3.125  "
+   id="polygon3796" />
+	<polygon
+   fill="#8C8C8C"
+   points="55.079,3.125 55.079,1.685 52.919,1.685 51.478,2.347 51.478,3.125  "
+   id="polygon3798" />
+	<polygon
+   fill="#8C8C8C"
+   points="2.52,20.636 2.52,22.074 4.68,22.074 6.12,21.412 6.12,20.636  "
+   id="polygon3800" />
+	<polygon
+   fill="#8C8C8C"
+   points="51.478,20.636 51.478,21.412 52.919,22.074 55.079,22.074 55.079,20.636  "
+   id="polygon3802" />
+	<polygon
+   fill="#8C8C8C"
+   points="13.32,3.125 13.32,2.347 11.88,1.685 9.72,1.685 8.28,2.347 8.28,3.125  "
+   id="polygon3804" />
+	<polygon
+   fill="#8C8C8C"
+   points="8.28,20.636 8.28,21.412 9.72,22.074 11.88,22.074 13.32,21.412 13.32,20.636  "
+   id="polygon3806" />
+	<polygon
+   fill="#8C8C8C"
+   points="20.52,3.125 20.52,2.347 19.079,1.685 16.92,1.685 15.48,2.347 15.48,3.125  "
+   id="polygon3808" />
+	<polygon
+   fill="#8C8C8C"
+   points="15.48,20.636 15.48,21.412 16.92,22.074 19.079,22.074 20.52,21.412 20.52,20.636  "
+   id="polygon3810" />
+	<polygon
+   fill="#8C8C8C"
+   points="27.72,3.125 27.72,2.347 26.28,1.685 24.119,1.685 22.68,2.347 22.68,3.125  "
+   id="polygon3812" />
+	<polygon
+   fill="#8C8C8C"
+   points="22.68,20.636 22.68,21.412 24.119,22.074 26.28,22.074 27.72,21.412 27.72,20.636  "
+   id="polygon3814" />
+	<polygon
+   fill="#8C8C8C"
+   points="34.919,3.125 34.919,2.347 33.479,1.685 31.319,1.685 29.879,2.347 29.879,3.125  "
+   id="polygon3816" />
+	<polygon
+   fill="#8C8C8C"
+   points="29.879,20.636 29.879,21.412 31.319,22.074 33.479,22.074 34.919,21.412 34.919,20.636  "
+   id="polygon3818" />
+	<polygon
+   fill="#8C8C8C"
+   points="42.119,3.125 42.119,2.347 40.68,1.685 38.521,1.685 37.079,2.347 37.079,3.125  "
+   id="polygon3820" />
+	<polygon
+   fill="#8C8C8C"
+   points="37.079,20.636 37.079,21.412 38.521,22.074 40.68,22.074 42.119,21.412 42.119,20.636  "
+   id="polygon3822" />
+	<polygon
+   fill="#8C8C8C"
+   points="49.319,3.125 49.319,2.347 47.879,1.685 45.719,1.685 44.28,2.347 44.28,3.125  "
+   id="polygon3824" />
+	<polygon
+   fill="#8C8C8C"
+   points="44.28,20.636 44.28,21.412 45.719,22.074 47.879,22.074 49.319,21.412 49.319,20.636  "
+   id="polygon3826" />
+	<polygon
+   fill="#141414"
+   points="57.6,2.16 57.059,3.931 56.053,3.931 56.053,19.821 57.059,19.828 57.6,21.601  "
+   id="polygon3828" />
+	<polygon
+   fill="#1F1F1F"
+   points="0,2.16 0.54,3.931 0.54,8.281 3.6,8.281 3.6,15.479 0.54,15.479 0.54,19.828 0,21.601  "
+   id="polygon3830" />
+	<polygon
+   fill="#1C1C1C"
+   points="3.6,8.281 0.54,8.281 0.403,9.792 0.403,11.88 3.6,11.88  "
+   id="polygon3832" />
+	<polygon
+   fill="#383838"
+   points="0.54,15.479 3.6,15.479 3.6,11.88 0.403,11.88 0.403,13.968  "
+   id="polygon3834" />
+	<path
+   fill="#303030"
+   d="M0.54,3.931v4.32c1.713,0.324,3.017,1.822,3.017,3.629s-1.296,3.313-3.017,3.637v4.319h56.519V3.931H0.54z"
+   id="path3836" />
+	<path
+   fill="#262626"
+   d="M0.403,9.792v4.196c1.059-0.121,1.887-1.008,1.887-2.102C2.29,10.8,1.469,9.9,0.403,9.792z"
+   id="path3838" />
+	<circle
+   fill="#212121"
+   cx="4.68"
+   cy="16.898"
+   r="1.483"
+   id="circle3840" />
+</g>
+<rect
+   x="6.494"
+   y="9.792"
+   fill="none"
+   width="32.372"
+   height="5.95"
+   id="rect3842" />
+<text
+   transform="scale(1.0575413,0.94558955)"
+   font-size="5.76"
+   id="text3844"
+   style="font-size:6.09143782px;fill:#e5e5e5;font-family:OCRA"
+   x="14.1829"
+   y="14.671088">PCF8574</text>
+
+
+
+</svg>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" x="0in" y="0in" width="0.273832in" height="0.273832in" viewBox="0 0 2738.32 2738.32" >
+<title>SparkFun.mod</title>
+<desc>Kicad module 'SparkFun-MIC-9.7MM' from file 'SparkFun.mod' converted by Fritzing</desc>
+<metadata xmlns:fz='http://fritzing.org/kicadmetadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+<rdf:RDF><rdf:Description rdf:about=''>
+<fz:attr name='kicad filename'>SparkFun.mod</fz:attr>
+<fz:attr name='kicad module'>SparkFun-MIC-9.7MM</fz:attr>
+<fz:attr name='fritzing version'>0.4.1b.07.04.4318</fz:attr>
+<fz:attr name='conversion date'>17/07/2010 17:16:20</fz:attr>
+<fz:attr name='dist-license'>GPL</fz:attr>
+<fz:attr name='use-license'>unlimited</fz:attr>
+<fz:attr name='author'>KICAD project</fz:attr>
+<fz:attr name='license-url'>http://www.gnu.org/licenses/gpl.html</fz:attr>
+<fz:comment></fz:comment>
+<fz:attr name='keyword'></fz:attr>
+</rdf:Description></rdf:RDF></metadata><g id="copper0">
+ <g id="copper1">
+  <g connectorname="1" id="connector0pin">
+   <circle fill="none" cx="582.16" cy="869.16" stroke="#ff9400" r="243.5" stroke-width="173"/>
+  </g>
+  <g connectorname="2" id="connector1pin">
+   <circle fill="none" cx="582.16" cy="1869.16" stroke="#ff9400" r="243.5" stroke-width="173"/>
+  </g>
+ </g>
+</g>
+<g id="silkscreen">
+ <circle fill="none" cx="1369.16" cy="1369.16" stroke="white" r="1349.16" stroke-width="40"/>
+</g>
+</svg>

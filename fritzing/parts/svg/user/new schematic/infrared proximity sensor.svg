@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="svg" xmlns:xml="http://www.w3.org/XML/1998/namespace"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28.8px" height="43.2px"
+	 viewBox="0 0 28.8 43.2" enable-background="new 0 0 28.8 43.2" xml:space="preserve">
+<g id="schematic">
+	<rect x="7.2" y="7.2" fill="#FFFFFF" stroke="#000000" stroke-width="0.93" stroke-linecap="round" width="14.4" height="28.8"/>
+	<g>
+		<g>
+			<g>
+				<g id="schematic_2_">
+					<g>
+						<polygon points="10.437,14.249 10.772,15.177 9.941,14.644 10.189,14.445 						"/>
+						<path d="M9.651,14.658l0.432-0.345l0.248-0.198l0.184-0.146L11.1,15.59L9.651,14.658L9.651,14.658z"/>
+						<path d="M10.544,15.162l-1.592-1.995c-0.058-0.074-0.046-0.18,0.028-0.238l0,0c0.072-0.059,0.179-0.047,0.237,0.026l0,0
+							l1.591,1.996c0.059,0.073,0.047,0.179-0.026,0.238l0,0c-0.031,0.024-0.069,0.037-0.106,0.037l0,0
+							C10.627,15.226,10.577,15.203,10.544,15.162L10.544,15.162z"/>
+						<polygon points="11.531,13.263 11.867,14.192 11.035,13.659 11.283,13.461 						"/>
+						<path d="M10.744,13.674l0.433-0.345l0.248-0.197l0.185-0.148l0.587,1.622L10.744,13.674L10.744,13.674z"/>
+						<path d="M11.638,14.177l-1.24-1.553c-0.058-0.074-0.046-0.18,0.028-0.238l0,0c0.072-0.059,0.179-0.046,0.238,0.026l0,0
+							l1.239,1.554c0.059,0.073,0.047,0.179-0.027,0.238l0,0c-0.032,0.024-0.068,0.037-0.106,0.037l0,0
+							C11.721,14.241,11.671,14.219,11.638,14.177L11.638,14.177z"/>
+					</g>
+				</g>
+			</g>
+			<g>
+				<polygon fill="none" stroke="#000000" stroke-width="0.4" stroke-linecap="round" stroke-linejoin="round" points="
+					11.674,18.497 13.574,15.209 15.471,18.497 				"/>
+				
+					<line fill="none" stroke="#000000" stroke-width="0.4" stroke-linecap="round" stroke-linejoin="round" x1="11.674" y1="15.209" x2="15.471" y2="15.209"/>
+			</g>
+		</g>
+		<g>
+			
+				<line fill="none" stroke="#000000" stroke-width="0.4" stroke-linecap="round" stroke-linejoin="round" x1="15.72" y1="27.713" x2="11.924" y2="27.713"/>
+			<polygon fill="none" stroke="#000000" stroke-width="0.4" stroke-linecap="round" stroke-linejoin="round" points="15.72,24.428 
+				13.823,27.713 11.924,24.428 			"/>
+			<g id="schematic_3_">
+				<g>
+					<polygon points="18.058,28.945 18.392,29.875 17.56,29.342 17.808,29.145 					"/>
+					<path d="M17.269,29.356l0.433-0.345l0.248-0.199l0.185-0.147l0.586,1.621L17.269,29.356L17.269,29.356z"/>
+					<path d="M18.163,29.86l-1.593-1.996c-0.058-0.072-0.046-0.18,0.027-0.238l0,0c0.072-0.058,0.181-0.047,0.237,0.027l0,0
+						l1.592,1.996c0.06,0.073,0.049,0.18-0.025,0.237l0,0c-0.03,0.024-0.068,0.036-0.105,0.036l0,0
+						C18.245,29.924,18.197,29.901,18.163,29.86L18.163,29.86z"/>
+					<path d="M15.871,29.674l0.432-0.346l0.248-0.197l0.185-0.147l0.587,1.621L15.871,29.674L15.871,29.674z"/>
+					<path d="M16.764,30.178l-1.238-1.553c-0.059-0.073-0.048-0.183,0.026-0.238l0,0c0.073-0.059,0.182-0.047,0.239,0.027l0,0
+						l1.238,1.553c0.058,0.072,0.046,0.179-0.027,0.236l0,0c-0.03,0.023-0.068,0.039-0.106,0.039l0,0
+						C16.846,30.24,16.798,30.22,16.764,30.178L16.764,30.178z"/>
+				</g>
+			</g>
+		</g>
+	</g>
+	
+		<line fill="none" stroke="#787878" stroke-width="0.7521" stroke-linecap="round" stroke-linejoin="round" x1="21.6" y1="21.6" x2="28.8" y2="21.6"/>
+	
+		<line fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="14.4" y1="7.2" x2="14.4" y2="0"/>
+	
+		<line fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="14.4" y1="43.2" x2="14.4" y2="36"/>
+</g>
+<g id="label0_1_" enable-background="new    ">
+	<g>
+		<text transform="matrix(1 0 0 1 15.8721 40.5942)" fill="#787878" font-family="'DroidSans'" font-size="2">3</text>
+	</g>
+	<g>
+		<text transform="matrix(1 0 0 1 23.9971 20.1567)" fill="#787878" font-family="'DroidSans'" font-size="2">2</text>
+	</g>
+	<g>
+		<text transform="matrix(1 0 0 1 15.8721 4.644)" fill="#787878" font-family="'DroidSans'" font-size="2">1</text>
+	</g>
+</g>
+<g>
+	<text transform="matrix(1 0 0 1 10.1909 11.7866)" fill="#787878" font-family="'DroidSans'" font-size="4.5">Vcc</text>
+</g>
+<g>
+	<text transform="matrix(1 0 0 1 9.9409 22.7866)" fill="#787878" font-family="'DroidSans'" font-size="4.5">Vout</text>
+</g>
+<g>
+	<text transform="matrix(1 0 0 1 8.9409 34.5366)" fill="#787878" font-family="'DroidSans'" font-size="4.5">GND</text>
+</g>
+</svg>

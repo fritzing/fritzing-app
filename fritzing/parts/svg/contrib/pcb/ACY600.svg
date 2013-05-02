@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?> <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" x="0in" y="0in" width="0.68in" height="0.11in" viewBox="0 0 68000 11000" ><title>ACY600.fp</title><desc>Geda footprint file 'ACY600.fp' converted by Fritzing</desc><metadata xmlns:fz='http://fritzing.org/gedametadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'><rdf:RDF><rdf:Description rdf:about=''><fz:attr name='geda filename'>ACY600.fp</fz:attr>
+<fz:attr name='fritzing version'>0.4.0b.06.21.4282</fz:attr>
+<fz:attr name='conversion date'>27/06/2010 07:13:31</fz:attr>
+<fz:comment>ElementArc(X1 Y 50 50 270 180 10)</fz:comment>
+<fz:comment>ElementArc(X2 Y 50 50 90 180 10)</fz:comment>
+<fz:attr name='dist-license'>GPL</fz:attr>
+<fz:attr name='use-license'>unlimited</fz:attr>
+<fz:attr name='author'>gEDA project</fz:attr>
+<fz:attr name='license-url'>http://www.gnu.org/licenses/gpl.html</fz:attr>
+</rdf:Description></rdf:RDF></metadata><g id="copper0">
+ <g id="copper1">
+  <circle fill="none" cx="4000" cy="5500" connectorname="1" stroke="#ff9400" r="3250" id="connector0pin" stroke-width="1500"/>
+  <circle fill="none" cx="64000" cy="5500" connectorname="2" stroke="#ff9400" r="3250" id="connector1pin" stroke-width="1500"/>
+ </g>
+</g>
+<g id="silkscreen">
+ <line fill="none" stroke="white" y1="5500" x1="4000" y2="5500" stroke-width="1000" x2="19000"/>
+ <line fill="none" stroke="white" y1="5500" x1="49000" y2="5500" stroke-width="1000" x2="64000"/>
+ <line fill="none" stroke="white" y1="500" x1="19000" y2="500" stroke-width="1000" x2="49000"/>
+ <line fill="none" stroke="white" y1="500" x1="49000" y2="10500" stroke-width="1000" x2="49000"/>
+ <line fill="none" stroke="white" y1="10500" x1="49000" y2="10500" stroke-width="1000" x2="19000"/>
+ <line fill="none" stroke="white" y1="10500" x1="19000" y2="500" stroke-width="1000" x2="19000"/>
+</g>
+</svg>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In  -->
+<!DOCTYPE svg [
+	<!ENTITY ns_flows "http://ns.adobe.com/Flows/1.0/">
+]>
+<svg version="1.2" baseProfile="tiny"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+	 x="0px" y="0px" width="36px" height="51px" viewBox="0 0 36 51" xml:space="preserve">
+<g id="copper0"><g id="copper1">
+<circle id="connector1pin" fill="none" stroke="#F7BD13" stroke-width="1.224" cx="3.325" cy="46.449" r="2.052"/>
+<rect x="1.272" y="44.397" fill="none" stroke="#F7BD13" stroke-width="1.224" width="4.104" height="4.104"/>
+<circle id="connector2pin" fill="none" stroke="#F7BD13" stroke-width="1.224" cx="10.524" cy="46.449" r="2.052"/>
+<circle id="connector3pin" fill="none" stroke="#F7BD13" stroke-width="1.224" cx="17.726" cy="46.449" r="2.052"/>
+<circle id="connector4pin" fill="none" stroke="#F7BD13" stroke-width="1.224" cx="24.925" cy="46.449" r="2.052"/>
+<circle id="connector5pin" fill="none" stroke="#F7BD13" stroke-width="1.224" cx="32.045" cy="46.446" r="2.052"/>
+<circle id="connector9pin" fill="none" stroke="#F7BD13" stroke-width="1.224" cx="10.625" cy="3.249" r="2.052"/>
+<circle id="connector8pin" fill="none" stroke="#F7BD13" stroke-width="1.224" cx="17.826" cy="3.249" r="2.052"/>
+<circle id="connector7pin" fill="none" stroke="#F7BD13" stroke-width="1.224" cx="25.025" cy="3.249" r="2.052"/>
+<circle id="connector6pin" fill="none" stroke="#F7BD13" stroke-width="1.224" cx="32.146" cy="3.246" r="2.052"/>
+<circle id="connector10pin" fill="none" stroke="#F7BD13" stroke-width="1.224" cx="3.401" cy="3.219" r="2.052"/>
+</g></g>
+ <g id="silkscreen">
+<rect x="0.162" y="0.161"  fill="none" stroke="#FFFFFF" stroke-width="0.7087" width="35.149" height="49.607"/>
+</g>
+</svg>

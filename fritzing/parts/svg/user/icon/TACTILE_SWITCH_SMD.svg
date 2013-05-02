@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1 Basic//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-basic.dtd">
+<svg version="1.1" baseProfile="basic" id="Ebene_1"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="0.227666in"
+	 height="0.227666in" viewBox="0 0 16.392 16.392" xml:space="preserve">
+<polygon fill="#6D6D6D" points="1.142,12.976 3.415,15.25 12.978,15.25 15.25,12.976 15.25,3.413 12.978,1.141 3.415,1.141 
+	1.142,3.413 "/>
+<rect x="3.415" fill="#6D6D6D" width="9.563" height="16.392"/>
+<rect y="3.413" fill="#6D6D6D" width="16.392" height="9.562"/>
+<polygon fill="#7F7F7F" points="1.827,12.513 3.879,14.565 12.513,14.565 14.566,12.513 14.566,3.877 12.513,1.826 3.879,1.826 
+	1.827,3.877 "/>
+<polyline opacity="0.2" fill="none" stroke="#FFFFFF" stroke-width="0.2369" stroke-miterlimit="10" points="4.105,2.16 
+	2.161,4.103 2.161,12.287 4.105,14.232 12.288,14.232 "/>
+<polyline opacity="0.2" fill="none" stroke="#606060" stroke-width="0.2369" stroke-miterlimit="10" points="12.289,14.232 
+	14.233,12.289 14.233,4.105 12.289,2.16 4.106,2.16 "/>
+<g>
+	<path fill="#BCA16A" d="M8.196,11.923c-2.055,0-3.727-1.672-3.727-3.727c0-2.055,1.672-3.728,3.727-3.728s3.727,1.672,3.727,3.728
+		C11.922,10.251,10.25,11.923,8.196,11.923z"/>
+	<path fill="#606060" d="M8.196,4.719c1.92,0,3.477,1.557,3.477,3.478c0,1.92-1.557,3.477-3.477,3.477s-3.477-1.557-3.477-3.477
+		C4.719,6.275,6.276,4.719,8.196,4.719 M8.196,4.219c-2.193,0-3.977,1.784-3.977,3.978c0,2.192,1.784,3.977,3.977,3.977
+		c2.192,0,3.977-1.784,3.977-3.977C12.172,6.003,10.388,4.219,8.196,4.219L8.196,4.219z"/>
+</g>
+<path opacity="0.2" fill="#BCA16A" stroke="#FFFFFF" stroke-width="0.5304" stroke-miterlimit="10" d="M10.39,10.389
+	c-1.212,1.212-3.177,1.212-4.389,0c-1.212-1.213-1.212-3.178,0-4.39"/>
+<path opacity="0.2" fill="#BCA16A" stroke="#606060" stroke-width="0.5304" stroke-miterlimit="10" d="M6.001,5.999
+	c1.212-1.212,3.177-1.212,4.389,0c1.212,1.213,1.212,3.177,0,4.39"/>
+</svg>

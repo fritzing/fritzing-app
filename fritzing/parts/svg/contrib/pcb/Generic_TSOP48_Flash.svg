@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?> <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" x="0in" y="0in" width="0.482in" height="0.878in" viewBox="0 0 48200 87800" ><title>Generic_TSOP48_Flash.fp</title><desc>Geda footprint file 'Generic_TSOP48_Flash.fp' converted by Fritzing</desc><metadata xmlns:fz='http://fritzing.org/gedametadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'><rdf:RDF><rdf:Description rdf:about=''><fz:attr name='geda filename'>Generic_TSOP48_Flash.fp</fz:attr>
+<fz:attr name='fritzing version'>0.4.0b.06.21.4282</fz:attr>
+<fz:attr name='conversion date'>27/06/2010 07:15:35</fz:attr>
+<fz:attr name='dist-license'>GPL</fz:attr>
+<fz:attr name='use-license'>unlimited</fz:attr>
+<fz:attr name='author'>gEDA project</fz:attr>
+<fz:attr name='license-url'>http://www.gnu.org/licenses/gpl.html</fz:attr>
+</rdf:Description></rdf:RDF></metadata><g id="copper1">
+ <line fill="none" connectorname="1" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" id="connector0pad" y1="87200" x1="1500" y2="80600" stroke-width="1200" x2="1500"/>
+ <line fill="none" connectorname="10" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector9pad" y1="87200" x1="19200" y2="80600" stroke-width="1200" x2="19200"/>
+ <line fill="none" connectorname="11" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector10pad" y1="87200" x1="21200" y2="80600" stroke-width="1200" x2="21200"/>
+ <line fill="none" connectorname="12" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector11pad" y1="87200" x1="23100" y2="80600" stroke-width="1200" x2="23100"/>
+ <line fill="none" connectorname="13" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector12pad" y1="87200" x1="25100" y2="80600" stroke-width="1200" x2="25100"/>
+ <line fill="none" connectorname="14" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector13pad" y1="87200" x1="27100" y2="80600" stroke-width="1200" x2="27100"/>
+ <line fill="none" connectorname="15" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector14pad" y1="87200" x1="29000" y2="80600" stroke-width="1200" x2="29000"/>
+ <line fill="none" connectorname="16" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector15pad" y1="87200" x1="31000" y2="80600" stroke-width="1200" x2="31000"/>
+ <line fill="none" connectorname="17" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector16pad" y1="87200" x1="33000" y2="80600" stroke-width="1200" x2="33000"/>
+ <line fill="none" connectorname="18" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector17pad" y1="87200" x1="34900" y2="80600" stroke-width="1200" x2="34900"/>
+ <line fill="none" connectorname="19" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector18pad" y1="87200" x1="36900" y2="80600" stroke-width="1200" x2="36900"/>
+ <line fill="none" connectorname="2" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector1pad" y1="87200" x1="3500" y2="80600" stroke-width="1200" x2="3500"/>
+ <line fill="none" connectorname="20" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector19pad" y1="87200" x1="38900" y2="80600" stroke-width="1200" x2="38900"/>
+ <line fill="none" connectorname="21" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector20pad" y1="87200" x1="40900" y2="80600" stroke-width="1200" x2="40900"/>
+ <line fill="none" connectorname="22" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector21pad" y1="87200" x1="42800" y2="80600" stroke-width="1200" x2="42800"/>
+ <line fill="none" connectorname="23" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector22pad" y1="87200" x1="44800" y2="80600" stroke-width="1200" x2="44800"/>
+ <line fill="none" connectorname="24" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector23pad" y1="87200" x1="46800" y2="80600" stroke-width="1200" x2="46800"/>
+ <line fill="none" connectorname="25" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector24pad" y1="7200" x1="46800" y2="600" stroke-width="1200" x2="46800"/>
+ <line fill="none" connectorname="26" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector25pad" y1="7200" x1="44800" y2="600" stroke-width="1200" x2="44800"/>
+ <line fill="none" connectorname="27" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector26pad" y1="7200" x1="42800" y2="600" stroke-width="1200" x2="42800"/>
+ <line fill="none" connectorname="28" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector27pad" y1="7200" x1="40900" y2="600" stroke-width="1200" x2="40900"/>
+ <line fill="none" connectorname="29" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector28pad" y1="7200" x1="38900" y2="600" stroke-width="1200" x2="38900"/>
+ <line fill="none" connectorname="3" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector2pad" y1="87200" x1="5400" y2="80600" stroke-width="1200" x2="5400"/>
+ <line fill="none" connectorname="30" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector29pad" y1="7200" x1="36900" y2="600" stroke-width="1200" x2="36900"/>
+ <line fill="none" connectorname="31" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector30pad" y1="7200" x1="34900" y2="600" stroke-width="1200" x2="34900"/>
+ <line fill="none" connectorname="32" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector31pad" y1="7200" x1="33000" y2="600" stroke-width="1200" x2="33000"/>
+ <line fill="none" connectorname="33" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector32pad" y1="7200" x1="31000" y2="600" stroke-width="1200" x2="31000"/>
+ <line fill="none" connectorname="34" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector33pad" y1="7200" x1="29000" y2="600" stroke-width="1200" x2="29000"/>
+ <line fill="none" connectorname="35" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector34pad" y1="7200" x1="27100" y2="600" stroke-width="1200" x2="27100"/>
+ <line fill="none" connectorname="36" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector35pad" y1="7200" x1="25100" y2="600" stroke-width="1200" x2="25100"/>
+ <line fill="none" connectorname="37" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector36pad" y1="7200" x1="23100" y2="600" stroke-width="1200" x2="23100"/>
+ <line fill="none" connectorname="38" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector37pad" y1="7200" x1="21200" y2="600" stroke-width="1200" x2="21200"/>
+ <line fill="none" connectorname="39" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector38pad" y1="7200" x1="19200" y2="600" stroke-width="1200" x2="19200"/>
+ <line fill="none" connectorname="4" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector3pad" y1="87200" x1="7400" y2="80600" stroke-width="1200" x2="7400"/>
+ <line fill="none" connectorname="40" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector39pad" y1="7200" x1="17200" y2="600" stroke-width="1200" x2="17200"/>
+ <line fill="none" connectorname="41" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector40pad" y1="7200" x1="15300" y2="600" stroke-width="1200" x2="15300"/>
+ <line fill="none" connectorname="42" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector41pad" y1="7200" x1="13300" y2="600" stroke-width="1200" x2="13300"/>
+ <line fill="none" connectorname="43" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector42pad" y1="7200" x1="11300" y2="600" stroke-width="1200" x2="11300"/>
+ <line fill="none" connectorname="44" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector43pad" y1="7200" x1="9400" y2="600" stroke-width="1200" x2="9400"/>
+ <line fill="none" connectorname="45" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector44pad" y1="7200" x1="7400" y2="600" stroke-width="1200" x2="7400"/>
+ <line fill="none" connectorname="46" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector45pad" y1="7200" x1="5400" y2="600" stroke-width="1200" x2="5400"/>
+ <line fill="none" connectorname="47" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector46pad" y1="7200" x1="3500" y2="600" stroke-width="1200" x2="3500"/>
+ <line fill="none" connectorname="48" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector47pad" y1="7200" x1="1500" y2="600" stroke-width="1200" x2="1500"/>
+ <line fill="none" connectorname="5" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector4pad" y1="87200" x1="9400" y2="80600" stroke-width="1200" x2="9400"/>
+ <line fill="none" connectorname="6" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector5pad" y1="87200" x1="11300" y2="80600" stroke-width="1200" x2="11300"/>
+ <line fill="none" connectorname="7" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector6pad" y1="87200" x1="13300" y2="80600" stroke-width="1200" x2="13300"/>
+ <line fill="none" connectorname="8" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector7pad" y1="87200" x1="15300" y2="80600" stroke-width="1200" x2="15300"/>
+ <line fill="none" connectorname="9" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector8pad" y1="87200" x1="17200" y2="80600" stroke-width="1200" x2="17200"/>
+</g>
+<g id="silkscreen">
+ <line fill="none" stroke="white" y1="47800" x1="500" y2="79300" stroke-width="1000" x2="500"/>
+ <line fill="none" stroke="white" y1="47800" x1="4400" y2="47800" stroke-width="1000" x2="500"/>
+ <line fill="none" stroke="white" y1="40000" x1="4400" y2="47800" stroke-width="1000" x2="4400"/>
+ <line fill="none" stroke="white" y1="40000" x1="500" y2="40000" stroke-width="1000" x2="4400"/>
+ <line fill="none" stroke="white" y1="8500" x1="500" y2="40000" stroke-width="1000" x2="500"/>
+ <line fill="none" stroke="white" y1="8500" x1="47700" y2="8500" stroke-width="1000" x2="500"/>
+ <line fill="none" stroke="white" y1="79300" x1="47700" y2="8500" stroke-width="1000" x2="47700"/>
+ <line fill="none" stroke="white" y1="79300" x1="500" y2="79300" stroke-width="1000" x2="47700"/>
+</g>
+</svg>

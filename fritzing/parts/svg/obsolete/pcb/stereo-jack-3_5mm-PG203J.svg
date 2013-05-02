@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?><svg baseProfile="tiny" height="0.4795in" version="1.2" viewBox="0 0 5511 4795" width="0.5511in" x="0in" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" y="0in"><title>sparkfun_audio_jack.mod</title><desc>Kicad module '&gt;NAME' from file 'sparkfun_audio_jack.mod' converted by Fritzing</desc><metadata xmlns:fz="http://fritzing.org/kicadmetadata/1.0/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"><rdf:RDF><rdf:Description rdf:about=""><fz:attr name="kicad filename">sparkfun_audio_jack.mod</fz:attr><fz:attr name="kicad module">&gt;NAME</fz:attr><fz:attr name="fritzing version">0.3.20b.04.19.4124</fz:attr><fz:attr name="conversion date">26/04/2010 17:38:24</fz:attr></rdf:Description></rdf:RDF></metadata>
+<g id="copper1"><g id="copper0">
+ <circle cx="2559" cy="2397.5" fill="none" id="connector0pin" r="351.75" stroke="#ff9400" stroke-width="100"/>
+ <circle cx="4527" cy="429.5" fill="none" id="connector1pin" r="351.75" stroke="#ff9400" stroke-width="100"/>
+ <circle cx="4527" cy="1413.5" fill="none" id="connector2pin" r="351.75" stroke="#ff9400" stroke-width="100"/>
+ <circle cx="4527" cy="3381.5" fill="none" id="connector3pin" r="351.75" stroke="#ff9400" stroke-width="100"/>
+ <circle cx="4527" cy="4365.5" fill="none" id="connector4pin" r="351.75" stroke="#ff9400" stroke-width="100"/>
+</g></g>
+<g id="silkscreen">
+ <line fill="none" stroke="white" stroke-width="80" x1="5511" x2="5511" y1="35.5" y2="4759.5"/>
+ <line fill="none" stroke="white" stroke-width="80" x1="1182" x2="1182" y1="35.5" y2="626.5"/>
+ <line fill="none" stroke="white" stroke-width="80" x1="1182" x2="1182" y1="4168.5" y2="4759.5"/>
+ <line fill="none" stroke="white" stroke-width="80" x1="788" x2="788" y1="626.5" y2="1216.5"/>
+ <line fill="none" stroke="white" stroke-width="80" x1="788" x2="788" y1="3578.5" y2="4168.5"/>
+ <line fill="none" stroke="white" stroke-width="80" x1="788" x2="1182" y1="4168.5" y2="4168.5"/>
+ <line fill="none" stroke="white" stroke-width="80" x1="788" x2="1182" y1="626.5" y2="626.5"/>
+ <line fill="none" stroke="white" stroke-width="80" x1="0" x2="0" y1="1216.5" y2="3578.5"/>
+ <line fill="none" stroke="white" stroke-width="80" x1="0" x2="788" y1="3578.5" y2="3578.5"/>
+ <line fill="none" stroke="white" stroke-width="80" x1="0" x2="788" y1="1216.5" y2="1216.5"/>
+ <line fill="none" stroke="white" stroke-width="80" x1="1182" x2="3936" y1="35.5" y2="35.5"/>
+ <line fill="none" stroke="white" stroke-width="80" x1="5511" x2="5118" y1="35.5" y2="35.5"/>
+ <line fill="none" stroke="white" stroke-width="80" x1="1182" x2="1182" y1="35.5" y2="4759.5"/>
+ <line fill="none" stroke="white" stroke-width="80" x1="1182" x2="3936" y1="4759.5" y2="4759.5"/>
+ <line fill="none" stroke="white" stroke-width="80" x1="5511" x2="5118" y1="4759.5" y2="4759.5"/>
+ <circle cx="2559" cy="429.5" fill="none" r="166.877" stroke="white" stroke-width="50"/>
+ <line fill="none" stroke="white" stroke-width="50" x1="2323" x2="2795" y1="429.5" y2="429.5"/>
+ <line fill="none" stroke="white" stroke-width="50" x1="2559" x2="2559" y1="665.5" y2="193.5"/>
+ <circle cx="1575" cy="429.5" fill="none" r="166.877" stroke="white" stroke-width="50"/>
+ <line fill="none" stroke="white" stroke-width="50" x1="1339" x2="1811" y1="429.5" y2="429.5"/>
+ <line fill="none" stroke="white" stroke-width="50" x1="1575" x2="1575" y1="665.5" y2="193.5"/>
+ <circle cx="1575" cy="4365.5" fill="none" r="166.877" stroke="white" stroke-width="50"/>
+ <line fill="none" stroke="white" stroke-width="50" x1="1339" x2="1811" y1="4365.5" y2="4365.5"/>
+ <line fill="none" stroke="white" stroke-width="50" x1="1575" x2="1575" y1="4601.5" y2="4129.5"/>
+ <circle cx="2559" cy="4365.5" fill="none" r="166.877" stroke="white" stroke-width="50"/>
+ <line fill="none" stroke="white" stroke-width="50" x1="2323" x2="2795" y1="4365.5" y2="4365.5"/>
+ <line fill="none" stroke="white" stroke-width="50" x1="2559" x2="2559" y1="4601.5" y2="4129.5"/>
+ <circle cx="4527" cy="2397.5" fill="none" r="166.877" stroke="white" stroke-width="50"/>
+ <line fill="none" stroke="white" stroke-width="50" x1="4291" x2="4763" y1="2397.5" y2="2397.5"/>
+ <line fill="none" stroke="white" stroke-width="50" x1="4527" x2="4527" y1="2633.5" y2="2161.5"/>
+</g>
+</svg>

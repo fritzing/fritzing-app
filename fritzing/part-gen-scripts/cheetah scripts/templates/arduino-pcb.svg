@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+#set $holeRadius = int($holeradius)
+#set $strokeWidth = int($strokewidth)
+#set $totalWidth = 1570 + (2*$holeRadius) + $strokeWidth
+#set $totalHeight = 1900 + (2*$holeRadius) + $strokeWidth
+#set $widthIn = $totalWidth / 1000.0
+#set $heightIn = $totalHeight / 1000.0
+<svg
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.2" baseProfile="tiny"
+   x="0px" y="0px" width="${widthIn}in" height="${heightIn}in" viewBox="0 0 $totalWidth $totalHeight"
+	 id="svg2">
+<g id="copper0">
+  #for $pin in range(0, 8):
+    #set $xpos = ($pin * 100) + 34.5
+  <circle fill="none" cx="$xpos" cy="34.5" stroke="#FFBF00" id="connector${pin}pin" r="$holeRadius" stroke-width="$strokeWidth" />
+  #end for
+  #for $pin in range(8, 16):
+    #set $xpos = ($pin * 100) + 104.5
+    <circle fill="none" cx="$xpos" cy="34.5" stroke="#FFBF00" id="connector${pin}pin" r="$holeRadius" stroke-width="$strokeWidth" />
+  #end for
+  #for $pin in range(16, 22):
+    #set $xpos = ($pin * 100) - 1195.5
+    <circle fill="none" cx="$xpos" cy="1934.5" stroke="#FFBF00" id="connector${pin}pin" r="$holeRadius" stroke-width="$strokeWidth" />
+  #end for
+  #for $pin in range(22, 28):
+    #set $xpos = ($pin * 100) - 1095.5
+    <circle fill="none" cx="$xpos" cy="1934.5" stroke="#FFBF00" id="connector${pin}pin" r="$holeRadius" stroke-width="$strokeWidth" />
+  #end for
+</g>
+</svg>

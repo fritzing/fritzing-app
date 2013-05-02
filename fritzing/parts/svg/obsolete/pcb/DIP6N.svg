@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg width="0.42in" version="1.2" xmlns="http://www.w3.org/2000/svg" height="0.32in" viewBox="0 0 42000 32000" baseProfile="tiny" >
+ <desc>Fritzing footprint SVG</desc>
+ <g id="silkscreen" >
+  <line stroke="white" y1="1000" x1="26000" y2="1000" stroke-width="1000" x2="41000" />
+  <line stroke="white" y1="1000" x1="1000" y2="1000" stroke-width="1000" x2="16000" />
+  <line stroke="white" y1="31000" x1="41000" y2="1000" stroke-width="1000" x2="41000" />
+  <line stroke="white" y1="31000" x1="1000" y2="31000" stroke-width="1000" x2="41000" />
+  <line stroke="white" y1="1000" x1="1000" y2="31000" stroke-width="1000" x2="1000" />
+ </g>
+ <g id="copper0" >
+  <rect width="5500" x="3250" y="3250" fill="none" height="5500" stroke="rgb(255, 191, 0)" stroke-width="2000" />
+  <circle fill="none" cx="6000" cy="6000" stroke="rgb(255, 191, 0)" r="2750" id="connector0pad" stroke-width="2000" />
+  <circle fill="none" cx="6000" cy="16000" stroke="rgb(255, 191, 0)" r="2750" id="connector1pad" stroke-width="2000" />
+  <circle fill="none" cx="6000" cy="26000" stroke="rgb(255, 191, 0)" r="2750" id="connector2pad" stroke-width="2000" />
+  <circle fill="none" cx="36000" cy="26000" stroke="rgb(255, 191, 0)" r="2750" id="connector3pad" stroke-width="2000" />
+  <circle fill="none" cx="36000" cy="16000" stroke="rgb(255, 191, 0)" r="2750" id="connector4pad" stroke-width="2000" />
+  <circle fill="none" cx="36000" cy="6000" stroke="rgb(255, 191, 0)" r="2750" id="connector5pad" stroke-width="2000" />
+ </g>
+</svg>

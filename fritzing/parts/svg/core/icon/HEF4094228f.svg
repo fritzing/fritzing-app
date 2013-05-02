@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="svg2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="21.6px" height="23.76px" viewBox="0 0 21.6 23.76" enable-background="new 0 0 21.6 23.76" xml:space="preserve">
+<g id="icon">
+	<rect id="middle" x="0" y="2.16" fill="#303030" width="21.6" height="19.438"/>
+	<rect id="top" x="0" y="2.16" fill="#3D3D3D" width="21.6" height="1.771"/>
+	<rect id="bottom" x="0" y="19.828" width="21.6" height="1.771"/>
+	<polygon id="left" fill="#1F1F1F" points="0,2.16 0.54,3.931 0.54,19.828 0,21.6 	"/>
+	<polygon id="left-upper-rect" fill="#1C1C1C" points="3.6,8.28 0.54,8.251 0.404,9.778 0.404,11.88 3.6,11.88 	"/>
+	<polygon id="left-lower-rect" fill="#383838" points="0.54,15.516 3.6,15.516 3.6,11.88 0.404,11.88 0.404,13.983 	"/>
+	<path id="slot" fill="#262626" d="M0.404,9.778v4.197c1.059-0.122,1.887-1.008,1.887-2.103C2.289,10.779,1.469,9.9,0.404,9.778z"/>
+	<path id="cover" fill="#303030" d="M0.54,3.931v4.313c1.713,0.322,3.017,1.82,3.017,3.628s-1.296,3.313-3.017,3.637v0.007h3.6
+		V3.931H0.54z"/>
+	<circle fill="#212121" cx="4.68" cy="16.898" r="1.483"/>
+	<text transform="matrix(1 0 0 1 3.4827 12.8792)" fill="#DDDDDD" font-family="OCRA" font-size="7.76">40xx</text>
+	<rect id="connector0pin" x="2.52" y="20.635" fill="#8C8C8C" width="2.16" height="3.125"/>
+	<rect id="connector0terminal" x="2.52" y="21.6" fill="#8C8C8C" width="2.16" height="2.16"/>
+	<polygon fill="#8C8C8C" points="2.52,20.635 2.52,22.075 4.68,22.075 6.12,21.412 6.12,20.635 	"/>
+	<rect id="connector5pin" x="2.52" y="0" fill="#8C8C8C" width="2.16" height="3.125"/>
+	<rect id="connector5terminal" x="2.52" y="0" fill="#8C8C8C" width="2.16" height="2.16"/>
+	<polygon fill="#8C8C8C" points="6.12,3.125 6.12,2.347 4.68,1.685 2.52,1.685 2.52,3.125 	"/>
+	<rect id="connector2pin" x="16.92" y="20.635" fill="#8C8C8C" width="2.16" height="3.125"/>
+	<rect id="connector2terminal" x="16.92" y="21.6" fill="#8C8C8C" width="2.16" height="2.16"/>
+	<polygon fill="#8C8C8C" points="15.48,20.635 15.48,21.412 16.92,22.075 19.08,22.075 19.08,20.635 	"/>
+	<rect id="connector3pin" x="16.92" y="0" fill="#8C8C8C" width="2.16" height="3.125"/>
+	<rect id="connector3terminal" x="16.92" y="0" fill="#8C8C8C" width="2.16" height="2.16"/>
+	<polygon fill="#8C8C8C" points="19.08,3.125 19.08,1.685 16.92,1.685 15.48,2.347 15.48,3.125 	"/>
+	<rect id="connector1pin" x="9.72" y="20.635" fill="#8C8C8C" width="2.16" height="3.125"/>
+	<rect id="connector1terminal" x="9.72" y="21.6" fill="#8C8C8C" width="2.16" height="2.16"/>
+	<polygon fill="#8C8C8C" points="8.28,20.635 8.28,21.412 9.72,22.075 11.88,22.075 13.32,21.412 13.32,20.635 	"/>
+	<rect id="connector4pin" x="9.72" y="0" fill="#8C8C8C" width="2.16" height="3.125"/>
+	<rect id="connector4terminal" x="9.72" y="0" fill="#8C8C8C" width="2.16" height="2.16"/>
+	<polygon fill="#8C8C8C" points="13.32,3.125 13.32,2.347 11.88,1.685 9.72,1.685 8.28,2.347 8.28,3.125 	"/>
+</g>
+</svg>

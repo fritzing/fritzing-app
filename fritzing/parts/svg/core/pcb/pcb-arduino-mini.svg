@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.2"
+   width="1.3in"
+   height="0.80000001in"
+   viewBox="0 0 1300 800"
+   id="svg2">
+  <defs
+     id="defs104">
+    <inkscape:perspective
+       id="perspective108" />
+  </defs>
+  <g
+     id="silkscreen">
+    <line
+       x1="4"
+       y1="4"
+       x2="1292"
+       y2="4"
+       stroke="#ffffff"
+       stroke-width="8"
+       stroke-linecap="round"
+       id="line5"
+       style="stroke:#ffffff;stroke-width:8;stroke-linecap:round" />
+    <line
+       x1="4"
+       y1="792"
+       x2="1292"
+       y2="792"
+       stroke="#ffffff"
+       stroke-width="8"
+       stroke-linecap="round"
+       id="line7"
+       style="stroke:#ffffff;stroke-width:8;stroke-linecap:round" />
+    <line
+       x1="4"
+       y1="4"
+       x2="4"
+       y2="350"
+       stroke="#ffffff"
+       stroke-width="8"
+       stroke-linecap="round"
+       id="line9"
+       style="stroke:#ffffff;stroke-width:8;stroke-linecap:round" />
+    <line
+       x1="4"
+       y1="450"
+       x2="4"
+       y2="792"
+       stroke="#ffffff"
+       stroke-width="8"
+       stroke-linecap="round"
+       id="line11"
+       style="stroke:#ffffff;stroke-width:8;stroke-linecap:round" />
+    <line
+       x1="1292"
+       y1="4"
+       x2="1292"
+       y2="792"
+       stroke="#ffffff"
+       stroke-width="8"
+       stroke-linecap="round"
+       id="line13"
+       style="stroke:#ffffff;stroke-width:8;stroke-linecap:round" />
+  </g>
+  <g
+     id="copper0">
+  <g
+     id="copper1">
+   <circle
+       cx="100"
+       cy="100"
+       r="27.5"
+       id="connector13pin"
+       style="fill:none;stroke:#ffbf00;stroke-width:20" />
+    <circle
+       cx="200"
+       cy="100"
+       r="27.5"
+       id="connector12pin"
+       style="fill:none;stroke:#ffbf00;stroke-width:20" />
+    <circle
+       cx="300"
+       cy="100"
+       r="27.5"
+       id="connector11pin"
+       style="fill:none;stroke:#ffbf00;stroke-width:20" />
+    <circle
+       cx="400"
+       cy="100"
+       r="27.5"
+       id="connector10pin"
+       style="fill:none;stroke:#ffbf00;stroke-width:20" />
+    <circle
+       cx="500"
+       cy="100"
+       r="27.5"
+       id="connector9pin"
+       style="fill:none;stroke:#ffbf00;stroke-width:20" />
+    <circle
+       cx="600"
+       cy="100"
+       r="27.5"
+       id="connector8pin"
+       style="fill:none;stroke:#ffbf00;stroke-width:20" />
+    <circle
+       cx="700"
+       cy="100"
+       r="27.5"
+       id="connector7pin"
+       style="fill:none;stroke:#ffbf00;stroke-width:20" />
+    <circle
+       cx="800"
+       cy="100"
+       r="27.5"
+       id="connector6pin"
+       style="fill:none;stroke:#ffbf00;stroke-width:20" />
+    <circle
+       cx="900"
+       cy="100"
+       r="27.5"
+       id="connector5pin"
+       style="fill:none;stroke:#ffbf00;stroke-width:20" />
+    <circle
+       cx="1000"
+       cy="100"
+       r="27.5"
+       id="connector4pin"
+       style="fill:none;stroke:#ffbf00;stroke-width:20" />
+    <circle
+       cx="1100"
+       cy="100"
+       r="27.5"
+       id="connector3pin"
+       style="fill:none;stroke:#ffbf00;stroke-width:20" />
+    <circle
+       cx="1200"
+       cy="100"
+       r="27.5"
+       id="connector2pin"
+       style="fill:none;stroke:#ffbf00;stroke-width:20" />
+    <circle
+       cx="100"
+       cy="200"
+       r="27.5"
+       id="connector14pin"
+       style="fill:none;stroke:#ffbf00;stroke-width:20" />
+    <circle
+       cx="1200"
+       cy="200"
+       r="27.5"
+       id="connector1pin"
+       style="fill:none;stroke:#ffbf00;stroke-width:20" />
+    <circle
+       cx="100"
+       cy="300"
+       r="27.5"
+       id="connector15pin"
+       style="fill:none;stroke:#ffbf00;stroke-width:20" />
+    <circle
+       cx="1200"
+       cy="300"
+       r="27.5"
+       id="connector0pin"
+       style="fill:none;stroke:#ffbf00;stroke-width:20" />
+    <circle
+       cx="100"
+       cy="400"
+       r="27.5"
+       id="connector16pin"
+       style="fill:none;stroke:#ffbf00;stroke-width:20" />
+    <circle
+       cx="100"
+       cy="500"
+       r="27.5"
+       id="connector17pin"
+       style="fill:none;stroke:#ffbf00;stroke-width:20" />
+    <circle
+       cx="1100"
+       cy="500"
+       r="27.5"
+       id="connector32pin"
+       style="fill:none;stroke:#ffbf00;stroke-width:20" />
+    <circle
+       cx="1200"
+       cy="500"
+       r="27.5"
+       id="connector34pin"
+       style="fill:none;stroke:#ffbf00;stroke-width:20" />
+    <circle
+       cx="100"
+       cy="600"
+       r="27.5"
+       id="connector18pin"
+       style="fill:none;stroke:#ffbf00;stroke-width:20" />
+    <circle
+       cx="1100"
+       cy="600"
+       r="27.5"
+       id="connector31pin"
+       style="fill:none;stroke:#ffbf00;stroke-width:20" />
+    <circle
+       cx="1200"
+       cy="600"
+       r="27.5"
+       id="connector33pin"
+       style="fill:none;stroke:#ffbf00;stroke-width:20" />
+    <circle
+       cx="100"
+       cy="700"
+       r="27.5"
+       id="connector19pin"
+       style="fill:none;stroke:#ffbf00;stroke-width:20" />
+    <rect
+       width="55"
+       height="55"
+       x="72.5"
+       y="672.5"
+       id="rect89"
+       style="fill:none;stroke:#ffbf00;stroke-width:20" />
+    <circle
+       cx="200"
+       cy="700"
+       r="27.5"
+       id="connector20pin"
+       style="fill:none;stroke:#ffbf00;stroke-width:20" />
+    <circle
+       cx="300"
+       cy="700"
+       r="27.5"
+       id="connector21pin"
+       style="fill:none;stroke:#ffbf00;stroke-width:20" />
+    <circle
+       cx="400"
+       cy="700"
+       r="27.5"
+       id="connector22pin"
+       style="fill:none;stroke:#ffbf00;stroke-width:20" />
+    <circle
+       cx="500"
+       cy="700"
+       r="27.5"
+       id="connector23pin"
+       style="fill:none;stroke:#ffbf00;stroke-width:20" />
+    <circle
+       cx="600"
+       cy="700"
+       r="27.5"
+       id="connector24pin"
+       style="fill:none;stroke:#ffbf00;stroke-width:20" />
+    <circle
+       cx="700"
+       cy="700"
+       r="27.5"
+       id="connector25pin"
+       style="fill:none;stroke:#ffbf00;stroke-width:20" />
+    <circle
+       cx="800"
+       cy="700"
+       r="27.5"
+       id="connector26pin"
+       style="fill:none;stroke:#ffbf00;stroke-width:20" />
+    <circle
+       cx="900"
+       cy="700"
+       r="27.5"
+       id="connector27pin"
+       style="fill:none;stroke:#ffbf00;stroke-width:20" />
+    <circle
+       cx="1000"
+       cy="700"
+       r="27.5"
+       id="connector28pin"
+       style="fill:none;stroke:#ffbf00;stroke-width:20" />
+    <circle
+       cx="1100"
+       cy="700"
+       r="27.5"
+       id="connector29pin"
+       style="fill:none;stroke:#ffbf00;stroke-width:20" />
+    <circle
+       cx="1200"
+       cy="700"
+       r="27.5"
+       id="connector30pin"
+       style="fill:none;stroke:#ffbf00;stroke-width:20" />
+  </g>
+  </g>
+</svg>

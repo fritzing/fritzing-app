@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1 Basic//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-basic.dtd">
+<svg version="1.1" baseProfile="basic" id="Ebene_1" xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="25.825px"
+	 height="15.492px" viewBox="0 0 25.825 15.492" xml:space="preserve">
+<g display="none">
+	
+		<circle id="connector2pin" display="inline" fill="none" stroke="#9A916C" stroke-width="0.254" cx="17.188" cy="21.13" r="1.494"/>
+	
+		<circle id="connector3pin" display="inline" fill="none" stroke="#9A916C" stroke-width="0.254" cx="22.857" cy="21.13" r="1.494"/>
+	
+		<circle id="connector0pin" display="inline" fill="none" stroke="#9A916C" stroke-width="0.254" cx="17.188" cy="15.46" r="1.494"/>
+	
+		<circle id="connector5pin" display="inline" fill="none" stroke="#9A916C" stroke-width="0.254" cx="22.857" cy="15.46" r="1.494"/>
+	
+		<circle id="connector1pin" display="inline" fill="none" stroke="#9A916C" stroke-width="0.254" cx="17.188" cy="9.791" r="1.494"/>
+	
+		<circle id="connector4pin" display="inline" fill="none" stroke="#9A916C" stroke-width="0.254" cx="22.857" cy="9.791" r="1.494"/>
+	
+		<circle id="connector6pin" display="inline" fill="none" stroke="#9A916C" stroke-width="0.254" cx="20.022" cy="2.421" r="2.061"/>
+	<circle id="connector7pin" display="inline" fill="none" stroke="#9A916C" stroke-width="0.254" cx="20.022" cy="28.5" r="2.061"/>
+</g>
+<g>
+	<rect x="7.838" y="5.223" width="10.278" height="7.053"/>
+	<polyline fill="#333333" points="19.403,0.003 18.116,0.003 16.832,1.288 15.547,0.003 14.262,1.288 12.978,0.003 11.694,0.003 
+		11.694,5.223 19.403,5.223 	"/>
+	<rect x="11.694" y="0.003" opacity="0.2" fill="#FFFFFF" width="0.154" height="5.223"/>
+	<g opacity="0.2">
+		<rect x="19.211" y="0.003" fill="#FFFFFF" width="0.191" height="5.223"/>
+		<rect x="25.635" y="5.223" fill="#FFFFFF" width="0.19" height="10.268"/>
+		<rect x="17.961" y="6.876" fill="#FFFFFF" width="0.189" height="3.477"/>
+		<rect x="9.842" y="6.876" fill="#FFFFFF" width="0.19" height="3.477"/>
+	</g>
+	<rect x="15.954" y="11.835" fill="#999999" width="2.563" height="0.48"/>
+	<rect x="6.774" y="11.835" fill="#999999" width="3.164" height="0.48"/>
+	<polygon opacity="0.2" fill="#FFFFFF" points="18.2,0.003 16.916,1.288 16.832,1.288 18.116,0.003 	"/>
+	<polygon opacity="0.2" fill="#FFFFFF" points="15.547,0.003 14.262,1.288 14.346,1.288 15.589,0.046 	"/>
+	<path fill="#CCCCCC" d="M1.49,15.493h2.245h22.091V5.223H1.49c-0.002,0-0.005,0.002-0.007,0.002H0.129v9.268v1H1.49z M16.114,6.876
+		h1.848v5.4h-1.848V6.876z M7.993,6.876h1.849v5.4H7.993V6.876z"/>
+	<rect x="11.694" y="4.856" opacity="0.2" width="7.709" height="0.367"/>
+	<rect x="16.114" y="6.734" opacity="0.2" fill="#FFFFFF" width="1.848" height="0.142"/>
+	<rect x="7.994" y="6.734" opacity="0.2" fill="#FFFFFF" width="1.848" height="0.142"/>
+</g>
+<rect x="0.129" y="14.991" opacity="0.2" fill="#FFFFFF" width="25.696" height="0.5"/>
+</svg>

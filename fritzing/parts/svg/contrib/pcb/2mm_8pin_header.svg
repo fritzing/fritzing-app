@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?> <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" x="0in" y="0in" width="0.219in" height="0.341in" viewBox="0 0 21900 34100" ><title>2mm_8pin_header.fp</title><desc>Geda footprint file '2mm_8pin_header.fp' converted by Fritzing</desc><metadata xmlns:fz='http://fritzing.org/gedametadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'><rdf:RDF><rdf:Description rdf:about=''><fz:attr name='geda filename'>2mm_8pin_header.fp</fz:attr>
+<fz:attr name='fritzing version'>0.4.0b.06.21.4282</fz:attr>
+<fz:attr name='conversion date'>27/06/2010 07:13:30</fz:attr>
+<fz:attr name='dist-license'>GPL</fz:attr>
+<fz:attr name='use-license'>unlimited</fz:attr>
+<fz:attr name='author'>gEDA project</fz:attr>
+<fz:attr name='license-url'>http://www.gnu.org/licenses/gpl.html</fz:attr>
+</rdf:Description></rdf:RDF></metadata><g id="copper0">
+ <g id="copper1">
+  <circle fill="none" cx="8750" cy="5250" connectorname="" stroke="#ff9400" r="2200" id="connector0pin" stroke-width="1600"/>
+  <circle fill="none" cx="16650" cy="5250" connectorname="" stroke="#ff9400" r="2200" id="connector1pin" stroke-width="1600"/>
+  <circle fill="none" cx="8750" cy="13150" connectorname="" stroke="#ff9400" r="2200" id="connector2pin" stroke-width="1600"/>
+  <circle fill="none" cx="16650" cy="13150" connectorname="" stroke="#ff9400" r="2200" id="connector3pin" stroke-width="1600"/>
+  <circle fill="none" cx="8750" cy="20950" connectorname="" stroke="#ff9400" r="2200" id="connector4pin" stroke-width="1600"/>
+  <circle fill="none" cx="16650" cy="20950" connectorname="" stroke="#ff9400" r="2200" id="connector5pin" stroke-width="1600"/>
+  <circle fill="none" cx="8750" cy="28850" connectorname="" stroke="#ff9400" r="2200" id="connector6pin" stroke-width="1600"/>
+  <circle fill="none" cx="16650" cy="28850" connectorname="" stroke="#ff9400" r="2200" id="connector7pin" stroke-width="1600"/>
+ </g>
+</g>
+<g id="silkscreen">
+ <line fill="none" stroke="white" y1="5550" x1="750" y2="4750" stroke-width="1500" x2="750"/>
+ <line fill="none" stroke="white" y1="5550" x1="2350" y2="5550" stroke-width="1500" x2="750"/>
+ <line fill="none" stroke="white" y1="4750" x1="2350" y2="5550" stroke-width="1500" x2="2350"/>
+ <line fill="none" stroke="white" y1="4750" x1="750" y2="4750" stroke-width="1500" x2="2350"/>
+ <line fill="none" stroke="white" y1="750" x1="21150" y2="750" stroke-width="1500" x2="4250"/>
+ <line fill="none" stroke="white" y1="33350" x1="21150" y2="750" stroke-width="1500" x2="21150"/>
+ <line fill="none" stroke="white" y1="33350" x1="4250" y2="33350" stroke-width="1500" x2="21150"/>
+ <line fill="none" stroke="white" y1="750" x1="4250" y2="33350" stroke-width="1500" x2="4250"/>
+</g>
+</svg>

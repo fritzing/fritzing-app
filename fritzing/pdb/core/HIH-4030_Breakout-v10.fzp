@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module fritzingVersion='0.5.2b.02.18.4756' moduleId='HIH-4030_Breakout-v10'>
+<version>4</version>
+<date>2011-07-08</date>
+<author>SparkFun</author>
+<description>&lt;p&gt;
+	&lt;span style=&quot;font-weight: bold;&quot;&gt;Description:&lt;/span&gt; This is a breakout board for Honeywell&amp;#39;s HIH-4030 humidity sensor. The HIH-4030 measures relative humidity (%RH) and delivers it as an analog output voltage. You can connect the output of the sensor directly to an ADC on a microcontroller; and, thanks to the sensor&amp;#39;s near linear voltage output, the data is very easy to process.&lt;br /&gt;
+	&lt;br /&gt;
+	Voltage applied to the supply pins should be within 4-5.8VDC, and optimally at 5V. The sensor will typically only consume about 200&amp;mu;A.&lt;br /&gt;
+	&lt;br /&gt;
+	This product comes as shown in the picture, with the HIH-4030 soldered onto the breakout board. The pins of the 3-pin header are spaced by 0.1&amp;quot;.&lt;br /&gt;
+	&lt;br /&gt;
+	&lt;span style=&quot;font-weight: bold;&quot;&gt;Features:&lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;
+		Near linear, analog output&lt;/li&gt;
+	&lt;li&gt;
+		4-5.8VDC voltage supply&lt;/li&gt;
+	&lt;li&gt;
+		All pins broken out to a 0.1&amp;quot; pitch header&lt;/li&gt;
+	&lt;li&gt;
+		Laser trimmed interchangeability&lt;/li&gt;
+	&lt;li&gt;
+		Low power design, typical current draw of only 200&amp;mu;A&lt;/li&gt;
+	&lt;li&gt;
+		Enhanced accuracy&lt;/li&gt;
+	&lt;li&gt;
+		Fast response time&lt;/li&gt;
+	&lt;li&gt;
+		Stable, low drift performance&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;
+	&lt;span style=&quot;font-weight: bold;&quot;&gt;Dimensions:&lt;/span&gt; 0.75 x 0.30 &amp;quot; (19.05 x 7.62 mm)&lt;br /&gt;
+	&lt;br /&gt;
+	&lt;span style=&quot;font-weight: bold;&quot;&gt;Documents:&lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;
+		&lt;a classname=&quot;&quot; href=&quot;http://www.sparkfun.com/datasheets/Sensors/Weather/HIH-4030_Breakout-v10.pdf&quot; name=&quot;&quot; target=&quot;_blank&quot;&gt;Schematic&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a classname=&quot;&quot; href=&quot;http://www.sparkfun.com/datasheets/Sensors/Weather/SEN-09569-HIH-4030-datasheet.pdf&quot; name=&quot;&quot; target=&quot;_blank&quot;&gt;HIH-4030 Humidity Sensor Datasheet&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+<title>Humidity Sensor - HIH-4030 Breakout</title>
+<url>http://www.sparkfun.com/products/9569</url>
+<tags>
+<tag>Humidity</tag>
+<tag>Humid</tag>
+</tags>
+<properties>
+<property name='family'>Humidity Breakout</property>
+</properties>
+<views>
+<breadboardView>
+<layers image='breadboard/HIH-4030_Breakout-v10_breadboard.svg'>
+<layer layerId='breadboard'/>
+</layers>
+</breadboardView>
+<schematicView>
+<layers image='schematic/HIH-4030_Breakout-v10_schematic.svg'>
+<layer layerId='schematic'/>
+</layers>
+</schematicView>
+<pcbView>
+<layers image='pcb/HIH-4030_Breakout-v10_pcb.svg'>
+<layer layerId='copper1'/>
+<layer layerId='silkscreen'/>
+<layer layerId='copper0'/>
+</layers>
+</pcbView>
+<iconView>
+<layers image='breadboard/HIH-4030_Breakout-v10_breadboard.svg'>
+<layer layerId='icon'/>
+</layers>
+</iconView>
+</views>
+<connectors>
+<connector id='connector0' type='male' name='GND'>
+<description>GND</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector0pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector0pin' terminalId='connector0terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector0pad'/><p layer='copper1' svgId='connector0pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector1' type='male' name='OUT'>
+<description>OUT</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector1pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector1pin' terminalId='connector1terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector1pad'/><p layer='copper1' svgId='connector1pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector2' type='male' name='VCC'>
+<description>VCC</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector2pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector2pin' terminalId='connector2terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector2pad'/><p layer='copper1' svgId='connector2pad'/></pcbView>
+</views>
+</connector>
+</connectors>
+<buses>
+</buses>
+</module>

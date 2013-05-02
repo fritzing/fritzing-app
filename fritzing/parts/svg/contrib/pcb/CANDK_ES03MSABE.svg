@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?> <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" x="0in" y="0in" width="0.515in" height="0.585in" viewBox="0 0 51500 58500" ><title>CANDK_ES03MSABE.fp</title><desc>Geda footprint file 'CANDK_ES03MSABE.fp' converted by Fritzing</desc><metadata xmlns:fz='http://fritzing.org/gedametadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'><rdf:RDF><rdf:Description rdf:about=''><fz:attr name='geda filename'>CANDK_ES03MSABE.fp</fz:attr>
+<fz:attr name='fritzing version'>0.4.0b.06.21.4282</fz:attr>
+<fz:attr name='conversion date'>27/06/2010 07:14:36</fz:attr>
+<fz:comment>pad 1,2,3 width (1/100 mil)</fz:comment>
+<fz:comment>pad 1,2,3 length (1/100 mil)</fz:comment>
+<fz:comment>x value for pads 1,3 (1/100 mil)</fz:comment>
+<fz:comment>y value for pads 1,2,3 (1/100 mil)</fz:comment>
+<fz:comment>mounting pad width (1/100 mil)</fz:comment>
+<fz:comment>mounting pad length (1/100 mil)</fz:comment>
+<fz:comment>x value for the mounting pads (1/100 mil)</fz:comment>
+<fz:comment>y value for the mounting pads (1/100 mil)</fz:comment>
+<fz:comment>package width (1/100 mil)</fz:comment>
+<fz:comment>package height (1/100 mil)</fz:comment>
+<fz:comment>component veritcal height off board (1/100 mil)</fz:comment>
+<fz:comment>pad width and length</fz:comment>
+<fz:comment>y values for drawing the pad.</fz:comment>
+<fz:comment>The Y center of the pad is 0.5*(PINL + PINS)</fz:comment>
+<fz:comment>we need a line segment of length PADL - PADW so we have end points:</fz:comment>
+<fz:comment>0.5*(PINL + PINS) +/- 0.5*(PADL - PADW)</fz:comment>
+<fz:comment>width of soldermask relief (5 mil on each side)</fz:comment>
+<fz:comment>top edge of switch body (1/100 mil)</fz:comment>
+<fz:comment>bottom edge of switch body (1/100 mil)</fz:comment>
+<fz:comment>how much the switch extends beyond the body</fz:comment>
+<fz:comment>y value for the far end of the switch</fz:comment>
+<fz:comment>silkscreen width (1/100 mils)</fz:comment>
+<fz:comment>how much space to leave around the part before the</fz:comment>
+<fz:comment>silk screen (1/100 mils)</fz:comment>
+<fz:comment>X values for silk on sides and bottom of switch</fz:comment>
+<fz:comment>bottom edge of the switch body</fz:comment>
+<fz:comment>bottom edge of upper pads</fz:comment>
+<fz:comment>bottom edge of the lower pads</fz:comment>
+<fz:comment>top edge of the switch body</fz:comment>
+<fz:comment>top edge of the switch</fz:comment>
+<fz:comment>Element [SFlags &quot;Desc&quot; &quot;Name&quot; &quot;Value&quot; MX MY TX TY TDir TScale TSFlags]</fz:comment>
+<fz:comment>Pad [rX1 rY1 rX2 rY2 Thickness Clearance Mask &quot;Name&quot; &quot;Number&quot; SFlags]</fz:comment>
+<fz:comment>the signal pads</fz:comment>
+<fz:comment>the mounting pads</fz:comment>
+<fz:comment>Silk screen around package</fz:comment>
+<fz:comment>ElementLine[ x1 y1 x2 y2 width]</fz:comment>
+<fz:comment>bottom edge</fz:comment>
+<fz:comment>left/right</fz:comment>
+<fz:comment>top edge</fz:comment>
+<fz:comment>cross at top where switch moves</fz:comment>
+<fz:attr name='dist-license'>GPL</fz:attr>
+<fz:attr name='use-license'>unlimited</fz:attr>
+<fz:attr name='author'>gEDA project</fz:attr>
+<fz:attr name='license-url'>http://www.gnu.org/licenses/gpl.html</fz:attr>
+</rdf:Description></rdf:RDF></metadata><g id="copper1">
+ <line fill="none" connectorname="1" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector0pad" y1="50250" x1="15750" y2="54950" stroke-width="3500" x2="15750"/>
+ <line fill="none" connectorname="2" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector1pad" y1="50250" x1="25750" y2="54950" stroke-width="3500" x2="25750"/>
+ <line fill="none" connectorname="3" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector2pad" y1="50250" x1="35750" y2="54950" stroke-width="3500" x2="35750"/>
+ <g connectorname="4" id="connector3pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" y1="17600" x1="45350" y2="17600" stroke-width="6000" x2="48500"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" y1="17600" x1="6150" y2="17600" stroke-width="6000" x2="3000"/>
+ </g>
+</g>
+<g id="silkscreen">
+ <line fill="none" stroke="white" y1="49900" x1="46800" y2="49900" stroke-width="1000" x2="38800"/>
+ <line fill="none" stroke="white" y1="49900" x1="4700" y2="49900" stroke-width="1000" x2="12700"/>
+ <line fill="none" stroke="white" y1="49900" x1="12700" y2="58000" stroke-width="1000" x2="12700"/>
+ <line fill="none" stroke="white" y1="49900" x1="38800" y2="58000" stroke-width="1000" x2="38800"/>
+ <line fill="none" stroke="white" y1="58000" x1="12700" y2="58000" stroke-width="1000" x2="38800"/>
+ <line fill="none" stroke="white" y1="49900" x1="46800" y2="21900" stroke-width="1000" x2="46800"/>
+ <line fill="none" stroke="white" y1="49900" x1="4700" y2="21900" stroke-width="1000" x2="4700"/>
+ <line fill="none" stroke="white" y1="500" x1="4700" y2="500" stroke-width="1000" x2="46800"/>
+ <line fill="none" stroke="white" y1="11300" x1="4700" y2="11300" stroke-width="1000" x2="46800"/>
+ <line fill="none" stroke="white" y1="13300" x1="4700" y2="500" stroke-width="1000" x2="4700"/>
+ <line fill="none" stroke="white" y1="13300" x1="46800" y2="500" stroke-width="1000" x2="46800"/>
+ <line fill="none" stroke="white" y1="500" x1="4700" y2="11300" stroke-width="1000" x2="46800"/>
+ <line fill="none" stroke="white" y1="11300" x1="4700" y2="500" stroke-width="1000" x2="46800"/>
+</g>
+</svg>

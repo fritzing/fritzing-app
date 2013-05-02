@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" x="0in" y="0in" width="0.5118in" height="0.4683in" viewBox="0 0 5118 4683" >
+<title>SparkFun.mod</title>
+<desc>Kicad module 'SparkFun-SO20W' from file 'SparkFun.mod' converted by Fritzing</desc>
+<metadata xmlns:fz='http://fritzing.org/kicadmetadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+<rdf:RDF><rdf:Description rdf:about=''>
+<fz:attr name='kicad filename'>SparkFun.mod</fz:attr>
+<fz:attr name='kicad module'>SparkFun-SO20W</fz:attr>
+<fz:attr name='fritzing version'>0.4.1b.07.04.4318</fz:attr>
+<fz:attr name='conversion date'>17/07/2010 17:17:45</fz:attr>
+<fz:attr name='dist-license'>GPL</fz:attr>
+<fz:attr name='use-license'>unlimited</fz:attr>
+<fz:attr name='author'>KICAD project</fz:attr>
+<fz:attr name='license-url'>http://www.gnu.org/licenses/gpl.html</fz:attr>
+<fz:comment>20 PIN SOIC PACKAGE THAT SHOULD FIT BOTH WIDE AND NARROW, UNPROOVEN</fz:comment>
+<fz:attr name='keyword'>20</fz:attr>
+<fz:attr name='keyword'>PIN</fz:attr>
+<fz:attr name='keyword'>SOIC</fz:attr>
+<fz:attr name='keyword'>PACKAGE</fz:attr>
+<fz:attr name='keyword'>THAT</fz:attr>
+<fz:attr name='keyword'>SHOULD</fz:attr>
+<fz:attr name='keyword'>FIT</fz:attr>
+<fz:attr name='keyword'>BOTH</fz:attr>
+<fz:attr name='keyword'>WIDE</fz:attr>
+<fz:attr name='keyword'>AND</fz:attr>
+<fz:attr name='keyword'>NARROW,</fz:attr>
+<fz:attr name='keyword'>UNPROOVEN</fz:attr>
+</rdf:Description></rdf:RDF></metadata><g id="copper1">
+ <rect width="236" x="191" y="3148" fill="#ffbf00" connectorname="P$1" height="1535" id="connector0pad" stroke-width="0"/>
+ <rect width="236" x="691" y="3148" fill="#ffbf00" connectorname="P$2" height="1535" id="connector1pad" stroke-width="0"/>
+ <rect width="236" x="1191" y="3148" fill="#ffbf00" connectorname="P$3" height="1535" id="connector2pad" stroke-width="0"/>
+ <rect width="236" x="1691" y="3148" fill="#ffbf00" connectorname="P$4" height="1535" id="connector3pad" stroke-width="0"/>
+ <rect width="236" x="2191" y="3148" fill="#ffbf00" connectorname="P$5" height="1535" id="connector4pad" stroke-width="0"/>
+ <rect width="236" x="2691" y="3148" fill="#ffbf00" connectorname="P$6" height="1535" id="connector5pad" stroke-width="0"/>
+ <rect width="236" x="3191" y="3148" fill="#ffbf00" connectorname="P$7" height="1535" id="connector6pad" stroke-width="0"/>
+ <rect width="236" x="3691" y="3148" fill="#ffbf00" connectorname="P$8" height="1535" id="connector7pad" stroke-width="0"/>
+ <rect width="236" x="4191" y="3148" fill="#ffbf00" connectorname="P$9" height="1535" id="connector8pad" stroke-width="0"/>
+ <rect width="236" x="4691" y="3148" fill="#ffbf00" connectorname="P$10" height="1535" id="connector9pad" stroke-width="0"/>
+ <rect width="236" x="4691" y="0" fill="#ffbf00" connectorname="P$11" height="1535" id="connector10pad" stroke-width="0"/>
+ <rect width="236" x="4191" y="0" fill="#ffbf00" connectorname="P$12" height="1535" id="connector11pad" stroke-width="0"/>
+ <rect width="236" x="3691" y="0" fill="#ffbf00" connectorname="P$13" height="1535" id="connector12pad" stroke-width="0"/>
+ <rect width="236" x="3191" y="0" fill="#ffbf00" connectorname="P$14" height="1535" id="connector13pad" stroke-width="0"/>
+ <rect width="236" x="2691" y="0" fill="#ffbf00" connectorname="P$15" height="1535" id="connector14pad" stroke-width="0"/>
+ <rect width="236" x="2191" y="0" fill="#ffbf00" connectorname="P$16" height="1535" id="connector15pad" stroke-width="0"/>
+ <rect width="236" x="1691" y="0" fill="#ffbf00" connectorname="P$17" height="1535" id="connector16pad" stroke-width="0"/>
+ <rect width="236" x="1191" y="0" fill="#ffbf00" connectorname="P$18" height="1535" id="connector17pad" stroke-width="0"/>
+ <rect width="236" x="691" y="0" fill="#ffbf00" connectorname="P$19" height="1535" id="connector18pad" stroke-width="0"/>
+ <rect width="236" x="191" y="0" fill="#ffbf00" connectorname="P$20" height="1535" id="connector19pad" stroke-width="0"/>
+</g>
+<g id="silkscreen">
+ <line fill="none" stroke="white" y1="865.5" x1="5118" y2="3817.5" stroke-width="100" x2="5118"/>
+ <line fill="none" stroke="white" y1="865.5" x1="5118" y2="865.5" stroke-width="50" x2="0"/>
+ <line fill="none" stroke="white" y1="3817.5" x1="5118" y2="3817.5" stroke-width="50" x2="0"/>
+ <line fill="none" stroke="white" y1="865.5" x1="0" y2="3817.5" stroke-width="100" x2="0"/>
+ <circle fill="none" cx="315" cy="2734.5" stroke="white" r="55.1543" stroke-width="50"/>
+</g>
+</svg>

@@ -1,0 +1,994 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?> <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" x="0in" y="0in" width="4.7255in" height="2.0645in" viewBox="0 0 472550 206450" ><title>PCI5V_SMALL_HEIGHT.fp</title><desc>Geda footprint file 'PCI5V_SMALL_HEIGHT.fp' converted by Fritzing</desc><metadata xmlns:fz='http://fritzing.org/gedametadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'><rdf:RDF><rdf:Description rdf:about=''><fz:attr name='geda filename'>PCI5V_SMALL_HEIGHT.fp</fz:attr>
+<fz:attr name='fritzing version'>0.4.0b.06.21.4282</fz:attr>
+<fz:attr name='conversion date'>27/06/2010 07:16:13</fz:attr>
+<fz:attr name='dist-license'>GPL</fz:attr>
+<fz:attr name='use-license'>unlimited</fz:attr>
+<fz:attr name='author'>gEDA project</fz:attr>
+<fz:attr name='license-url'>http://www.gnu.org/licenses/gpl.html</fz:attr>
+</rdf:Description></rdf:RDF></metadata><g id="copper1">
+ <g connectorname="-12V" id="connector0pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="166250" y2="205150" stroke-width="1600" x2="165050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="166250" y2="200150" stroke-width="1600" x2="166250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="165050" y2="205150" stroke-width="1600" x2="165050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="163850" y2="205150" stroke-width="1600" x2="165050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="163850" y2="200150" stroke-width="1600" x2="163850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="163850" y2="180150" stroke-width="1600" x2="166250"/>
+ </g>
+ <g connectorname="TCK" id="connector1pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="171250" y2="205150" stroke-width="1600" x2="170050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="171250" y2="200150" stroke-width="1600" x2="171250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="170050" y2="205150" stroke-width="1600" x2="170050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="168850" y2="205150" stroke-width="1600" x2="170050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="168850" y2="200150" stroke-width="1600" x2="168850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="168850" y2="180150" stroke-width="1600" x2="171250"/>
+ </g>
+ <g connectorname="Ground" id="connector2pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="176250" y2="205150" stroke-width="1600" x2="175050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="176250" y2="200150" stroke-width="1600" x2="176250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="175050" y2="205150" stroke-width="1600" x2="175050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="173850" y2="205150" stroke-width="1600" x2="175050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="173850" y2="200150" stroke-width="1600" x2="173850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="173850" y2="180150" stroke-width="1600" x2="176250"/>
+ </g>
+ <g connectorname="TD0" id="connector3pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="181250" y2="205150" stroke-width="1600" x2="180050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="181250" y2="200150" stroke-width="1600" x2="181250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="180050" y2="205150" stroke-width="1600" x2="180050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="178850" y2="205150" stroke-width="1600" x2="180050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="178850" y2="200150" stroke-width="1600" x2="178850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="178850" y2="180150" stroke-width="1600" x2="181250"/>
+ </g>
+ <g connectorname="+5V" id="connector4pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="186250" y2="205150" stroke-width="1600" x2="185050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="186250" y2="200150" stroke-width="1600" x2="186250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="185050" y2="205150" stroke-width="1600" x2="185050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="183850" y2="205150" stroke-width="1600" x2="185050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="183850" y2="200150" stroke-width="1600" x2="183850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="183850" y2="180150" stroke-width="1600" x2="186250"/>
+ </g>
+ <g connectorname="+5V" id="connector5pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="191250" y2="205150" stroke-width="1600" x2="190050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="191250" y2="200150" stroke-width="1600" x2="191250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="190050" y2="205150" stroke-width="1600" x2="190050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="188850" y2="205150" stroke-width="1600" x2="190050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="188850" y2="200150" stroke-width="1600" x2="188850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="188850" y2="180150" stroke-width="1600" x2="191250"/>
+ </g>
+ <g connectorname="INTB*" id="connector6pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="196250" y2="205150" stroke-width="1600" x2="195050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="196250" y2="200150" stroke-width="1600" x2="196250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="195050" y2="205150" stroke-width="1600" x2="195050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="193850" y2="205150" stroke-width="1600" x2="195050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="193850" y2="200150" stroke-width="1600" x2="193850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="193850" y2="180150" stroke-width="1600" x2="196250"/>
+ </g>
+ <g connectorname="INTD*" id="connector7pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="201250" y2="205150" stroke-width="1600" x2="200050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="201250" y2="200150" stroke-width="1600" x2="201250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="200050" y2="205150" stroke-width="1600" x2="200050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="198850" y2="205150" stroke-width="1600" x2="200050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="198850" y2="200150" stroke-width="1600" x2="198850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="198850" y2="180150" stroke-width="1600" x2="201250"/>
+ </g>
+ <g connectorname="PRSNT1*" id="connector8pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="206250" y2="205150" stroke-width="1600" x2="205050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="206250" y2="200150" stroke-width="1600" x2="206250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="205050" y2="205150" stroke-width="1600" x2="205050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="203850" y2="205150" stroke-width="1600" x2="205050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="203850" y2="200150" stroke-width="1600" x2="203850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="203850" y2="180150" stroke-width="1600" x2="206250"/>
+ </g>
+ <g connectorname="Reserved" id="connector9pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="211250" y2="205150" stroke-width="1600" x2="210050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="211250" y2="200150" stroke-width="1600" x2="211250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="210050" y2="205150" stroke-width="1600" x2="210050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="208850" y2="205150" stroke-width="1600" x2="210050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="208850" y2="200150" stroke-width="1600" x2="208850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="208850" y2="180150" stroke-width="1600" x2="211250"/>
+ </g>
+ <g connectorname="PRSNT2*" id="connector10pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="216250" y2="205150" stroke-width="1600" x2="215050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="216250" y2="200150" stroke-width="1600" x2="216250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="215050" y2="205150" stroke-width="1600" x2="215050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="213850" y2="205150" stroke-width="1600" x2="215050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="213850" y2="200150" stroke-width="1600" x2="213850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="213850" y2="180150" stroke-width="1600" x2="216250"/>
+ </g>
+ <g connectorname="Ground" id="connector11pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="221250" y2="205150" stroke-width="1600" x2="220050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="221250" y2="200150" stroke-width="1600" x2="221250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="220050" y2="205150" stroke-width="1600" x2="220050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="218850" y2="205150" stroke-width="1600" x2="220050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="218850" y2="200150" stroke-width="1600" x2="218850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="218850" y2="180150" stroke-width="1600" x2="221250"/>
+ </g>
+ <g connectorname="Ground" id="connector12pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="226250" y2="205150" stroke-width="1600" x2="225050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="226250" y2="200150" stroke-width="1600" x2="226250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="225050" y2="205150" stroke-width="1600" x2="225050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="223850" y2="205150" stroke-width="1600" x2="225050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="223850" y2="200150" stroke-width="1600" x2="223850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="223850" y2="180150" stroke-width="1600" x2="226250"/>
+ </g>
+ <g connectorname="Reserved" id="connector13pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="231250" y2="205150" stroke-width="1600" x2="230050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="231250" y2="200150" stroke-width="1600" x2="231250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="230050" y2="205150" stroke-width="1600" x2="230050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="228850" y2="205150" stroke-width="1600" x2="230050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="228850" y2="200150" stroke-width="1600" x2="228850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="228850" y2="180150" stroke-width="1600" x2="231250"/>
+ </g>
+ <g connectorname="Ground" id="connector14pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="236250" y2="205150" stroke-width="1600" x2="235050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="236250" y2="200150" stroke-width="1600" x2="236250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="235050" y2="205150" stroke-width="1600" x2="235050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="233850" y2="205150" stroke-width="1600" x2="235050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="233850" y2="200150" stroke-width="1600" x2="233850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="233850" y2="180150" stroke-width="1600" x2="236250"/>
+ </g>
+ <g connectorname="CLK" id="connector15pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="241250" y2="205150" stroke-width="1600" x2="240050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="241250" y2="200150" stroke-width="1600" x2="241250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="240050" y2="205150" stroke-width="1600" x2="240050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="238850" y2="205150" stroke-width="1600" x2="240050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="238850" y2="200150" stroke-width="1600" x2="238850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="238850" y2="180150" stroke-width="1600" x2="241250"/>
+ </g>
+ <g connectorname="Ground" id="connector16pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="246250" y2="205150" stroke-width="1600" x2="245050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="246250" y2="200150" stroke-width="1600" x2="246250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="245050" y2="205150" stroke-width="1600" x2="245050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="243850" y2="205150" stroke-width="1600" x2="245050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="243850" y2="200150" stroke-width="1600" x2="243850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="243850" y2="180150" stroke-width="1600" x2="246250"/>
+ </g>
+ <g connectorname="REQ*" id="connector17pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="251250" y2="205150" stroke-width="1600" x2="250050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="251250" y2="200150" stroke-width="1600" x2="251250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="250050" y2="205150" stroke-width="1600" x2="250050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="248850" y2="205150" stroke-width="1600" x2="250050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="248850" y2="200150" stroke-width="1600" x2="248850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="248850" y2="180150" stroke-width="1600" x2="251250"/>
+ </g>
+ <g connectorname="+5V" id="connector18pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="256250" y2="205150" stroke-width="1600" x2="255050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="256250" y2="200150" stroke-width="1600" x2="256250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="255050" y2="205150" stroke-width="1600" x2="255050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="253850" y2="205150" stroke-width="1600" x2="255050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="253850" y2="200150" stroke-width="1600" x2="253850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="253850" y2="180150" stroke-width="1600" x2="256250"/>
+ </g>
+ <g connectorname="AD[31]" id="connector19pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="261250" y2="205150" stroke-width="1600" x2="260050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="261250" y2="200150" stroke-width="1600" x2="261250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="260050" y2="205150" stroke-width="1600" x2="260050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="258850" y2="205150" stroke-width="1600" x2="260050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="258850" y2="200150" stroke-width="1600" x2="258850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="258850" y2="180150" stroke-width="1600" x2="261250"/>
+ </g>
+ <g connectorname="AD[29]" id="connector20pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="266250" y2="205150" stroke-width="1600" x2="265050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="266250" y2="200150" stroke-width="1600" x2="266250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="265050" y2="205150" stroke-width="1600" x2="265050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="263850" y2="205150" stroke-width="1600" x2="265050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="263850" y2="200150" stroke-width="1600" x2="263850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="263850" y2="180150" stroke-width="1600" x2="266250"/>
+ </g>
+ <g connectorname="Ground" id="connector21pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="271250" y2="205150" stroke-width="1600" x2="270050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="271250" y2="200150" stroke-width="1600" x2="271250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="270050" y2="205150" stroke-width="1600" x2="270050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="268850" y2="205150" stroke-width="1600" x2="270050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="268850" y2="200150" stroke-width="1600" x2="268850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="268850" y2="180150" stroke-width="1600" x2="271250"/>
+ </g>
+ <g connectorname="AD[27]" id="connector22pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="276250" y2="205150" stroke-width="1600" x2="275050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="276250" y2="200150" stroke-width="1600" x2="276250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="275050" y2="205150" stroke-width="1600" x2="275050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="273850" y2="205150" stroke-width="1600" x2="275050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="273850" y2="200150" stroke-width="1600" x2="273850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="273850" y2="180150" stroke-width="1600" x2="276250"/>
+ </g>
+ <g connectorname="AD[25]" id="connector23pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="281250" y2="205150" stroke-width="1600" x2="280050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="281250" y2="200150" stroke-width="1600" x2="281250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="280050" y2="205150" stroke-width="1600" x2="280050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="278850" y2="205150" stroke-width="1600" x2="280050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="278850" y2="200150" stroke-width="1600" x2="278850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="278850" y2="180150" stroke-width="1600" x2="281250"/>
+ </g>
+ <g connectorname="+3.3V" id="connector24pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="286250" y2="205150" stroke-width="1600" x2="285050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="286250" y2="200150" stroke-width="1600" x2="286250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="285050" y2="205150" stroke-width="1600" x2="285050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="283850" y2="205150" stroke-width="1600" x2="285050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="283850" y2="200150" stroke-width="1600" x2="283850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="283850" y2="180150" stroke-width="1600" x2="286250"/>
+ </g>
+ <g connectorname="C/BE[3]*" id="connector25pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="291250" y2="205150" stroke-width="1600" x2="290050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="291250" y2="200150" stroke-width="1600" x2="291250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="290050" y2="205150" stroke-width="1600" x2="290050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="288850" y2="205150" stroke-width="1600" x2="290050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="288850" y2="200150" stroke-width="1600" x2="288850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="288850" y2="180150" stroke-width="1600" x2="291250"/>
+ </g>
+ <g connectorname="AD[23]" id="connector26pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="296250" y2="205150" stroke-width="1600" x2="295050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="296250" y2="200150" stroke-width="1600" x2="296250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="295050" y2="205150" stroke-width="1600" x2="295050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="293850" y2="205150" stroke-width="1600" x2="295050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="293850" y2="200150" stroke-width="1600" x2="293850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="293850" y2="180150" stroke-width="1600" x2="296250"/>
+ </g>
+ <g connectorname="Ground" id="connector27pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="301250" y2="205150" stroke-width="1600" x2="300050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="301250" y2="200150" stroke-width="1600" x2="301250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="300050" y2="205150" stroke-width="1600" x2="300050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="298850" y2="205150" stroke-width="1600" x2="300050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="298850" y2="200150" stroke-width="1600" x2="298850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="298850" y2="180150" stroke-width="1600" x2="301250"/>
+ </g>
+ <g connectorname="AD[21]" id="connector28pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="306250" y2="205150" stroke-width="1600" x2="305050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="306250" y2="200150" stroke-width="1600" x2="306250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="305050" y2="205150" stroke-width="1600" x2="305050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="303850" y2="205150" stroke-width="1600" x2="305050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="303850" y2="200150" stroke-width="1600" x2="303850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="303850" y2="180150" stroke-width="1600" x2="306250"/>
+ </g>
+ <g connectorname="AD[19]" id="connector29pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="311250" y2="205150" stroke-width="1600" x2="310050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="311250" y2="200150" stroke-width="1600" x2="311250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="310050" y2="205150" stroke-width="1600" x2="310050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="308850" y2="205150" stroke-width="1600" x2="310050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="308850" y2="200150" stroke-width="1600" x2="308850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="308850" y2="180150" stroke-width="1600" x2="311250"/>
+ </g>
+ <g connectorname="+3.3V" id="connector30pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="316250" y2="205150" stroke-width="1600" x2="315050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="316250" y2="200150" stroke-width="1600" x2="316250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="315050" y2="205150" stroke-width="1600" x2="315050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="313850" y2="205150" stroke-width="1600" x2="315050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="313850" y2="200150" stroke-width="1600" x2="313850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="313850" y2="180150" stroke-width="1600" x2="316250"/>
+ </g>
+ <g connectorname="AD[17]" id="connector31pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="321250" y2="205150" stroke-width="1600" x2="320050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="321250" y2="200150" stroke-width="1600" x2="321250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="320050" y2="205150" stroke-width="1600" x2="320050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="318850" y2="205150" stroke-width="1600" x2="320050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="318850" y2="200150" stroke-width="1600" x2="318850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="318850" y2="180150" stroke-width="1600" x2="321250"/>
+ </g>
+ <g connectorname="C/BE[2]*" id="connector32pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="326250" y2="205150" stroke-width="1600" x2="325050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="326250" y2="200150" stroke-width="1600" x2="326250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="325050" y2="205150" stroke-width="1600" x2="325050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="323850" y2="205150" stroke-width="1600" x2="325050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="323850" y2="200150" stroke-width="1600" x2="323850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="323850" y2="180150" stroke-width="1600" x2="326250"/>
+ </g>
+ <g connectorname="Ground" id="connector33pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="331250" y2="205150" stroke-width="1600" x2="330050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="331250" y2="200150" stroke-width="1600" x2="331250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="330050" y2="205150" stroke-width="1600" x2="330050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="328850" y2="205150" stroke-width="1600" x2="330050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="328850" y2="200150" stroke-width="1600" x2="328850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="328850" y2="180150" stroke-width="1600" x2="331250"/>
+ </g>
+ <g connectorname="IRDY*" id="connector34pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="336250" y2="205150" stroke-width="1600" x2="335050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="336250" y2="200150" stroke-width="1600" x2="336250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="335050" y2="205150" stroke-width="1600" x2="335050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="333850" y2="205150" stroke-width="1600" x2="335050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="333850" y2="200150" stroke-width="1600" x2="333850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="333850" y2="180150" stroke-width="1600" x2="336250"/>
+ </g>
+ <g connectorname="+3.3V" id="connector35pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="341250" y2="205150" stroke-width="1600" x2="340050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="341250" y2="200150" stroke-width="1600" x2="341250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="340050" y2="205150" stroke-width="1600" x2="340050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="338850" y2="205150" stroke-width="1600" x2="340050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="338850" y2="200150" stroke-width="1600" x2="338850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="338850" y2="180150" stroke-width="1600" x2="341250"/>
+ </g>
+ <g connectorname="DEVSEL*" id="connector36pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="346250" y2="205150" stroke-width="1600" x2="345050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="346250" y2="200150" stroke-width="1600" x2="346250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="345050" y2="205150" stroke-width="1600" x2="345050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="343850" y2="205150" stroke-width="1600" x2="345050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="343850" y2="200150" stroke-width="1600" x2="343850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="343850" y2="180150" stroke-width="1600" x2="346250"/>
+ </g>
+ <g connectorname="Ground" id="connector37pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="351250" y2="205150" stroke-width="1600" x2="350050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="351250" y2="200150" stroke-width="1600" x2="351250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="350050" y2="205150" stroke-width="1600" x2="350050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="348850" y2="205150" stroke-width="1600" x2="350050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="348850" y2="200150" stroke-width="1600" x2="348850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="348850" y2="180150" stroke-width="1600" x2="351250"/>
+ </g>
+ <g connectorname="LOCK*" id="connector38pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="356250" y2="205150" stroke-width="1600" x2="355050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="356250" y2="200150" stroke-width="1600" x2="356250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="355050" y2="205150" stroke-width="1600" x2="355050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="353850" y2="205150" stroke-width="1600" x2="355050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="353850" y2="200150" stroke-width="1600" x2="353850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="353850" y2="180150" stroke-width="1600" x2="356250"/>
+ </g>
+ <g connectorname="PERR*" id="connector39pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="361250" y2="205150" stroke-width="1600" x2="360050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="361250" y2="200150" stroke-width="1600" x2="361250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="360050" y2="205150" stroke-width="1600" x2="360050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="358850" y2="205150" stroke-width="1600" x2="360050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="358850" y2="200150" stroke-width="1600" x2="358850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="358850" y2="180150" stroke-width="1600" x2="361250"/>
+ </g>
+ <g connectorname="+3.3V" id="connector40pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="366250" y2="205150" stroke-width="1600" x2="365050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="366250" y2="200150" stroke-width="1600" x2="366250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="365050" y2="205150" stroke-width="1600" x2="365050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="363850" y2="205150" stroke-width="1600" x2="365050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="363850" y2="200150" stroke-width="1600" x2="363850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="363850" y2="180150" stroke-width="1600" x2="366250"/>
+ </g>
+ <g connectorname="SERR*" id="connector41pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="371250" y2="205150" stroke-width="1600" x2="370050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="371250" y2="200150" stroke-width="1600" x2="371250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="370050" y2="205150" stroke-width="1600" x2="370050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="368850" y2="205150" stroke-width="1600" x2="370050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="368850" y2="200150" stroke-width="1600" x2="368850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="368850" y2="180150" stroke-width="1600" x2="371250"/>
+ </g>
+ <g connectorname="+3.3V" id="connector42pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="376250" y2="205150" stroke-width="1600" x2="375050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="376250" y2="200150" stroke-width="1600" x2="376250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="375050" y2="205150" stroke-width="1600" x2="375050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="373850" y2="205150" stroke-width="1600" x2="375050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="373850" y2="200150" stroke-width="1600" x2="373850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="373850" y2="180150" stroke-width="1600" x2="376250"/>
+ </g>
+ <g connectorname="C/BE[1]*" id="connector43pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="381250" y2="205150" stroke-width="1600" x2="380050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="381250" y2="200150" stroke-width="1600" x2="381250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="380050" y2="205150" stroke-width="1600" x2="380050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="378850" y2="205150" stroke-width="1600" x2="380050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="378850" y2="200150" stroke-width="1600" x2="378850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="378850" y2="180150" stroke-width="1600" x2="381250"/>
+ </g>
+ <g connectorname="AD[14]" id="connector44pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="386250" y2="205150" stroke-width="1600" x2="385050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="386250" y2="200150" stroke-width="1600" x2="386250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="385050" y2="205150" stroke-width="1600" x2="385050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="383850" y2="205150" stroke-width="1600" x2="385050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="383850" y2="200150" stroke-width="1600" x2="383850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="383850" y2="180150" stroke-width="1600" x2="386250"/>
+ </g>
+ <g connectorname="Ground" id="connector45pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="391250" y2="205150" stroke-width="1600" x2="390050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="391250" y2="200150" stroke-width="1600" x2="391250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="390050" y2="205150" stroke-width="1600" x2="390050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="388850" y2="205150" stroke-width="1600" x2="390050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="388850" y2="200150" stroke-width="1600" x2="388850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="388850" y2="180150" stroke-width="1600" x2="391250"/>
+ </g>
+ <g connectorname="AD[12]" id="connector46pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="396250" y2="205150" stroke-width="1600" x2="395050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="396250" y2="200150" stroke-width="1600" x2="396250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="395050" y2="205150" stroke-width="1600" x2="395050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="393850" y2="205150" stroke-width="1600" x2="395050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="393850" y2="200150" stroke-width="1600" x2="393850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="393850" y2="180150" stroke-width="1600" x2="396250"/>
+ </g>
+ <g connectorname="AD[10]" id="connector47pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="401250" y2="205150" stroke-width="1600" x2="400050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="401250" y2="200150" stroke-width="1600" x2="401250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="400050" y2="205150" stroke-width="1600" x2="400050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="398850" y2="205150" stroke-width="1600" x2="400050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="398850" y2="200150" stroke-width="1600" x2="398850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="398850" y2="180150" stroke-width="1600" x2="401250"/>
+ </g>
+ <g connectorname="Ground" id="connector48pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="406250" y2="205150" stroke-width="1600" x2="405050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="406250" y2="200150" stroke-width="1600" x2="406250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="405050" y2="205150" stroke-width="1600" x2="405050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="403850" y2="205150" stroke-width="1600" x2="405050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="403850" y2="200150" stroke-width="1600" x2="403850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="403850" y2="180150" stroke-width="1600" x2="406250"/>
+ </g>
+ <g connectorname="AD[08]" id="connector49pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="421150" y2="205150" stroke-width="1600" x2="419950"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="421150" y2="200150" stroke-width="1600" x2="421150"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="419950" y2="205150" stroke-width="1600" x2="419950"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="418750" y2="205150" stroke-width="1600" x2="419950"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="418750" y2="200150" stroke-width="1600" x2="418750"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="418750" y2="180150" stroke-width="1600" x2="421150"/>
+ </g>
+ <g connectorname="AD[07]" id="connector50pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="426150" y2="205150" stroke-width="1600" x2="424950"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="426150" y2="200150" stroke-width="1600" x2="426150"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="424950" y2="205150" stroke-width="1600" x2="424950"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="423750" y2="205150" stroke-width="1600" x2="424950"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="423750" y2="200150" stroke-width="1600" x2="423750"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="423750" y2="180150" stroke-width="1600" x2="426150"/>
+ </g>
+ <g connectorname="+3.3V" id="connector51pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="431150" y2="205150" stroke-width="1600" x2="429950"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="431150" y2="200150" stroke-width="1600" x2="431150"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="429950" y2="205150" stroke-width="1600" x2="429950"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="428750" y2="205150" stroke-width="1600" x2="429950"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="428750" y2="200150" stroke-width="1600" x2="428750"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="428750" y2="180150" stroke-width="1600" x2="431150"/>
+ </g>
+ <g connectorname="AD[05]" id="connector52pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="436150" y2="205150" stroke-width="1600" x2="434950"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="436150" y2="200150" stroke-width="1600" x2="436150"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="434950" y2="205150" stroke-width="1600" x2="434950"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="433750" y2="205150" stroke-width="1600" x2="434950"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="433750" y2="200150" stroke-width="1600" x2="433750"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="433750" y2="180150" stroke-width="1600" x2="436150"/>
+ </g>
+ <g connectorname="AD[03]" id="connector53pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="441150" y2="205150" stroke-width="1600" x2="439950"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="441150" y2="200150" stroke-width="1600" x2="441150"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="439950" y2="205150" stroke-width="1600" x2="439950"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="438750" y2="205150" stroke-width="1600" x2="439950"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="438750" y2="200150" stroke-width="1600" x2="438750"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="438750" y2="180150" stroke-width="1600" x2="441150"/>
+ </g>
+ <g connectorname="Ground" id="connector54pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="446150" y2="205150" stroke-width="1600" x2="444950"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="446150" y2="200150" stroke-width="1600" x2="446150"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="444950" y2="205150" stroke-width="1600" x2="444950"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="443750" y2="205150" stroke-width="1600" x2="444950"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="443750" y2="200150" stroke-width="1600" x2="443750"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="443750" y2="180150" stroke-width="1600" x2="446150"/>
+ </g>
+ <g connectorname="AD[01]" id="connector55pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="451150" y2="205150" stroke-width="1600" x2="449950"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="451150" y2="200150" stroke-width="1600" x2="451150"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="449950" y2="205150" stroke-width="1600" x2="449950"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="448750" y2="205150" stroke-width="1600" x2="449950"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="448750" y2="200150" stroke-width="1600" x2="448750"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="448750" y2="180150" stroke-width="1600" x2="451150"/>
+ </g>
+ <g connectorname="+5V" id="connector56pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="456150" y2="205150" stroke-width="1600" x2="454950"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="456150" y2="200150" stroke-width="1600" x2="456150"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="454950" y2="205150" stroke-width="1600" x2="454950"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="453750" y2="205150" stroke-width="1600" x2="454950"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="453750" y2="200150" stroke-width="1600" x2="453750"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="453750" y2="180150" stroke-width="1600" x2="456150"/>
+ </g>
+ <g connectorname="ACK64*" id="connector57pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="461150" y2="205150" stroke-width="1600" x2="459950"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="461150" y2="200150" stroke-width="1600" x2="461150"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="459950" y2="205150" stroke-width="1600" x2="459950"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="458750" y2="205150" stroke-width="1600" x2="459950"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="458750" y2="200150" stroke-width="1600" x2="458750"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="458750" y2="180150" stroke-width="1600" x2="461150"/>
+ </g>
+ <g connectorname="+5V" id="connector58pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="466150" y2="205150" stroke-width="1600" x2="464950"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="466150" y2="200150" stroke-width="1600" x2="466150"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="464950" y2="205150" stroke-width="1600" x2="464950"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="463750" y2="205150" stroke-width="1600" x2="464950"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="463750" y2="200150" stroke-width="1600" x2="463750"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="463750" y2="180150" stroke-width="1600" x2="466150"/>
+ </g>
+ <g connectorname="+5V" id="connector59pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="471150" y2="205150" stroke-width="1600" x2="469950"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="471150" y2="200150" stroke-width="1600" x2="471150"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="469950" y2="205150" stroke-width="1600" x2="469950"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="468750" y2="205150" stroke-width="1600" x2="469950"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="468750" y2="200150" stroke-width="1600" x2="468750"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="468750" y2="180150" stroke-width="1600" x2="471150"/>
+ </g>
+ <g connectorname="TRST*" id="connector60pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="166250" y2="205150" stroke-width="1600" x2="165050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="166250" y2="200150" stroke-width="1600" x2="166250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="165050" y2="205150" stroke-width="1600" x2="165050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="163850" y2="205150" stroke-width="1600" x2="165050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="163850" y2="200150" stroke-width="1600" x2="163850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="163850" y2="180150" stroke-width="1600" x2="166250"/>
+ </g>
+ <g connectorname="+12V" id="connector61pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="171250" y2="205150" stroke-width="1600" x2="170050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="171250" y2="200150" stroke-width="1600" x2="171250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="170050" y2="205150" stroke-width="1600" x2="170050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="168850" y2="205150" stroke-width="1600" x2="170050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="168850" y2="200150" stroke-width="1600" x2="168850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="168850" y2="180150" stroke-width="1600" x2="171250"/>
+ </g>
+ <g connectorname="TMS" id="connector62pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="176250" y2="205150" stroke-width="1600" x2="175050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="176250" y2="200150" stroke-width="1600" x2="176250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="175050" y2="205150" stroke-width="1600" x2="175050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="173850" y2="205150" stroke-width="1600" x2="175050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="173850" y2="200150" stroke-width="1600" x2="173850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="173850" y2="180150" stroke-width="1600" x2="176250"/>
+ </g>
+ <g connectorname="TDI" id="connector63pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="181250" y2="205150" stroke-width="1600" x2="180050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="181250" y2="200150" stroke-width="1600" x2="181250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="180050" y2="205150" stroke-width="1600" x2="180050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="178850" y2="205150" stroke-width="1600" x2="180050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="178850" y2="200150" stroke-width="1600" x2="178850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="178850" y2="180150" stroke-width="1600" x2="181250"/>
+ </g>
+ <g connectorname="+5V" id="connector64pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="186250" y2="205150" stroke-width="1600" x2="185050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="186250" y2="200150" stroke-width="1600" x2="186250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="185050" y2="205150" stroke-width="1600" x2="185050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="183850" y2="205150" stroke-width="1600" x2="185050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="183850" y2="200150" stroke-width="1600" x2="183850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="183850" y2="180150" stroke-width="1600" x2="186250"/>
+ </g>
+ <g connectorname="INTA*" id="connector65pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="191250" y2="205150" stroke-width="1600" x2="190050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="191250" y2="200150" stroke-width="1600" x2="191250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="190050" y2="205150" stroke-width="1600" x2="190050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="188850" y2="205150" stroke-width="1600" x2="190050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="188850" y2="200150" stroke-width="1600" x2="188850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="188850" y2="180150" stroke-width="1600" x2="191250"/>
+ </g>
+ <g connectorname="INTC*" id="connector66pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="196250" y2="205150" stroke-width="1600" x2="195050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="196250" y2="200150" stroke-width="1600" x2="196250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="195050" y2="205150" stroke-width="1600" x2="195050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="193850" y2="205150" stroke-width="1600" x2="195050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="193850" y2="200150" stroke-width="1600" x2="193850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="193850" y2="180150" stroke-width="1600" x2="196250"/>
+ </g>
+ <g connectorname="+5V" id="connector67pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="201250" y2="205150" stroke-width="1600" x2="200050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="201250" y2="200150" stroke-width="1600" x2="201250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="200050" y2="205150" stroke-width="1600" x2="200050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="198850" y2="205150" stroke-width="1600" x2="200050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="198850" y2="200150" stroke-width="1600" x2="198850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="198850" y2="180150" stroke-width="1600" x2="201250"/>
+ </g>
+ <g connectorname="Reserved" id="connector68pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="206250" y2="205150" stroke-width="1600" x2="205050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="206250" y2="200150" stroke-width="1600" x2="206250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="205050" y2="205150" stroke-width="1600" x2="205050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="203850" y2="205150" stroke-width="1600" x2="205050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="203850" y2="200150" stroke-width="1600" x2="203850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="203850" y2="180150" stroke-width="1600" x2="206250"/>
+ </g>
+ <g connectorname="+5V" id="connector69pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="211250" y2="205150" stroke-width="1600" x2="210050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="211250" y2="200150" stroke-width="1600" x2="211250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="210050" y2="205150" stroke-width="1600" x2="210050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="208850" y2="205150" stroke-width="1600" x2="210050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="208850" y2="200150" stroke-width="1600" x2="208850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="208850" y2="180150" stroke-width="1600" x2="211250"/>
+ </g>
+ <g connectorname="Reserved" id="connector70pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="216250" y2="205150" stroke-width="1600" x2="215050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="216250" y2="200150" stroke-width="1600" x2="216250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="215050" y2="205150" stroke-width="1600" x2="215050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="213850" y2="205150" stroke-width="1600" x2="215050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="213850" y2="200150" stroke-width="1600" x2="213850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="213850" y2="180150" stroke-width="1600" x2="216250"/>
+ </g>
+ <g connectorname="Ground" id="connector71pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="221250" y2="205150" stroke-width="1600" x2="220050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="221250" y2="200150" stroke-width="1600" x2="221250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="220050" y2="205150" stroke-width="1600" x2="220050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="218850" y2="205150" stroke-width="1600" x2="220050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="218850" y2="200150" stroke-width="1600" x2="218850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="218850" y2="180150" stroke-width="1600" x2="221250"/>
+ </g>
+ <g connectorname="Ground" id="connector72pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="226250" y2="205150" stroke-width="1600" x2="225050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="226250" y2="200150" stroke-width="1600" x2="226250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="225050" y2="205150" stroke-width="1600" x2="225050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="223850" y2="205150" stroke-width="1600" x2="225050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="223850" y2="200150" stroke-width="1600" x2="223850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="223850" y2="180150" stroke-width="1600" x2="226250"/>
+ </g>
+ <g connectorname="3.3Vaux" id="connector73pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="231250" y2="205150" stroke-width="1600" x2="230050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="231250" y2="200150" stroke-width="1600" x2="231250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="230050" y2="205150" stroke-width="1600" x2="230050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="228850" y2="205150" stroke-width="1600" x2="230050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="228850" y2="200150" stroke-width="1600" x2="228850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="228850" y2="180150" stroke-width="1600" x2="231250"/>
+ </g>
+ <g connectorname="RST*" id="connector74pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="236250" y2="205150" stroke-width="1600" x2="235050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="236250" y2="200150" stroke-width="1600" x2="236250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="235050" y2="205150" stroke-width="1600" x2="235050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="233850" y2="205150" stroke-width="1600" x2="235050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="233850" y2="200150" stroke-width="1600" x2="233850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="233850" y2="180150" stroke-width="1600" x2="236250"/>
+ </g>
+ <g connectorname="+5V" id="connector75pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="241250" y2="205150" stroke-width="1600" x2="240050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="241250" y2="200150" stroke-width="1600" x2="241250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="240050" y2="205150" stroke-width="1600" x2="240050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="238850" y2="205150" stroke-width="1600" x2="240050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="238850" y2="200150" stroke-width="1600" x2="238850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="238850" y2="180150" stroke-width="1600" x2="241250"/>
+ </g>
+ <g connectorname="GNT*" id="connector76pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="246250" y2="205150" stroke-width="1600" x2="245050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="246250" y2="200150" stroke-width="1600" x2="246250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="245050" y2="205150" stroke-width="1600" x2="245050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="243850" y2="205150" stroke-width="1600" x2="245050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="243850" y2="200150" stroke-width="1600" x2="243850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="243850" y2="180150" stroke-width="1600" x2="246250"/>
+ </g>
+ <g connectorname="Ground" id="connector77pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="251250" y2="205150" stroke-width="1600" x2="250050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="251250" y2="200150" stroke-width="1600" x2="251250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="250050" y2="205150" stroke-width="1600" x2="250050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="248850" y2="205150" stroke-width="1600" x2="250050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="248850" y2="200150" stroke-width="1600" x2="248850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="248850" y2="180150" stroke-width="1600" x2="251250"/>
+ </g>
+ <g connectorname="PME*" id="connector78pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="256250" y2="205150" stroke-width="1600" x2="255050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="256250" y2="200150" stroke-width="1600" x2="256250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="255050" y2="205150" stroke-width="1600" x2="255050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="253850" y2="205150" stroke-width="1600" x2="255050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="253850" y2="200150" stroke-width="1600" x2="253850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="253850" y2="180150" stroke-width="1600" x2="256250"/>
+ </g>
+ <g connectorname="AD[30]" id="connector79pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="261250" y2="205150" stroke-width="1600" x2="260050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="261250" y2="200150" stroke-width="1600" x2="261250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="260050" y2="205150" stroke-width="1600" x2="260050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="258850" y2="205150" stroke-width="1600" x2="260050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="258850" y2="200150" stroke-width="1600" x2="258850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="258850" y2="180150" stroke-width="1600" x2="261250"/>
+ </g>
+ <g connectorname="+3.3V" id="connector80pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="266250" y2="205150" stroke-width="1600" x2="265050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="266250" y2="200150" stroke-width="1600" x2="266250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="265050" y2="205150" stroke-width="1600" x2="265050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="263850" y2="205150" stroke-width="1600" x2="265050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="263850" y2="200150" stroke-width="1600" x2="263850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="263850" y2="180150" stroke-width="1600" x2="266250"/>
+ </g>
+ <g connectorname="AD[28]" id="connector81pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="271250" y2="205150" stroke-width="1600" x2="270050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="271250" y2="200150" stroke-width="1600" x2="271250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="270050" y2="205150" stroke-width="1600" x2="270050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="268850" y2="205150" stroke-width="1600" x2="270050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="268850" y2="200150" stroke-width="1600" x2="268850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="268850" y2="180150" stroke-width="1600" x2="271250"/>
+ </g>
+ <g connectorname="AD[26]" id="connector82pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="276250" y2="205150" stroke-width="1600" x2="275050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="276250" y2="200150" stroke-width="1600" x2="276250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="275050" y2="205150" stroke-width="1600" x2="275050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="273850" y2="205150" stroke-width="1600" x2="275050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="273850" y2="200150" stroke-width="1600" x2="273850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="273850" y2="180150" stroke-width="1600" x2="276250"/>
+ </g>
+ <g connectorname="Ground" id="connector83pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="281250" y2="205150" stroke-width="1600" x2="280050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="281250" y2="200150" stroke-width="1600" x2="281250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="280050" y2="205150" stroke-width="1600" x2="280050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="278850" y2="205150" stroke-width="1600" x2="280050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="278850" y2="200150" stroke-width="1600" x2="278850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="278850" y2="180150" stroke-width="1600" x2="281250"/>
+ </g>
+ <g connectorname="AD[24]" id="connector84pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="286250" y2="205150" stroke-width="1600" x2="285050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="286250" y2="200150" stroke-width="1600" x2="286250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="285050" y2="205150" stroke-width="1600" x2="285050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="283850" y2="205150" stroke-width="1600" x2="285050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="283850" y2="200150" stroke-width="1600" x2="283850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="283850" y2="180150" stroke-width="1600" x2="286250"/>
+ </g>
+ <g connectorname="IDSEL" id="connector85pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="291250" y2="205150" stroke-width="1600" x2="290050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="291250" y2="200150" stroke-width="1600" x2="291250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="290050" y2="205150" stroke-width="1600" x2="290050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="288850" y2="205150" stroke-width="1600" x2="290050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="288850" y2="200150" stroke-width="1600" x2="288850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="288850" y2="180150" stroke-width="1600" x2="291250"/>
+ </g>
+ <g connectorname="+3.3V" id="connector86pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="296250" y2="205150" stroke-width="1600" x2="295050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="296250" y2="200150" stroke-width="1600" x2="296250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="295050" y2="205150" stroke-width="1600" x2="295050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="293850" y2="205150" stroke-width="1600" x2="295050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="293850" y2="200150" stroke-width="1600" x2="293850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="293850" y2="180150" stroke-width="1600" x2="296250"/>
+ </g>
+ <g connectorname="AD[22]" id="connector87pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="301250" y2="205150" stroke-width="1600" x2="300050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="301250" y2="200150" stroke-width="1600" x2="301250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="300050" y2="205150" stroke-width="1600" x2="300050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="298850" y2="205150" stroke-width="1600" x2="300050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="298850" y2="200150" stroke-width="1600" x2="298850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="298850" y2="180150" stroke-width="1600" x2="301250"/>
+ </g>
+ <g connectorname="AD[20]" id="connector88pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="306250" y2="205150" stroke-width="1600" x2="305050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="306250" y2="200150" stroke-width="1600" x2="306250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="305050" y2="205150" stroke-width="1600" x2="305050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="303850" y2="205150" stroke-width="1600" x2="305050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="303850" y2="200150" stroke-width="1600" x2="303850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="303850" y2="180150" stroke-width="1600" x2="306250"/>
+ </g>
+ <g connectorname="Ground" id="connector89pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="311250" y2="205150" stroke-width="1600" x2="310050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="311250" y2="200150" stroke-width="1600" x2="311250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="310050" y2="205150" stroke-width="1600" x2="310050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="308850" y2="205150" stroke-width="1600" x2="310050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="308850" y2="200150" stroke-width="1600" x2="308850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="308850" y2="180150" stroke-width="1600" x2="311250"/>
+ </g>
+ <g connectorname="AD[18]" id="connector90pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="316250" y2="205150" stroke-width="1600" x2="315050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="316250" y2="200150" stroke-width="1600" x2="316250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="315050" y2="205150" stroke-width="1600" x2="315050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="313850" y2="205150" stroke-width="1600" x2="315050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="313850" y2="200150" stroke-width="1600" x2="313850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="313850" y2="180150" stroke-width="1600" x2="316250"/>
+ </g>
+ <g connectorname="AD[16]" id="connector91pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="321250" y2="205150" stroke-width="1600" x2="320050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="321250" y2="200150" stroke-width="1600" x2="321250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="320050" y2="205150" stroke-width="1600" x2="320050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="318850" y2="205150" stroke-width="1600" x2="320050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="318850" y2="200150" stroke-width="1600" x2="318850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="318850" y2="180150" stroke-width="1600" x2="321250"/>
+ </g>
+ <g connectorname="+3.3V" id="connector92pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="326250" y2="205150" stroke-width="1600" x2="325050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="326250" y2="200150" stroke-width="1600" x2="326250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="325050" y2="205150" stroke-width="1600" x2="325050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="323850" y2="205150" stroke-width="1600" x2="325050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="323850" y2="200150" stroke-width="1600" x2="323850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="323850" y2="180150" stroke-width="1600" x2="326250"/>
+ </g>
+ <g connectorname="FRAME*" id="connector93pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="331250" y2="205150" stroke-width="1600" x2="330050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="331250" y2="200150" stroke-width="1600" x2="331250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="330050" y2="205150" stroke-width="1600" x2="330050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="328850" y2="205150" stroke-width="1600" x2="330050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="328850" y2="200150" stroke-width="1600" x2="328850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="328850" y2="180150" stroke-width="1600" x2="331250"/>
+ </g>
+ <g connectorname="Ground" id="connector94pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="336250" y2="205150" stroke-width="1600" x2="335050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="336250" y2="200150" stroke-width="1600" x2="336250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="335050" y2="205150" stroke-width="1600" x2="335050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="333850" y2="205150" stroke-width="1600" x2="335050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="333850" y2="200150" stroke-width="1600" x2="333850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="333850" y2="180150" stroke-width="1600" x2="336250"/>
+ </g>
+ <g connectorname="TRDY*" id="connector95pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="341250" y2="205150" stroke-width="1600" x2="340050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="341250" y2="200150" stroke-width="1600" x2="341250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="340050" y2="205150" stroke-width="1600" x2="340050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="338850" y2="205150" stroke-width="1600" x2="340050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="338850" y2="200150" stroke-width="1600" x2="338850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="338850" y2="180150" stroke-width="1600" x2="341250"/>
+ </g>
+ <g connectorname="Ground" id="connector96pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="346250" y2="205150" stroke-width="1600" x2="345050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="346250" y2="200150" stroke-width="1600" x2="346250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="345050" y2="205150" stroke-width="1600" x2="345050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="343850" y2="205150" stroke-width="1600" x2="345050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="343850" y2="200150" stroke-width="1600" x2="343850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="343850" y2="180150" stroke-width="1600" x2="346250"/>
+ </g>
+ <g connectorname="STOP*" id="connector97pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="351250" y2="205150" stroke-width="1600" x2="350050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="351250" y2="200150" stroke-width="1600" x2="351250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="350050" y2="205150" stroke-width="1600" x2="350050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="348850" y2="205150" stroke-width="1600" x2="350050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="348850" y2="200150" stroke-width="1600" x2="348850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="348850" y2="180150" stroke-width="1600" x2="351250"/>
+ </g>
+ <g connectorname="+3.3V" id="connector98pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="356250" y2="205150" stroke-width="1600" x2="355050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="356250" y2="200150" stroke-width="1600" x2="356250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="355050" y2="205150" stroke-width="1600" x2="355050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="353850" y2="205150" stroke-width="1600" x2="355050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="353850" y2="200150" stroke-width="1600" x2="353850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="353850" y2="180150" stroke-width="1600" x2="356250"/>
+ </g>
+ <g connectorname="Reserved" id="connector99pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="361250" y2="205150" stroke-width="1600" x2="360050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="361250" y2="200150" stroke-width="1600" x2="361250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="360050" y2="205150" stroke-width="1600" x2="360050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="358850" y2="205150" stroke-width="1600" x2="360050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="358850" y2="200150" stroke-width="1600" x2="358850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="358850" y2="180150" stroke-width="1600" x2="361250"/>
+ </g>
+ <g connectorname="Reserved" id="connector100pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="366250" y2="205150" stroke-width="1600" x2="365050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="366250" y2="200150" stroke-width="1600" x2="366250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="365050" y2="205150" stroke-width="1600" x2="365050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="363850" y2="205150" stroke-width="1600" x2="365050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="363850" y2="200150" stroke-width="1600" x2="363850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="363850" y2="180150" stroke-width="1600" x2="366250"/>
+ </g>
+ <g connectorname="Ground" id="connector101pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="371250" y2="205150" stroke-width="1600" x2="370050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="371250" y2="200150" stroke-width="1600" x2="371250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="370050" y2="205150" stroke-width="1600" x2="370050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="368850" y2="205150" stroke-width="1600" x2="370050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="368850" y2="200150" stroke-width="1600" x2="368850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="368850" y2="180150" stroke-width="1600" x2="371250"/>
+ </g>
+ <g connectorname="PAR" id="connector102pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="376250" y2="205150" stroke-width="1600" x2="375050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="376250" y2="200150" stroke-width="1600" x2="376250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="375050" y2="205150" stroke-width="1600" x2="375050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="373850" y2="205150" stroke-width="1600" x2="375050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="373850" y2="200150" stroke-width="1600" x2="373850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="373850" y2="180150" stroke-width="1600" x2="376250"/>
+ </g>
+ <g connectorname="AD[15]" id="connector103pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="381250" y2="205150" stroke-width="1600" x2="380050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="381250" y2="200150" stroke-width="1600" x2="381250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="380050" y2="205150" stroke-width="1600" x2="380050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="378850" y2="205150" stroke-width="1600" x2="380050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="378850" y2="200150" stroke-width="1600" x2="378850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="378850" y2="180150" stroke-width="1600" x2="381250"/>
+ </g>
+ <g connectorname="+3.3V" id="connector104pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="386250" y2="205150" stroke-width="1600" x2="385050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="386250" y2="200150" stroke-width="1600" x2="386250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="385050" y2="205150" stroke-width="1600" x2="385050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="383850" y2="205150" stroke-width="1600" x2="385050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="383850" y2="200150" stroke-width="1600" x2="383850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="383850" y2="180150" stroke-width="1600" x2="386250"/>
+ </g>
+ <g connectorname="AD[13]" id="connector105pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="391250" y2="205150" stroke-width="1600" x2="390050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="391250" y2="200150" stroke-width="1600" x2="391250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="390050" y2="205150" stroke-width="1600" x2="390050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="388850" y2="205150" stroke-width="1600" x2="390050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="388850" y2="200150" stroke-width="1600" x2="388850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="388850" y2="180150" stroke-width="1600" x2="391250"/>
+ </g>
+ <g connectorname="AD[11]" id="connector106pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="396250" y2="205150" stroke-width="1600" x2="395050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="396250" y2="200150" stroke-width="1600" x2="396250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="395050" y2="205150" stroke-width="1600" x2="395050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="393850" y2="205150" stroke-width="1600" x2="395050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="393850" y2="200150" stroke-width="1600" x2="393850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="393850" y2="180150" stroke-width="1600" x2="396250"/>
+ </g>
+ <g connectorname="Ground" id="connector107pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="401250" y2="205150" stroke-width="1600" x2="400050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="401250" y2="200150" stroke-width="1600" x2="401250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="400050" y2="205150" stroke-width="1600" x2="400050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="398850" y2="205150" stroke-width="1600" x2="400050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="398850" y2="200150" stroke-width="1600" x2="398850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="398850" y2="180150" stroke-width="1600" x2="401250"/>
+ </g>
+ <g connectorname="AD[09]" id="connector108pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="406250" y2="205150" stroke-width="1600" x2="405050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="406250" y2="200150" stroke-width="1600" x2="406250"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="405050" y2="205150" stroke-width="1600" x2="405050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="403850" y2="205150" stroke-width="1600" x2="405050"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="403850" y2="200150" stroke-width="1600" x2="403850"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="403850" y2="180150" stroke-width="1600" x2="406250"/>
+ </g>
+ <g connectorname="C/BE[0]*" id="connector109pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="421150" y2="205150" stroke-width="1600" x2="419950"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="421150" y2="200150" stroke-width="1600" x2="421150"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="419950" y2="205150" stroke-width="1600" x2="419950"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="418750" y2="205150" stroke-width="1600" x2="419950"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="418750" y2="200150" stroke-width="1600" x2="418750"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="418750" y2="180150" stroke-width="1600" x2="421150"/>
+ </g>
+ <g connectorname="+3.3V" id="connector110pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="426150" y2="205150" stroke-width="1600" x2="424950"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="426150" y2="200150" stroke-width="1600" x2="426150"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="424950" y2="205150" stroke-width="1600" x2="424950"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="423750" y2="205150" stroke-width="1600" x2="424950"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="423750" y2="200150" stroke-width="1600" x2="423750"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="423750" y2="180150" stroke-width="1600" x2="426150"/>
+ </g>
+ <g connectorname="AD[06]" id="connector111pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="431150" y2="205150" stroke-width="1600" x2="429950"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="431150" y2="200150" stroke-width="1600" x2="431150"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="429950" y2="205150" stroke-width="1600" x2="429950"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="428750" y2="205150" stroke-width="1600" x2="429950"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="428750" y2="200150" stroke-width="1600" x2="428750"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="428750" y2="180150" stroke-width="1600" x2="431150"/>
+ </g>
+ <g connectorname="AD[04]" id="connector112pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="436150" y2="205150" stroke-width="1600" x2="434950"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="436150" y2="200150" stroke-width="1600" x2="436150"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="434950" y2="205150" stroke-width="1600" x2="434950"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="433750" y2="205150" stroke-width="1600" x2="434950"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="433750" y2="200150" stroke-width="1600" x2="433750"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="433750" y2="180150" stroke-width="1600" x2="436150"/>
+ </g>
+ <g connectorname="Ground" id="connector113pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="441150" y2="205150" stroke-width="1600" x2="439950"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="441150" y2="200150" stroke-width="1600" x2="441150"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="439950" y2="205150" stroke-width="1600" x2="439950"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="438750" y2="205150" stroke-width="1600" x2="439950"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="438750" y2="200150" stroke-width="1600" x2="438750"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="438750" y2="180150" stroke-width="1600" x2="441150"/>
+ </g>
+ <g connectorname="AD[02]" id="connector114pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="446150" y2="205150" stroke-width="1600" x2="444950"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="446150" y2="200150" stroke-width="1600" x2="446150"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="444950" y2="205150" stroke-width="1600" x2="444950"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="443750" y2="205150" stroke-width="1600" x2="444950"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="443750" y2="200150" stroke-width="1600" x2="443750"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="443750" y2="180150" stroke-width="1600" x2="446150"/>
+ </g>
+ <g connectorname="AD[00]" id="connector115pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="451150" y2="205150" stroke-width="1600" x2="449950"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="451150" y2="200150" stroke-width="1600" x2="451150"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="449950" y2="205150" stroke-width="1600" x2="449950"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="448750" y2="205150" stroke-width="1600" x2="449950"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="448750" y2="200150" stroke-width="1600" x2="448750"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="448750" y2="180150" stroke-width="1600" x2="451150"/>
+ </g>
+ <g connectorname="+5V" id="connector116pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="456150" y2="205150" stroke-width="1600" x2="454950"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="456150" y2="200150" stroke-width="1600" x2="456150"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="454950" y2="205150" stroke-width="1600" x2="454950"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="453750" y2="205150" stroke-width="1600" x2="454950"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="453750" y2="200150" stroke-width="1600" x2="453750"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="453750" y2="180150" stroke-width="1600" x2="456150"/>
+ </g>
+ <g connectorname="REQ64*" id="connector117pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="461150" y2="205150" stroke-width="1600" x2="459950"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="461150" y2="200150" stroke-width="1600" x2="461150"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="459950" y2="205150" stroke-width="1600" x2="459950"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="458750" y2="205150" stroke-width="1600" x2="459950"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="458750" y2="200150" stroke-width="1600" x2="458750"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="458750" y2="180150" stroke-width="1600" x2="461150"/>
+ </g>
+ <g connectorname="+5V" id="connector118pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="466150" y2="205150" stroke-width="1600" x2="464950"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="466150" y2="200150" stroke-width="1600" x2="466150"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="464950" y2="205150" stroke-width="1600" x2="464950"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="463750" y2="205150" stroke-width="1600" x2="464950"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="463750" y2="200150" stroke-width="1600" x2="463750"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="463750" y2="180150" stroke-width="1600" x2="466150"/>
+ </g>
+ <g connectorname="+5V" id="connector119pad">
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="471150" y2="205150" stroke-width="1600" x2="469950"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="471150" y2="200150" stroke-width="1600" x2="471150"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="469950" y2="205150" stroke-width="1600" x2="469950"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="200150" x1="468750" y2="205150" stroke-width="1600" x2="469950"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="468750" y2="200150" stroke-width="1600" x2="468750"/>
+  <line fill="none" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" y1="180150" x1="468750" y2="180150" stroke-width="1600" x2="471150"/>
+ </g>
+</g>
+<g id="silkscreen">
+ <path fill="none" stroke="white" stroke-width="100" d="M162650,178150a10000,10000,0,0,0,-10000,-10000"/>
+ <line fill="none" stroke="white" y1="168150" x1="152650" y2="168150" stroke-width="100" x2="72650"/>
+ <path fill="none" stroke="white" stroke-width="100" d="M72650,168150a10000,10000,0,0,0,-10000,10000"/>
+ <line fill="none" stroke="white" y1="178150" x1="62650" y2="205150" stroke-width="100" x2="62650"/>
+ <path fill="none" stroke="white" stroke-width="100" d="M61450,206350a1200,1200,0,0,0,1200,-1200"/>
+ <line fill="none" stroke="white" y1="206350" x1="61450" y2="206350" stroke-width="100" x2="50"/>
+ <line fill="none" stroke="white" y1="206350" x1="163850" y2="206350" stroke-width="200" x2="406350"/>
+ <path fill="none" stroke="white" stroke-width="200" d="M162650,205150a1200,1200,0,0,0,1200,1200"/>
+ <path fill="none" stroke="white" stroke-width="200" d="M406350,206350a1200,1200,0,0,0,1200,-1200"/>
+ <line fill="none" stroke="white" y1="178150" x1="162650" y2="205150" stroke-width="100" x2="162650"/>
+ <line fill="none" stroke="white" y1="178150" x1="407550" y2="205150" stroke-width="100" x2="407550"/>
+ <path fill="none" stroke="white" stroke-width="100" d="M417550,178150a5000,5000,0,1,0,-10000,0"/>
+ <line fill="none" stroke="white" y1="206350" x1="418750" y2="206350" stroke-width="200" x2="471250"/>
+ <path fill="none" stroke="white" stroke-width="200" d="M417550,205150a1200,1200,0,0,0,1200,1200"/>
+ <path fill="none" stroke="white" stroke-width="200" d="M471250,206350a1200,1200,0,0,0,1200,-1200"/>
+ <line fill="none" stroke="white" y1="178150" x1="417550" y2="205150" stroke-width="100" x2="417550"/>
+ <line fill="none" stroke="white" y1="178150" x1="472450" y2="205150" stroke-width="100" x2="472450"/>
+ <line fill="none" stroke="white" y1="206350" x1="50" y2="50" stroke-width="100" x2="50"/>
+ <line fill="none" stroke="white" y1="50" x1="50" y2="50" stroke-width="100" x2="472450"/>
+ <line fill="none" stroke="white" y1="50" x1="472450" y2="178150" stroke-width="100" x2="472450"/>
+ <circle fill="none" cx="27550" cy="178850" stroke="white" r="12500" stroke-width="100"/>
+ <circle fill="none" cx="27550" cy="27550" stroke="white" r="12500" stroke-width="100"/>
+</g>
+</svg>

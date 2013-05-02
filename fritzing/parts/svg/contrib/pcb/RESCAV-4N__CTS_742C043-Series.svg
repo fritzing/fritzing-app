@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?> <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" x="0in" y="0in" width="0.11842in" height="0.09118in" viewBox="0 0 11842 9118" ><title>RESCAV-4N__CTS_742C043-Series.fp</title><desc>Geda footprint file 'RESCAV-4N__CTS_742C043-Series.fp' converted by Fritzing</desc><metadata xmlns:fz='http://fritzing.org/gedametadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'><rdf:RDF><rdf:Description rdf:about=''><fz:attr name='geda filename'>RESCAV-4N__CTS_742C043-Series.fp</fz:attr>
+<fz:attr name='fritzing version'>0.4.0b.06.21.4282</fz:attr>
+<fz:attr name='conversion date'>27/06/2010 07:16:30</fz:attr>
+<fz:attr name='dist-license'>GPL</fz:attr>
+<fz:attr name='use-license'>unlimited</fz:attr>
+<fz:attr name='author'>gEDA project</fz:attr>
+<fz:attr name='license-url'>http://www.gnu.org/licenses/gpl.html</fz:attr>
+</rdf:Description></rdf:RDF></metadata><g id="copper1">
+ <line fill="none" connectorname="" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector0pad" y1="2985" x1="2984" y2="2985" stroke-width="1968" x2="4559"/>
+ <line fill="none" connectorname="" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector1pad" y1="2985" x1="9283" y2="2985" stroke-width="1968" x2="10858"/>
+ <line fill="none" connectorname="" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector2pad" y1="6133" x1="2984" y2="6133" stroke-width="1968" x2="4559"/>
+ <line fill="none" connectorname="" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector3pad" y1="6133" x1="9283" y2="6133" stroke-width="1968" x2="10858"/>
+</g>
+<g id="silkscreen">
+ <line fill="none" stroke="white" y1="500" x1="4272" y2="500" stroke-width="1000" x2="9570"/>
+ <line fill="none" stroke="white" y1="8618" x1="4272" y2="8618" stroke-width="1000" x2="9570"/>
+ <circle fill="none" cx="500" cy="2985" stroke="white" r="250" stroke-width="500"/>
+</g>
+</svg>

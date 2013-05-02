@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?><module fritzingVersion="0.2.1.b.03.03.2541" moduleId="5e3b9f7a14a1627168e700bfc9a03b3c">
+<version>4</version>
+    <author>Lionel Michel</author>
+    <title>USB connector</title>
+    <label>CONN</label>
+    <date>2009-03-04</date>
+    <tags>
+        <tag>USB</tag>
+        <tag>connector</tag>
+    </tags>
+    <properties>
+        <property name="family">USB Connector</property>
+        <property name="Connector Shape">USB-B</property>
+    <property name="package">THT</property></properties>
+    <description>USB connector</description>
+    <views>
+        <schematicView>
+            <layers image="schematic/usb_connector.svg">
+                <layer layerId="schematic"/>
+            </layers>
+        </schematicView>
+        <breadboardView>
+            <layers image="breadboard/usb_connector.svg">
+                <layer layerId="breadboard"/>
+            </layers>
+        </breadboardView>
+        <pcbView>
+            <layers image="pcb/connector_usb_b.svg">
+                <layer layerId="copper0"/>
+                <layer layerId="silkscreen"/>
+	      <layer layerId="copper1"/>
+	</layers>
+        </pcbView>
+        <iconView>
+            <layers image="icon/usb_connector.svg">
+                <layer layerId="icon"/>
+            </layers>
+        </iconView>
+    </views>
+    <connectors>
+         <connector id="connector0" name="5V" type="male">
+            <description>+5V</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector0pin" terminalId="connector0terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector0pin" terminalId="connector0terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector0pin"/>
+                <p layer="copper1" svgId="connector0pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector1" name="d-" type="male">
+            <description>D-</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector1pin" terminalId="connector1terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector1pin" terminalId="connector1terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector1pin"/>
+                <p layer="copper1" svgId="connector1pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector2" name="d+" type="male">
+            <description>D-</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector2pin" terminalId="connector2terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector2pin" terminalId="connector2terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector2pin"/>
+                <p layer="copper1" svgId="connector2pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector4" name="chassis5" type="male">
+            <description>Chassis (Pin 5)</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector4pin" terminalId="connector4terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector4pin" terminalId="connector4terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector4pin"/>
+                <p layer="copper1" svgId="connector4pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector5" name="chassis6" type="male">
+            <description>Chassis (Pin 6)</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector5pin" terminalId="connector5terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector5pin" terminalId="connector5terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector5pin"/>
+                <p layer="copper1" svgId="connector5pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector3" name="GND" type="male">
+            <description>Ground</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector3pin" terminalId="connector3terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector3pin" terminalId="connector3terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector3pin"/>
+                <p layer="copper1" svgId="connector3pin"/></pcbView>
+            </views>
+        </connector>
+   </connectors>
+    <buses>
+      <bus id="chassis">
+        <nodeMember connectorId="connector3"/>
+        <nodeMember connectorId="connector4"/>
+       <nodeMember connectorId="connector5"/>
+      </bus>
+    </buses>
+</module>

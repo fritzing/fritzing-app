@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1 Basic//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-basic.dtd">
+<svg version="1.1" baseProfile="basic" id="svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+	 x="0px" y="0px" width="0.1in" height="0.10in" viewBox="0 0 7.199 7.199" xml:space="preserve">
+
+<g id="breadboard">
+<rect id="connector0pin" x="2.204" y="2.204" fill="none" width="2.791" height="2.791"/>
+<rect id="connector0terminal" x="2.518" y="2.469" fill="none" width="2.164" height="2.262"/>
+
+	<g>
+		<polygon fill="#404040" points="1.563,0 0.0,1.564 0.0,5.637 1.563,7.199 5.635,7.199 7.199,5.637 7.199,1.564 5.635,0 1.563,0"/>
+	</g>
+	<g>
+		<rect x="2.451" y="2.45" fill="#8D8C8C" width="2.297" height="2.299"/>
+		<rect x="3.009" y="3.008" fill="#8C8663" width="1.182" height="1.183"/>
+		<polygon fill="#B8AF82" points="2.451,2.45 3.009,3.008 4.19,3.008 4.748,2.45"/>
+		<polygon fill="#80795B" points="4.19,4.19 4.19,3.008 4.748,2.45 4.748,4.749 		"/>
+		<polygon fill="#5E5B43" points="3.009,4.19 4.19,4.19 4.748,4.749 2.451,4.749 		"/>
+		<polygon fill="#9A916C" points="2.451,2.45 3.009,3.008 3.009,4.19 2.451,4.749 		"/>
+	</g>
+</g>
+
+</svg>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<styles>
+      <style name="Normal Text" color="black" />
+      <style name="Keyword"  color="blue" />
+      <style name="Functions"  color="magenta" />
+      <style name="Data Types"  color="blue" />
+      <style name="Constant"  color="blue" />
+      <style name="Number"  color="black" />
+      <style name="String"  color="red" />
+      <style name="Comment"  color="grey" italic="1" />
+      <style name="Region Marker"  color="black" />
+      <style name="Preprocessor"  color="blue" />
+</styles>

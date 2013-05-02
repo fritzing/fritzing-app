@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="_x30_" xmlns:xml="http://www.w3.org/XML/1998/namespace"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="103.465px"
+	 height="50.598px" viewBox="0 0 103.465 50.598" enable-background="new 0 0 103.465 50.598" xml:space="preserve">
+<desc  id="0.0" oldid="0.0">
+	<referenceFile  id="0.0.0" oldid="0.0.0">Teensy_3.0_pcb.svg</referenceFile>
+</desc>
+<g id="silkscreen_1_">
+	<path id="silkscreen" fill="none" stroke="#FFFFFF" stroke-width="0.5" stroke-miterlimit="10" d="M2.835,0.799v49.209h100.063
+		V0.799H2.835z"/>
+</g>
+<g id="copper1">
+	<g id="copper0">
+		<circle id="connector19pin" fill="none" stroke="#F7BD13" cx="99.941" cy="3.723" r="1.908"/>
+		<circle id="connector20pin" fill="none" stroke="#F7BD13" cx="92.742" cy="3.723" r="1.908"/>
+		<circle id="connector21pin" fill="none" stroke="#F7BD13" cx="85.542" cy="3.723" r="1.908"/>
+		<circle id="connector22pin" fill="none" stroke="#F7BD13" cx="78.342" cy="3.723" r="1.908"/>
+		<circle id="connector23pin" fill="none" stroke="#F7BD13" cx="71.143" cy="3.723" r="1.908"/>
+		<circle id="connector24pin" fill="none" stroke="#F7BD13" cx="63.941" cy="3.723" r="1.908"/>
+		<circle id="connector25pin" fill="none" stroke="#F7BD13" cx="56.743" cy="3.723" r="1.908"/>
+		<circle id="connector26pin" fill="none" stroke="#F7BD13" cx="49.542" cy="3.723" r="1.908"/>
+		<circle id="connector27pin" fill="none" stroke="#F7BD13" cx="42.342" cy="3.723" r="1.908"/>
+		<circle id="connector28pin" fill="none" stroke="#F7BD13" cx="35.143" cy="3.723" r="1.908"/>
+		<circle id="connector29pin" fill="none" stroke="#F7BD13" cx="27.942" cy="3.723" r="1.908"/>
+		<circle id="connector30pin" fill="none" stroke="#F7BD13" cx="20.742" cy="3.723" r="1.908"/>
+		<circle id="connector31pin" fill="none" stroke="#F7BD13" cx="13.542" cy="3.723" r="1.908"/>
+		<circle id="connector32pin" fill="none" stroke="#F7BD13" cx="6.342" cy="3.723" r="1.908"/>
+		<circle id="connector36pin" fill="none" stroke="#F7BD13" cx="13.542" cy="11.949" r="1.908"/>
+		<circle id="connector33pin" fill="none" stroke="#F7BD13" cx="35.149" cy="11.949" r="1.908"/>
+		<circle id="connector35pin" fill="none" stroke="#F7BD13" cx="27.942" cy="11.949" r="1.908"/>
+		<circle id="connector13pin" fill="none" stroke="#F7BD13" cx="99.941" cy="46.922" r="1.908"/>
+		<circle id="connector12pin" fill="none" stroke="#F7BD13" cx="92.742" cy="46.922" r="1.908"/>
+		<circle id="connector11pin" fill="none" stroke="#F7BD13" cx="85.542" cy="46.922" r="1.908"/>
+		<circle id="connector10pin" fill="none" stroke="#F7BD13" cx="78.342" cy="46.922" r="1.908"/>
+		<circle id="connector9pin" fill="none" stroke="#F7BD13" cx="71.143" cy="46.922" r="1.908"/>
+		<circle id="connector8pin" fill="none" stroke="#F7BD13" cx="63.941" cy="46.922" r="1.908"/>
+		<circle id="connector7pin" fill="none" stroke="#F7BD13" cx="56.743" cy="46.922" r="1.908"/>
+		<circle id="connector6pin" fill="none" stroke="#F7BD13" cx="49.542" cy="46.922" r="1.908"/>
+		<circle id="connector5pin" fill="none" stroke="#F7BD13" cx="42.342" cy="46.922" r="1.908"/>
+		<circle id="connector4pin" fill="none" stroke="#F7BD13" cx="35.143" cy="46.922" r="1.908"/>
+		<circle id="connector3pin" fill="none" stroke="#F7BD13" cx="27.942" cy="46.922" r="1.908"/>
+		<circle id="connector2pin" fill="none" stroke="#F7BD13" cx="20.742" cy="46.922" r="1.908"/>
+		<circle id="connector1pin" fill="none" stroke="#F7BD13" cx="13.542" cy="46.922" r="1.908"/>
+		<circle id="connector0pin" fill="none" stroke="#F7BD13" cx="6.342" cy="46.922" r="1.908"/>
+		<circle id="connector34pin" fill="none" stroke="#F7BD13" cx="42.349" cy="11.95" r="1.908"/>
+		<circle id="connector15pin" fill="none" stroke="#F7BD13" cx="99.943" cy="32.523" r="1.908"/>
+		<circle id="connector14pin" fill="none" stroke="#F7BD13" cx="99.941" cy="39.723" r="1.908"/>
+		<circle id="connector16pin" fill="none" stroke="#F7BD13" cx="99.943" cy="25.323" r="1.908"/>
+		<circle id="connector18pin" fill="none" stroke="#F7BD13" cx="99.941" cy="10.923" r="1.908"/>
+		<circle id="connector17pin" fill="none" stroke="#F7BD13" cx="99.943" cy="18.122" r="1.908"/>
+	</g>
+</g>
+</svg>

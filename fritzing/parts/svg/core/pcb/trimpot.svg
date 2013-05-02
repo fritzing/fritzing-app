@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><svg baseProfile="tiny" height="0.424in" version="1.2" viewBox="0 0 498 424" width="0.498in" xmlns="http://www.w3.org/2000/svg">
+ <desc>Fritzing footprint SVG</desc>
+ <g id="silkscreen">
+  <line stroke="white" stroke-width="5" x1="299" x2="199" y1="162" y2="262"/>
+  <line stroke="white" stroke-width="12" x1="399" x2="449" y1="337" y2="262"/>
+  <line stroke="white" stroke-width="12" x1="349" x2="399" y1="387" y2="337"/>
+  <line stroke="white" stroke-width="12" x1="274" x2="349" y1="412" y2="387"/>
+  <line stroke="white" stroke-width="12" x1="224" x2="274" y1="412" y2="412"/>
+  <line stroke="white" stroke-width="12" x1="149" x2="224" y1="387" y2="412"/>
+  <line stroke="white" stroke-width="12" x1="124" x2="149" y1="362" y2="387"/>
+  <line stroke="white" stroke-width="12" x1="149" x2="224" y1="37" y2="12"/>
+  <line stroke="white" stroke-width="12" x1="124" x2="149" y1="62" y2="37"/>
+  <line stroke="white" stroke-width="12" x1="49" x2="49" y1="162" y2="262"/>
+  <line stroke="white" stroke-width="12" x1="224" x2="274" y1="12" y2="12"/>
+  <line stroke="white" stroke-width="12" x1="274" x2="349" y1="12" y2="37"/>
+  <line stroke="white" stroke-width="12" x1="349" x2="399" y1="37" y2="87"/>
+  <line stroke="white" stroke-width="12" x1="49" x2="124" y1="362" y2="362"/>
+  <line stroke="white" stroke-width="12" x1="49" x2="124" y1="62" y2="62"/>
+  <line stroke="white" stroke-width="12" x1="399" x2="449" y1="87" y2="162"/>
+ </g>
+ <g id="copper1"><g id="copper0">
+  <circle cx="49" cy="312" fill="none" id="connector2pad" r="35" stroke="rgb(255, 191, 0)" stroke-width="29"/>
+  <rect fill="none" height="70" stroke="rgb(255, 191, 0)" stroke-width="29" width="70" x="14" y="77"/>
+  <circle cx="49" cy="112" fill="none" id="connector0pad" r="35" stroke="rgb(255, 191, 0)" stroke-width="29"/>
+  <circle cx="449" cy="212" fill="none" id="connector1pad" r="35" stroke="rgb(255, 191, 0)" stroke-width="29"/>
+ </g></g>
+ <g id="keepout"/>
+ <g id="soldermask"/>
+ <g id="outline"/>
+</svg>

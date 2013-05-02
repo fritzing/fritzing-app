@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="svg2" xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="18.314px"
+	 height="43.422px" viewBox="0 0 18.314 43.422" enable-background="new 0 0 18.314 43.422" xml:space="preserve">
+<g>
+	<polyline fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="12.27,21.828 17.939,21.828 
+		17.939,32.227 4.601,38.141 	"/>
+	<g>
+		<polygon points="13.287,23.256 7.725,21.767 13.287,20.275 		"/>
+	</g>
+</g>
+<g id="schematic_2_">
+	<polyline fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="4.611,36.225 4.611,34.781 1.73,32.624 
+		8.21,29.021 1.73,25.422 8.21,21.823 1.73,18.223 8.21,14.623 1.73,11.023 4.611,8.863 4.611,7.423 	"/>
+	
+		<line id="connector0pin_2_" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" x1="4.611" y1="43.422" x2="4.611" y2="36.225"/>
+	<path id="connector0terminal_2_" fill="none" d="M4.611,43.422L4.611,43.422L4.611,43.422z"/>
+	<g transform="translate(0.9906,14.0462)">
+		<g transform="rotate(270)">
+			<text transform="matrix(1 0 0 1 -26.6159 2.1058)" fill="#787878" font-family="'DroidSans'" font-size="2">1</text>
+		</g>
+	</g>
+	
+		<line id="connector1pin_2_" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" x1="4.611" y1="0.223" x2="4.611" y2="7.423"/>
+	<path id="connector1terminal_2_" fill="none" d="M4.611,0.223L4.611,0.223L4.611,0.223z"/>
+	<g transform="translate(0.9906,1.3462)">
+		<g transform="rotate(270)">
+			<text transform="matrix(1 0 0 1 -3.3179 2.1058)" fill="#787878" font-family="'DroidSans'" font-size="2">2</text>
+		</g>
+	</g>
+</g>
+</svg>

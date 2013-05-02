@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- Created with Fritzing (http://www.fritzing.org/) -->
+<svg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' version='1.2' baseProfile='tiny' x='0in' y='0in' width='0.674in' height='0.235063in' viewBox='0 0 17.1196 5.9706' >
+<g id='breadboard'>
+<path fill='#1F7A34' stroke='none' stroke-width='0' d='M0,0l17.1196,0 0,5.9706 -17.1196,0 0,-5.9706z
+M0.3398,3.619a0.6,0.6 0 1 0 1.2,0 0.6,0.6 0 1 0 -1.2,0z
+M15.5798,3.619a0.6,0.6 0 1 0 1.2,0 0.6,0.6 0 1 0 -1.2,0z
+'/>
+<circle id='connector0pin' connectorname='P$1' cx='0.9398' cy='3.619' r='0.7699' stroke='#9A916C' stroke-width='0.3398' fill='none' />
+<circle id='connector1pin' connectorname='P$2' cx='16.1798' cy='3.619' r='0.7699' stroke='#9A916C' stroke-width='0.3398' fill='none' />
+<line class='other' x1='2.8098' y1='5.869' x2='2.8098' y2='1.369' stroke='#f8f8f8' stroke-width='0.2032' stroke-linecap='round'/>
+<line class='other' x1='2.8098' y1='1.369' x2='14.3098' y2='1.369' stroke='#f8f8f8' stroke-width='0.2032' stroke-linecap='round'/>
+<line class='other' x1='14.3098' y1='1.369' x2='14.3098' y2='5.869' stroke='#f8f8f8' stroke-width='0.2032' stroke-linecap='round'/>
+<line class='other' x1='14.3098' y1='5.869' x2='2.8098' y2='5.869' stroke='#f8f8f8' stroke-width='0.2032' stroke-linecap='round'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#f8f8f8' font-size='1.05664' x='4.4958' y='4' text-anchor='start'>&gt;Value</text>
+</g>
+</svg>

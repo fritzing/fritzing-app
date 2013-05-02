@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?> <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" x="0in" y="0in" width="0.46in" height="3.76in" viewBox="0 0 46000 376000" ><title>DIN41_612FEMALE abc.fp</title><desc>Geda footprint file 'DIN41_612FEMALE abc.fp' converted by Fritzing</desc><metadata xmlns:fz='http://fritzing.org/gedametadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'><rdf:RDF><rdf:Description rdf:about=''><fz:attr name='geda filename'>DIN41_612FEMALE abc.fp</fz:attr>
+<fz:attr name='fritzing version'>0.4.0b.06.21.4282</fz:attr>
+<fz:attr name='conversion date'>27/06/2010 07:15:19</fz:attr>
+<fz:comment>Reihe a</fz:comment>
+<fz:comment>Reihe b</fz:comment>
+<fz:comment>Reihe c</fz:comment>
+<fz:comment>Befestigungsbohrung</fz:comment>
+<fz:comment>Aeussere Begrenzung</fz:comment>
+<fz:comment>Innere Begrenzung</fz:comment>
+<fz:comment>Markierung: Pin 1a</fz:comment>
+<fz:attr name='dist-license'>GPL</fz:attr>
+<fz:attr name='use-license'>unlimited</fz:attr>
+<fz:attr name='author'>gEDA project</fz:attr>
+<fz:attr name='license-url'>http://www.gnu.org/licenses/gpl.html</fz:attr>
+</rdf:Description></rdf:RDF></metadata><g id="copper0">
+ <g id="copper1">
+  <circle fill="none" cx="13000" cy="33000" connectorname="a1" stroke="#ff9400" r="2250" id="nonconn0" stroke-width="1500"/>
+  <circle fill="none" cx="13000" cy="43000" connectorname="a2" stroke="#ff9400" r="2250" id="nonconn1" stroke-width="1500"/>
+  <circle fill="none" cx="13000" cy="53000" connectorname="a3" stroke="#ff9400" r="2250" id="nonconn2" stroke-width="1500"/>
+  <circle fill="none" cx="13000" cy="63000" connectorname="a4" stroke="#ff9400" r="2250" id="nonconn3" stroke-width="1500"/>
+  <circle fill="none" cx="13000" cy="73000" connectorname="a5" stroke="#ff9400" r="2250" id="nonconn4" stroke-width="1500"/>
+  <circle fill="none" cx="13000" cy="83000" connectorname="a6" stroke="#ff9400" r="2250" id="nonconn5" stroke-width="1500"/>
+  <circle fill="none" cx="13000" cy="93000" connectorname="a7" stroke="#ff9400" r="2250" id="nonconn6" stroke-width="1500"/>
+  <circle fill="none" cx="13000" cy="103000" connectorname="a8" stroke="#ff9400" r="2250" id="nonconn7" stroke-width="1500"/>
+  <circle fill="none" cx="13000" cy="113000" connectorname="a9" stroke="#ff9400" r="2250" id="nonconn8" stroke-width="1500"/>
+  <circle fill="none" cx="13000" cy="123000" connectorname="a10" stroke="#ff9400" r="2250" id="nonconn9" stroke-width="1500"/>
+  <circle fill="none" cx="13000" cy="133000" connectorname="a11" stroke="#ff9400" r="2250" id="nonconn10" stroke-width="1500"/>
+  <circle fill="none" cx="13000" cy="143000" connectorname="a12" stroke="#ff9400" r="2250" id="nonconn11" stroke-width="1500"/>
+  <circle fill="none" cx="13000" cy="153000" connectorname="a13" stroke="#ff9400" r="2250" id="nonconn12" stroke-width="1500"/>
+  <circle fill="none" cx="13000" cy="163000" connectorname="a14" stroke="#ff9400" r="2250" id="nonconn13" stroke-width="1500"/>
+  <circle fill="none" cx="13000" cy="173000" connectorname="a15" stroke="#ff9400" r="2250" id="nonconn14" stroke-width="1500"/>
+  <circle fill="none" cx="13000" cy="183000" connectorname="a16" stroke="#ff9400" r="2250" id="nonconn15" stroke-width="1500"/>
+  <circle fill="none" cx="13000" cy="193000" connectorname="a17" stroke="#ff9400" r="2250" id="nonconn16" stroke-width="1500"/>
+  <circle fill="none" cx="13000" cy="203000" connectorname="a18" stroke="#ff9400" r="2250" id="nonconn17" stroke-width="1500"/>
+  <circle fill="none" cx="13000" cy="213000" connectorname="a19" stroke="#ff9400" r="2250" id="nonconn18" stroke-width="1500"/>
+  <circle fill="none" cx="13000" cy="223000" connectorname="a20" stroke="#ff9400" r="2250" id="nonconn19" stroke-width="1500"/>
+  <circle fill="none" cx="13000" cy="233000" connectorname="a21" stroke="#ff9400" r="2250" id="nonconn20" stroke-width="1500"/>
+  <circle fill="none" cx="13000" cy="243000" connectorname="a22" stroke="#ff9400" r="2250" id="nonconn21" stroke-width="1500"/>
+  <circle fill="none" cx="13000" cy="253000" connectorname="a23" stroke="#ff9400" r="2250" id="nonconn22" stroke-width="1500"/>
+  <circle fill="none" cx="13000" cy="263000" connectorname="a24" stroke="#ff9400" r="2250" id="nonconn23" stroke-width="1500"/>
+  <circle fill="none" cx="13000" cy="273000" connectorname="a25" stroke="#ff9400" r="2250" id="nonconn24" stroke-width="1500"/>
+  <circle fill="none" cx="13000" cy="283000" connectorname="a26" stroke="#ff9400" r="2250" id="nonconn25" stroke-width="1500"/>
+  <circle fill="none" cx="13000" cy="293000" connectorname="a27" stroke="#ff9400" r="2250" id="nonconn26" stroke-width="1500"/>
+  <circle fill="none" cx="13000" cy="303000" connectorname="a28" stroke="#ff9400" r="2250" id="nonconn27" stroke-width="1500"/>
+  <circle fill="none" cx="13000" cy="313000" connectorname="a29" stroke="#ff9400" r="2250" id="nonconn28" stroke-width="1500"/>
+  <circle fill="none" cx="13000" cy="323000" connectorname="a30" stroke="#ff9400" r="2250" id="nonconn29" stroke-width="1500"/>
+  <circle fill="none" cx="13000" cy="333000" connectorname="a31" stroke="#ff9400" r="2250" id="nonconn30" stroke-width="1500"/>
+  <circle fill="none" cx="13000" cy="343000" connectorname="a32" stroke="#ff9400" r="2250" id="nonconn31" stroke-width="1500"/>
+  <circle fill="none" cx="23000" cy="33000" connectorname="b1" stroke="#ff9400" r="2250" id="nonconn32" stroke-width="1500"/>
+  <circle fill="none" cx="23000" cy="43000" connectorname="b2" stroke="#ff9400" r="2250" id="nonconn33" stroke-width="1500"/>
+  <circle fill="none" cx="23000" cy="53000" connectorname="b3" stroke="#ff9400" r="2250" id="nonconn34" stroke-width="1500"/>
+  <circle fill="none" cx="23000" cy="63000" connectorname="b4" stroke="#ff9400" r="2250" id="nonconn35" stroke-width="1500"/>
+  <circle fill="none" cx="23000" cy="73000" connectorname="b5" stroke="#ff9400" r="2250" id="nonconn36" stroke-width="1500"/>
+  <circle fill="none" cx="23000" cy="83000" connectorname="b6" stroke="#ff9400" r="2250" id="nonconn37" stroke-width="1500"/>
+  <circle fill="none" cx="23000" cy="93000" connectorname="b7" stroke="#ff9400" r="2250" id="nonconn38" stroke-width="1500"/>
+  <circle fill="none" cx="23000" cy="103000" connectorname="b8" stroke="#ff9400" r="2250" id="nonconn39" stroke-width="1500"/>
+  <circle fill="none" cx="23000" cy="113000" connectorname="b9" stroke="#ff9400" r="2250" id="nonconn40" stroke-width="1500"/>
+  <circle fill="none" cx="23000" cy="123000" connectorname="b10" stroke="#ff9400" r="2250" id="nonconn41" stroke-width="1500"/>
+  <circle fill="none" cx="23000" cy="133000" connectorname="b11" stroke="#ff9400" r="2250" id="nonconn42" stroke-width="1500"/>
+  <circle fill="none" cx="23000" cy="143000" connectorname="b12" stroke="#ff9400" r="2250" id="nonconn43" stroke-width="1500"/>
+  <circle fill="none" cx="23000" cy="153000" connectorname="b13" stroke="#ff9400" r="2250" id="nonconn44" stroke-width="1500"/>
+  <circle fill="none" cx="23000" cy="163000" connectorname="b14" stroke="#ff9400" r="2250" id="nonconn45" stroke-width="1500"/>
+  <circle fill="none" cx="23000" cy="173000" connectorname="b15" stroke="#ff9400" r="2250" id="nonconn46" stroke-width="1500"/>
+  <circle fill="none" cx="23000" cy="183000" connectorname="b16" stroke="#ff9400" r="2250" id="nonconn47" stroke-width="1500"/>
+  <circle fill="none" cx="23000" cy="193000" connectorname="b17" stroke="#ff9400" r="2250" id="nonconn48" stroke-width="1500"/>
+  <circle fill="none" cx="23000" cy="203000" connectorname="b18" stroke="#ff9400" r="2250" id="nonconn49" stroke-width="1500"/>
+  <circle fill="none" cx="23000" cy="213000" connectorname="b19" stroke="#ff9400" r="2250" id="nonconn50" stroke-width="1500"/>
+  <circle fill="none" cx="23000" cy="223000" connectorname="b20" stroke="#ff9400" r="2250" id="nonconn51" stroke-width="1500"/>
+  <circle fill="none" cx="23000" cy="233000" connectorname="b21" stroke="#ff9400" r="2250" id="nonconn52" stroke-width="1500"/>
+  <circle fill="none" cx="23000" cy="243000" connectorname="b22" stroke="#ff9400" r="2250" id="nonconn53" stroke-width="1500"/>
+  <circle fill="none" cx="23000" cy="253000" connectorname="b23" stroke="#ff9400" r="2250" id="nonconn54" stroke-width="1500"/>
+  <circle fill="none" cx="23000" cy="263000" connectorname="b24" stroke="#ff9400" r="2250" id="nonconn55" stroke-width="1500"/>
+  <circle fill="none" cx="23000" cy="273000" connectorname="b25" stroke="#ff9400" r="2250" id="nonconn56" stroke-width="1500"/>
+  <circle fill="none" cx="23000" cy="283000" connectorname="b26" stroke="#ff9400" r="2250" id="nonconn57" stroke-width="1500"/>
+  <circle fill="none" cx="23000" cy="293000" connectorname="b27" stroke="#ff9400" r="2250" id="nonconn58" stroke-width="1500"/>
+  <circle fill="none" cx="23000" cy="303000" connectorname="b28" stroke="#ff9400" r="2250" id="nonconn59" stroke-width="1500"/>
+  <circle fill="none" cx="23000" cy="313000" connectorname="b29" stroke="#ff9400" r="2250" id="nonconn60" stroke-width="1500"/>
+  <circle fill="none" cx="23000" cy="323000" connectorname="b30" stroke="#ff9400" r="2250" id="nonconn61" stroke-width="1500"/>
+  <circle fill="none" cx="23000" cy="333000" connectorname="b31" stroke="#ff9400" r="2250" id="nonconn62" stroke-width="1500"/>
+  <circle fill="none" cx="23000" cy="343000" connectorname="b32" stroke="#ff9400" r="2250" id="nonconn63" stroke-width="1500"/>
+  <circle fill="none" cx="33000" cy="33000" connectorname="c1" stroke="#ff9400" r="2250" id="nonconn64" stroke-width="1500"/>
+  <circle fill="none" cx="33000" cy="43000" connectorname="c2" stroke="#ff9400" r="2250" id="nonconn65" stroke-width="1500"/>
+  <circle fill="none" cx="33000" cy="53000" connectorname="c3" stroke="#ff9400" r="2250" id="nonconn66" stroke-width="1500"/>
+  <circle fill="none" cx="33000" cy="63000" connectorname="c4" stroke="#ff9400" r="2250" id="nonconn67" stroke-width="1500"/>
+  <circle fill="none" cx="33000" cy="73000" connectorname="c5" stroke="#ff9400" r="2250" id="nonconn68" stroke-width="1500"/>
+  <circle fill="none" cx="33000" cy="83000" connectorname="c6" stroke="#ff9400" r="2250" id="nonconn69" stroke-width="1500"/>
+  <circle fill="none" cx="33000" cy="93000" connectorname="c7" stroke="#ff9400" r="2250" id="nonconn70" stroke-width="1500"/>
+  <circle fill="none" cx="33000" cy="103000" connectorname="c8" stroke="#ff9400" r="2250" id="nonconn71" stroke-width="1500"/>
+  <circle fill="none" cx="33000" cy="113000" connectorname="c9" stroke="#ff9400" r="2250" id="nonconn72" stroke-width="1500"/>
+  <circle fill="none" cx="33000" cy="123000" connectorname="c10" stroke="#ff9400" r="2250" id="nonconn73" stroke-width="1500"/>
+  <circle fill="none" cx="33000" cy="133000" connectorname="c11" stroke="#ff9400" r="2250" id="nonconn74" stroke-width="1500"/>
+  <circle fill="none" cx="33000" cy="143000" connectorname="c12" stroke="#ff9400" r="2250" id="nonconn75" stroke-width="1500"/>
+  <circle fill="none" cx="33000" cy="153000" connectorname="c13" stroke="#ff9400" r="2250" id="nonconn76" stroke-width="1500"/>
+  <circle fill="none" cx="33000" cy="163000" connectorname="c14" stroke="#ff9400" r="2250" id="nonconn77" stroke-width="1500"/>
+  <circle fill="none" cx="33000" cy="173000" connectorname="c15" stroke="#ff9400" r="2250" id="nonconn78" stroke-width="1500"/>
+  <circle fill="none" cx="33000" cy="183000" connectorname="c16" stroke="#ff9400" r="2250" id="nonconn79" stroke-width="1500"/>
+  <circle fill="none" cx="33000" cy="193000" connectorname="c17" stroke="#ff9400" r="2250" id="nonconn80" stroke-width="1500"/>
+  <circle fill="none" cx="33000" cy="203000" connectorname="c18" stroke="#ff9400" r="2250" id="nonconn81" stroke-width="1500"/>
+  <circle fill="none" cx="33000" cy="213000" connectorname="c19" stroke="#ff9400" r="2250" id="nonconn82" stroke-width="1500"/>
+  <circle fill="none" cx="33000" cy="223000" connectorname="c20" stroke="#ff9400" r="2250" id="nonconn83" stroke-width="1500"/>
+  <circle fill="none" cx="33000" cy="233000" connectorname="c21" stroke="#ff9400" r="2250" id="nonconn84" stroke-width="1500"/>
+  <circle fill="none" cx="33000" cy="243000" connectorname="c22" stroke="#ff9400" r="2250" id="nonconn85" stroke-width="1500"/>
+  <circle fill="none" cx="33000" cy="253000" connectorname="c23" stroke="#ff9400" r="2250" id="nonconn86" stroke-width="1500"/>
+  <circle fill="none" cx="33000" cy="263000" connectorname="c24" stroke="#ff9400" r="2250" id="nonconn87" stroke-width="1500"/>
+  <circle fill="none" cx="33000" cy="273000" connectorname="c25" stroke="#ff9400" r="2250" id="nonconn88" stroke-width="1500"/>
+  <circle fill="none" cx="33000" cy="283000" connectorname="c26" stroke="#ff9400" r="2250" id="nonconn89" stroke-width="1500"/>
+  <circle fill="none" cx="33000" cy="293000" connectorname="c27" stroke="#ff9400" r="2250" id="nonconn90" stroke-width="1500"/>
+  <circle fill="none" cx="33000" cy="303000" connectorname="c28" stroke="#ff9400" r="2250" id="nonconn91" stroke-width="1500"/>
+  <circle fill="none" cx="33000" cy="313000" connectorname="c29" stroke="#ff9400" r="2250" id="nonconn92" stroke-width="1500"/>
+  <circle fill="none" cx="33000" cy="323000" connectorname="c30" stroke="#ff9400" r="2250" id="nonconn93" stroke-width="1500"/>
+  <circle fill="none" cx="33000" cy="333000" connectorname="c31" stroke="#ff9400" r="2250" id="nonconn94" stroke-width="1500"/>
+  <circle fill="none" cx="33000" cy="343000" connectorname="c32" stroke="#ff9400" r="2250" id="nonconn95" stroke-width="1500"/>
+  <circle fill="none" cx="22000" cy="11000" connectorname="M1" stroke="#ff9400" r="5000" id="nonconn96" stroke-width="2000"/>
+  <circle fill="none" cx="22000" cy="365000" connectorname="M2" stroke="#ff9400" r="5000" id="nonconn97" stroke-width="2000"/>
+ </g>
+</g>
+<g id="silkscreen">
+ <line fill="none" stroke="white" y1="1000" x1="1000" y2="1000" stroke-width="2000" x2="45000"/>
+ <line fill="none" stroke="white" y1="1000" x1="45000" y2="375000" stroke-width="2000" x2="45000"/>
+ <line fill="none" stroke="white" y1="375000" x1="45000" y2="375000" stroke-width="2000" x2="1000"/>
+ <line fill="none" stroke="white" y1="375000" x1="1000" y2="1000" stroke-width="2000" x2="1000"/>
+ <line fill="none" stroke="white" y1="25000" x1="5000" y2="25000" stroke-width="1000" x2="28000"/>
+ <line fill="none" stroke="white" y1="25000" x1="28000" y2="29000" stroke-width="1000" x2="28000"/>
+ <line fill="none" stroke="white" y1="29000" x1="28000" y2="29000" stroke-width="1000" x2="41000"/>
+ <line fill="none" stroke="white" y1="29000" x1="41000" y2="347000" stroke-width="1000" x2="41000"/>
+ <line fill="none" stroke="white" y1="347000" x1="41000" y2="347000" stroke-width="1000" x2="28000"/>
+ <line fill="none" stroke="white" y1="347000" x1="28000" y2="351000" stroke-width="1000" x2="28000"/>
+ <line fill="none" stroke="white" y1="351000" x1="28000" y2="351000" stroke-width="1000" x2="5000"/>
+ <line fill="none" stroke="white" y1="351000" x1="5000" y2="25000" stroke-width="1000" x2="5000"/>
+</g>
+</svg>

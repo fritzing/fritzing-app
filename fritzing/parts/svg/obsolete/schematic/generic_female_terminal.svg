@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1 Basic//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-basic.dtd">
+<svg version="1.1" baseProfile="basic" id="svg2" xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="0.87in"
+	 height="0.27in" viewBox="0 0 62.641 19.439" xml:space="preserve">
+<line id="connector0pin" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="0.998" y1="9.722" x2="17.846" y2="9.722"/>
+<rect id="connector0terminal" x="0" y="8.724" width="0.998" height="1.997"/>
+<g id="schematic">
+	<polyline fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="61.641,16.406 
+		46.597,9.722 61.641,3.034 	"/>
+	
+	<line id="line" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="47.219" y1="9.722" x2="16.452" y2="9.722"/>
+</g>
+</svg>

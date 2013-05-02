@@ -1,0 +1,13 @@
+Source: fritzing
+Section: electronics
+Priority: optional
+Maintainer: Brendan Howell <brendan@howell-ersatz.com>
+Build-Depends: libqt4-assistant, libqt4-dbus, libqt4-help, libqt4-network, libqt4-opengl, libqt4-script, libqt4-scripttools, libqt4-sql, libqt4-svg, libqt4-webkit, libqt4-xmlpatterns, libqt4-xml, libqtcore4, libqtgui4, libstdc++6, libc6
+Standards-Version: 3.8.3
+Homepage: http://fritzing.org
+
+Package: fritzing
+Architecture: any
+Depends: libqt4-dbus, libqt4-help, libqt4-network, libqt4-opengl, libqt4-sql, libqt4-svg, libqt4-webkit, libqt4-xmlpatterns, libqt4-xml, libqtcore4, libqtgui4
+Description: Easy-to-use, electronic design software.
+Fritzing is an open source project designed to help one transition from a prototype to a finished project. Aimed at users who want to produce or document circuits and experiments, one starts by building a physical prototype, then recreating it with Fritzing’s graphical editor. From there one can generate a schematic, PCB artwork, and PCB production files.

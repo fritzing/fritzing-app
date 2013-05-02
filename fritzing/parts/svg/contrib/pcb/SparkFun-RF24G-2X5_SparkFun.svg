@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" x="0in" y="0in" width="0.132in" height="0.277in" viewBox="0 0 1320 2770" >
+<title>SparkFun.mod</title>
+<desc>Kicad module 'SparkFun-RF24G-2X5' from file 'SparkFun.mod' converted by Fritzing</desc>
+<metadata xmlns:fz='http://fritzing.org/kicadmetadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+<rdf:RDF><rdf:Description rdf:about=''>
+<fz:attr name='kicad filename'>SparkFun.mod</fz:attr>
+<fz:attr name='kicad module'>SparkFun-RF24G-2X5</fz:attr>
+<fz:attr name='fritzing version'>0.4.1b.07.04.4318</fz:attr>
+<fz:attr name='conversion date'>17/07/2010 17:17:09</fz:attr>
+<fz:attr name='dist-license'>GPL</fz:attr>
+<fz:attr name='use-license'>unlimited</fz:attr>
+<fz:attr name='author'>KICAD project</fz:attr>
+<fz:attr name='license-url'>http://www.gnu.org/licenses/gpl.html</fz:attr>
+<fz:comment>TEST</fz:comment>
+<fz:attr name='keyword'>TEST</fz:attr>
+</rdf:Description></rdf:RDF></metadata><g id="copper0">
+ <g id="copper1">
+  <g connectorname="1" id="connector0pin">
+   <circle fill="none" cx="412" cy="2368" stroke="#ff9400" r="154" stroke-width="72"/>
+   <line fill="none" stroke="#ff9400" y1="2214" x1="222" y2="2214" stroke-width="72" x2="602"/>
+   <line fill="none" stroke="#ff9400" y1="2522" x1="222" y2="2522" stroke-width="72" x2="602"/>
+   <line fill="none" stroke="#ff9400" y1="2178" x1="258" y2="2558" stroke-width="72" x2="258"/>
+   <line fill="none" stroke="#ff9400" y1="2178" x1="566" y2="2558" stroke-width="72" x2="566"/>
+  </g>
+  <g connectorname="2" id="connector1pin">
+   <circle fill="none" cx="412" cy="1876" stroke="#ff9400" r="154" stroke-width="72"/>
+  </g>
+  <g connectorname="3" id="connector2pin">
+   <circle fill="none" cx="412" cy="1384" stroke="#ff9400" r="154" stroke-width="72"/>
+  </g>
+  <g connectorname="4" id="connector3pin">
+   <circle fill="none" cx="412" cy="892" stroke="#ff9400" r="154" stroke-width="72"/>
+  </g>
+  <g connectorname="5" id="connector4pin">
+   <circle fill="none" cx="412" cy="400" stroke="#ff9400" r="154" stroke-width="72"/>
+  </g>
+  <g connectorname="6" id="connector5pin">
+   <circle fill="none" cx="904" cy="400" stroke="#ff9400" r="154" stroke-width="72"/>
+  </g>
+  <g connectorname="7" id="connector6pin">
+   <circle fill="none" cx="904" cy="892" stroke="#ff9400" r="154" stroke-width="72"/>
+  </g>
+  <g connectorname="8" id="connector7pin">
+   <circle fill="none" cx="904" cy="1384" stroke="#ff9400" r="154" stroke-width="72"/>
+  </g>
+  <g connectorname="9" id="connector8pin">
+   <circle fill="none" cx="904" cy="1876" stroke="#ff9400" r="154" stroke-width="72"/>
+  </g>
+  <g connectorname="10" id="connector9pin">
+   <circle fill="none" cx="904" cy="2368" stroke="#ff9400" r="154" stroke-width="72"/>
+  </g>
+ </g>
+</g>
+<g id="silkscreen">
+ <line fill="none" stroke="white" y1="2770" x1="0" y2="2770" stroke-width="50" x2="1320"/>
+ <line fill="none" stroke="white" y1="2770" x1="1320" y2="0" stroke-width="50" x2="1320"/>
+ <line fill="none" stroke="white" y1="0" x1="1320" y2="0" stroke-width="50" x2="0"/>
+ <line fill="none" stroke="white" y1="0" x1="0" y2="2770" stroke-width="50" x2="0"/>
+</g>
+</svg>

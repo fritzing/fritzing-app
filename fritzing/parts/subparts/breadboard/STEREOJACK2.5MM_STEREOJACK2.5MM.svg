@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="29.153px" height="14.457px" viewBox="1.688 0 29.153 14.457" enable-background="new 1.688 0 29.153 14.457"
+	 xml:space="preserve">
+<g id="breadboard_1_">
+	<polygon fill="#333333" points="1.688,0 1.688,14.457 27.375,14.457 27.375,0 	"/>
+	<g>
+		<polygon fill="#2B2B2B" points="26.976,3.095 26.976,3.095 26.976,11.368 26.976,11.368 26.976,13.268 28.976,13.268 
+			28.976,1.194 26.976,1.194 		"/>
+		<polygon fill="#292929" points="26.976,11.096 26.976,11.368 26.976,11.368 26.976,12.837 28.976,12.837 28.976,11.096 		"/>
+		<polygon fill="#292929" points="26.976,3.667 26.976,3.06 26.976,3.06 26.976,1.591 28.976,1.591 28.976,3.667 		"/>
+		<rect x="26.976" y="5.06" fill="#333333" width="1.98" height="3.209"/>
+		<rect x="26.976" y="5.985" fill="#383838" width="1.98" height="1.761"/>
+		<rect x="26.976" y="12.835" fill="#212121" width="2" height="0.433"/>
+		<rect x="26.976" y="1.196" fill="#212121" width="2" height="0.396"/>
+		<rect x="28.96" y="1.196" fill="#A1A1A1" width="1.882" height="12.07"/>
+		<rect x="28.96" y="3.666" fill="#ABABAB" width="1.882" height="7.43"/>
+		<rect x="28.96" y="5.06" fill="#C7C7C7" width="1.882" height="3.209"/>
+		<rect x="28.96" y="5.985" fill="#E6E6E6" width="1.882" height="1.761"/>
+		<rect x="28.96" y="1.196" fill="#737373" width="1.882" height="0.396"/>
+		<rect x="28.96" y="12.854" fill="#737373" width="1.882" height="0.396"/>
+	</g>
+</g>
+</svg>

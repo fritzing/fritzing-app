@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- Created with Fritzing (http://www.fritzing.org/) -->
+<svg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' version='1.2' baseProfile='tiny' x='0in' y='0in' width='0.395732in' height='0.417323in' viewBox='0 0 10.0516 10.6' >
+<g id='copper1'>
+<circle id='connector1pad' connectorname='SHELL' cx='4.15' cy='5.3' r='1.277' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle id='connector0pad' connectorname='PIN' cx='7.85' cy='1.6' r='1.277' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle id='connector2pad' connectorname='SWITCH' cx='7.85' cy='9' r='1.277' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle cx='1.05' cy='1.05' r='1.05' stroke='black' stroke-width='0' fill='black' id='nonconn0' />
+<circle cx='1.05' cy='9.55' r='1.05' stroke='black' stroke-width='0' fill='black' id='nonconn1' />
+<g id='copper0'>
+<circle id='connector1pad' connectorname='SHELL' cx='4.15' cy='5.3' r='1.277' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle id='connector0pad' connectorname='PIN' cx='7.85' cy='1.6' r='1.277' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle id='connector2pad' connectorname='SWITCH' cx='7.85' cy='9' r='1.277' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle cx='1.05' cy='1.05' r='1.05' stroke='black' stroke-width='0' fill='black' id='nonconn2' />
+<circle cx='1.05' cy='9.55' r='1.05' stroke='black' stroke-width='0' fill='black' id='nonconn3' />
+</g>
+</g>
+<g id='silkscreen'>
+<line class='other' x1='2.15' y1='0.3' x2='6.15' y2='0.3' stroke='#f0f0f0' stroke-width='0.2032' stroke-linecap='round'/>
+<line class='other' x1='9.95' y1='0.3' x2='9.95' y2='10.3' stroke='#f0f0f0' stroke-width='0.2032' stroke-linecap='round'/>
+<line class='other' x1='2.15' y1='10.3' x2='6.15' y2='10.3' stroke='#f0f0f0' stroke-width='0.2032' stroke-linecap='round'/>
+<line class='other' x1='0.15' y1='2.3' x2='0.15' y2='8.3' stroke='#f0f0f0' stroke-width='0.2032' stroke-linecap='round'/>
+</g>
+</svg>

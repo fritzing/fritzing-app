@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?> <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" x="0in" y="0in" width="0.48532in" height="0.44306in" viewBox="0 0 48532 44306" ><title>BNX00__Murata.fp</title><desc>Geda footprint file 'BNX00__Murata.fp' converted by Fritzing</desc><metadata xmlns:fz='http://fritzing.org/gedametadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'><rdf:RDF><rdf:Description rdf:about=''><fz:attr name='geda filename'>BNX00__Murata.fp</fz:attr>
+<fz:attr name='fritzing version'>0.4.0b.06.21.4282</fz:attr>
+<fz:attr name='conversion date'>27/06/2010 07:14:35</fz:attr>
+<fz:attr name='description'>BNX00 EMI filter</fz:attr>
+<fz:attr name='author'>Stefan Salewski</fz:attr>
+<fz:attr name='copyright'>2008 S. Salewski</fz:attr>
+<fz:attr name='use-license'>unlimited</fz:attr>
+<fz:attr name='dist-license'>GPL</fz:attr>
+<fz:attr name='documentation'>http://www.murata.com</fz:attr>
+</rdf:Description></rdf:RDF></metadata><g id="copper0">
+ <g id="copper1">
+  <circle fill="none" cx="14279" cy="31996" connectorname="1" stroke="#ff9400" r="3543" id="connector0pin" stroke-width="2362"/>
+  <circle fill="none" cx="33965" cy="31996" connectorname="2" stroke="#ff9400" r="2755.75" id="connector1pin" stroke-width="787.5"/>
+  <circle fill="none" cx="33965" cy="12310" connectorname="3" stroke="#ff9400" r="2755.75" id="connector2pin" stroke-width="787.5"/>
+  <circle fill="none" cx="14279" cy="12310" connectorname="4" stroke="#ff9400" r="2755.75" id="connector3pin" stroke-width="787.5"/>
+  <circle fill="none" cx="24122" cy="22153" connectorname="5" stroke="#ff9400" r="3543" id="connector4pin" stroke-width="2362"/>
+  <circle fill="none" cx="43808" cy="22153" connectorname="6" stroke="#ff9400" r="3543" id="connector5pin" stroke-width="2362"/>
+ </g>
+</g>
+<g id="silkscreen">
+ <line fill="none" stroke="white" y1="500" x1="500" y2="500" stroke-width="1000" x2="47744"/>
+ <line fill="none" stroke="white" y1="43806" x1="500" y2="43806" stroke-width="1000" x2="47744"/>
+ <line fill="none" stroke="white" y1="500" x1="500" y2="9161" stroke-width="1000" x2="500"/>
+ <line fill="none" stroke="white" y1="43806" x1="500" y2="35145" stroke-width="1000" x2="500"/>
+ <line fill="none" stroke="white" y1="500" x1="47744" y2="9161" stroke-width="1000" x2="47744"/>
+ <line fill="none" stroke="white" y1="43806" x1="47744" y2="35145" stroke-width="1000" x2="47744"/>
+</g>
+</svg>

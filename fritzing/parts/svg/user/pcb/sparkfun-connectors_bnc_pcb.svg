@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- Created with Fritzing (http://www.fritzing.org/) -->
+<svg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' version='1.2' baseProfile='tiny' x='0in' y='0in' width='0.595in' height='0.55in' viewBox='0 0 15.113 13.97' >
+<g id='copper1'>
+<circle id='connector2pad' connectorname='GND' cx='5.0165' cy='10.9347' r='0.527' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<path stroke='none' stroke-width='0' d='m5.0165,9.6267a0.654,0.654 0 0 1 0.654,0.654l0,1.308a0.654,0.654 0 0 1 -0.654,0.654l-0,0a0.654,0.654 0 0 1 -0.654,-0.654l0,-1.308a0.654,0.654 0 0 1 0.654,-0.654l0,0zM4.6165,10.9347a0.4,0.4 0 1 0 0.8,0 0.4,0.4 0 1 0 -0.8,0z
+' fill='#F7BD13' />
+<circle id='connector3pad' connectorname='S' cx='7.5565' cy='10.9347' r='0.527' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<path stroke='none' stroke-width='0' d='m7.5565,9.6267a0.654,0.654 0 0 1 0.654,0.654l0,1.308a0.654,0.654 0 0 1 -0.654,0.654l-0,0a0.654,0.654 0 0 1 -0.654,-0.654l0,-1.308a0.654,0.654 0 0 1 0.654,-0.654l0,0zM7.1565,10.9347a0.4,0.4 0 1 0 0.8,0 0.4,0.4 0 1 0 -0.8,0z
+' fill='#F7BD13' />
+<circle id='connector0pad' connectorname='3' cx='2.4765' cy='5.8547' r='1.227' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle id='connector1pad' connectorname='4' cx='12.6365' cy='5.8547' r='1.227' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<g id='copper0'>
+<circle id='connector2pad' connectorname='GND' cx='5.0165' cy='10.9347' r='0.527' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<path stroke='none' stroke-width='0' d='m5.0165,9.6267a0.654,0.654 0 0 1 0.654,0.654l0,1.308a0.654,0.654 0 0 1 -0.654,0.654l-0,0a0.654,0.654 0 0 1 -0.654,-0.654l0,-1.308a0.654,0.654 0 0 1 0.654,-0.654l0,0zM4.6165,10.9347a0.4,0.4 0 1 0 0.8,0 0.4,0.4 0 1 0 -0.8,0z
+' fill='#F7BD13' />
+<circle id='connector3pad' connectorname='S' cx='7.5565' cy='10.9347' r='0.527' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<path stroke='none' stroke-width='0' d='m7.5565,9.6267a0.654,0.654 0 0 1 0.654,0.654l0,1.308a0.654,0.654 0 0 1 -0.654,0.654l-0,0a0.654,0.654 0 0 1 -0.654,-0.654l0,-1.308a0.654,0.654 0 0 1 0.654,-0.654l0,0zM7.1565,10.9347a0.4,0.4 0 1 0 0.8,0 0.4,0.4 0 1 0 -0.8,0z
+' fill='#F7BD13' />
+<circle id='connector0pad' connectorname='3' cx='2.4765' cy='5.8547' r='1.227' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle id='connector1pad' connectorname='4' cx='12.6365' cy='5.8547' r='1.227' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+</g>
+</g>
+<g id='silkscreen'>
+<line class='other' x1='0.0635' y1='13.9065' x2='15.0495' y2='13.9065' stroke='#f0f0f0' stroke-width='0.127' stroke-linecap='round'/>
+<line class='other' x1='15.0495' y1='13.9065' x2='15.0495' y2='0.0635' stroke='#f0f0f0' stroke-width='0.127' stroke-linecap='round'/>
+<line class='other' x1='15.0495' y1='0.0635' x2='0.0635' y2='0.0635' stroke='#f0f0f0' stroke-width='0.127' stroke-linecap='round'/>
+<line class='other' x1='0.0635' y1='0.0635' x2='0.0635' y2='13.9065' stroke='#f0f0f0' stroke-width='0.127' stroke-linecap='round'/>
+</g>
+</svg>

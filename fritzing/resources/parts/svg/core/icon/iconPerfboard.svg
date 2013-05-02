@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="0.6in"
+   height="0.6in"
+   viewBox="0 0 600 600"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.1 "
+   sodipodi:docname="iconPerfboard.svg">
+  <metadata
+     id="metadata61">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs59" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="779"
+     inkscape:window-height="480"
+     id="namedview57"
+     showgrid="false"
+     showguides="true"
+     inkscape:zoom="3.1366335"
+     inkscape:cx="53.370683"
+     inkscape:cy="20.826336"
+     inkscape:window-x="204"
+     inkscape:window-y="221"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg2">
+    <inkscape:grid
+       type="xygrid"
+       id="grid3806" />
+  </sodipodi:namedview>
+  <path
+     id="boardoutline"
+     stroke-width="0"
+     stroke="none"
+     fill="#deb675"
+     fill-opacity="1"
+     d="M0,0L600,0 600,600 0,600z M82.5,100a17.5,17.5 0 1 0 35,0 17.5,17.5 0 1 0 -35,0z M182.5,100a17.5,17.5 0 1 0 35,0 17.5,17.5 0 1 0 -35,0z M282.5,100a17.5,17.5 0 1 0 35,0 17.5,17.5 0 1 0 -35,0z M382.5,100a17.5,17.5 0 1 0 35,0 17.5,17.5 0 1 0 -35,0z M482.5,100a17.5,17.5 0 1 0 35,0 17.5,17.5 0 1 0 -35,0z M82.5,200a17.5,17.5 0 1 0 35,0 17.5,17.5 0 1 0 -35,0z M182.5,200a17.5,17.5 0 1 0 35,0 17.5,17.5 0 1 0 -35,0z M282.5,200a17.5,17.5 0 1 0 35,0 17.5,17.5 0 1 0 -35,0z M382.5,200a17.5,17.5 0 1 0 35,0 17.5,17.5 0 1 0 -35,0z M482.5,200a17.5,17.5 0 1 0 35,0 17.5,17.5 0 1 0 -35,0z M82.5,300a17.5,17.5 0 1 0 35,0 17.5,17.5 0 1 0 -35,0z M182.5,300a17.5,17.5 0 1 0 35,0 17.5,17.5 0 1 0 -35,0z M282.5,300a17.5,17.5 0 1 0 35,0 17.5,17.5 0 1 0 -35,0z M382.5,300a17.5,17.5 0 1 0 35,0 17.5,17.5 0 1 0 -35,0z M482.5,300a17.5,17.5 0 1 0 35,0 17.5,17.5 0 1 0 -35,0z M82.5,400a17.5,17.5 0 1 0 35,0 17.5,17.5 0 1 0 -35,0z M182.5,400a17.5,17.5 0 1 0 35,0 17.5,17.5 0 1 0 -35,0z M282.5,400a17.5,17.5 0 1 0 35,0 17.5,17.5 0 1 0 -35,0z M382.5,400a17.5,17.5 0 1 0 35,0 17.5,17.5 0 1 0 -35,0z M482.5,400a17.5,17.5 0 1 0 35,0 17.5,17.5 0 1 0 -35,0z M82.5,500a17.5,17.5 0 1 0 35,0 17.5,17.5 0 1 0 -35,0z M182.5,500a17.5,17.5 0 1 0 35,0 17.5,17.5 0 1 0 -35,0z M282.5,500a17.5,17.5 0 1 0 35,0 17.5,17.5 0 1 0 -35,0z M382.5,500a17.5,17.5 0 1 0 35,0 17.5,17.5 0 1 0 -35,0z M482.5,500a17.5,17.5 0 1 0 35,0 17.5,17.5 0 1 0 -35,0z " />
+  <path
+     stroke-width="8"
+     stroke="#deb675"
+     fill="none"
+     stroke-opacity="1"
+     d="M4,4L592,4 592,592 4,592z"
+     id="path5" />
+  <circle
+     fill="none"
+     cx="100"
+     cy="100"
+     connectorname="0.0"
+     stroke="#c49c59"
+     r="27.5"
+     stroke-width="20"
+     id="circle7"
+     style="stroke:#a57e3b;stroke-opacity:1" />
+  <circle
+     fill="none"
+     cx="200"
+     cy="100"
+     connectorname="1.0"
+     stroke="#c49c59"
+     r="27.5"
+     stroke-width="20"
+     id="circle9"
+     style="stroke:#a57e3b;stroke-opacity:1" />
+  <circle
+     fill="none"
+     cx="300"
+     cy="100"
+     connectorname="2.0"
+     stroke="#c49c59"
+     r="27.5"
+     stroke-width="20"
+     id="circle11"
+     style="stroke:#a57e3b;stroke-opacity:1" />
+  <circle
+     fill="none"
+     cx="400"
+     cy="100"
+     connectorname="3.0"
+     stroke="#c49c59"
+     r="27.5"
+     stroke-width="20"
+     id="circle13"
+     style="stroke:#a57e3b;stroke-opacity:1" />
+  <circle
+     fill="none"
+     cx="500"
+     cy="100"
+     connectorname="4.0"
+     stroke="#c49c59"
+     r="27.5"
+     stroke-width="20"
+     id="circle15"
+     style="stroke:#a57e3b;stroke-opacity:1" />
+  <circle
+     fill="none"
+     cx="100"
+     cy="200"
+     connectorname="0.1"
+     stroke="#c49c59"
+     r="27.5"
+     stroke-width="20"
+     id="circle17"
+     style="stroke:#a57e3b;stroke-opacity:1" />
+  <circle
+     fill="none"
+     cx="200"
+     cy="200"
+     connectorname="1.1"
+     stroke="#c49c59"
+     r="27.5"
+     stroke-width="20"
+     id="circle19"
+     style="stroke:#a57e3b;stroke-opacity:1" />
+  <circle
+     fill="none"
+     cx="300"
+     cy="200"
+     connectorname="2.1"
+     stroke="#c49c59"
+     r="27.5"
+     stroke-width="20"
+     id="circle21"
+     style="stroke:#a57e3b;stroke-opacity:1" />
+  <circle
+     fill="none"
+     cx="400"
+     cy="200"
+     connectorname="3.1"
+     stroke="#c49c59"
+     r="27.5"
+     stroke-width="20"
+     id="circle23"
+     style="stroke:#a57e3b;stroke-opacity:1" />
+  <circle
+     fill="none"
+     cx="500"
+     cy="200"
+     connectorname="4.1"
+     stroke="#c49c59"
+     r="27.5"
+     stroke-width="20"
+     id="circle25"
+     style="stroke:#a57e3b;stroke-opacity:1" />
+  <circle
+     fill="none"
+     cx="100"
+     cy="300"
+     connectorname="0.2"
+     stroke="#c49c59"
+     r="27.5"
+     stroke-width="20"
+     id="circle27"
+     style="stroke:#a57e3b;stroke-opacity:1" />
+  <circle
+     fill="none"
+     cx="200"
+     cy="300"
+     connectorname="1.2"
+     stroke="#c49c59"
+     r="27.5"
+     stroke-width="20"
+     id="circle29"
+     style="stroke:#a57e3b;stroke-opacity:1" />
+  <circle
+     fill="none"
+     cx="300"
+     cy="300"
+     connectorname="2.2"
+     stroke="#c49c59"
+     r="27.5"
+     stroke-width="20"
+     id="circle31"
+     style="stroke:#a57e3b;stroke-opacity:1" />
+  <circle
+     fill="none"
+     cx="400"
+     cy="300"
+     connectorname="3.2"
+     stroke="#c49c59"
+     r="27.5"
+     stroke-width="20"
+     id="circle33"
+     style="stroke:#a57e3b;stroke-opacity:1" />
+  <circle
+     fill="none"
+     cx="500"
+     cy="300"
+     connectorname="4.2"
+     stroke="#c49c59"
+     r="27.5"
+     stroke-width="20"
+     id="circle35"
+     style="stroke:#a57e3b;stroke-opacity:1" />
+  <circle
+     fill="none"
+     cx="100"
+     cy="400"
+     connectorname="0.3"
+     stroke="#c49c59"
+     r="27.5"
+     stroke-width="20"
+     id="circle37"
+     style="stroke:#a57e3b;stroke-opacity:1" />
+  <circle
+     fill="none"
+     cx="200"
+     cy="400"
+     connectorname="1.3"
+     stroke="#c49c59"
+     r="27.5"
+     stroke-width="20"
+     id="circle39"
+     style="stroke:#a57e3b;stroke-opacity:1" />
+  <circle
+     fill="none"
+     cx="300"
+     cy="400"
+     connectorname="2.3"
+     stroke="#c49c59"
+     r="27.5"
+     stroke-width="20"
+     id="circle41"
+     style="stroke:#a57e3b;stroke-opacity:1" />
+  <circle
+     fill="none"
+     cx="400"
+     cy="400"
+     connectorname="3.3"
+     stroke="#c49c59"
+     r="27.5"
+     stroke-width="20"
+     id="circle43"
+     style="stroke:#a57e3b;stroke-opacity:1" />
+  <circle
+     fill="none"
+     cx="500"
+     cy="400"
+     connectorname="4.3"
+     stroke="#c49c59"
+     r="27.5"
+     stroke-width="20"
+     id="circle45"
+     style="stroke:#a57e3b;stroke-opacity:1" />
+  <circle
+     fill="none"
+     cx="100"
+     cy="500"
+     connectorname="0.4"
+     stroke="#c49c59"
+     r="27.5"
+     stroke-width="20"
+     id="circle47"
+     style="stroke:#a57e3b;stroke-opacity:1" />
+  <circle
+     fill="none"
+     cx="200"
+     cy="500"
+     connectorname="1.4"
+     stroke="#c49c59"
+     r="27.5"
+     stroke-width="20"
+     id="circle49"
+     style="stroke:#a57e3b;stroke-opacity:1" />
+  <circle
+     fill="none"
+     cx="300"
+     cy="500"
+     connectorname="2.4"
+     stroke="#c49c59"
+     r="27.5"
+     stroke-width="20"
+     id="circle51"
+     style="stroke:#a57e3b;stroke-opacity:1" />
+  <circle
+     fill="none"
+     cx="400"
+     cy="500"
+     connectorname="3.4"
+     stroke="#c49c59"
+     r="27.5"
+     stroke-width="20"
+     id="circle53"
+     style="stroke:#a57e3b;stroke-opacity:1" />
+  <circle
+     fill="none"
+     cx="500"
+     cy="500"
+     connectorname="4.4"
+     stroke="#c49c59"
+     r="27.5"
+     stroke-width="20"
+     id="circle55"
+     style="stroke:#a57e3b;stroke-opacity:1" />
+</svg>

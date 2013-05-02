@@ -1,0 +1,651 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module fritzingVersion="0.6.5b.01.02.5717" moduleId="Adafruit_Atmega32u4_Breakout">
+    <author>Christophe Augier</author>
+    <title>Adafruit Atmega32u4 Breakout Board</title>
+    <label>Adafruit Atmega32u4</label>
+    <date>2011-11-11</date>
+    <tags>
+        <tag>adafruit</tag>
+        <tag>atmega32u4</tag>
+    </tags>
+    <properties>
+        <property name="family">Microcontroller Board</property>
+        <property name="part number">Atmega 32u4</property>
+    </properties>
+    <views>
+        <breadboardView>
+            <layers image="breadboard/Adafruit_Atmega32u4_Breakout.svg">
+                <layer layerId="breadboard"/>
+            </layers>
+        </breadboardView>
+        <iconView>
+            <layers image="icon/Adafruit_Atmega32u4_Breakout.svg">
+                <layer layerId="icon"/>
+            </layers>
+        </iconView>
+        <schematicView>
+            <layers image="schematic/Adafruit_Atmega32u4_Breakout.svg">
+                <layer layerId="schematic"/>
+            </layers>
+        </schematicView>
+        <pcbView>
+            <layers image="pcb/Adafruit_Atmega32u4_Breakout.svg">
+              <layer layerId="silkscreen"/>
+              <layer layerId="copper0"/>
+				<layer layerId="copper1"/>
+             </layers>
+        </pcbView>
+    </views>
+    <connectors>
+    
+         <connector id="connector20" type="female" name="ISP">
+            <description>no description yet</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector20pin"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector20pin"/>
+                                                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector20pin"/>
+                    <p layer="copper1" svgId="connector20pin"/>
+                </pcbView>
+
+            </views>
+        </connector>
+         <connector id="connector21" type="female" name="ISP">
+            <description>no description yet</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector21pin"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector21pin"/>
+                                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector21pin"/>
+                    <p layer="copper1" svgId="connector21pin"/>
+                </pcbView>
+
+            </views>
+        </connector>
+       <connector id="connector16" type="female" name="ISP">
+            <description>no description yet</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector16pin"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector16pin"/>
+                                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector16pin"/>
+                    <p layer="copper1" svgId="connector16pin"/>
+                </pcbView>
+
+            </views>
+        </connector>
+        <connector id="connector17" type="female" name="ISP">
+            <description>no description yet</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector17pin"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector17pin"/>
+                                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector17pin"/>
+                    <p layer="copper1" svgId="connector17pin"/>
+                </pcbView>
+
+            </views>
+        </connector>
+        <connector id="connector18" type="female" name="ISP">
+            <description>no description yet</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector18pin"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector18pin"/>
+                                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector18pin"/>
+                    <p layer="copper1" svgId="connector18pin"/>
+                </pcbView>
+
+            </views>
+        </connector>
+        <connector id="connector19" type="female" name="ISP">
+            <description>no description yet</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector19pin"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector19pin"/>
+                                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector19pin"/>
+                    <p layer="copper1" svgId="connector19pin"/>
+                </pcbView>
+
+            </views>
+        </connector>
+
+ 
+        <connector id="connector3" type="male" name="F1">
+            <description>Analog pin (Arduino A4)</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector3pin"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector3pin"/>
+                                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector3pin"/>
+                    <p layer="copper1" svgId="connector3pin"/>
+                </pcbView>
+            </views>
+        </connector>
+         <connector id="connector4" type="male" name="F4">
+            <description>Analog pin (Arduino A3)</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector4pin"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector4pin"/>
+                                                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector4pin"/>
+                    <p layer="copper1" svgId="connector4pin"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector5" type="male" name="F5">
+            <description>Analog pin (Arduino A2)</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector5pin"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector5pin"/>
+                                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector5pin"/>
+                    <p layer="copper1" svgId="connector5pin"/>
+                </pcbView>
+
+            </views>
+        </connector>
+        <connector id="connector6" type="male" name="F6">
+            <description>Analog pin (Arduino A1)</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector6pin"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector6pin"/>
+                                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector6pin"/>
+                    <p layer="copper1" svgId="connector6pin"/>
+                </pcbView>
+
+            </views>
+        </connector>
+        <connector id="connector22" type="male" name="3V">
+            <description>no description yet</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector22pin"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector22pin"/>
+                                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector22pin"/>
+                    <p layer="copper1" svgId="connector22pin"/>
+                </pcbView>
+
+            </views>
+        </connector>
+        <connector id="connector7" type="male" name="F7">
+            <description>Analog pin (Arduino A0)</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector7pin"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector7pin"/>
+                                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector7pin"/>
+                    <p layer="copper1" svgId="connector7pin"/>
+                </pcbView>
+
+            </views>
+        </connector>
+        <connector id="connector23" type="male" name="E6">
+            <description>Green Boot LED (Arduino 7) </description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector23pin"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector23pin"/>
+                                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector23pin"/>
+                    <p layer="copper1" svgId="connector23pin"/>
+                </pcbView>
+
+            </views>
+        </connector>
+        <connector id="connector8" type="male" name="C7">
+            <description>Digital pin (Arduino 13)</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector8pin"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector8pin"/>
+                                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector8pin"/>
+                    <p layer="copper1" svgId="connector8pin"/>
+                </pcbView>
+
+            </views>
+        </connector>
+        <connector id="connector24" type="male" name="B0">
+            <description>Digital pin (Arduino 14 - Serial RX LED)</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector24pin"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector24pin"/>
+                                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector24pin"/>
+                    <p layer="copper1" svgId="connector24pin"/>
+                </pcbView>
+
+            </views>
+        </connector>
+        <connector id="connector9" type="male" name="C6">
+            <description>Digital pin (Arduino 5)</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector9pin"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector9pin"/>
+                                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector9pin"/>
+                    <p layer="copper1" svgId="connector9pin"/>
+                </pcbView>
+
+            </views>
+        </connector>
+        <connector id="connector25" type="male" name="B1">
+            <description>Digital pin (Arduino 15 - SPI  SCK)</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector25pin"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector25pin"/>
+                                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector25pin"/>
+                    <p layer="copper1" svgId="connector25pin"/>
+                </pcbView>
+
+            </views>
+        </connector>
+        <connector id="connector26" type="male" name="B2">
+            <description>Digital pin (Arduino 16 - SPI MOSI)</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector26pin"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector26pin"/>
+                                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector26pin"/>
+                    <p layer="copper1" svgId="connector26pin"/>
+                </pcbView>
+
+            </views>
+        </connector>
+        <connector id="connector27" type="male" name="B3">
+            <description>Digital pin (Arduino 17 - SPI MISO)</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector27pin"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector27pin"/>
+                                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector27pin"/>
+                    <p layer="copper1" svgId="connector27pin"/>
+                </pcbView>
+
+            </views>
+        </connector>
+        <connector id="connector28" type="male" name="D0">
+            <description>Digital pin (Arduino 3)</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector28pin"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector28pin"/>
+                                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector28pin"/>
+                    <p layer="copper1" svgId="connector28pin"/>
+                </pcbView>
+
+            </views>
+        </connector>
+        <connector id="connector29" type="male" name="D1">
+            <description>Digital pin (Arduino 2)</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector29pin"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector29pin"/>
+                                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector29pin"/>
+                    <p layer="copper1" svgId="connector29pin"/>
+                </pcbView>
+
+            </views>
+        </connector>
+        <connector id="connector30" type="male" name="D2">
+            <description>Digital pin (Arduino 0 - Serial RX)</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector30pin"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector30pin"/>
+                                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector30pin"/>
+                    <p layer="copper1" svgId="connector30pin"/>
+                </pcbView>
+
+            </views>
+        </connector>
+        <connector id="connector31" type="male" name="D3">
+            <description>Digital pin (Arduino 1 - Serial TX)</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector31pin"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector31pin"/>
+                                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector31pin"/>
+                    <p layer="copper1" svgId="connector31pin"/>
+                </pcbView>
+
+            </views>
+        </connector>
+        <connector id="connector32" type="male" name="D4">
+            <description>Digital pin (Arduino 4)
+Analog pin (Arduino A6)</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector32pin"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector32pin"/>
+                                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector32pin"/>
+                    <p layer="copper1" svgId="connector32pin"/>
+                </pcbView>
+
+            </views>
+        </connector>
+        <connector id="connector33" type="male" name="D5">
+            <description>Digital pin (Arduino Serial TX LED)</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector33pin"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector33pin"/>
+                                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector33pin"/>
+                    <p layer="copper1" svgId="connector33pin"/>
+                </pcbView>
+
+            </views>
+        </connector>
+        <connector id="connector34" type="male" name="D6">
+            <description>Digital pin (Arduino 12)</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector34pin"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector34pin"/>
+                                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector34pin"/>
+                    <p layer="copper1" svgId="connector34pin"/>
+                </pcbView>
+
+            </views>
+        </connector>
+        <connector id="connector35" type="male" name="D7">
+            <description>Digital pin (Arduino 6)</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector35pin"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector35pin"/>
+                                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector35pin"/>
+                    <p layer="copper1" svgId="connector35pin"/>
+                </pcbView>
+
+            </views>
+        </connector>
+        <connector id="connector36" type="male" name="GND">
+            <description>no description yet</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector36pin"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector36pin"/>
+                                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector36pin"/>
+                    <p layer="copper1" svgId="connector36pin"/>
+                </pcbView>
+
+            </views>
+        </connector>
+        <connector id="connector37" type="male" name="RST">
+            <description>no description yet</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector37pin"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector37pin"/>
+                                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector37pin"/>
+                    <p layer="copper1" svgId="connector37pin"/>
+                </pcbView>
+
+            </views>
+        </connector>
+        <connector id="connector10" type="male" name="B7">
+            <description>Digital pin (Arduino 11)</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector10pin"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector10pin"/>
+                                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector10pin"/>
+                    <p layer="copper1" svgId="connector10pin"/>
+                </pcbView>
+
+            </views>
+        </connector>
+        <connector id="connector11" type="male" name="B6">
+            <description>Digital pin (Arduino 10)</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector11pin"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector11pin"/>
+                                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector11pin"/>
+                    <p layer="copper1" svgId="connector11pin"/>
+                </pcbView>
+
+            </views>
+        </connector>
+        <connector id="connector12" type="male" name="B5">
+            <description>Digital pin (Arduino 9)</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector12pin"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector12pin"/>
+                                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector12pin"/>
+                    <p layer="copper1" svgId="connector12pin"/>
+                </pcbView>
+
+            </views>
+        </connector>
+        <connector id="connector13" type="male" name="B4">
+            <description>Digital pin (Arduino 8)</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector13pin"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector13pin"/>
+                                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector13pin"/>
+                    <p layer="copper1" svgId="connector13pin"/>
+                </pcbView>
+
+            </views>
+        </connector>
+        <connector id="connector14" type="male" name="GND">
+            <description>no description yet</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector14pin"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector14pin"/>
+                                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector14pin"/>
+                    <p layer="copper1" svgId="connector14pin"/>
+                </pcbView>
+
+            </views>
+        </connector>
+        <connector id="connector15" type="male" name="VCC">
+            <description>no description yet</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector15pin"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector15pin"/>
+                                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector15pin"/>
+                    <p layer="copper1" svgId="connector15pin"/>
+                </pcbView>
+
+            </views>
+        </connector>
+         <connector id="connector0" type="male" name="5V">
+            <description>no description yet</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector0pin"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector0pin"/>
+                                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector0pin"/>
+                    <p layer="copper1" svgId="connector0pin"/>
+                </pcbView>
+
+            </views>
+        </connector>
+        <connector id="connector1" type="male" name="A">
+            <description>no description yet</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector1pin"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector1pin"/>
+                                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector1pin"/>
+                    <p layer="copper1" svgId="connector1pin"/>
+                </pcbView>
+
+            </views>
+        </connector>
+        <connector id="connector2" type="male" name="F0">
+            <description>Analog pin (Arduino A5)</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector2pin"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector2pin"/>
+                                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector2pin"/>
+                    <p layer="copper1" svgId="connector2pin"/>
+                </pcbView>
+
+            </views>
+        </connector>
+    </connectors>
+</module>

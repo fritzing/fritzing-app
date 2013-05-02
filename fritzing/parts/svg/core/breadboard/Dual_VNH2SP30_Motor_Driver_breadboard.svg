@@ -1,0 +1,267 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- Generator: Adobe Illustrator 15.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg width="1.8426in" x="0px" version="1.2" y="0px" xmlns="http://www.w3.org/2000/svg" height="1.8449in" viewBox="0 0 132.667 132.833" baseProfile="tiny" xmlns:xml="http://www.w3.org/XML/1998/namespace" id="Layer_2" xml:space="preserve">
+ <g id="breadboard">
+  <rect width="132.833" fill="#008344" height="132.833"/>
+  <rect width="45" x="28.5" y="1.667" fill="#303030" height="47.126"/>
+  <rect width="45" x="28.5" y="83.917" fill="#303030" height="47.125"/>
+  <rect width="17.25" x="91.25" y="65.542" fill="#303030" height="16.75"/>
+  <rect width="17.25" x="91.25" y="37.918" fill="#303030" height="16.75"/>
+  <g id="Z27xpin_1_">
+   <path fill="#C0BFBF" d="M4.777,115.644c0.66,0,1.197,0.535,1.197,1.196h1.194c0-1.321-1.071-2.395-2.394-2.395c-1.321,0-2.394,1.072-2.394,2.395h1.195C3.58,116.179,4.116,115.644,4.777,115.644z"/>
+   <path fill="#E6E6E5" d="M4.777,119.234c1.32,0,2.394-1.065,2.394-2.394H5.977c0,0.66-0.537,1.195-1.197,1.195c-0.66,0-1.196-0.535-1.196-1.195H2.389C2.383,118.167,3.455,119.234,4.777,119.234z"/>
+   <circle fill="#383938" cx="4.777" cy="116.844" r="1.196"/>
+  </g>
+  <g id="Z27xpin_14_">
+   <path fill="#C0BFBF" d="M122.111,100.396c1.26,0,2.279,1.021,2.279,2.28h2.277c0-2.52-2.041-4.563-4.56-4.563c-2.521,0-4.562,2.044-4.562,4.563h2.277C119.83,101.417,120.851,100.396,122.111,100.396z"/>
+   <path fill="#E6E6E5" d="M122.111,107.236c2.518,0,4.561-2.038,4.561-4.56h-2.276c0,1.259-1.021,2.277-2.278,2.277c-1.261,0-2.281-1.021-2.281-2.277h-2.277C117.548,105.193,119.591,107.236,122.111,107.236z"/>
+   <circle fill="#383938" cx="122.111" cy="102.677" r="2.279"/>
+  </g>
+  <g id="Z27xpin_15_">
+   <path fill="#C0BFBF" d="M122.111,85.896c1.26,0,2.279,1.021,2.279,2.28h2.277c0-2.52-2.041-4.563-4.56-4.563c-2.521,0-4.562,2.044-4.562,4.563h2.277C119.83,86.917,120.851,85.896,122.111,85.896z"/>
+   <path fill="#E6E6E5" d="M122.111,92.736c2.518,0,4.561-2.038,4.561-4.56h-2.276c0,1.259-1.021,2.277-2.278,2.277c-1.261,0-2.281-1.021-2.281-2.277h-2.277C117.548,90.693,119.591,92.736,122.111,92.736z"/>
+   <circle fill="#383938" cx="122.111" cy="88.177" r="2.279"/>
+  </g>
+  <g id="Z27xpin_16_">
+   <path fill="#C0BFBF" d="M122.111,71.562c1.26,0,2.279,1.021,2.279,2.28h2.277c0-2.52-2.041-4.563-4.56-4.563c-2.521,0-4.562,2.044-4.562,4.563h2.277C119.83,72.583,120.851,71.562,122.111,71.562z"/>
+   <path fill="#E6E6E5" d="M122.111,78.402c2.518,0,4.561-2.039,4.561-4.56h-2.276c0,1.259-1.021,2.277-2.278,2.277c-1.261,0-2.281-1.021-2.281-2.277h-2.277C117.548,76.359,119.591,78.402,122.111,78.402z"/>
+   <circle fill="#383938" cx="122.111" cy="73.843" r="2.279"/>
+  </g>
+  <g id="Z27xpin_17_">
+   <path fill="#C0BFBF" d="M122.111,42.563c1.26,0,2.279,1.021,2.279,2.281h2.277c0-2.521-2.041-4.563-4.56-4.563c-2.521,0-4.562,2.043-4.562,4.563h2.277C119.83,43.582,120.851,42.563,122.111,42.563z"/>
+   <path fill="#E6E6E5" d="M122.111,49.402c2.518,0,4.561-2.041,4.561-4.559h-2.276c0,1.258-1.021,2.277-2.278,2.277c-1.261,0-2.281-1.021-2.281-2.277h-2.277C117.548,47.359,119.591,49.402,122.111,49.402z"/>
+   <circle fill="#383938" cx="122.111" cy="44.842" r="2.279"/>
+  </g>
+  <g id="Z27xpin_18_">
+   <path fill="#C0BFBF" d="M122.111,28.063c1.26,0,2.279,1.021,2.279,2.281h2.277c0-2.521-2.041-4.563-4.56-4.563c-2.521,0-4.562,2.043-4.562,4.563h2.277C119.83,29.082,120.851,28.063,122.111,28.063z"/>
+   <path fill="#E6E6E5" d="M122.111,34.902c2.518,0,4.561-2.039,4.561-4.559h-2.276c0,1.258-1.021,2.277-2.278,2.277c-1.261,0-2.281-1.021-2.281-2.277h-2.277C117.548,32.859,119.591,34.902,122.111,34.902z"/>
+   <circle fill="#383938" cx="122.111" cy="30.342" r="2.279"/>
+  </g>
+  <g id="Z27xpin_2_">
+   <path fill="#C0BFBF" d="M4.777,108.441c0.66,0,1.197,0.535,1.197,1.197h1.194c0-1.322-1.071-2.396-2.394-2.396c-1.321,0-2.394,1.072-2.394,2.396h1.195C3.58,108.976,4.116,108.441,4.777,108.441z"/>
+   <path fill="#E6E6E5" d="M4.777,112.032c1.32,0,2.394-1.066,2.394-2.394H5.977c0,0.659-0.537,1.194-1.197,1.194c-0.66,0-1.196-0.535-1.196-1.194H2.389C2.383,110.961,3.455,112.032,4.777,112.032z"/>
+   <circle fill="#383938" cx="4.777" cy="109.639" r="1.196"/>
+  </g>
+  <g id="Z27xpin_3_">
+   <path fill="#C0BFBF" d="M4.777,101.245c0.66,0,1.197,0.532,1.197,1.194h1.194c0-1.319-1.071-2.396-2.394-2.396c-1.321,0-2.394,1.07-2.394,2.396h1.195C3.58,101.777,4.116,101.245,4.777,101.245z"/>
+   <path fill="#E6E6E5" d="M4.777,104.833c1.32,0,2.394-1.069,2.394-2.395H5.977c0,0.66-0.537,1.195-1.197,1.195c-0.66,0-1.196-0.535-1.196-1.195H2.389C2.383,103.76,3.455,104.833,4.777,104.833z"/>
+   <circle fill="#383938" cx="4.777" cy="102.439" r="1.194"/>
+  </g>
+  <g id="Z27xpin_4_">
+   <path fill="#C0BFBF" d="M4.777,94.043c0.66,0,1.197,0.535,1.197,1.195h1.194c0-1.32-1.071-2.395-2.394-2.395c-1.321,0-2.394,1.072-2.394,2.395h1.195C3.58,94.581,4.116,94.043,4.777,94.043z"/>
+   <path fill="#E6E6E5" d="M4.777,97.633c1.32,0,2.394-1.069,2.394-2.395H5.977c0,0.66-0.537,1.195-1.197,1.195c-0.66,0-1.197-0.534-1.197-1.193H2.389C2.383,96.56,3.455,97.633,4.777,97.633z"/>
+   <circle fill="#383938" cx="4.777" cy="95.24" r="1.195"/>
+  </g>
+  <g id="Z27xpin_5_">
+   <path fill="#C0BFBF" d="M4.777,87.275c0.66,0,1.197,0.535,1.197,1.197h1.194c0-1.322-1.071-2.396-2.394-2.396c-1.321,0-2.394,1.072-2.394,2.396h1.195C3.58,87.81,4.116,87.275,4.777,87.275z"/>
+   <path fill="#E6E6E5" d="M4.777,90.866c1.32,0,2.394-1.066,2.394-2.394H5.977c0,0.659-0.537,1.194-1.197,1.194c-0.66,0-1.196-0.535-1.196-1.194H2.389C2.383,89.795,3.455,90.866,4.777,90.866z"/>
+   <circle fill="#383938" cx="4.777" cy="88.471" r="1.196"/>
+  </g>
+  <g id="Z27xpin_6_">
+   <path fill="#C0BFBF" d="M4.777,79.642c0.66,0,1.197,0.534,1.197,1.196h1.194c0-1.321-1.071-2.396-2.394-2.396c-1.321,0-2.394,1.072-2.394,2.396h1.195C3.58,80.179,4.116,79.642,4.777,79.642z"/>
+   <path fill="#E6E6E5" d="M4.777,83.232c1.32,0,2.394-1.067,2.394-2.394H5.977c0,0.66-0.537,1.193-1.197,1.193c-0.66,0-1.197-0.531-1.197-1.193H2.389C2.383,82.163,3.455,83.232,4.777,83.232z"/>
+   <circle fill="#383938" cx="4.777" cy="80.84" r="1.196"/>
+  </g>
+  <g id="Z27xpin_7_">
+   <path fill="#C0BFBF" d="M4.777,65.244c0.66,0,1.197,0.533,1.197,1.195h1.194c0-1.32-1.071-2.395-2.394-2.395c-1.321,0-2.394,1.07-2.394,2.395h1.195C3.58,65.777,4.116,65.244,4.777,65.244z"/>
+   <path fill="#E6E6E5" d="M4.777,68.833c1.32,0,2.394-1.069,2.394-2.395H5.977c0,0.66-0.537,1.195-1.197,1.195c-0.66,0-1.196-0.535-1.196-1.195H2.389C2.383,67.76,3.455,68.833,4.777,68.833z"/>
+   <circle fill="#383938" cx="4.777" cy="66.439" r="1.195"/>
+  </g>
+  <g id="Z27xpin_8_">
+   <path fill="#C0BFBF" d="M4.777,50.846c0.66,0,1.197,0.535,1.197,1.197h1.194c0-1.322-1.071-2.396-2.394-2.396c-1.321,0-2.394,1.072-2.394,2.396h1.195C3.58,51.381,4.116,50.846,4.777,50.846z"/>
+   <path fill="#E6E6E5" d="M4.777,54.432c1.32,0,2.394-1.07,2.394-2.393H5.977c0,0.66-0.537,1.195-1.197,1.195c-0.66,0-1.196-0.535-1.196-1.195H2.389C2.383,53.359,3.455,54.432,4.777,54.432z"/>
+   <circle fill="#383938" cx="4.777" cy="52.04" r="1.194"/>
+  </g>
+  <g id="Z27xpin_9_">
+   <path fill="#C0BFBF" d="M4.777,43.643c0.66,0,1.197,0.535,1.197,1.197h1.194c0-1.322-1.071-2.396-2.394-2.396c-1.321,0-2.394,1.072-2.394,2.396h1.195C3.58,44.18,4.116,43.643,4.777,43.643z"/>
+   <path fill="#E6E6E5" d="M4.777,47.232c1.32,0,2.394-1.068,2.394-2.393H5.977c0,0.66-0.537,1.193-1.197,1.193c-0.66,0-1.197-0.532-1.197-1.192H2.389C2.383,46.162,3.455,47.232,4.777,47.232z"/>
+   <circle fill="#383938" cx="4.777" cy="44.841" r="1.196"/>
+  </g>
+  <g id="Z27xpin_10_">
+   <path fill="#C0BFBF" d="M4.777,36.443c0.66,0,1.197,0.535,1.197,1.197h1.194c0-1.322-1.071-2.395-2.394-2.395c-1.321,0-2.394,1.07-2.394,2.395h1.195C3.58,36.979,4.116,36.443,4.777,36.443z"/>
+   <path fill="#E6E6E5" d="M4.777,40.033c1.32,0,2.394-1.068,2.394-2.393H5.977c0,0.66-0.537,1.195-1.197,1.195c-0.66,0-1.196-0.535-1.196-1.195H2.389C2.383,38.961,3.455,40.033,4.777,40.033z"/>
+   <circle fill="#383938" cx="4.777" cy="37.64" r="1.196"/>
+  </g>
+  <g id="Z27xpin_11_">
+   <path fill="#C0BFBF" d="M4.777,29.244c0.66,0,1.197,0.533,1.197,1.195h1.194c0-1.32-1.071-2.395-2.394-2.395c-1.321,0-2.394,1.07-2.394,2.395h1.195C3.58,29.779,4.116,29.244,4.777,29.244z"/>
+   <path fill="#E6E6E5" d="M4.777,32.834c1.32,0,2.394-1.07,2.394-2.395H5.977c0,0.66-0.537,1.195-1.197,1.195c-0.66,0-1.197-0.534-1.197-1.195H2.389C2.383,31.762,3.455,32.834,4.777,32.834z"/>
+   <circle fill="#383938" cx="4.777" cy="30.44" r="1.196"/>
+  </g>
+  <g id="Z27xpin_12_">
+   <path fill="#C0BFBF" d="M4.777,22.043c0.66,0,1.197,0.535,1.197,1.197h1.194c0-1.322-1.071-2.396-2.394-2.396c-1.321,0-2.394,1.071-2.394,2.396h1.195C3.58,22.578,4.116,22.043,4.777,22.043z"/>
+   <path fill="#E6E6E5" d="M4.777,25.633c1.32,0,2.394-1.07,2.394-2.393H5.977c0,0.66-0.537,1.195-1.197,1.195c-0.66,0-1.197-0.535-1.197-1.195H2.389C2.383,24.561,3.455,25.633,4.777,25.633z"/>
+   <circle fill="#383938" cx="4.777" cy="23.24" r="1.196"/>
+  </g>
+  <g id="Z27xpin_13_">
+   <path fill="#C0BFBF" d="M4.777,14.844c0.66,0,1.197,0.535,1.197,1.196h1.194c0-1.321-1.071-2.396-2.394-2.396c-1.321,0-2.394,1.072-2.394,2.396h1.195C3.58,15.379,4.116,14.844,4.777,14.844z"/>
+   <path fill="#E6E6E5" d="M4.777,18.434c1.32,0,2.394-1.07,2.394-2.394H5.977c0,0.66-0.537,1.195-1.197,1.195c-0.66,0-1.197-0.535-1.197-1.195H2.389C2.383,17.361,3.455,18.434,4.777,18.434z"/>
+   <circle fill="#383938" cx="4.777" cy="16.04" r="1.196"/>
+  </g>
+  <rect width="4.457" x="73.558" y="86.836" fill="#8C8C8C" height="1.664" id="rect28_1_"/>
+  <rect width="4.457" x="73.558" y="89.752" fill="#8C8C8C" height="1.666" id="rect28_2_"/>
+  <rect width="4.457" x="73.558" y="92.752" fill="#8C8C8C" height="1.666" id="rect28_3_"/>
+  <rect width="4.457" x="73.558" y="95.668" fill="#8C8C8C" height="1.666" id="rect28_4_"/>
+  <rect width="4.457" x="73.558" y="98.502" fill="#8C8C8C" height="1.666" id="rect28_5_"/>
+  <rect width="4.457" x="73.558" y="101.252" fill="#8C8C8C" height="1.666" id="rect28_6_"/>
+  <rect width="4.457" x="73.558" y="104.086" fill="#8C8C8C" height="1.664" id="rect28_7_"/>
+  <rect width="4.457" x="73.558" y="107.002" fill="#8C8C8C" height="1.666" id="rect28_8_"/>
+  <rect width="4.457" x="73.558" y="110.002" fill="#8C8C8C" height="1.666" id="rect28_9_"/>
+  <rect width="4.457" x="73.558" y="112.67" fill="#8C8C8C" height="1.664" id="rect28_10_"/>
+  <rect width="4.457" x="73.558" y="115.504" fill="#8C8C8C" height="1.664" id="rect28_11_"/>
+  <rect width="4.457" x="73.558" y="118.42" fill="#8C8C8C" height="1.666" id="rect28_12_"/>
+  <rect width="4.457" x="73.558" y="121.338" fill="#8C8C8C" height="1.664" id="rect28_13_"/>
+  <rect width="4.457" x="73.558" y="124.17" fill="#8C8C8C" height="1.666" id="rect28_14_"/>
+  <rect width="4.457" x="73.558" y="126.754" fill="#8C8C8C" height="1.664" id="rect28_15_"/>
+  <rect width="4.457" x="24.059" y="86.836" fill="#8C8C8C" height="1.664" id="rect28_30_"/>
+  <rect width="4.457" x="24.059" y="89.752" fill="#8C8C8C" height="1.666" id="rect28_29_"/>
+  <rect width="4.457" x="24.059" y="92.752" fill="#8C8C8C" height="1.666" id="rect28_28_"/>
+  <rect width="4.457" x="24.059" y="95.668" fill="#8C8C8C" height="1.666" id="rect28_27_"/>
+  <rect width="4.457" x="24.059" y="98.502" fill="#8C8C8C" height="1.666" id="rect28_26_"/>
+  <rect width="4.457" x="24.059" y="101.252" fill="#8C8C8C" height="1.666" id="rect28_25_"/>
+  <rect width="4.457" x="24.059" y="104.086" fill="#8C8C8C" height="1.664" id="rect28_24_"/>
+  <rect width="4.457" x="24.059" y="107.002" fill="#8C8C8C" height="1.666" id="rect28_23_"/>
+  <rect width="4.457" x="24.059" y="110.002" fill="#8C8C8C" height="1.666" id="rect28_22_"/>
+  <rect width="4.457" x="24.059" y="112.67" fill="#8C8C8C" height="1.664" id="rect28_21_"/>
+  <rect width="4.457" x="24.059" y="115.504" fill="#8C8C8C" height="1.664" id="rect28_20_"/>
+  <rect width="4.457" x="24.059" y="118.42" fill="#8C8C8C" height="1.666" id="rect28_19_"/>
+  <rect width="4.457" x="24.059" y="121.338" fill="#8C8C8C" height="1.664" id="rect28_18_"/>
+  <rect width="4.457" x="24.059" y="124.17" fill="#8C8C8C" height="1.666" id="rect28_17_"/>
+  <rect width="4.457" x="24.059" y="126.754" fill="#8C8C8C" height="1.664" id="rect28_16_"/>
+  <rect width="4.457" x="73.558" y="4.502" fill="#8C8C8C" height="1.665" id="rect28_60_"/>
+  <rect width="4.457" x="73.558" y="7.419" fill="#8C8C8C" height="1.665" id="rect28_59_"/>
+  <rect width="4.457" x="73.558" y="10.419" fill="#8C8C8C" height="1.665" id="rect28_58_"/>
+  <rect width="4.457" x="73.558" y="13.335" fill="#8C8C8C" height="1.665" id="rect28_57_"/>
+  <rect width="4.457" x="73.558" y="16.169" fill="#8C8C8C" height="1.665" id="rect28_56_"/>
+  <rect width="4.457" x="73.558" y="18.919" fill="#8C8C8C" height="1.665" id="rect28_55_"/>
+  <rect width="4.457" x="73.558" y="21.752" fill="#8C8C8C" height="1.665" id="rect28_54_"/>
+  <rect width="4.457" x="73.558" y="24.67" fill="#8C8C8C" height="1.664" id="rect28_53_"/>
+  <rect width="4.457" x="73.558" y="27.67" fill="#8C8C8C" height="1.664" id="rect28_52_"/>
+  <rect width="4.457" x="73.558" y="30.336" fill="#8C8C8C" height="1.666" id="rect28_51_"/>
+  <rect width="4.457" x="73.558" y="33.17" fill="#8C8C8C" height="1.666" id="rect28_50_"/>
+  <rect width="4.457" x="73.558" y="36.088" fill="#8C8C8C" height="1.664" id="rect28_49_"/>
+  <rect width="4.457" x="73.558" y="39.004" fill="#8C8C8C" height="1.666" id="rect28_48_"/>
+  <rect width="4.457" x="73.558" y="41.838" fill="#8C8C8C" height="1.664" id="rect28_47_"/>
+  <rect width="4.457" x="73.558" y="44.42" fill="#8C8C8C" height="1.666" id="rect28_46_"/>
+  <rect width="4.457" x="24.059" y="4.502" fill="#8C8C8C" height="1.665" id="rect28_45_"/>
+  <rect width="4.457" x="24.059" y="7.419" fill="#8C8C8C" height="1.665" id="rect28_44_"/>
+  <rect width="4.457" x="24.059" y="10.419" fill="#8C8C8C" height="1.665" id="rect28_43_"/>
+  <rect width="4.457" x="24.059" y="13.335" fill="#8C8C8C" height="1.665" id="rect28_42_"/>
+  <rect width="4.457" x="24.059" y="16.169" fill="#8C8C8C" height="1.665" id="rect28_41_"/>
+  <rect width="4.457" x="24.059" y="18.919" fill="#8C8C8C" height="1.665" id="rect28_40_"/>
+  <rect width="4.457" x="24.059" y="21.752" fill="#8C8C8C" height="1.665" id="rect28_39_"/>
+  <rect width="4.457" x="24.059" y="24.67" fill="#8C8C8C" height="1.664" id="rect28_38_"/>
+  <rect width="4.457" x="24.059" y="27.67" fill="#8C8C8C" height="1.664" id="rect28_37_"/>
+  <rect width="4.457" x="24.059" y="30.336" fill="#8C8C8C" height="1.666" id="rect28_36_"/>
+  <rect width="4.457" x="24.059" y="33.17" fill="#8C8C8C" height="1.666" id="rect28_35_"/>
+  <rect width="4.457" x="24.059" y="36.088" fill="#8C8C8C" height="1.664" id="rect28_34_"/>
+  <rect width="4.457" x="24.059" y="39.004" fill="#8C8C8C" height="1.666" id="rect28_33_"/>
+  <rect width="4.457" x="24.059" y="41.838" fill="#8C8C8C" height="1.664" id="rect28_32_"/>
+  <rect width="4.457" x="24.059" y="44.42" fill="#8C8C8C" height="1.666" id="rect28_31_"/>
+  <rect width="1.664" x="92.205" y="29.021" fill="#8C8C8C" height="8.834" id="rect28_61_"/>
+  <rect width="1.664" x="105.33" y="29.021" fill="#8C8C8C" height="8.834" id="rect28_62_"/>
+  <rect width="1.664" x="92.205" y="82.271" fill="#8C8C8C" height="8.832" id="rect28_64_"/>
+  <rect width="1.664" x="105.33" y="82.271" fill="#8C8C8C" height="8.832" id="rect28_63_"/>
+  <circle fill="#212121" cx="32.417" cy="87.701" id="circle68_1_" r="1.482"/>
+  <circle fill="#212121" cx="32.417" cy="5.701" id="circle68_2_" r="1.482"/>
+  <g>
+   <rect width="5.167" x="2.333" y="71.054" fill="#E6E6E5" height="5.168"/>
+   <polygon fill="#C0BFBF" points="6.541,72.25 3.5,72.25 2.333,71 7.583,71 "/>
+   <rect width="2.958" x="3.583" y="72.25" fill="#383938" height="2.957"/>
+   <polygon fill="#DCDCDB" points="3.583,72.25 2.375,71.043 2.375,76.168 3.583,75.168 "/>
+   <polygon fill="#DCDCDB" points="6.333,72.25 7.542,71.043 7.542,76.168 6.333,75.168 "/>
+  </g>
+  <g>
+   <rect width="9.441" x="116.931" y="54.715" fill="#E6E6E5" height="9.439"/>
+   <polygon fill="#C0BFBF" points="124.623,56.893 119.064,56.893 116.931,54.609 126.527,54.609 "/>
+   <rect width="5.406" x="119.216" y="56.893" fill="#383938" height="5.406"/>
+   <polygon fill="#DCDCDB" points="119.216,56.895 117.007,54.688 117.007,64.054 119.216,62.227 "/>
+   <polygon fill="#DCDCDB" points="124.242,56.895 126.451,54.688 126.451,64.054 124.242,62.227 "/>
+  </g>
+  <g>
+   <rect width="5.167" x="2.333" y="56.684" fill="#E6E6E5" height="5.166"/>
+   <polygon fill="#C0BFBF" points="6.541,57.879 3.5,57.879 2.333,56.629 7.583,56.629 "/>
+   <rect width="2.958" x="3.583" y="57.879" fill="#383938" height="2.959"/>
+   <polygon fill="#DCDCDB" points="3.583,57.881 2.375,56.672 2.375,61.797 3.583,60.797 "/>
+   <polygon fill="#DCDCDB" points="6.333,57.881 7.542,56.672 7.542,61.797 6.333,60.797 "/>
+  </g>
+  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 36.229 63.7583)" font-size="5">P</text>
+  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 39.564 63.7583)" font-size="5">o</text>
+  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 42.3447 63.7583)" font-size="5">l</text>
+  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 43.4556 63.7583)" font-size="5">o</text>
+  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 46.2363 63.7583)" font-size="5">l</text>
+  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 47.3472 63.7583)" font-size="5">u</text>
+  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 50.1279 63.7583)" font-size="5"/>
+  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 51.5171 63.7583)" font-size="5">M</text>
+  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 55.6821 63.7583)" font-size="5">D</text>
+  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 59.293 63.7583)" font-size="5">0</text>
+  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 62.0737 63.7583)" font-size="5">3</text>
+  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 64.8545 63.7583)" font-size="5">A</text>
+  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 36.229 69.7583)" font-size="5">Dual VNH2SP30</text>
+  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 7.8955 17.4253)" font-size="5">1</text>
+  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 10.6494 17.4253)" font-size="5">D</text>
+  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 14.021 17.4253)" font-size="5">I</text>
+  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 15.7153 17.4253)" font-size="5">A</text>
+  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 18.7061 17.4253)" font-size="5">G</text>
+  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 22.1558 17.4253)" font-size="5">/</text>
+  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 24.021 17.4253)" font-size="5">E</text>
+  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 26.6602 17.4253)" font-size="5">N</text>
+  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 107.6636 30.0923)" font-size="5">OUT</text>
+  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 7.8955 24.9253)" font-size="5">1IN</text>
+  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 15.9888 24.9253)" font-size="3">A</text>
+  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 7.8955 31.9253)" font-size="5">1IN</text>
+  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 15.9888 31.9253)" font-size="3">B</text>
+  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 7.8955 39.0923)" font-size="5">1PWM</text>
+  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 7.8955 46.2583)" font-size="5">1CS</text>
+  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 7.8955 53.7583)" font-size="5">VIN</text>
+  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 109.062 73.4243)" font-size="5">VIN</text>
+  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 7.8955 60.7583)" font-size="5">GND</text>
+  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 105.896 59.0923)" font-size="5">GND</text>
+  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 108.896 63.4253)" font-size="5">(-)</text>
+  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 110.896 77.5923)" font-size="5">(+)</text>
+  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 7.8955 67.9243)" font-size="5">+5V (IN)</text>
+  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 7.8955 75.0942)" font-size="5">GND</text>
+  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 7.8955 82.5923)" font-size="5">VIN</text>
+  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 7.8955 89.7583)" font-size="5">2CS</text>
+  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 7.8955 96.9243)" font-size="5">2PWM</text>
+  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 7.8955 118.2583)" font-size="5">2</text>
+  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 10.6494 118.2583)" font-size="5">D</text>
+  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 14.021 118.2583)" font-size="5">I</text>
+  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 15.7153 118.2583)" font-size="5">A</text>
+  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 18.7061 118.2583)" font-size="5">G</text>
+  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 22.1558 118.2583)" font-size="5">/</text>
+  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 24.021 118.2583)" font-size="5">E</text>
+  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 26.6602 118.2583)" font-size="5">N</text>
+  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 7.8955 104.0942)" font-size="5">2IN</text>
+  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 15.9888 104.0942)" font-size="3">A</text>
+  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 7.8955 111.0942)" font-size="5">2IN</text>
+  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 15.9888 111.0942)" font-size="3">B</text>
+  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 109.769 34.6665)" font-size="5">1A</text>
+  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 107.6636 43.9253)" font-size="5">OUT</text>
+  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 109.7358 48.5005)" font-size="5">1B</text>
+  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 107.6636 87.9243)" font-size="5">OUT</text>
+  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 109.769 92.5024)" font-size="5">2A</text>
+  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 107.6636 101.7583)" font-size="5">OUT</text>
+  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 109.7358 106.3325)" font-size="5">2B</text>
+  <rect width="3.999993969873488" x="2.793496576110791" y="21.18006496062993" fill="none" height="4.000006022608874" id="connector130"/>
+  <rect width="3.999993969873488" x="2.82945589734388" y="28.38780086286419" fill="none" height="4.000006022608874" id="connector131"/>
+  <rect width="3.999993969873488" x="2.829455897343858" y="35.77201428755076" fill="none" height="4.000006022608874" id="connector132"/>
+  <rect width="3.999993969873488" x="120.2380955755104" y="71.77005473289773" fill="none" height="4.000006022608874" id="connector150"/>
+  <rect width="3.999993969873488" x="2.82945589734388" y="42.78701704100298" fill="none" height="4.000006022608874" id="connector133"/>
+  <rect width="3.999993969873488" x="119.868886016774" y="57.55544389037613" fill="none" height="4.000006022608874" id="connector151"/>
+  <rect width="3.999993969873488" x="2.82945589734388" y="49.98662513007238" fill="none" height="4.000006022608874" id="connector134"/>
+  <rect width="3.999993969873488" x="3.014060676712075" y="57.55544389037611" fill="none" height="4.000006022608874" id="connector136"/>
+  <rect width="3.999993969873488" x="2.82945589734388" y="64.38584130821121" fill="none" height="4.000006022608874" id="connector137"/>
+  <rect width="3.999993969873488" x="3.014060676712075" y="71.58544939728056" fill="none" height="4.000006022608874" id="connector138"/>
+  <rect width="3.999993969873488" x="2.82945589734388" y="78.78505748634998" fill="none" height="4.000006022608874" id="connector139"/>
+  <rect width="3.999993969873488" x="2.829455897343858" y="86.35387624665371" fill="none" height="4.000006022608874" id="connector140"/>
+  <rect width="3.999993969873488" x="2.82945589734388" y="93.36887900010594" fill="none" height="4.000006022608874" id="connector141"/>
+  <rect width="3.999993969873488" x="2.829455897343858" y="100.3838817535582" fill="none" height="4.000006022608874" id="connector142"/>
+  <rect width="3.999993969873488" x="2.82945589734388" y="107.5834898426276" fill="none" height="4.000006022608874" id="connector143"/>
+  <rect width="3.999993969873488" x="2.82945589734388" y="114.783097931697" fill="none" height="4.000006022608874" id="connector144"/>
+  <rect width="3.999993969873488" x="2.793496576110791" y="13.85856102362205" fill="none" height="4.000006022608874" id="connector129"/>
+  <rect width="3.999993969873488" x="120.0534907961422" y="28.38780086286419" fill="none" height="4.000006022608874" id="connector146"/>
+  <rect width="3.999993969873488" x="120.2380955755104" y="42.78701704100298" fill="none" height="4.000006022608874" id="connector147"/>
+  <rect width="3.999993969873488" x="120.0534907961422" y="86.16927091103656" fill="none" height="4.000006022608874" id="connector148"/>
+  <rect width="3.999993969873488" x="120.0534907961423" y="100.7530924247925" fill="none" height="4.000006022608874" id="connector149"/>
+ </g>
+</svg>

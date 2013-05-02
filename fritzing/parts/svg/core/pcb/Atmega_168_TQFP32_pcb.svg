@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- Created with Fritzing (http://www.fritzing.org/) -->
+<svg width="0.321in" x="0in" version="1.2" y="0in" xmlns="http://www.w3.org/2000/svg" height="0.321in" viewBox="0 0 321 321" baseProfile="tiny" xmlns:svg="http://www.w3.org/2000/svg">
+ <g  id="copper1" stroke-width="0">
+  <rect width="45" x="0.303149" y="106.287" fill="#F7BD13"  height="10" stroke="none" id="connector1pad" stroke-width="0"/>
+  <g  stroke-width="0" transform="matrix(0, -1, 1, 0, 187.106, 232.517)">
+   <rect width="45" x="187.311" y="17.7047" fill="#F7BD13"  height="10" stroke="none" id="connector25pad" stroke-width="0"/>
+  </g>
+  <g  stroke-width="0" transform="matrix(-1, 0, 0, -1, 596.788, 419.425)">
+   <rect width="45" x="275.894" y="204.713" fill="#F7BD13"  height="10" stroke="none" id="connector17pad" stroke-width="0"/>
+  </g>
+  <rect width="45" x="0.303149" y="125.972" fill="#F7BD13"  height="10" stroke="none" id="connector2pad" stroke-width="0"/>
+  <g  stroke-width="0" transform="matrix(-1, 0, 0, -1, 596.788, 261.944)">
+   <rect width="45" x="275.894" y="125.972" fill="#F7BD13"  height="10" stroke="none" id="connector21pad" stroke-width="0"/>
+  </g>
+  <rect width="45" x="0.303149" y="145.657" fill="#F7BD13"  height="10" stroke="none" id="connector3pad" stroke-width="0"/>
+  <g  stroke-width="0" transform="matrix(0, -1, 1, 0, 108.366, 153.776)">
+   <rect width="45" x="108.571" y="17.7047" fill="#F7BD13"  height="10" stroke="none" id="connector29pad" stroke-width="0"/>
+  </g>
+  <rect width="45" x="0.303149" y="165.343" fill="#F7BD13"  height="10" stroke="none" id="connector4pad" stroke-width="0"/>
+  <g  stroke-width="0" transform="matrix(-1, 0, 0, -1, 596.788, 340.685)">
+   <rect width="45" x="275.894" y="165.343" fill="#F7BD13"  height="10" stroke="none" id="connector19pad" stroke-width="0"/>
+  </g>
+  <rect width="45" x="0.303149" y="185.028" fill="#F7BD13"  height="10" stroke="none" id="connector5pad" stroke-width="0"/>
+  <g  stroke-width="0" transform="matrix(-1, 0, 0, -1, 596.788, 183.206)">
+   <rect width="45" x="275.894" y="86.6024" fill="#F7BD13"  height="10" stroke="none" id="connector23pad" stroke-width="0"/>
+  </g>
+  <rect width="45" x="0.303149" y="204.713" fill="#F7BD13"  height="10" stroke="none" id="connector6pad" stroke-width="0"/>
+  <g  stroke-width="0" transform="matrix(0, -1, 1, 0, 147.736, 193.146)">
+   <rect width="45" x="147.942" y="17.7047" fill="#F7BD13"  height="10" stroke="none" id="connector27pad" stroke-width="0"/>
+  </g>
+  <rect width="45" x="0.303149" y="224.399" fill="#F7BD13"  height="10" stroke="none" id="connector7pad" stroke-width="0"/>
+  <g  stroke-width="0" transform="matrix(0, -1, 1, 0, 68.9961, 114.406)">
+   <rect width="45" x="69.2008" y="17.7047" fill="#F7BD13"  height="10" stroke="none" id="connector31pad" stroke-width="0"/>
+  </g>
+  <g  stroke-width="0" transform="matrix(0, 1, -1, 0, 389.996, 206.594)">
+   <rect width="45" x="69.2008" y="293.294" fill="#F7BD13"  height="10" stroke="none" id="connector8pad" stroke-width="0"/>
+  </g>
+  <g  stroke-width="0" transform="matrix(-1, 0, 0, -1, 596.788, 380.056)">
+   <rect width="45" x="275.894" y="185.028" fill="#F7BD13"  height="10" stroke="none" id="connector18pad" stroke-width="0"/>
+  </g>
+  <g  stroke-width="0" transform="matrix(0, 1, -1, 0, 409.681, 186.908)">
+   <rect width="45" x="88.8858" y="293.294" fill="#F7BD13"  height="10" stroke="none" id="connector9pad" stroke-width="0"/>
+  </g>
+  <g  stroke-width="0" transform="matrix(-1, 0, 0, -1, 596.788, 301.315)">
+   <rect width="45" x="275.894" y="145.657" fill="#F7BD13"  height="10" stroke="none" id="connector20pad" stroke-width="0"/>
+  </g>
+  <g  stroke-width="0" transform="matrix(0, 1, -1, 0, 429.367, 167.224)">
+   <rect width="45" x="108.571" y="293.294" fill="#F7BD13"  height="10" stroke="none" id="connector10pad" stroke-width="0"/>
+  </g>
+  <g  stroke-width="0" transform="matrix(-1, 0, 0, -1, 596.788, 222.575)">
+   <rect width="45" x="275.894" y="106.287" fill="#F7BD13"  height="10" stroke="none" id="connector22pad" stroke-width="0"/>
+  </g>
+  <g  stroke-width="0" transform="matrix(0, 1, -1, 0, 449.051, 147.539)">
+   <rect width="45" x="128.256" y="293.294" fill="#F7BD13"  height="10" stroke="none" id="connector11pad" stroke-width="0"/>
+  </g>
+  <g  stroke-width="0" transform="matrix(0, -1, 1, 0, 206.792, 252.201)">
+   <rect width="45" x="206.996" y="17.7047" fill="#F7BD13"  height="10" stroke="none" id="connector24pad" stroke-width="0"/>
+  </g>
+  <g  stroke-width="0" transform="matrix(0, 1, -1, 0, 468.736, 127.854)">
+   <rect width="45" x="147.942" y="293.294" fill="#F7BD13"  height="10" stroke="none" id="connector12pad" stroke-width="0"/>
+  </g>
+  <g  stroke-width="0" transform="matrix(0, -1, 1, 0, 167.421, 212.831)">
+   <rect width="45" x="167.626" y="17.7047" fill="#F7BD13"  height="10" stroke="none" id="connector26pad" stroke-width="0"/>
+  </g>
+  <g  stroke-width="0" transform="matrix(0, 1, -1, 0, 488.421, 108.169)">
+   <rect width="45" x="167.626" y="293.294" fill="#F7BD13"  height="10" stroke="none" id="connector13pad" stroke-width="0"/>
+  </g>
+  <g  stroke-width="0" transform="matrix(0, -1, 1, 0, 128.051, 173.461)">
+   <rect width="45" x="128.256" y="17.7047" fill="#F7BD13"  height="10" stroke="none" id="connector28pad" stroke-width="0"/>
+  </g>
+  <g  stroke-width="0" transform="matrix(0, 1, -1, 0, 508.106, 88.4843)">
+   <rect width="45" x="187.311" y="293.294" fill="#F7BD13"  height="10" stroke="none" id="connector14pad" stroke-width="0"/>
+  </g>
+  <g  stroke-width="0" transform="matrix(0, -1, 1, 0, 88.6811, 134.091)">
+   <rect width="45" x="88.8858" y="17.7047" fill="#F7BD13"  height="10" stroke="none" id="connector30pad" stroke-width="0"/>
+  </g>
+  <g  stroke-width="0" transform="matrix(0, 1, -1, 0, 527.792, 68.7992)">
+   <rect width="45" x="206.996" y="293.294" fill="#F7BD13"  height="10" stroke="none" id="connector15pad" stroke-width="0"/>
+  </g>
+  <g  stroke-width="0" transform="matrix(-1, 0, 0, -1, 596.788, 458.794)">
+   <rect width="45" x="275.894" y="224.399" fill="#F7BD13"  height="10" stroke="none" id="connector16pad" stroke-width="0"/>
+  </g>
+  <rect width="45" x="0.303149" y="86.6024" fill="#F7BD13"  height="10" stroke="none" id="connector0pad" stroke-width="0"/>
+ </g>
+ <g  id="silkscreen" stroke-width="0">
+  <g  stroke-width="0">
+   <title >element:E$1</title>
+   <g  stroke-width="0">
+    <title >package:TQFP32-5MM</title>
+    <line  stroke="white" stroke-linecap="round" y1="258.925" x1="62.1732" y2="258.925" stroke-width="10" x2="259.024"/>
+    <line  stroke="white" stroke-linecap="round" y1="258.925" x1="259.024" y2="62.0749" stroke-width="10" x2="259.024"/>
+    <line  stroke="white" stroke-linecap="round" y1="62.0749" x1="259.024" y2="62.0749" stroke-width="10" x2="62.1732"/>
+    <line  stroke="white" stroke-linecap="round" y1="62.0749" x1="62.1732" y2="258.925" stroke-width="10" x2="62.1732"/>
+    <circle fill="none" cx="101.543"  cy="101.445" stroke="white" r="19.685" stroke-width="10"/>
+   </g>
+  </g>
+ </g>
+</svg>

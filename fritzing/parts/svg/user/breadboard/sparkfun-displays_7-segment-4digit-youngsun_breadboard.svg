@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Ebene_1" xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="114.256px"
+	 height="36.644px" viewBox="0 0 114.256 36.644" enable-background="new 0 0 114.256 36.644" xml:space="preserve">
+<g id="breadboard">
+	<circle id="connector0pin" fill="none" stroke="#9A916C" stroke-width="0.489" cx="31.928" cy="32.722" r="1.827"/>
+	<circle id="connector1pin" fill="none" stroke="#9A916C" stroke-width="0.489" cx="39.128" cy="32.722" r="1.827"/>
+	<circle id="connector2pin" fill="none" stroke="#9A916C" stroke-width="0.489" cx="46.328" cy="32.722" r="1.827"/>
+	<circle id="connector3pin" fill="none" stroke="#9A916C" stroke-width="0.489" cx="53.528" cy="32.722" r="1.827"/>
+	<circle id="connector4pin" fill="none" stroke="#9A916C" stroke-width="0.489" cx="60.728" cy="32.722" r="1.827"/>
+	<circle id="connector5pin" fill="none" stroke="#9A916C" stroke-width="0.489" cx="67.929" cy="32.722" r="1.827"/>
+	<circle id="connector7pin" fill="none" stroke="#9A916C" stroke-width="0.489" cx="82.328" cy="32.722" r="1.827"/>
+	<circle id="connector6pin" fill="none" stroke="#9A916C" stroke-width="0.489" cx="75.128" cy="32.722" r="1.827"/>
+	<circle id="connector8pin" fill="none" stroke="#9A916C" stroke-width="0.489" cx="82.328" cy="3.922" r="1.827"/>
+	<circle id="connector13pin" fill="none" stroke="#9A916C" stroke-width="0.489" cx="46.328" cy="3.922" r="1.827"/>
+	<circle id="connector12pin" fill="none" stroke="#9A916C" stroke-width="0.489" cx="53.528" cy="3.922" r="1.827"/>
+	<circle id="connector11pin" fill="none" stroke="#9A916C" stroke-width="0.489" cx="60.728" cy="3.922" r="1.827"/>
+	<circle id="connector9pin" fill="none" stroke="#9A916C" stroke-width="0.489" cx="75.128" cy="3.922" r="1.827"/>
+	<circle id="connector10pin" fill="none" stroke="#9A916C" stroke-width="0.489" cx="67.929" cy="3.922" r="1.827"/>
+	<circle id="connector14pin" fill="none" stroke="#9A916C" stroke-width="0.489" cx="39.128" cy="3.922" r="1.827"/>
+	<circle id="connector15pin" fill="none" stroke="#9A916C" stroke-width="0.489" cx="31.928" cy="3.922" r="1.827"/>
+</g>
+<g id="breadboard_1_">
+	<polygon fill="#323232" points="0,0 113.365,0 114.48,1 114.48,36.863 1,36.863 0,35.556 	"/>
+	<polygon fill="#646464" points="9.718,3.491 22.16,3.491 22.989,4.318 21.329,6.808 10.545,6.808 8.89,4.318 	"/>
+	<polygon fill="#EF1818" points="23.819,5.147 24.648,6.808 22.989,15.934 21.329,17.591 19.672,15.934 21.329,7.636 	"/>
+	<polygon fill="#EF1818" points="21.329,18.42 22.16,20.078 20.501,29.205 18.842,30.863 17.184,29.205 18.842,20.912 	"/>
+	<polygon fill="#646464" points="17.184,32.521 4.74,32.521 3.91,31.689 5.569,29.205 16.354,29.205 18.013,31.691 	"/>
+	<polygon fill="#EF1818" points="3.08,30.863 2.252,29.205 3.91,20.078 5.569,18.42 7.228,20.078 5.569,28.373 	"/>
+	<polygon fill="#EF1818" points="5.569,17.591 4.74,15.934 6.4,6.808 8.058,5.147 9.718,6.808 8.058,15.104 	"/>
+	<polyline fill="#EF1818" points="6.4,17.591 8.058,15.934 18.842,15.934 20.501,17.591 18.842,19.25 8.058,19.25 	"/>
+	<circle fill="#646464" cx="22.634" cy="30.859" r="1.748"/>
+	<polygon fill="#646464" points="38.506,3.491 50.948,3.491 51.777,4.318 50.117,6.808 39.333,6.808 37.677,4.318 	"/>
+	<polygon fill="#EF1818" points="52.607,5.147 53.437,6.808 51.777,15.934 50.117,17.591 48.46,15.934 50.117,7.636 	"/>
+	<polygon fill="#EF1818" points="50.117,18.42 50.948,20.078 49.289,29.205 47.63,30.863 45.972,29.205 47.63,20.912 	"/>
+	<polygon fill="#EF1818" points="45.972,32.521 33.528,32.521 32.698,31.689 34.357,29.205 45.143,29.205 46.8,31.691 	"/>
+	<polygon fill="#EF1818" points="31.868,30.863 31.04,29.205 32.698,20.078 34.357,18.42 36.016,20.078 34.357,28.373 	"/>
+	<polygon fill="#EF1818" points="34.357,17.591 33.528,15.934 35.188,6.808 36.846,5.147 38.506,6.808 36.846,15.104 	"/>
+	<polyline fill="#646464" points="35.188,17.591 36.846,15.934 47.63,15.934 49.289,17.591 47.63,19.25 36.846,19.25 	"/>
+	<circle fill="#646464" cx="51.422" cy="30.859" r="1.748"/>
+	<circle fill="#646464" cx="55.621" cy="24.308" r="1.748"/>
+	<circle fill="#646464" cx="57.58" cy="11.369" r="1.748"/>
+	<circle fill="#646464" cx="87.663" cy="5.002" r="1.748"/>
+	<polygon fill="#646464" points="67.306,3.491 79.748,3.491 80.577,4.318 78.917,6.808 68.133,6.808 66.477,4.318 	"/>
+	<polygon fill="#EF1818" points="81.406,5.147 82.236,6.808 80.577,15.934 78.917,17.591 77.26,15.934 78.917,7.636 	"/>
+	<polygon fill="#EF1818" points="78.917,18.42 79.748,20.078 78.089,29.205 76.43,30.863 74.771,29.205 76.43,20.912 	"/>
+	<polygon fill="#646464" points="74.771,32.521 62.328,32.521 61.498,31.689 63.157,29.205 73.941,29.205 75.6,31.691 	"/>
+	<polygon fill="#EF1818" points="60.668,30.863 59.84,29.205 61.498,20.078 63.157,18.42 64.815,20.078 63.157,28.373 	"/>
+	<polygon fill="#EF1818" points="63.157,17.591 62.328,15.934 63.988,6.808 65.646,5.147 67.306,6.808 65.646,15.104 	"/>
+	<polyline fill="#EF1818" points="63.988,17.591 65.646,15.934 76.43,15.934 78.089,17.591 76.43,19.25 65.646,19.25 	"/>
+	<circle fill="#646464" cx="80.223" cy="30.859" r="1.748"/>
+	<polygon fill="#646464" points="96.181,3.491 108.623,3.491 109.452,4.318 107.792,6.808 97.008,6.808 95.352,4.318 	"/>
+	<polygon fill="#EF1818" points="110.281,5.147 111.111,6.808 109.452,15.934 107.792,17.591 106.135,15.934 107.792,7.636 	"/>
+	<polygon fill="#EF1818" points="107.792,18.42 108.623,20.078 106.964,29.205 105.305,30.863 103.646,29.205 105.305,20.912 	"/>
+	<polygon fill="#EF1818" points="103.646,32.521 91.203,32.521 90.373,31.689 92.032,29.205 102.816,29.205 104.475,31.691 	"/>
+	<polygon fill="#EF1818" points="89.543,30.863 88.715,29.205 90.373,20.078 92.032,18.42 93.69,20.078 92.032,28.373 	"/>
+	<polygon fill="#EF1818" points="92.032,17.591 91.203,15.934 92.863,6.808 94.521,5.147 96.181,6.808 94.521,15.104 	"/>
+	<polyline fill="#646464" points="92.863,17.591 94.521,15.934 105.305,15.934 106.964,17.591 105.305,19.25 94.521,19.25 	"/>
+	<circle fill="#646464" cx="109.098" cy="30.859" r="1.748"/>
+	<polygon fill="#C7C7C7" points="113.48,35.556 0,35.556 1,36.863 114.48,36.863 	"/>
+	<polygon fill="#AAAAAA" points="113.365,35.556 114.48,36.863 114.48,1 113.365,0 	"/>
+</g>
+</svg>

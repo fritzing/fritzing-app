@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- Created with Fritzing (http://www.fritzing.org/) -->
+<svg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' version='1.2' baseProfile='tiny' x='0in' y='0in' width='1.00986in' height='0.91in' viewBox='0 0 25.6505 23.114' >
+<g id='schematic'>
+<rect class='interior rect' x='0.127' y='0.127' width='20.32' height='22.86' stroke='none' stroke-width='0' fill='#ffffff' />
+<text class='text' id='label' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.94028' x='10.287' y='11.557' text-anchor='middle'></text>
+<line class='other' x1='0.127' y1='22.987' x2='0.127' y2='0.127' stroke='#000000' stroke-width='0.3175' stroke-linecap='round'/>
+<line class='other' x1='0.127' y1='0.127' x2='20.447' y2='0.127' stroke='#000000' stroke-width='0.3175' stroke-linecap='round'/>
+<line class='other' x1='20.447' y1='0.127' x2='20.447' y2='22.987' stroke='#000000' stroke-width='0.3175' stroke-linecap='round'/>
+<line class='other' x1='20.447' y1='22.987' x2='0.127' y2='22.987' stroke='#000000' stroke-width='0.3175' stroke-linecap='round'/>
+<line class='pin' id='connector7pin' connectorname='S/R+' x1='25.527' y1='20.447' x2='20.447' y2='20.447' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector7terminal' x='25.527' y='20.447' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='22.987' y='20.2001' text-anchor='middle'>8</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.5875' x='19.7062' y='21.1878' text-anchor='end'>S/R+</text>
+<line class='pin' id='connector6pin' connectorname='S/R-' x1='25.527' y1='17.907' x2='20.447' y2='17.907' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector6terminal' x='25.527' y='17.907' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='22.987' y='17.6601' text-anchor='middle'>7</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.5875' x='19.7062' y='18.6478' text-anchor='end'>S/R-</text>
+<line class='pin' id='connector5pin' connectorname='GND' x1='25.527' y1='15.367' x2='20.447' y2='15.367' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector5terminal' x='25.527' y='15.367' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='22.987' y='15.1201' text-anchor='middle'>6</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.5875' x='19.7062' y='16.1078' text-anchor='end'>GND</text>
+<line class='pin' id='connector4pin' connectorname='OUT-' x1='25.527' y1='12.827' x2='20.447' y2='12.827' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector4terminal' x='25.527' y='12.827' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='22.987' y='12.5801' text-anchor='middle'>5</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.5875' x='19.7062' y='13.5678' text-anchor='end'>OUT-</text>
+<line class='pin' id='connector3pin' connectorname='OUT+' x1='25.527' y1='10.287' x2='20.447' y2='10.287' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector3terminal' x='25.527' y='10.287' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='22.987' y='10.0401' text-anchor='middle'>4</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.5875' x='19.7062' y='11.0278' text-anchor='end'>OUT+</text>
+<line class='pin' id='connector2pin' connectorname='OFFSET+' x1='25.527' y1='7.747' x2='20.447' y2='7.747' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector2terminal' x='25.527' y='7.747' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='22.987' y='7.50006' text-anchor='middle'>3</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.5875' x='19.7062' y='8.48783' text-anchor='end'>OFFSET+</text>
+<line class='pin' id='connector1pin' connectorname='VBRIDGE' x1='25.527' y1='5.207' x2='20.447' y2='5.207' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector1terminal' x='25.527' y='5.207' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='22.987' y='4.96006' text-anchor='middle'>2</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.5875' x='19.7062' y='5.94783' text-anchor='end'>VBRIDGE</text>
+<line class='pin' id='connector0pin' connectorname='OFFSET-' x1='25.527' y1='2.667' x2='20.447' y2='2.667' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector0terminal' x='25.527' y='2.667' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='22.987' y='2.42006' text-anchor='middle'>1</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.5875' x='19.7062' y='3.40783' text-anchor='end'>OFFSET-</text>
+</g>
+</svg>

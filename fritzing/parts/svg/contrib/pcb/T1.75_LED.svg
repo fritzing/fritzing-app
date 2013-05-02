@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?> <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" x="0in" y="0in" width="0.242in" height="0.242in" viewBox="0 0 24200 24200" ><title>T1.75_LED.fp</title><desc>Geda footprint file 'T1.75_LED.fp' converted by Fritzing</desc><metadata xmlns:fz='http://fritzing.org/gedametadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'><rdf:RDF><rdf:Description rdf:about=''><fz:attr name='geda filename'>T1.75_LED.fp</fz:attr>
+<fz:attr name='fritzing version'>0.4.0b.06.21.4282</fz:attr>
+<fz:attr name='conversion date'>27/06/2010 07:16:38</fz:attr>
+<fz:attr name='dist-license'>GPL</fz:attr>
+<fz:attr name='use-license'>unlimited</fz:attr>
+<fz:attr name='author'>gEDA project</fz:attr>
+<fz:attr name='license-url'>http://www.gnu.org/licenses/gpl.html</fz:attr>
+</rdf:Description></rdf:RDF></metadata><g id="copper0">
+ <g id="copper1">
+  <circle fill="none" cx="12200" cy="7800" connectorname="" stroke="#ff9400" r="2450" id="connector0pin" stroke-width="2100"/>
+  <circle fill="none" cx="12200" cy="17800" connectorname="" stroke="#ff9400" r="2450" id="connector1pin" stroke-width="2100"/>
+ </g>
+</g>
+<g id="silkscreen">
+ <line fill="none" stroke="white" y1="21300" x1="19400" y2="21300" stroke-width="1000" x2="4900"/>
+ <line fill="none" stroke="white" y1="20300" x1="20300" y2="21300" stroke-width="1000" x2="19300"/>
+ <line fill="none" stroke="white" y1="20300" x1="3900" y2="21200" stroke-width="1000" x2="4800"/>
+ <path fill="none" stroke="white" stroke-width="1000" d="M20302.4,20302.4a11600,11600,0,1,0,-16404.9,0"/>
+</g>
+</svg>

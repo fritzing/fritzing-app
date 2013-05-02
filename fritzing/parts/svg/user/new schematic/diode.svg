@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1"
+	 id="svg2" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:cc="http://creativecommons.org/ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" sodipodi:docname="diode.svg" sodipodi:version="0.32" inkscape:version="0.46" inkscape:output_extension="org.inkscape.output.svg.inkscape"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="8.375px"
+	 height="22.018px" viewBox="0 0 8.375 22.018" enable-background="new 0 0 8.375 22.018" xml:space="preserve">
+<g id="schematic_1_">
+	<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="7.787" y1="14.677" x2="4.188" y2="14.677"/>
+	<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="4.188" y1="14.677" x2="0.587" y2="14.677"/>
+	<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="4.188,14.677 0.587,7.477 
+		4.188,7.477 7.787,7.477 	"/>
+	<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="4.188" y1="7.477" x2="4.188" y2="14.677"/>
+	
+		<line id="connector1pin_1_" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" x1="4.188" y1="21.876" x2="4.188" y2="14.677"/>
+	<rect id="connector1terminal_1_" x="4.188" y="21.876" fill="none" width="0.001" height="0.001"/>
+	<g transform="translate(3.429,6.4262)">
+		<g transform="rotate(270)">
+			<text transform="matrix(1 0 0 1 -12.6912 -0.1726)" fill="#787878" font-family="'DroidSans'" font-size="2">2</text>
+		</g>
+	</g>
+	
+		<line id="connector0pin_1_" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" x1="4.188" y1="0.276" x2="4.188" y2="7.477"/>
+	<g transform="translate(3.429,1.3462)">
+		<g transform="rotate(270)">
+			<text transform="matrix(1 0 0 1 -3.3708 -0.1726)" fill="#787878" font-family="'DroidSans'" font-size="2">1</text>
+		</g>
+	</g>
+</g>
+</svg>

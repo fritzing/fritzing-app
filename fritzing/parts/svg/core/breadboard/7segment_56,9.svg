@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="138px" height="200px" viewBox="0 0 138 200" enable-background="new 0 0 138 200" xml:space="preserve">
+<rect id="connector6pin" x="81.838" y="13.447" fill="#8C8C8C" width="1.799" height="1.799"/>
+<rect id="connector7pin" x="74.639" y="13.445" fill="#8C8C8C" width="1.799" height="1.801"/>
+<rect id="connector8pin" x="67.44" y="13.445" fill="#8C8C8C" width="1.799" height="1.801"/>
+<rect id="connector9pin" x="60.239" y="13.445" fill="#8C8C8C" width="1.799" height="1.801"/>
+<rect id="connector10pin" x="53.04" y="13.445" fill="#8C8C8C" width="1.799" height="1.801"/>
+<rect id="connector5pin" x="81.84" y="183.809" fill="#8C8C8C" width="1.799" height="1.799"/>
+<rect id="connector4pin" x="74.641" y="183.809" fill="#8C8C8C" width="1.799" height="1.799"/>
+<rect id="connector3pin" x="67.442" y="183.809" fill="#8C8C8C" width="1.799" height="1.799"/>
+<rect id="connector2pin" x="60.241" y="183.809" fill="#8C8C8C" width="1.799" height="1.799"/>
+<rect id="connector1pin" x="53.042" y="183.809" fill="#8C8C8C" width="1.799" height="1.799"/>
+<rect id="connector6terminal" x="81.838" y="13.447" fill="#8C8C8C" width="1.799" height="1.799"/>
+<rect id="connector7terminal" x="74.639" y="13.445" fill="#8C8C8C" width="1.799" height="1.801"/>
+<rect id="connector8terminal" x="67.44" y="13.445" fill="#8C8C8C" width="1.799" height="1.801"/>
+<rect id="connector9terminal" x="60.239" y="13.445" fill="#8C8C8C" width="1.799" height="1.801"/>
+<rect id="connector10terminal" x="53.04" y="13.445" fill="#8C8C8C" width="1.799" height="1.801"/>
+<rect id="connector5terminal" x="81.84" y="183.809" fill="#8C8C8C" width="1.799" height="1.799"/>
+<rect id="connector4terminal" x="74.641" y="183.809" fill="#8C8C8C" width="1.799" height="1.799"/>
+<rect id="connector3terminal" x="67.442" y="183.809" fill="#8C8C8C" width="1.799" height="1.799"/>
+<rect id="connector2terminal" x="60.241" y="183.809" fill="#8C8C8C" width="1.799" height="1.799"/>
+<rect id="connector1terminal" x="53.042" y="183.809" fill="#8C8C8C" width="1.799" height="1.799"/>
+<g id="breadboard">
+	<rect x="0.25" y="0.25" fill="#FFFFFF" width="135.562" height="197.926"/>
+	<polygon fill="#D1C7C7" points="124.25,28.223 128.794,37.319 119.704,87.331 110.607,96.41 101.523,87.331 110.607,41.862 	"/>
+	<polygon fill="#D1C7C7" points="110.607,100.96 115.158,110.045 106.068,160.05 96.977,169.143 87.887,160.05 96.977,114.604 	"/>
+	<polygon fill="#D1C7C7" points="87.887,178.227 19.702,178.227 15.156,173.672 24.25,160.05 83.346,160.05 92.426,173.684 	"/>
+	<path fill="#D1C7C7" d="M127.327,169.131c0,5.28-4.289,9.569-9.576,9.569c-5.285,0-9.573-4.289-9.573-9.569
+		c0-5.294,4.288-9.583,9.573-9.583C123.038,159.548,127.327,163.837,127.327,169.131z"/>
+	<path fill="#9B9B9B" d="M135.812,0.25v197.926H0.25V0.25H135.812 M136.062,0H0v198.426h136.062V0L136.062,0z"/>
+	<polygon fill="#9B9B9B" points="0,198.426 0.62,199.051 136.671,199.051 136.671,0.627 136.051,0 136.051,198.426 	"/>
+	<line fill="none" stroke="#D1C7C7" stroke-width="0.5" x1="75.539" y1="14.346" x2="75.539" y2="23.728"/>
+	<polyline fill="none" stroke="#D1C7C7" stroke-width="0.5" points="82.738,14.347 121.812,14.346 123.23,16.062 123.23,31.312 	"/>
+	<polyline fill="none" stroke="#D1C7C7" stroke-width="0.5" points="100.286,163.352 100.286,179.102 97.137,182.25 77.786,182.25 
+		75.541,184.708 	"/>
+	<line fill="none" stroke="#D1C7C7" stroke-width="0.5" x1="61.14" y1="184.708" x2="61.14" y2="173.393"/>
+	<polyline fill="none" stroke="#D1C7C7" stroke-width="0.5" points="53.941,184.708 10.312,184.708 8.062,181.893 8.062,160.893 	
+		"/>
+	<polyline fill="none" stroke="#D1C7C7" stroke-width="0.5" points="61.138,14.346 57.536,10.8 44.063,10.8 40.479,14.346 
+		40.479,34.058 	"/>
+	<polyline fill="none" stroke="#D1C7C7" stroke-width="0.5" points="53.939,14.346 47.697,7.729 19.702,7.729 16.146,10.8 
+		15.146,93.895 18.48,98.101 49.646,98.101 	"/>
+	<polyline fill="none" stroke="#D1C7C7" stroke-width="0.5" points="82.736,184.5 107.936,184.5 110.637,181.8 110.637,170.102 	"/>
+	<polyline fill="none" stroke="#D1C7C7" stroke-width="0.5" points="68.339,14.346 68.335,7.65 71.036,5.4 128.186,5.4 
+		131.786,8.55 130.887,186.75 128.186,189.45 71.486,189 68.341,184.708 	"/>
+	<rect x="81.838" y="13.447" fill="#8C8C8C" width="1.799" height="1.799"/>
+	<rect x="74.639" y="13.445" fill="#8C8C8C" width="1.799" height="1.801"/>
+	<rect x="67.44" y="13.445" fill="#8C8C8C" width="1.799" height="1.801"/>
+	<rect x="60.239" y="13.445" fill="#8C8C8C" width="1.799" height="1.801"/>
+	<rect x="53.04" y="13.445" fill="#8C8C8C" width="1.799" height="1.801"/>
+	<rect x="81.84" y="183.809" fill="#8C8C8C" width="1.799" height="1.799"/>
+	<rect x="74.641" y="183.809" fill="#8C8C8C" width="1.799" height="1.799"/>
+	<rect x="67.442" y="183.809" fill="#8C8C8C" width="1.799" height="1.799"/>
+	<rect x="60.241" y="183.809" fill="#8C8C8C" width="1.799" height="1.799"/>
+	<rect x="53.042" y="183.809" fill="#8C8C8C" width="1.799" height="1.799"/>
+	<polygon fill="#EF1818" points="46.976,19.148 115.158,19.148 119.704,23.686 110.607,37.319 51.518,37.319 42.437,23.686 	"/>
+	<polygon fill="#EF1818" points="10.605,169.143 6.066,160.05 15.156,110.045 24.25,100.96 33.336,110.045 24.25,155.5 	"/>
+	<polygon fill="#EF1818" points="24.25,96.41 19.702,87.331 28.794,37.319 37.886,28.223 46.976,37.319 37.886,82.784 	"/>
+	<polyline fill="#EF1818" points="28.794,96.41 37.886,87.331 96.977,87.331 106.068,96.41 96.977,105.499 37.886,105.499 	"/>
+</g>
+</svg>

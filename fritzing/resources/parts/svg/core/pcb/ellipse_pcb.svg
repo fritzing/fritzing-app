@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.2" baseProfile="tiny"  xmlns="http://www.w3.org/2000/svg" 
+	 x="0px" y="0px" width="100mm" height="60mm" viewBox="0 0 100 60" >
+<g id="board">
+	<ellipse id="boardoutline" stroke-width="0.2032" stroke="#338040" fill="#338040" cx="50" cy="30" rx="49.8984" ry="29.8984" fill-opacity="0.5"  />
+</g>
+<g id="silkscreen">
+	<ellipse fill="none" stroke="#FFFFFF" stroke-width="0.2032" cx="50" cy="30" rx="49.8984" ry="29.8984" />
+</g>
+</svg>

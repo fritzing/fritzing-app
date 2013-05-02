@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?> <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" x="0in" y="0in" width="0.45in" height="0.142in" viewBox="0 0 45000 14200" ><title>DIODE_LAY 400.fp</title><desc>Geda footprint file 'DIODE_LAY 400.fp' converted by Fritzing</desc><metadata xmlns:fz='http://fritzing.org/gedametadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'><rdf:RDF><rdf:Description rdf:about=''><fz:attr name='geda filename'>DIODE_LAY 400.fp</fz:attr>
+<fz:attr name='fritzing version'>0.4.0b.06.21.4282</fz:attr>
+<fz:attr name='conversion date'>27/06/2010 07:15:30</fz:attr>
+<fz:attr name='dist-license'>GPL</fz:attr>
+<fz:attr name='use-license'>unlimited</fz:attr>
+<fz:attr name='author'>gEDA project</fz:attr>
+<fz:attr name='license-url'>http://www.gnu.org/licenses/gpl.html</fz:attr>
+</rdf:Description></rdf:RDF></metadata><g id="copper0">
+ <g id="copper1">
+  <circle fill="none" cx="2500" cy="7100" connectorname="1" stroke="#ff9400" r="1750" id="connector0pin" stroke-width="1500"/>
+  <circle fill="none" cx="42500" cy="7100" connectorname="2" stroke="#ff9400" r="1750" id="connector1pin" stroke-width="1500"/>
+ </g>
+</g>
+<g id="silkscreen">
+ <line fill="none" stroke="white" y1="7100" x1="2500" y2="7100" stroke-width="1000" x2="15800"/>
+ <line fill="none" stroke="white" y1="7100" x1="29200" y2="7100" stroke-width="1000" x2="42500"/>
+ <line fill="none" stroke="white" y1="7100" x1="15800" y2="500" stroke-width="1000" x2="29200"/>
+ <line fill="none" stroke="white" y1="500" x1="29200" y2="13700" stroke-width="1000" x2="29200"/>
+ <line fill="none" stroke="white" y1="13700" x1="29200" y2="7100" stroke-width="1000" x2="15800"/>
+ <line fill="none" stroke="white" y1="500" x1="15800" y2="13700" stroke-width="1000" x2="15800"/>
+</g>
+</svg>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" x="0in" y="0in" width="1.4566in" height="2.4014in" viewBox="0 0 14566 24014" >
+<title>SparkFun.mod</title>
+<desc>Kicad module 'SparkFun-XTEND-DIGI-MODEM' from file 'SparkFun.mod' converted by Fritzing</desc>
+<metadata xmlns:fz='http://fritzing.org/kicadmetadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+<rdf:RDF><rdf:Description rdf:about=''>
+<fz:attr name='kicad filename'>SparkFun.mod</fz:attr>
+<fz:attr name='kicad module'>SparkFun-XTEND-DIGI-MODEM</fz:attr>
+<fz:attr name='fritzing version'>0.4.1b.07.04.4318</fz:attr>
+<fz:attr name='conversion date'>17/07/2010 17:18:47</fz:attr>
+<fz:attr name='dist-license'>GPL</fz:attr>
+<fz:attr name='use-license'>unlimited</fz:attr>
+<fz:attr name='author'>KICAD project</fz:attr>
+<fz:attr name='license-url'>http://www.gnu.org/licenses/gpl.html</fz:attr>
+<fz:comment>PACKAGE FOR THE XTEND DIGI MODEM 40 MILE RANGE</fz:comment>
+<fz:attr name='keyword'>PACKAGE</fz:attr>
+<fz:attr name='keyword'>FOR</fz:attr>
+<fz:attr name='keyword'>THE</fz:attr>
+<fz:attr name='keyword'>XTEND</fz:attr>
+<fz:attr name='keyword'>DIGI</fz:attr>
+<fz:attr name='keyword'>MODEM</fz:attr>
+<fz:attr name='keyword'>40</fz:attr>
+<fz:attr name='keyword'>MILE</fz:attr>
+<fz:attr name='keyword'>RANGE</fz:attr>
+</rdf:Description></rdf:RDF></metadata><g id="copper0">
+ <g id="copper1">
+  <g connectorname="1" id="connector0pin">
+   <circle fill="none" cx="3740" cy="22833" stroke="#ff9400" r="275" stroke-width="150"/>
+  </g>
+  <g connectorname="2" id="connector1pin">
+   <circle fill="none" cx="3740" cy="22046" stroke="#ff9400" r="275" stroke-width="150"/>
+  </g>
+  <g connectorname="3" id="connector2pin">
+   <circle fill="none" cx="4528" cy="22833" stroke="#ff9400" r="275" stroke-width="150"/>
+  </g>
+  <g connectorname="4" id="connector3pin">
+   <circle fill="none" cx="4528" cy="22046" stroke="#ff9400" r="275" stroke-width="150"/>
+  </g>
+  <g connectorname="5" id="connector4pin">
+   <circle fill="none" cx="5315" cy="22833" stroke="#ff9400" r="275" stroke-width="150"/>
+  </g>
+  <g connectorname="6" id="connector5pin">
+   <circle fill="none" cx="5315" cy="22046" stroke="#ff9400" r="275" stroke-width="150"/>
+  </g>
+  <g connectorname="7" id="connector6pin">
+   <circle fill="none" cx="6102" cy="22833" stroke="#ff9400" r="275" stroke-width="150"/>
+  </g>
+  <g connectorname="8" id="connector7pin">
+   <circle fill="none" cx="6102" cy="22046" stroke="#ff9400" r="275" stroke-width="150"/>
+  </g>
+  <g connectorname="9" id="connector8pin">
+   <circle fill="none" cx="6890" cy="22833" stroke="#ff9400" r="275" stroke-width="150"/>
+  </g>
+  <g connectorname="10" id="connector9pin">
+   <circle fill="none" cx="6890" cy="22046" stroke="#ff9400" r="275" stroke-width="150"/>
+  </g>
+  <g connectorname="11" id="connector10pin">
+   <circle fill="none" cx="7676" cy="22833" stroke="#ff9400" r="275" stroke-width="150"/>
+  </g>
+  <g connectorname="12" id="connector11pin">
+   <circle fill="none" cx="7676" cy="22046" stroke="#ff9400" r="275" stroke-width="150"/>
+  </g>
+  <g connectorname="13" id="connector12pin">
+   <circle fill="none" cx="8464" cy="22833" stroke="#ff9400" r="275" stroke-width="150"/>
+  </g>
+  <g connectorname="14" id="connector13pin">
+   <circle fill="none" cx="8464" cy="22046" stroke="#ff9400" r="275" stroke-width="150"/>
+  </g>
+  <g connectorname="15" id="connector14pin">
+   <circle fill="none" cx="9251" cy="22833" stroke="#ff9400" r="275" stroke-width="150"/>
+  </g>
+  <g connectorname="16" id="connector15pin">
+   <circle fill="none" cx="9251" cy="22046" stroke="#ff9400" r="275" stroke-width="150"/>
+  </g>
+  <g connectorname="17" id="connector16pin">
+   <circle fill="none" cx="10038" cy="22833" stroke="#ff9400" r="275" stroke-width="150"/>
+  </g>
+  <g connectorname="18" id="connector17pin">
+   <circle fill="none" cx="10038" cy="22046" stroke="#ff9400" r="275" stroke-width="150"/>
+  </g>
+  <g connectorname="19" id="connector18pin">
+   <circle fill="none" cx="10826" cy="22833" stroke="#ff9400" r="275" stroke-width="150"/>
+  </g>
+  <g connectorname="20" id="connector19pin">
+   <circle fill="none" cx="10826" cy="22046" stroke="#ff9400" r="275" stroke-width="150"/>
+  </g>
+ </g>
+</g>
+<g id="silkscreen">
+ <line fill="none" stroke="white" y1="24014" x1="0" y2="0" stroke-width="50" x2="0"/>
+ <line fill="none" stroke="white" y1="24014" x1="14566" y2="0" stroke-width="50" x2="14566"/>
+ <line fill="none" stroke="white" y1="0" x1="0" y2="0" stroke-width="50" x2="14566"/>
+ <line fill="none" stroke="white" y1="24014" x1="0" y2="24014" stroke-width="50" x2="14566"/>
+</g>
+</svg>

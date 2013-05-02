@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1"
+	 id="svg2" xmlns:svg="http://www.w3.org/2000/svg" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:cc="http://creativecommons.org/ns#"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="27.557px"
+	 height="24.754px" viewBox="0 0 27.557 24.754" enable-background="new 0 0 27.557 24.754" xml:space="preserve">
+<g id="breadboard">
+	<rect id="connector0terminal" x="5.671" y="23.588" fill="#8C8C8C" width="1.814" height="1.188"/>
+	<rect id="connector1terminal" x="12.871" y="23.588" fill="#8C8C8C" width="1.816" height="1.188"/>
+	<rect id="connector2terminal" x="20.069" y="23.588" fill="#8C8C8C" width="1.813" height="1.188"/>
+	<rect id="connector0pin" x="5.671" y="21.506" fill="#8C8C8C" width="1.814" height="3.273"/>
+	<rect id="connector1pin" x="12.871" y="21.506" fill="#8C8C8C" width="1.816" height="3.273"/>
+	<rect id="connector2pin" x="20.069" y="21.506" fill="#8C8C8C" width="1.813" height="3.273"/>
+</g>
+<g>
+	<g>
+		<rect id="rect4_1_" x="5.668" y="14.818" fill="#8C8C8C" width="1.814" height="9.936"/>
+		<rect id="rect6_1_" x="12.868" y="14.818" fill="#8C8C8C" width="1.815" height="9.936"/>
+		<rect id="rect8_1_" x="20.067" y="14.818" fill="#8C8C8C" width="1.813" height="9.936"/>
+		<polygon id="polygon21_1_" fill="#8C8C8C" points="9.097,19.174 7.483,19.894 5.669,19.894 4.056,19.174 4.056,13.354 
+			9.097,13.354 		"/>
+		<polygon id="polygon23_1_" fill="#8C8C8C" points="16.296,19.174 14.683,19.894 12.869,19.894 11.256,19.174 11.256,13.354 
+			16.296,13.354 		"/>
+		<polygon id="polygon25_1_" fill="#8C8C8C" points="23.495,19.174 21.88,19.894 20.068,19.894 18.456,19.174 18.456,13.354 
+			23.495,13.354 		"/>
+		<rect x="4.061" y="17.066" fill="#808080" width="5.037" height="0.492"/>
+		<rect x="11.267" y="17.066" fill="#808080" width="5.037" height="0.492"/>
+		<rect x="18.463" y="17.066" fill="#808080" width="5.037" height="0.492"/>
+	</g>
+	<rect id="rect27_3_" x="-0.001" y="3.969" fill="#B3B3B3" width="27.558" height="13.095"/>
+	<rect id="rect49_3_" x="-0.001" y="9.308" fill="#E6E6E6" width="27.558" height="3.347"/>
+	<rect id="rect51_3_" x="-0.001" y="3.865" fill="#F2F2F2" width="27.558" height="6.881"/>
+	<rect id="rect49_2_" x="8.174" y="4.269" width="11.205" height="6.089"/>
+	<rect id="rect27_2_" x="14.432" y="3.865" fill="#333333" width="4.798" height="6.375"/>
+	<rect id="rect51_2_" x="14.432" y="0.025" fill="#666666" width="4.798" height="3.84"/>
+	<rect x="0.232" y="4.214" opacity="0.2" fill="#FFFFFF" enable-background="new    " width="7.083" height="0.279"/>
+	<rect x="19.815" y="10.114" opacity="0.1" enable-background="new    " width="7.271" height="0.279"/>
+	<rect x="0.565" y="16.275" opacity="0.1" enable-background="new    " width="26.521" height="0.277"/>
+</g>
+<g opacity="0.25">
+	<path d="M19.091,9.405c0,0.39-0.112,0.708-0.25,0.708s-0.25-0.319-0.25-0.708V4.781c0-0.39,0.112-0.708,0.25-0.708
+		s0.25,0.319,0.25,0.708V9.405z"/>
+</g>
+<g opacity="0.36">
+	<g>
+		<rect x="18.898" y="0.241" fill="#CCCCCC" width="0.086" height="3.407"/>
+	</g>
+	<g>
+		<rect x="18.544" y="0.241" fill="#CCCCCC" width="0.086" height="3.407"/>
+	</g>
+	<g>
+		<rect x="18.189" y="0.241" fill="#CCCCCC" width="0.086" height="3.407"/>
+	</g>
+	<g>
+		<rect x="17.835" y="0.241" fill="#CCCCCC" width="0.086" height="3.407"/>
+	</g>
+	<g>
+		<rect x="17.48" y="0.241" fill="#CCCCCC" width="0.086" height="3.407"/>
+	</g>
+	<g>
+		<rect x="17.126" y="0.241" fill="#CCCCCC" width="0.086" height="3.407"/>
+	</g>
+	<g>
+		<rect x="16.771" y="0.241" fill="#CCCCCC" width="0.086" height="3.407"/>
+	</g>
+	<g>
+		<rect x="16.417" y="0.241" fill="#CCCCCC" width="0.086" height="3.407"/>
+	</g>
+	<g>
+		<rect x="16.062" y="0.241" fill="#CCCCCC" width="0.086" height="3.407"/>
+	</g>
+	<g>
+		<rect x="15.708" y="0.241" fill="#CCCCCC" width="0.086" height="3.407"/>
+	</g>
+	<g>
+		<rect x="15.353" y="0.241" fill="#CCCCCC" width="0.086" height="3.407"/>
+	</g>
+	<g>
+		<rect x="14.999" y="0.241" fill="#CCCCCC" width="0.086" height="3.407"/>
+	</g>
+	<g>
+		<rect x="14.644" y="0.241" fill="#CCCCCC" width="0.086" height="3.407"/>
+	</g>
+</g>
+</svg>

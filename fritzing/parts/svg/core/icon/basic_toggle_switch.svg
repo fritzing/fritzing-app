@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: Adobe Illustrator 13.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 14948)  -->
+<svg
+   version="1.0"
+   baseProfile="tiny"
+   id="svg2"
+   x="0px"
+   y="0px"
+   width="32"
+   height="32">
+<rect
+   id="connector0terminal"
+   x="8.3900003"
+   y="27.333277"
+   width="1.7305385"
+   height="1.0857501"
+   style="fill:#b3b3b3" />
+<rect
+   id="connector1terminal"
+   x="15.256528"
+   y="27.333277"
+   width="1.7312251"
+   height="1.0857501"
+   style="fill:#b3b3b3" />
+<rect
+   id="connector2terminal"
+   x="22.12237"
+   y="27.333277"
+   width="1.7312251"
+   height="1.0857501"
+   style="fill:#b3b3b3" />
+<rect
+   id="connector0pin"
+   x="8.3900003"
+   y="23.527231"
+   width="1.7305385"
+   height="4.8931136"
+   style="fill:#b3b3b3" />
+<rect
+   id="connector1pin"
+   x="15.256528"
+   y="23.527231"
+   width="1.7312251"
+   height="4.8931136"
+   style="fill:#b3b3b3" />
+<rect
+   id="connector2pin"
+   x="22.12237"
+   y="23.527231"
+   width="1.7312251"
+   height="4.8931136"
+   style="fill:#b3b3b3" />
+<g
+   id="breadboard"
+   transform="matrix(0.6867216,0,0,0.6580304,23.405029,7.5682501)">
+	<rect
+   id="rect4"
+   x="-21.877001"
+   y="11.025"
+   width="2.52"
+   height="20.785"
+   style="fill:#b3b3b3" />
+	<rect
+   id="rect6"
+   x="-11.878"
+   y="11.025"
+   width="2.5209999"
+   height="20.785"
+   style="fill:#b3b3b3" />
+	<rect
+   id="rect8"
+   x="-1.88"
+   y="11.025"
+   width="2.5209999"
+   height="20.785"
+   style="fill:#b3b3b3" />
+	<polygon
+   id="polygon21"
+   points="-17.117,21.169 -19.357,22.169 -21.876,22.169 -24.117,21.169 -24.117,8.99 -17.117,8.99 -17.117,21.169 "
+   style="fill:#b3b3b3" />
+	<polygon
+   id="polygon23"
+   points="-7.118,21.169 -9.357,22.169 -11.877,22.169 -14.118,21.169 -14.118,8.99 -7.118,8.99 -7.118,21.169 "
+   style="fill:#b3b3b3" />
+	<polygon
+   id="polygon25"
+   points="2.88,21.169 0.641,22.169 -1.878,22.169 -4.119,21.169 -4.119,8.99 2.88,8.99 2.88,21.169 "
+   style="fill:#b3b3b3" />
+	<rect
+   id="rect27"
+   x="-29.115999"
+   y="-0.233"
+   width="36.997002"
+   height="18.471001"
+   style="fill:#1a1a1a" />
+	<rect
+   id="rect49"
+   x="-29.115999"
+   y="3.3699999"
+   width="36.997002"
+   height="4.6490002" />
+	<rect
+   id="rect51"
+   x="-29.115999"
+   y="-0.37900001"
+   width="36.997002"
+   height="5.7480001"
+   style="fill:#333333" />
+	<rect
+   id="rect49_1_"
+   x="-17.761999"
+   y="0.182"
+   width="15.56"
+   height="4.6490002" />
+	<rect
+   id="rect27_1_"
+   x="-9.0719995"
+   y="-2.6659999"
+   width="6.6630001"
+   height="7.3319998"
+   style="fill:#1a1a1a" />
+	<rect
+   id="rect51_1_"
+   x="-9.0719995"
+   y="-5.7119999"
+   width="6.6630001"
+   height="3.046"
+   style="fill:#333333" />
+</g>
+</svg>

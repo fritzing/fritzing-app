@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1 Basic//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-basic.dtd">
+<svg version="1.1" baseProfile="basic" id="Ebene_1" xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="8.064px" height="8.47px"
+	 viewBox="0 0 8.064 8.47" xml:space="preserve">
+<g>
+	<rect x="6.062" fill="#999999" width="1.457" height="2.061"/>
+	<rect x="3.304" fill="#999999" width="1.455" height="2.061"/>
+	<rect x="0.545" fill="#999999" width="1.455" height="2.061"/>
+	<rect x="6.062" opacity="0.2" fill="#FFFFFF" width="1.457" height="0.063"/>
+	<rect x="3.304" opacity="0.2" fill="#FFFFFF" width="1.455" height="0.063"/>
+	<rect x="0.545" opacity="0.2" fill="#FFFFFF" width="1.455" height="0.063"/>
+	<rect x="1.883" y="6.245" fill="#999999" width="4.297" height="2.225"/>
+	<rect x="1.883" y="8.402" opacity="0.2" fill="#FFFFFF" width="4.297" height="0.067"/>
+	<rect x="0" y="2.061" fill="#303030" width="8.064" height="4.185"/>
+	<polygon fill="#1F1F1F" points="8.064,6.245 0,6.245 0.302,5.942 7.76,5.942 	"/>
+	<polygon fill="#1F1F1F" points="8.064,2.061 0,2.061 0.302,2.365 7.76,2.365 	"/>
+	<polygon points="8.064,6.245 8.064,2.061 7.76,2.365 7.76,5.942 	"/>
+	<polygon fill="#3D3D3D" points="0,6.245 0,2.061 0.302,2.365 0.302,5.942 	"/>
+	<circle fill="#1F1F1F" cx="7.154" cy="2.971" r="0.303"/>
+</g>
+</svg>

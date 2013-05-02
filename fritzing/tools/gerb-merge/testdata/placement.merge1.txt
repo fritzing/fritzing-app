@@ -1,0 +1,8 @@
+Proj1 0.200 0.200
+Proj1 0.200 1.265
+Proj1 0.200 2.329
+Proj1 0.200 3.394
+Proj1*rotated90 1.372 0.200
+Proj1*rotated180 1.372 1.372
+Proj1*rotated270 1.372 2.437
+Proj1*rotated90 1.372 3.609

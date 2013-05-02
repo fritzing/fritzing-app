@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" x="0in" y="0in" width="1.0392in" height="0.9961in" viewBox="0 0 10392 9961" >
+<title>SparkFun.mod</title>
+<desc>Kicad module 'SparkFun-ID-12' from file 'SparkFun.mod' converted by Fritzing</desc>
+<metadata xmlns:fz='http://fritzing.org/kicadmetadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+<rdf:RDF><rdf:Description rdf:about=''>
+<fz:attr name='kicad filename'>SparkFun.mod</fz:attr>
+<fz:attr name='kicad module'>SparkFun-ID-12</fz:attr>
+<fz:attr name='fritzing version'>0.4.1b.07.04.4318</fz:attr>
+<fz:attr name='conversion date'>17/07/2010 17:16:00</fz:attr>
+<fz:attr name='dist-license'>GPL</fz:attr>
+<fz:attr name='use-license'>unlimited</fz:attr>
+<fz:attr name='author'>KICAD project</fz:attr>
+<fz:attr name='license-url'>http://www.gnu.org/licenses/gpl.html</fz:attr>
+<fz:comment>ID12 FOOTPRINT (WORKS WITH ID2, ID12, AND ID20)</fz:comment>
+<fz:attr name='keyword'>ID12</fz:attr>
+<fz:attr name='keyword'>FOOTPRINT</fz:attr>
+<fz:attr name='keyword'>(WORKS</fz:attr>
+<fz:attr name='keyword'>WITH</fz:attr>
+<fz:attr name='keyword'>ID2,</fz:attr>
+<fz:attr name='keyword'>ID12,</fz:attr>
+<fz:attr name='keyword'>AND</fz:attr>
+<fz:attr name='keyword'>ID20)</fz:attr>
+</rdf:Description></rdf:RDF></metadata><g id="copper0">
+ <g id="copper1">
+  <g connectorname="1" id="connector0pin">
+   <circle fill="none" cx="6416" cy="7874" stroke="#ff9400" r="207" stroke-width="100"/>
+   <line fill="none" stroke="#ff9400" y1="7667" x1="6159" y2="7667" stroke-width="100" x2="6673"/>
+   <line fill="none" stroke="#ff9400" y1="8081" x1="6159" y2="8081" stroke-width="100" x2="6673"/>
+   <line fill="none" stroke="#ff9400" y1="7617" x1="6209" y2="8131" stroke-width="100" x2="6209"/>
+   <line fill="none" stroke="#ff9400" y1="7617" x1="6623" y2="8131" stroke-width="100" x2="6623"/>
+  </g>
+  <g connectorname="2" id="connector1pin">
+   <circle fill="none" cx="5629" cy="7874" stroke="#ff9400" r="207" stroke-width="100"/>
+  </g>
+  <g connectorname="3" id="connector2pin">
+   <circle fill="none" cx="4841" cy="7874" stroke="#ff9400" r="207" stroke-width="100"/>
+  </g>
+  <g connectorname="4" id="connector3pin">
+   <circle fill="none" cx="4054" cy="7874" stroke="#ff9400" r="207" stroke-width="100"/>
+  </g>
+  <g connectorname="5" id="connector4pin">
+   <circle fill="none" cx="3267" cy="7874" stroke="#ff9400" r="207" stroke-width="100"/>
+  </g>
+  <g connectorname="6" id="connector5pin">
+   <circle fill="none" cx="3267" cy="1968" stroke="#ff9400" r="207" stroke-width="100"/>
+  </g>
+  <g connectorname="7" id="connector6pin">
+   <circle fill="none" cx="4054" cy="1968" stroke="#ff9400" r="207" stroke-width="100"/>
+  </g>
+  <g connectorname="8" id="connector7pin">
+   <circle fill="none" cx="4841" cy="1968" stroke="#ff9400" r="207" stroke-width="100"/>
+  </g>
+  <g connectorname="9" id="connector8pin">
+   <circle fill="none" cx="5629" cy="1968" stroke="#ff9400" r="207" stroke-width="100"/>
+  </g>
+  <g connectorname="10" id="connector9pin">
+   <circle fill="none" cx="6416" cy="1968" stroke="#ff9400" r="207" stroke-width="100"/>
+  </g>
+  <g connectorname="11" id="connector10pin">
+   <circle fill="none" cx="7991" cy="1968" stroke="#ff9400" r="207" stroke-width="100"/>
+  </g>
+ </g>
+</g>
+<g id="silkscreen">
+ <line fill="none" stroke="white" y1="9961" x1="0" y2="9961" stroke-width="50" x2="10392"/>
+ <line fill="none" stroke="white" y1="9961" x1="10392" y2="0" stroke-width="50" x2="10392"/>
+ <line fill="none" stroke="white" y1="0" x1="10392" y2="0" stroke-width="50" x2="0"/>
+ <line fill="none" stroke="white" y1="0" x1="0" y2="9961" stroke-width="50" x2="0"/>
+</g>
+</svg>

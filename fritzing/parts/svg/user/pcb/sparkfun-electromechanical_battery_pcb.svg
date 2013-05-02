@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- Created with Fritzing (http://www.fritzing.org/) -->
+<svg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' version='1.2' baseProfile='tiny' x='0in' y='0in' width='0.906in' height='0.906in' viewBox='0 0 23.0124 23.0124' >
+<g id='copper1'>
+<circle id='connector2pad' connectorname='-' cx='5.7912' cy='11.5062' r='0.635' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<path stroke='none' stroke-width='0' d='m6.5532,10.7442a0.762,0.762 0 0 1 0.762,0.762l0,0a0.762,0.762 0 0 1 -0.762,0.762l-1.524,0a0.762,0.762 0 0 1 -0.762,-0.762l0,-0a0.762,0.762 0 0 1 0.762,-0.762l1.524,0zM5.2832,11.5062a0.508,0.508 0 1 0 1.016,0 0.508,0.508 0 1 0 -1.016,0z
+' fill='#F7BD13' />
+<circle id='connector1pad' connectorname='+' cx='21.0312' cy='16.5862' r='0.635' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<path stroke='none' stroke-width='0' d='m21.7932,15.8242a0.762,0.762 0 0 1 0.762,0.762l0,0a0.762,0.762 0 0 1 -0.762,0.762l-1.524,0a0.762,0.762 0 0 1 -0.762,-0.762l0,-0a0.762,0.762 0 0 1 0.762,-0.762l1.524,0zM20.5232,16.5862a0.508,0.508 0 1 0 1.016,0 0.508,0.508 0 1 0 -1.016,0z
+' fill='#F7BD13' />
+<circle id='connector0pad' connectorname='+@1' cx='21.0312' cy='6.4262' r='0.635' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<path stroke='none' stroke-width='0' d='m21.7932,5.6642a0.762,0.762 0 0 1 0.762,0.762l0,0a0.762,0.762 0 0 1 -0.762,0.762l-1.524,0a0.762,0.762 0 0 1 -0.762,-0.762l0,-0a0.762,0.762 0 0 1 0.762,-0.762l1.524,0zM20.5232,6.4262a0.508,0.508 0 1 0 1.016,0 0.508,0.508 0 1 0 -1.016,0z
+' fill='#F7BD13' />
+<g id='copper0'>
+<circle id='connector2pad' connectorname='-' cx='5.7912' cy='11.5062' r='0.635' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<path stroke='none' stroke-width='0' d='m6.5532,10.7442a0.762,0.762 0 0 1 0.762,0.762l0,0a0.762,0.762 0 0 1 -0.762,0.762l-1.524,0a0.762,0.762 0 0 1 -0.762,-0.762l0,-0a0.762,0.762 0 0 1 0.762,-0.762l1.524,0zM5.2832,11.5062a0.508,0.508 0 1 0 1.016,0 0.508,0.508 0 1 0 -1.016,0z
+' fill='#F7BD13' />
+<circle id='connector1pad' connectorname='+' cx='21.0312' cy='16.5862' r='0.635' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<path stroke='none' stroke-width='0' d='m21.7932,15.8242a0.762,0.762 0 0 1 0.762,0.762l0,0a0.762,0.762 0 0 1 -0.762,0.762l-1.524,0a0.762,0.762 0 0 1 -0.762,-0.762l0,-0a0.762,0.762 0 0 1 0.762,-0.762l1.524,0zM20.5232,16.5862a0.508,0.508 0 1 0 1.016,0 0.508,0.508 0 1 0 -1.016,0z
+' fill='#F7BD13' />
+<circle id='connector0pad' connectorname='+@1' cx='21.0312' cy='6.4262' r='0.635' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<path stroke='none' stroke-width='0' d='m21.7932,5.6642a0.762,0.762 0 0 1 0.762,0.762l0,0a0.762,0.762 0 0 1 -0.762,0.762l-1.524,0a0.762,0.762 0 0 1 -0.762,-0.762l0,-0a0.762,0.762 0 0 1 0.762,-0.762l1.524,0zM20.5232,6.4262a0.508,0.508 0 1 0 1.016,0 0.508,0.508 0 1 0 -1.016,0z
+' fill='#F7BD13' />
+</g>
+</g>
+<g id='silkscreen'>
+<line class='other' x1='12.1412' y1='8.9662' x2='12.1412' y2='11.5062' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='8.9662' y1='11.5062' x2='10.8712' y2='11.5062' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='12.1412' y1='11.5062' x2='14.0462' y2='11.5062' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='12.1412' y1='11.5062' x2='12.1412' y2='14.0462' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='12.7762' y1='14.6812' x2='14.0462' y2='14.6812' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='13.4112' y1='14.0462' x2='13.4112' y2='15.3162' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<circle class='other' cx='11.5062' cy='11.5062' r='11.43' stroke='#f0f0f0' stroke-width='0.1524' fill='none' />
+<circle class='other' cx='11.5062' cy='11.5062' r='10.2362' stroke='#f0f0f0' stroke-width='0.1524' fill='none' />
+<rect class='other' x='10.8712' y='10.2362' width='0.635' height='2.54' stroke='none' stroke-width='0' fill='#f0f0f0' stroke-linecap='round'/>
+</g>
+</svg>

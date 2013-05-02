@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" x="0in" y="0in" width="0.7881in" height="0.4062in" viewBox="0 0 7881 4062" >
+<title>SparkFun.mod</title>
+<desc>Kicad module 'SparkFun-TO-220-11LEAD' from file 'SparkFun.mod' converted by Fritzing</desc>
+<metadata xmlns:fz='http://fritzing.org/kicadmetadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+<rdf:RDF><rdf:Description rdf:about=''>
+<fz:attr name='kicad filename'>SparkFun.mod</fz:attr>
+<fz:attr name='kicad module'>SparkFun-TO-220-11LEAD</fz:attr>
+<fz:attr name='fritzing version'>0.4.1b.07.04.4318</fz:attr>
+<fz:attr name='conversion date'>17/07/2010 17:18:12</fz:attr>
+<fz:attr name='dist-license'>GPL</fz:attr>
+<fz:attr name='use-license'>unlimited</fz:attr>
+<fz:attr name='author'>KICAD project</fz:attr>
+<fz:attr name='license-url'>http://www.gnu.org/licenses/gpl.html</fz:attr>
+<fz:comment>TO-220 11 PIN PACKAGE</fz:comment>
+<fz:attr name='keyword'>TO-220</fz:attr>
+<fz:attr name='keyword'>11</fz:attr>
+<fz:attr name='keyword'>PIN</fz:attr>
+<fz:attr name='keyword'>PACKAGE</fz:attr>
+</rdf:Description></rdf:RDF></metadata><g id="copper0">
+ <g id="copper1">
+  <g connectorname="1" id="connector0pin">
+   <circle fill="none" cx="590" cy="3688" stroke="#ff9400" r="295.25" stroke-width="157.5"/>
+   <line fill="none" stroke="#ff9400" y1="3392.75" x1="216" y2="3392.75" stroke-width="157.5" x2="964"/>
+   <line fill="none" stroke="#ff9400" y1="3983.25" x1="216" y2="3983.25" stroke-width="157.5" x2="964"/>
+   <line fill="none" stroke="#ff9400" y1="3314" x1="294.75" y2="4062" stroke-width="157.5" x2="294.75"/>
+   <line fill="none" stroke="#ff9400" y1="3314" x1="885.25" y2="4062" stroke-width="157.5" x2="885.25"/>
+  </g>
+  <g connectorname="2" id="connector1pin">
+   <circle fill="none" cx="1259" cy="1689" stroke="#ff9400" r="295.25" stroke-width="157.5"/>
+  </g>
+  <g connectorname="3" id="connector2pin">
+   <circle fill="none" cx="1929" cy="3688" stroke="#ff9400" r="295.25" stroke-width="157.5"/>
+  </g>
+  <g connectorname="4" id="connector3pin">
+   <circle fill="none" cx="2598" cy="1689" stroke="#ff9400" r="295.25" stroke-width="157.5"/>
+  </g>
+  <g connectorname="5" id="connector4pin">
+   <circle fill="none" cx="3267" cy="3688" stroke="#ff9400" r="295.25" stroke-width="157.5"/>
+  </g>
+  <g connectorname="6" id="connector5pin">
+   <circle fill="none" cx="3937" cy="1689" stroke="#ff9400" r="295.25" stroke-width="157.5"/>
+  </g>
+  <g connectorname="7" id="connector6pin">
+   <circle fill="none" cx="4606" cy="3688" stroke="#ff9400" r="295.25" stroke-width="157.5"/>
+  </g>
+  <g connectorname="8" id="connector7pin">
+   <circle fill="none" cx="5275" cy="1689" stroke="#ff9400" r="295.25" stroke-width="157.5"/>
+  </g>
+  <g connectorname="9" id="connector8pin">
+   <circle fill="none" cx="5944" cy="3688" stroke="#ff9400" r="295.25" stroke-width="157.5"/>
+  </g>
+  <g connectorname="10" id="connector9pin">
+   <circle fill="none" cx="6614" cy="1689" stroke="#ff9400" r="295.25" stroke-width="157.5"/>
+  </g>
+  <g connectorname="11" id="connector10pin">
+   <circle fill="none" cx="7283" cy="3688" stroke="#ff9400" r="295.25" stroke-width="157.5"/>
+  </g>
+ </g>
+</g>
+<g id="silkscreen">
+ <line fill="none" stroke="white" y1="1771" x1="0" y2="1771" stroke-width="80" x2="7881"/>
+ <line fill="none" stroke="white" y1="1771" x1="7881" y2="610" stroke-width="80" x2="7881"/>
+ <line fill="none" stroke="white" y1="610" x1="7881" y2="0" stroke-width="80" x2="7881"/>
+ <line fill="none" stroke="white" y1="0" x1="7881" y2="0" stroke-width="80" x2="0"/>
+ <line fill="none" stroke="white" y1="0" x1="0" y2="610" stroke-width="80" x2="0"/>
+ <line fill="none" stroke="white" y1="610" x1="0" y2="1771" stroke-width="80" x2="0"/>
+ <line fill="none" stroke="white" y1="610" x1="0" y2="610" stroke-width="80" x2="7881"/>
+ <line fill="none" stroke="white" y1="1771" x1="0" y2="1771" stroke-width="80" x2="807"/>
+ <line fill="none" stroke="white" y1="1771" x1="1712" y2="1771" stroke-width="80" x2="2145"/>
+ <line fill="none" stroke="white" y1="1771" x1="3051" y2="1771" stroke-width="80" x2="3484"/>
+ <line fill="none" stroke="white" y1="1771" x1="4389" y2="1771" stroke-width="80" x2="4822"/>
+ <line fill="none" stroke="white" y1="1771" x1="5728" y2="1771" stroke-width="80" x2="6161"/>
+ <line fill="none" stroke="white" y1="1771" x1="7874" y2="1771" stroke-width="80" x2="7066"/>
+</g>
+</svg>

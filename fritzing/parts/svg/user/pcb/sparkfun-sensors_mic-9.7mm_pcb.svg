@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- Created with Fritzing (http://www.fritzing.org/) -->
+<svg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' version='1.2' baseProfile='tiny' x='0in' y='0in' width='0.38989in' height='0.38989in' viewBox='0 0 9.9032 9.9032' >
+<g id='copper1'>
+<circle id='connector0pad' connectorname='1' cx='2.9516' cy='3.6816' r='0.6191' stroke='#F7BD13' stroke-width='0.4382' fill='none' />
+<circle id='connector1pad' connectorname='2' cx='2.9516' cy='6.2216' r='0.6191' stroke='#F7BD13' stroke-width='0.4382' fill='none' />
+<g id='copper0'>
+<circle id='connector0pad' connectorname='1' cx='2.9516' cy='3.6816' r='0.6191' stroke='#F7BD13' stroke-width='0.4382' fill='none' />
+<circle id='connector1pad' connectorname='2' cx='2.9516' cy='6.2216' r='0.6191' stroke='#F7BD13' stroke-width='0.4382' fill='none' />
+</g>
+</g>
+<g id='silkscreen'>
+<circle class='other' cx='4.9516' cy='4.9516' r='4.85' stroke='#f0f0f0' stroke-width='0.2032' fill='none' />
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#f0f0f0' font-size='1.651' x='3.5656' y='7.8816' text-anchor='start'>-</text>
+</g>
+</svg>

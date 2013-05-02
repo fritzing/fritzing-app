@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?> <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" x="0in" y="0in" width="0.083in" height="0.108in" viewBox="0 0 8300 10800" ><title>SC90.fp</title><desc>Geda footprint file 'SC90.fp' converted by Fritzing</desc><metadata xmlns:fz='http://fritzing.org/gedametadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'><rdf:RDF><rdf:Description rdf:about=''><fz:attr name='geda filename'>SC90.fp</fz:attr>
+<fz:attr name='fritzing version'>0.4.0b.06.21.4282</fz:attr>
+<fz:attr name='conversion date'>27/06/2010 07:16:30</fz:attr>
+<fz:comment>78 for SOT23</fz:comment>
+<fz:comment>82 for SOT23</fz:comment>
+<fz:comment>41 for SOT23</fz:comment>
+<fz:comment>34 for SOT23, 24 for SOT25</fz:comment>
+<fz:comment>1st side, 1st pin</fz:comment>
+<fz:comment>1st side, 2nd pin</fz:comment>
+<fz:comment>1st side, 3rd pin</fz:comment>
+<fz:comment>2nd side, 3rd pin</fz:comment>
+<fz:comment>2nd side, 2nd pin</fz:comment>
+<fz:comment>2nd side, 1st pin</fz:comment>
+<fz:attr name='dist-license'>GPL</fz:attr>
+<fz:attr name='use-license'>unlimited</fz:attr>
+<fz:attr name='author'>gEDA project</fz:attr>
+<fz:attr name='license-url'>http://www.gnu.org/licenses/gpl.html</fz:attr>
+</rdf:Description></rdf:RDF></metadata><g id="copper1">
+ <line fill="none" connectorname="1" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector0pad" y1="8100" x1="2200" y2="8500" stroke-width="2400" x2="2200"/>
+ <line fill="none" connectorname="2" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector1pad" y1="8100" x1="6100" y2="8500" stroke-width="2400" x2="6100"/>
+ <line fill="none" connectorname="3" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector2pad" y1="2200" x1="4100" y2="2600" stroke-width="2400" x2="4100"/>
+</g>
+<g id="silkscreen">
+ <line fill="none" stroke="white" y1="500" x1="500" y2="10300" stroke-width="1000" x2="500"/>
+ <line fill="none" stroke="white" y1="10300" x1="500" y2="10300" stroke-width="1000" x2="7800"/>
+ <line fill="none" stroke="white" y1="10300" x1="7800" y2="500" stroke-width="1000" x2="7800"/>
+ <line fill="none" stroke="white" y1="500" x1="7800" y2="500" stroke-width="1000" x2="500"/>
+</g>
+</svg>

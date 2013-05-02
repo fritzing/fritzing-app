@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?> <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" x="0in" y="0in" width="0.376in" height="0.376in" viewBox="0 0 37600 37600" ><title>TO39.fp</title><desc>Geda footprint file 'TO39.fp' converted by Fritzing</desc><metadata xmlns:fz='http://fritzing.org/gedametadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'><rdf:RDF><rdf:Description rdf:about=''><fz:attr name='geda filename'>TO39.fp</fz:attr>
+<fz:attr name='fritzing version'>0.4.0b.06.21.4282</fz:attr>
+<fz:attr name='conversion date'>27/06/2010 07:16:38</fz:attr>
+<fz:comment>The JEDEC drawing shows a pin diameter of 16-21 mils</fz:comment>
+<fz:comment>___x_</fz:comment>
+<fz:comment>/     \</fz:comment>
+<fz:comment>TO39:  |3   1|     &lt;-- bottom view (supposed to be a circle)</fz:comment>
+<fz:comment>\  2  /</fz:comment>
+<fz:comment>---</fz:comment>
+<fz:comment>NOTE:  some vendors, ST for example, number the pins</fz:comment>
+<fz:comment>differently.  Here we follow the JEDEC drawing.</fz:comment>
+<fz:comment>the pins are arranged along a 200 mil diameter</fz:comment>
+<fz:comment>circle.  The can outline is 315 to 335 mils (320 nom)</fz:comment>
+<fz:comment>for the top of the can and 350 to 370 mils (360 nom)</fz:comment>
+<fz:comment>for the bottom edge of thecan</fz:comment>
+<fz:comment>tab is 29 to 40 mils long, 28 to 34 wide</fz:comment>
+<fz:comment>and comes off at an angle of 45 deg clockwise from</fz:comment>
+<fz:comment>pin 1 when looking at the top of the board</fz:comment>
+<fz:comment>x, y, width, height, start angle, delta angle, thickness</fz:comment>
+<fz:attr name='dist-license'>GPL</fz:attr>
+<fz:attr name='use-license'>unlimited</fz:attr>
+<fz:attr name='author'>gEDA project</fz:attr>
+<fz:attr name='license-url'>http://www.gnu.org/licenses/gpl.html</fz:attr>
+</rdf:Description></rdf:RDF></metadata><g id="copper0">
+ <g id="copper1">
+  <circle fill="none" cx="18800" cy="8800" connectorname="1" stroke="#ff9400" r="2250" id="connector0pin" stroke-width="1000"/>
+  <circle fill="none" cx="8800" cy="18800" connectorname="2" stroke="#ff9400" r="2250" id="connector1pin" stroke-width="1000"/>
+  <circle fill="none" cx="18800" cy="28800" connectorname="3" stroke="#ff9400" r="2250" id="connector2pin" stroke-width="1000"/>
+ </g>
+</g>
+<g id="silkscreen">
+ <line fill="none" stroke="white" y1="4900" x1="31500" y2="2800" stroke-width="1000" x2="33600"/>
+ <line fill="none" stroke="white" y1="5500" x1="32100" y2="3400" stroke-width="1000" x2="34200"/>
+ <line fill="none" stroke="white" y1="6100" x1="32700" y2="4000" stroke-width="1000" x2="34800"/>
+ <line fill="none" stroke="white" y1="4000" x1="34800" y2="2800" stroke-width="1000" x2="33600"/>
+ <circle fill="none" cx="18800" cy="18800" stroke="white" r="18300" stroke-width="1000"/>
+</g>
+</svg>

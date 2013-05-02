@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?> <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" x="0in" y="0in" width="0.56in" height="0.59in" viewBox="0 0 56000 59000" ><title>BNC_LAY.fp</title><desc>Geda footprint file 'BNC_LAY.fp' converted by Fritzing</desc><metadata xmlns:fz='http://fritzing.org/gedametadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'><rdf:RDF><rdf:Description rdf:about=''><fz:attr name='geda filename'>BNC_LAY.fp</fz:attr>
+<fz:attr name='fritzing version'>0.4.0b.06.21.4282</fz:attr>
+<fz:attr name='conversion date'>27/06/2010 07:13:31</fz:attr>
+<fz:attr name='dist-license'>GPL</fz:attr>
+<fz:attr name='use-license'>unlimited</fz:attr>
+<fz:attr name='author'>gEDA project</fz:attr>
+<fz:attr name='license-url'>http://www.gnu.org/licenses/gpl.html</fz:attr>
+</rdf:Description></rdf:RDF></metadata><g id="copper0">
+ <g id="copper1">
+  <circle fill="none" cx="6500" cy="29500" connectorname="1" stroke="#ff9400" r="2375" id="connector0pin" stroke-width="1250"/>
+  <circle fill="none" cx="6500" cy="19500" connectorname="2" stroke="#ff9400" r="2375" id="connector1pin" stroke-width="1250"/>
+  <circle fill="none" cx="26500" cy="9500" connectorname="m1" stroke="#ff9400" r="4525" id="nonconn0" stroke-width="950"/>
+  <circle fill="none" cx="26500" cy="49500" connectorname="m2" stroke="#ff9400" r="4525" id="nonconn1" stroke-width="950"/>
+ </g>
+</g>
+<g id="silkscreen">
+ <line fill="none" stroke="white" y1="500" x1="500" y2="500" stroke-width="1000" x2="55500"/>
+ <line fill="none" stroke="white" y1="500" x1="55500" y2="58500" stroke-width="1000" x2="55500"/>
+ <line fill="none" stroke="white" y1="58500" x1="55500" y2="58500" stroke-width="1000" x2="500"/>
+ <line fill="none" stroke="white" y1="58500" x1="500" y2="500" stroke-width="1000" x2="500"/>
+</g>
+</svg>

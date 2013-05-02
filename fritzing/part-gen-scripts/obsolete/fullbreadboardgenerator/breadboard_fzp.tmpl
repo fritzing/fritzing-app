@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This xml file is generated through a template. Please don't edit it directly -->
+<module uri="http://fritzing.org/modules/breadboard" moduleId="$metaData.moduleID">
+  <version>1.1</version>
+  <author>$metaData.author</author>
+  <title>$title</title>
+  <date>$metaData.date</date>
+  <label>$label</label>
+  <tags>
+    <tag>breadboard</tag>
+  </tags>
+  <properties>
+    <property name="family">Breadboard</property>
+  </properties>
+  <taxonomy>$taxonomy</taxonomy>
+  <description>A breadboard for easily prototyping circuits</description>
+  <views>
+    <iconView>
+      <layers image="icon/breadboardicon.svg">
+        <layer layerId="icon"/>
+      </layers>
+    </iconView>
+    <breadboardView>
+      <layers image="breadboard/${svgFile}">
+        <layer layerId="breadboardbreadboard"/>
+      </layers>
+    </breadboardView>
+    <schematicView>
+      <layers image="breadboard/${svgFile}">
+        <layer layerId="breadboardbreadboard"/>
+      </layers>
+    </schematicView>
+    <pcbView>
+      <layers image="breadboard/${svgFile}">
+        <layer layerId="breadboardbreadboard"/>
+      </layers>
+    </pcbView>
+  </views>
+  <connectors ignoreTerminalPoints="true" >
+## first we draw the rows
+#for $row in $rows
+#for $dot in $row.net
+#set $pinID = $dot.id + "pin"
+    <connector name="$dot.id" type="female" id="$dot.id">
+      <description>breadboard socket</description>
+      <views>
+        <breadboardView>
+          <p svgId="$pinID" layer="breadboardbreadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="$pinID" layer="breadboardbreadboard"/>
+        </schematicView>
+        <pcbView>
+          <p svgId="$pinID" layer="breadboardbreadboard"/>
+        </pcbView>
+      </views>
+    </connector>
+#end for
+#end for
+## then draw the lines
+#for $line in $lines
+#for $dot in $line.net
+#set $pinID = $dot.id + "pin"
+    <connector name="$dot.id" type="female" id="$dot.id">
+      <description>breadboard socket</description>
+      <views>
+        <breadboardView>
+          <p svgId="$pinID" layer="breadboardbreadboard"/>
+        </breadboardView>
+        <schematicView>
+          <p svgId="$pinID" layer="breadboardbreadboard"/>
+        </schematicView>
+        <pcbView>
+          <p svgId="$pinID" layer="breadboardbreadboard"/>
+        </pcbView>
+      </views>
+    </connector>
+#end for
+#end for
+  </connectors>
+  <buses>
+## draw the net between the rows
+#for $row in $rows
+    <bus id="$row.id">
+#for $dot in $row.net
+      <nodeMember connectorId="$dot.id"/>
+#end for
+    </bus>
+#end for
+## draw the net between the lines
+#for $line in $lines
+    <bus id="$line.id">
+#for $dot in $line.net
+      <nodeMember connectorId="$dot.id"/>
+#end for
+    </bus>
+#end for
+  </buses>
+</module>

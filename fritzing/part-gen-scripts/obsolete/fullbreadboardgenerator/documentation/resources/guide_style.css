@@ -1,0 +1,100 @@
+/**************************************************
+      (CC) Copyright 2008 by Fritzing
+		Creative Commons BY:
+***************************************************/
+
+body {
+	color:#303030;
+	font-family: 'Lucida Grande', LucidaGrande, Lucida, Verdana, Arial, sans-serif;
+	font-size: 0.75em;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+}
+
+#content p {
+	color: #000000;
+/*	font-size: 12 px;*/
+	font-size: 1em;
+	line-height: 1.6em;
+	margin-bottom: 1em;
+	margin-top: 0em;
+}
+
+#content {
+	max-width: 55em;	
+}
+
+p {
+max-width: 45em;	
+}
+
+a, a.hover, a.link, a.visited {
+	color: #8A1124;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: #000000;
+	font-family: 'Trebuchet MS', Helvetica, sans-serif;
+	font-size: 18px;
+}
+
+h1 {
+	color: #222222;
+	font-size: 28px;
+}
+
+h2 {
+	color: #333333;
+	font-size: 22px;
+}
+
+h3 {
+	color: #555555;
+	font-size: 18px;
+}
+
+pre, code {
+	font-family: 'Monaco', Courier, serif;
+/*	color: #BB6B00;*/ /* Orange */
+	color: #AF4429; /* Orange */
+/*	color: #2BA65B;*/  /* Greenish */
+}
+
+pre {
+	max-width: 50em;
+	background: #222;
+}
+
+pre.commandline {
+	background: #ddd;
+	color: #4D6F94;
+}
+
+pre.textmate-source {
+	background: #252525;
+	color: #EDEDED;
+}
+
+pre.textmate-source span.linenum {
+	background: #ddd;
+	color: #888;
+}
+
+pre.textmate-source span.storage 		{ color: #FFC150; }
+pre.textmate-source span.entity 		{ color: #B33F26; }
+pre.textmate-source span.string			{ color: #426B95; }
+pre.textmate-source span.punctuation	{ color: #D8D7C6; }
+pre.textmate-source span.comment, pre.textmate-source span.punctuation_definition_comment {
+	 color: #6D6A64;
+}
+pre.textmate-source span.punctuation_definition_tag 	{ color: #B0873E; }
+pre.textmate-source span.punctuation_definition_string 	{ color: #426B95; }
+pre.textmate-source span.meta_tag_xml				 	{ color: #B0873E; }
+pre.textmate-source span.entity_other_attribute-name	{ color: #A487AF; }
+
+pre.textmate-source span.selected {
+	background: #0F0F0F;
+	color: #FFF356;
+}
+

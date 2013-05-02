@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" x="0in" y="0in" width="0.7952in" height="0.4282in" viewBox="0 0 7952 4282" >
+<title>SparkFun.mod</title>
+<desc>Kicad module 'SparkFun-MULTIWATT15V' from file 'SparkFun.mod' converted by Fritzing</desc>
+<metadata xmlns:fz='http://fritzing.org/kicadmetadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+<rdf:RDF><rdf:Description rdf:about=''>
+<fz:attr name='kicad filename'>SparkFun.mod</fz:attr>
+<fz:attr name='kicad module'>SparkFun-MULTIWATT15V</fz:attr>
+<fz:attr name='fritzing version'>0.4.1b.07.04.4318</fz:attr>
+<fz:attr name='conversion date'>17/07/2010 17:16:31</fz:attr>
+<fz:attr name='dist-license'>GPL</fz:attr>
+<fz:attr name='use-license'>unlimited</fz:attr>
+<fz:attr name='author'>KICAD project</fz:attr>
+<fz:attr name='license-url'>http://www.gnu.org/licenses/gpl.html</fz:attr>
+<fz:comment>MULTIWATT15V PACKAGE FOR THE L298 DUAL FULL BRIDGE DRIVER</fz:comment>
+<fz:attr name='keyword'>MULTIWATT15V</fz:attr>
+<fz:attr name='keyword'>PACKAGE</fz:attr>
+<fz:attr name='keyword'>FOR</fz:attr>
+<fz:attr name='keyword'>THE</fz:attr>
+<fz:attr name='keyword'>L298</fz:attr>
+<fz:attr name='keyword'>DUAL</fz:attr>
+<fz:attr name='keyword'>FULL</fz:attr>
+<fz:attr name='keyword'>BRIDGE</fz:attr>
+<fz:attr name='keyword'>DRIVER</fz:attr>
+</rdf:Description></rdf:RDF></metadata><g id="copper0">
+ <g id="copper1">
+  <g connectorname="P$1" id="connector0pin">
+   <circle fill="none" cx="976" cy="1909" stroke="#ff9400" r="295.25" stroke-width="157.5"/>
+  </g>
+  <g connectorname="P$2" id="connector1pin">
+   <circle fill="none" cx="1976" cy="1909" stroke="#ff9400" r="295.25" stroke-width="157.5"/>
+  </g>
+  <g connectorname="P$3" id="connector2pin">
+   <circle fill="none" cx="2976" cy="1909" stroke="#ff9400" r="295.25" stroke-width="157.5"/>
+  </g>
+  <g connectorname="P$4" id="connector3pin">
+   <circle fill="none" cx="3976" cy="1909" stroke="#ff9400" r="295.25" stroke-width="157.5"/>
+  </g>
+  <g connectorname="P$5" id="connector4pin">
+   <circle fill="none" cx="4976" cy="1909" stroke="#ff9400" r="295.25" stroke-width="157.5"/>
+  </g>
+  <g connectorname="P$6" id="connector5pin">
+   <circle fill="none" cx="5976" cy="1909" stroke="#ff9400" r="295.25" stroke-width="157.5"/>
+  </g>
+  <g connectorname="P$7" id="connector6pin">
+   <circle fill="none" cx="6976" cy="1909" stroke="#ff9400" r="295.25" stroke-width="157.5"/>
+  </g>
+  <g connectorname="P$8" id="connector7pin">
+   <circle fill="none" cx="476" cy="3908" stroke="#ff9400" r="295.25" stroke-width="157.5"/>
+  </g>
+  <g connectorname="P$9" id="connector8pin">
+   <circle fill="none" cx="1476" cy="3908" stroke="#ff9400" r="295.25" stroke-width="157.5"/>
+  </g>
+  <g connectorname="P$10" id="connector9pin">
+   <circle fill="none" cx="2476" cy="3908" stroke="#ff9400" r="295.25" stroke-width="157.5"/>
+  </g>
+  <g connectorname="P$11" id="connector10pin">
+   <circle fill="none" cx="3476" cy="3908" stroke="#ff9400" r="295.25" stroke-width="157.5"/>
+  </g>
+  <g connectorname="P$12" id="connector11pin">
+   <circle fill="none" cx="4476" cy="3908" stroke="#ff9400" r="295.25" stroke-width="157.5"/>
+  </g>
+  <g connectorname="P$13" id="connector12pin">
+   <circle fill="none" cx="5476" cy="3908" stroke="#ff9400" r="295.25" stroke-width="157.5"/>
+  </g>
+  <g connectorname="P$14" id="connector13pin">
+   <circle fill="none" cx="6476" cy="3908" stroke="#ff9400" r="295.25" stroke-width="157.5"/>
+  </g>
+  <g connectorname="P$15" id="connector14pin">
+   <circle fill="none" cx="7476" cy="3908" stroke="#ff9400" r="295.25" stroke-width="157.5"/>
+  </g>
+ </g>
+</g>
+<g id="silkscreen">
+ <line fill="none" stroke="white" y1="1968" x1="0" y2="630" stroke-width="50" x2="0"/>
+ <line fill="none" stroke="white" y1="630" x1="0" y2="0" stroke-width="50" x2="0"/>
+ <line fill="none" stroke="white" y1="0" x1="0" y2="0" stroke-width="50" x2="7952"/>
+ <line fill="none" stroke="white" y1="0" x1="7952" y2="630" stroke-width="50" x2="7952"/>
+ <line fill="none" stroke="white" y1="630" x1="7952" y2="1968" stroke-width="50" x2="7952"/>
+ <line fill="none" stroke="white" y1="1968" x1="7952" y2="1968" stroke-width="50" x2="0"/>
+ <line fill="none" stroke="white" y1="630" x1="0" y2="630" stroke-width="50" x2="7952"/>
+</g>
+</svg>

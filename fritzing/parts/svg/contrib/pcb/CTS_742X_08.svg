@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?> <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" x="0in" y="0in" width="0.13628in" height="0.14416in" viewBox="0 0 13628 14416" ><title>CTS_742X_08.fp</title><desc>Geda footprint file 'CTS_742X_08.fp' converted by Fritzing</desc><metadata xmlns:fz='http://fritzing.org/gedametadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'><rdf:RDF><rdf:Description rdf:about=''><fz:attr name='geda filename'>CTS_742X_08.fp</fz:attr>
+<fz:attr name='fritzing version'>0.4.0b.06.21.4282</fz:attr>
+<fz:attr name='conversion date'>27/06/2010 07:15:07</fz:attr>
+<fz:comment>number of pads</fz:comment>
+<fz:comment>pad width in 1/1000 mil</fz:comment>
+<fz:comment>pad length in 1/1000 mil</fz:comment>
+<fz:comment>pad pitch 1/1000 mil</fz:comment>
+<fz:comment>seperation between pads on opposite sides 1/1000 mil</fz:comment>
+<fz:comment>X coordinates for the right hand column of pads (1/100 mils)</fz:comment>
+<fz:comment>pad clearance to plane layer in 1/100 mil</fz:comment>
+<fz:comment>pad soldermask width in 1/100 mil</fz:comment>
+<fz:comment>silk screen width (1/100 mils)</fz:comment>
+<fz:comment>figure out if we have an even or odd number of pins per side</fz:comment>
+<fz:comment>silk bounding box is -XMAX,-YMAX, XMAX,YMAX (1/100 mils)</fz:comment>
+<fz:comment>element_flags, description, pcb-name, value, mark_x, mark_y,</fz:comment>
+<fz:comment>text_x, text_y, text_direction, text_scale, text_flags</fz:comment>
+<fz:comment>Pad[x1, y1, x2, y2, thickness, clearance, mask, name , pad number, flags]</fz:comment>
+<fz:comment>punt on the arc on small parts as it can cover the pads</fz:comment>
+<fz:attr name='dist-license'>GPL</fz:attr>
+<fz:attr name='use-license'>unlimited</fz:attr>
+<fz:attr name='author'>gEDA project</fz:attr>
+<fz:attr name='license-url'>http://www.gnu.org/licenses/gpl.html</fz:attr>
+</rdf:Description></rdf:RDF></metadata><g id="copper1">
+ <line fill="none" connectorname="1" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector0pad" y1="2484" x1="2484" y2="2484" stroke-width="1968" x2="4059"/>
+ <line fill="none" connectorname="2" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector1pad" y1="5634" x1="2484" y2="5634" stroke-width="1968" x2="4059"/>
+ <line fill="none" connectorname="3" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector2pad" y1="8782" x1="2484" y2="8782" stroke-width="1968" x2="4059"/>
+ <line fill="none" connectorname="4" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector3pad" y1="11932" x1="2484" y2="11932" stroke-width="1968" x2="4059"/>
+ <line fill="none" connectorname="5" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector4pad" y1="11932" x1="11144" y2="11932" stroke-width="1968" x2="9569"/>
+ <line fill="none" connectorname="6" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector5pad" y1="8782" x1="11144" y2="8782" stroke-width="1968" x2="9569"/>
+ <line fill="none" connectorname="7" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector6pad" y1="5634" x1="11144" y2="5634" stroke-width="1968" x2="9569"/>
+ <line fill="none" connectorname="8" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector7pad" y1="2484" x1="11144" y2="2484" stroke-width="1968" x2="9569"/>
+</g>
+<g id="silkscreen">
+ <line fill="none" stroke="white" y1="500" x1="500" y2="13916" stroke-width="1000" x2="500"/>
+ <line fill="none" stroke="white" y1="13916" x1="500" y2="13916" stroke-width="1000" x2="13128"/>
+ <line fill="none" stroke="white" y1="13916" x1="13128" y2="500" stroke-width="1000" x2="13128"/>
+ <line fill="none" stroke="white" y1="500" x1="500" y2="500" stroke-width="1000" x2="4314"/>
+ <line fill="none" stroke="white" y1="500" x1="13128" y2="500" stroke-width="1000" x2="9314"/>
+</g>
+</svg>

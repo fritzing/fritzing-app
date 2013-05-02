@@ -1,0 +1,5 @@
+/* override  the combo box color because the linux menu background is dark grey so the standard color is too dim  */
+
+#infoViewComboBox {
+	color: rgb(0xd0,0xd0,0xd0);
+}

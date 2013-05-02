@@ -1,0 +1,190 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>
+<!-- Creator: CorelDRAW -->
+<svg width="13mm" xmlns="http://www.w3.org/2000/svg" height="23mm" viewBox="0 0 13 23" xmlns:xlink="http://www.w3.org/1999/xlink" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" xml:space="preserve">
+ <g id="breadboard">
+  <defs>
+   <style type="text/css"><![CDATA[
+    .str0 {stroke:#1E1E1E;stroke-width:0.0762}
+    .str3 {stroke:#78786E;stroke-width:0.0762}
+    .str2 {stroke:#78786E;stroke-width:0.25}
+    .str1 {stroke:#8C8C8C;stroke-width:0.762}
+    .fil3 {fill:none}
+    .fil1 {fill:#1E1E1E}
+    .fil6 {fill:#323232}
+    .fil2 {fill:#C3C3C3}
+    .fil4 {fill:#CBCBCB}
+    .fil0 {fill:#E6E6E6}
+    .fil5 {fill:#F0F0F0}
+    .fil7 {fill:url(#id0)}
+   ]]></style>
+   <linearGradient id="id0" y1="4.93" x1="4.6119" y2="4.238" gradientUnits="userSpaceOnUse" x2="4.6119">
+    <stop offset="0" style="stop-color:#A8A89E"/>
+    <stop offset="1" style="stop-color:white"/>
+   </linearGradient>
+  </defs>
+  <g id="Capa_x0020_1">
+   <metadata id="CorelCorpID_0Corel-Layer"/>
+   <g id="_144824656">
+    <g>
+     <rect width="10.9479" x="0.8853" y="0.6134" class="fil0" rx="2.8586" height="16.6163" ry="2.8586" id="_144825976"/>
+     <ellipse class="fil1 str0" cx="6.43368" cy="2.8523" rx="1.03627" ry="1.071" id="_144821416"/>
+    </g>
+    <g>
+     <rect width="11.2103" x="0.9914" y="6.52589" class="fil2" height="10.9803" id="_144822136"/>
+     <rect width="0.9294" x="0.9886" y="4.37038" class="fil2" rx="0.0684" height="3.87821" ry="0.0684" id="_144818704"/>
+     <rect width="0.9181" x="11.2886" y="4.37038" class="fil2" rx="0.0684" height="3.87821" ry="0.0684" id="_144826744"/>
+     <rect width="0.9294" x="0.9886" y="15.4243" class="fil2" rx="0.228" height="3.65203" ry="0.228" id="_144823288"/>
+     <rect width="1.6246" x="10.577" y="17.052" class="fil2" rx="0.228" height="2.02432" ry="0.228" id="_144827656"/>
+     <rect width="9.76769" x="1.71401" y="5.3063" class="fil2" height="12.8996" id="_144829120"/>
+     <rect width="10.3351" x="1.3713" y="4.3487" class="fil2" height="14.7276" id="_144820960"/>
+    </g>
+    <g>
+     <line class="fil3 str1" id="_144824728" y1="18.9344" x1="7.5868" y2="22.1885" x2="7.5894"/>
+     <line class="fil3 str1" id="_144822016" y1="18.9322" x1="10.1268" y2="22.1863" x2="10.1294"/>
+     <line class="fil3 str1" id="_144829456" y1="18.9322" x1="2.5068" y2="22.1863" x2="2.5094"/>
+     <line class="fil3 str1" id="_144819832" y1="18.9322" x1="5.0468" y2="22.1863" x2="5.0494"/>
+    </g>
+    <g>
+     <g>
+      <rect width="2.5327" x="9.3413" y="6.87295" class="fil4" height="0.9398" id="_144826048"/>
+      <rect width="2.5327" x="9.3413" y="8.77295" class="fil4" height="0.9398" id="_144823816"/>
+      <rect width="2.5314" x="9.3426" y="10.6729" class="fil4" height="0.9398" id="_144826288"/>
+      <rect width="2.5326" x="9.3414" y="12.5729" class="fil4" height="0.9398" id="_144823936"/>
+      <rect width="2.5327" x="9.3413" y="14.4729" class="fil4" height="0.9398" id="_144820816"/>
+     </g>
+     <g>
+      <rect width="0.704" x="0.8652" y="6.87295" class="fil4" height="0.9398" id="_144817768"/>
+      <rect width="0.704" x="0.8652" y="8.77295" class="fil4" height="0.9398" id="_144819880"/>
+      <rect width="0.704" x="0.8652" y="10.6729" class="fil4" height="0.9398" id="_144822112"/>
+      <rect width="0.704" x="0.8652" y="12.5729" class="fil4" height="0.9398" id="_144820576"/>
+      <rect width="0.704" x="0.8652" y="14.4729" class="fil4" height="0.9398" id="_144821872"/>
+     </g>
+    </g>
+    <g>
+     <g>
+      <rect width="0.9398" x="4.143" y="6.87273" class="fil1" height="0.939822" id="_144818008"/>
+      <rect width="0.9398" x="5.943" y="6.87273" class="fil1" height="0.939822" id="_144821656"/>
+      <rect width="0.9398" x="7.643" y="6.87273" class="fil1" height="0.939822" id="_144829816"/>
+      <path class="fil1" id="_144831328" d="M9.343 6.8727l1.5828 0c0.2071,0 0.3763,0.0839 0.3763,0.1866l0 0.5666c0,0.1027 -0.1692,0.1867 -0.3763,0.1867l-1.5828 0 0 -0.9399z"/>
+      <rect width="1.7133" x="1.5695" y="6.87273" class="fil1" height="0.939822" id="_144827224"/>
+     </g>
+     <g>
+      <rect width="0.9398" x="4.143" y="8.77273" class="fil1" height="0.939822" id="_144824824"/>
+      <rect width="0.9398" x="5.943" y="8.77273" class="fil1" height="0.939822" id="_144817504"/>
+      <rect width="0.9398" x="7.643" y="8.77273" class="fil1" height="0.939822" id="_144825928"/>
+      <path class="fil1" id="_144829048" d="M9.343 8.7727l1.5828 0c0.2071,0 0.3763,0.0839 0.3763,0.1866l0 0.5666c0,0.1027 -0.1692,0.1867 -0.3763,0.1867l-1.5828 0 0 -0.9399z"/>
+      <rect width="1.7133" x="1.5695" y="8.77273" class="fil1" height="0.939822" id="_144825112"/>
+     </g>
+     <g>
+      <rect width="0.9398" x="4.143" y="10.6727" class="fil1" height="0.939822" id="_144821512"/>
+      <rect width="0.9398" x="5.943" y="10.6727" class="fil1" height="0.939822" id="_144822784"/>
+      <rect width="0.9398" x="7.643" y="10.6727" class="fil1" height="0.939822" id="_144822664"/>
+      <path class="fil1" id="_144820672" d="M9.343 10.6727l1.5828 0c0.2071,0 0.3763,0.0839 0.3763,0.1866l0 0.5666c0,0.1027 -0.1692,0.1867 -0.3763,0.1867l-1.5828 0 0 -0.9399z"/>
+      <rect width="1.7133" x="1.5695" y="10.6727" class="fil1" height="0.939822" id="_144824752"/>
+     </g>
+     <g>
+      <rect width="0.9398" x="4.143" y="12.5727" class="fil1" height="0.939822" id="_144828472"/>
+      <rect width="0.9398" x="5.943" y="12.5727" class="fil1" height="0.939822" id="_144821968"/>
+      <rect width="0.9398" x="7.643" y="12.5727" class="fil1" height="0.939822" id="_144828256"/>
+      <path class="fil1" id="_144828376" d="M9.343 12.5727l1.5828 0c0.2071,0 0.3763,0.0839 0.3763,0.1866l0 0.5666c0,0.1027 -0.1692,0.1867 -0.3763,0.1867l-1.5828 0 0 -0.9399z"/>
+      <rect width="1.7133" x="1.5695" y="12.5727" class="fil1" height="0.939822" id="_144823504"/>
+     </g>
+     <g>
+      <rect width="0.9398" x="4.143" y="14.4727" class="fil1" height="0.939822" id="_144825784"/>
+      <rect width="0.9398" x="5.943" y="14.4727" class="fil1" height="0.939822" id="_144826936"/>
+      <rect width="0.9398" x="7.643" y="14.4727" class="fil1" height="0.939822" id="_144826912"/>
+      <path class="fil1" id="_144827152" d="M9.343 14.4727l1.5828 0c0.2071,0 0.3763,0.0839 0.3763,0.1866l0 0.5666c0,0.1027 -0.1692,0.1867 -0.3763,0.1867l-1.5828 0 0 -0.9399z"/>
+      <rect width="1.7133" x="1.5695" y="14.4727" class="fil1" height="0.939822" id="_144827080"/>
+     </g>
+    </g>
+    <g>
+     <g>
+      <g>
+       <g>
+        <rect width="0.8599" x="3.2832" y="4.23815" class="fil5" height="13.9826" id="_144817024"/>
+        <rect width="0.8548" x="3.28745" y="3.9564" class="fil5" rx="0.0588" height="0.749038" ry="0.0588" id="_144817168"/>
+       </g>
+       <g>
+        <rect width="0.8599" x="5.0832" y="4.23815" class="fil5" height="13.9826" id="_144817240"/>
+        <rect width="0.8548" x="5.08745" y="3.9564" class="fil5" rx="0.0588" height="0.749038" ry="0.0588" id="_144816328"/>
+       </g>
+       <g>
+        <rect width="0.8599" x="6.8832" y="4.23815" class="fil5" height="13.9826" id="_144815368"/>
+        <rect width="0.8548" x="6.88745" y="3.9564" class="fil5" rx="0.0588" height="0.749038" ry="0.0588" id="_144818248"/>
+       </g>
+       <g>
+        <rect width="0.8599" x="8.5832" y="4.23815" class="fil5" height="13.9826" id="_144817960"/>
+        <rect width="0.8548" x="8.58745" y="3.9564" class="fil5" rx="0.0588" height="0.749038" ry="0.0588" id="_144818128"/>
+       </g>
+      </g>
+      <g>
+       <g>
+        <rect width="10.8352" x="0.9928" y="5.6144" class="fil5" height="1.2554" id="_144817864"/>
+        <rect width="1.2051" x="0.666" y="5.6173" class="fil5" rx="0.0904" height="1.2553" ry="0.0904" id="_144817720"/>
+        <rect width="1.2561" x="10.766" y="5.6173" class="fil5" rx="0.0904" height="1.2553" ry="0.0904" id="_144817408"/>
+       </g>
+       <g>
+        <rect width="10.8352" x="0.9928" y="7.8281" class="fil5" height="0.940802" id="_144817744"/>
+        <rect width="1.2051" x="0.666" y="7.83027" class="fil5" rx="0.0904" height="0.940727" ry="0.0904" id="_144828448"/>
+        <rect width="1.2561" x="10.766" y="7.83027" class="fil5" rx="0.0904" height="0.940727" ry="0.0904" id="_144815320"/>
+       </g>
+       <g>
+        <rect width="10.8352" x="0.9928" y="9.7139" class="fil5" height="0.95497" id="_144826264"/>
+        <rect width="1.2051" x="0.666" y="9.71611" class="fil5" rx="0.0904" height="0.954894" ry="0.0904" id="_144825736"/>
+        <rect width="1.2561" x="10.766" y="9.71611" class="fil5" rx="0.0904" height="0.954894" ry="0.0904" id="_144821320"/>
+       </g>
+       <g>
+        <rect width="10.8352" x="0.9928" y="11.6139" class="fil5" height="0.95497" id="_144828688"/>
+        <rect width="1.2051" x="0.666" y="11.6161" class="fil5" rx="0.0904" height="0.954894" ry="0.0904" id="_144819808"/>
+        <rect width="1.2561" x="10.766" y="11.6161" class="fil5" rx="0.0904" height="0.954894" ry="0.0904" id="_144820288"/>
+       </g>
+       <g>
+        <rect width="10.8352" x="0.9928" y="13.5139" class="fil5" height="0.95497" id="_144820888"/>
+        <rect width="1.2051" x="0.666" y="13.5161" class="fil5" rx="0.0904" height="0.954894" ry="0.0904" id="_144819568"/>
+        <rect width="1.2561" x="10.766" y="13.5161" class="fil5" rx="0.0904" height="0.954894" ry="0.0904" id="_144818536"/>
+       </g>
+      </g>
+     </g>
+     <g>
+      <g>
+       <rect width="11.2103" x="0.7914" y="15.9243" class="fil5" height="2.5827" id="_144827800"/>
+       <rect width="0.9294" x="0.7886" y="15.4173" class="fil5" rx="0.0684" height="0.9122" ry="0.0684" id="_144826000"/>
+       <rect width="0.9181" x="11.0886" y="15.4173" class="fil5" rx="0.0684" height="0.9122" ry="0.0684" id="_144827488"/>
+       <rect width="0.9294" x="0.7886" y="18.0173" class="fil5" rx="0.228" height="0.859" ry="0.228" id="_144825808"/>
+       <rect width="0.913" x="11.0886" y="18.0173" class="fil5" rx="0.228" height="0.859" ry="0.228" id="_144825208"/>
+       <rect width="9.76769" x="1.51401" y="15.6374" class="fil5" height="3.03412" id="_144821752"/>
+       <rect width="10.3351" x="1.1713" y="15.4122" class="fil5" height="3.4641" id="_144821560"/>
+      </g>
+      <g>
+       <rect width="3.1861" x="0.6711" y="3.9541" class="fil5" rx="0.4468" height="2.2342" ry="0.4468" id="_144822040"/>
+       <rect width="3.1505" x="8.8665" y="3.9541" class="fil5" rx="0.4468" height="2.2342" ry="0.4468" id="_144822280"/>
+      </g>
+     </g>
+    </g>
+    <g>
+     <g>
+      <g>
+       <rect width="0.9369" x="4.1435" y="4.9226" class="fil6" height="0.6921" id="_144827680"/>
+       <rect width="0.9369" x="5.9435" y="4.9226" class="fil6" height="0.6921" id="_144824176"/>
+       <rect width="0.7951" x="7.7457" y="4.9226" class="fil6" height="0.6921" id="_144822616"/>
+      </g>
+      <g>
+       <path class="fil3 str2" id="_144828880" d="M4.1431 5.2274c0.9396,0 0.9396,0 0.9396,0"/>
+       <path class="fil3 str3" id="_144823480" d="M5.9433 5.1839c0.2943,-0.0018 0.4559,0.1418 0.4746,0.4285"/>
+      </g>
+     </g>
+     <g>
+      <rect width="0.9369" x="4.1435" y="4.238" class="fil7" height="0.6921" id="_144817384"/>
+      <rect width="0.9369" x="5.9435" y="4.238" class="fil7" height="0.6921" id="_144825040"/>
+      <rect width="0.7951" x="7.7457" y="4.238" class="fil7" height="0.6921" id="_144817648"/>
+     </g>
+    </g>
+   </g>
+  </g>
+  <rect width="1.411111111111111" x="1.785228758169931" y="20.73032679738562" fill="none" height="1.411111111111111" id="connector8"/>
+  <rect width="1.411111111111111" x="4.375032679738562" y="20.73032679738562" fill="none" height="1.411111111111111" id="connector9"/>
+  <rect width="1.411111111111111" x="6.832026143790852" y="20.79673202614379" fill="none" height="1.411111111111111" id="connector10"/>
+  <rect width="1.411111111111111" x="9.421830065359483" y="20.73032679738562" fill="none" height="1.411111111111111" id="connector11"/>
+ </g>
+</svg>

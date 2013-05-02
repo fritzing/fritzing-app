@@ -1,0 +1,232 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module fritzingVersion='0.5.2b.02.18.4756' moduleId='RGB_matrix_v25'>
+<version>4</version>
+<date>2011-07-08</date>
+<author>SparkFun</author>
+<description>&lt;p&gt;
+	&lt;span style=&quot;font-weight: bold;&quot;&gt;Description:&lt;/span&gt; This is a large sized RGB LED Matrix with a backpack that has been designed to take SPI serial input and display any graphics you pass it. All the refreshing and communication control is taken care of by the backpack. It&amp;#39;s even reprogrammable! 7 software selectable colors are available!&lt;br /&gt;
+	&lt;br /&gt;
+	Unit comes with a Red/Green/Blue LED Matrix assembled with a RGB Matrix Backpack Controller.&lt;br /&gt;
+	&lt;br /&gt;
+	Check out the &lt;a classname=&quot;&quot; href=&quot;http://www.sparkfun.com/commerce/tutorial_info.php?tutorials_id=91&quot; name=&quot;&quot; target=&quot;_blank&quot;&gt;LED Coffee Table&lt;/a&gt; tutorial!&lt;br /&gt;
+	&lt;br /&gt;
+	&lt;span style=&quot;font-weight: bold;&quot;&gt;Documents:&lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;
+		&lt;a classname=&quot;&quot; href=&quot;http://www.sparkfun.com/datasheets/Components/rgbmatrixbackpack_userguide.pdf&quot; name=&quot;&quot; target=&quot;_blank&quot;&gt;Matrix Backpack Controller Datasheet&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a classname=&quot;&quot; href=&quot;http://www.sparkfun.com/datasheets/Components/RGB_Backpack_v4.zip&quot; name=&quot;&quot; target=&quot;&quot;&gt;RGB Serial Matrix Firmware&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a classname=&quot;&quot; href=&quot;http://www.sparkfun.com/Code/RGB_Sample_Interface_Code.zip&quot; name=&quot;&quot; target=&quot;&quot;&gt;Sample Interface Code&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a classname=&quot;&quot; href=&quot;http://www.sparkfun.com/Code/RGBMatrixBackpackSketch.zip&quot; name=&quot;&quot; target=&quot;_blank&quot;&gt;Sample Arduino Sketch&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a classname=&quot;&quot; href=&quot;http://www.sparkfun.com/datasheets/Components/RGB_matrix_v25.pdf&quot; name=&quot;&quot; target=&quot;_blank&quot;&gt;Schematic&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a classname=&quot;&quot; href=&quot;http://www.sparkfun.com/datasheets/Components/YSM-2388CRGBC.pdf&quot; name=&quot;&quot; target=&quot;_blank&quot;&gt;Triple Color LED Matrix Datasheet&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;
+	&lt;span style=&quot;font-weight: bold;&quot;&gt;Example Projects:&lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;
+		&lt;a href=&quot;http://www.sparkfun.com/datasheets/Components/LED_MATRIX_CODE.zip&quot; target=&quot;_blank&quot;&gt;Example Software for older RGB Serial Matrix&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a classname=&quot;&quot; href=&quot;http://wiring.org.co/learning/basics/rbgbackpack.html&quot; name=&quot;&quot; target=&quot;_blank&quot;&gt;Wiring Example&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a href=&quot;http://www.nokinomo.com/films/films.php?Id=13&quot; target=&quot;_blank&quot;&gt;Example deployment&lt;/a&gt; by Nokinomo&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a classname=&quot;&quot; href=&quot;http://www.youtube.com/watch?v=hEKEM6ZOsZE&quot; name=&quot;&quot; target=&quot;_blank&quot;&gt;Example Project&lt;/a&gt; by Mr. Nick Hall&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a classname=&quot;&quot; href=&quot;http://www.halfmachine.dk/posts/60&quot; name=&quot;&quot; target=&quot;_blank&quot;&gt;Ladies and Mens Room Mixup&lt;/a&gt; by Vanessa Carpenter&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a href=&quot;http://www.sparkfun.com/tutorials/44&quot;&gt;Ethernet LED Matrix&lt;/a&gt; tutorial by Owen Osborn&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;
+	&lt;br /&gt;
+	&lt;span style=&quot;font-weight: bold;&quot;&gt;Dimensions:&lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;
+		2.38x2.38&amp;quot; square&lt;/li&gt;
+	&lt;li&gt;
+		Max width of backpack including connector pins - 1.1&amp;quot;&lt;/li&gt;
+&lt;/ul&gt;</description>
+<title>LED Matrix - Serial Interface - Red/Green/Blue</title>
+<url>http://www.sparkfun.com/products/760</url>
+<tags>
+<tag>LED</tag>
+<tag>Matrix</tag>
+<tag>Serial</tag>
+<tag>RGB</tag>
+</tags>
+<properties>
+<property name='family'>Display</property>
+<property name='Type'>8x8 Dot Matrix</property>
+<property name='Interface'>Serial</property>
+</properties>
+<views>
+<breadboardView>
+<layers image='breadboard/RGB_matrix_v25_breadboard.svg'>
+<layer layerId='breadboard'/>
+</layers>
+</breadboardView>
+<schematicView>
+<layers image='schematic/RGB_matrix_v25_schematic.svg'>
+<layer layerId='schematic'/>
+</layers>
+</schematicView>
+<pcbView>
+<layers image='pcb/RGB_matrix_v25_pcb.svg'>
+<layer layerId='copper1'/>
+<layer layerId='silkscreen'/>
+<layer layerId='copper0'/>
+</layers>
+</pcbView>
+<iconView>
+<layers image='breadboard/RGB_matrix_v25_breadboard.svg'>
+<layer layerId='icon'/>
+</layers>
+</iconView>
+</views>
+<connectors>
+<connector id='connector128' type='male' name='VCC'>
+<description>VCC</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector128pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector128pin' terminalId='connector128terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector128pad'/><p layer='copper1' svgId='connector128pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector129' type='male' name='VCC'>
+<description>VCC</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector129pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector129pin' terminalId='connector129terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector129pad'/><p layer='copper1' svgId='connector129pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector130' type='male' name='SCK'>
+<description>SCK</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector130pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector130pin' terminalId='connector130terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector130pad'/><p layer='copper1' svgId='connector130pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector131' type='male' name='CS'>
+<description>CS</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector131pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector131pin' terminalId='connector131terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector131pad'/><p layer='copper1' svgId='connector131pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector132' type='male' name='MISO'>
+<description>MISO</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector132pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector132pin' terminalId='connector132terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector132pad'/><p layer='copper1' svgId='connector132pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector133' type='male' name='GND'>
+<description>GND</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector133pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector133pin' terminalId='connector133terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector133pad'/><p layer='copper1' svgId='connector133pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector134' type='male' name='GND'>
+<description>GND</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector134pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector134pin' terminalId='connector134terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector134pad'/><p layer='copper1' svgId='connector134pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector135' type='male' name='MOSI'>
+<description>MOSI</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector135pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector135pin' terminalId='connector135terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector135pad'/><p layer='copper1' svgId='connector135pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector136' type='male' name='CS'>
+<description>CS</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector136pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector136pin' terminalId='connector136terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector136pad'/><p layer='copper1' svgId='connector136pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector137' type='male' name='SCK'>
+<description>SCK</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector137pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector137pin' terminalId='connector137terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector137pad'/><p layer='copper1' svgId='connector137pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector138' type='male' name='VCC'>
+<description>VCC</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector138pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector138pin' terminalId='connector138terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector138pad'/><p layer='copper1' svgId='connector138pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector139' type='male' name='VCC'>
+<description>VCC</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector139pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector139pin' terminalId='connector139terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector139pad'/><p layer='copper1' svgId='connector139pad'/></pcbView>
+</views>
+</connector>
+</connectors>
+<buses>
+<bus id='vcc'>
+<nodeMember connectorId='connector128'/>
+<nodeMember connectorId='connector129'/>
+<nodeMember connectorId='connector138'/>
+<nodeMember connectorId='connector139'/>
+</bus>
+<bus id='gnd'>
+<nodeMember connectorId='connector133'/>
+<nodeMember connectorId='connector134'/>
+</bus>
+<bus id='cs'>
+<nodeMember connectorId='connector131'/>
+<nodeMember connectorId='connector136'/>
+</bus>
+<bus id='sck'>
+<nodeMember connectorId='connector130'/>
+<nodeMember connectorId='connector137'/>
+</bus>
+</buses>
+</module>

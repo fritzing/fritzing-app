@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?><module fritzingVersion="0.1.1201" moduleId="9e393f46-ca08-11dd-9c4a-001f5b3a17a5">
+    <version replacedby="ResistorModuleID">1</version>
+    <title>100 Ω Resistor</title>
+    <label>R</label>
+    <date>2009-09-08</date>
+    <author>Brendan Howell</author>
+    <tags>
+        <tag>Resistor</tag>
+        <tag>basic resistor</tag>
+        <tag>fritzing core</tag>
+    </tags>
+    <properties>
+        <property name="Resistance">100Ω</property>
+        <property name="family">obsolete Resistor</property>
+      <property name="Rated Power">0.25 watt</property>
+      <property name="footprint">300 mil</property>
+    <property name="package">THT</property></properties>
+    <taxonomy>discreteParts.resistor.100</taxonomy>
+    <description>A generic resistor (0.25W)</description>
+    <views>
+        <iconView>
+            <layers image="icon/resistor_icon_100.svg">   
+                <layer layerId="icon"/>
+            </layers>
+        </iconView>
+        <breadboardView>
+            <layers image="breadboard/resistor_100.svg">
+                <layer layerId="breadboard"/>
+            </layers>
+        </breadboardView>
+        <schematicView>
+            <layers image="schematic/resistor.svg">
+                <layer layerId="schematic"/>
+            </layers>
+        </schematicView>
+        <pcbView>
+            <layers image="pcb/axial_lay_300mil.svg">
+                <layer layerId="copper0"/>
+                <layer layerId="keepout"/>
+                <layer layerId="soldermask"/>
+                <layer layerId="silkscreen"/>
+                <layer layerId="outline"/>
+            </layers>
+        </pcbView>
+    </views>
+    <connectors>
+        <connector id="connector0" name="Pin 0" type="male">
+            <description>Pin0</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector0pin" terminalId="connector0terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector0pin" terminalId="connector0terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector0pad"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector1" name="Pin 1" type="male">
+            <description>Pin 1</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector1pin" terminalId="connector1terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector1pin" terminalId="connector1terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector1pad"/>
+                </pcbView>
+            </views>
+        </connector>
+    </connectors>
+</module>

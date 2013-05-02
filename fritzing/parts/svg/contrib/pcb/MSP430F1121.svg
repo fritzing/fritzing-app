@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?> <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" x="0in" y="0in" width="0.545in" height="0.45in" viewBox="0 0 54500 45000" ><title>MSP430F1121.fp</title><desc>Geda footprint file 'MSP430F1121.fp' converted by Fritzing</desc><metadata xmlns:fz='http://fritzing.org/gedametadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'><rdf:RDF><rdf:Description rdf:about=''><fz:attr name='geda filename'>MSP430F1121.fp</fz:attr>
+<fz:attr name='fritzing version'>0.4.0b.06.21.4282</fz:attr>
+<fz:attr name='conversion date'>27/06/2010 07:15:55</fz:attr>
+<fz:attr name='dist-license'>GPL</fz:attr>
+<fz:attr name='use-license'>unlimited</fz:attr>
+<fz:attr name='author'>gEDA project</fz:attr>
+<fz:attr name='license-url'>http://www.gnu.org/licenses/gpl.html</fz:attr>
+</rdf:Description></rdf:RDF></metadata><g id="copper1">
+ <line fill="none" connectorname="P1.7/TA2/TDO/TDI" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" id="connector19pad" y1="6000" x1="5750" y2="1000" stroke-width="2000" x2="5750"/>
+ <line fill="none" connectorname="P1.6/TA1/TDI" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" id="connector18pad" y1="6000" x1="10750" y2="1000" stroke-width="2000" x2="10750"/>
+ <line fill="none" connectorname="P1.5/TA0/TMS" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" id="connector17pad" y1="6000" x1="15750" y2="1000" stroke-width="2000" x2="15750"/>
+ <line fill="none" connectorname="P1.4/SMCLK/TCK" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" id="connector16pad" y1="6000" x1="20750" y2="1000" stroke-width="2000" x2="20750"/>
+ <line fill="none" connectorname="P1.3/TA2" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" id="connector15pad" y1="6000" x1="25750" y2="1000" stroke-width="2000" x2="25750"/>
+ <line fill="none" connectorname="P1.2/TA1" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" id="connector14pad" y1="6000" x1="30750" y2="1000" stroke-width="2000" x2="30750"/>
+ <line fill="none" connectorname="P1.1/TA0" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" id="connector13pad" y1="6000" x1="35750" y2="1000" stroke-width="2000" x2="35750"/>
+ <line fill="none" connectorname="P1.0/TACLK" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" id="connector12pad" y1="6000" x1="40750" y2="1000" stroke-width="2000" x2="40750"/>
+ <line fill="none" connectorname="P2.4/CA1/TA2" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" id="connector11pad" y1="6000" x1="45750" y2="1000" stroke-width="2000" x2="45750"/>
+ <line fill="none" connectorname="P2.3/CA0/TA1" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" id="connector10pad" y1="6000" x1="50750" y2="1000" stroke-width="2000" x2="50750"/>
+ <line fill="none" connectorname="P2.2/CAOUT/TA0" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" id="connector9pad" y1="44000" x1="50750" y2="39000" stroke-width="2000" x2="50750"/>
+ <line fill="none" connectorname="P2.2/INCLK" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" id="connector8pad" y1="44000" x1="45750" y2="39000" stroke-width="2000" x2="45750"/>
+ <line fill="none" connectorname="P2.0/ACLK" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" id="connector7pad" y1="44000" x1="40750" y2="39000" stroke-width="2000" x2="40750"/>
+ <line fill="none" connectorname="~RTS/NMI" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" id="connector6pad" y1="44000" x1="35750" y2="39000" stroke-width="2000" x2="35750"/>
+ <line fill="none" connectorname="XIN" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" id="connector5pad" y1="44000" x1="30750" y2="39000" stroke-width="2000" x2="30750"/>
+ <line fill="none" connectorname="XOUT" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" id="connector4pad" y1="44000" x1="25750" y2="39000" stroke-width="2000" x2="25750"/>
+ <line fill="none" connectorname="VSS" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" id="connector3pad" y1="44000" x1="20750" y2="39000" stroke-width="2000" x2="20750"/>
+ <line fill="none" connectorname="P2.5/ROSC" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" id="connector2pad" y1="44000" x1="15750" y2="39000" stroke-width="2000" x2="15750"/>
+ <line fill="none" connectorname="VCC" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" id="connector1pad" y1="44000" x1="10750" y2="39000" stroke-width="2000" x2="10750"/>
+ <line fill="none" connectorname="TEST" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" id="connector0pad" y1="44000" x1="5750" y2="39000" stroke-width="2000" x2="5750"/>
+</g>
+<g id="silkscreen">
+ <line fill="none" stroke="white" y1="35000" x1="2750" y2="35000" stroke-width="1500" x2="53750"/>
+ <line fill="none" stroke="white" y1="35000" x1="53750" y2="10000" stroke-width="1500" x2="53750"/>
+ <line fill="none" stroke="white" y1="10000" x1="53750" y2="10000" stroke-width="1500" x2="2750"/>
+ <line fill="none" stroke="white" y1="10000" x1="2750" y2="20000" stroke-width="1500" x2="2750"/>
+ <line fill="none" stroke="white" y1="24000" x1="2750" y2="35000" stroke-width="1500" x2="2750"/>
+ <path fill="none" stroke="white" stroke-width="1500" d="M4750,22000a2000,2000,0,0,0,-2000,-2000"/>
+ <path fill="none" stroke="white" stroke-width="1500" d="M2750,24000a2000,2000,0,0,0,2000,-2000"/>
+</g>
+</svg>

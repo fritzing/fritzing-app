@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?><module moduleId="generic_ic_dip_%1_.percent.1">
+ <version>4</version>
+ <author>Fritzing Part-o-matic</author>
+ <title>DIP - %1 pins</title>
+ <label>IC</label>
+ <date>2009-10-23</date>
+ <tags>
+  <tag>DIP</tag>
+  <tag>fritzing core</tag>
+ </tags>
+ <properties>
+  <property name="family">Generic IC</property>
+  <property name="package">DIP (Dual Inline) [THT]</property>
+  <property name="pins">%1</property>
+  <property name="pin spacing">.percent.1</property>
+  <property name="chip label">IC</property>
+  <property name="hole size"></property>
+ <property name='editable pin labels'>true</property>
+</properties>
+ <taxonomy>part.dip.%1.pins</taxonomy>
+ <description>A DIP stand-in part for whatever IC you want.  With %1 pins on a .percent.1 dual inline package (DIP) footprint.</description>
+ <views>
+  <iconView>
+   <layers image="icon/dip_icon.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+  <breadboardView>
+   <layers image="breadboard/generic_ic_dip_%1_300mil_bread.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="schematic/generic_ic_dip_%1_schem.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/dip_%1_.percent.1_pcb.svg">
+    <layer layerId="silkscreen"/>
+    <layer layerId="copper0"/>
+   <layer layerId="copper1"/></layers>
+  </pcbView>
+ </views>
+ <connectors>
+%2
+ </connectors>
+</module>

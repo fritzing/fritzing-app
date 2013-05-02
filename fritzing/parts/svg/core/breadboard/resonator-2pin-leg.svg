@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="0.25956in"
+	 height="0.3243194in" viewBox="0 0 18.688 23.351" >
+<g id="breadboard">
+	<rect id="connector1pin" x="15.437" y="17.549" fill="none" width="2.159" height="1"/>
+	<rect id="connector0pin" x="1.036" y="17.549" fill="none" width="2.158" height="1"/>
+
+	<line  id="connector0leg" stroke-linecap="round" x1="2.115" y1="23.351" x2="2.115" y2="33.483" stroke="#8C8C8C" fill="none" stroke-width="2.158" />
+	<line  id="connector1leg" stroke-linecap="round" x1="16.515" y1="23.351" x2="16.515" y2="33.483" stroke="#8C8C8C" fill="none" stroke-width="2.158" />
+
+	<g>
+		<path fill="#8C8C8C" d="M1.036,20.351v3h2.158v-3H1.036z"/>
+		<path fill="#8C8C8C" d="M17.594,20.351v3h-2.158v-3H1.036z"/>
+		<rect x="1.036" y="18.172" fill="#8C8C8C" width="3.541" height="3.223"/>
+		<rect x="14.055" y="18.172" fill="#8C8C8C" width="3.541" height="3.223"/>
+		<path fill="#CC7720" d="M18.289,16.785c-0.066,1.051-0.816,2.197-0.816,2.197c-0.438,0.125-1.187,0.02-2.813,0.063
+			c-2.375,0.063-0.979-2.091-2.813-3.208c-1.708-1.042-3.313-1.104-5.313,0.021c-2.527,1.421-0.833,3.5-2.521,3.563
+			c-1.374,0.049-2.353-0.063-2.853-0.188c-0.026-0.134-0.688-1.104-0.811-2.449c0,0-0.78-11.704,0-14.159
+			c0.343-1.078,1.046-1.855,2.046-2.046c2.612-0.5,11.645-0.531,13.85,0c1.098,0.266,1.671,1.031,2.045,2.045
+			C19.196,5.079,18.289,16.785,18.289,16.785z"/>
+		<path opacity="0.1" enable-background="new    " d="M0.767,1.633c0,0,0.653,0.899,0.653,2.104s0.004,8.78,0.021,9.75
+			c0.021,1.179-1.148,2.287-1.148,2.287S-0.6,3.319,0.767,1.633z"/>
+		<path opacity="0.1" enable-background="new    " d="M17.909,1.633c0,0-0.655,0.899-0.655,2.104s-0.004,8.78-0.021,9.75
+			c-0.021,1.179,1.148,2.287,1.148,2.287S19.276,3.319,17.909,1.633z"/>
+		<path opacity="0.55" fill="#FFFFFF" enable-background="new    " d="M6.209,1.41C4.827,1.541,3.73,1.963,3.762,2.353
+			C3.776,2.52,4.028,2.648,4.396,2.738c1.36,0.245,2.36,0.073,3.279-0.176c0.664-0.19,1.119-0.438,1.102-0.686
+			C8.742,1.487,7.597,1.278,6.209,1.41z"/>
+		<text transform="matrix(1 0 0 1 4.2107 10.2917)" fill="#5F6160" font-family="'ocra10'" font-size="5">MHz</text>
+		<path opacity="0.1" enable-background="new    " d="M4.914,18.353c0,0-0.241-1.045-0.102-1.621
+			c0.141-0.576,0.907-3.094,4.532-3.094s3.73,2.188,3.938,2.844c0.104,0.332-0.212,1.472-0.212,1.472s0.462-2.378-3.883-2.972
+			C4.577,15.638,4.914,18.353,4.914,18.353z"/>
+	</g>
+</g>
+</svg>

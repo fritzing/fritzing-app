@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module moduleId="BreadboardLogoTextModuleID" >
+ <version>4</version>
+ <author>Jonathan</author>
+ <title>Breadboard Text</title>
+ <date>2012-10-23</date>
+ <label>TXT</label>
+ <tags>
+  <tag>breadboard</tag>
+  <tag>part</tag>
+  <tag>diy</tag>
+  <tag>fritzing core</tag>
+ </tags>
+ <properties>
+   <property name="family" >Logo</property>
+   <property name="logo" >logo</property>
+   <property name="shape" ></property>
+   <property name="type" >text</property>
+   <property name="color" ></property>
+ </properties>
+ <taxonomy>discreteParts.breadboard.logo</taxonomy>
+ <description>For adding text to the breadboard view</description>
+ <views>
+  <iconView>
+   <layers image="icon/breadboard_text.svg" >
+    <layer layerId="icon" />
+   </layers>
+  </iconView>
+  <breadboardView>
+   <layers image="breadboard/breadboardlogo.svg" >
+    <layer layerId="breadboard" />
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="breadboard/breadboardlogo.svg" >
+    <layer layerId="unknown" />
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="breadboard/breadboardlogo.svg" >
+    <layer layerId="unknown"/>
+   </layers>
+  </pcbView>
+ </views>
+ <connectors/>
+ <buses/>
+</module>

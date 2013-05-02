@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1 Basic//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-basic.dtd">
+<svg version="1.1" baseProfile="basic" id="Ebene_1" xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28.801px"
+	 height="16.258px" viewBox="0 0 28.801 16.258" xml:space="preserve">
+<g>
+	<title>MTA100_3.fp</title>
+	<desc>Geda footprint file &apos;MTA100_3.fp&apos; converted by Fritzing</desc>
+	<rect fill="#FEEFD8" width="28.801" height="16.269"/>
+	<rect x="6.336" y="13.312" fill="#FDDFB1" width="16.168" height="2.947"/>
+	<rect y="15.995" opacity="0.2" width="28.801" height="0.273"/>
+	<rect opacity="0.1" fill="#FFFFFF" width="28.801" height="0.268"/>
+	<g>
+		<rect x="9.895" y="7.448" fill="#B3B3B3" width="1.812" height="1.816"/>
+		<polygon fill="#CCCCCC" points="9.039,6.588 9.895,7.448 11.792,7.448 12.562,6.588 		"/>
+		<polygon fill="#999999" points="11.705,9.263 11.705,7.462 12.562,6.588 12.562,10.116 		"/>
+		<polygon fill="#808080" points="9.895,9.263 11.705,9.263 12.562,10.116 9.039,10.116 		"/>
+		<polygon fill="#CCCCCC" points="9.039,6.588 9.895,7.458 9.895,9.263 9.039,10.116 		"/>
+	</g>
+	<g>
+		<rect x="2.695" y="7.448" fill="#B3B3B3" width="1.812" height="1.816"/>
+		<polygon fill="#CCCCCC" points="1.839,6.588 2.695,7.448 4.593,7.448 5.362,6.588 		"/>
+		<polygon fill="#999999" points="4.505,9.263 4.505,7.462 5.362,6.588 5.362,10.116 		"/>
+		<polygon fill="#808080" points="2.695,9.263 4.505,9.263 5.362,10.116 1.839,10.116 		"/>
+		<polygon fill="#CCCCCC" points="1.839,6.588 2.695,7.458 2.695,9.263 1.839,10.116 		"/>
+	</g>
+	<g>
+		<rect x="17.094" y="7.448" fill="#B3B3B3" width="1.813" height="1.816"/>
+		<polygon fill="#CCCCCC" points="16.238,6.588 17.094,7.448 18.994,7.448 19.763,6.588 		"/>
+		<polygon fill="#999999" points="18.906,9.263 18.906,7.462 19.763,6.588 19.763,10.116 		"/>
+		<polygon fill="#808080" points="17.094,9.263 18.906,9.263 19.763,10.116 16.238,10.116 		"/>
+		<polygon fill="#CCCCCC" points="16.238,6.588 17.094,7.458 17.094,9.263 16.238,10.116 		"/>
+	</g>
+	<g>
+		<rect x="24.295" y="7.448" fill="#B3B3B3" width="1.813" height="1.816"/>
+		<polygon fill="#CCCCCC" points="23.438,6.588 24.295,7.448 26.192,7.448 26.963,6.588 		"/>
+		<polygon fill="#999999" points="26.104,9.263 26.104,7.462 26.963,6.588 26.963,10.116 		"/>
+		<polygon fill="#808080" points="24.295,9.263 26.104,9.263 26.963,10.116 23.438,10.116 		"/>
+		<polygon fill="#CCCCCC" points="23.438,6.588 24.295,7.458 24.295,9.263 23.438,10.116 		"/>
+	</g>
+</g>
+</svg>

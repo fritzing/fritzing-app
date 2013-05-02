@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" x="0in" y="0in" width="0.173in" height="0.055in" viewBox="0 0 1730 550" >
+<title>SparkFun.mod</title>
+<desc>Kicad module 'SparkFun-SOD323-W' from file 'SparkFun.mod' converted by Fritzing</desc>
+<metadata xmlns:fz='http://fritzing.org/kicadmetadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+<rdf:RDF><rdf:Description rdf:about=''>
+<fz:attr name='kicad filename'>SparkFun.mod</fz:attr>
+<fz:attr name='kicad module'>SparkFun-SOD323-W</fz:attr>
+<fz:attr name='fritzing version'>0.4.1b.07.04.4318</fz:attr>
+<fz:attr name='conversion date'>17/07/2010 17:17:46</fz:attr>
+<fz:attr name='dist-license'>GPL</fz:attr>
+<fz:attr name='use-license'>unlimited</fz:attr>
+<fz:attr name='author'>KICAD project</fz:attr>
+<fz:attr name='license-url'>http://www.gnu.org/licenses/gpl.html</fz:attr>
+<fz:comment>SOD323 WAVE SOLDERING PHILIPS SC01_MOUNTING_1996.PDF</fz:comment>
+<fz:attr name='keyword'>SOD323</fz:attr>
+<fz:attr name='keyword'>WAVE</fz:attr>
+<fz:attr name='keyword'>SOLDERING</fz:attr>
+<fz:attr name='keyword'>PHILIPS</fz:attr>
+<fz:attr name='keyword'>SC01_MOUNTING_1996.PDF</fz:attr>
+</rdf:Description></rdf:RDF></metadata><g id="copper1">
+ <rect width="590" x="1140" y="39" fill="#ffbf00" connectorname="A" height="472" id="connector0pad" stroke-width="0"/>
+ <rect width="590" x="0" y="39" fill="#ffbf00" connectorname="C" height="472" id="connector1pad" stroke-width="0"/>
+</g>
+<g id="silkscreen">
+ <line fill="none" stroke="white" y1="550" x1="728" y2="550" stroke-width="26" x2="806"/>
+ <line fill="none" stroke="white" y1="550" x1="806" y2="0" stroke-width="26" x2="806"/>
+ <line fill="none" stroke="white" y1="0" x1="728" y2="0" stroke-width="26" x2="806"/>
+ <line fill="none" stroke="white" y1="550" x1="728" y2="0" stroke-width="26" x2="728"/>
+ <line fill="none" stroke="white" y1="0" x1="472" y2="0" stroke-width="60" x2="1258"/>
+ <line fill="none" stroke="white" y1="0" x1="1258" y2="550" stroke-width="60" x2="1258"/>
+ <line fill="none" stroke="white" y1="550" x1="1258" y2="550" stroke-width="60" x2="472"/>
+ <line fill="none" stroke="white" y1="550" x1="472" y2="0" stroke-width="60" x2="472"/>
+ <line fill="none" stroke="white" y1="275" x1="767" y2="118" stroke-width="60" x2="1022"/>
+ <line fill="none" stroke="white" y1="118" x1="1022" y2="432" stroke-width="60" x2="1022"/>
+ <line fill="none" stroke="white" y1="432" x1="1022" y2="275" stroke-width="60" x2="767"/>
+</g>
+</svg>

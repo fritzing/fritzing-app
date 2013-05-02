@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" x="0in" y="0in" width="0.724698in" height="0.639396in" viewBox="0 0 7246.98 6393.96" >
+<title>SparkFun.mod</title>
+<desc>Kicad module 'SparkFun-BATTERY' from file 'SparkFun.mod' converted by Fritzing</desc>
+<metadata xmlns:fz='http://fritzing.org/kicadmetadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+<rdf:RDF><rdf:Description rdf:about=''>
+<fz:attr name='kicad filename'>SparkFun.mod</fz:attr>
+<fz:attr name='kicad module'>SparkFun-BATTERY</fz:attr>
+<fz:attr name='fritzing version'>0.4.1b.07.04.4318</fz:attr>
+<fz:attr name='conversion date'>17/07/2010 17:15:07</fz:attr>
+<fz:attr name='dist-license'>GPL</fz:attr>
+<fz:attr name='use-license'>unlimited</fz:attr>
+<fz:attr name='author'>KICAD project</fz:attr>
+<fz:attr name='license-url'>http://www.gnu.org/licenses/gpl.html</fz:attr>
+<fz:comment>BATTERY</fz:comment>
+<fz:attr name='keyword'>BATTERY</fz:attr>
+</rdf:Description></rdf:RDF></metadata><g id="copper0">
+ <g id="copper1">
+  <g connectorname="+" id="connector0pin">
+   <circle fill="none" cx="6946.98" cy="5196.98" stroke="#ff9400" r="200" stroke-width="200"/>
+   <line fill="none" stroke="#ff9400" y1="4896.98" x1="6746.98" y2="5496.98" stroke-width="200" x2="6746.98"/>
+   <line fill="none" stroke="#ff9400" y1="4896.98" x1="7146.98" y2="5496.98" stroke-width="200" x2="7146.98"/>
+   <path fill="#ff9400" stroke-width="0" d="M6646.98,4896.98a300,300,0,0,1,600,0"/>
+   <path fill="#ff9400" stroke-width="0" d="M7246.98,5496.98a300,300,0,1,1,-600,0"/>
+  </g>
+  <g connectorname="+@1" id="connector1pin">
+   <circle fill="none" cx="6946.98" cy="1196.98" stroke="#ff9400" r="200" stroke-width="200"/>
+   <line fill="none" stroke="#ff9400" y1="896.981" x1="6746.98" y2="1496.98" stroke-width="200" x2="6746.98"/>
+   <line fill="none" stroke="#ff9400" y1="896.981" x1="7146.98" y2="1496.98" stroke-width="200" x2="7146.98"/>
+   <path fill="#ff9400" stroke-width="0" d="M6646.98,896.981a300,300,0,0,1,600,0"/>
+   <path fill="#ff9400" stroke-width="0" d="M7246.98,1496.98a300,300,0,1,1,-600,0"/>
+  </g>
+  <g connectorname="-" id="connector2pin">
+   <circle fill="none" cx="946.981" cy="3196.98" stroke="#ff9400" r="200" stroke-width="200"/>
+   <line fill="none" stroke="#ff9400" y1="2896.98" x1="746.981" y2="3496.98" stroke-width="200" x2="746.981"/>
+   <line fill="none" stroke="#ff9400" y1="2896.98" x1="1146.98" y2="3496.98" stroke-width="200" x2="1146.98"/>
+   <path fill="#ff9400" stroke-width="0" d="M646.981,2896.98a300,300,0,0,1,600,0"/>
+   <path fill="#ff9400" stroke-width="0" d="M1246.98,3496.98a300,300,0,1,1,-600,0"/>
+  </g>
+ </g>
+</g>
+<g id="silkscreen">
+ <line fill="none" stroke="white" y1="3696.98" x1="2946.98" y2="3696.98" stroke-width="26" x2="3196.98"/>
+ <line fill="none" stroke="white" y1="3696.98" x1="3196.98" y2="2696.98" stroke-width="26" x2="3196.98"/>
+ <line fill="none" stroke="white" y1="2696.98" x1="2946.98" y2="2696.98" stroke-width="26" x2="3196.98"/>
+ <line fill="none" stroke="white" y1="3696.98" x1="2946.98" y2="2696.98" stroke-width="26" x2="2946.98"/>
+ <line fill="none" stroke="white" y1="2196.98" x1="3446.98" y2="3196.98" stroke-width="60" x2="3446.98"/>
+ <line fill="none" stroke="white" y1="3196.98" x1="2196.98" y2="3196.98" stroke-width="60" x2="2946.98"/>
+ <line fill="none" stroke="white" y1="3196.98" x1="3446.98" y2="3196.98" stroke-width="60" x2="4196.98"/>
+ <line fill="none" stroke="white" y1="3196.98" x1="3446.98" y2="4196.98" stroke-width="60" x2="3446.98"/>
+ <line fill="none" stroke="white" y1="4446.98" x1="3696.98" y2="4446.98" stroke-width="60" x2="4196.98"/>
+ <line fill="none" stroke="white" y1="4196.98" x1="3946.98" y2="4696.98" stroke-width="60" x2="3946.98"/>
+ <circle fill="none" cx="3196.98" cy="3196.98" stroke="white" r="3181.98" stroke-width="30"/>
+ <circle fill="none" cx="3196.98" cy="3196.98" stroke="white" r="2849.64" stroke-width="30"/>
+</g>
+</svg>

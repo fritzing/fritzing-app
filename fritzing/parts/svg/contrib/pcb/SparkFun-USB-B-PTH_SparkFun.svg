@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" x="0in" y="0in" width="0.622in" height="0.604in" viewBox="0 0 6220 6040" >
+<title>SparkFun.mod</title>
+<desc>Kicad module 'SparkFun-USB-B-PTH' from file 'SparkFun.mod' converted by Fritzing</desc>
+<metadata xmlns:fz='http://fritzing.org/kicadmetadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+<rdf:RDF><rdf:Description rdf:about=''>
+<fz:attr name='kicad filename'>SparkFun.mod</fz:attr>
+<fz:attr name='kicad module'>SparkFun-USB-B-PTH</fz:attr>
+<fz:attr name='fritzing version'>0.4.1b.07.04.4318</fz:attr>
+<fz:attr name='conversion date'>17/07/2010 17:18:36</fz:attr>
+<fz:attr name='dist-license'>GPL</fz:attr>
+<fz:attr name='use-license'>unlimited</fz:attr>
+<fz:attr name='author'>KICAD project</fz:attr>
+<fz:attr name='license-url'>http://www.gnu.org/licenses/gpl.html</fz:attr>
+<fz:comment>USB SERIES B HOLE MOUNTED</fz:comment>
+<fz:attr name='keyword'>USB</fz:attr>
+<fz:attr name='keyword'>SERIES</fz:attr>
+<fz:attr name='keyword'>B</fz:attr>
+<fz:attr name='keyword'>HOLE</fz:attr>
+<fz:attr name='keyword'>MOUNTED</fz:attr>
+</rdf:Description></rdf:RDF></metadata><g id="copper0">
+ <g id="copper1">
+  <g connectorname="D+" id="connector0pin">
+   <circle fill="none" cx="4921" cy="2528" stroke="#ff9400" r="255" stroke-width="150"/>
+  </g>
+  <g connectorname="D-" id="connector1pin">
+   <circle fill="none" cx="5701" cy="2528" stroke="#ff9400" r="255" stroke-width="150"/>
+  </g>
+  <g connectorname="GND" id="connector2pin">
+   <circle fill="none" cx="4921" cy="3512" stroke="#ff9400" r="255" stroke-width="150"/>
+  </g>
+  <g connectorname="P$1" id="connector3pin">
+   <circle fill="none" cx="3851" cy="5390" stroke="#ff9400" r="550" stroke-width="200"/>
+   <circle fill="black" cx="3851" cy="5390" drill="0" r="450" stroke-width="0"/>
+  </g>
+  <g connectorname="P$2" id="connector4pin">
+   <circle fill="none" cx="3851" cy="650" stroke="#ff9400" r="550" stroke-width="200"/>
+   <circle fill="black" cx="3851" cy="650" drill="0" r="450" stroke-width="0"/>
+  </g>
+  <g connectorname="VBUS" id="connector5pin">
+   <circle fill="none" cx="5701" cy="3512" stroke="#ff9400" r="255" stroke-width="150"/>
+  </g>
+ </g>
+</g>
+<g id="silkscreen">
+ <line fill="none" stroke="white" y1="658" x1="0" y2="658" stroke-width="80" x2="1536"/>
+ <line fill="none" stroke="white" y1="658" x1="1536" y2="5382" stroke-width="80" x2="1536"/>
+ <line fill="none" stroke="white" y1="5382" x1="1536" y2="5382" stroke-width="80" x2="0"/>
+ <line fill="none" stroke="white" y1="5382" x1="0" y2="658" stroke-width="80" x2="0"/>
+ <line fill="none" stroke="white" y1="658" x1="1536" y2="658" stroke-width="80" x2="3032"/>
+ <line fill="none" stroke="white" y1="5382" x1="1536" y2="5382" stroke-width="80" x2="3032"/>
+ <line fill="none" stroke="white" y1="5382" x1="4685" y2="5382" stroke-width="80" x2="6220"/>
+ <line fill="none" stroke="white" y1="5382" x1="6220" y2="658" stroke-width="80" x2="6220"/>
+ <line fill="none" stroke="white" y1="658" x1="6220" y2="658" stroke-width="80" x2="4685"/>
+</g>
+</svg>

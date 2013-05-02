@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Ebene_1" xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="7.775px" height="8.575px"
+	 viewBox="0 0 7.775 8.575" enable-background="new 0 0 7.775 8.575" xml:space="preserve">
+<rect x="0" y="7.776" fill="#CCCCCC" width="7.775" height="0.8"/>
+<rect x="0" y="0" fill="#E6E6E6" width="7.775" height="7.775"/>
+<polyline opacity="0.2" fill="#FFFFFF" points="7.776,0.117 0,0.117 0,0 7.776,0 "/>
+<polyline opacity="0.2" points="7.776,7.893 0,7.893 0,7.776 7.776,7.776 "/>
+<polyline opacity="0.2" points="7.776,8.575 0,8.575 0,8.476 7.776,8.476 "/>
+<g>
+	<circle fill="#B3B3B3" cx="3.816" cy="3.931" r="3.599"/>
+	<circle fill="#CCCCCC" cx="3.816" cy="3.744" r="3.599"/>
+	<path opacity="0.2" fill="#FFFFFF" d="M7.416,3.865c0-1.988-1.612-3.6-3.601-3.6s-3.6,1.611-3.6,3.6V3.744
+		c0-1.988,1.611-3.6,3.6-3.6s3.601,1.611,3.601,3.6"/>
+	<path opacity="0.2" d="M0.216,3.623c0,1.988,1.612,3.599,3.601,3.599s3.6-1.611,3.6-3.599v0.121c0,1.988-1.611,3.599-3.6,3.599
+		S0.216,5.732,0.216,3.744"/>
+	<path opacity="0.3" d="M0.216,3.931c0,1.988,1.611,3.599,3.6,3.599s3.601-1.611,3.601-3.599v0.101c0,1.989-1.612,3.6-3.601,3.6
+		s-3.6-1.611-3.6-3.6"/>
+</g>
+</svg>

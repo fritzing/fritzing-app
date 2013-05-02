@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg width="1.02in" x="0in" xmlns="http://www.w3.org/2000/svg" version="1.2" y="0in" height="1.42in" viewBox="0 0 1020 1420" baseProfile="tiny" xmlns:svg="http://www.w3.org/2000/svg">
+ <g id="copper1" stroke-width="0">
+  <g id="copper0" stroke-width="0">
+   <rect width="55" x="32.5" y="32.5" fill="none" height="55" stroke="rgb(255, 191, 0)" stroke-width="20"/>
+   <circle fill="none" cx="60" cy="60" stroke="rgb(255, 191, 0)" id="connector0pin" r="27.5" stroke-width="20"/>
+   <circle fill="none" cx="960" cy="60" stroke="rgb(255, 191, 0)" id="connector27pin" r="27.5" stroke-width="20"/>
+   <circle fill="none" cx="60" cy="160" stroke="rgb(255, 191, 0)" id="connector1pin" r="27.5" stroke-width="20"/>
+   <circle fill="none" cx="960" cy="160" stroke="rgb(255, 191, 0)" id="connector26pin" r="27.5" stroke-width="20"/>
+   <circle fill="none" cx="60" cy="260" stroke="rgb(255, 191, 0)" id="connector2pin" r="27.5" stroke-width="20"/>
+   <circle fill="none" cx="960" cy="260" stroke="rgb(255, 191, 0)" id="connector25pin" r="27.5" stroke-width="20"/>
+   <circle fill="none" cx="60" cy="360" stroke="rgb(255, 191, 0)" id="connector3pin" r="27.5" stroke-width="20"/>
+   <circle fill="none" cx="960" cy="360" stroke="rgb(255, 191, 0)" id="connector24pin" r="27.5" stroke-width="20"/>
+   <circle fill="none" cx="60" cy="460" stroke="rgb(255, 191, 0)" id="connector4pin" r="27.5" stroke-width="20"/>
+   <circle fill="none" cx="960" cy="460" stroke="rgb(255, 191, 0)" id="connector23pin" r="27.5" stroke-width="20"/>
+   <circle fill="none" cx="60" cy="560" stroke="rgb(255, 191, 0)" id="connector5pin" r="27.5" stroke-width="20"/>
+   <circle fill="none" cx="960" cy="560" stroke="rgb(255, 191, 0)" id="connector22pin" r="27.5" stroke-width="20"/>
+   <circle fill="none" cx="60" cy="660" stroke="rgb(255, 191, 0)" id="connector6pin" r="27.5" stroke-width="20"/>
+   <circle fill="none" cx="960" cy="660" stroke="rgb(255, 191, 0)" id="connector21pin" r="27.5" stroke-width="20"/>
+   <circle fill="none" cx="60" cy="760" stroke="rgb(255, 191, 0)" id="connector7pin" r="27.5" stroke-width="20"/>
+   <circle fill="none" cx="960" cy="760" stroke="rgb(255, 191, 0)" id="connector20pin" r="27.5" stroke-width="20"/>
+   <circle fill="none" cx="60" cy="860" stroke="rgb(255, 191, 0)" id="connector8pin" r="27.5" stroke-width="20"/>
+   <circle fill="none" cx="960" cy="860" stroke="rgb(255, 191, 0)" id="connector19pin" r="27.5" stroke-width="20"/>
+   <circle fill="none" cx="60" cy="960" stroke="rgb(255, 191, 0)" id="connector9pin" r="27.5" stroke-width="20"/>
+   <circle fill="none" cx="960" cy="960" stroke="rgb(255, 191, 0)" id="connector18pin" r="27.5" stroke-width="20"/>
+   <circle fill="none" cx="60" cy="1060" stroke="rgb(255, 191, 0)" id="connector10pin" r="27.5" stroke-width="20"/>
+   <circle fill="none" cx="960" cy="1060" stroke="rgb(255, 191, 0)" id="connector17pin" r="27.5" stroke-width="20"/>
+   <circle fill="none" cx="60" cy="1160" stroke="rgb(255, 191, 0)" id="connector11pin" r="27.5" stroke-width="20"/>
+   <circle fill="none" cx="960" cy="1160" stroke="rgb(255, 191, 0)" id="connector16pin" r="27.5" stroke-width="20"/>
+   <circle fill="none" cx="60" cy="1260" stroke="rgb(255, 191, 0)" id="connector12pin" r="27.5" stroke-width="20"/>
+   <circle fill="none" cx="960" cy="1260" stroke="rgb(255, 191, 0)" id="connector15pin" r="27.5" stroke-width="20"/>
+   <circle fill="none" cx="60" cy="1360" stroke="rgb(255, 191, 0)" id="connector13pin" r="27.5" stroke-width="20"/>
+   <circle fill="none" cx="960" cy="1360" stroke="rgb(255, 191, 0)" id="connector14pin" r="27.5" stroke-width="20"/>
+  </g>
+ </g>
+ <g id="silkscreen" stroke-width="0">
+  <line stroke="white" y1="10" stroke-width="10" x1="10" y2="1410" x2="10"/>
+  <line stroke="white" y1="10" stroke-width="10" x1="10" y2="10" x2="1010"/>
+  <line stroke="white" y1="1410" stroke-width="10" x1="1010" y2="10" x2="1010"/>
+  <line stroke="white" y1="1410" stroke-width="10" x1="10" y2="1410" x2="260"/>
+  <line stroke="white" y1="1410" stroke-width="10" x1="760" y2="1410" x2="1010"/>
+ </g>
+</svg>

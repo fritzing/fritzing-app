@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?> <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" x="0in" y="0in" width="0.611in" height="0.663in" viewBox="0 0 61100 66300" ><title>Power_Jack.fp</title><desc>Geda footprint file 'Power_Jack.fp' converted by Fritzing</desc><metadata xmlns:fz='http://fritzing.org/gedametadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'><rdf:RDF><rdf:Description rdf:about=''><fz:attr name='geda filename'>Power_Jack.fp</fz:attr>
+<fz:attr name='fritzing version'>0.4.0b.06.21.4282</fz:attr>
+<fz:attr name='conversion date'>27/06/2010 07:16:18</fz:attr>
+<fz:attr name='dist-license'>GPL</fz:attr>
+<fz:attr name='use-license'>unlimited</fz:attr>
+<fz:attr name='author'>gEDA project</fz:attr>
+<fz:attr name='license-url'>http://www.gnu.org/licenses/gpl.html</fz:attr>
+</rdf:Description></rdf:RDF></metadata><g id="copper1">
+ <line fill="none" connectorname="2" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector1pad" y1="32500" x1="9500" y2="32500" stroke-width="13000" x2="6500"/>
+ <line fill="none" connectorname="3" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector2pad" y1="6500" x1="50000" y2="6500" stroke-width="13000" x2="38000"/>
+ <line fill="none" connectorname="4" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector3pad" y1="58800" x1="49000" y2="58800" stroke-width="15000" x2="39000"/>
+</g>
+<g id="silkscreen">
+ <line fill="none" stroke="white" y1="50100" x1="60600" y2="15100" stroke-width="1000" x2="60600"/>
+ <line fill="none" stroke="white" y1="50100" x1="13600" y2="50100" stroke-width="1000" x2="60600"/>
+ <line fill="none" stroke="white" y1="15100" x1="13600" y2="50100" stroke-width="1000" x2="13600"/>
+ <line fill="none" stroke="white" y1="15100" x1="60600" y2="15100" stroke-width="1000" x2="13600"/>
+</g>
+</svg>

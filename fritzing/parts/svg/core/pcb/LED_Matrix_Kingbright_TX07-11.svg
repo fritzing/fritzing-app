@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In  -->
+<!DOCTYPE svg [
+	<!ENTITY ns_flows "http://ns.adobe.com/Flows/1.0/">
+]>
+<svg version="1.2" baseProfile="tiny" id="Ebene_1" xmlns:xml="http://www.w3.org/XML/1998/namespace"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" width="0.5in" height="0.7in"
+	 viewBox="0 0 36 50.4" xml:space="preserve">
+<defs>
+</defs>
+<g id="silkscreen">
+</g>
+<g id="copper1">
+<g id="copper0">
+<circle id="connector1pad" fill="none" stroke="#F7BD13" stroke-width="1.224" cx="7.237" cy="7.266" r="2.052"/>
+<rect x="5.185" y="5.213" fill="none" stroke="#F7BD13" stroke-width="1.224" width="4.104" height="4.104"/>
+<circle id="connector2pad" fill="none" stroke="#F7BD13" stroke-width="1.224" cx="7.237" cy="14.465" r="2.052"/>
+<circle id="connector3pad" fill="none" stroke="#F7BD13" stroke-width="1.224" cx="7.237" cy="21.666" r="2.052"/>
+<circle id="connector4pad" fill="none" stroke="#F7BD13" stroke-width="1.224" cx="7.237" cy="28.865" r="2.052"/>
+<circle id="connector5pad" fill="none" stroke="#F7BD13" stroke-width="1.224" cx="7.237" cy="35.984" r="2.052"/>
+<circle id="connector6pad" fill="none" stroke="#F7BD13" stroke-width="1.224" cx="7.237" cy="43.291" r="2.052"/>
+<circle id="connector7pad" fill="none" stroke="#F7BD13" stroke-width="1.224" cx="28.854" cy="43.287" r="2.052"/>
+<circle id="connector8pad" fill="none" stroke="#F7BD13" stroke-width="1.224" cx="28.854" cy="36.086" r="2.052"/>
+<circle id="connector9pad" fill="none" stroke="#F7BD13" stroke-width="1.224" cx="28.854" cy="28.886" r="2.052"/>
+<circle id="connector10pad" fill="none" stroke="#F7BD13" stroke-width="1.224" cx="28.854" cy="21.661" r="2.052"/>
+<circle id="connector11pad" fill="none" stroke="#F7BD13" stroke-width="1.224" cx="28.854" cy="14.531" r="2.052"/>
+<circle id="connector12pad" fill="none" stroke="#F7BD13" stroke-width="1.224" cx="28.854" cy="7.306" r="2.052"/>
+<rect x="0.032" y="0.032" fill="none" stroke="#8C8C8C" stroke-width="0.0648" width="36.002" height="50.4"/>
+</g>
+</g>
+</svg>

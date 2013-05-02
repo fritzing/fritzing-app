@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- Created with Fritzing (http://www.fritzing.org/) -->
+<svg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' version='1.2' baseProfile='tiny' x='0in' y='0in' width='1.13037in' height='0.64622in' viewBox='0 0 28.7115 16.414' >
+<g id='schematic'>
+<rect class='interior rect' x='5.20347' y='6.762' width='12.7' height='7.62' stroke='none' stroke-width='0' fill='#ffffff' />
+<text class='text' id='label' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.94028' x='11.5535' y='10.572' text-anchor='middle'></text>
+<line class='other' x1='5.20347' y1='14.382' x2='5.20347' y2='6.762' stroke='#000000' stroke-width='0.3175' stroke-linecap='round'/>
+<line class='other' x1='5.20347' y1='6.762' x2='17.9035' y2='6.762' stroke='#000000' stroke-width='0.3175' stroke-linecap='round'/>
+<line class='other' x1='17.9035' y1='6.762' x2='17.9035' y2='14.382' stroke='#000000' stroke-width='0.3175' stroke-linecap='round'/>
+<line class='other' x1='17.9035' y1='14.382' x2='5.20347' y2='14.382' stroke='#000000' stroke-width='0.3175' stroke-linecap='round'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.651' x='5.71147' y='6' text-anchor='start'>&gt;NAME</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.651' x='5.71147' y='16.414' text-anchor='start'>&gt;VALUE</text>
+<line class='pin' id='connector1pin' connectorname='RES' x1='0.123472' y1='9.302' x2='5.20347' y2='9.302' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector1terminal' x='0.123472' y='9.302' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='2.66347' y='9.05506' text-anchor='middle'>2</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.5875' x='5.9443' y='10.0428' text-anchor='start'>RES</text>
+<line class='pin' id='connector0pin' connectorname='RECEIVE' x1='0.123472' y1='11.842' x2='5.20347' y2='11.842' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector0terminal' x='0.123472' y='11.842' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='2.66347' y='11.5951' text-anchor='middle'>1</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.5875' x='5.9443' y='12.5828' text-anchor='start'>RECEIVE</text>
+</g>
+</svg>

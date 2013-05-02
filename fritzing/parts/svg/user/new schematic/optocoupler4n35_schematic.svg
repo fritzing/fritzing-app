@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="svg2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="57.6px" height="72px" viewBox="0 0 57.6 72" enable-background="new 0 0 57.6 72" xml:space="preserve">
+<rect id="part_symbol" x="7.2" y="7.2" fill="#FFFFFF" stroke="#000000" stroke-width="0.9002" stroke-linecap="round" width="43.196" height="57.6"/>
+<polyline fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="50.399,14.4 38.699,14.4 38.699,46.063 
+	40.487,46.063 "/>
+<g id="schematic_1_">
+	<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="19.266" y1="28.801" x2="15.666" y2="28.801"/>
+	<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="15.666" y1="28.801" x2="12.066" y2="28.801"/>
+	<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="15.666,28.801 12.066,21.601 
+		15.666,21.601 19.266,21.601 	"/>
+	<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="15.666" y1="21.601" x2="15.666" y2="28.801"/>
+	<polyline id="connector1pin_1_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="7.36,36.001 
+		15.666,36.001 15.666,28.801 	"/>
+	<polyline id="connector0pin_1_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="7.2,14.4 
+		15.666,14.4 15.666,21.601 	"/>
+</g>
+<line fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="0" y1="36" x2="7.2" y2="36"/>
+<line fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="0" y1="14.4" x2="7.2" y2="14.4"/>
+<text transform="matrix(1 0 0 1 2.7751 12.7266)" fill="#787878" font-family="'DroidSans'" font-size="2">1</text>
+<text transform="matrix(1 0 0 1 2.7751 34.6494)" fill="#787878" font-family="'DroidSans'" font-size="2">2</text>
+<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="0" y1="57.602" x2="7.2" y2="57.602"/>
+<text transform="matrix(1 0 0 1 2.7751 56.25)" fill="#787878" font-family="'DroidSans'" font-size="2">3</text>
+<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="40.487" y1="41.131" x2="40.487" y2="51.932"/>
+<polyline id="connector1pin_4_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="40.487,47.378 
+	46.987,51.467 46.987,57.602 50.239,57.602 "/>
+<polyline id="connector1pin_2_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="50.239,36 
+	46.987,36 46.987,41.131 40.487,45.021 "/>
+<line fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="50.399" y1="57.602" x2="57.6" y2="57.602"/>
+<line fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="50.399" y1="36" x2="57.6" y2="36"/>
+<text transform="matrix(1 0 0 1 53.1418 34.3262)" fill="#787878" font-family="'DroidSans'" font-size="2">5</text>
+<line fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="50.399" y1="14.4" x2="57.6" y2="14.4"/>
+<text transform="matrix(1 0 0 1 53.1418 12.7266)" fill="#787878" font-family="'DroidSans'" font-size="2">6</text>
+<text transform="matrix(1 0 0 1 53.1418 56.25)" fill="#787878" font-family="'DroidSans'" font-size="2">4</text>
+<text transform="matrix(1 0 0 1 22.2502 16.0391)" font-family="'DroidSans'" font-size="5.5">4N35</text>
+<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="23.767" y1="26.102" x2="21.427" y2="23.761"/>
+<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="23.406" y1="29.341" x2="21.066" y2="27.001"/>
+<rect id="connector1terminal_1_" x="15.666" y="36.001" fill="none" width="0.001" height="0.001"/>
+<path d="M22.866,26.638l1.439-1.438l1.08,2.521L22.866,26.638z"/>
+<path d="M22.509,29.878l1.438-1.438l1.08,2.521L22.509,29.878z"/>
+<path d="M43.36,50.339l1.112-1.704l1.577,2.243L43.36,50.339z"/>
+<text transform="matrix(1 0 0 1 10.0139 58.7441)" fill="#787878" font-family="'DroidSans'" font-size="4.5">NC</text>
+</svg>

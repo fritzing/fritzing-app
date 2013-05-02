@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.2"
+   width="0.30147001in"
+   height="0.28384in"
+   viewBox="0 0 3014.7 2838.4"
+   id="svg2">
+  <title
+     id="title4">SparkFun.mod</title>
+  <desc
+     id="desc6">Kicad module 'SparkFun-LED-TRICOLOR-THROUGHHOLE' from file 'SparkFun.mod' converted by Fritzing</desc>
+  <defs
+     id="defs23" />
+  <g
+     id="copper1">
+    <g
+       id="copper0">
+      <circle
+         cx="356.20001"
+         cy="1419.2"
+         r="225"
+         id="connector0pad"
+         style="fill:none;stroke:#ff9400;stroke-width:200" />
+      <circle
+         cx="1144.2"
+         cy="1419.2"
+         r="225"
+         id="connector1pad"
+         style="fill:none;stroke:#ff9400;stroke-width:200" />
+      <circle
+         cx="1930.2"
+         cy="1419.2"
+         r="225"
+         id="connector2pad"
+         style="fill:none;stroke:#ff9400;stroke-width:200" />
+      <circle
+         cx="2718.2"
+         cy="1419.2"
+         r="225"
+         id="connector3pad"
+         style="fill:none;stroke:#ff9400;stroke-width:200" />
+    </g>
+  </g>
+ 
+  <g
+     id="silkscreen">
+      <path
+     d="M 24.8125,8.78125 C 23.135355,3.6779982 18.318937,0 12.65625,0 8.2212044,0 4.3220861,2.2565493 2.03125,5.6875 l 0,3.09375 m 0,8 0,3.0625 c 2.2907235,3.43164 6.1894244,5.71875 10.625,5.71875 5.662687,0 10.479105,-3.677998 12.15625,-8.78125"
+     transform="scale(111.11111,111.11111)"
+     id="path3607"
+     style="fill:none;stroke:#ffffff;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" /></g>
+</svg>

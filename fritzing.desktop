@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Fritzing
+GenericName=Fritzing
+Comment=Electronic Design Automation software
+Exec=Fritzing
+Icon=fritzing
+Terminal=false
+Type=Application
+Categories=Development;IDE;Electronics;
+X-SuSE-translate=false

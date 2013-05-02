@@ -1,0 +1,191 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module fritzingVersion='0.5.2b.02.18.4756' moduleId='Trackballer-v12'>
+<version>4</version>
+<date>2011-07-08</date>
+<author>SparkFun</author>
+<description>&lt;p&gt;
+	&lt;b&gt;Description: &lt;/b&gt;This is a breakout board for our &lt;a classname=&quot;&quot; href=&quot;http://www.sparkfun.com/commerce/product_info.php?products_id=9308&quot; name=&quot;&quot; target=&quot;&quot;&gt;Blackberry Trackball&lt;/a&gt;. The four spindles on the trackball have a tiny circular magnet the end; each of these are paired with an SMD hall effect sensor, which are used to measure up, down, left and right movements of the trackball. An SMD momentary switch is placed under the trackball to give you a select switch. The BTN line will be pulled low when the switch is pressed.&lt;/p&gt;
+&lt;p&gt;
+	Also included on the Trackballer are 4 LEDs: red, blue, green and white. These can be powered to light the clear trackball up any color you can imagine.&lt;/p&gt;
+&lt;p&gt;
+	All features are broken out to a 0.1&amp;quot; pitch header. Regulated, 2.5-5.25VDC power must be provided to power the Hall sensors. The trackball is attached with strong CA glue. Board comes as shown, with all components populated.&lt;/p&gt;
+&lt;p&gt;
+	The hall-effect sensors and trackball combo are surprisingly sensitive. A slight roll of the trackball creates multiple high/low transitions on the four axis pins, easily picked up by any microcontroller. A 360&amp;deg; rotation of the trackball, along a single axis, will result in about 9 high/low transitions.&lt;/p&gt;
+&lt;p&gt;
+	&lt;span style=&quot;font-weight: bold;&quot;&gt;Features:&lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;
+		Center select button&lt;/li&gt;
+	&lt;li&gt;
+		360&amp;deg; direction&lt;/li&gt;
+	&lt;li&gt;
+		Hall effect sensors measure up/down/left/right movements of trackball&lt;/li&gt;
+	&lt;li&gt;
+		Red, blue, green, white LEDs to light up the trackball&lt;/li&gt;
+	&lt;li&gt;
+		All pins broken out to 0.1&amp;quot; pitch header&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;
+	&lt;span style=&quot;font-weight: bold;&quot;&gt;Dimensions:&lt;/span&gt; 1.1x0.85&amp;quot;&lt;br /&gt;
+	&lt;br /&gt;
+	&lt;span style=&quot;font-weight: bold;&quot;&gt;Documents:&lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;
+		&lt;a classname=&quot;&quot; href=&quot;http://www.sparkfun.com/datasheets/Components/Trackball-v11.pdf&quot; name=&quot;&quot; target=&quot;_blank&quot;&gt;Schematic&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a classname=&quot;&quot; href=&quot;http://www.sparkfun.com/datasheets/Components/Trackballer-v12-Eagle.zip&quot; name=&quot;&quot; target=&quot;_blank&quot;&gt;Eagle Files&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a classname=&quot;&quot; href=&quot;http://www.sparkfun.com/datasheets/Components/SPC00019AEB.pdf&quot; name=&quot;&quot; target=&quot;_blank&quot;&gt;Hall sensor datasheet&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a classname=&quot;&quot; href=&quot;http://www.freescale.com/files/wireless_comm/doc/reports_presentations/eet_teardown_bbpearl_jan07.pdf&quot; name=&quot;&quot; target=&quot;_blank&quot;&gt;Blackberry Teardown&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a classname=&quot;&quot; href=&quot;http://www2.electronicproducts.com/Research_In_Motion_-_BlackBerry_Pearl_8100-whatsinside_text-12.aspx&quot; name=&quot;&quot; target=&quot;_blank&quot;&gt;Inside the Blackberry (BOM)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+<title>Blackberry Trackballer Breakout</title>
+<url>http://www.sparkfun.com/products/9320</url>
+<tags>
+<tag>Trackball</tag>
+<tag>Blackberry</tag>
+</tags>
+<properties>
+<property name='family'>Trackball Breakout</property>
+</properties>
+<views>
+<breadboardView>
+<layers image='breadboard/Trackballer-v12_breadboard.svg'>
+<layer layerId='breadboard'/>
+</layers>
+</breadboardView>
+<schematicView>
+<layers image='schematic/Trackballer-v12_schematic.svg'>
+<layer layerId='schematic'/>
+</layers>
+</schematicView>
+<pcbView>
+<layers image='pcb/Trackballer-v12_pcb.svg'>
+<layer layerId='copper1'/>
+<layer layerId='silkscreen'/>
+<layer layerId='copper0'/>
+</layers>
+</pcbView>
+<iconView>
+<layers image='breadboard/Trackballer-v12_breadboard.svg'>
+<layer layerId='icon'/>
+</layers>
+</iconView>
+</views>
+<connectors>
+<connector id='connector10' type='male' name='VCC'>
+<description>VCC</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector10pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector10pin' terminalId='connector10terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector10pad'/><p layer='copper1' svgId='connector10pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector11' type='male' name='GND'>
+<description>GND</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector11pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector11pin' terminalId='connector11terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector11pad'/><p layer='copper1' svgId='connector11pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector12' type='male' name='BTN'>
+<description>BTN</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector12pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector12pin' terminalId='connector12terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector12pad'/><p layer='copper1' svgId='connector12pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector13' type='male' name='BLU'>
+<description>BLU</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector13pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector13pin' terminalId='connector13terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector13pad'/><p layer='copper1' svgId='connector13pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector14' type='male' name='RED'>
+<description>RED</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector14pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector14pin' terminalId='connector14terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector14pad'/><p layer='copper1' svgId='connector14pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector15' type='male' name='GRN'>
+<description>GRN</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector15pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector15pin' terminalId='connector15terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector15pad'/><p layer='copper1' svgId='connector15pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector16' type='male' name='WHT'>
+<description>WHT</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector16pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector16pin' terminalId='connector16terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector16pad'/><p layer='copper1' svgId='connector16pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector17' type='male' name='UP'>
+<description>UP</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector17pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector17pin' terminalId='connector17terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector17pad'/><p layer='copper1' svgId='connector17pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector18' type='male' name='DWN'>
+<description>DWN</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector18pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector18pin' terminalId='connector18terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector18pad'/><p layer='copper1' svgId='connector18pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector19' type='male' name='LFT'>
+<description>LFT</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector19pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector19pin' terminalId='connector19terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector19pad'/><p layer='copper1' svgId='connector19pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector20' type='male' name='RHT'>
+<description>RHT</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector20pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector20pin' terminalId='connector20terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector20pad'/><p layer='copper1' svgId='connector20pad'/></pcbView>
+</views>
+</connector>
+</connectors>
+<buses>
+</buses>
+</module>

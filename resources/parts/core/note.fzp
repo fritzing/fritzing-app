@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module moduleId="NoteModuleID" >
+ <version>4</version>
+ <author>Brendan Howell</author>
+ <title>Note</title>
+ <date>2008-07-28</date>
+ <label>Note</label>
+ <tags>
+  <tag>note</tag>
+  <tag>fritzing core</tag>
+ </tags>
+ <properties>
+  <property name="family" >note</property>
+ </properties>
+ <taxonomy>discreteParts.note.note.note</taxonomy>
+ <description>A generic note</description>
+ <views>
+  <defaultUnits>cmil</defaultUnits>
+  <iconView>
+   <layers  image="icon/note.svg">
+    <layer layerId="icon" />
+   </layers>
+  </iconView>
+  <breadboardView>
+   <layers  >
+    <layer layerId="breadboardNote" />
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers  >
+    <layer layerId="schematicNote" />
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers  >
+    <layer layerId="pcbNote" />
+   </layers>
+  </pcbView>
+ </views>
+</module>

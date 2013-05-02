@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module moduleId="BreadboardLogoImageModuleID" >
+ <version>4</version>
+ <author>Jonathan Cohen</author>
+ <title>Breadboard Image</title>
+ <date>2012-10-23</date>
+ <label>IMG</label>
+ <tags>
+  <tag>breadboard</tag>
+  <tag>part</tag>
+  <tag>diy</tag>
+  <tag>fritzing core</tag>
+ </tags>
+ <properties>
+   <property name="family" >Logo</property>
+   <property name="filename" ></property>
+   <property name="shape" ></property>
+   <property name="type" >image</property>
+ </properties>
+ <taxonomy>discreteParts.breadboard.logo</taxonomy>
+ <description>For adding images to the breadboard view</description>
+ <views>
+  <defaultUnits>mm</defaultUnits>
+  <iconView>
+   <layers image="icon/breadboard_logo.svg" >
+    <layer layerId="icon" />
+   </layers>
+  </iconView>
+  <breadboardView>
+   <layers image="breadboard/Fritzing icon.svg" >
+    <layer layerId="breadboard" />
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="breadboard/Fritzing icon.svg" >
+    <layer layerId="unknown" />
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="breadboard/Fritzing icon.svg" >
+    <layer layerId="unknown"/>
+   </layers>
+  </pcbView>
+ </views>
+ <connectors/>
+ <buses/>
+</module>

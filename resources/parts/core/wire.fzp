@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module moduleId="WireModuleID" >
+ <version>4</version>
+ <author>Brendan Howell</author>
+ <title>Wire</title>
+ <date>2008-07-28</date>
+ <label>Wire</label>
+ <tags>
+  <tag>wire</tag>
+  <tag>fritzing core</tag>
+ </tags>
+ <properties>
+  <property name="family" >wire</property>  
+  <property name="color" ></property>
+  <property name="width" ></property>
+ </properties>
+ <taxonomy>discreteParts.wire.wire.wire</taxonomy>
+ <description>A generic wire</description>
+ <views>
+  <defaultUnits>cmil</defaultUnits>
+  <iconView>
+   <layers image="icon/wireicon.svg" >
+    <layer layerId="icon" />
+   </layers>
+  </iconView>
+  <breadboardView>
+   <layers image="breadboard/wire.svg" >
+    <layer layerId="breadboardWire" />
+    <layer layerId="breadboardRatsnest" />
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="breadboard/wire.svg" >
+     <layer layerId="schematicWire" />
+     <layer layerId="schematicTrace" />
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="breadboard/wire.svg" >
+    <layer layerId="ratsnest" />
+    <layer layerId="copper0" />
+     <layer layerId="copper0trace" />
+    <layer layerId="copper1" />
+     <layer layerId="copper1trace" />
+   </layers>
+  </pcbView>
+ </views>
+ <connectors>
+  <connector type="wire" id="connector0" name="wireConnector0" >
+   <description>wire end</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector0pin" layer="breadboardWire" />
+     <p svgId="connector0pin" layer="breadboardRatsnest" />
+    </breadboardView>
+    <schematicView>
+      <p svgId="connector0pin" layer="schematicWire" />
+      <p svgId="connector0pin" layer="schematicTrace" />
+    </schematicView>
+    <pcbView>
+     <p svgId="connector0pin" layer="ratsnest" />
+      <p svgId="connector0pin" layer="copper0" />
+      <p svgId="connector0pin" layer="copper0trace" />
+      <p svgId="connector0pin" layer="copper1" />
+      <p svgId="connector0pin" layer="copper1trace" />
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="wire" id="connector1" name="wireConnector1" >
+   <description>the other end of the wire</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector1pin" layer="breadboardWire" />
+     <p svgId="connector1pin" layer="breadboardRatsnest" />
+    </breadboardView>
+    <schematicView>
+      <p svgId="connector1pin" layer="schematicWire" />
+      <p svgId="connector1pin" layer="schematicTrace" />
+    </schematicView>
+    <pcbView>
+     <p svgId="connector1pin" layer="ratsnest" />
+      <p svgId="connector1pin" layer="copper0" />
+      <p svgId="connector1pin" layer="copper0trace" />
+      <p svgId="connector1pin" layer="copper1" />
+      <p svgId="connector1pin" layer="copper1trace" />
+    </pcbView>
+   </views>
+  </connector>
+ </connectors>
+ <buses>
+  <bus id="wirebus" >
+   <nodeMember connectorId="connector0" />
+   <nodeMember connectorId="connector1" />
+  </bus>
+ </buses>
+</module>

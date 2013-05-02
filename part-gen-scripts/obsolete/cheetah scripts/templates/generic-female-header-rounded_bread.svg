@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1 Basic//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-basic.dtd">
+#set $one_tenth_of_an_inch = 7.179
+<svg version="1.1" baseProfile="basic"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="${0.10*int($pins)}in" height="0.10in"
+	 viewBox="0 0 ${$one_tenth_of_an_inch*int($pins)} 7.178" xml:space="preserve">
+	 
+<g id="breadboard">
+#for $pin in range(int($pins))
+	#set $offset = $pin*$one_tenth_of_an_inch
+<rect id="connector${pin}pin" x="${$offset+2.198}" y="2.197" fill="none" width="2.783" height="2.783"/>
+<rect id="connector${pin}terminal" x="${$offset+2.511}" y="2.461" fill="none" width="2.157" height="2.256"/>
+#end for
+
+	<rect fill="#404040" width="${$one_tenth_of_an_inch*int($pins)}" height="7.178"/>
+#for $pin in range(int($pins))
+	#set $offset = $pin*$one_tenth_of_an_inch
+	<g>
+		<g>
+			<path fill="#9A916C" d="M${$offset+3.59},5.999C${$offset+4.92},5.999,${$offset+6},4.92,${$offset+6},3.589H${$offset+1.18}C${$offset+1.18},4.92,${$offset+2.258},5.999,${$offset+3.59},5.999z"/>
+			<path fill="#80795B" d="M${$offset+3.59},1.179c-1.332,0-2.41,1.079-2.41,2.41H${$offset+6}C${$offset+6},2.258,${$offset+4.92},1.179,${$offset+3.59},1.179z"/>
+		</g>
+		<circle cx="${$offset+3.59}" cy="3.589" r="1.387"/>
+	</g>
+	<path fill="#BCB59C" d="M${$offset+3.59},1.679c1.054,0,1.91,0.857,1.91,1.91c0,1.054-0.856,1.91-1.91,1.91c-1.053,0-1.91-0.856-1.91-1.91
+		C${$offset+1.68},2.536,${$offset+2.537},1.679,${$offset+3.59},1.679 M${$offset+3.59},1.179c-1.332,0-2.41,1.079-2.41,2.41s1.078,2.41,2.41,2.41C${$offset+4.92},5.999,${$offset+6},4.92,${$offset+6},3.589
+		S${$offset+4.92},1.179,${$offset+3.59},1.179L${$offset+3.59},1.179z"/>
+	<path fill="#7C7557" d="M${$offset+3.59},2.202c0.766,0,1.387,0.621,1.387,1.387S${$offset+4.355},4.976,${$offset+3.59},4.976c-0.767,0-1.387-0.621-1.387-1.387
+		S${$offset+2.823},2.202,${$offset+3.59},2.202 M${$offset+3.59},2.102c-0.82,0-1.487,0.667-1.487,1.487c0,0.819,0.667,1.486,1.487,1.486
+		c0.819,0,1.486-0.667,1.486-1.486C${$offset+5.076},2.769,${$offset+4.409},2.102,${$offset+3.59},2.102L${$offset+3.59},2.102z"/>
+#end for
+</g>
+
+</svg>

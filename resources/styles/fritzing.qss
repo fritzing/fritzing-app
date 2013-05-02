@@ -1,0 +1,750 @@
+/*
+
+lightest red:	rgb(126,54,77);
+medium red_l:	rgb(108,36,60); (little lighter for hover)
+medium red:		rgb(84,24,44);
+darkest red_l:  rgb(81,0,27); (little lighter for hover)
+darkest red:	rgb(51,0,17);
+
+light grey:		rgb(217,217,217);
+medium grey_l:	rgb(190,190,190); (lighter grey for hovers)
+medium grey:	rgb(164,164,164);
+medium grey_d:	rgb(117,117,117); (shadowish border around widgets)
+dark grey:		rgb(126,126,126);
+darker grey		rgb(87,87,87); (used as font color only so far)
+
+*/
+
+
+/* ########### the main window and general things ############## */
+
+MainWindow {
+	/* layout here */
+
+	/* styling there */
+	background-color: #666666;
+	font-family: "Lucida Grande", LucidaSans, Tahoma, Arial, sans-serif;
+	font-size: 10px;
+	color: rgb(255,255,255);
+}
+
+QStatusBar {
+	background-color: rgb(84,24,44);
+}
+
+#statusBarContainer {
+	background-color: rgb(84,24,44);
+}
+
+/* this separates palettes from each other and is movable */
+MainWindow::separator {
+	background-color: #666666;
+}
+
+MainWindow QLabel {
+	color: rgb(0,0,0);
+}
+
+QStatusBar {
+	left: 6px;
+
+	color: rgb(255,255,255);
+	font-weight: bold;
+	font-size: 10px;
+}
+
+QStatusBar::item {
+        border: none;
+}
+
+/* PEMainWindow seems to be needed here rathern in newpartseditor.qss */
+/* this separates palettes from each other and is movable */
+PEMainWindow::separator {
+	background-color: #666666;
+}
+
+PEMainWindow {
+	/* layout here */
+
+	/* styling there */
+	background-color: #afafb4;
+}
+
+
+/* ################### the toolbar #################### */
+QToolBar {
+	border: 0px;
+	/* spacing: 10px; spacing of items in the toolbar */
+
+	background-color: rgb(51,0,17);
+	color: rgb(126,54,77);
+}
+
+#fileToolBar QToolButton,
+#editToolBar QToolButton {
+	border: 1px solid rgb(126,54,77);
+	margin: 5px 5px;
+	color: rgb(126,54,77);
+	background-color: rgb(51,0,17);
+}
+#fileToolBar QToolButton:hover,
+#editToolBar QToolButton:hover {
+	background-color: rgb(81,0,27);
+	color: rgb(255,255,255); /* doesnt work, why ??? */
+}
+#fileToolBar QToolButton:pressed,
+#editToolBar QToolButton:pressed {
+	border-color: rgb(126,54,77);
+	background-color: rgb(126,54,77);
+	color: rgb(51,0,17); /* doesnt work, why ??? */
+}
+
+/* ################### zoomslider #################### */
+
+#ZoomSliderFrame {
+	border:0px; 
+	margin:0px; 
+	padding:0px;
+	height: 16px;
+	max-height: 16px;
+	min-height: 16px;
+	width: 202px;
+	max-width: 202px;
+	min-width: 202px;  
+}
+
+#ZoomSliderValue {
+	margin: 0px;
+	padding: 0px;
+	border: none;
+	color: rgb(255,255,255);
+	background-color: rgb(84,24,44);
+	width: 35px;
+	max-width: 35px;
+	min-width: 35px; 
+	text-align: right;
+}
+
+#ZoomSliderLabel {
+	color: #CCCCCC;
+	width: 15px;
+	max-width: 15px;
+	min-width: 15px;  
+	text-align: left;
+}
+
+#ZoomSliderSlider {
+	height: 16px;
+	width: 100px;
+	max-width: 100px;
+	min-width: 100px; 
+}
+
+#ZoomSliderButton {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	margin-left: 5px;
+	margin-right: 5px;
+	padding: 0px;
+	border: none;
+	width: 16px;
+	max-width: 16px;
+	min-width: 16px;  
+}
+
+/* next to the zoomslider in the status bar */
+
+#LocationLabel {
+	font-size: 9px;
+	font-weight: 500;
+	color: rgb(255,255,255);
+}
+
+
+/* ################### the palettes #################### */
+FDockWidget {
+	/* only relevant if palette is floating
+	   and only visible with tabs inside the widget
+	   such as Parts Library */
+	background-color: rgb(164,164,164);
+	
+	/* this defines the title text! */
+	font-size: 10px;
+	font-weight: 600;
+	text-transform: uppercase;
+	color: #777;
+	
+	titlebar-close-icon: url(:/resources/images/icons/dockWidgetEmpty_icon.png);
+	titlebar-normal-icon: url(:/resources/images/icons/dockWidgetEmpty_icon.png);
+}
+
+#topMostDock {
+	margin: 0px;
+	margin-top: 6px;
+	border: 0px;
+}
+
+#bottomMostDock {
+	margin: 0px;
+	margin-bottom: 6px;
+	border: 0px;
+}
+
+FDockWidget::title {
+	height: 10px;
+	/*border-top-left-radius: 5px;*/
+	/*border-top-right-radius: 5px;*/
+	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                     stop: 0 #ededed, stop: 1.0 #ccc);
+	border-top: 1px #e3e3e3 solid;
+	padding-left: 6px;
+	padding-top: 2px;
+	padding-bottom: 0px;
+}
+FDockWidget::close-button,
+FDockWidget::float-button {
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+	subcontrol-position: top right;
+	subcontrol-origin: margin;
+	position: absolute;
+	top: 2px;  bottom: 0px;
+}
+
+FDockWidget::close-button {
+	right: 2px;
+	image: url(:/resources/images/icons/dockWidgetCloseNormal_icon.png); 
+}
+FDockWidget::close-button:hover {
+	border: none;
+ 	image: url(:/resources/images/icons/dockWidgetCloseHover_icon.png);
+}
+FDockWidget::close-button:pressed {
+	border: none;
+	image: url(:/resources/images/icons/dockWidgetClosePressed_icon.png);
+}
+
+FDockWidget::float-button {
+	right: 17px;
+	image: url(:/resources/images/icons/dockWidgetFloatNormal_icon.png);
+}
+FDockWidget::float-button:hover {
+	border: none;
+	image: url(:/resources/images/icons/dockWidgetFloatHover_icon.png);
+}
+FDockWidget::float-button:pressed {
+	border: none;
+ 	background-image: url(:/resources/images/icons/dockWidgetFloatPressed_icon.png);
+}
+
+
+AutoCloseMessageBox {
+	background-color: #FFFFE1;
+	border: 1px solid black;
+	padding: 5px;
+	font-size: 12px;
+}
+
+/* ################### info view #################### */
+
+HtmlInfoView {
+    /*
+	border: 1px solid rgb(117,117,117);
+	border-top: 0px;
+	*/
+}
+
+#infoViewMainFrame {
+	background-color: rgb(175,175,180);
+	border: 0px;
+	margin: 0px;
+	padding: 0px;
+}
+
+#instanceTitleEditor {
+	/* background-color is set programmatically */
+	text-align: left;
+	font-size: 14px;
+	font-weight: 600;
+	border: 0px;
+	margin: 5px 5px 5px 5px;
+	padding: 0px;
+}
+
+#iconFrame {
+	background-color: rgb(175,175,180);
+	/* how to set background for each icon? */
+	max-height: 32px;
+	min-height: 32px;
+	margin: 0px 0px 0px 5px;
+	padding: 0px;
+}
+#iconLabel {
+	background-color: rgb(155,155,160);
+}
+
+/* part description/subtitle */
+#infoViewPartTitle,
+#infoViewPartVersion {
+	margin: 0px 4px 0px 4px;
+	padding: 0px 0px 1px 0px;
+	font-size: 10px;
+	font-weight: normal;
+	color: rgb(70,70,70);     /*rgb(110,110,110);*/
+}
+
+
+#infoViewPartUrl {
+	margin: 0px 4px 0px 4px;
+	padding: 0px 0px 1px 0px;
+	font-size: 10px;
+	font-weight: normal;
+	color: rgb(70,70,70);/*rgb(110,110,110);*/
+}
+
+
+/* section title */
+#expandableViewLabel {
+	padding: 0px 0px 3px 0px;
+	margin: 4px 0px 0px 4px;
+	border: 0px;
+	font-weight: bold;
+	text-align: left;
+	font-size: 10px;
+	color: rgb(84,24,44);
+}
+
+/* Properties */
+#infoViewPropertyFrame {
+	margin: 0px 4px 0px 0px;
+}
+
+#propNameLabel {
+	font-size: 10px;
+	color: rgb(70,70,70);
+	min-width: 65px;
+	max-width: 65px;
+	margin: 0px 0px 0px 4px;
+	padding: 3px 3px 3px 0px;
+	border-top: 1px solid rgb(155,155,155);
+}
+#propValueFrame {
+	margin: 0px;
+	border: 0px;
+	padding: 1px 0px 1px 0px;
+	border-top: 1px solid rgb(155,155,155);
+}
+#propValueLabel {
+	font-size: 10px;
+	padding: 3px 3px 3px 0px;
+}
+
+
+/* complex property values */
+
+#infoViewComboBox,
+#infoViewLineEdit {
+	font-size: 10px;
+	color: rgb(0,0,0);
+}
+#infoViewComboBox,
+#infoViewComboBox::drop-down:button,
+#infoViewLineEdit {
+	background: rgb(210, 210, 215);
+	border: none;
+}
+#infoViewComboBox:hover,
+#infoViewComboBox:editable:hover, /* doesn't work */
+#infoViewComboBox::drop-down:hover, /* should also respond to combo hover */
+#infoViewLineEdit:hover  { 
+	background: rgb(235, 235, 238);
+}
+#infoViewComboBox:on,
+#infoViewComboBox:editable:on, /* doesn't work */
+#infoViewComboBox::drop-down:on,
+#infoViewLineEdit:focus  {
+	background: rgb(255, 255, 255);
+}
+
+#infoViewComboBox::down-arrow {
+	image: url(:/resources/images/icons/combobox-arrow.png);
+}
+
+#infoViewComboBox:editable {
+	border-bottom: 1px solid rgb(100,100,100);
+}
+#infoViewComboBox::drop-down:editable {
+	border-left: 1px solid rgb(100,100,100);
+}
+
+#infoViewPartFrame {
+	font-size: 10px;
+	padding: 0px;
+	margin: 0px;
+}
+
+/* the label between the two spinners in the schematic frame */
+#infoViewOfLabel {
+	font-size: 10px;
+	padding: 0px;
+	margin: 0px;
+	width: 30px;
+	min-width: 30px;
+	max-width: 30px;
+}
+
+#infoViewButton {
+	font-size: 10px;
+	/*min-width: 100px;*/
+	text-align: center;
+}
+
+#infoViewGroupBox {
+	border: 1px solid gray;
+	font-size: 10px;
+	font-weight: bold;
+	margin: 5px 0px 0px 0px;
+	padding: 15px 0px 0px 0px;
+}
+#infoViewGroupBox::title {
+}
+
+#infoViewLabel {
+	font-size: 10px;
+	min-width: 60px;
+	max-width: 60px;
+}
+
+#infoViewCheckBox::indicator {
+	/* needs a nice checkmark graphic */
+	/*background-color: rgb(210, 210, 215);*/
+}
+
+
+/* Connections */
+#connectionsFrame {
+	margin: 0px;
+}
+
+#connectionsLabel {
+	font-size: 10px;
+	color: rgb(87,87,87);
+	min-width: 65px;
+	max-width: 65px;
+	margin: 0px 0px 0px 4px;
+	padding: 3px 3px 3px 0px;
+	border-top: 1px solid rgb(155,155,155);
+}
+
+#connectionsValue {
+	font-size: 10px;
+	color: black;
+	margin: 0px;
+	border: 0px;
+	padding: 3px 3px 3px 0px;
+	border-top: 1px solid rgb(155,155,155);
+}
+
+/* Tags */
+
+#tagsValue {
+	font-size: 10px;
+	margin: 0px 4px 0px 4px;
+	padding: 2px 0px 0px 0px;
+	border-top: 1px solid rgb(155,155,155);
+}
+
+
+/*
+light grey:		rgb(217,217,217);
+medium grey_l:	rgb(190,190,190); (lighter grey for hovers)
+medium grey:	rgb(164,164,164);
+medium grey_d:	rgb(117,117,117); (shadowish border around widgets)
+dark grey:		rgb(126,126,126);
+*/
+
+
+/***************** Parts Bin *****************/
+
+#partsBinHeader {
+  margin: 0;
+  padding: 2px;
+  max-height: 20px;
+  height: 20px;
+}
+
+#partsBinHeaderSeparator {
+	border: 1px solid #707070;
+}
+
+SearchLineEdit,  #searchStackWidget {
+	max-height: 20px;
+	height: 20px;
+}
+
+#partsBinLabel {
+	background-color: rgb(175,175,180);
+	font-size: 11px;
+	color: #474747;
+	font-weight: bold;
+	/*text-transform: uppercase;*/
+	padding: 0;
+	margin: 0;
+}
+
+PartsBinIconView {
+	padding: 2px;
+}
+
+PartsBinListView {
+	selection-background-color: #BEBEBE;
+	background-color: rgb(175,175,180);
+	border: 0;
+	border-bottom: 1px solid #D0D0D0;
+}
+
+PartsBinIconView
+{
+	background-color: #555555;/*#B2B2B2;*/
+	border: 0;
+	border-bottom: 1px solid #D0D0D0;
+}
+
+#partsBinHeader,
+#partsBinContainer,
+PartsBinPaletteWidget,
+PartsBinPaletteWidget SimpleEditableLabelWidget,
+PartsBinPaletteWidget InfoGraphicsView {
+	background-color: rgb(175,175,180);
+	border: none;
+}
+
+
+PartsBinPaletteWidget,
+StackTabWidget,
+StackTabWidget::pane,
+StackTabBar {
+	/* trying to get rid of the line 
+	across the top of the tabs */
+	border: none;
+}
+
+StackTabBar::tab {
+    margin: 0px 0px 0px 0px;
+    padding: 0px;
+	
+    /*
+	min-width: 2.5em;
+	max-width: 2.5em;
+	min-height: 3.0em;
+	max-height: 3.0em;
+	text-align: center;
+
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;*/
+	
+	min-width: 32px;
+	max-width: 32px;
+	min-height: 32px;
+	max-height: 32px;
+	border: 0;
+	background: rgb(175,175,180);
+
+	font-weight: 600;
+}
+
+StackTabBar::tab:selected {
+	color: #6b3e4d;
+}
+
+StackTabBar::tab:!selected {
+	background-color: #878787; /*#9b9b9b;*/
+	color: #444444;/*#686868;*/
+}
+
+StackTabBar::tab:!selected:hover {
+	background-color: rgb(164,164,164);
+}
+
+StackTabBar[current="true"]::tab:selected {
+	/*background-color: black;
+	color: white;*/
+}
+
+#binToolButton {
+	background-color: transparent;
+	font-size: 10px;
+}
+
+#partsBinCombinedMenuButton
+#partsBinCombinedMenuButton:pressed {
+	margin: 0;
+	margin-top: 2px;
+	margin-left: 2px;
+	padding: 0;
+	border: 0;
+	width: 25px;
+	background-color: transparent;
+	background-attachment: fixed;
+	background-position: 100% 100%;
+	background-repeat: no-repeat;
+}
+
+#partsBinCombinedMenuButton {
+	background-image: url(:/resources/images/icons/partsBinCombinedMenu_icon.png);
+	background-repeat: no-repeat;
+	border: none;
+}
+
+#partsBinCombinedMenuButton:pressed {
+	background-image: url(:/resources/images/icons/partsBinCombinedMenuPressed_icon.png);
+	background-repeat: no-repeat;
+}
+
+#partsBinCombinedMenuButton:hover {
+	background-image: url(:/resources/images/icons/partsBinCombinedMenuHover_icon.png);
+	background-repeat: no-repeat;
+}
+
+#partsBinCombinedMenuButton::menu-indicator {
+     image: url(:/resources/images/icons/noArrow_icon.png);  
+}
+
+/**************** sketch area widgets ****************/
+
+
+SketchArea QToolButton {
+	background-color: transparent;
+}
+
+#sketchAreaToolbar {
+	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                 stop: 0 #e5e5e5, stop: 1.0 #b8b8b8);
+
+	border: none;
+	padding: 0;
+}
+
+#sketchAreaToolbar QLabel {
+	font-weight: normal;
+	color: #444;
+}
+
+#sketchAreaToolbar QToolButton {
+	background: none;
+	border: none;
+	margin: 0;
+}
+
+#sketchAreaToolbar QToolButton::menu-button {
+	border: none;
+	background-color: none;
+	padding-top: 17px;
+}
+
+SketchWidget {
+	border: 0px;
+}
+
+TripleNavigator {
+	background-color: rgb(164,164,164);
+}
+
+#tripleNavigatorBottomMargin {
+	background-color: #666;
+}
+
+QSplitter::handle {
+     height: 4px;
+     width: 4px;
+     color: #666666;
+     background-color: #666666;
+} 
+
+#tripleNavigatorLabel {
+	height: 11;
+	color: #000000;
+	font-size: 10px;
+}
+
+WaitPushUndoStack {
+	background-color: white;
+	color: black;
+}
+
+ViewSwitcherButton {
+	font-size: 11px;
+	font-weight: bold;
+	font-family: "Lucida Grande", LucidaSans, Tahoma, Arial, sans-serif;
+}
+
+ViewSwitcher {
+	font-size: 11px;
+	font-weight: bold;
+	font-family: "Lucida Grande", LucidaSans, Tahoma, Arial, sans-serif;
+}
+
+SearchLineEdit {
+	color: #000000;
+	font-size: 11px;
+	font-family: "Lucida Grande", LucidaSans, Tahoma, Arial, sans-serif;
+	border: 1px solid rgb(140,140,140);
+}
+
+
+/**************** Fab Quote ****************/
+
+#quoteOrder {
+	font-size: 16px;
+	font-weight: bold;
+	color: rgb(126,54,77);
+	margin: 0px 0px 0px 18px;
+	text-align: left;
+	font-family: DroidSans;
+	font-weight: bold;
+}
+
+#quoteMessage {
+	font-size: 11px;
+	color: #000000;
+	margin: 0px 0px 0px 10px;
+	text-align: left;
+	font-family: DroidSans;
+}
+
+#quoteAdditional {
+	font-size: 11px;
+	color: #000000;
+	margin: 0px 0px 0px 10px;
+	text-align: left;
+	font-family: DroidSans;
+}
+
+#quoteTable {
+	background-color: transparent;
+	border: 0px solid transparent;
+	margin: 0px 0px 0px 10px;
+	font-size: 11px;
+	font-family: DroidSans;
+}
+
+#quoteTable QHeaderView {
+	background-color: transparent;
+	color: #000000;
+	border: 0px solid transparent;
+}
+
+#quoteTable::item::disabled {
+	margin-right: 10px;
+	color: #000000;
+}
+
+#quoteVisitButton {
+	color: #ffffff;
+	text-align: center;						/* text-align: center is not implemented.  QSS is shit. */
+	qproperty-alignment: AlignCenter;
+	font-size: 16px;
+	font-family: DroidSans;
+	font-weight: bold;
+}

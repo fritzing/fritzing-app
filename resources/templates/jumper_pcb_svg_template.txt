@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><svg baseProfile="tiny" width="%1in"  height="%2in" version="1.2" viewBox="0 0 %3 %4" xmlns="http://www.w3.org/2000/svg">
+ <desc>Fritzing footprint SVG</desc>
+ <g id="silkscreen">
+  <line stroke="white" stroke-width="%8" x1="20" x2="20" y1="20" y2="%6"/>
+  <line stroke="white" stroke-width="%8" x1="20" x2="%5" y1="%6" y2="%6"/>
+  <line stroke="white" stroke-width="%8" x1="120" x2="%5" y1="%6" y2="20"/>
+  <line stroke="white" stroke-width="%8" x1="120" x2="20" y1="20" y2="20"/>
+  <line stroke="white" stroke-width="%9" x1="20" x2="55" y1="55" y2="20"/>  <!-- %7 --> </g>
+ <g id="copper1"><g id="copper0">
+    %10
+ </g></g>
+</svg>

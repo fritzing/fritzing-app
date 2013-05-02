@@ -1,0 +1,297 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module fritzingVersion='0.5.2b.02.18.4756' moduleId='RN41-v14'>
+<version>4</version>
+<date>2011-11-29</date>
+<author>SparkFun</author>
+<description>&lt;p&gt;
+	&lt;span style=&quot;font-weight: bold;&quot;&gt;Description:&lt;/span&gt; This is a simple breakout for the Roving Networks Bluetooth&lt;sup&gt;&lt;font face=&quot;Tahoma, sans-serif&quot;&gt;&lt;b&gt; &lt;/b&gt;&lt;/font&gt;&lt;/sup&gt;module. All pertinent pins are broken out and labeled. This new version&amp;#39;s headers are unpopulated. Check below for appropriate headers.&lt;br /&gt;
+	&lt;br /&gt;
+	The module from Roving Networks is powerful, small, and very easy to use. This Bluetooth module is designed to replace serial cables. The Bluetooth&lt;sup&gt;&lt;font face=&quot;Tahoma, sans-serif&quot;&gt;&lt;b&gt; &lt;/b&gt;&lt;/font&gt;&lt;/sup&gt;stack is completely encapsulated. The end user just sees serial characters being transmitted back and forth. Press the &amp;#39;A&amp;#39; character from a terminal program on your computer and an &amp;#39;A&amp;#39; will be pushed out the TX pin of the Bluetooth&lt;sup&gt;&lt;font face=&quot;Tahoma, sans-serif&quot;&gt;&lt;b&gt; &lt;/b&gt;&lt;/font&gt;&lt;/sup&gt;module.&lt;/p&gt;
+&lt;p&gt;
+	&lt;span style=&quot;font-weight: bold;&quot;&gt;Do not&lt;/span&gt; attach this device directly to a serial port. You will need an &lt;a href=&quot;http://www.sparkfun.com/products/718&quot; target=&quot;_blank&quot;&gt;RS232 to TTL converter circuit&lt;/a&gt; if you need to attach this device to a computer.&lt;/p&gt;
+&lt;p&gt;
+	&lt;span style=&quot;font-weight: bold;&quot;&gt;Features:&lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;
+		Fully qualified Bluetooth module&lt;/li&gt;
+	&lt;li&gt;
+		FCC Certified&lt;/li&gt;
+	&lt;li&gt;
+		Fully configurable UART&lt;/li&gt;
+	&lt;li&gt;
+		UART Data rates up to 3Mbps&lt;/li&gt;
+	&lt;li&gt;
+		Over air data rate of 721kbps to 2.0Mbps&lt;/li&gt;
+	&lt;li&gt;
+		Low power sleep mode&lt;/li&gt;
+	&lt;li&gt;
+		Compatible with all Bluetooth&lt;sup&gt;&lt;font face=&quot;Tahoma, sans-serif&quot;&gt;&lt;b&gt; &lt;/b&gt;&lt;/font&gt;&lt;/sup&gt;products that support SPP (almost all do)&lt;/li&gt;
+	&lt;li&gt;
+		Includes support for BCSP, DUN, LAN, GAP SDP, RFCOMM, and L2CAP protocols&lt;/li&gt;
+	&lt;li&gt;
+		3.3V operation&lt;/li&gt;
+	&lt;li&gt;
+		Status pin&lt;/li&gt;
+	&lt;li&gt;
+		Bluetooth Technology v2.0 compatible&lt;/li&gt;
+	&lt;li&gt;
+		Class 1 power output&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;
+	&lt;span style=&quot;font-weight: bold;&quot;&gt;Dimensions:&lt;/span&gt; 1.0x0.9&amp;quot;&lt;/p&gt;
+&lt;p&gt;
+	&lt;span style=&quot;font-weight: bold;&quot;&gt;Documents:&lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;
+		&lt;a href=&quot;http://www.sparkfun.com/datasheets/Wireless/Bluetooth/RN41-v14.pdf&quot;&gt;Schematic&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a href=&quot;http://www.sparkfun.com/datasheets/Wireless/Bluetooth/RN41-v14.zip&quot;&gt;Eagle Files&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a href=&quot;http://www.rovingnetworks.com/documents/RN-41.pdf&quot; target=&quot;_blank&quot;&gt;RN-41 Datasheet&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a href=&quot;http://www.sparkfun.com/datasheets/Wireless/Bluetooth/rn-bluetooth-um.pdf&quot; name=&quot;&quot; target=&quot;_blank&quot;&gt;RN-41 AT Command Set&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a href=&quot;http://www.sparkfun.com/datasheets/Wireless/Bluetooth/pic-example-1-1.pdf&quot; name=&quot;&quot; target=&quot;_blank&quot;&gt;PIC Example&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a href=&quot;http://www.sparkfun.com/commerce/tutorial_info.php?tutorials_id=65&quot; name=&quot;&quot; target=&quot;_blank&quot;&gt;Tutorial&lt;/a&gt; (interfacing a 3.3V device to a 5V micro)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;
+	&lt;strong&gt;Replaces:&lt;/strong&gt; &lt;a href=&quot;http://www.sparkfun.com/products/10144&quot; target=&quot;_blank&quot;&gt;WRL-10144&lt;/a&gt;&lt;/p&gt;</description>
+<title>Bluetooth Module Breakout - Roving Networks (RN-41)</title>
+<url>http://www.sparkfun.com/products/10559</url>
+<tags>
+<tag>Bluetooth</tag>
+</tags>
+<properties>
+<property name='family'>Wireless</property>
+<property name='Protocol'>Bluetooth</property>
+</properties>
+<views>
+<breadboardView>
+<layers image='breadboard/RN41-v14_breadboard.svg'>
+<layer layerId='breadboard'/>
+</layers>
+</breadboardView>
+<schematicView>
+<layers image='schematic/RN41-v14_schematic.svg'>
+<layer layerId='schematic'/>
+</layers>
+</schematicView>
+<pcbView>
+<layers image='pcb/RN41-v14_pcb.svg'>
+<layer layerId='copper1'/>
+<layer layerId='silkscreen'/>
+<layer layerId='copper0'/>
+</layers>
+</pcbView>
+<iconView>
+<layers image='breadboard/RN41-v14_breadboard.svg'>
+<layer layerId='icon'/>
+</layers>
+</iconView>
+</views>
+<connectors>
+<connector id='connector4' type='male' name='VCC'>
+<description>VCC</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector4pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector4pin' terminalId='connector4terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector4pad'/><p layer='copper1' svgId='connector4pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector5' type='male' name='GND'>
+<description>GND</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector5pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector5pin' terminalId='connector5terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector5pad'/><p layer='copper1' svgId='connector5pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector6' type='male' name='RESET'>
+<description>RESET</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector6pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector6pin' terminalId='connector6terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector6pad'/><p layer='copper1' svgId='connector6pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector7' type='male' name='SPICLK'>
+<description>SPICLK</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector7pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector7pin' terminalId='connector7terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector7pad'/><p layer='copper1' svgId='connector7pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector8' type='male' name='PIO7'>
+<description>PIO7</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector8pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector8pin' terminalId='connector8terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector8pad'/><p layer='copper1' svgId='connector8pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector9' type='male' name='PIO6'>
+<description>PIO6</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector9pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector9pin' terminalId='connector9terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector9pad'/><p layer='copper1' svgId='connector9pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector10' type='male' name='SPIMOSI'>
+<description>SPIMOSI</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector10pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector10pin' terminalId='connector10terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector10pad'/><p layer='copper1' svgId='connector10pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector11' type='male' name='PIO10'>
+<description>PIO10</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector11pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector11pin' terminalId='connector11terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector11pad'/><p layer='copper1' svgId='connector11pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector12' type='male' name='PIO11'>
+<description>PIO11</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector12pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector12pin' terminalId='connector12terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector12pad'/><p layer='copper1' svgId='connector12pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector13' type='male' name='10'>
+<description>10</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector13pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector13pin' terminalId='connector13terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector13pad'/><p layer='copper1' svgId='connector13pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector14' type='male' name='SPIMISO'>
+<description>SPIMISO</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector14pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector14pin' terminalId='connector14terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector14pad'/><p layer='copper1' svgId='connector14pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector15' type='male' name='SPICSB'>
+<description>SPICSB</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector15pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector15pin' terminalId='connector15terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector15pad'/><p layer='copper1' svgId='connector15pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector16' type='male' name='PIO4'>
+<description>PIO4</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector16pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector16pin' terminalId='connector16terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector16pad'/><p layer='copper1' svgId='connector16pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector17' type='male' name='PIO5'>
+<description>PIO5</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector17pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector17pin' terminalId='connector17terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector17pad'/><p layer='copper1' svgId='connector17pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector18' type='male' name='PIO3'>
+<description>PIO3</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector18pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector18pin' terminalId='connector18terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector18pad'/><p layer='copper1' svgId='connector18pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector19' type='male' name='PIO2'>
+<description>PIO2</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector19pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector19pin' terminalId='connector19terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector19pad'/><p layer='copper1' svgId='connector19pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector20' type='male' name='UARTCTS'>
+<description>UARTCTS</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector20pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector20pin' terminalId='connector20terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector20pad'/><p layer='copper1' svgId='connector20pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector21' type='male' name='UARTRTS'>
+<description>UARTRTS</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector21pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector21pin' terminalId='connector21terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector21pad'/><p layer='copper1' svgId='connector21pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector22' type='male' name='UARTTX'>
+<description>UARTTX</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector22pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector22pin' terminalId='connector22terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector22pad'/><p layer='copper1' svgId='connector22pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector23' type='male' name='UARTRX'>
+<description>UARTRX</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector23pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector23pin' terminalId='connector23terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector23pad'/><p layer='copper1' svgId='connector23pad'/></pcbView>
+</views>
+</connector>
+</connectors>
+<buses>
+</buses>
+</module>

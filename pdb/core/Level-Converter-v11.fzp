@@ -1,0 +1,180 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module fritzingVersion='0.5.2b.02.18.4756' moduleId='Level-Converter-v11'>
+<version>4</version>
+<date>2011-07-08</date>
+<author>SparkFun</author>
+<description>&lt;p&gt;
+	&lt;span style=&quot;font-weight: bold;&quot;&gt;Description:&lt;/span&gt; If you&amp;#39;ve ever tried to connect a 3.3V device to a 5V system, you know what a challenge it can be. The SparkFun logic level converter is a small device that safely steps down 5V signals to 3.3V and steps up 3.3V to 5V. This level converter also works with 2.8V and 1.8V devices. Each level converter has the capability of converting 4 pins on the high side to 4 pins on the low side. Two inputs and two outputs are provided for each side.&lt;br /&gt;
+	&lt;br /&gt;
+	Bread board friendly! Can be used with normal serial, I2C, SPI, and any other digital signal. Does not work with an analog signal.&lt;br /&gt;
+	&lt;br /&gt;
+	The level converter is very easy to use. The board needs to be powered from the two voltages sources (high voltage and low voltage) that your system is using. High voltage (5V for example) to the &amp;#39;HV&amp;#39; pin, low voltage (2.8V for example) to &amp;#39;LV&amp;#39;, and ground from the system to the &amp;#39;GND&amp;#39; pin.&lt;br /&gt;
+	&lt;br /&gt;
+	Pins are labeled as &lt;span style=&quot;font-weight: bold;&quot;&gt;I&lt;/span&gt;nputs and &lt;span style=&quot;font-weight: bold;&quot;&gt;O&lt;/span&gt;utputs. These are relative to the board. A digital one going into the RXI pin on the 5V side will show up on the RXO pin on the 3.3V side as 3.3V. A digital one going into the TXI pin on the 3.3V side will show up on the TXO pin on the 5V side as 5V.&lt;br /&gt;
+	&lt;br /&gt;
+	&lt;span style=&quot;font-weight: bold;&quot;&gt;Dimensions:&lt;/span&gt; 0.5x0.6&amp;quot;&lt;br /&gt;
+	&lt;br /&gt;
+	&lt;span style=&quot;font-weight: bold;&quot;&gt;Documents:&lt;/span&gt; &lt;a href=&quot;http://www.sparkfun.com/datasheets/BreakoutBoards/Level-Converter-v10.pdf&quot; target=&quot;_blank&quot;&gt;Schematic&lt;/a&gt;&lt;/p&gt;</description>
+<title>Logic Level Converter</title>
+<url>http://www.sparkfun.com/products/8745</url>
+<tags>
+<tag>Logic</tag>
+<tag>Level</tag>
+<tag>Converter</tag>
+</tags>
+<properties>
+<property name='family'>Level Shifter</property>
+</properties>
+<views>
+<breadboardView>
+<layers image='breadboard/Level-Converter-v11_breadboard.svg'>
+<layer layerId='breadboard'/>
+</layers>
+</breadboardView>
+<schematicView>
+<layers image='schematic/Level-Converter-v11_schematic.svg'>
+<layer layerId='schematic'/>
+</layers>
+</schematicView>
+<pcbView>
+<layers image='pcb/Level-Converter-v11_pcb.svg'>
+<layer layerId='copper1'/>
+<layer layerId='silkscreen'/>
+<layer layerId='copper0'/>
+</layers>
+</pcbView>
+<iconView>
+<layers image='breadboard/Level-Converter-v11_breadboard.svg'>
+<layer layerId='icon'/>
+</layers>
+</iconView>
+</views>
+<connectors>
+<connector id='connector0' type='male' name='TX2_LV'>
+<description>TX2_LV</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector0pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector0pin' terminalId='connector0terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector0pad'/><p layer='copper1' svgId='connector0pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector1' type='male' name='RX2_LV'>
+<description>RX2_LV</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector1pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector1pin' terminalId='connector1terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector1pad'/><p layer='copper1' svgId='connector1pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector2' type='male' name='GND'>
+<description>GND</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector2pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector2pin' terminalId='connector2terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector2pad'/><p layer='copper1' svgId='connector2pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector3' type='male' name='LV'>
+<description>LV</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector3pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector3pin' terminalId='connector3terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector3pad'/><p layer='copper1' svgId='connector3pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector4' type='male' name='RX_LV'>
+<description>RX_LV</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector4pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector4pin' terminalId='connector4terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector4pad'/><p layer='copper1' svgId='connector4pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector5' type='male' name='TX_LV'>
+<description>TX_LV</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector5pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector5pin' terminalId='connector5terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector5pad'/><p layer='copper1' svgId='connector5pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector6' type='male' name='TX_HV'>
+<description>TX_HV</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector6pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector6pin' terminalId='connector6terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector6pad'/><p layer='copper1' svgId='connector6pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector7' type='male' name='RX_HV'>
+<description>RX_HV</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector7pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector7pin' terminalId='connector7terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector7pad'/><p layer='copper1' svgId='connector7pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector8' type='male' name='HV'>
+<description>HV</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector8pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector8pin' terminalId='connector8terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector8pad'/><p layer='copper1' svgId='connector8pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector9' type='male' name='GND'>
+<description>GND</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector9pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector9pin' terminalId='connector9terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector9pad'/><p layer='copper1' svgId='connector9pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector10' type='male' name='RX2_HV'>
+<description>RX2_HV</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector10pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector10pin' terminalId='connector10terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector10pad'/><p layer='copper1' svgId='connector10pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector11' type='male' name='TX2_HV'>
+<description>TX2_HV</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector11pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector11pin' terminalId='connector11terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector11pad'/><p layer='copper1' svgId='connector11pad'/></pcbView>
+</views>
+</connector>
+</connectors>
+<buses>
+<bus id='gnd'>
+<nodeMember connectorId='connector2'/>
+<nodeMember connectorId='connector9'/>
+</bus>
+</buses>
+</module>

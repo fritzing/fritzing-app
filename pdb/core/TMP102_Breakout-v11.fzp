@@ -1,0 +1,145 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module fritzingVersion='0.5.2b.02.18.4756' moduleId='TMP102_Breakout-v11'>
+<version>4</version>
+<date>2011-07-08</date>
+<author>SparkFun</author>
+<description>&lt;p&gt;
+	&lt;b&gt;Description: &lt;/b&gt;This is a breakout board for the incredibly small TMP102 digital temperature sensor. The TMP102 is a digital sensor (I2C a.k.a. TWI), has a resolution of 0.0625&amp;deg;C, and is accurate up to 0.5&amp;deg;C. The sensor requires very low-current, and is loaded with features.&lt;/p&gt;
+&lt;p&gt;
+	Communication with the TMP102 is achieved through a two-wire serial interface. There is no on-board voltage regulator, so supplied voltage should be between 1.4 to 3.6VDC. Filtering capacitors and pull-up resistors are included as shown.&lt;/p&gt;
+&lt;p&gt;
+	&lt;span style=&quot;font-weight: bold;&quot;&gt;Features:&lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;
+		12-bit, 0.0625&amp;deg;C resolution&lt;/li&gt;
+	&lt;li&gt;
+		Accuracy: 0.5&amp;deg;C (-25&amp;deg;C to +85&amp;deg;C)&lt;/li&gt;
+	&lt;li&gt;
+		Low quiescent current
+		&lt;ul&gt;
+			&lt;li&gt;
+				10&amp;micro;A Active (max)&lt;/li&gt;
+			&lt;li&gt;
+				1&amp;micro;A Shutdown (max)&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+		1.4V to 3.6VDC supply range&lt;/li&gt;
+	&lt;li&gt;
+		Two-wire serial interface&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;
+	&lt;b&gt;Documents:&lt;/b&gt;&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;
+		&lt;a classname=&quot;&quot; href=&quot;http://www.sparkfun.com/datasheets/Sensors/Temperature/TMP102_Breakout-v11.pdf&quot; name=&quot;&quot; target=&quot;_blank&quot;&gt;Schematic&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a classname=&quot;&quot; href=&quot;http://www.sparkfun.com/datasheets/Sensors/Temperature/tmp102.pdf&quot; name=&quot;&quot; target=&quot;_blank&quot;&gt;TMP102 Datasheet&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a classname=&quot;&quot; href=&quot;http://www.sparkfun.com/datasheets/Sensors/Temperature/tmp102.zip&quot; name=&quot;&quot; target=&quot;_blank&quot;&gt;Example Code&lt;/a&gt; (ATmega328)&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a href=&quot;http://wiring.org.co/learning/libraries/tmp102sparkfun.html&quot; target=&quot;_blank&quot;&gt;Wiring Example&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a href=&quot;http://mbed.org/cookbook/TMP102-Temperature-Sensor&quot; target=&quot;_blank&quot;&gt;mbed Example&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a href=&quot;http://bildr.org/2011/01/tmp102-arduino/&quot; target=&quot;_blank&quot;&gt;bildr blog - TMP102&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+<title>Digital Temperature Sensor Breakout - TMP102</title>
+<url>http://www.sparkfun.com/products/9418</url>
+<tags>
+<tag>Temp</tag>
+<tag>Temperature</tag>
+<tag>TMP102</tag>
+</tags>
+<properties>
+<property name='family'>Temperature Breakout</property>
+</properties>
+<views>
+<breadboardView>
+<layers image='breadboard/TMP102_Breakout-v11_breadboard.svg'>
+<layer layerId='breadboard'/>
+</layers>
+</breadboardView>
+<schematicView>
+<layers image='schematic/TMP102_Breakout-v11_schematic.svg'>
+<layer layerId='schematic'/>
+</layers>
+</schematicView>
+<pcbView>
+<layers image='pcb/TMP102_Breakout-v11_pcb.svg'>
+<layer layerId='copper1'/>
+<layer layerId='silkscreen'/>
+<layer layerId='copper0'/>
+</layers>
+</pcbView>
+<iconView>
+<layers image='breadboard/TMP102_Breakout-v11_breadboard.svg'>
+<layer layerId='icon'/>
+</layers>
+</iconView>
+</views>
+<connectors>
+<connector id='connector8' type='male' name='V+'>
+<description>V+</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector8pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector8pin' terminalId='connector8terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector8pad'/><p layer='copper1' svgId='connector8pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector9' type='male' name='SDA'>
+<description>SDA</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector9pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector9pin' terminalId='connector9terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector9pad'/><p layer='copper1' svgId='connector9pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector10' type='male' name='SCL'>
+<description>SCL</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector10pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector10pin' terminalId='connector10terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector10pad'/><p layer='copper1' svgId='connector10pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector11' type='male' name='GND'>
+<description>GND</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector11pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector11pin' terminalId='connector11terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector11pad'/><p layer='copper1' svgId='connector11pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector12' type='male' name='ALERT'>
+<description>ALERT</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector12pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector12pin' terminalId='connector12terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector12pad'/><p layer='copper1' svgId='connector12pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector13' type='male' name='ADD0'>
+<description>ADD0</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector13pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector13pin' terminalId='connector13terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector13pad'/><p layer='copper1' svgId='connector13pad'/></pcbView>
+</views>
+</connector>
+</connectors>
+<buses>
+</buses>
+</module>

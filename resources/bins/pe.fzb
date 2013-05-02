@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module fritzingVersion="0.4.3b.0.0" icon="Core.png">
+	<title>Parts Editor Parts</title>
+     <instances>
+     
+       <instance moduleIdRef="__spacer__" modelIndex="3" path="Breadboard View">
+        <views>
+          <iconView layer="icon">
+            <geometry z="-1" x="-1" y="-1"></geometry>
+          </iconView>
+        </views>
+      </instance>
+
+       <instance moduleIdRef="BreadboardLogoTextModuleID" modelIndex="56" path=":/resources/parts/core/breadboardlogotext.fzp">
+        <views>
+          <iconView layer="icon">
+            <geometry z="-1" x="-1" y="-1"/>
+          </iconView>
+        </views>
+      </instance>
+      <instance moduleIdRef="BreadboardLogoImageModuleID" modelIndex="57" path=":/resources/parts/core/breadboardlogoimage.fzp">
+        <views>
+          <iconView layer="icon">
+            <geometry z="-1" x="-1" y="-1"/>
+          </iconView>
+        </views>
+      </instance>     
+      
+       <instance moduleIdRef="__spacer__" modelIndex="3" path="Schematic View">
+        <views>
+          <iconView layer="icon">
+            <geometry z="-1" x="-1" y="-1"></geometry>
+          </iconView>
+        </views>
+      </instance>
+
+       <instance moduleIdRef="SchematicLogoTextModuleID" modelIndex="56" path=":/resources/parts/core/schematiclogotext.fzp">
+        <views>
+          <iconView layer="icon">
+            <geometry z="-1" x="-1" y="-1"/>
+          </iconView>
+        </views>
+      </instance>
+      <instance moduleIdRef="SchematicLogoImageModuleID" modelIndex="57" path=":/resources/parts/core/schematiclogoimage.fzp">
+        <views>
+          <iconView layer="icon">
+            <geometry z="-1" x="-1" y="-1"/>
+          </iconView>
+        </views>
+      </instance>
+
+      <instance moduleIdRef="__spacer__" modelIndex="3" path="PCB View">
+        <views>
+          <iconView layer="icon">
+            <geometry z="-1" x="-1" y="-1"></geometry>
+          </iconView>
+        </views>
+      </instance>
+
+      <instance moduleIdRef="LogoTextModuleID" modelIndex="56" path=":/resources/parts/core/logotext.fzp">
+        <views>
+          <iconView layer="icon">
+            <geometry z="-1" x="-1" y="-1"/>
+          </iconView>
+        </views>
+      </instance>
+      <instance moduleIdRef="LogoImageModuleID" modelIndex="57" path=":/resources/parts/core/logoimage.fzp">
+        <views>
+          <iconView layer="icon">
+            <geometry z="-1" x="-1" y="-1"/>
+          </iconView>
+        </views>
+      </instance>
+     <instance moduleIdRef="HoleModuleID" modelIndex="58" path=":/resources/parts/core/hole.fzp">
+        <views>
+          <iconView layer="icon">
+            <geometry z="-1" x="-1" y="-1"/>
+          </iconView>
+        </views>
+      </instance>
+      <instance moduleIdRef="ViaModuleID" modelIndex="59" path=":/resources/parts/core/via.fzp">
+        <views>
+          <iconView layer="icon">
+            <geometry z="-1" x="-1" y="-1"/>
+          </iconView>
+        </views>
+      </instance>
+      <instance moduleIdRef="PadModuleID" modelIndex="59" path=":/resources/parts/core/pad.fzp">
+        <views>
+          <iconView layer="icon">
+            <geometry z="-1" x="-1" y="-1"/>
+          </iconView>
+        </views>
+      </instance>
+      <instance moduleIdRef="__spacer__" modelIndex="3" path="Tools">
+        <views>
+          <iconView layer="icon">
+            <geometry z="-1" x="-1" y="-1"></geometry>
+          </iconView>
+        </views>
+      </instance>
+
+     <instance moduleIdRef="RulerModuleID" modelIndex="60" path=":/resources/parts/core/cmRuler.fzp">
+            <views>
+                <iconView layer="icon">
+                    <geometry z="-1" x="-1" y="-1"/>
+                </iconView>
+            </views>
+        </instance>
+    </instances>
+  </module>

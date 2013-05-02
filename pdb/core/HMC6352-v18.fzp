@@ -1,0 +1,130 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module fritzingVersion='0.5.2b.02.18.4756' moduleId='HMC6352-v18'>
+<version>4</version>
+<date>2011-07-08</date>
+<author>SparkFun</author>
+<description>&lt;p&gt;
+	&lt;b&gt;Description:&lt;/b&gt; This is a very simple breakout board for the popular HMC6352. Remember the KISS mantra? We really enjoy the simplicity and ease of use with the HMC6352. If you need simple, clean, degree resolution compass heading, this is the way to go.&lt;/p&gt;
+&lt;p&gt;
+	&lt;span style=&quot;font-weight: bold;&quot;&gt;Features:&lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;
+		Simple I2C interface&lt;/li&gt;
+	&lt;li&gt;
+		2.7 to 5.2V supply range&lt;/li&gt;
+	&lt;li&gt;
+		1 to 20Hz selectable update rate&lt;/li&gt;
+	&lt;li&gt;
+		True drop-in solution&lt;/li&gt;
+	&lt;li&gt;
+		0.5 degree heading resolution&lt;/li&gt;
+	&lt;li&gt;
+		1 degree repeatability&lt;/li&gt;
+	&lt;li&gt;
+		Supply current : 1mA @ 3V&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;
+	&lt;span style=&quot;font-weight: bold;&quot;&gt;Documents:&lt;br /&gt;
+	&lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;
+		&lt;a classname=&quot;&quot; href=&quot;http://www.sparkfun.com/datasheets/Sensors/Magneto/HMC6352-v16.pdf&quot; name=&quot;&quot; target=&quot;_blank&quot;&gt;Schematic&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a href=&quot;http://www.sparkfun.com/datasheets/Components/HMC6352.pdf&quot; target=&quot;_blank&quot;&gt;HMC6352 Datasheet&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a href=&quot;http://www.ssec.honeywell.com/magnetic/hmc6352.html&quot; target=&quot;_blank&quot;&gt;Honeywell Product Page&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a href=&quot;../../../../Code/LPC2138_Test_IIC.zip&quot; target=&quot;_blank&quot;&gt;Example I2C project&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a classname=&quot;&quot; href=&quot;http://wiring.org.co/learning/libraries/hmc6352sparkfun.html&quot; name=&quot;&quot; target=&quot;_blank&quot;&gt;Wiring Example&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a classname=&quot;&quot; href=&quot;http://lusorobotica.com/index.php/topic,36.0.html&quot; name=&quot;&quot; target=&quot;_blank&quot;&gt;Example project&lt;/a&gt; in Portuguese - Thanks Tiago!&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a href=&quot;http://www.youtube.com/watch?v=sBKHdt0OdPg&quot; target=&quot;_blank&quot;&gt;Digital Compass How-To Video&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a href=&quot;http://mbed.org/cookbook/HMC6352-Digital-Compass&quot; target=&quot;_blank&quot;&gt;mbed Example&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a href=&quot;http://bildr.org/2011/01/hmc6352/&quot;&gt;Bildr Tutorial&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;
+	&lt;span style=&quot;font-weight: bold;&quot;&gt;Dimensions:&lt;/span&gt; 0.6x0.6&amp;quot; (15x15mm)&lt;/p&gt;</description>
+<title>Compass Module - HMC6352</title>
+<url>http://www.sparkfun.com/products/7915</url>
+<tags>
+<tag>Compass</tag>
+<tag>Magnetometer</tag>
+<tag>Magnet</tag>
+</tags>
+<properties>
+<property name='family'>Magnetometer Breakout</property>
+<property name='Tilt Compensated'>Yes</property>
+</properties>
+<views>
+<breadboardView>
+<layers image='breadboard/HMC6352-v18_breadboard.svg'>
+<layer layerId='breadboard'/>
+</layers>
+</breadboardView>
+<schematicView>
+<layers image='schematic/HMC6352-v18_schematic.svg'>
+<layer layerId='schematic'/>
+</layers>
+</schematicView>
+<pcbView>
+<layers image='pcb/HMC6352-v18_pcb.svg'>
+<layer layerId='copper1'/>
+<layer layerId='silkscreen'/>
+<layer layerId='copper0'/>
+</layers>
+</pcbView>
+<iconView>
+<layers image='breadboard/HMC6352-v18_breadboard.svg'>
+<layer layerId='icon'/>
+</layers>
+</iconView>
+</views>
+<connectors>
+<connector id='connector32' type='male' name='GND'>
+<description>GND</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector32pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector32pin' terminalId='connector32terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector32pad'/><p layer='copper1' svgId='connector32pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector33' type='male' name='VCC'>
+<description>VCC</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector33pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector33pin' terminalId='connector33terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector33pad'/><p layer='copper1' svgId='connector33pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector34' type='male' name='SDA'>
+<description>SDA</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector34pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector34pin' terminalId='connector34terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector34pad'/><p layer='copper1' svgId='connector34pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector35' type='male' name='SCL'>
+<description>SCL</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector35pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector35pin' terminalId='connector35terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector35pad'/><p layer='copper1' svgId='connector35pad'/></pcbView>
+</views>
+</connector>
+</connectors>
+<buses>
+</buses>
+</module>

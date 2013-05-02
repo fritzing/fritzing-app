@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This xml file is generated through a template. Please don't edit it directly -->
+<module moduleId="%1.%2PerfboardModuleID">
+  <version>4</version>
+  <author>JC</author>
+  <title>basic single-sided perfboard</title>
+  <date>2011-06-02</date>
+  <label>Perfboard</label>
+  <tags>
+    <tag>Perfboard</tag>
+  </tags>
+  <properties>
+    <property name="family">Prototyping Board</property>
+     <property name="type">Perfboard</property>
+    <property name="size">%1.%2</property>
+  </properties>
+  <taxonomy>prototyping.perfboard.perfboard</taxonomy>
+  <description>A perfboard for easily prototyping circuits</description>
+  <views>
+    <iconView>
+      <layers image="icon/iconPerfboard.svg">
+        <layer layerId="icon"/>
+      </layers>
+    </iconView>
+    <breadboardView>
+      <layers image="breadboard/%1.%2perfboard.svg">
+        <layer layerId="breadboardbreadboard"/>
+      </layers>
+    </breadboardView>
+    <schematicView>
+      <layers image="breadboard/%1.%2perfboard.svg">
+        <layer layerId="breadboardbreadboard"/>
+      </layers>
+    </schematicView>
+    <pcbView>
+      <layers image="breadboard/%1.%2perfboard.svg">
+        <layer layerId="breadboardbreadboard"/>
+      </layers>
+    </pcbView>
+  </views>
+  <connectors ignoreTerminalPoints="true">
+  %3
+  </connectors>
+  <buses>
+   </buses>
+</module>

@@ -1,0 +1,609 @@
+<?xml version="1.0" encoding="UTF-8"?><module fritzingVersion="0.3.17b.04.07.4081" moduleId="d30f97b6fbe1asdad59ea7f0d636a7a">
+    <version>4</version>
+    <author>Lionel Michel</author>
+    <title>Parallax Propeller D40</title>
+    <label>Propeller</label>
+    <date>2010-04-08</date>
+    <tags>
+        <tag>DIP</tag>
+        <tag>Propeller</tag>
+        <tag>Parallax</tag>
+    </tags>
+    <properties>
+        <property name="family">Microcontroller (Propeller)</property>
+        <property name="type">Parallax Propeller</property>
+        <property name="package">DIP [THT]</property>
+    </properties>
+    <description>The Propeller chip makes it easy to rapidly develop embedded applications. Its eight processors (cogs) can operate simultaneously, either independently or cooperatively, sharing common resources through a central hub. The developer has full control over how and when each cog is employed; there is no compiler-driven or operating system-driven splitting of tasks among multiple cogs. A shared system clock keeps each cog on the same time reference, allowing for true deterministic timing and synchronization. Two programming languages are available: the easy-to-learn high-level Spin, and Propeller Assembly which can execute at up to 160 MIPS (20 MIPS per cog).</description>
+    <views>
+        <iconView>
+            <layers image="icon/parallax_propeller.svg">
+                <layer layerId="icon"/>
+            </layers>
+        </iconView>
+        <breadboardView>
+            <layers image="breadboard/Parallax_Propeller.svg">
+                <layer layerId="breadboard"/>
+            </layers>
+        </breadboardView>
+        <schematicView>
+            <layers image="schematic/Parallax_Propeller.svg">
+                <layer layerId="schematic"/>
+            </layers>
+        </schematicView>
+        <pcbView>
+            <layers image="pcb/parallax_propeller_DIL40.svg">
+                <layer layerId="copper0"/>
+                <layer layerId="silkscreen"/>
+            <layer layerId="copper1"/></layers>
+        </pcbView>
+    </views>
+    <connectors>
+        <connector id="connector3" name="P3" type="male">
+            <description>General purpose I/O Port A. Can source/sink 40 mA each at 3.3 VDC.</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector3pin" terminalId="connector3terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector3pin" terminalId="connector3terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector3pin"/>
+                <p layer="copper1" svgId="connector3pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector20" name="P16" type="male">
+            <description>General purpose I/O Port A. Can source/sink 40 mA each at 3.3 VDC.</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector20pin" terminalId="connector20terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector20pin" terminalId="connector20terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector20pin"/>
+                <p layer="copper1" svgId="connector20pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector4" name="P4" type="male">
+            <description>General purpose I/O Port A. Can source/sink 40 mA each at 3.3 VDC.</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector4pin" terminalId="connector4terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector4pin" terminalId="connector4terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector4pin"/>
+                <p layer="copper1" svgId="connector4pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector21" name="P17" type="male">
+            <description>General purpose I/O Port A. Can source/sink 40 mA each at 3.3 VDC.</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector21pin" terminalId="connector21terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector21pin" terminalId="connector21terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector21pin"/>
+                <p layer="copper1" svgId="connector21pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector5" name="P5" type="male">
+            <description>General purpose I/O Port A. Can source/sink 40 mA each at 3.3 VDC.</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector5pin" terminalId="connector5terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector5pin" terminalId="connector5terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector5pin"/>
+                <p layer="copper1" svgId="connector5pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector22" name="P18" type="male">
+            <description>General purpose I/O Port A. Can source/sink 40 mA each at 3.3 VDC.</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector22pin" terminalId="connector22terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector22pin" terminalId="connector22terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector22pin"/>
+                <p layer="copper1" svgId="connector22pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector6" name="P6" type="male">
+            <description>General purpose I/O Port A. Can source/sink 40 mA each at 3.3 VDC.</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector6pin" terminalId="connector6terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector6pin" terminalId="connector6terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector6pin"/>
+                <p layer="copper1" svgId="connector6pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector7" name="P7" type="male">
+            <description>General purpose I/O Port A. Can source/sink 40 mA each at 3.3 VDC.</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector7pin" terminalId="connector7terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector7pin" terminalId="connector7terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector7pin"/>
+                <p layer="copper1" svgId="connector7pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector23" name="P19" type="male">
+            <description>General purpose I/O Port A. Can source/sink 40 mA each at 3.3 VDC.</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector23pin" terminalId="connector23terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector23pin" terminalId="connector23terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector23pin"/>
+                <p layer="copper1" svgId="connector23pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector8" name="VSS" type="male">
+            <description>Ground</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector8pin" terminalId="connector8terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector8pin" terminalId="connector8terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector8pin"/>
+                <p layer="copper1" svgId="connector8pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector24" name="P20" type="male">
+            <description>General purpose I/O Port A. Can source/sink 40 mA each at 3.3 VDC.</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector24pin" terminalId="connector24terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector24pin" terminalId="connector24terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector24pin"/>
+                <p layer="copper1" svgId="connector24pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector9" name="BOEn" type="male">
+            <description>Brown Out Enable (active low). Must be connected to either VDD or VSS.</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector9pin" terminalId="connector9terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector9pin" terminalId="connector9terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector9pin"/>
+                <p layer="copper1" svgId="connector9pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector25" name="P21" type="male">
+            <description>General purpose I/O Port A. Can source/sink 40 mA each at 3.3 VDC.</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector25pin" terminalId="connector25terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector25pin" terminalId="connector25terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector25pin"/>
+                <p layer="copper1" svgId="connector25pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector26" name="P22" type="male">
+            <description>General purpose I/O Port A. Can source/sink 40 mA each at 3.3 VDC.</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector26pin" terminalId="connector26terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector26pin" terminalId="connector26terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector26pin"/>
+                <p layer="copper1" svgId="connector26pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector27" name="P23" type="male">
+            <description>General purpose I/O Port A. Can source/sink 40 mA each at 3.3 VDC.</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector27pin" terminalId="connector27terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector27pin" terminalId="connector27terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector27pin"/>
+                <p layer="copper1" svgId="connector27pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector28" name="VSS" type="male">
+            <description>Ground</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector28pin" terminalId="connector28terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector28pin" terminalId="connector28terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector28pin"/>
+                <p layer="copper1" svgId="connector28pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector29" name="XI" type="male">
+            <description>Crystal Input</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector29pin" terminalId="connector29terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector29pin" terminalId="connector29terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector29pin"/>
+                <p layer="copper1" svgId="connector29pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector30" name="XO" type="male">
+            <description>Crystal Output</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector30pin" terminalId="connector30terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector30pin" terminalId="connector30terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector30pin"/>
+                <p layer="copper1" svgId="connector30pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector31" name="VDD" type="male">
+            <description>3.3 volt power (2.7 – 3.3 VDC)</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector31pin" terminalId="connector31terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector31pin" terminalId="connector31terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector31pin"/>
+                <p layer="copper1" svgId="connector31pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector32" name="P24" type="male">
+            <description>General purpose I/O Port A. Can source/sink 40 mA each at 3.3 VDC.</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector32pin" terminalId="connector32terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector32pin" terminalId="connector32terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector32pin"/>
+                <p layer="copper1" svgId="connector32pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector33" name="P25" type="male">
+            <description>General purpose I/O Port A. Can source/sink 40 mA each at 3.3 VDC.</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector33pin" terminalId="connector33terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector33pin" terminalId="connector33terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector33pin"/>
+                <p layer="copper1" svgId="connector33pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector34" name="P26" type="male">
+            <description>General purpose I/O Port A. Can source/sink 40 mA each at 3.3 VDC.</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector34pin" terminalId="connector34terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector34pin" terminalId="connector34terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector34pin"/>
+                <p layer="copper1" svgId="connector34pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector35" name="P27" type="male">
+            <description>General purpose I/O Port A. Can source/sink 40 mA each at 3.3 VDC.</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector35pin" terminalId="connector35terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector35pin" terminalId="connector35terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector35pin"/>
+                <p layer="copper1" svgId="connector35pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector36" name="P28" type="male">
+            <description>General purpose I/O Port A. Can source/sink 40 mA each at 3.3 VDC. I2C SCL connection to optional, external EEPROM.</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector36pin" terminalId="connector36terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector36pin" terminalId="connector36terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector36pin"/>
+                <p layer="copper1" svgId="connector36pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector37" name="P29" type="male">
+            <description>General purpose I/O Port A. Can source/sink 40 mA each at 3.3 VDC. I2C SDA connection to optional, external EEPROM.</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector37pin" terminalId="connector37terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector37pin" terminalId="connector37terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector37pin"/>
+                <p layer="copper1" svgId="connector37pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector38" name="P30" type="male">
+            <description>General purpose I/O Port A. Can source/sink 40 mA each at 3.3 VDC. Serial Tx to host.</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector38pin" terminalId="connector38terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector38pin" terminalId="connector38terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector38pin"/>
+                <p layer="copper1" svgId="connector38pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector39" name="P31" type="male">
+            <description>General purpose I/O Port A. Can source/sink 40 mA each at 3.3 VDC. Serial Rx from host.</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector39pin" terminalId="connector39terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector39pin" terminalId="connector39terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector39pin"/>
+                <p layer="copper1" svgId="connector39pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector10" name="RESn" type="male">
+            <description>Reset (active low)</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector10pin" terminalId="connector10terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector10pin" terminalId="connector10terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector10pin"/>
+                <p layer="copper1" svgId="connector10pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector11" name="VDD" type="male">
+            <description>3.3 volt power (2.7 – 3.3 VDC)</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector11pin" terminalId="connector11terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector11pin" terminalId="connector11terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector11pin"/>
+                <p layer="copper1" svgId="connector11pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector12" name="P8" type="male">
+            <description>General purpose I/O Port A. Can source/sink 40 mA each at 3.3 VDC.</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector12pin" terminalId="connector12terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector12pin" terminalId="connector12terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector12pin"/>
+                <p layer="copper1" svgId="connector12pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector13" name="P9" type="male">
+            <description>General purpose I/O Port A. Can source/sink 40 mA each at 3.3 VDC.</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector13pin" terminalId="connector13terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector13pin" terminalId="connector13terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector13pin"/>
+                <p layer="copper1" svgId="connector13pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector14" name="P10" type="male">
+            <description>General purpose I/O Port A. Can source/sink 40 mA each at 3.3 VDC.</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector14pin" terminalId="connector14terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector14pin" terminalId="connector14terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector14pin"/>
+                <p layer="copper1" svgId="connector14pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector15" name="P11" type="male">
+            <description>General purpose I/O Port A. Can source/sink 40 mA each at 3.3 VDC.</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector15pin" terminalId="connector15terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector15pin" terminalId="connector15terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector15pin"/>
+                <p layer="copper1" svgId="connector15pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector16" name="P12" type="male">
+            <description>General purpose I/O Port A. Can source/sink 40 mA each at 3.3 VDC.</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector16pin" terminalId="connector16terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector16pin" terminalId="connector16terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector16pin"/>
+                <p layer="copper1" svgId="connector16pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector17" name="P13" type="male">
+            <description>General purpose I/O Port A. Can source/sink 40 mA each at 3.3 VDC.</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector17pin" terminalId="connector17terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector17pin" terminalId="connector17terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector17pin"/>
+                <p layer="copper1" svgId="connector17pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector18" name="P14" type="male">
+            <description>General purpose I/O Port A. Can source/sink 40 mA each at 3.3 VDC.</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector18pin" terminalId="connector18terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector18pin" terminalId="connector18terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector18pin"/>
+                <p layer="copper1" svgId="connector18pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector19" name="P15" type="male">
+            <description>General purpose I/O Port A. Can source/sink 40 mA each at 3.3 VDC.</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector19pin" terminalId="connector19terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector19pin" terminalId="connector19terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector19pin"/>
+                <p layer="copper1" svgId="connector19pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector0" name="P0" type="male">
+            <description>General purpose I/O Port A. Can source/sink 40 mA each at 3.3 VDC.</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector0pin" terminalId="connector0terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector0pin" terminalId="connector0terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector0pin"/>
+                <p layer="copper1" svgId="connector0pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector1" name="P1" type="male">
+            <description>General purpose I/O Port A. Can source/sink 40 mA each at 3.3 VDC.</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector1pin" terminalId="connector1terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector1pin" terminalId="connector1terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector1pin"/>
+                <p layer="copper1" svgId="connector1pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector2" name="P2" type="male">
+            <description>General purpose I/O Port A. Can source/sink 40 mA each at 3.3 VDC.</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector2pin" terminalId="connector2terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector2pin" terminalId="connector2terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector2pin"/>
+                <p layer="copper1" svgId="connector2pin"/></pcbView>
+            </views>
+        </connector>
+    </connectors>
+    <buses>
+    	<bus id="ground">
+      		<nodeMember connectorId="connector8"/>
+      		<nodeMember connectorId="connector28"/>
+    	</bus>
+    </buses>
+</module>

@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module moduleId="RulerModuleID" >
+ <version>4</version>
+ <author>Mariano Crowe</author>
+ <title>Ruler</title>
+ <date>2008-08-21</date>
+ <label>Ruler</label>
+ <tags>
+  <tag>ruler</tag>
+  <tag>cm</tag>
+ </tags>
+ <properties>
+   <property name="family" >Ruler</property>
+   <property name="width" >10cm</property>
+ </properties>
+ <description>An adjustable ruler</description>
+ <views>
+  <defaultUnits>cmil</defaultUnits>
+  <iconView>
+   <layers image="icon/rulericon.svg" >
+    <layer layerId="icon" />
+   </layers>
+  </iconView>
+  <breadboardView>
+   <layers image="breadboard/ruler.svg" >
+    <layer layerId="breadboardRuler" />
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="breadboard/ruler.svg" >
+    <layer layerId="schematicRuler" />
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="breadboard/ruler.svg" >
+    <layer layerId="pcbRuler" />
+   </layers>
+  </pcbView>
+ </views>
+</module>

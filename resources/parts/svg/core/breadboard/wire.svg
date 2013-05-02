@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<svg
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.2" baseProfile="tiny"
+   width="1in" height="1in" 
+	viewBox="0 0 100 100" >
+
+<g id="breadboardWire" >
+<g id="breadboardRatsnest" >
+<g id="schematicWire" >
+<g id="schematicTrace" >
+<g id="ratsnest" >
+<g id="copper0" >
+<g id="copper1" >
+<g id="copper0trace" >
+<g id="copper1trace" >
+
+<rect x="-2.5" y="-2.5" width="5" height="5" id="connector0pin"/>
+<rect x="97.5" y="97.5"  width="5" height="5" id="connector1pin"/>
+
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</svg>

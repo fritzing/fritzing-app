@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8'?>
+#set $mils = int(float($pitch) * 1000)
+<module moduleId="$uuid" >
+ <version>1.0</version>
+ <author>Fritzing Part-o-matic</author>
+ <title>DIP - $pins pins</title>
+ <label>IC</label>
+ <date>$date</date>
+ <tags>
+  <tag>DIP</tag>
+  <tag>fritzing core</tag>
+ </tags>
+ <properties>
+  <property name="family" >Generic IC</property>
+  <property name="package" >DIP (Dual Inline)</property>
+  <property name="pins">$pins</property>
+  <property name="spacing">${mils}mil</property>
+  <property name="chip label">${label}</property>
+ </properties>
+ <taxonomy>part.dip.${pins}pins</taxonomy>
+ <description>A DIP stand-in part for whatever IC you want.  With $pins pins on a ${mils} mil dual inline package (DIP) footprint.</description>
+ <views>
+  <iconView>
+   <layers image="icon/dip_icon.svg" >
+    <layer layerId="icon" />
+   </layers>
+  </iconView>
+  <breadboardView>
+   <layers image="breadboard/generic_ic_dip_${pins}_${mils}mil_bread.svg" >
+    <layer layerId="breadboard" />
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="schematic/generic_ic_dip_${pins}_schem.svg" >
+    <layer layerId="schematic" />
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/dip_${pins}_${mils}mil_pcb.svg" >
+    <layer layerId="silkscreen" />
+    <layer layerId="copper0" />
+   </layers>
+  </pcbView>
+ </views>
+ <connectors>
+#for $pin in range(int($pins))
+  #set $pindex = $pin + 1
+  <connector type="male" id="connector$pin" name="pin$pindex" >
+   <description>pin $pindex</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector${pin}pin" layer="breadboard" terminalId="connector${pin}terminal" />
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector${pin}pin" layer="schematic" terminalId="connector${pin}terminal" />
+    </schematicView>
+    <pcbView>
+     <p svgId="connector${pin}pin" layer="copper0" />
+    </pcbView>
+   </views>
+  </connector>
+#end for
+ </connectors>
+</module>

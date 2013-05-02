@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.2" baseProfile="tiny"  xmlns="http://www.w3.org/2000/svg" 
+	 x="0px" y="0px" width="100mm" height="60mm" viewBox="0 0 100 60" >
+<g id="board">
+	<rect id="boardoutline" stroke-width="0.2032" stroke="#338040" fill="#338040" x="0.1016" y="0.1016" rx="10" ry="10" width="99.7068" height="59.7068" fill-opacity="0.5"  />
+</g>
+<g id="silkscreen">
+	<rect fill="none" stroke="#FFFFFF" stroke-width="0.2032" x="0.1016" y="0.1016" rx="10" ry="10" width="99.7068" height="59.7068" />
+</g>
+</svg>

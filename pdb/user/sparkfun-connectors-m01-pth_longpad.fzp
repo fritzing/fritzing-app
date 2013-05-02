@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module fritzingVersion='0.7.2b' moduleId='SparkFun-Connectors-M01-PTH_LONGPAD'>
+<!-- generated from Sparkfun Eagle Library 'SparkFun-Connectors' M01 PTH_LONGPAD -->
+<version>4</version>
+<date>2013-02-13</date>
+<label>JP</label>
+<author>www.fritzing.org</author>
+<description>&lt;b&gt;Header 1&lt;/b&gt;
+Standard 1-pin 0.1 header. Use with straight break away headers (SKU : PRT-00116), right angle break away headers (PRT-00553), swiss pins (PRT-00743), machine pins (PRT-00117), and female headers (PRT-00115).</description>
+<title>Header 1</title>
+<tags>
+<tag>1X01_LONGPAD</tag>
+<tag>PTH_LONGPAD</tag>
+<tag>M01</tag>
+</tags>
+<properties>
+<property name='package'>1x01_longpad</property>
+<property name='family'>Pin Header</property>
+<property name='variant'>pth_longpad</property>
+</properties>
+<views>
+<breadboardView>
+<layers image='breadboard/generic_female_pin_header_1_100mil_bread.svg'>
+<layer layerId='breadboard'/>
+</layers>
+</breadboardView>
+<schematicView>
+<layers image='schematic/sparkfun-connectors_m01_schematic.svg'>
+<layer layerId='schematic'/>
+</layers>
+</schematicView>
+<pcbView>
+<layers image='pcb/longpad_1_100mil_pcb.svg'>
+<layer layerId='copper1'/>
+<layer layerId='silkscreen'/>
+<layer layerId='copper0'/>
+</layers>
+</pcbView>
+<iconView>
+<layers image='breadboard/generic_female_pin_header_1_100mil_bread.svg'>
+<layer layerId='icon'/>
+</layers>
+</iconView>
+</views>
+<connectors>
+<connector id='connector0' type='male' name='1'>
+<description>1</description>
+<views>
+<breadboardView>
+<p layer='breadboard' svgId='connector0pin'/>
+</breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector0pin' terminalId='connector0terminal'/>
+</schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector0pin'/>
+<p layer='copper1' svgId='connector0pin'/>
+</pcbView>
+</views>
+</connector>
+</connectors>
+<buses>
+</buses>
+</module>

@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="UTF-8"?><module moduleId="angels_we_have_heard_on_high">
+ <version replacedby="4321DEAB24_ST">1</version>
+ <author>O. Tannenbaum</author>
+ <title>Artreeno</title>
+ <date>2008-12-25</date>
+ <label>PCB</label>
+ <tags>
+  <tag>pcb</tag>
+  <tag>board</tag>
+  <tag>diy</tag>
+  <tag>fritzing core</tag>
+ </tags>
+ <properties>
+  <property name="Size">135 x 126 mm</property>
+  <property name="family">obsolete PCB Tree</property>
+ <property name="package">THT</property></properties>
+ <taxonomy>discreteParts.pcb.Tree.135x126mm</taxonomy>
+ <description>Plain Vanilla 135 x 126 mm Circuit Tree Board</description>
+ <views>
+  <defaultUnits>mm</defaultUnits>
+  <iconView>
+   <layers image="breadboard/artreeno.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+  <breadboardView>
+   <layers image="breadboard/artreeno.svg">
+    <layer layerId="breadboardbreadboard" sticky="true"/>
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="schematic/artreeno.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <label/>
+   <layers image="pcb/artreeno.svg">
+    <layer layerId="board" sticky="true"/>
+    <layer layerId="copper0" sticky="true"/>
+    <layer layerId="silkscreen"/>
+   </layers>
+  </pcbView>
+ </views>
+ <connectors>
+  <connector id="connector0" name="aref" type="female">
+   <description>aref</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboardbreadboard" svgId="connector0pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector0pin" terminalId="connector0terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector0pin"/>
+     <!-- this id refers to a specific path in the SVG file -->
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector1" name="GND1" type="female">
+   <description>gnd</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboardbreadboard" svgId="connector1pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector1pin" terminalId="connector1terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector1pin"/>
+     <!-- this id refers to a specific path in the SVG file -->
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector2" name="digital13" type="female">
+   <description>digital13</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboardbreadboard" svgId="connector2pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector2pin" terminalId="connector2terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector2pin"/>
+     <!-- this id refers to a specific path in the SVG file -->
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector3" name="digital12" type="female">
+   <description>digital12</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboardbreadboard" svgId="connector3pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector3pin" terminalId="connector3terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector3pin"/>
+     <!-- this id refers to a specific path in the SVG file -->
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector4" name="digital11" type="female">
+   <description>digital11</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboardbreadboard" svgId="connector4pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector4pin" terminalId="connector4terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector4pin"/>
+     <!-- this id refers to a specific path in the SVG file -->
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector5" name="digital10" type="female">
+   <description>digital10</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboardbreadboard" svgId="connector5pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector5pin" terminalId="connector5terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector5pin"/>
+     <!-- this id refers to a specific path in the SVG file -->
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector6" name="digital9" type="female">
+   <description>digital9</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboardbreadboard" svgId="connector6pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector6pin" terminalId="connector6terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector6pin"/>
+     <!-- this id refers to a specific path in the SVG file -->
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector7" name="digital8" type="female">
+   <description>digital8</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboardbreadboard" svgId="connector7pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector7pin" terminalId="connector7terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector7pin"/>
+     <!-- this id refers to a specific path in the SVG file -->
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector8" name="digital7" type="female">
+   <description>digital7</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboardbreadboard" svgId="connector8pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector8pin" terminalId="connector8terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector8pin"/>
+     <!-- this id refers to a specific path in the SVG file -->
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector9" name="digital6" type="female">
+   <description>digital6</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboardbreadboard" svgId="connector9pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector9pin" terminalId="connector9terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector9pin"/>
+     <!-- this id refers to a specific path in the SVG file -->
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector10" name="digital5" type="female">
+   <description>digital5</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboardbreadboard" svgId="connector10pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector10pin" terminalId="connector10terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector10pin"/>
+     <!-- this id refers to a specific path in the SVG file -->
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector11" name="digital4" type="female">
+   <description>digital4</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboardbreadboard" svgId="connector11pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector11pin" terminalId="connector11terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector11pin"/>
+     <!-- this id refers to a specific path in the SVG file -->
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector12" name="digital3" type="female">
+   <description>digital3</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboardbreadboard" svgId="connector12pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector12pin" terminalId="connector12terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector12pin"/>
+     <!-- this id refers to a specific path in the SVG file -->
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector13" name="digital2" type="female">
+   <description>digital2</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboardbreadboard" svgId="connector13pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector13pin" terminalId="connector13terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector13pin"/>
+     <!-- this id refers to a specific path in the SVG file -->
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector14" name="digital1" type="female">
+   <description>digital1</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboardbreadboard" svgId="connector14pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector14pin" terminalId="connector14terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector14pin"/>
+     <!-- this id refers to a specific path in the SVG file -->
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector15" name="digital0" type="female">
+   <description>digital0</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboardbreadboard" svgId="connector15pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector15pin" terminalId="connector15terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector15pin"/>
+     <!-- this id refers to a specific path in the SVG file -->
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector16" name="reset" type="female">
+   <description>Reset</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboardbreadboard" svgId="connector16pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector16pin" terminalId="connector16terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector16pin"/>
+     <!-- this id refers to a specific path in the SVG file -->
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector17" name="3V3" type="female">
+   <description>3V3</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboardbreadboard" svgId="connector17pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector17pin" terminalId="connector17terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector17pin"/>
+     <!-- this id refers to a specific path in the SVG file -->
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector18" name="5V" type="female">
+   <description>5V</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboardbreadboard" svgId="connector18pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector18pin" terminalId="connector18terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector18pin"/>
+     <!-- this id refers to a specific path in the SVG file -->
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector19" name="GND2" type="female">
+   <description>GND2</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboardbreadboard" svgId="connector19pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector19pin" terminalId="connector19terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector19pin"/>
+     <!-- this id refers to a specific path in the SVG file -->
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector20" name="GND3" type="female">
+   <description>GND3</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboardbreadboard" svgId="connector20pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector20pin" terminalId="connector20terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector20pin"/>
+     <!-- this id refers to a specific path in the SVG file -->
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector21" name="Vin" type="female">
+   <description>Vin</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboardbreadboard" svgId="connector21pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector21pin" terminalId="connector21terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector21pin"/>
+     <!-- this id refers to a specific path in the SVG file -->
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector22" name="analog0" type="female">
+   <description>analog0</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboardbreadboard" svgId="connector22pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector22pin" terminalId="connector22terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector22pin"/>
+     <!-- this id refers to a specific path in the SVG file -->
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector23" name="analog1" type="female">
+   <description>analog1</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboardbreadboard" svgId="connector23pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector23pin" terminalId="connector23terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector23pin"/>
+     <!-- this id refers to a specific path in the SVG file -->
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector24" name="analog2" type="female">
+   <description>analog2</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboardbreadboard" svgId="connector24pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector24pin" terminalId="connector24terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector24pin"/>
+     <!-- this id refers to a specific path in the SVG file -->
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector25" name="analog3" type="female">
+   <description>analog3</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboardbreadboard" svgId="connector25pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector25pin" terminalId="connector25terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector25pin"/>
+     <!-- this id refers to a specific path in the SVG file -->
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector26" name="analog4" type="female">
+   <description>analog4</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboardbreadboard" svgId="connector26pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector26pin" terminalId="connector26terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector26pin"/>
+     <!-- this id refers to a specific path in the SVG file -->
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector27" name="analog5" type="female">
+   <description>analog5</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboardbreadboard" svgId="connector27pin"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector27pin" terminalId="connector27terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector27pin"/>
+     <!-- this id refers to a specific path in the SVG file -->
+    </pcbView>
+   </views>
+  </connector>
+ </connectors>
+ <buses>
+  <bus id="ground">
+   <nodeMember connectorId="connector1"/>
+   <nodeMember connectorId="connector19"/>
+   <nodeMember connectorId="connector20"/>
+  </bus>
+ </buses></module>

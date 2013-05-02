@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module fritzingVersion="0.6.3b.08.16.5401" moduleId="Real_Time_Clock_Module___DS1307_RTC_Breakout_Board">
+    <author>Mike</author>
+    <title>Real Time Clock Module - DS1307 RTC Breakout Board</title>
+    <date>2011-09-07</date>
+    <tags>
+        <tag>Real</tag>
+        <tag>Time</tag>
+        <tag>Clock</tag>
+        <tag>Alarm</tag>
+    </tags>
+    <properties>
+        <property name="family">Real Time Clock Breakout</property>
+        <property name="part number"></property>
+    </properties>
+    <description>This a custom designed module for the DS1307 Real Time Clock. The module comes fully assembled and pre-programmed with the current time (ok, so it's our current time - MST). The included Lithium coin cell battery (CR1225 41mAh) will run the module for a minimum of 9 years (17 years typical) without external 5V power. The DS1307 is accessed via the I2C protocol. We've written a test-bed to program the modules. This test-bed code should give you some insight on how to interface the module to any microcontroller using our example software I2C and BCD routines.
+
+
+
+
+
+
+
+
+
+
+
+Features:
+
+
+
+
+
+
+
+
+
+
+
+Two wire I2C interface 
+
+
+
+
+
+
+
+
+
+
+
+Hour : Minutes : Seconds AM/PM 
+
+
+
+
+
+
+
+
+
+
+
+Day Month, Date - Year 
+
+
+
+
+
+
+
+
+
+
+
+Leap year compensation 
+
+
+
+
+
+
+
+
+
+
+
+Accurate calendar up to year 2100 
+
+
+
+
+
+
+
+
+
+
+
+Battery backup included 
+
+
+
+
+
+
+
+
+
+
+
+1Hz output pin 
+
+
+
+
+
+
+
+
+
+
+
+56 Bytes of Non-volatile memory available to user
+
+
+
+
+
+
+
+
+
+
+
+Dimensions: 0.75x0.75&quot; (20x20mm)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Documents:
+
+
+
+
+
+
+
+
+
+
+
+RTC Module Schematic 
+
+
+
+
+
+
+
+
+
+
+
+RTC Module Dimensional Drawing 
+
+
+
+
+
+
+
+
+
+
+
+DS1307 Datasheet 
+
+
+
+
+
+
+
+
+
+
+
+Wiring Example
+
+
+
+
+
+
+
+
+
+
+
+Software: 
+
+
+
+
+
+
+
+
+
+
+
+Example 16F88 code 
+
+
+
+
+
+
+
+
+
+
+
+Arduino Tutorial. Thanks John Vaughters! 
+
+
+
+
+
+
+
+
+
+
+
+Arduino Tutorial in Portuguese. Thanks Daniel Gonçalves! 
+
+
+
+
+
+
+
+
+
+
+
+Bildr Tutorial</description>
+    <views>
+        <breadboardView>
+            <layers image="breadboard/Real_Time_Clock_Module___DS1307_RTC_Brea.svg">
+                <layer layerId="breadboard"/>
+            </layers>
+        </breadboardView>
+        <schematicView>
+            <layers image="schematic/Real_Time_Clock_Module___DS1307_RTC_Brea.svg">
+                <layer layerId="schematic"/>
+            </layers>
+        </schematicView>
+        <pcbView>
+            <layers image="pcb/Real_Time_Clock_Module___DS1307_RTC_Brea.svg">
+                <layer layerId="copper0"/>
+                <layer layerId="silkscreen"/>
+                <layer layerId="copper1"/>
+            </layers>
+        </pcbView>
+        <iconView>
+            <layers image="icon/Real_Time_Clock_Module___DS1307_RTC_Brea.svg">
+                <layer layerId="icon"/>
+            </layers>
+        </iconView>
+    </views>
+    <connectors>
+        <connector id="connector5" type="male" name="5V">
+            <description>5V</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector5pin"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector5pin"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper1" svgId="connector5pad"/>
+                    <p layer="copper0" svgId="connector5pad"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector6" type="male" name="GND">
+            <description>GND</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector6pin"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector6"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper1" svgId="connector6pad"/>
+                    <p layer="copper0" svgId="connector6pad"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector7" type="male" name="SQW">
+            <description>SQW</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector7pin"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector7"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper1" svgId="connector7pad"/>
+                    <p layer="copper0" svgId="connector7pad"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector8" type="male" name="SCL">
+            <description>SCL</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector8pin"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector8pin"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper1" svgId="connector8pad"/>
+                    <p layer="copper0" svgId="connector8pad"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector9" type="male" name="SDA">
+            <description>SDA</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector9pin"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector9pin"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper1" svgId="connector9pad"/>
+                    <p layer="copper0" svgId="connector9pad"/>
+                </pcbView>
+            </views>
+        </connector>
+    </connectors>
+</module>

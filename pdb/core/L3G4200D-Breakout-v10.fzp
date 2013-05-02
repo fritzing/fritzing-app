@@ -1,0 +1,165 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module fritzingVersion='0.5.2b.02.18.4756' moduleId='L3G4200D-Breakout-v10'>
+<version>4</version>
+<date>2011-11-29</date>
+<author>SparkFun</author>
+<description>&lt;p&gt;
+	&lt;strong&gt;Description:&lt;/strong&gt; This is a breakout board for the L3G4200D low-power three-axis angular rate sensor. The L3G4200D has a full scale of &amp;plusmn;250/&amp;plusmn;500/&amp;plusmn;2000 dps and is capable of measuring rates with a user-selectable bandwidth. These work great in gaming and virtual reality input devices, GPS navigation systems and robotics.&lt;/p&gt;
+&lt;p&gt;
+	&lt;strong&gt;Features:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;
+		Three selectable full scales (250/500/2000 dps)&lt;/li&gt;
+	&lt;li&gt;
+		I2C/SPI digital output interface&lt;/li&gt;
+	&lt;li&gt;
+		16 bit-rate value data output&lt;/li&gt;
+	&lt;li&gt;
+		8-bit temperature data output&lt;/li&gt;
+	&lt;li&gt;
+		Wide supply voltage: 2.4 V to 3.6 V&lt;/li&gt;
+	&lt;li&gt;
+		Low voltage-compatible IOs (1.8 V)&lt;/li&gt;
+	&lt;li&gt;
+		Embedded power-down and sleep mode&lt;/li&gt;
+	&lt;li&gt;
+		Embedded temperature sensor&lt;/li&gt;
+	&lt;li&gt;
+		High shock survivability&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;
+	&lt;strong&gt;Documents:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;
+		&lt;a href=&quot;http://dlnmh9ip6v2uc.cloudfront.net/datasheets/Sensors/Gyros/3-Axis/L3G4200D-Breakout-v10.pdf&quot;&gt;Schematic&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a href=&quot;http://dlnmh9ip6v2uc.cloudfront.net/datasheets/Sensors/Gyros/3-Axis/L3G4200D-Breakout-v10.zip&quot; target=&quot;_blank&quot;&gt;Eagle Files&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a href=&quot;http://dlnmh9ip6v2uc.cloudfront.net/datasheets/Sensors/Gyros/3-Axis/17116.pdf&quot; target=&quot;_blank&quot;&gt;Datasheet&lt;/a&gt; (L3G4200D)&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a href=&quot;http://dlnmh9ip6v2uc.cloudfront.net/datasheets/Sensors/Gyros/3-Axis/L3G4200D_Example.zip&quot; target=&quot;_blank&quot;&gt;Example Code&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a href=&quot;http://bildr.org/2011/06/l3g4200d-arduino/&quot; target=&quot;_blank&quot;&gt;Bildr Tutorial&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+<title>Tri-Axis Gyro Breakout - L3G4200D</title>
+<url>http://www.sparkfun.com/products/10612</url>
+<tags>
+<tag>Gyro</tag>
+<tag>Gyroscope</tag>
+<tag>Triple Axis</tag>
+</tags>
+<properties>
+<property name='family'>Gyroscope Breakout</property>
+<property name='Scales'>Selectable (250, 500, 200 degree/second)</property>
+<property name='Comm. Protocol'>Digital</property>
+<property name='Operating Voltage'>2.4V - 3.6V</property>
+</properties>
+<views>
+<breadboardView>
+<layers image='breadboard/L3G4200D-Breakout-v10_breadboard.svg'>
+<layer layerId='breadboard'/>
+</layers>
+</breadboardView>
+<schematicView>
+<layers image='schematic/L3G4200D-Breakout-v10_schematic.svg'>
+<layer layerId='schematic'/>
+</layers>
+</schematicView>
+<pcbView>
+<layers image='pcb/L3G4200D-Breakout-v10_pcb.svg'>
+<layer layerId='copper1'/>
+<layer layerId='silkscreen'/>
+<layer layerId='copper0'/>
+</layers>
+</pcbView>
+<iconView>
+<layers image='breadboard/L3G4200D-Breakout-v10_breadboard.svg'>
+<layer layerId='icon'/>
+</layers>
+</iconView>
+</views>
+<connectors>
+<connector id='connector8' type='male' name='GND'>
+<description>GND</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector8pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector8pin' terminalId='connector8terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector8pad'/><p layer='copper1' svgId='connector8pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector9' type='male' name='VCC'>
+<description>VCC</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector9pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector9pin' terminalId='connector9terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector9pad'/><p layer='copper1' svgId='connector9pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector10' type='male' name='SCL'>
+<description>SCL</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector10pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector10pin' terminalId='connector10terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector10pad'/><p layer='copper1' svgId='connector10pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector11' type='male' name='SDA'>
+<description>SDA</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector11pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector11pin' terminalId='connector11terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector11pad'/><p layer='copper1' svgId='connector11pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector12' type='male' name='SDO'>
+<description>SDO</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector12pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector12pin' terminalId='connector12terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector12pad'/><p layer='copper1' svgId='connector12pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector13' type='male' name='CS'>
+<description>CS</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector13pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector13pin' terminalId='connector13terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector13pad'/><p layer='copper1' svgId='connector13pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector14' type='male' name='INT2'>
+<description>INT2</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector14pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector14pin' terminalId='connector14terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector14pad'/><p layer='copper1' svgId='connector14pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector15' type='male' name='INT1'>
+<description>INT1</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector15pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector15pin' terminalId='connector15terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector15pad'/><p layer='copper1' svgId='connector15pad'/></pcbView>
+</views>
+</connector>
+</connectors>
+<buses>
+</buses>
+</module>

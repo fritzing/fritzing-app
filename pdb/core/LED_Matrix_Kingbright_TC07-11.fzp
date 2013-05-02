@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?><module fritzingVersion="0.4.0b.06.21.4282" moduleId="LED_Matrix_Kingbright_TC07-11">
+    <version>2</version>
+    <author>Stefan Hermann</author>
+    <title>LED Dot Matrix 18mm (0.7 INCH)</title>
+    <label>Dot Matrix</label>
+    <date>2011-09-6</date>
+    <tags>
+        <tag>fritzing core</tag>
+        <tag>led</tag>
+        <tag>display</tag>
+        <tag>dot</tag>
+        <tag>matrix</tag>
+    </tags>
+    <properties>
+        <property name="family">LED Display</property>
+        <property name="processor">Dot Matrix</property>
+        <property name="variant">5x7 18mm</property>
+				<property name="common">cathode</property>
+    </properties>
+    <description>Dot Matrix LED Display (Kingbright TC07-11).</description>
+    <views>
+        <iconView>
+            <layers image="icon/LED_Matrix_Kingbright.svg">
+                <layer layerId="icon"/>
+            </layers>
+        </iconView>
+        <breadboardView>
+            <layers image="breadboard/LED_Matrix_Kingbright_TX07-11.svg">
+                <layer layerId="breadboard"/>
+            </layers>
+        </breadboardView>
+        <schematicView>
+            <layers image="schematic/LED_Matrix_Kingbright_TA07-11.svg">
+                <layer layerId="schematic"/>
+            </layers>
+        </schematicView>
+        <pcbView>
+            <layers image="pcb/LED_Matrix_Kingbright_TX07-11.svg">
+                <layer layerId="copper0"/>
+                <layer layerId="silkscreen"/>
+                <layer layerId="copper1"/>
+            </layers>
+        </pcbView>
+    </views>
+    <connectors>
+
+      <connector id="connector1" name="Column 1" type="male">
+          <description>Column 1</description>
+          <views>
+              <breadboardView>
+                  <p layer="breadboard" svgId="connector1pin" terminalId="connector1terminal"/>
+              </breadboardView>
+              <schematicView>
+                  <p layer="schematic" svgId="connector1pin" terminalId="connector1terminal"/>
+              </schematicView>
+              <pcbView>
+                  <p layer="copper1" svgId="connector1pad"/>
+                  <p layer="copper0" svgId="connector1pad"/>
+              </pcbView>
+          </views>
+      </connector>
+
+      <connector id="connector2" name="Row 3" type="male">
+          <description>Row 3</description>
+          <views>
+              <breadboardView>
+                  <p layer="breadboard" svgId="connector2pin" terminalId="connector2terminal"/>
+              </breadboardView>
+              <schematicView>
+                  <p layer="schematic" svgId="connector2pin" terminalId="connector2terminal"/>
+              </schematicView>
+              <pcbView>
+                  <p layer="copper1" svgId="connector2pad"/>
+                  <p layer="copper0" svgId="connector2pad"/>
+              </pcbView>
+          </views>
+      </connector>
+
+      <connector id="connector3" name="Column 2" type="male">
+          <description>Column 2</description>
+          <views>
+              <breadboardView>
+                  <p layer="breadboard" svgId="connector3pin" terminalId="connector3terminal"/>
+              </breadboardView>
+              <schematicView>
+                  <p layer="schematic" svgId="connector3pin" terminalId="connector3terminal"/>
+              </schematicView>
+              <pcbView>
+                  <p layer="copper1" svgId="connector3pad"/>
+                  <p layer="copper0" svgId="connector3pad"/>
+              </pcbView>
+          </views>
+      </connector>
+
+      <connector id="connector4" name="Row 5" type="male">
+          <description>Row 5</description>
+          <views>
+              <breadboardView>
+                  <p layer="breadboard" svgId="connector4pin" terminalId="connector4terminal"/>
+              </breadboardView>
+              <schematicView>
+                  <p layer="schematic" svgId="connector4pin" terminalId="connector4terminal"/>
+              </schematicView>
+              <pcbView>
+                  <p layer="copper1" svgId="connector4pad"/>
+                  <p layer="copper0" svgId="connector4pad"/>
+              </pcbView>
+          </views>
+      </connector>
+
+      <connector id="connector5" name="Row 6" type="male">
+          <description>Row 6</description>
+          <views>
+              <breadboardView>
+                  <p layer="breadboard" svgId="connector5pin" terminalId="connector5terminal"/>
+              </breadboardView>
+              <schematicView>
+                  <p layer="schematic" svgId="connector5pin" terminalId="connector5terminal"/>
+              </schematicView>
+              <pcbView>
+                  <p layer="copper1" svgId="connector5pad"/>
+                  <p layer="copper0" svgId="connector5pad"/>
+              </pcbView>
+          </views>
+      </connector>
+
+      <connector id="connector6" name="Row 7" type="male">
+          <description>Row 7</description>
+          <views>
+              <breadboardView>
+                  <p layer="breadboard" svgId="connector6pin" terminalId="connector6terminal"/>
+              </breadboardView>
+              <schematicView>
+                  <p layer="schematic" svgId="connector6pin" terminalId="connector6terminal"/>
+              </schematicView>
+              <pcbView>
+                  <p layer="copper1" svgId="connector6pad"/>
+                  <p layer="copper0" svgId="connector6pad"/>
+              </pcbView>
+          </views>
+      </connector>
+
+      <connector id="connector7" name="Column 4" type="male">
+          <description>Column 4</description>
+          <views>
+              <breadboardView>
+                  <p layer="breadboard" svgId="connector7pin" terminalId="connector7terminal"/>
+              </breadboardView>
+              <schematicView>
+                  <p layer="schematic" svgId="connector7pin" terminalId="connector7terminal"/>
+              </schematicView>
+              <pcbView>
+                  <p layer="copper1" svgId="connector7pad"/>
+                  <p layer="copper0" svgId="connector7pad"/>
+              </pcbView>
+          </views>
+      </connector>
+
+      <connector id="connector8" name="Column 5" type="male">
+          <description>Column 5</description>
+          <views>
+              <breadboardView>
+                  <p layer="breadboard" svgId="connector8pin" terminalId="connector8terminal"/>
+              </breadboardView>
+              <schematicView>
+                  <p layer="schematic" svgId="connector8pin" terminalId="connector8terminal"/>
+              </schematicView>
+              <pcbView>
+                  <p layer="copper1" svgId="connector8pad"/>
+                  <p layer="copper0" svgId="connector8pad"/>
+              </pcbView>
+          </views>
+      </connector>
+
+      <connector id="connector9" name="Row 4" type="male">
+          <description>Row 4</description>
+          <views>
+              <breadboardView>
+                  <p layer="breadboard" svgId="connector9pin" terminalId="connector9terminal"/>
+              </breadboardView>
+              <schematicView>
+                  <p layer="schematic" svgId="connector9pin" terminalId="connector9terminal"/>
+              </schematicView>
+              <pcbView>
+                  <p layer="copper1" svgId="connector9pad"/>
+                  <p layer="copper0" svgId="connector9pad"/>
+              </pcbView>
+          </views>
+      </connector>
+
+      <connector id="connector10" name="Column 3" type="male">
+          <description>Column 3</description>
+          <views>
+              <breadboardView>
+                  <p layer="breadboard" svgId="connector10pin" terminalId="connector10terminal"/>
+              </breadboardView>
+              <schematicView>
+                  <p layer="schematic" svgId="connector10pin" terminalId="connector10terminal"/>
+              </schematicView>
+              <pcbView>
+                  <p layer="copper1" svgId="connector10pad"/>
+                  <p layer="copper0" svgId="connector10pad"/>
+              </pcbView>
+          </views>
+      </connector>
+
+      <connector id="connector11" name="Row 2" type="male">
+          <description>Row 2</description>
+          <views>
+              <breadboardView>
+                  <p layer="breadboard" svgId="connector11pin" terminalId="connector11terminal"/>
+              </breadboardView>
+              <schematicView>
+                  <p layer="schematic" svgId="connector11pin" terminalId="connector11terminal"/>
+              </schematicView>
+              <pcbView>
+                  <p layer="copper1" svgId="connector11pad"/>
+                  <p layer="copper0" svgId="connector11pad"/>
+              </pcbView>
+          </views>
+      </connector>
+
+      <connector id="connector12" name="Row 1" type="male">
+          <description>Row 1</description>
+          <views>
+              <breadboardView>
+                  <p layer="breadboard" svgId="connector12pin" terminalId="connector12terminal"/>
+              </breadboardView>
+              <schematicView>
+                  <p layer="schematic" svgId="connector12pin" terminalId="connector12terminal"/>
+              </schematicView>
+              <pcbView>
+                  <p layer="copper1" svgId="connector12pad"/>
+                  <p layer="copper0" svgId="connector12pad"/>
+              </pcbView>
+          </views>
+      </connector>
+
+
+
+    </connectors>
+</module>

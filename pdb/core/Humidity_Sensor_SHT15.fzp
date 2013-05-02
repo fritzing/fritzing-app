@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module fritzingVersion="0.7.0b.02.01.5801" moduleId="bf73a00d2ecd04be25675ebfb2d130c0">
+    <author>wreutz</author>
+    <url>http://www.sparkfun.com/products/8257</url>
+    <title>Humidity Temperature Sensor SHT15</title>
+    <date>2012-02-20</date>
+    <tags>
+        <tag>humidity</tag>
+        <tag>temperature</tag>
+        <tag>sensor</tag>
+        <tag>breakout</tag>
+    </tags>
+    <properties>
+        <property name="family">Humidity Breakout</property>
+        <property name="part number"></property>
+    </properties>
+    <description>&lt;p&gt;&lt;b&gt;Description:&lt;/b&gt;&lt;/p&gt;
+      &lt;p&gt;This is a simple breakout board for the SHT15 humidity sensor from Sensirion. The SHT15 digital humidity and temperature sensor is fully calibrated and offers high precision and excellent long-term stability at low cost. The digital CMOSens Technology integrates two sensors and readout circuitry on one single chip.
+
+      These sensors are really impressive! Very sensitive and straight forward to use. Board comes assembled and tested with the SHT15.&lt;/p&gt;
+
+      &lt;p&gt;&lt;b&gt;Features:&lt;/b&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;2 factory calibrated sensors for relative humidity &amp; temperature&lt;/li&gt;
+	&lt;li&gt;Digital 2-wire interface&lt;/li&gt;
+	&lt;li&gt;Precise dewpoint calculation possible&lt;/li&gt;
+	&lt;li&gt;Measurement range: 0-100% RH&lt;/li&gt;
+	&lt;li&gt;Absolute RH accuracy: +/- 2% RH (10...90% RH)&lt;/li&gt;
+	&lt;li&gt;Repeatability RH: +/- 0.1% RH&lt;/li&gt;
+	&lt;li&gt;Temp. accuracy: +/- 0.3°C @ 25°C&lt;/li&gt;
+	&lt;li&gt;Fast response time &lt; 4 sec.&lt;/li&gt;
+	&lt;li&gt;Low power consumption (typ. 30 µW)&lt;/li&gt;
+	&lt;li&gt;Low cost&lt;/li&gt;
+	&lt;li&gt;High precision sensor at low cost&lt;/li&gt;
+	&lt;li&gt;Leading CMOSens Technology for superior long-term stability&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;b&gt;Applications:&lt;/b&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;Precise data logging&lt;/li&gt;
+	&lt;li&gt;Transmitters&lt;/li&gt;
+	&lt;li&gt;Automation &amp; process control&lt;/li&gt;
+	&lt;li&gt;Building control and HVAC&lt;/li&gt;
+	&lt;li&gt;Test &amp; Measurement&lt;/li&gt;
+	&lt;li&gt;Medical&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;b&gt;Documents:&lt;/b&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;a classname=&quot;&quot; href=&quot;http://www.sparkfun.com/datasheets/Sensors/Pressure/SHT1x-Breakout-v13.pdf&quot; name=&quot;&quot; target=&quot;_blank&quot;&gt;Schematic&lt;/a&gt;&lt;/li&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+     &lt;a classname=&quot;&quot; href=&quot;http://www.sparkfun.com/datasheets/Sensors/Pressure/SHT1x-Breakout-v13.zip&quot; name=&quot;&quot; target=&quot;_blank&quot;&gt;Eagle Files&lt;/a&gt;&lt;/li&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a classname=&quot;&quot; href=&quot;http://www.sparkfun.com/datasheets/Sensors/Datasheet-humidity-sensor-SHT1x.pdf&quot; name=&quot;&quot; target=&quot;_blank&quot;&gt; SHT1x Datasheet&lt;/a&gt;&lt;/li&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+     &lt;a classname=&quot;&quot; href=&quot;http://www.sparkfun.com/datasheets/Sensors/SHT15-Testing-v11.zip&quot; name=&quot;&quot; target=&quot;_blank&quot;&gt;Example C Code (PIC 16F88)&lt;/a&gt;&lt;/li&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+     &lt;a classname=&quot;&quot; href=&quot;http://wiring.org.co/learning/basics/humiditytemperaturesht15.html&quot; name=&quot;&quot; target=&quot;_blank&quot;&gt;Wiring Example&lt;/a&gt;&lt;/li&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+     &lt;a classname=&quot;&quot; href=&quot;http://www.sensirion.com/en/02_sensors/03_humidity/00_humidity_temperature_sensor/03_humidity_sensor_sht15.htm&quot; name=&quot;&quot; target=&quot;_blank&quot;&gt;Application Notes&lt;/a&gt;&lt;/li&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+     &lt;a classname=&quot;&quot; href=&quot;http://www.sensirion.com/images/getFile?id=11&quot; name=&quot;&quot; target=&quot;_blank&quot;&gt;Calibration Certificate&lt;/a&gt;&lt;/li&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+     &lt;a classname=&quot;&quot; href=&quot;http://www.sensirion.com/images/getFile?id=123&quot; name=&quot;&quot; target=&quot;_blank&quot;&gt;RoHS Certificate&lt;/a&gt;&lt;/li&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</description>
+    <views>
+        <iconView>
+            <layers image="icon/Humidity_Sensor_SHT15_icon.svg">
+                <layer layerId="icon"/>
+            </layers>
+        </iconView>
+        <breadboardView>
+            <layers image="breadboard/Humidity_Sensor_SHT15_breadboard.svg">
+                <layer layerId="breadboard"/>
+                <layer layerId="icon"/>
+            </layers>
+        </breadboardView>
+        <schematicView>
+            <layers image="schematic/Humidity_Sensor_SHT15_schematic.svg">
+                <layer layerId="schematic"/>
+            </layers>
+        </schematicView>
+        <pcbView>
+            <layers image="pcb/Humidity_Sensor_SHT15_pcb.svg">
+                <layer layerId="copper0"/>
+                <layer layerId="silkscreen"/>
+                <layer layerId="copper1"/>
+            </layers>
+        </pcbView>
+    </views>
+    <connectors>
+        <connector id="connector3" type="male" name="VCC">
+            <description>no description yet</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector3"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector3"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper1" svgId="connector3"/>
+                    <p layer="copper0" svgId="connector3"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector0" type="male" name="GND">
+            <description>no description yet</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector0"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector0"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper1" svgId="connector0"/>
+                    <p layer="copper0" svgId="connector0"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector1" type="male" name="SCL">
+            <description>no description yet</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector1"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector1"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper1" svgId="connector1"/>
+                    <p layer="copper0" svgId="connector1"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector2" type="male" name="SDA">
+            <description>no description yet</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector2"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector2"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper1" svgId="connector2"/>
+                    <p layer="copper0" svgId="connector2"/>
+                </pcbView>
+            </views>
+        </connector>
+    </connectors>
+</module>

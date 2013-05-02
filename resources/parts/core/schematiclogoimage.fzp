@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module moduleId="SchematicLogoImageModuleID" >
+ <version>4</version>
+ <author>Brendan Howell</author>
+ <title>Schematic Image</title>
+ <date>2008-11-25</date>
+ <label>IMG</label>
+ <tags>
+  <tag>schematic</tag>
+  <tag>part</tag>
+  <tag>diy</tag>
+  <tag>fritzing core</tag>
+ </tags>
+ <properties>
+   <property name="family" >Logo</property>
+   <property name="filename" ></property>
+   <property name="shape" ></property>
+   <property name="type" >image</property>
+ </properties>
+ <taxonomy>discreteParts.schematic.logo</taxonomy>
+ <description>For adding images to the schematic view</description>
+ <views>
+  <defaultUnits>mm</defaultUnits>
+  <iconView>
+   <layers image="icon/schematic_logo.svg" >
+    <layer layerId="icon" />
+   </layers>
+  </iconView>
+  <breadboardView>
+   <layers image="schematic/Fritzing icon.svg" >
+    <layer layerId="unknown" />
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="schematic/Fritzing icon.svg" >
+    <layer layerId="schematic" />
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="schematic/Fritzing icon.svg" >
+    <layer layerId="unknown"/>
+   </layers>
+  </pcbView>
+ </views>
+ <connectors/>
+ <buses/>
+</module>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+*************************************************
+Part of the Fritzing project - http://fritzing.org
+Copyright (c) 2007-08 Fachhochschule Potsdam - http://fh-potsdam.de
+
+Fritzing is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+Fritzing is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
+
+$Revision: 2063 $:
+$Author: cohen@irascible.com $:
+$Date: 2009-01-03 18:55:48 +0100 (Sat, 03 Jan 2009) $
+
+****************************************************** 
+-->
+
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>NSPrincipalClass</key>
+	<string>NSApplication</string>
+	<key>CFBundleExecutable</key>
+	<string>Fritzing</string>
+	<key>CFBundleGetInfoString</key>
+	<string>Fritzing 0.7.13 (b6551 2013-02-26)</string>
+	<key>CFBundleIconFile</key>
+	<string>fritzing_icon.icns</string>
+	<key>CFBundleIdentifier</key>
+	<string>org.fritzing.Fritzing</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleSignature</key>
+	<string>FRtz</string>
+	<key>CFBundleDocumentTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeExtensions</key>
+			<array>
+				<string>fz</string>
+			</array>
+			<key>CFBundleTypeName</key>
+			<string>Fritzing sketch</string>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>LSTypeIsPackage</key>
+			<false/>
+			<key>NSPersistentStoreTypeKey</key>
+			<string>XML</string>
+		</dict>
+		<dict>
+			<key>CFBundleTypeExtensions</key>
+			<array>
+				<string>fzz</string>
+			</array>
+			<key>CFBundleTypeName</key>
+			<string>Fritzing shareable sketch</string>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>LSTypeIsPackage</key>
+			<false/>
+			<key>NSPersistentStoreTypeKey</key>
+			<string>XML</string>
+		</dict>
+		<dict>
+			<key>CFBundleTypeExtensions</key>
+			<array>
+				<string>fzb</string>
+			</array>
+			<key>CFBundleTypeName</key>
+			<string>Fritzing bin</string>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>LSTypeIsPackage</key>
+			<false/>
+			<key>NSPersistentStoreTypeKey</key>
+			<string>XML</string>
+		</dict>
+    <dict>
+      <key>CFBundleTypeExtensions</key>
+      <array>
+        <string>fzp</string>
+      </array>
+      <key>CFBundleTypeName</key>
+      <string>Fritzing part</string>
+      <key>CFBundleTypeRole</key>
+      <string>Editor</string>
+      <key>LSTypeIsPackage</key>
+      <false/>
+      <key>NSPersistentStoreTypeKey</key>
+      <string>XML</string>
+    </dict>
+    <dict>
+      <key>CFBundleTypeExtensions</key>
+      <array>
+        <string>fzm</string>
+      </array>
+      <key>CFBundleTypeName</key>
+      <string>Fritzing module</string>
+      <key>CFBundleTypeRole</key>
+      <string>Editor</string>
+      <key>LSTypeIsPackage</key>
+      <false/>
+      <key>NSPersistentStoreTypeKey</key>
+      <string>XML</string>
+    </dict>
+    <dict>
+      <key>CFBundleTypeExtensions</key>
+      <array>
+        <string>fzpz</string>
+      </array>
+      <key>CFBundleTypeName</key>
+      <string>Fritzing bundled part</string>
+      <key>CFBundleTypeRole</key>
+      <string>Editor</string>
+      <key>LSTypeIsPackage</key>
+      <false/>
+      <key>NSPersistentStoreTypeKey</key>
+      <string>XML</string>
+    </dict>
+  </array>
+	</dict>
+</plist>

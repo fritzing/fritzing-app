@@ -1,0 +1,298 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module fritzingVersion='0.5.2b.02.18.4756' moduleId='ISD1932 Breakout-v11'>
+<version>4</version>
+<date>2011-07-08</date>
+<author>SparkFun</author>
+<description>&lt;p&gt;
+	&lt;span style=&quot;font-weight: bold;&quot;&gt;Description:&lt;/span&gt; This is a breakout board for the ISD1932, a&lt;span id=&quot;RadEditorPlaceHolderControl1&quot;&gt; multiple-message record/playback device.&lt;/span&gt; This single chip can record up to 64 seconds worth of voice messages. Microphone inputs and speaker outputs are all handled by the ISD1932.&lt;br /&gt;
+	&lt;br /&gt;
+	A switch is connected to allow selection of the ISD1932&amp;#39;s operating mode - &lt;span id=&quot;RadEditorPlaceHolderControl1&quot;&gt;address trigger or direct trigger.&lt;/span&gt; You must cycle the power after switching the mode. An LED is also populated on the board and will illuminate when the device is recording.&lt;br /&gt;
+	&lt;br /&gt;
+	An external resistor is necessary to select the record duration and sampling frequency, which can range from 21.2 - 64 seconds (4-12kHz sampling frequency).&lt;br /&gt;
+	&lt;br /&gt;
+	The board breaks out all pins of the ISD1932 to 0.1&amp;quot; spaced headers. This product comes as shown in the pictures with filtering capacitors, an LED, mode selecting switch and the ISD1932 IC.&lt;br /&gt;
+	&lt;br /&gt;
+	&lt;span style=&quot;font-weight: bold;&quot;&gt;Features:&lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;
+		Operating mode selector switch&lt;/li&gt;
+	&lt;li&gt;
+		2.4V to 5VDC supply voltage&lt;/li&gt;
+	&lt;li&gt;
+		LED indicates if the board is recording&lt;/li&gt;
+	&lt;li&gt;
+		Record up to 64 seconds of audio&lt;/li&gt;
+	&lt;li&gt;
+		All pins of the ISD1932 broken out to 0.1&amp;quot; headers&lt;/li&gt;
+	&lt;li&gt;
+		Breadboard friendly&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;
+	&lt;span style=&quot;font-weight: bold;&quot;&gt;Dimensions: &lt;/span&gt;1.0 x 1.3 &amp;quot; (25.4 x 33.02 mm)&lt;br /&gt;
+	&lt;br /&gt;
+	&lt;span style=&quot;font-weight: bold;&quot;&gt;Documents:&lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;
+		&lt;a classname=&quot;&quot; href=&quot;http://www.sparkfun.com/datasheets/BreakoutBoards/BOB-09579-ISD1932%20Breakout-v11.pdf&quot; name=&quot;&quot; target=&quot;_blank&quot;&gt;Schematic&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a classname=&quot;&quot; href=&quot;http://www.sparkfun.com/datasheets/BreakoutBoards/BOB-09579-ISD1900.pdf&quot; name=&quot;&quot; target=&quot;_blank&quot;&gt;ISD1932 Datasheet&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+<title>ISD1932 Voice Recorder w/ Mic</title>
+<url>http://www.sparkfun.com/products/9579</url>
+<tags>
+<tag>Voice</tag>
+<tag>Recorder</tag>
+<tag>Audio</tag>
+</tags>
+<properties>
+<property name='family'>Audio Recorder</property>
+</properties>
+<views>
+<breadboardView>
+<layers image='breadboard/ISD1932 Breakout-v11_breadboard.svg'>
+<layer layerId='breadboard'/>
+</layers>
+</breadboardView>
+<schematicView>
+<layers image='schematic/ISD1932 Breakout-v11_schematic.svg'>
+<layer layerId='schematic'/>
+</layers>
+</schematicView>
+<pcbView>
+<layers image='pcb/ISD1932 Breakout-v11_pcb.svg'>
+<layer layerId='copper1'/>
+<layer layerId='silkscreen'/>
+<layer layerId='copper0'/>
+</layers>
+</pcbView>
+<iconView>
+<layers image='breadboard/ISD1932 Breakout-v11_breadboard.svg'>
+<layer layerId='icon'/>
+</layers>
+</iconView>
+</views>
+<connectors>
+<connector id='connector16' type='male' name='GND'>
+<description>GND</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector16pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector16pin' terminalId='connector16terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector16pad'/><p layer='copper1' svgId='connector16pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector17' type='male' name='5V'>
+<description>5V</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector17pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector17pin' terminalId='connector17terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector17pad'/><p layer='copper1' svgId='connector17pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector18' type='male' name='SP+'>
+<description>SP+</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector18pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector18pin' terminalId='connector18terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector18pad'/><p layer='copper1' svgId='connector18pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector19' type='male' name='SP-'>
+<description>SP-</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector19pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector19pin' terminalId='connector19terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector19pad'/><p layer='copper1' svgId='connector19pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector20' type='male' name='MIC+'>
+<description>MIC+</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector20pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector20pin' terminalId='connector20terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector20pad'/><p layer='copper1' svgId='connector20pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector21' type='male' name='MIC-'>
+<description>MIC-</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector21pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector21pin' terminalId='connector21terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector21pad'/><p layer='copper1' svgId='connector21pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector22' type='male' name='S3'>
+<description>S3</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector22pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector22pin' terminalId='connector22terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector22pad'/><p layer='copper1' svgId='connector22pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector23' type='male' name='S2'>
+<description>S2</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector23pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector23pin' terminalId='connector23terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector23pad'/><p layer='copper1' svgId='connector23pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector24' type='male' name='S1'>
+<description>S1</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector24pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector24pin' terminalId='connector24terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector24pad'/><p layer='copper1' svgId='connector24pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector25' type='male' name='S0'>
+<description>S0</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector25pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector25pin' terminalId='connector25terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector25pad'/><p layer='copper1' svgId='connector25pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector26' type='male' name='E3'>
+<description>E3</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector26pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector26pin' terminalId='connector26terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector26pad'/><p layer='copper1' svgId='connector26pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector27' type='male' name='E2'>
+<description>E2</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector27pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector27pin' terminalId='connector27terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector27pad'/><p layer='copper1' svgId='connector27pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector28' type='male' name='E1'>
+<description>E1</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector28pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector28pin' terminalId='connector28terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector28pad'/><p layer='copper1' svgId='connector28pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector29' type='male' name='E0'>
+<description>E0</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector29pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector29pin' terminalId='connector29terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector29pad'/><p layer='copper1' svgId='connector29pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector30' type='male' name='LED'>
+<description>LED</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector30pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector30pin' terminalId='connector30terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector30pad'/><p layer='copper1' svgId='connector30pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector31' type='male' name='XCLK'>
+<description>XCLK</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector31pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector31pin' terminalId='connector31terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector31pad'/><p layer='copper1' svgId='connector31pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector32' type='male' name='FT'>
+<description>FT</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector32pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector32pin' terminalId='connector32terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector32pad'/><p layer='copper1' svgId='connector32pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector33' type='male' name='AGC'>
+<description>AGC</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector33pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector33pin' terminalId='connector33terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector33pad'/><p layer='copper1' svgId='connector33pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector34' type='male' name='ROSC'>
+<description>ROSC</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector34pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector34pin' terminalId='connector34terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector34pad'/><p layer='copper1' svgId='connector34pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector35' type='male' name='REC'>
+<description>REC</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector35pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector35pin' terminalId='connector35terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector35pad'/><p layer='copper1' svgId='connector35pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector36' type='male' name='FMC2'>
+<description>FMC2</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector36pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector36pin' terminalId='connector36terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector36pad'/><p layer='copper1' svgId='connector36pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector37' type='male' name='FMC1'>
+<description>FMC1</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector37pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector37pin' terminalId='connector37terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector37pad'/><p layer='copper1' svgId='connector37pad'/></pcbView>
+</views>
+</connector>
+</connectors>
+<buses>
+</buses>
+</module>

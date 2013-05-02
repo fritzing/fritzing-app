@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+#set $ipins = int($pins)
+#set $widthin = (0.1 * $ipins / 2.0)
+#set $width = $widthin * 100
+#set $heightin = float($pitch) + 0.03
+#set $height = $heightin * 100
+#set $halfheight = $height / 2.0
+<svg version="1.2" baseProfile="tiny" id="svg2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+	 width="${widthin}in" height="${heightin}in" viewBox="0 0 ${width} ${height}" xml:space="preserve">
+
+<g id="breadboard">
+  <rect id="middle" x="0" y="3" fill="#303030" width="${width}" height="${height - 3 - 3}" />
+  <rect id="top" x="0" y="3.0" fill="#3D3D3D" width="${width}" height="2.46"/>
+  <rect id="bottom" x="0" y="${height - 3 - 2.46}" fill="#000000" width="${width}" height="2.46"/>
+	<polygon id="right" fill="#141414" points="${width},3 ${width - 0.75},5.46 ${width - 0.75},${height - 5.46} ${width},${height - 3}"/> 
+	<polygon id="left" fill="#1F1F1F" points="0,3 0.75,5.46 0.75,${height - 5.46} 0,${height - 3}"/>
+  
+	<polygon id="left-upper-rect" fill="#1C1C1C" points="5,${halfheight - 5} 0.75,${halfheight - 5.04} 0.56,${halfheight - 2.92} 0.56,${halfheight} 5,${halfheight}"/>
+	<polygon id="left-lower-rect" fill="#383838" points="0.75,${halfheight + 5.05} 5,${halfheight + 5.05} 5,${halfheight} 0.56,${halfheight} 0.56,${halfheight + 2.92}"/>
+
+  <path id="slot" fill="#262626" d="M0.56,${halfheight - 2.92}v5.83c1.47-0.17,2.62-1.4,2.62-2.92C3.18,${halfheight - 1.53},2.04,${halfheight - 2.75},0.56,${halfheight - 2.92}z"/>
+  <path id="cover" fill="#303030" d="M0.75,5.46V${halfheight - 5.05}c2.38,0.45,4.19,2.53,4.19,5.04c0,2.51-1.8,4.6-4.19,5.05V${halfheight + 5.05}h5.0V5.46H0.75z"/>
+  
+	<circle fill="#212121" cx="6.5" cy="${height - 9.53}" r="2.06"/>
+ 
+  <text id="label" x="6.5" y="${height / 2}" fill="#e6e6e6" stroke="none" font-family="OCRA" text-anchor="start" font-size="8" >${label}</text>
+
+	<rect id="connector0pin" x="3.5" y="${height - 4.34}" fill="#8C8C8C" width="3" height="4.34"/>
+  <rect id="connector0terminal" x="3.5" y="${height - 3}" fill="#8C8C8C" width="3" height="3"/>
+	<polygon fill="#8C8C8C" points="3.5,${height - 4.34} 3.5,${height - 2.34} 6.5,${height - 2.34} 8.5,${height - 3.26} 8.5,${height - 4.34} 	"/>
+  <rect id="connector${ipins - 1}pin" x="3.5" fill="#8C8C8C" width="3" height="4.34"/>
+  <rect id="connector${ipins - 1}terminal" x="3.5" fill="#8C8C8C" width="3" height="3"/>
+	<polygon fill="#8C8C8C" points="8.5,4.34 8.5,3.26 6.5,2.34 3.5,2.34 3.5,4.34"/>
+  <rect id="connector${(ipins / 2) - 1}pin" x="${width - 6.5}" y="${height - 4.34}" fill="#8C8C8C" width="3" height="4.34"/>
+  <rect id="connector${(ipins / 2) - 1}terminal" x="${width - 6.5}" y="${height - 3}" fill="#8C8C8C" width="3" height="3"/>
+	<polygon fill="#8C8C8C" points="${width - 8.5},${height - 4.34} ${width - 8.5},${height - 3.26} ${width - 6.5},${height - 2.34} ${width - 3.5},${height - 2.34} ${width - 3.5},${height - 4.34}"/>
+  <rect id="connector${ipins / 2}pin" x="${width - 6.5}" y="0" fill="#8C8C8C" width="3" height="4.34"/>
+  <rect id="connector${ipins / 2}terminal" x="${width - 6.5}" y="0" fill="#8C8C8C" width="3" height="3"/>
+	<polygon fill="#8C8C8C" points="${width - 3.5},4.34 ${width - 3.5},2.34 ${width - 6.5},2.34 ${width - 8.5},3.26 ${width - 8.5},4.34 	"/>
+
+  #for $pin in range(($ipins - 4) / 2)
+        #set $pinx = 13.5 + ($pin * 10)
+        <rect id="connector${pin + 1}pin" x="${pinx}" y="${height - 4.34}" fill="#8C8C8C" width="3" height="4.34"/>
+        <rect id="connector${pin + 1}terminal" x="${pinx}" y="${height - 3}" fill="#8C8C8C" width="3" height="3"/>
+        <polygon fill="#8C8C8C" points="${pinx - 2},${height - 4.34} ${pinx - 2},${height - 3.26} ${pinx},${height - 2.34} ${pinx + 3},${height - 2.34} ${pinx + 5},${height - 3.26} ${pinx + 5},${height - 4.34}"/>            
+        <rect id="connector${ipins - 2 - pin}pin" x="${pinx}" y="0" fill="#8C8C8C" width="3" height="4.34"/>
+        <rect id="connector${ipins - 2 - pin}terminal" x="${pinx}" fill="#8C8C8C" width="3" height="3"/>
+        <polygon fill="#8C8C8C" points="${pinx + 5},4.34 ${pinx + 5},3.26 ${pinx + 3},2.34 ${pinx},2.34 ${pinx - 2},3.26 ${pinx - 2},4.34"/>
+  #end for
+        
+
+</g>
+</svg>

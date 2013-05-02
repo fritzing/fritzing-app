@@ -1,0 +1,23 @@
+Metadata-Version: 1.0
+Name: gerbmerge
+Version: 1.6
+Summary: Merge multiple Gerber/Excellon files
+Home-page: http://claymore.engineer.gvsu.edu/~steriana/Python
+Author: Andrew Sterian
+Author-email: steriana@claymore.engineer.gvsu.edu
+License: GPL
+Description: GerbMerge is a program that combines several Gerber
+        (i.e., RS274-X) and Excellon files into a single set
+        of files. This program is useful for combining multiple
+        printed circuit board layout files into a single job.
+        
+        To run the program, invoke the Python interpreter on the
+        gerbmerge.py file. On Windows, if you installed GerbMerge in
+        C:/Python24, for example, open a command window (DOS box)
+        and type:
+        C:/Python24/gerbmerge.bat
+        
+        For more details on installation or running GerbMerge, see the
+        URL below.
+        
+Platform: all

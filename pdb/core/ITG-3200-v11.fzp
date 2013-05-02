@@ -1,0 +1,161 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module fritzingVersion='0.5.2b.02.18.4756' moduleId='ITG-3200-v11'>
+<version>4</version>
+<date>2011-07-08</date>
+<author>SparkFun</author>
+<description>&lt;p&gt;
+	&lt;strong&gt;Description: &lt;/strong&gt;This is a breakout board for InvenSense&amp;#39;s ITG-3200, a groundbreaking triple-axis, digital output gyroscope. The ITG-3200 features three 16-bit analog-to-digital converters (ADCs) for digitizing the gyro outputs, a user-selectable internal low-pass filter bandwidth, and a Fast-Mode I&lt;sup&gt;2&lt;/sup&gt;C (400kHz) interface. Additional features include an embedded temperature sensor and a 2% accurate internal oscillator.&lt;/p&gt;
+&lt;p&gt;
+	The ITG-3200 can be powered at anywhere between 2.1 and 3.6V. For power supply flexibility, the ITG-3200 has a separate VLOGIC reference pin (labeled VIO), in addition to its analog supply pin (VDD) which sets the logic levels of its serial interface. The VLOGIC voltage may be anywhere from 1.71V min to VDD max. For general use, VLOGIC can be tied to VCC. The normal operating current of the sensor is just 6.5mA.&lt;/p&gt;
+&lt;p&gt;
+	Communication with the ITG-3200 is achieved over a two-wire (I&lt;sup&gt;2&lt;/sup&gt;C) interface. The sensor also features a interrupt output, and an optional clock input. A jumper on the top of the board allows you to easily select the I&lt;sup&gt;2&lt;/sup&gt;C address, by pulling the AD0 pin to either VCC or GND; the board is shipped with this jumper tied to VCC. If you don&amp;#39;t plan on using the CLKIN pin, you can short the jumper on the bottom of the board to tie it to GND.&lt;/p&gt;
+&lt;p&gt;
+	This breakout board is shipped as shown in the images. Note that there are two &lt;em&gt;unpopulated&lt;/em&gt; resistors on the I&lt;sup&gt;2&lt;/sup&gt;C lines, these can be added later by the customer if desired.&lt;/p&gt;
+&lt;p&gt;
+	Not sure which gyro is right for you? Our &lt;a href=&quot;http://www.sparkfun.com/commerce/tutorial_info.php?tutorials_id=167&quot; target=&quot;_self&quot;&gt;Accelerometer and Gyro Buying Guide&lt;/a&gt; might help!&lt;/p&gt;
+&lt;p&gt;
+	&lt;strong&gt;Features:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;
+		Digital-output X-, Y-, and Z-Axis angular rate sensors (gyros) on one integrated circuit&lt;/li&gt;
+	&lt;li&gt;
+		Digitally-programmable low-pass filter&lt;/li&gt;
+	&lt;li&gt;
+		Low 6.5mA operating current consumption for long battery life&lt;/li&gt;
+	&lt;li&gt;
+		Wide VDD supply voltage range of 2.1V to 3.6V&lt;/li&gt;
+	&lt;li&gt;
+		Standby current: 5&amp;mu;A&lt;/li&gt;
+	&lt;li&gt;
+		Digital-output temperature sensor&lt;/li&gt;
+	&lt;li&gt;
+		Fast Mode I&lt;sup&gt;2&lt;/sup&gt;C (400kHz) serial interface&lt;/li&gt;
+	&lt;li&gt;
+		Optional external clock inputs of 32.768kHz or 19.2MHz to synchronize with system clock&lt;/li&gt;
+	&lt;li&gt;
+		Pins broken out to a breadboard friendly 7-pin 0.1&amp;quot; pitch header&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;
+	&lt;strong&gt;Dimensions: &lt;/strong&gt;0.70 x 0.55&amp;quot; (17.78 x 13.97mm)&lt;/p&gt;
+&lt;p&gt;
+	&lt;strong&gt;Documents:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;
+		&lt;a href=&quot;http://www.sparkfun.com/datasheets/Sensors/Gyro/ITG-3200-v10.pdf&quot; target=&quot;_blank&quot;&gt;Schematic&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a href=&quot;http://www.sparkfun.com/tutorials/265&quot; target=&quot;_blank&quot;&gt;Quickstart Guide&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a href=&quot;http://www.sparkfun.com/datasheets/Sensors/Gyro/PS-ITG-3200-00-01.4.pdf&quot; target=&quot;_blank&quot;&gt;ITG-3200 Datasheet&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a href=&quot;http://www.sparkfun.com/datasheets/Sensors/Gyro/IDG-3200-ATmega328-4-30-10.zip&quot; target=&quot;_blank&quot;&gt;Example Code&lt;/a&gt; (ATmega328)&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a href=&quot;http://mbed.org/cookbook/ITG-3200-Gyroscope&quot; target=&quot;_blank&quot;&gt;mbed Example&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+<title>Triple Axis Gyro Breakout ITG-3200</title>
+<url>http://www.sparkfun.com/products/9801</url>
+<tags>
+<tag>Gyro</tag>
+<tag>Gyroscope</tag>
+</tags>
+<properties>
+<property name='family'>Gyroscope Breakout</property>
+</properties>
+<views>
+<breadboardView>
+<layers image='breadboard/ITG-3200-v11_breadboard.svg'>
+<layer layerId='breadboard'/>
+</layers>
+</breadboardView>
+<schematicView>
+<layers image='schematic/ITG-3200-v11_schematic.svg'>
+<layer layerId='schematic'/>
+</layers>
+</schematicView>
+<pcbView>
+<layers image='pcb/ITG-3200-v11_pcb.svg'>
+<layer layerId='copper1'/>
+<layer layerId='silkscreen'/>
+<layer layerId='copper0'/>
+</layers>
+</pcbView>
+<iconView>
+<layers image='breadboard/ITG-3200-v11_breadboard.svg'>
+<layer layerId='icon'/>
+</layers>
+</iconView>
+</views>
+<connectors>
+<connector id='connector8' type='male' name='VCC'>
+<description>VCC</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector8pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector8pin' terminalId='connector8terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector8pad'/><p layer='copper1' svgId='connector8pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector9' type='male' name='VLOGIC'>
+<description>VLOGIC</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector9pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector9pin' terminalId='connector9terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector9pad'/><p layer='copper1' svgId='connector9pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector10' type='male' name='GND'>
+<description>GND</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector10pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector10pin' terminalId='connector10terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector10pad'/><p layer='copper1' svgId='connector10pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector11' type='male' name='INT'>
+<description>INT</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector11pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector11pin' terminalId='connector11terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector11pad'/><p layer='copper1' svgId='connector11pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector12' type='male' name='CLKIN'>
+<description>CLKIN</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector12pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector12pin' terminalId='connector12terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector12pad'/><p layer='copper1' svgId='connector12pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector13' type='male' name='SDA'>
+<description>SDA</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector13pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector13pin' terminalId='connector13terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector13pad'/><p layer='copper1' svgId='connector13pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector14' type='male' name='SCL'>
+<description>SCL</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector14pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector14pin' terminalId='connector14terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector14pad'/><p layer='copper1' svgId='connector14pad'/></pcbView>
+</views>
+</connector>
+</connectors>
+<buses>
+</buses>
+</module>

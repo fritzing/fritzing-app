@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?><module fritzingVersion="0.3.15b.02.03.3943" moduleId="e89358121bacffbe9b6372e42e4799f4LEDModuleID">
+    <version>4</version>
+    <author>Lionel Michel</author>
+    <title>RGB LED (6 legs)</title>
+    <label>LED</label>
+    <date>2010-02-10</date>
+    <tags>
+        <tag>RGB LED</tag>
+        <tag>RGBB</tag>
+        <tag>full color</tag>
+        <tag>fritzing core</tag>
+    </tags>
+    <properties>
+	<property name="package">5 mm [THT]</property>
+	<property name="family">LED</property>
+	<property name="rgb" showInLabel="yes">RGBB</property>
+  <property name="current" showInLabel="yes"></property>
+    </properties>
+    <description>A full-color LED, combined from four colors RGBB.</description>
+    <views>
+        <iconView>
+            <layers image="icon/led-rgb-6pin.svg">
+                <layer layerId="icon"/>
+            </layers>
+        </iconView>
+        <breadboardView>
+            <layers image="breadboard/led-rgb-6pin-leg.svg">
+                <layer layerId="breadboard"/>
+            </layers>
+        </breadboardView>
+        <schematicView>
+            <layers image="schematic/led-rgb-6pin.svg">
+                <layer layerId="schematic"/>
+            </layers>
+        </schematicView>
+        <pcbView>
+            <layers image="pcb/led-rgb-6pin.svg">
+                <layer layerId="copper0"/>
+                <layer layerId="silkscreen"/>
+                <layer layerId="keepout"/>
+                <layer layerId="soldermask"/>
+                <layer layerId="outline"/>
+            <layer layerId="copper1"/></layers>
+        </pcbView>
+    </views>
+    <connectors>
+        <connector id="connector0" name="Blue1" type="male">
+            <description>Blue component</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector0pin"  legId="connector0leg"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector0pin" terminalId="connector0terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector0pin"/>
+                <p layer="copper1" svgId="connector0pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector1" name="GND" type="male">
+            <description>Ground</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector1pin" legId="connector1leg"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector1pin" terminalId="connector1terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector1pin"/>
+                <p layer="copper1" svgId="connector1pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector2" name="Green" type="male">
+            <description>Green component</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector2pin"  legId="connector2leg"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector2pin" terminalId="connector2terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector2pin"/>
+                <p layer="copper1" svgId="connector2pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector3" name="Blue2" type="male">
+            <description>Blue component</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector5pin"  legId="connector5leg"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector3pin" terminalId="connector3terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector3pin"/>
+                <p layer="copper1" svgId="connector3pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector4" name="GND" type="male">
+            <description>Ground</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector4pin"  legId="connector4leg"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector4pin" terminalId="connector4terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector4pin"/>
+                <p layer="copper1" svgId="connector4pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector5" name="Red" type="male">
+            <description>Red component</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector3pin" legId="connector3leg"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector5pin" terminalId="connector5terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector5pin"/>
+                <p layer="copper1" svgId="connector5pin"/></pcbView>
+            </views>
+        </connector>
+    </connectors>
+</module>

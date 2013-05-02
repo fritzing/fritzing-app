@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?><module fritzingVersion="0.2.2.b.03.04.2550" moduleId="bf1d778246ec524bc51c67761afef94e">
+<version replacedby="generic_male_pin_header_1_100mil">1</version>
+    <author>Lionel Michel</author>
+    <title>Generic male header</title>
+    <label>J</label>
+    <date>2009-03-05</date>
+    <tags/>
+    <properties>
+        <property name="family">obsolete Pin Header</property>
+        <property name="Pins">1</property>
+        <property name="Gender">♂</property>
+        <property name="Pin Spacing">0.1in (2.54mm)</property>
+    <property name="package">THT</property></properties>
+    <description>Generic male header</description>
+    <views>
+        <iconView>
+            <layers image="icon/generic_male_header.svg">
+                <layer layerId="icon"/>
+            </layers>
+        </iconView>
+        <breadboardView>
+            <layers image="breadboard/generic_male_header.svg">
+                <layer layerId="breadboard"/>
+            </layers>
+        </breadboardView>
+        <schematicView>
+            <layers image="schematic/generic_male_terminal.svg">
+                <layer layerId="schematic"/>
+            </layers>
+        </schematicView>
+        <pcbView>
+            <layers image="pcb/jumper1.svg">
+                <layer layerId="copper0"/>
+                <layer layerId="silkscreen"/>
+            </layers>
+        </pcbView>
+    </views>
+    <connectors>
+        <connector id="connector0" name="pin1" type="male">
+            <description>Pin 1</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector0pin" terminalId="connector0terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector0pin" terminalId="connector0terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector0pin"/>
+                </pcbView>
+            </views>
+        </connector>
+    </connectors>
+</module>

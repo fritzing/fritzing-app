@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?><module fritzingVersion="0.3.16b.02.24.4002" moduleId="RevEd_25LC512">
+    <version>1.1</version>
+    <author>Revolution Education Ltd</author>
+    <title>25LC512</title>
+    <label>IC</label>
+    <date>2010-05-26</date>
+    <tags>
+        <tag>EEPROM</tag>
+        <tag>SPI</tag>
+        <tag>DIP</tag>
+    </tags>
+    <properties>
+       <property name="family">EEPROM</property>
+        <property name="interface">SPI</property>
+        <property name="variant">25LC512</property>
+    <property name="package">THT</property></properties>
+    <description>25LC512 SPI EEPROM</description>
+      <views>
+        <iconView>
+            <layers image="icon/25LC512_icon.svg">
+                <layer layerId="icon"/>
+            </layers>
+        </iconView>
+        <breadboardView>
+            <layers image="breadboard/25LC512_breadboard.svg">
+                <layer layerId="breadboard"/>
+            </layers>
+        </breadboardView>
+        <pcbView>
+            <layers image="pcb/dip_8_300mil_pcb.svg">
+                <layer layerId="copper0"/>
+                <layer layerId="silkscreen"/>
+                <layer layerId="keepout"/>
+                <layer layerId="soldermask"/>
+                <layer layerId="outline"/>
+            <layer layerId="copper1"/></layers>
+        </pcbView>
+        <schematicView>
+            <layers image="schematic/25LC512_schematic.svg">
+                <layer layerId="schematic"/>
+            </layers>
+        </schematicView>
+    </views>
+    <connectors>
+        <connector id="connector0" name="CS - Chip Select" type="male">
+            <description>This pin is used to enable access to this device and is active low. Access will be granted when this pin has a logic low presented to it. Connect this pin to a digital output pin of your controller or tie to 0V (ground) of the power supply for this circuit to permanently enable this device</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector0pin" terminalId="connector0terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector0pin" terminalId="connector0terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector0pin"/>
+                <p layer="copper1" svgId="connector0pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector1" name="SO - Data Out" type="male">
+            <description>This pin is used to read data from this device. Connect this pin to the 'SPI Data In' (DI/DIN/SI) pin or to a digital input pin of your controller</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector1pin" terminalId="connector1terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector1pin" terminalId="connector1terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector1pin"/>
+                <p layer="copper1" svgId="connector1pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector2" name="WP - Write Protect" type="male">
+            <description>This pin is used to write protect this device and is active low. Connect this pin to a digital output of your controller or to the positive rail or 0V (ground) of your power supply. When presented with a logic low signal or connected to 0V (ground) the EEPROM will be write protected and memory contents cannot be altered</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector2pin" terminalId="connector2terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector2pin" terminalId="connector2terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector2pin"/>
+                <p layer="copper1" svgId="connector2pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector3" name="0V" type="male">
+            <description>Connect to the 0V (ground) of the power supply in your circuit</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector3pin" terminalId="connector3terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector3pin" terminalId="connector3terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector3pin"/>
+                <p layer="copper1" svgId="connector3pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector4" name="SI - Data In" type="male">
+            <description>This pin is used to write data into this device. Connect this pin to the 'SPI Data Out' (DO/DOUT/SO) pin or to a digital output pin of your controller</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector4pin" terminalId="connector4terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector4pin" terminalId="connector4terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector4pin"/>
+                <p layer="copper1" svgId="connector4pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector5" name="SCK - SPI Clock" type="male">
+            <description>This pin is used to clock data in and data out of the device. Connect this pin to the 'SPI Clock' (SCK/SCLK) pin or to a digital output pin of your controller</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector5pin" terminalId="connector5terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector5pin" terminalId="connector5terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector5pin"/>
+                <p layer="copper1" svgId="connector5pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector6" name="HOLD" type="male">
+            <description>This pin is used to pause communications to this device and is active low. Communications will be paused when this pin has a logic low presented to it. Connect this pin to a digital output pin of your controller or connect to the positive rail of the power supply for this circuit if communications are not to be paused</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector6pin" terminalId="connector6terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector6pin" terminalId="connector6terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector6pin"/>
+                <p layer="copper1" svgId="connector6pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector7" name="+V" type="male">
+            <description>Connect to the positive rail of the power supply in your circuit</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector7pin" terminalId="connector7terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector7pin" terminalId="connector7terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector7pin"/>
+                <p layer="copper1" svgId="connector7pin"/></pcbView>
+            </views>
+        </connector>
+    </connectors>
+</module>

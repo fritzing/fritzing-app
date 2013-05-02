@@ -1,0 +1,14 @@
+   <connector id="connector%3" name="%1.%2" type="female">
+      <description>perfboard socket</description>
+      <views>
+        <breadboardView>
+          <p layer="breadboardbreadboard" svgId="connector%3pin"/>
+        </breadboardView>
+        <schematicView>
+          <p layer="breadboardbreadboard" svgId="connector%3pin"/>
+        </schematicView>
+        <pcbView>
+          <p layer="breadboardbreadboard" svgId="connector%3pin"/>
+        </pcbView>
+      </views>
+    </connector>

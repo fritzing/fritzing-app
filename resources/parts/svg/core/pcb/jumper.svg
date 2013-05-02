@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg width="0.432in" version="1.2" xmlns="http://www.w3.org/2000/svg" height="0.132in" viewBox="0 0 432 132" baseProfile="tiny" >
+  <desc>Jumper SVG</desc>
+  <g id="copper0" >
+  <g id="copper1" >
+    <circle fill="none" cx="66" cy="66" stroke="rgb(255, 191, 0)" r="27.5" id="connector0pad" stroke-width="20" />
+    <circle fill="none" cx="366" cy="66" stroke="rgb(255, 191, 0)" r="27.5" id="connector1pad" stroke-width="20" />
+  </g>
+  </g>
+  <line id="partimage" style="stroke-linecap: round" stroke="#6699cc" x1="66" y1="66" x2="366" y2="66" stroke-width="21" />
+  <line id="silkscreen" style="stroke-linecap: round" stroke="#ffffff" x1="66" y1="66" x2="366" y2="66" stroke-width="8" />
+  <line id="silkscreen0" style="stroke-linecap: round" stroke="#ffffff" x1="66" y1="66" x2="366" y2="66" stroke-width="8" />
+</svg>

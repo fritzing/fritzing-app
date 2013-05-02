@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module fritzingVersion='0.5.2b.02.18.4756' moduleId='LilyPad-Button-v12'>
+<version>4</version>
+<date>2011-07-08</date>
+<author>SparkFun</author>
+<description>&lt;p&gt;
+	&lt;span style=&quot;font-weight: bold;&quot;&gt;Description:&lt;/span&gt; We designed this board to give the user a very discrete button without any sharp edges. Button closes when you push it and opens when you release (momentary push button).&lt;br /&gt;
+	&lt;br /&gt;
+	LilyPad is a wearable e-textile technology developed by Leah Buechley and cooperatively designed by Leah and SparkFun. Each LilyPad was creatively designed to have large connecting pads to allow them to be sewn into clothing. Various input, output, power, and sensor boards are available. They&amp;#39;re even washable!&lt;br /&gt;
+	&lt;br /&gt;
+	&lt;span style=&quot;font-weight: bold;&quot;&gt;Dimensions:&lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;
+		8x16mm&lt;/li&gt;
+	&lt;li&gt;
+		Thin 0.8mm PCB&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;
+	&lt;span style=&quot;font-weight: bold;&quot;&gt;Documents:&lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;
+		&lt;a href=&quot;http://www.sparkfun.com/datasheets/DevTools/LilyPad/LilyPad-Button.pdf&quot; target=&quot;_blank&quot;&gt;Schematic&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;
+		LilyPad Button Board Sticker Sheet &lt;a href=&quot;http://www.sparkfun.com/marcomm/SFE03-0010-Packaging-LilyPad-ButtonBoard-08776.pdf&quot; target=&quot;_blank&quot;&gt;PDF&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;
+		All LilyPad Product Sticker Sheet &lt;a href=&quot;http://www.sparkfun.com/marcomm/SFE03-0010-Packaging-LilyPadFPO-Stickers-MASTER.pdf&quot; target=&quot;_blank&quot;&gt;PDF&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+<title>LilyPad Button Board</title>
+<url>http://www.sparkfun.com/products/8776</url>
+<tags>
+<tag>Lilypad</tag>
+<tag>Button</tag>
+</tags>
+<properties>
+<property name='Dimensions'>5.2mm x 5.2mm</property>
+<property name='family'>Button</property>
+</properties>
+<views>
+<breadboardView>
+<layers image='breadboard/LilyPad-Button-v12_breadboard.svg'>
+<layer layerId='breadboard'/>
+</layers>
+</breadboardView>
+<schematicView>
+<layers image='schematic/LilyPad-Button-v12_schematic.svg'>
+<layer layerId='schematic'/>
+</layers>
+</schematicView>
+<pcbView>
+<layers image='pcb/LilyPad-Button-v12_pcb.svg'>
+<layer layerId='copper1'/>
+<layer layerId='silkscreen'/>
+<layer layerId='copper0'/>
+</layers>
+</pcbView>
+<iconView>
+<layers image='breadboard/LilyPad-Button-v12_breadboard.svg'>
+<layer layerId='icon'/>
+</layers>
+</iconView>
+</views>
+<connectors>
+<connector id='connector0' type='female' name='-'>
+<description>-</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector0pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector0pin' terminalId='connector0terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector0pad'/><p layer='copper1' svgId='connector0pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector1' type='female' name='S'>
+<description>S</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector1pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector1pin' terminalId='connector1terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector1pad'/><p layer='copper1' svgId='connector1pad'/></pcbView>
+</views>
+</connector>
+</connectors>
+<buses>
+</buses>
+</module>

@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?><module fritzingVersion="0.3.16b.02.24.4002" moduleId="adsfRevEd_ULN2003A">
+    <version>1.1</version>
+    <author>Mr.T</author>
+    <title>ULN2003A</title>
+    <label>IC</label>
+    <date>2011-01-12</date>
+    <tags>
+        <tag>Darlington</tag>
+        <tag>Transistor</tag>
+        <tag>DIP</tag>
+    <tag>SMD</tag></tags>
+    <properties>
+        <property name="family">Darlington Transistor Driver</property>
+        <property name="variant">ULN2003A</property>
+    <property name="package">SO16 [SMD]</property></properties>
+    <description>ULN2003A 7-way Darlington Transistor Driver</description>
+      <views>
+        <iconView>
+            <layers image="icon/ULN2003A_icon.svg">
+                <layer layerId="icon"/>
+            </layers>
+        </iconView>
+        <breadboardView>
+            <layers image="breadboard/ULN2003A_breadboard.svg">
+                <layer layerId="breadboard"/>
+            </layers>
+        </breadboardView>
+        <pcbView>
+            <layers image="pcb/SMD_SO16_DT.svg">
+                <layer layerId="silkscreen"/>
+                <layer layerId="keepout"/>
+                <layer layerId="soldermask"/>
+                <layer layerId="outline"/>
+            <layer layerId="copper1"/></layers>
+        </pcbView>
+        <schematicView>
+            <layers image="schematic/ULN2003A_schematic.svg">
+                <layer layerId="schematic"/>
+            </layers>
+        </schematicView>
+    </views>
+    <connectors>
+        <connector id="connector0" name="In 1" type="male">
+            <description>This is the input which controls output Out 1. This input should be connected to a digital output from your controller</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector0pin" terminalId="connector0terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector0pin" terminalId="connector0terminal"/>
+                </schematicView>
+                <pcbView>
+                <p layer="copper1" svgId="connector0pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector1" name="In 2" type="male">
+            <description>This is the input which controls output Out 2. This input should be connected to a digital output from your controller</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector1pin" terminalId="connector1terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector1pin" terminalId="connector1terminal"/>
+                </schematicView>
+                <pcbView>
+                <p layer="copper1" svgId="connector1pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector2" name="In 3" type="male">
+            <description>This is the input which controls output Out 3. This input should be connected to a digital output from your controller</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector2pin" terminalId="connector2terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector2pin" terminalId="connector2terminal"/>
+                </schematicView>
+                <pcbView>
+                <p layer="copper1" svgId="connector2pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector3" name="In 4" type="male">
+            <description>This is the input which controls output Out 4. This input should be connected to a digital output from your controller</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector3pin" terminalId="connector3terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector3pin" terminalId="connector3terminal"/>
+                </schematicView>
+                <pcbView>
+                <p layer="copper1" svgId="connector3pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector4" name="In 5" type="male">
+            <description>This is the input which controls output Out 5. This input should be connected to a digital output from your controller</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector4pin" terminalId="connector4terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector4pin" terminalId="connector4terminal"/>
+                </schematicView>
+                <pcbView>
+                <p layer="copper1" svgId="connector4pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector5" name="In 6" type="male">
+            <description>This is the input which controls output Out 6. This input should be connected to a digital output from your controller</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector5pin" terminalId="connector5terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector5pin" terminalId="connector5terminal"/>
+                </schematicView>
+                <pcbView>
+                <p layer="copper1" svgId="connector5pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector6" name="In 7" type="male">
+            <description>This is the input which controls output Out 7. This input should be connected to a digital output from your controller</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector6pin" terminalId="connector6terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector6pin" terminalId="connector6terminal"/>
+                </schematicView>
+                <pcbView>
+                <p layer="copper1" svgId="connector6pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector7" name="0V" type="male">
+            <description>Connect to the 0V (ground) of the power supply in your circuit</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector7pin" terminalId="connector7terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector7pin" terminalId="connector7terminal"/>
+                </schematicView>
+                <pcbView>
+                <p layer="copper1" svgId="connector7pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector8" name="COM - Common" type="male">
+            <description>Connect this pin to the positive rail of the power supply to which the loads controlled by the outputs are connected to</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector8pin" terminalId="connector8terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector8pin" terminalId="connector8terminal"/>
+                </schematicView>
+                <pcbView>
+                <p layer="copper1" svgId="connector8pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector9" name="Out 7" type="male">
+            <description>This is the output controlled by input 'In 7'. This is an open-collector output with an internal diode clamp to pin 9 (COM)</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector9pin" terminalId="connector9terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector9pin" terminalId="connector9terminal"/>
+                </schematicView>
+                <pcbView>
+                <p layer="copper1" svgId="connector9pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector10" name="Out 6" type="male">
+            <description>This is the output controlled by input 'In 6'. This is an open-collector output with an internal diode clamp to pin 9 (COM)</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector10pin" terminalId="connector10terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector10pin" terminalId="connector10terminal"/>
+                </schematicView>
+                <pcbView>
+                <p layer="copper1" svgId="connector10pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector11" name="Out 5" type="male">
+            <description>This is the output controlled by input 'In 5'. This is an open-collector output with an internal diode clamp to pin 9 (COM)</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector11pin" terminalId="connector11terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector11pin" terminalId="connector11terminal"/>
+                </schematicView>
+                <pcbView>
+                <p layer="copper1" svgId="connector11pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector12" name="Out 4" type="male">
+            <description>This is the output controlled by input 'In 4'. This is an open-collector output with an internal diode clamp to pin 9 (COM)</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector12pin" terminalId="connector12terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector12pin" terminalId="connector12terminal"/>
+                </schematicView>
+                <pcbView>
+                <p layer="copper1" svgId="connector12pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector13" name="Out 3" type="male">
+            <description>This is the output controlled by input 'In 3'. This is an open-collector output with an internal diode clamp to pin 9 (COM)</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector13pin" terminalId="connector13terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector13pin" terminalId="connector13terminal"/>
+                </schematicView>
+                <pcbView>
+                <p layer="copper1" svgId="connector13pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector14" name="Out 2" type="male">
+            <description>This is the output controlled by input 'In 2'. This is an open-collector output with an internal diode clamp to pin 9 (COM)</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector14pin" terminalId="connector14terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector14pin" terminalId="connector14terminal"/>
+                </schematicView>
+                <pcbView>
+                <p layer="copper1" svgId="connector14pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector15" name="Out 1" type="male">
+            <description>This is the output controlled by input 'In 1'. This is an open-collector output with an internal diode clamp to pin 9 (COM)</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector15pin" terminalId="connector15terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector15pin" terminalId="connector15terminal"/>
+                </schematicView>
+                <pcbView>
+                <p layer="copper1" svgId="connector15pin"/></pcbView>
+            </views>
+        </connector>
+    </connectors>
+</module>

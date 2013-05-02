@@ -1,0 +1,49 @@
+Photoplotter Info File: /home/steriana/pydevel/GerbMerge/testdata/hexapod.gpi
+
+ Date              :  8/20/2005 14:17:05 
+ Plotfile          : /home/steriana/pydevel/GerbMerge/testdata/hexapod.plc
+ Apertures         : generated: 
+ Device            : Gerber photoplotter with RS-274-X aperture generation
+
+Parameter settings:
+
+ Emulate Apertures : no
+ Emulate Thermal   : no
+ Emulate Annulus   : no
+ Tolerance Draw  + :  0.00 %
+ Tolerance Draw  - :  0.00 %
+ Tolerance Flash + :  0.00 %
+ Tolerance Flash - :  0.00 %
+ Rotate            : no
+ Mirror            : no
+ Optimize          : yes
+ Auto fit          : yes
+ OffsetX           : 0inch
+ OffsetY           : 0inch
+
+Plotfile Info:
+
+ Coordinate Format : 2.4
+ Coordinate Units  : Inch
+ Data Mode         : Absolute
+ Zero Suppression  : None
+ End Of Block      : *
+
+Apertures used:
+
+ Code     Shape     Size                  used
+
+ D10      draw      0.0050inch             814
+ D11      draw      0.0060inch             460
+ D12      draw      0.0070inch             472
+ D13      draw      0.0020inch              45
+ D14      draw      0.0010inch               4
+ D15      draw      0.0120inch              13
+ D16      rectangle 0.0250inch x 0.0300inch     6
+ D17      rectangle 0.1100inch x 0.0500inch     6
+ D18      rectangle 0.0240inch x 0.0340inch    18
+ D19      rectangle 0.1000inch x 0.0200inch     1
+ D20      rectangle 0.0300inch x 0.0750inch     2
+ D21      rectangle 0.0200inch x 0.1200inch     1
+ D22      rectangle 0.0350inch x 0.0300inch     2
+

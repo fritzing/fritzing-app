@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?><module fritzingVersion="0.3.18b.04.14.4111" moduleId="stereo-jack-3_5mm">
+    <version>4</version>
+    <author>Lionel Michel</author>
+    <title>Audio Jack (TRS) 3.5mm</title>
+    <label>TRS</label>
+    <date>2010-04-14</date>
+    <tags>
+        <tag>audio</tag>
+        <tag>stereo</tag>
+        <tag>jack</tag>
+        <tag>connector</tag>
+        <tag>sound</tag>
+        <tag>tip ring sleeve</tag>
+    </tags>
+    <properties>
+        <property name="package">4Ucon 08780 [THT]</property>
+        <property name="channels">Stereo (TRS)</property>
+        <property name="size">3.5 mm</property>
+        <property name="family">Audio Connector</property>
+    </properties>
+    <description>Stereo Jack 3.5mm</description>
+    <views>
+        <iconView>
+            <layers image="icon/stereo-jack-3_5mm.svg">
+                <layer layerId="icon"/>
+            </layers>
+        </iconView>
+        <breadboardView>
+            <layers image="breadboard/stereo-jack-3_5mm.svg">
+                <layer layerId="breadboard"/>
+            </layers>
+        </breadboardView>
+        <schematicView>
+            <layers image="schematic/stereo-jack-3_5mm.svg">
+                <layer layerId="schematic"/>
+            </layers>
+        </schematicView>
+        <pcbView>
+            <layers image="pcb/stereo-jack-3_5mm-08780_h.svg">
+                <layer layerId="copper0"/>
+                <layer layerId="silkscreen"/>
+            <layer layerId="copper1"/></layers>
+        </pcbView>
+    </views>
+    <connectors>
+        <connector id="connector3" name="Tip" type="male">
+            <description>usually left-hand audio channel</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector3pin" terminalId="connector3terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector3pin" terminalId="connector3terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector3pin"/>
+                <p layer="copper1" svgId="connector3pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector4" name="Tip" type="male">
+            <description>usually left-hand audio channel</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector4pin" terminalId="connector4terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector4pin" terminalId="connector4terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector4pin"/>
+                <p layer="copper1" svgId="connector4pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector0" name="Sleeve" type="male">
+            <description>usually ground</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector0pin" terminalId="connector0terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector0pin" terminalId="connector0terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector0pin"/>
+                <p layer="copper1" svgId="connector0pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector1" name="Ring" type="male">
+            <description>usually right-hand audio channel</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector1pin" terminalId="connector1terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector1pin" terminalId="connector1terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector1pin"/>
+                <p layer="copper1" svgId="connector1pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector2" name="Ring" type="male">
+            <description>usually right-hand audio channel</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector2pin" terminalId="connector2terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector2pin" terminalId="connector2terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector2pin"/>
+                <p layer="copper1" svgId="connector2pin"/></pcbView>
+            </views>
+        </connector>
+    </connectors>
+    <buses>
+    <bus id="bus0">
+		<nodeMember connectorId="connector1"/>
+		<nodeMember connectorId="connector2"/>
+	</bus>
+	<bus id="bus1">
+		<nodeMember connectorId="connector3"/>
+		<nodeMember connectorId="connector4"/>
+</bus>
+</buses>
+</module>

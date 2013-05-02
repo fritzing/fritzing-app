@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="UTF-8"?><module fritzingVersion="0.3.16b.02.24.4002" moduleId="RevEd_PICAXE_28">
+    <version>1.1</version>
+    <author>Revolution Education Ltd</author>
+    <title>PICAXE-28</title>
+    <label>IC</label>
+    <date>2010-05-26</date>
+    <tags>
+        <tag>PICAXE</tag>
+        <tag>DIP</tag>
+    </tags>
+    <properties>
+        <property name="family">Microcontroller Board (PICAXE)</property>
+        <property name="variant">PICAXE-28</property>
+    <property name="package">THT</property></properties>
+    <description>PICAXE-28 from Revolution Education Ltd</description>
+      <views>
+        <iconView>
+            <layers image="icon/PICAXE_28_icon.svg">
+                <layer layerId="icon"/>
+            </layers>
+        </iconView>
+        <breadboardView>
+            <layers image="breadboard/PICAXE_28_breadboard.svg">
+                <layer layerId="breadboard"/>
+            </layers>
+        </breadboardView>
+        <pcbView>
+            <layers image="pcb/dip_28_300mil_pcb.svg">
+                <layer layerId="copper0"/>
+                <layer layerId="silkscreen"/>
+                <layer layerId="keepout"/>
+                <layer layerId="soldermask"/>
+                <layer layerId="outline"/>
+            <layer layerId="copper1"/></layers>
+        </pcbView>
+        <schematicView>
+            <layers image="schematic/PICAXE_28_schematic.svg">
+                <layer layerId="schematic"/>
+            </layers>
+        </schematicView>
+    </views>
+    <connectors>
+        <connector id="connector0" name="Reset" type="male">
+            <description>Connect via a 4K7 resistor to the positive rail of the power supply in your circuit. This pin must be connected via the 4K7 resistor or the PICAXE will not operate correctly. This pin can also be connected to a switch to 0V (ground) to provide a manual 'reset button' for the PICAXE</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector0pin" terminalId="connector0terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector0pin" terminalId="connector0terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector0pin"/>
+                <p layer="copper1" svgId="connector0pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector1" name="In A0" type="male">
+            <description>This pin can be used as a digital input</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector1pin" terminalId="connector1terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector1pin" terminalId="connector1terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector1pin"/>
+                <p layer="copper1" svgId="connector1pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector2" name="In A1" type="male">
+            <description>This pin can be used as a digital input</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector2pin" terminalId="connector2terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector2pin" terminalId="connector2terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector2pin"/>
+                <p layer="copper1" svgId="connector2pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector3" name="In A2" type="male">
+            <description>This pin can be used as a digital input</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector3pin" terminalId="connector3terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector3pin" terminalId="connector3terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector3pin"/>
+                <p layer="copper1" svgId="connector3pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector4" name="In A3" type="male">
+            <description>This pin can be used as a digital input</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector4pin" terminalId="connector4terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector4pin" terminalId="connector4terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector4pin"/>
+                <p layer="copper1" svgId="connector4pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector5" name="Serial In" type="male">
+            <description>Connect to the 22K resistor of the PICAXE download circuit</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector5pin" terminalId="connector5terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector5pin" terminalId="connector5terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector5pin"/>
+                <p layer="copper1" svgId="connector5pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector6" name="Serial Out" type="male">
+            <description>Connect to the output pin of the download connector for the PICAXE download circuit</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector6pin" terminalId="connector6terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector6pin" terminalId="connector6terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector6pin"/>
+                <p layer="copper1" svgId="connector6pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector7" name="0V" type="male">
+            <description>Connect to the 0V (ground) of the power supply in your circuit</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector7pin" terminalId="connector7terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector7pin" terminalId="connector7terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector7pin"/>
+                <p layer="copper1" svgId="connector7pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector8" name="Resonator" type="male">
+            <description>Connect to a resonator or crystal which must be included to make the PICAXE operate</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector8pin" terminalId="connector8terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector8pin" terminalId="connector8terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector8pin"/>
+                <p layer="copper1" svgId="connector8pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector9" name="Resonator" type="male">
+            <description>Connect to a resonator or crystal which must be included to make the PICAXE operate</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector9pin" terminalId="connector9terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector9pin" terminalId="connector9terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector9pin"/>
+                <p layer="copper1" svgId="connector9pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector10" name="In 0" type="male">
+            <description>This pin can be used as a digital input</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector10pin" terminalId="connector10terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector10pin" terminalId="connector10terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector10pin"/>
+                <p layer="copper1" svgId="connector10pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector11" name="In 1" type="male">
+            <description>This pin can be used as a digital input</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector11pin" terminalId="connector11terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector11pin" terminalId="connector11terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector11pin"/>
+                <p layer="copper1" svgId="connector11pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector12" name="In 2" type="male">
+            <description>This pin can be used as a digital input</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector12pin" terminalId="connector12terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector12pin" terminalId="connector12terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector12pin"/>
+                <p layer="copper1" svgId="connector12pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector13" name="In 3" type="male">
+            <description>This pin can be used as a digital input</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector13pin" terminalId="connector13terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector13pin" terminalId="connector13terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector13pin"/>
+                <p layer="copper1" svgId="connector13pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector14" name="In 4" type="male">
+            <description>This pin can be used as a digital input</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector14pin" terminalId="connector14terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector14pin" terminalId="connector14terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector14pin"/>
+                <p layer="copper1" svgId="connector14pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector15" name="In 5" type="male">
+            <description>This pin can be used as a digital input</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector15pin" terminalId="connector15terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector15pin" terminalId="connector15terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector15pin"/>
+                <p layer="copper1" svgId="connector15pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector16" name="In 6" type="male">
+            <description>This pin can be used as a digital input</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector16pin" terminalId="connector16terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector16pin" terminalId="connector16terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector16pin"/>
+                <p layer="copper1" svgId="connector16pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector17" name="In 7" type="male">
+            <description>This pin can be used as a digital input</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector17pin" terminalId="connector17terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector17pin" terminalId="connector17terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector17pin"/>
+                <p layer="copper1" svgId="connector17pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector18" name="0V" type="male">
+            <description>Connect to the 0V (ground) of the power supply in your circuit</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector18pin" terminalId="connector18terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector18pin" terminalId="connector18terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector18pin"/>
+                <p layer="copper1" svgId="connector18pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector19" name="+V" type="male">
+            <description>Connect to the positive rail of the power supply in your circuit</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector19pin" terminalId="connector19terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector19pin" terminalId="connector19terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector19pin"/>
+                <p layer="copper1" svgId="connector19pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector20" name="Out 0" type="male">
+            <description>This pin can be used as a digital output</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector20pin" terminalId="connector20terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector20pin" terminalId="connector20terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector20pin"/>
+                <p layer="copper1" svgId="connector20pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector21" name="Out 1" type="male">
+            <description>This pin can be used as a digital output</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector21pin" terminalId="connector21terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector21pin" terminalId="connector21terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector21pin"/>
+                <p layer="copper1" svgId="connector21pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector22" name="Out 2" type="male">
+            <description>This pin can be used as a digital output</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector22pin" terminalId="connector22terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector22pin" terminalId="connector22terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector22pin"/>
+                <p layer="copper1" svgId="connector22pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector23" name="Out 3" type="male">
+            <description>This pin can be used as a digital output</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector23pin" terminalId="connector23terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector23pin" terminalId="connector23terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector23pin"/>
+                <p layer="copper1" svgId="connector23pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector24" name="Out 4" type="male">
+            <description>This pin can be used as a digital output</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector24pin" terminalId="connector24terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector24pin" terminalId="connector24terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector24pin"/>
+                <p layer="copper1" svgId="connector24pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector25" name="Out 5" type="male">
+            <description>This pin can be used as a digital output</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector25pin" terminalId="connector25terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector25pin" terminalId="connector25terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector25pin"/>
+                <p layer="copper1" svgId="connector25pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector26" name="Out 6" type="male">
+            <description>This pin can be used as a digital output</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector26pin" terminalId="connector26terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector26pin" terminalId="connector26terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector26pin"/>
+                <p layer="copper1" svgId="connector26pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector27" name="Out 7" type="male">
+            <description>This pin can be used as a digital output</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector27pin" terminalId="connector27terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector27pin" terminalId="connector27terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector27pin"/>
+                <p layer="copper1" svgId="connector27pin"/></pcbView>
+            </views>
+        </connector>
+    </connectors>
+    <buses>
+        <bus id="ground">
+            <nodeMember connectorId="connector7"/>
+            <nodeMember connectorId="connector18"/>
+        </bus>
+    </buses>
+</module>

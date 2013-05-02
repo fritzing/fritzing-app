@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module fritzingVersion="0.6.3b.08.16.5401" moduleId="WIZ820io">
+    <author>Jinbuhm Kim (jinbuhm.Kim@gmail.com)</author>
+    <title>WIZ820io</title>
+    <label>WIZ820io</label>
+    <date>2011-10-25</date>
+    <tags>
+        <tag>WIZ820io</tag>
+        <tag>WIZnet</tag>
+    </tags>
+    <properties>
+        <property name="family"></property>
+        <property name="part number">WIZ820io</property>
+    </properties>
+    <description>Plug-in Network Module having W5200 &amp; Mag Jack</description>
+    <views>
+        <iconView>
+            <layers image="breadboard/WIZ820io_breadboard.svg">
+                <layer layerId="icon"/>
+            </layers>
+        </iconView>
+        <schematicView>
+            <layers image="schematic/WIZ820io_schematic.svg">
+                <layer layerId="schematic"/>
+            </layers>
+        </schematicView>
+        <pcbView>
+            <layers image="pcb/WIZ820io_pcb.svg">
+                <layer layerId="copper0"/>
+                <layer layerId="copper1"/>
+                <layer layerId="silkscreen"/>
+            </layers>
+        </pcbView>
+        <breadboardView>
+            <layers image="breadboard/WIZ820io_breadboard.svg">
+                <layer layerId="breadboard"/>
+            </layers>
+        </breadboardView>
+    </views>
+    <connectors>
+        <connector id="connector3" type="male" name="SCLK">
+            <description>SPI Clock input</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector3"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector3pin" terminalId="connector3terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector3pin"/>
+                    <p layer="copper1" svgId="connector3pin"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector4" type="male" name="nSS">
+            <description>Active LOW SPI chip select </description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector4"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector4pin" terminalId="connector4terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector4pin"/>
+                    <p layer="copper1" svgId="connector4pin"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector5" type="male" name="nINT">
+            <description>Active Low Interrupt output</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector5"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector5pin" terminalId="connector5terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector5pin"/>
+                    <p layer="copper1" svgId="connector5pin"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector18" type="male" name="MISO">
+            <description>SPI Master Input Slave output</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector18"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector18pin" terminalId="connector18terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector18"/>
+                    <p layer="copper1" svgId="connector18"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector19" type="male" name="nRESET">
+            <description>Low active reset input</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector19"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector19pin" terminalId="connector19terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector19"/>
+                    <p layer="copper1" svgId="connector19"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector20" type="male" name="PWDN">
+            <description>Optioanl Power Down Input</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector20"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector20pin" terminalId="connector20terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector20"/>
+                    <p layer="copper1" svgId="connector20"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector21" type="male" name="VIN">
+            <description>3.3V Power Input</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector21"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector21pin" terminalId="connector21terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector21"/>
+                    <p layer="copper1" svgId="connector21"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector22" type="male" name="VIN">
+            <description>3.3V Power Input</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector22"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector22pin" terminalId="connector22terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector22"/>
+                    <p layer="copper1" svgId="connector22"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector23" type="male" name="GND">
+            <description>no description yet</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector23"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector23pin" terminalId="connector23terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector23"/>
+                    <p layer="copper1" svgId="connector23"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector0" type="male" name="GND">
+            <description>no description yet</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector0"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector0pin" terminalId="connector0terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector0pin"/>
+                    <p layer="copper1" svgId="connector0pin"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector1" type="male" name="GND">
+            <description>no description yet</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector1"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector1pin" terminalId="connector1terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector1pin"/>
+                    <p layer="copper1" svgId="connector1pin"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector2" type="male" name="MOSI">
+            <description>SPI Master output slave input</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector2"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector2pin" terminalId="connector2terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector2pin"/>
+                    <p layer="copper1" svgId="connector2pin"/>
+                </pcbView>
+            </views>
+        </connector>
+    </connectors>
+    <buses>
+    <bus id="gnd">
+<nodeMember connectorId='connector23'/>
+<nodeMember connectorId='connector0'/>
+<nodeMember connectorId='connector1'/>
+    </bus>
+    <bus id="vin">
+ <nodeMember connectorId='connector21'/>
+<nodeMember connectorId='connector22'/> 
+    </bus>
+    </buses>
+</module>

@@ -1,0 +1,1 @@
+c:\Python26\python.exe C:\Users\jonathan\fritzing2\part-gen-scripts\misc_scripts\fpgrabber.py -u http://www.gedasymbols.org/footprints/ -d C:\Users\jonathan\fritzing2\fz\fp2 > C:\Users\jonathan\fritzing2\part-gen-scripts\misc_scripts\fpgrabber.txt

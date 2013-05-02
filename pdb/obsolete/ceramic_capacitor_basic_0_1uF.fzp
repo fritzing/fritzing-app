@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?><module fritzingVersion="0.1.1201" moduleId="1000AAAA01">
+ <version replacedby="2010BABA11">1</version>
+ <author>Stefan Hermann</author>
+ <title>Ceramic Capacitor</title>
+ <label>C</label>
+ <date>2008-09-24</date>
+ <tags>
+  <tag>Capacitor</tag>
+  <tag>Ceramic Capacitor</tag>
+  <tag>fritzing core</tag>
+ </tags>
+ <properties>
+  <property name="family">obsolete Capacitor</property>
+  <property name="Capacitance">0.1&#181;F</property>
+  <property name="Capacitor Type">Ceramic</property>
+  <property name="Rated Voltage">50V</property>
+ <property name="package">THT</property></properties>
+ <taxonomy>discreteParts.capacitor.ceramic.round</taxonomy>
+ <description>0.1&#181;F Ceramic Disk Capacitor</description>
+ <views>
+  <iconView>
+   <layers image="icon/ceramic_disk_capacitor_ochre_icon.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+  <breadboardView fliphorizontal="true" flipvertical="true">
+   <layers image="breadboard/ceramic_disk_capacitor_ochre.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="schematic/capacitor.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/axial_lay_300mil.svg">
+    <layer layerId="copper0"/>
+    <layer layerId="silkscreen"/>
+   </layers>
+  </pcbView>
+ </views>
+ <connectors>
+  <connector id="connector0" name="pin 0" type="male">
+   <description>pin 0</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector0pin" terminalId="connector0terminal"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector0pin" terminalId="connector0terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector0pad"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector id="connector1" name="pin 1" type="male">
+   <description>pin 1</description>
+   <views>
+    <breadboardView>
+     <p layer="breadboard" svgId="connector1pin" terminalId="connector1terminal"/>
+    </breadboardView>
+    <schematicView>
+     <p layer="schematic" svgId="connector1pin" terminalId="connector1terminal"/>
+    </schematicView>
+    <pcbView>
+     <p layer="copper0" svgId="connector1pad"/>
+    </pcbView>
+   </views>
+  </connector>
+ </connectors>
+</module>

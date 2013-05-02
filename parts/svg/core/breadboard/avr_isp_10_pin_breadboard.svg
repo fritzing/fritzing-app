@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg version='1.2' baseProfile='tiny' xmlns='http://www.w3.org/2000/svg'  x='0in' y='0in' width='0.8in' height='0.3484167in' viewBox='0 0 800 348.4167in'>
+<g id='breadboard' >
+<rect id='bgnd' x='0' y='0' width='800' height='348.4167' stroke='none' stroke-width='0' fill='#1a1a1a' />
+<rect id='top inset' x='0' y='0' width='800' height='38.861' stroke='none' stroke-width='0' fill='#2a2a29' />
+<rect id='bottom inset' x='0' y='309.5557' width='800' height='38.861' stroke='none' stroke-width='0' fill='#595959' />
+<path id='left inset'  d='M0,0 0,348.4167 38.861,309.5557 38.861,38.861z' stroke='none' stroke-width='0' fill='#373737' />
+<path id='right inset'  d='M800,0 800,348.4167 761.139,309.5557 761.139,38.861z' stroke='none' stroke-width='0' fill='#474747' />
+<rect id='top border' x='0' y='0' width='800' height='24.972' stroke='none' stroke-width='0' fill='#404040' />
+<rect id='bottom border' x='0' y='323.4447' width='800' height='24.972' stroke='none' stroke-width='0' fill='#404040' />
+<rect id='left border' x='0' y='0' width='24.972' height='348.4167' stroke='none' stroke-width='0' fill='#404040' />
+<rect id='right border' x='775.028' y='0' width='24.972' height='348.4167' stroke='none' stroke-width='0' fill='#404040' />
+<rect id='upper connector bgnd' x='173.618' y='95.972535' width='52.76389' height='52.76389' stroke='none' stroke-width='0' fill='#141414' />
+<rect id='connector9pin' x='184.035' y='106.3892' width='31.93056' height='31.93056' stroke='none' stroke-width='0' fill='#8c8663' />
+<rect id='upper connector top inset' x='184.035' y='106.3892' width='31.93056' height='7.75' stroke='none' stroke-width='0' fill='#B8AF82' />
+<rect id='upper connector bottom inset' x='184.035' y='130.56976' width='31.93056' height='7.75' stroke='none' stroke-width='0' fill='#5E5B43' />
+<path id='upper connector left inset' d='M184.035,106.3892 184.035,138.31976 191.785,130.56976 191.785,114.1392z' stroke='none' stroke-width='0' fill='#9A916C' />
+<path id='upper connector right inset' d='M215.965,106.3892 215.965,138.31976 208.215,130.56976 208.215,114.1392z' stroke='none' stroke-width='0' fill='#9A916C' />
+<rect id='upper connector bgnd' x='273.618' y='95.972535' width='52.76389' height='52.76389' stroke='none' stroke-width='0' fill='#141414' />
+<rect id='connector8pin' x='284.035' y='106.3892' width='31.93056' height='31.93056' stroke='none' stroke-width='0' fill='#8c8663' />
+<rect id='upper connector top inset' x='284.035' y='106.3892' width='31.93056' height='7.75' stroke='none' stroke-width='0' fill='#B8AF82' />
+<rect id='upper connector bottom inset' x='284.035' y='130.56976' width='31.93056' height='7.75' stroke='none' stroke-width='0' fill='#5E5B43' />
+<path id='upper connector left inset' d='M284.035,106.3892 284.035,138.31976 291.785,130.56976 291.785,114.1392z' stroke='none' stroke-width='0' fill='#9A916C' />
+<path id='upper connector right inset' d='M315.965,106.3892 315.965,138.31976 308.215,130.56976 308.215,114.1392z' stroke='none' stroke-width='0' fill='#9A916C' />
+<rect id='upper connector bgnd' x='373.618' y='95.972535' width='52.76389' height='52.76389' stroke='none' stroke-width='0' fill='#141414' />
+<rect id='connector7pin' x='384.035' y='106.3892' width='31.93056' height='31.93056' stroke='none' stroke-width='0' fill='#8c8663' />
+<rect id='upper connector top inset' x='384.035' y='106.3892' width='31.93056' height='7.75' stroke='none' stroke-width='0' fill='#B8AF82' />
+<rect id='upper connector bottom inset' x='384.035' y='130.56976' width='31.93056' height='7.75' stroke='none' stroke-width='0' fill='#5E5B43' />
+<path id='upper connector left inset' d='M384.035,106.3892 384.035,138.31976 391.785,130.56976 391.785,114.1392z' stroke='none' stroke-width='0' fill='#9A916C' />
+<path id='upper connector right inset' d='M415.965,106.3892 415.965,138.31976 408.215,130.56976 408.215,114.1392z' stroke='none' stroke-width='0' fill='#9A916C' />
+<rect id='upper connector bgnd' x='473.618' y='95.972535' width='52.76389' height='52.76389' stroke='none' stroke-width='0' fill='#141414' />
+<rect id='connector6pin' x='484.035' y='106.3892' width='31.93056' height='31.93056' stroke='none' stroke-width='0' fill='#8c8663' />
+<rect id='upper connector top inset' x='484.035' y='106.3892' width='31.93056' height='7.75' stroke='none' stroke-width='0' fill='#B8AF82' />
+<rect id='upper connector bottom inset' x='484.035' y='130.56976' width='31.93056' height='7.75' stroke='none' stroke-width='0' fill='#5E5B43' />
+<path id='upper connector left inset' d='M484.035,106.3892 484.035,138.31976 491.785,130.56976 491.785,114.1392z' stroke='none' stroke-width='0' fill='#9A916C' />
+<path id='upper connector right inset' d='M515.965,106.3892 515.965,138.31976 508.215,130.56976 508.215,114.1392z' stroke='none' stroke-width='0' fill='#9A916C' />
+<rect id='upper connector bgnd' x='573.618' y='95.972535' width='52.76389' height='52.76389' stroke='none' stroke-width='0' fill='#141414' />
+<rect id='connector5pin' x='584.035' y='106.3892' width='31.93056' height='31.93056' stroke='none' stroke-width='0' fill='#8c8663' />
+<rect id='upper connector top inset' x='584.035' y='106.3892' width='31.93056' height='7.75' stroke='none' stroke-width='0' fill='#B8AF82' />
+<rect id='upper connector bottom inset' x='584.035' y='130.56976' width='31.93056' height='7.75' stroke='none' stroke-width='0' fill='#5E5B43' />
+<path id='upper connector left inset' d='M584.035,106.3892 584.035,138.31976 591.785,130.56976 591.785,114.1392z' stroke='none' stroke-width='0' fill='#9A916C' />
+<path id='upper connector right inset' d='M615.965,106.3892 615.965,138.31976 608.215,130.56976 608.215,114.1392z' stroke='none' stroke-width='0' fill='#9A916C' />
+
+<rect id='lower connector bgnd' x='173.618' y='195.972535' width='52.76389' height='52.76389' stroke='none' stroke-width='0' fill='#141414' />
+<rect id='connector0pin' x='184.035' y='206.3892' width='31.93056' height='31.93056' stroke='none' stroke-width='0' fill='#8c8663' />
+<rect id='lower connector top inset' x='184.035' y='206.3892' width='31.93056' height='7.75' stroke='none' stroke-width='0' fill='#B8AF82' />
+<rect id='lower connector bottom inset' x='184.035' y='230.56976' width='31.93056' height='7.75' stroke='none' stroke-width='0' fill='#5E5B43' />
+<path id='lower connector left inset' d='M184.035,206.3892 184.035,238.31976 191.785,230.56976 191.785,214.1392z' stroke='none' stroke-width='0' fill='#9A916C' />
+<path id='lower connector right inset' d='M215.965,206.3892 215.965,238.31976 208.215,230.56976 208.215,214.1392z' stroke='none' stroke-width='0' fill='#9A916C' />
+<rect id='lower connector bgnd' x='273.618' y='195.972535' width='52.76389' height='52.76389' stroke='none' stroke-width='0' fill='#141414' />
+<rect id='connector1pin' x='284.035' y='206.3892' width='31.93056' height='31.93056' stroke='none' stroke-width='0' fill='#8c8663' />
+<rect id='lower connector top inset' x='284.035' y='206.3892' width='31.93056' height='7.75' stroke='none' stroke-width='0' fill='#B8AF82' />
+<rect id='lower connector bottom inset' x='284.035' y='230.56976' width='31.93056' height='7.75' stroke='none' stroke-width='0' fill='#5E5B43' />
+<path id='lower connector left inset' d='M284.035,206.3892 284.035,238.31976 291.785,230.56976 291.785,214.1392z' stroke='none' stroke-width='0' fill='#9A916C' />
+<path id='lower connector right inset' d='M315.965,206.3892 315.965,238.31976 308.215,230.56976 308.215,214.1392z' stroke='none' stroke-width='0' fill='#9A916C' />
+<rect id='lower connector bgnd' x='373.618' y='195.972535' width='52.76389' height='52.76389' stroke='none' stroke-width='0' fill='#141414' />
+<rect id='connector2pin' x='384.035' y='206.3892' width='31.93056' height='31.93056' stroke='none' stroke-width='0' fill='#8c8663' />
+<rect id='lower connector top inset' x='384.035' y='206.3892' width='31.93056' height='7.75' stroke='none' stroke-width='0' fill='#B8AF82' />
+<rect id='lower connector bottom inset' x='384.035' y='230.56976' width='31.93056' height='7.75' stroke='none' stroke-width='0' fill='#5E5B43' />
+<path id='lower connector left inset' d='M384.035,206.3892 384.035,238.31976 391.785,230.56976 391.785,214.1392z' stroke='none' stroke-width='0' fill='#9A916C' />
+<path id='lower connector right inset' d='M415.965,206.3892 415.965,238.31976 408.215,230.56976 408.215,214.1392z' stroke='none' stroke-width='0' fill='#9A916C' />
+<rect id='lower connector bgnd' x='473.618' y='195.972535' width='52.76389' height='52.76389' stroke='none' stroke-width='0' fill='#141414' />
+<rect id='connector3pin' x='484.035' y='206.3892' width='31.93056' height='31.93056' stroke='none' stroke-width='0' fill='#8c8663' />
+<rect id='lower connector top inset' x='484.035' y='206.3892' width='31.93056' height='7.75' stroke='none' stroke-width='0' fill='#B8AF82' />
+<rect id='lower connector bottom inset' x='484.035' y='230.56976' width='31.93056' height='7.75' stroke='none' stroke-width='0' fill='#5E5B43' />
+<path id='lower connector left inset' d='M484.035,206.3892 484.035,238.31976 491.785,230.56976 491.785,214.1392z' stroke='none' stroke-width='0' fill='#9A916C' />
+<path id='lower connector right inset' d='M515.965,206.3892 515.965,238.31976 508.215,230.56976 508.215,214.1392z' stroke='none' stroke-width='0' fill='#9A916C' />
+<rect id='lower connector bgnd' x='573.618' y='195.972535' width='52.76389' height='52.76389' stroke='none' stroke-width='0' fill='#141414' />
+<rect id='connector4pin' x='584.035' y='206.3892' width='31.93056' height='31.93056' stroke='none' stroke-width='0' fill='#8c8663' />
+<rect id='lower connector top inset' x='584.035' y='206.3892' width='31.93056' height='7.75' stroke='none' stroke-width='0' fill='#B8AF82' />
+<rect id='lower connector bottom inset' x='584.035' y='230.56976' width='31.93056' height='7.75' stroke='none' stroke-width='0' fill='#5E5B43' />
+<path id='lower connector left inset' d='M584.035,206.3892 584.035,238.31976 591.785,230.56976 591.785,214.1392z' stroke='none' stroke-width='0' fill='#9A916C' />
+<path id='lower connector right inset' d='M615.965,206.3892 615.965,238.31976 608.215,230.56976 608.215,214.1392z' stroke='none' stroke-width='0' fill='#9A916C' />
+
+<rect id='slot' x='315.951' y='280.4973' width='168.0972' height='67.9194' stroke='none' stroke-width='0' fill='#1a1a1a' />
+</g>
+</svg>

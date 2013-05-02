@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" x="0in" y="0in" width="0.4436in" height="0.4186in" viewBox="0 0 4436 4186" >
+<title>SparkFun.mod</title>
+<desc>Kicad module 'SparkFun-TCM8240MD' from file 'SparkFun.mod' converted by Fritzing</desc>
+<metadata xmlns:fz='http://fritzing.org/kicadmetadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+<rdf:RDF><rdf:Description rdf:about=''>
+<fz:attr name='kicad filename'>SparkFun.mod</fz:attr>
+<fz:attr name='kicad module'>SparkFun-TCM8240MD</fz:attr>
+<fz:attr name='fritzing version'>0.4.1b.07.04.4318</fz:attr>
+<fz:attr name='conversion date'>17/07/2010 17:18:10</fz:attr>
+<fz:attr name='dist-license'>GPL</fz:attr>
+<fz:attr name='use-license'>unlimited</fz:attr>
+<fz:attr name='author'>KICAD project</fz:attr>
+<fz:attr name='license-url'>http://www.gnu.org/licenses/gpl.html</fz:attr>
+<fz:comment></fz:comment>
+<fz:attr name='keyword'></fz:attr>
+</rdf:Description></rdf:RDF></metadata><g id="copper1">
+ <rect width="500" x="0" y="787" fill="#ffbf00" connectorname="P$1" height="250" id="connector0pad" stroke-width="0"/>
+ <rect width="500" x="0" y="1181" fill="#ffbf00" connectorname="P$2" height="250" id="connector1pad" stroke-width="0"/>
+ <rect width="500" x="0" y="1575" fill="#ffbf00" connectorname="P$3" height="250" id="connector2pad" stroke-width="0"/>
+ <rect width="500" x="0" y="1968" fill="#ffbf00" connectorname="P$4" height="250" id="connector3pad" stroke-width="0"/>
+ <rect width="500" x="0" y="2361" fill="#ffbf00" connectorname="P$5" height="250" id="connector4pad" stroke-width="0"/>
+ <rect width="500" x="0" y="2755" fill="#ffbf00" connectorname="P$6" height="250" id="connector5pad" stroke-width="0"/>
+ <rect width="500" x="787" y="3936" fill="#ffbf00" connectorname="P$7" height="250" id="connector6pad" stroke-width="0"/>
+ <rect width="500" x="1181" y="3936" fill="#ffbf00" connectorname="P$8" height="250" id="connector7pad" stroke-width="0"/>
+ <rect width="500" x="1575" y="3936" fill="#ffbf00" connectorname="P$9" height="250" id="connector8pad" stroke-width="0"/>
+ <rect width="500" x="1968" y="3936" fill="#ffbf00" connectorname="P$10" height="250" id="connector9pad" stroke-width="0"/>
+ <rect width="500" x="2361" y="3936" fill="#ffbf00" connectorname="P$11" height="250" id="connector10pad" stroke-width="0"/>
+ <rect width="500" x="2755" y="3936" fill="#ffbf00" connectorname="P$12" height="250" id="connector11pad" stroke-width="0"/>
+ <rect width="500" x="3936" y="3149" fill="#ffbf00" connectorname="P$13" height="250" id="connector12pad" stroke-width="0"/>
+ <rect width="500" x="3936" y="2755" fill="#ffbf00" connectorname="P$14" height="250" id="connector13pad" stroke-width="0"/>
+ <rect width="500" x="3936" y="2361" fill="#ffbf00" connectorname="P$15" height="250" id="connector14pad" stroke-width="0"/>
+ <rect width="500" x="3936" y="1968" fill="#ffbf00" connectorname="P$16" height="250" id="connector15pad" stroke-width="0"/>
+ <rect width="500" x="3936" y="1575" fill="#ffbf00" connectorname="P$17" height="250" id="connector16pad" stroke-width="0"/>
+ <rect width="500" x="3936" y="1181" fill="#ffbf00" connectorname="P$18" height="250" id="connector17pad" stroke-width="0"/>
+ <rect width="500" x="3149" y="0" fill="#ffbf00" connectorname="P$19" height="250" id="connector18pad" stroke-width="0"/>
+ <rect width="500" x="2755" y="0" fill="#ffbf00" connectorname="P$20" height="250" id="connector19pad" stroke-width="0"/>
+ <rect width="500" x="2361" y="0" fill="#ffbf00" connectorname="P$21" height="250" id="connector20pad" stroke-width="0"/>
+ <rect width="500" x="1968" y="0" fill="#ffbf00" connectorname="P$22" height="250" id="connector21pad" stroke-width="0"/>
+ <rect width="500" x="1575" y="0" fill="#ffbf00" connectorname="P$23" height="250" id="connector22pad" stroke-width="0"/>
+ <rect width="500" x="1181" y="0" fill="#ffbf00" connectorname="P$24" height="250" id="connector23pad" stroke-width="0"/>
+</g>
+<g id="silkscreen">
+ <line fill="none" stroke="white" y1="4041" x1="270" y2="4041" stroke-width="50" x2="4166"/>
+ <line fill="none" stroke="white" y1="4041" x1="4166" y2="145" stroke-width="50" x2="4166"/>
+ <line fill="none" stroke="white" y1="145" x1="4166" y2="145" stroke-width="50" x2="644"/>
+ <line fill="none" stroke="white" y1="519" x1="270" y2="4041" stroke-width="50" x2="270"/>
+ <line fill="none" stroke="white" y1="145" x1="644" y2="519" stroke-width="50" x2="270"/>
+ <line fill="none" stroke="white" y1="3077" x1="211" y2="4100" stroke-width="50" x2="211"/>
+ <line fill="none" stroke="white" y1="4100" x1="211" y2="4100" stroke-width="50" x2="841"/>
+ <line fill="none" stroke="white" y1="4100" x1="3202" y2="4100" stroke-width="50" x2="4225"/>
+ <line fill="none" stroke="white" y1="4100" x1="4225" y2="3470" stroke-width="50" x2="4225"/>
+ <line fill="none" stroke="white" y1="1109" x1="4225" y2="86" stroke-width="50" x2="4225"/>
+ <line fill="none" stroke="white" y1="86" x1="4225" y2="86" stroke-width="50" x2="3595"/>
+ <line fill="none" stroke="white" y1="86" x1="1234" y2="86" stroke-width="50" x2="604"/>
+ <line fill="none" stroke="white" y1="86" x1="604" y2="479" stroke-width="50" x2="211"/>
+ <line fill="none" stroke="white" y1="479" x1="211" y2="716" stroke-width="50" x2="211"/>
+ <line fill="none" stroke="white" y1="3667" x1="644" y2="3667" stroke-width="50" x2="3792"/>
+ <line fill="none" stroke="white" y1="3667" x1="3792" y2="519" stroke-width="50" x2="3792"/>
+ <line fill="none" stroke="white" y1="519" x1="3792" y2="519" stroke-width="50" x2="644"/>
+ <line fill="none" stroke="white" y1="519" x1="644" y2="3667" stroke-width="50" x2="644"/>
+ <line fill="none" stroke="white" y1="3667" x1="644" y2="3667" stroke-width="50" x2="3792"/>
+ <line fill="none" stroke="white" y1="3667" x1="3792" y2="519" stroke-width="50" x2="3792"/>
+ <line fill="none" stroke="white" y1="519" x1="3792" y2="519" stroke-width="50" x2="644"/>
+ <line fill="none" stroke="white" y1="519" x1="644" y2="3667" stroke-width="50" x2="644"/>
+</g>
+</svg>

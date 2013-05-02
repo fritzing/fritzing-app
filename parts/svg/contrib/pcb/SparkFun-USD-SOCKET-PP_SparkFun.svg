@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" x="0in" y="0in" width="0.60025in" height="1.12978in" viewBox="0 0 6002.5 11297.8" >
+<title>SparkFun.mod</title>
+<desc>Kicad module 'SparkFun-USD-SOCKET-PP' from file 'SparkFun.mod' converted by Fritzing</desc>
+<metadata xmlns:fz='http://fritzing.org/kicadmetadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+<rdf:RDF><rdf:Description rdf:about=''>
+<fz:attr name='kicad filename'>SparkFun.mod</fz:attr>
+<fz:attr name='kicad module'>SparkFun-USD-SOCKET-PP</fz:attr>
+<fz:attr name='fritzing version'>0.4.1b.07.04.4318</fz:attr>
+<fz:attr name='conversion date'>17/07/2010 17:18:40</fz:attr>
+<fz:attr name='dist-license'>GPL</fz:attr>
+<fz:attr name='use-license'>unlimited</fz:attr>
+<fz:attr name='author'>KICAD project</fz:attr>
+<fz:attr name='license-url'>http://www.gnu.org/licenses/gpl.html</fz:attr>
+<fz:comment>OLD PRODUCTION SOCKET. DO NOT USE FOR PRODUCTION BOARDS.</fz:comment>
+<fz:attr name='keyword'>OLD</fz:attr>
+<fz:attr name='keyword'>PRODUCTION</fz:attr>
+<fz:attr name='keyword'>SOCKET.</fz:attr>
+<fz:attr name='keyword'>DO</fz:attr>
+<fz:attr name='keyword'>NOT</fz:attr>
+<fz:attr name='keyword'>USE</fz:attr>
+<fz:attr name='keyword'>FOR</fz:attr>
+<fz:attr name='keyword'>PRODUCTION</fz:attr>
+<fz:attr name='keyword'>BOARDS.</fz:attr>
+</rdf:Description></rdf:RDF></metadata><g id="copper1">
+ <rect width="295" x="3916" y="0" fill="#ffbf00" connectorname="1" height="590" id="connector0pad" stroke-width="0"/>
+ <rect width="295" x="3483" y="0" fill="#ffbf00" connectorname="2" height="590" id="connector1pad" stroke-width="0"/>
+ <rect width="295" x="3050" y="0" fill="#ffbf00" connectorname="3" height="590" id="connector2pad" stroke-width="0"/>
+ <rect width="295" x="2618" y="0" fill="#ffbf00" connectorname="4" height="590" id="connector3pad" stroke-width="0"/>
+ <rect width="295" x="2185" y="0" fill="#ffbf00" connectorname="5" height="590" id="connector4pad" stroke-width="0"/>
+ <rect width="295" x="1752" y="0" fill="#ffbf00" connectorname="6" height="590" id="connector5pad" stroke-width="0"/>
+ <rect width="295" x="1319" y="0" fill="#ffbf00" connectorname="7" height="590" id="connector6pad" stroke-width="0"/>
+ <rect width="295" x="886" y="0" fill="#ffbf00" connectorname="8" height="590" id="connector7pad" stroke-width="0"/>
+ <rect width="393" x="305" y="59.5" fill="#ffbf00" connectorname="CD1" height="511" id="connector8pad" stroke-width="0"/>
+ <rect width="551" x="0" y="4941.5" fill="#ffbf00" connectorname="CD2" height="393" id="connector9pad" stroke-width="0"/>
+ <rect width="590" x="39.5" y="6063.5" fill="#ffbf00" connectorname="GND1" height="531" id="connector10pad" stroke-width="0"/>
+ <rect width="590" x="5412.5" y="6456.5" fill="#ffbf00" connectorname="GND2" height="531" id="connector11pad" stroke-width="0"/>
+</g>
+<g id="silkscreen">
+ <line fill="none" stroke="white" y1="4744" x1="157.5" y2="217" stroke-width="80" x2="157.5"/>
+ <line fill="none" stroke="white" y1="217" x1="4378.5" y2="217" stroke-width="80" x2="5884.5"/>
+ <line fill="none" stroke="white" y1="217" x1="5884.5" y2="6240" stroke-width="80" x2="5884.5"/>
+ <line fill="none" stroke="white" y1="6909" x1="5166.5" y2="6909" stroke-width="80" x2="4378.5"/>
+ <line fill="none" stroke="white" y1="6909" x1="4378.5" y2="6260" stroke-width="80" x2="4378.5"/>
+ <line fill="none" stroke="white" y1="6260" x1="1230.5" y2="6516" stroke-width="80" x2="1230.5"/>
+ <line fill="none" stroke="white" y1="6516" x1="1230.5" y2="6516" stroke-width="80" x2="836.5"/>
+ <line fill="none" stroke="white" y1="7184" x1="4378.5" y2="7184" stroke-width="50" x2="1230.5"/>
+ <line fill="none" stroke="white" y1="7538" x1="4378.5" y2="7538" stroke-width="50" x2="1230.5"/>
+ <line fill="none" stroke="white" y1="9034" x1="4378.5" y2="9034" stroke-width="50" x2="1230.5"/>
+ <line fill="none" stroke="white" y1="5492" x1="157.5" y2="5886" stroke-width="80" x2="157.5"/>
+ <path fill="none" stroke="white" stroke-width="40" d="M123.04,7859.38a2764.78,2764.78,0,0,0,1107.46,-1599.38"/>
+</g>
+</svg>

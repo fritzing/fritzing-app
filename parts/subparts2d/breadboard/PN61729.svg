@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1 Basic//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-basic.dtd">
+<svg version="1.1" baseProfile="basic" id="Ebene_1" xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="44.248px"
+	 height="40.63px" viewBox="0 0 44.248 40.63" xml:space="preserve">
+<g>
+	<g>
+		<path fill="#999999" d="M24.845,40.63h-2.956v-2.039v-2.035l2.956-0.002h1.928v3.17c0,0.502-0.406,0.908-0.907,0.908
+			C25.866,40.632,24.845,40.632,24.845,40.63z"/>
+		<path fill="#808080" d="M25.966,40.63v-4.076h0.807c0,0,0,3.049,0,3.318C26.773,40.275,26.213,40.63,25.966,40.63z"/>
+	</g>
+	<g>
+		<rect x="0" y="4.078" fill="#B3B3B3" width="36.682" height="32.479"/>
+		<rect x="36.681" y="4.078" fill="#999999" width="7.565" height="32.479"/>
+		<rect x="0" y="4.078" opacity="0.5" fill="#CCCCCC" width="44.247" height="2.045"/>
+		<rect x="0" y="34.509" opacity="0.2" width="44.247" height="2.047"/>
+	</g>
+	<g>
+		<path fill="#B3B3B3" d="M24.845,0h-2.956v2.039v2.039h2.956h1.928V0.906C26.773,0.404,26.367,0,25.866,0H24.845z"/>
+		<path fill="#E6E6E6" d="M25.966,0v4.078h0.807c0,0,0-3.051,0-3.32C26.773,0.355,26.213,0,25.966,0z"/>
+	</g>
+</g>
+</svg>

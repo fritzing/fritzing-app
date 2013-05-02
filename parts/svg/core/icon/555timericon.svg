@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   version="1.2"
+   baseProfile="tiny"
+   id="svg2"
+   x="0px"
+   y="0px"
+   width="32px"
+   height="32px">
+  <g
+     id="icon"
+     transform="matrix(0.8,0,0,0.8,0,2.8)">
+    <rect
+       x="3.5"
+       y="26.32"
+       width="3"
+       height="6.6799998"
+       id="rect2544"
+       style="fill:#8c8c8c" />
+    <rect
+       x="13.5"
+       y="26.32"
+       width="3"
+       height="6.6799998"
+       id="rect2546"
+       style="fill:#8c8c8c" />
+    <rect
+       x="23.5"
+       y="26.32"
+       width="3"
+       height="6.6799998"
+       id="rect2548"
+       style="fill:#8c8c8c" />
+    <rect
+       x="33.5"
+       y="26.32"
+       width="3"
+       height="6.6799998"
+       id="rect2550"
+       style="fill:#8c8c8c" />
+    <rect
+       x="3.5"
+       width="3"
+       height="6.6799998"
+       id="rect2552"
+       y="0"
+       style="fill:#8c8c8c" />
+    <rect
+       x="13.5"
+       width="3"
+       height="6.6799998"
+       id="rect2554"
+       y="0"
+       style="fill:#8c8c8c" />
+    <rect
+       x="23.5"
+       width="3"
+       height="6.6799998"
+       id="rect2556"
+       y="0"
+       style="fill:#8c8c8c" />
+    <rect
+       x="33.5"
+       width="3"
+       height="6.6799998"
+       id="rect2558"
+       y="0"
+       style="fill:#8c8c8c" />
+    <rect
+       y="3"
+       width="40"
+       height="8.5"
+       id="rect2560"
+       x="0"
+       style="fill:#3d3d3d" />
+    <rect
+       y="21.5"
+       width="40"
+       height="8.5"
+       id="rect2562"
+       x="0" />
+    <polygon
+       points="8.5,4.34 8.5,3.26 6.5,2.34 3.5,2.34 3.5,4.34 8.5,4.34 "
+       id="polygon2564"
+       style="fill:#8c8c8c" />
+    <polygon
+       points="18.5,4.34 18.5,3.26 16.5,2.34 13.5,2.34 11.5,3.26 11.5,4.34 18.5,4.34 "
+       id="polygon2566"
+       style="fill:#8c8c8c" />
+    <polygon
+       points="36.5,4.34 36.5,2.34 33.5,2.34 31.5,3.26 31.5,4.34 36.5,4.34 "
+       id="polygon2568"
+       style="fill:#8c8c8c" />
+    <polygon
+       points="28.5,4.34 28.5,3.26 26.5,2.34 23.5,2.34 21.5,3.26 21.5,4.34 28.5,4.34 "
+       id="polygon2570"
+       style="fill:#8c8c8c" />
+    <polygon
+       points="3.5,28.66 3.5,30.66 6.5,30.66 8.5,29.74 8.5,28.66 3.5,28.66 "
+       id="polygon2572"
+       style="fill:#8c8c8c" />
+    <polygon
+       points="31.5,28.66 31.5,29.74 33.5,30.66 36.5,30.66 36.5,28.66 31.5,28.66 "
+       id="polygon2574"
+       style="fill:#8c8c8c" />
+    <polygon
+       points="11.5,28.66 11.5,29.74 13.5,30.66 16.5,30.66 18.5,29.74 18.5,28.66 11.5,28.66 "
+       id="polygon2576"
+       style="fill:#8c8c8c" />
+    <polygon
+       points="21.5,28.66 21.5,29.74 23.5,30.66 26.5,30.66 28.5,29.74 28.5,28.66 21.5,28.66 "
+       id="polygon2578"
+       style="fill:#8c8c8c" />
+    <polygon
+       points="40,3 39.25,5.46 39.25,27.54 40,30 40,3 "
+       id="polygon2580"
+       style="fill:#141414" />
+    <polygon
+       points="0,3 0.75,5.46 0.75,11.5 5,11.5 5,21.5 0.75,21.5 0.75,27.54 0,30 0,3 "
+       id="polygon2582"
+       style="fill:#1f1f1f" />
+    <linearGradient
+       id="SVGID_1_"
+       gradientUnits="userSpaceOnUse"
+       x1="2.7797999"
+       y1="21.5"
+       x2="2.7797999"
+       y2="11.5">
+      <stop
+         offset="0"
+         style="stop-color:#424242"
+         id="stop2585" />
+      <stop
+         offset="1"
+         style="stop-color:#000000"
+         id="stop2587" />
+    </linearGradient>
+    <polygon
+       points="0.75,11.46 0.56,13.58 0.56,19.42 0.75,21.55 5,21.55 5,11.5 0.75,11.46 "
+       id="polygon2589"
+       style="fill:url(#SVGID_1_)" />
+    <path
+       d="M 0.75,5.46 L 0.75,11.45 C 3.13,11.9 4.94,13.98 4.94,16.49 C 4.94,19 3.14,21.09 0.75,21.54 L 0.75,27.53 L 39.25,27.53 L 39.25,5.46 L 0.75,5.46 z"
+       id="path2591"
+       style="fill:#303030" />
+    <path
+       d="M 0.56,13.58 L 0.56,19.41 C 2.03,19.24 3.18,18.01 3.18,16.49 C 3.18,14.97 2.04,13.75 0.56,13.58 z"
+       id="path2593"
+       style="fill:#262626" />
+    <linearGradient
+       id="SVGID_2_"
+       gradientUnits="userSpaceOnUse"
+       x1="6.5"
+       y1="21.4102"
+       x2="6.5"
+       y2="25.5303">
+      <stop
+         offset="0"
+         style="stop-color:#121212"
+         id="stop2596" />
+      <stop
+         offset="1"
+         style="stop-color:#404040"
+         id="stop2598" />
+    </linearGradient>
+    <circle
+       cx="6.5"
+       cy="23.469999"
+       r="2.0599999"
+       id="circle2600"
+       style="fill:url(#SVGID_2_)" />
+    <g
+       id="g2602">
+      <path
+         d="M 10.09,14.369 L 10.09,13.494 L 13.59,13.494 L 13.59,12.619 L 10.09,12.619 L 10.09,9.994 L 15.34,9.994 L 15.34,10.869 L 11.84,10.869 L 11.84,11.744 L 14.465,11.744 L 14.465,12.619 L 15.34,12.619 L 15.34,13.494 L 14.465,13.494 L 14.465,14.369 L 10.09,14.369 L 10.09,14.369 z"
+         id="path2604"
+         style="fill:#a5988a;fill-opacity:1" />
+      <path
+         d="M 16.215,14.369 L 16.215,13.494 L 19.715,13.494 L 19.715,12.619 L 16.215,12.619 L 16.215,9.994 L 21.465,9.994 L 21.465,10.869 L 17.965,10.869 L 17.965,11.744 L 20.59,11.744 L 20.59,12.619 L 21.465,12.619 L 21.465,13.494 L 20.59,13.494 L 20.59,14.369 L 16.215,14.369 L 16.215,14.369 z"
+         id="path2606"
+         style="fill:#a6998a;fill-opacity:1" />
+      <path
+         d="M 22.339,14.369 L 22.339,13.494 L 25.839,13.494 L 25.839,12.619 L 22.339,12.619 L 22.339,9.994 L 27.589,9.994 L 27.589,10.869 L 24.089,10.869 L 24.089,11.744 L 26.714,11.744 L 26.714,12.619 L 27.589,12.619 L 27.589,13.494 L 26.714,13.494 L 26.714,14.369 L 22.339,14.369 L 22.339,14.369 z"
+         id="path2608"
+         style="fill:#a6998a;fill-opacity:1" />
+    </g>
+  </g>
+</svg>

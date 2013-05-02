@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" x="0in" y="0in" width="0.3347in" height="0.6181in" viewBox="0 0 3347 6181" >
+<title>SparkFun.mod</title>
+<desc>Kicad module 'SparkFun-POWER_JACK_SLOT' from file 'SparkFun.mod' converted by Fritzing</desc>
+<metadata xmlns:fz='http://fritzing.org/kicadmetadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+<rdf:RDF><rdf:Description rdf:about=''>
+<fz:attr name='kicad filename'>SparkFun.mod</fz:attr>
+<fz:attr name='kicad module'>SparkFun-POWER_JACK_SLOT</fz:attr>
+<fz:attr name='fritzing version'>0.4.1b.07.04.4318</fz:attr>
+<fz:attr name='conversion date'>17/07/2010 17:16:51</fz:attr>
+<fz:attr name='dist-license'>GPL</fz:attr>
+<fz:attr name='use-license'>unlimited</fz:attr>
+<fz:attr name='author'>KICAD project</fz:attr>
+<fz:attr name='license-url'>http://www.gnu.org/licenses/gpl.html</fz:attr>
+<fz:comment></fz:comment>
+<fz:attr name='keyword'></fz:attr>
+</rdf:Description></rdf:RDF></metadata><g id="copper0">
+ <g id="copper1">
+  <g connectorname="GND@1" id="connector0pin">
+   <circle fill="none" cx="689" cy="3268" stroke="#ff9400" r="295.25" stroke-width="196.5"/>
+   <line fill="none" stroke="#ff9400" y1="2874.5" x1="393.75" y2="3661.5" stroke-width="196.5" x2="393.75"/>
+   <line fill="none" stroke="#ff9400" y1="2874.5" x1="984.25" y2="3661.5" stroke-width="196.5" x2="984.25"/>
+   <path fill="#ff9400" stroke-width="0" d="M295.5,2874.5a393.5,393.5,0,0,1,787,0"/>
+   <path fill="#ff9400" stroke-width="0" d="M1082.5,3661.5a393.5,393.5,0,1,1,-787,0"/>
+  </g>
+  <g connectorname="GND@2" id="connector1pin">
+   <circle fill="none" cx="2658" cy="1969" stroke="#ff9400" r="295.25" stroke-width="196.5"/>
+   <line fill="none" stroke="#ff9400" y1="1575.5" x1="2362.75" y2="2362.5" stroke-width="196.5" x2="2362.75"/>
+   <line fill="none" stroke="#ff9400" y1="1575.5" x1="2953.25" y2="2362.5" stroke-width="196.5" x2="2953.25"/>
+   <path fill="#ff9400" stroke-width="0" d="M2264.5,1575.5a393.5,393.5,0,0,1,787,0"/>
+   <path fill="#ff9400" stroke-width="0" d="M3051.5,2362.5a393.5,393.5,0,1,1,-787,0"/>
+  </g>
+  <g connectorname="PWR" id="connector2pin">
+   <circle fill="none" cx="689" cy="787" stroke="#ff9400" r="295.25" stroke-width="196.5"/>
+   <line fill="none" stroke="#ff9400" y1="393.5" x1="393.75" y2="1180.5" stroke-width="196.5" x2="393.75"/>
+   <line fill="none" stroke="#ff9400" y1="393.5" x1="984.25" y2="1180.5" stroke-width="196.5" x2="984.25"/>
+   <path fill="#ff9400" stroke-width="0" d="M295.5,393.5a393.5,393.5,0,0,1,787,0"/>
+   <path fill="#ff9400" stroke-width="0" d="M1082.5,1180.5a393.5,393.5,0,1,1,-787,0"/>
+  </g>
+ </g>
+</g>
+<g id="silkscreen">
+ <line fill="none" stroke="white" y1="827" x1="3347" y2="827" stroke-width="80" x2="1575"/>
+ <line fill="none" stroke="white" y1="827" x1="1575" y2="827" stroke-width="80" x2="0"/>
+ <line fill="none" stroke="white" y1="827" x1="0" y2="1220" stroke-width="80" x2="0"/>
+ <line fill="none" stroke="white" y1="1220" x1="0" y2="2913" stroke-width="80" x2="0"/>
+ <line fill="none" stroke="white" y1="2913" x1="0" y2="3642" stroke-width="80" x2="0"/>
+ <line fill="none" stroke="white" y1="787" x1="59" y2="787" stroke-width="0" x2="1319"/>
+ <line fill="none" stroke="white" y1="591" x1="256" y2="591" stroke-width="0" x2="1122"/>
+ <line fill="none" stroke="white" y1="984" x1="1122" y2="984" stroke-width="0" x2="256"/>
+ <line fill="none" stroke="white" y1="3071" x1="256" y2="3071" stroke-width="0" x2="1122"/>
+ <line fill="none" stroke="white" y1="3465" x1="1122" y2="3465" stroke-width="0" x2="256"/>
+ <line fill="none" stroke="white" y1="1535" x1="2855" y2="2402" stroke-width="0" x2="2855"/>
+ <line fill="none" stroke="white" y1="2402" x1="2461" y2="1535" stroke-width="0" x2="2461"/>
+ <line fill="none" stroke="white" y1="5000" x1="0" y2="6181" stroke-width="80" x2="0"/>
+ <line fill="none" stroke="white" y1="6181" x1="3347" y2="5000" stroke-width="80" x2="3347"/>
+ <line fill="none" stroke="white" y1="6181" x1="3347" y2="6181" stroke-width="80" x2="0"/>
+ <line fill="none" stroke="white" y1="3658" x1="0" y2="5000" stroke-width="80" x2="0"/>
+ <line fill="none" stroke="white" y1="5000" x1="3347" y2="827" stroke-width="80" x2="3347"/>
+ <line fill="none" stroke="white" y1="5000" x1="0" y2="5000" stroke-width="80" x2="3347"/>
+ <line fill="none" stroke="white" y1="5000" x1="3347" y2="5000" stroke-width="80" x2="3327"/>
+ <path fill="none" stroke="white" stroke-width="0" d="M256,590a197,197,0,0,0,-197,197"/>
+ <path fill="none" stroke="white" stroke-width="0" d="M1318,787a196,196,0,0,0,-196,-196"/>
+ <path fill="none" stroke="white" stroke-width="0" d="M1122,984a197,197,0,0,0,197,-197"/>
+ <path fill="none" stroke="white" stroke-width="0" d="M59,787a197,197,0,0,0,197,197"/>
+ <path fill="none" stroke="white" stroke-width="0" d="M256,3071a197,197,0,0,0,-197,197"/>
+ <path fill="none" stroke="white" stroke-width="0" d="M1319,3268a197,197,0,0,0,-197,-197"/>
+ <path fill="none" stroke="white" stroke-width="0" d="M1122,3465a197,197,0,0,0,197,-197"/>
+ <path fill="none" stroke="white" stroke-width="0" d="M59,3268a197,197,0,0,0,197,197"/>
+ <path fill="none" stroke="white" stroke-width="0" d="M2854,1535a196,196,0,0,0,-196,-196"/>
+ <path fill="none" stroke="white" stroke-width="0" d="M2658,2599a197,197,0,0,0,197,-197"/>
+ <path fill="none" stroke="white" stroke-width="0" d="M2462,2402a196,196,0,0,0,196,196"/>
+ <path fill="none" stroke="white" stroke-width="0" d="M2658,1338a197,197,0,0,0,-197,197"/>
+</g>
+</svg>

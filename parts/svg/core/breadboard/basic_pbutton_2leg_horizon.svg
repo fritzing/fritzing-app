@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="0.328in" height="0.099in" viewBox="0 0 23.662 7.128" enable-background="new 0 0 23.662 7.128" xml:space="preserve">
+<g id="svg">
+	<rect id="connector0terminal" x="22.603" y="3.498" fill="none" width="0.01" height="0.253"/>
+	<polygon id="connector0pin" fill="none" points="20.167,2.369 23.661,2.369 23.661,4.757 20.167,4.757 	"/>
+	<rect id="connector1terminal" x="1.031" y="3.498" fill="none" width="0.036" height="0.269"/>
+	<polygon id="connector1pin" fill="none" points="0,2.369 3.668,2.369 3.668,4.757 0,4.757 	"/>
+	<g id="breadboard">
+		<polygon id="wefwf" fill="#8C8C8C" points="0,2.369 23.661,2.369 23.661,4.757 0,4.757 		"/>
+		<path id="path21_8_" fill="#474747" d="M4.478,7.111c-0.791,0-0.813-0.271-0.813-0.625V2.669c-0.002-0.349,0.258-0.63,1.049-0.63
+			h14.393c0.799,0,1.063,0.283,1.063,0.645V6.49c0.006,0.354-0.271,0.622-1.063,0.622L4.478,7.111L4.478,7.111z"/>
+		<path id="path21_7_" fill="#666666" d="M4.478,6.021c-0.791,0-0.813-0.281-0.813-0.624V0.641c-0.001-0.345,0.259-0.625,1.05-0.625
+			h14.392c0.801,0,1.063,0.283,1.063,0.624v4.756c0.006,0.344-0.271,0.622-1.063,0.622L4.478,6.021L4.478,6.021z"/>
+		<g>
+			<ellipse cx="5.367" cy="3.011" rx="0.646" ry="0.487"/>
+			<ellipse cx="18.417" cy="3.011" rx="0.645" ry="0.487"/>
+		</g>
+		<path id="path21_10_" fill="none" stroke="#333333" stroke-width="0.4" d="M16.688,1.765v2.881
+			c0.002,0.256-0.258,0.572-0.844,0.572H7.973c-0.588,0-0.831-0.314-0.833-0.572V1.765"/>
+		<path id="path21_6_" fill="#C4C4C4" d="M8.13,5.085c-0.594,0-0.832-0.211-0.835-0.479V1.633c0-0.254,0.194-0.468,0.782-0.468
+			h7.678c0.592,0,0.785,0.229,0.787,0.479v2.977C16.548,4.892,16.286,5.1,15.696,5.1L8.13,5.085L8.13,5.085z"/>
+		<path id="path21_5_" fill="#EDEDED" d="M8.13,4.251c-0.594,0-0.832-0.21-0.835-0.479V1.014c0-0.255,0.194-0.464,0.782-0.464h7.678
+			c0.592,0,0.785,0.209,0.787,0.464v2.768c0.004,0.271-0.256,0.479-0.846,0.479L8.13,4.251L8.13,4.251z"/>
+	</g>
+</g>
+</svg>

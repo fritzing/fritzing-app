@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module fritzingVersion="0.7.0b.02.01.5801" moduleId="045cef49a96039c64e7363608e127209">
+    <author>David Thomasson</author>
+    <title>Dual VNH2SP30 Motor Driver</title>
+    <label>MD03A</label>
+    <date>2012-02-05</date>
+    <tags>
+        <tag>Motor Driver</tag>
+        <tag>Pololu</tag>
+        <tag>MD03A</tag>
+        <tag>VNH2SP30</tag>
+        <tag>VNH2</tag>
+        <tag>VNH3SP30</tag>
+        <tag>VNH3</tag>
+    </tags>
+    <properties>
+        <property name="family">Motor Driver</property>
+        <property name="part number">MD03A</property>
+    </properties>
+    <description>The Pololu dual high-power motor driver carrier for the VNH2SP30 motor driver integrated circuits from ST.
+http://www.pololu.com/catalog/product/708</description>
+    <views>
+        <iconView>
+            <layers image="icon/Dual_VNH2SP30_Motor_Driver_icon.svg">
+                <layer layerId="icon"/>
+            </layers>
+        </iconView>
+        <breadboardView>
+            <layers image="breadboard/Dual_VNH2SP30_Motor_Driver_breadboard.svg">
+                <layer layerId="breadboard"/>
+            </layers>
+        </breadboardView>
+        <schematicView>
+            <layers image="schematic/Dual_VNH2SP30_Motor_Driver_schematic.svg">
+                <layer layerId="schematic"/>
+            </layers>
+        </schematicView>
+        <pcbView>
+            <layers image="pcb/Dual_VNH2SP30_Motor_Driver_pcb.svg">
+                <layer layerId="copper0"/>
+                <layer layerId="copper1"/>
+            </layers>
+        </pcbView>
+    </views>
+    <connectors>
+        <connector id="connector130" type="female" name="1INa">
+            <description>Clockwise Input 1</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector130"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector130"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper1" svgId="connector130"/>
+                    <p layer="copper0" svgId="connector130"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector131" type="female" name="1INb">
+            <description>Counter Clockwise Input 1</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector131"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector131"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper1" svgId="connector131"/>
+                    <p layer="copper0" svgId="connector131"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector132" type="female" name="PWM">
+            <description>PWM Input 1</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector132"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector132"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper1" svgId="connector132"/>
+                    <p layer="copper0" svgId="connector132"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector150" type="female" name="VIN">
+            <description>Battery</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector150"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector150"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper1" svgId="connector150"/>
+                    <p layer="copper0" svgId="connector150"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector151" type="female" name="GND">
+            <description>Ground</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector151"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector151"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper1" svgId="connector151"/>
+                    <p layer="copper0" svgId="connector151"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector133" type="female" name="1CS">
+            <description>Output of Current sense 1</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector133"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector133"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper1" svgId="connector133"/>
+                    <p layer="copper0" svgId="connector133"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector134" type="female" name="VIN">
+            <description>Battery</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector134"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector134"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper1" svgId="connector134"/>
+                    <p layer="copper0" svgId="connector134"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector136" type="female" name="GND">
+            <description>Ground</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector136"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector136"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper1" svgId="connector136"/>
+                    <p layer="copper0" svgId="connector136"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector137" type="female" name="+5V (IN)">
+            <description>no description yet</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector137"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector137"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper1" svgId="connector137"/>
+                    <p layer="copper0" svgId="connector137"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector138" type="female" name="GND">
+            <description>Ground</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector138"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector138"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper1" svgId="connector138"/>
+                    <p layer="copper0" svgId="connector138"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector139" type="female" name="VIN">
+            <description>Battery</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector139"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector139"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper1" svgId="connector139"/>
+                    <p layer="copper0" svgId="connector139"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector140" type="female" name="2CS">
+            <description>Output of Current sense 2</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector140"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector140"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper1" svgId="connector140"/>
+                    <p layer="copper0" svgId="connector140"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector141" type="female" name="2PWM">
+            <description>PWM Input 2</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector141"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector141"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper1" svgId="connector141"/>
+                    <p layer="copper0" svgId="connector141"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector142" type="female" name="2INb">
+            <description>Clockwise Input 2</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector142"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector142"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper1" svgId="connector142"/>
+                    <p layer="copper0" svgId="connector142"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector143" type="female" name="2INb">
+            <description>Counter Clockwise Input 2</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector143"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector143"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper1" svgId="connector143"/>
+                    <p layer="copper0" svgId="connector143"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector144" type="female" name="2DIAG/EN">
+            <description>Status of High-Side and Low-Side Switche; Open Drain Output</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector144"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector144"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper1" svgId="connector144"/>
+                    <p layer="copper0" svgId="connector144"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector129" type="female" name="1DIAG/EN">
+            <description>Status of High-Side and Low-Side Switches; Open Drain Output</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector129"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector129"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper1" svgId="connector129"/>
+                    <p layer="copper0" svgId="connector129"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector146" type="female" name="OUT 1A">
+            <description>Power connections to the motor 1.
+Source of High-Side Switch A / Drain of Low-Side Switch A</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector146"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector146"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper1" svgId="connector146"/>
+                    <p layer="copper0" svgId="connector146"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector147" type="female" name="OUT 1B">
+            <description>Power connections to the motor 1.
+Source of High-Side Switch B / Drain of Low-Side Switch B</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector147"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector147"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper1" svgId="connector147"/>
+                    <p layer="copper0" svgId="connector147"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector148" type="female" name="OUT 2A">
+            <description>Power connections to the motor 2.
+Source of High-Side Switch A / Drain of Low-Side Switch A</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector148"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector148"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper1" svgId="connector148"/>
+                    <p layer="copper0" svgId="connector148"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector149" type="female" name="OUT 2B">
+            <description>Power connections to the motor 1.
+Source of High-Side Switch B / Drain of Low-Side Switch B</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector149"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector149"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper1" svgId="connector149"/>
+                    <p layer="copper0" svgId="connector149"/>
+                </pcbView>
+            </views>
+        </connector>
+    </connectors>
+</module>

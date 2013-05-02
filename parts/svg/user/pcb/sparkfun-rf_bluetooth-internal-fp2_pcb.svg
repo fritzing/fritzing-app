@@ -1,0 +1,179 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- Created with Fritzing (http://www.fritzing.org/) -->
+<svg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' version='1.2' baseProfile='tiny' x='0in' y='0in' width='1.00991in' height='0.57874in' viewBox='0 0 25.6516 14.7' >
+<g id='copper1'>
+<circle id='connector14pad' connectorname='15' cx='19.7016' cy='0.75' r='0.3125' stroke='#F7BD13' stroke-width='0.125' fill='none' />
+<path stroke='none' stroke-width='0' d='m19.7016,0a0.375,0.375 0 0 1 0.375,0.375l0,0.75a0.375,0.375 0 0 1 -0.375,0.375l-0,0a0.375,0.375 0 0 1 -0.375,-0.375l0,-0.75a0.375,0.375 0 0 1 0.375,-0.375l0,0zM19.4516,0.75a0.25,0.25 0 1 0 0.5,0 0.25,0.25 0 1 0 -0.5,0z
+' fill='#F7BD13' />
+<circle id='connector13pad' connectorname='14' cx='20.9016' cy='0.75' r='0.3125' stroke='#F7BD13' stroke-width='0.125' fill='none' />
+<path stroke='none' stroke-width='0' d='m20.9016,0a0.375,0.375 0 0 1 0.375,0.375l0,0.75a0.375,0.375 0 0 1 -0.375,0.375l-0,0a0.375,0.375 0 0 1 -0.375,-0.375l0,-0.75a0.375,0.375 0 0 1 0.375,-0.375l0,0zM20.6516,0.75a0.25,0.25 0 1 0 0.5,0 0.25,0.25 0 1 0 -0.5,0z
+' fill='#F7BD13' />
+<circle id='connector12pad' connectorname='13' cx='22.1016' cy='0.75' r='0.3125' stroke='#F7BD13' stroke-width='0.125' fill='none' />
+<path stroke='none' stroke-width='0' d='m22.1016,0a0.375,0.375 0 0 1 0.375,0.375l0,0.75a0.375,0.375 0 0 1 -0.375,0.375l-0,0a0.375,0.375 0 0 1 -0.375,-0.375l0,-0.75a0.375,0.375 0 0 1 0.375,-0.375l0,0zM21.8516,0.75a0.25,0.25 0 1 0 0.5,0 0.25,0.25 0 1 0 -0.5,0z
+' fill='#F7BD13' />
+<circle id='connector15pad' connectorname='16' cx='18.5016' cy='0.75' r='0.3125' stroke='#F7BD13' stroke-width='0.125' fill='none' />
+<path stroke='none' stroke-width='0' d='m18.5016,0a0.375,0.375 0 0 1 0.375,0.375l0,0.75a0.375,0.375 0 0 1 -0.375,0.375l-0,0a0.375,0.375 0 0 1 -0.375,-0.375l0,-0.75a0.375,0.375 0 0 1 0.375,-0.375l0,0zM18.2516,0.75a0.25,0.25 0 1 0 0.5,0 0.25,0.25 0 1 0 -0.5,0z
+' fill='#F7BD13' />
+<circle id='connector16pad' connectorname='17' cx='17.3016' cy='0.75' r='0.3125' stroke='#F7BD13' stroke-width='0.125' fill='none' />
+<path stroke='none' stroke-width='0' d='m17.3016,0a0.375,0.375 0 0 1 0.375,0.375l0,0.75a0.375,0.375 0 0 1 -0.375,0.375l-0,0a0.375,0.375 0 0 1 -0.375,-0.375l0,-0.75a0.375,0.375 0 0 1 0.375,-0.375l0,0zM17.0516,0.75a0.25,0.25 0 1 0 0.5,0 0.25,0.25 0 1 0 -0.5,0z
+' fill='#F7BD13' />
+<circle id='connector17pad' connectorname='18' cx='16.1016' cy='0.75' r='0.3125' stroke='#F7BD13' stroke-width='0.125' fill='none' />
+<path stroke='none' stroke-width='0' d='m16.1016,0a0.375,0.375 0 0 1 0.375,0.375l0,0.75a0.375,0.375 0 0 1 -0.375,0.375l-0,0a0.375,0.375 0 0 1 -0.375,-0.375l0,-0.75a0.375,0.375 0 0 1 0.375,-0.375l0,0zM15.8516,0.75a0.25,0.25 0 1 0 0.5,0 0.25,0.25 0 1 0 -0.5,0z
+' fill='#F7BD13' />
+<circle id='connector18pad' connectorname='19' cx='14.9016' cy='0.75' r='0.3125' stroke='#F7BD13' stroke-width='0.125' fill='none' />
+<path stroke='none' stroke-width='0' d='m14.9016,0a0.375,0.375 0 0 1 0.375,0.375l0,0.75a0.375,0.375 0 0 1 -0.375,0.375l-0,0a0.375,0.375 0 0 1 -0.375,-0.375l0,-0.75a0.375,0.375 0 0 1 0.375,-0.375l0,0zM14.6516,0.75a0.25,0.25 0 1 0 0.5,0 0.25,0.25 0 1 0 -0.5,0z
+' fill='#F7BD13' />
+<circle id='connector19pad' connectorname='20' cx='13.7016' cy='0.75' r='0.3125' stroke='#F7BD13' stroke-width='0.125' fill='none' />
+<path stroke='none' stroke-width='0' d='m13.7016,0a0.375,0.375 0 0 1 0.375,0.375l0,0.75a0.375,0.375 0 0 1 -0.375,0.375l-0,0a0.375,0.375 0 0 1 -0.375,-0.375l0,-0.75a0.375,0.375 0 0 1 0.375,-0.375l0,0zM13.4516,0.75a0.25,0.25 0 1 0 0.5,0 0.25,0.25 0 1 0 -0.5,0z
+' fill='#F7BD13' />
+<circle id='connector20pad' connectorname='21' cx='12.5016' cy='0.75' r='0.3125' stroke='#F7BD13' stroke-width='0.125' fill='none' />
+<path stroke='none' stroke-width='0' d='m12.5016,0a0.375,0.375 0 0 1 0.375,0.375l0,0.75a0.375,0.375 0 0 1 -0.375,0.375l-0,0a0.375,0.375 0 0 1 -0.375,-0.375l0,-0.75a0.375,0.375 0 0 1 0.375,-0.375l0,0zM12.2516,0.75a0.25,0.25 0 1 0 0.5,0 0.25,0.25 0 1 0 -0.5,0z
+' fill='#F7BD13' />
+<circle id='connector21pad' connectorname='22' cx='11.3016' cy='0.75' r='0.3125' stroke='#F7BD13' stroke-width='0.125' fill='none' />
+<path stroke='none' stroke-width='0' d='m11.3016,0a0.375,0.375 0 0 1 0.375,0.375l0,0.75a0.375,0.375 0 0 1 -0.375,0.375l-0,0a0.375,0.375 0 0 1 -0.375,-0.375l0,-0.75a0.375,0.375 0 0 1 0.375,-0.375l0,0zM11.0516,0.75a0.25,0.25 0 1 0 0.5,0 0.25,0.25 0 1 0 -0.5,0z
+' fill='#F7BD13' />
+<circle id='connector22pad' connectorname='23' cx='10.1016' cy='0.75' r='0.3125' stroke='#F7BD13' stroke-width='0.125' fill='none' />
+<path stroke='none' stroke-width='0' d='m10.1016,0a0.375,0.375 0 0 1 0.375,0.375l0,0.75a0.375,0.375 0 0 1 -0.375,0.375l-0,0a0.375,0.375 0 0 1 -0.375,-0.375l0,-0.75a0.375,0.375 0 0 1 0.375,-0.375l0,0zM9.8516,0.75a0.25,0.25 0 1 0 0.5,0 0.25,0.25 0 1 0 -0.5,0z
+' fill='#F7BD13' />
+<circle id='connector23pad' connectorname='24' cx='8.9016' cy='0.75' r='0.3125' stroke='#F7BD13' stroke-width='0.125' fill='none' />
+<path stroke='none' stroke-width='0' d='m8.9016,0a0.375,0.375 0 0 1 0.375,0.375l0,0.75a0.375,0.375 0 0 1 -0.375,0.375l-0,0a0.375,0.375 0 0 1 -0.375,-0.375l0,-0.75a0.375,0.375 0 0 1 0.375,-0.375l0,0zM8.6516,0.75a0.25,0.25 0 1 0 0.5,0 0.25,0.25 0 1 0 -0.5,0z
+' fill='#F7BD13' />
+<circle id='connector11pad' connectorname='12' cx='22.1016' cy='13.95' r='0.3125' stroke='#F7BD13' stroke-width='0.125' fill='none' />
+<path stroke='none' stroke-width='0' d='m22.1016,13.2a0.375,0.375 0 0 1 0.375,0.375l0,0.75a0.375,0.375 0 0 1 -0.375,0.375l-0,0a0.375,0.375 0 0 1 -0.375,-0.375l0,-0.75a0.375,0.375 0 0 1 0.375,-0.375l0,0zM21.8516,13.95a0.25,0.25 0 1 0 0.5,0 0.25,0.25 0 1 0 -0.5,0z
+' fill='#F7BD13' />
+<circle id='connector10pad' connectorname='11' cx='20.9016' cy='13.95' r='0.3125' stroke='#F7BD13' stroke-width='0.125' fill='none' />
+<path stroke='none' stroke-width='0' d='m20.9016,13.2a0.375,0.375 0 0 1 0.375,0.375l0,0.75a0.375,0.375 0 0 1 -0.375,0.375l-0,0a0.375,0.375 0 0 1 -0.375,-0.375l0,-0.75a0.375,0.375 0 0 1 0.375,-0.375l0,0zM20.6516,13.95a0.25,0.25 0 1 0 0.5,0 0.25,0.25 0 1 0 -0.5,0z
+' fill='#F7BD13' />
+<circle id='connector9pad' connectorname='10' cx='19.7016' cy='13.95' r='0.3125' stroke='#F7BD13' stroke-width='0.125' fill='none' />
+<path stroke='none' stroke-width='0' d='m19.7016,13.2a0.375,0.375 0 0 1 0.375,0.375l0,0.75a0.375,0.375 0 0 1 -0.375,0.375l-0,0a0.375,0.375 0 0 1 -0.375,-0.375l0,-0.75a0.375,0.375 0 0 1 0.375,-0.375l0,0zM19.4516,13.95a0.25,0.25 0 1 0 0.5,0 0.25,0.25 0 1 0 -0.5,0z
+' fill='#F7BD13' />
+<circle id='connector8pad' connectorname='9' cx='18.5016' cy='13.95' r='0.3125' stroke='#F7BD13' stroke-width='0.125' fill='none' />
+<path stroke='none' stroke-width='0' d='m18.5016,13.2a0.375,0.375 0 0 1 0.375,0.375l0,0.75a0.375,0.375 0 0 1 -0.375,0.375l-0,0a0.375,0.375 0 0 1 -0.375,-0.375l0,-0.75a0.375,0.375 0 0 1 0.375,-0.375l0,0zM18.2516,13.95a0.25,0.25 0 1 0 0.5,0 0.25,0.25 0 1 0 -0.5,0z
+' fill='#F7BD13' />
+<circle id='connector7pad' connectorname='8' cx='17.3016' cy='13.95' r='0.3125' stroke='#F7BD13' stroke-width='0.125' fill='none' />
+<path stroke='none' stroke-width='0' d='m17.3016,13.2a0.375,0.375 0 0 1 0.375,0.375l0,0.75a0.375,0.375 0 0 1 -0.375,0.375l-0,0a0.375,0.375 0 0 1 -0.375,-0.375l0,-0.75a0.375,0.375 0 0 1 0.375,-0.375l0,0zM17.0516,13.95a0.25,0.25 0 1 0 0.5,0 0.25,0.25 0 1 0 -0.5,0z
+' fill='#F7BD13' />
+<circle id='connector6pad' connectorname='7' cx='16.1016' cy='13.95' r='0.3125' stroke='#F7BD13' stroke-width='0.125' fill='none' />
+<path stroke='none' stroke-width='0' d='m16.1016,13.2a0.375,0.375 0 0 1 0.375,0.375l0,0.75a0.375,0.375 0 0 1 -0.375,0.375l-0,0a0.375,0.375 0 0 1 -0.375,-0.375l0,-0.75a0.375,0.375 0 0 1 0.375,-0.375l0,0zM15.8516,13.95a0.25,0.25 0 1 0 0.5,0 0.25,0.25 0 1 0 -0.5,0z
+' fill='#F7BD13' />
+<circle id='connector5pad' connectorname='6' cx='14.9016' cy='13.95' r='0.3125' stroke='#F7BD13' stroke-width='0.125' fill='none' />
+<path stroke='none' stroke-width='0' d='m14.9016,13.2a0.375,0.375 0 0 1 0.375,0.375l0,0.75a0.375,0.375 0 0 1 -0.375,0.375l-0,0a0.375,0.375 0 0 1 -0.375,-0.375l0,-0.75a0.375,0.375 0 0 1 0.375,-0.375l0,0zM14.6516,13.95a0.25,0.25 0 1 0 0.5,0 0.25,0.25 0 1 0 -0.5,0z
+' fill='#F7BD13' />
+<circle id='connector4pad' connectorname='5' cx='13.7016' cy='13.95' r='0.3125' stroke='#F7BD13' stroke-width='0.125' fill='none' />
+<path stroke='none' stroke-width='0' d='m13.7016,13.2a0.375,0.375 0 0 1 0.375,0.375l0,0.75a0.375,0.375 0 0 1 -0.375,0.375l-0,0a0.375,0.375 0 0 1 -0.375,-0.375l0,-0.75a0.375,0.375 0 0 1 0.375,-0.375l0,0zM13.4516,13.95a0.25,0.25 0 1 0 0.5,0 0.25,0.25 0 1 0 -0.5,0z
+' fill='#F7BD13' />
+<circle id='connector3pad' connectorname='4' cx='12.5016' cy='13.95' r='0.3125' stroke='#F7BD13' stroke-width='0.125' fill='none' />
+<path stroke='none' stroke-width='0' d='m12.5016,13.2a0.375,0.375 0 0 1 0.375,0.375l0,0.75a0.375,0.375 0 0 1 -0.375,0.375l-0,0a0.375,0.375 0 0 1 -0.375,-0.375l0,-0.75a0.375,0.375 0 0 1 0.375,-0.375l0,0zM12.2516,13.95a0.25,0.25 0 1 0 0.5,0 0.25,0.25 0 1 0 -0.5,0z
+' fill='#F7BD13' />
+<circle id='connector2pad' connectorname='3' cx='11.3016' cy='13.95' r='0.3125' stroke='#F7BD13' stroke-width='0.125' fill='none' />
+<path stroke='none' stroke-width='0' d='m11.3016,13.2a0.375,0.375 0 0 1 0.375,0.375l0,0.75a0.375,0.375 0 0 1 -0.375,0.375l-0,0a0.375,0.375 0 0 1 -0.375,-0.375l0,-0.75a0.375,0.375 0 0 1 0.375,-0.375l0,0zM11.0516,13.95a0.25,0.25 0 1 0 0.5,0 0.25,0.25 0 1 0 -0.5,0z
+' fill='#F7BD13' />
+<circle id='connector1pad' connectorname='2' cx='10.1016' cy='13.95' r='0.3125' stroke='#F7BD13' stroke-width='0.125' fill='none' />
+<path stroke='none' stroke-width='0' d='m10.1016,13.2a0.375,0.375 0 0 1 0.375,0.375l0,0.75a0.375,0.375 0 0 1 -0.375,0.375l-0,0a0.375,0.375 0 0 1 -0.375,-0.375l0,-0.75a0.375,0.375 0 0 1 0.375,-0.375l0,0zM9.8516,13.95a0.25,0.25 0 1 0 0.5,0 0.25,0.25 0 1 0 -0.5,0z
+' fill='#F7BD13' />
+<circle id='connector0pad' connectorname='1' cx='8.9016' cy='13.95' r='0.3125' stroke='#F7BD13' stroke-width='0.125' fill='none' />
+<path stroke='none' stroke-width='0' d='m8.9016,13.2a0.375,0.375 0 0 1 0.375,0.375l0,0.75a0.375,0.375 0 0 1 -0.375,0.375l-0,0a0.375,0.375 0 0 1 -0.375,-0.375l0,-0.75a0.375,0.375 0 0 1 0.375,-0.375l0,0zM8.6516,13.95a0.25,0.25 0 1 0 0.5,0 0.25,0.25 0 1 0 -0.5,0z
+' fill='#F7BD13' />
+<circle id='connector25pad' connectorname='29' cx='24.9016' cy='10.45' r='0.3125' stroke='#F7BD13' stroke-width='0.125' fill='none' />
+<path stroke='none' stroke-width='0' d='m25.2766,10.075a0.375,0.375 0 0 1 0.375,0.375l0,0a0.375,0.375 0 0 1 -0.375,0.375l-0.75,0a0.375,0.375 0 0 1 -0.375,-0.375l0,-0a0.375,0.375 0 0 1 0.375,-0.375l0.75,0zM24.6516,10.45a0.25,0.25 0 1 0 0.5,0 0.25,0.25 0 1 0 -0.5,0z
+' fill='#F7BD13' />
+<circle id='connector24pad' connectorname='28' cx='24.9016' cy='4.25' r='0.3125' stroke='#F7BD13' stroke-width='0.125' fill='none' />
+<path stroke='none' stroke-width='0' d='m25.2766,3.875a0.375,0.375 0 0 1 0.375,0.375l0,0a0.375,0.375 0 0 1 -0.375,0.375l-0.75,0a0.375,0.375 0 0 1 -0.375,-0.375l0,-0a0.375,0.375 0 0 1 0.375,-0.375l0.75,0zM24.6516,4.25a0.25,0.25 0 1 0 0.5,0 0.25,0.25 0 1 0 -0.5,0z
+' fill='#F7BD13' />
+<rect id='connector28pad' connectorname='27' x='5.3516' y='5.35' width='1.8' height='0.8' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector26pad' connectorname='25' x='5.3516' y='2.15' width='1.8' height='0.8' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector27pad' connectorname='26' x='5.3516' y='3.75' width='1.8' height='0.8' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<g id='copper0'>
+<circle id='connector14pad' connectorname='15' cx='19.7016' cy='0.75' r='0.3125' stroke='#F7BD13' stroke-width='0.125' fill='none' />
+<path stroke='none' stroke-width='0' d='m19.7016,0a0.375,0.375 0 0 1 0.375,0.375l0,0.75a0.375,0.375 0 0 1 -0.375,0.375l-0,0a0.375,0.375 0 0 1 -0.375,-0.375l0,-0.75a0.375,0.375 0 0 1 0.375,-0.375l0,0zM19.4516,0.75a0.25,0.25 0 1 0 0.5,0 0.25,0.25 0 1 0 -0.5,0z
+' fill='#F7BD13' />
+<circle id='connector13pad' connectorname='14' cx='20.9016' cy='0.75' r='0.3125' stroke='#F7BD13' stroke-width='0.125' fill='none' />
+<path stroke='none' stroke-width='0' d='m20.9016,0a0.375,0.375 0 0 1 0.375,0.375l0,0.75a0.375,0.375 0 0 1 -0.375,0.375l-0,0a0.375,0.375 0 0 1 -0.375,-0.375l0,-0.75a0.375,0.375 0 0 1 0.375,-0.375l0,0zM20.6516,0.75a0.25,0.25 0 1 0 0.5,0 0.25,0.25 0 1 0 -0.5,0z
+' fill='#F7BD13' />
+<circle id='connector12pad' connectorname='13' cx='22.1016' cy='0.75' r='0.3125' stroke='#F7BD13' stroke-width='0.125' fill='none' />
+<path stroke='none' stroke-width='0' d='m22.1016,0a0.375,0.375 0 0 1 0.375,0.375l0,0.75a0.375,0.375 0 0 1 -0.375,0.375l-0,0a0.375,0.375 0 0 1 -0.375,-0.375l0,-0.75a0.375,0.375 0 0 1 0.375,-0.375l0,0zM21.8516,0.75a0.25,0.25 0 1 0 0.5,0 0.25,0.25 0 1 0 -0.5,0z
+' fill='#F7BD13' />
+<circle id='connector15pad' connectorname='16' cx='18.5016' cy='0.75' r='0.3125' stroke='#F7BD13' stroke-width='0.125' fill='none' />
+<path stroke='none' stroke-width='0' d='m18.5016,0a0.375,0.375 0 0 1 0.375,0.375l0,0.75a0.375,0.375 0 0 1 -0.375,0.375l-0,0a0.375,0.375 0 0 1 -0.375,-0.375l0,-0.75a0.375,0.375 0 0 1 0.375,-0.375l0,0zM18.2516,0.75a0.25,0.25 0 1 0 0.5,0 0.25,0.25 0 1 0 -0.5,0z
+' fill='#F7BD13' />
+<circle id='connector16pad' connectorname='17' cx='17.3016' cy='0.75' r='0.3125' stroke='#F7BD13' stroke-width='0.125' fill='none' />
+<path stroke='none' stroke-width='0' d='m17.3016,0a0.375,0.375 0 0 1 0.375,0.375l0,0.75a0.375,0.375 0 0 1 -0.375,0.375l-0,0a0.375,0.375 0 0 1 -0.375,-0.375l0,-0.75a0.375,0.375 0 0 1 0.375,-0.375l0,0zM17.0516,0.75a0.25,0.25 0 1 0 0.5,0 0.25,0.25 0 1 0 -0.5,0z
+' fill='#F7BD13' />
+<circle id='connector17pad' connectorname='18' cx='16.1016' cy='0.75' r='0.3125' stroke='#F7BD13' stroke-width='0.125' fill='none' />
+<path stroke='none' stroke-width='0' d='m16.1016,0a0.375,0.375 0 0 1 0.375,0.375l0,0.75a0.375,0.375 0 0 1 -0.375,0.375l-0,0a0.375,0.375 0 0 1 -0.375,-0.375l0,-0.75a0.375,0.375 0 0 1 0.375,-0.375l0,0zM15.8516,0.75a0.25,0.25 0 1 0 0.5,0 0.25,0.25 0 1 0 -0.5,0z
+' fill='#F7BD13' />
+<circle id='connector18pad' connectorname='19' cx='14.9016' cy='0.75' r='0.3125' stroke='#F7BD13' stroke-width='0.125' fill='none' />
+<path stroke='none' stroke-width='0' d='m14.9016,0a0.375,0.375 0 0 1 0.375,0.375l0,0.75a0.375,0.375 0 0 1 -0.375,0.375l-0,0a0.375,0.375 0 0 1 -0.375,-0.375l0,-0.75a0.375,0.375 0 0 1 0.375,-0.375l0,0zM14.6516,0.75a0.25,0.25 0 1 0 0.5,0 0.25,0.25 0 1 0 -0.5,0z
+' fill='#F7BD13' />
+<circle id='connector19pad' connectorname='20' cx='13.7016' cy='0.75' r='0.3125' stroke='#F7BD13' stroke-width='0.125' fill='none' />
+<path stroke='none' stroke-width='0' d='m13.7016,0a0.375,0.375 0 0 1 0.375,0.375l0,0.75a0.375,0.375 0 0 1 -0.375,0.375l-0,0a0.375,0.375 0 0 1 -0.375,-0.375l0,-0.75a0.375,0.375 0 0 1 0.375,-0.375l0,0zM13.4516,0.75a0.25,0.25 0 1 0 0.5,0 0.25,0.25 0 1 0 -0.5,0z
+' fill='#F7BD13' />
+<circle id='connector20pad' connectorname='21' cx='12.5016' cy='0.75' r='0.3125' stroke='#F7BD13' stroke-width='0.125' fill='none' />
+<path stroke='none' stroke-width='0' d='m12.5016,0a0.375,0.375 0 0 1 0.375,0.375l0,0.75a0.375,0.375 0 0 1 -0.375,0.375l-0,0a0.375,0.375 0 0 1 -0.375,-0.375l0,-0.75a0.375,0.375 0 0 1 0.375,-0.375l0,0zM12.2516,0.75a0.25,0.25 0 1 0 0.5,0 0.25,0.25 0 1 0 -0.5,0z
+' fill='#F7BD13' />
+<circle id='connector21pad' connectorname='22' cx='11.3016' cy='0.75' r='0.3125' stroke='#F7BD13' stroke-width='0.125' fill='none' />
+<path stroke='none' stroke-width='0' d='m11.3016,0a0.375,0.375 0 0 1 0.375,0.375l0,0.75a0.375,0.375 0 0 1 -0.375,0.375l-0,0a0.375,0.375 0 0 1 -0.375,-0.375l0,-0.75a0.375,0.375 0 0 1 0.375,-0.375l0,0zM11.0516,0.75a0.25,0.25 0 1 0 0.5,0 0.25,0.25 0 1 0 -0.5,0z
+' fill='#F7BD13' />
+<circle id='connector22pad' connectorname='23' cx='10.1016' cy='0.75' r='0.3125' stroke='#F7BD13' stroke-width='0.125' fill='none' />
+<path stroke='none' stroke-width='0' d='m10.1016,0a0.375,0.375 0 0 1 0.375,0.375l0,0.75a0.375,0.375 0 0 1 -0.375,0.375l-0,0a0.375,0.375 0 0 1 -0.375,-0.375l0,-0.75a0.375,0.375 0 0 1 0.375,-0.375l0,0zM9.8516,0.75a0.25,0.25 0 1 0 0.5,0 0.25,0.25 0 1 0 -0.5,0z
+' fill='#F7BD13' />
+<circle id='connector23pad' connectorname='24' cx='8.9016' cy='0.75' r='0.3125' stroke='#F7BD13' stroke-width='0.125' fill='none' />
+<path stroke='none' stroke-width='0' d='m8.9016,0a0.375,0.375 0 0 1 0.375,0.375l0,0.75a0.375,0.375 0 0 1 -0.375,0.375l-0,0a0.375,0.375 0 0 1 -0.375,-0.375l0,-0.75a0.375,0.375 0 0 1 0.375,-0.375l0,0zM8.6516,0.75a0.25,0.25 0 1 0 0.5,0 0.25,0.25 0 1 0 -0.5,0z
+' fill='#F7BD13' />
+<circle id='connector11pad' connectorname='12' cx='22.1016' cy='13.95' r='0.3125' stroke='#F7BD13' stroke-width='0.125' fill='none' />
+<path stroke='none' stroke-width='0' d='m22.1016,13.2a0.375,0.375 0 0 1 0.375,0.375l0,0.75a0.375,0.375 0 0 1 -0.375,0.375l-0,0a0.375,0.375 0 0 1 -0.375,-0.375l0,-0.75a0.375,0.375 0 0 1 0.375,-0.375l0,0zM21.8516,13.95a0.25,0.25 0 1 0 0.5,0 0.25,0.25 0 1 0 -0.5,0z
+' fill='#F7BD13' />
+<circle id='connector10pad' connectorname='11' cx='20.9016' cy='13.95' r='0.3125' stroke='#F7BD13' stroke-width='0.125' fill='none' />
+<path stroke='none' stroke-width='0' d='m20.9016,13.2a0.375,0.375 0 0 1 0.375,0.375l0,0.75a0.375,0.375 0 0 1 -0.375,0.375l-0,0a0.375,0.375 0 0 1 -0.375,-0.375l0,-0.75a0.375,0.375 0 0 1 0.375,-0.375l0,0zM20.6516,13.95a0.25,0.25 0 1 0 0.5,0 0.25,0.25 0 1 0 -0.5,0z
+' fill='#F7BD13' />
+<circle id='connector9pad' connectorname='10' cx='19.7016' cy='13.95' r='0.3125' stroke='#F7BD13' stroke-width='0.125' fill='none' />
+<path stroke='none' stroke-width='0' d='m19.7016,13.2a0.375,0.375 0 0 1 0.375,0.375l0,0.75a0.375,0.375 0 0 1 -0.375,0.375l-0,0a0.375,0.375 0 0 1 -0.375,-0.375l0,-0.75a0.375,0.375 0 0 1 0.375,-0.375l0,0zM19.4516,13.95a0.25,0.25 0 1 0 0.5,0 0.25,0.25 0 1 0 -0.5,0z
+' fill='#F7BD13' />
+<circle id='connector8pad' connectorname='9' cx='18.5016' cy='13.95' r='0.3125' stroke='#F7BD13' stroke-width='0.125' fill='none' />
+<path stroke='none' stroke-width='0' d='m18.5016,13.2a0.375,0.375 0 0 1 0.375,0.375l0,0.75a0.375,0.375 0 0 1 -0.375,0.375l-0,0a0.375,0.375 0 0 1 -0.375,-0.375l0,-0.75a0.375,0.375 0 0 1 0.375,-0.375l0,0zM18.2516,13.95a0.25,0.25 0 1 0 0.5,0 0.25,0.25 0 1 0 -0.5,0z
+' fill='#F7BD13' />
+<circle id='connector7pad' connectorname='8' cx='17.3016' cy='13.95' r='0.3125' stroke='#F7BD13' stroke-width='0.125' fill='none' />
+<path stroke='none' stroke-width='0' d='m17.3016,13.2a0.375,0.375 0 0 1 0.375,0.375l0,0.75a0.375,0.375 0 0 1 -0.375,0.375l-0,0a0.375,0.375 0 0 1 -0.375,-0.375l0,-0.75a0.375,0.375 0 0 1 0.375,-0.375l0,0zM17.0516,13.95a0.25,0.25 0 1 0 0.5,0 0.25,0.25 0 1 0 -0.5,0z
+' fill='#F7BD13' />
+<circle id='connector6pad' connectorname='7' cx='16.1016' cy='13.95' r='0.3125' stroke='#F7BD13' stroke-width='0.125' fill='none' />
+<path stroke='none' stroke-width='0' d='m16.1016,13.2a0.375,0.375 0 0 1 0.375,0.375l0,0.75a0.375,0.375 0 0 1 -0.375,0.375l-0,0a0.375,0.375 0 0 1 -0.375,-0.375l0,-0.75a0.375,0.375 0 0 1 0.375,-0.375l0,0zM15.8516,13.95a0.25,0.25 0 1 0 0.5,0 0.25,0.25 0 1 0 -0.5,0z
+' fill='#F7BD13' />
+<circle id='connector5pad' connectorname='6' cx='14.9016' cy='13.95' r='0.3125' stroke='#F7BD13' stroke-width='0.125' fill='none' />
+<path stroke='none' stroke-width='0' d='m14.9016,13.2a0.375,0.375 0 0 1 0.375,0.375l0,0.75a0.375,0.375 0 0 1 -0.375,0.375l-0,0a0.375,0.375 0 0 1 -0.375,-0.375l0,-0.75a0.375,0.375 0 0 1 0.375,-0.375l0,0zM14.6516,13.95a0.25,0.25 0 1 0 0.5,0 0.25,0.25 0 1 0 -0.5,0z
+' fill='#F7BD13' />
+<circle id='connector4pad' connectorname='5' cx='13.7016' cy='13.95' r='0.3125' stroke='#F7BD13' stroke-width='0.125' fill='none' />
+<path stroke='none' stroke-width='0' d='m13.7016,13.2a0.375,0.375 0 0 1 0.375,0.375l0,0.75a0.375,0.375 0 0 1 -0.375,0.375l-0,0a0.375,0.375 0 0 1 -0.375,-0.375l0,-0.75a0.375,0.375 0 0 1 0.375,-0.375l0,0zM13.4516,13.95a0.25,0.25 0 1 0 0.5,0 0.25,0.25 0 1 0 -0.5,0z
+' fill='#F7BD13' />
+<circle id='connector3pad' connectorname='4' cx='12.5016' cy='13.95' r='0.3125' stroke='#F7BD13' stroke-width='0.125' fill='none' />
+<path stroke='none' stroke-width='0' d='m12.5016,13.2a0.375,0.375 0 0 1 0.375,0.375l0,0.75a0.375,0.375 0 0 1 -0.375,0.375l-0,0a0.375,0.375 0 0 1 -0.375,-0.375l0,-0.75a0.375,0.375 0 0 1 0.375,-0.375l0,0zM12.2516,13.95a0.25,0.25 0 1 0 0.5,0 0.25,0.25 0 1 0 -0.5,0z
+' fill='#F7BD13' />
+<circle id='connector2pad' connectorname='3' cx='11.3016' cy='13.95' r='0.3125' stroke='#F7BD13' stroke-width='0.125' fill='none' />
+<path stroke='none' stroke-width='0' d='m11.3016,13.2a0.375,0.375 0 0 1 0.375,0.375l0,0.75a0.375,0.375 0 0 1 -0.375,0.375l-0,0a0.375,0.375 0 0 1 -0.375,-0.375l0,-0.75a0.375,0.375 0 0 1 0.375,-0.375l0,0zM11.0516,13.95a0.25,0.25 0 1 0 0.5,0 0.25,0.25 0 1 0 -0.5,0z
+' fill='#F7BD13' />
+<circle id='connector1pad' connectorname='2' cx='10.1016' cy='13.95' r='0.3125' stroke='#F7BD13' stroke-width='0.125' fill='none' />
+<path stroke='none' stroke-width='0' d='m10.1016,13.2a0.375,0.375 0 0 1 0.375,0.375l0,0.75a0.375,0.375 0 0 1 -0.375,0.375l-0,0a0.375,0.375 0 0 1 -0.375,-0.375l0,-0.75a0.375,0.375 0 0 1 0.375,-0.375l0,0zM9.8516,13.95a0.25,0.25 0 1 0 0.5,0 0.25,0.25 0 1 0 -0.5,0z
+' fill='#F7BD13' />
+<circle id='connector0pad' connectorname='1' cx='8.9016' cy='13.95' r='0.3125' stroke='#F7BD13' stroke-width='0.125' fill='none' />
+<path stroke='none' stroke-width='0' d='m8.9016,13.2a0.375,0.375 0 0 1 0.375,0.375l0,0.75a0.375,0.375 0 0 1 -0.375,0.375l-0,0a0.375,0.375 0 0 1 -0.375,-0.375l0,-0.75a0.375,0.375 0 0 1 0.375,-0.375l0,0zM8.6516,13.95a0.25,0.25 0 1 0 0.5,0 0.25,0.25 0 1 0 -0.5,0z
+' fill='#F7BD13' />
+<circle id='connector25pad' connectorname='29' cx='24.9016' cy='10.45' r='0.3125' stroke='#F7BD13' stroke-width='0.125' fill='none' />
+<path stroke='none' stroke-width='0' d='m25.2766,10.075a0.375,0.375 0 0 1 0.375,0.375l0,0a0.375,0.375 0 0 1 -0.375,0.375l-0.75,0a0.375,0.375 0 0 1 -0.375,-0.375l0,-0a0.375,0.375 0 0 1 0.375,-0.375l0.75,0zM24.6516,10.45a0.25,0.25 0 1 0 0.5,0 0.25,0.25 0 1 0 -0.5,0z
+' fill='#F7BD13' />
+<circle id='connector24pad' connectorname='28' cx='24.9016' cy='4.25' r='0.3125' stroke='#F7BD13' stroke-width='0.125' fill='none' />
+<path stroke='none' stroke-width='0' d='m25.2766,3.875a0.375,0.375 0 0 1 0.375,0.375l0,0a0.375,0.375 0 0 1 -0.375,0.375l-0.75,0a0.375,0.375 0 0 1 -0.375,-0.375l0,-0a0.375,0.375 0 0 1 0.375,-0.375l0.75,0zM24.6516,4.25a0.25,0.25 0 1 0 0.5,0 0.25,0.25 0 1 0 -0.5,0z
+' fill='#F7BD13' />
+</g>
+</g>
+<g id='silkscreen'>
+<line class='other' x1='24.9016' y1='0.75' x2='23.9016' y2='0.75' stroke='#f0f0f0' stroke-width='0.2032' stroke-linecap='round'/>
+<line class='other' x1='24.9016' y1='0.75' x2='24.9016' y2='1.75' stroke='#f0f0f0' stroke-width='0.2032' stroke-linecap='round'/>
+<line class='other' x1='24.9016' y1='13.95' x2='24.9016' y2='12.95' stroke='#f0f0f0' stroke-width='0.2032' stroke-linecap='round'/>
+<line class='other' x1='24.9016' y1='13.95' x2='23.9016' y2='13.95' stroke='#f0f0f0' stroke-width='0.2032' stroke-linecap='round'/>
+<line class='other' x1='7.1016' y1='13.95' x2='5.1016' y2='13.95' stroke='#f0f0f0' stroke-width='0.2032' stroke-linecap='round'/>
+<line class='other' x1='0.1016' y1='13.95' x2='0.1016' y2='12.95' stroke='#f0f0f0' stroke-width='0.2032' stroke-linecap='round'/>
+<line class='other' x1='0.1016' y1='13.95' x2='1.1016' y2='13.95' stroke='#f0f0f0' stroke-width='0.2032' stroke-linecap='round'/>
+<line class='other' x1='0.1016' y1='0.75' x2='0.1016' y2='1.75' stroke='#f0f0f0' stroke-width='0.2032' stroke-linecap='round'/>
+<line class='other' x1='0.1016' y1='0.75' x2='1.1016' y2='0.75' stroke='#f0f0f0' stroke-width='0.2032' stroke-linecap='round'/>
+<line class='other' x1='5.1016' y1='0.75' x2='7.1016' y2='0.75' stroke='#f0f0f0' stroke-width='0.2032' stroke-linecap='round'/>
+</g>
+</svg>

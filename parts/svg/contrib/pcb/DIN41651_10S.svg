@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?> <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" x="0in" y="0in" width="0.34in" height="1.28in" viewBox="0 0 34000 128000" ><title>DIN41651_10S.fp</title><desc>Geda footprint file 'DIN41651_10S.fp' converted by Fritzing</desc><metadata xmlns:fz='http://fritzing.org/gedametadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'><rdf:RDF><rdf:Description rdf:about=''><fz:attr name='geda filename'>DIN41651_10S.fp</fz:attr>
+<fz:attr name='fritzing version'>0.4.0b.06.21.4282</fz:attr>
+<fz:attr name='conversion date'>27/06/2010 07:15:13</fz:attr>
+<fz:comment>aeusserer Rahmen</fz:comment>
+<fz:comment>innerer Rahmen mit Codieraussparung</fz:comment>
+<fz:comment>Markierung Pin 1</fz:comment>
+<fz:comment>Auswurfhebel oben</fz:comment>
+<fz:comment>Auswurfhebel unten</fz:comment>
+<fz:comment>Plazierungsmarkierung == Pin 1</fz:comment>
+<fz:attr name='dist-license'>GPL</fz:attr>
+<fz:attr name='use-license'>unlimited</fz:attr>
+<fz:attr name='author'>gEDA project</fz:attr>
+<fz:attr name='license-url'>http://www.gnu.org/licenses/gpl.html</fz:attr>
+</rdf:Description></rdf:RDF></metadata><g id="copper0">
+ <g id="copper1">
+  <circle fill="none" cx="12000" cy="44000" connectorname="1" stroke="#ff9400" r="2500" id="connector0pin" stroke-width="1000"/>
+  <circle fill="none" cx="22000" cy="44000" connectorname="2" stroke="#ff9400" r="2500" id="connector1pin" stroke-width="1000"/>
+  <circle fill="none" cx="12000" cy="54000" connectorname="3" stroke="#ff9400" r="2500" id="connector2pin" stroke-width="1000"/>
+  <circle fill="none" cx="22000" cy="54000" connectorname="4" stroke="#ff9400" r="2500" id="connector3pin" stroke-width="1000"/>
+  <circle fill="none" cx="12000" cy="64000" connectorname="5" stroke="#ff9400" r="2500" id="connector4pin" stroke-width="1000"/>
+  <circle fill="none" cx="22000" cy="64000" connectorname="6" stroke="#ff9400" r="2500" id="connector5pin" stroke-width="1000"/>
+  <circle fill="none" cx="12000" cy="74000" connectorname="7" stroke="#ff9400" r="2500" id="connector6pin" stroke-width="1000"/>
+  <circle fill="none" cx="22000" cy="74000" connectorname="8" stroke="#ff9400" r="2500" id="connector7pin" stroke-width="1000"/>
+  <circle fill="none" cx="12000" cy="84000" connectorname="9" stroke="#ff9400" r="2500" id="connector8pin" stroke-width="1000"/>
+  <circle fill="none" cx="22000" cy="84000" connectorname="10" stroke="#ff9400" r="2500" id="connector9pin" stroke-width="1000"/>
+ </g>
+</g>
+<g id="silkscreen">
+ <line fill="none" stroke="white" y1="1000" x1="1000" y2="1000" stroke-width="2000" x2="33000"/>
+ <line fill="none" stroke="white" y1="1000" x1="33000" y2="127000" stroke-width="2000" x2="33000"/>
+ <line fill="none" stroke="white" y1="127000" x1="33000" y2="127000" stroke-width="2000" x2="1000"/>
+ <line fill="none" stroke="white" y1="127000" x1="1000" y2="1000" stroke-width="2000" x2="1000"/>
+ <line fill="none" stroke="white" y1="29000" x1="3000" y2="29000" stroke-width="500" x2="31000"/>
+ <line fill="none" stroke="white" y1="29000" x1="31000" y2="99000" stroke-width="500" x2="31000"/>
+ <line fill="none" stroke="white" y1="99000" x1="31000" y2="99000" stroke-width="500" x2="3000"/>
+ <line fill="none" stroke="white" y1="99000" x1="3000" y2="71500" stroke-width="500" x2="3000"/>
+ <line fill="none" stroke="white" y1="71500" x1="3000" y2="71500" stroke-width="500" x2="1000"/>
+ <line fill="none" stroke="white" y1="56500" x1="1000" y2="56500" stroke-width="500" x2="3000"/>
+ <line fill="none" stroke="white" y1="56500" x1="3000" y2="29000" stroke-width="500" x2="3000"/>
+ <line fill="none" stroke="white" y1="33000" x1="3000" y2="29000" stroke-width="500" x2="7000"/>
+ <line fill="none" stroke="white" y1="1000" x1="12000" y2="29000" stroke-width="500" x2="12000"/>
+ <line fill="none" stroke="white" y1="1000" x1="22000" y2="29000" stroke-width="500" x2="22000"/>
+ <line fill="none" stroke="white" y1="99000" x1="12000" y2="127000" stroke-width="500" x2="12000"/>
+ <line fill="none" stroke="white" y1="99000" x1="22000" y2="127000" stroke-width="500" x2="22000"/>
+</g>
+</svg>

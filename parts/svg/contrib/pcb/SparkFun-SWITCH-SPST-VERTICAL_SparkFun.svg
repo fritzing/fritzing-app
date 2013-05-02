@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" x="0in" y="0in" width="0.492in" height="0.7282in" viewBox="0 0 4920 7282" >
+<title>SparkFun.mod</title>
+<desc>Kicad module 'SparkFun-SWITCH-SPST-VERTICAL' from file 'SparkFun.mod' converted by Fritzing</desc>
+<metadata xmlns:fz='http://fritzing.org/kicadmetadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+<rdf:RDF><rdf:Description rdf:about=''>
+<fz:attr name='kicad filename'>SparkFun.mod</fz:attr>
+<fz:attr name='kicad module'>SparkFun-SWITCH-SPST-VERTICAL</fz:attr>
+<fz:attr name='fritzing version'>0.4.1b.07.04.4318</fz:attr>
+<fz:attr name='conversion date'>17/07/2010 17:18:06</fz:attr>
+<fz:attr name='dist-license'>GPL</fz:attr>
+<fz:attr name='use-license'>unlimited</fz:attr>
+<fz:attr name='author'>KICAD project</fz:attr>
+<fz:attr name='license-url'>http://www.gnu.org/licenses/gpl.html</fz:attr>
+<fz:comment></fz:comment>
+<fz:attr name='keyword'></fz:attr>
+</rdf:Description></rdf:RDF></metadata><g id="copper0">
+ <g id="copper1">
+  <g connectorname="1" id="connector0pin">
+   <circle fill="none" cx="2460" cy="886" stroke="#ff9400" r="362.75" stroke-width="174.5"/>
+   <circle fill="black" cx="2460" cy="886" drill="0" r="275.5" stroke-width="0"/>
+  </g>
+  <g connectorname="2" id="connector1pin">
+   <circle fill="none" cx="2460" cy="3641" stroke="#ff9400" r="362.75" stroke-width="174.5"/>
+   <circle fill="black" cx="2460" cy="3641" drill="0" r="275.5" stroke-width="0"/>
+  </g>
+ </g>
+</g>
+<g id="silkscreen">
+ <line fill="none" stroke="white" y1="0" x1="0" y2="0" stroke-width="80" x2="4920"/>
+ <line fill="none" stroke="white" y1="0" x1="4920" y2="7282" stroke-width="80" x2="4920"/>
+ <line fill="none" stroke="white" y1="7282" x1="4920" y2="7282" stroke-width="80" x2="0"/>
+ <line fill="none" stroke="white" y1="7282" x1="0" y2="0" stroke-width="80" x2="0"/>
+</g>
+</svg>

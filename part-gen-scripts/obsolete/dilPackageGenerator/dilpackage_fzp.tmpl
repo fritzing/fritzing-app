@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- This xml file is generated through a template. Please don't edit it directly -->
+<module fritzingVersion="0.1.beta.1407" moduleId="$metaData.moduleID" >
+    <version>1.0</version>
+    <title>$title</title>
+    <label>$label</label>
+    <author>$metaData.author</author>
+    <date>$metaData.date</date>
+	<tags>
+		<tag>IC</tag>
+		<tag>DIL package</tag>
+	</tags>
+	<properties>
+		<property name="family" >IC</property>
+	</properties>
+    <taxonomy>$taxonomy</taxonomy>
+	<description>$description</description>
+	<views>
+		<iconView>
+			<layers image="icon/$iconFile" >
+				<layer layerId="icon" />
+			</layers>
+		</iconView>
+		<breadboardView>
+			<layers image="breadboard/$breadboardFile" >
+				<layer layerId="breadboard" />
+			</layers>
+		</breadboardView>
+		<schematicView>
+			<layers image="schematic/$schematicFile" >
+				<layer layerId="schematic" />
+			</layers>
+		</schematicView>
+#if $footprint
+		<pcbView>
+			<layers image="$footprint" >
+				<layer layerId="copper0" />
+				<layer layerId="keepout" />
+				<layer layerId="soldermask" />
+				<layer layerId="silkscreen" />
+				<layer layerId="outline" />
+			</layers>
+		</pcbView>
+#end if
+	</views>
+	<connectors>
+#for $pin in $pinList
+		<connector type="male" id="connector$pin.id" name="$pin.name" >
+			<description>$pin.description</description>
+			<views>
+				<breadboardView>
+					<p svgId="$pin.connectorPinName" layer="breadboard" terminalId="$pin.connectorTerminalName" />
+				</breadboardView>
+				<schematicView>
+					<p svgId="$pin.connectorPinName" layer="schematic" terminalId="$pin.connectorTerminalName" />
+				</schematicView>
+				<pcbView>
+					<p svgId="$pin.connectorPadName" layer="copper0" />
+				</pcbView>
+			</views>
+		</connector>
+#end for
+	</connectors>
+</module>

@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?><module fritzingVersion="0.4.2b.07.24.4368" moduleId="EDGY_motor_control">
+    <version>1</version>
+    <author>Stefan Hermann</author>
+    <title>EDGY</title>
+    <label>EDGY motor control</label>
+    <date>2010-09-16</date>
+    <tags>
+        <tag>Fritzing</tag>
+        <tag>EDGY</tag>
+    </tags>
+    <properties>
+        <property name="family">EDGY</property>
+        <property name="variant">motor control</property>
+    </properties>
+    <description>The EDGY motor control is a L293DD breakout board for the use on a breadboard.</description>
+    <views>
+        <iconView>
+            <layers image="icon/EDGY.svg">
+                <layer layerId="icon"/>
+            </layers>
+        </iconView>
+        <breadboardView>
+            <layers image="breadboard/EDGY_motor_control.svg">
+                <layer layerId="breadboard"/>
+            </layers>
+        </breadboardView>
+        <schematicView>
+            <layers image="schematic/EDGY_motor_control.svg">
+                <layer layerId="schematic"/>
+            </layers>
+        </schematicView>
+        <pcbView>
+            <layers image="pcb/EDGY_motor_control.svg">
+								<layer layerId="silkscreen"/>
+                <layer layerId="copper0"/>
+                <layer layerId="copper1"/>
+            </layers>
+        </pcbView>
+    </views>
+    <connectors>
+	
+      <connector id="connector0" name="A1" type="male">
+          <description>Motor 1 A</description>
+          <views>
+              <breadboardView>
+                  <p layer="breadboard" svgId="connector0pin"/>
+              </breadboardView>
+              <schematicView>
+                  <p layer="schematic" svgId="connector0pin" terminalId="connector0terminal"/>
+              </schematicView>
+              <pcbView>
+                  <p layer="copper1" svgId="connector0pad"/>
+                  <p layer="copper0" svgId="connector0pad"/>
+              </pcbView>
+          </views>
+      </connector>
+    
+      <connector id="connector1" name="B1" type="male">
+          <description>Motor 1 B</description>
+          <views>
+              <breadboardView>
+                  <p layer="breadboard" svgId="connector1pin"/>
+              </breadboardView>
+              <schematicView>
+                  <p layer="schematic" svgId="connector1pin" terminalId="connector1terminal"/>
+              </schematicView>
+              <pcbView>
+                  <p layer="copper1" svgId="connector1pad"/>
+                  <p layer="copper0" svgId="connector1pad"/>
+              </pcbView>
+          </views>
+      </connector>
+    
+      <connector id="connector2" name="Speed1" type="male">
+          <description>Motor 1 Speed</description>
+          <views>
+              <breadboardView>
+                  <p layer="breadboard" svgId="connector2pin"/>
+              </breadboardView>
+              <schematicView>
+                  <p layer="schematic" svgId="connector2pin" terminalId="connector2terminal"/>
+              </schematicView>
+              <pcbView>
+                  <p layer="copper1" svgId="connector2pad"/>
+                  <p layer="copper0" svgId="connector2pad"/>
+              </pcbView>
+          </views>
+      </connector>
+
+			 <connector id="connector3" name="Vin" type="male">
+	          <description>suply voltage 5V+ to 12V+</description>
+	          <views>
+	              <breadboardView>
+	                  <p layer="breadboard" svgId="connector3pin"/>
+	              </breadboardView>
+	              <schematicView>
+	                  <p layer="schematic" svgId="connector3pin" terminalId="connector3terminal"/>
+	              </schematicView>
+	              <pcbView>
+	                  <p layer="copper1" svgId="connector3pad"/>
+	                  <p layer="copper0" svgId="connector3pad"/>
+	              </pcbView>
+	          </views>
+	      </connector>
+
+			 <connector id="connector4" name="A2" type="male">
+	          <description>Motor 2 A</description>
+	          <views>
+	              <breadboardView>
+	                  <p layer="breadboard" svgId="connector4pin"/>
+	              </breadboardView>
+	              <schematicView>
+	                  <p layer="schematic" svgId="connector4pin" terminalId="connector4terminal"/>
+	              </schematicView>
+	              <pcbView>
+	                  <p layer="copper1" svgId="connector4pad"/>
+	                  <p layer="copper0" svgId="connector4pad"/>
+	              </pcbView>
+	          </views>
+	      </connector>
+
+			 <connector id="connector5" name="B2" type="male">
+	          <description>Motor 2 B</description>
+	          <views>
+	              <breadboardView>
+	                  <p layer="breadboard" svgId="connector5pin"/>
+	              </breadboardView>
+	              <schematicView>
+	                  <p layer="schematic" svgId="connector5pin" terminalId="connector5terminal"/>
+	              </schematicView>
+	              <pcbView>
+	                  <p layer="copper1" svgId="connector5pad"/>
+	                  <p layer="copper0" svgId="connector5pad"/>
+	              </pcbView>
+	          </views>
+	      </connector>
+
+			 <connector id="connector6" name="Speed2" type="male">
+	          <description>Motor 2 Speed</description>
+	          <views>
+	              <breadboardView>
+	                  <p layer="breadboard" svgId="connector6pin"/>
+	              </breadboardView>
+	              <schematicView>
+	                  <p layer="schematic" svgId="connector6pin" terminalId="connector6terminal"/>
+	              </schematicView>
+	              <pcbView>
+	                  <p layer="copper1" svgId="connector6pad"/>
+	                  <p layer="copper0" svgId="connector6pad"/>
+	              </pcbView>
+	          </views>
+	      </connector>
+
+			 <connector id="connector7" name="5V+" type="male">
+	          <description>5V+</description>
+	          <views>
+	              <breadboardView>
+	                  <p layer="breadboard" svgId="connector7pin"/>
+	              </breadboardView>
+	              <schematicView>
+	                  <p layer="schematic" svgId="connector7pin" terminalId="connector7terminal"/>
+	              </schematicView>
+	              <pcbView>
+	                  <p layer="copper1" svgId="connector7pad"/>
+	                  <p layer="copper0" svgId="connector7pad"/>
+	              </pcbView>
+	          </views>
+	      </connector>
+
+			 <connector id="connector8" name="GND" type="male">
+	          <description>GND</description>
+	          <views>
+	              <breadboardView>
+	                  <p layer="breadboard" svgId="connector8pin"/>
+	              </breadboardView>
+	              <schematicView>
+	                  <p layer="schematic" svgId="connector8pin" terminalId="connector8terminal"/>
+	              </schematicView>
+	              <pcbView>
+	                  <p layer="copper1" svgId="connector8pad"/>
+	                  <p layer="copper0" svgId="connector8pad"/>
+	              </pcbView>
+	          </views>
+	      </connector>
+
+			 <connector id="connector9" name="B2out" type="female">
+	          <description>Motor 2 B out</description>
+	          <views>
+	              <breadboardView>
+	                  <p layer="breadboard" svgId="connector9pin"/>
+	              </breadboardView>
+	              <schematicView>
+	                  <p layer="schematic" svgId="connector9pin" terminalId="connector9terminal"/>
+	              </schematicView>
+	              <pcbView>
+	                  <p layer="copper1" svgId="connector9pad"/>
+	                  <p layer="copper0" svgId="connector9pad"/>
+	              </pcbView>
+	          </views>
+	      </connector>
+
+			 <connector id="connector10" name="A2out" type="female">
+	          <description>Motor 2 A out</description>
+	          <views>
+	              <breadboardView>
+	                  <p layer="breadboard" svgId="connector10pin"/>
+	              </breadboardView>
+	              <schematicView>
+	                  <p layer="schematic" svgId="connector10pin" terminalId="connector10terminal"/>
+	              </schematicView>
+	              <pcbView>
+	                  <p layer="copper1" svgId="connector10pad"/>
+	                  <p layer="copper0" svgId="connector10pad"/>
+	              </pcbView>
+	          </views>
+	      </connector>
+
+			 <connector id="connector11" name="B1out" type="female">
+	          <description>Motor 1 B out</description>
+	          <views>
+	              <breadboardView>
+	                  <p layer="breadboard" svgId="connector11pin"/>
+	              </breadboardView>
+	              <schematicView>
+	                  <p layer="schematic" svgId="connector11pin" terminalId="connector11terminal"/>
+	              </schematicView>
+	              <pcbView>
+	                  <p layer="copper1" svgId="connector11pad"/>
+	                  <p layer="copper0" svgId="connector11pad"/>
+	              </pcbView>
+	          </views>
+	      </connector>
+
+			 <connector id="connector12" name="A1out" type="female">
+	          <description>Motor 1 A out</description>
+	          <views>
+	              <breadboardView>
+	                  <p layer="breadboard" svgId="connector12pin"/>
+	              </breadboardView>
+	              <schematicView>
+	                  <p layer="schematic" svgId="connector12pin" terminalId="connector12terminal"/>
+	              </schematicView>
+	              <pcbView>
+	                  <p layer="copper1" svgId="connector12pad"/>
+	                  <p layer="copper0" svgId="connector12pad"/>
+	              </pcbView>
+	          </views>
+	      </connector>
+
+			 <connector id="connector13" name="GND" type="male">
+	          <description>GND</description>
+	          <views>
+	              <breadboardView>
+	                  <p layer="breadboard" svgId="connector13pin"/>
+	              </breadboardView>
+	              <schematicView>
+	                  <p layer="schematic" svgId="connector13pin" terminalId="connector13terminal"/>
+	              </schematicView>
+	              <pcbView>
+	                  <p layer="copper1" svgId="connector13pad"/>
+	                  <p layer="copper0" svgId="connector13pad"/>
+	              </pcbView>
+	          </views>
+	      </connector>
+
+			 <connector id="connector14" name="5V+" type="male">
+	          <description>5V+</description>
+	          <views>
+	              <breadboardView>
+	                  <p layer="breadboard" svgId="connector14pin"/>
+	              </breadboardView>
+	              <schematicView>
+	                  <p layer="schematic" svgId="connector14pin" terminalId="connector14terminal"/>
+	              </schematicView>
+	              <pcbView>
+	                  <p layer="copper1" svgId="connector14pad"/>
+	                  <p layer="copper0" svgId="connector14pad"/>
+	              </pcbView>
+	          </views>
+	      </connector>
+    </connectors>
+
+	  <buses>
+	    <bus id="ground">
+	      <nodeMember connectorId="connector13"/>
+	      <nodeMember connectorId="connector8"/>
+	    </bus>
+
+	    <bus id="vcc">
+	      <nodeMember connectorId="connector14"/>
+	      <nodeMember connectorId="connector7"/>
+	    </bus>
+	  </buses>		
+
+</module>

@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module fritzingVersion="0.7.0b.02.01.5801" moduleId="7e3598758afd7c1363215b7f0c124af8">
+    <author>red byer</author>
+    <title>Digital Panel Meter, Voltage, DMS-20PC</title>
+    <label>Digital Panel Meter, Voltage, DMS-20PC by Murata</label>
+    <date>2012-03-18</date>
+    <tags>
+        <tag>meter</tag>
+        <tag>display</tag>
+        <tag>LED</tag>
+    </tags>
+    <properties>
+        <property name="family"></property>
+        <property name="part number"></property>
+    </properties>
+    <description>Digital panel meter by Murata. DMS-20PC class.  Can be used for displaying a voltage measurement.   Extremely simple to set up and use, extremely accurate.   With voltage scaling, can be used in a wide variety of applications.  Different color LEDs can be used (blue is shown).  Available on Digikey.
+DMS-20PC Series, 31⁄2 Digit, LED Display, Digital Panel Voltmeters combine a preci- sion A/D converter; a factory-trimmed, highly stable, voltage reference; and a large (0.37&quot;/9.4mm), easy-to-read LED display in a single package that is only slightly larger than the display itself. Displays are offered in either red, orange, amber, yellow, green or blue colors. High-intensity and low-power (35mW total) red LEDs are also optional.
+These low-cost meters are fully self-contained and fully functional. Their subminiature (1.38&quot; x 0.88&quot; x 0.48&quot;), epoxy-encapsulated cases incorporate built-in color filters and bezels; are moisture and vibration proof; and function well in the harshest environments. Their 12-pin, dual-in-line configuration offers component-like, plug-in convenience and maximum versatility. Operating temperature range is 0 to +60°C.
+The meters come with one of four, differential, input voltage ranges: ±200mV, ±2V ±20V or ±200V. Input impedance is a minimum 800kΩ. CMRR is typically 86dB (dc to 60Hz), and CMV is ±2V. Input overvoltage protection (on the non-inverting input) is ±250V. Devices are fully calibrated at the factory to an accuracy of ±1 count (±0.05% of full scale range) and never require calibration or adjustment.
+A DISPLAY ENABLE function permits the display to be disabled for &quot;power-down&quot; operation. All models have a DISPLAY TEST function. Standard red LED models offer an optional DISPLAY HOLD function.
+Small size, low cost and adjustment-free reliability make the DMS-20PC Series the best choice for all your 31⁄2 digit, LED, DPM applications.</description>
+    <views>
+        <iconView>
+            <layers image="icon/Digital_Panel_Meter__Voltage__DMS_20PC__.svg">
+                <layer layerId="breadboard"/>
+                <layer layerId="icon"/>
+            </layers>
+        </iconView>
+        <breadboardView>
+            <layers image="breadboard/Digital_Panel_Meter__Voltage__DMS_20PC__.svg">
+                <layer layerId="breadboard"/>
+            </layers>
+        </breadboardView>
+        <schematicView>
+            <layers image="schematic/Digital_Panel_Meter__Voltage__DMS_20PC__.svg">
+                <layer layerId="schematic"/>
+            </layers>
+        </schematicView>
+        <pcbView>
+            <layers image="pcb/Digital_Panel_Meter__Voltage__DMS_20PC__.svg">
+                <layer layerId="copper0"/>
+                <layer layerId="copper1"/>
+            </layers>
+        </pcbView>
+    </views>
+    <connectors>
+        <connector id="connector3" type="male" name="4: #DP3">
+            <description>Decimal Point 3 (right most). Active low.</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector3pin"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector3pin"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper1" svgId="connector3pin"/>
+                    <p layer="copper0" svgId="connector3pin"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector4" type="male" name="5: #DP2">
+            <description>Decimal Point 2 (middle).  Active Low.</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector4pin"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector4pin"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper1" svgId="connector4pin"/>
+                    <p layer="copper0" svgId="connector4pin"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector5" type="male" name="6: #DP1">
+            <description>Decimal Point 1 (left most). Active Low.</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector5pin"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector5pin"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper1" svgId="connector5pin"/>
+                    <p layer="copper0" svgId="connector5pin"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector6" type="male" name="7:  Reference In">
+            <description>In normal operaiton pin 7 is tied to pin 8 (reference output) to achieve all isted accuracy and drift specs).</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector6pin"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector6pin"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper1" svgId="connector6pin"/>
+                    <p layer="copper0" svgId="connector6pin"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector7" type="male" name="8: Reference Out">
+            <description>Precision reference actively trimmed at factory.  Normally tied to Pin 7 (reference input)</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector7pin"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector7pin"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper1" svgId="connector7pin"/>
+                    <p layer="copper0" svgId="connector7pin"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector8" type="male" name="9: Display Test/Hold">
+            <description>Tie to VCC (pin 1) to active meter DISPLAY TEST feature, lighting all segments. DO NOT leave meter in test mode for more than 10 seconds. Normally this pin is left floating.</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector8pin"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector8pin"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper1" svgId="connector8pin"/>
+                    <p layer="copper0" svgId="connector8pin"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector9" type="male" name="10:  Analog Common">
+            <description>Connected to internal, low-noise relative ground for certain differential and floating measurements.</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector9pin"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector9pin"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper1" svgId="connector9pin"/>
+                    <p layer="copper0" svgId="connector9pin"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector10" type="male" name="11: (+) INPUT HI">
+            <description>Positive Input</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector10pin"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector10pin"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper1" svgId="connector10pin"/>
+                    <p layer="copper0" svgId="connector10pin"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector11" type="male" name="12: (-) INPUT LO">
+            <description>Negative Input</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector11pin"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector11pin"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper1" svgId="connector11pin"/>
+                    <p layer="copper0" svgId="connector11pin"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector0" type="male" name="1: VCC">
+            <description>VCC / +5VDC Positive Supply</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector0pin"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector0pin"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper1" svgId="connector0pin"/>
+                    <p layer="copper0" svgId="connector0pin"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector1" type="male" name="2: ENABLE">
+            <description>Display Enable Pin</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector1pin"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector1pin"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper1" svgId="connector1pin"/>
+                    <p layer="copper0" svgId="connector1pin"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector2" type="male" name="3: GND">
+            <description>Power supply return</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector2pin"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector2pin"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper1" svgId="connector2pin"/>
+                    <p layer="copper0" svgId="connector2pin"/>
+                </pcbView>
+            </views>
+        </connector>
+    </connectors>
+</module>

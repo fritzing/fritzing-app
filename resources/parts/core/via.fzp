@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module moduleId="ViaModuleID" >
+ <version>4</version>
+ <author>Jonathan Cohen</author>
+ <title>Via</title>
+ <date>2010-04-29</date>
+ <label>Via</label>
+ <tags>
+  <tag>pcb</tag>
+  <tag>via</tag>
+  <tag>fritzing core</tag>
+ </tags>
+ <properties>
+  <property name="hole size" >0.4mm,0.3mm</property>
+  <property name="family" >Via</property>
+ </properties>
+ <taxonomy>discreteParts.pcb.via</taxonomy>
+ <description>Via</description>
+ <views>
+  <iconView>
+   <layers image="icon/via.svg" >
+    <layer layerId="icon" />
+   </layers>
+  </iconView>
+  <breadboardView>
+   <layers image="pcb/via.svg" >
+    <layer layerId="copper0" />
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="pcb/via.svg" >
+    <layer layerId="copper0" />
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/via.svg" >
+    <layer layerId="copper0" />
+    <layer layerId="copper1" />
+   </layers>
+  </pcbView>
+ </views>
+  <connectors>
+    <connector type="male" id="connector0" name="via" >
+      <description>via</description>
+      <views>
+        <breadboardView>
+          <p svgId="connector0pin" layer="copper0" />
+        </breadboardView>
+        <schematicView>
+          <p svgId="connector0pin" layer="copper0" />
+        </schematicView>
+        <pcbView>
+          <p svgId="connector0pin" layer="copper0" />
+          <p svgId="connector0pin" layer="copper1" />
+        </pcbView>
+      </views>
+    </connector>  
+  </connectors>
+  <buses/>
+</module>

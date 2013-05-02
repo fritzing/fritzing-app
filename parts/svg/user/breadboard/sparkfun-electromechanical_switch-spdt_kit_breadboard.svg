@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Ebene_1" xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="12.906px"
+	 height="41.344px" viewBox="0 0 12.906 41.344" enable-background="new 0 0 12.906 41.344" xml:space="preserve">
+<g id="breadboard">
+	<circle id="connector0pin" fill="none" stroke="#9A916C" stroke-width="0.4318" cx="6.453" cy="16.772" r="2.052"/>
+	<circle id="connector1pin" fill="none" stroke="#9A916C" stroke-width="0.4318" cx="6.453" cy="24.476" r="2.052"/>
+	<circle id="connector2pin" fill="none" stroke="#9A916C" stroke-width="0.4318" cx="6.453" cy="32.18" r="2.052"/>
+</g>
+<rect id="rect27_3_" x="0" y="32.172" fill="#333333" width="12.945" height="9.17"/>
+<rect id="rect51_3_" x="0" y="0" fill="#666666" width="12.906" height="32.604"/>
+<rect id="rect49_2_" x="3.251" y="6.624" width="6.453" height="19.36"/>
+<rect id="rect49_3_" x="3.251" y="6.623" fill="#1A1A1A" width="6.453" height="3.939"/>
+<rect id="rect49_1_" x="5.188" y="10.563" fill="#333333" width="2.578" height="15.421"/>
+<rect x="0" y="0.002" opacity="0.2" fill="#FFFFFF" enable-background="new    " width="0.36" height="32.603"/>
+<rect x="3.107" y="6.624" opacity="0.2" fill="#FFFFFF" enable-background="new    " width="0.144" height="19.36"/>
+<rect x="5.188" y="10.563" opacity="0.2" fill="#FFFFFF" enable-background="new    " width="0.144" height="15.421"/>
+<rect x="3.085" y="6.479" opacity="0.2" fill="#FFFFFF" enable-background="new    " width="6.618" height="0.145"/>
+<rect x="12.585" y="0.003" opacity="0.1" enable-background="new    " width="0.36" height="32.602"/>
+<g>
+	<rect id="rect27_2_" x="3.7" y="17.359" fill="#666666" width="5.628" height="5.679"/>
+	<rect id="rect27_1_" x="3.7" y="23.037" fill="#4D4D4D" width="5.628" height="2.946"/>
+	<g id="rect51_2_">
+		<g>
+			<rect x="3.699" y="22.506" fill="#1A1A1A" width="5.629" height="0.195"/>
+		</g>
+		<g>
+			<rect x="3.699" y="22.217" fill="#1A1A1A" width="5.629" height="0.196"/>
+		</g>
+		<g>
+			<rect x="3.699" y="21.93" fill="#1A1A1A" width="5.629" height="0.194"/>
+		</g>
+		<g>
+			<rect x="3.699" y="21.641" fill="#1A1A1A" width="5.629" height="0.195"/>
+		</g>
+		<g>
+			<rect x="3.699" y="21.354" fill="#1A1A1A" width="5.629" height="0.194"/>
+		</g>
+		<g>
+			<rect x="3.699" y="21.064" fill="#1A1A1A" width="5.629" height="0.196"/>
+		</g>
+		<g>
+			<rect x="3.699" y="20.777" fill="#1A1A1A" width="5.629" height="0.195"/>
+		</g>
+		<g>
+			<rect x="3.699" y="20.488" fill="#1A1A1A" width="5.629" height="0.196"/>
+		</g>
+		<g>
+			<rect x="3.699" y="20.201" fill="#1A1A1A" width="5.629" height="0.194"/>
+		</g>
+		<g>
+			<rect x="3.699" y="19.912" fill="#1A1A1A" width="5.629" height="0.195"/>
+		</g>
+		<g>
+			<rect x="3.699" y="19.625" fill="#1A1A1A" width="5.629" height="0.194"/>
+		</g>
+		<g>
+			<rect x="3.699" y="19.336" fill="#1A1A1A" width="5.629" height="0.195"/>
+		</g>
+		<g>
+			<rect x="3.699" y="19.049" fill="#1A1A1A" width="5.629" height="0.195"/>
+		</g>
+		<g>
+			<rect x="3.699" y="18.76" fill="#1A1A1A" width="5.629" height="0.195"/>
+		</g>
+		<g>
+			<rect x="3.699" y="18.473" fill="#1A1A1A" width="5.629" height="0.194"/>
+		</g>
+		<g>
+			<rect x="3.699" y="18.184" fill="#1A1A1A" width="5.629" height="0.195"/>
+		</g>
+		<g>
+			<rect x="3.699" y="17.896" fill="#1A1A1A" width="5.629" height="0.194"/>
+		</g>
+		<g>
+			<rect x="3.699" y="17.607" fill="#1A1A1A" width="5.629" height="0.196"/>
+		</g>
+	</g>
+	<rect x="3.699" y="17.36" opacity="0.1" fill="#FFFFFF" enable-background="new    " width="0.18" height="5.678"/>
+	<rect x="3.879" y="17.36" opacity="0.1" fill="#FFFFFF" enable-background="new    " width="5.45" height="0.181"/>
+</g>
+</svg>

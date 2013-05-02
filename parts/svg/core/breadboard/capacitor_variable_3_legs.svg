@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  --><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'><svg enable-background="new 0 0 32.024 29.13" height="29.13px" id="svg2" version="1.1" viewBox="0 0 32.024 29.13" width="32.024px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
+<g id="breadboard">
+	<rect fill="none" height="3.251" id="connector0pin" width="2.16" x="14.922" y="25.53"/>
+	<rect fill="none" height="2.16" id="connector2pin" width="2.881" x="0.661" y="17.894"/>
+	<rect fill="none" height="2.159" id="connector1pin" width="3.076" x="28.415" y="17.762"/>
+	<rect fill="none" height="3.16" id="connector0terminal" width="2.16" x="14.922" y="25.621"/>
+	<rect fill="none" height="2.159" id="connector1terminal" width="2.16" x="29.331" y="17.762"/>
+	<rect fill="none" height="2.16" id="connector2terminal" width="2.16" x="0.661" y="17.894"/>
+	<g id="legs">
+		<g id="pin0">
+			<rect fill="#8C8C8C" height="4.89" id="rect10" width="1.439" x="2.91" y="16.382"/>
+			<rect fill="#8C8C8C" height="2.16" id="rect14" width="3.679" x="0.477" y="17.822"/>
+		</g>
+		<g id="pin2">
+			<rect fill="#8C8C8C" height="4.915" id="rect8" width="1.441" x="27.56" y="16.235"/>
+			<rect fill="#8C8C8C" height="2.16" id="rect16" width="3.699" x="27.754" y="17.676"/>
+		</g>
+		<g id="legs_1_">
+			<g id="pin0_1_">
+				<rect fill="#8C8C8C" height="4.891" id="rect10_1_" width="2.272" x="26.748" y="16.295"/>
+				<rect fill="#8C8C8C" height="2.16" id="rect14_1_" width="3.679" x="27.774" y="17.584"/>
+			</g>
+			<g id="pin2_1_">
+				<rect fill="#8C8C8C" height="4.916" id="rect8_1_" width="2.277" x="2.928" y="16.416"/>
+				<rect fill="#8C8C8C" height="2.16" id="rect16_1_" width="3.699" x="0.477" y="17.73"/>
+			</g>
+			<g id="pin1_1_">
+				<rect fill="#8C8C8C" height="2.24" id="rect18_1_" width="2.16" x="14.915" y="26.447"/>
+			</g>
+		</g>
+	</g>
+	<rect fill="#8C8C8C" height="3.06" id="rect12" width="4.465" x="13.64" y="6.261"/>
+	<path d="M27.56,14.796c1.021,4.261-0.812,10.136-7.312,12.761S6.653,25.799,4.935,21.827s-2-4.625-2-4.625   L26.06,8.827C26.06,8.827,26.54,10.535,27.56,14.796z" fill="#B78F2A"/>
+	<circle cx="14.531" cy="13.113" fill="#D8B45D" r="11.75" stroke="#DBAA21" stroke-width="1"/>
+	<path d="M6.689,5c-4.328,4.321-4.149,10.88,0,15.031c4.151,4.148,10.879,4.148,15.028,0L6.689,5z" fill="#AAAAAA"/>
+	<circle cx="13.812" cy="11.072" fill="#8C8C8C" r="2.625"/>
+	<path d="M13.822,0.384C7.706,0.377,3.196,5.143,3.196,11.014c0,5.868,4.758,10.624,10.626,10.624V0.384z" fill="#8C8C8C"/>
+	<circle cx="13.593" cy="10.958" fill="#BCA061" r="2.438"/>
+	<polygon fill="#BCA061" points="11.437,12.076 15.891,10.176 14.453,6.755 10.107,8.927  "/>
+	<circle cx="12.31" cy="7.896" fill="#FFD56C" r="2.438"/>
+	<line fill="none" stroke="#DBAA21" stroke-width="0.5" x1="14.154" x2="10.435" y1="6.303" y2="9.451"/>
+	<g id="pin1_2_">
+		<rect fill="#8C8C8C" height="2.24" id="rect18_2_" width="2.16" x="14.915" y="26.53"/>
+	</g>
+	<g id="pin1_3_">
+		<polygon fill="#AAAAAA" id="rect18_3_" points="14.005,25.357 16.165,25.357 17.076,26.747 14.916,26.747   "/>
+	</g>
+	<rect fill="#AAAAAA" height="3.958" width="2.16" x="14.005" y="21.399"/>
+</g>
+</svg>

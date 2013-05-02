@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  --><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'><svg enable-background="new 0 0 32.75 43.982" height="43.982px" id="svg2" version="1.1" viewBox="0 0 32.75 43.982" width="32.75px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
+<g id="schematic">
+	<g>
+		<rect height="13.589" id="connector0pin" width="1.375" x="15.989" y="30.102"/>
+		<rect height="13.578" id="connector1pin" width="1.375" x="15.989" y="0.398"/>
+		<rect height="0.799" id="connector1terminal" width="0.75" x="16.292" y="0"/>
+		<rect height="0.8" id="connector0terminal" width="0.75" x="16.292" y="43.032"/>
+	</g>
+<line fill="none" stroke="#000000" stroke-linecap="round" stroke-width="2.4" x1="16.616" x2="16.616" y1="0.852" y2="18.477"/>
+<line fill="none" stroke="#000000" stroke-linecap="round" stroke-width="2.4" x1="1.366" x2="31.366" y1="18.852" y2="18.852"/>
+<line fill="none" stroke="#000000" stroke-linecap="round" stroke-width="2.4" x1="16.616" x2="16.616" y1="24.616" y2="43.227"/>
+<line fill="none" stroke="#000000" stroke-width="1" x1="24.688" x2="31.313" y1="11.928" y2="11.928"/>
+<line fill="none" stroke="#000000" stroke-width="1" x1="28" x2="28" y1="8.616" y2="15.241"/>
+<path d="M1.732,29.247c4.079-3.221,9.23-5.143,14.83-5.143  c5.495,0,10.559,1.851,14.6,4.963" fill="none" stroke="#000000" stroke-linecap="round" stroke-width="2.4"/>
+</g>
+</svg>

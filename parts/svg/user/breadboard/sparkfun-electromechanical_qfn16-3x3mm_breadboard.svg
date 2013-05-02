@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- Created with Fritzing (http://www.fritzing.org/) -->
+<svg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' version='1.2' baseProfile='tiny' x='0in' y='0in' width='0.149606in' height='0.149606in' viewBox='0 0 3.8 3.8' >
+<g id='breadboard'>
+<path fill='#1F7A34' stroke='none' stroke-width='0' d='M0,0l3.8,0 0,3.8 -3.8,0 0,-3.8z
+'/>
+<rect id='connector4pin' connectorname='5' x='1.01' y='2.95' width='0.28' height='0.85' stroke='none' stroke-width='0' fill='#9A916C' stroke-linecap='round'/>
+<rect id='connector5pin' connectorname='6' x='1.51' y='2.95' width='0.28' height='0.85' stroke='none' stroke-width='0' fill='#9A916C' stroke-linecap='round'/>
+<rect id='connector6pin' connectorname='7' x='2.01' y='2.95' width='0.28' height='0.85' stroke='none' stroke-width='0' fill='#9A916C' stroke-linecap='round'/>
+<rect id='connector7pin' connectorname='8' x='2.51' y='2.95' width='0.28' height='0.85' stroke='none' stroke-width='0' fill='#9A916C' stroke-linecap='round'/>
+<rect id='connector8pin' connectorname='9' x='2.95' y='2.51' width='0.85' height='0.28' stroke='none' stroke-width='0' fill='#9A916C' stroke-linecap='round'/>
+<rect id='connector9pin' connectorname='10' x='2.95' y='2.01' width='0.85' height='0.28' stroke='none' stroke-width='0' fill='#9A916C' stroke-linecap='round'/>
+<rect id='connector10pin' connectorname='11' x='2.95' y='1.51' width='0.85' height='0.28' stroke='none' stroke-width='0' fill='#9A916C' stroke-linecap='round'/>
+<rect id='connector11pin' connectorname='12' x='2.95' y='1.01' width='0.85' height='0.28' stroke='none' stroke-width='0' fill='#9A916C' stroke-linecap='round'/>
+<rect id='connector12pin' connectorname='13' x='2.51' y='0' width='0.28' height='0.85' stroke='none' stroke-width='0' fill='#9A916C' stroke-linecap='round'/>
+<rect id='connector13pin' connectorname='14' x='2.01' y='0' width='0.28' height='0.85' stroke='none' stroke-width='0' fill='#9A916C' stroke-linecap='round'/>
+<rect id='connector14pin' connectorname='15' x='1.51' y='0' width='0.28' height='0.85' stroke='none' stroke-width='0' fill='#9A916C' stroke-linecap='round'/>
+<rect id='connector15pin' connectorname='16' x='1.01' y='0' width='0.28' height='0.85' stroke='none' stroke-width='0' fill='#9A916C' stroke-linecap='round'/>
+<rect id='connector0pin' connectorname='1' x='0' y='1.01' width='0.85' height='0.28' stroke='none' stroke-width='0' fill='#9A916C' stroke-linecap='round'/>
+<rect id='connector1pin' connectorname='2' x='0' y='1.51' width='0.85' height='0.28' stroke='none' stroke-width='0' fill='#9A916C' stroke-linecap='round'/>
+<rect id='connector2pin' connectorname='3' x='0' y='2.01' width='0.85' height='0.28' stroke='none' stroke-width='0' fill='#9A916C' stroke-linecap='round'/>
+<rect id='connector3pin' connectorname='4' x='0' y='2.51' width='0.85' height='0.28' stroke='none' stroke-width='0' fill='#9A916C' stroke-linecap='round'/>
+<rect id='connector16pin' connectorname='EXT' x='1.05' y='1.05' width='1.7' height='1.7' stroke='none' stroke-width='0' fill='#9A916C' stroke-linecap='round'/>
+<line class='other' x1='0.3' y1='0.8' x2='0.8' y2='0.3' stroke='#f8f8f8' stroke-width='0.2032' stroke-linecap='round'/>
+<line class='other' x1='3' y1='0.3' x2='3.5' y2='0.3' stroke='#f8f8f8' stroke-width='0.2032' stroke-linecap='round'/>
+<line class='other' x1='3.5' y1='0.3' x2='3.5' y2='0.8' stroke='#f8f8f8' stroke-width='0.2032' stroke-linecap='round'/>
+<line class='other' x1='3.5' y1='3' x2='3.5' y2='3.5' stroke='#f8f8f8' stroke-width='0.2032' stroke-linecap='round'/>
+<line class='other' x1='3.5' y1='3.5' x2='3' y2='3.5' stroke='#f8f8f8' stroke-width='0.2032' stroke-linecap='round'/>
+<line class='other' x1='0.8' y1='3.5' x2='0.3' y2='3.5' stroke='#f8f8f8' stroke-width='0.2032' stroke-linecap='round'/>
+<line class='other' x1='0.3' y1='3.5' x2='0.3' y2='3' stroke='#f8f8f8' stroke-width='0.2032' stroke-linecap='round'/>
+</g>
+</svg>

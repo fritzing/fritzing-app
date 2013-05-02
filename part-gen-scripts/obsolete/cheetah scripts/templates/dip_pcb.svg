@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+#set $ipins = int($pins)
+#set $width = (float($pitch) + .12) * 1000
+#set $height = ($ipins * 100 / 2) + 20
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" width="${width / 1000.0}in" height="${height / 1000.0}in" viewBox="0 0 ${width} ${height}" baseProfile="tiny" >
+ <desc>Fritzing footprint SVG</desc>
+ <g id="silkscreen" >
+  <line stroke="white" y1="10" x1="10" y2="${height - 10}" stroke-width="10" x2="10" />
+  <line stroke="white" y1="${height - 10}" x1="10" y2="${height - 10}" stroke-width="10" x2="${width - 10}" />
+  <line stroke="white" y1="${height - 10}" x1="${width - 10}" y2="10" stroke-width="10" x2="${width - 10}" />
+  <line stroke="white" y1="10" x1="10" y2="10" stroke-width="10" x2="${(width / 2) - 50}" />
+  <line stroke="white" y1="10" x1="${(width / 2) + 50}" y2="10" stroke-width="10" x2="${width - 10}" />
+ </g>
+ <g id="copper0" >
+  <rect width="55" x="32.5" y="32.5" fill="none" height="55" stroke="rgb(255, 191, 0)" stroke-width="20" />
+   #for $pin in range($ipins / 2)
+   <circle fill="none" cx="60" cy="${60 + (100 * $pin)}" stroke="rgb(255, 191, 0)" r="27.5" id="connector${pin}pin" stroke-width="20" />
+   <circle fill="none" cx="${width - 60}" cy="${60 + (100 * $pin)}" stroke="rgb(255, 191, 0)" r="27.5" id="connector${ipins - pin - 1}pin" stroke-width="20" />
+   #end for
+ </g>
+ <g id="keepout" />
+ <g id="soldermask" />
+ <g id="outline" />
+</svg>

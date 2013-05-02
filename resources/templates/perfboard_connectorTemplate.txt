@@ -1,0 +1,1 @@
+<circle fill="none" cx="%1" cy="%2" connectorname="%3.%4" stroke="#c49c59" r="27.5" id="connector%5pin" stroke-width="20"/>

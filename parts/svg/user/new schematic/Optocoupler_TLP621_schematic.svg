@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="svg2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="57.6px" height="50.4px" viewBox="0 0 57.6 50.4" enable-background="new 0 0 57.6 50.4" xml:space="preserve">
+<rect id="part_symbol" x="7.2" y="7.2" fill="#FFFFFF" stroke="#000000" stroke-width="0.9002" stroke-linecap="round" width="43.196" height="36"/>
+<g id="schematic_1_">
+	<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="19.266" y1="28.802" x2="15.667" y2="28.802"/>
+	<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="15.667" y1="28.802" x2="12.066" y2="28.802"/>
+	<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="15.667,28.802 12.066,21.601 
+		15.667,21.601 19.266,21.601 	"/>
+	<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="15.667" y1="21.601" x2="15.667" y2="28.802"/>
+	<polyline id="connector1pin_1_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="7.36,36 
+		15.667,36 15.667,28.802 	"/>
+	<polyline id="connector0pin_1_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="7.36,14.4 
+		15.667,14.4 15.667,21.601 	"/>
+</g>
+<sodipodi:namedview  id="namedview10438" guidetolerance="10" objecttolerance="10" borderopacity="1" bordercolor="#666666" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" pagecolor="#ffffff" showgrid="false" gridtolerance="10" fit-margin-left="0" fit-margin-top="0" fit-margin-right="0" fit-margin-bottom="0">
+	</sodipodi:namedview>
+<rect id="connector0pin" x="0" y="13.786" fill="none" width="7.359" height="1.228"/>
+<rect id="connector1pin" x="0" y="35.388" fill="none" width="7.359" height="1.227"/>
+<rect x="50.399" y="35.4" fill="none" width="7.2" height="1.2"/>
+<rect id="connector3pin" x="50.399" y="13.8" fill="none" width="7.2" height="1.2"/>
+<rect id="connector0terminal" x="0" y="13.786" fill="none" width="0.612" height="1.228"/>
+<rect id="connector1terminal" x="0" y="35.388" fill="none" width="0.612" height="1.227"/>
+<rect x="57" y="35.4" fill="none" width="0.6" height="1.2"/>
+<rect id="connector3terminal" x="57" y="13.8" fill="none" width="0.6" height="1.2"/>
+<line fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="0" y1="36" x2="7.2" y2="36"/>
+<line fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="0" y1="14.4" x2="7.2" y2="14.4"/>
+<text transform="matrix(1 0 0 1 2.7751 12.7263)" fill="#787878" font-family="'DroidSans'" font-size="2">1</text>
+<text transform="matrix(1 0 0 1 2.7751 34.6501)" fill="#787878" font-family="'DroidSans'" font-size="2">2</text>
+<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="38.625" y1="19.531" x2="38.625" y2="30.331"/>
+<polyline id="connector1pin_4_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="38.625,25.777 
+	45.125,29.866 45.125,36 50.239,36 "/>
+<polyline id="connector1pin_2_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="50.239,14.4 
+	45.125,14.4 45.125,19.531 38.625,23.421 "/>
+<line fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="50.399" y1="36" x2="57.6" y2="36"/>
+<line fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="50.399" y1="14.4" x2="57.6" y2="14.4"/>
+<text transform="matrix(1 0 0 1 53.1418 12.7263)" fill="#787878" font-family="'DroidSans'" font-size="2">4</text>
+<text transform="matrix(1 0 0 1 53.1418 34.6501)" fill="#787878" font-family="'DroidSans'" font-size="2">3</text>
+<text transform="matrix(1 0 0 1 19.8923 16.0388)" font-family="'DroidSans'" font-size="5.5">TLP621</text>
+<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="23.767" y1="26.101" x2="21.427" y2="23.76"/>
+<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="23.406" y1="29.341" x2="21.066" y2="27.001"/>
+<rect id="connector1terminal_1_" x="15.666" y="36.001" fill="none" width="0.001" height="0.001"/>
+<path d="M22.866,26.637l1.439-1.438l1.08,2.521L22.866,26.637z"/>
+<path d="M22.509,29.878l1.438-1.438l1.08,2.521L22.509,29.878z"/>
+<path d="M41.498,28.738l1.112-1.704l1.577,2.243L41.498,28.738z"/>
+</svg>

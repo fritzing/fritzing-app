@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1.53194in" xml:space="preserve" xmlns:xml="http://www.w3.org/XML/1998/namespace" x="0px" version="1.2" y="0px" height="0.670833in" viewBox="0 0 110.3 48.3" baseProfile="tiny" id="Layer_1" >
+ <g  id="schematic" >
+ <rect  width="10" x="1.15" y="23.15" fill="none" height="2" id="connector0pin" />
+ <rect  width="10" x="99.15" y="23.15" fill="none" height="2" id="connector1pin" />
+ <rect  width="2" x="1.15" y="23.15" fill="none" height="2" id="connector0terminal" />
+ <rect  width="2" x="107.15" y="23.15" fill="none" height="2" id="connector1terminal" />
+  <g  id="diagram" >
+   <circle  fill="none" cx="55.15" cy="24.15" stroke="#000000" r="23" stroke-width="2.3" />
+   <line  fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="24.15" stroke-width="2.3" x1="1.15" y2="24.15" x2="32.15" />
+   <line  fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="24.15" stroke-width="2.3" x1="78.15" y2="24.15" x2="109.15" />
+  </g>
+  <g  id="text" >
+   <g >
+    <path  d="M62.041,31.152l-1.272-8.617c-0.24-1.632-0.384-2.904-0.505-3.96h-0.047c-0.192,0.912-0.433,1.944-0.84,3.168&#xd;&#xa;&#x9;&#x9;&#x9;&#x9;l-3.049,9.409h-2.712l-2.904-8.76c-0.456-1.344-0.792-2.592-1.032-3.816h-0.048c-0.096,1.393-0.264,2.664-0.432,4.2l-1.032,8.376&#xd;&#xa;&#x9;&#x9;&#x9;&#x9;h-2.665l2.424-16.201h3.12l3.121,9.36c0.288,0.913,0.624,2.088,0.912,3.313h0.024c0.288-1.201,0.528-2.113,0.912-3.216&#xd;&#xa;&#x9;&#x9;&#x9;&#x9;l3.168-9.457h3.145L64.8,31.152H62.041z" />
+   </g>
+  </g>
+ </g>
+</svg>

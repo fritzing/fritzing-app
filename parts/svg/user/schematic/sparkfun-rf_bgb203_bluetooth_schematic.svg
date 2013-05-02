@@ -1,0 +1,226 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- Created with Fritzing (http://www.fritzing.org/) -->
+<svg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' version='1.2' baseProfile='tiny' x='0in' y='0in' width='2.50972in' height='2.80972in' viewBox='0 0 63.7469 71.3669' >
+<g id='schematic'>
+<rect class='interior rect' x='5.20347' y='5.20347' width='53.34' height='60.96' stroke='none' stroke-width='0' fill='#ffffff' />
+<text class='text' id='label' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.94028' x='31.8735' y='35.6835' text-anchor='middle'></text>
+<line class='other' x1='5.20347' y1='5.20347' x2='5.20347' y2='66.1635' stroke='#000000' stroke-width='0.3175' stroke-linecap='round'/>
+<line class='other' x1='5.20347' y1='66.1635' x2='58.5435' y2='66.1635' stroke='#000000' stroke-width='0.3175' stroke-linecap='round'/>
+<line class='other' x1='58.5435' y1='66.1635' x2='58.5435' y2='5.20347' stroke='#000000' stroke-width='0.3175' stroke-linecap='round'/>
+<line class='other' x1='58.5435' y1='5.20347' x2='5.20347' y2='5.20347' stroke='#000000' stroke-width='0.3175' stroke-linecap='round'/>
+<line class='pin' id='connector0pin' connectorname='GND' x1='15.3635' y1='71.2435' x2='15.3635' y2='66.1635' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector0terminal' x='15.3635' y='71.2435' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<g transform='translate(15.1165,68.7035)'><g transform='rotate(270)'>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='0' y='0' text-anchor='middle'>1</text>
+</g></g>
+<g transform='translate(16.1043,65.4226)'><g transform='rotate(270)'>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.5875' x='0' y='0' text-anchor='start'>GND</text>
+</g></g>
+<line class='pin' id='connector1pin' connectorname='ANT' x1='63.6235' y1='7.74347' x2='58.5435' y2='7.74347' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector1terminal' x='63.6235' y='7.74347' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='61.0835' y='7.49653' text-anchor='middle'>2</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.5875' x='57.8026' y='8.4843' text-anchor='end'>ANT</text>
+<line class='pin' id='connector2pin' connectorname='GND' x1='15.3635' y1='71.2435' x2='15.3635' y2='66.1635' stroke='#787878' stroke-width='0' stroke-linecap='round'/>
+<rect class='terminal' id='connector2terminal' x='15.3635' y='71.2435' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<line class='pin' id='connector3pin' connectorname='GND' x1='15.3635' y1='71.2435' x2='15.3635' y2='66.1635' stroke='#787878' stroke-width='0' stroke-linecap='round'/>
+<rect class='terminal' id='connector3terminal' x='15.3635' y='71.2435' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<line class='pin' id='connector4pin' connectorname='GND' x1='15.3635' y1='71.2435' x2='15.3635' y2='66.1635' stroke='#787878' stroke-width='0' stroke-linecap='round'/>
+<rect class='terminal' id='connector4terminal' x='15.3635' y='71.2435' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<line class='pin' id='connector5pin' connectorname='GND' x1='15.3635' y1='71.2435' x2='15.3635' y2='66.1635' stroke='#787878' stroke-width='0' stroke-linecap='round'/>
+<rect class='terminal' id='connector5terminal' x='15.3635' y='71.2435' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<line class='pin' id='connector6pin' connectorname='GND' x1='15.3635' y1='71.2435' x2='15.3635' y2='66.1635' stroke='#787878' stroke-width='0' stroke-linecap='round'/>
+<rect class='terminal' id='connector6terminal' x='15.3635' y='71.2435' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<line class='pin' id='connector7pin' connectorname='GND' x1='15.3635' y1='71.2435' x2='15.3635' y2='66.1635' stroke='#787878' stroke-width='0' stroke-linecap='round'/>
+<rect class='terminal' id='connector7terminal' x='15.3635' y='71.2435' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<line class='pin' id='connector8pin' connectorname='GND' x1='15.3635' y1='71.2435' x2='15.3635' y2='66.1635' stroke='#787878' stroke-width='0' stroke-linecap='round'/>
+<rect class='terminal' id='connector8terminal' x='15.3635' y='71.2435' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<line class='pin' id='connector9pin' connectorname='GND' x1='15.3635' y1='71.2435' x2='15.3635' y2='66.1635' stroke='#787878' stroke-width='0' stroke-linecap='round'/>
+<rect class='terminal' id='connector9terminal' x='15.3635' y='71.2435' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<line class='pin' id='connector10pin' connectorname='GPIO[14]' x1='63.6235' y1='28.0635' x2='58.5435' y2='28.0635' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector10terminal' x='63.6235' y='28.0635' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='61.0835' y='27.8165' text-anchor='middle'>11</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.5875' x='57.8026' y='28.8043' text-anchor='end'>GPIO[14]</text>
+<line class='pin' id='connector11pin' connectorname='GPIO[12]' x1='63.6235' y1='22.9835' x2='58.5435' y2='22.9835' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector11terminal' x='63.6235' y='22.9835' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='61.0835' y='22.7365' text-anchor='middle'>12</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.5875' x='57.8026' y='23.7243' text-anchor='end'>GPIO[12]</text>
+<line class='pin' id='connector12pin' connectorname='VDDRF' x1='25.5235' y1='0.123472' x2='25.5235' y2='5.20347' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector12terminal' x='25.5235' y='0.123472' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<g transform='translate(25.2765,2.66347)'><g transform='rotate(270)'>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='0' y='0' text-anchor='middle'>13</text>
+</g></g>
+<g transform='translate(26.2643,5.9443)'><g transform='rotate(270)'>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.5875' x='0' y='0' text-anchor='end'>VDDRF</text>
+</g></g>
+<line class='pin' id='connector13pin' connectorname='BTACT/GPIO[17]' x1='63.6235' y1='35.6835' x2='58.5435' y2='35.6835' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector13terminal' x='63.6235' y='35.6835' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='61.0835' y='35.4365' text-anchor='middle'>14</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.5875' x='57.8026' y='36.4243' text-anchor='end'>BTACT/GPIO[17]</text>
+<line class='pin' id='connector14pin' connectorname='VANLO' x1='0.123472' y1='20.4435' x2='5.20347' y2='20.4435' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector14terminal' x='0.123472' y='20.4435' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='2.66347' y='20.1965' text-anchor='middle'>15</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.5875' x='5.9443' y='21.1843' text-anchor='start'>VANLO</text>
+<line class='pin' id='connector15pin' connectorname='I2C_SDA/GPIO[1]' x1='0.123472' y1='30.6035' x2='5.20347' y2='30.6035' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector15terminal' x='0.123472' y='30.6035' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='2.66347' y='30.3565' text-anchor='middle'>16</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.5875' x='5.9443' y='31.3443' text-anchor='start'>I2C_SDA/GPIO[1]</text>
+<line class='pin' id='connector16pin' connectorname='I2C_SCL/GPIO[0]' x1='0.123472' y1='28.0635' x2='5.20347' y2='28.0635' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector16terminal' x='0.123472' y='28.0635' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='2.66347' y='27.8165' text-anchor='middle'>17</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.5875' x='5.9443' y='28.8043' text-anchor='start'>I2C_SCL/GPIO[0]</text>
+<line class='pin' id='connector17pin' connectorname='VDDA/VDDO' x1='33.1435' y1='0.123472' x2='33.1435' y2='5.20347' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector17terminal' x='33.1435' y='0.123472' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<g transform='translate(32.8965,2.66347)'><g transform='rotate(270)'>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='0' y='0' text-anchor='middle'>18</text>
+</g></g>
+<g transform='translate(33.8843,5.9443)'><g transform='rotate(270)'>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.5875' x='0' y='0' text-anchor='end'>VDDA/VDDO</text>
+</g></g>
+<line class='pin' id='connector18pin' connectorname='XTAL2_SYS' x1='63.6235' y1='56.0035' x2='58.5435' y2='56.0035' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector18terminal' x='63.6235' y='56.0035' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='61.0835' y='55.7565' text-anchor='middle'>19</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.5875' x='57.8026' y='56.7443' text-anchor='end'>XTAL2_SYS</text>
+<line class='pin' id='connector19pin' connectorname='XTAL1_SYS' x1='63.6235' y1='53.4635' x2='58.5435' y2='53.4635' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector19terminal' x='63.6235' y='53.4635' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='61.0835' y='53.2165' text-anchor='middle'>20</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.5875' x='57.8026' y='54.2043' text-anchor='end'>XTAL1_SYS</text>
+<line class='pin' id='connector20pin' connectorname='GPIO[13]' x1='63.6235' y1='25.5235' x2='58.5435' y2='25.5235' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector20terminal' x='63.6235' y='25.5235' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='61.0835' y='25.2765' text-anchor='middle'>21</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.5875' x='57.8026' y='26.2643' text-anchor='end'>GPIO[13]</text>
+<line class='pin' id='connector21pin' connectorname='GPIO[11]' x1='63.6235' y1='20.4435' x2='58.5435' y2='20.4435' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector21terminal' x='63.6235' y='20.4435' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='61.0835' y='20.1965' text-anchor='middle'>22</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.5875' x='57.8026' y='21.1843' text-anchor='end'>GPIO[11]</text>
+<line class='pin' id='connector22pin' connectorname='GPIO[10]' x1='63.6235' y1='17.9035' x2='58.5435' y2='17.9035' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector22terminal' x='63.6235' y='17.9035' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='61.0835' y='17.6565' text-anchor='middle'>23</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.5875' x='57.8026' y='18.6443' text-anchor='end'>GPIO[10]</text>
+<line class='pin' id='connector23pin' connectorname='VDDC/VDDIO1' x1='38.2235' y1='0.123472' x2='38.2235' y2='5.20347' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector23terminal' x='38.2235' y='0.123472' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<g transform='translate(37.9765,2.66347)'><g transform='rotate(270)'>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='0' y='0' text-anchor='middle'>24</text>
+</g></g>
+<g transform='translate(38.9643,5.9443)'><g transform='rotate(270)'>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.5875' x='0' y='0' text-anchor='end'>VDDC/VDDIO1</text>
+</g></g>
+<line class='pin' id='connector24pin' connectorname='GPIO[16]' x1='63.6235' y1='33.1435' x2='58.5435' y2='33.1435' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector24terminal' x='63.6235' y='33.1435' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='61.0835' y='32.8965' text-anchor='middle'>25</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.5875' x='57.8026' y='33.8843' text-anchor='end'>GPIO[16]</text>
+<line class='pin' id='connector25pin' connectorname='VDDIO1' x1='40.7635' y1='0.123472' x2='40.7635' y2='5.20347' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector25terminal' x='40.7635' y='0.123472' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<g transform='translate(40.5165,2.66347)'><g transform='rotate(270)'>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='0' y='0' text-anchor='middle'>26</text>
+</g></g>
+<g transform='translate(41.5043,5.9443)'><g transform='rotate(270)'>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.5875' x='0' y='0' text-anchor='end'>VDDIO1</text>
+</g></g>
+<line class='pin' id='connector26pin' connectorname='XTAL1_LP' x1='63.6235' y1='61.0835' x2='58.5435' y2='61.0835' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector26terminal' x='63.6235' y='61.0835' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='61.0835' y='60.8365' text-anchor='middle'>27</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.5875' x='57.8026' y='61.8243' text-anchor='end'>XTAL1_LP</text>
+<line class='pin' id='connector27pin' connectorname='XTAL2_LP' x1='63.6235' y1='63.6235' x2='58.5435' y2='63.6235' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector27terminal' x='63.6235' y='63.6235' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='61.0835' y='63.3765' text-anchor='middle'>28</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.5875' x='57.8026' y='64.3643' text-anchor='end'>XTAL2_LP</text>
+<line class='pin' id='connector28pin' connectorname='VBUS_USB' x1='17.9035' y1='0.123472' x2='17.9035' y2='5.20347' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector28terminal' x='17.9035' y='0.123472' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<g transform='translate(17.6565,2.66347)'><g transform='rotate(270)'>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='0' y='0' text-anchor='middle'>29</text>
+</g></g>
+<g transform='translate(18.6443,5.9443)'><g transform='rotate(270)'>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.5875' x='0' y='0' text-anchor='end'>VBUS_USB</text>
+</g></g>
+<line class='pin' id='connector29pin' connectorname='GPIO[15]' x1='63.6235' y1='30.6035' x2='58.5435' y2='30.6035' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector29terminal' x='63.6235' y='30.6035' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='61.0835' y='30.3565' text-anchor='middle'>30</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.5875' x='57.8026' y='31.3443' text-anchor='end'>GPIO[15]</text>
+<line class='pin' id='connector30pin' connectorname='GPIO[7]' x1='0.123472' y1='50.9235' x2='5.20347' y2='50.9235' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector30terminal' x='0.123472' y='50.9235' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='2.66347' y='50.6765' text-anchor='middle'>31</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.5875' x='5.9443' y='51.6643' text-anchor='start'>GPIO[7]</text>
+<line class='pin' id='connector31pin' connectorname='GPIO[9]' x1='0.123472' y1='56.0035' x2='5.20347' y2='56.0035' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector31terminal' x='0.123472' y='56.0035' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='2.66347' y='55.7565' text-anchor='middle'>32</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.5875' x='5.9443' y='56.7443' text-anchor='start'>GPIO[9]</text>
+<line class='pin' id='connector32pin' connectorname='GPIO[6]' x1='0.123472' y1='48.3835' x2='5.20347' y2='48.3835' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector32terminal' x='0.123472' y='48.3835' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='2.66347' y='48.1365' text-anchor='middle'>33</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.5875' x='5.9443' y='49.1243' text-anchor='start'>GPIO[6]</text>
+<line class='pin' id='connector33pin' connectorname='GPIO[8]' x1='0.123472' y1='53.4635' x2='5.20347' y2='53.4635' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector33terminal' x='0.123472' y='53.4635' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='2.66347' y='53.2165' text-anchor='middle'>34</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.5875' x='5.9443' y='54.2043' text-anchor='start'>GPIO[8]</text>
+<line class='pin' id='connector34pin' connectorname='VDDC' x1='35.6835' y1='0.123472' x2='35.6835' y2='5.20347' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector34terminal' x='35.6835' y='0.123472' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<g transform='translate(35.4365,2.66347)'><g transform='rotate(270)'>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='0' y='0' text-anchor='middle'>35</text>
+</g></g>
+<g transform='translate(36.4243,5.9443)'><g transform='rotate(270)'>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.5875' x='0' y='0' text-anchor='end'>VDDC</text>
+</g></g>
+<line class='pin' id='connector35pin' connectorname='VDDIO2' x1='45.8435' y1='0.123472' x2='45.8435' y2='5.20347' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector35terminal' x='45.8435' y='0.123472' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<g transform='translate(45.5965,2.66347)'><g transform='rotate(270)'>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='0' y='0' text-anchor='middle'>36</text>
+</g></g>
+<g transform='translate(46.5843,5.9443)'><g transform='rotate(270)'>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.5875' x='0' y='0' text-anchor='end'>VDDIO2</text>
+</g></g>
+<line class='pin' id='connector36pin' connectorname='DN_USB' x1='0.123472' y1='12.8235' x2='5.20347' y2='12.8235' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector36terminal' x='0.123472' y='12.8235' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='2.66347' y='12.5765' text-anchor='middle'>37</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.5875' x='5.9443' y='13.5643' text-anchor='start'>DN_USB</text>
+<line class='pin' id='connector37pin' connectorname='DP_USB' x1='0.123472' y1='15.3635' x2='5.20347' y2='15.3635' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector37terminal' x='0.123472' y='15.3635' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='2.66347' y='15.1165' text-anchor='middle'>38</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.5875' x='5.9443' y='16.1043' text-anchor='start'>DP_USB</text>
+<line class='pin' id='connector38pin' connectorname='RTS/GPIO[3]' x1='0.123472' y1='38.2235' x2='5.20347' y2='38.2235' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector38terminal' x='0.123472' y='38.2235' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='2.66347' y='37.9765' text-anchor='middle'>39</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.5875' x='5.9443' y='38.9643' text-anchor='start'>RTS/GPIO[3]</text>
+<line class='pin' id='connector39pin' connectorname='RX/GPIO[5]' x1='0.123472' y1='43.3035' x2='5.20347' y2='43.3035' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector39terminal' x='0.123472' y='43.3035' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='2.66347' y='43.0565' text-anchor='middle'>40</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.5875' x='5.9443' y='44.0443' text-anchor='start'>RX/GPIO[5]</text>
+<line class='pin' id='connector40pin' connectorname='TX/GPIO[4]' x1='0.123472' y1='40.7635' x2='5.20347' y2='40.7635' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector40terminal' x='0.123472' y='40.7635' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='2.66347' y='40.5165' text-anchor='middle'>41</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.5875' x='5.9443' y='41.5043' text-anchor='start'>TX/GPIO[4]</text>
+<line class='pin' id='connector41pin' connectorname='CTS/GPIO[2]' x1='0.123472' y1='35.6835' x2='5.20347' y2='35.6835' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector41terminal' x='0.123472' y='35.6835' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='2.66347' y='35.4365' text-anchor='middle'>42</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.5875' x='5.9443' y='36.4243' text-anchor='start'>CTS/GPIO[2]</text>
+<line class='pin' id='connector42pin' connectorname='RESET_N' x1='0.123472' y1='22.9835' x2='5.20347' y2='22.9835' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector42terminal' x='0.123472' y='22.9835' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='2.66347' y='22.7365' text-anchor='middle'>43</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.5875' x='5.9443' y='23.7243' text-anchor='start'>RESET_N</text>
+<line class='pin' id='connector43pin' connectorname='VDDIORF' x1='30.6035' y1='0.123472' x2='30.6035' y2='5.20347' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector43terminal' x='30.6035' y='0.123472' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<g transform='translate(30.3565,2.66347)'><g transform='rotate(270)'>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='0' y='0' text-anchor='middle'>44</text>
+</g></g>
+<g transform='translate(31.3443,5.9443)'><g transform='rotate(270)'>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.5875' x='0' y='0' text-anchor='end'>VDDIORF</text>
+</g></g>
+<line class='pin' id='connector44pin' connectorname='TMS_JTAG' x1='63.6235' y1='40.7635' x2='58.5435' y2='40.7635' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector44terminal' x='63.6235' y='40.7635' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='61.0835' y='40.5165' text-anchor='middle'>45</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.5875' x='57.8026' y='41.5043' text-anchor='end'>TMS_JTAG</text>
+<line class='pin' id='connector45pin' connectorname='TDO_JTAG' x1='63.6235' y1='43.3035' x2='58.5435' y2='43.3035' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector45terminal' x='63.6235' y='43.3035' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='61.0835' y='43.0565' text-anchor='middle'>46</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.5875' x='57.8026' y='44.0443' text-anchor='end'>TDO_JTAG</text>
+<line class='pin' id='connector46pin' connectorname='TDI_JTAG' x1='63.6235' y1='45.8435' x2='58.5435' y2='45.8435' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector46terminal' x='63.6235' y='45.8435' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='61.0835' y='45.5965' text-anchor='middle'>47</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.5875' x='57.8026' y='46.5843' text-anchor='end'>TDI_JTAG</text>
+<line class='pin' id='connector47pin' connectorname='TCK_JTAG' x1='63.6235' y1='48.3835' x2='58.5435' y2='48.3835' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector47terminal' x='63.6235' y='48.3835' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='61.0835' y='48.1365' text-anchor='middle'>48</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.5875' x='57.8026' y='49.1243' text-anchor='end'>TCK_JTAG</text>
+<line class='pin' id='connector48pin' connectorname='GND' x1='15.3635' y1='71.2435' x2='15.3635' y2='66.1635' stroke='#787878' stroke-width='0' stroke-linecap='round'/>
+<rect class='terminal' id='connector48terminal' x='15.3635' y='71.2435' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+</g>
+</svg>

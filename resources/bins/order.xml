@@ -1,0 +1,14 @@
+<order>
+	<bin title="Search" location="user" />
+	<bin title="Core Parts" location="app" />
+	<bin title="My Parts" location="user" />
+	<bin title="Temporary Parts" location="user" />
+	<bin title="___*___" location="user" />
+	<bin title="___*___" location="outside" />
+	<bin title="Arduino" location="more" />
+	<bin title="Parallax" location="more" />
+	<bin title="Picaxe" location="more" />
+	<bin title="SparkFun" location="more" />
+	<bin title="Snootlab" location="more" />
+	<bin title="Contributed Parts" location="app" />
+</order>

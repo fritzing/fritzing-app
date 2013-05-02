@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+<svg xmlns="http://www.w3.org/2000/svg" width="0.740444in" xml:space="preserve" xmlns:xml="http://www.w3.org/XML/1998/namespace" x="0px" version="1.1" y="0px" height="0.708653in" viewBox="0 0 53.312 51.023" id="pcb" enable-background="new 0 0 53.312 51.023">
+ <g  id="silkscreen">
+  <rect  width="45.354" x="3.854" y="3.014" fill="none" height="45.354" stroke="#FFFFFF" stroke-width="0.25"/>
+  <circle  fill="none" cx="5.469" cy="4.546" stroke="#FFFFFF" r="1.562" stroke-width="0.25"/>
+  <g >
+   <path  fill="none" stroke="#FFFFFF" stroke-width="0.25" d="M7.648,44.763c0.176-0.032,0.432-0.06,0.668-0.06c0.372,0,0.615,0.072,0.779,0.221c0.132,0.119,0.212,0.307,0.212,0.519c0,0.352-0.227,0.587-0.504,0.684v0.015c0.201,0.069,0.325,0.264,0.392,0.544c0.088,0.375,0.152,0.636,0.208,0.736h-0.36c-0.044-0.08-0.104-0.308-0.176-0.644c-0.08-0.372-0.228-0.512-0.543-0.523H7.996v1.167H7.648V44.763z M7.996,45.989h0.355c0.372,0,0.605-0.203,0.605-0.512c0-0.351-0.252-0.499-0.62-0.499c-0.168,0-0.281,0.012-0.344,0.024L7.996,45.989L7.996,45.989z"/>
+   <path  fill="none" stroke="#FFFFFF" stroke-width="0.25" d="M9.796,44.727h1.451v0.292h-1.099v0.896h1.015v0.287h-1.015v1.22H9.796V44.727z"/>
+   <path  fill="none" stroke="#FFFFFF" stroke-width="0.25" d="M13.947,46.237c-0.021-0.376-0.044-0.831-0.044-1.163h-0.008c-0.099,0.312-0.204,0.651-0.34,1.023l-0.479,1.308h-0.264l-0.44-1.283c-0.128-0.384-0.229-0.729-0.308-1.048h-0.008c-0.011,0.336-0.028,0.783-0.055,1.191l-0.069,1.152h-0.331l0.188-2.691h0.444l0.459,1.303c0.112,0.332,0.2,0.628,0.271,0.908h0.011c0.069-0.272,0.168-0.568,0.288-0.908l0.479-1.303h0.444l0.168,2.691H14.01L13.947,46.237z"/>
+   <path  fill="none" stroke="#FFFFFF" stroke-width="0.25" d="M15.531,45.15h-0.008l-0.452,0.243l-0.068-0.271l0.568-0.304h0.3v2.599h-0.34V45.15z"/>
+   <path  fill="none" stroke="#FFFFFF" stroke-width="0.25" d="M16.819,47.421v-0.216l0.276-0.268c0.661-0.632,0.968-0.971,0.968-1.359c0-0.264-0.124-0.508-0.515-0.508c-0.233,0-0.432,0.12-0.552,0.22l-0.109-0.248c0.176-0.146,0.436-0.264,0.729-0.264c0.562,0,0.795,0.384,0.795,0.756c0,0.479-0.348,0.867-0.896,1.396l-0.204,0.189v0.008h1.163v0.292L16.819,47.421L16.819,47.421z"/>
+  </g>
+ </g>
+ <g  id="copper1">
+  <rect  width="5.441" x="46.599" y="7.299" fill="#F7BD10" height="3.586" id="connector13pin"/>
+  <rect  width="5.441" x="46.599" y="12.969" fill="#F7BD10" height="3.589" id="connector12pin"/>
+  <rect  width="5.441" x="46.599" y="18.638" fill="#F7BD10" height="3.586" id="connector11pin"/>
+  <rect  width="5.441" x="46.599" y="24.308" fill="#F7BD10" height="3.586" id="connector10pin"/>
+  <rect  width="5.441" x="46.599" y="29.977" fill="#F7BD10" height="3.586" id="connector9pin"/>
+  <rect  width="5.441" x="46.599" y="35.646" fill="#F7BD10" height="3.586" id="connector8pin"/>
+  <rect  width="5.441" x="46.599" y="41.314" fill="#F7BD10" height="3.586" id="connector7pin"/>
+  <rect  width="5.441" x="1.02" y="41.314" fill="#F7BD10" height="3.586" id="connector6pin"/>
+  <rect  width="5.441" x="1.02" y="35.646" fill="#F7BD10" height="3.586" id="connector5pin"/>
+  <rect  width="5.441" x="1.02" y="29.977" fill="#F7BD10" height="3.586" id="connector4pin"/>
+  <rect  width="5.441" x="1.02" y="24.308" fill="#F7BD10" height="3.586" id="connector3pin"/>
+  <rect  width="5.441" x="1.02" y="18.638" fill="#F7BD10" height="3.586" id="connector2pin"/>
+  <rect  width="5.441" x="1.02" y="12.969" fill="#F7BD10" height="3.589" id="connector1pin"/>
+  <rect  width="5.441" x="1.02" y="7.299" fill="#F7BD10" height="3.586" id="connector0pin"/>
+ </g>
+</svg>

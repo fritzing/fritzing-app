@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE svg>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In  -->
+<svg xmlns="http://www.w3.org/2000/svg"  width="0.416667in" xml:space="preserve" xmlns:xml="http://www.w3.org/XML/1998/namespace" x="0px" version="1.2" y="0px" height="0.861111in" viewBox="0 0 30 62" baseProfile="tiny" id="0">
+ <desc   id="0.0">
+  <referenceFile   id="0.0.0">breadboard.svg</referenceFile>
+ </desc>
+ <defs   id="0.1"/>
+ <polygon  points="0,36.85 0,0 28.347,0 29.872,1.44 29.872,38.289 1.526,38.289 "  id="0.2"/>
+ <rect  width="2.151" x="3.027" y="37.618" fill="#8C8C8C"  height="23.533" id="connector0pin_1_"/>
+ <rect  width="2.151" x="10.227" y="37.618" fill="#8C8C8C"  height="23.533" id="connector1pin_1_"/>
+ <rect  width="2.152" x="24.626" y="37.618" fill="#8C8C8C"  height="23.533" id="connector3pin_1_"/>
+ <rect  width="28.347" fill="#303030"  height="36.85" id="0.6"/>
+ <path   id="color_path32_3_" d="M13.403,36.121c6.521,0,8.485,0.72,8.485,0.72l0.003-28.226c0-3.912-3.497-7.087-7.821-7.087c-4.318,0-7.823,3.169-7.823,7.087L6.243,36.841C6.243,36.841,6.882,36.121,13.403,36.121z"/>
+ <path  fill="#FFFFFF"  id="path34_1_" d="M18.039,5.281l1.585-0.273c-0.93-1.131-2.298-1.956-3.908-2.237l0.28,1.08C16.839,4.121,17.548,4.631,18.039,5.281z"/>
+ <path  fill="#FFFFFF"  id="path38_1_" d="M9.119,36.265c0.791-0.075,1.168-0.075,1.169-0.075l-0.039-22.744V8.619c0-1.471,0.936-2.729,2.289-3.35l-0.026-0.053l-1.377-1.511C9.293,4.707,8.056,6.527,8.056,8.617l0.04,27.754C8.096,36.371,8.328,36.34,9.119,36.265z"/>
+ <path   id="color_path32_2_" d="M13.425,36.101c6.521,0,8.485,0.72,8.485,0.72l0.003,0.185L6.266,37.025V36.82C6.266,36.82,6.905,36.101,13.425,36.101z"/>
+</svg>

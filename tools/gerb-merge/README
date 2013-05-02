@@ -1,0 +1,80 @@
+This is GerbMerge, a program for combining Gerber (i.e., RS274X) and Excellon
+data for making electronic printed circuit boards.
+
+The main documentation for this program is in doc/index.html.  Quick start
+information is below for the impatient; more detailed installation and
+execution information is in doc/index.html.  Sample files are in
+/usr/lib/python2.4/gerbmerge (or similar) or C:\Python24\GerbMerge (or
+similar).
+
+Quick Start
+===========
+
+Requirements:
+
+  - Python 2.4 or later
+          http://www.python.org
+
+  - eGenix mxBase package 2.0.4 or later
+          http://www.egenix.com/files/python/eGenix-mx-Extensions.html
+
+  - SimpleParse 2.0.0 or later
+          http://simpleparse.sourceforge.net
+
+Download GerbMerge:
+
+   http://claymore.engineer.gvsu.edu/~steriana/Python
+
+Installation:
+
+   Unix:   python setup.py install      (as root)
+   
+   Windows: gerbmerge1.6.exe            (DO READ installer messages)
+
+Running:
+
+   Unix:   /usr/local/bin/gerbmerge -h
+
+           # To test example files
+           cd testdata
+           make
+
+           # To view merged output, install gerbv from http://gerbv.sourceforge.net
+           make view1
+           make view2
+
+   Windows: - Open command prompt
+            - Type (assuming Python is in C:\Python24):
+
+                C:\Python24\python C:\Python24\lib\site-packages\gerbmerge\gerbmerge.py -h
+                         OR
+                C:\Python24\gerbmerge.bat -h
+
+            - To test example files:
+              
+              cd C:\Python24\gerbmerge\testdata
+              ..\..\gerbmerge layout1.cfg layout1.def
+              ..\..\gerbmerge layout2.cfg layout2.def
+
+   GerbMerge operation is controlled by two files, a job description file and a
+   panel layout file. Samples have been installed in the Python library
+   directory, something like:
+
+             /usr/lib/python2.4/gerbmerge/testdata
+
+   or
+
+             C:\Python24\gerbmerge\testdata
+
+License:
+
+   GerbMerge is free software, licensed under the GNU General Public
+   License (GPL). See the file COPYING for the license details.
+
+Contact:
+
+  Andrew Sterian
+  Padnos College of Engineering and Computing
+  Grand Valley State University
+  <steriana@claymore.engineer.gvsu.edu>
+  <http://claymore.engineer.gvsu.edu/~steriana>

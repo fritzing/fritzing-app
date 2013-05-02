@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- Created with Fritzing (http://www.fritzing.org/) -->
+<svg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' version='1.2' baseProfile='tiny' x='0in' y='0in' width='1.606in' height='0.606in' viewBox='0 0 40.7924 15.3924' >
+<g id='schematic'>
+<line class='other' x1='3.8862' y1='10.8712' x2='3.8862' y2='9.6012' stroke='#000000' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='3.2512' y1='10.2362' x2='4.5212' y2='10.2362' stroke='#000000' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='3.2512' y1='5.1562' x2='4.5212' y2='5.1562' stroke='#000000' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='5.1562' y1='12.7762' x2='5.1562' y2='11.5824' stroke='#000000' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='5.1562' y1='3.7846' x2='5.1562' y2='2.6162' stroke='#000000' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='12.7762' y1='7.6962' x2='2.6162' y2='12.7762' stroke='#000000' stroke-width='0.4064' stroke-linecap='round'/>
+<line class='other' x1='2.6162' y1='12.7762' x2='2.6162' y2='2.6162' stroke='#000000' stroke-width='0.4064' stroke-linecap='round'/>
+<line class='other' x1='2.6162' y1='2.6162' x2='12.7762' y2='7.6962' stroke='#000000' stroke-width='0.4064' stroke-linecap='round'/>
+<line class='pin' id='connector0pin' connectorname='A +IN' x1='0.0762' y1='10.2362' x2='2.6162' y2='10.2362' stroke='#000000' stroke-width='0.1524' stroke-linecap='round'/>
+<rect class='terminal' id='connector0terminal' x='0.0762' y='10.2362' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#000000' font-size='1.0668' x='3.0734' y='10.541' text-anchor='start'>A +IN</text>
+<line class='pin' id='connector1pin' connectorname='A -IN' x1='0.0762' y1='5.1562' x2='2.6162' y2='5.1562' stroke='#000000' stroke-width='0.1524' stroke-linecap='round'/>
+<rect class='terminal' id='connector1terminal' x='0.0762' y='5.1562' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#000000' font-size='1.0668' x='3.0734' y='5.461' text-anchor='start'>A -IN</text>
+<line class='pin' id='connector2pin' connectorname='A OUT' x1='15.3162' y1='7.6962' x2='12.7762' y2='7.6962' stroke='#000000' stroke-width='0.1524' stroke-linecap='round'/>
+<rect class='terminal' id='connector2terminal' x='15.3162' y='7.6962' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#000000' font-size='1.0668' x='12.319' y='8.001' text-anchor='end'>A OUT</text>
+<line class='pin' id='connector3pin' connectorname='A V+' x1='5.1562' y1='0.0762' x2='5.1562' y2='2.6162' stroke='#000000' stroke-width='0.1524' stroke-linecap='round'/>
+<rect class='terminal' id='connector3terminal' x='5.1562' y='0.0762' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<g transform='translate(5.461,3.0734)'><g transform='rotate(270)'>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#000000' font-size='1.0668' x='0' y='0' text-anchor='end'>A V+</text>
+</g></g>
+<line class='pin' id='connector4pin' connectorname='A V-' x1='5.1562' y1='15.3162' x2='5.1562' y2='12.7762' stroke='#000000' stroke-width='0.1524' stroke-linecap='round'/>
+<rect class='terminal' id='connector4terminal' x='5.1562' y='15.3162' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<g transform='translate(5.461,12.319)'><g transform='rotate(270)'>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#000000' font-size='1.0668' x='0' y='0' text-anchor='start'>A V-</text>
+</g></g>
+<line class='other' x1='29.2862' y1='4.5212' x2='29.2862' y2='5.7912' stroke='#000000' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='28.6512' y1='5.1562' x2='29.9212' y2='5.1562' stroke='#000000' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='28.6512' y1='10.2362' x2='29.9212' y2='10.2362' stroke='#000000' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='38.1762' y1='7.6962' x2='28.0162' y2='2.6162' stroke='#000000' stroke-width='0.4064' stroke-linecap='round'/>
+<line class='other' x1='28.0162' y1='2.6162' x2='28.0162' y2='12.7762' stroke='#000000' stroke-width='0.4064' stroke-linecap='round'/>
+<line class='other' x1='28.0162' y1='12.7762' x2='38.1762' y2='7.6962' stroke='#000000' stroke-width='0.4064' stroke-linecap='round'/>
+<line class='pin' id='connector5pin' connectorname='B +IN' x1='25.4762' y1='5.1562' x2='28.0162' y2='5.1562' stroke='#000000' stroke-width='0.1524' stroke-linecap='round'/>
+<rect class='terminal' id='connector5terminal' x='25.4762' y='5.1562' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#000000' font-size='1.0668' x='28.4734' y='5.461' text-anchor='start'>B +IN</text>
+<line class='pin' id='connector6pin' connectorname='B -IN' x1='25.4762' y1='10.2362' x2='28.0162' y2='10.2362' stroke='#000000' stroke-width='0.1524' stroke-linecap='round'/>
+<rect class='terminal' id='connector6terminal' x='25.4762' y='10.2362' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#000000' font-size='1.0668' x='28.4734' y='10.541' text-anchor='start'>B -IN</text>
+<line class='pin' id='connector7pin' connectorname='B OUT' x1='40.7162' y1='7.6962' x2='38.1762' y2='7.6962' stroke='#000000' stroke-width='0.1524' stroke-linecap='round'/>
+<rect class='terminal' id='connector7terminal' x='40.7162' y='7.6962' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#000000' font-size='1.0668' x='37.719' y='8.001' text-anchor='end'>B OUT</text>
+</g>
+</svg>

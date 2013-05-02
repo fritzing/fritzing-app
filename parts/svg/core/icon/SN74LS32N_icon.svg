@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.1"
+   width="21.6"
+   height="23.76"
+   viewBox="0 0 21.6 23.76"
+   id="svg2"
+   xml:space="preserve"><metadata
+   id="metadata46"><rdf:RDF><cc:Work
+       rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><defs
+   id="defs44" />
+<g
+   id="icon">
+	<rect
+   width="21.6"
+   height="19.438"
+   x="0"
+   y="2.1600001"
+   id="middle"
+   style="fill:#303030" />
+	<rect
+   width="21.6"
+   height="1.771"
+   x="0"
+   y="2.1600001"
+   id="top"
+   style="fill:#3d3d3d" />
+	<rect
+   width="21.6"
+   height="1.771"
+   x="0"
+   y="19.827999"
+   id="bottom" />
+	<polygon
+   points="0.54,3.931 0.54,19.828 0,21.6 0,2.16 "
+   id="left"
+   style="fill:#1f1f1f" />
+	<polygon
+   points="0.54,8.251 0.404,9.778 0.404,11.88 3.6,11.88 3.6,8.28 "
+   id="left-upper-rect"
+   style="fill:#1c1c1c" />
+	<polygon
+   points="3.6,15.516 3.6,11.88 0.404,11.88 0.404,13.983 0.54,15.516 "
+   id="left-lower-rect"
+   style="fill:#383838" />
+	<path
+   d="m 0.404,9.778 v 4.197 C 1.463,13.853 2.291,12.967 2.291,11.872 2.289,10.779 1.469,9.9 0.404,9.778 z"
+   id="slot"
+   style="fill:#262626" />
+	<path
+   d="m 0.54,3.931 v 4.313 c 1.713,0.322 3.017,1.82 3.017,3.628 0,1.808 -1.296,3.313 -3.017,3.637 v 0.007 h 3.6 V 3.931 h -3.6 z"
+   id="cover"
+   style="fill:#303030" />
+	<circle
+   cx="4.6799998"
+   cy="16.898001"
+   r="1.483"
+   id="circle12"
+   style="fill:#212121" />
+	<text
+   x="5.6799092"
+   y="11.339665"
+   id="text14"
+   style="font-size:5.76000023px;fill:#dddddd;font-family:OCRA">74LS</text>
+
+	<text
+   x="9.6119232"
+   y="17.51502"
+   id="text16"
+   style="font-size:5.76000023px;fill:#dddddd;font-family:OCRA">32</text>
+
+	<rect
+   width="2.1600001"
+   height="3.125"
+   x="2.52"
+   y="20.635"
+   id="connector0pin"
+   style="fill:#8c8c8c" />
+	<rect
+   width="2.1600001"
+   height="2.1600001"
+   x="2.52"
+   y="21.6"
+   id="connector0terminal"
+   style="fill:#8c8c8c" />
+	<polygon
+   points="2.52,22.075 4.68,22.075 6.12,21.412 6.12,20.635 2.52,20.635 "
+   id="polygon20"
+   style="fill:#8c8c8c" />
+	<rect
+   width="2.1600001"
+   height="3.125"
+   x="2.52"
+   y="0"
+   id="connector5pin"
+   style="fill:#8c8c8c" />
+	<rect
+   width="2.1600001"
+   height="2.1600001"
+   x="2.52"
+   y="0"
+   id="connector5terminal"
+   style="fill:#8c8c8c" />
+	<polygon
+   points="6.12,2.347 4.68,1.685 2.52,1.685 2.52,3.125 6.12,3.125 "
+   id="polygon24"
+   style="fill:#8c8c8c" />
+	<rect
+   width="2.1600001"
+   height="3.125"
+   x="16.92"
+   y="20.635"
+   id="connector2pin"
+   style="fill:#8c8c8c" />
+	<rect
+   width="2.1600001"
+   height="2.1600001"
+   x="16.92"
+   y="21.6"
+   id="connector2terminal"
+   style="fill:#8c8c8c" />
+	<polygon
+   points="15.48,21.412 16.92,22.075 19.08,22.075 19.08,20.635 15.48,20.635 "
+   id="polygon28"
+   style="fill:#8c8c8c" />
+	<rect
+   width="2.1600001"
+   height="3.125"
+   x="16.92"
+   y="0"
+   id="connector3pin"
+   style="fill:#8c8c8c" />
+	<rect
+   width="2.1600001"
+   height="2.1600001"
+   x="16.92"
+   y="0"
+   id="connector3terminal"
+   style="fill:#8c8c8c" />
+	<polygon
+   points="19.08,1.685 16.92,1.685 15.48,2.347 15.48,3.125 19.08,3.125 "
+   id="polygon32"
+   style="fill:#8c8c8c" />
+	<rect
+   width="2.1600001"
+   height="3.125"
+   x="9.7200003"
+   y="20.635"
+   id="connector1pin"
+   style="fill:#8c8c8c" />
+	<rect
+   width="2.1600001"
+   height="2.1600001"
+   x="9.7200003"
+   y="21.6"
+   id="connector1terminal"
+   style="fill:#8c8c8c" />
+	<polygon
+   points="8.28,21.412 9.72,22.075 11.88,22.075 13.32,21.412 13.32,20.635 8.28,20.635 "
+   id="polygon36"
+   style="fill:#8c8c8c" />
+	<rect
+   width="2.1600001"
+   height="3.125"
+   x="9.7200003"
+   y="0"
+   id="connector4pin"
+   style="fill:#8c8c8c" />
+	<rect
+   width="2.1600001"
+   height="2.1600001"
+   x="9.7200003"
+   y="0"
+   id="connector4terminal"
+   style="fill:#8c8c8c" />
+	<polygon
+   points="13.32,2.347 11.88,1.685 9.72,1.685 8.28,2.347 8.28,3.125 13.32,3.125 "
+   id="polygon40"
+   style="fill:#8c8c8c" />
+</g>
+</svg>

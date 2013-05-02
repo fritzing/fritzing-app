@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Ebene_1" xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="72.576px"
+	 height="29.375px" viewBox="0 0 72.576 29.375" enable-background="new 0 0 72.576 29.375" xml:space="preserve">
+<g id="breadboard">
+	<circle id="connector0pin" fill="none" stroke="#9A916C" stroke-width="0.254" cx="3.888" cy="25.488" r="1.512"/>
+	<circle id="connector1pin" fill="none" stroke="#9A916C" stroke-width="0.254" cx="11.088" cy="25.488" r="1.512"/>
+	<circle id="connector6pin" fill="none" stroke="#9A916C" stroke-width="0.254" cx="47.088" cy="25.488" r="1.512"/>
+	<circle id="connector7pin" fill="none" stroke="#9A916C" stroke-width="0.254" cx="54.288" cy="25.488" r="1.512"/>
+	<circle id="connector2pin" fill="none" stroke="#9A916C" stroke-width="0.254" cx="18.288" cy="25.488" r="1.512"/>
+	<circle id="connector3pin" fill="none" stroke="#9A916C" stroke-width="0.254" cx="25.488" cy="25.488" r="1.512"/>
+	<circle id="connector5pin" fill="none" stroke="#9A916C" stroke-width="0.254" cx="39.888" cy="25.488" r="1.512"/>
+	<circle id="connector4pin" fill="none" stroke="#9A916C" stroke-width="0.254" cx="32.688" cy="25.488" r="1.512"/>
+	<circle id="connector8pin" fill="none" stroke="#9A916C" stroke-width="0.254" cx="61.487" cy="25.488" r="1.512"/>
+	<circle id="connector9pin" fill="none" stroke="#9A916C" stroke-width="0.254" cx="68.688" cy="25.488" r="1.512"/>
+	<circle id="connector10pin" fill="none" stroke="#9A916C" stroke-width="0.254" cx="68.688" cy="3.888" r="1.512"/>
+	<circle id="connector11pin" fill="none" stroke="#9A916C" stroke-width="0.254" cx="61.487" cy="3.888" r="1.512"/>
+	<circle id="connector12pin" fill="none" stroke="#9A916C" stroke-width="0.254" cx="54.288" cy="3.888" r="1.512"/>
+	<circle id="connector13pin" fill="none" stroke="#9A916C" stroke-width="0.254" cx="47.088" cy="3.888" r="1.512"/>
+	<circle id="connector14pin" fill="none" stroke="#9A916C" stroke-width="0.254" cx="39.888" cy="3.888" r="1.512"/>
+	<circle id="connector15pin" fill="none" stroke="#9A916C" stroke-width="0.254" cx="32.688" cy="3.888" r="1.512"/>
+	<circle id="connector16pin" fill="none" stroke="#9A916C" stroke-width="0.254" cx="25.488" cy="3.888" r="1.512"/>
+	<circle id="connector17pin" fill="none" stroke="#9A916C" stroke-width="0.254" cx="18.288" cy="3.888" r="1.512"/>
+	<circle id="connector18pin" fill="none" stroke="#9A916C" stroke-width="0.254" cx="11.088" cy="3.888" r="1.512"/>
+	<circle id="connector19pin" fill="none" stroke="#9A916C" stroke-width="0.254" cx="3.888" cy="3.888" r="1.512"/>
+</g>
+<rect x="0.044" y="0.065" fill="#333333" width="71.296" height="25.489"/>
+<polygon fill="#CCCCCC" points="71.979,21.976 71.979,6.747 72.62,5.749 72.62,4.065 71.34,0.065 71.34,25.375 72.62,29.375 
+	72.62,25.977 "/>
+<polygon fill="#808080" points="7.4,27.855 66.102,27.855 67.639,29.375 72.576,29.375 71.34,25.554 0.044,25.554 1.044,29.375 
+	5.325,29.375 "/>
+<path opacity="0.2" fill="#993D3D" d="M71.34,8.875c0,0-10.302-1-20.927-1S25.898,9.438,17.718,9.438S-0.038,8.875-0.038,8.875
+	l0.082-8.81H71.34V8.875z"/>
+<path opacity="0.2" fill="#4C0E0E" d="M71.34,25.554H0.044l0.027-6.929c0,0,9.93,0.896,19.729,0.896
+	c11.688,0,25.477-1.583,29.738-1.583c7.834,0,21.802,0.667,21.802,0.667V25.554z"/>
+<g>
+	<g>
+		<rect x="64.723" y="5.536" fill="#FF1000" width="4.986" height="14.549"/>
+	</g>
+	<g>
+		<rect x="57.717" y="5.536" fill="#E6E6E6" width="4.986" height="14.549"/>
+	</g>
+	<g>
+		<rect x="50.712" y="5.536" fill="#FF1000" width="4.986" height="14.549"/>
+	</g>
+	<g>
+		<rect x="43.706" y="5.536" fill="#E6E6E6" width="4.986" height="14.549"/>
+	</g>
+	<g>
+		<rect x="36.702" y="5.536" fill="#FF1000" width="4.986" height="14.549"/>
+	</g>
+	<g>
+		<rect x="29.696" y="5.536" fill="#E6E6E6" width="4.986" height="14.549"/>
+	</g>
+	<g>
+		<rect x="22.691" y="5.536" fill="#FF1000" width="4.986" height="14.549"/>
+	</g>
+	<g>
+		<rect x="15.686" y="5.536" fill="#E6E6E6" width="4.986" height="14.549"/>
+	</g>
+	<g>
+		<rect x="8.68" y="5.536" fill="#F2F2F2" width="4.986" height="14.549"/>
+	</g>
+	<g>
+		<rect x="1.675" y="5.536" fill="#FF1000" width="4.986" height="14.549"/>
+	</g>
+</g>
+</svg>

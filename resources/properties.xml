@@ -1,0 +1,156 @@
+<properties>
+    
+<property name="thermistor type" symbol="" minValue="" maxValue="" numeric="no" defaultValue="Negative Temperature Coefficient (NTC)" editable="no">
+	<suffix suffix="ThermistorModuleID" />
+	<menuItem value="NTC" />
+	<menuItem value="PTC" />
+</property>
+
+  <property name="capacitance" symbol="F" minValue="0.000000000001" maxValue=".0047" defaultValue=".0000001" numeric="yes" editable="yes" >	
+	<suffix suffix="CapacitorModuleID" />
+	<menuItem value="0.000000000001" />
+	<menuItem value="0.000000000010" />
+	<menuItem value="0.000000000100" />
+	<menuItem value="0.000000001000" />
+	<menuItem value="0.000000010000" />
+	<menuItem value="0.000000100000" />
+	<menuItem value="0.000001000000" />
+	<menuItem value="0.000002200000" />
+	<menuItem value="0.000004700000" />
+	<menuItem value="0.000010000000" />
+	<menuItem value="0.000022000000" />
+	<menuItem value="0.000047000000" />
+	<menuItem value="0.000100000000" />
+	<menuItem value="0.000220000000" />
+	<menuItem value="0.000470000000" />
+	<menuItem value="0.001000000000" />
+	<menuItem value="0.004700000000" />
+</property>
+
+<property name="max capacitance" symbol="F" minValue="0.000000000001" maxValue=".0047" defaultValue=".0000001" numeric="yes" editable="yes" >	
+	<suffix suffix="VariableCapacitorModuleID" />
+</property>
+
+<property name="min capacitance" symbol="F" minValue="0.000000000001" maxValue=".0047" defaultValue=".0000001" numeric="yes" editable="yes" >	
+	<suffix suffix="VariableCapacitorModuleID" />
+</property>
+		
+<property name="voltage" symbol="V" minValue="5" maxValue="500" defaultValue="35" numeric="yes" editable="yes">
+ 	<suffix suffix="CapacitorModuleID"/>
+	<menuItem value="6.3" />
+	<menuItem value="10" />
+	<menuItem value="16" />
+	<menuItem value="20" />
+	<menuItem value="35" />
+	<menuItem value="50" />
+	<menuItem value="100" />
+</property>
+
+<property name="voltage" symbol="V" minValue="0" maxValue="1000" defaultValue="5" numeric="yes" editable="yes">
+  <suffix suffix="DC2PowerModuleID"/>
+  <suffix suffix="AC2PowerModuleID"/>
+  <menuItem value="3.3" />
+	<menuItem value="5" />
+	<menuItem value="12" />
+</property>
+
+<property name="frequency" symbol="Hz" minValue="0" maxValue="1000" defaultValue="60" numeric="yes" editable="yes">
+ 	<suffix suffix="AC2PowerModuleID"/>
+	<menuItem value="60" />
+</property>
+  
+<property name="frequency" symbol="" minValue="" maxValue="" defaultValue="16 MHz" numeric="no" editable="no">
+   	<suffix suffix="CrystalModuleID"/>
+	<menuItem value="32 kHz" />
+	<menuItem value="1 MHz" />
+	<menuItem value="2 MHz" />
+	<menuItem value="4 MHz" />    
+	<menuItem value="8 MHz" />
+	<menuItem value="16 MHz" />
+	<menuItem value="20 MHz" />
+	<menuItem value="25 MHz" />
+	<menuItem value="32 MHz" />
+	<menuItem value="40 MHz" />
+</property>
+
+
+<property name="tolerance" symbol="" minValue="" maxValue="" defaultValue="5%" numeric="no" editable="no">
+   	<suffix suffix="ResistorModuleID"/>
+	<menuItem value="&#177;0.05%" />
+	<menuItem value="&#177;0.1%" />
+	<menuItem value="&#177;0.25%" />
+	<menuItem value="&#177;0.5%" />
+	<menuItem value="&#177;1%" />
+	<menuItem value="&#177;2%" />
+	<menuItem value="&#177;5%" />
+	<menuItem value="&#177;10%" />
+	<menuItem value="&#177;20%" />
+</property>
+
+<property name="color" symbol="" minValue="" maxValue="" defaultValue="Red (633nm)" numeric="no" editable="no">
+   	<suffix suffix="ColorLEDModuleID"/>
+	<menuItem value="Infrared (940nm)"  adjunct="#666666"/>
+	<menuItem value="Infrared (880nm)"  adjunct="#999999"/>
+	<menuItem value="Infrared (850nm)"  adjunct="#c0c0c0"/>
+	<menuItem value="Red (660nm)"  adjunct="#ff114d"/>
+	<menuItem value="Red (635nm)"  adjunct="#ff0000"/>
+	<menuItem value="Red (633nm)"  adjunct="#e60000"/>  <!-- e60000 original color -->
+	<menuItem value="Orange (620nm)"  adjunct="#ff5b0d"/>
+	<menuItem value="Orange (612nm)"  adjunct="#ff9a35"/>
+	<menuItem value="Orange (605nm)"  adjunct="#ff9a35"/>
+	<menuItem value="Yellow (595nm)"  adjunct="#fadf47"/>
+	<menuItem value="Yellow (592nm)"  adjunct="#fbe446"/>
+	<menuItem value="Yellow (585nm)"  adjunct="#ffea00"/> <!-- ffea00 original color -->
+	<menuItem value="Yellow (574nm)"  adjunct="#deffa2"/>
+	<menuItem value="Green (570nm)"  adjunct="#17ff8b"/>
+	<menuItem value="Green (565nm)"  adjunct="#00d76b"/>
+	<menuItem value="Green (560nm)"  adjunct="#00cc80"/>
+	<menuItem value="Green (555nm)"  adjunct="#00b33b"/> <!-- 00b33b original color -->
+	<menuItem value="Blue (525nm)"  adjunct="#00d9d3"/>
+	<menuItem value="Blue (505nm)"  adjunct="#07d2fe"/>
+	<menuItem value="Blue (470nm)"  adjunct="#3851fe"/>
+	<menuItem value="Blue (430nm)"  adjunct="#0000ee"/>  <!-- 0000ee original color -->
+	<menuItem value="White (4500K)"  adjunct="#cccccc"/> <!-- cccccc original color (sort of) -->
+	<menuItem value="White (6500K)"  adjunct="#ffffff"/>
+	<menuItem value="White (8000K)"  adjunct="#ffecfe"/>
+</property>
+
+<property name="color" symbol="" minValue="" maxValue="" defaultValue="Blue" numeric="no" editable="no">
+   	<suffix suffix="LEDSuperfluxModuleID"/>
+	<menuItem value="Red"  adjunct="#ff0000"/>  
+	<menuItem value="Yellow"  adjunct="#ffff00"/> 
+	<menuItem value="Green"  adjunct="#00ff00"/> 
+	<menuItem value="Blue"  adjunct="#0000ff"/>  
+	<menuItem value="White"  adjunct="#ffffff"/> 
+	<menuItem value="Orange"  adjunct="#ffc200"/> 
+</property>
+
+<property name="breakdown voltage" symbol="V" minValue="2" maxValue="30" defaultValue="3.6" numeric="yes" editable="yes">
+   	<suffix suffix="ZenerDiodeModuleID"/>
+	<menuItem value="2" />
+	<menuItem value="3.6" />
+	<menuItem value="4.7" />
+	<menuItem value="5.1" />
+	<menuItem value="9.1" />
+	<menuItem value="12.1" />
+</property>
+  
+<property  name="maximum resistance" symbol="&#937;" minValue="" maxValue="" defaultValue="" numeric="yes" editable="yes">
+  	<suffix suffix="PotentiometerModuleID"/>
+</property>
+  
+<property name="inductance" symbol="H" minValue="" maxValue="" defaultValue="" numeric="yes" editable="yes">
+    	<suffix suffix="InductorModuleID"/>
+</property>
+
+  <property name="current" symbol="A" minValue="" maxValue="" defaultValue="" numeric="yes" editable="yes">
+    	<suffix suffix="InductorModuleID"/>
+    	<suffix suffix="LEDModuleID"/>
+</property>
+  
+<property name="power" symbol="W" minValue="" maxValue="" defaultValue="" numeric="yes" editable="yes">
+    	<suffix suffix="ResistorModuleID"/>
+    	<suffix suffix="PotentiometerModuleID"/>
+</property>
+  
+</properties>

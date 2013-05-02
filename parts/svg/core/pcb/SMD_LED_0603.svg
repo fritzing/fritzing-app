@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   width="3.3mm"
+   height="1.5mm"
+   viewBox="0 0 330 150"
+   id="svg2">
+  <g
+     id="copper1">
+    <rect
+       width="120"
+       height="110"
+       x="20"
+       y="20"
+       id="connector0pad"
+       style="fill:#f7bf13;fill-opacity:1;stroke:none" />
+    <rect
+       width="120"
+       height="110"
+       x="190"
+       y="20"
+       id="connector1pad"
+       style="fill:#f7bf13;fill-opacity:1;stroke:none" />
+  </g>
+  <g id="silkscreen">
+      <rect
+         width="320"
+         height="140"
+         x="5"
+         y="5"
+         id="rect7"
+         style="fill:none;stroke:#ffffff;stroke-width:10;stroke-opacity:1"/>
+     <path
+        d="m 5.492126,0.70866127 0,3.89763783"
+       transform="scale(28.222223,28.222223)"
+       id="path3612"
+       style="fill:none;stroke:#ffffff;stroke-width:0.35433072;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"/>
+  </g>
+</svg>

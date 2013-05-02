@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="17.695px" height="24.48px" viewBox="0 0 17.695 24.48" enable-background="new 0 0 17.695 24.48" xml:space="preserve">
+<desc>Fritzing footprint SVG</desc>
+<g id="silkscreen">
+	<line fill="none" stroke="#FFFFFF" stroke-width="0.5" x1="1.44" y1="1.44" x2="1.44" y2="23.04"/>
+	<line fill="none" stroke="#FFFFFF" stroke-width="0.5" x1="1.44" y1="23.04" x2="8.64" y2="23.04"/>
+	<line fill="none" stroke="#FFFFFF" stroke-width="0.5" x1="8.64" y1="1.44" x2="1.44" y2="1.44"/>
+	<line fill="none" stroke="#FFFFFF" stroke-width="0.5" x1="1.44" y1="8.64" x2="8.64" y2="8.64"/>
+	<line fill="none" stroke="#FFFFFF" stroke-width="0.5" x1="8.64" y1="1.44" x2="8.64" y2="8.64"/>
+	<line fill="none" stroke="#FFFFFF" stroke-width="0.5" x1="8.64" y1="23.04" x2="15.841" y2="23.04"/>
+	<line fill="none" stroke="#FFFFFF" stroke-width="0.5" x1="15.841" y1="23.04" x2="15.841" y2="1.44"/>
+	<line fill="none" stroke="#FFFFFF" stroke-width="0.5" x1="15.841" y1="1.44" x2="8.64" y2="1.44"/>
+</g>
+<g id="copper0">
+	<g id="copper1">
+		<rect x="3.06" y="3.06" fill="none" stroke="#FFBF00" stroke-width="1.5" width="3.96" height="3.96"/>
+		<circle id="connector1pin" fill="none" stroke="#FFBF00" stroke-width="1.5" cx="5.04" cy="5.04" r="1.98"/>
+		<circle id="connector2pin" fill="none" stroke="#FFBF00" stroke-width="1.5" cx="5.04" cy="12.24" r="1.98"/>
+		<circle id="connector3pin" fill="none" stroke="#FFBF00" stroke-width="1.5" cx="5.04" cy="19.44" r="1.98"/>
+		<circle id="connector6pin" fill="none" stroke="#FFBF00" stroke-width="1.5" cx="12.24" cy="5.04" r="1.98"/>
+		<circle id="connector5pin" fill="none" stroke="#FFBF00" stroke-width="1.5" cx="12.24" cy="12.24" r="1.98"/>
+		<circle id="connector4pin" fill="none" stroke="#FFBF00" stroke-width="1.5" cx="12.24" cy="19.44" r="1.98"/>
+	</g>
+</g>
+</svg>

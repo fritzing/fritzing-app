@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg width="0.9133403in"  version="1.2" xmlns="http://www.w3.org/2000/svg" height="0.99264713in" viewBox="0 0 913.3403 992.64707" xmlns:svg="http://www.w3.org/2000/svg" >
+    
+ <g id="silkscreen">   
+   <line style="stroke:#ffffff;stroke-width:9.41271781999999920;stroke-opacity:1" id="line2959" y1="7.3096967" x1="4.7063589" y2="981.90143" x2="4.7063589"/>
+   <line style="stroke:#ffffff;stroke-width:12.55598449999999900;stroke-opacity:1" id="line2961" y1="986.44147" x1="1.2519864" y2="986.44147" x2="913.67157"/>
+   <line style="stroke:#ffffff;stroke-width:9.40305805000000030;stroke-opacity:1" id="line2963" y1="981.90985" x1="908.63879" y2="9.3172665" x2="908.63879"/>
+   <line style="stroke:#ffffff;stroke-width:12.49902533999999900;stroke-opacity:1" id="line2965" y1="7.4240241" x1="0.75740063" y2="7.4240241" x2="388.25452"/>
+   <line style="stroke:#ffffff;stroke-width:12.49922847999999900;stroke-opacity:1" id="line2967" y1="7.4240241" x1="526.6795" y2="7.4240241" x2="914.18921"/>
+</g>
+<g id="copper0">
+  <g id="copper1">
+   <g id="g3080" transform="translate(0.74083352,178.53302)">
+    <rect width="55" x="27.998852" y="26.95137" height="55" style="fill:none;stroke:#ffbf00;stroke-width:20" id="rect2970"/>
+    <circle cx="60" cy="60" style="fill:none;stroke:#ffbf00;stroke-width:20" id="connector0pin" r="27.5" d="M 87.5,60 C 87.5,75.187831 75.187831,87.5 60,87.5 44.812169,87.5 32.5,75.187831 32.5,60 32.5,44.812169 44.812169,32.5 60,32.5 75.187831,32.5 87.5,44.812169 87.5,60 z" transform="translate(-4.501148,-5.5486297)"/>
+    <circle cx="60" cy="160" style="fill:none;stroke:#ffbf00;stroke-width:20" id="connector1pin" r="27.5" d="m 87.5,160 c 0,15.18783 -12.312169,27.5 -27.5,27.5 -15.187831,0 -27.5,-12.31217 -27.5,-27.5 0,-15.18783 12.312169,-27.5 27.5,-27.5 15.187831,0 27.5,12.31217 27.5,27.5 z" transform="translate(-4.501148,-5.5486297)"/>
+    <circle cx="60" cy="260" style="fill:none;stroke:#ffbf00;stroke-width:20" id="connector2pin" r="27.5" d="m 87.5,260 c 0,15.18783 -12.312169,27.5 -27.5,27.5 -15.187831,0 -27.5,-12.31217 -27.5,-27.5 0,-15.18783 12.312169,-27.5 27.5,-27.5 15.187831,0 27.5,12.31217 27.5,27.5 z" transform="translate(-4.501148,-5.5486297)"/>
+    <circle cx="60" cy="360" style="fill:none;stroke:#ffbf00;stroke-width:20" id="connector3pin" r="27.5" d="m 87.5,360 c 0,15.18783 -12.312169,27.5 -27.5,27.5 -15.187831,0 -27.5,-12.31217 -27.5,-27.5 0,-15.18783 12.312169,-27.5 27.5,-27.5 15.187831,0 27.5,12.31217 27.5,27.5 z" transform="translate(-4.501148,-5.5486297)"/>
+    <circle cx="60" cy="460" style="fill:none;stroke:#ffbf00;stroke-width:20" id="connector4pin" r="27.5" d="m 87.5,460 c 0,15.18783 -12.312169,27.5 -27.5,27.5 -15.187831,0 -27.5,-12.31217 -27.5,-27.5 0,-15.18783 12.312169,-27.5 27.5,-27.5 15.187831,0 27.5,12.31217 27.5,27.5 z" transform="translate(-4.501148,-5.5486297)"/>
+    <circle cx="60" cy="560" style="fill:none;stroke:#ffbf00;stroke-width:20" id="connector5pin" r="27.5" d="m 87.5,560 c 0,15.18783 -12.312169,27.5 -27.5,27.5 -15.187831,0 -27.5,-12.31217 -27.5,-27.5 0,-15.18783 12.312169,-27.5 27.5,-27.5 15.187831,0 27.5,12.31217 27.5,27.5 z" transform="translate(-4.501148,-5.5486297)"/>
+   </g>
+   <g id="g3066" transform="translate(200.73407,178.53302)">
+    <circle cx="660" cy="60" style="fill:none;stroke:#ffbf00;stroke-width:20" id="connector17pin" r="27.5" d="m 687.5,60 c 0,15.187831 -12.31217,27.5 -27.5,27.5 -15.18783,0 -27.5,-12.312169 -27.5,-27.5 0,-15.187831 12.31217,-27.5 27.5,-27.5 15.18783,0 27.5,12.312169 27.5,27.5 z" transform="translate(-4.501148,-5.5486297)"/>
+    <circle cx="660" cy="160" style="fill:none;stroke:#ffbf00;stroke-width:20" id="connector16pin" r="27.5" d="m 687.5,160 c 0,15.18783 -12.31217,27.5 -27.5,27.5 -15.18783,0 -27.5,-12.31217 -27.5,-27.5 0,-15.18783 12.31217,-27.5 27.5,-27.5 15.18783,0 27.5,12.31217 27.5,27.5 z" transform="translate(-4.501148,-5.5486297)"/>
+    <circle cx="660" cy="260" style="fill:none;stroke:#ffbf00;stroke-width:20" id="connector15pin" r="27.5" d="m 687.5,260 c 0,15.18783 -12.31217,27.5 -27.5,27.5 -15.18783,0 -27.5,-12.31217 -27.5,-27.5 0,-15.18783 12.31217,-27.5 27.5,-27.5 15.18783,0 27.5,12.31217 27.5,27.5 z" transform="translate(-4.501148,-5.5486297)"/>
+    <circle cx="660" cy="360" style="fill:none;stroke:#ffbf00;stroke-width:20" id="connector14pin" r="27.5" d="m 687.5,360 c 0,15.18783 -12.31217,27.5 -27.5,27.5 -15.18783,0 -27.5,-12.31217 -27.5,-27.5 0,-15.18783 12.31217,-27.5 27.5,-27.5 15.18783,0 27.5,12.31217 27.5,27.5 z" transform="translate(-4.501148,-5.5486297)"/>
+    <circle cx="660" cy="460" style="fill:none;stroke:#ffbf00;stroke-width:20" id="connector13pin" r="27.5" d="m 687.5,460 c 0,15.18783 -12.31217,27.5 -27.5,27.5 -15.18783,0 -27.5,-12.31217 -27.5,-27.5 0,-15.18783 12.31217,-27.5 27.5,-27.5 15.18783,0 27.5,12.31217 27.5,27.5 z" transform="translate(-4.501148,-5.5486297)"/>
+    <circle cx="660" cy="560" style="fill:none;stroke:#ffbf00;stroke-width:20" id="connector12pin" r="27.5" d="m 687.5,560 c 0,15.18783 -12.31217,27.5 -27.5,27.5 -15.18783,0 -27.5,-12.31217 -27.5,-27.5 0,-15.18783 12.31217,-27.5 27.5,-27.5 15.18783,0 27.5,12.31217 27.5,27.5 z" transform="translate(-4.501148,-5.5486297)"/>
+   </g>
+
+  <rect width="55.55555352799608" x="27.47056265589205" y="506.0719413594067" fill="none" height="55.5555520109742" id="connector3pin"/>
+  <rect width="55.55555352799608" x="29.02008969411662" y="607.2164312961053" fill="none" height="55.5555520109742" id="connector4pin"/>
+  <rect width="55.55555352799608" x="24.72987006720823" y="705.8890887450167" fill="none" height="55.55555201097413" id="connector5pin"/>
+  <rect width="55.55555352799608" x="824.8426472748394" y="709.4760276018492" fill="none" height="55.55555201097413" id="connector18"/>
+  <rect width="55.55555352799608" x="830.0853753884643" y="604.4017109470352" fill="none" height="55.5555520109742" id="connector19"/>
+  <rect width="55.55555352799608" x="831.487082317492" y="509.2483051298917" fill="none" height="55.5555520109742" id="connector20"/>
+  <rect width="55.55555352799608" x="831.4721405058147" y="404.1441048525398" fill="none" height="55.5555520109742" id="connector21"/>
+  <rect width="55.55555352799608" x="830.0405499534334" y="304.448824510307" fill="none" height="55.5555520109742" id="connector22"/>
+  <rect width="55.55555352799608" x="26.0583033903548" y="206.406656090289" fill="none" height="55.5555520109742" id="connector0pin"/>
+  <rect width="55.55555352799608" x="827.7035902593522" y="206.0526327766318" fill="none" height="55.5555520109742" id="connector23"/>
+  <rect width="55.55555352799608" x="30.32178702015332" y="308.7302604113634" fill="none" height="55.5555520109742" id="connector1pin"/>
+  <rect width="55.55555352799608" x="28.08145898103852" y="411.0400126225009" fill="none" height="55.5555520109742" id="connector2pin"/>
+   </g>
+</g>
+</svg>

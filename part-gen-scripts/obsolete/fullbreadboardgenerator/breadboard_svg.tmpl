@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This xml file is generated through a template. Please don't edit it directly -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+	x="0px" y="0px" width="$size.realWidth" height="$size.realHeight"
+	viewBox="0 0 $size.pxWidth $size.pxHeight"
+	xml:space="preserve">
+
+## drawing the sockets with gradients
+## first we draw the rows
+#for $row in $rows
+#for $dot in $row.net
+#set $realID = $dot.id + "pin"
+#set $posx = 10.65 + (9 * $dot.x)
+#set $posy = 6 + (9 * $dot.y)
+<rect id="$realID" x="$posx" y="$posy" width="6" height="6" fill="none" />
+#end for
+#end for
+## then draw the lines
+#for $line in $lines
+#for $dot in $line.net
+#set $realID = $dot.id + "pin"
+#set $posx = 10.65 + (9 * $dot.x)
+#set $posy = 6 + (9 * $dot.y)
+<rect id="$realID" x="$posx" y="$posy" width="6" height="6" fill="none" />
+#end for
+#end for
+
+<g id="breadboardbreadboard">	
+	<g id="background">
+		<rect fill="#D9D9D9" width="$size.pxWidth" height="$size.pxHeight"/>
+	</g>
+#set $grooveWidth = float($size.pxWidth) - 2.304
+	<g id="grooves">
+		<rect x="1.152" y="26.165" fill="#B3B0B0" width="$grooveWidth" height="0.563"/>
+		<rect x="1.152" y="161.845" fill="#B3B0B0" width="$grooveWidth" height="0.562"/>
+		<rect x="296.9" y="0.0" fill="#B3B0B0" width="0.5" height="26.165"/>
+		<rect x="296.9" y="162.407" fill="#B3B0B0" width="0.5" height="26.593"/>
+		<g>
+			<path fill="#CCC9C9" d="M13.526,89.754c-2.502,0-4.531,2.03-4.531,4.533c0,2.502,2.029,4.531,4.531,4.531H288.15v-9.064H13.526
+				L13.526,89.754z"/>
+			<path fill="#CCC9C9" d="M580.773,98.818c2.504,0,4.533-2.029,4.533-4.531c0-2.503-2.029-4.533-4.533-4.533H306.15v9.064H580.773
+				L580.773,98.818z"/>
+		</g>
+	</g>
+	<g id="text">
+		<text x="30.5747" y="38.7432" fill="#B3B0B0" font-family="'HelveticaNeue-CondensedBold'" font-size="5.7545">1</text>
+		<text x="66.3931" y="38.7432" fill="#B3B0B0" font-family="'HelveticaNeue-CondensedBold'" font-size="5.7545">5</text>
+		<text x="109.3877" y="38.7432" fill="#B3B0B0" font-family="'HelveticaNeue-CondensedBold'" font-size="5.7545">10</text>
+		<text x="154.3979" y="38.7432" fill="#B3B0B0" font-family="'HelveticaNeue-CondensedBold'" font-size="5.7545">15</text>
+		<text x="199.6201" y="38.7432" fill="#B3B0B0" font-family="'HelveticaNeue-CondensedBold'" font-size="5.7545">20</text>
+		<text x="244.9175" y="38.7432" fill="#B3B0B0" font-family="'HelveticaNeue-CondensedBold'" font-size="5.7545">25</text>
+		<text x="289.6904" y="38.7432" fill="#B3B0B0" font-family="'HelveticaNeue-CondensedBold'" font-size="5.7545">30</text>
+		<text x="334.6636" y="38.7432" fill="#B3B0B0" font-family="'HelveticaNeue-CondensedBold'" font-size="5.7545">35</text>
+		<text x="379.4976" y="38.7432" fill="#B3B0B0" font-family="'HelveticaNeue-CondensedBold'" font-size="5.7545">40</text>
+		<text x="424.7827" y="38.7432" fill="#B3B0B0" font-family="'HelveticaNeue-CondensedBold'" font-size="5.7545">45</text>
+		<text x="469.6577" y="38.7432" fill="#B3B0B0" font-family="'HelveticaNeue-CondensedBold'" font-size="5.7545">50</text>
+		<text x="514.8296" y="38.7432" fill="#B3B0B0" font-family="'HelveticaNeue-CondensedBold'" font-size="5.7545">55</text>
+		<text x="559.853" y="38.7432" fill="#B3B0B0" font-family="'HelveticaNeue-CondensedBold'" font-size="5.7545">60</text>
+		<text x="30.5747" y="152.9932" fill="#B3B0B0" font-family="'HelveticaNeue-CondensedBold'" font-size="5.7545">1</text>
+		<text x="66.3931" y="152.9932" fill="#B3B0B0" font-family="'HelveticaNeue-CondensedBold'" font-size="5.7545">5</text>
+		<text x="109.3877" y="152.9932" fill="#B3B0B0" font-family="'HelveticaNeue-CondensedBold'" font-size="5.7545">10</text>
+		<text x="154.3979" y="152.9932" fill="#B3B0B0" font-family="'HelveticaNeue-CondensedBold'" font-size="5.7545">15</text>
+		<text x="199.6201" y="152.9932" fill="#B3B0B0" font-family="'HelveticaNeue-CondensedBold'" font-size="5.7545">20</text>
+		<text x="244.9175" y="152.9932" fill="#B3B0B0" font-family="'HelveticaNeue-CondensedBold'" font-size="5.7545">25</text>
+		<text x="289.6904" y="152.9932" fill="#B3B0B0" font-family="'HelveticaNeue-CondensedBold'" font-size="5.7545">30</text>
+		<text x="334.6636" y="152.9932" fill="#B3B0B0" font-family="'HelveticaNeue-CondensedBold'" font-size="5.7545">35</text>
+		<text x="379.4976" y="152.9932" fill="#B3B0B0" font-family="'HelveticaNeue-CondensedBold'" font-size="5.7545">40</text>
+		<text x="424.7827" y="152.9932" fill="#B3B0B0" font-family="'HelveticaNeue-CondensedBold'" font-size="5.7545">45</text>
+		<text x="469.6577" y="152.9932" fill="#B3B0B0" font-family="'HelveticaNeue-CondensedBold'" font-size="5.7545">50</text>
+		<text x="514.8296" y="152.9932" fill="#B3B0B0" font-family="'HelveticaNeue-CondensedBold'" font-size="5.7545">55</text>
+		<text x="559.853" y="152.9932" fill="#B3B0B0" font-family="'HelveticaNeue-CondensedBold'" font-size="5.7545">60</text>
+		<text x="5.0767" y="46.5176" fill="#B3B0B0" font-family="'HelveticaNeue-CondensedBold'" font-size="5.7545">A</text>
+		<text x="5.0767" y="55.584" fill="#B3B0B0" font-family="'HelveticaNeue-CondensedBold'" font-size="5.7545">B</text>
+		<text x="5.1313" y="64.6484" fill="#B3B0B0" font-family="'HelveticaNeue-CondensedBold'" font-size="5.7545">C</text>
+		<text x="5.0249" y="73.7119" fill="#B3B0B0" font-family="'HelveticaNeue-CondensedBold'" font-size="5.7545">D</text>
+		<text x="5.2925" y="82.7764" fill="#B3B0B0" font-family="'HelveticaNeue-CondensedBold'" font-size="5.7545">E</text>
+		<text x="5.3442" y="109.9707" fill="#B3B0B0" font-family="'HelveticaNeue-CondensedBold'" font-size="5.7545">F</text>
+		<text x="5.0767" y="119.0332" fill="#B3B0B0" font-family="'HelveticaNeue-CondensedBold'" font-size="5.7545">G</text>
+		<text x="5.0767" y="128.0986" fill="#B3B0B0" font-family="'HelveticaNeue-CondensedBold'" font-size="5.7545">H</text>
+		<text x="5.9341" y="137.1641" fill="#B3B0B0" font-family="'HelveticaNeue-CondensedBold'" font-size="5.7545">I</text>
+		<text x="5.3442" y="146.2285" fill="#B3B0B0" font-family="'HelveticaNeue-CondensedBold'" font-size="5.7545">J</text>
+		<text x="586.0405" y="46.5176" fill="#B3B0B0" font-family="'HelveticaNeue-CondensedBold'" font-size="5.7545">A</text>
+		<text x="586.0405" y="55.584" fill="#B3B0B0" font-family="'HelveticaNeue-CondensedBold'" font-size="5.7545">B</text>
+		<text x="586.0952" y="64.6484" fill="#B3B0B0" font-family="'HelveticaNeue-CondensedBold'" font-size="5.7545">C</text>
+		<text x="585.9888" y="73.7119" fill="#B3B0B0" font-family="'HelveticaNeue-CondensedBold'" font-size="5.7545">D</text>
+		<text x="586.2563" y="82.7764" fill="#B3B0B0" font-family="'HelveticaNeue-CondensedBold'" font-size="5.7545">E</text>
+		<text x="586.3081" y="109.9707" fill="#B3B0B0" font-family="'HelveticaNeue-CondensedBold'" font-size="5.7545">F</text>
+		<text x="586.0405" y="119.0332" fill="#B3B0B0" font-family="'HelveticaNeue-CondensedBold'" font-size="5.7545">G</text>
+		<text x="586.0405" y="128.0986" fill="#B3B0B0" font-family="'HelveticaNeue-CondensedBold'" font-size="5.7545">H</text>
+		<text x="586.8979" y="137.1641" fill="#B3B0B0" font-family="'HelveticaNeue-CondensedBold'" font-size="5.7545">I</text>
+		<text x="586.3081" y="146.2285" fill="#B3B0B0" font-family="'HelveticaNeue-CondensedBold'" font-size="5.7545">J</text>
+	</g>
+	<g id="sockets">
+## drawing the sockets with gradients
+## first we draw the rows
+#for $row in $rows
+#for $dot in $row.net
+#set $unusedID = $dot.id + "xpin"
+#set $posx = 13.65 + (9 * $dot.x)
+#set $posx2 = 10.659 + (9 * $dot.x)
+#set $posx3 = 12.154 + (9 * $dot.x)
+#set $posx4 = 12.824 + (9 * $dot.x)
+#set $posx5 = 11.998 + (9 * $dot.x)
+#set $posy = 9 + (9 * $dot.y)
+#set $posy2 = 7.504 + (9 * $dot.y)
+#set $posy3 = 7.348 + (9 * $dot.y)
+#set $posy4 = 8.174 + (9 * $dot.y)
+#set $posy5 = 11.991 + (9 * $dot.y)
+#set $posy6 = 9.826 + (9 * $dot.y)
+#set $posy7 = 10.652 + (9 * $dot.y)
+		<g id="$unusedID">
+			<path fill="#BFBFBF" d="M$posx ,$posy2 c0.826,0,1.496,0.67,1.496,1.496h1.495c0-1.652-1.339-2.991-2.991-2.991
+				S$posx2 ,$posy3 ,$posx2 ,$posy
+				h1.495C$posx3 ,$posy4 ,$posx4 ,$posy2 ,$posx ,$posy2 z"/>
+			<path fill="#E6E6E6" d="M$posx,$posy5 c1.652,0,2.991-1.339,2.991-2.991h-1.495c0,0.826-0.67,1.496-1.496,1.496
+				S$posx3 ,$posy6 ,$posx3 ,$posy
+				h-1.495C$posx2 ,$posy7 ,$posx5 ,$posy5 ,$posx ,$posy5 z"/>
+			<circle fill="#383838" cx="$posx" cy="$posy" r="1.496"/>
+		</g>
+#end for
+#end for
+## then draw the lines
+#for $line in $lines
+#for $dot in $line.net
+#set $unusedID = $dot.id + "xpin"
+#set $posx = 13.65 + (9 * $dot.x)
+#set $posx2 = 10.659 + (9 * $dot.x)
+#set $posx3 = 12.154 + (9 * $dot.x)
+#set $posx4 = 12.824 + (9 * $dot.x)
+#set $posx5 = 11.998 + (9 * $dot.x)
+#set $posy = 9 + (9 * $dot.y)
+#set $posy2 = 7.504 + (9 * $dot.y)
+#set $posy3 = 7.348 + (9 * $dot.y)
+#set $posy4 = 8.174 + (9 * $dot.y)
+#set $posy5 = 11.991 + (9 * $dot.y)
+#set $posy6 = 9.826 + (9 * $dot.y)
+#set $posy7 = 10.652 + (9 * $dot.y)
+		<g id="$unusedID">
+			<path fill="#BFBFBF" d="M$posx ,$posy2 c0.826,0,1.496,0.67,1.496,1.496h1.495c0-1.652-1.339-2.991-2.991-2.991
+				S$posx2 ,$posy3 ,$posx2 ,$posy
+				h1.495C$posx3 ,$posy4 ,$posx4 ,$posy2 ,$posx ,$posy2 z"/>
+			<path fill="#E6E6E6" d="M$posx,$posy5 c1.652,0,2.991-1.339,2.991-2.991h-1.495c0,0.826-0.67,1.496-1.496,1.496
+				S$posx3 ,$posy6 ,$posx3 ,$posy
+				h-1.495C$posx2 ,$posy7 ,$posx5 ,$posy5 ,$posx ,$posy5 z"/>
+			<circle fill="#383838" cx="$posx" cy="$posy" r="1.496"/>
+		</g>
+#end for
+#end for
+	</g>
+</g>
+</svg>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1 Basic//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-basic.dtd">
+#set $one_tenth_of_an_inch = 7.179
+<svg version="1.1" baseProfile="basic" id="svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+	 x="0px" y="0px" width="${0.10*int($pins)}in" height="0.10in" viewBox="0 0 ${$one_tenth_of_an_inch*int($pins)} 7.178" xml:space="preserve">
+
+<g id="breadboard">
+#for $pin in range(int($pins))
+	#set $offset = $pin*$one_tenth_of_an_inch
+<rect id="connector${pin}pin" x="${$offset+2.202}" y="2.202" fill="none" width="2.775" height="2.775"/>
+<rect id="connector${pin}terminal" x="${$offset+2.511}" y="2.463" fill="none" width="2.152" height="2.25"/>
+#end for
+
+	<rect fill="#404040" width="${$one_tenth_of_an_inch*int($pins)}" height="7.178"/>
+#for $pin in range(int($pins))
+	#set $offset = $pin*$one_tenth_of_an_inch
+	<rect x="${$offset+2.204}" y="2.202" width="2.773" height="2.773"/>
+	<polygon fill="#2A2A29" points="${$offset+1.181},1.18 ${$offset+2.202},2.202 ${$offset+4.977},2.202 ${$offset+5.999},1.18 	"/>
+	<polygon fill="#474747" points="${$offset+5.999},1.18 ${$offset+4.977},2.205 ${$offset+4.977},4.978 ${$offset+5.999},5.998 	"/>
+	<polygon fill="#595959" points="${$offset+5.998},5.998 ${$offset+4.976},4.978 ${$offset+2.202},4.978 ${$offset+1.181},5.998 	"/>
+	<polygon fill="#373737" points="${$offset+1.179},5.998 ${$offset+2.202},4.976 ${$offset+2.202},2.202 ${$offset+1.179},1.18 	"/>
+#end for
+</g>
+
+</svg>

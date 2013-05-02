@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1 Basic//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-basic.dtd">
+<svg version="1.1" baseProfile="basic" id="svg2" xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="0.58in" height="0.70in"
+	 viewBox="0 0 42.1 50.368" xml:space="preserve">
+<g id="schematic">
+	<g>
+		<circle fill="none" stroke="#000000" stroke-width="2" cx="32.39" cy="9.911" r="8.709"/>
+		<line fill="none" stroke="#000000" stroke-width="2" x1="32.39" y1="18.62" x2="32.39" y2="39.38"/>
+	</g>
+	<g>
+		<circle fill="none" stroke="#000000" stroke-width="2" cx="9.709" cy="9.911" r="8.709"/>
+		<line fill="none" stroke="#000000" stroke-width="2" x1="9.709" y1="18.62" x2="9.709" y2="39.38"/>
+	</g>
+	<line id="connector1pin" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="square" stroke-linejoin="round" x1="32.39" y1="49.568" x2="32.39" y2="32.722"/>
+	<rect id="connector1terminal" x="31.391" y="49.285" width="1.999" height="0.998"/>
+	<line id="connector0pin" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="square" stroke-linejoin="round" x1="9.708" y1="49.568" x2="9.708" y2="32.722"/>
+	<rect id="connector0terminal" x="8.709" y="49.285" width="2" height="0.998"/>
+</g>
+</svg>

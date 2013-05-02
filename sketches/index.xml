@@ -1,0 +1,219 @@
+<fritzing-sketches>
+	<sketches>
+		<sketch id="555TouchSwitch" name="555 Touch Switch" src="core/555TouchSwitch.fzz"/>
+		<sketch id="7segment_direct" name="7 Segment direct" src="core/7Segment_direct.fzz"/>
+		<sketch id="AnalogInputFSR" name="Force Sensor" src="core/AnalogInputFSR.fzz"/>
+		<sketch id="AnalogInputOutput" name="Analog In/Out (Pot and LED)" src="core/AnalogInputOutput.fzz"/>
+		<sketch id="AnalogInputPot" name="Potentiometer" src="core/AnalogInputPot.fzz"/>
+		<sketch id="AnalogInputThermistor" name="Thermistor" src="core/AnalogInputThermistor.fzz"/>
+		<sketch id="AnalogInputToServo" name="Servo (with Pot)" src="core/AnalogInputToServo.fzz"/>
+		<sketch id="ArduinoISP" name="Arduino ISP" src="core/ArduinoISP.fzz"/>
+		<sketch id="BarebonesArduino" name="Barebones Arduino" src="core/Arduino-no-FTDI.fzz"/>
+		<sketch id="BarebonesArduinoStripboard" name="Barebones Arduino with Stripboard" src="core/Barebones Arduino (stripboard).fzz"/>
+		<sketch id="Blink" name="Blink" src="core/Blink.fzz"/>
+		<sketch id="Button" name="Button" src="core/Button.fzz"/>
+		<sketch id="Color-Fader" name="Color Fader (RGB LED)" src="core/color-fader.fzz"/>
+		<sketch id="CosmicRayGun" name="Cosmic Ray Gun" src="core/CosmicRayGun.fzz"/>		
+		<sketch id="Countdown" name="Countdown (Rotary Encoder + 7 Segment Displays)" src="core/Countdown.fzz"/>
+		<sketch id="CurvyParking" name="Curvy Parking Assistant (Infrared)" src="core/Curvy-Parking-Assistant.fzz"/>				
+		<sketch id="DC_motor_control" name="DC Motor" src="core/DC_motor_control.fzz"/>
+		<sketch id="EDGY-motor-control" name="EDGY Motor Control" src="core/EDGY-motor-control.fzz"/>
+		<sketch id="EDGY-motor-control_two_motors" name="EDGY Motor Control Two Motors" src="core/EDGY-motor-control-two-motors.fzz"/>
+		<sketch id="EDGY-motor-control_stepper" name="EDGY Motor Control Stepper" src="core/EDGY-motor-control-stepper.fzz"/>
+		<sketch id="Knock" name="Knock (Piezo)" src="core/Knock.fzz"/>
+		<sketch id="LCD" name="Liquid Crystal Display" src="core/LiquidCrystalDisplay.fzz"/>
+		<sketch id="LEDmatrix_simple" name="Simple LED Matrix" src="core/LED-Matrix_simple.fzz"/>
+		<sketch id="LEDmatrix" name="LED Matrix 5x7" src="core/LED-Matrix.fzz"/>
+		<sketch id="Loop" name="Loop" src="core/Loop.fzz"/>
+		<sketch id="Melody" name="Melody" src="core/Melody.fzz"/>
+		<sketch id="Mood-Light" name="Mood-Light" src="core/Mood-Light.fzz"/>
+		<sketch id="MidiDrumKit" name="Midi Drum Kit" src="core/MidiDrumKit.fzz"/>
+		<sketch id="npnPowerTransistor" name="NPN Power Transistor" src="core/npnPowerTransistor.fzz"/>
+		<sketch id="Op_Amp" name="Operation Amplifier" src="core/Op-amp.fzz"/>
+		<sketch id="Optocoupler" name="Optocoupler" src="core/Optocoupler.fzz"/>
+		<sketch id="Photocell" name="Photocell" src="core/Photocell.fzz"/>
+		<sketch id="Parking" name="Parking Assistant (Infrared)" src="core/Parking-Assistant.fzz"/>
+		<sketch id="Relay" name="Relay" src="core/Relay.fzz"/>
+		<sketch id="RGB_LED" name="Colored Light (RGB LED)" src="core/RGB-LED.fzz"/>
+		<sketch id="Sabotage-Detection" name="Accelerometer" src="core/Sabotage-Detection.fzz"/>
+		<sketch id="Shift_Register" name="Shift Register" src="core/Shift_Register.fzz"/>
+		<sketch id="Shift_Register_2x" name="Shift Register 2x" src="core/Shift_Register_2x.fzz"/>
+		<sketch id="Stepper_Motor" name="Stepper Motor" src="core/Stepper_Motor.fzz"/>
+		<sketch id="TemperaturSensorLM35" name="Temperature Sensor" src="core/TemperaturSensorLM35.fzz"/>
+		<sketch id="TiltSwitch" name="Tilt Switch" src="core/TiltSwitch.fzz"/>
+		<sketch id="Timer" name="Timer" src="core/Timer.fzz"/>		
+		<sketch id="Touch_Switch" name="Touch Switch" src="core/TouchSwitch.fzz"/>
+		<sketch id="TrafficLight" name="Traffic Light" src="core/TrafficLight.fzz"/>
+		<sketch id="VirtualColorMixer" name="Virtual Color Mixer" src="core/VirtualColorMixer.fzz"/>
+		<sketch id="VoltageRegulator" name="Voltage Regulator" src="core/VoltageRegulator_7800series.fzz"/>
+		<sketch id="VoltageRegulatorSwitch" name="Voltage Regulator with Switch" src="core/VoltageRegulator_with_switch.fzz"/>
+		<sketch id="Window_Alarm" name="Window Alarm" src="core/Window_Alarm.fzz"/>
+	</sketches>
+	<categories>
+		<category name="Arduino">
+			<category name="Digital">
+				<category name="Output">
+					<sketch id="Blink"/>
+					<sketch id="Loop"/>
+					<sketch id="TrafficLight"/>
+					<sketch id="Shift_Register"/>
+					<sketch id="Shift_Register_2x"/>
+					<sketch id="LEDmatrix_simple"/>
+					<sketch id="LEDmatrix"/>	
+					<sketch id="7segment_direct"/>	
+					<sketch id="Timer"/>			
+				</category>
+				<category name="Input">
+					<sketch id="Button"/>
+					<sketch id="TiltSwitch"/>
+				</category>
+			</category>
+			<category name="Analog">
+				<category name="Input">
+					<sketch id="AnalogInputPot"/>
+					<sketch id="AnalogInputFSR"/>
+					<sketch id="Knock"/>
+					<sketch id="Touch_Switch"/>
+					<sketch id="Photocell"/>
+					<sketch id="Parking"/>
+					<sketch id="CurvyParking"/>
+					<sketch id="AnalogInputThermistor"/>
+					<sketch id="TemperaturSensorLM35"/>
+					<sketch id="AnalogInputOutput"/>
+				</category>
+				<category name="Output">
+					<sketch id="AnalogInputOutput"/>
+					<sketch id="Melody"/>
+					<sketch id="Window_Alarm"/>
+					<sketch id="RGB_LED"/>
+					<sketch id="Mood-Light"/>
+				</category>
+			</category>
+			<category name="Sensors">
+				<category name="Force">
+					<sketch id="AnalogInputFSR"/>
+					<sketch id="Knock"/>
+				</category>
+				<category name="Light">
+					<sketch id="Photocell"/>
+				</category>
+				<category name="Motion">
+					<sketch id="TiltSwitch"/>
+					<sketch id="Sabotage-Detection"/>
+				</category>
+				<category name="Proximity">
+					<sketch id="Parking"/>
+					<sketch id="CurvyParking"/>
+					<sketch id="Photocell"/>
+				</category>
+				<category name="Rotary">
+					<sketch id="AnalogInputPot"/>
+				</category>
+				<category name="Sound">
+					<sketch id="Knock"/>
+					<sketch id="MidiDrumKit"/>
+					<sketch id="CosmicRayGun"/>
+				</category>
+				<category name="Temperature">
+					<sketch id="AnalogInputThermistor"/>
+					<sketch id="TemperaturSensorLM35"/>
+				</category>
+				<category name="Touch">
+					<sketch id="555TouchSwitch"/>
+					<sketch id="Touch_Switch"/>
+					<sketch id="MidiDrumKit"/>
+				</category>
+			</category>
+			<category name="Light">
+				<category name="LED">
+					<sketch id="Blink"/>
+					<sketch id="Loop"/>
+					<sketch id="Parking"/>
+					<sketch id="CurvyParking"/>
+					<sketch id="TrafficLight"/>
+					<sketch id="RGB_LED"/>
+					<sketch id="Color-Fader"/>
+					<sketch id="Shift_Register"/>
+					<sketch id="Shift_Register_2x"/>
+					<sketch id="AnalogInputOutput"/>
+				</category>
+				<category name="Display">
+					<sketch id="LCD"/>
+				</category>
+			</category>
+			<category name="Motion">
+				<category name="Motors">
+					<sketch id="AnalogInputToServo"/>
+					<sketch id="DC_motor_control"/>
+					<sketch id="Stepper_Motor"/>
+					<sketch id="EDGY-motor-control"/>
+				</category>
+			</category>
+			<category name="Sound">
+				<sketch id="MidiDrumKit"/>
+				<sketch id="Melody"/>
+				<sketch id="Window_Alarm"/>
+			</category>
+			<category name="Communication">
+				<sketch id="MidiDrumKit"/>
+				<sketch id="VirtualColorMixer"/>
+			</category>
+			<category name="Power">
+				<sketch id="npnPowerTransistor"/>
+				<sketch id="Op_Amp"/>
+				<sketch id="Relay"/>
+				<sketch id="Shift_Register"/>
+				<sketch id="Shift_Register_2x"/>
+				<sketch id="Optocoupler"/>
+				<sketch id="VoltageRegulator"/>
+				<sketch id="VoltageRegulatorSwitch"/>
+			</category>
+			<category name="Processing">
+				<sketch id="BarebonesArduino"/>
+				<sketch id="BarebonesArduinoStripboard"/>
+				<sketch id="ArduinoISP"/>
+			</category>
+		</category>
+		<category name="Fritzing Starter Kit">
+			<sketch id="Blink"/>
+			<sketch id="Loop"/>
+			<sketch id="Button"/>
+			<sketch id="TrafficLight"/>
+			<sketch id="TiltSwitch"/>
+			<sketch id="Knock"/>
+			<sketch id="Melody"/>
+               <sketch id="AnalogInputPot"/>
+			<sketch id="Photocell"/>
+			<sketch id="AnalogInputToServo"/>
+			<sketch id="Color-Fader"/>
+			<sketch id="AnalogInputOutput"/>
+			<sketch id="Touch_Switch"/>
+               <sketch id="Relay"/>
+			<sketch id="TemperaturSensorLM35"/>
+			<sketch id="CosmicRayGun"/>
+              <separator />
+              <url name="Get your own Fritzing Starter Kit" href="http://fritzing.org/shop/starter-kit/" />
+		</category>
+		<category name="Fritzing Super Upgrade Kit">
+		  <sketch id="AnalogInputFSR"/>			
+			<sketch id="555TouchSwitch"/>
+			<sketch id="LCD"/>
+			<sketch id="Countdown"/>
+			<sketch id="Shift_Register"/>
+			<sketch id="Shift_Register_2x"/>
+			<sketch id="LEDmatrix_simple"/>	
+			<sketch id="Timer"/>						
+			<sketch id="DC_motor_control"/>
+			<sketch id="Mood-Light"/>
+      <sketch id="Optocoupler"/>
+			<sketch id="Sabotage-Detection"/>
+							 <separator />
+               <url name="Get your own Fritzing Super Upgrade Kit" href="http://fritzing.org/shop/super-upgrade-kit/" />			
+		</category>
+		<category name="Fritzing EDGY">
+			<sketch id="EDGY-motor-control"/>
+			<sketch id="EDGY-motor-control_two_motors"/>
+			<sketch id="EDGY-motor-control_stepper"/>
+		</category>
+	</categories>
+</fritzing-sketches>

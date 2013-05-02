@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?><module moduleId="1234ABDE24BH">
+ <version replacedby="RectanglePCBModuleID">1</version>
+ <author>Brendan Howell</author>
+ <title>Plain PCB - 60 x 100 mm</title>
+ <date>2008-11-25</date>
+ <label>PCB</label>
+ <tags>
+  <tag>pcb</tag>
+  <tag>board</tag>
+  <tag>diy</tag>
+  <tag>fritzing core</tag>
+ </tags>
+ <properties>
+  <property name="Size">60 x 100 mm</property>
+  <property name="family">obsolete Plain PCB</property>
+ <property name="package">THT</property></properties>
+ <taxonomy>discreteParts.pcb.plain.60x100mm</taxonomy>
+ <description>Plain Vanilla 60 x 100 mm Circuit Board</description>
+ <views>
+  <defaultUnits>mm</defaultUnits>
+  <iconView>
+   <layers image="icon/plain_pcb.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+  <breadboardView>
+   <layers image="icon/plain_pcb.svg">
+    <layer layerId="unknown"/>
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="icon/plain_pcb.svg">
+    <layer layerId="unknown"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <label/>
+   <layers image="pcb/pcb_60x100mm.svg">
+    <layer layerId="board" sticky="true"/>
+    <layer layerId="silkscreen" sticky="true"/>
+   </layers>
+  </pcbView>
+ </views>
+ <connectors/>
+ <buses/>
+</module>

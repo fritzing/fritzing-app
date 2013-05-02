@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.2" baseProfile="tiny" id="svg2" xmlns="http://www.w3.org/2000/svg" 
+	 width="%1in" height="0.3in" viewBox="0 0 [20.0] 30.0">
+
+<g id="breadboard">
+  <rect id="middle" x="0" y="0" fill="#303030" width="[20.0]" height="27.0" />
+  <rect id="top" x="0" y="0" fill="#3D3D3D" width="[20.0]" height="2.46"/>
+  <rect id="bottom" x="0" y="24.54" fill="#000000" width="[20.0]" height="2.46"/>
+  
+  <polygon id="right" fill="#141414" points="[20.0],0 [19.25],2.46 [19.25],24.54 [20.0],27.0"/> 
+  <polygon id="left" fill="#1F1F1F" points="0,0 0.75,2.46 0.75,24.54 0,27.0"/>
+  
+  <polygon id="left-upper-rect" fill="#1C1C1C" points="5,8.5 0.75,8.46 0.56,10.58 0.56,13.5 5,13.5"/>
+  <polygon id="left-lower-rect" fill="#383838" points="0.75,18.55 5,18.55 5,13.5 0.56,13.5 0.56,16.42"/>
+
+  <path id="slot" fill="#262626" d="M0.56,10.58v5.83c1.47-0.17,2.62-1.4,2.62-2.92C3.18,11.97,2.04,10.75,0.56,10.58z"/>
+  <path id="cover" fill="#303030" d="M0.75,2.46V8.45c2.38,0.45,4.19,2.53,4.19,5.04c0,2.51-1.8,4.6-4.19,5.05V18.55h5.0V2.46H0.75z"/>
+  <circle fill="#212121" cx="6.5" cy="20.47" r="2.06"/>
+ 
+  <text id="label" x="6.5" y="15.0" fill="#e6e6e6" stroke="none" font-family="OCRA" text-anchor="start" font-size="8" >IC</text>
+
+  <rect id="connector0pin" x="3.5" y="25.66" fill="#8C8C8C" width="3" height="4.34"/>
+  <rect id="connector0terminal" x="3.5" y="27.0" fill="#8C8C8C" width="3" height="3"/>
+  <polygon fill="#8C8C8C" points="3.5,25.66 3.5,27.66 6.5,27.66 8.5,26.74 8.5,25.66 	"/>
+  
+  <rect id="connector%2pin" x="[13.5]" y="25.66" fill="#8C8C8C" width="3" height="4.34"/>
+  <rect id="connector%2terminal" x="[13.5]" y="27.0" fill="#8C8C8C" width="3" height="3"/>
+  <polygon fill="#8C8C8C" points="[11.5],25.66 [11.5],26.74 [13.5],27.66 [16.5],27.66 [16.5],25.66"/>
+
+%3
+
+</g>
+</svg>

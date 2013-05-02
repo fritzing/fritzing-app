@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg version='1.1' baseProfile='basic' id='svg2' xmlns:svg='http://www.w3.org/2000/svg'
+xmlns='http://www.w3.org/2000/svg'  x='0px' y='0px' width='0.87in'
+height='0.590551in' viewBox='0 0 62.641 42.5196' xml:space='preserve'>
+<g id='schematic'>
+<line id='connector0pin' fill='none' stroke='#000000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' x1='0.998' y1='9.723' x2='17.845' y2='9.723'/>
+<rect id='connector0terminal' x='0' y='8.725' width='0.998' height='1.997'/>
+<circle fill='none' stroke-width='2' stroke='#000000' cx='52.9215' cy='9.723' r='8.7195' />
+<line id='line' fill='none' stroke='#000000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' x1='43.202' y1='9.723' x2='16.452' y2='9.723'/>
+<line id='connector1pin' fill='none' stroke='#000000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' x1='0.998' y1='30.9828' x2='17.845' y2='30.9828'/>
+<rect id='connector1terminal' x='0' y='29.9848' width='0.998' height='1.997'/>
+<circle fill='none' stroke-width='2' stroke='#000000' cx='52.9215' cy='30.9828' r='8.7195' />
+<line id='line' fill='none' stroke='#000000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' x1='43.202' y1='30.9828' x2='16.452' y2='30.9828'/>
+</g>
+</svg>

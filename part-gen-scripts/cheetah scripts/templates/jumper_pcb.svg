@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+#set $height = (int($pins) * 0.1) + 0.04
+#set $boxHeight = $height * 1000
+#set $maxy = $boxHeight - 20
+<svg width="0.14in" version="1.2" xmlns="http://www.w3.org/2000/svg" height="${height}in" viewBox="0 0 140 ${boxHeight}" baseProfile="tiny" >
+ <desc>Fritzing footprint SVG</desc>
+ <g id="silkscreen" >
+  <line stroke="white" y1="20" x1="20" y2="${maxy}" stroke-width="20" x2="20" />
+  <line stroke="white" y1="${maxy}" x1="20" y2="${maxy}" stroke-width="20" x2="120" />
+  <line stroke="white" y1="${maxy}" x1="120" y2="20" stroke-width="20" x2="120" />
+  <line stroke="white" y1="20" x1="120" y2="20" stroke-width="20" x2="20" />
+  <line stroke="white" y1="120" x1="20" y2="120" stroke-width="10" x2="120" />
+ </g>
+ <g id="copper0" >
+  <rect width="55" x="42.5" y="42.5" fill="none" height="55" stroke="rgb(255, 191, 0)" stroke-width="20" />
+   #for $pin in range(int($pins))
+   #set $piny = 70 + ($pin * 100)
+   <circle fill="none" cx="70" cy="${piny}" stroke="rgb(255, 191, 0)" r="27.5" id="connector${pin}pin" stroke-width="20" />
+   #end for
+ </g>
+ <g id="keepout" />
+ <g id="soldermask" />
+ <g id="outline" />
+</svg>

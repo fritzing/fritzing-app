@@ -1,0 +1,1207 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="80.910591"
+   version="1.2"
+   height="179.74397"
+   viewBox="0 0 899.00656 1997.1551"
+   id="svg6462"
+   
+   >
+  <metadata
+     id="metadata106">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs104">
+    <sodipodi:namedview
+       gridtolerance="10"
+       guidetolerance="10"
+       borderopacity="1"
+       id="namedview6773"
+       bordercolor="#666666"
+       units="mm"
+       pagecolor="#ffffff"
+       objecttolerance="10"
+       showgrid="true">
+      <inkscape:grid
+         id="grid6868"
+         type="xygrid"
+         units="mm"
+         visible="true"
+         enabled="false"
+         spacingy="2.54mm"
+         snapvisiblegridlinesonly="true"
+         spacingx="15.24mm"
+         empspacing="5" />
+    </sodipodi:namedview>
+    <defs
+       id="defs6569" />
+  </defs>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     
+     
+     
+     
+     id="namedview102"
+     showgrid="true"
+     
+     units="mm"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     
+     
+     
+     
+     
+     
+      />
+  <g
+     transform="matrix(2.2033898,0,0,1.4139319,-13.208589,-5.3140729)"
+     id="silkscreen"
+     style="fill:#ffffff;stroke:#ffffff;stroke-width:0">
+    <line
+       x2="10"
+       y2="1410"
+       x1="10"
+       y1="10"
+       id="line6557"
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:10" />
+    <line
+       x2="410"
+       y2="1410"
+       x1="10"
+       y1="1410"
+       id="line6559"
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:10" />
+    <line
+       x2="410"
+       y2="10"
+       x1="410"
+       y1="1410"
+       id="line6561"
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:10" />
+    <line
+       x2="160"
+       y2="10"
+       x1="10"
+       y1="10"
+       id="line6563"
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:10" />
+    <line
+       x2="410"
+       y2="10"
+       x1="260"
+       y1="10"
+       id="line6565"
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:10" />
+  </g>
+  <g
+     id="copper0"
+     transform="translate(-459.67486,26.309207)">
+    <rect
+       id="rect6465"
+       style="fill:none;stroke:#ffbf00;stroke-width:20"
+       height="55"
+       y="366.14398"
+       x="574.56799"
+       width="55" />
+    <circle
+       
+       
+       
+       
+       transform="translate(542.06798,333.64397)"
+       d="M 87.5,60 C 87.5,75.187831 75.187831,87.5 60,87.5 44.812169,87.5 32.5,75.187831 32.5,60 32.5,44.812169 44.812169,32.5 60,32.5 75.187831,32.5 87.5,44.812169 87.5,60 z"
+       id="connector0pin"
+       r="27.5"
+       style="fill:none;stroke:#ffbf00;stroke-width:20"
+       cy="60"
+       cx="60" />
+    <circle
+       
+       
+       
+       
+       transform="translate(542.06799,333.64397)"
+       d="m 87.5,160 c 0,15.18783 -12.312169,27.5 -27.5,27.5 -15.187831,0 -27.5,-12.31217 -27.5,-27.5 0,-15.18783 12.312169,-27.5 27.5,-27.5 15.187831,0 27.5,12.31217 27.5,27.5 z"
+       id="connector1pin"
+       r="27.5"
+       style="fill:none;stroke:#ffbf00;stroke-width:20"
+       cy="160"
+       cx="60" />
+    <circle
+       
+       
+       
+       
+       transform="translate(542.06799,333.64397)"
+       d="m 87.5,260 c 0,15.18783 -12.312169,27.5 -27.5,27.5 -15.187831,0 -27.5,-12.31217 -27.5,-27.5 0,-15.18783 12.312169,-27.5 27.5,-27.5 15.187831,0 27.5,12.31217 27.5,27.5 z"
+       id="connector2pin"
+       r="27.5"
+       style="fill:none;stroke:#ffbf00;stroke-width:20"
+       cy="260"
+       cx="60" />
+    <circle
+       
+       
+       
+       
+       transform="translate(542.06799,333.64397)"
+       d="m 87.5,360 c 0,15.18783 -12.312169,27.5 -27.5,27.5 -15.187831,0 -27.5,-12.31217 -27.5,-27.5 0,-15.18783 12.312169,-27.5 27.5,-27.5 15.187831,0 27.5,12.31217 27.5,27.5 z"
+       id="connector3pin"
+       r="27.5"
+       style="fill:none;stroke:#ffbf00;stroke-width:20"
+       cy="360"
+       cx="60" />
+    <circle
+       
+       
+       
+       
+       transform="translate(542.06799,333.64397)"
+       d="m 87.5,460 c 0,15.18783 -12.312169,27.5 -27.5,27.5 -15.187831,0 -27.5,-12.31217 -27.5,-27.5 0,-15.18783 12.312169,-27.5 27.5,-27.5 15.187831,0 27.5,12.31217 27.5,27.5 z"
+       id="connector4pin"
+       r="27.5"
+       style="fill:none;stroke:#ffbf00;stroke-width:20"
+       cy="460"
+       cx="60" />
+    <circle
+       
+       
+       
+       
+       transform="translate(542.06799,333.64397)"
+       d="m 87.5,560 c 0,15.18783 -12.312169,27.5 -27.5,27.5 -15.187831,0 -27.5,-12.31217 -27.5,-27.5 0,-15.18783 12.312169,-27.5 27.5,-27.5 15.187831,0 27.5,12.31217 27.5,27.5 z"
+       id="connector5pin"
+       r="27.5"
+       style="fill:none;stroke:#ffbf00;stroke-width:20"
+       cy="560"
+       cx="60" />
+    <circle
+       
+       
+       
+       
+       transform="translate(542.06799,333.64397)"
+       d="m 87.5,660 c 0,15.18783 -12.312169,27.5 -27.5,27.5 -15.187831,0 -27.5,-12.31217 -27.5,-27.5 0,-15.18783 12.312169,-27.5 27.5,-27.5 15.187831,0 27.5,12.31217 27.5,27.5 z"
+       id="connector6pin"
+       r="27.5"
+       style="fill:none;stroke:#ffbf00;stroke-width:20"
+       cy="660"
+       cx="60" />
+    <circle
+       
+       
+       
+       
+       transform="translate(542.06799,333.64397)"
+       d="m 87.5,760 c 0,15.18783 -12.312169,27.5 -27.5,27.5 -15.187831,0 -27.5,-12.31217 -27.5,-27.5 0,-15.18783 12.312169,-27.5 27.5,-27.5 15.187831,0 27.5,12.31217 27.5,27.5 z"
+       id="connector7pin"
+       r="27.5"
+       style="fill:none;stroke:#ffbf00;stroke-width:20"
+       cy="760"
+       cx="60" />
+    <circle
+       
+       
+       
+       
+       transform="translate(542.06799,333.64397)"
+       d="m 87.5,860 c 0,15.18783 -12.312169,27.5 -27.5,27.5 -15.187831,0 -27.5,-12.31217 -27.5,-27.5 0,-15.18783 12.312169,-27.5 27.5,-27.5 15.187831,0 27.5,12.31217 27.5,27.5 z"
+       id="connector8pin"
+       r="27.5"
+       style="fill:none;stroke:#ffbf00;stroke-width:20"
+       cy="860"
+       cx="60" />
+    <circle
+       
+       
+       
+       
+       transform="translate(542.06799,333.64397)"
+       d="m 87.5,960 c 0,15.18783 -12.312169,27.5 -27.5,27.5 -15.187831,0 -27.5,-12.31217 -27.5,-27.5 0,-15.18783 12.312169,-27.5 27.5,-27.5 15.187831,0 27.5,12.31217 27.5,27.5 z"
+       id="connector9pin"
+       r="27.5"
+       style="fill:none;stroke:#ffbf00;stroke-width:20"
+       cy="960"
+       cx="60" />
+    <circle
+       
+       
+       
+       
+       transform="translate(542.06799,333.64397)"
+       d="m 87.5,1060 c 0,15.1878 -12.312169,27.5 -27.5,27.5 -15.187831,0 -27.5,-12.3122 -27.5,-27.5 0,-15.1878 12.312169,-27.5 27.5,-27.5 15.187831,0 27.5,12.3122 27.5,27.5 z"
+       id="connector10pin"
+       r="27.5"
+       style="fill:none;stroke:#ffbf00;stroke-width:20"
+       cy="1060"
+       cx="60" />
+    <circle
+       
+       
+       
+       
+       transform="translate(542.06799,333.64397)"
+       d="m 87.5,1160 c 0,15.1878 -12.312169,27.5 -27.5,27.5 -15.187831,0 -27.5,-12.3122 -27.5,-27.5 0,-15.1878 12.312169,-27.5 27.5,-27.5 15.187831,0 27.5,12.3122 27.5,27.5 z"
+       id="connector11pin"
+       r="27.5"
+       style="fill:none;stroke:#ffbf00;stroke-width:20"
+       cy="1160"
+       cx="60" />
+    <circle
+       
+       
+       
+       
+       transform="translate(542.06799,333.64397)"
+       d="m 87.5,1260 c 0,15.1878 -12.312169,27.5 -27.5,27.5 -15.187831,0 -27.5,-12.3122 -27.5,-27.5 0,-15.1878 12.312169,-27.5 27.5,-27.5 15.187831,0 27.5,12.3122 27.5,27.5 z"
+       id="connector12pin"
+       r="27.5"
+       style="fill:none;stroke:#ffbf00;stroke-width:20"
+       cy="1260"
+       cx="60" />
+    <circle
+       
+       
+       
+       
+       transform="translate(542.06799,333.64397)"
+       d="m 87.5,1360 c 0,15.1878 -12.312169,27.5 -27.5,27.5 -15.187831,0 -27.5,-12.3122 -27.5,-27.5 0,-15.1878 12.312169,-27.5 27.5,-27.5 15.187831,0 27.5,12.3122 27.5,27.5 z"
+       id="connector13pin"
+       r="27.5"
+       style="fill:none;stroke:#ffbf00;stroke-width:20"
+       cy="1360"
+       cx="60" />
+    <rect
+       width="55.555557"
+       x="574.29016"
+       y="365.86621"
+       height="55.55555"
+       id="connector0"
+       style="fill:none" />
+    <rect
+       width="55.555557"
+       x="574.29022"
+       y="465.86621"
+       height="55.55555"
+       id="connector1"
+       style="fill:none" />
+    <rect
+       width="55.555557"
+       x="574.29022"
+       y="565.86621"
+       height="55.55555"
+       id="connector2"
+       style="fill:none" />
+    <rect
+       width="55.555557"
+       x="574.29022"
+       y="665.86621"
+       height="55.55555"
+       id="connector3"
+       style="fill:none" />
+    <rect
+       width="55.555557"
+       x="574.29022"
+       y="765.86621"
+       height="55.55555"
+       id="connector4"
+       style="fill:none" />
+    <rect
+       width="55.555557"
+       x="574.29022"
+       y="865.86621"
+       height="55.55555"
+       id="connector5"
+       style="fill:none" />
+    <rect
+       width="55.555557"
+       x="574.29022"
+       y="965.86627"
+       height="55.55555"
+       id="connector6"
+       style="fill:none" />
+    <rect
+       width="55.555557"
+       x="574.29022"
+       y="1065.8662"
+       height="55.55555"
+       id="connector7"
+       style="fill:none" />
+    <rect
+       width="55.555557"
+       x="574.29022"
+       y="1165.8662"
+       height="55.55555"
+       id="connector8"
+       style="fill:none" />
+    <rect
+       width="55.555557"
+       x="574.29022"
+       y="1265.8662"
+       height="55.55555"
+       id="connector9"
+       style="fill:none" />
+    <rect
+       width="55.555557"
+       x="574.29022"
+       y="1365.8662"
+       height="55.55555"
+       id="connector10"
+       style="fill:none" />
+    <rect
+       width="55.555557"
+       x="574.29022"
+       y="1465.8662"
+       height="55.55555"
+       id="connector11"
+       style="fill:none" />
+    <rect
+       width="55.555557"
+       x="574.29022"
+       y="1565.8662"
+       height="55.55555"
+       id="connector12"
+       style="fill:none" />
+    <rect
+       width="55.555557"
+       x="574.29022"
+       y="1665.8662"
+       height="55.55555"
+       id="connector13"
+       style="fill:none" />
+    <circle
+       cx="60"
+       cy="60"
+       style="fill:none;stroke:#ffbf00;stroke-width:20"
+       r="27.5"
+       id="connector27pin"
+       d="M 87.5,60 C 87.5,75.187831 75.187831,87.5 60,87.5 44.812169,87.5 32.5,75.187831 32.5,60 32.5,44.812169 44.812169,32.5 60,32.5 75.187831,32.5 87.5,44.812169 87.5,60 z"
+       transform="translate(1140.6299,333.64397)"
+       
+       
+       
+        />
+    <circle
+       cx="60"
+       cy="160"
+       style="fill:none;stroke:#ffbf00;stroke-width:20"
+       r="27.5"
+       id="connector26pin"
+       d="m 87.5,160 c 0,15.18783 -12.312169,27.5 -27.5,27.5 -15.187831,0 -27.5,-12.31217 -27.5,-27.5 0,-15.18783 12.312169,-27.5 27.5,-27.5 15.187831,0 27.5,12.31217 27.5,27.5 z"
+       transform="translate(1138.5217,333.64397)"
+       
+       
+       
+        />
+    <circle
+       cx="60"
+       cy="260"
+       style="fill:none;stroke:#ffbf00;stroke-width:20"
+       r="27.5"
+       id="connector25pin"
+       d="m 87.5,260 c 0,15.18783 -12.312169,27.5 -27.5,27.5 -15.187831,0 -27.5,-12.31217 -27.5,-27.5 0,-15.18783 12.312169,-27.5 27.5,-27.5 15.187831,0 27.5,12.31217 27.5,27.5 z"
+       transform="translate(1138.5217,333.64397)"
+       
+       
+       
+        />
+    <circle
+       cx="60"
+       cy="360"
+       style="fill:none;stroke:#ffbf00;stroke-width:20"
+       r="27.5"
+       id="connector24pin"
+       d="m 87.5,360 c 0,15.18783 -12.312169,27.5 -27.5,27.5 -15.187831,0 -27.5,-12.31217 -27.5,-27.5 0,-15.18783 12.312169,-27.5 27.5,-27.5 15.187831,0 27.5,12.31217 27.5,27.5 z"
+       transform="translate(1138.5217,333.64397)"
+       
+       
+       
+        />
+    <circle
+       cx="60"
+       cy="460"
+       style="fill:none;stroke:#ffbf00;stroke-width:20"
+       r="27.5"
+       id="connector23pin"
+       d="m 87.5,460 c 0,15.18783 -12.312169,27.5 -27.5,27.5 -15.187831,0 -27.5,-12.31217 -27.5,-27.5 0,-15.18783 12.312169,-27.5 27.5,-27.5 15.187831,0 27.5,12.31217 27.5,27.5 z"
+       transform="translate(1138.5217,333.64397)"
+       
+       
+       
+        />
+    <circle
+       cx="60"
+       cy="560"
+       style="fill:none;stroke:#ffbf00;stroke-width:20"
+       r="27.5"
+       id="connector22pin"
+       d="m 87.5,560 c 0,15.18783 -12.312169,27.5 -27.5,27.5 -15.187831,0 -27.5,-12.31217 -27.5,-27.5 0,-15.18783 12.312169,-27.5 27.5,-27.5 15.187831,0 27.5,12.31217 27.5,27.5 z"
+       transform="translate(1138.5217,333.64397)"
+       
+       
+       
+        />
+    <circle
+       cx="60"
+       cy="660"
+       style="fill:none;stroke:#ffbf00;stroke-width:20"
+       r="27.5"
+       id="connector21pin"
+       d="m 87.5,660 c 0,15.18783 -12.312169,27.5 -27.5,27.5 -15.187831,0 -27.5,-12.31217 -27.5,-27.5 0,-15.18783 12.312169,-27.5 27.5,-27.5 15.187831,0 27.5,12.31217 27.5,27.5 z"
+       transform="translate(1138.5217,333.64397)"
+       
+       
+       
+        />
+    <circle
+       cx="60"
+       cy="760"
+       style="fill:none;stroke:#ffbf00;stroke-width:20"
+       r="27.5"
+       id="connector20pin"
+       d="m 87.5,760 c 0,15.18783 -12.312169,27.5 -27.5,27.5 -15.187831,0 -27.5,-12.31217 -27.5,-27.5 0,-15.18783 12.312169,-27.5 27.5,-27.5 15.187831,0 27.5,12.31217 27.5,27.5 z"
+       transform="translate(1138.5217,333.64397)"
+       
+       
+       
+        />
+    <circle
+       cx="60"
+       cy="860"
+       style="fill:none;stroke:#ffbf00;stroke-width:20"
+       r="27.5"
+       id="connector19pin"
+       d="m 87.5,860 c 0,15.18783 -12.312169,27.5 -27.5,27.5 -15.187831,0 -27.5,-12.31217 -27.5,-27.5 0,-15.18783 12.312169,-27.5 27.5,-27.5 15.187831,0 27.5,12.31217 27.5,27.5 z"
+       transform="translate(1138.5217,333.64397)"
+       
+       
+       
+        />
+    <circle
+       cx="60"
+       cy="960"
+       style="fill:none;stroke:#ffbf00;stroke-width:20"
+       r="27.5"
+       id="connector18pin"
+       d="m 87.5,960 c 0,15.18783 -12.312169,27.5 -27.5,27.5 -15.187831,0 -27.5,-12.31217 -27.5,-27.5 0,-15.18783 12.312169,-27.5 27.5,-27.5 15.187831,0 27.5,12.31217 27.5,27.5 z"
+       transform="translate(1138.5217,333.64397)"
+       
+       
+       
+        />
+    <circle
+       cx="60"
+       cy="1060"
+       style="fill:none;stroke:#ffbf00;stroke-width:20"
+       r="27.5"
+       id="connector17pin"
+       d="m 87.5,1060 c 0,15.1878 -12.312169,27.5 -27.5,27.5 -15.187831,0 -27.5,-12.3122 -27.5,-27.5 0,-15.1878 12.312169,-27.5 27.5,-27.5 15.187831,0 27.5,12.3122 27.5,27.5 z"
+       transform="translate(1138.5217,333.64397)"
+       
+       
+       
+        />
+    <circle
+       cx="60"
+       cy="1160"
+       style="fill:none;stroke:#ffbf00;stroke-width:20"
+       r="27.5"
+       id="connector16pin"
+       d="m 87.5,1160 c 0,15.1878 -12.312169,27.5 -27.5,27.5 -15.187831,0 -27.5,-12.3122 -27.5,-27.5 0,-15.1878 12.312169,-27.5 27.5,-27.5 15.187831,0 27.5,12.3122 27.5,27.5 z"
+       transform="translate(1138.5217,333.64397)"
+       
+       
+       
+        />
+    <circle
+       cx="60"
+       cy="1260"
+       style="fill:none;stroke:#ffbf00;stroke-width:20"
+       r="27.5"
+       id="connector15pin"
+       d="m 87.5,1260 c 0,15.1878 -12.312169,27.5 -27.5,27.5 -15.187831,0 -27.5,-12.3122 -27.5,-27.5 0,-15.1878 12.312169,-27.5 27.5,-27.5 15.187831,0 27.5,12.3122 27.5,27.5 z"
+       transform="translate(1138.5217,333.64397)"
+       
+       
+       
+        />
+    <circle
+       cx="60"
+       cy="1360"
+       style="fill:none;stroke:#ffbf00;stroke-width:20"
+       r="27.5"
+       id="connector14pin"
+       d="m 87.5,1360 c 0,15.1878 -12.312169,27.5 -27.5,27.5 -15.187831,0 -27.5,-12.3122 -27.5,-27.5 0,-15.1878 12.312169,-27.5 27.5,-27.5 15.187831,0 27.5,12.3122 27.5,27.5 z"
+       transform="translate(1138.5217,333.64397)"
+       
+       
+       
+        />
+    <rect
+       style="fill:none"
+       id="connector27"
+       height="55.55555"
+       y="365.86618"
+       x="1170.7439"
+       width="55.555553" />
+    <rect
+       style="fill:none"
+       id="connector26"
+       height="55.55555"
+       y="465.86618"
+       x="1170.7439"
+       width="55.555553" />
+    <rect
+       style="fill:none"
+       id="connector25"
+       height="55.55555"
+       y="565.86621"
+       x="1170.7439"
+       width="55.555553" />
+    <rect
+       style="fill:none"
+       id="connector24"
+       height="55.55555"
+       y="665.86621"
+       x="1170.7439"
+       width="55.555553" />
+    <rect
+       style="fill:none"
+       id="connector23"
+       height="55.55555"
+       y="765.86621"
+       x="1170.7439"
+       width="55.555553" />
+    <rect
+       style="fill:none"
+       id="connector22"
+       height="55.55555"
+       y="865.86621"
+       x="1170.7439"
+       width="55.555553" />
+    <rect
+       style="fill:none"
+       id="connector21"
+       height="55.55555"
+       y="965.86627"
+       x="1170.7439"
+       width="55.555553" />
+    <rect
+       style="fill:none"
+       id="connector20"
+       height="55.55555"
+       y="1065.8662"
+       x="1170.7439"
+       width="55.555553" />
+    <rect
+       style="fill:none"
+       id="connector19"
+       height="55.55555"
+       y="1165.8662"
+       x="1170.7439"
+       width="55.555553" />
+    <rect
+       style="fill:none"
+       id="connector18"
+       height="55.55555"
+       y="1265.8662"
+       x="1170.7439"
+       width="55.555553" />
+    <rect
+       style="fill:none"
+       id="connector17"
+       height="55.55555"
+       y="1365.8662"
+       x="1170.7439"
+       width="55.555553" />
+    <rect
+       style="fill:none"
+       id="connector16"
+       height="55.55555"
+       y="1465.8662"
+       x="1170.7439"
+       width="55.555553" />
+    <rect
+       style="fill:none"
+       id="connector15"
+       height="55.55555"
+       y="1565.8662"
+       x="1170.7439"
+       width="55.555553" />
+    <rect
+       style="fill:none"
+       id="connector14"
+       height="55.55555"
+       y="1665.8662"
+       x="1170.7439"
+       width="55.555553" />
+  </g>
+<g id="copper1">
+  <g
+     id="copper0"
+     transform="translate(-459.67486,26.309207)">
+    <rect
+       id="rect6465"
+       style="fill:none;stroke:#ffbf00;stroke-width:20"
+       height="55"
+       y="366.14398"
+       x="574.56799"
+       width="55" />
+    <circle
+       
+       
+       
+       
+       transform="translate(542.06798,333.64397)"
+       d="M 87.5,60 C 87.5,75.187831 75.187831,87.5 60,87.5 44.812169,87.5 32.5,75.187831 32.5,60 32.5,44.812169 44.812169,32.5 60,32.5 75.187831,32.5 87.5,44.812169 87.5,60 z"
+       id="connector0pin"
+       r="27.5"
+       style="fill:none;stroke:#ffbf00;stroke-width:20"
+       cy="60"
+       cx="60" />
+    <circle
+       
+       
+       
+       
+       transform="translate(542.06799,333.64397)"
+       d="m 87.5,160 c 0,15.18783 -12.312169,27.5 -27.5,27.5 -15.187831,0 -27.5,-12.31217 -27.5,-27.5 0,-15.18783 12.312169,-27.5 27.5,-27.5 15.187831,0 27.5,12.31217 27.5,27.5 z"
+       id="connector1pin"
+       r="27.5"
+       style="fill:none;stroke:#ffbf00;stroke-width:20"
+       cy="160"
+       cx="60" />
+    <circle
+       
+       
+       
+       
+       transform="translate(542.06799,333.64397)"
+       d="m 87.5,260 c 0,15.18783 -12.312169,27.5 -27.5,27.5 -15.187831,0 -27.5,-12.31217 -27.5,-27.5 0,-15.18783 12.312169,-27.5 27.5,-27.5 15.187831,0 27.5,12.31217 27.5,27.5 z"
+       id="connector2pin"
+       r="27.5"
+       style="fill:none;stroke:#ffbf00;stroke-width:20"
+       cy="260"
+       cx="60" />
+    <circle
+       
+       
+       
+       
+       transform="translate(542.06799,333.64397)"
+       d="m 87.5,360 c 0,15.18783 -12.312169,27.5 -27.5,27.5 -15.187831,0 -27.5,-12.31217 -27.5,-27.5 0,-15.18783 12.312169,-27.5 27.5,-27.5 15.187831,0 27.5,12.31217 27.5,27.5 z"
+       id="connector3pin"
+       r="27.5"
+       style="fill:none;stroke:#ffbf00;stroke-width:20"
+       cy="360"
+       cx="60" />
+    <circle
+       
+       
+       
+       
+       transform="translate(542.06799,333.64397)"
+       d="m 87.5,460 c 0,15.18783 -12.312169,27.5 -27.5,27.5 -15.187831,0 -27.5,-12.31217 -27.5,-27.5 0,-15.18783 12.312169,-27.5 27.5,-27.5 15.187831,0 27.5,12.31217 27.5,27.5 z"
+       id="connector4pin"
+       r="27.5"
+       style="fill:none;stroke:#ffbf00;stroke-width:20"
+       cy="460"
+       cx="60" />
+    <circle
+       
+       
+       
+       
+       transform="translate(542.06799,333.64397)"
+       d="m 87.5,560 c 0,15.18783 -12.312169,27.5 -27.5,27.5 -15.187831,0 -27.5,-12.31217 -27.5,-27.5 0,-15.18783 12.312169,-27.5 27.5,-27.5 15.187831,0 27.5,12.31217 27.5,27.5 z"
+       id="connector5pin"
+       r="27.5"
+       style="fill:none;stroke:#ffbf00;stroke-width:20"
+       cy="560"
+       cx="60" />
+    <circle
+       
+       
+       
+       
+       transform="translate(542.06799,333.64397)"
+       d="m 87.5,660 c 0,15.18783 -12.312169,27.5 -27.5,27.5 -15.187831,0 -27.5,-12.31217 -27.5,-27.5 0,-15.18783 12.312169,-27.5 27.5,-27.5 15.187831,0 27.5,12.31217 27.5,27.5 z"
+       id="connector6pin"
+       r="27.5"
+       style="fill:none;stroke:#ffbf00;stroke-width:20"
+       cy="660"
+       cx="60" />
+    <circle
+       
+       
+       
+       
+       transform="translate(542.06799,333.64397)"
+       d="m 87.5,760 c 0,15.18783 -12.312169,27.5 -27.5,27.5 -15.187831,0 -27.5,-12.31217 -27.5,-27.5 0,-15.18783 12.312169,-27.5 27.5,-27.5 15.187831,0 27.5,12.31217 27.5,27.5 z"
+       id="connector7pin"
+       r="27.5"
+       style="fill:none;stroke:#ffbf00;stroke-width:20"
+       cy="760"
+       cx="60" />
+    <circle
+       
+       
+       
+       
+       transform="translate(542.06799,333.64397)"
+       d="m 87.5,860 c 0,15.18783 -12.312169,27.5 -27.5,27.5 -15.187831,0 -27.5,-12.31217 -27.5,-27.5 0,-15.18783 12.312169,-27.5 27.5,-27.5 15.187831,0 27.5,12.31217 27.5,27.5 z"
+       id="connector8pin"
+       r="27.5"
+       style="fill:none;stroke:#ffbf00;stroke-width:20"
+       cy="860"
+       cx="60" />
+    <circle
+       
+       
+       
+       
+       transform="translate(542.06799,333.64397)"
+       d="m 87.5,960 c 0,15.18783 -12.312169,27.5 -27.5,27.5 -15.187831,0 -27.5,-12.31217 -27.5,-27.5 0,-15.18783 12.312169,-27.5 27.5,-27.5 15.187831,0 27.5,12.31217 27.5,27.5 z"
+       id="connector9pin"
+       r="27.5"
+       style="fill:none;stroke:#ffbf00;stroke-width:20"
+       cy="960"
+       cx="60" />
+    <circle
+       
+       
+       
+       
+       transform="translate(542.06799,333.64397)"
+       d="m 87.5,1060 c 0,15.1878 -12.312169,27.5 -27.5,27.5 -15.187831,0 -27.5,-12.3122 -27.5,-27.5 0,-15.1878 12.312169,-27.5 27.5,-27.5 15.187831,0 27.5,12.3122 27.5,27.5 z"
+       id="connector10pin"
+       r="27.5"
+       style="fill:none;stroke:#ffbf00;stroke-width:20"
+       cy="1060"
+       cx="60" />
+    <circle
+       
+       
+       
+       
+       transform="translate(542.06799,333.64397)"
+       d="m 87.5,1160 c 0,15.1878 -12.312169,27.5 -27.5,27.5 -15.187831,0 -27.5,-12.3122 -27.5,-27.5 0,-15.1878 12.312169,-27.5 27.5,-27.5 15.187831,0 27.5,12.3122 27.5,27.5 z"
+       id="connector11pin"
+       r="27.5"
+       style="fill:none;stroke:#ffbf00;stroke-width:20"
+       cy="1160"
+       cx="60" />
+    <circle
+       
+       
+       
+       
+       transform="translate(542.06799,333.64397)"
+       d="m 87.5,1260 c 0,15.1878 -12.312169,27.5 -27.5,27.5 -15.187831,0 -27.5,-12.3122 -27.5,-27.5 0,-15.1878 12.312169,-27.5 27.5,-27.5 15.187831,0 27.5,12.3122 27.5,27.5 z"
+       id="connector12pin"
+       r="27.5"
+       style="fill:none;stroke:#ffbf00;stroke-width:20"
+       cy="1260"
+       cx="60" />
+    <circle
+       
+       
+       
+       
+       transform="translate(542.06799,333.64397)"
+       d="m 87.5,1360 c 0,15.1878 -12.312169,27.5 -27.5,27.5 -15.187831,0 -27.5,-12.3122 -27.5,-27.5 0,-15.1878 12.312169,-27.5 27.5,-27.5 15.187831,0 27.5,12.3122 27.5,27.5 z"
+       id="connector13pin"
+       r="27.5"
+       style="fill:none;stroke:#ffbf00;stroke-width:20"
+       cy="1360"
+       cx="60" />
+    <rect
+       width="55.555557"
+       x="574.29016"
+       y="365.86621"
+       height="55.55555"
+       id="connector0"
+       style="fill:none" />
+    <rect
+       width="55.555557"
+       x="574.29022"
+       y="465.86621"
+       height="55.55555"
+       id="connector1"
+       style="fill:none" />
+    <rect
+       width="55.555557"
+       x="574.29022"
+       y="565.86621"
+       height="55.55555"
+       id="connector2"
+       style="fill:none" />
+    <rect
+       width="55.555557"
+       x="574.29022"
+       y="665.86621"
+       height="55.55555"
+       id="connector3"
+       style="fill:none" />
+    <rect
+       width="55.555557"
+       x="574.29022"
+       y="765.86621"
+       height="55.55555"
+       id="connector4"
+       style="fill:none" />
+    <rect
+       width="55.555557"
+       x="574.29022"
+       y="865.86621"
+       height="55.55555"
+       id="connector5"
+       style="fill:none" />
+    <rect
+       width="55.555557"
+       x="574.29022"
+       y="965.86627"
+       height="55.55555"
+       id="connector6"
+       style="fill:none" />
+    <rect
+       width="55.555557"
+       x="574.29022"
+       y="1065.8662"
+       height="55.55555"
+       id="connector7"
+       style="fill:none" />
+    <rect
+       width="55.555557"
+       x="574.29022"
+       y="1165.8662"
+       height="55.55555"
+       id="connector8"
+       style="fill:none" />
+    <rect
+       width="55.555557"
+       x="574.29022"
+       y="1265.8662"
+       height="55.55555"
+       id="connector9"
+       style="fill:none" />
+    <rect
+       width="55.555557"
+       x="574.29022"
+       y="1365.8662"
+       height="55.55555"
+       id="connector10"
+       style="fill:none" />
+    <rect
+       width="55.555557"
+       x="574.29022"
+       y="1465.8662"
+       height="55.55555"
+       id="connector11"
+       style="fill:none" />
+    <rect
+       width="55.555557"
+       x="574.29022"
+       y="1565.8662"
+       height="55.55555"
+       id="connector12"
+       style="fill:none" />
+    <rect
+       width="55.555557"
+       x="574.29022"
+       y="1665.8662"
+       height="55.55555"
+       id="connector13"
+       style="fill:none" />
+    <circle
+       cx="60"
+       cy="60"
+       style="fill:none;stroke:#ffbf00;stroke-width:20"
+       r="27.5"
+       id="connector27pin"
+       d="M 87.5,60 C 87.5,75.187831 75.187831,87.5 60,87.5 44.812169,87.5 32.5,75.187831 32.5,60 32.5,44.812169 44.812169,32.5 60,32.5 75.187831,32.5 87.5,44.812169 87.5,60 z"
+       transform="translate(1140.6299,333.64397)"
+       
+       
+       
+        />
+    <circle
+       cx="60"
+       cy="160"
+       style="fill:none;stroke:#ffbf00;stroke-width:20"
+       r="27.5"
+       id="connector26pin"
+       d="m 87.5,160 c 0,15.18783 -12.312169,27.5 -27.5,27.5 -15.187831,0 -27.5,-12.31217 -27.5,-27.5 0,-15.18783 12.312169,-27.5 27.5,-27.5 15.187831,0 27.5,12.31217 27.5,27.5 z"
+       transform="translate(1138.5217,333.64397)"
+       
+       
+       
+        />
+    <circle
+       cx="60"
+       cy="260"
+       style="fill:none;stroke:#ffbf00;stroke-width:20"
+       r="27.5"
+       id="connector25pin"
+       d="m 87.5,260 c 0,15.18783 -12.312169,27.5 -27.5,27.5 -15.187831,0 -27.5,-12.31217 -27.5,-27.5 0,-15.18783 12.312169,-27.5 27.5,-27.5 15.187831,0 27.5,12.31217 27.5,27.5 z"
+       transform="translate(1138.5217,333.64397)"
+       
+       
+       
+        />
+    <circle
+       cx="60"
+       cy="360"
+       style="fill:none;stroke:#ffbf00;stroke-width:20"
+       r="27.5"
+       id="connector24pin"
+       d="m 87.5,360 c 0,15.18783 -12.312169,27.5 -27.5,27.5 -15.187831,0 -27.5,-12.31217 -27.5,-27.5 0,-15.18783 12.312169,-27.5 27.5,-27.5 15.187831,0 27.5,12.31217 27.5,27.5 z"
+       transform="translate(1138.5217,333.64397)"
+       
+       
+       
+        />
+    <circle
+       cx="60"
+       cy="460"
+       style="fill:none;stroke:#ffbf00;stroke-width:20"
+       r="27.5"
+       id="connector23pin"
+       d="m 87.5,460 c 0,15.18783 -12.312169,27.5 -27.5,27.5 -15.187831,0 -27.5,-12.31217 -27.5,-27.5 0,-15.18783 12.312169,-27.5 27.5,-27.5 15.187831,0 27.5,12.31217 27.5,27.5 z"
+       transform="translate(1138.5217,333.64397)"
+       
+       
+       
+        />
+    <circle
+       cx="60"
+       cy="560"
+       style="fill:none;stroke:#ffbf00;stroke-width:20"
+       r="27.5"
+       id="connector22pin"
+       d="m 87.5,560 c 0,15.18783 -12.312169,27.5 -27.5,27.5 -15.187831,0 -27.5,-12.31217 -27.5,-27.5 0,-15.18783 12.312169,-27.5 27.5,-27.5 15.187831,0 27.5,12.31217 27.5,27.5 z"
+       transform="translate(1138.5217,333.64397)"
+       
+       
+       
+        />
+    <circle
+       cx="60"
+       cy="660"
+       style="fill:none;stroke:#ffbf00;stroke-width:20"
+       r="27.5"
+       id="connector21pin"
+       d="m 87.5,660 c 0,15.18783 -12.312169,27.5 -27.5,27.5 -15.187831,0 -27.5,-12.31217 -27.5,-27.5 0,-15.18783 12.312169,-27.5 27.5,-27.5 15.187831,0 27.5,12.31217 27.5,27.5 z"
+       transform="translate(1138.5217,333.64397)"
+       
+       
+       
+        />
+    <circle
+       cx="60"
+       cy="760"
+       style="fill:none;stroke:#ffbf00;stroke-width:20"
+       r="27.5"
+       id="connector20pin"
+       d="m 87.5,760 c 0,15.18783 -12.312169,27.5 -27.5,27.5 -15.187831,0 -27.5,-12.31217 -27.5,-27.5 0,-15.18783 12.312169,-27.5 27.5,-27.5 15.187831,0 27.5,12.31217 27.5,27.5 z"
+       transform="translate(1138.5217,333.64397)"
+       
+       
+       
+        />
+    <circle
+       cx="60"
+       cy="860"
+       style="fill:none;stroke:#ffbf00;stroke-width:20"
+       r="27.5"
+       id="connector19pin"
+       d="m 87.5,860 c 0,15.18783 -12.312169,27.5 -27.5,27.5 -15.187831,0 -27.5,-12.31217 -27.5,-27.5 0,-15.18783 12.312169,-27.5 27.5,-27.5 15.187831,0 27.5,12.31217 27.5,27.5 z"
+       transform="translate(1138.5217,333.64397)"
+       
+       
+       
+        />
+    <circle
+       cx="60"
+       cy="960"
+       style="fill:none;stroke:#ffbf00;stroke-width:20"
+       r="27.5"
+       id="connector18pin"
+       d="m 87.5,960 c 0,15.18783 -12.312169,27.5 -27.5,27.5 -15.187831,0 -27.5,-12.31217 -27.5,-27.5 0,-15.18783 12.312169,-27.5 27.5,-27.5 15.187831,0 27.5,12.31217 27.5,27.5 z"
+       transform="translate(1138.5217,333.64397)"
+       
+       
+       
+        />
+    <circle
+       cx="60"
+       cy="1060"
+       style="fill:none;stroke:#ffbf00;stroke-width:20"
+       r="27.5"
+       id="connector17pin"
+       d="m 87.5,1060 c 0,15.1878 -12.312169,27.5 -27.5,27.5 -15.187831,0 -27.5,-12.3122 -27.5,-27.5 0,-15.1878 12.312169,-27.5 27.5,-27.5 15.187831,0 27.5,12.3122 27.5,27.5 z"
+       transform="translate(1138.5217,333.64397)"
+       
+       
+       
+        />
+    <circle
+       cx="60"
+       cy="1160"
+       style="fill:none;stroke:#ffbf00;stroke-width:20"
+       r="27.5"
+       id="connector16pin"
+       d="m 87.5,1160 c 0,15.1878 -12.312169,27.5 -27.5,27.5 -15.187831,0 -27.5,-12.3122 -27.5,-27.5 0,-15.1878 12.312169,-27.5 27.5,-27.5 15.187831,0 27.5,12.3122 27.5,27.5 z"
+       transform="translate(1138.5217,333.64397)"
+       
+       
+       
+        />
+    <circle
+       cx="60"
+       cy="1260"
+       style="fill:none;stroke:#ffbf00;stroke-width:20"
+       r="27.5"
+       id="connector15pin"
+       d="m 87.5,1260 c 0,15.1878 -12.312169,27.5 -27.5,27.5 -15.187831,0 -27.5,-12.3122 -27.5,-27.5 0,-15.1878 12.312169,-27.5 27.5,-27.5 15.187831,0 27.5,12.3122 27.5,27.5 z"
+       transform="translate(1138.5217,333.64397)"
+       
+       
+       
+        />
+    <circle
+       cx="60"
+       cy="1360"
+       style="fill:none;stroke:#ffbf00;stroke-width:20"
+       r="27.5"
+       id="connector14pin"
+       d="m 87.5,1360 c 0,15.1878 -12.312169,27.5 -27.5,27.5 -15.187831,0 -27.5,-12.3122 -27.5,-27.5 0,-15.1878 12.312169,-27.5 27.5,-27.5 15.187831,0 27.5,12.3122 27.5,27.5 z"
+       transform="translate(1138.5217,333.64397)"
+       
+       
+       
+        />
+    <rect
+       style="fill:none"
+       id="connector27"
+       height="55.55555"
+       y="365.86618"
+       x="1170.7439"
+       width="55.555553" />
+    <rect
+       style="fill:none"
+       id="connector26"
+       height="55.55555"
+       y="465.86618"
+       x="1170.7439"
+       width="55.555553" />
+    <rect
+       style="fill:none"
+       id="connector25"
+       height="55.55555"
+       y="565.86621"
+       x="1170.7439"
+       width="55.555553" />
+    <rect
+       style="fill:none"
+       id="connector24"
+       height="55.55555"
+       y="665.86621"
+       x="1170.7439"
+       width="55.555553" />
+    <rect
+       style="fill:none"
+       id="connector23"
+       height="55.55555"
+       y="765.86621"
+       x="1170.7439"
+       width="55.555553" />
+    <rect
+       style="fill:none"
+       id="connector22"
+       height="55.55555"
+       y="865.86621"
+       x="1170.7439"
+       width="55.555553" />
+    <rect
+       style="fill:none"
+       id="connector21"
+       height="55.55555"
+       y="965.86627"
+       x="1170.7439"
+       width="55.555553" />
+    <rect
+       style="fill:none"
+       id="connector20"
+       height="55.55555"
+       y="1065.8662"
+       x="1170.7439"
+       width="55.555553" />
+    <rect
+       style="fill:none"
+       id="connector19"
+       height="55.55555"
+       y="1165.8662"
+       x="1170.7439"
+       width="55.555553" />
+    <rect
+       style="fill:none"
+       id="connector18"
+       height="55.55555"
+       y="1265.8662"
+       x="1170.7439"
+       width="55.555553" />
+    <rect
+       style="fill:none"
+       id="connector17"
+       height="55.55555"
+       y="1365.8662"
+       x="1170.7439"
+       width="55.555553" />
+    <rect
+       style="fill:none"
+       id="connector16"
+       height="55.55555"
+       y="1465.8662"
+       x="1170.7439"
+       width="55.555553" />
+    <rect
+       style="fill:none"
+       id="connector15"
+       height="55.55555"
+       y="1565.8662"
+       x="1170.7439"
+       width="55.555553" />
+    <rect
+       style="fill:none"
+       id="connector14"
+       height="55.55555"
+       y="1665.8662"
+       x="1170.7439"
+       width="55.555553" />
+  </g></g>
+</svg>

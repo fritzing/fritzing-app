@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- Created with Fritzing (http://www.fritzing.org/) -->
+<svg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' version='1.2' baseProfile='tiny' x='0in' y='0in' width='0.0818898in' height='0.0866142in' viewBox='0 0 2.08 2.2' >
+<g id='copper1'>
+<rect id='connector0pad' connectorname='P$1' x='0.1525' y='1.6' width='0.275' height='0.6' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector1pad' connectorname='P$2' x='0.6525' y='1.6' width='0.275' height='0.6' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector2pad' connectorname='P$3' x='1.1525' y='1.6' width='0.275' height='0.6' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector3pad' connectorname='P$4' x='1.6525' y='1.6' width='0.275' height='0.6' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector4pad' connectorname='P$5' x='1.6525' y='0' width='0.275' height='0.6' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector5pad' connectorname='P$6' x='1.1525' y='0' width='0.275' height='0.6' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector6pad' connectorname='P$7' x='0.6525' y='0' width='0.275' height='0.6' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector7pad' connectorname='P$8' x='0.1525' y='0' width='0.275' height='0.6' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<g id='copper0'>
+</g>
+</g>
+<g id='silkscreen'>
+<line class='other' x1='2.04' y1='0.1' x2='2.04' y2='2.1' stroke='#f0f0f0' stroke-width='0.08' stroke-linecap='round'/>
+<line class='other' x1='0.04' y1='2.1' x2='0.04' y2='0.1' stroke='#f0f0f0' stroke-width='0.08' stroke-linecap='round'/>
+<circle class='other' cx='0.28' cy='1.31' r='0.0781' stroke='#f0f0f0' stroke-width='0.127' fill='none' />
+</g>
+</svg>

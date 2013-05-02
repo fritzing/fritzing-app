@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" x="0in" y="0in" width="0.374in" height="0.3996in" viewBox="0 0 3740 3996" >
+<title>SparkFun.mod</title>
+<desc>Kicad module 'SparkFun-USB-MB-H' from file 'SparkFun.mod' converted by Fritzing</desc>
+<metadata xmlns:fz='http://fritzing.org/kicadmetadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+<rdf:RDF><rdf:Description rdf:about=''>
+<fz:attr name='kicad filename'>SparkFun.mod</fz:attr>
+<fz:attr name='kicad module'>SparkFun-USB-MB-H</fz:attr>
+<fz:attr name='fritzing version'>0.4.1b.07.04.4318</fz:attr>
+<fz:attr name='conversion date'>17/07/2010 17:18:38</fz:attr>
+<fz:attr name='dist-license'>GPL</fz:attr>
+<fz:attr name='use-license'>unlimited</fz:attr>
+<fz:attr name='author'>KICAD project</fz:attr>
+<fz:attr name='license-url'>http://www.gnu.org/licenses/gpl.html</fz:attr>
+<fz:comment>USB SERIES MINI-B HOLE MOUNTED</fz:comment>
+<fz:attr name='keyword'>USB</fz:attr>
+<fz:attr name='keyword'>SERIES</fz:attr>
+<fz:attr name='keyword'>MINI-B</fz:attr>
+<fz:attr name='keyword'>HOLE</fz:attr>
+<fz:attr name='keyword'>MOUNTED</fz:attr>
+</rdf:Description></rdf:RDF></metadata><g id="copper0">
+ <g id="copper1">
+  <g connectorname="D+" id="connector0pin">
+   <circle fill="none" cx="3483" cy="1998" stroke="#ff9400" r="207" stroke-width="100"/>
+  </g>
+  <g connectorname="D-" id="connector1pin">
+   <circle fill="none" cx="3011" cy="1684" stroke="#ff9400" r="207" stroke-width="100"/>
+  </g>
+  <g connectorname="GND" id="connector2pin">
+   <circle fill="none" cx="3483" cy="2627" stroke="#ff9400" r="207" stroke-width="100"/>
+  </g>
+  <g connectorname="ID" id="connector3pin">
+   <circle fill="none" cx="3011" cy="2312" stroke="#ff9400" r="207" stroke-width="100"/>
+  </g>
+  <g connectorname="P$6" id="connector4pin">
+   <circle fill="none" cx="1476" cy="3435" stroke="#ff9400" r="467.5" stroke-width="187"/>
+   <circle fill="black" cx="1476" cy="3435" drill="0" r="374" stroke-width="0"/>
+  </g>
+  <g connectorname="P$7" id="connector5pin">
+   <circle fill="none" cx="1476" cy="561" stroke="#ff9400" r="467.5" stroke-width="187"/>
+   <circle fill="black" cx="1476" cy="561" drill="0" r="374" stroke-width="0"/>
+  </g>
+  <g connectorname="VBUS" id="connector6pin">
+   <circle fill="none" cx="3483" cy="1369" stroke="#ff9400" r="207" stroke-width="100"/>
+  </g>
+ </g>
+</g>
+<g id="silkscreen">
+ <line fill="none" stroke="white" y1="817" x1="2755" y2="817" stroke-width="26" x2="3739"/>
+ <line fill="none" stroke="white" y1="817" x1="3739" y2="266" stroke-width="26" x2="3739"/>
+ <line fill="none" stroke="white" y1="266" x1="2755" y2="266" stroke-width="26" x2="3739"/>
+ <line fill="none" stroke="white" y1="817" x1="2755" y2="266" stroke-width="26" x2="2755"/>
+ <line fill="none" stroke="white" y1="3730" x1="2755" y2="3730" stroke-width="26" x2="3739"/>
+ <line fill="none" stroke="white" y1="3730" x1="3739" y2="3179" stroke-width="26" x2="3739"/>
+ <line fill="none" stroke="white" y1="3179" x1="2755" y2="3179" stroke-width="26" x2="3739"/>
+ <line fill="none" stroke="white" y1="3730" x1="2755" y2="3179" stroke-width="26" x2="2755"/>
+ <line fill="none" stroke="white" y1="3218" x1="0" y2="3218" stroke-width="26" x2="915"/>
+ <line fill="none" stroke="white" y1="3218" x1="915" y2="778" stroke-width="26" x2="915"/>
+ <line fill="none" stroke="white" y1="778" x1="0" y2="778" stroke-width="26" x2="915"/>
+ <line fill="none" stroke="white" y1="3218" x1="0" y2="778" stroke-width="26" x2="0"/>
+ <line fill="none" stroke="white" y1="2913" x1="915" y2="2913" stroke-width="26" x2="1221"/>
+ <line fill="none" stroke="white" y1="2913" x1="1221" y2="1083" stroke-width="26" x2="1221"/>
+ <line fill="none" stroke="white" y1="1083" x1="915" y2="1083" stroke-width="26" x2="1221"/>
+ <line fill="none" stroke="white" y1="2913" x1="915" y2="1083" stroke-width="26" x2="915"/>
+ <line fill="none" stroke="white" y1="463" x1="0" y2="3533" stroke-width="50" x2="0"/>
+ <line fill="none" stroke="white" y1="463" x1="3542" y2="3533" stroke-width="50" x2="3542"/>
+ <line fill="none" stroke="white" y1="463" x1="0" y2="463" stroke-width="50" x2="3542"/>
+ <line fill="none" stroke="white" y1="3533" x1="0" y2="3533" stroke-width="50" x2="3542"/>
+ <line fill="none" stroke="white" y1="621" x1="1771" y2="817" stroke-width="50" x2="197"/>
+ <line fill="none" stroke="white" y1="817" x1="197" y2="1211" stroke-width="50" x2="197"/>
+ <line fill="none" stroke="white" y1="1211" x1="197" y2="1408" stroke-width="50" x2="1771"/>
+ <line fill="none" stroke="white" y1="3375" x1="1968" y2="3179" stroke-width="50" x2="197"/>
+ <line fill="none" stroke="white" y1="3179" x1="197" y2="2785" stroke-width="50" x2="197"/>
+ <line fill="none" stroke="white" y1="2785" x1="197" y2="2588" stroke-width="50" x2="1968"/>
+ <line fill="none" stroke="white" y1="1506" x1="197" y2="1703" stroke-width="50" x2="2164"/>
+ <line fill="none" stroke="white" y1="1703" x1="2164" y2="2293" stroke-width="50" x2="2164"/>
+ <line fill="none" stroke="white" y1="2293" x1="2164" y2="2490" stroke-width="50" x2="197"/>
+</g>
+</svg>

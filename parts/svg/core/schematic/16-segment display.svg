@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1 Basic//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-basic.dtd">
+<svg version="1.1" baseProfile="basic" id="svg" xmlns:xml="http://www.w3.org/XML/1998/namespace"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1.8in"
+	 height="3.28in" viewBox="0 0 129.6 236.16" xml:space="preserve">
+<g id="schematic">
+<rect id="connector0pin" x="0.001" y="20.323" fill="none" width="9.962" height="1.992"/>
+<rect id="connector0terminal" x="0.001" y="20.323" fill="none" width="1.992" height="1.992"/>
+<rect id="connector1pin" x="0.001" y="41.523" fill="none" width="9.962" height="1.992"/>
+<rect id="connector1terminal" x="0.001" y="41.523" fill="none" width="1.992" height="1.992"/>
+<rect id="connector2pin" x="0" y="62.722" fill="none" width="9.963" height="1.992"/>
+<rect id="connector2terminal" x="0" y="62.722" fill="none" width="1.992" height="1.992"/>
+<rect id="connector3pin" x="0.001" y="83.955" fill="none" width="9.962" height="1.993"/>
+<rect id="connector3terminal" x="0.001" y="83.955" fill="none" width="1.992" height="1.993"/>
+<rect id="connector4pin" x="0.001" y="105.156" fill="none" width="9.962" height="1.992"/>
+<rect id="connector4terminal" x="0.001" y="105.156" fill="none" width="1.992" height="1.992"/>
+<rect id="connector5pin" x="0" y="126.287" fill="none" width="9.963" height="1.992"/>
+<rect id="connector5terminal" x="0" y="126.287" fill="none" width="1.991" height="1.992"/>
+<rect id="connector6pin" x="0" y="147.488" fill="none" width="9.963" height="1.992"/>
+<rect id="connector6terminal" x="0" y="147.488" fill="none" width="1.991" height="1.992"/>
+<rect id="connector7pin" x="0" y="168.688" fill="none" width="9.963" height="1.994"/>
+<rect id="connector7terminal" x="0" y="168.688" fill="none" width="1.992" height="1.994"/>
+<rect id="connector8pin" x="0" y="189.922" fill="none" width="9.963" height="1.992"/>
+<rect id="connector8terminal" x="0" y="189.922" fill="none" width="1.991" height="1.992"/>
+<rect id="connector9pin" x="117.245" y="189.871" fill="none" width="9.963" height="1.992"/>
+<rect id="connector9terminal" x="125.217" y="189.871" fill="none" width="1.991" height="1.992"/>
+<rect id="connector10pin" x="117.245" y="168.67" fill="none" width="9.963" height="1.992"/>
+<rect id="connector10terminal" x="125.217" y="168.67" fill="none" width="1.991" height="1.992"/>
+<rect id="connector11pin" x="62.581" y="223.424" fill="none" width="1.992" height="9.963"/>
+<rect id="connector11terminal" x="62.581" y="231.396" fill="none" width="1.992" height="1.989"/>
+<rect id="connector12pin" x="117.245" y="147.467" fill="none" width="9.963" height="1.992"/>
+<rect id="connector12terminal" x="125.217" y="147.467" fill="none" width="1.991" height="1.992"/>
+<rect id="connector13pin" x="117.245" y="126.305" fill="none" width="9.963" height="1.992"/>
+<rect id="connector13terminal" x="125.217" y="126.305" fill="none" width="1.991" height="1.992"/>
+<rect id="connector14pin" x="117.245" y="105.104" fill="none" width="9.963" height="1.993"/>
+<rect id="connector14terminal" x="125.217" y="105.104" fill="none" width="1.991" height="1.993"/>
+<rect id="connector15pin" x="117.245" y="83.904" fill="none" width="9.963" height="1.992"/>
+<rect id="connector15terminal" x="125.217" y="83.904" fill="none" width="1.991" height="1.992"/>
+<rect id="connector16pin" x="117.245" y="62.704" fill="none" width="9.963" height="1.993"/>
+<rect id="connector16terminal" x="125.217" y="62.704" fill="none" width="1.991" height="1.993"/>
+<rect id="connector17pin" x="117.245" y="41.522" fill="none" width="9.963" height="1.991"/>
+<rect id="connector17terminal" x="125.217" y="41.522" fill="none" width="1.991" height="1.991"/>
+	<line fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" x1="21.202" y1="21.315" x2="0.001" y2="21.315"/>
+	<line fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" x1="21.206" y1="42.519" x2="0.005" y2="42.519"/>
+	<line fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" x1="21.206" y1="63.719" x2="0.005" y2="63.719"/>
+	<line fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" x1="21.206" y1="84.918" x2="0.005" y2="84.918"/>
+	
+		<line fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" x1="63.578" y1="212.186" x2="63.578" y2="233.387"/>
+	
+		<line fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" x1="127.208" y1="42.519" x2="106.007" y2="42.519"/>
+	
+		<line fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" x1="127.208" y1="63.719" x2="106.007" y2="63.719"/>
+	
+		<line fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" x1="127.208" y1="84.918" x2="106.007" y2="84.918"/>
+	<line fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" x1="21.202" y1="106.08" x2="0.001" y2="106.08"/>
+	<line fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" x1="21.206" y1="127.283" x2="0.005" y2="127.283"/>
+	<line fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" x1="21.206" y1="148.484" x2="0.005" y2="148.484"/>
+	<line fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" x1="21.206" y1="169.684" x2="0.005" y2="169.684"/>
+	<line fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" x1="21.206" y1="190.918" x2="0.005" y2="190.918"/>
+	
+		<line fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" x1="127.208" y1="106.084" x2="106.007" y2="106.084"/>
+	
+		<line fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" x1="127.208" y1="127.283" x2="106.007" y2="127.283"/>
+	
+		<line fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" x1="127.208" y1="148.484" x2="106.007" y2="148.484"/>
+	
+		<line fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" x1="127.208" y1="169.684" x2="106.007" y2="169.684"/>
+	
+		<line fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" x1="127.208" y1="190.918" x2="106.007" y2="190.918"/>
+	<polygon fill="none" stroke="#000000" stroke-width="2.4016" points="21.206,0.118 106.007,0.118 105.978,212.186 21.178,212.186 	
+		"/>
+	<g>
+		<path d="M79.011,65.768l-0.842,7.992L65.112,90.288l0.841-7.993L79.011,65.768"/>
+		<path d="M48.604,65.666l9.584,16.526l-0.859,8.199l-9.584-16.527L48.604,65.666"/>
+		<path d="M64.017,100.717l9.582,16.526l-0.861,8.194l-9.583-16.526L64.017,100.717"/>
+		<path d="M56.233,100.819l-0.841,7.989l-13.059,16.527l0.841-7.99L56.233,100.819"/>
+		<path d="M62.959,99.438l-2.866,27.267h-5.387l2.864-27.267H62.959"/>
+		<path d="M66.64,64.402l-2.866,27.27H58.39l2.865-27.27H66.64"/>
+		<path d="M60.36,92.856l-0.566,5.396H44.785l-2.374-2.655l3.028-2.741H60.36"/>
+		<path d="M76.556,92.856l2.377,2.652l-3.029,2.744H60.983l0.569-5.396H76.556"/>
+		<path d="M84.531,60.337c0.925,1.262,1.335,2.84,1.156,4.509l-2.85,27.131l-3.025,2.736l-2.371-2.648l2.849-27.095
+			c0.022-0.246-0.004-0.488-0.086-0.714L84.531,60.337"/>
+		<path d="M79.724,96.395l2.371,2.647l-2.846,27.09c-0.185,1.716-0.957,3.343-2.201,4.634l-3.424-3.822
+			c0.121-0.213,0.196-0.445,0.223-0.687l2.85-27.126L79.724,96.395"/>
+		<path d="M88.392,126.932c1.752,0,3.176,1.426,3.176,3.176c0,1.752-1.424,3.179-3.176,3.179c-1.75,0-3.178-1.427-3.178-3.179
+			C85.216,128.357,86.642,126.932,88.392,126.932"/>
+		<path d="M41.531,96.395l2.371,2.65l-2.848,27.091c-0.025,0.242,0.005,0.484,0.086,0.71l-4.328,3.915
+			c-0.924-1.258-1.332-2.836-1.157-4.502l2.853-27.127L41.531,96.395"/>
+		<path d="M41.934,127.73c0.215,0.104,0.452,0.158,0.695,0.158h14.05l-0.566,5.395H41.937c-1.667,0-3.183-0.578-4.333-1.637
+			L41.934,127.73"/>
+		<path d="M72.741,127.738l3.426,3.826c-1.41,1.11-3.103,1.721-4.816,1.721H57.305l0.566-5.395h14.171
+			C72.282,127.889,72.519,127.838,72.741,127.738"/>
+		<path d="M44.299,60.335l3.421,3.826c-0.121,0.21-0.198,0.444-0.225,0.686l-2.851,27.131l-3.024,2.736l-2.371-2.648l2.848-27.095
+			C42.278,63.254,43.054,61.629,44.299,60.335"/>
+		<path d="M79.406,57.82c1.669,0,3.187,0.577,4.335,1.635l-4.33,3.918c-0.216-0.104-0.451-0.156-0.695-0.156h-14.05l0.566-5.397
+			H79.406"/>
+		<path d="M64.04,57.82l-0.565,5.397H49.302c-0.239,0-0.478,0.052-0.699,0.147l-3.425-3.829c1.412-1.111,3.101-1.717,4.813-1.717
+			L64.04,57.82"/>
+	</g>
+</g>
+</svg>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1 Basic//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-basic.dtd">
+<svg version="1.1" baseProfile="basic" id="Ebene_1" xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="127.56px"
+	 height="25.512px" viewBox="0 0 127.56 25.512" xml:space="preserve">
+<g>
+	<title>element:LINEAR</title>
+	<g>
+		<title>package:RA3021-202</title>
+		<rect y="0" fill="#4B4B4B" width="127.56" height="25.512"/>
+	</g>
+</g>
+<g opacity="0.2">
+	<title>element:LINEAR</title>
+	<g>
+		<title>package:RA3021-202</title>
+		<rect y="0" fill="#FFFFFF" width="127.56" height="1.096"/>
+	</g>
+</g>
+<g opacity="0.2">
+	<title>element:LINEAR</title>
+	<g>
+		<title>package:RA3021-202</title>
+		<rect y="24.416" width="127.56" height="1.096"/>
+	</g>
+</g>
+<rect x="3.06" y="8.318" fill="#1A1A1A" width="121.44" height="8.875"/>
+<rect x="4.25" y="10.416" fill="#7C7C7C" width="119" height="4.68"/>
+<g>
+	<title>element:LINEAR</title>
+	<g>
+		<title>package:RA3021-202</title>
+		<rect x="3.06" y="8.071" width="121.44" height="0.496"/>
+	</g>
+</g>
+<g opacity="0.4">
+	<title>element:LINEAR</title>
+	<g>
+		<title>package:RA3021-202</title>
+		<rect x="3.06" y="16.873" fill="#FFFFFF" width="121.44" height="0.547"/>
+	</g>
+</g>
+<rect x="3.06" y="8.318" opacity="0.4" width="121.44" height="3.402"/>
+<rect x="10.833" y="9.22" width="11.833" height="6.667"/>
+<g>
+	<path fill="#1A1A1A" d="M20.938,21.97c0,0.55-0.45,1-1,1h-6.375c-0.55,0-1-0.45-1-1V3.47c0-0.55,0.45-1,1-1h6.375
+		c0.55,0,1,0.45,1,1V21.97z"/>
+	<rect x="13.781" y="2.47" fill="#2A2A2A" width="3.469" height="20.5"/>
+	<rect x="15.031" y="2.47" fill="#3B3B3B" width="2" height="20.5"/>
+	<rect x="15.729" y="2.506" fill="#4B4B4B" width="1.115" height="20.5"/>
+	<path opacity="0.2" fill="#FFFFFF" d="M20.938,3.97c0-0.55-0.45-1-1-1h-6.375c-0.55,0-1,0.45-1,1v-0.5c0-0.55,0.45-1,1-1h6.375
+		c0.55,0,1,0.45,1,1V3.97z"/>
+	<path opacity="0.2" d="M12.563,21.47c0,0.55,0.45,1,1,1h6.375c0.55,0,1-0.45,1-1v0.5c0,0.55-0.45,1-1,1h-6.375c-0.55,0-1-0.45-1-1
+		V21.47z"/>
+</g>
+</svg>

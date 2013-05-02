@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- Created with Fritzing (http://www.fritzing.org/) -->
+<svg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' version='1.2' baseProfile='tiny' x='0in' y='0in' width='0.12in' height='0.12in' viewBox='0 0 3.048 3.048' >
+<g id='copper1'>
+<circle cx='1.524' cy='1.524' r='1.524' stroke='black' stroke-width='0' fill='black' id='nonconn0' />
+<g id='copper0'>
+<circle cx='1.524' cy='1.524' r='1.524' stroke='black' stroke-width='0' fill='black' id='nonconn1' />
+</g>
+</g>
+<g id='silkscreen'>
+</g>
+</svg>

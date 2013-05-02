@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1 Basic//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-basic.dtd">
+<svg version="1.1" baseProfile="basic" id="Ebene_1"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="62.361px"
+	 height="63.071px" viewBox="0 1.063 62.361 63.071" xml:space="preserve">
+<rect x="0" y="1.063" fill="#BA9F38" width="62.361" height="63.071"/>
+<rect x="0" y="1.063" fill="#BA9F38" width="62.361" height="63.071"/>
+<rect x="1.732" y="2.68" fill="#1F7A34" width="12.261" height="41.172"/>
+<rect x="2.602" y="41.224" fill="#F4F4F4" width="8.9" height="3.002"/>
+<rect x="3.242" y="23.939" fill="#DFD5A4" width="8.261" height="17.104"/>
+<rect x="0.868" y="11.844" fill="#7B7F7E" width="10.991" height="9.743"/>
+<rect x="0.868" y="21.302" opacity="0.2" fill="#FFFFFF" width="10.991" height="0.284"/>
+<rect x="34.912" y="2.411" width="3.242" height="5.077"/>
+<polygon opacity="0.2" points="1.732,45.771 13.992,45.771 13.992,43.621 16.019,43.621 16.019,2.411 12.195,2.411 12.227,5.469 
+	10.328,5.469 6.106,9.785 6.106,42.977 1.732,42.977 "/>
+<g>
+	<polygon fill="#3D3D3D" points="36.944,2.411 36.944,7.793 36.807,7.793 36.807,2.411 12.595,2.411 12.595,43.379 1.333,43.379 
+		1.333,62.788 61.031,62.788 61.031,2.411 	"/>
+</g>
+<rect x="60.763" y="55.171" opacity="0.2" fill="#FFFFFF" width="0.269" height="7.334"/>
+<rect x="60.763" y="2.411" opacity="0.2" fill="#FFFFFF" width="0.269" height="7.335"/>
+<rect x="37.209" y="2.411" opacity="0.2" fill="#FFFFFF" width="23.554" height="0.269"/>
+<rect x="12.866" y="2.411" opacity="0.2" fill="#FFFFFF" width="23.668" height="0.269"/>
+<rect x="36.944" y="2.411" opacity="0.2" fill="#FFFFFF" width="0.268" height="7.335"/>
+<rect x="36.534" y="2.411" opacity="0.2" fill="#FFFFFF" width="0.267" height="7.335"/>
+<rect x="12.599" y="2.411" opacity="0.2" fill="#FFFFFF" width="0.268" height="7.335"/>
+<rect x="3.832" y="3.668" opacity="0.15" fill="#F4F4F4" width="5.062" height="2.067"/>
+<polygon fill="#CB9D7C" points="13.218,58.81 57.766,58.81 61.676,54.854 61.676,10.073 57.766,6.119 13.218,6.119 9.308,10.073 
+	9.308,54.854 "/>
+<rect x="13.46" y="10.183" fill="#FFFFFF" width="44.062" height="44.562"/>
+<circle opacity="0.3" fill="#3D3D3D" cx="45.081" cy="35.841" r="3.264"/>
+<circle opacity="0.05" fill="#3D3D3D" cx="45.08" cy="35.841" r="3.968"/>
+<circle fill="#FFFFFF" cx="44.778" cy="36.068" r="2.843"/>
+<path opacity="0.05" fill="#3D3D3D" d="M45.917,34.094c0.071-0.126,0.032-0.262-0.102-0.312c-0.313-0.121-0.682-0.198-1.038-0.199
+	c-0.359,0-0.722,0.075-1.037,0.199c-0.136,0.05-0.175,0.186-0.103,0.312l0.961,1.665c0.174,0.301,0.18,0.311,0.357,0L45.917,34.094z
+	"/>
+<g opacity="0.5">
+	<path opacity="0.1" fill="#3D3D3D" d="M44.058,34.819c0.209-0.129,0.454-0.209,0.719-0.209c0.267,0,0.513,0.08,0.723,0.209
+		l0.418-0.727c0.071-0.126,0.032-0.262-0.102-0.312c-0.313-0.121-0.682-0.198-1.038-0.199c-0.359,0-0.722,0.075-1.037,0.199
+		c-0.136,0.05-0.175,0.186-0.103,0.312L44.058,34.819z"/>
+</g>
+<rect x="1.333" y="62.502" opacity="0.2" fill="#FFFFFF" width="59.698" height="0.286"/>
+<text transform="matrix(-1 0 0 -1 55.3147 50.1299)" fill="#CCCCCC" font-family="'OCRA'" font-size="3.1981">EM-406A GPS</text>
+<rect x="0.994" y="23.939" fill="#F4F4F4" width="2.356" height="17.104"/>
+</svg>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?> <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" x="0in" y="0in" width="0.168in" height="0.168in" viewBox="0 0 16800 16800" ><title>LED3.fp</title><desc>Geda footprint file 'LED3.fp' converted by Fritzing</desc><metadata xmlns:fz='http://fritzing.org/gedametadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'><rdf:RDF><rdf:Description rdf:about=''><fz:attr name='geda filename'>LED3.fp</fz:attr>
+<fz:attr name='fritzing version'>0.4.0b.06.21.4282</fz:attr>
+<fz:attr name='conversion date'>27/06/2010 07:15:43</fz:attr>
+<fz:comment>typical LED is 0.5 mm or 0.020&quot; square pin.  See for example</fz:comment>
+<fz:comment>http://www.lumex.com and part number SSL-LX3054LGD.</fz:comment>
+<fz:comment>0.020&quot; square is 0.0288&quot; diagonal.  A number 57 drill is</fz:comment>
+<fz:comment>0.043&quot; which should be enough.  a 65 mil pad gives 11 mils</fz:comment>
+<fz:comment>of annular ring.</fz:comment>
+<fz:attr name='dist-license'>GPL</fz:attr>
+<fz:attr name='use-license'>unlimited</fz:attr>
+<fz:attr name='author'>gEDA project</fz:attr>
+<fz:attr name='license-url'>http://www.gnu.org/licenses/gpl.html</fz:attr>
+</rdf:Description></rdf:RDF></metadata><g id="copper0">
+ <g id="copper1">
+  <circle fill="none" cx="3400" cy="8400" connectorname="1" stroke="#ff9400" r="2700" id="connector0pin" stroke-width="1100"/>
+  <circle fill="none" cx="13400" cy="8400" connectorname="2" stroke="#ff9400" r="2700" id="connector1pin" stroke-width="1100"/>
+ </g>
+</g>
+<g id="silkscreen">
+ <path fill="none" stroke="white" stroke-width="1000" d="M4228.07,12571.9a5900,5900,0,0,0,8343.86,0"/>
+ <path fill="none" stroke="white" stroke-width="1000" d="M12571.9,4228.07a5900,5900,0,0,0,-8343.86,0"/>
+ <path fill="none" stroke="white" stroke-width="1000" d="M2813.86,13986.1a7900,7900,0,0,0,11172.3,0"/>
+ <path fill="none" stroke="white" stroke-width="1000" d="M13986.1,2813.86a7900,7900,0,0,0,-11172.3,0"/>
+</g>
+</svg>

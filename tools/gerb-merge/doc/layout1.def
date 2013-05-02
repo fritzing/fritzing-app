@@ -1,0 +1,19 @@
+# This example simply takes the small Proj1 board and panelizes
+# it in a 2x4 array. To demonstrate rotation, the second column
+# consists of rotated jobs. You wouldn't really do it this way,
+# of course, as it wastes space.
+Row {
+  Col {
+    Proj1
+    Proj1
+    Proj1
+    Proj1
+  }
+  Col {
+    Proj1 Rotate
+    Proj1 Rotate
+    Proj1 Rotate
+    Proj1 Rotate
+  }
+}  
+

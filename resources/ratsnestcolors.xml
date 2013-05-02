@@ -1,0 +1,60 @@
+<colors>
+	<view name="iconView" background="#C2C2C2">
+	</view>
+	<view name="breadboardView" background="#CCCCCC">
+		<color name="blue" ratsnest="#157de6" wire="#418dd9" shadow="#1b5bb3" />
+		<color name="red" ratsnest="#cc1414"  wire="#cc1414" shadow="#8c0000" >
+			<connector name="3v3" />
+			<connector name="+5v" />
+		</color>
+		<color name="black" ratsnest="#000000"  wire="#404040" shadow="#000000" >
+			<connector name="gnd" />
+			<connector name="ground" />
+		</color>
+		<color name="yellow" ratsnest="#ffe24d"  wire="#ffe24d" shadow="#e6ab00" />
+		<color name="green" ratsnest="#47cc79"  wire="#47cc79" shadow="#00a6d3" />
+		<color name="grey" ratsnest=""  wire="#999999" shadow="#666666" />
+		<color name="white" ratsnest=""  wire="#ffffff" shadow="#999999" />
+		<color name="orange" ratsnest="#ff7033"  wire="#ff7033" shadow="#d95821" />
+		<color name="purple" ratsnest="#ab58a2"  wire="#ab58a2" shadow="#7a3a73" />
+		<color name="brown" ratsnest="#8c3b00"  wire="#8c3b00" shadow="#6c2710" />
+	</view>
+	<view name="schematicView" background="#f2f2f2">
+		<color name="blue" ratsnest="#157de6"  wire="#418dd9" shadow="#418dd9"/>
+		<color name="red" ratsnest="#cc1414"  wire="#cc1414" shadow="#cc1414">
+			<connector name="3v3" />
+			<connector name="+5v" />
+		</color>
+		<color name="black" ratsnest="#000000"  wire="#404040" shadow="#404040">
+			<connector name="gnd" />
+			<connector name="ground" />
+		</color>
+		<color name="yellow" ratsnest="#ffe24d"  wire="#ffe24d" shadow="#ffe24d"/>
+		<color name="green" ratsnest="#47cc79"  wire="#47cc79" shadow="#47cc79" />
+		<color name="grey" ratsnest=""  wire="#999999"/>
+		<color name="white" ratsnest="" wire=""/>
+		<color name="orange" ratsnest="#ff7033"  wire="#ff7033" shadow="#ff7033"/>
+		<color name="purple" ratsnest="#ab58a2"  wire="#ab58a2" shadow="#ab58a2"/>
+		<color name="brown" ratsnest="#8c3b00"  wire="#8c3b00" shadow="#8c3b00"/>
+	</view>	
+	<view name="pcbView" background="#A0A8B3">
+		<color name="blue" ratsnest="#157de6" />
+		<color name="red" ratsnest="#cc1414" >
+			<connector name="3v3" />
+			<connector name="+5v" />
+		</color>
+		<color name="black" ratsnest="#000000" >
+			<connector name="gnd" />
+			<connector name="ground" />
+		</color>
+		<color name="yellow" ratsnest="#ffe24d" />
+		<color name="green" ratsnest="#47cc79" />
+		<color name="grey" ratsnest="" />
+		<color name="white" ratsnest="" />
+		<color name="orange" ratsnest="#ff7033" />
+		<color name="purple" ratsnest="#ab58a2" />
+		<color name="brown" ratsnest="#8c3b00" />
+		<color name="trace" wire="#F28A00" shadow="#F28A00" />
+		<color name="trace1" wire="#FFCB33" shadow="#FFCB33" />
+	</view>
+</colors>

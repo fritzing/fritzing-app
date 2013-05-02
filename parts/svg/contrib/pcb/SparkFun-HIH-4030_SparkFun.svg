@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" x="0in" y="0in" width="0.175in" height="0.51in" viewBox="0 0 1750 5100" >
+<title>SparkFun.mod</title>
+<desc>Kicad module 'SparkFun-HIH-4030' from file 'SparkFun.mod' converted by Fritzing</desc>
+<metadata xmlns:fz='http://fritzing.org/kicadmetadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+<rdf:RDF><rdf:Description rdf:about=''>
+<fz:attr name='kicad filename'>SparkFun.mod</fz:attr>
+<fz:attr name='kicad module'>SparkFun-HIH-4030</fz:attr>
+<fz:attr name='fritzing version'>0.4.1b.07.04.4318</fz:attr>
+<fz:attr name='conversion date'>17/07/2010 17:15:58</fz:attr>
+<fz:attr name='dist-license'>GPL</fz:attr>
+<fz:attr name='use-license'>unlimited</fz:attr>
+<fz:attr name='author'>KICAD project</fz:attr>
+<fz:attr name='license-url'>http://www.gnu.org/licenses/gpl.html</fz:attr>
+<fz:comment>HIH-4030 HUMIDITY SENSOR</fz:comment>
+<fz:attr name='keyword'>HIH-4030</fz:attr>
+<fz:attr name='keyword'>HUMIDITY</fz:attr>
+<fz:attr name='keyword'>SENSOR</fz:attr>
+</rdf:Description></rdf:RDF></metadata><g id="copper1">
+ <rect width="200" x="300" y="4400" fill="#ffbf00" connectorname="1" height="700" id="connector0pad" stroke-width="0"/>
+ <rect width="200" x="800" y="4400" fill="#ffbf00" connectorname="2" height="700" id="connector1pad" stroke-width="0"/>
+ <rect width="200" x="1300" y="4400" fill="#ffbf00" connectorname="3" height="700" id="connector2pad" stroke-width="0"/>
+ <rect width="1000" x="400" y="0" fill="#ffbf00" connectorname="NC" height="900" id="connector3pad" stroke-width="0"/>
+</g>
+<g id="silkscreen">
+ <line fill="none" stroke="white" y1="960" x1="1710" y2="4340" stroke-width="80" x2="1710"/>
+ <line fill="none" stroke="white" y1="4340" x1="1710" y2="4340" stroke-width="80" x2="70"/>
+ <line fill="none" stroke="white" y1="4340" x1="70" y2="960" stroke-width="80" x2="70"/>
+ <line fill="none" stroke="white" y1="960" x1="70" y2="960" stroke-width="80" x2="1710"/>
+ <line fill="none" stroke="white" y1="1200" x1="0" y2="900" stroke-width="80" x2="0"/>
+ <line fill="none" stroke="white" y1="900" x1="0" y2="900" stroke-width="80" x2="250"/>
+ <line fill="none" stroke="white" y1="1200" x1="1750" y2="900" stroke-width="80" x2="1750"/>
+ <line fill="none" stroke="white" y1="900" x1="1750" y2="900" stroke-width="80" x2="1550"/>
+ <line fill="none" stroke="white" y1="4150" x1="50" y2="4400" stroke-width="80" x2="50"/>
+ <line fill="none" stroke="white" y1="4400" x1="50" y2="4400" stroke-width="80" x2="200"/>
+ <line fill="none" stroke="white" y1="4400" x1="1600" y2="4400" stroke-width="80" x2="1750"/>
+ <line fill="none" stroke="white" y1="4400" x1="1750" y2="4150" stroke-width="80" x2="1750"/>
+</g>
+</svg>

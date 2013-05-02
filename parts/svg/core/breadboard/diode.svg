@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+	 width="0.414986in" height="0.1in" viewBox="0 0 29.879 7.2" >
+	<g id="breadboard">
+		<rect id="connector0pin" x="0.011" y="2.583" fill="none" width="1" height="1"/>
+		<rect id="connector1pin" x="25.576" y="2.583" fill="none" width="1" height="1"/>
+		
+		<line  id="connector0leg" stroke-linecap="round" x1="1.047" y1="3.63" x2="2.094" y2="3.63" stroke="#8C8C8C" fill="none" stroke-width="2.094" />
+		<line  id="connector1leg" stroke-linecap="round" x1="27.785" y1="3.63" x2="28.832" y2="3.63" stroke="#8C8C8C" fill="none" stroke-width="2.094" />
+		
+		<rect id="rect7" x="2.094" y="2.583" fill="#8C8C8C" width="25.691" height="2.094"/>
+		<g>
+			<path id="Body_1_" fill="#1A1A1A" d="M9.159,0H7.002c-0.475,0-0.393,7.193,0,7.193h2.157c0.396,0,11.114,0,11.508,0h2.158
+				c0.515,0,0.558-7.193,0-7.193h-2.158C20.27,0,9.553,0,9.159,0z"/>
+			<rect id="rect16" x="9.783" y="0" opacity="0.74" fill="#FFFFFF" enable-background="new    " width="1.992" height="7.193"/>
+			<path id="Reflex_1_" opacity="0.4" fill="#FFFFFF" enable-background="new    " d="M7.289,0.358c0.726,0,1.145,0,1.866,0
+				c0.719,0,10.786,0,11.508,0c0.021,0,0.229,0,0.479,0c0.563,0,1.066,0,1.311,0c0.354,0,1.146,0.36-0.354,0.36
+				c-1.08,0-0.726,0-1.438,0c-0.717,0-10.791,0-11.508,0c-0.723,0-1.145,0-1.866,0C6.931,0.719,6.573,0.358,7.289,0.358z"/>
+			<path id="Shaddow_1_" opacity="0.4" enable-background="new    " d="M22.822,7.194c-0.727,0.014-1.438,0-2.156,0
+				c-0.902,0-12.942,0-13.667,0c-0.091,0-0.202-0.723-0.182-0.723c1.293,0,1.613,0,2.336,0c0.723,0,10.789,0,11.509,0
+				c0.721,0,1.67,0,2.393,0C23.076,6.471,22.969,7.192,22.822,7.194z"/>
+		</g>
+	</g>
+</svg>

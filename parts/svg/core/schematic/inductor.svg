@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1 Basic//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-basic.dtd">
+<svg version="1.1" baseProfile="basic" id="svg2" xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="0.40in" height="0.85in"
+	 viewBox="0 0 28.8 60.898" xml:space="preserve">
+	<g id="schematic">
+		<rect id="connector1terminal" x="12.582" y="60.731" width="0.209" height="0.208"/>
+		<rect id="connector0terminal" x="12.597" y="0.418" width="0.208" height="0.207"/>
+		<rect id="connector1pin" x="11.977" y="49.194" width="1.375" height="11.85"/>
+		<rect id="connector0pin" x="11.977" y="0.172" width="1.375" height="13.006"/>
+		<path fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="12" d="
+			M13.762,12.432c2.592,0,4.676,2.097,4.676,4.689c0,2.588-2.084,4.69-4.676,4.69c2.592,0,4.676,2.101,4.676,4.69
+			c0,2.588-2.084,4.688-4.676,4.688c2.592,0,4.676,2.101,4.676,4.688c0,2.582-2.099,4.686-4.69,4.686c2.59,0,4.69,2.102,4.69,4.689
+			s-2.084,4.689-4.676,4.689"/>
+	</g>
+</svg>

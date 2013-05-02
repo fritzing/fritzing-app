@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><svg baseProfile="tiny" height="32" id="svg2" version="1.0" width="32" x="0px" xml:space="preserve" y="0px">
+<g id="g2402" transform="matrix(0.5516406,0,0,0.5516406,-0.141648,5.8045181)"><g id="breadboard" transform="translate(25.567978,2.8630951)">
+	<path d="M 32.521,33.559 L -23.979,33.559 L -25.221867,32.035821 L -23.979,-2.191 L 31.215133,-3.6671786 L 32.521,-2.191 L 32.521,33.559 z" id="polygon4" transform="translate(0.1694095,0.4401881)"/>
+	<rect height="35.75" id="rect6" style="fill:#1a1a1a" width="56.5" x="-25.037245" y="-3.1576223"/>
+	<line id="line8" style="fill:none;stroke:#f1f1f1;stroke-width:1;stroke-opacity:1" x1="29.071066" x2="29.071066" y1="0.29231122" y2="30.667311"/>
+	<line id="line10" style="fill:none;stroke:#f1f1f1;stroke-width:1;stroke-opacity:1" x1="-10.928934" x2="-10.928934" y1="0.45931125" y2="7.7923112"/>
+	<line id="line12" style="fill:none;stroke:#f1f1f1;stroke-width:1;stroke-opacity:1" x1="-10.928934" x2="-10.928934" y1="23.542311" y2="30.87631"/>
+	<circle cx="-10.687" cy="14.434" id="circle14" r="1.8329999" stroke-width="1" style="fill:none;stroke:#f1f1f1;stroke-opacity:1" transform="translate(-0.3249337,0.1083112)"/>
+	<line id="line16" style="fill:none;stroke:#f1f1f1;stroke-width:1;stroke-opacity:1" x1="-9.4289341" x2="28.821066" y1="14.542312" y2="14.542312"/>
+	<line id="line18" style="fill:none;stroke:#f1f1f1;stroke-width:1;stroke-opacity:1" x1="-12.344934" x2="-21.094934" y1="13.126311" y2="4.3763113"/>
+	<circle cx="-20.635" cy="0.212" id="circle20" r="1.25" style="fill:#b3b3b3" transform="translate(-0.3249337,0.1083112)"/>
+	<circle cx="-10.552" cy="0.212" id="circle22" r="1.25" style="fill:#b3b3b3" transform="translate(-0.3249337,0.1083112)"/>
+	<circle cx="-20.635" cy="30.532" id="circle24" r="1.25" style="fill:#b3b3b3" transform="translate(-0.3249337,0.1083112)"/>
+	<circle cx="-10.552" cy="30.532" id="circle26" r="1.25" style="fill:#b3b3b3" transform="translate(-0.3249337,0.1083112)"/>
+	<circle cx="29.437" cy="0.212" id="circle28" r="1.25" style="fill:#b3b3b3" transform="translate(-0.3249337,0.1083112)"/>
+	<circle cx="29.437" cy="30.532" id="circle30" r="1.25" style="fill:#b3b3b3" transform="translate(-0.3249337,0.1083112)"/>
+</g><circle cx="9.6459999" cy="6.73" id="connector0pin" r="1.25" style="fill:#666666" transform="translate(-5.090628,-3.5742708)"/><circle cx="19.73" cy="6.73" id="connector1pin" r="1.25" style="fill:#666666" transform="translate(-5.090628,-3.5742708)"/><circle cx="9.6459999" cy="37.049999" id="connector3pin" r="1.25" style="fill:#666666" transform="translate(-5.090628,-3.5742708)"/><circle cx="19.73" cy="37.049999" id="connector4pin" r="1.25" style="fill:#666666" transform="translate(-5.090628,-3.5742708)"/><circle cx="59.719002" cy="6.73" id="connector2pin" r="1.25" style="fill:#666666" transform="translate(-5.090628,-3.5742708)"/><circle cx="59.719002" cy="37.049999" id="connector5pin" r="1.25" style="fill:#666666" transform="translate(-5.090628,-3.5742708)"/></g>
+</svg>

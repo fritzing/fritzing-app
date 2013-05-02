@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="svg" xmlns:xml="http://www.w3.org/XML/1998/namespace"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="0.89in"
+	 height="1.78in" viewBox="0 0 64.08 128.16" enable-background="new 0 0 64.08 128.16" xml:space="preserve">
+<g id="schematic">
+<rect id="connector2pin" x="20.454" y="1.374" width="1.88" height="9.691"/>
+<rect id="connector2terminal" x="20.965" y="1.407" width="0.856" height="0.682"/>
+<rect id="connector0pin" x="51.956" y="62.753" width="9.693" height="1.877"/>
+<rect id="connector0terminal" x="61.575" y="63.297" width="0.684" height="0.858"/>
+<rect id="connector1pin" x="20.456" y="116.415" width="1.88" height="9.693"/>
+<rect id="connector1terminal" x="21" y="126.103" width="0.857" height="0.684"/>
+	
+		<rect x="1.821" y="21.397" fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" width="39.826" height="84.77"/>
+	
+		<line fill="none" stroke="#000000" stroke-width="1.7008" stroke-linecap="round" stroke-linejoin="round" x1="26.739" y1="88.497" x2="15.528" y2="88.497"/>
+	<polygon fill="none" stroke="#000000" stroke-width="1.7008" stroke-linecap="round" stroke-linejoin="round" points="
+		26.739,78.791 21.137,88.497 15.528,78.791 	"/>
+	<g>
+		<g id="schematic_2_">
+			<g>
+				<polygon points="11.875,36.14 12.866,38.882 10.409,37.308 11.142,36.722 				"/>
+				<path d="M9.553,37.351l1.275-1.019l0.732-0.585l0.543-0.436l1.729,4.788L9.553,37.351L9.553,37.351z"/>
+				<path d="M12.189,38.837l-4.701-5.891c-0.17-0.217-0.137-0.531,0.083-0.704l0,0c0.213-0.173,0.53-0.138,0.701,0.079l0,0
+					l4.701,5.893c0.172,0.215,0.139,0.53-0.081,0.703l0,0c-0.09,0.072-0.203,0.107-0.313,0.107l0,0
+					C12.435,39.026,12.288,38.96,12.189,38.837L12.189,38.837z"/>
+				<polygon points="15.104,33.229 16.096,35.974 13.639,34.399 14.372,33.814 				"/>
+				<path d="M12.782,34.443l1.277-1.019l0.732-0.582l0.543-0.438l1.734,4.789L12.782,34.443L12.782,34.443z"/>
+				<path d="M15.419,35.929l-3.662-4.588c-0.171-0.217-0.137-0.531,0.081-0.704l0,0c0.214-0.172,0.532-0.136,0.703,0.079l0,0
+					l3.66,4.59c0.173,0.215,0.138,0.529-0.08,0.703l0,0c-0.093,0.073-0.202,0.109-0.313,0.109l0,0
+					C15.664,36.117,15.518,36.054,15.419,35.929L15.419,35.929z"/>
+			</g>
+		</g>
+	</g>
+	<g>
+		<polygon fill="none" stroke="#000000" stroke-width="1.7008" stroke-linecap="round" stroke-linejoin="round" points="
+			15.528,48.688 21.137,38.979 26.739,48.688 		"/>
+		
+			<line fill="none" stroke="#000000" stroke-width="1.7008" stroke-linecap="round" stroke-linejoin="round" x1="15.528" y1="38.979" x2="26.739" y2="38.979"/>
+	</g>
+	<g id="schematic_3_">
+		<g>
+			<polygon points="33.639,92.132 34.63,94.879 32.173,93.305 32.905,92.72 			"/>
+			<path d="M31.315,93.346l1.276-1.017l0.733-0.588l0.544-0.438l1.729,4.789L31.315,93.346L31.315,93.346z"/>
+			<path d="M33.954,94.835l-4.702-5.894c-0.17-0.214-0.138-0.532,0.083-0.704l0,0c0.213-0.17,0.53-0.139,0.701,0.082l0,0
+				l4.702,5.893c0.17,0.215,0.139,0.531-0.082,0.702l0,0c-0.088,0.073-0.203,0.11-0.313,0.11l0,0
+				C34.196,95.022,34.053,94.956,33.954,94.835L33.954,94.835z"/>
+			<path d="M27.186,94.284l1.277-1.018l0.732-0.584l0.542-0.436l1.734,4.787L27.186,94.284L27.186,94.284z"/>
+			<path d="M29.824,95.774l-3.66-4.588c-0.171-0.215-0.138-0.533,0.08-0.704l0,0c0.215-0.171,0.534-0.138,0.705,0.081l0,0
+				l3.656,4.588c0.173,0.213,0.138,0.527-0.08,0.699l0,0c-0.09,0.074-0.202,0.112-0.313,0.112l0,0
+				C30.067,95.958,29.922,95.896,29.824,95.774L29.824,95.774z"/>
+		</g>
+	</g>
+	
+		<line fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" x1="42.703" y1="63.725" x2="61.124" y2="63.725"/>
+	
+		<line fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" x1="21.396" y1="125.581" x2="21.396" y2="107.157"/>
+	
+		<line fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" x1="21.396" y1="20.158" x2="21.396" y2="1.735"/>
+</g>
+</svg>

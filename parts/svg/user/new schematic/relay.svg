@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1"
+	 id="svg2" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:xml="http://www.w3.org/XML/1998/namespace" sodipodi:docname="relay.svg" sodipodi:version="0.32" inkscape:version="0.46" inkscape:output_extension="org.inkscape.output.svg.inkscape"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="36px" height="28.8px"
+	 viewBox="0 0 36 28.8" enable-background="new 0 0 36 28.8" xml:space="preserve">
+<g id="g3256" transform="matrix(1.2500001,0,0,1.2500001,201.9491,375.78003)">
+	<path id="path3892_2_" fill="none" stroke="#000000" stroke-width="0.4" stroke-linecap="round" stroke-linejoin="round" d="
+		M-149.983-283.166v-1.346c0.635,0,1.15-0.516,1.15-1.15c0-0.634-0.515-1.149-1.15-1.149c0.635,0,1.15-0.514,1.15-1.149
+		c0-0.634-0.515-1.15-1.15-1.15c0.635,0,1.15-0.515,1.15-1.15c0-0.635-0.515-1.15-1.15-1.15c0.635,0,1.15-0.515,1.15-1.15
+		s-0.515-1.15-1.15-1.15h-0.056v-1.155"/>
+</g>
+<g>
+	<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="7.2" y1="21.6" x2="18" y2="21.6"/>
+	<circle fill="none" stroke="#000000" stroke-width="0.7" cx="21.602" cy="18" r="0.36"/>
+	<circle fill="none" stroke="#000000" stroke-width="0.7" cx="21.602" cy="10.8" r="0.36"/>
+	<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="7.2" y1="7.2" x2="18" y2="7.2"/>
+	<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="28.801" y1="7.2" x2="28.801" y2="21.6"/>
+	<rect id="connector0terminal_1_" y="24.556" fill="none" width="0.001" height="0.001"/>
+	<rect id="connector1terminal_1_" x="28.801" y="24.556" fill="none" width="0" height="0.001"/>
+	
+		<line id="connector0pin_1_" fill="none" stroke="#555555" stroke-width="0.7" stroke-linecap="round" x1="7.2" y1="0" x2="7.2" y2="7.2"/>
+	
+		<line id="connector0pin_5_" fill="none" stroke="#555555" stroke-width="0.7" stroke-linecap="round" x1="7.2" y1="21.6" x2="7.2" y2="28.8"/>
+	
+		<line id="connector0pin_6_" fill="none" stroke="#555555" stroke-width="0.7" stroke-linecap="round" x1="28.8" y1="0" x2="28.8" y2="7.2"/>
+	
+		<line id="connector0pin_2_" fill="none" stroke="#555555" stroke-width="0.7" stroke-linecap="round" x1="28.8" y1="21.6" x2="28.8" y2="28.8"/>
+	<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="18" y1="18" x2="18" y2="21.6"/>
+	<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="18" y1="7.2" x2="18" y2="10.8"/>
+	<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="21.6" y1="10.8" x2="18" y2="10.8"/>
+	<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="28.6" y1="14.4" x2="25" y2="14.4"/>
+	<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="25" y1="14.4" x2="21.038" y2="12.256"/>
+	<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="21.6" y1="18" x2="18" y2="18"/>
+</g>
+<line id="connector0pin_3_" fill="none" stroke="#555555" stroke-width="0.7" stroke-linecap="round" x1="14.4" y1="0" x2="14.4" y2="7.2"/>
+<line id="connector0pin_4_" fill="none" stroke="#555555" stroke-width="0.7" stroke-linecap="round" x1="14.4" y1="21.6" x2="14.4" y2="28.8"/>
+</svg>

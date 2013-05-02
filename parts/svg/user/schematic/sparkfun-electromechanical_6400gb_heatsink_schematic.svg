@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- Created with Fritzing (http://www.fritzing.org/) -->
+<svg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' version='1.2' baseProfile='tiny' x='0in' y='0in' width='0.960512in' height='0.43122in' viewBox='0 0 24.397 10.953' >
+<g id='schematic'>
+<rect class='interior rect' x='0.127' y='3.206' width='10.16' height='7.62' stroke='none' stroke-width='0' fill='#ffffff' />
+<text class='text' id='label' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.94028' x='5.207' y='7.016' text-anchor='middle'></text>
+<line class='other' x1='0.127' y1='3.206' x2='0.127' y2='10.826' stroke='#000000' stroke-width='0.3175' stroke-linecap='round'/>
+<line class='other' x1='0.127' y1='10.826' x2='10.287' y2='10.826' stroke='#000000' stroke-width='0.3175' stroke-linecap='round'/>
+<line class='other' x1='10.287' y1='10.826' x2='10.287' y2='3.206' stroke='#000000' stroke-width='0.3175' stroke-linecap='round'/>
+<line class='other' x1='10.287' y1='3.206' x2='0.127' y2='3.206' stroke='#000000' stroke-width='0.3175' stroke-linecap='round'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.84912' x='1.397' y='6' text-anchor='start'>6400BG</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.84912' x='2.921' y='7.778' text-anchor='start'>HEAT</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.84912' x='2.921' y='9.556' text-anchor='start'>SINK</text>
+</g>
+</svg>

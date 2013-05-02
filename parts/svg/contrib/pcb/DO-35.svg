@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?> <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" x="0in" y="0in" width="0.355in" height="0.07518in" viewBox="0 0 35500 7518" ><title>DO-35.fp</title><desc>Geda footprint file 'DO-35.fp' converted by Fritzing</desc><metadata xmlns:fz='http://fritzing.org/gedametadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'><rdf:RDF><rdf:Description rdf:about=''><fz:attr name='geda filename'>DO-35.fp</fz:attr>
+<fz:attr name='fritzing version'>0.4.0b.06.21.4282</fz:attr>
+<fz:attr name='conversion date'>27/06/2010 07:15:34</fz:attr>
+<fz:attr name='dist-license'>GPL</fz:attr>
+<fz:attr name='use-license'>unlimited</fz:attr>
+<fz:attr name='author'>gEDA project</fz:attr>
+<fz:attr name='license-url'>http://www.gnu.org/licenses/gpl.html</fz:attr>
+</rdf:Description></rdf:RDF></metadata><g id="copper0">
+ <g id="copper1">
+  <circle fill="none" cx="2750" cy="3759" connectorname="" stroke="#ff9400" r="2100" id="connector0pin" stroke-width="1300"/>
+  <circle fill="none" cx="32750" cy="3759" connectorname="" stroke="#ff9400" r="2100" id="connector1pin" stroke-width="1300"/>
+ </g>
+</g>
+<g id="silkscreen">
+ <line fill="none" stroke="white" y1="7018" x1="9274" y2="500" stroke-width="1000" x2="9274"/>
+ <line fill="none" stroke="white" y1="3759" x1="9274" y2="3759" stroke-width="1000" x2="7000"/>
+ <line fill="none" stroke="white" y1="500" x1="9274" y2="500" stroke-width="1000" x2="26226"/>
+ <line fill="none" stroke="white" y1="7018" x1="26226" y2="500" stroke-width="1000" x2="26226"/>
+ <line fill="none" stroke="white" y1="3759" x1="26226" y2="3759" stroke-width="1000" x2="28500"/>
+ <line fill="none" stroke="white" y1="7018" x1="9274" y2="7018" stroke-width="1000" x2="26226"/>
+ <line fill="none" stroke="white" y1="7018" x1="12274" y2="500" stroke-width="1000" x2="12274"/>
+ <line fill="none" stroke="white" y1="7018" x1="12774" y2="500" stroke-width="1000" x2="12774"/>
+ <line fill="none" stroke="white" y1="7018" x1="13274" y2="500" stroke-width="1000" x2="13274"/>
+</g>
+</svg>

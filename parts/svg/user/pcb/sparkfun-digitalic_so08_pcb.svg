@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- Created with Fritzing (http://www.fritzing.org/) -->
+<svg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' version='1.2' baseProfile='tiny' x='0in' y='0in' width='0.191984in' height='0.293in' viewBox='0 0 4.8764 7.4422' >
+<g id='copper1'>
+<rect id='connector0pad' connectorname='1' x='0.2284' y='5.2324' width='0.6096' height='2.2098' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector1pad' connectorname='2' x='1.4984' y='5.2324' width='0.6096' height='2.2098' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector2pad' connectorname='3' x='2.7684' y='5.2324' width='0.6096' height='2.2098' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector3pad' connectorname='4' x='4.0384' y='5.2324' width='0.6096' height='2.2098' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector4pad' connectorname='5' x='4.0384' y='0' width='0.6096' height='2.2098' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector5pad' connectorname='6' x='2.7684' y='0' width='0.6096' height='2.2098' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector6pad' connectorname='7' x='1.4984' y='0' width='0.6096' height='2.2098' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector7pad' connectorname='8' x='0.2284' y='0' width='0.6096' height='2.2098' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<g id='copper0'>
+</g>
+</g>
+<g id='silkscreen'>
+<line class='other' x1='4.8002' y1='5.5241' x2='4.8002' y2='1.9181' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='0.0762' y1='1.9181' x2='0.0762' y2='5.5241' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<circle class='other' cx='0.6348' cy='4.7117' r='0.1436' stroke='#f0f0f0' stroke-width='0.2032' fill='none' />
+</g>
+</svg>

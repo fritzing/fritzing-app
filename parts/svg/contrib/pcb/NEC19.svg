@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?> <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" x="0in" y="0in" width="0.074in" height="0.068in" viewBox="0 0 7400 6800" ><title>NEC19.fp</title><desc>Geda footprint file 'NEC19.fp' converted by Fritzing</desc><metadata xmlns:fz='http://fritzing.org/gedametadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'><rdf:RDF><rdf:Description rdf:about=''><fz:attr name='geda filename'>NEC19.fp</fz:attr>
+<fz:attr name='fritzing version'>0.4.0b.06.21.4282</fz:attr>
+<fz:attr name='conversion date'>27/06/2010 07:15:56</fz:attr>
+<fz:comment>Use Pad instead of PAD so all pads come out square</fz:comment>
+<fz:attr name='dist-license'>GPL</fz:attr>
+<fz:attr name='use-license'>unlimited</fz:attr>
+<fz:attr name='author'>gEDA project</fz:attr>
+<fz:attr name='license-url'>http://www.gnu.org/licenses/gpl.html</fz:attr>
+</rdf:Description></rdf:RDF></metadata><g id="copper1">
+ <line fill="none" connectorname="1" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector0pad" y1="5400" x1="1200" y2="5400" stroke-width="2400" x2="1200"/>
+ <line fill="none" connectorname="2" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector1pad" y1="1400" x1="1200" y2="1400" stroke-width="2400" x2="1200"/>
+ <line fill="none" connectorname="3" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector2pad" y1="3400" x1="6200" y2="3400" stroke-width="2400" x2="6200"/>
+</g>
+<g id="silkscreen">
+ <line fill="none" stroke="white" y1="300" x1="2800" y2="6500" stroke-width="600" x2="2800"/>
+ <line fill="none" stroke="white" y1="6500" x1="2800" y2="6500" stroke-width="600" x2="4600"/>
+ <line fill="none" stroke="white" y1="6500" x1="4600" y2="300" stroke-width="600" x2="4600"/>
+ <line fill="none" stroke="white" y1="300" x1="4600" y2="300" stroke-width="600" x2="2800"/>
+</g>
+</svg>

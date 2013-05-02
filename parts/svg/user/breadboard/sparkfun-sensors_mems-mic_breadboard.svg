@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- Created with Fritzing (http://www.fritzing.org/) -->
+<svg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' version='1.2' baseProfile='tiny' x='0in' y='0in' width='0.13622in' height='0.174409in' viewBox='0 0 3.46 4.43' >
+<g id='breadboard'>
+<path fill='#1F7A34' stroke='none' stroke-width='0' d='M0,0l3.46,0 0,4.43 -3.46,0 0,-4.43z
+'/>
+<rect id='connector1pin' connectorname='2' x='0' y='2.98' width='1.24' height='1.45' stroke='none' stroke-width='0' fill='#9A916C' stroke-linecap='round'/>
+<rect id='connector2pin' connectorname='3' x='2.22' y='2.98' width='1.24' height='1.45' stroke='none' stroke-width='0' fill='#9A916C' stroke-linecap='round'/>
+<rect id='connector0pin' connectorname='1' x='0' y='0' width='1.24' height='1.45' stroke='none' stroke-width='0' fill='#9A916C' stroke-linecap='round'/>
+<rect id='connector3pin' connectorname='4' x='2.22' y='0' width='1.24' height='1.45' stroke='none' stroke-width='0' fill='#9A916C' stroke-linecap='round'/>
+<circle class='other' cx='1.73' cy='0.691' r='0.0889' stroke='#f8f8f8' stroke-width='0.3048' fill='none' />
+</g>
+</svg>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" x="0in" y="0in" width="0.2992in" height="0.236in" viewBox="0 0 2992 2360" >
+<title>SparkFun.mod</title>
+<desc>Kicad module 'SparkFun-CRYSTAL-SMD-7.5X5.2-6PIN' from file 'SparkFun.mod' converted by Fritzing</desc>
+<metadata xmlns:fz='http://fritzing.org/kicadmetadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+<rdf:RDF><rdf:Description rdf:about=''>
+<fz:attr name='kicad filename'>SparkFun.mod</fz:attr>
+<fz:attr name='kicad module'>SparkFun-CRYSTAL-SMD-7.5X5.2-6PIN</fz:attr>
+<fz:attr name='fritzing version'>0.4.1b.07.04.4318</fz:attr>
+<fz:attr name='conversion date'>17/07/2010 17:15:25</fz:attr>
+<fz:attr name='dist-license'>GPL</fz:attr>
+<fz:attr name='use-license'>unlimited</fz:attr>
+<fz:attr name='author'>KICAD project</fz:attr>
+<fz:attr name='license-url'>http://www.gnu.org/licenses/gpl.html</fz:attr>
+<fz:comment>FXO-HC73 SERIES OSCILLATOR. 7.5X5.2MM 6-PIN PACKAGE</fz:comment>
+<fz:attr name='keyword'>FXO-HC73</fz:attr>
+<fz:attr name='keyword'>SERIES</fz:attr>
+<fz:attr name='keyword'>OSCILLATOR.</fz:attr>
+<fz:attr name='keyword'>7.5X5.2MM</fz:attr>
+<fz:attr name='keyword'>6-PIN</fz:attr>
+<fz:attr name='keyword'>PACKAGE</fz:attr>
+</rdf:Description></rdf:RDF></metadata><g id="copper1">
+ <rect width="787" x="102.5" y="1652" fill="#ffbf00" connectorname="1" height="708" id="connector0pad" stroke-width="0"/>
+ <rect width="787" x="2102.5" y="1652" fill="#ffbf00" connectorname="2" height="708" id="connector1pad" stroke-width="0"/>
+ <rect width="787" x="2102.5" y="0" fill="#ffbf00" connectorname="3" height="708" id="connector2pad" stroke-width="0"/>
+ <rect width="787" x="102.5" y="0" fill="#ffbf00" connectorname="4" height="708" id="connector3pad" stroke-width="0"/>
+ <rect width="787" x="1102.5" y="1730.5" fill="#ffbf00" connectorname="NC0" height="551" id="connector4pad" stroke-width="0"/>
+ <rect width="787" x="1102.5" y="78.5" fill="#ffbf00" connectorname="NC1" height="551" id="connector5pad" stroke-width="0"/>
+</g>
+<g id="silkscreen">
+ <line fill="none" stroke="white" y1="157" x1="2972" y2="157" stroke-width="50" x2="20"/>
+ <line fill="none" stroke="white" y1="157" x1="20" y2="2203" stroke-width="50" x2="20"/>
+ <line fill="none" stroke="white" y1="2203" x1="20" y2="2203" stroke-width="50" x2="2972"/>
+ <line fill="none" stroke="white" y1="2203" x1="2972" y2="157" stroke-width="50" x2="2972"/>
+ <line fill="none" stroke="white" y1="236" x1="0" y2="2124" stroke-width="50" x2="0"/>
+ <line fill="none" stroke="white" y1="236" x1="2992" y2="2124" stroke-width="50" x2="2992"/>
+ <circle fill="none" cx="315" cy="1376" stroke="white" r="98.9949" stroke-width="25"/>
+</g>
+</svg>

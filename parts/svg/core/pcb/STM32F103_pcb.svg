@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- Created with Fritzing (http://www.fritzing.org/) -->
+<svg width="0.379598in" x="0in" version="1.2" y="0in" xmlns="http://www.w3.org/2000/svg" height="0.379799in" viewBox="0 0 379.598 379.799" baseProfile="tiny" xmlns:svg="http://www.w3.org/2000/svg">
+ <g  id="copper1" stroke-width="0">
+  <rect width="9.99998" x="76.5314" y="334.824" fill="#F7BD13"  height="45" stroke="none" id="connector0pad" stroke-width="0"/>
+  <rect width="9.99998" x="96.2164" y="334.824" fill="#F7BD13"  height="45" stroke="none" id="connector1pad" stroke-width="0"/>
+  <rect width="9.99998" x="115.902" y="334.824" fill="#F7BD13"  height="45" stroke="none" id="connector2pad" stroke-width="0"/>
+  <rect width="9.99998" x="135.587" y="334.824" fill="#F7BD13"  height="45" stroke="none" id="connector3pad" stroke-width="0"/>
+  <rect width="9.99998" x="155.272" y="334.824" fill="#F7BD13"  height="45" stroke="none" id="connector4pad" stroke-width="0"/>
+  <rect width="9.99998" x="174.957" y="334.824" fill="#F7BD13"  height="45" stroke="none" id="connector5pad" stroke-width="0"/>
+  <rect width="9.99998" x="194.641" y="334.824" fill="#F7BD13"  height="45" stroke="none" id="connector6pad" stroke-width="0"/>
+  <rect width="9.99998" x="214.326" y="334.824" fill="#F7BD13"  height="45" stroke="none" id="connector7pad" stroke-width="0"/>
+  <rect width="9.99998" x="234.012" y="334.824" fill="#F7BD13"  height="45" stroke="none" id="connector8pad" stroke-width="0"/>
+  <rect width="9.99998" x="253.697" y="334.824" fill="#F7BD13"  height="45" stroke="none" id="connector9pad" stroke-width="0"/>
+  <rect width="9.99998" x="273.382" y="334.824" fill="#F7BD13"  height="45" stroke="none" id="connector10pad" stroke-width="0"/>
+  <rect width="9.99998" x="293.066" y="334.824" fill="#F7BD13"  height="45" stroke="none" id="connector11pad" stroke-width="0"/>
+  <rect width="44.9999" x="334.622" y="293.268" fill="#F7BD13"  height="10" stroke="none" id="connector12pad" stroke-width="0"/>
+  <rect width="44.9999" x="334.622" y="273.584" fill="#F7BD13"  height="10" stroke="none" id="connector13pad" stroke-width="0"/>
+  <rect width="44.9999" x="334.622" y="253.899" fill="#F7BD13"  height="10" stroke="none" id="connector14pad" stroke-width="0"/>
+  <rect width="44.9999" x="334.622" y="234.213" fill="#F7BD13"  height="10" stroke="none" id="connector15pad" stroke-width="0"/>
+  <rect width="44.9999" x="334.622" y="214.528" fill="#F7BD13"  height="10" stroke="none" id="connector16pad" stroke-width="0"/>
+  <rect width="44.9999" x="334.622" y="194.843" fill="#F7BD13"  height="10" stroke="none" id="connector17pad" stroke-width="0"/>
+  <rect width="44.9999" x="334.622" y="175.157" fill="#F7BD13"  height="10" stroke="none" id="connector18pad" stroke-width="0"/>
+  <rect width="44.9999" x="334.622" y="155.472" fill="#F7BD13"  height="10" stroke="none" id="connector19pad" stroke-width="0"/>
+  <rect width="44.9999" x="334.622" y="135.787" fill="#F7BD13"  height="10" stroke="none" id="connector20pad" stroke-width="0"/>
+  <rect width="44.9999" x="334.622" y="116.102" fill="#F7BD13"  height="10" stroke="none" id="connector21pad" stroke-width="0"/>
+  <rect width="44.9999" x="334.622" y="96.4175" fill="#F7BD13"  height="10" stroke="none" id="connector22pad" stroke-width="0"/>
+  <rect width="44.9999" x="334.622" y="76.7324" fill="#F7BD13"  height="10" stroke="none" id="connector23pad" stroke-width="0"/>
+  <rect width="9.99998" x="293.066" y="0.177165" fill="#F7BD13"  height="45" stroke="none" id="connector24pad" stroke-width="0"/>
+  <rect width="9.99998" x="273.382" y="0.177165" fill="#F7BD13"  height="45" stroke="none" id="connector25pad" stroke-width="0"/>
+  <rect width="9.99998" x="253.697" y="0.177165" fill="#F7BD13"  height="45" stroke="none" id="connector26pad" stroke-width="0"/>
+  <rect width="9.99998" x="234.012" y="0.177165" fill="#F7BD13"  height="45" stroke="none" id="connector27pad" stroke-width="0"/>
+  <rect width="9.99998" x="214.326" y="0.177165" fill="#F7BD13"  height="45" stroke="none" id="connector28pad" stroke-width="0"/>
+  <rect width="9.99998" x="194.641" y="0.177165" fill="#F7BD13"  height="45" stroke="none" id="connector29pad" stroke-width="0"/>
+  <rect width="9.99998" x="174.957" y="0.177165" fill="#F7BD13"  height="45" stroke="none" id="connector30pad" stroke-width="0"/>
+  <rect width="9.99998" x="155.272" y="0.177165" fill="#F7BD13"  height="45" stroke="none" id="connector31pad" stroke-width="0"/>
+  <rect width="9.99998" x="135.587" y="0.177165" fill="#F7BD13"  height="45" stroke="none" id="connector32pad" stroke-width="0"/>
+  <rect width="9.99998" x="115.902" y="0.177165" fill="#F7BD13"  height="45" stroke="none" id="connector33pad" stroke-width="0"/>
+  <rect width="9.99998" x="96.2164" y="0.177165" fill="#F7BD13"  height="45" stroke="none" id="connector34pad" stroke-width="0"/>
+  <rect width="9.99998" x="76.5314" y="0.177165" fill="#F7BD13"  height="45" stroke="none" id="connector35pad" stroke-width="0"/>
+  <rect width="44.9999" x="-0.0236219" y="76.7324" fill="#F7BD13"  height="10" stroke="none" id="connector36pad" stroke-width="0"/>
+  <rect width="44.9999" x="-0.0236219" y="96.4175" fill="#F7BD13"  height="10" stroke="none" id="connector37pad" stroke-width="0"/>
+  <rect width="44.9999" x="-0.0236219" y="116.102" fill="#F7BD13"  height="10" stroke="none" id="connector38pad" stroke-width="0"/>
+  <rect width="44.9999" x="-0.0236219" y="135.787" fill="#F7BD13"  height="10" stroke="none" id="connector39pad" stroke-width="0"/>
+  <rect width="44.9999" x="-0.0236219" y="155.472" fill="#F7BD13"  height="10" stroke="none" id="connector40pad" stroke-width="0"/>
+  <rect width="44.9999" x="-0.0236219" y="175.157" fill="#F7BD13"  height="10" stroke="none" id="connector41pad" stroke-width="0"/>
+  <rect width="44.9999" x="-0.0236219" y="194.843" fill="#F7BD13"  height="10" stroke="none" id="connector42pad" stroke-width="0"/>
+  <rect width="44.9999" x="-0.0236219" y="214.528" fill="#F7BD13"  height="10" stroke="none" id="connector43pad" stroke-width="0"/>
+  <rect width="44.9999" x="-0.0236219" y="234.213" fill="#F7BD13"  height="10" stroke="none" id="connector44pad" stroke-width="0"/>
+  <rect width="44.9999" x="-0.0236219" y="253.899" fill="#F7BD13"  height="10" stroke="none" id="connector45pad" stroke-width="0"/>
+  <rect width="44.9999" x="-0.0236219" y="273.584" fill="#F7BD13"  height="10" stroke="none" id="connector46pad" stroke-width="0"/>
+  <rect width="44.9999" x="-0.0236219" y="293.268" fill="#F7BD13"  height="10" stroke="none" id="connector47pad" stroke-width="0"/>
+ </g>
+ <g  id="silkscreen" stroke-width="0">
+  <g  stroke-width="0">
+   <title >element:E$1</title>
+   <g  stroke-width="0">
+    <title >package:LQFP-48</title>
+    <line  stroke="white" stroke-linecap="round" y1="67.9528" x1="56.925" y2="57.126" stroke-width="9.99998" x2="67.7518"/>
+    <line  stroke="white" stroke-linecap="round" y1="57.126" x1="67.7518" y2="57.126" stroke-width="9.99998" x2="311.845"/>
+    <line  stroke="white" stroke-linecap="round" y1="57.126" x1="311.845" y2="67.9528" stroke-width="9.99998" x2="322.673"/>
+    <line  stroke="white" stroke-linecap="round" y1="67.9528" x1="322.673" y2="312.048" stroke-width="9.99998" x2="322.673"/>
+    <line  stroke="white" stroke-linecap="round" y1="312.048" x1="322.673" y2="322.874" stroke-width="9.99998" x2="311.845"/>
+    <line  stroke="white" stroke-linecap="round" y1="322.874" x1="311.845" y2="322.874" stroke-width="9.99998" x2="67.7518"/>
+    <line  stroke="white" stroke-linecap="round" y1="322.874" x1="67.7518" y2="312.048" stroke-width="9.99998" x2="56.925"/>
+    <line  stroke="white" stroke-linecap="round" y1="312.048" x1="56.925" y2="67.9528" stroke-width="9.99998" x2="56.925"/>
+    <circle fill="none" cx="111.059"  cy="268.741" stroke="white" r="23.6219" stroke-width="9.99998"/>
+   </g>
+  </g>
+ </g>
+</svg>

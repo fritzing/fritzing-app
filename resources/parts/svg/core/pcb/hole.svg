@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" width="0.075in" height="0.075in" viewBox="0 0 75 75" baseProfile="tiny" >
+  <desc>Hole SVG</desc>
+  <g id="copper0" > 
+  <g id="copper1" >
+    <circle fill="none" cx="27.7" cy="27.7" stroke="rgb(255, 191, 0)" r="27.5" id="nonconn0" stroke-width="20" />
+  </g>  
+  </g>
+</svg>

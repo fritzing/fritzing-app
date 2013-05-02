@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1 Basic//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-basic.dtd">
+<svg version="1.1" baseProfile="basic" id="Layer_1" xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="0.22954in"
+	 height="0.43465in" viewBox="0 0 16.527 31.295" xml:space="preserve">
+<g id="breadboard">
+	<rect id="connector0pin" x="0" y="25.349" fill="#8C8C8C" width="2.16" height="5.946"/>
+	<rect id="connector1pin" x="7.181" y="25.349" fill="#8C8C8C" width="2.16" height="5.946"/>
+	<rect id="connector2pin" x="14.367" y="25.349" fill="#8C8C8C" width="2.16" height="5.946"/>
+	<rect id="connector0terminal" x="0" y="30.893" fill="#8C8C8C" width="2.16" height="0.402"/>
+	<rect id="connector1terminal" x="7.181" y="30.893" fill="#8C8C8C" width="2.16" height="0.402"/>
+	<rect id="connector2terminal" x="14.367" y="30.893" fill="#8C8C8C" width="2.16" height="0.402"/>
+
+	<rect id="rect9479" x="7.178" y="24.08" fill="#8C8C8C" width="2.154" height="7.191"/>
+	<rect id="rect9481" x="0.001" y="24.08" fill="#8C8C8C" width="2.154" height="7.191"/>
+	<rect id="rect9483" x="14.357" y="24.08" fill="#8C8C8C" width="2.154" height="7.191"/>
+	<rect id="rect9506" x="7.178" y="14.731" fill="#8C8C8C" width="2.154" height="9.35"/>
+	<path id="path9510" fill="#8C8C8C" d="M3.287,14.731v3.316c0,0.424-0.782,1.059-1.198,1.425c-1.025,0.891-2.088,1.82-2.088,2.992
+		v1.619h2.154c0,0,0-1,0-1.209c0-0.518,0.904-1.389,1.35-1.77c0.997-0.869,1.945-1.689,1.945-2.748v-3.625H3.287L3.287,14.731z"/>
+	<path id="path9514" fill="#8C8C8C" d="M13.221,14.731v3.316c0,0.424,0.781,1.059,1.199,1.425c1.027,0.891,2.089,1.82,2.089,2.992
+		v1.619h-2.154c0,0,0-1,0-1.209c0-0.518-0.904-1.389-1.35-1.77c-0.998-0.869-1.945-1.689-1.945-2.748v-3.625H13.221L13.221,14.731z"
+		/>
+	<rect id="rect9553" x="1.615" y="4.659" fill="#1A1A1A" width="13.278" height="10.07"/>
+	<path id="path9555" fill="#141414" d="M13.889,4.659v2.453v8.228v1.843c0.632-0.713,1.004-1.554,1.004-2.453l0,0V4.659H13.889z"/>
+	<path id="path9557" fill="#242424" d="M2.621,4.659H1.616v10.07l0,0c0,0.899,0.373,1.74,1.005,2.453V15.34V7.112V4.659z"/>
+	<path id="path9559" fill="#1F1F1F" d="M1.615,4.659L1.615,4.659c0,0.899,0.373,1.74,1.005,2.453h11.276
+		c0.632-0.713,1.005-1.554,1.005-2.453l0,0H1.615z"/>
+	<path id="path9561" fill="#141414" d="M8.255,0C4.587,0,1.615,2.086,1.615,4.661h13.278C14.893,2.086,11.923,0,8.255,0z"/>
+	<rect id="rect9563" x="2.621" y="7.112" width="11.276" height="10.07"/>
+	<path fill="#999999" d="M10.509,9.618h1.081v2.161h-1.081v1.079H7.27v1.08H5.11v-5.4h5.401L10.509,9.618L10.509,9.618z M9.43,9.618
+		H7.271v2.161H9.43V9.618z"/>
+</g>
+</svg>

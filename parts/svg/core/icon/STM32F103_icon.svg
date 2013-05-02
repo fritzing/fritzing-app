@@ -1,0 +1,306 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- Created with Fritzing (http://www.fritzing.org/) -->
+<svg width="2.4in" x="0in" version="1.2" y="0in" xmlns="http://www.w3.org/2000/svg" height="0.6in" viewBox="0 0 2400 600" baseProfile="tiny" xmlns:svg="http://www.w3.org/2000/svg">
+ <g  id="icon" stroke-width="0">
+  <path fill="#1F7A34"  stroke="none" stroke-width="0" d="M0,0L0,270A30,30,0,0,1,0,330L0,600L2400,600L2400,0L0,0z"/>
+  <g  stroke-width="0" transform="matrix(1, 0, 0, 1, 1010.2, 110.1)">
+   <g  stroke-width="0" transform="matrix(0.5, 0, 0, 0.5, 94.8996, 94.9499)">
+    <rect width="10" x="76.5315" y="334.824" fill="#8c8c8c"  height="45" stroke="none" stroke-width="0"/>
+    <rect width="10" x="96.2165" y="334.824" fill="#8c8c8c"  height="45" stroke="none" stroke-width="0"/>
+    <rect width="10" x="115.902" y="334.824" fill="#8c8c8c"  height="45" stroke="none" stroke-width="0"/>
+    <rect width="10" x="135.587" y="334.824" fill="#8c8c8c"  height="45" stroke="none" stroke-width="0"/>
+    <rect width="10" x="155.272" y="334.824" fill="#8c8c8c"  height="45" stroke="none" stroke-width="0"/>
+    <rect width="10" x="174.957" y="334.824" fill="#8c8c8c"  height="45" stroke="none" stroke-width="0"/>
+    <rect width="10" x="194.642" y="334.824" fill="#8c8c8c"  height="45" stroke="none" stroke-width="0"/>
+    <rect width="10" x="214.326" y="334.824" fill="#8c8c8c"  height="45" stroke="none" stroke-width="0"/>
+    <rect width="10" x="234.012" y="334.824" fill="#8c8c8c"  height="45" stroke="none" stroke-width="0"/>
+    <rect width="10" x="253.697" y="334.824" fill="#8c8c8c"  height="45" stroke="none" stroke-width="0"/>
+    <rect width="10" x="273.382" y="334.824" fill="#8c8c8c"  height="45" stroke="none" stroke-width="0"/>
+    <rect width="10" x="293.067" y="334.824" fill="#8c8c8c"  height="45" stroke="none" stroke-width="0"/>
+    <rect width="45" x="334.622" y="293.268" fill="#8c8c8c"  height="10" stroke="none" stroke-width="0"/>
+    <rect width="45" x="334.622" y="273.583" fill="#8c8c8c"  height="10" stroke="none" stroke-width="0"/>
+    <rect width="45" x="334.622" y="253.899" fill="#8c8c8c"  height="10" stroke="none" stroke-width="0"/>
+    <rect width="45" x="334.622" y="234.212" fill="#8c8c8c"  height="10" stroke="none" stroke-width="0"/>
+    <rect width="45" x="334.622" y="214.528" fill="#8c8c8c"  height="10" stroke="none" stroke-width="0"/>
+    <rect width="45" x="334.622" y="194.843" fill="#8c8c8c"  height="10" stroke="none" stroke-width="0"/>
+    <rect width="45" x="334.622" y="175.157" fill="#8c8c8c"  height="10" stroke="none" stroke-width="0"/>
+    <rect width="45" x="334.622" y="155.472" fill="#8c8c8c"  height="10" stroke="none" stroke-width="0"/>
+    <rect width="45" x="334.622" y="135.787" fill="#8c8c8c"  height="10" stroke="none" stroke-width="0"/>
+    <rect width="45" x="334.622" y="116.102" fill="#8c8c8c"  height="10" stroke="none" stroke-width="0"/>
+    <rect width="45" x="334.622" y="96.4174" fill="#8c8c8c"  height="10" stroke="none" stroke-width="0"/>
+    <rect width="45" x="334.622" y="76.7324" fill="#8c8c8c"  height="10" stroke="none" stroke-width="0"/>
+    <rect width="10" x="293.067" y="0.177165" fill="#8c8c8c"  height="45" stroke="none" stroke-width="0"/>
+    <rect width="10" x="273.382" y="0.177165" fill="#8c8c8c"  height="45" stroke="none" stroke-width="0"/>
+    <rect width="10" x="253.697" y="0.177165" fill="#8c8c8c"  height="45" stroke="none" stroke-width="0"/>
+    <rect width="10" x="234.012" y="0.177165" fill="#8c8c8c"  height="45" stroke="none" stroke-width="0"/>
+    <rect width="10" x="214.326" y="0.177165" fill="#8c8c8c"  height="45" stroke="none" stroke-width="0"/>
+    <rect width="10" x="194.642" y="0.177165" fill="#8c8c8c"  height="45" stroke="none" stroke-width="0"/>
+    <rect width="10" x="174.957" y="0.177165" fill="#8c8c8c"  height="45" stroke="none" stroke-width="0"/>
+    <rect width="10" x="155.272" y="0.177165" fill="#8c8c8c"  height="45" stroke="none" stroke-width="0"/>
+    <rect width="10" x="135.587" y="0.177165" fill="#8c8c8c"  height="45" stroke="none" stroke-width="0"/>
+    <rect width="10" x="115.902" y="0.177165" fill="#8c8c8c"  height="45" stroke="none" stroke-width="0"/>
+    <rect width="10" x="96.2165" y="0.177165" fill="#8c8c8c"  height="45" stroke="none" stroke-width="0"/>
+    <rect width="10" x="76.5315" y="0.177165" fill="#8c8c8c"  height="45" stroke="none" stroke-width="0"/>
+    <rect width="45" x="-0.0236219" y="76.7324" fill="#8c8c8c"  height="10" stroke="none" stroke-width="0"/>
+    <rect width="45" x="-0.0236219" y="96.4174" fill="#8c8c8c"  height="10" stroke="none" stroke-width="0"/>
+    <rect width="45" x="-0.0236219" y="116.102" fill="#8c8c8c"  height="10" stroke="none" stroke-width="0"/>
+    <rect width="45" x="-0.0236219" y="135.787" fill="#8c8c8c"  height="10" stroke="none" stroke-width="0"/>
+    <rect width="45" x="-0.0236219" y="155.472" fill="#8c8c8c"  height="10" stroke="none" stroke-width="0"/>
+    <rect width="45" x="-0.0236219" y="175.157" fill="#8c8c8c"  height="10" stroke="none" stroke-width="0"/>
+    <rect width="45" x="-0.0236219" y="194.843" fill="#8c8c8c"  height="10" stroke="none" stroke-width="0"/>
+    <rect width="45" x="-0.0236219" y="214.528" fill="#8c8c8c"  height="10" stroke="none" stroke-width="0"/>
+    <rect width="45" x="-0.0236219" y="234.212" fill="#8c8c8c"  height="10" stroke="none" stroke-width="0"/>
+    <rect width="45" x="-0.0236219" y="253.899" fill="#8c8c8c"  height="10" stroke="none" stroke-width="0"/>
+    <rect width="45" x="-0.0236219" y="273.583" fill="#8c8c8c"  height="10" stroke="none" stroke-width="0"/>
+    <rect width="45" x="-0.0236219" y="293.268" fill="#8c8c8c"  height="10" stroke="none" stroke-width="0"/>
+    <rect width="265.749" x="56.9251" y="57.0256" fill="#303030"  height="265.749" stroke="none" stroke-width="0"/>
+    <polygon fill="#1f1f1f" points="56.9251,57.0256,322.674,57.0256,312.674,67.0256,66.9251,67.0256"  stroke-width="0"/>
+    <polygon fill="#1f1f1f" points="56.9251,322.774,322.674,322.774,312.674,312.774,66.9251,312.774"  stroke-width="0"/>
+    <polygon fill="#000000" points="56.9251,57.0256,56.9251,322.774,66.9251,312.774,66.9251,67.0256"  stroke-width="0"/>
+    <polygon fill="#3d3d3d" points="322.674,57.0256,322.674,322.774,312.674,312.774,312.674,67.0256"  stroke-width="0"/>
+    <circle fill="#1f1f1f" cx="86.9251"  cy="292.774" stroke="none" r="10" stroke-width="0"/>
+   </g>
+  </g>
+  <text x="50" y="324.375" font-family="OCRA" fill="white"  text-anchor="start" stroke="none" id="label" stroke-width="0" font-size="65">LQFP-48</text>
+  <g  stroke-width="0" transform="matrix(1, 0, 0, 1, 63.5, 526.05)">
+   <g  stroke-width="0" transform="rotate(-90)">
+    <text x="0" y="0" font-family="OCRA" fill="white"  text-anchor="start" stroke="none" stroke-width="0" font-size="45">1</text>
+   </g>
+  </g>
+  <g  stroke-width="0" transform="matrix(1, 0, 0, 1, 63.5, 73.95)">
+   <g  stroke-width="0" transform="rotate(-90)">
+    <text x="0" y="0" font-family="OCRA" fill="white"  text-anchor="end" stroke="none" stroke-width="0" font-size="45">48</text>
+   </g>
+  </g>
+  <g  stroke-width="0" transform="matrix(1, 0, 0, 1, 163.5, 526.05)">
+   <g  stroke-width="0" transform="rotate(-90)">
+    <text x="0" y="0" font-family="OCRA" fill="white"  text-anchor="start" stroke="none" stroke-width="0" font-size="45">2</text>
+   </g>
+  </g>
+  <g  stroke-width="0" transform="matrix(1, 0, 0, 1, 163.5, 73.95)">
+   <g  stroke-width="0" transform="rotate(-90)">
+    <text x="0" y="0" font-family="OCRA" fill="white"  text-anchor="end" stroke="none" stroke-width="0" font-size="45">47</text>
+   </g>
+  </g>
+  <g  stroke-width="0" transform="matrix(1, 0, 0, 1, 263.5, 526.05)">
+   <g  stroke-width="0" transform="rotate(-90)">
+    <text x="0" y="0" font-family="OCRA" fill="white"  text-anchor="start" stroke="none" stroke-width="0" font-size="45">3</text>
+   </g>
+  </g>
+  <g  stroke-width="0" transform="matrix(1, 0, 0, 1, 263.5, 73.95)">
+   <g  stroke-width="0" transform="rotate(-90)">
+    <text x="0" y="0" font-family="OCRA" fill="white"  text-anchor="end" stroke="none" stroke-width="0" font-size="45">46</text>
+   </g>
+  </g>
+  <g  stroke-width="0" transform="matrix(1, 0, 0, 1, 363.5, 526.05)">
+   <g  stroke-width="0" transform="rotate(-90)">
+    <text x="0" y="0" font-family="OCRA" fill="white"  text-anchor="start" stroke="none" stroke-width="0" font-size="45">4</text>
+   </g>
+  </g>
+  <g  stroke-width="0" transform="matrix(1, 0, 0, 1, 363.5, 73.95)">
+   <g  stroke-width="0" transform="rotate(-90)">
+    <text x="0" y="0" font-family="OCRA" fill="white"  text-anchor="end" stroke="none" stroke-width="0" font-size="45">45</text>
+   </g>
+  </g>
+  <g  stroke-width="0" transform="matrix(1, 0, 0, 1, 463.5, 526.05)">
+   <g  stroke-width="0" transform="rotate(-90)">
+    <text x="0" y="0" font-family="OCRA" fill="white"  text-anchor="start" stroke="none" stroke-width="0" font-size="45">5</text>
+   </g>
+  </g>
+  <g  stroke-width="0" transform="matrix(1, 0, 0, 1, 463.5, 73.95)">
+   <g  stroke-width="0" transform="rotate(-90)">
+    <text x="0" y="0" font-family="OCRA" fill="white"  text-anchor="end" stroke="none" stroke-width="0" font-size="45">44</text>
+   </g>
+  </g>
+  <g  stroke-width="0" transform="matrix(1, 0, 0, 1, 563.5, 526.05)">
+   <g  stroke-width="0" transform="rotate(-90)">
+    <text x="0" y="0" font-family="OCRA" fill="white"  text-anchor="start" stroke="none" stroke-width="0" font-size="45">6</text>
+   </g>
+  </g>
+  <g  stroke-width="0" transform="matrix(1, 0, 0, 1, 563.5, 73.95)">
+   <g  stroke-width="0" transform="rotate(-90)">
+    <text x="0" y="0" font-family="OCRA" fill="white"  text-anchor="end" stroke="none" stroke-width="0" font-size="45">43</text>
+   </g>
+  </g>
+  <g  stroke-width="0" transform="matrix(1, 0, 0, 1, 663.5, 526.05)">
+   <g  stroke-width="0" transform="rotate(-90)">
+    <text x="0" y="0" font-family="OCRA" fill="white"  text-anchor="start" stroke="none" stroke-width="0" font-size="45">7</text>
+   </g>
+  </g>
+  <g  stroke-width="0" transform="matrix(1, 0, 0, 1, 663.5, 73.95)">
+   <g  stroke-width="0" transform="rotate(-90)">
+    <text x="0" y="0" font-family="OCRA" fill="white"  text-anchor="end" stroke="none" stroke-width="0" font-size="45">42</text>
+   </g>
+  </g>
+  <g  stroke-width="0" transform="matrix(1, 0, 0, 1, 763.5, 526.05)">
+   <g  stroke-width="0" transform="rotate(-90)">
+    <text x="0" y="0" font-family="OCRA" fill="white"  text-anchor="start" stroke="none" stroke-width="0" font-size="45">8</text>
+   </g>
+  </g>
+  <g  stroke-width="0" transform="matrix(1, 0, 0, 1, 763.5, 73.95)">
+   <g  stroke-width="0" transform="rotate(-90)">
+    <text x="0" y="0" font-family="OCRA" fill="white"  text-anchor="end" stroke="none" stroke-width="0" font-size="45">41</text>
+   </g>
+  </g>
+  <g  stroke-width="0" transform="matrix(1, 0, 0, 1, 863.5, 526.05)">
+   <g  stroke-width="0" transform="rotate(-90)">
+    <text x="0" y="0" font-family="OCRA" fill="white"  text-anchor="start" stroke="none" stroke-width="0" font-size="45">9</text>
+   </g>
+  </g>
+  <g  stroke-width="0" transform="matrix(1, 0, 0, 1, 863.5, 73.95)">
+   <g  stroke-width="0" transform="rotate(-90)">
+    <text x="0" y="0" font-family="OCRA" fill="white"  text-anchor="end" stroke="none" stroke-width="0" font-size="45">40</text>
+   </g>
+  </g>
+  <g  stroke-width="0" transform="matrix(1, 0, 0, 1, 963.5, 526.05)">
+   <g  stroke-width="0" transform="rotate(-90)">
+    <text x="0" y="0" font-family="OCRA" fill="white"  text-anchor="start" stroke="none" stroke-width="0" font-size="45">10</text>
+   </g>
+  </g>
+  <g  stroke-width="0" transform="matrix(1, 0, 0, 1, 963.5, 73.95)">
+   <g  stroke-width="0" transform="rotate(-90)">
+    <text x="0" y="0" font-family="OCRA" fill="white"  text-anchor="end" stroke="none" stroke-width="0" font-size="45">39</text>
+   </g>
+  </g>
+  <g  stroke-width="0" transform="matrix(1, 0, 0, 1, 1063.5, 526.05)">
+   <g  stroke-width="0" transform="rotate(-90)">
+    <text x="0" y="0" font-family="OCRA" fill="white"  text-anchor="start" stroke="none" stroke-width="0" font-size="45">11</text>
+   </g>
+  </g>
+  <g  stroke-width="0" transform="matrix(1, 0, 0, 1, 1063.5, 73.95)">
+   <g  stroke-width="0" transform="rotate(-90)">
+    <text x="0" y="0" font-family="OCRA" fill="white"  text-anchor="end" stroke="none" stroke-width="0" font-size="45">38</text>
+   </g>
+  </g>
+  <g  stroke-width="0" transform="matrix(1, 0, 0, 1, 1163.5, 526.05)">
+   <g  stroke-width="0" transform="rotate(-90)">
+    <text x="0" y="0" font-family="OCRA" fill="white"  text-anchor="start" stroke="none" stroke-width="0" font-size="45">12</text>
+   </g>
+  </g>
+  <g  stroke-width="0" transform="matrix(1, 0, 0, 1, 1163.5, 73.95)">
+   <g  stroke-width="0" transform="rotate(-90)">
+    <text x="0" y="0" font-family="OCRA" fill="white"  text-anchor="end" stroke="none" stroke-width="0" font-size="45">37</text>
+   </g>
+  </g>
+  <g  stroke-width="0" transform="matrix(1, 0, 0, 1, 1263.5, 526.05)">
+   <g  stroke-width="0" transform="rotate(-90)">
+    <text x="0" y="0" font-family="OCRA" fill="white"  text-anchor="start" stroke="none" stroke-width="0" font-size="45">13</text>
+   </g>
+  </g>
+  <g  stroke-width="0" transform="matrix(1, 0, 0, 1, 1263.5, 73.95)">
+   <g  stroke-width="0" transform="rotate(-90)">
+    <text x="0" y="0" font-family="OCRA" fill="white"  text-anchor="end" stroke="none" stroke-width="0" font-size="45">36</text>
+   </g>
+  </g>
+  <g  stroke-width="0" transform="matrix(1, 0, 0, 1, 1363.5, 526.05)">
+   <g  stroke-width="0" transform="rotate(-90)">
+    <text x="0" y="0" font-family="OCRA" fill="white"  text-anchor="start" stroke="none" stroke-width="0" font-size="45">14</text>
+   </g>
+  </g>
+  <g  stroke-width="0" transform="matrix(1, 0, 0, 1, 1363.5, 73.95)">
+   <g  stroke-width="0" transform="rotate(-90)">
+    <text x="0" y="0" font-family="OCRA" fill="white"  text-anchor="end" stroke="none" stroke-width="0" font-size="45">35</text>
+   </g>
+  </g>
+  <g  stroke-width="0" transform="matrix(1, 0, 0, 1, 1463.5, 526.05)">
+   <g  stroke-width="0" transform="rotate(-90)">
+    <text x="0" y="0" font-family="OCRA" fill="white"  text-anchor="start" stroke="none" stroke-width="0" font-size="45">15</text>
+   </g>
+  </g>
+  <g  stroke-width="0" transform="matrix(1, 0, 0, 1, 1463.5, 73.95)">
+   <g  stroke-width="0" transform="rotate(-90)">
+    <text x="0" y="0" font-family="OCRA" fill="white"  text-anchor="end" stroke="none" stroke-width="0" font-size="45">34</text>
+   </g>
+  </g>
+  <g  stroke-width="0" transform="matrix(1, 0, 0, 1, 1563.5, 526.05)">
+   <g  stroke-width="0" transform="rotate(-90)">
+    <text x="0" y="0" font-family="OCRA" fill="white"  text-anchor="start" stroke="none" stroke-width="0" font-size="45">16</text>
+   </g>
+  </g>
+  <g  stroke-width="0" transform="matrix(1, 0, 0, 1, 1563.5, 73.95)">
+   <g  stroke-width="0" transform="rotate(-90)">
+    <text x="0" y="0" font-family="OCRA" fill="white"  text-anchor="end" stroke="none" stroke-width="0" font-size="45">33</text>
+   </g>
+  </g>
+  <g  stroke-width="0" transform="matrix(1, 0, 0, 1, 1663.5, 526.05)">
+   <g  stroke-width="0" transform="rotate(-90)">
+    <text x="0" y="0" font-family="OCRA" fill="white"  text-anchor="start" stroke="none" stroke-width="0" font-size="45">17</text>
+   </g>
+  </g>
+  <g  stroke-width="0" transform="matrix(1, 0, 0, 1, 1663.5, 73.95)">
+   <g  stroke-width="0" transform="rotate(-90)">
+    <text x="0" y="0" font-family="OCRA" fill="white"  text-anchor="end" stroke="none" stroke-width="0" font-size="45">32</text>
+   </g>
+  </g>
+  <g  stroke-width="0" transform="matrix(1, 0, 0, 1, 1763.5, 526.05)">
+   <g  stroke-width="0" transform="rotate(-90)">
+    <text x="0" y="0" font-family="OCRA" fill="white"  text-anchor="start" stroke="none" stroke-width="0" font-size="45">18</text>
+   </g>
+  </g>
+  <g  stroke-width="0" transform="matrix(1, 0, 0, 1, 1763.5, 73.95)">
+   <g  stroke-width="0" transform="rotate(-90)">
+    <text x="0" y="0" font-family="OCRA" fill="white"  text-anchor="end" stroke="none" stroke-width="0" font-size="45">31</text>
+   </g>
+  </g>
+  <g  stroke-width="0" transform="matrix(1, 0, 0, 1, 1863.5, 526.05)">
+   <g  stroke-width="0" transform="rotate(-90)">
+    <text x="0" y="0" font-family="OCRA" fill="white"  text-anchor="start" stroke="none" stroke-width="0" font-size="45">19</text>
+   </g>
+  </g>
+  <g  stroke-width="0" transform="matrix(1, 0, 0, 1, 1863.5, 73.95)">
+   <g  stroke-width="0" transform="rotate(-90)">
+    <text x="0" y="0" font-family="OCRA" fill="white"  text-anchor="end" stroke="none" stroke-width="0" font-size="45">30</text>
+   </g>
+  </g>
+  <g  stroke-width="0" transform="matrix(1, 0, 0, 1, 1963.5, 526.05)">
+   <g  stroke-width="0" transform="rotate(-90)">
+    <text x="0" y="0" font-family="OCRA" fill="white"  text-anchor="start" stroke="none" stroke-width="0" font-size="45">20</text>
+   </g>
+  </g>
+  <g  stroke-width="0" transform="matrix(1, 0, 0, 1, 1963.5, 73.95)">
+   <g  stroke-width="0" transform="rotate(-90)">
+    <text x="0" y="0" font-family="OCRA" fill="white"  text-anchor="end" stroke="none" stroke-width="0" font-size="45">29</text>
+   </g>
+  </g>
+  <g  stroke-width="0" transform="matrix(1, 0, 0, 1, 2063.5, 526.05)">
+   <g  stroke-width="0" transform="rotate(-90)">
+    <text x="0" y="0" font-family="OCRA" fill="white"  text-anchor="start" stroke="none" stroke-width="0" font-size="45">21</text>
+   </g>
+  </g>
+  <g  stroke-width="0" transform="matrix(1, 0, 0, 1, 2063.5, 73.95)">
+   <g  stroke-width="0" transform="rotate(-90)">
+    <text x="0" y="0" font-family="OCRA" fill="white"  text-anchor="end" stroke="none" stroke-width="0" font-size="45">28</text>
+   </g>
+  </g>
+  <g  stroke-width="0" transform="matrix(1, 0, 0, 1, 2163.5, 526.05)">
+   <g  stroke-width="0" transform="rotate(-90)">
+    <text x="0" y="0" font-family="OCRA" fill="white"  text-anchor="start" stroke="none" stroke-width="0" font-size="45">22</text>
+   </g>
+  </g>
+  <g  stroke-width="0" transform="matrix(1, 0, 0, 1, 2163.5, 73.95)">
+   <g  stroke-width="0" transform="rotate(-90)">
+    <text x="0" y="0" font-family="OCRA" fill="white"  text-anchor="end" stroke="none" stroke-width="0" font-size="45">27</text>
+   </g>
+  </g>
+  <g  stroke-width="0" transform="matrix(1, 0, 0, 1, 2263.5, 526.05)">
+   <g  stroke-width="0" transform="rotate(-90)">
+    <text x="0" y="0" font-family="OCRA" fill="white"  text-anchor="start" stroke="none" stroke-width="0" font-size="45">23</text>
+   </g>
+  </g>
+  <g  stroke-width="0" transform="matrix(1, 0, 0, 1, 2263.5, 73.95)">
+   <g  stroke-width="0" transform="rotate(-90)">
+    <text x="0" y="0" font-family="OCRA" fill="white"  text-anchor="end" stroke="none" stroke-width="0" font-size="45">26</text>
+   </g>
+  </g>
+  <g  stroke-width="0" transform="matrix(1, 0, 0, 1, 2363.5, 526.05)">
+   <g  stroke-width="0" transform="rotate(-90)">
+    <text x="0" y="0" font-family="OCRA" fill="white"  text-anchor="start" stroke="none" stroke-width="0" font-size="45">24</text>
+   </g>
+  </g>
+  <g  stroke-width="0" transform="matrix(1, 0, 0, 1, 2363.5, 73.95)">
+   <g  stroke-width="0" transform="rotate(-90)">
+    <text x="0" y="0" font-family="OCRA" fill="white"  text-anchor="end" stroke="none" stroke-width="0" font-size="45">25</text>
+   </g>
+  </g>
+ </g>
+</svg>

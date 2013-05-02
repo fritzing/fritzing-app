@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1 Basic//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-basic.dtd">
+<svg version="1.1" baseProfile="basic"
+	 xmlns:svg="http://www.w3.org/2000/svg"    
+	 xmlns="http://www.w3.org/2000/svg"  x="0" y="0" width="0.78in" height="1.0749167in"
+	 viewBox="0 0 56.16 77.394" > 85.68
+
+<g id="breadboard" transform="translate(115.90235,-16.373002)">
+	<rect id="connector0pin" x="-92.91935" y="93.765" fill="none" width="1" height="1"/>
+	<rect id="connector1pin" x="-85.72835" y="93.765" fill="none" width="1" height="1"/>
+	
+	<line  id="connector0leg" stroke-linecap="round" x1="-91.41935" y1="93.765" x2="-91.41935" y2="102.053002" stroke="#000000" fill="none" stroke-width="3" />
+	<line  id="connector1leg" stroke-linecap="round" x1="-84.22835" y1="93.765" x2="-84.22835" y2="102.053002" stroke="#FF0000" fill="none" stroke-width="3" />
+
+	<g id="g8">
+		<rect id="rect10" x="-115.902" y="16.373" fill="#D2F3FF" width="56.031" height="55.856"/>
+		<rect id="rect12" x="-115.902" y="72.232" fill="#717170" width="56.031" height="1.951"/>
+		<rect id="rect14" x="-115.902" y="74.183" fill="#F0D9C2" width="56.031" height="5.932"/>
+		<rect id="rect16" x="-115.902" y="79.979" fill="#A56549" width="56.031" height="1.227"/>
+		<g id="g18">
+			<polygon id="polygon20" fill="#FFFFFF" points="-102.958,72.232 -108.57,72.232 -69.885,16.373 -64.272,16.373 			"/>
+			<polygon id="polygon22" fill="#FFFFFF" points="-98.558,72.232 -100.351,72.232 -61.666,16.373 -59.873,16.373 			"/>
+		</g>
+		<g id="g24">
+			<rect id="rect26" x="-66.799" y="74.183" fill="#474747" width="3.049" height="4.234"/>
+			<rect id="rect28" x="-73.258" y="74.183" fill="#474747" width="3.049" height="4.234"/>
+			<rect id="rect30" x="-79.721" y="74.183" fill="#474747" width="3.049" height="4.234"/>
+			<rect id="rect32" x="-92.642" y="74.183" fill="#474747" width="3.048" height="4.234"/>
+			<rect id="rect34" x="-86.18" y="74.183" fill="#474747" width="3.049" height="4.234"/>
+			<rect id="rect36" x="-99.103" y="74.183" fill="#474747" width="3.048" height="4.234"/>
+			<rect id="rect38" x="-105.562" y="74.183" fill="#474747" width="3.047" height="4.234"/>
+			<rect id="rect40" x="-112.022" y="74.183" fill="#474747" width="3.049" height="4.234"/>
+		</g>
+	</g>
+	<path id="path44" fill="none" stroke="#000000" stroke-width="3" d="M-110.487,81.134c0,1.989,1.385,4.281,5.017,4.281
+		l9.041,0.001c3.633,0,5.018,2.291,5.018,4.281c0,1.89,0,4.065,0,4.065"/>
+	<path id="path48" fill="none" stroke="#FF0000" stroke-width="3" d="M-84.232,93.765c0,0,0-2.179,0-4.065
+			c0-1.99,1.386-4.281,5.018-4.281l8.892-0.001c3.633,0,5.017-2.292,5.017-4.281"/>
+</g>
+</svg>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><svg baseProfile="tiny" height="0.66in" version="1.2" viewBox="0 0 60400 66000" width="0.604in" xmlns="http://www.w3.org/2000/svg">
+ <desc>Fritzing footprint SVG</desc>
+ <g id="silkscreen">
+  <line stroke="white" stroke-width="1000" x1="6500" x2="6500" y1="35000" y2="1000"/>
+  <line stroke="white" stroke-width="1000" x1="6500" x2="53900" y1="1000" y2="1000"/>
+  <line stroke="white" stroke-width="1000" x1="53900" x2="53900" y1="1000" y2="35000"/>
+  <line stroke="white" stroke-width="1000" x1="6500" x2="6500" y1="48000" y2="65000"/>
+  <line stroke="white" stroke-width="1000" x1="6500" x2="53900" y1="65000" y2="65000"/>
+  <line stroke="white" stroke-width="1000" x1="53900" x2="53900" y1="65000" y2="48000"/>
+ </g>
+ <g id="copper1"><g id="copper0">
+  <circle cx="25300" cy="60000" fill="none" id="connector0pin" r="2400" stroke="rgb(255, 191, 0)" stroke-width="2000"/>
+  <circle cx="35100" cy="60000" fill="none" id="connector1pin" r="2400" stroke="rgb(255, 191, 0)" stroke-width="2000"/>
+  <circle cx="35100" cy="52200" fill="none" id="connector2pin" r="2400" stroke="rgb(255, 191, 0)" stroke-width="2000"/>
+  <circle cx="25300" cy="52200" fill="none" id="connector3pin" r="2400" stroke="rgb(255, 191, 0)" stroke-width="2000"/>
+  <circle cx="6500" cy="41500" fill="none" id="connector4pin" r="5300" stroke="rgb(255, 191, 0)" stroke-width="2000"/>
+  <circle cx="53900" cy="41500" fill="none" id="connector5pin" r="5300" stroke="rgb(255, 191, 0)" stroke-width="2000"/>
+ </g></g>
+ <g id="keepout"/>
+ <g id="soldermask"/>
+ <g id="outline"/>
+</svg>

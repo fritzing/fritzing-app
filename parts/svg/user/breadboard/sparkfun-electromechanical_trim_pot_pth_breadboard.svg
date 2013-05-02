@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Ebene_1" xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="17.85px" height="23.76px"
+	 viewBox="0 0 17.85 23.76" enable-background="new 0 0 17.85 23.76" xml:space="preserve">
+<g id="breadboard">
+	<circle id="connector0pin" fill="none" cx="1.724" cy="22.679" r="1.102"/>
+	<circle id="connector1pin" fill="none" cx="8.925" cy="8.28" r="1.102"/>
+	<circle id="connector2pin" fill="none" cx="16.124" cy="22.679" r="1.102"/>
+</g>
+<g>
+	<path id="path20" fill="#B3B3B3" d="M0.001,1.081V18.88h8.896h8.9V1.08L0.001,1.081z"/>
+	<rect id="rect11" x="0.001" y="18.504" fill="#1A1A1A" width="17.799" height="2.375"/>
+	<g id="legs">
+		<g id="pin0">
+			<rect id="rect14" x="0.62" y="20.081" fill="#4D4D4D" width="2.16" height="3.68"/>
+			<rect id="rect10" x="0.62" y="18.879" fill="#666666" width="4.892" height="2.449"/>
+		</g>
+		<g id="pin2">
+			<rect id="rect16" x="15.018" y="20.059" fill="#4D4D4D" width="2.16" height="3.701"/>
+			<rect id="rect8" x="12.26" y="18.879" fill="#666666" width="4.918" height="2.428"/>
+		</g>
+		<g id="pin1">
+			<rect id="rect18" x="7.819" y="0" fill="#8C8C8C" width="2.16" height="4.316"/>
+		</g>
+	</g>
+	<polygon id="polygon22" fill="#CCCCCC" points="0.45,10.109 16.899,1.08 0.45,1.08 	"/>
+	<circle id="circle24" fill="#B35D13" cx="8.899" cy="9.935" r="6.563"/>
+	<rect id="rect26" x="2.338" y="8.351" fill="#B35D13" width="13.124" height="1.583"/>
+	<circle id="circle28" fill="#FF7701" cx="8.899" cy="8.352" r="6.563"/>
+	<path id="path30" fill="#FF9234" d="M9.055,1.946c0,0-1.937,0.152-3.656,1.843c-3.131,3.073-2.906,4.72-2.906,4.72
+		C2.493,4.883,5.431,1.946,9.055,1.946z"/>
+	<rect id="rect32" x="8.066" y="4.248" fill="#803C01" width="1.665" height="8.208"/>
+	<rect id="rect34" x="4.796" y="7.517" fill="#803C01" width="8.209" height="1.667"/>
+	<rect id="rect36" x="8.066" y="5.414" fill="#BF5901" width="1.665" height="7.042"/>
+	<rect id="rect38" x="4.695" y="9.184" fill="#FF9234" width="3.371" height="0.333"/>
+	<rect id="rect40" x="9.731" y="9.184" fill="#FF9234" width="3.371" height="0.333"/>
+	<text id="text42" transform="matrix(1 0 0 1 7.1208 14.3918)" font-family="'ArialMT'" font-size="2">E01</text>
+	<rect id="rect44" x="4.441" y="0.214" fill="#666666" width="8.917" height="1.345"/>
+	<rect id="rect12" x="4.441" y="0" fill="#E6E6E6" width="8.917" height="0.375"/>
+	<rect id="rect12_1_" x="4.441" y="0.189" fill="#CCCCCC" width="8.917" height="0.255"/>
+	<path id="path48" fill="#808080" d="M0.001,18.504H17.8c0,0,0.064,0.375-0.621,0.375c-0.684,0-15.938,0-16.559,0
+		S0.001,18.504,0.001,18.504z"/>
+	<polygon id="polygon50" fill="#CCCCCC" points="17.178,1.08 17.798,1.08 17.798,18.504 17.178,18.693 	"/>
+	<rect id="rect52" x="17.606" y="1.08" fill="#E6E6E6" width="0.242" height="17.425"/>
+	<rect id="rect54" x="0.001" y="1.08" fill="#CCCCCC" width="0.449" height="17.425"/>
+	<rect id="rect56" x="0.001" y="1.08" fill="#E6E6E6" width="0.212" height="17.425"/>
+	<g>
+		<g>
+			<g>
+				<defs>
+					<path id="SVGID_1_" d="M0.001,18.504H17.8c0,0,0.064,0.375-0.621,0.375c-0.684,0-15.938,0-16.559,0S0.001,18.504,0.001,18.504z
+						"/>
+				</defs>
+				<clipPath id="SVGID_2_">
+					<use xlink:href="#SVGID_1_"  overflow="visible"/>
+				</clipPath>
+				<rect id="rect66" x="0.001" y="18.366" clip-path="url(#SVGID_2_)" fill="#999999" width="17.799" height="0.42"/>
+			</g>
+		</g>
+	</g>
+	<g>
+		<g>
+			<g>
+				<defs>
+					<path id="SVGID_3_" d="M0.001,18.504H17.8c0,0,0.064,0.375-0.621,0.375c-0.684,0-15.938,0-16.559,0S0.001,18.504,0.001,18.504z
+						"/>
+				</defs>
+				<clipPath id="SVGID_4_">
+					<use xlink:href="#SVGID_3_"  overflow="visible"/>
+				</clipPath>
+				<polygon id="polygon68" opacity="0.46" clip-path="url(#SVGID_4_)" fill="#B3B3B3" enable-background="new    " points="
+					17.8,18.366 17.487,18.693 0.274,18.693 0.001,18.366 				"/>
+			</g>
+		</g>
+	</g>
+	<rect id="rect70" x="8.066" y="4.248" fill="#803C01" width="0.24" height="8.208"/>
+	<rect id="rect72" x="4.796" y="8.683" fill="#BF5901" width="8.209" height="0.5"/>
+	<path id="path74" fill="#FF9234" d="M9.731,4.248v3.27h3.271v1.667H9.731v3.272H8.066V9.184H4.796V7.517h3.271v-3.27L9.731,4.248
+		 M9.831,4.147H9.73H8.066h-0.1v0.103v3.169H4.796H4.695v0.1v1.667v0.103h0.101h3.171v3.17v0.1h0.1h1.665h0.103v-0.1v-3.17h3.174
+		h0.1V9.184V7.517v-0.1h-0.1H9.831v-3.17V4.147L9.831,4.147z"/>
+</g>
+</svg>

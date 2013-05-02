@@ -1,0 +1,58 @@
+SketchMainHelpPrivate {
+	padding: 5px;
+	border-radius: 5px;
+	border: 2px solid black;
+}
+
+#sketchMainHelpBreadboard {
+	background-color: #e2e2e2;
+	border-top-color: #bbb;
+	border-right-color: #c7c7c7;
+	border-left-color: #c7c7c7;
+	border-bottom-color: #eaeaea;
+	color: #c5c5c5;
+}
+
+#sketchMainHelpSchematic {
+	background-color: #f1f1f1;
+	border-top-color: #bbb;
+	border-right-color: #c0c0c0;
+	border-bottom-color: #eaeaea;
+	border-left-color: #eaeaea;
+}
+
+#sketchMainHelpPCB {
+	background-color: #a5abb0;
+	border-top-color: #bbb;
+	border-right-color: #c0c0c0;
+	border-bottom-color: #eaeaea;
+	border-left-color: #eaeaea;
+}
+
+#inviewHelpImageBreadboard {
+	border: 4px solid white;
+}
+
+#inviewHelpImageSchematic {
+	border: 4px solid white;
+}
+
+#inviewHelpImagePCB {
+	border: 0px solid white;
+}
+
+#toolHelpPartsBin, #toolHelpPartsBin QLabel,
+#toolHelpSwitchButtons, #toolHelpSwitchButtons QLabel,
+#toolHelpAutoroute, #toolHelpAutoroute QLabel {
+	background-color: transparent;
+}
+
+#toolHelpAutoroute {
+	margin-left: 100px;
+	border: 0px;
+}
+
+#toolHelpTextPartsBin {
+	padding-top: 15px;
+	padding-left: 20px;
+}

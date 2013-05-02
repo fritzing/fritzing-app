@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- Generator: Adobe Illustrator 13.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 14948)  -->
+<svg xmlns="http://www.w3.org/2000/svg" width="0.7in" xml:space="preserve" xmlns:xml="http://www.w3.org/XML/1998/namespace" x="0px" version="1.1" y="0px" height="0.33in" viewBox="0 0 50.4 23.76" id="svg2" enable-background="new 0 0 50.4 23.76">
+ <metadata  id="metadata3246">
+  <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work xmlns:cc="http://creativecommons.org/ns#" rdf:about="" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <dc:format xmlns:dc="http://purl.org/dc/elements/1.1/">image/svg+xml</dc:format>
+    <dc:type xmlns:dc="http://purl.org/dc/elements/1.1/" rdf:resource="http://purl.org/dc/dcmitype/StillImage" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs  id="defs3244"/>
+ <sodipodi:namedview xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" showgrid="false" objecttolerance="10" pagecolor="#ffffff" bordercolor="#666666" id="namedview72" borderopacity="1" guidetolerance="10" gridtolerance="10"/>
+ <rect  width="50.400002" x="0" y="2.1600001" height="19.440001" style="fill:#303030" id="middle"/>
+ <rect  width="50.400002" x="0" y="2.1600001" height="1.771" style="fill:#3d3d3d" id="top"/>
+ <rect  width="50.400002" x="0" y="19.829" height="1.771" id="bottom"/>
+ <polygon  points="49.86,19.829 50.4,21.601 50.4,2.16 49.86,3.931 " style="fill:#141414" id="right"/>
+ <polygon  points="0.54,19.829 0,21.601 0,2.16 0.54,3.931 " style="fill:#1f1f1f" id="left"/>
+ <polygon  points="0.403,9.777 0.403,11.88 3.6,11.88 3.6,8.28 0.54,8.251 " style="fill:#1c1c1c" id="left-upper-rect"/>
+ <polygon  points="3.6,11.88 0.403,11.88 0.403,13.981 0.54,15.517 3.6,15.517 " style="fill:#383838" id="left-lower-rect"/>
+ <path  style="fill:#262626" id="slot" d="m 0.403,9.777 v 4.199 C 1.462,13.853 2.29,12.967 2.29,11.872 2.29,10.777 1.469,9.9 0.403,9.777 z"/>
+ <path  style="fill:#303030" id="cover" d="m 0.54,3.931 v 4.313 c 1.714,0.324 3.018,1.821 3.018,3.629 0,1.808 -1.298,3.312 -3.018,3.636 v 0.008 h 3.6 V 3.931 h -3.6 z"/>
+ <circle  cx="4.6799998" cy="16.898001" style="fill:#212121" r="1.483" id="circle13"/>
+ <g  id="g3170" enable-background="new    ">
+  <g style="font-size:4.80000019px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#666666;fill-opacity:1;stroke:none;font-family:OCRA;-inkscape-font-specification:OCRA Bold" id="text3309" xml:space="preserve">
+   <text x="6.8302426" y="13.406791" id="tspan3311">D31A*</text>
+  </g>
+ </g>
+ <rect  width="2.1600001" x="2.52" y="20.636" height="3.1240001" style="fill:#8c8c8c" id="connector0pin"/>
+ <rect  width="2.1600001" x="2.52" y="21.601" height="2.1589999" style="fill:#8c8c8c" id="rect3189"/>
+ <polygon  points="4.68,22.075 6.12,21.413 6.12,20.636 2.52,20.636 2.52,22.075 " style="fill:#8c8c8c" id="polygon18"/>
+ <rect  width="2.1600001" x="2.52" y="0" height="3.125" style="fill:#8c8c8c" id="connector13pin"/>
+ <rect  width="2.1600001" x="2.52" y="0" height="2.1600001" style="fill:#8c8c8c" id="rect3193"/>
+ <polygon  points="4.68,1.685 2.52,1.685 2.52,3.125 6.12,3.125 6.12,2.347 " style="fill:#8c8c8c" id="polygon22"/>
+ <rect  width="2.158" x="45.720001" y="20.636" height="3.1240001" style="fill:#8c8c8c" id="connector6pin"/>
+ <rect  width="2.158" x="45.720001" y="21.601" height="2.1589999" style="fill:#8c8c8c" id="rect3197"/>
+ <polygon  points="45.72,22.075 47.88,22.075 47.88,20.636 44.28,20.636 44.28,21.413 " style="fill:#8c8c8c" id="polygon26"/>
+ <rect  width="2.158" x="45.720001" y="0" height="3.125" style="fill:#8c8c8c" id="connector7pin"/>
+ <rect  width="2.158" x="45.720001" y="0" height="2.1600001" style="fill:#8c8c8c" id="rect3201"/>
+ <polygon  points="45.72,1.685 44.28,2.347 44.28,3.125 47.88,3.125 47.88,1.685 " style="fill:#8c8c8c" id="polygon30"/>
+ <rect  width="2.158" x="9.7200003" y="20.636" height="3.1240001" style="fill:#8c8c8c" id="connector1pin"/>
+ <rect  width="2.158" x="9.7200003" y="21.601" height="2.1589999" style="fill:#8c8c8c" id="rect3205"/>
+ <polygon  points="9.72,22.075 11.88,22.075 13.32,21.413 13.32,20.636 8.28,20.636 8.28,21.413 " style="fill:#8c8c8c" id="polygon34"/>
+ <rect  width="2.158" x="9.7200003" y="0" height="3.125" style="fill:#8c8c8c" id="connector12pin"/>
+ <rect  width="2.158" x="9.7200003" y="0" height="2.1600001" style="fill:#8c8c8c" id="rect3209"/>
+ <polygon  points="11.88,1.685 9.72,1.685 8.28,2.347 8.28,3.125 13.32,3.125 13.32,2.347 " style="fill:#8c8c8c" id="polygon38"/>
+ <rect  width="2.1600001" x="38.52" y="20.636" height="3.1240001" style="fill:#8c8c8c" id="connector5pin"/>
+ <rect  width="2.1600001" x="38.52" y="21.601" height="2.1589999" style="fill:#8c8c8c" id="rect3237"/>
+ <polygon  points="38.52,22.075 40.68,22.075 42.12,21.413 42.12,20.636 37.08,20.636 37.08,21.413 " style="fill:#8c8c8c" id="polygon66"/>
+ <rect  width="2.1600001" x="38.52" y="0" height="3.125" style="fill:#8c8c8c" id="connector8pin"/>
+ <rect  width="2.1600001" x="38.52" y="0" height="2.1600001" style="fill:#8c8c8c" id="rect3241"/>
+ <polygon  points="40.68,1.685 38.52,1.685 37.08,2.347 37.08,3.125 42.12,3.125 42.12,2.347 " style="fill:#8c8c8c" id="polygon70"/>
+</svg>

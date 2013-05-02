@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Ebene_1" xmlns:xml="http://www.w3.org/XML/1998/namespace"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="47.836px"
+	 height="29.25px" viewBox="0 0 47.836 29.25" enable-background="new 0 0 47.836 29.25" xml:space="preserve">
+<g id="copper1">
+	<rect id="connector0pad" x="13.868" y="22.857" fill="#F7BD13" width="5.669" height="6.393"/>
+	<rect id="connector1pad" x="40.693" y="11.907" fill="#F7BD13" width="7.086" height="5.67"/>
+	<rect id="connector2pad" x="13.868" fill="#F7BD13" width="5.669" height="6.392"/>
+	<rect id="connector3pad" x="40.693" y="21.625" fill="#F7BD13" width="7.086" height="5.67"/>
+	<rect id="connector4pad" x="40.693" y="2.327" fill="#F7BD13" width="7.086" height="5.631"/>
+	<circle id="nonconn0" cx="13.031" cy="9.637" r="1.417" fill="black" stroke="black" stroke-width="0" />
+	<circle id="nonconn1" cx="13.031" cy="19.649" r="1.417" fill="black" stroke="black" stroke-width="0" />
+</g>
+<g id="silkscreen">
+	<line fill="none" stroke="#F0F0F0" stroke-width="0.254" stroke-linecap="round" x1="20.256" y1="4.625" x2="39.943" y2="4.625"/>
+	<line fill="none" stroke="#F0F0F0" stroke-width="0.254" stroke-linecap="round" x1="41.068" y1="8.437" x2="41.068" y2="11.312"/>
+	
+		<line fill="none" stroke="#F0F0F0" stroke-width="0.254" stroke-linecap="round" x1="41.068" y1="18.062" x2="41.068" y2="21.188"/>
+	<line fill="none" stroke="#F0F0F0" stroke-width="0.254" stroke-linecap="round" x1="20.256" y1="24.46" x2="39.943" y2="24.46"/>
+	<polyline fill="none" stroke="#F0F0F0" stroke-width="0.254" stroke-linecap="round" points="13.031,4.625 7.256,4.625 
+		7.256,24.46 13.031,24.46 	"/>
+	<polyline fill="none" stroke="#F0F0F0" stroke-width="0.254" stroke-linecap="round" points="7.256,6.062 0.256,6.062 
+		0.256,22.857 7.256,22.857 	"/>
+</g>
+</svg>

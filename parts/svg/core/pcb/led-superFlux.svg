@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In  -->
+<!DOCTYPE svg [
+	<!ENTITY ns_flows "http://ns.adobe.com/Flows/1.0/">
+]>
+<svg version="1.2" baseProfile="tiny"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+	 x="0" y="0" width="0.30556in" height="0.30556in" viewBox="0 0 22 22" xml:space="preserve">
+<defs>
+</defs>
+<g id="silkscreen">
+<line fill="none" stroke="#FFFFFF" stroke-width="0.75" x1="21.123" y1="7.862" x2="21.123" y2="13.532"/>
+<line fill="none" stroke="#FFFFFF" stroke-width="0.75" x1="4.863" y1="0.549" x2="16.912" y2="0.549"/>
+<line fill="none" stroke="#FFFFFF" stroke-width="0.75" x1="4.712" y1="20.994" x2="16.761" y2="20.994"/>
+<line fill="none" stroke="#FFFFFF" stroke-width="0.75" x1="0.375" y1="8.164" x2="0.375" y2="13.834"/>
+<line fill="none" stroke="#FFFFFF" stroke-width="0.75" x1="10.532" y1="9.28" x2="10.532" y2="12.115"/>
+<line fill="none" stroke="#FFFFFF" stroke-width="0.75" x1="11.951" y1="10.697" x2="9.115" y2="10.697"/>
+<line fill="none" stroke="#FFFFFF" stroke-width="0.75" x1="19.029" y1="0.266" x2="21.386" y2="2.623"/>
+</g>
+<g id="copper1">
+	<g id="copper0">
+<circle id="connector1pad" fill="none" stroke="#FFBF00" stroke-width="0.75" cx="17.967" cy="17.998" r="1.98"/>
+<circle id="connector0pad" fill="none" stroke="#FFBF00" stroke-width="0.75" cx="3.607" cy="17.998" r="1.98"/>
+<circle id="connector2pad" fill="none" stroke="#FFBF00" stroke-width="0.75" cx="17.967" cy="3.591" r="1.98"/>
+<circle id="connector3pad" fill="none" stroke="#FFBF00" stroke-width="0.75" cx="3.607" cy="3.591" r="1.98"/>
+</g>
+</g>
+</svg>

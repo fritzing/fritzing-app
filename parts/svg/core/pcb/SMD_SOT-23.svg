@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<!--
+	This footprint bases on www.onsemi.com
+	document: CASERM/D
+	Version: Rev. 3, April-2008
+	p.63 SOT-23
+	2010-09-28 Mr.T
+-->
+
+<svg
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.1"
+   width="3.0mm"
+   height="2.9mm"
+   viewBox="0 0 300 290"
+   id="svg2">
+    <g
+       id="copper1">
+    <!-- unten links -->
+      <rect
+         width="80"
+         height="90"
+         x="15"
+         y="200"
+         id="connector0pin"
+         style="fill:#f7bf13;fill-opacity:1;stroke:none" />
+      <rect
+           width="0"
+           height="0"
+           x="55"
+           y="245"
+           id="connector0terminal"
+           style="fill:none;stroke-width:0" />
+
+	<!-- unten rechts -->
+      <rect
+         width="80"
+         height="90"
+         x="205"
+         y="200"
+         id="connector1pin"
+         style="fill:#f7bf13;fill-opacity:1;stroke:none" />
+      <rect
+           width="0"
+           height="0"
+           x="245"
+           y="245"
+           id="connector1terminal"
+           style="fill:none;stroke-width:0" />
+
+    <!-- oben mitte -->
+       <rect
+         width="80"
+         height="90"
+         x="110"
+         y="0"
+         id="connector2pin"
+         style="fill:#f7bf13;fill-opacity:1;stroke:none" />
+      <rect
+           width="0"
+           height="0"
+           x="150"
+           y="45"
+           id="connector2terminal"
+           style="fill:none;stroke-width:0" />
+
+    </g>
+    <g id="silkscreen">
+    <rect
+       width="290"
+       height="90"
+       x="5"
+       y="100"
+       style="fill:none;stroke:#ffffff;stroke-width:10;stroke-opacity:1" />
+  </g>
+</svg>

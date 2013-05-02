@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" x="0in" y="0in" width="0.3636in" height="0.426in" viewBox="0 0 3636 4260" >
+<title>SparkFun.mod</title>
+<desc>Kicad module 'SparkFun-DIL06' from file 'SparkFun.mod' converted by Fritzing</desc>
+<metadata xmlns:fz='http://fritzing.org/kicadmetadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+<rdf:RDF><rdf:Description rdf:about=''>
+<fz:attr name='kicad filename'>SparkFun.mod</fz:attr>
+<fz:attr name='kicad module'>SparkFun-DIL06</fz:attr>
+<fz:attr name='fritzing version'>0.4.1b.07.04.4318</fz:attr>
+<fz:attr name='conversion date'>17/07/2010 17:15:26</fz:attr>
+<fz:attr name='dist-license'>GPL</fz:attr>
+<fz:attr name='use-license'>unlimited</fz:attr>
+<fz:attr name='author'>KICAD project</fz:attr>
+<fz:attr name='license-url'>http://www.gnu.org/licenses/gpl.html</fz:attr>
+<fz:comment></fz:comment>
+<fz:attr name='keyword'></fz:attr>
+</rdf:Description></rdf:RDF></metadata><g id="copper0">
+ <g id="copper1">
+  <g connectorname="1" id="connector0pin">
+   <circle fill="none" cx="1019" cy="3630" stroke="#ff9400" r="237.5" stroke-width="155"/>
+  </g>
+  <g connectorname="2" id="connector1pin">
+   <circle fill="none" cx="2019" cy="3630" stroke="#ff9400" r="237.5" stroke-width="155"/>
+  </g>
+  <g connectorname="3" id="connector2pin">
+   <circle fill="none" cx="3018" cy="3630" stroke="#ff9400" r="237.5" stroke-width="155"/>
+  </g>
+  <g connectorname="4" id="connector3pin">
+   <circle fill="none" cx="3018" cy="630" stroke="#ff9400" r="237.5" stroke-width="155"/>
+  </g>
+  <g connectorname="5" id="connector4pin">
+   <circle fill="none" cx="2019" cy="630" stroke="#ff9400" r="237.5" stroke-width="155"/>
+  </g>
+  <g connectorname="6" id="connector5pin">
+   <circle fill="none" cx="1019" cy="630" stroke="#ff9400" r="237.5" stroke-width="155"/>
+  </g>
+ </g>
+</g>
+<g id="silkscreen">
+ <line fill="none" stroke="white" y1="130" x1="3636" y2="130" stroke-width="60" x2="400"/>
+ <line fill="none" stroke="white" y1="4130" x1="400" y2="4130" stroke-width="60" x2="3636"/>
+ <line fill="none" stroke="white" y1="130" x1="400" y2="1130" stroke-width="60" x2="400"/>
+ <line fill="none" stroke="white" y1="4130" x1="400" y2="3130" stroke-width="60" x2="400"/>
+ <line fill="none" stroke="white" y1="1130" x1="400" y2="1130" stroke-width="60" x2="3636"/>
+ <line fill="none" stroke="white" y1="1130" x1="400" y2="1730" stroke-width="80" x2="400"/>
+ <line fill="none" stroke="white" y1="3130" x1="400" y2="3130" stroke-width="60" x2="3596"/>
+ <line fill="none" stroke="white" y1="3130" x1="400" y2="2530" stroke-width="60" x2="400"/>
+ <line fill="none" stroke="white" y1="130" x1="3636" y2="4130" stroke-width="50" x2="3636"/>
+ <path fill="none" stroke="white" stroke-width="30" d="M400,2530a400,400,0,1,0,0,-800"/>
+</g>
+</svg>

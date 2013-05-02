@@ -1,0 +1,146 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- Created with Fritzing (http://www.fritzing.org/) -->
+<svg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' version='1.2' baseProfile='tiny' x='0in' y='0in' width='2.50972in' height='1.71in' viewBox='0 0 63.7469 43.434' >
+<g id='schematic'>
+<line class='other' x1='20.4435' y1='0.127' x2='20.4435' y2='2.667' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<line class='other' x1='20.4435' y1='2.667' x2='20.4435' y2='15.367' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<line class='other' x1='20.4435' y1='15.367' x2='2.66347' y2='15.367' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<line class='other' x1='2.66347' y1='15.367' x2='2.66347' y2='2.667' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<line class='other' x1='2.66347' y1='2.667' x2='2.66347' y2='0.127' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<line class='other' x1='2.66347' y1='0.127' x2='20.4435' y2='0.127' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<line class='other' x1='2.66347' y1='2.667' x2='10.2835' y2='2.667' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<line class='other' x1='10.2835' y1='2.667' x2='12.8235' y2='5.207' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<line class='other' x1='12.8235' y1='2.667' x2='20.4435' y2='2.667' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<line class='other' x1='10.2835' y1='9.017' x2='10.2835' y2='10.287' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<line class='other' x1='10.2835' y1='10.287' x2='10.2835' y2='11.557' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<line class='other' x1='10.2835' y1='11.557' x2='11.5535' y2='10.287' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<line class='other' x1='11.5535' y1='10.287' x2='10.2835' y2='9.017' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<line class='other' x1='11.5535' y1='9.017' x2='11.5535' y2='10.287' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<line class='other' x1='11.5535' y1='10.287' x2='11.5535' y2='11.557' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<line class='other' x1='11.5535' y1='10.287' x2='12.8235' y2='10.287' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<line class='other' x1='10.2835' y1='10.287' x2='9.01347' y2='10.287' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<line class='pin' id='connector1pin' connectorname='-C1 GRN' x1='0.123472' y1='12.827' x2='2.66347' y2='12.827' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector1terminal' x='0.123472' y='12.827' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='1.39347' y='12.5801' text-anchor='middle'>2</text>
+<line class='pin' id='connector0pin' connectorname='-C1 BLU' x1='0.123472' y1='10.287' x2='2.66347' y2='10.287' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector0terminal' x='0.123472' y='10.287' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='1.39347' y='10.0401' text-anchor='middle'>1</text>
+<line class='pin' id='connector4pin' connectorname='-C1 GND' x1='22.9835' y1='10.287' x2='20.4435' y2='10.287' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector4terminal' x='22.9835' y='10.287' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='21.7135' y='10.0401' text-anchor='middle'>5</text>
+<line class='pin' id='connector2pin' connectorname='-C1 RED' x1='0.123472' y1='7.747' x2='2.66347' y2='7.747' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector2terminal' x='0.123472' y='7.747' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='1.39347' y='7.50006' text-anchor='middle'>3</text>
+<line class='pin' id='connector7pin' connectorname='-C1 SIG2' x1='22.9835' y1='2.667' x2='20.4435' y2='2.667' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector7terminal' x='22.9835' y='2.667' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='21.7135' y='2.42006' text-anchor='middle'>8</text>
+<line class='pin' id='connector3pin' connectorname='-C1 SIG1' x1='0.123472' y1='2.667' x2='2.66347' y2='2.667' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector3terminal' x='0.123472' y='2.667' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='1.39347' y='2.42006' text-anchor='middle'>4</text>
+<line class='other' x1='61.0835' y1='0.127' x2='61.0835' y2='2.667' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<line class='other' x1='61.0835' y1='2.667' x2='61.0835' y2='15.367' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<line class='other' x1='61.0835' y1='15.367' x2='43.3035' y2='15.367' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<line class='other' x1='43.3035' y1='15.367' x2='43.3035' y2='2.667' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<line class='other' x1='43.3035' y1='2.667' x2='43.3035' y2='0.127' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<line class='other' x1='43.3035' y1='0.127' x2='61.0835' y2='0.127' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<line class='other' x1='43.3035' y1='2.667' x2='50.9235' y2='2.667' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<line class='other' x1='50.9235' y1='2.667' x2='53.4635' y2='5.207' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<line class='other' x1='53.4635' y1='2.667' x2='61.0835' y2='2.667' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<line class='other' x1='50.9235' y1='9.017' x2='50.9235' y2='10.287' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<line class='other' x1='50.9235' y1='10.287' x2='50.9235' y2='11.557' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<line class='other' x1='50.9235' y1='11.557' x2='52.1935' y2='10.287' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<line class='other' x1='52.1935' y1='10.287' x2='50.9235' y2='9.017' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<line class='other' x1='52.1935' y1='9.017' x2='52.1935' y2='10.287' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<line class='other' x1='52.1935' y1='10.287' x2='52.1935' y2='11.557' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<line class='other' x1='52.1935' y1='10.287' x2='53.4635' y2='10.287' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<line class='other' x1='50.9235' y1='10.287' x2='49.6535' y2='10.287' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<line class='pin' id='connector9pin' connectorname='-C2 GRN' x1='40.7635' y1='12.827' x2='43.3035' y2='12.827' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector9terminal' x='40.7635' y='12.827' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='42.0335' y='12.5801' text-anchor='middle'>10</text>
+<line class='pin' id='connector5pin' connectorname='-C2 BLU' x1='40.7635' y1='10.287' x2='43.3035' y2='10.287' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector5terminal' x='40.7635' y='10.287' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='42.0335' y='10.0401' text-anchor='middle'>6</text>
+<line class='pin' id='connector8pin' connectorname='-C2 GND' x1='63.6235' y1='10.287' x2='61.0835' y2='10.287' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector8terminal' x='63.6235' y='10.287' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='62.3535' y='10.0401' text-anchor='middle'>9</text>
+<line class='pin' id='connector6pin' connectorname='-C2 RED' x1='40.7635' y1='7.747' x2='43.3035' y2='7.747' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector6terminal' x='40.7635' y='7.747' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='42.0335' y='7.50006' text-anchor='middle'>7</text>
+<line class='pin' id='connector15pin' connectorname='-C2 SIG2' x1='63.6235' y1='2.667' x2='61.0835' y2='2.667' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector15terminal' x='63.6235' y='2.667' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='62.3535' y='2.42006' text-anchor='middle'>16</text>
+<line class='pin' id='connector10pin' connectorname='-C2 SIG1' x1='40.7635' y1='2.667' x2='43.3035' y2='2.667' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector10terminal' x='40.7635' y='2.667' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='42.0335' y='2.42006' text-anchor='middle'>11</text>
+<line class='other' x1='20.4435' y1='28.067' x2='20.4435' y2='30.607' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<line class='other' x1='20.4435' y1='30.607' x2='20.4435' y2='43.307' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<line class='other' x1='20.4435' y1='43.307' x2='2.66347' y2='43.307' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<line class='other' x1='2.66347' y1='43.307' x2='2.66347' y2='30.607' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<line class='other' x1='2.66347' y1='30.607' x2='2.66347' y2='28.067' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<line class='other' x1='2.66347' y1='28.067' x2='20.4435' y2='28.067' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<line class='other' x1='2.66347' y1='30.607' x2='10.2835' y2='30.607' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<line class='other' x1='10.2835' y1='30.607' x2='12.8235' y2='33.147' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<line class='other' x1='12.8235' y1='30.607' x2='20.4435' y2='30.607' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<line class='other' x1='10.2835' y1='36.957' x2='10.2835' y2='38.227' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<line class='other' x1='10.2835' y1='38.227' x2='10.2835' y2='39.497' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<line class='other' x1='10.2835' y1='39.497' x2='11.5535' y2='38.227' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<line class='other' x1='11.5535' y1='38.227' x2='10.2835' y2='36.957' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<line class='other' x1='11.5535' y1='36.957' x2='11.5535' y2='38.227' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<line class='other' x1='11.5535' y1='38.227' x2='11.5535' y2='39.497' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<line class='other' x1='11.5535' y1='38.227' x2='12.8235' y2='38.227' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<line class='other' x1='10.2835' y1='38.227' x2='9.01347' y2='38.227' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<line class='pin' id='connector12pin' connectorname='-C3 GRN' x1='0.123472' y1='40.767' x2='2.66347' y2='40.767' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector12terminal' x='0.123472' y='40.767' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='1.39347' y='40.5201' text-anchor='middle'>13</text>
+<line class='pin' id='connector14pin' connectorname='-C3 BLU' x1='0.123472' y1='38.227' x2='2.66347' y2='38.227' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector14terminal' x='0.123472' y='38.227' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='1.39347' y='37.9801' text-anchor='middle'>15</text>
+<line class='pin' id='connector11pin' connectorname='-C3 GND' x1='22.9835' y1='38.227' x2='20.4435' y2='38.227' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector11terminal' x='22.9835' y='38.227' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='21.7135' y='37.9801' text-anchor='middle'>12</text>
+<line class='pin' id='connector13pin' connectorname='-C3 RED' x1='0.123472' y1='35.687' x2='2.66347' y2='35.687' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector13terminal' x='0.123472' y='35.687' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='1.39347' y='35.4401' text-anchor='middle'>14</text>
+<line class='pin' id='connector29pin' connectorname='-C3 SIG2' x1='22.9835' y1='30.607' x2='20.4435' y2='30.607' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector29terminal' x='22.9835' y='30.607' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='21.7135' y='30.3601' text-anchor='middle'>30</text>
+<line class='pin' id='connector24pin' connectorname='-C3 SIG1' x1='0.123472' y1='30.607' x2='2.66347' y2='30.607' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector24terminal' x='0.123472' y='30.607' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='1.39347' y='30.3601' text-anchor='middle'>25</text>
+<line class='other' x1='61.0835' y1='28.067' x2='61.0835' y2='30.607' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<line class='other' x1='61.0835' y1='30.607' x2='61.0835' y2='43.307' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<line class='other' x1='61.0835' y1='43.307' x2='43.3035' y2='43.307' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<line class='other' x1='43.3035' y1='43.307' x2='43.3035' y2='30.607' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<line class='other' x1='43.3035' y1='30.607' x2='43.3035' y2='28.067' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<line class='other' x1='43.3035' y1='28.067' x2='61.0835' y2='28.067' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<line class='other' x1='43.3035' y1='30.607' x2='50.9235' y2='30.607' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<line class='other' x1='50.9235' y1='30.607' x2='53.4635' y2='33.147' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<line class='other' x1='53.4635' y1='30.607' x2='61.0835' y2='30.607' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<line class='other' x1='50.9235' y1='36.957' x2='50.9235' y2='38.227' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<line class='other' x1='50.9235' y1='38.227' x2='50.9235' y2='39.497' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<line class='other' x1='50.9235' y1='39.497' x2='52.1935' y2='38.227' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<line class='other' x1='52.1935' y1='38.227' x2='50.9235' y2='36.957' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<line class='other' x1='52.1935' y1='36.957' x2='52.1935' y2='38.227' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<line class='other' x1='52.1935' y1='38.227' x2='52.1935' y2='39.497' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<line class='other' x1='52.1935' y1='38.227' x2='53.4635' y2='38.227' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<line class='other' x1='50.9235' y1='38.227' x2='49.6535' y2='38.227' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<line class='pin' id='connector18pin' connectorname='-C4 GRN' x1='40.7635' y1='40.767' x2='43.3035' y2='40.767' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector18terminal' x='40.7635' y='40.767' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='42.0335' y='40.5201' text-anchor='middle'>19</text>
+<line class='pin' id='connector17pin' connectorname='-C4 BLU' x1='40.7635' y1='38.227' x2='43.3035' y2='38.227' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector17terminal' x='40.7635' y='38.227' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='42.0335' y='37.9801' text-anchor='middle'>18</text>
+<line class='pin' id='connector19pin' connectorname='-C4 GND' x1='63.6235' y1='38.227' x2='61.0835' y2='38.227' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector19terminal' x='63.6235' y='38.227' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='62.3535' y='37.9801' text-anchor='middle'>20</text>
+<line class='pin' id='connector16pin' connectorname='-C4 RED' x1='40.7635' y1='35.687' x2='43.3035' y2='35.687' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector16terminal' x='40.7635' y='35.687' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='42.0335' y='35.4401' text-anchor='middle'>17</text>
+<line class='pin' id='connector35pin' connectorname='-C4 SIG2' x1='63.6235' y1='30.607' x2='61.0835' y2='30.607' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector35terminal' x='63.6235' y='30.607' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='62.3535' y='30.3601' text-anchor='middle'>36</text>
+<line class='pin' id='connector31pin' connectorname='-C4 SIG1' x1='40.7635' y1='30.607' x2='43.3035' y2='30.607' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector31terminal' x='40.7635' y='30.607' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='42.0335' y='30.3601' text-anchor='middle'>32</text>
+</g>
+</svg>

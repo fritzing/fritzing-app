@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+<svg xmlns="http://www.w3.org/2000/svg" width="0.754167in" xml:space="preserve" xmlns:xml="http://www.w3.org/XML/1998/namespace" x="0px" version="1.1" y="0px" height="1.24722in" viewBox="0 0 54.3 89.8" id="Layer_1" enable-background="new 0 0 54.3 89.8">
+ <g id="schematic">
+ <rect width="2" x="26.65" y="78.65" fill="none" height="10" id="connector0pin"/>
+ <rect width="2" x="26.65" y="1.15" fill="none" height="10" id="connector1pin"/>
+ <rect width="2" x="26.65" y="86.65" fill="none" height="2" id="connector0terminal"/>
+ <rect width="2" x="26.65" y="1.15" fill="none" height="2" id="connector1terminal"/>
+  <g id="text">
+   <g xmlns="http://www.w3.org/2000/svg">
+    <path d="M19.31,52.617h1.114v6.597H19.31V52.617z"/>
+   </g>
+   <g xmlns="http://www.w3.org/2000/svg">
+    <path d="M19.333,32.185h-2.34v-1.211h2.34v-2.195H20.4v2.195h2.326v1.211H20.4v2.207h-1.066L19.333,32.185L19.333,32.185z"/>
+   </g>
+  </g>
+  <g id="diagram">
+   <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="1.15" stroke-width="2.3" x1="27.65" y2="38.788" x2="27.65"/>
+   <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="47.286" stroke-width="2.3" x1="27.65" y2="88.65" x2="27.65"/>
+   <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="38.788" stroke-width="2.3" x1="53.15" y2="38.788" x2="1.15"/>
+   <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="47.286" stroke-width="2.3" x1="41.817" y2="47.286" x2="12.483"/>
+   <path fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="2.3" d="M12.483,47.286"/>
+   <path fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="2.3" d="M41.817,47.286"/>
+  </g>
+ </g>
+</svg>

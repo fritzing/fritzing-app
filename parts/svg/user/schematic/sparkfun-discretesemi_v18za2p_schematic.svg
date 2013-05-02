@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- Created with Fritzing (http://www.fritzing.org/) -->
+<svg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' version='1.2' baseProfile='tiny' x='0in' y='0in' width='0.809722in' height='0.41in' viewBox='0 0 20.5669 10.414' >
+<g id='schematic'>
+<line class='other' x1='5.20347' y1='2.667' x2='15.3635' y2='7.747' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<line class='other' x1='15.3635' y1='7.747' x2='15.3635' y2='2.667' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<line class='other' x1='15.3635' y1='2.667' x2='5.20347' y2='7.747' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<line class='other' x1='5.20347' y1='7.747' x2='5.20347' y2='2.667' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<line class='other' x1='12.8235' y1='0.127' x2='10.2835' y2='2.667' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<line class='other' x1='10.2835' y1='2.667' x2='10.2835' y2='7.747' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<line class='other' x1='10.2835' y1='7.747' x2='7.74347' y2='10.287' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<line class='pin' id='connector0pin' connectorname='P$1' x1='0.123472' y1='5.207' x2='5.20347' y2='5.207' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector0terminal' x='0.123472' y='5.207' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='2.66347' y='4.96006' text-anchor='middle'>1</text>
+<line class='pin' id='connector1pin' connectorname='P$2' x1='20.4435' y1='5.207' x2='15.3635' y2='5.207' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector1terminal' x='20.4435' y='5.207' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='17.9035' y='4.96006' text-anchor='middle'>2</text>
+</g>
+</svg>

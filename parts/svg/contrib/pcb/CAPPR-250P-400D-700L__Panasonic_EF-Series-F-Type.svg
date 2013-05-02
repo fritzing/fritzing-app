@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?> <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" x="0in" y="0in" width="0.22295in" height="0.16748in" viewBox="0 0 22295 16748" ><title>CAPPR-250P-400D-700L__Panasonic_EF-Series-F-Type.fp</title><desc>Geda footprint file 'CAPPR-250P-400D-700L__Panasonic_EF-Series-F-Type.fp' converted by Fritzing</desc><metadata xmlns:fz='http://fritzing.org/gedametadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'><rdf:RDF><rdf:Description rdf:about=''><fz:attr name='geda filename'>CAPPR-250P-400D-700L__Panasonic_EF-Series-F-Type.fp</fz:attr>
+<fz:attr name='fritzing version'>0.4.0b.06.21.4282</fz:attr>
+<fz:attr name='conversion date'>27/06/2010 07:14:37</fz:attr>
+<fz:attr name='dist-license'>GPL</fz:attr>
+<fz:attr name='use-license'>unlimited</fz:attr>
+<fz:attr name='author'>gEDA project</fz:attr>
+<fz:attr name='license-url'>http://www.gnu.org/licenses/gpl.html</fz:attr>
+</rdf:Description></rdf:RDF></metadata><g id="copper0">
+ <g id="copper1">
+  <circle fill="none" cx="9000" cy="8374" connectorname="" stroke="#ff9400" r="2375" id="connector0pin" stroke-width="1250"/>
+  <circle fill="none" cx="18842" cy="8374" connectorname="" stroke="#ff9400" r="2375" id="connector1pin" stroke-width="1250"/>
+ </g>
+</g>
+<g id="silkscreen">
+ <path fill="none" stroke="white" stroke-width="1000" d="M7393.16,12777.1a7874,7874,0,0,0,12898,225.136"/>
+ <path fill="none" stroke="white" stroke-width="1000" d="M20448.8,3970.92a7874,7874,0,0,0,-12898,-225.136"/>
+ <line fill="none" stroke="white" y1="8374" x1="4500" y2="8374" stroke-width="1000" x2="500"/>
+ <line fill="none" stroke="white" y1="10374" x1="2500" y2="6374" stroke-width="1000" x2="2500"/>
+</g>
+</svg>

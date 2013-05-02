@@ -1,0 +1,146 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module fritzingVersion='0.5.2b.02.18.4756' moduleId='Si470x-Eval-v11'>
+<version>4</version>
+<date>2011-07-08</date>
+<author>SparkFun</author>
+<description>&lt;p&gt;
+	&lt;strong&gt;Description:&lt;/strong&gt; This is a breakout board for the Silicon Laboratories Si4703 FM tuner chip. Beyond being a simple FM radio, the Si4703 is also capable of detecting and processing both Radio Data Service (RDS) and Radio Broadcast Data Service (RBDS) information. The Si4703 even does a very good job of filtering and carrier detection. It also enables data such as the station ID and song name to be displayed to the user.&lt;/p&gt;
+&lt;p&gt;
+	Using this board we are able to pick up multiple stations just as well as with a standard FM radio. The board breaks out all major pins and makes it easy to incorporate this great chip into your next radio project. Also, by plugging headphones into the 3.5mm audio jack, you effectively use the cable in your headphones as an antenna! Therefore, this board does not require an external antenna if using headphones or a 3.5mm audio cable longer than 3 feet.&lt;/p&gt;
+&lt;p&gt;
+	&lt;strong&gt;Documents:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;
+		&lt;a href=&quot;http://www.sparkfun.com/datasheets/BreakoutBoards/Si470x-Eval-v11.pdf&quot; target=&quot;_blank&quot;&gt;Schematic&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a href=&quot;http://www.sparkfun.com/datasheets/BreakoutBoards/Si470x-Eval-v11.zip&quot; target=&quot;_blank&quot;&gt;Eagle Files&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a href=&quot;http://www.sparkfun.com/datasheets/BreakoutBoards/Si4702-03-C19-1.pdf&quot;&gt;Datasheet&lt;/a&gt; (Si4703)&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a href=&quot;http://www.sparkfun.com/datasheets/BreakoutBoards/tpa6111a2.pdf&quot; target=&quot;_blank&quot;&gt;Datasheet&lt;/a&gt; (TPA6111A2)&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a href=&quot;http://www.sparkfun.com/datasheets/BreakoutBoards/Si4703_Example.pde&quot; target=&quot;_blank&quot;&gt;Arduino Example Code&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a href=&quot;http://dlnmh9ip6v2uc.cloudfront.net/datasheets/BreakoutBoards/AN230_0.61.pdf&quot; target=&quot;_blank&quot;&gt;Programming Guide&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;
+	&lt;strong&gt;Replaces:&lt;/strong&gt; &lt;a href=&quot;http://www.sparkfun.com/products/8972&quot; target=&quot;_blank&quot;&gt;WRL-08972&lt;/a&gt;&lt;/p&gt;</description>
+<title>Digital FM Radio Receiver</title>
+<url>http://www.sparkfun.com/products/10344</url>
+<tags>
+<tag>FM</tag>
+<tag>Radio</tag>
+<tag>Receiver</tag>
+</tags>
+<properties>
+<property name='family'>Radio Breakout</property>
+</properties>
+<views>
+<breadboardView>
+<layers image='breadboard/Si470x-Eval-v11_breadboard.svg'>
+<layer layerId='breadboard'/>
+</layers>
+</breadboardView>
+<schematicView>
+<layers image='schematic/Si470x-Eval-v11_schematic.svg'>
+<layer layerId='schematic'/>
+</layers>
+</schematicView>
+<pcbView>
+<layers image='pcb/Si470x-Eval-v11_pcb.svg'>
+<layer layerId='copper1'/>
+<layer layerId='silkscreen'/>
+<layer layerId='copper0'/>
+</layers>
+</pcbView>
+<iconView>
+<layers image='breadboard/Si470x-Eval-v11_breadboard.svg'>
+<layer layerId='icon'/>
+</layers>
+</iconView>
+</views>
+<connectors>
+<connector id='connector22' type='male' name='GPIO2'>
+<description>GPIO2</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector22pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector22pin' terminalId='connector22terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector22pad'/><p layer='copper1' svgId='connector22pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector23' type='male' name='GPIO1'>
+<description>GPIO1</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector23pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector23pin' terminalId='connector23terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector23pad'/><p layer='copper1' svgId='connector23pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector24' type='male' name='!RST'>
+<description>!RST</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector24pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector24pin' terminalId='connector24terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector24pad'/><p layer='copper1' svgId='connector24pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector25' type='male' name='!SEN'>
+<description>!SEN</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector25pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector25pin' terminalId='connector25terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector25pad'/><p layer='copper1' svgId='connector25pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector26' type='male' name='SCLK'>
+<description>SCLK</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector26pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector26pin' terminalId='connector26terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector26pad'/><p layer='copper1' svgId='connector26pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector27' type='male' name='SDIO'>
+<description>SDIO</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector27pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector27pin' terminalId='connector27terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector27pad'/><p layer='copper1' svgId='connector27pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector28' type='male' name='GND'>
+<description>GND</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector28pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector28pin' terminalId='connector28terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector28pad'/><p layer='copper1' svgId='connector28pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector29' type='male' name='3.3V'>
+<description>3.3V</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector29pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector29pin' terminalId='connector29terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector29pad'/><p layer='copper1' svgId='connector29pad'/></pcbView>
+</views>
+</connector>
+</connectors>
+<buses>
+</buses>
+</module>

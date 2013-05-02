@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+<svg xmlns="http://www.w3.org/2000/svg" width="0.805556in" xml:space="preserve" xmlns:xml="http://www.w3.org/XML/1998/namespace" x="0px" version="1.1" y="0px" height="1.11111in" viewBox="0 0 58 80" id="Ebene_1" enable-background="new 0 0 58 80">
+ <g id="copper0">
+  <g id="copper1">
+   <circle  fill="none" cx="6.745" cy="14.098" stroke="#F7BD13" id="connector1pin" r="2.052" stroke-width="1.224"/>
+   <rect  width="4.104" x="4.693" y="12.045" fill="none" height="4.104" stroke="#F7BD13" stroke-width="1.224"/>
+   <circle  fill="none" cx="6.745" cy="21.297" stroke="#F7BD13" id="connector2pin" r="2.052" stroke-width="1.224"/>
+   <circle  fill="none" cx="6.745" cy="28.498" stroke="#F7BD13" id="connector3pin" r="2.052" stroke-width="1.224"/>
+   <circle  fill="none" cx="6.745" cy="35.697" stroke="#F7BD13" id="connector4pin" r="2.052" stroke-width="1.224"/>
+   <circle  fill="none" cx="6.748" cy="42.817" stroke="#F7BD13" id="connector5pin" r="2.052" stroke-width="1.224"/>
+   <circle  fill="none" cx="49.93" cy="35.669" stroke="#F7BD13" id="connector13pin" r="2.052" stroke-width="1.224"/>
+   <circle  fill="none" cx="49.93" cy="42.87" stroke="#F7BD13" id="connector12pin" r="2.052" stroke-width="1.224"/>
+   <circle  fill="none" cx="49.93" cy="50.069" stroke="#F7BD13" id="connector11pin" r="2.052" stroke-width="1.224"/>
+   <circle  fill="none" cx="49.934" cy="57.189" stroke="#F7BD13" id="connector10pin" r="2.052" stroke-width="1.224"/>
+   <circle  fill="none" cx="49.96" cy="28.445" stroke="#F7BD13" id="connector14pin" r="2.052" stroke-width="1.224"/>
+   <circle  fill="none" cx="6.744" cy="50.058" stroke="#F7BD13" r="2.052" stroke-width="1.224"/>
+   <circle  fill="none" cx="49.947" cy="14.058" stroke="#F7BD13" id="connector16pin" r="2.052" stroke-width="1.224"/>
+   <circle  fill="none" cx="49.93" cy="64.457" stroke="#F7BD13" id="connector9pin" r="2.052" stroke-width="1.224"/>
+  </g>
+ </g>
+ <g  id="silkscreen">
+  <path  fill="none" stroke="#FFFFFF" stroke-width="0.7087" d="M56.443,0.25v78.02H0.25V0.25H56.443 M56.693,0H0v78.52h56.693V0L56.693,0z"/>
+ </g>
+</svg>

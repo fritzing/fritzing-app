@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  --><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'><svg enable-background="new 0 0 23 44" height="0.611111in" id="Ebene_1" version="1.1" viewBox="0 0 23 44" width="0.319444in" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xml="http://www.w3.org/XML/1998/namespace" y="0px">
+<g id="silkscreen">
+	<line fill="none" id="_103312832_1_" stroke="#FFFFFF" stroke-width="1" x1="0.132" x2="0.132" y1="0.132" y2="42.936"/>
+	<line fill="none" id="_103312760_1_" stroke="#FFFFFF" stroke-width="1" x1="0.132" x2="21.958" y1="42.936" y2="42.936"/>
+	<line fill="none" id="_103311800_1_" stroke="#FFFFFF" stroke-width="1" x1="21.958" x2="21.958" y1="42.936" y2="0.132"/>
+	<line fill="none" id="_103311824_1_" stroke="#FFFFFF" stroke-width="1" x1="0.132" x2="8.316" y1="0.132" y2="0.132"/>
+	<line fill="none" id="_103311968_1_" stroke="#FFFFFF" stroke-width="1" x1="13.771" x2="21.958" y1="0.132" y2="0.132"/>
+</g>
+<g id="copper0">
+	<g id="copper1">
+		<circle cx="13.029" cy="32.333" fill="none" id="connector11pad" r="2.16" stroke="#F7BD13" stroke-width="1"/>
+		<circle cx="13.029" cy="25.134" fill="none" id="connector10pad" r="2.16" stroke="#F7BD13" stroke-width="1"/>
+		<circle cx="13.029" cy="17.934" fill="none" id="connector9pad" r="2.16" stroke="#F7BD13" stroke-width="1"/>
+		<circle cx="13.029" cy="10.734" fill="none" id="connector8pad" r="2.16" stroke="#F7BD13" stroke-width="1"/>
+	</g>
+</g>
+</svg>

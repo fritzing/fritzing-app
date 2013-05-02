@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- Generator: Adobe Illustrator 13.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 14948)  -->
+<svg xmlns="http://www.w3.org/2000/svg" width="2.15376in" xml:space="preserve" xmlns:xml="http://www.w3.org/XML/1998/namespace" x="0px" version="1.2" y="0px" height="1.99628in" viewBox="0 0 155.071 143.732" baseProfile="tiny" id="Layer_1">
+ <desc xmlns="http://www.w3.org/2000/svg">Fritzing footprint SVG</desc>
+ <g xmlns="http://www.w3.org/2000/svg" id="silkscreen">
+  <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#FFFFFF" y1="0.79" stroke-width="2" x1="1.004" y2="142.522" x2="1.004"/>
+  <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#FFFFFF" y1="142.522" stroke-width="2" x1="1.004" y2="142.522" x2="154.076"/>
+  <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#FFFFFF" y1="142.522" stroke-width="2" x1="154.076" y2="0.79" x2="154.076"/>
+  <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#FFFFFF" y1="0.79" stroke-width="2" x1="154.076" y2="0.79" x2="1.004"/>
+  <rect xmlns="http://www.w3.org/2000/svg" width="7.2" x="5.75" y="51.19" fill="none" height="7.2" stroke="#FFFFFF" stroke-width="2"/>
+  <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#FFFFFF" y1="18.81" stroke-width="2" x1="17.1" y2="18.81" x2="24.35"/>
+  <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#FFFFFF" y1="15.185" stroke-width="2" x1="20.725" y2="22.435" x2="20.725"/>
+ </g>
+ <g xmlns="http://www.w3.org/2000/svg" id="copper1">
+  <g xmlns="http://www.w3.org/2000/svg" id="copper0">
+   <rect xmlns="http://www.w3.org/2000/svg" width="3.96" x="7.37" y="52.81" fill="none" height="3.96" stroke="#FFBF00" stroke-width="1.6"/>
+   <circle xmlns="http://www.w3.org/2000/svg" fill="none" cx="9.35" cy="18.81" stroke="#FFBF00" id="connector1pin" r="1.98" stroke-width="1.6"/>
+   <circle xmlns="http://www.w3.org/2000/svg" fill="none" cx="9.35" cy="54.81" stroke="#FFBF00" id="connector0pin" r="1.98" stroke-width="1.6"/>
+  </g>
+ </g>
+ <g xmlns="http://www.w3.org/2000/svg" id="keepout"/>
+ <g xmlns="http://www.w3.org/2000/svg" id="soldermask"/>
+ <g xmlns="http://www.w3.org/2000/svg" id="outline"/>
+</svg>

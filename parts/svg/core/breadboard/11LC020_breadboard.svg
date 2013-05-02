@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg xmlns="http://www.w3.org/2000/svg" width="0.40000001in" xml:space="preserve" xmlns:xml="http://www.w3.org/XML/1998/namespace" version="1.2" height="0.33000001in" viewBox="0 0 40 33" id="svg2">
+ <defs  id="defs3460">
+  <inkscape:perspective xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" id="perspective2900"/>
+  <inkscape:perspective xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" id="perspective3464"/>
+ </defs>
+ <g  id="breadboard">
+  <rect  width="40" x="0" y="3" height="27" style="fill:#303030" id="middle"/>
+  <rect  width="40" x="0" y="3" height="2.46" style="fill:#3d3d3d" id="top"/>
+  <rect  width="40" x="0" y="27.540001" height="2.46" style="fill:#000000" id="bottom"/>
+  <polygon  points="39.25,5.46 39.25,27.54 40,30 40,3 " style="fill:#141414" id="right"/>
+  <polygon  points="0.75,5.46 0.75,27.54 0,30 0,3 " style="fill:#1f1f1f" id="left"/>
+  <polygon  points="0.75,11.46 0.56,13.58 0.56,16.5 5,16.5 5,11.5 " style="fill:#1c1c1c" id="left-upper-rect"/>
+  <polygon  points="5,21.55 5,16.5 0.56,16.5 0.56,19.42 0.75,21.55 " style="fill:#383838" id="left-lower-rect"/>
+  <path  style="fill:#262626" id="slot" d="m 0.56,13.58 v 5.83 c 1.47,-0.17 2.62,-1.4 2.62,-2.92 0,-1.52 -1.14,-2.74 -2.62,-2.91 z"/>
+  <path  style="fill:#303030" id="cover" d="m 0.75,5.46 v 5.99 c 2.38,0.45 4.19,2.53 4.19,5.04 0,2.51 -1.8,4.6 -4.19,5.05 v 0.01 h 5 V 5.46 h -5 z"/>
+  <circle  cx="6.5" cy="23.469999" style="fill:#212121" r="2.0599999" id="circle3423"/>
+  <g style="font-size:8px;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#e6e6e6;stroke:none;font-family:OCRA" id="label">
+   <text x="5.3135319" y="23.34194">020</text>
+  </g>
+  <rect  width="3" x="3.5" y="28.66" height="4.3400002" style="fill:#8c8c8c" id="connector0pin"/>
+  <rect  width="3" x="3.5" y="30" height="3" style="fill:#8c8c8c" id="connector0terminal"/>
+  <polygon  points="3.5,30.66 6.5,30.66 8.5,29.74 8.5,28.66 3.5,28.66 " style="fill:#8c8c8c" id="polygon3428"/>
+  <rect  width="3" x="3.5" y="0" height="4.3400002" style="fill:#8c8c8c" id="connector7pin"/>
+  <rect  width="3" x="3.5" y="0" height="3" style="fill:#8c8c8c" id="connector7terminal"/>
+  <polygon  points="8.5,3.26 6.5,2.34 3.5,2.34 3.5,4.34 8.5,4.34 " style="fill:#8c8c8c" id="polygon3432"/>
+  <rect  width="3" x="33.5" y="28.66" height="4.3400002" style="fill:#8c8c8c" id="connector3pin"/>
+  <rect  width="3" x="33.5" y="30" height="3" style="fill:#8c8c8c" id="connector3terminal"/>
+  <polygon  points="31.5,29.74 33.5,30.66 36.5,30.66 36.5,28.66 31.5,28.66 " style="fill:#8c8c8c" id="polygon3436"/>
+  <rect  width="3" x="33.5" y="0" height="4.3400002" style="fill:#8c8c8c" id="connector4pin"/>
+  <rect  width="3" x="33.5" y="0" height="3" style="fill:#8c8c8c" id="connector4terminal"/>
+  <polygon  points="36.5,2.34 33.5,2.34 31.5,3.26 31.5,4.34 36.5,4.34 " style="fill:#8c8c8c" id="polygon3440"/>
+  <rect  width="3" x="13.5" y="28.66" height="4.3400002" style="fill:#8c8c8c" id="connector1pin"/>
+  <rect  width="3" x="13.5" y="30" height="3" style="fill:#8c8c8c" id="connector1terminal"/>
+  <polygon  points="11.5,29.74 13.5,30.66 16.5,30.66 18.5,29.74 18.5,28.66 11.5,28.66 " style="fill:#8c8c8c" id="polygon3444"/>
+  <rect  width="3" x="13.5" y="0" height="4.3400002" style="fill:#8c8c8c" id="connector6pin"/>
+  <rect  width="3" x="13.5" y="0" height="3" style="fill:#8c8c8c" id="connector6terminal"/>
+  <polygon  points="18.5,3.26 16.5,2.34 13.5,2.34 11.5,3.26 11.5,4.34 18.5,4.34 " style="fill:#8c8c8c" id="polygon3448"/>
+  <rect  width="3" x="23.5" y="28.66" height="4.3400002" style="fill:#8c8c8c" id="connector2pin"/>
+  <rect  width="3" x="23.5" y="30" height="3" style="fill:#8c8c8c" id="connector2terminal"/>
+  <polygon  points="21.5,29.74 23.5,30.66 26.5,30.66 28.5,29.74 28.5,28.66 21.5,28.66 " style="fill:#8c8c8c" id="polygon3452"/>
+  <rect  width="3" x="23.5" y="0" height="4.3400002" style="fill:#8c8c8c" id="connector5pin"/>
+  <rect  width="3" x="23.5" y="0" height="3" style="fill:#8c8c8c" id="connector5terminal"/>
+  <polygon  points="28.5,3.26 26.5,2.34 23.5,2.34 21.5,3.26 21.5,4.34 28.5,4.34 " style="fill:#8c8c8c" id="polygon3456"/>
+  <g style="font-size:8px;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#e6e6e6;stroke:none;font-family:OCRA" id="label-1">
+   <text x="5.2038975" y="14.680809">11LC</text>
+  </g>
+ </g>
+</svg>

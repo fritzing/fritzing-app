@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module fritzingVersion="0.3.14b.12.23.3905" moduleId="cb9c6041c0b15c9c1a63560527d7693a">
+    <author>nvillar</author>
+    <title>Peppermill Power Board</title>
+    <label>Peppermill Power Board</label>
+    <date>2010-02-05</date>
+    <tags>
+        <tag>power supply</tag>
+        <tag>power harvesting</tag>
+        <tag>human-generated power</tag>
+    </tags>
+    <properties>
+        <property name="max input voltage">24 V</property>
+        <property name="family"></property>
+        <property name="max output current">100 mA</property>
+        <property name="url">http://research.microsoft.com/peppermill</property>
+    </properties>
+    <description>The Peppermill Power Board (PPB) lets you turn a geared DC motor into a human-powered device.  It also doubles as a sensor that provides information about the direction and rate of turn. 
+
+HOW TO USE
+
+Attach the terminals of a geared DC motor to the grey connector.  Use the white switch to select the maximum operating voltage for your target circuit (2.5, 3.3 or 5.0 Volts), and connect the PPB to your target circuit using the header pins. The pins labelled V+ and GND provide a regulated power supply, and pins Speed and Direction can be connected to analog inputs on a microcontroller. 
+
+The PPB has a built-in PIC microcontroller and an array of LEDs to provide instant feedback about the direction and rate of turn. To use this feature, set the black switch to CAL (Calibrate). Give the motor a quick turn, until you see the LEDs light up briefly. Set the switch to RUN, and when you turn the motor the LEDs should light up in a sequence that matches the direction and rate of turn. </description>
+    <views>
+        <iconView>
+            <layers image="icon/Peppermill_Power_Board__d66eefd2b869d709.svg">
+                <layer layerId="icon"/>
+            </layers>
+        </iconView>
+        <pcbView>
+            <layers image="pcb/Peppermill_Power_Board__a40e6dc7c979bcff.svg">
+                <layer layerId="copper0"/>
+                <layer layerId="unknown"/>
+            </layers>
+        </pcbView>
+        <breadboardView>
+            <layers image="breadboard/Peppermill_Power_Board__a40e6dc7c979bcff.svg">
+                <layer layerId="breadboard"/>
+            </layers>
+        </breadboardView>
+        <schematicView>
+            <layers image="schematic/Peppermill_Power_Board__a40e6dc7c979bcff.svg">
+                <layer layerId="schematic"/>
+            </layers>
+        </schematicView>
+    </views>
+    <connectors>
+        <connector id="connector3" type="male" name="GPIO">
+            <description>Onboard PIC general-purpose IO</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector3"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector3"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector3"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector4" type="male" name="Ground">
+            <description>Supply Ground</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector4"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector4"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector4"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector5" type="male" name="VPP">
+            <description>Onboard PIC programming pin (Programming Voltage)</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector5"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector5"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector5"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector6" type="male" name="PGC">
+            <description>Onboard PIC programming pin (Clock)</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector6"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector6"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector6"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector7" type="male" name="PGD">
+            <description>Onboard PIC programming pin (Data)</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector7"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector7"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector7"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector8" type="male" name="motor +">
+            <description>+ connection for motor</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector8"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector8"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector8"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector9" type="male" name="motor-">
+            <description>- connection for motor</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector9"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector9"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector9"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector0" type="male" name="V+">
+            <description>Regulated positive supply voltage</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector0"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector0"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector0"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector1" type="male" name="Direction">
+            <description>Direction (Analog Output)</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector1"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector1"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector1"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector2" type="male" name="Speed">
+            <description>Speed (Analog Output)</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector2"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector2"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector2"/>
+                </pcbView>
+            </views>
+        </connector>
+    </connectors>
+</module>

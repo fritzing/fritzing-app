@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- Created with Fritzing (http://www.fritzing.org/) -->
+<svg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' version='1.2' baseProfile='tiny' x='0in' y='0in' width='0.262in' height='0.171in' viewBox='0 0 6.6548 4.3434' >
+<g id='copper1'>
+<circle id='connector0pad' connectorname='P$1' cx='1.3335' cy='2.1717' r='0.8001' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle id='connector1pad' connectorname='P$2' cx='5.3213' cy='2.1717' r='0.8001' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<rect id='connector2pad' connectorname='P$3' x='0' y='0' width='6.6548' height='4.3434' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<g id='copper0'>
+<circle id='connector0pad' connectorname='P$1' cx='1.3335' cy='2.1717' r='0.8001' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle id='connector1pad' connectorname='P$2' cx='5.3213' cy='2.1717' r='0.8001' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+</g>
+</g>
+<g id='silkscreen'>
+</g>
+</svg>

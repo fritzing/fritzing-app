@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?> <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" x="0in" y="0in" width="0.272in" height="0.21in" viewBox="0 0 27200 21000" ><title>TO92.fp</title><desc>Geda footprint file 'TO92.fp' converted by Fritzing</desc><metadata xmlns:fz='http://fritzing.org/gedametadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'><rdf:RDF><rdf:Description rdf:about=''><fz:attr name='geda filename'>TO92.fp</fz:attr>
+<fz:attr name='fritzing version'>0.4.0b.06.21.4282</fz:attr>
+<fz:attr name='conversion date'>27/06/2010 07:16:38</fz:attr>
+<fz:comment>The JEDEC drawing shows a pin diameter of 16-21 mils</fz:comment>
+<fz:comment>_______</fz:comment>
+<fz:comment>TO92:  | 1 2 3 |   &lt;-- bottom view</fz:comment>
+<fz:comment>\_____/</fz:comment>
+<fz:comment>The pin to pin spacing is 100 mils.</fz:comment>
+<fz:attr name='dist-license'>GPL</fz:attr>
+<fz:attr name='use-license'>unlimited</fz:attr>
+<fz:attr name='author'>gEDA project</fz:attr>
+<fz:attr name='license-url'>http://www.gnu.org/licenses/gpl.html</fz:attr>
+</rdf:Description></rdf:RDF></metadata><g id="copper0">
+ <g id="copper1">
+  <circle fill="none" cx="23600" cy="10500" connectorname="1" stroke="#ff9400" r="2850" id="connector0pin" stroke-width="1500"/>
+  <circle fill="none" cx="13600" cy="10500" connectorname="2" stroke="#ff9400" r="2850" id="connector1pin" stroke-width="1500"/>
+  <circle fill="none" cx="3600" cy="10500" connectorname="3" stroke="#ff9400" r="2850" id="connector2pin" stroke-width="1500"/>
+ </g>
+</g>
+<g id="silkscreen">
+ <path fill="none" stroke="white" stroke-width="1000" d="M6528.93,3428.9a10000,10000,0,1,0,14142.1,0"/>
+ <line fill="none" stroke="white" y1="3500" x1="6600" y2="3500" stroke-width="1000" x2="20600"/>
+</g>
+</svg>

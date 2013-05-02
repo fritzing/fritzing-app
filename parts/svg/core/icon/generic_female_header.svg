@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1 Basic//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-basic.dtd">
+<svg version="1.1" baseProfile="basic" id="svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+	 x="0px" y="0px" width="32px" height="32px" viewBox="0 0 32 32" xml:space="preserve">
+<g id="icon">
+	<rect id="connector7pin" x="12.718" y="12.714" width="6.57" height="6.572"/>
+	<rect x="7.496" y="7.496" fill="#404040" width="17.008" height="17.008"/>
+	<rect x="12.718" y="12.714" width="6.57" height="6.572"/>
+	<polygon fill="#2A2A29" points="10.295,10.293 12.713,12.714 19.288,12.714 21.707,10.293 	"/>
+	<polygon fill="#474747" points="21.707,10.293 19.288,12.721 19.288,19.291 21.707,21.707 	"/>
+	<polygon fill="#595959" points="21.707,21.707 19.286,19.291 12.713,19.291 10.295,21.707 	"/>
+	<polygon fill="#373737" points="10.291,21.707 12.713,19.286 12.713,12.714 10.291,10.293 	"/>
+</g>
+</svg>

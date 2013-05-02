@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" x="0in" y="0in" width="0.469439in" height="0.469439in" viewBox="0 0 4694.39 4694.39" >
+<title>SparkFun.mod</title>
+<desc>Kicad module 'SparkFun-MQ-3' from file 'SparkFun.mod' converted by Fritzing</desc>
+<metadata xmlns:fz='http://fritzing.org/kicadmetadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+<rdf:RDF><rdf:Description rdf:about=''>
+<fz:attr name='kicad filename'>SparkFun.mod</fz:attr>
+<fz:attr name='kicad module'>SparkFun-MQ-3</fz:attr>
+<fz:attr name='fritzing version'>0.4.1b.07.04.4318</fz:attr>
+<fz:attr name='conversion date'>17/07/2010 17:16:29</fz:attr>
+<fz:attr name='dist-license'>GPL</fz:attr>
+<fz:attr name='use-license'>unlimited</fz:attr>
+<fz:attr name='author'>KICAD project</fz:attr>
+<fz:attr name='license-url'>http://www.gnu.org/licenses/gpl.html</fz:attr>
+<fz:comment>MQ-3 IN CONFIGURATION B</fz:comment>
+<fz:attr name='keyword'>MQ-3</fz:attr>
+<fz:attr name='keyword'>IN</fz:attr>
+<fz:attr name='keyword'>CONFIGURATION</fz:attr>
+<fz:attr name='keyword'>B</fz:attr>
+</rdf:Description></rdf:RDF></metadata><g id="copper0">
+ <g id="copper1">
+  <g connectorname="A1" id="connector0pin">
+   <circle fill="none" cx="1029.2" cy="1029.2" stroke="#ff9400" r="250" stroke-width="100"/>
+  </g>
+  <g connectorname="A2" id="connector1pin">
+   <circle fill="none" cx="1029.2" cy="3665.2" stroke="#ff9400" r="250" stroke-width="100"/>
+  </g>
+  <g connectorname="B1" id="connector2pin">
+   <circle fill="none" cx="3665.2" cy="1029.2" stroke="#ff9400" r="250" stroke-width="100"/>
+  </g>
+  <g connectorname="B2" id="connector3pin">
+   <circle fill="none" cx="3665.2" cy="3665.2" stroke="#ff9400" r="250" stroke-width="100"/>
+  </g>
+  <g connectorname="HA" id="connector4pin">
+   <circle fill="none" cx="477.195" cy="2347.2" stroke="#ff9400" r="250" stroke-width="100"/>
+  </g>
+  <g connectorname="HB" id="connector5pin">
+   <circle fill="none" cx="4217.2" cy="2347.2" stroke="#ff9400" r="250" stroke-width="100"/>
+  </g>
+ </g>
+</g>
+<g id="silkscreen">
+ <circle fill="none" cx="2347.2" cy="2347.2" stroke="white" r="2337.7" stroke-width="19"/>
+ <circle fill="none" cx="2347.2" cy="2347.2" stroke="white" r="417.193" stroke-width="50"/>
+ <line fill="none" stroke="white" y1="2347.2" x1="1757.2" y2="2347.2" stroke-width="50" x2="2937.2"/>
+ <line fill="none" stroke="white" y1="2937.2" x1="2347.2" y2="1757.2" stroke-width="50" x2="2347.2"/>
+</g>
+</svg>

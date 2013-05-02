@@ -1,0 +1,36 @@
+Drill Station Info File: /home/steriana/pydevel/GerbMerge/testdata/proj1.dri
+
+ Date              :  8/20/2005 14:34:35 
+ Drills            : generated
+ Device            : Excellon drill station
+
+Parameter settings:
+
+ Tolerance Drill + : 10.00 %
+ Tolerance Drill - :  2.00 %
+ Rotate            : no
+ Mirror            : no
+ Optimize          : yes
+ Auto fit          : yes
+ OffsetX           : 0inch
+ OffsetY           : 0inch
+ Layers            : Drills Holes
+
+Drill File Info:
+
+ Data Mode         : Absolute
+ Units             : 1/10000 Inch
+
+Drills used:
+
+ Code  Size       used
+
+ T01   0.0240inch     3
+ T02   0.0400inch     2
+ T03   0.0520inch     4
+
+Total number of drills: 9
+
+Plotfiles:
+
+ /home/steriana/pydevel/GerbMerge/testdata/proj1.xln

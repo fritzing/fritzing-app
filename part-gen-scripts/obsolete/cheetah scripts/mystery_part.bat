@@ -1,0 +1,23 @@
+cd "C:\Users\jonathan\fritzing2\part-gen-scripts\cheetah scripts"
+C:\Python26\python.exe partomatic.py -c .\configs\mystery_part_cfg.cfg -t .\templates\mystery_part.cfg -o .\deleteme\config
+C:\Python26\python.exe partomatic.py -c .\deleteme\config\mystery_part_fzp.cfg -t .\templates\mystery_part.fzp -o .\deleteme\fzp
+C:\Python26\python.exe partomatic.py -c .\deleteme\config\mystery_part_bread_svg.cfg -t .\templates\mystery_part_bread.svg -o .\deleteme\bread
+C:\Python26\python.exe partomatic.py -c .\deleteme\config\mystery_part_schem_svg.cfg -t .\templates\mystery_part_schem.svg -o .\deleteme\schem
+C:\Python26\python.exe partomatic.py -c .\deleteme\config\mystery_part_100_fzp.cfg -t .\templates\mystery_part.fzp -o .\deleteme\fzp
+C:\Python26\python.exe partomatic.py -c .\deleteme\config\mystery_part_200_fzp.cfg -t .\templates\mystery_part.fzp -o .\deleteme\fzp
+C:\Python26\python.exe partomatic.py -c .\deleteme\config\mystery_part_300_fzp.cfg -t .\templates\mystery_part.fzp -o .\deleteme\fzp
+C:\Python26\python.exe partomatic.py -c .\deleteme\config\mystery_part_400_fzp.cfg -t .\templates\mystery_part.fzp -o .\deleteme\fzp
+C:\Python26\python.exe partomatic.py -c .\deleteme\config\mystery_part_500_fzp.cfg -t .\templates\mystery_part.fzp -o .\deleteme\fzp
+C:\Python26\python.exe partomatic.py -c .\deleteme\config\mystery_part_600_fzp.cfg -t .\templates\mystery_part.fzp -o .\deleteme\fzp
+C:\Python26\python.exe partomatic.py -c .\deleteme\config\mystery_part_700_fzp.cfg -t .\templates\mystery_part.fzp -o .\deleteme\fzp
+C:\Python26\python.exe partomatic.py -c .\deleteme\config\mystery_part_800_fzp.cfg -t .\templates\mystery_part.fzp -o .\deleteme\fzp
+C:\Python26\python.exe partomatic.py -c .\deleteme\config\mystery_part_900_fzp.cfg -t .\templates\mystery_part.fzp -o .\deleteme\fzp
+C:\Python26\python.exe partomatic.py -c .\deleteme\config\mystery_part_bread_100_svg.cfg -t .\templates\mystery_part_dual_bread.svg -o .\deleteme\bread
+C:\Python26\python.exe partomatic.py -c .\deleteme\config\mystery_part_bread_200_svg.cfg -t .\templates\mystery_part_dual_bread.svg -o .\deleteme\bread
+C:\Python26\python.exe partomatic.py -c .\deleteme\config\mystery_part_bread_300_svg.cfg -t .\templates\mystery_part_dual_bread.svg -o .\deleteme\bread
+C:\Python26\python.exe partomatic.py -c .\deleteme\config\mystery_part_bread_400_svg.cfg -t .\templates\mystery_part_dual_bread.svg -o .\deleteme\bread
+C:\Python26\python.exe partomatic.py -c .\deleteme\config\mystery_part_bread_500_svg.cfg -t .\templates\mystery_part_dual_bread.svg -o .\deleteme\bread
+C:\Python26\python.exe partomatic.py -c .\deleteme\config\mystery_part_bread_600_svg.cfg -t .\templates\mystery_part_dual_bread.svg -o .\deleteme\bread
+C:\Python26\python.exe partomatic.py -c .\deleteme\config\mystery_part_bread_700_svg.cfg -t .\templates\mystery_part_dual_bread.svg -o .\deleteme\bread
+C:\Python26\python.exe partomatic.py -c .\deleteme\config\mystery_part_bread_800_svg.cfg -t .\templates\mystery_part_dual_bread.svg -o .\deleteme\bread
+C:\Python26\python.exe partomatic.py -c .\deleteme\config\mystery_part_bread_900_svg.cfg -t .\templates\mystery_part_dual_bread.svg -o .\deleteme\bread

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Generator: Adobe Illustrator 13.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 14948)  --><svg baseProfile="tiny" height="0.41in" id="svg2" inkscape:output_extension="org.inkscape.output.svg.inkscape" inkscape:version="0.46" sodipodi:docname="basic_relay.svg" sodipodi:version="0.32" version="1.2" viewBox="0 0 58.813 36.48" width="0.65in" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg" y="0px"><metadata id="metadata41"><rdf:RDF><cc:Work rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/></cc:Work></rdf:RDF></metadata><defs id="defs39"><inkscape:perspective id="perspective43" inkscape:persp3d-origin="29.249998 : 12.300001 : 1" inkscape:vp_x="0 : 18.450001 : 1" inkscape:vp_y="0 : 1000 : 0" inkscape:vp_z="58.499996 : 18.450001 : 1" sodipodi:type="inkscape:persp3d"/></defs><sodipodi:namedview bordercolor="#666666" borderopacity="1.0" gridtolerance="10.0" guidetolerance="10.0" id="base" inkscape:current-layer="breadboard_2_" inkscape:cx="35.979603" inkscape:cy="18.450001" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:window-height="815" inkscape:window-width="1056" inkscape:window-x="0" inkscape:window-y="22" inkscape:zoom="9.2820519" objecttolerance="10.0" pagecolor="#ffffff" showgrid="false"/>
+
+
+<g id="breadboard" transform="translate(25.567978,2.8630951)">
+	<path d="M 32.521,33.559 L -23.979,33.559 L -25.221867,32.035821 L -23.979,-2.191 L 31.215133,-3.6671786 L 32.521,-2.191 L 32.521,33.559 z" id="polygon4" sodipodi:nodetypes="ccccccc" style="" transform="translate(0.1694095,0.4401881)"/>
+	<rect height="35.75" id="rect6" style="fill:#1a1a1a" width="56.5" x="-25.037245" y="-3.1576223"/>
+	<line id="line8" style="fill:none;stroke:#f1f1f1;stroke-width:1;stroke-opacity:1" x1="29.071066" x2="29.071066" y1="0.29231122" y2="30.667311"/>
+	<line id="line10" style="fill:none;stroke:#f1f1f1;stroke-width:1;stroke-opacity:1" x1="-10.928934" x2="-10.928934" y1="0.45931125" y2="7.7923112"/>
+	<line id="line12" style="fill:none;stroke:#f1f1f1;stroke-width:1;stroke-opacity:1" x1="-10.928934" x2="-10.928934" y1="23.542311" y2="30.87631"/>
+	<circle cx="-10.687" cy="14.434" id="circle14" r="1.8329999" stroke-width="1" style="fill:none;stroke:#f1f1f1;stroke-opacity:1" transform="translate(-0.3249337,0.1083112)"/>
+	<line id="line16" style="fill:none;stroke:#f1f1f1;stroke-width:1;stroke-opacity:1" x1="-9.4289341" x2="28.821066" y1="14.542312" y2="14.542312"/>
+	<line id="line18" style="fill:none;stroke:#f1f1f1;stroke-width:1;stroke-opacity:1" x1="-12.344934" x2="-21.094934" y1="13.126311" y2="4.3763113"/>
+	<circle cx="-20.635" cy="0.212" id="circle20" r="1.25" style="fill:#b3b3b3" transform="translate(-0.3249337,0.1083112)"/>
+	<circle cx="-10.552" cy="0.212" id="circle22" r="1.25" style="fill:#b3b3b3" transform="translate(-0.3249337,0.1083112)"/>
+	<circle cx="-20.635" cy="30.532" id="circle24" r="1.25" style="fill:#b3b3b3" transform="translate(-0.3249337,0.1083112)"/>
+	<circle cx="-10.552" cy="30.532" id="circle26" r="1.25" style="fill:#b3b3b3" transform="translate(-0.3249337,0.1083112)"/>
+	<circle cx="29.437" cy="0.212" id="circle28" r="1.25" style="fill:#b3b3b3" transform="translate(-0.3249337,0.1083112)"/>
+	<circle cx="29.437" cy="30.532" id="circle30" r="1.25" style="fill:#b3b3b3" transform="translate(-0.3249337,0.1083112)"/>
+</g>
+<circle cx="9.6459999" cy="6.73" id="connector0pin" r="1.25" style="fill:#666666" transform="translate(-5.090628,-3.5742708)"/>
+<circle cx="19.73" cy="6.73" id="connector1pin" r="1.25" style="fill:#666666" transform="translate(-5.090628,-3.5742708)"/>
+<circle cx="9.6459999" cy="37.049999" id="connector3pin" r="1.25" style="fill:#666666" transform="translate(-5.090628,-3.5742708)"/>
+<circle cx="19.73" cy="37.049999" id="connector4pin" r="1.25" style="fill:#666666" transform="translate(-5.090628,-3.5742708)"/>
+<circle cx="59.719002" cy="6.73" id="connector2pin" r="1.25" style="fill:#666666" transform="translate(-5.090628,-3.5742708)"/>
+<circle cx="59.719002" cy="37.049999" id="connector5pin" r="1.25" style="fill:#666666" transform="translate(-5.090628,-3.5742708)"/>
+</svg>

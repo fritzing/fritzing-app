@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module moduleId="GroundModuleID" >
+ <version>4</version>
+ <author>Brendan Howell</author>
+ <title>Ground</title>
+ <date>2008-07-28</date>
+ <label>Ground</label>
+ <tags>
+   <tag>ground</tag>
+   <tag>symbol</tag>
+   <tag>fritzing core</tag>
+ </tags>
+ <properties>
+   <property name="family">ground symbol</property>
+ </properties>
+ <taxonomy>discreteParts.ground.ground.ground</taxonomy>
+ <description>A generic ground symbol</description>
+ <views>
+  <defaultUnits>cmil</defaultUnits>
+  <iconView>
+   <layers image="icon/ground.svg" >
+    <layer layerId="icon" />
+   </layers>
+  </iconView>
+  <breadboardView>
+   <layers image="schematic/ground.svg" >
+    <layer layerId="schematic" />
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="schematic/ground.svg" >
+     <layer layerId="schematic" />
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="schematic/ground.svg" >
+    <layer layerId="schematic" />
+   </layers>
+  </pcbView>
+ </views>
+ <connectors>
+  <connector type="male" id="connector0" name="GND" >
+   <description>ground</description>
+   <erc etype="ground">
+    <current flow="sink" valueMax="0.1" />
+   </erc>
+   <views>
+    <breadboardView>
+     <p svgId="connector0pin" layer="schematic" />
+    </breadboardView>
+    <schematicView>
+      <p svgId="connector0pin" layer="schematic" terminalId="connector0terminal" />
+    </schematicView>
+    <pcbView>
+     <p svgId="connector0pin" layer="schematic" />
+    </pcbView>
+   </views>
+  </connector>
+ </connectors>
+ <buses>
+   <bus id="groundbus" >
+     <nodeMember connectorId="connector0" />
+   </bus>
+ </buses>
+</module>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 13.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 14948)  -->
+<svg version="1.2" baseProfile="tiny" id="svg2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+	 x="0px" y="0px" width="0.826in" height="0.378in" viewBox="0 0 74.34 34.02" xml:space="preserve">
+	
+<g id="schematic">
+	<rect id="connector0pin" x="63.448" y="0.13" width="10" height="2"/>
+	<rect id="connector1pin" x="63.448" y="32.131" width="10" height="2"/>
+	<rect id="connector2pin" x="0.731" y="0.134" width="10" height="2"/>
+	<rect id="connector3pin" x="0.731" y="32.135" width="10" height="2"/>
+	
+	<rect id="connector0terminal" x="73.34" y="0.663" width="0.684" height="0.866"/>
+	<rect id="connector1terminal" x="73.34" y="32.664" width="0.684" height="0.866"/>
+	<rect id="connector2terminal" x="0.221" y="0.666" width="0.688" height="0.866"/>
+	<rect id="connector3terminal" x="0.221" y="32.666" width="0.688" height="0.866"/>
+
+<path fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" d="M7.131,17.116"/>
+	<path fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" d="M25.034,17.116"/>
+	<polyline fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="73.298,1.116 
+		60.241,1.116 60.241,33.116 73.298,33.116 	"/>
+	<line fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" x1="49.241" y1="17.116" x2="60.241" y2="17.116"/>
+	<polyline fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="0.978,33.116 
+		14.034,33.116 14.034,1.116 0.978,1.116 	"/>
+	<polyline fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" points="47.745,7.538 25.034,17.116 
+		14.034,17.116 	"/>
+</g>
+</svg>

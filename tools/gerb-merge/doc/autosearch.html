@@ -1,0 +1,150 @@
+<HTML>
+<HEAD>
+  <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+  <TITLE>GerbMerge -- A Gerber-file merging program -- Automatic Placement</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff" LINK="#0000c0" VLINK="#8f008f">
+
+<!-- -->
+
+<P><FONT SIZE="+2">GerbMerge -- Automatic Placement</FONT></P>
+
+<BLOCKQUOTE>
+  <P><A HREF="http://claymore.engineer.gvsu.edu/~steriana"><FONT
+   SIZE="-1">Andrew Sterian</FONT></A><FONT SIZE="-1"><BR>
+  Padnos College of Engineering and Computing<BR>
+  Grand Valley State University</FONT></P>
+</BLOCKQUOTE>
+
+<P><HR ALIGN=LEFT><TABLE WIDTH="100%" BORDER="0" CELLSPACING="2"
+CELLPADDING="0">
+  <TR>
+    <TD><A HREF="index.html">Top-Level</A> | <A HREF="cfgfile.html">The Configuration File</A> | <A HREF="layoutfile.html">The Layout File</A> | Automatic Placement</TD>
+  </TR>
+  <TR>
+    <TD>&nbsp;</TD>
+  </TR>
+  <TR>
+    <TD>
+    <FONT SIZE="-1"><A HREF="#Overview">Introduction</A> | <A HREF="#Random">Randomized Search</A> | 
+    <A HREF="#Exhaustive">Exhaustive Search</A> | <A HREF="#Repeats">Multiple Instances</A> | <A HREF="#Usage">Usage Notes</A></TD>
+  </TR>
+</TABLE><HR ALIGN=LEFT></P>
+
+<A NAME="Overview"><H2>Introduction</H2></A>
+
+As an alternative to manual placement, either using the <A HREF="layoutfile.html">layout file</A>
+approach or using the <TT>--place-file</TT> command-line option, GerbMerge can automatically
+try to find the best arrangement of jobs on a panel that minimizes the total panel area.
+Using automatic placement can save you time since you don't have to construct and experiment
+with a layout file. The tradeoff, however, is that automatic placement may take a long time
+to execute, and for panels with many, small jobs, the run time may be prohibitive. On the
+other hand, experience suggests that good results can be obtained in just a few minutes,
+even when GerbMerge is not allowed to search all possibilities.
+
+<A NAME="Random"><H2>Randomized Search</H2></A>
+
+<H3>The Basics</H3>
+The randomized search approach has GerbMerge repeatedly place jobs randomly on a panel, possibly
+rotated. After each placement, GerbMerge evaluates the total area of the panel, and if
+it's less than the smallest area encountered so far, the placement is memorized as the
+best so far.
+<P>This may not sound like a very efficient approach but experience shows that it can
+lead to nearly-optimal results fairly quickly. The reason is that although there can
+be a huge number of possible placements for a given set of jobs, many of them are
+equivalent with respect to total panel area.
+<P>The randomized search approach is the default automatic placement method. It is
+invoked simply by not specifying any layout file:
+<PRE><CENTER>gerbmerge file.cfg</CENTER></PRE>
+<P>The <A HREF="cfgfile.html">configuration file</A> must still be specified, of course.
+After GerbMerge starts, you may press Ctrl-C at any
+time to stop the process. In fact, you must press Ctrl-C at some point as GerbMerge
+will try random placements forever.
+<P>The best layout found when Ctrl-C is pressed will be used for panelization.
+Note that the layout is also saved in the file specified by the
+<TT>Placement</TT> assignment in the <TT>[MergeOutputFiles]</TT> section of the
+<A HREF="cfgfile.html">configuration file</A>. Thus, if you want to experiment,
+you can run different trials, save the best placements from each, then use the
+best one by using the saved placement file as the input to
+GerbMerge with the <TT>--place-file</TT> option.
+
+<H3>Random+Exhaustive</H3>
+The default operation of GerbMerge is to actually perform a hybrid search,
+using both random search and exhaustive search. By default, GerbMerge will take
+a list of N jobs and randomly place N-2 of them (randomly chosen). Then,
+GerbMerge will exhaustively try to place the remaining 2 jobs on the panel to
+minimize the area. This approach has been found to improve panel usage at minimal
+cost since an exhaustive search of only 2 jobs is very quick.
+<P>You can change the number of jobs to exhaustively search for a given random
+placement with the <TT>--rs-fsjobs</TT> command-line option. For example,
+<PRE><CENTER>gerbmerge --rs-fsjobs=2 file.cfg</CENTER></PRE>
+The above example is the default behavior, i.e., exhaustively place 2 jobs and
+randomly place N-2 jobs. By using a number higher than 2, there is less randomness
+but fewer starting placements are tested per second.
+
+<A NAME="Exhaustive"><H2>Exhaustive Search</H2></A>
+
+The exhaustive search approach has GerbMerge try all possible placements for a given
+set of jobs, one by one. This sounds like it may be an exponentially long approach,
+and it is. For anything other than a few boards (less than 5 or so), exhaustive search
+is prohibitive.
+<P>The exhaustive search mode is invoked as follows:
+<PRE><CENTER>gerbmerge --full-search file.cfg</CENTER></PRE>
+You can stop the search at any time by pressing Ctrl-C. The best placement found so far
+will be used for panelization and saved in the placement file specified by the <TT>Placement</TT> value in the
+<TT>[MergeOutputFiles]</TT> section of the <A HREF="cfgfile.html">configuration file</A>.
+
+<A NAME="Repeats"><H2>Multiple Instances</H2></A>
+There is no need to repeat sections of a job in the configuration file if you want
+a job to appear multiple times on a panel. You can use the <TT>Repeat=N</TT> configuration
+option to indicate that a particular job is to have N copies on a panel. For example:
+<PRE>  [irtx]
+  Prefix=%(projdir)s/IRTransmitter/irtx
+  *TopLayer=%(prefix)s.cmp
+  *BottomLayer=%(prefix)s.sol
+  Drills=%(prefix)s.xln
+  BoardOutline=%(prefix)s.bor
+  *SolderMaskTop=%(prefix)s.stc
+  *SolderMaskBottom=%(prefix)s.sts
+  <B>Repeat=5</B>
+</PRE>
+This job specifies all the layers as usual, then the last line indicates that 5
+such jobs are to appear on the final panel. They may appear in various positions
+and states of rotation, however.
+
+<A NAME="Usage"><H2>Usage Notes</H2></A>
+
+<H3>Area Estimates</H3>
+GerbMerge will estimate and display the maximum possible panel usage as a percentage.
+This estimate is frequently too high, as GerbMerge simply takes the area of each
+job, adds in the area required by inter-job spacing, then adds all of these areas
+together. The amount of that area that is used by actual jobs (and not inter-job
+spacing) represents the best possible area usage. This usage will clearly not be
+achieved unless all jobs magically fit together perfectly.
+<P>In summary, it is pointless to wait for a random search for hours to hit
+an estimated area utilization of 91% because, unless the dimensions of all
+boards line up just so, that utilization is not achievable.
+<H3>Panel Width and Height</H3>
+Note that the <TT>PanelWidth</TT> and <TT>PanelHeight</TT> options in the
+<A HREF="cfgfile.html">configuration file</A> constrain the search process. GerbMerge will not allow
+any placement, either by random search or exhaustive search, to exceed the
+panel dimensions. You can, therefore, guide the search process by choosing a
+panel size that is not too large, thus preventing highly-unlikely placements
+(think all jobs in one row) from being considered.
+<P>Similarly, by choosing panels that are slightly wider than taller, or vice
+versa, different placements can be considered and may lead to different
+results. Consider these two configuration file options as a source of
+experimentation.
+<H3>Time vs. Money</H3>
+How long should you wait for the best possible area utilization? It depends...
+how much is your time worth?
+<P>If you've achieved 85% utilization for a 30 sq. in. board, what will you
+save by waiting and hoping for 90% (i.e., 28.3 sq. in.)? Assuming 64 cents/sq. in. 
+(<A HREF="http://www.barebonespcb.com">BareBonesPCB.com</A> cost), you will save $1.09.
+<HR ALIGN=LEFT>
+
+<P><CENTER><FONT SIZE="-1">&COPY; 2004-2008, Copyright by <A HREF="http://claymore.engineer.gvsu.edu/~steriana">Andrew
+Sterian</A>; All Rights Reserved. mailto: <A HREF="mailto:steriana@claymore.engineer.gvsu.edu?subject=GerbMerge">steriana@claymore.engineer.gvsu.edu</A></FONT></CENTER>
+
+</BODY>
+</HTML>

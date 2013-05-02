@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" x="0in" y="0in" width="0.1968in" height="0.0944in" viewBox="0 0 1968 944" >
+<title>SparkFun.mod</title>
+<desc>Kicad module 'SparkFun-EIA3216' from file 'SparkFun.mod' converted by Fritzing</desc>
+<metadata xmlns:fz='http://fritzing.org/kicadmetadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+<rdf:RDF><rdf:Description rdf:about=''>
+<fz:attr name='kicad filename'>SparkFun.mod</fz:attr>
+<fz:attr name='kicad module'>SparkFun-EIA3216</fz:attr>
+<fz:attr name='fritzing version'>0.4.1b.07.04.4318</fz:attr>
+<fz:attr name='conversion date'>17/07/2010 17:15:34</fz:attr>
+<fz:attr name='dist-license'>GPL</fz:attr>
+<fz:attr name='use-license'>unlimited</fz:attr>
+<fz:attr name='author'>KICAD project</fz:attr>
+<fz:attr name='license-url'>http://www.gnu.org/licenses/gpl.html</fz:attr>
+<fz:comment></fz:comment>
+<fz:attr name='keyword'></fz:attr>
+</rdf:Description></rdf:RDF></metadata><g id="copper1">
+ <rect width="629" x="1220.5" y="196.5" fill="#ffbf00" connectorname="A" height="551" id="connector0pad" stroke-width="0"/>
+ <rect width="629" x="118.5" y="196.5" fill="#ffbf00" connectorname="C" height="551" id="connector1pad" stroke-width="0"/>
+</g>
+<g id="silkscreen">
+ <line fill="none" stroke="white" y1="944" x1="591" y2="944" stroke-width="80" x2="0"/>
+ <line fill="none" stroke="white" y1="944" x1="0" y2="0" stroke-width="80" x2="0"/>
+ <line fill="none" stroke="white" y1="0" x1="0" y2="0" stroke-width="80" x2="591"/>
+ <line fill="none" stroke="white" y1="944" x1="1377" y2="944" stroke-width="80" x2="1810"/>
+ <line fill="none" stroke="white" y1="944" x1="1810" y2="786" stroke-width="80" x2="1968"/>
+ <line fill="none" stroke="white" y1="786" x1="1968" y2="158" stroke-width="80" x2="1968"/>
+ <line fill="none" stroke="white" y1="158" x1="1968" y2="0" stroke-width="80" x2="1810"/>
+ <line fill="none" stroke="white" y1="0" x1="1810" y2="0" stroke-width="80" x2="1377"/>
+</g>
+</svg>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="32"
+   height="32"
+   id="svg2524"
+   version="1.0">
+  <rect
+     id="rect2383_2_"
+     x="-0.027729571"
+     y="-0.027728498"
+     width="32.055458"
+     height="32.055458"
+     style="fill:#86a28c;stroke:#568b53;stroke-width:1.94454086;stroke-miterlimit:4;stroke-dasharray:none" />
+  <rect
+     id="rect2385_1_"
+     x="4.3999424"
+     y="5.0320516"
+     width="6.703598"
+     height="7.3346906"
+     style="fill:#f5c930;stroke:#f5c930;stroke-width:1.00173306" />
+  <path
+     id="path3157_1_"
+     d="M 24.78621,22.233799 C 24.78621,24.133081 23.24855,25.671752 21.348269,25.671752 C 19.449985,25.671752 17.910317,24.134091 17.910317,22.233799 C 17.910317,20.335515 19.449985,18.795847 21.348269,18.795847 C 23.24855,18.795847 24.78621,20.335515 24.78621,22.233799 z"
+     style="fill:none;stroke:#f5c930;stroke-width:2.7639823" />
+  <path
+     id="path3159_1_"
+     d="M 7.6876329,9.0800383 L 7.8148461,15.276761 L 17.679914,21.223053"
+     style="fill:none;stroke:#f5c930;stroke-width:2.00346613" />
+  <path
+     id="path3161_1_"
+     d="M 21.475483,18.945107 L 21.600698,9.4597016 L 28.75926,3.6668771 L 28.769109,0.96718148"
+     style="fill:none;stroke:#f5c930;stroke-width:2.00346613" />
+</svg>

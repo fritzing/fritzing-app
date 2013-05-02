@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?> <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" x="0in" y="0in" width="0.417in" height="0.392in" viewBox="0 0 41700 39200" ><title>ADC12138CIMSA.fp</title><desc>Geda footprint file 'ADC12138CIMSA.fp' converted by Fritzing</desc><metadata xmlns:fz='http://fritzing.org/gedametadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'><rdf:RDF><rdf:Description rdf:about=''><fz:attr name='geda filename'>ADC12138CIMSA.fp</fz:attr>
+<fz:attr name='fritzing version'>0.4.0b.06.21.4282</fz:attr>
+<fz:attr name='conversion date'>27/06/2010 07:13:31</fz:attr>
+<fz:attr name='dist-license'>GPL</fz:attr>
+<fz:attr name='use-license'>unlimited</fz:attr>
+<fz:attr name='author'>gEDA project</fz:attr>
+<fz:attr name='license-url'>http://www.gnu.org/licenses/gpl.html</fz:attr>
+</rdf:Description></rdf:RDF></metadata><g id="copper1">
+ <line fill="none" connectorname="CH0" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector0pad" y1="38600" x1="4200" y2="32600" stroke-width="1200" x2="4200"/>
+ <line fill="none" connectorname="CH1" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector1pad" y1="38600" x1="6800" y2="32600" stroke-width="1200" x2="6800"/>
+ <line fill="none" connectorname="CH2" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector2pad" y1="38600" x1="9300" y2="32600" stroke-width="1200" x2="9300"/>
+ <line fill="none" connectorname="CH3" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector3pad" y1="38600" x1="11900" y2="32600" stroke-width="1200" x2="11900"/>
+ <line fill="none" connectorname="CH4" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector4pad" y1="38600" x1="14400" y2="32600" stroke-width="1200" x2="14400"/>
+ <line fill="none" connectorname="CH5" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector5pad" y1="38600" x1="17000" y2="32600" stroke-width="1200" x2="17000"/>
+ <line fill="none" connectorname="CH6" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector6pad" y1="38600" x1="19600" y2="32600" stroke-width="1200" x2="19600"/>
+ <line fill="none" connectorname="CH7" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector7pad" y1="38600" x1="22100" y2="32600" stroke-width="1200" x2="22100"/>
+ <line fill="none" connectorname="COM" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector8pad" y1="38600" x1="24700" y2="32600" stroke-width="1200" x2="24700"/>
+ <line fill="none" connectorname="MuOut1" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector9pad" y1="38600" x1="27200" y2="32600" stroke-width="1200" x2="27200"/>
+ <line fill="none" connectorname="A/Din1" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector10pad" y1="38600" x1="29800" y2="32600" stroke-width="1200" x2="29800"/>
+ <line fill="none" connectorname="MuxOut2" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector11pad" y1="38600" x1="32300" y2="32600" stroke-width="1200" x2="32300"/>
+ <line fill="none" connectorname="A/Din2" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector12pad" y1="38600" x1="34900" y2="32600" stroke-width="1200" x2="34900"/>
+ <line fill="none" connectorname="DGND" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector13pad" y1="38600" x1="37500" y2="32600" stroke-width="1200" x2="37500"/>
+ <line fill="none" connectorname="VA+" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector14pad" y1="600" x1="37500" y2="6600" stroke-width="1200" x2="37500"/>
+ <line fill="none" connectorname="Vref-" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector15pad" y1="600" x1="34900" y2="6600" stroke-width="1200" x2="34900"/>
+ <line fill="none" connectorname="Vref+" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector16pad" y1="600" x1="32300" y2="6600" stroke-width="1200" x2="32300"/>
+ <line fill="none" connectorname="AGND" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector17pad" y1="600" x1="29800" y2="6600" stroke-width="1200" x2="29800"/>
+ <line fill="none" connectorname="PD" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector18pad" y1="600" x1="27200" y2="6600" stroke-width="1200" x2="27200"/>
+ <line fill="none" connectorname="EOC" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector19pad" y1="600" x1="24700" y2="6600" stroke-width="1200" x2="24700"/>
+ <line fill="none" connectorname="~CONV" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector20pad" y1="600" x1="22100" y2="6600" stroke-width="1200" x2="22100"/>
+ <line fill="none" connectorname="~CS" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector21pad" y1="600" x1="19600" y2="6600" stroke-width="1200" x2="19600"/>
+ <line fill="none" connectorname="DO" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector22pad" y1="600" x1="17000" y2="6600" stroke-width="1200" x2="17000"/>
+ <line fill="none" connectorname="DI" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector23pad" y1="600" x1="14400" y2="6600" stroke-width="1200" x2="14400"/>
+ <line fill="none" connectorname="SCLK" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector24pad" y1="600" x1="11900" y2="6600" stroke-width="1200" x2="11900"/>
+ <line fill="none" connectorname="CCLK" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector25pad" y1="600" x1="9300" y2="6600" stroke-width="1200" x2="9300"/>
+ <line fill="none" connectorname="~DOR" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector26pad" y1="600" x1="6800" y2="6600" stroke-width="1200" x2="6800"/>
+ <line fill="none" connectorname="VD+" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector27pad" y1="600" x1="4200" y2="6600" stroke-width="1200" x2="4200"/>
+</g>
+<g id="silkscreen">
+ <line fill="none" stroke="white" y1="28600" x1="4200" y2="28600" stroke-width="3000" x2="4200"/>
+ <line fill="none" stroke="white" y1="30200" x1="3000" y2="30200" stroke-width="1000" x2="500"/>
+ <line fill="none" stroke="white" y1="30200" x1="500" y2="9000" stroke-width="1000" x2="500"/>
+ <line fill="none" stroke="white" y1="9000" x1="500" y2="9000" stroke-width="1000" x2="3000"/>
+ <line fill="none" stroke="white" y1="30200" x1="38500" y2="30200" stroke-width="1000" x2="41200"/>
+ <line fill="none" stroke="white" y1="30200" x1="41200" y2="9000" stroke-width="1000" x2="41200"/>
+ <line fill="none" stroke="white" y1="9000" x1="41200" y2="9000" stroke-width="1000" x2="38500"/>
+</g>
+</svg>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="svg" xmlns:xml="http://www.w3.org/XML/1998/namespace"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="43.281px"
+	 height="79.221px" viewBox="0 0 43.281 79.221" enable-background="new 0 0 43.281 79.221" xml:space="preserve">
+<g id="schematic">
+	<rect id="connector0pin" x="0" y="6.861" fill="none" width="3.391" height="0.678"/>
+	<rect id="connector0terminal" x="0" y="6.861" fill="none" width="0.68" height="0.678"/>
+	<rect id="connector1pin" x="0" y="14.061" fill="none" width="3.391" height="0.677"/>
+	<rect id="connector1terminal" x="0" y="14.061" fill="none" width="0.68" height="0.677"/>
+	<rect id="connector2pin" x="0" y="21.261" fill="none" width="3.391" height="0.676"/>
+	<rect id="connector2terminal" x="0" y="21.261" fill="none" width="0.679" height="0.676"/>
+	<rect id="connector3pin" x="0" y="28.471" fill="none" width="3.391" height="0.677"/>
+	<rect id="connector3terminal" x="0" y="28.471" fill="none" width="0.68" height="0.677"/>
+	<rect id="connector4pin" x="0" y="35.672" fill="none" width="3.391" height="0.677"/>
+	<rect id="connector4terminal" x="0" y="35.672" fill="none" width="0.68" height="0.677"/>
+	<rect id="connector5pin" x="0" y="42.847" fill="none" width="3.391" height="0.679"/>
+	<rect id="connector5terminal" x="0" y="42.847" fill="none" width="0.679" height="0.679"/>
+	<rect id="connector6pin" x="0" y="50.047" fill="none" width="3.391" height="0.679"/>
+	<rect id="connector6terminal" x="0" y="50.047" fill="none" width="0.679" height="0.679"/>
+	<rect id="connector7pin" x="0" y="57.248" fill="none" width="3.391" height="0.68"/>
+	<rect id="connector7terminal" x="0" y="57.248" fill="none" width="0.679" height="0.68"/>
+	<rect id="connector8pin" x="0" y="64.458" fill="none" width="3.391" height="0.679"/>
+	<rect id="connector8terminal" x="0" y="64.458" fill="none" width="0.679" height="0.679"/>
+	<rect id="connector9pin" x="39.891" y="64.442" fill="none" width="3.392" height="0.677"/>
+	<rect id="connector9terminal" x="42.604" y="64.442" fill="none" width="0.679" height="0.677"/>
+	<rect id="connector10pin" x="39.891" y="57.241" fill="none" width="3.392" height="0.677"/>
+	<rect id="connector10terminal" x="42.604" y="57.241" fill="none" width="0.679" height="0.677"/>
+	<rect id="connector11pin" x="21.292" y="75.836" fill="none" width="0.679" height="3.385"/>
+	<rect id="connector11terminal" x="21.292" y="78.544" fill="none" width="0.679" height="0.677"/>
+	<rect id="connector12pin" x="39.891" y="50.041" fill="none" width="3.392" height="0.677"/>
+	<rect id="connector12terminal" x="42.604" y="50.041" fill="none" width="0.679" height="0.677"/>
+	<rect id="connector13pin" x="39.891" y="42.854" fill="none" width="3.392" height="0.676"/>
+	<rect id="connector13terminal" x="42.604" y="42.854" fill="none" width="0.679" height="0.676"/>
+	<rect id="connector14pin" x="39.891" y="35.654" fill="none" width="3.392" height="0.679"/>
+	<rect id="connector14terminal" x="42.604" y="35.654" fill="none" width="0.679" height="0.679"/>
+	<rect id="connector15pin" x="39.891" y="28.455" fill="none" width="3.392" height="0.677"/>
+	<rect id="connector15terminal" x="42.604" y="28.455" fill="none" width="0.679" height="0.677"/>
+	<rect id="connector16pin" x="39.891" y="21.254" fill="none" width="3.392" height="0.679"/>
+	<rect id="connector16terminal" x="42.604" y="21.254" fill="none" width="0.679" height="0.679"/>
+	<rect id="connector17pin" x="39.891" y="14.061" fill="none" width="3.392" height="0.677"/>
+	<rect id="connector17terminal" x="42.604" y="14.061" fill="none" width="0.679" height="0.677"/>
+	<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.9" points="7.215,0 36.068,0 36.057,72.019 7.206,72.019 	"/>
+	<g>
+		<path d="M26.882,22.295l-0.285,2.716l-4.441,5.611l0.285-2.714L26.882,22.295"/>
+		<path d="M16.537,22.261l3.261,5.61l-0.293,2.783l-3.261-5.612L16.537,22.261"/>
+		<path d="M21.781,34.164l3.26,5.612l-0.294,2.782l-3.259-5.612L21.781,34.164"/>
+		<path d="M19.132,34.198l-0.285,2.714l-4.442,5.613l0.285-2.714L19.132,34.198"/>
+		<path d="M21.421,33.73l-0.975,9.26h-1.834l0.975-9.26H21.421"/>
+		<path d="M22.674,21.832l-0.976,9.26h-1.832l0.975-9.26H22.674"/>
+		<path d="M20.536,31.494l-0.19,1.833h-5.106l-0.809-0.899l1.029-0.934H20.536"/>
+		<path d="M26.047,31.494l0.81,0.901l-1.028,0.932H20.75l0.193-1.833H26.047"/>
+		<path d="M28.76,20.451c0.316,0.429,0.455,0.965,0.396,1.529l-0.971,9.214l-1.027,0.929l-0.809-0.896l0.971-9.202
+			c0.007-0.083-0.002-0.166-0.029-0.243L28.76,20.451"/>
+		<path d="M27.125,32.697l0.81,0.899l-0.971,9.198c-0.063,0.583-0.324,1.137-0.749,1.573L25.05,43.07
+			c0.041-0.07,0.065-0.149,0.075-0.231l0.972-9.212L27.125,32.697"/>
+		<path d="M30.074,43.067c0.597,0,1.08,0.485,1.08,1.079s-0.483,1.078-1.08,1.078c-0.596,0-1.081-0.484-1.081-1.078
+			S29.479,43.067,30.074,43.067"/>
+		<path d="M14.131,32.697l0.807,0.899l-0.97,9.2c-0.008,0.082,0.003,0.164,0.029,0.241l-1.473,1.327
+			c-0.314-0.428-0.453-0.962-0.395-1.527l0.972-9.212L14.131,32.697"/>
+		<path d="M14.267,43.337c0.072,0.036,0.154,0.056,0.236,0.056h4.78l-0.193,1.832h-4.821c-0.567,0-1.083-0.195-1.476-0.557
+			L14.267,43.337"/>
+		<path d="M24.749,43.341l1.165,1.3c-0.479,0.378-1.057,0.584-1.639,0.584h-4.778l0.192-1.832h4.82
+			C24.592,43.392,24.674,43.375,24.749,43.341"/>
+		<path d="M15.073,20.451l1.163,1.299c-0.041,0.07-0.067,0.149-0.076,0.231l-0.97,9.213l-1.029,0.931l-0.806-0.898l0.968-9.202
+			C14.384,21.441,14.648,20.89,15.073,20.451"/>
+		<path d="M27.016,19.596c0.568,0,1.084,0.195,1.477,0.554l-1.473,1.333c-0.074-0.037-0.153-0.055-0.236-0.055h-4.78l0.19-1.832
+			H27.016"/>
+		<path d="M21.788,19.596l-0.19,1.832h-4.822c-0.082,0-0.163,0.018-0.237,0.051l-1.166-1.3c0.48-0.377,1.057-0.583,1.638-0.583
+			H21.788"/>
+	</g>
+	<g>
+		<line fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" x1="7.214" y1="7.198" x2="0" y2="7.198"/>
+		<line fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" x1="7.215" y1="14.4" x2="0.002" y2="14.4"/>
+		<line fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" x1="7.215" y1="21.6" x2="0.002" y2="21.6"/>
+		<line fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" x1="7.215" y1="28.797" x2="0.002" y2="28.797"/>
+		<line fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" x1="21.633" y1="72.019" x2="21.633" y2="79.22"/>
+		<line fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" x1="43.281" y1="14.4" x2="36.068" y2="14.4"/>
+		<line fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" x1="43.281" y1="21.6" x2="36.068" y2="21.6"/>
+		<line fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" x1="43.281" y1="28.797" x2="36.068" y2="28.797"/>
+		<line fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" x1="7.214" y1="35.986" x2="0" y2="35.986"/>
+		<line fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" x1="7.215" y1="43.186" x2="0.002" y2="43.186"/>
+		<line fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" x1="7.215" y1="50.386" x2="0.002" y2="50.386"/>
+		<line fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" x1="7.215" y1="57.587" x2="0.002" y2="57.587"/>
+		<line fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" x1="7.215" y1="64.798" x2="0.002" y2="64.798"/>
+		<line fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" x1="43.281" y1="35.988" x2="36.068" y2="35.988"/>
+		<line fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" x1="43.281" y1="43.186" x2="36.068" y2="43.186"/>
+		<line fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" x1="43.281" y1="50.386" x2="36.068" y2="50.386"/>
+		<line fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" x1="43.281" y1="57.587" x2="36.068" y2="57.587"/>
+		<line fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" x1="43.281" y1="64.798" x2="36.068" y2="64.798"/>
+	</g>
+</g>
+</svg>

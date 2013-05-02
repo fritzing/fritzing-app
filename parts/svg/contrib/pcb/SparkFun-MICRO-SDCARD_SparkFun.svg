@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" x="0in" y="0in" width="0.433in" height="0.5905in" viewBox="0 0 4330 5905" >
+<title>SparkFun.mod</title>
+<desc>Kicad module 'SparkFun-MICRO-SDCARD' from file 'SparkFun.mod' converted by Fritzing</desc>
+<metadata xmlns:fz='http://fritzing.org/kicadmetadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+<rdf:RDF><rdf:Description rdf:about=''>
+<fz:attr name='kicad filename'>SparkFun.mod</fz:attr>
+<fz:attr name='kicad module'>SparkFun-MICRO-SDCARD</fz:attr>
+<fz:attr name='fritzing version'>0.4.1b.07.04.4318</fz:attr>
+<fz:attr name='conversion date'>17/07/2010 17:16:21</fz:attr>
+<fz:attr name='dist-license'>GPL</fz:attr>
+<fz:attr name='use-license'>unlimited</fz:attr>
+<fz:attr name='author'>KICAD project</fz:attr>
+<fz:attr name='license-url'>http://www.gnu.org/licenses/gpl.html</fz:attr>
+<fz:comment></fz:comment>
+<fz:attr name='keyword'></fz:attr>
+</rdf:Description></rdf:RDF></metadata><g id="copper1">
+ <rect width="334" x="1170" y="4360.5" fill="#ffbf00" connectorname="CD/DAT3" height="1279" id="connector0pad" stroke-width="0"/>
+ <rect width="334" x="2470" y="4360.5" fill="#ffbf00" connectorname="CLK" height="1279" id="connector1pad" stroke-width="0"/>
+ <rect width="334" x="1603" y="4360.5" fill="#ffbf00" connectorname="CMD" height="1279" id="connector2pad" stroke-width="0"/>
+ <rect width="334" x="3336" y="4360.5" fill="#ffbf00" connectorname="DAT0" height="1279" id="connector3pad" stroke-width="0"/>
+ <rect width="334" x="3769" y="4360.5" fill="#ffbf00" connectorname="DAT1" height="1279" id="connector4pad" stroke-width="0"/>
+ <rect width="334" x="737" y="4360.5" fill="#ffbf00" connectorname="DAT2" height="1279" id="connector5pad" stroke-width="0"/>
+ <rect width="334" x="2903" y="4341" fill="#ffbf00" connectorname="GND" height="1476" id="connector6pad" stroke-width="0"/>
+ <rect width="334" x="2037" y="4341" fill="#ffbf00" connectorname="VCC" height="1476" id="connector7pad" stroke-width="0"/>
+</g>
+<g id="silkscreen">
+ <line fill="none" stroke="white" y1="5905" x1="4330" y2="0" stroke-width="50" x2="4330"/>
+ <line fill="none" stroke="white" y1="0" x1="4330" y2="0" stroke-width="50" x2="0"/>
+ <line fill="none" stroke="white" y1="2126" x1="0" y2="2283" stroke-width="50" x2="157"/>
+ <line fill="none" stroke="white" y1="2283" x1="157" y2="2992" stroke-width="50" x2="157"/>
+ <line fill="none" stroke="white" y1="2992" x1="157" y2="3150" stroke-width="50" x2="0"/>
+ <line fill="none" stroke="white" y1="3150" x1="0" y2="3543" stroke-width="50" x2="0"/>
+ <line fill="none" stroke="white" y1="3543" x1="0" y2="3937" stroke-width="50" x2="392"/>
+ <line fill="none" stroke="white" y1="3937" x1="392" y2="5905" stroke-width="50" x2="392"/>
+ <line fill="none" stroke="white" y1="5905" x1="392" y2="5905" stroke-width="50" x2="4330"/>
+ <line fill="none" stroke="white" y1="0" x1="0" y2="2126" stroke-width="50" x2="0"/>
+</g>
+</svg>

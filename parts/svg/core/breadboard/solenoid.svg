@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1 Basic//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-basic.dtd">
+<svg version="1.1" baseProfile="basic" id="svg2" xmlns="http://www.w3.org/2000/svg" 
+	 x="0px" y="0px" width="0.657in" height="1.56451in" viewBox="0 0 47.369 112.672" >   
+<g id="breadboard">
+	<rect id="connector0pin" x="19.013" y="111" fill="none" width="1" height="1"/>
+	<rect id="connector1pin" x="26.234" y="111" fill="none" width="1" height="1"/>
+
+	<line  id="connector0leg" stroke-linecap="round" x1="20.083" y1="112.672" x2="20.083" y2="120.917" stroke="#000000" fill="none" stroke-width="3" />
+	<line  id="connector1leg" stroke-linecap="round" x1="27.314" y1="112.672" x2="27.314" y2="120.917" stroke="#FF0000" fill="none" stroke-width="3" />
+
+	<path fill="none" stroke="#000000" stroke-width="3" d="M20.083,102.305v10.367"/>
+	<path fill="none" stroke="#FF0000" stroke-width="3" d="M27.314,102.305v10.367"/>
+	
+	<polyline fill="#726038" points="2,39.462 2,102.305 45.369,102.305 45.369,39.462 	"/>
+	<path fill="none" stroke="#E5C76C" stroke-width="4" d="M2,39.462V99.47c0,1.56,1.275,2.835,2.834,2.835h37.701
+		c1.559,0,2.834-1.275,2.834-2.835V39.462"/>
+	<polygon fill="#E5C76C" points="43.127,43.462 4.242,43.462 4.242,39.462 43.127,39.462 43.127,43.462 	"/>
+	<polygon fill="#D6B667" points="36.986,39.462 10.383,39.462 10.383,35.462 36.986,35.462 36.986,39.462 	"/>
+	<rect x="4.962" y="43.594" fill="#353535" width="37.445" height="55.062"/>
+	<rect x="4.962" y="43.594" opacity="0.35" width="6.933" height="55.062"/>
+	<rect x="29.256" y="44.594" opacity="0.25" fill="#FFFFFF" width="11.857" height="53.062"/>
+	<rect x="4.962" y="98.656" fill="#999999" width="37.445" height="1.593"/>
+	<rect x="10.383" y="35.462" opacity="0.12" width="5.102" height="4"/>
+	<rect x="32.161" y="35.612" opacity="0.35" fill="#FFFFFF" width="4.649" height="3.622"/>
+	<rect x="27.512" y="35.612" opacity="0.54" fill="#FFFFFF" width="4.649" height="3.622"/>
+	<polygon fill="#E2E2E2" points="34.486,35.462 12.883,35.462 12.883,31.462 34.486,31.462 34.486,35.462 	"/>
+	<polygon fill="#D3D3D3" points="27.292,31.462 20.077,31.462 20.077,0 27.292,0 27.292,31.462 	"/>
+	<rect x="12.883" y="31.46" opacity="0.12" width="4.143" height="4.001"/>
+	<rect x="30.567" y="31.612" opacity="0.35" fill="#FFFFFF" width="3.775" height="3.622"/>
+	<rect x="26.792" y="31.612" opacity="0.54" fill="#FFFFFF" width="3.775" height="3.622"/>
+	<rect x="20.112" y="0.018" opacity="0.12" width="1.326" height="31.441"/>
+	<rect x="25.334" y="0.321" opacity="0.35" fill="#FFFFFF" width="1.648" height="30.881"/>
+	<rect x="23.685" y="0.321" opacity="0.51" fill="#FFFFFF" width="1.649" height="30.881"/>
+	<circle fill="#A3A3A3" cx="23.685" cy="3.149" r="1.466"/>
+	<circle opacity="0.2" fill="#727272" cx="23.685" cy="3.149" r="1.28"/>
+</g>
+</svg>

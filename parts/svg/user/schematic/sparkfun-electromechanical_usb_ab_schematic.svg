@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- Created with Fritzing (http://www.fritzing.org/) -->
+<svg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' version='1.2' baseProfile='tiny' x='0in' y='0in' width='0.727302in' height='1.35358in' viewBox='0 0 18.4735 34.381' >
+<g id='schematic'>
+<line class='other' x1='7.74347' y1='21.554' x2='2.66347' y2='21.554' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<line class='other' x1='2.66347' y1='21.554' x2='2.66347' y2='34.254' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<line class='other' x1='2.66347' y1='34.254' x2='7.74347' y2='34.254' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
+<g transform='translate(6.47347,34)'><g transform='rotate(270)'>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='3.302' x='0' y='0' text-anchor='start'>USBAB</text>
+</g></g>
+<line class='pin' id='connector0pin' connectorname='D+' x1='0.123472' y1='27.904' x2='2.66347' y2='27.904' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector0terminal' x='0.123472' y='27.904' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='1.39347' y='27.6571' text-anchor='middle'>1</text>
+<line class='pin' id='connector1pin' connectorname='D-' x1='0.123472' y1='30.444' x2='2.66347' y2='30.444' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector1terminal' x='0.123472' y='30.444' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='1.39347' y='30.1971' text-anchor='middle'>2</text>
+<line class='pin' id='connector2pin' connectorname='VBUS' x1='0.123472' y1='32.984' x2='2.66347' y2='32.984' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector2terminal' x='0.123472' y='32.984' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='1.39347' y='32.7371' text-anchor='middle'>3</text>
+<line class='pin' id='connector3pin' connectorname='GND' x1='0.123472' y1='22.824' x2='2.66347' y2='22.824' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector3terminal' x='0.123472' y='22.824' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='1.39347' y='22.5771' text-anchor='middle'>4</text>
+<line class='pin' id='connector4pin' connectorname='USBID' x1='0.123472' y1='25.364' x2='2.66347' y2='25.364' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector4terminal' x='0.123472' y='25.364' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='1.39347' y='25.1171' text-anchor='middle'>5</text>
+</g>
+</svg>

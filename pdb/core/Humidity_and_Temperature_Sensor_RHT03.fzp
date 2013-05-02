@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module fritzingVersion="0.7.0b.02.01.5801" moduleId="Humidity_and_Temperature_Sensor_RHT03_6">
+    <author>Martha Maldonado</author>
+    <title>Humidity and Temperature Sensor RHT03</title>
+    <label>RHT03</label>
+    <date>2012-02-17</date>
+    <tags>
+        <tag>humedad</tag>
+        <tag>humidity</tag>
+        <tag>temperatura</tag>
+        <tag>temperature</tag>
+    </tags>
+    <properties>
+        <property name="sensing element">Polymer humidity capacitor</property>
+        <property name="family">MaxDetect Technology</property>
+        <property name="power supply">3.3-5.5V DC</property>
+        <property name="output signal">Digital Signal</property>
+        <property name="part number"></property>
+    </properties>
+    <description>Digital relative humidity &amp; temperature sensor RHT03</description>
+    <views>
+        <iconView>
+            <layers image="icon/Humidity_and_Temperature_Sensor_RHT03_6.svg">
+                <layer layerId="icon"/>
+            </layers>
+        </iconView>
+        <breadboardView>
+            <layers image="breadboard/Humidity_and_Temperature_Sensor_RHT03_6.svg">
+                <layer layerId="breadboard"/>
+            </layers>
+        </breadboardView>
+        <schematicView>
+            <layers image="schematic/Humidity_and_Temperature_Sensor_RHT03_6.svg">
+                <layer layerId="schematic"/>
+            </layers>
+        </schematicView>
+        <pcbView>
+            <layers image="pcb/Humidity_and_Temperature_Sensor_RHT03_6.svg">
+                <layer layerId="copper0"/>
+								<layer layerId="copper1"/>
+                <layer layerId="silkscreen"/>
+            </layers>
+        </pcbView>
+    </views>
+    <connectors>
+        <connector id="connector8" type="male" name="Vcc">
+            <description>3.3 V - 5.5V DC</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector8"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector8"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector8pad"/>
+										<p layer="copper1" svgId="connector8pad"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector9" type="male" name="Data-signal">
+            <description>It goes directly connect to the digital signal and also it connects by a 1k ohm resistor with Vcc, It's something like this:
+
+Data-signal -&gt; Digital Signal
+
+                   -&gt; 1K ohm -&gt; Vcc</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector9"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector9"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector9pad"/>
+										<p layer="copper1" svgId="connector9pad"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector10" type="male" name="GND 1">
+            <description>Ground Connection</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector10"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector10"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector10pad"/>
+										<p layer="copper1" svgId="connector10pad"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector11" type="male" name="GND 2">
+            <description>Ground connection</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector11"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector11"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector11pad"/>
+										<p layer="copper1" svgId="connector11pad"/>
+                </pcbView>
+            </views>
+        </connector>
+    </connectors>
+</module>

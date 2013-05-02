@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" x="0in" y="0in" width="3.4762in" height="0.492in" viewBox="0 0 34762 4920" >
+<title>SparkFun.mod</title>
+<desc>Kicad module 'SparkFun-SLIDER' from file 'SparkFun.mod' converted by Fritzing</desc>
+<metadata xmlns:fz='http://fritzing.org/kicadmetadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+<rdf:RDF><rdf:Description rdf:about=''>
+<fz:attr name='kicad filename'>SparkFun.mod</fz:attr>
+<fz:attr name='kicad module'>SparkFun-SLIDER</fz:attr>
+<fz:attr name='fritzing version'>0.4.1b.07.04.4318</fz:attr>
+<fz:attr name='conversion date'>17/07/2010 17:17:33</fz:attr>
+<fz:attr name='dist-license'>GPL</fz:attr>
+<fz:attr name='use-license'>unlimited</fz:attr>
+<fz:attr name='author'>KICAD project</fz:attr>
+<fz:attr name='license-url'>http://www.gnu.org/licenses/gpl.html</fz:attr>
+<fz:comment></fz:comment>
+<fz:attr name='keyword'></fz:attr>
+</rdf:Description></rdf:RDF></metadata><g id="copper0">
+ <g id="copper1">
+  <g connectorname="1" id="connector0pin">
+   <circle fill="none" cx="3602" cy="1673" stroke="#ff9400" r="675.5" stroke-width="249"/>
+   <circle fill="black" cx="3602" cy="1673" drill="0" r="551" stroke-width="0"/>
+  </g>
+  <g connectorname="2A" id="connector1pin">
+   <circle fill="none" cx="1633" cy="3641" stroke="#ff9400" r="675.5" stroke-width="249"/>
+   <circle fill="black" cx="1633" cy="3641" drill="0" r="551" stroke-width="0"/>
+  </g>
+  <g connectorname="2B" id="connector2pin">
+   <circle fill="none" cx="33129" cy="3641" stroke="#ff9400" r="675.5" stroke-width="249"/>
+   <circle fill="black" cx="33129" cy="3641" drill="0" r="551" stroke-width="0"/>
+  </g>
+  <g connectorname="3" id="connector2pin">
+   <circle fill="none" cx="31160" cy="1673" stroke="#ff9400" r="675.5" stroke-width="249"/>
+   <circle fill="black" cx="31160" cy="1673" drill="0" r="551" stroke-width="0"/>
+  </g>
+ </g>
+</g>
+<g id="silkscreen">
+ <line fill="none" stroke="white" y1="4920" x1="0" y2="4920" stroke-width="80" x2="34762"/>
+ <line fill="none" stroke="white" y1="4920" x1="34762" y2="0" stroke-width="80" x2="34762"/>
+ <line fill="none" stroke="white" y1="0" x1="34762" y2="0" stroke-width="80" x2="0"/>
+ <line fill="none" stroke="white" y1="0" x1="0" y2="4920" stroke-width="80" x2="0"/>
+ <circle fill="none" cx="1633" cy="2460" stroke="white" r="193.747" stroke-width="98"/>
+ <circle fill="none" cx="33129" cy="2460" stroke="white" r="193.747" stroke-width="98"/>
+</g>
+</svg>

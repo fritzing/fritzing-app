@@ -1,0 +1,222 @@
+#partsEditor QLabel {
+	font-family: LucidaGrande, LucidaSans, Tahoma, Arial, sans-serif;
+	font-size: 12px;
+	font-weight: bolder;
+}
+
+PartSpecificationsWidget {
+ 	padding: 0px;
+	margin: 0px;
+	border: 0px;
+	border-top: 2px solid #52182C;
+}
+
+PartSpecificationsWidget #scroll {
+	padding: 5px;
+	background-color: #7F7F7F;
+	border: 0px;
+	margin: 0px;
+}
+
+PartConnectorsWidget {
+	border-top: 2px solid #52182C;
+	background-color: #7F7F7F;
+}
+
+QSplitter::handle {
+	height: 6px;
+	width: 6px;
+	background-image: url(':/resources/images/splitterHandle.png');
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+PartsEditorViewsWidget QSplitter::handle {
+	background-color: #7F7F7F;
+}
+
+PartsEditorView {
+	border-radius: 5px;
+	background-color: #D8D8D8;
+}
+
+SingleConnectorInfoWidget[selected="true"]{
+	background-color: #D8D8D8;
+}
+
+MismatchingConnectorWidget[selected="true"]{
+	background-color: #EDEDED;
+}
+
+SingleConnectorInfoWidget[selected="false"],
+MismatchingConnectorWidget[selected="false"]
+{
+	background-color: transparent;
+}
+
+SingleConnectorInfoWidget {
+	padding-left: 9px;
+}
+
+SingleConnectorInfoWidget #description {
+	color: #777777;
+}
+
+#header {
+	background-color: #330011;
+}
+
+#center, #footer {
+	background-color: #52182C;
+}
+#footer {
+	padding: 5px 0px 5px 0px;
+	margin: 0px;
+	border: 0px;
+}
+
+PartSpecificationsWidget PartEditorViewsWidget QLabel,
+PartSpecificationsWidget AbstractEditableLabelWidget #title,
+PartSpecificationsWidget HashPopulateWidget QLabel,
+ConnectorsInfoWidget #title {
+	color: #52182C;
+}
+
+PartEditorViewsWidget {
+	
+}
+
+PartSpecificationsWidget HashPopulateWidget,
+PartSpecificationsWidget PartEditorViewsWidget,
+PartSpecificationsWidget AbstractEditableLabelWidget,
+ConnectorsInfoWidget {
+ 	background-color: #B2B2B2;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+
+ConnectorsInfoWidget QScrollArea,
+#connInfoContent {
+	border: 0px;
+	background-color: #B2B2B2;
+}
+
+HashLineEdit {
+	background-color: #D8D8D8;
+}
+
+AbstractEditableLabelWidget QLabel {
+	color: #7F7F7F;
+}
+
+#createdBy {
+	font-weight: normal;
+	font-style: normal;
+	padding-top: 5px;
+}
+
+#iconImage, #partTitle {
+	background-color: #996B7A;
+}
+
+#partTitle {
+	border-radius: 6px;
+	padding: 4px;
+	padding-left: 15px;
+}
+
+#partTitle QLabel {
+	color: #E6E6E6;
+	font-size: 18px;
+}
+
+#partsEditor QTabWidget::pane {
+ 	padding: 0px;
+	margin: 0px;
+	border: 0px;
+	
+	position: absolute;
+}
+
+#partsEditor QTabWidget::tab-bar {
+ 	left: 5px;
+	top: 5px;
+}
+
+#partsEditor QTabBar::tab {
+	margin-top: 5px;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	padding-left: 6px;
+	padding-right: 6px;
+	color: #CCB6BD; 
+	border-bottom: 0px;
+	min-width: 6.5em;
+	max-width: 6.5em;
+	
+	margin: 0;
+	padding: 0;
+	min-height: 1.5em;
+}
+
+#partsEditor QTabBar::tab:selected {
+	background-color: #802643;
+	border-bottom: 0px;
+}
+
+#partsEditor QTabBar::tab:!selected {
+	border: 2px solid #802643;
+	border-bottom: 0px;
+}
+
+#scroll_test {
+	background-color: green;
+}
+
+#mismatchConns {
+	background-color: #d8d8d8;
+	margin-bottom: 5px;
+	padding-left: 2px;
+	padding-bottom: 4px;
+	padding-top: 4px;
+}
+
+#mismatchConnMsg {
+	color: red;
+}
+
+#mismatchConnsHeader,
+#mismatchConnsFooter {
+	font-size: 11px;
+	color: #777777;
+}
+
+#mismatchConnsHeader {
+	font-style: normal;
+}
+
+#mismatchConnsFooter {
+	padding-left: 15px;
+}
+
+#mismatchConnsFooter {
+	margin-top: 4px;
+	margin-left: 3px;
+}
+
+PartsEditorViewsWidget {
+	background-color: #7F7F7F;
+}
+
+#iconBrowseButton {
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+}
+
+#guidelinesLabel {
+	margin-top: 5px;
+	font-size: 11px;
+}

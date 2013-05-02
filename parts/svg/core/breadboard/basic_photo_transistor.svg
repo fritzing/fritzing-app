@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: Adobe Illustrator 13.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 14948)  -->
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.2"
+   baseProfile="tiny"
+   id="Ebene_1"
+   x="0px"
+   y="0px"
+   width="5.08mm"
+   height="16.4mm"
+   xml:space="preserve"
+   sodipodi:version="0.32"
+   inkscape:version="0.46"
+   sodipodi:docname="basic-phototransistor.svg"
+   inkscape:output_extension="org.inkscape.output.svg.inkscape"><metadata
+   id="metadata45"><rdf:RDF><cc:Work
+       rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /></cc:Work></rdf:RDF></metadata><defs
+   id="defs43"><inkscape:perspective
+     sodipodi:type="inkscape:persp3d"
+     inkscape:vp_x="0 : 30.018499 : 1"
+     inkscape:vp_y="0 : 1000 : 0"
+     inkscape:vp_z="18 : 30.018499 : 1"
+     inkscape:persp3d-origin="9 : 20.012333 : 1"
+     id="perspective47" /></defs><sodipodi:namedview
+   inkscape:window-height="701"
+   inkscape:window-width="640"
+   inkscape:pageshadow="2"
+   inkscape:pageopacity="0.0"
+   guidetolerance="10.0"
+   gridtolerance="10.0"
+   objecttolerance="10.0"
+   borderopacity="1.0"
+   bordercolor="#666666"
+   pagecolor="#ffffff"
+   id="base"
+   showgrid="false"
+   inkscape:zoom="10.174514"
+   inkscape:cx="19.930752"
+   inkscape:cy="37.340644"
+   inkscape:window-x="0"
+   inkscape:window-y="22"
+   inkscape:current-layer="g12" />
+
+
+<rect
+   id="connector0pin"
+   x="4.3158703"
+   y="49.725437"
+   width="2.9920001"
+   height="9.3210001"
+   style="fill:#b3b3b3" />
+<rect
+   id="connector1pin"
+   x="14.277861"
+   y="49.725437"
+   width="3"
+   height="9.415"
+   style="fill:#b3b3b3" />
+<rect
+   id="connector0terminal"
+   x="4.3158703"
+   y="58.611439"
+   width="2.9619999"
+   height="0.55800003"
+   style="fill:#b3b3b3" />
+<rect
+   id="connector1terminal"
+   x="14.277861"
+   y="58.611439"
+   width="3"
+   height="0.55800003"
+   style="fill:#b3b3b3" />
+<g
+   id="breadboard"
+   transform="translate(198.91887,-80.884563)">
+	<g
+   id="g9504">
+		<rect
+   id="rect9506"
+   x="-194.603"
+   y="105.413"
+   width="2.9920001"
+   height="12.986"
+   style="fill:#b3b3b3" />
+	</g>
+	<g
+   id="g9512">
+		<path
+   id="path9514"
+   d="M -186.209,105.413 L -186.209,110.017 C -186.209,110.606 -185.123,111.487 -184.543,111.996 C -183.117,113.233 -181.643,114.523 -181.643,116.152 L -181.643,118.4 L -184.635,118.4 C -184.635,118.4 -184.635,117.011 -184.635,116.721 C -184.635,116.003 -185.891,114.792 -186.509,114.263 C -187.895,113.055 -189.211,111.916 -189.211,110.447 L -189.211,105.412 L -186.209,105.412 L -186.209,105.413 z"
+   style="fill:#b3b3b3" />
+	</g>
+	<g
+   id="g12">
+		<path
+   enable-background="new    "
+   d="M -182.992,95.79 L -182.992,89.521 C -182.992,85.372 -186.356,82.007 -190.506,82.007 C -194.656,82.007 -198.02,85.371 -198.02,89.521 L -198.02,103.993 C -196.451,105.744 -193.677,106.912 -190.506,106.912 C -185.606,106.912 -181.633,104.131 -181.633,100.7 L -181.633,99.083 C -181.633,97.873 -182.136,96.746 -182.992,95.79 z"
+   id="path14"
+   style="opacity:0.31000001;fill:#cccccc" />
+		<path
+   enable-background="new    "
+   d="M -182.992,95.79 L -182.992,89.521 C -182.992,85.372 -186.356,82.007 -190.506,82.007 C -194.656,82.007 -198.02,85.371 -198.02,89.521 L -198.02,103.993 C -196.451,105.744 -193.677,106.912 -190.506,106.912 C -185.606,106.912 -181.633,104.131 -181.633,100.7 L -181.633,99.083 C -181.633,97.873 -182.136,96.746 -182.992,95.79 z"
+   id="path16"
+   style="opacity:0.5;fill:#e6e6e6" />
+		<path
+   enable-background="new    "
+   d="M -182.992,95.79 L -182.992,99.083 C -182.992,101.988 -186.356,104.343 -190.506,104.343 C -194.656,104.343 -198.02,101.989 -198.02,99.083 L -198.02,102.376 L -198.02,103.993 C -196.451,105.744 -193.677,106.912 -190.506,106.912 C -185.606,106.912 -181.633,104.131 -181.633,100.7 L -181.633,99.083 C -181.633,97.873 -182.136,96.746 -182.992,95.79 z"
+   id="path18"
+   style="opacity:0.9;fill:#d1d1d1" />
+		<path
+   enable-background="new    "
+   d="M -182.992,95.79 L -182.992,99.083 C -182.992,101.988 -186.356,104.343 -190.506,104.343 C -194.656,104.343 -198.02,101.989 -198.02,99.083 L -198.02,102.376 L -198.02,103.993 C -196.451,105.744 -193.677,106.912 -190.506,106.912 C -185.606,106.912 -181.633,104.131 -181.633,100.7 L -181.633,99.083 C -181.633,97.873 -182.136,96.746 -182.992,95.79 z"
+   id="path20"
+   style="opacity:0.7;fill:#e6e6e6" />
+		<path
+   enable-background="new    "
+   d="M -182.992,95.79 L -182.992,99.083 C -182.992,101.988 -186.356,104.343 -190.506,104.343 C -194.656,104.343 -198.02,101.989 -198.02,99.083 L -198.02,102.376 C -196.451,104.126 -193.677,105.294 -190.506,105.294 C -185.606,105.294 -181.633,102.514 -181.633,99.083 C -181.633,97.873 -182.136,96.746 -182.992,95.79 z"
+   id="path22"
+   style="opacity:0.23999999000000000;fill:#e6e6e6" />
+		<ellipse
+   enable-background="new    "
+   cx="-190.506"
+   cy="99.083"
+   rx="7.5139999"
+   ry="5.2600002"
+   id="ellipse24"
+   style="opacity:0.25;fill:#e6e6e6" />
+		<ellipse
+   enable-background="new    "
+   cx="-190.506"
+   cy="99.083"
+   rx="7.5139999"
+   ry="5.2600002"
+   id="ellipse26"
+   style="opacity:0.25;fill:#e6e6e6" />
+		
+		<polygon
+   points="-186.592,91.043 -186.13,91.583 -190.162,95.888 -186.293,95.888 -186.293,99.084 -185.325,99.084 -185.325,91.043 -186.592,91.043 "
+   id="polygon30"
+   style="fill:#666666"
+   transform="translate(-0.5897088,0)" />
+		
+		<polygon
+   points="-186.592,91.043 -186.13,91.583 -190.162,95.888 -186.293,95.888 -186.293,99.084 -185.325,99.084 -185.325,91.043 -186.592,91.043 "
+   id="polygon2403"
+   style="fill:#666666"
+   transform="matrix(-1,0,0,1,-380.04761,-2.0060783e-3)" /><path
+   enable-background="new    "
+   d="M -182.992,95.79 L -182.992,89.521 C -182.992,85.372 -186.356,82.007 -190.506,82.007 C -194.656,82.007 -198.02,85.371 -198.02,89.521 L -198.02,103.993 C -196.451,105.744 -193.677,106.912 -190.506,106.912 C -185.606,106.912 -181.633,104.131 -181.633,100.7 L -181.633,99.083 C -181.633,97.873 -182.136,96.746 -182.992,95.79 z"
+   id="path32"
+   style="opacity:0.65;fill:#ececec"
+   sodipodi:nodetypes="ccsccsccc" /><path
+   enable-background="new    "
+   d="M -187.006,85.984 L -185.481,85.694 C -186.369,84.492 -187.688,83.617 -189.234,83.32 L -188.97,84.466 C -188.159,84.755 -187.477,85.294 -187.006,85.984 z"
+   id="path34"
+   style="opacity:0.5;fill:#ffffff" />
+		<path
+   enable-background="new    "
+   d="M -197.206,103.133 L -197.206,104.75 C -196.516,105.311 -195.691,105.786 -194.758,106.145 L -194.758,104.528 C -195.691,104.168 -196.516,103.694 -197.206,103.133 z"
+   id="path36"
+   style="opacity:0.5;fill:#ffffff" />
+		<path
+   enable-background="new    "
+   d="M -186.281,103.433 C -186.554,103.563 -186.843,103.677 -187.14,103.782 C -187.202,103.803 -187.265,103.824 -187.328,103.844 C -187.926,104.04 -188.565,104.182 -189.236,104.262 C -189.316,104.272 -189.396,104.281 -189.476,104.287 C -189.814,104.32 -190.155,104.343 -190.505,104.343 C -190.664,104.343 -190.832,104.332 -191.005,104.318 C -192.283,104.258 -193.477,103.984 -194.502,103.532 L -194.502,94.636 L -194.502,89.523 C -194.502,87.965 -193.603,86.631 -192.303,85.971 L -192.324,85.919 L -193.648,84.314 C -195.416,85.381 -196.607,87.307 -196.607,89.523 L -196.607,102.147 C -196.659,102.095 -196.936,101.82 -197.115,101.588 L -197.442,102.317 C -195.952,103.889 -193.403,104.928 -190.505,104.928 C -188.724,104.928 -187.077,104.532 -185.723,103.865 L -186.279,103.432 C -186.28,103.433 -186.281,103.433 -186.281,103.433 z"
+   id="path38"
+   style="opacity:0.5;fill:#ffffff" />
+	</g>
+	<rect
+   id="rect9479"
+   x="-194.603"
+   y="118.4"
+   width="2.9920001"
+   height="21.531"
+   style="fill:#b3b3b3" />
+	<rect
+   id="rect9483"
+   x="-184.632"
+   y="118.4"
+   width="2.9909999"
+   height="21.531"
+   style="fill:#b3b3b3" />
+</g>
+</svg>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  --><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'><svg enable-background="new 0 0 18.199 17.377" height="17.377px" id="svg2" version="1.1" viewBox="0 0 18.199 17.377" width="18.199px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
+<g id="breadboard">
+	<rect fill="none" height="2.16" id="connector0pin" width="2.392" x="0.641" y="8.107"/>
+	<rect fill="none" height="2.158" id="connector1pin" width="2.16" x="15.061" y="8.199"/>
+	<rect fill="none" height="2.158" id="connector1terminal" width="2.16" x="15.061" y="8.199"/>
+	<rect fill="none" height="2.16" id="connector0terminal" width="2.159" x="0.641" y="8.107"/>
+	<g id="legs">
+		<g id="legs_1_">
+			<g id="pin2_1_">
+				<rect fill="#8C8C8C" height="2.16" id="rect16_1_" width="2.327" x="0.581" y="8.122"/>
+			</g>
+			<g id="pin1_4_">
+				<rect fill="#8C8C8C" height="2.239" id="rect18_4_" width="2.16" x="15.02" y="8.215"/>
+			</g>
+		</g>
+	</g>
+	<path d="M15.959,8.425c0.587,2.452-0.468,5.834-4.209,7.344c-3.741,1.512-8.562-1.541-9.551-3.829   C1.211,9.654,1.106,8.69,1.106,8.69l13.989-3.7C15.095,4.99,15.372,5.973,15.959,8.425z" fill="#754612"/>
+	<path d="M1.327,6.026C2.225,3.345,5.476,0.693,8.46,0.693   c3.735,0,6.762,3.028,6.762,6.763s-3.027,6.761-6.762,6.761c-3.035,0-6.323-2.718-7.179-5.471L1.327,6.026z" fill="#AF8958" stroke="#895C1A" stroke-width="0.5756"/>
+	<circle cx="8.482" cy="7.31" fill="#754612" r="4.986"/>
+	<polygon display="none" fill="#BCA061" points="11.884,3.67 3.729,8.833 5.225,11.6 13.027,5.394  "/>
+	<path d="M11.331,11.402c-1.344,0.986-3.214,1.15-4.253,0.693c-2.079-0.913-2.486-1.581-2.486-1.581   C4.339,9.918,4.199,9.262,4.199,8.573c0-2.756,2.234-4.99,4.992-4.99c1.543,0,2.923,0.702,3.837,1.804c0,0,0.349,0.351,0.427,2.265   C13.494,8.609,12.676,10.416,11.331,11.402z" fill="#FFD56C"/>
+	<line fill="none" stroke="#897142" stroke-width="1" x1="11.331" x2="6.307" y1="11.402" y2="5.67"/>
+	<line fill="none" stroke="#897142" stroke-width="1" x1="5.982" x2="12.502" y1="11.625" y2="5.833"/>
+	<circle cx="8.482" cy="7.31" fill="none" r="4.986" stroke="#754612" stroke-width="0.5"/>
+</g>
+</svg>

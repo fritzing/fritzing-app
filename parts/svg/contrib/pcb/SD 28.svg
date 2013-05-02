@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?> <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" x="0in" y="0in" width="0.22in" height="1.47in" viewBox="0 0 22000 147000" ><title>SD 28.fp</title><desc>Geda footprint file 'SD 28.fp' converted by Fritzing</desc><metadata xmlns:fz='http://fritzing.org/gedametadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'><rdf:RDF><rdf:Description rdf:about=''><fz:attr name='geda filename'>SD 28.fp</fz:attr>
+<fz:attr name='fritzing version'>0.4.0b.06.21.4282</fz:attr>
+<fz:attr name='conversion date'>27/06/2010 07:16:30</fz:attr>
+<fz:attr name='dist-license'>GPL</fz:attr>
+<fz:attr name='use-license'>unlimited</fz:attr>
+<fz:attr name='author'>gEDA project</fz:attr>
+<fz:attr name='license-url'>http://www.gnu.org/licenses/gpl.html</fz:attr>
+</rdf:Description></rdf:RDF></metadata><g id="copper0">
+ <g id="copper1">
+  <circle fill="none" cx="6000" cy="6000" connectorname="1" stroke="#ff9400" r="2375" id="connector0pin" stroke-width="1250"/>
+  <circle fill="none" cx="16000" cy="11000" connectorname="2" stroke="#ff9400" r="2375" id="connector1pin" stroke-width="1250"/>
+  <circle fill="none" cx="6000" cy="16000" connectorname="3" stroke="#ff9400" r="2375" id="connector2pin" stroke-width="1250"/>
+  <circle fill="none" cx="16000" cy="21000" connectorname="4" stroke="#ff9400" r="2375" id="connector3pin" stroke-width="1250"/>
+  <circle fill="none" cx="6000" cy="26000" connectorname="5" stroke="#ff9400" r="2375" id="connector4pin" stroke-width="1250"/>
+  <circle fill="none" cx="16000" cy="31000" connectorname="6" stroke="#ff9400" r="2375" id="connector5pin" stroke-width="1250"/>
+  <circle fill="none" cx="6000" cy="36000" connectorname="7" stroke="#ff9400" r="2375" id="connector6pin" stroke-width="1250"/>
+  <circle fill="none" cx="16000" cy="41000" connectorname="8" stroke="#ff9400" r="2375" id="connector7pin" stroke-width="1250"/>
+  <circle fill="none" cx="6000" cy="46000" connectorname="9" stroke="#ff9400" r="2375" id="connector8pin" stroke-width="1250"/>
+  <circle fill="none" cx="16000" cy="51000" connectorname="10" stroke="#ff9400" r="2375" id="connector9pin" stroke-width="1250"/>
+  <circle fill="none" cx="6000" cy="56000" connectorname="11" stroke="#ff9400" r="2375" id="connector10pin" stroke-width="1250"/>
+  <circle fill="none" cx="16000" cy="61000" connectorname="12" stroke="#ff9400" r="2375" id="connector11pin" stroke-width="1250"/>
+  <circle fill="none" cx="6000" cy="66000" connectorname="13" stroke="#ff9400" r="2375" id="connector12pin" stroke-width="1250"/>
+  <circle fill="none" cx="16000" cy="71000" connectorname="14" stroke="#ff9400" r="2375" id="connector13pin" stroke-width="1250"/>
+  <circle fill="none" cx="6000" cy="76000" connectorname="15" stroke="#ff9400" r="2375" id="connector14pin" stroke-width="1250"/>
+  <circle fill="none" cx="16000" cy="81000" connectorname="16" stroke="#ff9400" r="2375" id="connector15pin" stroke-width="1250"/>
+  <circle fill="none" cx="6000" cy="86000" connectorname="17" stroke="#ff9400" r="2375" id="connector16pin" stroke-width="1250"/>
+  <circle fill="none" cx="16000" cy="91000" connectorname="18" stroke="#ff9400" r="2375" id="connector17pin" stroke-width="1250"/>
+  <circle fill="none" cx="6000" cy="96000" connectorname="19" stroke="#ff9400" r="2375" id="connector18pin" stroke-width="1250"/>
+  <circle fill="none" cx="16000" cy="101000" connectorname="20" stroke="#ff9400" r="2375" id="connector19pin" stroke-width="1250"/>
+  <circle fill="none" cx="6000" cy="106000" connectorname="21" stroke="#ff9400" r="2375" id="connector20pin" stroke-width="1250"/>
+  <circle fill="none" cx="16000" cy="111000" connectorname="22" stroke="#ff9400" r="2375" id="connector21pin" stroke-width="1250"/>
+  <circle fill="none" cx="6000" cy="116000" connectorname="23" stroke="#ff9400" r="2375" id="connector22pin" stroke-width="1250"/>
+  <circle fill="none" cx="16000" cy="121000" connectorname="24" stroke="#ff9400" r="2375" id="connector23pin" stroke-width="1250"/>
+  <circle fill="none" cx="6000" cy="126000" connectorname="25" stroke="#ff9400" r="2375" id="connector24pin" stroke-width="1250"/>
+  <circle fill="none" cx="16000" cy="131000" connectorname="26" stroke="#ff9400" r="2375" id="connector25pin" stroke-width="1250"/>
+  <circle fill="none" cx="6000" cy="136000" connectorname="27" stroke="#ff9400" r="2375" id="connector26pin" stroke-width="1250"/>
+  <circle fill="none" cx="16000" cy="141000" connectorname="28" stroke="#ff9400" r="2375" id="connector27pin" stroke-width="1250"/>
+ </g>
+</g>
+<g id="silkscreen">
+ <line fill="none" stroke="white" y1="1000" x1="1000" y2="146000" stroke-width="2000" x2="1000"/>
+ <line fill="none" stroke="white" y1="146000" x1="1000" y2="146000" stroke-width="2000" x2="21000"/>
+ <line fill="none" stroke="white" y1="146000" x1="21000" y2="1000" stroke-width="2000" x2="21000"/>
+ <line fill="none" stroke="white" y1="1000" x1="21000" y2="1000" stroke-width="2000" x2="1000"/>
+ <line fill="none" stroke="white" y1="1000" x1="11000" y2="11000" stroke-width="1000" x2="11000"/>
+ <line fill="none" stroke="white" y1="11000" x1="11000" y2="11000" stroke-width="1000" x2="1000"/>
+</g>
+</svg>

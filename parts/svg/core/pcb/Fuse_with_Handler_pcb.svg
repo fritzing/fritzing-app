@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg width="1.02756in" x="0px" version="1.2" y="0px" xmlns="http://www.w3.org/2000/svg" height="0.350389in" viewBox="0 0 73.984 25.228" baseProfile="tiny" xmlns:xml="http://www.w3.org/XML/1998/namespace" id="fuse3" xml:space="preserve">
+ <g id="copper0"> <g id="copper1">
+  <circle fill="none" stroke="#F7BD13" id="connector0pin" cx="5" cy="12.614" r="3.6" stroke-width="2.8" />
+  <circle fill="none" stroke="#F7BD13" id="connector1pin" cx="68.984" cy="12.614" r="3.6" stroke-width="2.8" />
+ </g></g>
+ <g id="silkscreen">
+  <text fill="#FFFFFF" font-family="DroidSans" transform="matrix(1 0 0 1 16.8647 17.8872)" font-size="18">FUSE</text>
+  <path fill="#FFFFFF" id="o" d="M67.156,1v4.483c-3.195,0.836-5.51,3.761-5.51,7.131s2.315,6.295,5.51,7.131v4.482H7.644v-4.747c2.799-1.093,4.695-3.815,4.695-6.867c0-3.052-1.896-5.774-4.695-6.867V1H67.156 M68.156,0H6.644v6.468c2.704,0.739,4.695,3.208,4.695,6.146c0,2.939-1.991,5.407-4.695,6.146v6.468h61.512v-6.302c-3.111-0.424-5.51-3.084-5.51-6.312c0-3.227,2.399-5.888,5.51-6.312V0L68.156,0z"/>
+ </g>
+ <g id="outline"/>
+ <g id="soldermask"/>
+ <g id="keepout"/>
+</svg>

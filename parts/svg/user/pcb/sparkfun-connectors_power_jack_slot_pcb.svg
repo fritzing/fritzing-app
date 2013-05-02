@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- Created with Fritzing (http://www.fritzing.org/) -->
+<svg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' version='1.2' baseProfile='tiny' x='0in' y='0in' width='0.348488in' height='0.46463in' viewBox='0 0 8.8516 11.8016' >
+<g id='copper1'>
+<circle id='connector2pad' connectorname='PWR' cx='2' cy='1' r='0.75' stroke='#F7BD13' stroke-width='0.5' fill='none' />
+<path stroke='none' stroke-width='0' d='m3,0a1,1 0 0 1 1,1l0,0a1,1 0 0 1 -1,1l-2,0a1,1 0 0 1 -1,-1l0,-0a1,1 0 0 1 1,-1l2,0zM1.5,1a0.5,0.5 0 1 0 1,0 0.5,0.5 0 1 0 -1,0z
+' fill='#F7BD13' />
+<circle id='connector0pad' connectorname='GND@1' cx='2' cy='7.3' r='0.75' stroke='#F7BD13' stroke-width='0.5' fill='none' />
+<path stroke='none' stroke-width='0' d='m3,6.3a1,1 0 0 1 1,1l0,0a1,1 0 0 1 -1,1l-2,0a1,1 0 0 1 -1,-1l0,-0a1,1 0 0 1 1,-1l2,0zM1.5,7.3a0.5,0.5 0 1 0 1,0 0.5,0.5 0 1 0 -1,0z
+' fill='#F7BD13' />
+<circle id='connector1pad' connectorname='GND@2' cx='7' cy='4' r='0.75' stroke='#F7BD13' stroke-width='0.5' fill='none' />
+<path stroke='none' stroke-width='0' d='m7,2a1,1 0 0 1 1,1l0,2a1,1 0 0 1 -1,1l-0,0a1,1 0 0 1 -1,-1l0,-2a1,1 0 0 1 1,-1l0,0zM6.5,4a0.5,0.5 0 1 0 1,0 0.5,0.5 0 1 0 -1,0z
+' fill='#F7BD13' />
+<g id='copper0'>
+<circle id='connector2pad' connectorname='PWR' cx='2' cy='1' r='0.75' stroke='#F7BD13' stroke-width='0.5' fill='none' />
+<path stroke='none' stroke-width='0' d='m3,0a1,1 0 0 1 1,1l0,0a1,1 0 0 1 -1,1l-2,0a1,1 0 0 1 -1,-1l0,-0a1,1 0 0 1 1,-1l2,0zM1.5,1a0.5,0.5 0 1 0 1,0 0.5,0.5 0 1 0 -1,0z
+' fill='#F7BD13' />
+<circle id='connector0pad' connectorname='GND@1' cx='2' cy='7.3' r='0.75' stroke='#F7BD13' stroke-width='0.5' fill='none' />
+<path stroke='none' stroke-width='0' d='m3,6.3a1,1 0 0 1 1,1l0,0a1,1 0 0 1 -1,1l-2,0a1,1 0 0 1 -1,-1l0,-0a1,1 0 0 1 1,-1l2,0zM1.5,7.3a0.5,0.5 0 1 0 1,0 0.5,0.5 0 1 0 -1,0z
+' fill='#F7BD13' />
+<circle id='connector1pad' connectorname='GND@2' cx='7' cy='4' r='0.75' stroke='#F7BD13' stroke-width='0.5' fill='none' />
+<path stroke='none' stroke-width='0' d='m7,2a1,1 0 0 1 1,1l0,2a1,1 0 0 1 -1,1l-0,0a1,1 0 0 1 -1,-1l0,-2a1,1 0 0 1 1,-1l0,0zM6.5,4a0.5,0.5 0 1 0 1,0 0.5,0.5 0 1 0 -1,0z
+' fill='#F7BD13' />
+</g>
+</g>
+<g id='silkscreen'>
+<line class='other' x1='8.75' y1='1.1' x2='4.25' y2='1.1' stroke='#f0f0f0' stroke-width='0.2032' stroke-linecap='round'/>
+<line class='other' x1='0.25' y1='2.1' x2='0.25' y2='6.4' stroke='#f0f0f0' stroke-width='0.2032' stroke-linecap='round'/>
+<line class='other' x1='0.25' y1='8.29' x2='0.25' y2='11.7' stroke='#f0f0f0' stroke-width='0.2032' stroke-linecap='round'/>
+<line class='other' x1='8.75' y1='11.7' x2='8.75' y2='1.1' stroke='#f0f0f0' stroke-width='0.2032' stroke-linecap='round'/>
+<line class='other' x1='0.25' y1='11.7' x2='8.75' y2='11.7' stroke='#f0f0f0' stroke-width='0.2032' stroke-linecap='round'/>
+<line class='other' x1='8.75' y1='11.7' x2='8.7' y2='11.7' stroke='#f0f0f0' stroke-width='0.2032' stroke-linecap='round'/>
+</g>
+</svg>

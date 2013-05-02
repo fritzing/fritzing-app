@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- Generator: Adobe Illustrator 13.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 14948)  -->
+<svg width="0.794347in" x="0px" version="1.2" y="0px" xmlns="http://www.w3.org/2000/svg" height="0.926194in" viewBox="0 0 57.193 66.686" baseProfile="tiny" xmlns:xml="http://www.w3.org/XML/1998/namespace" xml:space="preserve" >
+ <g id="breadboard" >
+  <g >
+   <g >
+    <g >
+     <rect width="2.16" x="8.972" y="0" fill="#8C8C8C" height="4.811" id="rect28_1_" />
+     <rect width="2.16" x="16.171" y="0" fill="#8C8C8C" height="4.811" id="rect30_1_" />
+     <rect width="2.159" x="23.37" y="0" fill="#8C8C8C" height="4.811" id="rect32_1_" />
+     <rect width="2.158" x="30.571" y="0" fill="#8C8C8C" height="4.811" id="rect34_1_" />
+     <rect width="2.16" x="37.734" y="0" fill="#8C8C8C" height="4.811" id="rect32_2_" />
+     <rect width="2.158" x="44.936" y="0" fill="#8C8C8C" height="4.811" id="rect34_2_" />
+     <rect width="2.16" x="9.046" y="62.004" fill="#8C8C8C" height="4.812" id="rect30_2_" />
+     <rect width="2.159" x="16.245" y="62.004" fill="#8C8C8C" height="4.812" id="rect32_4_" />
+     <rect width="2.158" x="23.445" y="62.004" fill="#8C8C8C" height="4.812" id="rect34_4_" />
+     <rect width="2.159" x="30.609" y="62.004" fill="#8C8C8C" height="4.812" id="rect32_3_" />
+     <rect width="2.158" x="37.81" y="62.004" fill="#8C8C8C" height="4.812" id="rect34_3_" />
+    </g>
+   </g>
+   <g >
+    <text fill="#E6E6E6" font-family="Droid Sans" transform="matrix(1 0 0 1 21.5344 32.4695)" font-size="5" >Part</text>
+    <text fill="#E6E6E6" font-family="Droid Sans" transform="matrix(1 0 0 1 21.5344 38.4695)" font-size="5" >Title</text>
+   </g>
+  </g>
+  <rect width="57.193" x="0" y="52.781" fill="#231F20" height="9.135" />
+  <rect width="57.193" x="0" y="2.438" fill="#414141" height="50.441" />
+  <text fill="#FFFFFF" font-family="Droid Sans" transform="matrix(1 0 0 1 6.0842 35.0154)" font-size="8" >ID12</text>
+  <text fill="#FFFFFF" font-family="Droid Sans" transform="matrix(1 0 0 1 6.0842 42.7654)" font-size="7" >I</text>
+  <text fill="#FFFFFF" font-family="Droid Sans" transform="matrix(1 0 0 1 8.4563 42.7654)" font-size="7" >N</text>
+  <text fill="#FFFFFF" font-family="Droid Sans" transform="matrix(1 0 0 1 13.5588 42.7654)" font-size="7" >N</text>
+  <text fill="#FFFFFF" font-family="Droid Sans" transform="matrix(1 0 0 1 18.6624 42.7654)" font-size="7" >O</text>
+  <text fill="#FFFFFF" font-family="Droid Sans" transform="matrix(1 0 0 1 23.717 42.7654)" font-size="7" >V</text>
+  <text fill="#FFFFFF" font-family="Droid Sans" transform="matrix(1 0 0 1 27.4846 42.7654)" font-size="7" >A</text>
+  <text fill="#FFFFFF" font-family="Droid Sans" transform="matrix(1 0 0 1 31.3186 42.7654)" font-size="7" >T</text>
+  <text fill="#FFFFFF" font-family="Droid Sans" transform="matrix(1 0 0 1 34.9524 42.7654)" font-size="7" >I</text>
+  <text fill="#FFFFFF" font-family="Droid Sans" transform="matrix(1 0 0 1 37.2561 42.7654)" font-size="7" >O</text>
+  <text fill="#FFFFFF" font-family="Droid Sans" transform="matrix(1 0 0 1 42.4514 42.7654)" font-size="7" >N</text>
+  <text fill="#FFFFFF" font-family="Droid Sans" transform="matrix(1 0 0 1 47.5549 42.7654)" font-size="7" >S</text>
+  <rect width="4.000001119018375" x="43.92516850310465" y="-1.153537709780176" fill="none" height="4.000001919444283" />
+  <rect width="4.000001119018375" x="29.49451374572888" y="61.65717244400545" fill="none" height="4.000001919444283" />
+  <rect width="4.000001119018375" x="22.45420177385311" y="62.26840747391407" fill="none" height="4.000001919444283" />
+  <rect width="4.000001119018375" x="15.51742790747955" y="62.92905273624422" fill="none" height="4.000001919444283" />
+  <rect width="4.000001119018375" x="8.25033147604057" y="62.2684074739141" fill="none" height="4.000001919444283" />
+  <rect width="4.000001119018375" x="7.589686345909755" y="0.1677528148801406" fill="none" height="4.000001919444283" />
+  <rect width="4.000001119018375" x="14.85678277734873" y="0.4980754460452027" fill="none" height="4.000001919444283" />
+  <rect width="4.000001119018375" x="22.78452433891853" y="1.15872070837535" fill="none" height="4.000001919444283" />
+  <rect width="4.000001119018375" x="30.05162077035751" y="0.1677528148801179" fill="none" height="4.000001919444283" />
+  <rect width="4.000001119018375" x="36.65807207166567" y="-0.1625698162849441" fill="none" height="4.000001919444283" />
+  <rect width="4.000001119018375" x="36.79121908371845" y="61.65717244400543" fill="none" height="4.000001919444283" />
+  <rect width="2.054149472672733" x="44.6662824457466" y="0.1261041826848834" fill="none" height="3.303565874946847" />
+  <rect width="2.016359936407024" x="30.33478349442518" y="63.1085817667577" fill="none" height="3.194087405956716" />
+  <rect width="2.055415043546176" x="23.45872821980506" y="62.87681900283874" fill="none" height="3.339175762016219" />
+  <rect width="2.10752483420305" x="16.10609282658377" y="63.1085817667577" fill="none" height="3.185818319783462" />
+  <rect width="2.085864457875546" x="8.943108959117696" y="63.1085817667577" fill="none" height="3.360560076824551" />
+  <rect width="2.132869111619131" x="8.896104305374111" y="0.1670334440978848" fill="none" height="2.914992467655431" />
+  <rect width="1.95246103310584" x="16.1452752689101" y="0.1482954139612427" fill="none" height="2.586086351913681" />
+  <rect width="1.959124905938472" x="23.32325563987104" y="-0.005062028271451986" fill="none" height="2.971206558065311" />
+  <rect width="2.158369053986498" x="30.30865573561658" y="0.05115206213840592" fill="none" height="2.914992467655454" />
+  <rect width="2.086668042166432" x="37.44911963245932" y="0.06989009227502535" fill="none" height="3.128017201437769" />
+  <rect width="2.417961343941402" x="37.46547040699696" y="62.76093762087928" fill="none" height="3.425850169875662" />
+  <rect width="0.002" x="45.55029282540552" y="-0.05637483969750989" fill="none" height="0.002" id="connector2pin_10terminal" />
+  <rect width="0.002" x="31.39023836435573" y="66.30147313830501" fill="none" height="0.002" id="connector2pin_1terminal" />
+  <rect width="0.002" x="24.3181847291206" y="66.37395477117534" fill="none" height="0.002" id="connector2pin_2terminal" />
+  <rect width="0.002" x="17.19126451706838" y="66.36984375413807" fill="none" height="0.002" id="connector2pin_3terminal" />
+  <rect width="0.002" x="9.917425177213174" y="66.10522674107381" fill="none" height="0.002" id="connector2pin_4terminal" />
+  <rect width="0.002" x="9.93308591485393" y="0.2190736515782821" fill="none" height="0.002" id="connector2pin_5terminal" />
+  <rect width="0.002" x="17.26318784782226" y="0.1459769088043745" fill="none" height="0.002" id="connector2pin_6terminal" />
+  <rect width="0.002" x="24.46228722879819" y="0.06962700739594414" fill="none" height="0.002" id="connector2pin_7terminal" />
+  <rect width="0.002" x="31.31068653267041" y="0.1613814264154972" fill="none" height="0.002" id="connector2pin_8terminal" />
+  <rect width="0.002" x="38.42738867615344" y="0.0750584075616999" fill="none" height="0.002" id="connector2pin_9terminal" />
+  <rect width="0.002" x="38.48835936783242" y="66.24670569829245" fill="none" height="0.002" id="connector2terminal" />
+  <rect width="2.126770437404959" x="44.61444339048443" y="-0.001972396467299293" fill="none" height="2.378143394931341" id="connector2pin_10" />
+  <rect width="2.002505139230345" x="30.44518681848187" y="63.15679411833164" fill="none" height="3.180390269741993" id="connector2pin_1" />
+  <rect width="2.041291891212091" x="23.29753878351455" y="63.05356102698262" fill="none" height="3.324856446529752" id="connector2pin_2" />
+  <rect width="2.093043625468698" x="16.12296054689497" y="63.22056202298274" fill="none" height="3.172156643712839" id="connector2pin_3" />
+  <rect width="2.071532081755536" x="9.009194920116821" y="63.02925830902948" fill="none" height="3.346149059441568" id="connector2pin_4" />
+  <rect width="2.132449016589427" x="8.834977460613867" y="0.03878134887572111" fill="none" height="2.401157554239377" id="connector2pin_5" />
+  <rect width="2.011324501733763" x="16.09810586722861" y="0.08389157728110913" fill="none" height="2.483583135136126" id="connector2pin_6" />
+  <rect width="2.088437198972142" x="23.29053284553071" y="-0.005040320884663651" fill="none" height="2.444979223999761" id="connector2pin_7" />
+  <rect width="2.101735347729534" x="30.29170280475099" y="0.1147006125033545" fill="none" height="2.325238290611744" id="connector2pin_8" />
+  <rect width="2.08857095239094" x="37.51063898373938" y="0.06959038409792122" fill="none" height="2.434116423668256" id="connector2pin_9" />
+  <rect width="2.114515511972229" x="37.55863739562771" y="63.33828784488762" fill="none" height="3.011047902162587" id="connector2" />
+ </g>
+</svg>

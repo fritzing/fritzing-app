@@ -1,0 +1,2031 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="221.125px" height="115.363px" viewBox="0 0 221.125 115.363" enable-background="new 0 0 221.125 115.363"
+	 xml:space="preserve">
+<g>
+	<g>
+		<g>
+			<line fill="none" x1="176.4" y1="21.583" x2="190.766" y2="21.583"/>
+			
+				<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="176.4" y1="21.583" x2="190.766" y2="21.583"/>
+		</g>
+		<g>
+			<line fill="none" x1="147.6" y1="21.583" x2="161.965" y2="21.583"/>
+			
+				<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="147.6" y1="21.583" x2="161.965" y2="21.583"/>
+		</g>
+		<g>
+			<line fill="none" x1="118.8" y1="21.583" x2="133.165" y2="21.583"/>
+			
+				<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="118.8" y1="21.583" x2="133.165" y2="21.583"/>
+		</g>
+		<g>
+			<line fill="none" x1="90" y1="21.583" x2="104.365" y2="21.583"/>
+			<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="90" y1="21.583" x2="104.365" y2="21.583"/>
+		</g>
+		<g>
+			<line fill="none" x1="61.2" y1="21.583" x2="75.565" y2="21.583"/>
+			<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="61.2" y1="21.583" x2="75.565" y2="21.583"/>
+		</g>
+		<g>
+			<line fill="none" x1="32.4" y1="21.583" x2="46.766" y2="21.583"/>
+			<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="32.4" y1="21.583" x2="46.766" y2="21.583"/>
+		</g>
+		<g>
+			<line fill="none" x1="3.601" y1="21.583" x2="17.966" y2="21.583"/>
+			<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="3.601" y1="21.583" x2="17.966" y2="21.583"/>
+		</g>
+	</g>
+	<g>
+		<g>
+			<g>
+				<g>
+					<g>
+						<g>
+							<g>
+								<g id="schematic_57_">
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="190.798" y1="35.982" x2="187.199" y2="35.982"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="194.398" y1="35.982" x2="190.798" y2="35.982"/>
+									<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="187.199,28.783 
+										190.798,28.783 194.398,28.783 190.798,35.982 									"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="190.798" y1="35.982" x2="190.798" y2="28.783"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="197.908" y1="33.283" x2="195.568" y2="30.943"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="197.548" y1="36.523" x2="195.208" y2="34.184"/>
+									
+										<line id="connector1pin_57_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="190.798" y1="35.982" x2="190.798" y2="43.184"/>
+									<path id="connector1terminal_57_" fill="none" d="M190.798,43.184L190.798,43.184L190.798,43.184z"/>
+									
+										<line id="connector0pin_57_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="190.798" y1="28.783" x2="190.798" y2="21.583"/>
+									<path d="M197.007,33.822l1.441-1.439l1.079,2.521L197.007,33.822z"/>
+									<path d="M196.648,37.063l1.438-1.439l1.08,2.521L196.648,37.063z"/>
+								</g>
+							</g>
+						</g>
+						<g>
+							<g>
+								<g id="schematic_56_">
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="176.398" y1="35.982" x2="172.798" y2="35.982"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="179.998" y1="35.982" x2="176.398" y2="35.982"/>
+									<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="172.798,28.783 
+										176.398,28.783 179.998,28.783 176.398,35.982 									"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="176.398" y1="35.982" x2="176.398" y2="28.783"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="183.507" y1="33.283" x2="181.167" y2="30.943"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="183.148" y1="36.523" x2="180.809" y2="34.184"/>
+									
+										<line id="connector1pin_56_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="176.398" y1="35.982" x2="176.398" y2="43.184"/>
+									<path id="connector1terminal_56_" fill="none" d="M176.398,43.184L176.398,43.184L176.398,43.184z"/>
+									
+										<line id="connector0pin_56_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="176.398" y1="28.783" x2="176.398" y2="21.583"/>
+									<path d="M182.607,33.822l1.438-1.439l1.08,2.521L182.607,33.822z"/>
+									<path d="M182.248,37.063l1.439-1.439l1.08,2.521L182.248,37.063z"/>
+								</g>
+							</g>
+						</g>
+					</g>
+				</g>
+				<g>
+					<g>
+						<g>
+							<g>
+								<g id="schematic_55_">
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="162" y1="35.982" x2="158.4" y2="35.982"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="165.6" y1="35.982" x2="162" y2="35.982"/>
+									<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="158.4,28.783 162,28.783 
+										165.6,28.783 162,35.982 									"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="162" y1="35.982" x2="162" y2="28.783"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="169.109" y1="33.283" x2="166.77" y2="30.943"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="168.75" y1="36.523" x2="166.41" y2="34.184"/>
+									
+										<line id="connector1pin_55_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="162" y1="35.982" x2="162" y2="43.184"/>
+									<polygon id="connector1terminal_55_" fill="none" points="162,43.184 162.001,43.184 162.001,43.184 									"/>
+									
+										<line id="connector0pin_55_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="162" y1="28.783" x2="162" y2="21.583"/>
+									<path d="M168.208,33.822l1.44-1.439l1.08,2.521L168.208,33.822z"/>
+									<path d="M167.85,37.063l1.438-1.439l1.08,2.521L167.85,37.063z"/>
+								</g>
+							</g>
+						</g>
+						<g>
+							<g>
+								<g id="schematic_54_">
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="147.602" y1="35.982" x2="144" y2="35.982"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="151.2" y1="35.982" x2="147.602" y2="35.982"/>
+									<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="144,28.783 147.602,28.783 
+										151.2,28.783 147.602,35.982 									"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="147.602" y1="35.982" x2="147.602" y2="28.783"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="154.71" y1="33.283" x2="152.37" y2="30.943"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="154.35" y1="36.523" x2="152.01" y2="34.184"/>
+									
+										<line id="connector1pin_54_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="147.602" y1="35.982" x2="147.602" y2="43.184"/>
+									<polygon id="connector1terminal_54_" fill="none" points="147.6,43.184 147.602,43.184 147.602,43.184 									"/>
+									
+										<line id="connector0pin_54_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="147.602" y1="28.783" x2="147.602" y2="21.583"/>
+									<path d="M153.811,33.822l1.439-1.439l1.08,2.521L153.811,33.822z"/>
+									<path d="M153.45,37.063l1.438-1.439l1.077,2.521L153.45,37.063z"/>
+								</g>
+							</g>
+						</g>
+					</g>
+				</g>
+				<g>
+					<g>
+						<g>
+							<g>
+								<g id="schematic_53_">
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="133.2" y1="35.982" x2="129.6" y2="35.982"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="136.8" y1="35.982" x2="133.2" y2="35.982"/>
+									<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="129.6,28.783 133.2,28.783 
+										136.8,28.783 133.2,35.982 									"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="133.2" y1="35.982" x2="133.2" y2="28.783"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="140.311" y1="33.283" x2="137.971" y2="30.943"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="139.949" y1="36.523" x2="137.609" y2="34.184"/>
+									
+										<line id="connector1pin_53_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="133.2" y1="35.982" x2="133.2" y2="43.184"/>
+									<polygon id="connector1terminal_53_" fill="none" points="133.199,43.184 133.2,43.184 133.2,43.184 									"/>
+									
+										<line id="connector0pin_53_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="133.2" y1="28.783" x2="133.2" y2="21.583"/>
+									<path d="M139.409,33.822l1.44-1.439l1.08,2.521L139.409,33.822z"/>
+									<path d="M139.05,37.063l1.438-1.439l1.08,2.521L139.05,37.063z"/>
+								</g>
+							</g>
+						</g>
+						<g>
+							<g id="XMLID_1_">
+								<g id="schematic_52_">
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="118.8" y1="35.982" x2="115.2" y2="35.982"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="122.4" y1="35.982" x2="118.8" y2="35.982"/>
+									<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="115.2,28.783 118.8,28.783 
+										122.4,28.783 118.8,35.982 									"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="118.8" y1="35.982" x2="118.8" y2="28.783"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="125.91" y1="33.283" x2="123.57" y2="30.943"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="125.549" y1="36.523" x2="123.209" y2="34.184"/>
+									
+										<line id="connector1pin_52_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="118.8" y1="35.982" x2="118.8" y2="43.184"/>
+									<polygon id="connector1terminal_52_" fill="none" points="118.799,43.184 118.8,43.184 118.8,43.184 									"/>
+									
+										<line id="connector0pin_52_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="118.8" y1="28.783" x2="118.8" y2="21.583"/>
+									<path d="M125.009,33.822l1.44-1.439l1.08,2.521L125.009,33.822z"/>
+									<path d="M124.65,37.063l1.438-1.439l1.08,2.521L124.65,37.063z"/>
+								</g>
+							</g>
+						</g>
+					</g>
+				</g>
+				<g>
+					<g>
+						<g>
+							<g>
+								<g id="schematic_51_">
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="104.4" y1="35.982" x2="100.8" y2="35.982"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="108" y1="35.982" x2="104.4" y2="35.982"/>
+									<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="100.8,28.783 104.4,28.783 
+										108,28.783 104.4,35.982 									"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="104.4" y1="35.982" x2="104.4" y2="28.783"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="111.51" y1="33.283" x2="109.17" y2="30.943"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="111.148" y1="36.523" x2="108.81" y2="34.184"/>
+									
+										<line id="connector1pin_51_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="104.4" y1="35.982" x2="104.4" y2="43.184"/>
+									<polygon id="connector1terminal_51_" fill="none" points="104.399,43.184 104.4,43.184 104.4,43.184 									"/>
+									
+										<line id="connector0pin_51_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="104.4" y1="28.783" x2="104.4" y2="21.583"/>
+									<path d="M110.609,33.822l1.44-1.439l1.08,2.521L110.609,33.822z"/>
+									<path d="M110.25,37.063l1.439-1.439l1.08,2.521L110.25,37.063z"/>
+								</g>
+							</g>
+						</g>
+						<g>
+							<g>
+								<g id="schematic_50_">
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="90" y1="35.982" x2="86.4" y2="35.982"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="93.6" y1="35.982" x2="90" y2="35.982"/>
+									<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="86.4,28.783 90,28.783 
+										93.6,28.783 90,35.982 									"/>
+									<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="90" y1="35.982" x2="90" y2="28.783"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="97.11" y1="33.283" x2="94.77" y2="30.943"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="96.75" y1="36.523" x2="94.41" y2="34.184"/>
+									
+										<line id="connector1pin_50_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="90" y1="35.982" x2="90" y2="43.184"/>
+									<polygon id="connector1terminal_50_" fill="none" points="90,43.184 90.001,43.184 90.001,43.184 									"/>
+									
+										<line id="connector0pin_50_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="90" y1="28.783" x2="90" y2="21.583"/>
+									<path d="M96.209,33.822l1.44-1.439l1.08,2.521L96.209,33.822z"/>
+									<path d="M95.85,37.063l1.439-1.439l1.08,2.521L95.85,37.063z"/>
+								</g>
+							</g>
+						</g>
+					</g>
+				</g>
+				<g>
+					<g>
+						<g>
+							<g>
+								<g id="schematic_49_">
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="75.601" y1="35.982" x2="72" y2="35.982"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="79.2" y1="35.982" x2="75.601" y2="35.982"/>
+									<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="72,28.783 75.601,28.783 
+										79.2,28.783 75.601,35.982 									"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="75.601" y1="35.982" x2="75.601" y2="28.783"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="82.71" y1="33.283" x2="80.37" y2="30.943"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="82.35" y1="36.523" x2="80.01" y2="34.184"/>
+									
+										<line id="connector1pin_49_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="75.601" y1="35.982" x2="75.601" y2="43.184"/>
+									<polygon id="connector1terminal_49_" fill="none" points="75.6,43.184 75.601,43.184 75.601,43.184 									"/>
+									
+										<line id="connector0pin_49_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="75.601" y1="28.783" x2="75.601" y2="21.583"/>
+									<path d="M81.81,33.822l1.44-1.439l1.08,2.521L81.81,33.822z"/>
+									<path d="M81.45,37.063l1.439-1.439l1.08,2.521L81.45,37.063z"/>
+								</g>
+							</g>
+						</g>
+						<g>
+							<g>
+								<g id="schematic_48_">
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="61.201" y1="35.982" x2="57.6" y2="35.982"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="64.8" y1="35.982" x2="61.201" y2="35.982"/>
+									<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="57.6,28.783 61.201,28.783 
+										64.8,28.783 61.201,35.982 									"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="61.201" y1="35.982" x2="61.201" y2="28.783"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="68.31" y1="33.283" x2="65.97" y2="30.943"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="67.95" y1="36.523" x2="65.61" y2="34.184"/>
+									
+										<line id="connector1pin_48_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="61.201" y1="35.982" x2="61.201" y2="43.184"/>
+									<polygon id="connector1terminal_48_" fill="none" points="61.2,43.184 61.201,43.184 61.201,43.184 									"/>
+									
+										<line id="connector0pin_48_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="61.201" y1="28.783" x2="61.201" y2="21.583"/>
+									<path d="M67.41,33.822l1.44-1.439l1.08,2.521L67.41,33.822z"/>
+									<path d="M67.05,37.063l1.439-1.439l1.08,2.521L67.05,37.063z"/>
+								</g>
+							</g>
+						</g>
+					</g>
+				</g>
+				<g>
+					<g>
+						<g>
+							<g>
+								<g id="schematic_47_">
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="46.801" y1="35.982" x2="43.2" y2="35.982"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="50.4" y1="35.982" x2="46.801" y2="35.982"/>
+									<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="43.2,28.783 46.801,28.783 
+										50.4,28.783 46.801,35.982 									"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="46.801" y1="35.982" x2="46.801" y2="28.783"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="53.91" y1="33.283" x2="51.57" y2="30.943"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="53.55" y1="36.523" x2="51.21" y2="34.184"/>
+									
+										<line id="connector1pin_47_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="46.801" y1="35.982" x2="46.801" y2="43.184"/>
+									<polygon id="connector1terminal_47_" fill="none" points="46.8,43.184 46.801,43.184 46.801,43.184 									"/>
+									
+										<line id="connector0pin_47_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="46.801" y1="28.783" x2="46.801" y2="21.583"/>
+									<path d="M53.01,33.822l1.44-1.439l1.08,2.521L53.01,33.822z"/>
+									<path d="M52.65,37.063l1.439-1.439l1.08,2.521L52.65,37.063z"/>
+								</g>
+							</g>
+						</g>
+						<g>
+							<g>
+								<g id="schematic_46_">
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="32.401" y1="35.982" x2="28.8" y2="35.982"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="36" y1="35.982" x2="32.401" y2="35.982"/>
+									<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="28.8,28.783 32.401,28.783 
+										36,28.783 32.401,35.982 									"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="32.401" y1="35.982" x2="32.401" y2="28.783"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="39.51" y1="33.283" x2="37.17" y2="30.943"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="39.15" y1="36.523" x2="36.81" y2="34.184"/>
+									
+										<line id="connector1pin_46_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="32.401" y1="35.982" x2="32.401" y2="43.184"/>
+									<polygon id="connector1terminal_46_" fill="none" points="32.4,43.184 32.401,43.184 32.401,43.184 									"/>
+									
+										<line id="connector0pin_46_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="32.401" y1="28.783" x2="32.401" y2="21.583"/>
+									<path d="M38.61,33.822l1.44-1.439l1.08,2.521L38.61,33.822z"/>
+									<path d="M38.25,37.063l1.439-1.439l1.08,2.521L38.25,37.063z"/>
+								</g>
+							</g>
+						</g>
+					</g>
+				</g>
+				<g>
+					<g>
+						<g>
+							<g>
+								<g id="schematic_45_">
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="18.002" y1="35.982" x2="14.4" y2="35.982"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="21.602" y1="35.982" x2="18.002" y2="35.982"/>
+									<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="14.4,28.783 18.002,28.783 
+										21.602,28.783 18.002,35.982 									"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="18.002" y1="35.982" x2="18.002" y2="28.783"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="25.111" y1="33.283" x2="22.771" y2="30.943"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="24.75" y1="36.523" x2="22.41" y2="34.184"/>
+									
+										<line id="connector1pin_45_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="18.002" y1="35.982" x2="18.002" y2="43.184"/>
+									<polygon id="connector1terminal_45_" fill="none" points="18,43.184 18.002,43.184 18.002,43.184 									"/>
+									
+										<line id="connector0pin_45_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="18.002" y1="28.783" x2="18.002" y2="21.583"/>
+									<path d="M24.211,33.822l1.439-1.439l1.081,2.521L24.211,33.822z"/>
+									<path d="M23.852,37.063l1.439-1.439l1.08,2.521L23.852,37.063z"/>
+								</g>
+							</g>
+						</g>
+						<g>
+							<g>
+								<g id="schematic_44_">
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="3.602" y1="35.982" x2="0" y2="35.982"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="7.201" y1="35.982" x2="3.602" y2="35.982"/>
+									<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="0,28.783 3.602,28.783 
+										7.201,28.783 3.602,35.982 									"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="3.602" y1="35.982" x2="3.602" y2="28.783"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="10.711" y1="33.283" x2="8.371" y2="30.943"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="10.35" y1="36.523" x2="8.01" y2="34.184"/>
+									
+										<line id="connector1pin_44_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="3.602" y1="35.982" x2="3.602" y2="43.184"/>
+									<polygon id="connector1terminal_44_" fill="none" points="3.6,43.184 3.602,43.184 3.602,43.184 									"/>
+									
+										<line id="connector0pin_44_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="3.602" y1="28.783" x2="3.602" y2="21.583"/>
+									<path d="M9.811,33.822l1.439-1.439l1.08,2.521L9.811,33.822z"/>
+									<path d="M9.451,37.063l1.439-1.439l1.08,2.521L9.451,37.063z"/>
+								</g>
+							</g>
+						</g>
+					</g>
+				</g>
+			</g>
+			<g>
+				<g>
+					<g>
+						<g>
+							<g>
+								<g id="schematic_43_">
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="190.798" y1="57.582" x2="187.199" y2="57.582"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="194.398" y1="57.582" x2="190.798" y2="57.582"/>
+									<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="187.199,50.383 
+										190.798,50.383 194.398,50.383 190.798,57.582 									"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="190.798" y1="57.582" x2="190.798" y2="50.383"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="197.908" y1="54.883" x2="195.568" y2="52.543"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="197.548" y1="58.123" x2="195.208" y2="55.783"/>
+									
+										<line id="connector1pin_43_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="190.798" y1="57.582" x2="190.798" y2="64.783"/>
+									<path id="connector1terminal_43_" fill="none" d="M190.798,64.783L190.798,64.783L190.798,64.783z"/>
+									
+										<line id="connector0pin_43_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="190.798" y1="50.383" x2="190.798" y2="43.183"/>
+									<rect id="connector0terminal_43_" x="190.798" y="43.183" fill="none" width="0" height="0.001"/>
+									<path d="M197.007,55.422l1.441-1.438l1.079,2.52L197.007,55.422z"/>
+									<path d="M196.648,58.662l1.438-1.438l1.08,2.52L196.648,58.662z"/>
+								</g>
+							</g>
+						</g>
+						<g>
+							<g>
+								<g id="schematic_42_">
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="176.398" y1="57.582" x2="172.798" y2="57.582"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="179.998" y1="57.582" x2="176.398" y2="57.582"/>
+									<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="172.798,50.383 
+										176.398,50.383 179.998,50.383 176.398,57.582 									"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="176.398" y1="57.582" x2="176.398" y2="50.383"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="183.507" y1="54.883" x2="181.167" y2="52.543"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="183.148" y1="58.123" x2="180.809" y2="55.783"/>
+									
+										<line id="connector1pin_42_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="176.398" y1="57.582" x2="176.398" y2="64.783"/>
+									<path id="connector1terminal_42_" fill="none" d="M176.398,64.783L176.398,64.783L176.398,64.783z"/>
+									
+										<line id="connector0pin_42_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="176.398" y1="50.383" x2="176.398" y2="43.183"/>
+									<rect id="connector0terminal_42_" x="176.398" y="43.183" fill="none" width="0" height="0.001"/>
+									<path d="M182.607,55.422l1.438-1.438l1.08,2.52L182.607,55.422z"/>
+									<path d="M182.248,58.662l1.439-1.438l1.08,2.52L182.248,58.662z"/>
+								</g>
+							</g>
+						</g>
+					</g>
+					<g>
+						<line fill="none" x1="176.398" y1="43.183" x2="190.764" y2="43.183"/>
+						<path d="M190.764,42.732h-14.365c-0.248,0-0.446,0.202-0.446,0.45s0.198,0.446,0.446,0.446h14.365
+							c0.248,0,0.45-0.198,0.45-0.446S191.012,42.732,190.764,42.732z"/>
+					</g>
+				</g>
+				<g>
+					<g>
+						<g>
+							<g>
+								<g id="schematic_41_">
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="162" y1="57.582" x2="158.4" y2="57.582"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="165.6" y1="57.582" x2="162" y2="57.582"/>
+									<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="158.4,50.383 162,50.383 
+										165.6,50.383 162,57.582 									"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="162" y1="57.582" x2="162" y2="50.383"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="169.109" y1="54.883" x2="166.77" y2="52.543"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="168.75" y1="58.123" x2="166.41" y2="55.783"/>
+									
+										<line id="connector1pin_41_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="162" y1="57.582" x2="162" y2="64.783"/>
+									<polygon id="connector1terminal_41_" fill="none" points="162,64.783 162.001,64.783 162.001,64.783 									"/>
+									
+										<line id="connector0pin_41_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="162" y1="50.383" x2="162" y2="43.183"/>
+									<rect id="connector0terminal_41_" x="162" y="43.183" fill="none" width="0.001" height="0.001"/>
+									<path d="M168.208,55.422l1.44-1.438l1.08,2.52L168.208,55.422z"/>
+									<path d="M167.85,58.662l1.438-1.438l1.08,2.52L167.85,58.662z"/>
+								</g>
+							</g>
+						</g>
+						<g>
+							<g>
+								<g id="schematic_40_">
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="147.602" y1="57.582" x2="144" y2="57.582"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="151.2" y1="57.582" x2="147.602" y2="57.582"/>
+									<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="144,50.383 147.602,50.383 
+										151.2,50.383 147.602,57.582 									"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="147.602" y1="57.582" x2="147.602" y2="50.383"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="154.71" y1="54.883" x2="152.37" y2="52.543"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="154.35" y1="58.123" x2="152.01" y2="55.783"/>
+									
+										<line id="connector1pin_40_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="147.602" y1="57.582" x2="147.602" y2="64.783"/>
+									<polygon id="connector1terminal_40_" fill="none" points="147.6,64.783 147.602,64.783 147.602,64.783 									"/>
+									
+										<line id="connector0pin_40_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="147.602" y1="50.383" x2="147.602" y2="43.183"/>
+									<rect id="connector0terminal_40_" x="147.6" y="43.183" fill="none" width="0.002" height="0.001"/>
+									<path d="M153.811,55.422l1.439-1.438l1.08,2.52L153.811,55.422z"/>
+									<path d="M153.45,58.662l1.438-1.438l1.077,2.52L153.45,58.662z"/>
+								</g>
+							</g>
+						</g>
+					</g>
+					<g>
+						<line fill="none" x1="147.6" y1="43.183" x2="161.966" y2="43.183"/>
+						<path d="M161.966,42.732H147.6c-0.25,0-0.451,0.202-0.451,0.45s0.203,0.446,0.451,0.446h14.366c0.249,0,0.45-0.198,0.45-0.446
+							S162.214,42.732,161.966,42.732z"/>
+					</g>
+				</g>
+				<g>
+					<g>
+						<g>
+							<g>
+								<g id="schematic_39_">
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="133.2" y1="57.582" x2="129.6" y2="57.582"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="136.8" y1="57.582" x2="133.2" y2="57.582"/>
+									<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="129.6,50.383 133.2,50.383 
+										136.8,50.383 133.2,57.582 									"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="133.2" y1="57.582" x2="133.2" y2="50.383"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="140.311" y1="54.883" x2="137.971" y2="52.543"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="139.949" y1="58.123" x2="137.609" y2="55.783"/>
+									
+										<line id="connector1pin_39_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="133.2" y1="57.582" x2="133.2" y2="64.783"/>
+									<polygon id="connector1terminal_39_" fill="none" points="133.199,64.783 133.2,64.783 133.2,64.783 									"/>
+									
+										<line id="connector0pin_39_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="133.2" y1="50.383" x2="133.2" y2="43.183"/>
+									<rect id="connector0terminal_39_" x="133.199" y="43.183" fill="none" width="0.001" height="0.001"/>
+									<path d="M139.409,55.422l1.44-1.438l1.08,2.52L139.409,55.422z"/>
+									<path d="M139.05,58.662l1.438-1.438l1.08,2.52L139.05,58.662z"/>
+								</g>
+							</g>
+						</g>
+						<g>
+							<g>
+								<g id="schematic_38_">
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="118.8" y1="57.582" x2="115.2" y2="57.582"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="122.4" y1="57.582" x2="118.8" y2="57.582"/>
+									<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="115.2,50.383 118.8,50.383 
+										122.4,50.383 118.8,57.582 									"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="118.8" y1="57.582" x2="118.8" y2="50.383"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="125.91" y1="54.883" x2="123.57" y2="52.543"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="125.549" y1="58.123" x2="123.209" y2="55.783"/>
+									
+										<line id="connector1pin_38_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="118.8" y1="57.582" x2="118.8" y2="64.783"/>
+									<polygon id="connector1terminal_38_" fill="none" points="118.799,64.783 118.8,64.783 118.8,64.783 									"/>
+									
+										<line id="connector0pin_38_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="118.8" y1="50.383" x2="118.8" y2="43.183"/>
+									<rect id="connector0terminal_38_" x="118.799" y="43.183" fill="none" width="0.001" height="0.001"/>
+									<path d="M125.009,55.422l1.44-1.438l1.08,2.52L125.009,55.422z"/>
+									<path d="M124.65,58.662l1.438-1.438l1.08,2.52L124.65,58.662z"/>
+								</g>
+							</g>
+						</g>
+					</g>
+					<g>
+						<line fill="none" x1="118.799" y1="43.183" x2="133.166" y2="43.183"/>
+						<path d="M133.166,42.732H118.8c-0.249,0-0.45,0.202-0.45,0.45s0.203,0.446,0.45,0.446h14.366c0.249,0,0.45-0.198,0.45-0.446
+							S133.414,42.732,133.166,42.732z"/>
+					</g>
+				</g>
+				<g>
+					<g>
+						<g>
+							<g>
+								<g id="schematic_37_">
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="104.4" y1="57.582" x2="100.8" y2="57.582"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="108" y1="57.582" x2="104.4" y2="57.582"/>
+									<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="100.8,50.383 104.4,50.383 
+										108,50.383 104.4,57.582 									"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="104.4" y1="57.582" x2="104.4" y2="50.383"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="111.51" y1="54.883" x2="109.17" y2="52.543"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="111.148" y1="58.123" x2="108.81" y2="55.783"/>
+									
+										<line id="connector1pin_37_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="104.4" y1="57.582" x2="104.4" y2="64.783"/>
+									<polygon id="connector1terminal_37_" fill="none" points="104.399,64.783 104.4,64.783 104.4,64.783 									"/>
+									
+										<line id="connector0pin_37_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="104.4" y1="50.383" x2="104.4" y2="43.183"/>
+									<rect id="connector0terminal_37_" x="104.399" y="43.183" fill="none" width="0.001" height="0.001"/>
+									<path d="M110.609,55.422l1.44-1.438l1.08,2.52L110.609,55.422z"/>
+									<path d="M110.25,58.662l1.439-1.438l1.08,2.52L110.25,58.662z"/>
+								</g>
+							</g>
+						</g>
+						<g>
+							<g>
+								<g id="schematic_36_">
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="90" y1="57.582" x2="86.4" y2="57.582"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="93.6" y1="57.582" x2="90" y2="57.582"/>
+									<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="86.4,50.383 90,50.383 
+										93.6,50.383 90,57.582 									"/>
+									<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="90" y1="57.582" x2="90" y2="50.383"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="97.11" y1="54.883" x2="94.77" y2="52.543"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="96.75" y1="58.123" x2="94.41" y2="55.783"/>
+									
+										<line id="connector1pin_36_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="90" y1="57.582" x2="90" y2="64.783"/>
+									<polygon id="connector1terminal_36_" fill="none" points="90,64.783 90.001,64.783 90.001,64.783 									"/>
+									
+										<line id="connector0pin_36_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="90" y1="50.383" x2="90" y2="43.183"/>
+									<rect id="connector0terminal_36_" x="90" y="43.183" fill="none" width="0.001" height="0.001"/>
+									<path d="M96.209,55.422l1.44-1.438l1.08,2.52L96.209,55.422z"/>
+									<path d="M95.85,58.662l1.439-1.438l1.08,2.52L95.85,58.662z"/>
+								</g>
+							</g>
+						</g>
+					</g>
+					<g>
+						<line fill="none" x1="90" y1="43.183" x2="104.366" y2="43.183"/>
+						<path d="M104.366,42.732H90c-0.249,0-0.45,0.202-0.45,0.45S89.752,43.63,90,43.63h14.366c0.249,0,0.45-0.198,0.45-0.446
+							S104.614,42.732,104.366,42.732z"/>
+					</g>
+				</g>
+				<g>
+					<g>
+						<g>
+							<g>
+								<g id="schematic_35_">
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="75.601" y1="57.582" x2="72" y2="57.582"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="79.2" y1="57.582" x2="75.601" y2="57.582"/>
+									<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="72,50.383 75.601,50.383 
+										79.2,50.383 75.601,57.582 									"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="75.601" y1="57.582" x2="75.601" y2="50.383"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="82.71" y1="54.883" x2="80.37" y2="52.543"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="82.35" y1="58.123" x2="80.01" y2="55.783"/>
+									
+										<line id="connector1pin_35_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="75.601" y1="57.582" x2="75.601" y2="64.783"/>
+									<polygon id="connector1terminal_35_" fill="none" points="75.6,64.783 75.601,64.783 75.601,64.783 									"/>
+									
+										<line id="connector0pin_35_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="75.601" y1="50.383" x2="75.601" y2="43.183"/>
+									<rect id="connector0terminal_35_" x="75.6" y="43.183" fill="none" width="0.001" height="0.001"/>
+									<path d="M81.81,55.422l1.44-1.438l1.08,2.52L81.81,55.422z"/>
+									<path d="M81.45,58.662l1.439-1.438l1.08,2.52L81.45,58.662z"/>
+								</g>
+							</g>
+						</g>
+						<g>
+							<g>
+								<g id="schematic_34_">
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="61.201" y1="57.582" x2="57.6" y2="57.582"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="64.8" y1="57.582" x2="61.201" y2="57.582"/>
+									<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="57.6,50.383 61.201,50.383 
+										64.8,50.383 61.201,57.582 									"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="61.201" y1="57.582" x2="61.201" y2="50.383"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="68.31" y1="54.883" x2="65.97" y2="52.543"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="67.95" y1="58.123" x2="65.61" y2="55.783"/>
+									
+										<line id="connector1pin_34_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="61.201" y1="57.582" x2="61.201" y2="64.783"/>
+									<polygon id="connector1terminal_34_" fill="none" points="61.2,64.783 61.201,64.783 61.201,64.783 									"/>
+									
+										<line id="connector0pin_34_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="61.201" y1="50.383" x2="61.201" y2="43.183"/>
+									<rect id="connector0terminal_34_" x="61.2" y="43.183" fill="none" width="0.001" height="0.001"/>
+									<path d="M67.41,55.422l1.44-1.438l1.08,2.52L67.41,55.422z"/>
+									<path d="M67.05,58.662l1.439-1.438l1.08,2.52L67.05,58.662z"/>
+								</g>
+							</g>
+						</g>
+					</g>
+					<g>
+						<line fill="none" x1="61.2" y1="43.183" x2="75.566" y2="43.183"/>
+						<path d="M75.566,42.732H61.2c-0.249,0-0.45,0.202-0.45,0.45s0.202,0.446,0.45,0.446h14.366c0.249,0,0.45-0.198,0.45-0.446
+							S75.814,42.732,75.566,42.732z"/>
+					</g>
+				</g>
+				<g>
+					<g>
+						<g>
+							<g>
+								<g id="schematic_33_">
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="46.801" y1="57.582" x2="43.2" y2="57.582"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="50.4" y1="57.582" x2="46.801" y2="57.582"/>
+									<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="43.2,50.383 46.801,50.383 
+										50.4,50.383 46.801,57.582 									"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="46.801" y1="57.582" x2="46.801" y2="50.383"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="53.91" y1="54.883" x2="51.57" y2="52.543"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="53.55" y1="58.123" x2="51.21" y2="55.783"/>
+									
+										<line id="connector1pin_33_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="46.801" y1="57.582" x2="46.801" y2="64.783"/>
+									<polygon id="connector1terminal_33_" fill="none" points="46.8,64.783 46.801,64.783 46.801,64.783 									"/>
+									
+										<line id="connector0pin_33_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="46.801" y1="50.383" x2="46.801" y2="43.183"/>
+									<rect id="connector0terminal_33_" x="46.8" y="43.183" fill="none" width="0.001" height="0.001"/>
+									<path d="M53.01,55.422l1.44-1.438l1.08,2.52L53.01,55.422z"/>
+									<path d="M52.65,58.662l1.439-1.438l1.08,2.52L52.65,58.662z"/>
+								</g>
+							</g>
+						</g>
+						<g>
+							<g>
+								<g id="schematic_32_">
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="32.401" y1="57.582" x2="28.8" y2="57.582"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="36" y1="57.582" x2="32.401" y2="57.582"/>
+									<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="28.8,50.383 32.401,50.383 
+										36,50.383 32.401,57.582 									"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="32.401" y1="57.582" x2="32.401" y2="50.383"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="39.51" y1="54.883" x2="37.17" y2="52.543"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="39.15" y1="58.123" x2="36.81" y2="55.783"/>
+									
+										<line id="connector1pin_32_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="32.401" y1="57.582" x2="32.401" y2="64.783"/>
+									<polygon id="connector1terminal_32_" fill="none" points="32.4,64.783 32.401,64.783 32.401,64.783 									"/>
+									
+										<line id="connector0pin_32_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="32.401" y1="50.383" x2="32.401" y2="43.183"/>
+									<rect id="connector0terminal_32_" x="32.4" y="43.183" fill="none" width="0.001" height="0.001"/>
+									<path d="M38.61,55.422l1.44-1.438l1.08,2.52L38.61,55.422z"/>
+									<path d="M38.25,58.662l1.439-1.438l1.08,2.52L38.25,58.662z"/>
+								</g>
+							</g>
+						</g>
+					</g>
+					<g>
+						<line fill="none" x1="32.4" y1="43.183" x2="46.766" y2="43.183"/>
+						<path d="M46.766,42.732H32.4c-0.249,0-0.45,0.202-0.45,0.45s0.202,0.446,0.45,0.446h14.366c0.249,0,0.45-0.198,0.45-0.446
+							S47.015,42.732,46.766,42.732z"/>
+					</g>
+				</g>
+				<g>
+					<g>
+						<g>
+							<g>
+								<g id="schematic_31_">
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="18.002" y1="57.582" x2="14.4" y2="57.582"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="21.602" y1="57.582" x2="18.002" y2="57.582"/>
+									<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="14.4,50.383 18.002,50.383 
+										21.602,50.383 18.002,57.582 									"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="18.002" y1="57.582" x2="18.002" y2="50.383"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="25.111" y1="54.883" x2="22.771" y2="52.543"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="24.75" y1="58.123" x2="22.41" y2="55.783"/>
+									
+										<line id="connector1pin_31_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="18.002" y1="57.582" x2="18.002" y2="64.783"/>
+									<polygon id="connector1terminal_31_" fill="none" points="18,64.783 18.002,64.783 18.002,64.783 									"/>
+									
+										<line id="connector0pin_31_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="18.002" y1="50.383" x2="18.002" y2="43.183"/>
+									<rect id="connector0terminal_31_" x="18" y="43.183" fill="none" width="0.002" height="0.001"/>
+									<path d="M24.211,55.422l1.439-1.438l1.081,2.52L24.211,55.422z"/>
+									<path d="M23.852,58.662l1.439-1.438l1.08,2.52L23.852,58.662z"/>
+								</g>
+							</g>
+						</g>
+						<g>
+							<g>
+								<g id="schematic_30_">
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="3.602" y1="57.582" x2="0" y2="57.582"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="7.201" y1="57.582" x2="3.602" y2="57.582"/>
+									<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="0,50.383 3.602,50.383 
+										7.201,50.383 3.602,57.582 									"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="3.602" y1="57.582" x2="3.602" y2="50.383"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="10.711" y1="54.883" x2="8.371" y2="52.543"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="10.35" y1="58.123" x2="8.01" y2="55.783"/>
+									
+										<line id="connector1pin_30_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="3.602" y1="57.582" x2="3.602" y2="64.783"/>
+									<polygon id="connector1terminal_30_" fill="none" points="3.6,64.783 3.602,64.783 3.602,64.783 									"/>
+									
+										<line id="connector0pin_30_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="3.602" y1="50.383" x2="3.602" y2="43.183"/>
+									<rect id="connector0terminal_30_" x="3.6" y="43.183" fill="none" width="0.002" height="0.001"/>
+									<path d="M9.811,55.422l1.439-1.438l1.08,2.52L9.811,55.422z"/>
+									<path d="M9.451,58.662l1.439-1.438l1.08,2.52L9.451,58.662z"/>
+								</g>
+							</g>
+						</g>
+					</g>
+					<g>
+						<line fill="none" x1="3.6" y1="43.183" x2="17.967" y2="43.183"/>
+						<path d="M17.967,42.732H3.6c-0.248,0-0.449,0.202-0.449,0.45S3.352,43.63,3.6,43.63h14.367c0.248,0,0.449-0.198,0.449-0.446
+							S18.215,42.732,17.967,42.732z"/>
+					</g>
+				</g>
+			</g>
+			<g>
+				<g>
+					<g>
+						<g>
+							<g>
+								<g id="schematic_29_">
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="190.798" y1="79.182" x2="187.199" y2="79.182"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="194.398" y1="79.182" x2="190.798" y2="79.182"/>
+									<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="187.199,71.983 
+										190.798,71.983 194.398,71.983 190.798,79.182 									"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="190.798" y1="79.182" x2="190.798" y2="71.983"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="197.908" y1="76.483" x2="195.568" y2="74.143"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="197.548" y1="79.723" x2="195.208" y2="77.383"/>
+									
+										<line id="connector1pin_29_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="190.798" y1="79.182" x2="190.798" y2="86.383"/>
+									<path id="connector1terminal_29_" fill="none" d="M190.798,86.383L190.798,86.383L190.798,86.383z"/>
+									
+										<line id="connector0pin_29_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="190.798" y1="71.983" x2="190.798" y2="64.783"/>
+									<rect id="connector0terminal_29_" x="190.798" y="64.783" fill="none" width="0" height="0.001"/>
+									<path d="M197.007,77.022l1.441-1.439l1.079,2.521L197.007,77.022z"/>
+									<path d="M196.648,80.262l1.438-1.439l1.08,2.521L196.648,80.262z"/>
+								</g>
+							</g>
+						</g>
+						<g>
+							<g>
+								<g id="schematic_28_">
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="176.398" y1="79.182" x2="172.798" y2="79.182"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="179.998" y1="79.182" x2="176.398" y2="79.182"/>
+									<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="172.798,71.983 
+										176.398,71.983 179.998,71.983 176.398,79.182 									"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="176.398" y1="79.182" x2="176.398" y2="71.983"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="183.507" y1="76.483" x2="181.167" y2="74.143"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="183.148" y1="79.723" x2="180.809" y2="77.383"/>
+									
+										<line id="connector1pin_28_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="176.398" y1="79.182" x2="176.398" y2="86.383"/>
+									<path id="connector1terminal_28_" fill="none" d="M176.398,86.383L176.398,86.383L176.398,86.383z"/>
+									
+										<line id="connector0pin_28_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="176.398" y1="71.983" x2="176.398" y2="64.783"/>
+									<rect id="connector0terminal_28_" x="176.398" y="64.783" fill="none" width="0" height="0.001"/>
+									<path d="M182.607,77.022l1.438-1.439l1.08,2.521L182.607,77.022z"/>
+									<path d="M182.248,80.262l1.439-1.439l1.08,2.521L182.248,80.262z"/>
+								</g>
+							</g>
+						</g>
+					</g>
+					<g>
+						<line fill="none" x1="176.398" y1="64.783" x2="190.764" y2="64.783"/>
+						<path d="M190.764,64.333h-14.365c-0.248,0-0.446,0.202-0.446,0.45s0.198,0.45,0.446,0.45h14.365c0.248,0,0.45-0.202,0.45-0.45
+							S191.012,64.333,190.764,64.333z"/>
+					</g>
+				</g>
+				<g>
+					<g>
+						<g>
+							<g>
+								<g id="schematic_27_">
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="162" y1="79.182" x2="158.4" y2="79.182"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="165.6" y1="79.182" x2="162" y2="79.182"/>
+									<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="158.4,71.983 162,71.983 
+										165.6,71.983 162,79.182 									"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="162" y1="79.182" x2="162" y2="71.983"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="169.109" y1="76.483" x2="166.77" y2="74.143"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="168.75" y1="79.723" x2="166.41" y2="77.383"/>
+									
+										<line id="connector1pin_27_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="162" y1="79.182" x2="162" y2="86.383"/>
+									<polygon id="connector1terminal_27_" fill="none" points="162,86.383 162.001,86.383 162.001,86.383 									"/>
+									
+										<line id="connector0pin_27_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="162" y1="71.983" x2="162" y2="64.783"/>
+									<rect id="connector0terminal_27_" x="162" y="64.783" fill="none" width="0.001" height="0.001"/>
+									<path d="M168.208,77.022l1.44-1.439l1.08,2.521L168.208,77.022z"/>
+									<path d="M167.85,80.262l1.438-1.439l1.08,2.521L167.85,80.262z"/>
+								</g>
+							</g>
+						</g>
+						<g>
+							<g>
+								<g id="schematic_26_">
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="147.602" y1="79.182" x2="144" y2="79.182"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="151.2" y1="79.182" x2="147.602" y2="79.182"/>
+									<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="144,71.983 147.602,71.983 
+										151.2,71.983 147.602,79.182 									"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="147.602" y1="79.182" x2="147.602" y2="71.983"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="154.71" y1="76.483" x2="152.37" y2="74.143"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="154.35" y1="79.723" x2="152.01" y2="77.383"/>
+									
+										<line id="connector1pin_26_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="147.602" y1="79.182" x2="147.602" y2="86.383"/>
+									<polygon id="connector1terminal_26_" fill="none" points="147.6,86.383 147.602,86.383 147.602,86.383 									"/>
+									
+										<line id="connector0pin_26_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="147.602" y1="71.983" x2="147.602" y2="64.783"/>
+									<rect id="connector0terminal_26_" x="147.6" y="64.783" fill="none" width="0.002" height="0.001"/>
+									<path d="M153.811,77.022l1.439-1.439l1.08,2.521L153.811,77.022z"/>
+									<path d="M153.45,80.262l1.438-1.439l1.077,2.521L153.45,80.262z"/>
+								</g>
+							</g>
+						</g>
+					</g>
+					<g>
+						<line fill="none" x1="147.6" y1="64.783" x2="161.966" y2="64.783"/>
+						<path d="M161.966,64.333H147.6c-0.25,0-0.451,0.202-0.451,0.45s0.203,0.45,0.451,0.45h14.366c0.249,0,0.45-0.202,0.45-0.45
+							S162.214,64.333,161.966,64.333z"/>
+					</g>
+				</g>
+				<g>
+					<g>
+						<g>
+							<g>
+								<g id="schematic_25_">
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="133.2" y1="79.182" x2="129.6" y2="79.182"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="136.8" y1="79.182" x2="133.2" y2="79.182"/>
+									<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="129.6,71.983 133.2,71.983 
+										136.8,71.983 133.2,79.182 									"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="133.2" y1="79.182" x2="133.2" y2="71.983"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="140.311" y1="76.483" x2="137.971" y2="74.143"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="139.949" y1="79.723" x2="137.609" y2="77.383"/>
+									
+										<line id="connector1pin_25_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="133.2" y1="79.182" x2="133.2" y2="86.383"/>
+									<polygon id="connector1terminal_25_" fill="none" points="133.199,86.383 133.2,86.383 133.2,86.383 									"/>
+									
+										<line id="connector0pin_25_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="133.2" y1="71.983" x2="133.2" y2="64.783"/>
+									<rect id="connector0terminal_25_" x="133.199" y="64.783" fill="none" width="0.001" height="0.001"/>
+									<path d="M139.409,77.022l1.44-1.439l1.08,2.521L139.409,77.022z"/>
+									<path d="M139.05,80.262l1.438-1.439l1.08,2.521L139.05,80.262z"/>
+								</g>
+							</g>
+						</g>
+						<g>
+							<g>
+								<g id="schematic_24_">
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="118.8" y1="79.182" x2="115.2" y2="79.182"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="122.4" y1="79.182" x2="118.8" y2="79.182"/>
+									<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="115.2,71.983 118.8,71.983 
+										122.4,71.983 118.8,79.182 									"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="118.8" y1="79.182" x2="118.8" y2="71.983"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="125.91" y1="76.483" x2="123.57" y2="74.143"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="125.549" y1="79.723" x2="123.209" y2="77.383"/>
+									
+										<line id="connector1pin_24_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="118.8" y1="79.182" x2="118.8" y2="86.383"/>
+									<polygon id="connector1terminal_24_" fill="none" points="118.799,86.383 118.8,86.383 118.8,86.383 									"/>
+									
+										<line id="connector0pin_24_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="118.8" y1="71.983" x2="118.8" y2="64.783"/>
+									<rect id="connector0terminal_24_" x="118.799" y="64.783" fill="none" width="0.001" height="0.001"/>
+									<path d="M125.009,77.022l1.44-1.439l1.08,2.521L125.009,77.022z"/>
+									<path d="M124.65,80.262l1.438-1.439l1.08,2.521L124.65,80.262z"/>
+								</g>
+							</g>
+						</g>
+					</g>
+					<g>
+						<line fill="none" x1="118.799" y1="64.783" x2="133.166" y2="64.783"/>
+						<path d="M133.166,64.333H118.8c-0.249,0-0.45,0.202-0.45,0.45s0.203,0.45,0.45,0.45h14.366c0.249,0,0.45-0.202,0.45-0.45
+							S133.414,64.333,133.166,64.333z"/>
+					</g>
+				</g>
+				<g>
+					<g>
+						<g>
+							<g>
+								<g id="schematic_23_">
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="104.4" y1="79.182" x2="100.8" y2="79.182"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="108" y1="79.182" x2="104.4" y2="79.182"/>
+									<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="100.8,71.983 104.4,71.983 
+										108,71.983 104.4,79.182 									"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="104.4" y1="79.182" x2="104.4" y2="71.983"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="111.51" y1="76.483" x2="109.17" y2="74.143"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="111.148" y1="79.723" x2="108.81" y2="77.383"/>
+									
+										<line id="connector1pin_23_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="104.4" y1="79.182" x2="104.4" y2="86.383"/>
+									<polygon id="connector1terminal_23_" fill="none" points="104.399,86.383 104.4,86.383 104.4,86.383 									"/>
+									
+										<line id="connector0pin_23_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="104.4" y1="71.983" x2="104.4" y2="64.783"/>
+									<rect id="connector0terminal_23_" x="104.399" y="64.783" fill="none" width="0.001" height="0.001"/>
+									<path d="M110.609,77.022l1.44-1.439l1.08,2.521L110.609,77.022z"/>
+									<path d="M110.25,80.262l1.439-1.439l1.08,2.521L110.25,80.262z"/>
+								</g>
+							</g>
+						</g>
+						<g>
+							<g>
+								<g id="schematic_22_">
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="90" y1="79.182" x2="86.4" y2="79.182"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="93.6" y1="79.182" x2="90" y2="79.182"/>
+									<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="86.4,71.983 90,71.983 
+										93.6,71.983 90,79.182 									"/>
+									<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="90" y1="79.182" x2="90" y2="71.983"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="97.11" y1="76.483" x2="94.77" y2="74.143"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="96.75" y1="79.723" x2="94.41" y2="77.383"/>
+									
+										<line id="connector1pin_22_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="90" y1="79.182" x2="90" y2="86.383"/>
+									<polygon id="connector1terminal_22_" fill="none" points="90,86.383 90.001,86.383 90.001,86.383 									"/>
+									
+										<line id="connector0pin_22_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="90" y1="71.983" x2="90" y2="64.783"/>
+									<rect id="connector0terminal_22_" x="90" y="64.783" fill="none" width="0.001" height="0.001"/>
+									<path d="M96.209,77.022l1.44-1.439l1.08,2.521L96.209,77.022z"/>
+									<path d="M95.85,80.262l1.439-1.439l1.08,2.521L95.85,80.262z"/>
+								</g>
+							</g>
+						</g>
+					</g>
+					<g>
+						<line fill="none" x1="90" y1="64.783" x2="104.366" y2="64.783"/>
+						<path d="M104.366,64.333H90c-0.249,0-0.45,0.202-0.45,0.45s0.202,0.45,0.45,0.45h14.366c0.249,0,0.45-0.202,0.45-0.45
+							S104.614,64.333,104.366,64.333z"/>
+					</g>
+				</g>
+				<g>
+					<g>
+						<g>
+							<g>
+								<g id="schematic_21_">
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="75.601" y1="79.182" x2="72" y2="79.182"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="79.2" y1="79.182" x2="75.601" y2="79.182"/>
+									<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="72,71.983 75.601,71.983 
+										79.2,71.983 75.601,79.182 									"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="75.601" y1="79.182" x2="75.601" y2="71.983"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="82.71" y1="76.483" x2="80.37" y2="74.143"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="82.35" y1="79.723" x2="80.01" y2="77.383"/>
+									
+										<line id="connector1pin_21_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="75.601" y1="79.182" x2="75.601" y2="86.383"/>
+									<polygon id="connector1terminal_21_" fill="none" points="75.6,86.383 75.601,86.383 75.601,86.383 									"/>
+									
+										<line id="connector0pin_21_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="75.601" y1="71.983" x2="75.601" y2="64.783"/>
+									<rect id="connector0terminal_21_" x="75.6" y="64.783" fill="none" width="0.001" height="0.001"/>
+									<path d="M81.81,77.022l1.44-1.439l1.08,2.521L81.81,77.022z"/>
+									<path d="M81.45,80.262l1.439-1.439l1.08,2.521L81.45,80.262z"/>
+								</g>
+							</g>
+						</g>
+						<g>
+							<g>
+								<g id="schematic_20_">
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="61.201" y1="79.182" x2="57.6" y2="79.182"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="64.8" y1="79.182" x2="61.201" y2="79.182"/>
+									<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="57.6,71.983 61.201,71.983 
+										64.8,71.983 61.201,79.182 									"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="61.201" y1="79.182" x2="61.201" y2="71.983"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="68.31" y1="76.483" x2="65.97" y2="74.143"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="67.95" y1="79.723" x2="65.61" y2="77.383"/>
+									
+										<line id="connector1pin_20_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="61.201" y1="79.182" x2="61.201" y2="86.383"/>
+									<polygon id="connector1terminal_20_" fill="none" points="61.2,86.383 61.201,86.383 61.201,86.383 									"/>
+									
+										<line id="connector0pin_20_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="61.201" y1="71.983" x2="61.201" y2="64.783"/>
+									<rect id="connector0terminal_20_" x="61.2" y="64.783" fill="none" width="0.001" height="0.001"/>
+									<path d="M67.41,77.022l1.44-1.439l1.08,2.521L67.41,77.022z"/>
+									<path d="M67.05,80.262l1.439-1.439l1.08,2.521L67.05,80.262z"/>
+								</g>
+							</g>
+						</g>
+					</g>
+					<g>
+						<line fill="none" x1="61.2" y1="64.783" x2="75.566" y2="64.783"/>
+						<path d="M75.566,64.333H61.2c-0.249,0-0.45,0.202-0.45,0.45s0.202,0.45,0.45,0.45h14.366c0.249,0,0.45-0.202,0.45-0.45
+							S75.814,64.333,75.566,64.333z"/>
+					</g>
+				</g>
+				<g>
+					<g>
+						<g>
+							<g>
+								<g id="schematic_19_">
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="46.801" y1="79.182" x2="43.2" y2="79.182"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="50.4" y1="79.182" x2="46.801" y2="79.182"/>
+									<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="43.2,71.983 46.801,71.983 
+										50.4,71.983 46.801,79.182 									"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="46.801" y1="79.182" x2="46.801" y2="71.983"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="53.91" y1="76.483" x2="51.57" y2="74.143"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="53.55" y1="79.723" x2="51.21" y2="77.383"/>
+									
+										<line id="connector1pin_19_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="46.801" y1="79.182" x2="46.801" y2="86.383"/>
+									<polygon id="connector1terminal_19_" fill="none" points="46.8,86.383 46.801,86.383 46.801,86.383 									"/>
+									
+										<line id="connector0pin_19_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="46.801" y1="71.983" x2="46.801" y2="64.783"/>
+									<rect id="connector0terminal_19_" x="46.8" y="64.783" fill="none" width="0.001" height="0.001"/>
+									<path d="M53.01,77.022l1.44-1.439l1.08,2.521L53.01,77.022z"/>
+									<path d="M52.65,80.262l1.439-1.439l1.08,2.521L52.65,80.262z"/>
+								</g>
+							</g>
+						</g>
+						<g>
+							<g>
+								<g id="schematic_18_">
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="32.401" y1="79.182" x2="28.8" y2="79.182"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="36" y1="79.182" x2="32.401" y2="79.182"/>
+									<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="28.8,71.983 32.401,71.983 
+										36,71.983 32.401,79.182 									"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="32.401" y1="79.182" x2="32.401" y2="71.983"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="39.51" y1="76.483" x2="37.17" y2="74.143"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="39.15" y1="79.723" x2="36.81" y2="77.383"/>
+									
+										<line id="connector1pin_18_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="32.401" y1="79.182" x2="32.401" y2="86.383"/>
+									<polygon id="connector1terminal_18_" fill="none" points="32.4,86.383 32.401,86.383 32.401,86.383 									"/>
+									
+										<line id="connector0pin_18_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="32.401" y1="71.983" x2="32.401" y2="64.783"/>
+									<rect id="connector0terminal_18_" x="32.4" y="64.783" fill="none" width="0.001" height="0.001"/>
+									<path d="M38.61,77.022l1.44-1.439l1.08,2.521L38.61,77.022z"/>
+									<path d="M38.25,80.262l1.439-1.439l1.08,2.521L38.25,80.262z"/>
+								</g>
+							</g>
+						</g>
+					</g>
+					<g>
+						<line fill="none" x1="32.4" y1="64.783" x2="46.766" y2="64.783"/>
+						<path d="M46.766,64.333H32.4c-0.249,0-0.45,0.202-0.45,0.45s0.202,0.45,0.45,0.45h14.366c0.249,0,0.45-0.202,0.45-0.45
+							S47.015,64.333,46.766,64.333z"/>
+					</g>
+				</g>
+				<g>
+					<g>
+						<g>
+							<g>
+								<g id="schematic_17_">
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="18.002" y1="79.182" x2="14.4" y2="79.182"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="21.602" y1="79.182" x2="18.002" y2="79.182"/>
+									<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="14.4,71.983 18.002,71.983 
+										21.602,71.983 18.002,79.182 									"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="18.002" y1="79.182" x2="18.002" y2="71.983"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="25.111" y1="76.483" x2="22.771" y2="74.143"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="24.75" y1="79.723" x2="22.41" y2="77.383"/>
+									
+										<line id="connector1pin_17_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="18.002" y1="79.182" x2="18.002" y2="86.383"/>
+									<polygon id="connector1terminal_17_" fill="none" points="18,86.383 18.002,86.383 18.002,86.383 									"/>
+									
+										<line id="connector0pin_17_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="18.002" y1="71.983" x2="18.002" y2="64.783"/>
+									<rect id="connector0terminal_17_" x="18" y="64.783" fill="none" width="0.002" height="0.001"/>
+									<path d="M24.211,77.022l1.439-1.439l1.081,2.521L24.211,77.022z"/>
+									<path d="M23.852,80.262l1.439-1.439l1.08,2.521L23.852,80.262z"/>
+								</g>
+							</g>
+						</g>
+						<g>
+							<g>
+								<g id="schematic_16_">
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="3.602" y1="79.182" x2="0" y2="79.182"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="7.201" y1="79.182" x2="3.602" y2="79.182"/>
+									<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="0,71.983 3.602,71.983 
+										7.201,71.983 3.602,79.182 									"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="3.602" y1="79.182" x2="3.602" y2="71.983"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="10.711" y1="76.483" x2="8.371" y2="74.143"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="10.35" y1="79.723" x2="8.01" y2="77.383"/>
+									
+										<line id="connector1pin_16_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="3.602" y1="79.182" x2="3.602" y2="86.383"/>
+									<polygon id="connector1terminal_16_" fill="none" points="3.6,86.383 3.602,86.383 3.602,86.383 									"/>
+									
+										<line id="connector0pin_16_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="3.602" y1="71.983" x2="3.602" y2="64.783"/>
+									<rect id="connector0terminal_16_" x="3.6" y="64.783" fill="none" width="0.002" height="0.001"/>
+									<path d="M9.811,77.022l1.439-1.439l1.08,2.521L9.811,77.022z"/>
+									<path d="M9.451,80.262l1.439-1.439l1.08,2.521L9.451,80.262z"/>
+								</g>
+							</g>
+						</g>
+					</g>
+					<g>
+						<line fill="none" x1="3.6" y1="64.783" x2="17.967" y2="64.783"/>
+						<path d="M17.967,64.333H3.6c-0.248,0-0.449,0.202-0.449,0.45s0.201,0.45,0.449,0.45h14.367c0.248,0,0.449-0.202,0.449-0.45
+							S18.215,64.333,17.967,64.333z"/>
+					</g>
+				</g>
+			</g>
+			<g>
+				<g>
+					<g>
+						<g>
+							<g>
+								<g id="schematic_15_">
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="190.798" y1="100.782" x2="187.199" y2="100.782"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="194.398" y1="100.782" x2="190.798" y2="100.782"/>
+									<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="187.199,93.583 
+										190.798,93.583 194.398,93.583 190.798,100.782 									"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="190.798" y1="100.782" x2="190.798" y2="93.583"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="197.908" y1="98.083" x2="195.568" y2="95.743"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="197.548" y1="101.323" x2="195.208" y2="98.983"/>
+									
+										<line id="connector1pin_15_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="190.798" y1="100.782" x2="190.798" y2="107.983"/>
+									<path id="connector1terminal_15_" fill="none" d="M190.798,107.983L190.798,107.983L190.798,107.983z"/>
+									
+										<line id="connector0pin_15_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="190.798" y1="93.583" x2="190.798" y2="86.383"/>
+									<rect id="connector0terminal_15_" x="190.798" y="86.383" fill="none" width="0" height="0.001"/>
+									<path d="M197.007,98.622l1.441-1.438l1.079,2.52L197.007,98.622z"/>
+									<path d="M196.648,101.862l1.438-1.439l1.08,2.521L196.648,101.862z"/>
+								</g>
+							</g>
+						</g>
+						<g>
+							<g>
+								<g id="schematic_14_">
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="176.398" y1="100.782" x2="172.798" y2="100.782"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="179.998" y1="100.782" x2="176.398" y2="100.782"/>
+									<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="172.798,93.583 
+										176.398,93.583 179.998,93.583 176.398,100.782 									"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="176.398" y1="100.782" x2="176.398" y2="93.583"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="183.507" y1="98.083" x2="181.167" y2="95.743"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="183.148" y1="101.323" x2="180.809" y2="98.983"/>
+									
+										<line id="connector1pin_14_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="176.398" y1="100.782" x2="176.398" y2="107.983"/>
+									<path id="connector1terminal_14_" fill="none" d="M176.398,107.983L176.398,107.983L176.398,107.983z"/>
+									
+										<line id="connector0pin_14_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="176.398" y1="93.583" x2="176.398" y2="86.383"/>
+									<rect id="connector0terminal_14_" x="176.398" y="86.383" fill="none" width="0" height="0.001"/>
+									<path d="M182.607,98.622l1.438-1.438l1.08,2.52L182.607,98.622z"/>
+									<path d="M182.248,101.862l1.439-1.439l1.08,2.521L182.248,101.862z"/>
+								</g>
+							</g>
+						</g>
+					</g>
+					<g>
+						<line fill="none" x1="176.398" y1="86.383" x2="190.764" y2="86.383"/>
+						<path d="M190.764,85.933h-14.365c-0.248,0-0.446,0.197-0.446,0.446c0,0.248,0.198,0.45,0.446,0.45h14.365
+							c0.248,0,0.45-0.202,0.45-0.45S191.012,85.933,190.764,85.933z"/>
+					</g>
+				</g>
+				<g>
+					<g>
+						<g>
+							<g>
+								<g id="schematic_13_">
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="162" y1="100.782" x2="158.4" y2="100.782"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="165.6" y1="100.782" x2="162" y2="100.782"/>
+									<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="158.4,93.583 162,93.583 
+										165.6,93.583 162,100.782 									"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="162" y1="100.782" x2="162" y2="93.583"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="169.109" y1="98.083" x2="166.77" y2="95.743"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="168.75" y1="101.323" x2="166.41" y2="98.983"/>
+									
+										<line id="connector1pin_13_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="162" y1="100.782" x2="162" y2="107.983"/>
+									<polygon id="connector1terminal_13_" fill="none" points="162,107.983 162.001,107.983 162.001,107.983 									"/>
+									
+										<line id="connector0pin_13_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="162" y1="93.583" x2="162" y2="86.383"/>
+									<rect id="connector0terminal_13_" x="162" y="86.383" fill="none" width="0.001" height="0.001"/>
+									<path d="M168.208,98.622l1.44-1.438l1.08,2.52L168.208,98.622z"/>
+									<path d="M167.85,101.862l1.438-1.439l1.08,2.521L167.85,101.862z"/>
+								</g>
+							</g>
+						</g>
+						<g>
+							<g>
+								<g id="schematic_12_">
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="147.602" y1="100.782" x2="144" y2="100.782"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="151.2" y1="100.782" x2="147.602" y2="100.782"/>
+									<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="144,93.583 147.602,93.583 
+										151.2,93.583 147.602,100.782 									"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="147.602" y1="100.782" x2="147.602" y2="93.583"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="154.71" y1="98.083" x2="152.37" y2="95.743"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="154.35" y1="101.323" x2="152.01" y2="98.983"/>
+									
+										<line id="connector1pin_12_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="147.602" y1="100.782" x2="147.602" y2="107.983"/>
+									<polygon id="connector1terminal_12_" fill="none" points="147.6,107.983 147.602,107.983 147.602,107.983 									"/>
+									
+										<line id="connector0pin_12_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="147.602" y1="93.583" x2="147.602" y2="86.383"/>
+									<rect id="connector0terminal_12_" x="147.6" y="86.383" fill="none" width="0.002" height="0.001"/>
+									<path d="M153.811,98.622l1.439-1.438l1.08,2.52L153.811,98.622z"/>
+									<path d="M153.45,101.862l1.438-1.439l1.077,2.521L153.45,101.862z"/>
+								</g>
+							</g>
+						</g>
+					</g>
+					<g>
+						<line fill="none" x1="147.6" y1="86.383" x2="161.966" y2="86.383"/>
+						<path d="M161.966,85.933H147.6c-0.25,0-0.451,0.197-0.451,0.446c0,0.248,0.203,0.45,0.451,0.45h14.366
+							c0.249,0,0.45-0.202,0.45-0.45S162.214,85.933,161.966,85.933z"/>
+					</g>
+				</g>
+				<g>
+					<g>
+						<g>
+							<g>
+								<g id="schematic_11_">
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="133.2" y1="100.782" x2="129.6" y2="100.782"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="136.8" y1="100.782" x2="133.2" y2="100.782"/>
+									<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="129.6,93.583 133.2,93.583 
+										136.8,93.583 133.2,100.782 									"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="133.2" y1="100.782" x2="133.2" y2="93.583"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="140.311" y1="98.083" x2="137.971" y2="95.743"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="139.949" y1="101.323" x2="137.609" y2="98.983"/>
+									
+										<line id="connector1pin_11_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="133.2" y1="100.782" x2="133.2" y2="107.983"/>
+									<polygon id="connector1terminal_11_" fill="none" points="133.199,107.983 133.2,107.983 133.2,107.983 									"/>
+									
+										<line id="connector0pin_11_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="133.2" y1="93.583" x2="133.2" y2="86.383"/>
+									<rect id="connector0terminal_11_" x="133.199" y="86.383" fill="none" width="0.001" height="0.001"/>
+									<path d="M139.409,98.622l1.44-1.438l1.08,2.52L139.409,98.622z"/>
+									<path d="M139.05,101.862l1.438-1.439l1.08,2.521L139.05,101.862z"/>
+								</g>
+							</g>
+						</g>
+						<g>
+							<g>
+								<g id="schematic_10_">
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="118.8" y1="100.782" x2="115.2" y2="100.782"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="122.4" y1="100.782" x2="118.8" y2="100.782"/>
+									<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="115.2,93.583 118.8,93.583 
+										122.4,93.583 118.8,100.782 									"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="118.8" y1="100.782" x2="118.8" y2="93.583"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="125.91" y1="98.083" x2="123.57" y2="95.743"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="125.549" y1="101.323" x2="123.209" y2="98.983"/>
+									
+										<line id="connector1pin_10_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="118.8" y1="100.782" x2="118.8" y2="107.983"/>
+									<polygon id="connector1terminal_10_" fill="none" points="118.799,107.983 118.8,107.983 118.8,107.983 									"/>
+									
+										<line id="connector0pin_10_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="118.8" y1="93.583" x2="118.8" y2="86.383"/>
+									<rect id="connector0terminal_10_" x="118.799" y="86.383" fill="none" width="0.001" height="0.001"/>
+									<path d="M125.009,98.622l1.44-1.438l1.08,2.52L125.009,98.622z"/>
+									<path d="M124.65,101.862l1.438-1.439l1.08,2.521L124.65,101.862z"/>
+								</g>
+							</g>
+						</g>
+					</g>
+					<g>
+						<line fill="none" x1="118.799" y1="86.383" x2="133.166" y2="86.383"/>
+						<path d="M133.166,85.933H118.8c-0.249,0-0.45,0.197-0.45,0.446c0,0.248,0.203,0.45,0.45,0.45h14.366
+							c0.249,0,0.45-0.202,0.45-0.45S133.414,85.933,133.166,85.933z"/>
+					</g>
+				</g>
+				<g>
+					<g>
+						<g>
+							<g>
+								<g id="schematic_9_">
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="104.4" y1="100.782" x2="100.8" y2="100.782"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="108" y1="100.782" x2="104.4" y2="100.782"/>
+									<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="100.8,93.583 104.4,93.583 
+										108,93.583 104.4,100.782 									"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="104.4" y1="100.782" x2="104.4" y2="93.583"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="111.51" y1="98.083" x2="109.17" y2="95.743"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="111.148" y1="101.323" x2="108.81" y2="98.983"/>
+									
+										<line id="connector1pin_9_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="104.4" y1="100.782" x2="104.4" y2="107.983"/>
+									<polygon id="connector1terminal_9_" fill="none" points="104.399,107.983 104.4,107.983 104.4,107.983 									"/>
+									
+										<line id="connector0pin_9_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="104.4" y1="93.583" x2="104.4" y2="86.383"/>
+									<rect id="connector0terminal_9_" x="104.399" y="86.383" fill="none" width="0.001" height="0.001"/>
+									<path d="M110.609,98.622l1.44-1.438l1.08,2.52L110.609,98.622z"/>
+									<path d="M110.25,101.862l1.439-1.439l1.08,2.521L110.25,101.862z"/>
+								</g>
+							</g>
+						</g>
+						<g>
+							<g>
+								<g id="schematic_8_">
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="90" y1="100.782" x2="86.4" y2="100.782"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="93.6" y1="100.782" x2="90" y2="100.782"/>
+									<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="86.4,93.583 90,93.583 
+										93.6,93.583 90,100.782 									"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="90" y1="100.782" x2="90" y2="93.583"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="97.11" y1="98.083" x2="94.77" y2="95.743"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="96.75" y1="101.323" x2="94.41" y2="98.983"/>
+									
+										<line id="connector1pin_8_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="90" y1="100.782" x2="90" y2="107.983"/>
+									<polygon id="connector1terminal_8_" fill="none" points="90,107.983 90.001,107.983 90.001,107.983 									"/>
+									
+										<line id="connector0pin_8_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="90" y1="93.583" x2="90" y2="86.383"/>
+									<rect id="connector0terminal_8_" x="90" y="86.383" fill="none" width="0.001" height="0.001"/>
+									<path d="M96.209,98.622l1.44-1.438l1.08,2.52L96.209,98.622z"/>
+									<path d="M95.85,101.862l1.439-1.439l1.08,2.521L95.85,101.862z"/>
+								</g>
+							</g>
+						</g>
+					</g>
+					<g>
+						<line fill="none" x1="90" y1="86.383" x2="104.366" y2="86.383"/>
+						<path d="M104.366,85.933H90c-0.249,0-0.45,0.197-0.45,0.446c0,0.248,0.202,0.45,0.45,0.45h14.366
+							c0.249,0,0.45-0.202,0.45-0.45S104.614,85.933,104.366,85.933z"/>
+					</g>
+				</g>
+				<g>
+					<g>
+						<g>
+							<g>
+								<g id="schematic_7_">
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="75.601" y1="100.782" x2="72" y2="100.782"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="79.2" y1="100.782" x2="75.601" y2="100.782"/>
+									<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="72,93.583 75.601,93.583 
+										79.2,93.583 75.601,100.782 									"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="75.601" y1="100.782" x2="75.601" y2="93.583"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="82.71" y1="98.083" x2="80.37" y2="95.743"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="82.35" y1="101.323" x2="80.01" y2="98.983"/>
+									
+										<line id="connector1pin_7_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="75.601" y1="100.782" x2="75.601" y2="107.983"/>
+									<polygon id="connector1terminal_7_" fill="none" points="75.6,107.983 75.601,107.983 75.601,107.983 									"/>
+									
+										<line id="connector0pin_7_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="75.601" y1="93.583" x2="75.601" y2="86.383"/>
+									<rect id="connector0terminal_7_" x="75.6" y="86.383" fill="none" width="0.001" height="0.001"/>
+									<path d="M81.81,98.622l1.44-1.438l1.08,2.52L81.81,98.622z"/>
+									<path d="M81.45,101.862l1.439-1.439l1.08,2.521L81.45,101.862z"/>
+								</g>
+							</g>
+						</g>
+						<g>
+							<g>
+								<g id="schematic_6_">
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="61.201" y1="100.782" x2="57.6" y2="100.782"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="64.8" y1="100.782" x2="61.201" y2="100.782"/>
+									<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="57.6,93.583 61.201,93.583 
+										64.8,93.583 61.201,100.782 									"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="61.201" y1="100.782" x2="61.201" y2="93.583"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="68.31" y1="98.083" x2="65.97" y2="95.743"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="67.95" y1="101.323" x2="65.61" y2="98.983"/>
+									
+										<line id="connector1pin_6_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="61.201" y1="100.782" x2="61.201" y2="107.983"/>
+									<polygon id="connector1terminal_6_" fill="none" points="61.2,107.983 61.201,107.983 61.201,107.983 									"/>
+									
+										<line id="connector0pin_6_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="61.201" y1="93.583" x2="61.201" y2="86.383"/>
+									<rect id="connector0terminal_6_" x="61.2" y="86.383" fill="none" width="0.001" height="0.001"/>
+									<path d="M67.41,98.622l1.44-1.438l1.08,2.52L67.41,98.622z"/>
+									<path d="M67.05,101.862l1.439-1.439l1.08,2.521L67.05,101.862z"/>
+								</g>
+							</g>
+						</g>
+					</g>
+					<g>
+						<line fill="none" x1="61.2" y1="86.383" x2="75.566" y2="86.383"/>
+						<path d="M75.566,85.933H61.2c-0.249,0-0.45,0.197-0.45,0.446c0,0.248,0.202,0.45,0.45,0.45h14.366
+							c0.249,0,0.45-0.202,0.45-0.45S75.814,85.933,75.566,85.933z"/>
+					</g>
+				</g>
+				<g>
+					<g>
+						<g>
+							<g>
+								<g id="schematic_5_">
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="46.801" y1="100.782" x2="43.2" y2="100.782"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="50.4" y1="100.782" x2="46.801" y2="100.782"/>
+									<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="43.2,93.583 46.801,93.583 
+										50.4,93.583 46.801,100.782 									"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="46.801" y1="100.782" x2="46.801" y2="93.583"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="53.91" y1="98.083" x2="51.57" y2="95.743"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="53.55" y1="101.323" x2="51.21" y2="98.983"/>
+									
+										<line id="connector1pin_5_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="46.801" y1="100.782" x2="46.801" y2="107.983"/>
+									<polygon id="connector1terminal_5_" fill="none" points="46.8,107.983 46.801,107.983 46.801,107.983 									"/>
+									
+										<line id="connector0pin_5_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="46.801" y1="93.583" x2="46.801" y2="86.383"/>
+									<rect id="connector0terminal_5_" x="46.8" y="86.383" fill="none" width="0.001" height="0.001"/>
+									<path d="M53.01,98.622l1.44-1.438l1.08,2.52L53.01,98.622z"/>
+									<path d="M52.65,101.862l1.439-1.439l1.08,2.521L52.65,101.862z"/>
+								</g>
+							</g>
+						</g>
+						<g>
+							<g>
+								<g id="schematic_4_">
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="32.401" y1="100.782" x2="28.8" y2="100.782"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="36" y1="100.782" x2="32.401" y2="100.782"/>
+									<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="28.8,93.583 32.401,93.583 
+										36,93.583 32.401,100.782 									"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="32.401" y1="100.782" x2="32.401" y2="93.583"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="39.51" y1="98.083" x2="37.17" y2="95.743"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="39.15" y1="101.323" x2="36.81" y2="98.983"/>
+									
+										<line id="connector1pin_4_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="32.401" y1="100.782" x2="32.401" y2="107.983"/>
+									<polygon id="connector1terminal_4_" fill="none" points="32.4,107.983 32.401,107.983 32.401,107.983 									"/>
+									
+										<line id="connector0pin_4_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="32.401" y1="93.583" x2="32.401" y2="86.383"/>
+									<rect id="connector0terminal_4_" x="32.4" y="86.383" fill="none" width="0.001" height="0.001"/>
+									<path d="M38.61,98.622l1.44-1.438l1.08,2.52L38.61,98.622z"/>
+									<path d="M38.25,101.862l1.439-1.439l1.08,2.521L38.25,101.862z"/>
+								</g>
+							</g>
+						</g>
+					</g>
+					<g>
+						<line fill="none" x1="32.4" y1="86.383" x2="46.766" y2="86.383"/>
+						<path d="M46.766,85.933H32.4c-0.249,0-0.45,0.197-0.45,0.446c0,0.248,0.202,0.45,0.45,0.45h14.366
+							c0.249,0,0.45-0.202,0.45-0.45S47.015,85.933,46.766,85.933z"/>
+					</g>
+				</g>
+				<g>
+					<g>
+						<g>
+							<g>
+								<g id="schematic_3_">
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="18.002" y1="100.782" x2="14.4" y2="100.782"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="21.602" y1="100.782" x2="18.002" y2="100.782"/>
+									<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="14.4,93.583 18.002,93.583 
+										21.602,93.583 18.002,100.782 									"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="18.002" y1="100.782" x2="18.002" y2="93.583"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="25.111" y1="98.083" x2="22.771" y2="95.743"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="24.75" y1="101.323" x2="22.41" y2="98.983"/>
+									
+										<line id="connector1pin_3_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="18.002" y1="100.782" x2="18.002" y2="107.983"/>
+									<polygon id="connector1terminal_3_" fill="none" points="18,107.983 18.002,107.983 18.002,107.983 									"/>
+									
+										<line id="connector0pin_3_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="18.002" y1="93.583" x2="18.002" y2="86.383"/>
+									<rect id="connector0terminal_3_" x="18" y="86.383" fill="none" width="0.002" height="0.001"/>
+									<path d="M24.211,98.622l1.439-1.438l1.081,2.52L24.211,98.622z"/>
+									<path d="M23.852,101.862l1.439-1.439l1.08,2.521L23.852,101.862z"/>
+								</g>
+							</g>
+						</g>
+						<g>
+							<g>
+								<g id="schematic_1_">
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="3.602" y1="100.782" x2="0" y2="100.782"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="7.201" y1="100.782" x2="3.602" y2="100.782"/>
+									<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="0,93.583 3.602,93.583 
+										7.201,93.583 3.602,100.782 									"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="3.602" y1="100.782" x2="3.602" y2="93.583"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="10.711" y1="98.083" x2="8.371" y2="95.743"/>
+									
+										<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="10.35" y1="101.323" x2="8.01" y2="98.983"/>
+									
+										<line id="connector1pin_1_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="3.602" y1="100.782" x2="3.602" y2="107.983"/>
+									<polygon id="connector1terminal_1_" fill="none" points="3.6,107.983 3.602,107.983 3.602,107.983 									"/>
+									
+										<line id="connector0pin_1_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="3.602" y1="93.583" x2="3.602" y2="86.383"/>
+									<rect id="connector0terminal_1_" x="3.6" y="86.383" fill="none" width="0.002" height="0.001"/>
+									<path d="M9.811,98.622l1.439-1.438l1.08,2.52L9.811,98.622z"/>
+									<path d="M9.451,101.862l1.439-1.439l1.08,2.521L9.451,101.862z"/>
+								</g>
+							</g>
+						</g>
+					</g>
+					<g>
+						<line fill="none" x1="3.6" y1="86.383" x2="17.967" y2="86.383"/>
+						<path d="M17.967,85.933H3.6c-0.248,0-0.449,0.197-0.449,0.446c0,0.248,0.201,0.45,0.449,0.45h14.367
+							c0.248,0,0.449-0.202,0.449-0.45S18.215,85.933,17.967,85.933z"/>
+					</g>
+				</g>
+			</g>
+			<g>
+				
+					<rect id="connector0terminal_57_" x="3.619" y="107.982" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" width="0" height="0.001"/>
+				
+					<rect id="connector0terminal_56_" x="18.02" y="107.982" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" width="0" height="0.001"/>
+				<g>
+					
+						<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="18.02" y1="107.984" x2="3.654" y2="107.984"/>
+				</g>
+				
+					<rect id="connector0terminal_55_" x="32.417" y="107.982" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" width="0.001" height="0.001"/>
+				
+					<rect id="connector0terminal_54_" x="46.817" y="107.982" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" width="0.001" height="0.001"/>
+				<g>
+					
+						<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="46.819" y1="107.984" x2="32.452" y2="107.984"/>
+				</g>
+				
+					<rect id="connector0terminal_53_" x="61.218" y="107.982" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" width="0.001" height="0.001"/>
+				
+					<rect id="connector0terminal_52_" x="75.618" y="107.982" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" width="0.001" height="0.001"/>
+				<g>
+					
+						<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="75.619" y1="107.984" x2="61.252" y2="107.984"/>
+				</g>
+				
+					<rect id="connector0terminal_51_" x="90.018" y="107.982" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" width="0.001" height="0.001"/>
+				
+					<rect id="connector0terminal_50_" x="104.417" y="107.982" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" width="0.001" height="0.001"/>
+				<g>
+					
+						<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="104.418" y1="107.984" x2="90.052" y2="107.984"/>
+				</g>
+				
+					<rect id="connector0terminal_49_" x="118.816" y="107.982" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" width="0.002" height="0.001"/>
+				
+					<rect id="connector0terminal_48_" x="133.217" y="107.982" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" width="0.001" height="0.001"/>
+				<g>
+					
+						<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="133.218" y1="107.984" x2="118.852" y2="107.984"/>
+				</g>
+				
+					<rect id="connector0terminal_47_" x="147.617" y="107.982" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" width="0.001" height="0.001"/>
+				
+					<rect id="connector0terminal_46_" x="162.018" y="107.982" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" width="0" height="0.001"/>
+				<g>
+					
+						<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="162.018" y1="107.984" x2="147.652" y2="107.984"/>
+				</g>
+				
+					<rect id="connector0terminal_45_" x="176.417" y="107.982" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" width="0" height="0.001"/>
+				
+					<rect id="connector0terminal_44_" x="190.816" y="107.982" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" width="0.002" height="0.001"/>
+				<g>
+					
+						<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="190.818" y1="107.984" x2="176.451" y2="107.984"/>
+				</g>
+			</g>
+		</g>
+		<g>
+			<g>
+				<polyline fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="183.583,21.601 183.583,14.4 
+					212.309,14.4 				"/>
+			</g>
+			<g>
+				<polyline fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="154.782,21.601 154.782,14.4 
+					183.509,14.4 				"/>
+			</g>
+			<g>
+				<polyline fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="125.982,21.601 125.982,14.4 
+					154.709,14.4 				"/>
+			</g>
+			<g>
+				<polyline fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="97.183,21.601 97.183,14.4 
+					125.909,14.4 				"/>
+			</g>
+			<g>
+				<polyline fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="68.383,21.601 68.383,14.4 
+					97.109,14.4 				"/>
+			</g>
+			<g>
+				<polyline fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="39.583,21.601 39.583,14.4 
+					68.31,14.4 				"/>
+			</g>
+			<g>
+				<polyline fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="10.783,21.601 10.783,14.4 
+					39.51,14.4 				"/>
+			</g>
+		</g>
+		<g>
+			<g>
+				
+					<line fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" x1="183.583" y1="108.059" x2="183.583" y2="115.26"/>
+			</g>
+			<g>
+				
+					<line fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" x1="154.783" y1="108.059" x2="154.783" y2="115.26"/>
+			</g>
+			<g>
+				
+					<line fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" x1="125.982" y1="108.059" x2="125.982" y2="115.26"/>
+			</g>
+			<g>
+				
+					<line fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" x1="97.183" y1="108.059" x2="97.183" y2="115.26"/>
+			</g>
+			<g>
+				
+					<line fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" x1="68.383" y1="108.059" x2="68.383" y2="115.26"/>
+			</g>
+			<g>
+				
+					<line fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" x1="39.583" y1="108.059" x2="39.583" y2="115.26"/>
+			</g>
+			<g>
+				
+					<line fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" x1="10.784" y1="108.059" x2="10.784" y2="115.26"/>
+			</g>
+		</g>
+		<g enable-background="new    ">
+			<g>
+				<text transform="matrix(1 0 0 1 214.2129 113.0818)" fill="#787878" font-family="'DroidSans'" font-size="2">5</text>
+			</g>
+			<g>
+				<text transform="matrix(1 0 0 1 185.4121 113.0818)" fill="#787878" font-family="'DroidSans'" font-size="2">10</text>
+			</g>
+			<g>
+				<text transform="matrix(1 0 0 1 114.166 7.2)" fill="#787878" font-family="'DroidSans'" font-size="2">3, 8</text>
+			</g>
+			<g>
+				<text transform="matrix(1 0 0 1 156.6133 113.0818)" fill="#787878" font-family="'DroidSans'" font-size="2">9</text>
+			</g>
+			<g>
+				<text transform="matrix(1 0 0 1 127.8125 113.0818)" fill="#787878" font-family="'DroidSans'" font-size="2">1</text>
+			</g>
+			<g>
+				<text transform="matrix(1 0 0 1 99.0132 113.0818)" fill="#787878" font-family="'DroidSans'" font-size="2">2</text>
+			</g>
+			<g>
+				<text transform="matrix(1 0 0 1 70.2134 113.0818)" fill="#787878" font-family="'DroidSans'" font-size="2">4</text>
+			</g>
+			<g>
+				<text transform="matrix(1 0 0 1 41.4136 113.0818)" fill="#787878" font-family="'DroidSans'" font-size="2">6</text>
+			</g>
+			<g>
+				<text transform="matrix(1 0 0 1 12.6138 113.0818)" fill="#787878" font-family="'DroidSans'" font-size="2">7</text>
+			</g>
+		</g>
+		<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="212.4" y1="14.504" x2="212.4" y2="115.363"/>
+		<g>
+			<g id="schematic_59_">
+				
+					<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="212.396" y1="57.564" x2="208.795" y2="57.564"/>
+				
+					<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="215.996" y1="57.564" x2="212.396" y2="57.564"/>
+				<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="208.795,50.365 212.396,50.365 
+					215.996,50.365 212.396,57.564 				"/>
+				
+					<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="212.396" y1="57.564" x2="212.396" y2="50.365"/>
+				
+					<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="219.505" y1="54.865" x2="217.166" y2="52.525"/>
+				
+					<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="219.145" y1="58.105" x2="216.805" y2="55.765"/>
+				
+					<line id="connector1pin_59_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="212.396" y1="57.564" x2="212.396" y2="64.765"/>
+				<polygon id="connector1terminal_59_" fill="none" points="212.395,64.765 212.396,64.765 212.396,64.765 				"/>
+				
+					<line id="connector0pin_59_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="212.396" y1="50.365" x2="212.396" y2="43.165"/>
+				<rect id="connector0terminal_59_" x="212.395" y="43.165" fill="none" width="0.002" height="0.001"/>
+				<path d="M218.605,55.404l1.438-1.439l1.08,2.521L218.605,55.404z"/>
+				<path d="M218.246,58.644l1.439-1.439l1.08,2.521L218.246,58.644z"/>
+			</g>
+		</g>
+		<g>
+			<g id="schematic_58_">
+				
+					<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="212.396" y1="35.847" x2="208.795" y2="35.847"/>
+				
+					<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="215.996" y1="35.847" x2="212.396" y2="35.847"/>
+				<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="208.795,28.647 212.396,28.647 
+					215.996,28.647 212.396,35.847 				"/>
+				
+					<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="212.396" y1="35.847" x2="212.396" y2="28.647"/>
+				
+					<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="219.505" y1="33.147" x2="217.166" y2="30.808"/>
+				
+					<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="219.145" y1="36.388" x2="216.805" y2="34.048"/>
+				
+					<line id="connector1pin_58_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="212.396" y1="35.847" x2="212.396" y2="43.048"/>
+				<polygon id="connector1terminal_58_" fill="none" points="212.395,43.048 212.396,43.048 212.396,43.048 				"/>
+				
+					<line id="connector0pin_58_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="212.396" y1="28.647" x2="212.396" y2="21.447"/>
+				<rect id="connector0terminal_58_" x="212.395" y="21.447" fill="none" width="0.002" height="0.001"/>
+				<path d="M218.605,33.687l1.438-1.439l1.08,2.521L218.605,33.687z"/>
+				<path d="M218.246,36.927l1.439-1.439l1.08,2.52L218.246,36.927z"/>
+			</g>
+		</g>
+		<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="111.583" y1="14.4" x2="111.583" y2="0"/>
+		
+			<line fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" x1="111.583" y1="7.177" x2="111.583" y2="-0.024"/>
+		
+			<line fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" x1="111.583" y1="7.177" x2="111.583" y2="-0.024"/>
+	</g>
+</g>
+<g>
+	<g>
+		<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="45.211" y1="15.573" x2="42.89" y2="15.573"/>
+		<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="44.438" y1="20.219" x2="42.116" y2="20.219"/>
+		<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="42.503" y1="17.898" x2="44.826" y2="17.898"/>
+		<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="45.211" y1="20.219" x2="45.211" y2="20.219"/>
+		<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="42.503" y1="17.898" x2="42.116" y2="20.219"/>
+		<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="42.89" y1="15.573" x2="42.503" y2="17.898"/>
+		<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="44.826" y1="17.898" x2="44.438" y2="20.219"/>
+		<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="45.212" y1="15.573" x2="44.826" y2="17.898"/>
+	</g>
+	<g>
+		<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="74.132" y1="15.573" x2="71.81" y2="15.573"/>
+		<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="73.359" y1="20.219" x2="71.037" y2="20.219"/>
+		<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="71.423" y1="17.898" x2="73.746" y2="17.898"/>
+		<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="74.132" y1="20.219" x2="74.132" y2="20.219"/>
+		<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="71.423" y1="17.898" x2="71.037" y2="20.219"/>
+		<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="71.81" y1="15.573" x2="71.423" y2="17.898"/>
+		<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="74.132" y1="15.573" x2="73.746" y2="17.898"/>
+		<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="73.746" y1="17.898" x2="73.359" y2="20.219"/>
+	</g>
+	<g>
+		
+			<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="103.053" y1="15.573" x2="100.731" y2="15.573"/>
+		
+			<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="100.344" y1="17.898" x2="102.667" y2="17.898"/>
+		
+			<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="103.053" y1="20.219" x2="103.053" y2="20.219"/>
+		
+			<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="100.344" y1="17.898" x2="99.958" y2="20.219"/>
+		
+			<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="100.731" y1="15.573" x2="100.344" y2="17.898"/>
+		
+			<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="102.667" y1="17.898" x2="102.28" y2="20.219"/>
+		
+			<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="103.053" y1="15.573" x2="102.667" y2="17.898"/>
+		<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="102.28" y1="20.219" x2="99.958" y2="20.219"/>
+	</g>
+	<g>
+		
+			<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="131.975" y1="15.573" x2="129.65" y2="15.573"/>
+		
+			<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="131.201" y1="20.219" x2="128.877" y2="20.219"/>
+		
+			<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="129.252" y1="17.898" x2="131.572" y2="17.898"/>
+		
+			<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="131.975" y1="20.219" x2="131.975" y2="20.219"/>
+		
+			<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="129.65" y1="15.573" x2="129.252" y2="17.898"/>
+		
+			<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="131.572" y1="17.898" x2="131.201" y2="20.219"/>
+		
+			<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="131.975" y1="15.573" x2="131.572" y2="17.898"/>
+		
+			<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="129.252" y1="17.898" x2="128.877" y2="20.219"/>
+	</g>
+	<g>
+		
+			<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="160.895" y1="15.573" x2="158.572" y2="15.573"/>
+		
+			<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="160.121" y1="20.219" x2="157.798" y2="20.219"/>
+		
+			<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="158.205" y1="17.898" x2="160.525" y2="17.898"/>
+		
+			<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="160.895" y1="20.219" x2="160.895" y2="20.219"/>
+		
+			<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="158.205" y1="17.898" x2="157.798" y2="20.219"/>
+		
+			<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="158.572" y1="15.573" x2="158.205" y2="17.898"/>
+		
+			<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="160.525" y1="17.898" x2="160.121" y2="20.219"/>
+		
+			<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="160.895" y1="15.573" x2="160.525" y2="17.898"/>
+	</g>
+	<g>
+		<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="189.809" y1="15.573" x2="187.5" y2="15.573"/>
+		
+			<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="189.041" y1="20.219" x2="186.727" y2="20.219"/>
+		
+			<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="189.809" y1="20.219" x2="189.809" y2="20.219"/>
+		
+			<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="187.105" y1="17.898" x2="186.727" y2="20.219"/>
+		<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="187.5" y1="15.573" x2="187.105" y2="17.898"/>
+		
+			<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="189.43" y1="17.898" x2="189.041" y2="20.219"/>
+		
+			<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="189.809" y1="15.573" x2="189.43" y2="17.898"/>
+		
+			<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="187.105" y1="17.898" x2="189.43" y2="17.898"/>
+	</g>
+	<g>
+		
+			<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="217.521" y1="15.552" x2="215.202" y2="15.552"/>
+		
+			<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="216.749" y1="20.198" x2="214.428" y2="20.198"/>
+		
+			<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="214.823" y1="17.877" x2="217.141" y2="17.877"/>
+		
+			<line fill="none" stroke="#000000" stroke-width="0.75" stroke-linecap="round" x1="217.521" y1="20.198" x2="217.521" y2="20.198"/>
+		
+			<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="214.823" y1="17.877" x2="214.428" y2="20.198"/>
+		
+			<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="215.202" y1="15.552" x2="214.823" y2="17.877"/>
+		
+			<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="217.141" y1="17.877" x2="216.749" y2="20.198"/>
+		
+			<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="217.521" y1="15.552" x2="217.141" y2="17.877"/>
+	</g>
+	<g>
+		<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="15.517" y1="20.219" x2="13.195" y2="20.219"/>
+		<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="13.582" y1="17.898" x2="15.904" y2="17.898"/>
+		<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="16.292" y1="20.219" x2="16.292" y2="20.219"/>
+		<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="13.582" y1="17.898" x2="13.195" y2="20.219"/>
+		<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="13.969" y1="15.573" x2="13.582" y2="17.898"/>
+		<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="15.904" y1="17.898" x2="15.517" y2="20.219"/>
+		<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="16.292" y1="15.573" x2="15.904" y2="17.898"/>
+		<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="16.292" y1="15.573" x2="13.969" y2="15.573"/>
+	</g>
+</g>
+<line fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" x1="212.4" y1="108.059" x2="212.4" y2="115.26"/>
+</svg>

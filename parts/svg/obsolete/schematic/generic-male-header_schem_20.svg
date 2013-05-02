@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1 Basic//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-basic.dtd">
+<svg version="1.1" baseProfile="basic" id="svg2" xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="0.87in"
+	 height="5.4in" viewBox="0 0 62.641 388.78" xml:space="preserve">
+	 
+<line id="connector0pin" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="0.998" y1="9.723" x2="17.845" y2="9.723"/>
+<rect id="connector0terminal" x="0" y="8.725" width="0.998" height="1.997"/>
+<line id="connector1pin" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="0.998" y1="29.162" x2="17.845" y2="29.162"/>
+<rect id="connector1terminal" x="0" y="28.164" width="0.998" height="1.997"/>
+<line id="connector2pin" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="0.998" y1="48.601" x2="17.845" y2="48.601"/>
+<rect id="connector2terminal" x="0" y="47.603" width="0.998" height="1.997"/>
+<line id="connector3pin" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="0.998" y1="68.04" x2="17.845" y2="68.04"/>
+<rect id="connector3terminal" x="0" y="67.042" width="0.998" height="1.997"/>
+<line id="connector4pin" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="0.998" y1="87.479" x2="17.845" y2="87.479"/>
+<rect id="connector4terminal" x="0" y="86.481" width="0.998" height="1.997"/>
+<line id="connector5pin" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="0.998" y1="106.918" x2="17.845" y2="106.918"/>
+<rect id="connector5terminal" x="0" y="105.92" width="0.998" height="1.997"/>
+<line id="connector6pin" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="0.998" y1="126.357" x2="17.845" y2="126.357"/>
+<rect id="connector6terminal" x="0" y="125.359" width="0.998" height="1.997"/>
+<line id="connector7pin" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="0.998" y1="145.796" x2="17.845" y2="145.796"/>
+<rect id="connector7terminal" x="0" y="144.798" width="0.998" height="1.997"/>
+<line id="connector8pin" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="0.998" y1="165.235" x2="17.845" y2="165.235"/>
+<rect id="connector8terminal" x="0" y="164.237" width="0.998" height="1.997"/>
+<line id="connector9pin" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="0.998" y1="184.674" x2="17.845" y2="184.674"/>
+<rect id="connector9terminal" x="0" y="183.676" width="0.998" height="1.997"/>
+<line id="connector10pin" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="0.998" y1="204.113" x2="17.845" y2="204.113"/>
+<rect id="connector10terminal" x="0" y="203.115" width="0.998" height="1.997"/>
+<line id="connector11pin" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="0.998" y1="223.552" x2="17.845" y2="223.552"/>
+<rect id="connector11terminal" x="0" y="222.554" width="0.998" height="1.997"/>
+<line id="connector12pin" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="0.998" y1="242.991" x2="17.845" y2="242.991"/>
+<rect id="connector12terminal" x="0" y="241.993" width="0.998" height="1.997"/>
+<line id="connector13pin" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="0.998" y1="262.43" x2="17.845" y2="262.43"/>
+<rect id="connector13terminal" x="0" y="261.432" width="0.998" height="1.997"/>
+<line id="connector14pin" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="0.998" y1="281.869" x2="17.845" y2="281.869"/>
+<rect id="connector14terminal" x="0" y="280.871" width="0.998" height="1.997"/>
+<line id="connector15pin" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="0.998" y1="301.308" x2="17.845" y2="301.308"/>
+<rect id="connector15terminal" x="0" y="300.31" width="0.998" height="1.997"/>
+<line id="connector16pin" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="0.998" y1="320.747" x2="17.845" y2="320.747"/>
+<rect id="connector16terminal" x="0" y="319.749" width="0.998" height="1.997"/>
+<line id="connector17pin" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="0.998" y1="340.186" x2="17.845" y2="340.186"/>
+<rect id="connector17terminal" x="0" y="339.188" width="0.998" height="1.997"/>
+<line id="connector18pin" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="0.998" y1="359.625" x2="17.845" y2="359.625"/>
+<rect id="connector18terminal" x="0" y="358.627" width="0.998" height="1.997"/>
+<line id="connector19pin" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="0.998" y1="379.064" x2="17.845" y2="379.064"/>
+<rect id="connector19terminal" x="0" y="378.066" width="0.998" height="1.997"/>
+
+<g id="schematic">
+	<polyline fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="46.597,3.034 
+		61.641,9.718 46.597,16.406 	"/>
+	
+	<line id="line" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="61.022" y1="9.723" x2="16.452" y2="9.723"/>
+	<polyline fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="46.597,22.473 
+		61.641,29.157 46.597,35.845 	"/>
+	
+	<line id="line" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="61.022" y1="29.162" x2="16.452" y2="29.162"/>
+	<polyline fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="46.597,41.912 
+		61.641,48.596 46.597,55.284 	"/>
+	
+	<line id="line" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="61.022" y1="48.601" x2="16.452" y2="48.601"/>
+	<polyline fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="46.597,61.351 
+		61.641,68.035 46.597,74.723 	"/>
+	
+	<line id="line" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="61.022" y1="68.04" x2="16.452" y2="68.04"/>
+	<polyline fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="46.597,80.79 
+		61.641,87.474 46.597,94.162 	"/>
+	
+	<line id="line" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="61.022" y1="87.479" x2="16.452" y2="87.479"/>
+	<polyline fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="46.597,100.229 
+		61.641,106.913 46.597,113.601 	"/>
+	
+	<line id="line" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="61.022" y1="106.918" x2="16.452" y2="106.918"/>
+	<polyline fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="46.597,119.668 
+		61.641,126.352 46.597,133.04 	"/>
+	
+	<line id="line" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="61.022" y1="126.357" x2="16.452" y2="126.357"/>
+	<polyline fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="46.597,139.107 
+		61.641,145.791 46.597,152.479 	"/>
+	
+	<line id="line" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="61.022" y1="145.796" x2="16.452" y2="145.796"/>
+	<polyline fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="46.597,158.546 
+		61.641,165.23 46.597,171.918 	"/>
+	
+	<line id="line" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="61.022" y1="165.235" x2="16.452" y2="165.235"/>
+	<polyline fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="46.597,177.985 
+		61.641,184.669 46.597,191.357 	"/>
+	
+	<line id="line" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="61.022" y1="184.674" x2="16.452" y2="184.674"/>
+	<polyline fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="46.597,197.424 
+		61.641,204.108 46.597,210.796 	"/>
+	
+	<line id="line" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="61.022" y1="204.113" x2="16.452" y2="204.113"/>
+	<polyline fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="46.597,216.863 
+		61.641,223.547 46.597,230.235 	"/>
+	
+	<line id="line" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="61.022" y1="223.552" x2="16.452" y2="223.552"/>
+	<polyline fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="46.597,236.302 
+		61.641,242.986 46.597,249.674 	"/>
+	
+	<line id="line" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="61.022" y1="242.991" x2="16.452" y2="242.991"/>
+	<polyline fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="46.597,255.741 
+		61.641,262.425 46.597,269.113 	"/>
+	
+	<line id="line" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="61.022" y1="262.43" x2="16.452" y2="262.43"/>
+	<polyline fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="46.597,275.18 
+		61.641,281.864 46.597,288.552 	"/>
+	
+	<line id="line" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="61.022" y1="281.869" x2="16.452" y2="281.869"/>
+	<polyline fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="46.597,294.619 
+		61.641,301.303 46.597,307.991 	"/>
+	
+	<line id="line" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="61.022" y1="301.308" x2="16.452" y2="301.308"/>
+	<polyline fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="46.597,314.058 
+		61.641,320.742 46.597,327.43 	"/>
+	
+	<line id="line" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="61.022" y1="320.747" x2="16.452" y2="320.747"/>
+	<polyline fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="46.597,333.497 
+		61.641,340.181 46.597,346.869 	"/>
+	
+	<line id="line" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="61.022" y1="340.186" x2="16.452" y2="340.186"/>
+	<polyline fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="46.597,352.936 
+		61.641,359.62 46.597,366.308 	"/>
+	
+	<line id="line" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="61.022" y1="359.625" x2="16.452" y2="359.625"/>
+	<polyline fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="46.597,372.375 
+		61.641,379.059 46.597,385.747 	"/>
+	
+	<line id="line" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="61.022" y1="379.064" x2="16.452" y2="379.064"/>
+</g>
+
+</svg>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" x="0in" y="0in" width="0.5353in" height="0.5826in" viewBox="0 0 5353 5826" >
+<title>SparkFun.mod</title>
+<desc>Kicad module 'SparkFun-ALPS_POT' from file 'SparkFun.mod' converted by Fritzing</desc>
+<metadata xmlns:fz='http://fritzing.org/kicadmetadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+<rdf:RDF><rdf:Description rdf:about=''>
+<fz:attr name='kicad filename'>SparkFun.mod</fz:attr>
+<fz:attr name='kicad module'>SparkFun-ALPS_POT</fz:attr>
+<fz:attr name='fritzing version'>0.4.1b.07.04.4318</fz:attr>
+<fz:attr name='conversion date'>17/07/2010 17:15:04</fz:attr>
+<fz:attr name='dist-license'>GPL</fz:attr>
+<fz:attr name='use-license'>unlimited</fz:attr>
+<fz:attr name='author'>KICAD project</fz:attr>
+<fz:attr name='license-url'>http://www.gnu.org/licenses/gpl.html</fz:attr>
+<fz:comment></fz:comment>
+<fz:attr name='keyword'></fz:attr>
+</rdf:Description></rdf:RDF></metadata><g id="copper0">
+ <g id="copper1">
+  <g connectorname="P$1" id="connector0pin">
+   <circle fill="none" cx="4959" cy="3897" stroke="#ff9400" r="283.25" stroke-width="173.5"/>
+   <line fill="none" stroke="#ff9400" y1="3613.75" x1="4589" y2="3613.75" stroke-width="173.5" x2="5329"/>
+   <line fill="none" stroke="#ff9400" y1="4180.25" x1="4589" y2="4180.25" stroke-width="173.5" x2="5329"/>
+   <line fill="none" stroke="#ff9400" y1="3527" x1="4675.75" y2="4267" stroke-width="173.5" x2="4675.75"/>
+   <line fill="none" stroke="#ff9400" y1="3527" x1="5242.25" y2="4267" stroke-width="173.5" x2="5242.25"/>
+  </g>
+  <g connectorname="P$2" id="connector1pin">
+   <circle fill="none" cx="4959" cy="2913" stroke="#ff9400" r="283.25" stroke-width="173.5"/>
+   <line fill="none" stroke="#ff9400" y1="2629.75" x1="4589" y2="2629.75" stroke-width="173.5" x2="5329"/>
+   <line fill="none" stroke="#ff9400" y1="3196.25" x1="4589" y2="3196.25" stroke-width="173.5" x2="5329"/>
+   <line fill="none" stroke="#ff9400" y1="2543" x1="4675.75" y2="3283" stroke-width="173.5" x2="4675.75"/>
+   <line fill="none" stroke="#ff9400" y1="2543" x1="5242.25" y2="3283" stroke-width="173.5" x2="5242.25"/>
+  </g>
+  <g connectorname="P$3" id="connector2pin">
+   <circle fill="none" cx="4959" cy="1929" stroke="#ff9400" r="283.25" stroke-width="173.5"/>
+   <line fill="none" stroke="#ff9400" y1="1645.75" x1="4589" y2="1645.75" stroke-width="173.5" x2="5329"/>
+   <line fill="none" stroke="#ff9400" y1="2212.25" x1="4589" y2="2212.25" stroke-width="173.5" x2="5329"/>
+   <line fill="none" stroke="#ff9400" y1="1559" x1="4675.75" y2="2299" stroke-width="173.5" x2="4675.75"/>
+   <line fill="none" stroke="#ff9400" y1="1559" x1="5242.25" y2="2299" stroke-width="173.5" x2="5242.25"/>
+  </g>
+  <g connectorname="P$4" id="connector3pin">
+   <circle fill="none" cx="2204" cy="4645" stroke="#ff9400" r="492" stroke-width="197"/>
+   <circle fill="black" cx="2204" cy="4645" drill="0" r="393.5" stroke-width="0"/>
+  </g>
+  <g connectorname="P$5" id="connector4pin">
+   <circle fill="none" cx="2204" cy="1181" stroke="#ff9400" r="492" stroke-width="197"/>
+   <circle fill="black" cx="2204" cy="1181" drill="0" r="393.5" stroke-width="0"/>
+  </g>
+ </g>
+</g>
+<g id="silkscreen">
+ <line fill="none" stroke="white" y1="473" x1="5353" y2="5353" stroke-width="80" x2="5353"/>
+ <line fill="none" stroke="white" y1="5353" x1="5353" y2="5353" stroke-width="80" x2="0"/>
+ <line fill="none" stroke="white" y1="5353" x1="0" y2="473" stroke-width="80" x2="0"/>
+ <line fill="none" stroke="white" y1="473" x1="0" y2="473" stroke-width="80" x2="5353"/>
+</g>
+</svg>

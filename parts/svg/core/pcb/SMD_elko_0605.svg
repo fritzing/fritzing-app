@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<!--
+	This footprint refers to
+	www.vishay.com
+	document number: 28302
+	revision: 27-Aug-09
+	page: 3
+	table: 3
+	case code: 0605
+	2010-10-06 Mr.T
+ -->
+
+<svg
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.1"
+   width="31.535433"
+   height="26.929132"
+   id="svg2">
+  <defs
+     id="defs4" />
+  <g
+     id="copper1">
+    <rect
+       width="12.401575"
+       height="5.6692915"
+       x="-4.5252074e-07"
+       y="10.629943"
+       stroke-width="0"
+       id="connector1pin"
+       style="fill:#f7bd13;fill-opacity:1;stroke:none" />
+    <rect
+       width="12.401575"
+       height="5.6692915"
+       x="19.13386"
+       y="10.629943"
+       stroke-width="0"
+       id="connector0pin"
+       style="fill:#f7bd13;fill-opacity:1;stroke:none" />
+  </g>
+  <g
+     id="silkscreen">
+    <path
+       d="M 3.1763217,3.378795 6.3779528,0.17716396"
+       id="path3641"
+       style="fill:none;stroke:#ffffff;stroke-width:0.35433072;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    <path
+       d="m 38.799212,2.5688968 a 0.79724407,0.79724407 0 0 1 -0.797244,0.797244"
+       transform="matrix(0,-1.7798804,1.8010446,0,22.284725,69.234284)"
+       id="path3647-1"
+       style="fill:none;stroke:#ffffff;stroke-width:0.19696617;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    <path
+       d="m 28.346457,1.579801 0,6.7469693"
+       id="path3628"
+       style="fill:none;stroke:#ffffff;stroke-width:0.3557823;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    <path
+       d="m 3.1889764,8.3206611 0,-4.9484116"
+       id="path3632"
+       style="fill:none;stroke:#ffffff;stroke-width:0.3603881;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    <path
+       d="m 6.3749447,0.17716395 20.5304743,0"
+       id="path3645"
+       style="fill:none;stroke:#ffffff;stroke-width:0.35433072;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    <path
+       d="M 1.2243388,31.849303 A 10.629921,9.2125988 0 0 1 20.019056,31.822342"
+       transform="matrix(1.0490541,0,0,1.191309,4.7935197,-29.600604)"
+       id="path4140-3"
+       style="fill:none;stroke:#ffffff;stroke-width:0.31695503;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    <path
+       d="m 3.1931947,23.550335 3.201631,3.201631"
+       id="path3641-4"
+       style="fill:none;stroke:#ffffff;stroke-width:0.35433072;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    <path
+       d="m 38.799212,2.5688968 a 0.79724407,0.79724407 0 0 1 -0.797244,0.797244"
+       transform="matrix(0,1.7798804,1.8010446,0,22.301598,-42.305153)"
+       id="path3647-1-1"
+       style="fill:none;stroke:#ffffff;stroke-width:0.19696617;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    <path
+       d="m 28.36333,25.349329 0,-6.746969"
+       id="path3628-1"
+       style="fill:none;stroke:#ffffff;stroke-width:0.3557823;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    <path
+       d="m 3.2058487,18.608469 0,4.948411"
+       id="path3632-3"
+       style="fill:none;stroke:#ffffff;stroke-width:0.3603881;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    <path
+       d="m 6.3918177,26.751966 20.5304743,0"
+       id="path3645-8"
+       style="fill:none;stroke:#ffffff;stroke-width:0.35433072;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    <path
+       d="M 1.2243388,31.849303 A 10.629921,9.2125988 0 0 1 20.019056,31.822342"
+       transform="matrix(1.0490541,0,0,-1.191309,4.8103927,56.529735)"
+       id="path4140-3-7"
+       style="fill:none;stroke:#ffffff;stroke-width:0.31695503;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+  </g>
+</svg>

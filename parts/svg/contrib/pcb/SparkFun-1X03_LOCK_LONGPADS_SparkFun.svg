@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" x="0in" y="0in" width="0.3in" height="0.13in" viewBox="0 0 3000 1300" >
+<title>SparkFun.mod</title>
+<desc>Kicad module 'SparkFun-1X03_LOCK_LONGPADS' from file 'SparkFun.mod' converted by Fritzing</desc>
+<metadata xmlns:fz='http://fritzing.org/kicadmetadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+<rdf:RDF><rdf:Description rdf:about=''>
+<fz:attr name='kicad filename'>SparkFun.mod</fz:attr>
+<fz:attr name='kicad module'>SparkFun-1X03_LOCK_LONGPADS</fz:attr>
+<fz:attr name='fritzing version'>0.4.1b.07.04.4318</fz:attr>
+<fz:attr name='conversion date'>17/07/2010 17:14:22</fz:attr>
+<fz:attr name='dist-license'>GPL</fz:attr>
+<fz:attr name='use-license'>unlimited</fz:attr>
+<fz:attr name='author'>KICAD project</fz:attr>
+<fz:attr name='license-url'>http://www.gnu.org/licenses/gpl.html</fz:attr>
+<fz:comment>THIS FOOTPRINT WAS DESIGNED TO HELP HOLD THE ALIGNMENT OF A THROUGH-HOLE COMPONENT (I.E.  6-PIN HEADER) WHILE SOLDERING IT INTO PLACE.</fz:comment>
+<fz:attr name='keyword'>THIS</fz:attr>
+<fz:attr name='keyword'>FOOTPRINT</fz:attr>
+<fz:attr name='keyword'>WAS</fz:attr>
+<fz:attr name='keyword'>DESIGNED</fz:attr>
+<fz:attr name='keyword'>TO</fz:attr>
+<fz:attr name='keyword'>HELP</fz:attr>
+<fz:attr name='keyword'>HOLD</fz:attr>
+<fz:attr name='keyword'>THE</fz:attr>
+<fz:attr name='keyword'>ALIGNMENT</fz:attr>
+<fz:attr name='keyword'>OF</fz:attr>
+<fz:attr name='keyword'>A</fz:attr>
+<fz:attr name='keyword'>THROUGH-HOLE</fz:attr>
+<fz:attr name='keyword'>COMPONENT</fz:attr>
+<fz:attr name='keyword'>(I.E.</fz:attr>
+<fz:attr name='keyword'></fz:attr>
+<fz:attr name='keyword'>6-PIN</fz:attr>
+<fz:attr name='keyword'>HEADER)</fz:attr>
+<fz:attr name='keyword'>WHILE</fz:attr>
+<fz:attr name='keyword'>SOLDERING</fz:attr>
+<fz:attr name='keyword'>IT</fz:attr>
+<fz:attr name='keyword'>INTO</fz:attr>
+<fz:attr name='keyword'>PLACE.</fz:attr>
+</rdf:Description></rdf:RDF></metadata><g id="copper0">
+ <g id="copper1">
+  <g connectorname="1" id="connector0pin">
+   <circle fill="none" cx="500" cy="600" stroke="#ff9400" r="200" stroke-width="200"/>
+   <line fill="none" stroke="#ff9400" y1="300" x1="300" y2="900" stroke-width="200" x2="300"/>
+   <line fill="none" stroke="#ff9400" y1="300" x1="700" y2="900" stroke-width="200" x2="700"/>
+   <path fill="#ff9400" stroke-width="0" d="M200,300a300,300,0,0,1,600,0"/>
+   <path fill="#ff9400" stroke-width="0" d="M800,900a300,300,0,1,1,-600,0"/>
+  </g>
+  <g connectorname="2" id="connector1pin">
+   <circle fill="none" cx="1500" cy="700" stroke="#ff9400" r="200" stroke-width="200"/>
+   <line fill="none" stroke="#ff9400" y1="400" x1="1300" y2="1000" stroke-width="200" x2="1300"/>
+   <line fill="none" stroke="#ff9400" y1="400" x1="1700" y2="1000" stroke-width="200" x2="1700"/>
+   <path fill="#ff9400" stroke-width="0" d="M1200,400a300,300,0,0,1,600,0"/>
+   <path fill="#ff9400" stroke-width="0" d="M1800,1000a300,300,0,1,1,-600,0"/>
+  </g>
+  <g connectorname="3" id="connector2pin">
+   <circle fill="none" cx="2500" cy="600" stroke="#ff9400" r="200" stroke-width="200"/>
+   <line fill="none" stroke="#ff9400" y1="300" x1="2300" y2="900" stroke-width="200" x2="2300"/>
+   <line fill="none" stroke="#ff9400" y1="300" x1="2700" y2="900" stroke-width="200" x2="2700"/>
+   <path fill="#ff9400" stroke-width="0" d="M2200,300a300,300,0,0,1,600,0"/>
+   <path fill="#ff9400" stroke-width="0" d="M2800,900a300,300,0,1,1,-600,0"/>
+  </g>
+ </g>
+</g>
+<g id="silkscreen">
+ <line fill="none" stroke="white" y1="765" x1="385" y2="765" stroke-width="26" x2="615"/>
+ <line fill="none" stroke="white" y1="765" x1="615" y2="535" stroke-width="26" x2="615"/>
+ <line fill="none" stroke="white" y1="535" x1="385" y2="535" stroke-width="26" x2="615"/>
+ <line fill="none" stroke="white" y1="765" x1="385" y2="535" stroke-width="26" x2="385"/>
+ <line fill="none" stroke="white" y1="765" x1="1385" y2="765" stroke-width="26" x2="1615"/>
+ <line fill="none" stroke="white" y1="765" x1="1615" y2="535" stroke-width="26" x2="1615"/>
+ <line fill="none" stroke="white" y1="535" x1="1385" y2="535" stroke-width="26" x2="1615"/>
+ <line fill="none" stroke="white" y1="765" x1="1385" y2="535" stroke-width="26" x2="1385"/>
+ <line fill="none" stroke="white" y1="765" x1="2385" y2="765" stroke-width="26" x2="2615"/>
+ <line fill="none" stroke="white" y1="765" x1="2615" y2="535" stroke-width="26" x2="2615"/>
+ <line fill="none" stroke="white" y1="535" x1="2385" y2="535" stroke-width="26" x2="2615"/>
+ <line fill="none" stroke="white" y1="765" x1="2385" y2="535" stroke-width="26" x2="2385"/>
+ <line fill="none" stroke="white" y1="650" x1="1100" y2="650" stroke-width="80" x2="900"/>
+ <line fill="none" stroke="white" y1="650" x1="2100" y2="650" stroke-width="80" x2="1900"/>
+ <line fill="none" stroke="white" y1="650" x1="0" y2="650" stroke-width="80" x2="100"/>
+ <line fill="none" stroke="white" y1="650" x1="0" y2="260" stroke-width="80" x2="0"/>
+ <line fill="none" stroke="white" y1="260" x1="0" y2="150" stroke-width="80" x2="110"/>
+ <line fill="none" stroke="white" y1="650" x1="0" y2="1040" stroke-width="80" x2="0"/>
+ <line fill="none" stroke="white" y1="1040" x1="0" y2="1150" stroke-width="80" x2="110"/>
+ <line fill="none" stroke="white" y1="650" x1="3000" y2="650" stroke-width="80" x2="2900"/>
+ <line fill="none" stroke="white" y1="650" x1="3000" y2="1040" stroke-width="80" x2="3000"/>
+ <line fill="none" stroke="white" y1="1040" x1="3000" y2="1150" stroke-width="80" x2="2890"/>
+ <line fill="none" stroke="white" y1="650" x1="3000" y2="260" stroke-width="80" x2="3000"/>
+ <line fill="none" stroke="white" y1="260" x1="3000" y2="150" stroke-width="80" x2="2890"/>
+</g>
+</svg>

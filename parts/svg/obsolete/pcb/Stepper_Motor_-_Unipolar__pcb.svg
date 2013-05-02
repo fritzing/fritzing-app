@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="55.849117"
+   height="17.980328"
+   id="svg2"
+   sodipodi:version="0.32"
+   inkscape:version="0.46"
+   version="1.0"
+   sodipodi:docname="StepperMotor-Unipolar_pcb.svg"
+   inkscape:output_extension="org.inkscape.output.svg.inkscape">
+  <defs
+     id="defs4">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3601">
+      <stop
+         style="stop-color:#808080;stop-opacity:1;"
+         offset="0"
+         id="stop3603" />
+      <stop
+         style="stop-color:#808080;stop-opacity:0;"
+         offset="1"
+         id="stop3605" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient3414">
+      <stop
+         style="stop-color:#e6e6e6;stop-opacity:1;"
+         offset="0"
+         id="stop3416" />
+      <stop
+         id="stop3422"
+         offset="0.5"
+         style="stop-color:#656565;stop-opacity:1;" />
+      <stop
+         style="stop-color:#9f9f9f;stop-opacity:1;"
+         offset="1"
+         id="stop3418" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient3291">
+      <stop
+         style="stop-color:#b3b3b3;stop-opacity:1;"
+         offset="0"
+         id="stop3293" />
+      <stop
+         style="stop-color:#b3b3b3;stop-opacity:0.35135135;"
+         offset="1"
+         id="stop3295" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient3219">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop3221" />
+      <stop
+         style="stop-color:#cfcfcf;stop-opacity:1;"
+         offset="1"
+         id="stop3223" />
+    </linearGradient>
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       id="perspective10" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3219"
+       id="linearGradient3285"
+       gradientUnits="userSpaceOnUse"
+       x1="18"
+       y1="9"
+       x2="18"
+       y2="18" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3291"
+       id="linearGradient3297"
+       x1="36"
+       y1="18"
+       x2="90"
+       y2="99"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3414"
+       id="linearGradient3420"
+       x1="72"
+       y1="90"
+       x2="81"
+       y2="90"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(0,-76.499998)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3291"
+       id="linearGradient3527"
+       gradientUnits="userSpaceOnUse"
+       x1="36"
+       y1="18"
+       x2="90"
+       y2="99" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3601"
+       id="linearGradient3607"
+       x1="81"
+       y1="225"
+       x2="180"
+       y2="225"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3219"
+       id="linearGradient4445"
+       gradientUnits="userSpaceOnUse"
+       x1="18"
+       y1="9"
+       x2="18"
+       y2="18" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3291"
+       id="linearGradient4678"
+       gradientUnits="userSpaceOnUse"
+       x1="36"
+       y1="18"
+       x2="90"
+       y2="99" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3414"
+       id="linearGradient4682"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(0,-76.499998)"
+       x1="72"
+       y1="90"
+       x2="81"
+       y2="90" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3219"
+       id="linearGradient5804"
+       gradientUnits="userSpaceOnUse"
+       x1="18"
+       y1="9"
+       x2="18"
+       y2="18" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3219"
+       id="linearGradient5812"
+       gradientUnits="userSpaceOnUse"
+       x1="18"
+       y1="9"
+       x2="18"
+       y2="18" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3219"
+       id="linearGradient5820"
+       gradientUnits="userSpaceOnUse"
+       x1="18"
+       y1="9"
+       x2="18"
+       y2="18" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3219"
+       id="linearGradient5828"
+       gradientUnits="userSpaceOnUse"
+       x1="18"
+       y1="9"
+       x2="18"
+       y2="18" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     gridtolerance="10000"
+     guidetolerance="10000"
+     objecttolerance="10"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="15.65902"
+     inkscape:cx="26.117114"
+     inkscape:cy="1.5350561"
+     inkscape:document-units="mm"
+     inkscape:current-layer="svg2"
+     showgrid="false"
+     units="mm"
+     inkscape:window-width="1680"
+     inkscape:window-height="1026"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:object-paths="false"
+     inkscape:object-nodes="true"
+     showguides="false">
+    <inkscape:grid
+       type="xygrid"
+       id="grid2383"
+       visible="true"
+       enabled="true"
+       units="mm"
+       spacingx="2.54mm"
+       spacingy="2.54mm"
+       empspacing="10" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <rect
+     style="opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+     id="connector0pin"
+     width="9"
+     height="9"
+     x="0"
+     y="4.4901648" />
+  <rect
+     y="4.4901648"
+     x="9"
+     height="9"
+     width="9"
+     id="connector1pin"
+     style="opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+  <rect
+     style="opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+     id="connector2pin"
+     width="9"
+     height="9"
+     x="18"
+     y="4.4901648" />
+  <rect
+     y="4.4901648"
+     x="27"
+     height="9"
+     width="9"
+     id="connector3pin"
+     style="opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+  <rect
+     y="4.4901648"
+     x="36"
+     height="9"
+     width="9"
+     id="connector4pin"
+     style="opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+  <rect
+     style="opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+     id="connector5pin"
+     width="9"
+     height="9"
+     x="45"
+     y="4.4901648" />
+  <path
+     id="SolderPad0"
+     style="fill:#ffbf00;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2.83464575;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1"
+     d="M 8.0433072,8.9901646 C 8.0433072,10.94607 6.4559056,12.533472 4.4999999,12.533472 C 2.5440944,12.533472 0.95669281,10.94607 0.95669281,8.9901646 C 0.95669281,7.034259 2.5440944,5.4468574 4.4999999,5.4468574 C 6.4559056,5.4468574 8.0433072,7.034259 8.0433072,8.9901646 z M 5.9173229,8.9901646 C 5.9173229,9.7725268 5.2823623,10.407487 4.5,10.407487 C 3.7176377,10.407487 3.082677,9.7725268 3.082677,8.9901646 C 3.082677,8.2078023 3.7176377,7.5728416 4.5,7.5728416 C 5.2823623,7.5728416 5.9173229,8.2078023 5.9173229,8.9901646 z" />
+  <path
+     d="M 17.043307,8.9901646 C 17.043307,10.94607 15.455906,12.533472 13.5,12.533472 C 11.544094,12.533472 9.956693,10.94607 9.956693,8.9901646 C 9.956693,7.034259 11.544094,5.4468574 13.5,5.4468574 C 15.455906,5.4468574 17.043307,7.034259 17.043307,8.9901646 z M 14.917323,8.9901646 C 14.917323,9.7725268 14.282362,10.407487 13.5,10.407487 C 12.717638,10.407487 12.082677,9.7725268 12.082677,8.9901646 C 12.082677,8.2078023 12.717638,7.5728416 13.5,7.5728416 C 14.282362,7.5728416 14.917323,8.2078023 14.917323,8.9901646 z"
+     style="fill:#ffbf00;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2.83464575;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1"
+     id="SolderPad1" />
+  <path
+     id="SolderPad2"
+     style="fill:#ffbf00;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2.83464575;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1"
+     d="M 26.043307,8.9901646 C 26.043307,10.94607 24.455906,12.533472 22.5,12.533472 C 20.544094,12.533472 18.956693,10.94607 18.956693,8.9901646 C 18.956693,7.034259 20.544094,5.4468574 22.5,5.4468574 C 24.455906,5.4468574 26.043307,7.034259 26.043307,8.9901646 z M 23.917323,8.9901646 C 23.917323,9.7725268 23.282362,10.407487 22.5,10.407487 C 21.717638,10.407487 21.082677,9.7725268 21.082677,8.9901646 C 21.082677,8.2078023 21.717638,7.5728416 22.5,7.5728416 C 23.282362,7.5728416 23.917323,8.2078023 23.917323,8.9901646 z" />
+  <path
+     d="M 35.043307,8.9901646 C 35.043307,10.94607 33.455906,12.533472 31.5,12.533472 C 29.544094,12.533472 27.956693,10.94607 27.956693,8.9901646 C 27.956693,7.034259 29.544094,5.4468574 31.5,5.4468574 C 33.455906,5.4468574 35.043307,7.034259 35.043307,8.9901646 z M 32.917323,8.9901646 C 32.917323,9.7725268 32.282362,10.407487 31.5,10.407487 C 30.717638,10.407487 30.082677,9.7725268 30.082677,8.9901646 C 30.082677,8.2078023 30.717638,7.5728416 31.5,7.5728416 C 32.282362,7.5728416 32.917323,8.2078023 32.917323,8.9901646 z"
+     style="fill:#ffbf00;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2.83464575;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1"
+     id="SolderPad3" />
+  <path
+     d="M 44.043307,8.9901646 C 44.043307,10.94607 42.455906,12.533472 40.5,12.533472 C 38.544094,12.533472 36.956693,10.94607 36.956693,8.9901646 C 36.956693,7.034259 38.544094,5.4468574 40.5,5.4468574 C 42.455906,5.4468574 44.043307,7.034259 44.043307,8.9901646 z M 41.917323,8.9901646 C 41.917323,9.7725268 41.282362,10.407487 40.5,10.407487 C 39.717638,10.407487 39.082677,9.7725268 39.082677,8.9901646 C 39.082677,8.2078023 39.717638,7.5728416 40.5,7.5728416 C 41.282362,7.5728416 41.917323,8.2078023 41.917323,8.9901646 z"
+     style="fill:#ffbf00;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2.83464575;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1"
+     id="SolderPad4" />
+  <path
+     id="SolderPad5"
+     style="fill:#ffbf00;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2.83464575;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1"
+     d="M 53.043307,8.9901646 C 53.043307,10.94607 51.455906,12.533472 49.5,12.533472 C 47.544094,12.533472 45.956693,10.94607 45.956693,8.9901646 C 45.956693,7.034259 47.544094,5.4468574 49.5,5.4468574 C 51.455906,5.4468574 53.043307,7.034259 53.043307,8.9901646 z M 50.917323,8.9901646 C 50.917323,9.7725268 50.282362,10.407487 49.5,10.407487 C 48.717638,10.407487 48.082677,9.7725268 48.082677,8.9901646 C 48.082677,8.2078023 48.717638,7.5728416 49.5,7.5728416 C 50.282362,7.5728416 50.917323,8.2078023 50.917323,8.9901646 z" />
+  <g
+     id="Marker"
+     transform="translate(1.9999996,4.4901646)">
+    <path
+       id="MarkerMiddle"
+       d="M 53.399119,-2.8292644 L 53.399119,11.829264"
+       style="fill:none;fill-rule:evenodd;stroke:#ffffff;stroke-width:0.89999998;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#ffffff;stroke-width:0.89999998;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 53.399119,12.037021 L 52.395977,13.040163"
+       id="MarkerBottom" />
+    <path
+       id="MarkerTop"
+       d="M 52.395978,-4.0401646 L 53.399119,-3.0370233"
+       style="fill:none;fill-rule:evenodd;stroke:#ffffff;stroke-width:0.89999998;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+  </g>
+</svg>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" x="0in" y="0in" width="0.2912in" height="0.2913in" viewBox="0 0 2912 2913" >
+<title>SparkFun.mod</title>
+<desc>Kicad module 'SparkFun-PSP_TOUCH_CONNECTOR' from file 'SparkFun.mod' converted by Fritzing</desc>
+<metadata xmlns:fz='http://fritzing.org/kicadmetadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+<rdf:RDF><rdf:Description rdf:about=''>
+<fz:attr name='kicad filename'>SparkFun.mod</fz:attr>
+<fz:attr name='kicad module'>SparkFun-PSP_TOUCH_CONNECTOR</fz:attr>
+<fz:attr name='fritzing version'>0.4.1b.07.04.4318</fz:attr>
+<fz:attr name='conversion date'>17/07/2010 17:16:58</fz:attr>
+<fz:attr name='dist-license'>GPL</fz:attr>
+<fz:attr name='use-license'>unlimited</fz:attr>
+<fz:attr name='author'>KICAD project</fz:attr>
+<fz:attr name='license-url'>http://www.gnu.org/licenses/gpl.html</fz:attr>
+<fz:comment>4-PIN CONNECTOR FOR PSP TOUCH SCREEN</fz:comment>
+<fz:attr name='keyword'>4-PIN</fz:attr>
+<fz:attr name='keyword'>CONNECTOR</fz:attr>
+<fz:attr name='keyword'>FOR</fz:attr>
+<fz:attr name='keyword'>PSP</fz:attr>
+<fz:attr name='keyword'>TOUCH</fz:attr>
+<fz:attr name='keyword'>SCREEN</fz:attr>
+</rdf:Description></rdf:RDF></metadata><g id="copper1">
+ <rect width="905" x="1593.5" y="0" fill="#ffbf00" connectorname="X1" height="236" id="connector0pad" stroke-width="0"/>
+ <rect width="905" x="807.5" y="0" fill="#ffbf00" connectorname="X2" height="236" id="connector1pad" stroke-width="0"/>
+ <rect width="905" x="413.5" y="0" fill="#ffbf00" connectorname="Y1" height="236" id="connector2pad" stroke-width="0"/>
+ <rect width="905" x="1199.5" y="0" fill="#ffbf00" connectorname="Y2" height="236" id="connector3pad" stroke-width="0"/>
+</g>
+<g id="silkscreen">
+ <line fill="none" stroke="white" y1="2814" x1="79" y2="2814" stroke-width="50" x2="2833"/>
+ <line fill="none" stroke="white" y1="2814" x1="79" y2="650" stroke-width="50" x2="79"/>
+ <line fill="none" stroke="white" y1="2814" x1="2833" y2="650" stroke-width="50" x2="2833"/>
+ <line fill="none" stroke="white" y1="650" x1="79" y2="650" stroke-width="50" x2="2833"/>
+ <line fill="none" stroke="white" y1="2913" x1="275" y2="2913" stroke-width="50" x2="0"/>
+ <line fill="none" stroke="white" y1="2637" x1="0" y2="2913" stroke-width="50" x2="0"/>
+ <line fill="none" stroke="white" y1="2637" x1="2912" y2="2913" stroke-width="50" x2="2912"/>
+ <line fill="none" stroke="white" y1="2913" x1="2637" y2="2913" stroke-width="50" x2="2912"/>
+</g>
+</svg>

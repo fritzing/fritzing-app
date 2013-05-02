@@ -1,0 +1,18 @@
+/* probably obsolete now
+
+StackTabWidget::pane {
+	position: absolute;
+	top: 0.43em;
+}
+
+StackTabBar::tab {
+	min-height: 1.5em;
+	padding: 0;
+}
+
+
+#partsEditor QTabWidget::pane {
+	top: 0.65em;
+}
+
+*/

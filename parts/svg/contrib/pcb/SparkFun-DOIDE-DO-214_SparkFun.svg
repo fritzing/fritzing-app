@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" x="0in" y="0in" width="0.2243in" height="0.114in" viewBox="0 0 2243 1140" >
+<title>SparkFun.mod</title>
+<desc>Kicad module 'SparkFun-DOIDE-DO-214' from file 'SparkFun.mod' converted by Fritzing</desc>
+<metadata xmlns:fz='http://fritzing.org/kicadmetadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+<rdf:RDF><rdf:Description rdf:about=''>
+<fz:attr name='kicad filename'>SparkFun.mod</fz:attr>
+<fz:attr name='kicad module'>SparkFun-DOIDE-DO-214</fz:attr>
+<fz:attr name='fritzing version'>0.4.1b.07.04.4318</fz:attr>
+<fz:attr name='conversion date'>17/07/2010 17:15:31</fz:attr>
+<fz:attr name='dist-license'>GPL</fz:attr>
+<fz:attr name='use-license'>unlimited</fz:attr>
+<fz:attr name='author'>KICAD project</fz:attr>
+<fz:attr name='license-url'>http://www.gnu.org/licenses/gpl.html</fz:attr>
+<fz:comment></fz:comment>
+<fz:attr name='keyword'></fz:attr>
+</rdf:Description></rdf:RDF></metadata><g id="copper1">
+ <rect width="669" x="0" y="78" fill="#ffbf00" connectorname="A" height="984" id="connector0pad" stroke-width="0"/>
+ <rect width="669" x="1574" y="78" fill="#ffbf00" connectorname="C" height="984" id="connector1pad" stroke-width="0"/>
+</g>
+<g id="silkscreen">
+ <line fill="none" stroke="white" y1="177" x1="216.5" y2="0" stroke-width="80" x2="216.5"/>
+ <line fill="none" stroke="white" y1="0" x1="216.5" y2="0" stroke-width="80" x2="2026.5"/>
+ <line fill="none" stroke="white" y1="0" x1="2026.5" y2="177" stroke-width="80" x2="2026.5"/>
+ <line fill="none" stroke="white" y1="963" x1="2026.5" y2="1140" stroke-width="80" x2="2026.5"/>
+ <line fill="none" stroke="white" y1="1140" x1="2026.5" y2="1140" stroke-width="80" x2="216.5"/>
+ <line fill="none" stroke="white" y1="1140" x1="216.5" y2="963" stroke-width="80" x2="216.5"/>
+ <line fill="none" stroke="white" y1="177" x1="1317.5" y2="963" stroke-width="80" x2="1317.5"/>
+</g>
+</svg>

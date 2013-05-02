@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module fritzingVersion="0.7.4b.04.10.5970" moduleId="S1133">
+    <version>4</version>
+    <author>Nikos Vallianos</author>
+    <title>S1133 Si Photodiode</title>
+    <label>P</label>
+    <date>2012-04-20</date>
+    <tags>
+        <tag>Photodiode</tag>
+        <tag>S1133</tag>
+        <tag>photometer</tag>
+    </tags>
+    <properties>
+        <property name="package">8mm Ceramic [THT]</property>
+        <property name="family">Photodiode</property>
+        <property name="current"></property>
+        <property name="leg">yes</property>
+        <property name="color">UV to IR (320-730nm)</property>
+        <property name="part number"></property>
+    </properties>
+    <description>S1133 photodiode with low dark current by Hamamatsu.</description>
+    <views>
+        <iconView>
+            <layers image="icon/S1133_Si_Photodiode_Icon.svg">
+                <layer layerId="breadboard"/>
+                <layer layerId="icon"/>
+            </layers>
+        </iconView>
+        <breadboardView>
+            <layers image="breadboard/S1133_Si_Photodiode_BB.svg">
+                <layer layerId="breadboard"/>
+            </layers>
+        </breadboardView>
+        <schematicView>
+            <layers image="schematic/S1133_Si_Photodiode_Sch.svg">
+                <layer layerId="schematic"/>
+            </layers>
+        </schematicView>
+        <pcbView>
+            <layers image="pcb/S1133_Si_Photodiode_PCB.svg">
+                <layer layerId="copper1"/>
+                <layer layerId="silkscreen"/>
+            </layers>
+        </pcbView>
+    </views>
+    <connectors>
+        <connector id="connector0" type="male" name="cathode">
+            <description>cathode pin</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector0leg" terminalId="connector0terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector0pin" terminalId="connector0terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector0pad"/>
+                    <p layer="copper1" svgId="connector0pad"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector1" type="male" name="anode">
+            <description>anode pin</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector1leg" terminalId="connector1terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector1pin" terminalId="connector1terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector1pad"/>
+                    <p layer="copper1" svgId="connector1pad"/>
+                </pcbView>
+            </views>
+        </connector>
+    </connectors>
+</module>

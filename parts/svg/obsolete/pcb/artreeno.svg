@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.2" baseProfile="tiny"
+   x="0px" y="0px" width="13.5cm" height="11.3cm" viewBox="0 0 1350 1130"
+	 id="svg2">
+<g id="board">
+		<polygon id="polygon1" fill="#338040" stroke="#338040" stroke-width=".5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" 
+		points="933,1130 1350,1140 1000,690 1220,710 900,430 1060,440 675,100 215,410 425,390 135,680 405,650 0,1140 400,1130"/>
+		<circle fill="none" cx="675" cy="60" stroke="#338040" r="40" id="circle1" stroke-width="40" />
+</g>
+<g id="copper0">
+  <circle fill="none" cx="426.5756" cy="1097.898190989125" stroke="#FFBF00" id="connector0pin" r="7.6204" stroke-width="6.20922" />
+  <circle fill="none" cx="426.5756" cy="1072.547647229415" stroke="#FFBF00" id="connector1pin" r="7.6204" stroke-width="6.20922" />
+  <circle fill="none" cx="426.5756" cy="1047.23379430347" stroke="#FFBF00" id="connector2pin" r="7.6204" stroke-width="6.20922" />
+  <circle fill="none" cx="426.5756" cy="1021.801401760746" stroke="#FFBF00" id="connector3pin" r="7.6204" stroke-width="6.20922" />
+  <circle fill="none" cx="426.5756" cy="996.3746539616778" stroke="#FFBF00" id="connector4pin" r="7.6204" stroke-width="6.20922" />
+  <circle fill="none" cx="426.5756" cy="970.9535509062663" stroke="#FFBF00" id="connector5pin" r="7.6204" stroke-width="6.20922" />
+  <circle fill="none" cx="426.5756" cy="945.7413033661316" stroke="#FFBF00" id="connector6pin" r="7.6204" stroke-width="6.20922" />
+  <circle fill="none" cx="426.5756" cy="920.0859434489902" stroke="#FFBF00" id="connector7pin" r="7.6204" stroke-width="6.20922" />
+  <circle fill="none" cx="426.5304444444444" cy="877.6854514759192" stroke="#FFBF00" id="connector8pin" r="7.6204" stroke-width="6.20922" />
+  <circle fill="none" cx="426.5304444444444" cy="852.3405524598655" stroke="#FFBF00" id="connector9pin" r="7.6204" stroke-width="6.20922" />
+  <circle fill="none" cx="426.5304444444444" cy="827.0266995339204" stroke="#FFBF00" id="connector10pin" r="7.6204" stroke-width="6.20922" />
+  <circle fill="none" cx="426.5304444444444" cy="801.5971293630245" stroke="#FFBF00" id="connector11pin" r="7.6204" stroke-width="6.20922" />
+  <circle fill="none" cx="426.5304444444444" cy="776.1647368203004" stroke="#FFBF00" id="connector12pin" r="7.6204" stroke-width="6.20922" />
+  <circle fill="none" cx="426.5304444444444" cy="750.7408113930607" stroke="#FFBF00" id="connector13pin" r="7.6204" stroke-width="6.20922" />
+  <circle fill="none" cx="426.5304444444444" cy="725.5285638529261" stroke="#FFBF00" id="connector14pin" r="7.6204" stroke-width="6.20922" />
+  <circle fill="none" cx="426.5304444444444" cy="699.8760263076125" stroke="#FFBF00" id="connector15pin" r="7.6204" stroke-width="6.20922" />
+  <circle fill="none" cx="906.5368222222221" cy="826.7021267736924" stroke="#FFBF00" id="connector22pin" r="7.6204" stroke-width="6.20922" />
+  <circle fill="none" cx="906.5368222222221" cy="801.3854514759192" stroke="#FFBF00" id="connector23pin" r="7.6204" stroke-width="6.20922" />
+  <circle fill="none" cx="906.5368222222221" cy="775.9502365613672" stroke="#FFBF00" id="connector24pin" r="7.6204" stroke-width="6.20922" />
+  <circle fill="none" cx="906.5368222222221" cy="750.5291335059554" stroke="#FFBF00" id="connector25pin" r="7.6204" stroke-width="6.20922" />
+  <circle fill="none" cx="906.5368222222221" cy="725.1080304505439" stroke="#FFBF00" id="connector26pin" r="7.6204" stroke-width="6.20922" />
+  <circle fill="none" cx="906.5368222222221" cy="699.8929605385812" stroke="#FFBF00" id="connector27pin" r="7.6204" stroke-width="6.20922" />
+  <circle fill="none" cx="906.5368222222221" cy="1004.096663283273" stroke="#FFBF00" id="connector16pin" r="7.6204" stroke-width="6.20922" />
+  <circle fill="none" cx="906.5368222222221" cy="978.7799879854998" stroke="#FFBF00" id="connector17pin" r="7.6204" stroke-width="6.20922" />
+  <circle fill="none" cx="906.5368222222221" cy="953.3617073019162" stroke="#FFBF00" id="connector18pin" r="7.6204" stroke-width="6.20922" />
+  <circle fill="none" cx="906.5368222222221" cy="927.9349595028483" stroke="#FFBF00" id="connector19pin" r="7.6204" stroke-width="6.20922" />
+  <circle fill="none" cx="906.5368222222221" cy="902.4912774728122" stroke="#FFBF00" id="connector20pin" r="7.6204" stroke-width="6.20922" />
+  <circle fill="none" cx="906.5368222222221" cy="877.2959641636459" stroke="#FFBF00" id="connector21pin" r="7.6204" stroke-width="6.20922" />
+</g>
+</svg>

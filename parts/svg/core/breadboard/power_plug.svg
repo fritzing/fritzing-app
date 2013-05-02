@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1 Basic//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-basic.dtd'><svg baseProfile="basic" height="0.42in" id="svg" version="1.1" viewBox="0 0 49.884 30.065" width="0.69in" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
+<g id="breadboard">
+	<rect fill="#8C8C8C" height="5.349" id="connector2pin" stroke="none" width="4.667" x="45.217" y="15.74"/>
+	<rect fill="#8C8C8C" height="5.349" id="connector2terminal" stroke="none" width="0.868" x="49.015" y="15.74"/>
+	<rect fill="#8C8C8C" height="5.349" id="connector0pin" width="4.667" x="45.217" y="15.74"/>
+	<rect fill="#8C8C8C" height="5.349" id="connector0terminal" width="0.868" x="49.015" y="15.74"/>
+	<rect fill="#8C8C8C" height="5.348" id="connector1pin" width="4.667" x="45.217" y="8.978"/>
+	<rect fill="#8C8C8C" height="5.348" id="connector1terminal" width="0.868" x="49.015" y="8.978"/>
+	<polygon fill="#1F7A34" points="47.502,26.249 47.502,26.249 47.502,0 44.736,0 44.736,0 15.986,0 15.986,30.065 47.502,30.065"/>
+	<circle cx="36.456" cy="13.091" fill="#8C8C8C" r="2.708"/>
+	<circle cx="32.479" cy="23.913" fill="#8C8C8C" r="2.708"/>
+	<polyline fill="none" points="38.313,13.091 41.188,13.091 41.188,11.673 46.412,11.673  " stroke="#8C8C8C" stroke-width="1"/>
+	<polyline fill="none" points="32.381,27.874 25.014,27.874 25.014,22.649  " stroke="#8C8C8C" stroke-width="1"/>
+	<polyline fill="none" points="32.479,26.621 32.479,27.862 41.188,27.862 41.188,18.353 46.412,18.353  " stroke="#8C8C8C" stroke-width="1"/>
+	<rect fill="#8C8C8C" height="5.349" width="4.667" x="45.217" y="8.978"/>
+	<rect fill="#8C8C8C" height="5.349" width="4.667" x="45.217" y="15.74"/>
+	<rect fill="#232323" height="23.831" width="33.104" x="4.49" y="1.176"/>
+	<rect fill="#494949" height="1.648" width="32.062" x="5.098" y="1.756"/>
+	<polygon fill="#FACB00" points="20.082,5.994 15.605,12.133 18.661,12.735 14.83,20.188 22.32,11.186 19.134,10.369  "/>
+	<rect fill="#3D3D3D" fill-opacity="0.3" height="5.394" width="32.062" x="5.098" y="3.405"/>
+	<rect height="1.627" width="33.104" x="4.057" y="22.86"/>
+	<rect fill="#0F0F0F" fill-opacity="0.4" height="5.852" width="33.104" x="4.057" y="17.059"/>
+	<rect fill="#232323" height="26.182" width="7.721" y="0"/>
+</g>
+</svg>

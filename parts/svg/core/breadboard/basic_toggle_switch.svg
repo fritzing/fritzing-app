@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1 Basic//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-basic.dtd">
+<svg version="1.1" baseProfile="basic"
+	 id="svg2" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:cc="http://creativecommons.org/ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns:dc="http://purl.org/dc/elements/1.1/"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="0.36998in"
+	 height="0.37592in" viewBox="0 0 36.998 37.592" xml:space="preserve">
+  <g id="breadboard">
+<rect id="connector0terminal" x="6.033" y="35.105" fill="#8C8C8C" width="2.52" height="1.647"/>
+<rect id="connector1terminal" x="16.032" y="35.105" fill="#8C8C8C" width="2.521" height="1.647"/>
+<rect id="connector2terminal" x="26.03" y="35.105" fill="#8C8C8C" width="2.521" height="1.647"/>
+<rect id="connector0pin" x="6.033" y="29.32" fill="#8C8C8C" width="2.52" height="7.438"/>
+<rect id="connector1pin" x="16.032" y="29.32" fill="#8C8C8C" width="2.521" height="7.438"/>
+<rect id="connector2pin" x="26.03" y="29.32" fill="#8C8C8C" width="2.521" height="7.438"/>
+<rect id="rect4" x="6.021" y="15.905" fill="#8C8C8C" width="2.52" height="20.785"/>
+<rect id="rect6" x="16.02" y="15.905" fill="#8C8C8C" width="2.521" height="20.785"/>
+<rect id="rect8" x="26.018" y="15.905" fill="#8C8C8C" width="2.521" height="20.785"/>
+<polygon id="polygon21" fill="#8C8C8C" points="10.781,26.049 8.541,27.049 6.022,27.049 3.781,26.049 3.781,13.87 10.781,13.87 "/>
+<polygon id="polygon23" fill="#8C8C8C" points="20.782,26.049 18.539,27.049 16.021,27.049 13.781,26.049 13.781,13.87 
+	20.782,13.87 "/>
+<polygon id="polygon25" fill="#8C8C8C" points="30.78,26.049 28.537,27.049 26.02,27.049 23.78,26.049 23.78,13.87 30.78,13.87 "/>
+<rect id="rect27" x="-1.218" y="4.646" fill="#1A1A1A" width="36.998" height="18.472"/>
+<rect id="rect49" x="-1.218" y="8.25" width="36.998" height="4.649"/>
+<rect id="rect51" x="-1.218" y="4.501" fill="#333333" width="36.998" height="5.748"/>
+<rect id="rect49_1_" x="10.136" y="5.062" width="15.562" height="4.649"/>
+<rect id="rect27_1_" x="18.826" y="2.214" fill="#1A1A1A" width="6.664" height="7.332"/>
+<rect id="rect51_1_" x="18.826" y="-0.833" fill="#333333" width="6.664" height="3.046"/>
+    </g>
+</svg>

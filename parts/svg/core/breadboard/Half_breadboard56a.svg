@@ -1,0 +1,7547 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.1"
+   width="292.40775"
+   height="188.99904"
+   viewBox="0 0 292.40924 188.99906">
+  <g
+   id="icon">
+   <g
+   transform="translate(0.24999537,2.0478638e-6)"
+   id="breadboardbreadboard">
+
+  <rect
+   width="292.15924"
+   height="189"
+   x="2.7755576e-017"
+   y="-0.00047721306"
+   id="rect5"
+   style="fill:#d9d9d9" />
+  <rect
+   width="285.94308"
+   height="0.5"
+   x="-0.24999537"
+   y="26.164522"
+   id="rect8"
+   style="fill:#b3b0b0" />
+  <rect
+   width="288.23325"
+   height="0.5"
+   x="-0.24999537"
+   y="161.84453"
+   id="rect10"
+   style="fill:#b3b0b0" />
+  <rect
+   width="281.03558"
+   height="0.5"
+   x="-0.24999537"
+   y="23.999521"
+   id="rect14"
+   style="fill:#ff0000" />
+  <rect
+   width="281.68994"
+   height="0.5"
+   x="-0.24999537"
+   y="185.99953"
+   id="rect16"
+   style="fill:#ff0000" />
+  <rect
+   width="280.70844"
+   height="0.5"
+   x="-0.24999537"
+   y="2.999521"
+   id="rect18"
+   style="fill:#0000ff" />
+  <rect
+   width="282.67142"
+   height="0.5"
+   x="-0.24999537"
+   y="164.99953"
+   id="rect20"
+   style="fill:#0000ff" />
+  <rect
+   width="279.0726"
+   height="9"
+   x="-0.24999537"
+   y="88.999519"
+   id="rect24"
+   style="fill:#ccc9c9" />
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin1A">
+   <path
+   d="m 10.658,144 a 2.992,2.992 0 0 1 5.984,0"
+   id="path28"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 16.642,144 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path30"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="13.65"
+   cy="144"
+   r="1.4960001"
+   id="circle32"
+   style="fill:#383838" />
+  </g>7
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin1B">
+   <path
+   d="m 10.658,135 a 2.992,2.992 0 0 1 5.984,0"
+   id="path35"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 16.642,135 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path37"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="13.65"
+   cy="135"
+   r="1.4960001"
+   id="circle39"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin1C">
+   <path
+   d="m 10.658,126 a 2.992,2.992 0 0 1 5.984,0"
+   id="path42"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 16.642,126 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path44"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="13.65"
+   cy="126"
+   r="1.4960001"
+   id="circle46"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin1D">
+   <path
+   d="m 10.658,117 a 2.992,2.992 0 0 1 5.984,0"
+   id="path49"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 16.642,117 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path51"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="13.65"
+   cy="117"
+   r="1.4960001"
+   id="circle53"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin1E">
+   <path
+   d="m 10.658,108 a 2.992,2.992 0 0 1 5.984,0"
+   id="path56"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 16.642,108 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path58"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="13.65"
+   cy="108"
+   r="1.4960001"
+   id="circle60"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin1F">
+   <path
+   d="m 10.658,81 a 2.992,2.992 0 0 1 5.984,0"
+   id="path63"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 16.642,81 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path65"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="13.65"
+   cy="81"
+   r="1.4960001"
+   id="circle67"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin1G">
+   <path
+   d="m 10.658,72 a 2.992,2.992 0 0 1 5.984,0"
+   id="path70"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 16.642,72 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path72"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="13.65"
+   cy="72"
+   r="1.4960001"
+   id="circle74"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin1H">
+   <path
+   d="m 10.658,63 a 2.992,2.992 0 0 1 5.984,0"
+   id="path77"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 16.642,63 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path79"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="13.65"
+   cy="63"
+   r="1.4960001"
+   id="circle81"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin1I">
+   <path
+   d="m 10.658,54 a 2.992,2.992 0 0 1 5.984,0"
+   id="path84"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 16.642,54 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path86"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="13.65"
+   cy="54"
+   r="1.4960001"
+   id="circle88"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin1J">
+   <path
+   d="m 10.658,45 a 2.992,2.992 0 0 1 5.984,0"
+   id="path91"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 16.642,45 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path93"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="13.65"
+   cy="45"
+   r="1.4960001"
+   id="circle95"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin2A">
+   <path
+   d="m 19.658,144 a 2.992,2.992 0 0 1 5.984,0"
+   id="path98"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 25.642,144 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path100"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="22.65"
+   cy="144"
+   r="1.4960001"
+   id="circle102"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin2B">
+   <path
+   d="m 19.658,135 a 2.992,2.992 0 0 1 5.984,0"
+   id="path105"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 25.642,135 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path107"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="22.65"
+   cy="135"
+   r="1.4960001"
+   id="circle109"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin2C">
+   <path
+   d="m 19.658,126 a 2.992,2.992 0 0 1 5.984,0"
+   id="path112"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 25.642,126 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path114"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="22.65"
+   cy="126"
+   r="1.4960001"
+   id="circle116"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin2D">
+   <path
+   d="m 19.658,117 a 2.992,2.992 0 0 1 5.984,0"
+   id="path119"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 25.642,117 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path121"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="22.65"
+   cy="117"
+   r="1.4960001"
+   id="circle123"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin2E">
+   <path
+   d="m 19.658,108 a 2.992,2.992 0 0 1 5.984,0"
+   id="path126"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 25.642,108 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path128"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="22.65"
+   cy="108"
+   r="1.4960001"
+   id="circle130"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin2F">
+   <path
+   d="m 19.658,81 a 2.992,2.992 0 0 1 5.984,0"
+   id="path133"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 25.642,81 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path135"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="22.65"
+   cy="81"
+   r="1.4960001"
+   id="circle137"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin2G">
+   <path
+   d="m 19.658,72 a 2.992,2.992 0 0 1 5.984,0"
+   id="path140"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 25.642,72 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path142"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="22.65"
+   cy="72"
+   r="1.4960001"
+   id="circle144"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin2H">
+   <path
+   d="m 19.658,63 a 2.992,2.992 0 0 1 5.984,0"
+   id="path147"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 25.642,63 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path149"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="22.65"
+   cy="63"
+   r="1.4960001"
+   id="circle151"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin2I">
+   <path
+   d="m 19.658,54 a 2.992,2.992 0 0 1 5.984,0"
+   id="path154"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 25.642,54 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path156"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="22.65"
+   cy="54"
+   r="1.4960001"
+   id="circle158"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin2J">
+   <path
+   d="m 19.658,45 a 2.992,2.992 0 0 1 5.984,0"
+   id="path161"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 25.642,45 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path163"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="22.65"
+   cy="45"
+   r="1.4960001"
+   id="circle165"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin3A">
+   <path
+   d="m 28.658,144 a 2.992,2.992 0 0 1 5.984,0"
+   id="path168"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 34.642,144 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path170"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="31.65"
+   cy="144"
+   r="1.4960001"
+   id="circle172"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin3B">
+   <path
+   d="m 28.658,135 a 2.992,2.992 0 0 1 5.984,0"
+   id="path175"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 34.642,135 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path177"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="31.65"
+   cy="135"
+   r="1.4960001"
+   id="circle179"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin3C">
+   <path
+   d="m 28.658,126 a 2.992,2.992 0 0 1 5.984,0"
+   id="path182"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 34.642,126 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path184"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="31.65"
+   cy="126"
+   r="1.4960001"
+   id="circle186"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin3D">
+   <path
+   d="m 28.658,117 a 2.992,2.992 0 0 1 5.984,0"
+   id="path189"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 34.642,117 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path191"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="31.65"
+   cy="117"
+   r="1.4960001"
+   id="circle193"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin3E">
+   <path
+   d="m 28.658,108 a 2.992,2.992 0 0 1 5.984,0"
+   id="path196"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 34.642,108 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path198"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="31.65"
+   cy="108"
+   r="1.4960001"
+   id="circle200"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin3F">
+   <path
+   d="m 28.658,81 a 2.992,2.992 0 0 1 5.984,0"
+   id="path203"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 34.642,81 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path205"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="31.65"
+   cy="81"
+   r="1.4960001"
+   id="circle207"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin3G">
+   <path
+   d="m 28.658,72 a 2.992,2.992 0 0 1 5.984,0"
+   id="path210"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 34.642,72 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path212"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="31.65"
+   cy="72"
+   r="1.4960001"
+   id="circle214"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin3H">
+   <path
+   d="m 28.658,63 a 2.992,2.992 0 0 1 5.984,0"
+   id="path217"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 34.642,63 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path219"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="31.65"
+   cy="63"
+   r="1.4960001"
+   id="circle221"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin3I">
+   <path
+   d="m 28.658,54 a 2.992,2.992 0 0 1 5.984,0"
+   id="path224"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 34.642,54 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path226"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="31.65"
+   cy="54"
+   r="1.4960001"
+   id="circle228"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin3J">
+   <path
+   d="m 28.658,45 a 2.992,2.992 0 0 1 5.984,0"
+   id="path231"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 34.642,45 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path233"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="31.65"
+   cy="45"
+   r="1.4960001"
+   id="circle235"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin4A">
+   <path
+   d="m 37.658,144 a 2.992,2.992 0 0 1 5.984,0"
+   id="path238"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 43.642,144 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path240"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="40.650002"
+   cy="144"
+   r="1.4960001"
+   id="circle242"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin4B">
+   <path
+   d="m 37.658,135 a 2.992,2.992 0 0 1 5.984,0"
+   id="path245"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 43.642,135 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path247"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="40.650002"
+   cy="135"
+   r="1.4960001"
+   id="circle249"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin4C">
+   <path
+   d="m 37.658,126 a 2.992,2.992 0 0 1 5.984,0"
+   id="path252"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 43.642,126 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path254"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="40.650002"
+   cy="126"
+   r="1.4960001"
+   id="circle256"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin4D">
+   <path
+   d="m 37.658,117 a 2.992,2.992 0 0 1 5.984,0"
+   id="path259"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 43.642,117 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path261"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="40.650002"
+   cy="117"
+   r="1.4960001"
+   id="circle263"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin4E">
+   <path
+   d="m 37.658,108 a 2.992,2.992 0 0 1 5.984,0"
+   id="path266"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 43.642,108 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path268"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="40.650002"
+   cy="108"
+   r="1.4960001"
+   id="circle270"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin4F">
+   <path
+   d="m 37.658,81 a 2.992,2.992 0 0 1 5.984,0"
+   id="path273"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 43.642,81 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path275"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="40.650002"
+   cy="81"
+   r="1.4960001"
+   id="circle277"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin4G">
+   <path
+   d="m 37.658,72 a 2.992,2.992 0 0 1 5.984,0"
+   id="path280"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 43.642,72 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path282"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="40.650002"
+   cy="72"
+   r="1.4960001"
+   id="circle284"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin4H">
+   <path
+   d="m 37.658,63 a 2.992,2.992 0 0 1 5.984,0"
+   id="path287"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 43.642,63 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path289"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="40.650002"
+   cy="63"
+   r="1.4960001"
+   id="circle291"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin4I">
+   <path
+   d="m 37.658,54 a 2.992,2.992 0 0 1 5.984,0"
+   id="path294"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 43.642,54 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path296"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="40.650002"
+   cy="54"
+   r="1.4960001"
+   id="circle298"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin4J">
+   <path
+   d="m 37.658,45 a 2.992,2.992 0 0 1 5.984,0"
+   id="path301"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 43.642,45 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path303"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="40.650002"
+   cy="45"
+   r="1.4960001"
+   id="circle305"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin5A">
+   <path
+   d="m 46.658,144 a 2.992,2.992 0 0 1 5.984,0"
+   id="path308"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 52.642,144 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path310"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="49.650002"
+   cy="144"
+   r="1.4960001"
+   id="circle312"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin5B">
+   <path
+   d="m 46.658,135 a 2.992,2.992 0 0 1 5.984,0"
+   id="path315"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 52.642,135 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path317"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="49.650002"
+   cy="135"
+   r="1.4960001"
+   id="circle319"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin5C">
+   <path
+   d="m 46.658,126 a 2.992,2.992 0 0 1 5.984,0"
+   id="path322"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 52.642,126 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path324"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="49.650002"
+   cy="126"
+   r="1.4960001"
+   id="circle326"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin5D">
+   <path
+   d="m 46.658,117 a 2.992,2.992 0 0 1 5.984,0"
+   id="path329"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 52.642,117 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path331"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="49.650002"
+   cy="117"
+   r="1.4960001"
+   id="circle333"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin5E">
+   <path
+   d="m 46.658,108 a 2.992,2.992 0 0 1 5.984,0"
+   id="path336"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 52.642,108 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path338"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="49.650002"
+   cy="108"
+   r="1.4960001"
+   id="circle340"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin5F">
+   <path
+   d="m 46.658,81 a 2.992,2.992 0 0 1 5.984,0"
+   id="path343"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 52.642,81 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path345"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="49.650002"
+   cy="81"
+   r="1.4960001"
+   id="circle347"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin5G">
+   <path
+   d="m 46.658,72 a 2.992,2.992 0 0 1 5.984,0"
+   id="path350"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 52.642,72 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path352"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="49.650002"
+   cy="72"
+   r="1.4960001"
+   id="circle354"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin5H">
+   <path
+   d="m 46.658,63 a 2.992,2.992 0 0 1 5.984,0"
+   id="path357"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 52.642,63 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path359"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="49.650002"
+   cy="63"
+   r="1.4960001"
+   id="circle361"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin5I">
+   <path
+   d="m 46.658,54 a 2.992,2.992 0 0 1 5.984,0"
+   id="path364"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 52.642,54 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path366"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="49.650002"
+   cy="54"
+   r="1.4960001"
+   id="circle368"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin5J">
+   <path
+   d="m 46.658,45 a 2.992,2.992 0 0 1 5.984,0"
+   id="path371"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 52.642,45 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path373"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="49.650002"
+   cy="45"
+   r="1.4960001"
+   id="circle375"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin6A">
+   <path
+   d="m 55.658,144 a 2.992,2.992 0 0 1 5.984,0"
+   id="path378"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 61.642,144 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path380"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="58.650002"
+   cy="144"
+   r="1.4960001"
+   id="circle382"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin6B">
+   <path
+   d="m 55.658,135 a 2.992,2.992 0 0 1 5.984,0"
+   id="path385"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 61.642,135 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path387"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="58.650002"
+   cy="135"
+   r="1.4960001"
+   id="circle389"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin6C">
+   <path
+   d="m 55.658,126 a 2.992,2.992 0 0 1 5.984,0"
+   id="path392"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 61.642,126 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path394"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="58.650002"
+   cy="126"
+   r="1.4960001"
+   id="circle396"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin6D">
+   <path
+   d="m 55.658,117 a 2.992,2.992 0 0 1 5.984,0"
+   id="path399"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 61.642,117 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path401"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="58.650002"
+   cy="117"
+   r="1.4960001"
+   id="circle403"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin6E">
+   <path
+   d="m 55.658,108 a 2.992,2.992 0 0 1 5.984,0"
+   id="path406"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 61.642,108 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path408"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="58.650002"
+   cy="108"
+   r="1.4960001"
+   id="circle410"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin6F">
+   <path
+   d="m 55.658,81 a 2.992,2.992 0 0 1 5.984,0"
+   id="path413"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 61.642,81 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path415"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="58.650002"
+   cy="81"
+   r="1.4960001"
+   id="circle417"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin6G">
+   <path
+   d="m 55.658,72 a 2.992,2.992 0 0 1 5.984,0"
+   id="path420"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 61.642,72 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path422"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="58.650002"
+   cy="72"
+   r="1.4960001"
+   id="circle424"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin6H">
+   <path
+   d="m 55.658,63 a 2.992,2.992 0 0 1 5.984,0"
+   id="path427"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 61.642,63 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path429"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="58.650002"
+   cy="63"
+   r="1.4960001"
+   id="circle431"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin6I">
+   <path
+   d="m 55.658,54 a 2.992,2.992 0 0 1 5.984,0"
+   id="path434"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 61.642,54 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path436"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="58.650002"
+   cy="54"
+   r="1.4960001"
+   id="circle438"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin6J">
+   <path
+   d="m 55.658,45 a 2.992,2.992 0 0 1 5.984,0"
+   id="path441"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 61.642,45 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path443"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="58.650002"
+   cy="45"
+   r="1.4960001"
+   id="circle445"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin7A">
+   <path
+   d="m 64.658,144 a 2.992,2.992 0 0 1 5.984,0"
+   id="path448"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 70.642,144 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path450"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="67.650002"
+   cy="144"
+   r="1.4960001"
+   id="circle452"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin7B">
+   <path
+   d="m 64.658,135 a 2.992,2.992 0 0 1 5.984,0"
+   id="path455"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 70.642,135 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path457"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="67.650002"
+   cy="135"
+   r="1.4960001"
+   id="circle459"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin7C">
+   <path
+   d="m 64.658,126 a 2.992,2.992 0 0 1 5.984,0"
+   id="path462"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 70.642,126 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path464"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="67.650002"
+   cy="126"
+   r="1.4960001"
+   id="circle466"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin7D">
+   <path
+   d="m 64.658,117 a 2.992,2.992 0 0 1 5.984,0"
+   id="path469"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 70.642,117 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path471"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="67.650002"
+   cy="117"
+   r="1.4960001"
+   id="circle473"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin7E">
+   <path
+   d="m 64.658,108 a 2.992,2.992 0 0 1 5.984,0"
+   id="path476"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 70.642,108 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path478"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="67.650002"
+   cy="108"
+   r="1.4960001"
+   id="circle480"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin7F">
+   <path
+   d="m 64.658,81 a 2.992,2.992 0 0 1 5.984,0"
+   id="path483"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 70.642,81 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path485"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="67.650002"
+   cy="81"
+   r="1.4960001"
+   id="circle487"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin7G">
+   <path
+   d="m 64.658,72 a 2.992,2.992 0 0 1 5.984,0"
+   id="path490"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 70.642,72 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path492"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="67.650002"
+   cy="72"
+   r="1.4960001"
+   id="circle494"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin7H">
+   <path
+   d="m 64.658,63 a 2.992,2.992 0 0 1 5.984,0"
+   id="path497"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 70.642,63 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path499"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="67.650002"
+   cy="63"
+   r="1.4960001"
+   id="circle501"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin7I">
+   <path
+   d="m 64.658,54 a 2.992,2.992 0 0 1 5.984,0"
+   id="path504"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 70.642,54 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path506"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="67.650002"
+   cy="54"
+   r="1.4960001"
+   id="circle508"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin7J">
+   <path
+   d="m 64.658,45 a 2.992,2.992 0 0 1 5.984,0"
+   id="path511"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 70.642,45 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path513"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="67.650002"
+   cy="45"
+   r="1.4960001"
+   id="circle515"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin8A">
+   <path
+   d="m 73.658,144 a 2.992,2.992 0 0 1 5.984,0"
+   id="path518"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 79.642,144 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path520"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="76.650002"
+   cy="144"
+   r="1.4960001"
+   id="circle522"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin8B">
+   <path
+   d="m 73.658,135 a 2.992,2.992 0 0 1 5.984,0"
+   id="path525"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 79.642,135 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path527"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="76.650002"
+   cy="135"
+   r="1.4960001"
+   id="circle529"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin8C">
+   <path
+   d="m 73.658,126 a 2.992,2.992 0 0 1 5.984,0"
+   id="path532"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 79.642,126 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path534"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="76.650002"
+   cy="126"
+   r="1.4960001"
+   id="circle536"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin8D">
+   <path
+   d="m 73.658,117 a 2.992,2.992 0 0 1 5.984,0"
+   id="path539"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 79.642,117 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path541"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="76.650002"
+   cy="117"
+   r="1.4960001"
+   id="circle543"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin8E">
+   <path
+   d="m 73.658,108 a 2.992,2.992 0 0 1 5.984,0"
+   id="path546"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 79.642,108 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path548"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="76.650002"
+   cy="108"
+   r="1.4960001"
+   id="circle550"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin8F">
+   <path
+   d="m 73.658,81 a 2.992,2.992 0 0 1 5.984,0"
+   id="path553"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 79.642,81 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path555"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="76.650002"
+   cy="81"
+   r="1.4960001"
+   id="circle557"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin8G">
+   <path
+   d="m 73.658,72 a 2.992,2.992 0 0 1 5.984,0"
+   id="path560"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 79.642,72 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path562"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="76.650002"
+   cy="72"
+   r="1.4960001"
+   id="circle564"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin8H">
+   <path
+   d="m 73.658,63 a 2.992,2.992 0 0 1 5.984,0"
+   id="path567"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 79.642,63 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path569"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="76.650002"
+   cy="63"
+   r="1.4960001"
+   id="circle571"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin8I">
+   <path
+   d="m 73.658,54 a 2.992,2.992 0 0 1 5.984,0"
+   id="path574"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 79.642,54 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path576"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="76.650002"
+   cy="54"
+   r="1.4960001"
+   id="circle578"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin8J">
+   <path
+   d="m 73.658,45 a 2.992,2.992 0 0 1 5.984,0"
+   id="path581"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 79.642,45 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path583"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="76.650002"
+   cy="45"
+   r="1.4960001"
+   id="circle585"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin9A">
+   <path
+   d="m 82.658,144 a 2.992,2.992 0 0 1 5.984,0"
+   id="path588"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 88.642,144 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path590"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="85.650002"
+   cy="144"
+   r="1.4960001"
+   id="circle592"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin9B">
+   <path
+   d="m 82.658,135 a 2.992,2.992 0 0 1 5.984,0"
+   id="path595"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 88.642,135 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path597"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="85.650002"
+   cy="135"
+   r="1.4960001"
+   id="circle599"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin9C">
+   <path
+   d="m 82.658,126 a 2.992,2.992 0 0 1 5.984,0"
+   id="path602"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 88.642,126 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path604"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="85.650002"
+   cy="126"
+   r="1.4960001"
+   id="circle606"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin9D">
+   <path
+   d="m 82.658,117 a 2.992,2.992 0 0 1 5.984,0"
+   id="path609"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 88.642,117 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path611"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="85.650002"
+   cy="117"
+   r="1.4960001"
+   id="circle613"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin9E">
+   <path
+   d="m 82.658,108 a 2.992,2.992 0 0 1 5.984,0"
+   id="path616"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 88.642,108 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path618"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="85.650002"
+   cy="108"
+   r="1.4960001"
+   id="circle620"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin9F">
+   <path
+   d="m 82.658,81 a 2.992,2.992 0 0 1 5.984,0"
+   id="path623"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 88.642,81 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path625"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="85.650002"
+   cy="81"
+   r="1.4960001"
+   id="circle627"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin9G">
+   <path
+   d="m 82.658,72 a 2.992,2.992 0 0 1 5.984,0"
+   id="path630"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 88.642,72 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path632"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="85.650002"
+   cy="72"
+   r="1.4960001"
+   id="circle634"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin9H">
+   <path
+   d="m 82.658,63 a 2.992,2.992 0 0 1 5.984,0"
+   id="path637"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 88.642,63 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path639"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="85.650002"
+   cy="63"
+   r="1.4960001"
+   id="circle641"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin9I">
+   <path
+   d="m 82.658,54 a 2.992,2.992 0 0 1 5.984,0"
+   id="path644"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 88.642,54 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path646"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="85.650002"
+   cy="54"
+   r="1.4960001"
+   id="circle648"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin9J">
+   <path
+   d="m 82.658,45 a 2.992,2.992 0 0 1 5.984,0"
+   id="path651"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 88.642,45 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path653"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="85.650002"
+   cy="45"
+   r="1.4960001"
+   id="circle655"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin10A">
+   <path
+   d="m 91.658,144 a 2.992,2.992 0 0 1 5.984,0"
+   id="path658"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 97.642,144 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path660"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="94.650002"
+   cy="144"
+   r="1.4960001"
+   id="circle662"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin10B">
+   <path
+   d="m 91.658,135 a 2.992,2.992 0 0 1 5.984,0"
+   id="path665"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 97.642,135 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path667"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="94.650002"
+   cy="135"
+   r="1.4960001"
+   id="circle669"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin10C">
+   <path
+   d="m 91.658,126 a 2.992,2.992 0 0 1 5.984,0"
+   id="path672"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 97.642,126 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path674"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="94.650002"
+   cy="126"
+   r="1.4960001"
+   id="circle676"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin10D">
+   <path
+   d="m 91.658,117 a 2.992,2.992 0 0 1 5.984,0"
+   id="path679"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 97.642,117 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path681"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="94.650002"
+   cy="117"
+   r="1.4960001"
+   id="circle683"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin10E">
+   <path
+   d="m 91.658,108 a 2.992,2.992 0 0 1 5.984,0"
+   id="path686"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 97.642,108 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path688"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="94.650002"
+   cy="108"
+   r="1.4960001"
+   id="circle690"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin10F">
+   <path
+   d="m 91.658,81 a 2.992,2.992 0 0 1 5.984,0"
+   id="path693"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 97.642,81 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path695"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="94.650002"
+   cy="81"
+   r="1.4960001"
+   id="circle697"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin10G">
+   <path
+   d="m 91.658,72 a 2.992,2.992 0 0 1 5.984,0"
+   id="path700"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 97.642,72 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path702"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="94.650002"
+   cy="72"
+   r="1.4960001"
+   id="circle704"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin10H">
+   <path
+   d="m 91.658,63 a 2.992,2.992 0 0 1 5.984,0"
+   id="path707"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 97.642,63 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path709"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="94.650002"
+   cy="63"
+   r="1.4960001"
+   id="circle711"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin10I">
+   <path
+   d="m 91.658,54 a 2.992,2.992 0 0 1 5.984,0"
+   id="path714"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 97.642,54 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path716"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="94.650002"
+   cy="54"
+   r="1.4960001"
+   id="circle718"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin10J">
+   <path
+   d="m 91.658,45 a 2.992,2.992 0 0 1 5.984,0"
+   id="path721"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 97.642,45 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path723"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="94.650002"
+   cy="45"
+   r="1.4960001"
+   id="circle725"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin11A">
+   <path
+   d="m 100.658,144 a 2.992,2.992 0 0 1 5.984,0"
+   id="path728"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 106.642,144 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path730"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="103.65"
+   cy="144"
+   r="1.4960001"
+   id="circle732"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin11B">
+   <path
+   d="m 100.658,135 a 2.992,2.992 0 0 1 5.984,0"
+   id="path735"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 106.642,135 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path737"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="103.65"
+   cy="135"
+   r="1.4960001"
+   id="circle739"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin11C">
+   <path
+   d="m 100.658,126 a 2.992,2.992 0 0 1 5.984,0"
+   id="path742"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 106.642,126 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path744"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="103.65"
+   cy="126"
+   r="1.4960001"
+   id="circle746"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin11D">
+   <path
+   d="m 100.658,117 a 2.992,2.992 0 0 1 5.984,0"
+   id="path749"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 106.642,117 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path751"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="103.65"
+   cy="117"
+   r="1.4960001"
+   id="circle753"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin11E">
+   <path
+   d="m 100.658,108 a 2.992,2.992 0 0 1 5.984,0"
+   id="path756"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 106.642,108 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path758"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="103.65"
+   cy="108"
+   r="1.4960001"
+   id="circle760"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin11F">
+   <path
+   d="m 100.658,81 a 2.992,2.992 0 0 1 5.984,0"
+   id="path763"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 106.642,81 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path765"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="103.65"
+   cy="81"
+   r="1.4960001"
+   id="circle767"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin11G">
+   <path
+   d="m 100.658,72 a 2.992,2.992 0 0 1 5.984,0"
+   id="path770"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 106.642,72 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path772"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="103.65"
+   cy="72"
+   r="1.4960001"
+   id="circle774"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin11H">
+   <path
+   d="m 100.658,63 a 2.992,2.992 0 0 1 5.984,0"
+   id="path777"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 106.642,63 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path779"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="103.65"
+   cy="63"
+   r="1.4960001"
+   id="circle781"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin11I">
+   <path
+   d="m 100.658,54 a 2.992,2.992 0 0 1 5.984,0"
+   id="path784"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 106.642,54 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path786"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="103.65"
+   cy="54"
+   r="1.4960001"
+   id="circle788"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin11J">
+   <path
+   d="m 100.658,45 a 2.992,2.992 0 0 1 5.984,0"
+   id="path791"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 106.642,45 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path793"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="103.65"
+   cy="45"
+   r="1.4960001"
+   id="circle795"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin12A">
+   <path
+   d="m 109.658,144 a 2.992,2.992 0 0 1 5.984,0"
+   id="path798"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 115.642,144 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path800"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="112.65"
+   cy="144"
+   r="1.4960001"
+   id="circle802"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin12B">
+   <path
+   d="m 109.658,135 a 2.992,2.992 0 0 1 5.984,0"
+   id="path805"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 115.642,135 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path807"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="112.65"
+   cy="135"
+   r="1.4960001"
+   id="circle809"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin12C">
+   <path
+   d="m 109.658,126 a 2.992,2.992 0 0 1 5.984,0"
+   id="path812"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 115.642,126 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path814"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="112.65"
+   cy="126"
+   r="1.4960001"
+   id="circle816"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin12D">
+   <path
+   d="m 109.658,117 a 2.992,2.992 0 0 1 5.984,0"
+   id="path819"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 115.642,117 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path821"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="112.65"
+   cy="117"
+   r="1.4960001"
+   id="circle823"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin12E">
+   <path
+   d="m 109.658,108 a 2.992,2.992 0 0 1 5.984,0"
+   id="path826"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 115.642,108 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path828"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="112.65"
+   cy="108"
+   r="1.4960001"
+   id="circle830"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin12F">
+   <path
+   d="m 109.658,81 a 2.992,2.992 0 0 1 5.984,0"
+   id="path833"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 115.642,81 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path835"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="112.65"
+   cy="81"
+   r="1.4960001"
+   id="circle837"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin12G">
+   <path
+   d="m 109.658,72 a 2.992,2.992 0 0 1 5.984,0"
+   id="path840"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 115.642,72 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path842"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="112.65"
+   cy="72"
+   r="1.4960001"
+   id="circle844"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin12H">
+   <path
+   d="m 109.658,63 a 2.992,2.992 0 0 1 5.984,0"
+   id="path847"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 115.642,63 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path849"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="112.65"
+   cy="63"
+   r="1.4960001"
+   id="circle851"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin12I">
+   <path
+   d="m 109.658,54 a 2.992,2.992 0 0 1 5.984,0"
+   id="path854"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 115.642,54 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path856"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="112.65"
+   cy="54"
+   r="1.4960001"
+   id="circle858"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin12J">
+   <path
+   d="m 109.658,45 a 2.992,2.992 0 0 1 5.984,0"
+   id="path861"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 115.642,45 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path863"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="112.65"
+   cy="45"
+   r="1.4960001"
+   id="circle865"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin13A">
+   <path
+   d="m 118.658,144 a 2.992,2.992 0 0 1 5.984,0"
+   id="path868"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 124.642,144 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path870"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="121.65"
+   cy="144"
+   r="1.4960001"
+   id="circle872"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin13B">
+   <path
+   d="m 118.658,135 a 2.992,2.992 0 0 1 5.984,0"
+   id="path875"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 124.642,135 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path877"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="121.65"
+   cy="135"
+   r="1.4960001"
+   id="circle879"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin13C">
+   <path
+   d="m 118.658,126 a 2.992,2.992 0 0 1 5.984,0"
+   id="path882"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 124.642,126 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path884"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="121.65"
+   cy="126"
+   r="1.4960001"
+   id="circle886"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin13D">
+   <path
+   d="m 118.658,117 a 2.992,2.992 0 0 1 5.984,0"
+   id="path889"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 124.642,117 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path891"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="121.65"
+   cy="117"
+   r="1.4960001"
+   id="circle893"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin13E">
+   <path
+   d="m 118.658,108 a 2.992,2.992 0 0 1 5.984,0"
+   id="path896"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 124.642,108 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path898"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="121.65"
+   cy="108"
+   r="1.4960001"
+   id="circle900"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin13F">
+   <path
+   d="m 118.658,81 a 2.992,2.992 0 0 1 5.984,0"
+   id="path903"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 124.642,81 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path905"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="121.65"
+   cy="81"
+   r="1.4960001"
+   id="circle907"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin13G">
+   <path
+   d="m 118.658,72 a 2.992,2.992 0 0 1 5.984,0"
+   id="path910"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 124.642,72 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path912"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="121.65"
+   cy="72"
+   r="1.4960001"
+   id="circle914"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin13H">
+   <path
+   d="m 118.658,63 a 2.992,2.992 0 0 1 5.984,0"
+   id="path917"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 124.642,63 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path919"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="121.65"
+   cy="63"
+   r="1.4960001"
+   id="circle921"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin13I">
+   <path
+   d="m 118.658,54 a 2.992,2.992 0 0 1 5.984,0"
+   id="path924"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 124.642,54 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path926"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="121.65"
+   cy="54"
+   r="1.4960001"
+   id="circle928"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin13J">
+   <path
+   d="m 118.658,45 a 2.992,2.992 0 0 1 5.984,0"
+   id="path931"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 124.642,45 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path933"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="121.65"
+   cy="45"
+   r="1.4960001"
+   id="circle935"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin14A">
+   <path
+   d="m 127.658,144 a 2.992,2.992 0 0 1 5.984,0"
+   id="path938"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 133.642,144 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path940"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="130.64999"
+   cy="144"
+   r="1.4960001"
+   id="circle942"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin14B">
+   <path
+   d="m 127.658,135 a 2.992,2.992 0 0 1 5.984,0"
+   id="path945"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 133.642,135 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path947"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="130.64999"
+   cy="135"
+   r="1.4960001"
+   id="circle949"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin14C">
+   <path
+   d="m 127.658,126 a 2.992,2.992 0 0 1 5.984,0"
+   id="path952"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 133.642,126 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path954"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="130.64999"
+   cy="126"
+   r="1.4960001"
+   id="circle956"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin14D">
+   <path
+   d="m 127.658,117 a 2.992,2.992 0 0 1 5.984,0"
+   id="path959"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 133.642,117 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path961"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="130.64999"
+   cy="117"
+   r="1.4960001"
+   id="circle963"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin14E">
+   <path
+   d="m 127.658,108 a 2.992,2.992 0 0 1 5.984,0"
+   id="path966"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 133.642,108 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path968"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="130.64999"
+   cy="108"
+   r="1.4960001"
+   id="circle970"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin14F">
+   <path
+   d="m 127.658,81 a 2.992,2.992 0 0 1 5.984,0"
+   id="path973"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 133.642,81 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path975"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="130.64999"
+   cy="81"
+   r="1.4960001"
+   id="circle977"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin14G">
+   <path
+   d="m 127.658,72 a 2.992,2.992 0 0 1 5.984,0"
+   id="path980"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 133.642,72 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path982"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="130.64999"
+   cy="72"
+   r="1.4960001"
+   id="circle984"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin14H">
+   <path
+   d="m 127.658,63 a 2.992,2.992 0 0 1 5.984,0"
+   id="path987"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 133.642,63 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path989"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="130.64999"
+   cy="63"
+   r="1.4960001"
+   id="circle991"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin14I">
+   <path
+   d="m 127.658,54 a 2.992,2.992 0 0 1 5.984,0"
+   id="path994"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 133.642,54 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path996"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="130.64999"
+   cy="54"
+   r="1.4960001"
+   id="circle998"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin14J">
+   <path
+   d="m 127.658,45 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1001"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 133.642,45 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1003"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="130.64999"
+   cy="45"
+   r="1.4960001"
+   id="circle1005"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin15A">
+   <path
+   d="m 136.658,144 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1008"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 142.642,144 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1010"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="139.64999"
+   cy="144"
+   r="1.4960001"
+   id="circle1012"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin15B">
+   <path
+   d="m 136.658,135 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1015"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 142.642,135 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1017"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="139.64999"
+   cy="135"
+   r="1.4960001"
+   id="circle1019"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin15C">
+   <path
+   d="m 136.658,126 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1022"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 142.642,126 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1024"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="139.64999"
+   cy="126"
+   r="1.4960001"
+   id="circle1026"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin15D">
+   <path
+   d="m 136.658,117 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1029"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 142.642,117 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1031"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="139.64999"
+   cy="117"
+   r="1.4960001"
+   id="circle1033"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin15E">
+   <path
+   d="m 136.658,108 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1036"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 142.642,108 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1038"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="139.64999"
+   cy="108"
+   r="1.4960001"
+   id="circle1040"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin15F">
+   <path
+   d="m 136.658,81 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1043"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 142.642,81 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1045"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="139.64999"
+   cy="81"
+   r="1.4960001"
+   id="circle1047"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin15G">
+   <path
+   d="m 136.658,72 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1050"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 142.642,72 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1052"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="139.64999"
+   cy="72"
+   r="1.4960001"
+   id="circle1054"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin15H">
+   <path
+   d="m 136.658,63 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1057"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 142.642,63 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1059"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="139.64999"
+   cy="63"
+   r="1.4960001"
+   id="circle1061"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin15I">
+   <path
+   d="m 136.658,54 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1064"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 142.642,54 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1066"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="139.64999"
+   cy="54"
+   r="1.4960001"
+   id="circle1068"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin15J">
+   <path
+   d="m 136.658,45 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1071"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 142.642,45 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1073"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="139.64999"
+   cy="45"
+   r="1.4960001"
+   id="circle1075"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin16A">
+   <path
+   d="m 145.658,144 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1078"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 151.642,144 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1080"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="148.64999"
+   cy="144"
+   r="1.4960001"
+   id="circle1082"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin16B">
+   <path
+   d="m 145.658,135 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1085"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 151.642,135 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1087"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="148.64999"
+   cy="135"
+   r="1.4960001"
+   id="circle1089"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin16C">
+   <path
+   d="m 145.658,126 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1092"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 151.642,126 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1094"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="148.64999"
+   cy="126"
+   r="1.4960001"
+   id="circle1096"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin16D">
+   <path
+   d="m 145.658,117 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1099"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 151.642,117 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1101"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="148.64999"
+   cy="117"
+   r="1.4960001"
+   id="circle1103"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin16E">
+   <path
+   d="m 145.658,108 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1106"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 151.642,108 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1108"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="148.64999"
+   cy="108"
+   r="1.4960001"
+   id="circle1110"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin16F">
+   <path
+   d="m 145.658,81 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1113"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 151.642,81 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1115"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="148.64999"
+   cy="81"
+   r="1.4960001"
+   id="circle1117"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin16G">
+   <path
+   d="m 145.658,72 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1120"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 151.642,72 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1122"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="148.64999"
+   cy="72"
+   r="1.4960001"
+   id="circle1124"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin16H">
+   <path
+   d="m 145.658,63 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1127"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 151.642,63 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1129"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="148.64999"
+   cy="63"
+   r="1.4960001"
+   id="circle1131"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin16I">
+   <path
+   d="m 145.658,54 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1134"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 151.642,54 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1136"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="148.64999"
+   cy="54"
+   r="1.4960001"
+   id="circle1138"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin16J">
+   <path
+   d="m 145.658,45 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1141"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 151.642,45 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1143"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="148.64999"
+   cy="45"
+   r="1.4960001"
+   id="circle1145"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin17A">
+   <path
+   d="m 154.658,144 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1148"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 160.642,144 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1150"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="157.64999"
+   cy="144"
+   r="1.4960001"
+   id="circle1152"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin17B">
+   <path
+   d="m 154.658,135 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1155"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 160.642,135 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1157"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="157.64999"
+   cy="135"
+   r="1.4960001"
+   id="circle1159"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin17C">
+   <path
+   d="m 154.658,126 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1162"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 160.642,126 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1164"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="157.64999"
+   cy="126"
+   r="1.4960001"
+   id="circle1166"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin17D">
+   <path
+   d="m 154.658,117 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1169"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 160.642,117 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1171"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="157.64999"
+   cy="117"
+   r="1.4960001"
+   id="circle1173"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin17E">
+   <path
+   d="m 154.658,108 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1176"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 160.642,108 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1178"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="157.64999"
+   cy="108"
+   r="1.4960001"
+   id="circle1180"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin17F">
+   <path
+   d="m 154.658,81 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1183"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 160.642,81 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1185"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="157.64999"
+   cy="81"
+   r="1.4960001"
+   id="circle1187"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin17G">
+   <path
+   d="m 154.658,72 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1190"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 160.642,72 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1192"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="157.64999"
+   cy="72"
+   r="1.4960001"
+   id="circle1194"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin17H">
+   <path
+   d="m 154.658,63 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1197"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 160.642,63 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1199"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="157.64999"
+   cy="63"
+   r="1.4960001"
+   id="circle1201"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin17I">
+   <path
+   d="m 154.658,54 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1204"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 160.642,54 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1206"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="157.64999"
+   cy="54"
+   r="1.4960001"
+   id="circle1208"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin17J">
+   <path
+   d="m 154.658,45 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1211"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 160.642,45 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1213"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="157.64999"
+   cy="45"
+   r="1.4960001"
+   id="circle1215"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin18A">
+   <path
+   d="m 163.658,144 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1218"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 169.642,144 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1220"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="166.64999"
+   cy="144"
+   r="1.4960001"
+   id="circle1222"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin18B">
+   <path
+   d="m 163.658,135 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1225"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 169.642,135 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1227"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="166.64999"
+   cy="135"
+   r="1.4960001"
+   id="circle1229"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin18C">
+   <path
+   d="m 163.658,126 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1232"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 169.642,126 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1234"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="166.64999"
+   cy="126"
+   r="1.4960001"
+   id="circle1236"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin18D">
+   <path
+   d="m 163.658,117 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1239"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 169.642,117 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1241"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="166.64999"
+   cy="117"
+   r="1.4960001"
+   id="circle1243"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin18E">
+   <path
+   d="m 163.658,108 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1246"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 169.642,108 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1248"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="166.64999"
+   cy="108"
+   r="1.4960001"
+   id="circle1250"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin18F">
+   <path
+   d="m 163.658,81 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1253"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 169.642,81 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1255"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="166.64999"
+   cy="81"
+   r="1.4960001"
+   id="circle1257"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin18G">
+   <path
+   d="m 163.658,72 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1260"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 169.642,72 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1262"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="166.64999"
+   cy="72"
+   r="1.4960001"
+   id="circle1264"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin18H">
+   <path
+   d="m 163.658,63 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1267"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 169.642,63 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1269"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="166.64999"
+   cy="63"
+   r="1.4960001"
+   id="circle1271"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin18I">
+   <path
+   d="m 163.658,54 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1274"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 169.642,54 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1276"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="166.64999"
+   cy="54"
+   r="1.4960001"
+   id="circle1278"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin18J">
+   <path
+   d="m 163.658,45 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1281"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 169.642,45 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1283"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="166.64999"
+   cy="45"
+   r="1.4960001"
+   id="circle1285"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin19A">
+   <path
+   d="m 172.658,144 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1288"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 178.642,144 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1290"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="175.64999"
+   cy="144"
+   r="1.4960001"
+   id="circle1292"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin19B">
+   <path
+   d="m 172.658,135 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1295"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 178.642,135 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1297"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="175.64999"
+   cy="135"
+   r="1.4960001"
+   id="circle1299"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin19C">
+   <path
+   d="m 172.658,126 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1302"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 178.642,126 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1304"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="175.64999"
+   cy="126"
+   r="1.4960001"
+   id="circle1306"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin19D">
+   <path
+   d="m 172.658,117 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1309"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 178.642,117 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1311"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="175.64999"
+   cy="117"
+   r="1.4960001"
+   id="circle1313"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin19E">
+   <path
+   d="m 172.658,108 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1316"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 178.642,108 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1318"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="175.64999"
+   cy="108"
+   r="1.4960001"
+   id="circle1320"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin19F">
+   <path
+   d="m 172.658,81 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1323"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 178.642,81 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1325"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="175.64999"
+   cy="81"
+   r="1.4960001"
+   id="circle1327"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin19G">
+   <path
+   d="m 172.658,72 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1330"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 178.642,72 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1332"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="175.64999"
+   cy="72"
+   r="1.4960001"
+   id="circle1334"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin19H">
+   <path
+   d="m 172.658,63 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1337"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 178.642,63 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1339"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="175.64999"
+   cy="63"
+   r="1.4960001"
+   id="circle1341"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin19I">
+   <path
+   d="m 172.658,54 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1344"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 178.642,54 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1346"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="175.64999"
+   cy="54"
+   r="1.4960001"
+   id="circle1348"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin19J">
+   <path
+   d="m 172.658,45 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1351"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 178.642,45 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1353"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="175.64999"
+   cy="45"
+   r="1.4960001"
+   id="circle1355"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin20A">
+   <path
+   d="m 181.658,144 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1358"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 187.642,144 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1360"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="184.64999"
+   cy="144"
+   r="1.4960001"
+   id="circle1362"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin20B">
+   <path
+   d="m 181.658,135 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1365"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 187.642,135 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1367"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="184.64999"
+   cy="135"
+   r="1.4960001"
+   id="circle1369"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin20C">
+   <path
+   d="m 181.658,126 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1372"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 187.642,126 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1374"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="184.64999"
+   cy="126"
+   r="1.4960001"
+   id="circle1376"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin20D">
+   <path
+   d="m 181.658,117 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1379"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 187.642,117 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1381"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="184.64999"
+   cy="117"
+   r="1.4960001"
+   id="circle1383"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin20E">
+   <path
+   d="m 181.658,108 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1386"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 187.642,108 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1388"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="184.64999"
+   cy="108"
+   r="1.4960001"
+   id="circle1390"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin20F">
+   <path
+   d="m 181.658,81 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1393"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 187.642,81 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1395"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="184.64999"
+   cy="81"
+   r="1.4960001"
+   id="circle1397"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin20G">
+   <path
+   d="m 181.658,72 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1400"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 187.642,72 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1402"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="184.64999"
+   cy="72"
+   r="1.4960001"
+   id="circle1404"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin20H">
+   <path
+   d="m 181.658,63 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1407"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 187.642,63 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1409"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="184.64999"
+   cy="63"
+   r="1.4960001"
+   id="circle1411"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin20I">
+   <path
+   d="m 181.658,54 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1414"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 187.642,54 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1416"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="184.64999"
+   cy="54"
+   r="1.4960001"
+   id="circle1418"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin20J">
+   <path
+   d="m 181.658,45 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1421"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 187.642,45 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1423"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="184.64999"
+   cy="45"
+   r="1.4960001"
+   id="circle1425"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin21A">
+   <path
+   d="m 190.658,144 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1428"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 196.642,144 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1430"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="193.64999"
+   cy="144"
+   r="1.4960001"
+   id="circle1432"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin21B">
+   <path
+   d="m 190.658,135 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1435"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 196.642,135 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1437"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="193.64999"
+   cy="135"
+   r="1.4960001"
+   id="circle1439"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin21C">
+   <path
+   d="m 190.658,126 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1442"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 196.642,126 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1444"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="193.64999"
+   cy="126"
+   r="1.4960001"
+   id="circle1446"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin21D">
+   <path
+   d="m 190.658,117 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1449"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 196.642,117 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1451"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="193.64999"
+   cy="117"
+   r="1.4960001"
+   id="circle1453"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin21E">
+   <path
+   d="m 190.658,108 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1456"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 196.642,108 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1458"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="193.64999"
+   cy="108"
+   r="1.4960001"
+   id="circle1460"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin21F">
+   <path
+   d="m 190.658,81 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1463"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 196.642,81 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1465"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="193.64999"
+   cy="81"
+   r="1.4960001"
+   id="circle1467"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin21G">
+   <path
+   d="m 190.658,72 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1470"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 196.642,72 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1472"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="193.64999"
+   cy="72"
+   r="1.4960001"
+   id="circle1474"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin21H">
+   <path
+   d="m 190.658,63 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1477"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 196.642,63 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1479"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="193.64999"
+   cy="63"
+   r="1.4960001"
+   id="circle1481"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin21I">
+   <path
+   d="m 190.658,54 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1484"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 196.642,54 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1486"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="193.64999"
+   cy="54"
+   r="1.4960001"
+   id="circle1488"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin21J">
+   <path
+   d="m 190.658,45 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1491"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 196.642,45 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1493"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="193.64999"
+   cy="45"
+   r="1.4960001"
+   id="circle1495"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin22A">
+   <path
+   d="m 199.658,144 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1498"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 205.642,144 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1500"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="202.64999"
+   cy="144"
+   r="1.4960001"
+   id="circle1502"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin22B">
+   <path
+   d="m 199.658,135 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1505"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 205.642,135 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1507"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="202.64999"
+   cy="135"
+   r="1.4960001"
+   id="circle1509"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin22C">
+   <path
+   d="m 199.658,126 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1512"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 205.642,126 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1514"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="202.64999"
+   cy="126"
+   r="1.4960001"
+   id="circle1516"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin22D">
+   <path
+   d="m 199.658,117 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1519"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 205.642,117 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1521"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="202.64999"
+   cy="117"
+   r="1.4960001"
+   id="circle1523"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin22E">
+   <path
+   d="m 199.658,108 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1526"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 205.642,108 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1528"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="202.64999"
+   cy="108"
+   r="1.4960001"
+   id="circle1530"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin22F">
+   <path
+   d="m 199.658,81 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1533"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 205.642,81 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1535"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="202.64999"
+   cy="81"
+   r="1.4960001"
+   id="circle1537"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin22G">
+   <path
+   d="m 199.658,72 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1540"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 205.642,72 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1542"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="202.64999"
+   cy="72"
+   r="1.4960001"
+   id="circle1544"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin22H">
+   <path
+   d="m 199.658,63 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1547"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 205.642,63 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1549"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="202.64999"
+   cy="63"
+   r="1.4960001"
+   id="circle1551"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin22I">
+   <path
+   d="m 199.658,54 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1554"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 205.642,54 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1556"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="202.64999"
+   cy="54"
+   r="1.4960001"
+   id="circle1558"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin22J">
+   <path
+   d="m 199.658,45 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1561"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 205.642,45 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1563"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="202.64999"
+   cy="45"
+   r="1.4960001"
+   id="circle1565"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin23A">
+   <path
+   d="m 208.658,144 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1568"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 214.642,144 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1570"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="211.64999"
+   cy="144"
+   r="1.4960001"
+   id="circle1572"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin23B">
+   <path
+   d="m 208.658,135 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1575"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 214.642,135 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1577"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="211.64999"
+   cy="135"
+   r="1.4960001"
+   id="circle1579"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin23C">
+   <path
+   d="m 208.658,126 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1582"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 214.642,126 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1584"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="211.64999"
+   cy="126"
+   r="1.4960001"
+   id="circle1586"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin23D">
+   <path
+   d="m 208.658,117 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1589"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 214.642,117 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1591"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="211.64999"
+   cy="117"
+   r="1.4960001"
+   id="circle1593"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin23E">
+   <path
+   d="m 208.658,108 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1596"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 214.642,108 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1598"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="211.64999"
+   cy="108"
+   r="1.4960001"
+   id="circle1600"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin23F">
+   <path
+   d="m 208.658,81 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1603"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 214.642,81 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1605"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="211.64999"
+   cy="81"
+   r="1.4960001"
+   id="circle1607"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin23G">
+   <path
+   d="m 208.658,72 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1610"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 214.642,72 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1612"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="211.64999"
+   cy="72"
+   r="1.4960001"
+   id="circle1614"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin23H">
+   <path
+   d="m 208.658,63 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1617"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 214.642,63 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1619"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="211.64999"
+   cy="63"
+   r="1.4960001"
+   id="circle1621"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin23I">
+   <path
+   d="m 208.658,54 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1624"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 214.642,54 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1626"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="211.64999"
+   cy="54"
+   r="1.4960001"
+   id="circle1628"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin23J">
+   <path
+   d="m 208.658,45 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1631"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 214.642,45 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1633"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="211.64999"
+   cy="45"
+   r="1.4960001"
+   id="circle1635"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin24A">
+   <path
+   d="m 217.658,144 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1638"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 223.642,144 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1640"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="220.64999"
+   cy="144"
+   r="1.4960001"
+   id="circle1642"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin24B">
+   <path
+   d="m 217.658,135 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1645"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 223.642,135 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1647"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="220.64999"
+   cy="135"
+   r="1.4960001"
+   id="circle1649"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin24C">
+   <path
+   d="m 217.658,126 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1652"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 223.642,126 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1654"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="220.64999"
+   cy="126"
+   r="1.4960001"
+   id="circle1656"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin24D">
+   <path
+   d="m 217.658,117 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1659"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 223.642,117 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1661"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="220.64999"
+   cy="117"
+   r="1.4960001"
+   id="circle1663"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin24E">
+   <path
+   d="m 217.658,108 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1666"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 223.642,108 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1668"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="220.64999"
+   cy="108"
+   r="1.4960001"
+   id="circle1670"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin24F">
+   <path
+   d="m 217.658,81 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1673"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 223.642,81 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1675"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="220.64999"
+   cy="81"
+   r="1.4960001"
+   id="circle1677"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin24G">
+   <path
+   d="m 217.658,72 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1680"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 223.642,72 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1682"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="220.64999"
+   cy="72"
+   r="1.4960001"
+   id="circle1684"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin24H">
+   <path
+   d="m 217.658,63 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1687"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 223.642,63 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1689"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="220.64999"
+   cy="63"
+   r="1.4960001"
+   id="circle1691"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin24I">
+   <path
+   d="m 217.658,54 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1694"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 223.642,54 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1696"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="220.64999"
+   cy="54"
+   r="1.4960001"
+   id="circle1698"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin24J">
+   <path
+   d="m 217.658,45 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1701"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 223.642,45 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1703"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="220.64999"
+   cy="45"
+   r="1.4960001"
+   id="circle1705"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin25A">
+   <path
+   d="m 226.658,144 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1708"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 232.642,144 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1710"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="229.64999"
+   cy="144"
+   r="1.4960001"
+   id="circle1712"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin25B">
+   <path
+   d="m 226.658,135 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1715"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 232.642,135 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1717"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="229.64999"
+   cy="135"
+   r="1.4960001"
+   id="circle1719"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin25C">
+   <path
+   d="m 226.658,126 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1722"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 232.642,126 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1724"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="229.64999"
+   cy="126"
+   r="1.4960001"
+   id="circle1726"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin25D">
+   <path
+   d="m 226.658,117 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1729"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 232.642,117 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1731"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="229.64999"
+   cy="117"
+   r="1.4960001"
+   id="circle1733"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin25E">
+   <path
+   d="m 226.658,108 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1736"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 232.642,108 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1738"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="229.64999"
+   cy="108"
+   r="1.4960001"
+   id="circle1740"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin25F">
+   <path
+   d="m 226.658,81 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1743"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 232.642,81 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1745"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="229.64999"
+   cy="81"
+   r="1.4960001"
+   id="circle1747"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin25G">
+   <path
+   d="m 226.658,72 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1750"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 232.642,72 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1752"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="229.64999"
+   cy="72"
+   r="1.4960001"
+   id="circle1754"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin25H">
+   <path
+   d="m 226.658,63 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1757"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 232.642,63 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1759"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="229.64999"
+   cy="63"
+   r="1.4960001"
+   id="circle1761"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin25I">
+   <path
+   d="m 226.658,54 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1764"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 232.642,54 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1766"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="229.64999"
+   cy="54"
+   r="1.4960001"
+   id="circle1768"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin25J">
+   <path
+   d="m 226.658,45 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1771"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 232.642,45 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1773"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="229.64999"
+   cy="45"
+   r="1.4960001"
+   id="circle1775"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin26A">
+   <path
+   d="m 235.658,144 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1778"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 241.642,144 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1780"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="238.64999"
+   cy="144"
+   r="1.4960001"
+   id="circle1782"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin26B">
+   <path
+   d="m 235.658,135 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1785"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 241.642,135 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1787"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="238.64999"
+   cy="135"
+   r="1.4960001"
+   id="circle1789"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin26C">
+   <path
+   d="m 235.658,126 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1792"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 241.642,126 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1794"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="238.64999"
+   cy="126"
+   r="1.4960001"
+   id="circle1796"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin26D">
+   <path
+   d="m 235.658,117 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1799"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 241.642,117 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1801"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="238.64999"
+   cy="117"
+   r="1.4960001"
+   id="circle1803"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin26E">
+   <path
+   d="m 235.658,108 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1806"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 241.642,108 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1808"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="238.64999"
+   cy="108"
+   r="1.4960001"
+   id="circle1810"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin26F">
+   <path
+   d="m 235.658,81 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1813"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 241.642,81 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1815"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="238.64999"
+   cy="81"
+   r="1.4960001"
+   id="circle1817"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin26G">
+   <path
+   d="m 235.658,72 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1820"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 241.642,72 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1822"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="238.64999"
+   cy="72"
+   r="1.4960001"
+   id="circle1824"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin26H">
+   <path
+   d="m 235.658,63 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1827"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 241.642,63 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1829"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="238.64999"
+   cy="63"
+   r="1.4960001"
+   id="circle1831"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin26I">
+   <path
+   d="m 235.658,54 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1834"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 241.642,54 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1836"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="238.64999"
+   cy="54"
+   r="1.4960001"
+   id="circle1838"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin26J">
+   <path
+   d="m 235.658,45 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1841"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 241.642,45 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1843"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="238.64999"
+   cy="45"
+   r="1.4960001"
+   id="circle1845"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin27A">
+   <path
+   d="m 244.658,144 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1848"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 250.642,144 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1850"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="247.64999"
+   cy="144"
+   r="1.4960001"
+   id="circle1852"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin27B">
+   <path
+   d="m 244.658,135 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1855"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 250.642,135 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1857"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="247.64999"
+   cy="135"
+   r="1.4960001"
+   id="circle1859"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin27C">
+   <path
+   d="m 244.658,126 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1862"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 250.642,126 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1864"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="247.64999"
+   cy="126"
+   r="1.4960001"
+   id="circle1866"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin27D">
+   <path
+   d="m 244.658,117 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1869"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 250.642,117 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1871"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="247.64999"
+   cy="117"
+   r="1.4960001"
+   id="circle1873"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin27E">
+   <path
+   d="m 244.658,108 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1876"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 250.642,108 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1878"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="247.64999"
+   cy="108"
+   r="1.4960001"
+   id="circle1880"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin27F">
+   <path
+   d="m 244.658,81 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1883"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 250.642,81 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1885"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="247.64999"
+   cy="81"
+   r="1.4960001"
+   id="circle1887"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin27G">
+   <path
+   d="m 244.658,72 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1890"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 250.642,72 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1892"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="247.64999"
+   cy="72"
+   r="1.4960001"
+   id="circle1894"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin27H">
+   <path
+   d="m 244.658,63 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1897"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 250.642,63 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1899"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="247.64999"
+   cy="63"
+   r="1.4960001"
+   id="circle1901"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin27I">
+   <path
+   d="m 244.658,54 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1904"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 250.642,54 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1906"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="247.64999"
+   cy="54"
+   r="1.4960001"
+   id="circle1908"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin27J">
+   <path
+   d="m 244.658,45 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1911"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 250.642,45 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1913"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="247.64999"
+   cy="45"
+   r="1.4960001"
+   id="circle1915"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin28A">
+   <path
+   d="m 253.658,144 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1918"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 259.642,144 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1920"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="256.64999"
+   cy="144"
+   r="1.4960001"
+   id="circle1922"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin28B">
+   <path
+   d="m 253.658,135 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1925"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 259.642,135 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1927"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="256.64999"
+   cy="135"
+   r="1.4960001"
+   id="circle1929"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin28C">
+   <path
+   d="m 253.658,126 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1932"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 259.642,126 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1934"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="256.64999"
+   cy="126"
+   r="1.4960001"
+   id="circle1936"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin28D">
+   <path
+   d="m 253.658,117 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1939"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 259.642,117 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1941"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="256.64999"
+   cy="117"
+   r="1.4960001"
+   id="circle1943"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin28E">
+   <path
+   d="m 253.658,108 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1946"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 259.642,108 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1948"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="256.64999"
+   cy="108"
+   r="1.4960001"
+   id="circle1950"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin28F">
+   <path
+   d="m 253.658,81 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1953"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 259.642,81 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1955"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="256.64999"
+   cy="81"
+   r="1.4960001"
+   id="circle1957"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin28G">
+   <path
+   d="m 253.658,72 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1960"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 259.642,72 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1962"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="256.64999"
+   cy="72"
+   r="1.4960001"
+   id="circle1964"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin28H">
+   <path
+   d="m 253.658,63 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1967"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 259.642,63 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1969"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="256.64999"
+   cy="63"
+   r="1.4960001"
+   id="circle1971"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin28I">
+   <path
+   d="m 253.658,54 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1974"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 259.642,54 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1976"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="256.64999"
+   cy="54"
+   r="1.4960001"
+   id="circle1978"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin28J">
+   <path
+   d="m 253.658,45 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1981"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 259.642,45 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1983"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="256.64999"
+   cy="45"
+   r="1.4960001"
+   id="circle1985"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin29A">
+   <path
+   d="m 262.658,144 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1988"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 268.642,144 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1990"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="265.64999"
+   cy="144"
+   r="1.4960001"
+   id="circle1992"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin29B">
+   <path
+   d="m 262.658,135 a 2.992,2.992 0 0 1 5.984,0"
+   id="path1995"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 268.642,135 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path1997"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="265.64999"
+   cy="135"
+   r="1.4960001"
+   id="circle1999"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin29C">
+   <path
+   d="m 262.658,126 a 2.992,2.992 0 0 1 5.984,0"
+   id="path2002"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 268.642,126 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path2004"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="265.64999"
+   cy="126"
+   r="1.4960001"
+   id="circle2006"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin29D">
+   <path
+   d="m 262.658,117 a 2.992,2.992 0 0 1 5.984,0"
+   id="path2009"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 268.642,117 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path2011"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="265.64999"
+   cy="117"
+   r="1.4960001"
+   id="circle2013"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin29E">
+   <path
+   d="m 262.658,108 a 2.992,2.992 0 0 1 5.984,0"
+   id="path2016"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 268.642,108 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path2018"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="265.64999"
+   cy="108"
+   r="1.4960001"
+   id="circle2020"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin29F">
+   <path
+   d="m 262.658,81 a 2.992,2.992 0 0 1 5.984,0"
+   id="path2023"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 268.642,81 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path2025"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="265.64999"
+   cy="81"
+   r="1.4960001"
+   id="circle2027"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin29G">
+   <path
+   d="m 262.658,72 a 2.992,2.992 0 0 1 5.984,0"
+   id="path2030"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 268.642,72 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path2032"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="265.64999"
+   cy="72"
+   r="1.4960001"
+   id="circle2034"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin29H">
+   <path
+   d="m 262.658,63 a 2.992,2.992 0 0 1 5.984,0"
+   id="path2037"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 268.642,63 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path2039"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="265.64999"
+   cy="63"
+   r="1.4960001"
+   id="circle2041"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin29I">
+   <path
+   d="m 262.658,54 a 2.992,2.992 0 0 1 5.984,0"
+   id="path2044"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 268.642,54 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path2046"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="265.64999"
+   cy="54"
+   r="1.4960001"
+   id="circle2048"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin29J">
+   <path
+   d="m 262.658,45 a 2.992,2.992 0 0 1 5.984,0"
+   id="path2051"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 268.642,45 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path2053"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="265.64999"
+   cy="45"
+   r="1.4960001"
+   id="circle2055"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin30A">
+   <path
+   d="m 271.658,144 a 2.992,2.992 0 0 1 5.984,0"
+   id="path2058"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 277.642,144 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path2060"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="274.64999"
+   cy="144"
+   r="1.4960001"
+   id="circle2062"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin30B">
+   <path
+   d="m 271.658,135 a 2.992,2.992 0 0 1 5.984,0"
+   id="path2065"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 277.642,135 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path2067"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="274.64999"
+   cy="135"
+   r="1.4960001"
+   id="circle2069"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin30C">
+   <path
+   d="m 271.658,126 a 2.992,2.992 0 0 1 5.984,0"
+   id="path2072"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 277.642,126 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path2074"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="274.64999"
+   cy="126"
+   r="1.4960001"
+   id="circle2076"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin30D">
+   <path
+   d="m 271.658,117 a 2.992,2.992 0 0 1 5.984,0"
+   id="path2079"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 277.642,117 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path2081"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="274.64999"
+   cy="117"
+   r="1.4960001"
+   id="circle2083"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin30E">
+   <path
+   d="m 271.658,108 a 2.992,2.992 0 0 1 5.984,0"
+   id="path2086"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 277.642,108 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path2088"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="274.64999"
+   cy="108"
+   r="1.4960001"
+   id="circle2090"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin30F">
+   <path
+   d="m 271.658,81 a 2.992,2.992 0 0 1 5.984,0"
+   id="path2093"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 277.642,81 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path2095"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="274.64999"
+   cy="81"
+   r="1.4960001"
+   id="circle2097"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin30G">
+   <path
+   d="m 271.658,72 a 2.992,2.992 0 0 1 5.984,0"
+   id="path2100"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 277.642,72 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path2102"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="274.64999"
+   cy="72"
+   r="1.4960001"
+   id="circle2104"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin30H">
+   <path
+   d="m 271.658,63 a 2.992,2.992 0 0 1 5.984,0"
+   id="path2107"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 277.642,63 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path2109"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="274.64999"
+   cy="63"
+   r="1.4960001"
+   id="circle2111"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin30I">
+   <path
+   d="m 271.658,54 a 2.992,2.992 0 0 1 5.984,0"
+   id="path2114"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 277.642,54 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path2116"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="274.64999"
+   cy="54"
+   r="1.4960001"
+   id="circle2118"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-0.24999537,-4.7901878e-4)"
+   id="pin30J">
+   <path
+   d="m 271.658,45 a 2.992,2.992 0 0 1 5.984,0"
+   id="path2121"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 277.642,45 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path2123"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="274.64999"
+   cy="45"
+   r="1.4960001"
+   id="circle2125"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin3W">
+   <path
+   d="m 28.008,180 a 2.992,2.992 0 0 1 5.984,0"
+   id="path4438"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 33.992,180 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path4440"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="31"
+   cy="180"
+   r="1.4960001"
+   id="circle4442"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin3X">
+   <path
+   d="m 28.008,171 a 2.992,2.992 0 0 1 5.984,0"
+   id="path4445"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 33.992,171 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path4447"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="31"
+   cy="171"
+   r="1.4960001"
+   id="circle4449"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin3Y">
+   <path
+   d="m 28.008,18 a 2.992,2.992 0 0 1 5.984,0"
+   id="path4452"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 33.992,18 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path4454"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="31"
+   cy="18"
+   r="1.4960001"
+   id="circle4456"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin3Z">
+   <path
+   d="m 28.008,9 a 2.992,2.992 0 0 1 5.984,0"
+   id="path4459"
+   style="fill:#bfbfbf" />
+   <path
+   d="M 33.992,9 A 2.992,2.992 0 1 1 28.008,9"
+   id="path4461"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="31"
+   cy="9"
+   r="1.4960001"
+   id="circle4463"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin4W">
+   <path
+   d="m 37.008,180 a 2.992,2.992 0 0 1 5.984,0"
+   id="path4466"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 42.992,180 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path4468"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="40"
+   cy="180"
+   r="1.4960001"
+   id="circle4470"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin4X">
+   <path
+   d="m 37.008,171 a 2.992,2.992 0 0 1 5.984,0"
+   id="path4473"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 42.992,171 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path4475"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="40"
+   cy="171"
+   r="1.4960001"
+   id="circle4477"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin4Y">
+   <path
+   d="m 37.008,18 a 2.992,2.992 0 0 1 5.984,0"
+   id="path4480"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 42.992,18 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path4482"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="40"
+   cy="18"
+   r="1.4960001"
+   id="circle4484"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin4Z">
+   <path
+   d="m 37.008,9 a 2.992,2.992 0 0 1 5.984,0"
+   id="path4487"
+   style="fill:#bfbfbf" />
+   <path
+   d="M 42.992,9 A 2.992,2.992 0 1 1 37.008,9"
+   id="path4489"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="40"
+   cy="9"
+   r="1.4960001"
+   id="circle4491"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin5W">
+   <path
+   d="m 46.008,180 a 2.992,2.992 0 0 1 5.984,0"
+   id="path4494"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 51.992,180 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path4496"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="49"
+   cy="180"
+   r="1.4960001"
+   id="circle4498"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin5X">
+   <path
+   d="m 46.008,171 a 2.992,2.992 0 0 1 5.984,0"
+   id="path4501"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 51.992,171 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path4503"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="49"
+   cy="171"
+   r="1.4960001"
+   id="circle4505"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin5Y">
+   <path
+   d="m 46.008,18 a 2.992,2.992 0 0 1 5.984,0"
+   id="path4508"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 51.992,18 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path4510"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="49"
+   cy="18"
+   r="1.4960001"
+   id="circle4512"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin5Z">
+   <path
+   d="m 46.008,9 a 2.992,2.992 0 0 1 5.984,0"
+   id="path4515"
+   style="fill:#bfbfbf" />
+   <path
+   d="M 51.992,9 A 2.992,2.992 0 1 1 46.008,9"
+   id="path4517"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="49"
+   cy="9"
+   r="1.4960001"
+   id="circle4519"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin6W">
+   <path
+   d="m 55.008,180 a 2.992,2.992 0 0 1 5.984,0"
+   id="path4522"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 60.992,180 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path4524"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="58"
+   cy="180"
+   r="1.4960001"
+   id="circle4526"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin6X">
+   <path
+   d="m 55.008,171 a 2.992,2.992 0 0 1 5.984,0"
+   id="path4529"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 60.992,171 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path4531"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="58"
+   cy="171"
+   r="1.4960001"
+   id="circle4533"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin6Y">
+   <path
+   d="m 55.008,18 a 2.992,2.992 0 0 1 5.984,0"
+   id="path4536"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 60.992,18 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path4538"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="58"
+   cy="18"
+   r="1.4960001"
+   id="circle4540"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin6Z">
+   <path
+   d="m 55.008,9 a 2.992,2.992 0 0 1 5.984,0"
+   id="path4543"
+   style="fill:#bfbfbf" />
+   <path
+   d="M 60.992,9 A 2.992,2.992 0 1 1 55.008,9"
+   id="path4545"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="58"
+   cy="9"
+   r="1.4960001"
+   id="circle4547"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin7W">
+   <path
+   d="m 64.008,180 a 2.992,2.992 0 0 1 5.984,0"
+   id="path4550"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 69.992,180 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path4552"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="67"
+   cy="180"
+   r="1.4960001"
+   id="circle4554"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin7X">
+   <path
+   d="m 64.008,171 a 2.992,2.992 0 0 1 5.984,0"
+   id="path4557"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 69.992,171 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path4559"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="67"
+   cy="171"
+   r="1.4960001"
+   id="circle4561"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin7Y">
+   <path
+   d="m 64.008,18 a 2.992,2.992 0 0 1 5.984,0"
+   id="path4564"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 69.992,18 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path4566"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="67"
+   cy="18"
+   r="1.4960001"
+   id="circle4568"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin7Z">
+   <path
+   d="m 64.008,9 a 2.992,2.992 0 0 1 5.984,0"
+   id="path4571"
+   style="fill:#bfbfbf" />
+   <path
+   d="M 69.992,9 A 2.992,2.992 0 1 1 64.008,9"
+   id="path4573"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="67"
+   cy="9"
+   r="1.4960001"
+   id="circle4575"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin9W">
+   <path
+   d="m 82.008,180 a 2.992,2.992 0 0 1 5.984,0"
+   id="path4578"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 87.992,180 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path4580"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="85"
+   cy="180"
+   r="1.4960001"
+   id="circle4582"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin9X">
+   <path
+   d="m 82.008,171 a 2.992,2.992 0 0 1 5.984,0"
+   id="path4585"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 87.992,171 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path4587"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="85"
+   cy="171"
+   r="1.4960001"
+   id="circle4589"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin9Y">
+   <path
+   d="m 82.008,18 a 2.992,2.992 0 0 1 5.984,0"
+   id="path4592"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 87.992,18 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path4594"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="85"
+   cy="18"
+   r="1.4960001"
+   id="circle4596"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin9Z">
+   <path
+   d="m 82.008,9 a 2.992,2.992 0 0 1 5.984,0"
+   id="path4599"
+   style="fill:#bfbfbf" />
+   <path
+   d="M 87.992,9 A 2.992,2.992 0 1 1 82.008,9"
+   id="path4601"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="85"
+   cy="9"
+   r="1.4960001"
+   id="circle4603"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin10W">
+   <path
+   d="m 91.008,180 a 2.992,2.992 0 0 1 5.984,0"
+   id="path4606"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 96.992,180 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path4608"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="94"
+   cy="180"
+   r="1.4960001"
+   id="circle4610"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin10X">
+   <path
+   d="m 91.008,171 a 2.992,2.992 0 0 1 5.984,0"
+   id="path4613"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 96.992,171 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path4615"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="94"
+   cy="171"
+   r="1.4960001"
+   id="circle4617"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin10Y">
+   <path
+   d="m 91.008,18 a 2.992,2.992 0 0 1 5.984,0"
+   id="path4620"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 96.992,18 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path4622"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="94"
+   cy="18"
+   r="1.4960001"
+   id="circle4624"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin10Z">
+   <path
+   d="m 91.008,9 a 2.992,2.992 0 0 1 5.984,0"
+   id="path4627"
+   style="fill:#bfbfbf" />
+   <path
+   d="M 96.992,9 A 2.992,2.992 0 1 1 91.008,9"
+   id="path4629"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="94"
+   cy="9"
+   r="1.4960001"
+   id="circle4631"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin11W">
+   <path
+   d="m 100.008,180 a 2.992,2.992 0 0 1 5.984,0"
+   id="path4634"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 105.992,180 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path4636"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="103"
+   cy="180"
+   r="1.4960001"
+   id="circle4638"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin11X">
+   <path
+   d="m 100.008,171 a 2.992,2.992 0 0 1 5.984,0"
+   id="path4641"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 105.992,171 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path4643"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="103"
+   cy="171"
+   r="1.4960001"
+   id="circle4645"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin11Y">
+   <path
+   d="m 100.008,18 a 2.992,2.992 0 0 1 5.984,0"
+   id="path4648"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 105.992,18 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path4650"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="103"
+   cy="18"
+   r="1.4960001"
+   id="circle4652"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin11Z">
+   <path
+   d="m 100.008,9 a 2.992,2.992 0 0 1 5.984,0"
+   id="path4655"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 105.992,9 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path4657"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="103"
+   cy="9"
+   r="1.4960001"
+   id="circle4659"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin12W">
+   <path
+   d="m 109.008,180 a 2.992,2.992 0 0 1 5.984,0"
+   id="path4662"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 114.992,180 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path4664"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="112"
+   cy="180"
+   r="1.4960001"
+   id="circle4666"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin12X">
+   <path
+   d="m 109.008,171 a 2.992,2.992 0 0 1 5.984,0"
+   id="path4669"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 114.992,171 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path4671"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="112"
+   cy="171"
+   r="1.4960001"
+   id="circle4673"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin12Y">
+   <path
+   d="m 109.008,18 a 2.992,2.992 0 0 1 5.984,0"
+   id="path4676"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 114.992,18 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path4678"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="112"
+   cy="18"
+   r="1.4960001"
+   id="circle4680"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin12Z">
+   <path
+   d="m 109.008,9 a 2.992,2.992 0 0 1 5.984,0"
+   id="path4683"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 114.992,9 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path4685"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="112"
+   cy="9"
+   r="1.4960001"
+   id="circle4687"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin13W">
+   <path
+   d="m 118.008,180 a 2.992,2.992 0 0 1 5.984,0"
+   id="path4690"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 123.992,180 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path4692"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="121"
+   cy="180"
+   r="1.4960001"
+   id="circle4694"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin13X">
+   <path
+   d="m 118.008,171 a 2.992,2.992 0 0 1 5.984,0"
+   id="path4697"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 123.992,171 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path4699"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="121"
+   cy="171"
+   r="1.4960001"
+   id="circle4701"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin13Y">
+   <path
+   d="m 118.008,18 a 2.992,2.992 0 0 1 5.984,0"
+   id="path4704"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 123.992,18 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path4706"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="121"
+   cy="18"
+   r="1.4960001"
+   id="circle4708"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin13Z">
+   <path
+   d="m 118.008,9 a 2.992,2.992 0 0 1 5.984,0"
+   id="path4711"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 123.992,9 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path4713"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="121"
+   cy="9"
+   r="1.4960001"
+   id="circle4715"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin15W">
+   <path
+   d="m 136.008,180 a 2.992,2.992 0 0 1 5.984,0"
+   id="path4718"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 141.992,180 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path4720"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="139"
+   cy="180"
+   r="1.4960001"
+   id="circle4722"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin15X">
+   <path
+   d="m 136.008,171 a 2.992,2.992 0 0 1 5.984,0"
+   id="path4725"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 141.992,171 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path4727"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="139"
+   cy="171"
+   r="1.4960001"
+   id="circle4729"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin15Y">
+   <path
+   d="m 136.008,18 a 2.992,2.992 0 0 1 5.984,0"
+   id="path4732"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 141.992,18 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path4734"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="139"
+   cy="18"
+   r="1.4960001"
+   id="circle4736"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin15Z">
+   <path
+   d="m 136.008,9 a 2.992,2.992 0 0 1 5.984,0"
+   id="path4739"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 141.992,9 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path4741"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="139"
+   cy="9"
+   r="1.4960001"
+   id="circle4743"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin16W">
+   <path
+   d="m 145.008,180 a 2.992,2.992 0 0 1 5.984,0"
+   id="path4746"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 150.992,180 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path4748"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="148"
+   cy="180"
+   r="1.4960001"
+   id="circle4750"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin16X">
+   <path
+   d="m 145.008,171 a 2.992,2.992 0 0 1 5.984,0"
+   id="path4753"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 150.992,171 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path4755"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="148"
+   cy="171"
+   r="1.4960001"
+   id="circle4757"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin16Y">
+   <path
+   d="m 145.008,18 a 2.992,2.992 0 0 1 5.984,0"
+   id="path4760"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 150.992,18 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path4762"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="148"
+   cy="18"
+   r="1.4960001"
+   id="circle4764"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin16Z">
+   <path
+   d="m 145.008,9 a 2.992,2.992 0 0 1 5.984,0"
+   id="path4767"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 150.992,9 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path4769"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="148"
+   cy="9"
+   r="1.4960001"
+   id="circle4771"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin17W">
+   <path
+   d="m 154.008,180 a 2.992,2.992 0 0 1 5.984,0"
+   id="path4774"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 159.992,180 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path4776"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="157"
+   cy="180"
+   r="1.4960001"
+   id="circle4778"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin17X">
+   <path
+   d="m 154.008,171 a 2.992,2.992 0 0 1 5.984,0"
+   id="path4781"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 159.992,171 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path4783"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="157"
+   cy="171"
+   r="1.4960001"
+   id="circle4785"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin17Y">
+   <path
+   d="m 154.008,18 a 2.992,2.992 0 0 1 5.984,0"
+   id="path4788"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 159.992,18 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path4790"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="157"
+   cy="18"
+   r="1.4960001"
+   id="circle4792"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin17Z">
+   <path
+   d="m 154.008,9 a 2.992,2.992 0 0 1 5.984,0"
+   id="path4795"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 159.992,9 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path4797"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="157"
+   cy="9"
+   r="1.4960001"
+   id="circle4799"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin18W">
+   <path
+   d="m 163.008,180 a 2.992,2.992 0 0 1 5.984,0"
+   id="path4802"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 168.992,180 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path4804"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="166"
+   cy="180"
+   r="1.4960001"
+   id="circle4806"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin18X">
+   <path
+   d="m 163.008,171 a 2.992,2.992 0 0 1 5.984,0"
+   id="path4809"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 168.992,171 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path4811"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="166"
+   cy="171"
+   r="1.4960001"
+   id="circle4813"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin18Y">
+   <path
+   d="m 163.008,18 a 2.992,2.992 0 0 1 5.984,0"
+   id="path4816"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 168.992,18 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path4818"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="166"
+   cy="18"
+   r="1.4960001"
+   id="circle4820"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin18Z">
+   <path
+   d="m 163.008,9 a 2.992,2.992 0 0 1 5.984,0"
+   id="path4823"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 168.992,9 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path4825"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="166"
+   cy="9"
+   r="1.4960001"
+   id="circle4827"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin19W">
+   <path
+   d="m 172.008,180 a 2.992,2.992 0 0 1 5.984,0"
+   id="path4830"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 177.992,180 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path4832"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="175"
+   cy="180"
+   r="1.4960001"
+   id="circle4834"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin19X">
+   <path
+   d="m 172.008,171 a 2.992,2.992 0 0 1 5.984,0"
+   id="path4837"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 177.992,171 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path4839"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="175"
+   cy="171"
+   r="1.4960001"
+   id="circle4841"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin19Y">
+   <path
+   d="m 172.008,18 a 2.992,2.992 0 0 1 5.984,0"
+   id="path4844"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 177.992,18 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path4846"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="175"
+   cy="18"
+   r="1.4960001"
+   id="circle4848"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin19Z">
+   <path
+   d="m 172.008,9 a 2.992,2.992 0 0 1 5.984,0"
+   id="path4851"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 177.992,9 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path4853"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="175"
+   cy="9"
+   r="1.4960001"
+   id="circle4855"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin21W">
+   <path
+   d="m 190.008,180 a 2.992,2.992 0 0 1 5.984,0"
+   id="path4858"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 195.992,180 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path4860"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="193"
+   cy="180"
+   r="1.4960001"
+   id="circle4862"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin21X">
+   <path
+   d="m 190.008,171 a 2.992,2.992 0 0 1 5.984,0"
+   id="path4865"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 195.992,171 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path4867"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="193"
+   cy="171"
+   r="1.4960001"
+   id="circle4869"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin21Y">
+   <path
+   d="m 190.008,18 a 2.992,2.992 0 0 1 5.984,0"
+   id="path4872"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 195.992,18 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path4874"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="193"
+   cy="18"
+   r="1.4960001"
+   id="circle4876"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin21Z">
+   <path
+   d="m 190.008,9 a 2.992,2.992 0 0 1 5.984,0"
+   id="path4879"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 195.992,9 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path4881"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="193"
+   cy="9"
+   r="1.4960001"
+   id="circle4883"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin22W">
+   <path
+   d="m 199.008,180 a 2.992,2.992 0 0 1 5.984,0"
+   id="path4886"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 204.992,180 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path4888"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="202"
+   cy="180"
+   r="1.4960001"
+   id="circle4890"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin22X">
+   <path
+   d="m 199.008,171 a 2.992,2.992 0 0 1 5.984,0"
+   id="path4893"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 204.992,171 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path4895"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="202"
+   cy="171"
+   r="1.4960001"
+   id="circle4897"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin22Y">
+   <path
+   d="m 199.008,18 a 2.992,2.992 0 0 1 5.984,0"
+   id="path4900"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 204.992,18 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path4902"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="202"
+   cy="18"
+   r="1.4960001"
+   id="circle4904"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin22Z">
+   <path
+   d="m 199.008,9 a 2.992,2.992 0 0 1 5.984,0"
+   id="path4907"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 204.992,9 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path4909"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="202"
+   cy="9"
+   r="1.4960001"
+   id="circle4911"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin23W">
+   <path
+   d="m 208.008,180 a 2.992,2.992 0 0 1 5.984,0"
+   id="path4914"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 213.992,180 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path4916"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="211"
+   cy="180"
+   r="1.4960001"
+   id="circle4918"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin23X">
+   <path
+   d="m 208.008,171 a 2.992,2.992 0 0 1 5.984,0"
+   id="path4921"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 213.992,171 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path4923"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="211"
+   cy="171"
+   r="1.4960001"
+   id="circle4925"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin23Y">
+   <path
+   d="m 208.008,18 a 2.992,2.992 0 0 1 5.984,0"
+   id="path4928"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 213.992,18 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path4930"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="211"
+   cy="18"
+   r="1.4960001"
+   id="circle4932"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin23Z">
+   <path
+   d="m 208.008,9 a 2.992,2.992 0 0 1 5.984,0"
+   id="path4935"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 213.992,9 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path4937"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="211"
+   cy="9"
+   r="1.4960001"
+   id="circle4939"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin24W">
+   <path
+   d="m 217.008,180 a 2.992,2.992 0 0 1 5.984,0"
+   id="path4942"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 222.992,180 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path4944"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="220"
+   cy="180"
+   r="1.4960001"
+   id="circle4946"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin24X">
+   <path
+   d="m 217.008,171 a 2.992,2.992 0 0 1 5.984,0"
+   id="path4949"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 222.992,171 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path4951"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="220"
+   cy="171"
+   r="1.4960001"
+   id="circle4953"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin24Y">
+   <path
+   d="m 217.008,18 a 2.992,2.992 0 0 1 5.984,0"
+   id="path4956"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 222.992,18 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path4958"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="220"
+   cy="18"
+   r="1.4960001"
+   id="circle4960"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin24Z">
+   <path
+   d="m 217.008,9 a 2.992,2.992 0 0 1 5.984,0"
+   id="path4963"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 222.992,9 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path4965"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="220"
+   cy="9"
+   r="1.4960001"
+   id="circle4967"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin25W">
+   <path
+   d="m 226.008,180 a 2.992,2.992 0 0 1 5.984,0"
+   id="path4970"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 231.992,180 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path4972"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="229"
+   cy="180"
+   r="1.4960001"
+   id="circle4974"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin25X">
+   <path
+   d="m 226.008,171 a 2.992,2.992 0 0 1 5.984,0"
+   id="path4977"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 231.992,171 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path4979"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="229"
+   cy="171"
+   r="1.4960001"
+   id="circle4981"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin25Y">
+   <path
+   d="m 226.008,18 a 2.992,2.992 0 0 1 5.984,0"
+   id="path4984"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 231.992,18 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path4986"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="229"
+   cy="18"
+   r="1.4960001"
+   id="circle4988"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin25Z">
+   <path
+   d="m 226.008,9 a 2.992,2.992 0 0 1 5.984,0"
+   id="path4991"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 231.992,9 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path4993"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="229"
+   cy="9"
+   r="1.4960001"
+   id="circle4995"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin27W">
+   <path
+   d="m 244.008,180 a 2.992,2.992 0 0 1 5.984,0"
+   id="path4998"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 249.992,180 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path5000"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="247"
+   cy="180"
+   r="1.4960001"
+   id="circle5002"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin27X">
+   <path
+   d="m 244.008,171 a 2.992,2.992 0 0 1 5.984,0"
+   id="path5005"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 249.992,171 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path5007"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="247"
+   cy="171"
+   r="1.4960001"
+   id="circle5009"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin27Y">
+   <path
+   d="m 244.008,18 a 2.992,2.992 0 0 1 5.984,0"
+   id="path5012"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 249.992,18 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path5014"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="247"
+   cy="18"
+   r="1.4960001"
+   id="circle5016"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin27Z">
+   <path
+   d="m 244.008,9 a 2.992,2.992 0 0 1 5.984,0"
+   id="path5019"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 249.992,9 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path5021"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="247"
+   cy="9"
+   r="1.4960001"
+   id="circle5023"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin28W">
+   <path
+   d="m 253.008,180 a 2.992,2.992 0 0 1 5.984,0"
+   id="path5026"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 258.992,180 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path5028"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="256"
+   cy="180"
+   r="1.4960001"
+   id="circle5030"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin28X">
+   <path
+   d="m 253.008,171 a 2.992,2.992 0 0 1 5.984,0"
+   id="path5033"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 258.992,171 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path5035"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="256"
+   cy="171"
+   r="1.4960001"
+   id="circle5037"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin28Y">
+   <path
+   d="m 253.008,18 a 2.992,2.992 0 0 1 5.984,0"
+   id="path5040"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 258.992,18 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path5042"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="256"
+   cy="18"
+   r="1.4960001"
+   id="circle5044"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin28Z">
+   <path
+   d="m 253.008,9 a 2.992,2.992 0 0 1 5.984,0"
+   id="path5047"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 258.992,9 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path5049"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="256"
+   cy="9"
+   r="1.4960001"
+   id="circle5051"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin29W">
+   <path
+   d="m 262.008,180 a 2.992,2.992 0 0 1 5.984,0"
+   id="path5054"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 267.992,180 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path5056"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="265"
+   cy="180"
+   r="1.4960001"
+   id="circle5058"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin29X">
+   <path
+   d="m 262.008,171 a 2.992,2.992 0 0 1 5.984,0"
+   id="path5061"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 267.992,171 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path5063"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="265"
+   cy="171"
+   r="1.4960001"
+   id="circle5065"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin29Y">
+   <path
+   d="m 262.008,18 a 2.992,2.992 0 0 1 5.984,0"
+   id="path5068"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 267.992,18 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path5070"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="265"
+   cy="18"
+   r="1.4960001"
+   id="circle5072"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin29Z">
+   <path
+   d="m 262.008,9 a 2.992,2.992 0 0 1 5.984,0"
+   id="path5075"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 267.992,9 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path5077"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="265"
+   cy="9"
+   r="1.4960001"
+   id="circle5079"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin30W">
+   <path
+   d="m 271.008,180 a 2.992,2.992 0 0 1 5.984,0"
+   id="path5082"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 276.992,180 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path5084"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="274"
+   cy="180"
+   r="1.4960001"
+   id="circle5086"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin30X">
+   <path
+   d="m 271.008,171 a 2.992,2.992 0 0 1 5.984,0"
+   id="path5089"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 276.992,171 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path5091"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="274"
+   cy="171"
+   r="1.4960001"
+   id="circle5093"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin30Y">
+   <path
+   d="m 271.008,18 a 2.992,2.992 0 0 1 5.984,0"
+   id="path5096"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 276.992,18 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path5098"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="274"
+   cy="18"
+   r="1.4960001"
+   id="circle5100"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin30Z">
+   <path
+   d="m 271.008,9 a 2.992,2.992 0 0 1 5.984,0"
+   id="path5103"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 276.992,9 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path5105"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="274"
+   cy="9"
+   r="1.4960001"
+   id="circle5107"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin31W">
+   <path
+   d="m 280.008,180 a 2.992,2.992 0 0 1 5.984,0"
+   id="path5110"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 285.992,180 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path5112"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="283"
+   cy="180"
+   r="1.4960001"
+   id="circle5114"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin31X">
+   <path
+   d="m 280.008,171 a 2.992,2.992 0 0 1 5.984,0"
+   id="path5117"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 285.992,171 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path5119"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="283"
+   cy="171"
+   r="1.4960001"
+   id="circle5121"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin31Y">
+   <path
+   d="m 280.008,18 a 2.992,2.992 0 0 1 5.984,0"
+   id="path5124"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 285.992,18 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path5126"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="283"
+   cy="18"
+   r="1.4960001"
+   id="circle5128"
+   style="fill:#383838" />
+  </g>
+  <g
+   transform="translate(-14.250066,-4.7901878e-4)"
+   id="pin31Z">
+   <path
+   d="m 280.008,9 a 2.992,2.992 0 0 1 5.984,0"
+   id="path5131"
+   style="fill:#bfbfbf" />
+   <path
+   d="m 285.992,9 a 2.992,2.992 0 1 1 -5.984,0"
+   id="path5133"
+   style="fill:#e6e6e6" />
+   <circle
+   cx="283"
+   cy="9"
+   r="1.4960001"
+   id="circle5135"
+   style="fill:#383838" />
+  </g>
+  <text
+   x="-37.999519"
+   y="15.750005"
+   transform="matrix(0,-1,1,0,0,0)"
+   id="text5838"
+   style="font-size:5.75449991;fill:#b3b0b0;font-family:DroidSans">1</text>
+
+
+  <text
+   x="-157.99953"
+   y="15.750005"
+   transform="matrix(0,-1,1,0,0,0)"
+   id="text5840"
+   style="font-size:5.75449991;fill:#b3b0b0;font-family:DroidSans">1</text>
+
+
+  <text
+   x="-37.999519"
+   y="51.750004"
+   transform="matrix(0,-1,1,0,0,0)"
+   id="text5842"
+   style="font-size:5.75449991;fill:#b3b0b0;font-family:DroidSans">5</text>
+
+
+  <text
+   x="-157.99953"
+   y="51.750004"
+   transform="matrix(0,-1,1,0,0,0)"
+   id="text5844"
+   style="font-size:5.75449991;fill:#b3b0b0;font-family:DroidSans">5</text>
+
+
+  <text
+   x="-37.999519"
+   y="96.750008"
+   transform="matrix(0,-1,1,0,0,0)"
+   id="text5846"
+   style="font-size:5.75449991;fill:#b3b0b0;font-family:DroidSans">10</text>
+
+
+  <text
+   x="-157.99953"
+   y="96.750008"
+   transform="matrix(0,-1,1,0,0,0)"
+   id="text5848"
+   style="font-size:5.75449991;fill:#b3b0b0;font-family:DroidSans">10</text>
+
+
+  <text
+   x="-37.999519"
+   y="141.75"
+   transform="matrix(0,-1,1,0,0,0)"
+   id="text5850"
+   style="font-size:5.75449991;fill:#b3b0b0;font-family:DroidSans">15</text>
+
+
+  <text
+   x="-157.99953"
+   y="141.75"
+   transform="matrix(0,-1,1,0,0,0)"
+   id="text5852"
+   style="font-size:5.75449991;fill:#b3b0b0;font-family:DroidSans">15</text>
+
+
+  <text
+   x="-37.999519"
+   y="186.75"
+   transform="matrix(0,-1,1,0,0,0)"
+   id="text5854"
+   style="font-size:5.75449991;fill:#b3b0b0;font-family:DroidSans">20</text>
+
+
+  <text
+   x="-157.99953"
+   y="186.75"
+   transform="matrix(0,-1,1,0,0,0)"
+   id="text5856"
+   style="font-size:5.75449991;fill:#b3b0b0;font-family:DroidSans">20</text>
+
+
+  <text
+   x="-37.999519"
+   y="231.75"
+   transform="matrix(0,-1,1,0,0,0)"
+   id="text5858"
+   style="font-size:5.75449991;fill:#b3b0b0;font-family:DroidSans">25</text>
+
+
+  <text
+   x="-157.99953"
+   y="231.75"
+   transform="matrix(0,-1,1,0,0,0)"
+   id="text5860"
+   style="font-size:5.75449991;fill:#b3b0b0;font-family:DroidSans">25</text>
+
+
+  <text
+   x="-37.999519"
+   y="276.75"
+   transform="matrix(0,-1,1,0,0,0)"
+   id="text5862"
+   style="font-size:5.75449991;fill:#b3b0b0;font-family:DroidSans">30</text>
+
+
+  <text
+   x="-157.99953"
+   y="276.75"
+   transform="matrix(0,-1,1,0,0,0)"
+   id="text5864"
+   style="font-size:5.75449991;fill:#b3b0b0;font-family:DroidSans">30</text>
+
+
+  <text
+   x="-145.99953"
+   y="6.7500048"
+   transform="matrix(0,-1,1,0,0,0)"
+   id="text5890"
+   style="font-size:5.75449991;fill:#b3b0b0;font-family:DroidSans">A</text>
+
+
+  <text
+   x="-145.99953"
+   y="285.75"
+   transform="matrix(0,-1,1,0,0,0)"
+   id="text5892"
+   style="font-size:5.75449991;fill:#b3b0b0;font-family:DroidSans">A</text>
+
+
+  <text
+   x="-136.99953"
+   y="6.7500048"
+   transform="matrix(0,-1,1,0,0,0)"
+   id="text5894"
+   style="font-size:5.75449991;fill:#b3b0b0;font-family:DroidSans">B</text>
+
+
+  <text
+   x="-136.99953"
+   y="285.75"
+   transform="matrix(0,-1,1,0,0,0)"
+   id="text5896"
+   style="font-size:5.75449991;fill:#b3b0b0;font-family:DroidSans">B</text>
+
+
+  <text
+   x="-127.99952"
+   y="6.7500048"
+   transform="matrix(0,-1,1,0,0,0)"
+   id="text5898"
+   style="font-size:5.75449991;fill:#b3b0b0;font-family:DroidSans">C</text>
+
+
+  <text
+   x="-127.99952"
+   y="285.75"
+   transform="matrix(0,-1,1,0,0,0)"
+   id="text5900"
+   style="font-size:5.75449991;fill:#b3b0b0;font-family:DroidSans">C</text>
+
+
+  <text
+   x="-118.99952"
+   y="6.7500048"
+   transform="matrix(0,-1,1,0,0,0)"
+   id="text5902"
+   style="font-size:5.75449991;fill:#b3b0b0;font-family:DroidSans">D</text>
+
+
+  <text
+   x="-118.99952"
+   y="285.75"
+   transform="matrix(0,-1,1,0,0,0)"
+   id="text5904"
+   style="font-size:5.75449991;fill:#b3b0b0;font-family:DroidSans">D</text>
+
+
+  <text
+   x="-109.99952"
+   y="6.7500048"
+   transform="matrix(0,-1,1,0,0,0)"
+   id="text5906"
+   style="font-size:5.75449991;fill:#b3b0b0;font-family:DroidSans">E</text>
+
+
+  <text
+   x="-109.99952"
+   y="285.75"
+   transform="matrix(0,-1,1,0,0,0)"
+   id="text5908"
+   style="font-size:5.75449991;fill:#b3b0b0;font-family:DroidSans">E</text>
+
+
+  <text
+   x="-82.999519"
+   y="6.7500048"
+   transform="matrix(0,-1,1,0,0,0)"
+   id="text5910"
+   style="font-size:5.75449991;fill:#b3b0b0;font-family:DroidSans">F</text>
+
+
+  <text
+   x="-82.999519"
+   y="285.75"
+   transform="matrix(0,-1,1,0,0,0)"
+   id="text5912"
+   style="font-size:5.75449991;fill:#b3b0b0;font-family:DroidSans">F</text>
+
+
+  <text
+   x="-73.999519"
+   y="6.7500048"
+   transform="matrix(0,-1,1,0,0,0)"
+   id="text5914"
+   style="font-size:5.75449991;fill:#b3b0b0;font-family:DroidSans">G</text>
+
+
+  <text
+   x="-73.999519"
+   y="285.75"
+   transform="matrix(0,-1,1,0,0,0)"
+   id="text5916"
+   style="font-size:5.75449991;fill:#b3b0b0;font-family:DroidSans">G</text>
+
+
+  <text
+   x="-64.999519"
+   y="6.7500048"
+   transform="matrix(0,-1,1,0,0,0)"
+   id="text5918"
+   style="font-size:5.75449991;fill:#b3b0b0;font-family:DroidSans">H</text>
+
+
+  <text
+   x="-64.999519"
+   y="285.75"
+   transform="matrix(0,-1,1,0,0,0)"
+   id="text5920"
+   style="font-size:5.75449991;fill:#b3b0b0;font-family:DroidSans">H</text>
+
+
+  <text
+   x="-54.999519"
+   y="6.7500048"
+   transform="matrix(0,-1,1,0,0,0)"
+   id="text5922"
+   style="font-size:5.75449991;fill:#b3b0b0;font-family:DroidSans">I</text>
+
+
+  <text
+   x="-54.999519"
+   y="285.75"
+   transform="matrix(0,-1,1,0,0,0)"
+   id="text5924"
+   style="font-size:5.75449991;fill:#b3b0b0;font-family:DroidSans">I</text>
+
+
+  <text
+   x="-45.999519"
+   y="6.7500048"
+   transform="matrix(0,-1,1,0,0,0)"
+   id="text5926"
+   style="font-size:5.75449991;fill:#b3b0b0;font-family:DroidSans">J</text>
+
+
+  <text
+   x="-45.999519"
+   y="285.75"
+   transform="matrix(0,-1,1,0,0,0)"
+   id="text5928"
+   style="font-size:5.75449991;fill:#b3b0b0;font-family:DroidSans">J</text>
+
+
+ </g> 
+ </g>
+</svg>

@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- Created with Fritzing (http://www.fritzing.org/) -->
+<svg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' version='1.2' baseProfile='tiny' x='0in' y='0in' width='1.33858in' height='0.894331in' viewBox='0 0 34 22.716' >
+<g id='schematic'>
+<rect class='interior rect' x='0.254' y='10.016' width='10.16' height='10.16' stroke='none' stroke-width='0' fill='#ffffff' />
+<text class='text' id='label' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.94028' x='5.334' y='15.096' text-anchor='middle'></text>
+<line class='other' x1='0.254' y1='20.176' x2='10.414' y2='20.176' stroke='#000000' stroke-width='0.3175' stroke-linecap='round'/>
+<line class='other' x1='10.414' y1='20.176' x2='10.414' y2='10.016' stroke='#000000' stroke-width='0.3175' stroke-linecap='round'/>
+<line class='other' x1='10.414' y1='10.016' x2='0.254' y2='10.016' stroke='#000000' stroke-width='0.3175' stroke-linecap='round'/>
+<line class='other' x1='0.254' y1='10.016' x2='0.254' y2='20.176' stroke='#000000' stroke-width='0.3175' stroke-linecap='round'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='2.3114' x='0.762' y='9' text-anchor='start'>&gt;NAME</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='2.3114' x='0' y='22.716' text-anchor='start'>LB MALE</text>
+<line class='pin' id='connector2pin' connectorname='GND' x1='15.494' y1='17.636' x2='10.414' y2='17.636' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector2terminal' x='15.494' y='17.636' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='12.954' y='17.3891' text-anchor='middle'>3</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.5875' x='9.67317' y='18.3768' text-anchor='end'>GND</text>
+<line class='pin' id='connector3pin' connectorname='SIG' x1='15.494' y1='15.096' x2='10.414' y2='15.096' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector3terminal' x='15.494' y='15.096' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='12.954' y='14.8491' text-anchor='middle'>4</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.5875' x='9.67317' y='15.8368' text-anchor='end'>SIG</text>
+<line class='pin' id='connector4pin' connectorname='VCC' x1='15.494' y1='12.556' x2='10.414' y2='12.556' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector4terminal' x='15.494' y='12.556' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='12.954' y='12.3091' text-anchor='middle'>5</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.5875' x='9.67317' y='13.2968' text-anchor='end'>VCC</text>
+</g>
+</svg>

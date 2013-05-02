@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="24.674px" height="21.451px" viewBox="0 0 24.674 21.451" enable-background="new 0 0 24.674 21.451" xml:space="preserve">
+<g>
+	<g>
+		<g>
+			<polygon fill="#B7B7B7" points="7.993,21.451 9.718,21.451 9.718,16.392 7.993,16.392 			"/>
+			<polygon fill="#B7B7B7" points="15.192,21.451 16.915,21.451 16.915,16.392 15.192,16.392 			"/>
+		</g>
+	</g>
+	<rect y="2.905" fill="#AD9E73" width="24.674" height="15.686"/>
+	<g>
+		<polygon fill="#C2B990" points="19.739,15.208 17.778,15.208 17.778,14.194 6.963,14.194 6.963,15.208 5.138,15.208 5.138,18.589 
+			19.739,18.589 		"/>
+	</g>
+	<rect x="3.042" y="0" fill="#F1F3E6" width="18.59" height="2.905"/>
+	<polygon opacity="0.5" fill="#A0916B" enable-background="new    " points="5.138,15.203 6.963,15.203 6.963,14.188 17.778,14.188 
+		17.778,15.203 19.739,15.203 19.739,12.324 17.778,12.324 6.963,12.324 5.138,12.324 	"/>
+	<rect x="5.138" y="5.509" opacity="0.1" fill="#FFFFFF" enable-background="new    " width="14.602" height="5.239"/>
+	<rect x="5.138" y="3.395" opacity="0.1" fill="#FFFFFF" enable-background="new    " width="14.602" height="5.239"/>
+	<g>
+		<g>
+			<path fill="#F1F3E6" d="M0,18.589v2.862h3.042v-2.862H0z"/>
+		</g>
+	</g>
+	<g>
+		<g>
+			<path fill="#F1F3E6" d="M21.632,18.589v2.862h3.042v-2.862H21.632z"/>
+		</g>
+	</g>
+	<g>
+		<g>
+			<polygon fill="#F1F3E6" points="0,2.905 0,18.589 5.138,18.589 5.138,6.016 8.179,6.016 8.179,18.589 16.696,18.589 
+				16.696,6.016 19.739,6.016 19.739,18.589 24.674,18.589 24.674,2.905 			"/>
+		</g>
+	</g>
+	<rect x="21.632" y="18.589" opacity="0.4" fill="#C2B990" enable-background="new    " width="3.041" height="0.322"/>
+	<rect y="18.589" opacity="0.4" fill="#C2B990" enable-background="new    " width="3.042" height="0.322"/>
+	<rect x="5.138" y="0" opacity="0.4" fill="#AD9E73" enable-background="new    " width="3.041" height="2.905"/>
+	<rect x="16.696" y="0" opacity="0.4" fill="#AD9E73" enable-background="new    " width="3.043" height="2.905"/>
+</g>
+</svg>

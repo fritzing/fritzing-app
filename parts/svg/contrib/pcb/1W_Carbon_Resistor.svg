@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?> <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" x="0in" y="0in" width="0.24in" height="0.885in" viewBox="0 0 24000 88500" ><title>1W_Carbon_Resistor.fp</title><desc>Geda footprint file '1W_Carbon_Resistor.fp' converted by Fritzing</desc><metadata xmlns:fz='http://fritzing.org/gedametadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'><rdf:RDF><rdf:Description rdf:about=''><fz:attr name='geda filename'>1W_Carbon_Resistor.fp</fz:attr>
+<fz:attr name='fritzing version'>0.4.0b.06.21.4282</fz:attr>
+<fz:attr name='conversion date'>27/06/2010 07:13:30</fz:attr>
+<fz:attr name='dist-license'>GPL</fz:attr>
+<fz:attr name='use-license'>unlimited</fz:attr>
+<fz:attr name='author'>gEDA project</fz:attr>
+<fz:attr name='license-url'>http://www.gnu.org/licenses/gpl.html</fz:attr>
+</rdf:Description></rdf:RDF></metadata><g id="copper0">
+ <g id="copper1">
+  <circle fill="none" cx="12000" cy="84250" connectorname="1" stroke="#ff9400" r="3325" id="connector0pin" stroke-width="1850"/>
+  <circle fill="none" cx="12000" cy="4250" connectorname="2" stroke="#ff9400" r="3325" id="connector1pin" stroke-width="1850"/>
+ </g>
+</g>
+<g id="silkscreen">
+ <line fill="none" stroke="white" y1="78250" x1="12000" y2="72750" stroke-width="1000" x2="12000"/>
+ <line fill="none" stroke="white" y1="72750" x1="500" y2="72750" stroke-width="1000" x2="23500"/>
+ <line fill="none" stroke="white" y1="72750" x1="23500" y2="15750" stroke-width="1000" x2="23500"/>
+ <line fill="none" stroke="white" y1="15750" x1="23500" y2="15750" stroke-width="1000" x2="500"/>
+ <line fill="none" stroke="white" y1="15750" x1="500" y2="72750" stroke-width="1000" x2="500"/>
+ <line fill="none" stroke="white" y1="15750" x1="12000" y2="9250" stroke-width="1000" x2="12000"/>
+</g>
+</svg>

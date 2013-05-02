@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg width="108.27572" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" version="1.2" xmlns:fz="http://fritzing.org/gedametadata/1.0/" xmlns="http://www.w3.org/2000/svg" height="245.20222" viewBox="0 0 120306.35 272446.94" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:cc="http://creativecommons.org/ns#" id="svg2985" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:svg="http://www.w3.org/2000/svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape">
+ <g id="breadboard">
+  <sodipodi:namedview fit-margin-top="0" fit-margin-left="0" showgrid="false" fit-margin-bottom="0" objecttolerance="10" pagecolor="#ffffff" units="in" bordercolor="#666666" id="namedview3701" borderopacity="1" guidetolerance="10" showguides="true" gridtolerance="10" fit-margin-right="0">
+   <inkscape:grid empspacing="5" spacingx="0.1in" snapvisiblegridlinesonly="true" spacingy="0.1in" enabled="true" visible="true" units="in" type="xygrid" id="grid4816"/>
+  </sodipodi:namedview>
+  <title id="title2987">DB25F.fp</title>
+  <desc id="desc2989">Geda footprint file 'DB25F.fp' converted by Fritzing</desc>
+  <defs id="defs3099"/>
+  <metadata id="metadata2991">
+   <rdf:RDF>
+    <rdf:Description rdf:about="">
+     <fz:attr name="geda filename">DB25F.fp</fz:attr>
+     <fz:attr name="fritzing version">0.4.0b.06.21.4282</fz:attr>
+     <fz:attr name="conversion date">27/06/2010 07:15:08</fz:attr>
+     <fz:comment>Gehaeuse (schmaler Kasten incl. Bohrungen)</fz:comment>
+     <fz:comment>Gehaeuse (aeusserer Kasten)</fz:comment>
+     <fz:comment>This part of the connector normally hangs off the circuit board,</fz:comment>
+     <fz:comment>so it is confusing to actually mark it on the silkscreen</fz:comment>
+     <fz:comment>define(`X1', `eval(BASEX-PANEL_DISTANCE-260)')</fz:comment>
+     <fz:comment>define(`Y1', `eval(PY1-100)')</fz:comment>
+     <fz:comment>define(`X2', `eval(BASEX-PANEL_DISTANCE)')</fz:comment>
+     <fz:comment>define(`Y2', `eval(PY2+100)')</fz:comment>
+     <fz:comment>ElementLine(X1 Y1 X2 Y1 20)</fz:comment>
+     <fz:comment>ElementLine(X2 Y1 X2 Y2 10)</fz:comment>
+     <fz:comment>ElementLine(X2 Y2 X1 Y2 20)</fz:comment>
+     <fz:comment>ElementLine(X1 Y2 X1 Y1 20)</fz:comment>
+     <fz:comment>Gehaeuse (innerer Kasten)</fz:comment>
+     <fz:comment>Pins</fz:comment>
+     <fz:comment>Pin 1</fz:comment>
+     <fz:comment>Plazierungsmarkierung == PIN 1</fz:comment>
+     <fz:comment>Changed PY1 to PY2 13-Dec-1999 LRD</fz:comment>
+     <fz:comment>Remainder of the first row</fz:comment>
+     <fz:comment>Second row</fz:comment>
+     <fz:comment>Befestigungsbohrung</fz:comment>
+     <fz:attr name="dist-license">GPL</fz:attr>
+     <fz:attr name="use-license">unlimited</fz:attr>
+     <fz:attr name="author">gEDA project</fz:attr>
+     <fz:attr name="license-url">http://www.gnu.org/licenses/gpl.html</fz:attr>
+    </rdf:Description>
+    <cc:Work rdf:about="">
+     <dc:format>image/svg+xml</dc:format>
+     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+     <dc:title>DB25F.fp</dc:title>
+    </cc:Work>
+   </rdf:RDF>
+  </metadata>
+  <rect width="20306.359" x="100000" y="0.0072292457" height="272446.94" style="color:#000000;fill:#4d4d4d;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" id="rect3935"/>
+  <rect width="66666.664" x="33333.34" y="224.6869" ry="0" height="272222.25" style="color:#000000;fill:#191919;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" id="rect4036"/>
+  <rect width="11111.112" x="44444.453" y="224.6869" height="272222.25" style="color:#000000;fill:#262626;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" id="rect4824"/>
+  <rect width="55555.562" x="44444.453" y="33558.031" height="200000.02" style="color:#000000;fill:#262626;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" id="rect4038"/>
+  <rect width="11111.112" x="33333.34" y="224.6869" height="272222.25" style="color:#000000;fill:#303030;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" id="rect4040"/>
+  <rect width="33333.336" x="-0.0056085908" y="33558.031" height="200000.02" style="color:#000000;fill:#909090;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" id="rect4810"/>
+  <rect width="55555.559" x="44444.449" y="228002.48" ry="0.005020408" height="5555.5562" style="color:#000000;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" id="rect4826"/>
+  <rect width="55555.559" x="44444.453" y="227452.78" height="4019.6909" ry="0.0036324875" style="color:#000000;fill:#303030;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" id="rect4828"/>
+  <rect width="55555.559" x="44444.449" y="228410.17" ry="0.00083002239" height="918.49835" style="color:#000000;fill:#505050;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" id="rect4830"/>
+  <rect width="33333.332" x="-0.0056085908" y="228002.48" height="5555.5562" ry="0.005020408" style="color:#000000;fill:#3c3c3c;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" id="rect4838"/>
+  <rect width="33333.332" x="-0.0056085908" y="220977.78" ry="0.0063480446" height="7024.7119" style="color:#000000;fill:#737373;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" id="rect4840"/>
+  <rect width="33333.332" x="-0.0056085908" y="223264.19" height="2400.0872" ry="0.0021688947" style="color:#000000;fill:#bababa;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" id="rect4842"/>
+  <rect width="33333.332" x="-0.0056085908" y="-39113.578" ry="0.005020408" height="5555.5562" style="color:#000000;fill:#3c3c3c;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" id="rect4844" transform="scale(1,-1)"/>
+  <rect width="33333.332" x="-0.0056085908" y="-46138.281" height="7024.7119" ry="0.0063480446" style="color:#000000;fill:#737373;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" id="rect4846" transform="scale(1,-1)"/>
+  <rect width="33333.332" x="-0.0056085908" y="-43851.875" ry="0.0021688947" height="2400.0872" style="color:#000000;fill:#bababa;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" id="rect4848" transform="scale(1,-1)"/>
+  <rect width="55555.559" x="44444.453" y="-39113.578" height="5555.5562" ry="0.005020408" style="color:#000000;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" id="rect4852" transform="scale(1,-1)"/>
+  <rect width="55555.559" x="44444.453" y="-39663.281" ry="0.0036324875" height="4019.6909" style="color:#000000;fill:#303030;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" id="rect4854" transform="scale(1,-1)"/>
+  <rect width="55555.559" x="44444.449" y="-38705.875" height="918.49835" ry="0.00083002239" style="color:#000000;fill:#505050;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" id="rect4856" transform="scale(1,-1)"/>
+  <rect width="44444.457" x="55555.562" y="241588.48" height="21343.107" style="color:#000000;fill:#909090;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" id="rect4958"/>
+  <path style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none" id="path4956" d="m 96767.567,252307.75 a 7517.3159,7517.3159 0 1 1 -0.02,-17.72"/>
+  <rect width="11111.108" x="33333.34" y="267441.09" height="5005.8296" ry="0.0045236349" style="color:#000000;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" id="rect4960"/>
+  <rect width="11111.108" x="33333.34" y="266891.38" ry="0.0030122455" height="3333.3347" style="color:#000000;fill:#3d3d3d;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" id="rect4962"/>
+  <rect width="11111.108" x="33333.34" y="267848.78" height="918.49835" ry="0.00083002239" style="color:#000000;fill:#676767;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" id="rect4964"/>
+  <rect width="11111.108" x="33333.34" y="-5230.5464" ry="0.0045236349" height="5005.8296" style="color:#000000;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" id="rect4966" transform="scale(1,-1)"/>
+  <rect width="11111.108" x="33333.34" y="-5780.2651" height="3333.3347" ry="0.0030122455" style="color:#000000;fill:#3d3d3d;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" id="rect4968" transform="scale(1,-1)"/>
+  <rect width="11111.108" x="33333.34" y="-4822.8901" ry="0.00083002239" height="918.49835" style="color:#000000;fill:#676767;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" id="rect4970" transform="scale(1,-1)"/>
+  <rect width="28258.338" x="5075.002" y="244669.17" ry="1.8129255" height="15555.55" style="color:#000000;fill:#5b5b5b;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" id="rect4972"/>
+  <rect width="28258.338" x="5075.002" y="241821.94" height="6124.9932" ry="2847.2268" style="color:#000000;fill:#a4a4a4;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" id="rect4974"/>
+  <rect width="28258.338" x="5075.002" y="257921.94" height="4899.998" ry="2449.999" style="color:#000000;fill:#424242;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" id="rect4976"/>
+  <rect width="28302.086" x="5031.252" y="248002.48" ry="2014.3618" height="10000.001" style="color:#000000;fill:#797979;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" id="rect4978"/>
+  <rect width="44444.457" x="55555.562" y="7022.8589" height="21343.107" style="color:#000000;fill:#909090;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" id="rect4988"/>
+  <path style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none" id="path4990" d="m 96767.567,17742.127 a 7517.3159,7517.3159 0 1 1 -0.02,-17.72"/>
+  <rect width="28258.338" x="5075.002" y="10103.562" height="15555.55" ry="1.8129255" style="color:#000000;fill:#5b5b5b;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" id="rect4992"/>
+  <rect width="28258.338" x="5075.002" y="7256.312" ry="2847.2268" height="6124.9932" style="color:#000000;fill:#a4a4a4;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" id="rect4994"/>
+  <rect width="28258.338" x="5075.002" y="23356.312" ry="2449.999" height="4899.998" style="color:#000000;fill:#424242;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" id="rect4996"/>
+  <rect width="28302.086" x="5031.252" y="13436.875" height="10000.001" ry="2014.3618" style="color:#000000;fill:#797979;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" id="rect4998"/>
+  <rect width="2585.7075" x="30747.627" y="224.6869" height="272222.25" style="color:#000000;fill:#ababab;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" id="rect4820"/>
+  <rect width="4579.9985" x="113298.43" y="15333.008" height="4298.0034" style="color:#000000;fill:#e6ab00;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" id="connector12pin"/>
+  <rect width="4579.9985" x="113298.43" y="35333.012" height="4298.0034" style="color:#000000;fill:#e6ab00;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" id="connector11pin"/>
+  <rect width="4579.9985" x="113298.43" y="55333.012" height="4298.0034" style="color:#000000;fill:#e6ab00;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" id="connector10pin"/>
+  <rect width="4579.9985" x="113298.43" y="75333.023" height="4298.0034" style="color:#000000;fill:#e6ab00;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" id="connector9pin"/>
+  <rect width="4579.9985" x="113298.43" y="95333.016" height="4298.0034" style="color:#000000;fill:#e6ab00;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" id="connector8pin"/>
+  <rect width="4579.9985" x="113298.43" y="115333.02" height="4298.0034" style="color:#000000;fill:#e6ab00;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" id="connector7pin"/>
+  <rect width="4579.9985" x="113298.43" y="135333.03" height="4298.0034" style="color:#000000;fill:#e6ab00;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" id="connector6pin"/>
+  <rect width="4579.9985" x="113298.43" y="155333.03" height="4298.0034" style="color:#000000;fill:#e6ab00;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" id="connector5pin"/>
+  <rect width="4579.9985" x="113298.43" y="175333.03" height="4298.0034" style="color:#000000;fill:#e6ab00;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" id="connector4pin"/>
+  <rect width="4579.9985" x="113298.43" y="195333.03" height="4298.0034" style="color:#000000;fill:#e6ab00;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" id="connector3pin"/>
+  <rect width="4579.9985" x="113298.43" y="215333.03" height="4298.0034" style="color:#000000;fill:#e6ab00;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" id="connector2pin"/>
+  <rect width="4579.9985" x="113298.43" y="235333.03" height="4298.0034" style="color:#000000;fill:#e6ab00;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" id="connector1pin"/>
+  <rect width="4579.9985" x="113298.43" y="255333.03" height="4298.0034" style="color:#000000;fill:#e6ab00;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" id="connector0pin"/>
+  <rect width="4579.9985" x="103298.42" y="25333.008" height="4298.0034" style="color:#000000;fill:#e6ab00;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" id="connector24pin"/>
+  <rect width="4579.9985" x="103298.42" y="45333.012" height="4298.0034" style="color:#000000;fill:#e6ab00;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" id="connector23pin"/>
+  <rect width="4579.9985" x="103298.42" y="65333.016" height="4298.0034" style="color:#000000;fill:#e6ab00;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" id="connector22pin"/>
+  <rect width="4579.9985" x="103298.42" y="85333.023" height="4298.0034" style="color:#000000;fill:#e6ab00;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" id="connector21pin"/>
+  <rect width="4579.9985" x="103298.42" y="105333.02" height="4298.0034" style="color:#000000;fill:#e6ab00;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" id="connector20pin"/>
+  <rect width="4579.9985" x="103298.42" y="125333.02" height="4298.0034" style="color:#000000;fill:#e6ab00;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" id="connector19pin"/>
+  <rect width="4579.9985" x="103298.42" y="145333.03" height="4298.0034" style="color:#000000;fill:#e6ab00;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" id="connector18pin"/>
+  <rect width="4579.9985" x="103298.42" y="165333.03" height="4298.0034" style="color:#000000;fill:#e6ab00;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" id="connector17pin"/>
+  <rect width="4579.9985" x="103298.42" y="185333.03" height="4298.0034" style="color:#000000;fill:#e6ab00;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" id="connector16pin"/>
+  <rect width="4579.9985" x="103298.42" y="205333.03" height="4298.0034" style="color:#000000;fill:#e6ab00;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" id="connector15pin"/>
+  <rect width="4579.9985" x="103298.42" y="225333.03" height="4298.0034" style="color:#000000;fill:#e6ab00;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" id="connector14pin"/>
+  <rect width="4579.9985" x="103298.42" y="245333.03" height="4298.0034" style="color:#000000;fill:#e6ab00;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" id="connector13pin"/>
+ </g>
+</svg>

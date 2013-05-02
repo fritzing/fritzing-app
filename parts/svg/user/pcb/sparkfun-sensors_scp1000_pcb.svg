@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- Created with Fritzing (http://www.fritzing.org/) -->
+<svg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' version='1.2' baseProfile='tiny' x='0in' y='0in' width='0.234646in' height='0.232622in' viewBox='0 0 5.96 5.90861' >
+<g id='copper1'>
+<rect id='connector12pad' connectorname='DVSS' x='4.52' y='4.89201' width='0.55' height='0.67' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector10pad' connectorname='DVDD' x='3.72' y='4.89201' width='0.55' height='0.67' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector7pad' connectorname='CLK' x='2.92' y='4.89201' width='0.55' height='0.67' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector9pad' connectorname='DRDY' x='2.12' y='4.89201' width='0.55' height='0.67' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector17pad' connectorname='TRIG' x='1.32' y='4.89201' width='0.55' height='0.67' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector4pad' connectorname='ATST' x='0.52' y='4.89201' width='0.55' height='0.67' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector16pad' connectorname='SCK/SCL' x='4.52' y='0.75201' width='0.55' height='0.67' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector14pad' connectorname='MOSI/SDA' x='3.72' y='0.75201' width='0.55' height='0.67' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector13pad' connectorname='MISO' x='2.92' y='0.75201' width='0.55' height='0.67' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector8pad' connectorname='CSB' x='2.12' y='0.75201' width='0.55' height='0.67' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector5pad' connectorname='AVDD' x='1.32' y='0.75201' width='0.55' height='0.67' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector6pad' connectorname='AVSS' x='0.52' y='0.75201' width='0.55' height='0.67' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector1pad' connectorname='AVSS@1' x='0.13' y='2.07201' width='0.57' height='0.57' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector0pad' connectorname='ATST@1' x='0.13' y='3.67201' width='0.57' height='0.57' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector3pad' connectorname='DUMMY2' x='0' y='2.92201' width='0.67' height='0.47' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector15pad' connectorname='PD' x='5.26' y='2.07201' width='0.57' height='0.57' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector11pad' connectorname='DVDDS' x='5.26' y='3.67201' width='0.57' height='0.57' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector2pad' connectorname='DUMMY1' x='5.29' y='2.92201' width='0.67' height='0.47' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<g id='copper0'>
+</g>
+</g>
+<g id='silkscreen'>
+<line class='other' x1='1.18' y1='2.40701' x2='2.68' y2='2.40701' stroke='#f0f0f0' stroke-width='0.2032' stroke-linecap='round'/>
+<line class='other' x1='2.68' y1='2.40701' x2='2.68' y2='3.90701' stroke='#f0f0f0' stroke-width='0.2032' stroke-linecap='round'/>
+<line class='other' x1='2.68' y1='3.90701' x2='1.18' y2='3.90701' stroke='#f0f0f0' stroke-width='0.2032' stroke-linecap='round'/>
+<line class='other' x1='1.18' y1='3.90701' x2='1.18' y2='2.40701' stroke='#f0f0f0' stroke-width='0.2032' stroke-linecap='round'/>
+<path class='other' fill='none' d='M1.38,0.55701 A2.95121,2.95121 0 0 1 4.53,0.55701' stroke-width='0.2032' stroke='#f0f0f0' />
+<path class='other' fill='none' d='M1.43,5.80701 A3.04886,3.04886 0 0 0 4.53,5.75701' stroke-width='0.2032' stroke='#f0f0f0' />
+</g>
+</svg>

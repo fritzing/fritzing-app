@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+#set $ipins = int($pins)
+#set $fpitch = float($pitch) * 1000.0
+#set $mils = int($fpitch)
+#set $height = ($ipins * $fpitch) + 40
+#set $firstCenter = ($fpitch / 2.0) + 20 + 5
+#set $fwidth = float($width) * 1000.0
+#set $fvoffset = float($voffset) * 1000.0
+<svg
+   width="${fwidth / 1000.0}in"
+   version="1.2"
+   height="${height / 1000.0}in"
+   viewBox="0 0 ${fwidth} ${height}"
+   baseProfile="tiny"
+   id="svg2">
+  <desc
+     id="desc4">Fritzing footprint SVG</desc>
+  <g
+     id="silkscreen">
+    <line id="vertical-left" 
+       y1="20"
+       x1="20"
+       y2="${height - 10}"
+       x2="20"
+       stroke="white" stroke-width="20" />
+    <line id="bottom" 
+       y1="${height - 10}"
+       x1="20"
+       y2="${height - 10}"
+       x2="${fwidth - 20}"
+       stroke="white" stroke-width="20" />
+    <line id="vertical-right" 
+       y1="${height - 10}"
+       x1="${fwidth - 20}"
+       y2="20"
+       x2="${fwidth - 20}"
+       stroke="white" stroke-width="20" />
+    <line id="top" 
+       y1="20"
+       x1="${fwidth - 20}"
+       y2="20"
+       x2="20"
+       stroke="white" stroke-width="20" />
+    <line id="mid-vertical" 
+       y1="${height - 10}"
+       x1="${fwidth - 20 - fvoffset}"
+       y2="20"
+       x2="${fwidth - 20 - fvoffset}"
+       stroke="white" stroke-width="10" />
+  </g>
+  <g
+     id="copper0">
+    <rect
+       width="55"
+       x="${20 - 27.5 + ((fwidth - 20 - fvoffset - 20) / 2.0)}"
+       y="${firstCenter - 27.5}"
+       height="55"
+       id="rect20"
+       stroke="rgb(255, 191, 0)" fill="none" stroke-width="20" />
+#for $pin in range($ipins)
+    <circle
+       cx="${20 + ((fwidth - 20 - fvoffset - 20) / 2.0)}"
+       cy="${firstCenter + (fpitch * pin)}"
+       r="27.5"
+       id="connector${pin}pin"
+       stroke="rgb(255, 191, 0)" fill="none" stroke-width="20" />
+#end for
+  </g>
+  <g
+     id="keepout" />
+  <g
+     id="soldermask" />
+  <g
+     id="outline" />
+</svg>

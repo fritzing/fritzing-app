@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Ebene_1" xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="33.449px"
+	 height="34.002px" viewBox="0 0 33.449 34.002" enable-background="new 0 0 33.449 34.002" xml:space="preserve">
+<g id="silkscreen">
+	<circle fill="#CCCCCC" cx="17.012" cy="17.277" r="16.725"/>
+	<path opacity="0.79" enable-background="new    " d="M0.288,17.277c0,9.236,7.488,16.725,16.725,16.725
+		c9.237,0,16.725-7.487,16.725-16.725v-0.265c0,9.236-7.488,16.725-16.725,16.725c-9.237,0-16.725-7.488-16.725-16.725"/>
+</g>
+<g id="silkscreen_2_">
+	<circle fill="#ED1C24" cx="17.012" cy="16.15" r="16.127"/>
+	<circle opacity="0.35" enable-background="new    " cx="17.012" cy="16.15" r="16.127"/>
+	<path opacity="0.24" fill="#FFFFFF" enable-background="new    " d="M0.885,16.437c0-8.906,7.221-16.127,16.127-16.127
+		c8.906,0,16.126,7.221,16.126,16.127v-0.286c0-8.906-7.221-16.127-16.126-16.127c-8.906,0-16.127,7.221-16.127,16.127V16.437z"/>
+	<path opacity="0.52" enable-background="new    " d="M0.885,16.693c0,8.906,7.221,16.126,16.127,16.126
+		c8.906,0,16.126-7.221,16.126-16.126v-0.542c0,8.907-7.221,16.125-16.126,16.125c-8.906,0-16.127-7.221-16.127-16.125V16.693z"/>
+</g>
+<g id="silkscreen_1_">
+	<circle fill="#ED1C24" cx="17.012" cy="14.94" r="14.794"/>
+	<path opacity="0.7" fill="#FFFFFF" enable-background="new    " d="M5.666,13.174c0.851-5.502,5.606-0.502,11.346-0.502
+		c4.358,0,8.151-6.783,10.095-3.204c-1.943-3.579-5.736-6.009-10.095-6.009C11.273,3.459,6.517,7.672,5.666,13.174z"/>
+</g>
+</svg>

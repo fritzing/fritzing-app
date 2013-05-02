@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" x="0in" y="0in" width="0.1901in" height="0.0824in" viewBox="0 0 1901 824" >
+<title>SparkFun.mod</title>
+<desc>Kicad module 'SparkFun-TEMT6000-SEN' from file 'SparkFun.mod' converted by Fritzing</desc>
+<metadata xmlns:fz='http://fritzing.org/kicadmetadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+<rdf:RDF><rdf:Description rdf:about=''>
+<fz:attr name='kicad filename'>SparkFun.mod</fz:attr>
+<fz:attr name='kicad module'>SparkFun-TEMT6000-SEN</fz:attr>
+<fz:attr name='fritzing version'>0.4.1b.07.04.4318</fz:attr>
+<fz:attr name='conversion date'>17/07/2010 17:18:10</fz:attr>
+<fz:attr name='dist-license'>GPL</fz:attr>
+<fz:attr name='use-license'>unlimited</fz:attr>
+<fz:attr name='author'>KICAD project</fz:attr>
+<fz:attr name='license-url'>http://www.gnu.org/licenses/gpl.html</fz:attr>
+<fz:comment></fz:comment>
+<fz:attr name='keyword'></fz:attr>
+</rdf:Description></rdf:RDF></metadata><g id="copper1">
+ <rect width="433" x="0" y="510" fill="#ffbf00" connectorname="BASE" height="314" id="connector0pad" stroke-width="0"/>
+ <rect width="433" x="1468" y="212.5" fill="#ffbf00" connectorname="COLLECTOR" height="393" id="connector1pad" stroke-width="0"/>
+ <rect width="433" x="0" y="0" fill="#ffbf00" connectorname="EMITTER" height="314" id="connector2pad" stroke-width="0"/>
+</g>
+<g id="silkscreen">
+ <line fill="none" stroke="white" y1="113" x1="1739.5" y2="31" stroke-width="50" x2="1739.5"/>
+ <line fill="none" stroke="white" y1="31" x1="1739.5" y2="31" stroke-width="50" x2="575.5"/>
+ <line fill="none" stroke="white" y1="711" x1="1739.5" y2="801" stroke-width="50" x2="1739.5"/>
+ <line fill="none" stroke="white" y1="801" x1="1739.5" y2="801" stroke-width="50" x2="563.5"/>
+ <line fill="none" stroke="white" y1="439" x1="169.5" y2="381" stroke-width="50" x2="169.5"/>
+</g>
+</svg>

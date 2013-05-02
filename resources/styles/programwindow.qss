@@ -1,0 +1,87 @@
+
+#programmingWindow #header {
+	background-color: #330011;
+	padding: 2px; padding-bottom: 0;
+}
+
+#programmingWindow #center {
+	background-color: #52182C;
+}
+
+#programmingWindow #footer {
+	padding: 5px 0px 5px 0px;
+	margin: 0px;
+	border: 0px;
+	background-color: #802643;
+}
+
+#programmingWindow #footer QLabel {
+        color: #FFFFFF;
+}
+
+#programmingWindow QTabWidget::pane {
+	top: %1px;  	/* the value is swapped in at runtime in ProgramWindow::setup() */
+ 	padding: 0px;
+	margin: 0px;
+	border-top: 6px solid #52182C;	
+	position: absolute;
+}
+
+#programmingWindow QTabWidget::tab-bar {
+ 	left: 0px;
+	top: %2px;		/* the value is swapped in at runtime in ProgramWindow::setup()  */
+}
+
+#programmingWindow QTabBar::tab {
+        margin-top: 0px;
+        margin-left: 3px;
+        margin-right: 3px;
+        margin-bottom: 0px;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        padding-left: 6px;
+        padding-right: 6px;
+        color: #CCB6BD;
+        background-color: #52182C;
+        border-bottom: 0px;
+        min-width: 6.5em;
+        min-height: 1.5em;
+}
+
+#programmingWindow QTabBar::tab:selected {
+	background-color: #802643;
+        border-bottom: 0;
+	font-weight: bold;
+}
+
+#programmingWindow QTabBar::tab:!selected {
+        padding-top: 0;
+	border: 2px solid #802643;
+        border-bottom: 0;
+}
+
+#programmingWindow QTabBar::tab:!selected:hover {
+        background-color: #802643;
+}
+
+#programmingWindow QTabBar::close-button {
+        image: url(:/resources/images/icons/dockWidgetCloseNormal_icon.png);
+	subcontrol-position: right;
+}
+
+#programmingWindow QTabBar::close-button::hover {
+        image: url(:/resources/images/icons/dockWidgetCloseHover_icon.png);
+	subcontrol-position: right;
+}
+
+#programmingWindow QTabBar::close-button::pressed {
+        image: url(:/resources/images/icons/dockWidgetClosePressed_icon.png);
+	subcontrol-position: right;
+}
+
+#programmingWindow #console {
+	background-color: #000000;
+	color: orange; 
+}

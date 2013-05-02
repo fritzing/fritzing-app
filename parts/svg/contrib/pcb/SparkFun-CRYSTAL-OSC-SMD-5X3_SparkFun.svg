@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" x="0in" y="0in" width="0.256504in" height="0.1337in" viewBox="0 0 2565.04 1337" >
+<title>SparkFun.mod</title>
+<desc>Kicad module 'SparkFun-CRYSTAL-OSC-SMD-5X3' from file 'SparkFun.mod' converted by Fritzing</desc>
+<metadata xmlns:fz='http://fritzing.org/kicadmetadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+<rdf:RDF><rdf:Description rdf:about=''>
+<fz:attr name='kicad filename'>SparkFun.mod</fz:attr>
+<fz:attr name='kicad module'>SparkFun-CRYSTAL-OSC-SMD-5X3</fz:attr>
+<fz:attr name='fritzing version'>0.4.1b.07.04.4318</fz:attr>
+<fz:attr name='conversion date'>17/07/2010 17:15:25</fz:attr>
+<fz:attr name='dist-license'>GPL</fz:attr>
+<fz:attr name='use-license'>unlimited</fz:attr>
+<fz:attr name='author'>KICAD project</fz:attr>
+<fz:attr name='license-url'>http://www.gnu.org/licenses/gpl.html</fz:attr>
+<fz:comment></fz:comment>
+<fz:attr name='keyword'></fz:attr>
+</rdf:Description></rdf:RDF></metadata><g id="copper1">
+ <rect width="748" x="361.039" y="904" fill="#ffbf00" connectorname="1" height="433" id="connector0pad" stroke-width="0"/>
+ <rect width="748" x="1817.04" y="904" fill="#ffbf00" connectorname="2" height="433" id="connector1pad" stroke-width="0"/>
+ <rect width="748" x="1817.04" y="0" fill="#ffbf00" connectorname="3" height="433" id="connector2pad" stroke-width="0"/>
+ <rect width="748" x="361.039" y="0" fill="#ffbf00" connectorname="4" height="433" id="connector3pad" stroke-width="0"/>
+</g>
+<g id="silkscreen">
+ <line fill="none" stroke="white" y1="39.5" x1="1227.04" y2="39.5" stroke-width="80" x2="1699.04"/>
+ <line fill="none" stroke="white" y1="550.5" x1="2447.04" y2="786.5" stroke-width="80" x2="2447.04"/>
+ <line fill="none" stroke="white" y1="1297.5" x1="1699.04" y2="1297.5" stroke-width="80" x2="1227.04"/>
+ <line fill="none" stroke="white" y1="550.5" x1="479.039" y2="786.5" stroke-width="80" x2="479.039"/>
+ <circle fill="none" cx="86.0391" cy="1171.5" stroke="white" r="73.5391" stroke-width="25"/>
+ <circle fill="none" cx="86.0391" cy="1171.5" stroke="white" r="39.598" stroke-width="25"/>
+ <circle fill="none" cx="86.0391" cy="1171.5" stroke="white" r="7.07107" stroke-width="25"/>
+</g>
+</svg>

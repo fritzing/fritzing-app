@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1 Basic//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-basic.dtd">
+<svg version="1.1" baseProfile="basic"
+	 id="svg2" xmlns:svg="http://www.w3.org/2000/svg"
+	 x="0px" y="0px" width="32px" height="32px"
+	 viewBox="0 0 32 32" xml:space="preserve">
+<g id="icon">
+	<polyline fill="#726038" points="8.852,9.548 8.852,30.266 23.148,30.266 23.148,9.548 	"/>
+	<path fill="none" stroke="#E5C76C" stroke-width="1.3205" d="M8.852,9.548v19.783c0,0.515,0.42,0.935,0.934,0.935h12.429
+		c0.515,0,0.934-0.42,0.934-0.935V9.548"/>
+	<polygon fill="#E5C76C" points="22.41,10.866 9.591,10.866 9.591,9.548 22.41,9.548 	"/>
+	<polygon fill="#D6B667" points="20.385,9.548 11.615,9.548 11.615,8.23 20.385,8.23 	"/>
+	<rect x="9.828" y="10.91" fill="#353535" width="12.344" height="18.152"/>
+	<rect x="9.828" y="10.91" opacity="0.35" width="2.286" height="18.152"/>
+	<rect x="17.837" y="11.239" opacity="0.25" fill="#FFFFFF" width="3.908" height="17.493"/>
+	<rect x="9.828" y="29.062" fill="#999999" width="12.344" height="0.525"/>
+	<rect x="11.615" y="8.23" opacity="0.12" width="1.682" height="1.317"/>
+	<rect x="18.795" y="8.278" opacity="0.35" fill="#FFFFFF" width="1.532" height="1.194"/>
+	<rect x="17.262" y="8.278" opacity="0.54" fill="#FFFFFF" width="1.533" height="1.194"/>
+	<polygon fill="#E2E2E2" points="19.561,8.23 12.439,8.23 12.439,6.911 19.561,6.911 	"/>
+	<polygon fill="#D3D3D3" points="17.189,6.911 14.812,6.911 14.812,1.734 17.189,1.734 	"/>
+	<rect x="12.439" y="6.91" opacity="0.12" width="1.366" height="1.319"/>
+	<rect x="18.27" y="6.96" opacity="0.35" fill="#FFFFFF" width="1.244" height="1.194"/>
+	<rect x="17.025" y="6.96" opacity="0.54" fill="#FFFFFF" width="1.244" height="1.194"/>
+	<rect x="14.823" y="1.74" opacity="0.12" width="0.437" height="5.17"/>
+	<rect x="16.544" y="1.841" opacity="0.35" fill="#FFFFFF" width="0.544" height="4.983"/>
+	<rect x="16" y="1.841" opacity="0.51" fill="#FFFFFF" width="0.543" height="4.983"/>
+	<circle fill="#A3A3A3" cx="16" cy="2.773" r="0.483"/>
+	<circle opacity="0.2" fill="#727272" cx="16" cy="2.772" r="0.422"/>
+</g>
+</svg>

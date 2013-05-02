@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- Generator: Adobe Illustrator 13.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 14948)  -->
+<svg xmlns="http://www.w3.org/2000/svg" width="0.853028in" xml:space="preserve" xmlns:xml="http://www.w3.org/XML/1998/namespace" x="0px" version="1.2" y="0px" height="0.541472in" viewBox="0 0 61.418 38.986" baseProfile="tiny" id="Layer_1">
+ <desc xmlns="http://www.w3.org/2000/svg">Fritzing footprint SVG</desc>
+ <g xmlns="http://www.w3.org/2000/svg" id="silkscreen">
+  <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#FFFFFF" y1="0.341" stroke-width="1.5" x1="57.546" y2="9.084" x2="59.694"/>
+  <polygon xmlns="http://www.w3.org/2000/svg" fill="none" points="30.689,38.232 24.873,37.577 19.347,35.643 14.39,32.53 10.252,28.39 7.137,23.433 5.204,17.908 4.548,12.091 5.204,6.274 7.137,0.75 54.241,0.75 56.174,6.274 56.831,12.091 56.174,17.908 54.241,23.433 51.127,28.39 46.989,32.53 42.032,35.643 36.505,37.577 " stroke="#FFFFFF" stroke-width="1.5"/>
+  <polyline xmlns="http://www.w3.org/2000/svg" fill="none" points="19.438,10.482 25.063,10.482 30.813,4.732 " stroke="#FFFFFF" stroke-width="1.5"/>
+  <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#FFFFFF" y1="10.482" stroke-width="1.5" x1="32.438" y2="10.482" x2="42.188"/>
+ </g>
+ <g xmlns="http://www.w3.org/2000/svg" id="copper1">
+  <g xmlns="http://www.w3.org/2000/svg" id="copper0">
+   <rect xmlns="http://www.w3.org/2000/svg" width="5.85" x="17.307" y="25.661" fill="none" height="5.853" stroke="#FFBF00" stroke-width="2.7123"/>
+   <circle xmlns="http://www.w3.org/2000/svg" fill="none" cx="20.233" cy="28.6" stroke="#FFBF00" id="connector0pin" r="2.835" stroke-width="2.7"/>
+   <circle xmlns="http://www.w3.org/2000/svg" fill="none" cx="30.689" cy="31.629" stroke="#FFBF00" id="connector1pin" r="2.835" stroke-width="2.7"/>
+   <circle xmlns="http://www.w3.org/2000/svg" fill="none" cx="41.162" cy="28.603" stroke="#FFBF00" id="connector2pin" r="2.835" stroke-width="2.7"/>
+   <circle xmlns="http://www.w3.org/2000/svg" fill="none" cx="9.45" cy="12.051" stroke="#FFBF00" id="connector3pin" r="6.3" stroke-width="6.3"/>
+   <circle xmlns="http://www.w3.org/2000/svg" fill="none" cx="51.969" cy="12.091" stroke="#FFBF00" id="connector4pin" r="6.3" stroke-width="6.3"/>
+  </g>
+ </g>
+ <g xmlns="http://www.w3.org/2000/svg" id="keepout"/>
+ <g xmlns="http://www.w3.org/2000/svg" id="soldermask"/>
+ <g xmlns="http://www.w3.org/2000/svg" id="outline"/>
+</svg>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  --><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'><svg baseProfile="tiny" height="1.84954in" id="Layer_3" version="1.2" viewBox="0 0 133.167 133.167" width="1.84954in" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xml="http://www.w3.org/XML/1998/namespace" y="0px">
+<g id="copper0">
+	<g id="copper1">
+		<circle cx="6.307" cy="17.494" fill="none" id="connector129" r="2.052" stroke="#F7BD13" stroke-width="1.224"/>
+		<circle cx="6.307" cy="24.744" fill="none" id="connector130" r="2.052" stroke="#F7BD13" stroke-width="1.224"/>
+		<circle cx="6.307" cy="31.995" fill="none" id="connector131" r="2.052" stroke="#F7BD13" stroke-width="1.224"/>
+		<circle cx="6.307" cy="39.161" fill="none" id="connector132" r="2.052" stroke="#F7BD13" stroke-width="1.224"/>
+		<circle cx="6.307" cy="46.329" fill="none" id="connector133" r="2.052" stroke="#F7BD13" stroke-width="1.224"/>
+		<circle cx="6.307" cy="53.579" fill="none" id="connector134" r="2.052" stroke="#F7BD13" stroke-width="1.224"/>
+		<circle cx="6.272" cy="60.803" fill="none" id="connector136" r="2.052" stroke="#F7BD13" stroke-width="1.224"/>
+		<circle cx="6.307" cy="67.997" fill="none" id="connector137" r="2.052" stroke="#F7BD13" stroke-width="1.224"/>
+		<circle cx="6.319" cy="75.307" fill="none" id="connector138" r="2.052" stroke="#F7BD13" stroke-width="1.224"/>
+		<circle cx="6.307" cy="82.329" fill="none" id="connector139" r="2.052" stroke="#F7BD13" stroke-width="1.224"/>
+		<circle cx="6.307" cy="89.911" fill="none" id="connector140" r="2.052" stroke="#F7BD13" stroke-width="1.224"/>
+		<circle cx="6.307" cy="96.829" fill="none" id="connector141" r="2.052" stroke="#F7BD13" stroke-width="1.224"/>
+		<circle cx="6.307" cy="103.995" fill="none" id="connector142" r="2.052" stroke="#F7BD13" stroke-width="1.224"/>
+		<circle cx="6.307" cy="111.12" fill="none" id="connector143" r="2.052" stroke="#F7BD13" stroke-width="1.224"/>
+		<circle cx="6.307" cy="118.37" fill="none" id="connector144" r="2.052" stroke="#F7BD13" stroke-width="1.224"/>
+		<circle cx="123.529" cy="104.245" fill="none" id="connector149" r="3.468" stroke="#F7BD13" stroke-width="2"/>
+		<circle cx="123.529" cy="89.663" fill="none" id="connector148" r="3.468" stroke="#F7BD13" stroke-width="2"/>
+		<circle cx="123.529" cy="75.413" fill="none" id="connector150" r="3.468" stroke="#F7BD13" stroke-width="2"/>
+		<path d="M123.527,57.776c1.917,0,3.47,1.553,3.47,3.467    c0,1.918-1.553,3.471-3.47,3.471c-1.915,0-3.467-1.551-3.467-3.471C120.06,59.329,121.612,57.776,123.527,57.776z" fill="none" id="connector151" stroke="#F7BD13" stroke-width="2"/>
+		<path d="M123.527,42.943c1.917,0,3.47,1.553,3.47,3.467    c0,1.918-1.553,3.471-3.47,3.471c-1.915,0-3.467-1.551-3.467-3.471C120.06,44.496,121.612,42.943,123.527,42.943z" fill="none" id="connector147" stroke="#F7BD13" stroke-width="2"/>
+		<path d="M123.527,28.361c1.917,0,3.47,1.551,3.47,3.467    c0,1.918-1.553,3.469-3.47,3.469c-1.915,0-3.467-1.551-3.467-3.469C120.06,29.912,121.612,28.361,123.527,28.361z" fill="none" id="connector146" stroke="#F7BD13" stroke-width="2"/>
+		<rect fill="none" height="4" id="rect2" stroke="#F7BD13" stroke-width="1.224" width="4" x="4.306" y="15.466"/>
+		<rect fill="none" height="7.286" id="rect1" stroke="#F7BD13" stroke-width="2.2296" width="7.286" x="119.885" y="57.661"/>
+	</g>
+</g>
+<rect fill="none" height="131.048" id="silkscreen" stroke="#FFFFFF" stroke-width="1" width="131.056" x="1.083" y="1.084"/>
+</svg>

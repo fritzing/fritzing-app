@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1 Basic//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-basic.dtd">
+<svg version="1.1" baseProfile="basic" id="Ebene_1" xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="23.168px"
+	 height="41.289px" viewBox="0 0 23.168 41.289" xml:space="preserve">
+<g>
+	<title>MTA100_3.fp</title>
+	<desc>Geda footprint file &apos;MTA100_3.fp&apos; converted by Fritzing</desc>
+	<rect x="2.537" y="30.292" fill="#CCCCCC" width="3.528" height="10.113"/>
+	<rect x="9.737" y="30.292" fill="#CCCCCC" width="3.527" height="10.113"/>
+	<rect x="16.936" y="30.292" fill="#CCCCCC" width="3.527" height="10.113"/>
+	<rect x="2.537" y="33.958" opacity="0.1" width="3.528" height="0.525"/>
+	<rect x="9.737" y="33.958" opacity="0.1" width="3.527" height="0.525"/>
+	<rect x="16.936" y="33.958" opacity="0.1" width="3.527" height="0.525"/>
+	<path fill="#FBB03B" d="M18.699,30.96c0,1.648-1.35,2.998-2.998,2.998H7.467c-1.649,0-2.999-1.35-2.999-2.998V3
+		c0-1.65,1.35-3,2.999-3h8.234c1.648,0,2.998,1.35,2.998,3V30.96z"/>
+	<path opacity="0.2" fill="#FFFFFF" d="M18.699,3.553c0-1.649-1.35-2.999-2.998-2.999H7.467c-1.649,0-2.999,1.35-2.999,2.999V3
+		c0-1.65,1.35-3,2.999-3h8.234c1.648,0,2.998,1.35,2.998,3V3.553z"/>
+	<polygon fill="#CCCCCC" points="19.234,2.793 18.166,2.793 17.773,4.313 17.773,30.292 19.625,30.292 19.625,4.313 	"/>
+	<polygon fill="#CCCCCC" points="12.036,2.793 10.966,2.793 10.575,4.313 10.575,30.292 12.426,30.292 12.426,4.313 	"/>
+	<polygon fill="#CCCCCC" points="4.846,2.803 3.776,2.803 3.375,4.323 3.375,30.292 5.226,30.292 5.237,4.323 	"/>
+	<rect x="2.537" y="40.406" fill="#999999" width="3.528" height="0.883"/>
+	<rect x="9.737" y="40.406" fill="#999999" width="3.527" height="0.883"/>
+	<rect x="16.936" y="40.406" fill="#999999" width="3.527" height="0.883"/>
+	<rect y="23.126" fill="#FB9F3B" width="23.167" height="10.832"/>
+	<rect y="23.126" opacity="0.2" fill="#FFFFFF" width="23.167" height="0.545"/>
+	<g opacity="0.2">
+		<polyline fill="#FFFFFF" points="17.773,4.458 18.166,2.938 19.234,2.938 19.625,4.458 19.625,4.313 19.234,2.793 18.166,2.793 
+			17.773,4.313 		"/>
+		<polyline fill="#FFFFFF" points="10.575,4.458 10.966,2.938 12.036,2.938 12.426,4.458 12.426,4.313 12.036,2.793 10.966,2.793 
+			10.575,4.313 		"/>
+		<polyline fill="#FFFFFF" points="3.375,4.468 3.776,2.948 4.846,2.948 5.237,4.468 5.237,4.323 4.846,2.803 3.776,2.803 
+			3.375,4.323 		"/>
+	</g>
+</g>
+</svg>

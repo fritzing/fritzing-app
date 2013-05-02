@@ -1,0 +1,141 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+<svg xmlns="http://www.w3.org/2000/svg" width="2.98353in" xml:space="preserve" xmlns:xml="http://www.w3.org/XML/1998/namespace" x="0px" version="1.1" y="0px" height="5.63004in" viewBox="0 0 214.814 405.363" id="svg" enable-background="new 0 0 214.814 405.363">
+ <g xmlns="http://www.w3.org/2000/svg" id="schematic">
+  <rect xmlns="http://www.w3.org/2000/svg" width="10.487" x="203.12" y="148.503" fill="none" height="2.1" id="connector32pin"/>
+  <rect xmlns="http://www.w3.org/2000/svg" width="1.992" x="211.616" y="148.503" fill="none" height="2.1" id="connector32terminal"/>
+  <rect xmlns="http://www.w3.org/2000/svg" width="10.487" x="203.12" y="169.739" fill="none" height="2.099" id="connector31pin"/>
+  <rect xmlns="http://www.w3.org/2000/svg" width="1.992" x="211.616" y="169.739" fill="none" height="2.099" id="connector31terminal"/>
+  <rect xmlns="http://www.w3.org/2000/svg" width="10.487" x="203.12" y="190.976" fill="none" height="2.099" id="connector30pin"/>
+  <rect xmlns="http://www.w3.org/2000/svg" width="1.992" x="211.616" y="190.976" fill="none" height="2.099" id="connector30terminal"/>
+  <rect xmlns="http://www.w3.org/2000/svg" width="10.487" x="203.12" y="212.212" fill="none" height="2.101" id="connector29pin"/>
+  <rect xmlns="http://www.w3.org/2000/svg" width="1.992" x="211.616" y="212.212" fill="none" height="2.101" id="connector29terminal"/>
+  <rect xmlns="http://www.w3.org/2000/svg" width="10.487" x="203.12" y="233.449" fill="none" height="2.103" id="connector28pin"/>
+  <rect xmlns="http://www.w3.org/2000/svg" width="1.992" x="211.616" y="233.449" fill="none" height="2.103" id="connector28terminal"/>
+  <rect xmlns="http://www.w3.org/2000/svg" width="10.487" x="203.12" y="254.685" fill="none" height="2.098" id="connector27pin"/>
+  <rect xmlns="http://www.w3.org/2000/svg" width="1.992" x="211.616" y="254.685" fill="none" height="2.098" id="connector27terminal"/>
+  <rect xmlns="http://www.w3.org/2000/svg" width="10.487" x="203.12" y="275.921" fill="none" height="2.101" id="connector26pin"/>
+  <rect xmlns="http://www.w3.org/2000/svg" width="1.992" x="211.616" y="275.921" fill="none" height="2.101" id="connector26terminal"/>
+  <rect xmlns="http://www.w3.org/2000/svg" width="10.487" x="203.12" y="297.158" fill="none" height="2.1" id="connector25pin"/>
+  <rect xmlns="http://www.w3.org/2000/svg" width="1.992" x="211.616" y="297.158" fill="none" height="2.1" id="connector25terminal"/>
+  <rect xmlns="http://www.w3.org/2000/svg" width="2.1" x="106.358" y="393.898" fill="none" height="10.488" id="connector24pin"/>
+  <rect xmlns="http://www.w3.org/2000/svg" width="2.1" x="106.358" y="402.394" fill="none" height="1.992" id="connector24terminal"/>
+  <rect xmlns="http://www.w3.org/2000/svg" width="10.488" x="1.237" y="63.77" fill="none" height="2.099" id="connector23pin"/>
+  <rect xmlns="http://www.w3.org/2000/svg" width="1.995" x="1.237" y="63.77" fill="none" height="2.099" id="connector23terminal"/>
+  <rect xmlns="http://www.w3.org/2000/svg" width="10.487" x="203.12" y="339.628" fill="none" height="2.101" id="connector22pin"/>
+  <rect xmlns="http://www.w3.org/2000/svg" width="1.992" x="211.616" y="339.628" fill="none" height="2.101" id="connector22terminal"/>
+  <rect xmlns="http://www.w3.org/2000/svg" width="10.487" x="203.12" y="318.392" fill="none" height="2.1" id="connector21pin"/>
+  <rect xmlns="http://www.w3.org/2000/svg" width="1.992" x="211.616" y="318.392" fill="none" height="2.1" id="connector21terminal"/>
+  <rect xmlns="http://www.w3.org/2000/svg" width="10.487" x="1.131" y="84.628" fill="none" height="2.099" id="connector20pin"/>
+  <rect xmlns="http://www.w3.org/2000/svg" width="1.995" x="1.131" y="84.628" fill="none" height="2.099" id="connector20terminal"/>
+  <rect xmlns="http://www.w3.org/2000/svg" width="10.487" x="203.12" y="318.392" fill="none" height="2.1" id="connector19pin"/>
+  <rect xmlns="http://www.w3.org/2000/svg" width="1.992" x="211.616" y="318.392" fill="none" height="2.1" id="connector19terminal"/>
+  <rect xmlns="http://www.w3.org/2000/svg" width="10.487" x="203.12" y="339.628" fill="none" height="2.101" id="connector18pin"/>
+  <rect xmlns="http://www.w3.org/2000/svg" width="1.992" x="211.616" y="339.628" fill="none" height="2.101" id="connector18terminal"/>
+  <rect xmlns="http://www.w3.org/2000/svg" width="2.098" x="96.136" y="0.976" fill="none" height="10.487" id="connector17pin"/>
+  <rect xmlns="http://www.w3.org/2000/svg" width="2.098" x="96.136" y="0.976" fill="none" height="1.995" id="connector17terminal"/>
+  <rect xmlns="http://www.w3.org/2000/svg" width="2.1" x="106.358" y="393.898" fill="none" height="10.488" id="connector16pin"/>
+  <rect xmlns="http://www.w3.org/2000/svg" width="2.1" x="106.358" y="402.394" fill="none" height="1.992" id="connector16terminal"/>
+  <rect xmlns="http://www.w3.org/2000/svg" width="10.487" x="1.131" y="105.888" fill="none" height="2.098" id="connector15pin"/>
+  <rect xmlns="http://www.w3.org/2000/svg" width="1.995" x="1.131" y="105.888" fill="none" height="2.098" id="connector15terminal"/>
+  <rect xmlns="http://www.w3.org/2000/svg" width="2.102" x="117.372" y="0.976" fill="none" height="10.487" id="connector14pin"/>
+  <rect xmlns="http://www.w3.org/2000/svg" width="2.102" x="117.372" y="0.976" fill="none" height="1.995" id="connector14terminal"/>
+  <rect xmlns="http://www.w3.org/2000/svg" width="2.1" x="106.358" y="393.898" fill="none" height="10.488" id="connector13pin"/>
+  <rect xmlns="http://www.w3.org/2000/svg" width="2.1" x="106.358" y="402.394" fill="none" height="1.992" id="connector13terminal"/>
+  <rect xmlns="http://www.w3.org/2000/svg" width="10.488" x="1.237" y="63.77" fill="none" height="2.099" id="connector12pin"/>
+  <rect xmlns="http://www.w3.org/2000/svg" width="1.995" x="1.237" y="63.77" fill="none" height="2.099" id="connector12terminal"/>
+  <rect xmlns="http://www.w3.org/2000/svg" width="2.098" x="96.136" y="0.976" fill="none" height="10.487" id="connector11pin"/>
+  <rect xmlns="http://www.w3.org/2000/svg" width="2.098" x="96.136" y="0.976" fill="none" height="1.995" id="connector11terminal"/>
+  <rect xmlns="http://www.w3.org/2000/svg" width="10.487" x="1.208" y="297.15" fill="none" height="2.098" id="connector10pin"/>
+  <rect xmlns="http://www.w3.org/2000/svg" width="1.995" x="1.208" y="297.15" fill="none" height="2.098" id="connector10terminal"/>
+  <rect xmlns="http://www.w3.org/2000/svg" width="10.487" x="1.208" y="275.889" fill="none" height="2.099" id="connector9pin"/>
+  <rect xmlns="http://www.w3.org/2000/svg" width="1.995" x="1.208" y="275.889" fill="none" height="2.099" id="connector9terminal"/>
+  <rect xmlns="http://www.w3.org/2000/svg" width="10.487" x="1.208" y="254.628" fill="none" height="2.101" id="connector8pin"/>
+  <rect xmlns="http://www.w3.org/2000/svg" width="1.995" x="1.208" y="254.628" fill="none" height="2.101" id="connector8terminal"/>
+  <rect xmlns="http://www.w3.org/2000/svg" width="10.487" x="1.208" y="233.393" fill="none" height="2.101" id="connector7pin"/>
+  <rect xmlns="http://www.w3.org/2000/svg" width="1.995" x="1.208" y="233.393" fill="none" height="2.101" id="connector7terminal"/>
+  <rect xmlns="http://www.w3.org/2000/svg" width="10.487" x="1.208" y="212.16" fill="none" height="2.101" id="connector6pin"/>
+  <rect xmlns="http://www.w3.org/2000/svg" width="1.995" x="1.208" y="212.16" fill="none" height="2.101" id="connector6terminal"/>
+  <rect xmlns="http://www.w3.org/2000/svg" width="10.487" x="1.208" y="190.922" fill="none" height="2.1" id="connector5pin"/>
+  <rect xmlns="http://www.w3.org/2000/svg" width="1.995" x="1.208" y="190.922" fill="none" height="2.1" id="connector5terminal"/>
+  <rect xmlns="http://www.w3.org/2000/svg" width="10.488" x="203.113" y="63.557" fill="none" height="2.099" id="connector4pin"/>
+  <rect xmlns="http://www.w3.org/2000/svg" width="1.994" x="211.607" y="63.557" fill="none" height="2.099" id="connector4terminal"/>
+  <rect xmlns="http://www.w3.org/2000/svg" width="10.487" x="203.12" y="84.793" fill="none" height="2.1" id="connector3pin"/>
+  <rect xmlns="http://www.w3.org/2000/svg" width="1.992" x="211.616" y="84.793" fill="none" height="2.1" id="connector3terminal"/>
+  <rect xmlns="http://www.w3.org/2000/svg" width="10.487" x="203.12" y="106.03" fill="none" height="2.099" id="connector2pin"/>
+  <rect xmlns="http://www.w3.org/2000/svg" width="1.992" x="211.616" y="106.03" fill="none" height="2.099" id="connector2terminal"/>
+  <rect xmlns="http://www.w3.org/2000/svg" width="10.487" x="203.12" y="127.268" fill="none" height="2.098" id="connector1pin"/>
+  <rect xmlns="http://www.w3.org/2000/svg" width="1.992" x="211.616" y="127.268" fill="none" height="2.098" id="connector1terminal"/>
+  <g xmlns="http://www.w3.org/2000/svg" id="graphic">
+   <rect xmlns="http://www.w3.org/2000/svg" width="169.972" x="22.394" y="22.212" fill="none" height="360.937" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="2.415"/>
+   <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="64.651" stroke-width="2.2495" x1="1.239" y2="64.651" x2="22.475"/>
+   <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="192" stroke-width="2.415" x1="1.208" y2="192" x2="22.394"/>
+   <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="213.236" stroke-width="2.415" x1="1.208" y2="213.236" x2="22.394"/>
+   <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="234.47" stroke-width="2.415" x1="1.208" y2="234.47" x2="22.394"/>
+   <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="255.707" stroke-width="2.415" x1="1.208" y2="255.707" x2="22.394"/>
+   <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="276.945" stroke-width="2.415" x1="1.208" y2="276.945" x2="22.394"/>
+   <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="298.181" stroke-width="2.415" x1="1.208" y2="298.181" x2="22.394"/>
+   <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="64.775" stroke-width="1.9517" x1="213.601" y2="64.775" x2="192.366"/>
+   <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="86.011" stroke-width="2.415" x1="213.608" y2="86.011" x2="192.366"/>
+   <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="107.248" stroke-width="2.415" x1="213.608" y2="107.248" x2="192.366"/>
+   <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="128.484" stroke-width="2.415" x1="213.608" y2="128.484" x2="192.366"/>
+   <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="149.72" stroke-width="2.415" x1="213.608" y2="149.72" x2="192.366"/>
+   <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="170.957" stroke-width="2.415" x1="213.608" y2="170.957" x2="192.366"/>
+   <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="192.193" stroke-width="2.415" x1="213.608" y2="192.193" x2="192.366"/>
+   <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="213.429" stroke-width="2.415" x1="213.608" y2="213.429" x2="192.366"/>
+   <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="234.666" stroke-width="2.415" x1="213.608" y2="234.666" x2="192.366"/>
+   <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="255.902" stroke-width="2.415" x1="213.608" y2="255.902" x2="192.366"/>
+   <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="277.138" stroke-width="2.415" x1="213.608" y2="277.138" x2="192.366"/>
+   <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="298.376" stroke-width="2.415" x1="213.608" y2="298.376" x2="192.366"/>
+   <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="319.611" stroke-width="2.415" x1="213.608" y2="319.611" x2="192.366"/>
+   <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="340.847" stroke-width="2.415" x1="213.608" y2="340.847" x2="192.366"/>
+   <text xmlns="http://www.w3.org/2000/svg" font-family="DroidSans" transform="matrix(1 0 0 1 30.3682 67.3689)" font-size="9.9889">RST</text>
+   <text xmlns="http://www.w3.org/2000/svg" font-family="DroidSans" transform="matrix(1 0 0 1 30.3682 88.6287)" font-size="9.9889">GRN</text>
+   <text xmlns="http://www.w3.org/2000/svg" font-family="DroidSans" transform="matrix(1 0 0 1 32.2407 194.4919)" font-size="9.9889">A0</text>
+   <text xmlns="http://www.w3.org/2000/svg" font-family="DroidSans" transform="matrix(1 0 0 1 32.2407 215.9275)" font-size="9.9889">A1</text>
+   <text xmlns="http://www.w3.org/2000/svg" font-family="DroidSans" transform="matrix(1 0 0 1 32.2407 237.3669)" font-size="9.9889">A2</text>
+   <text xmlns="http://www.w3.org/2000/svg" font-family="DroidSans" transform="matrix(1 0 0 1 32.2407 258.8044)" font-size="9.9889">A3</text>
+   <text xmlns="http://www.w3.org/2000/svg" font-family="DroidSans" transform="matrix(1 0 0 1 32.2407 280.2419)" font-size="9.9889">A4</text>
+   <text xmlns="http://www.w3.org/2000/svg" font-family="DroidSans" transform="matrix(1 0 0 1 32.2407 301.6814)" font-size="9.9889">A5</text>
+   <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="22.212" stroke-width="1.9517" x1="118.42" y2="0.976" x2="118.42"/>
+   <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="22.212" stroke-width="1.9517" x1="97.14" y2="0.976" x2="97.14"/>
+   <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="85.677" stroke-width="1.9517" x1="22.366" y2="85.677" x2="1.131"/>
+   <text xmlns="http://www.w3.org/2000/svg" font-family="DroidSans" transform="matrix(1 0 0 1 30.3682 109.8884)" font-size="9.9889">BLK</text>
+   <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="106.937" stroke-width="1.9517" x1="22.366" y2="106.937" x2="1.131"/>
+   <text xmlns="http://www.w3.org/2000/svg" font-family="DroidSans" transform="matrix(1 0 0 1 108.0259 39.3728)" font-size="9.9889">RAW</text>
+   <text xmlns="http://www.w3.org/2000/svg" font-family="DroidSans" transform="matrix(1 0 0 1 88.2798 39.3728)" font-size="9.9889">VCC</text>
+   <text xmlns="http://www.w3.org/2000/svg" font-family="DroidSans" transform="matrix(0 1 -1 0 57.2837 221.5935)" font-size="9.9889">Analog Input</text>
+   <text xmlns="http://www.w3.org/2000/svg" font-family="DroidSans" transform="matrix(1 0 0 1 162.6626 109.6853)" font-size="9.9889">D11</text>
+   <text xmlns="http://www.w3.org/2000/svg" font-family="DroidSans" transform="matrix(1 0 0 1 162.6626 131.2947)" font-size="9.9889">D10</text>
+   <text xmlns="http://www.w3.org/2000/svg" font-family="DroidSans" transform="matrix(1 0 0 1 168.1626 152.4763)" font-size="9.9889">D9</text>
+   <text xmlns="http://www.w3.org/2000/svg" font-family="DroidSans" transform="matrix(1 0 0 1 168.1626 173.2322)" font-size="9.9889">D8</text>
+   <text xmlns="http://www.w3.org/2000/svg" font-family="DroidSans" transform="matrix(1 0 0 1 168.1626 194.8435)" font-size="9.9889">D7</text>
+   <text xmlns="http://www.w3.org/2000/svg" font-family="DroidSans" transform="matrix(1 0 0 1 168.1626 215.6013)" font-size="9.9889">D6</text>
+   <text xmlns="http://www.w3.org/2000/svg" font-family="DroidSans" transform="matrix(1 0 0 1 168.1626 237.2068)" font-size="9.9889">D5</text>
+   <text xmlns="http://www.w3.org/2000/svg" font-family="DroidSans" transform="matrix(1 0 0 1 168.1626 258.3904)" font-size="9.9889">D4</text>
+   <text xmlns="http://www.w3.org/2000/svg" font-family="DroidSans" transform="matrix(1 0 0 1 168.1626 279.9978)" font-size="9.9889">D3</text>
+   <text xmlns="http://www.w3.org/2000/svg" font-family="DroidSans" transform="matrix(1 0 0 1 195.6538 273.9392)" font-size="6.9922">PWM</text>
+   <text xmlns="http://www.w3.org/2000/svg" font-family="DroidSans" transform="matrix(1 0 0 1 196.646 316.0984)" font-size="6.9922">TX</text>
+   <text xmlns="http://www.w3.org/2000/svg" font-family="DroidSans" transform="matrix(1 0 0 1 196.646 336.4958)" font-size="6.9922">RX</text>
+   <text xmlns="http://www.w3.org/2000/svg" font-family="DroidSans" transform="matrix(1 0 0 1 195.6538 146.8025)" font-size="6.9922">PWM</text>
+   <text xmlns="http://www.w3.org/2000/svg" font-family="DroidSans" transform="matrix(1 0 0 1 195.6538 125.4646)" font-size="6.9922">PWM</text>
+   <text xmlns="http://www.w3.org/2000/svg" font-family="DroidSans" transform="matrix(1 0 0 1 195.6538 231.4275)" font-size="6.9922">PWM</text>
+   <text xmlns="http://www.w3.org/2000/svg" font-family="DroidSans" transform="matrix(1 0 0 1 195.6538 210.0896)" font-size="6.9922">PWM</text>
+   <text xmlns="http://www.w3.org/2000/svg" font-family="DroidSans" transform="matrix(1 0 0 1 195.6538 104.3376)" font-size="6.9922">PWM</text>
+   <text xmlns="http://www.w3.org/2000/svg" font-family="DroidSans" transform="matrix(1 0 0 1 168.1626 300.7537)" font-size="9.9889">D2</text>
+   <text xmlns="http://www.w3.org/2000/svg" font-family="DroidSans" transform="matrix(1 0 0 1 168.1626 322.363)" font-size="9.9889">D1</text>
+   <text xmlns="http://www.w3.org/2000/svg" font-family="DroidSans" transform="matrix(1 0 0 1 162.6626 67.3201)" font-size="9.9889">D13</text>
+   <text xmlns="http://www.w3.org/2000/svg" font-family="DroidSans" transform="matrix(1 0 0 1 162.6626 88.5017)" font-size="9.9889">D12</text>
+   <text xmlns="http://www.w3.org/2000/svg" font-family="DroidSans" transform="matrix(1 0 0 1 168.1626 343.5447)" font-size="9.9889">D0</text>
+   <text xmlns="http://www.w3.org/2000/svg" font-family="DroidSans" transform="matrix(0 -1 1 0 156.8823 242.4333)" font-size="9.9889">Digital Input/Output</text>
+   <text xmlns="http://www.w3.org/2000/svg" font-family="DroidSans" transform="matrix(1 0 0 1 93.2285 53.9197)" font-size="9.9889">Power</text>
+   <text xmlns="http://www.w3.org/2000/svg" font-family="DroidSans" transform="matrix(1 0 0 1 74.9878 112.1228)" font-size="17.98">Arduino</text>
+   <text xmlns="http://www.w3.org/2000/svg" font-family="DroidSans" transform="matrix(1 0 0 1 73.3506 133.698)" font-size="17.98">Pro Mini</text>
+   <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="404.386" stroke-width="1.9517" x1="107.406" y2="383.148" x2="107.406"/>
+   <text xmlns="http://www.w3.org/2000/svg" font-family="DroidSans" transform="matrix(1 0 0 1 96.876 372.9607)" font-size="9.9889">GND</text>
+   <polygon xmlns="http://www.w3.org/2000/svg" points="206.292,311.201 210.999,313.917 206.292,316.635 "/>
+   <polygon xmlns="http://www.w3.org/2000/svg" points="210.999,337.246 206.292,334.525 210.999,331.81 "/>
+  </g>
+ </g>
+</svg>

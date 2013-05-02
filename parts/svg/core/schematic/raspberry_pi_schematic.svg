@@ -1,0 +1,331 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE svg>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg xmlns="http://www.w3.org/2000/svg"  width="3.8in" xml:space="preserve" xmlns:xml="http://www.w3.org/XML/1998/namespace" x="0px" version="1.1" y="0px" height="5.52214in" viewBox="0 0 273.6 397.594" id="0" enable-background="new 0 0 273.6 397.594">
+ <desc   id="0.0" oldid="0.0">
+  <referenceFile   id="0.0.0" oldid="0.0.0">controller_raspberry_pi_schematic.svg</referenceFile>
+ </desc>
+ <g   id="0.1" transform="translate(-237.1692,55.2746)">
+  <g   id="0.1.0">
+   <g   id="layer1">
+    <g   id="0.1.0.0.0" transform="matrix(1.25,0,0,1.25,237.10357,-55.273538)">
+     <g   id="0.1.0.0.0.0">
+      <g   id="schematic">
+       <g   id="schematic_1_">
+        <rect  width="182.945" x="18.02" y="18.232" fill="none"  height="281.875" stroke="#000000" stroke-linejoin="round" id="_x30_.1.0.0.0" stroke-linecap="round" stroke-width="2.4"/>
+        <line  fill="none"  stroke="#000000" stroke-linejoin="round" id="_x30_.1.0.0.1" stroke-linecap="round" y1="52.248" stroke-width="2.4" x1="1.013" y2="52.248" x2="17.06"/>
+        <rect  width="17.008" x="0.052" y="51.288" fill="none"  height="1.92" id="connector43pin"/>
+        <rect  width="1.92" x="0.052" y="51.288" fill="none"  height="1.92" id="connector43terminal"/>
+        <g   id="0.1.0.0.0.0.0.0.4" transform="matrix(0.8 0 0 0.8 22.2445 54.1683)">
+         <g   id="0.1.0.0.0.0.0.0.4.0">
+          <text  font-family="DroidSans"  id="label43" font-size="9.936">MOSI</text>
+         </g>
+        </g>
+        <line  fill="none"  stroke="#000000" stroke-linejoin="round" id="_x30_.1.0.0.5" stroke-linecap="round" y1="69.256" stroke-width="2.4" x1="1.013" y2="69.256" x2="17.06"/>
+        <rect  width="17.008" x="0.052" y="68.295" fill="none"  height="1.92" id="connector20pin"/>
+        <rect  width="0.034" x="2.027" y="69.253" fill="none"  height="0.004" id="connector20terminal"/>
+        <rect  width="1.92" x="0.052" y="68.295" fill="none"  height="1.92" id="connector49terminal"/>
+        <g   id="0.1.0.0.0.0.0.0.9" transform="matrix(0.8 0 0 0.8 22.2445 71.1761)">
+         <g   id="0.1.0.0.0.0.0.0.9.0">
+          <text  font-family="DroidSans"  id="label49" font-size="9.936">MISO</text>
+         </g>
+        </g>
+        <line  fill="none"  stroke="#000000" stroke-linejoin="round" id="_x30_.1.0.0.9" stroke-linecap="round" y1="86.263" stroke-width="2.4" x1="1.013" y2="86.263" x2="17.06"/>
+        <rect  width="17.008" x="0.052" y="85.303" fill="none"  height="1.92" id="connector22pin"/>
+        <rect  width="0.034" x="2.027" y="86.261" fill="none"  height="0.004" id="connector22terminal"/>
+        <rect  width="1.92" x="0.052" y="85.303" fill="none"  height="1.92" id="connector58terminal"/>
+        <g   id="0.1.0.0.0.0.0.0.14" transform="matrix(0.8 0 0 0.8 22.2445 88.1839)">
+         <g   id="0.1.0.0.0.0.0.0.14.0">
+          <text  font-family="DroidSans"  id="label58" font-size="9.936">SCLK</text>
+         </g>
+        </g>
+        <line  fill="none"  stroke="#000000" stroke-linejoin="round" id="_x30_.1.0.0.13" stroke-linecap="round" y1="103.272" stroke-width="2.4" x1="1.013" y2="103.272" x2="17.06"/>
+        <rect  width="17.008" x="0.052" y="102.312" fill="none"  height="1.92" id="connector23pin"/>
+        <rect  width="0.034" x="2.027" y="103.27" fill="none"  height="0.004" id="connector23terminal"/>
+        <rect  width="1.92" x="0.052" y="102.312" fill="none"  height="1.92" id="connector0terminal_1_"/>
+        <g   id="0.1.0.0.0.0.0.0.19" transform="matrix(0.8 0 0 0.8 22.2445 105.1925)">
+         <g   id="0.1.0.0.0.0.0.0.19.0">
+          <text  font-family="DroidSans"  id="label0" font-size="9.936">CEO_N</text>
+         </g>
+        </g>
+        <line  fill="none"  stroke="#000000" stroke-linejoin="round" id="_x30_.1.0.0.17" stroke-linecap="round" y1="120.28" stroke-width="2.4" x1="1.013" y2="120.28" x2="17.06"/>
+        <rect  width="17.008" x="0.052" y="119.319" fill="none"  height="1.92" id="connector25pin"/>
+        <rect  width="0.034" x="2.027" y="120.277" fill="none"  height="0.004" id="connector25terminal"/>
+        <rect  width="1.92" x="0.052" y="119.319" fill="none"  height="1.92" id="connector1terminal_1_"/>
+        <g   id="0.1.0.0.0.0.0.0.24" transform="matrix(0.8 0 0 0.8 22.2445 122.1996)">
+         <g   id="0.1.0.0.0.0.0.0.24.0">
+          <text  font-family="DroidSans"  id="label1" font-size="9.936">CE1_N</text>
+         </g>
+        </g>
+        <g   id="0.1.0.0.0.0.0.0.25" transform="matrix(0.8 0 0 0.8 22.2445 157.0464)">
+         <g   id="0.1.0.0.0.0.0.0.25.0">
+          <text  font-family="DroidSans"  id="label43_1_" font-size="9.936">Pin 4</text>
+         </g>
+        </g>
+        <g   id="0.1.0.0.0.0.0.0.26" transform="matrix(0.8 0 0 0.8 22.2445 174.0542)">
+         <g   id="0.1.0.0.0.0.0.0.26.0">
+          <text  font-family="DroidSans"  id="label49_1_" font-size="9.936">Pin 9</text>
+         </g>
+        </g>
+        <g   id="0.1.0.0.0.0.0.0.27" transform="matrix(0.8 0 0 0.8 22.2445 191.062)">
+         <g   id="0.1.0.0.0.0.0.0.27.0">
+          <text  font-family="DroidSans"  id="label58_1_" font-size="9.936">Pin 14</text>
+         </g>
+        </g>
+        <g   id="0.1.0.0.0.0.0.0.28" transform="matrix(0.8 0 0 0.8 22.2445 208.0706)">
+         <g   id="0.1.0.0.0.0.0.0.28.0">
+          <text  font-family="DroidSans"  id="label0_1_" font-size="9.936">Pin 17</text>
+         </g>
+        </g>
+        <g   id="0.1.0.0.0.0.0.0.29" transform="matrix(0.8 0 0 0.8 22.2445 225.0777)">
+         <g   id="0.1.0.0.0.0.0.0.29.0">
+          <text  font-family="DroidSans"  id="label1_1_" font-size="9.936">Pin 20</text>
+         </g>
+        </g>
+        <g   id="0.1.0.0.0.0.0.0.30" transform="matrix(0.8 0 0 0.8 22.2445 242.0847)">
+         <g   id="0.1.0.0.0.0.0.0.30.0">
+          <text  font-family="DroidSans"  id="label1_2_" font-size="9.936">Pin 25</text>
+         </g>
+        </g>
+        <line  fill="none"  stroke="#000000" stroke-linejoin="round" id="_x30_.1.0.0.21" stroke-linecap="round" y1="52.248" stroke-width="2.4" x1="200.965" y2="52.248" x2="217.973"/>
+        <rect  width="17.008" x="201.925" y="51.288" fill="none"  height="1.92" id="connector6pin"/>
+        <rect  width="0.034" x="217.121" y="52.246" fill="none"  height="0.004" id="connector6terminal"/>
+        <rect  width="1.92" x="217.012" y="51.288" fill="none"  height="1.92" id="connector61terminal"/>
+        <g   id="label61" enable-background="new    ">
+         <g   id="_x30_.1.0.0.24.0">
+          <g   id="_x30_.1.0.0.24.0.0">
+           <g   id="0.1.0.0.0.0.0.0.35.0.0.0" transform="matrix(0.8 0 0 0.8 177.3238 225.3152)">
+            <g   id="0.1.0.0.0.0.0.0.35.0.0.0.0">
+             <text  font-family="DroidSans"  id="_x30_.1.0.0.24.0.0.0" font-size="9.936">RXD</text>
+            </g>
+           </g>
+          </g>
+          <g   id="_x30_.1.0.0.24.0.1">
+           <g   id="0.1.0.0.0.0.0.0.35.0.1.0" transform="matrix(0.8 0 0 0.8 177.3238 208.0355)">
+            <g   id="0.1.0.0.0.0.0.0.35.0.1.0.0">
+             <text  font-family="DroidSans"  id="_x30_.1.0.0.24.0.1.0" font-size="9.936">TXD</text>
+            </g>
+           </g>
+          </g>
+          <g   id="_x30_.1.0.0.24.0.2">
+           <g   id="0.1.0.0.0.0.0.0.35.0.2.0" transform="matrix(0.8 0 0 0.8 178.0723 276.7894)">
+            <g   id="0.1.0.0.0.0.0.0.35.0.2.0.0">
+             <text  font-family="DroidSans"  id="_x30_.1.0.0.24.0.2.0" font-size="9.936">SDA0</text>
+            </g>
+           </g>
+          </g>
+          <g   id="_x30_.1.0.0.24.0.3">
+           <g   id="0.1.0.0.0.0.0.0.35.0.3.0" transform="matrix(0.8 0 0 0.8 179.566 259.5097)">
+            <g   id="0.1.0.0.0.0.0.0.35.0.3.0.0">
+             <text  font-family="DroidSans"  id="_x30_.1.0.0.24.0.3.0" font-size="9.936">SCL0</text>
+            </g>
+           </g>
+          </g>
+          <g   id="_x30_.1.0.0.24.0.4">
+           <g   id="0.1.0.0.0.0.0.0.35.0.4.0" transform="matrix(0.8 0 0 0.8 173.3238 174.3261)">
+            <g   id="0.1.0.0.0.0.0.0.35.0.4.0.0">
+             <text  font-family="DroidSans"  id="_x30_.1.0.0.24.0.4.0" font-size="9.936">GPIO0</text>
+            </g>
+           </g>
+          </g>
+         </g>
+         <g   id="_x30_.1.0.0.24.1">
+          <g   id="0.1.0.0.0.0.0.0.35.1.0" transform="matrix(0.8 0 0 0.8 173.3238 157.0464)">
+           <g   id="0.1.0.0.0.0.0.0.35.1.0.0">
+            <text  font-family="DroidSans"  id="_x30_.1.0.0.24.1.0" font-size="9.936">GPIO1</text>
+           </g>
+          </g>
+         </g>
+         <g   id="_x30_.1.0.0.24.2">
+          <g   id="0.1.0.0.0.0.0.0.35.2.0" transform="matrix(0.8 0 0 0.8 173.3238 139.7667)">
+           <g   id="0.1.0.0.0.0.0.0.35.2.0.0">
+            <text  font-family="DroidSans"  id="_x30_.1.0.0.24.2.0" font-size="9.936">GPIO2</text>
+           </g>
+          </g>
+         </g>
+         <g   id="_x30_.1.0.0.24.3">
+          <g   id="0.1.0.0.0.0.0.0.35.3.0" transform="matrix(0.8 0 0 0.8 173.3238 123.287)">
+           <g   id="0.1.0.0.0.0.0.0.35.3.0.0">
+            <text  font-family="DroidSans"  id="_x30_.1.0.0.24.3.0" font-size="9.936">GPIO3</text>
+           </g>
+          </g>
+         </g>
+         <g   id="_x30_.1.0.0.24.4">
+          <g   id="0.1.0.0.0.0.0.0.35.4.0" transform="matrix(0.8 0 0 0.8 173.3238 106.8073)">
+           <g   id="0.1.0.0.0.0.0.0.35.4.0.0">
+            <text  font-family="DroidSans"  id="_x30_.1.0.0.24.4.0" font-size="9.936">GPIO4</text>
+           </g>
+          </g>
+         </g>
+         <g   id="_x30_.1.0.0.24.5">
+          <g   id="0.1.0.0.0.0.0.0.35.5.0" transform="matrix(0.8 0 0 0.8 173.3238 89.5277)">
+           <g   id="0.1.0.0.0.0.0.0.35.5.0.0">
+            <text  font-family="DroidSans"  id="_x30_.1.0.0.24.5.0" font-size="9.936">GPIO5</text>
+           </g>
+          </g>
+         </g>
+         <g   id="_x30_.1.0.0.24.6">
+          <g   id="0.1.0.0.0.0.0.0.35.6.0" transform="matrix(0.8 0 0 0.8 173.3238 72.248)">
+           <g   id="0.1.0.0.0.0.0.0.35.6.0.0">
+            <text  font-family="DroidSans"  id="_x30_.1.0.0.24.6.0" font-size="9.936">GPIO6</text>
+           </g>
+          </g>
+         </g>
+         <g   id="_x30_.1.0.0.24.7">
+          <g   id="0.1.0.0.0.0.0.0.35.7.0" transform="matrix(0.8 0 0 0.8 173.3238 54.9683)">
+           <g   id="0.1.0.0.0.0.0.0.35.7.0.0">
+            <text  font-family="DroidSans"  id="_x30_.1.0.0.24.7.0" font-size="9.936">GPIO7</text>
+           </g>
+          </g>
+         </g>
+        </g>
+        <line  fill="none"  stroke="#000000" stroke-linejoin="round" id="_x30_.1.0.0.25" stroke-linecap="round" y1="69.256" stroke-width="2.4" x1="200.965" y2="69.256" x2="217.973"/>
+        <rect  width="17.008" x="201.925" y="68.295" fill="none"  height="1.92" id="connector21pin"/>
+        <rect  width="0.034" x="217.121" y="69.253" fill="none"  height="0.004" id="connector21terminal"/>
+        <rect  width="1.92" x="217.012" y="68.295" fill="none"  height="1.92" id="connector62terminal"/>
+        <line  fill="none"  stroke="#000000" stroke-linejoin="round" id="_x30_.1.0.0.28" stroke-linecap="round" y1="86.263" stroke-width="2.4" x1="200.965" y2="86.263" x2="217.973"/>
+        <rect  width="17.008" x="201.925" y="85.303" fill="none"  height="1.92" id="connector17pin"/>
+        <rect  width="0.034" x="217.121" y="86.261" fill="none"  height="0.004" id="connector17terminal"/>
+        <rect  width="1.92" x="217.012" y="85.303" fill="none"  height="1.92" id="connector63terminal"/>
+        <line  fill="none"  stroke="#000000" stroke-linejoin="round" id="_x30_.1.0.0.31" stroke-linecap="round" y1="103.272" stroke-width="2.4" x1="200.965" y2="103.272" x2="217.973"/>
+        <rect  width="17.008" x="201.925" y="102.312" fill="none"  height="1.92" id="connector15pin"/>
+        <rect  width="0.034" x="217.121" y="103.27" fill="none"  height="0.004" id="connector15terminal"/>
+        <rect  width="1.92" x="217.012" y="102.312" fill="none"  height="1.92" id="connector64terminal"/>
+        <line  fill="none"  stroke="#000000" stroke-linejoin="round" id="_x30_.1.0.0.34" stroke-linecap="round" y1="120.28" stroke-width="2.4" x1="200.965" y2="120.28" x2="217.973"/>
+        <rect  width="17.008" x="201.925" y="119.32" fill="none"  height="1.92" id="connector14pin"/>
+        <rect  width="0.034" x="217.121" y="120.278" fill="none"  height="0.004" id="connector14terminal"/>
+        <rect  width="1.92" x="217.012" y="119.32" fill="none"  height="1.92" id="connector65terminal"/>
+        <line  fill="none"  stroke="#000000" stroke-linejoin="round" id="_x30_.1.0.0.37" stroke-linecap="round" y1="137.288" stroke-width="2.4" x1="200.965" y2="137.288" x2="217.973"/>
+        <rect  width="17.008" x="201.925" y="136.327" fill="none"  height="1.92" id="connector12pin"/>
+        <rect  width="0.034" x="217.121" y="137.285" fill="none"  height="0.004" id="connector12terminal"/>
+        <rect  width="1.92" x="217.012" y="136.327" fill="none"  height="1.92" id="connector66terminal"/>
+        <line  fill="none"  stroke="#000000" stroke-linejoin="round" id="_x30_.1.0.0.40" stroke-linecap="round" y1="154.295" stroke-width="2.4" x1="200.965" y2="154.295" x2="217.973"/>
+        <rect  width="17.008" x="201.925" y="153.335" fill="none"  height="1.92" id="connector11pin"/>
+        <rect  width="0.034" x="217.121" y="154.293" fill="none"  height="0.004" id="connector11terminal"/>
+        <rect  width="1.92" x="217.012" y="153.335" fill="none"  height="1.92" id="connector67terminal"/>
+        <line  fill="none"  stroke="#000000" stroke-linejoin="round" id="_x30_.1.0.0.43" stroke-linecap="round" y1="171.302" stroke-width="2.4" x1="200.965" y2="171.302" x2="217.973"/>
+        <rect  width="17.008" x="201.925" y="170.344" fill="none"  height="1.92" id="connector10pin"/>
+        <rect  width="0.034" x="217.121" y="171.302" fill="none"  height="0.004" id="connector10terminal"/>
+        <rect  width="1.92" x="217.012" y="170.344" fill="none"  height="1.92" id="connector68terminal"/>
+        <g   id="0.1.0.0.0.0.0.0.64">
+         <line  fill="none"  stroke="#000000" stroke-linejoin="round" id="_x30_.1.0.0.28_1_" stroke-linecap="round" y1="154.294" stroke-width="2.4" x1="1.012" y2="154.294" x2="18.02"/>
+         <rect  width="17.008" x="0.052" y="153.334" fill="none"  height="1.92" id="connector27pin"/>
+         <rect width="0.034016" x="0.034992" y="154.29208" fill="none"  height="0.00384" stroke="none" id="connector27terminal" stroke-width="0"/>
+         <rect  width="0.034" x="1.83" y="154.292" fill="none"  height="0.004" id="connector17terminal_1_"/>
+         <rect  width="1.92" x="0.053" y="153.334" fill="none"  height="1.92" id="connector63terminal_1_"/>
+         <line  fill="none"  stroke="#000000" stroke-linejoin="round" id="_x30_.1.0.0.31_1_" stroke-linecap="round" y1="171.303" stroke-width="2.4" x1="1.012" y2="171.303" x2="18.02"/>
+         <rect  width="17.008" x="0.052" y="170.343" fill="none"  height="1.92" id="connector26pin"/>
+         <rect width="0.034016" x="0.034992" y="171.30108" fill="none"  height="0.00384" stroke="none" id="connector26terminal" stroke-width="0"/>
+         <rect  width="0.034" x="1.83" y="171.301" fill="none"  height="0.004" id="connector15terminal_1_"/>
+         <rect  width="1.92" x="0.053" y="170.343" fill="none"  height="1.92" id="connector64terminal_1_"/>
+         <line  fill="none"  stroke="#000000" stroke-linejoin="round" id="_x30_.1.0.0.34_1_" stroke-linecap="round" y1="188.311" stroke-width="2.4" x1="1.012" y2="188.311" x2="18.02"/>
+         <rect  width="17.008" x="0.052" y="187.351" fill="none"  height="1.92" id="connector28pin"/>
+         <rect width="0.034016" x="0.034992" y="188.30908" fill="none"  height="0.00384" stroke="none" id="connector28terminal" stroke-width="0"/>
+         <rect  width="0.034" x="1.83" y="188.309" fill="none"  height="0.005" id="connector14terminal_1_"/>
+         <rect  width="1.92" x="0.053" y="187.351" fill="none"  height="1.92" id="connector65terminal_1_"/>
+         <line  fill="none"  stroke="#000000" stroke-linejoin="round" id="_x30_.1.0.0.37_1_" stroke-linecap="round" y1="205.319" stroke-width="2.4" x1="1.012" y2="205.319" x2="18.02"/>
+         <rect  width="17.008" x="0.052" y="204.358" fill="none"  height="1.92" id="connector30pin"/>
+         <rect width="0.034016" x="0.034992" y="205.31608" fill="none"  height="0.00384" stroke="none" id="connector30terminal" stroke-width="0"/>
+         <rect  width="0.034" x="1.83" y="205.317" fill="none"  height="0.003" id="connector12terminal_1_"/>
+         <rect  width="1.92" x="0.053" y="204.358" fill="none"  height="1.92" id="connector66terminal_1_"/>
+         <line  fill="none"  stroke="#000000" stroke-linejoin="round" id="_x30_.1.0.0.40_1_" stroke-linecap="round" y1="222.326" stroke-width="2.4" x1="1.012" y2="222.326" x2="18.02"/>
+         <rect  width="17.008" x="0.052" y="221.367" fill="none"  height="1.92" id="connector29pin"/>
+         <rect width="0.034016" x="0.034992" y="222.32508" fill="none"  height="0.00384" stroke="none" id="connector29terminal" stroke-width="0"/>
+         <rect  width="0.034" x="1.83" y="222.325" fill="none"  height="0.003" id="connector11terminal_1_"/>
+         <rect  width="1.92" x="0.053" y="221.367" fill="none"  height="1.92" id="connector67terminal_1_"/>
+         <line  fill="none"  stroke="#000000" stroke-linejoin="round" id="_x30_.1.0.0.43_1_" stroke-linecap="round" y1="239.333" stroke-width="2.4" x1="1.012" y2="239.333" x2="18.02"/>
+         <rect  width="17.008" x="0.052" y="238.375" fill="none"  height="1.92" id="connector31pin"/>
+         <rect width="0.034016" x="0.034992" y="239.33308" fill="none"  height="0.00384" stroke="none" id="connector31terminal" stroke-width="0"/>
+         <rect  width="0.034" x="1.83" y="239.333" fill="none"  height="0.004" id="connector10terminal_1_"/>
+         <rect  width="1.92" x="0.053" y="238.375" fill="none"  height="1.92" id="connector68terminal_1_"/>
+        </g>
+        <line  fill="none"  stroke="#000000" stroke-linejoin="round" id="_x30_.1.0.0.46" stroke-linecap="round" y1="205.319" stroke-width="2.4" x1="200.965" y2="205.319" x2="217.973"/>
+        <rect  width="17.008" x="201.925" y="204.359" fill="none"  height="1.92" id="connector7pin"/>
+        <rect  width="0.034" x="217.121" y="205.317" fill="none"  height="0.005" id="connector7terminal"/>
+        <rect  width="1.92" x="217.012" y="204.359" fill="none"  height="1.92" id="connector52terminal"/>
+        <line  fill="none"  stroke="#000000" stroke-linejoin="round" id="_x30_.1.0.0.49" stroke-linecap="round" y1="222.327" stroke-width="2.4" x1="200.965" y2="222.327" x2="217.973"/>
+        <rect  width="17.008" x="201.925" y="221.367" fill="none"  height="1.92" id="connector9pin"/>
+        <rect  width="0.034" x="217.121" y="222.325" fill="none"  height="0.005" id="connector9terminal"/>
+        <rect  width="1.92" x="217.012" y="221.367" fill="none"  height="1.92" id="connector53terminal"/>
+        <line  fill="none"  stroke="#000000" stroke-linejoin="round" id="_x30_.1.0.0.52" stroke-linecap="round" y1="256.343" stroke-width="2.4" x1="200.965" y2="256.343" x2="217.973"/>
+        <rect  width="17.008" x="201.925" y="255.382" fill="none"  height="1.92" id="connector39pin"/>
+        <rect  width="1.92" x="217.012" y="255.382" fill="none"  height="1.92" id="connector39terminal"/>
+        <line  fill="none"  stroke="#000000" stroke-linejoin="round" id="_x30_.1.0.0.55" stroke-linecap="round" y1="273.351" stroke-width="2.4" x1="200.965" y2="273.351" x2="217.973"/>
+        <rect  width="17.008" x="201.925" y="272.392" fill="none"  height="1.919" id="connector41pin"/>
+        <rect  width="1.92" x="217.012" y="272.392" fill="none"  height="1.919" id="connector41terminal"/>
+        <g   id="_x30_.1.0.0.58">
+         <g   id="0.1.0.0.0.0.0.0.79.0" transform="matrix(0.8 0 0 0.8 72.6812 52.248)">
+          <g   id="0.1.0.0.0.0.0.0.79.0.0">
+           <text  font-family="DroidSans"  id="label" font-size="18">RaspberryPi</text>
+          </g>
+         </g>
+         <g   id="0.1.0.0.0.0.0.0.79.1" transform="matrix(0.8 0 0 0.8 84.9586 69.2566)">
+          <g   id="0.1.0.0.0.0.0.0.79.1.0">
+           <text  font-family="DroidSans"  id="label_1_" font-size="18">Model B</text>
+          </g>
+         </g>
+         <g   id="_x30_.1.0.0.58.2">
+          <line  fill="none"  stroke="#000000" stroke-linejoin="round" id="_x30_.1.0.0.58.2.0" stroke-linecap="round" y1="1.224" stroke-width="2.4" x1="94.732" y2="17.272" x2="94.732"/>
+          <rect  width="1.92" x="93.772" y="0.264" fill="none"  height="17.008" id="connector0pin"/>
+          <rect  width="0.004" x="94.73" y="1.409" fill="none"  height="0.034" id="connector0terminal"/>
+          <polygon  fill="none" points="93.772,0.264 95.692,0.264 95.692,0.264 "  id="connector86terminal"/>
+          <g   id="0.1.0.0.0.0.0.0.79.2.4" transform="matrix(0.8 0 0 0.8 88.0976 27.3527)">
+           <g   id="0.1.0.0.0.0.0.0.79.2.4.0">
+            <text  font-family="DroidSans"  id="label86" font-size="9.936">3V3</text>
+           </g>
+          </g>
+          <line  fill="none"  stroke="#000000" stroke-linejoin="round" id="_x30_.1.0.0.58.2.4" stroke-linecap="round" y1="1.224" stroke-width="2.4" x1="128.748" y2="17.272" x2="128.748"/>
+          <rect  width="1.92" x="127.788" y="0.264" fill="none"  height="17.008" id="connector40pin"/>
+          <polygon  fill="none" points="127.788,0.264 129.708,0.264 129.708,0.264 "  id="connector40terminal"/>
+          <g   id="0.1.0.0.0.0.0.0.79.2.8" transform="matrix(0.8 0 0 0.8 124.3019 27.3527)">
+           <g   id="0.1.0.0.0.0.0.0.79.2.8.0">
+            <text  font-family="DroidSans"  id="label40" font-size="9.936">5V</text>
+           </g>
+          </g>
+          <rect  width="1.92" x="127.788" y="0.264" fill="none"  height="17.008" id="connector46pin"/>
+          <polygon  fill="none" points="127.788,0.264 129.708,0.264 129.708,0.264 "  id="connector46terminal"/>
+          <rect  width="1.92" x="127.788" y="0.264" fill="none"  height="17.008" id="connector84pin"/>
+          <polygon  fill="none" points="127.788,0.264 129.708,0.264 129.708,0.264 "  id="connector84terminal"/>
+          <rect  width="1.92" x="127.788" y="0.264" fill="none"  height="17.008" id="connector1pin"/>
+          <rect  width="0.004" x="128.746" y="1.409" fill="none"  height="0.034" id="connector1terminal"/>
+          <polygon  fill="none" points="127.788,0.264 129.708,0.264 129.708,0.264 "  id="connector87terminal"/>
+         </g>
+        </g>
+        <g   id="_x30_.1.0.0.59">
+         <line  fill="none"  stroke="#000000" stroke-linejoin="round" id="_x30_.1.0.0.59.0" stroke-linecap="round" y1="301.067" stroke-width="2.4" x1="109.493" y2="317.115" x2="109.493"/>
+         <rect  width="1.92" x="108.532" y="301.067" fill="none"  height="17.008" id="connector44pin"/>
+         <polygon  fill="none" points="108.532,318.075 110.452,318.075 110.452,318.075 "  id="connector44terminal"/>
+         <g   id="0.1.0.0.0.0.0.0.80.3" transform="matrix(0.8 0 0 0.8 101.1344 296.4589)">
+          <g   id="0.1.0.0.0.0.0.0.80.3.0">
+           <text  font-family="DroidSans"  id="label44" font-size="9.936">GND</text>
+          </g>
+         </g>
+         <rect  width="1.92" x="108.532" y="301.067" fill="none"  height="17.008" id="connector88pin"/>
+         <polygon  fill="none" points="108.532,318.075 110.452,318.075 110.452,318.075 "  id="connector88terminal"/>
+         <rect  width="1.92" x="108.532" y="301.067" fill="none"  height="17.008" id="connector89pin"/>
+         <polygon  fill="none" points="108.532,318.075 110.452,318.075 110.452,318.075 "  id="connector89terminal"/>
+         <rect  width="1.92" x="108.532" y="301.067" fill="none"  height="17.008" id="connector50pin"/>
+         <polygon  fill="none" points="108.532,318.075 110.452,318.075 110.452,318.075 "  id="connector50terminal"/>
+         <rect  width="1.92" x="108.532" y="301.067" fill="none"  height="17.008" id="connector5pin"/>
+         <rect  width="0.004" x="109.49" y="316.348" fill="none"  height="0.034" id="connector5terminal"/>
+         <polygon  fill="none" points="108.532,318.075 110.452,318.075 110.452,318.075 "  id="connector57terminal"/>
+        </g>
+        <rect  width="17.008" x="0.052" y="51.288" fill="none"  height="1.92" id="connector18pin"/>
+        <rect  width="0.034" x="2.027" y="52.246" fill="none"  height="0.004" id="connector18terminal"/>
+        <rect  width="1.92" x="0.052" y="51.288" fill="none"  height="1.92" id="connector85terminal"/>
+        <rect  width="17.008" x="201.925" y="255.382" fill="none"  height="1.92" id="connector4pin"/>
+        <rect  width="0.034" x="217.283" y="256.34" fill="none"  height="0.003" id="connector4terminal"/>
+        <rect  width="1.92" x="217.012" y="255.382" fill="none"  height="1.92" id="connector55terminal"/>
+        <rect  width="17.008" x="201.925" y="272.392" fill="none"  height="1.919" id="connector2pin"/>
+        <rect  width="0.034" x="217.283" y="273.35" fill="none"  height="0.003" id="connector2terminal"/>
+        <rect  width="1.92" x="217.012" y="272.392" fill="none"  height="1.919" id="connector56terminal"/>
+       </g>
+      </g>
+     </g>
+    </g>
+    <polygon  points="484.857,201.376 478.975,204.771 478.975,197.98 "  id="polygon7398"/>
+    <polygon  points="478.975,222.632 484.857,219.238 484.857,226.033 "  id="polygon7400"/>
+   </g>
+  </g>
+ </g>
+</svg>

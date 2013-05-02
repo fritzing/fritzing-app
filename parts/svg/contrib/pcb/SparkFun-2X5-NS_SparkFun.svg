@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" x="0in" y="0in" width="0.212in" height="0.548in" viewBox="0 0 2120 5480" >
+<title>SparkFun.mod</title>
+<desc>Kicad module 'SparkFun-2X5-NS' from file 'SparkFun.mod' converted by Fritzing</desc>
+<metadata xmlns:fz='http://fritzing.org/kicadmetadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+<rdf:RDF><rdf:Description rdf:about=''>
+<fz:attr name='kicad filename'>SparkFun.mod</fz:attr>
+<fz:attr name='kicad module'>SparkFun-2X5-NS</fz:attr>
+<fz:attr name='fritzing version'>0.4.1b.07.04.4318</fz:attr>
+<fz:attr name='conversion date'>17/07/2010 17:14:51</fz:attr>
+<fz:attr name='dist-license'>GPL</fz:attr>
+<fz:attr name='use-license'>unlimited</fz:attr>
+<fz:attr name='author'>KICAD project</fz:attr>
+<fz:attr name='license-url'>http://www.gnu.org/licenses/gpl.html</fz:attr>
+<fz:comment></fz:comment>
+<fz:attr name='keyword'></fz:attr>
+</rdf:Description></rdf:RDF></metadata><g id="copper0">
+ <g id="copper1">
+  <g connectorname="1" id="connector0pin">
+   <circle fill="none" cx="750" cy="740" stroke="#ff9400" r="285" stroke-width="170"/>
+   <line fill="none" stroke="#ff9400" y1="455" x1="380" y2="455" stroke-width="170" x2="1120"/>
+   <line fill="none" stroke="#ff9400" y1="1025" x1="380" y2="1025" stroke-width="170" x2="1120"/>
+   <line fill="none" stroke="#ff9400" y1="370" x1="465" y2="1110" stroke-width="170" x2="465"/>
+   <line fill="none" stroke="#ff9400" y1="370" x1="1035" y2="1110" stroke-width="170" x2="1035"/>
+  </g>
+  <g connectorname="2" id="connector1pin">
+   <circle fill="none" cx="1750" cy="740" stroke="#ff9400" r="285" stroke-width="170"/>
+  </g>
+  <g connectorname="3" id="connector2pin">
+   <circle fill="none" cx="750" cy="1740" stroke="#ff9400" r="285" stroke-width="170"/>
+  </g>
+  <g connectorname="4" id="connector3pin">
+   <circle fill="none" cx="1750" cy="1740" stroke="#ff9400" r="285" stroke-width="170"/>
+  </g>
+  <g connectorname="5" id="connector4pin">
+   <circle fill="none" cx="750" cy="2740" stroke="#ff9400" r="285" stroke-width="170"/>
+  </g>
+  <g connectorname="6" id="connector5pin">
+   <circle fill="none" cx="1750" cy="2740" stroke="#ff9400" r="285" stroke-width="170"/>
+  </g>
+  <g connectorname="7" id="connector6pin">
+   <circle fill="none" cx="750" cy="3740" stroke="#ff9400" r="285" stroke-width="170"/>
+  </g>
+  <g connectorname="8" id="connector7pin">
+   <circle fill="none" cx="1750" cy="3740" stroke="#ff9400" r="285" stroke-width="170"/>
+  </g>
+  <g connectorname="9" id="connector8pin">
+   <circle fill="none" cx="750" cy="4740" stroke="#ff9400" r="285" stroke-width="170"/>
+  </g>
+  <g connectorname="10" id="connector9pin">
+   <circle fill="none" cx="1750" cy="4740" stroke="#ff9400" r="285" stroke-width="170"/>
+  </g>
+ </g>
+</g>
+<g id="silkscreen">
+ <line fill="none" stroke="white" y1="840" x1="650" y2="840" stroke-width="26" x2="850"/>
+ <line fill="none" stroke="white" y1="840" x1="850" y2="640" stroke-width="26" x2="850"/>
+ <line fill="none" stroke="white" y1="640" x1="650" y2="640" stroke-width="26" x2="850"/>
+ <line fill="none" stroke="white" y1="840" x1="650" y2="640" stroke-width="26" x2="650"/>
+ <line fill="none" stroke="white" y1="840" x1="1650" y2="840" stroke-width="26" x2="1850"/>
+ <line fill="none" stroke="white" y1="840" x1="1850" y2="640" stroke-width="26" x2="1850"/>
+ <line fill="none" stroke="white" y1="640" x1="1650" y2="640" stroke-width="26" x2="1850"/>
+ <line fill="none" stroke="white" y1="840" x1="1650" y2="640" stroke-width="26" x2="1650"/>
+ <line fill="none" stroke="white" y1="1840" x1="1650" y2="1840" stroke-width="26" x2="1850"/>
+ <line fill="none" stroke="white" y1="1840" x1="1850" y2="1640" stroke-width="26" x2="1850"/>
+ <line fill="none" stroke="white" y1="1640" x1="1650" y2="1640" stroke-width="26" x2="1850"/>
+ <line fill="none" stroke="white" y1="1840" x1="1650" y2="1640" stroke-width="26" x2="1650"/>
+ <line fill="none" stroke="white" y1="1840" x1="650" y2="1840" stroke-width="26" x2="850"/>
+ <line fill="none" stroke="white" y1="1840" x1="850" y2="1640" stroke-width="26" x2="850"/>
+ <line fill="none" stroke="white" y1="1640" x1="650" y2="1640" stroke-width="26" x2="850"/>
+ <line fill="none" stroke="white" y1="1840" x1="650" y2="1640" stroke-width="26" x2="650"/>
+ <line fill="none" stroke="white" y1="2840" x1="1650" y2="2840" stroke-width="26" x2="1850"/>
+ <line fill="none" stroke="white" y1="2840" x1="1850" y2="2640" stroke-width="26" x2="1850"/>
+ <line fill="none" stroke="white" y1="2640" x1="1650" y2="2640" stroke-width="26" x2="1850"/>
+ <line fill="none" stroke="white" y1="2840" x1="1650" y2="2640" stroke-width="26" x2="1650"/>
+ <line fill="none" stroke="white" y1="2840" x1="650" y2="2840" stroke-width="26" x2="850"/>
+ <line fill="none" stroke="white" y1="2840" x1="850" y2="2640" stroke-width="26" x2="850"/>
+ <line fill="none" stroke="white" y1="2640" x1="650" y2="2640" stroke-width="26" x2="850"/>
+ <line fill="none" stroke="white" y1="2840" x1="650" y2="2640" stroke-width="26" x2="650"/>
+ <line fill="none" stroke="white" y1="3840" x1="1650" y2="3840" stroke-width="26" x2="1850"/>
+ <line fill="none" stroke="white" y1="3840" x1="1850" y2="3640" stroke-width="26" x2="1850"/>
+ <line fill="none" stroke="white" y1="3640" x1="1650" y2="3640" stroke-width="26" x2="1850"/>
+ <line fill="none" stroke="white" y1="3840" x1="1650" y2="3640" stroke-width="26" x2="1650"/>
+ <line fill="none" stroke="white" y1="3840" x1="650" y2="3840" stroke-width="26" x2="850"/>
+ <line fill="none" stroke="white" y1="3840" x1="850" y2="3640" stroke-width="26" x2="850"/>
+ <line fill="none" stroke="white" y1="3640" x1="650" y2="3640" stroke-width="26" x2="850"/>
+ <line fill="none" stroke="white" y1="3840" x1="650" y2="3640" stroke-width="26" x2="650"/>
+ <line fill="none" stroke="white" y1="4840" x1="1650" y2="4840" stroke-width="26" x2="1850"/>
+ <line fill="none" stroke="white" y1="4840" x1="1850" y2="4640" stroke-width="26" x2="1850"/>
+ <line fill="none" stroke="white" y1="4640" x1="1650" y2="4640" stroke-width="26" x2="1850"/>
+ <line fill="none" stroke="white" y1="4840" x1="1650" y2="4640" stroke-width="26" x2="1650"/>
+ <line fill="none" stroke="white" y1="4840" x1="650" y2="4840" stroke-width="26" x2="850"/>
+ <line fill="none" stroke="white" y1="4840" x1="850" y2="4640" stroke-width="26" x2="850"/>
+ <line fill="none" stroke="white" y1="4640" x1="650" y2="4640" stroke-width="26" x2="850"/>
+ <line fill="none" stroke="white" y1="4840" x1="650" y2="4640" stroke-width="26" x2="650"/>
+ <line fill="none" stroke="white" y1="490" x1="0" y2="990" stroke-width="80" x2="0"/>
+</g>
+</svg>

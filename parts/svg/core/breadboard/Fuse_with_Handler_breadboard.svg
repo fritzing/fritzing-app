@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Made by Carlos Hansen Web: www.tlaana.com  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="fuse1" xmlns:xml="http://www.w3.org/XML/1998/namespace"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="64.916px"
+	 height="25.229px" viewBox="0 0 64.916 25.229" enable-background="new 0 0 64.916 25.229" xml:space="preserve">
+<g id="breadboard">
+	
+		<line id="connector0leg" fill="none" stroke="#8C8C8C" stroke-width="2.16" stroke-linecap="round" stroke-miterlimit="10" x1="1.142" y1="12.616" x2="0.057" y2="12.616"/>
+	
+		<line id="connector1leg" fill="none" stroke="#8C8C8C" stroke-width="2.16" stroke-linecap="round" stroke-miterlimit="10" x1="63.777" y1="12.615" x2="64.857" y2="12.615"/>
+	<circle id="connector0pin" fill="#8C8C8C" cx="1.137" cy="12.616" r="1.08"/>
+	<circle id="connector1pin" fill="#8C8C8C" cx="63.776" cy="12.616" r="1.08"/>
+	<rect id="lleg" x="0.062" y="7.228" fill="#8C8C8C" width="1.641" height="10.771"/>
+	<rect id="rlleg" x="63.216" y="7.228" fill="#8C8C8C" width="1.641" height="10.771"/>
+	<path id="body" fill="#D7BFA4" d="M1.703,0v25.229h61.511V0H1.703z M32.458,16.865c-2.35,0-4.252-1.9-4.252-4.252
+		c0-2.348,1.903-4.252,4.252-4.252c2.349,0,4.251,1.904,4.251,4.252C36.71,14.962,34.808,16.865,32.458,16.865z"/>
+	<path id="center" fill="#C69C6D" d="M21.829,2.552v20.125h21.26V2.552H21.829z M32.458,16.867c-2.35,0-4.252-1.902-4.252-4.254
+		c0-2.348,1.903-4.252,4.252-4.252c2.349,0,4.251,1.904,4.251,4.252C36.71,14.964,34.808,16.867,32.458,16.867z"/>
+	<g id="fuse">
+		
+			<line id="l" fill="none" stroke="#8C8C8C" stroke-width="0.9339" stroke-miterlimit="10" x1="6.62" y1="15.861" x2="56.839" y2="8.496"/>
+		<path id="tube" fill="#FFFFFF" d="M59.485,7.169v10.89H5.432V7.169H59.485 M60.419,6.236H4.498v12.758h55.921V6.236L60.419,6.236z
+			"/>
+		<path id="lc" fill="#CCCCCC" d="M4.498,6.236L4.498,6.236c-1.544,0-2.796,2.854-2.796,6.379c0,3.521,1.252,6.379,2.796,6.379l0,0
+			h13.734V6.236H4.498z"/>
+		<path id="rc" fill="#CCCCCC" d="M60.419,6.236L60.419,6.236H46.683v12.758h13.736l0,0c1.029-0.004,1.93-1.277,2.412-3.176
+			c0.242-0.939,0.383-2.031,0.383-3.203C63.214,9.091,61.962,6.238,60.419,6.236z"/>
+	</g>
+	<g id="lcap">
+		<path id="ulc" fill="#A0A0A0" d="M1.701,10.347H1.089C0.487,10.347,0,9.857,0,9.252V6.621c0-0.604,0.487-1.095,1.089-1.095h15.113
+			c0.602,0,1.089,0.49,1.089,1.095v1.031H1.701V10.347z"/>
+		<path id="dlc" fill="#A0A0A0" d="M17.291,17.573v1.035c0,0.604-0.487,1.094-1.089,1.094H1.089C0.487,19.701,0,19.213,0,18.608
+			v-2.635c0-0.604,0.487-1.093,1.089-1.093H1.7v2.689L17.291,17.573L17.291,17.573z"/>
+	</g>
+	<g id="rcap">
+		<path id="urc" fill="#A0A0A0" d="M63.214,10.347h0.611c0.604,0,1.09-0.49,1.09-1.095V6.621c0-0.604-0.486-1.095-1.09-1.095H48.71
+			c-0.604,0-1.088,0.49-1.088,1.095v1.031h15.592V10.347L63.214,10.347z"/>
+		<path id="drc" fill="#A0A0A0" d="M47.622,17.573v1.035c0,0.604,0.488,1.094,1.09,1.094h15.115c0.604,0,1.088-0.488,1.088-1.094
+			v-2.635c0-0.604-0.484-1.093-1.088-1.093h-0.611v2.689L47.622,17.573L47.622,17.573z"/>
+	</g>
+</g>
+</svg>

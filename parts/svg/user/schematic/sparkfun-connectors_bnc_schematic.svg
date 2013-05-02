@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- Created with Fritzing (http://www.fritzing.org/) -->
+<svg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' version='1.2' baseProfile='tiny' x='0in' y='0in' width='0.756181in' height='0.559192in' viewBox='0 0 19.207 14.2035' >
+<g id='schematic'>
+<circle class='other' cx='2.667' cy='9' r='2.54' stroke='#000000' stroke-width='0.254' fill='none' />
+<circle class='other' cx='2.667' cy='9' r='0.5679' stroke='#000000' stroke-width='0.254' fill='none' />
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='2.3114' x='2.667' y='11.54' text-anchor='start'>GND</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='2.3114' x='5.207' y='9' text-anchor='start'>OUT</text>
+<line class='pin' id='connector3pin' connectorname='OUT' x1='7.747' y1='9' x2='2.667' y2='9' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector3terminal' x='7.747' y='9' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='5.207' y='8.75306' text-anchor='middle'>4</text>
+<line class='pin' id='connector2pin' connectorname='GND' x1='2.667' y1='14.08' x2='2.667' y2='11.54' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector2terminal' x='2.667' y='14.08' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<g transform='translate(2.42006,12.81)'><g transform='rotate(270)'>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='0' y='0' text-anchor='middle'>3</text>
+</g></g>
+</g>
+</svg>

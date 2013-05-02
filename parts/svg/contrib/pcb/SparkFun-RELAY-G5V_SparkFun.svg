@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" x="0in" y="0in" width="0.5in" height="0.3in" viewBox="0 0 5000 3000" >
+<title>SparkFun.mod</title>
+<desc>Kicad module 'SparkFun-RELAY-G5V' from file 'SparkFun.mod' converted by Fritzing</desc>
+<metadata xmlns:fz='http://fritzing.org/kicadmetadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+<rdf:RDF><rdf:Description rdf:about=''>
+<fz:attr name='kicad filename'>SparkFun.mod</fz:attr>
+<fz:attr name='kicad module'>SparkFun-RELAY-G5V</fz:attr>
+<fz:attr name='fritzing version'>0.4.1b.07.04.4318</fz:attr>
+<fz:attr name='conversion date'>17/07/2010 17:17:07</fz:attr>
+<fz:attr name='dist-license'>GPL</fz:attr>
+<fz:attr name='use-license'>unlimited</fz:attr>
+<fz:attr name='author'>KICAD project</fz:attr>
+<fz:attr name='license-url'>http://www.gnu.org/licenses/gpl.html</fz:attr>
+<fz:comment>G5Q SPDT RELAY (SPARKFUN SKU: COM-00100). FOOTPRINT SHOULD ALSO WORK WITH SPST-NO RELAY.</fz:comment>
+<fz:attr name='keyword'>G5Q</fz:attr>
+<fz:attr name='keyword'>SPDT</fz:attr>
+<fz:attr name='keyword'>RELAY</fz:attr>
+<fz:attr name='keyword'>(SPARKFUN</fz:attr>
+<fz:attr name='keyword'>SKU:</fz:attr>
+<fz:attr name='keyword'>COM-00100).</fz:attr>
+<fz:attr name='keyword'>FOOTPRINT</fz:attr>
+<fz:attr name='keyword'>SHOULD</fz:attr>
+<fz:attr name='keyword'>ALSO</fz:attr>
+<fz:attr name='keyword'>WORK</fz:attr>
+<fz:attr name='keyword'>WITH</fz:attr>
+<fz:attr name='keyword'>SPST-NO</fz:attr>
+<fz:attr name='keyword'>RELAY.</fz:attr>
+</rdf:Description></rdf:RDF></metadata><g id="copper0">
+ <g id="copper1">
+  <g connectorname="1" id="connector0pin">
+   <circle fill="none" cx="4500" cy="500" stroke="#ff9400" r="250" stroke-width="100"/>
+  </g>
+  <g connectorname="2" id="connector1pin">
+   <circle fill="none" cx="3500" cy="500" stroke="#ff9400" r="250" stroke-width="100"/>
+  </g>
+  <g connectorname="5" id="connector4pin">
+   <circle fill="none" cx="500" cy="500" stroke="#ff9400" r="250" stroke-width="100"/>
+  </g>
+  <g connectorname="6" id="connector5pin">
+   <circle fill="none" cx="500" cy="2500" stroke="#ff9400" r="250" stroke-width="100"/>
+  </g>
+  <g connectorname="9" id="connector8pin">
+   <circle fill="none" cx="3500" cy="2500" stroke="#ff9400" r="250" stroke-width="100"/>
+  </g>
+  <g connectorname="10" id="connector9pin">
+   <circle fill="none" cx="4500" cy="2500" stroke="#ff9400" r="250" stroke-width="100"/>
+  </g>
+ </g>
+</g>
+<g id="silkscreen">
+ <line fill="none" stroke="white" y1="0" x1="5000" y2="3000" stroke-width="80" x2="5000"/>
+ <line fill="none" stroke="white" y1="3000" x1="5000" y2="3000" stroke-width="80" x2="0"/>
+ <line fill="none" stroke="white" y1="3000" x1="0" y2="0" stroke-width="80" x2="0"/>
+ <line fill="none" stroke="white" y1="0" x1="0" y2="0" stroke-width="80" x2="5000"/>
+</g>
+</svg>

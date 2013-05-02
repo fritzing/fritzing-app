@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?> <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" x="0in" y="0in" width="0.233in" height="0.147in" viewBox="0 0 23300 14700" ><title>MSOP10.fp</title><desc>Geda footprint file 'MSOP10.fp' converted by Fritzing</desc><metadata xmlns:fz='http://fritzing.org/gedametadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'><rdf:RDF><rdf:Description rdf:about=''><fz:attr name='geda filename'>MSOP10.fp</fz:attr>
+<fz:attr name='fritzing version'>0.4.0b.06.21.4282</fz:attr>
+<fz:attr name='conversion date'>27/06/2010 07:15:55</fz:attr>
+<fz:attr name='dist-license'>GPL</fz:attr>
+<fz:attr name='use-license'>unlimited</fz:attr>
+<fz:attr name='author'>gEDA project</fz:attr>
+<fz:attr name='license-url'>http://www.gnu.org/licenses/gpl.html</fz:attr>
+</rdf:Description></rdf:RDF></metadata><g id="copper1">
+ <line fill="none" connectorname="1" stroke="#ffbf00" stroke-linejoin="round" stroke-linecap="round" id="connector0pad" y1="4300" x1="2100" y2="4300" stroke-width="1200" x2="4700"/>
+ <line fill="none" connectorname="2" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector1pad" y1="6300" x1="2100" y2="6300" stroke-width="1200" x2="4700"/>
+ <line fill="none" connectorname="3" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector2pad" y1="8300" x1="2100" y2="8300" stroke-width="1200" x2="4700"/>
+ <line fill="none" connectorname="4" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector3pad" y1="10200" x1="2100" y2="10200" stroke-width="1200" x2="4700"/>
+ <line fill="none" connectorname="5" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector4pad" y1="12200" x1="2100" y2="12200" stroke-width="1200" x2="4700"/>
+ <line fill="none" connectorname="6" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector5pad" y1="12300" x1="18600" y2="12300" stroke-width="1200" x2="21200"/>
+ <line fill="none" connectorname="7" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector6pad" y1="10300" x1="18600" y2="10300" stroke-width="1200" x2="21200"/>
+ <line fill="none" connectorname="8" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector7pad" y1="8300" x1="18600" y2="8300" stroke-width="1200" x2="21200"/>
+ <line fill="none" connectorname="9" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector8pad" y1="6400" x1="18600" y2="6400" stroke-width="1200" x2="21200"/>
+ <line fill="none" connectorname="10" stroke="#ffbf00" stroke-linejoin="miter" stroke-linecap="square" id="connector9pad" y1="4400" x1="18600" y2="4400" stroke-width="1200" x2="21200"/>
+</g>
+<g id="silkscreen">
+ <line fill="none" stroke="white" y1="2400" x1="500" y2="2400" stroke-width="1000" x2="9700"/>
+ <path fill="none" stroke="white" stroke-width="1000" d="M9700,2400a1900,1900,0,1,0,3800,0"/>
+ <line fill="none" stroke="white" y1="2400" x1="13500" y2="2400" stroke-width="1000" x2="22800"/>
+ <line fill="none" stroke="white" y1="2400" x1="22800" y2="14200" stroke-width="1000" x2="22800"/>
+ <line fill="none" stroke="white" y1="14200" x1="22800" y2="14200" stroke-width="1000" x2="500"/>
+ <line fill="none" stroke="white" y1="14200" x1="500" y2="2400" stroke-width="1000" x2="500"/>
+</g>
+</svg>

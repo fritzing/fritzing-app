@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Ebene_1" xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="7.938px" height="7.091px"
+	 viewBox="-0.954 0.954 7.938 7.091" enable-background="new -0.954 0.954 7.938 7.091" xml:space="preserve">
+<g>
+	<g>
+		<rect x="-0.954" y="0.954" fill="#3B3B3B" width="7.959" height="6.885"/>
+		<rect x="-0.954" y="0.954" opacity="0.2" fill="#FFFFFF" enable-background="new    " width="7.959" height="0.062"/>
+		<rect x="-0.954" y="6.973" fill="#232323" width="7.959" height="1.062"/>
+		<rect x="-0.954" y="8.001" opacity="0.2" enable-background="new    " width="7.959" height="0.043"/>
+	</g>
+	<g>
+		<path fill="#DCDCDC" d="M5.849,0.954L5.849,0.954L5.849,0.954H5.756l0,0C5.677,1.288,5.621,3.879,5.621,4.25
+			c0,0.388,0.049,2.376,0.135,2.724l0,0l0,0h1.222v-6.02H5.849z"/>
+		<path fill="#DCDCDC" d="M0.29,1.092V0.954h-1.222v6.021H0.29c0.089-0.352,0.14-2.187,0.14-2.579
+			C0.43,3.935,0.409,1.492,0.29,1.092z"/>
+		<path fill="#D1C690" d="M0.29,8.045h-1.222V6.973H0.29C0.367,7.391,0.29,8.045,0.29,8.045z"/>
+		<path fill="#CCCCCC" d="M0.29,8.045h-1.222V6.973H0.29C0.351,7.296,0.29,8.045,0.29,8.045z"/>
+		<rect x="-0.932" y="7.982" opacity="0.15" enable-background="new    " width="1.222" height="0.062"/>
+		<rect x="-0.932" y="0.954" opacity="0.5" fill="#FFFFFF" enable-background="new    " width="1.222" height="0.062"/>
+		<path fill="#D1C690" d="M6.978,8.045H5.756c0,0-0.083-0.854,0-1.071h1.222V8.045z"/>
+		<path fill="#CCCCCC" d="M6.978,8.045H5.756c0,0-0.08-0.769,0-1.071h1.222V8.045z"/>
+		<rect x="5.757" y="7.982" opacity="0.15" enable-background="new    " width="1.222" height="0.062"/>
+		<rect x="5.757" y="0.954" opacity="0.5" fill="#FFFFFF" enable-background="new    " width="1.222" height="0.062"/>
+		<line fill="none" x1="-0.192" y1="8.044" x2="-0.192" y2="8.044"/>
+	</g>
+</g>
+</svg>

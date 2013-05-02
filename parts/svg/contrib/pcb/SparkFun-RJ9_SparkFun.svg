@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" x="0in" y="0in" width="0.444in" height="0.8098in" viewBox="0 0 4440 8098" >
+<title>SparkFun.mod</title>
+<desc>Kicad module 'SparkFun-RJ9' from file 'SparkFun.mod' converted by Fritzing</desc>
+<metadata xmlns:fz='http://fritzing.org/kicadmetadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+<rdf:RDF><rdf:Description rdf:about=''>
+<fz:attr name='kicad filename'>SparkFun.mod</fz:attr>
+<fz:attr name='kicad module'>SparkFun-RJ9</fz:attr>
+<fz:attr name='fritzing version'>0.4.1b.07.04.4318</fz:attr>
+<fz:attr name='conversion date'>17/07/2010 17:17:10</fz:attr>
+<fz:attr name='dist-license'>GPL</fz:attr>
+<fz:attr name='use-license'>unlimited</fz:attr>
+<fz:attr name='author'>KICAD project</fz:attr>
+<fz:attr name='license-url'>http://www.gnu.org/licenses/gpl.html</fz:attr>
+<fz:comment>FOOTPRINT FOR RJ9 SIMPLE CONNECTOR. COMMON WITH TELEPHONE HANDSETS. SPARKFUN SKU: PRT-08694</fz:comment>
+<fz:attr name='keyword'>FOOTPRINT</fz:attr>
+<fz:attr name='keyword'>FOR</fz:attr>
+<fz:attr name='keyword'>RJ9</fz:attr>
+<fz:attr name='keyword'>SIMPLE</fz:attr>
+<fz:attr name='keyword'>CONNECTOR.</fz:attr>
+<fz:attr name='keyword'>COMMON</fz:attr>
+<fz:attr name='keyword'>WITH</fz:attr>
+<fz:attr name='keyword'>TELEPHONE</fz:attr>
+<fz:attr name='keyword'>HANDSETS.</fz:attr>
+<fz:attr name='keyword'>SPARKFUN</fz:attr>
+<fz:attr name='keyword'>SKU:</fz:attr>
+<fz:attr name='keyword'>PRT-08694</fz:attr>
+</rdf:Description></rdf:RDF></metadata><g id="copper0">
+ <g id="copper1">
+  <g connectorname="1" id="connector0pin">
+   <circle fill="none" cx="1470" cy="1500" stroke="#ff9400" r="225" stroke-width="100"/>
+  </g>
+  <g connectorname="2" id="connector1pin">
+   <circle fill="none" cx="1970" cy="500" stroke="#ff9400" r="225" stroke-width="100"/>
+  </g>
+  <g connectorname="3" id="connector2pin">
+   <circle fill="none" cx="2470" cy="1500" stroke="#ff9400" r="225" stroke-width="100"/>
+  </g>
+  <g connectorname="4" id="connector3pin">
+   <circle fill="none" cx="2970" cy="500" stroke="#ff9400" r="225" stroke-width="100"/>
+  </g>
+ </g>
+</g>
+<g id="silkscreen">
+ <line fill="none" stroke="white" y1="6550" x1="4440" y2="0" stroke-width="80" x2="4440"/>
+ <line fill="none" stroke="white" y1="0" x1="4440" y2="0" stroke-width="80" x2="0"/>
+ <line fill="none" stroke="white" y1="0" x1="0" y2="6550" stroke-width="80" x2="0"/>
+ <line fill="none" stroke="white" y1="6550" x1="4440" y2="6550" stroke-width="80" x2="0"/>
+ <line fill="none" stroke="white" y1="6550" x1="0" y2="8098" stroke-width="80" x2="0"/>
+ <line fill="none" stroke="white" y1="8098" x1="0" y2="8098" stroke-width="80" x2="4440"/>
+ <line fill="none" stroke="white" y1="8098" x1="4440" y2="6550" stroke-width="80" x2="4440"/>
+ <circle fill="none" cx="720" cy="4000" stroke="white" r="444.063" stroke-width="50"/>
+ <line fill="none" stroke="white" y1="4000" x1="91" y2="4000" stroke-width="50" x2="1350"/>
+ <line fill="none" stroke="white" y1="4629" x1="720" y2="3371" stroke-width="50" x2="720"/>
+ <circle fill="none" cx="3720" cy="4000" stroke="white" r="444.063" stroke-width="50"/>
+ <line fill="none" stroke="white" y1="4000" x1="3090" y2="4000" stroke-width="50" x2="4349"/>
+ <line fill="none" stroke="white" y1="4629" x1="3720" y2="3371" stroke-width="50" x2="3720"/>
+</g>
+</svg>

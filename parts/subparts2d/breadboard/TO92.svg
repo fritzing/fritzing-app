@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="13.277px"
+	 height="7.111px" viewBox="0 0 13.277 7.111" enable-background="new 0 0 13.277 7.111" xml:space="preserve">
+<g id="breadboard">
+	<g>
+		<path id="path9559" fill="#1F1F1F" d="M0,4.659L0,4.659c0,0.898,0.373,1.739,1.005,2.452h11.276
+			c0.632-0.713,1.005-1.554,1.005-2.452l0,0H0z"/>
+		<path id="path9561" fill="#141414" d="M6.639,0C2.971,0,0,2.086,0,4.661h13.277C13.278,2.086,10.307,0,6.639,0z"/>
+		<text transform="matrix(1 0 0 1 2.5979 4.9924)" fill="#FFFFFF" font-family="'DroidSans'" font-size="2.6515">TMP36</text>
+	</g>
+</g>
+</svg>

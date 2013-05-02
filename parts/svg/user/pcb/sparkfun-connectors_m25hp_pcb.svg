@@ -1,0 +1,233 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- Created with Fritzing (http://www.fritzing.org/) -->
+<svg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' version='1.2' baseProfile='tiny' x='0in' y='0in' width='2.096in' height='1.01355in' viewBox='0 0 53.2384 25.7442' >
+<g id='copper1'>
+<circle id='connector14pad' connectorname='13' cx='43.18' cy='6.872' r='0.635' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle id='connector13pad' connectorname='12' cx='40.4114' cy='6.872' r='0.635' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle id='connector12pad' connectorname='11' cx='37.6682' cy='6.872' r='0.635' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle id='connector11pad' connectorname='10' cx='34.8996' cy='6.872' r='0.635' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle id='connector10pad' connectorname='9' cx='32.131' cy='6.872' r='0.635' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle id='connector9pad' connectorname='8' cx='29.3878' cy='6.872' r='0.635' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle id='connector8pad' connectorname='7' cx='26.6192' cy='6.872' r='0.635' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle id='connector7pad' connectorname='6' cx='23.8506' cy='6.872' r='0.635' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle id='connector6pad' connectorname='5' cx='21.1074' cy='6.872' r='0.635' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle id='connector5pad' connectorname='4' cx='18.3388' cy='6.872' r='0.635' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle id='connector4pad' connectorname='3' cx='15.5702' cy='6.872' r='0.635' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle id='connector2pad' connectorname='2' cx='12.827' cy='6.872' r='0.635' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle id='connector1pad' connectorname='1' cx='10.0584' cy='6.872' r='0.635' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle id='connector26pad' connectorname='25' cx='41.8084' cy='9.412' r='0.635' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle id='connector25pad' connectorname='24' cx='39.0398' cy='9.412' r='0.635' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle id='connector24pad' connectorname='23' cx='36.2712' cy='9.412' r='0.635' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle id='connector23pad' connectorname='22' cx='33.528' cy='9.412' r='0.635' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle id='connector22pad' connectorname='21' cx='30.7594' cy='9.412' r='0.635' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle id='connector21pad' connectorname='20' cx='27.9908' cy='9.412' r='0.635' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle id='connector20pad' connectorname='19' cx='25.2476' cy='9.412' r='0.635' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle id='connector19pad' connectorname='18' cx='22.479' cy='9.412' r='0.635' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle id='connector18pad' connectorname='17' cx='19.7104' cy='9.412' r='0.635' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle id='connector17pad' connectorname='16' cx='16.9672' cy='9.412' r='0.635' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle id='connector16pad' connectorname='15' cx='14.1986' cy='9.412' r='0.635' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle id='connector15pad' connectorname='14' cx='11.43' cy='9.412' r='0.635' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle id='connector0pad' connectorname='G1' cx='3.0988' cy='8.142' r='2.0955' stroke='#F7BD13' stroke-width='0.889' fill='none' />
+<circle id='connector3pad' connectorname='G2' cx='50.1396' cy='8.142' r='2.0955' stroke='#F7BD13' stroke-width='0.889' fill='none' />
+<g id='copper0'>
+<circle id='connector14pad' connectorname='13' cx='43.18' cy='6.872' r='0.635' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle id='connector13pad' connectorname='12' cx='40.4114' cy='6.872' r='0.635' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle id='connector12pad' connectorname='11' cx='37.6682' cy='6.872' r='0.635' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle id='connector11pad' connectorname='10' cx='34.8996' cy='6.872' r='0.635' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle id='connector10pad' connectorname='9' cx='32.131' cy='6.872' r='0.635' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle id='connector9pad' connectorname='8' cx='29.3878' cy='6.872' r='0.635' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle id='connector8pad' connectorname='7' cx='26.6192' cy='6.872' r='0.635' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle id='connector7pad' connectorname='6' cx='23.8506' cy='6.872' r='0.635' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle id='connector6pad' connectorname='5' cx='21.1074' cy='6.872' r='0.635' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle id='connector5pad' connectorname='4' cx='18.3388' cy='6.872' r='0.635' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle id='connector4pad' connectorname='3' cx='15.5702' cy='6.872' r='0.635' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle id='connector2pad' connectorname='2' cx='12.827' cy='6.872' r='0.635' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle id='connector1pad' connectorname='1' cx='10.0584' cy='6.872' r='0.635' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle id='connector26pad' connectorname='25' cx='41.8084' cy='9.412' r='0.635' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle id='connector25pad' connectorname='24' cx='39.0398' cy='9.412' r='0.635' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle id='connector24pad' connectorname='23' cx='36.2712' cy='9.412' r='0.635' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle id='connector23pad' connectorname='22' cx='33.528' cy='9.412' r='0.635' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle id='connector22pad' connectorname='21' cx='30.7594' cy='9.412' r='0.635' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle id='connector21pad' connectorname='20' cx='27.9908' cy='9.412' r='0.635' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle id='connector20pad' connectorname='19' cx='25.2476' cy='9.412' r='0.635' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle id='connector19pad' connectorname='18' cx='22.479' cy='9.412' r='0.635' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle id='connector18pad' connectorname='17' cx='19.7104' cy='9.412' r='0.635' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle id='connector17pad' connectorname='16' cx='16.9672' cy='9.412' r='0.635' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle id='connector16pad' connectorname='15' cx='14.1986' cy='9.412' r='0.635' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle id='connector15pad' connectorname='14' cx='11.43' cy='9.412' r='0.635' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle id='connector0pad' connectorname='G1' cx='3.0988' cy='8.142' r='2.0955' stroke='#F7BD13' stroke-width='0.889' fill='none' />
+<circle id='connector3pad' connectorname='G2' cx='50.1396' cy='8.142' r='2.0955' stroke='#F7BD13' stroke-width='0.889' fill='none' />
+</g>
+</g>
+<g id='silkscreen'>
+<line class='other' x1='45.9232' y1='25.668' x2='45.6692' y2='25.668' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<path class='other' fill='none' d='M45.9232,25.668 A0.508,0.508 0 0 0 46.4312,25.16' stroke-width='0.1524' stroke='#f0f0f0' />
+<path class='other' fill='none' d='M6.8072,25.16 A0.508,0.508 0 0 0 7.3152,25.668' stroke-width='0.1524' stroke='#f0f0f0' />
+<line class='other' x1='46.0502' y1='19.826' x2='46.0502' y2='25.16' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='46.0502' y1='19.826' x2='7.1882' y2='19.826' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='7.1882' y1='19.826' x2='7.1882' y2='25.16' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='53.1622' y1='15.762' x2='48.0822' y2='15.762' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='53.1622' y1='15.762' x2='53.1622' y2='18.81' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='53.1622' y1='15.762' x2='53.1622' y2='15.635' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='53.1622' y1='18.81' x2='50.6222' y2='18.81' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='53.1622' y1='18.81' x2='53.1622' y2='19.318' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='53.1622' y1='19.318' x2='53.1622' y2='19.826' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='0.0762' y1='19.826' x2='0.0762' y2='19.318' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='0.0762' y1='19.318' x2='0.0762' y2='18.81' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='0.0762' y1='18.81' x2='0.0762' y2='15.762' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='0.0762' y1='15.762' x2='0.0762' y2='15.635' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='50.6222' y1='18.556' x2='48.0822' y2='18.556' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='53.1622' y1='19.318' x2='50.6222' y2='19.318' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='50.6222' y1='19.318' x2='48.0822' y2='19.318' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='50.6222' y1='18.81' x2='50.6222' y2='19.318' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='50.6222' y1='18.81' x2='50.6222' y2='18.556' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='48.0822' y1='18.556' x2='48.0822' y2='18.81' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='48.0822' y1='18.81' x2='48.0822' y2='19.318' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='53.1622' y1='15.635' x2='48.0822' y2='15.635' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='48.0822' y1='15.635' x2='48.0822' y2='15.762' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='48.0822' y1='18.81' x2='47.9552' y2='18.81' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='47.9552' y1='18.81' x2='5.2832' y2='18.81' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<path class='other' fill='none' d='M47.3202,15.762 A0.635,0.635 0 0 1 47.9552,16.397' stroke-width='0.1524' stroke='#f0f0f0' />
+<line class='other' x1='48.0822' y1='15.762' x2='47.1932' y2='15.762' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='47.1932' y1='15.762' x2='46.9392' y2='15.762' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='47.9552' y1='16.397' x2='47.9552' y2='18.81' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='46.9392' y1='15.762' x2='46.9392' y2='15' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='46.9392' y1='15.762' x2='6.2992' y2='15.762' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='46.9392' y1='15' x2='6.2992' y2='15' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='6.2992' y1='15.762' x2='6.2992' y2='15' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='6.2992' y1='15.762' x2='6.0452' y2='15.762' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='6.0452' y1='15.762' x2='5.1562' y2='15.762' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='5.1562' y1='15.635' x2='0.0762' y2='15.635' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='2.6162' y1='18.81' x2='2.6162' y2='19.318' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='2.6162' y1='18.81' x2='0.0762' y2='18.81' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='2.6162' y1='19.318' x2='0.0762' y2='19.318' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='5.1562' y1='18.556' x2='2.6162' y2='18.556' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='2.6162' y1='18.81' x2='2.6162' y2='18.556' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='48.0822' y1='19.318' x2='5.1562' y2='19.318' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='5.1562' y1='19.318' x2='2.6162' y2='19.318' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='5.1562' y1='18.556' x2='5.1562' y2='18.81' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='5.1562' y1='18.81' x2='5.1562' y2='19.318' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='5.2832' y1='16.397' x2='5.2832' y2='18.81' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='5.2832' y1='18.81' x2='5.1562' y2='18.81' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<path class='other' fill='none' d='M5.2832,16.397 A0.635,0.635 0 0 1 5.9182,15.762' stroke-width='0.1524' stroke='#f0f0f0' />
+<line class='other' x1='52.5272' y1='4.967' x2='53.1622' y2='5.602' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='53.1622' y1='5.602' x2='53.1622' y2='15.635' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='47.7012' y1='4.967' x2='52.5272' y2='4.967' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='47.7012' y1='4.967' x2='47.1932' y2='5.475' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='47.1932' y1='5.475' x2='47.1932' y2='15.762' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='6.0452' y1='5.475' x2='6.0452' y2='15.762' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='6.0452' y1='5.475' x2='5.5372' y2='4.967' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='5.5372' y1='4.967' x2='0.5842' y2='4.967' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='0.5842' y1='4.967' x2='0.0762' y2='5.475' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='0.0762' y1='5.475' x2='0.0762' y2='15.635' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='21.5392' y1='22.112' x2='23.8252' y2='22.112' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='23.8252' y1='22.112' x2='23.8252' y2='24.398' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='23.8252' y1='24.398' x2='23.4442' y2='24.398' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='23.4442' y1='24.398' x2='23.4442' y2='22.493' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='23.4442' y1='22.493' x2='21.9202' y2='22.493' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='21.9202' y1='22.493' x2='21.9202' y2='24.398' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='21.9202' y1='24.398' x2='21.5392' y2='24.398' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='21.5392' y1='24.398' x2='21.5392' y2='22.112' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='25.4762' y1='22.112' x2='27.7622' y2='22.112' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='27.7622' y1='22.112' x2='27.7622' y2='24.398' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='27.7622' y1='24.398' x2='27.3812' y2='24.398' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='27.3812' y1='24.398' x2='27.3812' y2='22.493' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='27.3812' y1='22.493' x2='25.8572' y2='22.493' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='25.8572' y1='22.493' x2='25.8572' y2='24.398' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='25.8572' y1='24.398' x2='25.4762' y2='24.398' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='25.4762' y1='24.398' x2='25.4762' y2='22.112' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='29.4132' y1='22.112' x2='31.6992' y2='22.112' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='31.6992' y1='22.112' x2='31.6992' y2='24.398' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='31.6992' y1='24.398' x2='31.3182' y2='24.398' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='31.3182' y1='24.398' x2='31.3182' y2='22.493' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='31.3182' y1='22.493' x2='29.7942' y2='22.493' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='29.7942' y1='22.493' x2='29.7942' y2='24.398' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='29.7942' y1='24.398' x2='29.4132' y2='24.398' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='29.4132' y1='24.398' x2='29.4132' y2='22.112' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='5.1562' y1='15.635' x2='5.1562' y2='15.762' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='5.1562' y1='15.762' x2='0.0762' y2='15.762' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='7.1882' y1='19.826' x2='0.0762' y2='19.826' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='6.8072' y1='20.461' x2='6.8072' y2='25.16' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<path class='other' fill='none' d='M6.1722,19.826 A0.635,0.635 0 0 1 6.8072,20.461' stroke-width='0.1524' stroke='#f0f0f0' />
+<line class='other' x1='53.1622' y1='19.826' x2='46.0502' y2='19.826' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='46.4312' y1='20.461' x2='46.4312' y2='25.16' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<path class='other' fill='none' d='M46.4312,20.461 A0.635,0.635 0 0 1 47.0662,19.826' stroke-width='0.1524' stroke='#f0f0f0' />
+<line class='other' x1='17.6022' y1='22.112' x2='19.8882' y2='22.112' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='19.8882' y1='22.112' x2='19.8882' y2='24.398' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='19.8882' y1='24.398' x2='19.5072' y2='24.398' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='19.5072' y1='24.398' x2='19.5072' y2='22.493' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='19.5072' y1='22.493' x2='17.9832' y2='22.493' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='17.9832' y1='22.493' x2='17.9832' y2='24.398' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='17.9832' y1='24.398' x2='17.6022' y2='24.398' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='17.6022' y1='24.398' x2='17.6022' y2='22.112' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='33.3502' y1='22.112' x2='35.6362' y2='22.112' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='35.6362' y1='22.112' x2='35.6362' y2='24.398' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='35.6362' y1='24.398' x2='35.2552' y2='24.398' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='35.2552' y1='24.398' x2='35.2552' y2='22.493' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='35.2552' y1='22.493' x2='33.7312' y2='22.493' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='33.7312' y1='22.493' x2='33.7312' y2='24.398' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='33.7312' y1='24.398' x2='33.3502' y2='24.398' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='33.3502' y1='24.398' x2='33.3502' y2='22.112' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='13.6652' y1='22.112' x2='15.9512' y2='22.112' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='15.9512' y1='22.112' x2='15.9512' y2='24.398' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='15.9512' y1='24.398' x2='15.5702' y2='24.398' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='15.5702' y1='24.398' x2='15.5702' y2='22.493' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='15.5702' y1='22.493' x2='14.0462' y2='22.493' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='14.0462' y1='22.493' x2='14.0462' y2='24.398' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='14.0462' y1='24.398' x2='13.6652' y2='24.398' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='13.6652' y1='24.398' x2='13.6652' y2='22.112' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='37.2872' y1='22.112' x2='39.5732' y2='22.112' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='39.5732' y1='22.112' x2='39.5732' y2='24.398' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='39.5732' y1='24.398' x2='39.1922' y2='24.398' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='39.1922' y1='24.398' x2='39.1922' y2='22.493' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='39.1922' y1='22.493' x2='37.6682' y2='22.493' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='37.6682' y1='22.493' x2='37.6682' y2='24.398' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='37.6682' y1='24.398' x2='37.2872' y2='24.398' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='37.2872' y1='24.398' x2='37.2872' y2='22.112' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='7.5692' y1='20.334' x2='7.5692' y2='25.668' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='7.5692' y1='25.668' x2='7.3152' y2='25.668' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='45.6692' y1='20.334' x2='45.6692' y2='25.668' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<line class='other' x1='45.6692' y1='25.668' x2='7.5692' y2='25.668' stroke='#f0f0f0' stroke-width='0.1524' stroke-linecap='round'/>
+<circle class='other' cx='50.1396' cy='8.142' r='1.651' stroke='#f0f0f0' stroke-width='0.1524' fill='none' />
+<circle class='other' cx='3.0988' cy='8.142' r='1.651' stroke='#f0f0f0' stroke-width='0.1524' fill='none' />
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#f0f0f0' font-size='1.651' x='7.9502' y='7.507' text-anchor='start'>1</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#f0f0f0' font-size='1.651' x='44.5262' y='7.507' text-anchor='start'>13</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#f0f0f0' font-size='1.651' x='6.8072' y='10.174' text-anchor='start'>14</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#f0f0f0' font-size='1.651' x='44.2722' y='10.047' text-anchor='start'>25</text>
+<g transform='translate(1.9812,15)'><g transform='rotate(270)'>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#f0f0f0' font-size='1.651' x='0' y='0' text-anchor='start'>2,54</text>
+</g></g>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#f0f0f0' font-size='1.651' x='7.9502' y='17.921' text-anchor='start'>M25</text>
+<rect class='other' x='47.3202' y='16.397' width='0.254' height='2.413' stroke='none' stroke-width='0' fill='#f0f0f0' stroke-linecap='round'/>
+<rect class='other' x='5.6642' y='16.397' width='0.254' height='2.413' stroke='none' stroke-width='0' fill='#f0f0f0' stroke-linecap='round'/>
+<rect class='other' x='49.6824' y='14.111' width='1.016' height='1.651' stroke='none' stroke-width='0' fill='#f0f0f0' stroke-linecap='round'/>
+<rect class='other' x='2.54' y='14.111' width='1.016' height='1.651' stroke='none' stroke-width='0' fill='#f0f0f0' stroke-linecap='round'/>
+<rect class='other' x='0.0762' y='19.318' width='53.086' height='0.508' stroke='none' stroke-width='0' fill='#f0f0f0' stroke-linecap='round'/>
+<rect class='other' x='6.2992' y='15' width='40.64' height='0.762' stroke='none' stroke-width='0' fill='#f0f0f0' stroke-linecap='round'/>
+<rect class='other' x='9.652' y='7.761' width='0.8128' height='7.239' stroke='none' stroke-width='0' fill='#f0f0f0' stroke-linecap='round'/>
+<rect class='other' x='11.0236' y='10.301' width='0.8128' height='4.699' stroke='none' stroke-width='0' fill='#f0f0f0' stroke-linecap='round'/>
+<rect class='other' x='12.4206' y='7.761' width='0.8128' height='7.239' stroke='none' stroke-width='0' fill='#f0f0f0' stroke-linecap='round'/>
+<rect class='other' x='13.7922' y='10.301' width='0.8128' height='4.699' stroke='none' stroke-width='0' fill='#f0f0f0' stroke-linecap='round'/>
+<rect class='other' x='15.1638' y='7.761' width='0.8128' height='7.239' stroke='none' stroke-width='0' fill='#f0f0f0' stroke-linecap='round'/>
+<rect class='other' x='16.5608' y='10.301' width='0.8128' height='4.699' stroke='none' stroke-width='0' fill='#f0f0f0' stroke-linecap='round'/>
+<rect class='other' x='17.9324' y='7.761' width='0.8128' height='7.239' stroke='none' stroke-width='0' fill='#f0f0f0' stroke-linecap='round'/>
+<rect class='other' x='19.304' y='10.301' width='0.8128' height='4.699' stroke='none' stroke-width='0' fill='#f0f0f0' stroke-linecap='round'/>
+<rect class='other' x='20.701' y='7.761' width='0.8128' height='7.239' stroke='none' stroke-width='0' fill='#f0f0f0' stroke-linecap='round'/>
+<rect class='other' x='22.0726' y='10.301' width='0.8128' height='4.699' stroke='none' stroke-width='0' fill='#f0f0f0' stroke-linecap='round'/>
+<rect class='other' x='23.4442' y='7.761' width='0.8128' height='7.239' stroke='none' stroke-width='0' fill='#f0f0f0' stroke-linecap='round'/>
+<rect class='other' x='24.8412' y='10.301' width='0.8128' height='4.699' stroke='none' stroke-width='0' fill='#f0f0f0' stroke-linecap='round'/>
+<rect class='other' x='26.2128' y='7.761' width='0.8128' height='7.239' stroke='none' stroke-width='0' fill='#f0f0f0' stroke-linecap='round'/>
+<rect class='other' x='27.5844' y='10.301' width='0.8128' height='4.699' stroke='none' stroke-width='0' fill='#f0f0f0' stroke-linecap='round'/>
+<rect class='other' x='28.9814' y='7.761' width='0.8128' height='7.239' stroke='none' stroke-width='0' fill='#f0f0f0' stroke-linecap='round'/>
+<rect class='other' x='30.353' y='10.301' width='0.8128' height='4.699' stroke='none' stroke-width='0' fill='#f0f0f0' stroke-linecap='round'/>
+<rect class='other' x='31.7246' y='7.761' width='0.8128' height='7.239' stroke='none' stroke-width='0' fill='#f0f0f0' stroke-linecap='round'/>
+<rect class='other' x='33.1216' y='10.301' width='0.8128' height='4.699' stroke='none' stroke-width='0' fill='#f0f0f0' stroke-linecap='round'/>
+<rect class='other' x='34.4932' y='7.761' width='0.8128' height='7.239' stroke='none' stroke-width='0' fill='#f0f0f0' stroke-linecap='round'/>
+<rect class='other' x='35.8648' y='10.301' width='0.8128' height='4.699' stroke='none' stroke-width='0' fill='#f0f0f0' stroke-linecap='round'/>
+<rect class='other' x='37.2618' y='7.761' width='0.8128' height='7.239' stroke='none' stroke-width='0' fill='#f0f0f0' stroke-linecap='round'/>
+<rect class='other' x='38.6334' y='10.301' width='0.8128' height='4.699' stroke='none' stroke-width='0' fill='#f0f0f0' stroke-linecap='round'/>
+<rect class='other' x='40.005' y='7.761' width='0.8128' height='7.239' stroke='none' stroke-width='0' fill='#f0f0f0' stroke-linecap='round'/>
+<rect class='other' x='41.402' y='10.301' width='0.8128' height='4.699' stroke='none' stroke-width='0' fill='#f0f0f0' stroke-linecap='round'/>
+<rect class='other' x='42.7736' y='7.761' width='0.8128' height='7.239' stroke='none' stroke-width='0' fill='#f0f0f0' stroke-linecap='round'/>
+</g>
+</svg>

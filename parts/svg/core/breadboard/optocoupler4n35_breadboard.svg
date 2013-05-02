@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.2" baseProfile="tiny" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+	 x="0px" y="0px" width="0.30in" height="0.33in" viewBox="0 0 30 33" xml:space="preserve">
+
+<rect id="connector0pin" x="3.5" y="28.66" fill="#8C8C8C" width="3" height="4.34"/>
+<rect id="connector1pin" x="13.5" y="28.66" fill="#8C8C8C" width="3" height="4.34"/>
+<rect id="connector2pin" x="23.5" y="28.66" fill="#8C8C8C" width="3" height="4.34"/>
+<rect id="connector3pin" x="23.5" y="0" fill="#8C8C8C" width="3" height="4.34"/>
+<rect id="connector4pin" x="13.5" y="0" fill="#8C8C8C" width="3" height="4.34"/>
+<rect id="connector5pin" x="3.5" y="0" fill="#8C8C8C" width="3" height="4.34"/>
+<rect id="connector0terminal" x="3.5" y="30" fill="#8C8C8C" width="3" height="3"/>
+<rect id="connector1terminal" x="13.5" y="30" fill="#8C8C8C" width="3" height="3"/>
+<rect id="connector2terminal" x="23.5" y="30" fill="#8C8C8C" width="3" height="3"/>
+<rect id="connector3terminal" x="23.5" y="0" fill="#8C8C8C" width="3" height="3"/>
+<rect id="connector4terminal" x="13.5" y="0" fill="#8C8C8C" width="3" height="3"/>
+<rect id="connector5terminal" x="3.5" y="0" fill="#8C8C8C" width="3" height="3"/>
+<g id="breadboard">
+	<g>
+		<rect x="3.5" y="26.319" fill="#8C8C8C" width="3" height="6.681"/>
+	</g>
+	<g>
+		<rect x="13.5" y="26.319" fill="#8C8C8C" width="3" height="6.681"/>
+	</g>
+	<g>
+		<rect x="23.5" y="26.319" fill="#8C8C8C" width="3" height="6.681"/>
+	</g>
+	<g>
+		<rect x="3.5" fill="#8C8C8C" width="3" height="6.68"/>
+	</g>
+	<g>
+		<rect x="13.5" fill="#8C8C8C" width="3" height="6.68"/>
+	</g>
+	<g>
+		<rect x="23.5" fill="#8C8C8C" width="3" height="6.68"/>
+	</g>
+	<polygon fill="#302f2a" points="0,3 30,3 29.25,11.5 0,11.5 	"/>
+	<polygon fill="#302f2a" points="0,21.5 29.25,21.5 30,30 0,30 	"/>
+	<polygon fill="#8C8C8C" points="8.5,4.34 8.5,3.26 6.5,2.34 3.5,2.34 3.5,4.34 	"/>
+	<polygon fill="#8C8C8C" points="18.5,4.34 18.5,3.26 16.5,2.34 13.5,2.34 11.5,3.26 11.5,4.34 	"/>
+	<polygon fill="#8C8C8C" points="26.5,4.34 26.5,2.34 23.5,2.34 21.5,3.26 21.5,4.34 	"/>
+	<polygon fill="#8C8C8C" points="3.5,28.66 3.5,30.66 6.5,30.66 8.5,29.74 8.5,28.66 	"/>
+	<polygon fill="#8C8C8C" points="21.5,28.66 21.5,29.74 23.5,30.66 26.5,30.66 26.5,28.66 	"/>
+	<polygon fill="#8C8C8C" points="11.5,28.66 11.5,29.74 13.5,30.66 16.5,30.66 18.5,29.74 18.5,28.66 	"/>
+	<polygon fill="#302f27" points="30,3 29.25,5.46 28.438,5.46 28.438,27.53 29.25,27.54 30,30 	"/>
+	<polygon fill="#35342e" points="0,3 0.75,5.46 0.75,11.5 5,11.5 5,21.5 0.75,21.5 0.75,27.54 0,30 	"/>
+	<polygon fill="#201f1b" points="0.75,21.55 5,21.55 5,16.49 0.56,16.49 0.56,19.42 	"/>
+	<polygon fill="#201f1b" points="5,11.5 0.75,11.46 0.56,13.58 0.56,16.49 5,16.49 	"/>
+	<path fill="#201f1b" d="M0.75,5.46v5.99c2.38,0.45,4.19,2.529,4.19,5.04c0,2.51-1.8,4.6-4.19,5.05v5.99h28.5V5.46H0.75z"/>
+	<path fill="#8C8C8C" d="M0.56,13.58v5.83c1.47-0.17,2.62-1.4,2.62-2.92C3.18,14.97,2.04,13.75,0.56,13.58z"/>
+	<circle fill="#8C8C8C" cx="6.5" cy="23.47" r="2.06"/>
+	<g>
+		<path fill="#8C8C8C" d="M8.465,12.619H9.34v0.875H8.465v0.875h-1.75v-0.875H4.09v-1.75h0.875v-0.875H5.84V9.994h2.625V12.619z
+			 M6.715,12.619v-0.875H5.84v0.875H6.715z"/>
+		<path fill="#8C8C8C" d="M10.215,14.369V9.994h1.75v0.875h0.875v0.875h0.875v-1.75h1.75v4.375h-1.75v-0.875H12.84v-0.875h-0.875
+			v1.75H10.215z"/>
+		<path fill="#8C8C8C" d="M20.714,10.869h0.875v0.875h-0.875v0.875h0.875v0.875h-0.875v0.875H16.34v-0.875h3.5v-0.875h-2.625v-0.875
+			h2.625v-0.875h-3.5V9.994h4.375L20.714,10.869L20.714,10.869z"/>
+		<path fill="#8C8C8C" d="M22.464,14.369v-0.875h3.5v-0.875h-3.5V9.994h5.25v0.875h-3.5v0.875h2.625v0.875h0.875v0.875h-0.875v0.875
+			H22.464z"/>
+	</g>
+</g>
+</svg>

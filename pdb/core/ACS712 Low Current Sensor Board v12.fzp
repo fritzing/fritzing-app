@@ -1,0 +1,139 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module fritzingVersion='0.5.2b.02.18.4756' moduleId='ACS712 Low Current Sensor Board v12'>
+<version>4</version>
+<date>2011-07-21</date>
+<author>jonathan</author>
+<description>&lt;p&gt;
+	&lt;span style=&quot;font-weight: bold;&quot;&gt;Description:&lt;/span&gt; This current sensor gives precise current measurement for both AC and DC signals. These are good sensors for metering and measuring overall power consumption of systems. The ACS712 current sensor measures up to 5A of DC or AC current. We added an opamp gain stage for more sensitive current measurements. By adjusting the gain (from 4.27 to 47) you can measure very small currents.&lt;br /&gt;
+	&lt;br /&gt;
+	The ACS712 Low Current Sensor Breakout outputs an analog voltage that varies linearly with sensed current. To calibrate, first set the output offset to the desired level (with zero current on the sense lines, read output with a DVM). Then with a known current input (a 100mA limited supply works well for this), set the output deflection with the gain pot. Sensitivity is then calculated as (Vref - Vdeflect)/(current input).&lt;br /&gt;
+	&lt;br /&gt;
+	The bandwidth on the ASC712 Low Current Sensor Breakout has been set to 34Hz to reduce noise when using at high gains. The full 80KHz bandwidth that the sensor is capable of can be recovered by removing C1. See schematic for more details.&lt;br /&gt;
+	&lt;br /&gt;
+	&lt;span style=&quot;font-weight: bold;&quot;&gt;Documents:&lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;
+		&lt;a classname=&quot;&quot; href=&quot;http://www.sparkfun.com/datasheets/BreakoutBoards/0712.pdf&quot; name=&quot;&quot; target=&quot;_blank&quot;&gt;ACS712 Datasheet&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a classname=&quot;&quot; href=&quot;http://www.sparkfun.com/datasheets/Sensors/ACS712%20Low%20Current%20Sensor%20Board%20v12.pdf&quot; name=&quot;&quot; target=&quot;_blank&quot;&gt;Schematic&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a href=&quot;http://wiring.org.co/learning/basics/currentacs712.html&quot; target=&quot;_blank&quot;&gt;Wiring Example&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+<title>ACS712 Low Current Sensor Board v12</title>
+<url>http://www.sparkfun.com/products/8883</url>
+<tags>
+<tag>AC</tag>
+<tag>DC</tag>
+<tag>current</tag>
+<tag>sensor</tag>
+</tags>
+<properties>
+<property name='family'>Current Sensor</property>
+</properties>
+<views>
+<breadboardView>
+<layers image='breadboard/ACS712 Low Current Sensor Board v12_breadboard.svg'>
+<layer layerId='breadboard'/>
+</layers>
+</breadboardView>
+<schematicView>
+<layers image='schematic/ACS712 Low Current Sensor Board v12_schematic.svg'>
+<layer layerId='schematic'/>
+</layers>
+</schematicView>
+<pcbView>
+<layers image='pcb/ACS712 Low Current Sensor Board v12_pcb.svg'>
+<layer layerId='copper1'/>
+<layer layerId='silkscreen'/>
+<layer layerId='copper0'/>
+</layers>
+</pcbView>
+<iconView>
+<layers image='breadboard/ACS712 Low Current Sensor Board v12_breadboard.svg'>
+<layer layerId='icon'/>
+</layers>
+</iconView>
+</views>
+<connectors>
+<connector id='connector10' type='male' name='IP+'>
+<description>IP+</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector10pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector10pin' terminalId='connector10terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector10pad'/><p layer='copper1' svgId='connector10pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector11' type='male' name='IP-'>
+<description>IP-</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector11pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector11pin' terminalId='connector11terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector11pad'/><p layer='copper1' svgId='connector11pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector12' type='male' name='5V'>
+<description>5V</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector12pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector12pin' terminalId='connector12terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector12pad'/><p layer='copper1' svgId='connector12pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector13' type='male' name='VO'>
+<description>VO</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector13pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector13pin' terminalId='connector13terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector13pad'/><p layer='copper1' svgId='connector13pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector14' type='male' name='GND'>
+<description>GND</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector14pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector14pin' terminalId='connector14terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector14pad'/><p layer='copper1' svgId='connector14pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector15' type='male' name='IP+'>
+<description>IP+</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector15pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector15pin' terminalId='connector15terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector15pad'/><p layer='copper1' svgId='connector15pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector16' type='male' name='IP-'>
+<description>IP-</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector16pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector16pin' terminalId='connector16terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector16pad'/><p layer='copper1' svgId='connector16pad'/></pcbView>
+</views>
+</connector>
+</connectors>
+<buses>
+<bus id='ip+'>
+<nodeMember connectorId='connector10'/>
+<nodeMember connectorId='connector15'/>
+</bus>
+<bus id='ip-'>
+<nodeMember connectorId='connector11'/>
+<nodeMember connectorId='connector16'/>
+</bus>
+</buses>
+</module>

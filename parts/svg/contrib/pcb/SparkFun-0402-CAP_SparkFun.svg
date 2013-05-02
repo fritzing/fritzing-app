@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" x="0in" y="0in" width="0.1158in" height="0.038in" viewBox="0 0 1158 380" >
+<title>SparkFun.mod</title>
+<desc>Kicad module 'SparkFun-0402-CAP' from file 'SparkFun.mod' converted by Fritzing</desc>
+<metadata xmlns:fz='http://fritzing.org/kicadmetadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+<rdf:RDF><rdf:Description rdf:about=''>
+<fz:attr name='kicad filename'>SparkFun.mod</fz:attr>
+<fz:attr name='kicad module'>SparkFun-0402-CAP</fz:attr>
+<fz:attr name='fritzing version'>0.4.1b.07.04.4318</fz:attr>
+<fz:attr name='conversion date'>17/07/2010 17:15:02</fz:attr>
+<fz:attr name='dist-license'>GPL</fz:attr>
+<fz:attr name='use-license'>unlimited</fz:attr>
+<fz:attr name='author'>KICAD project</fz:attr>
+<fz:attr name='license-url'>http://www.gnu.org/licenses/gpl.html</fz:attr>
+<fz:comment>CAPACITOR</fz:comment>
+<fz:attr name='keyword'>CAPACITOR</fz:attr>
+</rdf:Description></rdf:RDF></metadata><g id="copper1">
+ <rect width="275" x="186.5" y="13" fill="#ffbf00" connectorname="1" height="354" id="connector0pad" stroke-width="0"/>
+ <rect width="275" x="696.5" y="13" fill="#ffbf00" connectorname="2" height="354" id="connector1pad" stroke-width="0"/>
+</g>
+<g id="silkscreen">
+ <line fill="none" stroke="white" y1="310" x1="361" y2="310" stroke-width="26" x2="479"/>
+ <line fill="none" stroke="white" y1="310" x1="479" y2="74" stroke-width="26" x2="479"/>
+ <line fill="none" stroke="white" y1="74" x1="361" y2="74" stroke-width="26" x2="479"/>
+ <line fill="none" stroke="white" y1="310" x1="361" y2="74" stroke-width="26" x2="361"/>
+ <line fill="none" stroke="white" y1="310" x1="680" y2="310" stroke-width="26" x2="799"/>
+ <line fill="none" stroke="white" y1="310" x1="799" y2="74" stroke-width="26" x2="799"/>
+ <line fill="none" stroke="white" y1="74" x1="680" y2="74" stroke-width="26" x2="799"/>
+ <line fill="none" stroke="white" y1="310" x1="680" y2="74" stroke-width="26" x2="680"/>
+ <line fill="none" stroke="white" y1="308" x1="501" y2="308" stroke-width="26" x2="657"/>
+ <line fill="none" stroke="white" y1="308" x1="657" y2="72" stroke-width="26" x2="657"/>
+ <line fill="none" stroke="white" y1="72" x1="501" y2="72" stroke-width="26" x2="657"/>
+ <line fill="none" stroke="white" y1="308" x1="501" y2="72" stroke-width="26" x2="501"/>
+ <line fill="none" stroke="white" y1="102" x1="483" y2="102" stroke-width="60" x2="675"/>
+ <line fill="none" stroke="white" y1="278" x1="675" y2="278" stroke-width="60" x2="483"/>
+ <line fill="none" stroke="white" y1="0" x1="0" y2="0" stroke-width="20" x2="1158"/>
+ <line fill="none" stroke="white" y1="0" x1="1158" y2="380" stroke-width="20" x2="1158"/>
+ <line fill="none" stroke="white" y1="380" x1="1158" y2="380" stroke-width="20" x2="0"/>
+ <line fill="none" stroke="white" y1="380" x1="0" y2="0" stroke-width="20" x2="0"/>
+ <line fill="none" stroke="white" y1="178" x1="579" y2="202" stroke-width="160" x2="579"/>
+</g>
+</svg>

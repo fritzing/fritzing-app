@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- Created with Fritzing (http://www.fritzing.org/) -->
+<svg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' version='1.2' baseProfile='tiny' x='0in' y='0in' width='0.174in' height='0.148in' viewBox='0 0 4.4196 3.7592' >
+<g id='copper1'>
+<circle id='connector0pad' connectorname='1' cx='0.9398' cy='1.8796' r='0.7493' stroke='#F7BD13' stroke-width='0.381' fill='none' />
+<path stroke='none' stroke-width='0' d='m0.9398,0a0.9398,0.9398 0 0 1 0.9398,0.9398l0,1.8796a0.9398,0.9398 0 0 1 -0.9398,0.9398l-0,0a0.9398,0.9398 0 0 1 -0.9398,-0.9398l0,-1.8796a0.9398,0.9398 0 0 1 0.9398,-0.9398l0,0zM0.381,1.8796a0.5588,0.5588 0 1 0 1.1176,0 0.5588,0.5588 0 1 0 -1.1176,0z
+' fill='#F7BD13' />
+<circle id='connector1pad' connectorname='2' cx='3.4798' cy='1.8796' r='0.7493' stroke='#F7BD13' stroke-width='0.381' fill='none' />
+<path stroke='none' stroke-width='0' d='m3.4798,0a0.9398,0.9398 0 0 1 0.9398,0.9398l0,1.8796a0.9398,0.9398 0 0 1 -0.9398,0.9398l-0,0a0.9398,0.9398 0 0 1 -0.9398,-0.9398l0,-1.8796a0.9398,0.9398 0 0 1 0.9398,-0.9398l0,0zM2.921,1.8796a0.5588,0.5588 0 1 0 1.1176,0 0.5588,0.5588 0 1 0 -1.1176,0z
+' fill='#F7BD13' />
+<g id='copper0'>
+<circle id='connector0pad' connectorname='1' cx='0.9398' cy='1.8796' r='0.7493' stroke='#F7BD13' stroke-width='0.381' fill='none' />
+<path stroke='none' stroke-width='0' d='m0.9398,0a0.9398,0.9398 0 0 1 0.9398,0.9398l0,1.8796a0.9398,0.9398 0 0 1 -0.9398,0.9398l-0,0a0.9398,0.9398 0 0 1 -0.9398,-0.9398l0,-1.8796a0.9398,0.9398 0 0 1 0.9398,-0.9398l0,0zM0.381,1.8796a0.5588,0.5588 0 1 0 1.1176,0 0.5588,0.5588 0 1 0 -1.1176,0z
+' fill='#F7BD13' />
+<circle id='connector1pad' connectorname='2' cx='3.4798' cy='1.8796' r='0.7493' stroke='#F7BD13' stroke-width='0.381' fill='none' />
+<path stroke='none' stroke-width='0' d='m3.4798,0a0.9398,0.9398 0 0 1 0.9398,0.9398l0,1.8796a0.9398,0.9398 0 0 1 -0.9398,0.9398l-0,0a0.9398,0.9398 0 0 1 -0.9398,-0.9398l0,-1.8796a0.9398,0.9398 0 0 1 0.9398,-0.9398l0,0zM2.921,1.8796a0.5588,0.5588 0 1 0 1.1176,0 0.5588,0.5588 0 1 0 -1.1176,0z
+' fill='#F7BD13' />
+</g>
+</g>
+<g id='silkscreen'>
+</g>
+</svg>

@@ -1,0 +1,6 @@
+QLALR
+
+Homepage: http://labs.trolltech.com/page/Projects/Compilers/QLALR
+License : GPL
+
+To build run qmake and then make

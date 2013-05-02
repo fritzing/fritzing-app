@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module moduleId="LeftNetLabelModuleID" >
+ <version>4</version>
+ <author>Jonathan Cohen</author>
+ <title>Net Label</title>
+ <date>2012-10-02</date>
+ <label></label>
+ <tags>
+   <tag>net label</tag>
+   <tag>symbol</tag>
+   <tag>fritzing core</tag>
+ </tags>
+ <properties>
+   <property name="family">obsolete net label</property>
+   <property name="label"></property>
+ </properties>
+ <description>A net label for schematic view will be connected to any other net label with the same name.</description>
+ <views>
+  <defaultUnits>cmil</defaultUnits>
+  <iconView>
+   <layers image="schematic/netlabel.svg" >
+    <layer layerId="icon" />
+   </layers>
+  </iconView>
+  <breadboardView>
+   <layers image="schematic/netlabel.svg" >
+    <layer layerId="schematic" />
+   </layers>
+  </breadboardView>
+   <schematicView flipvertical="false">
+   <layers image="schematic/netlabel.svg" >
+     <layer layerId="schematic" />
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="schematic/netlabel.svg" >
+    <layer layerId="schematic" />
+   </layers>
+  </pcbView>
+ </views>
+ <connectors>
+   <connector type="male" id="connector0" name="pin one" >
+     <description></description>
+     <views>
+       <breadboardView>
+         <p svgId="connector0pin" layer="schematic" />
+       </breadboardView>
+       <schematicView>
+         <p svgId="connector0pin" layer="schematic" terminalId="connector0terminal" />
+       </schematicView>
+       <pcbView>
+         <p svgId="connector0pin" layer="schematic" />
+       </pcbView>
+     </views>
+   </connector>
+ </connectors>
+ <buses>
+   <bus id="label" >
+     <nodeMember connectorId="connector0" />
+   </bus>
+ </buses>
+</module>

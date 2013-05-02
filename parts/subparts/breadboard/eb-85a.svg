@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Ebene_1" xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="25.512px"
+	 height="17.218px" viewBox="0 0 25.512 17.218" enable-background="new 0 0 25.512 17.218" xml:space="preserve">
+<g>
+	<g>
+		<g>
+			<g id="silkscreen">
+				<rect x="0" y="0" fill="#E6E6E6" width="25.512" height="12.047"/>
+			</g>
+			<g id="silkscreen_1_">
+				<rect x="0.255" y="12.047" fill="#808080" width="24.573" height="4.318"/>
+			</g>
+			<path fill="#CCCCCC" d="M25.51,12.047H0v5.168h25.512v-5.168H25.51z M1.899,16.366V15.27H0.851v-0.977H1.9v-1.397h21.678v1.397
+				h1.084v0.977h-1.084v1.096H1.899z"/>
+			<g>
+				<g>
+					<rect x="21.459" y="14.333" fill="#E6E6E6" width="0.721" height="0.72"/>
+					<rect x="18.87" y="14.333" fill="#E6E6E6" width="0.721" height="0.72"/>
+					<rect x="16.28" y="14.333" fill="#E6E6E6" width="0.722" height="0.72"/>
+					<rect x="13.69" y="14.333" fill="#E6E6E6" width="0.722" height="0.72"/>
+					<rect x="11.101" y="14.333" fill="#E6E6E6" width="0.72" height="0.72"/>
+					<rect x="8.511" y="14.333" fill="#E6E6E6" width="0.72" height="0.72"/>
+					<rect x="5.921" y="14.333" fill="#E6E6E6" width="0.72" height="0.72"/>
+					<rect x="3.331" y="14.333" fill="#E6E6E6" width="0.72" height="0.72"/>
+				</g>
+				<g>
+					<rect x="21.459" y="12.897" fill="#999999" width="0.721" height="1.436"/>
+					<rect x="18.87" y="12.897" fill="#999999" width="0.721" height="1.436"/>
+					<rect x="16.28" y="12.897" fill="#999999" width="0.722" height="1.436"/>
+					<rect x="13.69" y="12.897" fill="#999999" width="0.722" height="1.436"/>
+					<rect x="11.101" y="12.897" fill="#999999" width="0.72" height="1.436"/>
+					<rect x="8.511" y="12.897" fill="#999999" width="0.72" height="1.436"/>
+					<rect x="5.921" y="12.897" fill="#999999" width="0.72" height="1.436"/>
+					<rect x="3.331" y="12.897" fill="#999999" width="0.72" height="1.436"/>
+				</g>
+			</g>
+		</g>
+	</g>
+	<g>
+		<rect x="0" y="10.052" fill="#999999" width="0.851" height="1.994"/>
+		<rect x="0" y="11.474" fill="#808080" width="0.851" height="1.994"/>
+	</g>
+	<g>
+		<rect x="24.661" y="10.052" fill="#999999" width="0.85" height="1.994"/>
+		<rect x="24.661" y="11.474" fill="#808080" width="0.85" height="1.994"/>
+	</g>
+	<rect x="0" y="0" opacity="0.3" fill="#FFFFFF" enable-background="new    " width="0.255" height="10.053"/>
+	<rect x="0.851" y="10.052" opacity="0.3" fill="#FFFFFF" enable-background="new    " width="0.255" height="1.994"/>
+	<rect x="1.38" y="1.866" opacity="0.3" fill="#FFFFFF" enable-background="new    " width="0.255" height="10.182"/>
+	<rect x="0.595" y="14.294" opacity="0.3" fill="#FFFFFF" enable-background="new    " width="0.255" height="0.977"/>
+	<rect x="24.661" y="14.294" opacity="0.3" fill="#FFFFFF" enable-background="new    " width="0.256" height="0.977"/>
+	<rect x="1.635" y="12.897" opacity="0.3" fill="#FFFFFF" enable-background="new    " width="0.255" height="1.396"/>
+	<rect x="23.567" y="12.641" opacity="0.3" fill="#FFFFFF" enable-background="new    " width="0.257" height="1.652"/>
+	<rect x="0.256" y="9.797" opacity="0.3" fill="#FFFFFF" enable-background="new    " width="0.851" height="0.256"/>
+	<rect x="1.107" y="11.791" opacity="0.3" fill="#FFFFFF" enable-background="new    " width="0.273" height="0.256"/>
+	<rect x="0.595" y="14.039" opacity="0.3" fill="#FFFFFF" enable-background="new    " width="1.04" height="0.256"/>
+	<rect x="23.823" y="14.039" opacity="0.3" fill="#FFFFFF" enable-background="new    " width="1.094" height="0.256"/>
+	<rect x="1.891" y="16.366" opacity="0.3" fill="#FFFFFF" enable-background="new    " width="21.678" height="0.256"/>
+	<rect x="1.635" y="12.641" opacity="0.3" fill="#FFFFFF" enable-background="new    " width="21.934" height="0.256"/>
+	<polygon opacity="0.3" fill="#FFFFFF" enable-background="new    " points="25.512,0 25.256,0.255 0.256,0.255 0.256,0 	"/>
+	<polygon opacity="0.3" fill="#FFFFFF" enable-background="new    " points="24.081,1.61 23.825,1.867 1.38,1.867 1.38,1.61 	"/>
+	<polygon opacity="0.1" enable-background="new    " points="25.512,10.052 25.256,10.052 25.256,0.255 25.512,0 	"/>
+	<polygon opacity="0.1" enable-background="new    " points="24.079,12.047 23.823,12.047 23.823,1.867 24.079,1.61 	"/>
+	<rect x="24.401" y="10.052" opacity="0.1" enable-background="new    " width="0.261" height="1.994"/>
+	<rect x="24.401" y="9.794" opacity="0.1" enable-background="new    " width="0.855" height="0.259"/>
+	<rect x="25.252" y="13.471" opacity="0.1" enable-background="new    " width="0.26" height="3.746"/>
+	<rect x="0.002" y="16.955" opacity="0.1" enable-background="new    " width="25.252" height="0.259"/>
+	<rect x="1.635" y="1.866" opacity="0.42" fill="#CCCCCC" enable-background="new    " width="22.188" height="10.182"/>
+	<rect x="0.851" y="14.294" fill="#666666" width="1.049" height="0.977"/>
+	<rect x="23.557" y="14.294" fill="#666666" width="1.104" height="0.977"/>
+</g>
+<g opacity="0.3">
+	<g>
+		<rect x="21.46" y="12.897" fill="#FFFFFF" width="0.256" height="1.46"/>
+	</g>
+	<g>
+		<rect x="18.871" y="12.897" fill="#FFFFFF" width="0.256" height="1.46"/>
+	</g>
+	<g>
+		<rect x="16.281" y="12.897" fill="#FFFFFF" width="0.257" height="1.46"/>
+	</g>
+	<g>
+		<rect x="13.69" y="12.897" fill="#FFFFFF" width="0.256" height="1.46"/>
+	</g>
+	<g>
+		<rect x="11.101" y="12.897" fill="#FFFFFF" width="0.256" height="1.46"/>
+	</g>
+	<g>
+		<rect x="8.511" y="12.897" fill="#FFFFFF" width="0.256" height="1.46"/>
+	</g>
+	<g>
+		<rect x="5.921" y="12.897" fill="#FFFFFF" width="0.256" height="1.46"/>
+	</g>
+	<g>
+		<rect x="3.331" y="12.897" fill="#FFFFFF" width="0.255" height="1.46"/>
+	</g>
+</g>
+</svg>

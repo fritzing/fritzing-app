@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" x="0in" y="0in" width="2.104in" height="0.7029in" viewBox="0 0 21040 7029" >
+<title>SparkFun.mod</title>
+<desc>Kicad module 'SparkFun-DIL40' from file 'SparkFun.mod' converted by Fritzing</desc>
+<metadata xmlns:fz='http://fritzing.org/kicadmetadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+<rdf:RDF><rdf:Description rdf:about=''>
+<fz:attr name='kicad filename'>SparkFun.mod</fz:attr>
+<fz:attr name='kicad module'>SparkFun-DIL40</fz:attr>
+<fz:attr name='fritzing version'>0.4.1b.07.04.4318</fz:attr>
+<fz:attr name='conversion date'>17/07/2010 17:15:28</fz:attr>
+<fz:attr name='dist-license'>GPL</fz:attr>
+<fz:attr name='use-license'>unlimited</fz:attr>
+<fz:attr name='author'>KICAD project</fz:attr>
+<fz:attr name='license-url'>http://www.gnu.org/licenses/gpl.html</fz:attr>
+<fz:comment>DUAL IN LINE PACKAGE: 40-PIN PDIP</fz:comment>
+<fz:attr name='keyword'>DUAL</fz:attr>
+<fz:attr name='keyword'>IN</fz:attr>
+<fz:attr name='keyword'>LINE</fz:attr>
+<fz:attr name='keyword'>PACKAGE:</fz:attr>
+<fz:attr name='keyword'>40-PIN</fz:attr>
+<fz:attr name='keyword'>PDIP</fz:attr>
+</rdf:Description></rdf:RDF></metadata><g id="copper0">
+ <g id="copper1">
+  <g connectorname="1" id="connector0pin">
+   <circle fill="none" cx="1250" cy="6514.5" stroke="#ff9400" r="178.5" stroke-width="157"/>
+   <line fill="none" stroke="#ff9400" y1="6257" x1="1071.5" y2="6772" stroke-width="157" x2="1071.5"/>
+   <line fill="none" stroke="#ff9400" y1="6257" x1="1428.5" y2="6772" stroke-width="157" x2="1428.5"/>
+   <path fill="#ff9400" stroke-width="0" d="M993,6257a257,257,0,0,1,514,0"/>
+   <path fill="#ff9400" stroke-width="0" d="M1507,6772a257,257,0,1,1,-514,0"/>
+  </g>
+  <g connectorname="2" id="connector1pin">
+   <circle fill="none" cx="2250" cy="6514.5" stroke="#ff9400" r="178.5" stroke-width="157"/>
+   <line fill="none" stroke="#ff9400" y1="6257" x1="2071.5" y2="6772" stroke-width="157" x2="2071.5"/>
+   <line fill="none" stroke="#ff9400" y1="6257" x1="2428.5" y2="6772" stroke-width="157" x2="2428.5"/>
+   <path fill="#ff9400" stroke-width="0" d="M1993,6257a257,257,0,0,1,514,0"/>
+   <path fill="#ff9400" stroke-width="0" d="M2507,6772a257,257,0,1,1,-514,0"/>
+  </g>
+  <g connectorname="3" id="connector2pin">
+   <circle fill="none" cx="3250" cy="6514.5" stroke="#ff9400" r="178.5" stroke-width="157"/>
+   <line fill="none" stroke="#ff9400" y1="6257" x1="3071.5" y2="6772" stroke-width="157" x2="3071.5"/>
+   <line fill="none" stroke="#ff9400" y1="6257" x1="3428.5" y2="6772" stroke-width="157" x2="3428.5"/>
+   <path fill="#ff9400" stroke-width="0" d="M2993,6257a257,257,0,0,1,514,0"/>
+   <path fill="#ff9400" stroke-width="0" d="M3507,6772a257,257,0,1,1,-514,0"/>
+  </g>
+  <g connectorname="4" id="connector3pin">
+   <circle fill="none" cx="4250" cy="6514.5" stroke="#ff9400" r="178.5" stroke-width="157"/>
+   <line fill="none" stroke="#ff9400" y1="6257" x1="4071.5" y2="6772" stroke-width="157" x2="4071.5"/>
+   <line fill="none" stroke="#ff9400" y1="6257" x1="4428.5" y2="6772" stroke-width="157" x2="4428.5"/>
+   <path fill="#ff9400" stroke-width="0" d="M3993,6257a257,257,0,0,1,514,0"/>
+   <path fill="#ff9400" stroke-width="0" d="M4507,6772a257,257,0,1,1,-514,0"/>
+  </g>
+  <g connectorname="5" id="connector4pin">
+   <circle fill="none" cx="5250" cy="6514.5" stroke="#ff9400" r="178.5" stroke-width="157"/>
+   <line fill="none" stroke="#ff9400" y1="6257" x1="5071.5" y2="6772" stroke-width="157" x2="5071.5"/>
+   <line fill="none" stroke="#ff9400" y1="6257" x1="5428.5" y2="6772" stroke-width="157" x2="5428.5"/>
+   <path fill="#ff9400" stroke-width="0" d="M4993,6257a257,257,0,0,1,514,0"/>
+   <path fill="#ff9400" stroke-width="0" d="M5507,6772a257,257,0,1,1,-514,0"/>
+  </g>
+  <g connectorname="6" id="connector5pin">
+   <circle fill="none" cx="6250" cy="6514.5" stroke="#ff9400" r="178.5" stroke-width="157"/>
+   <line fill="none" stroke="#ff9400" y1="6257" x1="6071.5" y2="6772" stroke-width="157" x2="6071.5"/>
+   <line fill="none" stroke="#ff9400" y1="6257" x1="6428.5" y2="6772" stroke-width="157" x2="6428.5"/>
+   <path fill="#ff9400" stroke-width="0" d="M5993,6257a257,257,0,0,1,514,0"/>
+   <path fill="#ff9400" stroke-width="0" d="M6507,6772a257,257,0,1,1,-514,0"/>
+  </g>
+  <g connectorname="7" id="connector6pin">
+   <circle fill="none" cx="7250" cy="6514.5" stroke="#ff9400" r="178.5" stroke-width="157"/>
+   <line fill="none" stroke="#ff9400" y1="6257" x1="7071.5" y2="6772" stroke-width="157" x2="7071.5"/>
+   <line fill="none" stroke="#ff9400" y1="6257" x1="7428.5" y2="6772" stroke-width="157" x2="7428.5"/>
+   <path fill="#ff9400" stroke-width="0" d="M6993,6257a257,257,0,0,1,514,0"/>
+   <path fill="#ff9400" stroke-width="0" d="M7507,6772a257,257,0,1,1,-514,0"/>
+  </g>
+  <g connectorname="8" id="connector7pin">
+   <circle fill="none" cx="8250" cy="6514.5" stroke="#ff9400" r="178.5" stroke-width="157"/>
+   <line fill="none" stroke="#ff9400" y1="6257" x1="8071.5" y2="6772" stroke-width="157" x2="8071.5"/>
+   <line fill="none" stroke="#ff9400" y1="6257" x1="8428.5" y2="6772" stroke-width="157" x2="8428.5"/>
+   <path fill="#ff9400" stroke-width="0" d="M7993,6257a257,257,0,0,1,514,0"/>
+   <path fill="#ff9400" stroke-width="0" d="M8507,6772a257,257,0,1,1,-514,0"/>
+  </g>
+  <g connectorname="9" id="connector8pin">
+   <circle fill="none" cx="9250" cy="6514.5" stroke="#ff9400" r="178.5" stroke-width="157"/>
+   <line fill="none" stroke="#ff9400" y1="6257" x1="9071.5" y2="6772" stroke-width="157" x2="9071.5"/>
+   <line fill="none" stroke="#ff9400" y1="6257" x1="9428.5" y2="6772" stroke-width="157" x2="9428.5"/>
+   <path fill="#ff9400" stroke-width="0" d="M8993,6257a257,257,0,0,1,514,0"/>
+   <path fill="#ff9400" stroke-width="0" d="M9507,6772a257,257,0,1,1,-514,0"/>
+  </g>
+  <g connectorname="10" id="connector9pin">
+   <circle fill="none" cx="10250" cy="6514.5" stroke="#ff9400" r="178.5" stroke-width="157"/>
+   <line fill="none" stroke="#ff9400" y1="6257" x1="10071.5" y2="6772" stroke-width="157" x2="10071.5"/>
+   <line fill="none" stroke="#ff9400" y1="6257" x1="10428.5" y2="6772" stroke-width="157" x2="10428.5"/>
+   <path fill="#ff9400" stroke-width="0" d="M9993,6257a257,257,0,0,1,514,0"/>
+   <path fill="#ff9400" stroke-width="0" d="M10507,6772a257,257,0,1,1,-514,0"/>
+  </g>
+  <g connectorname="11" id="connector10pin">
+   <circle fill="none" cx="11250" cy="6514.5" stroke="#ff9400" r="178.5" stroke-width="157"/>
+   <line fill="none" stroke="#ff9400" y1="6257" x1="11071.5" y2="6772" stroke-width="157" x2="11071.5"/>
+   <line fill="none" stroke="#ff9400" y1="6257" x1="11428.5" y2="6772" stroke-width="157" x2="11428.5"/>
+   <path fill="#ff9400" stroke-width="0" d="M10993,6257a257,257,0,0,1,514,0"/>
+   <path fill="#ff9400" stroke-width="0" d="M11507,6772a257,257,0,1,1,-514,0"/>
+  </g>
+  <g connectorname="12" id="connector11pin">
+   <circle fill="none" cx="12250" cy="6514.5" stroke="#ff9400" r="178.5" stroke-width="157"/>
+   <line fill="none" stroke="#ff9400" y1="6257" x1="12071.5" y2="6772" stroke-width="157" x2="12071.5"/>
+   <line fill="none" stroke="#ff9400" y1="6257" x1="12428.5" y2="6772" stroke-width="157" x2="12428.5"/>
+   <path fill="#ff9400" stroke-width="0" d="M11993,6257a257,257,0,0,1,514,0"/>
+   <path fill="#ff9400" stroke-width="0" d="M12507,6772a257,257,0,1,1,-514,0"/>
+  </g>
+  <g connectorname="13" id="connector12pin">
+   <circle fill="none" cx="13250" cy="6514.5" stroke="#ff9400" r="178.5" stroke-width="157"/>
+   <line fill="none" stroke="#ff9400" y1="6257" x1="13071.5" y2="6772" stroke-width="157" x2="13071.5"/>
+   <line fill="none" stroke="#ff9400" y1="6257" x1="13428.5" y2="6772" stroke-width="157" x2="13428.5"/>
+   <path fill="#ff9400" stroke-width="0" d="M12993,6257a257,257,0,0,1,514,0"/>
+   <path fill="#ff9400" stroke-width="0" d="M13507,6772a257,257,0,1,1,-514,0"/>
+  </g>
+  <g connectorname="14" id="connector13pin">
+   <circle fill="none" cx="14250" cy="6514.5" stroke="#ff9400" r="178.5" stroke-width="157"/>
+   <line fill="none" stroke="#ff9400" y1="6257" x1="14071.5" y2="6772" stroke-width="157" x2="14071.5"/>
+   <line fill="none" stroke="#ff9400" y1="6257" x1="14428.5" y2="6772" stroke-width="157" x2="14428.5"/>
+   <path fill="#ff9400" stroke-width="0" d="M13993,6257a257,257,0,0,1,514,0"/>
+   <path fill="#ff9400" stroke-width="0" d="M14507,6772a257,257,0,1,1,-514,0"/>
+  </g>
+  <g connectorname="15" id="connector14pin">
+   <circle fill="none" cx="15250" cy="6514.5" stroke="#ff9400" r="178.5" stroke-width="157"/>
+   <line fill="none" stroke="#ff9400" y1="6257" x1="15071.5" y2="6772" stroke-width="157" x2="15071.5"/>
+   <line fill="none" stroke="#ff9400" y1="6257" x1="15428.5" y2="6772" stroke-width="157" x2="15428.5"/>
+   <path fill="#ff9400" stroke-width="0" d="M14993,6257a257,257,0,0,1,514,0"/>
+   <path fill="#ff9400" stroke-width="0" d="M15507,6772a257,257,0,1,1,-514,0"/>
+  </g>
+  <g connectorname="16" id="connector15pin">
+   <circle fill="none" cx="16250" cy="6514.5" stroke="#ff9400" r="178.5" stroke-width="157"/>
+   <line fill="none" stroke="#ff9400" y1="6257" x1="16071.5" y2="6772" stroke-width="157" x2="16071.5"/>
+   <line fill="none" stroke="#ff9400" y1="6257" x1="16428.5" y2="6772" stroke-width="157" x2="16428.5"/>
+   <path fill="#ff9400" stroke-width="0" d="M15993,6257a257,257,0,0,1,514,0"/>
+   <path fill="#ff9400" stroke-width="0" d="M16507,6772a257,257,0,1,1,-514,0"/>
+  </g>
+  <g connectorname="17" id="connector16pin">
+   <circle fill="none" cx="17250" cy="6514.5" stroke="#ff9400" r="178.5" stroke-width="157"/>
+   <line fill="none" stroke="#ff9400" y1="6257" x1="17071.5" y2="6772" stroke-width="157" x2="17071.5"/>
+   <line fill="none" stroke="#ff9400" y1="6257" x1="17428.5" y2="6772" stroke-width="157" x2="17428.5"/>
+   <path fill="#ff9400" stroke-width="0" d="M16993,6257a257,257,0,0,1,514,0"/>
+   <path fill="#ff9400" stroke-width="0" d="M17507,6772a257,257,0,1,1,-514,0"/>
+  </g>
+  <g connectorname="18" id="connector17pin">
+   <circle fill="none" cx="18250" cy="6514.5" stroke="#ff9400" r="178.5" stroke-width="157"/>
+   <line fill="none" stroke="#ff9400" y1="6257" x1="18071.5" y2="6772" stroke-width="157" x2="18071.5"/>
+   <line fill="none" stroke="#ff9400" y1="6257" x1="18428.5" y2="6772" stroke-width="157" x2="18428.5"/>
+   <path fill="#ff9400" stroke-width="0" d="M17993,6257a257,257,0,0,1,514,0"/>
+   <path fill="#ff9400" stroke-width="0" d="M18507,6772a257,257,0,1,1,-514,0"/>
+  </g>
+  <g connectorname="19" id="connector18pin">
+   <circle fill="none" cx="19250" cy="6514.5" stroke="#ff9400" r="178.5" stroke-width="157"/>
+   <line fill="none" stroke="#ff9400" y1="6257" x1="19071.5" y2="6772" stroke-width="157" x2="19071.5"/>
+   <line fill="none" stroke="#ff9400" y1="6257" x1="19428.5" y2="6772" stroke-width="157" x2="19428.5"/>
+   <path fill="#ff9400" stroke-width="0" d="M18993,6257a257,257,0,0,1,514,0"/>
+   <path fill="#ff9400" stroke-width="0" d="M19507,6772a257,257,0,1,1,-514,0"/>
+  </g>
+  <g connectorname="20" id="connector19pin">
+   <circle fill="none" cx="20250" cy="6514.5" stroke="#ff9400" r="178.5" stroke-width="157"/>
+   <line fill="none" stroke="#ff9400" y1="6257" x1="20071.5" y2="6772" stroke-width="157" x2="20071.5"/>
+   <line fill="none" stroke="#ff9400" y1="6257" x1="20428.5" y2="6772" stroke-width="157" x2="20428.5"/>
+   <path fill="#ff9400" stroke-width="0" d="M19993,6257a257,257,0,0,1,514,0"/>
+   <path fill="#ff9400" stroke-width="0" d="M20507,6772a257,257,0,1,1,-514,0"/>
+  </g>
+  <g connectorname="21" id="connector20pin">
+   <circle fill="none" cx="20250" cy="514.5" stroke="#ff9400" r="178.5" stroke-width="157"/>
+   <line fill="none" stroke="#ff9400" y1="257" x1="20071.5" y2="772" stroke-width="157" x2="20071.5"/>
+   <line fill="none" stroke="#ff9400" y1="257" x1="20428.5" y2="772" stroke-width="157" x2="20428.5"/>
+   <path fill="#ff9400" stroke-width="0" d="M19993,257a257,257,0,0,1,514,0"/>
+   <path fill="#ff9400" stroke-width="0" d="M20507,772a257,257,0,1,1,-514,0"/>
+  </g>
+  <g connectorname="22" id="connector21pin">
+   <circle fill="none" cx="19250" cy="514.5" stroke="#ff9400" r="178.5" stroke-width="157"/>
+   <line fill="none" stroke="#ff9400" y1="257" x1="19071.5" y2="772" stroke-width="157" x2="19071.5"/>
+   <line fill="none" stroke="#ff9400" y1="257" x1="19428.5" y2="772" stroke-width="157" x2="19428.5"/>
+   <path fill="#ff9400" stroke-width="0" d="M18993,257a257,257,0,0,1,514,0"/>
+   <path fill="#ff9400" stroke-width="0" d="M19507,772a257,257,0,1,1,-514,0"/>
+  </g>
+  <g connectorname="23" id="connector22pin">
+   <circle fill="none" cx="18250" cy="514.5" stroke="#ff9400" r="178.5" stroke-width="157"/>
+   <line fill="none" stroke="#ff9400" y1="257" x1="18071.5" y2="772" stroke-width="157" x2="18071.5"/>
+   <line fill="none" stroke="#ff9400" y1="257" x1="18428.5" y2="772" stroke-width="157" x2="18428.5"/>
+   <path fill="#ff9400" stroke-width="0" d="M17993,257a257,257,0,0,1,514,0"/>
+   <path fill="#ff9400" stroke-width="0" d="M18507,772a257,257,0,1,1,-514,0"/>
+  </g>
+  <g connectorname="24" id="connector23pin">
+   <circle fill="none" cx="17250" cy="514.5" stroke="#ff9400" r="178.5" stroke-width="157"/>
+   <line fill="none" stroke="#ff9400" y1="257" x1="17071.5" y2="772" stroke-width="157" x2="17071.5"/>
+   <line fill="none" stroke="#ff9400" y1="257" x1="17428.5" y2="772" stroke-width="157" x2="17428.5"/>
+   <path fill="#ff9400" stroke-width="0" d="M16993,257a257,257,0,0,1,514,0"/>
+   <path fill="#ff9400" stroke-width="0" d="M17507,772a257,257,0,1,1,-514,0"/>
+  </g>
+  <g connectorname="25" id="connector24pin">
+   <circle fill="none" cx="16250" cy="514.5" stroke="#ff9400" r="178.5" stroke-width="157"/>
+   <line fill="none" stroke="#ff9400" y1="257" x1="16071.5" y2="772" stroke-width="157" x2="16071.5"/>
+   <line fill="none" stroke="#ff9400" y1="257" x1="16428.5" y2="772" stroke-width="157" x2="16428.5"/>
+   <path fill="#ff9400" stroke-width="0" d="M15993,257a257,257,0,0,1,514,0"/>
+   <path fill="#ff9400" stroke-width="0" d="M16507,772a257,257,0,1,1,-514,0"/>
+  </g>
+  <g connectorname="26" id="connector25pin">
+   <circle fill="none" cx="15250" cy="514.5" stroke="#ff9400" r="178.5" stroke-width="157"/>
+   <line fill="none" stroke="#ff9400" y1="257" x1="15071.5" y2="772" stroke-width="157" x2="15071.5"/>
+   <line fill="none" stroke="#ff9400" y1="257" x1="15428.5" y2="772" stroke-width="157" x2="15428.5"/>
+   <path fill="#ff9400" stroke-width="0" d="M14993,257a257,257,0,0,1,514,0"/>
+   <path fill="#ff9400" stroke-width="0" d="M15507,772a257,257,0,1,1,-514,0"/>
+  </g>
+  <g connectorname="27" id="connector26pin">
+   <circle fill="none" cx="14250" cy="514.5" stroke="#ff9400" r="178.5" stroke-width="157"/>
+   <line fill="none" stroke="#ff9400" y1="257" x1="14071.5" y2="772" stroke-width="157" x2="14071.5"/>
+   <line fill="none" stroke="#ff9400" y1="257" x1="14428.5" y2="772" stroke-width="157" x2="14428.5"/>
+   <path fill="#ff9400" stroke-width="0" d="M13993,257a257,257,0,0,1,514,0"/>
+   <path fill="#ff9400" stroke-width="0" d="M14507,772a257,257,0,1,1,-514,0"/>
+  </g>
+  <g connectorname="28" id="connector27pin">
+   <circle fill="none" cx="13250" cy="514.5" stroke="#ff9400" r="178.5" stroke-width="157"/>
+   <line fill="none" stroke="#ff9400" y1="257" x1="13071.5" y2="772" stroke-width="157" x2="13071.5"/>
+   <line fill="none" stroke="#ff9400" y1="257" x1="13428.5" y2="772" stroke-width="157" x2="13428.5"/>
+   <path fill="#ff9400" stroke-width="0" d="M12993,257a257,257,0,0,1,514,0"/>
+   <path fill="#ff9400" stroke-width="0" d="M13507,772a257,257,0,1,1,-514,0"/>
+  </g>
+  <g connectorname="29" id="connector28pin">
+   <circle fill="none" cx="12250" cy="514.5" stroke="#ff9400" r="178.5" stroke-width="157"/>
+   <line fill="none" stroke="#ff9400" y1="257" x1="12071.5" y2="772" stroke-width="157" x2="12071.5"/>
+   <line fill="none" stroke="#ff9400" y1="257" x1="12428.5" y2="772" stroke-width="157" x2="12428.5"/>
+   <path fill="#ff9400" stroke-width="0" d="M11993,257a257,257,0,0,1,514,0"/>
+   <path fill="#ff9400" stroke-width="0" d="M12507,772a257,257,0,1,1,-514,0"/>
+  </g>
+  <g connectorname="30" id="connector29pin">
+   <circle fill="none" cx="11250" cy="514.5" stroke="#ff9400" r="178.5" stroke-width="157"/>
+   <line fill="none" stroke="#ff9400" y1="257" x1="11071.5" y2="772" stroke-width="157" x2="11071.5"/>
+   <line fill="none" stroke="#ff9400" y1="257" x1="11428.5" y2="772" stroke-width="157" x2="11428.5"/>
+   <path fill="#ff9400" stroke-width="0" d="M10993,257a257,257,0,0,1,514,0"/>
+   <path fill="#ff9400" stroke-width="0" d="M11507,772a257,257,0,1,1,-514,0"/>
+  </g>
+  <g connectorname="31" id="connector30pin">
+   <circle fill="none" cx="10250" cy="514.5" stroke="#ff9400" r="178.5" stroke-width="157"/>
+   <line fill="none" stroke="#ff9400" y1="257" x1="10071.5" y2="772" stroke-width="157" x2="10071.5"/>
+   <line fill="none" stroke="#ff9400" y1="257" x1="10428.5" y2="772" stroke-width="157" x2="10428.5"/>
+   <path fill="#ff9400" stroke-width="0" d="M9993,257a257,257,0,0,1,514,0"/>
+   <path fill="#ff9400" stroke-width="0" d="M10507,772a257,257,0,1,1,-514,0"/>
+  </g>
+  <g connectorname="32" id="connector31pin">
+   <circle fill="none" cx="9250" cy="514.5" stroke="#ff9400" r="178.5" stroke-width="157"/>
+   <line fill="none" stroke="#ff9400" y1="257" x1="9071.5" y2="772" stroke-width="157" x2="9071.5"/>
+   <line fill="none" stroke="#ff9400" y1="257" x1="9428.5" y2="772" stroke-width="157" x2="9428.5"/>
+   <path fill="#ff9400" stroke-width="0" d="M8993,257a257,257,0,0,1,514,0"/>
+   <path fill="#ff9400" stroke-width="0" d="M9507,772a257,257,0,1,1,-514,0"/>
+  </g>
+  <g connectorname="33" id="connector32pin">
+   <circle fill="none" cx="8250" cy="514.5" stroke="#ff9400" r="178.5" stroke-width="157"/>
+   <line fill="none" stroke="#ff9400" y1="257" x1="8071.5" y2="772" stroke-width="157" x2="8071.5"/>
+   <line fill="none" stroke="#ff9400" y1="257" x1="8428.5" y2="772" stroke-width="157" x2="8428.5"/>
+   <path fill="#ff9400" stroke-width="0" d="M7993,257a257,257,0,0,1,514,0"/>
+   <path fill="#ff9400" stroke-width="0" d="M8507,772a257,257,0,1,1,-514,0"/>
+  </g>
+  <g connectorname="34" id="connector33pin">
+   <circle fill="none" cx="7250" cy="514.5" stroke="#ff9400" r="178.5" stroke-width="157"/>
+   <line fill="none" stroke="#ff9400" y1="257" x1="7071.5" y2="772" stroke-width="157" x2="7071.5"/>
+   <line fill="none" stroke="#ff9400" y1="257" x1="7428.5" y2="772" stroke-width="157" x2="7428.5"/>
+   <path fill="#ff9400" stroke-width="0" d="M6993,257a257,257,0,0,1,514,0"/>
+   <path fill="#ff9400" stroke-width="0" d="M7507,772a257,257,0,1,1,-514,0"/>
+  </g>
+  <g connectorname="35" id="connector34pin">
+   <circle fill="none" cx="6250" cy="514.5" stroke="#ff9400" r="178.5" stroke-width="157"/>
+   <line fill="none" stroke="#ff9400" y1="257" x1="6071.5" y2="772" stroke-width="157" x2="6071.5"/>
+   <line fill="none" stroke="#ff9400" y1="257" x1="6428.5" y2="772" stroke-width="157" x2="6428.5"/>
+   <path fill="#ff9400" stroke-width="0" d="M5993,257a257,257,0,0,1,514,0"/>
+   <path fill="#ff9400" stroke-width="0" d="M6507,772a257,257,0,1,1,-514,0"/>
+  </g>
+  <g connectorname="36" id="connector35pin">
+   <circle fill="none" cx="5250" cy="514.5" stroke="#ff9400" r="178.5" stroke-width="157"/>
+   <line fill="none" stroke="#ff9400" y1="257" x1="5071.5" y2="772" stroke-width="157" x2="5071.5"/>
+   <line fill="none" stroke="#ff9400" y1="257" x1="5428.5" y2="772" stroke-width="157" x2="5428.5"/>
+   <path fill="#ff9400" stroke-width="0" d="M4993,257a257,257,0,0,1,514,0"/>
+   <path fill="#ff9400" stroke-width="0" d="M5507,772a257,257,0,1,1,-514,0"/>
+  </g>
+  <g connectorname="37" id="connector36pin">
+   <circle fill="none" cx="4250" cy="514.5" stroke="#ff9400" r="178.5" stroke-width="157"/>
+   <line fill="none" stroke="#ff9400" y1="257" x1="4071.5" y2="772" stroke-width="157" x2="4071.5"/>
+   <line fill="none" stroke="#ff9400" y1="257" x1="4428.5" y2="772" stroke-width="157" x2="4428.5"/>
+   <path fill="#ff9400" stroke-width="0" d="M3993,257a257,257,0,0,1,514,0"/>
+   <path fill="#ff9400" stroke-width="0" d="M4507,772a257,257,0,1,1,-514,0"/>
+  </g>
+  <g connectorname="38" id="connector37pin">
+   <circle fill="none" cx="3250" cy="514.5" stroke="#ff9400" r="178.5" stroke-width="157"/>
+   <line fill="none" stroke="#ff9400" y1="257" x1="3071.5" y2="772" stroke-width="157" x2="3071.5"/>
+   <line fill="none" stroke="#ff9400" y1="257" x1="3428.5" y2="772" stroke-width="157" x2="3428.5"/>
+   <path fill="#ff9400" stroke-width="0" d="M2993,257a257,257,0,0,1,514,0"/>
+   <path fill="#ff9400" stroke-width="0" d="M3507,772a257,257,0,1,1,-514,0"/>
+  </g>
+  <g connectorname="39" id="connector38pin">
+   <circle fill="none" cx="2250" cy="514.5" stroke="#ff9400" r="178.5" stroke-width="157"/>
+   <line fill="none" stroke="#ff9400" y1="257" x1="2071.5" y2="772" stroke-width="157" x2="2071.5"/>
+   <line fill="none" stroke="#ff9400" y1="257" x1="2428.5" y2="772" stroke-width="157" x2="2428.5"/>
+   <path fill="#ff9400" stroke-width="0" d="M1993,257a257,257,0,0,1,514,0"/>
+   <path fill="#ff9400" stroke-width="0" d="M2507,772a257,257,0,1,1,-514,0"/>
+  </g>
+  <g connectorname="40" id="connector39pin">
+   <circle fill="none" cx="1250" cy="514.5" stroke="#ff9400" r="178.5" stroke-width="157"/>
+   <line fill="none" stroke="#ff9400" y1="257" x1="1071.5" y2="772" stroke-width="157" x2="1071.5"/>
+   <line fill="none" stroke="#ff9400" y1="257" x1="1428.5" y2="772" stroke-width="157" x2="1428.5"/>
+   <path fill="#ff9400" stroke-width="0" d="M993,257a257,257,0,0,1,514,0"/>
+   <path fill="#ff9400" stroke-width="0" d="M1507,772a257,257,0,1,1,-514,0"/>
+  </g>
+ </g>
+</g>
+<g id="silkscreen">
+ <line fill="none" stroke="white" y1="714.5" x1="21040" y2="6314.5" stroke-width="60" x2="21040"/>
+ <line fill="none" stroke="white" y1="6314.5" x1="460" y2="4014.5" stroke-width="60" x2="460"/>
+ <line fill="none" stroke="white" y1="714.5" x1="460" y2="3014.5" stroke-width="60" x2="460"/>
+ <line fill="none" stroke="white" y1="714.5" x1="460" y2="714.5" stroke-width="60" x2="750"/>
+ <line fill="none" stroke="white" y1="6314.5" x1="460" y2="6314.5" stroke-width="60" x2="750"/>
+ <line fill="none" stroke="white" y1="6314.5" x1="21040" y2="6314.5" stroke-width="60" x2="20750"/>
+ <line fill="none" stroke="white" y1="714.5" x1="21040" y2="714.5" stroke-width="60" x2="20750"/>
+ <path fill="none" stroke="white" stroke-width="30" d="M500,4014.5a500,500,0,1,0,0,-1000"/>
+</g>
+</svg>

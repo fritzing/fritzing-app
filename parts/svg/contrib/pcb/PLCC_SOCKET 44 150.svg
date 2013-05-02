@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?> <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" x="0in" y="0in" width="1.02in" height="1.02in" viewBox="0 0 102000 102000" ><title>PLCC_SOCKET 44 150.fp</title><desc>Geda footprint file 'PLCC_SOCKET 44 150.fp' converted by Fritzing</desc><metadata xmlns:fz='http://fritzing.org/gedametadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'><rdf:RDF><rdf:Description rdf:about=''><fz:attr name='geda filename'>PLCC_SOCKET 44 150.fp</fz:attr>
+<fz:attr name='fritzing version'>0.4.0b.06.21.4282</fz:attr>
+<fz:attr name='conversion date'>27/06/2010 07:16:17</fz:attr>
+<fz:comment>PLCC - 44 is a  special case, pad 1 in inner row</fz:comment>
+<fz:comment>top left row</fz:comment>
+<fz:comment>left row</fz:comment>
+<fz:comment>bottom row</fz:comment>
+<fz:comment>right row</fz:comment>
+<fz:comment>top rigth row</fz:comment>
+<fz:comment>------------------------------------------------------------------------</fz:comment>
+<fz:comment>all other sockets, currently 20,52,68 and 84 pins</fz:comment>
+<fz:attr name='dist-license'>GPL</fz:attr>
+<fz:attr name='use-license'>unlimited</fz:attr>
+<fz:attr name='author'>gEDA project</fz:attr>
+<fz:attr name='license-url'>http://www.gnu.org/licenses/gpl.html</fz:attr>
+</rdf:Description></rdf:RDF></metadata><g id="copper0">
+ <g id="copper1">
+  <circle fill="none" cx="56000" cy="26000" connectorname="1" stroke="#ff9400" r="2425" id="connector0pin" stroke-width="1350"/>
+  <circle fill="none" cx="46000" cy="16000" connectorname="2" stroke="#ff9400" r="2425" id="connector1pin" stroke-width="1350"/>
+  <circle fill="none" cx="46000" cy="26000" connectorname="3" stroke="#ff9400" r="2425" id="connector2pin" stroke-width="1350"/>
+  <circle fill="none" cx="36000" cy="16000" connectorname="4" stroke="#ff9400" r="2425" id="connector3pin" stroke-width="1350"/>
+  <circle fill="none" cx="36000" cy="26000" connectorname="5" stroke="#ff9400" r="2425" id="connector4pin" stroke-width="1350"/>
+  <circle fill="none" cx="26000" cy="16000" connectorname="6" stroke="#ff9400" r="2425" id="connector5pin" stroke-width="1350"/>
+  <circle fill="none" cx="16000" cy="26000" connectorname="7" stroke="#ff9400" r="2425" id="connector6pin" stroke-width="1350"/>
+  <circle fill="none" cx="26000" cy="26000" connectorname="8" stroke="#ff9400" r="2425" id="connector7pin" stroke-width="1350"/>
+  <circle fill="none" cx="16000" cy="36000" connectorname="9" stroke="#ff9400" r="2425" id="connector8pin" stroke-width="1350"/>
+  <circle fill="none" cx="26000" cy="36000" connectorname="10" stroke="#ff9400" r="2425" id="connector9pin" stroke-width="1350"/>
+  <circle fill="none" cx="16000" cy="46000" connectorname="11" stroke="#ff9400" r="2425" id="connector10pin" stroke-width="1350"/>
+  <circle fill="none" cx="26000" cy="46000" connectorname="12" stroke="#ff9400" r="2425" id="connector11pin" stroke-width="1350"/>
+  <circle fill="none" cx="16000" cy="56000" connectorname="13" stroke="#ff9400" r="2425" id="connector12pin" stroke-width="1350"/>
+  <circle fill="none" cx="26000" cy="56000" connectorname="14" stroke="#ff9400" r="2425" id="connector13pin" stroke-width="1350"/>
+  <circle fill="none" cx="16000" cy="66000" connectorname="15" stroke="#ff9400" r="2425" id="connector14pin" stroke-width="1350"/>
+  <circle fill="none" cx="26000" cy="66000" connectorname="16" stroke="#ff9400" r="2425" id="connector15pin" stroke-width="1350"/>
+  <circle fill="none" cx="16000" cy="76000" connectorname="17" stroke="#ff9400" r="2425" id="connector16pin" stroke-width="1350"/>
+  <circle fill="none" cx="26000" cy="86000" connectorname="18" stroke="#ff9400" r="2425" id="connector17pin" stroke-width="1350"/>
+  <circle fill="none" cx="26000" cy="76000" connectorname="19" stroke="#ff9400" r="2425" id="connector18pin" stroke-width="1350"/>
+  <circle fill="none" cx="36000" cy="86000" connectorname="20" stroke="#ff9400" r="2425" id="connector19pin" stroke-width="1350"/>
+  <circle fill="none" cx="36000" cy="76000" connectorname="21" stroke="#ff9400" r="2425" id="connector20pin" stroke-width="1350"/>
+  <circle fill="none" cx="46000" cy="86000" connectorname="22" stroke="#ff9400" r="2425" id="connector21pin" stroke-width="1350"/>
+  <circle fill="none" cx="46000" cy="76000" connectorname="23" stroke="#ff9400" r="2425" id="connector22pin" stroke-width="1350"/>
+  <circle fill="none" cx="56000" cy="86000" connectorname="24" stroke="#ff9400" r="2425" id="connector23pin" stroke-width="1350"/>
+  <circle fill="none" cx="56000" cy="76000" connectorname="25" stroke="#ff9400" r="2425" id="connector24pin" stroke-width="1350"/>
+  <circle fill="none" cx="66000" cy="86000" connectorname="26" stroke="#ff9400" r="2425" id="connector25pin" stroke-width="1350"/>
+  <circle fill="none" cx="66000" cy="76000" connectorname="27" stroke="#ff9400" r="2425" id="connector26pin" stroke-width="1350"/>
+  <circle fill="none" cx="76000" cy="86000" connectorname="28" stroke="#ff9400" r="2425" id="connector27pin" stroke-width="1350"/>
+  <circle fill="none" cx="86000" cy="76000" connectorname="29" stroke="#ff9400" r="2425" id="connector28pin" stroke-width="1350"/>
+  <circle fill="none" cx="76000" cy="76000" connectorname="30" stroke="#ff9400" r="2425" id="connector29pin" stroke-width="1350"/>
+  <circle fill="none" cx="86000" cy="66000" connectorname="31" stroke="#ff9400" r="2425" id="connector30pin" stroke-width="1350"/>
+  <circle fill="none" cx="76000" cy="66000" connectorname="32" stroke="#ff9400" r="2425" id="connector31pin" stroke-width="1350"/>
+  <circle fill="none" cx="86000" cy="56000" connectorname="33" stroke="#ff9400" r="2425" id="connector32pin" stroke-width="1350"/>
+  <circle fill="none" cx="76000" cy="56000" connectorname="34" stroke="#ff9400" r="2425" id="connector33pin" stroke-width="1350"/>
+  <circle fill="none" cx="86000" cy="46000" connectorname="35" stroke="#ff9400" r="2425" id="connector34pin" stroke-width="1350"/>
+  <circle fill="none" cx="76000" cy="46000" connectorname="36" stroke="#ff9400" r="2425" id="connector35pin" stroke-width="1350"/>
+  <circle fill="none" cx="86000" cy="36000" connectorname="37" stroke="#ff9400" r="2425" id="connector36pin" stroke-width="1350"/>
+  <circle fill="none" cx="76000" cy="36000" connectorname="38" stroke="#ff9400" r="2425" id="connector37pin" stroke-width="1350"/>
+  <circle fill="none" cx="86000" cy="26000" connectorname="39" stroke="#ff9400" r="2425" id="connector38pin" stroke-width="1350"/>
+  <circle fill="none" cx="76000" cy="16000" connectorname="40" stroke="#ff9400" r="2425" id="connector39pin" stroke-width="1350"/>
+  <circle fill="none" cx="76000" cy="26000" connectorname="41" stroke="#ff9400" r="2425" id="connector40pin" stroke-width="1350"/>
+  <circle fill="none" cx="66000" cy="16000" connectorname="42" stroke="#ff9400" r="2425" id="connector41pin" stroke-width="1350"/>
+  <circle fill="none" cx="66000" cy="26000" connectorname="43" stroke="#ff9400" r="2425" id="connector42pin" stroke-width="1350"/>
+  <circle fill="none" cx="56000" cy="16000" connectorname="44" stroke="#ff9400" r="2425" id="connector43pin" stroke-width="1350"/>
+ </g>
+</g>
+<g id="silkscreen">
+ <line fill="none" stroke="white" y1="1000" x1="1000" y2="1000" stroke-width="2000" x2="101000"/>
+ <line fill="none" stroke="white" y1="1000" x1="101000" y2="101000" stroke-width="2000" x2="101000"/>
+ <line fill="none" stroke="white" y1="101000" x1="101000" y2="101000" stroke-width="2000" x2="1000"/>
+ <line fill="none" stroke="white" y1="101000" x1="1000" y2="1000" stroke-width="2000" x2="1000"/>
+ <line fill="none" stroke="white" y1="11000" x1="1000" y2="1000" stroke-width="1000" x2="11000"/>
+ <line fill="none" stroke="white" y1="1000" x1="46000" y2="6000" stroke-width="1000" x2="51000"/>
+ <line fill="none" stroke="white" y1="6000" x1="51000" y2="1000" stroke-width="1000" x2="56000"/>
+</g>
+</svg>

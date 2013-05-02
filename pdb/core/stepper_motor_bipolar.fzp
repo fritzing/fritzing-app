@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?><module fritzingVersion="0.2.2.b.03.04.2550" moduleId="7d0bc366bcac9395c747f3a92e2ff843leg">
+<version>4</version>
+    <author>Peter Boman</author>
+    <title>Stepper Motor - Bipolar</title>
+    <label>M</label>
+    <date>2009-10-23</date>
+    <tags>
+        <tag>Motor</tag>
+        <tag>Stepper Motor</tag>
+    </tags>
+    <properties>
+        <property name="voltage">15.4</property>
+        <property name="current">0.28 A</property>
+        <property name="shaft">5 mm diameter / 33 mm length</property>
+        <property name="size">42.3 x 42.3 x 37.0 mm</property>
+        <property name="family">Stepper Motor</property>
+        <property name="Stepper Type">Bipolar</property>
+        <property name="phase">2</property>
+        <property name="step angle">1.8</property>
+        <property name="detent torque">120 g*cm</property>
+        <property name="holding torque"> 2.4 kg*cm</property>
+    </properties>
+    <description>Simple, but very powerful bi polar stepper motor. 4 wire</description>
+    <views>
+        <breadboardView>
+            <layers image="breadboard/Stepper_Motor_Bipolar_breadboard_leg.svg">
+                <layer layerId="breadboard"/>
+            </layers>
+        </breadboardView>
+        <schematicView>
+            <layers image="schematic/Stepper_Motor_-_Bipolar__schematic.svg">
+                <layer layerId="schematic"/>
+            </layers>
+        </schematicView>
+        <pcbView>
+            <layers image="pcb/jumper_4_100mil_pcb.svg">
+                <layer layerId="copper0"/>
+                <layer layerId="silkscreen"/>
+            <layer layerId="copper1"/></layers>
+        </pcbView>
+        <iconView>
+            <layers image="icon/Stepper_Motor_-_Bipolar__icon.svg">
+                <layer layerId="icon"/>
+            </layers>
+        </iconView>
+    </views>
+    <connectors>
+        <connector id="connector3" name="D" type="male">
+            <description>Terminal &quot;D&quot; - Coil Pair 2</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector3pin" legId="connector3leg"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector3pin" terminalId="connector3terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector3pin"/>
+                <p layer="copper1" svgId="connector3pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector0" name="A" type="male">
+            <description>Terminal &quot;A&quot; - Coil Pair 1</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector0pin" legId="connector0leg"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector0pin" terminalId="connector0terminal" />
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector0pin"/>
+                <p layer="copper1" svgId="connector0pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector1" name="C" type="male">
+            <description>Terminal &quot;C&quot; - Coil Pair 1</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector1pin" legId="connector1leg"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector1pin" terminalId="connector1terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector1pin"/>
+                <p layer="copper1" svgId="connector1pin"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector2" name="B" type="male">
+            <description>Terminal &quot;B&quot; - Coil Pair 2</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector2pin" legId="connector2leg"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector2pin" terminalId="connector2terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector2pin"/>
+                <p layer="copper1" svgId="connector2pin"/></pcbView>
+            </views>
+        </connector>
+    </connectors>
+</module>

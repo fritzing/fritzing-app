@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.2"
+   width="20"
+   height="28.98"
+   viewBox="0 0 2222.2223 3220"
+   id="svg2">
+  <title
+     id="title4">SparkFun.mod</title>
+<g
+     id="copper1">
+    <rect
+       width="260"
+       height="800"
+       x="224.49153"
+       y="2420"
+       id="connector0pin"
+       style="fill:#ffbf00;stroke-width:0" />
+    <rect
+       width="260"
+       height="800"
+       x="724.49152"
+       y="2420"
+       id="connector1pin"
+       style="fill:#ffbf00;stroke-width:0" />
+    <rect
+       width="260"
+       height="800"
+       x="1224.4916"
+       y="2420"
+       id="connector2pin"
+       style="fill:#ffbf00;stroke-width:0" />
+    <rect
+       width="260"
+       height="800"
+       x="1724.4916"
+       y="2420"
+       id="connector3pin"
+       style="fill:#ffbf00;stroke-width:0" />
+    <rect
+       width="260"
+       height="800"
+       x="1724.4916"
+       y="0"
+       id="connector4pin"
+       style="fill:#ffbf00;stroke-width:0" />
+    <rect
+       width="260"
+       height="800"
+       x="1224.4916"
+       y="0"
+       id="connector5pin"
+       style="fill:#ffbf00;stroke-width:0" />
+    <rect
+       width="260"
+       height="800"
+       x="724.49152"
+       y="0"
+       id="connector6pin"
+       style="fill:#ffbf00;stroke-width:0" />
+    <rect
+       width="260"
+       height="800"
+       x="224.49153"
+       y="0"
+       id="connector7pin"
+       style="fill:#ffbf00;stroke-width:0" />
+</g>
+
+<g
+     id="silkscreen">
+    <line
+       y1="840"
+       x1="1968.504"
+       y2="840"
+       x2="254.49168"
+       id="line156"
+       style="fill:none;stroke:#ffffff;stroke-width:60;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none" />
+    <line
+       y1="2380"
+       x1="254.49168"
+       y2="2380"
+       x2="1968.5039"
+       id="line158"
+       style="fill:none;stroke:#ffffff;stroke-width:60;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none" />
+    <line
+       y1="2230"
+       x1="2125.9844"
+       y2="990"
+       x2="2125.9844"
+       id="line160"
+       style="fill:none;stroke:#ffffff;stroke-width:60;stroke-linecap:round" />
+    <line
+       y1="990"
+       x1="104.49149"
+       y2="2230"
+       x2="104.49149"
+       id="line162"
+       style="fill:none;stroke:#ffffff;stroke-width:60;stroke-linecap:round" />
+    <line
+       y1="2240"
+       x1="104.63251"
+       y2="2240"
+       x2="2114.7083"
+       id="line164"
+       style="fill:none;stroke:#ffffff;stroke-width:20" />
+    <path
+       d="m 1975.9843,2380 a 150,150 0 0 0 150,-150"
+       id="path166"
+       style="fill:none;stroke:#ffffff;stroke-width:60;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none" />
+    <path
+       d="m 254.49158,840 a 150,150 0 0 0 -150,150"
+       id="path168"
+       style="fill:none;stroke:#ffffff;stroke-width:60;stroke-miterlimit:4;stroke-dasharray:none" />
+    <path
+       d="m 2125.9843,990 a 150,150 0 0 0 -150,-150"
+       id="path170"
+       style="fill:none;stroke:#ffffff;stroke-width:60;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none" />
+    <path
+       d="m 104.49158,2230 a 150,150 0 0 0 150,150"
+       id="path172"
+       style="fill:none;stroke:#ffffff;stroke-width:60;stroke-miterlimit:4;stroke-dasharray:none" />
+    <path
+       d="m 104.49158,1810 a 200,200 0 0 0 0,-400"
+       id="path174"
+       style="fill:none;stroke:#ffffff;stroke-width:30" />
+    <path
+       d="m 465.67228,2075.0602 a 112.33074,112.33074 0 0 1 -224.66148,0 112.33074,112.33074 0 1 1 224.66148,0 z"
+       id="path3060"
+       style="fill:#ffffff;fill-opacity:1;stroke:none" />
+  </g>
+</svg>

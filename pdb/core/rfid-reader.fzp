@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?><module fritzingVersion="0.3.9b.10.15.3559" moduleId="a975d1270bd55d6fc3916947793f1a57"><version>4</version>
+    <author>Tuomo Tammenpää</author>
+    <title>RFID Reader</title>
+    <label>RFID</label>
+    <date>2009-10-25</date>
+    <tags>
+        <tag>rfid</tag>
+        <tag>id12</tag>
+    </tags>
+    <properties>
+        <property name="family">RFID reader</property>
+    </properties>
+    <description>Simple RFID reader module with internal antenna</description>
+    <views>
+        <iconView>
+            <layers image="icon/rfid_reader_id12.svg">
+                <layer layerId="icon"/>
+            </layers>
+        </iconView>
+        <breadboardView>
+            <layers image="breadboard/rfid_reader_id12.svg">
+                <layer layerId="breadboard"/>
+            </layers>
+        </breadboardView>
+        <schematicView>
+            <layers image="schematic/rfid_reader_id12.svg">
+                <layer layerId="schematic"/>
+            </layers>
+        </schematicView>
+        <pcbView>
+            <layers image="pcb/rfid_reader_id12.svg">
+                <layer layerId="copper0"/>
+                <layer layerId="silkscreen"/>
+            <layer layerId="copper1"/></layers>
+        </pcbView>
+    </views>
+    <connectors>
+        <connector id="connector2pin_10" name="+5V" type="male">
+            <description>Power</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector2pin_10" terminalId="connector2pin_10terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector2pin_10"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector2pin_10_"/>
+                <p layer="copper1" svgId="connector2pin_10_"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector2pin_1" name="RES" type="male">
+            <description>Reset Bar</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector2pin_1" terminalId="connector2pin_1terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector2pin_1" terminalId="connector2pin_1terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector2pin_1_"/>
+                <p layer="copper1" svgId="connector2pin_1_"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector2pin_2" name="ANT0" type="male">
+            <description>Antenna</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector2pin_2" terminalId="connector2pin_2terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector2pin_2" terminalId="connector2pin_2terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector2pin_2_"/>
+                <p layer="copper1" svgId="connector2pin_2_"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector2pin_3" name="ANT1" type="male">
+            <description>Antenna</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector2pin_3" terminalId="connector2pin_3terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector2pin_3" terminalId="connector2pin_3terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector2pin_3_"/>
+                <p layer="copper1" svgId="connector2pin_3_"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector2pin_4" name="CP" type="male">
+            <description>Card Present</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector2pin_4" terminalId="connector2pin_4terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector2pin_4" terminalId="connector2pin_4terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector2pin_4_"/>
+                <p layer="copper1" svgId="connector2pin_4_"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector2pin_5" name="Future" type="male">
+            <description>For future use</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector2pin_5" terminalId="connector2pin_5terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector2pin_5" terminalId="connector2pin_5terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector2pin_5_"/>
+                <p layer="copper1" svgId="connector2pin_5_"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector2pin_6" name="+/-" type="male">
+            <description>Format Selector</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector2pin_6" terminalId="connector2pin_6terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector2pin_6" terminalId="connector2pin_6terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector2pin_6_"/>
+                <p layer="copper1" svgId="connector2pin_6_"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector2pin_7" name="D1" type="male">
+            <description>Data Pin 1</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector2pin_7" terminalId="connector2pin_7terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector2pin_7"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector2pin_7_"/>
+                <p layer="copper1" svgId="connector2pin_7_"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector2pin_8" name="D0" type="male">
+            <description>Data Pin 0</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector2pin_8" terminalId="connector2pin_8terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector2pin_8"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector2pin_8_"/>
+                <p layer="copper1" svgId="connector2pin_8_"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector2pin_9" name="LED" type="male">
+            <description>LED / Beeper</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector2pin_9" terminalId="connector2pin_9terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector2pin_9"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector2pin_9_"/>
+                <p layer="copper1" svgId="connector2pin_9_"/></pcbView>
+            </views>
+        </connector>
+        <connector id="connector2" name="GND" type="male">
+            <description>Ground</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector2" terminalId="connector2terminal"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector2" terminalId="connector2terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector2pin"/>
+                <p layer="copper1" svgId="connector2pin"/></pcbView>
+            </views>
+        </connector>
+    </connectors>
+</module>

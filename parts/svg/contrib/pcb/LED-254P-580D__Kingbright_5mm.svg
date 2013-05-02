@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?> <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" x="0in" y="0in" width="0.30334in" height="0.23834in" viewBox="0 0 30334 23834" ><title>LED-254P-580D__Kingbright_5mm.fp</title><desc>Geda footprint file 'LED-254P-580D__Kingbright_5mm.fp' converted by Fritzing</desc><metadata xmlns:fz='http://fritzing.org/gedametadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'><rdf:RDF><rdf:Description rdf:about=''><fz:attr name='geda filename'>LED-254P-580D__Kingbright_5mm.fp</fz:attr>
+<fz:attr name='fritzing version'>0.4.0b.06.21.4282</fz:attr>
+<fz:attr name='conversion date'>27/06/2010 07:15:43</fz:attr>
+<fz:attr name='dist-license'>GPL</fz:attr>
+<fz:attr name='use-license'>unlimited</fz:attr>
+<fz:attr name='author'>gEDA project</fz:attr>
+<fz:attr name='license-url'>http://www.gnu.org/licenses/gpl.html</fz:attr>
+</rdf:Description></rdf:RDF></metadata><g id="copper0">
+ <g id="copper1">
+  <circle fill="none" cx="13417" cy="11917" connectorname="" stroke="#ff9400" r="2350" id="connector0pin" stroke-width="1800"/>
+  <circle fill="none" cx="23417" cy="11917" connectorname="" stroke="#ff9400" r="2350" id="connector1pin" stroke-width="1800"/>
+ </g>
+</g>
+<g id="silkscreen">
+ <path fill="none" stroke="white" stroke-width="1000" d="M13057,21997.6a11417,11417,0,1,0,355.073,-20342.1"/>
+ <line fill="none" stroke="white" y1="6167" x1="13417" y2="2212" stroke-width="2000" x2="13417"/>
+ <line fill="none" stroke="white" y1="17667" x1="13417" y2="21622" stroke-width="2000" x2="13417"/>
+ <line fill="none" stroke="white" y1="11917" x1="4500" y2="11917" stroke-width="1000" x2="500"/>
+</g>
+</svg>

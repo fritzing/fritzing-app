@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="32.055px" height="32.055px" viewBox="0 0 32.055 32.055" enable-background="new 0 0 32.055 32.055" xml:space="preserve">
+<desc>Hole SVG</desc>
+<path fill="#86A28C" stroke="#568B53" stroke-width="1.9445" d="M0,0v32.055h32.055V0H0z M19.299,16.04
+	c0,1.806-1.462,3.272-3.271,3.272c-1.806,0-3.271-1.463-3.271-3.272c0-1.807,1.464-3.273,3.271-3.273
+	C17.837,12.767,19.299,14.233,19.299,16.04z"/>
+<g>
+	<polyline fill="none" stroke="#FFBF00" stroke-width="3" points="16.027,12.07 16.027,7.924 18.952,4.999 32.055,4.999 	"/>
+	<polyline fill="none" stroke="#FF9400" stroke-width="3" points="16.027,19.986 16.027,24.133 13.103,27.058 0,27.058 	"/>
+	<path id="path3157_2_" fill="none" stroke="#FFBF00" stroke-width="2.1214" d="M19.299,16.04c0,1.806-1.462,3.272-3.271,3.272
+		c-1.806,0-3.271-1.463-3.271-3.272c0-1.807,1.464-3.273,3.271-3.273C17.837,12.767,19.299,14.233,19.299,16.04z"/>
+</g>
+</svg>

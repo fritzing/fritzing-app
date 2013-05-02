@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- Created with Fritzing (http://www.fritzing.org/) -->
+<svg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' version='1.2' baseProfile='tiny' x='0in' y='0in' width='0.273937in' height='0.382205in' viewBox='0 0 6.958 9.708' >
+<g id='copper1'>
+<circle id='connector6pad' connectorname='VBUS' cx='6.304' cy='3.254' r='0.527' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle id='connector2pad' connectorname='D+' cx='6.304' cy='4.854' r='0.527' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle id='connector4pad' connectorname='GND' cx='6.304' cy='6.454' r='0.527' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle id='connector3pad' connectorname='D-' cx='5.104' cy='4.054' r='0.527' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle id='connector5pad' connectorname='ID' cx='5.104' cy='5.654' r='0.527' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle id='connector0pad' connectorname='P$6' cx='1.204' cy='8.504' r='1.077' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle id='connector1pad' connectorname='P$7' cx='1.204' cy='1.204' r='1.077' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<g id='copper0'>
+<circle id='connector6pad' connectorname='VBUS' cx='6.304' cy='3.254' r='0.527' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle id='connector2pad' connectorname='D+' cx='6.304' cy='4.854' r='0.527' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle id='connector4pad' connectorname='GND' cx='6.304' cy='6.454' r='0.527' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle id='connector3pad' connectorname='D-' cx='5.104' cy='4.054' r='0.527' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle id='connector5pad' connectorname='ID' cx='5.104' cy='5.654' r='0.527' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle id='connector0pad' connectorname='P$6' cx='1.204' cy='8.504' r='1.077' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle id='connector1pad' connectorname='P$7' cx='1.204' cy='1.204' r='1.077' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+</g>
+</g>
+<g id='silkscreen'>
+</g>
+</svg>

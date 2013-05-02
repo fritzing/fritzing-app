@@ -1,0 +1,512 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="255.1181"
+   height="255.1181"
+   id="svg2"
+   version="1.0"
+   >
+  <defs
+     id="defs4">
+    <linearGradient
+       id="linearGradient3601">
+      <stop
+         style="stop-color:#808080;stop-opacity:1;"
+         offset="0"
+         id="stop3603" />
+      <stop
+         style="stop-color:#808080;stop-opacity:0;"
+         offset="1"
+         id="stop3605" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient3414">
+      <stop
+         style="stop-color:#e6e6e6;stop-opacity:1;"
+         offset="0"
+         id="stop3416" />
+      <stop
+         id="stop3422"
+         offset="0.5"
+         style="stop-color:#656565;stop-opacity:1;" />
+      <stop
+         style="stop-color:#9f9f9f;stop-opacity:1;"
+         offset="1"
+         id="stop3418" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient3291">
+      <stop
+         style="stop-color:#b3b3b3;stop-opacity:1;"
+         offset="0"
+         id="stop3293" />
+      <stop
+         style="stop-color:#b3b3b3;stop-opacity:0.35135135;"
+         offset="1"
+         id="stop3295" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient3219">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop3221" />
+      <stop
+         style="stop-color:#cfcfcf;stop-opacity:1;"
+         offset="1"
+         id="stop3223" />
+    </linearGradient>
+    <inkscape:perspective
+       id="perspective10" />
+    <linearGradient
+       
+       xlink:href="#linearGradient3219"
+       id="linearGradient3285"
+       gradientUnits="userSpaceOnUse"
+       x1="18"
+       y1="9"
+       x2="18"
+       y2="18" />
+    <linearGradient
+       xlink:href="#linearGradient3291"
+       id="linearGradient3297"
+       x1="36"
+       y1="18"
+       x2="90"
+       y2="99"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       xlink:href="#linearGradient3414"
+       id="linearGradient3420"
+       x1="72"
+       y1="90"
+       x2="81"
+       y2="90"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(0,-76.499998)" />
+    <linearGradient
+       xlink:href="#linearGradient3291"
+       id="linearGradient3527"
+       gradientUnits="userSpaceOnUse"
+       x1="36"
+       y1="18"
+       x2="90"
+       y2="99" />
+    <linearGradient
+       xlink:href="#linearGradient3601"
+       id="linearGradient3607"
+       x1="81"
+       y1="225"
+       x2="180"
+       y2="225"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       xlink:href="#linearGradient3219"
+       id="linearGradient4445"
+       gradientUnits="userSpaceOnUse"
+       x1="18"
+       y1="9"
+       x2="18"
+       y2="18" />
+    <linearGradient
+       xlink:href="#linearGradient3291"
+       id="linearGradient4678"
+       gradientUnits="userSpaceOnUse"
+       x1="36"
+       y1="18"
+       x2="90"
+       y2="99" />
+    <linearGradient
+       xlink:href="#linearGradient3414"
+       id="linearGradient4682"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(0,-76.499998)"
+       x1="72"
+       y1="90"
+       x2="81"
+       y2="90" />
+    <linearGradient
+       y2="18"
+       x2="18"
+       y1="9"
+       x1="18"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient2587"
+       xlink:href="#linearGradient3219"
+        />
+    <linearGradient
+       y2="18"
+       x2="18"
+       y1="9"
+       x1="18"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient2579"
+       xlink:href="#linearGradient3219"
+        />
+    <linearGradient
+       y2="18"
+       x2="18"
+       y1="9"
+       x1="18"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient2571"
+       xlink:href="#linearGradient3219"
+        />
+    <linearGradient
+       y2="18"
+       x2="18"
+       y1="9"
+       x1="18"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient2730"
+       xlink:href="#linearGradient3219"
+        />
+    <linearGradient
+       y2="90"
+       x2="81"
+       y1="90"
+       x1="72"
+       gradientTransform="translate(0,-76.499998)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient2728"
+       xlink:href="#linearGradient3414"
+        />
+    <linearGradient
+       y2="99"
+       x2="90"
+       y1="18"
+       x1="36"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient2726"
+       xlink:href="#linearGradient3291"
+        />
+    <linearGradient
+       y2="18"
+       x2="18"
+       y1="9"
+       x1="18"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient2724"
+       xlink:href="#linearGradient3219"
+        />
+    <linearGradient
+       gradientUnits="userSpaceOnUse"
+       y2="225"
+       x2="180"
+       y1="225"
+       x1="81"
+       id="linearGradient2722"
+       xlink:href="#linearGradient3601"
+        />
+    <linearGradient
+       y2="99"
+       x2="90"
+       y1="18"
+       x1="36"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient2720"
+       xlink:href="#linearGradient3291"
+       />
+    <linearGradient
+       gradientTransform="translate(0,-76.499998)"
+       gradientUnits="userSpaceOnUse"
+       y2="90"
+       x2="81"
+       y1="90"
+       x1="72"
+       id="linearGradient2718"
+       xlink:href="#linearGradient3414"
+        />
+    <linearGradient
+       gradientUnits="userSpaceOnUse"
+       y2="99"
+       x2="90"
+       y1="18"
+       x1="36"
+       id="linearGradient2716"
+       xlink:href="#linearGradient3291"
+        />
+    <linearGradient
+       y2="18"
+       x2="18"
+       y1="9"
+       x1="18"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient2714"
+       xlink:href="#linearGradient3219"
+        />
+    <inkscape:perspective
+       id="perspective2712"
+        />
+    <linearGradient
+       id="linearGradient2706">
+      <stop
+         id="stop2708"
+         offset="0"
+         style="stop-color:#000000;stop-opacity:1;" />
+      <stop
+         id="stop2710"
+         offset="1"
+         style="stop-color:#cfcfcf;stop-opacity:1;" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient2700">
+      <stop
+         id="stop2702"
+         offset="0"
+         style="stop-color:#b3b3b3;stop-opacity:1;" />
+      <stop
+         id="stop2704"
+         offset="1"
+         style="stop-color:#b3b3b3;stop-opacity:0.35135135;" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient2692">
+      <stop
+         id="stop2694"
+         offset="0"
+         style="stop-color:#e6e6e6;stop-opacity:1;" />
+      <stop
+         style="stop-color:#656565;stop-opacity:1;"
+         offset="0.5"
+         id="stop2696" />
+      <stop
+         id="stop2698"
+         offset="1"
+         style="stop-color:#9f9f9f;stop-opacity:1;" />
+    </linearGradient>
+    <linearGradient
+       xlink:href="#linearGradient3219"
+       id="linearGradient3375"
+       gradientUnits="userSpaceOnUse"
+       x1="18"
+       y1="9"
+       x2="18"
+       y2="18" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     gridtolerance="10000"
+     guidetolerance="10000"
+     objecttolerance="10"
+     showgrid="false"
+     units="mm"
+     showguides="true"
+     >
+    <inkscape:grid
+       type="xygrid"
+       id="grid2383"
+       visible="true"
+       enabled="true"
+       units="mm"
+       spacingx="2.54mm"
+       spacingy="2.54mm"
+       empspacing="10" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="StepperMotor"
+     transform="translate(51.059052,34.655473)">
+    <path
+       transform="translate(0,-76.499998)"
+       d="M 1.78125,154.78125 L 1.78125,277.90625 L 18.40625,286.21875 L 134.65625,286.21875 L 151.21875,277.90625 L 151.21875,154.78125 L 1.78125,154.78125 z"
+       id="MotorHousing"
+       style="fill:#4d4d4d;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+        />
+    <path
+       id="MotorHousingShade"
+       style="fill:#333333;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       d="M 1.78125,109.375 L 1.78125,163.375 L 18,171.5 L 18,117.5 L 1.78125,109.375 z M 151.21875,108.375 L 135,116.5 L 135,170.5 L 151.21875,162.375 L 151.21875,108.375 z" />
+    <path
+       id="CapTop"
+       d="M 0,9.0000019 L 18,1.87e-06 L 135,1.87e-06 L 153,9.0000019 L 153,67.500002 L 135,76.500002 L 17.770352,76.500002 L 0,67.500002 L 0,9.0000019 z"
+       style="fill:#e6e6e6;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+    <path
+       transform="matrix(1,0,0,0.5,0,1.87e-6)"
+       d="M 18.78125,1.90625 L 1.90625,18.78125 L 1.90625,134.1875 L 18.59375,151.09375 L 134.21875,151.09375 L 151.09375,134.21875 L 151.09375,18.78125 L 134.21875,1.90625 L 18.78125,1.90625 z"
+       id="CapTopShade"
+       style="fill:url(#linearGradient4678);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+        />
+    <path
+       id="CapTopGrove"
+       d="M 118.75706,40.250002 C 118.75706,51.912952 99.825897,61.378532 76.5,61.378532 C 53.174103,61.378532 34.24294,51.912952 34.24294,40.250002 C 34.24294,28.587052 53.174103,19.121472 76.5,19.121472 C 99.825897,19.121472 118.75706,28.587052 118.75706,40.250002 z"
+       style="fill:none;fill-rule:evenodd;stroke:#b3b3b3;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <g
+       transform="matrix(1,0,0,0.5,0,1.87e-6)"
+       id="CapTopMountHole0">
+      <path
+         style="fill:url(#linearGradient3375);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="M 24.75,18 C 24.75,21.726 21.726,24.75 18,24.75 C 14.274,24.75 11.25,21.726 11.25,18 C 11.25,14.274 14.274,11.25 18,11.25 C 21.726,11.25 24.75,14.274 24.75,18 z"
+         id="path2388" />
+      <path
+         id="path3177"
+         d="M 22.5,19.771653 C 22.5,22.255653 20.484,24.271653 18,24.271653 C 15.516,24.271653 13.5,22.255653 13.5,19.771653 C 13.5,17.287653 15.516,15.271653 18,15.271653 C 20.484,15.271653 22.5,17.287653 22.5,19.771653 z"
+         style="opacity:0.96000001;fill:#000000;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    </g>
+    <use
+       height="450"
+       width="450"
+       transform="translate(117,1.2999999e-7)"
+       id="CapTopMountHole1"
+       xlink:href="#CapTopMountHole0"
+       y="0"
+       x="0" />
+    <use
+       height="450"
+       width="450"
+       transform="translate(0,58.5)"
+       id="CapTopMountHole2"
+       xlink:href="#CapTopMountHole1"
+       y="0"
+       x="0" />
+    <use
+       height="450"
+       width="450"
+       transform="translate(-117,1.2999999e-7)"
+       id="CapTopMountHole3"
+       xlink:href="#CapTopMountHole2"
+       y="0"
+       x="0" />
+    <path
+       id="CapTopBevelHilite"
+       d="M 115.47638,40.250002 C 115.47638,51.007482 98.014961,59.738192 76.5,59.738192 C 54.985038,59.738192 37.523621,51.007482 37.523621,40.250002 C 37.523621,29.492522 54.985038,20.761812 76.5,20.761812 C 98.014961,20.761812 115.47638,29.492522 115.47638,40.250002 z"
+       style="fill:#f9f9f9;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       id="CapTopBevel"
+       d="M 115.47638,38.250002 C 115.47638,49.007482 98.014961,57.738192 76.5,57.738192 C 54.985038,57.738192 37.523621,49.007482 37.523621,38.250002 C 37.523621,27.492522 54.985038,18.761812 76.5,18.761812 C 98.014961,18.761812 115.47638,27.492522 115.47638,38.250002 z"
+       style="fill:#999999;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       id="CapTopShaftHole"
+       d="M 88.901575,38.250002 C 88.901575,41.672832 83.345669,44.450792 76.5,44.450792 C 69.654331,44.450792 64.098425,41.672832 64.098425,38.250002 C 64.098425,34.827172 69.654331,32.049212 76.5,32.049212 C 83.345669,32.049212 88.901575,34.827172 88.901575,38.250002 z"
+       style="fill:#333333;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       id="Cap"
+       style="fill:#b3b3b3;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 0,67.500002 L 0,121.5 L 18,130.5 L 22,129.5 L 22,112.5 L 131,112.5 L 131,129.5 L 135,130.5 L 153,121.5 L 153,67.500002 L 135,76.500002 L 18,76.500002 L 0,67.500002 z M 0,148.49466 L 0,202.49466 L 18,211.49466 L 135,211.49466 L 153,202.49466 L 153,148.49466 L 135,157.49466 L 131,160.49466 L 131,171.49466 L 135,175.49466 L 18,175.49466 L 22,171.49466 L 22,160.49466 L 18,157.49466 L 0,148.49466 z" />
+    <path
+       id="CapShade"
+       style="fill:#999999;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 18,130.5 L 0,121.5 L 0,67.500002 L 18,76.500002 L 18,130.5 z M 135,130.5 L 153,121.5 L 153,67.500002 L 135,76.500002 L 135,130.5 z M 135,211.5 L 153,202.5 L 153,148.5 L 135,157.5 L 135,211.5 z M 18,211.5 L 0,202.5 L 0,148.5 L 18,157.5 L 18,211.5 z" />
+    <path
+       id="Shaft"
+       d="M 85.358267,-21.986217 L 85.358267,38.250002 C 85.358267,40.694882 81.389764,42.679132 76.5,42.679132 C 71.610236,42.679132 67.641733,40.694882 67.641733,38.250002 L 67.641733,-21.986217 C 67.641733,-24.431097 71.610236,-26.415347 76.5,-26.415347 C 81.389764,-26.415347 85.358267,-24.431097 85.358267,-21.986217 z"
+       style="fill:url(#linearGradient4682);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       id="ShaftBevel"
+       d="M 85.358267,-21.986217 C 85.358267,-19.541337 81.389764,-17.557087 76.5,-17.557087 C 71.610236,-17.557087 67.641733,-19.541337 67.641733,-21.986217 C 67.641733,-24.431097 71.610236,-26.415347 76.5,-26.415347 C 81.389764,-26.415347 85.358267,-24.431097 85.358267,-21.986217 z"
+       style="fill:#e6e6e6;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       style="fill:#cccccc;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 83.913257,-23.986217 C 83.913257,-21.940159 80.592119,-20.279591 76.5,-20.279591 C 72.407881,-20.279591 69.086743,-21.940159 69.086743,-23.986217 C 69.086743,-26.032275 72.407881,-27.692843 76.5,-27.692843 C 80.592119,-27.692843 83.913257,-26.032275 83.913257,-23.986217 z"
+       id="ShaftTop" />
+    <path
+       id="ShaftTopHole"
+       d="M 79.939484,-23.986217 C 79.939484,-23.03692 78.398596,-22.266476 76.5,-22.266476 C 74.601404,-22.266476 73.060516,-23.03692 73.060516,-23.986217 C 73.060516,-24.935514 74.601404,-25.705958 76.5,-25.705958 C 78.398596,-25.705958 79.939484,-24.935514 79.939484,-23.986217 z"
+       style="fill:#666666;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       id="CapBevelHilite"
+       style="fill:#f2f2f2;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       d="M 0,67.500002 L 0,71.500002 L 18,80.500002 L 135,80.500002 L 153,71.500002 L 153,67.500002 L 135,76.500002 L 18,76.500002 L 0,67.500002 z M 0,148.5 L 0,152.5 L 18,161.5 L 18,157.5 L 0,148.5 z M 153,148.5 L 135,157.5 L 135,161.5 L 153,152.5 L 153,148.5 z M 22,171.49466 L 18,175.5 L 135,175.5 L 131,171.49466 L 22,171.49466 z" />
+    <path
+       id="CapBevelShade"
+       style="fill:#1a1a1a;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       d="M 22,112.5 L 22,116.5 L 131,116.5 L 131,112.5 L 22,112.5 z M 1.78125,122.375 L 1.78125,126.375 L 18,134.5 L 22,133.5 L 22,129.5 L 18,130.5 L 1.78125,122.375 z M 151.21875,122.375 L 135,130.5 L 131,129.5 L 131,133.5 L 135,134.5 L 151.21875,126.375 L 151.21875,122.375 z" />
+    <path
+       id="CapConnectorTop"
+       d="M 43,184.5 L 110,184.5 L 110,193.5 L 43,193.5 L 43,184.5 z"
+       style="fill:#e6e6e6;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+    <path
+       id="CapConnector"
+       d="M 43,193.5 L 110,193.5 L 110,213.5 L 43,213.5 L 43,193.5 z"
+       style="fill:#999999;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+    <path
+       id="CapConnectorHousingTop"
+       d="M 47,186.5 L 106,186.5 L 106,193.5 L 47,193.5 L 47,186.5 z"
+       style="fill:#4d4d4d;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+    <path
+       id="CapConnectorHousing"
+       d="M 47,193.5 L 106,193.5 L 106,209.5 L 47,209.5 L 47,193.5 z"
+       style="fill:#333333;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+    <path
+       id="CapConnectorHousingInset"
+       d="M 49,193.5 L 104,193.5 L 104,205.5 L 49,205.5 L 49,193.5 z"
+       style="fill:#4d4d4d;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+    <path
+       id="CapConnectorHousingInsetBack"
+       d="M 49,188.5 L 104,188.5 L 104,199.5 L 49,199.5 L 49,188.5 z"
+       style="fill:#1a1a1a;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+    <g
+       transform="translate(0,-76.499998)"
+       id="CapConnectorPin0">
+      <path
+         id="PinBase"
+         d="M 54,270 L 54,279"
+         style="fill:none;fill-rule:evenodd;stroke:#808000;stroke-width:3.54330707;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <path
+         style="fill:none;fill-rule:evenodd;stroke:#ffff00;stroke-width:0.70866144;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="M 54,270 L 54,279"
+         id="PinHilite" />
+    </g>
+    <use
+       x="0"
+       y="0"
+       xlink:href="#CapConnectorPin0"
+       id="CapConnectorPin1"
+       transform="translate(8.9999998,0)"
+       width="278.70728"
+       height="395.35019" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#CapConnectorPin0"
+       id="CapConnectorPin2"
+       transform="translate(18,0)"
+       width="278.70728"
+       height="395.35019" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#CapConnectorPin0"
+       id="CapConnectorPin3"
+       transform="translate(27,0)"
+       width="278.70728"
+       height="395.35019" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#CapConnectorPin0"
+       id="CapConnectorPin4"
+       transform="translate(36,0)"
+       width="278.70728"
+       height="395.35019" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#CapConnectorPin0"
+       id="CapConnectorPin5"
+       transform="translate(45,0)"
+       width="278.70728"
+       height="395.35019" />
+  </g>
+</svg>

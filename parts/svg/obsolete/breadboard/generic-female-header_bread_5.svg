@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1 Basic//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-basic.dtd">
+<svg version="1.1" baseProfile="basic" id="svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+	 x="0px" y="0px" width="0.5in" height="0.10in" viewBox="0 0 35.895 7.178" xml:space="preserve">
+
+<rect id="connector0pin" x="2.202" y="2.202" fill="none" width="2.775" height="2.775"/>
+<rect id="connector0terminal" x="2.511" y="2.463" fill="none" width="2.152" height="2.25"/>
+<rect id="connector1pin" x="9.381" y="2.202" fill="none" width="2.775" height="2.775"/>
+<rect id="connector1terminal" x="9.69" y="2.463" fill="none" width="2.152" height="2.25"/>
+<rect id="connector2pin" x="16.56" y="2.202" fill="none" width="2.775" height="2.775"/>
+<rect id="connector2terminal" x="16.869" y="2.463" fill="none" width="2.152" height="2.25"/>
+<rect id="connector3pin" x="23.739" y="2.202" fill="none" width="2.775" height="2.775"/>
+<rect id="connector3terminal" x="24.048" y="2.463" fill="none" width="2.152" height="2.25"/>
+<rect id="connector4pin" x="30.918" y="2.202" fill="none" width="2.775" height="2.775"/>
+<rect id="connector4terminal" x="31.227" y="2.463" fill="none" width="2.152" height="2.25"/>
+
+<g id="breadboard">
+	<rect fill="#404040" width="35.895" height="7.178"/>
+	<rect x="2.204" y="2.202" width="2.773" height="2.773"/>
+	<polygon fill="#2A2A29" points="1.181,1.18 2.202,2.202 4.977,2.202 5.999,1.18 	"/>
+	<polygon fill="#474747" points="5.999,1.18 4.977,2.205 4.977,4.978 5.999,5.998 	"/>
+	<polygon fill="#595959" points="5.998,5.998 4.976,4.978 2.202,4.978 1.181,5.998 	"/>
+	<polygon fill="#373737" points="1.179,5.998 2.202,4.976 2.202,2.202 1.179,1.18 	"/>
+	<rect x="9.383" y="2.202" width="2.773" height="2.773"/>
+	<polygon fill="#2A2A29" points="8.36,1.18 9.381,2.202 12.156,2.202 13.178,1.18 	"/>
+	<polygon fill="#474747" points="13.178,1.18 12.156,2.205 12.156,4.978 13.178,5.998 	"/>
+	<polygon fill="#595959" points="13.177,5.998 12.155,4.978 9.381,4.978 8.36,5.998 	"/>
+	<polygon fill="#373737" points="8.358,5.998 9.381,4.976 9.381,2.202 8.358,1.18 	"/>
+	<rect x="16.562" y="2.202" width="2.773" height="2.773"/>
+	<polygon fill="#2A2A29" points="15.539,1.18 16.56,2.202 19.335,2.202 20.357,1.18 	"/>
+	<polygon fill="#474747" points="20.357,1.18 19.335,2.205 19.335,4.978 20.357,5.998 	"/>
+	<polygon fill="#595959" points="20.356,5.998 19.334,4.978 16.56,4.978 15.539,5.998 	"/>
+	<polygon fill="#373737" points="15.537,5.998 16.56,4.976 16.56,2.202 15.537,1.18 	"/>
+	<rect x="23.741" y="2.202" width="2.773" height="2.773"/>
+	<polygon fill="#2A2A29" points="22.718,1.18 23.739,2.202 26.514,2.202 27.536,1.18 	"/>
+	<polygon fill="#474747" points="27.536,1.18 26.514,2.205 26.514,4.978 27.536,5.998 	"/>
+	<polygon fill="#595959" points="27.535,5.998 26.513,4.978 23.739,4.978 22.718,5.998 	"/>
+	<polygon fill="#373737" points="22.716,5.998 23.739,4.976 23.739,2.202 22.716,1.18 	"/>
+	<rect x="30.92" y="2.202" width="2.773" height="2.773"/>
+	<polygon fill="#2A2A29" points="29.897,1.18 30.918,2.202 33.693,2.202 34.715,1.18 	"/>
+	<polygon fill="#474747" points="34.715,1.18 33.693,2.205 33.693,4.978 34.715,5.998 	"/>
+	<polygon fill="#595959" points="34.714,5.998 33.692,4.978 30.918,4.978 29.897,5.998 	"/>
+	<polygon fill="#373737" points="29.895,5.998 30.918,4.976 30.918,2.202 29.895,1.18 	"/>
+</g>
+
+</svg>

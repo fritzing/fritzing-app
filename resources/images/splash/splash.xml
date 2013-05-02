@@ -1,0 +1,8 @@
+<splash sliceDelaySeconds="4" >
+	<item id="fhpLogo" x="5" y="228" />
+	<item id="progress" x="0" y="224" />
+	<item id="fhpText" x="45" y="222" width="516" height="20" color="#eaf4ed" />
+	<item id="versionText" x="0" y="222" width="549" height="20" color="#eaf4ed" />	
+	<item id="logoBar" x="0" y="157" />
+	<item id="slice" x="0" y="0" />
+</splash>

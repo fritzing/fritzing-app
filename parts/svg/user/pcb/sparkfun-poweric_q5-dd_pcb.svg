@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- Created with Fritzing (http://www.fritzing.org/) -->
+<svg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' version='1.2' baseProfile='tiny' x='0in' y='0in' width='0.41in' height='0.580134in' viewBox='0 0 10.414 14.7354' >
+<g id='copper1'>
+<rect id='connector5pad' connectorname='6' x='0' y='0.0729' width='10.414' height='9.525' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector2pad' connectorname='3' x='4.707' y='11.3354' width='1' height='3.4' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector0pad' connectorname='1' x='1.307' y='11.3354' width='1' height='3.4' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector1pad' connectorname='2' x='3.007' y='11.3354' width='1' height='3.4' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector3pad' connectorname='4' x='6.407' y='11.3354' width='1' height='3.4' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<rect id='connector4pad' connectorname='5' x='8.107' y='11.3354' width='1' height='3.4' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
+<g id='copper0'>
+</g>
+</g>
+<g id='silkscreen'>
+<line class='other' x1='10.124' y1='1.1704' x2='10.124' y2='10.1744' stroke='#f0f0f0' stroke-width='0.2032' stroke-linecap='round'/>
+<line class='other' x1='10.124' y1='10.1744' x2='0.29' y2='10.1744' stroke='#f0f0f0' stroke-width='0.2032' stroke-linecap='round'/>
+<line class='other' x1='0.29' y1='10.1744' x2='0.29' y2='1.1704' stroke='#f0f0f0' stroke-width='0.2032' stroke-linecap='round'/>
+<line class='other' x1='0.29' y1='1.1704' x2='10.124' y2='1.1704' stroke='#f0f0f0' stroke-width='0.2032' stroke-linecap='round'/>
+<circle class='other' cx='5.207' cy='5.3354' r='1' stroke='#f0f0f0' stroke-width='0.254' fill='none' />
+<rect class='other' x='4.826' y='11.1344' width='0.762' height='2.794' stroke='none' stroke-width='0' fill='#f0f0f0' stroke-linecap='round'/>
+<rect class='other' x='1.426' y='11.1344' width='0.762' height='2.794' stroke='none' stroke-width='0' fill='#f0f0f0' stroke-linecap='round'/>
+<rect class='other' x='3.126' y='11.1344' width='0.762' height='2.794' stroke='none' stroke-width='0' fill='#f0f0f0' stroke-linecap='round'/>
+<rect class='other' x='6.526' y='11.1344' width='0.762' height='2.794' stroke='none' stroke-width='0' fill='#f0f0f0' stroke-linecap='round'/>
+<rect class='other' x='8.226' y='11.1344' width='0.762' height='2.794' stroke='none' stroke-width='0' fill='#f0f0f0' stroke-linecap='round'/>
+<path class='other' stroke='none' fill='#f0f0f0' stroke-width='0' d='M0.6416,1.0684L0.6416,0.6572L3.0988,0.2L7.3152,0.2L9.7724,0.6572L9.7724,1.0684z' stroke-linecap='round'/>
+</g>
+</svg>

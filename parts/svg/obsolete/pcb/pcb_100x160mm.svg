@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="160mm"
+   height="100mm"
+   version="1.0"
+   viewBox="0 0 6299.2112 3937.007">
+  <g
+     id="board">
+    <rect
+       style="fill:#338040;fill-opacity:0.5;fill-rule:evenodd;stroke:#338040;stroke-width:8;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       width="6291.2112"
+       height="3929.007"
+       x="4"
+       y="4" />
+  </g>
+  <g
+     id="silkscreen">
+    <line
+       x1="4"
+       y1="4"
+       x2="6295.2112"
+       y2="4"
+       id="line8"
+       style="stroke:#ffffff;stroke-width:8;stroke-linecap:round" />
+    <line
+       stroke-width="8"
+       stroke="#FFFFFF"
+       x1="6295.2112"
+       y1="4"
+       x2="6295.2112"
+       y2="3933.007"
+       id="line10"
+       style="stroke-linecap:round" />
+    <line
+       stroke-width="8"
+       stroke="#FFFFFF"
+       x1="6295.2112"
+       y1="3933.007"
+       x2="4"
+       y2="3933.007"
+       id="line12"
+       style="stroke-linecap:round" />
+    <line
+       stroke-width="8"
+       stroke="#FFFFFF"
+       x1="4"
+       y1="3933.007"
+       x2="4"
+       y2="4"
+       id="line14"
+       style="stroke-linecap:round" />
+  </g>
+</svg>

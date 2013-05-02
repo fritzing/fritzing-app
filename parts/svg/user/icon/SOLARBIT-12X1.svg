@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Ebene_1" xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="64.914px"
+	 height="23.868px" viewBox="0 0 64.914 23.868" enable-background="new 0 0 64.914 23.868" xml:space="preserve">
+<rect x="0" y="2.883" opacity="0.4" fill="#999999" width="64.914" height="20.985"/>
+<rect x="0" opacity="0.4" fill="#CCCCCC" width="64.914" height="20.985"/>
+<rect x="0" opacity="0.2" fill="#FFFFFF" width="64.914" height="0.66"/>
+<rect x="0" y="20.985" opacity="0.4" fill="#999999" width="64.914" height="2.883"/>
+<g>
+	<rect x="3.157" y="1.602" fill="#4D4D4D" width="59.668" height="17.167"/>
+	<rect x="3.157" y="1.602" opacity="0.2" fill="#FFFFFF" width="59.668" height="0.391"/>
+	<rect x="3.156" y="18.776" fill="#333333" width="59.669" height="0.607"/>
+	<g>
+		<line fill="none" stroke="#B3B3B3" stroke-width="0.5" stroke-miterlimit="10" x1="62.826" y1="4.019" x2="3.157" y2="4.019"/>
+		<line fill="none" stroke="#B3B3B3" stroke-width="0.5" stroke-miterlimit="10" x1="62.826" y1="7.102" x2="3.157" y2="7.102"/>
+		<line fill="none" stroke="#B3B3B3" stroke-width="0.5" stroke-miterlimit="10" x1="62.826" y1="10.185" x2="3.157" y2="10.185"/>
+		<line fill="none" stroke="#B3B3B3" stroke-width="0.5" stroke-miterlimit="10" x1="62.826" y1="13.269" x2="3.157" y2="13.269"/>
+		<line fill="none" stroke="#B3B3B3" stroke-width="0.5" stroke-miterlimit="10" x1="62.826" y1="16.352" x2="3.157" y2="16.352"/>
+	</g>
+	<rect x="62.826" y="1.602" fill="#B3B3B3" width="1.346" height="17.167"/>
+	<rect x="2.483" y="1.602" fill="#B3B3B3" width="0.673" height="17.167"/>
+	<rect x="0.741" y="1.602" fill="#B3B3B3" width="1.068" height="17.167"/>
+	<g>
+		<rect x="1.415" y="14.417" fill="#B3B3B3" width="1.068" height="1.932"/>
+		<rect x="1.415" y="9.299" fill="#B3B3B3" width="1.068" height="1.931"/>
+		<rect x="1.415" y="4.181" fill="#B3B3B3" width="1.068" height="1.932"/>
+	</g>
+	<rect x="2.483" y="18.769" fill="#999999" width="0.673" height="0.614"/>
+	<rect x="0.741" y="18.769" fill="#999999" width="1.068" height="0.614"/>
+	<rect x="62.826" y="18.769" fill="#999999" width="1.346" height="0.614"/>
+</g>
+<rect x="0" y="20.985" opacity="0.2" width="64.914" height="0.338"/>
+</svg>

@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- Created with Fritzing (http://www.fritzing.org/) -->
+<svg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' version='1.2' baseProfile='tiny' x='0in' y='0in' width='0.33in' height='0.252in' viewBox='0 0 8.382 6.4008' >
+<g id='copper1'>
+<circle id='connector0pad' connectorname='1' cx='0.9398' cy='0.9398' r='0.7239' stroke='#F7BD13' stroke-width='0.4318' fill='none' />
+<circle id='connector1pad' connectorname='2' cx='7.4422' cy='0.9398' r='0.7239' stroke='#F7BD13' stroke-width='0.4318' fill='none' />
+<circle id='connector2pad' connectorname='3' cx='0.9398' cy='5.461' r='0.7239' stroke='#F7BD13' stroke-width='0.4318' fill='none' />
+<circle id='connector3pad' connectorname='4' cx='7.4422' cy='5.461' r='0.7239' stroke='#F7BD13' stroke-width='0.4318' fill='none' />
+<g id='copper0'>
+<circle id='connector0pad' connectorname='1' cx='0.9398' cy='0.9398' r='0.7239' stroke='#F7BD13' stroke-width='0.4318' fill='none' />
+<circle id='connector1pad' connectorname='2' cx='7.4422' cy='0.9398' r='0.7239' stroke='#F7BD13' stroke-width='0.4318' fill='none' />
+<circle id='connector2pad' connectorname='3' cx='0.9398' cy='5.461' r='0.7239' stroke='#F7BD13' stroke-width='0.4318' fill='none' />
+<circle id='connector3pad' connectorname='4' cx='7.4422' cy='5.461' r='0.7239' stroke='#F7BD13' stroke-width='0.4318' fill='none' />
+</g>
+</g>
+<g id='silkscreen'>
+<line class='other' x1='6.35' y1='0.1524' x2='2.032' y2='0.1524' stroke='#f0f0f0' stroke-width='0.2032' stroke-linecap='round'/>
+<line class='other' x1='2.032' y1='6.2484' x2='6.35' y2='6.2484' stroke='#f0f0f0' stroke-width='0.2032' stroke-linecap='round'/>
+<line class='other' x1='7.239' y1='2.2024' x2='7.239' y2='4.2164' stroke='#f0f0f0' stroke-width='0.2032' stroke-linecap='round'/>
+<line class='other' x1='1.143' y1='2.1724' x2='1.143' y2='4.2164' stroke='#f0f0f0' stroke-width='0.2032' stroke-linecap='round'/>
+<circle class='other' cx='4.191' cy='3.2004' r='1.778' stroke='#f0f0f0' stroke-width='0.2032' fill='none' />
+</g>
+</svg>

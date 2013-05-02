@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module fritzingVersion="0.6.4b.10.28.5569" moduleId="ThermalPrinter">
+    <author>SparkFun</author>
+    <date>2011-11-09</date>
+	<title>Thermal Printer</title>
+	<url>http://www.sparkfun.com/products/10438</url>
+	<description>&lt;p&gt;
+
+	&lt;strong&gt;Description:&lt;/strong&gt; This is a thermal printer like you would find on a cash register or adding machine. It will print simple strings passed to it via TTL serial, bitmap images (poorly) and it even generates several different formats of barcodes!&lt;/p&gt;
+
+&lt;p&gt;
+
+	The thermal printer takes 2.25&amp;quot; (57mm) wide thermal paper with a max roll diameter of 1.5&amp;quot; (39mm). Thermal paper is inexpensive and commonly found in most office supply stores in 85ft lengths. You may have to remove some paper from these rolls in order for it to fit into the printer. But, you can always use the excess paper in the printer, since you don&amp;#39;t need to have a &amp;#39;core&amp;#39; in the paper for it to work.&lt;/p&gt;
+
+&lt;p&gt;
+
+	The back panel has 2 3-pin connectors; one for power and one for serial communications. The thermal printer ships with default 19200bps baud rate. If you&amp;#39;re using this printer in conjunction with an Arduino, you&amp;#39;re going to need to connect it to the &amp;quot;Vin&amp;quot; pin and attach an external power supply, as the printer will draw more current than USB is capable of delivering. We&amp;#39;ve found that a 5V wall adapter works best (see related products below).&lt;/p&gt;
+
+&lt;p&gt;
+
+	The print head has a rated life of 50km! That means this printer can handle a marathon&amp;#39;s distance (~30 miles) of printing before the head hits its rated limit.&lt;/p&gt;
+
+&lt;p&gt;
+
+	Use this printer in any project where you need a hard-copy of the output, or in an art project where you want to keep the output to stick on your fridge, or to build a DIY cash register for your lemonade stand!&lt;/p&gt;
+
+&lt;p&gt;
+
+	&lt;strong&gt;Documents:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+
+	&lt;li&gt;
+
+		&lt;a href=&quot;http://www.sparkfun.com/datasheets/Components/General/cashino%20thermal%20printer%20a2.pdf&quot; target=&quot;_blank&quot;&gt;Product Sheet&lt;/a&gt;&lt;/li&gt;
+
+	&lt;li&gt;
+
+		&lt;a href=&quot;http://www.sparkfun.com/datasheets/Components/General/A2-user%20manual-1.pdf&quot; target=&quot;_blank&quot;&gt;User Manual&lt;/a&gt;&lt;/li&gt;
+
+	&lt;li&gt;
+
+		&lt;a href=&quot;http://www.sparkfun.com/datasheets/Components/General/Driver%20board.pdf&quot; target=&quot;_blank&quot;&gt;Command Set&lt;/a&gt;&lt;/li&gt;
+
+	&lt;li&gt;
+
+		&lt;a href=&quot;http://www.sparkfun.com/datasheets/Components/General/ThermalPrinter_Example.zip&quot;&gt;Example Code&lt;/a&gt;&lt;/li&gt;
+
+	&lt;li&gt;
+
+		&lt;a href=&quot;http://tronixstuff.wordpress.com/2011/07/08/tutorial-arduino-and-a-thermal-printer//&quot; target=&quot;_blank&quot;&gt;Tronixstuff Tutorial&lt;/a&gt;&lt;/li&gt;
+
+	&lt;li&gt;
+
+		&lt;a href=&quot;http://bildr.org/2011/08/thermal-printer-arduino/&quot; target=&quot;_blank&quot;&gt;Bildr Tutorial&lt;/a&gt;&lt;/li&gt;
+
+&lt;/ul&gt;
+</description>
+    <tags> 
+    <tag>Printer</tag>
+    <tag>Thermal</tag>
+    <tag>Paper</tag>
+    <tag>Receipt</tag>
+    </tags>
+    <properties>
+        <property name="family">Printer</property>
+        <property name="type">Thermal</property>
+        <property name="Comm. Protocol">Serial</property>
+        <property name="Ink">None</property>
+        <property name="Operating Voltage">5V - 9V</property>
+    </properties>
+    <views>
+        <iconView>
+            <layers image="icon/thermalprinter_icon.svg">
+                <layer layerId="icon"/>
+            </layers>
+        </iconView>
+        <breadboardView>
+            <layers image="breadboard/thermalprinter_breadboard.svg">
+                <layer layerId="breadboard"/>
+            </layers>
+        </breadboardView>
+        <schematicView>
+            <layers image="schematic/thermalprinter_schematic.svg">
+                <layer layerId="schematic"/>
+            </layers>
+        </schematicView>
+        <pcbView>
+            <layers image="pcb/thermalprinter_pcb.svg">
+                <layer layerId="copper0"/>
+                <layer layerId="silkscreen"/>
+                <layer layerId="copper1"/>
+            </layers>
+        </pcbView>
+    </views>
+    <connectors>
+        <connector id="connector3" type="male" name="RXD">
+            <description>RXD</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector3pin" legId="connector3leg"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector3pin" terminalId="connector3terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper1" svgId="connector3pin"/>
+                    <p layer="copper0" svgId="connector3pin"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector4" type="male" name="TXD">
+            <description>TXD</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector4pin" legId="connector4leg"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector4pin" terminalId="connector4terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper1" svgId="connector4pin"/>
+                    <p layer="copper0" svgId="connector4pin"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector0" type="male" name="GND">
+            <description>Ground</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector0pin" legId="connector0leg"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector0pin" terminalId="connector0terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper1" svgId="connector0pin"/>
+                    <p layer="copper0" svgId="connector0pin"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector1" type="male" name="VH">
+            <description>5-9V</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector1pin" legId="connector1leg"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector1pin" terminalId="connector1terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper1" svgId="connector1pin"/>
+                    <p layer="copper0" svgId="connector1pin"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector2" type="male" name="GND">
+            <description>Ground</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector2pin" legId="connector2leg"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector2pin" terminalId="connector2terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper1" svgId="connector2pin"/>
+                    <p layer="copper0" svgId="connector2pin"/>
+                </pcbView>
+            </views>
+        </connector>
+    </connectors>
+</module>

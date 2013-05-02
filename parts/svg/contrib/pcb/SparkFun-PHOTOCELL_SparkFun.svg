@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" x="0in" y="0in" width="0.2088in" height="0.157718in" viewBox="0 0 2088 1577.18" >
+<title>SparkFun.mod</title>
+<desc>Kicad module 'SparkFun-PHOTOCELL' from file 'SparkFun.mod' converted by Fritzing</desc>
+<metadata xmlns:fz='http://fritzing.org/kicadmetadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+<rdf:RDF><rdf:Description rdf:about=''>
+<fz:attr name='kicad filename'>SparkFun.mod</fz:attr>
+<fz:attr name='kicad module'>SparkFun-PHOTOCELL</fz:attr>
+<fz:attr name='fritzing version'>0.4.1b.07.04.4318</fz:attr>
+<fz:attr name='conversion date'>17/07/2010 17:16:49</fz:attr>
+<fz:attr name='dist-license'>GPL</fz:attr>
+<fz:attr name='use-license'>unlimited</fz:attr>
+<fz:attr name='author'>KICAD project</fz:attr>
+<fz:attr name='license-url'>http://www.gnu.org/licenses/gpl.html</fz:attr>
+<fz:comment></fz:comment>
+<fz:attr name='keyword'></fz:attr>
+</rdf:Description></rdf:RDF></metadata><g id="copper0">
+ <g id="copper1">
+  <g connectorname="1" id="connector0pin">
+   <circle fill="none" cx="257" cy="788.591" stroke="#ff9400" r="207" stroke-width="100"/>
+  </g>
+  <g connectorname="2" id="connector1pin">
+   <circle fill="none" cx="1831" cy="788.591" stroke="#ff9400" r="207" stroke-width="100"/>
+  </g>
+ </g>
+</g>
+<g id="silkscreen">
+ <line fill="none" stroke="white" y1="1.59068" x1="651" y2="1.59068" stroke-width="80" x2="1437"/>
+ <line fill="none" stroke="white" y1="1575.59" x1="1437" y2="1575.59" stroke-width="80" x2="651"/>
+ <path fill="none" stroke="white" stroke-width="40" d="M398.42,80.7857a566.591,566.591,0,0,0,-259.42,353.805"/>
+ <path fill="none" stroke="white" stroke-width="40" d="M1437.8,1575.78a566.591,566.591,0,0,0,511.202,-433.191"/>
+ <path fill="none" stroke="white" stroke-width="40" d="M1948.58,433.887a566.344,566.344,0,0,0,-511.578,-432.296"/>
+ <path fill="none" stroke="white" stroke-width="40" d="M1217.12,803.497a566.344,566.344,0,0,0,-566.123,772.094"/>
+</g>
+</svg>

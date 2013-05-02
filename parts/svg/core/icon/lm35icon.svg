@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 13.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 14948)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg version="1.0" id="svg2" xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="32px" height="32px"
+	 viewBox="0 0 32 32" enable-background="new 0 0 32 32" xml:space="preserve">
+<g id="icon">
+	<g id="part">
+		<g id="Transistor_legs">
+			<rect id="rect9479" x="14.641" y="31.79" fill="#8C8C8C" width="2.692" height="8.989"/>
+			<rect id="rect9481" x="5.669" y="31.79" fill="#8C8C8C" width="2.693" height="8.989"/>
+			<rect id="rect9483" x="23.614" y="31.79" fill="#8C8C8C" width="2.693" height="8.989"/>
+		</g>
+		<g id="Transistor_pins">
+			<rect id="rect9506_1_" x="14.641" y="20.104" fill="#8C8C8C" width="2.692" height="11.688"/>
+			<path id="path9510_1_" fill="#8C8C8C" d="M9.778,20.104v4.146c0,0.528-0.978,1.323-1.498,1.78c-1.282,1.113-2.61,2.273-2.61,3.74
+				v2.023h2.693c0,0,0-1.25,0-1.512c0-0.646,1.13-1.736,1.688-2.211c1.246-1.088,2.431-2.113,2.431-3.437v-4.53H9.778L9.778,20.104z
+				"/>
+			<path id="path9514_1_" fill="#8C8C8C" d="M22.195,20.104v4.146c0,0.528,0.977,1.323,1.499,1.78c1.285,1.113,2.61,2.273,2.61,3.74
+				v2.023h-2.693c0,0,0-1.25,0-1.512c0-0.646-1.13-1.736-1.686-2.211c-1.248-1.088-2.433-2.113-2.433-3.437v-4.53H22.195
+				L22.195,20.104z"/>
+		</g>
+		<rect id="rect9553_1_" x="7.688" y="7.512" fill="#1A1A1A" width="16.598" height="12.588"/>
+		<path id="path9555_1_" fill="#141414" d="M23.029,7.512v3.066v10.286v2.303c0.79-0.891,1.256-1.941,1.256-3.065l0,0V7.512H23.029z
+			"/>
+		<path id="path9557_1_" fill="#242424" d="M8.945,7.512H7.69v12.588l0,0c0,1.125,0.466,2.175,1.256,3.065v-2.303V10.58L8.945,7.512
+			L8.945,7.512z"/>
+		<path id="path9559_1_" fill="#1F1F1F" d="M7.688,7.512L7.688,7.512c0,1.125,0.466,2.176,1.256,3.066h14.095
+			c0.79-0.891,1.256-1.941,1.256-3.066l0,0H7.688z"/>
+		<path id="path9561_1_" fill="#141414" d="M15.987,1.689c-4.584,0-8.3,2.607-8.3,5.827h16.598
+			C24.285,4.297,20.572,1.689,15.987,1.689z"/>
+		<rect id="rect9563_1_" x="8.945" y="10.58" width="14.096" height="12.587"/>
+	</g>
+	<g id="label">
+	<text x="16" y="12" id="label0" font-family="OCRA" stroke="none" fill="#e6e6e6" font-size="5" text-anchor="middle">LM</text> 
+	<text x="16" y="17" id="label0" font-family="OCRA" stroke="none" fill="#e6e6e6" font-size="5" text-anchor="middle">35</text> 		
+	</g>
+</g>
+</svg>

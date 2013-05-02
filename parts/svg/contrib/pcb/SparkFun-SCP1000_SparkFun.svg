@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" x="0in" y="0in" width="0.239867in" height="0.240115in" viewBox="0 0 2398.67 2401.15" >
+<title>SparkFun.mod</title>
+<desc>Kicad module 'SparkFun-SCP1000' from file 'SparkFun.mod' converted by Fritzing</desc>
+<metadata xmlns:fz='http://fritzing.org/kicadmetadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+<rdf:RDF><rdf:Description rdf:about=''>
+<fz:attr name='kicad filename'>SparkFun.mod</fz:attr>
+<fz:attr name='kicad module'>SparkFun-SCP1000</fz:attr>
+<fz:attr name='fritzing version'>0.4.1b.07.04.4318</fz:attr>
+<fz:attr name='conversion date'>17/07/2010 17:17:15</fz:attr>
+<fz:attr name='dist-license'>GPL</fz:attr>
+<fz:attr name='use-license'>unlimited</fz:attr>
+<fz:attr name='author'>KICAD project</fz:attr>
+<fz:attr name='license-url'>http://www.gnu.org/licenses/gpl.html</fz:attr>
+<fz:comment></fz:comment>
+<fz:attr name='keyword'></fz:attr>
+</rdf:Description></rdf:RDF></metadata><g id="copper1">
+ <rect width="216" x="248.335" y="1884.31" fill="#ffbf00" connectorname="ATST" height="263" id="connector0pad" stroke-width="0"/>
+ <rect width="224" x="94.3352" y="1403.81" fill="#ffbf00" connectorname="ATST@1" height="224" id="connector1pad" stroke-width="0"/>
+ <rect width="216" x="563.335" y="256.312" fill="#ffbf00" connectorname="AVDD" height="263" id="connector2pad" stroke-width="0"/>
+ <rect width="216" x="248.335" y="256.312" fill="#ffbf00" connectorname="AVSS" height="263" id="connector3pad" stroke-width="0"/>
+ <rect width="224" x="94.3352" y="775.812" fill="#ffbf00" connectorname="AVSS@1" height="224" id="connector4pad" stroke-width="0"/>
+ <rect width="216" x="1192.34" y="1884.31" fill="#ffbf00" connectorname="CLK" height="263" id="connector5pad" stroke-width="0"/>
+ <rect width="216" x="878.335" y="256.312" fill="#ffbf00" connectorname="CSB" height="263" id="connector6pad" stroke-width="0"/>
+ <rect width="216" x="878.335" y="1884.31" fill="#ffbf00" connectorname="DRDY" height="263" id="connector7pad" stroke-width="0"/>
+ <rect width="263" x="2125.84" y="1109.31" fill="#ffbf00" connectorname="DUMMY1" height="185" id="connector8pad" stroke-width="0"/>
+ <rect width="263" x="43.8352" y="1109.31" fill="#ffbf00" connectorname="DUMMY2" height="185" id="connector9pad" stroke-width="0"/>
+ <rect width="216" x="1507.34" y="1884.31" fill="#ffbf00" connectorname="DVDD" height="263" id="connector10pad" stroke-width="0"/>
+ <rect width="224" x="2113.34" y="1403.81" fill="#ffbf00" connectorname="DVDDS" height="224" id="connector11pad" stroke-width="0"/>
+ <rect width="216" x="1822.34" y="1884.31" fill="#ffbf00" connectorname="DVSS" height="263" id="connector12pad" stroke-width="0"/>
+ <rect width="216" x="1192.34" y="256.312" fill="#ffbf00" connectorname="MISO" height="263" id="connector13pad" stroke-width="0"/>
+ <rect width="216" x="1507.34" y="256.312" fill="#ffbf00" connectorname="MOSI/SDA" height="263" id="connector14pad" stroke-width="0"/>
+ <rect width="224" x="2113.34" y="775.812" fill="#ffbf00" connectorname="PD" height="224" id="connector15pad" stroke-width="0"/>
+ <rect width="216" x="1822.34" y="256.312" fill="#ffbf00" connectorname="SCK/SCL" height="263" id="connector16pad" stroke-width="0"/>
+ <rect width="216" x="563.335" y="1884.31" fill="#ffbf00" connectorname="TRIG" height="263" id="connector17pad" stroke-width="0"/>
+</g>
+<g id="silkscreen">
+ <line fill="none" stroke="white" y1="906.812" x1="508.335" y2="906.812" stroke-width="80" x2="1098.34"/>
+ <line fill="none" stroke="white" y1="906.812" x1="1098.34" y2="1496.81" stroke-width="80" x2="1098.34"/>
+ <line fill="none" stroke="white" y1="1496.81" x1="1098.34" y2="1496.81" stroke-width="80" x2="508.335"/>
+ <line fill="none" stroke="white" y1="1496.81" x1="508.335" y2="906.812" stroke-width="80" x2="508.335"/>
+ <circle fill="none" cx="1196.34" cy="1201.81" stroke="white" r="848.528" stroke-width="25"/>
+ <path fill="none" stroke="white" stroke-width="40" d="M52.5052,1024.87a1160.81,1160.81,0,0,0,533.825,-846.062"/>
+ <path fill="none" stroke="white" stroke-width="40" d="M606.27,2244.25a1199.34,1199.34,0,0,0,1219.07,-19.4387"/>
+</g>
+</svg>

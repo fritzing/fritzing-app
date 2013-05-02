@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+<svg width="6.85829in" x="0px" version="1.1" y="0px" xmlns="http://www.w3.org/2000/svg" height="0.342583in" viewBox="0 0 493.797 24.666" xmlns:xml="http://www.w3.org/XML/1998/namespace" id="Layer_1" enable-background="new 0 -1.001 493.797 24.666" xml:space="preserve">
+ <g id="breadboard">
+  <rect width="480" x="13.797" y="-1.001" fill="#8D3A2A" xmlns="http://www.w3.org/2000/svg" height="24.666"/>
+  <rect width="417" x="53.727" y="6.665" fill="#292725" xmlns="http://www.w3.org/2000/svg" height="16"/>
+  <rect width="15.667" x="446.831" y="6.951" fill="#DBD9C3" xmlns="http://www.w3.org/2000/svg" height="13.667"/>
+  <rect width="15.667" x="428.449" y="6.951" fill="#DBD9C3" xmlns="http://www.w3.org/2000/svg" height="13.667"/>
+  <rect width="15.667" x="410.068" y="6.952" fill="#DBD9C3" xmlns="http://www.w3.org/2000/svg" height="13.667"/>
+  <rect width="15.667" x="391.686" y="6.95" fill="#DBD9C3" xmlns="http://www.w3.org/2000/svg" height="13.667"/>
+  <rect width="15.667" x="373.304" y="6.949" fill="#DBD9C3" xmlns="http://www.w3.org/2000/svg" height="13.667"/>
+  <rect width="15.667" x="354.923" y="6.951" fill="#DBD9C3" xmlns="http://www.w3.org/2000/svg" height="13.667"/>
+  <rect width="15.667" x="336.542" y="6.951" fill="#DBD9C3" xmlns="http://www.w3.org/2000/svg" height="13.667"/>
+  <rect width="15.667" x="318.16" y="6.949" fill="#DBD9C3" xmlns="http://www.w3.org/2000/svg" height="13.667"/>
+  <rect width="15.667" x="299.779" y="6.949" fill="#DBD9C3" xmlns="http://www.w3.org/2000/svg" height="13.667"/>
+  <rect width="15.668" x="281.396" y="6.949" fill="#DBD9C3" xmlns="http://www.w3.org/2000/svg" height="13.667"/>
+  <rect width="15.666" x="263.016" y="6.95" fill="#DBD9C3" xmlns="http://www.w3.org/2000/svg" height="13.667"/>
+  <rect width="15.667" x="244.634" y="6.948" fill="#DBD9C3" xmlns="http://www.w3.org/2000/svg" height="13.667"/>
+  <rect width="15.667" x="226.252" y="6.947" fill="#DBD9C3" xmlns="http://www.w3.org/2000/svg" height="13.667"/>
+  <rect width="15.667" x="207.871" y="6.949" fill="#DBD9C3" xmlns="http://www.w3.org/2000/svg" height="13.667"/>
+  <rect width="15.667" x="189.489" y="6.949" fill="#DBD9C3" xmlns="http://www.w3.org/2000/svg" height="13.667"/>
+  <rect width="15.667" x="171.107" y="6.949" fill="#DBD9C3" xmlns="http://www.w3.org/2000/svg" height="13.667"/>
+  <rect width="15.667" x="152.726" y="6.949" fill="#DBD9C3" xmlns="http://www.w3.org/2000/svg" height="13.667"/>
+  <rect width="15.667" x="134.344" y="6.949" fill="#DBD9C3" xmlns="http://www.w3.org/2000/svg" height="13.667"/>
+  <rect width="15.667" x="115.963" y="6.95" fill="#DBD9C3" xmlns="http://www.w3.org/2000/svg" height="13.667"/>
+  <rect width="15.667" x="97.582" y="6.948" fill="#DBD9C3" xmlns="http://www.w3.org/2000/svg" height="13.667"/>
+  <rect width="15.667" x="79.2" y="6.947" fill="#DBD9C3" xmlns="http://www.w3.org/2000/svg" height="13.667"/>
+  <rect width="15.667" x="60.823" y="6.948" fill="#DBD9C3" xmlns="http://www.w3.org/2000/svg" height="13.667"/>
+  <rect width="4.834" x="471.391" y="8.83" fill="#DBD9C3" xmlns="http://www.w3.org/2000/svg" height="13.667"/>
+  <path fill="#DBD9C3" xmlns="http://www.w3.org/2000/svg" d="M469.478,8.964l1.907-0.011l1.029,0.012l-0.045-1.225l-3.855-5.848L39.529-0.083c0,0-2.616,1.687-3.246,2.026c-1.108-0.129-5.507,0.019-6.912-0.043c-0.041,1.054-0.062,7.281-0.063,7.05c0.609,0.041,7.646-0.062,7.646-0.062s2.664-4.084,2.663-4.084l427.767,0.023L469.478,8.964z"/>
+  <rect width="6" x="47.395" y="6.663" fill="#DBD9C3" xmlns="http://www.w3.org/2000/svg" height="13.333"/>
+  <rect width="8.458" x="38.936" y="14.83" fill="#DBD9C3" xmlns="http://www.w3.org/2000/svg" height="2"/>
+  <rect width="10" x="29.349" y="10.848" fill="#DBD9C3" xmlns="http://www.w3.org/2000/svg" height="7.312"/>
+  <rect width="1.743" x="0.007" y="13.527" fill="#8C8C8C" xmlns="http://www.w3.org/2000/svg" height="1.815" id="connector0terminal"/>
+  <rect width="1.743" x="0.007" y="6.33" fill="#8C8C8C" xmlns="http://www.w3.org/2000/svg" height="1.815" id="connector1terminal"/>
+  <rect width="7.874" y="13.527" fill="#8C8C8C" xmlns="http://www.w3.org/2000/svg" height="1.815" id="connector0pin"/>
+  <rect width="7.874" y="6.33" fill="#8C8C8C" xmlns="http://www.w3.org/2000/svg" height="1.815" id="connector1pin"/>
+  <rect width="22.004" x="0.071" y="6.321" fill="#8C8C8C" xmlns="http://www.w3.org/2000/svg" height="1.815" id="rect6"/>
+  <rect width="22.004" x="0.071" y="13.52" fill="#8C8C8C" xmlns="http://www.w3.org/2000/svg" height="1.814" id="rect8"/>
+  <polygon fill="#8C8C8C" points="11.784,9.75 10.277,8.136 10.277,6.322 11.784,4.71 30.146,4.71 30.146,9.75 " xmlns="http://www.w3.org/2000/svg" id="polygon23"/>
+  <polygon fill="#8C8C8C" points="11.796,16.948 10.277,15.333 10.277,13.521 11.796,11.909 30.312,11.909 30.312,16.948 " xmlns="http://www.w3.org/2000/svg" id="polygon25"/>
+ </g>
+</svg>

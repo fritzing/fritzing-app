@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.0"
+   baseProfile="tiny"
+   id="svg2"
+   width="1.12in"
+   height="0.3in"
+   viewBox="0 0 112 30">
+  <g id="breadboard">
+  <polygon
+     id="bodybottom"
+     points="0,18.5 112,18.5 112,27 0,27 0,18.5 " />
+  <polygon
+     style="fill:#3d3d3d"
+     id="bodytop"
+     points="0,0 112,0 112,8.5 0,8.5 0,0 " />
+  <polygon
+     style="fill:#1f1f1f"
+     id="polygon58"
+     points="0,0 0.75,2.46 0.75,8.5 5,8.5 5,18.5 0.75,18.5 0.75,24.54 0,27 0,0 " />
+  <polygon
+     style="fill:#141414"
+     id="bodyright"
+     points="112,0 111.25,2.46 109.85,2.46 109.85,24.53 111.25,24.54 112,27 112,0 " />
+  <rect
+     y="2.205883"
+     x="0.69999999"
+     height="22.517677"
+     width="110.6"
+     id="rect2477"
+     style="fill:#000000;fill-opacity:1;stroke:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+  <path
+     style="fill:#262626"
+     id="path66"
+     d="M 0.56,10.58 L 0.56,16.41 C 2.03,16.24 3.18,15.01 3.18,13.49 C 3.18,11.97 2.04,10.75 0.56,10.58 z" />     
+  <polygon
+     style="fill:#8c8c8c"
+     id="pinflare0"
+     points="3.5,25.66 3.5,27.66 6.5,27.66 8.5,26.74 8.5,25.66 3.5,25.66 " />
+  <rect
+     style="fill:#8c8c8c"
+     height="3"
+     width="3"
+     y="27"
+     x="3.5"
+     id="connector0terminal" />
+  <rect
+     style="fill:#8c8c8c"
+     id="connector0pin"
+     height="4.3400002"
+     width="3"
+     y="25.672941"
+     x="3.5" />
+  <polygon
+     style="fill:#8c8c8c"
+     id="pinflare1"
+     points="13.5,25.66 13.5,27.66 16.5,27.66 18.5,26.74 18.5,25.66 13.5,25.66 " />
+  <rect
+     style="fill:#8c8c8c"
+     height="3"
+     width="3"
+     y="27"
+     x="13.5"
+     id="connector1terminal" />
+  <rect
+     style="fill:#8c8c8c"
+     id="connector1pin"
+     height="4.3400002"
+     width="3"
+     y="25.672941"
+     x="13.5" />
+  <polygon
+     style="fill:#8c8c8c"
+     id="pinflare2"
+     points="23.5,25.66 23.5,27.66 26.5,27.66 28.5,26.74 28.5,25.66 23.5,25.66 " />
+  <rect
+     style="fill:#8c8c8c"
+     height="3"
+     width="3"
+     y="27"
+     x="23.5"
+     id="connector2terminal" />
+  <rect
+     style="fill:#8c8c8c"
+     id="connector2pin"
+     height="4.3400002"
+     width="3"
+     y="25.672941"
+     x="23.5" />
+  <polygon
+     style="fill:#8c8c8c"
+     id="pinflare3"
+     points="33.5,25.66 33.5,27.66 36.5,27.66 38.5,26.74 38.5,25.66 33.5,25.66 " />
+  <rect
+     style="fill:#8c8c8c"
+     height="3"
+     width="3"
+     y="27"
+     x="33.5"
+     id="connector3terminal" />
+  <rect
+     style="fill:#8c8c8c"
+     id="connector3pin"
+     height="4.3400002"
+     width="3"
+     y="25.672941"
+     x="33.5" />
+  <polygon
+     style="fill:#8c8c8c"
+     id="pinflare4"
+     points="43.5,25.66 43.5,27.66 46.5,27.66 48.5,26.74 48.5,25.66 43.5,25.66 " />
+  <rect
+     style="fill:#8c8c8c"
+     height="3"
+     width="3"
+     y="27"
+     x="43.5"
+     id="connector4terminal" />
+  <rect
+     style="fill:#8c8c8c"
+     id="connector4pin"
+     height="4.3400002"
+     width="3"
+     y="25.672941"
+     x="43.5" />
+  <polygon
+     style="fill:#8c8c8c"
+     id="pinflare5"
+     points="53.5,25.66 53.5,27.66 56.5,27.66 58.5,26.74 58.5,25.66 53.5,25.66 " />
+  <rect
+     style="fill:#8c8c8c"
+     height="3"
+     width="3"
+     y="27"
+     x="53.5"
+     id="connector5terminal" />
+  <rect
+     style="fill:#8c8c8c"
+     id="connector5pin"
+     height="4.3400002"
+     width="3"
+     y="25.672941"
+     x="53.5" />
+  <polygon
+     style="fill:#8c8c8c"
+     id="pinflare6"
+     points="63.5,25.66 63.5,27.66 66.5,27.66 68.5,26.74 68.5,25.66 63.5,25.66 " />
+  <rect
+     style="fill:#8c8c8c"
+     height="3"
+     width="3"
+     y="27"
+     x="63.5"
+     id="connector6terminal" />
+  <rect
+     style="fill:#8c8c8c"
+     id="connector6pin"
+     height="4.3400002"
+     width="3"
+     y="25.672941"
+     x="63.5" />
+  <polygon
+     style="fill:#8c8c8c"
+     id="pinflare7"
+     points="73.5,25.66 73.5,27.66 76.5,27.66 78.5,26.74 78.5,25.66 73.5,25.66 " />
+  <rect
+     style="fill:#8c8c8c"
+     height="3"
+     width="3"
+     y="27"
+     x="73.5"
+     id="connector7terminal" />
+  <rect
+     style="fill:#8c8c8c"
+     id="connector7pin"
+     height="4.3400002"
+     width="3"
+     y="25.672941"
+     x="73.5" />
+  <polygon
+     style="fill:#8c8c8c"
+     id="pinflare8"
+     points="83.5,25.66 83.5,27.66 86.5,27.66 88.5,26.74 88.5,25.66 83.5,25.66 " />
+  <rect
+     style="fill:#8c8c8c"
+     height="3"
+     width="3"
+     y="27"
+     x="83.5"
+     id="connector8terminal" />
+  <rect
+     style="fill:#8c8c8c"
+     id="connector8pin"
+     height="4.3400002"
+     width="3"
+     y="25.672941"
+     x="83.5" />
+  <polygon
+     style="fill:#8c8c8c"
+     id="pinflare9"
+     points="93.5,25.66 93.5,27.66 96.5,27.66 98.5,26.74 98.5,25.66 93.5,25.66 " />
+  <rect
+     style="fill:#8c8c8c"
+     height="3"
+     width="3"
+     y="27"
+     x="93.5"
+     id="connector9terminal" />
+  <rect
+     style="fill:#8c8c8c"
+     id="connector9pin"
+     height="4.3400002"
+     width="3"
+     y="25.672941"
+     x="93.5" />
+  <polygon
+     style="fill:#8c8c8c"
+     id="pinflare10"
+     points="103.5,25.66 103.5,27.66 106.5,27.66 108.5,26.74 108.5,25.66 103.5,25.66 " />
+  <rect
+     style="fill:#8c8c8c"
+     height="3"
+     width="3"
+     y="27"
+     x="103.5"
+     id="connector10terminal" />
+  <rect
+     style="fill:#8c8c8c"
+     id="connector10pin"
+     height="4.3400002"
+     width="3"
+     y="25.672941"
+     x="103.5" />
+  <text id="label" x="56" y="15" fill="#e6e6e6" stroke="none" font-family="OCRA" text-anchor="middle" font-size="10" >?</text>
+</g>
+</svg>

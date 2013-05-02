@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><svg baseProfile="tiny" width="3.15in"  height="1.417in" version="1.2" viewBox="0 0 3150 1417" xmlns="http://www.w3.org/2000/svg">
+ <desc>Fritzing footprint SVG</desc>
+ <g id="silkscreen">
+	<rect stroke="white" fill="none" stroke-width="10" height="1417" width="3150" x="0" y="0" />
+	<rect stroke="white" fill="none" stroke-width="10" height="100" width="1600" x="270" y="50" />
+ </g>
+ <g id="copper1"><g id="copper0">
+    <rect fill='none' height='55' width='55' stroke='rgb(255, 191, 0)' stroke-width='20' x='287' y='72'/>
+<circle cx='315' cy='100' fill='none' id='connector0pin' r='27.5' stroke='rgb(255, 191, 0)' stroke-width='20'/>
+<circle cx='415' cy='100' fill='none' id='connector1pin' r='27.5' stroke='rgb(255, 191, 0)' stroke-width='20'/>
+<circle cx='515' cy='100' fill='none' id='connector2pin' r='27.5' stroke='rgb(255, 191, 0)' stroke-width='20'/>
+<circle cx='615' cy='100' fill='none' id='connector3pin' r='27.5' stroke='rgb(255, 191, 0)' stroke-width='20'/>
+<circle cx='715' cy='100' fill='none' id='connector4pin' r='27.5' stroke='rgb(255, 191, 0)' stroke-width='20'/>
+<circle cx='815' cy='100' fill='none' id='connector5pin' r='27.5' stroke='rgb(255, 191, 0)' stroke-width='20'/>
+<circle cx='915' cy='100' fill='none' id='connector6pin' r='27.5' stroke='rgb(255, 191, 0)' stroke-width='20'/>
+<circle cx='1015' cy='100' fill='none' id='connector7pin' r='27.5' stroke='rgb(255, 191, 0)' stroke-width='20'/>
+<circle cx='1115' cy='100' fill='none' id='connector8pin' r='27.5' stroke='rgb(255, 191, 0)' stroke-width='20'/>
+<circle cx='1215' cy='100' fill='none' id='connector9pin' r='27.5' stroke='rgb(255, 191, 0)' stroke-width='20'/>
+<circle cx='1315' cy='100' fill='none' id='connector10pin' r='27.5' stroke='rgb(255, 191, 0)' stroke-width='20'/>
+<circle cx='1415' cy='100' fill='none' id='connector11pin' r='27.5' stroke='rgb(255, 191, 0)' stroke-width='20'/>
+<circle cx='1515' cy='100' fill='none' id='connector12pin' r='27.5' stroke='rgb(255, 191, 0)' stroke-width='20'/>
+<circle cx='1615' cy='100' fill='none' id='connector13pin' r='27.5' stroke='rgb(255, 191, 0)' stroke-width='20'/>
+<circle cx='1715' cy='100' fill='none' id='connector14pin' r='27.5' stroke='rgb(255, 191, 0)' stroke-width='20'/>
+<circle cx='1815' cy='100' fill='none' id='connector15pin' r='27.5' stroke='rgb(255, 191, 0)' stroke-width='20'/>
+
+ </g></g>
+</svg>

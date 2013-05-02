@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" x="0in" y="0in" width="0.1946in" height="0.0774in" viewBox="0 0 1946 774" >
+<title>SparkFun.mod</title>
+<desc>Kicad module 'SparkFun-1206' from file 'SparkFun.mod' converted by Fritzing</desc>
+<metadata xmlns:fz='http://fritzing.org/kicadmetadata/1.0/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+<rdf:RDF><rdf:Description rdf:about=''>
+<fz:attr name='kicad filename'>SparkFun.mod</fz:attr>
+<fz:attr name='kicad module'>SparkFun-1206</fz:attr>
+<fz:attr name='fritzing version'>0.4.1b.07.04.4318</fz:attr>
+<fz:attr name='conversion date'>17/07/2010 17:15:03</fz:attr>
+<fz:attr name='dist-license'>GPL</fz:attr>
+<fz:attr name='use-license'>unlimited</fz:attr>
+<fz:attr name='author'>KICAD project</fz:attr>
+<fz:attr name='license-url'>http://www.gnu.org/licenses/gpl.html</fz:attr>
+<fz:comment></fz:comment>
+<fz:attr name='keyword'></fz:attr>
+</rdf:Description></rdf:RDF></metadata><g id="copper1">
+ <rect width="629" x="107.5" y="33" fill="#ffbf00" connectorname="1" height="708" id="connector0pad" stroke-width="0"/>
+ <rect width="629" x="1209.5" y="33" fill="#ffbf00" connectorname="2" height="708" id="connector1pad" stroke-width="0"/>
+</g>
+<g id="silkscreen">
+ <line fill="none" stroke="white" y1="722" x1="303" y2="722" stroke-width="26" x2="599"/>
+ <line fill="none" stroke="white" y1="722" x1="599" y2="53" stroke-width="26" x2="599"/>
+ <line fill="none" stroke="white" y1="53" x1="303" y2="53" stroke-width="26" x2="599"/>
+ <line fill="none" stroke="white" y1="722" x1="303" y2="53" stroke-width="26" x2="303"/>
+ <line fill="none" stroke="white" y1="721" x1="1347" y2="721" stroke-width="26" x2="1643"/>
+ <line fill="none" stroke="white" y1="721" x1="1643" y2="52" stroke-width="26" x2="1643"/>
+ <line fill="none" stroke="white" y1="52" x1="1347" y2="52" stroke-width="26" x2="1643"/>
+ <line fill="none" stroke="white" y1="721" x1="1347" y2="52" stroke-width="26" x2="1347"/>
+ <line fill="none" stroke="white" y1="544" x1="895" y2="544" stroke-width="26" x2="1051"/>
+ <line fill="none" stroke="white" y1="544" x1="1051" y2="230" stroke-width="26" x2="1051"/>
+ <line fill="none" stroke="white" y1="230" x1="895" y2="230" stroke-width="26" x2="1051"/>
+ <line fill="none" stroke="white" y1="544" x1="895" y2="230" stroke-width="26" x2="895"/>
+ <line fill="none" stroke="white" y1="0" x1="0" y2="0" stroke-width="20" x2="1946"/>
+ <line fill="none" stroke="white" y1="774" x1="1946" y2="774" stroke-width="20" x2="0"/>
+ <line fill="none" stroke="white" y1="774" x1="0" y2="0" stroke-width="20" x2="0"/>
+ <line fill="none" stroke="white" y1="0" x1="1946" y2="774" stroke-width="20" x2="1946"/>
+ <line fill="none" stroke="white" y1="78" x1="594" y2="78" stroke-width="40" x2="1352"/>
+ <line fill="none" stroke="white" y1="696" x1="594" y2="696" stroke-width="40" x2="1352"/>
+</g>
+</svg>

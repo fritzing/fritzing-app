@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- Created with Fritzing (http://www.fritzing.org/) -->
+<svg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' version='1.2' baseProfile='tiny' x='0in' y='0in' width='0.889192in' height='1.85043in' viewBox='0 0 22.5855 47.001' >
+<g id='schematic'>
+<rect class='interior rect' x='2.66347' y='18.934' width='12.7' height='27.94' stroke='none' stroke-width='0' fill='#ffffff' />
+<text class='text' id='label' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.94028' x='9.01347' y='32.904' text-anchor='middle'></text>
+<line class='other' x1='2.66347' y1='18.934' x2='15.3635' y2='18.934' stroke='#000000' stroke-width='0.3175' stroke-linecap='round'/>
+<line class='other' x1='15.3635' y1='18.934' x2='15.3635' y2='46.874' stroke='#000000' stroke-width='0.3175' stroke-linecap='round'/>
+<line class='other' x1='15.3635' y1='46.874' x2='2.66347' y2='46.874' stroke='#000000' stroke-width='0.3175' stroke-linecap='round'/>
+<line class='other' x1='2.66347' y1='46.874' x2='2.66347' y2='18.934' stroke='#000000' stroke-width='0.3175' stroke-linecap='round'/>
+<g transform='translate(13.5855,39)'><g transform='rotate(270)'>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='2.3114' x='0' y='0' text-anchor='start'>JOYSTICK</text>
+</g></g>
+<line class='pin' id='connector1pin' connectorname='V+' x1='0.123472' y1='21.474' x2='2.66347' y2='21.474' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector1terminal' x='0.123472' y='21.474' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='1.39347' y='21.2271' text-anchor='middle'>2</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.5875' x='3.4043' y='22.2148' text-anchor='start'>V+</text>
+<line class='pin' id='connector7pin' connectorname='V' x1='0.123472' y1='24.014' x2='2.66347' y2='24.014' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector7terminal' x='0.123472' y='24.014' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='1.39347' y='23.7671' text-anchor='middle'>8</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.5875' x='3.4043' y='24.7548' text-anchor='start'>V</text>
+<line class='pin' id='connector11pin' connectorname='V-' x1='0.123472' y1='26.554' x2='2.66347' y2='26.554' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector11terminal' x='0.123472' y='26.554' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='1.39347' y='26.3071' text-anchor='middle'>12</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.5875' x='3.4043' y='27.2948' text-anchor='start'>V-</text>
+<line class='pin' id='connector2pin' connectorname='H+' x1='0.123472' y1='31.634' x2='2.66347' y2='31.634' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector2terminal' x='0.123472' y='31.634' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='1.39347' y='31.3871' text-anchor='middle'>3</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.5875' x='3.4043' y='32.3748' text-anchor='start'>H+</text>
+<line class='pin' id='connector9pin' connectorname='H' x1='0.123472' y1='34.174' x2='2.66347' y2='34.174' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector9terminal' x='0.123472' y='34.174' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='1.39347' y='33.9271' text-anchor='middle'>10</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.5875' x='3.4043' y='34.9148' text-anchor='start'>H</text>
+<line class='pin' id='connector10pin' connectorname='H-' x1='0.123472' y1='36.714' x2='2.66347' y2='36.714' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector10terminal' x='0.123472' y='36.714' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='1.39347' y='36.4671' text-anchor='middle'>11</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.5875' x='3.4043' y='37.4548' text-anchor='start'>H-</text>
+<line class='pin' id='connector0pin' connectorname='SEL+' x1='0.123472' y1='41.794' x2='2.66347' y2='41.794' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector0terminal' x='0.123472' y='41.794' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='1.39347' y='41.5471' text-anchor='middle'>1</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.5875' x='3.4043' y='42.5348' text-anchor='start'>SEL+</text>
+<line class='pin' id='connector6pin' connectorname='SEL-' x1='0.123472' y1='44.334' x2='2.66347' y2='44.334' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector6terminal' x='0.123472' y='44.334' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='1.39347' y='44.0871' text-anchor='middle'>7</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.5875' x='3.4043' y='45.0748' text-anchor='start'>SEL-</text>
+</g>
+</svg>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.1"
+   width="43.200001"
+   height="7.1999998"
+   id="svg2">
+  <defs
+     id="defs4" />
+  <g
+     id="copper0">
+    <g
+       id="copper1">
+       <circle cx="3.6" cy="3.6" fill="none" id="connector1pin" r="2.7" stroke="#f7bd13" stroke-width="1.8"/>
+       <circle cx="39.6" cy="3.6" fill="none" id="connector0pin" r="2.7" stroke="#f7bd13" stroke-width="1.8"/>
+    </g>
+  </g>
+  <g
+     id="silkscreen">
+    <rect
+       width="20.700001"
+       height="6.3000002"
+       x="11.25"
+       y="0.44999981"
+       id="rect3790"
+       style="fill:none;stroke:#ffffff;stroke-width:0.9;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    <path
+       d="m 10.8,3.5999998 -2.7,0"
+       id="path3798"
+       style="fill:none;stroke:#ffffff;stroke-width:0.9;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    <path
+       d="m 32.4,3.5999998 2.7,0"
+       id="path3800"
+       style="fill:none;stroke:#ffffff;stroke-width:0.9;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+  <path
+     d="M 12.6,4.4999999 A 2.25,2.25 0 0 1 17.1,4.5"
+     id="path3715"
+     style="fill:none;stroke:#ffffff;stroke-width:0.9;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+  <path
+     d="M 17.1,4.4999999 A 2.25,2.25 0 0 1 21.6,4.5"
+     id="path3717"
+     style="fill:none;stroke:#ffffff;stroke-width:0.9;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+  <path
+     d="M 21.6,4.4999999 A 2.25,2.25 0 0 1 26.1,4.5"
+     id="path3719"
+     style="fill:none;stroke:#ffffff;stroke-width:0.9;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+  <path
+     d="M 26.1,4.4999999 A 2.25,2.25 0 0 1 30.6,4.5"
+     id="path3721"
+     style="fill:none;stroke:#ffffff;stroke-width:0.9;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+  </g>
+</svg>

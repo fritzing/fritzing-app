@@ -180,7 +180,7 @@ protected:
     QString checkDroppedModuleID(const QString & moduleID);
     bool canConnect(Wire * from, ItemBase * to);
 	void collectThroughHole(QList<ConnectorItem *> & th, QList<ConnectorItem *> & pads, const LayerList &);
-	ViewLayer::ViewLayerPlacement getViewLayerPlacement(ModelPart * modelPart, QDomElement & instance, QDomElement & view, ViewGeometry &);
+	ViewLayer::ViewLayerPlacement getViewLayerPlacement(ModelPart *, QDomElement & instance, QDomElement & view, ViewGeometry &);
     void requestQuote();
     double calcBoardArea(int & boardCount);
     PaletteItem* addPartItem(ModelPart * modelPart, ViewLayer::ViewLayerPlacement, PaletteItem * paletteItem, bool doConnectors, bool & ok, ViewLayer::ViewID, bool temporary);

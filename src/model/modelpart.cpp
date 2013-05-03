@@ -256,6 +256,7 @@ void ModelPart::saveInstance(QXmlStreamWriter & streamWriter)
 		streamWriter.writeAttribute("modelIndex", QString::number(m_index));
 		streamWriter.writeAttribute("path", m_modelPartShared->path());
 		if (m_modelPartShared->flippedSMD()) {
+            // don't think this is ever read back in
 			streamWriter.writeAttribute("flippedSMD", "true");
 		}
 	}

@@ -409,6 +409,15 @@ const LayerList & ViewLayer::drillLayers() {
 	return layerList;
 }
 
+const LayerList & ViewLayer::silkLayers() {
+	static LayerList layerList;
+	if (layerList.isEmpty()) {
+		layerList << ViewLayer::Silkscreen0 << ViewLayer::Silkscreen1;
+	}
+	
+	return layerList;
+}
+
 const LayerList & ViewLayer::topLayers() {
 	static LayerList layerList;
 	if (layerList.isEmpty()) {

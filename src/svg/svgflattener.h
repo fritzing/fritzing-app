@@ -41,11 +41,14 @@ public:
 
 public:
 	static void flipSMDSvg(const QString & filename, const QString & svg, QDomDocument & flipDoc, const QString & elementID, const QString & altElementID, double printerScale);
+	static void replaceElementID(const QString & filename, const QString & svg, QDomDocument & flipDoc, const QString & elementID, const QString & altElementID);
 
 protected:
 	static void flipSMDElement(QDomDocument & domDocument, QSvgRenderer & renderer, QDomElement & element, const QString & att, QDomElement altAtt, const QString & altElementID, double printerScale);
     static bool hasOtherTransform(QDomElement & element);
     static bool hasTranslate(QDomElement & element);
+    static bool loadDocIf(const QString & filename, const QString & svg, QDomDocument & domDocument);
+
 
 protected slots:
     void rotateCommandSlot(QChar command, bool relative, QList<double> & args, void * userData);

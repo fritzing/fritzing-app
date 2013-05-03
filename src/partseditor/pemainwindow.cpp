@@ -688,6 +688,8 @@ bool PEMainWindow::setInitialItem(PaletteItem * paletteItem)
     m_pcbGraphicsView->setBoardLayers(2, true);
 	m_pcbGraphicsView->setLayerActive(ViewLayer::Copper1, true);
 	m_pcbGraphicsView->setLayerActive(ViewLayer::Copper0, true);
+	m_pcbGraphicsView->setLayerActive(ViewLayer::Silkscreen1, true);
+	m_pcbGraphicsView->setLayerActive(ViewLayer::Silkscreen0, true);
 
     ModelPart * originalModelPart = NULL;
     if (paletteItem == NULL) {

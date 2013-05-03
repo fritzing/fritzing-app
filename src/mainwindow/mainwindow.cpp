@@ -1959,7 +1959,7 @@ void MainWindow::swapSelectedMap(const QString & family, const QString & prop, Q
 			}
 		}
 
-		swapSelectedAux(itemBase->layerKinChief(), generatedModuleID, false, ViewLayer::UnknownSpec);
+		swapSelectedAux(itemBase->layerKinChief(), generatedModuleID, false, ViewLayer::UnknownPlacement);
 		return;
 	}
 
@@ -2006,7 +2006,7 @@ void MainWindow::swapSelectedMap(const QString & family, const QString & prop, Q
 		AutoCloseMessageBox::showMessage(this, tr("No exactly matching part found; Fritzing chose the closest match."));
 	}
 
-	swapSelectedAux(itemBase, moduleID, false, ViewLayer::UnknownSpec);
+	swapSelectedAux(itemBase, moduleID, false, ViewLayer::UnknownPlacement);
 }
 
 bool MainWindow::swapSpecial(const QString & theProp, QMap<QString, QString> & currPropsMap) {

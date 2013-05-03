@@ -1084,7 +1084,7 @@ ViewLayer::ViewLayerID ConnectorItem::attachedToViewLayerID() {
 }
 
 ViewLayer::ViewLayerPlacement ConnectorItem::attachedToViewLayerPlacement() {
-	if (m_attachedTo == NULL) return ViewLayer::UnknownSpec;
+	if (m_attachedTo == NULL) return ViewLayer::UnknownPlacement;
 
 	return m_attachedTo->viewLayerPlacement();
 }

@@ -176,7 +176,7 @@ public:
 	void setCloseSilently(bool);
 	class PCBSketchWidget * pcbView();
 	void noBackup();
-	void swapSelectedAux(ItemBase * itemBase, const QString & moduleID, bool useViewLayerSpec, ViewLayer::ViewLayerSpec);
+	void swapSelectedAux(ItemBase * itemBase, const QString & moduleID, bool useViewLayerPlacement, ViewLayer::ViewLayerPlacement);
     void swapLayers(ItemBase * itemBase, int layers, const QString & msg, int delay);
 	bool saveAsAux(const QString & fileName);
 	void swapObsolete(bool displayFeedback);
@@ -379,7 +379,7 @@ protected slots:
 	void openProgramWindow();
 	void linkToProgramFile(const QString & filename, const QString & language, const QString & programmer, bool addLink, bool strong);
 	void newDesignRulesCheck();
-	void subSwapSlot(SketchWidget *, ItemBase *, const QString & newModuleID, ViewLayer::ViewLayerSpec, long & newID, QUndoCommand * parentCommand);
+	void subSwapSlot(SketchWidget *, ItemBase *, const QString & newModuleID, ViewLayer::ViewLayerPlacement, long & newID, QUndoCommand * parentCommand);
 	void updateLayerMenuSlot();
 	bool save();
 	bool saveAs();
@@ -519,7 +519,7 @@ protected:
 
 	bool alreadyOpen(const QString & fileName);
 	void svgMissingLayer(const QString & layername, const QString & path);
-	long swapSelectedAuxAux(ItemBase * itemBase, const QString & moduleID, ViewLayer::ViewLayerSpec viewLayerSpec, QUndoCommand * parentCommand);
+	long swapSelectedAuxAux(ItemBase * itemBase, const QString & moduleID, ViewLayer::ViewLayerPlacement viewLayerPlacement, QUndoCommand * parentCommand);
 	bool swapSpecial(const QString & prop, QMap<QString, QString> & currPropsMap);
 
 	void enableAddBendpointAct(QGraphicsItem *);

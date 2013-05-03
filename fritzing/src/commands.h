@@ -118,7 +118,7 @@ protected:
 class AddDeleteItemCommand : public BaseCommand
 {
 public:
-	AddDeleteItemCommand(class SketchWidget * sketchWidget, BaseCommand::CrossViewType, QString moduleID, ViewLayer::ViewLayerSpec, ViewGeometry &, qint64 id, long modelIndex, QUndoCommand *parent);
+	AddDeleteItemCommand(class SketchWidget * sketchWidget, BaseCommand::CrossViewType, QString moduleID, ViewLayer::ViewLayerPlacement, ViewGeometry &, qint64 id, long modelIndex, QUndoCommand *parent);
 
 	long itemID() const;
 	void setDropOrigin(class SketchWidget *);
@@ -133,7 +133,7 @@ protected:
     ViewGeometry m_viewGeometry;
 	long m_modelIndex;
 	class SketchWidget * m_dropOrigin;
-	ViewLayer::ViewLayerSpec m_viewLayerSpec;
+	ViewLayer::ViewLayerPlacement m_viewLayerPlacement;
 };
 
 /////////////////////////////////////////////
@@ -141,7 +141,7 @@ protected:
 class AddItemCommand : public AddDeleteItemCommand
 {
 public:
-    AddItemCommand(class SketchWidget *sketchWidget, BaseCommand::CrossViewType, QString moduleID, ViewLayer::ViewLayerSpec, ViewGeometry &, qint64 id, bool updateInfoView, long modelIndex, QUndoCommand *parent);
+    AddItemCommand(class SketchWidget *sketchWidget, BaseCommand::CrossViewType, QString moduleID, ViewLayer::ViewLayerPlacement, ViewGeometry &, qint64 id, bool updateInfoView, long modelIndex, QUndoCommand *parent);
     void undo();
     void redo();
 	void addRestoreIndexesCommand(class RestoreIndexesCommand *);
@@ -160,7 +160,7 @@ protected:
 class DeleteItemCommand : public AddDeleteItemCommand
 {
 public:
-	DeleteItemCommand(class SketchWidget *sketchWidget, BaseCommand::CrossViewType, QString moduleID, ViewLayer::ViewLayerSpec, ViewGeometry &, qint64 id, long modelIndex, QUndoCommand *parent);
+	DeleteItemCommand(class SketchWidget *sketchWidget, BaseCommand::CrossViewType, QString moduleID, ViewLayer::ViewLayerPlacement, ViewGeometry &, qint64 id, long modelIndex, QUndoCommand *parent);
     void undo();
     void redo();
 
@@ -294,7 +294,7 @@ public:
 	ChangeConnectionCommand(class SketchWidget * sketchWidget, BaseCommand::CrossViewType,
 							long fromID, const QString & fromConnectorID,
 							long toID, const QString & toConnectorID,
-							ViewLayer::ViewLayerSpec,
+							ViewLayer::ViewLayerPlacement,
 							bool connect, QUndoCommand * parent);
 	void undo();
 	void redo();
@@ -311,7 +311,7 @@ protected:
     QString m_toConnectorID;
 	bool m_connect;
 	bool m_updateConnections;
-	ViewLayer::ViewLayerSpec m_viewLayerSpec;
+	ViewLayer::ViewLayerPlacement m_viewLayerPlacement;
     bool m_enabled;
 
 };

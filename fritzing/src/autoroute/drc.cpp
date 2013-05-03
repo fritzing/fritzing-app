@@ -380,19 +380,19 @@ bool DRC::startAux(QString & message, QStringList & messages, QList<CollidingThi
 
     extendBorder(1, m_minusImage);   // since the resolution = keepout, extend by 1
 
-    QList<ViewLayer::ViewLayerSpec> layerSpecs;
-    layerSpecs << ViewLayer::Bottom;
-    if (bothSidesNow) layerSpecs << ViewLayer::Top;
+    QList<ViewLayer::ViewLayerPlacement> layerSpecs;
+    layerSpecs << ViewLayer::NewBottom;
+    if (bothSidesNow) layerSpecs << ViewLayer::NewTop;
 
     int emptyMasterCount = 0;
-    foreach (ViewLayer::ViewLayerSpec viewLayerSpec, layerSpecs) {  
-        if (viewLayerSpec == ViewLayer::Top) {
+    foreach (ViewLayer::ViewLayerPlacement viewLayerPlacement, layerSpecs) {  
+        if (viewLayerPlacement == ViewLayer::NewTop) {
             emit wantTopVisible();
             m_plusImage->fill(0xffffffff);
         }
         else emit wantBottomVisible();
 
-	    LayerList viewLayerIDs = ViewLayer::copperLayers(viewLayerSpec);
+	    LayerList viewLayerIDs = ViewLayer::copperLayers(viewLayerPlacement);
         viewLayerIDs.removeOne(ViewLayer::GroundPlane0);
         viewLayerIDs.removeOne(ViewLayer::GroundPlane1);
         RenderThing renderThing;
@@ -412,7 +412,7 @@ bool DRC::startAux(QString & message, QStringList & messages, QList<CollidingThi
 	    }
        
 	    QDomDocument * masterDoc = new QDomDocument();
-        m_masterDocs.insert(viewLayerSpec, masterDoc);
+        m_masterDocs.insert(viewLayerPlacement, masterDoc);
 
 	    QString errorStr;
 	    int errorLine;
@@ -439,7 +439,7 @@ bool DRC::startAux(QString & message, QStringList & messages, QList<CollidingThi
 
         renderOne(masterDoc, m_plusImage, sourceRes);
         #ifndef QT_NO_DEBUG
-	        m_plusImage->save(FolderUtils::getUserDataStorePath("") + QString("/testDRCmaster%1.png").arg(viewLayerSpec));
+	        m_plusImage->save(FolderUtils::getUserDataStorePath("") + QString("/testDRCmaster%1.png").arg(viewLayerPlacement));
         #endif
 
 	    ProcessEventBlocker::processEvents();
@@ -452,7 +452,7 @@ bool DRC::startAux(QString & message, QStringList & messages, QList<CollidingThi
         if (pixelsCollide(m_plusImage, m_minusImage, m_displayImage, 0, 0, imgSize.width(), imgSize.height(), 1 /* 0x80ff0000 */, atPixels)) {
             CollidingThing * collidingThing = findItemsAt(atPixels, m_board, viewLayerIDs, keepoutMils, dpi, true, NULL);
             QString msg = tr("Too close to a border (%1 layer)")
-                .arg(viewLayerSpec == ViewLayer::Top ? tr("top") : tr("bottom"))
+                .arg(viewLayerPlacement == ViewLayer::NewTop ? tr("top") : tr("bottom"))
                 ;
             emit setProgressMessage(msg);
             messages << msg;
@@ -490,14 +490,14 @@ bool DRC::startAux(QString & message, QStringList & messages, QList<CollidingThi
     }
 
     int index = 0;
-    foreach (ViewLayer::ViewLayerSpec viewLayerSpec, layerSpecs) {    
-        if (viewLayerSpec == ViewLayer::Top) emit wantTopVisible();
+    foreach (ViewLayer::ViewLayerPlacement viewLayerPlacement, layerSpecs) {    
+        if (viewLayerPlacement == ViewLayer::NewTop) emit wantTopVisible();
         else emit wantBottomVisible();
 
-        QDomDocument * masterDoc = m_masterDocs.value(viewLayerSpec, NULL);
+        QDomDocument * masterDoc = m_masterDocs.value(viewLayerPlacement, NULL);
         if (masterDoc == NULL) continue;
 
-	    LayerList viewLayerIDs = ViewLayer::copperLayers(viewLayerSpec);
+	    LayerList viewLayerIDs = ViewLayer::copperLayers(viewLayerPlacement);
         viewLayerIDs.removeOne(ViewLayer::GroundPlane0);
         viewLayerIDs.removeOne(ViewLayer::GroundPlane1);
 
@@ -517,7 +517,7 @@ bool DRC::startAux(QString & message, QStringList & messages, QList<CollidingThi
             // we have a net;
             m_plusImage->fill(0xffffffff);
             m_minusImage->fill(0xffffffff);
-            splitNet(masterDoc, equi, m_minusImage, m_plusImage, sourceRes, viewLayerSpec, index++, keepoutMils);
+            splitNet(masterDoc, equi, m_minusImage, m_plusImage, sourceRes, viewLayerPlacement, index++, keepoutMils);
             
             QHash<ConnectorItem *, QRectF> rects;
             QList<Wire *> wires;
@@ -557,7 +557,7 @@ bool DRC::startAux(QString & message, QStringList & messages, QList<CollidingThi
                     QString name0 = names.at(0);
                     QString msg = tr("%1 is overlapping (%2 layer)")
                         .arg(name0)
-                        .arg(viewLayerSpec == ViewLayer::Top ? tr("top") : tr("bottom"))
+                        .arg(viewLayerPlacement == ViewLayer::NewTop ? tr("top") : tr("bottom"))
                         ;
                     messages << msg;
                     collidingThings << collidingThing;
@@ -659,7 +659,7 @@ bool DRC::makeBoard(QImage * image, QRectF & sourceRes) {
     return true;
 }
 
-void DRC::splitNet(QDomDocument * masterDoc, QList<ConnectorItem *> & equi, QImage * minusImage, QImage * plusImage, QRectF & sourceRes, ViewLayer::ViewLayerSpec viewLayerSpec, int index, double keepoutMils) {
+void DRC::splitNet(QDomDocument * masterDoc, QList<ConnectorItem *> & equi, QImage * minusImage, QImage * plusImage, QRectF & sourceRes, ViewLayer::ViewLayerPlacement viewLayerPlacement, int index, double keepoutMils) {
     // deal with connectors on the same part, even though they are not on the same net
     // in other words, make sure there are no overlaps of connectors on the same part
     QList<QDomElement> net;
@@ -684,9 +684,9 @@ void DRC::splitNet(QDomDocument * masterDoc, QList<ConnectorItem *> & equi, QIma
     }
 
     #ifndef QT_NO_DEBUG
-	    plusImage->save(FolderUtils::getUserDataStorePath("") + QString("/testDRCNet%1_%2.png").arg(viewLayerSpec).arg(index));
+	    plusImage->save(FolderUtils::getUserDataStorePath("") + QString("/testDRCNet%1_%2.png").arg(viewLayerPlacement).arg(index));
     #else
-        Q_UNUSED(viewLayerSpec);
+        Q_UNUSED(viewLayerPlacement);
         Q_UNUSED(index);
     #endif
 
@@ -706,7 +706,7 @@ void DRC::splitNet(QDomDocument * masterDoc, QList<ConnectorItem *> & equi, QIma
 
     renderOne(masterDoc, minusImage, sourceRes);
     #ifndef QT_NO_DEBUG
-	    minusImage->save(FolderUtils::getUserDataStorePath("") + QString("/testDRCNotNet%1_%2.png").arg(viewLayerSpec).arg(index));
+	    minusImage->save(FolderUtils::getUserDataStorePath("") + QString("/testDRCNotNet%1_%2.png").arg(viewLayerPlacement).arg(index));
     #endif
 
      // master doc restored to original state

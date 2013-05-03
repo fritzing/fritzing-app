@@ -336,15 +336,15 @@ void ViewLayer::setActive(bool a) {
 	m_active = a;
 }
 
-ViewLayer::ViewLayerSpec ViewLayer::specFromID(ViewLayer::ViewLayerID viewLayerID) 
+ViewLayer::ViewLayerPlacement ViewLayer::specFromID(ViewLayer::ViewLayerID viewLayerID) 
 {
 	switch (viewLayerID) {
 		case Copper1:
 		case Copper1Trace:
 		case GroundPlane1:
-			return ViewLayer::Top;
+			return ViewLayer::NewTop;
 		default:
-			return ViewLayer::Bottom;
+			return ViewLayer::NewBottom;
 	}
 }
 
@@ -356,14 +356,14 @@ bool ViewLayer::isCopperLayer(ViewLayer::ViewLayerID viewLayerID) {
 }
 
 
-const LayerList & ViewLayer::copperLayers(ViewLayer::ViewLayerSpec viewLayerSpec) 
+const LayerList & ViewLayer::copperLayers(ViewLayer::ViewLayerPlacement viewLayerPlacement) 
 {
-	if (viewLayerSpec == ViewLayer::Top) return CopperTopLayers;
+	if (viewLayerPlacement == ViewLayer::NewTop) return CopperTopLayers;
 	
 	return CopperBottomLayers;
 }
 
-const LayerList & ViewLayer::maskLayers(ViewLayer::ViewLayerSpec viewLayerSpec) {
+const LayerList & ViewLayer::maskLayers(ViewLayer::ViewLayerPlacement viewLayerPlacement) {
 	static LayerList bottom;
 	static LayerList top;
 	if (bottom.isEmpty()) {
@@ -372,12 +372,12 @@ const LayerList & ViewLayer::maskLayers(ViewLayer::ViewLayerSpec viewLayerSpec) 
 	if (top.isEmpty()) {
 		top << ViewLayer::Copper1;
 	}
-	if (viewLayerSpec == ViewLayer::Top) return top;
+	if (viewLayerPlacement == ViewLayer::NewTop) return top;
 	
 	return bottom;
 }
 
-const LayerList & ViewLayer::silkLayers(ViewLayer::ViewLayerSpec viewLayerSpec) {
+const LayerList & ViewLayer::silkLayers(ViewLayer::ViewLayerPlacement viewLayerPlacement) {
 	static LayerList bottom;
 	static LayerList top;
 	if (bottom.isEmpty()) {
@@ -386,7 +386,7 @@ const LayerList & ViewLayer::silkLayers(ViewLayer::ViewLayerSpec viewLayerSpec) 
 	if (top.isEmpty()) {
 		top << ViewLayer::Silkscreen1 << ViewLayer::Silkscreen1Label;
 	}
-	if (viewLayerSpec == ViewLayer::Top) return top;
+	if (viewLayerPlacement == ViewLayer::NewTop) return top;
 	
 	return bottom;
 }
@@ -408,6 +408,28 @@ const LayerList & ViewLayer::drillLayers() {
 	
 	return layerList;
 }
+
+const LayerList & ViewLayer::topLayers() {
+	static LayerList layerList;
+	if (layerList.isEmpty()) {
+		layerList << ViewLayer::Copper1 << ViewLayer::Copper1Trace << ViewLayer::Silkscreen1 << ViewLayer::Silkscreen1Label << ViewLayer::GroundPlane1;
+	}
+	
+	return layerList;
+}
+
+const LayerList & ViewLayer::bottomLayers() {
+	static LayerList layerList;
+	if (layerList.isEmpty()) {
+		layerList << ViewLayer::Copper0 << ViewLayer::Copper0Trace << ViewLayer::Silkscreen0 << ViewLayer::Silkscreen0Label << ViewLayer::GroundPlane0;
+	}
+	
+	return layerList;
+}
+
+
+
+
 
 bool ViewLayer::isNonCopperLayer(ViewLayer::ViewLayerID viewLayerID) {
 	// for pcb view layers only

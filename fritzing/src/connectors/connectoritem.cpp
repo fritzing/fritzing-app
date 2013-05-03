@@ -1083,10 +1083,10 @@ ViewLayer::ViewLayerID ConnectorItem::attachedToViewLayerID() {
 	return m_attachedTo->viewLayerID();
 }
 
-ViewLayer::ViewLayerSpec ConnectorItem::attachedToViewLayerSpec() {
+ViewLayer::ViewLayerPlacement ConnectorItem::attachedToViewLayerPlacement() {
 	if (m_attachedTo == NULL) return ViewLayer::UnknownSpec;
 
-	return m_attachedTo->viewLayerSpec();
+	return m_attachedTo->viewLayerPlacement();
 }
 
 ViewLayer::ViewID ConnectorItem::attachedToViewID() {
@@ -1378,19 +1378,19 @@ void ConnectorItem::collectEqualPotential(QList<ConnectorItem *> & connectorItem
 	}
 }
 
-void ConnectorItem::collectParts(QList<ConnectorItem *> & connectorItems, QList<ConnectorItem *> & partsConnectors, bool includeSymbols, ViewLayer::ViewLayerSpec viewLayerSpec)
+void ConnectorItem::collectParts(QList<ConnectorItem *> & connectorItems, QList<ConnectorItem *> & partsConnectors, bool includeSymbols, ViewLayer::ViewLayerPlacement viewLayerPlacement)
 {
 	if (connectorItems.count() == 0) return;
 
 	//DebugDialog::debug("___________________________");
-	switch (viewLayerSpec) {
-		case ViewLayer::Top:
-		case ViewLayer::Bottom:
-		case ViewLayer::TopAndBottom:
+	switch (viewLayerPlacement) {
+		case ViewLayer::NewTop:
+		case ViewLayer::NewBottom:
+		case ViewLayer::NewTopAndBottom:
 			break;
 		default:
-			DebugDialog::debug(QString("collect parts unknown spec %1").arg(viewLayerSpec));
-			viewLayerSpec = ViewLayer::TopAndBottom;
+			DebugDialog::debug(QString("collect parts unknown spec %1").arg(viewLayerPlacement));
+			viewLayerPlacement = ViewLayer::NewTopAndBottom;
 			break;
 	}
 	
@@ -1410,7 +1410,7 @@ void ConnectorItem::collectParts(QList<ConnectorItem *> & connectorItems, QList<
 			case ModelPart::Board:
 			case ModelPart::ResizableBoard:
 			case ModelPart::Via:
-				collectPart(connectorItem, partsConnectors, viewLayerSpec);
+				collectPart(connectorItem, partsConnectors, viewLayerPlacement);
 				break;
 			default:
 				break;
@@ -1418,7 +1418,7 @@ void ConnectorItem::collectParts(QList<ConnectorItem *> & connectorItems, QList<
 	}
 }
 
-void ConnectorItem::collectPart(ConnectorItem * connectorItem, QList<ConnectorItem *> & partsConnectors, ViewLayer::ViewLayerSpec viewLayerSpec) {
+void ConnectorItem::collectPart(ConnectorItem * connectorItem, QList<ConnectorItem *> & partsConnectors, ViewLayer::ViewLayerPlacement viewLayerPlacement) {
 	if (partsConnectors.contains(connectorItem)) return;
 				
 	ConnectorItem * crossConnectorItem = connectorItem->getCrossLayerConnectorItem();
@@ -1427,7 +1427,7 @@ void ConnectorItem::collectPart(ConnectorItem * connectorItem, QList<ConnectorIt
 			return;
 		}
 		
-		if (viewLayerSpec == ViewLayer::TopAndBottom) {
+		if (viewLayerPlacement == ViewLayer::NewTopAndBottom) {
 			partsConnectors.append(crossConnectorItem);
 			
 			/*
@@ -1439,14 +1439,14 @@ void ConnectorItem::collectPart(ConnectorItem * connectorItem, QList<ConnectorIt
 			*/
 				
 		}
-		else if (viewLayerSpec == ViewLayer::Top) {
+		else if (viewLayerPlacement == ViewLayer::NewTop) {
 			if (connectorItem->attachedToViewLayerID() == ViewLayer::Copper1) {
 			}
 			else {
 				connectorItem = crossConnectorItem;
 			}
 		}
-		else if (viewLayerSpec == ViewLayer::Bottom) {
+		else if (viewLayerPlacement == ViewLayer::NewBottom) {
 			if (connectorItem->attachedToViewLayerID() == ViewLayer::Copper0) {
 			}
 			else {
@@ -1607,8 +1607,8 @@ ConnectorItem * ConnectorItem::getCrossLayerConnectorItem() {
 	return NULL;
 }
 
-bool ConnectorItem::isInLayers(ViewLayer::ViewLayerSpec viewLayerSpec) {
-	return ViewLayer::copperLayers(viewLayerSpec).contains(attachedToViewLayerID());
+bool ConnectorItem::isInLayers(ViewLayer::ViewLayerPlacement viewLayerPlacement) {
+	return ViewLayer::copperLayers(viewLayerPlacement).contains(attachedToViewLayerID());
 }
 
 bool ConnectorItem::isCrossLayerConnectorItem(ConnectorItem * candidate) {
@@ -1751,20 +1751,20 @@ void ConnectorItem::paintLeg(QPainter * painter, bool hasCurves)
 }
 
 
-ConnectorItem * ConnectorItem::chooseFromSpec(ViewLayer::ViewLayerSpec viewLayerSpec) {
+ConnectorItem * ConnectorItem::chooseFromSpec(ViewLayer::ViewLayerPlacement viewLayerPlacement) {
 	ConnectorItem * crossConnectorItem = getCrossLayerConnectorItem();
 	if (crossConnectorItem == NULL) return this;
 
 	ViewLayer::ViewLayerID basis = ViewLayer::Copper0;
-	switch (viewLayerSpec) {
-		case ViewLayer::Top:
+	switch (viewLayerPlacement) {
+		case ViewLayer::NewTop:
 			basis = ViewLayer::Copper1;
 			break;
-		case ViewLayer::Bottom:
+		case ViewLayer::NewBottom:
 			basis = ViewLayer::Copper0;
 			break;
 		default:
-			DebugDialog::debug(QString("unusual viewLayerSpec %1").arg(viewLayerSpec));
+			DebugDialog::debug(QString("unusual viewLayerPlacement %1").arg(viewLayerPlacement));
 			basis = ViewLayer::Copper0;
 			break;
 	}
@@ -1932,7 +1932,7 @@ void ConnectorItem::debugInfo(const QString & msg)
 			.arg(this->attachedToInstanceTitle())
 			.arg(this->attachedToViewLayerID())
 			.arg(this->attachedToViewID())
-			.arg(this->attachedToViewLayerSpec())
+			.arg(this->attachedToViewLayerPlacement())
 			.arg(this->attachedTo()->wireFlags()) 
 			.arg(this->m_hybrid)
 			.arg((long) this->bus(), 0, 16)

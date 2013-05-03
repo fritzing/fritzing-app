@@ -178,7 +178,7 @@ bool GroundPlaneGenerator::generateGroundPlaneUnit(const QString & boardSvg, QSi
 	QBitArray redMarker(image->height() * image->width(), false);
 
 	QRgb pixel = image->pixel(s);
-	DebugDialog::debug(QString("unit %1").arg(pixel, 0, 16));
+	//DebugDialog::debug(QString("unit %1").arg(pixel, 0, 16));
 	if (pixel != 0xffffffff) {
 		// starting off in bad territory
 		delete image;

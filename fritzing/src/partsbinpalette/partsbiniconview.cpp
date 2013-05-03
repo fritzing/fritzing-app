@@ -454,7 +454,7 @@ ItemBase * PartsBinIconView::loadItemBase(const QString & moduleID, ItemBase::Pl
 	ItemBase * itemBase = ItemBaseHash.value(moduleID);
 	ModelPart * modelPart = m_referenceModel->retrieveModelPart(moduleID);
     if (itemBase == NULL) {
-		itemBase = PartFactory::createPart(modelPart, ViewLayer::ThroughHoleThroughTop_OneLayer, ViewLayer::IconView, ViewGeometry(), ItemBase::getNextID(), NULL, NULL, false);
+		itemBase = PartFactory::createPart(modelPart, ViewLayer::NewTop, ViewLayer::IconView, ViewGeometry(), ItemBase::getNextID(), NULL, NULL, false);
 		ItemBaseHash.insert(moduleID, itemBase);
 	}
 	m_itemBaseHash.insert(moduleID, itemBase);

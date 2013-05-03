@@ -144,7 +144,7 @@ struct NetElements {
 struct RouteThing {
     QRectF r;
     QRectF r4;
-    QList<ViewLayer::ViewLayerSpec> layerSpecs;
+    QList<ViewLayer::ViewLayerPlacement> layerSpecs;
     Nearest nearest;
     std::priority_queue<GridPoint> sourceQ;
     std::priority_queue<GridPoint> targetQ;
@@ -206,7 +206,7 @@ protected:
     bool routeOne(bool makeJumper, Score & currentScore, int netIndex, RouteThing &, QList<NetOrdering> & allOrderings);
     void findNearestPair(QList< QList<ConnectorItem *> > & subnets, Nearest &);
     void findNearestPair(QList< QList<ConnectorItem *> > & subnets, int i, QList<ConnectorItem *> & inet, Nearest &);
-    QList<QPoint> renderSource(QDomDocument * masterDoc, int z, ViewLayer::ViewLayerSpec, Grid * grid, QList<QDomElement> & netElements, QList<ConnectorItem *> & subnet, GridValue value, bool clearElements, const QRectF & r);
+    QList<QPoint> renderSource(QDomDocument * masterDoc, int z, ViewLayer::ViewLayerPlacement, Grid * grid, QList<QDomElement> & netElements, QList<ConnectorItem *> & subnet, GridValue value, bool clearElements, const QRectF & r);
     QList<GridPoint> route(RouteThing &, int & viaCount);
     void expand(GridPoint &, RouteThing &);
     void expandOne(GridPoint &, RouteThing &, int dx, int dy, int dz, bool crossLayer);
@@ -217,7 +217,7 @@ protected:
     void updateDisplay(Grid *, int iz);
     void updateDisplay(GridPoint &);
     void clearExpansion(Grid * grid);
-    void prepSourceAndTarget(QDomDocument * masterdoc, RouteThing &, QList< QList<ConnectorItem *> > & subnets, int z, ViewLayer::ViewLayerSpec); 
+    void prepSourceAndTarget(QDomDocument * masterdoc, RouteThing &, QList< QList<ConnectorItem *> > & subnets, int z, ViewLayer::ViewLayerPlacement); 
     bool moveBack(Score & currentScore, int index, QList<NetOrdering> & allOrderings);
     void displayTrace(Trace &);
     void initTraceDisplay();
@@ -243,7 +243,7 @@ protected:
     void expandOneJ(GridPoint & gridPoint, std::priority_queue<GridPoint> & pq, int dx, int dy, int dz, GridValue targetValue, QPoint targetLocation, QSet<int> & already);
     void removeOffBoardAnd(bool isPCBType, bool removeSingletons, bool bothSides);
     void optimizeTraces(QList<int> & order, QMultiHash<int, QList< QPointer<TraceWire> > > &, QMultiHash<int, Via *> &, QMultiHash<int, JumperItem *> &, QMultiHash<int, SymbolPaletteItem *> &, NetList &, ConnectionThing &);
-    void reducePoints(QList<QPointF> & points, QPointF topLeft, QList<TraceWire *> & bundle, int startIndex, int endIndex, ConnectionThing &, int netIndex, ViewLayer::ViewLayerSpec);
+    void reducePoints(QList<QPointF> & points, QPointF topLeft, QList<TraceWire *> & bundle, int startIndex, int endIndex, ConnectionThing &, int netIndex, ViewLayer::ViewLayerPlacement);
 
 public slots:
      void incCommandProgress();
@@ -251,7 +251,7 @@ public slots:
 
 protected:
 	LayerList m_viewLayerIDs;
-    QHash<ViewLayer::ViewLayerSpec, QDomDocument *> m_masterDocs;
+    QHash<ViewLayer::ViewLayerPlacement, QDomDocument *> m_masterDocs;
     double m_keepoutMils;
     double m_keepoutGrid;
     int m_keepoutGridInt;

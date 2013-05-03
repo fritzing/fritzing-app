@@ -249,7 +249,7 @@ QuoteDialog::~QuoteDialog() {
 }
 
 void QuoteDialog::setCountCost(int index, int count, double cost) {
-    DebugDialog::debug(QString("quote dialog set count cost %1 %2").arg(count).arg(cost));
+    //DebugDialog::debug(QString("quote dialog set count cost %1 %2").arg(count).arg(cost));
 
     if (index < 0) return;
     if (index >= MessageCount) return;
@@ -264,7 +264,7 @@ void QuoteDialog::setArea(double area, int boardCount) {
 }
 
 void QuoteDialog::setText() {
-    DebugDialog::debug("quote dialog set text");
+    //DebugDialog::debug("quote dialog set text");
     QString msg = tr("The total area of the %n PCB(s) in this sketch is", "", TheBoardCount);
     msg += tr(" %1 cm%3 (%2 in%3).<br />")
         .arg(hundredths(TheArea))

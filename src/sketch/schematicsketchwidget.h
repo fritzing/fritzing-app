@@ -82,6 +82,7 @@ public:
     QSizeF jumperItemSize();
     QHash<QString, QString> getAutorouterSettings();
     void setAutorouterSettings(QHash<QString, QString> &);
+	ViewLayer::ViewLayerPlacement getViewLayerPlacement(ModelPart *, QDomElement & instance, QDomElement & view, ViewGeometry &);
 
 public slots:
 	void setVoltage(double voltage, bool doEmit);

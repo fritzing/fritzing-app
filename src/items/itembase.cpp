@@ -339,6 +339,9 @@ void ItemBase::saveInstance(QXmlStreamWriter & streamWriter) {
     if (m_superpart) {
         streamWriter.writeAttribute("superpart", QString::number(m_superpart->id()));
     }
+    if (m_viewLayerPlacement == ViewLayer::NewBottom && m_viewID == ViewLayer::PCBView) {
+        streamWriter.writeAttribute("bottom", "true");
+    }
 
 	this->saveGeometry();
 	writeGeometry(streamWriter);
@@ -1406,6 +1409,7 @@ FSvgRenderer * ItemBase::setUpImage(ModelPart * modelPart, LayerAttributes & lay
 	FSvgRenderer * newRenderer = new FSvgRenderer();
 	QDomDocument flipDoc;
 	if (!getFlipDoc(modelPart, filename, layerAttributes.viewLayerID, layerAttributes.viewLayerPlacement, flipDoc)) {
+        // part is not flipped, check that THT parts have both copper layers
 		fixCopper1(modelPart, filename, layerAttributes.viewLayerID, layerAttributes.viewLayerPlacement, flipDoc);
 	}
     QByteArray bytesToLoad;
@@ -1794,14 +1798,40 @@ QRectF ItemBase::partLabelSceneBoundingRect() {
 bool ItemBase::getFlipDoc(ModelPart * modelPart, const QString & filename, ViewLayer::ViewLayerID viewLayerID, ViewLayer::ViewLayerPlacement viewLayerPlacement, QDomDocument & flipDoc)
 {
 	if (viewLayerPlacement == ViewLayer::NewBottom) {
-		if ((viewLayerID == ViewLayer::Copper0) && modelPart->flippedSMD()) {
-			SvgFlattener::flipSMDSvg(filename, "", flipDoc, ViewLayer::viewLayerXmlNameFromID(ViewLayer::Copper1), ViewLayer::viewLayerXmlNameFromID(ViewLayer::Copper0), GraphicsUtils::SVGDPI);
-			return true;
-		}
-		else if ((viewLayerID == ViewLayer::Silkscreen0) && modelPart->flippedSMD()) {
-			SvgFlattener::flipSMDSvg(filename, "", flipDoc, ViewLayer::viewLayerXmlNameFromID(ViewLayer::Silkscreen1), ViewLayer::viewLayerXmlNameFromID(ViewLayer::Silkscreen0), GraphicsUtils::SVGDPI);
-			return true;
-		}
+        if (modelPart->flippedSMD()) {
+		    if (viewLayerID == ViewLayer::Copper0) {
+			    SvgFlattener::flipSMDSvg(filename, "", flipDoc, ViewLayer::viewLayerXmlNameFromID(ViewLayer::Copper1), ViewLayer::viewLayerXmlNameFromID(ViewLayer::Copper0), GraphicsUtils::SVGDPI);
+			    return true;
+		    }
+		    else if (viewLayerID == ViewLayer::Silkscreen0) {
+			    SvgFlattener::flipSMDSvg(filename, "", flipDoc, ViewLayer::viewLayerXmlNameFromID(ViewLayer::Silkscreen1), ViewLayer::viewLayerXmlNameFromID(ViewLayer::Silkscreen0), GraphicsUtils::SVGDPI);
+			    return true;
+		    }
+            return false;
+        }
+       
+        if (modelPart->hasViewFor(ViewLayer::PCBView, ViewLayer::Copper0) && modelPart->hasViewFor(ViewLayer::PCBView, ViewLayer::Copper1)) {
+		    if (viewLayerID == ViewLayer::Copper0) {
+                SvgFlattener::replaceElementID(filename, "", flipDoc, ViewLayer::viewLayerXmlNameFromID(ViewLayer::Copper0), "");
+			    //QString t1 = flipDoc.toString();
+                SvgFlattener::flipSMDSvg(filename, "", flipDoc, ViewLayer::viewLayerXmlNameFromID(ViewLayer::Copper1), ViewLayer::viewLayerXmlNameFromID(ViewLayer::Copper0), GraphicsUtils::SVGDPI);
+			    //QString t2 = flipDoc.toString();
+			    return true;
+		    }
+		    if (viewLayerID == ViewLayer::Copper1) {
+			    SvgFlattener::replaceElementID(filename, "", flipDoc, ViewLayer::viewLayerXmlNameFromID(ViewLayer::Copper1), "");
+			    //QString t1 = flipDoc.toString();
+			    SvgFlattener::flipSMDSvg(filename, "", flipDoc, ViewLayer::viewLayerXmlNameFromID(ViewLayer::Copper0), ViewLayer::viewLayerXmlNameFromID(ViewLayer::Copper1), GraphicsUtils::SVGDPI);
+			    //QString t2 = flipDoc.toString();
+			    return true;
+		    }
+		    else if (viewLayerID == ViewLayer::Silkscreen0) {
+			    SvgFlattener::flipSMDSvg(filename, "", flipDoc, ViewLayer::viewLayerXmlNameFromID(ViewLayer::Silkscreen1), ViewLayer::viewLayerXmlNameFromID(ViewLayer::Silkscreen0), GraphicsUtils::SVGDPI);
+			    return true;
+		    }
+        }
+    
+
 	}
 
 	return false;

@@ -167,12 +167,31 @@ void PaletteItem::loadLayerKin(const LayerHash & viewLayers, ViewLayer::ViewLaye
 		if (!m_modelPart->hasViewFor(m_viewID, viewLayerID)) continue;
 
         if (m_modelPart->itemType() == ModelPart::CopperFill) {
-            if (viewLayerPlacement == ViewLayer::NewTop && ViewLayer::bottomLayers().contains(viewLayerID)) continue;
-            if (viewLayerPlacement == ViewLayer::NewBottom && ViewLayer::topLayers().contains(viewLayerID)) continue;
+            if (viewLayerPlacement == ViewLayer::NewTop) {
+                if (ViewLayer::bottomLayers().contains(viewLayerID)) continue;
+            }
+            else {
+                if (ViewLayer::topLayers().contains(viewLayerID)) continue;
+            }
         }
         else if (m_modelPart->flippedSMD()) {
-            if (viewLayerPlacement == ViewLayer::NewTop && ViewLayer::bottomLayers().contains(viewLayerID)) continue;
-            if (viewLayerPlacement == ViewLayer::NewBottom && ViewLayer::topLayers().contains(viewLayerID)) continue;
+            if (viewLayerPlacement == ViewLayer::NewTop) {
+                if (ViewLayer::bottomLayers().contains(viewLayerID)) continue;
+            }
+            else {
+                if (ViewLayer::topLayers().contains(viewLayerID)) continue;
+            }
+        }
+        else {
+            // through hole part
+            if (ViewLayer::silkLayers().contains(viewLayerID)) {
+                if (viewLayerPlacement == ViewLayer::NewTop) {
+                    if (ViewLayer::bottomLayers().contains(viewLayerID)) continue;
+                }
+                else {
+                    if (ViewLayer::topLayers().contains(viewLayerID)) continue;
+                }
+            }
 
         }
 

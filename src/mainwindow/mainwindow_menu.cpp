@@ -2559,6 +2559,8 @@ void MainWindow::activeLayerBoth() {
 
 	pcbSketchWidget->setLayerActive(ViewLayer::Copper1, true);
 	pcbSketchWidget->setLayerActive(ViewLayer::Copper0, true);
+	pcbSketchWidget->setLayerActive(ViewLayer::Silkscreen0, true);
+	pcbSketchWidget->setLayerActive(ViewLayer::Silkscreen1, true);
 	AutoCloseMessageBox::showMessage(this, tr("Copper Top and Copper Bottom layers are both active"));
 	updateActiveLayerButtons();
 }
@@ -2568,7 +2570,9 @@ void MainWindow::activeLayerTop() {
 	if (pcbSketchWidget == NULL) return;
 
 	pcbSketchWidget->setLayerActive(ViewLayer::Copper1, true);
+	pcbSketchWidget->setLayerActive(ViewLayer::Silkscreen1, true);
 	pcbSketchWidget->setLayerActive(ViewLayer::Copper0, false);
+	pcbSketchWidget->setLayerActive(ViewLayer::Silkscreen0, false);
 	AutoCloseMessageBox::showMessage(this, tr("Copper Top layer is active"));
 	updateActiveLayerButtons();
 }
@@ -2578,7 +2582,9 @@ void MainWindow::activeLayerBottom() {
 	if (pcbSketchWidget == NULL) return;
 
 	pcbSketchWidget->setLayerActive(ViewLayer::Copper1, false);
+	pcbSketchWidget->setLayerActive(ViewLayer::Silkscreen1, false);
 	pcbSketchWidget->setLayerActive(ViewLayer::Copper0, true);
+	pcbSketchWidget->setLayerActive(ViewLayer::Silkscreen0, true);
 	AutoCloseMessageBox::showMessage(this, tr("Copper Bottom layer is active"));
 	updateActiveLayerButtons();
 }
@@ -2679,7 +2685,9 @@ void MainWindow::newAutoroute() {
 	delete autorouter;
 
 	pcbSketchWidget->setLayerActive(ViewLayer::Copper1, copper1Active);
+	pcbSketchWidget->setLayerActive(ViewLayer::Silkscreen1, copper1Active);
 	pcbSketchWidget->setLayerActive(ViewLayer::Copper0, copper0Active);
+	pcbSketchWidget->setLayerActive(ViewLayer::Silkscreen0, copper0Active);
 	updateActiveLayerButtons();
 
 	ProcessEventBlocker::unblock();
@@ -3846,7 +3854,9 @@ void MainWindow::newDesignRulesCheck(bool showOkMessage)
 	ProcessEventBlocker::unblock();
 
 	pcbSketchWidget->setLayerActive(ViewLayer::Copper1, copper1Active);
+	pcbSketchWidget->setLayerActive(ViewLayer::Silkscreen1, copper1Active);
 	pcbSketchWidget->setLayerActive(ViewLayer::Copper0, copper0Active);
+	pcbSketchWidget->setLayerActive(ViewLayer::Silkscreen0, copper0Active);
 	updateActiveLayerButtons();
 
 }

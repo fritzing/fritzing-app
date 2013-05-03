@@ -519,24 +519,43 @@ void ModelPartShared::connectorIDs(ViewLayer::ViewID viewID, ViewLayer::ViewLaye
 }
 
 void ModelPartShared::flipSMDAnd() {
+    if (this->path().startsWith(ResourcePath)) {
+        // assume resources are set up exactly as intended
+        DebugDialog::debug(QString("skip flip %1").arg(path()));
+        return;
+    }
+
+    static qulonglong one = 1;
+    ViewImage * viewImage = m_viewImages.value(ViewLayer::PCBView);
+
     // needs to be called after initConnectors()
     LayerList layerList = viewLayers(ViewLayer::PCBView);
     if (layerList.isEmpty()) return;
-    if (!layerList.contains(ViewLayer::Copper0) && !layerList.contains(ViewLayer::Copper1)) return;
-    if (this->path().startsWith(ResourcePath)) {
-        // assume resources are set up exactly as intended
-        // DebugDialog::debug(QString("skip flip %1").arg(path()));
+    if (!layerList.contains(ViewLayer::Copper0) && !layerList.contains(ViewLayer::Copper1)) {
         return;
     }
 
     if (layerList.contains(ViewLayer::Copper0)) {
+        // THT here
+
         if (!layerList.contains(ViewLayer::Copper1)) {
+            // fill in missing copper1 layer
             m_needsCopper1 = true;
-            ViewImage * viewImage = m_viewImages.value(ViewLayer::PCBView);
-            qulonglong one = 1;
             viewImage->layers |= (one << ViewLayer::Copper1);
             copyPins(ViewLayer::Copper0, ViewLayer::Copper1);            
         }
+
+        // prep for placing on the bottom
+	    if (layerList.contains(ViewLayer::Silkscreen1) && !layerList.contains(ViewLayer::Silkscreen0)) {
+            DebugDialog::debug(QString("silk0 %1 %2").arg(this->title()).arg(this->moduleID()));
+            viewImage->layers |= (one << ViewLayer::Silkscreen0);
+            layerList << ViewLayer::Silkscreen0;
+	    }
+
+        if (layerList.contains(ViewLayer::Silkscreen0)) {
+	        viewImage->flipped |= (one << ViewLayer::Silkscreen0);
+        }
+
         return;
     }
 
@@ -547,16 +566,13 @@ void ModelPartShared::flipSMDAnd() {
         m_properties.insert("layer", "");
     }
 
-    qulonglong one = 1;
-    ViewImage * viewImage = m_viewImages.value(ViewLayer::PCBView);
-
     if (!layerList.contains(ViewLayer::Copper0)) {
         viewImage->layers |= (one << ViewLayer::Copper0);
     }
 
     viewImage->flipped |= (one << ViewLayer::Copper0);
 
-	if (layerList.contains(ViewLayer::Silkscreen1) &&  !layerList.contains(ViewLayer::Silkscreen0)) {
+	if (layerList.contains(ViewLayer::Silkscreen1) && !layerList.contains(ViewLayer::Silkscreen0)) {
         viewImage->layers |= (one << ViewLayer::Silkscreen0);
         layerList << ViewLayer::Silkscreen0;
 	}

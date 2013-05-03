@@ -455,7 +455,7 @@ protected:
 	QString makeMoveSVG(double printerScale, double dpi, QPointF & offset); 
 	void prepDeleteProps(ItemBase * itemBase, long id, const QString & newModuleID, QUndoCommand * parentCommand);
 	void prepDeleteOtherProps(ItemBase * itemBase, long id, const QString & newModuleID, QUndoCommand * parentCommand);
-	virtual ViewLayer::ViewLayerPlacement getViewLayerPlacement(ModelPart * modelPart, QDomElement & instance, QDomElement & view, ViewGeometry &);
+	virtual ViewLayer::ViewLayerPlacement getViewLayerPlacement(ModelPart *, QDomElement & instance, QDomElement & view, ViewGeometry &);
 	virtual ViewLayer::ViewLayerPlacement wireViewLayerPlacement(ConnectorItem *);
 
 	virtual bool resizingJumperItemPress(QGraphicsItem * item);

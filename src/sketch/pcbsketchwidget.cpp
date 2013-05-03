@@ -403,6 +403,8 @@ void PCBSketchWidget::dealWithDefaultParts() {
     // set both layers active by default
 	setLayerActive(ViewLayer::Copper1, true);
 	setLayerActive(ViewLayer::Copper0, true);
+	setLayerActive(ViewLayer::Silkscreen1, true);
+	setLayerActive(ViewLayer::Silkscreen0, true);
 }
 
 
@@ -700,10 +702,9 @@ void PCBSketchWidget::getLabelFont(QFont & font, QColor & color, ItemBase * item
 	color.setAlpha(255);
 
     QString name = ViewLayer::Silkscreen1Color;
-    if (itemBase->modelPart()->flippedSMD()) {
-        if (boardLayers() == 2) {
-            if (itemBase->viewLayerPlacement() == ViewLayer::NewBottom) name = ViewLayer::Silkscreen0Color;
-        }
+
+    if (boardLayers() == 2) {
+        if (itemBase->viewLayerPlacement() == ViewLayer::NewBottom) name = ViewLayer::Silkscreen0Color;
     }
 
     color.setNamedColor(name);
@@ -711,12 +712,10 @@ void PCBSketchWidget::getLabelFont(QFont & font, QColor & color, ItemBase * item
 }
 
 ViewLayer::ViewLayerID PCBSketchWidget::getLabelViewLayerID(ItemBase * itemBase) {
-    if (itemBase->modelPart()->flippedSMD()) {
-        if (boardLayers() == 2) {
-            if (itemBase->viewLayerPlacement() == ViewLayer::NewBottom) return ViewLayer::Silkscreen0Label;
-        }
-    }
 
+    if (boardLayers() == 2) {
+        if (itemBase->viewLayerPlacement() == ViewLayer::NewBottom) return ViewLayer::Silkscreen0Label;
+    }
 
     return ViewLayer::Silkscreen1Label;
 }
@@ -971,6 +970,7 @@ void PCBSketchWidget::changeBoardLayers(int layers, bool doEmit) {
 	SketchWidget::changeBoardLayers(layers, doEmit);
 	if (layers == 1) {
 		this->setLayerActive(ViewLayer::Copper0, true);
+		this->setLayerActive(ViewLayer::Silkscreen0, true);
 	}
 	emit updateLayerMenuSignal();
 }
@@ -2617,13 +2617,16 @@ bool PCBSketchWidget::hasCustomBoardShape() {
 
 ViewLayer::ViewLayerPlacement PCBSketchWidget::getViewLayerPlacement(ModelPart * modelPart, QDomElement & instance, QDomElement & view, ViewGeometry & viewGeometry) 
 {
-    Q_UNUSED(instance);
-
     if (modelPart->flippedSMD()) {
         ViewLayer::ViewLayerID viewLayerID = ViewLayer::viewLayerIDFromXmlString(view.attribute("layer"));
         if (ViewLayer::bottomLayers().contains(viewLayerID)) return ViewLayer::NewBottom;
         return ViewLayer::NewTop;
     }
+
+    QDomElement views = view.parentNode().toElement();
+	QDomElement pcbview = views.firstChildElement("pcbView");
+    bool bottom = pcbview.attribute("bottom", "").compare("true") == 0;
+    if (bottom) return ViewLayer::NewBottom;
 
     return SketchWidget::getViewLayerPlacement(modelPart, instance, view, viewGeometry);
 }
@@ -2884,22 +2887,13 @@ void PCBSketchWidget::setViewFromBelow(bool viewFromBelow) {
     SketchWidget::setViewFromBelow(viewFromBelow);
 }
 
-void PCBSketchWidget::getDroppedItemViewLayerPlacement(ModelPart * modelPart, ViewLayer::ViewLayerPlacement & viewLayerPlacement) {
+void PCBSketchWidget::getDroppedItemViewLayerPlacement(ModelPart *, ViewLayer::ViewLayerPlacement & viewLayerPlacement) {
     viewLayerPlacement = defaultViewLayerPlacement();   // top for a two layer board
     if (boardLayers() == 2) {
-        if (modelPart->flippedSMD()) {
-            if (dropOnBottom()) {
-                viewLayerPlacement = ViewLayer::NewBottom;   
-            }
-            return;
+        if (dropOnBottom()) {
+            viewLayerPlacement = ViewLayer::NewBottom;   
         }
-
-        if (modelPart->moduleID().contains(ModuleIDNames::PadModuleIDName) || modelPart->moduleID().contains(ModuleIDNames::CopperBlockerModuleIDName)) {
-            if (dropOnBottom()) {
-                viewLayerPlacement = ViewLayer::NewBottom;   
-            }
-            return;
-        }
+        return;
     }
 }
 

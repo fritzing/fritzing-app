@@ -525,3 +525,8 @@ void SchematicSketchWidget::setAutorouterSettings(QHash<QString, QString> & auto
 void SchematicSketchWidget::getDroppedItemViewLayerPlacement(ModelPart * modelPart, ViewLayer::ViewLayerPlacement & viewLayerPlacement) {
     SketchWidget::getDroppedItemViewLayerPlacement(modelPart, viewLayerPlacement);
 }
+
+ViewLayer::ViewLayerPlacement SchematicSketchWidget::getViewLayerPlacement(ModelPart * modelPart, QDomElement & instance, QDomElement & view, ViewGeometry & viewGeometry) 
+{
+    return SketchWidget::getViewLayerPlacement(modelPart, instance, view, viewGeometry);
+}

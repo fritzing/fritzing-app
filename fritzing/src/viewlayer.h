@@ -156,6 +156,7 @@ public:
 	static const QList<ViewLayer::ViewLayerID> & drillLayers();
 	static const QList<ViewLayer::ViewLayerID> & topLayers();
 	static const QList<ViewLayer::ViewLayerID> & bottomLayers();
+	static const QList<ViewLayer::ViewLayerID> & silkLayers();
 	static bool isCopperLayer(ViewLayer::ViewLayerID);
 	static bool isNonCopperLayer(ViewLayer::ViewLayerID viewLayerID);  // for pcb view layers only
 

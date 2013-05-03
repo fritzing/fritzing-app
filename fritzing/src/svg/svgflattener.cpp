@@ -280,22 +280,20 @@ void SvgFlattener::rotateCommandSlot(QChar command, bool relative, QList<double>
 	}
 }
 
-void SvgFlattener::flipSMDSvg(const QString & filename, const QString & svg, QDomDocument & domDocument, const QString & elementID, const QString & altElementID, double printerScale) {
-	QString errorStr;
-	int errorLine;
-	int errorColumn;
-	bool result;
-	if (filename.isEmpty()) {
-		result = domDocument.setContent(svg, &errorStr, &errorLine, &errorColumn);
-	}
-	else {
-		QFile file(filename);
-		result = domDocument.setContent(&file, &errorStr, &errorLine, &errorColumn);
-	}
-	if (!result) {
-		domDocument.clear();			// probably redundant
-		return;
-	}
+void SvgFlattener::replaceElementID(const QString & filename, const QString & svg, QDomDocument & domDocument, const QString & elementID, const QString & altElementID) 
+{
+    if (!loadDocIf(filename, svg, domDocument)) return;
+
+    QDomElement root = domDocument.documentElement();
+	QDomElement element = TextUtils::findElementWithAttribute(root, "id", elementID);
+	if (!element.isNull()) {
+        element.setAttribute("id", altElementID);
+    }
+}
+
+void SvgFlattener::flipSMDSvg(const QString & filename, const QString & svg, QDomDocument & domDocument, const QString & elementID, const QString & altElementID, double printerScale) 
+{
+    if (!loadDocIf(filename, svg, domDocument)) return;
 
     QDomElement root = domDocument.documentElement();
 
@@ -335,13 +333,37 @@ void SvgFlattener::flipSMDElement(QDomDocument & domDocument, QSvgRenderer & ren
 	QDomElement newElement = element.cloneNode(true).toElement();
 	newElement.removeAttribute("id");
 	QDomElement pElement = domDocument.createElement("g");
-	pElement.appendChild(newElement);
-	TextUtils::setSVGTransform(pElement, cm);
 	pElement.setAttribute("id", altAtt);
 	pElement.setAttribute("flipped", true);
+    QDomElement mElement = domDocument.createElement("g");
+	TextUtils::setSVGTransform(mElement, cm);
+    pElement.appendChild(mElement);
+    mElement.appendChild(newElement);
 	if (!altElement.isNull()) {
-		pElement.appendChild(altElement);
+		mElement.appendChild(altElement);
 		altElement.removeAttribute("id");
 	}
 	element.parentNode().appendChild(pElement);
+}
+
+bool SvgFlattener::loadDocIf(const QString & filename, const QString & svg, QDomDocument & domDocument) {
+	if (domDocument.isNull()) {
+        QString errorStr;
+	    int errorLine;
+	    int errorColumn;
+	    bool result;
+	    if (filename.isEmpty()) {
+		    result = domDocument.setContent(svg, &errorStr, &errorLine, &errorColumn);
+	    }
+	    else {
+		    QFile file(filename);
+		    result = domDocument.setContent(&file, &errorStr, &errorLine, &errorColumn);
+	    }
+	    if (!result) {
+		    domDocument.clear();			// probably redundant
+		    return false;
+	    }
+    }
+
+    return true;
 }

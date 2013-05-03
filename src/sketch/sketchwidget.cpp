@@ -3908,7 +3908,7 @@ void SketchWidget::dragRatsnestChanged()
 	}
 
 	ViewLayer::ViewLayerPlacement viewLayerPlacement = createWireViewLayerPlacement(ends[0], ends[1]);
-	if (viewLayerPlacement == ViewLayer::UnknownSpec) {
+	if (viewLayerPlacement == ViewLayer::UnknownPlacement) {
 		// for now this should not be possible
 		QMessageBox::critical(this, tr("Fritzing"), tr("This seems like an attempt to create a trace across layers. This circumstance should not arise: please contact the developers."));
 		return;
@@ -4510,7 +4510,7 @@ void SketchWidget::mousePressConnectorEvent(ConnectorItem * connectorItem, QGrap
 	viewGeometry.setLine(QLineF(0,0,0,0));
 
 	m_connectorDragConnector = connectorItem;
-	m_connectorDragWire = createTempWireForDragging(NULL, wireModel, connectorItem, viewGeometry, ViewLayer::UnknownSpec);
+	m_connectorDragWire = createTempWireForDragging(NULL, wireModel, connectorItem, viewGeometry, ViewLayer::UnknownPlacement);
 	if (m_connectorDragWire == NULL) {
 		clearDragWireTempCommand();
 		return;
@@ -8790,7 +8790,7 @@ void SketchWidget::setItemDropOffset(long id, QPointF offset)
 Wire * SketchWidget::createTempWireForDragging(Wire * fromWire, ModelPart * wireModel, ConnectorItem * connectorItem, ViewGeometry & viewGeometry, ViewLayer::ViewLayerPlacement spec) 
 {
 	Q_UNUSED(fromWire);
-	if (spec == ViewLayer::UnknownSpec) {
+	if (spec == ViewLayer::UnknownPlacement) {
 		spec = wireViewLayerPlacement(connectorItem);
 	}
 	return qobject_cast<Wire *>(addItemAuxTemp(wireModel, spec, viewGeometry, ItemBase::getNextID(), true, m_viewID, true));

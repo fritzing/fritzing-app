@@ -1740,7 +1740,7 @@ ViewLayer::ViewLayerPlacement PCBSketchWidget::createWireViewLayerPlacement(Conn
 		}
 	}
 
-	return ViewLayer::UnknownSpec;
+	return ViewLayer::UnknownPlacement;
 }
 
 double PCBSketchWidget::getWireStrokeWidth(Wire * wire, double wireWidth)
@@ -1762,7 +1762,7 @@ double PCBSketchWidget::getWireStrokeWidth(Wire * wire, double wireWidth)
 
 Wire * PCBSketchWidget::createTempWireForDragging(Wire * fromWire, ModelPart * wireModel, ConnectorItem * connectorItem, ViewGeometry & viewGeometry, ViewLayer::ViewLayerPlacement spec) 
 {
-	if (spec == ViewLayer::UnknownSpec) {
+	if (spec == ViewLayer::UnknownPlacement) {
 		spec = wireViewLayerPlacement(connectorItem);
 	}
 	viewGeometry.setPCBTrace(true);

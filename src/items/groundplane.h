@@ -44,7 +44,7 @@ public:
 	void setProp(const QString & prop, const QString & value);
 	QString svg();
 	bool hasPartLabel();
-	void loadLayerKin( const LayerHash & viewLayers, ViewLayer::ViewLayerSpec viewLayerSpec);
+	void loadLayerKin( const LayerHash & viewLayers, ViewLayer::ViewLayerPlacement viewLayerPlacement);
 	void addedToScene(bool temporary);
 	bool hasPartNumberProperty();
 	bool rotationAllowed();

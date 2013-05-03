@@ -972,7 +972,7 @@ FSvgRenderer * Wire::setUpConnectors(ModelPart * modelPart, ViewLayer::ViewID vi
 	LayerAttributes layerAttributes;
     layerAttributes.viewID = viewID;
     layerAttributes.viewLayerID = m_viewLayerID;
-    layerAttributes.viewLayerSpec = m_viewLayerSpec;
+    layerAttributes.viewLayerPlacement = m_viewLayerPlacement;
     layerAttributes.doConnectors = false;
 	FSvgRenderer * renderer = ItemBase::setUpImage(modelPart, layerAttributes);
 	if (renderer == NULL) {

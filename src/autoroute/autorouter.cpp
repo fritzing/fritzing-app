@@ -67,7 +67,7 @@ void Autorouter::updateRoutingStatus() {
 	m_sketchWidget->updateRoutingStatus(routingStatus, true);
 }
 
-TraceWire * Autorouter::drawOneTrace(QPointF fromPos, QPointF toPos, double width, ViewLayer::ViewLayerSpec viewLayerSpec)
+TraceWire * Autorouter::drawOneTrace(QPointF fromPos, QPointF toPos, double width, ViewLayer::ViewLayerPlacement viewLayerPlacement)
 {
     //DebugDialog::debug(QString("trace %1,%2 %3,%4").arg(fromPos.x()).arg(fromPos.y()).arg(toPos.x()).arg(toPos.y()));
 #ifndef QT_NO_DEBUG
@@ -85,7 +85,7 @@ TraceWire * Autorouter::drawOneTrace(QPointF fromPos, QPointF toPos, double widt
 	viewGeometry.setLine(line);
 
 	ItemBase * trace = m_sketchWidget->addItem(m_sketchWidget->referenceModel()->retrieveModelPart(ModuleIDNames::WireModuleIDName), 
-		                                 viewLayerSpec, BaseCommand::SingleView, viewGeometry, newID, -1, NULL);
+		                                 viewLayerPlacement, BaseCommand::SingleView, viewGeometry, newID, -1, NULL);
 	if (trace == NULL) {
 		// we're in trouble
 		DebugDialog::debug("autorouter unable to draw one trace");
@@ -102,7 +102,7 @@ TraceWire * Autorouter::drawOneTrace(QPointF fromPos, QPointF toPos, double widt
 
 
 	m_sketchWidget->setClipEnds(traceWire, false);
-	traceWire->setColorString(m_sketchWidget->traceColor(viewLayerSpec), 1.0);
+	traceWire->setColorString(m_sketchWidget->traceColor(viewLayerPlacement), 1.0);
 	traceWire->setWireWidth(width, m_sketchWidget, m_sketchWidget->getWireStrokeWidth(traceWire, width));
 
 	return traceWire;
@@ -379,7 +379,7 @@ void Autorouter::addToUndo(QUndoCommand * parentCommand)
 				QPointF pos, c0, c1;
 				jumperItem->getParams(pos, c0, c1);
 
-				new AddItemCommand(m_sketchWidget, BaseCommand::CrossView, ModuleIDNames::JumperModuleIDName, jumperItem->viewLayerSpec(), jumperItem->getViewGeometry(), jumperItem->id(), false, -1, parentCommand);
+				new AddItemCommand(m_sketchWidget, BaseCommand::CrossView, ModuleIDNames::JumperModuleIDName, jumperItem->viewLayerPlacement(), jumperItem->getViewGeometry(), jumperItem->id(), false, -1, parentCommand);
 				new ResizeJumperItemCommand(m_sketchWidget, jumperItem->id(), pos, c0, c1, pos, c0, c1, parentCommand);
 				new CheckStickyCommand(m_sketchWidget, BaseCommand::SingleView, jumperItem->id(), false, CheckStickyCommand::RemoveOnly, parentCommand);
 
@@ -392,7 +392,7 @@ void Autorouter::addToUndo(QUndoCommand * parentCommand)
 					continue;
 				}
 
-				new AddItemCommand(m_sketchWidget, BaseCommand::CrossView, ModuleIDNames::ViaModuleIDName, via->viewLayerSpec(), via->getViewGeometry(), via->id(), false, -1, parentCommand);
+				new AddItemCommand(m_sketchWidget, BaseCommand::CrossView, ModuleIDNames::ViaModuleIDName, via->viewLayerPlacement(), via->getViewGeometry(), via->id(), false, -1, parentCommand);
 				new CheckStickyCommand(m_sketchWidget, BaseCommand::SingleView, via->id(), false, CheckStickyCommand::RemoveOnly, parentCommand);
 				new SetPropCommand(m_sketchWidget, via->id(), "hole size", via->holeSize(), via->holeSize(), true, parentCommand);
 
@@ -407,7 +407,7 @@ void Autorouter::addToUndo(QUndoCommand * parentCommand)
 					continue;
 				}
 
-				new AddItemCommand(m_sketchWidget, BaseCommand::CrossView, netLabel->moduleID(), netLabel->viewLayerSpec(), netLabel->getViewGeometry(), netLabel->id(), false, -1, parentCommand);
+				new AddItemCommand(m_sketchWidget, BaseCommand::CrossView, netLabel->moduleID(), netLabel->viewLayerPlacement(), netLabel->getViewGeometry(), netLabel->id(), false, -1, parentCommand);
 				new SetPropCommand(m_sketchWidget, netLabel->id(), "label", netLabel->label(), netLabel->label(), true, parentCommand);
 
 				continue;
@@ -435,7 +435,7 @@ void Autorouter::addWireToUndo(Wire * wire, QUndoCommand * parentCommand)
 {  
     if (wire == NULL) return;
 
-	new AddItemCommand(m_sketchWidget, BaseCommand::CrossView, ModuleIDNames::WireModuleIDName, wire->viewLayerSpec(), wire->getViewGeometry(), wire->id(), false, -1, parentCommand);
+	new AddItemCommand(m_sketchWidget, BaseCommand::CrossView, ModuleIDNames::WireModuleIDName, wire->viewLayerPlacement(), wire->getViewGeometry(), wire->id(), false, -1, parentCommand);
 	new CheckStickyCommand(m_sketchWidget, BaseCommand::SingleView, wire->id(), false, CheckStickyCommand::RemoveOnly, parentCommand);
 	
 	new WireWidthChangeCommand(m_sketchWidget, wire->id(), wire->width(), wire->width(), parentCommand);

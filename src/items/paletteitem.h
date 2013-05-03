@@ -84,7 +84,7 @@ public:
 	void removeLayerKin();
 	void addLayerKin(class LayerKinPaletteItem * lkpi);
 	const QList<class ItemBase *> & layerKin();
- 	virtual void loadLayerKin(const LayerHash & viewLayers, ViewLayer::ViewLayerSpec);
+ 	virtual void loadLayerKin(const LayerHash & viewLayers, ViewLayer::ViewLayerPlacement);
 	void rotateItem(double degrees, bool includeRatsnest);
 	void flipItem(Qt::Orientations orientation);
 	void moveItem(ViewGeometry & viewGeometry);
@@ -155,7 +155,7 @@ protected:
     QString appendHoleSize(const QString & moduleID, const QString & holeSize, const QString & ringThickness);
     void generateSwap(const QString & text, GenModuleID, GenFzp, GenSvg makeBreadboardSvg, GenSvg makeSchematicSvg, GenSvg makePcbSvg);
     bool makeLocalModifications(QByteArray & svg, const QString & filename);
-    void makeOneKin(qint64 & id, ViewLayer::ViewLayerID, ViewLayer::ViewLayerSpec, ViewGeometry &, const LayerHash &);
+    void makeOneKin(qint64 & id, ViewLayer::ViewLayerID, ViewLayer::ViewLayerPlacement, ViewGeometry &, const LayerHash &);
 
 protected:
     void setUpHoleSizes(const QString & type, HoleClassThing &);

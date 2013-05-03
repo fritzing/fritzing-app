@@ -59,7 +59,7 @@ public:
 protected:
 	virtual void cleanUpNets();
 	virtual void updateRoutingStatus();
-	virtual class TraceWire * drawOneTrace(QPointF fromPos, QPointF toPos, double width, ViewLayer::ViewLayerSpec);
+	virtual class TraceWire * drawOneTrace(QPointF fromPos, QPointF toPos, double width, ViewLayer::ViewLayerPlacement);
     void initUndo(QUndoCommand * parentCommand);
 	void addUndoConnection(bool connect, class SymbolPaletteItem *, QUndoCommand * parentCommand);
 	void addUndoConnection(bool connect, class JumperItem *, QUndoCommand * parentCommand);

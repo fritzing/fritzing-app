@@ -558,8 +558,8 @@ void MainWindow::connectPairs() {
 	succeeded =  succeeded && connect(m_pcbGraphicsView, SIGNAL(dropPasteSignal(SketchWidget *)), 
 						this, SLOT(dropPaste(SketchWidget *)));
 	
-	succeeded =  succeeded && connect(m_pcbGraphicsView, SIGNAL(subSwapSignal(SketchWidget *, ItemBase *, const QString &, ViewLayer::ViewLayerSpec, long &, QUndoCommand *)),
-						this, SLOT(subSwapSlot(SketchWidget *, ItemBase *, const QString &, ViewLayer::ViewLayerSpec, long &, QUndoCommand *)),
+	succeeded =  succeeded && connect(m_pcbGraphicsView, SIGNAL(subSwapSignal(SketchWidget *, ItemBase *, const QString &, ViewLayer::ViewLayerPlacement, long &, QUndoCommand *)),
+						this, SLOT(subSwapSlot(SketchWidget *, ItemBase *, const QString &, ViewLayer::ViewLayerPlacement, long &, QUndoCommand *)),
 						Qt::DirectConnection);
 
 	succeeded =  succeeded && connect(m_pcbGraphicsView, SIGNAL(firstTimeHelpHidden()), this, SLOT(firstTimeHelpHidden()));
@@ -585,11 +585,11 @@ void MainWindow::connectPairs() {
 	
 
 
-    succeeded =  succeeded && connect(m_breadboardGraphicsView, SIGNAL(getDroppedItemViewLayerSpecSignal(ModelPart *, ViewLayer::ViewLayerSpec &)), 
-                                        m_pcbGraphicsView, SLOT(getDroppedItemViewLayerSpec(ModelPart *, ViewLayer::ViewLayerSpec &)), 
+    succeeded =  succeeded && connect(m_breadboardGraphicsView, SIGNAL(getDroppedItemViewLayerPlacementSignal(ModelPart *, ViewLayer::ViewLayerPlacement &)), 
+                                        m_pcbGraphicsView, SLOT(getDroppedItemViewLayerPlacement(ModelPart *, ViewLayer::ViewLayerPlacement &)), 
                                         Qt::DirectConnection);
-    succeeded =  succeeded && connect(m_schematicGraphicsView, SIGNAL(getDroppedItemViewLayerSpecSignal(ModelPart *, ViewLayer::ViewLayerSpec &)), 
-                                        m_pcbGraphicsView, SLOT(getDroppedItemViewLayerSpec(ModelPart *, ViewLayer::ViewLayerSpec &)), 
+    succeeded =  succeeded && connect(m_schematicGraphicsView, SIGNAL(getDroppedItemViewLayerPlacementSignal(ModelPart *, ViewLayer::ViewLayerPlacement &)), 
+                                        m_pcbGraphicsView, SLOT(getDroppedItemViewLayerPlacement(ModelPart *, ViewLayer::ViewLayerPlacement &)), 
                                         Qt::DirectConnection);
 
 
@@ -601,8 +601,8 @@ void MainWindow::connectPairs() {
 void MainWindow::connectPair(SketchWidget * signaller, SketchWidget * slotter)
 {
 
-	bool succeeded = connect(signaller, SIGNAL(itemAddedSignal(ModelPart *, ItemBase *, ViewLayer::ViewLayerSpec, const ViewGeometry &, long, SketchWidget *)),
-							 slotter, SLOT(itemAddedSlot(ModelPart *, ItemBase *, ViewLayer::ViewLayerSpec, const ViewGeometry &, long, SketchWidget *)));
+	bool succeeded = connect(signaller, SIGNAL(itemAddedSignal(ModelPart *, ItemBase *, ViewLayer::ViewLayerPlacement, const ViewGeometry &, long, SketchWidget *)),
+							 slotter, SLOT(itemAddedSlot(ModelPart *, ItemBase *, ViewLayer::ViewLayerPlacement, const ViewGeometry &, long, SketchWidget *)));
 
 	succeeded = succeeded && connect(signaller, SIGNAL(itemDeletedSignal(long)),
 									 slotter, SLOT(itemDeletedSlot(long)),
@@ -619,8 +619,8 @@ void MainWindow::connectPair(SketchWidget * signaller, SketchWidget * slotter)
 									 slotter, SLOT(wireDisconnectedSlot(long,  QString)));
 	succeeded = succeeded && connect(signaller, SIGNAL(wireConnectedSignal(long,  QString, long,  QString)),
 									 slotter, SLOT(wireConnectedSlot(long, QString, long, QString)));
-	succeeded = succeeded && connect(signaller, SIGNAL(changeConnectionSignal(long,  QString, long,  QString, ViewLayer::ViewLayerSpec, bool, bool)),
-									 slotter, SLOT(changeConnectionSlot(long, QString, long, QString, ViewLayer::ViewLayerSpec, bool, bool)));
+	succeeded = succeeded && connect(signaller, SIGNAL(changeConnectionSignal(long,  QString, long,  QString, ViewLayer::ViewLayerPlacement, bool, bool)),
+									 slotter, SLOT(changeConnectionSlot(long, QString, long, QString, ViewLayer::ViewLayerPlacement, bool, bool)));
 	succeeded = succeeded && connect(signaller, SIGNAL(copyBoundingRectsSignal(QHash<QString, QRectF> &)),
 													   slotter, SLOT(copyBoundingRectsSlot(QHash<QString, QRectF> &)),
 									 Qt::DirectConnection);
@@ -1981,8 +1981,8 @@ void MainWindow::swapSelectedMap(const QString & family, const QString & prop, Q
             if (viewItem) {
                 ViewLayer::ViewLayerID wantViewLayerID = ViewLayer::viewLayerIDFromXmlString(currPropsMap.value(prop));
                 if (viewItem->viewLayerID() != wantViewLayerID) {
-                    ViewLayer::ViewLayerSpec viewLayerSpec = (wantViewLayerID == ViewLayer::Copper0) ? ViewLayer::ThroughHoleThroughTop_OneLayer : ViewLayer::ThroughHoleThroughTop_TwoLayers;
-                    swapSelectedAux(itemBase->layerKinChief(), itemBase->moduleID(), true, viewLayerSpec);
+                    ViewLayer::ViewLayerPlacement viewLayerPlacement = (wantViewLayerID == ViewLayer::Copper0) ? ViewLayer::NewBottom : ViewLayer::NewTop;
+                    swapSelectedAux(itemBase->layerKinChief(), itemBase->moduleID(), true, viewLayerPlacement);
                     return;
                 }
             }
@@ -2071,22 +2071,22 @@ void MainWindow::swapLayers(ItemBase * itemBase, int layers, const QString & msg
 	m_undoStack->waitPush(parentCommand, delay);
 }
 
-void MainWindow::swapSelectedAux(ItemBase * itemBase, const QString & moduleID, bool useViewLayerSpec, ViewLayer::ViewLayerSpec overrideViewLayerSpec) {
+void MainWindow::swapSelectedAux(ItemBase * itemBase, const QString & moduleID, bool useViewLayerPlacement, ViewLayer::ViewLayerPlacement overrideViewLayerPlacement) {
 
 	QUndoCommand* parentCommand = new QUndoCommand(tr("Swapped %1 with module %2").arg(itemBase->instanceTitle()).arg(moduleID));
 	new CleanUpWiresCommand(m_breadboardGraphicsView, CleanUpWiresCommand::UndoOnly, parentCommand);
 	new CleanUpRatsnestsCommand(m_breadboardGraphicsView, CleanUpWiresCommand::UndoOnly, parentCommand);
 
-    ViewLayer::ViewLayerSpec viewLayerSpec = itemBase->viewLayerSpec();
+    ViewLayer::ViewLayerPlacement viewLayerPlacement = itemBase->viewLayerPlacement();
     if (m_pcbGraphicsView->boardLayers() == 2) {
         ModelPart * modelPart = m_referenceModel->retrieveModelPart(moduleID);
         if (modelPart->flippedSMD()) {
-            viewLayerSpec = (!m_pcbGraphicsView->layerIsActive(ViewLayer::Copper1) || m_pcbGraphicsView->viewFromBelow()) ? ViewLayer::ThroughHoleThroughTop_OneLayer : ViewLayer::ThroughHoleThroughTop_TwoLayers;
-            if (useViewLayerSpec) viewLayerSpec = overrideViewLayerSpec;
+            viewLayerPlacement = m_pcbGraphicsView->dropOnBottom() ? ViewLayer::NewBottom : ViewLayer::NewTop;
+            if (useViewLayerPlacement) viewLayerPlacement = overrideViewLayerPlacement;
         }
     }
 
-	swapSelectedAuxAux(itemBase, moduleID, viewLayerSpec, parentCommand);
+	swapSelectedAuxAux(itemBase, moduleID, viewLayerPlacement, parentCommand);
     
 	// need to defer execution so the content of the info view doesn't change during an event that started in the info view
 	m_undoStack->waitPush(parentCommand, SketchWidget::PropChangeDelay);
@@ -2096,7 +2096,7 @@ void MainWindow::swapSelectedAux(ItemBase * itemBase, const QString & moduleID, 
 void MainWindow::swapBoardImageSlot(SketchWidget * sketchWidget, ItemBase * itemBase, const QString & filename, const QString & moduleID, bool addName) {
 
 	QUndoCommand* parentCommand = new QUndoCommand(tr("Change image to %2").arg(filename));
-	long newID = swapSelectedAuxAux(itemBase, moduleID, itemBase->viewLayerSpec(), parentCommand);
+	long newID = swapSelectedAuxAux(itemBase, moduleID, itemBase->viewLayerPlacement(), parentCommand);
 
     LoadLogoImageCommand * cmd = new LoadLogoImageCommand(sketchWidget, newID, "", QSizeF(0,0), filename, filename, addName, parentCommand);
     cmd->setRedoOnly();
@@ -2106,12 +2106,12 @@ void MainWindow::swapBoardImageSlot(SketchWidget * sketchWidget, ItemBase * item
 }
 
 
-void MainWindow::subSwapSlot(SketchWidget * sketchWidget, ItemBase * itemBase, const QString & newModuleID, ViewLayer::ViewLayerSpec viewLayerSpec, long & newID, QUndoCommand * parentCommand) {
+void MainWindow::subSwapSlot(SketchWidget * sketchWidget, ItemBase * itemBase, const QString & newModuleID, ViewLayer::ViewLayerPlacement viewLayerPlacement, long & newID, QUndoCommand * parentCommand) {
 	Q_UNUSED(sketchWidget);
-	newID = swapSelectedAuxAux(itemBase, newModuleID, viewLayerSpec, parentCommand);
+	newID = swapSelectedAuxAux(itemBase, newModuleID, viewLayerPlacement, parentCommand);
 }
 
-long MainWindow::swapSelectedAuxAux(ItemBase * itemBase, const QString & moduleID,  ViewLayer::ViewLayerSpec viewLayerSpec, QUndoCommand * parentCommand) 
+long MainWindow::swapSelectedAuxAux(ItemBase * itemBase, const QString & moduleID,  ViewLayer::ViewLayerPlacement viewLayerPlacement, QUndoCommand * parentCommand) 
 {
 	long modelIndex = ModelPart::nextIndex();
 
@@ -2135,7 +2135,7 @@ long MainWindow::swapSelectedAuxAux(ItemBase * itemBase, const QString & moduleI
     swapThing.itemBase = itemBase;
     swapThing.newModelIndex = modelIndex;
     swapThing.newModuleID = moduleID;
-    swapThing.viewLayerSpec = viewLayerSpec;
+    swapThing.viewLayerPlacement = viewLayerPlacement;
     swapThing.parentCommand = parentCommand;
 
     long newID = 0;
@@ -2743,7 +2743,7 @@ bool MainWindow::updateParts(const QString & moduleID, QUndoCommand * parentComm
     }
 
     foreach (ItemBase * itemBase, itemBases) {
-        swapSelectedAuxAux(itemBase, moduleID, itemBase->viewLayerSpec(), parentCommand);
+        swapSelectedAuxAux(itemBase, moduleID, itemBase->viewLayerPlacement(), parentCommand);
     }
 
     return true;

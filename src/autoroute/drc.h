@@ -91,7 +91,7 @@ public:
 
 protected:
     bool makeBoard(QImage *, QRectF & sourceRes);
-    void splitNet(QDomDocument *, QList<ConnectorItem *> & , QImage * minusImage, QImage * plusImage, QRectF & sourceRes, ViewLayer::ViewLayerSpec viewLayerSpec, int index, double keepoutMils);
+    void splitNet(QDomDocument *, QList<ConnectorItem *> & , QImage * minusImage, QImage * plusImage, QRectF & sourceRes, ViewLayer::ViewLayerPlacement viewLayerPlacement, int index, double keepoutMils);
     void updateDisplay();
 	bool startAux(QString & message, QStringList & messages, QList<CollidingThing *> &, double keepoutMils);
     CollidingThing * findItemsAt(QList<QPointF> &, ItemBase * board, const LayerList & viewLayerIDs, double keepout, double dpi, bool skipHoles, ConnectorItem * already);
@@ -108,7 +108,7 @@ protected:
     QImage * m_minusImage;
     QImage * m_displayImage;
     QGraphicsPixmapItem * m_displayItem;
-    QHash<ViewLayer::ViewLayerSpec, QDomDocument *> m_masterDocs;
+    QHash<ViewLayer::ViewLayerPlacement, QDomDocument *> m_masterDocs;
     bool m_cancelled;
     int m_maxProgress;
 };

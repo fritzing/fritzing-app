@@ -81,21 +81,10 @@ public:
 		ViewLayerCount
 	};
 
-	enum ViewLayerSpec {
-		ThroughHoleThroughTop_OneLayer,
-		ThroughHoleThroughTop_TwoLayers,
-		ThroughHoleThroughBottom_TwoLayers,
-		SMDOnTop_TwoLayers,
-		SMDOnBottom_OneLayer,
-		SMDOnBottom_TwoLayers,
-		WireOnTop_TwoLayers,
-		WireOnBottom_OneLayer,
-		WireOnBottom_TwoLayers,
-		GroundPlane_Top,
-		GroundPlane_Bottom,
-		Top,
-		Bottom,
-		TopAndBottom,
+	enum ViewLayerPlacement {
+        NewTop,
+        NewBottom,
+		NewTopAndBottom,
 		UnknownSpec
 	};
 
@@ -159,12 +148,14 @@ public:
 	static void cleanup();
 	static QList<ViewLayerID> findAlternativeLayers(ViewLayerID);
 	static bool canConnect(ViewLayerID, ViewLayerID);
-	static ViewLayer::ViewLayerSpec specFromID(ViewLayer::ViewLayerID);
-	static const QList<ViewLayer::ViewLayerID> & copperLayers(ViewLayer::ViewLayerSpec);
-	static const QList<ViewLayer::ViewLayerID> & maskLayers(ViewLayer::ViewLayerSpec);
-	static const QList<ViewLayer::ViewLayerID> & silkLayers(ViewLayer::ViewLayerSpec);
+	static ViewLayer::ViewLayerPlacement specFromID(ViewLayer::ViewLayerID);
+	static const QList<ViewLayer::ViewLayerID> & copperLayers(ViewLayer::ViewLayerPlacement);
+	static const QList<ViewLayer::ViewLayerID> & maskLayers(ViewLayer::ViewLayerPlacement);
+	static const QList<ViewLayer::ViewLayerID> & silkLayers(ViewLayer::ViewLayerPlacement);
 	static const QList<ViewLayer::ViewLayerID> & outlineLayers();
 	static const QList<ViewLayer::ViewLayerID> & drillLayers();
+	static const QList<ViewLayer::ViewLayerID> & topLayers();
+	static const QList<ViewLayer::ViewLayerID> & bottomLayers();
 	static bool isCopperLayer(ViewLayer::ViewLayerID);
 	static bool isNonCopperLayer(ViewLayer::ViewLayerID viewLayerID);  // for pcb view layers only
 

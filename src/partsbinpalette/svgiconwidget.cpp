@@ -200,7 +200,7 @@ void SvgIconWidget::setupImage(bool plural, ViewLayer::ViewID viewID)
 	LayerAttributes layerAttributes;
     layerAttributes.viewID = viewID;
     layerAttributes.viewLayerID = ViewLayer::Icon;
-    layerAttributes.viewLayerSpec = ViewLayer::ThroughHoleThroughTop_OneLayer;
+    layerAttributes.viewLayerPlacement = ViewLayer::NewTop;
     layerAttributes.doConnectors = false;
 	ModelPart * modelPart = m_itemBase->modelPart();
 	FSvgRenderer * renderer = m_itemBase->setUpImage(modelPart, layerAttributes);

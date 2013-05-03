@@ -774,7 +774,7 @@ bool ResizableBoard::resizeMM(double mmW, double mmH, const LayerHash & viewLaye
 		LayerAttributes layerAttributes;
         layerAttributes.viewID = m_viewID;
         layerAttributes.viewLayerID = m_viewLayerID;
-        layerAttributes.viewLayerSpec = m_viewLayerSpec;
+        layerAttributes.viewLayerPlacement = m_viewLayerPlacement;
         layerAttributes.doConnectors = true;
 		setUpImage(modelPart(), viewLayers, layerAttributes);
 		modelPart()->setLocalProp("height", QVariant());
@@ -827,10 +827,10 @@ void ResizableBoard::resizeMMAux(double mmW, double mmH)
 
 }
 
-void ResizableBoard::loadLayerKin( const LayerHash & viewLayers, ViewLayer::ViewLayerSpec viewLayerSpec) {
+void ResizableBoard::loadLayerKin( const LayerHash & viewLayers, ViewLayer::ViewLayerPlacement viewLayerPlacement) {
 
 	loadTemplates();				
-	Board::loadLayerKin(viewLayers, viewLayerSpec);
+	Board::loadLayerKin(viewLayers, viewLayerPlacement);
 	double w =  m_modelPart->localProp("width").toDouble();
 	if (w != 0) {
 		resizeMM(w, m_modelPart->localProp("height").toDouble(), viewLayers);

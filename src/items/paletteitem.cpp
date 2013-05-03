@@ -141,7 +141,7 @@ bool PaletteItem::renderImage(ModelPart * modelPart, ViewLayer::ViewID viewID, c
 	LayerAttributes layerAttributes; 
     layerAttributes.viewID = viewID;
     layerAttributes.viewLayerID = viewLayerID;
-    layerAttributes.viewLayerSpec = viewLayerSpec();
+    layerAttributes.viewLayerPlacement = viewLayerPlacement();
     layerAttributes.doConnectors = doConnectors;
 	bool result = setUpImage(modelPart, viewLayers, layerAttributes);
     error = layerAttributes.error;
@@ -150,7 +150,7 @@ bool PaletteItem::renderImage(ModelPart * modelPart, ViewLayer::ViewID viewID, c
 	return result;
 }
 
-void PaletteItem::loadLayerKin(const LayerHash & viewLayers, ViewLayer::ViewLayerSpec viewLayerSpec) {
+void PaletteItem::loadLayerKin(const LayerHash & viewLayers, ViewLayer::ViewLayerPlacement viewLayerPlacement) {
 
 	if (m_modelPart == NULL) return;
 
@@ -161,66 +161,31 @@ void PaletteItem::loadLayerKin(const LayerHash & viewLayers, ViewLayer::ViewLaye
 	ViewGeometry viewGeometry = m_viewGeometry;
 	viewGeometry.setZ(-1);
 
-	LayerList notLayers;
-	switch (viewLayerSpec) {
-		case ViewLayer::ThroughHoleThroughTop_OneLayer:
-			if (m_modelPart->flippedSMD()) {
-				notLayers << ViewLayer::Copper1 << ViewLayer::Copper1Trace << ViewLayer::Silkscreen1 << ViewLayer::Silkscreen1Label;
-			}
-			//notLayers << ViewLayer::Silkscreen0 << ViewLayer::Silkscreen0Label << ViewLayer::Copper1 << ViewLayer:: Copper1Trace;
-			break;
-		case ViewLayer::ThroughHoleThroughTop_TwoLayers:
-			if (m_modelPart->flippedSMD()) {
-				notLayers << ViewLayer::Copper0 << ViewLayer::Copper0Trace << ViewLayer::Silkscreen0 << ViewLayer::Silkscreen0Label;
-			}
-			//notLayers << ViewLayer::Silkscreen0 << ViewLayer::Silkscreen0Label;
-			break;
-		case ViewLayer::ThroughHoleThroughBottom_TwoLayers:
-			//notLayers << ViewLayer::Silkscreen << ViewLayer::SilkscreenLabel;
-			break;
-
-		case ViewLayer::GroundPlane_Top:
-			notLayers << ViewLayer::GroundPlane0;
-			break;
-		case ViewLayer::GroundPlane_Bottom:
-			notLayers << ViewLayer::GroundPlane1;
-			break;
-
-		// not sure these ever get used...
-		case ViewLayer::SMDOnTop_TwoLayers:
-			notLayers << ViewLayer::Copper0 << ViewLayer::Copper0Trace << ViewLayer::Silkscreen0 << ViewLayer::Silkscreen0Label;
-			break;
-		case ViewLayer::SMDOnBottom_TwoLayers:
-		case ViewLayer::SMDOnBottom_OneLayer:
-			notLayers << ViewLayer::Copper1 << ViewLayer::Copper1Trace << ViewLayer::Silkscreen1 << ViewLayer::Silkscreen1Label;
-			break;
-
-        case ViewLayer::Top:
-        case ViewLayer::Bottom:
-        case ViewLayer::TopAndBottom:
-		case ViewLayer::WireOnTop_TwoLayers:
-		case ViewLayer::WireOnBottom_OneLayer:
-        case ViewLayer::WireOnBottom_TwoLayers:
-        case ViewLayer::UnknownSpec:
-			DebugDialog::debug("bad view spec in LoadLayerKin");
-			break;
-	}
 
 	foreach (ViewLayer::ViewLayerID viewLayerID, viewLayers.keys()) {
 		if (viewLayerID == m_viewLayerID) continue;
-		if (notLayers.contains(viewLayerID)) continue;
 		if (!m_modelPart->hasViewFor(m_viewID, viewLayerID)) continue;
 
-        makeOneKin(id, viewLayerID, viewLayerSpec, viewGeometry, viewLayers);
+        if (m_modelPart->itemType() == ModelPart::CopperFill) {
+            if (viewLayerPlacement == ViewLayer::NewTop && ViewLayer::bottomLayers().contains(viewLayerID)) continue;
+            if (viewLayerPlacement == ViewLayer::NewBottom && ViewLayer::topLayers().contains(viewLayerID)) continue;
+        }
+        else if (m_modelPart->flippedSMD()) {
+            if (viewLayerPlacement == ViewLayer::NewTop && ViewLayer::bottomLayers().contains(viewLayerID)) continue;
+            if (viewLayerPlacement == ViewLayer::NewBottom && ViewLayer::topLayers().contains(viewLayerID)) continue;
+
+        }
+
+        makeOneKin(id, viewLayerID, viewLayerPlacement, viewGeometry, viewLayers);
 	}
 
 }
 
-void PaletteItem::makeOneKin(qint64 & id, ViewLayer::ViewLayerID viewLayerID, ViewLayer::ViewLayerSpec viewLayerSpec, ViewGeometry & viewGeometry, const LayerHash & viewLayers) {
+void PaletteItem::makeOneKin(qint64 & id, ViewLayer::ViewLayerID viewLayerID, ViewLayer::ViewLayerPlacement viewLayerPlacement, ViewGeometry & viewGeometry, const LayerHash & viewLayers) {
     LayerAttributes layerAttributes;
     layerAttributes.viewID = m_viewID;
     layerAttributes.viewLayerID = viewLayerID;
-    layerAttributes.viewLayerSpec = viewLayerSpec;
+    layerAttributes.viewLayerPlacement = viewLayerPlacement;
     layerAttributes.doConnectors = true;
     LayerKinPaletteItem * lkpi = newLayerKinPaletteItem(this, m_modelPart, viewGeometry, id, m_itemMenu, viewLayers, layerAttributes);
 	if (lkpi->ok()) {
@@ -228,7 +193,7 @@ void PaletteItem::makeOneKin(qint64 & id, ViewLayer::ViewLayerID viewLayerID, Vi
             .arg(id).arg(m_viewID).arg(viewLayerID) 
             .arg((long) lkpi, 0, 16)
         );
-		lkpi->setViewLayerSpec(viewLayerSpec);
+		lkpi->setViewLayerPlacement(viewLayerPlacement);
 		addLayerKin(lkpi);
 		id++;
 	}
@@ -536,7 +501,7 @@ void PaletteItem::resetImage(InfoGraphicsView * infoGraphicsView) {
 	LayerAttributes layerAttributes;
     layerAttributes.viewID = viewID();
     layerAttributes.viewLayerID = viewLayerID();
-    layerAttributes.viewLayerSpec = viewLayerSpec();
+    layerAttributes.viewLayerPlacement = viewLayerPlacement();
     layerAttributes.doConnectors = true;
 	this->setUpImage(modelPart(), infoGraphicsView->viewLayers(),layerAttributes);
 	
@@ -553,7 +518,7 @@ void PaletteItem::resetKinImage(ItemBase * layerKin, InfoGraphicsView * infoGrap
 	LayerAttributes layerAttributes;
     layerAttributes.viewID = layerKin->viewID();
     layerAttributes.viewLayerID = layerKin->viewLayerID();
-    layerAttributes.viewLayerSpec = layerKin->viewLayerSpec();
+    layerAttributes.viewLayerPlacement = layerKin->viewLayerPlacement();
     layerAttributes.doConnectors = true;
 	qobject_cast<PaletteItemBase *>(layerKin)->setUpImage(modelPart(), infoGraphicsView->viewLayers(), layerAttributes);
 }

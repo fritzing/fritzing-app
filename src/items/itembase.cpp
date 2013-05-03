@@ -625,10 +625,10 @@ ConnectorItem * ItemBase::findConnectorItemWithSharedID(const QString & connecto
 	return NULL;
 }
 
-ConnectorItem * ItemBase::findConnectorItemWithSharedID(const QString & connectorID, ViewLayer::ViewLayerSpec viewLayerSpec)  {
+ConnectorItem * ItemBase::findConnectorItemWithSharedID(const QString & connectorID, ViewLayer::ViewLayerPlacement viewLayerPlacement)  {
     ConnectorItem * connectorItem = findConnectorItemWithSharedID(connectorID);
 	if (connectorItem) {
-		return connectorItem->chooseFromSpec(viewLayerSpec);
+		return connectorItem->chooseFromSpec(viewLayerPlacement);
 	}
 
 	return NULL;
@@ -1341,11 +1341,6 @@ void ItemBase::saveLocAndTransform(QXmlStreamWriter & streamWriter)
 
 FSvgRenderer * ItemBase::setUpImage(ModelPart * modelPart, LayerAttributes & layerAttributes)
 {
-#ifndef QT_NO_DEBUG
-	QTime t;
-	t.start();
-#endif
-
     ModelPartShared * modelPartShared = modelPart->modelPartShared();
 
 	if (modelPartShared == NULL) {
@@ -1410,8 +1405,8 @@ FSvgRenderer * ItemBase::setUpImage(ModelPart * modelPart, LayerAttributes & lay
 
 	FSvgRenderer * newRenderer = new FSvgRenderer();
 	QDomDocument flipDoc;
-	if (!getFlipDoc(modelPart, filename, layerAttributes.viewLayerID, layerAttributes.viewLayerSpec, flipDoc)) {
-		fixCopper1(modelPart, filename, layerAttributes.viewLayerID, layerAttributes.viewLayerSpec, flipDoc);
+	if (!getFlipDoc(modelPart, filename, layerAttributes.viewLayerID, layerAttributes.viewLayerPlacement, flipDoc)) {
+		fixCopper1(modelPart, filename, layerAttributes.viewLayerID, layerAttributes.viewLayerPlacement, flipDoc);
 	}
     QByteArray bytesToLoad;
     if (layerAttributes.viewLayerID == ViewLayer::Schematic) {
@@ -1764,12 +1759,12 @@ ItemBase::PluralType ItemBase::isPlural() {
 	return ItemBase::NotSure;
 }
 
-ViewLayer::ViewLayerSpec ItemBase::viewLayerSpec() const {
-	return m_viewLayerSpec;
+ViewLayer::ViewLayerPlacement ItemBase::viewLayerPlacement() const {
+	return m_viewLayerPlacement;
 }
 
-void ItemBase::setViewLayerSpec(ViewLayer::ViewLayerSpec viewLayerSpec) {
-	m_viewLayerSpec = viewLayerSpec;
+void ItemBase::setViewLayerPlacement(ViewLayer::ViewLayerPlacement viewLayerPlacement) {
+	m_viewLayerPlacement = viewLayerPlacement;
 }
 
 ViewLayer::ViewLayerID ItemBase::partLabelViewLayerID() {
@@ -1796,9 +1791,9 @@ QRectF ItemBase::partLabelSceneBoundingRect() {
 	return m_partLabel->sceneBoundingRect();
 }
 
-bool ItemBase::getFlipDoc(ModelPart * modelPart, const QString & filename, ViewLayer::ViewLayerID viewLayerID, ViewLayer::ViewLayerSpec viewLayerSpec, QDomDocument & flipDoc)
+bool ItemBase::getFlipDoc(ModelPart * modelPart, const QString & filename, ViewLayer::ViewLayerID viewLayerID, ViewLayer::ViewLayerPlacement viewLayerPlacement, QDomDocument & flipDoc)
 {
-	if (viewLayerSpec == ViewLayer::ThroughHoleThroughTop_OneLayer) {
+	if (viewLayerPlacement == ViewLayer::NewBottom) {
 		if ((viewLayerID == ViewLayer::Copper0) && modelPart->flippedSMD()) {
 			SvgFlattener::flipSMDSvg(filename, "", flipDoc, ViewLayer::viewLayerXmlNameFromID(ViewLayer::Copper1), ViewLayer::viewLayerXmlNameFromID(ViewLayer::Copper0), GraphicsUtils::SVGDPI);
 			return true;
@@ -1812,9 +1807,9 @@ bool ItemBase::getFlipDoc(ModelPart * modelPart, const QString & filename, ViewL
 	return false;
 }
 
-bool ItemBase::fixCopper1(ModelPart * modelPart, const QString & filename, ViewLayer::ViewLayerID viewLayerID, ViewLayer::ViewLayerSpec viewLayerSpec, QDomDocument & doc)
+bool ItemBase::fixCopper1(ModelPart * modelPart, const QString & filename, ViewLayer::ViewLayerID viewLayerID, ViewLayer::ViewLayerPlacement viewLayerPlacement, QDomDocument & doc)
 {
-	Q_UNUSED(viewLayerSpec);
+	Q_UNUSED(viewLayerPlacement);
 	if (viewLayerID != ViewLayer::Copper1) return false;
 	if (!modelPart->needsCopper1()) return false;
 
@@ -1905,7 +1900,7 @@ void ItemBase::debugInfo2(const QString & msg) const
 		.arg(this->id())
 		.arg(this->instanceTitle())
 		.arg(this->viewLayerID())
-		.arg(this->viewLayerSpec())
+		.arg(this->viewLayerPlacement())
 		.arg(this->wireFlags())
 		.arg((long) dynamic_cast<const QGraphicsItem *const>(this), 0, 16)
 		.arg(m_viewID)
@@ -2238,7 +2233,7 @@ ItemBase * ItemBase::superpart() {
     return m_superpart;
 }
 
-ItemBase * ItemBase::findSubpart(const QString & connectorID, ViewLayer::ViewLayerSpec spec) {
+ItemBase * ItemBase::findSubpart(const QString & connectorID, ViewLayer::ViewLayerPlacement spec) {
     foreach (ItemBase * itemBase, m_subparts) {
         ConnectorItem * connectorItem = itemBase->findConnectorItemWithSharedID(connectorID, spec);
         if (connectorItem) return itemBase;

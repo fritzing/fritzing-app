@@ -566,7 +566,7 @@ void PartLabel::transformLabel(QTransform currTransf)
 void PartLabel::setUpText() {
 	InfoGraphicsView *infographics = InfoGraphicsView::getInfoGraphicsView(this);
 	if (infographics != NULL) {
-		infographics->getLabelFont(m_font, m_color, m_owner->viewLayerSpec());
+		infographics->getLabelFont(m_font, m_color, m_owner);
 	}
 }
 

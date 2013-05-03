@@ -93,7 +93,7 @@ bool BreadboardSketchWidget::disconnectFromFemale(ItemBase * item, QHash<long, I
 				fromConnectorItem->tempRemove(toConnectorItem, true);
 				toConnectorItem->tempRemove(fromConnectorItem, true);
 				if (doCommand) {
-					extendChangeConnectionCommand(BaseCommand::CrossView, fromConnectorItem, toConnectorItem, ViewLayer::Bottom, false, parentCommand);
+					extendChangeConnectionCommand(BaseCommand::CrossView, fromConnectorItem, toConnectorItem, ViewLayer::NewBottom, false, parentCommand);
 				}
 				connectorHash.insert(fromConnectorItem, toConnectorItem);
 
@@ -144,7 +144,7 @@ void BreadboardSketchWidget::initWire(Wire * wire, int penWidth) {
 	wire->setColorString("blue", 1.0);
 }
 
-const QString & BreadboardSketchWidget::traceColor(ViewLayer::ViewLayerSpec) {
+const QString & BreadboardSketchWidget::traceColor(ViewLayer::ViewLayerPlacement) {
 	if (!m_lastColorSelected.isEmpty()) return m_lastColorSelected;
 
 	static QString color = "blue";
@@ -156,7 +156,7 @@ double BreadboardSketchWidget::getTraceWidth() {
 	return 2.0;
 }
 
-void BreadboardSketchWidget::getLabelFont(QFont & font, QColor & color, ViewLayer::ViewLayerSpec) {
+void BreadboardSketchWidget::getLabelFont(QFont & font, QColor & color, ItemBase *) {
 	font.setFamily("Droid Sans");
 	font.setPointSize(9);
 	font.setBold(false);
@@ -202,7 +202,7 @@ double BreadboardSketchWidget::defaultGridSizeInches() {
 	return 0.1;
 }
 
-ViewLayer::ViewLayerID BreadboardSketchWidget::getLabelViewLayerID(ViewLayer::ViewLayerSpec) {
+ViewLayer::ViewLayerID BreadboardSketchWidget::getLabelViewLayerID(ItemBase *) {
 	return ViewLayer::BreadboardLabel;
 }
 
@@ -210,7 +210,7 @@ void BreadboardSketchWidget::addDefaultParts() {
 	long newID = ItemBase::getNextID();
 	ViewGeometry viewGeometry;
 	viewGeometry.setLoc(QPointF(0, 0));
-	m_addedDefaultPart = addItem(referenceModel()->retrieveModelPart(ModuleIDNames::FullPlusBreadboardModuleIDName), defaultViewLayerSpec(), BaseCommand::CrossView, viewGeometry, newID, -1, NULL);
+	m_addedDefaultPart = addItem(referenceModel()->retrieveModelPart(ModuleIDNames::FullPlusBreadboardModuleIDName), defaultViewLayerPlacement(), BaseCommand::CrossView, viewGeometry, newID, -1, NULL);
 	m_addDefaultParts = true;
 	// have to put this off until later, because positioning the item doesn't work correctly until the view is visible
 }

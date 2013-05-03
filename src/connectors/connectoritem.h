@@ -79,7 +79,7 @@ public:
 	ConnectorItem * overConnectorItem();
 	void setOverConnectorItem(ConnectorItem *);
 	ViewLayer::ViewLayerID attachedToViewLayerID();
-	ViewLayer::ViewLayerSpec attachedToViewLayerSpec();
+	ViewLayer::ViewLayerPlacement attachedToViewLayerPlacement();
 	ViewLayer::ViewID attachedToViewID();
 	const QString & connectorSharedID();
 	const QString & connectorSharedName();
@@ -102,11 +102,11 @@ public:
 	void showEqualPotential(bool show);
 	void setHoverColor();
 	bool isGrounded();
-	ConnectorItem * chooseFromSpec(ViewLayer::ViewLayerSpec);
+	ConnectorItem * chooseFromSpec(ViewLayer::ViewLayerPlacement);
 	bool connectedToWires();
 	bool isCrossLayerConnectorItem(ConnectorItem * candidate);
 	bool isCrossLayerFrom(ConnectorItem * candidate);
-	bool isInLayers(ViewLayer::ViewLayerSpec);
+	bool isInLayers(ViewLayer::ViewLayerPlacement);
 	ConnectorItem * getCrossLayerConnectorItem();
 	void displayRatsnest(QList<ConnectorItem *> & partsConnectorItems, ViewGeometry::WireFlags myFlag);
 	void clearRatsnestDisplay(QList<ConnectorItem *> & connectorItems);
@@ -239,11 +239,11 @@ protected:
 	static QList<ConnectorItem *>  m_equalPotentialDisplayItems;
 
 protected:
-	static void collectPart(ConnectorItem * connectorItem, QList<ConnectorItem *> & partsConnectors, ViewLayer::ViewLayerSpec);
+	static void collectPart(ConnectorItem * connectorItem, QList<ConnectorItem *> & partsConnectors, ViewLayer::ViewLayerPlacement);
 
 public:
 	static void collectEqualPotential(QList<ConnectorItem *> & connectorItems, bool crossLayers, ViewGeometry::WireFlags skipFlags);
-	static void collectParts(QList<ConnectorItem *> & connectorItems, QList<ConnectorItem *> & partsConnectors, bool includeSymbols, ViewLayer::ViewLayerSpec);
+	static void collectParts(QList<ConnectorItem *> & connectorItems, QList<ConnectorItem *> & partsConnectors, bool includeSymbols, ViewLayer::ViewLayerPlacement);
 	static void clearEqualPotentialDisplay();
 	static bool isGrounded(ConnectorItem * c1, ConnectorItem * c2);
 	static void collectConnectorNames(QList<ConnectorItem *> & connectorItems, QStringList & connectorNames);

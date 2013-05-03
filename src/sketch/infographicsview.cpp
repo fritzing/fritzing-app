@@ -167,7 +167,7 @@ void InfoGraphicsView::getBendpointWidths(class Wire *, double w, double & w1, d
 	Q_UNUSED(negativeOffsetRect);
 }
 
-void InfoGraphicsView::getLabelFont(QFont &, QColor &, ViewLayer::ViewLayerSpec) {
+void InfoGraphicsView::getLabelFont(QFont &, QColor &, ItemBase *) {
 }
 
 double InfoGraphicsView::getLabelFontSizeTiny() {

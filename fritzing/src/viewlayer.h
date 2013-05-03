@@ -85,7 +85,7 @@ public:
         NewTop,
         NewBottom,
 		NewTopAndBottom,
-		UnknownSpec
+		UnknownPlacement
 	};
 
    enum ViewID {

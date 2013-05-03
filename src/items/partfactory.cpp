@@ -64,12 +64,12 @@ static QString PartFactoryFolderPath;
 static QHash<QString, LockedFile *> LockedFiles;
 static QString SvgFilesDir = "svg";
 
-ItemBase * PartFactory::createPart( ModelPart * modelPart, ViewLayer::ViewLayerSpec viewLayerSpec, ViewLayer::ViewID viewID, const ViewGeometry & viewGeometry, long id, QMenu * itemMenu, QMenu * wireMenu, bool doLabel)
+ItemBase * PartFactory::createPart( ModelPart * modelPart, ViewLayer::ViewLayerPlacement viewLayerPlacement, ViewLayer::ViewID viewID, const ViewGeometry & viewGeometry, long id, QMenu * itemMenu, QMenu * wireMenu, bool doLabel)
 {
 	modelPart->setModelIndexFromMultiplied(id);			// make sure the model index is synched with the id; this is not always the case when parts are first created.
 	ItemBase * itemBase = createPartAux(modelPart, viewID, viewGeometry, id, itemMenu, wireMenu, doLabel);
 	if (itemBase) {
-		itemBase->setViewLayerSpec(viewLayerSpec);
+		itemBase->setViewLayerPlacement(viewLayerPlacement);
 	}
 	return itemBase;
 }

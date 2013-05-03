@@ -329,14 +329,14 @@ void Panelizer::panelize(FApplication * app, const QString & panelFilename, bool
 
     QList<LayerThing> layerThingList;
 	layerThingList.append(LayerThing("outline", ViewLayer::outlineLayers(), SVG2gerber::ForOutline, GerberGenerator::OutlineSuffix));  
-	layerThingList.append(LayerThing("copper_top", ViewLayer::copperLayers(ViewLayer::Top), SVG2gerber::ForCopper, GerberGenerator::CopperTopSuffix));
-	layerThingList.append(LayerThing("copper_bottom", ViewLayer::copperLayers(ViewLayer::Bottom), SVG2gerber::ForCopper, GerberGenerator::CopperBottomSuffix));
-	layerThingList.append(LayerThing("mask_top", ViewLayer::maskLayers(ViewLayer::Top), SVG2gerber::ForMask, GerberGenerator:: MaskTopSuffix));
-	layerThingList.append(LayerThing("mask_bottom", ViewLayer::maskLayers(ViewLayer::Bottom), SVG2gerber::ForMask, GerberGenerator::MaskBottomSuffix));
-	layerThingList.append(LayerThing("paste_mask_top", ViewLayer::maskLayers(ViewLayer::Top), SVG2gerber::ForPasteMask, GerberGenerator:: PasteMaskTopSuffix));
-	layerThingList.append(LayerThing("paste_mask_bottom", ViewLayer::maskLayers(ViewLayer::Bottom), SVG2gerber::ForPasteMask, GerberGenerator::PasteMaskBottomSuffix));
-	layerThingList.append(LayerThing("silk_top", ViewLayer::silkLayers(ViewLayer::Top), SVG2gerber::ForSilk, GerberGenerator::SilkTopSuffix));
-	layerThingList.append(LayerThing("silk_bottom", ViewLayer::silkLayers(ViewLayer::Bottom), SVG2gerber::ForSilk, GerberGenerator::SilkBottomSuffix));
+	layerThingList.append(LayerThing("copper_top", ViewLayer::copperLayers(ViewLayer::NewTop), SVG2gerber::ForCopper, GerberGenerator::CopperTopSuffix));
+	layerThingList.append(LayerThing("copper_bottom", ViewLayer::copperLayers(ViewLayer::NewBottom), SVG2gerber::ForCopper, GerberGenerator::CopperBottomSuffix));
+	layerThingList.append(LayerThing("mask_top", ViewLayer::maskLayers(ViewLayer::NewTop), SVG2gerber::ForMask, GerberGenerator:: MaskTopSuffix));
+	layerThingList.append(LayerThing("mask_bottom", ViewLayer::maskLayers(ViewLayer::NewBottom), SVG2gerber::ForMask, GerberGenerator::MaskBottomSuffix));
+	layerThingList.append(LayerThing("paste_mask_top", ViewLayer::maskLayers(ViewLayer::NewTop), SVG2gerber::ForPasteMask, GerberGenerator:: PasteMaskTopSuffix));
+	layerThingList.append(LayerThing("paste_mask_bottom", ViewLayer::maskLayers(ViewLayer::NewBottom), SVG2gerber::ForPasteMask, GerberGenerator::PasteMaskBottomSuffix));
+	layerThingList.append(LayerThing("silk_top", ViewLayer::silkLayers(ViewLayer::NewTop), SVG2gerber::ForSilk, GerberGenerator::SilkTopSuffix));
+	layerThingList.append(LayerThing("silk_bottom", ViewLayer::silkLayers(ViewLayer::NewBottom), SVG2gerber::ForSilk, GerberGenerator::SilkBottomSuffix));
 	layerThingList.append(LayerThing("drill", ViewLayer::drillLayers(), SVG2gerber::ForDrill, GerberGenerator::DrillSuffix));
 
     for (int i = 0; i < layerThingList.count(); i++) {

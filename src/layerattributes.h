@@ -53,7 +53,7 @@ public:
     QString error;
     ViewLayer::ViewID viewID;
     ViewLayer::ViewLayerID viewLayerID;
-    ViewLayer::ViewLayerSpec viewLayerSpec;
+    ViewLayer::ViewLayerPlacement viewLayerPlacement;
     bool doConnectors;
 };
 

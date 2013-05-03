@@ -103,7 +103,7 @@ public:
 	bool layerHidden();
 	virtual void setInactive(bool inactivate);
 	bool inactive();
-	ConnectorItem * findConnectorItemWithSharedID(const QString & connectorID, ViewLayer::ViewLayerSpec);
+	ConnectorItem * findConnectorItemWithSharedID(const QString & connectorID, ViewLayer::ViewLayerPlacement);
 	ConnectorItem * findConnectorItemWithSharedID(const QString & connectorID);
 	void updateConnections(ConnectorItem *, bool includeRatsnest, QList<ConnectorItem *> & already);
 	virtual void updateConnections(bool includeRatsnest, QList<ConnectorItem *> & already);
@@ -180,8 +180,8 @@ public:
 	const QString & filename();
 	void setFilename(const QString &);
 	virtual PluralType isPlural();
-	ViewLayer::ViewLayerSpec viewLayerSpec() const;
-	void setViewLayerSpec(ViewLayer::ViewLayerSpec);
+	ViewLayer::ViewLayerPlacement viewLayerPlacement() const;
+	void setViewLayerPlacement(ViewLayer::ViewLayerPlacement);
 	virtual void calcRotation(QTransform & rotation, QPointF center, ViewGeometry &);
     void updateConnectors();
 	const QString & moduleID();
@@ -227,7 +227,7 @@ public:
     void addSubpart(ItemBase *);
     void setSuperpart(ItemBase *);
     ItemBase * superpart();
-    ItemBase * findSubpart(const QString & connectorID, ViewLayer::ViewLayerSpec);
+    ItemBase * findSubpart(const QString & connectorID, ViewLayer::ViewLayerPlacement);
     const QList< QPointer<ItemBase> > & subparts();
 
 public:
@@ -325,8 +325,8 @@ protected:
     void updateHidden();
 
 protected:
-	static bool getFlipDoc(ModelPart * modelPart, const QString & filename, ViewLayer::ViewLayerID viewLayerID, ViewLayer::ViewLayerSpec, QDomDocument &);
-	static bool fixCopper1(ModelPart * modelPart, const QString & filename, ViewLayer::ViewLayerID viewLayerID, ViewLayer::ViewLayerSpec, QDomDocument &);
+	static bool getFlipDoc(ModelPart * modelPart, const QString & filename, ViewLayer::ViewLayerID viewLayerID, ViewLayer::ViewLayerPlacement, QDomDocument &);
+	static bool fixCopper1(ModelPart * modelPart, const QString & filename, ViewLayer::ViewLayerID viewLayerID, ViewLayer::ViewLayerPlacement, QDomDocument &);
 
 protected:
  	QSizeF m_size;
@@ -354,7 +354,7 @@ protected:
 	ConnectorItem * m_rightClickedConnector;
 	QMap<QString, QString> m_propsMap;
 	QString m_filename;
-	ViewLayer::ViewLayerSpec m_viewLayerSpec;
+	ViewLayer::ViewLayerPlacement m_viewLayerPlacement;
 	bool m_moveLock;
 	bool m_hasRubberBandLeg;
 	QList<ConnectorItem *> m_cachedConnectorItems;

@@ -77,7 +77,7 @@ ViewLayer::ViewLayerID SchematicSketchWidget::getDragWireViewLayerID(ConnectorIt
 	return ViewLayer::SchematicTrace;
 }
 
-ViewLayer::ViewLayerID SchematicSketchWidget::getWireViewLayerID(const ViewGeometry & viewGeometry, ViewLayer::ViewLayerSpec viewLayerSpec) {
+ViewLayer::ViewLayerID SchematicSketchWidget::getWireViewLayerID(const ViewGeometry & viewGeometry, ViewLayer::ViewLayerPlacement viewLayerPlacement) {
 	if (viewGeometry.getAnyTrace()) {
 		return ViewLayer::SchematicTrace;
 	}
@@ -86,7 +86,7 @@ ViewLayer::ViewLayerID SchematicSketchWidget::getWireViewLayerID(const ViewGeome
 		return ViewLayer::SchematicWire;
 	}
 
-	return SketchWidget::getWireViewLayerID(viewGeometry, viewLayerSpec);
+	return SketchWidget::getWireViewLayerID(viewGeometry, viewLayerPlacement);
 }
 
 void SchematicSketchWidget::initWire(Wire * wire, int penWidth) {
@@ -142,7 +142,7 @@ void SchematicSketchWidget::getBendpointWidths(Wire * wire, double width, double
 	negativeOffsetRect = true;
 }
 
-void SchematicSketchWidget::getLabelFont(QFont & font, QColor & color, ViewLayer::ViewLayerSpec) {
+void SchematicSketchWidget::getLabelFont(QFont & font, QColor & color, ItemBase *) {
 	font.setFamily("Droid Sans");
 	font.setPointSize(9);
 	font.setBold(false);
@@ -238,11 +238,11 @@ void SchematicSketchWidget::updateBigDots()
 
 void SchematicSketchWidget::changeConnection(long fromID, const QString & fromConnectorID,
 									long toID, const QString & toConnectorID,
-									ViewLayer::ViewLayerSpec viewLayerSpec,
+									ViewLayer::ViewLayerPlacement viewLayerPlacement,
 									bool connect, bool doEmit, bool updateConnections)
 {
 	m_updateDotsTimer.stop();
-	SketchWidget::changeConnection(fromID, fromConnectorID, toID, toConnectorID, viewLayerSpec, connect,  doEmit,  updateConnections);
+	SketchWidget::changeConnection(fromID, fromConnectorID, toID, toConnectorID, viewLayerPlacement, connect,  doEmit,  updateConnections);
 	m_updateDotsTimer.start();
 }
 
@@ -342,7 +342,7 @@ double SchematicSketchWidget::defaultGridSizeInches() {
 	return GraphicsUtils::StandardSchematicSeparationMils / 1000;
 }
 
-ViewLayer::ViewLayerID SchematicSketchWidget::getLabelViewLayerID(ViewLayer::ViewLayerSpec) {
+ViewLayer::ViewLayerID SchematicSketchWidget::getLabelViewLayerID(ItemBase *) {
 	return ViewLayer::SchematicLabel;
 }
 
@@ -352,13 +352,13 @@ const QString & SchematicSketchWidget::traceColor(ConnectorItem *) {
 	else return m_lastColorSelected;
 }
 
-const QString & SchematicSketchWidget::traceColor(ViewLayer::ViewLayerSpec) {
+const QString & SchematicSketchWidget::traceColor(ViewLayer::ViewLayerPlacement) {
 	return SchematicTraceColor;
 }
 
-bool SchematicSketchWidget::isInLayers(ConnectorItem * connectorItem, ViewLayer::ViewLayerSpec viewLayerSpec) {
+bool SchematicSketchWidget::isInLayers(ConnectorItem * connectorItem, ViewLayer::ViewLayerPlacement viewLayerPlacement) {
 	Q_UNUSED(connectorItem);
-	Q_UNUSED(viewLayerSpec);
+	Q_UNUSED(viewLayerPlacement);
 	return true;
 }
 
@@ -435,8 +435,8 @@ QString SchematicSketchWidget::generateCopperFillUnit(ItemBase * itemBase, QPoin
 	return "";
 }
 
-ViewLayer::ViewLayerSpec SchematicSketchWidget::createWireViewLayerSpec(ConnectorItem * from, ConnectorItem * to) {
-	return SketchWidget::createWireViewLayerSpec(from, to);
+ViewLayer::ViewLayerPlacement SchematicSketchWidget::createWireViewLayerPlacement(ConnectorItem * from, ConnectorItem * to) {
+	return SketchWidget::createWireViewLayerPlacement(from, to);
 }
 
 double SchematicSketchWidget::getWireStrokeWidth(Wire *, double wireWidth)
@@ -444,7 +444,7 @@ double SchematicSketchWidget::getWireStrokeWidth(Wire *, double wireWidth)
 	return wireWidth * TraceHoverStrokeFactor;
 }
 
-Wire * SchematicSketchWidget::createTempWireForDragging(Wire * fromWire, ModelPart * wireModel, ConnectorItem * connectorItem, ViewGeometry & viewGeometry, ViewLayer::ViewLayerSpec spec) 
+Wire * SchematicSketchWidget::createTempWireForDragging(Wire * fromWire, ModelPart * wireModel, ConnectorItem * connectorItem, ViewGeometry & viewGeometry, ViewLayer::ViewLayerPlacement spec) 
 {
 	viewGeometry.setSchematicTrace(true);
 	Wire * wire =  SketchWidget::createTempWireForDragging(fromWire, wireModel, connectorItem, viewGeometry, spec);
@@ -482,7 +482,7 @@ QString SchematicSketchWidget::checkDroppedModuleID(const QString & moduleID) {
     return moduleID;
 }
 
-LayerList SchematicSketchWidget::routingLayers(ViewLayer::ViewLayerSpec) {
+LayerList SchematicSketchWidget::routingLayers(ViewLayer::ViewLayerPlacement) {
     LayerList layerList;
     layerList << ViewLayer::Schematic;
     return layerList;
@@ -502,7 +502,7 @@ QSizeF SchematicSketchWidget::jumperItemSize() {
 	    long newID = ItemBase::getNextID();
 	    ViewGeometry viewGeometry;
 	    viewGeometry.setLoc(QPointF(0, 0));
-	    ItemBase * itemBase = addItem(referenceModel()->retrieveModelPart(ModuleIDNames::NetLabelModuleIDName), defaultViewLayerSpec(), BaseCommand::SingleView, viewGeometry, newID, -1, NULL);
+	    ItemBase * itemBase = addItem(referenceModel()->retrieveModelPart(ModuleIDNames::NetLabelModuleIDName), defaultViewLayerPlacement(), BaseCommand::SingleView, viewGeometry, newID, -1, NULL);
 	    if (itemBase) {
 		    SymbolPaletteItem * netLabel = qobject_cast<SymbolPaletteItem *>(itemBase);
             netLabel->setLabel("00");
@@ -522,6 +522,6 @@ void SchematicSketchWidget::setAutorouterSettings(QHash<QString, QString> & auto
     SketchWidget::setAutorouterSettings(autorouterSettings);
 }
 
-void SchematicSketchWidget::getDroppedItemViewLayerSpec(ModelPart * modelPart, ViewLayer::ViewLayerSpec & viewLayerSpec) {
-    SketchWidget::getDroppedItemViewLayerSpec(modelPart, viewLayerSpec);
+void SchematicSketchWidget::getDroppedItemViewLayerPlacement(ModelPart * modelPart, ViewLayer::ViewLayerPlacement & viewLayerPlacement) {
+    SketchWidget::getDroppedItemViewLayerPlacement(modelPart, viewLayerPlacement);
 }

@@ -67,7 +67,7 @@ public:
 
 	virtual void setIgnoreSelectionChangeEvents(bool) {}
 	virtual void getBendpointWidths(class Wire *, double w, double & w1, double & w2, bool & negativeOffsetRect);
-	virtual void getLabelFont(QFont &, QColor &, ViewLayer::ViewLayerSpec);
+	virtual void getLabelFont(QFont &, QColor &, ItemBase *);
     virtual double getLabelFontSizeTiny();
 	virtual double getLabelFontSizeSmall();
 	virtual double getLabelFontSizeMedium();

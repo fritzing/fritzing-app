@@ -2764,7 +2764,7 @@ void MainWindow::addNote() {
 	QUndoCommand * parentCommand = new QUndoCommand(tr("Add Note"));
 	m_currentGraphicsView->stackSelectionState(false, parentCommand);
 	m_currentGraphicsView->scene()->clearSelection();
-	new AddItemCommand(m_currentGraphicsView, BaseCommand::SingleView, ModuleIDNames::NoteModuleIDName, m_currentGraphicsView->defaultViewLayerSpec(), vg, ItemBase::getNextID(), false, -1, parentCommand);
+	new AddItemCommand(m_currentGraphicsView, BaseCommand::SingleView, ModuleIDNames::NoteModuleIDName, m_currentGraphicsView->defaultViewLayerPlacement(), vg, ItemBase::getNextID(), false, -1, parentCommand);
 	m_undoStack->push(parentCommand);
 }
 
@@ -3529,7 +3529,7 @@ void MainWindow::swapObsolete(bool displayFeedback) {
 		}
 
 		count++;
-		long newID = swapSelectedAuxAux(itemBase, newModelPart->moduleID(), itemBase->viewLayerSpec(), parentCommand);
+		long newID = swapSelectedAuxAux(itemBase, newModelPart->moduleID(), itemBase->viewLayerPlacement(), parentCommand);
 		if (itemBase->modelPart()) {
 			// special case for swapping old resistors.
 			QString resistance = itemBase->modelPart()->properties().value("resistance", "");

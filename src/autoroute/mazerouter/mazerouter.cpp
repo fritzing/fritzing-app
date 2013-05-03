@@ -572,10 +572,10 @@ MazeRouter::MazeRouter(PCBSketchWidget * sketchWidget, QGraphicsItem * board, bo
 
 	ViewGeometry vg;
 	vg.setWireFlags(m_sketchWidget->getTraceFlag());
-	ViewLayer::ViewLayerID bottom = sketchWidget->getWireViewLayerID(vg, ViewLayer::Bottom);
+	ViewLayer::ViewLayerID bottom = sketchWidget->getWireViewLayerID(vg, ViewLayer::NewBottom);
 	m_viewLayerIDs << bottom;
 	if  (m_bothSidesNow) {
-		ViewLayer::ViewLayerID top = sketchWidget->getWireViewLayerID(vg, ViewLayer::Top);
+		ViewLayer::ViewLayerID top = sketchWidget->getWireViewLayerID(vg, ViewLayer::NewTop);
 		m_viewLayerIDs.append(top);
 	}
 }
@@ -955,12 +955,12 @@ bool MazeRouter::makeBoard(QImage * boardImage, double keepoutGrid, const QRectF
 }
 
 bool MazeRouter::makeMasters(QString & message) {
-    QList<ViewLayer::ViewLayerSpec> layerSpecs;
-    layerSpecs << ViewLayer::Bottom;
-    if (m_bothSidesNow) layerSpecs << ViewLayer::Top;
+    QList<ViewLayer::ViewLayerPlacement> layerSpecs;
+    layerSpecs << ViewLayer::NewBottom;
+    if (m_bothSidesNow) layerSpecs << ViewLayer::NewTop;
 
-    foreach (ViewLayer::ViewLayerSpec viewLayerSpec, layerSpecs) {  
-	    LayerList viewLayerIDs = m_sketchWidget->routingLayers(viewLayerSpec);
+    foreach (ViewLayer::ViewLayerPlacement viewLayerPlacement, layerSpecs) {  
+	    LayerList viewLayerIDs = m_sketchWidget->routingLayers(viewLayerPlacement);
 	    RenderThing renderThing;
         renderThing.printerScale = GraphicsUtils::SVGDPI;
         renderThing.blackOnly = true;
@@ -972,7 +972,7 @@ bool MazeRouter::makeMasters(QString & message) {
 	    }
 
 	    QDomDocument * masterDoc = new QDomDocument();
-        m_masterDocs.insert(viewLayerSpec, masterDoc);
+        m_masterDocs.insert(viewLayerPlacement, masterDoc);
 
 	    QString errorStr;
 	    int errorLine;
@@ -1004,8 +1004,8 @@ bool MazeRouter::routeNets(NetList & netList, bool makeJumper, Score & currentSc
     routeThing.netElements[1] = NetElements();
     routeThing.r = QRectF(QPointF(0, 0), gridSize);
     routeThing.r4 = QRectF(QPointF(0, 0), gridSize * 4);
-    routeThing.layerSpecs << ViewLayer::Bottom;
-    if (m_bothSidesNow) routeThing.layerSpecs << ViewLayer::Top;
+    routeThing.layerSpecs << ViewLayer::NewBottom;
+    if (m_bothSidesNow) routeThing.layerSpecs << ViewLayer::NewTop;
 
     bool result = true;
 
@@ -1084,10 +1084,10 @@ bool MazeRouter::routeNets(NetList & netList, bool makeJumper, Score & currentSc
             traceAvoids(traces, netIndex, routeThing);
         }
 
-        foreach (ViewLayer::ViewLayerSpec viewLayerSpec, routeThing.layerSpecs) {  
-            int z = viewLayerSpec == ViewLayer::Bottom ? 0 : 1;
+        foreach (ViewLayer::ViewLayerPlacement viewLayerPlacement, routeThing.layerSpecs) {  
+            int z = viewLayerPlacement == ViewLayer::NewBottom ? 0 : 1;
 
-            QDomDocument * masterDoc = m_masterDocs.value(viewLayerSpec);
+            QDomDocument * masterDoc = m_masterDocs.value(viewLayerPlacement);
 
             //QString before = masterDoc->toString();
 
@@ -1107,12 +1107,12 @@ bool MazeRouter::routeNets(NetList & netList, bool makeJumper, Score & currentSc
             m_spareImage->fill(0xffffffff);
             DRC::renderOne(masterDoc, m_spareImage, routeThing.r4);
             #ifndef QT_NO_DEBUG
-               //m_spareImage->save(FolderUtils::getUserDataStorePath("") + QString("/obstacles%1_%2.png").arg(netIndex, 2, 10, QChar('0')).arg(viewLayerSpec));
+               //m_spareImage->save(FolderUtils::getUserDataStorePath("") + QString("/obstacles%1_%2.png").arg(netIndex, 2, 10, QChar('0')).arg(viewLayerPlacement));
             #endif
             m_grid->init4(0, 0, z, m_grid->x, m_grid->y, m_spareImage, GridPartObstacle, false);
             //DebugDialog::debug("obstacles from board done");
 
-            prepSourceAndTarget(masterDoc, routeThing, subnets, z, viewLayerSpec);
+            prepSourceAndTarget(masterDoc, routeThing, subnets, z, viewLayerPlacement);
         }
 
         //updateDisplay(m_grid, 0);
@@ -1257,10 +1257,10 @@ bool MazeRouter::routeNext(bool makeJumper, RouteThing & routeThing, QList< QLis
         traceAvoids(traces, netIndex, routeThing);
     }
 
-    foreach (ViewLayer::ViewLayerSpec viewLayerSpec, routeThing.layerSpecs) {  
-        int z = viewLayerSpec == ViewLayer::Bottom ? 0 : 1;
-        QDomDocument * masterDoc = m_masterDocs.value(viewLayerSpec);
-        prepSourceAndTarget(masterDoc, routeThing, subnets, z, viewLayerSpec);
+    foreach (ViewLayer::ViewLayerPlacement viewLayerPlacement, routeThing.layerSpecs) {  
+        int z = viewLayerPlacement == ViewLayer::NewBottom ? 0 : 1;
+        QDomDocument * masterDoc = m_masterDocs.value(viewLayerPlacement);
+        prepSourceAndTarget(masterDoc, routeThing, subnets, z, viewLayerPlacement);
     }
 
     // redraw traces from this net
@@ -1338,7 +1338,7 @@ bool MazeRouter::moveBack(Score & currentScore, int index, QList<NetOrdering> & 
     return false;
 }
 
-void MazeRouter::prepSourceAndTarget(QDomDocument * masterDoc, RouteThing & routeThing, QList< QList<ConnectorItem *> > & subnets, int z, ViewLayer::ViewLayerSpec viewLayerSpec) 
+void MazeRouter::prepSourceAndTarget(QDomDocument * masterDoc, RouteThing & routeThing, QList< QList<ConnectorItem *> > & subnets, int z, ViewLayer::ViewLayerPlacement viewLayerPlacement) 
 {
     foreach (QDomElement element, routeThing.netElements[z].notNet) {
         element.setTagName("g");
@@ -1358,7 +1358,7 @@ void MazeRouter::prepSourceAndTarget(QDomDocument * masterDoc, RouteThing & rout
     }
 
     QList<ConnectorItem *> li = subnets.at(routeThing.nearest.i);
-    QList<QPoint> sourcePoints = renderSource(masterDoc, z, viewLayerSpec, m_grid, routeThing.netElements[z].net, li, GridSource, true, routeThing.r4);
+    QList<QPoint> sourcePoints = renderSource(masterDoc, z, viewLayerPlacement, m_grid, routeThing.netElements[z].net, li, GridSource, true, routeThing.r4);
 
     foreach (QPoint p, sourcePoints) {
         GridPoint gridPoint(p, z);
@@ -1368,7 +1368,7 @@ void MazeRouter::prepSourceAndTarget(QDomDocument * masterDoc, RouteThing & rout
     }
 
     QList<ConnectorItem *> lj = subnets.at(routeThing.nearest.j);
-    QList<QPoint> targetPoints = renderSource(masterDoc, z, viewLayerSpec, m_grid, routeThing.netElements[z].net, lj, GridTarget, true, routeThing.r4);
+    QList<QPoint> targetPoints = renderSource(masterDoc, z, viewLayerPlacement, m_grid, routeThing.netElements[z].net, lj, GridTarget, true, routeThing.r4);
     foreach (QPoint p, targetPoints) {
         GridPoint gridPoint(p, z);
         gridPoint.qCost = gridPoint.baseCost = /* initialCost(p, routeThing.gridTarget) + */ 0;
@@ -1445,7 +1445,7 @@ void MazeRouter::findNearestPair(QList< QList<ConnectorItem *> > & subnets, int 
     }
 }
 
-QList<QPoint> MazeRouter::renderSource(QDomDocument * masterDoc, int z, ViewLayer::ViewLayerSpec viewLayerSpec, Grid * grid, QList<QDomElement> & netElements, QList<ConnectorItem *> & subnet, GridValue value, bool clearElements, const QRectF & renderRect) {
+QList<QPoint> MazeRouter::renderSource(QDomDocument * masterDoc, int z, ViewLayer::ViewLayerPlacement viewLayerPlacement, Grid * grid, QList<QDomElement> & netElements, QList<ConnectorItem *> & subnet, GridValue value, bool clearElements, const QRectF & renderRect) {
     if (clearElements) {
         foreach (QDomElement element, netElements) {
             element.setTagName("g");
@@ -1492,7 +1492,7 @@ QList<QPoint> MazeRouter::renderSource(QDomDocument * masterDoc, int z, ViewLaye
 
     // terminal point hack (mostly for schematic view)
     foreach (ConnectorItem * connectorItem, terminalPoints) {
-        if (ViewLayer::specFromID(connectorItem->attachedTo()->viewLayerID()) != viewLayerSpec) {
+        if (ViewLayer::specFromID(connectorItem->attachedTo()->viewLayerID()) != viewLayerPlacement) {
             continue;
         }
 
@@ -2266,7 +2266,7 @@ void MazeRouter::createTrace(Trace & trace, QList<GridPoint> & gridPoints, Trace
 	        long newID = ItemBase::getNextID();
 	        ViewGeometry viewGeometry;
 	        ItemBase * itemBase = m_sketchWidget->addItem(m_sketchWidget->referenceModel()->retrieveModelPart(ModuleIDNames::JumperModuleIDName), 
-												            ViewLayer::ThroughHoleThroughTop_TwoLayers, BaseCommand::SingleView, viewGeometry, newID, -1, NULL);
+												            ViewLayer::NewTop, BaseCommand::SingleView, viewGeometry, newID, -1, NULL);
 
 	        traceThing.jumperItem = dynamic_cast<JumperItem *>(itemBase);
 	        traceThing.jumperItem->setAutoroutable(true);
@@ -2395,17 +2395,17 @@ void MazeRouter::createTrace(Trace & trace, QList<GridPoint> & gridPoints, Trace
         }
     }
     if (onTraceS) {
-        TraceWire * traceWire1 = drawOneTrace(sourcePoint, traceAnchorS, m_standardWireWidth, lastz == 0 ? ViewLayer::Bottom : ViewLayer::Top);
+        TraceWire * traceWire1 = drawOneTrace(sourcePoint, traceAnchorS, m_standardWireWidth, lastz == 0 ? ViewLayer::NewBottom : ViewLayer::NewTop);
         connectionThing.add(sourceConnectorItem, traceWire1->connector0());
         traceThing.newTraces << traceWire1;
                
-        TraceWire* traceWire2 = drawOneTrace(traceAnchorS, point.p, m_standardWireWidth, lastz == 0 ? ViewLayer::Bottom : ViewLayer::Top);
+        TraceWire* traceWire2 = drawOneTrace(traceAnchorS, point.p, m_standardWireWidth, lastz == 0 ? ViewLayer::NewBottom : ViewLayer::NewTop);
         connectionThing.add(traceWire1->connector1(), traceWire2->connector0());
         nextSource = traceWire2->connector1();
         traceThing.newTraces << traceWire2;
     }
     else {
-        TraceWire * traceWire = drawOneTrace(sourcePoint, point.p, m_standardWireWidth, lastz == 0 ? ViewLayer::Bottom : ViewLayer::Top);
+        TraceWire * traceWire = drawOneTrace(sourcePoint, point.p, m_standardWireWidth, lastz == 0 ? ViewLayer::NewBottom : ViewLayer::NewTop);
         connectionThing.add(sourceConnectorItem, traceWire->connector0());
         nextSource = traceWire->connector1();
         traceThing.newTraces << traceWire;
@@ -2413,7 +2413,7 @@ void MazeRouter::createTrace(Trace & trace, QList<GridPoint> & gridPoints, Trace
 
     foreach (PointZ newPoint, newPoints) {
         if (newPoint.z == lastz) {
-            TraceWire * traceWire = drawOneTrace(point.p, newPoint.p, m_standardWireWidth, lastz == 0 ? ViewLayer::Bottom : ViewLayer::Top);
+            TraceWire * traceWire = drawOneTrace(point.p, newPoint.p, m_standardWireWidth, lastz == 0 ? ViewLayer::NewBottom : ViewLayer::NewTop);
             connectionThing.add(nextSource, traceWire->connector0());
             nextSource = traceWire->connector1();
             traceThing.newTraces << traceWire;
@@ -2427,7 +2427,7 @@ void MazeRouter::createTrace(Trace & trace, QList<GridPoint> & gridPoints, Trace
 
 	        viewGeometry.setLoc(QPointF(newPoint.p.x() - halfVia - Hole::OffsetPixels, newPoint.p.y() - halfVia - Hole::OffsetPixels));
 	        ItemBase * itemBase = m_sketchWidget->addItem(m_sketchWidget->referenceModel()->retrieveModelPart(ModuleIDNames::ViaModuleIDName), 
-										        ViewLayer::ThroughHoleThroughTop_TwoLayers, BaseCommand::SingleView, viewGeometry, newID, -1, NULL);
+										        ViewLayer::NewTop, BaseCommand::SingleView, viewGeometry, newID, -1, NULL);
 
 	        //DebugDialog::debug(QString("back from adding via %1").arg((long) itemBase, 0, 16));
 	        Via * via = qobject_cast<Via *>(itemBase);
@@ -2450,17 +2450,17 @@ void MazeRouter::createTrace(Trace & trace, QList<GridPoint> & gridPoints, Trace
         }
     }
     if (onTraceD) {
-        TraceWire * traceWire1 = drawOneTrace(point.p, traceAnchorD, m_standardWireWidth, lastz == 0 ? ViewLayer::Bottom : ViewLayer::Top);
+        TraceWire * traceWire1 = drawOneTrace(point.p, traceAnchorD, m_standardWireWidth, lastz == 0 ? ViewLayer::NewBottom : ViewLayer::NewTop);
         connectionThing.add(nextSource, traceWire1->connector0());
         traceThing.newTraces << traceWire1;
 
-        TraceWire * traceWire2 = drawOneTrace(traceAnchorD, destPoint, m_standardWireWidth, lastz == 0 ? ViewLayer::Bottom : ViewLayer::Top);
+        TraceWire * traceWire2 = drawOneTrace(traceAnchorD, destPoint, m_standardWireWidth, lastz == 0 ? ViewLayer::NewBottom : ViewLayer::NewTop);
         connectionThing.add(traceWire1->connector1(), traceWire2->connector0());
         connectionThing.add(traceWire2->connector1(), destConnectorItem);
         traceThing.newTraces << traceWire2;
     }
     else {
-        TraceWire * traceWire = drawOneTrace(point.p, destPoint, m_standardWireWidth, lastz == 0 ? ViewLayer::Bottom : ViewLayer::Top);
+        TraceWire * traceWire = drawOneTrace(point.p, destPoint, m_standardWireWidth, lastz == 0 ? ViewLayer::NewBottom : ViewLayer::NewTop);
         connectionThing.add(nextSource, traceWire->connector0());
         connectionThing.add(traceWire->connector1(), destConnectorItem);
         traceThing.newTraces << traceWire;
@@ -2710,7 +2710,7 @@ void MazeRouter::addConnectionToUndo(ConnectorItem * from, ConnectorItem * to, Q
 }
 
 void MazeRouter::addViaToUndo(Via * via, QUndoCommand * parentCommand) {
-	new AddItemCommand(m_sketchWidget, BaseCommand::CrossView, ModuleIDNames::ViaModuleIDName, via->viewLayerSpec(), via->getViewGeometry(), via->id(), false, -1, parentCommand);
+	new AddItemCommand(m_sketchWidget, BaseCommand::CrossView, ModuleIDNames::ViaModuleIDName, via->viewLayerPlacement(), via->getViewGeometry(), via->id(), false, -1, parentCommand);
 	new SetPropCommand(m_sketchWidget, via->id(), "hole size", via->holeSize(), via->holeSize(), true, parentCommand);
 	new CheckStickyCommand(m_sketchWidget, BaseCommand::SingleView, via->id(), false, CheckStickyCommand::RemoveOnly, parentCommand);
 }
@@ -2720,13 +2720,13 @@ void MazeRouter::addJumperToUndo(JumperItem * jumperItem, QUndoCommand * parentC
 	QPointF pos, c0, c1;
 	jumperItem->getParams(pos, c0, c1);
 
-	new AddItemCommand(m_sketchWidget, BaseCommand::CrossView, ModuleIDNames::JumperModuleIDName, jumperItem->viewLayerSpec(), jumperItem->getViewGeometry(), jumperItem->id(), false, -1, parentCommand);
+	new AddItemCommand(m_sketchWidget, BaseCommand::CrossView, ModuleIDNames::JumperModuleIDName, jumperItem->viewLayerPlacement(), jumperItem->getViewGeometry(), jumperItem->id(), false, -1, parentCommand);
 	new ResizeJumperItemCommand(m_sketchWidget, jumperItem->id(), pos, c0, c1, pos, c0, c1, parentCommand);
 	new CheckStickyCommand(m_sketchWidget, BaseCommand::SingleView, jumperItem->id(), false, CheckStickyCommand::RemoveOnly, parentCommand);
 }
 
 void MazeRouter::addNetLabelToUndo(SymbolPaletteItem * netLabel, QUndoCommand * parentCommand) {
-	new AddItemCommand(m_sketchWidget, BaseCommand::CrossView, netLabel->moduleID(), netLabel->viewLayerSpec(), netLabel->getViewGeometry(), netLabel->id(), false, -1, parentCommand);
+	new AddItemCommand(m_sketchWidget, BaseCommand::CrossView, netLabel->moduleID(), netLabel->viewLayerPlacement(), netLabel->getViewGeometry(), netLabel->id(), false, -1, parentCommand);
 	new SetPropCommand(m_sketchWidget, netLabel->id(), "label", netLabel->getLabel(), netLabel->getLabel(), true, parentCommand);
 }
 
@@ -2771,7 +2771,7 @@ void MazeRouter::setMaxCycles(int maxCycles)
 
 SymbolPaletteItem * MazeRouter::makeNetLabel(GridPoint & center, SymbolPaletteItem * pairedNetLabel, uchar traceFlags) {
     // flags & JumperLeft means position the netlabel to the left of center, the netlabel points right
-
+    
     if (m_netLabelIndex < 0) {
         m_netLabelIndex = 0;
         foreach (QGraphicsItem * item, m_sketchWidget->scene()->items()) {
@@ -2791,7 +2791,7 @@ SymbolPaletteItem * MazeRouter::makeNetLabel(GridPoint & center, SymbolPaletteIt
 	long newID = ItemBase::getNextID();
     ViewGeometry viewGeometry;
 	ItemBase * itemBase = m_sketchWidget->addItem(m_sketchWidget->referenceModel()->retrieveModelPart(traceFlags & JumperLeft ? ModuleIDNames::NetLabelModuleIDName : ModuleIDNames::LeftNetLabelModuleIDName), 
-												    ViewLayer::ThroughHoleThroughTop_TwoLayers, BaseCommand::SingleView, viewGeometry, newID, -1, NULL);
+												    ViewLayer::NewBottom, BaseCommand::SingleView, viewGeometry, newID, -1, NULL);
 
 	SymbolPaletteItem * netLabel = dynamic_cast<SymbolPaletteItem *>(itemBase);
 	netLabel->setAutoroutable(true);
@@ -3003,9 +3003,9 @@ void MazeRouter::optimizeTraces(QList<int> & order, QMultiHash<int, QList< QPoin
                                 QMultiHash<int, Via *> & vias, QMultiHash<int, JumperItem *> & jumperItems, QMultiHash<int, SymbolPaletteItem *> & netLabels, 
                                 NetList & netList, ConnectionThing & connectionThing)
 {
-    QList<ViewLayer::ViewLayerSpec> layerSpecs;
-    layerSpecs << ViewLayer::Bottom;
-    if (m_bothSidesNow) layerSpecs << ViewLayer::Top;
+    QList<ViewLayer::ViewLayerPlacement> layerSpecs;
+    layerSpecs << ViewLayer::NewBottom;
+    if (m_bothSidesNow) layerSpecs << ViewLayer::NewTop;
     QRectF r2(0, 0, m_boardImage->width(), m_boardImage->height());
     QPointF topLeft = m_maxRect.topLeft();
     
@@ -3017,7 +3017,7 @@ void MazeRouter::optimizeTraces(QList<int> & order, QMultiHash<int, QList< QPoin
     foreach (int netIndex, order) {
         emit setProgressValue(progress++);
         Net * net = netList.nets.at(netIndex);
-        foreach (ViewLayer::ViewLayerSpec layerSpec, layerSpecs) {
+        foreach (ViewLayer::ViewLayerPlacement layerSpec, layerSpecs) {
             fastCopy(m_boardImage, m_spareImage);
 
             QDomDocument * masterDoc = m_masterDocs.value(layerSpec);
@@ -3177,7 +3177,7 @@ void MazeRouter::optimizeTraces(QList<int> & order, QMultiHash<int, QList< QPoin
     }
 }
 
-void MazeRouter::reducePoints(QList<QPointF> & points, QPointF topLeft, QList<TraceWire *> & bundle, int startIndex, int endIndex, ConnectionThing & connectionThing, int netIndex, ViewLayer::ViewLayerSpec layerSpec) {
+void MazeRouter::reducePoints(QList<QPointF> & points, QPointF topLeft, QList<TraceWire *> & bundle, int startIndex, int endIndex, ConnectionThing & connectionThing, int netIndex, ViewLayer::ViewLayerPlacement layerSpec) {
     Q_UNUSED(netIndex);
     Q_UNUSED(layerSpec);
 #ifndef QT_NO_DEBUG

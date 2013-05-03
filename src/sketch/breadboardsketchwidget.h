@@ -55,13 +55,13 @@ protected:
 	bool disconnectFromFemale(ItemBase * item, QHash<long, ItemBase *> & savedItems, ConnectorPairHash &, bool doCommand, bool rubberBandLegEnabled, QUndoCommand * parentCommand);
 	BaseCommand::CrossViewType wireSplitCrossView();
 	bool canDropModelPart(ModelPart * modelPart); 
-	void getLabelFont(QFont &, QColor &, ViewLayer::ViewLayerSpec);
+	void getLabelFont(QFont &, QColor &, ItemBase *);
 	void setNewPartVisible(ItemBase *);
 	double defaultGridSizeInches();
-	ViewLayer::ViewLayerID getLabelViewLayerID(ViewLayer::ViewLayerSpec);
+	ViewLayer::ViewLayerID getLabelViewLayerID(ItemBase *);
 	QPoint calcFixedToCenterItemOffset(const QRect & viewPortRect, const QSizeF & helpSize);
 	double getTraceWidth();
-	const QString & traceColor(ViewLayer::ViewLayerSpec);
+	const QString & traceColor(ViewLayer::ViewLayerPlacement);
 	double getRatsnestOpacity();
 	double getRatsnestWidth();
 };

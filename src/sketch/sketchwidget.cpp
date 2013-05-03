@@ -322,12 +322,12 @@ void SketchWidget::loadFromModelParts(QList<ModelPart *> & modelParts, BaseComma
 
         QDomElement layerHidden = view.firstChildElement("layerHidden");
 		
-		ViewLayer::ViewLayerSpec viewLayerSpec = getViewLayerSpec(mp, instance, view, viewGeometry);
+		ViewLayer::ViewLayerPlacement viewLayerPlacement = getViewLayerPlacement(mp, instance, view, viewGeometry);
 
 		// use a function of the model index to ensure the same parts have the same ID across views
 		long newID = ItemBase::getNextID(mp->modelIndex());
 		if (parentCommand == NULL) {
-			ItemBase * itemBase = addItemAux(mp, viewLayerSpec, viewGeometry, newID, true, m_viewID, false);
+			ItemBase * itemBase = addItemAux(mp, viewLayerPlacement, viewGeometry, newID, true, m_viewID, false);
 			if (itemBase != NULL) {
 				if (locked) {
 					itemBase->setMoveLock(true);
@@ -379,7 +379,7 @@ void SketchWidget::loadFromModelParts(QList<ModelPart *> & modelParts, BaseComma
 				// use the modelIndex from mp, not from the newly created item, because we're mapping from the modelIndex in the xml file
 				newItems.insert(mp->modelIndex(), itemBase);
 				if (itemBase->itemType() != ModelPart::Wire) {
-					itemBase->restorePartLabel(labelGeometry, getLabelViewLayerID(itemBase->viewLayerSpec()));
+					itemBase->restorePartLabel(labelGeometry, getLabelViewLayerID(itemBase));
 				}
 			}
 		}
@@ -395,7 +395,7 @@ void SketchWidget::loadFromModelParts(QList<ModelPart *> & modelParts, BaseComma
 					viewGeometry.setLoc(QPointF(dx, dy));
 				}
 			}
-			newAddItemCommand(crossViewType, mp, mp->moduleID(), viewLayerSpec, viewGeometry, newID, false, mp->modelIndex(), parentCommand);
+			newAddItemCommand(crossViewType, mp, mp->moduleID(), viewLayerPlacement, viewGeometry, newID, false, mp->modelIndex(), parentCommand);
 			
 			// TODO: all this part specific stuff should be in the PartFactory
 			
@@ -701,7 +701,7 @@ void SketchWidget::setWireExtras(long newID, const QDomElement & extras)
 	wire->setExtras(extras, this);
 }
 
-ItemBase * SketchWidget::addItem(const QString & moduleID, ViewLayer::ViewLayerSpec viewLayerSpec, BaseCommand::CrossViewType crossViewType, const ViewGeometry & viewGeometry, long id, long modelIndex,  AddDeleteItemCommand * originatingCommand) {
+ItemBase * SketchWidget::addItem(const QString & moduleID, ViewLayer::ViewLayerPlacement viewLayerPlacement, BaseCommand::CrossViewType crossViewType, const ViewGeometry & viewGeometry, long id, long modelIndex,  AddDeleteItemCommand * originatingCommand) {
 	if (m_referenceModel == NULL) return NULL;
 
 	ItemBase * itemBase = NULL;
@@ -712,7 +712,7 @@ ItemBase * SketchWidget::addItem(const QString & moduleID, ViewLayer::ViewLayerS
 		    QApplication::setOverrideCursor(Qt::WaitCursor);
 		    statusMessage(tr("loading part"));
         }
-		itemBase = addItem(modelPart, viewLayerSpec, crossViewType, viewGeometry, id, modelIndex, originatingCommand);
+		itemBase = addItem(modelPart, viewLayerPlacement, crossViewType, viewGeometry, id, modelIndex, originatingCommand);
         if (!m_blockUI) {
 		    statusMessage(tr("done loading"), 2000);
 		    QApplication::restoreOverrideCursor();
@@ -723,7 +723,7 @@ ItemBase * SketchWidget::addItem(const QString & moduleID, ViewLayer::ViewLayerS
 }
 
 
-ItemBase * SketchWidget::addItem(ModelPart * modelPart, ViewLayer::ViewLayerSpec viewLayerSpec, BaseCommand::CrossViewType crossViewType, const ViewGeometry & viewGeometry, long id, long modelIndex, AddDeleteItemCommand * originatingCommand)
+ItemBase * SketchWidget::addItem(ModelPart * modelPart, ViewLayer::ViewLayerPlacement viewLayerPlacement, BaseCommand::CrossViewType crossViewType, const ViewGeometry & viewGeometry, long id, long modelIndex, AddDeleteItemCommand * originatingCommand)
 {
 	
 	ItemBase * newItem = NULL;
@@ -747,27 +747,27 @@ ItemBase * SketchWidget::addItem(ModelPart * modelPart, ViewLayer::ViewLayerSpec
 		}
 		if (modelPart == NULL) return NULL;
 	
-		newItem = addItemAux(modelPart, viewLayerSpec, viewGeometry, id, true, m_viewID, false);
+		newItem = addItemAux(modelPart, viewLayerPlacement, viewGeometry, id, true, m_viewID, false);
 	}
 
 	if (crossViewType == BaseCommand::CrossView) {
 		//DebugDialog::debug(QString("emit item added"));
-		emit itemAddedSignal(modelPart, newItem, viewLayerSpec, viewGeometry, id, originatingCommand ? originatingCommand->dropOrigin() : NULL);
+		emit itemAddedSignal(modelPart, newItem, viewLayerPlacement, viewGeometry, id, originatingCommand ? originatingCommand->dropOrigin() : NULL);
 		//DebugDialog::debug(QString("after emit item added"));
 	}
 
 	return newItem;
 }
 
-ItemBase * SketchWidget::addItemAuxTemp(ModelPart * modelPart, ViewLayer::ViewLayerSpec viewLayerSpec, const ViewGeometry & viewGeometry, long id,  bool doConnectors, ViewLayer::ViewID viewID, bool temporary)
+ItemBase * SketchWidget::addItemAuxTemp(ModelPart * modelPart, ViewLayer::ViewLayerPlacement viewLayerPlacement, const ViewGeometry & viewGeometry, long id,  bool doConnectors, ViewLayer::ViewID viewID, bool temporary)
 {
 	modelPart = m_sketchModel->addModelPart(m_sketchModel->root(), modelPart);
 	if (modelPart == NULL) return NULL;   // this is very fucked up
 
-	return addItemAux(modelPart, viewLayerSpec, viewGeometry, id, doConnectors, viewID, temporary);
+	return addItemAux(modelPart, viewLayerPlacement, viewGeometry, id, doConnectors, viewID, temporary);
 }
 
-ItemBase * SketchWidget::addItemAux(ModelPart * modelPart, ViewLayer::ViewLayerSpec viewLayerSpec, const ViewGeometry & viewGeometry, long id, bool doConnectors, ViewLayer::ViewID viewID, bool temporary)
+ItemBase * SketchWidget::addItemAux(ModelPart * modelPart, ViewLayer::ViewLayerPlacement viewLayerPlacement, const ViewGeometry & viewGeometry, long id, bool doConnectors, ViewLayer::ViewID viewID, bool temporary)
 {
 	if (viewID == ViewLayer::UnknownView) {
 		viewID = m_viewID;
@@ -777,7 +777,7 @@ ItemBase * SketchWidget::addItemAux(ModelPart * modelPart, ViewLayer::ViewLayerS
 		modelPart->initConnectors();    // is a no-op if connectors already in place
 	}
 
-	ItemBase * newItem = PartFactory::createPart(modelPart, viewLayerSpec, viewID, viewGeometry, id, m_itemMenu, m_wireMenu, true);
+	ItemBase * newItem = PartFactory::createPart(modelPart, viewLayerPlacement, viewID, viewGeometry, id, m_itemMenu, m_wireMenu, true);
 	Wire * wire = qobject_cast<Wire *>(newItem);
 	if (wire) {
 
@@ -796,7 +796,7 @@ ItemBase * SketchWidget::addItemAux(ModelPart * modelPart, ViewLayer::ViewLayerS
 			descr = "wire";
 		}
 
-		wire->setUp(getWireViewLayerID(viewGeometry, wire->viewLayerSpec()), m_viewLayers, this);
+		wire->setUp(getWireViewLayerID(viewGeometry, wire->viewLayerPlacement()), m_viewLayers, this);
 		setWireVisible(wire);
 		wire->updateConnectors();
 
@@ -816,7 +816,7 @@ ItemBase * SketchWidget::addItemAux(ModelPart * modelPart, ViewLayer::ViewLayerS
 	}
 
 	bool ok;
-	addPartItem(modelPart, viewLayerSpec, (PaletteItem *) newItem, doConnectors, ok, viewID, temporary);
+	addPartItem(modelPart, viewLayerPlacement, (PaletteItem *) newItem, doConnectors, ok, viewID, temporary);
 	newItem->debugInfo("add part");
 	setNewPartVisible(newItem);
 	newItem->updateConnectors();
@@ -865,10 +865,10 @@ void SketchWidget::checkSticky(long id, bool doEmit, bool checkCurrent, CheckSti
 	}
 }
 
-PaletteItem* SketchWidget::addPartItem(ModelPart * modelPart, ViewLayer::ViewLayerSpec viewLayerSpec, PaletteItem * paletteItem, bool doConnectors, bool & ok, ViewLayer::ViewID viewID, bool temporary) {
+PaletteItem* SketchWidget::addPartItem(ModelPart * modelPart, ViewLayer::ViewLayerPlacement viewLayerPlacement, PaletteItem * paletteItem, bool doConnectors, bool & ok, ViewLayer::ViewID viewID, bool temporary) {
 
 	ok = false;
-	ViewLayer::ViewLayerID viewLayerID = getViewLayerID(modelPart, viewID, viewLayerSpec);
+	ViewLayer::ViewLayerID viewLayerID = getViewLayerID(modelPart, viewID, viewLayerPlacement);
 	if (viewLayerID == ViewLayer::UnknownLayer) {
 	    // render it only if the layer is defined in the fzp file
 	    // if the view is not defined in the part file, without this condition
@@ -905,7 +905,7 @@ PaletteItem* SketchWidget::addPartItem(ModelPart * modelPart, ViewLayer::ViewLay
             paletteItem->setEverVisible(false);
             paletteItem->setVisible(false);
         }
-		paletteItem->loadLayerKin(m_viewLayers, viewLayerSpec);
+		paletteItem->loadLayerKin(m_viewLayers, viewLayerPlacement);
 		foreach (ItemBase * lkpi, paletteItem->layerKin()) {
 			this->scene()->addItem(lkpi);
 			lkpi->setHidden(!layerIsVisible(lkpi->viewLayerID()));
@@ -1268,7 +1268,7 @@ void SketchWidget::deleteTracesSlot(QSet<ItemBase *> & deletedItems, QHash<ItemB
 ChangeConnectionCommand * SketchWidget::extendChangeConnectionCommand(BaseCommand::CrossViewType crossView,
 												 long fromID, const QString & fromConnectorID,
 												 long toID, const QString & toConnectorID,
-												 ViewLayer::ViewLayerSpec viewLayerSpec,
+												 ViewLayer::ViewLayerPlacement viewLayerPlacement,
 												 bool connect, QUndoCommand * parentCommand)
 {
 	ItemBase * fromItem = findItem(fromID);
@@ -1281,18 +1281,18 @@ ChangeConnectionCommand * SketchWidget::extendChangeConnectionCommand(BaseComman
 		return NULL;		// for now
 	}
 
-	ConnectorItem * fromConnectorItem = findConnectorItem(fromItem, fromConnectorID, viewLayerSpec);
+	ConnectorItem * fromConnectorItem = findConnectorItem(fromItem, fromConnectorID, viewLayerPlacement);
 	if (fromConnectorItem == NULL) return NULL; // for now
 
-	ConnectorItem * toConnectorItem = findConnectorItem(toItem, toConnectorID, viewLayerSpec);
+	ConnectorItem * toConnectorItem = findConnectorItem(toItem, toConnectorID, viewLayerPlacement);
 	if (toConnectorItem == NULL) return NULL; // for now
 
-	return extendChangeConnectionCommand(crossView, fromConnectorItem, toConnectorItem, viewLayerSpec, connect, parentCommand);
+	return extendChangeConnectionCommand(crossView, fromConnectorItem, toConnectorItem, viewLayerPlacement, connect, parentCommand);
 }
 
 ChangeConnectionCommand * SketchWidget::extendChangeConnectionCommand(BaseCommand::CrossViewType crossView,
 												 ConnectorItem * fromConnectorItem, ConnectorItem * toConnectorItem,
-												 ViewLayer::ViewLayerSpec viewLayerSpec,
+												 ViewLayer::ViewLayerPlacement viewLayerPlacement,
 												 bool connect, QUndoCommand * parentCommand)
 {
 	// cases:
@@ -1318,7 +1318,7 @@ ChangeConnectionCommand * SketchWidget::extendChangeConnectionCommand(BaseComman
 	return new ChangeConnectionCommand(this, crossView,
 								fromItem->id(), fromConnectorItem->connectorSharedID(),
 								toItem->id(), toConnectorItem->connectorSharedID(),
-								viewLayerSpec, connect, parentCommand);
+								viewLayerPlacement, connect, parentCommand);
 }
 
 
@@ -1349,27 +1349,27 @@ long SketchWidget::createWire(ConnectorItem * from, ConnectorItem * to,
 		.arg(m_viewID)
 		);
 
-	ViewLayer::ViewLayerSpec viewLayerSpec = createWireViewLayerSpec(from, to);
+	ViewLayer::ViewLayerPlacement viewLayerPlacement = createWireViewLayerPlacement(from, to);
 
-	new AddItemCommand(this, crossViewType, ModuleIDNames::WireModuleIDName, viewLayerSpec, viewGeometry, newID, false, -1, parentCommand);
+	new AddItemCommand(this, crossViewType, ModuleIDNames::WireModuleIDName, viewLayerPlacement, viewGeometry, newID, false, -1, parentCommand);
 	new CheckStickyCommand(this, crossViewType, newID, false, CheckStickyCommand::RemoveOnly, parentCommand);
 	ChangeConnectionCommand * ccc = new ChangeConnectionCommand(this, crossViewType, from->attachedToID(), from->connectorSharedID(),
 						newID, "connector0", 
-						viewLayerSpec,							// ViewLayer::specFromID(from->attachedToViewLayerID())
+						viewLayerPlacement,							// ViewLayer::specFromID(from->attachedToViewLayerID())
 						true, parentCommand);
 	ccc->setUpdateConnections(!dontUpdate);
 	ccc = new ChangeConnectionCommand(this, crossViewType, to->attachedToID(), to->connectorSharedID(),
 						newID, "connector1", 
-						viewLayerSpec,							// ViewLayer::specFromID(to->attachedToViewLayerID())
+						viewLayerPlacement,							// ViewLayer::specFromID(to->attachedToViewLayerID())
 						true, parentCommand);
 	ccc->setUpdateConnections(!dontUpdate);
 
 	return newID;
 }
 
-ViewLayer::ViewLayerSpec SketchWidget::createWireViewLayerSpec(ConnectorItem * from, ConnectorItem * to) {
+ViewLayer::ViewLayerPlacement SketchWidget::createWireViewLayerPlacement(ConnectorItem * from, ConnectorItem * to) {
 	Q_UNUSED(to);
-	return from->attachedToViewLayerSpec();
+	return from->attachedToViewLayerPlacement();
 }
 
 void SketchWidget::moveItem(long id, ViewGeometry & viewGeometry, bool updateRatsnest) {
@@ -1823,7 +1823,7 @@ bool SketchWidget::dragEnterEventAux(QDragEnterEvent *event) {
 		bool doConnectors = true;
 
 		// create temporary item for dragging
-		m_droppingItem = addItemAuxTemp(modelPart, defaultViewLayerSpec(), viewGeometry, fromID, doConnectors, m_viewID, true);
+		m_droppingItem = addItemAuxTemp(modelPart, defaultViewLayerPlacement(), viewGeometry, fromID, doConnectors, m_viewID, true);
         QSizeF size = m_droppingItem->sceneBoundingRect().size();
         if (size.width() < offset.x() || size.height() < offset.y()) {
             offset = m_droppingOffset = QPointF(size.width() / 2, size.height() / 2);
@@ -1848,7 +1848,7 @@ bool SketchWidget::dragEnterEventAux(QDragEnterEvent *event) {
 // make sure relevant layer is visible
 	ViewLayer::ViewLayerID viewLayerID;
 	if (m_droppingWire) {
-		viewLayerID = getWireViewLayerID(m_droppingItem->getViewGeometry(), m_droppingItem->viewLayerSpec());
+		viewLayerID = getWireViewLayerID(m_droppingItem->getViewGeometry(), m_droppingItem->viewLayerPlacement());
 	}
 	else if(modelPart->moduleID().compare(ModuleIDNames::RulerModuleIDName) == 0) {
 		viewLayerID = getRulerViewLayerID();
@@ -2042,9 +2042,9 @@ void SketchWidget::dropItemEvent(QDropEvent *event) {
 			break;				
 	}
 
-    ViewLayer::ViewLayerSpec viewLayerSpec;
-    getDroppedItemViewLayerSpec(modelPart, viewLayerSpec);  
-	AddItemCommand * addItemCommand = newAddItemCommand(crossViewType, modelPart, modelPart->moduleID(), viewLayerSpec, viewGeometry, fromID, true, -1, parentCommand);
+    ViewLayer::ViewLayerPlacement viewLayerPlacement;
+    getDroppedItemViewLayerPlacement(modelPart, viewLayerPlacement);  
+	AddItemCommand * addItemCommand = newAddItemCommand(crossViewType, modelPart, modelPart->moduleID(), viewLayerPlacement, viewGeometry, fromID, true, -1, parentCommand);
 	addItemCommand->setDropOrigin(this);
 
 	new SetDropOffsetCommand(this, fromID, m_droppingOffset, parentCommand);
@@ -2900,7 +2900,7 @@ void SketchWidget::prepDragBendpoint(Wire * wire, QPoint eventPos, bool dragCurv
 	QLineF newLine2(QPointF(0,0), oldLine.p2() + oldPos - newPos);
 	vg.setLine(newLine2);
 	ConnectorItem * oldConnector1 = wire->connector1();
-	m_connectorDragWire = this->createTempWireForDragging(wire, wire->modelPart(), oldConnector1, vg, wire->viewLayerSpec());
+	m_connectorDragWire = this->createTempWireForDragging(wire, wire->modelPart(), oldConnector1, vg, wire->viewLayerPlacement());
 	if (curved) {
 		right.translateToZero();
 		m_connectorDragWire->changeCurve(&right);
@@ -3392,16 +3392,16 @@ void SketchWidget::setSketchModel(SketchModel * sketchModel) {
 	m_sketchModel = sketchModel;
 }
 
-void SketchWidget::itemAddedSlot(ModelPart * modelPart, ItemBase *, ViewLayer::ViewLayerSpec viewLayerSpec, const ViewGeometry & viewGeometry, long id, SketchWidget * dropOrigin) {
+void SketchWidget::itemAddedSlot(ModelPart * modelPart, ItemBase *, ViewLayer::ViewLayerPlacement viewLayerPlacement, const ViewGeometry & viewGeometry, long id, SketchWidget * dropOrigin) {
 	if (dropOrigin != NULL && dropOrigin != this) {
-		placePartDroppedInOtherView(modelPart, viewLayerSpec, viewGeometry, id, dropOrigin);
+		placePartDroppedInOtherView(modelPart, viewLayerPlacement, viewGeometry, id, dropOrigin);
 	}
 	else {
-		addItemAux(modelPart, viewLayerSpec, viewGeometry, id, true, m_viewID, false);
+		addItemAux(modelPart, viewLayerPlacement, viewGeometry, id, true, m_viewID, false);
 	}
 }
 
-ItemBase * SketchWidget::placePartDroppedInOtherView(ModelPart * modelPart, ViewLayer::ViewLayerSpec viewLayerSpec, const ViewGeometry & viewGeometry, long id, SketchWidget * dropOrigin) 
+ItemBase * SketchWidget::placePartDroppedInOtherView(ModelPart * modelPart, ViewLayer::ViewLayerPlacement viewLayerPlacement, const ViewGeometry & viewGeometry, long id, SketchWidget * dropOrigin) 
 {
 	// offset the part 
 	QPointF from = dropOrigin->mapToScene(QPoint(0, 0));
@@ -3409,7 +3409,7 @@ ItemBase * SketchWidget::placePartDroppedInOtherView(ModelPart * modelPart, View
 	QPointF dp = viewGeometry.loc() - from;
 	ViewGeometry vg(viewGeometry);
 	vg.setLoc(to + dp);
-	ItemBase * itemBase = addItemAux(modelPart, viewLayerSpec, vg, id, true, m_viewID, false);
+	ItemBase * itemBase = addItemAux(modelPart, viewLayerPlacement, vg, id, true, m_viewID, false);
 	if (m_alignToGrid && (itemBase != NULL)) {
 		alignOneToGrid(itemBase);
 	}
@@ -3813,7 +3813,7 @@ void SketchWidget::dragWireChanged(Wire* wire, ConnectorItem * fromOnWire, Conne
 	// create a new wire with the same id as the temporary wire
 	ViewGeometry vg = m_connectorDragWire->getViewGeometry();
 	vg.setWireFlags(getTraceFlag());
-	new AddItemCommand(this, crossViewType, m_connectorDragWire->moduleID(), m_connectorDragWire->viewLayerSpec(), vg, fromID, true, -1, parentCommand);
+	new AddItemCommand(this, crossViewType, m_connectorDragWire->moduleID(), m_connectorDragWire->viewLayerPlacement(), vg, fromID, true, -1, parentCommand);
 	new CheckStickyCommand(this, crossViewType, fromID, false, CheckStickyCommand::RemoveOnly, parentCommand);
 	selectItemCommand->addRedo(fromID);
 
@@ -3907,8 +3907,8 @@ void SketchWidget::dragRatsnestChanged()
 		return;
 	}
 
-	ViewLayer::ViewLayerSpec viewLayerSpec = createWireViewLayerSpec(ends[0], ends[1]);
-	if (viewLayerSpec == ViewLayer::UnknownSpec) {
+	ViewLayer::ViewLayerPlacement viewLayerPlacement = createWireViewLayerPlacement(ends[0], ends[1]);
+	if (viewLayerPlacement == ViewLayer::UnknownSpec) {
 		// for now this should not be possible
 		QMessageBox::critical(this, tr("Fritzing"), tr("This seems like an attempt to create a trace across layers. This circumstance should not arise: please contact the developers."));
 		return;
@@ -3928,12 +3928,12 @@ void SketchWidget::dragRatsnestChanged()
 	m_bendpointWire->saveGeometry();
 
 	double traceWidth = getTraceWidth();
-	QString tColor = traceColor(viewLayerSpec);
+	QString tColor = traceColor(viewLayerPlacement);
 
 	long newID1 = ItemBase::getNextID();
 	ViewGeometry vg1 = m_connectorDragWire->getViewGeometry();
 	vg1.setWireFlags(getTraceFlag());
-	new AddItemCommand(this, crossViewType, m_connectorDragWire->moduleID(), viewLayerSpec, vg1, newID1, true, -1, parentCommand);
+	new AddItemCommand(this, crossViewType, m_connectorDragWire->moduleID(), viewLayerPlacement, vg1, newID1, true, -1, parentCommand);
 	new CheckStickyCommand(this, crossViewType, newID1, false, CheckStickyCommand::RemoveOnly, parentCommand);
 	new WireColorChangeCommand(this, newID1, tColor, tColor, 1.0, 1.0, parentCommand);
 	new WireWidthChangeCommand(this, newID1, traceWidth, traceWidth, parentCommand);
@@ -3941,7 +3941,7 @@ void SketchWidget::dragRatsnestChanged()
 	long newID2 = ItemBase::getNextID();
 	ViewGeometry vg2 = m_bendpointWire->getViewGeometry();
 	vg2.setWireFlags(getTraceFlag());
-	new AddItemCommand(this, crossViewType, m_bendpointWire->moduleID(), viewLayerSpec, vg2, newID2, true, -1, parentCommand);
+	new AddItemCommand(this, crossViewType, m_bendpointWire->moduleID(), viewLayerPlacement, vg2, newID2, true, -1, parentCommand);
 	new CheckStickyCommand(this, crossViewType, newID2, false, CheckStickyCommand::RemoveOnly, parentCommand);
 	new WireColorChangeCommand(this, newID2, tColor, tColor, 1.0, 1.0, parentCommand);
 	new WireWidthChangeCommand(this, newID2, traceWidth, traceWidth, parentCommand);
@@ -3949,21 +3949,21 @@ void SketchWidget::dragRatsnestChanged()
 	new ChangeConnectionCommand(this, BaseCommand::CrossView,
 									newID2, m_connectorDragConnector->connectorSharedID(),
 									newID1, m_connectorDragWire->connector0()->connectorSharedID(),
-									viewLayerSpec,					// ViewLayer::specFromID(wire->viewLayerID())
+									viewLayerPlacement,					// ViewLayer::specFromID(wire->viewLayerID())
 									true, parentCommand);
 
 	foreach (ConnectorItem * toConnectorItem, m_bendpointWire->connector0()->connectedToItems()) {
 		new ChangeConnectionCommand(this, BaseCommand::CrossView,
 									newID2, m_bendpointWire->connector0()->connectorSharedID(),
 									toConnectorItem->attachedToID(), toConnectorItem->connectorSharedID(),
-									viewLayerSpec,					// ViewLayer::specFromID(toConnectorItem->attachedToViewLayerID())
+									viewLayerPlacement,					// ViewLayer::specFromID(toConnectorItem->attachedToViewLayerID())
 									true, parentCommand);
 	}
 	foreach (ConnectorItem * toConnectorItem, m_connectorDragWire->connector1()->connectedToItems()) {
 		new ChangeConnectionCommand(this, BaseCommand::CrossView,
 									newID1, m_connectorDragWire->connector1()->connectorSharedID(),
 									toConnectorItem->attachedToID(), toConnectorItem->connectorSharedID(),
-									viewLayerSpec,					// ViewLayer::specFromID(toConnectorItem->attachedToViewLayerID())
+									viewLayerPlacement,					// ViewLayer::specFromID(toConnectorItem->attachedToViewLayerID())
 									true, parentCommand);
 		m_connectorDragWire->connector1()->tempRemove(toConnectorItem, false);
 		toConnectorItem->tempRemove(m_connectorDragWire->connector1(), false);
@@ -4456,7 +4456,7 @@ ViewLayer::ViewLayerID SketchWidget::getDragWireViewLayerID(ConnectorItem *) {
 	return m_wireViewLayerID;
 }
 
-ViewLayer::ViewLayerID SketchWidget::getWireViewLayerID(const ViewGeometry & viewGeometry, ViewLayer::ViewLayerSpec) {
+ViewLayer::ViewLayerID SketchWidget::getWireViewLayerID(const ViewGeometry & viewGeometry, ViewLayer::ViewLayerPlacement) {
 	if (viewGeometry.getRatsnest()) {
 		return ViewLayer::BreadboardRatsnest;
 	}
@@ -4476,7 +4476,7 @@ ViewLayer::ViewLayerID SketchWidget::getConnectorViewLayerID() {
 	return m_connectorViewLayerID;
 }
 
-ViewLayer::ViewLayerID SketchWidget::getLabelViewLayerID(ViewLayer::ViewLayerSpec) {
+ViewLayer::ViewLayerID SketchWidget::getLabelViewLayerID(ItemBase *) {
 	return ViewLayer::UnknownLayer;
 }
 
@@ -4790,15 +4790,15 @@ ConnectorItem * SketchWidget::findConnectorItem(ConnectorItem * foreignConnector
 		return NULL;
 	}
 
-	ConnectorItem * result = findConnectorItem(itemBase, foreignConnectorItem->connectorSharedID(), ViewLayer::Bottom);
+	ConnectorItem * result = findConnectorItem(itemBase, foreignConnectorItem->connectorSharedID(), ViewLayer::NewBottom);
 	if (result) return result;
 
-	return findConnectorItem(itemBase, foreignConnectorItem->connectorSharedID(), ViewLayer::Top);
+	return findConnectorItem(itemBase, foreignConnectorItem->connectorSharedID(), ViewLayer::NewTop);
 }
 
-ConnectorItem * SketchWidget::findConnectorItem(ItemBase * itemBase, const QString & connectorID, ViewLayer::ViewLayerSpec viewLayerSpec) {
+ConnectorItem * SketchWidget::findConnectorItem(ItemBase * itemBase, const QString & connectorID, ViewLayer::ViewLayerPlacement viewLayerPlacement) {
 
-	ConnectorItem * connectorItem = itemBase->findConnectorItemWithSharedID(connectorID, viewLayerSpec);
+	ConnectorItem * connectorItem = itemBase->findConnectorItemWithSharedID(connectorID, viewLayerPlacement);
 	if (connectorItem != NULL) return connectorItem;
 
 	DebugDialog::debug("used to seek layer kin");
@@ -4945,22 +4945,22 @@ void SketchWidget::wireDisconnectedSlot(long fromID, QString fromConnectorID) {
 
 void SketchWidget::changeConnection(long fromID, const QString & fromConnectorID,
 									long toID, const QString & toConnectorID,
-									ViewLayer::ViewLayerSpec viewLayerSpec,
+									ViewLayer::ViewLayerPlacement viewLayerPlacement,
 									bool connect, bool doEmit, bool updateConnections)
 {
-	changeConnectionAux(fromID, fromConnectorID, toID, toConnectorID, viewLayerSpec, connect, updateConnections);
+	changeConnectionAux(fromID, fromConnectorID, toID, toConnectorID, viewLayerPlacement, connect, updateConnections);
 
 	if (doEmit) {
 		//TODO:  findPartOrWire not necessary for harmonize? 
 		//fromID = findPartOrWire(fromID);
 		//toID = findPartOrWire(toID);
-		emit changeConnectionSignal(fromID, fromConnectorID, toID, toConnectorID, viewLayerSpec, connect, updateConnections);
+		emit changeConnectionSignal(fromID, fromConnectorID, toID, toConnectorID, viewLayerPlacement, connect, updateConnections);
 	}
 }
 
 void SketchWidget::changeConnectionAux(long fromID, const QString & fromConnectorID,
 									long toID, const QString & toConnectorID,
-									ViewLayer::ViewLayerSpec viewLayerSpec,
+									ViewLayer::ViewLayerPlacement viewLayerPlacement,
 									bool connect, bool updateConnections)
 {
     // only called from the above changeConnection() which is invoked only from a command object
@@ -4981,14 +4981,14 @@ void SketchWidget::changeConnectionAux(long fromID, const QString & fromConnecto
 		return;
 	}
 
-	ConnectorItem * fromConnectorItem = findConnectorItem(fromItem, fromConnectorID, viewLayerSpec);
+	ConnectorItem * fromConnectorItem = findConnectorItem(fromItem, fromConnectorID, viewLayerPlacement);
 	if (fromConnectorItem == NULL) {
 		// shouldn't be here
 		DebugDialog::debug(QString("change connection exit 3 %1 %2").arg(fromItem->id()).arg(fromConnectorID));
 		return;
 	}
 
-	ConnectorItem * toConnectorItem = findConnectorItem(toItem, toConnectorID, viewLayerSpec);
+	ConnectorItem * toConnectorItem = findConnectorItem(toItem, toConnectorID, viewLayerPlacement);
 	if (toConnectorItem == NULL) {
 		// shouldn't be here
 		DebugDialog::debug(QString("change connection exit 4 %1 %2").arg(toItem->id()).arg(toConnectorID));
@@ -5025,11 +5025,11 @@ void SketchWidget::changeConnectionAux(long fromID, const QString & fromConnecto
 
 void SketchWidget::changeConnectionSlot(long fromID, QString fromConnectorID,
 												 long toID, QString toConnectorID,
-												 ViewLayer::ViewLayerSpec viewLayerSpec, 
+												 ViewLayer::ViewLayerPlacement viewLayerPlacement, 
 												 bool connect, bool updateConnections)
 {
 	changeConnection(fromID, fromConnectorID,
-					 toID, toConnectorID, viewLayerSpec,
+					 toID, toConnectorID, viewLayerPlacement,
 					 connect, false, updateConnections);
 }
 
@@ -5181,7 +5181,7 @@ void SketchWidget::makeDeleteItemCommandFinalSlot(ItemBase * itemBase, bool fore
 
 	ModelPart * mp = itemBase->modelPart();
 	// single view because this is called for each view
-	new DeleteItemCommand(this, BaseCommand::SingleView, mp->moduleID(), itemBase->viewLayerSpec(), itemBase->getViewGeometry(), itemBase->id(), mp->modelIndex(), parentCommand);
+	new DeleteItemCommand(this, BaseCommand::SingleView, mp->moduleID(), itemBase->viewLayerPlacement(), itemBase->getViewGeometry(), itemBase->id(), mp->modelIndex(), parentCommand);
 }
 
 void SketchWidget::prepDeleteProps(ItemBase * itemBase, long id, const QString & newModuleID, QUndoCommand * parentCommand) 
@@ -5430,7 +5430,7 @@ void SketchWidget::killDroppingItem() {
 	}
 }
 
-ViewLayer::ViewLayerID SketchWidget::getViewLayerID(ModelPart * modelPart, ViewLayer::ViewID viewID, ViewLayer::ViewLayerSpec viewLayerSpec) {
+ViewLayer::ViewLayerID SketchWidget::getViewLayerID(ModelPart * modelPart, ViewLayer::ViewID viewID, ViewLayer::ViewLayerPlacement viewLayerPlacement) {
 
     LayerList viewLayers = modelPart->viewLayers(viewID);
 
@@ -5438,13 +5438,13 @@ ViewLayer::ViewLayerID SketchWidget::getViewLayerID(ModelPart * modelPart, ViewL
 		return viewLayers.at(0);
 	}
 
-	return multiLayerGetViewLayerID(modelPart, viewID, viewLayerSpec, viewLayers);
+	return multiLayerGetViewLayerID(modelPart, viewID, viewLayerPlacement, viewLayers);
 }
 
-ViewLayer::ViewLayerID SketchWidget::multiLayerGetViewLayerID(ModelPart * modelPart, ViewLayer::ViewID viewID, ViewLayer::ViewLayerSpec viewLayerSpec, LayerList & layerList) {
+ViewLayer::ViewLayerID SketchWidget::multiLayerGetViewLayerID(ModelPart * modelPart, ViewLayer::ViewID viewID, ViewLayer::ViewLayerPlacement viewLayerPlacement, LayerList & layerList) {
 	Q_UNUSED(modelPart);
 	Q_UNUSED(viewID);
-	Q_UNUSED(viewLayerSpec);
+	Q_UNUSED(viewLayerPlacement);
 
     if (layerList.count() == 0) return ViewLayer::UnknownLayer;
 
@@ -5551,7 +5551,7 @@ void SketchWidget::wireSplitSlot(Wire* wire, QPointF newPos, QPointF oldPos, con
 
 	BaseCommand::CrossViewType crossView = wireSplitCrossView();
 
-	new AddItemCommand(this, crossView, ModuleIDNames::WireModuleIDName, wire->viewLayerSpec(), vg, newID, true, -1, parentCommand);
+	new AddItemCommand(this, crossView, ModuleIDNames::WireModuleIDName, wire->viewLayerPlacement(), vg, newID, true, -1, parentCommand);
 	new CheckStickyCommand(this, crossView, newID, false, CheckStickyCommand::RemoveOnly, parentCommand);
 	new WireColorChangeCommand(this, newID, wire->colorString(), wire->colorString(), wire->opacity(), wire->opacity(), parentCommand);
 	new WireWidthChangeCommand(this, newID, wire->width(), wire->width(), parentCommand);
@@ -6141,7 +6141,7 @@ void SketchWidget::makeSwapWire(SketchWidget * bbView, ItemBase * itemBase, long
 	Q_UNUSED(fromConnectorItem);
     long wireID = ItemBase::getNextID();
 	ViewGeometry vg;
-	new AddItemCommand(bbView, BaseCommand::CrossView, ModuleIDNames::WireModuleIDName, itemBase->viewLayerSpec(), vg, wireID, false, -1, parentCommand);
+	new AddItemCommand(bbView, BaseCommand::CrossView, ModuleIDNames::WireModuleIDName, itemBase->viewLayerPlacement(), vg, wireID, false, -1, parentCommand);
 	new CheckStickyCommand(bbView, BaseCommand::CrossView, wireID, false, CheckStickyCommand::RemoveOnly, parentCommand);
 	new ChangeConnectionCommand(bbView, BaseCommand::CrossView, newID, newConnector->connectorSharedID(),
 								wireID, "connector0", 
@@ -6160,7 +6160,7 @@ void SketchWidget::checkFit(ModelPart * newModelPart, ItemBase * itemBase, long 
 {
 	if (found.count() == 0) return;
 
-	ItemBase * tempItemBase = addItemAuxTemp(newModelPart, itemBase->viewLayerSpec(), itemBase->getViewGeometry(), newID, true, m_viewID, true);
+	ItemBase * tempItemBase = addItemAuxTemp(newModelPart, itemBase->viewLayerPlacement(), itemBase->getViewGeometry(), newID, true, m_viewID, true);
 	if (tempItemBase == NULL) return;			// we're really screwed 
 
 	checkFitAux(tempItemBase, itemBase, newID, found, notFound, m2f, byWire, legs, formerLegs, parentCommand);
@@ -6600,9 +6600,6 @@ void SketchWidget::updateRoutingStatus(RoutingStatus & routingStatus, bool manua
 	//	.arg(m_ratsnestUpdateConnect.count())
 	//	.arg(m_ratsnestUpdateDisconnect.count())
 	//	);
-    if (m_viewID == ViewLayer::SchematicView) {
-        DebugDialog::debug("schematic");
-    }
 
 	// TODO: think about ways to optimize this...
 
@@ -6641,7 +6638,7 @@ void SketchWidget::updateRoutingStatus(RoutingStatus & routingStatus, bool manua
 		if (!doRatsnest && connectorItems.count() <= 1) continue;
 
 		QList<ConnectorItem *> partConnectorItems;
-		ConnectorItem::collectParts(connectorItems, partConnectorItems, includeSymbols(), ViewLayer::TopAndBottom);
+		ConnectorItem::collectParts(connectorItems, partConnectorItems, includeSymbols(), ViewLayer::NewTopAndBottom);
 		if (partConnectorItems.count() < 1) continue;
 		if (!doRatsnest && partConnectorItems.count() <= 1) continue;
 
@@ -7017,7 +7014,7 @@ void SketchWidget::showPartLabel(long itemID, bool showIt) {
 
 	ItemBase * itemBase = findItem(itemID);
 	if (itemBase != NULL) {
-		itemBase->showPartLabel(showIt, m_viewLayers.value(getLabelViewLayerID(itemBase->viewLayerSpec())));
+		itemBase->showPartLabel(showIt, m_viewLayers.value(getLabelViewLayerID(itemBase)));
 	}
 }
 
@@ -7792,7 +7789,7 @@ bool SketchWidget::createOneTrace(Wire * wire, ViewGeometry::WireFlag flag, bool
 		removeWire(trace, ends, done, parentCommand);
 	}
 
-	QString colorString = traceColor(createWireViewLayerSpec(ends[0], ends[1]));
+	QString colorString = traceColor(createWireViewLayerPlacement(ends[0], ends[1]));
 	long newID = createWire(ends[0], ends[1], flag, false, BaseCommand::CrossView, parentCommand);
 	// TODO: is this opacity constant stored someplace
 	new WireColorChangeCommand(this, newID, colorString, colorString, 1.0, 1.0, parentCommand);
@@ -7970,11 +7967,11 @@ void SketchWidget::disconnectAllSlot(QList<ConnectorItem *> connectorItems, QHas
 		ItemBase * itemBase = findItem(ci->attachedToID());
 		if (itemBase == NULL) continue;
 
-		ConnectorItem * fromConnectorItem = findConnectorItem(itemBase, ci->connectorSharedID(), ViewLayer::Top);
+		ConnectorItem * fromConnectorItem = findConnectorItem(itemBase, ci->connectorSharedID(), ViewLayer::NewTop);
 		if (fromConnectorItem != NULL) {
 			myConnectorItems.append(fromConnectorItem);
 		}
-		fromConnectorItem = findConnectorItem(itemBase, ci->connectorSharedID(), ViewLayer::Bottom);
+		fromConnectorItem = findConnectorItem(itemBase, ci->connectorSharedID(), ViewLayer::NewBottom);
 		if (fromConnectorItem != NULL) {
 			myConnectorItems.append(fromConnectorItem);
 		}
@@ -8158,9 +8155,9 @@ int SketchWidget::selectAllItems(QSet<ItemBase *> & itemBases, const QString & m
 	return itemBases.count();
 }
 
-AddItemCommand * SketchWidget::newAddItemCommand(BaseCommand::CrossViewType crossViewType, ModelPart * newModelPart, QString moduleID, ViewLayer::ViewLayerSpec viewLayerSpec, ViewGeometry & viewGeometry, qint64 id, bool updateInfoView, long modelIndex, QUndoCommand *parent)
+AddItemCommand * SketchWidget::newAddItemCommand(BaseCommand::CrossViewType crossViewType, ModelPart * newModelPart, QString moduleID, ViewLayer::ViewLayerPlacement viewLayerPlacement, ViewGeometry & viewGeometry, qint64 id, bool updateInfoView, long modelIndex, QUndoCommand *parent)
 {
-	AddItemCommand * aic = new AddItemCommand(this, crossViewType, moduleID, viewLayerSpec, viewGeometry, id, updateInfoView, modelIndex, parent);
+	AddItemCommand * aic = new AddItemCommand(this, crossViewType, moduleID, viewLayerPlacement, viewGeometry, id, updateInfoView, modelIndex, parent);
     if (newModelPart == NULL) {
         newModelPart = m_referenceModel->retrieveModelPart(moduleID);
     }
@@ -8171,7 +8168,7 @@ AddItemCommand * SketchWidget::newAddItemCommand(BaseCommand::CrossViewType cros
 
     foreach (ModelPartShared * mps, modelPartShared->subparts()) {
         long subID = ItemBase::getNextID();
-        new AddItemCommand(this, crossViewType, mps->moduleID(), viewLayerSpec, viewGeometry, subID, updateInfoView, -1, parent);
+        new AddItemCommand(this, crossViewType, mps->moduleID(), viewLayerPlacement, viewGeometry, subID, updateInfoView, -1, parent);
         new AddSubpartCommand(this, crossViewType, id, subID, parent);
     }
 
@@ -8200,7 +8197,7 @@ void SketchWidget::restorePartLabel(long itemID, QDomElement & element) {
 	ItemBase * itemBase = findItem(itemID);
 	if (itemBase == NULL) return;
 
-	itemBase->restorePartLabel(element, getLabelViewLayerID(itemBase->viewLayerSpec()));
+	itemBase->restorePartLabel(element, getLabelViewLayerID(itemBase));
 }
 
 void SketchWidget::loadLogoImage(ItemBase * itemBase, const QString & oldSvg, const QSizeF oldAspectRatio, const QString & oldFilename, const QString & newFilename, bool addName) {
@@ -8347,33 +8344,16 @@ void SketchWidget::copyDrop() {
 	m_savedWires.clear();
 }
 
-ViewLayer::ViewLayerSpec SketchWidget::defaultViewLayerSpec() {
-	return (m_boardLayers == 1) ? ViewLayer::ThroughHoleThroughTop_OneLayer : ViewLayer::ThroughHoleThroughTop_TwoLayers;
+ViewLayer::ViewLayerPlacement SketchWidget::defaultViewLayerPlacement() {
+	return (m_boardLayers == 1) ? ViewLayer::NewBottom : ViewLayer::NewTop;
 }
 
-ViewLayer::ViewLayerSpec SketchWidget::wireViewLayerSpec(ConnectorItem *) {
-	return (m_boardLayers == 1) ? ViewLayer::WireOnBottom_OneLayer : ViewLayer::WireOnBottom_TwoLayers;
+ViewLayer::ViewLayerPlacement SketchWidget::wireViewLayerPlacement(ConnectorItem *) {
+	return (m_boardLayers == 1) ? ViewLayer::NewBottom : ViewLayer::NewTop;
 }
 
 void SketchWidget::changeBoardLayers(int layers, bool doEmit) {
 	m_boardLayers = layers;
-
-	foreach (QGraphicsItem * item, scene()->items()) {
-		ItemBase * itemBase = dynamic_cast<ItemBase *>(item);
-		if (itemBase == NULL) continue;
-		if (itemBase->modelPart()->flippedSMD()) continue;
-		if (itemBase->itemType() != ModelPart::Part) continue;
-
-		if (itemBase->viewLayerSpec() == ViewLayer::ThroughHoleThroughTop_OneLayer && layers == 2) {
-			itemBase->setViewLayerSpec(ViewLayer::ThroughHoleThroughTop_TwoLayers);
-			continue;
-		}
-	
-		if (itemBase->viewLayerSpec() == ViewLayer::ThroughHoleThroughTop_TwoLayers && layers == 1) {
-			itemBase->setViewLayerSpec(ViewLayer::ThroughHoleThroughTop_OneLayer);
-			continue;
-		}
-	}
 
 	if (doEmit) {
 		emit changeBoardLayersSignal(layers, false);
@@ -8416,7 +8396,7 @@ void SketchWidget::collectAllNets(QHash<ConnectorItem *, int> & indexer, QList< 
 		}
 
 		QList<ConnectorItem *> * partConnectorItems = new QList<ConnectorItem *>;
-		ConnectorItem::collectParts(connectorItems, *partConnectorItems, includeSymbols(), ViewLayer::TopAndBottom);
+		ConnectorItem::collectParts(connectorItems, *partConnectorItems, includeSymbols(), ViewLayer::NewTopAndBottom);
 
 		for (int i = partConnectorItems->count() - 1; i >= 0; i--) {
 			if (!partConnectorItems->at(i)->attachedTo()->isEverVisible()) {
@@ -8458,36 +8438,36 @@ void SketchWidget::collectAllNets(QHash<ConnectorItem *, int> & indexer, QList< 
 	}
 }
 
-ViewLayer::ViewLayerSpec SketchWidget::getViewLayerSpec(ModelPart * modelPart, QDomElement & instance, QDomElement & view, ViewGeometry & viewGeometry) 
+ViewLayer::ViewLayerPlacement SketchWidget::getViewLayerPlacement(ModelPart * modelPart, QDomElement & instance, QDomElement & view, ViewGeometry & viewGeometry) 
 {
 	Q_UNUSED(modelPart);
 	Q_UNUSED(instance);
 
-	ViewLayer::ViewLayerSpec viewLayerSpec = defaultViewLayerSpec();
+	ViewLayer::ViewLayerPlacement viewLayerPlacement = defaultViewLayerPlacement();
 
 	if (modelPart->moduleID().compare(ModuleIDNames::GroundPlaneModuleIDName) == 0) {
 		QString layer = view.attribute("layer");
-		if (layer.isEmpty()) return viewLayerSpec;
+		if (layer.isEmpty()) return viewLayerPlacement;
 
 		ViewLayer::ViewLayerID viewLayerID = ViewLayer::viewLayerIDFromXmlString(layer);
 		if (viewLayerID == ViewLayer::GroundPlane1) {
-			return ViewLayer::GroundPlane_Top;
+			return ViewLayer::NewTop;
 		}
 
-		return ViewLayer::GroundPlane_Bottom;
+		return ViewLayer::NewBottom;
 	}
 
 	if (viewGeometry.getAnyTrace()) {
 		QString layer = view.attribute("layer");
-		if (layer.isEmpty()) return viewLayerSpec;
+		if (layer.isEmpty()) return viewLayerPlacement;
 
 		ViewLayer::ViewLayerID viewLayerID = ViewLayer::viewLayerIDFromXmlString(layer);
-		if (viewLayerID == ViewLayer::Copper1Trace) {
-			return ViewLayer::WireOnTop_TwoLayers;
+		if (viewLayerID == ViewLayer::Copper1Trace || viewLayerID == ViewLayer::GroundPlane1 || viewLayerID == ViewLayer::Copper1) {
+			return ViewLayer::NewTop;
 		}
 	}
 
-	return viewLayerSpec;
+	return viewLayerPlacement;
 
 }
 
@@ -8587,7 +8567,7 @@ void SketchWidget::ratsnestConnect(long id, const QString & connectorID, bool co
 	ItemBase * itemBase = findItem(id);
 	if (itemBase == NULL) return;
 
-	ConnectorItem * connectorItem = findConnectorItem(itemBase, connectorID, itemBase->viewLayerSpec());
+	ConnectorItem * connectorItem = findConnectorItem(itemBase, connectorID, itemBase->viewLayerPlacement());
 	if (connectorItem == NULL) return;
 
 	ratsnestConnect(connectorItem, connect);
@@ -8807,11 +8787,11 @@ void SketchWidget::setItemDropOffset(long id, QPointF offset)
 	itemBase->setDropOffset(offset);
 }
 
-Wire * SketchWidget::createTempWireForDragging(Wire * fromWire, ModelPart * wireModel, ConnectorItem * connectorItem, ViewGeometry & viewGeometry, ViewLayer::ViewLayerSpec spec) 
+Wire * SketchWidget::createTempWireForDragging(Wire * fromWire, ModelPart * wireModel, ConnectorItem * connectorItem, ViewGeometry & viewGeometry, ViewLayer::ViewLayerPlacement spec) 
 {
 	Q_UNUSED(fromWire);
 	if (spec == ViewLayer::UnknownSpec) {
-		spec = wireViewLayerSpec(connectorItem);
+		spec = wireViewLayerPlacement(connectorItem);
 	}
 	return qobject_cast<Wire *>(addItemAuxTemp(wireModel, spec, viewGeometry, ItemBase::getNextID(), true, m_viewID, true));
 }
@@ -9067,7 +9047,7 @@ VirtualWire * SketchWidget::makeOneRatsnestWire(ConnectorItem * source, Connecto
 	//}
 
 	// ratsnest only added to one view
-	ItemBase * newItemBase = addItem(m_referenceModel->retrieveModelPart(ModuleIDNames::WireModuleIDName), source->attachedTo()->viewLayerSpec(), BaseCommand::SingleView, viewGeometry, newID, -1, NULL);		
+	ItemBase * newItemBase = addItem(m_referenceModel->retrieveModelPart(ModuleIDNames::WireModuleIDName), source->attachedTo()->viewLayerPlacement(), BaseCommand::SingleView, viewGeometry, newID, -1, NULL);		
 	VirtualWire * wire = qobject_cast<VirtualWire *>(newItemBase);
 	ConnectorItem * connector0 = wire->connector0();
 	source->tempConnectTo(connector0, false);
@@ -9105,7 +9085,7 @@ void SketchWidget::makeRatsnestViewGeometry(ViewGeometry & viewGeometry, Connect
 	viewGeometry.setWireFlags(ViewGeometry::RatsnestFlag);
 }
 
-const QString & SketchWidget::traceColor(ViewLayer::ViewLayerSpec) {
+const QString & SketchWidget::traceColor(ViewLayer::ViewLayerPlacement) {
 	return ___emptyString___;
 }
 
@@ -9257,7 +9237,7 @@ long SketchWidget::swapStart(SwapThing & swapThing, bool master) {
 	new MoveItemCommand(this, itemBase->id(), vg, vg, false, swapThing.parentCommand);
 
 	// command created for each view
-	newAddItemCommand(BaseCommand::SingleView, NULL, swapThing.newModuleID, swapThing.viewLayerSpec, vg, newID, true, swapThing.newModelIndex, swapThing.parentCommand);
+	newAddItemCommand(BaseCommand::SingleView, NULL, swapThing.newModuleID, swapThing.viewLayerPlacement, vg, newID, true, swapThing.newModelIndex, swapThing.parentCommand);
 
 	if (needsTransform) {
 		QMatrix m;
@@ -9510,7 +9490,7 @@ void SketchWidget::addSubpart(long id, long subpartID, bool doEmit) {
     }
 }
 
-void SketchWidget::getDroppedItemViewLayerSpec(ModelPart * modelPart, ViewLayer::ViewLayerSpec & viewLayerSpec) {
-    emit getDroppedItemViewLayerSpecSignal(modelPart, viewLayerSpec);
+void SketchWidget::getDroppedItemViewLayerPlacement(ModelPart * modelPart, ViewLayer::ViewLayerPlacement & viewLayerPlacement) {
+    emit getDroppedItemViewLayerPlacementSignal(modelPart, viewLayerPlacement);
 }
 

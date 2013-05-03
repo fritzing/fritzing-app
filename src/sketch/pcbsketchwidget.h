@@ -57,7 +57,7 @@ public:
 	virtual bool autorouteTypePCB();
 	virtual double getKeepout();
 	virtual const QString & traceColor(ConnectorItem *);
-	const QString & traceColor(ViewLayer::ViewLayerSpec);
+	const QString & traceColor(ViewLayer::ViewLayerPlacement);
 	virtual void ensureTraceLayersVisible();
 	virtual void ensureTraceLayerVisible();
 	bool canChainMultiple();
@@ -68,7 +68,7 @@ public:
 	virtual double getLabelFontSizeSmall();
 	virtual double getLabelFontSizeMedium();
 	virtual double getLabelFontSizeLarge();
-	ViewLayer::ViewLayerID getWireViewLayerID(const ViewGeometry & viewGeometry, ViewLayer::ViewLayerSpec);
+	ViewLayer::ViewLayerID getWireViewLayerID(const ViewGeometry & viewGeometry, ViewLayer::ViewLayerPlacement);
 	QList<ItemBase *> findBoard();
     ItemBase * findSelectedBoard(int & boardCount);
     ItemBase * findBoardBeneath(ItemBase *);
@@ -79,14 +79,14 @@ public:
     void swapLayers(ItemBase * itemBase, int newLayers, QUndoCommand * parentCommand);
 	void loadFromModelParts(QList<ModelPart *> & modelParts, BaseCommand::CrossViewType, QUndoCommand * parentCommand, 
 							bool offsetPaste, const QRectF * boundingRect, bool seekOutsideConnections, QList<long> & newIDs);
-	virtual bool isInLayers(ConnectorItem *, ViewLayer::ViewLayerSpec);
+	virtual bool isInLayers(ConnectorItem *, ViewLayer::ViewLayerPlacement);
 	bool routeBothSides();
 	bool sameElectricalLayer2(ViewLayer::ViewLayerID, ViewLayer::ViewLayerID);
 	void changeTraceLayer(bool force, QUndoCommand * parentCommand);
 	void changeLayer(long id, double z, ViewLayer::ViewLayerID viewLayerID);
 	void updateNet(Wire*);
 	bool acceptsTrace(const ViewGeometry & viewGeometry);
-	ItemBase * placePartDroppedInOtherView(ModelPart *, ViewLayer::ViewLayerSpec, const ViewGeometry & viewGeometry, long id, SketchWidget * dropOrigin);
+	ItemBase * placePartDroppedInOtherView(ModelPart *, ViewLayer::ViewLayerPlacement, const ViewGeometry & viewGeometry, long id, SketchWidget * dropOrigin);
 	void autorouterSettings();
 	void getViaSize(double & ringThickness, double & holeSize);
     void deleteItem(ItemBase *, bool deleteModelPart, bool doEmit, bool later);
@@ -99,7 +99,7 @@ public:
 	void clearGroundFillSeeds();
 	QString generateCopperFillUnit(ItemBase * itemBase, QPointF whereToStart);
 	double getWireStrokeWidth(Wire *, double wireWidth);
-	ItemBase * addCopperLogoItem(ViewLayer::ViewLayerSpec viewLayerSpec);
+	ItemBase * addCopperLogoItem(ViewLayer::ViewLayerPlacement viewLayerPlacement);
 	QString characterizeGroundFill(ViewLayer::ViewLayerID);
 	ViewGeometry::WireFlag getTraceFlag();
 	void hideCopperLogoItems(QList<ItemBase *> &);
@@ -113,7 +113,7 @@ public:
     int checkLoadedTraces();
 	bool hasCustomBoardShape();
     virtual QSizeF jumperItemSize();
-    virtual LayerList routingLayers(ViewLayer::ViewLayerSpec);
+    virtual LayerList routingLayers(ViewLayer::ViewLayerPlacement);
     virtual bool attachedToTopLayer(ConnectorItem *);
     virtual bool attachedToBottomLayer(ConnectorItem *);
     QHash<QString, QString> getAutorouterSettings();
@@ -124,6 +124,7 @@ public:
     QDialog * quoteDialog(QWidget * parent);
     void setGroundFillKeepout();
     void setViewFromBelow(bool);
+    bool dropOnBottom();
 
 public slots:
 	void resizeBoard(double w, double h, bool doEmit);
@@ -143,7 +144,7 @@ public:
 protected:
 	void setWireVisible(Wire * wire);
 	// void checkAutorouted();
-	ViewLayer::ViewLayerID multiLayerGetViewLayerID(ModelPart * modelPart, ViewLayer::ViewID, ViewLayer::ViewLayerSpec, LayerList &);
+	ViewLayer::ViewLayerID multiLayerGetViewLayerID(ModelPart * modelPart, ViewLayer::ViewID, ViewLayer::ViewLayerPlacement, LayerList &);
 	bool canChainWire(Wire *);
 	bool canDragWire(Wire * wire);
 	const QString & hoverEnterPartConnectorMessage(QGraphicsSceneHoverEvent * event, ConnectorItem * item);
@@ -155,18 +156,18 @@ protected:
 	void setUpColor(ConnectorItem * fromConnectorItem, ConnectorItem * toConnectorItem, Wire * wire, QUndoCommand * parentCommand);
 	ConnectorItem * findNearestPartConnectorItem(ConnectorItem * fromConnectorItem);
 	bool bothEndsConnectedAux(Wire * wire, ViewGeometry::WireFlags flag, ConnectorItem * oneEnd, QList<Wire *> & wires, QList<ConnectorItem *> & partConnectorItems, QList<Wire *> & visited);
-	void getLabelFont(QFont &, QColor &, ViewLayer::ViewLayerSpec);
+	void getLabelFont(QFont &, QColor &, ItemBase *);
 	double defaultGridSizeInches();
-	ViewLayer::ViewLayerID getLabelViewLayerID(ViewLayer::ViewLayerSpec);
-	ViewLayer::ViewLayerSpec wireViewLayerSpec(ConnectorItem *);
+	ViewLayer::ViewLayerID getLabelViewLayerID(ItemBase *);
+	ViewLayer::ViewLayerPlacement wireViewLayerPlacement(ConnectorItem *);
 	bool resizingJumperItemPress(QGraphicsItem * item);
 	bool resizingJumperItemRelease();
 	void resizeJumperItem();
 	QPoint calcFixedToCenterItemOffset(const QRect & viewPortRect, const QSizeF & helpSize);
 	void dealWithDefaultParts();
-	bool connectorItemHasSpec(ConnectorItem * connectorItem, ViewLayer::ViewLayerSpec spec);
-	ViewLayer::ViewLayerSpec createWireViewLayerSpec(ConnectorItem * from, ConnectorItem * to);
-	Wire * createTempWireForDragging(Wire * fromWire, ModelPart * wireModel, ConnectorItem * connectorItem, ViewGeometry & viewGeometry, ViewLayer::ViewLayerSpec);
+	bool connectorItemHasSpec(ConnectorItem * connectorItem, ViewLayer::ViewLayerPlacement spec);
+	ViewLayer::ViewLayerPlacement createWireViewLayerPlacement(ConnectorItem * from, ConnectorItem * to);
+	Wire * createTempWireForDragging(Wire * fromWire, ModelPart * wireModel, ConnectorItem * connectorItem, ViewGeometry & viewGeometry, ViewLayer::ViewLayerPlacement);
 	void prereleaseTempWireForDragging(Wire*);
 	void rotatePartLabels(double degrees, QTransform &, QPointF center, QUndoCommand * parentCommand);
 	bool hasNeighbor(ConnectorItem * connectorItem, ViewLayer::ViewLayerID viewLayerID, const QRectF & r);
@@ -179,15 +180,15 @@ protected:
     QString checkDroppedModuleID(const QString & moduleID);
     bool canConnect(Wire * from, ItemBase * to);
 	void collectThroughHole(QList<ConnectorItem *> & th, QList<ConnectorItem *> & pads, const LayerList &);
-	ViewLayer::ViewLayerSpec getViewLayerSpec(ModelPart * modelPart, QDomElement & instance, QDomElement & view, ViewGeometry &);
+	ViewLayer::ViewLayerPlacement getViewLayerPlacement(ModelPart * modelPart, QDomElement & instance, QDomElement & view, ViewGeometry &);
     void requestQuote();
     double calcBoardArea(int & boardCount);
-    PaletteItem* addPartItem(ModelPart * modelPart, ViewLayer::ViewLayerSpec, PaletteItem * paletteItem, bool doConnectors, bool & ok, ViewLayer::ViewID, bool temporary);
+    PaletteItem* addPartItem(ModelPart * modelPart, ViewLayer::ViewLayerPlacement, PaletteItem * paletteItem, bool doConnectors, bool & ok, ViewLayer::ViewID, bool temporary);
     void requestQuoteSoon();
     double getKeepoutMils();
 
 signals:
-	void subSwapSignal(SketchWidget *, ItemBase *, const QString & newModuleID, ViewLayer::ViewLayerSpec, long & newID, QUndoCommand * parentCommand);
+	void subSwapSignal(SketchWidget *, ItemBase *, const QString & newModuleID, ViewLayer::ViewLayerPlacement, long & newID, QUndoCommand * parentCommand);
 	void boardDeletedSignal();
 	void groundFillSignal();
 	void copperFillSignal();
@@ -204,7 +205,7 @@ protected slots:
 	void postImageSlot(class GroundPlaneGenerator *, QImage * copperImage, QImage * boardImage, QGraphicsItem * board, QList<QRectF> *);
     void gotFabQuote(QNetworkReply *);
     void requestQuoteNow();
-    void getDroppedItemViewLayerSpec(ModelPart * modelPart, ViewLayer::ViewLayerSpec &);
+    void getDroppedItemViewLayerPlacement(ModelPart * modelPart, ViewLayer::ViewLayerPlacement &);
 
 
 protected:

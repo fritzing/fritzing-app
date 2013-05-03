@@ -464,8 +464,8 @@ bool JumperItem::inDrag() {
 	return m_dragItem != NULL;
 }
 
-void JumperItem::loadLayerKin( const LayerHash & viewLayers, ViewLayer::ViewLayerSpec viewLayerSpec) {
-	PaletteItem::loadLayerKin(viewLayers, viewLayerSpec);
+void JumperItem::loadLayerKin( const LayerHash & viewLayers, ViewLayer::ViewLayerPlacement viewLayerPlacement) {
+	PaletteItem::loadLayerKin(viewLayers, viewLayerPlacement);
 	resize();
 }
 

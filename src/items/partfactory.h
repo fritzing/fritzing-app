@@ -37,7 +37,7 @@ $Date: 2013-04-07 22:56:44 +0200 (So, 07. Apr 2013) $
 class PartFactory
 {
 public:
-	static class ItemBase * createPart(class ModelPart *, ViewLayer::ViewLayerSpec, ViewLayer::ViewID, const class ViewGeometry & viewGeometry, long id, QMenu * itemMenu, QMenu * wireMenu, bool doLabel);
+	static class ItemBase * createPart(class ModelPart *, ViewLayer::ViewLayerPlacement, ViewLayer::ViewID, const class ViewGeometry & viewGeometry, long id, QMenu * itemMenu, QMenu * wireMenu, bool doLabel);
 	static QString getSvgFilename(class ModelPart *, const QString & filename, bool generate, bool handleSubparts);
 	static QString getFzpFilename(const QString & moduleID);
 	static void initFolder();

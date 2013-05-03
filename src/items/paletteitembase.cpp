@@ -612,8 +612,8 @@ QString PaletteItemBase::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<Q
 	QString path = filename();
 
 	QDomDocument flipDoc;
-	if (!getFlipDoc(modelPart(), path, viewLayerID, m_viewLayerSpec, flipDoc)) {
-		fixCopper1(modelPart(), path, viewLayerID, m_viewLayerSpec, flipDoc);
+	if (!getFlipDoc(modelPart(), path, viewLayerID, m_viewLayerPlacement, flipDoc)) {
+		fixCopper1(modelPart(), path, viewLayerID, m_viewLayerPlacement, flipDoc);
 	}
 	
 	//DebugDialog::debug(QString("path: %1").arg(path));

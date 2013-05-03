@@ -38,7 +38,7 @@ public:
     SchematicSketchWidget(ViewLayer::ViewID, QWidget *parent=0);
 
 	void addViewLayers();
-	ViewLayer::ViewLayerID getWireViewLayerID(const ViewGeometry & viewGeometry, ViewLayer::ViewLayerSpec);
+	ViewLayer::ViewLayerID getWireViewLayerID(const ViewGeometry & viewGeometry, ViewLayer::ViewLayerPlacement);
 	ViewLayer::ViewLayerID getDragWireViewLayerID(ConnectorItem *);
 	void initWire(Wire *, int penWidth);
 	bool autorouteTypePCB();
@@ -48,7 +48,7 @@ public:
 	void ensureTraceLayerVisible();
 	void setClipEnds(ClipableWire * vw, bool);
 	void getBendpointWidths(class Wire *, double w, double & w1, double & w2, bool & negativeOffsetRect);
-	void getLabelFont(QFont &, QColor &, ViewLayer::ViewLayerSpec);
+	void getLabelFont(QFont &, QColor &, ItemBase *);
 	void setNewPartVisible(ItemBase *);
 	bool canDropModelPart(ModelPart * modelPart); 
 	bool includeSymbols();
@@ -56,13 +56,13 @@ public:
 	void changeConnection(long fromID,
 						  const QString & fromConnectorID,
 						  long toID, const QString & toConnectorID,
-						  ViewLayer::ViewLayerSpec,
+						  ViewLayer::ViewLayerPlacement,
 						  bool connect, bool doEmit, 
 						  bool updateConnections);
 	double defaultGridSizeInches();
 	const QString & traceColor(ConnectorItem * forColor);
-	const QString & traceColor(ViewLayer::ViewLayerSpec);
-	bool isInLayers(ConnectorItem *, ViewLayer::ViewLayerSpec);
+	const QString & traceColor(ViewLayer::ViewLayerPlacement);
+	bool isInLayers(ConnectorItem *, ViewLayer::ViewLayerPlacement);
 	bool routeBothSides();
 	void addDefaultParts();
 	bool sameElectricalLayer2(ViewLayer::ViewLayerID, ViewLayer::ViewLayerID);
@@ -72,11 +72,11 @@ public:
 	double getAutorouterTraceWidth();
 	QString generateCopperFillUnit(ItemBase * itemBase, QPointF whereToStart);
 	double getWireStrokeWidth(Wire *, double wireWidth);
-	Wire * createTempWireForDragging(Wire * fromWire, ModelPart * wireModel, ConnectorItem * connectorItem, ViewGeometry & viewGeometry, ViewLayer::ViewLayerSpec);
+	Wire * createTempWireForDragging(Wire * fromWire, ModelPart * wireModel, ConnectorItem * connectorItem, ViewGeometry & viewGeometry, ViewLayer::ViewLayerPlacement);
 	void rotatePartLabels(double degrees, QTransform &, QPointF center, QUndoCommand * parentCommand);
 	void loadFromModelParts(QList<ModelPart *> & modelParts, BaseCommand::CrossViewType, QUndoCommand * parentCommand, 
 							bool offsetPaste, const QRectF * boundingRect, bool seekOutsideConnections, QList<long> & newIDs);
-    LayerList routingLayers(ViewLayer::ViewLayerSpec);
+    LayerList routingLayers(ViewLayer::ViewLayerPlacement);
     bool attachedToTopLayer(ConnectorItem *);
     bool attachedToBottomLayer(ConnectorItem *);
     QSizeF jumperItemSize();
@@ -90,16 +90,16 @@ public slots:
 
 protected slots:
 	void updateBigDots();
-    void getDroppedItemViewLayerSpec(ModelPart * modelPart, ViewLayer::ViewLayerSpec &);
+    void getDroppedItemViewLayerPlacement(ModelPart * modelPart, ViewLayer::ViewLayerPlacement &);
 
 protected:
 	double getRatsnestOpacity();
 	double getRatsnestWidth();
-	ViewLayer::ViewLayerID getLabelViewLayerID(ViewLayer::ViewLayerSpec);
+	ViewLayer::ViewLayerID getLabelViewLayerID(ItemBase *);
 	QPoint calcFixedToCenterItemOffset(const QRect & viewPortRect, const QSizeF & helpSize);
 	void extraRenderSvgStep(ItemBase *, QPointF offset, double dpi, double printerScale, QString & outputSvg);
 	QString makeCircleSVG(QPointF p, double r, QPointF offset, double dpi, double printerScale);
-	ViewLayer::ViewLayerSpec createWireViewLayerSpec(ConnectorItem * from, ConnectorItem * to);
+	ViewLayer::ViewLayerPlacement createWireViewLayerPlacement(ConnectorItem * from, ConnectorItem * to);
     void selectAllWires(ViewGeometry::WireFlag flag);
     bool canConnect(Wire * from, ItemBase * to);
     QString checkDroppedModuleID(const QString & moduleID);

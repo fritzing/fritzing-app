@@ -99,34 +99,34 @@ void GerberGenerator::exportToGerber(const QString & prefix, const QString & exp
 
     exportPickAndPlace(prefix, exportDir, board, sketchWidget, displayMessageBoxes);
 
-	LayerList viewLayerIDs = ViewLayer::copperLayers(ViewLayer::Bottom);
+	LayerList viewLayerIDs = ViewLayer::copperLayers(ViewLayer::NewBottom);
 	int copperInvalidCount = doCopper(board, sketchWidget, viewLayerIDs, "Copper0", CopperBottomSuffix, prefix, exportDir, displayMessageBoxes);
  
     if (sketchWidget->boardLayers() == 2) {
-		viewLayerIDs = ViewLayer::copperLayers(ViewLayer::Top);
+		viewLayerIDs = ViewLayer::copperLayers(ViewLayer::NewTop);
 		copperInvalidCount += doCopper(board, sketchWidget, viewLayerIDs, "Copper1", CopperTopSuffix, prefix, exportDir, displayMessageBoxes);
 	}
 
-	LayerList maskLayerIDs = ViewLayer::maskLayers(ViewLayer::Bottom);
+	LayerList maskLayerIDs = ViewLayer::maskLayers(ViewLayer::NewBottom);
 	QString maskBottom, maskTop;
 	int maskInvalidCount = doMask(maskLayerIDs, "Mask0", MaskBottomSuffix, board, sketchWidget, prefix, exportDir, displayMessageBoxes, maskBottom);
 
 	if (sketchWidget->boardLayers() == 2) {
-		maskLayerIDs = ViewLayer::maskLayers(ViewLayer::Top);
+		maskLayerIDs = ViewLayer::maskLayers(ViewLayer::NewTop);
 		maskInvalidCount += doMask(maskLayerIDs, "Mask1", MaskTopSuffix, board, sketchWidget, prefix, exportDir, displayMessageBoxes, maskTop);
 	}
 
-	maskLayerIDs = ViewLayer::maskLayers(ViewLayer::Bottom);
+	maskLayerIDs = ViewLayer::maskLayers(ViewLayer::NewBottom);
 	int pasteMaskInvalidCount = doPasteMask(maskLayerIDs, "PasteMask0", PasteMaskBottomSuffix, board, sketchWidget, prefix, exportDir, displayMessageBoxes);
 
 	if (sketchWidget->boardLayers() == 2) {
-		maskLayerIDs = ViewLayer::maskLayers(ViewLayer::Top);
+		maskLayerIDs = ViewLayer::maskLayers(ViewLayer::NewTop);
 		pasteMaskInvalidCount += doPasteMask(maskLayerIDs, "PasteMask1", PasteMaskTopSuffix, board, sketchWidget, prefix, exportDir, displayMessageBoxes);
 	}
 
-    LayerList silkLayerIDs = ViewLayer::silkLayers(ViewLayer::Top);
+    LayerList silkLayerIDs = ViewLayer::silkLayers(ViewLayer::NewTop);
 	int silkInvalidCount = doSilk(silkLayerIDs, "Silk1", SilkTopSuffix, board, sketchWidget, prefix, exportDir, displayMessageBoxes, maskTop);
-    silkLayerIDs = ViewLayer::silkLayers(ViewLayer::Bottom);
+    silkLayerIDs = ViewLayer::silkLayers(ViewLayer::NewBottom);
 	silkInvalidCount += doSilk(silkLayerIDs, "Silk0", SilkBottomSuffix, board, sketchWidget, prefix, exportDir, displayMessageBoxes, maskBottom);
 
     // now do it for the outline/contour

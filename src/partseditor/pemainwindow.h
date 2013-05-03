@@ -214,7 +214,7 @@ protected slots:
 	void hideOtherViews();
     void updateLayerMenu(bool resetLayout = false);
 	void updateAssignedConnectors();
-	void itemAddedSlot(ModelPart *, ItemBase *, ViewLayer::ViewLayerSpec, const ViewGeometry &, long id, SketchWidget * dropOrigin);
+	void itemAddedSlot(ModelPart *, ItemBase *, ViewLayer::ViewLayerPlacement, const ViewGeometry &, long id, SketchWidget * dropOrigin);
 	void itemMovedSlot(ItemBase *);
     void clickedItemCandidateSlot(QGraphicsItem *, bool & ok);
     void resizedSlot(ItemBase *);

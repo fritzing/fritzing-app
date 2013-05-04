@@ -350,7 +350,7 @@ void PCBSketchWidget::addDefaultParts() {
 	viewGeometry.setLoc(QPointF(0, 0));
 
 	// have to put this off until later, because positioning the item doesn't work correctly until the view is visible
-	m_addedDefaultPart = addItem(referenceModel()->retrieveModelPart(ModuleIDNames::TwoSidedRectanglePCBModuleIDName), defaultViewLayerPlacement(), BaseCommand::CrossView, viewGeometry, newID, -1, NULL);
+	m_addedDefaultPart = addItem(referenceModel()->retrieveModelPart(ModuleIDNames::TwoSidedRectanglePCBModuleIDName), ViewLayer::NewTop, BaseCommand::CrossView, viewGeometry, newID, -1, NULL);
 	m_addDefaultParts = true;
 
 	changeBoardLayers(2, true);
@@ -1289,7 +1289,7 @@ QSizeF PCBSketchWidget::jumperItemSize() {
 	    long newID = ItemBase::getNextID();
 	    ViewGeometry viewGeometry;
 	    viewGeometry.setLoc(QPointF(0, 0));
-	    ItemBase * itemBase = addItem(referenceModel()->retrieveModelPart(ModuleIDNames::JumperModuleIDName), defaultViewLayerPlacement(), BaseCommand::SingleView, viewGeometry, newID, -1, NULL);
+	    ItemBase * itemBase = addItem(referenceModel()->retrieveModelPart(ModuleIDNames::JumperModuleIDName), ViewLayer::NewTop, BaseCommand::SingleView, viewGeometry, newID, -1, NULL);
 	    if (itemBase) {
 		    JumperItem * jumperItem = qobject_cast<JumperItem *>(itemBase);
              m_jumperItemSize = jumperItem->connector0()->rect().size();
@@ -2887,7 +2887,12 @@ void PCBSketchWidget::setViewFromBelow(bool viewFromBelow) {
     SketchWidget::setViewFromBelow(viewFromBelow);
 }
 
-void PCBSketchWidget::getDroppedItemViewLayerPlacement(ModelPart *, ViewLayer::ViewLayerPlacement & viewLayerPlacement) {
+void PCBSketchWidget::getDroppedItemViewLayerPlacement(ModelPart * modelPart, ViewLayer::ViewLayerPlacement & viewLayerPlacement) {
+    if (ResizableBoard::isBoard(modelPart)) {
+        viewLayerPlacement = ViewLayer::NewTop;   
+        return;
+    }
+
     viewLayerPlacement = defaultViewLayerPlacement();   // top for a two layer board
     if (boardLayers() == 2) {
         if (dropOnBottom()) {

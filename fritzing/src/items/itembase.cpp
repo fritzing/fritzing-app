@@ -1810,7 +1810,7 @@ bool ItemBase::getFlipDoc(ModelPart * modelPart, const QString & filename, ViewL
             return false;
         }
        
-        if (modelPart->hasViewFor(ViewLayer::PCBView, ViewLayer::Copper0) && modelPart->hasViewFor(ViewLayer::PCBView, ViewLayer::Copper1)) {
+        if (modelPart->itemType() == ModelPart::Part) {
 		    if (viewLayerID == ViewLayer::Copper0) {
                 SvgFlattener::replaceElementID(filename, "", flipDoc, ViewLayer::viewLayerXmlNameFromID(ViewLayer::Copper0), "");
 			    //QString t1 = flipDoc.toString();

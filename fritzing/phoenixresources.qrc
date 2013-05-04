@@ -171,6 +171,8 @@
         <file>resources/parts/core/copper1logoimage.fzp</file>
 	<file>resources/parts/core/copper0logotext.fzp</file>
         <file>resources/parts/core/copper0logoimage.fzp</file>
+	<file>resources/parts/core/silkscreen0logotext.fzp</file>
+        <file>resources/parts/core/silkscreen0logoimage.fzp</file>
 	<file>resources/parts/core/schematiclogotext.fzp</file>
         <file>resources/parts/core/schematiclogoimage.fzp</file>
 	<file>resources/parts/core/breadboardlogotext.fzp</file>

@@ -182,7 +182,7 @@ void PaletteItem::loadLayerKin(const LayerHash & viewLayers, ViewLayer::ViewLaye
                 if (ViewLayer::topLayers().contains(viewLayerID)) continue;
             }
         }
-        else {
+        else if (m_modelPart->itemType() == ModelPart::Part) {
             // through hole part
             if (ViewLayer::silkLayers().contains(viewLayerID)) {
                 if (viewLayerPlacement == ViewLayer::NewTop) {

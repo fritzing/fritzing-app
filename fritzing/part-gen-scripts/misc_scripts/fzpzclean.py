@@ -38,6 +38,7 @@ def main():
     inputdir = None
     outputdir = None
     outputPrefix = None
+    rename = False
     
     for o, a in opts:
         #print o
@@ -82,7 +83,7 @@ def main():
 
                 # record svg renamings and fzp location for fixing paths later
                 svgrenames = []
-                fzplocation = ''
+                fzplocation = None
 
                 # extract files to directory structure
                 for i, name in enumerate(zf.namelist()):
@@ -128,9 +129,11 @@ def main():
                                 if ending == 'fzp' and rename:
                                         base = os.path.basename(zf.filename)
                                         outname = os.path.splitext(base)[0]
+                                        outname += '.fzp'
 
                                 # write new files
-                                outfile = open(os.path.join(outputdir, subdir, outname), 'wb')
+                                filelocation = os.path.join(outputdir, subdir, outname)
+                                outfile = open(filelocation, 'wb')
                                 outfile.write(zf.read(name))
                                 outfile.flush()
                                 outfile.close()
@@ -139,15 +142,16 @@ def main():
                                 if ending == 'svg':
                                         svgrenames.append((refname, outname))
                                 elif ending == 'fzp':
-                                        fzplocation = os.path.join(outputdir, subdir, outname)
+                                        fzplocation = filelocation
 
-                # fix svg references in fzp
+                # update svg references in fzp
                 fzpfile = open(fzplocation, 'r+')
                 s = fzpfile.read()
                 for svgre in svgrenames:
                         if s.find(svgre[0]) == -1:
                                 print "WARNING reference could not be found:", svgre[0]
                         s = s.replace(svgre[0], svgre[1])
+                fzpfile.seek(0)
                 fzpfile.write(s)
                 fzpfile.flush()
                 fzpfile.close()

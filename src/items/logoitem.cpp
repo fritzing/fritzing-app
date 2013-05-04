@@ -52,6 +52,7 @@ $Date: 2013-04-22 23:44:56 +0200 (Mo, 22. Apr 2013) $
 #include <QColorDialog>
 
 static QStringList LogoImageNames;
+static QStringList Logo0ImageNames;
 static QStringList NewLogoImageNames;
 static QStringList Copper0ImageNames;
 static QStringList Copper1ImageNames;
@@ -61,6 +62,7 @@ LogoItem::LogoItem( ModelPart * modelPart, ViewLayer::ViewID viewID, const ViewG
 {
 	if (LogoImageNames.count() == 0) {
 		LogoImageNames << "Made with Fritzing" << "Fritzing icon" << "OHANDA logo" << "OSHW logo";
+		Logo0ImageNames << "Made with Fritzing 0" << "Fritzing icon 0" << "OHANDA logo 0" << "OSHW logo 0";
 	}
 
     m_svgOnly = false;
@@ -130,7 +132,7 @@ bool LogoItem::canRetrieveLayer(ViewLayer::ViewLayerID viewLayerID) {
 }
 
 QStringList & LogoItem::getImageNames() {
-	return LogoImageNames;
+	return isBottom() ? Logo0ImageNames : LogoImageNames;
 }
 
 QStringList & LogoItem::getNewImageNames() {
@@ -240,8 +242,15 @@ void LogoItem::prepLoadImageAux(const QString & fileName, bool addName)
 	}
 }
 
-bool LogoItem::reloadImage(const QString & svg, const QSizeF & aspectRatio, const QString & fileName, bool addName) 
+bool LogoItem::reloadImage(const QString & incomingSvg, const QSizeF & aspectRatio, const QString & fileName, bool addName) 
 {
+    QString svg = incomingSvg;
+	if (isBottom()) {
+		if (!svg.contains("_flipped_")) {
+			svg = flipSvg(svg);
+		}
+	}
+
     QString shape = getShapeForRenderer(svg);
 	bool result = resetRenderer(shape);
 	if (result) {
@@ -607,12 +616,15 @@ QString LogoItem::hackSvg(const QString & svg, const QString & logo)
 				QString h = root.attribute("height");
 				bool ok;
 				modelPart()->setLocalProp("height", TextUtils::convertToInches(h, &ok, false) * 25.4);
-				return doc.toString();
+                if (!isBottom()) return  doc.toString();
+                return flipSvg(doc.toString());
 			}
 		}
 	}
 
-	return svg;
+    if (!isBottom()) return svg;
+
+	return flipSvg(svg);
 }
 
 void LogoItem::widthEntry() {
@@ -671,11 +683,11 @@ ItemBase::PluralType LogoItem::isPlural() {
 }
 
 ViewLayer::ViewLayerID LogoItem::layer() {
-	return  ViewLayer::Silkscreen1;
+	return  isBottom() ? ViewLayer::Silkscreen0 : ViewLayer::Silkscreen1;
 }
 
 QString LogoItem::colorString() {
-	return ViewLayer::Silkscreen1Color;
+    return isBottom() ? ViewLayer::Silkscreen0Color :  ViewLayer::Silkscreen1Color;
 }
 
 QString LogoItem::layerName() 
@@ -731,6 +743,31 @@ void LogoItem::paintHover(QPainter *painter, const QStyleOptionGraphicsItem *opt
 	PaletteItem::paintHover(painter, option, widget);
 }
 
+bool LogoItem::isBottom() {
+	return modelPart()->properties().value("layer").contains("0");
+}
+
+QString LogoItem::flipSvg(const QString & svg)
+{
+	QString newSvg = svg;
+	newSvg.replace(ViewLayer::viewLayerXmlNameFromID(ViewLayer::Silkscreen1), ViewLayer::viewLayerXmlNameFromID(ViewLayer::Silkscreen0));
+	newSvg.replace(ViewLayer::Silkscreen1Color, ViewLayer::Silkscreen0Color, Qt::CaseInsensitive);
+    return flipSvgAux(newSvg);
+}
+
+QString LogoItem::flipSvgAux(QString & newSvg)
+{
+	QMatrix m;
+	QSvgRenderer renderer(newSvg.toUtf8());
+	QRectF bounds = renderer.viewBoxF();
+	m.translate(bounds.center().x(), bounds.center().y());
+	QMatrix mMinus = m.inverted();
+    QMatrix cm = mMinus * QMatrix().scale(-1, 1) * m;
+	int gix = newSvg.indexOf("<g");
+	newSvg.replace(gix, 2, "<g _flipped_='1' transform='" + TextUtils::svgMatrix(cm) + "'");
+	return newSvg;
+}
+
 ///////////////////////////////////////////////////////////////////////
 
 SchematicLogoItem::SchematicLogoItem( ModelPart * modelPart, ViewLayer::ViewID viewID, const ViewGeometry & viewGeometry, long id, QMenu * itemMenu, bool doLabel)
@@ -747,6 +784,10 @@ ViewLayer::ViewLayerID SchematicLogoItem::layer() {
 
 QString SchematicLogoItem::colorString() {
     return "black";
+}
+
+bool SchematicLogoItem::isBottom() {
+    return false;
 }
 
 ///////////////////////////////////////////////////////////////////////
@@ -817,6 +858,10 @@ void BreadboardLogoItem::setProp(const QString & prop, const QString & value) {
 	LogoItem::setProp(prop, value);
 }
 
+bool BreadboardLogoItem::isBottom() {
+    return false;
+}
+
 ///////////////////////////////////////////////////////////////////////
 
 CopperLogoItem::CopperLogoItem( ModelPart * modelPart, ViewLayer::ViewID viewID, const ViewGeometry & viewGeometry, long id, QMenu * itemMenu, bool doLabel)
@@ -842,53 +887,23 @@ CopperLogoItem::~CopperLogoItem() {
 }
 
 ViewLayer::ViewLayerID CopperLogoItem::layer() {
-	return isCopper0() ? ViewLayer::Copper0 :  ViewLayer::Copper1;
+	return isBottom() ? ViewLayer::Copper0 :  ViewLayer::Copper1;
 }
 
 QString CopperLogoItem::colorString() {
-	return isCopper0() ? ViewLayer::Copper0Color :  ViewLayer::Copper1Color;
+	return isBottom() ? ViewLayer::Copper0Color :  ViewLayer::Copper1Color;
 }
 
 QStringList & CopperLogoItem::getImageNames() {
-	return isCopper0() ? Copper0ImageNames :  Copper1ImageNames;
-}
-
-QString CopperLogoItem::hackSvg(const QString & svg, const QString & logo) {
-	QString newSvg = LogoItem::hackSvg(svg, logo);
-	if (!isCopper0()) return newSvg;
-
-	return flipSvg(newSvg);
+	return isBottom() ? Copper0ImageNames : Copper1ImageNames;
 }
 
 QString CopperLogoItem::flipSvg(const QString & svg)
 {
 	QString newSvg = svg;
-	newSvg.replace("copper1", "copper0");
+	newSvg.replace(ViewLayer::viewLayerXmlNameFromID(ViewLayer::Copper1), ViewLayer::viewLayerXmlNameFromID(ViewLayer::Copper0));
 	newSvg.replace(ViewLayer::Copper1Color, ViewLayer::Copper0Color, Qt::CaseInsensitive);
-	QMatrix m;
-	QSvgRenderer renderer(newSvg.toUtf8());
-	QRectF bounds = renderer.viewBoxF();
-	m.translate(bounds.center().x(), bounds.center().y());
-	QMatrix mMinus = m.inverted();
-    QMatrix cm = mMinus * QMatrix().scale(-1, 1) * m;
-	int gix = newSvg.indexOf("<g");
-	newSvg.replace(gix, 2, "<g _flipped_='1' transform='" + TextUtils::svgMatrix(cm) + "'");
-	return newSvg;
-}
-
-bool CopperLogoItem::reloadImage(const QString & svg, const QSizeF & aspectRatio, const QString & fileName, bool addName) 
-{
-	if (isCopper0()) {
-		if (!svg.contains("_flipped_")) {
-			return LogoItem::reloadImage(flipSvg(svg), aspectRatio, fileName, addName);
-		}
-	}
-
-	return LogoItem::reloadImage(svg, aspectRatio, fileName, addName);
-}
-
-bool CopperLogoItem::isCopper0() {
-	return modelPart()->properties().value("layer").contains("0");
+    return flipSvgAux(newSvg);
 }
 
 ////////////////////////////////////////////
@@ -1000,4 +1015,9 @@ bool BoardLogoItem::collectExtraInfo(QWidget * parent, const QString & family, c
 
     return LogoItem::collectExtraInfo(parent, family, prop, value, swappingEnabled, returnProp, returnValue, returnWidget, hide);
 }
+
+bool BoardLogoItem::isBottom() {
+    return false;
+}
+
 

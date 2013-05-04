@@ -84,6 +84,9 @@ protected:
     bool checkImage(const QString & filename);
 	QStringList & getImageNames();
 	QStringList & getNewImageNames();
+	virtual bool isBottom();
+	virtual QString flipSvg(const QString & svg);
+	QString flipSvgAux(QString & newSvg);
 
 protected:
 	QString m_logo;
@@ -101,15 +104,11 @@ public:
 	CopperLogoItem(ModelPart *, ViewLayer::ViewID, const ViewGeometry & viewGeometry, long id, QMenu * itemMenu, bool doLabel);
 	~CopperLogoItem();
 
-	bool reloadImage(const QString & svg, const QSizeF & aspectRatio, const QString & fileName, bool addName);
-
 protected:
 	ViewLayer::ViewLayerID layer();
 	QString colorString();
 	QStringList & getImageNames();
-	QString hackSvg(const QString & svg, const QString & logo);
 	QString flipSvg(const QString & svg);
-	bool isCopper0();
 };
 
 class SchematicLogoItem : public LogoItem
@@ -123,6 +122,7 @@ public:
 protected:
 	ViewLayer::ViewLayerID layer();
 	QString colorString();
+    bool isBottom();
 };
 
 class BreadboardLogoItem : public LogoItem
@@ -142,6 +142,7 @@ public slots:
 protected:
 	ViewLayer::ViewLayerID layer();
 	QString colorString();
+    bool isBottom();
 
 protected:
     QString m_color;
@@ -167,7 +168,7 @@ protected:
     bool canRetrieveLayer(ViewLayer::ViewLayerID viewLayerID);
     void reloadLayerKin(double mmW, double mmH);
     bool checkImage(const QString & filename);
-
+    bool isBottom();
 };
 
 

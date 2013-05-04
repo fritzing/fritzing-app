@@ -1975,15 +1975,27 @@ void MainWindow::swapSelectedMap(const QString & family, const QString & prop, Q
 	QString moduleID = m_referenceModel->retrieveModuleIdWith(family, prop, true);
 	bool exactMatch = m_referenceModel->lastWasExactMatch();
 
-	if(moduleID.isEmpty()) {
-        if (prop.compare("layer") == 0 && itemBase->modelPart()->flippedSMD()) {
-            ItemBase * viewItem = itemBase->modelPart()->viewItem(ViewLayer::PCBView);
-            if (viewItem) {
-                ViewLayer::ViewLayerID wantViewLayerID = ViewLayer::viewLayerIDFromXmlString(currPropsMap.value(prop));
-                if (viewItem->viewLayerID() != wantViewLayerID) {
-                    ViewLayer::ViewLayerPlacement viewLayerPlacement = (wantViewLayerID == ViewLayer::Copper0) ? ViewLayer::NewBottom : ViewLayer::NewTop;
-                    swapSelectedAux(itemBase->layerKinChief(), itemBase->moduleID(), true, viewLayerPlacement);
-                    return;
+	if (moduleID.isEmpty()) {
+        if (prop.compare("layer") == 0) {
+            if (itemBase->modelPart()->flippedSMD()) {
+                ItemBase * viewItem = itemBase->modelPart()->viewItem(ViewLayer::PCBView);
+                if (viewItem) {
+                    ViewLayer::ViewLayerID wantViewLayerID = ViewLayer::viewLayerIDFromXmlString(currPropsMap.value(prop));
+                    if (viewItem->viewLayerID() != wantViewLayerID) {
+                        ViewLayer::ViewLayerPlacement viewLayerPlacement = (wantViewLayerID == ViewLayer::Copper0) ? ViewLayer::NewBottom : ViewLayer::NewTop;
+                        swapSelectedAux(itemBase->layerKinChief(), itemBase->moduleID(), true, viewLayerPlacement);
+                        return;
+                    }
+                }
+            }
+            else if (itemBase->itemType() == ModelPart::Part) {
+                ItemBase * viewItem = itemBase->modelPart()->viewItem(ViewLayer::PCBView);
+                if (viewItem) {
+                    ViewLayer::ViewLayerPlacement viewLayerPlacement = (currPropsMap.value(prop) == "bottom") ? ViewLayer::NewBottom : ViewLayer::NewTop;
+                    if (viewItem->viewLayerPlacement() != viewLayerPlacement) {
+                        swapSelectedAux(itemBase->layerKinChief(), itemBase->moduleID(), true, viewLayerPlacement);
+                        return;
+                    }
                 }
             }
         }
@@ -2081,6 +2093,10 @@ void MainWindow::swapSelectedAux(ItemBase * itemBase, const QString & moduleID, 
     if (m_pcbGraphicsView->boardLayers() == 2) {
         ModelPart * modelPart = m_referenceModel->retrieveModelPart(moduleID);
         if (modelPart->flippedSMD()) {
+            viewLayerPlacement = m_pcbGraphicsView->dropOnBottom() ? ViewLayer::NewBottom : ViewLayer::NewTop;
+            if (useViewLayerPlacement) viewLayerPlacement = overrideViewLayerPlacement;
+        }
+        else if (modelPart->itemType() == ModelPart::Part) {
             viewLayerPlacement = m_pcbGraphicsView->dropOnBottom() ? ViewLayer::NewBottom : ViewLayer::NewTop;
             if (useViewLayerPlacement) viewLayerPlacement = overrideViewLayerPlacement;
         }

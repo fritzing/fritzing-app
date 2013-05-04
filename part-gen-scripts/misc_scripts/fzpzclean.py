@@ -152,6 +152,7 @@ def main():
                                 print "WARNING reference could not be found:", svgre[0]
                         s = s.replace(svgre[0], svgre[1])
                 fzpfile.seek(0)
+                fzpfile.truncate()
                 fzpfile.write(s)
                 fzpfile.flush()
                 fzpfile.close()

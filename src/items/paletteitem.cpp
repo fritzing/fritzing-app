@@ -607,21 +607,40 @@ bool PaletteItem::collectExtraInfo(QWidget * parent, const QString & family, con
 }
 
 QStringList PaletteItem::collectValues(const QString & family, const QString & prop, QString & value) {
-    if (modelPart()->flippedSMD() && prop.compare("layer") == 0) {
-        QStringList values = PaletteItemBase::collectValues(family, prop, value);
-        if (values.count() == 0) {
-            ItemBase * itemBase = modelPart()->viewItem(ViewLayer::PCBView);
-            if (itemBase) {
-                values << "copper0" << "copper1";
-                if (itemBase->viewLayerID() == ViewLayer::Copper0) {
-                    value = values.at(0);
-                }
-                else {
-                    value = values.at(1);
+    if (prop.compare("layer") == 0) {
+        if (modelPart()->flippedSMD()) {
+            QStringList values = PaletteItemBase::collectValues(family, prop, value);
+            if (values.count() == 0) {
+                ItemBase * itemBase = modelPart()->viewItem(ViewLayer::PCBView);
+                if (itemBase) {
+                    values << "copper0" << "copper1";
+                    if (itemBase->viewLayerID() == ViewLayer::Copper0) {
+                        value = values.at(0);
+                    }
+                    else {
+                        value = values.at(1);
+                    }
                 }
             }
+            return values;
         }
-        return values;
+
+        if (modelPart()->itemType() == ModelPart::Part) {
+            QStringList values = PaletteItemBase::collectValues(family, prop, value);
+            if (values.count() == 0) {
+                ItemBase * itemBase = modelPart()->viewItem(ViewLayer::PCBView);
+                if (itemBase) {
+                    values << "bottom" << "top";
+                    if (itemBase->viewLayerPlacement() == ViewLayer::NewBottom) {
+                        value = values.at(0);
+                    }
+                    else {
+                        value = values.at(1);
+                    }
+                }
+            }
+            return values;
+        }
     }
 
    return PaletteItemBase::collectValues(family, prop, value);

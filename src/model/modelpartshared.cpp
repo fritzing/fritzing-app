@@ -556,6 +556,12 @@ void ModelPartShared::flipSMDAnd() {
 	        viewImage->flipped |= (one << ViewLayer::Silkscreen0);
         }
 
+        // swap layer for any tht part
+        if (!m_properties.keys().contains("layer")) {
+            // used for swapping part from copper1 to copper0
+            m_properties.insert("layer", "");
+        }
+
         return;
     }
 

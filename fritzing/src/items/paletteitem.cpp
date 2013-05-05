@@ -613,7 +613,7 @@ QStringList PaletteItem::collectValues(const QString & family, const QString & p
             if (values.count() == 0) {
                 ItemBase * itemBase = modelPart()->viewItem(ViewLayer::PCBView);
                 if (itemBase) {
-                    values << "copper0" << "copper1";
+                    values << TranslatedPropertyNames.value("bottom") << TranslatedPropertyNames.value("top");
                     if (itemBase->viewLayerID() == ViewLayer::Copper0) {
                         value = values.at(0);
                     }
@@ -630,7 +630,7 @@ QStringList PaletteItem::collectValues(const QString & family, const QString & p
             if (values.count() == 0) {
                 ItemBase * itemBase = modelPart()->viewItem(ViewLayer::PCBView);
                 if (itemBase) {
-                    values << "bottom" << "top";
+                    values << TranslatedPropertyNames.value("bottom") << TranslatedPropertyNames.value("top");
                     if (itemBase->viewLayerPlacement() == ViewLayer::NewBottom) {
                         value = values.at(0);
                     }

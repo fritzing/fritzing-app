@@ -63,6 +63,7 @@ signals:
 	void loadingInstances(ModelBase *, QDomElement & instances);
 	void loadingInstance(ModelBase *, QDomElement & instance);
 	void loadedInstances(ModelBase *, QDomElement & instances);
+    void obsoleteSMDOrientationSignal();
 
 protected:
 	void renewModelIndexes(QDomElement & root, const QString & childName, QHash<long, long> & oldToNew);
@@ -71,6 +72,7 @@ protected:
 	static bool isRatsnest(QDomElement & instance);
 	static void checkTraces(QDomElement & instance);
 	static void checkMystery(QDomElement & instance);
+	static bool checkObsoleteOrientation(QDomElement & instance);
 
 protected:
 	QPointer<ModelPart> m_root;

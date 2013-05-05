@@ -330,6 +330,7 @@ void ItemBase::initNames() {
 		color.setNamedColor(colorName);
 		setUnconnectedColor(color);
 	}
+
 }
 
 void ItemBase::saveInstance(QXmlStreamWriter & streamWriter) {
@@ -1410,7 +1411,7 @@ FSvgRenderer * ItemBase::setUpImage(ModelPart * modelPart, LayerAttributes & lay
 
 	FSvgRenderer * newRenderer = new FSvgRenderer();
 	QDomDocument flipDoc;
-	if (!getFlipDoc(modelPart, filename, layerAttributes.viewLayerID, layerAttributes.viewLayerPlacement, flipDoc)) {
+	if (!getFlipDoc(modelPart, filename, layerAttributes.viewLayerID, layerAttributes.viewLayerPlacement, flipDoc, layerAttributes.orientation)) {
         // part is not flipped, check that THT parts have both copper layers
 		fixCopper1(modelPart, filename, layerAttributes.viewLayerID, layerAttributes.viewLayerPlacement, flipDoc);
 	}
@@ -1797,16 +1798,16 @@ QRectF ItemBase::partLabelSceneBoundingRect() {
 	return m_partLabel->sceneBoundingRect();
 }
 
-bool ItemBase::getFlipDoc(ModelPart * modelPart, const QString & filename, ViewLayer::ViewLayerID viewLayerID, ViewLayer::ViewLayerPlacement viewLayerPlacement, QDomDocument & flipDoc)
+bool ItemBase::getFlipDoc(ModelPart * modelPart, const QString & filename, ViewLayer::ViewLayerID viewLayerID, ViewLayer::ViewLayerPlacement viewLayerPlacement, QDomDocument & flipDoc, Qt::Orientations orientation)
 {
 	if (viewLayerPlacement == ViewLayer::NewBottom) {
         if (modelPart->flippedSMD()) {
 		    if (viewLayerID == ViewLayer::Copper0) {
-			    SvgFlattener::flipSMDSvg(filename, "", flipDoc, ViewLayer::viewLayerXmlNameFromID(ViewLayer::Copper1), ViewLayer::viewLayerXmlNameFromID(ViewLayer::Copper0), GraphicsUtils::SVGDPI);
+			    SvgFlattener::flipSMDSvg(filename, "", flipDoc, ViewLayer::viewLayerXmlNameFromID(ViewLayer::Copper1), ViewLayer::viewLayerXmlNameFromID(ViewLayer::Copper0), GraphicsUtils::SVGDPI, orientation);
 			    return true;
 		    }
 		    else if (viewLayerID == ViewLayer::Silkscreen0) {
-			    SvgFlattener::flipSMDSvg(filename, "", flipDoc, ViewLayer::viewLayerXmlNameFromID(ViewLayer::Silkscreen1), ViewLayer::viewLayerXmlNameFromID(ViewLayer::Silkscreen0), GraphicsUtils::SVGDPI);
+			    SvgFlattener::flipSMDSvg(filename, "", flipDoc, ViewLayer::viewLayerXmlNameFromID(ViewLayer::Silkscreen1), ViewLayer::viewLayerXmlNameFromID(ViewLayer::Silkscreen0), GraphicsUtils::SVGDPI, orientation);
 			    return true;
 		    }
             return false;
@@ -1816,24 +1817,22 @@ bool ItemBase::getFlipDoc(ModelPart * modelPart, const QString & filename, ViewL
 		    if (viewLayerID == ViewLayer::Copper0) {
                 SvgFlattener::replaceElementID(filename, "", flipDoc, ViewLayer::viewLayerXmlNameFromID(ViewLayer::Copper0), "");
 			    //QString t1 = flipDoc.toString();
-                SvgFlattener::flipSMDSvg(filename, "", flipDoc, ViewLayer::viewLayerXmlNameFromID(ViewLayer::Copper1), ViewLayer::viewLayerXmlNameFromID(ViewLayer::Copper0), GraphicsUtils::SVGDPI);
+                SvgFlattener::flipSMDSvg(filename, "", flipDoc, ViewLayer::viewLayerXmlNameFromID(ViewLayer::Copper1), ViewLayer::viewLayerXmlNameFromID(ViewLayer::Copper0), GraphicsUtils::SVGDPI, orientation);
 			    //QString t2 = flipDoc.toString();
 			    return true;
 		    }
 		    if (viewLayerID == ViewLayer::Copper1) {
 			    SvgFlattener::replaceElementID(filename, "", flipDoc, ViewLayer::viewLayerXmlNameFromID(ViewLayer::Copper1), "");
 			    //QString t1 = flipDoc.toString();
-			    SvgFlattener::flipSMDSvg(filename, "", flipDoc, ViewLayer::viewLayerXmlNameFromID(ViewLayer::Copper0), ViewLayer::viewLayerXmlNameFromID(ViewLayer::Copper1), GraphicsUtils::SVGDPI);
+			    SvgFlattener::flipSMDSvg(filename, "", flipDoc, ViewLayer::viewLayerXmlNameFromID(ViewLayer::Copper0), ViewLayer::viewLayerXmlNameFromID(ViewLayer::Copper1), GraphicsUtils::SVGDPI, orientation);
 			    //QString t2 = flipDoc.toString();
 			    return true;
 		    }
 		    else if (viewLayerID == ViewLayer::Silkscreen0) {
-			    SvgFlattener::flipSMDSvg(filename, "", flipDoc, ViewLayer::viewLayerXmlNameFromID(ViewLayer::Silkscreen1), ViewLayer::viewLayerXmlNameFromID(ViewLayer::Silkscreen0), GraphicsUtils::SVGDPI);
+			    SvgFlattener::flipSMDSvg(filename, "", flipDoc, ViewLayer::viewLayerXmlNameFromID(ViewLayer::Silkscreen1), ViewLayer::viewLayerXmlNameFromID(ViewLayer::Silkscreen0), GraphicsUtils::SVGDPI, orientation);
 			    return true;
 		    }
         }
-    
-
 	}
 
 	return false;

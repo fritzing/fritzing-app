@@ -156,6 +156,7 @@ protected:
     void generateSwap(const QString & text, GenModuleID, GenFzp, GenSvg makeBreadboardSvg, GenSvg makeSchematicSvg, GenSvg makePcbSvg);
     bool makeLocalModifications(QByteArray & svg, const QString & filename);
     void makeOneKin(qint64 & id, ViewLayer::ViewLayerID, ViewLayer::ViewLayerPlacement, ViewGeometry &, const LayerHash &);
+    void initLayerAttributes(LayerAttributes & layerAttributes, ViewLayer::ViewID, ViewLayer::ViewLayerID, ViewLayer::ViewLayerPlacement, bool doConnectors);
 
 protected:
     void setUpHoleSizes(const QString & type, HoleClassThing &);

@@ -55,6 +55,7 @@ public:
     ViewLayer::ViewLayerID viewLayerID;
     ViewLayer::ViewLayerPlacement viewLayerPlacement;
     bool doConnectors;
+    Qt::Orientations orientation;
 };
 
 #endif

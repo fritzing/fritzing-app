@@ -325,7 +325,7 @@ protected:
     void updateHidden();
 
 protected:
-	static bool getFlipDoc(ModelPart * modelPart, const QString & filename, ViewLayer::ViewLayerID viewLayerID, ViewLayer::ViewLayerPlacement, QDomDocument &);
+	static bool getFlipDoc(ModelPart * modelPart, const QString & filename, ViewLayer::ViewLayerID viewLayerID, ViewLayer::ViewLayerPlacement, QDomDocument &, Qt::Orientations);
 	static bool fixCopper1(ModelPart * modelPart, const QString & filename, ViewLayer::ViewLayerID viewLayerID, ViewLayer::ViewLayerPlacement, QDomDocument &);
 
 protected:

@@ -255,6 +255,9 @@ void ModelPart::saveInstance(QXmlStreamWriter & streamWriter)
 		streamWriter.writeAttribute("moduleIdRef", moduleIdRef);
 		streamWriter.writeAttribute("modelIndex", QString::number(m_index));
 		streamWriter.writeAttribute("path", m_modelPartShared->path());
+        if (m_modelPartShared->flippedSMD()) {
+			streamWriter.writeAttribute("flippedSMD", "true");
+		}
 	}
 
 	bool writeLocal = false;

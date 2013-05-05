@@ -611,8 +611,14 @@ QString PaletteItemBase::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<Q
 	QString xmlName = ViewLayer::viewLayerXmlNameFromID(viewLayerID);
 	QString path = filename();
 
+    Qt::Orientations orientation = Qt::Vertical;
+    InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
+    if (infoGraphicsView) {
+        orientation = infoGraphicsView->smdOrientation();
+    }
+
 	QDomDocument flipDoc;
-	if (!getFlipDoc(modelPart(), path, viewLayerID, m_viewLayerPlacement, flipDoc)) {
+	if (!getFlipDoc(modelPart(), path, viewLayerID, m_viewLayerPlacement, flipDoc, orientation)) {
         // part is not flipped, check that THT parts have both copper layers
 		fixCopper1(modelPart(), path, viewLayerID, m_viewLayerPlacement, flipDoc);
 	}

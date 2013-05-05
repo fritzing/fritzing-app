@@ -112,6 +112,8 @@ public:
 
 	void setActiveWire(Wire *);
 	void setActiveConnectorItem(ConnectorItem *);
+    void setSMDOrientation(Qt::Orientations);
+    Qt::Orientations smdOrientation();
 
 
 public slots:
@@ -136,7 +138,7 @@ protected:
 	int m_boardLayers;
 	bool m_hoverEnterMode;
 	bool m_hoverEnterConnectorMode;
-
+    Qt::Orientations m_smdOrientation;
 };
 
 #endif

@@ -1977,21 +1977,10 @@ void MainWindow::swapSelectedMap(const QString & family, const QString & prop, Q
 
 	if (moduleID.isEmpty()) {
         if (prop.compare("layer") == 0) {
-            if (itemBase->modelPart()->flippedSMD()) {
+            if (itemBase->modelPart()->flippedSMD() || itemBase->itemType() == ModelPart::Part) {
                 ItemBase * viewItem = itemBase->modelPart()->viewItem(ViewLayer::PCBView);
                 if (viewItem) {
-                    ViewLayer::ViewLayerID wantViewLayerID = ViewLayer::viewLayerIDFromXmlString(currPropsMap.value(prop));
-                    if (viewItem->viewLayerID() != wantViewLayerID) {
-                        ViewLayer::ViewLayerPlacement viewLayerPlacement = (wantViewLayerID == ViewLayer::Copper0) ? ViewLayer::NewBottom : ViewLayer::NewTop;
-                        swapSelectedAux(itemBase->layerKinChief(), itemBase->moduleID(), true, viewLayerPlacement);
-                        return;
-                    }
-                }
-            }
-            else if (itemBase->itemType() == ModelPart::Part) {
-                ItemBase * viewItem = itemBase->modelPart()->viewItem(ViewLayer::PCBView);
-                if (viewItem) {
-                    ViewLayer::ViewLayerPlacement viewLayerPlacement = (currPropsMap.value(prop) == "bottom") ? ViewLayer::NewBottom : ViewLayer::NewTop;
+                    ViewLayer::ViewLayerPlacement viewLayerPlacement = (currPropsMap.value(prop) == ItemBase::TranslatedPropertyNames.value("bottom") ? ViewLayer::NewBottom : ViewLayer::NewTop);
                     if (viewItem->viewLayerPlacement() != viewLayerPlacement) {
                         swapSelectedAux(itemBase->layerKinChief(), itemBase->moduleID(), true, viewLayerPlacement);
                         return;

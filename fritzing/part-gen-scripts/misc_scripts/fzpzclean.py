@@ -1,8 +1,3 @@
-# usage:
-#	fzpzclean.py -f [fzpz directory] -d [output directory] -o [core | contrib | user]
-#	 unzip fzpz files into the output directory and remove all the guids from the filenames and internal names.
-
-
 #	TODO:
 #		check for incomplete parts (missing views)
 #       check if svgs are plain copies of already existing ones and link them instead?

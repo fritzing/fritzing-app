@@ -1963,6 +1963,19 @@ void MainWindow::swapSelectedMap(const QString & family, const QString & prop, Q
 		return;
 	}
 
+    if (prop.compare("layer") == 0) {
+        if (itemBase->modelPart()->flippedSMD() || itemBase->itemType() == ModelPart::Part) {
+            ItemBase * viewItem = itemBase->modelPart()->viewItem(ViewLayer::PCBView);
+            if (viewItem) {
+                ViewLayer::ViewLayerPlacement viewLayerPlacement = (currPropsMap.value(prop) == ItemBase::TranslatedPropertyNames.value("bottom") ? ViewLayer::NewBottom : ViewLayer::NewTop);
+                if (viewItem->viewLayerPlacement() != viewLayerPlacement) {
+                    swapSelectedAux(itemBase->layerKinChief(), itemBase->moduleID(), true, viewLayerPlacement);
+                    return;
+                }
+            }
+        }
+    }
+
 	if ((prop.compare("package", Qt::CaseSensitive) != 0) && swapSpecial(prop, currPropsMap)) {
 		return;
 	}
@@ -1976,19 +1989,6 @@ void MainWindow::swapSelectedMap(const QString & family, const QString & prop, Q
 	bool exactMatch = m_referenceModel->lastWasExactMatch();
 
 	if (moduleID.isEmpty()) {
-        if (prop.compare("layer") == 0) {
-            if (itemBase->modelPart()->flippedSMD() || itemBase->itemType() == ModelPart::Part) {
-                ItemBase * viewItem = itemBase->modelPart()->viewItem(ViewLayer::PCBView);
-                if (viewItem) {
-                    ViewLayer::ViewLayerPlacement viewLayerPlacement = (currPropsMap.value(prop) == ItemBase::TranslatedPropertyNames.value("bottom") ? ViewLayer::NewBottom : ViewLayer::NewTop);
-                    if (viewItem->viewLayerPlacement() != viewLayerPlacement) {
-                        swapSelectedAux(itemBase->layerKinChief(), itemBase->moduleID(), true, viewLayerPlacement);
-                        return;
-                    }
-                }
-            }
-        }
-
 		QMessageBox::information(
 			this,
 			tr("Sorry!"),

@@ -29,6 +29,7 @@ $Date: 2013-03-10 21:27:34 +0100 (So, 10. Mrz 2013) $
 
 LayerAttributes::LayerAttributes()
 {
+    orientation = Qt::Vertical;
 }
 
 const QString & LayerAttributes::filename() {

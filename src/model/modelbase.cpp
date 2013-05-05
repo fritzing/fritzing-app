@@ -112,6 +112,7 @@ bool ModelBase::loadFromFile(const QString & fileName, ModelBase * referenceMode
 	bool checkForRats = true;
 	bool checkForTraces = true;
     bool checkForMysteryParts = true;
+    bool checkForObsoleteSMDOrientation = true;
 	m_fritzingVersion = root.attribute("fritzingVersion");
 	if (m_fritzingVersion.length() > 0) {
 		// with version 0.4.3 ratsnests in fz files are obsolete
@@ -131,6 +132,10 @@ bool ModelBase::loadFromFile(const QString & fileName, ModelBase * referenceMode
 		versionThingRats.minorVersion = 7;
 		versionThingRats.minorSubVersion = 5;
 		checkForMysteryParts = !Version::greaterThan(versionThingRats, versionThingFz);
+        // with version 0.8.0 flipSMD is horizontal
+	    versionThingRats.minorVersion = 7;
+	    versionThingRats.minorSubVersion = 13;
+	    checkForObsoleteSMDOrientation = !Version::greaterThan(versionThingRats, versionThingFz);
 	}
 
 	ModelPartSharedRoot * modelPartSharedRoot = this->rootModelPartShared();
@@ -203,6 +208,17 @@ bool ModelBase::loadFromFile(const QString & fileName, ModelBase * referenceMode
 			instance = instance.nextSiblingElement("instance");
 		}
 	}
+
+    if (checkForObsoleteSMDOrientation) {
+		QDomElement instance = instances.firstChildElement("instance");
+   		while (!instance.isNull()) {
+			if (checkObsoleteOrientation(instance)) {
+                emit obsoleteSMDOrientationSignal();
+                break;
+            }
+			instance = instance.nextSiblingElement("instance");
+		}
+    }
 
 	bool result = loadInstances(domDocument, instances, modelParts, checkViews);
 	emit loadedInstances(this, instances);
@@ -578,6 +594,15 @@ bool ModelBase::isRatsnest(QDomElement & instance) {
 	return false;
 }
 
+bool ModelBase::checkObsoleteOrientation(QDomElement & instance)
+{
+	QString flippedSMD = instance.attribute("flippedSMD", "");
+	if (flippedSMD != "true") return false;
+
+	QDomElement views = instance.firstChildElement("views");
+	QDomElement pcbView = views.firstChildElement("pcbView");
+    return (pcbView.attribute("layer", "") == "copper0");
+}
 
 void ModelBase::checkTraces(QDomElement & instance) {
 	QString moduleIDRef = instance.attribute("moduleIdRef");

@@ -291,7 +291,7 @@ void SvgFlattener::replaceElementID(const QString & filename, const QString & sv
     }
 }
 
-void SvgFlattener::flipSMDSvg(const QString & filename, const QString & svg, QDomDocument & domDocument, const QString & elementID, const QString & altElementID, double printerScale) 
+void SvgFlattener::flipSMDSvg(const QString & filename, const QString & svg, QDomDocument & domDocument, const QString & elementID, const QString & altElementID, double printerScale, Qt::Orientations orientation) 
 {
     if (!loadDocIf(filename, svg, domDocument)) return;
 
@@ -311,7 +311,7 @@ void SvgFlattener::flipSMDSvg(const QString & filename, const QString & svg, QDo
 	QDomElement element = TextUtils::findElementWithAttribute(root, "id", elementID);
 	if (!element.isNull()) {
 		QDomElement altElement = TextUtils::findElementWithAttribute(root, "id", altElementID);
-		flipSMDElement(domDocument, renderer, element, elementID, altElement, altElementID, printerScale);
+		flipSMDElement(domDocument, renderer, element, elementID, altElement, altElementID, printerScale,  orientation);
 	}
 
 #ifndef QT_NO_DEBUG
@@ -320,7 +320,7 @@ void SvgFlattener::flipSMDSvg(const QString & filename, const QString & svg, QDo
 #endif
 }
 
-void SvgFlattener::flipSMDElement(QDomDocument & domDocument, QSvgRenderer & renderer, QDomElement & element, const QString & att, QDomElement altElement, const QString & altAtt, double printerScale) 
+void SvgFlattener::flipSMDElement(QDomDocument & domDocument, QSvgRenderer & renderer, QDomElement & element, const QString & att, QDomElement altElement, const QString & altAtt, double printerScale, Qt::Orientations orientation) 
 {
 	Q_UNUSED(printerScale);
 	Q_UNUSED(att);
@@ -329,7 +329,7 @@ void SvgFlattener::flipSMDElement(QDomDocument & domDocument, QSvgRenderer & ren
 	QRectF bounds = renderer.boundsOnElement(att);
 	m.translate(bounds.center().x(), bounds.center().y());
 	QMatrix mMinus = m.inverted();
-    QMatrix cm = mMinus * QMatrix().scale(1, -1) * m;
+    QMatrix cm = mMinus * ((orientation & Qt::Vertical) ? QMatrix().scale(-1, 1) : QMatrix().scale(1, -1)) * m;
 	QDomElement newElement = element.cloneNode(true).toElement();
 	newElement.removeAttribute("id");
 	QDomElement pElement = domDocument.createElement("g");

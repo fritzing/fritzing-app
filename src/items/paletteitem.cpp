@@ -139,10 +139,7 @@ PaletteItem::~PaletteItem() {
 
 bool PaletteItem::renderImage(ModelPart * modelPart, ViewLayer::ViewID viewID, const LayerHash & viewLayers, ViewLayer::ViewLayerID viewLayerID, bool doConnectors, QString & error) {
 	LayerAttributes layerAttributes; 
-    layerAttributes.viewID = viewID;
-    layerAttributes.viewLayerID = viewLayerID;
-    layerAttributes.viewLayerPlacement = viewLayerPlacement();
-    layerAttributes.doConnectors = doConnectors;
+    initLayerAttributes(layerAttributes, viewID, viewLayerID, viewLayerPlacement(), doConnectors);
 	bool result = setUpImage(modelPart, viewLayers, layerAttributes);
     error = layerAttributes.error;
 
@@ -202,10 +199,7 @@ void PaletteItem::loadLayerKin(const LayerHash & viewLayers, ViewLayer::ViewLaye
 
 void PaletteItem::makeOneKin(qint64 & id, ViewLayer::ViewLayerID viewLayerID, ViewLayer::ViewLayerPlacement viewLayerPlacement, ViewGeometry & viewGeometry, const LayerHash & viewLayers) {
     LayerAttributes layerAttributes;
-    layerAttributes.viewID = m_viewID;
-    layerAttributes.viewLayerID = viewLayerID;
-    layerAttributes.viewLayerPlacement = viewLayerPlacement;
-    layerAttributes.doConnectors = true;
+    initLayerAttributes(layerAttributes, m_viewID, viewLayerID, viewLayerPlacement, true);
     LayerKinPaletteItem * lkpi = newLayerKinPaletteItem(this, m_modelPart, viewGeometry, id, m_itemMenu, viewLayers, layerAttributes);
 	if (lkpi->ok()) {
 		DebugDialog::debug(QString("adding layer kin %1 %2 %3 %4")
@@ -516,12 +510,9 @@ void PaletteItem::resetImage(InfoGraphicsView * infoGraphicsView) {
 	foreach (Connector * connector, modelPart()->connectors()) {
 		connector->unprocess(this->viewID(), this->viewLayerID());
 	}
-
+    
 	LayerAttributes layerAttributes;
-    layerAttributes.viewID = viewID();
-    layerAttributes.viewLayerID = viewLayerID();
-    layerAttributes.viewLayerPlacement = viewLayerPlacement();
-    layerAttributes.doConnectors = true;
+    initLayerAttributes(layerAttributes, viewID(), viewLayerID(), viewLayerPlacement(), true);
 	this->setUpImage(modelPart(), infoGraphicsView->viewLayers(),layerAttributes);
 	
 	foreach (ItemBase * layerKin, m_layerKin) {
@@ -535,10 +526,7 @@ void PaletteItem::resetKinImage(ItemBase * layerKin, InfoGraphicsView * infoGrap
 		connector->unprocess(layerKin->viewID(), layerKin->viewLayerID());
 	}
 	LayerAttributes layerAttributes;
-    layerAttributes.viewID = layerKin->viewID();
-    layerAttributes.viewLayerID = layerKin->viewLayerID();
-    layerAttributes.viewLayerPlacement = layerKin->viewLayerPlacement();
-    layerAttributes.doConnectors = true;
+    initLayerAttributes(layerAttributes, layerKin->viewID(), layerKin->viewLayerID(), layerKin->viewLayerPlacement(), true);
 	qobject_cast<PaletteItemBase *>(layerKin)->setUpImage(modelPart(), infoGraphicsView->viewLayers(), layerAttributes);
 }
 
@@ -1616,4 +1604,15 @@ void PaletteItem::retransform(const QTransform & chiefTransform) {
             lkpi->transformItem(chiefTransform, false);
         }
     }
+}
+
+void PaletteItem::initLayerAttributes(LayerAttributes & layerAttributes, ViewLayer::ViewID viewID, ViewLayer::ViewLayerID viewLayerID, ViewLayer::ViewLayerPlacement viewLayerPlacement, bool doConnectors) {
+    layerAttributes.viewID = viewID;
+    layerAttributes.viewLayerID = viewLayerID;
+    layerAttributes.viewLayerPlacement = viewLayerPlacement;
+    layerAttributes.doConnectors = doConnectors;
+    InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
+	if (infoGraphicsView != NULL) {
+		layerAttributes.orientation = infoGraphicsView->smdOrientation();
+	}
 }

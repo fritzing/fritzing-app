@@ -452,7 +452,7 @@ bool DRC::startAux(QString & message, QStringList & messages, QList<CollidingThi
         if (pixelsCollide(m_plusImage, m_minusImage, m_displayImage, 0, 0, imgSize.width(), imgSize.height(), 1 /* 0x80ff0000 */, atPixels)) {
             CollidingThing * collidingThing = findItemsAt(atPixels, m_board, viewLayerIDs, keepoutMils, dpi, true, NULL);
             QString msg = tr("Too close to a border (%1 layer)")
-                .arg(viewLayerPlacement == ViewLayer::NewTop ? tr("top") : tr("bottom"))
+                .arg(viewLayerPlacement == ViewLayer::NewTop ? ItemBase::TranslatedPropertyNames.value("top") : ItemBase::TranslatedPropertyNames.value("bottom"))
                 ;
             emit setProgressMessage(msg);
             messages << msg;
@@ -557,7 +557,7 @@ bool DRC::startAux(QString & message, QStringList & messages, QList<CollidingThi
                     QString name0 = names.at(0);
                     QString msg = tr("%1 is overlapping (%2 layer)")
                         .arg(name0)
-                        .arg(viewLayerPlacement == ViewLayer::NewTop ? tr("top") : tr("bottom"))
+                        .arg(viewLayerPlacement == ViewLayer::NewTop ? ItemBase::TranslatedPropertyNames.value("top") : ItemBase::TranslatedPropertyNames.value("bottom"))
                         ;
                     messages << msg;
                     collidingThings << collidingThing;

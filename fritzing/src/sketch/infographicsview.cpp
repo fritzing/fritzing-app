@@ -38,6 +38,7 @@ InfoGraphicsView::InfoGraphicsView( QWidget * parent )
 	m_infoView = NULL;
 	m_boardLayers = 1;
 	m_hoverEnterMode = m_hoverEnterConnectorMode = false;
+    m_smdOrientation = Qt::Vertical;
 }
 
 void InfoGraphicsView::viewItemInfo(ItemBase * item) {
@@ -406,5 +407,13 @@ void InfoGraphicsView::newWire(Wire * wire)
 	}
 
 	emit newWireSignal(wire);
+}
+
+void InfoGraphicsView::setSMDOrientation(Qt::Orientations orientation) {
+    m_smdOrientation = orientation;
+}
+
+Qt::Orientations InfoGraphicsView::smdOrientation() {
+    return m_smdOrientation;
 }
 

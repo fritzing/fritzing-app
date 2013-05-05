@@ -196,7 +196,6 @@ void SvgIconWidget::setItemBase(ItemBase * itemBase, bool plural)
 
 void SvgIconWidget::setupImage(bool plural, ViewLayer::ViewID viewID)
 {
-
 	LayerAttributes layerAttributes;
     layerAttributes.viewID = viewID;
     layerAttributes.viewLayerID = ViewLayer::Icon;

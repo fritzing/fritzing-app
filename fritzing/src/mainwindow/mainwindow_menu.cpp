@@ -346,12 +346,18 @@ void MainWindow::mainLoad(const QString & fileName, const QString & displayName)
 				this, SLOT(loadedViewsSlot(ModelBase *, QDomElement &)), Qt::DirectConnection);
 	connect(m_sketchModel, SIGNAL(loadedRoot(const QString &, ModelBase *, QDomElement &)),
 				this, SLOT(loadedRootSlot(const QString &, ModelBase *, QDomElement &)), Qt::DirectConnection);
+	connect(m_sketchModel, SIGNAL(obsoleteSMDOrientationSignal()),
+				this, SLOT(obsoleteSMDOrientationSlot()), Qt::DirectConnection);
+    m_obsoleteSMDOrientation = false;
 	m_sketchModel->loadFromFile(fileName, m_referenceModel, modelParts, true);
+
 	//DebugDialog::debug("core loaded");
 	disconnect(m_sketchModel, SIGNAL(loadedViews(ModelBase *, QDomElement &)),
 				this, SLOT(loadedViewsSlot(ModelBase *, QDomElement &)));
 	disconnect(m_sketchModel, SIGNAL(loadedRoot(const QString &, ModelBase *, QDomElement &)),
 				this, SLOT(loadedRootSlot(const QString &, ModelBase *, QDomElement &)));
+	disconnect(m_sketchModel, SIGNAL(obsoleteSMDOrientationSignal()),
+				this, SLOT(obsoleteSMDOrientationSlot()));
 
 	ProcessEventBlocker::processEvents();
 	if (m_fileProgressDialog) {
@@ -370,6 +376,7 @@ void MainWindow::mainLoad(const QString & fileName, const QString & displayName)
 
 	newIDs.clear();
 	m_pcbGraphicsView->loadFromModelParts(modelParts, BaseCommand::SingleView, NULL, false, NULL, false, newIDs);
+                
 
 	ProcessEventBlocker::processEvents();
 	if (m_fileProgressDialog) {
@@ -385,10 +392,35 @@ void MainWindow::mainLoad(const QString & fileName, const QString & displayName)
 		m_fileProgressDialog->setValue(198);
 	}
 
+    if (m_obsoleteSMDOrientation) {
+        QSet<ItemBase *> toConvert;
+        foreach (QGraphicsItem * item, m_pcbGraphicsView->items()) {
+            ItemBase * itemBase = dynamic_cast<ItemBase *>(item);
+            if (itemBase == NULL) continue;
+
+            itemBase = itemBase->layerKinChief();
+            if (itemBase->modelPart()->flippedSMD() && itemBase->viewLayerPlacement() == ViewLayer::NewBottom) {
+                toConvert.insert(itemBase);
+            }
+        }
+
+        QList<ConnectorItem *> already;
+        foreach (ItemBase * itemBase, toConvert) {
+            PaletteItem * paletteItem = qobject_cast<PaletteItem *>(itemBase);
+            if (paletteItem == NULL) continue;          // shouldn't happen
+
+            foreach (ConnectorItem * connectorItem, paletteItem->cachedConnectorItems()) {
+                // reseat any wires
+                itemBase->updateConnections(connectorItem, true, already);
+            }
+        }
+    }
+
     if (m_programView) {
         QFileInfo fileInfo(m_fwFilename);
         m_programView->linkFiles(m_linkedProgramFiles, fileInfo.absoluteDir().absolutePath());
     }
+
 }
 
 void MainWindow::copy() {
@@ -3252,6 +3284,30 @@ void MainWindow::startSaveInstancesSlot(const QString & fileName, ModelPart *, Q
 	streamWriter.writeEndElement();
 }
 
+void MainWindow::obsoleteSMDOrientationSlot() {
+    m_obsoleteSMDOrientation = true;    
+	QMessageBox messageBox(NULL);
+	messageBox.setWindowTitle(tr("SMD orientation changed"));
+	messageBox.setText(tr("The orientation of SMDs on the bottom layer has changed, and this will affect files created with Fritzing versions earlier than 0.8.0.\n\n") + 
+                            tr("Would you like to like to use the new orientation for the bottom-layer SMDs in this sketch, or keep the file as-is (and read-only)?\n")
+                        );
+	messageBox.setInformativeText(tr("Note: changing the orientation of connected SMD parts will result in traces moving or crossing.") + " " +
+                                    tr("You will need to rework the routing and possibly the part placement on the bottom layer of your PCB.")
+                                    );
+	messageBox.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
+	messageBox.setDefaultButton(QMessageBox::Yes);
+	messageBox.setIcon(QMessageBox::Question);
+	messageBox.setWindowModality(Qt::WindowModal);
+	messageBox.setButtonText(QMessageBox::Yes, tr("New orientation"));
+	messageBox.setButtonText(QMessageBox::No, tr("Read-only"));
+	QMessageBox::StandardButton answer = (QMessageBox::StandardButton) messageBox.exec();
+    if (answer == QMessageBox::No) {
+        setReadOnly(true);
+        m_pcbGraphicsView->setSMDOrientation(Qt::Horizontal);
+        m_schematicGraphicsView->setSMDOrientation(Qt::Horizontal);
+        m_breadboardGraphicsView->setSMDOrientation(Qt::Horizontal);
+    }
+}
 
 void MainWindow::loadedRootSlot(const QString & fname, ModelBase *, QDomElement & root) {
 	if (root.isNull()) return;

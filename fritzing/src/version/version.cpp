@@ -36,8 +36,8 @@ $Date: 2013-04-17 17:47:21 +0200 (Mi, 17. Apr 2013) $
 #include "../lib/qtsysteminfo/QtSystemInfo.h"
 
 QString Version::m_majorVersion("0");       
-QString Version::m_minorVersion("7");
-QString Version::m_minorSubVersion("13");
+QString Version::m_minorVersion("8");
+QString Version::m_minorSubVersion("0");
 QString Version::m_modifier("b");
 QString Version::m_svnRevision("$Revision: 6971 $:");
 QString Version::m_svnDate("$Date: 2013-04-17 17:47:21 +0200 (Mi, 17. Apr 2013) $");

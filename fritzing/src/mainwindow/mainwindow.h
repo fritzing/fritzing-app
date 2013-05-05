@@ -363,6 +363,7 @@ protected slots:
 	void startSaveInstancesSlot(const QString & fileName, ModelPart *, QXmlStreamWriter &);
 	void loadedViewsSlot(class ModelBase *, QDomElement & views);
 	void loadedRootSlot(const QString & filename, ModelBase *, QDomElement & views);
+    void obsoleteSMDOrientationSlot();
 	void exportNormalizedSVG();
 	void exportNormalizedFlattenedSVG();
 
@@ -886,6 +887,7 @@ protected:
 	QString m_oldBottomDockStyle;
 	bool m_dontKeepMargins;
     QPointer<QDialog> m_rolloverQuoteDialog;
+    bool m_obsoleteSMDOrientation;
 
 public:
 	static int AutosaveTimeoutMinutes;

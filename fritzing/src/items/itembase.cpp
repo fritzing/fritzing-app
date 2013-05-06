@@ -1411,10 +1411,7 @@ FSvgRenderer * ItemBase::setUpImage(ModelPart * modelPart, LayerAttributes & lay
 
 	FSvgRenderer * newRenderer = new FSvgRenderer();
 	QDomDocument flipDoc;
-	if (!getFlipDoc(modelPart, filename, layerAttributes.viewLayerID, layerAttributes.viewLayerPlacement, flipDoc, layerAttributes.orientation)) {
-        // part is not flipped, check that THT parts have both copper layers
-		fixCopper1(modelPart, filename, layerAttributes.viewLayerID, layerAttributes.viewLayerPlacement, flipDoc);
-	}
+	getFlipDoc(modelPart, filename, layerAttributes.viewLayerID, layerAttributes.viewLayerPlacement, flipDoc, layerAttributes.orientation);
     QByteArray bytesToLoad;
     if (layerAttributes.viewLayerID == ViewLayer::Schematic) {
         bytesToLoad = SvgFileSplitter::hideText(filename);
@@ -1800,6 +1797,11 @@ QRectF ItemBase::partLabelSceneBoundingRect() {
 
 bool ItemBase::getFlipDoc(ModelPart * modelPart, const QString & filename, ViewLayer::ViewLayerID viewLayerID, ViewLayer::ViewLayerPlacement viewLayerPlacement, QDomDocument & flipDoc, Qt::Orientations orientation)
 {
+    if (!modelPart->flippedSMD()) {
+        // add copper1 layer to THT if it is missing
+        fixCopper1(modelPart, filename, viewLayerID, viewLayerPlacement, flipDoc);
+    }
+
 	if (viewLayerPlacement == ViewLayer::NewBottom) {
         if (modelPart->flippedSMD()) {
 		    if (viewLayerID == ViewLayer::Copper0) {

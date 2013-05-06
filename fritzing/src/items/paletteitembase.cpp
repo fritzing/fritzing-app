@@ -618,10 +618,7 @@ QString PaletteItemBase::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<Q
     }
 
 	QDomDocument flipDoc;
-	if (!getFlipDoc(modelPart(), path, viewLayerID, m_viewLayerPlacement, flipDoc, orientation)) {
-        // part is not flipped, check that THT parts have both copper layers
-		fixCopper1(modelPart(), path, viewLayerID, m_viewLayerPlacement, flipDoc);
-	}
+    getFlipDoc(modelPart(), path, viewLayerID, m_viewLayerPlacement, flipDoc, orientation);
 	
 	//DebugDialog::debug(QString("path: %1").arg(path));
 

@@ -7,4 +7,7 @@
 <g id="silkscreen">
 	<circle fill="none" stroke="#FFFFFF" stroke-width="8" cx="1100" cy="1100" r="1096" />
 </g>
+<g id="silkscreen0">
+	<circle fill="none" stroke="#bbbbcc" stroke-width="8" cx="1100" cy="1100" r="1096" />
+</g>
 </svg>

@@ -53,8 +53,12 @@ $Date: 2013-04-22 23:44:56 +0200 (Mo, 22. Apr 2013) $
 QList<QString> PaperSizeNames;
 QList<QSizeF> PaperSizeDimensions;
 
-QHash<QString, QString> BoardLayerTemplates;
-QHash<QString, QString> SilkscreenLayerTemplates;
+static QHash<QString, QString> NamesToXmlNames;
+static QHash<QString, QString> XmlNamesToNames;
+
+static QHash<QString, QString> BoardLayerTemplates;
+static QHash<QString, QString> SilkscreenLayerTemplates;
+static QHash<QString, QString> Silkscreen0LayerTemplates;
 static const int LineThickness = 8;
 static const QRegExp HeightExpr("height=\\'\\d*px");
 static QString StandardCustomBoardExplanation;
@@ -85,8 +89,18 @@ Board::Board( ModelPart * modelPart, ViewLayer::ViewID viewID, const ViewGeometr
     }
 
     if (StandardCustomBoardExplanation.isEmpty()) {
-        StandardCustomBoardExplanation = tr("\n\nA custom board svg typically has one silkscreen layer and one board layer.\n") +
+        StandardCustomBoardExplanation = tr("\n\nA custom board svg typically has one or two silkscreen layers and one board layer.\n") +
                                             tr("Have a look at the circle_pcb.svg file in your Fritzing installation folder at parts/svg/core/pcb/.\n\n");
+    }
+
+    if (NamesToXmlNames.count() == 0) {
+        NamesToXmlNames.insert("copper bottom", "copper0");
+        NamesToXmlNames.insert("copper top", "copper1");
+        NamesToXmlNames.insert("silkscreen bottom", "silkscreen0");
+        NamesToXmlNames.insert("silkscreen top", "silkscreen");
+        foreach (QString key, NamesToXmlNames.keys()) {
+            XmlNamesToNames.insert(NamesToXmlNames.value(key), key);
+        }
     }
 
 }
@@ -325,6 +339,7 @@ bool Board::checkImage(const QString & filename) {
     TextUtils::findElementsWithAttribute(root, "id", elements);
     int layers = 0;
     QList<QDomElement> boardElements;
+    int silk0Layers = 0;
     int silk1Layers = 0;
     bool boardHasChildren = false;
     foreach (QDomElement element, elements) {
@@ -338,8 +353,11 @@ bool Board::checkImage(const QString & filename) {
                     boardHasChildren = true;
                 }
             }
-            if (viewLayerID == ViewLayer::Silkscreen1) {
+            else if (viewLayerID == ViewLayer::Silkscreen1) {
                 silk1Layers++;
+            }
+            else if (viewLayerID == ViewLayer::Silkscreen0) {
+                silk0Layers++;
             }
         }
     }
@@ -349,7 +367,7 @@ bool Board::checkImage(const QString & filename) {
         return false;
     }
 
-    if ((boardElements.count() == 1) && (silk1Layers == 1)) {
+    if ((boardElements.count() == 1) && ((silk1Layers == 1) || (silk0Layers == 1))) {
         moreCheckImage(filename);
         return true;
     }
@@ -364,6 +382,11 @@ bool Board::checkImage(const QString & filename) {
         return false;
     }
 
+    if (silk0Layers > 1) {
+        unableToLoad(filename, tr("because there are multiple <silkscreen0> layers") + StandardCustomBoardExplanation);
+        return false;
+    }
+
     if (layers > 0 && boardElements.count() == 0) {
         unableToLoad(filename, tr("because there is no <board> layer") + StandardCustomBoardExplanation);
         return false;
@@ -374,7 +397,7 @@ bool Board::checkImage(const QString & filename) {
         return false;
     }
 
-    if (layers == 0 || (boardElements.count() == 1 && silk1Layers == 0)) {
+    if (layers == 0 || (boardElements.count() == 1 && silk1Layers == 0 && silk1Layers == 0)) {
         bool result = canLoad(filename, tr("but the pcb itself will have no silkscreen layer") + StandardCustomBoardExplanation);
         if (result) moreCheckImage(filename);
         return result;
@@ -526,6 +549,22 @@ ViewLayer::ViewID Board::useViewIDForPixmap(ViewLayer::ViewID vid, bool)
     return ViewLayer::UnknownView;
 }
 
+QString Board::convertToXmlName(const QString & name) {
+    foreach (QString key, ItemBase::TranslatedPropertyNames.keys()) {
+        if (name.compare(ItemBase::TranslatedPropertyNames.value(key), Qt::CaseInsensitive) == 0) {
+            return NamesToXmlNames.value(key);
+        }
+    }
+
+    return name;
+}
+
+QString Board::convertFromXmlName(const QString & xmlName) {
+    QString result = ItemBase::TranslatedPropertyNames.value(XmlNamesToNames.value(xmlName));
+    if (result.isEmpty()) return xmlName;
+    return result;
+}
+
 ///////////////////////////////////////////////////////////
 
 ResizableBoard::ResizableBoard( ModelPart * modelPart, ViewLayer::ViewID viewID, const ViewGeometry & viewGeometry, long id, QMenu * itemMenu, bool doLabel)
@@ -569,6 +608,7 @@ void ResizableBoard::loadTemplates() {
 
     BoardLayerTemplates.insert(moduleID(), getShapeForRenderer(svg, ViewLayer::Board));
     SilkscreenLayerTemplates.insert(moduleID(), getShapeForRenderer(svg, ViewLayer::Silkscreen1));
+    Silkscreen0LayerTemplates.insert(moduleID(), getShapeForRenderer(svg, ViewLayer::Silkscreen0));
 }
 
 double ResizableBoard::minWidth() {
@@ -821,7 +861,6 @@ void ResizableBoard::resizeMMAux(double mmW, double mmH)
 				itemBase->modelPart()->setLocalProp("width", mmW);
 				itemBase->modelPart()->setLocalProp("height", mmH);
 			}
-			break;
 		}
 	}
 
@@ -873,7 +912,8 @@ QString ResizableBoard::makeLayerSvg(ViewLayer::ViewLayerID viewLayerID, double 
 		case ViewLayer::Board:
 			return makeBoardSvg(mmW, mmH, milsW, milsH);
 		case ViewLayer::Silkscreen1:
-			return makeSilkscreenSvg(mmW, mmH, milsW, milsH);
+		case ViewLayer::Silkscreen0:
+			return makeSilkscreenSvg(viewLayerID, mmW, mmH, milsW, milsH);
 			break;
 		default:
 			return "";
@@ -882,7 +922,8 @@ QString ResizableBoard::makeLayerSvg(ViewLayer::ViewLayerID viewLayerID, double 
 
 QString ResizableBoard::makeNextLayerSvg(ViewLayer::ViewLayerID viewLayerID, double mmW, double mmH, double milsW, double milsH) {
 
-	if (viewLayerID == ViewLayer::Silkscreen1) return makeSilkscreenSvg(mmW, mmH, milsW, milsH);
+	if (viewLayerID == ViewLayer::Silkscreen1) return makeSilkscreenSvg(viewLayerID, mmW, mmH, milsW, milsH);
+	if (viewLayerID == ViewLayer::Silkscreen0) return makeSilkscreenSvg(viewLayerID, mmW, mmH, milsW, milsH);
 
 	return "";
 }
@@ -897,9 +938,10 @@ QString ResizableBoard::makeBoardSvg(double mmW, double mmH, double milsW, doubl
     return makeSvg(mmW, mmH, BoardLayerTemplates.value(moduleID()));
 }
 
-QString ResizableBoard::makeSilkscreenSvg(double mmW, double mmH, double milsW, double milsH) {
+QString ResizableBoard::makeSilkscreenSvg(ViewLayer::ViewLayerID viewLayerID, double mmW, double mmH, double milsW, double milsH) {
     Q_UNUSED(milsW);
     Q_UNUSED(milsH);
+    if (viewLayerID == ViewLayer::Silkscreen0) return makeSvg(mmW, mmH, Silkscreen0LayerTemplates.value(moduleID()));
     return makeSvg(mmW, mmH, SilkscreenLayerTemplates.value(moduleID()));
 }
 

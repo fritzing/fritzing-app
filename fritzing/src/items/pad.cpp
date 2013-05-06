@@ -190,6 +190,21 @@ QString Pad::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QString, QStr
 	return ResizableBoard::retrieveSvg(viewLayerID, svgHash, blackOnly, dpi, factor);
 }
 
+QStringList Pad::collectValues(const QString & family, const QString & prop, QString & value) {
+    QStringList values = ResizableBoard::collectValues(family, prop, value);
+
+    QStringList newValues;
+	if (prop.compare("layer", Qt::CaseInsensitive) == 0) {
+        foreach (QString xmlName, values) {
+            newValues << Board::convertFromXmlName(xmlName);
+        }
+        value = Board::convertFromXmlName(value);
+        return newValues;
+    }
+
+    return values;
+}
+
 bool Pad::collectExtraInfo(QWidget * parent, const QString & family, const QString & prop, const QString & value, bool swappingEnabled, QString & returnProp, QString & returnValue, QWidget * & returnWidget, bool & hide) 
 {
 	if (prop.compare("shape", Qt::CaseInsensitive) == 0) {

@@ -79,6 +79,8 @@ public:
 public:
     static bool isBoard(ItemBase *);
     static bool isBoard(ModelPart *);
+    static QString convertToXmlName(const QString &);
+    static QString convertFromXmlName(const QString &);
 
 protected slots:
 	void prepLoadImage();
@@ -141,7 +143,7 @@ protected:
 	void hoverLeaveEvent(QGraphicsSceneHoverEvent * event );
 	void hoverMoveEvent(QGraphicsSceneHoverEvent * event );
 	QString makeBoardSvg(double mmW, double mmH, double milsW, double milsH);
-	QString makeSilkscreenSvg(double mmW, double mmH, double milsW, double milsH);
+	QString makeSilkscreenSvg(ViewLayer::ViewLayerID, double mmW, double mmH, double milsW, double milsH);
     QString makeSvg(double mmW, double mmH, const QString & layerTemplate);
 	QStringList collectValues(const QString & family, const QString & prop, QString & value);
 	virtual void loadTemplates();

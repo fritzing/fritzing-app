@@ -31,17 +31,34 @@ $Date: 2013-03-09 08:18:59 +0100 (Sa, 09. Mrz 2013) $
 
 #include "../viewlayer.h"
 
-struct SvgIdLayer 
+
+struct PointRect {
+    QRectF rect;		
+	QPointF point;	
+	bool processed;
+	bool svgVisible;
+};
+
+class SvgIdLayer 
 {
+public:
+	SvgIdLayer(ViewLayer::ViewID);
+	SvgIdLayer * copyLayer();
+
+    QPointF point(ViewLayer::ViewLayerPlacement);
+    QRectF rect(ViewLayer::ViewLayerPlacement);
+    bool processed(ViewLayer::ViewLayerPlacement);
+    bool svgVisible(ViewLayer::ViewLayerPlacement);
+    void unprocess();
+    void setInvisible(ViewLayer::ViewLayerPlacement);
+    void setPointRect(ViewLayer::ViewLayerPlacement, QPointF, QRectF, bool svgVisible);
+
+public:
 	QString m_svgId;
 	QString m_terminalId;
     ViewLayer::ViewID m_viewID;
 	ViewLayer::ViewLayerID m_svgViewLayerID;
-	bool m_svgVisible;
 	bool m_hybrid;
-	bool m_processed;
-	QRectF m_rect;		
-	QPointF m_point;	
 	double m_radius;
 	double m_strokeWidth;
 	QString m_legId;
@@ -50,8 +67,11 @@ struct SvgIdLayer
 	QLineF m_legLine;
     bool m_path;
 
-	SvgIdLayer(ViewLayer::ViewID);
-	SvgIdLayer * copyLayer();
+protected:
+    PointRect m_pointRectBottom;
+    PointRect m_pointRectTop;
+
+protected:
 };
 
 

@@ -112,7 +112,7 @@ void Hole::setBoth(const QString & holeDiameter, const QString & ringThickness) 
 	ItemBase * otherLayer = setBothSvg(holeDiameter, ringThickness);
 
 	// there's only one NonConnectorItem
-	foreach (SvgIdLayer * svgIdLayer, fsvgRenderer()->setUpNonConnectors()) {
+	foreach (SvgIdLayer * svgIdLayer, fsvgRenderer()->setUpNonConnectors(viewLayerPlacement())) {
 		if (svgIdLayer == NULL) continue;
 
 		setBothNonConnectors(this, svgIdLayer);
@@ -160,7 +160,7 @@ void Hole::setBothNonConnectors(ItemBase * itemBase, SvgIdLayer * svgIdLayer) {
 		if (nonConnectorItem == NULL) continue;
 
 		//DebugDialog::debug(QString("hole set rect %1").arg(m_viewID), svgIdLayer->m_rect);
-		nonConnectorItem->setRect(svgIdLayer->m_rect);
+		nonConnectorItem->setRect(svgIdLayer->rect(viewLayerPlacement()));
 		nonConnectorItem->setRadius(svgIdLayer->m_radius, svgIdLayer->m_strokeWidth);
 		break;
 	}

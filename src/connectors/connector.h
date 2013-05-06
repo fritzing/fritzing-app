@@ -75,7 +75,7 @@ public:
 	ModelPart * modelPart();
 	int connectorItemCount();
 	void unprocess(ViewLayer::ViewID viewID, ViewLayer::ViewLayerID viewLayerID);
-	struct SvgIdLayer * fullPinInfo(ViewLayer::ViewID viewId, ViewLayer::ViewLayerID viewLayerID);
+	class SvgIdLayer * fullPinInfo(ViewLayer::ViewID viewId, ViewLayer::ViewLayerID viewLayerID);
 	const QList<SvgIdLayer *> svgIdLayers() const;
 	QList< QPointer<class ConnectorItem> > viewItems();
 	const QString & legID(ViewLayer::ViewID, ViewLayer::ViewLayerID);

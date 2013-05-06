@@ -653,16 +653,14 @@ ConnectorInfo * FSvgRenderer::getConnectorInfo(const QString & connectorID) {
 	return m_connectorInfoHash.value(connectorID, &VanillaConnectorInfo);
 }
 
-bool FSvgRenderer::setUpConnector(SvgIdLayer * svgIdLayer, bool ignoreTerminalPoint) {
+bool FSvgRenderer::setUpConnector(SvgIdLayer * svgIdLayer, bool ignoreTerminalPoint, ViewLayer::ViewLayerPlacement viewLayerPlacement) {
 
 	if (svgIdLayer == NULL) return false;
 
-	if (svgIdLayer->m_processed) {
+	if (svgIdLayer->processed(viewLayerPlacement)) {
 		// hybrids are not visible in some views
-		return svgIdLayer->m_svgVisible || svgIdLayer->m_hybrid;
+		return svgIdLayer->svgVisible(viewLayerPlacement) || svgIdLayer->m_hybrid;
 	}
-
-	svgIdLayer->m_processed = true;
 
 	QString connectorID = svgIdLayer->m_svgId;
 
@@ -671,7 +669,7 @@ bool FSvgRenderer::setUpConnector(SvgIdLayer * svgIdLayer, bool ignoreTerminalPo
 	QRectF bounds = this->boundsOnElement(connectorID);	
 
 	if (bounds.isNull() && !svgIdLayer->m_hybrid) {		// hybrids can have zero size
-		svgIdLayer->m_svgVisible = false;		
+		svgIdLayer->setInvisible(viewLayerPlacement);		
 		DebugDialog::debug("renderer::setupconnector: null bounds");
 		return false;
 	}
@@ -733,16 +731,18 @@ bool FSvgRenderer::setUpConnector(SvgIdLayer * svgIdLayer, bool ignoreTerminalPo
 							   r1.width() * defaultSize.width() / viewBox.width(), 
 							   r1.height() * defaultSize.height() / viewBox.height());
 	*/
-	svgIdLayer->m_rect.setRect(r1.x() * defaultSizeF.width() / viewBox.width(), 
+
+    QRectF svgRect(r1.x() * defaultSizeF.width() / viewBox.width(), 
 							   r1.y() * defaultSizeF.height() / viewBox.height(), 
 							   r1.width() * defaultSizeF.width() / viewBox.width(), 
 							   r1.height() * defaultSizeF.height() / viewBox.height());
 
-	svgIdLayer->m_svgVisible = !bounds.isNull();
 	//if (!svgIdLayer->m_svgVisible) {
 		//DebugDialog::debug("not vis");
 	//}
-	svgIdLayer->m_point = calcTerminalPoint(svgIdLayer->m_terminalId, svgIdLayer->m_rect, ignoreTerminalPoint, viewBox, connectorInfo->terminalMatrix);
+	QPointF terminal = calcTerminalPoint(svgIdLayer->m_terminalId, svgRect, ignoreTerminalPoint, viewBox, connectorInfo->terminalMatrix);
+
+    svgIdLayer->setPointRect(viewLayerPlacement, terminal, svgRect, !bounds.isNull());
 	calcLeg(svgIdLayer, viewBox, connectorInfo);
 	
 	return true;
@@ -830,14 +830,13 @@ QPointF FSvgRenderer::calcTerminalPoint(const QString & terminalId, const QRectF
 	return terminalPoint;
 }
 
-QList<SvgIdLayer *> FSvgRenderer::setUpNonConnectors() {
+QList<SvgIdLayer *> FSvgRenderer::setUpNonConnectors(ViewLayer::ViewLayerPlacement viewLayerPlacement) {
 
 	QList<SvgIdLayer *> list;
 	if (m_nonConnectorInfoHash.count() == 0) return list;
 
 	foreach (QString nonConnectorID, m_nonConnectorInfoHash.keys()) {
 		SvgIdLayer * svgIdLayer = new SvgIdLayer(ViewLayer::PCBView);
-		svgIdLayer->m_processed = true;
 		svgIdLayer->m_svgId = nonConnectorID;
 		QRectF bounds = this->boundsOnElement(nonConnectorID);
 		if (bounds.isNull()) {
@@ -865,10 +864,9 @@ QList<SvgIdLayer *> FSvgRenderer::setUpNonConnectors() {
 		//QMatrix matrix0 = connectorInfo->matrix * this->matrixForElement(nonConnectorID);  
 		//QRectF r1 = matrix0.mapRect(bounds);
 		QRectF r1 = this->matrixForElement(nonConnectorID).mapRect(bounds);
-		svgIdLayer->m_rect.setRect(r1.x() * defaultSize.width() / viewBox.width(), r1.y() * defaultSize.height() / viewBox.height(), r1.width() * defaultSize.width() / viewBox.width(), r1.height() * defaultSize.height() / viewBox.height());
-		svgIdLayer->m_point = svgIdLayer->m_rect.center() - svgIdLayer->m_rect.topLeft();
-		svgIdLayer->m_svgVisible = true;
-
+        QRectF svgRect(r1.x() * defaultSize.width() / viewBox.width(), r1.y() * defaultSize.height() / viewBox.height(), r1.width() * defaultSize.width() / viewBox.width(), r1.height() * defaultSize.height() / viewBox.height());
+        QPointF center = svgRect.center() - svgRect.topLeft();
+        svgIdLayer->setPointRect(viewLayerPlacement, center, svgRect, true);
 		list.append(svgIdLayer);
 	}
 

@@ -82,7 +82,7 @@ class SqliteReferenceModel : public ReferenceModel {
 		bool insertTag(const QString & tag, qulonglong id);
 		bool insertViewImage(const struct ViewImage *, qulonglong id);
         bool insertConnector(const class Connector *, qulonglong id);
-        bool insertConnectorLayer(const struct SvgIdLayer *, qulonglong id);  // connector db id
+        bool insertConnectorLayer(const class SvgIdLayer *, qulonglong id);  // connector db id
         bool insertBus(const Bus *, qulonglong id);
         bool insertBusMember(const Connector *, qulonglong id);
 		qulonglong partId(QString moduleID);

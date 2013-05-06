@@ -447,7 +447,7 @@ void PaletteItemBase::setUpConnectors(FSvgRenderer * renderer, bool ignoreTermin
 			continue;
 		}
 
-		bool result = renderer->setUpConnector(svgIdLayer, ignoreTerminalPoints);
+		bool result = renderer->setUpConnector(svgIdLayer, ignoreTerminalPoints, viewLayerPlacement());
 		if (!result) {
 			DebugDialog::debug(QString("setup connector fail %1 vid:%2 vlid:%3 %4")
                 .arg(connector->connectorSharedID())
@@ -462,8 +462,8 @@ void PaletteItemBase::setUpConnectors(FSvgRenderer * renderer, bool ignoreTermin
 		ConnectorItem * connectorItem = newConnectorItem(connector);
 
 		connectorItem->setHybrid(svgIdLayer->m_hybrid);
-		connectorItem->setRect(svgIdLayer->m_rect);
-		connectorItem->setTerminalPoint(svgIdLayer->m_point);
+		connectorItem->setRect(svgIdLayer->rect(viewLayerPlacement()));
+		connectorItem->setTerminalPoint(svgIdLayer->point(viewLayerPlacement()));
 		connectorItem->setRadius(svgIdLayer->m_radius, svgIdLayer->m_strokeWidth);
         connectorItem->setIsPath(svgIdLayer->m_path);
 		if (!svgIdLayer->m_legId.isEmpty()) {
@@ -475,7 +475,7 @@ void PaletteItemBase::setUpConnectors(FSvgRenderer * renderer, bool ignoreTermin
 
 	}
 
-	foreach (SvgIdLayer * svgIdLayer, renderer->setUpNonConnectors()) {
+	foreach (SvgIdLayer * svgIdLayer, renderer->setUpNonConnectors(viewLayerPlacement())) {
 		if (svgIdLayer == NULL) continue;
 
 		NonConnectorItem * nonConnectorItem = new NonConnectorItem(this);
@@ -484,7 +484,7 @@ void PaletteItemBase::setUpConnectors(FSvgRenderer * renderer, bool ignoreTermin
 			//.arg(ViewLayer::viewLayerNameFromID(m_viewLayerID))
 			//.arg(this->zValue()) );
 
-		nonConnectorItem->setRect(svgIdLayer->m_rect);
+		nonConnectorItem->setRect(svgIdLayer->rect(viewLayerPlacement()));
 		nonConnectorItem->setRadius(svgIdLayer->m_radius, svgIdLayer->m_strokeWidth);
         nonConnectorItem->setIsPath(svgIdLayer->m_path);
 		//DebugDialog::debug(QString("terminal point %1 %2").arg(terminalPoint.x()).arg(terminalPoint.y()) );

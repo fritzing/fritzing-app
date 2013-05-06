@@ -2623,10 +2623,12 @@ ViewLayer::ViewLayerPlacement PCBSketchWidget::getViewLayerPlacement(ModelPart *
         return ViewLayer::NewTop;
     }
 
-    QDomElement views = view.parentNode().toElement();
-	QDomElement pcbview = views.firstChildElement("pcbView");
-    bool bottom = pcbview.attribute("bottom", "").compare("true") == 0;
-    if (bottom) return ViewLayer::NewBottom;
+    if (modelPart->itemType() == ModelPart::Part) {
+        QDomElement views = view.parentNode().toElement();
+	    QDomElement pcbview = views.firstChildElement("pcbView");
+        bool bottom = pcbview.attribute("bottom", "").compare("true") == 0;
+        if (bottom) return ViewLayer::NewBottom;
+    }
 
     return SketchWidget::getViewLayerPlacement(modelPart, instance, view, viewGeometry);
 }

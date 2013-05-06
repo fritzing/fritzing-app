@@ -309,6 +309,10 @@ void ItemBase::initNames() {
 		TranslatedPropertyNames.insert("banded", tr("banded"));
 		TranslatedPropertyNames.insert("top", tr("top"));
 		TranslatedPropertyNames.insert("bottom", tr("bottom"));
+		TranslatedPropertyNames.insert("copper bottom", tr("copper bottom"));
+		TranslatedPropertyNames.insert("copper top", tr("copper top"));
+		TranslatedPropertyNames.insert("silkscreen bottom", tr("silkscreen bottom"));
+		TranslatedPropertyNames.insert("silkscreen top", tr("silkscreen top"));
 
 		// TODO: translate more known property names from fzp files and resource xml files
 

@@ -43,5 +43,13 @@
        stroke-miterlimit="10"
        d="M 233.682,45.512 L 233.682,5.459 L 229.224,1.001 L 1,1 L 1.002,188.126 L 233.685,188.126 L 233.685,180.842 L 244.237,170.29 L 244.237,54.432 L 233.682,45.512 z"
        style="fill:none;stroke:#ffffff;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+  </g>  
+  <g
+     id="silkscreen0">
+    <path
+       id="outline"
+       stroke-miterlimit="10"
+       d="M 233.682,45.512 L 233.682,5.459 L 229.224,1.001 L 1,1 L 1.002,188.126 L 233.685,188.126 L 233.685,180.842 L 244.237,170.29 L 244.237,54.432 L 233.682,45.512 z"
+       style="fill:none;stroke:#bbbbcc;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
   </g>
 </svg>

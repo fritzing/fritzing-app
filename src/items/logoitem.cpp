@@ -194,6 +194,21 @@ QString LogoItem::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QString,
 	return PaletteItemBase::retrieveSvg(viewLayerID, svgHash, blackOnly, dpi, factor);
 }
 
+QStringList LogoItem::collectValues(const QString & family, const QString & prop, QString & value) {
+    QStringList values = ResizableBoard::collectValues(family, prop, value);
+
+    QStringList newValues;
+	if (prop.compare("layer", Qt::CaseInsensitive) == 0) {
+        foreach (QString xmlName, values) {
+            newValues << Board::convertFromXmlName(xmlName);
+        }
+        value = Board::convertFromXmlName(value);
+        return newValues;
+    }
+
+    return values;
+}
+
 bool LogoItem::collectExtraInfo(QWidget * parent, const QString & family, const QString & prop, const QString & value, bool swappingEnabled, QString & returnProp, QString & returnValue, QWidget * & returnWidget, bool & hide) 
 {
 	if (m_hasLogo) {
@@ -744,7 +759,8 @@ void LogoItem::paintHover(QPainter *painter, const QStyleOptionGraphicsItem *opt
 }
 
 bool LogoItem::isBottom() {
-	return modelPart()->properties().value("layer").contains("0");
+    QString layer = modelPart()->properties().value("layer");
+	return layer.contains("0") || layer.contains("bottom");
 }
 
 QString LogoItem::flipSvg(const QString & svg)

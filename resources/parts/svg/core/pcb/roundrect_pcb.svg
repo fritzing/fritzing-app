@@ -7,4 +7,7 @@
 <g id="silkscreen">
 	<rect fill="none" stroke="#FFFFFF" stroke-width="0.2032" x="0.1016" y="0.1016" rx="10" ry="10" width="99.7068" height="59.7068" />
 </g>
+<g id="silkscreen0">
+	<rect fill="none" stroke="#bbbbcc" stroke-width="0.2032" x="0.1016" y="0.1016" rx="10" ry="10" width="99.7068" height="59.7068" />
+</g>
 </svg>

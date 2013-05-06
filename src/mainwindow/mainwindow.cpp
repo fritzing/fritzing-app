@@ -85,6 +85,7 @@ $Date: 2013-04-28 00:56:34 +0200 (So, 28. Apr 2013) $
 #include "../utils/clickablelabel.h"
 #include "../items/resizableboard.h"
 #include "../items/resistor.h"
+#include "../items/logoitem.h"
 #include "../utils/zoomslider.h"
 #include "../partseditor/pemainwindow.h"
 
@@ -1923,9 +1924,9 @@ void MainWindow::swapSelectedMap(const QString & family, const QString & prop, Q
 	QString generatedModuleID = currPropsMap.value("moduleID");
 
 	if (generatedModuleID.isEmpty()) {
-	    if ((family.compare("logo") == 0 || family.compare("pad") == 0) && prop.compare("layer") == 0) {
-		    QString value = currPropsMap.value(prop);
-		    if (value.contains("1") && m_currentGraphicsView->boardLayers() == 1) {
+	    if ((family.compare("logo") == 0 || family.compare("pad") == 0 || family.contains("blocker", Qt::CaseInsensitive)) && prop.compare("layer") == 0) {
+		    QString value = Board::convertToXmlName(currPropsMap.value(prop));
+		    if (value.contains("copper1") && m_currentGraphicsView->boardLayers() == 1) {
 			    QMessageBox::warning(
 				    this,
 				    tr("No copper top layer"),
@@ -1933,6 +1934,8 @@ void MainWindow::swapSelectedMap(const QString & family, const QString & prop, Q
 			    );
 			    return;
 		    }
+            // use the xml name
+            currPropsMap.insert(prop, value);
 	    }
     }
 

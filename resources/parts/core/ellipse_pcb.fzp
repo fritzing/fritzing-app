@@ -40,6 +40,7 @@
    <layers image="pcb/ellipse_pcb.svg" >
     <layer layerId="board" sticky="true" />
     <layer layerId="silkscreen" sticky="true" />
+    <layer layerId="silkscreen0" sticky="true" />
    </layers>
   </pcbView>
  </views>

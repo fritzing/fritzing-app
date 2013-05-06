@@ -84,8 +84,8 @@ public:
     QByteArray finalLoad(QByteArray & cleanContents, const QString & filename);
 	const QString & filename();
 	QSizeF defaultSizeF();
-	bool setUpConnector(struct SvgIdLayer * svgIdLayer, bool ignoreTerminalPoint);
-	QList<SvgIdLayer *> setUpNonConnectors();
+	bool setUpConnector(class SvgIdLayer * svgIdLayer, bool ignoreTerminalPoint, ViewLayer::ViewLayerPlacement);
+	QList<SvgIdLayer *> setUpNonConnectors(ViewLayer::ViewLayerPlacement);
 
 public:
 	static void cleanup();

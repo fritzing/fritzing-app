@@ -985,13 +985,13 @@ FSvgRenderer * Wire::setUpConnectors(ModelPart * modelPart, ViewLayer::ViewID vi
 		SvgIdLayer * svgIdLayer = connector->fullPinInfo(viewID, m_viewLayerID);
 		if (svgIdLayer == NULL) continue;
 
-		bool result = renderer->setUpConnector(svgIdLayer, false);
+		bool result = renderer->setUpConnector(svgIdLayer, false, viewLayerPlacement());
 		if (!result) continue;
 
 		ConnectorItem * connectorItem = newConnectorItem(connector);
-		connectorItem->setRect(svgIdLayer->m_rect);
-		connectorItem->setTerminalPoint(svgIdLayer->m_point);
-		m_originalConnectorRect = svgIdLayer->m_rect;
+		connectorItem->setRect(svgIdLayer->rect(viewLayerPlacement()));
+		connectorItem->setTerminalPoint(svgIdLayer->point(viewLayerPlacement()));
+		m_originalConnectorRect = svgIdLayer->rect(viewLayerPlacement());
 
 		connectorItem->setCircular(true);
 		//DebugDialog::debug(QString("terminal point %1 %2").arg(terminalPoint.x()).arg(terminalPoint.y()) );

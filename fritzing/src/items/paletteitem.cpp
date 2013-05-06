@@ -790,7 +790,7 @@ void PaletteItem::resetConnectors(ItemBase * otherLayer, FSvgRenderer * otherLay
 		SvgIdLayer * svgIdLayer = connector->fullPinInfo(m_viewID, m_viewLayerID);
 		if (svgIdLayer == NULL) continue;
 
-		bool result = fsvgRenderer()->setUpConnector(svgIdLayer, false);
+		bool result = fsvgRenderer()->setUpConnector(svgIdLayer, false, viewLayerPlacement());
 		if (!result) continue;
 
 		resetConnector(this, svgIdLayer);
@@ -804,7 +804,7 @@ void PaletteItem::resetConnectors(ItemBase * otherLayer, FSvgRenderer * otherLay
 			SvgIdLayer * svgIdLayer = connector->fullPinInfo(m_viewID, otherLayer->viewLayerID());
 			if (svgIdLayer == NULL) continue;
 
-			bool result = otherLayerRenderer->setUpConnector(svgIdLayer, false);
+			bool result = otherLayerRenderer->setUpConnector(svgIdLayer, false, viewLayerPlacement());
 			if (!result) continue;
 
 			resetConnector(otherLayer, svgIdLayer);
@@ -820,8 +820,8 @@ void PaletteItem::resetConnector(ItemBase * itemBase, SvgIdLayer * svgIdLayer)
 	foreach (ConnectorItem * connectorItem, itemBase->cachedConnectorItems()) {
 		//DebugDialog::debug(QString("via set rect %1").arg(itemBase->viewID()), svgIdLayer->m_rect);
 
-		connectorItem->setRect(svgIdLayer->m_rect);
-		connectorItem->setTerminalPoint(svgIdLayer->m_point);
+		connectorItem->setRect(svgIdLayer->rect(viewLayerPlacement()));
+		connectorItem->setTerminalPoint(svgIdLayer->point(viewLayerPlacement()));
 		connectorItem->setRadius(svgIdLayer->m_radius, svgIdLayer->m_strokeWidth);
         connectorItem->setIsPath(svgIdLayer->m_path);
 		connectorItem->attachedMoved(false, already);

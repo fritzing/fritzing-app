@@ -240,7 +240,7 @@ void Connector::setBus(Bus * bus) {
 void Connector::unprocess(ViewLayer::ViewID viewID, ViewLayer::ViewLayerID viewLayerID) {
 	SvgIdLayer * svgIdLayer = m_connectorShared->fullPinInfo(viewID, viewLayerID);
 	if (svgIdLayer != NULL) {
-		svgIdLayer->m_processed = false;
+		svgIdLayer->unprocess();
 	}
 }
 

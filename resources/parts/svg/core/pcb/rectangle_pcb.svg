@@ -27,6 +27,17 @@
        height="59.7968"
        x="0.1016"
        y="0.1016" />
+  </g>
+  <g
+     id="silkscreen0">
+     <rect
+       fill="none"
+       stroke="#bbbbcc"
+       stroke-width="0.2032"
+       width="99.7968"
+       height="59.7968"
+       x="0.1016"
+       y="0.1016" />
 
   </g>
 </svg>

@@ -38,6 +38,7 @@
   <pcbView>
    <layers image="pcb/pcb-arduino-shield.svg">
     <layer layerId="silkscreen" sticky="true"/>
+    <layer layerId="silkscreen0" sticky="true"/>
     <layer layerId="board" sticky="true"/>
    </layers>
   </pcbView>

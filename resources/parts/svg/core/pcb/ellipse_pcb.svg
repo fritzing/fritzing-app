@@ -7,4 +7,7 @@
 <g id="silkscreen">
 	<ellipse fill="none" stroke="#FFFFFF" stroke-width="0.2032" cx="50" cy="30" rx="49.8984" ry="29.8984" />
 </g>
+<g id="silkscreen0">
+	<ellipse fill="none" stroke="#bbbbcc" stroke-width="0.2032" cx="50" cy="30" rx="49.8984" ry="29.8984" />
+</g>
 </svg>

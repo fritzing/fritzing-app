@@ -87,6 +87,7 @@ protected:
 	virtual bool isBottom();
 	virtual QString flipSvg(const QString & svg);
 	QString flipSvgAux(QString & newSvg);
+	QStringList collectValues(const QString & family, const QString & prop, QString & value);
 
 protected:
 	QString m_logo;

@@ -8440,7 +8440,6 @@ void SketchWidget::collectAllNets(QHash<ConnectorItem *, int> & indexer, QList< 
 
 ViewLayer::ViewLayerPlacement SketchWidget::getViewLayerPlacement(ModelPart * modelPart, QDomElement & instance, QDomElement & view, ViewGeometry & viewGeometry) 
 {
-	Q_UNUSED(modelPart);
 	Q_UNUSED(instance);
 
 	ViewLayer::ViewLayerPlacement viewLayerPlacement = defaultViewLayerPlacement();
@@ -8462,8 +8461,17 @@ ViewLayer::ViewLayerPlacement SketchWidget::getViewLayerPlacement(ModelPart * mo
 		if (layer.isEmpty()) return viewLayerPlacement;
 
 		ViewLayer::ViewLayerID viewLayerID = ViewLayer::viewLayerIDFromXmlString(layer);
-		if (viewLayerID == ViewLayer::Copper1Trace || viewLayerID == ViewLayer::GroundPlane1 || viewLayerID == ViewLayer::Copper1) {
-			return ViewLayer::NewTop;
+        switch (viewLayerID) {
+            case ViewLayer::Copper1Trace:
+            case ViewLayer::GroundPlane1:
+            case ViewLayer::Copper1:
+			    return ViewLayer::NewTop;
+            case ViewLayer::Copper0Trace:
+            case ViewLayer::GroundPlane0:
+            case ViewLayer::Copper0:
+			    return ViewLayer::NewBottom;
+            default:
+                break;
 		}
 	}
 

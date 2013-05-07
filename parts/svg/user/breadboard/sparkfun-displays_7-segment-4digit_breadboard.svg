@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Ebene_1" xmlns:svg="http://www.w3.org/2000/svg"
 	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="114.48px"
@@ -14,170 +14,16 @@
 	<circle id="connector6pin" fill="none" stroke="#9A916C" stroke-width="0.4898" cx="75.24" cy="32.832" r="1.97"/>
 	<circle id="connector7pin" fill="none" stroke="#9A916C" stroke-width="0.4898" cx="82.44" cy="32.832" r="1.97"/>
 	<circle id="connector8pin" fill="none" stroke="#9A916C" stroke-width="0.4898" cx="82.44" cy="4.032" r="1.97"/>
+	<circle id="connector8pin_1_" fill="none" stroke="#9A916C" stroke-width="0.4898" cx="82.44" cy="4.032" r="1.97"/>
+	<circle id="connector9pin" fill="none" stroke="#9A916C" stroke-width="0.4898" cx="75.24" cy="4.032" r="1.97"/>
 	<circle id="connector10pin" fill="none" stroke="#9A916C" stroke-width="0.4898" cx="68.04" cy="4.032" r="1.97"/>
+	<circle id="connector11pin" fill="none" stroke="#9A916C" stroke-width="0.4898" cx="68.04" cy="4.032" r="1.97"/>
+	<circle id="connector11pin_1_" fill="none" stroke="#9A916C" stroke-width="0.4898" cx="60.841" cy="4.032" r="1.97"/>
 	<circle id="connector12pin" fill="none" stroke="#9A916C" stroke-width="0.4898" cx="53.64" cy="4.032" r="1.97"/>
 	<circle id="connector13pin" fill="none" stroke="#9A916C" stroke-width="0.4898" cx="46.44" cy="4.032" r="1.97"/>
 	<circle id="connector14pin" fill="none" stroke="#9A916C" stroke-width="0.4898" cx="39.24" cy="4.032" r="1.97"/>
 	<circle id="connector15pin" fill="none" stroke="#9A916C" stroke-width="0.4898" cx="32.04" cy="4.032" r="1.97"/>
 </g>
-<text transform="matrix(1 0 0 1 -366.26 -1112.0681)" font-family="'MyriadPro-Regular'" font-size="12">&lt;module fritzingVersion=&quot;0.7.5b.06.14.6067&quot;&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 -1097.6677)" font-family="'MyriadPro-Regular'" font-size="12"> &lt;boundingRects&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 -1083.2683)" font-family="'MyriadPro-Regular'" font-size="12">  &lt;boundingRect rect=&quot;209.502 183.854 46.25 63.75&quot; name=&quot;Steckplatinen-Ansicht&quot;/&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 -1068.8679)" font-family="'MyriadPro-Regular'" font-size="12">  &lt;boundingRect rect=&quot;0 0 0 0&quot; name=&quot;Leiterplattenansicht&quot;/&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 -1054.4685)" font-family="'MyriadPro-Regular'" font-size="12">  &lt;boundingRect rect=&quot;0 0 0 0&quot; name=&quot;Schaltplan-Ansicht&quot;/&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 -1040.0681)" font-family="'MyriadPro-Regular'" font-size="12"> &lt;/boundingRects&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 -1025.6677)" font-family="'MyriadPro-Regular'" font-size="12"> &lt;instances&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 -1011.2683)" font-family="'MyriadPro-Regular'" font-size="12">  &lt;instance moduleIdRef=&quot;7segment13an&quot; modelIndex=&quot;632884&quot; path=&quot;C:/Users/l.joevarson/Documents/__FRITZING/fritzing-source/parts/core/7segment_13_an.fzp&quot;&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 -996.8679)" font-family="'MyriadPro-Regular'" font-size="12">   &lt;title&gt;7 Segment1&lt;/title&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 -982.4685)" font-family="'MyriadPro-Regular'" font-size="12">   &lt;views&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 -968.0681)" font-family="'MyriadPro-Regular'" font-size="12">    &lt;schematicView layer=&quot;schematic&quot;&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 -953.6677)" font-family="'MyriadPro-Regular'" font-size="12">     &lt;geometry x=&quot;91&quot; y=&quot;159&quot; z=&quot;2.5&quot;/&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 -939.2683)" font-family="'MyriadPro-Regular'" font-size="12">     &lt;titleGeometry x=&quot;514.75&quot; xOffset=&quot;423.75&quot; y=&quot;145&quot; yOffset=&quot;-14&quot; z=&quot;5.50004&quot; fontSize=&quot;9&quot; visible=&quot;true&quot; textColor=&quot;#000000&quot;&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 -924.8679)" font-family="'MyriadPro-Regular'" font-size="12">      &lt;displayKey key=&quot;&quot;/&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 -910.4685)" font-family="'MyriadPro-Regular'" font-size="12">      &lt;displayKey key=&quot;part number&quot;/&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 -896.0681)" font-family="'MyriadPro-Regular'" font-size="12">     &lt;/titleGeometry&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 -881.6677)" font-family="'MyriadPro-Regular'" font-size="12">     &lt;connectors&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 -867.2683)" font-family="'MyriadPro-Regular'" font-size="12">      &lt;connector connectorId=&quot;connector3&quot; layer=&quot;schematic&quot;&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 -852.8679)" font-family="'MyriadPro-Regular'" font-size="12">       &lt;geometry x=&quot;0&quot; y=&quot;0&quot;/&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 -838.4685)" font-family="'MyriadPro-Regular'" font-size="12">       &lt;connects/&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 -824.0681)" font-family="'MyriadPro-Regular'" font-size="12">      &lt;/connector&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 -809.6677)" font-family="'MyriadPro-Regular'" font-size="12">      &lt;connector connectorId=&quot;connector4&quot; layer=&quot;schematic&quot;&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 -795.2683)" font-family="'MyriadPro-Regular'" font-size="12">       &lt;geometry x=&quot;0&quot; y=&quot;0&quot;/&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 -780.8679)" font-family="'MyriadPro-Regular'" font-size="12">       &lt;connects/&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 -766.4685)" font-family="'MyriadPro-Regular'" font-size="12">      &lt;/connector&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 -752.0681)" font-family="'MyriadPro-Regular'" font-size="12">      &lt;connector connectorId=&quot;connector5&quot; layer=&quot;schematic&quot;&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 -737.6677)" font-family="'MyriadPro-Regular'" font-size="12">       &lt;geometry x=&quot;0&quot; y=&quot;0&quot;/&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 -723.2683)" font-family="'MyriadPro-Regular'" font-size="12">       &lt;connects/&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 -708.8679)" font-family="'MyriadPro-Regular'" font-size="12">      &lt;/connector&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 -694.4685)" font-family="'MyriadPro-Regular'" font-size="12">      &lt;connector connectorId=&quot;connector6&quot; layer=&quot;schematic&quot;&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 -680.0681)" font-family="'MyriadPro-Regular'" font-size="12">       &lt;geometry x=&quot;0&quot; y=&quot;0&quot;/&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 -665.6697)" font-family="'MyriadPro-Regular'" font-size="12">       &lt;connects/&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 -651.2683)" font-family="'MyriadPro-Regular'" font-size="12">      &lt;/connector&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 -636.8679)" font-family="'MyriadPro-Regular'" font-size="12">      &lt;connector connectorId=&quot;connector7&quot; layer=&quot;schematic&quot;&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 -622.4685)" font-family="'MyriadPro-Regular'" font-size="12">       &lt;geometry x=&quot;0&quot; y=&quot;0&quot;/&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 -608.0681)" font-family="'MyriadPro-Regular'" font-size="12">       &lt;connects/&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 -593.6697)" font-family="'MyriadPro-Regular'" font-size="12">      &lt;/connector&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 -579.2683)" font-family="'MyriadPro-Regular'" font-size="12">      &lt;connector connectorId=&quot;connector8&quot; layer=&quot;schematic&quot;&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 -564.8679)" font-family="'MyriadPro-Regular'" font-size="12">       &lt;geometry x=&quot;0&quot; y=&quot;0&quot;/&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 -550.4685)" font-family="'MyriadPro-Regular'" font-size="12">       &lt;connects/&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 -536.0681)" font-family="'MyriadPro-Regular'" font-size="12">      &lt;/connector&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 -521.6677)" font-family="'MyriadPro-Regular'" font-size="12">      &lt;connector connectorId=&quot;connector9&quot; layer=&quot;schematic&quot;&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 -507.2683)" font-family="'MyriadPro-Regular'" font-size="12">       &lt;geometry x=&quot;0&quot; y=&quot;0&quot;/&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 -492.8679)" font-family="'MyriadPro-Regular'" font-size="12">       &lt;connects/&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 -478.4685)" font-family="'MyriadPro-Regular'" font-size="12">      &lt;/connector&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 -464.0681)" font-family="'MyriadPro-Regular'" font-size="12">      &lt;connector connectorId=&quot;connector10&quot; layer=&quot;schematic&quot;&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 -449.6677)" font-family="'MyriadPro-Regular'" font-size="12">       &lt;geometry x=&quot;0&quot; y=&quot;0&quot;/&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 -435.2683)" font-family="'MyriadPro-Regular'" font-size="12">       &lt;connects/&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 -420.8679)" font-family="'MyriadPro-Regular'" font-size="12">      &lt;/connector&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 -406.4666)" font-family="'MyriadPro-Regular'" font-size="12">      &lt;connector connectorId=&quot;connector1&quot; layer=&quot;schematic&quot;&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 -392.0681)" font-family="'MyriadPro-Regular'" font-size="12">       &lt;geometry x=&quot;0&quot; y=&quot;0&quot;/&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 -377.6677)" font-family="'MyriadPro-Regular'" font-size="12">       &lt;connects/&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 -363.2683)" font-family="'MyriadPro-Regular'" font-size="12">      &lt;/connector&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 -348.8679)" font-family="'MyriadPro-Regular'" font-size="12">      &lt;connector connectorId=&quot;connector2&quot; layer=&quot;schematic&quot;&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 -334.4675)" font-family="'MyriadPro-Regular'" font-size="12">       &lt;geometry x=&quot;0&quot; y=&quot;0&quot;/&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 -320.0681)" font-family="'MyriadPro-Regular'" font-size="12">       &lt;connects/&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 -305.6677)" font-family="'MyriadPro-Regular'" font-size="12">      &lt;/connector&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 -291.2673)" font-family="'MyriadPro-Regular'" font-size="12">     &lt;/connectors&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 -276.8679)" font-family="'MyriadPro-Regular'" font-size="12">    &lt;/schematicView&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 -262.4675)" font-family="'MyriadPro-Regular'" font-size="12">    &lt;pcbView layer=&quot;copper0&quot;&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 -248.0681)" font-family="'MyriadPro-Regular'" font-size="12">     &lt;geometry x=&quot;91&quot; y=&quot;159&quot; z=&quot;5.5&quot;&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 -233.6677)" font-family="'MyriadPro-Regular'" font-size="12">      &lt;transform m31=&quot;54.375&quot; m21=&quot;-1&quot; m32=&quot;9.37498&quot; m11=&quot;0&quot; m22=&quot;0&quot; m33=&quot;1&quot; m12=&quot;1&quot; m23=&quot;0&quot; m13=&quot;0&quot;/&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 -219.2673)" font-family="'MyriadPro-Regular'" font-size="12">     &lt;/geometry&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 -204.8679)" font-family="'MyriadPro-Regular'" font-size="12">     &lt;titleGeometry x=&quot;136&quot; xOffset=&quot;45&quot; y=&quot;152&quot; yOffset=&quot;-7&quot; z=&quot;12.5&quot; fontSize=&quot;5&quot; visible=&quot;true&quot; textColor=&quot;#ffffff&quot;&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 -190.4675)" font-family="'MyriadPro-Regular'" font-size="12">      &lt;displayKey key=&quot;&quot;/&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 -176.0671)" font-family="'MyriadPro-Regular'" font-size="12">     &lt;/titleGeometry&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 -161.6677)" font-family="'MyriadPro-Regular'" font-size="12">     &lt;connectors&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 -147.2673)" font-family="'MyriadPro-Regular'" font-size="12">      &lt;connector connectorId=&quot;connector3&quot; layer=&quot;copper0&quot;&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 -132.8679)" font-family="'MyriadPro-Regular'" font-size="12">       &lt;geometry x=&quot;0&quot; y=&quot;0&quot;/&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 -118.4675)" font-family="'MyriadPro-Regular'" font-size="12">       &lt;connects/&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 -104.0671)" font-family="'MyriadPro-Regular'" font-size="12">      &lt;/connector&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 -89.6677)" font-family="'MyriadPro-Regular'" font-size="12">      &lt;connector connectorId=&quot;connector4&quot; layer=&quot;copper0&quot;&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 -75.2673)" font-family="'MyriadPro-Regular'" font-size="12">       &lt;geometry x=&quot;0&quot; y=&quot;0&quot;/&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 -60.8669)" font-family="'MyriadPro-Regular'" font-size="12">       &lt;connects/&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 -46.4675)" font-family="'MyriadPro-Regular'" font-size="12">      &lt;/connector&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 -32.0671)" font-family="'MyriadPro-Regular'" font-size="12">      &lt;connector connectorId=&quot;connector5&quot; layer=&quot;copper0&quot;&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 -17.6677)" font-family="'MyriadPro-Regular'" font-size="12">       &lt;geometry x=&quot;0&quot; y=&quot;0&quot;/&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 -3.2673)" font-family="'MyriadPro-Regular'" font-size="12">       &lt;connects/&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 11.1331)" font-family="'MyriadPro-Regular'" font-size="12">      &lt;/connector&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 25.5325)" font-family="'MyriadPro-Regular'" font-size="12">      &lt;connector connectorId=&quot;connector6&quot; layer=&quot;copper0&quot;&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 39.9329)" font-family="'MyriadPro-Regular'" font-size="12">       &lt;geometry x=&quot;0&quot; y=&quot;0&quot;/&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 54.3323)" font-family="'MyriadPro-Regular'" font-size="12">       &lt;connects/&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 68.7327)" font-family="'MyriadPro-Regular'" font-size="12">      &lt;/connector&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 83.1331)" font-family="'MyriadPro-Regular'" font-size="12">      &lt;connector connectorId=&quot;connector7&quot; layer=&quot;copper0&quot;&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 97.5325)" font-family="'MyriadPro-Regular'" font-size="12">       &lt;geometry x=&quot;0&quot; y=&quot;0&quot;/&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 111.9329)" font-family="'MyriadPro-Regular'" font-size="12">       &lt;connects/&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 126.3333)" font-family="'MyriadPro-Regular'" font-size="12">      &lt;/connector&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 140.7327)" font-family="'MyriadPro-Regular'" font-size="12">      &lt;connector connectorId=&quot;connector8&quot; layer=&quot;copper0&quot;&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 155.1331)" font-family="'MyriadPro-Regular'" font-size="12">       &lt;geometry x=&quot;0&quot; y=&quot;0&quot;/&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 169.5334)" font-family="'MyriadPro-Regular'" font-size="12">       &lt;connects/&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 183.9329)" font-family="'MyriadPro-Regular'" font-size="12">      &lt;/connector&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 198.3333)" font-family="'MyriadPro-Regular'" font-size="12">      &lt;connector connectorId=&quot;connector9&quot; layer=&quot;copper0&quot;&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 212.7327)" font-family="'MyriadPro-Regular'" font-size="12">       &lt;geometry x=&quot;0&quot; y=&quot;0&quot;/&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 227.1331)" font-family="'MyriadPro-Regular'" font-size="12">       &lt;connects/&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 241.5334)" font-family="'MyriadPro-Regular'" font-size="12">      &lt;/connector&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 255.9329)" font-family="'MyriadPro-Regular'" font-size="12">      &lt;connector connectorId=&quot;connector10&quot; layer=&quot;copper0&quot;&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 270.3333)" font-family="'MyriadPro-Regular'" font-size="12">       &lt;geometry x=&quot;0&quot; y=&quot;0&quot;/&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 284.7327)" font-family="'MyriadPro-Regular'" font-size="12">       &lt;connects/&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 299.1331)" font-family="'MyriadPro-Regular'" font-size="12">      &lt;/connector&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 313.5334)" font-family="'MyriadPro-Regular'" font-size="12">      &lt;connector connectorId=&quot;connector1&quot; layer=&quot;copper0&quot;&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 327.9329)" font-family="'MyriadPro-Regular'" font-size="12">       &lt;geometry x=&quot;0&quot; y=&quot;0&quot;/&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 342.3333)" font-family="'MyriadPro-Regular'" font-size="12">       &lt;connects/&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 356.7336)" font-family="'MyriadPro-Regular'" font-size="12">      &lt;/connector&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 371.1331)" font-family="'MyriadPro-Regular'" font-size="12">      &lt;connector connectorId=&quot;connector2&quot; layer=&quot;copper0&quot;&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 385.5334)" font-family="'MyriadPro-Regular'" font-size="12">       &lt;geometry x=&quot;0&quot; y=&quot;0&quot;/&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 399.9338)" font-family="'MyriadPro-Regular'" font-size="12">       &lt;connects/&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 414.3333)" font-family="'MyriadPro-Regular'" font-size="12">      &lt;/connector&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 428.7336)" font-family="'MyriadPro-Regular'" font-size="12">     &lt;/connectors&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 443.1331)" font-family="'MyriadPro-Regular'" font-size="12">    &lt;/pcbView&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 457.5334)" font-family="'MyriadPro-Regular'" font-size="12">    &lt;breadboardView layer=&quot;breadboard&quot;&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 471.9338)" font-family="'MyriadPro-Regular'" font-size="12">     &lt;geometry x=&quot;209.502&quot; y=&quot;183.854&quot; z=&quot;2.5&quot;/&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 486.3333)" font-family="'MyriadPro-Regular'" font-size="12">     &lt;connectors&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 500.7336)" font-family="'MyriadPro-Regular'" font-size="12">      &lt;connector connectorId=&quot;connector3&quot; layer=&quot;breadboard&quot;&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 515.1331)" font-family="'MyriadPro-Regular'" font-size="12">       &lt;geometry x=&quot;0&quot; y=&quot;0&quot;/&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 529.5334)" font-family="'MyriadPro-Regular'" font-size="12">       &lt;connects/&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 543.9338)" font-family="'MyriadPro-Regular'" font-size="12">      &lt;/connector&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 558.3333)" font-family="'MyriadPro-Regular'" font-size="12">      &lt;connector connectorId=&quot;connector4&quot; layer=&quot;breadboard&quot;&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 572.7336)" font-family="'MyriadPro-Regular'" font-size="12">       &lt;geometry x=&quot;0&quot; y=&quot;0&quot;/&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 587.134)" font-family="'MyriadPro-Regular'" font-size="12">       &lt;connects/&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 601.5334)" font-family="'MyriadPro-Regular'" font-size="12">      &lt;/connector&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 615.9338)" font-family="'MyriadPro-Regular'" font-size="12">      &lt;connector connectorId=&quot;connector5&quot; layer=&quot;breadboard&quot;&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 630.3342)" font-family="'MyriadPro-Regular'" font-size="12">       &lt;geometry x=&quot;0&quot; y=&quot;0&quot;/&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 644.7336)" font-family="'MyriadPro-Regular'" font-size="12">       &lt;connects/&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 659.134)" font-family="'MyriadPro-Regular'" font-size="12">      &lt;/connector&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 673.5334)" font-family="'MyriadPro-Regular'" font-size="12">      &lt;connector connectorId=&quot;connector6&quot; layer=&quot;breadboard&quot;&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 687.9338)" font-family="'MyriadPro-Regular'" font-size="12">       &lt;geometry x=&quot;0&quot; y=&quot;0&quot;/&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 702.3342)" font-family="'MyriadPro-Regular'" font-size="12">       &lt;connects/&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 716.7336)" font-family="'MyriadPro-Regular'" font-size="12">      &lt;/connector&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 731.134)" font-family="'MyriadPro-Regular'" font-size="12">      &lt;connector connectorId=&quot;connector7&quot; layer=&quot;breadboard&quot;&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 745.5334)" font-family="'MyriadPro-Regular'" font-size="12">       &lt;geometry x=&quot;0&quot; y=&quot;0&quot;/&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 759.9338)" font-family="'MyriadPro-Regular'" font-size="12">       &lt;connects/&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 774.3342)" font-family="'MyriadPro-Regular'" font-size="12">      &lt;/connector&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 788.7336)" font-family="'MyriadPro-Regular'" font-size="12">      &lt;connector connectorId=&quot;connector8&quot; layer=&quot;breadboard&quot;&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 803.134)" font-family="'MyriadPro-Regular'" font-size="12">       &lt;geometry x=&quot;0&quot; y=&quot;0&quot;/&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 817.5354)" font-family="'MyriadPro-Regular'" font-size="12">       &lt;connects/&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 831.9338)" font-family="'MyriadPro-Regular'" font-size="12">      &lt;/connector&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 846.3342)" font-family="'MyriadPro-Regular'" font-size="12">      &lt;connector connectorId=&quot;connector9&quot; layer=&quot;breadboard&quot;&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 860.7346)" font-family="'MyriadPro-Regular'" font-size="12">       &lt;geometry x=&quot;0&quot; y=&quot;0&quot;/&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 875.134)" font-family="'MyriadPro-Regular'" font-size="12">       &lt;connects/&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 889.5354)" font-family="'MyriadPro-Regular'" font-size="12">      &lt;/connector&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 903.9338)" font-family="'MyriadPro-Regular'" font-size="12">      &lt;connector connectorId=&quot;connector10&quot; layer=&quot;breadboard&quot;&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 918.3342)" font-family="'MyriadPro-Regular'" font-size="12">       &lt;geometry x=&quot;0&quot; y=&quot;0&quot;/&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 932.7346)" font-family="'MyriadPro-Regular'" font-size="12">       &lt;connects/&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 947.134)" font-family="'MyriadPro-Regular'" font-size="12">      &lt;/connector&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 961.5354)" font-family="'MyriadPro-Regular'" font-size="12">      &lt;connector connectorId=&quot;connector1&quot; layer=&quot;breadboard&quot;&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 975.9338)" font-family="'MyriadPro-Regular'" font-size="12">       &lt;geometry x=&quot;0&quot; y=&quot;0&quot;/&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 990.3342)" font-family="'MyriadPro-Regular'" font-size="12">       &lt;connects/&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 1004.7336)" font-family="'MyriadPro-Regular'" font-size="12">      &lt;/connector&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 1019.134)" font-family="'MyriadPro-Regular'" font-size="12">      &lt;connector connectorId=&quot;connector2&quot; layer=&quot;breadboard&quot;&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 1033.5334)" font-family="'MyriadPro-Regular'" font-size="12">       &lt;geometry x=&quot;0&quot; y=&quot;0&quot;/&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 1047.9338)" font-family="'MyriadPro-Regular'" font-size="12">       &lt;connects/&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 1062.3323)" font-family="'MyriadPro-Regular'" font-size="12">      &lt;/connector&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 1076.7336)" font-family="'MyriadPro-Regular'" font-size="12">     &lt;/connectors&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 1091.1331)" font-family="'MyriadPro-Regular'" font-size="12">    &lt;/breadboardView&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 1105.5334)" font-family="'MyriadPro-Regular'" font-size="12">   &lt;/views&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 1119.9329)" font-family="'MyriadPro-Regular'" font-size="12">  &lt;/instance&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 1134.3323)" font-family="'MyriadPro-Regular'" font-size="12"> &lt;/instances&gt;</text>
-<text transform="matrix(1 0 0 1 -366.26 1148.7327)" font-family="'MyriadPro-Regular'" font-size="12">&lt;/module&gt;</text>
 <g id="breadboard_1_">
 	<polygon fill="#323232" points="0,0 113.365,0 114.48,1 114.48,36.864 1,36.864 0,35.557 	"/>
 	<polygon fill="#646464" points="9.718,3.491 22.16,3.491 22.989,4.319 21.329,6.808 10.545,6.808 8.889,4.319 	"/>

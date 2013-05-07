@@ -24,14 +24,14 @@
          x="20"
          y="20"
          id="connector0pad"
-         style="fill:#f7bf13;fill-opacity:1;stroke:none" />
+         style="fill:#f7bf13;fill-opacity:1;stroke:none;stroke-width:0" />
       <rect
          width="140"
          height="150"
          x="225"
          y="20"
          id="connector1pad"
-         style="fill:#f7bf13;fill-opacity:1;stroke:none" />
+         style="fill:#f7bf13;fill-opacity:1;stroke:none;stroke-width:0" />
     </g>
     <g id="silkscreen">
     <rect

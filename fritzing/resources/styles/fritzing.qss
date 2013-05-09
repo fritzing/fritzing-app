@@ -284,6 +284,13 @@ HtmlInfoView {
 	background-color: rgb(155,155,160);
 }
 
+
+#infoViewPartFrame {
+        font-size: 10px;
+        padding: 0px;
+        margin: 0px;
+}
+
 /* part description/subtitle */
 #infoViewPartTitle,
 #infoViewPartVersion {
@@ -332,7 +339,7 @@ HtmlInfoView {
 #propValueFrame {
 	margin: 0px;
 	border: 0px;
-	padding: 1px 0px 1px 0px;
+        padding: 1px 0px 1px 0px;
 	border-top: 1px solid rgb(155,155,155);
 }
 #propValueLabel {
@@ -343,46 +350,83 @@ HtmlInfoView {
 
 /* complex property values */
 
-#infoViewComboBox,
-#infoViewLineEdit {
-	font-size: 10px;
-	color: rgb(0,0,0);
+#infoViewComboBox {
+        font-size: 10px;
+        color: rgb(0,0,0);
+        border: none;
+        padding-left: 5px;
 }
-#infoViewComboBox,
-#infoViewComboBox::drop-down:button,
-#infoViewLineEdit {
-	background: rgb(210, 210, 215);
-	border: none;
+#infoViewComboBox:!editable {
+        background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                    stop: 0 rgb(225,225,225), stop: 0.4 rgb(220,220,220),
+                    stop: 0.5 rgb(215,215,215), stop: 1.0 rgb(210,210,210));
 }
-#infoViewComboBox:hover,
-#infoViewComboBox:editable:hover, /* doesn't work */
-#infoViewComboBox::drop-down:hover, /* should also respond to combo hover */
-#infoViewLineEdit:hover  { 
-	background: rgb(235, 235, 238);
+#infoViewComboBox:hover  {
+        background: rgb(235, 235, 238);
+        background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                    stop: 0 rgb(235,235,235), stop: 0.4 rgb(230,230,230),
+                    stop: 0.5 rgb(225,225,225), stop: 1.0 rgb(220,220,220));
 }
-#infoViewComboBox:on,
-#infoViewComboBox:editable:on, /* doesn't work */
-#infoViewComboBox::drop-down:on,
-#infoViewLineEdit:focus  {
+#infoViewComboBox:on  {
 	background: rgb(255, 255, 255);
 }
-
 #infoViewComboBox::down-arrow {
 	image: url(:/resources/images/icons/combobox-arrow.png);
 }
 
-#infoViewComboBox:editable {
-	border-bottom: 1px solid rgb(100,100,100);
+#infoViewComboBox::drop-down {
+        padding: 0px 5px;
 }
-#infoViewComboBox::drop-down:editable {
-	border-left: 1px solid rgb(100,100,100);
+#infoViewComboBox::drop-down:button {
+        background: transparent;
+}
+#infoViewComboBox::drop-down:hover {
+        background: transparent;
+}
+#infoViewComboBox::drop-down:on {
+        background: transparent;
 }
 
-#infoViewPartFrame {
-	font-size: 10px;
-	padding: 0px;
-	margin: 0px;
+
+#infoViewComboBox:editable {
+        background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+            stop: 0 rgb(200,200,200), stop: 0.1 rgb(230,230,230),
+            stop: 0.1 rgb(230,230,230), stop: 0.5 rgb(245,245,245),
+            stop: 0.5 rgb(245,245,245), stop: 1.0 rgb(255,255,255));
 }
+#infoViewComboBox:editable:hover,
+#infoViewComboBox:editable:on {
+/* BUG: for some reason this background is shown _behind_ the :editable background */
+        background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                  stop: 0 rgb(210,210,210), stop: 0.1 rgb(240,240,240),
+                  stop: 0.1 rgb(240,240,240), stop: 0.5 rgb(255,255,255),
+                  stop: 0.5 rgb(255,255,255), stop: 1.0 rgb(255,255,255));
+}
+#infoViewComboBox::drop-down:editable {
+        border-left: 1px solid rgb(180,180,180);
+        background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                    stop: 0 rgb(225,225,225), stop: 0.4 rgb(220,220,220),
+                    stop: 0.5 rgb(215,215,215), stop: 1.0 rgb(210,210,210));
+}
+
+
+#infoViewLineEdit {
+        font-size: 10px;
+        color: rgb(0,0,0);
+        background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                          stop: 0 rgb(200,200,200), stop: 0.1 rgb(230,230,230),
+                          stop: 0.1 rgb(230,230,230), stop: 0.5 rgb(245,245,245),
+                          stop: 0.5 rgb(245,245,245), stop: 1.0 rgb(255,255,255));
+        border: none;
+}
+#infoViewLineEdit:hover, #infoViewLineEdit:focus  {
+        background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                  stop: 0 rgb(210,210,210), stop: 0.1 rgb(240,240,240),
+                  stop: 0.1 rgb(240,240,240), stop: 0.5 rgb(255,255,255),
+                  stop: 0.5 rgb(255,255,255), stop: 1.0 rgb(255,255,255));
+}
+
+
 
 /* the label between the two spinners in the schematic frame */
 #infoViewOfLabel {

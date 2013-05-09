@@ -1236,6 +1236,7 @@ void Wire::initNames() {
 	colorNames.append(tr("orange"));
     colorNames.append(tr("brown"));
     colorNames.append(tr("purple"));
+    colorNames.append(tr("pink"));
 
 	// need this hash table to translate from user's language to internal color name
     colorTrans.insert(tr("blue"), "blue");
@@ -1248,6 +1249,7 @@ void Wire::initNames() {
 	colorTrans.insert(tr("orange"), "orange");
 	colorTrans.insert(tr("brown"), "brown");
     colorTrans.insert(tr("purple"), "purple");
+    colorTrans.insert(tr("pink"), "pink");
 }
 
 bool Wire::hasFlag(ViewGeometry::WireFlag flag)

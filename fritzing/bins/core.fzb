@@ -405,7 +405,47 @@
                 </iconView>
             </views>
         </instance>
+
+
+      <instance moduleIdRef="__spacer__" modelIndex="3" path="Textile">
+        <views>
+          <iconView layer="icon">
+            <geometry z="-1" x="-1" y="-1"></geometry>
+          </iconView>
+        </views>
+      </instance>
+
+      <instance moduleIdRef="4f6dc41d6d2f66341ea506cdaf0e797e_2" modelIndex="37" path="parts/core/Textile Analog Pressure Sensor.fzp">
+        <views>
+          <iconView layer="icon">
+            <geometry z="-1" x="-1" y="-1"></geometry>
+          </iconView>
+        </views>
+      </instance>
+      <instance moduleIdRef="ab15a34dfcf83e23a26e83fe8a5a4dac_2" modelIndex="37" path="parts/core/Textile Potentiometer.fzp">
+        <views>
+          <iconView layer="icon">
+            <geometry z="-1" x="-1" y="-1"></geometry>
+          </iconView>
+        </views>
+      </instance>
+      <instance moduleIdRef="4d1eb8f243c1aba7afe676122ea516cc_2" modelIndex="37" path="parts/core/Textile Pushbutton.fzp">
+        <views>
+          <iconView layer="icon">
+            <geometry z="-1" x="-1" y="-1"></geometry>
+          </iconView>
+        </views>
+      </instance>
+      <instance moduleIdRef="fa46ea3312d60697b8e907a5c75db23d_2" modelIndex="37" path="parts/core/Textile Stretch Sensor.fzp">
+        <views>
+          <iconView layer="icon">
+            <geometry z="-1" x="-1" y="-1"></geometry>
+          </iconView>
+        </views>
+      </instance>
 	
+
+
       <instance moduleIdRef="__spacer__" modelIndex="3" path="ICs">
         <views>
           <iconView layer="icon">

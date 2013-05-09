@@ -15,7 +15,7 @@ Revision 3 of the board has the following new features:&#xd;&#xd;
     Stronger RESET circuit. &#xd;&#xd;
 &#xd;&#xd;
 For information on using the board with the Android OS, see Google's ADK documentation. </description>
- <title>Arduino Mega ADK (REV3)</title>
+ <title>Arduino Mega ADK (Rev3)</title>
  <url>http://arduino.cc/en/Main/ArduinoBoardADK</url>
  <tags>
   <tag>arduino</tag>

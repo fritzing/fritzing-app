@@ -10,7 +10,7 @@
         <tag>Sparkfun</tag>
     </tags>
     <properties>
-        <property name="family">obsolete Microcontroller Board (Arduino)</property>
+        <property name="family">//obsolete//Microcontroller Board (Arduino)</property>
         <property name="processor">ATmega</property>
         <property name="variant">Arduino Pro Mini</property>
     </properties>

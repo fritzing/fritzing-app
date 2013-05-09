@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><module fritzingVersion="0.4.0b.06.21.4282" moduleId="3661e4bbb7d863e04ccf7a9994dc65ff">
-    <version>4</version>
+<version  replacedby="Arduino-Fio-v22">4</version>
     <author>André Knörig</author>
     <title>Arduino Fio</title>
     <label>Arduino</label>
@@ -12,7 +12,7 @@
         <tag>atmega</tag>
     </tags>
     <properties>
-        <property name="family">Microcontroller Board (Arduino)</property>
+        <property name="family">//obsolete//Microcontroller Board (Arduino)</property>
         <property name="processor">ATmega</property>
         <property name="variant">Arduino Fio</property>
     </properties>

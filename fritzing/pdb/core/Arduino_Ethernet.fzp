@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<module fritzingVersion="0.5.2b.02.18.4756" moduleId="Arduino Ethernet" referenceFile="Arduino_Ethernet.fzp">
- <version>4</version>
+<module fritzingVersion="0.5.2b.02.18.4756" moduleId="Arduino_Ethernet" referenceFile="Arduino_Ethernet.fzp">
+ <version>5</version>
  <date>Mi Apr 3 2013</date>
  <author>althaus</author>
  <description>The Arduino Ethernet is a microcontroller board based on the ATmega328 (datasheet). It has 14 digital input/output pins, 6 analog inputs, a 16 MHz crystal oscillator, a RJ45 connection, a power jack, an ICSP header, and a reset button.&#xd;&#xd;
@@ -25,7 +25,7 @@ The 6-pin serial programming header is compatible with the USB Serial adapter an
  <properties>
   <property name="family">microcontroller board (arduino)</property>
   <property name="part number"></property>
-  <property name="variant">Arduino Ethernet</property>
+  <property name="variant">Arduino Ethernet Board</property>
  </properties>
  <views>
   <breadboardView>

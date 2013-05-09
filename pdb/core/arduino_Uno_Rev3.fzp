@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <module fritzingVersion="0.5.2b.02.18.4756" moduleId="arduino_Uno_Rev3" referenceFile="arduino_Uno_Rev3.fzp">
- <version>4</version>
+ <version>5</version>
  <date>Mo Apr 15 2013</date>
  <author>althaus</author>
  <description>The Arduino Uno is a microcontroller board based on the ATmega328 (datasheet). It has 14 digital input/output pins (of which 6 can be used as PWM outputs), 6 analog inputs, a 16 MHz ceramic resonator, a USB connection, a power jack, an ICSP header, and a reset button. It contains everything needed to support the microcontroller; simply connect it to a computer with a USB cable or power it with a AC-to-DC adapter or battery to get started.&#xd;&#xd;
@@ -690,8 +690,8 @@ Atmega 16U2 replace the 8U2.&#xd;&#xd;
     </pcbView>
    </views>
   </connector>
-  <connector type="female" id="connector91" name="pin $">
-   <description>not defined pin $</description>
+  <connector type="female" id="connector91" name="N/C">
+   <description>not connected</description>
    <views>
     <breadboardView>
      <p svgId="connector91pin" layer="breadboard"/>

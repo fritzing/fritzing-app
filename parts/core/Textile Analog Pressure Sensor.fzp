@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module fritzingVersion="0.1.1201" moduleId="4f6dc41d6d2f66341ea506cdaf0e797e_2" referenceFile="thermistor_300mil.fzp">
+ <version>4</version>
+ <author>Riccardo Marchesi</author>
+ <title>Textile Analog Pressure Sensor </title>
+ <label>R</label>
+ <date>mer mar 13 2013</date>
+ <tags>
+  <tag>plugandwear</tag>
+  <tag>Pressure Sensor</tag>
+  <tag>sensor</tag>
+  <tag>Textile</tag>
+ </tags>
+ <properties>
+  <property name="family">Textile Sensor</property>
+  <property name="type">Analog Pressure</property>
+  <property name="part number">PW073</property>
+ </properties>
+ <taxonomy>discreteParts.sensor.heat.thermistor</taxonomy>
+ <description>A Knitted Analog Pressure Sensor</description>
+ <views>
+  <iconView>
+   <layers image="icon/Textile_analog_sensor.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+  <breadboardView fliphorizontal="true" flipvertical="true">
+   <layers image="breadboard/Textile_analog_sensor.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="schematic/thermistor.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/axial_lay_2_300mil_pcb.svg">
+    <layer layerId="copper0"/>
+    <layer layerId="silkscreen"/>
+    <layer layerId="copper1"/>
+   </layers>
+  </pcbView>
+ </views>
+ <connectors>
+  <connector type="male" id="connector0" name="pin 0">
+   <description>pin0</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector0pin" layer="breadboard" terminalId="connector0terminal"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector0pin" layer="schematic" terminalId="connector0terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector0pin" layer="copper0"/>
+     <p svgId="connector0pin" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" id="connector1" name="pin 1">
+   <description>pin1</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector1pin" layer="breadboard" terminalId="connector1terminal"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector1pin" layer="schematic" terminalId="connector1terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector1pin" layer="copper0"/>
+     <p svgId="connector1pin" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+ </connectors>
+ <url>http://www.plugandwear.com/default.asp?mod=product&amp;cat_id=86&amp;product_id=223</url>
+</module>

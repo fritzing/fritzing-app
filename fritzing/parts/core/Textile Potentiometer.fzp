@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module fritzingVersion="0.3.15b.02.03.3943" moduleId="ab15a34dfcf83e23a26e83fe8a5a4dac_2" referenceFile="pot-small.fzp">
+ <version>4</version>
+ <author>Riccardo Marchesi</author>
+ <title>Textile Potentiometer</title>
+ <label>R</label>
+ <date>mer apr 24 2013</date>
+ <tags>
+  <tag>fritzing core</tag>
+  <tag>adjustable</tag>
+  <tag>poti</tag>
+  <tag>plugandwear</tag>
+  <tag>potentiometer</tag>
+  <tag>resistor</tag>
+ </tags>
+ <properties>
+  <property name="family">Textile Sensor</property>
+  <property name="type">Soft Potentiometer</property>
+  <property name="Maximum Resistance">15kΩ</property>
+  <property name="size">Length - 1m (39")</property>
+  <property name="track">Linear</property>
+  <property name="part number">PW064</property>
+ </properties>
+ <description>A textile adjustable resistor (potentiometer).</description>
+ <views>
+  <iconView>
+   <layers image="icon/Textile_potentiometer.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+  <schematicView>
+   <layers image="schematic/basic_poti.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/jumper_3_100mil.svg">
+    <layer layerId="copper0"/>
+    <layer layerId="silkscreen"/>
+    <layer layerId="keepout"/>
+    <layer layerId="soldermask"/>
+    <layer layerId="outline"/>
+    <layer layerId="copper1"/>
+   </layers>
+  </pcbView>
+  <breadboardView>
+   <layers image="breadboard/Textile_potentiometer.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+ </views>
+ <connectors>
+  <connector type="male" id="connector0" name="leg1">
+   <description>leg1</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector0pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector0pin" layer="schematic" terminalId="connector0terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector0pin" layer="copper0"/>
+     <p svgId="connector0pin" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" id="connector1" name="wiper">
+   <description>wiper</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector1pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector1pin" layer="schematic" terminalId="connector1terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector1pin" layer="copper0"/>
+     <p svgId="connector1pin" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" id="connector2" name="leg2">
+   <description>leg2</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector2pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector2pin" layer="schematic" terminalId="connector2terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector2pin" layer="copper0"/>
+     <p svgId="connector2pin" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+ </connectors>
+ <url>http://www.plugandwear.com/default.asp?mod=product&amp;cat_id=86&amp;product_id=209</url>
+</module>

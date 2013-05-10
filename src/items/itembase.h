@@ -175,7 +175,7 @@ public:
 	virtual void setProp(const QString & prop, const QString & value);
 	QString prop(const QString & p);
 	bool isObsolete();
-	void prepareProps();
+    virtual QHash<QString, QString> prepareProps(ModelPart *, bool wantDebug, QStringList & keys);
 	void resetValues(const QString & family, const QString & prop);
 	const QString & filename();
 	void setFilename(const QString &);

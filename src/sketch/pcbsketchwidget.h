@@ -82,7 +82,7 @@ public:
 	virtual bool isInLayers(ConnectorItem *, ViewLayer::ViewLayerPlacement);
 	bool routeBothSides();
 	bool sameElectricalLayer2(ViewLayer::ViewLayerID, ViewLayer::ViewLayerID);
-	void changeTraceLayer(bool force, QUndoCommand * parentCommand);
+	void changeTraceLayer(ItemBase *, bool force, QUndoCommand * parentCommand);
 	void changeLayer(long id, double z, ViewLayer::ViewLayerID viewLayerID);
 	void updateNet(Wire*);
 	bool acceptsTrace(const ViewGeometry & viewGeometry);

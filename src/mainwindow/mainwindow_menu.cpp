@@ -3897,7 +3897,7 @@ void MainWindow::changeTraceLayer() {
 	if (m_currentGraphicsView == NULL) return;
 	if (m_currentGraphicsView != m_pcbGraphicsView) return;
 
-	m_pcbGraphicsView->changeTraceLayer(false, NULL);
+	m_pcbGraphicsView->changeTraceLayer(NULL, false, NULL);
 }
 
 void MainWindow::updateNet() {

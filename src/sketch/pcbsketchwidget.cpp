@@ -910,7 +910,7 @@ void PCBSketchWidget::swapLayers(ItemBase *, int newLayers, QUndoCommand * paren
 		smds.append(smd);
 	}
 
-	changeTraceLayer(true, changeBoardCommand);
+	changeTraceLayer(NULL, true, changeBoardCommand);
 
 	foreach (ItemBase * smd, smds) {
         long newID;
@@ -1062,10 +1062,14 @@ bool PCBSketchWidget::sameElectricalLayer2(ViewLayer::ViewLayerID id1, ViewLayer
 	return false;
 }
 
-void PCBSketchWidget::changeTraceLayer(bool force, QUndoCommand * parentCommand) {
+void PCBSketchWidget::changeTraceLayer(ItemBase * itemBase, bool force, QUndoCommand * parentCommand) {
 	QList<Wire *> visitedWires;
 	QList<Wire *> changeWires;
-	foreach (QGraphicsItem * item, force ? scene()->items() : scene()->selectedItems()) {
+    QList<QGraphicsItem *> items;
+    if (itemBase != NULL) items << itemBase;
+    else if (force) items = scene()->items();
+    else items =  scene()->selectedItems();
+	foreach (QGraphicsItem * item, items) {
 		TraceWire * tw = dynamic_cast<TraceWire *>(item);
 		if (tw == NULL) continue;
 

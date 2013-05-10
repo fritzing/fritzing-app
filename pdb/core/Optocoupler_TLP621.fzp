@@ -61,14 +61,14 @@ Optocoupler - keeps you from frying your stuff!</description>
             <description>description non disponible</description>
             <views>
                 <breadboardView>
-                    <p layer="breadboard" svgId="connector5"/>
+                    <p layer="breadboard" svgId="connector5pin"/>
                 </breadboardView>
                 <schematicView>
-                    <p layer="schematic" svgId="connector5" terminalId="connector5terminal"/>
+                    <p layer="schematic" svgId="connector5pin" terminalId="connector5terminal"/>
                 </schematicView>
                 <pcbView>
-                    <p layer="copper0" svgId="connector5"/>                    
-		<p layer="copper1" svgId="connector5"/>
+                    <p layer="copper0" svgId="connector5pin"/>                    
+		<p layer="copper1" svgId="connector5pin"/>
                 </pcbView>
             </views>
         </connector>

@@ -514,8 +514,12 @@ bool SqliteReferenceModel::createConnection(const QString & databaseName, bool f
 	m_database.setDatabaseName(databaseName.isEmpty() ? ":memory:" : databaseName);
 	if (!m_database.open()) {
 		m_swappingEnabled = false;
-	} else {
+	} 
+    else {
         m_keepGoing = false;
+        bool gotTransaction = m_database.transaction();
+        DebugDialog::debug(gotTransaction ? "got transaction" : "no transaction");
+
 		bool result = createParts(m_database, fullLoad);
 
         QSqlQuery query;

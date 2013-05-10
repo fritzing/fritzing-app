@@ -534,8 +534,6 @@ bool SqliteReferenceModel::createConnection(const QString & databaseName, bool f
             "part_id INTEGER NOT NULL"
 		")");
         debugError(result, query);
-		result = query.exec("CREATE INDEX idx_viewimage_part_id ON viewimages (part_id ASC)");
-        debugError(result, query);
 
         result = query.exec("CREATE TABLE connectors (\n"
 			"id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,\n"
@@ -545,8 +543,6 @@ bool SqliteReferenceModel::createConnection(const QString & databaseName, bool f
 			"description TEXT,\n"
             "part_id INTEGER NOT NULL"
 		")");
-        debugError(result, query);
-		result = query.exec("CREATE INDEX idx_connector_part_id ON connectors (part_id ASC)");
         debugError(result, query);
 
         result = query.exec("CREATE TABLE connectorlayers (\n"
@@ -560,8 +556,6 @@ bool SqliteReferenceModel::createConnection(const QString & databaseName, bool f
             "connector_id INTEGER NOT NULL"
 		")");
         debugError(result, query);
-		result = query.exec("CREATE INDEX idx_connectorlayer_connector_id ON connectorlayers (connector_id ASC)");
-        debugError(result, query);
 
         result = query.exec("CREATE TABLE buses (\n"
 			"id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,\n"
@@ -569,16 +563,12 @@ bool SqliteReferenceModel::createConnection(const QString & databaseName, bool f
             "part_id INTEGER NOT NULL"
 		")");
         debugError(result, query);
-		result = query.exec("CREATE INDEX idx_bus_part_id ON buses (part_id ASC)");
-        debugError(result, query);
 
         result = query.exec("CREATE TABLE busmembers (\n"
 			"id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,\n"
 			"connectorid TEXT NOT NULL,\n"
             "bus_id INTEGER NOT NULL"
 		")");
-        debugError(result, query);
-		result = query.exec("CREATE INDEX idx_busmember_bus_id ON busmembers (bus_id ASC)");
         debugError(result, query);
 
         result = query.exec("CREATE TABLE schematic_subparts (\n"
@@ -588,8 +578,6 @@ bool SqliteReferenceModel::createConnection(const QString & databaseName, bool f
             "part_id INTEGER NOT NULL"
 		")");
         debugError(result, query);
-		result = query.exec("CREATE INDEX idx_schematic_subpart_part_id ON schematic_subparts (part_id ASC)");
-        debugError(result, query);
 
         // TODO: create a dictionary table so redundant tags, property names, and property values aren't stored multiple times
 
@@ -598,8 +586,6 @@ bool SqliteReferenceModel::createConnection(const QString & databaseName, bool f
 			"tag TEXT NOT NULL,\n"
             "part_id INTEGER NOT NULL"
 		")");
-        debugError(result, query);
-		result = query.exec("CREATE INDEX idx_tag_part_id ON tags (part_id ASC)");
         debugError(result, query);
 
         result = createProperties(m_database);
@@ -621,6 +607,9 @@ bool SqliteReferenceModel::createConnection(const QString & databaseName, bool f
 		foreach(ModelPart* mp, m_partHash.values()) {
 			addPartAux(mp, fullLoad);
 		}
+
+        createIndexes();
+        createMoreIndexes(m_database);
 
 		m_database.commit();
 
@@ -1268,10 +1257,6 @@ bool SqliteReferenceModel::createProperties(QSqlDatabase & db) {
 			"part_id INTEGER NOT NULL"
 		")");
     debugError(query.isActive(), query);
-    if (!query.isActive()) return false;
-
-	query = db.exec("CREATE INDEX idx_property_name ON properties (name ASC)");
-    debugError(query.isActive(), query);
     return query.isActive();
 }
 
@@ -1310,18 +1295,6 @@ bool SqliteReferenceModel::createParts(QSqlDatabase & db, bool fullLoad)
 
     QSqlQuery query = db.exec(string);
     debugError(query.isActive(), query);
-    if (!query.isActive()) return false;
-
-	query = db.exec("CREATE INDEX idx_part_id ON parts (id ASC)");
-    debugError(query.isActive(), query);
-    if (!query.isActive()) return false;
-
-    query = db.exec("CREATE INDEX idx_part_moduleID ON parts (moduleID ASC)");
-    debugError(query.isActive(), query);
-    if (!query.isActive()) return false;
-
-    query = db.exec("CREATE INDEX idx_part_family ON parts (family ASC)");
-    debugError(query.isActive(), query);
     return query.isActive();
 }
 
@@ -1341,5 +1314,42 @@ bool SqliteReferenceModel::insertSubpart(ModelPartShared * mps, qulonglong id)
 	//}
 
 	return true;
+}
+
+void SqliteReferenceModel::createIndexes() {
+    // supposedly faster to add these after the data is inserted
+
+    QSqlQuery query;
+	bool result = query.exec("CREATE INDEX idx_viewimage_part_id ON viewimages (part_id ASC)");
+    debugError(result, query);
+	result = query.exec("CREATE INDEX idx_connector_part_id ON connectors (part_id ASC)");
+    debugError(result, query);
+	result = query.exec("CREATE INDEX idx_connectorlayer_connector_id ON connectorlayers (connector_id ASC)");
+    debugError(result, query);
+	result = query.exec("CREATE INDEX idx_bus_part_id ON buses (part_id ASC)");
+    debugError(result, query);
+	result = query.exec("CREATE INDEX idx_busmember_bus_id ON busmembers (bus_id ASC)");
+    debugError(result, query);
+	result = query.exec("CREATE INDEX idx_schematic_subpart_part_id ON schematic_subparts (part_id ASC)");
+    debugError(result, query);
+	result = query.exec("CREATE INDEX idx_tag_part_id ON tags (part_id ASC)");
+    debugError(result, query);
+}
+
+void SqliteReferenceModel::createMoreIndexes(QSqlDatabase & db)
+{
+    // supposedly faster to add these after the data is inserted
+
+    QSqlQuery query = db.exec("CREATE INDEX idx_property_name ON properties (name ASC)");
+    debugError(query.isActive(), query);
+
+	query = db.exec("CREATE INDEX idx_part_id ON parts (id ASC)");
+    debugError(query.isActive(), query);
+
+    query = db.exec("CREATE INDEX idx_part_moduleID ON parts (moduleID ASC)");
+    debugError(query.isActive(), query);
+
+    query = db.exec("CREATE INDEX idx_part_family ON parts (family ASC)");
+    debugError(query.isActive(), query);
 }
 

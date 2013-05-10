@@ -89,10 +89,12 @@ class SqliteReferenceModel : public ReferenceModel {
 		bool removePart(qulonglong partId);
 		bool removeProperties(qulonglong partId);
         bool loadFromDB(QSqlDatabase & keep_db, QSqlDatabase & db);
-        bool createProperties(QSqlDatabase & db);
-        bool createParts(QSqlDatabase & db, bool fullLoad);
+        bool createProperties(QSqlDatabase &);
+        bool createParts(QSqlDatabase &, bool fullLoad);
         bool insertSubpart(ModelPartShared *, qulonglong id);
         bool insertSubpartConnector(const ConnectorShared * cs, qulonglong id);
+        void createIndexes();
+        void createMoreIndexes(QSqlDatabase &);
 
 protected:
 		volatile bool m_swappingEnabled;

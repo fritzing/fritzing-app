@@ -44,6 +44,8 @@ public:
 	static TraceWire * getTrace(ConnectorItem *);
 	static class QComboBox * createWidthComboBox(double currentMils, QWidget * parent);
 	static int widthEntry(const QString & text, QObject * sender);
+    QHash<QString, QString> prepareProps(ModelPart *, bool wantDebug, QStringList & keys);
+	QStringList collectValues(const QString & family, const QString & prop, QString & value);
 
 public:
 	enum WireDirection {

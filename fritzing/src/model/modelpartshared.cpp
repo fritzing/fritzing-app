@@ -521,7 +521,7 @@ void ModelPartShared::connectorIDs(ViewLayer::ViewID viewID, ViewLayer::ViewLaye
 void ModelPartShared::flipSMDAnd() {
     if (this->path().startsWith(ResourcePath)) {
         // assume resources are set up exactly as intended
-        DebugDialog::debug(QString("skip flip %1").arg(path()));
+        //DebugDialog::debug(QString("skip flip %1").arg(path()));
         return;
     }
 

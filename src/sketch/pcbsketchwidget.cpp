@@ -1176,6 +1176,8 @@ void PCBSketchWidget::changeLayer(long id, double z, ViewLayer::ViewLayerID view
 		tw->setHidden(!viewLayer->visible());
 		tw->update();
 	}
+
+    updateInfoView();
 }
 
 bool PCBSketchWidget::resizingJumperItemPress(QGraphicsItem * item) {

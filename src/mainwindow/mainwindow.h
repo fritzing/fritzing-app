@@ -780,6 +780,7 @@ protected:
 	class WireAction *m_createWireWireAct;
 	QAction *m_createJumperAct;
 	QAction *m_changeTraceLayerAct;
+	class WireAction *m_changeTraceLayerWireAct;
 	QAction *m_excludeFromAutorouteAct;
 	class WireAction *m_excludeFromAutorouteWireAct;
     QAction * m_showUnroutedAct;

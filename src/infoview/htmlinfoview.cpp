@@ -834,60 +834,8 @@ QHash<QString, QString> HtmlInfoView::getPartProperties(ModelPart * modelPart, I
 	QHash<QString, QString> properties;
 	QString family;
 	QString partNumber;
-	if (modelPart) {
-        // TODO: someday get local props
-		properties = modelPart->properties();
-		family = properties.value("family", "").toLower();
-		if (itemBase) {
-			itemBase->prepareProps();
-		}
-
-		// ensure family is first;
-		keys = properties.keys();
-		keys.removeOne("family");
-		keys.push_front("family");
-
-		// ensure part number  is last
-		partNumber = properties.value(ModelPartShared::PartNumberPropertyName, "").toLower();
-		keys.removeOne(ModelPartShared::PartNumberPropertyName);
-		
-		if (wantDebug) {
-			properties.insert("id", QString("%1 %2 %3")
-				.arg(itemBase ? QString::number(itemBase->id()) : "")
-				.arg(modelPart->moduleID())
-				.arg(itemBase ? ViewLayer::viewLayerNameFromID(itemBase->viewLayerID()) : "")
-			);
-			keys.insert(1, "id");
-
-			int insertAt = 2;
-
-			if (itemBase) {
-				PaletteItemBase * paletteItemBase = qobject_cast<PaletteItemBase *>(itemBase);
-				if (paletteItemBase != NULL) {
-					properties.insert("svg", paletteItemBase->filename());
-					keys.insert(insertAt++, "svg");
-				}
-				properties.insert("class", itemBase->metaObject()->className());
-				keys.insert(insertAt++, "class");
-			}
-			else {
-                DebugDialog::debug("htmlinfoview has modelpart without itembase?");
-				//FSvgRenderer * renderer = FSvgRenderer::getByModuleID(modelPart->moduleID(), ViewLayer::Icon);
-				//if (renderer != NULL) {
-				//	properties.insert("svg", renderer->filename());
-				//	keys.insert(insertAt++, "svg");
-				//}
-			}
-			if (modelPart->modelPartShared()) {
-				properties.insert("fzp",  modelPart->path());
-				keys.insert(insertAt++, "fzp");
-			}	
-		}
-	}
-
-	// ensure part number is last
-	if (itemBase != NULL && itemBase->hasPartNumberProperty()) {
-		keys.append(ModelPartShared::PartNumberPropertyName);
+	if (modelPart != NULL && itemBase != NULL) {
+        properties = itemBase->prepareProps(modelPart, wantDebug, keys);
 	}
 
 	return properties;

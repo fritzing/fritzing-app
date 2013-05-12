@@ -1939,6 +1939,7 @@ void MainWindow::swapSelectedMap(const QString & family, const QString & prop, Q
                 currPropsMap.insert(prop, value);
 	        }
             else if (itemBase->itemType() == ModelPart::Wire) {
+                // assume this option is disabled for a one-sided board, so we would not get here?
                 m_pcbGraphicsView->changeTraceLayer(itemBase, false, NULL);
                 return;
             }
@@ -2091,11 +2092,11 @@ void MainWindow::swapSelectedAux(ItemBase * itemBase, const QString & moduleID, 
     if (m_pcbGraphicsView->boardLayers() == 2) {
         ModelPart * modelPart = m_referenceModel->retrieveModelPart(moduleID);
         if (modelPart->flippedSMD()) {
-            viewLayerPlacement = m_pcbGraphicsView->dropOnBottom() ? ViewLayer::NewBottom : ViewLayer::NewTop;
+            //viewLayerPlacement = m_pcbGraphicsView->dropOnBottom() ? ViewLayer::NewBottom : ViewLayer::NewTop;
             if (useViewLayerPlacement) viewLayerPlacement = overrideViewLayerPlacement;
         }
         else if (modelPart->itemType() == ModelPart::Part) {
-            viewLayerPlacement = m_pcbGraphicsView->dropOnBottom() ? ViewLayer::NewBottom : ViewLayer::NewTop;
+            //viewLayerPlacement = m_pcbGraphicsView->dropOnBottom() ? ViewLayer::NewBottom : ViewLayer::NewTop;
             if (useViewLayerPlacement) viewLayerPlacement = overrideViewLayerPlacement;
         }
     }

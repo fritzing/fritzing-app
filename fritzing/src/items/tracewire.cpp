@@ -93,7 +93,12 @@ bool TraceWire::collectExtraInfo(QWidget * parent, const QString & family, const
 		return true;
 	}
 
-	return ClipableWire::collectExtraInfo(parent, family, prop, value, swappingEnabled, returnProp, returnValue, returnWidget, hide);
+	bool result =  ClipableWire::collectExtraInfo(parent, family, prop, value, swappingEnabled, returnProp, returnValue, returnWidget, hide);
+	if (prop.compare("layer", Qt::CaseInsensitive) == 0) {
+        returnWidget->setEnabled(canSwitchLayers());
+    }
+
+    return result;
 }
 
 
@@ -170,4 +175,34 @@ TraceWire * TraceWire::getTrace(ConnectorItem * connectorItem)
 
 void TraceWire::setSchematic(bool schematic) {
 	m_viewGeometry.setSchematicTrace(schematic);
+}
+
+QHash<QString, QString> TraceWire::prepareProps(ModelPart * modelPart, bool wantDebug, QStringList & keys) 
+{
+    QHash<QString, QString> props = ClipableWire::prepareProps(modelPart, wantDebug, keys);
+
+    if (m_viewID != ViewLayer::PCBView) return props;
+    if (!m_viewGeometry.getPCBTrace()) return props;
+
+    keys.append("layer");
+    props.insert("layer", ViewLayer::topLayers().contains(m_viewLayerID) ? "top" : "bottom");
+    return props;
+}
+
+QStringList TraceWire::collectValues(const QString & family, const QString & prop, QString & value) {
+    if (prop.compare("layer") == 0) {
+        QStringList values = ClipableWire::collectValues(family, prop, value);
+        if (values.count() == 0) {
+            values << TranslatedPropertyNames.value("bottom") << TranslatedPropertyNames.value("top");
+            if (ViewLayer::bottomLayers().contains(m_viewLayerID)) {
+                value = values.at(0);
+            }
+            else {
+                value = values.at(1);
+            }
+        }
+        return values;
+    }
+
+    return ClipableWire::collectValues(family, prop, value);
 }

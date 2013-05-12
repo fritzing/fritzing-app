@@ -1579,6 +1579,12 @@ void MainWindow::updateWireMenu() {
 			m_excludeFromAutorouteWireAct->setChecked(!wire->getAutoroutable());
 			if (m_currentGraphicsView == m_pcbGraphicsView && m_currentGraphicsView->boardLayers() > 1) {
 				if (wire->canSwitchLayers()) {
+                    if (ViewLayer::topLayers().contains(wire->viewLayerID())) {
+                        m_changeTraceLayerWireAct->setText(tr("Move to bottom layer"));
+                    }
+                    else {
+                        m_changeTraceLayerWireAct->setText(tr("Move to top layer"));
+                    }
 					ctlOK = true;
 				}
 			}
@@ -1614,6 +1620,7 @@ void MainWindow::updateWireMenu() {
 	m_deleteWireAct->setWire(wire);
 	m_deleteWireMinusAct->setWire(wire);
 	m_excludeFromAutorouteWireAct->setWire(wire);
+	m_changeTraceLayerWireAct->setWire(wire);
 
 	m_bringToFrontWireAct->setEnabled(enableZOK);
 	m_bringForwardWireAct->setEnabled(enableZOK);
@@ -1624,8 +1631,8 @@ void MainWindow::updateWireMenu() {
 	m_deleteWireAct->setEnabled(enableAll && deleteOK);
 	m_deleteWireMinusAct->setEnabled(enableAll && deleteOK && !gotRat);
 	m_excludeFromAutorouteWireAct->setEnabled(enableAll && excludeOK);
-
 	m_changeTraceLayerAct->setEnabled(ctlOK);
+	m_changeTraceLayerWireAct->setEnabled(ctlOK);
 
 	if (gotRat) {
 		m_deleteWireAct->setText(tr("Delete Ratsnest Line"));
@@ -2459,6 +2466,8 @@ void MainWindow::createTraceMenuActions() {
     m_changeTraceLayerAct = new QAction(tr("Move to other side of the board"), this);
 	m_changeTraceLayerAct->setStatusTip(tr("Move selected traces to the other side of the board (note: the 'first' trace will be moved and the rest will follow to the same side)"));
 	connect(m_changeTraceLayerAct, SIGNAL(triggered()), this, SLOT(changeTraceLayer()));
+	m_changeTraceLayerWireAct = new WireAction(m_changeTraceLayerAct);
+	connect(m_changeTraceLayerWireAct, SIGNAL(triggered()), this, SLOT(changeTraceLayer()));
 
     m_showUnroutedAct = new QAction(tr("Show unrouted"), this);
 	m_showUnroutedAct->setStatusTip(tr("Highlight all unrouted connectors"));
@@ -3138,7 +3147,7 @@ QMenu *MainWindow::pcbWireMenu() {
 	QMenu *menu = new QMenu(QObject::tr("Wire"), this);
 	menu->addMenu(m_zOrderWireMenu);
 	menu->addSeparator();
-	menu->addAction(m_changeTraceLayerAct);	
+	menu->addAction(m_changeTraceLayerWireAct);	
 	menu->addAction(m_createTraceWireAct);
 	menu->addAction(m_excludeFromAutorouteWireAct);
 	menu->addSeparator();
@@ -3897,7 +3906,8 @@ void MainWindow::changeTraceLayer() {
 	if (m_currentGraphicsView == NULL) return;
 	if (m_currentGraphicsView != m_pcbGraphicsView) return;
 
-	m_pcbGraphicsView->changeTraceLayer(false, NULL);
+	Wire * wire = retrieveWire();
+	m_pcbGraphicsView->changeTraceLayer(wire, false, NULL);
 }
 
 void MainWindow::updateNet() {

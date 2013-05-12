@@ -1924,19 +1924,25 @@ void MainWindow::swapSelectedMap(const QString & family, const QString & prop, Q
 	QString generatedModuleID = currPropsMap.value("moduleID");
 
 	if (generatedModuleID.isEmpty()) {
-	    if ((family.compare("logo") == 0 || family.compare("pad") == 0 || family.contains("blocker", Qt::CaseInsensitive)) && prop.compare("layer") == 0) {
-		    QString value = Board::convertToXmlName(currPropsMap.value(prop));
-		    if (value.contains("copper1") && m_currentGraphicsView->boardLayers() == 1) {
-			    QMessageBox::warning(
-				    this,
-				    tr("No copper top layer"),
-				    tr("The copper top (copper 1) layer is not available on a one-sided board.  Please switch the board to double-sided or choose the copper bottom (copper 0) layer.")
-			    );
-			    return;
-		    }
-            // use the xml name
-            currPropsMap.insert(prop, value);
-	    }
+        if (prop.compare("layer") == 0) {
+	        if (family.compare("logo") == 0 || family.compare("pad") == 0 || family.contains("blocker", Qt::CaseInsensitive)) {
+		        QString value = Board::convertToXmlName(currPropsMap.value(prop));
+		        if (value.contains("copper1") && m_currentGraphicsView->boardLayers() == 1) {
+			        QMessageBox::warning(
+				        this,
+				        tr("No copper top layer"),
+				        tr("The copper top (copper 1) layer is not available on a one-sided board.  Please switch the board to double-sided or choose the copper bottom (copper 0) layer.")
+			        );
+			        return;
+		        }
+                // use the xml name
+                currPropsMap.insert(prop, value);
+	        }
+            else if (itemBase->itemType() == ModelPart::Wire) {
+                m_pcbGraphicsView->changeTraceLayer(itemBase, false, NULL);
+                return;
+            }
+        }
     }
 
 	if (generatedModuleID.isEmpty()) {

@@ -28,7 +28,9 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 #define FOCUSOUTCOMBOBOX_H
 
 #include <QComboBox>
+#include <QLineEdit>
 #include <QFocusEvent>
+#include <QMouseEvent>
 
 class FocusOutComboBox : public QComboBox {
 Q_OBJECT
@@ -38,7 +40,9 @@ public:
 	~FocusOutComboBox();
 
 protected:
-	void focusOutEvent(QFocusEvent *);
+    void focusInEvent(QFocusEvent *);
+    void focusOutEvent(QFocusEvent *);
+    bool eventFilter( QObject *target, QEvent *event );
 
 };
 

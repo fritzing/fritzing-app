@@ -36,8 +36,7 @@ FocusOutComboBox::~FocusOutComboBox() {
 
 void FocusOutComboBox::focusInEvent(QFocusEvent * e) {
     QComboBox::focusInEvent(e);
-    lineEdit()->setFocus();
-    if( !lineEdit()->hasSelectedText() ) {
+    if(lineEdit() && !lineEdit()->hasSelectedText() ) {
         lineEdit()->selectAll();
     }
 }
@@ -58,7 +57,7 @@ void FocusOutComboBox::focusOutEvent(QFocusEvent * e) {
 
 bool FocusOutComboBox::eventFilter( QObject *target, QEvent *event ) {
     if( target == lineEdit() && event->type() == QEvent::MouseButtonRelease ) {
-        if( !lineEdit()->hasSelectedText() ) {
+        if(lineEdit() && !lineEdit()->hasSelectedText() ) {
             lineEdit()->selectAll();
             return true;
         }

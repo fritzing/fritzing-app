@@ -39,39 +39,6 @@ $Date: 2013-04-26 12:05:48 +0200 (Fr, 26. Apr 2013) $
 #include <QGraphicsSvgItem>
 #include <qnumeric.h>
 
-
-/////////////////////////////////////////////
-
-double getStrokeWidth(QDomElement & element)
-{
-    bool ok;
-	double sw = element.attribute("stroke-width").toDouble(&ok);
-    if (ok) return sw;
-
-    QDomElement parent = element.parentNode().toElement();
-    while (!parent.isNull()) {
-        sw = element.attribute("stroke-width").toDouble(&ok);
-        if (ok) return sw;
-
-        parent = parent.parentNode().toElement();
-    }
-
-    //QString text;
-    //QTextStream stream(&text);
-    //element.save(stream, 0);
-    //DebugDialog::debug(QString("no circle stroke width set in %1: %2").arg(filename).arg(text));
-    element.setAttribute("stroke-width", 1);
-    return 1;
-
-	//QString strokewidth("stroke-width");
-	//QString s = element.attribute("style");
-	//SvgFileSplitter::fixStyleAttribute(connectorElement, s, strokewidth);
-	//sw = connectorElement.attribute("stroke-width").toDouble(&ok);
-	//if (!ok) {
-		//return false;
-	//}
-}
-
 /////////////////////////////////////////////
 
 QString FSvgRenderer::NonConnectorName("nonconn");
@@ -482,7 +449,7 @@ bool FSvgRenderer::initConnectorInfoPath(QDomElement & element, ConnectorInfo * 
     if (stroke == "none") return false;     // cannot be a circle with a hole in the center
 
     connectorInfo->gotPath = true;
-    double sw = getStrokeWidth(element);
+    double sw = TextUtils::getStrokeWidth(element, 1);
 
     if (!stroke.isEmpty()) element.setAttribute("stroke", "black");
 
@@ -629,7 +596,7 @@ bool FSvgRenderer::initConnectorInfoCircle(QDomElement & element, ConnectorInfo 
 	double r = element.attribute("r").toDouble(&ok);
 	if (!ok) return false;
 
-    double sw = getStrokeWidth(element);
+    double sw = TextUtils::getStrokeWidth(element, 1);
 
 	QMatrix matrix = TextUtils::elementToMatrix(element);
 	if (!matrix.isIdentity()) {

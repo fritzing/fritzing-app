@@ -206,7 +206,6 @@ void PaletteItem::makeOneKin(qint64 & id, ViewLayer::ViewLayerID viewLayerID, Vi
             .arg(id).arg(m_viewID).arg(viewLayerID) 
             .arg((long) lkpi, 0, 16)
         );
-		lkpi->setViewLayerPlacement(viewLayerPlacement);
 		addLayerKin(lkpi);
 		id++;
 	}

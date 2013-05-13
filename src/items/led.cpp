@@ -27,7 +27,6 @@ $Date: 2013-04-22 01:45:43 +0200 (Mo, 22. Apr 2013) $
 #include "led.h"
 #include "../utils/graphicsutils.h"
 #include "../utils/textutils.h"
-#include "../utils/focusoutcombobox.h"
 #include "../fsvgrenderer.h"
 #include "../sketch/infographicsview.h"
 #include "../svg/svgfilesplitter.h"

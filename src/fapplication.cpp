@@ -1099,7 +1099,7 @@ int FApplication::startup()
 	//if (!fabEnabled) {
 		QNetworkAccessManager * manager = new QNetworkAccessManager(this);
 		connect(manager, SIGNAL(finished(QNetworkReply *)), this, SLOT(gotOrderFab(QNetworkReply *)));
-		manager->get(QNetworkRequest(QUrl(QString("http://fab.fritzing.org/launched%1").arg(Version::makeRequestParamsString()))));
+		manager->get(QNetworkRequest(QUrl(QString("http://fab.fritzing.org/launched%1").arg(Version::makeRequestParamsString(true)))));
 	//}
 
 	if (m_progressIndex >= 0) splash.showProgress(m_progressIndex, LoadProgressEnd);
@@ -1329,7 +1329,7 @@ void FApplication::checkForUpdates(bool atUserRequest)
 
     QString atom = QString("http://fritzing.org/download/feed/atom/%1/%2")
 		.arg(PLATFORM_NAME)
-		.arg(Version::makeRequestParamsString());
+		.arg(Version::makeRequestParamsString(true));
     DebugDialog::debug(atom);
     versionChecker->setUrl(atom);
 	m_updateDialog->setAtUserRequest(atUserRequest);

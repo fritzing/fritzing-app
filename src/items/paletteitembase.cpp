@@ -35,7 +35,6 @@ $Date: 2013-04-28 13:51:10 +0200 (So, 28. Apr 2013) $
 #include "../connectors/svgidlayer.h"
 #include "wire.h"
 #include "partlabel.h"
-#include "../utils/focusoutcombobox.h"
 #include "../utils/textutils.h"
 #include "../utils/graphicsutils.h"
 #include "../utils/cursormaster.h"

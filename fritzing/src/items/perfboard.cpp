@@ -27,7 +27,6 @@ $Date: 2013-04-22 23:44:56 +0200 (Mo, 22. Apr 2013) $
 #include "perfboard.h"
 #include "../utils/graphicsutils.h"
 #include "../utils/textutils.h"
-#include "../utils/focusoutcombobox.h"
 #include "../utils/boundedregexpvalidator.h"
 #include "../fsvgrenderer.h"
 #include "../sketch/infographicsview.h"

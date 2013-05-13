@@ -119,6 +119,7 @@ public:
 	static QString getRandText();
     static bool ensureViewBox(QDomDocument doc, double dpi, QRectF & rect);
     static QString findAnchor(const QDomElement & text);
+    static double getStrokeWidth(QDomElement &, double defaultValue);
 
 public:
 	static const QRegExp FindWhitespace;

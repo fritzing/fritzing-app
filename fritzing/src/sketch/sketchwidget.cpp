@@ -115,7 +115,7 @@ bool ensureStrokeWidth(QDomDocument & doc, const QString & connectorID, double f
     QString strokeWidth = connector.attribute("stroke-width");
     if (!strokeWidth.isEmpty()) return false;
 
-    connector.setAttribute("stroke-width", factor);         // default stroke width is 1, multipled by factor
+    TextUtils::getStrokeWidth(connector, factor);       // default stroke width is 1, multipled by factor      
     return true;
 }
 

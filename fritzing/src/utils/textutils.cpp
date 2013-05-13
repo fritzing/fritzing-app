@@ -1096,6 +1096,44 @@ bool TextUtils::fixViewBox(QDomElement & root) {
 	return true;
 }
 
+double TextUtils::getStrokeWidth(QDomElement & element, double defaultValue)
+{
+    bool ok;
+	double sw = element.attribute("stroke-width").toDouble(&ok);
+    if (ok) return sw;
+
+    QString stroke = element.attribute("stroke");
+    if (stroke == "none") return 0;
+
+    QDomElement parent = element.parentNode().toElement();
+    while (!parent.isNull()) {
+        sw = parent.attribute("stroke-width").toDouble(&ok);
+        if (ok) return sw;
+
+        stroke = parent.attribute("stroke");
+        if (stroke == "none") return 0;
+
+        parent = parent.parentNode().toElement();
+    }
+
+    //QString text;
+    //QTextStream stream(&text);
+    //element.save(stream, 0);
+    //DebugDialog::debug(QString("no circle stroke width set in %1: %2").arg(filename).arg(text));
+    
+    // default if there is no value to inherit
+    element.setAttribute("stroke-width", defaultValue);
+    return defaultValue;
+
+	//QString strokewidth("stroke-width");
+	//QString s = element.attribute("style");
+	//SvgFileSplitter::fixStyleAttribute(connectorElement, s, strokewidth);
+	//sw = connectorElement.attribute("stroke-width").toDouble(&ok);
+	//if (!ok) {
+		//return false;
+	//}
+}
+
 bool TextUtils::fixStrokeWidth(QDomDocument & svgDoc) {
     bool result = false;
 
@@ -1111,21 +1149,20 @@ bool TextUtils::fixStrokeWidth(QDomDocument & svgDoc) {
 
         QString stroke, strokeWidth;
         stroke = element.attribute("stroke");
-        strokeWidth = element.attribute("stroke-width");
         if (stroke.isEmpty()) {
             QString style = element.attribute("style");
             if (style.contains("stroke")) {
                 fixStyleAttribute(element);
                 stroke = element.attribute("stroke");
-                strokeWidth = element.attribute("stroke-width");
             }
         }
+        strokeWidth = element.attribute("stroke-width");
 
         if (stroke.isEmpty()) continue;
         if (stroke == "none") continue;
         if (!strokeWidth.isEmpty()) continue;
 
-        element.setAttribute("stroke-width", 1);
+        getStrokeWidth(element, 1);
         result = true;
     }
 

@@ -326,7 +326,9 @@ void SvgFlattener::flipSMDElement(QDomDocument & domDocument, QSvgRenderer & ren
 	Q_UNUSED(att);
 
 	QMatrix m = renderer.matrixForElement(att) * TextUtils::elementToMatrix(element);
-	QRectF bounds = renderer.boundsOnElement(att);
+	//QRectF bounds = renderer.boundsOnElement(att);
+    QRectF bounds;   // want part bounds, not layer bounds
+    TextUtils::ensureViewBox(domDocument, 1, bounds);
 	m.translate(bounds.center().x(), bounds.center().y());
 	QMatrix mMinus = m.inverted();
     QMatrix cm = mMinus * ((orientation & Qt::Vertical) ? QMatrix().scale(-1, 1) : QMatrix().scale(1, -1)) * m;

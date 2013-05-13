@@ -52,6 +52,7 @@ LayerKinPaletteItem::LayerKinPaletteItem(PaletteItemBase * chief, ModelPart * mo
 }
 
 void LayerKinPaletteItem::init(LayerAttributes & layerAttributes, const LayerHash & viewLayers) {
+    setViewLayerPlacement(layerAttributes.viewLayerPlacement);
 	m_ok = setUpImage(m_modelPart, viewLayers, layerAttributes);
 	//DebugDialog::debug(QString("lk accepts hover %1 %2 %3 %4 %5").arg(title()).arg(m_viewID).arg(m_id).arg(viewLayerID).arg(this->acceptHoverEvents()));
 }

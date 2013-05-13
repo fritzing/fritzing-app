@@ -2760,16 +2760,19 @@ void PCBSketchWidget::requestQuote() {
     double area = calcBoardArea(boardCount);
     QuoteDialog::setArea(area, boardCount);
 
-    QString paramString = Version::makeRequestParamsString();
+    QString paramString = Version::makeRequestParamsString(false);
     QNetworkAccessManager * manager = new QNetworkAccessManager(this);
+
 
     QString countArgs = QuoteDialog::countArgs();
     manager->setProperty("count", countArgs);
+    QString filename = QUrl::toPercentEncoding(filenameIf());
 	connect(manager, SIGNAL(finished(QNetworkReply *)), this, SLOT(gotFabQuote(QNetworkReply *)));
-    QString string = QString("http://fab.fritzing.org/fritzing-fab/quote%1&area=%2&count=%3")
+    QString string = QString("http://fab.fritzing.org/fritzing-fab/quote%1&area=%2&count=%3&filename=%4")
                 .arg(paramString)
                 .arg(area)
                 .arg(countArgs)
+                .arg(filename)
                 ;
     QuoteDialog::setQuoteSucceeded(false);
 	manager->get(QNetworkRequest(QUrl(string)));

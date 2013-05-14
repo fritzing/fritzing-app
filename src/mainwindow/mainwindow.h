@@ -38,6 +38,7 @@ $Date: 2013-04-28 14:14:07 +0200 (So, 28. Apr 2013) $
 #include <QProcess>
 #include <QDockWidget>
 #include <QXmlStreamWriter>
+#include <QRegExp>
 
 #include "fritzingwindow.h"
 #include "sketchareawidget.h"
@@ -903,6 +904,7 @@ protected:
 	static int UntitledSketchIndex;
 	static int CascadeFactorX;
 	static int CascadeFactorY;
+    static QRegExp GuidMatcher;
 };
 
 

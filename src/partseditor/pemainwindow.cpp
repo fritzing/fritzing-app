@@ -184,6 +184,7 @@ $Date: 2013-04-22 01:45:43 +0200 (Mo, 22. Apr 2013) $
 #include "../infoview/htmlinfoview.h"
 
 #include <QtDebug>
+#include <QInputDialog>
 #include <QApplication>
 #include <QSvgGenerator>
 #include <QMenuBar>
@@ -288,6 +289,7 @@ PEMainWindow::PEMainWindow(ReferenceModel * referenceModel, QWidget * parent)
     m_gaveSaveWarning = m_canSave = false;
     m_settingsPrefix = "pe/";
     m_guid = TextUtils::getRandText();
+    m_prefix = "prefix0000";
     m_fileIndex = 0;
 	m_userPartsFolderPath = FolderUtils::getUserDataStorePath("parts")+"/user/";
 	m_userPartsFolderSvgPath = FolderUtils::getUserDataStorePath("parts")+"/svg/user/";
@@ -704,6 +706,24 @@ bool PEMainWindow::setInitialItem(PaletteItem * paletteItem)
     m_originalModuleID = originalModelPart->moduleID();
 
     QFileInfo info(originalModelPart->path());
+    QString basename = info.completeBaseName();
+    int ix = GuidMatcher.indexIn(basename);
+    if (ix > 1 && basename.at(ix - 1) == '_')  {
+        int dix = ix + 32 + 1;
+        if (basename.count() > dix) {
+            bool gotPrefix = true;
+            for (int i = dix; i < basename.count(); i++) {
+                if (!basename.at(i).isDigit()) {
+                    gotPrefix = false;
+                    break;
+                }
+            }
+            if (gotPrefix) {
+                m_prefix = basename.left(ix - 1);
+            }
+        }
+    }
+
     //DebugDialog::debug(QString("%1, %2").arg(info.absoluteFilePath()).arg(m_userPartsFolderPath));
     m_canSave = info.absoluteFilePath().contains(m_userPartsFolderPath);
 
@@ -743,7 +763,6 @@ bool PEMainWindow::setInitialItem(PaletteItem * paletteItem)
 	foreach (QByteArray byteArray, originalModelPart->dynamicPropertyNames()) {
 		replaceProperty(byteArray, originalModelPart->property(byteArray).toString(), properties);
 	}
-
 
     bool hasLegID = false;
 	QDomElement connectors = fzpRoot.firstChildElement("connectors");
@@ -811,7 +830,7 @@ bool PEMainWindow::setInitialItem(PaletteItem * paletteItem)
             QString svg = file.readAll();
             insertDesc(viewThing->referenceFile, svg);
             TextUtils::fixMuch(svg, true);
-            QString svgPath = makeSvgPath(viewThing->referenceFile, viewThing->sketchWidget, true);
+            QString svgPath = makeSvgPath2(viewThing->sketchWidget);
             bool result = writeXml(m_userPartsFolderSvgPath + svgPath, removeGorn(svg), true);
             if (!result) {
                 QMessageBox::critical(NULL, tr("Parts Editor"), tr("Unable to write svg to  %1").arg(svgPath));
@@ -878,7 +897,7 @@ bool PEMainWindow::setInitialItem(PaletteItem * paletteItem)
         QString header = TextUtils::makeSVGHeader(GraphicsUtils::SVGDPI, GraphicsUtils::StandardFritzingDPI, size.width(), size.height());
         header += makeDesc(viewThing->referenceFile);
 		svg = header + svg + "</svg>";
-        QString svgPath = makeSvgPath(viewThing->referenceFile, viewThing->sketchWidget, true);
+        QString svgPath = makeSvgPath2(viewThing->sketchWidget);
         bool result = writeXml(m_userPartsFolderSvgPath + svgPath, removeGorn(svg), true);
         if (!result) {
             QMessageBox::critical(NULL, tr("Parts Editor"), tr("Unable to write svg to  %1").arg(svgPath));
@@ -1585,7 +1604,7 @@ void PEMainWindow::loadImage()
 
     TextUtils::fixMuch(svg, true);
     insertDesc(newReferenceFile, svg);
-    QString newPath = m_userPartsFolderSvgPath + makeSvgPath(newReferenceFile, m_currentGraphicsView, true);
+    QString newPath = m_userPartsFolderSvgPath + makeSvgPath2(m_currentGraphicsView);
     bool success = writeXml(newPath, removeGorn(svg), true);
     if (!success) {
     	QMessageBox::warning(NULL, tr("Copy problem"), tr("Unable to make a local copy of: '%1'").arg(origPath));
@@ -1674,6 +1693,7 @@ QString PEMainWindow::createSvgFromImage(const QString &origFilePath) {
 	return QString(buffer.buffer());
 }
 
+/*
 QString PEMainWindow::makeSvgPath(const QString & referenceFile, SketchWidget * sketchWidget, bool useIndex)
 {
     QString rf = referenceFile;
@@ -1682,6 +1702,13 @@ QString PEMainWindow::makeSvgPath(const QString & referenceFile, SketchWidget * 
     QString indexString;
     if (useIndex) indexString = QString("_%3").arg(m_fileIndex++);
     return QString("%1/%2%3_%1%4.svg").arg(viewName).arg(rf).arg(m_guid).arg(indexString);
+}
+*/
+
+QString PEMainWindow::makeSvgPath2(SketchWidget * sketchWidget)
+{
+    QString viewName = ViewLayer::viewIDNaturalName(sketchWidget->viewID());
+    return QString("%1/%2_%3_%4_%1.svg").arg(viewName).arg(m_prefix).arg(m_guid).arg(m_fileIndex);
 }
 
 void PEMainWindow::changeSvg(SketchWidget * sketchWidget, const QString & filename, int changeDirection) {
@@ -1710,7 +1737,7 @@ QString PEMainWindow::saveFzp() {
     QString dirName = makeDirName();
     dir.mkdir(dirName);
     dir.cd(dirName);
-    QString fzpPath = dir.absoluteFilePath(QString("%1%2_%3.fzp").arg(getFzpReferenceFile()).arg(m_guid).arg(m_fileIndex++));   
+    QString fzpPath = dir.absoluteFilePath(QString("%1_%2_%3.fzp").arg(m_prefix).arg(m_guid).arg(m_fileIndex++));   
     DebugDialog::debug("temp path " + fzpPath);
     writeXml(fzpPath, m_fzpDocument.toString(), true);
     return fzpPath;
@@ -2010,7 +2037,7 @@ void PEMainWindow::relocateConnectorSvg(SketchWidget * sketchWidget, const QStri
     }
 
     // update svg in case there is a subsequent call to reload
-	QString newPath = m_userPartsFolderSvgPath + makeSvgPath(viewThing->referenceFile, sketchWidget, true);
+	QString newPath = m_userPartsFolderSvgPath + makeSvgPath2(sketchWidget);
 	QString svg = TextUtils::svgNSOnly(svgDoc->toString());
     writeXml(newPath, removeGorn(svg), true);
     setImageAttribute(fzpRoot, newPath, viewID);
@@ -2051,6 +2078,20 @@ bool PEMainWindow::saveAs() {
 
 bool PEMainWindow::saveAs(bool overWrite)
 {
+    bool ok = false;
+    QString prefix = QInputDialog::getText(
+		    this,
+		    tr("Filename prefix"),
+		    tr("Please enter a prefix to help you identify the part files. The names will have the form 'PREFIX_%1'. (It is not necessary to change the prefix, since a unique suffix is always added.)").arg(m_guid),
+		    QLineEdit::Normal,
+		    m_prefix,
+		    &ok
+	    );
+    if (!ok || prefix.isEmpty()) return false;
+
+    if (prefix != m_prefix) overWrite = false;
+    m_prefix = prefix;
+
     QDomElement fzpRoot = m_fzpDocument.documentElement();
 
     QList<MainWindow *> affectedWindows;
@@ -2190,7 +2231,7 @@ bool PEMainWindow::saveAs(bool overWrite)
         QString svg = writeDoc.toString();
         insertDesc(viewThing->referenceFile, svg);
 
-        QString svgPath = makeSvgPath(viewThing->referenceFile, viewThing->sketchWidget, false);  // make a new path
+        QString svgPath = makeSvgPath2(viewThing->sketchWidget);  
 		setImageAttribute(layers, svgPath);
 
         QString actualPath = m_userPartsFolderSvgPath + svgPath; 
@@ -2201,8 +2242,8 @@ bool PEMainWindow::saveAs(bool overWrite)
     }
 
     QDir dir(m_userPartsFolderPath);
-	QString suffix = QString("%1_%2").arg(m_guid).arg(m_fileIndex++);
-    QString fzpPath = dir.absoluteFilePath(QString("%1%2.fzp").arg(getFzpReferenceFile()).arg(suffix));  
+	QString suffix = QString("%1_%2_%3").arg(m_prefix).arg(m_guid).arg(m_fileIndex++);
+    QString fzpPath = dir.absoluteFilePath(QString("%1.fzp").arg(suffix));  
 
     if (overWrite) {
         fzpPath = m_originalFzpPath;
@@ -2461,7 +2502,7 @@ void PEMainWindow::moveTerminalPoint(SketchWidget * sketchWidget, const QString 
         }
 
         // update svg in case there is a subsequent call to reload
-	    QString newPath = m_userPartsFolderSvgPath + makeSvgPath(viewThing->referenceFile, sketchWidget, true);
+	    QString newPath = m_userPartsFolderSvgPath + makeSvgPath2(sketchWidget);
 	    QString svg = TextUtils::svgNSOnly(svgDoc->toString());
         writeXml(newPath, removeGorn(svg), true);
         setImageAttribute(fzpRoot, newPath, sketchWidget->viewID());
@@ -2791,11 +2832,13 @@ bool PEMainWindow::editsModuleID(const QString & moduleID) {
     return (m_originalModuleID.compare(moduleID) == 0);
 }
 
+/*
 QString PEMainWindow::getFzpReferenceFile() {
     QString referenceFile = m_fzpDocument.documentElement().attribute(ReferenceFileString);
     if (!referenceFile.isEmpty()) referenceFile += "_";
     return referenceFile;
 }
+*/
 
 QString PEMainWindow::getSvgReferenceFile(const QString & filename) {
     QFileInfo info(filename);
@@ -3397,7 +3440,7 @@ void PEMainWindow::smdChanged(const QString & after) {
 		}
 	}
 
-	QString newPath = m_userPartsFolderSvgPath + makeSvgPath(viewThing->referenceFile, m_pcbGraphicsView, true);
+	QString newPath = m_userPartsFolderSvgPath + makeSvgPath2(m_pcbGraphicsView);
 	QString svg = TextUtils::svgNSOnly(svgDoc.toString());
     writeXml(newPath, removeGorn(svg), true);
 
@@ -3760,7 +3803,7 @@ void PEMainWindow::changeReferenceFile(ViewLayer::ViewID viewID, const QString r
 {
     ViewThing * viewThing = m_viewThings.value(viewID);
     if (viewThing == NULL) {
-        // shouldn't happend
+        // shouldn't happen
         DebugDialog::debug(QString("missing view thing for %1").arg(viewID));
         return;
     }

@@ -1594,7 +1594,7 @@ bool ItemBase::connectionIsAllowed(ConnectorItem * other) {
 QString ItemBase::getProperty(const QString & key) {
 	if (m_modelPart == NULL) return "";
 
-	QString result = m_modelPart->localProp(key).toString();
+    QString result = m_modelPart->localProp(key).toString();
 	if (!result.isEmpty()) return result;
 
 	return m_modelPart->properties().value(key, "");
@@ -1685,6 +1685,7 @@ bool ItemBase::collectExtraInfo(QWidget * parent, const QString & family, const 
 		comboBox->addItems(values);
 		comboBox->setCurrentIndex(comboBox->findText(tempValue));
 		comboBox->setEnabled(swappingEnabled);
+        comboBox->setSizeAdjustPolicy(QComboBox::AdjustToMinimumContentsLength);
 		connect(comboBox, SIGNAL(currentIndexChanged(const QString &)), this, SLOT(swapEntry(const QString &)));
 
 		returnWidget = comboBox;

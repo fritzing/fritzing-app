@@ -26,13 +26,17 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 
 #include "focusoutcombobox.h"
 
-FocusOutComboBox::FocusOutComboBox(QWidget * parent) : QComboBox(parent)
-{
+FocusOutComboBox::FocusOutComboBox(QWidget * parent) : QComboBox(parent) {
 	setEditable(true);
+    lineEdit()->installEventFilter( this );
 }
 
-FocusOutComboBox::~FocusOutComboBox()
-{
+FocusOutComboBox::~FocusOutComboBox() {
+}
+
+void FocusOutComboBox::focusInEvent(QFocusEvent * e) {
+    QComboBox::focusInEvent(e);
+    checkSelectAll();
 }
 
 void FocusOutComboBox::focusOutEvent(QFocusEvent * e) {
@@ -47,4 +51,17 @@ void FocusOutComboBox::focusOutEvent(QFocusEvent * e) {
 		}
 		setCurrentIndex(ix);
 	}
+}
+
+bool FocusOutComboBox::eventFilter( QObject *target, QEvent *event ) {
+    if( target == lineEdit() && event->type() == QEvent::MouseButtonRelease ) {
+        checkSelectAll();
+    }
+    return false;
+}
+
+void FocusOutComboBox::checkSelectAll() {
+    if(lineEdit() && !lineEdit()->hasSelectedText() && isEnabled()) {
+        lineEdit()->selectAll();
+    }
 }

@@ -95,20 +95,23 @@ void LabelThing::mouseReleaseEvent(QMouseEvent * event) {
 }
 
 void LabelThing::paintEvent(QPaintEvent * event) {
-    QPainter painter(this);
+    // use 'new QPainter()' so that delete is invoked before the QLabel::paintEvent call, otherwise the label isn't painted on mac
+    QPainter * painter = new QPainter(this);              
     switch (m_state) {
         case PRESSED:
-            painter.drawPixmap(0, 0, m_pressedImage);
+            painter->drawPixmap(0, 0, m_pressedImage);
             setContentsMargins(0, 4, 0, 0);
             break;
         case HOVER:
-            painter.drawPixmap(0, 0, m_hoverImage);
+            painter->drawPixmap(0, 0, m_hoverImage);
             break;
         case RELEASED:
-            painter.drawPixmap(0, 0, m_releasedImage);
+            painter->drawPixmap(0, 0, m_releasedImage);
             setContentsMargins(0, 0, 0, 0);
             break;
     }
+
+    delete painter;
 
     DebugDialog::debug(QString("paint event %1").arg(m_state));
     QLabel::paintEvent(event);

@@ -1851,15 +1851,22 @@ QString TextUtils::getRandText() {
 }*/
 
 
-bool TextUtils::ensureViewBox(QDomDocument doc, double dpi, QRectF & rect) {
+bool TextUtils::ensureViewBox(QDomDocument doc, double dpi, QRectF & rect, bool convert) {
     bool isIllustrator = TextUtils::isIllustratorDoc(doc);
 
     QDomElement root = doc.documentElement();
 	QString viewBox = root.attribute("viewBox");
 	if (viewBox.isEmpty()) {
 		bool ok1, ok2;
-		double w = TextUtils::convertToInches(root.attribute("width"), &ok1, isIllustrator) * dpi;
-		double h = TextUtils::convertToInches(root.attribute("height"), &ok2, isIllustrator) * dpi;
+        double w, h;
+        if (convert) {
+		    w = TextUtils::convertToInches(root.attribute("width"), &ok1, isIllustrator) * dpi;
+		    h = TextUtils::convertToInches(root.attribute("height"), &ok2, isIllustrator) * dpi;
+        }
+        else {
+		    w = root.attribute("width").toDouble(&ok1);
+		    h = root.attribute("height").toDouble(&ok2);
+        }
 		if (!ok1 || !ok2) {
 			return false;
 		}

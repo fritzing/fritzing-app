@@ -8345,7 +8345,7 @@ void SketchWidget::copyDrop() {
 }
 
 ViewLayer::ViewLayerPlacement SketchWidget::defaultViewLayerPlacement() {
-	return (m_boardLayers == 1) ? ViewLayer::NewBottom : ViewLayer::NewTop;
+	return (m_boardLayers == 1) ? /* ViewLayer::NewBottom */ ViewLayer::NewTop : ViewLayer::NewTop;
 }
 
 ViewLayer::ViewLayerPlacement SketchWidget::wireViewLayerPlacement(ConnectorItem *) {

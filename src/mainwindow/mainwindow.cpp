@@ -162,7 +162,7 @@ int MainWindow::AutosaveTimeoutMinutes = 10;   // in minutes
 bool MainWindow::AutosaveEnabled = true;
 QString MainWindow::BackupFolder;
 
-static QRegExp GuidMatcher("[A-Fa-f0-9]{32}");
+QRegExp MainWindow::GuidMatcher = QRegExp("[A-Fa-f0-9]{32}");
 
 /////////////////////////////////////////////
 

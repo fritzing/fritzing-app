@@ -141,7 +141,8 @@ protected:
     void initSvgTree(SketchWidget *, ItemBase *, QDomDocument &);
     void initConnectors(bool updateConnectorsView);
     QString createSvgFromImage(const QString &origFilePath);
-    QString makeSvgPath(const QString & referenceFile, SketchWidget * sketchWidget, bool useIndex);
+    // QString makeSvgPath(const QString & referenceFile, SketchWidget * sketchWidget, bool useIndex);
+    QString makeSvgPath2(SketchWidget * sketchWidget);
     QString saveFzp();
     void reload(bool firstTime);
     void createFileMenu();
@@ -159,7 +160,7 @@ protected:
     void killPegi();
     bool loadFzp(const QString & path);
     void removedConnectorsAux(QList<QDomElement> & connectors);
-    QString getFzpReferenceFile();
+    //QString getFzpReferenceFile();
     QString getSvgReferenceFile(const QString & filename);
     QString makeDesc(const QString & referenceFile);
     void insertDesc(const QString & referenceFile, QString & svg);
@@ -244,6 +245,7 @@ protected:
     class PEToolView * m_peToolView;
     class PESvgView * m_peSvgView;
     QString m_guid;
+    QString m_prefix;
     int m_fileIndex;
     QHash<ViewLayer::ViewID, ViewThing *> m_viewThings;
     QString m_userPartsFolderPath;

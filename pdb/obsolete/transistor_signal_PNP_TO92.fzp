@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><module fritzingVersion="0.1.1255" moduleId="2244EBEC21">
- <version>4</version>
+ <version replacedby="2244EBEC21e">4</version>
  <author>Stefan Hermann</author>
  <title>PNP-Transistor</title>
  <label>Q</label>

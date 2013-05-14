@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?><module fritzingVersion="0.1.1255" moduleId="NPN_92_ECB">
  <version>4</version>
- <author>Stefan Hermann</author>
+ <author>Fabian Althaus</author>
  <title>NPN-Transistor</title>
  <label>Q</label>
- <date>2008-10-10</date>
+ <date>2013-05-14</date>
  <tags>
   <tag>NPN</tag>
   <tag>transistor</tag>

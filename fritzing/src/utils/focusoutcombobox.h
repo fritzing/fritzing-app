@@ -43,6 +43,7 @@ protected:
     void focusInEvent(QFocusEvent *);
     void focusOutEvent(QFocusEvent *);
     bool eventFilter( QObject *target, QEvent *event );
+    void checkSelectAll();
 
 };
 

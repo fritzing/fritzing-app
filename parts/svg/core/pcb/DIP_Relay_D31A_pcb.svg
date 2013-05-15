@@ -1,24 +1,29 @@
-<?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-<svg width="36.900002" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" version="1.1" xmlns="http://www.w3.org/2000/svg" height="63.900002"  xmlns:svg="http://www.w3.org/2000/svg" >
- <g style="fill:#000000" id="silkscreen" transform="matrix(0.09,0,0,0.09,-0.45,-0.45)">
-  <line style="fill:#000000;stroke:#ffffff;stroke-width:10" id="line4148" y1="10" y2="710" x1="10" x2="10"/>
-  <line style="fill:#000000;stroke:#ffffff;stroke-width:10" id="line4150" y1="710" y2="710" x1="10" x2="410"/>
-  <line style="fill:#000000;stroke:#ffffff;stroke-width:10" id="line4152" y1="710" y2="10" x1="410" x2="410"/>
-  <line style="fill:#000000;stroke:#ffffff;stroke-width:10" id="line4154" y1="10" y2="10" x1="10" x2="160"/>
-  <line style="fill:#000000;stroke:#ffffff;stroke-width:10" id="line4156" y1="10" y2="10" x1="260" x2="410"/>
- </g>
- <g id="copper0"> <g id="copper1">
-  <g id="g10452" transform="matrix(0.09,0,0,0.09,-0.45,-0.45)">
-   <rect id='square' width="55" x="32.5" y="32.5" height="55" style="fill:none;stroke:#ffbf00;stroke-width:20" />
-  </g>
-  <circle id="connector13pin" cx="360" cy="60" style="fill:none;stroke:#ffbf00;stroke-width:20" r="27.5" transform="matrix(0.09,0,0,0.09,-0.45,-0.45)"/>
-  <circle id="connector1pin" cx="60" cy="160" style="fill:none;stroke:#ffbf00;stroke-width:20" r="27.5" transform="matrix(0.09,0,0,0.09,-0.45,-0.45)"/>
-  <circle id="connector12pin" cx="360" cy="160" style="fill:none;stroke:#ffbf00;stroke-width:20" r="27.5"  transform="matrix(0.09,0,0,0.09,-0.45,-0.45)"/>
-  <circle id="connector5pin" cx="60" cy="560" style="fill:none;stroke:#ffbf00;stroke-width:20" r="27.5"  transform="matrix(0.09,0,0,0.09,-0.45,-0.45)"/>
-  <circle id="connector8pin" cx="360" cy="560" style="fill:none;stroke:#ffbf00;stroke-width:20" r="27.5"  transform="matrix(0.09,0,0,0.09,-0.45,-0.45)"/>
-  <circle id="connector6pin" cx="60" cy="660" style="fill:none;stroke:#ffbf00;stroke-width:20" r="27.5"  transform="matrix(0.09,0,0,0.09,-0.45,-0.45)"/>
-  <circle id="connector7pin" cx="360" cy="660" style="fill:none;stroke:#ffbf00;stroke-width:20" r="27.5"  transform="matrix(0.09,0,0,0.09,-0.45,-0.45)"/>
-  <circle id="connector0pin" cx="60" cy="60" style="fill:none;stroke:#ffbf00;stroke-width:20" r="27.5"  transform="matrix(0.09,0,0,0.09,-0.45,-0.45)"/>
- </g> </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Ebene_1" xmlns:svg="http://www.w3.org/2000/svg" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="36.9px" height="63.9px"
+	 viewBox="0 0 36.9 63.9" enable-background="new 0 0 36.9 63.9" xml:space="preserve">
+<g id="silkscreen" transform="matrix(0.09,0,0,0.09,-0.45,-0.45)">
+	<line id="line4148" fill="none" stroke="#FFFFFF" stroke-width="0.75" x1="9.999" y1="10" x2="9.999" y2="710"/>
+	<line id="line4150" fill="none" stroke="#FFFFFF" stroke-width="0.75" x1="9.999" y1="710" x2="409.999" y2="710"/>
+	<line id="line4152" fill="none" stroke="#FFFFFF" stroke-width="0.75" x1="409.999" y1="710" x2="409.999" y2="10"/>
+	<line id="line4154" fill="none" stroke="#FFFFFF" stroke-width="0.75" x1="9.999" y1="10" x2="159.999" y2="10"/>
+	<line id="line4156" fill="none" stroke="#FFFFFF" stroke-width="0.75" x1="259.999" y1="10" x2="409.999" y2="10"/>
+</g>
+<g id="copper0">
+	<g id="copper1">
+		<g id="g10452" transform="matrix(0.09,0,0,0.09,-0.45,-0.45)">
+			<rect id="square" x="32.502" y="32.504" fill="none" stroke="#FFBF00" stroke-width="1.224" width="54.991" height="54.991"/>
+		</g>
+		<circle id="connector13pin" fill="none" stroke="#FFBF00" stroke-width="1.224" cx="31.95" cy="4.95" r="2.475"/>
+		<circle id="connector1pin" fill="none" stroke="#FFBF00" stroke-width="1.224" cx="4.95" cy="13.95" r="2.475"/>
+		<circle id="connector12pin" fill="none" stroke="#FFBF00" stroke-width="1.224" cx="31.95" cy="13.95" r="2.475"/>
+		<circle id="connector5pin" fill="none" stroke="#FFBF00" stroke-width="1.224" cx="4.95" cy="49.95" r="2.475"/>
+		<circle id="connector8pin" fill="none" stroke="#FFBF00" stroke-width="1.224" cx="31.95" cy="49.95" r="2.475"/>
+		<circle id="connector6pin" fill="none" stroke="#FFBF00" stroke-width="1.224" cx="4.95" cy="58.95" r="2.475"/>
+		<circle id="connector7pin" fill="none" stroke="#FFBF00" stroke-width="1.224" cx="31.95" cy="58.95" r="2.475"/>
+		<circle id="connector0pin" fill="none" stroke="#FFBF00" stroke-width="1.224" cx="4.95" cy="4.95" r="2.475"/>
+	</g>
+</g>
 </svg>

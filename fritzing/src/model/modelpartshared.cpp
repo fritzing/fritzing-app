@@ -547,7 +547,7 @@ void ModelPartShared::flipSMDAnd() {
 
         // prep for placing on the bottom
 	    if (layerList.contains(ViewLayer::Silkscreen1) && !layerList.contains(ViewLayer::Silkscreen0)) {
-            DebugDialog::debug(QString("silk0 %1 %2").arg(this->title()).arg(this->moduleID()));
+            //DebugDialog::debug(QString("silk0 %1 %2").arg(this->title()).arg(this->moduleID()));
             viewImage->layers |= (one << ViewLayer::Silkscreen0);
             layerList << ViewLayer::Silkscreen0;
 	    }

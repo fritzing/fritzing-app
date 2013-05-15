@@ -29,15 +29,17 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 
 #include <QComboBox>
 #include "../debugdialog.h"
+#include "focusoutcombobox.h"
 
-class FamilyPropertyComboBox : public QComboBox 
+class FamilyPropertyComboBox : public FocusOutComboBox 
 {
 	Q_OBJECT
 
 public:
-	FamilyPropertyComboBox(const QString & family, const QString & prop, QWidget * parent = 0) : QComboBox(parent) {
+	FamilyPropertyComboBox(const QString & family, const QString & prop, QWidget * parent = 0) : FocusOutComboBox(parent) {
 		m_family = family;
 		m_prop = prop;
+        setEditable(false);
 	}
 	~FamilyPropertyComboBox() {
 	}

@@ -436,6 +436,7 @@ void PaletteItem::figureHover() {
 		if (!(base->hidden() || base->inactive() || base->layerHidden()) && base->hasConnectors()) {
 			base->setAcceptHoverEvents(true);
 			base->setAcceptedMouseButtons(ALLMOUSEBUTTONS);
+            //base->debugInfo("figure hover copper");
 			break;
 		}
 		ix++;
@@ -446,6 +447,7 @@ void PaletteItem::figureHover() {
 		if (!(base->hidden() || base->inactive() || base->layerHidden())) {
 			base->setAcceptHoverEvents(true);
 			base->setAcceptedMouseButtons(ALLMOUSEBUTTONS);
+            //base->debugInfo("figure hover leave");
 			return;
 		}
 	}

@@ -13,7 +13,7 @@
  </tags>
  <properties>
   <property name="package">TO92 [THT]</property>
-  <property name="family">Bipolar Transistor</property>
+  <property name="family">//obsolete// Bipolar Transistor</property>
   <property name="type">NPN (EBC)</property>
  </properties>
  <description>A standard NPN-transistor</description>

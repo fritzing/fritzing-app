@@ -443,16 +443,6 @@
         <translation>Twee lagen (Dubbel zijdig)</translation>
     </message>
     <message>
-        <source>
-
-A custom board svg typically has one silkscreen layer and one board layer.
-</source>
-        <translation>
-
-Een aangepast bord SVG heeft gewoonlijk één silkscreen laag en één bord laag.
-</translation>
-    </message>
-    <message>
         <source>Have a look at the circle_pcb.svg file in your Fritzing installation folder at parts/svg/core/pcb/.
 
 </source>
@@ -571,6 +561,17 @@ Als je aangepaste vorm uitsnedes zou moet hebben, maar je krijgt niet het verwac
         <source>and checking the resulting contour file with a Gerber viewer application.</source>
         <translation>en het resultaat van het countour bestand te controleren via een Gerber viewer.</translation>
     </message>
+    <message>
+        <source>
+
+A custom board svg typically has one or two silkscreen layers and one board layer.
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>because there are multiple &lt;silkscreen0&gt; layers</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>BoardLogoItem</name>
@@ -646,14 +647,6 @@ Er zijn geen banen of connectoren die elkaar overlappen of te dicht bij elkaar l
     <message>
         <source>Unexpected SVG rendering failure--contact fritzing.org</source>
         <translation>Onverwachtte SVG render fout--Neem contact op met Fritzing.org</translation>
-    </message>
-    <message>
-        <source>top</source>
-        <translation>boven</translation>
-    </message>
-    <message>
-        <source>bottom</source>
-        <translation>onder</translation>
     </message>
     <message>
         <source>Fritzing</source>
@@ -1129,6 +1122,30 @@ Het is ook mogelijk om op een connector rechts te klikken en kies &apos;Maak gro
     </message>
     <message>
         <source>banded</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>top</source>
+        <translation type="unfinished">boven</translation>
+    </message>
+    <message>
+        <source>bottom</source>
+        <translation type="unfinished">onder</translation>
+    </message>
+    <message>
+        <source>copper bottom</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>copper top</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>silkscreen bottom</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>silkscreen top</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -3120,6 +3137,14 @@ Doorgaan en terug naar vorige versie?</translation>
         <source>Delete Wire up to bendpoints</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Move to bottom layer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Move to top layer</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MazeRouter</name>
@@ -3916,6 +3941,14 @@ Doorgaan en opslaan?</translation>
     </message>
     <message>
         <source>Unable to create new connector--you may have to start over.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Filename prefix</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please enter a prefix to help you identify the part files. The names will have the form &apos;PREFIX_%1&apos;. (It is not necessary to change the prefix, since a unique suffix is always added.)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -6650,6 +6683,10 @@ Noot:Je kunt dit venster ook oproepen door op de tekst van de routing status te 
     </message>
     <message>
         <source>Banded</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>pink</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

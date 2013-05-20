@@ -170,9 +170,8 @@
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="169"/>
-        <source>and to Arthur Zanona, Nuno Pessanha Santos, and Leandro Nunes for the Portuguese (Brazilian) translation. </source>
-        <translatorcomment>Thank you part generally at the end of Turkish sentences(Teşekkürler).</translatorcomment>
-        <translation>ve Arthur Zanona Nuno Pessanha ve Leandro Nunes&apos;e Portekizce(Brezilya) tercüme katkıları için teşekkürler. </translation>
+        <source>and to Arthur Zanona, Nuno Pessanha Santos, Leandro Nunes, and Gabriel Ferreira for the Portuguese (Brazilian) translation. </source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="173"/>

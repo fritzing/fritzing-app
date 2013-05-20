@@ -144,12 +144,8 @@
         <translation>Versão %1.%2.%3 &lt;small&gt;(%4%5 %6)%7 [Qt %8]&lt;/small&gt;</translation>
     </message>
     <message>
-        <source>and to Arthur Zanona, Nuno Pessanha Santos, and Leandro Nunes for the Portuguese (Brazilian) translation. </source>
-        <translation>e ao Arthur Zanona, Nuno Pessanha Santos, Leandro Nunes pela tradução para o Português Brasileiro. </translation>
-    </message>
-    <message>
         <source>to Josef Dustira for the Czech translation, </source>
-        <translation>ao Josef Dustira pela traduçãao para o Tcheco, </translation>
+        <translation>ao Josef Dustira pela tradução para o Tcheco, </translation>
     </message>
     <message>
         <source>to Jinbuhm Kim for the Korean translation, </source>
@@ -174,6 +170,10 @@
     <message>
         <source>to Cihan Mete Bahad&amp;#x0131;r for the Turkish translation, </source>
         <translation>ao Cihan Mete Bahad&amp;#x0131;r pela tradução para o Turco, </translation>
+    </message>
+    <message>
+        <source>and to Arthur Zanona, Nuno Pessanha Santos, Leandro Nunes, and Gabriel Ferreira for the Portuguese (Brazilian) translation. </source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -566,11 +566,13 @@ Se você desejava que sua forma personalizada tivesse cortes e não teve o resul
 
 A custom board svg typically has one or two silkscreen layers and one board layer.
 </source>
-        <translation type="unfinished"></translation>
+        <translation>
+
+Um svg de placa personalizada tipicamente tem uma ou mais camadas de impressão e um camada de placa.</translation>
     </message>
     <message>
         <source>because there are multiple &lt;silkscreen0&gt; layers</source>
-        <translation type="unfinished"></translation>
+        <translation>porque existem múltiplas camadas &lt;silkscreen0&gt;</translation>
     </message>
 </context>
 <context>
@@ -1124,27 +1126,27 @@ Também é possível escolher um conector como ponto de aterramento clicando com
     </message>
     <message>
         <source>top</source>
-        <translation type="unfinished">superior</translation>
+        <translation>superior</translation>
     </message>
     <message>
         <source>bottom</source>
-        <translation type="unfinished">inferior</translation>
+        <translation>inferior</translation>
     </message>
     <message>
         <source>copper bottom</source>
-        <translation type="unfinished"></translation>
+        <translation>cobre inferior</translation>
     </message>
     <message>
         <source>copper top</source>
-        <translation type="unfinished"></translation>
+        <translation>cobre superior</translation>
     </message>
     <message>
         <source>silkscreen bottom</source>
-        <translation type="unfinished"></translation>
+        <translation>impressão inferior</translation>
     </message>
     <message>
         <source>silkscreen top</source>
-        <translation type="unfinished"></translation>
+        <translation>impressão superior</translation>
     </message>
 </context>
 <context>
@@ -3137,11 +3139,11 @@ Ir em frente e desfazer?</translation>
     </message>
     <message>
         <source>Move to bottom layer</source>
-        <translation type="unfinished"></translation>
+        <translation>Mover para camada inferior</translation>
     </message>
     <message>
         <source>Move to top layer</source>
-        <translation type="unfinished"></translation>
+        <translation>Mover para camada superior</translation>
     </message>
 </context>
 <context>
@@ -3948,11 +3950,11 @@ Vá em frente e salve?</translation>
     </message>
     <message>
         <source>Filename prefix</source>
-        <translation type="unfinished"></translation>
+        <translation>Prefixo do nome do arquivo</translation>
     </message>
     <message>
         <source>Please enter a prefix to help you identify the part files. The names will have the form &apos;PREFIX_%1&apos;. (It is not necessary to change the prefix, since a unique suffix is always added.)</source>
-        <translation type="unfinished"></translation>
+        <translation>Entre com um prefixo para ajudar a indentificar os arquivos de componentes. Os nomes devem estar no formato &apos;PREFIXO_%1&apos;. (Não é necessário mudar o prefixo, já que um sufixo único é sempre adicionado.)</translation>
     </message>
 </context>
 <context>
@@ -6695,7 +6697,7 @@ Nota: você pode também acionar este aviso passando o mouse pelo texto de estad
     </message>
     <message>
         <source>pink</source>
-        <translation type="unfinished"></translation>
+        <translation>rosa</translation>
     </message>
 </context>
 <context>

@@ -170,8 +170,8 @@
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="169"/>
-        <source>and to Arthur Zanona, Nuno Pessanha Santos, and Leandro Nunes for the Portuguese (Brazilian) translation. </source>
-        <translation>এবংArthurZanona,Nuna Pessanha Santos,ও Leandro Nunes কে ধন্যবাদ পরতুগিজ  (ব্রাজ্রিলিয়ান)ভাষায় আনুবাদের জন্য,।</translation>
+        <source>and to Arthur Zanona, Nuno Pessanha Santos, Leandro Nunes, and Gabriel Ferreira for the Portuguese (Brazilian) translation. </source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="173"/>

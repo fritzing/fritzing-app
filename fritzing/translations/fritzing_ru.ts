@@ -144,10 +144,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>and to Arthur Zanona, Nuno Pessanha Santos, and Leandro Nunes for the Portuguese (Brazilian) translation. </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>to Josef Dustira for the Czech translation, </source>
         <translation type="unfinished"></translation>
     </message>
@@ -173,6 +169,10 @@
     </message>
     <message>
         <source>to Cihan Mete Bahad&amp;#x0131;r for the Turkish translation, </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>and to Arthur Zanona, Nuno Pessanha Santos, Leandro Nunes, and Gabriel Ferreira for the Portuguese (Brazilian) translation. </source>
         <translation type="unfinished"></translation>
     </message>
 </context>

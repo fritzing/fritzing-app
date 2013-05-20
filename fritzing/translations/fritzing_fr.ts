@@ -170,8 +170,8 @@
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="169"/>
-        <source>and to Arthur Zanona, Nuno Pessanha Santos, and Leandro Nunes for the Portuguese (Brazilian) translation. </source>
-        <translation>et Arthur Zanona, Nuno Santos Pessanha, et Leandro Nunes pour la traduction portugaise (brésilien).</translation>
+        <source>and to Arthur Zanona, Nuno Pessanha Santos, Leandro Nunes, and Gabriel Ferreira for the Portuguese (Brazilian) translation. </source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="173"/>

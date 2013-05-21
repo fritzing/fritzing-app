@@ -84,6 +84,7 @@ public:
 	const QString & connectorSharedID();
 	const QString & connectorSharedName();
 	const QString & connectorSharedDescription();
+	const QString & connectorSharedReplacedby();
 	class ErcData * connectorSharedErcData();
 	const QString & busID();
 	ModelPartShared * modelPartShared();

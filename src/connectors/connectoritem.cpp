@@ -1035,6 +1035,12 @@ const QString & ConnectorItem::connectorSharedID() {
 	return m_connector->connectorSharedID();
 }
 
+const QString & ConnectorItem::connectorSharedReplacedby() {
+	if (m_connector == NULL) return ___emptyString___;
+
+	return m_connector->connectorSharedReplacedby();
+}
+
 ErcData * ConnectorItem::connectorSharedErcData() {
 	if (m_connector == NULL) return NULL;
 

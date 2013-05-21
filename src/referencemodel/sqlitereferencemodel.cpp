@@ -349,7 +349,7 @@ bool SqliteReferenceModel::loadFromDB(QSqlDatabase & keep_db, QSqlDatabase & db)
 
     QVector<Connector *> connectors(connectorCount + 1, NULL);
 
-    query = db.exec("SELECT id, connectorid, type, name, description, part_id FROM connectors");
+    query = db.exec("SELECT id, connectorid, type, name, description, replacedby, part_id FROM connectors");
     debugError(query.isActive(), query);
     if (!query.isActive()) {
         killConnectors(connectors);
@@ -363,12 +363,14 @@ bool SqliteReferenceModel::loadFromDB(QSqlDatabase & keep_db, QSqlDatabase & db)
         Connector::ConnectorType type = (Connector::ConnectorType) query.value(ix++).toInt();
         QString name = query.value(ix++).toString();
         QString description = query.value(ix++).toString();
+        QString replacedby = query.value(ix++).toString();
         qulonglong dbid = query.value(ix++).toULongLong();
         ModelPart * modelPart = parts.at(dbid);
         if (modelPart) {
             ConnectorShared * connectorShared = new ConnectorShared();
             connectorShared->setConnectorType(type);
             connectorShared->setDescription(description);
+            connectorShared->setReplacedby(replacedby);
             connectorShared->setSharedName(name);
             connectorShared->setId(connectorid);
 
@@ -541,6 +543,7 @@ bool SqliteReferenceModel::createConnection(const QString & databaseName, bool f
 			"type INTEGER NOT NULL,\n"
 			"name TEXT NOT NULL,\n"
 			"description TEXT,\n"
+			"replacedby TEXT,\n"
             "part_id INTEGER NOT NULL"
 		")");
         debugError(result, query);
@@ -1048,11 +1051,12 @@ bool SqliteReferenceModel::insertBusMember(const Connector * connector, qulonglo
 bool SqliteReferenceModel::insertConnector(const Connector * connector, qulonglong id) 
 {
 	QSqlQuery query;
-	query.prepare("INSERT INTO connectors(connectorid, type, name, description, part_id) VALUES (:connectorid, :type, :name, :description, :part_id)");
+	query.prepare("INSERT INTO connectors(connectorid, type, name, description, replacedby, part_id) VALUES (:connectorid, :type, :name, :description, :replacedby, :part_id)");
 	query.bindValue(":connectorid", connector->connectorSharedID());
 	query.bindValue(":type", (int) connector->connectorType());
 	query.bindValue(":name", connector->connectorSharedName());
 	query.bindValue(":description", connector->connectorSharedDescription());
+	query.bindValue(":replacedby", connector->connectorSharedReplacedby());
 	query.bindValue(":part_id", id);
 	if(!query.exec()) {
         debugExec("couldn't insert connector", query);

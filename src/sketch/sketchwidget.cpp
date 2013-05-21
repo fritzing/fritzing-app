@@ -5964,11 +5964,24 @@ void SketchWidget::setUpSwapReconnect(SwapThing & swapThing, ItemBase * itemBase
 		// matching by connectorid can lead to weird results because these all just usually count up from zero
 		// so only match by name and description (the latter is a bit of a hail mary)
 
+        bool checkReplacedby = (!itemBase->modelPart()->replacedby().isEmpty() && itemBase->modelPart()->replacedby() == swapThing.newModuleID);
+
 		QString fromName = fromConnectorItem->connectorSharedName();
 		QString fromDescription = fromConnectorItem->connectorSharedDescription();
+        QString fromReplacedby = fromConnectorItem->connectorSharedReplacedby();
 		foreach (Connector * connector, newConnectors) {
-			QString toName = connector->connectorSharedName();
+            if (checkReplacedby) {
+                QString toReplacedby = connector->connectorSharedReplacedby();
+                if (fromReplacedby.compare(toReplacedby, Qt::CaseInsensitive) == 0) {
+				    candidates.clear();
+                    candidates.append(connector);
+                    break;
+			    }
+            }
+
             bool gotOne = false;
+
+			QString toName = connector->connectorSharedName();
 			QString toDescription = connector->connectorSharedDescription();
 			if (fromName.compare(toName, Qt::CaseInsensitive) == 0) {
 				gotOne = true;
@@ -5982,12 +5995,11 @@ void SketchWidget::setUpSwapReconnect(SwapThing & swapThing, ItemBase * itemBase
 			else if (fromName.compare(toDescription, Qt::CaseInsensitive) == 0) {
 				gotOne = true;
 			}
-                    
-            
+      
             if (gotOne) {
                 candidates.append(connector);
             }
-		}
+        }
 
 		if (candidates.count() > 0) {
 			newConnector = candidates[0];

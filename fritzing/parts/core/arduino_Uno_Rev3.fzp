@@ -480,8 +480,8 @@ Atmega 16U2 replace the 8U2.&#xd;&#xd;
     </pcbView>
    </views>
   </connector>
-  <connector type="female" id="connector62" name="D1/RX">
-   <description>D1/RX</description>
+  <connector type="female" id="connector62" name="D1/TX">
+   <description>D1/TX</description>
    <views>
     <breadboardView>
      <p svgId="connector62pin" layer="breadboard"/>
@@ -585,8 +585,8 @@ Atmega 16U2 replace the 8U2.&#xd;&#xd;
     </pcbView>
    </views>
   </connector>
-  <connector type="female" id="connector84" name="5V">
-   <description>5V</description>
+  <connector type="female" id="connector84" name="ioref">
+   <description>IOREF</description>
    <views>
     <breadboardView>
      <p svgId="connector84pin" layer="breadboard"/>

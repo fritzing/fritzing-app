@@ -16,6 +16,7 @@
     </properties>
     <description>The biggest, baddest Arduino board yet.</description>
     <views>
+	
         <iconView>
             <layers image="icon/controller_arduino_mega.svg">
                 <layer layerId="icon"/>
@@ -192,7 +193,7 @@
                 <p layer="copper1" svgId="connector1pin"/></pcbView>
             </views>
         </connector>
-        <connector id="connector2" name="D13" type="female">
+        <connector id="connector2" name="D13" type="female" replacedby="D13 PWM">
             <description>Digital I/O pin 13</description>
             <views>
                 <breadboardView>
@@ -206,7 +207,7 @@
                 <p layer="copper1" svgId="connector2pin"/></pcbView>
             </views>
         </connector>
-        <connector id="connector3" name="D12" type="female">
+        <connector id="connector3" name="D12" type="female" replacedby="D12 PWM">
             <description>Digital I/O Pin 12 (PWM)</description>
             <views>
                 <breadboardView>
@@ -220,7 +221,7 @@
                 <p layer="copper1" svgId="connector3pin"/></pcbView>
             </views>
         </connector>
-        <connector id="connector4" name="D11" type="female">
+        <connector id="connector4" name="D11" type="female" replacedby="D11 PWM">
             <description>Digital I/O Pin 11 (PWM)</description>
             <views>
                 <breadboardView>
@@ -234,7 +235,7 @@
                 <p layer="copper1" svgId="connector4pin"/></pcbView>
             </views>
         </connector>
-        <connector id="connector5" name="D10" type="female">
+        <connector id="connector5" name="D10" type="female" replacedby="D10 PWM">
             <description>Digital I/O Pin 10 (PWM)</description>
             <views>
                 <breadboardView>
@@ -248,7 +249,7 @@
                 <p layer="copper1" svgId="connector5pin"/></pcbView>
             </views>
         </connector>
-        <connector id="connector80" name="+5V" type="female">
+        <connector id="connector80" name="+5V" type="female" replacedby="5V">
             <description>Regulated 5V Output</description>
             <views>
                 <breadboardView>
@@ -262,7 +263,7 @@
                 <p layer="copper1" svgId="connector80pin"/></pcbView>
             </views>
         </connector>
-        <connector id="connector6" name="D9" type="female">
+        <connector id="connector6" name="D9" type="female" replacedby="D9 PWM">
             <description>Digital I/O Pin 9 (PWM)</description>
             <views>
                 <breadboardView>
@@ -276,7 +277,7 @@
                 <p layer="copper1" svgId="connector6pin"/></pcbView>
             </views>
         </connector>
-        <connector id="connector81" name="+5V" type="female">
+        <connector id="connector81" name="+5V" type="female" replacedby="5V">
             <description>Regulated 5V Output</description>
             <views>
                 <breadboardView>
@@ -290,7 +291,7 @@
                 <p layer="copper1" svgId="connector81pin"/></pcbView>
             </views>
         </connector>
-        <connector id="connector7" name="D8" type="female">
+        <connector id="connector7" name="D8" type="female" replacedby="D8 PWM">
             <description>Digital I/O Pin 8 (PWM)</description>
             <views>
                 <breadboardView>
@@ -304,7 +305,7 @@
                 <p layer="copper1" svgId="connector7pin"/></pcbView>
             </views>
         </connector>
-        <connector id="connector8" name="D7" type="female">
+        <connector id="connector8" name="D7" type="female" replacedby="D7 PWM">
             <description>Digital I/O Pin 7 (PWM)</description>
             <views>
                 <breadboardView>
@@ -318,7 +319,7 @@
                 <p layer="copper1" svgId="connector8pin"/></pcbView>
             </views>
         </connector>
-        <connector id="connector9" name="D6" type="female">
+        <connector id="connector9" name="D6" type="female" replacedby="D6 PWM">
             <description>Digital I/O Pin 6</description>
             <views>
                 <breadboardView>
@@ -332,7 +333,7 @@
                 <p layer="copper1" svgId="connector9pin"/></pcbView>
             </views>
         </connector>
-        <connector id="connector10" name="D5" type="female">
+        <connector id="connector10" name="D5" type="female" replacedby="D5 PWM">
             <description>Digital I/O pin 5 (PWM)</description>
             <views>
                 <breadboardView>
@@ -346,7 +347,7 @@
                 <p layer="copper1" svgId="connector10pin"/></pcbView>
             </views>
         </connector>
-        <connector id="connector11" name="D4" type="female">
+        <connector id="connector11" name="D4" type="female" replacedby="D4 PWM">
             <description>Digital I/O pin 4 (PWM)</description>
             <views>
                 <breadboardView>
@@ -360,7 +361,7 @@
                 <p layer="copper1" svgId="connector11pin"/></pcbView>
             </views>
         </connector>
-        <connector id="connector12" name="D3" type="female">
+        <connector id="connector12" name="D3" type="female" replacedby="D3 PWM">
             <description>Digital I/O pin 3 (PWM)</description>
             <views>
                 <breadboardView>
@@ -374,7 +375,7 @@
                 <p layer="copper1" svgId="connector12pin"/></pcbView>
             </views>
         </connector>
-        <connector id="connector13" name="D2" type="female">
+        <connector id="connector13" name="D2" type="female" replacedby="D2 PWM">
             <description>Digital I/O pin 2 (PWM)</description>
             <views>
                 <breadboardView>
@@ -388,7 +389,7 @@
                 <p layer="copper1" svgId="connector13pin"/></pcbView>
             </views>
         </connector>
-        <connector id="connector14" name="D1TX" type="female">
+        <connector id="connector14" name="D1TX" type="female" replacedby="D1 TX0">
             <description>Digital I/O Pin 1 (TX)</description>
             <views>
                 <breadboardView>
@@ -402,7 +403,7 @@
                 <p layer="copper1" svgId="connector14pin"/></pcbView>
             </views>
         </connector>
-        <connector id="connector15" name="D0RX" type="female">
+        <connector id="connector15" name="D0RX" type="female" replacedby="D0 RX0">
             <description>Digital I/O Pin 0 (RX)</description>
             <views>
                 <breadboardView>
@@ -416,7 +417,7 @@
                 <p layer="copper1" svgId="connector15pin"/></pcbView>
             </views>
         </connector>
-        <connector id="connector16" name="RST" type="female">
+        <connector id="connector16" name="RST" type="female" replacedby="RESET">
             <description>Reset Pin</description>
             <views>
                 <breadboardView>
@@ -444,7 +445,7 @@
                 <p layer="copper1" svgId="connector17pin"/></pcbView>
             </views>
         </connector>
-        <connector id="connector18" name="+5V" type="female">
+        <connector id="connector18" name="+5V" type="female" replacedby="5V">
             <description>Regulated 5 Volt Output</description>
             <views>
                 <breadboardView>
@@ -584,7 +585,7 @@
                 <p layer="copper1" svgId="connector27pin"/></pcbView>
             </views>
         </connector>
-        <connector id="connector28" name="D14" type="female">
+        <connector id="connector28" name="D14" type="female" replacedby="D14/TX3">
             <description>Digital I/O Pin 14 (TX3)</description>
             <views>
                 <breadboardView>
@@ -598,7 +599,7 @@
                 <p layer="copper1" svgId="connector28pin"/></pcbView>
             </views>
         </connector>
-        <connector id="connector29" name="D15" type="female">
+        <connector id="connector29" name="D15" type="female" replacedby="D15/RX3">
             <description>Digital I/O Pin 15 (RX3)</description>
             <views>
                 <breadboardView>
@@ -612,7 +613,7 @@
                 <p layer="copper1" svgId="connector29pin"/></pcbView>
             </views>
         </connector>
-        <connector id="connector30" name="D16" type="female">
+        <connector id="connector30" name="D16" type="female" replacedby="D16 PWM/TX2">
             <description>Digital I/O Pin 16 (TX2)</description>
             <views>
                 <breadboardView>
@@ -626,7 +627,7 @@
                 <p layer="copper1" svgId="connector30pin"/></pcbView>
             </views>
         </connector>
-        <connector id="connector31" name="D17" type="female">
+        <connector id="connector31" name="D17" type="female" replacedby="D17 PWM/RX2">
             <description>Digital I/O Pin 17 (RX2)</description>
             <views>
                 <breadboardView>
@@ -640,7 +641,7 @@
                 <p layer="copper1" svgId="connector31pin"/></pcbView>
             </views>
         </connector>
-        <connector id="connector32" name="D18" type="female">
+        <connector id="connector32" name="D18" type="female" replacedby="D18/TX1">
             <description>Digital I/O Pin 18 (TX1)</description>
             <views>
                 <breadboardView>
@@ -654,7 +655,7 @@
                 <p layer="copper1" svgId="connector32pin"/></pcbView>
             </views>
         </connector>
-        <connector id="connector33" name="D19" type="female">
+        <connector id="connector33" name="D19" type="female" replacedby="D19/RX1">
             <description>Digital I/O Pin 19 (RX1)</description>
             <views>
                 <breadboardView>
@@ -668,7 +669,7 @@
                 <p layer="copper1" svgId="connector33pin"/></pcbView>
             </views>
         </connector>
-        <connector id="connector34" name="D20" type="female">
+        <connector id="connector34" name="D20" type="female" replacedby="D20/SDA">
             <description>Digital I/O Pin 20 (SDA)</description>
             <views>
                 <breadboardView>
@@ -682,7 +683,7 @@
                 <p layer="copper1" svgId="connector34pin"/></pcbView>
             </views>
         </connector>
-        <connector id="connector35" name="D21" type="female">
+        <connector id="connector35" name="D21" type="female" replacedby="D21/SCL">
             <description>Digital I/O Pin 21 (SCL)</description>
             <views>
                 <breadboardView>

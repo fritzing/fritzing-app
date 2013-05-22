@@ -14,7 +14,7 @@ The new Mini (revision 05) has a new package for the ATmega328, which enables al
 Warning: Don&apos;t power the Arduino mini with more than 9 volts, or plug the power in backwards: you&apos;ll probably kill it. 
 
 </description>
-<title>Arduino Mini (REV5)</title>
+<title>Arduino Mini (Rev5)</title>
 <url>http://arduino.cc/en/Main/ArduinoBoardMini</url>
 <tags>
 <tag>arduino</tag>

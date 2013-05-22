@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><module fritzingVersion="0.4.2b.08.04.4392" moduleId="7658504bdcb62998a7281b0d1baaac37">
-    <version>4</version>
+    <version replacedby="Shield_Eth06-PoE">4</version>
     <author>Nils and Torsten (based on the Arduino part)</author>
     <title>Arduino Ethernet Shield</title>
     <label>Arduino Ethernet Shield</label>
@@ -10,7 +10,7 @@
         <tag>Shield</tag>
     </tags>
     <properties>
-        <property name="family">Arduino Shield</property>        
+        <property name="family">//obsolete//Arduino Shield</property>        
 	<property name="type">Ethernet</property>
     </properties>
     <description>Ethernet shield for the awesome Arduino microcontroller.</description>

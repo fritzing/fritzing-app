@@ -59,6 +59,16 @@
                 </iconView>
             </views>
         </instance>
+		        <instance moduleIdRef="Shield_Eth06-PoE" modelIndex="5584"  path="pdb/core/Shield_Eth06-PoE.fzp"  >
+            <views>
+                <iconView layer="">
+                    <geometry z="0" x="-1" y="-1"/>
+                </iconView>
+                <iconView layer="">
+                    <geometry z="0" x="-1" y="-1"/>
+                </iconView>
+            </views>
+        </instance>
         <instance moduleIdRef="Arduino_Esplora" modelIndex="5584" path="pdb/core/Arduino_Esplora.fzp">
             <views>
                 <iconView layer="">
@@ -131,7 +141,28 @@
             </views>
         </instance>	
 		
-				<instance moduleIdRef="Arduino-Fio-v22" modelIndex="5584" path="pdb/core/Arduino-Fio-v22.fzp">
+				<instance moduleIdRef="LilyPad-Simple-v25" modelIndex="5584" path="pdb/core/LilyPad-Simple-v25.fzp">
+            <views>
+                <iconView layer="">
+                    <geometry z="0" x="-1" y="-1"/>
+                </iconView>
+                <iconView layer="">
+                    <geometry z="0" x="-1" y="-1"/>
+                </iconView>
+            </views>
+        </instance>	
+								<instance moduleIdRef="LilyPad_Arduino_USB" modelIndex="5584" path="pdb/core/LilyPad_Arduino_USB.fzp">
+            <views>
+                <iconView layer="">
+                    <geometry z="0" x="-1" y="-1"/>
+                </iconView>
+                <iconView layer="">
+                    <geometry z="0" x="-1" y="-1"/>
+                </iconView>
+            </views>
+        </instance>	
+		
+						<instance moduleIdRef="Arduino-Fio-v22" modelIndex="5584" path="pdb/core/Arduino-Fio-v22.fzp">
             <views>
                 <iconView layer="">
                     <geometry z="0" x="-1" y="-1"/>

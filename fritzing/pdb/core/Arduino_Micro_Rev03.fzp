@@ -8,7 +8,7 @@
 
 
 The Micro is similar to the Arduino Leonardo in that the ATmega32u4 has built-in USB communication, eliminating the need for a secondary processor. This allows the Micro to appear to a connected computer as a mouse and keyboard, in addition to a virtual (CDC) serial / COM port. It also has other implications for the behavior of the board; these are detailed on the getting started page. </description>
-<title>Arduino Micro Rev03</title>
+<title>Arduino Micro (Rev3)</title>
 <url>http://arduino.cc/en/Main/ArduinoBoardMicro</url>
 <tags>
 <tag>Arduino Micro</tag>

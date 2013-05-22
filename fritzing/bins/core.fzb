@@ -31,13 +31,14 @@
                 </iconView>
             </views>
         </instance>
-        <instance moduleIdRef="SmallElectrolyticCapacitorModuleID" modelIndex="7" path="parts/core/electrolytic_capacitor_small.fzp">
+        <instance moduleIdRef="SmallElectrolyticCapacitorModuleID" modelIndex="7" path="parts/core/capacitor_electrolytic_small.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
                 </iconView>
             </views>
         </instance>
+		
         <instance moduleIdRef="56bed03878064b8286b71d5240035138InductorModuleID" modelIndex="8" path="parts/core/inductor.fzp">
             <views>
                 <iconView layer="icon">
@@ -52,7 +53,7 @@
                 </iconView>
             </views>
         </instance>
-	<!--
+	
         <instance moduleIdRef="2244EBEC21" modelIndex="10" path="parts/core/transistor_signal_PNP_TO92.fzp">
             <views>
                 <iconView layer="icon">
@@ -60,7 +61,7 @@
                 </iconView>
             </views>
         </instance>
-	-->
+
         <instance moduleIdRef="2244EBEC10" modelIndex="11" path="parts/core/transistor_signal_NPN_TO92.fzp">
             <views>
                 <iconView layer="icon">
@@ -445,8 +446,7 @@
       </instance>
 	
 
-
-      <instance moduleIdRef="__spacer__" modelIndex="3" path="ICs">
+     <instance moduleIdRef="__spacer__" modelIndex="3" path="ICs">
         <views>
           <iconView layer="icon">
             <geometry z="-1" x="-1" y="-1"></geometry>
@@ -574,8 +574,8 @@
             </views>
         </instance>
 	
-	<instance moduleIdRef="__spacer__" modelIndex="3" path="
-	">
+ 
+	<instance moduleIdRef="__spacer__" modelIndex="3" path="Power">
         <views>
           <iconView layer="icon">
             <geometry z="-1" x="-1" y="-1"></geometry>
@@ -615,7 +615,105 @@
 	
 	
 	
-	<instance moduleIdRef="__spacer__" modelIndex="3" path="Connection">
+	
+	
+      <instance moduleIdRef="__spacer__" modelIndex="3" path="Microcontroller">
+        <views>
+          <iconView layer="icon">
+            <geometry z="-1" x="-1" y="-1"></geometry>
+          </iconView>
+        </views>
+      </instance>
+       
+	 	
+        <instance moduleIdRef="arduino_Uno_Rev3" modelIndex="48" path="parts/core/Arduino_UNO_R3.fzp">
+            <views>
+                <iconView layer="icon">
+                    <geometry z="-1" x="-1" y="-1"/>
+                </iconView>
+            </views>
+		</instance>
+	    <instance moduleIdRef="Raspberry Pi" modelIndex="48" path="parts/core/Raspberry_Pi.fzp">
+            <views>
+                <iconView layer="icon">
+                    <geometry z="-1" x="-1" y="-1"/>
+                </iconView>
+            </views>
+		</instance>
+		        <instance moduleIdRef="Teensy3.0" modelIndex="48" path="parts/core/Teensy 3.0.fzp">
+            <views>
+                <iconView layer="icon">
+                    <geometry z="-1" x="-1" y="-1"/>
+                </iconView>
+            </views>
+        </instance>
+        <instance moduleIdRef="Adafruit_Atmega32u4_Breakout" modelIndex="48" path="parts/core/Adafruit_Atmega32u4_Breakout.fzp">
+            <views>
+                <iconView layer="icon">
+                    <geometry z="-1" x="-1" y="-1"/>
+                </iconView>
+            </views>
+        </instance>
+
+        <instance moduleIdRef="2c9d427b475ef8d07dc752a4362af0ae" modelIndex="48" path="parts/core/controller_wiring.fzp">
+            <views>
+                <iconView layer="icon">
+                    <geometry z="-1" x="-1" y="-1"/>
+                </iconView>
+            </views>
+        </instance>
+        <instance moduleIdRef="81591c6c31ccf12f0f3ccec5f150df2d" modelIndex="48" path="parts/core/usbadapter_wiring.fzp">
+            <views>
+                <iconView layer="icon">
+                    <geometry z="-1" x="-1" y="-1"/>
+                </iconView>
+            </views>
+        </instance>
+        <instance moduleIdRef="346b613c666d64fc5ac622407ace7130" modelIndex="48" path="parts/core/controller_mbed.fzp">
+            <views>
+                <iconView layer="icon">
+                    <geometry z="-1" x="-1" y="-1"/>
+                </iconView>
+            </views>
+        </instance>
+        <instance moduleIdRef="760832bc79fe1f34e99f420ad872a0b8" modelIndex="48" path="parts/core/BASIC_Stamp_2.fzp">
+            <views>
+                <iconView layer="icon">
+                    <geometry z="-1" x="-1" y="-1"/>
+                </iconView>
+            </views>
+        </instance>
+        <instance moduleIdRef="d30f97b6fbe1asdad59ea7f0d636a7a" modelIndex="48" path="parts/core/controller_propeller_d40.fzp">
+            <views>
+                <iconView layer="icon">
+                    <geometry z="-1" x="-1" y="-1"/>
+                </iconView>
+            </views>
+        </instance>
+        <instance moduleIdRef="RevEd_PICAXE_08" modelIndex="48" path="parts/core/PICAXE_08.fzp">
+            <views>
+                <iconView layer="icon">
+                    <geometry z="-1" x="-1" y="-1"/>
+                </iconView>
+            </views>
+        </instance>
+        <instance moduleIdRef="c4256c251d53ee723058f86aa6d016a2" modelIndex="48" path="parts/core/gogoboard 4.0.fzp">
+            <views>
+                <iconView layer="icon">
+                    <geometry z="-1" x="-1" y="-1"/>
+                </iconView>
+            </views>
+        </instance>
+
+        <instance moduleIdRef="jlpcb-128" modelIndex="48" path="parts/core/jlpcb-128.fzp">
+            <views>
+                <iconView layer="icon">
+                    <geometry z="-1" x="-1" y="-1"/>
+                </iconView>
+            </views>
+        </instance>
+		
+		<instance moduleIdRef="__spacer__" modelIndex="3" path="Connection">
         <views>
           <iconView layer="icon">
             <geometry z="-1" x="-1" y="-1"></geometry>
@@ -717,100 +815,6 @@
             </views>
         </instance>
 	<instance moduleIdRef="jlpcb-089" modelIndex="48" path="parts/core/jlpcb-089.fzp">
-            <views>
-                <iconView layer="icon">
-                    <geometry z="-1" x="-1" y="-1"/>
-                </iconView>
-            </views>
-        </instance>
-	
-      <instance moduleIdRef="__spacer__" modelIndex="3" path="Microcontroller">
-        <views>
-          <iconView layer="icon">
-            <geometry z="-1" x="-1" y="-1"></geometry>
-          </iconView>
-        </views>
-      </instance>
-
-        <instance moduleIdRef="ArduinoUnoR3" modelIndex="48" path="parts/core/Arduino_UNO_R3.fzp">
-            <views>
-                <iconView layer="icon">
-                    <geometry z="-1" x="-1" y="-1"/>
-                </iconView>
-            </views>
-        </instance>
-        <instance moduleIdRef="42D46DE18C0F4AD2B55547E24C93125A" modelIndex="48" path="parts/core/arduino.fzp">
-            <views>
-                <iconView layer="icon">
-                    <geometry z="-1" x="-1" y="-1"/>
-                </iconView>
-            </views>
-        </instance>
-        <instance moduleIdRef="Adafruit_Atmega32u4_Breakout" modelIndex="48" path="parts/core/Adafruit_Atmega32u4_Breakout.fzp">
-            <views>
-                <iconView layer="icon">
-                    <geometry z="-1" x="-1" y="-1"/>
-                </iconView>
-            </views>
-        </instance>
-
-        <instance moduleIdRef="2c9d427b475ef8d07dc752a4362af0ae" modelIndex="48" path="parts/core/controller_wiring.fzp">
-            <views>
-                <iconView layer="icon">
-                    <geometry z="-1" x="-1" y="-1"/>
-                </iconView>
-            </views>
-        </instance>
-        <instance moduleIdRef="81591c6c31ccf12f0f3ccec5f150df2d" modelIndex="48" path="parts/core/usbadapter_wiring.fzp">
-            <views>
-                <iconView layer="icon">
-                    <geometry z="-1" x="-1" y="-1"/>
-                </iconView>
-            </views>
-        </instance>
-        <instance moduleIdRef="346b613c666d64fc5ac622407ace7130" modelIndex="48" path="parts/core/controller_mbed.fzp">
-            <views>
-                <iconView layer="icon">
-                    <geometry z="-1" x="-1" y="-1"/>
-                </iconView>
-            </views>
-        </instance>
-        <instance moduleIdRef="760832bc79fe1f34e99f420ad872a0b8" modelIndex="48" path="parts/core/BASIC_Stamp_2.fzp">
-            <views>
-                <iconView layer="icon">
-                    <geometry z="-1" x="-1" y="-1"/>
-                </iconView>
-            </views>
-        </instance>
-        <instance moduleIdRef="d30f97b6fbe1asdad59ea7f0d636a7a" modelIndex="48" path="parts/core/controller_propeller_d40.fzp">
-            <views>
-                <iconView layer="icon">
-                    <geometry z="-1" x="-1" y="-1"/>
-                </iconView>
-            </views>
-        </instance>
-        <instance moduleIdRef="RevEd_PICAXE_08" modelIndex="48" path="parts/core/PICAXE_08.fzp">
-            <views>
-                <iconView layer="icon">
-                    <geometry z="-1" x="-1" y="-1"/>
-                </iconView>
-            </views>
-        </instance>
-        <instance moduleIdRef="c4256c251d53ee723058f86aa6d016a2" modelIndex="48" path="parts/core/gogoboard 4.0.fzp">
-            <views>
-                <iconView layer="icon">
-                    <geometry z="-1" x="-1" y="-1"/>
-                </iconView>
-            </views>
-        </instance>
-        <instance moduleIdRef="a0bc75e3536cc51ac28b344cead00745" modelIndex="48" path="parts/core/Teensy 2.0.fzp">
-            <views>
-                <iconView layer="icon">
-                    <geometry z="-1" x="-1" y="-1"/>
-                </iconView>
-            </views>
-        </instance>
-        <instance moduleIdRef="jlpcb-128" modelIndex="48" path="parts/core/jlpcb-128.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>

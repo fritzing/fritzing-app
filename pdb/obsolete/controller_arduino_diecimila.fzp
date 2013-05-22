@@ -11,7 +11,7 @@
   <tag>fritzing core</tag>
 </tags>
 <properties>
-  <property name="type">Arduino Diecimila (deprecated)</property>
+  <property name="type">//obsolete//Microcontroller Board (Arduino)</property>
   <property name="family">obsolete Microcontroller Board (deprecated)</property>
  <property name="package">THT</property></properties>
  <taxonomy>discreteParts.controller</taxonomy>

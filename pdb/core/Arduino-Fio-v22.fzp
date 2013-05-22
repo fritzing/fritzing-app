@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <module fritzingVersion='0.5.2b.02.18.4756' moduleId='Arduino-Fio-v22'>
-<version>4</version>
+<version>5</version>
 <date>2013-04-11</date>
 <author>althaus</author>
 <description>The Arduino Funnel I/O (Fio) is a board designed by Shigeru Kobayashi, based on the original design from LilyPad.

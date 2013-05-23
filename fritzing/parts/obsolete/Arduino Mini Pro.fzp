@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><module fritzingVersion="0.4.2b.07.24.4368" moduleId="fd1b41f61d75a154da35b6f6bd5cca72">
-     <version replacedby="Arduino-Pro-Mini-v11">4</version>
+     <version replacedby="Arduino-Pro-Mini-v13">4</version>
      <author>Lionel Michel</author>
     <title>Arduino Mini Pro</title>
     <label>Arduino Mini Pro</label>
@@ -10,7 +10,7 @@
         <tag>Sparkfun</tag>
     </tags>
     <properties>
-        <property name="family">//obsolete//Microcontroller Board (Arduino)</property>
+        <property name="family">/obsolete/Microcontroller Board (Arduino)</property>
         <property name="processor">ATmega</property>
         <property name="variant">Arduino Pro Mini</property>
     </properties>
@@ -40,7 +40,7 @@
         </breadboardView>
     </views>
     <connectors>
-        <connector id="connector15" name="BLK" type="female">
+        <connector id="connector15" name="BLK" type="female" replacedby="GND">
             <description>blk</description>
             <views>
                 <breadboardView>
@@ -55,7 +55,7 @@
                 </pcbView>
             </views>
         </connector>
-        <connector id="connector7" name="A2" type="female">
+        <connector id="connector7" name="A2" type="female" replacedby="A2">
             <description>Analog Input 2</description>
             <views>
                 <breadboardView>
@@ -70,7 +70,7 @@
                 </pcbView>
             </views>
         </connector>
-        <connector id="connector16" name="GND" type="female">
+        <connector id="connector16" name="GND" type="female" replacedby="GND">
             <description>Ground</description>
             <views>
                 <breadboardView>
@@ -85,7 +85,7 @@
                 </pcbView>
             </views>
         </connector>
-        <connector id="connector8" name="A3" type="female">
+        <connector id="connector8" name="A3" type="female" replacedby="A3">
             <description>Analog Input 3</description>
             <views>
                 <breadboardView>
@@ -100,7 +100,7 @@
                 </pcbView>
             </views>
         </connector>
-        <connector id="connector17" name="VCC" type="female">
+        <connector id="connector17" name="VCC" type="female" replacedby="VCC">
             <description>Regulated power supply (3.3 or 5V)</description>
             <views>
                 <breadboardView>
@@ -115,7 +115,7 @@
                 </pcbView>
             </views>
         </connector>
-        <connector id="connector9" name="A4" type="female">
+        <connector id="connector9" name="A4" type="female" replacedby="A4">
             <description>Analog Input 4</description>
             <views>
                 <breadboardView>
@@ -130,7 +130,7 @@
                 </pcbView>
             </views>
         </connector>
-        <connector id="connector18" name="D0" type="female">
+        <connector id="connector18" name="D0" type="female" replacedby="D0/TX">
             <description>Digital I/O 0</description>
             <views>
                 <breadboardView>
@@ -145,7 +145,7 @@
                 </pcbView>
             </views>
         </connector>
-        <connector id="connector19" name="D1" type="female">
+        <connector id="connector19" name="D1" type="female" replacedby="D1/RX">
             <description>Digital I/O 1</description>
             <views>
                 <breadboardView>
@@ -160,7 +160,7 @@
                 </pcbView>
             </views>
         </connector>
-        <connector id="connector20" name="GRN" type="female">
+        <connector id="connector20" name="GRN" type="female" replacedby="GND">
             <description>GRN</description>
             <views>
                 <breadboardView>
@@ -175,7 +175,7 @@
                 </pcbView>
             </views>
         </connector>
-        <connector id="connector21" name="D1" type="female">
+        <connector id="connector21" name="D1" type="female" replacedby="D1/RX">
             <description>Digital I/O 1</description>
             <views>
                 <breadboardView>
@@ -190,7 +190,7 @@
                 </pcbView>
             </views>
         </connector>
-        <connector id="connector22" name="D0" type="female">
+        <connector id="connector22" name="D0" type="female" replacedby="D0/TX">
             <description>Digital I/O 0</description>
             <views>
                 <breadboardView>
@@ -205,7 +205,7 @@
                 </pcbView>
             </views>
         </connector>
-        <connector id="connector23" name="RST" type="female">
+        <connector id="connector23" name="RST" type="female" replacedby="RESET">
             <description>Reset</description>
             <views>
                 <breadboardView>
@@ -220,7 +220,7 @@
                 </pcbView>
             </views>
         </connector>
-        <connector id="connector24" name="GND" type="female">
+        <connector id="connector24" name="GND" type="female" replacedby="GND">
             <description>Ground</description>
             <views>
                 <breadboardView>
@@ -235,7 +235,7 @@
                 </pcbView>
             </views>
         </connector>
-        <connector id="connector25" name="D2" type="female">
+        <connector id="connector25" name="D2" type="female" replacedby="D2">
             <description>Digital I/O 2</description>
             <views>
                 <breadboardView>
@@ -250,7 +250,7 @@
                 </pcbView>
             </views>
         </connector>
-        <connector id="connector26" name="D3" type="female">
+        <connector id="connector26" name="D3" type="female" replacedby="D3 PWM">
             <description>Digital I/O 3</description>
             <views>
                 <breadboardView>
@@ -265,7 +265,7 @@
                 </pcbView>
             </views>
         </connector>
-        <connector id="connector27" name="D4" type="female">
+        <connector id="connector27" name="D4" type="female" replacedby="D4">
             <description>Digital I/O 4</description>
             <views>
                 <breadboardView>
@@ -280,7 +280,7 @@
                 </pcbView>
             </views>
         </connector>
-        <connector id="connector28" name="D5" type="female">
+        <connector id="connector28" name="D5" type="female" replacedby="D5 PWM">
             <description>Digital I/O 5</description>
             <views>
                 <breadboardView>
@@ -295,7 +295,7 @@
                 </pcbView>
             </views>
         </connector>
-        <connector id="connector29" name="D6" type="female">
+        <connector id="connector29" name="D6" type="female" replacedby="D6 PWM">
             <description>Digital I/O 6</description>
             <views>
                 <breadboardView>
@@ -310,7 +310,7 @@
                 </pcbView>
             </views>
         </connector>
-        <connector id="connector30" name="D7" type="female">
+        <connector id="connector30" name="D7" type="female" replacedby="D7">
             <description>Digital I/O 7</description>
             <views>
                 <breadboardView>
@@ -325,7 +325,7 @@
                 </pcbView>
             </views>
         </connector>
-        <connector id="connector31" name="D8" type="female">
+        <connector id="connector31" name="D8" type="female" replacedby="D8">
             <description>Digital I/O 8</description>
             <views>
                 <breadboardView>
@@ -340,7 +340,7 @@
                 </pcbView>
             </views>
         </connector>
-        <connector id="connector32" name="D9" type="female">
+        <connector id="connector32" name="D9" type="female" replacedby="D9 PWM">
             <description>Digital I/O 9</description>
             <views>
                 <breadboardView>
@@ -355,7 +355,7 @@
                 </pcbView>
             </views>
         </connector>
-        <connector id="connector1" name="D10" type="female">
+        <connector id="connector1" name="D10" type="female" replacedby="D10 PWM/SS">
             <description>Digital I/O 10</description>
             <views>
                 <breadboardView>
@@ -370,7 +370,7 @@
                 </pcbView>
             </views>
         </connector>
-        <connector id="connector2" name="D11" type="female">
+        <connector id="connector2" name="D11" type="female" replacedby="D11 PWM/MOSI">
             <description>Digital I/O 11</description>
             <views>
                 <breadboardView>
@@ -385,7 +385,7 @@
                 </pcbView>
             </views>
         </connector>
-        <connector id="connector10" name="A5" type="female">
+        <connector id="connector10" name="A5" type="female" replacedby="A5">
             <description>Analog Input 5</description>
             <views>
                 <breadboardView>
@@ -400,7 +400,7 @@
                 </pcbView>
             </views>
         </connector>
-        <connector id="connector3" name="D12" type="female">
+        <connector id="connector3" name="D12" type="female" replacedby="D12/MISO">
             <description>Digital I/O 12</description>
             <views>
                 <breadboardView>
@@ -415,7 +415,7 @@
                 </pcbView>
             </views>
         </connector>
-        <connector id="connector11" name="VCC" type="female">
+        <connector id="connector11" name="VCC" type="female" replacedby="VCC">
             <description>Regulated power supply (3.3 or 5V)</description>
             <views>
                 <breadboardView>
@@ -430,7 +430,7 @@
                 </pcbView>
             </views>
         </connector>
-        <connector id="connector4" name="D13" type="female">
+        <connector id="connector4" name="D13" type="female" replacedby="D13/SCK">
             <description>Digital I/O 13</description>
             <views>
                 <breadboardView>
@@ -445,7 +445,7 @@
                 </pcbView>
             </views>
         </connector>
-        <connector id="connector12" name="RST" type="female">
+        <connector id="connector12" name="RST" type="female" replacedby="RESET">
             <description>Reset</description>
             <views>
                 <breadboardView>
@@ -460,7 +460,7 @@
                 </pcbView>
             </views>
         </connector>
-        <connector id="connector5" name="A0" type="female">
+        <connector id="connector5" name="A0" type="female" replacedby="A0">
             <description>Analog Input 0</description>
             <views>
                 <breadboardView>
@@ -475,7 +475,7 @@
                 </pcbView>
             </views>
         </connector>
-        <connector id="connector13" name="GND" type="female">
+        <connector id="connector13" name="GND" type="female" replacedby="GND">
             <description>Ground</description>
             <views>
                 <breadboardView>
@@ -490,7 +490,7 @@
                 </pcbView>
             </views>
         </connector>
-        <connector id="connector6" name="A1" type="female">
+        <connector id="connector6" name="A1" type="female" replacedby="A1">
             <description>Analog Input 1</description>
             <views>
                 <breadboardView>
@@ -505,7 +505,7 @@
                 </pcbView>
             </views>
         </connector>
-        <connector id="connector14" name="RAW" type="female">
+        <connector id="connector14" name="RAW" type="female" replacedby="RAW">
             <description>Raw power (unregulated)</description>
             <views>
                 <breadboardView>

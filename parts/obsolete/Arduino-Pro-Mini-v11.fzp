@@ -197,7 +197,7 @@
 <pcbView>
 <p layer='copper0' svgId='connector14pad'/><p layer='copper1' svgId='connector14pad'/></pcbView>
 </views>
-</connector>
+<erc ignore='ifUnconnected'/></connector>
 <connector id='connector15' type='male' name='TXO' replacedby='D0/TX'>
 <description>TXO</description><views>
 <breadboardView>
@@ -207,7 +207,7 @@
 <pcbView>
 <p layer='copper0' svgId='connector15pad'/><p layer='copper1' svgId='connector15pad'/></pcbView>
 </views>
-</connector>
+<erc ignore='ifUnconnected'/></connector>
 <connector id='connector16' type='male' name='RXI' replacedby='D1/RX'>
 <description>RXI</description><views>
 <breadboardView>
@@ -217,7 +217,7 @@
 <pcbView>
 <p layer='copper0' svgId='connector16pad'/><p layer='copper1' svgId='connector16pad'/></pcbView>
 </views>
-</connector>
+<erc ignore='ifUnconnected'/></connector>
 <connector id='connector17' type='male' name='VCC' replacedby='VCC'>
 <description>VCC</description><views>
 <breadboardView>
@@ -227,7 +227,7 @@
 <pcbView>
 <p layer='copper0' svgId='connector17pad'/><p layer='copper1' svgId='connector17pad'/></pcbView>
 </views>
-</connector>
+<erc ignore='ifUnconnected'/></connector>
 <connector id='connector18' type='male' name='GND' replacedby='GND'>
 <description>GND</description><views>
 <breadboardView>
@@ -237,7 +237,7 @@
 <pcbView>
 <p layer='copper0' svgId='connector18pad'/><p layer='copper1' svgId='connector18pad'/></pcbView>
 </views>
-</connector>
+<erc ignore='ifUnconnected'/></connector>
 <connector id='connector19' type='male' name='GND' replacedby='GND'>
 <description>GND</description><views>
 <breadboardView>
@@ -247,7 +247,7 @@
 <pcbView>
 <p layer='copper0' svgId='connector19pad'/><p layer='copper1' svgId='connector19pad'/></pcbView>
 </views>
-</connector>
+<erc ignore='ifUnconnected'/></connector>
 <connector id='connector20' type='male' name='A4' replacedby='A4'>
 <description>A4</description><views>
 <breadboardView>
@@ -257,7 +257,7 @@
 <pcbView>
 <p layer='copper0' svgId='connector20pad'/><p layer='copper1' svgId='connector20pad'/></pcbView>
 </views>
-</connector>
+<erc ignore='ifUnconnected'/></connector>
 <connector id='connector21' type='male' name='A5' replacedby='A5'>
 <description>A5</description><views>
 <breadboardView>
@@ -267,7 +267,7 @@
 <pcbView>
 <p layer='copper0' svgId='connector21pad'/><p layer='copper1' svgId='connector21pad'/></pcbView>
 </views>
-</connector>
+<erc ignore='ifUnconnected'/></connector>
 <connector id='connector22' type='male' name='RAW' replacedby='RAW'>
 <description>RAW</description><views>
 <breadboardView>
@@ -277,7 +277,7 @@
 <pcbView>
 <p layer='copper0' svgId='connector22pad'/><p layer='copper1' svgId='connector22pad'/></pcbView>
 </views>
-</connector>
+<erc ignore='ifUnconnected'/></connector>
 <connector id='connector23' type='male' name='GND' replacedby='GND'>
 <description>GND</description><views>
 <breadboardView>
@@ -287,7 +287,7 @@
 <pcbView>
 <p layer='copper0' svgId='connector23pad'/><p layer='copper1' svgId='connector23pad'/></pcbView>
 </views>
-</connector>
+<erc ignore='ifUnconnected'/></connector>
 <connector id='connector24' type='male' name='RESET' replacedby='RESET'>
 <description>RESET</description><views>
 <breadboardView>
@@ -297,7 +297,7 @@
 <pcbView>
 <p layer='copper0' svgId='connector24pad'/><p layer='copper1' svgId='connector24pad'/></pcbView>
 </views>
-</connector>
+<erc ignore='ifUnconnected'/></connector>
 <connector id='connector25' type='male' name='VCC' replacedby='VCC'>
 <description>VCC</description><views>
 <breadboardView>
@@ -307,7 +307,7 @@
 <pcbView>
 <p layer='copper0' svgId='connector25pad'/><p layer='copper1' svgId='connector25pad'/></pcbView>
 </views>
-</connector>
+<erc ignore='ifUnconnected'/></connector>
 <connector id='connector26' type='male' name='A3' replacedby='A3'>
 <description>A3</description><views>
 <breadboardView>
@@ -317,7 +317,7 @@
 <pcbView>
 <p layer='copper0' svgId='connector26pad'/><p layer='copper1' svgId='connector26pad'/></pcbView>
 </views>
-</connector>
+<erc ignore='ifUnconnected'/></connector>
 <connector id='connector27' type='male' name='A2' replacedby='A2'>
 <description>A2</description><views>
 <breadboardView>
@@ -327,7 +327,7 @@
 <pcbView>
 <p layer='copper0' svgId='connector27pad'/><p layer='copper1' svgId='connector27pad'/></pcbView>
 </views>
-</connector>
+<erc ignore='ifUnconnected'/></connector>
 <connector id='connector28' type='male' name='A1' replacedby='A1'>
 <description>A1</description><views>
 <breadboardView>
@@ -337,7 +337,7 @@
 <pcbView>
 <p layer='copper0' svgId='connector28pad'/><p layer='copper1' svgId='connector28pad'/></pcbView>
 </views>
-</connector>
+<erc ignore='ifUnconnected'/></connector>
 <connector id='connector29' type='male' name='A0' replacedby='A0'>
 <description>A0</description><views>
 <breadboardView>
@@ -347,7 +347,7 @@
 <pcbView>
 <p layer='copper0' svgId='connector29pad'/><p layer='copper1' svgId='connector29pad'/></pcbView>
 </views>
-</connector>
+<erc ignore='ifUnconnected'/></connector>
 <connector id='connector30' type='male' name='SCK' replacedby='D13/SCK'>
 <description>SCK</description><views>
 <breadboardView>
@@ -357,7 +357,7 @@
 <pcbView>
 <p layer='copper0' svgId='connector30pad'/><p layer='copper1' svgId='connector30pad'/></pcbView>
 </views>
-</connector>
+<erc ignore='ifUnconnected'/></connector>
 <connector id='connector31' type='male' name='MISO' replacedby='D12/MISO'>
 <description>MISO</description><views>
 <breadboardView>
@@ -367,7 +367,7 @@
 <pcbView>
 <p layer='copper0' svgId='connector31pad'/><p layer='copper1' svgId='connector31pad'/></pcbView>
 </views>
-</connector>
+<erc ignore='ifUnconnected'/></connector>
 <connector id='connector32' type='male' name='MOSI' replacedby='D11 PWM/MOSI'>
 <description>MOSI</description><views>
 <breadboardView>
@@ -377,7 +377,7 @@
 <pcbView>
 <p layer='copper0' svgId='connector32pad'/><p layer='copper1' svgId='connector32pad'/></pcbView>
 </views>
-</connector>
+<erc ignore='ifUnconnected'/></connector>
 <connector id='connector33' type='male' name='D10' replacedby='D10 PWM/SS'>
 <description>D10</description><views>
 <breadboardView>
@@ -387,7 +387,7 @@
 <pcbView>
 <p layer='copper0' svgId='connector33pad'/><p layer='copper1' svgId='connector33pad'/></pcbView>
 </views>
-</connector>
+<erc ignore='ifUnconnected'/></connector>
 <connector id='connector34' type='male' name='D9' replacedby='D9 PWM'>
 <description>D9</description><views>
 <breadboardView>
@@ -397,7 +397,7 @@
 <pcbView>
 <p layer='copper0' svgId='connector34pad'/><p layer='copper1' svgId='connector34pad'/></pcbView>
 </views>
-</connector>
+<erc ignore='ifUnconnected'/></connector>
 <connector id='connector35' type='male' name='D8' replacedby='D8'>
 <description>D8</description><views>
 <breadboardView>
@@ -407,7 +407,7 @@
 <pcbView>
 <p layer='copper0' svgId='connector35pad'/><p layer='copper1' svgId='connector35pad'/></pcbView>
 </views>
-</connector>
+<erc ignore='ifUnconnected'/></connector>
 <connector id='connector36' type='male' name='D7' replacedby='D7'>
 <description>D7</description><views>
 <breadboardView>
@@ -417,7 +417,7 @@
 <pcbView>
 <p layer='copper0' svgId='connector36pad'/><p layer='copper1' svgId='connector36pad'/></pcbView>
 </views>
-</connector>
+<erc ignore='ifUnconnected'/></connector>
 <connector id='connector37' type='male' name='D6' replacedby='D6 PWM'>
 <description>D6</description><views>
 <breadboardView>
@@ -427,7 +427,7 @@
 <pcbView>
 <p layer='copper0' svgId='connector37pad'/><p layer='copper1' svgId='connector37pad'/></pcbView>
 </views>
-</connector>
+<erc ignore='ifUnconnected'/></connector>
 <connector id='connector38' type='male' name='D5' replacedby='D5 PWM'>
 <description>D5</description><views>
 <breadboardView>
@@ -437,7 +437,7 @@
 <pcbView>
 <p layer='copper0' svgId='connector38pad'/><p layer='copper1' svgId='connector38pad'/></pcbView>
 </views>
-</connector>
+<erc ignore='ifUnconnected'/></connector>
 <connector id='connector39' type='male' name='D4' replacedby='D4'>
 <description>D4</description><views>
 <breadboardView>
@@ -447,7 +447,7 @@
 <pcbView>
 <p layer='copper0' svgId='connector39pad'/><p layer='copper1' svgId='connector39pad'/></pcbView>
 </views>
-</connector>
+<erc ignore='ifUnconnected'/></connector>
 <connector id='connector40' type='male' name='D3' replacedby='D3 PWM'>
 <description>D3</description><views>
 <breadboardView>
@@ -457,7 +457,7 @@
 <pcbView>
 <p layer='copper0' svgId='connector40pad'/><p layer='copper1' svgId='connector40pad'/></pcbView>
 </views>
-</connector>
+<erc ignore='ifUnconnected'/></connector>
 <connector id='connector41' type='male' name='D2' replacedby='D2'>
 <description>D2</description><views>
 <breadboardView>
@@ -467,7 +467,7 @@
 <pcbView>
 <p layer='copper0' svgId='connector41pad'/><p layer='copper1' svgId='connector41pad'/></pcbView>
 </views>
-</connector>
+<erc ignore='ifUnconnected'/></connector>
 <connector id='connector42' type='male' name='GND' replacedby='GND'>
 <description>GND</description><views>
 <breadboardView>
@@ -477,7 +477,7 @@
 <pcbView>
 <p layer='copper0' svgId='connector42pad'/><p layer='copper1' svgId='connector42pad'/></pcbView>
 </views>
-</connector>
+<erc ignore='ifUnconnected'/></connector>
 <connector id='connector43' type='male' name='RESET' replacedby='RESET'>
 <description>RESET</description><views>
 <breadboardView>
@@ -487,7 +487,7 @@
 <pcbView>
 <p layer='copper0' svgId='connector43pad'/><p layer='copper1' svgId='connector43pad'/></pcbView>
 </views>
-</connector>
+<erc ignore='ifUnconnected'/></connector>
 <connector id='connector44' type='male' name='RXI' replacedby='D1/RX'>
 <description>RXI</description><views>
 <breadboardView>
@@ -497,7 +497,7 @@
 <pcbView>
 <p layer='copper0' svgId='connector44pad'/><p layer='copper1' svgId='connector44pad'/></pcbView>
 </views>
-</connector>
+<erc ignore='ifUnconnected'/></connector>
 <connector id='connector45' type='male' name='TXO' replacedby='D0/TX'>
 <description>TXO</description><views>
 <breadboardView>
@@ -507,7 +507,7 @@
 <pcbView>
 <p layer='copper0' svgId='connector45pad'/><p layer='copper1' svgId='connector45pad'/></pcbView>
 </views>
-</connector>
+<erc ignore='ifUnconnected'/></connector>
 </connectors>
 <buses>
 <bus id='gnd'>

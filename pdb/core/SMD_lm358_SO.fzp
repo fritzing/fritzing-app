@@ -145,7 +145,7 @@
             </views>
         </connector>
     </connectors>
-    <notschematic-subparts>
+    <schematic-subparts>
 	<subpart id="subpart1" label="1">
 		<connectors>
 			<connector id="connector3"/>
@@ -166,5 +166,5 @@
 			<connector id="connector6"/>
 		</connectors>
 	</subpart>
-    </notschematic-subparts>
+    </schematic-subparts>
 </module>

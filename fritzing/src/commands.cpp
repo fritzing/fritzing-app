@@ -2178,13 +2178,17 @@ AddSubpartCommand::AddSubpartCommand(SketchWidget *sketchWidget,  CrossViewType 
 
 void AddSubpartCommand::undo()
 {
-    // this only operates when a part is first created
+    if (!m_redoOnly) {
+        m_sketchWidget->addSubpart(m_itemID, m_subpartItemID, true);
+    }
     BaseCommand::undo();
 }
 
 void AddSubpartCommand::redo()
 {
-    m_sketchWidget->addSubpart(m_itemID, m_subpartItemID, true);
+    if (!m_undoOnly) {
+        m_sketchWidget->addSubpart(m_itemID, m_subpartItemID, true);
+    }
     BaseCommand::redo();
 }
 

@@ -344,7 +344,7 @@ void ItemBase::saveInstance(QXmlStreamWriter & streamWriter) {
 		streamWriter.writeAttribute("locked", "true");
 	}
     if (m_superpart) {
-        streamWriter.writeAttribute("superpart", QString::number(m_superpart->id()));
+        streamWriter.writeAttribute("superpart", QString::number(m_superpart->modelPart()->modelIndex()));
     }
     if (m_viewLayerPlacement == ViewLayer::NewBottom && m_viewID == ViewLayer::PCBView) {
         streamWriter.writeAttribute("bottom", "true");

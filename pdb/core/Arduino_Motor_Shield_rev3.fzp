@@ -16,7 +16,7 @@
   <property name="family">Arduino shield</property>
   <property name="chip">L298</property>
   <property name="part number"/>
-  <property name="variant">Arduino motor shield (Rev3)</property>
+  <property name="typ">Arduino motor shield (Rev3)</property>
  </properties>
  <views>
   <breadboardView>

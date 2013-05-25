@@ -153,6 +153,8 @@ public:
     void lookForZeroConnector();
     bool hasZeroConnector();
     void addOwner(QObject *);
+    void setSubpartOffset(QPointF);
+    QPointF subpartOffset() const;
 
 protected:
 	void loadTagText(QDomElement parent, QString tagName, QString &field);
@@ -212,6 +214,7 @@ protected:
     QList< QPointer<ModelPartShared> > m_subparts;
     QPointer<ModelPartShared> m_superpart;
     QString m_subpartID;
+    QPointF m_subpartOffset;
 };
 
 class ModelPartSharedRoot : public ModelPartShared

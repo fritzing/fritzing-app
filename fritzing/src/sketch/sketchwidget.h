@@ -161,7 +161,6 @@ public:
 	void setLayerActive(ViewLayer::ViewLayerID viewLayerID, bool active);
     bool layerIsVisible(ViewLayer::ViewLayerID);
     bool layerIsActive(ViewLayer::ViewLayerID);
-	void sortSelectedByZ(QList<ItemBase *> & bases);
 	void sortAnyByZ(const QList<QGraphicsItem *> & items, QList<ItemBase *> & bases);
  	void mousePressConnectorEvent(ConnectorItem *, QGraphicsSceneMouseEvent *);
  	void setBackground(QColor);
@@ -437,7 +436,7 @@ protected:
 	long findPartOrWire(long itemID);
 	AddItemCommand * newAddItemCommand(BaseCommand::CrossViewType crossViewType, ModelPart *,
 											   QString moduleID, ViewLayer::ViewLayerPlacement, ViewGeometry & viewGeometry, qint64 id, 
-											   bool updateInfoView, long modelIndex, QUndoCommand *parent);
+											   bool updateInfoView, long modelIndex, bool addSubparts, QUndoCommand *parent);
 	int selectAllItems(QSet<ItemBase *> & itemBases, const QString & msg);
 	bool moveByArrow(int dx, int dy, QKeyEvent * );
 	double gridSizeInches();
@@ -500,7 +499,7 @@ protected:
     void rotateWire(Wire *, QTransform & rotation, QPointF center, bool undoOnly, QUndoCommand * parentCommand);
 	QString renderToSVG(RenderThing &, const LayerList &);
 	QString renderToSVG(RenderThing &, QList<QGraphicsItem *> & itemsAndLabels);
-
+    QList<ItemBase *> collectSuperSubs(ItemBase *);
 
 protected:
 	static bool lessThan(int a, int b);

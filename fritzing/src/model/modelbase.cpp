@@ -515,6 +515,11 @@ void ModelBase::renewModelIndexes(QDomElement & parentElement, const QString & c
 		if (!views.isNull()) {
 			QDomElement view = views.firstChildElement();
 			while (!view.isNull()) {
+                bool ok;
+                int superpart = view.attribute("superpart").toLong(&ok);
+                if (ok) {
+                    view.setAttribute("superpart", QString::number(oldToNew.value(superpart)));
+                }
 				QDomElement connectors = view.firstChildElement("connectors");
 				if (!connectors.isNull()) {
 					QDomElement connector = connectors.firstChildElement("connector");

@@ -869,3 +869,11 @@ void ModelPartShared::setSubpartID(const QString & id) {
 const QString & ModelPartShared::subpartID() const {
     return m_subpartID;
 }
+
+QPointF ModelPartShared::subpartOffset() const {
+    return m_subpartOffset;
+}
+
+void ModelPartShared::setSubpartOffset(QPointF p) {
+    m_subpartOffset = p;
+}

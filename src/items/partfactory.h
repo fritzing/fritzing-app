@@ -55,7 +55,8 @@ protected:
 	static QString getFzpFilenameAux(const QString & moduleID, GenFzp);
 	static QString getSvgFilenameAux(const QString & expectedFileName, const ModelPart *, GenSvg);
 	static class ItemBase * createPartAux(class ModelPart *, ViewLayer::ViewID, const class ViewGeometry & viewGeometry, long id, QMenu * itemMenu, QMenu * wireMenu, bool doLabel);
-    static void showSubpart(QDomElement & root, const QString & subpart);
+    static QDomElement showSubpart(QDomElement & root, const QString & subpart);
+    static void fixSubpartBounds(QDomElement &, ModelPartShared *);
 	static QString getSvgFilename(class ModelPart *, const QString & filename);
 };
 

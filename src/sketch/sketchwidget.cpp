@@ -285,6 +285,7 @@ void SketchWidget::loadFromModelParts(QList<ModelPart *> & modelParts, BaseComma
 	}
 
     QHash<ItemBase *, long> superparts;
+    QHash<long, long> superparts2;
     QList<ModelPart *> zeroLength;
 	// make parts
 	foreach (ModelPart * mp, modelParts) {
@@ -300,6 +301,9 @@ void SketchWidget::loadFromModelParts(QList<ModelPart *> & modelParts, BaseComma
 		bool locked = view.attribute("locked", "").compare("true") == 0;
         bool superpartOK;
         long superpartID = view.attribute("superpart", "").toLong(&superpartOK);
+        if (superpartOK) {
+            superpartID = ItemBase::getNextID(superpartID);
+        }
 
 		QDomElement geometry = view.firstChildElement("geometry");
 		if (geometry.isNull()) continue;
@@ -395,8 +399,12 @@ void SketchWidget::loadFromModelParts(QList<ModelPart *> & modelParts, BaseComma
 					viewGeometry.setLoc(QPointF(dx, dy));
 				}
 			}
-			newAddItemCommand(crossViewType, mp, mp->moduleID(), viewLayerPlacement, viewGeometry, newID, false, mp->modelIndex(), parentCommand);
-			
+			newAddItemCommand(crossViewType, mp, mp->moduleID(), viewLayerPlacement, viewGeometry, newID, false, mp->modelIndex(), false, parentCommand);
+
+            if (superpartOK) {
+                superparts2.insert(newID, superpartID);
+            }
+		
 			// TODO: all this part specific stuff should be in the PartFactory
 			
 			if (Board::isBoard(mp) || mp->itemType() == ModelPart::Logo) {
@@ -477,6 +485,11 @@ void SketchWidget::loadFromModelParts(QList<ModelPart *> & modelParts, BaseComma
         if (super) {
             super->addSubpart(sub);
         }
+    }
+
+    foreach (long newID, superparts2.keys()) {
+        AddSubpartCommand * asc = new AddSubpartCommand(this, crossViewType, superparts2.value(newID), newID, parentCommand);
+        asc->setRedoOnly();
     }
 
     if (parentCommand) {
@@ -1184,6 +1197,13 @@ void SketchWidget::deleteAux(QSet<ItemBase *> & deletedItems, QUndoCommand * par
 	new CleanUpRatsnestsCommand(this, CleanUpWiresCommand::RedoOnly, parentCommand);
 	new CleanUpWiresCommand(this, CleanUpWiresCommand::RedoOnly, parentCommand);
 
+    foreach (ItemBase * itemBase, deletedItems) {
+        if (itemBase->superpart() != NULL) {
+            AddSubpartCommand * asc = new AddSubpartCommand(this, BaseCommand::CrossView, itemBase->superpart()->id(), itemBase->id(), parentCommand);
+            asc->setUndoOnly();
+        }
+    }
+
 	// actual delete commands must come last for undo to work properly
 	foreach (ItemBase * itemBase, deletedItems) {
 		this->makeDeleteItemCommand(itemBase, BaseCommand::CrossView, parentCommand);
@@ -1580,10 +1600,29 @@ void SketchWidget::cut() {
 }
 
 void SketchWidget::copy() {
+	QList<QGraphicsItem *> tlBases;
+    foreach (QGraphicsItem * item, scene()->selectedItems()) {
+		ItemBase * itemBase =  ItemBase::extractTopLevelItemBase(item);
+		if (itemBase == NULL) continue;
+		if (itemBase->getRatsnest()) continue;
+		if (tlBases.contains(itemBase)) continue;
+
+        QList<ItemBase *> superSubs = collectSuperSubs(itemBase);
+        if (superSubs.count() > 0) {
+            foreach (ItemBase * supersub, superSubs) {
+                if (!tlBases.contains(supersub)) tlBases.append(supersub);
+            }
+            continue;
+        }
+
+		tlBases.append(itemBase);
+	}
+
 	QList<ItemBase *> bases;
+	sortAnyByZ(tlBases, bases);
 
 	// sort them in z-order so the copies also appear in the same order
-	sortSelectedByZ(bases);
+
 	copyAux(bases, true);
 }
 
@@ -2044,7 +2083,7 @@ void SketchWidget::dropItemEvent(QDropEvent *event) {
 
     ViewLayer::ViewLayerPlacement viewLayerPlacement;
     getDroppedItemViewLayerPlacement(modelPart, viewLayerPlacement);  
-	AddItemCommand * addItemCommand = newAddItemCommand(crossViewType, modelPart, modelPart->moduleID(), viewLayerPlacement, viewGeometry, fromID, true, -1, parentCommand);
+	AddItemCommand * addItemCommand = newAddItemCommand(crossViewType, modelPart, modelPart->moduleID(), viewLayerPlacement, viewGeometry, fromID, true, -1, true, parentCommand);
 	addItemCommand->setDropOrigin(this);
 
 	new SetDropOffsetCommand(this, fromID, m_droppingOffset, parentCommand);
@@ -4386,27 +4425,6 @@ void SketchWidget::continueZChangeAux(QList<ItemBase *> & bases, const QString &
 	changeZCommand->setText(text);
 	m_undoStack->push(changeZCommand);
 }
-
-void SketchWidget::sortSelectedByZ(QList<ItemBase *> & bases) {
-
-	const QList<QGraphicsItem *> items = scene()->selectedItems();
-	if (items.size() <= 0) return;
-
-	QList<QGraphicsItem *> tlBases;
-	for (int i = 0; i < items.count(); i++) {
-		ItemBase * itemBase =  ItemBase::extractTopLevelItemBase(items[i]);
-		if (itemBase == NULL) continue;
-		if (itemBase->getRatsnest()) continue;
-		if (tlBases.contains(itemBase)) continue;
-
-		if (itemBase != NULL) {
-			tlBases.append(itemBase);
-		}
-	}
-
-	sortAnyByZ(tlBases, bases);
-}
-
 
 void SketchWidget::sortAnyByZ(const QList<QGraphicsItem *> & items, QList<ItemBase *> & bases) {
 	for (int i = 0; i < items.size(); i++) {
@@ -8167,21 +8185,24 @@ int SketchWidget::selectAllItems(QSet<ItemBase *> & itemBases, const QString & m
 	return itemBases.count();
 }
 
-AddItemCommand * SketchWidget::newAddItemCommand(BaseCommand::CrossViewType crossViewType, ModelPart * newModelPart, QString moduleID, ViewLayer::ViewLayerPlacement viewLayerPlacement, ViewGeometry & viewGeometry, qint64 id, bool updateInfoView, long modelIndex, QUndoCommand *parent)
+AddItemCommand * SketchWidget::newAddItemCommand(BaseCommand::CrossViewType crossViewType, ModelPart * newModelPart, QString moduleID, ViewLayer::ViewLayerPlacement viewLayerPlacement, ViewGeometry & viewGeometry, qint64 id, bool updateInfoView, long modelIndex, bool addSubparts, QUndoCommand *parent)
 {
 	AddItemCommand * aic = new AddItemCommand(this, crossViewType, moduleID, viewLayerPlacement, viewGeometry, id, updateInfoView, modelIndex, parent);
     if (newModelPart == NULL) {
         newModelPart = m_referenceModel->retrieveModelPart(moduleID);
     }
-    if (!newModelPart->hasSubparts()) return aic;
+    if (!newModelPart->hasSubparts() || !addSubparts) return aic;
 
     ModelPartShared * modelPartShared = newModelPart->modelPartShared();        
     if (modelPartShared == NULL) return aic;
 
     foreach (ModelPartShared * mps, modelPartShared->subparts()) {
         long subID = ItemBase::getNextID();
-        new AddItemCommand(this, crossViewType, mps->moduleID(), viewLayerPlacement, viewGeometry, subID, updateInfoView, -1, parent);
-        new AddSubpartCommand(this, crossViewType, id, subID, parent);
+        ViewGeometry vg = viewGeometry;
+        vg.setLoc(vg.loc() + (mps->subpartOffset() * GraphicsUtils::SVGDPI));
+        new AddItemCommand(this, crossViewType, mps->moduleID(), viewLayerPlacement, vg, subID, updateInfoView, -1, parent);
+        AddSubpartCommand * asc = new AddSubpartCommand(this, crossViewType, id, subID, parent);
+        asc->setRedoOnly();
     }
 
     return aic;
@@ -8344,7 +8365,20 @@ void SketchWidget::initGrid() {
 
 
 void SketchWidget::copyDrop() {
-	QList<ItemBase *> itemBases = m_savedItems.values();
+
+	QList<ItemBase *> itemBases;
+    foreach (ItemBase * itemBase, m_savedItems.values()) {
+        QList<ItemBase *> superSubs = collectSuperSubs(itemBase);
+        if (superSubs.count() > 0) {
+            foreach (ItemBase * supersub, superSubs) {
+                if (!itemBases.contains(supersub)) itemBases.append(supersub);
+            }
+            continue;
+        }
+
+        itemBases.append(itemBase);
+    }
+
     qSort(itemBases.begin(), itemBases.end(), ItemBase::zLessThan);
 	foreach (ItemBase * itemBase, itemBases) {
 		QPointF loc = itemBase->getViewGeometry().loc();
@@ -9257,7 +9291,7 @@ long SketchWidget::swapStart(SwapThing & swapThing, bool master) {
 	new MoveItemCommand(this, itemBase->id(), vg, vg, false, swapThing.parentCommand);
 
 	// command created for each view
-	newAddItemCommand(BaseCommand::SingleView, NULL, swapThing.newModuleID, swapThing.viewLayerPlacement, vg, newID, true, swapThing.newModelIndex, swapThing.parentCommand);
+	newAddItemCommand(BaseCommand::SingleView, NULL, swapThing.newModuleID, swapThing.viewLayerPlacement, vg, newID, true, swapThing.newModelIndex, true, swapThing.parentCommand);
 
 	if (needsTransform) {
 		QMatrix m;
@@ -9512,5 +9546,28 @@ void SketchWidget::addSubpart(long id, long subpartID, bool doEmit) {
 
 void SketchWidget::getDroppedItemViewLayerPlacement(ModelPart * modelPart, ViewLayer::ViewLayerPlacement & viewLayerPlacement) {
     emit getDroppedItemViewLayerPlacementSignal(modelPart, viewLayerPlacement);
+}
+
+QList<ItemBase *> SketchWidget::collectSuperSubs(ItemBase * itemBase) {
+    QList<ItemBase *> itemBases;
+
+    if (itemBase->superpart()) {
+        itemBases.append(itemBase->superpart()->layerKinChief());
+        foreach (ItemBase * subpart, itemBase->superpart()->subparts()) {
+            if (!itemBases.contains(subpart->layerKinChief())) {
+                itemBases.append(subpart->layerKinChief());
+            }
+        }
+    }
+    else if (itemBase->subparts().count() > 0) {
+        itemBases.append(itemBase->layerKinChief());
+        foreach (ItemBase * subpart, itemBase->subparts()) {
+            if (!itemBases.contains(subpart->layerKinChief())) {
+                itemBases.append(subpart->layerKinChief());
+            }
+        }
+    }
+
+    return itemBases;
 }
 

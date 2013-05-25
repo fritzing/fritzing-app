@@ -975,15 +975,14 @@ bool BoardLogoItem::resizeMM(double mmW, double mmH, const LayerHash & viewLayer
 void BoardLogoItem::reloadLayerKin(double mmW, double mmH)
 {
 	foreach (ItemBase * itemBase, m_layerKin) {
-        if (itemBase->viewLayerID() == LogoItem::layer()) {
-		    QString svg = ResizableBoard::getShapeForRenderer(prop("shape"), LogoItem::layer());
+        if (itemBase->viewLayerID() == ViewLayer::Silkscreen1 || itemBase->viewLayerID() == ViewLayer::Silkscreen0) {
+		    QString svg = ResizableBoard::getShapeForRenderer(prop("shape"), itemBase->viewLayerID());
 		    if (!svg.isEmpty()) {
 			    itemBase->prepareGeometryChange();
 			    if (itemBase->resetRenderer(svg)) {
 				    itemBase->modelPart()->setLocalProp("width", mmW);
 				    itemBase->modelPart()->setLocalProp("height", mmH);
 			    }
-			    break;
 		    }
 	    }
     }

@@ -63,6 +63,7 @@ $Date: 2013-04-14 00:08:36 +0200 (So, 14. Apr 2013) $
 static QString PartFactoryFolderPath;
 static QHash<QString, LockedFile *> LockedFiles;
 static QString SvgFilesDir = "svg";
+static QHash<QString, QPointF> SubpartOffsets;
 
 ItemBase * PartFactory::createPart( ModelPart * modelPart, ViewLayer::ViewLayerPlacement viewLayerPlacement, ViewLayer::ViewID viewID, const ViewGeometry & viewGeometry, long id, QMenu * itemMenu, QMenu * wireMenu, bool doLabel)
 {
@@ -265,7 +266,10 @@ QString PartFactory::getSvgFilename(ModelPart * modelPart, const QString & baseN
 
             QString path = partPath() + schematicFileName;
             QFileInfo info(path);
-            if (info.exists()) continue;
+            if (info.exists()) {
+                mps->setSubpartOffset(SubpartOffsets.value(path, QPointF(0, 0)));
+                continue;
+            }
 
             QFile file(originalPath);
 	        QString errorStr;
@@ -278,7 +282,9 @@ QString PartFactory::getSvgFilename(ModelPart * modelPart, const QString & baseN
             }
 
             QDomElement root = doc.documentElement();
-            showSubpart(root, mps->subpartID());
+            QDomElement top = showSubpart(root, mps->subpartID());
+            fixSubpartBounds(top, mps);
+            SubpartOffsets.insert(path, mps->subpartOffset());
             TextUtils::writeUtf8(path, doc.toString(4));
         }
     }
@@ -557,20 +563,76 @@ QString PartFactory::makeSchematicSipOrDipOr(const QStringList & labels, bool ha
 	return Dip::makeSchematicSvg(labels);
 }
 
-void PartFactory::showSubpart(QDomElement & root, const QString & subpart)
+QDomElement PartFactory::showSubpart(QDomElement & root, const QString & subpart)
 {    
-    if (subpart.isEmpty()) return;
+    if (subpart.isEmpty()) return ___emptyElement___;
 
     QString id = root.attribute("id");
-    if (id == subpart) return;
+    if (id == subpart) {
+        return root;
+    }
 
+    QDomElement top;
     QDomElement child = root.firstChildElement();
     while (!child.isNull()) {
-        showSubpart(child, subpart);
+        QDomElement candidate = showSubpart(child, subpart);
+        if (!candidate.isNull()) {
+            top = candidate;
+        }
         child = child.nextSiblingElement();
     }
 
     if (root.tagName() != "g" && root.tagName() != "svg") {
         root.setTagName("g");
     }
+    
+    return top;
 }
+
+void PartFactory::fixSubpartBounds(QDomElement & top, ModelPartShared * mps)
+{    
+    if (top.isNull()) return;
+
+    QString transform = top.attribute("transform", "");
+    top.removeAttribute("transform");
+    QDomElement g = top.ownerDocument().createElement("g");
+    if (!transform.isEmpty()) g.setAttribute("transform", transform);
+    QDomElement child = top.firstChildElement();
+    while (!child.isNull()) {
+        g.appendChild(child);
+        child = top.firstChildElement();
+    }
+    top.appendChild(g);
+
+    QSvgRenderer renderer;
+    bool loaded = renderer.load(top.ownerDocument().toByteArray());
+    if (!loaded) return;
+
+    QRectF viewBox;
+    TextUtils::ensureViewBox(top.ownerDocument(), 1, viewBox, false);
+    double sWidth, sHeight, vbWidth, vbHeight;
+    TextUtils::getSvgSizes(top.ownerDocument(), sWidth, sHeight, vbWidth, vbHeight);
+
+	QMatrix m = renderer.matrixForElement(mps->subpartID());
+	QRectF bounds = m.mapRect(renderer.boundsOnElement(mps->subpartID()));
+
+    // TODO need to include the size of <text> elements
+
+    QDomElement root = top.ownerDocument().documentElement();
+    double newW = sWidth * bounds.width() / vbWidth;
+    double newH = sHeight * bounds.height() / vbHeight;
+    root.setAttribute("width", QString("%1in").arg(newW));
+    root.setAttribute("height", QString("%1in").arg(newH));
+    root.setAttribute("viewBox", QString("0 0 %1 %2").arg(bounds.width()).arg(bounds.height()));
+
+    if (bounds.left() != 0 || bounds.top() != 0) {
+        QDomElement g2 = top.ownerDocument().createElement("g");
+        g2.appendChild(g);
+        top.appendChild(g2);
+        g2.setAttribute("transform", QString("translate(%1,%2)").arg(-bounds.left()).arg(-bounds.top()));
+    }
+
+    mps->setSubpartOffset(QPointF(bounds.left() * sWidth / vbWidth, bounds.top() * sHeight / vbHeight));
+}
+
+

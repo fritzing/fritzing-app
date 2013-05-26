@@ -39,7 +39,6 @@ $Date: 2013-04-28 13:51:10 +0200 (So, 28. Apr 2013) $
 
 static QString IDString("-_-_-text-_-_-%1");
 
-
 ////////////////////////////////////////////////
 
 LayerKinPaletteItem::LayerKinPaletteItem(PaletteItemBase * chief, ModelPart * modelPart, ViewLayer::ViewID viewID, const ViewGeometry & viewGeometry, long id, QMenu* itemMenu)
@@ -269,16 +268,11 @@ bool SchematicTextLayerKinPaletteItem::makeFlipTextSvg() {
         texts.append(nodeList.at(i).toElement());
     }
 
-    int ix = 0;
-    foreach (QDomElement text, texts) {
-        text.setAttribute("id", IDString.arg(ix++));
-    }
-
-    positionTexts(doc, texts);
+    positionTexts(texts);
 
     //QSvgRenderer renderer;
     //renderer.load(doc.toByteArray());
-    ix = 0;
+    int ix = 0;
     foreach (QDomElement text, texts) {
         QString id = IDString.arg(ix++);
         double x = this->property(id.toUtf8().constData()).toDouble();    
@@ -299,9 +293,9 @@ bool SchematicTextLayerKinPaletteItem::makeFlipTextSvg() {
     if (my > maxY) maxY = my;  
 
 
-void SchematicTextLayerKinPaletteItem::positionTexts(QDomDocument & doc, QList<QDomElement> & texts) {
-    QString id = IDString.arg(0);
+void SchematicTextLayerKinPaletteItem::positionTexts(QList<QDomElement> & texts) {
     // TODO: reuse these values unless the pin labels have changed
+    //QString id = IDString.arg(0);
     //if (this->property(id.toUtf8().constData()).isValid()) {
     //    // calculated this already
     //    return;
@@ -314,80 +308,14 @@ void SchematicTextLayerKinPaletteItem::positionTexts(QDomDocument & doc, QList<Q
     QRectF br = boundingRect();
     QImage image(qCeil(br.width()), qCeil(br.height()), QImage::Format_Mono);
 
-    //bool hack = false;
-
     int ix = 0;
     foreach (QDomElement text, texts) {
-        text.setTagName("text");
-        id = IDString.arg(ix++);
+        QString id = IDString.arg(ix++);
 
-        image.fill(0xffffffff);
-        QSvgRenderer renderer(doc.toByteArray());
-	    QPainter painter;
-	    painter.begin(&image);
-	    painter.setRenderHint(QPainter::Antialiasing, false);
-	    renderer.render(&painter  /*, sourceRes */);
-	    painter.end();
-
-#ifndef QT_NO_DEBUG
-	    image.save(FolderUtils::getUserDataStorePath("") + "/" + id + ".png");
-#endif
-
-        QRectF viewBox = renderer.viewBoxF();
-        double x = text.attribute("x").toDouble();
-        double y = text.attribute("y").toDouble();
-        QPointF p(image.width() * x / viewBox.width(), image.height() * y / viewBox.height());
-        QMatrix matrix = renderer.matrixForElement(id);
-        QPointF q = matrix.map(p);
-        QPoint iq((int) q.x(), (int) q.y());
-
-        /*
-        if (!hack) {
-            hack = true;
-            QDomElement rect = doc.createElement("rect");
-            doc.documentElement().appendChild(rect);
-            rect.setAttribute("x", 0);
-            rect.setAttribute("y", 0);
-            rect.setAttribute("width", viewBox.width());
-            rect.setAttribute("height", viewBox.height());
-            rect.setAttribute("stroke", "none");
-            rect.setAttribute("stroke-width", "0");
-            rect.setAttribute("fill", "red");
-            rect.setAttribute("fill-opacity", 0.5);
-        }
-        */
-
-        int minX = image.width() + 1;
-        int maxX = -1;
-        int minY = image.height() + 1;
-        int maxY = -1;
-
-        // spiral around q
-        int limit = qMax(image.width(), image.height());
-        for (int lim = 0; lim < limit; lim++) {
-            int t = qMax(0, iq.y() - lim);
-            int b = qMin(iq.y() + lim, image.height() - 1);
-            int l = qMax(0, iq.x() - lim);
-            int r = qMin(iq.x() + lim, image.width() - 1);
-
-            for (int iy = t; iy <= b; iy++) {
-                if (image.pixel(l, iy) == 0xff000000) {
-                    MINMAX(l, iy);
-                }
-                if (image.pixel(r, iy) == 0xff000000) {
-                    MINMAX(r, iy);
-                }
-            }
-
-            for (int ix = l + 1; ix < r; ix++) {
-                if (image.pixel(ix, t) == 0xff000000) {
-                    MINMAX(ix, t);
-                }
-                if (image.pixel(ix, b) == 0xff000000) {
-                    MINMAX(ix, b);
-                }
-            }
-        }
+        int minX, minY, maxX, maxY;
+        QMatrix matrix;
+        QRectF viewBox;
+        renderText(image, text, minX, minY, maxX, maxY, matrix, viewBox);
 
         // TODO: assumes left-to-right text orientation
         QString anchor = TextUtils::findAnchor(text);
@@ -403,7 +331,6 @@ void SchematicTextLayerKinPaletteItem::positionTexts(QDomDocument & doc, QList<Q
         QPointF rp((image.width() - useX) * viewBox.width() / image.width(), (image.height() - maxY) * viewBox.height() / image.height());
         QPointF rq = inv.map(rp);
         this->setProperty(id.toUtf8().constData(), rq.x());
-        text.setTagName("g");
     }
 
     foreach (QDomElement text, texts) {
@@ -411,3 +338,96 @@ void SchematicTextLayerKinPaletteItem::positionTexts(QDomDocument & doc, QList<Q
     }
 
 }
+
+void SchematicTextLayerKinPaletteItem::renderText(QImage & image, QDomElement & text, int & minX, int & minY, int & maxX, int & maxY, QMatrix & matrix, QRectF & viewBox) 
+{
+    QString oldid = text.attribute("id");
+    text.setAttribute("id", IDString);
+
+    // TODO: handle inherited fill/stroke values
+    QString oldFill = text.attribute("fill");
+    if (!oldFill.isEmpty()) {
+        text.setAttribute("fill", "black");
+    }
+    QString oldStroke = text.attribute("stroke");
+    if (!oldStroke.isEmpty()) {
+        text.setAttribute("stroke", "black");
+    }
+    text.setTagName("text");
+
+
+    image.fill(0xffffffff);
+    QSvgRenderer renderer(text.ownerDocument().toByteArray());
+	QPainter painter;
+	painter.begin(&image);
+	painter.setRenderHint(QPainter::Antialiasing, false);
+	renderer.render(&painter  /*, sourceRes */);
+	painter.end();
+
+#ifndef QT_NO_DEBUG
+	image.save(FolderUtils::getUserDataStorePath("") + "/renderText.png");
+#endif
+
+    viewBox = renderer.viewBoxF();
+    double x = text.attribute("x").toDouble();
+    double y = text.attribute("y").toDouble();
+    QPointF p(image.width() * x / viewBox.width(), image.height() * y / viewBox.height());
+    matrix = renderer.matrixForElement(IDString);
+    QPointF q = matrix.map(p);
+    QPoint iq((int) q.x(), (int) q.y());
+
+    /*
+    if (!hack) {
+        hack = true;
+        QDomElement rect = doc.createElement("rect");
+        doc.documentElement().appendChild(rect);
+        rect.setAttribute("x", 0);
+        rect.setAttribute("y", 0);
+        rect.setAttribute("width", viewBox.width());
+        rect.setAttribute("height", viewBox.height());
+        rect.setAttribute("stroke", "none");
+        rect.setAttribute("stroke-width", "0");
+        rect.setAttribute("fill", "red");
+        rect.setAttribute("fill-opacity", 0.5);
+    }
+    */
+
+    minX = image.width() + 1;
+    maxX = -1;
+    minY = image.height() + 1;
+    maxY = -1;
+
+    // spiral around q
+    int limit = qMax(image.width(), image.height());
+    for (int lim = 0; lim < limit; lim++) {
+        int t = qMax(0, iq.y() - lim);
+        int b = qMin(iq.y() + lim, image.height() - 1);
+        int l = qMax(0, iq.x() - lim);
+        int r = qMin(iq.x() + lim, image.width() - 1);
+
+        for (int iy = t; iy <= b; iy++) {
+            if (image.pixel(l, iy) == 0xff000000) {
+                MINMAX(l, iy);
+            }
+            if (image.pixel(r, iy) == 0xff000000) {
+                MINMAX(r, iy);
+            }
+        }
+
+        for (int ix = l + 1; ix < r; ix++) {
+            if (image.pixel(ix, t) == 0xff000000) {
+                MINMAX(ix, t);
+            }
+            if (image.pixel(ix, b) == 0xff000000) {
+                MINMAX(ix, b);
+            }
+        }
+    }
+
+    text.setTagName("g");
+    if (oldid.isEmpty()) text.removeAttribute("id");
+    else text.setAttribute("id", oldid);
+    if (!oldFill.isEmpty()) text.setAttribute("fill", oldFill);
+    if (!oldStroke.isEmpty()) text.setAttribute("stroke", oldStroke);
+}
+

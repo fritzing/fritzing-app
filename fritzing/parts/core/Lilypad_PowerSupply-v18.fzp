@@ -1,34 +1,22 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<module fritzingVersion='0.5.2b.02.18.4756' moduleId='Lilypad_PowerSupply-v16'>
+<module fritzingVersion='0.5.2b.02.18.4756' moduleId='Lilypad_PowerSupply-v18'>
 <version>4</version>
-<date>2011-07-08</date>
-<author>SparkFun</author>
-<description>&lt;p&gt;
-	&lt;span style=&quot;font-weight: bold;&quot;&gt;Description:&lt;/span&gt; A small, but mighty power supply. This board was designed to be as small and inconspicuous as possible. Pop in a AAA battery, flip the power switch, and you will have a 5V supply to power your LilyPad network. Good up to 100mA. Short circuit protected.&lt;br /&gt;
-	&lt;br /&gt;
-	This board has AAA battery clips but can use an input from 1.2V to 5V. Our lithium polymer batteries are a good, rechargable alternative.&lt;br /&gt;
-	&lt;br /&gt;
-	LilyPad is a wearable e-textile technology developed by Leah Buechley and cooperatively designed by Leah and SparkFun. Each LilyPad was creatively designed to have large connecting pads to allow them to be sewn into clothing. Various input, output, power, and sensor boards are available. They&amp;#39;re even washable - but be sure to remove the battery!&lt;br /&gt;
-	&lt;br /&gt;
-	&lt;span style=&quot;font-weight: bold;&quot;&gt;Dimensions:&lt;/span&gt;&lt;/p&gt;
-&lt;ul&gt;
-	&lt;li&gt;
-		56x26mm&lt;/li&gt;
-	&lt;li&gt;
-		Thin 0.8mm PCB&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;
-	&lt;span style=&quot;font-weight: bold;&quot;&gt;Documents:&lt;/span&gt;&lt;/p&gt;
-&lt;ul&gt;
-	&lt;li&gt;
-		&lt;a href=&quot;http://www.sparkfun.com/datasheets/DevTools/LilyPad/LilyPad-PowerSupply.pdf&quot; target=&quot;_blank&quot;&gt;Schematic&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;
-		LilyPad Power Supply Sticker Sheet &lt;a href=&quot;http://www.sparkfun.com/marcomm/SFE03-0010-Packaging-LilyPad-PowerSupply-08466.pdf&quot; target=&quot;_blank&quot;&gt;PDF&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;
-		All LilyPad Product Sticker Sheet &lt;a href=&quot;http://www.sparkfun.com/marcomm/SFE03-0010-Packaging-LilyPadFPO-Stickers-MASTER.pdf&quot; target=&quot;_blank&quot;&gt;PDF&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description>
-<title>LilyPad Power Supply</title>
-<url>http://www.sparkfun.com/products/8466</url>
+<date>2013-05-26</date>
+<author>f.althaus</author>
+<description>A small, but mighty power supply. This board was designed to be as small and inconspicuous as possible. Pop in a AAA battery, flip the power switch, and you will have a 5V supply to power your LilyPad circuit. Good up to 200mA. Short circuit protected.
+
+This board has AAA battery clips but can use an input from 1.2V to 5V. Our lithium polymer batteries are a good, rechargeable alternative.
+
+LilyPad is a wearable e-textile technology developed by Leah Buechley and cooperatively designed by Leah and SparkFun. Each LilyPad was creatively designed to have large connecting pads to allow them to be sewn into clothing. Various input, output, power, and sensor boards are available. They&apos;re even washable - but be sure to remove the battery!
+
+Note: A portion of this sale is given back to Dr. Leah Buechley for continued development and education of e-textiles.
+
+Dimensions:
+
+56x26mm
+Thin 0.8mm PCB</description>
+<title>Lilypad Power Supply</title>
+<url>http://www.sparkfun.com/products/11259</url>
 <tags>
 <tag>Lilypad</tag>
 <tag>Power</tag>
@@ -36,30 +24,31 @@
 </tags>
 <properties>
 <property name='Input Voltage'>1-5V</property>
-<property name='family'>Power Conditioning</property>
+<property name='family'>microcontroller board (lilypad)</property>
+<property name='type'>Power Conditioning</property>
 <property name='Output Voltage'>5V</property>
 <property name='Connector'>AA Clip</property>
 </properties>
 <views>
 <breadboardView>
-<layers image='breadboard/Lilypad_PowerSupply-v16_breadboard.svg'>
+<layers image='breadboard/Lilypad_PowerSupply-v18_breadboard.svg'>
 <layer layerId='breadboard'/>
 </layers>
 </breadboardView>
 <schematicView>
-<layers image='schematic/Lilypad_PowerSupply-v16_schematic.svg'>
+<layers image='schematic/Lilypad_PowerSupply-v18_schematic.svg'>
 <layer layerId='schematic'/>
 </layers>
 </schematicView>
 <pcbView>
-<layers image='pcb/Lilypad_PowerSupply-v16_pcb.svg'>
+<layers image='pcb/Lilypad_PowerSupply-v18_pcb.svg'>
 <layer layerId='copper1'/>
 <layer layerId='silkscreen'/>
 <layer layerId='copper0'/>
 </layers>
 </pcbView>
 <iconView>
-<layers image='breadboard/Lilypad_PowerSupply-v16_breadboard.svg'>
+<layers image='breadboard/Lilypad_PowerSupply-v18_breadboard.svg'>
 <layer layerId='icon'/>
 </layers>
 </iconView>

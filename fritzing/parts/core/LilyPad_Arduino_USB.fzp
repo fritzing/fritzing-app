@@ -18,7 +18,7 @@ The LilyPad Arduino USB differs from previous LilyPad boards in that the ATmega3
 <tag>microcontrollerboard</tag>
 </tags>
 <properties>
-<property name='family'>microcontroller board (arduino)</property>
+<property name='family'>microcontroller board (lilypad)</property>
 <property name='type'>Lilypad Arduino USB</property>
 </properties>
 <views>

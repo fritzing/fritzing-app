@@ -1,17 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <module fritzingVersion='0.5.2b.02.18.4756' moduleId='LilyPad Coincell-Battery-v17'>
-<version>4</version>
-<date>2011-07-08</date>
+<date>2013-05-25</date>
+<author>f.althaus</author>
 <author>SparkFun</author>
-<description>&lt;p&gt;
+<description> If you&apos;re looking for a simple way to add a battery to your LilyPad project, the LilyPad Coin Cell Battery Holder might do the trick. It&apos;s a simple board which holds a 20mm coin cell battery (such as a CR2032) and gives you 4 connection points (two positive and two negative) for sewing into your project.
 
-	&lt;strong&gt;Description:&lt;/strong&gt; If you&amp;#39;re looking for a simple way to add a battery to your LilyPad project, the LilyPad Coin Cell Battery Holder might do the trick. It&amp;#39;s a simple board which holds a 20mm coin cell battery (such as a CR2032) and gives you 4 connection points (two positive and two negative) for sewing into your project.&lt;/p&gt;
-
-&lt;p&gt;
-
-	&lt;strong&gt;Note:&lt;/strong&gt; The LilyPad Coin Cell Battery Holder is a design conceived by Felicia Williams of Boulder, Colorado. Also, a portion of this sale is given back to Dr. Leah Buechley for continued development and education of e-textiles.&amp;nbsp;&lt;/p&gt;
-
-</description>
+Note: The LilyPad Coin Cell Battery Holder is a design conceived by Felicia Williams of Boulder, Colorado. Also, a portion of this sale is given back to Dr. Leah Buechley for continued development and education of e-textiles. </description>
 <title>LilyPad Coin Cell Battery Holder</title>
 <url>http://www.sparkfun.com/products/10730</url>
 <tags>
@@ -21,7 +15,8 @@
 <tag>Battery</tag>
 </tags>
 <properties>
-<property name='family'>Power Connector</property>
+<property name='family'>microcontroller board (lilypad)</property>
+<property name='type'>Power Connector</property>
 <property name='Connector'>20mm Coin Cell Holder</property>
 </properties>
 <views>

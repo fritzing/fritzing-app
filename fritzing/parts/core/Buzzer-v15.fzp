@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module fritzingVersion='0.5.2b.02.18.4756' moduleId='Buzzer-v15'>
+<version>4</version>
+<date>2013-05-26</date>
+<author>Fabian Althaus</author>
+<description>This is a small buzzer for the LilyPad system. Use 2 I/O pins on the LilyPad main board and create different noises based on the different frequency of I/O toggling. Loud enough to hear inside a pocket but not obtrusively loud.
+
+Please note: This is an inductive buzzer meaning that is will act as a short to ground if you are not actively driving it. We recommend you put both I/O pins to low (0V) when the buzzer is not used. Also, it&apos;s come to our attention that washing these buzzers will damage them. Until we&apos;ve figured out a solution to this, avoid washing any portion of your project that contains one of these buzzers.
+
+LilyPad is a wearable e-textile technology developed by Leah Buechley and cooperatively designed by Leah and SparkFun. Each LilyPad was creatively designed to have large connecting pads to allow them to be sewn into clothing. Various input, output, power, and sensor boards are available. They&apos;re even washable!
+
+Note: A portion of this sale is given back to Dr. Leah Buechley for continued development and education of e-textiles.
+
+Dimensions:
+
+20mm outer diameter
+Thin 0.8mm PCB</description>
+<title>LilyPad Buzzer</title>
+<url>http://www.sparkfun.com/products/8463</url>
+<tags>
+<tag>Lilypad</tag>
+<tag>Buzzer</tag>
+<tag>Speaker</tag>
+</tags>
+<properties>
+<property name='family'>microcontroller board (lilypad)</property>
+<property name='type'>Buzzer</property>
+</properties>
+<views>
+<breadboardView>
+<layers image='breadboard/Buzzer-v15_breadboard.svg'>
+<layer layerId='breadboard'/>
+</layers>
+</breadboardView>
+<schematicView>
+<layers image='schematic/Buzzer-v15_schematic.svg'>
+<layer layerId='schematic'/>
+</layers>
+</schematicView>
+<pcbView>
+<layers image='pcb/Buzzer-v15_pcb.svg'>
+<layer layerId='copper1'/>
+<layer layerId='silkscreen'/>
+<layer layerId='copper0'/>
+</layers>
+</pcbView>
+<iconView>
+<layers image='breadboard/Buzzer-v15_breadboard.svg'>
+<layer layerId='icon'/>
+</layers>
+</iconView>
+</views>
+<connectors>
+<connector id='connector2' type='female' name='-'>
+<description>-</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector2pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector2pin' terminalId='connector2terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector2pad'/><p layer='copper1' svgId='connector2pad'/></pcbView>
+</views>
+</connector>
+<connector id='connector3' type='female' name='+'>
+<description>+</description><views>
+<breadboardView>
+<p layer='breadboard' svgId='connector3pin'/></breadboardView>
+<schematicView>
+<p layer='schematic' svgId='connector3pin' terminalId='connector3terminal'/></schematicView>
+<pcbView>
+<p layer='copper0' svgId='connector3pad'/><p layer='copper1' svgId='connector3pad'/></pcbView>
+</views>
+</connector>
+</connectors>
+<buses>
+</buses>
+</module>

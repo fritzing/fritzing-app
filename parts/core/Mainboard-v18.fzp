@@ -14,7 +14,8 @@
 </tags>
 <properties>
 <property name='family'>microcontroller board (arduino)</property>
-<property name='variant'>Lilypad Arduino</property>
+<property name='type'>Lilypad Arduino</property>
+
 </properties>
 <views>
 <breadboardView>

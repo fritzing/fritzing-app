@@ -18,8 +18,8 @@ The Ethernet Shield has a standard RJ-45 connection, with an integrated line tra
 <tag>RJ45</tag>
 </tags>
 <properties>
-<property name='family'>Arduino shield</property>
-<property name='typ'>Ethernet Shield (Rev3)</property>
+<property name='family'>arduino shield</property>
+<property name='type'>Ethernet Shield (Rev3)</property>
 </properties>
 <views>
 <breadboardView>

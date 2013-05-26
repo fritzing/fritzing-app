@@ -22,8 +22,8 @@ The most recent revision of the board uses the 1.0 pinout on rev 3 of the Arduin
 <tag>GSM</tag>
 </tags>
 <properties>
-<property name='family'>Arduino shield</property>
-<property name='typ'>Arduino GSM Shield</property>
+<property name='family'>arduino shield</property>
+<property name='type'>Arduino GSM Shield</property>
 </properties>
 <views>
 <breadboardView>

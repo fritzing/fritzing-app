@@ -15,7 +15,7 @@
 </tags>
 <properties>
 <property name='family'>microcontroller board (arduino)</property>
-<property name='variant'>Arduino BT (Bluetooth)</property>
+<property name='type'>Arduino BT (Bluetooth)</property>
 </properties>
 <views>
 <breadboardView>

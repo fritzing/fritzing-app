@@ -23,7 +23,7 @@ Warning: Don&apos;t power the Arduino mini with more than 9 volts, or plug the p
 </tags>
 <properties>
 <property name='family'>microcontroller board (arduino)</property>
-<property name='variant'>Arduino Mini (Rev5)</property>
+<property name='type'>Arduino Mini (Rev5)</property>
 </properties>
 <views>
 <breadboardView>

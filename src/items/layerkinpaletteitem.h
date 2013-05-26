@@ -82,9 +82,12 @@ public:
     void transformItem(const QTransform &, bool includeRatsnest);
  	bool setUpImage(ModelPart* modelPart, const LayerHash & viewLayers, LayerAttributes &);
 
+public:
+    static void renderText(QImage &, QDomElement & text, int & minX, int & minY, int & maxX, int & maxY, QMatrix &, QRectF & viewBox); 
+
 protected:
     bool makeFlipTextSvg();
-    void positionTexts(QDomDocument & doc, QList<QDomElement> & texts);
+    void positionTexts(QList<QDomElement> & texts);
 
 protected:
     bool m_flipped;

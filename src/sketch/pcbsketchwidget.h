@@ -84,7 +84,6 @@ public:
 	bool sameElectricalLayer2(ViewLayer::ViewLayerID, ViewLayer::ViewLayerID);
 	void changeTraceLayer(ItemBase *, bool force, QUndoCommand * parentCommand);
 	void changeLayer(long id, double z, ViewLayer::ViewLayerID viewLayerID);
-	void updateNet(Wire*);
 	bool acceptsTrace(const ViewGeometry & viewGeometry);
 	ItemBase * placePartDroppedInOtherView(ModelPart *, ViewLayer::ViewLayerPlacement, const ViewGeometry & viewGeometry, long id, SketchWidget * dropOrigin);
 	void autorouterSettings();

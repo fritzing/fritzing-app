@@ -392,7 +392,6 @@ protected slots:
 	void changeTraceLayer();
 	void routingStatusLabelMousePress(QMouseEvent*);
 	void routingStatusLabelMouseRelease(QMouseEvent*);
-	void updateNet();
 	void selectMoveLock();
 	void moveLock();
 	void setSticky();

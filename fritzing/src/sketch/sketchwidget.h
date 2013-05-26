@@ -241,7 +241,6 @@ public:
 	ItemBase * lastHoverEnterItem();
 	LayerHash & viewLayers();
 	virtual void createTrace(Wire*);
-	virtual void updateNet(Wire*);
 	virtual void selectAllWires(ViewGeometry::WireFlag);
 	virtual void tidyWires();
 	const QString & getShortName();

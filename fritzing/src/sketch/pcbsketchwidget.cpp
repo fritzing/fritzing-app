@@ -1272,20 +1272,6 @@ ItemBase * PCBSketchWidget::addCopperLogoItem(ViewLayer::ViewLayerPlacement view
 	return addItem(referenceModel()->retrieveModelPart(moduleID), viewLayerPlacement, BaseCommand::SingleView, viewGeometry, newID, -1, NULL);
 }
 
-void PCBSketchWidget::updateNet(Wire * wire) {
-	if (wire == NULL) return;
-
-	QList<ConnectorItem *> connectorItems;
-	connectorItems.append(wire->connector0());
-	ConnectorItem::collectEqualPotential(connectorItems, true, ViewGeometry::NoFlag);
-
-	QList<ConnectorItem *> partConnectorItems;
-	ConnectorItem::collectParts(connectorItems, partConnectorItems, includeSymbols(), ViewLayer::NewTopAndBottom);
-	if (partConnectorItems.count() < 1) return;
-
-	partConnectorItems.at(0)->displayRatsnest(partConnectorItems, this->getTraceFlag());
-}
-
 bool PCBSketchWidget::hasAnyNets() {
 	return m_routingStatus.m_netCount > 0;
 }

@@ -6630,7 +6630,9 @@ void SketchWidget::updateRoutingStatus(RoutingStatus & routingStatus, bool manua
 		if (connectorItem == NULL) continue;
 		if (visited.contains(connectorItem)) continue;
 
-		//connectorItem->debugInfo("testing urs");
+		//if (this->viewID() == ViewLayer::SchematicView) {
+		//    connectorItem->debugInfo("testing urs");
+        //}
 
 		VirtualWire * vw = qobject_cast<VirtualWire *>(connectorItem->attachedTo());
 		if (vw != NULL) {
@@ -6647,8 +6649,8 @@ void SketchWidget::updateRoutingStatus(RoutingStatus & routingStatus, bool manua
 		ConnectorItem::collectEqualPotential(connectorItems, true, ViewGeometry::RatsnestFlag);
 		visited.append(connectorItems);
 
-		//if (this->viewID() == ViewLayer::PCBView) {
-		//	DebugDialog::debug("________________________");
+		//if (this->viewID() == ViewLayer::SchematicView) {
+        //	DebugDialog::debug("________________________");
 		//	foreach (ConnectorItem * ci, connectorItems) ci->debugInfo("cep");
 		//}
 
@@ -7813,9 +7815,6 @@ bool SketchWidget::createOneTrace(Wire * wire, ViewGeometry::WireFlag flag, bool
 	new WireColorChangeCommand(this, newID, colorString, colorString, 1.0, 1.0, parentCommand);
 	new WireWidthChangeCommand(this, newID, getTraceWidth(), getTraceWidth(), parentCommand);
 	return true;
-}
-
-void SketchWidget::updateNet(Wire *) {
 }
 
 void SketchWidget::selectAllWires(ViewGeometry::WireFlag flag) 

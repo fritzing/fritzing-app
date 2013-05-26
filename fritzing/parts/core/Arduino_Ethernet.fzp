@@ -25,7 +25,7 @@ The 6-pin serial programming header is compatible with the USB Serial adapter an
  <properties>
   <property name="family">microcontroller board (arduino)</property>
   <property name="part number"></property>
-  <property name="variant">Arduino Ethernet Board</property>
+  <property name="type">Arduino Ethernet Board</property>
  </properties>
  <views>
   <breadboardView>

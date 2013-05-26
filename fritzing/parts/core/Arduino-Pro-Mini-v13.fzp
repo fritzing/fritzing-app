@@ -21,7 +21,7 @@ The latest and greatest version of this board breaks out the ADC6 and ADC7 pins 
 </tags>
 <properties>
 <property name='family'>microcontroller board (arduino)</property>
-<property name='variant'>Arduino Pro Mini (Rev13)</property>
+<property name='type'>Arduino Pro Mini (Rev13)</property>
 </properties>
 <views>
 <breadboardView>

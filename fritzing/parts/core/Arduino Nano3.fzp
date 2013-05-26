@@ -15,7 +15,7 @@
 </tags>
 <properties>
 <property name='family'>microcontroller board (arduino)</property>
-<property name='variant'>Arduino Nano (3.0)</property>
+<property name='type'>Arduino Nano (3.0)</property>
 </properties>
 <views>
 <breadboardView>

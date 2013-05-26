@@ -13,10 +13,10 @@
   <tag>Shield</tag>
  </tags>
  <properties>
-  <property name="family">Arduino shield</property>
+  <property name="family">arduino shield</property>
   <property name="chip">L298</property>
   <property name="part number"/>
-  <property name="typ">Arduino motor shield (Rev3)</property>
+  <property name="type">Arduino motor shield (Rev3)</property>
  </properties>
  <views>
   <breadboardView>

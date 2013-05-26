@@ -1,34 +1,22 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<module fritzingVersion='0.5.2b.02.18.4756' moduleId='PowerSupply-Lipo-v14'>
+<module fritzingVersion='0.5.2b.02.18.4756' moduleId='PowerSupply-Lipo-v15'>
 <version>4</version>
-<date>2011-07-08</date>
-<author>SparkFun</author>
-<description>&lt;p&gt;
-	&lt;span style=&quot;font-weight: bold;&quot;&gt;Description:&lt;/span&gt; A small, but very mighty power supply. This board was designed to be as small and inconspicuous as possible. The nice thing about LiPower is the ability to use rechargable Lithium Polymer batteries. These batteries are smaller, flatter, and last much longer than a AAA battery. Attach a single cell LiPo battery, flip the power switch, and you will have a 5V supply to power your LilyPad network. Good up to 150mA. Short circuit protected.&lt;br /&gt;
-	&lt;br /&gt;
-	This board has a JST connector, which will connect to our JST terminated single cell 3.7V LiPo batteries. It also has terminals for charging the LiPo battery with one of our LiPo chargers.&lt;br /&gt;
-	&lt;br /&gt;
-	LilyPad is a wearable e-textile technology developed by Leah Buechley and cooperatively designed by Leah and SparkFun. Each LilyPad was creatively designed to have large connecting pads to allow them to be sewn into clothing. Various input, output, power, and sensor boards are available. They&amp;#39;re even washable - but be sure to remove the battery!&lt;br /&gt;
-	&lt;br /&gt;
-	&lt;span style=&quot;font-weight: bold;&quot;&gt;Dimensions:&lt;/span&gt;&lt;/p&gt;
-&lt;ul&gt;
-	&lt;li&gt;
-		18mm outer diameter&lt;/li&gt;
-	&lt;li&gt;
-		Thin 0.8mm PCB&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;
-	&lt;span style=&quot;font-weight: bold;&quot;&gt;Documents:&lt;/span&gt;&lt;/p&gt;
-&lt;ul&gt;
-	&lt;li&gt;
-		&lt;a classname=&quot;&quot; href=&quot;http://www.sparkfun.com/datasheets/DevTools/LilyPad/LilyPad-PowerSupply-Lipo.pdf&quot; name=&quot;&quot; target=&quot;_blank&quot;&gt;Schematic&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;
-		LilyPad LiPower Sticker Sheet &lt;a href=&quot;http://www.sparkfun.com/marcomm/SFE03-0010-Packaging-LilyPad-LiPower-08786.pdf&quot; target=&quot;_blank&quot;&gt;PDF&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;
-		All LilyPad Product Sticker Sheet &lt;a href=&quot;http://www.sparkfun.com/marcomm/SFE03-0010-Packaging-LilyPadFPO-Stickers-MASTER.pdf&quot; target=&quot;_blank&quot;&gt;PDF&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description>
+<date>2013-05-26</date>
+<author>f.althaus</author>
+<description>A small, but very mighty power supply. This board was designed to be as small and inconspicuous as possible. The nice thing about LiPower is the ability to use rechargable Lithium Polymer batteries. These batteries are smaller, flatter, and last much longer than a AAA battery. Attach a single cell LiPo battery, flip the power switch, and you will have a 5V supply to power your LilyPad network. Good up to 150mA. Short circuit protected.
+
+This board has a JST connector, which will connect to our JST terminated single cell 3.7V LiPo batteries. It also has terminals for charging the LiPo battery with one of our LiPo chargers.
+
+LilyPad is a wearable e-textile technology developed by Leah Buechley and cooperatively designed by Leah and SparkFun. Each LilyPad was creatively designed to have large connecting pads to allow them to be sewn into clothing. Various input, output, power, and sensor boards are available. They&apos;re even washable - but be sure to remove the battery!
+
+Note: A portion of this sale is given back to Dr. Leah Buechley for continued development and education of e-textiles.
+
+Dimensions:
+
+18mm outer diameter
+Thin 0.8mm PCB</description>
 <title>LilyPad LiPower</title>
-<url>http://www.sparkfun.com/products/8786</url>
+<url>https://www.sparkfun.com/products/11260</url>
 <tags>
 <tag>Lilypad</tag>
 <tag>Power</tag>
@@ -38,30 +26,31 @@
 </tags>
 <properties>
 <property name='Input Voltage'>1-5V</property>
-<property name='family'>Power Conditioning</property>
+<property name='family'>microcontroller board (lilypad)</property>
+<property name='type'>Power Conditioning</property>
 <property name='Output Voltage'>5V</property>
 <property name='Connector'>JST</property>
 </properties>
 <views>
 <breadboardView>
-<layers image='breadboard/PowerSupply-Lipo-v14_breadboard.svg'>
+<layers image='breadboard/PowerSupply-Lipo-v15_breadboard.svg'>
 <layer layerId='breadboard'/>
 </layers>
 </breadboardView>
 <schematicView>
-<layers image='schematic/PowerSupply-Lipo-v14_schematic.svg'>
+<layers image='schematic/PowerSupply-Lipo-v15_schematic.svg'>
 <layer layerId='schematic'/>
 </layers>
 </schematicView>
 <pcbView>
-<layers image='pcb/PowerSupply-Lipo-v14_pcb.svg'>
+<layers image='pcb/PowerSupply-Lipo-v15_pcb.svg'>
 <layer layerId='copper1'/>
 <layer layerId='silkscreen'/>
 <layer layerId='copper0'/>
 </layers>
 </pcbView>
 <iconView>
-<layers image='breadboard/PowerSupply-Lipo-v14_breadboard.svg'>
+<layers image='breadboard/PowerSupply-Lipo-v15_breadboard.svg'>
 <layer layerId='icon'/>
 </layers>
 </iconView>

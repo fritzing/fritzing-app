@@ -16,7 +16,7 @@ LilyPad is a wearable e-textile technology developed by Leah Buechley and cooper
 <tag>microcontrollerboard</tag>
 </tags>
 <properties>
-<property name='family'>microcontroller board (arduino)</property>
+<property name='family'>microcontroller board (lilypad)</property>
 <property name='type'>LilyPad Simple (Rev25)</property>
 </properties>
 <views>

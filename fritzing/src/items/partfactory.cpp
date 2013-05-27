@@ -616,7 +616,8 @@ void PartFactory::fixSubpartBounds(QDomElement & top, ModelPartShared * mps)
     QRectF viewBox;
     TextUtils::ensureViewBox(top.ownerDocument(), 1, viewBox, false);
     double sWidth, sHeight, vbWidth, vbHeight;
-    TextUtils::getSvgSizes(top.ownerDocument(), sWidth, sHeight, vbWidth, vbHeight);
+    QDomDocument doc = top.ownerDocument();
+    TextUtils::getSvgSizes(doc, sWidth, sHeight, vbWidth, vbHeight);
 
 	QMatrix m = renderer.matrixForElement(mps->subpartID());
     QRectF elementBounds = renderer.boundsOnElement(mps->subpartID());

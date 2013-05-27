@@ -653,7 +653,8 @@ bool FApplication::findTranslator(const QString & translationsPath) {
 		QLocale::setDefault(QLocale(suffix));
 	}
 
-    bool loaded = m_translator.load(QString("fritzing_") + suffix, translationsPath);
+    bool loaded = m_translator.load(QString("fritzing_") + suffix.toLower(), translationsPath);
+    DebugDialog::debug(QString("translation %1 loaded %2 from %3").arg(suffix).arg(loaded).arg(translationsPath));
 	if (loaded) {
 		QApplication::installTranslator(&m_translator);
 	}

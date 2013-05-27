@@ -2249,7 +2249,7 @@ void ItemBase::addSubpart(ItemBase * sub)
                 Bus * bus = connector->bus();
                 if (bus == NULL) {
                     bus = new Bus(NULL, NULL);
-                    bus->addConnector(connector);
+                    connector->setBus(bus);
                 }
 
                 bus->addSubConnector(subconnector);

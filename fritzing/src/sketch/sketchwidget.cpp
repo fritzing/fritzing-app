@@ -1456,7 +1456,7 @@ void SketchWidget::transformItem(long id, const QMatrix & matrix) {
 }
 
 void SketchWidget::flipItem(long id, Qt::Orientations orientation) {
-	DebugDialog::debug(QString("fliping %1 %2").arg(id).arg(orientation) );
+	//DebugDialog::debug(QString("flipping %1 %2").arg(id).arg(orientation) );
 
 	if (!isVisible()) return;
 
@@ -3872,7 +3872,10 @@ void SketchWidget::dragWireChanged(Wire* wire, ConnectorItem * fromOnWire, Conne
 	else {
 		new WireColorChangeCommand(this, wire->id(), m_bendpointWire->colorString(), m_bendpointWire->colorString(), m_bendpointWire->opacity(), m_bendpointWire->opacity(), parentCommand);
 		new WireWidthChangeCommand(this, wire->id(), m_bendpointWire->width(), m_bendpointWire->width(), parentCommand);
-	}
+        if (m_bendpointWire->banded()) {
+            new SetPropCommand(this, wire->id(), "banded", "Yes", "Yes", true, parentCommand);
+        }
+    }
 
 	if (m_bendpointWire) {
 		ChangeWireCurveCommand * cwcc = new ChangeWireCurveCommand(this, m_bendpointWire->id(), m_bendpointWire->undoCurve(), m_bendpointWire->curve(), m_bendpointWire->getAutoroutable(), parentCommand);
@@ -5573,6 +5576,9 @@ void SketchWidget::wireSplitSlot(Wire* wire, QPointF newPos, QPointF oldPos, con
 	new CheckStickyCommand(this, crossView, newID, false, CheckStickyCommand::RemoveOnly, parentCommand);
 	new WireColorChangeCommand(this, newID, wire->colorString(), wire->colorString(), wire->opacity(), wire->opacity(), parentCommand);
 	new WireWidthChangeCommand(this, newID, wire->width(), wire->width(), parentCommand);
+    if (wire->banded()) {
+        new SetPropCommand(this, newID, "banded", "Yes", "Yes", true, parentCommand);
+    }
 
 	// disconnect from original wire and reconnect to new wire
 	ConnectorItem * connector1 = wire->connector1();
@@ -6642,7 +6648,9 @@ void SketchWidget::updateRoutingStatus(RoutingStatus & routingStatus, bool manua
 		if (connectorItem == NULL) continue;
 		if (visited.contains(connectorItem)) continue;
 
-		//connectorItem->debugInfo("testing urs");
+		//if (this->viewID() == ViewLayer::SchematicView) {
+		//    connectorItem->debugInfo("testing urs");
+        //}
 
 		VirtualWire * vw = qobject_cast<VirtualWire *>(connectorItem->attachedTo());
 		if (vw != NULL) {
@@ -6659,8 +6667,8 @@ void SketchWidget::updateRoutingStatus(RoutingStatus & routingStatus, bool manua
 		ConnectorItem::collectEqualPotential(connectorItems, true, ViewGeometry::RatsnestFlag);
 		visited.append(connectorItems);
 
-		//if (this->viewID() == ViewLayer::PCBView) {
-		//	DebugDialog::debug("________________________");
+		//if (this->viewID() == ViewLayer::SchematicView) {
+        //	DebugDialog::debug("________________________");
 		//	foreach (ConnectorItem * ci, connectorItems) ci->debugInfo("cep");
 		//}
 
@@ -7825,9 +7833,6 @@ bool SketchWidget::createOneTrace(Wire * wire, ViewGeometry::WireFlag flag, bool
 	new WireColorChangeCommand(this, newID, colorString, colorString, 1.0, 1.0, parentCommand);
 	new WireWidthChangeCommand(this, newID, getTraceWidth(), getTraceWidth(), parentCommand);
 	return true;
-}
-
-void SketchWidget::updateNet(Wire *) {
 }
 
 void SketchWidget::selectAllWires(ViewGeometry::WireFlag flag) 

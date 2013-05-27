@@ -211,7 +211,6 @@ SchematicTextLayerKinPaletteItem::SchematicTextLayerKinPaletteItem(PaletteItemBa
 	: LayerKinPaletteItem(chief, modelPart, viewID, viewGeometry, id, itemMenu)
 
 {
-    m_flipped = false;
 }
 
 bool SchematicTextLayerKinPaletteItem::setUpImage(ModelPart * modelPart, const LayerHash & viewLayers, LayerAttributes & layerAttributes)
@@ -226,19 +225,27 @@ void SchematicTextLayerKinPaletteItem::transformItem(const QTransform & currTran
     Q_UNUSED(currTransf);
     Q_UNUSED(includeRatsnest);
 
+    if (m_textThings.count() == 0) {
+        initTextThings();
+    }
+
     double rotation;
     QTransform chiefTransform = layerKinChief()->transform();      // assume chief already has rotation
     bool isFlipped = GraphicsUtils::isFlipped(chiefTransform.toAffine(), rotation);
+    QString svg;
     if (isFlipped) {
-        if (!m_flipped) {
-             makeFlipTextSvg();
-        }
+        svg = makeFlipTextSvg();
     }
-    else if (m_flipped) {
-        QString textSvg = this->property("textSvg").toString();
-        reloadRenderer(textSvg, true);
-        m_flipped = false;
+   
+    if (svg.isEmpty()) {
+        svg = this->property("textSvg").toByteArray();
     }
+
+    if (rotation >= 135 && rotation <= 225) {
+        svg = vflip(svg, isFlipped);
+    }
+
+    reloadRenderer(svg, true);
 
     QPointF p = layerKinChief()->sceneBoundingRect().topLeft();
     QTransform transform;
@@ -249,7 +256,7 @@ void SchematicTextLayerKinPaletteItem::transformItem(const QTransform & currTran
     this->setTransform(transform);
 }
 
-bool SchematicTextLayerKinPaletteItem::makeFlipTextSvg() {
+void SchematicTextLayerKinPaletteItem::initTextThings() {
     QByteArray textSvg = this->property("textSvg").toByteArray();
 
     QDomDocument doc;
@@ -258,7 +265,7 @@ bool SchematicTextLayerKinPaletteItem::makeFlipTextSvg() {
 	int errorColumn;
     if (!doc.setContent(textSvg, &errorStr, &errorLine, &errorColumn)) {
         DebugDialog::debug(QString("unable to parse schematic text: %1 %2 %3:\n%4").arg(errorStr).arg(errorLine).arg(errorColumn).arg(QString(textSvg)));
-		return false;
+		return;
     }
 
     QDomElement root = doc.documentElement();
@@ -269,21 +276,34 @@ bool SchematicTextLayerKinPaletteItem::makeFlipTextSvg() {
     }
 
     positionTexts(texts);
+}
 
-    //QSvgRenderer renderer;
-    //renderer.load(doc.toByteArray());
-    int ix = 0;
-    foreach (QDomElement text, texts) {
-        QString id = IDString.arg(ix++);
-        double x = this->property(id.toUtf8().constData()).toDouble();    
-        // can't just use boundsOnElement() because it returns a null rectangle with <text> elements
-        text.setAttribute("x", x);
+QString SchematicTextLayerKinPaletteItem::makeFlipTextSvg() {
+    QByteArray textSvg = this->property("textSvg").toByteArray();
+
+    QDomDocument doc;
+    QString errorStr;
+	int errorLine;
+	int errorColumn;
+    if (!doc.setContent(textSvg, &errorStr, &errorLine, &errorColumn)) {
+        DebugDialog::debug(QString("unable to parse schematic text: %1 %2 %3:\n%4").arg(errorStr).arg(errorLine).arg(errorColumn).arg(QString(textSvg)));
+		return "";
     }
 
-    QString debug = doc.toString();
-    reloadRenderer(debug, true);
-    m_flipped = true;
-    return true;
+    QDomElement root = doc.documentElement();
+    QDomNodeList nodeList = root.elementsByTagName("text");
+    QList<QDomElement> texts;
+    for (int i = 0; i < nodeList.count(); i++) {
+        texts.append(nodeList.at(i).toElement());
+    }
+
+    int ix = 0;
+    foreach (QDomElement text, texts) {  
+        // can't just use boundsOnElement() because it returns a null rectangle with <text> elements
+        text.setAttribute("x", m_textThings.at(ix++).newX);
+    }
+
+    return doc.toString();
 }
 
 #define MINMAX(mx, my)          \
@@ -301,6 +321,8 @@ void SchematicTextLayerKinPaletteItem::positionTexts(QList<QDomElement> & texts)
     //    return;
     //}
 
+    m_textThings.clear();
+
     foreach (QDomElement text, texts) {
         text.setTagName("g");
     }
@@ -308,29 +330,41 @@ void SchematicTextLayerKinPaletteItem::positionTexts(QList<QDomElement> & texts)
     QRectF br = boundingRect();
     QImage image(qCeil(br.width()), qCeil(br.height()), QImage::Format_Mono);
 
-    int ix = 0;
     foreach (QDomElement text, texts) {
-        QString id = IDString.arg(ix++);
-
-        int minX, minY, maxX, maxY;
-        QMatrix matrix;
+        TextThing textThing;
         QRectF viewBox;
-        renderText(image, text, minX, minY, maxX, maxY, matrix, viewBox);
+        QMatrix matrix;
+        renderText(image, text, textThing.minX, textThing.minY, textThing.maxX, textThing.maxY, matrix, viewBox);
 
         // TODO: assumes left-to-right text orientation
         QString anchor = TextUtils::findAnchor(text);
-        int useX = maxX;
+        int useX = textThing.maxX;
         if (anchor == "middle") {
-            useX = (maxX + minX) / 2;
+            useX = (textThing.maxX + textThing.minX) / 2;
         }
         else if (anchor == "end") {
-            useX = minX;
+            useX = textThing.minX;
         }
 
         QMatrix inv = matrix.inverted();
-        QPointF rp((image.width() - useX) * viewBox.width() / image.width(), (image.height() - maxY) * viewBox.height() / image.height());
+        QPointF rp((image.width() - useX) * viewBox.width() / image.width(), (image.height() - textThing.maxY) * viewBox.height() / image.height());
         QPointF rq = inv.map(rp);
-        this->setProperty(id.toUtf8().constData(), rq.x());
+        textThing.newX = rq.x();
+
+        QRectF r(textThing.minX * viewBox.width() / image.width(), 
+                 textThing.minY * viewBox.height() / image.height(), 
+                 (textThing.maxX - textThing.minX) * viewBox.width() / image.width(),
+                 (textThing.maxY - textThing.minY) * viewBox.height() / image.height());
+
+        textThing.newRect = inv.mapRect(r);
+
+        QRectF r2((image.width() - textThing.maxX) * viewBox.width() / image.width(), 
+                  textThing.minY * viewBox.height() / image.height(), 
+                  (textThing.maxX - textThing.minX) * viewBox.width() / image.width(),
+                  (textThing.maxY - textThing.minY) * viewBox.height() / image.height());
+        textThing.newFlippedRect = inv.mapRect(r2);
+
+        m_textThings.append(textThing);
     }
 
     foreach (QDomElement text, texts) {
@@ -376,22 +410,6 @@ void SchematicTextLayerKinPaletteItem::renderText(QImage & image, QDomElement & 
     QPointF q = matrix.map(p);
     QPoint iq((int) q.x(), (int) q.y());
 
-    /*
-    if (!hack) {
-        hack = true;
-        QDomElement rect = doc.createElement("rect");
-        doc.documentElement().appendChild(rect);
-        rect.setAttribute("x", 0);
-        rect.setAttribute("y", 0);
-        rect.setAttribute("width", viewBox.width());
-        rect.setAttribute("height", viewBox.height());
-        rect.setAttribute("stroke", "none");
-        rect.setAttribute("stroke-width", "0");
-        rect.setAttribute("fill", "red");
-        rect.setAttribute("fill-opacity", 0.5);
-    }
-    */
-
     minX = image.width() + 1;
     maxX = -1;
     minY = image.height() + 1;
@@ -431,3 +449,40 @@ void SchematicTextLayerKinPaletteItem::renderText(QImage & image, QDomElement & 
     if (!oldStroke.isEmpty()) text.setAttribute("stroke", oldStroke);
 }
 
+void SchematicTextLayerKinPaletteItem::clearTextThings() {
+    m_textThings.clear();
+}
+
+QString SchematicTextLayerKinPaletteItem::vflip(const QString & svg, bool isFlipped) {
+    QDomDocument doc;
+    QString errorStr;
+	int errorLine;
+	int errorColumn;
+    if (!doc.setContent(svg, &errorStr, &errorLine, &errorColumn)) {
+        DebugDialog::debug(QString("unable to parse schematic text: %1 %2 %3:\n%4").arg(errorStr).arg(errorLine).arg(errorColumn).arg(QString(svg)));
+		return svg;
+    }
+
+    QDomElement root = doc.documentElement();
+    QDomNodeList nodeList = root.elementsByTagName("text");
+    QList<QDomElement> texts;
+    for (int i = 0; i < nodeList.count(); i++) {
+        texts.append(nodeList.at(i).toElement());
+    }
+
+    int ix = 0;
+    foreach (QDomElement text, texts) {  
+        QDomElement g = text.ownerDocument().createElement("g");
+        text.parentNode().insertAfter(g, text);
+        g.appendChild(text);
+        QRectF r = isFlipped ? m_textThings[ix].newFlippedRect : m_textThings[ix].newRect;
+        ix++;
+        QMatrix m;
+        m.translate(r.center().x(), r.center().y());
+        QMatrix inv = m.inverted();
+        QMatrix matrix = inv * QMatrix().rotate(180) * m;
+        TextUtils::setSVGTransform(g, matrix);
+    }
+
+    return doc.toString();
+}

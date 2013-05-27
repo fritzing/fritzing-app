@@ -1569,18 +1569,16 @@ void PaletteItem::resetLayerKin(const QString & svg) {
 
 	resetRenderer(svgNoText);
 
-    ItemBase * textItem = NULL;
     foreach (ItemBase * lkpi, layerKin()) {
         if (lkpi->viewLayerID() == ViewLayer::SchematicText) {
             bool hasText;
 	        QString svgText = SvgFileSplitter::showText3(svg, hasText);
 	        lkpi->resetRenderer(svgText);
             lkpi->setProperty("textSvg", svgText);
-            textItem =lkpi;
+            qobject_cast<SchematicTextLayerKinPaletteItem *>(lkpi)->clearTextThings();
             break;
         }
     }
-
 }
 
 QTransform PaletteItem::untransform() {

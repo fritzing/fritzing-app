@@ -1456,7 +1456,7 @@ void SketchWidget::transformItem(long id, const QMatrix & matrix) {
 }
 
 void SketchWidget::flipItem(long id, Qt::Orientations orientation) {
-	DebugDialog::debug(QString("fliping %1 %2").arg(id).arg(orientation) );
+	//DebugDialog::debug(QString("flipping %1 %2").arg(id).arg(orientation) );
 
 	if (!isVisible()) return;
 

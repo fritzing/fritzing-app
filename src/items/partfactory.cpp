@@ -56,9 +56,13 @@ $Date: 2013-04-14 00:08:36 +0200 (So, 14. Apr 2013) $
 #include "stripboard.h"
 #include "led.h"
 #include "schematicsubpart.h"
+#include "layerkinpaletteitem.h"
 #include "../utils/folderutils.h"
 #include "../utils/lockmanager.h"
 #include "../utils/textutils.h"
+#include "../utils/graphicsutils.h"
+
+#include <qmath.h>
 
 static QString PartFactoryFolderPath;
 static QHash<QString, LockedFile *> LockedFiles;
@@ -605,18 +609,53 @@ void PartFactory::fixSubpartBounds(QDomElement & top, ModelPartShared * mps)
     top.appendChild(g);
 
     QSvgRenderer renderer;
-    bool loaded = renderer.load(top.ownerDocument().toByteArray());
+    QByteArray byteArray = top.ownerDocument().toByteArray();
+    bool loaded = renderer.load(byteArray);
     if (!loaded) return;
 
     QRectF viewBox;
     TextUtils::ensureViewBox(top.ownerDocument(), 1, viewBox, false);
     double sWidth, sHeight, vbWidth, vbHeight;
-    TextUtils::getSvgSizes(top.ownerDocument(), sWidth, sHeight, vbWidth, vbHeight);
+    QDomDocument doc = top.ownerDocument();
+    TextUtils::getSvgSizes(doc, sWidth, sHeight, vbWidth, vbHeight);
 
 	QMatrix m = renderer.matrixForElement(mps->subpartID());
-	QRectF bounds = m.mapRect(renderer.boundsOnElement(mps->subpartID()));
+    QRectF elementBounds = renderer.boundsOnElement(mps->subpartID());
+	QRectF bounds = m.mapRect(elementBounds);                                   // bounds is in terms of the whole svg
 
-    // TODO need to include the size of <text> elements
+    // unfortunately, QSvgRenderer doesn't deal with text bounds
+
+    int w = qCeil(sWidth * GraphicsUtils::SVGDPI);
+    int h = qCeil(sWidth * GraphicsUtils::SVGDPI);
+    QImage image(w,h, QImage::Format_Mono);
+
+    QDomNodeList nodeList = top.elementsByTagName("text");
+    QList<QDomElement> texts;
+    for (int i = 0; i < nodeList.count(); i++) {
+        texts.append(nodeList.at(i).toElement());
+    }
+
+    int ix = 0;
+    foreach (QDomElement text, texts) {
+        text.setTagName("g");
+    }
+
+    ix = 0;
+    foreach (QDomElement text, texts) {
+        int minX, minY, maxX, maxY;
+        QMatrix matrix;
+        QRectF viewBox2;
+        SchematicTextLayerKinPaletteItem::renderText(image, text, minX, minY, maxX, maxY, matrix, viewBox2);  
+        QRectF r(minX * viewBox.width() / image.width(), 
+                minY * viewBox.height() / image.height(), 
+                (maxX - minX) * viewBox.width() / image.width(),
+                (maxY - minY) * viewBox.height() / image.height());
+        bounds |= r;
+    }
+
+    foreach (QDomElement text, texts) {
+        text.setTagName("text");
+    }
 
     QDomElement root = top.ownerDocument().documentElement();
     double newW = sWidth * bounds.width() / vbWidth;

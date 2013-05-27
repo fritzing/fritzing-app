@@ -608,6 +608,7 @@ void SymbolPaletteItem::resetLayerKin() {
 	        QString svg = makeSvg(lkpi->viewLayerID());
 	        lkpi->resetRenderer(svg);
             lkpi->setProperty("textSvg", svg);
+            qobject_cast<SchematicTextLayerKinPaletteItem *>(lkpi)->clearTextThings();
             break;
         }
     }

@@ -1874,7 +1874,13 @@ bool Wire::banded() {
 
 void Wire::setBanded(bool banded) {
     m_banded = banded;
-    update();
+	QList<Wire *> chained;
+	QList<ConnectorItem *> ends;
+	collectChained(chained, ends);
+    foreach (Wire * w, chained) {
+        w->m_banded = banded;
+        w->update();
+    }
 }
 
 void Wire::setBandedProp(bool banded) {

@@ -3910,10 +3910,6 @@ void MainWindow::changeTraceLayer() {
 	m_pcbGraphicsView->changeTraceLayer(wire, false, NULL);
 }
 
-void MainWindow::updateNet() {
-	m_currentGraphicsView->updateNet(retrieveWire());
-}
-
 Wire * MainWindow::retrieveWire() {
 	WireAction * wireAction = qobject_cast<WireAction *>(sender());
 	if (wireAction == NULL) return NULL;

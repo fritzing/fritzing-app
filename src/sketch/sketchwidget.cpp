@@ -3872,7 +3872,10 @@ void SketchWidget::dragWireChanged(Wire* wire, ConnectorItem * fromOnWire, Conne
 	else {
 		new WireColorChangeCommand(this, wire->id(), m_bendpointWire->colorString(), m_bendpointWire->colorString(), m_bendpointWire->opacity(), m_bendpointWire->opacity(), parentCommand);
 		new WireWidthChangeCommand(this, wire->id(), m_bendpointWire->width(), m_bendpointWire->width(), parentCommand);
-	}
+        if (m_bendpointWire->banded()) {
+            new SetPropCommand(this, wire->id(), "banded", "Yes", "Yes", true, parentCommand);
+        }
+    }
 
 	if (m_bendpointWire) {
 		ChangeWireCurveCommand * cwcc = new ChangeWireCurveCommand(this, m_bendpointWire->id(), m_bendpointWire->undoCurve(), m_bendpointWire->curve(), m_bendpointWire->getAutoroutable(), parentCommand);
@@ -5573,6 +5576,9 @@ void SketchWidget::wireSplitSlot(Wire* wire, QPointF newPos, QPointF oldPos, con
 	new CheckStickyCommand(this, crossView, newID, false, CheckStickyCommand::RemoveOnly, parentCommand);
 	new WireColorChangeCommand(this, newID, wire->colorString(), wire->colorString(), wire->opacity(), wire->opacity(), parentCommand);
 	new WireWidthChangeCommand(this, newID, wire->width(), wire->width(), parentCommand);
+    if (wire->banded()) {
+        new SetPropCommand(this, newID, "banded", "Yes", "Yes", true, parentCommand);
+    }
 
 	// disconnect from original wire and reconnect to new wire
 	ConnectorItem * connector1 = wire->connector1();

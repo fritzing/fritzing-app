@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <module fritzingVersion='0.5.2b.02.18.4756' moduleId='Arduino-Mini-v5'>
-<version>4</version>
+<version>5</version>
 <date>2013-04-03</date>
 <author>althaus</author>
 <description>The Arduino Mini is a small microcontroller board originally based on the ATmega168, but now supplied with the 328.(datasheet), intended for use on breadboards and when space is at a premium. It has 14 digital input/output pins (of which 6 can be used as PWM outputs), 8 analog inputs, and a 16 MHz crystal oscillator. It can be programmed with the USB Serial adapter or other USB or RS232 to TTL serial adapter.
@@ -14,7 +14,8 @@ The new Mini (revision 05) has a new package for the ATmega328, which enables al
 Warning: Don&apos;t power the Arduino mini with more than 9 volts, or plug the power in backwards: you&apos;ll probably kill it. 
 
 </description>
-<title>Arduino Mini (Rev5)</title>
+<title>Arduino Mini (Rev5)</title>   
+<label>Arduino</label>
 <url>http://arduino.cc/en/Main/ArduinoBoardMini</url>
 <tags>
 <tag>arduino</tag>
@@ -160,8 +161,8 @@ Warning: Don&apos;t power the Arduino mini with more than 9 volts, or plug the p
 <p layer='copper0' svgId='connector35pad'/><p layer='copper1' svgId='connector35pad'/></pcbView>
 </views>
 </connector>
-<connector id='connector36' type='male' name='D9	PWM'>
-<description>D9	PWM</description><views>
+<connector id='connector36' type='male' name='D9 PWM'>
+<description>D9 PWM</description><views>
 <breadboardView>
 <p layer='breadboard' svgId='connector36pin'/></breadboardView>
 <schematicView>
@@ -411,9 +412,6 @@ Warning: Don&apos;t power the Arduino mini with more than 9 volts, or plug the p
 <bus id='reset'>
 <nodeMember connectorId='connector27'/>
 <nodeMember connectorId='connector39'/>
-</bus>
-<bus id='io7'>
-<nodeMember connectorId='connector34'/>
 <nodeMember connectorId='connector53'/>
 </bus>
 <bus id='tx'>

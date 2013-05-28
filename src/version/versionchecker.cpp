@@ -97,7 +97,7 @@ void VersionChecker::finished(int id, bool error)
 
 void VersionChecker::parseXml()
 {
-	DebugDialog::debug("parsing xml");
+	//DebugDialog::debug("parsing xml");
     while (!m_xml.atEnd()) {
         m_xml.readNext();
         if (m_xml.isStartElement()) {

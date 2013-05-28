@@ -1399,6 +1399,7 @@ void SketchWidget::moveItem(long id, ViewGeometry & viewGeometry, bool updateRat
 			ratsnestConnect(itemBase, true);
 		}
 		itemBase->moveItem(viewGeometry);
+        if (m_infoView) m_infoView->updateLocation(itemBase);
 	}
 }
 
@@ -1406,6 +1407,7 @@ void SketchWidget::simpleMoveItem(long id, QPointF p) {
 	ItemBase * itemBase = findItem(id);
 	if (itemBase != NULL) {
 		itemBase->setItemPos(p);
+        if (m_infoView) m_infoView->updateLocation(itemBase);
 	}
 }
 
@@ -1417,6 +1419,7 @@ void SketchWidget::moveItem(long id, const QPointF & p, bool updateRatsnest) {
 			ratsnestConnect(itemBase, true);
 		}
         emit itemMovedSignal(itemBase);
+        if (m_infoView) m_infoView->updateLocation(itemBase);
 	}
 }
 
@@ -2011,7 +2014,7 @@ void SketchWidget::dropEvent(QDropEvent *event)
 
 		ConnectorItem::clearEqualPotentialDisplay();
 		if (event->source() == this) {
-			checkMoved();
+			checkMoved(false);
 			m_savedItems.clear();
 			m_savedWires.clear();
 		}
@@ -2171,10 +2174,10 @@ SelectItemCommand* SketchWidget::stackSelectionState(bool pushIt, QUndoCommand *
     return selectItemCommand;
 }
 
-bool SketchWidget::moveByArrow(int dx, int dy, QKeyEvent * event) {
+bool SketchWidget::moveByArrow(double dx, double dy, QKeyEvent * event) {
 	bool rubberBandLegEnabled = false;
-	DebugDialog::debug(QString("move by arrow %1").arg(event->isAutoRepeat()));
-	if (!event->isAutoRepeat()) {
+	DebugDialog::debug(QString("move by arrow %1").arg(event == NULL ? false : event->isAutoRepeat()));
+	if (event == NULL || !event->isAutoRepeat()) {
 		m_dragBendpointWire = NULL;
 		clearHoldingSelectItem();
 		m_savedItems.clear();
@@ -2197,7 +2200,7 @@ bool SketchWidget::moveByArrow(int dx, int dy, QKeyEvent * event) {
 		}
 
 		if (!draggingWire) {
-			rubberBandLegEnabled = (event->modifiers() & altOrMetaModifier()) != 0;
+			rubberBandLegEnabled = (event != NULL) && ((event->modifiers() & altOrMetaModifier()) != 0);
 			prepMove(NULL, rubberBandLegEnabled, true);
 		}
 		if (m_savedItems.count() == 0) return false;
@@ -2209,7 +2212,7 @@ bool SketchWidget::moveByArrow(int dx, int dy, QKeyEvent * event) {
 		//DebugDialog::debug("autorepeat");
 	}
 
-	if (event->modifiers() & Qt::ShiftModifier) {
+	if (event != NULL && (event->modifiers() & Qt::ShiftModifier)) {
 		dx *= 10;
 		dy *= 10;
 	}
@@ -2222,7 +2225,7 @@ bool SketchWidget::moveByArrow(int dx, int dy, QKeyEvent * event) {
 	m_arrowTotalX += dx;
 	m_arrowTotalY += dy;
 
-	QPoint globalPos = mapFromScene(m_mousePressScenePos + QPoint(m_arrowTotalX, m_arrowTotalY));
+	QPoint globalPos = mapFromScene(m_mousePressScenePos + QPointF(m_arrowTotalX, m_arrowTotalY));
 	globalPos = mapToGlobal(globalPos);
 	moveItems(globalPos, false, rubberBandLegEnabled);
 	m_moveEventCount++;
@@ -2232,6 +2235,7 @@ bool SketchWidget::moveByArrow(int dx, int dy, QKeyEvent * event) {
 
 void SketchWidget::mousePressEvent(QMouseEvent *event) 
 {
+    m_originatingItem = NULL;
 	m_draggingBendpoint = false;
 	if (m_movingByArrow) return;
 
@@ -2379,6 +2383,7 @@ void SketchWidget::mousePressEvent(QMouseEvent *event)
 }
 
 void SketchWidget::prepMove(ItemBase * originatingItem, bool rubberBandLegEnabled, bool includeRatsnest) {
+    m_originatingItem = originatingItem;
 	m_rubberBandLegWasEnabled = rubberBandLegEnabled;
 	m_checkUnder.clear();
 	//DebugDialog::debug("prep move check under = false");
@@ -2496,8 +2501,6 @@ void SketchWidget::prepMove(ItemBase * originatingItem, bool rubberBandLegEnable
 	}
 
 	findAlignmentAnchor(originatingItem, m_savedItems, m_savedWires);
-
-
 }
 
 void SketchWidget::alignLoc(QPointF & loc, const QPointF startPoint, const QPointF newLoc, const QPointF originalLoc) 
@@ -2522,9 +2525,9 @@ void SketchWidget::findAlignmentAnchor(ItemBase * originatingItem, 	QHash<long, 
 
 	if (originatingItem) {
 		foreach (ConnectorItem * connectorItem, originatingItem->cachedConnectorItems()) {
-				m_alignmentStartPoint = connectorItem->sceneAdjustedTerminalPoint(NULL);
-				m_alignmentItem = originatingItem;
-				return;
+			m_alignmentStartPoint = connectorItem->sceneAdjustedTerminalPoint(NULL);
+			m_alignmentItem = originatingItem;
+			return;
 		}
 		if (canAlignToTopLeft(originatingItem)) {
 			m_alignmentStartPoint = originatingItem->pos();
@@ -3074,7 +3077,6 @@ void SketchWidget::mouseMoveEvent(QMouseEvent *event) {
 		checkAutoscroll(event->globalPos());
 	}
 
-		
 	QGraphicsView::mouseMoveEvent(event);
 }
 
@@ -3174,6 +3176,14 @@ void SketchWidget::moveItems(QPoint globalPos, bool checkAutoScrollFlag, bool ru
 
 	//DebugDialog::debug(QString("done move items %1").arg(QTime::currentTime().msec()) );
 
+    if (m_originatingItem) {
+        m_infoView->updateLocation(m_originatingItem->layerKinChief());
+    }
+    else {
+        foreach (ItemBase * itemBase, m_savedItems) {
+            m_infoView->updateLocation(itemBase->layerKinChief());
+        }
+    }
 }
 
 
@@ -3283,7 +3293,7 @@ void SketchWidget::mouseReleaseEvent(QMouseEvent *event) {
 	m_savedWires.clear();
 }
 
-bool SketchWidget::checkMoved()
+bool SketchWidget::checkMoved(bool wait)
 {
 	if (m_moveEventCount == 0) {
 		return false;
@@ -3414,7 +3424,12 @@ bool SketchWidget::checkMoved()
 		new CleanUpWiresCommand(this, CleanUpWiresCommand::RedoOnly, parentCommand);
 		cuw->setDirection(CleanUpWiresCommand::UndoOnly);
 	}
-	m_undoStack->push(parentCommand);
+    if (wait) {
+        m_undoStack->waitPush(parentCommand, PropChangeDelay);
+    }
+    else {
+	    m_undoStack->push(parentCommand);
+    }
 
 	return true;
 }
@@ -5080,7 +5095,7 @@ void SketchWidget::keyReleaseEvent(QKeyEvent * event) {
 
 void SketchWidget::arrowTimerTimeout() {
 	m_movingByArrow = false;
-	if (checkMoved()) {
+	if (checkMoved(false)) {
 		m_savedItems.clear();
 		m_savedWires.clear();
 	}
@@ -6132,8 +6147,8 @@ void SketchWidget::setUpSwapReconnect(SwapThing & swapThing, ItemBase * itemBase
 
 	// changeConnection calls PaletteItemBase::connectedMoved which repositions the new part
 	// so slam in the desired position
-        QPointF p = itemBase->getViewGeometry().loc();
-        new SimpleMoveItemCommand(this, newID, p, p, swapThing.parentCommand);
+    QPointF p = itemBase->getViewGeometry().loc();
+    new SimpleMoveItemCommand(this, newID, p, p, swapThing.parentCommand);
 
 	foreach (QString connectorID, legs.keys()) {
 		// must be invoked after all the connections have been dealt with
@@ -9562,5 +9577,23 @@ QList<ItemBase *> SketchWidget::collectSuperSubs(ItemBase * itemBase) {
     }
 
     return itemBases;
+}
+
+void SketchWidget::moveItem(ItemBase * itemBase, double x, double y)
+{
+    if (itemBase == NULL) return;
+
+    QPointF pos = itemBase->pos();
+    if (x - pos.x() < 0.01 && y - pos.y() < 0.01) return;
+
+    bool alignToGrid = m_alignToGrid;
+    m_alignToGrid = false;
+    moveByArrow(x - pos.x(), y - pos.y(), NULL);
+
+	m_movingByArrow = false;
+	checkMoved(true);
+	m_savedItems.clear();
+	m_savedWires.clear();
+    m_alignToGrid = alignToGrid;
 }
 

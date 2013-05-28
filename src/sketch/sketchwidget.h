@@ -328,6 +328,7 @@ public:
     virtual void setAutorouterSettings(QHash<QString, QString> &);
     void hidePartLayer(long id, ViewLayer::ViewLayerID, bool hide);
     void hidePartLayer(ItemBase *, ViewLayer::ViewLayerID, bool hide);
+    void moveItem(ItemBase *, double x, double y);
 
 protected:
     void dragEnterEvent(QDragEnterEvent *event);
@@ -357,7 +358,7 @@ protected:
 
 	void addToScene(ItemBase * item, ViewLayer::ViewLayerID viewLayerID);
 	ConnectorItem * findConnectorItem(ItemBase * item, const QString & connectorID, ViewLayer::ViewLayerPlacement);
-	bool checkMoved();
+	bool checkMoved(bool wait);
 
 	void changeConnectionAux(long fromID, const QString & fromConnectorID,
 						  long toID, const QString & toConnectorID,
@@ -437,7 +438,7 @@ protected:
 											   QString moduleID, ViewLayer::ViewLayerPlacement, ViewGeometry & viewGeometry, qint64 id, 
 											   bool updateInfoView, long modelIndex, bool addSubparts, QUndoCommand *parent);
 	int selectAllItems(QSet<ItemBase *> & itemBases, const QString & msg);
-	bool moveByArrow(int dx, int dy, QKeyEvent * );
+	bool moveByArrow(double dx, double dy, QKeyEvent * );
 	double gridSizeInches();
 	virtual bool canAlignToTopLeft(ItemBase *);
 	virtual bool canAlignToCenter(ItemBase *);
@@ -699,14 +700,15 @@ protected:
 	QList<QGraphicsItem *> m_inFocus;
 	QString m_viewName;
 	bool m_movingByArrow;
-	int m_arrowTotalX;
-	int m_arrowTotalY;
+	double m_arrowTotalX;
+	double m_arrowTotalY;
 	bool m_movingByMouse;
 	bool m_alignToGrid;
 	bool m_showGrid;
 	double m_gridSizeInches;
     QString m_gridSizeText;
 	QPointer<ItemBase> m_alignmentItem;
+	QPointer<ItemBase> m_originatingItem;
 	QPointF m_alignmentStartPoint;
 	double m_zoom;
 	bool m_draggingBendpoint;

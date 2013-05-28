@@ -865,10 +865,8 @@ void ItemBase::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 
 }
 
-void ItemBase::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
-{
-	Q_UNUSED(event);
-	return;
+void ItemBase::mouseMoveEvent(QGraphicsSceneMouseEvent *)
+{   
 }
 
 void ItemBase::setItemPos(QPointF & loc) {

@@ -43,13 +43,13 @@ public:
 	InfoGraphicsView(QWidget* parent = 0);
 
 	virtual void viewItemInfo(ItemBase * item);
-	virtual void hoverEnterItem(QGraphicsSceneHoverEvent * event, ItemBase * item);
-	virtual void hoverLeaveItem(QGraphicsSceneHoverEvent * event, ItemBase * item);
+	virtual void hoverEnterItem(QGraphicsSceneHoverEvent * event, ItemBase *);
+	virtual void hoverLeaveItem(QGraphicsSceneHoverEvent * event, ItemBase *);
 
 	virtual bool swappingEnabled(ItemBase *) = 0;
 
-	virtual void hoverEnterConnectorItem(QGraphicsSceneHoverEvent * event, ConnectorItem * item);
-	virtual void hoverLeaveConnectorItem(QGraphicsSceneHoverEvent * event, ConnectorItem * item);
+	virtual void hoverEnterConnectorItem(QGraphicsSceneHoverEvent * event, ConnectorItem *);
+	virtual void hoverLeaveConnectorItem(QGraphicsSceneHoverEvent * event, ConnectorItem *);
 
 	void setInfoView(class HtmlInfoView *);
 	class HtmlInfoView * infoView();
@@ -114,7 +114,7 @@ public:
 	void setActiveConnectorItem(ConnectorItem *);
     void setSMDOrientation(Qt::Orientations);
     Qt::Orientations smdOrientation();
-
+    virtual void moveItem(ItemBase *, double x, double y);
 
 public slots:
 	virtual void setVoltage(double, bool doEmit);

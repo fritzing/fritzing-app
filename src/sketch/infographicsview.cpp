@@ -417,3 +417,7 @@ Qt::Orientations InfoGraphicsView::smdOrientation() {
     return m_smdOrientation;
 }
 
+void InfoGraphicsView::moveItem(ItemBase *, double x, double y) {
+    Q_UNUSED(x);
+    Q_UNUSED(y);
+}

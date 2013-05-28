@@ -76,6 +76,7 @@ public:
 	void reloadContent(class InfoGraphicsView *);
 
 	void viewItemInfo(class InfoGraphicsView *, ItemBase* item, bool swappingEnabled);
+    void updateLocation(ItemBase *);
 
 	void hoverEnterItem(class InfoGraphicsView *, QGraphicsSceneHoverEvent * event, ItemBase * item, bool swappingEnabled);
 	void hoverLeaveItem(class InfoGraphicsView *, QGraphicsSceneHoverEvent * event, ItemBase * item);
@@ -107,6 +108,8 @@ protected slots:
 	void changeLock(bool);
 	void changeSticky(bool);
     void clickObsolete(const QString &);
+    void xyEntry();
+    void unitsClicked();
 
 protected:
 	void appendStuff(ItemBase* item, bool swappingEnabled); //finds out if it's a wire or something else
@@ -126,6 +129,10 @@ protected:
 	void clearPropThingPlugin(PropThing * propThing);
 	void clearPropThingPlugin(PropThing * propThing, QWidget * plugin);
 	void viewConnectorItemInfo(QGraphicsSceneHoverEvent * event, ConnectorItem* item);
+    void showLayers(bool show, ItemBase *, const QString & family, const QString & value, bool swappingEnabled);
+    void makeLockFrame();
+    void makeLocationFrame();
+    void setLocation(ItemBase *);
 
 protected:
 	QPointer<ItemBase> m_currentItem;
@@ -146,18 +153,32 @@ protected:
 	QLabel * m_connDescr;
 	QLabel * m_connName;
 	QLabel * m_connType;
-	QLabel * m_proplabel;
-	QLabel * m_taglabel;
+	QLabel * m_propLabel;
+	QLabel * m_placementLabel;
+	QLabel * m_tagLabel;
 	QLabel * m_connLabel;
+    QLabel * m_layerLabel;
+    QLabel * m_lockLabel;
+    QLabel * m_locationLabel;
 	QFrame * m_connFrame;
 	QFrame * m_propFrame;
+	QFrame * m_placementFrame;
+    QFrame * m_layerFrame;
+    QFrame * m_lockFrame;
+    QFrame * m_locationFrame;
 	QCheckBox * m_lockCheckbox;
 	QCheckBox * m_stickyCheckbox;
 	QGridLayout * m_propLayout;
+	QGridLayout * m_placementLayout;
+    QVBoxLayout * m_layerLayout;
 	QList <PropThing *> m_propThings;
     QPointer<class InfoGraphicsView> m_pendingInfoGraphicsView;
 	QPointer<ItemBase> m_pendingItemBase;
 	bool m_pendingSwappingEnabled;
+    QWidget * m_layerWidget;
+    QLineEdit * m_xEdit;
+    QLineEdit * m_yEdit;
+    QLabel * m_unitsLabel;
 
 	// note: these m_last items should only be checked for equality and not otherwise accessed
 	ItemBase * m_lastTitleItemBase;
@@ -171,8 +192,6 @@ protected:
 	ItemBase * m_lastPropsItemBase;
 	bool m_lastPropsSwappingEnabled;
     bool m_tinyMode;
-
-
 };
 
 #endif

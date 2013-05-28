@@ -26,7 +26,7 @@ The Due has a dedicated forum for discussing the board.</description>
  <properties>
   <property name="family">microcontroller board (arduino)</property>
   <property name="part number"></property>
-  <property name="variant">Arduino Due</property>
+  <property name="type">Arduino Due</property>
  </properties>
  <views>
   <breadboardView>

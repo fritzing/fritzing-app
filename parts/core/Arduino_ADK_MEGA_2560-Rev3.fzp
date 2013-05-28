@@ -25,7 +25,7 @@ For information on using the board with the Android OS, see Google's ADK documen
  <properties>
   <property name="family">microcontroller board (arduino)</property>
   <property name="part number"></property>
-  <property name="variant">Arduino MEGA ADK (Rev3)</property>
+  <property name="type">Arduino MEGA ADK (Rev3)</property>
  </properties>
  <views>
   <breadboardView>

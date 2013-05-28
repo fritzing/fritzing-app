@@ -23,7 +23,7 @@ Revision 3 of the board has the following new features:
 </tags>
 <properties>
 <property name='family'>microcontroller board (arduino)</property>
-<property name="variant">Arduino MEGA 2560 (Rev3)</property>
+<property name="type">Arduino MEGA 2560 (Rev3)</property>
 </properties>
 <views>
 <breadboardView>

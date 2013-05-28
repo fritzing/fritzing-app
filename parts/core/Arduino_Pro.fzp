@@ -17,7 +17,7 @@ The Arduino Pro was designed and manufactured by SparkFun Electronics. </descrip
  </tags>
  <properties>
   <property name="family">microcontroller board (arduino)</property>
-  <property name="variant">Arduino Pro</property>
+  <property name="type">Arduino Pro</property>
   <property name="part number"></property>
  </properties>
  <views>

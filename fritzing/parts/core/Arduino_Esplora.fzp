@@ -28,7 +28,7 @@ The Esplora has built-in USB communication; it can appear to a connected compute
  <properties>
   <property name="family">microcontroller board (arduino)</property>
   <property name="part number"></property>
-  <property name="variant">Arduino Esplora</property>
+  <property name="type">Arduino Esplora</property>
  </properties>
  <views>
   <breadboardView>

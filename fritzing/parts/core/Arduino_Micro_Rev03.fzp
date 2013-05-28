@@ -18,7 +18,7 @@ The Micro is similar to the Arduino Leonardo in that the ATmega32u4 has built-in
 </tags>
 <properties>
 <property name='family'>microcontroller board (arduino)</property>
-<property name='variant'>Arduino Micro (Rev3)</property>
+<property name='type'>Arduino Micro (Rev3)</property>
 </properties>
 <views>
 <breadboardView>

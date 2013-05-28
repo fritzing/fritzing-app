@@ -12,7 +12,7 @@
     <properties>
         <property name="family">Microcontroller Board (Arduino)</property>
         <property name="processor">ATmega</property>
-        <property name="variant">Arduino Nano v2.3</property>
+        <property name="type">Arduino Nano v2.3</property>
     </properties>
     <views>
         <iconView>

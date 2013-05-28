@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?><module fritzingVersion='0.3.21b.04.28.4164' moduleId='371230f4269dfda53ae3cc123cd5fdb4' >
-<version  replacedby='Arduino-Mini-v5'>5</version>
+<version replacedby='Arduino-Mini-v5'>5</version>
     <author>Lionel Michel</author>
     <title>Arduino Mini</title>
     <label>Arduino</label>
@@ -74,7 +74,7 @@
                 </pcbView>
             </views>
         </connector>
-        <connector id='connector16' name='D1' type='female' replacedby='D1/RX'>
+        <connector id='connector16' name='D1' type='female' replacedby='RX'>
             <description>Digital I/O 1</description>
             <views>
                 <breadboardView>
@@ -104,7 +104,7 @@
                 </pcbView>
             </views>
         </connector>
-        <connector id='connector17' name='D0' type='female' replacedby='D0/TX'>
+        <connector id='connector17' name='D0' type='female' replacedby='TX'>
             <description>Digital I/O 0</description>
             <views>
                 <breadboardView>
@@ -134,7 +134,7 @@
                 </pcbView>
             </views>
         </connector>
-        <connector id='connector18' name='D7' type='female' replacedby='D7'>
+        <connector id='connector18' name='D7' type='female'>
             <description>Digital I/O 7</description>
             <views>
                 <breadboardView>
@@ -284,7 +284,7 @@
                 </pcbView>
             </views>
         </connector>
-        <connector id='connector28' name='D7' type='male' replacedby='D7'>
+        <connector id='connector28' name='D7' type='male'>
             <description>Digital I/O 7</description>
             <views>
                 <breadboardView>

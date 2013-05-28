@@ -40,6 +40,8 @@ $Date: 2013-04-22 23:44:56 +0200 (Mo, 22. Apr 2013) $
 #include "../utils/flineedit.h"
 #include "../items/moduleidnames.h"
 #include "../items/paletteitem.h"
+#include "../utils/clickablelabel.h"
+#include "../utils/textutils.h"
 
 
 #define HTML_EOF "</body>\n</html>"
@@ -63,6 +65,11 @@ QLabel * addLabel(QHBoxLayout * hboxLayout, QPixmap * pixmap) {
 
 	return label;
 }
+
+QString format3(double d) {
+    return QString("%1").arg(d, 0, 'f', 3);
+}
+
 //////////////////////////////////////
 
 
@@ -126,6 +133,8 @@ HtmlInfoView::HtmlInfoView(QWidget * parent) : QScrollArea(parent)
 
 	m_currentItem = NULL;
 	m_currentSwappingEnabled = false;
+
+    m_layerWidget = NULL;
 
 }
 
@@ -198,22 +207,6 @@ void HtmlInfoView::init(bool tinyMode) {
 	subVersionLayout->addStretch(1);
 	versionLayout->addLayout(subVersionLayout);
 
-    QHBoxLayout * cbLayout = new QHBoxLayout();
-	
-	m_lockCheckbox = new QCheckBox(tr("Locked"));
-	m_lockCheckbox->setObjectName("infoViewLockCheckbox");
-	m_lockCheckbox->setToolTip(tr("Change the locked state of the part in this view. A locked part can't be moved."));
-	connect(m_lockCheckbox, SIGNAL(clicked(bool)), this, SLOT(changeLock(bool)));
-	cbLayout->addWidget(m_lockCheckbox);
-
-	m_stickyCheckbox = new QCheckBox(tr("Sticky"));
-	m_stickyCheckbox->setObjectName("infoViewLockCheckbox");
-	m_stickyCheckbox->setToolTip(tr("Change the \"sticky\" state of the part in this view. When a sticky part is moved, objects on top of it also move."));
-	connect(m_stickyCheckbox, SIGNAL(clicked(bool)), this, SLOT(changeSticky(bool)));
-	cbLayout->addWidget(m_stickyCheckbox);
-
-    versionLayout->addLayout(cbLayout);
-
 	hboxLayout->addLayout(versionLayout);
 	
 	hboxLayout->addSpacerItem(new QSpacerItem(IconSpace, 1, QSizePolicy::Expanding));
@@ -234,9 +227,44 @@ void HtmlInfoView::init(bool tinyMode) {
 	vlo->addWidget(m_partTitle);
     if (tinyMode) m_partTitle->setVisible(false);
 
-	m_proplabel = new QLabel(tr("Properties"), NULL);
-	m_proplabel->setObjectName("expandableViewLabel");
-	vlo->addWidget(m_proplabel);
+    m_placementLabel = new QLabel(tr("Placement"), NULL);
+	m_placementLabel->setObjectName("expandableViewLabel");
+	vlo->addWidget(m_placementLabel);
+
+    m_placementFrame = new QFrame(this);
+	m_placementFrame->setObjectName("infoViewPropertyFrame");
+	m_placementLayout = new QGridLayout(m_placementFrame);
+	m_placementLayout->setSpacing(0);
+	m_placementLayout->setContentsMargins(0, 0, 0, 0);
+
+    makeLockFrame();
+    m_placementLayout->addWidget(m_lockLabel, 0, 0);
+    m_placementLayout->addWidget(m_lockFrame, 0, 1);
+
+	m_layerLabel = new QLabel(tr("layer"), this);
+	m_layerLabel->setObjectName("propNameLabel");
+	m_layerLabel->setWordWrap(true);
+	m_placementLayout->addWidget(m_layerLabel, 1, 0);
+
+	m_layerFrame = new QFrame(this);
+	m_layerFrame->setObjectName("propValueFrame");
+	m_layerLayout = new QVBoxLayout(m_layerFrame);
+	m_layerLayout->setSpacing(0);
+	m_layerLayout->setContentsMargins(0, 0, 0, 0);
+    m_layerFrame->setLayout(m_layerLayout);
+
+    m_placementLayout->addWidget(m_layerFrame, 1, 1);
+
+    makeLocationFrame();
+    m_placementLayout->addWidget(m_locationLabel, 2, 0);
+    m_placementLayout->addWidget(m_locationFrame, 2, 1);
+
+	m_placementFrame->setLayout(m_placementLayout);
+	vlo->addWidget(m_placementFrame);
+
+	m_propLabel = new QLabel(tr("Properties"), NULL);
+	m_propLabel->setObjectName("expandableViewLabel");
+	vlo->addWidget(m_propLabel);
 
 	m_propFrame = new QFrame(this);
 	m_propFrame->setObjectName("infoViewPropertyFrame");
@@ -246,10 +274,10 @@ void HtmlInfoView::init(bool tinyMode) {
 	m_propFrame->setLayout(m_propLayout);
 	vlo->addWidget(m_propFrame);
 
-	m_taglabel = new QLabel(tr("Tags"), NULL);
-	m_taglabel->setObjectName("expandableViewLabel");
-	vlo->addWidget(m_taglabel);
-    if (tinyMode) m_taglabel->setVisible(false);
+	m_tagLabel = new QLabel(tr("Tags"), NULL);
+	m_tagLabel->setObjectName("expandableViewLabel");
+	vlo->addWidget(m_tagLabel);
+    if (tinyMode) m_tagLabel->setVisible(false);
 
 	m_tagsTextLabel = new TagLabel(this);
 	m_tagsTextLabel->setWordWrap(true);
@@ -406,13 +434,20 @@ void HtmlInfoView::appendWireStuff(Wire* wire, bool swappingEnabled) {
 		 nameString = modelPart->description();
 	}
 	partTitle(nameString, modelPart->version(), modelPart->url(), modelPart->isObsolete());
-	m_lockCheckbox->setVisible(false);
-	m_stickyCheckbox->setVisible(false);
+    m_lockFrame->setVisible(false);
+    m_lockLabel->setVisible(false);
+    m_locationFrame->setVisible(false);
+    m_locationLabel->setVisible(false);
 
 	setUpTitle(wire);
 	setUpIcons(wire, swappingEnabled);
 
 	displayProps(modelPart, wire, swappingEnabled);
+
+    bool hasLayer = (wire->viewID() == ViewLayer::PCBView) && wire->getViewGeometry().getPCBTrace();
+    m_placementFrame->setVisible(hasLayer);
+	m_placementLabel->setVisible(hasLayer);
+
 	addTags(modelPart);
 }
 
@@ -439,8 +474,14 @@ void HtmlInfoView::appendItemStuff(ItemBase * itemBase, ModelPart * modelPart, b
 		nameString = modelPart->description();
 	}
 	partTitle(nameString, modelPart->version(), modelPart->url(), modelPart->isObsolete());
-	m_lockCheckbox->setVisible(true);
+    m_lockFrame->setVisible(swappingEnabled);
+    m_lockLabel->setVisible(swappingEnabled);
+    m_locationFrame->setVisible(swappingEnabled);
+    m_locationLabel->setVisible(swappingEnabled);
 	m_lockCheckbox->setChecked(itemBase->moveLock());
+
+    setLocation(itemBase);
+
     if (itemBase->isBaseSticky()) {
 	    m_stickyCheckbox->setVisible(true);
         m_stickyCheckbox->setChecked(itemBase->isSticky());
@@ -451,6 +492,10 @@ void HtmlInfoView::appendItemStuff(ItemBase * itemBase, ModelPart * modelPart, b
 
 	displayProps(modelPart, itemBase, swappingEnabled);
 	addTags(modelPart);
+
+    m_placementLabel->setVisible(swappingEnabled);
+    m_placementFrame->setVisible(swappingEnabled);
+
 }
 
 void HtmlInfoView::setContent()
@@ -471,11 +516,11 @@ void HtmlInfoView::setContent()
 	m_infoGraphicsView = m_pendingInfoGraphicsView;
 
     if (!m_tinyMode) {
-	    m_connFrame->setVisible(true);
-	    m_taglabel->setVisible(true);
-	    m_connLabel->setVisible(true);
+	    m_connFrame->setVisible(m_pendingSwappingEnabled);
+	    m_tagLabel->setVisible(true);
+	    m_connLabel->setVisible(m_pendingSwappingEnabled);
     }
-	m_proplabel->setVisible(true);
+	m_propLabel->setVisible(true);
 	m_propFrame->setVisible(true);
 
 	m_setContentTimer.stop();
@@ -521,16 +566,16 @@ void HtmlInfoView::setNullContent()
 {
 	setUpTitle(NULL);
 	partTitle("", "", "", false);
-	m_lockCheckbox->setVisible(false);
-	m_stickyCheckbox->setVisible(false);
 	setUpIcons(NULL, false);
 	displayProps(NULL, NULL, false);
 	addTags(NULL);
 	viewConnectorItemInfo(NULL, NULL);
 	m_connFrame->setVisible(false);
 	m_propFrame->setVisible(false);
-	m_proplabel->setVisible(false);
-	m_taglabel->setVisible(false);
+	m_propLabel->setVisible(false);
+	m_placementFrame->setVisible(false);
+	m_placementLabel->setVisible(false);
+	m_tagLabel->setVisible(false);
 	m_connLabel->setVisible(false);
 }
 
@@ -700,6 +745,13 @@ void HtmlInfoView::displayProps(ModelPart * modelPart, ItemBase * itemBase, bool
 	QHash<QString, QString> properties = getPartProperties(modelPart, itemBase, wantDebug, keys);
 	QString family = properties.value("family", "").toLower();
 
+    bool sl = false;
+    if (keys.contains("layer")) {
+        keys.removeOne("layer");
+        sl = true;
+    }
+    showLayers(sl, itemBase, family, properties.value("layer", ""), swappingEnabled);
+
 	int ix = 0;
 	foreach(QString key, keys) {
 		if (ix >= m_propThings.count()) {
@@ -861,3 +913,173 @@ void HtmlInfoView::changeSticky(bool lockState)
 void HtmlInfoView::clickObsolete(const QString &) {
     emit clickObsoleteSignal();
 }
+
+void HtmlInfoView::showLayers(bool show, ItemBase * itemBase, const QString & family, const QString & value, bool swappingEnabled) {
+
+    if (m_layerWidget) {
+	    m_layerLayout->removeWidget(m_layerWidget);
+        m_layerWidget->blockSignals(true);     
+	    m_layerWidget->setVisible(false);          // seems to trigger an unwanted focus out signal
+	    m_layerWidget->deleteLater();
+        m_layerWidget = NULL;
+    }
+
+    if (itemBase == NULL) show = false;
+    m_layerFrame->setVisible(show);
+    m_layerLabel->setVisible(show);
+    if (!show) return;
+
+    QString resultKey, resultValue;
+    bool hide;
+    bool result = itemBase->collectExtraInfo(m_layerLabel->parentWidget(), family, "layer", value, swappingEnabled, resultKey, resultValue, m_layerWidget, hide);
+    if (result && m_layerWidget != NULL) {
+        m_layerLayout->addWidget(m_layerWidget);
+    }
+}
+
+void HtmlInfoView::makeLockFrame() {
+	m_lockLabel = new QLabel("    ", this);
+	m_lockLabel->setObjectName("propNameLabel");
+	m_lockLabel->setWordWrap(true);
+
+    m_lockFrame = new QFrame(this);
+    QHBoxLayout * lockLayout = new QHBoxLayout();
+	lockLayout->setSpacing(0);
+	lockLayout->setContentsMargins(0, 0, 0, 0);
+    m_lockFrame->setObjectName("propValueFrame");
+
+	m_lockCheckbox = new QCheckBox(tr("Locked"));
+	m_lockCheckbox->setObjectName("infoViewLockCheckbox");
+	m_lockCheckbox->setToolTip(tr("Change the locked state of the part in this view. A locked part can't be moved."));
+	connect(m_lockCheckbox, SIGNAL(clicked(bool)), this, SLOT(changeLock(bool)));
+	lockLayout->addWidget(m_lockCheckbox);
+
+	m_stickyCheckbox = new QCheckBox(tr("Sticky"));
+	m_stickyCheckbox->setObjectName("infoViewLockCheckbox");
+	m_stickyCheckbox->setToolTip(tr("Change the \"sticky\" state of the part in this view. When a sticky part is moved, objects on top of it also move."));
+	connect(m_stickyCheckbox, SIGNAL(clicked(bool)), this, SLOT(changeSticky(bool)));
+	lockLayout->addWidget(m_stickyCheckbox);
+
+    lockLayout->addSpacerItem(new QSpacerItem(1,1, QSizePolicy::Expanding));
+
+    m_lockFrame->setLayout(lockLayout);
+}
+
+void HtmlInfoView::makeLocationFrame() {
+	m_locationLabel = new QLabel(tr("location"), this);
+	m_locationLabel->setObjectName("propNameLabel");
+	m_locationLabel->setWordWrap(true);
+
+    m_locationFrame = new QFrame(this);
+    QHBoxLayout * locationLayout = new QHBoxLayout();
+	locationLayout->setSpacing(0);
+	locationLayout->setContentsMargins(0, 0, 0, 0);
+    m_locationFrame->setObjectName("propValueFrame");
+
+	m_xEdit = new QLineEdit();
+	QDoubleValidator * validator = new QDoubleValidator(m_xEdit);
+	validator->setRange(-99999, 99999, 3);
+	validator->setNotation(QDoubleValidator::StandardNotation);
+	m_xEdit->setObjectName("infoViewLineEdit");
+	m_xEdit->setValidator(validator);
+	m_xEdit->setMaxLength(10);
+    locationLayout->addWidget(m_xEdit);
+
+    locationLayout->addSpacing(3);
+
+	m_yEdit = new QLineEdit();
+	validator = new QDoubleValidator(m_yEdit);
+	validator->setRange(-99999, 99999, 3);
+	validator->setNotation(QDoubleValidator::StandardNotation);
+	m_yEdit->setObjectName("infoViewLineEdit");
+	m_yEdit->setValidator(validator);
+	m_yEdit->setMaxLength(10);
+    locationLayout->addWidget(m_yEdit);
+
+    locationLayout->addSpacing(3);
+
+	m_unitsLabel = new ClickableLabel("px", this);
+    locationLayout->addWidget(m_unitsLabel);
+
+    locationLayout->addSpacerItem(new QSpacerItem(1,1, QSizePolicy::Expanding));
+
+    m_locationFrame->setLayout(locationLayout);
+
+    connect(m_xEdit, SIGNAL(editingFinished()), this, SLOT(xyEntry()));
+	connect(m_yEdit, SIGNAL(editingFinished()), this, SLOT(xyEntry()));
+	connect(m_unitsLabel, SIGNAL(clicked()), this, SLOT(unitsClicked()));
+}
+
+void HtmlInfoView::unitsClicked() {
+    QString units = m_unitsLabel->text();
+
+    QString xs = m_xEdit->text();
+    QString ys = m_yEdit->text();
+    double x = TextUtils::convertToInches(xs + units);
+    double y = TextUtils::convertToInches(ys + units);
+
+    double dpi = 1;
+	if (units.compare("mm") == 0) {
+		units = "px";
+        dpi = 90;
+	}
+	else if (units.compare("px") == 0) {
+		units = "in";
+        dpi = 1;
+	}
+	else if (units.compare("in") == 0) {
+		units = "mm";
+        dpi = 25.4;
+	}
+	else {
+		units = "in";
+        dpi = 1;
+	}
+    m_unitsLabel->setText(units);
+    if (!xs.isEmpty()) m_xEdit->setText(format3(x * dpi));
+    if (!ys.isEmpty()) m_yEdit->setText(format3(y * dpi));
+}
+
+void HtmlInfoView::setLocation(ItemBase * itemBase) {
+    if (itemBase == NULL) {
+        m_xEdit->setEnabled(false);
+        m_yEdit->setEnabled(false);
+        m_xEdit->setText("");
+        m_yEdit->setText("");
+        return;
+    }
+
+    m_xEdit->setEnabled(!itemBase->moveLock());
+    m_yEdit->setEnabled(!itemBase->moveLock());
+
+    QString units = m_unitsLabel->text();
+    QPointF loc = itemBase->pos();
+    if (units == "px") {
+    }
+    else if (units == "in") {
+        loc /= 90;
+    }
+    else if (units == "mm") {
+        loc /= (90 / 25.4);
+    }
+
+    m_xEdit->setText(format3(loc.x()));
+    m_yEdit->setText(format3(loc.y()));
+}
+
+void HtmlInfoView::updateLocation(ItemBase * itemBase) {
+    if (itemBase == NULL) return;
+    if (itemBase != m_lastItemBase) return;
+
+    setLocation(itemBase);
+}
+
+void HtmlInfoView::xyEntry() {
+    double x = TextUtils::convertToInches(m_xEdit->text() + m_unitsLabel->text());
+    double y = TextUtils::convertToInches(m_yEdit->text() + m_unitsLabel->text());
+    if (m_infoGraphicsView != NULL && m_lastItemBase != NULL) {
+        m_infoGraphicsView->moveItem(m_lastItemBase, x * 90, y * 90);
+    }
+}
+
+

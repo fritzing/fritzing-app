@@ -1,50 +1,21 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<module fritzingVersion='0.5.2b.02.18.4756' moduleId='Mainboard-v18'>
+<module fritzingVersion='0.5.2b.02.18.4756' moduleId='Arduino Lilypad'>
 <version>4</version>
-<date>2011-07-08</date>
-<author>SparkFun</author>
-<description>&lt;p&gt;
-	&lt;span style=&quot;font-weight: bold;&quot;&gt;Description:&lt;/span&gt; This is LilyPad Arduino - the main board consisting of an ATmega328 with the Arduino bootloader and a minimum number of external components to keep it as small (and as simple) as possible. Board will run from 2V to 5V. The latest version of the LilyPad supports automatic reset for even easier programming. The back side of the LilyPad is now completely flat! We now use a surface mount programming connector to keep the header from poking through.&lt;br /&gt;
-	&lt;br /&gt;
-	This version of the LilyPad now uses the new ATmega328 at 8MHz. Arduino 0016 supports the Arduino Pro Mini 328/8MHz. Use this setting when using this new LilyPad 328.&lt;br /&gt;
-	&lt;br /&gt;
-	LilyPad is a wearable e-textile technology developed by Leah Buechley and cooperatively designed by Leah and SparkFun. Each LilyPad was creatively designed to have large connecting pads to allow them to be sewn into clothing. Various input, output, power, and sensor boards are available. They&amp;#39;re even washable!&lt;br /&gt;
-	&lt;br /&gt;
-	Can&amp;#39;t decide which Arduino is right for you? &lt;a classname=&quot;&quot; href=&quot;http://www.sparkfun.com/commerce/tutorial_info.php?tutorials_id=148&quot; name=&quot;&quot; target=&quot;&quot;&gt;Arduino buying guide&lt;/a&gt;!&lt;br /&gt;
-	&lt;br /&gt;
-	&lt;span style=&quot;font-weight: bold;&quot;&gt;Dimensions:&lt;/span&gt;&lt;/p&gt;
-&lt;ul&gt;
-	&lt;li&gt;
-		50mm outer diameter&lt;/li&gt;
-	&lt;li&gt;
-		Thin 0.8mm PCB&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;
-	&lt;span style=&quot;font-weight: bold;&quot;&gt;Documents:&lt;/span&gt;&lt;/p&gt;
-&lt;ul&gt;
-	&lt;li&gt;
-		&lt;a classname=&quot;&quot; href=&quot;http://web.media.mit.edu/%7Eleah/LilyPad/&quot; name=&quot;&quot; target=&quot;_blank&quot;&gt;Leah Buechley&amp;#39;s LilyPad Tutorial&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;
-		&lt;a classname=&quot;&quot; href=&quot;http://www.sparkfun.com/datasheets/DevTools/LilyPad/Mainboard-v18.pdf&quot; name=&quot;&quot; target=&quot;_blank&quot;&gt;Schematic&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;
-		&lt;a href=&quot;http://www.atmel.com/dyn/resources/prod_documents/8271S.pdf&quot; target=&quot;_blank&quot;&gt;ATmega328 Datasheet&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;
-		&lt;a href=&quot;http://www.arduino.cc/en/Main/ArduinoBoardLilyPad&quot; target=&quot;_blank&quot;&gt;LilyPad Arduino Documentation&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;
-		&lt;a classname=&quot;&quot; href=&quot;http://www.sparkfun.com/datasheets/DevTools/LilyPad/LilyPad-Mainboard-v18.zip&quot; name=&quot;&quot; target=&quot;_blank&quot;&gt;LilyPad Eagle Files&lt;/a&gt; released under &lt;a href=&quot;http://creativecommons.org/licenses/by-sa/3.0/&quot; target=&quot;_blank&quot;&gt;Creative Commons License&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description>
-<title>LilyPad Arduino Main Board</title>
-<url>http://www.sparkfun.com/products/9266</url>
+<date>2013-05-25</date>
+<author>f.althaus</author>
+<description>The LilyPad Arduino is a microcontroller board designed for wearables and e-textiles. It can be sewn to fabric and similarly mounted power supplies, sensors and actuators with conductive thread. The board is based on the ATmega168V (the low-power version of the ATmega168) (datasheet) or the ATmega328V (datasheet). The LilyPad Arduino was designed and developed by Leah Buechley and SparkFun Electronics.</description>
+<title>Lilypad Arduino Board</title>
+<url>http://arduino.cc/en/Main/ArduinoBoardLilyPad</url>
 <tags>
-<tag>Lilypad</tag>
 <tag>Arduino</tag>
-<tag>Main</tag>
+<tag>Lilypad</tag>
+<tag>ATmega168V</tag>
+<tag>Microcontroller</tag>
 </tags>
 <properties>
-<property name='family'>Arduino</property>
-<property name='Voltage'>3.3V</property>
-<property name='Digital Pins'>14</property>
-<property name='Analog Pins'>6</property>
+<property name='family'>microcontroller board (lilypad)</property>
+<property name='type'>Lilypad Arduino</property>
+
 </properties>
 <views>
 <breadboardView>
@@ -81,8 +52,8 @@
 <p layer='copper0' svgId='connector10pad'/><p layer='copper1' svgId='connector10pad'/></pcbView>
 </views>
 </connector>
-<connector id='connector17' type='female' name='MISO'>
-<description>MISO</description><views>
+<connector id='connector17' type='female' name='ISCP MISO'>
+<description>ISCP MISO</description><views>
 <breadboardView>
 <p layer='breadboard' svgId='connector17pin'/></breadboardView>
 <schematicView>
@@ -101,8 +72,8 @@
 <p layer='copper0' svgId='connector18pad'/><p layer='copper1' svgId='connector18pad'/></pcbView>
 </views>
 </connector>
-<connector id='connector19' type='female' name='SCK'>
-<description>SCK</description><views>
+<connector id='connector19' type='female' name='ISCP SCK'>
+<description>ISCP SCK</description><views>
 <breadboardView>
 <p layer='breadboard' svgId='connector19pin'/></breadboardView>
 <schematicView>
@@ -111,8 +82,8 @@
 <p layer='copper0' svgId='connector19pad'/><p layer='copper1' svgId='connector19pad'/></pcbView>
 </views>
 </connector>
-<connector id='connector20' type='female' name='MOSI'>
-<description>MOSI</description><views>
+<connector id='connector20' type='female' name='ISCP MOSI'>
+<description>ISCP MOSI</description><views>
 <breadboardView>
 <p layer='breadboard' svgId='connector20pin'/></breadboardView>
 <schematicView>
@@ -121,8 +92,8 @@
 <p layer='copper0' svgId='connector20pad'/><p layer='copper1' svgId='connector20pad'/></pcbView>
 </views>
 </connector>
-<connector id='connector21' type='female' name='RST'>
-<description>RST</description><views>
+<connector id='connector21' type='female' name='ISCP RESET'>
+<description>ISCP RESET</description><views>
 <breadboardView>
 <p layer='breadboard' svgId='connector21pin'/></breadboardView>
 <schematicView>
@@ -231,8 +202,8 @@
 <p layer='copper0' svgId='connector39pad'/><p layer='copper1' svgId='connector39pad'/></pcbView>
 </views>
 </connector>
-<connector id='connector40' type='female' name='MOSI'>
-<description>MOSI</description><views>
+<connector id='connector40' type='female' name='MOSI/D11'>
+<description>MOSI/D11</description><views>
 <breadboardView>
 <p layer='breadboard' svgId='connector40pin'/></breadboardView>
 <schematicView>
@@ -241,8 +212,8 @@
 <p layer='copper0' svgId='connector40pad'/><p layer='copper1' svgId='connector40pad'/></pcbView>
 </views>
 </connector>
-<connector id='connector41' type='female' name='MISO'>
-<description>MISO</description><views>
+<connector id='connector41' type='female' name='MISO/D12'>
+<description>MISO/D12</description><views>
 <breadboardView>
 <p layer='breadboard' svgId='connector41pin'/></breadboardView>
 <schematicView>
@@ -251,8 +222,8 @@
 <p layer='copper0' svgId='connector41pad'/><p layer='copper1' svgId='connector41pad'/></pcbView>
 </views>
 </connector>
-<connector id='connector42' type='female' name='SCK'>
-<description>SCK</description><views>
+<connector id='connector42' type='female' name='SCK/D13'>
+<description>SCK/D13</description><views>
 <breadboardView>
 <p layer='breadboard' svgId='connector42pin'/></breadboardView>
 <schematicView>
@@ -311,8 +282,8 @@
 <p layer='copper0' svgId='connector47pad'/><p layer='copper1' svgId='connector47pad'/></pcbView>
 </views>
 </connector>
-<connector id='connector48' type='female' name='TXO'>
-<description>TXO</description><views>
+<connector id='connector48' type='female' name='TX/D1'>
+<description>TX/D1</description><views>
 <breadboardView>
 <p layer='breadboard' svgId='connector48pin'/></breadboardView>
 <schematicView>
@@ -321,8 +292,8 @@
 <p layer='copper0' svgId='connector48pad'/><p layer='copper1' svgId='connector48pad'/></pcbView>
 </views>
 </connector>
-<connector id='connector49' type='female' name='RXI'>
-<description>RXI</description><views>
+<connector id='connector49' type='female' name='RX/D0'>
+<description>RX/D0</description><views>
 <breadboardView>
 <p layer='breadboard' svgId='connector49pin'/></breadboardView>
 <schematicView>

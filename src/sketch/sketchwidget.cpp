@@ -9583,15 +9583,15 @@ void SketchWidget::moveItem(ItemBase * itemBase, double x, double y)
 {
     if (itemBase == NULL) return;
 
-    QPointF pos = itemBase->pos();
-    if (x - pos.x() < 0.01 && y - pos.y() < 0.01) return;
+    QPointF p = itemBase->pos();
+    if (qAbs(x - p.x()) < 0.01 && qAbs(y - p.y()) < 0.01) return;
 
     bool alignToGrid = m_alignToGrid;
     m_alignToGrid = false;
-    moveByArrow(x - pos.x(), y - pos.y(), NULL);
+    moveByArrow(x - p.x(), y - p.y(), NULL);
 
 	m_movingByArrow = false;
-	checkMoved(true);
+	checkMoved(false);
 	m_savedItems.clear();
 	m_savedWires.clear();
     m_alignToGrid = alignToGrid;

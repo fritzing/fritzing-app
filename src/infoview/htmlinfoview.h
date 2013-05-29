@@ -38,6 +38,7 @@ $Date: 2012-10-30 14:21:08 +0100 (Di, 30. Okt 2012) $
 #include <QVBoxLayout>
 #include <QComboBox>
 #include <QCheckBox>
+#include <QDoubleSpinBox>
 
 #include "../items/itembase.h"
 #include "../items/wire.h"
@@ -176,8 +177,8 @@ protected:
 	QPointer<ItemBase> m_pendingItemBase;
 	bool m_pendingSwappingEnabled;
     QWidget * m_layerWidget;
-    QLineEdit * m_xEdit;
-    QLineEdit * m_yEdit;
+    QDoubleSpinBox * m_xEdit;
+    QDoubleSpinBox * m_yEdit;
     QLabel * m_unitsLabel;
 
 	// note: these m_last items should only be checked for equality and not otherwise accessed

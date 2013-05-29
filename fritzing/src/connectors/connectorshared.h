@@ -54,6 +54,8 @@ public:
 	void setConnectorType(QString type);
 	void setConnectorType(Connector::ConnectorType);
 	Connector::ConnectorType connectorType();
+	const QString & replacedby() const;
+	void setReplacedby(QString);
 
 	const QString & legID(ViewLayer::ViewID viewId, ViewLayer::ViewLayerID viewLayerID);
 	const QMultiHash<ViewLayer::ViewID,SvgIdLayer *> &pins();
@@ -77,6 +79,7 @@ protected:
 	QString m_id;
 	QString m_name;
 	QString m_typeString;
+    QString m_replacedby;
 	Connector::ConnectorType m_type;
 	QString m_ercType;
 	class ErcData * m_ercData;

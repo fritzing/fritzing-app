@@ -49,6 +49,7 @@ ConnectorShared::ConnectorShared( const QDomElement & domElement )
 	m_ercData = NULL;
 	m_id = domElement.attribute("id", "");
 	m_name = domElement.attribute("name", "");
+	m_replacedby = domElement.attribute("replacedby", "");
 	//DebugDialog::debug(QString("\tname:%1 id:%2").arg(m_name).arg(m_id));
 	m_typeString = domElement.attribute("type", "");
 	m_type = Connector::connectorTypeFromName(m_typeString);
@@ -125,6 +126,14 @@ void ConnectorShared::setConnectorType(QString type) {
 void ConnectorShared::setConnectorType(Connector::ConnectorType type) {
 	m_typeString = Connector::connectorNameFromType(type);
 	m_type = type;
+}
+
+const QString & ConnectorShared::replacedby() const {
+	return m_replacedby;
+}
+
+void ConnectorShared::setReplacedby(QString replacedby) {
+	m_replacedby = replacedby;
 }
 
 const QMultiHash<ViewLayer::ViewID,SvgIdLayer*> & ConnectorShared::pins() {

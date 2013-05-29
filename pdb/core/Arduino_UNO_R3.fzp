@@ -208,7 +208,7 @@
                 <p layer="copper1" svgId="connector18pin" /></pcbView>
             </views>
         </connector>
-        <connector id="connector19" name="GND" type="female">
+        <connector id="connector19" name="GND" replacedby="connector88" type="female">
             <description>Ground</description>
 	          <erc etype="ground" ignore="ifUnconnected">
                 <current flow="sink" valueMax="0.1" />
@@ -225,7 +225,7 @@
                 <p layer="copper1" svgId="connector19pin" /></pcbView>
             </views>
         </connector>
-        <connector id="connector20" name="GND" type="female">
+        <connector id="connector20" name="GND" replacedby="connector89"  type="female">
             <description>Ground</description>
             <erc etype="ground" ignore="ifUnconnected">
               <current flow="sink" valueMax="0.1" />
@@ -354,7 +354,7 @@
                 <p layer="copper1" svgId="connector0pin" /></pcbView>
             </views>
         <erc ignore="ifUnconnected" /></connector>
-        <connector id="connector1" name="GND" type="female">
+        <connector id="connector1" name="GND" replacedby="connector57" type="female">
             <description>Ground</description>
             <erc etype="ground" ignore="ifUnconnected">
               <current flow="sink" valueMax="0.1" />

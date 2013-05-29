@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<module fritzingVersion='0.5.2b.02.18.4756' moduleId='LilyPad-Simple-v22_obsolete'>
+<module fritzingVersion='0.5.2b.02.18.4756' moduleId='LilyPad-Simple-v22'>
 <version replacedby="LilyPad-Simple-v25">4</version>
 <date>2011-07-08</date>
 <author>SparkFun</author>
@@ -99,7 +99,8 @@
 <tag>Simple</tag>
 </tags>
 <properties>
-<property name='family'>//obsolete//Arduino</property>
+<property name='family'>/obsolete/microcontroller board (lilypad)</property>
+<property name='type'>Arduino</property>
 <property name='Voltage'>3.3V</property>
 <property name='Digital Pins'>10</property>
 <property name='Analog Pins'>3</property>

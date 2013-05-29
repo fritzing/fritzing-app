@@ -67,6 +67,7 @@ public:
 	const QString & connectorSharedID() const;
 	const QString & connectorSharedName() const;	
 	const QString & connectorSharedDescription() const;
+	const QString & connectorSharedReplacedby() const;
 	class ErcData * connectorSharedErcData();
 	const QString & busID();
 	class Bus * bus();

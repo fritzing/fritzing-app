@@ -479,6 +479,7 @@ void HtmlInfoView::appendItemStuff(ItemBase * itemBase, ModelPart * modelPart, b
     m_locationFrame->setVisible(swappingEnabled);
     m_locationLabel->setVisible(swappingEnabled);
 	m_lockCheckbox->setChecked(itemBase->moveLock());
+    m_locationFrame->setDisabled(itemBase->moveLock());
 
     setLocation(itemBase);
 
@@ -899,6 +900,7 @@ void HtmlInfoView::changeLock(bool lockState)
 	if (m_currentItem->itemType() == ModelPart::Wire) return;
 
 	m_currentItem->setMoveLock(lockState);
+    m_locationFrame->setDisabled(lockState);
 }
 
 
@@ -954,6 +956,8 @@ void HtmlInfoView::makeLockFrame() {
 	connect(m_lockCheckbox, SIGNAL(clicked(bool)), this, SLOT(changeLock(bool)));
 	lockLayout->addWidget(m_lockCheckbox);
 
+    lockLayout->addSpacing(3);
+
 	m_stickyCheckbox = new QCheckBox(tr("Sticky"));
 	m_stickyCheckbox->setObjectName("infoViewLockCheckbox");
 	m_stickyCheckbox->setToolTip(tr("Change the \"sticky\" state of the part in this view. When a sticky part is moved, objects on top of it also move."));
@@ -976,24 +980,18 @@ void HtmlInfoView::makeLocationFrame() {
 	locationLayout->setContentsMargins(0, 0, 0, 0);
     m_locationFrame->setObjectName("propValueFrame");
 
-	m_xEdit = new QLineEdit();
-	QDoubleValidator * validator = new QDoubleValidator(m_xEdit);
-	validator->setRange(-99999, 99999, 3);
-	validator->setNotation(QDoubleValidator::StandardNotation);
-	m_xEdit->setObjectName("infoViewLineEdit");
-	m_xEdit->setValidator(validator);
-	m_xEdit->setMaxLength(10);
+	m_xEdit = new QDoubleSpinBox;
+    m_xEdit->setDecimals(3);
+    m_xEdit->setRange(-99999.999, 99999.999);
+    m_xEdit->setKeyboardTracking(false);
     locationLayout->addWidget(m_xEdit);
 
     locationLayout->addSpacing(3);
 
-	m_yEdit = new QLineEdit();
-	validator = new QDoubleValidator(m_yEdit);
-	validator->setRange(-99999, 99999, 3);
-	validator->setNotation(QDoubleValidator::StandardNotation);
-	m_yEdit->setObjectName("infoViewLineEdit");
-	m_yEdit->setValidator(validator);
-	m_yEdit->setMaxLength(10);
+	m_yEdit = new QDoubleSpinBox;
+    m_yEdit->setDecimals(3);
+    m_yEdit->setRange(-99999.999, 99999.999);
+    m_yEdit->setKeyboardTracking(false);
     locationLayout->addWidget(m_yEdit);
 
     locationLayout->addSpacing(3);
@@ -1005,8 +1003,10 @@ void HtmlInfoView::makeLocationFrame() {
 
     m_locationFrame->setLayout(locationLayout);
 
-    connect(m_xEdit, SIGNAL(editingFinished()), this, SLOT(xyEntry()));
-	connect(m_yEdit, SIGNAL(editingFinished()), this, SLOT(xyEntry()));
+    connect(m_xEdit, SIGNAL(valueChanged(double)), this, SLOT(xyEntry()));
+    connect(m_xEdit, SIGNAL(valueChanged(const QString &)), this, SLOT(xyEntry()));
+    connect(m_yEdit, SIGNAL(valueChanged(double)), this, SLOT(xyEntry()));
+    connect(m_yEdit, SIGNAL(valueChanged(const QString &)), this, SLOT(xyEntry()));
 	connect(m_unitsLabel, SIGNAL(clicked()), this, SLOT(unitsClicked()));
 }
 
@@ -1019,33 +1019,49 @@ void HtmlInfoView::unitsClicked() {
     double y = TextUtils::convertToInches(ys + units);
 
     double dpi = 1;
+    double step = 1;
 	if (units.compare("mm") == 0) {
 		units = "px";
         dpi = 90;
+        step = 1;
 	}
 	else if (units.compare("px") == 0) {
 		units = "in";
         dpi = 1;
+        step = 0.1;
 	}
 	else if (units.compare("in") == 0) {
 		units = "mm";
         dpi = 25.4;
+        step = 1;
 	}
 	else {
 		units = "in";
         dpi = 1;
+        step = 0.1;
 	}
     m_unitsLabel->setText(units);
-    if (!xs.isEmpty()) m_xEdit->setText(format3(x * dpi));
-    if (!ys.isEmpty()) m_yEdit->setText(format3(y * dpi));
+
+    m_xEdit->blockSignals(true);
+    m_yEdit->blockSignals(true);
+    m_xEdit->setSingleStep(step);
+    m_yEdit->setSingleStep(step);
+    m_xEdit->setValue(x * dpi);
+    m_yEdit->setValue(y * dpi);
+    m_xEdit->blockSignals(false);
+    m_yEdit->blockSignals(false);
 }
 
 void HtmlInfoView::setLocation(ItemBase * itemBase) {
     if (itemBase == NULL) {
+        m_xEdit->blockSignals(true);
+        m_yEdit->blockSignals(true);
         m_xEdit->setEnabled(false);
         m_yEdit->setEnabled(false);
-        m_xEdit->setText("");
-        m_yEdit->setText("");
+        m_xEdit->setValue(0);
+        m_yEdit->setValue(0);
+        m_xEdit->blockSignals(false);
+        m_yEdit->blockSignals(false);
         return;
     }
 
@@ -1063,8 +1079,12 @@ void HtmlInfoView::setLocation(ItemBase * itemBase) {
         loc /= (90 / 25.4);
     }
 
-    m_xEdit->setText(format3(loc.x()));
-    m_yEdit->setText(format3(loc.y()));
+    m_xEdit->blockSignals(true);
+    m_yEdit->blockSignals(true);
+    m_xEdit->setValue(loc.x());
+    m_yEdit->setValue(loc.y());
+    m_xEdit->blockSignals(false);
+    m_yEdit->blockSignals(false);
 }
 
 void HtmlInfoView::updateLocation(ItemBase * itemBase) {

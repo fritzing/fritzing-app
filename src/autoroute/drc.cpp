@@ -52,7 +52,6 @@ $Date: 2013-04-26 15:24:41 +0200 (Fr, 26. Apr 2013) $
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QListWidget>
-#include <QDoubleSpinBox>
 #include <QRadioButton>
 
 ///////////////////////////////////////////

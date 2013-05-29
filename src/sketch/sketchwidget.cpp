@@ -5973,7 +5973,7 @@ void SketchWidget::setUpSwapReconnect(SwapThing & swapThing, ItemBase * itemBase
  			QString toName = connector->connectorSharedName();
 
             if (checkReplacedby) {
-                if (fromReplacedby.compare(toName, Qt::CaseInsensitive) == 0) {
+                if (fromReplacedby.compare(toName, Qt::CaseInsensitive) == 0 || fromReplacedby.compare(connector->connectorSharedID()) == 0) {
 				    candidates.clear();
                     candidates.append(connector);
                     break;

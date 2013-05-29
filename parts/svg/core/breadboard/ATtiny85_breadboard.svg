@@ -4,14 +4,14 @@
 <svg version="1.1" id="svg2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="28.801px" height="23.768px" viewBox="0 0 28.801 23.768" enable-background="new 0 0 28.801 23.768" xml:space="preserve">
 <g>
-	<rect id="connector0pin_1_" x="2.521" y="20.643" fill="#8C8C8C" width="2.16" height="3.125"/>
-	<rect id="connector1pin_1_" x="9.721" y="20.643" fill="#8C8C8C" width="2.16" height="3.125"/>
-	<rect id="connector2pin_1_" x="16.92" y="20.643" fill="#8C8C8C" width="2.16" height="3.125"/>
-	<rect id="connector3pin_1_" x="24.121" y="20.643" fill="#8C8C8C" width="2.158" height="3.125"/>
-	<rect id="connector4pin_1_" x="24.121" y="0.008" fill="#8C8C8C" width="2.158" height="3.125"/>
-	<rect id="connector5pin_1_" x="16.92" y="0.008" fill="#8C8C8C" width="2.16" height="3.125"/>
-	<rect id="connector6pin_1_" x="9.721" y="0.008" fill="#8C8C8C" width="2.16" height="3.125"/>
-	<rect id="connector7pin_1_" x="2.521" y="0.008" fill="#8C8C8C" width="2.16" height="3.125"/>
+	<rect id="connector0pin" x="2.521" y="20.643" fill="#8C8C8C" width="2.16" height="3.125"/>
+	<rect id="connector1pin" x="9.721" y="20.643" fill="#8C8C8C" width="2.16" height="3.125"/>
+	<rect id="connector2pin" x="16.92" y="20.643" fill="#8C8C8C" width="2.16" height="3.125"/>
+	<rect id="connector3pin" x="24.121" y="20.643" fill="#8C8C8C" width="2.158" height="3.125"/>
+	<rect id="connector4pin" x="24.121" y="0.008" fill="#8C8C8C" width="2.158" height="3.125"/>
+	<rect id="connector5pin" x="16.92" y="0.008" fill="#8C8C8C" width="2.16" height="3.125"/>
+	<rect id="connector6pin" x="9.721" y="0.008" fill="#8C8C8C" width="2.16" height="3.125"/>
+	<rect id="connector7pin" x="2.521" y="0.008" fill="#8C8C8C" width="2.16" height="3.125"/>
 	<rect id="connector0terminal" x="2.521" y="21.607" fill="#8C8C8C" width="2.16" height="2.16"/>
 	<rect id="connector1terminal" x="9.721" y="21.607" fill="#8C8C8C" width="2.16" height="2.16"/>
 	<rect id="connector2terminal" x="16.92" y="21.607" fill="#8C8C8C" width="2.16" height="2.16"/>
@@ -20,7 +20,7 @@
 	<rect id="connector5terminal" x="16.92" y="0.008" fill="#8C8C8C" width="2.16" height="2.16"/>
 	<rect id="connector6terminal" x="9.721" y="0.008" fill="#8C8C8C" width="2.16" height="2.16"/>
 	<rect id="connector7terminal" x="2.521" y="0.008" fill="#8C8C8C" width="2.16" height="2.16"/>
-	<g id="breadboard_1_">
+	<g id="breadboard">
 		<rect id="rect20" x="2.521" y="18.958" fill="#8C8C8C" width="2.16" height="4.81"/>
 		<rect id="rect22" x="9.721" y="18.958" fill="#8C8C8C" width="2.16" height="4.81"/>
 		<rect id="rect24" x="16.92" y="18.958" fill="#8C8C8C" width="2.16" height="4.81"/>
@@ -69,11 +69,11 @@
 			16.649,22.269 		"/>
 		<polygon id="polygon2578" fill="#8C8C8C" points="19.353,22.269 19.353,23.241 21.151,24.067 23.85,24.067 25.648,23.241 
 			25.648,22.269 		"/>
-		<polygon id="polygon2572_1_" fill="#8C8C8C" points="32.849,0.403 32.849,-1.395 30.15,-1.395 28.352,-0.568 28.352,0.403 		"/>
-		<polygon id="polygon2574_1_" fill="#8C8C8C" points="7.649,0.404 7.649,-0.568 5.851,-1.394 3.152,-1.394 3.152,0.404 		"/>
-		<polygon id="polygon2576_1_" fill="#8C8C8C" points="25.648,0.403 25.648,-0.568 23.849,-1.395 21.151,-1.395 19.352,-0.568 
+		<polygon id="polygon2572" fill="#8C8C8C" points="32.849,0.403 32.849,-1.395 30.15,-1.395 28.352,-0.568 28.352,0.403 		"/>
+		<polygon id="polygon2574" fill="#8C8C8C" points="7.649,0.404 7.649,-0.568 5.851,-1.394 3.152,-1.394 3.152,0.404 		"/>
+		<polygon id="polygon2576" fill="#8C8C8C" points="25.648,0.403 25.648,-0.568 23.849,-1.395 21.151,-1.395 19.352,-0.568 
 			19.352,0.403 		"/>
-		<polygon id="polygon2578_1_" fill="#8C8C8C" points="16.649,0.403 16.649,-0.568 14.85,-1.395 12.151,-1.395 10.353,-0.568 
+		<polygon id="polygon2578" fill="#8C8C8C" points="16.649,0.403 16.649,-0.568 14.85,-1.395 12.151,-1.395 10.353,-0.568 
 			10.353,0.403 		"/>
 		<g id="g2602">
 			<g id="text6122">
@@ -81,9 +81,9 @@
 			</g>
 		</g>
 		<rect id="rect2552" x="3.152" y="-3.498" fill="#8C8C8C" width="2.699" height="3.926"/>
-		<rect id="rect2544_1_" x="30.15" y="-3.5" fill="#8C8C8C" width="2.699" height="3.926"/>
-		<rect id="rect2548_1_" x="12.151" y="-3.5" fill="#8C8C8C" width="2.699" height="3.926"/>
-		<rect id="rect2546_1_" x="21.151" y="-3.5" fill="#8C8C8C" width="2.698" height="3.926"/>
+		<rect id="rect2544" x="30.15" y="-3.5" fill="#8C8C8C" width="2.699" height="3.926"/>
+		<rect id="rect2548" x="12.151" y="-3.5" fill="#8C8C8C" width="2.699" height="3.926"/>
+		<rect id="rect2546" x="21.151" y="-3.5" fill="#8C8C8C" width="2.698" height="3.926"/>
 	</g>
 	<rect id="connector3pin" x="24.096" y="20.614" fill="none" width="2.168" height="3.179"/>
 	<rect id="connector4pin" x="24.105" y="0.02" fill="none" width="2.156" height="3.178"/>

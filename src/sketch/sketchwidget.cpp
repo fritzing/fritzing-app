@@ -5982,6 +5982,8 @@ void SketchWidget::setUpSwapReconnect(SwapThing & swapThing, ItemBase * itemBase
 	newModelPart->initConnectors();			//  make sure the connectors are set up
 	QList< QPointer<Connector> > newConnectors = newModelPart->connectors().values();
 
+    bool checkReplacedby = (!itemBase->modelPart()->replacedby().isEmpty() && itemBase->modelPart()->replacedby() == swapThing.newModuleID);
+
 	QList<ConnectorItem *> notFound;
 	QList<ConnectorItem *> other;
 	QHash<ConnectorItem *, Connector *> found;
@@ -6005,9 +6007,20 @@ void SketchWidget::setUpSwapReconnect(SwapThing & swapThing, ItemBase * itemBase
 
 		QString fromName = fromConnectorItem->connectorSharedName();
 		QString fromDescription = fromConnectorItem->connectorSharedDescription();
+        QString fromReplacedby = fromConnectorItem->connectorSharedReplacedby();
 		foreach (Connector * connector, newConnectors) {
-			QString toName = connector->connectorSharedName();
+ 			QString toName = connector->connectorSharedName();
+
+            if (checkReplacedby) {
+                if (fromReplacedby.compare(toName, Qt::CaseInsensitive) == 0 || fromReplacedby.compare(connector->connectorSharedID()) == 0) {
+				    candidates.clear();
+                    candidates.append(connector);
+                    break;
+			    }
+            }
+
             bool gotOne = false;
+
 			QString toDescription = connector->connectorSharedDescription();
 			if (fromName.compare(toName, Qt::CaseInsensitive) == 0) {
 				gotOne = true;
@@ -6021,12 +6034,11 @@ void SketchWidget::setUpSwapReconnect(SwapThing & swapThing, ItemBase * itemBase
 			else if (fromName.compare(toDescription, Qt::CaseInsensitive) == 0) {
 				gotOne = true;
 			}
-                    
-            
+      
             if (gotOne) {
                 candidates.append(connector);
             }
-		}
+        }
 
 		if (candidates.count() > 0) {
 			newConnector = candidates[0];

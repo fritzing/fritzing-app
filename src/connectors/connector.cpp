@@ -130,6 +130,7 @@ void Connector::saveAsPart(QXmlStreamWriter & writer) {
 	writer.writeAttribute("type", connectorShared()->connectorTypeString());
 	writer.writeAttribute("name", connectorShared()->sharedName());
 	writer.writeTextElement("description", connectorShared()->description());
+	writer.writeTextElement("replacedby", connectorShared()->replacedby());
 	writer.writeStartElement("views");
 	QMultiHash<ViewLayer::ViewID,SvgIdLayer *> pins = m_connectorShared->pins();
 	foreach (ViewLayer::ViewID currView, pins.uniqueKeys()) {
@@ -215,6 +216,12 @@ const QString & Connector::connectorSharedDescription() const {
 	if (m_connectorShared == NULL) return ___emptyString___;
 
 	return m_connectorShared->description();
+}
+
+const QString & Connector::connectorSharedReplacedby() const {
+	if (m_connectorShared == NULL) return ___emptyString___;
+
+	return m_connectorShared->replacedby();
 }
 
 ErcData * Connector::connectorSharedErcData() {

@@ -1,121 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module fritzingVersion="0.6.4" icon="Arduino.png">
-    <title>Arduino</title>
+<module fritzingVersion="0.6.4" icon="Lilypad.png">
+    <title>Lilypad</title>
 	<instances>
-          <instance moduleIdRef="__spacer__" modelIndex="3" path="Arduino Boards">
+		 <instance moduleIdRef="__spacer__" modelIndex="3" path="Lilypad Boards">
         <views>
           <iconView layer="icon">
             <geometry z="-1" x="-1" y="-1"></geometry>
           </iconView>
         </views>
       </instance>
-   	    <instance moduleIdRef="arduino_Uno_Rev3" modelIndex="5548" path="pdb/core/arduino_Uno_Rev3.fzp">
-          <views>
-              <iconView layer="icon">
-                  <geometry z="-1" x="-1" y="-1"/>
-              </iconView>
-          </views>
-      </instance>
-	     	    <instance moduleIdRef="Arduino_bt07" modelIndex="5548" path="pdb/core/Arduino_bt07.fzp">
-          <views>
-              <iconView layer="icon">
-                  <geometry z="-1" x="-1" y="-1"/>
-              </iconView>
-          </views>
-      </instance>
-	  
-        <instance moduleIdRef="Arduino_MEGA_2560-Rev3" modelIndex="5584" path="pdb/core/arduino_MEGA_2560-Rev3.fzp" >
-            <views>
-                <iconView layer="">
-                    <geometry z="0" x="-1" y="-1"/>
-                </iconView>
-                <iconView layer="">
-                    <geometry z="0" x="-1" y="-1"/>
-                </iconView>
-            </views>
-        </instance>
-		 <instance moduleIdRef="Arduino_ADK_MEGA_2560-Rev3" modelIndex="5584" path="pdb/core/arduino_MEGA_2560-Rev3.fzp" >
-            <views>
-                <iconView layer="">
-                    <geometry z="0" x="-1" y="-1"/>
-                </iconView>
-                <iconView layer="">
-                    <geometry z="0" x="-1" y="-1"/>
-                </iconView>
-            </views>
-        </instance>
-        <instance moduleIdRef="Arduino DUE V02b" modelIndex="5584" path="pdb/core/Arduino_DUE_V02b.fzp" >
-            <views>
-                <iconView layer="">
-                    <geometry z="0" x="-1" y="-1"/>
-                </iconView>
-                <iconView layer="">
-                    <geometry z="0" x="-1" y="-1"/>
-                </iconView>
-            </views>
-        </instance>
-        <instance moduleIdRef="Arduino Nano3" modelIndex="5584" path="pdb/core/Arduino Nano3.fzp">
-            <views>
-                <iconView layer="">
-                    <geometry z="0" x="-1" y="-1"/>
-                </iconView>
-                <iconView layer="">
-                    <geometry z="0" x="-1" y="-1"/>
-                </iconView>
-            </views>
-        </instance>
-        <instance moduleIdRef="Arduino_Ethernet" modelIndex="5584" path="pdb/core/Arduino_Ethernet.fzp" >
-            <views>
-                <iconView layer="">
-                    <geometry z="0" x="-1" y="-1"/>
-                </iconView>
-                <iconView layer="">
-                    <geometry z="0" x="-1" y="-1"/>
-                </iconView>
-            </views>
-        </instance>
-		    
-        <instance moduleIdRef="Arduino_Esplora" modelIndex="5584" path="pdb/core/Arduino_Esplora.fzp">
-            <views>
-                <iconView layer="">
-                    <geometry z="0" x="-1" y="-1"/>
-                </iconView>
-                <iconView layer="">
-                    <geometry z="0" x="-1" y="-1"/>
-                </iconView>
-            </views>
-        </instance>
-        <instance moduleIdRef="Arduino_Leonardo_Rev3" modelIndex="5584" path="pdb/core/Arduino_Leonardo_Rev3.fzp" >
-            <views>
-                <iconView layer="">
-                    <geometry z="0" x="-1" y="-1"/>
-                </iconView>
-                <iconView layer="">
-                    <geometry z="0" x="-1" y="-1"/>
-                </iconView>
-            </views>
-        </instance>
-        <instance moduleIdRef="Arduino-Pro-Mini-v13" modelIndex="5584" path="pdb/core/Arduino-Pro-Mini-v13.fzp" >
-            <views>
-                <iconView layer="">
-                    <geometry z="0" x="-1" y="-1"/>
-                </iconView>
-                <iconView layer="">
-                    <geometry z="0" x="-1" y="-1"/>
-                </iconView>
-            </views>
-        </instance>
-	    <instance moduleIdRef="Arduino_Micro_Rev03" modelIndex="5584" path="pdb/core/Arduino_Micro_Rev03.fzp">
-            <views>
-                <iconView layer="">
-                    <geometry z="0" x="-1" y="-1"/>
-                </iconView>
-                <iconView layer="">
-                    <geometry z="0" x="-1" y="-1"/>
-                </iconView>
-            </views>
-        </instance>
-		<instance moduleIdRef="Arduino-Mini-v5" modelIndex="5584" path="pdb/core/Arduino-Mini-v5.fzp">
+	  		<instance moduleIdRef="LilyPad_Arduino_USB" modelIndex="5584" path="pdb/core/LilyPad_Arduino_USB.fzp">
             <views>
                 <iconView layer="">
                     <geometry z="0" x="-1" y="-1"/>
@@ -125,9 +19,7 @@
                 </iconView>
             </views>
         </instance>	
-		
-		
-		<instance moduleIdRef="Arduino Pro" modelIndex="5584" path="pdb/core/Arduino_Pro.fzp">
+						<instance moduleIdRef="LilyPad-Simple-v25" modelIndex="5584" path="pdb/core/LilyPad-Simple-v25.fzp">
             <views>
                 <iconView layer="">
                     <geometry z="0" x="-1" y="-1"/>
@@ -137,11 +29,7 @@
                 </iconView>
             </views>
         </instance>	
-		
-
-						
-		
-						<instance moduleIdRef="Arduino-Fio-v22" modelIndex="5584" path="pdb/core/Arduino-Fio-v22.fzp">
+						<instance moduleIdRef="Arduino Lilypad" modelIndex="5584" path="pdb/core/Mainboard-v18.fzp">
             <views>
                 <iconView layer="">
                     <geometry z="0" x="-1" y="-1"/>
@@ -151,40 +39,14 @@
                 </iconView>
             </views>
         </instance>	
-		
-
-		
-		    <instance moduleIdRef="__spacer__" modelIndex="3" path="Arduino Shields">
+				 <instance moduleIdRef="__spacer__" modelIndex="3" path="Lilypad extensions">
         <views>
           <iconView layer="icon">
             <geometry z="-1" x="-1" y="-1"></geometry>
           </iconView>
         </views>
       </instance>
-		
-		
-		<instance moduleIdRef="GSM-Quectel_updateTID_2_v1.3" modelIndex="5584"  path="pdb/core/GSM-Quectel_updateTID_2_v1.3.fzp"  >
-            <views>
-                <iconView layer="">
-                    <geometry z="0" x="-1" y="-1"/>
-                </iconView>
-                <iconView layer="">
-                    <geometry z="0" x="-1" y="-1"/>
-                </iconView>
-            </views>
-        </instance>
-		
-	    <instance moduleIdRef="Shield_Eth06-PoE" modelIndex="5584"  path="pdb/core/Shield_Eth06-PoE.fzp"  >
-            <views>
-                <iconView layer="">
-                    <geometry z="0" x="-1" y="-1"/>
-                </iconView>
-                <iconView layer="">
-                    <geometry z="0" x="-1" y="-1"/>
-                </iconView>
-            </views>
-        </instance>
-		<instance moduleIdRef="Arduino Motor Shield rev3" modelIndex="5584" path="pdb/core/Arduino_Motor_Shield_rev3.fzp">
+		  		<instance moduleIdRef="LilyPad Battery-Connect-v11" modelIndex="5584" path="pdb/core/LilyPad Battery-Connect-v11.fzp">
             <views>
                 <iconView layer="">
                     <geometry z="0" x="-1" y="-1"/>
@@ -194,7 +56,7 @@
                 </iconView>
             </views>
         </instance>	
-        <instance moduleIdRef="Wireless_SD_v3" modelIndex="5584" >
+						<instance moduleIdRef="LilyPad Coincell-Battery-v17" modelIndex="5584" path="pdb/core/LilyPad Coincell-Battery-v17.fzp">
             <views>
                 <iconView layer="">
                     <geometry z="0" x="-1" y="-1"/>
@@ -203,8 +65,8 @@
                     <geometry z="0" x="-1" y="-1"/>
                 </iconView>
             </views>
-        </instance>
-        <instance moduleIdRef="Proto_shield_REV3" modelIndex="5584" >
+        </instance>	
+						<instance moduleIdRef="LilyPad SimplePower-v13" modelIndex="5584" path="pdb/core/LilyPad SimplePower-v13.fzp">
             <views>
                 <iconView layer="">
                     <geometry z="0" x="-1" y="-1"/>
@@ -213,8 +75,8 @@
                     <geometry z="0" x="-1" y="-1"/>
                 </iconView>
             </views>
-        </instance>
-        <instance moduleIdRef="arduinoXbeere" modelIndex="5584" >
+        </instance>	  
+	  		  		<instance moduleIdRef="LilyPad_LED-v14" modelIndex="5584" path="pdb/core/LilyPad_LED-v14.fzp">
             <views>
                 <iconView layer="">
                     <geometry z="0" x="-1" y="-1"/>
@@ -223,7 +85,97 @@
                     <geometry z="0" x="-1" y="-1"/>
                 </iconView>
             </views>
-        </instance>
-	
+        </instance>	
+						<instance moduleIdRef="Lilypad_PowerSupply-v16" modelIndex="5584" path="pdb/core/Lilypad_PowerSupply-v18.fzp">
+            <views>
+                <iconView layer="">
+                    <geometry z="0" x="-1" y="-1"/>
+                </iconView>
+                <iconView layer="">
+                    <geometry z="0" x="-1" y="-1"/>
+                </iconView>
+            </views>
+        </instance>	
+						<instance moduleIdRef="LilyPad-Accelerometer-v17" modelIndex="5584" path="pdb/core/LilyPad-Accelerometer-v17.fzp">
+            <views>
+                <iconView layer="">
+                    <geometry z="0" x="-1" y="-1"/>
+                </iconView>
+                <iconView layer="">
+                    <geometry z="0" x="-1" y="-1"/>
+                </iconView>
+            </views>
+        </instance>	 
+			  		  		<instance moduleIdRef="LilyPad-Button-v12" modelIndex="5584" path="pdb/core/LilyPad-Button-v12.fzp">
+            <views>
+                <iconView layer="">
+                    <geometry z="0" x="-1" y="-1"/>
+                </iconView>
+                <iconView layer="">
+                    <geometry z="0" x="-1" y="-1"/>
+                </iconView>
+            </views>
+        </instance>	
+						<instance moduleIdRef="LilyPad-Light Sensor-v13" modelIndex="5584" path="pdb/core/LilyPad-Light Sensor-v13.fzp">
+            <views>
+                <iconView layer="">
+                    <geometry z="0" x="-1" y="-1"/>
+                </iconView>
+                <iconView layer="">
+                    <geometry z="0" x="-1" y="-1"/>
+                </iconView>
+            </views>
+        </instance>	
+						<instance moduleIdRef="LilyPad-slide-switch13" modelIndex="5584" path="pdb/core/LilyPad-slide-switch13.fzp">
+            <views>
+                <iconView layer="">
+                    <geometry z="0" x="-1" y="-1"/>
+                </iconView>
+                <iconView layer="">
+                    <geometry z="0" x="-1" y="-1"/>
+                </iconView>
+            </views>
+        </instance>	 
+			  		  		<instance moduleIdRef="LilyPad-Temp-v12" modelIndex="5584" path="pdb/core/LilyPad-Temp-v12.fzp">
+            <views>
+                <iconView layer="">
+                    <geometry z="0" x="-1" y="-1"/>
+                </iconView>
+                <iconView layer="">
+                    <geometry z="0" x="-1" y="-1"/>
+                </iconView>
+            </views>
+        </instance>	
+						<instance moduleIdRef="PowerSupply-Lipo-v14" modelIndex="5584" path="pdb/core/PowerSupply-Lipo-v15.fzp">
+            <views>
+                <iconView layer="">
+                    <geometry z="0" x="-1" y="-1"/>
+                </iconView>
+                <iconView layer="">
+                    <geometry z="0" x="-1" y="-1"/>
+                </iconView>
+            </views>
+        </instance>	
+		
+								<instance moduleIdRef="Buzzer-v15" modelIndex="5584" path="pdb/core/Buzzer-v15.fzp">
+            <views>
+                <iconView layer="">
+                    <geometry z="0" x="-1" y="-1"/>
+                </iconView>
+                <iconView layer="">
+                    <geometry z="0" x="-1" y="-1"/>
+                </iconView>
+            </views>
+        </instance>	
+		<instance moduleIdRef="Tricolor-LED v16" modelIndex="5584" path="pdb/core/Tricolor-LED v16.fzp">
+            <views>
+                <iconView layer="">
+                    <geometry z="0" x="-1" y="-1"/>
+                </iconView>
+                <iconView layer="">
+                    <geometry z="0" x="-1" y="-1"/>
+                </iconView>
+            </views>
+        </instance>	
     </instances>
 </module>

@@ -6010,11 +6010,12 @@ void SketchWidget::setUpSwapReconnect(SwapThing & swapThing, ItemBase * itemBase
         QString fromReplacedby = fromConnectorItem->connectorSharedReplacedby();
 		foreach (Connector * connector, newConnectors) {
  			QString toName = connector->connectorSharedName();
-
+            QString toID = connector->connectorSharedID();
             if (checkReplacedby) {
-                if (fromReplacedby.compare(toName, Qt::CaseInsensitive) == 0 || fromReplacedby.compare(connector->connectorSharedID()) == 0) {
+                if (fromReplacedby.compare(toName, Qt::CaseInsensitive) == 0 || fromReplacedby.compare(toID) == 0) {
 				    candidates.clear();
                     candidates.append(connector);
+                    fromConnectorItem->debugInfo(QString("matched %1 %2").arg(toName).arg(toID));
                     break;
 			    }
             }

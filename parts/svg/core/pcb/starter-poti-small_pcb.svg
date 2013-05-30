@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE svg>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg xmlns="http://www.w3.org/2000/svg"  width="0.519681in" xml:space="preserve" xmlns:xml="http://www.w3.org/XML/1998/namespace" x="0px" version="1.1" y="0px" height="0.569444in" viewBox="0 0 37.417 41" baseProfile="basic" id="0">
+ <desc   id="0.0" oldid="0.0">
+  <referenceFile   id="0.0.0" oldid="0.0.0">starter-poti-pcb.svg</referenceFile>
+ </desc>
+ <g   id="0.1" transform="translate(0,8.26)">
+  <g   id="0.1.0">
+   <g   id="0.1">
+    <g   id="copper1">
+     <g   id="copper0">
+      <rect  width="4.176" x="2.952" y="2.952" fill="none"  height="4.176" stroke="#FFBF00" id="square" stroke-width="1"/>
+      <circle  fill="none" cx="5.04"  cy="5.04" stroke="#FFBF00" id="connector0pin" r="2.088" stroke-width="1"/>
+      <circle  fill="none" cx="5.039"  cy="12.24" stroke="#FFBF00" id="connector1pin" r="2.088" stroke-width="1"/>
+      <circle  fill="none" cx="5.04"  cy="19.44" stroke="#FFBF00" id="connector2pin" r="2.088" stroke-width="1"/>
+      <circle  fill="none" cx="26.3"  cy="-3.498" stroke="#FFBF00" id="noconnector" r="3.823" stroke-width="1.2844"/>
+      <circle  fill="none" cx="26.3"  cy="28.26" stroke="#FFBF00" id="noconnector_1_" r="3.823" stroke-width="1.2844"/>
+     </g>
+    </g>
+    <g   id="silkscreen">
+     <polyline  fill="none" points="29.457,-8.26 37.417,-8.26 37.417,32.74 29.457,32.74 "  stroke="#FFFFFF" id="0.1.1.0" stroke-width="0.5082"/>
+     <polyline  fill="none" points="22.707,32.74 0,32.74 0,-8.26 22.707,-8.26 "  stroke="#FFFFFF" id="0.1.1.1" stroke-width="0.5082"/>
+    </g>
+   </g>
+  </g>
+ </g>
+</svg>

@@ -6008,6 +6008,7 @@ void SketchWidget::setUpSwapReconnect(SwapThing & swapThing, ItemBase * itemBase
 		QString fromName = fromConnectorItem->connectorSharedName();
 		QString fromDescription = fromConnectorItem->connectorSharedDescription();
         QString fromReplacedby = fromConnectorItem->connectorSharedReplacedby();
+        //itemBase->debugInfo(QString("%1 %2").arg(fromName).arg(fromReplacedby));
 		foreach (Connector * connector, newConnectors) {
  			QString toName = connector->connectorSharedName();
             QString toID = connector->connectorSharedID();
@@ -6015,7 +6016,7 @@ void SketchWidget::setUpSwapReconnect(SwapThing & swapThing, ItemBase * itemBase
                 if (fromReplacedby.compare(toName, Qt::CaseInsensitive) == 0 || fromReplacedby.compare(toID) == 0) {
 				    candidates.clear();
                     candidates.append(connector);
-                    fromConnectorItem->debugInfo(QString("matched %1 %2").arg(toName).arg(toID));
+                    //fromConnectorItem->debugInfo(QString("matched %1 %2").arg(toName).arg(toID));
                     break;
 			    }
             }

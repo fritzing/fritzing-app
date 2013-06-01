@@ -2,7 +2,7 @@
 <svg version="1.2" baseProfile="tiny" id="svg2" xmlns:xml="http://www.w3.org/XML/1998/namespace"
 	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="212.184px"
 	 height="148.032px" viewBox="0 0 212.184 148.032" xml:space="preserve">
-<g id="breadboard">
+<g id="breadboardbreadboard">
 	<rect id="connector0pin" x="82.648" y="4.11" width="2.774" height="2.773"/>
 	<rect id="connector1pin" x="89.825" y="4.11" width="2.771" height="2.773"/>
 	<rect id="connector2pin" x="97.003" y="4.11" width="2.771" height="2.773"/>
@@ -31,7 +31,7 @@
 	<rect id="connector25pin" x="183.367" y="140.887" width="2.771" height="2.771"/>
 	<rect id="connector26pin" x="190.544" y="140.887" width="2.771" height="2.771"/>
 	<rect id="connector27pin" x="197.722" y="140.887" width="2.771" height="2.771"/>
-	<g id="breadboardbreadboard">
+	<g >
 		<g>
 			<g>
 				<path fill="#0F7391" d="M205.249,35.918V3.694L201.262,0H21.974v148.032h183.277v-5.033l6.923-7.135V42.507L205.249,35.918z

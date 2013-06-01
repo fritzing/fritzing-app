@@ -556,6 +556,12 @@ bool MysteryPart::changePinLabels(bool singleRow, bool sip) {
     QTransform  transform = untransform();
 
 	QString svg = MysteryPart::makeSchematicSvg(labels, sip);
+
+    QString chipLabel = modelPart()->localProp("chip label").toString();
+    if (!chipLabel.isEmpty()) {
+        svg =TextUtils::replaceTextElement(svg, "label", chipLabel);
+    }
+
     resetLayerKin(svg);
 
     retransform(transform);

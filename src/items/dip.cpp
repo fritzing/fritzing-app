@@ -381,6 +381,11 @@ bool Dip::changePinLabels(bool singleRow, bool sip) {
 		svg = Dip::makeSchematicSvg(labels);
 	}
 
+    QString chipLabel = modelPart()->localProp("chip label").toString();
+    if (!chipLabel.isEmpty()) {
+        svg =TextUtils::replaceTextElement(svg, "label", chipLabel);
+    }
+
     QTransform  transform = untransform();
 
 	resetLayerKin(svg);

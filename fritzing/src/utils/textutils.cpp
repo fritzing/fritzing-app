@@ -1744,7 +1744,10 @@ QSizeF TextUtils::parseForWidthAndHeight(QXmlStreamReader & svg, QRectF & viewBo
 void TextUtils::gornTree(QDomDocument & doc)
 {
     QDomElement root = doc.documentElement();
+    QString oldid = root.attribute("id");
     root.setAttribute("id", "0");
+    root.setAttribute("gorn", "0");
+    root.setAttribute("oldid", oldid);
     gornTreeAux(root);
 }
 
@@ -1757,7 +1760,7 @@ void TextUtils::gornTreeAux(QDomElement & root) {
         QString newid = QString("%1.%2").arg(prefix).arg(index++);
         child.setAttribute("id", newid);
         child.setAttribute("gorn", newid);
-        if (!oldid.isEmpty()) child.setAttribute("oldid", oldid);
+        child.setAttribute("oldid", oldid);
         gornTreeAux(child);
         child = child.nextSiblingElement();
     }

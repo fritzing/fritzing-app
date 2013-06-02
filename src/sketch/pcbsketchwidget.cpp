@@ -2695,12 +2695,12 @@ void PCBSketchWidget::fabQuote() {
     if (!QuoteDialog::quoteSucceeded()) {
         QMessageBox::information(this, tr("Fritzing Fab Quote"),
                    tr("Sorry, http://fab.fritzing.org is not responding to the quote request. Please check your network connection and/or try again later."));
-        requestQuote();
+        requestQuote(true);
         return;
     }
 
     m_quoteDialog = new QuoteDialog(true, this);
-    requestQuote();
+    requestQuote(true);
 
     m_quoteDialog->exec();
     delete m_quoteDialog;
@@ -2741,7 +2741,7 @@ void PCBSketchWidget::gotFabQuote(QNetworkReply * networkReply) {
     networkReply->deleteLater();
 }
 
-void PCBSketchWidget::requestQuote() {
+void PCBSketchWidget::requestQuote(bool byUser) {
     int boardCount;
     double area = calcBoardArea(boardCount);
     QuoteDialog::setArea(area, boardCount);
@@ -2754,11 +2754,12 @@ void PCBSketchWidget::requestQuote() {
     manager->setProperty("count", countArgs);
     QString filename = QUrl::toPercentEncoding(filenameIf());
 	connect(manager, SIGNAL(finished(QNetworkReply *)), this, SLOT(gotFabQuote(QNetworkReply *)));
-    QString string = QString("http://fab.fritzing.org/fritzing-fab/quote%1&area=%2&count=%3&filename=%4")
+    QString string = QString("http://fab.fritzing.org/fritzing-fab/quote%1&area=%2&count=%3&filename=%4&byuser=%5")
                 .arg(paramString)
                 .arg(area)
                 .arg(countArgs)
                 .arg(filename)
+                .arg(byUser)
                 ;
     QuoteDialog::setQuoteSucceeded(false);
 	manager->get(QNetworkRequest(QUrl(string)));
@@ -2795,7 +2796,7 @@ void PCBSketchWidget::requestQuoteSoon() {
 
 void PCBSketchWidget::requestQuoteNow() {
     m_requestQuoteTimer.stop();
-    requestQuote();
+    requestQuote(false);
 }
 
 ItemBase * PCBSketchWidget::resizeBoard(long itemID, double mmW, double mmH) {
@@ -2807,7 +2808,7 @@ ItemBase * PCBSketchWidget::resizeBoard(long itemID, double mmW, double mmH) {
 QDialog * PCBSketchWidget::quoteDialog(QWidget * parent) {
     if (m_rolloverQuoteDialog == NULL) {
         m_rolloverQuoteDialog = new QuoteDialog(false, parent);
-        requestQuote();
+        requestQuote(false);
     }
     m_rolloverQuoteDialog->setText();
     return m_rolloverQuoteDialog;

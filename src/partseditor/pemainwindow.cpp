@@ -210,11 +210,40 @@ const static int PegiZ = 5000;
 const static int RatZ = 6000;
 
 static long FakeGornSiblingNumber = 0;
-static const QRegExp GornFinder("gorn=\"[^\"]*\"");
+
+void removeGornAux(QDomElement & element) {
+    bool hasGorn = element.hasAttribute("gorn");
+    bool hasOld = element.hasAttribute("oldid");
+    if (hasGorn && hasOld) {
+        element.removeAttribute("gorn");
+        QString oldid = element.attribute("oldid");
+        if (oldid.isEmpty()) element.removeAttribute("id");
+        else element.setAttribute("id", oldid);
+        element.removeAttribute("oldid");
+    }
+    QDomElement child = element.firstChildElement();
+    while (!child.isNull()) {
+        removeGornAux(child);
+        child = child.nextSiblingElement();
+    }
+}
 
 QString removeGorn(QString & svg) {
-	svg.remove(GornFinder);
-	return svg;
+    QDomDocument doc;
+
+    QString errorStr;
+    int errorLine;
+    int errorColumn;
+    if (!doc.setContent(svg, &errorStr, &errorLine, &errorColumn)) {
+        // shouldn't happen
+        DebugDialog::debug(QString("remove gorn failure: %1 %2 %3 %4").arg(errorStr).arg(errorLine).arg(errorColumn).arg(svg));
+        return svg;
+    }
+
+    QDomElement root = doc.documentElement();
+    removeGornAux(root);
+
+	return doc.toString(4);
 }
 
 bool byID(QDomElement & c1, QDomElement & c2)
@@ -2470,6 +2499,7 @@ void PEMainWindow::moveTerminalPoint(SketchWidget * sketchWidget, const QString 
             terminalElement = svgDoc->createElement("rect");
         }
         terminalElement.setAttribute("id", terminalID);
+        terminalElement.setAttribute("oldid", terminalID);
         terminalElement.setAttribute("stroke", "none");
         terminalElement.setAttribute("fill", "none");
         terminalElement.setAttribute("stroke-width", "0");

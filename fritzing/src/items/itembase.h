@@ -194,6 +194,7 @@ public:
 	void collectPropsMap(QString & family, QMap<QString, QString> &);
 	virtual bool rotationAllowed();
 	virtual bool rotation45Allowed();
+	virtual bool freeRotationAllowed();
 	void ensureUniqueTitle(const QString &title, bool force);
 	virtual void setDropOffset(QPointF offset);
 	bool hasRubberBandLeg() const;

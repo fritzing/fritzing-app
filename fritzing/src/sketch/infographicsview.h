@@ -42,9 +42,10 @@ class InfoGraphicsView : public ZoomableGraphicsView
 public:
 	InfoGraphicsView(QWidget* parent = 0);
 
-	virtual void viewItemInfo(ItemBase * item);
+	virtual void viewItemInfo(ItemBase *);
 	virtual void hoverEnterItem(QGraphicsSceneHoverEvent * event, ItemBase *);
 	virtual void hoverLeaveItem(QGraphicsSceneHoverEvent * event, ItemBase *);
+    void updateRotation(ItemBase *);
 
 	virtual bool swappingEnabled(ItemBase *) = 0;
 
@@ -115,6 +116,7 @@ public:
     void setSMDOrientation(Qt::Orientations);
     Qt::Orientations smdOrientation();
     virtual void moveItem(ItemBase *, double x, double y);
+	virtual void rotateX(double degrees, bool rubberBandLegEnabled, ItemBase * originatingItem);
 
 public slots:
 	virtual void setVoltage(double, bool doEmit);

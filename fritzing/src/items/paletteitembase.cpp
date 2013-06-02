@@ -304,6 +304,9 @@ void PaletteItemBase::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
 
 	//DebugDialog::debug(QString("rotating item %1 da:%2 oa:%3 %4").arg(QTime::currentTime().toString("HH:mm:ss.zzz")).arg(deltaAngle).arg(originalAngle).arg((long) this, 0, 16));
 	chief->rotateItem(deltaAngle, true);
+
+    InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(chief);
+    if (infoGraphicsView) infoGraphicsView->updateRotation(chief);
 }
 
 void PaletteItemBase::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
@@ -724,6 +727,12 @@ bool PaletteItemBase::freeRotationAllowed(Qt::KeyboardModifiers modifiers) {
 	//if ((modifiers & altOrMetaModifier()) == 0) return false;
 	if (!isSelected()) return false;
 	if (this->moveLock()) return false;
+
+	return rotation45Allowed();
+}
+
+bool PaletteItemBase::freeRotationAllowed() {
+    if (viewID() == ViewLayer::SchematicView) return false;
 
 	return rotation45Allowed();
 }

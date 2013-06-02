@@ -259,6 +259,10 @@ void HtmlInfoView::init(bool tinyMode) {
     m_placementLayout->addWidget(m_locationLabel, 2, 0);
     m_placementLayout->addWidget(m_locationFrame, 2, 1);
 
+    makeRotationFrame();
+    m_placementLayout->addWidget(m_rotationLabel, 3, 0);
+    m_placementLayout->addWidget(m_rotationFrame, 3, 1);
+
 	m_placementFrame->setLayout(m_placementLayout);
 	vlo->addWidget(m_placementFrame);
 
@@ -438,6 +442,8 @@ void HtmlInfoView::appendWireStuff(Wire* wire, bool swappingEnabled) {
     m_lockLabel->setVisible(false);
     m_locationFrame->setVisible(false);
     m_locationLabel->setVisible(false);
+    m_rotationFrame->setVisible(false);
+    m_rotationLabel->setVisible(false);
 
 	setUpTitle(wire);
 	setUpIcons(wire, swappingEnabled);
@@ -476,12 +482,18 @@ void HtmlInfoView::appendItemStuff(ItemBase * itemBase, ModelPart * modelPart, b
 	partTitle(nameString, modelPart->version(), modelPart->url(), modelPart->isObsolete());
     m_lockFrame->setVisible(swappingEnabled);
     m_lockLabel->setVisible(swappingEnabled);
+	m_lockCheckbox->setChecked(itemBase->moveLock());
+
     m_locationFrame->setVisible(swappingEnabled);
     m_locationLabel->setVisible(swappingEnabled);
-	m_lockCheckbox->setChecked(itemBase->moveLock());
     m_locationFrame->setDisabled(itemBase->moveLock());
 
+    m_rotationFrame->setVisible(swappingEnabled);
+    m_rotationLabel->setVisible(swappingEnabled);
+    m_rotationFrame->setEnabled(itemBase->rotationAllowed());
+
     setLocation(itemBase);
+    setRotation(itemBase);
 
     if (itemBase->isBaseSticky()) {
 	    m_stickyCheckbox->setVisible(true);
@@ -901,6 +913,7 @@ void HtmlInfoView::changeLock(bool lockState)
 
 	m_currentItem->setMoveLock(lockState);
     m_locationFrame->setDisabled(lockState);
+    m_rotationFrame->setDisabled(lockState);
 }
 
 
@@ -1010,6 +1023,36 @@ void HtmlInfoView::makeLocationFrame() {
 	connect(m_unitsLabel, SIGNAL(clicked()), this, SLOT(unitsClicked()));
 }
 
+void HtmlInfoView::makeRotationFrame() {
+	m_rotationLabel = new QLabel(tr("rotation"), this);
+	m_rotationLabel->setObjectName("propNameLabel");
+	m_rotationLabel->setWordWrap(true);
+
+    m_rotationFrame = new QFrame(this);
+    QHBoxLayout * rotationLayout = new QHBoxLayout();
+	rotationLayout->setSpacing(0);
+	rotationLayout->setContentsMargins(0, 0, 0, 0);
+    m_rotationFrame->setObjectName("propValueFrame");
+
+	m_rotEdit = new QDoubleSpinBox;
+    m_rotEdit->setDecimals(3);
+    m_rotEdit->setRange(-360, 360);
+    m_rotEdit->setKeyboardTracking(false);
+    rotationLayout->addWidget(m_rotEdit);
+
+    rotationLayout->addSpacing(3);
+
+	QLabel * label = new QLabel(tr("degrees"), this);
+    rotationLayout->addWidget(label);
+
+    rotationLayout->addSpacerItem(new QSpacerItem(1,1, QSizePolicy::Expanding));
+
+    m_rotationFrame->setLayout(rotationLayout);
+
+    connect(m_rotEdit, SIGNAL(valueChanged(double)), this, SLOT(rotEntry()));
+    connect(m_rotEdit, SIGNAL(valueChanged(const QString &)), this, SLOT(rotEntry()));
+}
+
 void HtmlInfoView::unitsClicked() {
     QString units = m_unitsLabel->text();
 
@@ -1087,11 +1130,47 @@ void HtmlInfoView::setLocation(ItemBase * itemBase) {
     m_yEdit->blockSignals(false);
 }
 
+void HtmlInfoView::setRotation(ItemBase * itemBase) {
+    if (itemBase == NULL) {
+        m_rotEdit->blockSignals(true);
+        m_rotEdit->setEnabled(false);
+        m_rotEdit->setValue(0);
+        m_rotEdit->blockSignals(false);
+        return;
+    }
+
+    double step = 90;
+    bool enabled = true;
+    if (itemBase->moveLock()) enabled = false;
+    else if (!itemBase->rotationAllowed()) enabled = false;
+    else {
+        if (itemBase->rotation45Allowed()) step = 45;
+        if (itemBase->freeRotationAllowed()) step = 1;
+    }
+
+    m_rotEdit->setEnabled(enabled);
+    m_rotEdit->setSingleStep(step);
+
+    QTransform transform = itemBase->transform();
+    double angle = atan2(transform.m12(), transform.m11()) * 180 / M_PI;
+
+    m_rotEdit->blockSignals(true);
+    m_rotEdit->setValue(angle);
+    m_rotEdit->blockSignals(false);
+}
+
 void HtmlInfoView::updateLocation(ItemBase * itemBase) {
     if (itemBase == NULL) return;
     if (itemBase != m_lastItemBase) return;
 
     setLocation(itemBase);
+}
+
+void HtmlInfoView::updateRotation(ItemBase * itemBase) {
+    if (itemBase == NULL) return;
+    if (itemBase != m_lastItemBase) return;
+
+    setRotation(itemBase);
 }
 
 void HtmlInfoView::xyEntry() {
@@ -1102,4 +1181,19 @@ void HtmlInfoView::xyEntry() {
     }
 }
 
+void HtmlInfoView::rotEntry() {
+    if (m_infoGraphicsView != NULL && m_lastItemBase != NULL) {
+        double newAngle = m_rotEdit->value();
+
+        if (m_rotEdit->singleStep() == 1) {
+        }
+        else {
+            newAngle = qFloor(newAngle / m_rotEdit->singleStep()) * m_rotEdit->singleStep();
+        }
+
+        QTransform transform = m_lastItemBase->transform();
+        double angle = atan2(transform.m12(), transform.m11()) * 180 / M_PI;
+        m_infoGraphicsView->rotateX(newAngle - angle, false, m_lastItemBase);
+    }
+}
 

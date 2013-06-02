@@ -286,6 +286,10 @@ bool Pad::freeRotationAllowed(Qt::KeyboardModifiers modifiers) {
     return true;
 }
 
+bool Pad::freeRotationAllowed() {
+    return true;
+}
+
 bool Pad::hasPartNumberProperty()
 {
 	return false;

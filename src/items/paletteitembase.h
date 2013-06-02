@@ -95,6 +95,7 @@ protected:
 	virtual bool canFindConnectorsUnder();
 	bool inRotationLocation(QPointF scenePos, Qt::KeyboardModifiers modifiers, QPointF & returnPoint);
 	virtual bool freeRotationAllowed(Qt::KeyboardModifiers modifiers);
+	bool freeRotationAllowed();
 	void checkFreeRotation(Qt::KeyboardModifiers modifiers, QPointF scenePos);
 
 	virtual LayerKinPaletteItem * newLayerKinPaletteItem(PaletteItemBase * chief, ModelPart *, const ViewGeometry &, long id, QMenu* itemMenu, const LayerHash &, LayerAttributes &);

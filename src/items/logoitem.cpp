@@ -740,6 +740,10 @@ bool LogoItem::freeRotationAllowed(Qt::KeyboardModifiers modifiers) {
 	return true;
 }
 
+bool LogoItem::freeRotationAllowed() {
+	return true;
+}
+
 ResizableBoard::Corner LogoItem::findCorner(QPointF scenePos, Qt::KeyboardModifiers modifiers) {
 	ResizableBoard::Corner corner = ResizableBoard::findCorner(scenePos, modifiers);
 	if (corner == ResizableBoard::NO_CORNER) return corner;

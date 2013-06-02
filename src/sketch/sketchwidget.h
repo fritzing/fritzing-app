@@ -145,7 +145,7 @@ public:
 	void bringForward();
 	void bringToFront();
 	double fitInWindow();
-	void rotateX(double degrees, bool rubberBandLegEnabled);
+	void rotateX(double degrees, bool rubberBandLegEnabled, ItemBase * originatingItem);
 	void flipX(Qt::Orientations orientation, bool rubberBandLegEnabled);
 	void addBendpoint(ItemBase * lastHoverEnterItem, ConnectorItem * lastHoverEnterConnectorItem, QPointF lastLocation);
 	void flattenCurve(ItemBase * lastHoverEnterItem, ConnectorItem * lastHoverEnterConnectorItem, QPointF lastLocation);

@@ -937,7 +937,7 @@ bool Panelizer::openWindows(QDomElement & boardElement, QHash<QString, QString> 
         // now save the rotated version
 		mainWindow->pcbView()->selectAllItems(true, false);
 	    QMatrix matrix;
-		mainWindow->pcbView()->rotateX(90, false);
+		mainWindow->pcbView()->rotateX(90, false, NULL);
 
         foreach (ItemBase * boardItem, boards) {
             makeSVGs(mainWindow, boardItem, boardName, layerThingList, rotateDir, copyInfo);

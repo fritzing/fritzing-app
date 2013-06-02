@@ -2274,10 +2274,10 @@ void MainWindow::rotateIncCWRubberBand() {
 	if (m_currentGraphicsView == NULL) return;
 
 	if (m_rotate45cwAct->isEnabled()) {
-		m_currentGraphicsView->rotateX(45, true);
+		m_currentGraphicsView->rotateX(45, true, NULL);
 	}
 	else if (m_rotate90cwAct->isEnabled()) {
-		m_currentGraphicsView->rotateX(90, true);
+		m_currentGraphicsView->rotateX(90, true, NULL);
 	}
 }
 
@@ -2285,10 +2285,10 @@ void MainWindow::rotateIncCCW() {
 	if (m_currentGraphicsView == NULL) return;
 
 	if (m_rotate45ccwAct->isEnabled()) {
-		m_currentGraphicsView->rotateX(315, true);
+		m_currentGraphicsView->rotateX(315, true, NULL);
 	}
 	else if (m_rotate90ccwAct->isEnabled()) {
-		m_currentGraphicsView->rotateX(270, true);
+		m_currentGraphicsView->rotateX(270, true, NULL);
 	}
 }
 
@@ -2296,41 +2296,41 @@ void MainWindow::rotateIncCCWRubberBand() {
 	if (m_currentGraphicsView == NULL) return;
 
 	if (m_rotate45ccwAct->isEnabled()) {
-		m_currentGraphicsView->rotateX(315, true);
+		m_currentGraphicsView->rotateX(315, true, NULL);
 	}
 	else if (m_rotate90ccwAct->isEnabled()) {
-		m_currentGraphicsView->rotateX(270, true);
+		m_currentGraphicsView->rotateX(270, true, NULL);
 	}
 }
 
 void MainWindow::rotate90cw() {
 	if (m_currentGraphicsView == NULL) return;
 
-	m_currentGraphicsView->rotateX(90, false);
+	m_currentGraphicsView->rotateX(90, false, NULL);
 }
 
 void MainWindow::rotate90ccw() {
 	if (m_currentGraphicsView == NULL) return;
 
-	m_currentGraphicsView->rotateX(270, false);
+	m_currentGraphicsView->rotateX(270, false, NULL);
 }
 
 void MainWindow::rotate45ccw() {
 	if (m_currentGraphicsView == NULL) return;
 
-	m_currentGraphicsView->rotateX(315, false);
+	m_currentGraphicsView->rotateX(315, false, NULL);
 }
 
 void MainWindow::rotate45cw() {
 	if (m_currentGraphicsView == NULL) return;
 
-	m_currentGraphicsView->rotateX(45, false);
+	m_currentGraphicsView->rotateX(45, false, NULL);
 }
 
 void MainWindow::rotate180() {
 	if (m_currentGraphicsView == NULL) return;
 
-	m_currentGraphicsView->rotateX(180, false);
+	m_currentGraphicsView->rotateX(180, false, NULL);
 }
 
 void MainWindow::flipHorizontal() {

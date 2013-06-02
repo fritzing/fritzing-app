@@ -56,6 +56,7 @@ public:
 	bool rotationAllowed();
 	bool rotation45Allowed();
 	bool freeRotationAllowed(Qt::KeyboardModifiers);	
+	bool freeRotationAllowed();	
 	bool hasPartNumberProperty();
 	void setInitialSize();
 	void addedToScene(bool temporary);

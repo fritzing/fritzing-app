@@ -78,6 +78,7 @@ protected:
 	double minWidth();
 	double minHeight();
 	bool freeRotationAllowed(Qt::KeyboardModifiers modifiers);
+	bool freeRotationAllowed();
 	ResizableBoard::Corner findCorner(QPointF p, Qt::KeyboardModifiers);
     virtual QString getShapeForRenderer(const QString & svg);
     virtual bool canRetrieveLayer(ViewLayer::ViewLayerID viewLayerID);

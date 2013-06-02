@@ -1153,6 +1153,10 @@ bool ItemBase::rotation45Allowed() {
 	return !m_moveLock;
 }
 
+bool ItemBase::freeRotationAllowed() {
+	return false;
+}
+
 void ItemBase::clearModelPart() {
 	m_modelPart = NULL;
 }

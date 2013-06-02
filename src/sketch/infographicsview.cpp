@@ -421,3 +421,14 @@ void InfoGraphicsView::moveItem(ItemBase *, double x, double y) {
     Q_UNUSED(x);
     Q_UNUSED(y);
 }
+
+void InfoGraphicsView::updateRotation(ItemBase * itemBase) {
+    if (m_infoView) m_infoView->updateRotation(itemBase);
+}
+
+void InfoGraphicsView::rotateX(double degrees, bool rubberBandLegEnabled, ItemBase * originatingItem) 
+{
+    Q_UNUSED(degrees);
+    Q_UNUSED(rubberBandLegEnabled);
+    Q_UNUSED(originatingItem);
+}

@@ -78,6 +78,7 @@ public:
 
 	void viewItemInfo(class InfoGraphicsView *, ItemBase* item, bool swappingEnabled);
     void updateLocation(ItemBase *);
+    void updateRotation(ItemBase *);
 
 	void hoverEnterItem(class InfoGraphicsView *, QGraphicsSceneHoverEvent * event, ItemBase * item, bool swappingEnabled);
 	void hoverLeaveItem(class InfoGraphicsView *, QGraphicsSceneHoverEvent * event, ItemBase * item);
@@ -111,6 +112,7 @@ protected slots:
     void clickObsolete(const QString &);
     void xyEntry();
     void unitsClicked();
+    void rotEntry();
 
 protected:
 	void appendStuff(ItemBase* item, bool swappingEnabled); //finds out if it's a wire or something else
@@ -133,7 +135,9 @@ protected:
     void showLayers(bool show, ItemBase *, const QString & family, const QString & value, bool swappingEnabled);
     void makeLockFrame();
     void makeLocationFrame();
+    void makeRotationFrame();
     void setLocation(ItemBase *);
+    void setRotation(ItemBase *);
 
 protected:
 	QPointer<ItemBase> m_currentItem;
@@ -161,12 +165,14 @@ protected:
     QLabel * m_layerLabel;
     QLabel * m_lockLabel;
     QLabel * m_locationLabel;
+    QLabel * m_rotationLabel;
 	QFrame * m_connFrame;
 	QFrame * m_propFrame;
 	QFrame * m_placementFrame;
     QFrame * m_layerFrame;
     QFrame * m_lockFrame;
     QFrame * m_locationFrame;
+    QFrame * m_rotationFrame;
 	QCheckBox * m_lockCheckbox;
 	QCheckBox * m_stickyCheckbox;
 	QGridLayout * m_propLayout;
@@ -180,6 +186,7 @@ protected:
     QDoubleSpinBox * m_xEdit;
     QDoubleSpinBox * m_yEdit;
     QLabel * m_unitsLabel;
+    QDoubleSpinBox * m_rotEdit;
 
 	// note: these m_last items should only be checked for equality and not otherwise accessed
 	ItemBase * m_lastTitleItemBase;

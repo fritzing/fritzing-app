@@ -1448,6 +1448,7 @@ void SketchWidget::rotateItem(long id, double degrees) {
 	ItemBase * itemBase = findItem(id);
 	if (itemBase != NULL) {
 		itemBase->rotateItem(degrees, false);
+        if (m_infoView) m_infoView->updateRotation(itemBase);
 	}
 
 }
@@ -1455,6 +1456,7 @@ void SketchWidget::transformItem(long id, const QMatrix & matrix) {
 	ItemBase * itemBase = findItem(id);
 	if (itemBase != NULL) {
 		itemBase->transformItem2(matrix);
+        if (m_infoView) m_infoView->updateRotation(itemBase);
 	}
 }
 
@@ -1466,6 +1468,7 @@ void SketchWidget::flipItem(long id, Qt::Orientations orientation) {
 	ItemBase * itemBase = findItem(id);
 	if (itemBase != NULL) {
 		itemBase->flipItem(orientation);
+        if (m_infoView) m_infoView->updateRotation(itemBase);
 		ratsnestConnect(itemBase, true);
 	}
 }
@@ -4568,12 +4571,14 @@ void SketchWidget::mousePressConnectorEvent(ConnectorItem * connectorItem, QGrap
 	}
 }
 
-void SketchWidget::rotateX(double degrees, bool rubberBandLegEnabled) 
+void SketchWidget::rotateX(double degrees, bool rubberBandLegEnabled, ItemBase * originatingItem) 
 {
+    if (qAbs(degrees) < 0.01) return;
+
 	clearHoldingSelectItem();
 	m_savedItems.clear();
 	m_savedWires.clear();
-	prepMove(NULL, rubberBandLegEnabled, false);
+	prepMove(originatingItem, rubberBandLegEnabled, false);
 
 	QRectF itemsBoundingRect;
 	// want the bounding rect of the original selected items, not all the items that are secondarily being rotated
@@ -8996,7 +9001,7 @@ void SketchWidget::triggerRotate(ItemBase * itemBase, double degrees)
     setIgnoreSelectionChangeEvents(true);
     this->clearSelection();
     itemBase->setSelected(true);
-    rotateX(degrees, false);
+    rotateX(degrees, false, itemBase);
     foreach (QGraphicsItem * item, selectedItems) {
         item->setSelected(true);
     }

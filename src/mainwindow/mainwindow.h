@@ -294,6 +294,12 @@ protected slots:
 	void sendBackward();
 	void bringForward();
 	void bringToFront();
+    void alignLeft();
+    void alignRight();
+    void alignVerticalCenter();
+    void alignTop();
+    void alignHorizontalCenter();
+    void alignBottom();
 	void rotate90cw();
 	void rotate90ccw();
 	void rotate180();
@@ -662,6 +668,14 @@ protected:
 	class WireAction *m_bringForwardWireAct;
 	class WireAction *m_sendBackwardWireAct;
 	class WireAction *m_sendToBackWireAct;
+
+    QMenu *m_alignMenu;
+    QAction * m_alignVerticalCenterAct;
+    QAction * m_alignHorizontalCenterAct;
+    QAction * m_alignTopAct;
+    QAction * m_alignLeftAct;
+    QAction * m_alignBottomAct;
+    QAction * m_alignRightAct;
 
 	// Export Menu
 	QMenu *m_exportMenu;

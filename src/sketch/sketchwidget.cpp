@@ -9625,7 +9625,32 @@ void SketchWidget::alignItems(Qt::Alignment alignment) {
 	m_moveEventCount = 0;
 	prepMove(NULL, rubberBandLegEnabled, true);
 
-    int count;
+    QMultiHash<Wire *, ConnectorItem *> unsaved;
+    QSet<Wire *> unsavedSet;
+    foreach (ItemBase * itemBase, m_savedItems) {
+        if (itemBase->itemType() == ModelPart::Wire) {
+            Wire * wire  = qobject_cast<Wire *>(itemBase);
+            QList<Wire *> wires;
+            QList<ConnectorItem *> ends;
+            wire->collectChained(wires, ends);
+            foreach (Wire * w, wires) {
+                if (!unsavedSet.contains(w)) {
+                    QList< QPointer<ConnectorItem> > toList = w->connector0()->connectedToItems();
+                    foreach (ConnectorItem * end, ends) {
+                        if (toList.contains(end)) {
+                            unsaved.insert(w, end);
+                            break;
+                        }
+                    }
+                    unsavedSet.insert(w);
+                }
+            }
+        }
+    }
+
+    foreach (Wire * w, unsavedSet) m_savedItems.remove(w->id());
+
+    int count = 0;
     double left = std::numeric_limits<int>::max();
     double top = std::numeric_limits<int>::max();
     double right = std::numeric_limits<int>::min();
@@ -9633,8 +9658,6 @@ void SketchWidget::alignItems(Qt::Alignment alignment) {
     double hcTotal = 0;
     double vcTotal = 0;
     foreach (ItemBase * itemBase, m_savedItems) {
-        if (itemBase->itemType() == ModelPart::Wire) continue;
-
         QRectF r = itemBase->sceneBoundingRect();
         if (r.left() < left) left = r.left();
         if (r.right() > right) right = r.right();
@@ -9710,9 +9733,16 @@ void SketchWidget::alignItems(Qt::Alignment alignment) {
 	}
 
 	foreach (Wire * wire, m_savedWires.keys()) {
-		wire->simpleConnectedMoved(m_savedWires.value(wire));
+        ConnectorItem * ci = m_savedWires.value(wire);
+		wire->simpleConnectedMoved(ci);
 	}
 
+    foreach (Wire * w, unsaved.keys()) {
+        foreach (ConnectorItem * end, unsaved.values(w)) {
+            w->simpleConnectedMoved(end);
+            m_savedWires.insert(w, end);
+        }
+    }
 	//DebugDialog::debug(QString("done move items %1").arg(QTime::currentTime().msec()) );
 
     foreach (ItemBase * itemBase, m_savedItems) {

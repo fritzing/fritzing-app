@@ -9616,3 +9616,114 @@ void SketchWidget::moveItem(ItemBase * itemBase, double x, double y)
     m_alignToGrid = alignToGrid;
 }
 
+void SketchWidget::alignItems(Qt::Alignment alignment) {
+	bool rubberBandLegEnabled = false;
+	m_dragBendpointWire = NULL;
+	clearHoldingSelectItem();
+	m_savedItems.clear();
+	m_savedWires.clear();
+	m_moveEventCount = 0;
+	prepMove(NULL, rubberBandLegEnabled, true);
+
+    int count;
+    double left = std::numeric_limits<int>::max();
+    double top = std::numeric_limits<int>::max();
+    double right = std::numeric_limits<int>::min();
+    double bottom = std::numeric_limits<int>::min();
+    double hcTotal = 0;
+    double vcTotal = 0;
+    foreach (ItemBase * itemBase, m_savedItems) {
+        if (itemBase->itemType() == ModelPart::Wire) continue;
+
+        QRectF r = itemBase->sceneBoundingRect();
+        if (r.left() < left) left = r.left();
+        if (r.right() > right) right = r.right();
+        if (r.top() < top) top = r.top();
+        if (r.bottom() > bottom) bottom = r.bottom();
+        count++;
+        QPointF center = r.center();
+        hcTotal += center.x();
+        vcTotal += center.y();
+    }
+
+    if (count < 2) return;
+
+    hcTotal /= count;
+    vcTotal /= count;
+
+	if (m_moveEventCount == 0) {
+		// first time
+		m_moveDisconnectedFromFemale.clear();
+		foreach (ItemBase * item, m_savedItems) {
+			if (item->itemType() == ModelPart::Wire) continue;
+
+			//DebugDialog::debug(QString("disconnecting from female %1").arg(item->instanceTitle()));
+			disconnectFromFemale(item, m_savedItems, m_moveDisconnectedFromFemale, false, rubberBandLegEnabled, NULL);
+		}
+	}
+
+	foreach (ItemBase * itemBase, m_savedItems) {
+        if (itemBase->itemType() == ModelPart::Wire) continue;
+
+        QRectF r = itemBase->sceneBoundingRect();
+        QPointF dp;
+
+        switch (alignment) {
+            case Qt::AlignLeft:
+                dp.setY(0);
+                dp.setX(left - r.left());
+                break;
+            case Qt::AlignHCenter:
+                dp.setY(0);
+                dp.setX(hcTotal - r.center().x());
+                break;
+            case Qt::AlignRight:
+                dp.setY(0);
+                dp.setX(right - r.right());
+                break;
+            case Qt::AlignTop:
+                dp.setX(0);
+                dp.setY(top - r.top());
+                break;
+            case Qt::AlignVCenter:
+                dp.setX(0);
+                dp.setY(vcTotal - r.center().y());
+                break;
+            case Qt::AlignBottom:
+                dp.setX(0);
+                dp.setY(bottom - r.bottom());
+                break;
+            default:
+                dp.setY(0);
+                dp.setX(left - r.left());
+                break;
+        }
+
+		itemBase->setPos(itemBase->getViewGeometry().loc() + dp);
+		foreach (ConnectorItem * connectorItem, m_stretchingLegs.values(itemBase)) {
+			connectorItem->stretchBy(dp);
+		}
+
+		if (m_checkUnder.contains(itemBase)) {
+			findConnectorsUnder(itemBase);
+		}
+	}
+
+	foreach (Wire * wire, m_savedWires.keys()) {
+		wire->simpleConnectedMoved(m_savedWires.value(wire));
+	}
+
+	//DebugDialog::debug(QString("done move items %1").arg(QTime::currentTime().msec()) );
+
+    foreach (ItemBase * itemBase, m_savedItems) {
+        m_infoView->updateLocation(itemBase->layerKinChief());
+    }
+
+	m_movingByArrow = false;
+    m_moveEventCount++;
+	checkMoved(false);
+	m_savedItems.clear();
+	m_savedWires.clear();
+}
+
+

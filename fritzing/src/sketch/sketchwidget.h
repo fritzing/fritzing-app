@@ -144,6 +144,7 @@ public:
 	void sendBackward();
 	void bringForward();
 	void bringToFront();
+    void alignItems(Qt::Alignment);
 	double fitInWindow();
 	void rotateX(double degrees, bool rubberBandLegEnabled, ItemBase * originatingItem);
 	void flipX(Qt::Orientations orientation, bool rubberBandLegEnabled);

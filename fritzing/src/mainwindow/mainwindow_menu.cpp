@@ -925,6 +925,30 @@ void MainWindow::createPartMenuActions() {
 	m_sendToBackWireAct = new WireAction(m_sendToBackAct);
     connect(m_sendToBackWireAct, SIGNAL(triggered()), this, SLOT(sendToBack()));
 
+	m_alignLeftAct = new QAction(tr("Align Left"), this);
+    m_alignLeftAct->setStatusTip(tr("Align selected items at the left"));
+    connect(m_alignLeftAct, SIGNAL(triggered()), this, SLOT(alignLeft()));
+
+	m_alignHorizontalCenterAct = new QAction(tr("Align Horizontal Center"), this);
+    m_alignHorizontalCenterAct->setStatusTip(tr("Align selected items at the horizontal center"));
+    connect(m_alignHorizontalCenterAct, SIGNAL(triggered()), this, SLOT(alignHorizontalCenter()));
+
+    m_alignRightAct = new QAction(tr("Align Right"), this);
+    m_alignRightAct->setStatusTip(tr("Align selected items at the right"));
+    connect(m_alignRightAct, SIGNAL(triggered()), this, SLOT(alignRight()));
+
+    m_alignTopAct = new QAction(tr("Align Top"), this);
+    m_alignTopAct->setStatusTip(tr("Align selected items at the top"));
+    connect(m_alignTopAct, SIGNAL(triggered()), this, SLOT(alignTop()));
+
+	m_alignVerticalCenterAct = new QAction(tr("Align Vertical Center"), this);
+    m_alignVerticalCenterAct->setStatusTip(tr("Align selected items at the vertical center"));
+    connect(m_alignVerticalCenterAct, SIGNAL(triggered()), this, SLOT(alignVerticalCenter()));
+
+	m_alignBottomAct = new QAction(tr("Align Bottom"), this);
+    m_alignBottomAct->setStatusTip(tr("Align selected items at the bottom"));
+    connect(m_alignBottomAct, SIGNAL(triggered()), this, SLOT(alignBottom()));
+
 	m_moveLockAct = new QAction(tr("Lock Part"), this);
     m_moveLockAct->setStatusTip(tr("Prevent a part from being moved"));
 	m_moveLockAct->setCheckable(true);
@@ -1282,9 +1306,11 @@ void MainWindow::createPartMenu() {
 	m_zOrderMenu = m_partMenu->addMenu(tr("Raise and Lower"));
 	m_zOrderWireMenu = new QMenu(m_zOrderMenu);
 	m_zOrderWireMenu->setTitle(m_zOrderMenu->title());
+    m_alignMenu = m_partMenu->addMenu(tr("Align"));
 	m_partMenu->addAction(m_moveLockAct);
 	m_partMenu->addAction(m_stickyAct);
 	m_partMenu->addAction(m_selectMoveLockAct);
+
 	
 	m_partMenu->addSeparator();
 	m_partMenu->addMenu(m_addToBinMenu);
@@ -1311,6 +1337,13 @@ void MainWindow::createPartMenu() {
 	m_zOrderWireMenu->addAction(m_bringForwardWireAct);
 	m_zOrderWireMenu->addAction(m_sendBackwardWireAct);
 	m_zOrderWireMenu->addAction(m_sendToBackWireAct);
+
+	m_alignMenu->addAction(m_alignLeftAct);
+	m_alignMenu->addAction(m_alignHorizontalCenterAct);
+	m_alignMenu->addAction(m_alignRightAct);    
+    m_alignMenu->addAction(m_alignTopAct);
+	m_alignMenu->addAction(m_alignVerticalCenterAct);
+	m_alignMenu->addAction(m_alignBottomAct);
 }
 
 void MainWindow::createViewMenu()
@@ -1663,6 +1696,13 @@ void MainWindow::updatePartMenu() {
 			zenable = false;
 		}
 	}
+
+    m_alignLeftAct->setEnabled(itemCount.selCount - itemCount.wireCount > 1);
+    m_alignRightAct->setEnabled(itemCount.selCount - itemCount.wireCount > 1);
+    m_alignTopAct->setEnabled(itemCount.selCount - itemCount.wireCount > 1);
+    m_alignBottomAct->setEnabled(itemCount.selCount - itemCount.wireCount > 1);
+    m_alignVerticalCenterAct->setEnabled(itemCount.selCount - itemCount.wireCount > 1);
+    m_alignHorizontalCenterAct->setEnabled(itemCount.selCount - itemCount.wireCount > 1);
 
 	//DebugDialog::debug(QString("enable layer actions %1").arg(enable));
 	m_bringToFrontAct->setEnabled(zenable);
@@ -2363,6 +2403,42 @@ void MainWindow::bringToFront() {
 	if (m_currentGraphicsView == NULL) return;
 
 	m_currentGraphicsView->bringToFront();
+}
+
+void MainWindow::alignLeft() {
+	if (m_currentGraphicsView == NULL) return;
+
+	m_currentGraphicsView->alignItems(Qt::AlignLeft);
+}
+
+void MainWindow::alignVerticalCenter() {
+	if (m_currentGraphicsView == NULL) return;
+
+	m_currentGraphicsView->alignItems(Qt::AlignVCenter);
+}
+
+void MainWindow::alignRight() {
+	if (m_currentGraphicsView == NULL) return;
+
+	m_currentGraphicsView->alignItems(Qt::AlignRight);
+}
+
+void MainWindow::alignTop() {
+	if (m_currentGraphicsView == NULL) return;
+
+	m_currentGraphicsView->alignItems(Qt::AlignTop);
+}
+
+void MainWindow::alignHorizontalCenter() {
+	if (m_currentGraphicsView == NULL) return;
+
+	m_currentGraphicsView->alignItems(Qt::AlignHCenter);
+}
+
+void MainWindow::alignBottom() {
+	if (m_currentGraphicsView == NULL) return;
+
+	m_currentGraphicsView->alignItems(Qt::AlignBottom);
 }
 
 void MainWindow::showAllLayers() {

@@ -8587,8 +8587,10 @@ bool SketchWidget::resizingJumperItemPress(ItemBase *) {
 }
 
 bool SketchWidget::resizingBoardPress(ItemBase * itemBase) {
+    if (itemBase == NULL) return false;
+
 	// board's child items (at the moment) are the resize grips
-	ResizableBoard * rb = qobject_cast<ResizableBoard *>(itemBase);
+	ResizableBoard * rb = qobject_cast<ResizableBoard *>(itemBase->layerKinChief());
 	if (rb == NULL) return false;
 	if (!rb->inResize()) return false;
 

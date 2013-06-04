@@ -2329,7 +2329,7 @@ void SketchWidget::mousePressEvent(QMouseEvent *event)
 		setLastPaletteItemSelectedIf(itemBase);
 	}
 
-	if (resizingBoardPress(item)) {
+	if (resizingBoardPress(itemBase)) {
 		return;
 	}
 
@@ -2361,7 +2361,7 @@ void SketchWidget::mousePressEvent(QMouseEvent *event)
 		}
 	}
 
-	if (resizingJumperItemPress(item)) {
+	if (resizingJumperItemPress(itemBase)) {
 		return;
 	}
 
@@ -8582,13 +8582,13 @@ bool SketchWidget::resizingJumperItemRelease() {
 	return false;
 }
 
-bool SketchWidget::resizingJumperItemPress(QGraphicsItem *) {
+bool SketchWidget::resizingJumperItemPress(ItemBase *) {
 	return false;
 }
 
-bool SketchWidget::resizingBoardPress(QGraphicsItem * item) {
+bool SketchWidget::resizingBoardPress(ItemBase * itemBase) {
 	// board's child items (at the moment) are the resize grips
-	ResizableBoard * rb = dynamic_cast<ResizableBoard *>(item);
+	ResizableBoard * rb = qobject_cast<ResizableBoard *>(itemBase);
 	if (rb == NULL) return false;
 	if (!rb->inResize()) return false;
 

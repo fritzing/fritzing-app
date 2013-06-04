@@ -351,7 +351,7 @@ void PaletteItem::collectWireConnectees(QSet<Wire *> & wires) {
 	}
 }
 
-void PaletteItem::mousePressEvent(PaletteItemBase * originalItem, QGraphicsSceneMouseEvent *event) {
+bool PaletteItem::mousePressEvent(PaletteItemBase * originalItem, QGraphicsSceneMouseEvent *event) {
 	//DebugDialog::debug("layerkinchief got mouse press event");
 	/*
 
@@ -361,7 +361,7 @@ void PaletteItem::mousePressEvent(PaletteItemBase * originalItem, QGraphicsScene
 	}
 	*/
 
-	PaletteItemBase::mousePressEvent(originalItem, event);
+	return PaletteItemBase::mousePressEvent(originalItem, event);
 }
 
 void PaletteItem::mousePressEvent(QGraphicsSceneMouseEvent *event)

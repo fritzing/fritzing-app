@@ -432,17 +432,24 @@ void PaletteItem::figureHover() {
 	}
 
 	int ix = 0;
+    int firstix = 0;
+    bool gotFirst = false;
 	foreach (ItemBase * base, allKin) {
 		if (!(base->hidden() || base->inactive() || base->layerHidden()) && base->hasConnectors()) {
 			base->setAcceptHoverEvents(true);
 			base->setAcceptedMouseButtons(ALLMOUSEBUTTONS);
             //base->debugInfo("figure hover copper");
-			break;
+            if (!gotFirst) {
+                firstix = ix;
+                gotFirst = true;
+            }
 		}
 		ix++;
 	}
+    
+    if (!gotFirst) firstix++;       // must enable at least one layer
 
-	for (int i = 0; i < ix; i++) {
+	for (int i = 0; i < firstix; i++) {
 		ItemBase * base = allKin[i];
 		if (!(base->hidden() || base->inactive() || base->layerHidden())) {
 			base->setAcceptHoverEvents(true);
@@ -463,6 +470,7 @@ void PaletteItem::clearModelPart() {
 ItemBase * PaletteItem::lowerConnectorLayerVisible(ItemBase * itemBase) {   
     // note: see figureHover() which sets up which layerkin will accept hover events
 	if (m_layerKin.count() == 0) return NULL;
+    if (itemBase->hasConnectors()) return NULL;
 
 	if ((itemBase != this) 
 		&& this->isVisible() 

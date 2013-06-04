@@ -458,9 +458,9 @@ protected:
 	virtual ViewLayer::ViewLayerPlacement getViewLayerPlacement(ModelPart *, QDomElement & instance, QDomElement & view, ViewGeometry &);
 	virtual ViewLayer::ViewLayerPlacement wireViewLayerPlacement(ConnectorItem *);
 
-	virtual bool resizingJumperItemPress(QGraphicsItem * item);
+	virtual bool resizingJumperItemPress(ItemBase *);
 	virtual bool resizingJumperItemRelease();
-	bool resizingBoardPress(QGraphicsItem * item);
+	bool resizingBoardPress(ItemBase *);
 	bool resizingBoardRelease();
 	void resizeBoard();
     void resizeWithHandle(ItemBase * itemBase, double mmW, double mmH);

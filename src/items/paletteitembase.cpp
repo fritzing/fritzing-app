@@ -223,7 +223,7 @@ bool PaletteItemBase::acceptsMousePressConnectorEvent(ConnectorItem *, QGraphics
 }
 
 
-void PaletteItemBase::mousePressEvent(PaletteItemBase * originalItem, QGraphicsSceneMouseEvent *event)
+bool PaletteItemBase::mousePressEvent(PaletteItemBase * originalItem, QGraphicsSceneMouseEvent *event)
 {
 	Q_UNUSED(originalItem);
 
@@ -248,7 +248,7 @@ void PaletteItemBase::mousePressEvent(PaletteItemBase * originalItem, QGraphicsS
 		this->debugInfo("in rotation");
 		InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
 		if (infoGraphicsView) infoGraphicsView->setAnyInRotation();
-		return;
+		return false;
 	}
 
 	ItemBase::mousePressEvent(event);
@@ -257,6 +257,16 @@ void PaletteItemBase::mousePressEvent(PaletteItemBase * originalItem, QGraphicsS
 			connectorItem->setOverConnectorItem(NULL);
 		}
 	}
+
+    return false;
+}
+
+void PaletteItemBase::mouseMoveEvent(PaletteItemBase *, QGraphicsSceneMouseEvent *)
+{
+}
+
+void PaletteItemBase::mouseReleaseEvent(PaletteItemBase *, QGraphicsSceneMouseEvent *)
+{
 }
 
 void PaletteItemBase::mouseMoveEvent(QGraphicsSceneMouseEvent *event)

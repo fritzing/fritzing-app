@@ -1181,6 +1181,8 @@ void PCBSketchWidget::changeLayer(long id, double z, ViewLayer::ViewLayerID view
 }
 
 bool PCBSketchWidget::resizingJumperItemPress(ItemBase * itemBase) {
+    if (itemBase == NULL) return false;
+
 	JumperItem * jumperItem = qobject_cast<JumperItem *>(itemBase->layerKinChief());
 	if (jumperItem == NULL) return false;
 	if (!jumperItem->inDrag()) return false;

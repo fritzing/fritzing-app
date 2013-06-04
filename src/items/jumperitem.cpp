@@ -73,7 +73,8 @@ void shorten(QRectF r0, QPointF r0c, QPointF r1c, double & r0x, double & r0y, do
 JumperItem::JumperItem( ModelPart * modelPart, ViewLayer::ViewID viewID,  const ViewGeometry & viewGeometry, long id, QMenu * itemMenu, bool doLabel) 
 	: PaletteItem(modelPart, viewID,  viewGeometry,  id, itemMenu, doLabel)
 {
-	if (Colors.isEmpty()) {
+    m_originalClickItem = NULL;
+    if (Colors.isEmpty()) {
 		Colors.insert(ViewLayer::Copper0, ViewLayer::Copper0Color);
 		Colors.insert(ViewLayer::Copper1, ViewLayer::Copper1Color);
 		Colors.insert(ViewLayer::PartImage, JumperColor);
@@ -202,8 +203,29 @@ void JumperItem::initialResize(ViewLayer::ViewID viewID) {
 
 }
 
+bool JumperItem::mousePressEvent(PaletteItemBase * originalItem, QGraphicsSceneMouseEvent *event)
+{
+    m_originalClickItem = originalItem;
+    mousePressEvent(event);
+    return (m_dragItem != NULL);
+}
+
+void JumperItem::mouseMoveEvent(PaletteItemBase * originalItem, QGraphicsSceneMouseEvent *event)
+{
+    Q_UNUSED(originalItem);
+    mouseMoveEvent(event);
+}
+
+void JumperItem::mouseReleaseEvent(PaletteItemBase * originalItem, QGraphicsSceneMouseEvent *event)
+{
+    Q_UNUSED(originalItem);
+    mouseReleaseEvent(event);
+}
+
 void JumperItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
+    PaletteItemBase * originalItem = m_originalClickItem;
+    m_originalClickItem = NULL;
 	InfoGraphicsView *infographics = InfoGraphicsView::getInfoGraphicsView(this);
 	if (infographics != NULL && infographics->spaceBarIsPressed()) { 
 		event->ignore();
@@ -229,6 +251,7 @@ void JumperItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
 			m_otherItem = m_connector0;
 		}
 		else {
+            if (originalItem) return ItemBase::mousePressEvent(event);
 			return PaletteItem::mousePressEvent(event);
 		}
 	}

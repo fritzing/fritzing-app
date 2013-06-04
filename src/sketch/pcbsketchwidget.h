@@ -159,7 +159,7 @@ protected:
 	double defaultGridSizeInches();
 	ViewLayer::ViewLayerID getLabelViewLayerID(ItemBase *);
 	ViewLayer::ViewLayerPlacement wireViewLayerPlacement(ConnectorItem *);
-	bool resizingJumperItemPress(QGraphicsItem * item);
+	bool resizingJumperItemPress(ItemBase *);
 	bool resizingJumperItemRelease();
 	void resizeJumperItem();
 	QPoint calcFixedToCenterItemOffset(const QRect & viewPortRect, const QSizeF & helpSize);

@@ -45,6 +45,7 @@ LayerKinPaletteItem::LayerKinPaletteItem(PaletteItemBase * chief, ModelPart * mo
 	: PaletteItemBase(modelPart, viewID, viewGeometry, id, itemMenu)
 
 {
+    m_passMouseEvents = false;
     m_layerKinChief = chief;
     setFlag(QGraphicsItem::ItemIsSelectable, true);
     m_modelPart->removeViewItem(this);  // we don't need to save layerkin
@@ -104,6 +105,7 @@ void LayerKinPaletteItem::updateConnections(bool includeRatsnest, QList<Connecto
 }
 
 void LayerKinPaletteItem::mousePressEvent(QGraphicsSceneMouseEvent *event) {
+    m_passMouseEvents = false;
 
 	//DebugDialog::debug("layer kin mouse press event");
 	if (m_layerKinChief->lowerConnectorLayerVisible(this)) {
@@ -113,11 +115,29 @@ void LayerKinPaletteItem::mousePressEvent(QGraphicsSceneMouseEvent *event) {
 		return;
 	}
 
-	m_layerKinChief->mousePressEvent(this, event);
+	m_passMouseEvents = m_layerKinChief->mousePressEvent(this, event);
     return;
 
 
-    ItemBase::mousePressEvent(event);
+    //ItemBase::mousePressEvent(event);
+}
+
+void LayerKinPaletteItem::mouseMoveEvent(QGraphicsSceneMouseEvent *event) { 
+    if (m_passMouseEvents) {
+        m_layerKinChief->mouseMoveEvent(this, event);
+        return;
+    }
+
+    PaletteItemBase::mouseMoveEvent(event);
+}
+
+void LayerKinPaletteItem::mouseReleaseEvent(QGraphicsSceneMouseEvent *event) { 
+    if (m_passMouseEvents) {
+        m_layerKinChief->mouseReleaseEvent(this, event);
+        return;
+    }
+
+    PaletteItemBase::mouseReleaseEvent(event);
 }
 
 void LayerKinPaletteItem::setHidden(bool hide) {

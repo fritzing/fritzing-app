@@ -1180,35 +1180,32 @@ void PCBSketchWidget::changeLayer(long id, double z, ViewLayer::ViewLayerID view
     updateInfoView();
 }
 
-bool PCBSketchWidget::resizingJumperItemPress(QGraphicsItem * item) {
-	JumperItem * jumperItem = dynamic_cast<JumperItem *>(item);
+bool PCBSketchWidget::resizingJumperItemPress(ItemBase * itemBase) {
+	JumperItem * jumperItem = qobject_cast<JumperItem *>(itemBase->layerKinChief());
 	if (jumperItem == NULL) return false;
+	if (!jumperItem->inDrag()) return false;
 
-	if (jumperItem->inDrag()) {
-		m_resizingJumperItem = jumperItem;
-		m_resizingJumperItem->saveParams();
-		if (m_alignToGrid) {
-			m_alignmentStartPoint = QPointF(0,0);
-			ItemBase * board = findBoardBeneath(m_resizingJumperItem);
-			QHash<long, ItemBase *> savedItems;
-			QHash<Wire *, ConnectorItem *> savedWires;
-			if (board == NULL) {
-				foreach (QGraphicsItem * item, scene()->items()) {
-					PaletteItemBase * itemBase = dynamic_cast<PaletteItemBase *>(item);
-                    if (itemBase == NULL) continue;
-					if (itemBase->itemType() == ModelPart::Jumper) continue;
+	m_resizingJumperItem = jumperItem;
+	m_resizingJumperItem->saveParams();
+	if (m_alignToGrid) {
+		m_alignmentStartPoint = QPointF(0,0);
+		ItemBase * board = findBoardBeneath(m_resizingJumperItem);
+		QHash<long, ItemBase *> savedItems;
+		QHash<Wire *, ConnectorItem *> savedWires;
+		if (board == NULL) {
+			foreach (QGraphicsItem * item, scene()->items()) {
+				PaletteItemBase * itemBase = dynamic_cast<PaletteItemBase *>(item);
+                if (itemBase == NULL) continue;
+				if (itemBase->itemType() == ModelPart::Jumper) continue;
 
-					savedItems.insert(itemBase->layerKinChief()->id(), itemBase);
-				}
+				savedItems.insert(itemBase->layerKinChief()->id(), itemBase);
 			}
-			findAlignmentAnchor(board, savedItems, savedWires);
-			m_jumperDragOffset = jumperItem->dragOffset();
-			connect(m_resizingJumperItem, SIGNAL(alignMe(JumperItem *, QPointF &)), this, SLOT(alignJumperItem(JumperItem *, QPointF &)), Qt::DirectConnection);
 		}
-		return true;
+		findAlignmentAnchor(board, savedItems, savedWires);
+		m_jumperDragOffset = jumperItem->dragOffset();
+		connect(m_resizingJumperItem, SIGNAL(alignMe(JumperItem *, QPointF &)), this, SLOT(alignJumperItem(JumperItem *, QPointF &)), Qt::DirectConnection);
 	}
-
-	return false;
+	return true;
 }
 
 void PCBSketchWidget::alignJumperItem(JumperItem * jumperItem, QPointF & loc) {

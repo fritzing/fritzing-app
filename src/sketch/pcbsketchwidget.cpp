@@ -504,7 +504,8 @@ void PCBSketchWidget::setNewPartVisible(ItemBase * itemBase) {
 	if (itemBase->itemType() == ModelPart::Breadboard  || 
 		itemBase->itemType() == ModelPart::Symbol || 
 		itemBase->itemType() == ModelPart::SchematicSubpart || 
-		itemBase->moduleID().endsWith(ModuleIDNames::SchematicFrameModuleIDName)) 
+		itemBase->moduleID().endsWith(ModuleIDNames::SchematicFrameModuleIDName) ||
+        itemBase->moduleID().endsWith(ModuleIDNames::PowerModuleIDName)) 
 	{
 		// don't need to see the breadboard in the other views
 		// but it's there so connections can be more easily synched between views

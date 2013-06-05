@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?><module moduleId="Arduino_Mega_R3_PCB">
+ <version replacedby="Arduino_Mega_Rev3_PCB">4</version>
+ <author>Stefan Hermann</author>
+ <title>Arduino Mega Shield PCB</title>
+ <date>2012-06-01</date>
+ <label>PCB</label>
+ <tags>
+  <tag>pcb</tag>
+  <tag>board</tag>
+  <tag>arduino</tag>
+	<tag>mega</tag>
+  <tag>fritzing core</tag>
+ </tags>
+ <properties>
+   <property name="layers">2</property>
+  <property name="Shape">Arduino Mega R3 Shield</property>
+  <property name="family">//obsolete//Plain Vanilla PCB</property>
+  <property name="filename" ></property>
+ </properties>
+ <taxonomy>discreteParts.pcb.plain.arduino_mega_r3_shield</taxonomy>
+ <description>Plain PCB Shaped to fit an Arduino Mega R3 &quot;Shield&quot;</description>
+ <views>
+  <defaultUnits>mm</defaultUnits>
+  <iconView>
+   <layers image="icon/plain_pcb.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+  <breadboardView>
+   <layers image="icon/plain_pcb.svg">
+    <layer layerId="unknown"/>
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="icon/plain_pcb.svg">
+    <layer layerId="unknown"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/pcb-arduino-mega-R3.svg">
+    <layer layerId="silkscreen" sticky="true"/>
+    <layer layerId="silkscreen0" sticky="true"/>
+    <layer layerId="board" sticky="true"/>
+   </layers>
+  </pcbView>
+ </views>
+ <connectors/>
+ <buses/>
+</module>

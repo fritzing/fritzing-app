@@ -3,7 +3,7 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="svg2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="123px" height="86.674px" viewBox="0 0 123 86.674" enable-background="new 0 0 123 86.674" xml:space="preserve">
-<sodipodi:namedview  xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" gridtolerance="10" guidetolerance="10" borderopacity="1" bordercolor="#666666" pagecolor="#ffffff" objecttolerance="10" showgrid="false" fit-margin-top="0" fit-margin-left="0" id="namedview10438" fit-margin-right="0" fit-margin-bottom="0">
+<sodipodi:namedview  gridtolerance="10" guidetolerance="10" borderopacity="1" bordercolor="#666666" pagecolor="#ffffff" objecttolerance="10" showgrid="false" fit-margin-top="0" fit-margin-left="0" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" id="namedview10438" fit-margin-bottom="0" fit-margin-right="0">
 	</sodipodi:namedview>
 <rect id="connector0pin" x="0.75" y="26.675" fill="none" width="12" height="2"/>
 <rect id="connector1pin" x="0.75" y="55.674" fill="none" width="12" height="2"/>
@@ -22,21 +22,21 @@
 			1,30.654 24,30.654 43,30.654 43,40.457 		"/>
 		
 			<polyline id="polyline10369" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="
-			1,59.654 24,59.654 43,59.654 43,50.231 		"/>
+			1,59.655 24,59.655 43,59.655 43,50.231 		"/>
 		
 			<polygon id="polygon10371" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="
 			43,50.231 37.356,40.457 48.643,40.457 		"/>
 		
 			<line id="line10373" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="37.356" y1="50.231" x2="48.643" y2="50.231"/>
 		<g id="g10375" transform="translate(0.86949151,-18.259322)">
-			<path id="path10377" d="M58.94,57.864l2.58-2.056L63,54.629l1.101-0.88l3.491,9.668L58.94,57.864L58.94,57.864z"/>
+			<path id="path10377" d="M58.94,57.864l2.58-2.056L63,54.629l1.102-0.88l3.49,9.668L58.94,57.864L58.94,57.864z"/>
 			
 				<line id="line10379" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="54.934" y1="47.554" x2="63.134" y2="57.832"/>
 		</g>
 		<g id="g10381" transform="translate(0,-14.781356)">
-			<path id="path10383" d="M57.271,66.871l2.58-2.057l1.479-1.18l1.1-0.879l3.493,9.668L57.271,66.871L57.271,66.871z"/>
+			<path id="path10383" d="M57.271,66.872l2.58-2.058l1.479-1.181l1.1-0.879l3.493,9.668L57.271,66.872L57.271,66.872z"/>
 			
-				<line id="line10385" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="53.265" y1="56.561" x2="61.466" y2="66.839"/>
+				<line id="line10385" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="53.265" y1="56.561" x2="61.466" y2="66.838"/>
 		</g>
 		
 			<line id="line10387" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="78.096" y1="32.061" x2="78.096" y2="52.774"/>
@@ -50,29 +50,24 @@
 	</g>
 	<g id="Text">
 		<g id="text10444">
-			<text id="tspan10446" transform="matrix(1 0 0 1 39.2144 15.0431)" font-family="'DroidSans'" font-size="14">TLP621</text>
+			<text id="tspan10446" transform="matrix(1 0 0 1 39.2144 15.0424)" font-family="'DroidSans'" font-size="14">TLP621</text>
 		</g>
 		<g id="text10444_1_">
-			<text id="tspan10446_1_" transform="matrix(1 0 0 1 13.8198 27.9044)" font-family="'DroidSans'" font-size="12">1</text>
+			<text id="tspan10446_1_" transform="matrix(1 0 0 1 13.8198 27.9037)" font-family="'DroidSans'" font-size="12">1</text>
 		</g>
 		<g id="text10444_2_">
-			<text id="tspan10446_2_" transform="matrix(1 0 0 1 13.8198 56.5675)" font-family="'DroidSans'" font-size="12">2</text>
+			<text id="tspan10446_2_" transform="matrix(1 0 0 1 13.8198 56.5668)" font-family="'DroidSans'" font-size="12">2</text>
 		</g>
 		<g id="text10444_3_">
-			<text id="tspan10446_3_" transform="matrix(1 0 0 1 101.9648 56.5675)" font-family="'DroidSans'" font-size="12">3</text>
+			<text id="tspan10446_3_" transform="matrix(1 0 0 1 101.9648 56.5668)" font-family="'DroidSans'" font-size="12">3</text>
 		</g>
 		<g id="text10444_4_">
-			<text id="tspan10446_4_" transform="matrix(1 0 0 1 101.9648 26.713)" font-family="'DroidSans'" font-size="12">4</text>
+			<text id="tspan10446_4_" transform="matrix(1 0 0 1 101.9648 26.7123)" font-family="'DroidSans'" font-size="12">4</text>
 		</g>
 	</g>
-	<rect x="108.316" y="54.928" fill="none" width="12.705" height="3.465"/>
-	<rect x="108.316" y="55.506" fill="none" width="13.282" height="2.31"/>
-	<rect x="114.958" y="56.568" fill="none" width="0.002" height="0.003"/>
-	<rect x="108.316" y="55.413" fill="none" width="13.282" height="2.31"/>
+	<rect x="114.958" y="56.569" fill="none" width="0.002" height="0.002"/>
 	<rect x="114.959" y="55.899" fill="none" width="0.002" height="0.002"/>
-	<rect x="108.316" y="54.743" fill="none" width="13.282" height="2.31"/>
-	<rect x="112.937" y="55.228" fill="none" width="8.662" height="1"/>
-	<rect id="connector5terminal" x="117.268" y="56.213" fill="none" width="0.002" height="0.002"/>
-	<rect id="connector5" x="112.937" y="55.713" fill="none" width="8.662" height="1"/>
+	<rect id="connector5terminal" x="117.268" y="59.525" fill="none" width="0.002" height="0.002"/>
+	<rect id="connector5pin" x="112.938" y="59.026" fill="none" width="8.662" height="1"/>
 </g>
 </svg>

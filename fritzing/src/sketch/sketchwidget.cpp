@@ -1146,7 +1146,7 @@ void SketchWidget::cutDeleteAux(QString undoStackMessage, bool minus, Wire * wir
                         if (toConnectorItem->attachedToItemType() != ModelPart::Wire) continue;
 
                         Wire * wire = qobject_cast<Wire *>(toConnectorItem->attachedTo());
-                        if (!wire->isTraceType(getTraceFlag())) continue;
+                        //if (!wire->isTraceType(getTraceFlag())) continue;         // removes connected wires across views when commented out
 
                         QList<Wire *> wires;
                         wire->collectDirectWires(wires);

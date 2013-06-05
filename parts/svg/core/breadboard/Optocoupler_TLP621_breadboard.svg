@@ -57,7 +57,7 @@
     <text x="7.5508461" y="15.241526" id="tspan3400">621</text>
    </g>
   </g>
-  <rect width="2.283637009697121" x="12.70319125047952" y="0.2765583351955528" fill="none" height="3.942987156369717" id="connector5"/>
+  <rect width="2.283637009697121" x="12.70319125047952" y="0.2765583351955528" fill="none" height="3.942987156369717" id="connector5pin"/>
  </g>
  <g style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:DroidSans" id="text3378" xml:space="preserve" transform="matrix(1.1111111,0,0,1.1111111,-8.6238307e-7,0.00262725)"/>
  <rect width="3" x="12.514442" y="0" height="4.3400002" style="fill:#8c8c8c"/>

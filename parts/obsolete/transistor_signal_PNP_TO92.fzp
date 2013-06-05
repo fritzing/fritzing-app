@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?><module fritzingVersion="0.1.1255" moduleId="2244EBEC10">
- <version>4</version>
+<?xml version="1.0" encoding="UTF-8"?><module fritzingVersion="0.1.1255" moduleId="2244EBEC21">
+ <version replacedby="2244EBEC21e">4</version>
  <author>Stefan Hermann</author>
- <title>NPN-Transistor</title>
+ <title>PNP-Transistor</title>
  <label>Q</label>
  <date>2008-10-10</date>
  <tags>
-  <tag>NPN</tag>
+  <tag>pnp</tag>
   <tag>transistor</tag>
   <tag>signal transistor</tag>
   <tag>amplifier</tag>
@@ -13,23 +13,23 @@
  </tags>
  <properties>
   <property name="package">TO92 [THT]</property>
-  <property name="family">Bipolar Transistor</property>
-  <property name="type">NPN</property>
+  <property name="family">//obsolete// Bipolar Transistor</property>
+  <property name="type">PNP</property>
  </properties>
- <description>A standard NPN-transistor</description>
+ <description>A standard PNP signal transistor</description>
  <views>
   <iconView>
-   <layers image="icon/basic_transistor_npnicon.svg">
+   <layers image="icon/basic_transistor_pnpicon.svg">
     <layer layerId="icon"/>
    </layers>
   </iconView>
   <breadboardView>
-   <layers image="breadboard/transistor_npn.svg">
+   <layers image="breadboard/transistor_pnp.svg">
     <layer layerId="breadboard"/>
    </layers>
   </breadboardView>
-  <schematicView fliphorizontal="true" flipvertical="true">
-   <layers image="schematic/basic_transistor_npn.svg">
+ <schematicView fliphorizontal="true" flipvertical="true">
+   <layers image="schematic/basic_transistor_pnp.svg">
     <layer layerId="schematic"/>
    </layers>
   </schematicView>
@@ -73,7 +73,7 @@
    <description>Collector</description>
    <views>
     <breadboardView>
-     <p layer="breadboard" svgId="connector2pin" legId="connector2leg"/>
+     <p layer="breadboard" svgId="connector2pin"  legId="connector2leg"/>
     </breadboardView>
     <schematicView>
      <p layer="schematic" svgId="connector1pin" terminalId="connector1terminal"/>

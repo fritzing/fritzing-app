@@ -710,7 +710,6 @@ Atmega 16U2 replace the 8U2.&#xd;&#xd;
   <bus id="+5v">
    <nodeMember connectorId="connector40"/>
    <nodeMember connectorId="connector46"/>
-   <nodeMember connectorId="connector84"/>
    <nodeMember connectorId="connector87"/>
   </bus>
   <bus id="gnd">

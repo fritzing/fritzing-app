@@ -28,6 +28,8 @@ $Date: 2013-03-09 08:18:59 +0100 (Sa, 09. Mrz 2013) $
 #include "../connectors/connectoritem.h"
 #include "../model/modelpart.h"
 
+const double VirtualWire::ShapeWidthExtra = 4;
+
 VirtualWire::VirtualWire( ModelPart * modelPart, ViewLayer::ViewID viewID,  const ViewGeometry & viewGeometry, long id, QMenu * itemMenu  ) 
 	: ClipableWire(modelPart, viewID,  viewGeometry,  id, itemMenu, false)
 {
@@ -123,4 +125,9 @@ void VirtualWire::setColorWasNamed(bool colorWasNamed) {
 
 bool VirtualWire::colorWasNamed() {
 	return m_colorWasNamed;
+}
+
+QPainterPath VirtualWire::shape() const
+{
+	return shapeAux(m_hoverStrokeWidth);
 }

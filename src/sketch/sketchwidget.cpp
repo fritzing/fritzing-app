@@ -9145,7 +9145,7 @@ VirtualWire * SketchWidget::makeOneRatsnestWire(ConnectorItem * source, Connecto
 	}
 
 	wire->setColor(color, getRatsnestOpacity());
-	wire->setWireWidth(getRatsnestWidth(), this, 1.0);
+	wire->setWireWidth(getRatsnestWidth(), this, VirtualWire::ShapeWidthExtra + getRatsnestWidth());   
 
 	return wire;
 }

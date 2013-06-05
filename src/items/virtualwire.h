@@ -42,6 +42,7 @@ public:
 	void tempRemoveAllConnections();
 	void setColorWasNamed(bool);
 	bool colorWasNamed();
+    QPainterPath shape() const;
 	
 protected:
 	void paint (QPainter * painter, const QStyleOptionGraphicsItem * option, QWidget * widget );	
@@ -50,6 +51,9 @@ protected:
  	class FSvgRenderer * setUpConnectors(class ModelPart *, ViewLayer::ViewID);
 	void hideConnectors();	
 	void inactivateConnectors();
+
+public:
+    static const double ShapeWidthExtra;
 
 protected:
 	bool m_colorWasNamed;

@@ -33,64 +33,64 @@
 		<text transform="matrix(1 0 0 1 150.6408 454.4843)" font-family="'DroidSans'" font-size="17.7628">128 X 64 GLCD</text>
 		<g>
 			<g>
-				<text transform="matrix(0 -1 1 0 114.3972 592.6074)" font-family="'DroidSans'" font-size="9.9073">20 K(-)</text>
+				<text transform="matrix(-4.371139e-008 -1 1 -4.371139e-008 114.3972 592.6074)" font-family="'DroidSans'" font-size="9.9073">20 K(-)</text>
 			</g>
 			<g>
-				<text transform="matrix(0 -1 1 0 141.0427 592.6074)" font-family="'DroidSans'" font-size="9.9073">19 A(+)</text>
+				<text transform="matrix(-4.371139e-008 -1 1 -4.371139e-008 141.0427 592.6074)" font-family="'DroidSans'" font-size="9.9073">19 A(+)</text>
 			</g>
 			<g>
-				<text transform="matrix(0 -1 1 0 167.6882 592.6074)" font-family="'DroidSans'" font-size="9.9073">18 V out</text>
+				<text transform="matrix(-4.371139e-008 -1 1 -4.371139e-008 167.6882 592.6074)" font-family="'DroidSans'" font-size="9.9073">18 V out</text>
 			</g>
 			<g>
-				<text transform="matrix(0 -1 1 0 194.3337 592.6074)" font-family="'DroidSans'" font-size="9.9073">17 RESET</text>
+				<text transform="matrix(-4.371139e-008 -1 1 -4.371139e-008 194.3337 592.6074)" font-family="'DroidSans'" font-size="9.9073">17 RESET</text>
 			</g>
 			<g>
-				<text transform="matrix(0 -1 1 0 220.9792 592.6074)" font-family="'DroidSans'" font-size="9.9073">16 CS2</text>
+				<text transform="matrix(-4.371139e-008 -1 1 -4.371139e-008 220.9792 592.6074)" font-family="'DroidSans'" font-size="9.9073">16 CS2</text>
 			</g>
 			<g>
-				<text transform="matrix(0 -1 1 0 247.6247 592.6074)" font-family="'DroidSans'" font-size="9.9073">15 CS1</text>
+				<text transform="matrix(-4.371139e-008 -1 1 -4.371139e-008 247.6247 592.6074)" font-family="'DroidSans'" font-size="9.9073">15 CS1</text>
 			</g>
 			<g>
-				<text transform="matrix(0 -1 1 0 274.2702 592.6074)" font-family="'DroidSans'" font-size="9.9073">14 DB7</text>
+				<text transform="matrix(-4.371139e-008 -1 1 -4.371139e-008 274.2702 592.6074)" font-family="'DroidSans'" font-size="9.9073">14 DB7</text>
 			</g>
 			<g>
-				<text transform="matrix(0 -1 1 0 300.9157 592.6074)" font-family="'DroidSans'" font-size="9.9073">13 DB6</text>
+				<text transform="matrix(-4.371139e-008 -1 1 -4.371139e-008 300.9157 592.6074)" font-family="'DroidSans'" font-size="9.9073">13 DB6</text>
 			</g>
 			<g>
-				<text transform="matrix(0 -1 1 0 327.5612 592.6074)" font-family="'DroidSans'" font-size="9.9073">12 DB5</text>
+				<text transform="matrix(-4.371139e-008 -1 1 -4.371139e-008 327.5612 592.6074)" font-family="'DroidSans'" font-size="9.9073">12 DB5</text>
 			</g>
 			<g>
-				<text transform="matrix(0 -1 1 0 354.2068 592.6074)" font-family="'DroidSans'" font-size="9.9073">11 DB4</text>
+				<text transform="matrix(-4.371139e-008 -1 1 -4.371139e-008 354.2068 592.6074)" font-family="'DroidSans'" font-size="9.9073">11 DB4</text>
 			</g>
 			<g>
-				<text transform="matrix(0 -1 1 0 380.8523 592.6074)" font-family="'DroidSans'" font-size="9.9073">10 DB3</text>
+				<text transform="matrix(-4.371139e-008 -1 1 -4.371139e-008 380.8523 592.6074)" font-family="'DroidSans'" font-size="9.9073">10 DB3</text>
 			</g>
 			<g>
-				<text transform="matrix(0 -1 1 0 407.4978 592.6074)" font-family="'DroidSans'" font-size="9.9073">9 DB2</text>
+				<text transform="matrix(-4.371139e-008 -1 1 -4.371139e-008 407.4978 592.6074)" font-family="'DroidSans'" font-size="9.9073">9 DB2</text>
 			</g>
 			<g>
-				<text transform="matrix(0 -1 1 0 434.1433 592.6074)" font-family="'DroidSans'" font-size="9.9073">8 DB1</text>
+				<text transform="matrix(-4.371139e-008 -1 1 -4.371139e-008 434.1433 592.6074)" font-family="'DroidSans'" font-size="9.9073">8 DB1</text>
 			</g>
 			<g>
-				<text transform="matrix(0 -1 1 0 460.7888 592.6074)" font-family="'DroidSans'" font-size="9.9073">7 DB0</text>
+				<text transform="matrix(-4.371139e-008 -1 1 -4.371139e-008 460.7888 592.6074)" font-family="'DroidSans'" font-size="9.9073">7 DB0</text>
 			</g>
 			<g>
-				<text transform="matrix(0 -1 1 0 487.4343 592.6074)" font-family="'DroidSans'" font-size="9.9073">6 Enable</text>
+				<text transform="matrix(-4.371139e-008 -1 1 -4.371139e-008 487.4343 592.6074)" font-family="'DroidSans'" font-size="9.9073">6 Enable</text>
 			</g>
 			<g>
-				<text transform="matrix(0 -1 1 0 514.0798 592.6074)" font-family="'DroidSans'" font-size="9.9073">5 R/W</text>
+				<text transform="matrix(-4.371139e-008 -1 1 -4.371139e-008 514.0798 592.6074)" font-family="'DroidSans'" font-size="9.9073">5 R/W</text>
 			</g>
 			<g>
-				<text transform="matrix(0 -1 1 0 540.7253 592.6074)" font-family="'DroidSans'" font-size="9.9073">4 D/I</text>
+				<text transform="matrix(-4.371139e-008 -1 1 -4.371139e-008 540.7253 592.6074)" font-family="'DroidSans'" font-size="9.9073">4 D/I</text>
 			</g>
 			<g>
-				<text transform="matrix(0 -1 1 0 567.3708 592.6074)" font-family="'DroidSans'" font-size="9.9073">3 Vo</text>
+				<text transform="matrix(-4.371139e-008 -1 1 -4.371139e-008 567.3708 592.6074)" font-family="'DroidSans'" font-size="9.9073">3 Vo</text>
 			</g>
 			<g>
-				<text transform="matrix(0 -1 1 0 594.0163 592.6074)" font-family="'DroidSans'" font-size="9.9073">2 Vdd</text>
+				<text transform="matrix(-4.371139e-008 -1 1 -4.371139e-008 594.0163 592.6074)" font-family="'DroidSans'" font-size="9.9073">2 Vdd</text>
 			</g>
 			<g>
-				<text transform="matrix(0 -1 1 0 620.6618 592.6074)" font-family="'DroidSans'" font-size="9.9073">1 Vss</text>
+				<text transform="matrix(-4.371139e-008 -1 1 -4.371139e-008 620.6618 592.6074)" font-family="'DroidSans'" font-size="9.9073">1 Vss</text>
 			</g>
 		</g>
 	</g>

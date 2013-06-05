@@ -146,7 +146,7 @@
                 </iconView>
             </views>
         </instance>	
-						<instance moduleIdRef="PowerSupply-Lipo-v14" modelIndex="5584" path="pdb/core/PowerSupply-Lipo-v15.fzp">
+						<instance moduleIdRef="PowerSupply-Lipo-v15" modelIndex="5584" path="pdb/core/PowerSupply-Lipo-v15.fzp">
             <views>
                 <iconView layer="">
                     <geometry z="0" x="-1" y="-1"/>

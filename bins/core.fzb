@@ -52,16 +52,16 @@
                 </iconView>
             </views>
         </instance>
-	<!--
-        <instance moduleIdRef="2244EBEC21" modelIndex="10" path="parts/core/transistor_signal_PNP_TO92.fzp">
+	
+        <instance moduleIdRef="2244EBEC21e" modelIndex="10" path="parts/core/transistor_signal_PNP_TO92_EBC.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
                 </iconView>
             </views>
         </instance>
-	-->
-        <instance moduleIdRef="2244EBEC10" modelIndex="11" path="parts/core/transistor_signal_NPN_TO92.fzp">
+	
+        <instance moduleIdRef="NPN-to92-ebc" modelIndex="11" path="parts/core/transistor_signal_NPN_TO92_EBC.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>

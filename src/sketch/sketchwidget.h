@@ -501,6 +501,8 @@ protected:
 	QString renderToSVG(RenderThing &, const LayerList &);
 	QString renderToSVG(RenderThing &, QList<QGraphicsItem *> & itemsAndLabels);
     QList<ItemBase *> collectSuperSubs(ItemBase *);
+    QList<class ItemBase *> squashShapes(QPointF scenePos);
+    void unsquashShapes(QList<class ItemBase *> &);
 
 protected:
 	static bool lessThan(int a, int b);

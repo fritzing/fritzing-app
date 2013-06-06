@@ -108,7 +108,7 @@ void LayerKinPaletteItem::mousePressEvent(QGraphicsSceneMouseEvent *event) {
     m_passMouseEvents = false;
 
 	//DebugDialog::debug("layer kin mouse press event");
-	if (m_layerKinChief->lowerConnectorLayerVisible(this)) {
+	if (m_layerKinChief->lowerConnectorLayerVisible(this, event->scenePos())) {
 		// TODO: this code may be unnecessary
 		DebugDialog::debug("LayerKinPaletteItem::mousePressEvent isn't obsolete");
 		event->ignore();
@@ -154,9 +154,9 @@ void LayerKinPaletteItem::clearModelPart() {
 	m_layerKinChief->clearModelPart();
 }
 
-ItemBase * LayerKinPaletteItem::lowerConnectorLayerVisible(ItemBase * itemBase) {
+ItemBase * LayerKinPaletteItem::lowerConnectorLayerVisible(ItemBase * itemBase, QPointF scenePos) {
     //debugInfo("layerkin lowerconnector");
-	return m_layerKinChief->lowerConnectorLayerVisible(itemBase);
+	return m_layerKinChief->lowerConnectorLayerVisible(itemBase, scenePos);
 }
 
 bool LayerKinPaletteItem::stickyEnabled() {

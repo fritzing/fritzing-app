@@ -43,6 +43,7 @@ $Date: 2013-04-28 13:51:10 +0200 (So, 28. Apr 2013) $
 #include "../utils/graphicsutils.h"
 #include "../utils/familypropertycombobox.h"
 #include "../svg/svgfilesplitter.h"
+#include "wire.h"
 
 #include <QGraphicsSceneMouseEvent>
 #include <QSvgRenderer>
@@ -372,7 +373,7 @@ void PaletteItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
 		return;
 	}
 
-	if (lowerConnectorLayerVisible(this)) {
+	if (lowerConnectorLayerVisible(this, event->pos())) {
 		DebugDialog::debug("PaletteItem::mousePressEvent isn't obsolete");
 		event->ignore();
 		return;
@@ -467,7 +468,28 @@ void PaletteItem::clearModelPart() {
 	ItemBase::clearModelPart();
 }
 
-ItemBase * PaletteItem::lowerConnectorLayerVisible(ItemBase * itemBase) {   
+ItemBase * PaletteItem::lowerConnectorLayerVisible(ItemBase * itemBase, QPointF scenePos) {   
+
+    return NULL;
+
+
+    ConnectorItem * connectorItem = NULL;
+    Wire * wire = NULL;
+    foreach (QGraphicsItem * item, scene()->items(scenePos)) {
+        connectorItem = dynamic_cast<ConnectorItem *>(item);
+        if (connectorItem) break;
+
+        wire = dynamic_cast<Wire *>(item);
+        if (wire) break;
+    }
+
+    if (connectorItem) {
+        if (connectorItem->attachedTo() == itemBase) return NULL;
+        return connectorItem->attachedTo();
+    }
+
+    if (wire) return wire;
+
     // note: see figureHover() which sets up which layerkin will accept hover events
 	if (m_layerKin.count() == 0) return NULL;
     if (itemBase->hasConnectors()) return NULL;

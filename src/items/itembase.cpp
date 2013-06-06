@@ -146,6 +146,8 @@ ItemBase::ItemBase( ModelPart* modelPart, ViewLayer::ViewID viewID, const ViewGe
     m_superpart = NULL;
 	m_acceptsMousePressLegEvent = true;
 
+    m_squashShape = false;
+
     //DebugDialog::debug(QString("itembase %1 %2").arg(id).arg((long) static_cast<QGraphicsItem *>(this), 0, 16));
 	m_hasRubberBandLeg = m_moveLock = m_hoverEnterSpaceBarWasPressed = m_spaceBarWasPressed = false;
 
@@ -1500,8 +1502,9 @@ void ItemBase::updateConnectionsAux(bool includeRatsnest, QList<ConnectorItem *>
 	}
 }
 
-ItemBase * ItemBase::lowerConnectorLayerVisible(ItemBase * itemBase) {
+ItemBase * ItemBase::lowerConnectorLayerVisible(ItemBase * itemBase, QPointF scenePos) {
 	Q_UNUSED(itemBase);
+	Q_UNUSED(scenePos);
 	return NULL;
 }
 
@@ -2329,4 +2332,9 @@ QHash<QString, QString> ItemBase::prepareProps(ModelPart * modelPart, bool wantD
 
     return props;
 }
+
+void ItemBase::setSquashShape(bool squashShape) {
+    m_squashShape = squashShape;
+}
+
 

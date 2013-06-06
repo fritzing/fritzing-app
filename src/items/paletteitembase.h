@@ -64,6 +64,10 @@ public:
 	virtual void mouseReleaseEvent(PaletteItemBase * originalItem, QGraphicsSceneMouseEvent *event);
 	void mouseMoveEvent(QGraphicsSceneMouseEvent *event);
 	void mouseReleaseEvent(QGraphicsSceneMouseEvent *event);
+	void hoverEnterEvent(QGraphicsSceneHoverEvent * event );
+	void hoverLeaveEvent(QGraphicsSceneHoverEvent * event );
+	void hoverMoveEvent(QGraphicsSceneHoverEvent * event );
+	void contextMenuEvent(QGraphicsSceneContextMenuEvent *event);
 	//bool isBuriedConnectorHit(QGraphicsSceneMouseEvent *event);
 	QRectF boundingRect() const;
 	QRectF boundingRectWithoutLegs() const;
@@ -90,10 +94,6 @@ protected:
 protected:
     void setUpConnectors(FSvgRenderer *, bool ignoreTerminalPoints);
 	void findConnectorsUnder();
-	void hoverEnterEvent(QGraphicsSceneHoverEvent * event );
-	void hoverLeaveEvent(QGraphicsSceneHoverEvent * event );
-	void hoverMoveEvent(QGraphicsSceneHoverEvent * event );
-	void contextMenuEvent(QGraphicsSceneContextMenuEvent *event);
 	virtual bool canFindConnectorsUnder();
 	bool inRotationLocation(QPointF scenePos, Qt::KeyboardModifiers modifiers, QPointF & returnPoint);
 	virtual bool freeRotationAllowed(Qt::KeyboardModifiers modifiers);

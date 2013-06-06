@@ -105,7 +105,7 @@ public:
 	void collectWireConnectees(QSet<class Wire *> & wires);
 	void clearModelPart();
 	bool mousePressEvent(PaletteItemBase * originalItem, QGraphicsSceneMouseEvent *);
-	ItemBase * lowerConnectorLayerVisible(ItemBase *);
+	ItemBase * lowerConnectorLayerVisible(ItemBase *, QPointF scenePos);
 	void resetID();
 	void slamZ(double z);
 	void resetImage(class InfoGraphicsView *);

@@ -157,7 +157,7 @@ public:
 	void prepareGeometryChange();
 	virtual void resetID();
 	void updateConnectionsAux(bool includeRatsnest, QList<ConnectorItem *> & already);
-	virtual ItemBase * lowerConnectorLayerVisible(ItemBase *);
+	virtual ItemBase * lowerConnectorLayerVisible(ItemBase *, QPointF scenePos);
 	void hoverEnterEvent( QGraphicsSceneHoverEvent * event );
 	void hoverLeaveEvent( QGraphicsSceneHoverEvent * event );
     void contextMenuEvent(QGraphicsSceneContextMenuEvent *event);
@@ -230,6 +230,7 @@ public:
     ItemBase * superpart();
     ItemBase * findSubpart(const QString & connectorID, ViewLayer::ViewLayerPlacement);
     const QList< QPointer<ItemBase> > & subparts();
+    void setSquashShape(bool);
 
 public:
 	virtual void getConnectedColor(ConnectorItem *, QBrush * &, QPen * &, double & opacity, double & negativePenWidth, bool & negativeOffsetRect);
@@ -367,6 +368,7 @@ protected:
  	bool m_inRotation;
     QPointer<ItemBase> m_superpart;
     QList< QPointer<ItemBase> > m_subparts;
+    bool m_squashShape;
       
  protected:
 	static long nextID;

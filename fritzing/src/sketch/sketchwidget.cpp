@@ -2272,6 +2272,7 @@ void SketchWidget::mousePressEvent(QMouseEvent *event)
 	m_mousePressScenePos = mapToScene(event->pos());
 	m_mousePressGlobalPos = event->globalPos();
 
+    QList<ItemBase *> squashed = squashShapes(m_mousePressScenePos);
 	QList<QGraphicsItem *> items = this->items(event->pos());
 	QGraphicsItem* wasItem = getClickedItem(items);
 
@@ -2280,6 +2281,7 @@ void SketchWidget::mousePressEvent(QMouseEvent *event)
 	QGraphicsView::mousePressEvent(event);
 	if (m_anyInRotation) {
 		m_anyInRotation = false;
+        unsquashShapes(squashed);
 		return;
 	}
 
@@ -2290,6 +2292,8 @@ void SketchWidget::mousePressEvent(QMouseEvent *event)
 		// for example, by shift-clicking a connectorItem
 		return;
 	}
+
+    unsquashShapes(squashed);
 
 	if (item == NULL) {
 		if (items.length() == 1) {
@@ -3002,8 +3006,8 @@ void SketchWidget::mouseMoveEvent(QMouseEvent *event) {
 
 	if (m_movingByArrow) return;
 
-	QPointF sp = mapToScene(event->pos());
-	emit cursorLocationSignal(sp.x() / GraphicsUtils::SVGDPI, sp.y() / GraphicsUtils::SVGDPI);
+	QPointF scenePos = mapToScene(event->pos());
+	emit cursorLocationSignal(scenePos.x() / GraphicsUtils::SVGDPI, scenePos.y() / GraphicsUtils::SVGDPI);
 
 	if (m_dragBendpointWire != NULL) {
 		Wire * tempWire = m_dragBendpointWire;
@@ -3063,8 +3067,7 @@ void SketchWidget::mouseMoveEvent(QMouseEvent *event) {
 
 	m_moveEventCount++;
 	if (m_alignToGrid && m_draggingBendpoint) {
-		QPointF sp = mapToScene(event->pos());
-		
+		QPointF sp(scenePos);
 		alignLoc(sp, sp, QPointF(0,0), QPointF(0,0));  
 		QPointF p = mapFromScene(sp);
 		QPoint pp(qRound(p.x()), qRound(p.y()));
@@ -3081,7 +3084,13 @@ void SketchWidget::mouseMoveEvent(QMouseEvent *event) {
 		checkAutoscroll(event->globalPos());
 	}
 
+    QList<ItemBase *> squashed;
+	if (event->buttons() == Qt::NoButton) {
+        squashed  = squashShapes(scenePos);
+    }
+
 	QGraphicsView::mouseMoveEvent(event);
+    unsquashShapes(squashed);
 }
 
 QString SketchWidget::makeMoveSVG(double printerScale, double dpi, QPointF & offset) 
@@ -9758,5 +9767,65 @@ void SketchWidget::alignItems(Qt::Alignment alignment) {
 	m_savedItems.clear();
 	m_savedWires.clear();
 }
+
+QList<ItemBase *> SketchWidget::squashShapes(QPointF scenePos) 
+{
+    if (viewID() == ViewLayer::BreadboardView) return;
+
+    QList<ItemBase *> squashed;
+    ConnectorItem * connectorItem = NULL;
+    Wire * wire = NULL;
+    QList<QGraphicsItem *> itms = scene()->items(scenePos);
+    if (itms.count() <= 1) return squashed;
+
+    int ix = 0;
+    foreach (QGraphicsItem * item, itms) {
+        connectorItem = dynamic_cast<ConnectorItem *>(item);
+        if (connectorItem && connectorItem->acceptsHoverEvents()) break;
+
+        wire = dynamic_cast<Wire *>(item);
+        if (wire && wire->acceptsHoverEvents()) break;
+
+        ix++;
+    }
+
+    if (wire == NULL && connectorItem == NULL) {
+        return squashed;
+    }
+
+    if (ix == 0) {
+        return squashed;
+    }
+
+    bool firstTime = true;
+    for (int i = 0; i < ix; i++) {
+        ItemBase * itemBase = dynamic_cast<ItemBase *>(itms.at(i));
+        if (itemBase == NULL) continue;
+
+        if (connectorItem != NULL && connectorItem->parentItem() == itemBase) {
+            if (firstTime) {
+                // topmost  contains connectorItem
+                return squashed;
+            }
+
+            // pib lower in the list owns the connectorItem
+            break;
+        }
+
+        firstTime = false;
+        itemBase->setSquashShape(true);
+        squashed << itemBase;
+    }
+
+    return squashed;
+}
+
+void SketchWidget::unsquashShapes(QList<ItemBase *> & squashed) {
+    foreach (ItemBase * itemBase, squashed) {
+        itemBase->setSquashShape(false);
+    }
+}
+
+
 
 

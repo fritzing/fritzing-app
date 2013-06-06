@@ -38,7 +38,7 @@ class FGraphicsScene : public QGraphicsScene
 public:
 	FGraphicsScene(QObject * parent = 0);
 	void helpEvent(QGraphicsSceneHelpEvent *);
-	void contextMenuEvent(QGraphicsSceneContextMenuEvent *contextMenuEvent);
+	void contextMenuEvent(QGraphicsSceneContextMenuEvent *);
 	QPointF lastContextMenuPos();
     void setDisplayHandles(bool);
     bool displayHandles();

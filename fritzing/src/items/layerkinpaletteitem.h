@@ -42,7 +42,7 @@ public:
 	void setHidden(bool hidden);
 	void setInactive(bool inactivate);
 	void clearModelPart();
-	ItemBase * lowerConnectorLayerVisible(ItemBase *);
+	ItemBase * lowerConnectorLayerVisible(ItemBase *, QPointF scenePos);
 	void init(LayerAttributes &, const LayerHash &viewLayers);
 	bool isSticky();
 	bool isBaseSticky();

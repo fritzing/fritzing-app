@@ -66,7 +66,6 @@ public:
 
 public:
     static void splitNetPrep(QDomDocument * masterDoc, QList<class ConnectorItem *> & equi, const Markers &, QList<QDomElement> & net, QList<QDomElement> & alsoNet, QList<QDomElement> & notNet, bool checkIntersection);
-    static void renderOne(QDomDocument * masterDoc, QImage * image, const QRectF & sourceRes);
     static void extendBorder(double keepoutImagePixels, QImage * image);
 
 public slots:

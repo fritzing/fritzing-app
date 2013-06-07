@@ -387,7 +387,7 @@ void PartsBinListView::loadImage(QListWidgetItem * lwi, const QString & moduleID
         layerAttributes.viewID = ViewLayer::IconView;
         layerAttributes.viewLayerID = ViewLayer::Icon;
         layerAttributes.viewLayerPlacement = itemBase->viewLayerPlacement();
-        layerAttributes.doConnectors = false;
+        layerAttributes.createShape = layerAttributes.doConnectors = false;
 		FSvgRenderer * renderer = itemBase->setUpImage(modelPart, layerAttributes);
 		if (renderer != NULL) {
 			if (itemBase) {

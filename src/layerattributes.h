@@ -56,6 +56,7 @@ public:
     ViewLayer::ViewLayerPlacement viewLayerPlacement;
     bool doConnectors;
     Qt::Orientations orientation;
+    bool createShape;
 };
 
 #endif

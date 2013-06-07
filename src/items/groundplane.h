@@ -71,7 +71,6 @@ protected:
 protected:
 	ConnectorItem * m_connector0;
 	QPointF m_dropOffset;
-	QPainterPath m_shape;
 };
 
 #endif

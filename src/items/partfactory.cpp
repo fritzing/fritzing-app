@@ -614,7 +614,8 @@ void PartFactory::fixSubpartBounds(QDomElement & top, ModelPartShared * mps)
     if (!loaded) return;
 
     QRectF viewBox;
-    TextUtils::ensureViewBox(top.ownerDocument(), 1, viewBox, false);
+    double wignore, hignore;
+    TextUtils::ensureViewBox(top.ownerDocument(), 1, viewBox, false, wignore, hignore, false);
     double sWidth, sHeight, vbWidth, vbHeight;
     QDomDocument doc = top.ownerDocument();
     TextUtils::getSvgSizes(doc, sWidth, sHeight, vbWidth, vbHeight);

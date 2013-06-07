@@ -332,18 +332,19 @@ public:
     void moveItem(ItemBase *, double x, double y);
 
 protected:
-    void dragEnterEvent(QDragEnterEvent *event);
-	bool dragEnterEventAux(QDragEnterEvent *event);
-	virtual bool canDropModelPart(ModelPart * modelPart);
+    void dragEnterEvent(QDragEnterEvent *);
+	bool dragEnterEventAux(QDragEnterEvent *);
+	virtual bool canDropModelPart(ModelPart *);
 
-    void dragLeaveEvent(QDragLeaveEvent *event);
-    void dragMoveEvent(QDragMoveEvent *event);
-    void dropEvent(QDropEvent *event);
-	virtual void mousePressEvent(QMouseEvent *event);
-	void mouseMoveEvent(QMouseEvent *event);
-	void mouseReleaseEvent(QMouseEvent *event);
+    void dragLeaveEvent(QDragLeaveEvent *);
+    void dragMoveEvent(QDragMoveEvent *);
+    void dropEvent(QDropEvent *);
+	virtual void mousePressEvent(QMouseEvent *);
+	void mouseMoveEvent(QMouseEvent *);
+	void mouseReleaseEvent(QMouseEvent *);
+    void contextMenuEvent(QContextMenuEvent *);
     void paintEvent(QPaintEvent *);
-    virtual PaletteItem* addPartItem(ModelPart * modelPart, ViewLayer::ViewLayerPlacement, PaletteItem * paletteItem, bool doConnectors, bool & ok, ViewLayer::ViewID, bool temporary);
+    virtual PaletteItem* addPartItem(ModelPart * , ViewLayer::ViewLayerPlacement, PaletteItem *, bool doConnectors, bool & ok, ViewLayer::ViewID, bool temporary);
 	void clearHoldingSelectItem();
 	bool startZChange(QList<ItemBase *> & bases);
 	void continueZChange(QList<ItemBase *> & bases, int start, int end, bool (*test)(int current, int start), int inc, const QString & text);
@@ -501,6 +502,8 @@ protected:
 	QString renderToSVG(RenderThing &, const LayerList &);
 	QString renderToSVG(RenderThing &, QList<QGraphicsItem *> & itemsAndLabels);
     QList<ItemBase *> collectSuperSubs(ItemBase *);
+    QList<class ItemBase *> squashShapes(QPointF scenePos);
+    void unsquashShapes(QList<class ItemBase *> &);
 
 protected:
 	static bool lessThan(int a, int b);

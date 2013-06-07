@@ -9758,8 +9758,10 @@ void SketchWidget::alignItems(Qt::Alignment alignment) {
     }
 	//DebugDialog::debug(QString("done move items %1").arg(QTime::currentTime().msec()) );
 
-    foreach (ItemBase * itemBase, m_savedItems) {
-        m_infoView->updateLocation(itemBase->layerKinChief());
+    if (m_infoView) {
+        foreach (ItemBase * itemBase, m_savedItems) {
+            m_infoView->updateLocation(itemBase->layerKinChief());
+        }
     }
 
 	m_movingByArrow = false;

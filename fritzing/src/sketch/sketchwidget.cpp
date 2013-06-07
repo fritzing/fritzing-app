@@ -9869,7 +9869,16 @@ void SketchWidget::unsquashShapes(QList<ItemBase *> & squashed) {
 
 void SketchWidget::contextMenuEvent(QContextMenuEvent *event)
 {
+    // this event does not occur within mousePressEvent() so squashshapes is not called twice
     QList<ItemBase *> squashed  = squashShapes(mapToScene(event->pos()));
     InfoGraphicsView::contextMenuEvent(event);
     unsquashShapes(squashed);
 }
+
+void SketchWidget::mouseDoubleClickEvent(QMouseEvent *event)
+{
+    QList<ItemBase *> squashed  = squashShapes(mapToScene(event->pos()));
+    InfoGraphicsView::mouseDoubleClickEvent(event);
+    unsquashShapes(squashed);
+}
+

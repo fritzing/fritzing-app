@@ -242,13 +242,13 @@ void GroundPlane::setDropOffset(QPointF offset)
 
 void GroundPlane::setShape(QPainterPath & pp) {
 	QPen pen;
-	m_selectionShape = GraphicsUtils::shapeFromPath(pp, pen, pen.widthF(), true);
+	m_shape = GraphicsUtils::shapeFromPath(pp, pen, pen.widthF(), true);
 }
 
 QPainterPath GroundPlane::shape() const
 {
-	if (!m_selectionShape.isEmpty()) {
-		return m_selectionShape;
+	if (!m_shape.isEmpty()) {
+		return m_shape;
 	}
     
     return PaletteItemBase::shape();

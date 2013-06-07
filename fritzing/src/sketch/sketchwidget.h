@@ -241,7 +241,7 @@ public:
 	ConnectorItem * lastHoverEnterConnectorItem();
 	ItemBase * lastHoverEnterItem();
 	LayerHash & viewLayers();
-	virtual void createTrace(Wire*);
+	virtual void createTrace(Wire*, bool useLastWireColor);
 	virtual void selectAllWires(ViewGeometry::WireFlag);
 	virtual void tidyWires();
 	const QString & getShortName();
@@ -489,8 +489,8 @@ protected:
 	void makeRatsnestViewGeometry(ViewGeometry & viewGeometry, ConnectorItem * source, ConnectorItem * dest); 
 	virtual double getTraceWidth();
 	virtual const QString & traceColor(ViewLayer::ViewLayerPlacement);
-	void createTrace(Wire * fromWire, const QString & commandString, ViewGeometry::WireFlag);
-	bool createOneTrace(Wire * wire, ViewGeometry::WireFlag flag, bool allowAny, QList<Wire *> & done, QUndoCommand * parentCommand);
+	void createTrace(Wire * fromWire, const QString & commandString, ViewGeometry::WireFlag, bool useLastWireColor);
+	bool createOneTrace(Wire * wire, ViewGeometry::WireFlag flag, bool allowAny, QList<Wire *> & done, bool useLastWireColor, QUndoCommand * parentCommand);
 	void removeWire(Wire * w, QList<ConnectorItem *> & ends, QList<Wire *> & done, QUndoCommand * parentCommand);
     void selectAllWiresFrom(ViewGeometry::WireFlag flag, QList<QGraphicsItem *> & items);
     bool canConnect(ItemBase * from, ItemBase * to);

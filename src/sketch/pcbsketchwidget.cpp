@@ -238,9 +238,9 @@ bool PCBSketchWidget::canChainWire(Wire * wire) {
 }
 
 
-void PCBSketchWidget::createTrace(Wire * wire) {
+void PCBSketchWidget::createTrace(Wire * wire, bool useLastWireColor) {
 	QString commandString = tr("Create Trace from Ratsnest");
-	SketchWidget::createTrace(wire, commandString, getTraceFlag());
+	SketchWidget::createTrace(wire, commandString, getTraceFlag(), useLastWireColor);
 	ensureTraceLayerVisible();
 }
 
@@ -1259,7 +1259,7 @@ void PCBSketchWidget::wireSplitSlot(Wire* wire, QPointF newPos, QPointF oldPos, 
 		SketchWidget::wireSplitSlot(wire, newPos, oldPos, oldLine);
 	}
 
-	createTrace(wire);
+	createTrace(wire, false);
 }
 
 

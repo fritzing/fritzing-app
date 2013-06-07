@@ -45,7 +45,7 @@ public:
 	void addViewLayers();
 	bool canDeleteItem(QGraphicsItem * item, int count);
 	bool canCopyItem(QGraphicsItem * item, int count);
-	void createTrace(Wire *);
+	void createTrace(Wire *, bool useLastWireColor);
 	void excludeFromAutoroute(bool exclude);
 	void selectAllExcludedTraces();
 	void selectAllIncludedTraces();

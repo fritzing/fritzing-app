@@ -2808,7 +2808,7 @@ void MainWindow::newAutoroute() {
 }
 
 void MainWindow::createTrace() {
-	m_currentGraphicsView->createTrace(retrieveWire());
+	m_currentGraphicsView->createTrace(retrieveWire(), true);
 }
 
 void MainWindow::excludeFromAutoroute() {

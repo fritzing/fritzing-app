@@ -4000,6 +4000,9 @@ void SketchWidget::dragRatsnestChanged()
 
 	double traceWidth = getTraceWidth();
 	QString tColor = traceColor(viewLayerPlacement);
+    if (!this->m_lastColorSelected.isEmpty()) {
+        tColor = this->m_lastColorSelected;
+    }
 
 	long newID1 = ItemBase::getNextID();
 	ViewGeometry vg1 = m_connectorDragWire->getViewGeometry();
@@ -7796,12 +7799,12 @@ void SketchWidget::setClipEnds(ClipableWire * vw, bool) {
 	vw->setClipEnds(false);
 }
 
-void SketchWidget::createTrace(Wire * wire) {
+void SketchWidget::createTrace(Wire * wire, bool useLastWireColor) {
 	QString commandString = tr("Create wire from Ratsnest");
-	createTrace(wire, commandString, getTraceFlag());
+	createTrace(wire, commandString, getTraceFlag(), useLastWireColor);
 }
 
-void SketchWidget::createTrace(Wire * fromWire, const QString & commandString, ViewGeometry::WireFlag flag)
+void SketchWidget::createTrace(Wire * fromWire, const QString & commandString, ViewGeometry::WireFlag flag, bool useLastWireColor)
 {
 	QList<Wire *> done;
 	QUndoCommand * parentCommand = new QUndoCommand(commandString);
@@ -7816,11 +7819,11 @@ void SketchWidget::createTrace(Wire * fromWire, const QString & commandString, V
 			if (wire == NULL) continue;
 			if (done.contains(wire)) continue;
 
-			gotOne = createOneTrace(wire, flag, false, done, parentCommand);
+			gotOne = createOneTrace(wire, flag, false, done, useLastWireColor, parentCommand);
 		}
 	}
 	else {
-		gotOne = createOneTrace(fromWire, flag, false, done, parentCommand);
+		gotOne = createOneTrace(fromWire, flag, false, done, useLastWireColor, parentCommand);
 	}
 
 	if (!gotOne) {
@@ -7834,7 +7837,7 @@ void SketchWidget::createTrace(Wire * fromWire, const QString & commandString, V
 }
 
 
-bool SketchWidget::createOneTrace(Wire * wire, ViewGeometry::WireFlag flag, bool allowAny, QList<Wire *> & done, QUndoCommand * parentCommand) 
+bool SketchWidget::createOneTrace(Wire * wire, ViewGeometry::WireFlag flag, bool allowAny, QList<Wire *> & done, bool useLastWireColor, QUndoCommand * parentCommand) 
 {
 	QList<ConnectorItem *> ends;
 	Wire * trace = NULL;
@@ -7861,6 +7864,10 @@ bool SketchWidget::createOneTrace(Wire * wire, ViewGeometry::WireFlag flag, bool
 	}
 
 	QString colorString = traceColor(createWireViewLayerPlacement(ends[0], ends[1]));
+    if (useLastWireColor && !this->m_lastColorSelected.isEmpty()) {
+		colorString = m_lastColorSelected;
+	}
+
 	long newID = createWire(ends[0], ends[1], flag, false, BaseCommand::CrossView, parentCommand);
 	// TODO: is this opacity constant stored someplace
 	new WireColorChangeCommand(this, newID, colorString, colorString, 1.0, 1.0, parentCommand);

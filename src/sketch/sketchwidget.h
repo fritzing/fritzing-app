@@ -342,6 +342,7 @@ protected:
 	virtual void mousePressEvent(QMouseEvent *);
 	void mouseMoveEvent(QMouseEvent *);
 	void mouseReleaseEvent(QMouseEvent *);
+    void mouseDoubleClickEvent (QMouseEvent *);
     void contextMenuEvent(QContextMenuEvent *);
     void paintEvent(QPaintEvent *);
     virtual PaletteItem* addPartItem(ModelPart * , ViewLayer::ViewLayerPlacement, PaletteItem *, bool doConnectors, bool & ok, ViewLayer::ViewID, bool temporary);

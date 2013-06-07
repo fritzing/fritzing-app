@@ -105,7 +105,6 @@ public:
 	void collectWireConnectees(QSet<class Wire *> & wires);
 	void clearModelPart();
 	bool mousePressEvent(PaletteItemBase * originalItem, QGraphicsSceneMouseEvent *);
-	ItemBase * lowerConnectorLayerVisible(ItemBase *, QPointF scenePos);
 	void resetID();
 	void slamZ(double z);
 	void resetImage(class InfoGraphicsView *);
@@ -156,7 +155,7 @@ protected:
     void generateSwap(const QString & text, GenModuleID, GenFzp, GenSvg makeBreadboardSvg, GenSvg makeSchematicSvg, GenSvg makePcbSvg);
     bool makeLocalModifications(QByteArray & svg, const QString & filename);
     void makeOneKin(qint64 & id, ViewLayer::ViewLayerID, ViewLayer::ViewLayerPlacement, ViewGeometry &, const LayerHash &);
-    void initLayerAttributes(LayerAttributes & layerAttributes, ViewLayer::ViewID, ViewLayer::ViewLayerID, ViewLayer::ViewLayerPlacement, bool doConnectors);
+    void initLayerAttributes(LayerAttributes & layerAttributes, ViewLayer::ViewID, ViewLayer::ViewLayerID, ViewLayer::ViewLayerPlacement, bool doConnectors, bool doCreateShape);
 
 protected:
     void setUpHoleSizes(const QString & type, HoleClassThing &);

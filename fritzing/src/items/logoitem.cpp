@@ -369,7 +369,8 @@ void LogoItem::loadImage(const QString & fileName, bool addName)
         }
 
         QRectF vb;
-		TextUtils::ensureViewBox(domDocument, GraphicsUtils::SVGDPI, vb, true);
+        double w, h;
+		TextUtils::ensureViewBox(domDocument, GraphicsUtils::SVGDPI, vb, true, w, h, false);
 
         QDomElement layerElement = TextUtils::findElementWithAttribute(root, "id", layerName());
         if (layerElement.isNull()) {

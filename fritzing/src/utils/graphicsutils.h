@@ -71,6 +71,7 @@ public:
 	static QPointF calcRotation(QTransform & rotation, QPointF rCenter, QPointF p, QPointF pCenter); 
     static void drawBorder(QImage * image, int border);
     static bool isFlipped(const QMatrix & matrix, double & rotation);
+    static void renderOne(QDomDocument *, QImage *, const QRectF & renderRect);
 
 public:
 	static const double IllustratorDPI;

@@ -1105,7 +1105,7 @@ bool MazeRouter::routeNets(NetList & netList, bool makeJumper, Score & currentSc
 
             //DebugDialog::debug("obstacles from board");
             m_spareImage->fill(0xffffffff);
-            DRC::renderOne(masterDoc, m_spareImage, routeThing.r4);
+            GraphicsUtils::renderOne(masterDoc, m_spareImage, routeThing.r4);
             #ifndef QT_NO_DEBUG
                //m_spareImage->save(FolderUtils::getUserDataStorePath("") + QString("/obstacles%1_%2.png").arg(netIndex, 2, 10, QChar('0')).arg(viewLayerPlacement));
             #endif
@@ -1481,7 +1481,7 @@ QList<QPoint> MazeRouter::renderSource(QDomDocument * masterDoc, int z, ViewLaye
     int x2 = qCeil((itemsBoundingRect.right() - m_maxRect.left()) / m_gridPixels);
     int y2 = qCeil((itemsBoundingRect.bottom() - m_maxRect.top()) / m_gridPixels);
 
-    DRC::renderOne(masterDoc, m_spareImage, renderRect);
+    GraphicsUtils::renderOne(masterDoc, m_spareImage, renderRect);
 #ifndef QT_NO_DEBUG
     static int rsi = 0;
 	m_spareImage->save(FolderUtils::getUserDataStorePath("") + QString("/rendersource%1_%2.png").arg(rsi++,3,10,QChar('0')).arg(z));
@@ -3033,7 +3033,7 @@ void MazeRouter::optimizeTraces(QList<int> & order, QMultiHash<int, QList< QPoin
                 element.setTagName("g");
             }
 
-            DRC::renderOne(masterDoc, m_spareImage, r2);
+            GraphicsUtils::renderOne(masterDoc, m_spareImage, r2);
 
             //QString after = masterDoc->toString();
 

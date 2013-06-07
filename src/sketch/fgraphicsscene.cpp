@@ -26,6 +26,7 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 
 #include "fgraphicsscene.h"
 #include "../items/paletteitembase.h"
+#include "../items/wire.h"
 #include "../connectors/connectoritem.h"
 #include "../sketch/infographicsview.h"
 
@@ -96,5 +97,3 @@ void FGraphicsScene::setDisplayHandles(bool displayHandles) {
 bool FGraphicsScene::displayHandles() {
     return m_displayHandles;
 }
-
-

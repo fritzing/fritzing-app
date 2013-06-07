@@ -2089,11 +2089,20 @@ void MainWindow::swapSelectedAux(ItemBase * itemBase, const QString & moduleID, 
 	new CleanUpRatsnestsCommand(m_breadboardGraphicsView, CleanUpWiresCommand::UndoOnly, parentCommand);
 
     ViewLayer::ViewLayerPlacement viewLayerPlacement = itemBase->viewLayerPlacement();
+    ModelPart * modelPart = m_referenceModel->retrieveModelPart(moduleID);
     if (m_pcbGraphicsView->boardLayers() == 2) {
-        ModelPart * modelPart = m_referenceModel->retrieveModelPart(moduleID);
         if (modelPart->flippedSMD()) {
             //viewLayerPlacement = m_pcbGraphicsView->dropOnBottom() ? ViewLayer::NewBottom : ViewLayer::NewTop;
             if (useViewLayerPlacement) viewLayerPlacement = overrideViewLayerPlacement;
+        }
+        else if (modelPart->itemType() == ModelPart::Part) {
+            //viewLayerPlacement = m_pcbGraphicsView->dropOnBottom() ? ViewLayer::NewBottom : ViewLayer::NewTop;
+            if (useViewLayerPlacement) viewLayerPlacement = overrideViewLayerPlacement;
+        }
+    }
+    else {
+        if (modelPart->flippedSMD()) {
+            viewLayerPlacement = ViewLayer::NewBottom;
         }
         else if (modelPart->itemType() == ModelPart::Part) {
             //viewLayerPlacement = m_pcbGraphicsView->dropOnBottom() ? ViewLayer::NewBottom : ViewLayer::NewTop;

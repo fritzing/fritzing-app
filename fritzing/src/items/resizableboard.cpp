@@ -815,7 +815,7 @@ bool ResizableBoard::resizeMM(double mmW, double mmH, const LayerHash & viewLaye
         layerAttributes.viewID = m_viewID;
         layerAttributes.viewLayerID = m_viewLayerID;
         layerAttributes.viewLayerPlacement = m_viewLayerPlacement;
-        layerAttributes.doConnectors = true;
+        layerAttributes.createShape = layerAttributes.doConnectors = true;
 		setUpImage(modelPart(), viewLayers, layerAttributes);
 		modelPart()->setLocalProp("height", QVariant());
 		modelPart()->setLocalProp("width", QVariant());
@@ -1167,6 +1167,15 @@ void ResizableBoard::paintSelected(QPainter *painter, const QStyleOptionGraphics
 
 bool ResizableBoard::inResize() {
 	return m_corner != ResizableBoard::NO_CORNER;
+}
+
+void ResizableBoard::figureHover() {
+    setAcceptHoverEvents(true);
+    setAcceptedMouseButtons(ALLMOUSEBUTTONS);
+	foreach(ItemBase * lkpi, m_layerKin) {
+		lkpi->setAcceptHoverEvents(false);
+		lkpi->setAcceptedMouseButtons(Qt::NoButton);
+	}
 }
 
 void ResizableBoard::hoverEnterEvent( QGraphicsSceneHoverEvent * event ) {

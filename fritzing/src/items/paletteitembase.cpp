@@ -114,6 +114,8 @@ QPainterPath PaletteItemBase::shape() const
 {
 	// TODO: figure out real shape of svg
     QPainterPath path;
+    if (m_squashShape) return path;
+
     path.addRect(0, 0, m_size.width(), m_size.height());
 
 	if (!hasRubberBandLeg()) return path;
@@ -531,15 +533,7 @@ void PaletteItemBase::connectedMoved(ConnectorItem * from, ConnectorItem * to,  
 }
 
 void PaletteItemBase::hoverEnterEvent ( QGraphicsSceneHoverEvent * event ) {
-	// debugInfo("paletteitembase hover enter");
-    // i think lowerConnectorLayerVisible is obsolete
-	if (lowerConnectorLayerVisible(this)) {
-		DebugDialog::debug("PaletteItemBase::hoverEnterEvent isn't obsolete");
-		event->ignore();
-		return;
-	}
-
-	// debugInfo("hover enter paletteitembase 2");
+	// debugInfo("hover enter paletteitembase");
 	ItemBase::hoverEnterEvent(event);
 	if (event->isAccepted()) {
 		if (hasRubberBandLeg()) {
@@ -592,13 +586,6 @@ void PaletteItemBase::cursorKeyEvent(Qt::KeyboardModifiers modifiers)
 }
 
 void PaletteItemBase::contextMenuEvent(QGraphicsSceneContextMenuEvent *event) {
-	if (lowerConnectorLayerVisible(this)) {
-		// TODO: I think this is obsolete
-		DebugDialog::debug("PaletteItemBase::contextMenuEvent isn't obsolete");
-		event->ignore();
-		return;
-	}
-
 	ItemBase::contextMenuEvent(event);
 }
 

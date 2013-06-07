@@ -118,6 +118,7 @@ public:
 	bool hasPartNumberProperty();
 	void paintSelected(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
 	bool inResize();
+    void figureHover();
 
 public slots:
 	virtual void widthEntry();

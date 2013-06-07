@@ -1490,6 +1490,9 @@ FSvgRenderer * ItemBase::setUpImage(ModelPart * modelPart, LayerAttributes & lay
 
 	if (newRenderer) {
 		layerAttributes.setFilename(newRenderer->filename());
+        if (layerAttributes.createShape) {
+            createShape(layerAttributes);
+        }
 	}
 
 	return newRenderer;
@@ -1500,12 +1503,6 @@ void ItemBase::updateConnectionsAux(bool includeRatsnest, QList<ConnectorItem *>
 	foreach (ConnectorItem * connectorItem, cachedConnectorItems()) {
 		updateConnections(connectorItem, includeRatsnest, already);
 	}
-}
-
-ItemBase * ItemBase::lowerConnectorLayerVisible(ItemBase * itemBase, QPointF scenePos) {
-	Q_UNUSED(itemBase);
-	Q_UNUSED(scenePos);
-	return NULL;
 }
 
 void ItemBase::figureHover() {
@@ -2337,4 +2334,51 @@ void ItemBase::setSquashShape(bool squashShape) {
     m_squashShape = squashShape;
 }
 
+void ItemBase::createShape(LayerAttributes & layerAttributes) {
+    switch (layerAttributes.viewID) {
+        case ViewLayer::SchematicView:
+        case ViewLayer::PCBView:
+            break;
+        default:
+            return;
+    }
 
+    if (!isEverVisible()) return;
+
+	QString errorStr;
+	int errorLine;
+	int errorColumn;
+    QDomDocument doc;
+	if (!doc.setContent(layerAttributes.loaded(), &errorStr, &errorLine, &errorColumn)) {
+		return;
+	}
+
+    QDomElement root = doc.documentElement();
+
+    QRectF viewBox;
+    double w, h;
+    TextUtils::ensureViewBox(doc, 1, viewBox, true, w, h, true);
+    double svgDPI = viewBox.width() / w;
+    int selectionExtra = layerAttributes.viewLayerID == ViewLayer::SchematicView ? 20 : 10;
+    SvgFileSplitter::forceStrokeWidth(root, svgDPI * selectionExtra / GraphicsUtils::SVGDPI, "#000000", true, false);
+
+    double imageDPI = GraphicsUtils::SVGDPI;
+    QRectF sourceRes(0, 0, w * imageDPI, h * imageDPI);
+    QSize imgSize(qCeil(sourceRes.width()), qCeil(sourceRes.height()));
+    QImage image(imgSize, QImage::Format_Mono);
+    image.fill(0xffffffff);
+    GraphicsUtils::renderOne(&doc, &image, sourceRes);
+    QBitmap bitmap = QBitmap::fromImage(image);
+    QRegion region(bitmap);
+    m_selectionShape.addRegion(region);
+
+#ifndef QT_NODEBUG
+    QFileInfo info(layerAttributes.filename());
+    bitmap.save(FolderUtils::getUserDataStorePath("") + "/bitmap." + info.completeBaseName() + "." + QString::number(layerAttributes.viewLayerID) + ".png");
+    //image.save(FolderUtils::getUserDataStorePath("") + "/image." + info.completeBaseName() + "." + QString::number(layerAttributes.viewLayerID) + ".png");
+#endif
+}
+
+const QPainterPath & ItemBase::selectionShape() {
+    return m_selectionShape;
+}

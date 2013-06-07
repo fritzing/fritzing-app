@@ -427,16 +427,10 @@ bool DRC::startAux(QString & message, QStringList & messages, QList<CollidingThi
             return false;
         }
 
-	    ProcessEventBlocker::processEvents();
-        if (m_cancelled) {
-            message = CancelledMessage;
-            return false;
-        }
-
         QDomElement root = masterDoc->documentElement();
         SvgFileSplitter::forceStrokeWidth(root, 2 * keepoutMils, "#000000", true, false);
 
-        renderOne(masterDoc, m_plusImage, sourceRes);
+        GraphicsUtils::renderOne(masterDoc, m_plusImage, sourceRes);
         #ifndef QT_NO_DEBUG
 	        m_plusImage->save(FolderUtils::getUserDataStorePath("") + QString("/testDRCmaster%1.png").arg(viewLayerPlacement));
         #endif
@@ -675,7 +669,7 @@ void DRC::splitNet(QDomDocument * masterDoc, QList<ConnectorItem *> & equi, QIma
         SvgFileSplitter::forceStrokeWidth(element, -2 * keepoutMils, "#000000", false, false);
     }
 
-    renderOne(masterDoc, plusImage, sourceRes);
+    GraphicsUtils::renderOne(masterDoc, plusImage, sourceRes);
 
     foreach (QDomElement element, net) {
         // restore to keepout size
@@ -703,7 +697,7 @@ void DRC::splitNet(QDomDocument * masterDoc, QList<ConnectorItem *> & equi, QIma
         element.removeAttribute("net");
     }
 
-    renderOne(masterDoc, minusImage, sourceRes);
+    GraphicsUtils::renderOne(masterDoc, minusImage, sourceRes);
     #ifndef QT_NO_DEBUG
 	    minusImage->save(FolderUtils::getUserDataStorePath("") + QString("/testDRCNotNet%1_%2.png").arg(viewLayerPlacement).arg(index));
     #endif
@@ -799,17 +793,6 @@ void DRC::splitNetPrep(QDomDocument * masterDoc, QList<ConnectorItem *> & equi, 
             notNet.append(element);
         }
     }
-}
-
-void DRC::renderOne(QDomDocument * masterDoc, QImage * image, const QRectF & renderRect) {
-    QByteArray byteArray = masterDoc->toByteArray();
-	QSvgRenderer renderer(byteArray);
-	QPainter painter;
-	painter.begin(image);
-	painter.setRenderHint(QPainter::Antialiasing, false);
-    painter.setRenderHint(QPainter::SmoothPixmapTransform, false);
-	renderer.render(&painter, renderRect);
-	painter.end();
 }
 
 void DRC::markSubs(QDomElement & root, const QString & mark) {

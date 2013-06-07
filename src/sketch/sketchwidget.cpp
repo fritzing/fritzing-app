@@ -2370,24 +2370,23 @@ void SketchWidget::mousePressEvent(QMouseEvent *event)
 		return;
 	}
 
-	prepMove(itemBase ? itemBase : dynamic_cast<ItemBase *>(item->parentItem()), (event->modifiers() & altOrMetaModifier()) != 0, true);
+    if (event->button() == Qt::LeftButton) {
+	    prepMove(itemBase ? itemBase : dynamic_cast<ItemBase *>(item->parentItem()), (event->modifiers() & altOrMetaModifier()) != 0, true);
+	    if (m_alignToGrid && (itemBase == NULL) && (event->modifiers() == Qt::NoModifier)) {
+		    Wire * wire = dynamic_cast<Wire *>(item->parentItem());
+		    if (wire != NULL && wire->draggingEnd()) {
+			    ConnectorItem * connectorItem = dynamic_cast<ConnectorItem *>(item);
+			    if (connectorItem != NULL) {
+				    m_draggingBendpoint = (connectorItem->connectionsCount() > 0);
+				    this->m_alignmentStartPoint = mapToScene(event->pos()) - connectorItem->sceneAdjustedTerminalPoint(NULL);
+			    }
+		    }
+	    }
 
-	if (m_alignToGrid && (itemBase == NULL) && (event->modifiers() == Qt::NoModifier)) {
-		Wire * wire = dynamic_cast<Wire *>(item->parentItem());
-		if (wire != NULL && wire->draggingEnd()) {
-			ConnectorItem * connectorItem = dynamic_cast<ConnectorItem *>(item);
-			if (connectorItem != NULL) {
-				m_draggingBendpoint = (connectorItem->connectionsCount() > 0);
-				this->m_alignmentStartPoint = mapToScene(event->pos()) - connectorItem->sceneAdjustedTerminalPoint(NULL);
-			}
-		}
-	}
+	    m_moveReferenceItem = m_savedItems.count() > 0 ? m_savedItems.values().at(0) : NULL;
 
-	m_moveReferenceItem = m_savedItems.count() > 0 ? m_savedItems.values().at(0) : NULL;
-
-	setupAutoscroll(true);
-
-
+	    setupAutoscroll(true);
+    }
 }
 
 void SketchWidget::prepMove(ItemBase * originatingItem, bool rubberBandLegEnabled, bool includeRatsnest) {
@@ -9770,9 +9769,15 @@ void SketchWidget::alignItems(Qt::Alignment alignment) {
 
 QList<ItemBase *> SketchWidget::squashShapes(QPointF scenePos) 
 {
-    if (viewID() == ViewLayer::BreadboardView) return;
-
     QList<ItemBase *> squashed;
+
+    if (viewID() == ViewLayer::BreadboardView) return squashed;
+
+    // topmost connectoritem
+    // topmost wire
+    // topmost shape
+    // topmost
+
     ConnectorItem * connectorItem = NULL;
     Wire * wire = NULL;
     QList<QGraphicsItem *> itms = scene()->items(scenePos);
@@ -9789,12 +9794,37 @@ QList<ItemBase *> SketchWidget::squashShapes(QPointF scenePos)
         ix++;
     }
 
-    if (wire == NULL && connectorItem == NULL) {
+    if (ix == 0) {
         return squashed;
     }
 
-    if (ix == 0) {
-        return squashed;
+    if (wire == NULL && connectorItem == NULL) {
+        ix = 0;
+        int smallest = 0;
+        double smallestArea = std::numeric_limits<double>::max();
+        foreach (QGraphicsItem * item, itms) {
+            ItemBase * itemBase = dynamic_cast<ItemBase *>(item);
+            if (itemBase != NULL) {
+                QPainterPath painterPath = itemBase->mapToScene(itemBase->selectionShape());
+                if (painterPath.contains(scenePos)) {
+                    break;
+                }
+
+                double a = itemBase->boundingRect().width() * itemBase->boundingRect().height();
+                if (a < smallestArea) {
+                    smallest = ix;
+                    smallestArea = a;
+                }
+            }
+
+            ix++;
+        }
+
+        if (ix == 0) return squashed;   // use the topmost
+
+        if (ix >= itms.count()) {
+            ix = smallest;
+        }
     }
 
     bool firstTime = true;
@@ -9826,6 +9856,9 @@ void SketchWidget::unsquashShapes(QList<ItemBase *> & squashed) {
     }
 }
 
-
-
-
+void SketchWidget::contextMenuEvent(QContextMenuEvent *event)
+{
+    QList<ItemBase *> squashed  = squashShapes(mapToScene(event->pos()));
+    InfoGraphicsView::contextMenuEvent(event);
+    unsquashShapes(squashed);
+}

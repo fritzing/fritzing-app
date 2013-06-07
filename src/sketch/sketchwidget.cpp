@@ -3180,12 +3180,14 @@ void SketchWidget::moveItems(QPoint globalPos, bool checkAutoScrollFlag, bool ru
 
 	//DebugDialog::debug(QString("done move items %1").arg(QTime::currentTime().msec()) );
 
-    if (m_originatingItem) {
-        m_infoView->updateLocation(m_originatingItem->layerKinChief());
-    }
-    else {
-        foreach (ItemBase * itemBase, m_savedItems) {
-            m_infoView->updateLocation(itemBase->layerKinChief());
+    if (m_infoView) {
+        if (m_originatingItem) {
+            m_infoView->updateLocation(m_originatingItem->layerKinChief());
+        }
+        else {
+            foreach (ItemBase * itemBase, m_savedItems) {
+                m_infoView->updateLocation(itemBase->layerKinChief());
+            }
         }
     }
 }

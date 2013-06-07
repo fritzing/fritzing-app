@@ -29,7 +29,6 @@ $Date: 2013-04-22 23:44:56 +0200 (Mo, 22. Apr 2013) $
 #include "../fsvgrenderer.h"
 #include "../commands.h"
 #include "../utils/textutils.h"
-#include "../layerattributes.h"
 #include "partlabel.h"
 #include "partfactory.h"
 #include "../sketch/infographicsview.h"

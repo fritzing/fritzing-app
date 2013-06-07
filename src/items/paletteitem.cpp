@@ -140,7 +140,7 @@ PaletteItem::~PaletteItem() {
 
 bool PaletteItem::renderImage(ModelPart * modelPart, ViewLayer::ViewID viewID, const LayerHash & viewLayers, ViewLayer::ViewLayerID viewLayerID, bool doConnectors, QString & error) {
 	LayerAttributes layerAttributes; 
-    initLayerAttributes(layerAttributes, viewID, viewLayerID, viewLayerPlacement(), doConnectors);
+    initLayerAttributes(layerAttributes, viewID, viewLayerID, viewLayerPlacement(), doConnectors, true);
 	bool result = setUpImage(modelPart, viewLayers, layerAttributes);
     error = layerAttributes.error;
 
@@ -200,7 +200,7 @@ void PaletteItem::loadLayerKin(const LayerHash & viewLayers, ViewLayer::ViewLaye
 
 void PaletteItem::makeOneKin(qint64 & id, ViewLayer::ViewLayerID viewLayerID, ViewLayer::ViewLayerPlacement viewLayerPlacement, ViewGeometry & viewGeometry, const LayerHash & viewLayers) {
     LayerAttributes layerAttributes;
-    initLayerAttributes(layerAttributes, m_viewID, viewLayerID, viewLayerPlacement, true);
+    initLayerAttributes(layerAttributes, m_viewID, viewLayerID, viewLayerPlacement, true, true);
     LayerKinPaletteItem * lkpi = newLayerKinPaletteItem(this, m_modelPart, viewGeometry, id, m_itemMenu, viewLayers, layerAttributes);
 	if (lkpi->ok()) {
 		DebugDialog::debug(QString("adding layer kin %1 %2 %3 %4")
@@ -373,12 +373,6 @@ void PaletteItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
 		return;
 	}
 
-	if (lowerConnectorLayerVisible(this, event->pos())) {
-		DebugDialog::debug("PaletteItem::mousePressEvent isn't obsolete");
-		event->ignore();
-		return;
-	}
-
 	mousePressEvent(this, event);
 }
 
@@ -414,50 +408,11 @@ void PaletteItem::setInactive(bool inactivate) {
 }
 
 void PaletteItem::figureHover() {
-	// if a layer contains connectors, make it the one that accepts hover events
-	// if you make all layers accept hover events, then the topmost layer will get the event
-	// and lower layers won't
-
-	// note: this affects which layer responds to tooltips: see FGraphicsScene::helpEvent()
-
-	QList<ItemBase *> allKin;
-	allKin.append(this);
+    setAcceptHoverEvents(true);
+    setAcceptedMouseButtons(ALLMOUSEBUTTONS);
 	foreach(ItemBase * lkpi, m_layerKin) {
-		allKin.append(lkpi);
-	}
-
-	qSort(allKin.begin(), allKin.end(), ItemBase::zLessThan);
-	foreach (ItemBase * base, allKin) {
-		base->setAcceptHoverEvents(false);
-		base->setAcceptedMouseButtons(Qt::NoButton);
-	}
-
-	int ix = 0;
-    int firstix = 0;
-    bool gotFirst = false;
-	foreach (ItemBase * base, allKin) {
-		if (!(base->hidden() || base->inactive() || base->layerHidden()) && base->hasConnectors()) {
-			base->setAcceptHoverEvents(true);
-			base->setAcceptedMouseButtons(ALLMOUSEBUTTONS);
-            //base->debugInfo("figure hover copper");
-            if (!gotFirst) {
-                firstix = ix;
-                gotFirst = true;
-            }
-		}
-		ix++;
-	}
-    
-    if (!gotFirst) firstix++;       // must enable at least one layer
-
-	for (int i = 0; i < firstix; i++) {
-		ItemBase * base = allKin[i];
-		if (!(base->hidden() || base->inactive() || base->layerHidden())) {
-			base->setAcceptHoverEvents(true);
-			base->setAcceptedMouseButtons(ALLMOUSEBUTTONS);
-            //base->debugInfo("figure hover leave");
-			return;
-		}
+		lkpi->setAcceptHoverEvents(true);
+		lkpi->setAcceptedMouseButtons(ALLMOUSEBUTTONS);
 	}
 }
 
@@ -466,61 +421,6 @@ void PaletteItem::clearModelPart() {
 		lkpi->setModelPart(NULL);
 	}
 	ItemBase::clearModelPart();
-}
-
-ItemBase * PaletteItem::lowerConnectorLayerVisible(ItemBase * itemBase, QPointF scenePos) {   
-
-    return NULL;
-
-
-    ConnectorItem * connectorItem = NULL;
-    Wire * wire = NULL;
-    foreach (QGraphicsItem * item, scene()->items(scenePos)) {
-        connectorItem = dynamic_cast<ConnectorItem *>(item);
-        if (connectorItem) break;
-
-        wire = dynamic_cast<Wire *>(item);
-        if (wire) break;
-    }
-
-    if (connectorItem) {
-        if (connectorItem->attachedTo() == itemBase) return NULL;
-        return connectorItem->attachedTo();
-    }
-
-    if (wire) return wire;
-
-    // note: see figureHover() which sets up which layerkin will accept hover events
-	if (m_layerKin.count() == 0) return NULL;
-    if (itemBase->hasConnectors()) return NULL;
-
-	if ((itemBase != this) 
-		&& this->isVisible() 
-		&& (!this->hidden()) && (!this->inactive()) && (!this->layerHidden())
-		&& this->hasConnectors()) 
-	{
-        if (this->zValue() < itemBase->zValue()) {
-            debugInfo("lower chooses paletteItem");
-		    return this;
-        }
-	}
-
-
-	foreach (ItemBase * lkpi, m_layerKin) {
-		if (lkpi == itemBase) continue;
-
-		if (lkpi->isVisible() 
-			&& (!lkpi->hidden()) && (!lkpi->layerHidden()) && (!lkpi->inactive()) 
-			&& lkpi->hasConnectors()) 
-		{
-            if (lkpi->zValue() < itemBase->zValue()) {
-                lkpi->debugInfo("lower chooses lkpi");
-			    return lkpi;
-            }
-		}
-	}
-
-	return NULL;
 }
 
 void PaletteItem::resetID() {
@@ -543,7 +443,7 @@ void PaletteItem::resetImage(InfoGraphicsView * infoGraphicsView) {
 	}
     
 	LayerAttributes layerAttributes;
-    initLayerAttributes(layerAttributes, viewID(), viewLayerID(), viewLayerPlacement(), true);
+    initLayerAttributes(layerAttributes, viewID(), viewLayerID(), viewLayerPlacement(), true, !m_selectionShape.isEmpty());
 	this->setUpImage(modelPart(), infoGraphicsView->viewLayers(),layerAttributes);
 	
 	foreach (ItemBase * layerKin, m_layerKin) {
@@ -557,7 +457,7 @@ void PaletteItem::resetKinImage(ItemBase * layerKin, InfoGraphicsView * infoGrap
 		connector->unprocess(layerKin->viewID(), layerKin->viewLayerID());
 	}
 	LayerAttributes layerAttributes;
-    initLayerAttributes(layerAttributes, layerKin->viewID(), layerKin->viewLayerID(), layerKin->viewLayerPlacement(), true);
+    initLayerAttributes(layerAttributes, layerKin->viewID(), layerKin->viewLayerID(), layerKin->viewLayerPlacement(), true, !layerKin->selectionShape().isEmpty());
 	qobject_cast<PaletteItemBase *>(layerKin)->setUpImage(modelPart(), infoGraphicsView->viewLayers(), layerAttributes);
 }
 
@@ -1635,11 +1535,12 @@ void PaletteItem::retransform(const QTransform & chiefTransform) {
     }
 }
 
-void PaletteItem::initLayerAttributes(LayerAttributes & layerAttributes, ViewLayer::ViewID viewID, ViewLayer::ViewLayerID viewLayerID, ViewLayer::ViewLayerPlacement viewLayerPlacement, bool doConnectors) {
+void PaletteItem::initLayerAttributes(LayerAttributes & layerAttributes, ViewLayer::ViewID viewID, ViewLayer::ViewLayerID viewLayerID, ViewLayer::ViewLayerPlacement viewLayerPlacement, bool doConnectors, bool doCreateShape) {
     layerAttributes.viewID = viewID;
     layerAttributes.viewLayerID = viewLayerID;
     layerAttributes.viewLayerPlacement = viewLayerPlacement;
     layerAttributes.doConnectors = doConnectors;
+    layerAttributes.createShape = doCreateShape;
     InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
 	if (infoGraphicsView != NULL) {
 		layerAttributes.orientation = infoGraphicsView->smdOrientation();

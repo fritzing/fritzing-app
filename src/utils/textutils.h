@@ -117,7 +117,7 @@ public:
 	static void fixStyleAttribute(QDomElement & element);
     static QString parseForModuleID(const QString & fzp);
 	static QString getRandText();
-    static bool ensureViewBox(QDomDocument doc, double dpi, QRectF & rect, bool toInches);
+    static bool ensureViewBox(QDomDocument doc, double dpi, QRectF & rect, bool toInches, double & w, double & h, bool getwh);
     static QString findAnchor(const QDomElement & text);
     static double getStrokeWidth(QDomElement &, double defaultValue);
 

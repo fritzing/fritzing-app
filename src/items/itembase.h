@@ -157,7 +157,6 @@ public:
 	void prepareGeometryChange();
 	virtual void resetID();
 	void updateConnectionsAux(bool includeRatsnest, QList<ConnectorItem *> & already);
-	virtual ItemBase * lowerConnectorLayerVisible(ItemBase *, QPointF scenePos);
 	void hoverEnterEvent( QGraphicsSceneHoverEvent * event );
 	void hoverLeaveEvent( QGraphicsSceneHoverEvent * event );
     void contextMenuEvent(QGraphicsSceneContextMenuEvent *event);
@@ -231,6 +230,7 @@ public:
     ItemBase * findSubpart(const QString & connectorID, ViewLayer::ViewLayerPlacement);
     const QList< QPointer<ItemBase> > & subparts();
     void setSquashShape(bool);
+    const QPainterPath & selectionShape();
 
 public:
 	virtual void getConnectedColor(ConnectorItem *, QBrush * &, QPen * &, double & opacity, double & negativePenWidth, bool & negativeOffsetRect);
@@ -325,6 +325,7 @@ protected:
     virtual ViewLayer::ViewID useViewIDForPixmap(ViewLayer::ViewID, bool swappingEnabled);
     virtual bool makeLocalModifications(QByteArray & svg, const QString & filename);
     void updateHidden();
+    void createShape(LayerAttributes & layerAttributes);
 
 protected:
 	static bool getFlipDoc(ModelPart * modelPart, const QString & filename, ViewLayer::ViewLayerID viewLayerID, ViewLayer::ViewLayerPlacement, QDomDocument &, Qt::Orientations);
@@ -369,6 +370,7 @@ protected:
     QPointer<ItemBase> m_superpart;
     QList< QPointer<ItemBase> > m_subparts;
     bool m_squashShape;
+    QPainterPath m_selectionShape;
       
  protected:
 	static long nextID;

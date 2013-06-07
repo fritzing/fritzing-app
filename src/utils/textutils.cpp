@@ -1854,14 +1854,13 @@ QString TextUtils::getRandText() {
 }*/
 
 
-bool TextUtils::ensureViewBox(QDomDocument doc, double dpi, QRectF & rect, bool convert) {
+bool TextUtils::ensureViewBox(QDomDocument doc, double dpi, QRectF & rect, bool convert, double & w, double & h, bool getwh) {
     bool isIllustrator = TextUtils::isIllustratorDoc(doc);
 
     QDomElement root = doc.documentElement();
 	QString viewBox = root.attribute("viewBox");
-	if (viewBox.isEmpty()) {
+	if (viewBox.isEmpty() || getwh) {
 		bool ok1, ok2;
-        double w, h;
         if (convert) {
 		    w = TextUtils::convertToInches(root.attribute("width"), &ok1, isIllustrator) * dpi;
 		    h = TextUtils::convertToInches(root.attribute("height"), &ok2, isIllustrator) * dpi;
@@ -1873,7 +1872,9 @@ bool TextUtils::ensureViewBox(QDomDocument doc, double dpi, QRectF & rect, bool 
 		if (!ok1 || !ok2) {
 			return false;
 		}
+    }
 
+	if (viewBox.isEmpty()) {
 		root.setAttribute("viewBox", QString("0 0 %1 %2").arg(w).arg(h));
         rect.setRect(0, 0, w, h);
         return true;

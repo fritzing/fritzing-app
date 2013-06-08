@@ -85,6 +85,7 @@ bool Syntaxer::loadSyntax(const QString &filename)
 		context = context.nextSiblingElement("context");
 	}
 
+    m_canProgram = root.attribute("canProgram", "").compare("true", Qt::CaseInsensitive) == 0;
 	m_name = root.attribute("name");
 	QStringList extensions = root.attribute("extensions").split(";", QString::SkipEmptyParts);
 	if (extensions.count() > 0) {
@@ -238,6 +239,12 @@ bool Syntaxer::hlCStringChar() {
 	return m_hlCStringChar;
 }
 
+
+bool Syntaxer::canProgram() {
+    return m_canProgram;
+}
+
+
 //////////////////////////////////////////////
 
 SyntaxerTrieLeaf::SyntaxerTrieLeaf(QString name) {
@@ -261,4 +268,3 @@ CommentInfo::CommentInfo(const QString & start, const QString & end, Qt::CaseSen
 	m_multiLine = !end.isEmpty();
 	m_caseSensitive = caseSensitive;
 }
-

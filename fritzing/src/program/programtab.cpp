@@ -41,6 +41,7 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 #include <QSplitter>
 
 static const QChar Quote91Char(0x91);
+static QString UnableToProgramMessage;
 
 /////////////////////////////////////////
 
@@ -116,7 +117,11 @@ QIcon * AsteriskIcon = NULL;
 
 ProgramTab::ProgramTab(QString & filename, QWidget *parent) : QFrame(parent)
 {
-	m_tabWidget = NULL;
+    if (UnableToProgramMessage.isEmpty()) {
+        UnableToProgramMessage = tr("While it is possible to read and edit %1 programming files, it is not yet possible to use Fritzing to compile or upload these programs to a microcontroller.");
+    }
+
+    m_tabWidget = NULL;
 	while (parent != NULL) {
 		QTabWidget * tabWidget = qobject_cast<QTabWidget *>(parent);
 		if (tabWidget) {
@@ -198,6 +203,8 @@ void ProgramTab::showEvent(QShowEvent *event) {
 }
 
 QFrame * ProgramTab::createFooter() {
+    QFrame * superFrame = new QFrame();
+
     QFrame * footerFrame = new QFrame();
     footerFrame->setObjectName("footer"); // Used for styling
 	footerFrame->setSizePolicy(QSizePolicy::Preferred,QSizePolicy::Fixed);
@@ -213,7 +220,6 @@ QFrame * ProgramTab::createFooter() {
 	if (currentLanguage.isEmpty()) {
 		currentLanguage = m_languageComboBox->currentText();
 	}
-    setLanguage(currentLanguage, false);
 
 	QPushButton * addButton = new QPushButton(tr("New"));
 	//addButton->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
@@ -289,9 +295,21 @@ QFrame * ProgramTab::createFooter() {
     connect(m_languageComboBox, SIGNAL(currentIndexChanged(const QString &)), this, SLOT(setLanguage(const QString &)));
     connect(m_portComboBox, SIGNAL(currentIndexChanged(const QString &)), this, SLOT(setPort(const QString &)));
 	connect(m_portComboBox, SIGNAL(aboutToShow()), this, SLOT(updateSerialPorts()), Qt::DirectConnection);
-    connect(m_programmerComboBox, SIGNAL(activated(int)), this, SLOT(chooseProgrammerTimed(int)));	
+    connect(m_programmerComboBox, SIGNAL(activated(int)), this, SLOT(chooseProgrammerTimed(int)));
 
-	return footerFrame;
+    QVBoxLayout * superLayout = new QVBoxLayout();
+	superLayout->setMargin(0);
+	superLayout->setSpacing(0);
+
+    m_unableToProgramLabel = new QLabel(UnableToProgramMessage.arg(""));
+    m_unableToProgramLabel->setObjectName("unableToProgramLabel");
+    superLayout->addWidget(footerFrame);
+    superLayout->addWidget(m_unableToProgramLabel);
+    superFrame->setLayout(superLayout);
+
+    setLanguage(currentLanguage, false);
+
+	return superFrame;
 }
 
 void ProgramTab::setLanguage(const QString & newLanguage) {
@@ -299,18 +317,23 @@ void ProgramTab::setLanguage(const QString & newLanguage) {
 }
 
 void ProgramTab::setLanguage(const QString & newLanguage, bool updateLink) {
-        DebugDialog::debug(QString("Setting language to %1").arg(newLanguage));
-		if (updateLink && newLanguage != m_language) {
-			m_programWindow->updateLink(m_filename, newLanguage, m_programmerPath, false, false);
-		}
+    DebugDialog::debug(QString("Setting language to %1").arg(newLanguage));
+	if (updateLink && newLanguage != m_language) {
+		m_programWindow->updateLink(m_filename, newLanguage, m_programmerPath, false, false);
+	}
 
-        m_language = newLanguage;
-        m_languageComboBox->setCurrentIndex(m_languageComboBox->findText(newLanguage));
-        m_highlighter->setSyntaxer(m_programWindow->getSyntaxerForLanguage(newLanguage));
-		m_highlighter->rehighlight();
-        updateMenu();
-		QSettings settings;
-		settings.setValue("programwindow/language", newLanguage);
+    m_language = newLanguage;
+    m_languageComboBox->setCurrentIndex(m_languageComboBox->findText(newLanguage));
+    Syntaxer * syntaxer = m_programWindow->getSyntaxerForLanguage(newLanguage);
+    m_highlighter->setSyntaxer(syntaxer);
+	m_highlighter->rehighlight();
+    updateMenu();
+	QSettings settings;
+	settings.setValue("programwindow/language", newLanguage);
+
+    bool canProgram = (syntaxer != NULL && syntaxer->canProgram());
+    m_unableToProgramLabel->setVisible(!canProgram);
+    m_unableToProgramLabel->setText(UnableToProgramMessage.arg(newLanguage));
 }
 
 void ProgramTab::setPort(const QString & newPort) {

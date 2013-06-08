@@ -420,6 +420,7 @@ QFrame * ProgramWindow::createHeader() {
 	QFrame * headerFrame = new QFrame();
 	headerFrame->setSizePolicy(QSizePolicy(QSizePolicy::Expanding,QSizePolicy::Fixed));
 	headerFrame->setObjectName("header");
+
 	return headerFrame;
 }
 
@@ -1155,3 +1156,4 @@ void ProgramWindow::initViewMenu(QList<QAction *> & actions) {
         m_viewMenu->addAction(action);
     }
 }
+

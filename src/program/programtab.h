@@ -40,6 +40,7 @@ $Date: 2012-06-28 00:18:10 +0200 (Do, 28. Jun 2012) $
 #include <QDialog>
 #include <QDialogButtonBox>
 #include <QCheckBox>
+#include <QLabel>
 
 #include "programwindow.h"
 
@@ -143,7 +144,7 @@ protected:
 	QPointer<QTextEdit> m_textEdit;
 	QPointer<QTextEdit> m_console;
 	QPointer<QTabWidget> m_tabWidget;
-
+    QPointer<QLabel> m_unableToProgramLabel;
 	bool m_updateEnabled;
 
     QPointer<ProgramWindow> m_programWindow;

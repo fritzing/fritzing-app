@@ -522,7 +522,16 @@ bool PaletteItem::collectExtraInfo(QWidget * parent, const QString & family, con
 		return true;
 	}
 
-	return PaletteItemBase::collectExtraInfo(parent, family, prop, value, swappingEnabled, returnProp, returnValue, returnWidget, hide);
+	bool result = PaletteItemBase::collectExtraInfo(parent, family, prop, value, swappingEnabled, returnProp, returnValue, returnWidget, hide);
+
+    if (prop.compare("layer") == 0 && modelPart()->flippedSMD()) {
+        bool disabled = true;
+        InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
+        if (infoGraphicsView && infoGraphicsView->boardLayers() == 2) disabled = false;
+        returnWidget->setDisabled(disabled);
+    }
+
+    return result;
 }
 
 QStringList PaletteItem::collectValues(const QString & family, const QString & prop, QString & value) {

@@ -85,6 +85,8 @@ protected slots:
 	void linkDialog();
 	void handleZoomChangedSlot(double scale);
 	void handleMousePressSlot(QGraphicsSceneMouseEvent * event, class ResizeHandle * resizeHandle);
+	void handleMouseMoveSlot(QGraphicsSceneMouseEvent * event, class ResizeHandle * resizeHandle);
+	void handleMouseReleaseSlot(QGraphicsSceneMouseEvent * event, class ResizeHandle * resizeHandle);
 
 public:
 	static const int emptyMinWidth;

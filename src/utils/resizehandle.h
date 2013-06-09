@@ -30,6 +30,8 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 #include <QGraphicsPixmapItem>
 #include <QGraphicsSceneMouseEvent>
 
+// currently used by Note.cpp
+
 class ResizeHandle : public QObject, public QGraphicsPixmapItem 
 {
 Q_OBJECT
@@ -48,10 +50,14 @@ public slots:
 
 protected:
 	void mousePressEvent ( QGraphicsSceneMouseEvent * event );
+	void mouseMoveEvent ( QGraphicsSceneMouseEvent * event );
+	void mouseReleaseEvent ( QGraphicsSceneMouseEvent * event );
 	QVariant itemChange(GraphicsItemChange change, const QVariant &value);
 
 signals:
 	void mousePressSignal(QGraphicsSceneMouseEvent * event, ResizeHandle *);
+	void mouseMoveSignal(QGraphicsSceneMouseEvent * event, ResizeHandle *);
+	void mouseReleaseSignal(QGraphicsSceneMouseEvent * event, ResizeHandle *);
 	void zoomChangedSignal(double scale);
 
 protected:

@@ -240,6 +240,8 @@ Note::Note( ModelPart * modelPart, ViewLayer::ViewID viewID,  const ViewGeometry
 	QPixmap pixmap(":/resources/images/icons/noteResizeGrip.png");
 	m_resizeGrip = new ResizeHandle(pixmap, Qt::SizeFDiagCursor, this);
 	connect(m_resizeGrip, SIGNAL(mousePressSignal(QGraphicsSceneMouseEvent *, ResizeHandle *)), this, SLOT(handleMousePressSlot(QGraphicsSceneMouseEvent *, ResizeHandle *)));
+	connect(m_resizeGrip, SIGNAL(mouseMoveSignal(QGraphicsSceneMouseEvent *, ResizeHandle *)), this, SLOT(handleMouseMoveSlot(QGraphicsSceneMouseEvent *, ResizeHandle *)));
+	connect(m_resizeGrip, SIGNAL(mouseReleaseSignal(QGraphicsSceneMouseEvent *, ResizeHandle *)), this, SLOT(handleMouseReleaseSlot(QGraphicsSceneMouseEvent *, ResizeHandle *)));
 	connect(m_resizeGrip, SIGNAL(zoomChangedSignal(double)), this, SLOT(handleZoomChangedSlot(double)));
 
 	m_graphicsTextItem = new NoteGraphicsTextItem();
@@ -356,55 +358,12 @@ void Note::mouseMoveEvent(QGraphicsSceneMouseEvent * event) {
 		return;
 	}
 
-	if (m_inResize) {
-		double minWidth = emptyMinWidth;
-		double minHeight = emptyMinHeight;
-		QSizeF gripSize = m_resizeGrip->boundingRect().size();
-		QSizeF minSize = m_graphicsTextItem->document()->size() + gripSize + gripSize;
-		if (minSize.height() > minHeight) minHeight = minSize.height();
-
-		QRectF rect = boundingRect();
-		rect.moveTopLeft(this->pos());
-
-		double oldX1 = rect.x();
-		double oldY1 = rect.y();
-		double newX = event->scenePos().x() + m_inResize->resizeOffset().x();
-		double newY = event->scenePos().y() + m_inResize->resizeOffset().y();
-		QRectF newR;
-
-		if (newX - oldX1 < minWidth) {
-			newX = oldX1 + minWidth;
-		}
-		if (newY - oldY1 < minHeight) {
-			newY = oldY1 + minHeight;
-		}	
-		newR.setRect(0, 0, newX - oldX1, newY - oldY1);
-
-		prepareGeometryChange();
-		m_rect = newR;
-		positionGrip();
-		event->accept();
-		
-		return;
-	}
-
 	ItemBase::mouseMoveEvent(event);
 }
 
 void Note::mouseReleaseEvent(QGraphicsSceneMouseEvent * event) {
 	if (m_spaceBarWasPressed) {
 		event->ignore();
-		return;
-	}
-
-	if (m_inResize) {
-		this->ungrabMouse();
-		m_inResize = NULL;
-		InfoGraphicsView *infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-		if (infoGraphicsView != NULL) {
-			infoGraphicsView->noteSizeChanged(this, m_viewGeometry.rect(), m_rect);
-		}
-		event->accept();
 		return;
 	}
 
@@ -713,8 +672,52 @@ void Note::handleMousePressSlot(QGraphicsSceneMouseEvent * event, ResizeHandle *
 	resizeHandle->setResizeOffset(this->pos() + QPointF(sz.width(), sz.height()) - event->scenePos());
 
 	m_inResize = resizeHandle;
-	this->grabMouse();
+}
 
+void Note::handleMouseMoveSlot(QGraphicsSceneMouseEvent * event, ResizeHandle * resizeHandle) {
+    Q_UNUSED(resizeHandle);
+
+    if (!m_inResize) return;
+
+	double minWidth = emptyMinWidth;
+	double minHeight = emptyMinHeight;
+	QSizeF gripSize = m_resizeGrip->boundingRect().size();
+	QSizeF minSize = m_graphicsTextItem->document()->size() + gripSize + gripSize;
+	if (minSize.height() > minHeight) minHeight = minSize.height();
+
+	QRectF rect = boundingRect();
+	rect.moveTopLeft(this->pos());
+
+	double oldX1 = rect.x();
+	double oldY1 = rect.y();
+	double newX = event->scenePos().x() + m_inResize->resizeOffset().x();
+	double newY = event->scenePos().y() + m_inResize->resizeOffset().y();
+	QRectF newR;
+
+	if (newX - oldX1 < minWidth) {
+		newX = oldX1 + minWidth;
+	}
+	if (newY - oldY1 < minHeight) {
+		newY = oldY1 + minHeight;
+	}	
+	newR.setRect(0, 0, newX - oldX1, newY - oldY1);
+
+	prepareGeometryChange();
+	m_rect = newR;
+	positionGrip();	
+}
+
+void Note::handleMouseReleaseSlot(QGraphicsSceneMouseEvent * event, ResizeHandle * resizeHandle) {
+    Q_UNUSED(resizeHandle);
+    Q_UNUSED(event);
+
+	if (!m_inResize) return;
+
+	m_inResize = NULL;
+	InfoGraphicsView *infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
+	if (infoGraphicsView != NULL) {
+		infoGraphicsView->noteSizeChanged(this, m_viewGeometry.rect(), m_rect);
+	}
 }
 
 bool Note::hasPartLabel() {

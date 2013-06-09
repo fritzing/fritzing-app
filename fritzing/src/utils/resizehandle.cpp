@@ -47,6 +47,16 @@ void ResizeHandle::mousePressEvent(QGraphicsSceneMouseEvent * event) {
 	emit mousePressSignal(event, this);
 }
 
+void ResizeHandle::mouseMoveEvent(QGraphicsSceneMouseEvent * event) {
+	event->accept();
+	emit mouseMoveSignal(event, this);
+}
+
+void ResizeHandle::mouseReleaseEvent(QGraphicsSceneMouseEvent * event) {
+	event->accept();
+	emit mouseReleaseSignal(event, this);
+}
+
 void ResizeHandle::setResizeOffset(QPointF p) {
 	m_resizeOffset = p;
 }

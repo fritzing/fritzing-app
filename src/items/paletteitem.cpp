@@ -524,7 +524,7 @@ bool PaletteItem::collectExtraInfo(QWidget * parent, const QString & family, con
 
 	bool result = PaletteItemBase::collectExtraInfo(parent, family, prop, value, swappingEnabled, returnProp, returnValue, returnWidget, hide);
 
-    if (prop.compare("layer") == 0 && modelPart()->flippedSMD()) {
+    if (prop.compare("layer") == 0 && modelPart()->flippedSMD() && returnWidget != NULL) {
         bool disabled = true;
         InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
         if (infoGraphicsView && infoGraphicsView->boardLayers() == 2) disabled = false;

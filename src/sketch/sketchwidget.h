@@ -503,8 +503,8 @@ protected:
 	QString renderToSVG(RenderThing &, const LayerList &);
 	QString renderToSVG(RenderThing &, QList<QGraphicsItem *> & itemsAndLabels);
     QList<ItemBase *> collectSuperSubs(ItemBase *);
-    QList<class ItemBase *> squashShapes(QPointF scenePos);
-    void unsquashShapes(QList<class ItemBase *> &);
+    void squashShapes(QPointF scenePos);
+    void unsquashShapes();
 
 protected:
 	static bool lessThan(int a, int b);
@@ -741,6 +741,7 @@ protected:
 	bool m_anyInRotation;
     bool m_pasting;
 	QPointer<class ResizableBoard> m_resizingBoard;
+    QList< QPointer<ItemBase> > m_squashShapes;
 
 public:
 	static ViewLayer::ViewLayerID defaultConnectorLayer(ViewLayer::ViewID viewId);

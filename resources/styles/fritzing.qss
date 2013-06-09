@@ -364,6 +364,17 @@ HtmlInfoView {
         /*padding-left: 5px;*/
            /* This causes a bad side-effect where the values get covered by the arrows in the drop-down */
 }
+
+#infoViewComboBox:disabled {
+	color:rgb(60, 60, 60);
+}
+#infoViewComboBox:!editable:disabled {
+	background: rgb(144,144,144);
+}
+#infoViewComboBox:editable:disabled {
+	background: rgb(144,144,144);
+}
+
 #infoViewComboBox:!editable {
         background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
                     stop: 0 rgb(225,225,225), stop: 0.4 rgb(220,220,220),
@@ -437,7 +448,10 @@ HtmlInfoView {
                   stop: 0.5 rgb(255,255,255), stop: 1.0 rgb(255,255,255));
 }
 
-
+#infoViewLineEdit:disabled {
+	background: rgb(144,144,144);
+	color: rgb(60,60,60);
+}
 
 /* the label between the two spinners in the schematic frame */
 #infoViewOfLabel {

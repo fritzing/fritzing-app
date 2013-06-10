@@ -892,8 +892,6 @@ void PCBSketchWidget::swapLayers(ItemBase *, int newLayers, QUndoCommand * paren
 		return;
 	}
 
-
-
 	// disconnect and flip smds
 	foreach (QGraphicsItem * item, scene()->items()) {
 		ItemBase * smd = dynamic_cast<ItemBase *>(item);
@@ -2257,6 +2255,15 @@ void PCBSketchWidget::selectAllWires(ViewGeometry::WireFlag flag)
     selectAllWiresFrom(flag, items);
 }
 
+ViewLayer::ViewLayerPlacement PCBSketchWidget::defaultViewLayerPlacement(ModelPart * modelPart) {
+    if (modelPart == NULL || boardLayers() == 2) return SketchWidget::defaultViewLayerPlacement(modelPart);
+
+    if (modelPart->flippedSMD()) return ViewLayer::NewBottom;
+    if (modelPart->moduleID() == ModuleIDNames::GroundPlaneModuleIDName) return ViewLayer::NewBottom;
+
+    return SketchWidget::defaultViewLayerPlacement(modelPart);
+}
+
 QString PCBSketchWidget::checkDroppedModuleID(const QString & moduleID) {
     if (moduleID.endsWith(ModuleIDNames::CopperBlockerModuleIDName)) {
         if (dropOnBottom()) return ModuleIDNames::Copper0BlockerModuleIDName;
@@ -2891,7 +2898,7 @@ void PCBSketchWidget::getDroppedItemViewLayerPlacement(ModelPart * modelPart, Vi
         return;
     }
 
-    viewLayerPlacement = defaultViewLayerPlacement();   // top for a two layer board
+    viewLayerPlacement = defaultViewLayerPlacement(modelPart);   // top for a two layer board
     if (boardLayers() == 2) {
         if (dropOnBottom()) {
             viewLayerPlacement = ViewLayer::NewBottom;   
@@ -2901,6 +2908,8 @@ void PCBSketchWidget::getDroppedItemViewLayerPlacement(ModelPart * modelPart, Vi
 }
 
 bool PCBSketchWidget::dropOnBottom() {
+    if (boardLayers() == 1) return true;
+
     if (!layerIsActive(ViewLayer::Copper0)) return false;
     if (!layerIsActive(ViewLayer::Copper1)) return true;
 

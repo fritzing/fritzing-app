@@ -275,7 +275,7 @@ public:
 	void initGrid();
 	virtual double defaultGridSizeInches();
 	void clearPasteOffset();
-	ViewLayer::ViewLayerPlacement defaultViewLayerPlacement();
+	virtual ViewLayer::ViewLayerPlacement defaultViewLayerPlacement(ModelPart *);
 	void addFixedToCenterItem2(class SketchMainHelp *item);
 	void collectAllNets(QHash<class ConnectorItem *, int> & indexer, QList< QList<class ConnectorItem *>* > & allPartConnectorItems, bool includeSingletons, bool bothSides);
 	virtual bool routeBothSides();

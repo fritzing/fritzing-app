@@ -124,6 +124,7 @@ public:
     void setGroundFillKeepout();
     void setViewFromBelow(bool);
     bool dropOnBottom();
+    ViewLayer::ViewLayerPlacement defaultViewLayerPlacement(ModelPart *);
 
 public slots:
 	void resizeBoard(double w, double h, bool doEmit);

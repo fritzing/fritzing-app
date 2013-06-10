@@ -2886,7 +2886,7 @@ void MainWindow::addNote() {
 	QUndoCommand * parentCommand = new QUndoCommand(tr("Add Note"));
 	m_currentGraphicsView->stackSelectionState(false, parentCommand);
 	m_currentGraphicsView->scene()->clearSelection();
-	new AddItemCommand(m_currentGraphicsView, BaseCommand::SingleView, ModuleIDNames::NoteModuleIDName, m_currentGraphicsView->defaultViewLayerPlacement(), vg, ItemBase::getNextID(), false, -1, parentCommand);
+	new AddItemCommand(m_currentGraphicsView, BaseCommand::SingleView, ModuleIDNames::NoteModuleIDName, m_currentGraphicsView->defaultViewLayerPlacement(NULL), vg, ItemBase::getNextID(), false, -1, parentCommand);
 	m_undoStack->push(parentCommand);
 }
 

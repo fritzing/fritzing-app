@@ -241,7 +241,16 @@ bool Pad::collectExtraInfo(QWidget * parent, const QString & family, const QStri
 	    }
     }
 
-	return PaletteItem::collectExtraInfo(parent, family, prop, value, swappingEnabled, returnProp, returnValue, returnWidget, hide);
+	bool result = PaletteItem::collectExtraInfo(parent, family, prop, value, swappingEnabled, returnProp, returnValue, returnWidget, hide);
+
+    if (prop.compare("layer") == 0 && returnWidget != NULL) {
+        bool disabled = true;
+        InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
+        if (infoGraphicsView && infoGraphicsView->boardLayers() == 2) disabled = false;
+        returnWidget->setDisabled(disabled);
+    }
+
+    return result;
 }
 
 void Pad::setProp(const QString & prop, const QString & value) 

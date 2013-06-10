@@ -1801,10 +1801,10 @@ void PEMainWindow::reload(bool firstTime)
 	viewGeometry.setLoc(QPointF(0, 0));
 
 	QList<ItemBase *> itemBases;
-    itemBases << m_iconGraphicsView->addItem(modelPart, m_iconGraphicsView->defaultViewLayerPlacement(), BaseCommand::SingleView, viewGeometry, newID, -1, NULL);
-    itemBases <<  m_breadboardGraphicsView->addItem(modelPart, m_breadboardGraphicsView->defaultViewLayerPlacement(), BaseCommand::SingleView, viewGeometry, newID, -1, NULL);
-    itemBases <<  m_schematicGraphicsView->addItem(modelPart, m_schematicGraphicsView->defaultViewLayerPlacement(), BaseCommand::SingleView, viewGeometry, newID, -1, NULL);
-    itemBases <<  m_pcbGraphicsView->addItem(modelPart, m_pcbGraphicsView->defaultViewLayerPlacement(), BaseCommand::SingleView, viewGeometry, newID, -1, NULL);
+    itemBases << m_iconGraphicsView->addItem(modelPart, m_iconGraphicsView->defaultViewLayerPlacement(modelPart), BaseCommand::SingleView, viewGeometry, newID, -1, NULL);
+    itemBases <<  m_breadboardGraphicsView->addItem(modelPart, m_breadboardGraphicsView->defaultViewLayerPlacement(modelPart), BaseCommand::SingleView, viewGeometry, newID, -1, NULL);
+    itemBases <<  m_schematicGraphicsView->addItem(modelPart, m_schematicGraphicsView->defaultViewLayerPlacement(modelPart), BaseCommand::SingleView, viewGeometry, newID, -1, NULL);
+    itemBases <<  m_pcbGraphicsView->addItem(modelPart, m_pcbGraphicsView->defaultViewLayerPlacement(modelPart), BaseCommand::SingleView, viewGeometry, newID, -1, NULL);
   
 	foreach (ItemBase * itemBase, itemBases) {
 		ViewThing * viewThing = m_viewThings.value(itemBase->viewID());

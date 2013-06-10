@@ -1869,7 +1869,7 @@ bool SketchWidget::dragEnterEventAux(QDragEnterEvent *event) {
 		bool doConnectors = true;
 
 		// create temporary item for dragging
-		m_droppingItem = addItemAuxTemp(modelPart, defaultViewLayerPlacement(), viewGeometry, fromID, doConnectors, m_viewID, true);
+		m_droppingItem = addItemAuxTemp(modelPart, defaultViewLayerPlacement(modelPart), viewGeometry, fromID, doConnectors, m_viewID, true);
         QSizeF size = m_droppingItem->sceneBoundingRect().size();
         if (size.width() < offset.x() || size.height() < offset.y()) {
             offset = m_droppingOffset = QPointF(size.width() / 2, size.height() / 2);
@@ -8435,8 +8435,10 @@ void SketchWidget::copyDrop() {
 	m_savedWires.clear();
 }
 
-ViewLayer::ViewLayerPlacement SketchWidget::defaultViewLayerPlacement() {
-	return (m_boardLayers == 1) ? /* ViewLayer::NewBottom */ ViewLayer::NewTop : ViewLayer::NewTop;
+ViewLayer::ViewLayerPlacement SketchWidget::defaultViewLayerPlacement(ModelPart * modelPart) {
+    Q_UNUSED(modelPart);
+	//return (m_boardLayers == 1) ?  ViewLayer::NewBottom : ViewLayer::NewTop;
+    return ViewLayer::NewTop;
 }
 
 ViewLayer::ViewLayerPlacement SketchWidget::wireViewLayerPlacement(ConnectorItem *) {
@@ -8533,7 +8535,7 @@ ViewLayer::ViewLayerPlacement SketchWidget::getViewLayerPlacement(ModelPart * mo
 {
 	Q_UNUSED(instance);
 
-	ViewLayer::ViewLayerPlacement viewLayerPlacement = defaultViewLayerPlacement();
+	ViewLayer::ViewLayerPlacement viewLayerPlacement = defaultViewLayerPlacement(modelPart);
 
 	if (modelPart->moduleID().compare(ModuleIDNames::GroundPlaneModuleIDName) == 0) {
 		QString layer = view.attribute("layer");

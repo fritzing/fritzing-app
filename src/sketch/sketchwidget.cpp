@@ -9814,12 +9814,7 @@ void SketchWidget::squashShapes(QPointF scenePos)
         }
 
         wire = dynamic_cast<Wire *>(item);
-        if (wire != NULL && wire->acceptsHoverEvents() && wire->inactive() && !wire->hidden()) break;
-
-        Resistor * resistor = dynamic_cast<Resistor *>(item);
-        if (resistor) {
-            DebugDialog::debug("resistor");
-        }
+        if (wire != NULL && wire->acceptsHoverEvents() && !wire->inactive() && !wire->hidden()) break;
     }
 
     if (ix == 0) {
@@ -9864,7 +9859,7 @@ void SketchWidget::squashShapes(QPointF scenePos)
         ItemBase * itemBase = dynamic_cast<ItemBase *>(itms.at(i));
         if (itemBase == NULL) continue;
         if (itemBase->hidden()) continue;
-        if (!itemBase->inactive()) continue;
+        if (itemBase->inactive()) continue;
 
         if (connectorItem != NULL && connectorItem->parentItem() == itemBase) {
             if (firstTime) {

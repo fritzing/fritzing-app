@@ -502,7 +502,7 @@ QSizeF SchematicSketchWidget::jumperItemSize() {
 	    long newID = ItemBase::getNextID();
 	    ViewGeometry viewGeometry;
 	    viewGeometry.setLoc(QPointF(0, 0));
-	    ItemBase * itemBase = addItem(referenceModel()->retrieveModelPart(ModuleIDNames::NetLabelModuleIDName), defaultViewLayerPlacement(), BaseCommand::SingleView, viewGeometry, newID, -1, NULL);
+	    ItemBase * itemBase = addItem(referenceModel()->retrieveModelPart(ModuleIDNames::NetLabelModuleIDName), defaultViewLayerPlacement(NULL), BaseCommand::SingleView, viewGeometry, newID, -1, NULL);
 	    if (itemBase) {
 		    SymbolPaletteItem * netLabel = qobject_cast<SymbolPaletteItem *>(itemBase);
             netLabel->setLabel("00");

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module fritzingVersion="0.6.4b.12.16.5683" moduleId="7aec10906c1263ad50fe5abf7afe245d">
+<module fritzingVersion="0.6.4b.12.16.5683" moduleId="7aec10906c1263ad50fe5abf7afe245d" replacedby="Opt-TLP621">
     <version>4</version>
     <author>Dirk van Oosterbosch</author>
     <title>TLP621</title>

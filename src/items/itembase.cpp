@@ -2373,8 +2373,8 @@ void ItemBase::createShape(LayerAttributes & layerAttributes) {
     m_selectionShape.addRegion(region);
 
 #ifndef QT_NODEBUG
-    QFileInfo info(layerAttributes.filename());
-    bitmap.save(FolderUtils::getUserDataStorePath("") + "/bitmap." + info.completeBaseName() + "." + QString::number(layerAttributes.viewLayerID) + ".png");
+    //QFileInfo info(layerAttributes.filename());
+    //bitmap.save(FolderUtils::getUserDataStorePath("") + "/bitmap." + info.completeBaseName() + "." + QString::number(layerAttributes.viewLayerID) + ".png");
     //image.save(FolderUtils::getUserDataStorePath("") + "/image." + info.completeBaseName() + "." + QString::number(layerAttributes.viewLayerID) + ".png");
 #endif
 }

@@ -211,7 +211,8 @@ void BreadboardSketchWidget::addDefaultParts() {
 	long newID = ItemBase::getNextID();
 	ViewGeometry viewGeometry;
 	viewGeometry.setLoc(QPointF(0, 0));
-	m_addedDefaultPart = addItem(referenceModel()->retrieveModelPart(ModuleIDNames::FullPlusBreadboardModuleIDName), defaultViewLayerPlacement(), BaseCommand::CrossView, viewGeometry, newID, -1, NULL);
+    ModelPart * modelPart = referenceModel()->retrieveModelPart(ModuleIDNames::FullPlusBreadboardModuleIDName);
+	m_addedDefaultPart = addItem(modelPart, defaultViewLayerPlacement(modelPart), BaseCommand::CrossView, viewGeometry, newID, -1, NULL);
 	m_addDefaultParts = true;
 	// have to put this off until later, because positioning the item doesn't work correctly until the view is visible
 }

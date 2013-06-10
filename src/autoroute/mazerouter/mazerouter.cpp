@@ -1483,8 +1483,8 @@ QList<QPoint> MazeRouter::renderSource(QDomDocument * masterDoc, int z, ViewLaye
 
     GraphicsUtils::renderOne(masterDoc, m_spareImage, renderRect);
 #ifndef QT_NO_DEBUG
-    static int rsi = 0;
-	m_spareImage->save(FolderUtils::getUserDataStorePath("") + QString("/rendersource%1_%2.png").arg(rsi++,3,10,QChar('0')).arg(z));
+    //static int rsi = 0;
+	//m_spareImage->save(FolderUtils::getUserDataStorePath("") + QString("/rendersource%1_%2.png").arg(rsi++,3,10,QChar('0')).arg(z));
 #endif
     QList<QPoint> points = grid->init4(x1, y1, z, x2 - x1, y2 - y1, m_spareImage, value, true);
 

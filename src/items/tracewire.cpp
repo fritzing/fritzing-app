@@ -94,9 +94,17 @@ bool TraceWire::collectExtraInfo(QWidget * parent, const QString & family, const
 	}
 
 	bool result =  ClipableWire::collectExtraInfo(parent, family, prop, value, swappingEnabled, returnProp, returnValue, returnWidget, hide);
-	if (prop.compare("layer", Qt::CaseInsensitive) == 0) {
-        returnWidget->setEnabled(canSwitchLayers());
+    if (prop.compare("layer") == 0 && returnWidget != NULL) {
+        bool disabled = !canSwitchLayers();
+        if (!disabled) {
+            InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
+            if (infoGraphicsView == NULL || infoGraphicsView->boardLayers() == 1) disabled = true;
+        }
+        returnWidget->setDisabled(disabled);
     }
+
+    return result;
+
 
     return result;
 }

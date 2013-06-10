@@ -9858,8 +9858,6 @@ void SketchWidget::squashShapes(QPointF scenePos)
     for (int i = 0; i < ix; i++) {
         ItemBase * itemBase = dynamic_cast<ItemBase *>(itms.at(i));
         if (itemBase == NULL) continue;
-        if (itemBase->hidden()) continue;
-        if (itemBase->inactive()) continue;
 
         if (connectorItem != NULL && connectorItem->parentItem() == itemBase) {
             if (firstTime) {

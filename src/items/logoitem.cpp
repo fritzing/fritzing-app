@@ -197,9 +197,16 @@ QString LogoItem::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QString,
 QStringList LogoItem::collectValues(const QString & family, const QString & prop, QString & value) {
     QStringList values = ResizableBoard::collectValues(family, prop, value);
 
+    bool copperTopOK = true;
+    InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
+    if (infoGraphicsView == NULL) copperTopOK = false;
+    else if (infoGraphicsView->boardLayers() == 1) copperTopOK = false;
+
     QStringList newValues;
 	if (prop.compare("layer", Qt::CaseInsensitive) == 0) {
         foreach (QString xmlName, values) {
+            if (xmlName == ViewLayer::viewLayerXmlNameFromID(ViewLayer::Copper1) && copperTopOK == false) continue;
+
             newValues << Board::convertFromXmlName(xmlName);
         }
         value = Board::convertFromXmlName(value);

@@ -1063,7 +1063,8 @@ bool PCBSketchWidget::sameElectricalLayer2(ViewLayer::ViewLayerID id1, ViewLayer
 
 void PCBSketchWidget::changeTraceLayer(ItemBase * itemBase, bool force, QUndoCommand * parentCommand) {
 	QList<Wire *> visitedWires;
-	QList<Wire *> changeWires;
+	QSet<Wire *> changeWires;
+    TraceWire * sample;
     QList<QGraphicsItem *> items;
     if (itemBase != NULL) items << itemBase;
     else if (force) items = scene()->items();
@@ -1074,6 +1075,8 @@ void PCBSketchWidget::changeTraceLayer(ItemBase * itemBase, bool force, QUndoCom
 
 		if (!tw->isTraceType(getTraceFlag())) continue;
 		if (visitedWires.contains(tw)) continue;
+
+        sample = tw;
 
 		QList<Wire *> wires;
 		QList<ConnectorItem *> ends;
@@ -1091,7 +1094,7 @@ void PCBSketchWidget::changeTraceLayer(ItemBase * itemBase, bool force, QUndoCom
 		    if (!canChange) continue;
         }
 
-		changeWires.append(tw);
+		changeWires.insert(tw);
 	}
 
 	if (changeWires.count() == 0) return;
@@ -1102,7 +1105,11 @@ void PCBSketchWidget::changeTraceLayer(ItemBase * itemBase, bool force, QUndoCom
         createNew = true;
     }
 
-	ViewLayer::ViewLayerID newViewLayerID = (changeWires.at(0)->viewLayerID() == ViewLayer::Copper0Trace) ? ViewLayer::Copper1Trace : ViewLayer::Copper0Trace;;
+	ViewLayer::ViewLayerID newViewLayerID = (sample->viewLayerID() == ViewLayer::Copper0Trace) ? ViewLayer::Copper1Trace : ViewLayer::Copper0Trace;
+    if (force) {
+        // move all traces to bottom layer (force == true when switching from 2 layers to 1)
+        newViewLayerID = ViewLayer::Copper0Trace;
+    }
 	foreach (Wire * wire, changeWires) {
 		QList<Wire *> wires;
 		QList<ConnectorItem *> ends;

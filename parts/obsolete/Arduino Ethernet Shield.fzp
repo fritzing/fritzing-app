@@ -69,7 +69,7 @@
                 </pcbView>
             </views>
         <erc ignore='ifUnconnected'/> </connector>
-        <connector id='connector16' name='RST' type='female' replacedby='RESET'>
+        <connector id='connector16' name='RST' type='female' replacedby='connector204'>
             <description>Reset</description>
             <views>
                 <breadboardView>
@@ -129,7 +129,7 @@
                 </pcbView>
             </views>
        <erc ignore='ifUnconnected'/>  </connector>
-        <connector id='connector18' name='+5V' type='female' replacedby='5V'>
+        <connector id='connector18' name='+5V' type='female' replacedby='connector206'>
             <description>+5 V Regulated DC</description>
             <views>
                 <breadboardView>
@@ -144,7 +144,7 @@
                 </pcbView>
             </views>
         <erc ignore='ifUnconnected'/> </connector>
-        <connector id='connector19' name='GND' type='female' replacedby='GND'>
+        <connector id='connector19' name='GND' type='female' replacedby='connector207'>
             <description>Ground</description>
             <views>
                 <breadboardView>
@@ -159,7 +159,7 @@
                 </pcbView>
             </views>
        <erc ignore='ifUnconnected'/>  </connector>
-        <connector id='connector20' name='GND' type='female' replacedby='GND'>
+        <connector id='connector20' name='GND' type='female' replacedby='connector208'>
             <description>Ground</description>
             <views>
                 <breadboardView>
@@ -249,7 +249,7 @@
                 </pcbView>
             </views>
         <erc ignore='ifUnconnected'/> </connector>
-        <connector id='connector26' name='A4' type='female'  replacedby='A4/SDA'>
+        <connector id='connector26' name='A4' type='female'  replacedby='connector182'>
             <description>Analog Input 4</description>
             <views>
                 <breadboardView>
@@ -294,7 +294,7 @@
                 </pcbView>
             </views>
          <erc ignore='ifUnconnected'/></connector>
-        <connector id='connector1' name='GND' type='female' replacedby='GND'>
+        <connector id='connector1' name='GND' type='female' replacedby='connector176'>
             <description>Ground</description>
             <views>
                 <breadboardView>
@@ -324,7 +324,7 @@
                 </pcbView>
             </views>
         <erc ignore='ifUnconnected'/> </connector>
-        <connector id='connector2' name='SCK' type='female'  replacedby='SCK/D13'>
+        <connector id='connector2' name='SCK' type='female'  replacedby='connector175'>
             <description>SPI clock</description>
             <views>
                 <breadboardView>
@@ -354,7 +354,7 @@
                 </pcbView>
             </views>
         <erc ignore='ifUnconnected'/> </connector>
-        <connector id='connector3' name='MISO' type='female'  replacedby='MISO/D12'>
+        <connector id='connector3' name='MISO' type='female'  replacedby='connector174'>
             <description>SPI master in, slave out</description>
             <views>
                 <breadboardView>
@@ -384,7 +384,7 @@
                 </pcbView>
             </views>
         <erc ignore='ifUnconnected'/> </connector>
-        <connector id='connector4' name='MOSI' type='female' replacedby='MOSI/PWM D11'>
+        <connector id='connector4' name='MOSI' type='female' replacedby='connector173'>
             <description>SPI master out, slave in</description>
             <views>
                 <breadboardView>

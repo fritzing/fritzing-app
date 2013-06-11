@@ -77,9 +77,8 @@ struct TextThing {
     int maxX;
     int minY;
     int maxY;
-    double newX;
     QRectF newRect;
-    QRectF newFlippedRect;
+    QMatrix flipMatrix;
 };
 
 class SchematicTextLayerKinPaletteItem : public LayerKinPaletteItem

@@ -921,7 +921,6 @@ Revision 3 of the board has the following new features:
 <nodeMember connectorId='connector235'/>
 </bus>
 <bus id='+5v'>
-<nodeMember connectorId='connector255'/>
 <nodeMember connectorId='connector258'/>
 <nodeMember connectorId='connector343'/>
 <nodeMember connectorId='connector344'/>

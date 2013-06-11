@@ -224,6 +224,9 @@ bool SchematicTextLayerKinPaletteItem::setUpImage(ModelPart * modelPart, const L
     return result;
 }
 
+void SchematicTextLayerKinPaletteItem::setTransform2(const QTransform & currTransf) {
+    transformItem(currTransf, false);
+}
 
 void SchematicTextLayerKinPaletteItem::transformItem(const QTransform & currTransf, bool includeRatsnest) {
     Q_UNUSED(currTransf);
@@ -448,6 +451,8 @@ void SchematicTextLayerKinPaletteItem::clearTextThings() {
 }
 
 QString SchematicTextLayerKinPaletteItem::vflip(const QString & svg, bool isFlipped) {
+    Q_UNUSED(isFlipped);
+
     QDomDocument doc;
     QString errorStr;
 	int errorLine;

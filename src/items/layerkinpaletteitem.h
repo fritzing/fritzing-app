@@ -91,6 +91,7 @@ public:
     void transformItem(const QTransform &, bool includeRatsnest);
  	bool setUpImage(ModelPart* modelPart, const LayerHash & viewLayers, LayerAttributes &);
     void clearTextThings();
+    void setTransform2(const QTransform &);
 
 public:
     static void renderText(QImage &, QDomElement & text, int & minX, int & minY, int & maxX, int & maxY, QMatrix &, QRectF & viewBox); 

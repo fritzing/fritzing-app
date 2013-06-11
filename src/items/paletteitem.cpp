@@ -313,7 +313,7 @@ void PaletteItem::setTransforms() {
 
 	setTransform(transform);
 	for (int i = 0; i < m_layerKin.count(); i++) {
-		m_layerKin[i]->transformItem(transform, false);
+		m_layerKin[i]->setTransform2(m_layerKin[i]->getViewGeometry().transform());
 	}
 }
 

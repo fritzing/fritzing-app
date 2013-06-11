@@ -231,6 +231,7 @@ public:
     const QList< QPointer<ItemBase> > & subparts();
     void setSquashShape(bool);
     const QPainterPath & selectionShape();
+    virtual void setTransform2(const QTransform &);
 
 public:
 	virtual void getConnectedColor(ConnectorItem *, QBrush * &, QPen * &, double & opacity, double & negativePenWidth, bool & negativeOffsetRect);

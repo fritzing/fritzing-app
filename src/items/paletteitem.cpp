@@ -308,9 +308,12 @@ void PaletteItem::transformItem2(const QMatrix & matrix) {
 }
 
 void PaletteItem::setTransforms() {
-	setTransform(getViewGeometry().transform());
+    QTransform transform = getViewGeometry().transform();
+    if (transform.isIdentity()) return;
+
+	setTransform(transform);
 	for (int i = 0; i < m_layerKin.count(); i++) {
-		m_layerKin[i]->setTransform(m_layerKin[i]->getViewGeometry().transform());
+		m_layerKin[i]->transformItem(transform, false);
 	}
 }
 

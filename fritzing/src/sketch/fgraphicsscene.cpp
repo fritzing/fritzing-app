@@ -40,44 +40,30 @@ FGraphicsScene::FGraphicsScene( QObject * parent) : QGraphicsScene(parent)
 
 void FGraphicsScene::helpEvent(QGraphicsSceneHelpEvent *helpEvent)
 {
-    // Find the first item that does tooltips
-    QList<QGraphicsItem *> itemsAtPos = items(helpEvent->scenePos());
+    QGraphicsItem * item = this->itemAt(helpEvent->scenePos());
+    if (item == NULL) return;
+
     QString text;
     QPoint point;
-    for (int i = 0; i < itemsAtPos.size(); ++i) {
-        QGraphicsItem *tmp = itemsAtPos.at(i);
-		ItemBase * itemBase = dynamic_cast<ItemBase *>(tmp);
-		if (itemBase == NULL) {
-			ConnectorItem * connectorItem = dynamic_cast<ConnectorItem *>(tmp);
-			if (connectorItem) {
-				if (connectorItem->attachedTo()->hidden()) continue;
-				if (connectorItem->attachedTo()->layerHidden()) continue;
-				if (connectorItem->attachedTo()->inactive()) continue;
-
-				connectorItem->updateTooltip();
-			}
-
-		}
-		else {
-			if (itemBase->hidden()) continue;
-			if (itemBase->layerHidden()) continue;
-			if (itemBase->inactive()) continue;
-
-			if (!itemBase->acceptHoverEvents()) continue;
-		
-			itemBase->updateTooltip();
+	ItemBase * itemBase = dynamic_cast<ItemBase *>(item);
+	if (itemBase == NULL) {
+		ConnectorItem * connectorItem = dynamic_cast<ConnectorItem *>(item);
+		if (connectorItem) {
+			connectorItem->updateTooltip();
 		}
 
-		if (!tmp->toolTip().isEmpty()) {
-			text = tmp->toolTip();
-			point = helpEvent->screenPos();
-			break;
-		}
-    }
+	}
+	else {		
+		itemBase->updateTooltip();
+	}
+
+	if (!item->toolTip().isEmpty()) {
+		text = item->toolTip();
+		point = helpEvent->screenPos();
+	}
 
     // Show or hide the tooltip
     QToolTip::showText(point, text);
-
 }
 
 void FGraphicsScene::contextMenuEvent(QGraphicsSceneContextMenuEvent *contextMenuEvent)

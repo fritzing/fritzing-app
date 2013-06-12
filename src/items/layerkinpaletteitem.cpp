@@ -224,6 +224,9 @@ bool SchematicTextLayerKinPaletteItem::setUpImage(ModelPart * modelPart, const L
     return result;
 }
 
+void SchematicTextLayerKinPaletteItem::setTransform2(const QTransform & currTransf) {
+    transformItem(currTransf, false);
+}
 
 void SchematicTextLayerKinPaletteItem::transformItem(const QTransform & currTransf, bool includeRatsnest) {
     Q_UNUSED(currTransf);
@@ -303,8 +306,11 @@ QString SchematicTextLayerKinPaletteItem::makeFlipTextSvg() {
 
     int ix = 0;
     foreach (QDomElement text, texts) {  
-        // can't just use boundsOnElement() because it returns a null rectangle with <text> elements
-        text.setAttribute("x", m_textThings.at(ix++).newX);
+        QDomElement g = text.ownerDocument().createElement("g");
+        text.parentNode().insertAfter(g, text);
+        g.appendChild(text);
+        QMatrix m = m_textThings[ix++].flipMatrix;
+        TextUtils::setSVGTransform(g, m);
     }
 
     return doc.toString();
@@ -340,20 +346,12 @@ void SchematicTextLayerKinPaletteItem::positionTexts(QList<QDomElement> & texts)
         QMatrix matrix;
         renderText(image, text, textThing.minX, textThing.minY, textThing.maxX, textThing.maxY, matrix, viewBox);
 
-        // TODO: assumes left-to-right text orientation
-        QString anchor = TextUtils::findAnchor(text);
-        int useX = textThing.maxX;
-        if (anchor == "middle") {
-            useX = (textThing.maxX + textThing.minX) / 2;
-        }
-        else if (anchor == "end") {
-            useX = textThing.minX;
-        }
+        double newX = (image.width() - textThing.maxX) * viewBox.width() / image.width();
+        double oldX = textThing.minX * viewBox.width() / image.width();
 
-        QMatrix inv = matrix.inverted();
-        QPointF rp((image.width() - useX) * viewBox.width() / image.width(), (image.height() - textThing.maxY) * viewBox.height() / image.height());
-        QPointF rq = inv.map(rp);
-        textThing.newX = rq.x();
+        QMatrix inv = matrix.inverted();   
+        QMatrix t = QMatrix().translate(newX - oldX, 0);
+        textThing.flipMatrix = matrix * t * inv;
 
         QRectF r(textThing.minX * viewBox.width() / image.width(), 
                  textThing.minY * viewBox.height() / image.height(), 
@@ -362,11 +360,6 @@ void SchematicTextLayerKinPaletteItem::positionTexts(QList<QDomElement> & texts)
 
         textThing.newRect = inv.mapRect(r);
 
-        QRectF r2((image.width() - textThing.maxX) * viewBox.width() / image.width(), 
-                  textThing.minY * viewBox.height() / image.height(), 
-                  (textThing.maxX - textThing.minX) * viewBox.width() / image.width(),
-                  (textThing.maxY - textThing.minY) * viewBox.height() / image.height());
-        textThing.newFlippedRect = inv.mapRect(r2);
 
         m_textThings.append(textThing);
     }
@@ -458,6 +451,8 @@ void SchematicTextLayerKinPaletteItem::clearTextThings() {
 }
 
 QString SchematicTextLayerKinPaletteItem::vflip(const QString & svg, bool isFlipped) {
+    Q_UNUSED(isFlipped);
+
     QDomDocument doc;
     QString errorStr;
 	int errorLine;
@@ -479,7 +474,7 @@ QString SchematicTextLayerKinPaletteItem::vflip(const QString & svg, bool isFlip
         QDomElement g = text.ownerDocument().createElement("g");
         text.parentNode().insertAfter(g, text);
         g.appendChild(text);
-        QRectF r = isFlipped ? m_textThings[ix].newFlippedRect : m_textThings[ix].newRect;
+        QRectF r = m_textThings[ix].newRect;
         ix++;
         QMatrix m;
         m.translate(r.center().x(), r.center().y());

@@ -9809,12 +9809,13 @@ void SketchWidget::squashShapes(QPointF scenePos)
             ItemBase * itemBase = connectorItem->attachedTo();
             if (itemBase->inactive()) continue;
             if (itemBase->hidden()) continue;
+            if (itemBase->layerHidden()) continue;
 
             break;
         }
 
         wire = dynamic_cast<Wire *>(item);
-        if (wire != NULL && wire->acceptsHoverEvents() && !wire->inactive() && !wire->hidden()) break;
+        if (wire != NULL && wire->acceptsHoverEvents() && !wire->inactive() && !wire->hidden() && !wire->layerHidden()) break;
     }
 
     if (ix == 0) {
@@ -9828,7 +9829,7 @@ void SketchWidget::squashShapes(QPointF scenePos)
             QGraphicsItem * item = itms.at(ix);
             ItemBase * itemBase = dynamic_cast<ItemBase *>(item);
             if (itemBase != NULL) {
-                if (itemBase->hidden() || itemBase->inactive()) continue;
+                if (itemBase->hidden() || itemBase->layerHidden() || itemBase->inactive()) continue;
 
                 QPainterPath painterPath = itemBase->mapToScene(itemBase->selectionShape());
                 if (painterPath.contains(scenePos)) {
@@ -9896,5 +9897,20 @@ void SketchWidget::mouseDoubleClickEvent(QMouseEvent *event)
     squashShapes(mapToScene(event->pos()));
     InfoGraphicsView::mouseDoubleClickEvent(event);
     unsquashShapes();
+}
+
+bool SketchWidget::viewportEvent(QEvent *event) {
+    if (event->type() == QEvent::ToolTip) {
+        QHelpEvent * helpEvent = static_cast<QHelpEvent *>(event);
+        squashShapes(mapToScene(helpEvent->pos()));
+    }
+
+    bool result = InfoGraphicsView::viewportEvent(event);
+
+    if (event->type() == QEvent::ToolTip) {
+        unsquashShapes();
+    }
+
+    return result;
 }
 

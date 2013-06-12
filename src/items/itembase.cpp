@@ -2382,3 +2382,8 @@ void ItemBase::createShape(LayerAttributes & layerAttributes) {
 const QPainterPath & ItemBase::selectionShape() {
     return m_selectionShape;
 }
+
+void ItemBase::setTransform2(const QTransform & transform)
+{
+    setTransform(transform);
+}

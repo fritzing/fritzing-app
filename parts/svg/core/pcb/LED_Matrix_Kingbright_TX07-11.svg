@@ -9,6 +9,7 @@
 <defs>
 </defs>
 <g id="silkscreen">
+<rect x="0.032" y="0.032" fill="none" stroke="#8C8C8C" stroke-width="0.648" width="36.002" height="50.4"/>
 </g>
 <g id="copper1">
 <g id="copper0">
@@ -25,7 +26,6 @@
 <circle id="connector10pad" fill="none" stroke="#F7BD13" stroke-width="1.224" cx="28.854" cy="21.661" r="2.052"/>
 <circle id="connector11pad" fill="none" stroke="#F7BD13" stroke-width="1.224" cx="28.854" cy="14.531" r="2.052"/>
 <circle id="connector12pad" fill="none" stroke="#F7BD13" stroke-width="1.224" cx="28.854" cy="7.306" r="2.052"/>
-<rect x="0.032" y="0.032" fill="none" stroke="#8C8C8C" stroke-width="0.0648" width="36.002" height="50.4"/>
 </g>
 </g>
 </svg>

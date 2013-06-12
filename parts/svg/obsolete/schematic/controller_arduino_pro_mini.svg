@@ -48,55 +48,55 @@
 		<line fill="none" stroke="#000000" stroke-width="2.415" stroke-linecap="round" stroke-linejoin="round" x1="213.608" y1="319.611" x2="192.366" y2="319.611"/>
 	
 		<line fill="none" stroke="#000000" stroke-width="2.415" stroke-linecap="round" stroke-linejoin="round" x1="213.608" y1="340.847" x2="192.366" y2="340.847"/>
-	<text transform="matrix(1 0 0 1 30.3684 67.3687)" font-family="DroidSans" font-size="9.9889">RST</text>
-	<text transform="matrix(1 0 0 1 30.3684 88.6284)" font-family="DroidSans" font-size="9.9889">GRN</text>
-	<text transform="matrix(1 0 0 1 32.2405 194.4917)" font-family="DroidSans" font-size="9.9889">A0</text>
-	<text transform="matrix(1 0 0 1 32.2405 215.9272)" font-family="DroidSans" font-size="9.9889">A1</text>
-	<text transform="matrix(1 0 0 1 32.2405 237.3667)" font-family="DroidSans" font-size="9.9889">A2</text>
-	<text transform="matrix(1 0 0 1 32.2405 258.8042)" font-family="DroidSans" font-size="9.9889">A3</text>
-	<text transform="matrix(1 0 0 1 32.2405 280.2417)" font-family="DroidSans" font-size="9.9889">A4</text>
-	<text transform="matrix(1 0 0 1 32.2405 301.6812)" font-family="DroidSans" font-size="9.9889">A5</text>
+	<text transform="matrix(1 0 0 1 30.3684 67.3687)" font-family="Droid Sans" font-size="9.9889">RST</text>
+	<text transform="matrix(1 0 0 1 30.3684 88.6284)" font-family="Droid Sans" font-size="9.9889">GRN</text>
+	<text transform="matrix(1 0 0 1 32.2405 194.4917)" font-family="Droid Sans" font-size="9.9889">A0</text>
+	<text transform="matrix(1 0 0 1 32.2405 215.9272)" font-family="Droid Sans" font-size="9.9889">A1</text>
+	<text transform="matrix(1 0 0 1 32.2405 237.3667)" font-family="Droid Sans" font-size="9.9889">A2</text>
+	<text transform="matrix(1 0 0 1 32.2405 258.8042)" font-family="Droid Sans" font-size="9.9889">A3</text>
+	<text transform="matrix(1 0 0 1 32.2405 280.2417)" font-family="Droid Sans" font-size="9.9889">A4</text>
+	<text transform="matrix(1 0 0 1 32.2405 301.6812)" font-family="Droid Sans" font-size="9.9889">A5</text>
 	
 		<line fill="none" stroke="#000000" stroke-width="1.9517" stroke-linecap="round" stroke-linejoin="round" x1="118.421" y1="22.212" x2="118.421" y2="0.976"/>
 	
 		<line fill="none" stroke="#000000" stroke-width="1.9517" stroke-linecap="round" stroke-linejoin="round" x1="97.14" y1="22.212" x2="97.14" y2="0.976"/>
 	
 		<line fill="none" stroke="#000000" stroke-width="1.9517" stroke-linecap="round" stroke-linejoin="round" x1="22.366" y1="85.677" x2="1.131" y2="85.677"/>
-	<text transform="matrix(1 0 0 1 30.3684 109.8882)" font-family="DroidSans" font-size="9.9889">BLK</text>
+	<text transform="matrix(1 0 0 1 30.3684 109.8882)" font-family="Droid Sans" font-size="9.9889">BLK</text>
 	
 		<line fill="none" stroke="#000000" stroke-width="1.9517" stroke-linecap="round" stroke-linejoin="round" x1="22.366" y1="106.937" x2="1.131" y2="106.937"/>
-	<text transform="matrix(1 0 0 1 108.0256 39.3726)" font-family="DroidSans" font-size="9.9889">RAW</text>
-	<text transform="matrix(1 0 0 1 88.28 39.3726)" font-family="DroidSans" font-size="9.9889">VCC</text>
-	<text transform="matrix(0 1 -1 0 57.2825 221.5933)" font-family="DroidSans" font-size="9.9889">Analog Input</text>
-	<text transform="matrix(1 0 0 1 162.6633 109.6851)" font-family="DroidSans" font-size="9.9889">D11</text>
-	<text transform="matrix(1 0 0 1 162.6633 131.2944)" font-family="DroidSans" font-size="9.9889">D10</text>
-	<text transform="matrix(1 0 0 1 168.1633 152.4761)" font-family="DroidSans" font-size="9.9889">D9</text>
-	<text transform="matrix(1 0 0 1 168.1633 173.2319)" font-family="DroidSans" font-size="9.9889">D8</text>
-	<text transform="matrix(1 0 0 1 168.1633 194.8433)" font-family="DroidSans" font-size="9.9889">D7</text>
-	<text transform="matrix(1 0 0 1 168.1633 215.6011)" font-family="DroidSans" font-size="9.9889">D6</text>
-	<text transform="matrix(1 0 0 1 168.1633 237.2065)" font-family="DroidSans" font-size="9.9889">D5</text>
-	<text transform="matrix(1 0 0 1 168.1633 258.3901)" font-family="DroidSans" font-size="9.9889">D4</text>
-	<text transform="matrix(1 0 0 1 168.1633 279.9976)" font-family="DroidSans" font-size="9.9889">D3</text>
-	<text transform="matrix(1 0 0 1 195.6536 273.939)" font-family="DroidSans" font-size="6.9922">PWM</text>
-	<text transform="matrix(1 0 0 1 196.6458 316.0981)" font-family="DroidSans" font-size="6.9922">TX</text>
-	<text transform="matrix(1 0 0 1 196.6458 336.4956)" font-family="DroidSans" font-size="6.9922">RX</text>
-	<text transform="matrix(1 0 0 1 195.6536 146.8022)" font-family="DroidSans" font-size="6.9922">PWM</text>
-	<text transform="matrix(1 0 0 1 195.6536 125.4644)" font-family="DroidSans" font-size="6.9922">PWM</text>
-	<text transform="matrix(1 0 0 1 195.6536 231.4272)" font-family="DroidSans" font-size="6.9922">PWM</text>
-	<text transform="matrix(1 0 0 1 195.6536 210.0894)" font-family="DroidSans" font-size="6.9922">PWM</text>
-	<text transform="matrix(1 0 0 1 195.6536 104.3374)" font-family="DroidSans" font-size="6.9922">PWM</text>
-	<text transform="matrix(1 0 0 1 168.1633 300.7534)" font-family="DroidSans" font-size="9.9889">D2</text>
-	<text transform="matrix(1 0 0 1 168.1633 322.3628)" font-family="DroidSans" font-size="9.9889">D1</text>
-	<text transform="matrix(1 0 0 1 162.6633 67.3198)" font-family="DroidSans" font-size="9.9889">D13</text>
-	<text transform="matrix(1 0 0 1 162.6633 88.5015)" font-family="DroidSans" font-size="9.9889">D12</text>
-	<text transform="matrix(1 0 0 1 168.1633 343.5444)" font-family="DroidSans" font-size="9.9889">D0</text>
-	<text transform="matrix(0 -1 1 0 156.8821 242.4331)" font-family="DroidSans" font-size="9.9889">Digital Input/Output</text>
-	<text transform="matrix(1 0 0 1 93.2283 53.9194)" font-family="DroidSans" font-size="9.9889">Power</text>
-	<text transform="matrix(1 0 0 1 74.988 112.1226)" font-family="DroidSans" font-size="17.98">Arduino</text>
-	<text transform="matrix(1 0 0 1 73.3508 133.6978)" font-family="DroidSans" font-size="17.98">Pro Mini</text>
+	<text transform="matrix(1 0 0 1 108.0256 39.3726)" font-family="Droid Sans" font-size="9.9889">RAW</text>
+	<text transform="matrix(1 0 0 1 88.28 39.3726)" font-family="Droid Sans" font-size="9.9889">VCC</text>
+	<text transform="matrix(0 1 -1 0 57.2825 221.5933)" font-family="Droid Sans" font-size="9.9889">Analog Input</text>
+	<text transform="matrix(1 0 0 1 162.6633 109.6851)" font-family="Droid Sans" font-size="9.9889">D11</text>
+	<text transform="matrix(1 0 0 1 162.6633 131.2944)" font-family="Droid Sans" font-size="9.9889">D10</text>
+	<text transform="matrix(1 0 0 1 168.1633 152.4761)" font-family="Droid Sans" font-size="9.9889">D9</text>
+	<text transform="matrix(1 0 0 1 168.1633 173.2319)" font-family="Droid Sans" font-size="9.9889">D8</text>
+	<text transform="matrix(1 0 0 1 168.1633 194.8433)" font-family="Droid Sans" font-size="9.9889">D7</text>
+	<text transform="matrix(1 0 0 1 168.1633 215.6011)" font-family="Droid Sans" font-size="9.9889">D6</text>
+	<text transform="matrix(1 0 0 1 168.1633 237.2065)" font-family="Droid Sans" font-size="9.9889">D5</text>
+	<text transform="matrix(1 0 0 1 168.1633 258.3901)" font-family="Droid Sans" font-size="9.9889">D4</text>
+	<text transform="matrix(1 0 0 1 168.1633 279.9976)" font-family="Droid Sans" font-size="9.9889">D3</text>
+	<text transform="matrix(1 0 0 1 195.6536 273.939)" font-family="Droid Sans" font-size="6.9922">PWM</text>
+	<text transform="matrix(1 0 0 1 196.6458 316.0981)" font-family="Droid Sans" font-size="6.9922">TX</text>
+	<text transform="matrix(1 0 0 1 196.6458 336.4956)" font-family="Droid Sans" font-size="6.9922">RX</text>
+	<text transform="matrix(1 0 0 1 195.6536 146.8022)" font-family="Droid Sans" font-size="6.9922">PWM</text>
+	<text transform="matrix(1 0 0 1 195.6536 125.4644)" font-family="Droid Sans" font-size="6.9922">PWM</text>
+	<text transform="matrix(1 0 0 1 195.6536 231.4272)" font-family="Droid Sans" font-size="6.9922">PWM</text>
+	<text transform="matrix(1 0 0 1 195.6536 210.0894)" font-family="Droid Sans" font-size="6.9922">PWM</text>
+	<text transform="matrix(1 0 0 1 195.6536 104.3374)" font-family="Droid Sans" font-size="6.9922">PWM</text>
+	<text transform="matrix(1 0 0 1 168.1633 300.7534)" font-family="Droid Sans" font-size="9.9889">D2</text>
+	<text transform="matrix(1 0 0 1 168.1633 322.3628)" font-family="Droid Sans" font-size="9.9889">D1</text>
+	<text transform="matrix(1 0 0 1 162.6633 67.3198)" font-family="Droid Sans" font-size="9.9889">D13</text>
+	<text transform="matrix(1 0 0 1 162.6633 88.5015)" font-family="Droid Sans" font-size="9.9889">D12</text>
+	<text transform="matrix(1 0 0 1 168.1633 343.5444)" font-family="Droid Sans" font-size="9.9889">D0</text>
+	<text transform="matrix(0 -1 1 0 156.8821 242.4331)" font-family="Droid Sans" font-size="9.9889">Digital Input/Output</text>
+	<text transform="matrix(1 0 0 1 93.2283 53.9194)" font-family="Droid Sans" font-size="9.9889">Power</text>
+	<text transform="matrix(1 0 0 1 74.988 112.1226)" font-family="Droid Sans" font-size="17.98">Arduino</text>
+	<text transform="matrix(1 0 0 1 73.3508 133.6978)" font-family="Droid Sans" font-size="17.98">Pro Mini</text>
 	
 		<line fill="none" stroke="#000000" stroke-width="1.9517" stroke-linecap="round" stroke-linejoin="round" x1="107.406" y1="404.386" x2="107.406" y2="383.148"/>
-	<text transform="matrix(1 0 0 1 96.8762 372.9604)" font-family="DroidSans" font-size="9.9889">GND</text>
+	<text transform="matrix(1 0 0 1 96.8762 372.9604)" font-family="Droid Sans" font-size="9.9889">GND</text>
 	<polygon points="206.292,311.201 210.998,313.917 206.292,316.634 	"/>
 	<polygon points="210.998,337.246 206.292,334.525 210.998,331.81 	"/>
 </g>

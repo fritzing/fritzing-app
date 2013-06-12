@@ -34,10 +34,10 @@
 		c0,8.996-7.301,16.297-16.297,16.297c-8.995,0-16.296-7.301-16.296-16.297c0-8.995,7.301-16.297,16.296-16.297
 		C72.479,24.182,79.78,31.483,79.78,40.479z"/>
 </g>
-<text transform="matrix(1 0 0 1 24.0364 11.4387)"><tspan x="0" y="0" font-family="'DroidSans'" font-size="9">STEPPER</tspan><tspan x="0" y="9" font-family="'DroidSans'" font-size="9">MOTOR</tspan></text>
-<text transform="matrix(1 0 0 1 44.9915 38.4187)" font-family="'DroidSans'" font-size="7.5">ROB-08420</text>
-<text transform="matrix(1 0 0 1 13.1921 38.4187)" font-family="'DroidSans'" font-size="9">A</text>
-<text transform="matrix(1 0 0 1 32.1921 114.4099)" font-family="'DroidSans'" font-size="9">B</text>
-<text transform="matrix(1 0 0 1 72.8547 114.4099)" font-family="'DroidSans'" font-size="9">D</text>
-<text transform="matrix(1 0 0 1 13.1921 77.4187)" font-family="'DroidSans'" font-size="9">C</text>
+<text transform="matrix(1 0 0 1 24.0364 11.4387)"><tspan x="0" y="0" font-family="'Droid Sans'" font-size="9">STEPPER</tspan><tspan x="0" y="9" font-family="'Droid Sans'" font-size="9">MOTOR</tspan></text>
+<text transform="matrix(1 0 0 1 44.9915 38.4187)" font-family="'Droid Sans'" font-size="7.5">ROB-08420</text>
+<text transform="matrix(1 0 0 1 13.1921 38.4187)" font-family="'Droid Sans'" font-size="9">A</text>
+<text transform="matrix(1 0 0 1 32.1921 114.4099)" font-family="'Droid Sans'" font-size="9">B</text>
+<text transform="matrix(1 0 0 1 72.8547 114.4099)" font-family="'Droid Sans'" font-size="9">D</text>
+<text transform="matrix(1 0 0 1 13.1921 77.4187)" font-family="'Droid Sans'" font-size="9">C</text>
 </svg>

@@ -20,7 +20,7 @@
 				<title>text:HMC5883L</title>
 				<g transform="matrix(1, 0, 0, 1, 6.336, 12.96)">
 					<g transform="rotate(-90)">
-						<text transform="matrix(-1 0 0 -1 -3.9421 -3.9778)" fill="#FFFFFF" font-family="DroidSans" font-size="8">SHT15</text>
+						<text transform="matrix(-1 0 0 -1 -3.9421 -3.9778)" fill="#FFFFFF" font-family="Droid Sans" font-size="8">SHT15</text>
 					</g>
 				</g>
 			</g>
@@ -138,8 +138,8 @@
 		<circle id="connector0" fill="none" stroke="#9A916C" stroke-width="1.224" cx="16.413" cy="43.978" r="2.052"/>
 	</g>
 </g>
-<text transform="matrix(-4.371139e-08 1 -1 -4.371139e-08 35.7166 24.6423)" fill="#FFFFFF" font-family="DroidSans" font-size="6">VCC</text>
-<text transform="matrix(-4.371139e-08 1 -1 -4.371139e-08 28.5173 24.6423)" fill="#FFFFFF" font-family="DroidSans" font-size="6">DATA</text>
-<text transform="matrix(-4.371139e-08 1 -1 -4.371139e-08 21.3162 24.6423)" fill="#FFFFFF" font-family="DroidSans" font-size="6">SCK</text>
-<text transform="matrix(-4.371139e-08 1 -1 -4.371139e-08 14.1169 24.6423)" fill="#FFFFFF" font-family="DroidSans" font-size="6">GND</text>
+<text transform="matrix(-4.371139e-08 1 -1 -4.371139e-08 35.7166 24.6423)" fill="#FFFFFF" font-family="Droid Sans" font-size="6">VCC</text>
+<text transform="matrix(-4.371139e-08 1 -1 -4.371139e-08 28.5173 24.6423)" fill="#FFFFFF" font-family="Droid Sans" font-size="6">DATA</text>
+<text transform="matrix(-4.371139e-08 1 -1 -4.371139e-08 21.3162 24.6423)" fill="#FFFFFF" font-family="Droid Sans" font-size="6">SCK</text>
+<text transform="matrix(-4.371139e-08 1 -1 -4.371139e-08 14.1169 24.6423)" fill="#FFFFFF" font-family="Droid Sans" font-size="6">GND</text>
 </svg>

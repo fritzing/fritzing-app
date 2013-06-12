@@ -537,5 +537,5 @@
 			77.557,13.975 77.557,13.933 78.384,13.933 78.384,13.795 		"/>
 	</g>
 </g>
-<text transform="matrix(1 0 0 1 45.7197 28.9087)"><tspan x="0" y="0" fill="#4D4D4D" font-family="'DroidSans'" font-size="4">AVR</tspan><tspan x="0" y="4.5" fill="#4D4D4D" font-family="'DroidSans'" font-size="4">16 MHz</tspan></text>
+<text transform="matrix(1 0 0 1 45.7197 28.9087)"><tspan x="0" y="0" fill="#4D4D4D" font-family="'Droid Sans'" font-size="4">AVR</tspan><tspan x="0" y="4.5" fill="#4D4D4D" font-family="'Droid Sans'" font-size="4">16 MHz</tspan></text>
 </svg>

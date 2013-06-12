@@ -70,7 +70,7 @@
 		<rect x="39.361" y="49.667" opacity="0.25" enable-background="new    " width="0.769" height="1.796"/>
 		<rect x="46.561" y="49.667" opacity="0.25" enable-background="new    " width="0.769" height="1.796"/>
 	</g>
-	<text transform="matrix(1 0 0 1 15.1062 17.6208)" fill="#999999" font-family="'DroidSans'" font-size="4.9281">QRB1114</text>
+	<text transform="matrix(1 0 0 1 15.1062 17.6208)" fill="#999999" font-family="'Droid Sans'" font-size="4.9281">QRB1114</text>
 	<g opacity="0.3">
 		<rect x="33.623" y="49.386" width="17.063" height="0.28"/>
 		<rect x="17.065" y="64.82" width="16.561" height="0.279"/>

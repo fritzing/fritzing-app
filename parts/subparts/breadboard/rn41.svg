@@ -41,7 +41,7 @@
 			<path fill="#FFFFFF" d="M71.465,36.671c-0.042,0-0.076-0.034-0.076-0.075V0.678c0-0.042,0.034-0.076,0.076-0.076
 				s0.076,0.034,0.076,0.076v35.917C71.542,36.637,71.507,36.671,71.465,36.671z"/>
 		</g>
-		<text transform="matrix(1 0 0 1 43.751 9.4224)" fill="#606060" font-family="'DroidSans'" font-size="6.7682">RN-41</text>
+		<text transform="matrix(1 0 0 1 43.751 9.4224)" fill="#606060" font-family="'Droid Sans'" font-size="6.7682">RN-41</text>
 	</g>
 </g>
 </svg>

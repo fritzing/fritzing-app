@@ -184,64 +184,64 @@
    <polygon fill="#DCDCDB" points="3.583,57.881 2.375,56.672 2.375,61.797 3.583,60.797 "/>
    <polygon fill="#DCDCDB" points="6.333,57.881 7.542,56.672 7.542,61.797 6.333,60.797 "/>
   </g>
-  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 36.229 63.7583)" font-size="5">P</text>
-  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 39.564 63.7583)" font-size="5">o</text>
-  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 42.3447 63.7583)" font-size="5">l</text>
-  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 43.4556 63.7583)" font-size="5">o</text>
-  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 46.2363 63.7583)" font-size="5">l</text>
-  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 47.3472 63.7583)" font-size="5">u</text>
-  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 50.1279 63.7583)" font-size="5"/>
-  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 51.5171 63.7583)" font-size="5">M</text>
-  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 55.6821 63.7583)" font-size="5">D</text>
-  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 59.293 63.7583)" font-size="5">0</text>
-  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 62.0737 63.7583)" font-size="5">3</text>
-  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 64.8545 63.7583)" font-size="5">A</text>
-  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 36.229 69.7583)" font-size="5">Dual VNH2SP30</text>
-  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 7.8955 17.4253)" font-size="5">1</text>
-  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 10.6494 17.4253)" font-size="5">D</text>
-  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 14.021 17.4253)" font-size="5">I</text>
-  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 15.7153 17.4253)" font-size="5">A</text>
-  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 18.7061 17.4253)" font-size="5">G</text>
-  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 22.1558 17.4253)" font-size="5">/</text>
-  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 24.021 17.4253)" font-size="5">E</text>
-  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 26.6602 17.4253)" font-size="5">N</text>
-  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 107.6636 30.0923)" font-size="5">OUT</text>
-  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 7.8955 24.9253)" font-size="5">1IN</text>
-  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 15.9888 24.9253)" font-size="3">A</text>
-  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 7.8955 31.9253)" font-size="5">1IN</text>
-  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 15.9888 31.9253)" font-size="3">B</text>
-  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 7.8955 39.0923)" font-size="5">1PWM</text>
-  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 7.8955 46.2583)" font-size="5">1CS</text>
-  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 7.8955 53.7583)" font-size="5">VIN</text>
-  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 109.062 73.4243)" font-size="5">VIN</text>
-  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 7.8955 60.7583)" font-size="5">GND</text>
-  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 105.896 59.0923)" font-size="5">GND</text>
-  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 108.896 63.4253)" font-size="5">(-)</text>
-  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 110.896 77.5923)" font-size="5">(+)</text>
-  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 7.8955 67.9243)" font-size="5">+5V (IN)</text>
-  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 7.8955 75.0942)" font-size="5">GND</text>
-  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 7.8955 82.5923)" font-size="5">VIN</text>
-  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 7.8955 89.7583)" font-size="5">2CS</text>
-  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 7.8955 96.9243)" font-size="5">2PWM</text>
-  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 7.8955 118.2583)" font-size="5">2</text>
-  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 10.6494 118.2583)" font-size="5">D</text>
-  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 14.021 118.2583)" font-size="5">I</text>
-  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 15.7153 118.2583)" font-size="5">A</text>
-  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 18.7061 118.2583)" font-size="5">G</text>
-  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 22.1558 118.2583)" font-size="5">/</text>
-  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 24.021 118.2583)" font-size="5">E</text>
-  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 26.6602 118.2583)" font-size="5">N</text>
-  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 7.8955 104.0942)" font-size="5">2IN</text>
-  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 15.9888 104.0942)" font-size="3">A</text>
-  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 7.8955 111.0942)" font-size="5">2IN</text>
-  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 15.9888 111.0942)" font-size="3">B</text>
-  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 109.769 34.6665)" font-size="5">1A</text>
-  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 107.6636 43.9253)" font-size="5">OUT</text>
-  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 109.7358 48.5005)" font-size="5">1B</text>
-  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 107.6636 87.9243)" font-size="5">OUT</text>
-  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 109.769 92.5024)" font-size="5">2A</text>
-  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 107.6636 101.7583)" font-size="5">OUT</text>
-  <text fill="#E6E6E6" font-family="DroidSans" transform="matrix(1 0 0 1 109.7358 106.3325)" font-size="5">2B</text>
+  <text fill="#E6E6E6" font-family="Droid Sans" transform="matrix(1 0 0 1 36.229 63.7583)" font-size="5">P</text>
+  <text fill="#E6E6E6" font-family="Droid Sans" transform="matrix(1 0 0 1 39.564 63.7583)" font-size="5">o</text>
+  <text fill="#E6E6E6" font-family="Droid Sans" transform="matrix(1 0 0 1 42.3447 63.7583)" font-size="5">l</text>
+  <text fill="#E6E6E6" font-family="Droid Sans" transform="matrix(1 0 0 1 43.4556 63.7583)" font-size="5">o</text>
+  <text fill="#E6E6E6" font-family="Droid Sans" transform="matrix(1 0 0 1 46.2363 63.7583)" font-size="5">l</text>
+  <text fill="#E6E6E6" font-family="Droid Sans" transform="matrix(1 0 0 1 47.3472 63.7583)" font-size="5">u</text>
+  <text fill="#E6E6E6" font-family="Droid Sans" transform="matrix(1 0 0 1 50.1279 63.7583)" font-size="5"/>
+  <text fill="#E6E6E6" font-family="Droid Sans" transform="matrix(1 0 0 1 51.5171 63.7583)" font-size="5">M</text>
+  <text fill="#E6E6E6" font-family="Droid Sans" transform="matrix(1 0 0 1 55.6821 63.7583)" font-size="5">D</text>
+  <text fill="#E6E6E6" font-family="Droid Sans" transform="matrix(1 0 0 1 59.293 63.7583)" font-size="5">0</text>
+  <text fill="#E6E6E6" font-family="Droid Sans" transform="matrix(1 0 0 1 62.0737 63.7583)" font-size="5">3</text>
+  <text fill="#E6E6E6" font-family="Droid Sans" transform="matrix(1 0 0 1 64.8545 63.7583)" font-size="5">A</text>
+  <text fill="#E6E6E6" font-family="Droid Sans" transform="matrix(1 0 0 1 36.229 69.7583)" font-size="5">Dual VNH2SP30</text>
+  <text fill="#E6E6E6" font-family="Droid Sans" transform="matrix(1 0 0 1 7.8955 17.4253)" font-size="5">1</text>
+  <text fill="#E6E6E6" font-family="Droid Sans" transform="matrix(1 0 0 1 10.6494 17.4253)" font-size="5">D</text>
+  <text fill="#E6E6E6" font-family="Droid Sans" transform="matrix(1 0 0 1 14.021 17.4253)" font-size="5">I</text>
+  <text fill="#E6E6E6" font-family="Droid Sans" transform="matrix(1 0 0 1 15.7153 17.4253)" font-size="5">A</text>
+  <text fill="#E6E6E6" font-family="Droid Sans" transform="matrix(1 0 0 1 18.7061 17.4253)" font-size="5">G</text>
+  <text fill="#E6E6E6" font-family="Droid Sans" transform="matrix(1 0 0 1 22.1558 17.4253)" font-size="5">/</text>
+  <text fill="#E6E6E6" font-family="Droid Sans" transform="matrix(1 0 0 1 24.021 17.4253)" font-size="5">E</text>
+  <text fill="#E6E6E6" font-family="Droid Sans" transform="matrix(1 0 0 1 26.6602 17.4253)" font-size="5">N</text>
+  <text fill="#E6E6E6" font-family="Droid Sans" transform="matrix(1 0 0 1 107.6636 30.0923)" font-size="5">OUT</text>
+  <text fill="#E6E6E6" font-family="Droid Sans" transform="matrix(1 0 0 1 7.8955 24.9253)" font-size="5">1IN</text>
+  <text fill="#E6E6E6" font-family="Droid Sans" transform="matrix(1 0 0 1 15.9888 24.9253)" font-size="3">A</text>
+  <text fill="#E6E6E6" font-family="Droid Sans" transform="matrix(1 0 0 1 7.8955 31.9253)" font-size="5">1IN</text>
+  <text fill="#E6E6E6" font-family="Droid Sans" transform="matrix(1 0 0 1 15.9888 31.9253)" font-size="3">B</text>
+  <text fill="#E6E6E6" font-family="Droid Sans" transform="matrix(1 0 0 1 7.8955 39.0923)" font-size="5">1PWM</text>
+  <text fill="#E6E6E6" font-family="Droid Sans" transform="matrix(1 0 0 1 7.8955 46.2583)" font-size="5">1CS</text>
+  <text fill="#E6E6E6" font-family="Droid Sans" transform="matrix(1 0 0 1 7.8955 53.7583)" font-size="5">VIN</text>
+  <text fill="#E6E6E6" font-family="Droid Sans" transform="matrix(1 0 0 1 109.062 73.4243)" font-size="5">VIN</text>
+  <text fill="#E6E6E6" font-family="Droid Sans" transform="matrix(1 0 0 1 7.8955 60.7583)" font-size="5">GND</text>
+  <text fill="#E6E6E6" font-family="Droid Sans" transform="matrix(1 0 0 1 105.896 59.0923)" font-size="5">GND</text>
+  <text fill="#E6E6E6" font-family="Droid Sans" transform="matrix(1 0 0 1 108.896 63.4253)" font-size="5">(-)</text>
+  <text fill="#E6E6E6" font-family="Droid Sans" transform="matrix(1 0 0 1 110.896 77.5923)" font-size="5">(+)</text>
+  <text fill="#E6E6E6" font-family="Droid Sans" transform="matrix(1 0 0 1 7.8955 67.9243)" font-size="5">+5V (IN)</text>
+  <text fill="#E6E6E6" font-family="Droid Sans" transform="matrix(1 0 0 1 7.8955 75.0942)" font-size="5">GND</text>
+  <text fill="#E6E6E6" font-family="Droid Sans" transform="matrix(1 0 0 1 7.8955 82.5923)" font-size="5">VIN</text>
+  <text fill="#E6E6E6" font-family="Droid Sans" transform="matrix(1 0 0 1 7.8955 89.7583)" font-size="5">2CS</text>
+  <text fill="#E6E6E6" font-family="Droid Sans" transform="matrix(1 0 0 1 7.8955 96.9243)" font-size="5">2PWM</text>
+  <text fill="#E6E6E6" font-family="Droid Sans" transform="matrix(1 0 0 1 7.8955 118.2583)" font-size="5">2</text>
+  <text fill="#E6E6E6" font-family="Droid Sans" transform="matrix(1 0 0 1 10.6494 118.2583)" font-size="5">D</text>
+  <text fill="#E6E6E6" font-family="Droid Sans" transform="matrix(1 0 0 1 14.021 118.2583)" font-size="5">I</text>
+  <text fill="#E6E6E6" font-family="Droid Sans" transform="matrix(1 0 0 1 15.7153 118.2583)" font-size="5">A</text>
+  <text fill="#E6E6E6" font-family="Droid Sans" transform="matrix(1 0 0 1 18.7061 118.2583)" font-size="5">G</text>
+  <text fill="#E6E6E6" font-family="Droid Sans" transform="matrix(1 0 0 1 22.1558 118.2583)" font-size="5">/</text>
+  <text fill="#E6E6E6" font-family="Droid Sans" transform="matrix(1 0 0 1 24.021 118.2583)" font-size="5">E</text>
+  <text fill="#E6E6E6" font-family="Droid Sans" transform="matrix(1 0 0 1 26.6602 118.2583)" font-size="5">N</text>
+  <text fill="#E6E6E6" font-family="Droid Sans" transform="matrix(1 0 0 1 7.8955 104.0942)" font-size="5">2IN</text>
+  <text fill="#E6E6E6" font-family="Droid Sans" transform="matrix(1 0 0 1 15.9888 104.0942)" font-size="3">A</text>
+  <text fill="#E6E6E6" font-family="Droid Sans" transform="matrix(1 0 0 1 7.8955 111.0942)" font-size="5">2IN</text>
+  <text fill="#E6E6E6" font-family="Droid Sans" transform="matrix(1 0 0 1 15.9888 111.0942)" font-size="3">B</text>
+  <text fill="#E6E6E6" font-family="Droid Sans" transform="matrix(1 0 0 1 109.769 34.6665)" font-size="5">1A</text>
+  <text fill="#E6E6E6" font-family="Droid Sans" transform="matrix(1 0 0 1 107.6636 43.9253)" font-size="5">OUT</text>
+  <text fill="#E6E6E6" font-family="Droid Sans" transform="matrix(1 0 0 1 109.7358 48.5005)" font-size="5">1B</text>
+  <text fill="#E6E6E6" font-family="Droid Sans" transform="matrix(1 0 0 1 107.6636 87.9243)" font-size="5">OUT</text>
+  <text fill="#E6E6E6" font-family="Droid Sans" transform="matrix(1 0 0 1 109.769 92.5024)" font-size="5">2A</text>
+  <text fill="#E6E6E6" font-family="Droid Sans" transform="matrix(1 0 0 1 107.6636 101.7583)" font-size="5">OUT</text>
+  <text fill="#E6E6E6" font-family="Droid Sans" transform="matrix(1 0 0 1 109.7358 106.3325)" font-size="5">2B</text>
   <rect width="3.999993969873488" x="2.793496576110791" y="21.18006496062993" fill="none" height="4.000006022608874" id="connector130"/>
   <rect width="3.999993969873488" x="2.82945589734388" y="28.38780086286419" fill="none" height="4.000006022608874" id="connector131"/>
   <rect width="3.999993969873488" x="2.829455897343858" y="35.77201428755076" fill="none" height="4.000006022608874" id="connector132"/>

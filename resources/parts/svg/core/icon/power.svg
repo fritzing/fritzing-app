@@ -8,6 +8,6 @@
 	<rect id="background" x="0" y="0.001" fill="#F3F3F3" width="31.182" height="31.181"/>
 	<path id="connector0pin" fill="none" stroke="#000000" stroke-width="2.4" d="M15.59,15.592v13.156"/>
 	<path id="path4058" fill="none" stroke="#000000" stroke-width="2.4" d="M2.834,15.592h25.513"/>
-	<text id="label" transform="matrix(1 0 0 1 8.1301 12.0496)" font-family="'DroidSans'" font-size="9">V++</text>
+	<text id="label" transform="matrix(1 0 0 1 8.1301 12.0496)" font-family="'Droid Sans'" font-size="9">V++</text>
 </g>
 </svg>

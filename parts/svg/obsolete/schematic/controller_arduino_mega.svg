@@ -323,123 +323,123 @@
 			<line fill="none" stroke="#000000" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" x1="192.822" y1="217.093" x2="214.235" y2="217.093"/>
 		
 			<line fill="none" stroke="#000000" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" x1="192.822" y1="231.267" x2="214.235" y2="231.267"/>
-		<text transform="matrix(1 0 0 1 31.8047 62.6768)" font-family="DroidSans" font-size="8">RST</text>
-		<text transform="matrix(1 0 0 1 58.3291 38.7646)" font-family="DroidSans" font-size="8">3V3</text>
-		<text transform="matrix(1 0 0 1 82.2246 38.7646)" font-family="DroidSans" font-size="8">5V</text>
-		<text transform="matrix(1 0 0 1 143.5366 38.7646)" font-family="DroidSans" font-size="8">Vin </text>
-		<text transform="matrix(1 0 0 1 31.8047 76.7168)" font-family="DroidSans" font-size="8">AREF</text>
-		<text transform="matrix(1 0 0 1 30.9917 259.0586)" font-family="DroidSans" font-size="8">A10</text>
-		<text transform="matrix(1 0 0 1 30.9917 273.0112)" font-family="DroidSans" font-size="8">A11</text>
-		<text transform="matrix(1 0 0 1 30.9917 286.9683)" font-family="DroidSans" font-size="8">A12</text>
-		<text transform="matrix(1 0 0 1 30.9917 301.2065)" font-family="DroidSans" font-size="8">A13</text>
-		<text transform="matrix(1 0 0 1 30.9917 315.1538)" font-family="DroidSans" font-size="8">A14</text>
-		<text transform="matrix(1 0 0 1 30.9917 174.5898)" font-family="DroidSans" font-size="8">A5</text>
-		<text transform="matrix(1 0 0 1 30.9917 202.7168)" font-family="DroidSans" font-size="8">A6</text>
-		<text transform="matrix(1 0 0 1 30.9917 216.6729)" font-family="DroidSans" font-size="8">A7</text>
-		<text transform="matrix(1 0 0 1 30.9917 230.9111)" font-family="DroidSans" font-size="8">A8</text>
-		<text transform="matrix(1 0 0 1 30.9917 244.8574)" font-family="DroidSans" font-size="8">A9</text>
-		<text transform="matrix(1 0 0 1 30.9917 104.2949)" font-family="DroidSans" font-size="8">A0</text>
-		<text transform="matrix(1 0 0 1 30.9917 118.2471)" font-family="DroidSans" font-size="8">A1</text>
-		<text transform="matrix(1 0 0 1 30.9917 132.2021)" font-family="DroidSans" font-size="8">A2</text>
-		<text transform="matrix(1 0 0 1 30.9917 146.4424)" font-family="DroidSans" font-size="8">A3</text>
-		<text transform="matrix(1 0 0 1 30.9917 160.3887)" font-family="DroidSans" font-size="8">A4</text>
-		<text transform="matrix(1 0 0 1 30.9917 329.353)" font-family="DroidSans" font-size="8">A15</text>
-		<text transform="matrix(1 0 0 1 30.9917 554.4604)" font-family="DroidSans" font-size="8">D48</text>
-		<text transform="matrix(1 0 0 1 30.9917 568.4155)" font-family="DroidSans" font-size="8">D49</text>
-		<text transform="matrix(1 0 0 1 30.9917 582.3706)" font-family="DroidSans" font-size="8">D50</text>
-		<text transform="matrix(1 0 0 1 30.9917 596.6108)" font-family="DroidSans" font-size="8">D51</text>
-		<text transform="matrix(1 0 0 1 30.9917 610.5562)" font-family="DroidSans" font-size="8">D52</text>
-		<text transform="matrix(1 0 0 1 30.9917 484.1655)" font-family="DroidSans" font-size="8">D43</text>
-		<text transform="matrix(1 0 0 1 30.9917 498.1187)" font-family="DroidSans" font-size="8">D44</text>
-		<text transform="matrix(1 0 0 1 30.9917 512.0757)" font-family="DroidSans" font-size="8">D45</text>
-		<text transform="matrix(1 0 0 1 30.9917 526.314)" font-family="DroidSans" font-size="8">D46</text>
-		<text transform="matrix(1 0 0 1 30.9917 540.2612)" font-family="DroidSans" font-size="8">D47</text>
-		<text transform="matrix(1 0 0 1 30.9917 413.8687)" font-family="DroidSans" font-size="8">D38</text>
-		<text transform="matrix(1 0 0 1 30.9917 427.8218)" font-family="DroidSans" font-size="8">D39</text>
-		<text transform="matrix(1 0 0 1 30.9917 441.7788)" font-family="DroidSans" font-size="8">D40</text>
-		<text transform="matrix(1 0 0 1 30.9917 456.0171)" font-family="DroidSans" font-size="8">D41</text>
-		<text transform="matrix(1 0 0 1 30.9917 469.9644)" font-family="DroidSans" font-size="8">D42</text>
-		<text transform="matrix(1 0 0 1 30.9917 624.7573)" font-family="DroidSans" font-size="8">D53</text>
-		<text transform="matrix(1 0 0 1 167.2007 76.9141)" font-family="DroidSans" font-size="8">D13</text>
-		<text transform="matrix(1 0 0 1 167.2007 90.749)" font-family="DroidSans" font-size="8">D12</text>
-		<text transform="matrix(1 0 0 1 167.2007 104.9199)" font-family="DroidSans" font-size="8">D11</text>
-		<text transform="matrix(1 0 0 1 167.2007 119.0625)" font-family="DroidSans" font-size="8">D10</text>
-		<text transform="matrix(1 0 0 1 171.6069 133.0322)" font-family="DroidSans" font-size="8">D9</text>
-		<text transform="matrix(1 0 0 1 171.6069 147.0986)" font-family="DroidSans" font-size="8">D8</text>
-		<text transform="matrix(1 0 0 1 171.6069 160.9141)" font-family="DroidSans" font-size="8">D7</text>
-		<text transform="matrix(1 0 0 1 171.6069 174.7324)" font-family="DroidSans" font-size="8">D6</text>
-		<text transform="matrix(1 0 0 1 171.6069 188.8359)" font-family="DroidSans" font-size="8">D5</text>
-		<text transform="matrix(1 0 0 1 171.6069 202.6523)" font-family="DroidSans" font-size="8">D4</text>
-		<text transform="matrix(1 0 0 1 171.6069 245.0674)" font-family="DroidSans" font-size="8">D1</text>
-		<text transform="matrix(1 0 0 1 171.6069 259.1328)" font-family="DroidSans" font-size="8">D0</text>
-		<text transform="matrix(1 0 0 1 167.2007 287.8687)" font-family="DroidSans" font-size="8">D14</text>
-		<text transform="matrix(1 0 0 1 167.2007 301.7026)" font-family="DroidSans" font-size="8">D15</text>
-		<text transform="matrix(1 0 0 1 167.2007 315.8726)" font-family="DroidSans" font-size="8">D16</text>
-		<text transform="matrix(1 0 0 1 167.2007 330.0151)" font-family="DroidSans" font-size="8">D17</text>
-		<text transform="matrix(1 0 0 1 167.2007 343.9839)" font-family="DroidSans" font-size="8">D18</text>
-		<text transform="matrix(1 0 0 1 167.2007 358.0483)" font-family="DroidSans" font-size="8">D19</text>
-		<text transform="matrix(1 0 0 1 167.2007 371.8628)" font-family="DroidSans" font-size="8">D20</text>
-		<text transform="matrix(1 0 0 1 167.2007 385.6812)" font-family="DroidSans" font-size="8">D21</text>
-		<text transform="matrix(1 0 0 1 167.2007 413.8511)" font-family="DroidSans" font-size="8">D22</text>
-		<text transform="matrix(1 0 0 1 167.2007 427.6675)" font-family="DroidSans" font-size="8">D23</text>
-		<text transform="matrix(1 0 0 1 167.2007 441.7358)" font-family="DroidSans" font-size="8">D24</text>
-		<text transform="matrix(1 0 0 1 167.2007 455.8022)" font-family="DroidSans" font-size="8">D25</text>
-		<text transform="matrix(1 0 0 1 167.2007 470.3647)" font-family="DroidSans" font-size="8">D26</text>
-		<text transform="matrix(1 0 0 1 167.2007 484.1987)" font-family="DroidSans" font-size="8">D27</text>
-		<text transform="matrix(1 0 0 1 167.2007 498.3726)" font-family="DroidSans" font-size="8">D28</text>
-		<text transform="matrix(1 0 0 1 167.2007 512.5151)" font-family="DroidSans" font-size="8">D29</text>
-		<text transform="matrix(1 0 0 1 167.2007 526.4849)" font-family="DroidSans" font-size="8">D30</text>
-		<text transform="matrix(1 0 0 1 167.2007 540.5522)" font-family="DroidSans" font-size="8">D31</text>
-		<text transform="matrix(1 0 0 1 167.2007 554.3696)" font-family="DroidSans" font-size="8">D32</text>
-		<text transform="matrix(1 0 0 1 167.2007 568.188)" font-family="DroidSans" font-size="8">D33</text>
-		<text transform="matrix(1 0 0 1 167.2007 582.2925)" font-family="DroidSans" font-size="8">D34</text>
-		<text transform="matrix(1 0 0 1 167.2007 596.1089)" font-family="DroidSans" font-size="8">D35</text>
-		<text transform="matrix(1 0 0 1 167.2007 610.1782)" font-family="DroidSans" font-size="8">D36</text>
-		<text transform="matrix(1 0 0 1 167.2007 624.2466)" font-family="DroidSans" font-size="8">D37</text>
-		<text transform="matrix(0 -1 1 0 153.8696 356.8296)" font-family="DroidSans" font-size="12">Communication</text>
-		<text transform="matrix(1 0 0 1 72.8149 76.7651)" font-family="DroidSans" font-size="18">Arduino </text>
-		<text transform="matrix(1 0 0 1 83.186 98.3652)" font-family="DroidSans" font-size="18">Mega </text>
-		<text transform="matrix(1 0 0 1 99.1958 629.6909)" font-family="DroidSans" font-size="8">GND</text>
-		<text transform="matrix(1 0 0 1 196.1787 243.3569)" font-family="DroidSans" font-size="6">TX</text>
-		<text transform="matrix(1 0 0 1 196.1787 257.5396)" font-family="DroidSans" font-size="6">RX</text>
-		<text transform="matrix(1 0 0 1 196.1787 74.9863)" font-family="DroidSans" font-size="6">PWM</text>
-		<text transform="matrix(1 0 0 1 196.1787 88.9854)" font-family="DroidSans" font-size="6">PWM</text>
-		<text transform="matrix(1 0 0 1 196.1787 102.9844)" font-family="DroidSans" font-size="6">PWM</text>
-		<text transform="matrix(1 0 0 1 196.1787 116.9834)" font-family="DroidSans" font-size="6">PWM</text>
-		<text transform="matrix(1 0 0 1 196.1787 130.9824)" font-family="DroidSans" font-size="6">PWM</text>
-		<text transform="matrix(1 0 0 1 196.1787 144.9814)" font-family="DroidSans" font-size="6">PWM</text>
-		<text transform="matrix(1 0 0 1 196.1787 158.9805)" font-family="DroidSans" font-size="6">PWM</text>
-		<text transform="matrix(1 0 0 1 196.1787 172.9795)" font-family="DroidSans" font-size="6">PWM</text>
-		<text transform="matrix(1 0 0 1 196.1787 186.9785)" font-family="DroidSans" font-size="6">PWM</text>
-		<text transform="matrix(1 0 0 1 196.1787 200.9775)" font-family="DroidSans" font-size="6">PWM</text>
-		<text transform="matrix(1 0 0 1 171.6069 216.8252)" font-family="DroidSans" font-size="8">D3</text>
-		<text transform="matrix(1 0 0 1 196.1787 215.1504)" font-family="DroidSans" font-size="6">PWM</text>
-		<text transform="matrix(1 0 0 1 171.6069 230.999)" font-family="DroidSans" font-size="8">D2</text>
-		<text transform="matrix(1 0 0 1 196.1787 229.3242)" font-family="DroidSans" font-size="6">PWM</text>
-		<text transform="matrix(1 0 0 1 196.1787 286.0034)" font-family="DroidSans" font-size="6">TX3</text>
-		<text transform="matrix(1 0 0 1 196.1787 300.0112)" font-family="DroidSans" font-size="6">RX3</text>
-		<text transform="matrix(1 0 0 1 196.1787 314.019)" font-family="DroidSans" font-size="6">TX2</text>
-		<text transform="matrix(1 0 0 1 196.1787 328.0269)" font-family="DroidSans" font-size="6">RX2</text>
-		<text transform="matrix(1 0 0 1 196.1787 342.0327)" font-family="DroidSans" font-size="6">TX1</text>
-		<text transform="matrix(1 0 0 1 196.1787 356.0405)" font-family="DroidSans" font-size="6">RX1</text>
-		<text transform="matrix(1 0 0 1 196.1787 370.0483)" font-family="DroidSans" font-size="6">S</text>
-		<text transform="matrix(1 0 0 1 199.293 370.0483)" font-family="DroidSans" font-size="6">D</text>
-		<text transform="matrix(1 0 0 1 203.3389 370.0483)" font-family="DroidSans" font-size="6">A</text>
-		<text transform="matrix(1 0 0 1 196.1787 384.0542)" font-family="DroidSans" font-size="6">SCL</text>
+		<text transform="matrix(1 0 0 1 31.8047 62.6768)" font-family="Droid Sans" font-size="8">RST</text>
+		<text transform="matrix(1 0 0 1 58.3291 38.7646)" font-family="Droid Sans" font-size="8">3V3</text>
+		<text transform="matrix(1 0 0 1 82.2246 38.7646)" font-family="Droid Sans" font-size="8">5V</text>
+		<text transform="matrix(1 0 0 1 143.5366 38.7646)" font-family="Droid Sans" font-size="8">Vin </text>
+		<text transform="matrix(1 0 0 1 31.8047 76.7168)" font-family="Droid Sans" font-size="8">AREF</text>
+		<text transform="matrix(1 0 0 1 30.9917 259.0586)" font-family="Droid Sans" font-size="8">A10</text>
+		<text transform="matrix(1 0 0 1 30.9917 273.0112)" font-family="Droid Sans" font-size="8">A11</text>
+		<text transform="matrix(1 0 0 1 30.9917 286.9683)" font-family="Droid Sans" font-size="8">A12</text>
+		<text transform="matrix(1 0 0 1 30.9917 301.2065)" font-family="Droid Sans" font-size="8">A13</text>
+		<text transform="matrix(1 0 0 1 30.9917 315.1538)" font-family="Droid Sans" font-size="8">A14</text>
+		<text transform="matrix(1 0 0 1 30.9917 174.5898)" font-family="Droid Sans" font-size="8">A5</text>
+		<text transform="matrix(1 0 0 1 30.9917 202.7168)" font-family="Droid Sans" font-size="8">A6</text>
+		<text transform="matrix(1 0 0 1 30.9917 216.6729)" font-family="Droid Sans" font-size="8">A7</text>
+		<text transform="matrix(1 0 0 1 30.9917 230.9111)" font-family="Droid Sans" font-size="8">A8</text>
+		<text transform="matrix(1 0 0 1 30.9917 244.8574)" font-family="Droid Sans" font-size="8">A9</text>
+		<text transform="matrix(1 0 0 1 30.9917 104.2949)" font-family="Droid Sans" font-size="8">A0</text>
+		<text transform="matrix(1 0 0 1 30.9917 118.2471)" font-family="Droid Sans" font-size="8">A1</text>
+		<text transform="matrix(1 0 0 1 30.9917 132.2021)" font-family="Droid Sans" font-size="8">A2</text>
+		<text transform="matrix(1 0 0 1 30.9917 146.4424)" font-family="Droid Sans" font-size="8">A3</text>
+		<text transform="matrix(1 0 0 1 30.9917 160.3887)" font-family="Droid Sans" font-size="8">A4</text>
+		<text transform="matrix(1 0 0 1 30.9917 329.353)" font-family="Droid Sans" font-size="8">A15</text>
+		<text transform="matrix(1 0 0 1 30.9917 554.4604)" font-family="Droid Sans" font-size="8">D48</text>
+		<text transform="matrix(1 0 0 1 30.9917 568.4155)" font-family="Droid Sans" font-size="8">D49</text>
+		<text transform="matrix(1 0 0 1 30.9917 582.3706)" font-family="Droid Sans" font-size="8">D50</text>
+		<text transform="matrix(1 0 0 1 30.9917 596.6108)" font-family="Droid Sans" font-size="8">D51</text>
+		<text transform="matrix(1 0 0 1 30.9917 610.5562)" font-family="Droid Sans" font-size="8">D52</text>
+		<text transform="matrix(1 0 0 1 30.9917 484.1655)" font-family="Droid Sans" font-size="8">D43</text>
+		<text transform="matrix(1 0 0 1 30.9917 498.1187)" font-family="Droid Sans" font-size="8">D44</text>
+		<text transform="matrix(1 0 0 1 30.9917 512.0757)" font-family="Droid Sans" font-size="8">D45</text>
+		<text transform="matrix(1 0 0 1 30.9917 526.314)" font-family="Droid Sans" font-size="8">D46</text>
+		<text transform="matrix(1 0 0 1 30.9917 540.2612)" font-family="Droid Sans" font-size="8">D47</text>
+		<text transform="matrix(1 0 0 1 30.9917 413.8687)" font-family="Droid Sans" font-size="8">D38</text>
+		<text transform="matrix(1 0 0 1 30.9917 427.8218)" font-family="Droid Sans" font-size="8">D39</text>
+		<text transform="matrix(1 0 0 1 30.9917 441.7788)" font-family="Droid Sans" font-size="8">D40</text>
+		<text transform="matrix(1 0 0 1 30.9917 456.0171)" font-family="Droid Sans" font-size="8">D41</text>
+		<text transform="matrix(1 0 0 1 30.9917 469.9644)" font-family="Droid Sans" font-size="8">D42</text>
+		<text transform="matrix(1 0 0 1 30.9917 624.7573)" font-family="Droid Sans" font-size="8">D53</text>
+		<text transform="matrix(1 0 0 1 167.2007 76.9141)" font-family="Droid Sans" font-size="8">D13</text>
+		<text transform="matrix(1 0 0 1 167.2007 90.749)" font-family="Droid Sans" font-size="8">D12</text>
+		<text transform="matrix(1 0 0 1 167.2007 104.9199)" font-family="Droid Sans" font-size="8">D11</text>
+		<text transform="matrix(1 0 0 1 167.2007 119.0625)" font-family="Droid Sans" font-size="8">D10</text>
+		<text transform="matrix(1 0 0 1 171.6069 133.0322)" font-family="Droid Sans" font-size="8">D9</text>
+		<text transform="matrix(1 0 0 1 171.6069 147.0986)" font-family="Droid Sans" font-size="8">D8</text>
+		<text transform="matrix(1 0 0 1 171.6069 160.9141)" font-family="Droid Sans" font-size="8">D7</text>
+		<text transform="matrix(1 0 0 1 171.6069 174.7324)" font-family="Droid Sans" font-size="8">D6</text>
+		<text transform="matrix(1 0 0 1 171.6069 188.8359)" font-family="Droid Sans" font-size="8">D5</text>
+		<text transform="matrix(1 0 0 1 171.6069 202.6523)" font-family="Droid Sans" font-size="8">D4</text>
+		<text transform="matrix(1 0 0 1 171.6069 245.0674)" font-family="Droid Sans" font-size="8">D1</text>
+		<text transform="matrix(1 0 0 1 171.6069 259.1328)" font-family="Droid Sans" font-size="8">D0</text>
+		<text transform="matrix(1 0 0 1 167.2007 287.8687)" font-family="Droid Sans" font-size="8">D14</text>
+		<text transform="matrix(1 0 0 1 167.2007 301.7026)" font-family="Droid Sans" font-size="8">D15</text>
+		<text transform="matrix(1 0 0 1 167.2007 315.8726)" font-family="Droid Sans" font-size="8">D16</text>
+		<text transform="matrix(1 0 0 1 167.2007 330.0151)" font-family="Droid Sans" font-size="8">D17</text>
+		<text transform="matrix(1 0 0 1 167.2007 343.9839)" font-family="Droid Sans" font-size="8">D18</text>
+		<text transform="matrix(1 0 0 1 167.2007 358.0483)" font-family="Droid Sans" font-size="8">D19</text>
+		<text transform="matrix(1 0 0 1 167.2007 371.8628)" font-family="Droid Sans" font-size="8">D20</text>
+		<text transform="matrix(1 0 0 1 167.2007 385.6812)" font-family="Droid Sans" font-size="8">D21</text>
+		<text transform="matrix(1 0 0 1 167.2007 413.8511)" font-family="Droid Sans" font-size="8">D22</text>
+		<text transform="matrix(1 0 0 1 167.2007 427.6675)" font-family="Droid Sans" font-size="8">D23</text>
+		<text transform="matrix(1 0 0 1 167.2007 441.7358)" font-family="Droid Sans" font-size="8">D24</text>
+		<text transform="matrix(1 0 0 1 167.2007 455.8022)" font-family="Droid Sans" font-size="8">D25</text>
+		<text transform="matrix(1 0 0 1 167.2007 470.3647)" font-family="Droid Sans" font-size="8">D26</text>
+		<text transform="matrix(1 0 0 1 167.2007 484.1987)" font-family="Droid Sans" font-size="8">D27</text>
+		<text transform="matrix(1 0 0 1 167.2007 498.3726)" font-family="Droid Sans" font-size="8">D28</text>
+		<text transform="matrix(1 0 0 1 167.2007 512.5151)" font-family="Droid Sans" font-size="8">D29</text>
+		<text transform="matrix(1 0 0 1 167.2007 526.4849)" font-family="Droid Sans" font-size="8">D30</text>
+		<text transform="matrix(1 0 0 1 167.2007 540.5522)" font-family="Droid Sans" font-size="8">D31</text>
+		<text transform="matrix(1 0 0 1 167.2007 554.3696)" font-family="Droid Sans" font-size="8">D32</text>
+		<text transform="matrix(1 0 0 1 167.2007 568.188)" font-family="Droid Sans" font-size="8">D33</text>
+		<text transform="matrix(1 0 0 1 167.2007 582.2925)" font-family="Droid Sans" font-size="8">D34</text>
+		<text transform="matrix(1 0 0 1 167.2007 596.1089)" font-family="Droid Sans" font-size="8">D35</text>
+		<text transform="matrix(1 0 0 1 167.2007 610.1782)" font-family="Droid Sans" font-size="8">D36</text>
+		<text transform="matrix(1 0 0 1 167.2007 624.2466)" font-family="Droid Sans" font-size="8">D37</text>
+		<text transform="matrix(0 -1 1 0 153.8696 356.8296)" font-family="Droid Sans" font-size="12">Communication</text>
+		<text transform="matrix(1 0 0 1 72.8149 76.7651)" font-family="Droid Sans" font-size="18">Arduino </text>
+		<text transform="matrix(1 0 0 1 83.186 98.3652)" font-family="Droid Sans" font-size="18">Mega </text>
+		<text transform="matrix(1 0 0 1 99.1958 629.6909)" font-family="Droid Sans" font-size="8">GND</text>
+		<text transform="matrix(1 0 0 1 196.1787 243.3569)" font-family="Droid Sans" font-size="6">TX</text>
+		<text transform="matrix(1 0 0 1 196.1787 257.5396)" font-family="Droid Sans" font-size="6">RX</text>
+		<text transform="matrix(1 0 0 1 196.1787 74.9863)" font-family="Droid Sans" font-size="6">PWM</text>
+		<text transform="matrix(1 0 0 1 196.1787 88.9854)" font-family="Droid Sans" font-size="6">PWM</text>
+		<text transform="matrix(1 0 0 1 196.1787 102.9844)" font-family="Droid Sans" font-size="6">PWM</text>
+		<text transform="matrix(1 0 0 1 196.1787 116.9834)" font-family="Droid Sans" font-size="6">PWM</text>
+		<text transform="matrix(1 0 0 1 196.1787 130.9824)" font-family="Droid Sans" font-size="6">PWM</text>
+		<text transform="matrix(1 0 0 1 196.1787 144.9814)" font-family="Droid Sans" font-size="6">PWM</text>
+		<text transform="matrix(1 0 0 1 196.1787 158.9805)" font-family="Droid Sans" font-size="6">PWM</text>
+		<text transform="matrix(1 0 0 1 196.1787 172.9795)" font-family="Droid Sans" font-size="6">PWM</text>
+		<text transform="matrix(1 0 0 1 196.1787 186.9785)" font-family="Droid Sans" font-size="6">PWM</text>
+		<text transform="matrix(1 0 0 1 196.1787 200.9775)" font-family="Droid Sans" font-size="6">PWM</text>
+		<text transform="matrix(1 0 0 1 171.6069 216.8252)" font-family="Droid Sans" font-size="8">D3</text>
+		<text transform="matrix(1 0 0 1 196.1787 215.1504)" font-family="Droid Sans" font-size="6">PWM</text>
+		<text transform="matrix(1 0 0 1 171.6069 230.999)" font-family="Droid Sans" font-size="8">D2</text>
+		<text transform="matrix(1 0 0 1 196.1787 229.3242)" font-family="Droid Sans" font-size="6">PWM</text>
+		<text transform="matrix(1 0 0 1 196.1787 286.0034)" font-family="Droid Sans" font-size="6">TX3</text>
+		<text transform="matrix(1 0 0 1 196.1787 300.0112)" font-family="Droid Sans" font-size="6">RX3</text>
+		<text transform="matrix(1 0 0 1 196.1787 314.019)" font-family="Droid Sans" font-size="6">TX2</text>
+		<text transform="matrix(1 0 0 1 196.1787 328.0269)" font-family="Droid Sans" font-size="6">RX2</text>
+		<text transform="matrix(1 0 0 1 196.1787 342.0327)" font-family="Droid Sans" font-size="6">TX1</text>
+		<text transform="matrix(1 0 0 1 196.1787 356.0405)" font-family="Droid Sans" font-size="6">RX1</text>
+		<text transform="matrix(1 0 0 1 196.1787 370.0483)" font-family="Droid Sans" font-size="6">S</text>
+		<text transform="matrix(1 0 0 1 199.293 370.0483)" font-family="Droid Sans" font-size="6">D</text>
+		<text transform="matrix(1 0 0 1 203.3389 370.0483)" font-family="Droid Sans" font-size="6">A</text>
+		<text transform="matrix(1 0 0 1 196.1787 384.0542)" font-family="Droid Sans" font-size="6">SCL</text>
 		<polygon points="205.987,238.454 210.404,241.004 205.987,243.556 		"/>
 		<polygon points="210.404,257.721 205.987,255.168 210.404,252.619 		"/>
 		<polyline fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" points="
 			164.125,237.832 160.791,237.832 160.791,388.133 164.125,388.133 		"/>
-		<text transform="matrix(0 -1 1 0 153.8696 532.6372)" font-family="DroidSans" font-size="12">Digital</text>
+		<text transform="matrix(0 -1 1 0 153.8696 532.6372)" font-family="Droid Sans" font-size="12">Digital</text>
 		<polyline fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" points="
 			164.125,404.963 160.791,404.963 160.791,626.133 164.125,626.133 		"/>
-		<text transform="matrix(0 1 -1 0 59.9263 498.4595)" font-family="DroidSans" font-size="12">Digital</text>
+		<text transform="matrix(0 1 -1 0 59.9263 498.4595)" font-family="Droid Sans" font-size="12">Digital</text>
 		<polyline fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" points="
 			49.674,626.133 53.009,626.133 53.009,404.963 49.674,404.963 		"/>
-		<text transform="matrix(0 1 -1 0 59.9263 188.8521)" font-family="DroidSans" font-size="12">Analog In</text>
+		<text transform="matrix(0 1 -1 0 59.9263 188.8521)" font-family="Droid Sans" font-size="12">Analog In</text>
 		<polyline fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" points="
 			49.674,330.965 53.009,330.965 53.009,97.963 49.674,97.963 		"/>
-		<text transform="matrix(0 -1 1 0 153.8696 173.314)" font-family="DroidSans" font-size="12">PWM</text>
+		<text transform="matrix(0 -1 1 0 153.8696 173.314)" font-family="Droid Sans" font-size="12">PWM</text>
 		<polyline fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" points="
 			164.125,68.798 160.791,68.798 160.791,233.633 164.125,233.633 		"/>
 	</g>

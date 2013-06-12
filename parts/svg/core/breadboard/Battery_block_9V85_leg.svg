@@ -117,8 +117,8 @@
   <path  opacity="0.15" fill="#FFFFFF" d="M5.586,1.815c-1.152,0.188-1.761,0.51-1.761,0.882v3.817h1.761V1.815z"/>
   <path  opacity="0.15" fill="#FFFFFF" d="M65.263,1.815c1.152,0.188,1.761,0.51,1.761,0.882v3.817h-1.761V1.815z"/>
   <g >
-   <text  fill="#FFFFFF" font-family="DroidSans" transform="matrix(1 0 0 1 22.6406 75.9355)" font-size="22">9</text>
-   <text  fill="#FFFFFF" font-family="DroidSans" transform="matrix(1 0 0 1 36.5776 75.936)" font-size="22">v</text>
+   <text  fill="#FFFFFF" font-family="Droid Sans" transform="matrix(1 0 0 1 22.6406 75.9355)" font-size="22">9</text>
+   <text  fill="#FFFFFF" font-family="Droid Sans" transform="matrix(1 0 0 1 36.5776 75.936)" font-size="22">v</text>
   </g>
  </g>
 </svg>

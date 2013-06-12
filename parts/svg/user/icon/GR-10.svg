@@ -18,7 +18,7 @@
 	c1.65,0,3,1.35,3,3V22.781z"/>
 <rect x="21.399" y="29.117" fill="#E6E6E6" width="8.648" height="0.404"/>
 <rect x="0" y="29.117" fill="#E6E6E6" width="8.648" height="0.404"/>
-<text transform="matrix(1 0 0 1 4.3245 4.6965)" fill="#333333" font-family="'DroidSans'" font-size="3.1729">MN5010HS</text>
+<text transform="matrix(1 0 0 1 4.3245 4.6965)" fill="#333333" font-family="'Droid Sans'" font-size="3.1729">MN5010HS</text>
 <g opacity="0.2">
 	<path d="M8.649,29.465h12.75"/>
 	<rect x="0" y="29.522" width="30.047" height="0.263"/>

@@ -4,7 +4,8 @@
 #    <directory> is a folder, with subfolders, containing <suffix> files.  In each <suffix> file in the directory or its children
 #    replace <text> with <replace>
 
-import getopt, sys, os, re
+import sys, os, re
+import optparse
     
 def usage():
     print """
@@ -16,47 +17,49 @@ usage:
     replace [text] with [replace]
     """
     
-  	
-	   
+    
+       
 def main():
-    try:
-        opts, args = getopt.getopt(sys.argv[1:], "hd:f:r:s:", ["help", "directory", "find", "replace", "suffix"])
-    except getopt.GetoptError, err:
-        # print help information and exit:
-        print str(err) # will print something like "option -a not recognized"
-        usage()
-        sys.exit(2)
-    outputDir = None
-    findtext = ""
-    replacetext = ""
-    suffix = ""
-    
-    for o, a in opts:
-        #print o
-        #print a
-        if o in ("-d", "--directory"):
-            outputDir = a
-        elif o in ("-h", "--help"):
-            usage()
-            sys.exit(2)
-        elif o in ("-f", "--find"):
-            findtext = a;
-        elif o in ("-r", "--replace"):
-            replacetext = a;
-        elif o in ("-s", "--suffix"):
-            suffix = a;
-        elif o in ("-n", "--not"):
-            gotnot = 1;
+        
+    parser = optparse.OptionParser()
+    parser.add_option('-s', '--suffix', dest="suffix" )
+    parser.add_option('-d', '--directory', dest="directory")
+    parser.add_option('-f', '--find', dest="find" )
+    parser.add_option('-r', '--replace', dest="replace")
+    (options, args) = parser.parse_args()
 
-        else:
-            assert False, "unhandled option"
-    
-    if(not(outputDir)):
+    if not options.directory:
+        parser.error("directory argument not given")
         usage()
-        sys.exit(2)
+        return
+    
+    if not options.find:
+        parser.error("find argument not given")
+        usage()
+        return
+
+    if not options.replace:
+        parser.error("replace argument not given")
+        usage()
+        return
+
+    outputDir = options.directory
+    findtext = options.find
+    replacetext = options.replace
+    suffix = options.suffix
+    
+    
+    if not(outputDir):
+        usage()
+        return
+    
+    if findtext.startswith('"') or findtext.startswith("'"):
+        findtext = findtext[1:-1]
      
-
-    print "replace text " + findtext + " with " + replacetext + " in " + suffix + " files"
+    if replacetext.startswith('"') or replacetext.startswith("'"):
+        replacetext = replacetext[1:-1]
+     
+    print "replace text",findtext,"with",replacetext,"in", suffix,"files"
     
     for root, dirs, files in os.walk(outputDir, topdown=False):
         for filename in files:

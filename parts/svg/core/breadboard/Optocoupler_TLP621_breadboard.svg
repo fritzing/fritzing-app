@@ -49,16 +49,16 @@
   <path style="fill:#ccc7ad" id="path3358" d="m 0.56,13.58 v 5.83 c 1.47,-0.17 2.62,-1.4 2.62,-2.92 0,-1.52 -1.14,-2.74 -2.62,-2.91 z"/>
   <circle cx="6.5" cy="23.469999" style="fill:#c4bfa6" r="2.0599999" id="circle3360" d="m 8.5599999,23.469999 c 0,1.137707 -0.9222933,2.06 -2.0599999,2.06 -1.1377066,0 -2.0599999,-0.922293 -2.0599999,-2.06 0,-1.137706 0.9222933,-2.06 2.0599999,-2.06 1.1377066,0 2.0599999,0.922294 2.0599999,2.06 z"/>
   <g id="g3362">
-   <g style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:DroidSans" id="text3382" xml:space="preserve" transform="scale(1.1111111,1.1111111)"/>
-   <g style="font-size:4.44444418px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:DroidSans;-inkscape-font-specification:DroidSans" id="text3394" xml:space="preserve">
+   <g style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans" id="text3382" xml:space="preserve" transform="scale(1.1111111,1.1111111)"/>
+   <g style="font-size:4.44444418px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text3394" xml:space="preserve">
     <text x="3.6355925" y="9.6483049" id="tspan3396">TLP</text>
    </g>
-   <g style="font-size:4.44444418px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:DroidSans;-inkscape-font-specification:DroidSans" id="text3398" xml:space="preserve">
+   <g style="font-size:4.44444418px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text3398" xml:space="preserve">
     <text x="7.5508461" y="15.241526" id="tspan3400">621</text>
    </g>
   </g>
   <rect width="2.283637009697121" x="12.70319125047952" y="0.2765583351955528" fill="none" height="3.942987156369717" id="connector5pin"/>
  </g>
- <g style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:DroidSans" id="text3378" xml:space="preserve" transform="matrix(1.1111111,0,0,1.1111111,-8.6238307e-7,0.00262725)"/>
+ <g style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans" id="text3378" xml:space="preserve" transform="matrix(1.1111111,0,0,1.1111111,-8.6238307e-7,0.00262725)"/>
  <rect width="3" x="12.514442" y="0" height="4.3400002" style="fill:#8c8c8c"/>
 </svg>

@@ -50,6 +50,6 @@
 		<path fill="#FFFFFF" d="M49.799,48.95c0,1.1-0.9,2-2,2H6.635c-1.1,0-2-0.9-2-2V7.786c0-1.1,0.9-2,2-2h41.164c1.1,0,2,0.9,2,2
 			V48.95z"/>
 	</g>
-	<text transform="matrix(1 0 0 1 6.4934 48.863)" fill="#999999" font-family="'DroidSans'" font-size="3.5775">Copernicus GPS</text>
+	<text transform="matrix(1 0 0 1 6.4934 48.863)" fill="#999999" font-family="'Droid Sans'" font-size="3.5775">Copernicus GPS</text>
 </g>
 </svg>

@@ -60,22 +60,22 @@
 </g>
 <g id="label0_1_" enable-background="new    ">
 	<g>
-		<text transform="matrix(1 0 0 1 15.8721 40.5942)" fill="#787878" font-family="'DroidSans'" font-size="2">3</text>
+		<text transform="matrix(1 0 0 1 15.8721 40.5942)" fill="#787878" font-family="'Droid Sans'" font-size="2">3</text>
 	</g>
 	<g>
-		<text transform="matrix(1 0 0 1 23.9971 20.1567)" fill="#787878" font-family="'DroidSans'" font-size="2">2</text>
+		<text transform="matrix(1 0 0 1 23.9971 20.1567)" fill="#787878" font-family="'Droid Sans'" font-size="2">2</text>
 	</g>
 	<g>
-		<text transform="matrix(1 0 0 1 15.8721 4.644)" fill="#787878" font-family="'DroidSans'" font-size="2">1</text>
+		<text transform="matrix(1 0 0 1 15.8721 4.644)" fill="#787878" font-family="'Droid Sans'" font-size="2">1</text>
 	</g>
 </g>
 <g>
-	<text transform="matrix(1 0 0 1 10.1909 11.7866)" fill="#787878" font-family="'DroidSans'" font-size="4.5">Vcc</text>
+	<text transform="matrix(1 0 0 1 10.1909 11.7866)" fill="#787878" font-family="'Droid Sans'" font-size="4.5">Vcc</text>
 </g>
 <g>
-	<text transform="matrix(1 0 0 1 9.9409 22.7866)" fill="#787878" font-family="'DroidSans'" font-size="4.5">Vout</text>
+	<text transform="matrix(1 0 0 1 9.9409 22.7866)" fill="#787878" font-family="'Droid Sans'" font-size="4.5">Vout</text>
 </g>
 <g>
-	<text transform="matrix(1 0 0 1 8.9409 34.5366)" fill="#787878" font-family="'DroidSans'" font-size="4.5">GND</text>
+	<text transform="matrix(1 0 0 1 8.9409 34.5366)" fill="#787878" font-family="'Droid Sans'" font-size="4.5">GND</text>
 </g>
 </svg>

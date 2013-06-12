@@ -686,5 +686,5 @@
 <rect x="0" y="191.135" fill="#666666" width="105.242" height="1.314"/>
 <polygon opacity="0.5" fill="#FFFFFF" points="0,50.538 38.946,23.068 66.114,23.068 105.061,50.538 105.061,49.956 66.114,22.486 
 	38.946,22.486 0,49.956 "/>
-<text transform="matrix(1 0 0 1 16.4548 153.5027)"><tspan x="0" y="0" fill="#666666" font-family="'DroidSans'" font-size="7.7207">9Xtend</tspan><tspan x="24.293" y="-2.573" fill="#666666" font-family="'DroidSans'" font-size="5.1471">TM</tspan><tspan x="31.443" y="0" fill="#666666" font-family="'DroidSans'" font-size="7.7207"> 900 MHz</tspan></text>
+<text transform="matrix(1 0 0 1 16.4548 153.5027)"><tspan x="0" y="0" fill="#666666" font-family="'Droid Sans'" font-size="7.7207">9Xtend</tspan><tspan x="24.293" y="-2.573" fill="#666666" font-family="'Droid Sans'" font-size="5.1471">TM</tspan><tspan x="31.443" y="0" fill="#666666" font-family="'Droid Sans'" font-size="7.7207"> 900 MHz</tspan></text>
 </svg>

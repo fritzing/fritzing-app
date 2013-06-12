@@ -20,8 +20,8 @@
 			<path fill="#333333" d="M35.949,0H3.888v3.605c0,0.503-0.412,0.916-0.916,0.916H0v17.052c0,0.347,0.283,0.629,0.627,0.629h35.322
 				c0.345,0,0.627-0.282,0.627-0.629V0.627C36.576,0.283,36.294,0,35.949,0z"/>
 		</g>
-		<text transform="matrix(1 0 0 1 6.3496 3.1631)" fill="#808080" font-family="'DroidSans'" font-size="2.531">OMRON</text>
-		<text transform="matrix(1 0 0 1 6.3496 5.6631)" fill="#808080" font-family="'DroidSans'" font-size="2.531">G5V-1</text>
+		<text transform="matrix(1 0 0 1 6.3496 3.1631)" fill="#808080" font-family="'Droid Sans'" font-size="2.531">OMRON</text>
+		<text transform="matrix(1 0 0 1 6.3496 5.6631)" fill="#808080" font-family="'Droid Sans'" font-size="2.531">G5V-1</text>
 	</g>
 	<image width="69" height="2" xlink:href="A3684B02.png"  transform="matrix(0.48 0 0 0.48 3.8818 0)">
 	</image>
@@ -31,8 +31,8 @@
 	</image>
 </g>
 <g>
-	<text transform="matrix(1 0 0 1 4.1851 17.8516)" fill="#808080" font-family="'DroidSans'" font-size="2.531">12VDC</text>
-	<text transform="matrix(1 0 0 1 4.1851 20.3516)" fill="#808080" font-family="'DroidSans'" font-size="2.531">MADE IN CHINA</text>
+	<text transform="matrix(1 0 0 1 4.1851 17.8516)" fill="#808080" font-family="'Droid Sans'" font-size="2.531">12VDC</text>
+	<text transform="matrix(1 0 0 1 4.1851 20.3516)" fill="#808080" font-family="'Droid Sans'" font-size="2.531">MADE IN CHINA</text>
 </g>
 <path fill="#B3B3B3" d="M2.622,18.604c0,0.504-0.412,0.916-0.916,0.916H1.704c-0.503,0-0.916-0.412-0.916-0.916V6.52
 	c0-0.503,0.412-0.916,0.916-0.916h0.002c0.503,0,0.916,0.412,0.916,0.916V18.604z"/>

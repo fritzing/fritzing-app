@@ -34,7 +34,7 @@
   <line id="line4482-78" style="fill:none;stroke:#000000;stroke-width:2.78977323;stroke-linecap:butt;stroke-linejoin:round" x1="141.73219" x2="141.73219" y1="56.692883" y2="85.039337"/>
   <line id="line4482-7" style="fill:none;stroke:#000000;stroke-width:2.78977323;stroke-linecap:butt;stroke-linejoin:round" x1="113.38575" x2="113.38575" y1="56.692886" y2="85.039337"/>
   <g id="g4410" transform="translate(104.5259,-19.535959)">
-   <text font-size="17.98" id="text4714" style="font-size:17.97999954px;font-family:DroidSans" x="81.479225" y="166.2285">Adafruit Atmega32u4 Breakout Board</text>
+   <text font-size="17.98" id="text4714" style="font-size:17.97999954px;font-family:Droid Sans" x="81.479225" y="166.2285">Adafruit Atmega32u4 Breakout Board</text>
   </g>
   <line id="line4482" style="fill:none;stroke:#000000;stroke-width:2.78977323;stroke-linecap:butt;stroke-linejoin:round" x1="85.039299" x2="85.039299" y1="56.692886" y2="85.039337"/>
   <rect height="113.3858" id="rect4765" style="fill:none;stroke:#000000;stroke-width:1.73099697;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" width="651.96838" x="28.346397" y="85.039337"/>
@@ -57,52 +57,52 @@
   <line id="connector23pin" style="fill:none;stroke:#000000;stroke-width:1.00000012;stroke-opacity:1" x1="113.38575" x2="113.38575" y1="226.77158" y2="206.92908"/>
   <line id="connector24pin" style="fill:none;stroke:#000000;stroke-width:1.00000012;stroke-opacity:1" x1="141.73216" x2="141.73216" y1="226.77158" y2="206.92908"/>
   <line id="connector0pin" style="fill:none;stroke:#000000;stroke-width:1.00000012;stroke-opacity:1" x1="85.039299" x2="85.039299" y1="56.692886" y2="76.5354"/>
-  <g id="text3475" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:DroidSans;-inkscape-font-specification:DroidSans" xml:space="preserve">
+  <g id="text3475" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" xml:space="preserve">
    <text id="tspan3477" x="79.37001" y="100.65108">5V</text>
   </g>
-  <g id="text3475-7" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:DroidSans;-inkscape-font-specification:DroidSans" xml:space="preserve">
+  <g id="text3475-7" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" xml:space="preserve">
    <text id="tspan3477-4" x="110.1261" y="100.5354">A</text>
   </g>
-  <g id="text3475-2" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:DroidSans;-inkscape-font-specification:DroidSans" xml:space="preserve">
+  <g id="text3475-2" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" xml:space="preserve">
    <text id="tspan3477-5" x="136.06291" y="100.65108">F0</text>
   </g>
-  <g id="text3475-1" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:DroidSans;-inkscape-font-specification:DroidSans" xml:space="preserve">
+  <g id="text3475-1" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" xml:space="preserve">
    <text id="tspan3477-3" x="164.40936" y="100.65108">F1</text>
   </g>
-  <g id="text3475-6" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:DroidSans;-inkscape-font-specification:DroidSans" xml:space="preserve">
+  <g id="text3475-6" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" xml:space="preserve">
    <text id="tspan3477-8" x="192.75581" y="100.65108">F4</text>
   </g>
-  <g id="text3475-74" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:DroidSans;-inkscape-font-specification:DroidSans" xml:space="preserve">
+  <g id="text3475-74" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" xml:space="preserve">
    <text id="tspan3477-9" x="221.10226" y="100.65108">F5</text>
   </g>
-  <g id="text3475-24" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:DroidSans;-inkscape-font-specification:DroidSans" xml:space="preserve">
+  <g id="text3475-24" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" xml:space="preserve">
    <text id="tspan3477-45" x="249.44872" y="100.65108">F6</text>
   </g>
-  <g id="text3475-9" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:DroidSans;-inkscape-font-specification:DroidSans" xml:space="preserve">
+  <g id="text3475-9" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" xml:space="preserve">
    <text id="tspan3477-1" x="277.79517" y="100.65108">F7</text>
   </g>
-  <g id="text3475-28" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:DroidSans;-inkscape-font-specification:DroidSans" xml:space="preserve">
+  <g id="text3475-28" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" xml:space="preserve">
    <text id="tspan3477-96" x="306.1416" y="100.65108">C7</text>
   </g>
-  <g id="text3475-0" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:DroidSans;-inkscape-font-specification:DroidSans" xml:space="preserve">
+  <g id="text3475-0" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" xml:space="preserve">
    <text id="tspan3477-6" x="334.48807" y="100.65108">C6</text>
   </g>
-  <g id="text3475-4" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:DroidSans;-inkscape-font-specification:DroidSans" xml:space="preserve">
+  <g id="text3475-4" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" xml:space="preserve">
    <text id="tspan3477-0" x="362.8345" y="100.65108">B7</text>
   </g>
-  <g id="text3475-94" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:DroidSans;-inkscape-font-specification:DroidSans" xml:space="preserve">
+  <g id="text3475-94" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" xml:space="preserve">
    <text id="tspan3477-54" x="391.18097" y="100.65108">B6</text>
   </g>
-  <g id="text3475-66" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:DroidSans;-inkscape-font-specification:DroidSans" xml:space="preserve">
+  <g id="text3475-66" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" xml:space="preserve">
    <text id="tspan3477-39" x="419.5274" y="100.65108">B5</text>
   </g>
-  <g id="text3475-95" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:DroidSans;-inkscape-font-specification:DroidSans" xml:space="preserve">
+  <g id="text3475-95" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" xml:space="preserve">
    <text id="tspan3477-2" x="447.87387" y="100.65108">B5</text>
   </g>
-  <g id="text3475-13" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:DroidSans;-inkscape-font-specification:DroidSans" xml:space="preserve">
+  <g id="text3475-13" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" xml:space="preserve">
    <text id="tspan3477-09" x="476.22031" y="100.65108">GND</text>
   </g>
-  <g id="text3475-91" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:DroidSans;-inkscape-font-specification:DroidSans" xml:space="preserve">
+  <g id="text3475-91" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" xml:space="preserve">
    <text id="tspan3477-34" x="504.56677" y="100.65108">VCC</text>
   </g>
   <line id="line4482-70-1" style="fill:none;stroke:#000000;stroke-width:2.78977323;stroke-linecap:butt;stroke-linejoin:round" x1="170.07866" x2="170.07866" y1="226.77161" y2="198.42514"/>
@@ -129,52 +129,52 @@
   <line id="connector36pin" style="fill:none;stroke:#000000;stroke-width:1.00000012;stroke-opacity:1" x1="481.88956" x2="481.88956" y1="226.77158" y2="206.92908"/>
   <line id="line4482-70-63" style="fill:none;stroke:#000000;stroke-width:2.78977323;stroke-linecap:butt;stroke-linejoin:round" x1="510.23602" x2="510.23602" y1="226.77159" y2="198.42513"/>
   <line id="connector37pin" style="fill:none;stroke:#000000;stroke-width:1.00000012;stroke-opacity:1" x1="510.23602" x2="510.23602" y1="226.77158" y2="206.92908"/>
-  <g id="text3475-10" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:DroidSans;-inkscape-font-specification:DroidSans" xml:space="preserve">
+  <g id="text3475-10" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" xml:space="preserve">
    <text id="tspan3477-41" x="79.369972" y="189.9212">3V</text>
   </g>
-  <g id="text3475-7-1" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:DroidSans;-inkscape-font-specification:DroidSans" xml:space="preserve">
+  <g id="text3475-7-1" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" xml:space="preserve">
    <text id="tspan3477-4-8" x="107.06646" y="189.9212">E6</text>
   </g>
-  <g id="text3475-2-6" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:DroidSans;-inkscape-font-specification:DroidSans" xml:space="preserve">
+  <g id="text3475-2-6" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" xml:space="preserve">
    <text id="tspan3477-5-4" x="136.06287" y="189.9212">B0</text>
   </g>
-  <g id="text3475-1-3" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:DroidSans;-inkscape-font-specification:DroidSans" xml:space="preserve">
+  <g id="text3475-1-3" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" xml:space="preserve">
    <text id="tspan3477-3-4" x="164.40933" y="189.9212">B1</text>
   </g>
-  <g id="text3475-6-7" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:DroidSans;-inkscape-font-specification:DroidSans" xml:space="preserve">
+  <g id="text3475-6-7" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" xml:space="preserve">
    <text id="tspan3477-8-7" x="192.75577" y="189.9212">B2</text>
   </g>
-  <g id="text3475-74-0" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:DroidSans;-inkscape-font-specification:DroidSans" xml:space="preserve">
+  <g id="text3475-74-0" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" xml:space="preserve">
    <text id="tspan3477-9-7" x="221.10222" y="189.9212">B3</text>
   </g>
-  <g id="text3475-24-4" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:DroidSans;-inkscape-font-specification:DroidSans" xml:space="preserve">
+  <g id="text3475-24-4" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" xml:space="preserve">
    <text id="tspan3477-45-5" x="249.44868" y="189.9212">D0</text>
   </g>
-  <g id="text3475-9-3" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:DroidSans;-inkscape-font-specification:DroidSans" xml:space="preserve">
+  <g id="text3475-9-3" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" xml:space="preserve">
    <text id="tspan3477-1-0" x="277.79517" y="189.9212">D1</text>
   </g>
-  <g id="text3475-28-7" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:DroidSans;-inkscape-font-specification:DroidSans" xml:space="preserve">
+  <g id="text3475-28-7" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" xml:space="preserve">
    <text id="tspan3477-96-2" x="306.1416" y="189.9212">D2</text>
   </g>
-  <g id="text3475-0-9" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:DroidSans;-inkscape-font-specification:DroidSans" xml:space="preserve">
+  <g id="text3475-0-9" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" xml:space="preserve">
    <text id="tspan3477-6-9" x="334.48804" y="189.9212">D3</text>
   </g>
-  <g id="text3475-4-3" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:DroidSans;-inkscape-font-specification:DroidSans" xml:space="preserve">
+  <g id="text3475-4-3" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" xml:space="preserve">
    <text id="tspan3477-0-0" x="362.83447" y="189.9212">D4</text>
   </g>
-  <g id="text3475-94-2" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:DroidSans;-inkscape-font-specification:DroidSans" xml:space="preserve">
+  <g id="text3475-94-2" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" xml:space="preserve">
    <text id="tspan3477-54-7" x="391.18094" y="189.9212">D5</text>
   </g>
-  <g id="text3475-66-9" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:DroidSans;-inkscape-font-specification:DroidSans" xml:space="preserve">
+  <g id="text3475-66-9" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" xml:space="preserve">
    <text id="tspan3477-39-9" x="419.52737" y="189.9212">D6</text>
   </g>
-  <g id="text3475-95-5" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:DroidSans;-inkscape-font-specification:DroidSans" xml:space="preserve">
+  <g id="text3475-95-5" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" xml:space="preserve">
    <text id="tspan3477-2-2" x="447.87384" y="189.9212">D7</text>
   </g>
-  <g id="text3475-13-0" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:DroidSans;-inkscape-font-specification:DroidSans" xml:space="preserve">
+  <g id="text3475-13-0" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" xml:space="preserve">
    <text id="tspan3477-09-8" x="470.55103" y="189.9212">GND</text>
   </g>
-  <g id="text3475-13-0-8" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:DroidSans;-inkscape-font-specification:DroidSans" xml:space="preserve">
+  <g id="text3475-13-0-8" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" xml:space="preserve">
    <text id="tspan3477-09-8-2" x="500.39749" y="189.9212">RST</text>
   </g>
   <line id="line4482-30-1" style="fill:none;stroke:#000000;stroke-width:2.78977323;stroke-linecap:butt;stroke-linejoin:round" x1="566.92896" x2="566.92896" y1="56.692886" y2="85.039337"/>
@@ -190,7 +190,7 @@
   <line id="line4482-70-63-5" style="fill:none;stroke:#000000;stroke-width:2.78977323;stroke-linecap:butt;stroke-linejoin:round" x1="623.62183" x2="623.62183" y1="226.77159" y2="198.42513"/>
   <line id="connector21pin" style="fill:none;stroke:#000000;stroke-width:1.00000012;stroke-opacity:1" x1="623.62183" x2="623.62183" y1="226.77158" y2="206.92908"/>
   <g id="text4035" style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans" transform="matrix(0.79999983,0,0,0.79999983,-5.25e-5,0)" xml:space="preserve">
-   <text id="tspan4037" style="font-size:19.99999996000000024px;-inkscape-font-specification:DroidSans;font-family:DroidSans" x="741.04791" y="173.31136">ISP</text>
+   <text id="tspan4037" style="font-size:19.99999996000000024px;-inkscape-font-specification:Droid Sans;font-family:Droid Sans" x="741.04791" y="173.31136">ISP</text>
   </g>
  </g>
 </svg>

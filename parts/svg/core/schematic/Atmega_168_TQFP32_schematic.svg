@@ -78,7 +78,7 @@
        y="607.21802"
        id="label"
        font-size="250.001"
-       style="font-size:250.00100708px;text-anchor:middle;fill:#000000;stroke:none;font-family:DroidSans">ATmega168</text>
+       style="font-size:250.00100708px;text-anchor:middle;fill:#000000;stroke:none;font-family:Droid Sans">ATmega168</text>
     <line
        fill="none"
        stroke="#000000"
@@ -112,7 +112,7 @@
        y="640.55103"
        id="label0"
        font-size="138"
-       style="font-size:138px;text-anchor:start;fill:#000000;stroke:none;font-family:DroidSans">PD3</text>
+       style="font-size:138px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">PD3</text>
     <line
        fill="none"
        stroke="#000000"
@@ -146,7 +146,7 @@
        y="935.82599"
        id="label1"
        font-size="138"
-       style="font-size:138px;text-anchor:start;fill:#000000;stroke:none;font-family:DroidSans">PD4</text>
+       style="font-size:138px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">PD4</text>
     <line
        fill="none"
        stroke="#000000"
@@ -180,7 +180,7 @@
        y="1231.1"
        id="label2"
        font-size="138"
-       style="font-size:138px;text-anchor:start;fill:#000000;stroke:none;font-family:DroidSans">GND</text>
+       style="font-size:138px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">GND</text>
     <line
        fill="none"
        stroke="#000000"
@@ -214,7 +214,7 @@
        y="1526.38"
        id="label3"
        font-size="138"
-       style="font-size:138px;text-anchor:start;fill:#000000;stroke:none;font-family:DroidSans">VCC</text>
+       style="font-size:138px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">VCC</text>
     <line
        fill="none"
        stroke="#000000"
@@ -248,7 +248,7 @@
        y="1821.65"
        id="label4"
        font-size="138"
-       style="font-size:138px;text-anchor:start;fill:#000000;stroke:none;font-family:DroidSans">GND</text>
+       style="font-size:138px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">GND</text>
     <line
        fill="none"
        stroke="#000000"
@@ -282,7 +282,7 @@
        y="2116.9299"
        id="label5"
        font-size="138"
-       style="font-size:138px;text-anchor:start;fill:#000000;stroke:none;font-family:DroidSans">VCC</text>
+       style="font-size:138px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">VCC</text>
     <line
        fill="none"
        stroke="#000000"
@@ -316,7 +316,7 @@
        y="2412.1899"
        id="label6"
        font-size="138"
-       style="font-size:138px;text-anchor:start;fill:#000000;stroke:none;font-family:DroidSans">PB6</text>
+       style="font-size:138px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">PB6</text>
     <line
        fill="none"
        stroke="#000000"
@@ -350,7 +350,7 @@
        y="2707.49"
        id="label7"
        font-size="138"
-       style="font-size:138px;text-anchor:start;fill:#000000;stroke:none;font-family:DroidSans">PB7</text>
+       style="font-size:138px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">PB7</text>
     <line
        fill="none"
        stroke="#000000"
@@ -384,7 +384,7 @@
        y="3002.76"
        id="label8"
        font-size="138"
-       style="font-size:138px;text-anchor:start;fill:#000000;stroke:none;font-family:DroidSans">PD5</text>
+       style="font-size:138px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">PD5</text>
     <line
        fill="none"
        stroke="#000000"
@@ -418,7 +418,7 @@
        y="3298.03"
        id="label9"
        font-size="138"
-       style="font-size:138px;text-anchor:start;fill:#000000;stroke:none;font-family:DroidSans">PD6</text>
+       style="font-size:138px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">PD6</text>
     <line
        fill="none"
        stroke="#000000"
@@ -452,7 +452,7 @@
        y="3593.3101"
        id="label10"
        font-size="138"
-       style="font-size:138px;text-anchor:start;fill:#000000;stroke:none;font-family:DroidSans">PD7</text>
+       style="font-size:138px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">PD7</text>
     <line
        fill="none"
        stroke="#000000"
@@ -486,7 +486,7 @@
        y="3888.5801"
        id="label11"
        font-size="138"
-       style="font-size:138px;text-anchor:start;fill:#000000;stroke:none;font-family:DroidSans">PB0</text>
+       style="font-size:138px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">PB0</text>
     <line
        fill="none"
        stroke="#000000"
@@ -520,7 +520,7 @@
        y="4183.8599"
        id="label12"
        font-size="138"
-       style="font-size:138px;text-anchor:start;fill:#000000;stroke:none;font-family:DroidSans">PB1</text>
+       style="font-size:138px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">PB1</text>
     <line
        fill="none"
        stroke="#000000"
@@ -554,7 +554,7 @@
        y="4479.1299"
        id="label13"
        font-size="138"
-       style="font-size:138px;text-anchor:start;fill:#000000;stroke:none;font-family:DroidSans">PB2</text>
+       style="font-size:138px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">PB2</text>
     <line
        fill="none"
        stroke="#000000"
@@ -588,7 +588,7 @@
        y="4774.4199"
        id="label14"
        font-size="138"
-       style="font-size:138px;text-anchor:start;fill:#000000;stroke:none;font-family:DroidSans">PB3</text>
+       style="font-size:138px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">PB3</text>
     <line
        fill="none"
        stroke="#000000"
@@ -622,7 +622,7 @@
        y="5069.6899"
        id="label15"
        font-size="138"
-       style="font-size:138px;text-anchor:start;fill:#000000;stroke:none;font-family:DroidSans">PB4</text>
+       style="font-size:138px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">PB4</text>
     <line
        fill="none"
        stroke="#000000"
@@ -656,7 +656,7 @@
        y="640.55103"
        id="label31"
        font-size="138"
-       style="font-size:138px;text-anchor:end;fill:#000000;stroke:none;font-family:DroidSans">PD2</text>
+       style="font-size:138px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans">PD2</text>
     <line
        fill="none"
        stroke="#000000"
@@ -690,7 +690,7 @@
        y="935.82599"
        id="label30"
        font-size="138"
-       style="font-size:138px;text-anchor:end;fill:#000000;stroke:none;font-family:DroidSans">PD1</text>
+       style="font-size:138px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans">PD1</text>
     <line
        fill="none"
        stroke="#000000"
@@ -724,7 +724,7 @@
        y="1231.1"
        id="label29"
        font-size="138"
-       style="font-size:138px;text-anchor:end;fill:#000000;stroke:none;font-family:DroidSans">PD0</text>
+       style="font-size:138px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans">PD0</text>
     <line
        fill="none"
        stroke="#000000"
@@ -758,7 +758,7 @@
        y="1526.38"
        id="label28"
        font-size="138"
-       style="font-size:138px;text-anchor:end;fill:#000000;stroke:none;font-family:DroidSans">PC6</text>
+       style="font-size:138px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans">PC6</text>
     <line
        fill="none"
        stroke="#000000"
@@ -792,7 +792,7 @@
        y="1821.65"
        id="label27"
        font-size="138"
-       style="font-size:138px;text-anchor:end;fill:#000000;stroke:none;font-family:DroidSans">PC5</text>
+       style="font-size:138px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans">PC5</text>
     <line
        fill="none"
        stroke="#000000"
@@ -826,7 +826,7 @@
        y="2116.9299"
        id="label26"
        font-size="138"
-       style="font-size:138px;text-anchor:end;fill:#000000;stroke:none;font-family:DroidSans">PC4</text>
+       style="font-size:138px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans">PC4</text>
     <line
        fill="none"
        stroke="#000000"
@@ -860,7 +860,7 @@
        y="2412.1899"
        id="label25"
        font-size="138"
-       style="font-size:138px;text-anchor:end;fill:#000000;stroke:none;font-family:DroidSans">PC3</text>
+       style="font-size:138px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans">PC3</text>
     <line
        fill="none"
        stroke="#000000"
@@ -894,7 +894,7 @@
        y="2707.49"
        id="label24"
        font-size="138"
-       style="font-size:138px;text-anchor:end;fill:#000000;stroke:none;font-family:DroidSans">PC2</text>
+       style="font-size:138px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans">PC2</text>
     <line
        fill="none"
        stroke="#000000"
@@ -928,7 +928,7 @@
        y="3002.76"
        id="label23"
        font-size="138"
-       style="font-size:138px;text-anchor:end;fill:#000000;stroke:none;font-family:DroidSans">PC1</text>
+       style="font-size:138px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans">PC1</text>
     <line
        fill="none"
        stroke="#000000"
@@ -962,7 +962,7 @@
        y="3298.03"
        id="label22"
        font-size="138"
-       style="font-size:138px;text-anchor:end;fill:#000000;stroke:none;font-family:DroidSans">PC0</text>
+       style="font-size:138px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans">PC0</text>
     <line
        fill="none"
        stroke="#000000"
@@ -996,7 +996,7 @@
        y="3593.3101"
        id="label21"
        font-size="138"
-       style="font-size:138px;text-anchor:end;fill:#000000;stroke:none;font-family:DroidSans">ADC7</text>
+       style="font-size:138px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans">ADC7</text>
     <line
        fill="none"
        stroke="#000000"
@@ -1030,7 +1030,7 @@
        y="3888.5801"
        id="label20"
        font-size="138"
-       style="font-size:138px;text-anchor:end;fill:#000000;stroke:none;font-family:DroidSans">GND</text>
+       style="font-size:138px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans">GND</text>
     <line
        fill="none"
        stroke="#000000"
@@ -1064,7 +1064,7 @@
        y="4183.8599"
        id="label19"
        font-size="138"
-       style="font-size:138px;text-anchor:end;fill:#000000;stroke:none;font-family:DroidSans">AREF</text>
+       style="font-size:138px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans">AREF</text>
     <line
        fill="none"
        stroke="#000000"
@@ -1098,7 +1098,7 @@
        y="4479.1299"
        id="label18"
        font-size="138"
-       style="font-size:138px;text-anchor:end;fill:#000000;stroke:none;font-family:DroidSans">ADC6</text>
+       style="font-size:138px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans">ADC6</text>
     <line
        fill="none"
        stroke="#000000"
@@ -1132,7 +1132,7 @@
        y="4774.4199"
        id="label17"
        font-size="138"
-       style="font-size:138px;text-anchor:end;fill:#000000;stroke:none;font-family:DroidSans">AVCC</text>
+       style="font-size:138px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans">AVCC</text>
     <line
        fill="none"
        stroke="#000000"
@@ -1166,7 +1166,7 @@
        y="5069.6899"
        id="label16"
        font-size="138"
-       style="font-size:138px;text-anchor:end;fill:#000000;stroke:none;font-family:DroidSans">PB5</text>
+       style="font-size:138px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans">PB5</text>
     <text
        xml:space="preserve"
        style="font-size:20px;font-style:normal;font-weight:bold;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans;-inkscape-font-specification:Bitstream Charter Bold"

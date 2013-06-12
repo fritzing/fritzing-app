@@ -720,7 +720,7 @@
      <rect  width="10.407" x="1.375" y="0.333" fill="#9A916C" height="6.684" stroke-width="0"/>
      <rect  width="5.277" x="14.684" y="0.333" fill="#9A916C" height="13.807" stroke-width="0"/>
      <rect  width="18.3" x="1.375" y="8.86399" fill="#9A916C" height="5.277" stroke-width="0"/>
-     <text  x="0" y="0" fill="#9A916C" font-family="'DroidSans'" stroke-width="0" transform="matrix(1, 0, 0, 1, 14.6255, 25.9463)" font-size="6.0948">SM5100B-D</text>
+     <text  x="0" y="0" fill="#9A916C" font-family="'Droid Sans'" stroke-width="0" transform="matrix(1, 0, 0, 1, 14.6255, 25.9463)" font-size="6.0948">SM5100B-D</text>
      <polyline  fill="none" points="94.3481,110.885,94.3481,93.8959,11.577,93.8959,11.577,110.885" stroke="#9A916C" stroke-width="1.75" stroke-miterlimit="10"/>
      <circle  fill="#9A916C" cx="16.962" cy="98.7278" r="1.583" stroke-width="0"/>
      <circle  fill="#9A916C" cx="29.094" cy="98.7278" r="1.583" stroke-width="0"/>

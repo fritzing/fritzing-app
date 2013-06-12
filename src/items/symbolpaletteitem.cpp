@@ -416,7 +416,7 @@ QString SymbolPaletteItem::makeNetLabelSvg(ViewLayer::ViewLayerID viewLayerID) {
     QString svg = header.arg(totalWidth / 1000).arg(totalHeight / 1000).arg(totalWidth).arg(totalHeight);
 
     if (viewLayerID == ViewLayer::SchematicText) {
-        svg += QString("<text id='label' x='%1' y='%2' fill='#000000' font-family='DroidSans' font-size='%3'>%4</text>\n")
+        svg += QString("<text id='label' x='%1' y='%2' fill='#000000' font-family='Droid Sans' font-size='%3'>%4</text>\n")
                 .arg(labelOffset + offset)
                 .arg(labelBaseLine)
                 .arg(labelFontSize)

@@ -6,7 +6,7 @@
 	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="57.6px" height="57.601px"
 	 viewBox="0 0 57.6 57.601" enable-background="new 0 0 57.6 57.601" xml:space="preserve">
 <rect id="part_symbol" x="7.2" y="7.2" fill="#FFFFFF" stroke="#000000" stroke-width="0.7796" stroke-linecap="round" width="43.2" height="43.2"/>
-<text transform="matrix(1 0 0 1 2.7751 34.386)" fill="#787878" font-family="'DroidSans'" font-size="2">C</text>
+<text transform="matrix(1 0 0 1 2.7751 34.386)" fill="#787878" font-family="'Droid Sans'" font-size="2">C</text>
 <defs>
 	
 	
@@ -31,10 +31,10 @@
 </g>
 <line fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="36.011" y1="57.6" x2="36.011" y2="50.4"/>
 <line fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="21.612" y1="57.6" x2="21.612" y2="50.4"/>
-<text transform="matrix(1 0 0 1 2.7751 20.0608)" fill="#787878" font-family="'DroidSans'" font-size="2">A</text>
-<text transform="matrix(1 0 0 1 33.2756 55.178)" fill="#787878" font-family="'DroidSans'" font-size="2">D</text>
-<text transform="matrix(1 0 0 1 18.6921 55.178)" fill="#787878" font-family="'DroidSans'" font-size="2">B</text>
-<text transform="matrix(1 0 0 1 14.9714 16.4192)" font-family="'DroidSans'" font-size="5.5">ROB-08420</text>
+<text transform="matrix(1 0 0 1 2.7751 20.0608)" fill="#787878" font-family="'Droid Sans'" font-size="2">A</text>
+<text transform="matrix(1 0 0 1 33.2756 55.178)" fill="#787878" font-family="'Droid Sans'" font-size="2">D</text>
+<text transform="matrix(1 0 0 1 18.6921 55.178)" fill="#787878" font-family="'Droid Sans'" font-size="2">B</text>
+<text transform="matrix(1 0 0 1 14.9714 16.4192)" font-family="'Droid Sans'" font-size="5.5">ROB-08420</text>
 <path fill="none" stroke="#000000" stroke-width="0.45" d="M38.301,28.8c0,5.244-4.256,9.5-9.5,9.5s-9.5-4.256-9.5-9.5
 	c0-5.243,4.257-9.5,9.5-9.5S38.301,23.557,38.301,28.8z"/>
 </svg>

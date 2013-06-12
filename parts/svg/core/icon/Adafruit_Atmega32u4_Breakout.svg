@@ -40,205 +40,205 @@
   </g><g id="g76790-7" transform="translate(-0.44107223,35.997329)">
    <rect height="4.0336566" id="rect76764-8" style="fill:#8d8c8c;fill-opacity:1;stroke:none" width="10.08" x="9.3598757" y="0.045000676"/>
    <rect height="3.3311453" id="rect73146-5" style="fill:#20b703;fill-opacity:1" width="3.648" x="12.5154" y="0.4350009"/>
-  </g><rect height="3.4015746" id="rect76712-7-9" style="fill:#366288;fill-opacity:1;stroke:none" width="6.5196853" x="35.172138" y="0.41054967"/><rect height="4.3200002" id="rect76712-7-0" style="fill:#366288;fill-opacity:1;stroke:none" width="8.6400003" x="35.6157" y="11.788358"/><rect height="3.4015746" id="rect76712-7-06" style="fill:#366288;fill-opacity:1;stroke:none" width="6.5196853" x="34.132862" y="33.327679"/><rect height="3.4015746" id="rect76712-7-2" style="fill:#366288;fill-opacity:1;stroke:none" width="6.5196853" x="36.794231" y="18.043425"/><rect height="3.4015746" id="rect76712-7-3" style="fill:#366288;fill-opacity:1;stroke:none" width="6.5196853" x="36.905121" y="24.137672"/><rect height="4.3746572" id="rect76712-7-0-9" style="fill:#366288;fill-opacity:1;stroke:none" width="10.08" x="34.728573" y="5.584796"/><rect height="3.734246" id="rect76712-7-33" style="fill:#366288;fill-opacity:1;stroke:none" width="6.9632473" x="114.8672" y="22.158081"/><rect height="3.734246" id="rect76712-7-33-3" style="fill:#366288;fill-opacity:1;stroke:none" width="6.9632473" x="114.8672" y="32.166988"/><rect height="14.4" id="rect76712-7-33-3-9" style="fill:#366288;fill-opacity:1;stroke:none" width="9.1196852" x="103.84543" y="22.712536"/><rect height="3.4015746" id="rect76712-7-33-3-6" style="fill:#366288;fill-opacity:1;stroke:none" transform="matrix(0,-1,1,0,0,0)" width="6.5196853" x="-35.212532" y="93.378098"/><rect height="4.3200002" id="rect76712-7-0-7" style="fill:#366288;fill-opacity:1;stroke:none" width="8.6400003" x="20.82522" y="35.490551"/><rect height="4.3200002" id="rect76712-7-0-78" style="fill:#366288;fill-opacity:1;stroke:none" width="8.6400003" x="21.15789" y="-2.7787664"/><g id="g3629" transform="translate(-0.11089045,-0.99801403)"><circle cx="23.75" cy="-9" d="m 25.622,-9 c 0,1.033877 -0.838123,1.872 -1.872,1.872 -1.033877,0 -1.872,-0.838123 -1.872,-1.872 0,-1.033877 0.838123,-1.872 1.872,-1.872 1.033877,0 1.872,0.838123 1.872,1.872 z" id="connector0pin" r="1.872" style="fill:#ffffff;fill-opacity:1;stroke:#9a916c;stroke-width:0.86400002"/><circle cx="30.950001" cy="-9" d="m 32.822001,-9 c 0,1.033877 -0.838123,1.872 -1.872,1.872 -1.033877,0 -1.872,-0.838123 -1.872,-1.872 0,-1.033877 0.838123,-1.872 1.872,-1.872 1.033877,0 1.872,0.838123 1.872,1.872 z" id="connector1pin" r="1.872" style="fill:#ffffff;fill-opacity:1;stroke:#9a916c;stroke-width:0.86400002"/><circle cx="38.150002" cy="-9" d="m 40.022002,-9 c 0,1.033877 -0.838123,1.872 -1.872,1.872 -1.033878,0 -1.872,-0.838123 -1.872,-1.872 0,-1.033877 0.838122,-1.872 1.872,-1.872 1.033877,0 1.872,0.838123 1.872,1.872 z" id="connector2pin" r="1.872" style="fill:#ffffff;fill-opacity:1;stroke:#9a916c;stroke-width:0.86400002"/><circle cx="45.349998" cy="-9" d="m 47.221998,-9 c 0,1.033877 -0.838122,1.872 -1.872,1.872 -1.033877,0 -1.872,-0.838123 -1.872,-1.872 0,-1.033877 0.838123,-1.872 1.872,-1.872 1.033878,0 1.872,0.838123 1.872,1.872 z" id="connector3pin" r="1.872" style="fill:#ffffff;fill-opacity:1;stroke:#9a916c;stroke-width:0.86400002"/><circle cx="52.549999" cy="-9" d="m 54.421999,-9 c 0,1.033877 -0.838123,1.872 -1.872,1.872 -1.033877,0 -1.872,-0.838123 -1.872,-1.872 0,-1.033877 0.838123,-1.872 1.872,-1.872 1.033877,0 1.872,0.838123 1.872,1.872 z" id="connector4pin" r="1.872" style="fill:#ffffff;fill-opacity:1;stroke:#9a916c;stroke-width:0.86400002"/><circle cx="59.75" cy="-9" d="m 61.622,-9 c 0,1.033877 -0.838123,1.872 -1.872,1.872 -1.033877,0 -1.872,-0.838123 -1.872,-1.872 0,-1.033877 0.838123,-1.872 1.872,-1.872 1.033877,0 1.872,0.838123 1.872,1.872 z" id="connector5pin" r="1.872" style="fill:#ffffff;fill-opacity:1;stroke:#9a916c;stroke-width:0.86400002"/><circle cx="66.949997" cy="-9" d="m 68.821997,-9 c 0,1.033877 -0.838123,1.872 -1.872,1.872 -1.033877,0 -1.872,-0.838123 -1.872,-1.872 0,-1.033877 0.838123,-1.872 1.872,-1.872 1.033877,0 1.872,0.838123 1.872,1.872 z" id="connector6pin" r="1.872" style="fill:#ffffff;fill-opacity:1;stroke:#9a916c;stroke-width:0.86400002"/><circle cx="74.150002" cy="-9" d="m 76.022002,-9 c 0,1.033877 -0.838123,1.872 -1.872,1.872 -1.033878,0 -1.872,-0.838123 -1.872,-1.872 0,-1.033877 0.838122,-1.872 1.872,-1.872 1.033877,0 1.872,0.838123 1.872,1.872 z" id="connector7pin" r="1.872" style="fill:#ffffff;fill-opacity:1;stroke:#9a916c;stroke-width:0.86400002"/><circle cx="81.349998" cy="-9" d="m 83.221998,-9 c 0,1.033877 -0.838122,1.872 -1.872,1.872 -1.033877,0 -1.872,-0.838123 -1.872,-1.872 0,-1.033877 0.838123,-1.872 1.872,-1.872 1.033878,0 1.872,0.838123 1.872,1.872 z" id="connector8pin" r="1.872" style="fill:#ffffff;fill-opacity:1;stroke:#9a916c;stroke-width:0.86400002"/><circle cx="88.550003" cy="-9" d="m 90.422003,-9 c 0,1.033877 -0.838123,1.872 -1.872,1.872 -1.033877,0 -1.872,-0.838123 -1.872,-1.872 0,-1.033877 0.838123,-1.872 1.872,-1.872 1.033877,0 1.872,0.838123 1.872,1.872 z" id="connector9pin" r="1.872" style="fill:#ffffff;fill-opacity:1;stroke:#9a916c;stroke-width:0.86400002"/><circle cx="95.75" cy="-9" d="m 97.622,-9 c 0,1.033877 -0.838123,1.872 -1.872,1.872 -1.033877,0 -1.872,-0.838123 -1.872,-1.872 0,-1.033877 0.838123,-1.872 1.872,-1.872 1.033877,0 1.872,0.838123 1.872,1.872 z" id="connector10pin" r="1.872" style="fill:#ffffff;fill-opacity:1;stroke:#9a916c;stroke-width:0.86400002"/><circle cx="102.95" cy="-9" d="m 104.822,-9 c 0,1.033877 -0.83813,1.872 -1.872,1.872 -1.03388,0 -1.872,-0.838123 -1.872,-1.872 0,-1.033877 0.83812,-1.872 1.872,-1.872 1.03387,0 1.872,0.838123 1.872,1.872 z" id="connector11pin" r="1.872" style="fill:#ffffff;fill-opacity:1;stroke:#9a916c;stroke-width:0.86400002"/><circle cx="110.15" cy="-9" d="m 112.022,-9 c 0,1.033877 -0.83812,1.872 -1.872,1.872 -1.03388,0 -1.872,-0.838123 -1.872,-1.872 0,-1.033877 0.83812,-1.872 1.872,-1.872 1.03388,0 1.872,0.838123 1.872,1.872 z" id="connector12pin" r="1.872" style="fill:#ffffff;fill-opacity:1;stroke:#9a916c;stroke-width:0.86400002"/><circle cx="117.35" cy="-9" d="m 119.222,-9 c 0,1.033877 -0.83812,1.872 -1.872,1.872 -1.03388,0 -1.872,-0.838123 -1.872,-1.872 0,-1.033877 0.83812,-1.872 1.872,-1.872 1.03388,0 1.872,0.838123 1.872,1.872 z" id="connector13pin" r="1.872" style="fill:#ffffff;fill-opacity:1;stroke:#9a916c;stroke-width:0.86400002"/><circle cx="124.55" cy="-9" d="m 126.422,-9 c 0,1.033877 -0.83812,1.872 -1.872,1.872 -1.03387,0 -1.872,-0.838123 -1.872,-1.872 0,-1.033877 0.83813,-1.872 1.872,-1.872 1.03388,0 1.872,0.838123 1.872,1.872 z" id="connector14pin" r="1.872" style="fill:#ffffff;fill-opacity:1;stroke:#9a916c;stroke-width:0.86400002"/><circle cx="131.75" cy="-9" d="m 133.622,-9 c 0,1.033877 -0.83812,1.872 -1.872,1.872 -1.03388,0 -1.872,-0.838123 -1.872,-1.872 0,-1.033877 0.83812,-1.872 1.872,-1.872 1.03388,0 1.872,0.838123 1.872,1.872 z" id="connector15pin" r="1.872" style="fill:#ffffff;fill-opacity:1;stroke:#9a916c;stroke-width:0.86400002"/></g><g id="g3557" transform="translate(-0.44356179,-0.44356179)"><g id="text77066" style="font-size:3.20000005px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:DroidSans" transform="matrix(0,-1,1,0,0.99801403,0.99801403)" xml:space="preserve">
+  </g><rect height="3.4015746" id="rect76712-7-9" style="fill:#366288;fill-opacity:1;stroke:none" width="6.5196853" x="35.172138" y="0.41054967"/><rect height="4.3200002" id="rect76712-7-0" style="fill:#366288;fill-opacity:1;stroke:none" width="8.6400003" x="35.6157" y="11.788358"/><rect height="3.4015746" id="rect76712-7-06" style="fill:#366288;fill-opacity:1;stroke:none" width="6.5196853" x="34.132862" y="33.327679"/><rect height="3.4015746" id="rect76712-7-2" style="fill:#366288;fill-opacity:1;stroke:none" width="6.5196853" x="36.794231" y="18.043425"/><rect height="3.4015746" id="rect76712-7-3" style="fill:#366288;fill-opacity:1;stroke:none" width="6.5196853" x="36.905121" y="24.137672"/><rect height="4.3746572" id="rect76712-7-0-9" style="fill:#366288;fill-opacity:1;stroke:none" width="10.08" x="34.728573" y="5.584796"/><rect height="3.734246" id="rect76712-7-33" style="fill:#366288;fill-opacity:1;stroke:none" width="6.9632473" x="114.8672" y="22.158081"/><rect height="3.734246" id="rect76712-7-33-3" style="fill:#366288;fill-opacity:1;stroke:none" width="6.9632473" x="114.8672" y="32.166988"/><rect height="14.4" id="rect76712-7-33-3-9" style="fill:#366288;fill-opacity:1;stroke:none" width="9.1196852" x="103.84543" y="22.712536"/><rect height="3.4015746" id="rect76712-7-33-3-6" style="fill:#366288;fill-opacity:1;stroke:none" transform="matrix(0,-1,1,0,0,0)" width="6.5196853" x="-35.212532" y="93.378098"/><rect height="4.3200002" id="rect76712-7-0-7" style="fill:#366288;fill-opacity:1;stroke:none" width="8.6400003" x="20.82522" y="35.490551"/><rect height="4.3200002" id="rect76712-7-0-78" style="fill:#366288;fill-opacity:1;stroke:none" width="8.6400003" x="21.15789" y="-2.7787664"/><g id="g3629" transform="translate(-0.11089045,-0.99801403)"><circle cx="23.75" cy="-9" d="m 25.622,-9 c 0,1.033877 -0.838123,1.872 -1.872,1.872 -1.033877,0 -1.872,-0.838123 -1.872,-1.872 0,-1.033877 0.838123,-1.872 1.872,-1.872 1.033877,0 1.872,0.838123 1.872,1.872 z" id="connector0pin" r="1.872" style="fill:#ffffff;fill-opacity:1;stroke:#9a916c;stroke-width:0.86400002"/><circle cx="30.950001" cy="-9" d="m 32.822001,-9 c 0,1.033877 -0.838123,1.872 -1.872,1.872 -1.033877,0 -1.872,-0.838123 -1.872,-1.872 0,-1.033877 0.838123,-1.872 1.872,-1.872 1.033877,0 1.872,0.838123 1.872,1.872 z" id="connector1pin" r="1.872" style="fill:#ffffff;fill-opacity:1;stroke:#9a916c;stroke-width:0.86400002"/><circle cx="38.150002" cy="-9" d="m 40.022002,-9 c 0,1.033877 -0.838123,1.872 -1.872,1.872 -1.033878,0 -1.872,-0.838123 -1.872,-1.872 0,-1.033877 0.838122,-1.872 1.872,-1.872 1.033877,0 1.872,0.838123 1.872,1.872 z" id="connector2pin" r="1.872" style="fill:#ffffff;fill-opacity:1;stroke:#9a916c;stroke-width:0.86400002"/><circle cx="45.349998" cy="-9" d="m 47.221998,-9 c 0,1.033877 -0.838122,1.872 -1.872,1.872 -1.033877,0 -1.872,-0.838123 -1.872,-1.872 0,-1.033877 0.838123,-1.872 1.872,-1.872 1.033878,0 1.872,0.838123 1.872,1.872 z" id="connector3pin" r="1.872" style="fill:#ffffff;fill-opacity:1;stroke:#9a916c;stroke-width:0.86400002"/><circle cx="52.549999" cy="-9" d="m 54.421999,-9 c 0,1.033877 -0.838123,1.872 -1.872,1.872 -1.033877,0 -1.872,-0.838123 -1.872,-1.872 0,-1.033877 0.838123,-1.872 1.872,-1.872 1.033877,0 1.872,0.838123 1.872,1.872 z" id="connector4pin" r="1.872" style="fill:#ffffff;fill-opacity:1;stroke:#9a916c;stroke-width:0.86400002"/><circle cx="59.75" cy="-9" d="m 61.622,-9 c 0,1.033877 -0.838123,1.872 -1.872,1.872 -1.033877,0 -1.872,-0.838123 -1.872,-1.872 0,-1.033877 0.838123,-1.872 1.872,-1.872 1.033877,0 1.872,0.838123 1.872,1.872 z" id="connector5pin" r="1.872" style="fill:#ffffff;fill-opacity:1;stroke:#9a916c;stroke-width:0.86400002"/><circle cx="66.949997" cy="-9" d="m 68.821997,-9 c 0,1.033877 -0.838123,1.872 -1.872,1.872 -1.033877,0 -1.872,-0.838123 -1.872,-1.872 0,-1.033877 0.838123,-1.872 1.872,-1.872 1.033877,0 1.872,0.838123 1.872,1.872 z" id="connector6pin" r="1.872" style="fill:#ffffff;fill-opacity:1;stroke:#9a916c;stroke-width:0.86400002"/><circle cx="74.150002" cy="-9" d="m 76.022002,-9 c 0,1.033877 -0.838123,1.872 -1.872,1.872 -1.033878,0 -1.872,-0.838123 -1.872,-1.872 0,-1.033877 0.838122,-1.872 1.872,-1.872 1.033877,0 1.872,0.838123 1.872,1.872 z" id="connector7pin" r="1.872" style="fill:#ffffff;fill-opacity:1;stroke:#9a916c;stroke-width:0.86400002"/><circle cx="81.349998" cy="-9" d="m 83.221998,-9 c 0,1.033877 -0.838122,1.872 -1.872,1.872 -1.033877,0 -1.872,-0.838123 -1.872,-1.872 0,-1.033877 0.838123,-1.872 1.872,-1.872 1.033878,0 1.872,0.838123 1.872,1.872 z" id="connector8pin" r="1.872" style="fill:#ffffff;fill-opacity:1;stroke:#9a916c;stroke-width:0.86400002"/><circle cx="88.550003" cy="-9" d="m 90.422003,-9 c 0,1.033877 -0.838123,1.872 -1.872,1.872 -1.033877,0 -1.872,-0.838123 -1.872,-1.872 0,-1.033877 0.838123,-1.872 1.872,-1.872 1.033877,0 1.872,0.838123 1.872,1.872 z" id="connector9pin" r="1.872" style="fill:#ffffff;fill-opacity:1;stroke:#9a916c;stroke-width:0.86400002"/><circle cx="95.75" cy="-9" d="m 97.622,-9 c 0,1.033877 -0.838123,1.872 -1.872,1.872 -1.033877,0 -1.872,-0.838123 -1.872,-1.872 0,-1.033877 0.838123,-1.872 1.872,-1.872 1.033877,0 1.872,0.838123 1.872,1.872 z" id="connector10pin" r="1.872" style="fill:#ffffff;fill-opacity:1;stroke:#9a916c;stroke-width:0.86400002"/><circle cx="102.95" cy="-9" d="m 104.822,-9 c 0,1.033877 -0.83813,1.872 -1.872,1.872 -1.03388,0 -1.872,-0.838123 -1.872,-1.872 0,-1.033877 0.83812,-1.872 1.872,-1.872 1.03387,0 1.872,0.838123 1.872,1.872 z" id="connector11pin" r="1.872" style="fill:#ffffff;fill-opacity:1;stroke:#9a916c;stroke-width:0.86400002"/><circle cx="110.15" cy="-9" d="m 112.022,-9 c 0,1.033877 -0.83812,1.872 -1.872,1.872 -1.03388,0 -1.872,-0.838123 -1.872,-1.872 0,-1.033877 0.83812,-1.872 1.872,-1.872 1.03388,0 1.872,0.838123 1.872,1.872 z" id="connector12pin" r="1.872" style="fill:#ffffff;fill-opacity:1;stroke:#9a916c;stroke-width:0.86400002"/><circle cx="117.35" cy="-9" d="m 119.222,-9 c 0,1.033877 -0.83812,1.872 -1.872,1.872 -1.03388,0 -1.872,-0.838123 -1.872,-1.872 0,-1.033877 0.83812,-1.872 1.872,-1.872 1.03388,0 1.872,0.838123 1.872,1.872 z" id="connector13pin" r="1.872" style="fill:#ffffff;fill-opacity:1;stroke:#9a916c;stroke-width:0.86400002"/><circle cx="124.55" cy="-9" d="m 126.422,-9 c 0,1.033877 -0.83812,1.872 -1.872,1.872 -1.03387,0 -1.872,-0.838123 -1.872,-1.872 0,-1.033877 0.83813,-1.872 1.872,-1.872 1.03388,0 1.872,0.838123 1.872,1.872 z" id="connector14pin" r="1.872" style="fill:#ffffff;fill-opacity:1;stroke:#9a916c;stroke-width:0.86400002"/><circle cx="131.75" cy="-9" d="m 133.622,-9 c 0,1.033877 -0.83812,1.872 -1.872,1.872 -1.03388,0 -1.872,-0.838123 -1.872,-1.872 0,-1.033877 0.83812,-1.872 1.872,-1.872 1.03388,0 1.872,0.838123 1.872,1.872 z" id="connector15pin" r="1.872" style="fill:#ffffff;fill-opacity:1;stroke:#9a916c;stroke-width:0.86400002"/></g><g id="g3557" transform="translate(-0.44356179,-0.44356179)"><g id="text77066" style="font-size:3.20000005px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Droid Sans" transform="matrix(0,-1,1,0,0.99801403,0.99801403)" xml:space="preserve">
      <text id="tspan77068" x="4.2749991" y="17.279875">PWR</text>
 
 
 
 
-    </g><g id="text77091" style="font-size:3.20000005px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:DroidSans" xml:space="preserve">
+    </g><g id="text77091" style="font-size:3.20000005px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Droid Sans" xml:space="preserve">
      <text id="tspan77093" x="21.599876" y="-3.5549994">5V</text>
 
 
 
 
-    </g><g id="text77091-8" style="font-size:3.20000005px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:DroidSans" transform="matrix(0,-1,1,0,0,0)" xml:space="preserve">
+    </g><g id="text77091-8" style="font-size:3.20000005px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Droid Sans" transform="matrix(0,-1,1,0,0,0)" xml:space="preserve">
      <text id="tspan77093-3" x="3.5549994" y="32.399876">A</text>
 
 
 
 
-    </g><g id="text77091-8-5" style="font-size:3.20000005px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:DroidSans" transform="matrix(0,-1,1,0,0,0)" xml:space="preserve">
+    </g><g id="text77091-8-5" style="font-size:3.20000005px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Droid Sans" transform="matrix(0,-1,1,0,0,0)" xml:space="preserve">
      <text id="tspan77093-3-1" x="2.1149993" y="39.599876">F0</text>
 
 
 
 
-    </g><g id="text77091-8-5-6" style="font-size:3.20000005px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:DroidSans" transform="matrix(0,-1,1,0,0,0)" xml:space="preserve">
+    </g><g id="text77091-8-5-6" style="font-size:3.20000005px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Droid Sans" transform="matrix(0,-1,1,0,0,0)" xml:space="preserve">
      <text id="tspan77093-3-1-6" x="2.1149993" y="46.799877">F1</text>
 
 
 
 
-    </g><g id="text77091-8-5-7" style="font-size:3.20000005px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:DroidSans" transform="matrix(0,-1,1,0,0,0)" xml:space="preserve">
+    </g><g id="text77091-8-5-7" style="font-size:3.20000005px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Droid Sans" transform="matrix(0,-1,1,0,0,0)" xml:space="preserve">
      <text id="tspan77093-3-1-62" x="2.1149993" y="53.999874">F4</text>
 
 
 
 
-    </g><g id="text77091-8-5-0" style="font-size:3.20000005px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:DroidSans" transform="matrix(0,-1,1,0,0,0)" xml:space="preserve">
+    </g><g id="text77091-8-5-0" style="font-size:3.20000005px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Droid Sans" transform="matrix(0,-1,1,0,0,0)" xml:space="preserve">
      <text id="tspan77093-3-1-63" x="2.1149993" y="61.199875">F5</text>
 
 
 
 
-    </g><g id="text77091-8-5-9" style="font-size:3.20000005px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:DroidSans" transform="matrix(0,-1,1,0,0,0)" xml:space="preserve">
+    </g><g id="text77091-8-5-9" style="font-size:3.20000005px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Droid Sans" transform="matrix(0,-1,1,0,0,0)" xml:space="preserve">
      <text id="tspan77093-3-1-0" x="2.1149993" y="68.399879">F6</text>
 
 
 
 
-    </g><g id="text77091-8-5-99" style="font-size:3.20000005px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:DroidSans" transform="matrix(0,-1,1,0,0,0)" xml:space="preserve">
+    </g><g id="text77091-8-5-99" style="font-size:3.20000005px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Droid Sans" transform="matrix(0,-1,1,0,0,0)" xml:space="preserve">
      <text id="tspan77093-3-1-09" x="2.1149993" y="75.599876">F7</text>
 
 
 
 
-    </g><g id="text77091-8-5-94" style="font-size:3.20000005px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:DroidSans" transform="matrix(0,-1,1,0,0,0)" xml:space="preserve">
+    </g><g id="text77091-8-5-94" style="font-size:3.20000005px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Droid Sans" transform="matrix(0,-1,1,0,0,0)" xml:space="preserve">
      <text id="tspan77230" x="2.1149993" y="82.799873">C7</text>
 
 
 
 
-    </g><g id="text77091-8-5-4" style="font-size:3.20000005px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:DroidSans" transform="matrix(0,-1,1,0,0,0)" xml:space="preserve">
+    </g><g id="text77091-8-5-4" style="font-size:3.20000005px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Droid Sans" transform="matrix(0,-1,1,0,0,0)" xml:space="preserve">
      <text id="tspan77093-3-1-5" x="2.1149993" y="89.999878">C6</text>
 
 
 
 
-    </g><g id="text77091-8-5-62" style="font-size:3.20000005px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:DroidSans" transform="matrix(0,-1,1,0,0,0)" xml:space="preserve">
+    </g><g id="text77091-8-5-62" style="font-size:3.20000005px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Droid Sans" transform="matrix(0,-1,1,0,0,0)" xml:space="preserve">
      <text id="tspan77093-3-1-64" x="2.1149993" y="97.199875">B7</text>
 
 
 
 
-    </g><g id="text77091-8-5-3" style="font-size:3.20000005px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:DroidSans" transform="matrix(0,-1,1,0,0,0)" xml:space="preserve">
+    </g><g id="text77091-8-5-3" style="font-size:3.20000005px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Droid Sans" transform="matrix(0,-1,1,0,0,0)" xml:space="preserve">
      <text id="tspan77093-3-1-04" x="2.1149993" y="104.39988">B6</text>
 
 
 
 
-    </g><g id="text77091-8-5-3-3" style="font-size:3.20000005px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:DroidSans" transform="matrix(0,-1,1,0,0,0)" xml:space="preserve">
+    </g><g id="text77091-8-5-3-3" style="font-size:3.20000005px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Droid Sans" transform="matrix(0,-1,1,0,0,0)" xml:space="preserve">
      <text id="tspan77093-3-1-04-4" x="2.1149993" y="111.59988">B5</text>
 
 
 
 
-    </g><g id="text77091-8-5-3-2" style="font-size:3.20000005px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:DroidSans" transform="matrix(0,-1,1,0,0,0)" xml:space="preserve">
+    </g><g id="text77091-8-5-3-2" style="font-size:3.20000005px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Droid Sans" transform="matrix(0,-1,1,0,0,0)" xml:space="preserve">
      <text id="tspan77093-3-1-04-3" x="2.1149993" y="118.79987">B4</text>
 
 
 
 
-    </g><g id="text77091-8-5-3-5" style="font-size:3.20000005px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:DroidSans" transform="matrix(0,-1,1,0,-0.55445224,-0.55445224)" xml:space="preserve">
+    </g><g id="text77091-8-5-3-5" style="font-size:3.20000005px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Droid Sans" transform="matrix(0,-1,1,0,-0.55445224,-0.55445224)" xml:space="preserve">
      <text id="tspan77093-3-1-04-32" x="-1.4850007" y="125.99988">GND</text>
 
 
 
 
-    </g><g id="text77091-8-5-3-1" style="font-size:3.20000005px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:DroidSans" transform="matrix(0,-1,1,0,0,0)" xml:space="preserve">
+    </g><g id="text77091-8-5-3-1" style="font-size:3.20000005px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Droid Sans" transform="matrix(0,-1,1,0,0,0)" xml:space="preserve">
      <text id="tspan77093-3-1-04-2" x="3.5549994" y="138.95987">VCC</text>
 
 
 
 
-    </g></g><g id="g3593" transform="translate(-0.44356179,0.66534269)"><g id="text77066-0" style="font-size:3.20000005px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:DroidSans" transform="matrix(0,-1,1,0,0.88712359,0)" xml:space="preserve">
+    </g></g><g id="g3593" transform="translate(-0.44356179,0.66534269)"><g id="text77066-0" style="font-size:3.20000005px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Droid Sans" transform="matrix(0,-1,1,0,0.88712359,0)" xml:space="preserve">
     <text id="tspan77068-7" x="-49.005001" y="17.279875">Boot</text>
 
 
 
 
-   </g><g id="text77091-6" style="font-size:3.20000005px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:DroidSans" xml:space="preserve">
+   </g><g id="text77091-6" style="font-size:3.20000005px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Droid Sans" xml:space="preserve">
     <text id="tspan77093-9" x="21.599876" y="43.245003">3V</text>
 
 
 
 
-   </g><g id="text77091-8-3" style="font-size:3.20000005px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:DroidSans" transform="matrix(0,-1,1,0,0,0)" xml:space="preserve">
+   </g><g id="text77091-8-3" style="font-size:3.20000005px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Droid Sans" transform="matrix(0,-1,1,0,0,0)" xml:space="preserve">
     <text id="tspan77093-3-4" x="-43.245003" y="32.399876">E6</text>
 
 
 
 
-   </g><g id="text77091-8-5-2" style="font-size:3.20000005px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:DroidSans" transform="matrix(0,-1,1,0,0,0)" xml:space="preserve">
+   </g><g id="text77091-8-5-2" style="font-size:3.20000005px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Droid Sans" transform="matrix(0,-1,1,0,0,0)" xml:space="preserve">
     <text id="tspan77093-3-1-4" x="-43.245003" y="39.599876">B0</text>
 
 
 
 
-   </g><g id="text77091-8-5-6-3" style="font-size:3.20000005px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:DroidSans" transform="matrix(0,-1,1,0,0,0)" xml:space="preserve">
+   </g><g id="text77091-8-5-6-3" style="font-size:3.20000005px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Droid Sans" transform="matrix(0,-1,1,0,0,0)" xml:space="preserve">
     <text id="tspan77093-3-1-6-2" x="-43.245003" y="46.799873">B1</text>
 
 
 
 
-   </g><g id="text77091-8-5-7-6" style="font-size:3.20000005px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:DroidSans" transform="matrix(0,-1,1,0,0,0)" xml:space="preserve">
+   </g><g id="text77091-8-5-7-6" style="font-size:3.20000005px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Droid Sans" transform="matrix(0,-1,1,0,0,0)" xml:space="preserve">
     <text id="tspan77093-3-1-62-9" x="-43.245003" y="53.99987">B2</text>
 
 
 
 
-   </g><g id="text77091-8-5-0-2" style="font-size:3.20000005px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:DroidSans" transform="matrix(0,-1,1,0,0,0)" xml:space="preserve">
+   </g><g id="text77091-8-5-0-2" style="font-size:3.20000005px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Droid Sans" transform="matrix(0,-1,1,0,0,0)" xml:space="preserve">
     <text id="tspan77093-3-1-63-8" x="-43.245003" y="61.199871">B3</text>
 
 
 
 
-   </g><g id="text77091-8-5-9-1" style="font-size:3.20000005px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:DroidSans" transform="matrix(0,-1,1,0,0,0)" xml:space="preserve">
+   </g><g id="text77091-8-5-9-1" style="font-size:3.20000005px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Droid Sans" transform="matrix(0,-1,1,0,0,0)" xml:space="preserve">
     <text id="tspan77093-3-1-0-5" x="-43.245003" y="68.399872">D0</text>
 
 
 
 
-   </g><g id="text77091-8-5-99-3" style="font-size:3.20000005px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:DroidSans" transform="matrix(0,-1,1,0,0,0)" xml:space="preserve">
+   </g><g id="text77091-8-5-99-3" style="font-size:3.20000005px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Droid Sans" transform="matrix(0,-1,1,0,0,0)" xml:space="preserve">
     <text id="tspan77093-3-1-09-2" x="-43.245003" y="75.599869">D1</text>
 
 
 
 
-   </g><g id="text77091-8-5-94-3" style="font-size:3.20000005px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:DroidSans" transform="matrix(0,-1,1,0,0,0)" xml:space="preserve">
+   </g><g id="text77091-8-5-94-3" style="font-size:3.20000005px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Droid Sans" transform="matrix(0,-1,1,0,0,0)" xml:space="preserve">
     <text id="tspan77230-2" x="-43.245003" y="82.799866">D2</text>
 
 
 
 
-   </g><g id="text77091-8-5-4-4" style="font-size:3.20000005px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:DroidSans" transform="matrix(0,-1,1,0,0,0)" xml:space="preserve">
+   </g><g id="text77091-8-5-4-4" style="font-size:3.20000005px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Droid Sans" transform="matrix(0,-1,1,0,0,0)" xml:space="preserve">
     <text id="tspan77093-3-1-5-4" x="-43.245003" y="89.999878">D3</text>
 
 
 
 
-   </g><g id="text77091-8-5-62-5" style="font-size:3.20000005px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:DroidSans" transform="matrix(0,-1,1,0,0,0)" xml:space="preserve">
+   </g><g id="text77091-8-5-62-5" style="font-size:3.20000005px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Droid Sans" transform="matrix(0,-1,1,0,0,0)" xml:space="preserve">
     <text id="tspan77093-3-1-64-1" x="-43.245003" y="97.199852">D4</text>
 
 
 
 
-   </g><g id="text77091-8-5-3-8" style="font-size:3.20000005px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:DroidSans" transform="matrix(0,-1,1,0,0,0)" xml:space="preserve">
+   </g><g id="text77091-8-5-3-8" style="font-size:3.20000005px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Droid Sans" transform="matrix(0,-1,1,0,0,0)" xml:space="preserve">
     <text id="tspan77093-3-1-04-6" x="-43.245003" y="104.39986">D5</text>
 
 
 
 
-   </g><g id="text77091-8-5-3-3-8" style="font-size:3.20000005px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:DroidSans" transform="matrix(0,-1,1,0,0,0)" xml:space="preserve">
+   </g><g id="text77091-8-5-3-3-8" style="font-size:3.20000005px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Droid Sans" transform="matrix(0,-1,1,0,0,0)" xml:space="preserve">
     <text id="tspan77093-3-1-04-4-7" x="-43.245003" y="111.59987">D6</text>
 
 
 
 
-   </g><g id="text77091-8-5-3-2-3" style="font-size:3.20000005px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:DroidSans" transform="matrix(0,-1,1,0,0,0)" xml:space="preserve">
+   </g><g id="text77091-8-5-3-2-3" style="font-size:3.20000005px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Droid Sans" transform="matrix(0,-1,1,0,0,0)" xml:space="preserve">
     <text id="tspan77093-3-1-04-3-6" x="-43.245003" y="118.79987">D7</text>
 
 
 
 
-   </g><g id="text77091-8-5-3-5-8" style="font-size:3.20000005px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:DroidSans" transform="matrix(0,-1,1,0,-0.77623314,0.2217809)" xml:space="preserve">
+   </g><g id="text77091-8-5-3-5-8" style="font-size:3.20000005px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Droid Sans" transform="matrix(0,-1,1,0,-0.77623314,0.2217809)" xml:space="preserve">
     <text id="tspan77093-3-1-04-32-0" x="-43.245003" y="125.99987">GND</text>
 
 
 
 
-   </g><g id="text77091-8-5-3-5-8-4" style="font-size:3.20000005px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:DroidSans" xml:space="preserve">
+   </g><g id="text77091-8-5-3-5-8-4" style="font-size:3.20000005px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Droid Sans" xml:space="preserve">
     <text id="tspan77093-3-1-04-32-0-8" x="128.87988" y="42.920002">RST</text>
 
 

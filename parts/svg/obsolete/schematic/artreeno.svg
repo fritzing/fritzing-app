@@ -482,7 +482,7 @@
 				c0.013,0.024,0.038,0.04,0.065,0.04l31.719-0.794l42.264,0.001v-0.001l33.065,0.794h0.001c0.026,0,0.051-0.016,0.062-0.039
 				C201.241,178.701,201.238,178.672,201.222,178.65z"/>
 			<circle fill="none" stroke="#000000" stroke-width="2" cx="147.64" cy="93.052" r="3.583"/>
-			<text transform="matrix(1 0 0 1 88.2949 205.4695)" font-family="DroidSans" font-weight="bold" font-size="18">happy Fritzmas</text>
+			<text transform="matrix(1 0 0 1 88.2949 205.4695)" font-family="Droid Sans" font-weight="bold" font-size="18">happy Fritzmas</text>
 		</g>
 	</g>
 </g>

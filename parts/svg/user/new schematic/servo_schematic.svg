@@ -33,21 +33,21 @@
 </g>
 <g transform="translate(3.429,1.3462)">
 	<g transform="rotate(270)">
-		<text transform="matrix(0 1 -1 0 -11.5386 0.634)" fill="#787878" font-family="'DroidSans'" font-size="2">1</text>
+		<text transform="matrix(0 1 -1 0 -11.5386 0.634)" fill="#787878" font-family="'Droid Sans'" font-size="2">1</text>
 	</g>
 </g>
 <g transform="translate(3.429,1.3462)">
 	<g transform="rotate(270)">
-		<text transform="matrix(0 1 -1 0 -18.7388 0.634)" fill="#787878" font-family="'DroidSans'" font-size="2">2</text>
+		<text transform="matrix(0 1 -1 0 -18.7388 0.634)" fill="#787878" font-family="'Droid Sans'" font-size="2">2</text>
 	</g>
 </g>
 <g transform="translate(3.429,1.3462)">
 	<g transform="rotate(270)">
-		<text transform="matrix(0 1 -1 0 -25.9385 0.634)" fill="#787878" font-family="'DroidSans'" font-size="2">3</text>
+		<text transform="matrix(0 1 -1 0 -25.9385 0.634)" fill="#787878" font-family="'Droid Sans'" font-size="2">3</text>
 	</g>
 </g>
-<text transform="matrix(1 0 0 1 9.2598 15.4917)" fill="#787878" font-family="'DroidSans'" font-size="4.5">+</text>
-<text transform="matrix(1 0 0 1 9.2202 22.7944)" fill="#787878" font-family="'DroidSans'" font-size="4.5">pulse</text>
-<text transform="matrix(1 0 0 1 9.2598 29.8765)" fill="#787878" font-family="'DroidSans'" font-size="4.5">-</text>
-<text transform="matrix(1 0 0 1 14.4292 12.3325)" font-family="'DroidSans'" font-size="5.5">Servo</text>
+<text transform="matrix(1 0 0 1 9.2598 15.4917)" fill="#787878" font-family="'Droid Sans'" font-size="4.5">+</text>
+<text transform="matrix(1 0 0 1 9.2202 22.7944)" fill="#787878" font-family="'Droid Sans'" font-size="4.5">pulse</text>
+<text transform="matrix(1 0 0 1 9.2598 29.8765)" fill="#787878" font-family="'Droid Sans'" font-size="4.5">-</text>
+<text transform="matrix(1 0 0 1 14.4292 12.3325)" font-family="'Droid Sans'" font-size="5.5">Servo</text>
 </svg>

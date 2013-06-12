@@ -68,7 +68,7 @@
        x="1278.8889"
        y="350"
        id="label0"
-       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:DroidSans">1</text>
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">1</text>
     <line
        x1="1548.3333"
        y1="615"
@@ -94,7 +94,7 @@
        x="1278.8889"
        y="650"
        id="label1"
-       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:DroidSans">2</text>
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">2</text>
     <line
        x1="1548.3333"
        y1="915"
@@ -120,7 +120,7 @@
        x="1278.8889"
        y="950"
        id="label2"
-       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:DroidSans">3</text>
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">3</text>
     <line
        x1="1548.3333"
        y1="1215"
@@ -146,7 +146,7 @@
        x="1278.8889"
        y="1250"
        id="label3"
-       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:DroidSans">4</text>
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">4</text>
     <line
        x1="1548.3333"
        y1="1515"
@@ -172,7 +172,7 @@
        x="1278.8889"
        y="1550"
        id="label4"
-       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:DroidSans">5</text>
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">5</text>
     <line
        x1="1548.3333"
        y1="1815"
@@ -198,7 +198,7 @@
        x="1278.8889"
        y="1850"
        id="label5"
-       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:DroidSans">6</text>
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">6</text>
     <line
        x1="1548.3333"
        y1="2115"
@@ -224,7 +224,7 @@
        x="1278.8889"
        y="2150"
        id="label6"
-       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:DroidSans">7</text>
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">7</text>
     <line
        x1="1548.3333"
        y1="2415"
@@ -250,7 +250,7 @@
        x="1278.8889"
        y="2450"
        id="label7"
-       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:DroidSans">8</text>
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">8</text>
     <line
        x1="1548.3333"
        y1="2715"
@@ -276,7 +276,7 @@
        x="1278.8889"
        y="2750"
        id="label8"
-       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:DroidSans">9</text>
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">9</text>
     <line
        x1="1548.3333"
        y1="3015"
@@ -302,7 +302,7 @@
        x="1278.8889"
        y="3050"
        id="label9"
-       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:DroidSans">10</text>
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">10</text>
     <line
        x1="1548.3333"
        y1="3315"
@@ -328,7 +328,7 @@
        x="1278.8889"
        y="3350"
        id="label10"
-       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:DroidSans">11</text>
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">11</text>
     <line
        x1="1548.3333"
        y1="3615"
@@ -354,7 +354,7 @@
        x="1278.8889"
        y="3650"
        id="label11"
-       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:DroidSans">12</text>
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">12</text>
     <line
        x1="1548.3333"
        y1="3915"
@@ -380,7 +380,7 @@
        x="1278.8889"
        y="3950"
        id="label12"
-       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:DroidSans">13</text>
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">13</text>
     <line
        x1="1548.3333"
        y1="4215"
@@ -406,7 +406,7 @@
        x="1278.8889"
        y="4250"
        id="label13"
-       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:DroidSans">14</text>
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">14</text>
     <line
        x1="1548.3333"
        y1="4515"
@@ -432,7 +432,7 @@
        x="1278.8889"
        y="4550"
        id="label14"
-       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:DroidSans">15</text>
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">15</text>
     <line
        x1="1548.3333"
        y1="4815"
@@ -458,7 +458,7 @@
        x="1278.8889"
        y="4850"
        id="label15"
-       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:DroidSans">16</text>
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">16</text>
     <line
        x1="1548.3333"
        y1="5115"
@@ -484,7 +484,7 @@
        x="1278.8889"
        y="5150"
        id="label16"
-       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:DroidSans">17</text>
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">17</text>
     <line
        x1="1548.3333"
        y1="5415"
@@ -510,7 +510,7 @@
        x="1278.8889"
        y="5450"
        id="label17"
-       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:DroidSans">18</text>
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">18</text>
     <line
        x1="1548.3333"
        y1="5715"
@@ -536,7 +536,7 @@
        x="1278.8889"
        y="5750"
        id="label18"
-       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:DroidSans">19</text>
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">19</text>
     <line
        x1="1548.3333"
        y1="6015"
@@ -562,7 +562,7 @@
        x="1278.8889"
        y="6050"
        id="label19"
-       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:DroidSans">20</text>
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">20</text>
     <line
        x1="1548.3333"
        y1="6315"
@@ -588,7 +588,7 @@
        x="1278.8889"
        y="6350"
        id="label20"
-       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:DroidSans">21</text>
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">21</text>
     <line
        x1="1548.3333"
        y1="6615"
@@ -614,7 +614,7 @@
        x="1278.8889"
        y="6650"
        id="label21"
-       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:DroidSans">22</text>
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">22</text>
     <line
        x1="1548.3333"
        y1="6915"
@@ -640,7 +640,7 @@
        x="1278.8889"
        y="6950"
        id="label22"
-       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:DroidSans">23</text>
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">23</text>
     <line
        x1="1548.3333"
        y1="7215"
@@ -666,7 +666,7 @@
        x="1278.8889"
        y="7250"
        id="label23"
-       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:DroidSans">24</text>
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">24</text>
     <line
        x1="1548.3333"
        y1="7515"
@@ -692,6 +692,6 @@
        x="1278.8889"
        y="7550"
        id="label24"
-       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:DroidSans">25</text>
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">25</text>
   </g>
 </svg>

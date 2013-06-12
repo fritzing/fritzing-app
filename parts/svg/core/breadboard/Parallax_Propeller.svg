@@ -204,44 +204,44 @@
    </g>
   </g>
  </g>
- <text xmlns="http://www.w3.org/2000/svg" fill="#8C8C8C" font-family="DroidSans" transform="matrix(4.489659e-11 -1 1 4.489659e-11 5.5198 10.4089)" font-size="3" >P31</text>
- <text xmlns="http://www.w3.org/2000/svg" fill="#8C8C8C" font-family="DroidSans" transform="matrix(4.489659e-11 -1 1 4.489659e-11 12.7083 10.4089)" font-size="3" >P30</text>
- <text xmlns="http://www.w3.org/2000/svg" fill="#8C8C8C" font-family="DroidSans" transform="matrix(4.489659e-11 -1 1 4.489659e-11 19.8967 10.4089)" font-size="3" >P29</text>
- <text xmlns="http://www.w3.org/2000/svg" fill="#8C8C8C" font-family="DroidSans" transform="matrix(4.489659e-11 -1 1 4.489659e-11 27.0852 10.4089)" font-size="3" >P28</text>
- <text xmlns="http://www.w3.org/2000/svg" fill="#8C8C8C" font-family="DroidSans" transform="matrix(4.489659e-11 -1 1 4.489659e-11 34.2732 10.4089)" font-size="3" >P27</text>
- <text xmlns="http://www.w3.org/2000/svg" fill="#8C8C8C" font-family="DroidSans" transform="matrix(4.489659e-11 -1 1 4.489659e-11 41.4617 10.4089)" font-size="3" >P26</text>
- <text xmlns="http://www.w3.org/2000/svg" fill="#8C8C8C" font-family="DroidSans" transform="matrix(4.489659e-11 -1 1 4.489659e-11 48.6501 10.4089)" font-size="3" >P25</text>
- <text xmlns="http://www.w3.org/2000/svg" fill="#8C8C8C" font-family="DroidSans" transform="matrix(4.489659e-11 -1 1 4.489659e-11 55.8386 10.4089)" font-size="3" >P24</text>
- <text xmlns="http://www.w3.org/2000/svg" fill="#8C8C8C" font-family="DroidSans" transform="matrix(4.489659e-11 -1 1 4.489659e-11 63.0271 11.1882)" font-size="3" >3.3V</text>
- <text xmlns="http://www.w3.org/2000/svg" fill="#8C8C8C" font-family="DroidSans" transform="matrix(4.489659e-11 -1 1 4.489659e-11 70.2151 9.2429)" font-size="3" >XO</text>
- <text xmlns="http://www.w3.org/2000/svg" fill="#8C8C8C" font-family="DroidSans" transform="matrix(4.489659e-11 -1 1 4.489659e-11 77.4036 8.033)" font-size="3" >XI</text>
- <text xmlns="http://www.w3.org/2000/svg" fill="#8C8C8C" font-family="DroidSans" transform="matrix(4.489659e-11 -1 1 4.489659e-11 84.592 11.6848)" font-size="3" >GND</text>
- <text xmlns="http://www.w3.org/2000/svg" fill="#8C8C8C" font-family="DroidSans" transform="matrix(4.489659e-11 -1 1 4.489659e-11 91.7805 10.4089)" font-size="3" >P23</text>
- <text xmlns="http://www.w3.org/2000/svg" fill="#8C8C8C" font-family="DroidSans" transform="matrix(4.489659e-11 -1 1 4.489659e-11 98.969 10.4089)" font-size="3" >P22</text>
- <text xmlns="http://www.w3.org/2000/svg" fill="#8C8C8C" font-family="DroidSans" transform="matrix(4.489659e-11 -1 1 4.489659e-11 106.1575 10.4089)" font-size="3" >P21</text>
- <text xmlns="http://www.w3.org/2000/svg" fill="#8C8C8C" font-family="DroidSans" transform="matrix(4.489659e-11 -1 1 4.489659e-11 113.3459 10.4089)" font-size="3" >P20</text>
- <text xmlns="http://www.w3.org/2000/svg" fill="#8C8C8C" font-family="DroidSans" transform="matrix(4.489659e-11 -1 1 4.489659e-11 120.5334 10.4089)" font-size="3" >P19</text>
- <text xmlns="http://www.w3.org/2000/svg" fill="#8C8C8C" font-family="DroidSans" transform="matrix(4.489659e-11 -1 1 4.489659e-11 127.7219 10.4089)" font-size="3" >P18</text>
- <text xmlns="http://www.w3.org/2000/svg" fill="#8C8C8C" font-family="DroidSans" transform="matrix(4.489659e-11 -1 1 4.489659e-11 134.9104 10.4089)" font-size="3" >P17</text>
- <text xmlns="http://www.w3.org/2000/svg" fill="#8C8C8C" font-family="DroidSans" transform="matrix(4.489659e-11 -1 1 4.489659e-11 142.1038 10.4089)" font-size="3" >P16</text>
- <text xmlns="http://www.w3.org/2000/svg" fill="#8C8C8C" font-family="DroidSans" transform="matrix(4.489659e-11 -1 1 4.489659e-11 5.5198 39.3333)" font-size="3" >P0</text>
- <text xmlns="http://www.w3.org/2000/svg" fill="#8C8C8C" font-family="DroidSans" transform="matrix(4.489659e-11 -1 1 4.489659e-11 12.7083 39.3313)" font-size="3" >P1</text>
- <text xmlns="http://www.w3.org/2000/svg" fill="#8C8C8C" font-family="DroidSans" transform="matrix(4.489659e-11 -1 1 4.489659e-11 19.8967 39.3333)" font-size="3" >P2</text>
- <text xmlns="http://www.w3.org/2000/svg" fill="#8C8C8C" font-family="DroidSans" transform="matrix(4.489659e-11 -1 1 4.489659e-11 27.0852 39.3333)" font-size="3" >P3</text>
- <text xmlns="http://www.w3.org/2000/svg" fill="#8C8C8C" font-family="DroidSans" transform="matrix(4.489659e-11 -1 1 4.489659e-11 34.2732 39.3333)" font-size="3" >P4</text>
- <text xmlns="http://www.w3.org/2000/svg" fill="#8C8C8C" font-family="DroidSans" transform="matrix(4.489659e-11 -1 1 4.489659e-11 41.4617 39.3333)" font-size="3" >P5</text>
- <text xmlns="http://www.w3.org/2000/svg" fill="#8C8C8C" font-family="DroidSans" transform="matrix(4.489659e-11 -1 1 4.489659e-11 48.6501 39.3333)" font-size="3" >P6</text>
- <text xmlns="http://www.w3.org/2000/svg" fill="#8C8C8C" font-family="DroidSans" transform="matrix(4.489659e-11 -1 1 4.489659e-11 55.8386 39.3333)" font-size="3" >P7</text>
- <text xmlns="http://www.w3.org/2000/svg" fill="#8C8C8C" font-family="DroidSans" transform="matrix(4.489659e-11 -1 1 4.489659e-11 63.0271 39.3333)" font-size="3" >GND</text>
- <text xmlns="http://www.w3.org/2000/svg" fill="#8C8C8C" font-family="DroidSans" transform="matrix(4.489659e-11 -1 1 4.489659e-11 70.2151 39.3313)" font-size="3" >BOEn</text>
- <text xmlns="http://www.w3.org/2000/svg" fill="#8C8C8C" font-family="DroidSans" transform="matrix(4.489659e-11 -1 1 4.489659e-11 77.4036 39.3313)" font-size="3" >RESn</text>
- <text xmlns="http://www.w3.org/2000/svg" fill="#8C8C8C" font-family="DroidSans" transform="matrix(4.489659e-11 -1 1 4.489659e-11 84.592 39.3333)" font-size="3" >3.3V</text>
- <text xmlns="http://www.w3.org/2000/svg" fill="#8C8C8C" font-family="DroidSans" transform="matrix(4.489659e-11 -1 1 4.489659e-11 91.7805 39.3333)" font-size="3" >P8</text>
- <text xmlns="http://www.w3.org/2000/svg" fill="#8C8C8C" font-family="DroidSans" transform="matrix(4.489659e-11 -1 1 4.489659e-11 98.969 39.3333)" font-size="3" >P9</text>
- <text xmlns="http://www.w3.org/2000/svg" fill="#8C8C8C" font-family="DroidSans" transform="matrix(4.489659e-11 -1 1 4.489659e-11 106.1575 39.3333)" font-size="3" >P10</text>
- <text xmlns="http://www.w3.org/2000/svg" fill="#8C8C8C" font-family="DroidSans" transform="matrix(4.489659e-11 -1 1 4.489659e-11 113.3459 39.3333)" font-size="3" >P11</text>
- <text xmlns="http://www.w3.org/2000/svg" fill="#8C8C8C" font-family="DroidSans" transform="matrix(4.489659e-11 -1 1 4.489659e-11 120.5334 39.3333)" font-size="3" >P12</text>
- <text xmlns="http://www.w3.org/2000/svg" fill="#8C8C8C" font-family="DroidSans" transform="matrix(4.489659e-11 -1 1 4.489659e-11 127.7219 39.3333)" font-size="3" >P13</text>
- <text xmlns="http://www.w3.org/2000/svg" fill="#8C8C8C" font-family="DroidSans" transform="matrix(4.489659e-11 -1 1 4.489659e-11 134.9104 39.3333)" font-size="3" >P14</text>
- <text xmlns="http://www.w3.org/2000/svg" fill="#8C8C8C" font-family="DroidSans" transform="matrix(4.489659e-11 -1 1 4.489659e-11 142.1038 39.3333)" font-size="3" >P15</text>
+ <text xmlns="http://www.w3.org/2000/svg" fill="#8C8C8C" font-family="Droid Sans" transform="matrix(4.489659e-11 -1 1 4.489659e-11 5.5198 10.4089)" font-size="3" >P31</text>
+ <text xmlns="http://www.w3.org/2000/svg" fill="#8C8C8C" font-family="Droid Sans" transform="matrix(4.489659e-11 -1 1 4.489659e-11 12.7083 10.4089)" font-size="3" >P30</text>
+ <text xmlns="http://www.w3.org/2000/svg" fill="#8C8C8C" font-family="Droid Sans" transform="matrix(4.489659e-11 -1 1 4.489659e-11 19.8967 10.4089)" font-size="3" >P29</text>
+ <text xmlns="http://www.w3.org/2000/svg" fill="#8C8C8C" font-family="Droid Sans" transform="matrix(4.489659e-11 -1 1 4.489659e-11 27.0852 10.4089)" font-size="3" >P28</text>
+ <text xmlns="http://www.w3.org/2000/svg" fill="#8C8C8C" font-family="Droid Sans" transform="matrix(4.489659e-11 -1 1 4.489659e-11 34.2732 10.4089)" font-size="3" >P27</text>
+ <text xmlns="http://www.w3.org/2000/svg" fill="#8C8C8C" font-family="Droid Sans" transform="matrix(4.489659e-11 -1 1 4.489659e-11 41.4617 10.4089)" font-size="3" >P26</text>
+ <text xmlns="http://www.w3.org/2000/svg" fill="#8C8C8C" font-family="Droid Sans" transform="matrix(4.489659e-11 -1 1 4.489659e-11 48.6501 10.4089)" font-size="3" >P25</text>
+ <text xmlns="http://www.w3.org/2000/svg" fill="#8C8C8C" font-family="Droid Sans" transform="matrix(4.489659e-11 -1 1 4.489659e-11 55.8386 10.4089)" font-size="3" >P24</text>
+ <text xmlns="http://www.w3.org/2000/svg" fill="#8C8C8C" font-family="Droid Sans" transform="matrix(4.489659e-11 -1 1 4.489659e-11 63.0271 11.1882)" font-size="3" >3.3V</text>
+ <text xmlns="http://www.w3.org/2000/svg" fill="#8C8C8C" font-family="Droid Sans" transform="matrix(4.489659e-11 -1 1 4.489659e-11 70.2151 9.2429)" font-size="3" >XO</text>
+ <text xmlns="http://www.w3.org/2000/svg" fill="#8C8C8C" font-family="Droid Sans" transform="matrix(4.489659e-11 -1 1 4.489659e-11 77.4036 8.033)" font-size="3" >XI</text>
+ <text xmlns="http://www.w3.org/2000/svg" fill="#8C8C8C" font-family="Droid Sans" transform="matrix(4.489659e-11 -1 1 4.489659e-11 84.592 11.6848)" font-size="3" >GND</text>
+ <text xmlns="http://www.w3.org/2000/svg" fill="#8C8C8C" font-family="Droid Sans" transform="matrix(4.489659e-11 -1 1 4.489659e-11 91.7805 10.4089)" font-size="3" >P23</text>
+ <text xmlns="http://www.w3.org/2000/svg" fill="#8C8C8C" font-family="Droid Sans" transform="matrix(4.489659e-11 -1 1 4.489659e-11 98.969 10.4089)" font-size="3" >P22</text>
+ <text xmlns="http://www.w3.org/2000/svg" fill="#8C8C8C" font-family="Droid Sans" transform="matrix(4.489659e-11 -1 1 4.489659e-11 106.1575 10.4089)" font-size="3" >P21</text>
+ <text xmlns="http://www.w3.org/2000/svg" fill="#8C8C8C" font-family="Droid Sans" transform="matrix(4.489659e-11 -1 1 4.489659e-11 113.3459 10.4089)" font-size="3" >P20</text>
+ <text xmlns="http://www.w3.org/2000/svg" fill="#8C8C8C" font-family="Droid Sans" transform="matrix(4.489659e-11 -1 1 4.489659e-11 120.5334 10.4089)" font-size="3" >P19</text>
+ <text xmlns="http://www.w3.org/2000/svg" fill="#8C8C8C" font-family="Droid Sans" transform="matrix(4.489659e-11 -1 1 4.489659e-11 127.7219 10.4089)" font-size="3" >P18</text>
+ <text xmlns="http://www.w3.org/2000/svg" fill="#8C8C8C" font-family="Droid Sans" transform="matrix(4.489659e-11 -1 1 4.489659e-11 134.9104 10.4089)" font-size="3" >P17</text>
+ <text xmlns="http://www.w3.org/2000/svg" fill="#8C8C8C" font-family="Droid Sans" transform="matrix(4.489659e-11 -1 1 4.489659e-11 142.1038 10.4089)" font-size="3" >P16</text>
+ <text xmlns="http://www.w3.org/2000/svg" fill="#8C8C8C" font-family="Droid Sans" transform="matrix(4.489659e-11 -1 1 4.489659e-11 5.5198 39.3333)" font-size="3" >P0</text>
+ <text xmlns="http://www.w3.org/2000/svg" fill="#8C8C8C" font-family="Droid Sans" transform="matrix(4.489659e-11 -1 1 4.489659e-11 12.7083 39.3313)" font-size="3" >P1</text>
+ <text xmlns="http://www.w3.org/2000/svg" fill="#8C8C8C" font-family="Droid Sans" transform="matrix(4.489659e-11 -1 1 4.489659e-11 19.8967 39.3333)" font-size="3" >P2</text>
+ <text xmlns="http://www.w3.org/2000/svg" fill="#8C8C8C" font-family="Droid Sans" transform="matrix(4.489659e-11 -1 1 4.489659e-11 27.0852 39.3333)" font-size="3" >P3</text>
+ <text xmlns="http://www.w3.org/2000/svg" fill="#8C8C8C" font-family="Droid Sans" transform="matrix(4.489659e-11 -1 1 4.489659e-11 34.2732 39.3333)" font-size="3" >P4</text>
+ <text xmlns="http://www.w3.org/2000/svg" fill="#8C8C8C" font-family="Droid Sans" transform="matrix(4.489659e-11 -1 1 4.489659e-11 41.4617 39.3333)" font-size="3" >P5</text>
+ <text xmlns="http://www.w3.org/2000/svg" fill="#8C8C8C" font-family="Droid Sans" transform="matrix(4.489659e-11 -1 1 4.489659e-11 48.6501 39.3333)" font-size="3" >P6</text>
+ <text xmlns="http://www.w3.org/2000/svg" fill="#8C8C8C" font-family="Droid Sans" transform="matrix(4.489659e-11 -1 1 4.489659e-11 55.8386 39.3333)" font-size="3" >P7</text>
+ <text xmlns="http://www.w3.org/2000/svg" fill="#8C8C8C" font-family="Droid Sans" transform="matrix(4.489659e-11 -1 1 4.489659e-11 63.0271 39.3333)" font-size="3" >GND</text>
+ <text xmlns="http://www.w3.org/2000/svg" fill="#8C8C8C" font-family="Droid Sans" transform="matrix(4.489659e-11 -1 1 4.489659e-11 70.2151 39.3313)" font-size="3" >BOEn</text>
+ <text xmlns="http://www.w3.org/2000/svg" fill="#8C8C8C" font-family="Droid Sans" transform="matrix(4.489659e-11 -1 1 4.489659e-11 77.4036 39.3313)" font-size="3" >RESn</text>
+ <text xmlns="http://www.w3.org/2000/svg" fill="#8C8C8C" font-family="Droid Sans" transform="matrix(4.489659e-11 -1 1 4.489659e-11 84.592 39.3333)" font-size="3" >3.3V</text>
+ <text xmlns="http://www.w3.org/2000/svg" fill="#8C8C8C" font-family="Droid Sans" transform="matrix(4.489659e-11 -1 1 4.489659e-11 91.7805 39.3333)" font-size="3" >P8</text>
+ <text xmlns="http://www.w3.org/2000/svg" fill="#8C8C8C" font-family="Droid Sans" transform="matrix(4.489659e-11 -1 1 4.489659e-11 98.969 39.3333)" font-size="3" >P9</text>
+ <text xmlns="http://www.w3.org/2000/svg" fill="#8C8C8C" font-family="Droid Sans" transform="matrix(4.489659e-11 -1 1 4.489659e-11 106.1575 39.3333)" font-size="3" >P10</text>
+ <text xmlns="http://www.w3.org/2000/svg" fill="#8C8C8C" font-family="Droid Sans" transform="matrix(4.489659e-11 -1 1 4.489659e-11 113.3459 39.3333)" font-size="3" >P11</text>
+ <text xmlns="http://www.w3.org/2000/svg" fill="#8C8C8C" font-family="Droid Sans" transform="matrix(4.489659e-11 -1 1 4.489659e-11 120.5334 39.3333)" font-size="3" >P12</text>
+ <text xmlns="http://www.w3.org/2000/svg" fill="#8C8C8C" font-family="Droid Sans" transform="matrix(4.489659e-11 -1 1 4.489659e-11 127.7219 39.3333)" font-size="3" >P13</text>
+ <text xmlns="http://www.w3.org/2000/svg" fill="#8C8C8C" font-family="Droid Sans" transform="matrix(4.489659e-11 -1 1 4.489659e-11 134.9104 39.3333)" font-size="3" >P14</text>
+ <text xmlns="http://www.w3.org/2000/svg" fill="#8C8C8C" font-family="Droid Sans" transform="matrix(4.489659e-11 -1 1 4.489659e-11 142.1038 39.3333)" font-size="3" >P15</text>
 </svg>

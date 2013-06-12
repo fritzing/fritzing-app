@@ -327,6 +327,6 @@
     <line fill="none" stroke="#020202" stroke-width="1" x1="117.322" x2="134.039" y1="127.154" y2="127.154"/>
    </g>
   </g>
-  <text font-family="DroidSans" font-size="23.8794" transform="matrix(1 0 0 1 38.532 31.7617)">74HC595</text>
+  <text font-family="Droid Sans" font-size="23.8794" transform="matrix(1 0 0 1 38.532 31.7617)">74HC595</text>
  </g>
 </svg>

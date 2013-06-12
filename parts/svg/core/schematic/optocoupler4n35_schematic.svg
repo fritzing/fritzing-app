@@ -59,13 +59,13 @@
 				l-0.18,1.009c-0.563-0.19-1.187-0.312-1.799-0.312c-1.847,0-2.639,1.414-2.639,3.188c0,1.989,0.864,3.142,2.747,3.142
 				c0.588,0,1.295-0.168,1.775-0.406l0.18,0.959C41.325,92.438,40.533,92.619,39.718,92.619z"/>
 		</g>
-		<text transform="matrix(1 0 0 1 14.9448 28.0239)" font-family="'DroidSans'" font-size="9.9253">1</text>
-		<text transform="matrix(1 0 0 1 47.4448 29.6538)" font-family="'DroidSans'" font-size="9.9253">4N35</text>
-		<text transform="matrix(1 0 0 1 14.9448 56.5615)" font-family="'DroidSans'" font-size="9.9253">2</text>
-		<text transform="matrix(1 0 0 1 14.9448 85.4033)" font-family="'DroidSans'" font-size="9.9253">3</text>
-		<text transform="matrix(1 0 0 1 102.874 28.0239)" font-family="'DroidSans'" font-size="9.9253">4</text>
-		<text transform="matrix(1 0 0 1 102.874 56.5615)" font-family="'DroidSans'" font-size="9.9253">5</text>
-		<text transform="matrix(1 0 0 1 102.874 85.4033)" font-family="'DroidSans'" font-size="9.9253">6</text>
+		<text transform="matrix(1 0 0 1 14.9448 28.0239)" font-family="'Droid Sans'" font-size="9.9253">1</text>
+		<text transform="matrix(1 0 0 1 47.4448 29.6538)" font-family="'Droid Sans'" font-size="9.9253">4N35</text>
+		<text transform="matrix(1 0 0 1 14.9448 56.5615)" font-family="'Droid Sans'" font-size="9.9253">2</text>
+		<text transform="matrix(1 0 0 1 14.9448 85.4033)" font-family="'Droid Sans'" font-size="9.9253">3</text>
+		<text transform="matrix(1 0 0 1 102.874 28.0239)" font-family="'Droid Sans'" font-size="9.9253">4</text>
+		<text transform="matrix(1 0 0 1 102.874 56.5615)" font-family="'Droid Sans'" font-size="9.9253">5</text>
+		<text transform="matrix(1 0 0 1 102.874 85.4033)" font-family="'Droid Sans'" font-size="9.9253">6</text>
 	</g>
 </g>
 </svg>

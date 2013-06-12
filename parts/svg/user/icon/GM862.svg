@@ -16,7 +16,7 @@
 </g>
 <path fill="none" stroke="#333333" stroke-width="0.5" stroke-miterlimit="10" d="M110.732,20.791h-50.5c-1.1,0-2,0.9-2,2v19.167
 	l10.333,10.333h42.167c1.1,0,2-0.9,2-2v-27.5C112.732,21.691,111.831,20.791,110.732,20.791z"/>
-<text transform="matrix(1 0 0 1 60.3157 26.845)" fill="#333333" font-family="'DroidSans'" font-size="5.6042">PUSH PUSH SYSTEM</text>
+<text transform="matrix(1 0 0 1 60.3157 26.845)" fill="#333333" font-family="'Droid Sans'" font-size="5.6042">PUSH PUSH SYSTEM</text>
 <polygon fill="#333333" points="82.643,33.082 82.643,29.207 76.257,35.947 82.643,42.332 82.643,38.457 94.705,38.457 
 	94.705,33.082 "/>
 <g>

@@ -21,7 +21,7 @@
 			<path d="M64.444,22.68l1.438-1.438l1.08,2.521L64.444,22.68z"/>
 			
 				<line fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-miterlimit="10" x1="57.599" y1="7.2" x2="57.599" y2="0"/>
-			<text transform="matrix(1 0 0 1 61.2007 12.2393)" fill="#787878" font-family="'DroidSans'" font-size="2">B</text>
+			<text transform="matrix(1 0 0 1 61.2007 12.2393)" fill="#787878" font-family="'Droid Sans'" font-size="2">B</text>
 			<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="57.602" y1="21.6" x2="57.602" y2="28.8"/>
 			
 				<line fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-miterlimit="10" x1="57.6" y1="36" x2="57.6" y2="28.8"/>
@@ -39,7 +39,7 @@
 			<path d="M42.844,22.68l1.438-1.438l1.08,2.521L42.844,22.68z"/>
 			
 				<line fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-miterlimit="10" x1="35.999" y1="7.2" x2="35.999" y2="0"/>
-			<text transform="matrix(1 0 0 1 39.6001 12.2393)" fill="#787878" font-family="'DroidSans'" font-size="2">G</text>
+			<text transform="matrix(1 0 0 1 39.6001 12.2393)" fill="#787878" font-family="'Droid Sans'" font-size="2">G</text>
 			<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="36.001" y1="21.6" x2="36.001" y2="28.8"/>
 			
 				<line fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-miterlimit="10" x1="36" y1="36" x2="36" y2="28.8"/>
@@ -57,7 +57,7 @@
 			<path d="M21.244,22.68l1.438-1.438l1.08,2.521L21.244,22.68z"/>
 			
 				<line fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-miterlimit="10" x1="14.399" y1="7.2" x2="14.399" y2="0"/>
-			<text transform="matrix(1 0 0 1 18 12.2393)" fill="#787878" font-family="'DroidSans'" font-size="2">R</text>
+			<text transform="matrix(1 0 0 1 18 12.2393)" fill="#787878" font-family="'Droid Sans'" font-size="2">R</text>
 			<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="14.402" y1="21.6" x2="14.402" y2="28.8"/>
 			
 				<line fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-miterlimit="10" x1="14.4" y1="36" x2="14.4" y2="28.8"/>

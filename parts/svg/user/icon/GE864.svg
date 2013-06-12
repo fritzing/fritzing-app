@@ -22,6 +22,6 @@
 		c0.55,0,1,0.45,1,1V59.385z"/>
 	<path fill="#F2F2F2" d="M79.226,76.224c0,0.55-0.45,1-1,1H8.817c-0.55,0-1-0.45-1-1V62.962c0-0.55,0.45-1,1-1h69.408
 		c0.55,0,1,0.45,1,1V76.224z"/>
-	<text transform="matrix(1 0 0 1 17.4058 50.6975)" enable-background="new    "><tspan x="0" y="0" fill="#666666" font-family="'DroidSans'" font-size="5.8463">Telit quad cell module</tspan><tspan x="41.327" y="7.016" fill="#666666" font-family="'DroidSans'" font-size="5.8463">GE864</tspan></text>
+	<text transform="matrix(1 0 0 1 17.4058 50.6975)" enable-background="new    "><tspan x="0" y="0" fill="#666666" font-family="'Droid Sans'" font-size="5.8463">Telit quad cell module</tspan><tspan x="41.327" y="7.016" fill="#666666" font-family="'Droid Sans'" font-size="5.8463">GE864</tspan></text>
 </g>
 </svg>

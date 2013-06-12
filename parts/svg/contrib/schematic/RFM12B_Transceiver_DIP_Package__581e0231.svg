@@ -66,7 +66,7 @@
        x="1159.7668"
        y="216.06761"
        font-size="235"
-       style="font-size:235px;text-anchor:middle;fill:#000000;stroke:none;font-family:DroidSans">RFM12B</text>
+       style="font-size:235px;text-anchor:middle;fill:#000000;stroke:none;font-family:Droid Sans">RFM12B</text>
     <line
        x1="15"
        y1="304.41998"
@@ -93,7 +93,7 @@
        x="390"
        y="350.82132"
        font-size="130"
-       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:DroidSans">nINT/VDI</text>
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">nINT/VDI</text>
     <line
        style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round"
        id="line13330"
@@ -116,7 +116,7 @@
        y="533.10498"
        x="142.5" />
     <text
-       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:DroidSans"
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans"
        font-size="130"
        y="594.53809"
        x="394.51328"
@@ -147,7 +147,7 @@
        x="394.51328"
        y="833.74164"
        font-size="130"
-       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:DroidSans">nSEL</text>
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">nSEL</text>
     <line
        style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round"
        id="line13346"
@@ -170,7 +170,7 @@
        y="996.66357"
        x="142.5" />
     <text
-       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:DroidSans"
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans"
        font-size="130"
        y="1045.6553"
        x="385.48672"
@@ -201,7 +201,7 @@
        x="390"
        y="1294.0957"
        font-size="130"
-       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:DroidSans">DCLK/CFIL/FFIT</text>
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">DCLK/CFIL/FFIT</text>
     <line
        style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round"
        id="line13362"
@@ -224,7 +224,7 @@
        y="1471.8662"
        x="142.5" />
     <text
-       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:DroidSans"
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans"
        font-size="130"
        y="1533.2993"
        x="390"
@@ -251,7 +251,7 @@
        y="289.41998"
        x="2167" />
     <text
-       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:DroidSans"
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans"
        font-size="130"
        y="350.82132"
        x="1689.8502"
@@ -282,7 +282,7 @@
        x="1712.3209"
        y="594.53809"
        font-size="130"
-       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:DroidSans">SCK</text>
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">SCK</text>
     <line
        style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round"
        id="line13386"
@@ -305,7 +305,7 @@
        y="772.30853"
        x="2167" />
     <text
-       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:DroidSans"
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans"
        font-size="130"
        y="833.80511"
        x="1688.7711"
@@ -336,7 +336,7 @@
        x="987.73596"
        y="1058.0967"
        font-size="130"
-       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:DroidSans">FSCK/DATA/nFFS</text>
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">FSCK/DATA/nFFS</text>
     <line
        style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round"
        id="line13402"
@@ -359,7 +359,7 @@
        y="1232.6626"
        x="2167" />
     <text
-       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:DroidSans"
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans"
        font-size="130"
        y="1294.0957"
        x="1715.8756"
@@ -390,6 +390,6 @@
        x="1668.2682"
        y="1533.2993"
        font-size="130"
-       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:DroidSans">GND</text>
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">GND</text>
   </g>
 </svg>

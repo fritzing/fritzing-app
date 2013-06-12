@@ -56,7 +56,7 @@
  <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#CCCCCC" stroke-linecap="round" y1="22.731" stroke-width="0.5" x1="18.9" y2="25.433" x2="18.45"/>
  <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#CCCCCC" stroke-linecap="round" y1="25.433" stroke-width="0.5" x1="21.15" y2="28.132" x2="20.7"/>
  <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#CCCCCC" stroke-linecap="round" y1="22.731" stroke-width="0.5" x1="21.6" y2="25.433" x2="21.15"/>
- <text xmlns="http://www.w3.org/2000/svg" font-family="DroidSans" transform="matrix(1 0 0 1 15.9302 75.6689)" font-size="6">10</text>
+ <text xmlns="http://www.w3.org/2000/svg" font-family="Droid Sans" transform="matrix(1 0 0 1 15.9302 75.6689)" font-size="6">10</text>
  <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000" stroke-linecap="round" y1="22.731" stroke-width="0.5" x1="21.6" y2="22.731" x2="18.9"/>
  <path xmlns="http://www.w3.org/2000/svg" d="M68.125,32.288c0.359,0,0.69,0.193,0.869,0.508l0,0c0.179,0.312,0.175,0.695-0.012,1.006l0,0L58.458,51.44c-0.18,0.303-0.506,0.488-0.858,0.488l0,0c-0.35,0-0.68-0.186-0.858-0.486l0,0L46.19,33.804c-0.185-0.312-0.188-0.695-0.012-1.008l0,0c0.177-0.314,0.508-0.51,0.871-0.51l0,0L68.125,32.288 M57.598,48.978l8.766-14.689H48.811L57.598,48.978L57.598,48.978z"/>
  <path xmlns="http://www.w3.org/2000/svg" d="M46.815,51.927c-0.554,0-1-0.445-1-0.998l0,0c0-0.553,0.447-1,1-1l0,0h21.05c0.553,0,1.001,0.447,1.001,1l0,0c0,0.553-0.448,0.998-1.001,0.998l0,0H46.815L46.815,51.927z"/>
@@ -77,7 +77,7 @@
  <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#CCCCCC" stroke-linecap="round" y1="22.731" stroke-width="0.5" x1="62.1" y2="25.433" x2="61.65"/>
  <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#CCCCCC" stroke-linecap="round" y1="25.433" stroke-width="0.5" x1="64.35" y2="28.132" x2="63.899"/>
  <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000" stroke-linecap="round" y1="22.731" stroke-width="0.5" x1="64.8" y2="25.433" x2="64.35"/>
- <text xmlns="http://www.w3.org/2000/svg" font-family="DroidSans" transform="matrix(1 0 0 1 61.2896 75.6689)" font-size="6">9</text>
+ <text xmlns="http://www.w3.org/2000/svg" font-family="Droid Sans" transform="matrix(1 0 0 1 61.2896 75.6689)" font-size="6">9</text>
  <path xmlns="http://www.w3.org/2000/svg" d="M111.325,32.288c0.359,0,0.69,0.193,0.869,0.508l0,0c0.179,0.312,0.175,0.695-0.012,1.006l0,0L101.658,51.44c-0.18,0.303-0.506,0.488-0.858,0.488l0,0c-0.35,0-0.68-0.186-0.858-0.486l0,0L89.391,33.804c-0.185-0.312-0.188-0.695-0.012-1.008l0,0c0.177-0.314,0.508-0.51,0.871-0.51l0,0L111.325,32.288 M100.798,48.978l8.766-14.689H92.011L100.798,48.978L100.798,48.978z"/>
  <path xmlns="http://www.w3.org/2000/svg" d="M90.016,51.927c-0.554,0-1-0.445-1-0.998l0,0c0-0.553,0.447-1,1-1l0,0h21.05c0.553,0,1.001,0.447,1.001,1l0,0c0,0.553-0.448,0.998-1.001,0.998l0,0H90.016L90.016,51.927z"/>
  <path xmlns="http://www.w3.org/2000/svg" d="M99.799,33.05V21.03c0-0.553,0.448-0.998,1.001-0.998l0,0c0.553,0,0.999,0.445,0.999,0.998l0,0v12.02c0,0.553-0.446,1-0.999,1l0,0C100.246,34.05,99.799,33.601,99.799,33.05L99.799,33.05z"/>
@@ -96,7 +96,7 @@
  <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#CCCCCC" stroke-linecap="round" y1="25.433" stroke-width="0.5" x1="104.85" y2="28.132" x2="104.4"/>
  <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#CCCCCC" stroke-linecap="round" y1="22.731" stroke-width="0.5" x1="105.3" y2="25.433" x2="104.85"/>
  <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#CCCCCC" stroke-linecap="round" y1="22.731" stroke-width="0.5" x1="108" y2="25.433" x2="107.55"/>
- <text xmlns="http://www.w3.org/2000/svg" font-family="DroidSans" transform="matrix(1 0 0 1 104.4897 75.6689)" font-size="6">7</text>
+ <text xmlns="http://www.w3.org/2000/svg" font-family="Droid Sans" transform="matrix(1 0 0 1 104.4897 75.6689)" font-size="6">7</text>
  <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000" stroke-linecap="round" y1="25.433" stroke-width="0.5" x1="107.55" y2="28.132" x2="107.1"/>
  <path xmlns="http://www.w3.org/2000/svg" d="M154.495,32.288c0.359,0,0.69,0.193,0.869,0.508l0,0c0.179,0.312,0.175,0.695-0.012,1.006l0,0L144.828,51.44c-0.18,0.303-0.506,0.488-0.858,0.488l0,0c-0.35,0-0.68-0.186-0.858-0.486l0,0l-10.551-17.639c-0.185-0.312-0.188-0.695-0.012-1.008l0,0c0.177-0.314,0.508-0.51,0.871-0.51l0,0L154.495,32.288 M143.968,48.978l8.766-14.689h-17.553L143.968,48.978L143.968,48.978z"/>
  <path xmlns="http://www.w3.org/2000/svg" d="M133.186,51.927c-0.554,0-1-0.445-1-0.998l0,0c0-0.553,0.447-1,1-1l0,0h21.05c0.553,0,1.001,0.447,1.001,1l0,0c0,0.553-0.448,0.998-1.001,0.998l0,0H133.186L133.186,51.927z"/>
@@ -116,7 +116,7 @@
  <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#CCCCCC" stroke-linecap="round" y1="22.731" stroke-width="0.5" x1="148.47" y2="25.433" x2="148.02"/>
  <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#CCCCCC" stroke-linecap="round" y1="25.433" stroke-width="0.5" x1="150.72" y2="28.132" x2="150.27"/>
  <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#CCCCCC" stroke-linecap="round" y1="22.731" stroke-width="0.5" x1="151.17" y2="25.433" x2="150.72"/>
- <text xmlns="http://www.w3.org/2000/svg" font-family="DroidSans" transform="matrix(1 0 0 1 147.6597 75.6689)" font-size="6">5</text>
+ <text xmlns="http://www.w3.org/2000/svg" font-family="Droid Sans" transform="matrix(1 0 0 1 147.6597 75.6689)" font-size="6">5</text>
  <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000" stroke-linecap="round" y1="28.132" stroke-width="0.5" x1="150.27" y2="28.132" x2="147.57"/>
  <path xmlns="http://www.w3.org/2000/svg" d="M197.726,32.288c0.359,0,0.69,0.193,0.869,0.508l0,0c0.179,0.312,0.175,0.695-0.012,1.006l0,0L188.059,51.44c-0.18,0.303-0.506,0.488-0.858,0.488l0,0c-0.35,0-0.68-0.186-0.858-0.486l0,0l-10.551-17.639c-0.185-0.312-0.188-0.695-0.012-1.008l0,0c0.177-0.314,0.508-0.51,0.871-0.51l0,0L197.726,32.288 M187.198,48.978l8.766-14.689h-17.553L187.198,48.978L187.198,48.978z"/>
  <path xmlns="http://www.w3.org/2000/svg" d="M176.416,51.927c-0.554,0-1-0.445-1-0.998l0,0c0-0.553,0.447-1,1-1l0,0h21.05c0.553,0,1.001,0.447,1.001,1l0,0c0,0.553-0.448,0.998-1.001,0.998l0,0H176.416L176.416,51.927z"/>
@@ -136,7 +136,7 @@
  <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#CCCCCC" stroke-linecap="round" y1="22.731" stroke-width="0.5" x1="191.701" y2="25.433" x2="191.25"/>
  <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#CCCCCC" stroke-linecap="round" y1="25.433" stroke-width="0.5" x1="193.95" y2="28.132" x2="193.5"/>
  <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#CCCCCC" stroke-linecap="round" y1="22.731" stroke-width="0.5" x1="194.4" y2="25.433" x2="193.95"/>
- <text xmlns="http://www.w3.org/2000/svg" font-family="DroidSans" transform="matrix(1 0 0 1 190.8901 75.668)" font-size="6">4</text>
+ <text xmlns="http://www.w3.org/2000/svg" font-family="Droid Sans" transform="matrix(1 0 0 1 190.8901 75.668)" font-size="6">4</text>
  <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000" stroke-linecap="round" y1="25.433" stroke-width="0.5" x1="191.25" y2="28.132" x2="190.8"/>
  <path xmlns="http://www.w3.org/2000/svg" d="M240.925,32.288c0.359,0,0.69,0.193,0.869,0.508l0,0c0.179,0.312,0.175,0.695-0.012,1.006l0,0L231.258,51.44c-0.18,0.303-0.506,0.488-0.858,0.488l0,0c-0.35,0-0.68-0.186-0.858-0.486l0,0l-10.551-17.639c-0.185-0.312-0.188-0.695-0.012-1.008l0,0c0.177-0.314,0.508-0.51,0.871-0.51l0,0L240.925,32.288 M230.398,48.978l8.766-14.689h-17.553L230.398,48.978L230.398,48.978z"/>
  <path xmlns="http://www.w3.org/2000/svg" d="M219.616,51.927c-0.554,0-1-0.445-1-0.998l0,0c0-0.553,0.447-1,1-1l0,0h21.05c0.553,0,1.001,0.447,1.001,1l0,0c0,0.553-0.448,0.998-1.001,0.998l0,0H219.616L219.616,51.927z"/>
@@ -157,7 +157,7 @@
  <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000" stroke-linecap="round" y1="22.731" stroke-width="0.5" x1="234.9" y2="25.433" x2="234.45"/>
  <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#CCCCCC" stroke-linecap="round" y1="25.433" stroke-width="0.5" x1="237.15" y2="28.132" x2="236.7"/>
  <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#CCCCCC" stroke-linecap="round" y1="22.731" stroke-width="0.5" x1="237.6" y2="25.433" x2="237.15"/>
- <text xmlns="http://www.w3.org/2000/svg" font-family="DroidSans" transform="matrix(1 0 0 1 234.0898 75.668)" font-size="6">2</text>
+ <text xmlns="http://www.w3.org/2000/svg" font-family="Droid Sans" transform="matrix(1 0 0 1 234.0898 75.668)" font-size="6">2</text>
  <path xmlns="http://www.w3.org/2000/svg" d="M284.125,32.288c0.359,0,0.69,0.193,0.869,0.508l0,0c0.179,0.312,0.175,0.695-0.012,1.006l0,0L274.458,51.44c-0.18,0.303-0.506,0.488-0.858,0.488l0,0c-0.35,0-0.68-0.186-0.858-0.486l0,0l-10.551-17.639c-0.185-0.312-0.188-0.695-0.012-1.008l0,0c0.177-0.314,0.508-0.51,0.871-0.51l0,0L284.125,32.288 M273.598,48.978l8.766-14.689h-17.553L273.598,48.978L273.598,48.978z"/>
  <path xmlns="http://www.w3.org/2000/svg" d="M262.816,51.927c-0.554,0-1-0.445-1-0.998l0,0c0-0.553,0.447-1,1-1l0,0h21.05c0.553,0,1.001,0.447,1.001,1l0,0c0,0.553-0.448,0.998-1.001,0.998l0,0H262.816L262.816,51.927z"/>
  <path xmlns="http://www.w3.org/2000/svg" d="M272.599,33.05V21.03c0-0.553,0.448-0.998,1.001-0.998l0,0c0.553,0,0.999,0.445,0.999,0.998l0,0v12.02c0,0.553-0.446,1-0.999,1l0,0C273.046,34.05,272.599,33.601,272.599,33.05L272.599,33.05z"/>
@@ -176,7 +176,7 @@
  <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#CCCCCC" stroke-linecap="round" y1="22.731" stroke-width="0.5" x1="278.101" y2="25.433" x2="277.65"/>
  <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#CCCCCC" stroke-linecap="round" y1="25.433" stroke-width="0.5" x1="280.35" y2="28.132" x2="279.9"/>
  <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#CCCCCC" stroke-linecap="round" y1="22.731" stroke-width="0.5" x1="280.8" y2="25.433" x2="280.35"/>
- <text xmlns="http://www.w3.org/2000/svg" font-family="DroidSans" transform="matrix(1 0 0 1 277.29 75.668)" font-size="6">1</text>
+ <text xmlns="http://www.w3.org/2000/svg" font-family="Droid Sans" transform="matrix(1 0 0 1 277.29 75.668)" font-size="6">1</text>
  <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000" stroke-linecap="round" y1="25.433" stroke-width="0.5" x1="277.65" y2="25.433" x2="280.35"/>
  <path xmlns="http://www.w3.org/2000/svg" d="M327.295,32.288c0.359,0,0.69,0.193,0.869,0.508l0,0c0.179,0.312,0.175,0.695-0.012,1.006l0,0L317.628,51.44c-0.18,0.303-0.506,0.488-0.858,0.488l0,0c-0.35,0-0.68-0.186-0.858-0.486l0,0l-10.551-17.639c-0.185-0.312-0.188-0.695-0.012-1.008l0,0c0.177-0.314,0.508-0.51,0.871-0.51l0,0L327.295,32.288 M316.768,48.978l8.766-14.689h-17.553L316.768,48.978L316.768,48.978z"/>
  <path xmlns="http://www.w3.org/2000/svg" d="M305.986,51.927c-0.554,0-1-0.445-1-0.998l0,0c0-0.553,0.447-1,1-1l0,0h21.05c0.553,0,1.001,0.447,1.001,1l0,0c0,0.553-0.448,0.998-1.001,0.998l0,0H305.986L305.986,51.927z"/>
@@ -197,8 +197,8 @@
  <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#CCCCCC" stroke-linecap="round" y1="22.731" stroke-width="0.5" x1="321.271" y2="25.433" x2="320.82"/>
  <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#CCCCCC" stroke-linecap="round" y1="25.433" stroke-width="0.5" x1="323.52" y2="28.132" x2="323.07"/>
  <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#CCCCCC" stroke-linecap="round" y1="22.731" stroke-width="0.5" x1="323.97" y2="25.433" x2="323.52"/>
- <text xmlns="http://www.w3.org/2000/svg" font-family="DroidSans" transform="matrix(1 0 0 1 320.46 75.668)" font-size="6">6</text>
- <text xmlns="http://www.w3.org/2000/svg" font-family="DroidSans" transform="matrix(1 0 0 1 169.9604 14.1064)" font-size="6">3,8</text>
+ <text xmlns="http://www.w3.org/2000/svg" font-family="Droid Sans" transform="matrix(1 0 0 1 320.46 75.668)" font-size="6">6</text>
+ <text xmlns="http://www.w3.org/2000/svg" font-family="Droid Sans" transform="matrix(1 0 0 1 169.9604 14.1064)" font-size="6">3,8</text>
 
 </g>
 </svg>

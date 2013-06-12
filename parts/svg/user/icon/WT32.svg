@@ -38,6 +38,6 @@
 <g opacity="0.2" enable-background="new    ">
 	<path d="M48.624,64.966l-1.951,1.95H2.72l-1.951-1.95v0.424l1.951,1.95h43.951l1.951-1.95v-0.424H48.624z"/>
 </g>
-<text transform="matrix(0 -1 1 0 8.3259 40.9858)"><tspan x="0" y="0" fill="#666666" font-family="'DroidSans'" font-size="4.9034">Blue Giga Audio</tspan><tspan x="22.729" y="5.884" fill="#666666" font-family="'DroidSans'" font-size="4.9034">WT32</tspan></text>
+<text transform="matrix(0 -1 1 0 8.3259 40.9858)"><tspan x="0" y="0" fill="#666666" font-family="'Droid Sans'" font-size="4.9034">Blue Giga Audio</tspan><tspan x="22.729" y="5.884" fill="#666666" font-family="'Droid Sans'" font-size="4.9034">WT32</tspan></text>
 <circle fill="#E6E6E6" cx="41.496" cy="60.381" r="2.667"/>
 </svg>

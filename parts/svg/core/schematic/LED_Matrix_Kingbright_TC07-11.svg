@@ -26,11 +26,11 @@
 		 <line fill="none" id="connector11terminal" stroke="#000000" stroke-width="1" x1="14.7" x2="16.5" y1="108.4" y2="108.4"/>
 		 <line fill="none" id="connector12terminal" stroke="#000000" stroke-width="1" x1="14.7" x2="16.5" y1="65.2" y2="65.2"/>			
 			
-<text font-family="'DroidSans'" font-size="6" transform="matrix(1 0 0 1 68.3394 23.7749)">1</text>
-<text font-family="'DroidSans'" font-size="6" transform="matrix(1 0 0 1 113.6987 23.7749)">3</text>
-<text font-family="'DroidSans'" font-size="6" transform="matrix(1 0 0 1 156.8989 23.7749)">10</text>
-<text font-family="'DroidSans'" font-size="6" transform="matrix(1 0 0 1 200.0684 23.7749)">7</text>
-<text font-family="'DroidSans'" font-size="6" transform="matrix(1 0 0 1 243.2988 23.7739)">8</text>
+<text font-family="'Droid Sans'" font-size="6" transform="matrix(1 0 0 1 68.3394 23.7749)">1</text>
+<text font-family="'Droid Sans'" font-size="6" transform="matrix(1 0 0 1 113.6987 23.7749)">3</text>
+<text font-family="'Droid Sans'" font-size="6" transform="matrix(1 0 0 1 156.8989 23.7749)">10</text>
+<text font-family="'Droid Sans'" font-size="6" transform="matrix(1 0 0 1 200.0684 23.7749)">7</text>
+<text font-family="'Droid Sans'" font-size="6" transform="matrix(1 0 0 1 243.2988 23.7739)">8</text>
 
 <line fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="65.102" x2="65.102" y1="14.8" y2="324.4"/>
 <line fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="108.302" x2="108.302" y1="14.8" y2="324.4"/>
@@ -217,13 +217,13 @@
 	<circle cx="212.699" cy="65.197" r="1.8"/>
 	<circle cx="237.899" cy="39.996" r="1.801"/>
 </g>
-<text font-family="'DroidSans'" font-size="6" transform="matrix(1 0 0 1 18.2993 319)">6</text>
-<text font-family="'DroidSans'" font-size="6" transform="matrix(1 0 0 1 18.2993 275.7998)">5</text>
-<text font-family="'DroidSans'" font-size="6" transform="matrix(1 0 0 1 18.2993 232.6006)">4</text>
-<text font-family="'DroidSans'" font-size="6" transform="matrix(1 0 0 1 18.2993 189.4004)">9</text>
-<text font-family="'DroidSans'" font-size="6" transform="matrix(1 0 0 1 18.2993 146.2002)">2</text>
-<text font-family="'DroidSans'" font-size="6" transform="matrix(1 0 0 1 18.2993 103)">11</text>
-<text font-family="'DroidSans'" font-size="6" transform="matrix(1 0 0 1 18.2993 59.7988)">12</text>
+<text font-family="'Droid Sans'" font-size="6" transform="matrix(1 0 0 1 18.2993 319)">6</text>
+<text font-family="'Droid Sans'" font-size="6" transform="matrix(1 0 0 1 18.2993 275.7998)">5</text>
+<text font-family="'Droid Sans'" font-size="6" transform="matrix(1 0 0 1 18.2993 232.6006)">4</text>
+<text font-family="'Droid Sans'" font-size="6" transform="matrix(1 0 0 1 18.2993 189.4004)">9</text>
+<text font-family="'Droid Sans'" font-size="6" transform="matrix(1 0 0 1 18.2993 146.2002)">2</text>
+<text font-family="'Droid Sans'" font-size="6" transform="matrix(1 0 0 1 18.2993 103)">11</text>
+<text font-family="'Droid Sans'" font-size="6" transform="matrix(1 0 0 1 18.2993 59.7988)">12</text>
 
 </g>
 </svg>

@@ -31,11 +31,11 @@
 		</g>
 	</g>
 </g>
-<text transform="matrix(1 0 0 1 66.0767 14.251)" font-family="'DroidSans'" font-size="9">Servo</text>
-<text transform="matrix(1 0 0 1 29.0771 17.751)" font-family="'DroidSans'" font-size="9">+</text>
-<text transform="matrix(1 0 0 1 29.0771 49.0015)" font-family="'DroidSans'" font-size="9">pulse</text>
-<text transform="matrix(1 0 0 1 29.0771 76.5015)" font-family="'DroidSans'" font-size="9">-</text>
-<text transform="matrix(1 0 0 1 15.5771 11.9648)" font-family="'DroidSans'" font-size="9">1</text>
-<text transform="matrix(1 0 0 1 15.5771 41.3408)" font-family="'DroidSans'" font-size="9">2</text>
-<text transform="matrix(1 0 0 1 15.5771 70.7144)" font-family="'DroidSans'" font-size="9">3</text>
+<text transform="matrix(1 0 0 1 66.0767 14.251)" font-family="'Droid Sans'" font-size="9">Servo</text>
+<text transform="matrix(1 0 0 1 29.0771 17.751)" font-family="'Droid Sans'" font-size="9">+</text>
+<text transform="matrix(1 0 0 1 29.0771 49.0015)" font-family="'Droid Sans'" font-size="9">pulse</text>
+<text transform="matrix(1 0 0 1 29.0771 76.5015)" font-family="'Droid Sans'" font-size="9">-</text>
+<text transform="matrix(1 0 0 1 15.5771 11.9648)" font-family="'Droid Sans'" font-size="9">1</text>
+<text transform="matrix(1 0 0 1 15.5771 41.3408)" font-family="'Droid Sans'" font-size="9">2</text>
+<text transform="matrix(1 0 0 1 15.5771 70.7144)" font-family="'Droid Sans'" font-size="9">3</text>
 </svg>

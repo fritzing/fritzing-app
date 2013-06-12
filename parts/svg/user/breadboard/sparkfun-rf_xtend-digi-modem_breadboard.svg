@@ -545,9 +545,9 @@
     <rect width="1461.69" x="0" y="2654.65" fill="#666666" height="18.25"/>
     <polygon opacity="0.5" fill="#FFFFFF" points="0,701.917,540.917,320.389,918.25,320.389,1459.18,701.917,1459.18,693.833,918.25,312.306,540.917,312.306,0,693.833"/>
     <text transform="matrix(1, 0, 0, 1, 228.539, 2131.98)">
-     <tspan x="0" y="0" fill="#666666" font-family="'DroidSans'" font-size="7.7207">9Xtend</tspan>
-     <tspan x="24.293" y="-2.573" fill="#666666" font-family="'DroidSans'" font-size="5.1471">TM</tspan>
-     <tspan x="31.443" y="0" fill="#666666" font-family="'DroidSans'" font-size="7.7207"> 900 MHz</tspan>
+     <tspan x="0" y="0" fill="#666666" font-family="'Droid Sans'" font-size="7.7207">9Xtend</tspan>
+     <tspan x="24.293" y="-2.573" fill="#666666" font-family="'Droid Sans'" font-size="5.1471">TM</tspan>
+     <tspan x="31.443" y="0" fill="#666666" font-family="'Droid Sans'" font-size="7.7207"> 900 MHz</tspan>
     </text>
    </g>
   </g>

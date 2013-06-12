@@ -37,8 +37,8 @@
   <path d="M14.588,17.041l6.175-3.963l-2.498,6.897l-0.784-0.625l-1.054-0.841L14.588,17.041L14.588,17.041z"/>
   <path d="M18.387,14.899c0.142-0.178,0.351-0.271,0.562-0.27l0,0c0.158,0,0.315,0.053,0.449,0.158l0,0c0.311,0.248,0.362,0.701,0.114,1.011l-5.274,6.612l0,0c-0.248,0.311-0.703,0.364-1.013,0.116l0,0c-0.309-0.248-0.362-0.701-0.114-1.012L18.387,14.899L18.387,14.899z"/>
   <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="10.691" stroke-width="1.44" x1="8.485" y2="10.691" x2="69.888"/>
-  <text font-family="DroidSans" transform="matrix(1 0 0 1 0.1089 47.4844)" font-size="10.08">R</text>
-  <text font-family="DroidSans" transform="matrix(1 0 0 1 30.9121 47.4844)" font-size="10.08">G</text>
-  <text font-family="DroidSans" transform="matrix(1 0 0 1 61.7168 47.4844)" font-size="10.08">B</text>
+  <text font-family="Droid Sans" transform="matrix(1 0 0 1 0.1089 47.4844)" font-size="10.08">R</text>
+  <text font-family="Droid Sans" transform="matrix(1 0 0 1 30.9121 47.4844)" font-size="10.08">G</text>
+  <text font-family="Droid Sans" transform="matrix(1 0 0 1 61.7168 47.4844)" font-size="10.08">B</text>
  </g>
 </svg>

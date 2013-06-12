@@ -323,5 +323,5 @@
 <polygon opacity="0.2" enable-background="new    " points="2.7,33.715 22.856,49.547 78.315,49.547 78.315,49.026 22.856,49.026 
 	2.7,33.194 "/>
 <rect x="2.7" opacity="0.2" fill="#FFFFFF" enable-background="new    " width="75.615" height="0.86"/>
-<text transform="matrix(1 0 0 1 36.0156 8.7065)" fill="#4D4D4D" font-family="'DroidSans'" font-size="6.7224">WiFly RN-171</text>
+<text transform="matrix(1 0 0 1 36.0156 8.7065)" fill="#4D4D4D" font-family="'Droid Sans'" font-size="6.7224">WiFly RN-171</text>
 </svg>

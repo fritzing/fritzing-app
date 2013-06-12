@@ -23,24 +23,24 @@
       <rect width="29.9861" x="425.125" y="861.167" fill="#8C8C8C" height="66.8333" id="rect32_3_"/>
       <rect width="29.9583" x="525.139" y="861.167" fill="#8C8C8C" height="66.8333" id="rect34_3_"/>
       <g>
-       <text fill="#E6E6E6" font-family="'DroidSans'" transform="matrix(1, 0, 0, 1, 299.082, 450.958)" font-size="69.4444">Part</text>
-       <text fill="#E6E6E6" font-family="'DroidSans'" transform="matrix(1, 0, 0, 1, 299.082, 534.292)" font-size="69.4444">Title</text>
+       <text fill="#E6E6E6" font-family="'Droid Sans'" transform="matrix(1, 0, 0, 1, 299.082, 450.958)" font-size="69.4444">Part</text>
+       <text fill="#E6E6E6" font-family="'Droid Sans'" transform="matrix(1, 0, 0, 1, 299.082, 534.292)" font-size="69.4444">Title</text>
       </g>
      </g>
      <rect width="794.347" x="0" y="733.069" fill="#231F20" height="126.889"/>
      <rect width="794.347" x="0" y="33.8611" fill="#414141" height="700.569"/>
-     <text fill="#FFFFFF" font-family="'DroidSans'" transform="matrix(1, 0, 0, 1, 84.4958, 486.318)" font-size="111.111">ID12</text>
-     <text fill="#FFFFFF" font-family="'DroidSans'" transform="matrix(1, 0, 0, 1, 84.4958, 593.957)" font-size="97.2222">I</text>
-     <text fill="#FFFFFF" font-family="'DroidSans'" transform="matrix(1, 0, 0, 1, 117.442, 593.957)" font-size="97.2222">N</text>
-     <text fill="#FFFFFF" font-family="'DroidSans'" transform="matrix(1, 0, 0, 1, 188.31, 593.957)" font-size="97.2222">N</text>
-     <text fill="#FFFFFF" font-family="'DroidSans'" transform="matrix(1, 0, 0, 1, 259.2, 593.957)" font-size="97.2222">O</text>
-     <text fill="#FFFFFF" font-family="'DroidSans'" transform="matrix(1, 0, 0, 1, 329.397, 593.957)" font-size="97.2222">V</text>
-     <text fill="#FFFFFF" font-family="'DroidSans'" transform="matrix(1, 0, 0, 1, 381.724, 593.957)" font-size="97.2222">A</text>
-     <text fill="#FFFFFF" font-family="'DroidSans'" transform="matrix(1, 0, 0, 1, 434.974, 593.957)" font-size="97.2222">T</text>
-     <text fill="#FFFFFF" font-family="'DroidSans'" transform="matrix(1, 0, 0, 1, 485.443, 593.957)" font-size="97.2222">I</text>
-     <text fill="#FFFFFF" font-family="'DroidSans'" transform="matrix(1, 0, 0, 1, 517.439, 593.957)" font-size="97.2222">O</text>
-     <text fill="#FFFFFF" font-family="'DroidSans'" transform="matrix(1, 0, 0, 1, 589.596, 593.957)" font-size="97.2222">N</text>
-     <text fill="#FFFFFF" font-family="'DroidSans'" transform="matrix(1, 0, 0, 1, 660.478, 593.957)" font-size="97.2222">S</text>
+     <text fill="#FFFFFF" font-family="'Droid Sans'" transform="matrix(1, 0, 0, 1, 84.4958, 486.318)" font-size="111.111">ID12</text>
+     <text fill="#FFFFFF" font-family="'Droid Sans'" transform="matrix(1, 0, 0, 1, 84.4958, 593.957)" font-size="97.2222">I</text>
+     <text fill="#FFFFFF" font-family="'Droid Sans'" transform="matrix(1, 0, 0, 1, 117.442, 593.957)" font-size="97.2222">N</text>
+     <text fill="#FFFFFF" font-family="'Droid Sans'" transform="matrix(1, 0, 0, 1, 188.31, 593.957)" font-size="97.2222">N</text>
+     <text fill="#FFFFFF" font-family="'Droid Sans'" transform="matrix(1, 0, 0, 1, 259.2, 593.957)" font-size="97.2222">O</text>
+     <text fill="#FFFFFF" font-family="'Droid Sans'" transform="matrix(1, 0, 0, 1, 329.397, 593.957)" font-size="97.2222">V</text>
+     <text fill="#FFFFFF" font-family="'Droid Sans'" transform="matrix(1, 0, 0, 1, 381.724, 593.957)" font-size="97.2222">A</text>
+     <text fill="#FFFFFF" font-family="'Droid Sans'" transform="matrix(1, 0, 0, 1, 434.974, 593.957)" font-size="97.2222">T</text>
+     <text fill="#FFFFFF" font-family="'Droid Sans'" transform="matrix(1, 0, 0, 1, 485.443, 593.957)" font-size="97.2222">I</text>
+     <text fill="#FFFFFF" font-family="'Droid Sans'" transform="matrix(1, 0, 0, 1, 517.439, 593.957)" font-size="97.2222">O</text>
+     <text fill="#FFFFFF" font-family="'Droid Sans'" transform="matrix(1, 0, 0, 1, 589.596, 593.957)" font-size="97.2222">N</text>
+     <text fill="#FFFFFF" font-family="'Droid Sans'" transform="matrix(1, 0, 0, 1, 660.478, 593.957)" font-size="97.2222">S</text>
     </g>
    </g>
   </g>

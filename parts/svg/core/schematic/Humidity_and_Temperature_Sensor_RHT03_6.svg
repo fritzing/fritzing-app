@@ -18,10 +18,10 @@
 			<line fill="none" stroke="#000000" stroke-width="0.672" stroke-linecap="round" stroke-linejoin="round" x1="66.465" y1="0" x2="66.465" y2="21.402"/>
 		
 			<line fill="none" stroke="#000000" stroke-width="0.672" stroke-linecap="round" stroke-linejoin="round" x1="66.465" y1="170.825" x2="66.465" y2="149.425"/>
-		<text transform="matrix(1 0 0 1 44.2554 65.675)" font-family="'DroidSans'" font-size="16.4904">RHT03</text>
-		<text transform="matrix(1 0 0 1 59.9717 31.5081)" font-family="'DroidSans'" font-size="8.9345">VCC</text>
-		<text transform="matrix(1 0 0 1 25.2217 91.1643)" font-family="'DroidSans'" font-size="8.9345">DATA-Signal</text>
-		<text transform="matrix(1 0 0 1 57.9717 145.4143)" font-family="'DroidSans'" font-size="8.9345">GND</text>
+		<text transform="matrix(1 0 0 1 44.2554 65.675)" font-family="'Droid Sans'" font-size="16.4904">RHT03</text>
+		<text transform="matrix(1 0 0 1 59.9717 31.5081)" font-family="'Droid Sans'" font-size="8.9345">VCC</text>
+		<text transform="matrix(1 0 0 1 25.2217 91.1643)" font-family="'Droid Sans'" font-size="8.9345">DATA-Signal</text>
+		<text transform="matrix(1 0 0 1 57.9717 145.4143)" font-family="'Droid Sans'" font-size="8.9345">GND</text>
 	</g>
 	<rect id="connector8" x="64.465" y="0" fill="none" width="4" height="4"/>
 	<rect id="connector9" y="87.195" fill="none" width="4" height="4"/>

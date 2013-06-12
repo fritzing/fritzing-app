@@ -24,10 +24,10 @@
 	
 		<line id="connector2pin" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="32.508" y1="10.969" x2="25.311" y2="10.969"/>
 	<path id="connector2terminal" fill="none" d="M32.508,10.969L32.508,10.969L32.508,10.969z"/>
-	<text transform="matrix(1 0 0 1 25.6758 2.5945)" font-family="'DroidSans'" font-size="2">Sleeve</text>
-	<text transform="matrix(1 0 0 1 26.3877 24.2371)" font-family="'DroidSans'" font-size="2">Ring2</text>
-	<text transform="matrix(1 0 0 1 26.3877 17.0115)" font-family="'DroidSans'" font-size="2">Ring1</text>
-	<text transform="matrix(1 0 0 1 28.6729 9.6775)" font-family="'DroidSans'" font-size="2">Tip</text>
+	<text transform="matrix(1 0 0 1 25.6758 2.5945)" font-family="'Droid Sans'" font-size="2">Sleeve</text>
+	<text transform="matrix(1 0 0 1 26.3877 24.2371)" font-family="'Droid Sans'" font-size="2">Ring2</text>
+	<text transform="matrix(1 0 0 1 26.3877 17.0115)" font-family="'Droid Sans'" font-size="2">Ring1</text>
+	<text transform="matrix(1 0 0 1 28.6729 9.6775)" font-family="'Droid Sans'" font-size="2">Tip</text>
 	
 		<line id="connector3pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" x1="32.508" y1="10.969" x2="25.309" y2="10.969"/>
 	<path id="connector3terminal" fill="none" d="M32.508,10.969L32.508,10.969L32.508,10.969z"/>

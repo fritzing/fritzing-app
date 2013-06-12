@@ -53,7 +53,7 @@
    <rect width="0.99800003" x="0" y="183.685" height="1.997" id="connector9terminal"/>
    <polyline points="46.597,177.994 61.641,184.678 46.597,191.366" style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round" id="polyline59"/>
    <line style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round" id="line61" y1="184.683" x1="61.021999" y2="184.683" x2="16.452"/>
-   <g style="font-size:6.3245759px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:DroidSans" id="text3044" xml:space="preserve" transform="scale(1.0119417,0.98819921)">
+   <g style="font-size:6.3245759px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans" id="text3044" xml:space="preserve" transform="scale(1.0119417,0.98819921)">
     <text x="4.6047988" y="5.6036506" style="font-size:7.90571976px" id="tspan3046">mosi</text>
     <text x="4.6047988" y="25.367949" style="font-size:7.90571976px" id="tspan3050">NC</text>
     <text x="4.6047988" y="45.132248" style="font-size:7.90571976px" id="tspan3056">/reset</text>

@@ -335,7 +335,7 @@
     <path  fill="#606060" d="M126.701,20.17c-0.242,0-0.242-8.9,0-8.9l-0.006,0.001c0,0.549,0.262,0.993,0.262,0.993c0.637,0,1.156,0.443,1.156,0.994v4.923c0,0.548-0.521,0.993-1.156,0.993c0,0-0.262,0.443-0.262,0.993L126.701,20.17L126.701,20.17z"/>
    </g>
    <g >
-    <text  fill="#FFFFFF" font-family="DroidSans" transform="matrix(1 0 0 1 21.9781 17.8947)" font-size="10">AAA Battery</text>
+    <text  fill="#FFFFFF" font-family="Droid Sans" transform="matrix(1 0 0 1 21.9781 17.8947)" font-size="10">AAA Battery</text>
    </g>
    <g >
     <g  opacity="0.35">

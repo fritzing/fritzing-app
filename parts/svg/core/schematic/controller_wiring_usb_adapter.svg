@@ -51,31 +51,31 @@
   <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="183.966" stroke-width="2.415" x1="213.563" y2="183.966" x2="192.326"/>
   <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="205.197" stroke-width="2.415" x1="213.563" y2="205.197" x2="192.326"/>
   <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="226.43" stroke-width="2.415" x1="213.563" y2="226.43" x2="192.326"/>
-  <text font-family="DroidSans" transform="matrix(1 0 0 1 31.7402 122.6797)" font-size="9.9865">CBUS3</text>
-  <text font-family="DroidSans" transform="matrix(1 0 0 1 31.7402 144.1104)" font-size="9.9865">CBUS2</text>
-  <text font-family="DroidSans" transform="matrix(1 0 0 1 31.7402 165.5449)" font-size="9.9865">CBUS4</text>
-  <text font-family="DroidSans" transform="matrix(1 0 0 1 31.7402 208.4082)" font-size="9.9865">OSCI</text>
-  <text font-family="DroidSans" transform="matrix(1 0 0 1 31.7402 229.8438)" font-size="9.9865">OSC0</text>
+  <text font-family="Droid Sans" transform="matrix(1 0 0 1 31.7402 122.6797)" font-size="9.9865">CBUS3</text>
+  <text font-family="Droid Sans" transform="matrix(1 0 0 1 31.7402 144.1104)" font-size="9.9865">CBUS2</text>
+  <text font-family="Droid Sans" transform="matrix(1 0 0 1 31.7402 165.5449)" font-size="9.9865">CBUS4</text>
+  <text font-family="Droid Sans" transform="matrix(1 0 0 1 31.7402 208.4082)" font-size="9.9865">OSCI</text>
+  <text font-family="Droid Sans" transform="matrix(1 0 0 1 31.7402 229.8438)" font-size="9.9865">OSC0</text>
   <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="21.719" stroke-width="1.9517" x1="117.849" y2="0.488" x2="117.849"/>
   <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="21.719" stroke-width="1.9517" x1="96.59" y2="0.488" x2="96.59"/>
-  <text font-family="DroidSans" transform="matrix(1 0 0 1 115.9434 38.877)" font-size="9.9865">5V</text>
-  <text font-family="DroidSans" transform="matrix(1 0 0 1 89.2842 38.877)" font-size="9.9865">3.3V</text>
-  <text font-family="DroidSans" transform="matrix(1 0 0 1 165.4287 165.1719)" font-size="9.9865">DSR</text>
-  <text font-family="DroidSans" transform="matrix(1 0 0 1 174.0605 186.7773)" font-size="9.9865">RI</text>
-  <text font-family="DroidSans" transform="matrix(1 0 0 1 167.2734 207.9531)" font-size="9.9865">RTS</text>
-  <text font-family="DroidSans" transform="matrix(1 0 0 1 165.7275 228.7051)" font-size="9.9865">DTR</text>
-  <text font-family="DroidSans" transform="matrix(1 0 0 1 167.0439 122.8164)" font-size="9.9865">CTS</text>
-  <text font-family="DroidSans" transform="matrix(1 0 0 1 163.6494 143.9941)" font-size="9.9865">DCD</text>
-  <text font-family="DroidSans" transform="matrix(1 0 0 1 93.2139 53.4199)" font-size="9.9865">Power</text>
-  <text font-family="DroidSans" transform="matrix(1 0 0 1 81.7324 78.8164)" font-size="17.9757">Wiring</text>
-  <text font-family="DroidSans" transform="matrix(1 0 0 1 57.1143 101.959)" font-size="17.9757">USBAdapter</text>
+  <text font-family="Droid Sans" transform="matrix(1 0 0 1 115.9434 38.877)" font-size="9.9865">5V</text>
+  <text font-family="Droid Sans" transform="matrix(1 0 0 1 89.2842 38.877)" font-size="9.9865">3.3V</text>
+  <text font-family="Droid Sans" transform="matrix(1 0 0 1 165.4287 165.1719)" font-size="9.9865">DSR</text>
+  <text font-family="Droid Sans" transform="matrix(1 0 0 1 174.0605 186.7773)" font-size="9.9865">RI</text>
+  <text font-family="Droid Sans" transform="matrix(1 0 0 1 167.2734 207.9531)" font-size="9.9865">RTS</text>
+  <text font-family="Droid Sans" transform="matrix(1 0 0 1 165.7275 228.7051)" font-size="9.9865">DTR</text>
+  <text font-family="Droid Sans" transform="matrix(1 0 0 1 167.0439 122.8164)" font-size="9.9865">CTS</text>
+  <text font-family="Droid Sans" transform="matrix(1 0 0 1 163.6494 143.9941)" font-size="9.9865">DCD</text>
+  <text font-family="Droid Sans" transform="matrix(1 0 0 1 93.2139 53.4199)" font-size="9.9865">Power</text>
+  <text font-family="Droid Sans" transform="matrix(1 0 0 1 81.7324 78.8164)" font-size="17.9757">Wiring</text>
+  <text font-family="Droid Sans" transform="matrix(1 0 0 1 57.1143 101.959)" font-size="17.9757">USBAdapter</text>
   <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="290.77" stroke-width="1.9517" x1="107.387" y2="269.536" x2="107.387"/>
-  <text font-family="DroidSans" transform="matrix(1 0 0 1 96.8604 259.3525)" font-size="9.9865">GND</text>
-  <text font-family="DroidSans" transform="matrix(1 0 0 1 170.1738 59.8164)" font-size="9.9865">RX</text>
-  <text font-family="DroidSans" transform="matrix(1 0 0 1 171.2852 80.9941)" font-size="9.9865">TX</text>
+  <text font-family="Droid Sans" transform="matrix(1 0 0 1 96.8604 259.3525)" font-size="9.9865">GND</text>
+  <text font-family="Droid Sans" transform="matrix(1 0 0 1 170.1738 59.8164)" font-size="9.9865">RX</text>
+  <text font-family="Droid Sans" transform="matrix(1 0 0 1 171.2852 80.9941)" font-size="9.9865">TX</text>
   <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="57.273" stroke-width="1.9517" x1="213.556" y2="57.273" x2="192.326"/>
   <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="78.504" stroke-width="2.415" x1="213.563" y2="78.504" x2="192.326"/>
-  <text font-family="DroidSans" transform="matrix(1 0 0 1 31.7402 186.0449)" font-size="9.9865">RESET</text>
+  <text font-family="Droid Sans" transform="matrix(1 0 0 1 31.7402 186.0449)" font-size="9.9865">RESET</text>
   <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="183.15" stroke-width="2.415" x1="1.214" y2="183.15" x2="22.395"/>
  </g>
 </svg>

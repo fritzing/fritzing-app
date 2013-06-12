@@ -11,30 +11,30 @@
 			<rect id="rect5" x="210.715" y="376.359" fill="#FFFFFF" stroke="#000000" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round" width="45.265" height="76.1"/>
 		<g id="label0" enable-background="new    ">
 			<g>
-				<text transform="matrix(1 0 0 1 205.4213 439.1669)" fill="#787878" font-family="'DroidSans'" font-size="2">7</text>
+				<text transform="matrix(1 0 0 1 205.4213 439.1669)" fill="#787878" font-family="'Droid Sans'" font-size="2">7</text>
 			</g>
 			<g>
-				<text transform="matrix(1 0 0 1 205.4213 431.9667)" fill="#787878" font-family="'DroidSans'" font-size="2">6-</text>
+				<text transform="matrix(1 0 0 1 205.4213 431.9667)" fill="#787878" font-family="'Droid Sans'" font-size="2">6-</text>
 			</g>
 			<g>
-				<text transform="matrix(1 0 0 1 205.4213 395.9657)" fill="#787878" font-family="'DroidSans'" font-size="2">2+</text>
+				<text transform="matrix(1 0 0 1 205.4213 395.9657)" fill="#787878" font-family="'Droid Sans'" font-size="2">2+</text>
 			</g>
 			<g>
-				<text transform="matrix(1 0 0 1 205.4213 388.7655)" fill="#787878" font-family="'DroidSans'" font-size="2">1</text>
+				<text transform="matrix(1 0 0 1 205.4213 388.7655)" fill="#787878" font-family="'Droid Sans'" font-size="2">1</text>
 			</g>
 		</g>
 		<g id="label0_1_" enable-background="new    ">
 			<g>
-				<text transform="matrix(1 0 0 1 259.4726 439.1669)" fill="#787878" font-family="'DroidSans'" font-size="2">8</text>
+				<text transform="matrix(1 0 0 1 259.4726 439.1669)" fill="#787878" font-family="'Droid Sans'" font-size="2">8</text>
 			</g>
 			<g>
-				<text transform="matrix(1 0 0 1 259.4726 431.9667)" fill="#787878" font-family="'DroidSans'" font-size="2">9</text>
+				<text transform="matrix(1 0 0 1 259.4726 431.9667)" fill="#787878" font-family="'Droid Sans'" font-size="2">9</text>
 			</g>
 			<g>
-				<text transform="matrix(1 0 0 1 259.4726 395.9657)" fill="#787878" font-family="'DroidSans'" font-size="2">13</text>
+				<text transform="matrix(1 0 0 1 259.4726 395.9657)" fill="#787878" font-family="'Droid Sans'" font-size="2">13</text>
 			</g>
 			<g>
-				<text transform="matrix(1 0 0 1 259.4726 388.7655)" fill="#787878" font-family="'DroidSans'" font-size="2">14</text>
+				<text transform="matrix(1 0 0 1 259.4726 388.7655)" fill="#787878" font-family="'Droid Sans'" font-size="2">14</text>
 			</g>
 		</g>
 		<g id="g3256" transform="matrix(1.2500001,0,0,1.2500001,201.9491,375.78003)">
@@ -78,7 +78,7 @@
 				C34.609,11.863,34.686,11.94,34.686,12.036L34.686,12.036z"/>
 		</g>
 		<path id="path3919" fill="none" stroke="#000000" stroke-width="0.4" stroke-linejoin="round" d="M218.062,417.334v16.529"/>
-		<text id="label" transform="matrix(1 0 0 1 225.3046 385.952)" font-family="'DroidSans'" font-size="5.5">D31A*</text>
+		<text id="label" transform="matrix(1 0 0 1 225.3046 385.952)" font-family="'Droid Sans'" font-size="5.5">D31A*</text>
 		<g>
 			<g>
 				

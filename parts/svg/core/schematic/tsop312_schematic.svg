@@ -23,7 +23,7 @@
 <rect id="connector8_1_" y="3.483" fill="none" width="4" height="4"/>
 <rect id="connector9_1_" x="0.851" y="24.973" fill="none" width="4" height="4"/>
 <rect id="connector10_1_" x="0.638" y="46.036" fill="none" width="4" height="4"/>
-<text transform="matrix(1 0 0 1 27.0889 8.6431)" font-family="'DroidSans'" font-size="9">Vcc</text>
-<text transform="matrix(1 0 0 1 27.0889 29.959)" font-family="'DroidSans'" font-size="9">DATA</text>
-<text transform="matrix(1 0 0 1 27.0889 52.1309)" font-family="'DroidSans'" font-size="9">GND</text>
+<text transform="matrix(1 0 0 1 27.0889 8.6431)" font-family="'Droid Sans'" font-size="9">Vcc</text>
+<text transform="matrix(1 0 0 1 27.0889 29.959)" font-family="'Droid Sans'" font-size="9">DATA</text>
+<text transform="matrix(1 0 0 1 27.0889 52.1309)" font-family="'Droid Sans'" font-size="9">GND</text>
 </svg>

@@ -21,28 +21,28 @@
 		c0.549,0,1,0.45,1,1V59.385L79.226,59.385z"/>
 	<path fill="#F2F2F2" d="M79.226,76.224c0,0.55-0.449,1-1,1H8.817c-0.55,0-1-0.45-1-1V62.962c0-0.551,0.45-1,1-1h69.409
 		c0.549,0,1,0.449,1,1V76.224L79.226,76.224z"/>
-	<text transform="matrix(1 0 0 1 17.4058 50.6978)" fill="#666666" font-family="'DroidSans'" font-size="5.8463">T</text>
-	<text transform="matrix(1 0 0 1 20.0889 50.6978)" fill="#666666" font-family="'DroidSans'" font-size="5.8463">e</text>
-	<text transform="matrix(1 0 0 1 23.2178 50.6978)" fill="#666666" font-family="'DroidSans'" font-size="5.8463">l</text>
-	<text transform="matrix(1 0 0 1 24.731 50.6978)" fill="#666666" font-family="'DroidSans'" font-size="5.8463">i</text>
-	<text transform="matrix(1 0 0 1 26.2437 50.6978)" fill="#666666" font-family="'DroidSans'" font-size="5.8463">t</text>
-	<text transform="matrix(1 0 0 1 28.2246 50.6978)" fill="#666666" font-family="'DroidSans'" font-size="5.8463"> </text>
-	<text transform="matrix(1 0 0 1 29.7437 50.6978)" fill="#666666" font-family="'DroidSans'" font-size="5.8463">q</text>
-	<text transform="matrix(1 0 0 1 33.1689 50.6978)" fill="#666666" font-family="'DroidSans'" font-size="5.8463">u</text>
-	<text transform="matrix(1 0 0 1 36.6118 50.6978)" fill="#666666" font-family="'DroidSans'" font-size="5.8463">a</text>
-	<text transform="matrix(1 0 0 1 39.7148 50.6978)" fill="#666666" font-family="'DroidSans'" font-size="5.8463">d</text>
-	<text transform="matrix(1 0 0 1 43.1401 50.6978)" fill="#666666" font-family="'DroidSans'" font-size="5.8463"> </text>
-	<text transform="matrix(1 0 0 1 44.6592 50.6978)" fill="#666666" font-family="'DroidSans'" font-size="5.8463">c</text>
-	<text transform="matrix(1 0 0 1 47.3652 50.6978)" fill="#666666" font-family="'DroidSans'" font-size="5.8463">e</text>
-	<text transform="matrix(1 0 0 1 50.4932 50.6978)" fill="#666666" font-family="'DroidSans'" font-size="5.8463">l</text>
-	<text transform="matrix(1 0 0 1 52.0068 50.6978)" fill="#666666" font-family="'DroidSans'" font-size="5.8463">l</text>
-	<text transform="matrix(1 0 0 1 53.5195 50.6978)" fill="#666666" font-family="'DroidSans'" font-size="5.8463"> </text>
-	<text transform="matrix(1 0 0 1 55.0381 50.6978)" fill="#666666" font-family="'DroidSans'" font-size="5.8463">m</text>
-	<text transform="matrix(1 0 0 1 60.2764 50.6978)" fill="#666666" font-family="'DroidSans'" font-size="5.8463">o</text>
-	<text transform="matrix(1 0 0 1 63.6514 50.6978)" fill="#666666" font-family="'DroidSans'" font-size="5.8463">d</text>
-	<text transform="matrix(1 0 0 1 67.0762 50.6978)" fill="#666666" font-family="'DroidSans'" font-size="5.8463">u</text>
-	<text transform="matrix(1 0 0 1 70.5186 50.6978)" fill="#666666" font-family="'DroidSans'" font-size="5.8463">l</text>
-	<text transform="matrix(1 0 0 1 72.0322 50.6978)" fill="#666666" font-family="'DroidSans'" font-size="5.8463">e</text>
-	<text transform="matrix(1 0 0 1 58.7334 57.7134)" fill="#666666" font-family="'DroidSans'" font-size="5.8463">GE864</text>
+	<text transform="matrix(1 0 0 1 17.4058 50.6978)" fill="#666666" font-family="'Droid Sans'" font-size="5.8463">T</text>
+	<text transform="matrix(1 0 0 1 20.0889 50.6978)" fill="#666666" font-family="'Droid Sans'" font-size="5.8463">e</text>
+	<text transform="matrix(1 0 0 1 23.2178 50.6978)" fill="#666666" font-family="'Droid Sans'" font-size="5.8463">l</text>
+	<text transform="matrix(1 0 0 1 24.731 50.6978)" fill="#666666" font-family="'Droid Sans'" font-size="5.8463">i</text>
+	<text transform="matrix(1 0 0 1 26.2437 50.6978)" fill="#666666" font-family="'Droid Sans'" font-size="5.8463">t</text>
+	<text transform="matrix(1 0 0 1 28.2246 50.6978)" fill="#666666" font-family="'Droid Sans'" font-size="5.8463"> </text>
+	<text transform="matrix(1 0 0 1 29.7437 50.6978)" fill="#666666" font-family="'Droid Sans'" font-size="5.8463">q</text>
+	<text transform="matrix(1 0 0 1 33.1689 50.6978)" fill="#666666" font-family="'Droid Sans'" font-size="5.8463">u</text>
+	<text transform="matrix(1 0 0 1 36.6118 50.6978)" fill="#666666" font-family="'Droid Sans'" font-size="5.8463">a</text>
+	<text transform="matrix(1 0 0 1 39.7148 50.6978)" fill="#666666" font-family="'Droid Sans'" font-size="5.8463">d</text>
+	<text transform="matrix(1 0 0 1 43.1401 50.6978)" fill="#666666" font-family="'Droid Sans'" font-size="5.8463"> </text>
+	<text transform="matrix(1 0 0 1 44.6592 50.6978)" fill="#666666" font-family="'Droid Sans'" font-size="5.8463">c</text>
+	<text transform="matrix(1 0 0 1 47.3652 50.6978)" fill="#666666" font-family="'Droid Sans'" font-size="5.8463">e</text>
+	<text transform="matrix(1 0 0 1 50.4932 50.6978)" fill="#666666" font-family="'Droid Sans'" font-size="5.8463">l</text>
+	<text transform="matrix(1 0 0 1 52.0068 50.6978)" fill="#666666" font-family="'Droid Sans'" font-size="5.8463">l</text>
+	<text transform="matrix(1 0 0 1 53.5195 50.6978)" fill="#666666" font-family="'Droid Sans'" font-size="5.8463"> </text>
+	<text transform="matrix(1 0 0 1 55.0381 50.6978)" fill="#666666" font-family="'Droid Sans'" font-size="5.8463">m</text>
+	<text transform="matrix(1 0 0 1 60.2764 50.6978)" fill="#666666" font-family="'Droid Sans'" font-size="5.8463">o</text>
+	<text transform="matrix(1 0 0 1 63.6514 50.6978)" fill="#666666" font-family="'Droid Sans'" font-size="5.8463">d</text>
+	<text transform="matrix(1 0 0 1 67.0762 50.6978)" fill="#666666" font-family="'Droid Sans'" font-size="5.8463">u</text>
+	<text transform="matrix(1 0 0 1 70.5186 50.6978)" fill="#666666" font-family="'Droid Sans'" font-size="5.8463">l</text>
+	<text transform="matrix(1 0 0 1 72.0322 50.6978)" fill="#666666" font-family="'Droid Sans'" font-size="5.8463">e</text>
+	<text transform="matrix(1 0 0 1 58.7334 57.7134)" fill="#666666" font-family="'Droid Sans'" font-size="5.8463">GE864</text>
 </g>
 </svg>

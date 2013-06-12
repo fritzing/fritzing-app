@@ -119,7 +119,7 @@
     <path  id="path3405" d="M155.945,57.197c-1.689,0-2.723-1.199-2.723-3.286c0-3.334,1.656-4.737,3.982-4.737c0.252,0,0.539,0.012,0.707,0.036v0.947c-0.239-0.036-0.479-0.061-0.791-0.061c-1.597,0-2.424,0.924-2.734,2.507c-0.023,0.12-0.072,0.336-0.107,0.588h0.013c0.396-0.66,1.114-1.02,1.941-1.02c1.561,0,2.423,1.008,2.423,2.278C158.656,56.105,157.576,57.197,155.945,57.197z M156.005,53.06c-1.008,0-1.596,0.815-1.596,1.487c0,0.971,0.563,1.763,1.631,1.763c0.96,0,1.512-0.695,1.512-1.679C157.552,53.707,157.025,53.06,156.005,53.06z"/>
    </g>
   </g>
-  <text  style="font-size:23.87940025px;font-family:DroidSans" id="text3529" transform="translate(38.532,31.7617)" font-size="23.8794">PCF8574</text>
+  <text  style="font-size:23.87940025px;font-family:Droid Sans" id="text3529" transform="translate(38.532,31.7617)" font-size="23.8794">PCF8574</text>
   <g style="font-size:12.80001831px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans" id="text3660" xml:space="preserve">
    <text x="38.010509" y="64.954552" id="tspan3662">A0</text>
   </g>

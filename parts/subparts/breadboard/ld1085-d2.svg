@@ -24,7 +24,7 @@
 	</g>
 	<path d="M0,24.698c2.002,0,3.625,1.623,3.625,3.625S2.002,31.948,0,31.948V24.698z"/>
 	<path d="M34.582,31.948c-2.002,0-3.625-1.623-3.625-3.625s1.623-3.625,3.625-3.625V31.948z"/>
-	<text transform="matrix(1 0 0 1 10.8 15.8501)"><tspan x="0" y="0" fill="#808080" font-family="'DroidSans'" font-size="3.3766">LD1085</tspan><tspan x="7.512" y="4.052" fill="#808080" font-family="'DroidSans'" font-size="3.3766">Vb</tspan></text>
+	<text transform="matrix(1 0 0 1 10.8 15.8501)"><tspan x="0" y="0" fill="#808080" font-family="'Droid Sans'" font-size="3.3766">LD1085</tspan><tspan x="7.512" y="4.052" fill="#808080" font-family="'Droid Sans'" font-size="3.3766">Vb</tspan></text>
 	<g opacity="0.2">
 		<polygon fill="#FFFFFF" points="0,2.738 7.375,0.369 27.207,0.369 34.582,2.738 34.582,2.369 27.207,0 7.375,0 0,2.369 		"/>
 		<rect x="0" y="5.203" fill="#FFFFFF" width="34.582" height="0.369"/>

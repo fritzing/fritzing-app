@@ -14,7 +14,7 @@
 	<rect x="4.696" y="57.5" opacity="0.4" width="54.069" height="3.295"/>
 	<path fill="#F2F2F2" d="M60.765,42.989c0,3.85-3.15,7-7,7H14.598c-3.85,0-7-3.15-7-7V14.098c0-3.85,3.15-7,7-7h39.167
 		c3.85,0,7,3.15,7,7V42.989z"/>
-	<text transform="matrix(1 0 0 1 13.1711 44.4707)" fill="#4D4D4D" font-family="'DroidSans'" font-size="6.0173">RS9110-N-11-22</text>
+	<text transform="matrix(1 0 0 1 13.1711 44.4707)" fill="#4D4D4D" font-family="'Droid Sans'" font-size="6.0173">RS9110-N-11-22</text>
 </g>
 <line fill="#B3B3B3" x1="1.166" y1="57.5" x2="4.696" y2="57.5"/>
 <line fill="#B3B3B3" x1="58.764" y1="57.5" x2="68.557" y2="57.5"/>

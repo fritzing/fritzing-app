@@ -24,7 +24,7 @@
 		<polygon points="17.776,21.303 17.776,19.354 27.812,19.354 27.812,21.303 		"/>
 	</g>
 </g>
-<text transform="matrix(1 0 0 1 0.4512 31.6191)" font-family="'DroidSans'" font-size="8.017">G</text>
-<text transform="matrix(1 0 0 1 33.373 39.9121)" font-family="'DroidSans'" font-size="8.017">S</text>
-<text transform="matrix(1 0 0 1 33.373 5.7837)" font-family="'DroidSans'" font-size="8.017">D</text>
+<text transform="matrix(1 0 0 1 0.4512 31.6191)" font-family="'Droid Sans'" font-size="8.017">G</text>
+<text transform="matrix(1 0 0 1 33.373 39.9121)" font-family="'Droid Sans'" font-size="8.017">S</text>
+<text transform="matrix(1 0 0 1 33.373 5.7837)" font-family="'Droid Sans'" font-size="8.017">D</text>
 </svg>

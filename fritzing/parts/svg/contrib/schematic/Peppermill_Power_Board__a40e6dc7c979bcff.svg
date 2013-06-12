@@ -12,14 +12,14 @@
  <path fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#010101" stroke-linejoin="round" id="path3074" stroke-linecap="round" stroke-width="2.4" d="M2.188,71.474h26.575" stroke-miterlimit="10"/>
  <path fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#010101" stroke-linejoin="round" id="path3076" stroke-linecap="round" stroke-width="2.4" d="M2.188,44.9h26.575" stroke-miterlimit="10"/>
  <path fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#010101" stroke-linejoin="round" id="path3078" stroke-linecap="round" stroke-width="2.4" d="M1.655,98.523H28.23" stroke-miterlimit="10"/>
- <text fill="#010101" font-family="DroidSans" xmlns="http://www.w3.org/2000/svg" transform="matrix(1 0 0 1 127.0806 110.4404)" font-size="10">GND</text>
- <text fill="#010101" font-family="DroidSans" xmlns="http://www.w3.org/2000/svg" transform="matrix(1 0 0 1 133.4517 41.7881)" font-size="10">V+</text>
- <text fill="#010101" font-family="DroidSans" xmlns="http://www.w3.org/2000/svg" transform="matrix(1 0 0 1 208.9082 48.4268)" font-size="10">GPIO</text>
- <text fill="#010101" font-family="DroidSans" xmlns="http://www.w3.org/2000/svg" transform="matrix(1 0 0 1 204.1377 73.8643)" font-size="10">Speed</text>
- <text fill="#010101" font-family="DroidSans" xmlns="http://www.w3.org/2000/svg" transform="matrix(1 0 0 1 191.4824 101.4229)" font-size="10">Direction</text>
- <text fill="#010101" font-family="DroidSans" xmlns="http://www.w3.org/2000/svg" transform="matrix(1 0 0 1 40.6748 47.8975)" font-size="10">PGD</text>
- <text fill="#010101" font-family="DroidSans" xmlns="http://www.w3.org/2000/svg" transform="matrix(1 0 0 1 40.6748 74.9268)" font-size="10">PGC</text>
- <text fill="#010101" font-family="DroidSans" xmlns="http://www.w3.org/2000/svg" transform="matrix(1 0 0 1 41.2041 101.4229)" font-size="10">VPP</text>
+ <text fill="#010101" font-family="Droid Sans" xmlns="http://www.w3.org/2000/svg" transform="matrix(1 0 0 1 127.0806 110.4404)" font-size="10">GND</text>
+ <text fill="#010101" font-family="Droid Sans" xmlns="http://www.w3.org/2000/svg" transform="matrix(1 0 0 1 133.4517 41.7881)" font-size="10">V+</text>
+ <text fill="#010101" font-family="Droid Sans" xmlns="http://www.w3.org/2000/svg" transform="matrix(1 0 0 1 208.9082 48.4268)" font-size="10">GPIO</text>
+ <text fill="#010101" font-family="Droid Sans" xmlns="http://www.w3.org/2000/svg" transform="matrix(1 0 0 1 204.1377 73.8643)" font-size="10">Speed</text>
+ <text fill="#010101" font-family="Droid Sans" xmlns="http://www.w3.org/2000/svg" transform="matrix(1 0 0 1 191.4824 101.4229)" font-size="10">Direction</text>
+ <text fill="#010101" font-family="Droid Sans" xmlns="http://www.w3.org/2000/svg" transform="matrix(1 0 0 1 40.6748 47.8975)" font-size="10">PGD</text>
+ <text fill="#010101" font-family="Droid Sans" xmlns="http://www.w3.org/2000/svg" transform="matrix(1 0 0 1 40.6748 74.9268)" font-size="10">PGC</text>
+ <text fill="#010101" font-family="Droid Sans" xmlns="http://www.w3.org/2000/svg" transform="matrix(1 0 0 1 41.2041 101.4229)" font-size="10">VPP</text>
  <rect width="27.563" x="244.423" y="43.444" fill="none" xmlns="http://www.w3.org/2000/svg" height="3.051" id="connector3"/>
  <rect width="2.965" x="134.617" y="115.422" fill="none" xmlns="http://www.w3.org/2000/svg" height="27.823" id="connector4"/>
  <rect width="28.407" y="96.705" fill="none" xmlns="http://www.w3.org/2000/svg" height="3.113" id="connector5"/>
@@ -31,8 +31,8 @@
  <rect width="2.729" x="135.165" fill="none" xmlns="http://www.w3.org/2000/svg" height="28.673" id="connector0"/>
  <path fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#010101" stroke-linejoin="round" id="path3068_1_" stroke-linecap="round" stroke-width="2.4" d="M66.095,28.187c0,3.678,0,2.556,0-26.578" stroke-miterlimit="10"/>
  <path fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#010101" stroke-linejoin="round" id="path3068_2_" stroke-linecap="round" stroke-width="2.4" d="M84.845,28.187c0,3.678,0,2.556,0-26.578" stroke-miterlimit="10"/>
- <text fill="#010101" font-family="DroidSans" xmlns="http://www.w3.org/2000/svg" transform="matrix(1 0 0 1 59.9355 38.2881)" font-size="10">m+</text>
- <text fill="#010101" font-family="DroidSans" xmlns="http://www.w3.org/2000/svg" transform="matrix(1 0 0 1 80.1855 38.2881)" font-size="10">m-</text>
+ <text fill="#010101" font-family="Droid Sans" xmlns="http://www.w3.org/2000/svg" transform="matrix(1 0 0 1 59.9355 38.2881)" font-size="10">m+</text>
+ <text fill="#010101" font-family="Droid Sans" xmlns="http://www.w3.org/2000/svg" transform="matrix(1 0 0 1 80.1855 38.2881)" font-size="10">m-</text>
  <rect width="2.970649771711251" x="64.48057445655681" y="-0.06689432871008266" fill="none" height="29.1113197023279" id="connector8"/>
  <rect width="2.970649771711297" x="83.04713552975228" y="-1.033449119051871" fill="none" height="31.19186984425004" id="connector9"/>
 </g>

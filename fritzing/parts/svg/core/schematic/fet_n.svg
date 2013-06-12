@@ -25,8 +25,8 @@
 		<rect id="connector2pin" x="29.6" y="35.208" width="1.416" height="4.959"/>
 		<rect id="connector2terminal" x="29.98" y="39.315" width="0.75" height="0.799"/>
 	</g>
-	<text transform="matrix(1 0 0 1 0.2061 31.4219)" font-family="'DroidSans'" font-size="8.017">G</text>
-	<text transform="matrix(1 0 0 1 32.5996 39.7148)" font-family="'DroidSans'" font-size="8.017">S</text>
-	<text transform="matrix(1 0 0 1 32.1836 6.6294)" font-family="'DroidSans'" font-size="8.017">D</text>
+	<text transform="matrix(1 0 0 1 0.2061 31.4219)" font-family="'Droid Sans'" font-size="8.017">G</text>
+	<text transform="matrix(1 0 0 1 32.5996 39.7148)" font-family="'Droid Sans'" font-size="8.017">S</text>
+	<text transform="matrix(1 0 0 1 32.1836 6.6294)" font-family="'Droid Sans'" font-size="8.017">D</text>
 </g>
 </svg>

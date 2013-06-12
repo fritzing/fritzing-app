@@ -16,9 +16,9 @@
 	<rect id="connector2terminal" x="91.249" y="26.386" fill="none" width="1.004" height="2.006"/>
 	
 		<rect id="rect17" x="24.135" y="9.095" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="44.078" height="39.063"/>
-	<text transform="matrix(1 0 0 1 26.1406 30.9045)" font-family="'DroidSans'" font-size="7.5">IN</text>
-	<text transform="matrix(1 0 0 1 32.1406 19.2375)" font-family="'DroidSans'" font-size="9">LM317</text>
-	<text transform="matrix(1 0 0 1 51.2671 30.2375)" font-family="'DroidSans'" font-size="7.5">OUT</text>
-	<text transform="matrix(1 0 0 1 39.1001 44.7385)" font-family="'DroidSans'" font-size="7.5">ADJ</text>
+	<text transform="matrix(1 0 0 1 26.1406 30.9045)" font-family="'Droid Sans'" font-size="7.5">IN</text>
+	<text transform="matrix(1 0 0 1 32.1406 19.2375)" font-family="'Droid Sans'" font-size="9">LM317</text>
+	<text transform="matrix(1 0 0 1 51.2671 30.2375)" font-family="'Droid Sans'" font-size="7.5">OUT</text>
+	<text transform="matrix(1 0 0 1 39.1001 44.7385)" font-family="'Droid Sans'" font-size="7.5">ADJ</text>
 </g>
 </svg>

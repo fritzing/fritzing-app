@@ -85,8 +85,8 @@
 	</g>
 	
 		<line fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="11.785" y1="22.051" x2="97.066" y2="22.051"/>
-	<text transform="matrix(1 0 0 1 0.1504 65.9502)" font-family="'DroidSans'" font-size="14">R</text>
-	<text transform="matrix(1 0 0 1 42.9326 65.9502)" font-family="'DroidSans'" font-size="14">G</text>
-	<text transform="matrix(1 0 0 1 85.7158 65.9502)" font-family="'DroidSans'" font-size="14">B</text>
+	<text transform="matrix(1 0 0 1 0.1504 65.9502)" font-family="'Droid Sans'" font-size="14">R</text>
+	<text transform="matrix(1 0 0 1 42.9326 65.9502)" font-family="'Droid Sans'" font-size="14">G</text>
+	<text transform="matrix(1 0 0 1 85.7158 65.9502)" font-family="'Droid Sans'" font-size="14">B</text>
 </g>
 </svg>

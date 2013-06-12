@@ -197,7 +197,7 @@ QString Dip::makeSchematicSvg(const QStringList & labels)
 					"width='%4in' height='%1in' viewBox='0 0 %5 %2' >\n"
 					"<g id='schematic' >\n"
 					"<rect x='315' y='15' fill='none' width='%6' height='%3' stroke='#000000' stroke-linejoin='round' stroke-linecap='round' stroke-width='30' />\n"
-					"<text id='label' x='%7' y='465' font-family='DroidSans' stroke='none' fill='#000000' text-anchor='middle' font-size='235' >IC</text>\n");
+					"<text id='label' x='%7' y='465' font-family='Droid Sans' stroke='none' fill='#000000' text-anchor='middle' font-size='235' >IC</text>\n");
 
 	QString svg = header
 				.arg(totalHeight / 1000)
@@ -212,13 +212,13 @@ QString Dip::makeSchematicSvg(const QStringList & labels)
 	QString repeatL("<line fill='none' stroke='#000000' stroke-linejoin='round' stroke-linecap='round' stroke-width='30' x1='15' y1='%1' x2='300' y2='%1'  />\n"
 					"<rect x='0' y='%2' fill='none' width='300' height='30' stroke='none' id='connector%3pin' stroke-width='0' />\n"
 					"<rect x='0' y='%2' fill='none' width='30' height='30' stroke='none' id='connector%3terminal' stroke-width='0' />\n"
-					"<text id='label%3' x='390' y='%4' font-family='DroidSans' stroke='none' fill='#000000' text-anchor='start' font-size='%6' >%5</text>\n");
+					"<text id='label%3' x='390' y='%4' font-family='Droid Sans' stroke='none' fill='#000000' text-anchor='start' font-size='%6' >%5</text>\n");
 
 	
 	QString repeatR("<line fill='none' stroke='#000000' stroke-linejoin='round' stroke-linecap='round' stroke-width='30' x1='%7' y1='%1' x2='%8' y2='%1'  />\n"
 					"<rect x='%9' y='%2' fill='none' width='300' height='30' id='connector%3pin' stroke='none' stroke-width='0' />\n"
 					"<rect x='%10' y='%2' fill='none' width='30' height='30' id='connector%3terminal' stroke='none' stroke-width='0' />\n"
-					"<text id='label%3' x='%11' y='%4' font-family='DroidSans' stroke='none' fill='#000000' text-anchor='end' font-size='%6' >%5</text>\n");
+					"<text id='label%3' x='%11' y='%4' font-family='Droid Sans' stroke='none' fill='#000000' text-anchor='end' font-size='%6' >%5</text>\n");
 
 
 	int y = 300;

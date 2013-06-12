@@ -19,7 +19,7 @@
 	<path id="connector0terminal_2_" fill="none" d="M4.611,43.422L4.611,43.422L4.611,43.422z"/>
 	<g transform="translate(0.9906,14.0462)">
 		<g transform="rotate(270)">
-			<text transform="matrix(1 0 0 1 -26.6159 2.1058)" fill="#787878" font-family="'DroidSans'" font-size="2">1</text>
+			<text transform="matrix(1 0 0 1 -26.6159 2.1058)" fill="#787878" font-family="'Droid Sans'" font-size="2">1</text>
 		</g>
 	</g>
 	
@@ -27,7 +27,7 @@
 	<path id="connector1terminal_2_" fill="none" d="M4.611,0.223L4.611,0.223L4.611,0.223z"/>
 	<g transform="translate(0.9906,1.3462)">
 		<g transform="rotate(270)">
-			<text transform="matrix(1 0 0 1 -3.3179 2.1058)" fill="#787878" font-family="'DroidSans'" font-size="2">2</text>
+			<text transform="matrix(1 0 0 1 -3.3179 2.1058)" fill="#787878" font-family="'Droid Sans'" font-size="2">2</text>
 		</g>
 	</g>
 </g>

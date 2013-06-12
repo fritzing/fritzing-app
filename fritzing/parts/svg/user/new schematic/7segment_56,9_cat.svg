@@ -745,15 +745,15 @@
 			</g>
 		</g>
 	</g>
-	<text transform="matrix(1 0 0 1 106.1992 71.1707)" fill="#787878" font-family="'DroidSans'" font-size="2">5</text>
-	<text transform="matrix(1 0 0 1 91.7998 71.1707)" fill="#787878" font-family="'DroidSans'" font-size="2">10</text>
-	<text transform="matrix(1 0 0 1 55.5298 4.6707)" fill="#787878" font-family="'DroidSans'" font-size="2">3, 8</text>
-	<text transform="matrix(1 0 0 1 77.4004 71.1707)" fill="#787878" font-family="'DroidSans'" font-size="2">9</text>
-	<text transform="matrix(1 0 0 1 63 71.1707)" fill="#787878" font-family="'DroidSans'" font-size="2">1</text>
-	<text transform="matrix(1 0 0 1 48.6001 71.1707)" fill="#787878" font-family="'DroidSans'" font-size="2">2</text>
-	<text transform="matrix(1 0 0 1 34.2002 71.1707)" fill="#787878" font-family="'DroidSans'" font-size="2">4</text>
-	<text transform="matrix(1 0 0 1 19.8003 71.1707)" fill="#787878" font-family="'DroidSans'" font-size="2">6</text>
-	<text transform="matrix(1 0 0 1 5.4004 71.1707)" fill="#787878" font-family="'DroidSans'" font-size="2">7</text>
+	<text transform="matrix(1 0 0 1 106.1992 71.1707)" fill="#787878" font-family="'Droid Sans'" font-size="2">5</text>
+	<text transform="matrix(1 0 0 1 91.7998 71.1707)" fill="#787878" font-family="'Droid Sans'" font-size="2">10</text>
+	<text transform="matrix(1 0 0 1 55.5298 4.6707)" fill="#787878" font-family="'Droid Sans'" font-size="2">3, 8</text>
+	<text transform="matrix(1 0 0 1 77.4004 71.1707)" fill="#787878" font-family="'Droid Sans'" font-size="2">9</text>
+	<text transform="matrix(1 0 0 1 63 71.1707)" fill="#787878" font-family="'Droid Sans'" font-size="2">1</text>
+	<text transform="matrix(1 0 0 1 48.6001 71.1707)" fill="#787878" font-family="'Droid Sans'" font-size="2">2</text>
+	<text transform="matrix(1 0 0 1 34.2002 71.1707)" fill="#787878" font-family="'Droid Sans'" font-size="2">4</text>
+	<text transform="matrix(1 0 0 1 19.8003 71.1707)" fill="#787878" font-family="'Droid Sans'" font-size="2">6</text>
+	<text transform="matrix(1 0 0 1 5.4004 71.1707)" fill="#787878" font-family="'Droid Sans'" font-size="2">7</text>
 	
 		<line fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-miterlimit="10" x1="54" y1="7.17" x2="54" y2="-0.029"/>
 	<g>

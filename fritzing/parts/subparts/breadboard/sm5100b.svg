@@ -14,7 +14,7 @@
 		<rect x="1.375" y="0.333" fill="#9A916C" width="10.407" height="6.684"/>
 		<rect x="14.684" y="0.333" fill="#9A916C" width="5.277" height="13.807"/>
 		<rect x="1.375" y="8.864" fill="#9A916C" width="18.3" height="5.277"/>
-		<text transform="matrix(1 0 0 1 14.6255 25.9463)" fill="#9A916C" font-family="'DroidSans'" font-size="6.0948">SM5100B-D</text>
+		<text transform="matrix(1 0 0 1 14.6255 25.9463)" fill="#9A916C" font-family="'Droid Sans'" font-size="6.0948">SM5100B-D</text>
 		<polyline fill="none" stroke="#9A916C" stroke-width="1.75" stroke-miterlimit="10" points="94.348,110.885 94.348,93.896 
 			11.577,93.896 11.577,110.885 		"/>
 		<circle fill="#9A916C" cx="16.962" cy="98.728" r="1.583"/>

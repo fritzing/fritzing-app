@@ -398,11 +398,11 @@ QString MysteryPart::makeSchematicSvg(const QStringList & labels, bool sip)
 					"width='%7in' height='%1in' viewBox='0 0 %8 %2'>\n"
 					"<g id='schematic'>\n"
 					"<rect x='315' y='15' fill='none' width='%9' height='%3' stroke='#000000' stroke-linejoin='round' stroke-linecap='round' stroke-width='30' />\n"
-					"<text id='label' x='%11' y='%4' fill='#000000' stroke='none' font-family='DroidSans' text-anchor='middle' font-size='%5' >%6</text>\n");
+					"<text id='label' x='%11' y='%4' fill='#000000' stroke='none' font-family='Droid Sans' text-anchor='middle' font-size='%5' >%6</text>\n");
 
 	if (!sip) {
 		header +=	"<circle fill='#000000' cx='%10' cy='200' r='150' stroke-width='0' />\n"
-					"<text x='%10' fill='#FFFFFF' y='305' font-family='DroidSans' text-anchor='middle' font-weight='bold' stroke-width='0' font-size='275' >?</text>\n";
+					"<text x='%10' fill='#FFFFFF' y='305' font-family='Droid Sans' text-anchor='middle' font-weight='bold' stroke-width='0' font-size='275' >?</text>\n";
 	}
 	else {
 		labelText = "IC";
@@ -428,7 +428,7 @@ QString MysteryPart::makeSchematicSvg(const QStringList & labels, bool sip)
 	QString repeat("<line fill='none' stroke='#000000' stroke-linejoin='round' stroke-linecap='round' stroke-width='30' x1='15' y1='%1' x2='300' y2='%1'  />\n"
 					"<rect x='0' y='%2' fill='none' width='300' height='30' id='connector%3pin' stroke-width='0' />\n"
 					"<rect x='0' y='%2' fill='none' width='30' height='30' id='connector%3terminal' stroke-width='0' />\n"
-					"<text id='label%3' x='390' y='%4' font-family='DroidSans' stroke='none' fill='#000000' text-anchor='start' font-size='%6' >%5</text>\n");
+					"<text id='label%3' x='390' y='%4' font-family='Droid Sans' stroke='none' fill='#000000' text-anchor='start' font-size='%6' >%5</text>\n");
   
 	for (int i = 0; i < labels.count(); i++) {
 		svg += repeat
@@ -474,9 +474,9 @@ QString MysteryPart::makeBreadboardDipSvg(const QString & expectedFileName)
 					".percent.2\n"
 					"<rect width='{16.0022}' x='0' y='2.5' height='[6.5]' fill='#000000' id='upper' stroke-width='0' />\n"
 					"<rect width='{16.0022}' x='0' y='[6.5]' fill='#404040' height='3.096' id='lower' stroke-width='0' />\n"
-					"<text id='label' x='2.5894' y='{{6.0}}' fill='#e6e6e6' stroke='none' font-family='DroidSans' text-anchor='start' font-size='7.3' >?</text>\n"
+					"<text id='label' x='2.5894' y='{{6.0}}' fill='#e6e6e6' stroke='none' font-family='Droid Sans' text-anchor='start' font-size='7.3' >?</text>\n"
 					"<circle fill='#8C8C8C' cx='11.0022' cy='{{7.5}}' r='3' stroke-width='0' />\n"
-					"<text x='11.0022' y='{{9.2}}' font-family='DroidSans' text-anchor='middle' font-weight='bold' stroke-width='0' font-size='5.5' >?</text>\n"
+					"<text x='11.0022' y='{{9.2}}' font-family='Droid Sans' text-anchor='middle' font-weight='bold' stroke-width='0' font-size='5.5' >?</text>\n"
 					".percent.3\n"
 					"</g>\n"
 					"</svg>\n");
@@ -527,9 +527,9 @@ QString MysteryPart::makeBreadboardSipSvg(const QString & expectedFileName)
 					"<g id='breadboard'>\n"
 					"<rect width='[6.0022]' x='0' y='0' height='24.17675' fill='#000000' id='upper' stroke-width='0' />\n"
 					"<rect width='[6.0022]' x='0' y='22' fill='#404040' height='3.096' id='lower' stroke-width='0' />\n"
-					"<text id='label' x='2.5894' y='13' fill='#e6e6e6' stroke='none' font-family='DroidSans' text-anchor='start' font-size='7.3' >?</text>\n"
+					"<text id='label' x='2.5894' y='13' fill='#e6e6e6' stroke='none' font-family='Droid Sans' text-anchor='start' font-size='7.3' >?</text>\n"
 					"<circle fill='#8C8C8C' cx='[1.0022]' cy='5' r='3' stroke-width='0' />\n"
-					"<text x='[1.0022]' y='6.7' font-family='DroidSans' text-anchor='middle' font-weight='bold' stroke-width='0' font-size='5.5' >?</text>\n"      
+					"<text x='[1.0022]' y='6.7' font-family='Droid Sans' text-anchor='middle' font-weight='bold' stroke-width='0' font-size='5.5' >?</text>\n"      
 					"%2\n"
 					"</g>\n"
 					"</svg>\n");

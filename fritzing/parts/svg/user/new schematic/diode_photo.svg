@@ -14,14 +14,14 @@
 		<line id="connector1pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" x1="10.152" y1="21.816" x2="10.152" y2="14.616"/>
 	<g transform="translate(3.429,6.4262)">
 		<g transform="rotate(270)">
-			<text transform="matrix(1 0 0 1 -12.6312 5.792)" fill="#787878" font-family="'DroidSans'" font-size="2">2</text>
+			<text transform="matrix(1 0 0 1 -12.6312 5.792)" fill="#787878" font-family="'Droid Sans'" font-size="2">2</text>
 		</g>
 	</g>
 	
 		<line id="connector0pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" x1="10.152" y1="0.216" x2="10.152" y2="7.416"/>
 	<g transform="translate(3.429,1.3462)">
 		<g transform="rotate(270)">
-			<text transform="matrix(1 0 0 1 -3.3108 5.792)" fill="#787878" font-family="'DroidSans'" font-size="2">1</text>
+			<text transform="matrix(1 0 0 1 -3.3108 5.792)" fill="#787878" font-family="'Droid Sans'" font-size="2">1</text>
 		</g>
 	</g>
 	<g>

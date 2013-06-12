@@ -10,5 +10,5 @@
 <line fill="none" x1="1.277" y1="6.24" x2="1.277" y2="6.24"/>
 <rect x="0" y="6.101" opacity="0.1" enable-background="new    " width="13.341" height="0.125"/>
 <rect x="0" y="0.021" opacity="0.2" fill="#FFFFFF" enable-background="new    " width="13.338" height="0.125"/>
-<text transform="matrix(1 0 0 1 3.6917 4.3911)" fill="#CCCCCC" font-family="'DroidSans'" font-size="3.4824">C106</text>
+<text transform="matrix(1 0 0 1 3.6917 4.3911)" fill="#CCCCCC" font-family="'Droid Sans'" font-size="3.4824">C106</text>
 </svg>

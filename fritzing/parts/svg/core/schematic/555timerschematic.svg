@@ -39,22 +39,22 @@
 		<line fill="none" stroke="#000000" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" x1="75.15" y1="1.15" x2="75.15" y2="32.15"/>
 	
 		<line fill="none" stroke="#000000" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" x1="111.15" y1="1.15" x2="111.15" y2="32.15"/>
-	<text transform="matrix(1 0 0 1 22.7971 47.4592)" font-family="'DroidSans'" font-size="9">7</text>
-	<text transform="matrix(1 0 0 1 66.3684 26.9827)" font-family="'DroidSans'" font-size="9">8</text>
-	<text transform="matrix(1 0 0 1 101.595 26.9827)" font-family="'DroidSans'" font-size="9">4</text>
-	<text transform="matrix(1 0 0 1 66.3684 154.0071)" font-family="'DroidSans'" font-size="9">1</text>
-	<text transform="matrix(1 0 0 1 101.595 154.0071)" font-family="'DroidSans'" font-size="9">5</text>
-	<text transform="matrix(1 0 0 1 66.3684 137.7913)" font-family="'DroidSans'" font-size="9">GND</text>
-	<text transform="matrix(1 0 0 1 36.3577 125.6497)" font-family="'DroidSans'" font-size="9">TR</text>
-	<text transform="matrix(1 0 0 1 36.3577 89.8997)" font-family="'DroidSans'" font-size="9">THR</text>
-	<text transform="matrix(1 0 0 1 131.3577 89.8997)" font-family="'DroidSans'" font-size="9">Q</text>
-	<text transform="matrix(1 0 0 1 36.3577 53.8997)" font-family="'DroidSans'" font-size="9">DIS</text>
-	<text transform="matrix(1 0 0 1 105.4661 137.7913)" font-family="'DroidSans'" font-size="9">CV</text>
-	<text transform="matrix(1 0 0 1 72.1184 43.5603)" font-family="'DroidSans'" font-size="9">V</text>
-	<text transform="matrix(1 0 0 1 68.8171 81.7854)"><tspan x="0" y="0" font-family="'DroidSans'" font-size="15.9251">555</tspan><tspan x="0" y="19.111" font-family="'DroidSans'" font-size="15.9251">Timer</tspan></text>
-	<text transform="matrix(1 0 0 1 107.9661 43.5603)" font-family="'DroidSans'" font-size="9">R</text>
-	<text transform="matrix(1 0 0 1 147.0969 83.9602)" font-family="'DroidSans'" font-size="9">3</text>
-	<text transform="matrix(1 0 0 1 22.7971 83.9602)" font-family="'DroidSans'" font-size="9">6</text>
-	<text transform="matrix(1 0 0 1 22.7971 120.1252)" font-family="'DroidSans'" font-size="9">2</text>
+	<text transform="matrix(1 0 0 1 22.7971 47.4592)" font-family="'Droid Sans'" font-size="9">7</text>
+	<text transform="matrix(1 0 0 1 66.3684 26.9827)" font-family="'Droid Sans'" font-size="9">8</text>
+	<text transform="matrix(1 0 0 1 101.595 26.9827)" font-family="'Droid Sans'" font-size="9">4</text>
+	<text transform="matrix(1 0 0 1 66.3684 154.0071)" font-family="'Droid Sans'" font-size="9">1</text>
+	<text transform="matrix(1 0 0 1 101.595 154.0071)" font-family="'Droid Sans'" font-size="9">5</text>
+	<text transform="matrix(1 0 0 1 66.3684 137.7913)" font-family="'Droid Sans'" font-size="9">GND</text>
+	<text transform="matrix(1 0 0 1 36.3577 125.6497)" font-family="'Droid Sans'" font-size="9">TR</text>
+	<text transform="matrix(1 0 0 1 36.3577 89.8997)" font-family="'Droid Sans'" font-size="9">THR</text>
+	<text transform="matrix(1 0 0 1 131.3577 89.8997)" font-family="'Droid Sans'" font-size="9">Q</text>
+	<text transform="matrix(1 0 0 1 36.3577 53.8997)" font-family="'Droid Sans'" font-size="9">DIS</text>
+	<text transform="matrix(1 0 0 1 105.4661 137.7913)" font-family="'Droid Sans'" font-size="9">CV</text>
+	<text transform="matrix(1 0 0 1 72.1184 43.5603)" font-family="'Droid Sans'" font-size="9">V</text>
+	<text transform="matrix(1 0 0 1 68.8171 81.7854)"><tspan x="0" y="0" font-family="'Droid Sans'" font-size="15.9251">555</tspan><tspan x="0" y="19.111" font-family="'Droid Sans'" font-size="15.9251">Timer</tspan></text>
+	<text transform="matrix(1 0 0 1 107.9661 43.5603)" font-family="'Droid Sans'" font-size="9">R</text>
+	<text transform="matrix(1 0 0 1 147.0969 83.9602)" font-family="'Droid Sans'" font-size="9">3</text>
+	<text transform="matrix(1 0 0 1 22.7971 83.9602)" font-family="'Droid Sans'" font-size="9">6</text>
+	<text transform="matrix(1 0 0 1 22.7971 120.1252)" font-family="'Droid Sans'" font-size="9">2</text>
 </g>
 </svg>

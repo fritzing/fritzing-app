@@ -18,7 +18,7 @@
         <rect  width="1.92" x="0.052" y="51.288" fill="none"  height="1.92" id="connector43terminal"/>
         <g   id="0.1.0.0.0.0.0.0.4" transform="matrix(0.8 0 0 0.8 22.2445 54.1683)">
          <g   id="0.1.0.0.0.0.0.0.4.0">
-          <text  font-family="DroidSans"  id="label43" font-size="9.936">MOSI</text>
+          <text  font-family="Droid Sans"  id="label43" font-size="9.936">MOSI</text>
          </g>
         </g>
         <line  fill="none"  stroke="#000000" stroke-linejoin="round" id="_x30_.1.0.0.5" stroke-linecap="round" y1="69.256" stroke-width="2.4" x1="1.013" y2="69.256" x2="17.06"/>
@@ -27,7 +27,7 @@
         <rect  width="1.92" x="0.052" y="68.295" fill="none"  height="1.92" id="connector49terminal"/>
         <g   id="0.1.0.0.0.0.0.0.9" transform="matrix(0.8 0 0 0.8 22.2445 71.1761)">
          <g   id="0.1.0.0.0.0.0.0.9.0">
-          <text  font-family="DroidSans"  id="label49" font-size="9.936">MISO</text>
+          <text  font-family="Droid Sans"  id="label49" font-size="9.936">MISO</text>
          </g>
         </g>
         <line  fill="none"  stroke="#000000" stroke-linejoin="round" id="_x30_.1.0.0.9" stroke-linecap="round" y1="86.263" stroke-width="2.4" x1="1.013" y2="86.263" x2="17.06"/>
@@ -36,7 +36,7 @@
         <rect  width="1.92" x="0.052" y="85.303" fill="none"  height="1.92" id="connector58terminal"/>
         <g   id="0.1.0.0.0.0.0.0.14" transform="matrix(0.8 0 0 0.8 22.2445 88.1839)">
          <g   id="0.1.0.0.0.0.0.0.14.0">
-          <text  font-family="DroidSans"  id="label58" font-size="9.936">SCLK</text>
+          <text  font-family="Droid Sans"  id="label58" font-size="9.936">SCLK</text>
          </g>
         </g>
         <line  fill="none"  stroke="#000000" stroke-linejoin="round" id="_x30_.1.0.0.13" stroke-linecap="round" y1="103.272" stroke-width="2.4" x1="1.013" y2="103.272" x2="17.06"/>
@@ -45,7 +45,7 @@
         <rect  width="1.92" x="0.052" y="102.312" fill="none"  height="1.92" id="connector0terminal_1_"/>
         <g   id="0.1.0.0.0.0.0.0.19" transform="matrix(0.8 0 0 0.8 22.2445 105.1925)">
          <g   id="0.1.0.0.0.0.0.0.19.0">
-          <text  font-family="DroidSans"  id="label0" font-size="9.936">CEO_N</text>
+          <text  font-family="Droid Sans"  id="label0" font-size="9.936">CEO_N</text>
          </g>
         </g>
         <line  fill="none"  stroke="#000000" stroke-linejoin="round" id="_x30_.1.0.0.17" stroke-linecap="round" y1="120.28" stroke-width="2.4" x1="1.013" y2="120.28" x2="17.06"/>
@@ -54,37 +54,37 @@
         <rect  width="1.92" x="0.052" y="119.319" fill="none"  height="1.92" id="connector1terminal_1_"/>
         <g   id="0.1.0.0.0.0.0.0.24" transform="matrix(0.8 0 0 0.8 22.2445 122.1996)">
          <g   id="0.1.0.0.0.0.0.0.24.0">
-          <text  font-family="DroidSans"  id="label1" font-size="9.936">CE1_N</text>
+          <text  font-family="Droid Sans"  id="label1" font-size="9.936">CE1_N</text>
          </g>
         </g>
         <g   id="0.1.0.0.0.0.0.0.25" transform="matrix(0.8 0 0 0.8 22.2445 157.0464)">
          <g   id="0.1.0.0.0.0.0.0.25.0">
-          <text  font-family="DroidSans"  id="label43_1_" font-size="9.936">Pin 4</text>
+          <text  font-family="Droid Sans"  id="label43_1_" font-size="9.936">Pin 4</text>
          </g>
         </g>
         <g   id="0.1.0.0.0.0.0.0.26" transform="matrix(0.8 0 0 0.8 22.2445 174.0542)">
          <g   id="0.1.0.0.0.0.0.0.26.0">
-          <text  font-family="DroidSans"  id="label49_1_" font-size="9.936">Pin 9</text>
+          <text  font-family="Droid Sans"  id="label49_1_" font-size="9.936">Pin 9</text>
          </g>
         </g>
         <g   id="0.1.0.0.0.0.0.0.27" transform="matrix(0.8 0 0 0.8 22.2445 191.062)">
          <g   id="0.1.0.0.0.0.0.0.27.0">
-          <text  font-family="DroidSans"  id="label58_1_" font-size="9.936">Pin 14</text>
+          <text  font-family="Droid Sans"  id="label58_1_" font-size="9.936">Pin 14</text>
          </g>
         </g>
         <g   id="0.1.0.0.0.0.0.0.28" transform="matrix(0.8 0 0 0.8 22.2445 208.0706)">
          <g   id="0.1.0.0.0.0.0.0.28.0">
-          <text  font-family="DroidSans"  id="label0_1_" font-size="9.936">Pin 17</text>
+          <text  font-family="Droid Sans"  id="label0_1_" font-size="9.936">Pin 17</text>
          </g>
         </g>
         <g   id="0.1.0.0.0.0.0.0.29" transform="matrix(0.8 0 0 0.8 22.2445 225.0777)">
          <g   id="0.1.0.0.0.0.0.0.29.0">
-          <text  font-family="DroidSans"  id="label1_1_" font-size="9.936">Pin 20</text>
+          <text  font-family="Droid Sans"  id="label1_1_" font-size="9.936">Pin 20</text>
          </g>
         </g>
         <g   id="0.1.0.0.0.0.0.0.30" transform="matrix(0.8 0 0 0.8 22.2445 242.0847)">
          <g   id="0.1.0.0.0.0.0.0.30.0">
-          <text  font-family="DroidSans"  id="label1_2_" font-size="9.936">Pin 25</text>
+          <text  font-family="Droid Sans"  id="label1_2_" font-size="9.936">Pin 25</text>
          </g>
         </g>
         <line  fill="none"  stroke="#000000" stroke-linejoin="round" id="_x30_.1.0.0.21" stroke-linecap="round" y1="52.248" stroke-width="2.4" x1="200.965" y2="52.248" x2="217.973"/>
@@ -96,35 +96,35 @@
           <g   id="_x30_.1.0.0.24.0.0">
            <g   id="0.1.0.0.0.0.0.0.35.0.0.0" transform="matrix(0.8 0 0 0.8 177.3238 225.3152)">
             <g   id="0.1.0.0.0.0.0.0.35.0.0.0.0">
-             <text  font-family="DroidSans"  id="_x30_.1.0.0.24.0.0.0" font-size="9.936">RXD</text>
+             <text  font-family="Droid Sans"  id="_x30_.1.0.0.24.0.0.0" font-size="9.936">RXD</text>
             </g>
            </g>
           </g>
           <g   id="_x30_.1.0.0.24.0.1">
            <g   id="0.1.0.0.0.0.0.0.35.0.1.0" transform="matrix(0.8 0 0 0.8 177.3238 208.0355)">
             <g   id="0.1.0.0.0.0.0.0.35.0.1.0.0">
-             <text  font-family="DroidSans"  id="_x30_.1.0.0.24.0.1.0" font-size="9.936">TXD</text>
+             <text  font-family="Droid Sans"  id="_x30_.1.0.0.24.0.1.0" font-size="9.936">TXD</text>
             </g>
            </g>
           </g>
           <g   id="_x30_.1.0.0.24.0.2">
            <g   id="0.1.0.0.0.0.0.0.35.0.2.0" transform="matrix(0.8 0 0 0.8 178.0723 276.7894)">
             <g   id="0.1.0.0.0.0.0.0.35.0.2.0.0">
-             <text  font-family="DroidSans"  id="_x30_.1.0.0.24.0.2.0" font-size="9.936">SDA0</text>
+             <text  font-family="Droid Sans"  id="_x30_.1.0.0.24.0.2.0" font-size="9.936">SDA0</text>
             </g>
            </g>
           </g>
           <g   id="_x30_.1.0.0.24.0.3">
            <g   id="0.1.0.0.0.0.0.0.35.0.3.0" transform="matrix(0.8 0 0 0.8 179.566 259.5097)">
             <g   id="0.1.0.0.0.0.0.0.35.0.3.0.0">
-             <text  font-family="DroidSans"  id="_x30_.1.0.0.24.0.3.0" font-size="9.936">SCL0</text>
+             <text  font-family="Droid Sans"  id="_x30_.1.0.0.24.0.3.0" font-size="9.936">SCL0</text>
             </g>
            </g>
           </g>
           <g   id="_x30_.1.0.0.24.0.4">
            <g   id="0.1.0.0.0.0.0.0.35.0.4.0" transform="matrix(0.8 0 0 0.8 173.3238 174.3261)">
             <g   id="0.1.0.0.0.0.0.0.35.0.4.0.0">
-             <text  font-family="DroidSans"  id="_x30_.1.0.0.24.0.4.0" font-size="9.936">GPIO0</text>
+             <text  font-family="Droid Sans"  id="_x30_.1.0.0.24.0.4.0" font-size="9.936">GPIO0</text>
             </g>
            </g>
           </g>
@@ -132,49 +132,49 @@
          <g   id="_x30_.1.0.0.24.1">
           <g   id="0.1.0.0.0.0.0.0.35.1.0" transform="matrix(0.8 0 0 0.8 173.3238 157.0464)">
            <g   id="0.1.0.0.0.0.0.0.35.1.0.0">
-            <text  font-family="DroidSans"  id="_x30_.1.0.0.24.1.0" font-size="9.936">GPIO1</text>
+            <text  font-family="Droid Sans"  id="_x30_.1.0.0.24.1.0" font-size="9.936">GPIO1</text>
            </g>
           </g>
          </g>
          <g   id="_x30_.1.0.0.24.2">
           <g   id="0.1.0.0.0.0.0.0.35.2.0" transform="matrix(0.8 0 0 0.8 173.3238 139.7667)">
            <g   id="0.1.0.0.0.0.0.0.35.2.0.0">
-            <text  font-family="DroidSans"  id="_x30_.1.0.0.24.2.0" font-size="9.936">GPIO2</text>
+            <text  font-family="Droid Sans"  id="_x30_.1.0.0.24.2.0" font-size="9.936">GPIO2</text>
            </g>
           </g>
          </g>
          <g   id="_x30_.1.0.0.24.3">
           <g   id="0.1.0.0.0.0.0.0.35.3.0" transform="matrix(0.8 0 0 0.8 173.3238 123.287)">
            <g   id="0.1.0.0.0.0.0.0.35.3.0.0">
-            <text  font-family="DroidSans"  id="_x30_.1.0.0.24.3.0" font-size="9.936">GPIO3</text>
+            <text  font-family="Droid Sans"  id="_x30_.1.0.0.24.3.0" font-size="9.936">GPIO3</text>
            </g>
           </g>
          </g>
          <g   id="_x30_.1.0.0.24.4">
           <g   id="0.1.0.0.0.0.0.0.35.4.0" transform="matrix(0.8 0 0 0.8 173.3238 106.8073)">
            <g   id="0.1.0.0.0.0.0.0.35.4.0.0">
-            <text  font-family="DroidSans"  id="_x30_.1.0.0.24.4.0" font-size="9.936">GPIO4</text>
+            <text  font-family="Droid Sans"  id="_x30_.1.0.0.24.4.0" font-size="9.936">GPIO4</text>
            </g>
           </g>
          </g>
          <g   id="_x30_.1.0.0.24.5">
           <g   id="0.1.0.0.0.0.0.0.35.5.0" transform="matrix(0.8 0 0 0.8 173.3238 89.5277)">
            <g   id="0.1.0.0.0.0.0.0.35.5.0.0">
-            <text  font-family="DroidSans"  id="_x30_.1.0.0.24.5.0" font-size="9.936">GPIO5</text>
+            <text  font-family="Droid Sans"  id="_x30_.1.0.0.24.5.0" font-size="9.936">GPIO5</text>
            </g>
           </g>
          </g>
          <g   id="_x30_.1.0.0.24.6">
           <g   id="0.1.0.0.0.0.0.0.35.6.0" transform="matrix(0.8 0 0 0.8 173.3238 72.248)">
            <g   id="0.1.0.0.0.0.0.0.35.6.0.0">
-            <text  font-family="DroidSans"  id="_x30_.1.0.0.24.6.0" font-size="9.936">GPIO6</text>
+            <text  font-family="Droid Sans"  id="_x30_.1.0.0.24.6.0" font-size="9.936">GPIO6</text>
            </g>
           </g>
          </g>
          <g   id="_x30_.1.0.0.24.7">
           <g   id="0.1.0.0.0.0.0.0.35.7.0" transform="matrix(0.8 0 0 0.8 173.3238 54.9683)">
            <g   id="0.1.0.0.0.0.0.0.35.7.0.0">
-            <text  font-family="DroidSans"  id="_x30_.1.0.0.24.7.0" font-size="9.936">GPIO7</text>
+            <text  font-family="Droid Sans"  id="_x30_.1.0.0.24.7.0" font-size="9.936">GPIO7</text>
            </g>
           </g>
          </g>
@@ -256,12 +256,12 @@
         <g   id="_x30_.1.0.0.58">
          <g   id="0.1.0.0.0.0.0.0.79.0" transform="matrix(0.8 0 0 0.8 72.6812 52.248)">
           <g   id="0.1.0.0.0.0.0.0.79.0.0">
-           <text  font-family="DroidSans"  id="label" font-size="18">RaspberryPi</text>
+           <text  font-family="Droid Sans"  id="label" font-size="18">RaspberryPi</text>
           </g>
          </g>
          <g   id="0.1.0.0.0.0.0.0.79.1" transform="matrix(0.8 0 0 0.8 84.9586 69.2566)">
           <g   id="0.1.0.0.0.0.0.0.79.1.0">
-           <text  font-family="DroidSans"  id="label_1_" font-size="18">Model B</text>
+           <text  font-family="Droid Sans"  id="label_1_" font-size="18">Model B</text>
           </g>
          </g>
          <g   id="_x30_.1.0.0.58.2">
@@ -271,7 +271,7 @@
           <polygon  fill="none" points="93.772,0.264 95.692,0.264 95.692,0.264 "  id="connector86terminal"/>
           <g   id="0.1.0.0.0.0.0.0.79.2.4" transform="matrix(0.8 0 0 0.8 88.0976 27.3527)">
            <g   id="0.1.0.0.0.0.0.0.79.2.4.0">
-            <text  font-family="DroidSans"  id="label86" font-size="9.936">3V3</text>
+            <text  font-family="Droid Sans"  id="label86" font-size="9.936">3V3</text>
            </g>
           </g>
           <line  fill="none"  stroke="#000000" stroke-linejoin="round" id="_x30_.1.0.0.58.2.4" stroke-linecap="round" y1="1.224" stroke-width="2.4" x1="128.748" y2="17.272" x2="128.748"/>
@@ -279,7 +279,7 @@
           <polygon  fill="none" points="127.788,0.264 129.708,0.264 129.708,0.264 "  id="connector40terminal"/>
           <g   id="0.1.0.0.0.0.0.0.79.2.8" transform="matrix(0.8 0 0 0.8 124.3019 27.3527)">
            <g   id="0.1.0.0.0.0.0.0.79.2.8.0">
-            <text  font-family="DroidSans"  id="label40" font-size="9.936">5V</text>
+            <text  font-family="Droid Sans"  id="label40" font-size="9.936">5V</text>
            </g>
           </g>
           <rect  width="1.92" x="127.788" y="0.264" fill="none"  height="17.008" id="connector46pin"/>
@@ -297,7 +297,7 @@
          <polygon  fill="none" points="108.532,318.075 110.452,318.075 110.452,318.075 "  id="connector44terminal"/>
          <g   id="0.1.0.0.0.0.0.0.80.3" transform="matrix(0.8 0 0 0.8 101.1344 296.4589)">
           <g   id="0.1.0.0.0.0.0.0.80.3.0">
-           <text  font-family="DroidSans"  id="label44" font-size="9.936">GND</text>
+           <text  font-family="Droid Sans"  id="label44" font-size="9.936">GND</text>
           </g>
          </g>
          <rect  width="1.92" x="108.532" y="301.067" fill="none"  height="17.008" id="connector88pin"/>

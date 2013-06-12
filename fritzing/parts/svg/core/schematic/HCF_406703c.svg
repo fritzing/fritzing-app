@@ -61,7 +61,7 @@
        y="-802.93262"
        id="label"
        font-size="235"
-       style="font-size:235px;text-anchor:middle;fill:#000000;stroke:none;font-family:DroidSans"
+       style="font-size:235px;text-anchor:middle;fill:#000000;stroke:none;font-family:Droid Sans"
        transform="matrix(0,1,-1,0,0,0)">HC4067</text>
     <line
        fill="none"
@@ -95,7 +95,7 @@
        y="350"
        id="label0"
        font-size="130"
-       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:DroidSans">C. I/O</text>
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">C. I/O</text>
     <line
        fill="none"
        stroke="#000000"
@@ -128,7 +128,7 @@
        y="350"
        id="label23"
        font-size="130"
-       style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:DroidSans">Vdd(Vin)</text>
+       style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans">Vdd(Vin)</text>
     <line
        fill="none"
        stroke="#000000"
@@ -161,7 +161,7 @@
        y="650"
        id="label1"
        font-size="130"
-       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:DroidSans">TG7</text>
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">TG7</text>
     <line
        fill="none"
        stroke="#000000"
@@ -194,7 +194,7 @@
        y="650"
        id="label22"
        font-size="130"
-       style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:DroidSans">TG8</text>
+       style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans">TG8</text>
     <line
        fill="none"
        stroke="#000000"
@@ -227,7 +227,7 @@
        y="950"
        id="label2"
        font-size="130"
-       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:DroidSans">TG6</text>
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">TG6</text>
     <line
        fill="none"
        stroke="#000000"
@@ -260,7 +260,7 @@
        y="950"
        id="label21"
        font-size="130"
-       style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:DroidSans">TG9</text>
+       style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans">TG9</text>
     <line
        fill="none"
        stroke="#000000"
@@ -293,7 +293,7 @@
        y="1250"
        id="label3"
        font-size="130"
-       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:DroidSans">TG5</text>
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">TG5</text>
     <line
        fill="none"
        stroke="#000000"
@@ -326,7 +326,7 @@
        y="1250"
        id="label20"
        font-size="130"
-       style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:DroidSans">TG10</text>
+       style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans">TG10</text>
     <line
        fill="none"
        stroke="#000000"
@@ -359,7 +359,7 @@
        y="1550"
        id="label4"
        font-size="130"
-       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:DroidSans">TG4</text>
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">TG4</text>
     <line
        fill="none"
        stroke="#000000"
@@ -392,7 +392,7 @@
        y="1550"
        id="label19"
        font-size="130"
-       style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:DroidSans">TG11</text>
+       style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans">TG11</text>
     <line
        fill="none"
        stroke="#000000"
@@ -425,7 +425,7 @@
        y="1850"
        id="label5"
        font-size="130"
-       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:DroidSans">TG3</text>
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">TG3</text>
     <line
        fill="none"
        stroke="#000000"
@@ -458,7 +458,7 @@
        y="1850"
        id="label18"
        font-size="130"
-       style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:DroidSans">TG12</text>
+       style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans">TG12</text>
     <line
        fill="none"
        stroke="#000000"
@@ -491,7 +491,7 @@
        y="2150"
        id="label6"
        font-size="130"
-       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:DroidSans">TG2</text>
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">TG2</text>
     <line
        fill="none"
        stroke="#000000"
@@ -524,7 +524,7 @@
        y="2150"
        id="label17"
        font-size="130"
-       style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:DroidSans">TG13</text>
+       style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans">TG13</text>
     <line
        fill="none"
        stroke="#000000"
@@ -557,7 +557,7 @@
        y="2450"
        id="label7"
        font-size="130"
-       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:DroidSans">TG1</text>
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">TG1</text>
     <line
        fill="none"
        stroke="#000000"
@@ -590,7 +590,7 @@
        y="2450"
        id="label16"
        font-size="130"
-       style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:DroidSans">TG14</text>
+       style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans">TG14</text>
     <line
        fill="none"
        stroke="#000000"
@@ -623,7 +623,7 @@
        y="2750"
        id="label8"
        font-size="130"
-       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:DroidSans">TG0</text>
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">TG0</text>
     <line
        fill="none"
        stroke="#000000"
@@ -656,7 +656,7 @@
        y="2750"
        id="label15"
        font-size="130"
-       style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:DroidSans">TG15</text>
+       style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans">TG15</text>
     <line
        fill="none"
        stroke="#000000"
@@ -689,7 +689,7 @@
        y="3050"
        id="label9"
        font-size="130"
-       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:DroidSans">A</text>
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">A</text>
     <line
        fill="none"
        stroke="#000000"
@@ -722,7 +722,7 @@
        y="3050"
        id="label14"
        font-size="130"
-       style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:DroidSans">Inhibit</text>
+       style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans">Inhibit</text>
     <line
        fill="none"
        stroke="#000000"
@@ -755,7 +755,7 @@
        y="3350"
        id="label10"
        font-size="130"
-       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:DroidSans">B</text>
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">B</text>
     <line
        fill="none"
        stroke="#000000"
@@ -788,7 +788,7 @@
        y="3350"
        id="label13"
        font-size="130"
-       style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:DroidSans">C</text>
+       style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans">C</text>
     <line
        fill="none"
        stroke="#000000"
@@ -821,7 +821,7 @@
        y="3650"
        id="label11"
        font-size="130"
-       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:DroidSans">Vss(Gnd)</text>
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">Vss(Gnd)</text>
     <line
        fill="none"
        stroke="#000000"
@@ -871,7 +871,7 @@
        y="3650"
        id="label12"
        font-size="130"
-       style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:DroidSans">D</text>
+       style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans">D</text>
     <rect
        width="0.002"
        x="1871.235585284281"

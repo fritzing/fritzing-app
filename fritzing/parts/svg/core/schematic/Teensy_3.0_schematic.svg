@@ -11,14 +11,14 @@
   <g   id="0.1.2" transform="matrix(1 0 0 1 30.4038 67.3687)">
    <g   id="0.1.2">
     <g   id="0.1.2.0">
-     <text  font-family="DroidSans"  id="0.1.2.0.0" font-size="9.94">RST</text>
+     <text  font-family="Droid Sans"  id="0.1.2.0.0" font-size="9.94">RST</text>
     </g>
    </g>
   </g>
   <g   id="0.1.3" transform="matrix(1 0 0 1 30.4038 88.6284)">
    <g   id="0.1.3">
     <g   id="0.1.3.0">
-     <text  font-family="DroidSans"  id="0.1.3.0.0" font-size="9.94">AREF</text>
+     <text  font-family="Droid Sans"  id="0.1.3.0.0" font-size="9.94">AREF</text>
     </g>
    </g>
   </g>
@@ -27,14 +27,14 @@
    <g   id="0.1.5.0" transform="matrix(1 0 0 1 78.5713 95.1011)">
     <g   id="0.1.5.0">
      <g   id="0.1.5.0.0">
-      <text  font-family="DroidSans"  id="0.1.5.0.0.0" font-size="17.98">Teensy</text>
+      <text  font-family="Droid Sans"  id="0.1.5.0.0.0" font-size="17.98">Teensy</text>
      </g>
     </g>
    </g>
    <g   id="0.1.5.1" transform="matrix(1 0 0 1 93.7505 116.6763)">
     <g   id="0.1.5.1">
      <g   id="0.1.5.1.0">
-      <text  font-family="DroidSans"  id="0.1.5.1.0.0" font-size="17.98">3.0</text>
+      <text  font-family="Droid Sans"  id="0.1.5.1.0.0" font-size="17.98">3.0</text>
      </g>
     </g>
    </g>
@@ -51,49 +51,49 @@
    <g   id="0.1.8.6" transform="matrix(1 0 0 1 30.4038 110.0298)">
     <g   id="0.1.8.6">
      <g   id="0.1.8.6.0">
-      <text  font-family="DroidSans"  id="0.1.8.6.0.0" font-size="9.9889">Program</text>
+      <text  font-family="Droid Sans"  id="0.1.8.6.0.0" font-size="9.9889">Program</text>
      </g>
     </g>
    </g>
    <g   id="0.1.8.7" transform="matrix(1 0 0 1 32.2759 151.2026)">
     <g   id="0.1.8.7">
      <g   id="0.1.8.7.0">
-      <text  font-family="DroidSans"  id="0.1.8.7.0.0" font-size="9.9889">A0/D14</text>
+      <text  font-family="Droid Sans"  id="0.1.8.7.0.0" font-size="9.9889">A0/D14</text>
      </g>
     </g>
    </g>
    <g   id="0.1.8.8" transform="matrix(1 0 0 1 32.2759 172.6382)">
     <g   id="0.1.8.8">
      <g   id="0.1.8.8.0">
-      <text  font-family="DroidSans"  id="0.1.8.8.0.0" font-size="9.9889">A1/D15</text>
+      <text  font-family="Droid Sans"  id="0.1.8.8.0.0" font-size="9.9889">A1/D15</text>
      </g>
     </g>
    </g>
    <g   id="0.1.8.9" transform="matrix(1 0 0 1 32.2759 194.0776)">
     <g   id="0.1.8.9">
      <g   id="0.1.8.9.0">
-      <text  font-family="DroidSans"  id="0.1.8.9.0.0" font-size="9.9889">A2/D16</text>
+      <text  font-family="Droid Sans"  id="0.1.8.9.0.0" font-size="9.9889">A2/D16</text>
      </g>
     </g>
    </g>
    <g   id="0.1.8.10" transform="matrix(1 0 0 1 32.2759 215.5151)">
     <g   id="0.1.8.10">
      <g   id="0.1.8.10.0">
-      <text  font-family="DroidSans"  id="0.1.8.10.0.0" font-size="9.9889">A3/D17</text>
+      <text  font-family="Droid Sans"  id="0.1.8.10.0.0" font-size="9.9889">A3/D17</text>
      </g>
     </g>
    </g>
    <g   id="0.1.8.11" transform="matrix(1 0 0 1 32.2759 236.9526)">
     <g   id="0.1.8.11">
      <g   id="0.1.8.11.0">
-      <text  font-family="DroidSans"  id="0.1.8.11.0.0" font-size="9.9889">A4/D18</text>
+      <text  font-family="Droid Sans"  id="0.1.8.11.0.0" font-size="9.9889">A4/D18</text>
      </g>
     </g>
    </g>
    <g   id="0.1.8.12" transform="matrix(1 0 0 1 32.2759 258.3931)">
     <g   id="0.1.8.12">
      <g   id="0.1.8.12.0">
-      <text  font-family="DroidSans"  id="0.1.8.12.0.0" font-size="9.9889">A5/D19</text>
+      <text  font-family="Droid Sans"  id="0.1.8.12.0.0" font-size="9.9889">A5/D19</text>
      </g>
     </g>
    </g>
@@ -104,28 +104,28 @@
    <g   id="0.1.8.17" transform="matrix(1 0 0 1 32.2759 278.6138)">
     <g   id="0.1.8.17">
      <g   id="0.1.8.17.0">
-      <text  font-family="DroidSans"  id="0.1.8.17.0.0" font-size="9.9889">A6/D20 PWM</text>
+      <text  font-family="Droid Sans"  id="0.1.8.17.0.0" font-size="9.9889">A6/D20 PWM</text>
      </g>
     </g>
    </g>
    <g   id="0.1.8.18" transform="matrix(1 0 0 1 32.2759 300.0483)">
     <g   id="0.1.8.18">
      <g   id="0.1.8.18.0">
-      <text  font-family="DroidSans"  id="0.1.8.18.0.0" font-size="9.9889">A7/D21 PWM</text>
+      <text  font-family="Droid Sans"  id="0.1.8.18.0.0" font-size="9.9889">A7/D21 PWM</text>
      </g>
     </g>
    </g>
    <g   id="0.1.8.19" transform="matrix(1 0 0 1 32.2759 321.4888)">
     <g   id="0.1.8.19">
      <g   id="0.1.8.19.0">
-      <text  font-family="DroidSans"  id="0.1.8.19.0.0" font-size="9.9889">A8/D22 PWM</text>
+      <text  font-family="Droid Sans"  id="0.1.8.19.0.0" font-size="9.9889">A8/D22 PWM</text>
      </g>
     </g>
    </g>
    <g   id="0.1.8.20" transform="matrix(1 0 0 1 32.2759 342.9263)">
     <g   id="0.1.8.20">
      <g   id="0.1.8.20.0">
-      <text  font-family="DroidSans"  id="0.1.8.20.0.0" font-size="9.9889">A9/D23 PWM</text>
+      <text  font-family="Droid Sans"  id="0.1.8.20.0.0" font-size="9.9889">A9/D23 PWM</text>
      </g>
     </g>
    </g>
@@ -148,14 +148,14 @@
     <g   id="0.1.8.34.2" transform="matrix(1 0 0 1 32.2759 365.9722)">
      <g   id="0.1.8.34.2">
       <g   id="0.1.8.34.2.0">
-       <text  font-family="DroidSans"  id="0.1.8.34.2.0.0" font-size="9.9889">A10</text>
+       <text  font-family="Droid Sans"  id="0.1.8.34.2.0.0" font-size="9.9889">A10</text>
       </g>
      </g>
     </g>
     <g   id="0.1.8.34.3" transform="matrix(1 0 0 1 32.2759 387.4116)">
      <g   id="0.1.8.34.3">
       <g   id="0.1.8.34.3.0">
-       <text  font-family="DroidSans"  id="0.1.8.34.3.0.0" font-size="9.9889">A11</text>
+       <text  font-family="Droid Sans"  id="0.1.8.34.3.0.0" font-size="9.9889">A11</text>
       </g>
      </g>
     </g>
@@ -183,7 +183,7 @@
     <g   id="0.1.11.0.1" transform="matrix(1 0 0 1 88.314 36.8726)">
      <g   id="0.1.11.0.1">
       <g   id="0.1.11.0.1.0">
-       <text  font-family="DroidSans"  id="0.1.11.0.1.0.0" font-size="8">Vin</text>
+       <text  font-family="Droid Sans"  id="0.1.11.0.1.0.0" font-size="8">Vin</text>
       </g>
      </g>
     </g>
@@ -197,7 +197,7 @@
     <g   id="0.1.11.1.1" transform="matrix(1 0 0 1 66.0254 36.8726)">
      <g   id="0.1.11.1.1">
       <g   id="0.1.11.1.1.0">
-       <text  font-family="DroidSans"  id="0.1.11.1.1.0.0" font-size="8">3V3</text>
+       <text  font-family="Droid Sans"  id="0.1.11.1.1.0.0" font-size="8">3V3</text>
       </g>
      </g>
     </g>
@@ -211,7 +211,7 @@
     <g   id="0.1.11.2.1" transform="matrix(1 0 0 1 106.0371 36.8726)">
      <g   id="0.1.11.2.1">
       <g   id="0.1.11.2.1.0">
-       <text  font-family="DroidSans"  id="0.1.11.2.1.0.0" font-size="8">VBat</text>
+       <text  font-family="Droid Sans"  id="0.1.11.2.1.0.0" font-size="8">VBat</text>
       </g>
      </g>
     </g>
@@ -226,7 +226,7 @@
      <g   id="0.1.11.3.0.1" transform="matrix(1 0 0 1 126.7217 36.8726)">
       <g   id="0.1.11.3.0.1">
        <g   id="0.1.11.3.0.1.0">
-        <text  font-family="DroidSans"  id="0.1.11.3.0.1.0.0" font-size="8">VUSB</text>
+        <text  font-family="Droid Sans"  id="0.1.11.3.0.1.0.0" font-size="8">VUSB</text>
        </g>
       </g>
      </g>
@@ -253,84 +253,84 @@
    <g   id="0.1.12.12" transform="matrix(1 0 0 1 149.2051 88.7241)">
     <g   id="0.1.12.12">
      <g   id="0.1.12.12.0">
-      <text  font-family="DroidSans"  id="0.1.12.12.0.0" font-size="9.94">D1 TX1</text>
+      <text  font-family="Droid Sans"  id="0.1.12.12.0.0" font-size="9.94">D1 TX1</text>
      </g>
     </g>
    </g>
    <g   id="0.1.12.13" transform="matrix(1 0 0 1 167.8584 110.3325)">
     <g   id="0.1.12.13">
      <g   id="0.1.12.13.0">
-      <text  font-family="DroidSans"  id="0.1.12.13.0.0" font-size="9.94">D2</text>
+      <text  font-family="Droid Sans"  id="0.1.12.13.0.0" font-size="9.94">D2</text>
      </g>
     </g>
    </g>
    <g   id="0.1.12.14" transform="matrix(1 0 0 1 142.1152 131.5151)">
     <g   id="0.1.12.14">
      <g   id="0.1.12.14.0">
-      <text  font-family="DroidSans"  id="0.1.12.14.0.0" font-size="9.94">D3 PWM</text>
+      <text  font-family="Droid Sans"  id="0.1.12.14.0.0" font-size="9.94">D3 PWM</text>
      </g>
     </g>
    </g>
    <g   id="0.1.12.15" transform="matrix(1 0 0 1 142.1152 152.27)">
     <g   id="0.1.12.15">
      <g   id="0.1.12.15.0">
-      <text  font-family="DroidSans"  id="0.1.12.15.0.0" font-size="9.94">D4 PWM</text>
+      <text  font-family="Droid Sans"  id="0.1.12.15.0.0" font-size="9.94">D4 PWM</text>
      </g>
     </g>
    </g>
    <g   id="0.1.12.16" transform="matrix(1 0 0 1 142.1152 173.8823)">
     <g   id="0.1.12.16">
      <g   id="0.1.12.16.0">
-      <text  font-family="DroidSans"  id="0.1.12.16.0.0" font-size="9.94">D5 PWM</text>
+      <text  font-family="Droid Sans"  id="0.1.12.16.0.0" font-size="9.94">D5 PWM</text>
      </g>
     </g>
    </g>
    <g   id="0.1.12.17" transform="matrix(1 0 0 1 142.1152 194.6401)">
     <g   id="0.1.12.17">
      <g   id="0.1.12.17.0">
-      <text  font-family="DroidSans"  id="0.1.12.17.0.0" font-size="9.94">D6 PWM</text>
+      <text  font-family="Droid Sans"  id="0.1.12.17.0.0" font-size="9.94">D6 PWM</text>
      </g>
     </g>
    </g>
    <g   id="0.1.12.18" transform="matrix(1 0 0 1 148.502 216.2446)">
     <g   id="0.1.12.18">
      <g   id="0.1.12.18.0">
-      <text  font-family="DroidSans"  id="0.1.12.18.0.0" font-size="9.94">D7 RX3</text>
+      <text  font-family="Droid Sans"  id="0.1.12.18.0.0" font-size="9.94">D7 RX3</text>
      </g>
     </g>
    </g>
    <g   id="0.1.12.19" transform="matrix(1 0 0 1 149.2051 237.4282)">
     <g   id="0.1.12.19">
      <g   id="0.1.12.19.0">
-      <text  font-family="DroidSans"  id="0.1.12.19.0.0" font-size="9.94">D8 TX3</text>
+      <text  font-family="Droid Sans"  id="0.1.12.19.0.0" font-size="9.94">D8 TX3</text>
      </g>
     </g>
    </g>
    <g   id="0.1.12.20" transform="matrix(1 0 0 1 122.7598 259.0366)">
     <g   id="0.1.12.20">
      <g   id="0.1.12.20.0">
-      <text  font-family="DroidSans"  id="0.1.12.20.0.0" font-size="9.94">D9 PWM RX2</text>
+      <text  font-family="Droid Sans"  id="0.1.12.20.0.0" font-size="9.94">D9 PWM RX2</text>
      </g>
     </g>
    </g>
    <g   id="0.1.12.21" transform="matrix(1 0 0 1 117.9883 279.7915)">
     <g   id="0.1.12.21">
      <g   id="0.1.12.21.0">
-      <text  font-family="DroidSans"  id="0.1.12.21.0.0" font-size="9.94">D10 PWM TX2</text>
+      <text  font-family="Droid Sans"  id="0.1.12.21.0.0" font-size="9.94">D10 PWM TX2</text>
      </g>
     </g>
    </g>
    <g   id="0.1.12.22" transform="matrix(1 0 0 1 162.3828 301.4019)">
     <g   id="0.1.12.22">
      <g   id="0.1.12.22.0">
-      <text  font-family="DroidSans"  id="0.1.12.22.0.0" font-size="9.94">D11</text>
+      <text  font-family="Droid Sans"  id="0.1.12.22.0.0" font-size="9.94">D11</text>
      </g>
     </g>
    </g>
    <g   id="0.1.12.23" transform="matrix(1 0 0 1 162.3828 322.5825)">
     <g   id="0.1.12.23">
      <g   id="0.1.12.23.0">
-      <text  font-family="DroidSans"  id="0.1.12.23.0.0" font-size="9.94">D12</text>
+      <text  font-family="Droid Sans"  id="0.1.12.23.0.0" font-size="9.94">D12</text>
      </g>
     </g>
    </g>
@@ -338,7 +338,7 @@
    <g   id="0.1.12.25" transform="matrix(1 0 0 1 148.502 67.7905)">
     <g   id="0.1.12.25">
      <g   id="0.1.12.25.0">
-      <text  font-family="DroidSans"  id="0.1.12.25.0.0" font-size="9.94">D0 RX1</text>
+      <text  font-family="Droid Sans"  id="0.1.12.25.0.0" font-size="9.94">D0 RX1</text>
      </g>
     </g>
    </g>
@@ -372,7 +372,7 @@
    <g   id="0.1.12.53" transform="matrix(1 0 0 1 162.3828 343.6733)">
     <g   id="0.1.12.53">
      <g   id="0.1.12.53.0">
-      <text  font-family="DroidSans"  id="0.1.12.53.0.0" font-size="9.94">D13</text>
+      <text  font-family="Droid Sans"  id="0.1.12.53.0.0" font-size="9.94">D13</text>
      </g>
     </g>
    </g>
@@ -390,7 +390,7 @@
          <g   id="0.1.13.1.0.0.0.0.0.0" transform="matrix(1 0 0 1 -22.5264 -3.051758e-005)">
           <g   id="0.1.13.1.0.0.0.0.0">
            <g   id="0.1.13.1.0.0.0.0.0.0">
-            <text  font-family="DroidSans"  id="_x30_.1.7.0.0" font-size="9.94">AGND</text>
+            <text  font-family="Droid Sans"  id="_x30_.1.7.0.0" font-size="9.94">AGND</text>
            </g>
           </g>
          </g>
@@ -412,7 +412,7 @@
          <g   id="0.1.13.5.0.0.0.0.0.0" transform="matrix(1 0 0 1 22.5034 -3.051758e-005)">
           <g   id="0.1.13.5.0.0.0.0.0">
            <g   id="0.1.13.5.0.0.0.0.0.0">
-            <text  font-family="DroidSans"  id="_x30_.1.7.0.0_2_" font-size="9.94">GND</text>
+            <text  font-family="Droid Sans"  id="_x30_.1.7.0.0_2_" font-size="9.94">GND</text>
            </g>
           </g>
          </g>

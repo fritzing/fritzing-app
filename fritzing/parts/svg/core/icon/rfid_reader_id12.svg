@@ -7,7 +7,7 @@
 <g id="icon">
 	<rect x="3.334" y="54.262" fill="#231F20" width="53.859" height="8.915"/>
 	<rect x="3.334" y="0" fill="#414141" width="53.859" height="54.424"/>
-	<text transform="matrix(1 0 0 1 7.6448 49.3606)" fill="#CCCCCC" font-family="'DroidSans'" font-size="16">ID12</text>
-	<text transform="matrix(1 0 0 1 7.6448 31.3259)" fill="#CCCCCC" font-family="'DroidSans'" font-size="16">RFID</text>
+	<text transform="matrix(1 0 0 1 7.6448 49.3606)" fill="#CCCCCC" font-family="'Droid Sans'" font-size="16">ID12</text>
+	<text transform="matrix(1 0 0 1 7.6448 31.3259)" fill="#CCCCCC" font-family="'Droid Sans'" font-size="16">RFID</text>
 </g>
 </svg>

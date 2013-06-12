@@ -1292,7 +1292,7 @@
 					<rect x="-68.093" y="-55.421" transform="matrix(2.578893e-006 1 -1 2.578893e-006 -116.7812 6.0639)" opacity="0.1" enable-background="new    " width="13.341" height="0.125"/>
 				
 					<rect x="-62.012" y="-55.421" transform="matrix(2.578893e-006 1 -1 2.578893e-006 -110.7011 -0.0152)" opacity="0.2" fill="#FFFFFF" enable-background="new    " width="13.338" height="0.125"/>
-				<text transform="matrix(0 1 -1 0 -59.6511 -58.3358)" fill="#CCCCCC" font-family="'DroidSans'" font-size="3.4824">C106</text>
+				<text transform="matrix(0 1 -1 0 -59.6511 -58.3358)" fill="#CCCCCC" font-family="'Droid Sans'" font-size="3.4824">C106</text>
 			</g>
 		</g>
 		<g id="con2_usb_micro_b_at_2_" transform="matrix(1, 0, 0, 1, 14.5557, 123.449)">

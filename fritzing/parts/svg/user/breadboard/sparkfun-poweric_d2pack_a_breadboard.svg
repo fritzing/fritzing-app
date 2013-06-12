@@ -28,8 +28,8 @@
      <path d="M0,343.028c27.8056,0,50.3472,22.5417,50.3472,50.3472S27.8056,443.722,0,443.722L0,343.028z"/>
      <path d="M480.306,443.722c-27.8056,0,-50.3472,-22.5417,-50.3472,-50.3472s22.5417,-50.3472,50.3472,-50.3472L480.306,443.722z"/>
      <text transform="matrix(1, 0, 0, 1, 150, 220.14)">
-      <tspan x="0" y="0" fill="#808080" font-family="'DroidSans'" font-size="3.3766">LD1085</tspan>
-      <tspan x="7.512" y="4.052" fill="#808080" font-family="'DroidSans'" font-size="3.3766">Vb</tspan>
+      <tspan x="0" y="0" fill="#808080" font-family="'Droid Sans'" font-size="3.3766">LD1085</tspan>
+      <tspan x="7.512" y="4.052" fill="#808080" font-family="'Droid Sans'" font-size="3.3766">Vb</tspan>
      </text>
      <g opacity="0.2">
       <polygon fill="#FFFFFF" points="0,38.0278,102.431,5.125,377.875,5.125,480.306,38.0278,480.306,32.9028,377.875,0,102.431,0,0,32.9028"/>

@@ -76,7 +76,7 @@
        style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round"
        id="rect2873" />
     <g
-       style="font-size:235px;text-align:center;line-height:125%;writing-mode:lr;text-anchor:middle;fill:#000000;stroke:none;font-family:DroidSans"
+       style="font-size:235px;text-align:center;line-height:125%;writing-mode:lr;text-anchor:middle;fill:#000000;stroke:none;font-family:Droid Sans"
        id="label"
        font-size="235">
       <text
@@ -106,7 +106,7 @@
        style="fill:none;stroke-width:0"
        id="connector0terminal" />
     <g
-       style="font-size:130px;text-align:start;line-height:125%;writing-mode:lr;text-anchor:start;fill:#000000;stroke:none;font-family:DroidSans"
+       style="font-size:130px;text-align:start;line-height:125%;writing-mode:lr;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans"
        id="label0"
        font-size="130">
       <text
@@ -136,7 +136,7 @@
        style="fill:none;stroke-width:0"
        id="connector7terminal" />
     <g
-       style="font-size:130px;text-align:end;line-height:125%;writing-mode:lr;text-anchor:end;fill:#000000;stroke:none;font-family:DroidSans"
+       style="font-size:130px;text-align:end;line-height:125%;writing-mode:lr;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans"
        id="label7"
        font-size="130">
       <text
@@ -166,7 +166,7 @@
        style="fill:none;stroke-width:0"
        id="connector1terminal" />
     <g
-       style="font-size:130px;text-align:start;line-height:125%;writing-mode:lr;text-anchor:start;fill:#000000;stroke:none;font-family:DroidSans"
+       style="font-size:130px;text-align:start;line-height:125%;writing-mode:lr;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans"
        id="label1"
        font-size="130">
       <text
@@ -196,7 +196,7 @@
        style="fill:none;stroke-width:0"
        id="connector6terminal" />
     <g
-       style="font-size:130px;text-align:end;line-height:125%;writing-mode:lr;text-anchor:end;fill:#000000;stroke:none;font-family:DroidSans"
+       style="font-size:130px;text-align:end;line-height:125%;writing-mode:lr;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans"
        id="label6"
        font-size="130">
       <text
@@ -226,7 +226,7 @@
        style="fill:none;stroke-width:0"
        id="connector2terminal" />
     <g
-       style="font-size:130px;text-align:start;line-height:125%;writing-mode:lr;text-anchor:start;fill:#000000;stroke:none;font-family:DroidSans"
+       style="font-size:130px;text-align:start;line-height:125%;writing-mode:lr;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans"
        id="label2"
        font-size="130">
       <text
@@ -256,7 +256,7 @@
        style="fill:none;stroke-width:0"
        id="connector5terminal" />
     <g
-       style="font-size:130px;text-align:end;line-height:125%;writing-mode:lr;text-anchor:end;fill:#000000;stroke:none;font-family:DroidSans"
+       style="font-size:130px;text-align:end;line-height:125%;writing-mode:lr;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans"
        id="label5"
        font-size="130">
       <text
@@ -286,7 +286,7 @@
        style="fill:none;stroke-width:0"
        id="connector3terminal" />
     <g
-       style="font-size:130px;text-align:start;line-height:125%;writing-mode:lr;text-anchor:start;fill:#000000;stroke:none;font-family:DroidSans"
+       style="font-size:130px;text-align:start;line-height:125%;writing-mode:lr;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans"
        id="label3"
        font-size="130">
       <text
@@ -316,7 +316,7 @@
        style="fill:none;stroke-width:0"
        id="connector4terminal" />
     <g
-       style="font-size:130px;text-align:end;line-height:125%;writing-mode:lr;text-anchor:end;fill:#000000;stroke:none;font-family:DroidSans"
+       style="font-size:130px;text-align:end;line-height:125%;writing-mode:lr;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans"
        id="label4"
        font-size="130">
       <text
@@ -325,7 +325,7 @@
          id="tspan3070">PWM0</text>
     </g>
     <g
-       style="font-size:130px;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;stroke:none;font-family:DroidSans"
+       style="font-size:130px;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans"
        id="label0-1-2"
        font-size="130">
       <text
@@ -334,7 +334,7 @@
          id="tspan3194">2</text>
     </g>
     <g
-       style="font-size:130px;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;stroke:none;font-family:DroidSans"
+       style="font-size:130px;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans"
        id="label0-0-3"
        font-size="130">
       <text
@@ -343,7 +343,7 @@
          id="tspan3192">1</text>
     </g>
     <g
-       style="font-size:130px;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;stroke:none;font-family:DroidSans"
+       style="font-size:130px;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans"
        id="label0-5-1"
        font-size="130">
       <text
@@ -352,7 +352,7 @@
          id="tspan3196">3</text>
     </g>
     <g
-       style="font-size:130px;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;stroke:none;font-family:DroidSans"
+       style="font-size:130px;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans"
        id="label0-11-87"
        font-size="130">
       <text
@@ -361,7 +361,7 @@
          id="tspan3198">4</text>
     </g>
     <g
-       style="font-size:130px;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;stroke:none;font-family:DroidSans"
+       style="font-size:130px;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans"
        id="label0-7-27"
        font-size="130">
       <text
@@ -370,7 +370,7 @@
          id="tspan3200">5</text>
     </g>
     <g
-       style="font-size:130px;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;stroke:none;font-family:DroidSans"
+       style="font-size:130px;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans"
        id="label0-4-3"
        font-size="130">
       <text
@@ -379,7 +379,7 @@
          id="tspan3202">6</text>
     </g>
     <g
-       style="font-size:130px;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;stroke:none;font-family:DroidSans"
+       style="font-size:130px;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans"
        id="label0-2-9"
        font-size="130">
       <text
@@ -388,7 +388,7 @@
          id="tspan3204">7</text>
     </g>
     <g
-       style="font-size:130px;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;stroke:none;font-family:DroidSans"
+       style="font-size:130px;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans"
        id="label0-2-9-0"
        font-size="130">
       <text

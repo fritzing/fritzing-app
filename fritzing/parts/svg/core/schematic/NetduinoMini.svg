@@ -75,77 +75,77 @@
   <line  fill="none" stroke="#000" stroke-linejoin="round" id="line22" stroke-linecap="round" y1="65.88" y2="65.88" x1="169.59" stroke-width="2.4" x2="191.19"/>
   <line  fill="none" stroke="#000" stroke-linejoin="round" id="line23" stroke-linecap="round" y1="44.28" y2="44.28" x1="169.59" stroke-width="2.4" x2="191.19"/>
   <line  fill="none" stroke="#000" stroke-linejoin="round" id="line24" stroke-linecap="round" y1="22.68" y2="22.68" x1="169.59" stroke-width="2.4" x2="191.19"/>
-  <text  x="-68.942375" y="40.476498" font-family="DroidSans" id="label1-3" transform="matrix(0,-1,1,0,0,0)" font-size="14.39999771px">RS-232</text>
-  <text  x="27.848143" y="90.000198" font-family="DroidSans" id="label4" font-size="9.35999966px">GND</text>
-  <text  x="29.557831" y="111.5999" font-family="DroidSans" id="label5" font-size="9.35999966px">5</text>
-  <text  x="29.594393" y="133.20039" font-family="DroidSans" id="label6" font-size="9.35999966px">6</text>
-  <text  x="29.502987" y="154.8" font-family="DroidSans" id="label7" font-size="9.35999966px">7</text>
-  <text  x="29.566971" y="176.4006" font-family="DroidSans" id="label8" font-size="9.35999966px">8</text>
-  <text  x="29.557831" y="198.0002" font-family="DroidSans" id="label9" font-size="9.35999966px">9</text>
-  <text  x="27.327127" y="219.5999" font-family="DroidSans" id="label10" font-size="9.35999966px">10</text>
-  <text  x="27.327127" y="241.19949" font-family="DroidSans" id="label11" font-size="9.35999966px">11</text>
-  <text  x="27.327127" y="262.79999" font-family="DroidSans" id="label12" font-size="9.35999966px">12</text>
-  <text  x="151.68614" y="262.79999" font-family="DroidSans" style="text-anchor:start;text-align:start;" id="label13" font-size="9.35999966px">13</text>
-  <text  x="151.68614" y="241.19949" font-family="DroidSans" style="text-anchor:start;text-align:start;" id="label14" font-size="9.35999966px">14</text>
-  <text  x="151.68614" y="219.5999" font-family="DroidSans" style="text-anchor:start;text-align:start;" id="label15" font-size="9.35999966px">15</text>
-  <text  x="151.68614" y="198.0002" font-family="DroidSans" style="text-anchor:start;text-align:start;" id="label16" font-size="9.35999966px">16</text>
-  <text  x="151.68614" y="176.4006" font-family="DroidSans" id="label17" font-size="9.35999966px">17</text>
-  <text  x="151.68614" y="154.8" font-family="DroidSans" id="label18" font-size="9.35999966px">18</text>
-  <text  x="151.68614" y="133.20039" font-family="DroidSans" id="label19" font-size="9.35999966px">19</text>
-  <text  x="152.43111" y="111.5999" font-family="DroidSans" id="label20" font-size="9.35999966px">20</text>
-  <text  x="152.31685" y="90.000198" font-family="DroidSans" id="label21" font-size="9.35999966px">5V</text>
+  <text  x="-68.942375" y="40.476498" font-family="Droid Sans" id="label1-3" transform="matrix(0,-1,1,0,0,0)" font-size="14.39999771px">RS-232</text>
+  <text  x="27.848143" y="90.000198" font-family="Droid Sans" id="label4" font-size="9.35999966px">GND</text>
+  <text  x="29.557831" y="111.5999" font-family="Droid Sans" id="label5" font-size="9.35999966px">5</text>
+  <text  x="29.594393" y="133.20039" font-family="Droid Sans" id="label6" font-size="9.35999966px">6</text>
+  <text  x="29.502987" y="154.8" font-family="Droid Sans" id="label7" font-size="9.35999966px">7</text>
+  <text  x="29.566971" y="176.4006" font-family="Droid Sans" id="label8" font-size="9.35999966px">8</text>
+  <text  x="29.557831" y="198.0002" font-family="Droid Sans" id="label9" font-size="9.35999966px">9</text>
+  <text  x="27.327127" y="219.5999" font-family="Droid Sans" id="label10" font-size="9.35999966px">10</text>
+  <text  x="27.327127" y="241.19949" font-family="Droid Sans" id="label11" font-size="9.35999966px">11</text>
+  <text  x="27.327127" y="262.79999" font-family="Droid Sans" id="label12" font-size="9.35999966px">12</text>
+  <text  x="151.68614" y="262.79999" font-family="Droid Sans" style="text-anchor:start;text-align:start;" id="label13" font-size="9.35999966px">13</text>
+  <text  x="151.68614" y="241.19949" font-family="Droid Sans" style="text-anchor:start;text-align:start;" id="label14" font-size="9.35999966px">14</text>
+  <text  x="151.68614" y="219.5999" font-family="Droid Sans" style="text-anchor:start;text-align:start;" id="label15" font-size="9.35999966px">15</text>
+  <text  x="151.68614" y="198.0002" font-family="Droid Sans" style="text-anchor:start;text-align:start;" id="label16" font-size="9.35999966px">16</text>
+  <text  x="151.68614" y="176.4006" font-family="Droid Sans" id="label17" font-size="9.35999966px">17</text>
+  <text  x="151.68614" y="154.8" font-family="Droid Sans" id="label18" font-size="9.35999966px">18</text>
+  <text  x="151.68614" y="133.20039" font-family="Droid Sans" id="label19" font-size="9.35999966px">19</text>
+  <text  x="152.43111" y="111.5999" font-family="Droid Sans" id="label20" font-size="9.35999966px">20</text>
+  <text  x="152.31685" y="90.000198" font-family="Droid Sans" id="label21" font-size="9.35999966px">5V</text>
   <g  id="label22">
-   <text  x="146.07719" y="68.400597" font-family="DroidSans" id="text116" font-size="9.35999966px">RST</text>
+   <text  x="146.07719" y="68.400597" font-family="Droid Sans" id="text116" font-size="9.35999966px">RST</text>
    <line  fill="none" stroke="#000" stroke-linejoin="round" id="line118" stroke-linecap="round" y1="59.812" x1="146.77" y2="59.812" stroke-width="0.80506" x2="164.1"/>
   </g>
-  <text  x="144.76439" y="46.799999" font-family="DroidSans" id="label23" font-size="9.35999966px">GND</text>
-  <text  x="147.9644" y="26.000011" font-family="DroidSans" id="label24" font-size="9.35999966px">VIN</text>
+  <text  x="144.76439" y="46.799999" font-family="Droid Sans" id="label23" font-size="9.35999966px">GND</text>
+  <text  x="147.9644" y="26.000011" font-family="Droid Sans" id="label24" font-size="9.35999966px">VIN</text>
   <g  id="g1">
-   <g font-family="DroidSans" style="writing-mode:lr-tb;text-anchor:start;text-align:start;" line-height="125%" id="1" font-size="6.9921999px">
+   <g font-family="Droid Sans" style="writing-mode:lr-tb;text-anchor:start;text-align:start;" line-height="125%" id="1" font-size="6.9921999px">
     <text x="6.9906197" y="19.821253" id="tspan4100-6">TX1</text>
    </g>
    <polygon  points="206.34,311.2,211.05,313.92,206.34,316.63" id="ar1" transform="matrix(-1,0,0,1,211.68198,-296.2767)"/>
   </g>
   <g  id="g2">
-   <g font-family="DroidSans" style="writing-mode:lr-tb;text-anchor:start;text-align:start;" line-height="125%" id="2" font-size="6.9921999px">
+   <g font-family="Droid Sans" style="writing-mode:lr-tb;text-anchor:start;text-align:start;" line-height="125%" id="2" font-size="6.9921999px">
     <text x="6.9903312" y="41.566097" id="tspan4104-1">RX1</text>
    </g>
    <polygon  points="211.05,337.24,206.34,334.52,211.05,331.81" id="ar2" transform="matrix(-1,0,0,1,211.68198,-295.46915)"/>
   </g>
-  <g font-family="DroidSans" style="writing-mode:lr-tb;text-anchor:start;text-align:start;" line-height="125%" id="3" font-size="6.9921999px">
+  <g font-family="Droid Sans" style="writing-mode:lr-tb;text-anchor:start;text-align:start;" line-height="125%" id="3" font-size="6.9921999px">
    <text x="4.5514402" y="63.481335" id="tspan3925">DTR</text>
   </g>
-  <text  x="5.1018295" y="106.19151" font-family="DroidSans" id="5" font-size="6.9921999px">AD0</text>
-  <text  x="5.1018295" y="127.68006" font-family="DroidSans" id="6" font-size="6.9921999px">AD1</text>
-  <text  x="5.1018295" y="149.3918" font-family="DroidSans" id="7" font-size="6.9921999px">AD2</text>
-  <text  x="5.1018295" y="170.88031" font-family="DroidSans" id="8" font-size="6.9921999px">AD3</text>
-  <g font-family="DroidSans" style="writing-mode:lr-tb;text-anchor:start;text-align:start;" line-height="125%" id="9" font-size="6.9921999px">
+  <text  x="5.1018295" y="106.19151" font-family="Droid Sans" id="5" font-size="6.9921999px">AD0</text>
+  <text  x="5.1018295" y="127.68006" font-family="Droid Sans" id="6" font-size="6.9921999px">AD1</text>
+  <text  x="5.1018295" y="149.3918" font-family="Droid Sans" id="7" font-size="6.9921999px">AD2</text>
+  <text  x="5.1018295" y="170.88031" font-family="Droid Sans" id="8" font-size="6.9921999px">AD3</text>
+  <g font-family="Droid Sans" style="writing-mode:lr-tb;text-anchor:start;text-align:start;" line-height="125%" id="9" font-size="6.9921999px">
    <text x="2.9584367" y="192.27156" id="tspan4096-7-6">TWD</text>
   </g>
-  <g font-family="DroidSans" style="writing-mode:lr-tb;text-anchor:start;text-align:start;" line-height="125%" id="10" font-size="6.9921999px">
+  <g font-family="Droid Sans" style="writing-mode:lr-tb;text-anchor:start;text-align:start;" line-height="125%" id="10" font-size="6.9921999px">
    <text x="-0.2415387" y="214.26805" id="tspan4092-0-3">TWCK</text>
   </g>
   <g  id="g11">
-   <g font-family="DroidSans" style="writing-mode:lr-tb;text-anchor:start;text-align:start;" line-height="125%" id="11" font-size="6.9921999px">
+   <g font-family="Droid Sans" style="writing-mode:lr-tb;text-anchor:start;text-align:start;" line-height="125%" id="11" font-size="6.9921999px">
     <text x="6.9904294" y="236.02776" id="tspan4096-6">TX0</text>
    </g>
    <polygon  points="211.05,313.92,206.34,316.63,206.34,311.2" id="ar11" transform="matrix(-1,0,0,1,211.68259,-80.070497)"/>
   </g>
   <g  id="g12">
-   <g font-family="DroidSans" style="writing-mode:lr-tb;text-anchor:start;text-align:start;" line-height="125%" id="12" font-size="6.9921999px">
+   <g font-family="Droid Sans" style="writing-mode:lr-tb;text-anchor:start;text-align:start;" line-height="125%" id="12" font-size="6.9921999px">
     <text x="6.9904294" y="258.02423" id="tspan4092-8">RX0</text>
    </g>
    <polygon  points="211.05,337.24,206.34,334.52,211.05,331.81" id="ar12" transform="matrix(-1,0,0,1,211.68259,-78.470497)"/>
   </g>
-  <text  x="171.69189" y="257.50485" font-family="DroidSans" id="13" font-size="6.9921999px">CS0</text>
-  <text  x="171.52119" y="236.24825" font-family="DroidSans" id="14" font-size="6.9921999px">MOSI</text>
-  <text  x="171.52119" y="214.30449" font-family="DroidSans" id="15" font-size="6.9921999px">MISO</text>
-  <text  x="171.72604" y="192.36755" font-family="DroidSans" id="16" font-size="6.9921999px">SPCK</text>
-  <text  x="171.50186" y="170.88031" font-family="DroidSans" id="17" font-size="6.9921999px">PWM0</text>
-  <text  x="171.50186" y="149.3918" font-family="DroidSans" id="18" font-size="6.9921999px">PWM1</text>
-  <text  x="171.50186" y="127.68006" font-family="DroidSans" id="19" font-size="6.9921999px">PWM2</text>
-  <text  x="171.50186" y="106.19151" font-family="DroidSans" id="20" font-size="6.9921999px">PWM3</text>
-  <text  x="59.733101" y="54.31324" font-family="DroidSans" id="label" font-size="18px">Netduino</text>
-  <text  x="79.556831" y="74.313232" font-family="DroidSans" id="label_1_" font-size="18px">Mini</text>
+  <text  x="171.69189" y="257.50485" font-family="Droid Sans" id="13" font-size="6.9921999px">CS0</text>
+  <text  x="171.52119" y="236.24825" font-family="Droid Sans" id="14" font-size="6.9921999px">MOSI</text>
+  <text  x="171.52119" y="214.30449" font-family="Droid Sans" id="15" font-size="6.9921999px">MISO</text>
+  <text  x="171.72604" y="192.36755" font-family="Droid Sans" id="16" font-size="6.9921999px">SPCK</text>
+  <text  x="171.50186" y="170.88031" font-family="Droid Sans" id="17" font-size="6.9921999px">PWM0</text>
+  <text  x="171.50186" y="149.3918" font-family="Droid Sans" id="18" font-size="6.9921999px">PWM1</text>
+  <text  x="171.50186" y="127.68006" font-family="Droid Sans" id="19" font-size="6.9921999px">PWM2</text>
+  <text  x="171.50186" y="106.19151" font-family="Droid Sans" id="20" font-size="6.9921999px">PWM3</text>
+  <text  x="59.733101" y="54.31324" font-family="Droid Sans" id="label" font-size="18px">Netduino</text>
+  <text  x="79.556831" y="74.313232" font-family="Droid Sans" id="label_1_" font-size="18px">Mini</text>
  </g>
 </svg>

@@ -5,21 +5,21 @@
   <g id="layer1" transform="translate(-201.99844,-375.87344)">
    <rect width="133.68626" x="230.2991" y="377.13004" height="224.75002" style="fill:none;stroke:#000000;stroke-width:2.50000024;stroke-linecap:round;stroke-linejoin:round" id="rect5"/>
    <line style="fill:none;stroke:#000000;stroke-width:2.50000024;stroke-linecap:round;stroke-linejoin:round" y1="412.88004" y2="412.88004" x1="203.2991" x2="228.9491"/>
-   <text x="238.03613" y="424.78027" style="font-size:11.70000076px;font-family:DroidSans" id="label0" font-size="9.36">1</text>
+   <text x="238.03613" y="424.78027" style="font-size:11.70000076px;font-family:Droid Sans" id="label0" font-size="9.36">1</text>
    <line style="fill:none;stroke:#000000;stroke-width:2.50000024;stroke-linecap:round;stroke-linejoin:round" y1="412.88004" y2="412.88004" x1="363.9866" x2="390.9866"/>
    <line style="fill:none;stroke:#000000;stroke-width:2.50000024;stroke-linecap:round;stroke-linejoin:round" y1="439.88004" y2="439.88004" x1="203.2991" x2="228.9491"/>
    <line style="fill:none;stroke:#000000;stroke-width:2.50000024;stroke-linecap:round;stroke-linejoin:round" y1="439.88004" y2="439.88004" x1="363.9866" x2="390.9866"/>
    <line style="fill:none;stroke:#000000;stroke-width:2.50000024;stroke-linecap:round;stroke-linejoin:round" y1="547.88" y2="547.88" x1="203.2991" x2="228.9491"/>
    <line style="fill:none;stroke:#000000;stroke-width:2.50000024;stroke-linecap:round;stroke-linejoin:round" y1="547.88" y2="547.88" x1="363.9866" x2="390.9866"/>
    <line style="fill:none;stroke:#000000;stroke-width:2.50000024;stroke-linecap:round;stroke-linejoin:round" y1="574.88129" y2="574.88129" x1="203.2991" x2="228.9491"/>
-   <text x="238.07867" y="586.29956" style="font-size:11.70000076px;font-family:DroidSans" id="label6" font-size="9.36">7</text>
+   <text x="238.07867" y="586.29956" style="font-size:11.70000076px;font-family:Droid Sans" id="label6" font-size="9.36">7</text>
    <line style="fill:none;stroke:#000000;stroke-width:2.50000024;stroke-linecap:round;stroke-linejoin:round" y1="574.88129" y2="574.88129" x1="363.9866" x2="390.9866"/>
-   <text x="350.23572" y="558.93103" style="font-size:11.70000076px;font-family:DroidSans" id="label0-3" font-size="9.36">9</text>
-   <text x="344.3378" y="450.60208" style="font-size:11.70000076px;font-family:DroidSans" id="label0-6" font-size="9.36">13</text>
-   <text x="343.73596" y="423.88095" style="font-size:11.70000076px;font-family:DroidSans" id="label0-0" font-size="9.36">14</text>
-   <text x="238.07867" y="558.29889" style="font-size:11.70000076px;font-family:DroidSans" id="label0-4" font-size="9.36">6-</text>
-   <text x="238.07867" y="451.59863" style="font-size:11.70000076px;font-family:DroidSans" id="label0-49" font-size="9.36">2+</text>
-   <text x="350.46823" y="586.86444" style="font-size:11.70000076px;font-family:DroidSans" id="label0-8" font-size="9.36">8</text>
+   <text x="350.23572" y="558.93103" style="font-size:11.70000076px;font-family:Droid Sans" id="label0-3" font-size="9.36">9</text>
+   <text x="344.3378" y="450.60208" style="font-size:11.70000076px;font-family:Droid Sans" id="label0-6" font-size="9.36">13</text>
+   <text x="343.73596" y="423.88095" style="font-size:11.70000076px;font-family:Droid Sans" id="label0-0" font-size="9.36">14</text>
+   <text x="238.07867" y="558.29889" style="font-size:11.70000076px;font-family:Droid Sans" id="label0-4" font-size="9.36">6-</text>
+   <text x="238.07867" y="451.59863" style="font-size:11.70000076px;font-family:Droid Sans" id="label0-49" font-size="9.36">2+</text>
+   <text x="350.46823" y="586.86444" style="font-size:11.70000076px;font-family:Droid Sans" id="label0-8" font-size="9.36">8</text>
    <g id="g3256" transform="matrix(1.2500001,0,0,1.2500001,201.9491,375.78003)">
     <path style="fill:none;stroke:#000000;stroke-width:1.36629915;stroke-linecap:square;stroke-miterlimit:0;stroke-opacity:1" id="path3070" d="m 59.999882,61.800004 c 3.313708,0 5.999999,2.686292 5.999999,6 0,3.313708 -2.686291,6.000003 -5.999999,6.000003"/>
     <path style="fill:none;stroke:#000000;stroke-width:1.70787406;stroke-linecap:square;stroke-miterlimit:0;stroke-opacity:1" id="path3070-9" d="m 72.5,92.250015 c 4.142136,0 7.5,3.357865 7.5,7.5 0,4.142135 -3.357864,7.500005 -7.5,7.500005" transform="matrix(0.79999995,0,0,0.79999995,1.9998852,35.999997)"/>
@@ -46,7 +46,7 @@
     <path style="fill:none;stroke:#000000;stroke-width:1.70787406;stroke-linecap:square;stroke-miterlimit:0;stroke-opacity:1;stroke-dasharray:none" id="path3896-2-6" d="m 50.258188,64.006653 a 0.63833433,0.63833433 0 1 1 -1.276668,0 0.63833433,0.63833433 0 1 1 1.276668,0 z" transform="matrix(0.79999995,0,0,0.79999995,64.203474,-21.547266)"/>
    </g>
    <path style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" id="path3919" d="m 251.99844,497.19415 0,50.43313"/>
-   <text x="264.38574" y="401.77054" style="font-size:21.15000153px;font-family:DroidSans" id="label" font-size="16.92">D31A*</text>
+   <text x="264.38574" y="401.77054" style="font-size:21.15000153px;font-family:Droid Sans" id="label" font-size="16.92">D31A*</text>
   </g>
   <rect width="19.6867407371007" x="-0.3444666584766339" y="198.9377838329238" stroke="none" fill="none" height="2.936011498771506" id="connector6"/>
   <rect width="0.6867407371007" x="-0.3444666584766339" y="197.9377838329238" stroke="none" fill="none" height="2.936011498771506" id="connector6terminal"/>

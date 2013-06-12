@@ -16,6 +16,6 @@
 		<line id="connector1pin" fill="none" stroke="#555555" stroke-width="0.7" stroke-linecap="round" x1="29.016" y1="3.96" x2="21.816" y2="3.96"/>
 	<rect id="connector1terminal" x="29.016" y="3.96" fill="none" width="0" height="0.001"/>
 </g>
-<text transform="matrix(1 0 0 1 2.9768 2.7175)" fill="#787878" font-family="'DroidSans'" font-size="2">1</text>
-<text transform="matrix(1 0 0 1 24.8191 2.7175)" fill="#787878" font-family="'DroidSans'" font-size="2">2</text>
+<text transform="matrix(1 0 0 1 2.9768 2.7175)" fill="#787878" font-family="'Droid Sans'" font-size="2">1</text>
+<text transform="matrix(1 0 0 1 24.8191 2.7175)" fill="#787878" font-family="'Droid Sans'" font-size="2">2</text>
 </svg>

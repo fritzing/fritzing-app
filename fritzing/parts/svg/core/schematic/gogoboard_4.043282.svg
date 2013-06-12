@@ -131,46 +131,46 @@
   <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="319.31" stroke-width="2.415" x1="252.965" y2="319.31" x2="231.723"/>
   <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="129.329" stroke-width="2.415" x1="252.965" y2="129.329" x2="231.723"/>
   <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="340.546" stroke-width="2.415" x1="252.965" y2="340.546" x2="231.723"/>
-  <text xmlns="http://www.w3.org/2000/svg" font-family="DroidSans" transform="matrix(1 0 0 1 194.053 132.0601)" font-size="9.9889">VUNR</text>
-  <text xmlns="http://www.w3.org/2000/svg" font-family="DroidSans" transform="matrix(1 0 0 1 201.7805 195.9702)" font-size="9.9889">SDA</text>
+  <text xmlns="http://www.w3.org/2000/svg" font-family="Droid Sans" transform="matrix(1 0 0 1 194.053 132.0601)" font-size="9.9889">VUNR</text>
+  <text xmlns="http://www.w3.org/2000/svg" font-family="Droid Sans" transform="matrix(1 0 0 1 201.7805 195.9702)" font-size="9.9889">SDA</text>
   <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="193.019" stroke-width="1.9517" x1="231.781" y2="193.019" x2="253.016"/>
-  <text xmlns="http://www.w3.org/2000/svg" font-family="DroidSans" transform="matrix(1 0 0 1 203.759 216.8296)" font-size="9.9889">SCL</text>
+  <text xmlns="http://www.w3.org/2000/svg" font-family="Droid Sans" transform="matrix(1 0 0 1 203.759 216.8296)" font-size="9.9889">SCL</text>
   <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="213.878" stroke-width="1.9517" x1="231.781" y2="213.878" x2="253.016"/>
   <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="22.931" stroke-width="1.9517" x1="141.842" y2="1.695" x2="141.842"/>
   <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="22.931" stroke-width="1.9517" x1="99.319" y2="1.695" x2="99.319"/>
-  <text xmlns="http://www.w3.org/2000/svg" font-family="DroidSans" transform="matrix(1 0 0 1 123.8909 40.0913)" font-size="9.9889">VIN/BAT</text>
-  <text xmlns="http://www.w3.org/2000/svg" font-family="DroidSans" transform="matrix(1 0 0 1 93.3464 40.0913)" font-size="9.9889">5V</text>
+  <text xmlns="http://www.w3.org/2000/svg" font-family="Droid Sans" transform="matrix(1 0 0 1 123.8909 40.0913)" font-size="9.9889">VIN/BAT</text>
+  <text xmlns="http://www.w3.org/2000/svg" font-family="Droid Sans" transform="matrix(1 0 0 1 93.3464 40.0913)" font-size="9.9889">5V</text>
   <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="191.869" stroke-width="2.415" x1="1.26" y2="191.869" x2="22.446"/>
   <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="213.105" stroke-width="2.415" x1="1.26" y2="213.105" x2="22.446"/>
   <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="234.339" stroke-width="2.415" x1="1.26" y2="234.339" x2="22.446"/>
   <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="255.576" stroke-width="2.415" x1="1.26" y2="255.576" x2="22.446"/>
   <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="276.814" stroke-width="2.415" x1="1.26" y2="276.814" x2="22.446"/>
   <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="298.05" stroke-width="2.415" x1="1.26" y2="298.05" x2="22.446"/>
-  <text xmlns="http://www.w3.org/2000/svg" font-family="DroidSans" transform="matrix(1 0 0 1 32.2913 194.3589)" font-size="9.9889">1</text>
-  <text xmlns="http://www.w3.org/2000/svg" font-family="DroidSans" transform="matrix(1 0 0 1 32.2913 215.7964)" font-size="9.9889">2</text>
-  <text xmlns="http://www.w3.org/2000/svg" font-family="DroidSans" transform="matrix(1 0 0 1 32.2913 237.2339)" font-size="9.9889">3</text>
-  <text xmlns="http://www.w3.org/2000/svg" font-family="DroidSans" transform="matrix(1 0 0 1 32.2913 258.6714)" font-size="9.9889">4</text>
-  <text xmlns="http://www.w3.org/2000/svg" font-family="DroidSans" transform="matrix(1 0 0 1 32.2913 280.1089)" font-size="9.9889">5</text>
-  <text xmlns="http://www.w3.org/2000/svg" font-family="DroidSans" transform="matrix(1 0 0 1 32.2913 301.5503)" font-size="9.9889">6</text>
+  <text xmlns="http://www.w3.org/2000/svg" font-family="Droid Sans" transform="matrix(1 0 0 1 32.2913 194.3589)" font-size="9.9889">1</text>
+  <text xmlns="http://www.w3.org/2000/svg" font-family="Droid Sans" transform="matrix(1 0 0 1 32.2913 215.7964)" font-size="9.9889">2</text>
+  <text xmlns="http://www.w3.org/2000/svg" font-family="Droid Sans" transform="matrix(1 0 0 1 32.2913 237.2339)" font-size="9.9889">3</text>
+  <text xmlns="http://www.w3.org/2000/svg" font-family="Droid Sans" transform="matrix(1 0 0 1 32.2913 258.6714)" font-size="9.9889">4</text>
+  <text xmlns="http://www.w3.org/2000/svg" font-family="Droid Sans" transform="matrix(1 0 0 1 32.2913 280.1089)" font-size="9.9889">5</text>
+  <text xmlns="http://www.w3.org/2000/svg" font-family="Droid Sans" transform="matrix(1 0 0 1 32.2913 301.5503)" font-size="9.9889">6</text>
   <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="319.31" stroke-width="2.415" x1="1.26" y2="319.31" x2="22.446"/>
-  <text xmlns="http://www.w3.org/2000/svg" font-family="DroidSans" transform="matrix(1 0 0 1 32.2913 322.8101)" font-size="9.9889">7</text>
+  <text xmlns="http://www.w3.org/2000/svg" font-family="Droid Sans" transform="matrix(1 0 0 1 32.2913 322.8101)" font-size="9.9889">7</text>
   <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="340.57" stroke-width="2.415" x1="1.26" y2="340.57" x2="22.446"/>
-  <text xmlns="http://www.w3.org/2000/svg" font-family="DroidSans" transform="matrix(1 0 0 1 32.2913 344.0679)" font-size="9.9889">8</text>
-  <text xmlns="http://www.w3.org/2000/svg" font-family="DroidSans" transform="matrix(0 1 -1 0 57.3381 197.2871)" font-size="9.9889">Sensor / Digital &amp; Analog Input</text>
-  <text xmlns="http://www.w3.org/2000/svg" font-family="DroidSans" transform="matrix(0 -1 1 0 180.1555 356.6675)" font-size="9.9889">Servo Motor / Output</text>
-  <text xmlns="http://www.w3.org/2000/svg" font-family="DroidSans" transform="matrix(0 -1 1 0 180.1555 233.146)" font-size="9.9889">I2C / Ext. Bus</text>
-  <text xmlns="http://www.w3.org/2000/svg" font-family="DroidSans" transform="matrix(1 0 0 1 112.9299 60.3081)" font-size="9.9889">Power</text>
-  <text xmlns="http://www.w3.org/2000/svg" font-family="DroidSans" transform="matrix(1 0 0 1 79.1125 94.8657)" font-size="17.98">Gogo Board</text>
-  <text xmlns="http://www.w3.org/2000/svg" font-family="DroidSans" transform="matrix(1 0 0 1 114.7688 116.4419)" font-size="17.98">4.0</text>
+  <text xmlns="http://www.w3.org/2000/svg" font-family="Droid Sans" transform="matrix(1 0 0 1 32.2913 344.0679)" font-size="9.9889">8</text>
+  <text xmlns="http://www.w3.org/2000/svg" font-family="Droid Sans" transform="matrix(0 1 -1 0 57.3381 197.2871)" font-size="9.9889">Sensor / Digital &amp; Analog Input</text>
+  <text xmlns="http://www.w3.org/2000/svg" font-family="Droid Sans" transform="matrix(0 -1 1 0 180.1555 356.6675)" font-size="9.9889">Servo Motor / Output</text>
+  <text xmlns="http://www.w3.org/2000/svg" font-family="Droid Sans" transform="matrix(0 -1 1 0 180.1555 233.146)" font-size="9.9889">I2C / Ext. Bus</text>
+  <text xmlns="http://www.w3.org/2000/svg" font-family="Droid Sans" transform="matrix(1 0 0 1 112.9299 60.3081)" font-size="9.9889">Power</text>
+  <text xmlns="http://www.w3.org/2000/svg" font-family="Droid Sans" transform="matrix(1 0 0 1 79.1125 94.8657)" font-size="17.98">Gogo Board</text>
+  <text xmlns="http://www.w3.org/2000/svg" font-family="Droid Sans" transform="matrix(1 0 0 1 114.7688 116.4419)" font-size="17.98">4.0</text>
   <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="415.595" stroke-width="1.9517" x1="127.084" y2="394.357" x2="127.084"/>
-  <text xmlns="http://www.w3.org/2000/svg" font-family="DroidSans" transform="matrix(1 0 0 1 116.5784 384.1685)" font-size="9.9889">GND</text>
-  <text xmlns="http://www.w3.org/2000/svg" font-family="DroidSans" transform="matrix(1 0 0 1 193.7131 279.6313)" font-size="9.9889">SV1/A</text>
-  <text xmlns="http://www.w3.org/2000/svg" font-family="DroidSans" transform="matrix(1 0 0 1 193.5842 301.0718)" font-size="9.9889">SV2/B</text>
-  <text xmlns="http://www.w3.org/2000/svg" font-family="DroidSans" transform="matrix(1 0 0 1 193.7659 322.3315)" font-size="9.9889">SV3/C</text>
-  <text xmlns="http://www.w3.org/2000/svg" font-family="DroidSans" transform="matrix(1 0 0 1 192.9553 343.5894)" font-size="9.9889">SV4/D</text>
-  <text xmlns="http://www.w3.org/2000/svg" font-family="DroidSans" transform="matrix(1 0 0 1 234.5579 316.1675)" font-size="6.9922">PWM</text>
-  <text xmlns="http://www.w3.org/2000/svg" font-family="DroidSans" transform="matrix(1 0 0 1 234.5579 295.1812)" font-size="6.9922">PWM</text>
-  <text xmlns="http://www.w3.org/2000/svg" font-family="DroidSans" transform="matrix(1 0 0 1 234.5579 337.1528)" font-size="6.9922">PWM</text>
-  <text xmlns="http://www.w3.org/2000/svg" font-family="DroidSans" transform="matrix(1 0 0 1 234.5579 274.1958)" font-size="6.9922">PWM</text>
+  <text xmlns="http://www.w3.org/2000/svg" font-family="Droid Sans" transform="matrix(1 0 0 1 116.5784 384.1685)" font-size="9.9889">GND</text>
+  <text xmlns="http://www.w3.org/2000/svg" font-family="Droid Sans" transform="matrix(1 0 0 1 193.7131 279.6313)" font-size="9.9889">SV1/A</text>
+  <text xmlns="http://www.w3.org/2000/svg" font-family="Droid Sans" transform="matrix(1 0 0 1 193.5842 301.0718)" font-size="9.9889">SV2/B</text>
+  <text xmlns="http://www.w3.org/2000/svg" font-family="Droid Sans" transform="matrix(1 0 0 1 193.7659 322.3315)" font-size="9.9889">SV3/C</text>
+  <text xmlns="http://www.w3.org/2000/svg" font-family="Droid Sans" transform="matrix(1 0 0 1 192.9553 343.5894)" font-size="9.9889">SV4/D</text>
+  <text xmlns="http://www.w3.org/2000/svg" font-family="Droid Sans" transform="matrix(1 0 0 1 234.5579 316.1675)" font-size="6.9922">PWM</text>
+  <text xmlns="http://www.w3.org/2000/svg" font-family="Droid Sans" transform="matrix(1 0 0 1 234.5579 295.1812)" font-size="6.9922">PWM</text>
+  <text xmlns="http://www.w3.org/2000/svg" font-family="Droid Sans" transform="matrix(1 0 0 1 234.5579 337.1528)" font-size="6.9922">PWM</text>
+  <text xmlns="http://www.w3.org/2000/svg" font-family="Droid Sans" transform="matrix(1 0 0 1 234.5579 274.1958)" font-size="6.9922">PWM</text>
  </g>
 </svg>

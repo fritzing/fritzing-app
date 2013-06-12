@@ -37,8 +37,8 @@
      <path d="M675.333,902.306l-27.0972,27.0833L37.7778,929.389l-27.0972,-27.0833l0,5.88889l27.0972,27.0833l610.431,0l27.0972,-27.0833l0,-5.88889L675.333,902.306z"/>
     </g>
     <text transform="matrix(0, -1, 1, 0, 115.638, 569.247)">
-     <tspan x="0" y="0" fill="#666666" font-family="'DroidSans'" font-size="4.9034">Blue Giga Audio</tspan>
-     <tspan x="22.729" y="5.884" fill="#666666" font-family="'DroidSans'" font-size="4.9034">WT32</tspan>
+     <tspan x="0" y="0" fill="#666666" font-family="'Droid Sans'" font-size="4.9034">Blue Giga Audio</tspan>
+     <tspan x="22.729" y="5.884" fill="#666666" font-family="'Droid Sans'" font-size="4.9034">WT32</tspan>
     </text>
     <circle fill="#E6E6E6" cx="576.333" cy="838.625" r="37.0417"/>
    </g>

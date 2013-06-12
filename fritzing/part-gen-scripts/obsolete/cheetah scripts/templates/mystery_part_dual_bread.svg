@@ -23,10 +23,10 @@
  <rect width="${width}" x="0" y="${toppinheight}" height="${height - 5.5}" fill="#000000" id="upper" stroke-width="0" />
  <rect width="${width}" x="0" y="${height - 5.5}" fill="#404040" height="3.096" id="lower" stroke-width="0" />
 
- <text id="label" x="2.5894" y="${h2}" fill="#e6e6e6" stroke="none" font-family="DroidSans" text-anchor="start" font-size="7.3" >${label}</text>
+ <text id="label" x="2.5894" y="${h2}" fill="#e6e6e6" stroke="none" font-family="Droid Sans" text-anchor="start" font-size="7.3" >${label}</text>
 
   <circle fill="#8C8C8C" cx="${width - 5}" cy="${toppinheight + 5 - dt}" r="3" stroke-width="0" />
-  <text x="${width - 5}" y="${toppinheight + 6.7 - dt}" font-family="DroidSans" text-anchor="middle" font-weight="bold" stroke-width="0" font-size="5.5" >?</text>
+  <text x="${width - 5}" y="${toppinheight + 6.7 - dt}" font-family="Droid Sans" text-anchor="middle" font-weight="bold" stroke-width="0" font-size="5.5" >?</text>
 
 
   #for $pin in range($halfpins)

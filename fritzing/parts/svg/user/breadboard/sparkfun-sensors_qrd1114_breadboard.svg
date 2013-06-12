@@ -30,7 +30,7 @@
 		<rect x="4.881" y="7.857" fill="#333333" width="12.895" height="3"/>
 	</g>
 	<rect x="2.4" y="23.74" opacity="0.25" width="17.856" height="0.313"/>
-	<text transform="matrix(1 0 0 1 3.4697 18.3752)" fill="#999999" font-family="'DroidSans'" font-size="3.6195">QRD1114</text>
+	<text transform="matrix(1 0 0 1 3.4697 18.3752)" fill="#999999" font-family="'Droid Sans'" font-size="3.6195">QRD1114</text>
 	<circle fill="#1A1A1A" cx="3.558" cy="9.428" r="0.375"/>
 	<rect x="7.344" y="24.054" opacity="0.25" width="0.768" height="1.796"/>
 	<rect x="9.745" y="24.054" opacity="0.25" width="0.768" height="1.796"/>

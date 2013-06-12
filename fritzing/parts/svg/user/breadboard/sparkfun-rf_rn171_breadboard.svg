@@ -238,7 +238,7 @@
     <polygon opacity="0.2" points="37.5,531.806,317.444,751.694,1087.71,751.694,1087.71,744.444,317.444,744.444,37.5,524.556" enable-background="new    "/>
     <polygon opacity="0.2" points="37.5,468.264,317.444,688.153,1087.71,688.153,1087.71,680.917,317.444,680.917,37.5,461.028" enable-background="new    "/>
     <rect width="1050.21" x="37.5" opacity="0.2" fill="#FFFFFF" height="11.9444" enable-background="new    "/>
-    <text fill="#4D4D4D" font-family="'DroidSans'" transform="matrix(1, 0, 0, 1, 500.217, 120.924)" font-size="93.3667">WiFly RN-171</text>
+    <text fill="#4D4D4D" font-family="'Droid Sans'" transform="matrix(1, 0, 0, 1, 500.217, 120.924)" font-size="93.3667">WiFly RN-171</text>
    </g>
   </g>
   <g transform="translate(34.035,1134.05)">

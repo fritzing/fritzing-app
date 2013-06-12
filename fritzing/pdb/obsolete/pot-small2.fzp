@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><module fritzingVersion="0.3.15b.02.03.3943" moduleId="cee49c7a6b94e1759bb995959b72f50cPotentiometerModuleID">
-    <version>4</version>
+    <version replacedby="e55c4e524988a0331c383c6d9b004770_8">4</version>
     <author>Lionel Michel</author>
     <title>Rotary Potentiometer (Small)</title>
     <label>R</label>
@@ -18,7 +18,6 @@
         <property name="size">Rotary - 9mm</property>
 	<property name="power" showInLabel="yes"></property>
         <property name="Maximum Resistance" showInLabel="yes">100k&#937;</property>
-    <property name="variant">variant 0</property>
     </properties>
     <description>A rotary adjustable resistor (potentiometer).</description>
     <views>

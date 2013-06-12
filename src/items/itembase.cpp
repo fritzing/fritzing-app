@@ -2359,7 +2359,7 @@ void ItemBase::createShape(LayerAttributes & layerAttributes) {
     double w, h;
     TextUtils::ensureViewBox(doc, 1, viewBox, true, w, h, true);
     double svgDPI = viewBox.width() / w;
-    int selectionExtra = layerAttributes.viewLayerID == ViewLayer::SchematicView ? 20 : 10;
+    int selectionExtra = layerAttributes.viewID == ViewLayer::SchematicView ? 20 : 10;
     SvgFileSplitter::forceStrokeWidth(root, svgDPI * selectionExtra / GraphicsUtils::SVGDPI, "#000000", true, false);
 
     double imageDPI = GraphicsUtils::SVGDPI;

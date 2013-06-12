@@ -146,8 +146,6 @@ static const int AutoRepeatDelay = 750;
 const int SketchWidget::PropChangeDelay = 100;
 bool SketchWidget::m_blockUI = false;
 
-static int SquashCount = 0;
-
 /////////////////////////////////////////////////////////////////////
 
 bool zLessThan(QGraphicsItem * & p1, QGraphicsItem * & p2)

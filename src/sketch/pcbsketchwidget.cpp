@@ -1064,7 +1064,7 @@ bool PCBSketchWidget::sameElectricalLayer2(ViewLayer::ViewLayerID id1, ViewLayer
 void PCBSketchWidget::changeTraceLayer(ItemBase * itemBase, bool force, QUndoCommand * parentCommand) {
 	QList<Wire *> visitedWires;
 	QSet<Wire *> changeWires;
-    TraceWire * sample;
+    TraceWire * sample = NULL;
     QList<QGraphicsItem *> items;
     if (itemBase != NULL) items << itemBase;
     else if (force) items = scene()->items();
@@ -1097,7 +1097,7 @@ void PCBSketchWidget::changeTraceLayer(ItemBase * itemBase, bool force, QUndoCom
 		changeWires.insert(tw);
 	}
 
-	if (changeWires.count() == 0) return;
+	if (changeWires.count() == 0 || sample == NULL) return;
 
     bool createNew = false;
     if (parentCommand == NULL) {

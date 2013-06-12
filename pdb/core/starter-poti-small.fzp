@@ -20,7 +20,6 @@
   <property showInLabel="yes" name="power"></property>
   <property showInLabel="yes" name="Maximum Resistance">100k&#937;</property>
   <property name="part number"></property>
-  <property name="variant">variant 1</property>
  </properties>
  <description>A rotary adjustable resistor (potentiometer).</description>
  <views>

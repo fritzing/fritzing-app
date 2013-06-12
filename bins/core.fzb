@@ -108,7 +108,7 @@
                 </iconView>
             </views>
         </instance>
-        <instance moduleIdRef="cee49c7a6b94e1759bb995959b72f50cPotentiometerModuleID" modelIndex="14" path="parts/core/pot-small.fzp">
+        <instance moduleIdRef="e55c4e524988a0331c383c6d9b004770_8" modelIndex="14" path="parts/core/starter-poti-small.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>

@@ -19,7 +19,6 @@
   <property name="power" showInLabel="yes"></property>
   <property name="Track">Linear</property>
  <property name="package">THT</property></properties>
- <property name="variant">variant 2</property>
 
  <taxonomy>discreteParts.resistors.adjustable.potentiometer</taxonomy>
  <description>A rotary adjustable resistor (potentiometer).</description>

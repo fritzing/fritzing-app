@@ -12,10 +12,10 @@
  <rect width="${width}" x="0" y="0" height="24.17675" fill="#000000" id="upper" stroke-width="0" />
  <rect width="${width}" x="0" y="22" fill="#404040" height="3.096" id="lower" stroke-width="0" />
 
- <text id="label" x="2.5894" y="13" fill="#e6e6e6" stroke="none" font-family="DroidSans" text-anchor="start" font-size="7.3" >${label}</text>
+ <text id="label" x="2.5894" y="13" fill="#e6e6e6" stroke="none" font-family="Droid Sans" text-anchor="start" font-size="7.3" >${label}</text>
 
   <circle fill="#8C8C8C" cx="${width - 5}" cy="5" r="3" stroke-width="0" />
-  <text x="${width - 5}" y="6.7" font-family="DroidSans" text-anchor="middle" font-weight="bold" stroke-width="0" font-size="5.5" >?</text>
+  <text x="${width - 5}" y="6.7" font-family="Droid Sans" text-anchor="middle" font-weight="bold" stroke-width="0" font-size="5.5" >?</text>
 
 
   #for $pin in range($ipins)

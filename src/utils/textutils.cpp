@@ -78,7 +78,7 @@ QSet<QString> getAttrFontFamilies(const QString &fileContent) {
 	/*
 	 * font-family defined as attr example:
 
-<text xmlns="http://www.w3.org/2000/svg" font-family="DroidSans"
+<text xmlns="http://www.w3.org/2000/svg" font-family="Droid Sans"
 id="text2732" transform="matrix(1 0 0 1 32.2012 236.969)"
 font-size="9.9771" >A0</text>
 
@@ -110,7 +110,7 @@ FixedFontsHash fixFontsMapping(const QSet<QString> fontsTofix, const QString & d
 	QSet<QString> tempFontsToFix;
 	tempFontsToFix = fontsTofix - InstalledFonts::InstalledFontsList;
 	foreach (QString fontFileName, InstalledFonts::InstalledFontsNameMapper.values()) {
-		// SVG uses filename which may not match family name (e.g. "DroidSans" and "Droid Sans")
+		// SVG uses filename which may not match family name (e.g. "Droid Sans" and "Droid Sans")
 		tempFontsToFix.remove(fontFileName);
 	}
 

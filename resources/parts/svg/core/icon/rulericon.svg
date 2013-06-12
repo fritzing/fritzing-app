@@ -21,7 +21,7 @@
 	<line fill="none" id="line48" stroke="#000000" stroke-width="1" x1="180.203" x2="180.203" y1="35.54" y2="30.168"/>
 </g>
 <rect fill="none" height="9.5" width="24.625" x="2.674" y="8.122"/>
-<text font-family="'DroidSans'" font-size="9" transform="matrix(1 0 0 1 2.6743 14.9619)">cm</text>
+<text font-family="'Droid Sans'" font-size="9" transform="matrix(1 0 0 1 2.6743 14.9619)">cm</text>
 <rect fill="none" height="9.5" width="24.625" x="2.674" y="16.75"/>
-<text font-family="'DroidSans'" font-size="9" transform="matrix(1 0 0 1 2.6743 23.5898)">in</text>
+<text font-family="'Droid Sans'" font-size="9" transform="matrix(1 0 0 1 2.6743 23.5898)">in</text>
 </svg>

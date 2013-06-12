@@ -29,11 +29,12 @@ else
 fi
 
 compile_folder="build-$arch_aux"
-svn export http://fritzing.googlecode.com/svn/trunk/fritzing $compile_folder
+#svn export http://fritzing.googlecode.com/svn/trunk/fritzing $compile_folder
+git clone https://code.google.com/p/fritzing/ $compile_folder
 
 # get rid of user folder contents and bins
 current_dir=$(pwd)
-cd $compile_folder/parts/user
+cd $compile_folder/fritzing/parts/user
 rm -rf *
 cd ../svg/user/breadboard
 rm -rf *
@@ -48,13 +49,13 @@ rm -rf *
 cd ..
 rmdir "new schematic"
 cd $current_dir
-cd $compile_folder/pdb/user
+cd $compile_folder/fritzing/pdb/user
 rm -rf *
 cd $current_dir
-cd $compile_folder/bins/more
+cd $compile_folder/fritzing/bins/more
 rm -rf sparkfun-*.fzb
 cd $current_dir
-cd $compile_folder/src/lib
+cd $compile_folder/fritzing/src/lib
 rm -rf boost*				# depend on linux boost installation 
 if [ "$quazip" == 'QUAZIP_INSTALLED' ]
 then
@@ -70,7 +71,7 @@ if [ "$arch_aux" == 'x86_64' ] ; then
 	arch='AMD64'
 	# only creates the source tarball, when running on the 64 platform
 	tarball_folder="fritzing-$relname.source"
-	cp -rf $compile_folder $tarball_folder
+	cp -rf $compile_folder/fritzing $tarball_folder
 	rm -rf $tarball_folder/SetupAPI.Lib
 	rm -rf $tarball_folder/deploy_fritzing.bat
 	rm -rf $tarball_folder/FritzingInfo.plist
@@ -95,9 +96,10 @@ cd $compile_folder
 #QT_HOME="/home/jonathan/QtSDK/Desktop/Qt/473/gcc"
 QT_HOME="/usr/local/Trolltech/Qt-4.8.3"
 
-
+cd fritzing
 $QT_HOME/bin/qmake CONFIG+=release DEFINES+=$quazip
 make
+cd ..
 
 release_folder="fritzing-$relname.linux.$arch"
 
@@ -105,7 +107,7 @@ echo "making release folder: $release_folder"
 mkdir ../$release_folder
 
 echo "copying release files"
-cp -rf bins/ parts/ sketches/ help/ pdb/ Fritzing Fritzing.sh README.txt LICENSE.GPL2 LICENSE.GPL3 ../$release_folder/
+cp -rf fritzing/bins/ fritzing/parts/ fritzing/sketches/ fritzing/help/ fritzing/pdb/ fritzing/Fritzing fritzing/Fritzing.sh fritzing/README.txt fritzing/LICENSE.GPL2 fritzing/LICENSE.GPL3 ../$release_folder/
 cd ../$release_folder
 
 echo "making library folders"
@@ -138,7 +140,7 @@ cp $QT_HOME/plugins/imageformats/libqjpeg.so imageformats
 cp $QT_HOME/plugins/sqldrivers/libqsqlite.so sqldrivers
 
 echo "copying translations"
-cp ../../$compile_folder/translations/ -r ../
+cp ../../$compile_folder/fritzing/translations/ -r ../
 rm ../translations/*.ts  			# remove translation xml files, since we only need the binaries in the release
 find ../translations -name "*.qm" -size -128c -delete   # delete empty translation binaries
 cd ../../

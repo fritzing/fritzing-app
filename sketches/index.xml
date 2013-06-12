@@ -15,11 +15,13 @@
 		<sketch id="Color-Fader" name="Color Fader (RGB LED)" src="core/color-fader.fzz"/>
 		<sketch id="CosmicRayGun" name="Cosmic Ray Gun" src="core/CosmicRayGun.fzz"/>		
 		<sketch id="Countdown" name="Countdown (Rotary Encoder + 7 Segment Displays)" src="core/Countdown.fzz"/>
-		<sketch id="CurvyParking" name="Curvy Parking Assistant (Infrared)" src="core/Curvy-Parking-Assistant.fzz"/>				
+		<!-- <sketch id="CurvyParking" name="Curvy Parking Assistant (Infrared)" src="core/Curvy-Parking-Assistant.fzz"/>	 -->			
 		<sketch id="DC_motor_control" name="DC Motor" src="core/DC_motor_control.fzz"/>
-		<sketch id="EDGY-motor-control" name="EDGY Motor Control" src="core/EDGY-motor-control.fzz"/>
+		<!--
+		<sketch id="EDGY-motor-control" name="EDGY Motor Control" src="core/EDGY-motor-control.fzz"/ 
 		<sketch id="EDGY-motor-control_two_motors" name="EDGY Motor Control Two Motors" src="core/EDGY-motor-control-two-motors.fzz"/>
 		<sketch id="EDGY-motor-control_stepper" name="EDGY Motor Control Stepper" src="core/EDGY-motor-control-stepper.fzz"/>
+		-->
 		<sketch id="Knock" name="Knock (Piezo)" src="core/Knock.fzz"/>
 		<sketch id="LCD" name="Liquid Crystal Display" src="core/LiquidCrystalDisplay.fzz"/>
 		<sketch id="LEDmatrix_simple" name="Simple LED Matrix" src="core/LED-Matrix_simple.fzz"/>
@@ -76,7 +78,7 @@
 					<sketch id="Touch_Switch"/>
 					<sketch id="Photocell"/>
 					<sketch id="Parking"/>
-					<sketch id="CurvyParking"/>
+					<!--<sketch id="CurvyParking"/> -->
 					<sketch id="AnalogInputThermistor"/>
 					<sketch id="TemperaturSensorLM35"/>
 					<sketch id="AnalogInputOutput"/>
@@ -103,7 +105,7 @@
 				</category>
 				<category name="Proximity">
 					<sketch id="Parking"/>
-					<sketch id="CurvyParking"/>
+					<!-- <sketch id="CurvyParking"/> -->
 					<sketch id="Photocell"/>
 				</category>
 				<category name="Rotary">
@@ -129,7 +131,7 @@
 					<sketch id="Blink"/>
 					<sketch id="Loop"/>
 					<sketch id="Parking"/>
-					<sketch id="CurvyParking"/>
+					<!--<sketch id="CurvyParking"/> -->
 					<sketch id="TrafficLight"/>
 					<sketch id="RGB_LED"/>
 					<sketch id="Color-Fader"/>
@@ -146,7 +148,7 @@
 					<sketch id="AnalogInputToServo"/>
 					<sketch id="DC_motor_control"/>
 					<sketch id="Stepper_Motor"/>
-					<sketch id="EDGY-motor-control"/>
+					<!-- <sketch id="EDGY-motor-control"/> -->
 				</category>
 			</category>
 			<category name="Sound">
@@ -182,20 +184,20 @@
 			<sketch id="TiltSwitch"/>
 			<sketch id="Knock"/>
 			<sketch id="Melody"/>
-               <sketch id="AnalogInputPot"/>
+			<sketch id="AnalogInputPot"/>
 			<sketch id="Photocell"/>
 			<sketch id="AnalogInputToServo"/>
 			<sketch id="Color-Fader"/>
 			<sketch id="AnalogInputOutput"/>
 			<sketch id="Touch_Switch"/>
-               <sketch id="Relay"/>
+			<sketch id="Relay"/>
 			<sketch id="TemperaturSensorLM35"/>
 			<sketch id="CosmicRayGun"/>
-              <separator />
-              <url name="Get your own Fritzing Starter Kit" href="http://fritzing.org/shop/starter-kit/" />
+			<separator />
+			<url name="Get your own Fritzing Starter Kit" href="http://fritzing.org/shop/starter-kit/" />
 		</category>
 		<category name="Fritzing Super Upgrade Kit">
-		  <sketch id="AnalogInputFSR"/>			
+			<sketch id="AnalogInputFSR"/>			
 			<sketch id="555TouchSwitch"/>
 			<sketch id="LCD"/>
 			<sketch id="Countdown"/>
@@ -205,15 +207,17 @@
 			<sketch id="Timer"/>						
 			<sketch id="DC_motor_control"/>
 			<sketch id="Mood-Light"/>
-      <sketch id="Optocoupler"/>
+			<sketch id="Optocoupler"/>
 			<sketch id="Sabotage-Detection"/>
-							 <separator />
-               <url name="Get your own Fritzing Super Upgrade Kit" href="http://fritzing.org/shop/super-upgrade-kit/" />			
+			<separator />
+			<url name="Get your own Fritzing Super Upgrade Kit" href="http://fritzing.org/shop/super-upgrade-kit/" />			
 		</category>
+		<!--
 		<category name="Fritzing EDGY">
 			<sketch id="EDGY-motor-control"/>
 			<sketch id="EDGY-motor-control_two_motors"/>
 			<sketch id="EDGY-motor-control_stepper"/>
 		</category>
+		-->
 	</categories>
 </fritzing-sketches>

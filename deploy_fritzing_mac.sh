@@ -8,24 +8,23 @@ currentdir=$(pwd)
 echo "current directory"
 echo $currentdir
 
-deploydir=$currentdir/deploy/fritzing
+deploydir=$currentdir/../deploy
 echo "deploy directory"
 echo $deploydir
 
-svn export https://fritzing.googlecode.com/svn/trunk/fritzing/LICENSE.GPL3 $deploydir/LICENSE.GPL3
-svn export https://fritzing.googlecode.com/svn/trunk/fritzing/LICENSE.GPL2 $deploydir/LICENSE.GPL2
-svn export https://fritzing.googlecode.com/svn/trunk/fritzing/LICENSE.CC-BY-SA $deploydir/LICENSE.CC-BY-SA
-svn export https://fritzing.googlecode.com/svn/trunk/fritzing/README.txt $deploydir/README.txt
-svn export https://fritzing.googlecode.com/svn/trunk/fritzing/translations $deploydir/translations
-svn export https://fritzing.googlecode.com/svn/trunk/fritzing/bins $deploydir/bins
-svn export https://fritzing.googlecode.com/svn/trunk/fritzing/sketches $deploydir/sketches
-svn export https://fritzing.googlecode.com/svn/trunk/fritzing/parts $deploydir/parts
-svn export https://fritzing.googlecode.com/svn/trunk/fritzing/help $deploydir/help
-svn export https://fritzing.googlecode.com/svn/trunk/fritzing/pdb $deploydir/pdb
-rm $deploydir/translations/*.ts
-find $deploydir/translations -name "*.qm" -size -128c -delete
+git clone https://code.google.com/p/fritzing/ $deploydir
 
-cd $deploydir/parts/user
+fritzingdir=$deploydir/fritzing
+echo "fritzing directory"
+echo $fritzingdir
+
+
+echo "removing translations"
+rm $fritzingdir/translations/*.ts
+find $fritzingdir/translations -name "*.qm" -size -128c -delete
+
+echo "more cleaning"
+cd $fritzingdir/parts/user
 rm -rf *
 cd ../svg/user/breadboard
 rm -rf *
@@ -40,16 +39,58 @@ rm -rf *
 cd ..
 rmdir "new schematic"
 
-cd $deploydir/pdb/user
+cd $fritzingdir/pdb/user
 rm -rf *
 
-cd $deploydir/bins/more
+cd $fritzingdir/bins/more
 rm -rf sparkfun-*.fzb
+
+echo "still more cleaning"
+cd $fritzingdir
+rm control
+cd datasheets
+rm -rf *
+cd ..
+rmdir datasheets
+rm -rf deploy*
+rm -rf fritzing.*
+rm Fritzing.1
+rm Fritzing.sh
+rm -rf Fritzing*.plist
+rm -rf linguist*
+cd part-gen-scripts
+rm -rf *
+cd ..
+rmdir part-gen-scripts
+rm -rf phoenix*
+cd pri
+rm -rf *
+cd ..
+rmdir pri
+cd resources
+rm -rf *
+cd ..
+rmdir resources
+rm Setup*
+cd src
+rm -rf *
+cd ..
+rmdir src
+cd tools
+rm -rf *
+cd ..
+rmdir tools
+
 
 cd $currentdir
 
 
+phoenixdir=$currentdir/../phoenix-build-desktop-Qt_4_8_3__qt-everywhere-opensource-src-4_8_3__Release
+cp -r $phoenixdir/Fritzing.app $deploydir
+
+
 /usr/local/Trolltech/Qt-4.8.3/bin/macdeployqt $deploydir/Fritzing.app 
+cp -r $fritzingdir/* $deploydir/Fritzing.app/Contents/MacOS
 
 
 #/Users/jonathancohen/qt-everywhere-opensource-src-4.7.3/bin/macdeployqt /Users/jonathancohen/fritzing/fritzing/deploy/fritzing/Fritzing.app 

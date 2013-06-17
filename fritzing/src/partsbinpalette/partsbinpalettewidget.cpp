@@ -333,11 +333,20 @@ void PartsBinPaletteWidget::grabTitle(const QString & title, QString & iconFilen
 		m_icon = new QIcon(QPixmap::fromImage(image));
 	}
 	else {
-		QString path = ":resources/bins/icons/" + iconFilename;
-		QFile file(path);
-		if (file.exists()) {
-			m_icon = new QIcon(path);
-		}
+        QFileInfo info(m_fileName);
+        QDir dir = info.absoluteDir();
+        QString path = dir.absoluteFilePath(iconFilename);
+        QFile file1(path);
+        if (file1.exists()) {
+            m_icon = new QIcon(path);
+        }
+        else {
+            path = ":resources/bins/icons/" + iconFilename;
+		    QFile file2(path);
+		    if (file2.exists()) {
+			    m_icon = new QIcon(path);
+		    }
+        }
 	}
 }
 

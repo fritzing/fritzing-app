@@ -1961,6 +1961,21 @@ void MainWindow::swapSelectedMap(const QString & family, const QString & prop, Q
 		}
 	}
 
+    bool swapLayer = false;
+    ViewLayer::ViewLayerPlacement newViewLayerPlacement = ViewLayer::UnknownPlacement;
+    if (prop.compare("layer") == 0) {
+        if (itemBase->modelPart()->flippedSMD() || itemBase->itemType() == ModelPart::Part) {
+            ItemBase * viewItem = itemBase->modelPart()->viewItem(ViewLayer::PCBView);
+            if (viewItem) {
+                ViewLayer::ViewLayerPlacement vlp = (currPropsMap.value(prop) == ItemBase::TranslatedPropertyNames.value("bottom") ? ViewLayer::NewBottom : ViewLayer::NewTop);
+                if (viewItem->viewLayerPlacement() != newViewLayerPlacement) {
+                    swapLayer = true;
+                    newViewLayerPlacement = vlp;
+                }
+            }
+        }
+    }
+
 	if (!generatedModuleID.isEmpty()) {
 		ModelPart * modelPart = m_referenceModel->retrieveModelPart(generatedModuleID);
 		if (modelPart == NULL) {
@@ -1969,21 +1984,13 @@ void MainWindow::swapSelectedMap(const QString & family, const QString & prop, Q
 			}
 		}
 
-		swapSelectedAux(itemBase->layerKinChief(), generatedModuleID, false, ViewLayer::UnknownPlacement);
+		swapSelectedAux(itemBase->layerKinChief(), generatedModuleID, swapLayer, newViewLayerPlacement);
 		return;
 	}
 
-    if (prop.compare("layer") == 0) {
-        if (itemBase->modelPart()->flippedSMD() || itemBase->itemType() == ModelPart::Part) {
-            ItemBase * viewItem = itemBase->modelPart()->viewItem(ViewLayer::PCBView);
-            if (viewItem) {
-                ViewLayer::ViewLayerPlacement viewLayerPlacement = (currPropsMap.value(prop) == ItemBase::TranslatedPropertyNames.value("bottom") ? ViewLayer::NewBottom : ViewLayer::NewTop);
-                if (viewItem->viewLayerPlacement() != viewLayerPlacement) {
-                    swapSelectedAux(itemBase->layerKinChief(), itemBase->moduleID(), true, viewLayerPlacement);
-                    return;
-                }
-            }
-        }
+    if (swapLayer) {
+        swapSelectedAux(itemBase->layerKinChief(), itemBase->moduleID(), true, newViewLayerPlacement);
+        return;
     }
 
 	if ((prop.compare("package", Qt::CaseSensitive) != 0) && swapSpecial(prop, currPropsMap)) {

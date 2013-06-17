@@ -2177,15 +2177,20 @@ void MazeRouter::createTraces(NetList & netList, Score & bestScore, QUndoCommand
 
             createTrace(trace, gridPoints, traceThing, connectionThing, net);
             QList< QPointer<TraceWire> > bundle;
-            ViewLayer::ViewLayerID viewLayerID = traceThing.newTraces.at(newTraceIndex)->viewLayerID();
-            for (; newTraceIndex < traceThing.newTraces.count(); newTraceIndex++) {
-                TraceWire * traceWire = traceThing.newTraces.at(newTraceIndex);
-                if (traceWire->viewLayerID() != viewLayerID) {
-                    allBundles.insert(netIndex, bundle);
-                    bundle.clear();
-                    viewLayerID = traceWire->viewLayerID();
+            if (traceThing.newTraces.count() > newTraceIndex) {
+                ViewLayer::ViewLayerID viewLayerID = traceThing.newTraces.at(newTraceIndex)->viewLayerID();
+                for (; newTraceIndex < traceThing.newTraces.count(); newTraceIndex++) {
+                    TraceWire * traceWire = traceThing.newTraces.at(newTraceIndex);
+                    if (traceWire->viewLayerID() != viewLayerID) {
+                        allBundles.insert(netIndex, bundle);
+                        bundle.clear();
+                        viewLayerID = traceWire->viewLayerID();
+                    }
+                    bundle << traceWire;
                 }
-                bundle << traceWire;
+            }
+            else {
+                DebugDialog::debug("create trace failed");
             }
             allBundles.insert(netIndex, bundle);
         }
@@ -2313,14 +2318,14 @@ void MazeRouter::createTrace(Trace & trace, QList<GridPoint> & gridPoints, Trace
     ConnectorItem * destConnectorItem = findAnchor(gridPoints.last(), traceThing, net, traceAnchorD, onTraceD, sourceConnectorItem);
     if (destConnectorItem == NULL) {
 
-        //GridPoint gp = gridPoints.last();
-        //for (int x = gp.x - 5; x < gp.x + 5; x++) {
-        //    m_displayImage[gp.z]->setPixel(x, gp.y, 0xff000000);
-        //}
-        //for (int y = gp.y - 5; y < gp.y + 5; y++) {
-        //    m_displayImage[gp.z]->setPixel(gp.x, y, 0xff000000);
-        //}
-        //updateDisplay(gp.z);
+        GridPoint gp = gridPoints.last();
+        for (int x = gp.x - 5; x < gp.x + 5; x++) {
+            m_displayImage[gp.z]->setPixel(x, gp.y, 0xff000000);
+        }
+        for (int y = gp.y - 5; y < gp.y + 5; y++) {
+            m_displayImage[gp.z]->setPixel(gp.x, y, 0xff000000);
+        }
+        updateDisplay(gp.z);
 
 
         DebugDialog::debug("missing dest connector");
@@ -3060,6 +3065,7 @@ void MazeRouter::optimizeTraces(QList<int> & order, QMultiHash<int, QList< QPoin
                 if (otherIndex == netIndex) continue;
 
                 foreach(QList< QPointer<TraceWire> > bundle, bundles.values(otherIndex)) {
+                    if (bundle.count() == 0) continue;
                     if (ViewLayer::specFromID(bundle.at(0)->viewLayerID()) != layerSpec) continue;
 
                     pen.setWidthF((bundle.at(0)->width() + m_keepoutPixels + m_keepoutPixels) * OptimizeFactor);
@@ -3116,6 +3122,8 @@ void MazeRouter::optimizeTraces(QList<int> & order, QMultiHash<int, QList< QPoin
             //          schematic view must replace with two 90-degree lines
 
             foreach(QList< QPointer<TraceWire> > bundle, bundles.values(netIndex)) {
+                if (bundle.count() == 0) continue;
+
                 for (int i = bundle.count() - 1; i >= 0; i--) {
                     TraceWire * traceWire = bundle.at(i);
                     if (traceWire == NULL) bundle.removeAt(i);

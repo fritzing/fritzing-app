@@ -454,7 +454,7 @@ void Score::setOrdering(const NetOrdering & _ordering) {
         }
     }
     ordering = _ordering;
-    printOrder("new  ", ordering.order);
+    //printOrder("new  ", ordering.order);
 }
 
 ////////////////////////////////////////////////////////////////////
@@ -1017,12 +1017,14 @@ bool MazeRouter::routeNets(NetList & netList, bool makeJumper, Score & currentSc
         }
 
         Net * net = netList.nets.at(netIndex);
+        /*
         DebugDialog::debug(QString("routing net %1, subnets %2, traces %3, routed %4")
             .arg(netIndex)
             .arg(net->subnets.count())
             .arg(currentScore.traces.values(netIndex).count())
             .arg(currentScore.routedCount.value(netIndex))        
             );
+        */
 
         if (currentScore.routedCount.value(netIndex) == net->subnets.count() - 1) {
             // this net was fully routed in a previous run
@@ -2318,6 +2320,7 @@ void MazeRouter::createTrace(Trace & trace, QList<GridPoint> & gridPoints, Trace
     ConnectorItem * destConnectorItem = findAnchor(gridPoints.last(), traceThing, net, traceAnchorD, onTraceD, sourceConnectorItem);
     if (destConnectorItem == NULL) {
 
+        /*
         GridPoint gp = gridPoints.last();
         for (int x = gp.x - 5; x < gp.x + 5; x++) {
             m_displayImage[gp.z]->setPixel(x, gp.y, 0xff000000);
@@ -2326,7 +2329,7 @@ void MazeRouter::createTrace(Trace & trace, QList<GridPoint> & gridPoints, Trace
             m_displayImage[gp.z]->setPixel(gp.x, y, 0xff000000);
         }
         updateDisplay(gp.z);
-
+        */
 
         DebugDialog::debug("missing dest connector");
         return;

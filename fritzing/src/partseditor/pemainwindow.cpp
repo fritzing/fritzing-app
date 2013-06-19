@@ -2040,10 +2040,22 @@ void PEMainWindow::relocateConnectorSvg(SketchWidget * sketchWidget, const QStri
         newGornTerminalElement = TextUtils::findElementWithAttribute(svgRoot, "gorn", newGornTerminal);
     }
 
-    if (!oldGornElement.isNull()) oldGornElement.removeAttribute("id");
-    if (!oldGornTerminalElement.isNull()) oldGornTerminalElement.removeAttribute("id");
-    if (!newGornElement.isNull()) newGornElement.setAttribute("id", svgID);
-    if (!newGornTerminalElement.isNull()) newGornTerminalElement.setAttribute("id", terminalID);
+    if (!oldGornElement.isNull()) {
+        oldGornElement.removeAttribute("id");
+        oldGornElement.removeAttribute("oldid");            // remove oldid so removeGorn() call later doesn't restore anything by accident
+    }
+    if (!oldGornTerminalElement.isNull()) {
+        oldGornTerminalElement.removeAttribute("id");
+        oldGornTerminalElement.removeAttribute("oldid");
+    }
+    if (!newGornElement.isNull()) {
+        newGornElement.setAttribute("id", svgID);
+        newGornElement.removeAttribute("oldid");
+    }
+    if (!newGornTerminalElement.isNull()) {
+        newGornTerminalElement.setAttribute("id", terminalID);
+        newGornTerminalElement.removeAttribute("oldid");
+    }
 
 	QDomElement fzpRoot = m_fzpDocument.documentElement();
 	QDomElement connectors = fzpRoot.firstChildElement("connectors");

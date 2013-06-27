@@ -27,6 +27,7 @@ $Date: 2013-04-22 23:44:56 +0200 (Mo, 22. Apr 2013) $
 #include "stripboard.h"
 #include "../utils/graphicsutils.h"
 #include "../utils/textutils.h"
+#include "../utils/familypropertycombobox.h"
 #include "../svg/gerbergenerator.h"
 #include "../fsvgrenderer.h"
 #include "../sketch/infographicsview.h"
@@ -58,12 +59,14 @@ static bool ShiftY = false;
 static bool SpaceBarWasPressed = false;
 static const double MinMouseMove = 2;
 
+static QPainterPath HPath;
+static QPainterPath VPath;
+
 /////////////////////////////////////////////////////////////////////
 
-Stripbit::Stripbit(const QPainterPath & path, ConnectorItem * connectorItem, int x, int y, QGraphicsItem * parent = 0) 
+Stripbit::Stripbit(const QPainterPath & path, int x, int y, bool horizontal, QGraphicsItem * parent = 0) 
 	: QGraphicsPathItem(path, parent)
 {
-	
 	if (SpotFaceCutterCursor == NULL) {
 		QBitmap bitmap(":resources/images/cursor/spot_face_cutter.bmp");
 		QBitmap bitmapm(":resources/images/cursor/spot_face_cutter_mask.bmp");
@@ -83,10 +86,9 @@ Stripbit::Stripbit(const QPainterPath & path, ConnectorItem * connectorItem, int
 	setBrush(QColor(0xbc, 0x94, 0x51));							// QColor(0xc4, 0x9c, 0x59)
 
 
-	m_right = NULL;
+	m_horizontal = horizontal;
 	m_x = x;
 	m_y = y;
-	m_connectorItem = connectorItem;
 	m_inHover = m_removed = false;
 
 	setAcceptHoverEvents(true);
@@ -246,12 +248,10 @@ void Stripbit::hoverLeaveEvent ( QGraphicsSceneHoverEvent * event )
 	update();
 }
 
-void Stripbit::setRight(Stripbit * right) {
-	m_right = right;
-}
 
-Stripbit * Stripbit::right() {
-	return m_right;
+
+bool Stripbit::horizontal() {
+	return m_horizontal;
 }
 
 void Stripbit::setRemoved(bool removed) {
@@ -270,10 +270,6 @@ bool Stripbit::changed() {
 	return m_changed;
 }
 
-ConnectorItem * Stripbit::connectorItem() {
-	return m_connectorItem;
-}
-
 int Stripbit::y() {
 	return m_y;
 }
@@ -282,32 +278,52 @@ int Stripbit::x() {
 	return m_x;
 }
 
+QString Stripbit::makeRemovedString() {
+    return QString("%1.%2%3 ").arg(m_x).arg(m_y).arg(m_horizontal ? 'h' : 'v');
+}
+
+/////////////////////////////////////////////////////////////////////
+
+StripConnector::StripConnector() {
+    down = right = NULL;
+    connectorItem = NULL;
+}
+
+struct StripLayout {
+    QString name;
+    int rows;
+    int columns;
+    QString buses;
+
+    StripLayout(QString name, int rows, int columns, QString buses);
+};
+
+StripLayout::StripLayout(QString name_, int rows_, int columns_, QString buses_) {
+    name = name_;
+    rows = rows_;
+    columns = columns_;
+    buses = buses_;
+}
+
+static QList<StripLayout> StripLayouts;
+
 /////////////////////////////////////////////////////////////////////
 
 Stripboard::Stripboard( ModelPart * modelPart, ViewLayer::ViewID viewID, const ViewGeometry & viewGeometry, long id, QMenu * itemMenu, bool doLabel)
 	: Perfboard(modelPart, viewID, viewGeometry, id, itemMenu, doLabel)
 {
-	if (!viewID == ViewLayer::BreadboardView) return;
-
-	int x, y;
-	getXY(x, y, m_size);
-	for (int i = 0; i < y; i++) {
-		BusShared * busShared = new BusShared(QString::number(i));
-		m_buses.append(busShared);
-	}
-
-	foreach (Connector * connector, modelPart->connectors().values()) {
-		ConnectorShared * connectorShared = connector->connectorShared();
-		int cx, cy;
-		getXY(cx, cy, connector->connectorSharedName());
-		BusShared * busShared = m_buses.at(cy);
-		busShared->addConnectorShared(connectorShared);
-	}
-
-	modelPart->initBuses();
+	getXY(m_x, m_y, m_size);
+    if (StripLayouts.count() == 0) {
+        initStripLayouts();
+    }
 }
 
 Stripboard::~Stripboard() {
+    foreach (StripConnector * sc, m_strips) {
+        delete sc;
+    }
+
+    m_strips.clear();
 }
 
 QString Stripboard::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QString, QString> & svgHash, bool blackOnly, double dpi, double & factor) 
@@ -357,6 +373,7 @@ QString Stripboard::genFZP(const QString & moduleid)
 	QString fzp = Perfboard::genFZP(moduleid);
 	fzp.replace("perfboard", "stripboard");
 	fzp.replace("Perfboard", "Stripboard");
+    fzp.replace(ModuleIDNames::StripboardModuleIDName, ModuleIDNames::Stripboard2ModuleIDName);
 	fzp.replace("stripboard.svg", "perfboard.svg");
 	return fzp;
 }
@@ -370,92 +387,77 @@ void Stripboard::addedToScene(bool temporary)
 {
     Perfboard::addedToScene(temporary);
 	if (this->scene() == NULL) return;
+    if (temporary) return;
+    if (m_viewID != ViewLayer::BreadboardView) return;
 
 	QList<QGraphicsItem *> items = childItems();
 
-	int x, y;
-	getXY(x, y, m_size);
+    if (HPath.isEmpty()) {
+        makeInitialPath();
+    }
 
-	ConnectorItem * ciFirst = NULL;
-	ConnectorItem * ciNext = NULL;
-	foreach (ConnectorItem * ci, cachedConnectorItems()) {
-		int cx, cy;
-		getXY(cx, cy, ci->connectorSharedName());
-		if (cy == 0 && cx == 0) {
-			ciFirst = ci;
-			break;
-		}
-	}
-	foreach (ConnectorItem * ci, cachedConnectorItems()) {
-		int cx, cy;
-		getXY(cx, cy, ci->connectorSharedName());
-		if (cy == 0 && cx == 1) {
-			ciNext = ci;
-			break;
-		}
-	}
+    int count = m_x * m_y;
+    for (int i = 0; i < count; i++) {
+       m_strips.append(new StripConnector);
+    }
 
-	if (ciFirst == NULL) return;
-	if (ciNext == NULL) return;
 
-	QRectF r1 = ciFirst->rect();
-	QRectF r2 = ciNext->rect();
-
-	double h = r1.height();
-	double w = r2.center().x() - r1.center().x();
-
-	r1.moveTo(-(r1.width() / 2), 0);
-	r2.moveTo(w - (r2.width() / 2), 0);
-
-	QPainterPath pp1;
-	pp1.addRect(0, 0, w / 2, h);
-	pp1.arcTo(r1, 90, -180);
-	pp1.addRect(w / 2, 0, w / 2, h);
-	pp1.moveTo(w, 0);
-	pp1.arcTo(r2, 90, 180);
-
-	m_lastColumn.fill(NULL, y);
-	m_firstColumn.fill(NULL, y);
-
-	QHash<int, Stripbit *> stripbits;
-
-	foreach (ConnectorItem * ci, cachedConnectorItems()) {
-		int cx, cy;
-		getXY(cx, cy, ci->connectorSharedName());
-		if (cx >= x - 1) {
-			// don't need a stripbit after the last column
-			m_lastColumn[cy] = ci;
-			continue;
-		}
-
-		Stripbit * stripbit = new Stripbit(pp1, ci, cx, cy, this);
-		stripbits.insert((cy * x) + cx, stripbit);
-		QRectF r = ci->rect();
-		stripbit->setPos(r.center().x(), r.top());
-		if (cx == 0) m_firstColumn[cy] = stripbit;
-	}
-
-	for (int iy = 0; iy < y; iy++) {
-		for (int ix = 0; ix < x - 2; ix++) {
-			stripbits.value((iy * x) + ix)->setRight(stripbits.value((iy * x) + ix + 1));
-			//DebugDialog::debug(QString("stripbit %1,%2  %3,%4 %5,%6")
-				//.arg(ix)
-				//.arg(iy)
-				//.arg(stripbits.value((iy * x) + ix)->x())
-				//.arg(stripbits.value((iy * x) + ix)->y())
-				//.arg(stripbits.value((iy * x) + ix + 1)->x())
-				//.arg(stripbits.value((iy * x) + ix + 1)->y()) );
-		}
-	}
+    bool oldStyle = false;
+    if (moduleID() == ModuleIDNames::StripboardModuleIDName) {
+        modelPart()->modelPartShared()->setModuleID(ModuleIDNames::Stripboard2ModuleIDName);
+        oldStyle = true;
+    }
 
 	QString config = prop("buses");
-	if (config.isEmpty()) return;
+    QString additionalConfig;
+
+	foreach (ConnectorItem * ci, cachedConnectorItems()) {
+		int cx, cy;
+		getXY(cx, cy, ci->connectorSharedName());
+        StripConnector * sc =  getStripConnector(cx, cy);
+        sc->connectorItem = ci;
+
+        if (cx < m_x - 1) {
+		    Stripbit * stripbit = new Stripbit(HPath, cx, cy, true, this);
+		    QRectF r = ci->rect();
+		    stripbit->setPos(r.center().x(), r.top());
+            stripbit->setVisible(true);
+            sc->right = stripbit;
+            if (!oldStyle) {
+                additionalConfig += stripbit->makeRemovedString();
+            }
+        }
+
+        if (cy < m_y - 1) {
+		    Stripbit * stripbit = new Stripbit(VPath, cx, cy, false, this);
+		    QRectF r = ci->rect();
+		    stripbit->setPos(r.left(), r.center().y());
+            stripbit->setVisible(true);
+            sc->down = stripbit;
+            if (oldStyle) {
+                additionalConfig += stripbit->makeRemovedString();
+            }
+        }
+	}
+
+	if (config.isEmpty() || oldStyle) {
+        config += additionalConfig;
+        setProp("buses", config);
+    }
 
 	QStringList removed = config.split(" ", QString::SkipEmptyParts);
+
 	foreach (QString name, removed) {
 		int cx, cy;
 		if (getXY(cx, cy, name)) {
-			stripbits.value(cy * x + cx)->setRemoved(true);
+            StripConnector * sc = getStripConnector(cx, cy);
+            bool vertical = name.contains("v");
+            if (vertical) {
+                if (sc->down != NULL) sc->down->setRemoved(true);
+            }
+            else {
+                if (sc->right != NULL) sc->right->setRemoved(true);
+            }
 		}
 	}
 
@@ -465,7 +467,7 @@ void Stripboard::addedToScene(bool temporary)
 QString Stripboard::genModuleID(QMap<QString, QString> & currPropsMap)
 {
 	QString size = currPropsMap.value("size");
-	return size + ModuleIDNames::StripboardModuleIDName;
+	return size + ModuleIDNames::Stripboard2ModuleIDName;
 }
 
 void Stripboard::initCutting(Stripbit *) 
@@ -477,7 +479,7 @@ void Stripboard::initCutting(Stripbit *)
 		
 		stripbit->setChanged(false);
 		if (stripbit->removed()) {
-			m_beforeCut += (stripbit->connectorItem()->connectorSharedName() + " ");
+            m_beforeCut += stripbit->makeRemovedString();
 		}
 	}
 }
@@ -494,8 +496,7 @@ void Stripboard::reinitBuses(bool triggerUndo)
 {
 	if (triggerUndo) {
 		QString afterCut;
-		QList<ConnectorItem *> affectedConnectors;
-		QList<int> visitedRows;
+		QSet<ConnectorItem *> affectedConnectors;
 		int changeCount = 0;
 		bool connect = true;
 		foreach (QGraphicsItem * item, childItems()) {
@@ -503,36 +504,23 @@ void Stripboard::reinitBuses(bool triggerUndo)
 			if (stripbit == NULL) continue;
 
 			if (stripbit->removed()) {
-				afterCut += (stripbit->connectorItem()->connectorSharedName() + " ");
-			}
-			if (!stripbit->changed()) continue;
-
-			changeCount++;
-			connect = !stripbit->removed();
-			if (visitedRows.contains(stripbit->y())) continue;
-
-			visitedRows.append(stripbit->y());
-			
-			stripbit = m_firstColumn.at(stripbit->y());
-			appendConnectors(affectedConnectors, m_lastColumn.at(stripbit->y()));
-			while (stripbit) {
-				appendConnectors(affectedConnectors, stripbit->connectorItem());
-				stripbit = stripbit->right();
+				afterCut += stripbit->makeRemovedString();
 			}
 		}
+
+        collectTo(affectedConnectors);
 
 		InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
 		if (infoGraphicsView != NULL) {
 			QString changeType = (connect) ? tr("Restored") : tr("Cut") ;
 			QString changeText = tr("%1 %n strip(s)", "", changeCount).arg(changeType);
-			infoGraphicsView->changeBus(this, connect, m_beforeCut, afterCut, affectedConnectors, changeText);
+            QList<ConnectorItem *> affected = affectedConnectors.toList();
+			infoGraphicsView->changeBus(this, connect, m_beforeCut, afterCut, affected, changeText);  // affectedConnectors is used for updating ratsnests; it's just a wild guess
 		}
 
 		return;
 	}
-
-	int x, y;
-	getXY(x, y, m_size);
+    if (viewID() != ViewLayer::BreadboardView) return;
 
 	foreach (BusShared * busShared, m_buses) delete busShared;
 	m_buses.clear();
@@ -551,36 +539,68 @@ void Stripboard::reinitBuses(bool triggerUndo)
 	}
 
 	QString busPropertyString;
-
-	foreach (Stripbit * stripbit, m_firstColumn) {
-		QList<ConnectorItem *> soFar;
-		int iy = stripbit->y();
-		while (stripbit != NULL) {
-			soFar << stripbit->connectorItem();
-			if (stripbit->removed()) {
-				busPropertyString.append(stripbit->connectorItem()->connectorSharedName() + " ");
-				nextBus(soFar);
-			}
-			stripbit = stripbit->right();
+	foreach (QGraphicsItem * item, childItems()) {
+		Stripbit * stripbit = dynamic_cast<Stripbit *>(item);
+		if (stripbit == NULL) continue;
+		
+		if (stripbit->removed()) {
+            busPropertyString += stripbit->makeRemovedString();
 		}
-		soFar.append(m_lastColumn.at(iy));
-		nextBus(soFar);
 	}
+
+	QList<ConnectorItem *> visited;
+    for (int iy = 0; iy < m_y; iy++) {
+        for (int ix = 0; ix < m_x; ix++) {
+            StripConnector * sc = getStripConnector(ix, iy);
+            if (visited.contains(sc->connectorItem)) continue;
+
+            QList<ConnectorItem *> connected;
+            collectConnected(ix, iy, connected);
+            visited.append(connected);
+            nextBus(connected);
+        }
+    }
 
 	modelPart()->clearBuses();
 	modelPart()->initBuses();
 	modelPart()->setLocalProp("buses",  busPropertyString);
-
 	
-	QList<ConnectorItem *> visited;
+	visited.clear();
 	foreach (ConnectorItem * connectorItem, cachedConnectorItems()) {
 		if (visited.contains(connectorItem)) continue;
 
-		connectorItem->restoreColor(true, 0, true);
+		connectorItem->restoreColor(false, 0, true);
 		if (connectorItem->bus()) {
 			this->busConnectorItems(connectorItem->bus(), connectorItem, visited);
 		}
 	}
+
+    update();
+}
+
+void Stripboard::collectConnected(int ix, int iy, QList<ConnectorItem *> & connected) {
+    StripConnector * sc = getStripConnector(ix, iy);
+    if (connected.contains(sc->connectorItem)) return;
+
+    connected << sc->connectorItem;
+
+    if (sc->right != NULL && !sc->right->removed()) {
+        collectConnected(ix + 1, iy, connected);
+        
+    }
+    if (sc->down != NULL && !sc->down->removed()) {
+        collectConnected(ix, iy + 1, connected);
+    }
+
+    StripConnector * left = ix > 0 ? getStripConnector(ix - 1, iy) : NULL;
+    if (left != NULL && left->right != NULL && !left->right->removed()) {
+        collectConnected(ix - 1, iy, connected);
+    }
+
+    StripConnector * up = iy > 0 ? getStripConnector(ix, iy - 1) : NULL;
+    if (up != NULL && up->down != NULL && !up->down->removed()) {
+        collectConnected(ix, iy - 1, connected);
+    }
 }
 
 void Stripboard::nextBus(QList<ConnectorItem *> & soFar)
@@ -607,10 +627,12 @@ void Stripboard::setProp(const QString & prop, const QString & value)
 		Stripbit * stripbit = dynamic_cast<Stripbit *>(item);
 		if (stripbit == NULL) continue;
 
-		bool remove = removed.contains(stripbit->connectorItem()->connectorSharedName());
+        QString removedString = stripbit->makeRemovedString();
+        removedString.chop(1);          // remove trailing space
+		bool remove = removed.contains(removedString);
 		stripbit->setRemoved(remove);
 		if (remove) {
-			removed.removeOne(stripbit->connectorItem()->connectorSharedName());
+			removed.removeOne(removedString);
 		}
 	}
 
@@ -629,14 +651,192 @@ void Stripboard::restoreRowColors(Stripbit * stripbit)
 	//int y = stripbit->y();
 	//stripbit = m_firstColumn.at(y);
 
-	//ConnectorItem * ci = m_lastColumn.at(y);
+
 	//ci->restoreColor(false, 0, false);
 }
 
 QString Stripboard::getRowLabel() {
-	return tr("strip length");
+	return tr("rows");
 }
 
 QString Stripboard::getColumnLabel() {
-	return tr("strips");
+	return tr("columns");
+}
+
+void Stripboard::makeInitialPath() {
+	ConnectorItem * ciFirst = NULL;
+	ConnectorItem * ciNextH = NULL;
+	ConnectorItem * ciNextV = NULL;
+	foreach (ConnectorItem * ci, cachedConnectorItems()) {
+		int cx, cy;
+		getXY(cx, cy, ci->connectorSharedName());
+		if (cy == 0 && cx == 0) {
+			ciFirst = ci;
+			break;
+		}
+	}
+	foreach (ConnectorItem * ci, cachedConnectorItems()) {
+		int cx, cy;
+		getXY(cx, cy, ci->connectorSharedName());
+		if (cy == 0 && cx == 1) {
+			ciNextH = ci;
+            if (ciNextV) break;
+		}
+		else if (cy == 1 && cx == 0) {
+			ciNextV = ci;
+            if (ciNextH) break;
+		}
+	}
+
+	if (ciFirst == NULL) return;
+	if (ciNextH == NULL) return;
+	if (ciNextV == NULL) return;
+
+	QRectF r1 = ciFirst->rect();
+	QRectF rh = ciNextH->rect();
+
+	double h = r1.height();
+	double w = rh.center().x() - r1.center().x();
+
+	r1.moveTo(-(r1.width() / 2), 0);
+	rh.moveTo(w - (rh.width() / 2), 0);
+
+	HPath.addRect(0, 0, w / 2, h);
+	HPath.arcTo(r1, 90, -180);
+	HPath.addRect(w / 2, 0, w / 2, h);
+	HPath.moveTo(w, 0);
+	HPath.arcTo(rh, 90, 180);
+
+    r1 = ciFirst->rect();
+    QRectF rv = ciNextV->rect();
+
+	h = rv.center().y() - r1.center().y();
+	w = r1.width();
+
+	r1.moveTo(0, -(r1.height() / 2));
+	rv.moveTo(0, h - (rv.height() / 2));
+
+	VPath.addRect(0, 0, w, h / 2);
+	VPath.arcTo(r1, 0, -180);
+	VPath.addRect(0, h / 2, w, h / 2);
+	VPath.moveTo(0, h);
+	VPath.arcTo(rv, 0, 180);
+}
+
+StripConnector * Stripboard::getStripConnector(int ix, int iy) {
+    return m_strips.at((iy * m_x) + ix);
+}
+
+void Stripboard::swapEntry(const QString & text) {
+
+    FamilyPropertyComboBox * comboBox = qobject_cast<FamilyPropertyComboBox *>(sender());
+    if (comboBox == NULL) return;
+
+    if (comboBox->prop().compare("layout", Qt::CaseInsensitive) == 0) {
+        InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
+	    if (infoGraphicsView == NULL) return;
+
+        QString afterCut;
+        if (text.compare("horizontal strips", Qt::CaseInsensitive) == 0) {
+            foreach (QGraphicsItem * item, childItems()) {
+		        Stripbit * stripbit = dynamic_cast<Stripbit *>(item);
+		        if (stripbit == NULL) continue;
+
+                if (!stripbit->horizontal()) {
+                    afterCut += stripbit->makeRemovedString();
+                }
+            }
+        }
+        else if (text.compare("vertical strips", Qt::CaseInsensitive) == 0) {
+            foreach (QGraphicsItem * item, childItems()) {
+		        Stripbit * stripbit = dynamic_cast<Stripbit *>(item);
+		        if (stripbit == NULL) continue;
+
+                if (stripbit->horizontal()) {
+                    afterCut += stripbit->makeRemovedString();
+                }
+            }
+        }
+        else {
+            for (int i = 0; i < StripLayouts.count(); i++) {
+                if (StripLayouts.at(i).name.compare(text) == 0) {
+                    StripLayout stripLayout = StripLayouts.at(i);
+                    QMap<QString, QString> propsMap;
+                    propsMap.insert("size", QString("%1.%2").arg(stripLayout.columns).arg(stripLayout.rows));
+                    propsMap.insert("type", "Stripboard");
+                    propsMap.insert("buses", stripLayout.buses);
+                    InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
+                    if (infoGraphicsView != NULL) {
+                        infoGraphicsView->swap(family(), "size", propsMap, this);
+                    }
+                    return;
+                }
+            }
+        }
+
+        if (!afterCut.isEmpty()) {
+            initCutting(NULL);
+	        QString changeText = tr("%1 strips").arg(text);
+            QSet<ConnectorItem *> affectedConnectors;
+            collectTo(affectedConnectors);
+            QList<ConnectorItem *> affected = affectedConnectors.toList();
+            infoGraphicsView->changeBus(this, true, m_beforeCut, afterCut, affected, changeText);  // affectedConnectors is used for updating ratsnests; it's just a wild guess
+        }
+
+        return;
+    }
+
+
+    Perfboard::swapEntry(text);
+}
+
+void Stripboard::collectTo(QSet<ConnectorItem *> & affectedConnectors) {
+    foreach (ConnectorItem * connectorItem, cachedConnectorItems()) {
+        foreach (ConnectorItem * toConnectorItem, connectorItem->connectedToItems()) {
+            affectedConnectors.insert(toConnectorItem);
+        }
+    }
+}
+
+void Stripboard::initStripLayouts() {
+	QFile file(":/resources/templates/stripboards.xml");
+	QString errorStr;
+	int errorLine;
+	int errorColumn;
+	QDomDocument domDocument;
+
+	if (!domDocument.setContent(&file, true, &errorStr, &errorLine, &errorColumn)) {
+		DebugDialog::debug(QString("unable to parse stripboards.xml: %1 %2 %3").arg(errorStr).arg(errorLine).arg(errorColumn));
+		return;
+	}
+
+    QDomElement root = domDocument.documentElement();
+    QDomElement stripboard = root.firstChildElement("stripboard");
+    while (!stripboard.isNull()) {
+        QString name = stripboard.attribute("name");
+        bool rok;
+        int rows = stripboard.attribute("rows").toInt(&rok);
+        bool cok;
+        int columns = stripboard.attribute("columns").toInt(&cok);
+        QString buses = stripboard.attribute("buses");
+        stripboard = stripboard.nextSiblingElement("stripboard");
+        if (!rok) continue;
+        if (!cok) continue;
+        if (name.isEmpty() || buses.isEmpty()) continue;
+
+        StripLayout stripLayout(name, rows, columns, buses);
+        StripLayouts.append(stripLayout);
+    }
+}
+
+QStringList Stripboard::collectValues(const QString & family, const QString & prop, QString & value) {
+    QStringList values = Perfboard::collectValues(family, prop, value);
+
+	if (prop.compare("layout", Qt::CaseInsensitive) == 0) {
+        foreach (StripLayout stripLayout, StripLayouts) {
+            values.append(stripLayout.name);
+        }
+	}
+
+	return values;
 }

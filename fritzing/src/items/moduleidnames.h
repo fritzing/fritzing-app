@@ -79,6 +79,7 @@ public:
 	static const QString ColorFluxLEDModuleIDName;
 	static const QString PerfboardModuleIDName;
 	static const QString StripboardModuleIDName;
+	static const QString Stripboard2ModuleIDName;
 	static const QString SpacerModuleIDName;
 	static const QString SchematicFrameModuleIDName;
     static const QString CopperBlockerModuleIDName;

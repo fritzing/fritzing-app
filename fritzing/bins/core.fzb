@@ -844,7 +844,7 @@
                 </iconView>
             </views>
         </instance>
-	<instance moduleIdRef="30.20StripboardModuleID" modelIndex="49" path="parts/core/30.20StripboardModuleID.fzp">
+	<instance moduleIdRef="30.20Stripboard2ModuleID" modelIndex="49" path="parts/core/30.20StripboardModuleID.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>

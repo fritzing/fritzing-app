@@ -35,6 +35,7 @@ $Date: 2013-04-28 14:14:07 +0200 (So, 28. Apr 2013) $
 #include <QGraphicsEllipseItem>
 #include <QSet>
 #include <QHash>
+#include <QMap>
 #include <QTimer>
 
 #include "../items/paletteitem.h"
@@ -74,6 +75,7 @@ struct SwapThing {
     QHash<ConnectorItem *, ConnectorItem *> toConnectorItems;
     QHash<ConnectorItem *, Connector *> swappedGender;
     SketchWidget * bbView;
+    QMap<QString, QString> propsMap;
 };
 
 struct RenderThing {
@@ -456,8 +458,8 @@ protected:
 	QString makeWireSVGAux(Wire * wire, double width, const QString & color, QPointF offset, double dpi, double printerScale, bool blackOnly, bool dashed);
 
 	QString makeMoveSVG(double printerScale, double dpi, QPointF & offset); 
-	void prepDeleteProps(ItemBase * itemBase, long id, const QString & newModuleID, QUndoCommand * parentCommand);
-	void prepDeleteOtherProps(ItemBase * itemBase, long id, const QString & newModuleID, QUndoCommand * parentCommand);
+	void prepDeleteProps(ItemBase * itemBase, long id, const QString & newModuleID, QMap<QString, QString> & propsMap, QUndoCommand * parentCommand);
+	void prepDeleteOtherProps(ItemBase * itemBase, long id, const QString & newModuleID, QMap<QString, QString> & propsMap, QUndoCommand * parentCommand);
 	virtual ViewLayer::ViewLayerPlacement getViewLayerPlacement(ModelPart *, QDomElement & instance, QDomElement & view, ViewGeometry &);
 	virtual ViewLayer::ViewLayerPlacement wireViewLayerPlacement(ConnectorItem *);
 

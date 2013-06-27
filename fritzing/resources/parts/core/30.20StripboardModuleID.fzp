@@ -13,6 +13,7 @@
     <property name="family">Prototyping Board</property>
      <property name="type">Stripboard</property>
     <property name="size">30.20</property>
+    <property name="layout">horizontal strips</property>
   </properties>
   <taxonomy>prototyping.stripboard.stripboard</taxonomy>
   <description>A stripboard for easily prototyping circuits</description>

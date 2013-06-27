@@ -3640,8 +3640,8 @@ void MainWindow::swapObsolete(bool displayFeedback) {
 	if (itemBases.count() <= 0) return;
 
 	QUndoCommand* parentCommand = new QUndoCommand();
-        int count = 0;
-
+    int count = 0;
+    QMap<QString, QString> propsMap;
 	foreach (ItemBase * itemBase, itemBases) {
 		ModelPart * newModelPart = findReplacedby(itemBase->modelPart());
 		if (newModelPart == NULL) {
@@ -3654,7 +3654,7 @@ void MainWindow::swapObsolete(bool displayFeedback) {
 		}
 
 		count++;
-		long newID = swapSelectedAuxAux(itemBase, newModelPart->moduleID(), itemBase->viewLayerPlacement(), parentCommand);
+		long newID = swapSelectedAuxAux(itemBase, newModelPart->moduleID(), itemBase->viewLayerPlacement(), propsMap, parentCommand);
 		if (itemBase->modelPart()) {
 			// special case for swapping old resistors.
 			QString resistance = itemBase->modelPart()->properties().value("resistance", "");

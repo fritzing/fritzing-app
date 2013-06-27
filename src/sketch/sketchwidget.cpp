@@ -5192,7 +5192,8 @@ void SketchWidget::makeDeleteItemCommandPrepSlot(ItemBase * itemBase, bool forei
 	}
 
 	if (!foreign) {
-		prepDeleteProps(itemBase, itemBase->id(), "", parentCommand);
+        QMap<QString, QString> propsMap;
+		prepDeleteProps(itemBase, itemBase->id(), "", propsMap, parentCommand);
 	}
 
 	rememberSticky(itemBase, parentCommand);
@@ -5242,7 +5243,7 @@ void SketchWidget::makeDeleteItemCommandFinalSlot(ItemBase * itemBase, bool fore
 	new DeleteItemCommand(this, BaseCommand::SingleView, mp->moduleID(), itemBase->viewLayerPlacement(), itemBase->getViewGeometry(), itemBase->id(), mp->modelIndex(), parentCommand);
 }
 
-void SketchWidget::prepDeleteProps(ItemBase * itemBase, long id, const QString & newModuleID, QUndoCommand * parentCommand) 
+void SketchWidget::prepDeleteProps(ItemBase * itemBase, long id, const QString & newModuleID, QMap<QString, QString> & propsMap, QUndoCommand * parentCommand) 
 {
 	// TODO: does this need to be generalized to the whole set of modelpart props?
 	// TODO: Ruler?
@@ -5271,7 +5272,7 @@ void SketchWidget::prepDeleteProps(ItemBase * itemBase, long id, const QString &
 		
 		case ModelPart::Board:
 			new ChangeBoardLayersCommand(this, m_boardLayers, m_boardLayers, parentCommand);
-			prepDeleteOtherProps(itemBase, id, newModuleID, parentCommand);
+			prepDeleteOtherProps(itemBase, id, newModuleID, propsMap, parentCommand);
 			return;
 		
 		case ModelPart::ResizableBoard:
@@ -5288,7 +5289,7 @@ void SketchWidget::prepDeleteProps(ItemBase * itemBase, long id, const QString &
                         rbc->setUndoOnly();
                     }
 				}
-				prepDeleteOtherProps(itemBase, id, newModuleID, parentCommand);
+				prepDeleteOtherProps(itemBase, id, newModuleID, propsMap, parentCommand);
 			}
 			return;
 
@@ -5308,7 +5309,7 @@ void SketchWidget::prepDeleteProps(ItemBase * itemBase, long id, const QString &
 				else if (!shapeProp.isEmpty()) {
 					new LoadLogoImageCommand(this, id, shapeProp, logo->modelPart()->localProp("aspectratio").toSizeF(), logo->prop("lastfilename"), "", false, parentCommand);
 				}
-				prepDeleteOtherProps(itemBase, id, newModuleID, parentCommand);
+				prepDeleteOtherProps(itemBase, id, newModuleID, propsMap, parentCommand);
 			}
 			return;
 
@@ -5320,7 +5321,7 @@ void SketchWidget::prepDeleteProps(ItemBase * itemBase, long id, const QString &
 				QPointF c0, c1;
 				jumper->getParams(p, c0, c1);
 				new ResizeJumperItemCommand(this, id, p, c0, c1, p, c0, c1, parentCommand);
-				prepDeleteOtherProps(itemBase, id, newModuleID, parentCommand);
+				prepDeleteOtherProps(itemBase, id, newModuleID, propsMap, parentCommand);
 			}
 			return;
 
@@ -5328,7 +5329,7 @@ void SketchWidget::prepDeleteProps(ItemBase * itemBase, long id, const QString &
 			{
 				GroundPlane * groundPlane = dynamic_cast<GroundPlane *>(itemBase);
 				new SetPropCommand(this, id, "svg", groundPlane->svg(), groundPlane->svg(), true, parentCommand);
-				prepDeleteOtherProps(itemBase, id, newModuleID, parentCommand);
+				prepDeleteOtherProps(itemBase, id, newModuleID, propsMap, parentCommand);
 			}
 			return;
 
@@ -5339,7 +5340,7 @@ void SketchWidget::prepDeleteProps(ItemBase * itemBase, long id, const QString &
                 if (!label.isEmpty()) {
 				    new SetPropCommand(this, id, "label", label, label, true, parentCommand);
                 }
-				prepDeleteOtherProps(itemBase, id, newModuleID, parentCommand);
+				prepDeleteOtherProps(itemBase, id, newModuleID, propsMap, parentCommand);
             }
             return;
 
@@ -5354,21 +5355,21 @@ void SketchWidget::prepDeleteProps(ItemBase * itemBase, long id, const QString &
 		QSizeF sz;
 		pad->getParams(p, sz);
 		new ResizeBoardCommand(this, id, sz.width(), sz.height(), sz.width(), sz.height(), parentCommand);
-        prepDeleteOtherProps(itemBase, id, newModuleID, parentCommand);
+        prepDeleteOtherProps(itemBase, id, newModuleID, propsMap, parentCommand);
         return;
     }
 
 	Resistor * resistor =  qobject_cast<Resistor *>(itemBase);
 	if (resistor != NULL) {
 		new SetResistanceCommand(this, id, resistor->resistance(), resistor->resistance(), resistor->pinSpacing(), resistor->pinSpacing(), parentCommand);
-		prepDeleteOtherProps(itemBase, id, newModuleID, parentCommand);
+		prepDeleteOtherProps(itemBase, id, newModuleID, propsMap, parentCommand);
 		return;
 	}
 
 	MysteryPart * mysteryPart = qobject_cast<MysteryPart *>(itemBase);
 	if (mysteryPart != NULL) {
 		new SetPropCommand(this, id, "chip label", mysteryPart->chipLabel(), mysteryPart->chipLabel(), true, parentCommand);
-		prepDeleteOtherProps(itemBase, id, newModuleID, parentCommand);
+		prepDeleteOtherProps(itemBase, id, newModuleID, propsMap, parentCommand);
 		return;
 	}
 
@@ -5385,14 +5386,14 @@ void SketchWidget::prepDeleteProps(ItemBase * itemBase, long id, const QString &
 	Hole * hole = qobject_cast<Hole *>(itemBase);
 	if (hole != NULL) {
 		new SetPropCommand(this, id, "hole size", hole->holeSize(), hole->holeSize(), true, parentCommand);
-		prepDeleteOtherProps(itemBase, id, newModuleID, parentCommand);
+		prepDeleteOtherProps(itemBase, id, newModuleID, propsMap, parentCommand);
 		return;
 	}
 
-	prepDeleteOtherProps(itemBase, id, newModuleID, parentCommand);
+	prepDeleteOtherProps(itemBase, id, newModuleID, propsMap, parentCommand);
 }
 
-void SketchWidget::prepDeleteOtherProps(ItemBase * itemBase, long id, const QString & newModuleID, QUndoCommand * parentCommand) 
+void SketchWidget::prepDeleteOtherProps(ItemBase * itemBase, long id, const QString & newModuleID, QMap<QString, QString> & propsMap, QUndoCommand * parentCommand) 
 {
 	Capacitor * capacitor = qobject_cast<Capacitor *>(itemBase); 
 	if (capacitor) {
@@ -5403,10 +5404,12 @@ void SketchWidget::prepDeleteOtherProps(ItemBase * itemBase, long id, const QStr
 		}
 	}
 
-	if (itemBase->moduleID().endsWith(ModuleIDNames::StripboardModuleIDName)) {
+	if (itemBase->moduleID().endsWith(ModuleIDNames::StripboardModuleIDName) || itemBase->moduleID().endsWith(ModuleIDNames::Stripboard2ModuleIDName)) {
 		QString buses = itemBase->prop("buses");
+        QString newBuses = propsMap.value("buses");
+        if (newBuses.isEmpty()) newBuses = buses;
 		if (!buses.isEmpty()) {
-			new SetPropCommand(this, id, "buses", buses, buses, true, parentCommand);
+			new SetPropCommand(this, id, "buses", buses, newBuses, true, parentCommand);
 		}
 	}
 
@@ -5986,7 +5989,7 @@ long SketchWidget::setUpSwap(SwapThing & swapThing, bool master)
 		selectItemCommand = new SelectItemCommand(this, SelectItemCommand::NormalSelect, swapThing.parentCommand);
 		selectItemCommand->addRedo(swapThing.newID);  // to make sure new item is selected so it appears in the info view
 
-		prepDeleteProps(itemBase, swapThing.newID, swapThing.newModuleID, swapThing.parentCommand);
+		prepDeleteProps(itemBase, swapThing.newID, swapThing.newModuleID, swapThing.propsMap, swapThing.parentCommand);
 	    new CleanUpRatsnestsCommand(this, CleanUpWiresCommand::RedoOnly, swapThing.parentCommand);
 		new CleanUpWiresCommand(this, CleanUpWiresCommand::RedoOnly, swapThing.parentCommand);
 	}

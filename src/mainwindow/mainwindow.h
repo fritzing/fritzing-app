@@ -177,7 +177,7 @@ public:
 	void setCloseSilently(bool);
 	class PCBSketchWidget * pcbView();
 	void noBackup();
-	void swapSelectedAux(ItemBase * itemBase, const QString & moduleID, bool useViewLayerPlacement, ViewLayer::ViewLayerPlacement);
+	void swapSelectedAux(ItemBase * itemBase, const QString & moduleID, bool useViewLayerPlacement, ViewLayer::ViewLayerPlacement, QMap<QString, QString> & propsMap);
     void swapLayers(ItemBase * itemBase, int layers, const QString & msg, int delay);
 	bool saveAsAux(const QString & fileName);
 	void swapObsolete(bool displayFeedback);
@@ -526,7 +526,7 @@ protected:
 
 	bool alreadyOpen(const QString & fileName);
 	void svgMissingLayer(const QString & layername, const QString & path);
-	long swapSelectedAuxAux(ItemBase * itemBase, const QString & moduleID, ViewLayer::ViewLayerPlacement viewLayerPlacement, QUndoCommand * parentCommand);
+	long swapSelectedAuxAux(ItemBase * itemBase, const QString & moduleID, ViewLayer::ViewLayerPlacement viewLayerPlacement, QMap<QString, QString> & propsMap, QUndoCommand * parentCommand);
 	bool swapSpecial(const QString & prop, QMap<QString, QString> & currPropsMap);
 
 	void enableAddBendpointAct(QGraphicsItem *);

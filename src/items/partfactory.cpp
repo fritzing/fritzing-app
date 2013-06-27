@@ -173,6 +173,9 @@ ItemBase * PartFactory::createPartAux( ModelPart * modelPart, ViewLayer::ViewID 
 					if (moduleID.endsWith(ModuleIDNames::StripboardModuleIDName)) {
 						return new Stripboard(modelPart, viewID, viewGeometry, id, itemMenu, doLabel);
 					}
+					if (moduleID.endsWith(ModuleIDNames::Stripboard2ModuleIDName)) {
+						return new Stripboard(modelPart, viewID, viewGeometry, id, itemMenu, doLabel);
+					}
 					if (moduleID.endsWith(ModuleIDNames::SchematicFrameModuleIDName)) {
 						return new SchematicFrame(modelPart, viewID, viewGeometry, id, itemMenu, doLabel);
 					}
@@ -468,6 +471,10 @@ QString PartFactory::getFzpFilename(const QString & moduleID)
 	}
 
 	if (moduleID.endsWith(ModuleIDNames::StripboardModuleIDName)) {
+		return getFzpFilenameAux(moduleID, &Stripboard::genFZP);
+	}
+
+	if (moduleID.endsWith(ModuleIDNames::Stripboard2ModuleIDName)) {
 		return getFzpFilenameAux(moduleID, &Stripboard::genFZP);
 	}
 

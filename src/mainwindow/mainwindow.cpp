@@ -1969,7 +1969,7 @@ void MainWindow::swapSelectedMap(const QString & family, const QString & prop, Q
 			}
 		}
 
-		swapSelectedAux(itemBase->layerKinChief(), generatedModuleID, false, ViewLayer::UnknownPlacement);
+		swapSelectedAux(itemBase->layerKinChief(), generatedModuleID, false, ViewLayer::UnknownPlacement, currPropsMap);
 		return;
 	}
 
@@ -1979,7 +1979,7 @@ void MainWindow::swapSelectedMap(const QString & family, const QString & prop, Q
             if (viewItem) {
                 ViewLayer::ViewLayerPlacement viewLayerPlacement = (currPropsMap.value(prop) == ItemBase::TranslatedPropertyNames.value("bottom") ? ViewLayer::NewBottom : ViewLayer::NewTop);
                 if (viewItem->viewLayerPlacement() != viewLayerPlacement) {
-                    swapSelectedAux(itemBase->layerKinChief(), itemBase->moduleID(), true, viewLayerPlacement);
+                    swapSelectedAux(itemBase->layerKinChief(), itemBase->moduleID(), true, viewLayerPlacement, currPropsMap);
                     return;
                 }
             }
@@ -2017,7 +2017,7 @@ void MainWindow::swapSelectedMap(const QString & family, const QString & prop, Q
 		AutoCloseMessageBox::showMessage(this, tr("No exactly matching part found; Fritzing chose the closest match."));
 	}
 
-	swapSelectedAux(itemBase, moduleID, false, ViewLayer::UnknownPlacement);
+	swapSelectedAux(itemBase, moduleID, false, ViewLayer::UnknownPlacement, currPropsMap);
 }
 
 bool MainWindow::swapSpecial(const QString & theProp, QMap<QString, QString> & currPropsMap) {
@@ -2082,7 +2082,7 @@ void MainWindow::swapLayers(ItemBase * itemBase, int layers, const QString & msg
 	m_undoStack->waitPush(parentCommand, delay);
 }
 
-void MainWindow::swapSelectedAux(ItemBase * itemBase, const QString & moduleID, bool useViewLayerPlacement, ViewLayer::ViewLayerPlacement overrideViewLayerPlacement) {
+void MainWindow::swapSelectedAux(ItemBase * itemBase, const QString & moduleID, bool useViewLayerPlacement, ViewLayer::ViewLayerPlacement overrideViewLayerPlacement,  QMap<QString, QString> & propsMap) {
 
 	QUndoCommand* parentCommand = new QUndoCommand(tr("Swapped %1 with module %2").arg(itemBase->instanceTitle()).arg(moduleID));
 	new CleanUpWiresCommand(m_breadboardGraphicsView, CleanUpWiresCommand::UndoOnly, parentCommand);
@@ -2110,7 +2110,7 @@ void MainWindow::swapSelectedAux(ItemBase * itemBase, const QString & moduleID, 
         }
     }
 
-	swapSelectedAuxAux(itemBase, moduleID, viewLayerPlacement, parentCommand);
+	swapSelectedAuxAux(itemBase, moduleID, viewLayerPlacement, propsMap, parentCommand);
     
 	// need to defer execution so the content of the info view doesn't change during an event that started in the info view
 	m_undoStack->waitPush(parentCommand, SketchWidget::PropChangeDelay);
@@ -2120,7 +2120,8 @@ void MainWindow::swapSelectedAux(ItemBase * itemBase, const QString & moduleID, 
 void MainWindow::swapBoardImageSlot(SketchWidget * sketchWidget, ItemBase * itemBase, const QString & filename, const QString & moduleID, bool addName) {
 
 	QUndoCommand* parentCommand = new QUndoCommand(tr("Change image to %2").arg(filename));
-	long newID = swapSelectedAuxAux(itemBase, moduleID, itemBase->viewLayerPlacement(), parentCommand);
+    QMap<QString, QString> propsMap;
+	long newID = swapSelectedAuxAux(itemBase, moduleID, itemBase->viewLayerPlacement(), propsMap, parentCommand);
 
     LoadLogoImageCommand * cmd = new LoadLogoImageCommand(sketchWidget, newID, "", QSizeF(0,0), filename, filename, addName, parentCommand);
     cmd->setRedoOnly();
@@ -2132,10 +2133,11 @@ void MainWindow::swapBoardImageSlot(SketchWidget * sketchWidget, ItemBase * item
 
 void MainWindow::subSwapSlot(SketchWidget * sketchWidget, ItemBase * itemBase, const QString & newModuleID, ViewLayer::ViewLayerPlacement viewLayerPlacement, long & newID, QUndoCommand * parentCommand) {
 	Q_UNUSED(sketchWidget);
-	newID = swapSelectedAuxAux(itemBase, newModuleID, viewLayerPlacement, parentCommand);
+    QMap<QString, QString> propsMap;
+	newID = swapSelectedAuxAux(itemBase, newModuleID, viewLayerPlacement, propsMap, parentCommand);
 }
 
-long MainWindow::swapSelectedAuxAux(ItemBase * itemBase, const QString & moduleID,  ViewLayer::ViewLayerPlacement viewLayerPlacement, QUndoCommand * parentCommand) 
+long MainWindow::swapSelectedAuxAux(ItemBase * itemBase, const QString & moduleID,  ViewLayer::ViewLayerPlacement viewLayerPlacement, QMap<QString, QString> & propsMap, QUndoCommand * parentCommand) 
 {
 	long modelIndex = ModelPart::nextIndex();
 
@@ -2161,6 +2163,7 @@ long MainWindow::swapSelectedAuxAux(ItemBase * itemBase, const QString & moduleI
     swapThing.newModuleID = moduleID;
     swapThing.viewLayerPlacement = viewLayerPlacement;
     swapThing.parentCommand = parentCommand;
+    swapThing.propsMap = propsMap;
 
     long newID = 0;
     for (int i = 0; i < 3; i++) {
@@ -2766,8 +2769,9 @@ bool MainWindow::updateParts(const QString & moduleID, QUndoCommand * parentComm
         itemBases.insert(itemBase->layerKinChief());
     }
 
+    QMap<QString, QString> propsMap;
     foreach (ItemBase * itemBase, itemBases) {
-        swapSelectedAuxAux(itemBase, moduleID, itemBase->viewLayerPlacement(), parentCommand);
+        swapSelectedAuxAux(itemBase, moduleID, itemBase->viewLayerPlacement(), propsMap, parentCommand);
     }
 
     return true;

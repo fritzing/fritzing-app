@@ -38,18 +38,17 @@ class ConnectorItem;
 class Stripbit : public QGraphicsPathItem
 {
 public:
-	Stripbit(const QPainterPath & path, ConnectorItem *, int x, int y, QGraphicsItem * parent);
+	Stripbit(const QPainterPath & path, int x, int y, bool horizontal, QGraphicsItem * parent);
 	~Stripbit();
 
-	void setRight(Stripbit *);
-	Stripbit * right();
+    bool horizontal();
 	void setRemoved(bool);
 	bool removed();
 	void setChanged(bool);
 	bool changed();
-	ConnectorItem * connectorItem();
 	int y();
 	int x();
+    QString makeRemovedString();
 
 	void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
 	void mousePressEvent(QGraphicsSceneMouseEvent *event);
@@ -59,13 +58,20 @@ public:
 	void hoverLeaveEvent( QGraphicsSceneHoverEvent * event );
 
 protected:
-	ConnectorItem * m_connectorItem;
 	bool m_removed;
 	bool m_inHover;
 	int m_x;
 	int m_y;
 	bool m_changed;
-	Stripbit * m_right;
+    bool m_horizontal;
+};
+
+struct StripConnector {
+    ConnectorItem * connectorItem;
+    Stripbit * down;
+    Stripbit * right;
+
+    StripConnector();
 };
 
 class Stripboard : public Perfboard 
@@ -85,22 +91,29 @@ public:
 	void initCutting(Stripbit *);
 	void getConnectedColor(ConnectorItem *, QBrush * &, QPen * &, double & opacity, double & negativePenWidth, bool & negativeOffsetRect);
 	void restoreRowColors(Stripbit * stripbit);
+    void swapEntry(const QString & text);
+    QStringList collectValues(const QString & family, const QString & prop, QString & value);
 
 protected:
 	void nextBus(QList<ConnectorItem *> & soFar);
 	QString getRowLabel();
 	QString getColumnLabel();
+    void makeInitialPath();
+    void collectConnected(int x, int y, QList<ConnectorItem *> & connected);
+    StripConnector * getStripConnector(int x, int y);
+    void collectTo(QSet<ConnectorItem *> &);
+    void initStripLayouts();
 
 public:
 	static QString genFZP(const QString & moduleID);
 	static QString genModuleID(QMap<QString, QString> & currPropsMap);
 
 protected:
-	QVector<ConnectorItem *> m_lastColumn;
-	QVector<Stripbit *> m_firstColumn;
+    QList<StripConnector *> m_strips;
 	QList<class BusShared *> m_buses;
 	QString m_beforeCut;
-
+    int m_x;
+    int m_y;
 };
 
 #endif

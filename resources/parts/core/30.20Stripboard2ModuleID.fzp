@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- This xml file is generated through a template. Please don't edit it directly -->
-<module moduleId="30.20StripboardModuleID">
+<module moduleId="30.20Stripboard2ModuleID">
   <version>4</version>
   <author>JC</author>
   <title>basic single-sided stripboard</title>
@@ -13,7 +13,7 @@
     <property name="family">Prototyping Board</property>
      <property name="type">Stripboard</property>
     <property name="size">30.20</property>
-    <property name="layout">horizontal strips</property>
+    <property name="layout">vertical strips</property>
   </properties>
   <taxonomy>prototyping.stripboard.stripboard</taxonomy>
   <description>A stripboard for easily prototyping circuits</description>

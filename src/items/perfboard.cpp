@@ -32,6 +32,7 @@ $Date: 2013-04-22 23:44:56 +0200 (Mo, 22. Apr 2013) $
 #include "../sketch/infographicsview.h"
 #include "../svg/svgfilesplitter.h"
 #include "../commands.h"
+#include "../debugdialog.h"
 #include "moduleidnames.h"
 #include "partlabel.h"
 
@@ -169,10 +170,8 @@ QString Perfboard::genFZP(const QString & moduleid)
 		file.close();
 	}
 
-	QString size = moduleid;
-	size.remove(ModuleIDNames::PerfboardModuleIDName);
 	int x, y;
-	getXY(x, y, size);
+	getXY(x, y, moduleid);
 
 	QString middle;
 
@@ -208,7 +207,7 @@ bool Perfboard::collectExtraInfo(QWidget * parent, const QString & family, const
 		hboxLayout1->setContentsMargins(0, 0, 0, 0);
 		hboxLayout1->setSpacing(2);
 
-		QLabel * l1 = new QLabel(getRowLabel());	
+		QLabel * l1 = new QLabel(getColumnLabel());	
 		l1->setMargin(0);
 		l1->setObjectName("infoViewLabel");	
 		m_xEdit = new QLineEdit();
@@ -226,7 +225,7 @@ bool Perfboard::collectExtraInfo(QWidget * parent, const QString & family, const
 		hboxLayout2->setContentsMargins(0, 0, 0, 0);
 		hboxLayout2->setSpacing(2);
 
-		QLabel * l2 = new QLabel(getColumnLabel());
+		QLabel * l2 = new QLabel(getRowLabel());
 		l2->setMargin(0);
 		l2->setObjectName("infoViewLabel");	
 		m_yEdit = new QLineEdit();
@@ -315,9 +314,12 @@ void Perfboard::changeBoardSize()
 		}
 	}
 
-
 	QString newSize = QString("%1.%2").arg(m_xEdit->text()).arg(m_yEdit->text());
     m_propsMap.insert("size", newSize);
+
+    foreach (QString key, m_propsMap.keys()) {
+        DebugDialog::debug("prop " + key + " " + m_propsMap.value(key));
+    }
 
     InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
     if (infoGraphicsView != NULL) {

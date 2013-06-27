@@ -195,6 +195,7 @@
         <file>resources/parts/core/hole.fzp</file>
         <file>resources/parts/core/30.20PerfboardModuleID.fzp</file>
         <file>resources/parts/core/30.20StripboardModuleID.fzp</file>
+        <file>resources/parts/core/30.20Stripboard2ModuleID.fzp</file>
         <file>resources/parts/core/schematic_frame.fzp</file>
 
         <file>resources/parts/svg/core/icon/iconPerfboard.svg</file>
@@ -313,6 +314,7 @@
 	<file>resources/templates/generic_sip_bread_template.txt</file>
 	<file>resources/templates/schematic_frame_template.txt</file>
 	<file>resources/templates/screw_terminal_bread_template.txt</file>
+	<file>resources/templates/stripboards.xml</file>
 	
     </qresource>
 </RCC>

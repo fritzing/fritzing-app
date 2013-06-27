@@ -336,6 +336,9 @@ ModelPart * PaletteModel::loadPart(const QString & path, bool update) {
 	else if (moduleID.endsWith(ModuleIDNames::StripboardModuleIDName)) {
 		type = ModelPart::Breadboard;
 	}
+	else if (moduleID.endsWith(ModuleIDNames::Stripboard2ModuleIDName)) {
+		type = ModelPart::Breadboard;
+	}
 	else if (propertiesText.contains("breadboard", Qt::CaseInsensitive)) {
 		type = ModelPart::Breadboard;
 	}

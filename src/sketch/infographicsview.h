@@ -85,7 +85,7 @@ public:
 	virtual class VirtualWire * makeOneRatsnestWire(ConnectorItem * source, ConnectorItem * dest, bool routed, QColor, bool force);
 	virtual void getRatsnestColor(QColor &);
 
-	virtual void changeBus(ItemBase *, bool connec, const QString & oldBust, const QString & newBus, QList<ConnectorItem *> &, const QString & message);
+	virtual void changeBus(ItemBase *, bool connect, const QString & oldBust, const QString & newBus, QList<ConnectorItem *> &, const QString & message);
 	virtual const QString & filenameIf();
 	virtual QString generateCopperFillUnit(ItemBase * itemBase, QPointF whereToStart);
 	virtual void prepLegBendpointMove(ConnectorItem * from, int index, QPointF oldPos, QPointF newPos, ConnectorItem * to, bool changeConnections);

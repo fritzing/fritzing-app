@@ -114,6 +114,7 @@ protected:
 	QString m_beforeCut;
     int m_x;
     int m_y;
+    QString m_layout;
 };
 
 #endif

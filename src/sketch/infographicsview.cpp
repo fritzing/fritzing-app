@@ -291,12 +291,14 @@ void InfoGraphicsView::getRatsnestColor(QColor & color)
 	Q_UNUSED(color);
 }
 
-void InfoGraphicsView::changeBus(ItemBase *, bool connect, const QString & oldBus, const QString & newBus, QList<ConnectorItem *> &, const QString & message)
+void InfoGraphicsView::changeBus(ItemBase *, bool connect, const QString & oldBus, const QString & newBus, QList<ConnectorItem *> &, const QString & message, const QString & oldLayout, const QString & newLayout)
 {
 	Q_UNUSED(connect);
 	Q_UNUSED(oldBus);
 	Q_UNUSED(newBus);
 	Q_UNUSED(message);
+    Q_UNUSED(oldLayout);
+    Q_UNUSED(newLayout);
 }
 
 const QString & InfoGraphicsView::filenameIf()

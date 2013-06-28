@@ -5411,6 +5411,13 @@ void SketchWidget::prepDeleteOtherProps(ItemBase * itemBase, long id, const QStr
 		if (!buses.isEmpty()) {
 			new SetPropCommand(this, id, "buses", buses, newBuses, true, parentCommand);
 		}
+
+        QString layout = itemBase->prop("layout");
+        QString newLayout = propsMap.value("layout");
+        if (newLayout.isEmpty()) newLayout = layout;
+		if (!layout.isEmpty()) {
+			new SetPropCommand(this, id, "layout", layout, newLayout, true, parentCommand);
+		}
 	}
 
 	QString value = itemBase->modelPart()->localProp(ModelPartShared::PartNumberPropertyName).toString();
@@ -8861,7 +8868,7 @@ ViewGeometry::WireFlag SketchWidget::getTraceFlag() {
 	return ViewGeometry::NormalFlag;
 }
 
-void SketchWidget::changeBus(ItemBase * itemBase, bool connect, const QString & oldBus, const QString & newBus, QList<ConnectorItem *> & connectorItems, const QString & message)
+void SketchWidget::changeBus(ItemBase * itemBase, bool connect, const QString & oldBus, const QString & newBus, QList<ConnectorItem *> & connectorItems, const QString & message, const QString & oldLayout, const QString & newLayout)
 {
 	QUndoCommand * parentCommand = new QUndoCommand(message);
 	CleanUpWiresCommand * cuwc = new CleanUpWiresCommand(this, CleanUpWiresCommand::UndoOnly, parentCommand);
@@ -8871,6 +8878,7 @@ void SketchWidget::changeBus(ItemBase * itemBase, bool connect, const QString & 
 	new CleanUpRatsnestsCommand(this, CleanUpWiresCommand::UndoOnly, parentCommand);
 	
 	new SetPropCommand(this, itemBase->id(), "buses", oldBus, newBus, true, parentCommand);
+	new SetPropCommand(this, itemBase->id(), "layout", oldLayout, newLayout, true, parentCommand);
 	new CleanUpRatsnestsCommand(this, CleanUpWiresCommand::RedoOnly, parentCommand);
 	cuwc = new CleanUpWiresCommand(this, CleanUpWiresCommand::RedoOnly, parentCommand);
 	foreach(ConnectorItem * connectorItem, connectorItems) {

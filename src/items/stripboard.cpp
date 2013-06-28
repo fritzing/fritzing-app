@@ -62,6 +62,9 @@ static const double MinMouseMove = 2;
 static QPainterPath HPath;
 static QPainterPath VPath;
 
+static QString HorizontalString("horizontal strips");
+static QString VerticalString("vertical strips");
+
 /////////////////////////////////////////////////////////////////////
 
 Stripbit::Stripbit(const QPainterPath & path, int x, int y, bool horizontal, QGraphicsItem * parent = 0) 
@@ -316,6 +319,14 @@ Stripboard::Stripboard( ModelPart * modelPart, ViewLayer::ViewID viewID, const V
     if (StripLayouts.count() == 0) {
         initStripLayouts();
     }
+
+	m_layout = modelPart->localProp("layout").toString();
+	if (m_layout.isEmpty()) {
+		m_layout = modelPart->properties().value("m_layout");
+        if (!m_layout.isEmpty()) {
+		    modelPart->setLocalProp("layout", m_layout);
+        }
+	}
 }
 
 Stripboard::~Stripboard() {
@@ -371,10 +382,15 @@ QString Stripboard::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QStrin
 QString Stripboard::genFZP(const QString & moduleid)
 {
 	QString fzp = Perfboard::genFZP(moduleid);
-	fzp.replace("perfboard", "stripboard");
+    fzp.replace(ModuleIDNames::PerfboardModuleIDName, ModuleIDNames::Stripboard2ModuleIDName);
 	fzp.replace("Perfboard", "Stripboard");
-    fzp.replace(ModuleIDNames::StripboardModuleIDName, ModuleIDNames::Stripboard2ModuleIDName);
-	fzp.replace("stripboard.svg", "perfboard.svg");
+	fzp.replace("perfboard", "stripboard");
+	fzp.replace("stripboard.svg", "perfboard.svg");  // replaced just above; restore it
+    QString findString("<properties>");
+    int ix = fzp.indexOf(findString);
+    if (ix > 0) {
+        fzp.insert(ix + findString.count(), "<property name='layout'></property>");
+    }
 	return fzp;
 }
 
@@ -401,11 +417,11 @@ void Stripboard::addedToScene(bool temporary)
        m_strips.append(new StripConnector);
     }
 
-
     bool oldStyle = false;
-    if (moduleID() == ModuleIDNames::StripboardModuleIDName) {
-        modelPart()->modelPartShared()->setModuleID(ModuleIDNames::Stripboard2ModuleIDName);
+    if (moduleID().endsWith(ModuleIDNames::StripboardModuleIDName)) {
+        modelPart()->modelPartShared()->setModuleID(QString("%1.%2%3").arg(m_x).arg(m_y).arg(ModuleIDNames::Stripboard2ModuleIDName));
         oldStyle = true;
+        m_layout = HorizontalString;
     }
 
 	QString config = prop("buses");
@@ -444,6 +460,8 @@ void Stripboard::addedToScene(bool temporary)
         config += additionalConfig;
         setProp("buses", config);
     }
+
+    if (m_layout.isEmpty()) m_layout = VerticalString;
 
 	QStringList removed = config.split(" ", QString::SkipEmptyParts);
 
@@ -515,7 +533,7 @@ void Stripboard::reinitBuses(bool triggerUndo)
 			QString changeType = (connect) ? tr("Restored") : tr("Cut") ;
 			QString changeText = tr("%1 %n strip(s)", "", changeCount).arg(changeType);
             QList<ConnectorItem *> affected = affectedConnectors.toList();
-			infoGraphicsView->changeBus(this, connect, m_beforeCut, afterCut, affected, changeText);  // affectedConnectors is used for updating ratsnests; it's just a wild guess
+			infoGraphicsView->changeBus(this, connect, m_beforeCut, afterCut, affected, changeText, m_layout, m_layout);  // affectedConnectors is used for updating ratsnests; it's just a wild guess
 		}
 
 		return;
@@ -617,26 +635,30 @@ void Stripboard::nextBus(QList<ConnectorItem *> & soFar)
 
 void Stripboard::setProp(const QString & prop, const QString & value) 
 {
-	if (prop.compare("buses") != 0) {
-		Perfboard::setProp(prop, value);
-		return;
-	}
+    if (prop.compare("buses") == 0) {
+	    QStringList removed = value.split(" ", QString::SkipEmptyParts);
+	    foreach (QGraphicsItem * item, childItems()) {
+		    Stripbit * stripbit = dynamic_cast<Stripbit *>(item);
+		    if (stripbit == NULL) continue;
 
-	QStringList removed = value.split(" ", QString::SkipEmptyParts);
-	foreach (QGraphicsItem * item, childItems()) {
-		Stripbit * stripbit = dynamic_cast<Stripbit *>(item);
-		if (stripbit == NULL) continue;
+            QString removedString = stripbit->makeRemovedString();
+            removedString.chop(1);          // remove trailing space
+		    bool remove = removed.contains(removedString);
+		    stripbit->setRemoved(remove);
+		    if (remove) {
+			    removed.removeOne(removedString);
+		    }
+	    }
 
-        QString removedString = stripbit->makeRemovedString();
-        removedString.chop(1);          // remove trailing space
-		bool remove = removed.contains(removedString);
-		stripbit->setRemoved(remove);
-		if (remove) {
-			removed.removeOne(removedString);
-		}
-	}
+	    reinitBuses(false);
+        return;
+    }
 
-	reinitBuses(false);
+    if (prop.compare("layout") == 0) {
+        m_layout = value;
+    }
+
+	Perfboard::setProp(prop, value);
 }
 
 void Stripboard::getConnectedColor(ConnectorItem * ci, QBrush * &brush, QPen * &pen, double & opacity, double & negativePenWidth, bool & negativeOffsetRect) {
@@ -737,7 +759,7 @@ void Stripboard::swapEntry(const QString & text) {
 	    if (infoGraphicsView == NULL) return;
 
         QString afterCut;
-        if (text.compare("horizontal strips", Qt::CaseInsensitive) == 0) {
+        if (text.compare(HorizontalString, Qt::CaseInsensitive) == 0) {
             foreach (QGraphicsItem * item, childItems()) {
 		        Stripbit * stripbit = dynamic_cast<Stripbit *>(item);
 		        if (stripbit == NULL) continue;
@@ -747,7 +769,7 @@ void Stripboard::swapEntry(const QString & text) {
                 }
             }
         }
-        else if (text.compare("vertical strips", Qt::CaseInsensitive) == 0) {
+        else if (text.compare(VerticalString, Qt::CaseInsensitive) == 0) {
             foreach (QGraphicsItem * item, childItems()) {
 		        Stripbit * stripbit = dynamic_cast<Stripbit *>(item);
 		        if (stripbit == NULL) continue;
@@ -765,6 +787,7 @@ void Stripboard::swapEntry(const QString & text) {
                     propsMap.insert("size", QString("%1.%2").arg(stripLayout.columns).arg(stripLayout.rows));
                     propsMap.insert("type", "Stripboard");
                     propsMap.insert("buses", stripLayout.buses);
+                    propsMap.insert("layout", text);
                     InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
                     if (infoGraphicsView != NULL) {
                         infoGraphicsView->swap(family(), "size", propsMap, this);
@@ -776,11 +799,11 @@ void Stripboard::swapEntry(const QString & text) {
 
         if (!afterCut.isEmpty()) {
             initCutting(NULL);
-	        QString changeText = tr("%1 strips").arg(text);
+	        QString changeText = tr("%1 layout").arg(text);
             QSet<ConnectorItem *> affectedConnectors;
             collectTo(affectedConnectors);
             QList<ConnectorItem *> affected = affectedConnectors.toList();
-            infoGraphicsView->changeBus(this, true, m_beforeCut, afterCut, affected, changeText);  // affectedConnectors is used for updating ratsnests; it's just a wild guess
+            infoGraphicsView->changeBus(this, true, m_beforeCut, afterCut, affected, changeText, m_layout, text);  // affectedConnectors is used for updating ratsnests; it's just a wild guess
         }
 
         return;
@@ -835,6 +858,7 @@ QStringList Stripboard::collectValues(const QString & family, const QString & pr
 	if (prop.compare("layout", Qt::CaseInsensitive) == 0) {
         foreach (StripLayout stripLayout, StripLayouts) {
             values.append(stripLayout.name);
+            value = m_layout;
         }
 	}
 

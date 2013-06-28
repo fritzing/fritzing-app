@@ -291,7 +291,7 @@ public:
 	void copyHeart(QList<ItemBase *> & bases, bool saveBoundingRects, QByteArray & itemData, QList<long> & modelIndexes);
 	void pasteHeart(QByteArray & itemData, bool seekOutsideConnections);
 	ViewGeometry::WireFlag getTraceFlag();
-	void changeBus(ItemBase *, bool connec, const QString & oldBus, const QString & newBus, QList<ConnectorItem *> &, const QString & message);
+	void changeBus(ItemBase *, bool connec, const QString & oldBus, const QString & newBus, QList<ConnectorItem *> &, const QString & message, const QString & oldLayout, const QString & newLayout);
 	const QString & filenameIf();
 	void setItemDropOffset(long id, QPointF offset);
 	void prepLegBendpointMove(ConnectorItem * from, int index, QPointF oldPos, QPointF newPos, ConnectorItem * to, bool changeConnections);

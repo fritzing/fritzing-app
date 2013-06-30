@@ -1989,8 +1989,23 @@ void MainWindow::updateTraceMenu() {
 	m_selectAllJumperItemsAct->setEnabled(traceMenuThing.jiEnabled && traceMenuThing.boardCount >= 1);
 	m_selectAllViasAct->setEnabled(traceMenuThing.viaEnabled && traceMenuThing.boardCount >= 1);
 	m_tidyWiresAct->setEnabled(twEnabled);
+
+    QString sides;
+    if (m_pcbGraphicsView->layerIsActive(ViewLayer::Copper0) && m_pcbGraphicsView->layerIsActive(ViewLayer::Copper1)) {
+        sides = tr("top and bottom");
+    }
+    else if (m_pcbGraphicsView->layerIsActive(ViewLayer::Copper0)) {
+        sides = tr("bottom");
+    }
+    else sides = tr("top");
+
+    QString groundFillString = tr("Ground Fill (%1)").arg(sides);
+    QString copperFillString = tr("Copper Fill (%1)").arg(sides);
+
 	m_groundFillAct->setEnabled(traceMenuThing.boardCount >= 1);
+    m_groundFillAct->setText(groundFillString);
 	m_copperFillAct->setEnabled(traceMenuThing.boardCount >= 1);
+	m_copperFillAct->setText(copperFillString);
 	m_removeGroundFillAct->setEnabled(traceMenuThing.gfrEnabled && traceMenuThing.boardCount >= 1);
 
 	// TODO: set and clear enabler logic
@@ -3036,12 +3051,25 @@ void MainWindow::tidyWires() {
 }
 
 void MainWindow::copperFill() {
-	groundFillAux(false, ViewLayer::UnknownLayer);
+	groundFillAux2(false);
 }
 
 void MainWindow::groundFill()
 {
-	groundFillAux(true, ViewLayer::UnknownLayer);
+    groundFillAux2(true);
+}
+
+void MainWindow::groundFillAux2(bool fillGroundTraces) {
+
+    if (m_pcbGraphicsView->layerIsActive(ViewLayer::Copper0) && m_pcbGraphicsView->layerIsActive(ViewLayer::Copper1)) {
+	    groundFillAux(fillGroundTraces, ViewLayer::UnknownLayer);
+    }
+    else if (m_pcbGraphicsView->layerIsActive(ViewLayer::Copper0)) {
+        groundFillAux(fillGroundTraces, ViewLayer::GroundPlane0);
+    }
+    else {
+        groundFillAux(fillGroundTraces, ViewLayer::GroundPlane1);
+    }
 }
 
 void MainWindow::copperFill(ViewLayer::ViewLayerID viewLayerID) {

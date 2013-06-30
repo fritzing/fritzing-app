@@ -548,6 +548,7 @@ protected:
 	QString getBomProps(ItemBase *);
 	ModelPart * findReplacedby(ModelPart * originalModelPart);
 	void groundFillAux(bool fillGroundTraces, ViewLayer::ViewLayerID viewLayerID);
+    void groundFillAux2(bool fillGroundTraces);
 	void connectStartSave(bool connect);
 	void loadBundledSketch(const QString &fileName, bool addToRecent, bool setAsLastOpened);
     void dropEvent(QDropEvent *event);

@@ -2118,7 +2118,7 @@ void MainWindow::showPartsBinListView() {
 }
 
 void MainWindow::openHelp() {
-	QDesktopServices::openUrl(QString("http://fritzing.org/learning"));
+	QDesktopServices::openUrl(QString("http://fritzing.org/learning/"));
 }
 
 void MainWindow::openDonate() {
@@ -2126,11 +2126,11 @@ void MainWindow::openDonate() {
 }
 
 void MainWindow::openExamples() {
-	QDesktopServices::openUrl(QString("http://fritzing.org/projects"));
+	QDesktopServices::openUrl(QString("http://fritzing.org/projects/"));
 }
 
 void MainWindow::openPartsReference() {
-	QDesktopServices::openUrl(QString("http://fritzing.org/parts"));
+	QDesktopServices::openUrl(QString("http://fritzing.org/parts/"));
 }
 
 void MainWindow::visitFritzingDotOrg() {
@@ -3573,7 +3573,7 @@ void MainWindow::processStateChanged(QProcess::ProcessState newState) {
 }
 
 void MainWindow::shareOnline() {
-	QDesktopServices::openUrl(QString("http://fritzing.org/projects/create"));
+	QDesktopServices::openUrl(QString("http://fritzing.org/projects/create/"));
 }
 
 

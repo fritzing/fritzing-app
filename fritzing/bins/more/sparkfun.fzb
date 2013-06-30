@@ -343,7 +343,7 @@
           </iconView>
         </views>
    </instance>
-  <instance moduleIdRef="Mainboard-v18">
+  <instance moduleIdRef="Arduino Lilypad">
    <views>
     <iconView layer="icon">
      <geometry x="-1" y="-1" z="-1"/>

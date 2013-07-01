@@ -883,8 +883,14 @@ void PartsBinPaletteWidget::changeIconColor() {
 		}
 	}
 
+#ifndef QT_NO_DEBUG
+    //QFileInfo info(m_fileName);
+    //image.save(FolderUtils::getUserDataStorePath("") + "/" + info.completeBaseName() + ".png");
+#endif
+
 	delete m_icon;
 	m_icon = new QIcon(QPixmap::fromImage(image));
+
 	m_manager->setTabIcon(this, m_icon);
 	setDirty();
 

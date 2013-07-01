@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<module fritzingVersion='0.7.2b' icon=''>
+<module fritzingVersion='0.7.2b' icon='sparkfun-poweric.png'>
 <title>SparkFun-PowerIC</title>
 <instances>
 <instance moduleIdRef='SparkFun-PowerIC-ADM1087-SC-70' modelIndex='0'>

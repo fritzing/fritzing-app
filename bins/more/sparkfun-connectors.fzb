@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<module fritzingVersion='0.7.2b' icon=''>
+<module fritzingVersion='0.7.2b' icon='sparkfun-connectors.png'>
 <title>SparkFun-Connectors</title>
 <instances>
 <instance moduleIdRef='SparkFun-Connectors-ARDUINO_SERIAL_PROGRAM-SMD' modelIndex='0'>

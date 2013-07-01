@@ -147,6 +147,8 @@ bool ModelBase::loadFromFile(const QString & fileName, ModelBase * referenceMode
 		}
 	}
 
+    // ensures changeBinIcon() is not available
+    // this may be a bug?
 	QString iconFilename = root.attribute("icon");
 	if (iconFilename.isEmpty()) {
 		iconFilename = title.text() + ".png";

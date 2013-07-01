@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<module fritzingVersion='0.7.2b' icon=''>
+<module fritzingVersion='0.7.2b' icon='sparkfun-displays.png'>
 <title>SparkFun-Displays</title>
 <instances>
 <instance moduleIdRef='SparkFun-Displays-ALPHANUMERIC-PTH' modelIndex='0'>

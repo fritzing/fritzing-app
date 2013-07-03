@@ -15,7 +15,7 @@ Standard 11-pin 0.1 header. Use with straight break away headers (SKU : PRT-0011
 </tags>
 <properties>
 <property name='package'>1x11_smd_pthcombo</property>
-<property name='family'>Pin Header</property>
+<property name='family'>sparkfun Pin Header</property>
 <property name='variant'>smd</property>
 </properties>
 <views>

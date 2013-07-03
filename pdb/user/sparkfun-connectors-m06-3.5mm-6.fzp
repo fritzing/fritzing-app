@@ -24,7 +24,7 @@ will be further integrated into the Sparkfun Library for other footprints.  It c
 </tags>
 <properties>
 <property name='package'>screwterminal-3.5mm-6</property>
-<property name='family'>Pin Header</property>
+<property name='family'>sparkfun Pin Header</property>
 <property name='variant'>3.5mm-6</property>
 </properties>
 <views>

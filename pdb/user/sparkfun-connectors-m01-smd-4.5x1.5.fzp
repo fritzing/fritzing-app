@@ -15,7 +15,7 @@ Standard 1-pin 0.1 header. Use with straight break away headers (SKU : PRT-00116
 </tags>
 <properties>
 <property name='package'>pad-1.5x4.5</property>
-<property name='family'>Pin Header</property>
+<property name='family'>sparkfun Pin Header</property>
 <property name='variant'>smd-4.5x1.5</property>
 </properties>
 <views>

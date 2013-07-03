@@ -14,7 +14,7 @@
 </tags>
 <properties>
 <property name='package'>1x40_offset</property>
-<property name='family'>Pin Header</property>
+<property name='family'>sparkfun Pin Header</property>
 <property name='variant'>offset</property>
 </properties>
 <views>

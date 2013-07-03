@@ -13,7 +13,7 @@
 </tags>
 <properties>
 <property name='package'>2x10_lock</property>
-<property name='family'>Pin Header</property>
+<property name='family'>sparkfun Pin Header</property>
 <property name='variant'>2x10_lock</property>
 </properties>
 <views>

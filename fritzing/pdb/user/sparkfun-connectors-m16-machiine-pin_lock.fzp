@@ -14,7 +14,7 @@
 </tags>
 <properties>
 <property name='package'>1x16_machine-pin-header_lock.004</property>
-<property name='family'>Pin Header</property>
+<property name='family'>sparkfun Pin Header</property>
 <property name='variant'>machiine-pin_lock</property>
 </properties>
 <views>

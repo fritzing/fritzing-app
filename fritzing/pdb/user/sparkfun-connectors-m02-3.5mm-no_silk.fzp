@@ -15,7 +15,7 @@ Standard 2-pin 0.1 header. Use with straight break away headers (SKU : PRT-00116
 </tags>
 <properties>
 <property name='package'>screwterminal-3.5mm-2-ns</property>
-<property name='family'>Pin Header</property>
+<property name='family'>sparkfun Pin Header</property>
 <property name='variant'>3.5mm-no_silk</property>
 </properties>
 <views>

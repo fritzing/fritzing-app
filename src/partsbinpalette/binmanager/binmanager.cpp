@@ -488,6 +488,12 @@ void BinManager::setAsCurrentBin(PartsBinPaletteWidget* bin) {
 		bin->focusSearch();
 	}
 
+    /*
+
+    // jrc 3-july-2013 commented out this stylesheet change:
+    //      it causes the tab bar to lose its scroll position
+    //      the stylesheet change is commented out in the qss file, so visually it's a no-op
+
 	QString style = m_mainWindow->styleSheet();
 	if(m_currentBin && m_stackTabWidget) {
 		StackTabBar *currTabBar = m_stackTabWidget->stackTabBar();
@@ -502,6 +508,7 @@ void BinManager::setAsCurrentBin(PartsBinPaletteWidget* bin) {
 		currTabBar->setStyleSheet("");
 		currTabBar->setStyleSheet(style);
 	}
+    */
 }
 
 void BinManager::closeBinIn(int index) {

@@ -14,7 +14,7 @@ Standard 8-pin 0.1 header. Use with straight break away headers (SKU : PRT-00116
 </tags>
 <properties>
 <property name='package'>bm08b-srss-tb</property>
-<property name='family'>Pin Header</property>
+<property name='family'>sparkfun Pin Header</property>
 <property name='variant'>bm08b-srss-tb</property>
 </properties>
 <views>

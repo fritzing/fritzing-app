@@ -15,7 +15,7 @@ Standard 3-pin 0.1 header. Use with straight break away headers (SKU : PRT-00116
 </tags>
 <properties>
 <property name='package'>screwterminal-3.5mm-3_lock.007s</property>
-<property name='family'>Pin Header</property>
+<property name='family'>sparkfun Pin Header</property>
 <property name='variant'>screw_lock</property>
 </properties>
 <views>

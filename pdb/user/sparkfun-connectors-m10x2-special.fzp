@@ -14,7 +14,7 @@
 </tags>
 <properties>
 <property name='package'>2x10_lock_special</property>
-<property name='family'>Pin Header</property>
+<property name='family'>sparkfun Pin Header</property>
 <property name='variant'>special</property>
 </properties>
 <views>

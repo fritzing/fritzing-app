@@ -24,7 +24,7 @@ will be further integrated into the Sparkfun Library for other footprints.  It c
 </tags>
 <properties>
 <property name='package'>molex-1x6-ra</property>
-<property name='family'>Pin Header</property>
+<property name='family'>sparkfun Pin Header</property>
 <property name='variant'>ra</property>
 </properties>
 <views>

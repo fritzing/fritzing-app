@@ -24,7 +24,7 @@ will be further integrated into the Sparkfun Library for other footprints.  It c
 </tags>
 <properties>
 <property name='package'>1x06_smd_straight</property>
-<property name='family'>Pin Header</property>
+<property name='family'>sparkfun Pin Header</property>
 <property name='variant'>smd-straight</property>
 </properties>
 <views>

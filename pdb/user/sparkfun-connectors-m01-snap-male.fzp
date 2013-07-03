@@ -14,7 +14,7 @@ Standard 1-pin 0.1 header. Use with straight break away headers (SKU : PRT-00116
 </tags>
 <properties>
 <property name='package'>snap-male</property>
-<property name='family'>Pin Header</property>
+<property name='family'>sparkfun Pin Header</property>
 <property name='variant'>snap-male</property>
 </properties>
 <views>

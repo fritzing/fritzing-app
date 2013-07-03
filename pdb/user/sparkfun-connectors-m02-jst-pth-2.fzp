@@ -15,7 +15,7 @@ Standard 2-pin 0.1 header. Use with straight break away headers (SKU : PRT-00116
 </tags>
 <properties>
 <property name='package'>jst-2-pth</property>
-<property name='family'>Pin Header</property>
+<property name='family'>sparkfun Pin Header</property>
 <property name='variant'>jst-pth-2</property>
 </properties>
 <views>

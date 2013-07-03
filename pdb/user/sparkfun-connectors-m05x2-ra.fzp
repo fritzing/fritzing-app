@@ -15,7 +15,7 @@ Standard 10-pin dual row 0.1 header. Commonly used with AVR-ISP. Use with Spark 
 </tags>
 <properties>
 <property name='package'>2x5-ra</property>
-<property name='family'>Pin Header</property>
+<property name='family'>sparkfun Pin Header</property>
 <property name='variant'>ra</property>
 </properties>
 <views>

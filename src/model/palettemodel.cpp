@@ -495,9 +495,7 @@ void PaletteModel::setOrdererChildren(QList<QObject*> children) {
 QList<ModelPart *> PaletteModel::search(const QString & searchText, bool allowObsolete) {
 	QList<ModelPart *> modelParts;
 
-	QStringList strings = searchText.split(":");
-	if (strings.count() > 2) return modelParts;
-
+	QStringList strings = searchText.split(" ");
     search(m_root, strings, modelParts, allowObsolete);
     return modelParts;
 }
@@ -507,51 +505,59 @@ void PaletteModel::search(ModelPart * modelPart, const QStringList & searchStrin
 	// or use lucene
 	// or google search api
 
+    int count = 0;
+    foreach (QString searchString, searchStrings) {
+        bool gotOne = false;
+        if (modelPart->title().contains(searchString, Qt::CaseInsensitive)) {
+            gotOne = true;
+	    }
+        else if (modelPart->description().contains(searchString, Qt::CaseInsensitive)) {
+            gotOne = true;
+	    }
+        else if (modelPart->url().contains(searchString, Qt::CaseInsensitive)) {
+            gotOne = true;
+	    }
+        else if (modelPart->author().contains(searchString, Qt::CaseInsensitive)) {
+            gotOne = true;
+	    }
+        else if (modelPart->moduleID().contains(searchString, Qt::CaseInsensitive)) {
+            gotOne = true;
+	    }
+        else {
+		    foreach (QString string, modelPart->tags()) {
+			    if (string.contains(searchString, Qt::CaseInsensitive)) {
+                    gotOne = true;
+				    break;
+			    }
+		    }
+	    }
+        if (!gotOne) {
+		    foreach (QString string, modelPart->properties().values()) {
+			    if (string.contains(searchString, Qt::CaseInsensitive)) {
+                    gotOne = true;
+				    break;
+			    }
+		    }
+	    }
+        if (!gotOne) {
+		    foreach (QString string, modelPart->properties().keys()) {
+			    if (string.contains(searchString, Qt::CaseInsensitive)) {
+                    gotOne = true;
+				    break;
+			    }
+		    }
+	    }
+        if (!gotOne) break;
 
-    ModelPart * candidate = NULL;
-    if (!candidate && modelPart->title().contains(searchStrings[0], Qt::CaseInsensitive)) {
-        candidate = modelPart;
-	}
-    if (!candidate && modelPart->description().contains(searchStrings[0], Qt::CaseInsensitive)) {
-        candidate = modelPart;
-	}
-    if (!candidate && modelPart->url().contains(searchStrings[0], Qt::CaseInsensitive)) {
-        candidate = modelPart;
-	}
-    if (!candidate && modelPart->author().contains(searchStrings[0], Qt::CaseInsensitive)) {
-        candidate = modelPart;
-	}
-    if (!candidate) {
-		foreach (QString string, modelPart->tags()) {
-			if (string.contains(searchStrings[0], Qt::CaseInsensitive)) {
-                candidate = modelPart;
-				break;
-			}
-		}
-	}
-    if (!candidate) {
-		foreach (QString string, modelPart->properties().values()) {
-			if (string.contains(searchStrings[0], Qt::CaseInsensitive)) {
-                candidate = modelPart;
-				break;
-			}
-		}
-	}
-    if (!candidate) {
-		foreach (QString string, modelPart->properties().keys()) {
-			if (string.contains(searchStrings[0], Qt::CaseInsensitive)) {
-                candidate = modelPart;
-				break;
-			}
-		}
-	}
+        count++;
+    }
 
-    if (candidate && !modelParts.contains(candidate)) {
-        if (!allowObsolete && candidate->isObsolete()) {
+    if ((count == searchStrings.count()) && !modelParts.contains(modelPart)) {
+        if (!allowObsolete && modelPart->isObsolete()) {
         }
         else
         {
-            modelParts.append(candidate);
+            modelParts.append(modelPart);
             emit addSearchMaximum(1);
         }
     }

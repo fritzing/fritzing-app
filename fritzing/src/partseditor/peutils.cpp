@@ -113,6 +113,31 @@ QWidget * PEUtils::makeConnectorForm(const QDomElement & connector, int index, Q
     nameFrame->setLayout(nameLayout);
     mainLayout->addWidget(nameFrame);
 
+
+
+    QFrame * descriptionFrame = new QFrame();
+    QHBoxLayout * descriptionLayout = new QHBoxLayout();
+
+    justLabel = new QLabel(QObject::tr("<b>Description:</b>"));
+	justLabel->setObjectName("NewPartsEditorLabel");
+    descriptionLayout->addWidget(justLabel);
+
+    QLineEdit * descriptionEdit = new QLineEdit();
+    QDomElement description = connector.firstChildElement("description");
+    descriptionEdit->setText(description.text());
+	QObject::connect(descriptionEdit, SIGNAL(editingFinished()), slotHolder, SLOT(descriptionEntry()));
+	descriptionEdit->setObjectName("NewPartsEditorLineEdit");
+    descriptionEdit->setStatusTip(QObject::tr("Set the connectors's description"));
+    descriptionEdit->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum);
+    descriptionEdit->setProperty("index", index);
+    descriptionEdit->setProperty("type", "description");
+    descriptionLayout->addWidget(descriptionEdit);
+
+    descriptionFrame->setLayout(descriptionLayout);
+    mainLayout->addWidget(descriptionFrame);
+
+
+
     QFrame * idFrame = new QFrame();
     QHBoxLayout * idLayout = new QHBoxLayout();
 
@@ -162,27 +187,6 @@ QWidget * PEUtils::makeConnectorForm(const QDomElement & connector, int index, Q
     idFrame->setLayout(idLayout);
     mainLayout->addWidget(idFrame);
 
-
-    QFrame * descriptionFrame = new QFrame();
-    QHBoxLayout * descriptionLayout = new QHBoxLayout();
-
-    justLabel = new QLabel(QObject::tr("<b>Description:</b>"));
-	justLabel->setObjectName("NewPartsEditorLabel");
-    descriptionLayout->addWidget(justLabel);
-
-    QLineEdit * descriptionEdit = new QLineEdit();
-    QDomElement description = connector.firstChildElement("description");
-    descriptionEdit->setText(description.text());
-	QObject::connect(descriptionEdit, SIGNAL(editingFinished()), slotHolder, SLOT(descriptionEntry()));
-	descriptionEdit->setObjectName("NewPartsEditorLineEdit");
-    descriptionEdit->setStatusTip(QObject::tr("Set the connectors's description"));
-    descriptionEdit->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum);
-    descriptionEdit->setProperty("index", index);
-    descriptionEdit->setProperty("type", "description");
-    descriptionLayout->addWidget(descriptionEdit);
-
-    descriptionFrame->setLayout(descriptionLayout);
-    mainLayout->addWidget(descriptionFrame);
     frame->setLayout(mainLayout);
     return frame;
 }

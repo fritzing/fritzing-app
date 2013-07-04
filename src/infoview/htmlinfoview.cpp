@@ -129,7 +129,6 @@ HtmlInfoView::HtmlInfoView(QWidget * parent) : QScrollArea(parent)
 	m_tagsTextLabel = NULL;
 	m_lastSwappingEnabled = false;
 	m_lastItemBase = NULL;
-	m_infoGraphicsView = NULL;
 	m_setContentTimer.setSingleShot(true);
 	m_setContentTimer.setInterval(10);
 	connect(&m_setContentTimer, SIGNAL(timeout()), this, SLOT(setContent()));
@@ -346,28 +345,25 @@ void HtmlInfoView::cleanup() {
 	}
 }
 
-void HtmlInfoView::viewItemInfo(InfoGraphicsView * infoGraphicsView, ItemBase* item, bool swappingEnabled) 
+void HtmlInfoView::viewItemInfo(InfoGraphicsView *, ItemBase* item, bool swappingEnabled) 
 {
 	m_setContentTimer.stop();
-	m_pendingInfoGraphicsView = infoGraphicsView;
 	m_lastItemBase = m_pendingItemBase = item;
 	m_lastSwappingEnabled = m_pendingSwappingEnabled = swappingEnabled;
 	m_setContentTimer.start();
 }
 
-void HtmlInfoView::hoverEnterItem(InfoGraphicsView * infoGraphicsView, QGraphicsSceneHoverEvent *, ItemBase * item, bool swappingEnabled) {
+void HtmlInfoView::hoverEnterItem(InfoGraphicsView *, QGraphicsSceneHoverEvent *, ItemBase * item, bool swappingEnabled) {
 	m_setContentTimer.stop();
-	m_pendingInfoGraphicsView = infoGraphicsView;
 	m_pendingItemBase = item;
 	m_pendingSwappingEnabled = swappingEnabled;
 	m_setContentTimer.start();
 }
 
-void HtmlInfoView::hoverLeaveItem(InfoGraphicsView * infoGraphicsView, QGraphicsSceneHoverEvent *, ItemBase * itemBase){
+void HtmlInfoView::hoverLeaveItem(InfoGraphicsView *, QGraphicsSceneHoverEvent *, ItemBase * itemBase){
 	Q_UNUSED(itemBase);
 	//DebugDialog::debug(QString("hoverLeaveItem itembase %1").arg(itemBase ? itemBase->instanceTitle() : "NULL"));
 	m_setContentTimer.stop();
-	m_pendingInfoGraphicsView = infoGraphicsView;
 	m_pendingItemBase = m_lastItemBase;
 	m_pendingSwappingEnabled = m_lastSwappingEnabled;
 	m_setContentTimer.start();
@@ -530,7 +526,6 @@ void HtmlInfoView::setContent()
 
 	appendStuff(m_pendingItemBase, m_pendingSwappingEnabled);
 	setCurrentItem(m_pendingItemBase);
-	m_infoGraphicsView = m_pendingInfoGraphicsView;
 
     if (!m_tinyMode) {
 	    m_connFrame->setVisible(m_pendingSwappingEnabled);
@@ -600,11 +595,13 @@ void HtmlInfoView::setInstanceTitle() {
 	FLineEdit * edit = qobject_cast<FLineEdit *>(sender());
 	if (edit == NULL) return;
 	if (!edit->isEnabled()) return;
-	if (m_infoGraphicsView == NULL) return;
 	if (m_currentItem == NULL) return;
 
+    InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(m_currentItem);
+    if (infoGraphicsView == NULL) return;
+
 	DebugDialog::debug(QString("set instance title to %1").arg(edit->text()));
-	m_infoGraphicsView->setInstanceTitle(m_currentItem->id(), m_partTitle->text(), edit->text(), true, false);
+	infoGraphicsView->setInstanceTitle(m_currentItem->id(), m_partTitle->text(), edit->text(), true, false);
 }
 
 void HtmlInfoView::instanceTitleEnter() {
@@ -1189,16 +1186,22 @@ void HtmlInfoView::updateRotation(ItemBase * itemBase) {
 }
 
 void HtmlInfoView::xyEntry() {
+    InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(m_lastItemBase);
+    if (infoGraphicsView == NULL) return;
+
     DebugDialog::debug(QString("xedit %1 %2 %3").arg(m_xEdit->text()).arg(m_yEdit->text()).arg(sender() == m_xEdit));
     double x = TextUtils::convertToInches(m_xEdit->text() + m_unitsLabel->text());
     double y = TextUtils::convertToInches(m_yEdit->text() + m_unitsLabel->text());
-    if (m_infoGraphicsView != NULL && m_lastItemBase != NULL) {
-        m_infoGraphicsView->moveItem(m_lastItemBase, x * 90, y * 90);
+    if (infoGraphicsView != NULL && m_lastItemBase != NULL) {
+        infoGraphicsView->moveItem(m_lastItemBase, x * 90, y * 90);
     }
 }
 
 void HtmlInfoView::rotEntry() {
-    if (m_infoGraphicsView != NULL && m_lastItemBase != NULL) {
+    if (m_lastItemBase != NULL) {
+        InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(m_lastItemBase);
+        if (infoGraphicsView == NULL) return;
+
         double newAngle = m_rotEdit->value();
 
         if (m_rotEdit->singleStep() == 1) {
@@ -1209,7 +1212,7 @@ void HtmlInfoView::rotEntry() {
 
         QTransform transform = m_lastItemBase->transform();
         double angle = atan2(transform.m12(), transform.m11()) * 180 / M_PI;
-        m_infoGraphicsView->rotateX(newAngle - angle, false, m_lastItemBase);
+        infoGraphicsView->rotateX(newAngle - angle, false, m_lastItemBase);
     }
 }
 

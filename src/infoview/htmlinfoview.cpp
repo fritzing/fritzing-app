@@ -52,6 +52,9 @@ const int HtmlInfoView::STANDARD_ICON_IMG_WIDTH = 32;
 const int HtmlInfoView::STANDARD_ICON_IMG_HEIGHT = 32;
 const int IconSpace = 0;
 
+static const int MaxSpinBoxWidth = 55;
+static const int AfterSpinBoxWidth = 5;
+
 /////////////////////////////////////
 
 QLabel * addLabel(QHBoxLayout * hboxLayout, QPixmap * pixmap) {
@@ -985,7 +988,6 @@ void HtmlInfoView::makeLockFrame() {
 }
 
 void HtmlInfoView::makeLocationFrame() {
-    static int maxSpinBoxWidth = 55;
 	m_locationLabel = new QLabel(tr("location"), this);
 	m_locationLabel->setObjectName("propNameLabel");
 	m_locationLabel->setWordWrap(true);
@@ -998,20 +1000,22 @@ void HtmlInfoView::makeLocationFrame() {
 
 	m_xEdit = new QDoubleSpinBox;
     m_xEdit->setDecimals(3);
-    m_xEdit->setRange(-9999.999, 9999.999);
+    m_xEdit->setRange(-99999.999, 99999.999);
     m_xEdit->setKeyboardTracking(false);
     m_xEdit->setObjectName("infoViewDoubleSpinBox");
-    m_xEdit->setMaximumWidth(maxSpinBoxWidth);
+    m_xEdit->setMaximumWidth(MaxSpinBoxWidth);
+    m_xEdit->setMinimumWidth(MaxSpinBoxWidth);
     locationLayout->addWidget(m_xEdit);
 
-    locationLayout->addSpacing(3);
+    locationLayout->addSpacing(AfterSpinBoxWidth);
 
 	m_yEdit = new QDoubleSpinBox;
     m_yEdit->setDecimals(3);
-    m_yEdit->setRange(-9999.999, 9999.999);
+    m_yEdit->setRange(-99999.999, 99999.999);
     m_yEdit->setKeyboardTracking(false);
     m_yEdit->setObjectName("infoViewDoubleSpinBox");
-    m_yEdit->setMaximumWidth(maxSpinBoxWidth);
+    m_yEdit->setMaximumWidth(MaxSpinBoxWidth);
+    m_yEdit->setMinimumWidth(MaxSpinBoxWidth);
     locationLayout->addWidget(m_yEdit);
 
     locationLayout->addSpacing(3);
@@ -1047,9 +1051,11 @@ void HtmlInfoView::makeRotationFrame() {
     m_rotEdit->setRange(-360, 360);
     m_rotEdit->setKeyboardTracking(false);
     m_rotEdit->setObjectName("infoViewDoubleSpinBox");
+    m_rotEdit->setMaximumWidth(MaxSpinBoxWidth);
+    m_rotEdit->setMinimumWidth(MaxSpinBoxWidth);
     rotationLayout->addWidget(m_rotEdit);
 
-    rotationLayout->addSpacing(3);
+    rotationLayout->addSpacing(AfterSpinBoxWidth);
 
 	QLabel * label = new QLabel(tr("degrees"), this);
     label->setObjectName("infoViewSpinBoxLabel");

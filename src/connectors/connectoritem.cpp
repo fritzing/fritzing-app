@@ -1475,8 +1475,10 @@ void ConnectorItem::collectPart(ConnectorItem * connectorItem, QList<ConnectorIt
 void ConnectorItem::updateTooltip() {
 	if (attachedToItemType() != ModelPart::Wire) {
 		QString name = connectorSharedName();
+        bool isInt = false;
+        name.toInt(&isInt);
 		QString descr = connectorSharedDescription();
-        if (name == descr) {
+        if (name.compare(descr, Qt::CaseInsensitive) == 0) {
             descr = "";
         }
         else {
@@ -1484,19 +1486,22 @@ void ConnectorItem::updateTooltip() {
         }
         QString id = connectorSharedID();
         int ix = IntegerFinder.indexIn(id);
-        if (ix < 0) {
+        if (ix < 0 || isInt) {
             id = "";
         }
         else {
             if (attachedTo()->modelPart()->hasZeroConnector()) {
-                id = QString::number(IntegerFinder.cap(0).toInt() + 1) + " ";
+                id = QString::number(IntegerFinder.cap(0).toInt() + 1);
             }
             else {
-                id = IntegerFinder.cap(0) + " ";
+                id = IntegerFinder.cap(0);
+            }
+            if (!id.isEmpty()) {
+                id = " <span style='color:#909090;'>(" + id + ")</span>";
             }
         }
        
-        QString tt = QString("%1<b>%2</b>%3<br /><span style='font-size:small;'>%4</span>")
+        QString tt = QString("<b>%2</b>%3%1<br /><span style='font-size:small;'>%4</span>")
                 .arg(id)
                 .arg(name)
                 .arg(descr)

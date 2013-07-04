@@ -985,6 +985,7 @@ void HtmlInfoView::makeLockFrame() {
 }
 
 void HtmlInfoView::makeLocationFrame() {
+    static int maxSpinBoxWidth = 55;
 	m_locationLabel = new QLabel(tr("location"), this);
 	m_locationLabel->setObjectName("propNameLabel");
 	m_locationLabel->setWordWrap(true);
@@ -1000,6 +1001,7 @@ void HtmlInfoView::makeLocationFrame() {
     m_xEdit->setRange(-9999.999, 9999.999);
     m_xEdit->setKeyboardTracking(false);
     m_xEdit->setObjectName("infoViewDoubleSpinBox");
+    m_xEdit->setMaximumWidth(maxSpinBoxWidth);
     locationLayout->addWidget(m_xEdit);
 
     locationLayout->addSpacing(3);
@@ -1009,6 +1011,7 @@ void HtmlInfoView::makeLocationFrame() {
     m_yEdit->setRange(-9999.999, 9999.999);
     m_yEdit->setKeyboardTracking(false);
     m_yEdit->setObjectName("infoViewDoubleSpinBox");
+    m_yEdit->setMaximumWidth(maxSpinBoxWidth);
     locationLayout->addWidget(m_yEdit);
 
     locationLayout->addSpacing(3);

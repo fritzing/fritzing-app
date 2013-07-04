@@ -268,7 +268,6 @@ QWidget * AutorouterSettingsDialog::createKeepoutWidget(const QString & keepoutS
     m_keepoutSpinBox = new QDoubleSpinBox;
     m_keepoutSpinBox->setDecimals(4);
     connect(m_keepoutSpinBox, SIGNAL(valueChanged(double)), this, SLOT(keepoutEntry()));
-    connect(m_keepoutSpinBox, SIGNAL(valueChanged(const QString &)), this, SLOT(keepoutEntry()));
     frameLayout->addWidget(m_keepoutSpinBox);
 
     m_inRadio = new QRadioButton("in");

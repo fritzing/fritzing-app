@@ -237,14 +237,10 @@ void HtmlInfoView::init(bool tinyMode) {
 	m_placementLayout->setSpacing(0);
 	m_placementLayout->setContentsMargins(0, 0, 0, 0);
 
-    makeLockFrame();
-    m_placementLayout->addWidget(m_lockLabel, 0, 0);
-    m_placementLayout->addWidget(m_lockFrame, 0, 1);
-
-	m_layerLabel = new QLabel(tr("layer"), this);
+	m_layerLabel = new QLabel(tr("pcb layer"), this);
 	m_layerLabel->setObjectName("propNameLabel");
 	m_layerLabel->setWordWrap(true);
-	m_placementLayout->addWidget(m_layerLabel, 1, 0);
+	m_placementLayout->addWidget(m_layerLabel, 0, 0);
 
 	m_layerFrame = new QFrame(this);
 	m_layerFrame->setObjectName("propValueFrame");
@@ -253,15 +249,20 @@ void HtmlInfoView::init(bool tinyMode) {
 	m_layerLayout->setContentsMargins(0, 0, 0, 0);
     m_layerFrame->setLayout(m_layerLayout);
 
-    m_placementLayout->addWidget(m_layerFrame, 1, 1);
+    m_placementLayout->addWidget(m_layerFrame, 0, 1);
 
     makeLocationFrame();
-    m_placementLayout->addWidget(m_locationLabel, 2, 0);
-    m_placementLayout->addWidget(m_locationFrame, 2, 1);
+    m_placementLayout->addWidget(m_locationLabel, 1, 0);
+    m_placementLayout->addWidget(m_locationFrame, 1, 1);
 
     makeRotationFrame();
-    m_placementLayout->addWidget(m_rotationLabel, 3, 0);
-    m_placementLayout->addWidget(m_rotationFrame, 3, 1);
+    m_placementLayout->addWidget(m_rotationLabel, 2, 0);
+    m_placementLayout->addWidget(m_rotationFrame, 2, 1);
+
+    makeLockFrame();
+    m_placementLayout->addWidget(m_lockLabel, 3, 0);
+    m_placementLayout->addWidget(m_lockFrame, 3, 1);
+
 
 	m_placementFrame->setLayout(m_placementLayout);
 	vlo->addWidget(m_placementFrame);
@@ -761,8 +762,9 @@ void HtmlInfoView::displayProps(ModelPart * modelPart, ItemBase * itemBase, bool
     bool sl = false;
     if (keys.contains("layer")) {
         keys.removeOne("layer");
-        sl = true;
+        sl = (itemBase->viewID() == ViewLayer::PCBView);
     }
+    
     showLayers(sl, itemBase, family, properties.value("layer", ""), swappingEnabled);
 
 	int ix = 0;
@@ -969,7 +971,7 @@ void HtmlInfoView::makeLockFrame() {
 	connect(m_lockCheckbox, SIGNAL(clicked(bool)), this, SLOT(changeLock(bool)));
 	lockLayout->addWidget(m_lockCheckbox);
 
-    lockLayout->addSpacing(3);
+    lockLayout->addSpacing(10);
 
 	m_stickyCheckbox = new QCheckBox(tr("Sticky"));
 	m_stickyCheckbox->setObjectName("infoViewLockCheckbox");
@@ -995,21 +997,25 @@ void HtmlInfoView::makeLocationFrame() {
 
 	m_xEdit = new QDoubleSpinBox;
     m_xEdit->setDecimals(3);
-    m_xEdit->setRange(-99999.999, 99999.999);
+    m_xEdit->setRange(-9999.999, 9999.999);
     m_xEdit->setKeyboardTracking(false);
+    m_xEdit->setObjectName("infoViewDoubleSpinBox");
     locationLayout->addWidget(m_xEdit);
 
     locationLayout->addSpacing(3);
 
 	m_yEdit = new QDoubleSpinBox;
     m_yEdit->setDecimals(3);
-    m_yEdit->setRange(-99999.999, 99999.999);
+    m_yEdit->setRange(-9999.999, 9999.999);
     m_yEdit->setKeyboardTracking(false);
+    m_yEdit->setObjectName("infoViewDoubleSpinBox");
     locationLayout->addWidget(m_yEdit);
 
     locationLayout->addSpacing(3);
 
 	m_unitsLabel = new ClickableLabel("px", this);
+    m_unitsLabel->setObjectName("infoViewSpinBoxLabel");
+    m_unitsLabel->setCursor(Qt::PointingHandCursor);
     locationLayout->addWidget(m_unitsLabel);
 
     locationLayout->addSpacerItem(new QSpacerItem(1,1, QSizePolicy::Expanding));
@@ -1017,10 +1023,9 @@ void HtmlInfoView::makeLocationFrame() {
     m_locationFrame->setLayout(locationLayout);
 
     connect(m_xEdit, SIGNAL(valueChanged(double)), this, SLOT(xyEntry()));
-    connect(m_xEdit, SIGNAL(valueChanged(const QString &)), this, SLOT(xyEntry()));
     connect(m_yEdit, SIGNAL(valueChanged(double)), this, SLOT(xyEntry()));
-    connect(m_yEdit, SIGNAL(valueChanged(const QString &)), this, SLOT(xyEntry()));
 	connect(m_unitsLabel, SIGNAL(clicked()), this, SLOT(unitsClicked()));
+    unitsClicked();   // increments from px so that default is inches
 }
 
 void HtmlInfoView::makeRotationFrame() {
@@ -1035,14 +1040,16 @@ void HtmlInfoView::makeRotationFrame() {
     m_rotationFrame->setObjectName("propValueFrame");
 
 	m_rotEdit = new QDoubleSpinBox;
-    m_rotEdit->setDecimals(3);
+    m_rotEdit->setDecimals(1);
     m_rotEdit->setRange(-360, 360);
     m_rotEdit->setKeyboardTracking(false);
+    m_rotEdit->setObjectName("infoViewDoubleSpinBox");
     rotationLayout->addWidget(m_rotEdit);
 
     rotationLayout->addSpacing(3);
 
 	QLabel * label = new QLabel(tr("degrees"), this);
+    label->setObjectName("infoViewSpinBoxLabel");
     rotationLayout->addWidget(label);
 
     rotationLayout->addSpacerItem(new QSpacerItem(1,1, QSizePolicy::Expanding));
@@ -1050,7 +1057,6 @@ void HtmlInfoView::makeRotationFrame() {
     m_rotationFrame->setLayout(rotationLayout);
 
     connect(m_rotEdit, SIGNAL(valueChanged(double)), this, SLOT(rotEntry()));
-    connect(m_rotEdit, SIGNAL(valueChanged(const QString &)), this, SLOT(rotEntry()));
 }
 
 void HtmlInfoView::unitsClicked() {
@@ -1089,8 +1095,8 @@ void HtmlInfoView::unitsClicked() {
     m_yEdit->blockSignals(true);
     m_xEdit->setSingleStep(step);
     m_yEdit->setSingleStep(step);
-    m_xEdit->setValue(x * dpi);
-    m_yEdit->setValue(y * dpi);
+    if (!xs.isEmpty()) m_xEdit->setValue(x * dpi);
+    if (!ys.isEmpty()) m_yEdit->setValue(y * dpi);
     m_xEdit->blockSignals(false);
     m_yEdit->blockSignals(false);
 }
@@ -1174,6 +1180,7 @@ void HtmlInfoView::updateRotation(ItemBase * itemBase) {
 }
 
 void HtmlInfoView::xyEntry() {
+    DebugDialog::debug(QString("xedit %1 %2 %3").arg(m_xEdit->text()).arg(m_yEdit->text()).arg(sender() == m_xEdit));
     double x = TextUtils::convertToInches(m_xEdit->text() + m_unitsLabel->text());
     double y = TextUtils::convertToInches(m_yEdit->text() + m_unitsLabel->text());
     if (m_infoGraphicsView != NULL && m_lastItemBase != NULL) {

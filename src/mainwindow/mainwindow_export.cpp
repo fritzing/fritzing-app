@@ -224,6 +224,7 @@ void MainWindow::exportEtchable(bool wantPDF, bool wantSVG)
 		fileNames.append(exportDir + "/" + constructFileName(prefix + "etch_paste_mask_top%1", suffix));
 	}
 	fileNames.append(exportDir + "/" + constructFileName(prefix + "etch_silk_top%1", suffix));
+	fileNames.append(exportDir + "/" + constructFileName(prefix + "etch_silk_bottom%1", suffix));
 
 	QString maskTop, maskBottom;
 	QList<ItemBase *> copperLogoItems, holes;
@@ -251,6 +252,10 @@ void MainWindow::exportEtchable(bool wantPDF, bool wantSVG)
 		}
 		else if (fileName.contains("silk_top")) {
 			viewLayerIDs << ViewLayer::Silkscreen1 << ViewLayer::Silkscreen1Label;
+			doSilk = true;
+		}
+		else if (fileName.contains("silk_bottom")) {
+			viewLayerIDs << ViewLayer::Silkscreen0 << ViewLayer::Silkscreen0Label;
 			doSilk = true;
 		}
 

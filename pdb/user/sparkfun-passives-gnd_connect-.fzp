@@ -1,5 +1,4 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<module fritzingVersion='0.7.2b' moduleId='SparkFun-Passives-GND_CONNECT-'>
+<?xml version="1.0" encoding="UTF-8"?><module fritzingVersion="0.7.2b" moduleId="SparkFun-Passives-GND_CONNECT-">
 <!-- generated from Sparkfun Eagle Library 'SparkFun-Passives' GND_CONNECT  -->
 <version>4</version>
 <date>2013-02-13</date>
@@ -11,72 +10,72 @@
 <tag>GND_CONNECT</tag>
 </tags>
 <properties>
-<property name='package'>gnd_connect</property>
-<property name='family'>PCB Ground connect</property>
+<property name="package">gnd_connect</property>
+<property name="family">sparkfun PCB Ground connect</property>
 </properties>
 <views>
 <breadboardView>
-<layers image='breadboard/sparkfun-passives_gnd_connect_breadboard.svg'>
-<layer layerId='breadboard'/>
+<layers image="breadboard/sparkfun-passives_gnd_connect_breadboard.svg">
+<layer layerId="breadboard"/>
 </layers>
 </breadboardView>
 <schematicView>
-<layers image='schematic/sparkfun-passives_gnd_connect_schematic.svg'>
-<layer layerId='schematic'/>
+<layers image="schematic/sparkfun-passives_gnd_connect_schematic.svg">
+<layer layerId="schematic"/>
 </layers>
 </schematicView>
 <pcbView>
-<layers image='pcb/sparkfun-passives_gnd_connect_pcb.svg'>
-<layer layerId='copper1'/>
-<layer layerId='silkscreen'/>
+<layers image="pcb/sparkfun-passives_gnd_connect_pcb.svg">
+<layer layerId="copper1"/>
+<layer layerId="silkscreen"/>
 </layers>
 </pcbView>
 <iconView>
-<layers image='breadboard/sparkfun-passives_gnd_connect_breadboard.svg'>
-<layer layerId='icon'/>
+<layers image="breadboard/sparkfun-passives_gnd_connect_breadboard.svg">
+<layer layerId="icon"/>
 </layers>
 </iconView>
 </views>
 <connectors>
-<connector id='connector1' type='male' name='AGND'>
+<connector id="connector1" name="AGND" type="male">
 <description>AGND</description>
 <views>
 <breadboardView>
-<p layer='breadboard' svgId='connector1pin'/>
+<p layer="breadboard" svgId="connector1pin"/>
 </breadboardView>
 <schematicView>
-<p layer='schematic' svgId='connector1pin' terminalId='connector1terminal'/>
+<p layer="schematic" svgId="connector1pin" terminalId="connector1terminal"/>
 </schematicView>
 <pcbView>
-<p layer='copper1' svgId='connector1pad'/>
+<p layer="copper1" svgId="connector1pad"/>
 </pcbView>
 </views>
 </connector>
-<connector id='connector0' type='male' name='DGND'>
+<connector id="connector0" name="DGND" type="male">
 <description>DGND</description>
 <views>
 <breadboardView>
-<p layer='breadboard' svgId='connector0pin'/>
+<p layer="breadboard" svgId="connector0pin"/>
 </breadboardView>
 <schematicView>
-<p layer='schematic' svgId='connector0pin' terminalId='connector0terminal'/>
+<p layer="schematic" svgId="connector0pin" terminalId="connector0terminal"/>
 </schematicView>
 <pcbView>
-<p layer='copper1' svgId='connector0pad'/>
+<p layer="copper1" svgId="connector0pad"/>
 </pcbView>
 </views>
 </connector>
-<connector id='connector2' type='male' name='IN'>
+<connector id="connector2" name="IN" type="male">
 <description>IN</description>
 <views>
 <breadboardView>
-<p layer='breadboard' svgId='connector2pin'/>
+<p layer="breadboard" svgId="connector2pin"/>
 </breadboardView>
 <schematicView>
-<p layer='schematic' svgId='connector2pin' terminalId='connector2terminal'/>
+<p layer="schematic" svgId="connector2pin" terminalId="connector2terminal"/>
 </schematicView>
 <pcbView>
-<p layer='copper1' svgId='connector2pad'/>
+<p layer="copper1" svgId="connector2pad"/>
 </pcbView>
 </views>
 </connector>

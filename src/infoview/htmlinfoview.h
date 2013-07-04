@@ -144,7 +144,6 @@ protected:
 	bool m_currentSwappingEnabled;					// previous item (possibly hovered over)
 
 	QTimer m_setContentTimer;
-	QPointer<class InfoGraphicsView> m_infoGraphicsView;
 	QPointer<ItemBase> m_lastItemBase;
 	bool m_lastSwappingEnabled;						// previous item (selected)
 	class FLineEdit * m_titleEdit;
@@ -179,7 +178,6 @@ protected:
 	QGridLayout * m_placementLayout;
     QVBoxLayout * m_layerLayout;
 	QList <PropThing *> m_propThings;
-    QPointer<class InfoGraphicsView> m_pendingInfoGraphicsView;
 	QPointer<ItemBase> m_pendingItemBase;
 	bool m_pendingSwappingEnabled;
     QWidget * m_layerWidget;

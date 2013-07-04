@@ -1,5 +1,4 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<module fritzingVersion='0.7.2b' moduleId='SparkFun-PowerIC-V_REG_LM1117-SOT223'>
+<?xml version="1.0" encoding="UTF-8"?><module fritzingVersion="0.7.2b" moduleId="SparkFun-PowerIC-V_REG_LM1117-SOT223">
 <!-- generated from Sparkfun Eagle Library 'SparkFun-PowerIC' V_REG_LM1117 SOT223 -->
 <version>4</version>
 <date>2013-02-13</date>
@@ -13,99 +12,99 @@ Standard adjustable voltage regulator but in SMD form. Spark Fun Electronics SKU
 <tag>SOT223</tag>
 </tags>
 <properties>
-<property name='package'>sot223</property>
-<property name='family'>Voltage Regulator</property>
-<property name='features'>LDO</property>
-<property name='current'>150mA</property>
-<property name='voltage'>adjustable</property>
-<property name='chip'>LM1117</property>
-<property name='variant'>sot223</property>
+<property name="package">sot223</property>
+<property name="family">sparkfun Voltage Regulator</property>
+<property name="features">LDO</property>
+<property name="current">150mA</property>
+<property name="voltage">adjustable</property>
+<property name="chip">LM1117</property>
+<property name="variant">sot223</property>
 </properties>
 <views>
 <breadboardView>
-<layers image='breadboard/sparkfun-poweric_sot223_breadboard.svg'>
-<layer layerId='breadboard'/>
+<layers image="breadboard/sparkfun-poweric_sot223_breadboard.svg">
+<layer layerId="breadboard"/>
 </layers>
 </breadboardView>
 <schematicView>
-<layers image='schematic/sparkfun-poweric_78adj_schematic.svg'>
-<layer layerId='schematic'/>
+<layers image="schematic/sparkfun-poweric_78adj_schematic.svg">
+<layer layerId="schematic"/>
 </layers>
 </schematicView>
 <pcbView>
-<layers image='pcb/sparkfun-poweric_sot223_pcb.svg'>
-<layer layerId='copper1'/>
-<layer layerId='silkscreen'/>
+<layers image="pcb/sparkfun-poweric_sot223_pcb.svg">
+<layer layerId="copper1"/>
+<layer layerId="silkscreen"/>
 </layers>
 </pcbView>
 <iconView>
-<layers image='breadboard/sparkfun-poweric_sot223_breadboard.svg'>
-<layer layerId='icon'/>
+<layers image="breadboard/sparkfun-poweric_sot223_breadboard.svg">
+<layer layerId="icon"/>
 </layers>
 </iconView>
 </views>
 <connectors>
-<connector id='connector0' type='male' name='ADJ'>
+<connector id="connector0" name="ADJ" type="male">
 <description>ADJ</description>
 <views>
 <breadboardView>
-<p layer='breadboard' svgId='connector0pin'/>
+<p layer="breadboard" svgId="connector0pin"/>
 </breadboardView>
 <schematicView>
-<p layer='schematic' svgId='connector0pin' terminalId='connector0terminal'/>
+<p layer="schematic" svgId="connector0pin" terminalId="connector0terminal"/>
 </schematicView>
 <pcbView>
-<p layer='copper1' svgId='connector0pad'/>
+<p layer="copper1" svgId="connector0pad"/>
 </pcbView>
 </views>
 </connector>
-<connector id='connector2' type='male' name='IN'>
+<connector id="connector2" name="IN" type="male">
 <description>IN</description>
 <views>
 <breadboardView>
-<p layer='breadboard' svgId='connector2pin'/>
+<p layer="breadboard" svgId="connector2pin"/>
 </breadboardView>
 <schematicView>
-<p layer='schematic' svgId='connector2pin' terminalId='connector2terminal'/>
+<p layer="schematic" svgId="connector2pin" terminalId="connector2terminal"/>
 </schematicView>
 <pcbView>
-<p layer='copper1' svgId='connector2pad'/>
+<p layer="copper1" svgId="connector2pad"/>
 </pcbView>
 </views>
 </connector>
-<connector id='connector1' type='male' name='OUT'>
+<connector id="connector1" name="OUT" type="male">
 <description>OUT</description>
 <views>
 <breadboardView>
-<p layer='breadboard' svgId='connector1pin'/>
+<p layer="breadboard" svgId="connector1pin"/>
 </breadboardView>
 <schematicView>
-<p layer='schematic' svgId='connector1pin' terminalId='connector1terminal'/>
+<p layer="schematic" svgId="connector1pin" terminalId="connector1terminal"/>
 </schematicView>
 <pcbView>
-<p layer='copper1' svgId='connector1pad'/>
+<p layer="copper1" svgId="connector1pad"/>
 </pcbView>
 </views>
 </connector>
-<connector id='connector3' type='male' name='OUT'>
+<connector id="connector3" name="OUT" type="male">
 <description>OUT</description>
 <views>
 <breadboardView>
-<p layer='breadboard' svgId='connector3pin'/>
+<p layer="breadboard" svgId="connector3pin"/>
 </breadboardView>
 <schematicView>
-<p layer='schematic' svgId='connector3pin' terminalId='connector3terminal'/>
+<p layer="schematic" svgId="connector3pin" terminalId="connector3terminal"/>
 </schematicView>
 <pcbView>
-<p layer='copper1' svgId='connector3pad'/>
+<p layer="copper1" svgId="connector3pad"/>
 </pcbView>
 </views>
 </connector>
 </connectors>
 <buses>
-<bus id='OUT'>
-<nodeMember connectorId='connector3' />
-<nodeMember connectorId='connector1' />
+<bus id="OUT">
+<nodeMember connectorId="connector3"/>
+<nodeMember connectorId="connector1"/>
 </bus>
 </buses>
 </module>

@@ -354,8 +354,24 @@ HtmlInfoView {
         padding: 3px 3px 3px 0px;
 }
 
+#infoViewSpinBoxLabel {
+        font-size: 10px;
+        color: rgb(0,0,0);
+}
 
 /* complex property values */
+
+
+#infoViewDoubleSpinBox {
+        background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+            stop: 0 rgb(200,200,200), stop: 0.1 rgb(230,230,230),
+            stop: 0.1 rgb(230,230,230), stop: 0.5 rgb(245,245,245),
+            stop: 0.5 rgb(245,245,245), stop: 1.0 rgb(255,255,255));
+        font-size: 10px;
+        color: rgb(0,0,0);
+        border: none;
+}
+
 
 #infoViewComboBox {
         font-size: 10px;
@@ -408,6 +424,7 @@ HtmlInfoView {
         margin: 0px;
         padding: 0px;
 }
+
 
 
 #infoViewComboBox:editable {

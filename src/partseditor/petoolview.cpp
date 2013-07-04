@@ -148,7 +148,6 @@ PEToolView::PEToolView(QWidget * parent) : QWidget(parent)
     posNumberLayout->addWidget(m_terminalPointX);
     connect(m_terminalPointX, SIGNAL(getSpinAmount(double &)), this, SLOT(getSpinAmountSlot(double &)), Qt::DirectConnection);
     connect(m_terminalPointX, SIGNAL(valueChanged(double)), this, SLOT(terminalPointEntry()));
-    connect(m_terminalPointX, SIGNAL(valueChanged(const QString &)), this, SLOT(terminalPointEntry()));
 
     posNumberLayout->addSpacing(PEUtils::Spacing);
 
@@ -161,7 +160,6 @@ PEToolView::PEToolView(QWidget * parent) : QWidget(parent)
     posNumberLayout->addWidget(m_terminalPointY);
     connect(m_terminalPointY, SIGNAL(getSpinAmount(double &)), this, SLOT(getSpinAmountSlot(double &)), Qt::DirectConnection);
     connect(m_terminalPointY, SIGNAL(valueChanged(double)), this, SLOT(terminalPointEntry()));
-    connect(m_terminalPointY, SIGNAL(valueChanged(const QString &)), this, SLOT(terminalPointEntry()));
 
     posNumberLayout->addSpacing(PEUtils::Spacing);
 

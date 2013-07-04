@@ -377,20 +377,8 @@
 </views>
 </instance>
 
-<instance modelIndex="64" moduleIdRef="SparkFun-Connectors-M02-POLAR">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="65" moduleIdRef="SparkFun-Connectors-M02-3.5MM">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
+
+
 <instance modelIndex="66" moduleIdRef="SparkFun-Connectors-M02--JST-2MM-SMT">
 <views>
 <iconView layer="icon">
@@ -413,13 +401,7 @@
 </iconView>
 </views>
 </instance>
-<instance modelIndex="70" moduleIdRef="SparkFun-Connectors-M02-5MM">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
+
 
 <instance modelIndex="72" moduleIdRef="SparkFun-Connectors-M02-POLAR_LOCK">
 <views>
@@ -446,13 +428,6 @@
 </views>
 </instance>
 
-<instance modelIndex="79" moduleIdRef="SparkFun-Connectors-M02-3.5MM-NO_SILK">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
 <instance modelIndex="80" moduleIdRef="SparkFun-Connectors-M02--JST-2-PTH-NO_SILK">
 <views>
 <iconView layer="icon">
@@ -474,22 +449,6 @@
 </iconView>
 </views>
 </instance>
-
-<instance modelIndex="84" moduleIdRef="SparkFun-Connectors-M03-POLAR">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="85" moduleIdRef="SparkFun-Connectors-M03-SCREW">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-
 
 <instance modelIndex="88" moduleIdRef="SparkFun-Connectors-M03-POLAR_LOCK">
 <views>
@@ -514,13 +473,7 @@
 </iconView>
 </views>
 </instance>
-<instance modelIndex="93" moduleIdRef="SparkFun-Connectors-M03--SCREW-5MM">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
+
 
 <instance modelIndex="95" moduleIdRef="SparkFun-Connectors-M03-">
 <views>
@@ -536,22 +489,6 @@
 </iconView>
 </views>
 </instance>
-
-<instance modelIndex="98" moduleIdRef="SparkFun-Connectors-M04-POLAR">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="99" moduleIdRef="SparkFun-Connectors-M04-SCREW">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-
 
 
 <instance modelIndex="103" moduleIdRef="SparkFun-Connectors-M04-POLAR_LOCK">
@@ -648,13 +585,7 @@
 </views>
 </instance>
 
-<instance modelIndex="125" moduleIdRef="SparkFun-Connectors-M06-POLAR">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
+
 <instance modelIndex="126" moduleIdRef="SparkFun-Connectors-M06-RA">
 <views>
 <iconView layer="icon">
@@ -695,13 +626,7 @@
 </iconView>
 </views>
 </instance>
-<instance modelIndex="136" moduleIdRef="SparkFun-Connectors-M06-3.5MM-6">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
+
 <instance modelIndex="137" moduleIdRef="SparkFun-Connectors-M06-SMDF">
 <views>
 <iconView layer="icon">
@@ -746,19 +671,6 @@
 </instance>
 
 
-
-
-
-
-
-
-<instance modelIndex="151" moduleIdRef="SparkFun-Connectors-M08-3.5MM-8">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
 <instance modelIndex="152" moduleIdRef="SparkFun-Connectors-M08-SMD-STRAIGHT">
 <views>
 <iconView layer="icon">

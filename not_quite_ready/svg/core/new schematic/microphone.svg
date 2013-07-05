@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="28.801px" height="14.4px" viewBox="0 0 28.801 14.4" enable-background="new 0 0 28.801 14.4" xml:space="preserve">
+<g id="schematic">
+	<rect id="connector0pin" x="0.092" y="6.862" fill="none" width="3.385" height="0.677"/>
+	<rect id="connector1pin" x="25.416" y="6.862" fill="none" width="3.385" height="0.677"/>
+	<rect id="connector0terminal" x="0.092" y="6.862" fill="none" width="0.677" height="0.677"/>
+	<rect id="connector1terminal" x="28.124" y="6.862" fill="none" width="0.677" height="0.677"/>
+	<g id="diagram">
+		
+			<circle fill="none" stroke="#000000" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round" cx="14.4" cy="7.2" r="7.2"/>
+		
+			<line fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="0" y1="7.2" x2="7.2" y2="7.2"/>
+		
+			<line fill="none" stroke="#000000" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round" x1="6.241" y1="14.4" x2="23.73" y2="14.4"/>
+		
+			<line fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="21.601" y1="7.2" x2="28.801" y2="7.2"/>
+	</g>
+</g>
+</svg>

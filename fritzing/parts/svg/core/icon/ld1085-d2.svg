@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="34.582px" height="47.906px" viewBox="0 0 34.582 47.906" enable-background="new 0 0 34.582 47.906" xml:space="preserve">
+<g id="Ebene_1" xmlns:svg="http://www.w3.org/2000/svg">
+	<polygon fill="#E6E6E6" points="7.375,0 0,2.369 0,6.536 34.582,6.536 34.582,2.369 27.207,0 	"/>
+	<rect x="0" y="5.203" fill="#1A1A1A" width="34.582" height="31.018"/>
+	<rect x="0" y="36.22" width="34.582" height="5.103"/>
+	<g id="silkscreen">
+		<rect x="15.803" y="38.937" fill="#E6E6E6" width="2.977" height="4.053"/>
+		<rect x="8.603" y="38.937" fill="#E6E6E6" width="2.977" height="4.053"/>
+		<rect x="23.003" y="38.937" fill="#E6E6E6" width="2.977" height="4.053"/>
+	</g>
+	<g id="silkscreen_1_">
+		<rect x="15.803" y="42.99" fill="#CCCCCC" width="2.977" height="1.5"/>
+		<rect x="8.603" y="42.99" fill="#CCCCCC" width="2.977" height="1.5"/>
+		<rect x="23.003" y="42.99" fill="#CCCCCC" width="2.977" height="1.5"/>
+	</g>
+	<g id="silkscreen_2_">
+		<rect x="15.803" y="44.49" fill="#E6E6E6" width="2.977" height="3.416"/>
+		<rect x="8.603" y="44.49" fill="#E6E6E6" width="2.977" height="3.416"/>
+		<rect x="23.003" y="44.49" fill="#E6E6E6" width="2.977" height="3.416"/>
+	</g>
+	<path d="M0,24.698c2.002,0,3.625,1.623,3.625,3.625S2.002,31.948,0,31.948V24.698z"/>
+	<path d="M34.582,31.948c-2.002,0-3.625-1.623-3.625-3.625s1.623-3.625,3.625-3.625V31.948z"/>
+	<text transform="matrix(1 0 0 1 10.8 15.8501)"><tspan x="0" y="0" fill="#808080" font-family="'Droid Sans'" font-size="3.3766">LD1085</tspan><tspan x="7.512" y="4.052" fill="#808080" font-family="'Droid Sans'" font-size="3.3766">Vb</tspan></text>
+	<g opacity="0.2">
+		<polygon fill="#FFFFFF" points="0,2.738 7.375,0.369 27.207,0.369 34.582,2.738 34.582,2.369 27.207,0 7.375,0 0,2.369 		"/>
+		<rect x="0" y="5.203" fill="#FFFFFF" width="34.582" height="0.369"/>
+		<rect x="0" y="35.851" width="34.582" height="0.369"/>
+		<path fill="#FFFFFF" d="M3.625,28.323c0-2.002-1.623-3.625-3.625-3.625v-0.369c2.002,0,3.625,1.623,3.625,3.625V28.323z"/>
+		<path fill="#FFFFFF" d="M34.582,24.698c-2.002,0-3.625,1.623-3.625,3.625v-0.369c0-2.002,1.623-3.625,3.625-3.625V24.698z"/>
+	</g>
+	<rect x="15.803" y="38.937" opacity="0.2" width="2.977" height="0.156"/>
+	<rect x="8.603" y="38.937" opacity="0.2" width="2.977" height="0.156"/>
+	<rect x="23.003" y="38.937" opacity="0.2" width="2.977" height="0.156"/>
+	<rect x="15.803" y="42.833" opacity="0.2" fill="#FFFFFF" width="2.977" height="0.156"/>
+	<rect x="8.603" y="42.833" opacity="0.2" fill="#FFFFFF" width="2.977" height="0.156"/>
+	<rect x="23.003" y="42.833" opacity="0.2" fill="#FFFFFF" width="2.977" height="0.156"/>
+	<rect x="15.803" y="44.49" opacity="0.2" width="2.977" height="0.156"/>
+	<rect x="8.603" y="44.49" opacity="0.2" width="2.977" height="0.156"/>
+	<rect x="23.003" y="44.49" opacity="0.2" width="2.977" height="0.156"/>
+</g>
+<g id="Ebene_2">
+</g>
+</svg>

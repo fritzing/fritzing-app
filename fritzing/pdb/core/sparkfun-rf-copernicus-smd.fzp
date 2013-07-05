@@ -33,7 +33,7 @@
 </layers>
 </pcbView>
 <iconView>
-<layers image="icon/COPERNICUS.svg">
+<layers image="icon/copernicus.svg">
 <layer layerId="icon"/>
 </layers>
 </iconView>

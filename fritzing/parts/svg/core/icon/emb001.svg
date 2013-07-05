@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Ebene_1" xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="41.953px"
+	 height="78.69px" viewBox="0 0 41.953 78.69" enable-background="new 0 0 41.953 78.69" xml:space="preserve">
+<path fill="#666666" d="M0,6.333V78.69h2c0-2.209,1.791-4,4-4s4,1.791,4,4h21.953c0-2.209,1.791-4,4-4s4,1.791,4,4h2V6.333H0z"/>
+<rect x="10" y="77.44" fill="#808080" width="21.953" height="1.25"/>
+<rect x="39.953" y="77.44" fill="#808080" width="1.988" height="1.25"/>
+<rect x="0.006" y="77.44" fill="#808080" width="1.988" height="1.25"/>
+<path fill="#B3B3B3" d="M0,5.083V77.44h2c0-2.209,1.791-4,4-4s4,1.791,4,4h21.953c0-2.209,1.791-4,4-4s4,1.791,4,4h2V5.083H0z"/>
+<rect x="11" y="74.607" fill="#CCCCCC" width="19.988" height="2.196"/>
+<rect x="40.943" y="74.607" fill="#CCCCCC" width="0.998" height="2.196"/>
+<rect y="74.607" fill="#CCCCCC" width="1.026" height="2.196"/>
+<g>
+	<path fill="#E6E6E6" d="M40.953,0c0,2.762-2.238,5-5,5s-5-2.238-5-5H11c0,2.762-2.239,5-5,5S1,2.761,1,0H0v74.607h1
+		c0-2.762,2.239-5,5-5s5,2.238,5,5h19.953c0-2.762,2.238-5,5-5s5,2.238,5,5h1V0H40.953z"/>
+	<path fill="#CCCCCC" d="M41.953,75.19h-1c0-2.762-2.238-5-5-5s-5,2.238-5,5H11c0-2.762-2.239-5-5-5s-5,2.238-5,5H0v-0.583h1
+		c0-2.762,2.239-5,5-5s5,2.238,5,5h19.953c0-2.762,2.238-5,5-5s5,2.238,5,5h1V75.19z"/>
+</g>
+<rect x="2.602" y="8.303" fill="#F2F2F2" width="36.75" height="58"/>
+<text transform="matrix(1 0 0 1 4.4766 64.2556)" fill="#808080" font-family="'Droid Sans'" font-size="5.8634">emb001</text>
+<g opacity="0.2">
+	<path fill="#FFFFFF" d="M0,0.553h1c0,2.762,2.239,5,5,5s5-2.238,5-5h19.953c0,2.762,2.238,5,5,5s5-2.238,5-5h1V0h-1
+		c0,2.762-2.238,5-5,5s-5-2.238-5-5H11c0,2.762-2.239,5-5,5S1,2.761,1,0H0V0.553z"/>
+	<path d="M40.953,75.151c0-2.762-2.238-5-5-5s-5,2.238-5,5v0.554c0-2.762,2.238-5,5-5s5,2.238,5,5V75.151z"/>
+	<path d="M1,75.705c0-2.762,2.239-5,5-5s5,2.238,5,5v-0.554c0-2.762-2.239-5-5-5s-5,2.238-5,5V75.705z"/>
+	<rect x="2.602" y="8.303" fill="#FFFFFF" width="36.75" height="0.554"/>
+	<rect x="2.602" y="66.303" width="36.75" height="0.167"/>
+	<rect x="11" y="74.355" fill="#FFFFFF" width="19.953" height="0.236"/>
+	<rect x="11" y="76.803" width="19.953" height="0.193"/>
+</g>
+<g opacity="0.2">
+	<rect x="40.953" y="74.36" fill="#FFFFFF" width="1" height="0.231"/>
+	<rect y="74.36" fill="#FFFFFF" width="1" height="0.231"/>
+</g>
+<path opacity="0.2" d="M0,78.69h2c0-2.209,1.791-4,4-4s4,1.791,4,4h21.953c0-2.209,1.791-4,4-4s4,1.791,4,4h2v-0.265h-2
+	c0-2.209-1.791-4-4-4s-4,1.791-4,4H10c0-2.209-1.791-4-4-4s-4,1.791-4,4H0V78.69z"/>
+</svg>

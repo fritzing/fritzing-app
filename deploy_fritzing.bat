@@ -29,8 +29,6 @@ cd ..
 cd ..
 cd ..
 
-del .\release\deploy\bins\more\sparkfun-*.fzb
-del .\release\deploy\pdb\user\*.fzp
 del .\release\deploy\parts\svg\user\breadboard\*.svg
 del .\release\deploy\parts\svg\user\icon\*.svg
 del .\release\deploy\parts\svg\user\pcb\*.svg

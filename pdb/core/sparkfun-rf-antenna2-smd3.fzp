@@ -35,7 +35,7 @@ Single endded antenna. Common with smaller chip antennas. CHIP4 package is the G
 </layers>
 </pcbView>
 <iconView>
-<layers image="icon/ANTENNA-CHIP4.svg">
+<layers image="icon/antenna-chip4.svg">
 <layer layerId="icon"/>
 </layers>
 </iconView>

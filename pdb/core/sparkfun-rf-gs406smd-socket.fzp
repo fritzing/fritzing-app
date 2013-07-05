@@ -37,7 +37,7 @@ sku: GPS-09079</description>
 </layers>
 </pcbView>
 <iconView>
-<layers image="icon/GS406SMD.svg">
+<layers image="icon/gs406smd.svg">
 <layer layerId="icon"/>
 </layers>
 </iconView>

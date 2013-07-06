@@ -32,7 +32,7 @@
 </layers>
 </pcbView>
 <iconView>
-<layers image="icon/USB-AB-MICRO-SMD.svg">
+<layers image="icon/usb-ab-micro-smd.svg">
 <layer layerId="icon"/>
 </layers>
 </iconView>

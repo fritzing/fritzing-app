@@ -16,7 +16,7 @@
 </properties>
 <views>
 <breadboardView>
-<layers image="breadboard/so-28w_breadboard.svg">
+<layers image="breadboard/SO-28W_breadboard.svg">
 <layer layerId="breadboard"/>
 </layers>
 </breadboardView>
@@ -32,7 +32,7 @@
 </layers>
 </pcbView>
 <iconView>
-<layers image="breadboard/so-28w_breadboard.svg">
+<layers image="breadboard/SO-28W_breadboard.svg">
 <layer layerId="icon"/>
 </layers>
 </iconView>

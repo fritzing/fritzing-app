@@ -20,7 +20,7 @@ Digikey P/N MC74ACT125DR2GOSTR-ND</description>
 </properties>
 <views>
 <breadboardView>
-<layers image="breadboard/soic-14_breadboard.svg">
+<layers image="breadboard/SOIC-14_breadboard.svg">
 <layer layerId="breadboard"/>
 </layers>
 </breadboardView>
@@ -36,7 +36,7 @@ Digikey P/N MC74ACT125DR2GOSTR-ND</description>
 </layers>
 </pcbView>
 <iconView>
-<layers image="breadboard/soic-14_breadboard.svg">
+<layers image="breadboard/SOIC-14_breadboard.svg">
 <layer layerId="icon"/>
 </layers>
 </iconView>

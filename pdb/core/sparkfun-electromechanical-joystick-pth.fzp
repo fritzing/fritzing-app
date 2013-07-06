@@ -18,7 +18,7 @@ Joystick commonly found in PS2 controllers. Two pots and a select switch. Footpr
 </properties>
 <views>
 <breadboardView>
-<layers image="breadboard/joystick-breakout-v11_breadboard.svg">
+<layers image="breadboard/Joystick-Breakout-v11_breadboard.svg">
 <layer layerId="breadboard"/>
 </layers>
 </breadboardView>

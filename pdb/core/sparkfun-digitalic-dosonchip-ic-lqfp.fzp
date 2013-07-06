@@ -19,7 +19,7 @@ This is the tested schematic and footprint for the DOSonCHIP FAT16 FAT32 IC. Spa
 </properties>
 <views>
 <breadboardView>
-<layers image="breadboard/lqfp-32_breadboard.svg">
+<layers image="breadboard/LQFP-32_breadboard.svg">
 <layer layerId="breadboard"/>
 </layers>
 </breadboardView>
@@ -35,7 +35,7 @@ This is the tested schematic and footprint for the DOSonCHIP FAT16 FAT32 IC. Spa
 </layers>
 </pcbView>
 <iconView>
-<layers image="breadboard/lqfp-32_breadboard.svg">
+<layers image="breadboard/LQFP-32_breadboard.svg">
 <layer layerId="icon"/>
 </layers>
 </iconView>

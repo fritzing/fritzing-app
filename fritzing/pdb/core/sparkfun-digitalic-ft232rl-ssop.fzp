@@ -20,7 +20,7 @@ FT232RL 4&lt;sup&gt;th&lt;/sup&gt; Generation USB UART (USB &amp;lt;-&amp;gt; Se
 </properties>
 <views>
 <breadboardView>
-<layers image="breadboard/ssop28db_breadboard.svg">
+<layers image="breadboard/SSOP28DB_breadboard.svg">
 <layer layerId="breadboard"/>
 </layers>
 </breadboardView>
@@ -36,7 +36,7 @@ FT232RL 4&lt;sup&gt;th&lt;/sup&gt; Generation USB UART (USB &amp;lt;-&amp;gt; Se
 </layers>
 </pcbView>
 <iconView>
-<layers image="breadboard/ssop28db_breadboard.svg">
+<layers image="breadboard/SSOP28DB_breadboard.svg">
 <layer layerId="icon"/>
 </layers>
 </iconView>

@@ -582,9 +582,12 @@ void Stripboard::reinitBuses(bool triggerUndo)
 	modelPart()->clearBuses();
 	modelPart()->initBuses();
 	modelPart()->setLocalProp("buses",  busPropertyString);
-	
+
+
+
+    QList<ConnectorItem *> visited2;
 	foreach (ConnectorItem * connectorItem, cachedConnectorItems()) {
-		connectorItem->restoreColor(false, 0, true);
+		connectorItem->restoreColor(visited2);
 	}
 
     update();

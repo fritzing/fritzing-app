@@ -321,7 +321,6 @@ ConnectorItem::ConnectorItem( Connector * connector, ItemBase * attachedTo )
 	m_groundFillSeed = false;
 	m_connectorDetectT = m_connectorDrawT = 0;
 	m_draggingCurve = m_draggingLeg = m_rubberBandLeg = m_bigDot = m_hybrid = false;
-	m_marked = false;
 	m_hoverEnterSpaceBarWasPressed = m_spaceBarWasPressed = false;
 	m_overConnectorItem = NULL;
 	m_connectorHovering = false;
@@ -406,7 +405,8 @@ void ConnectorItem::hoverLeaveEvent ( QGraphicsSceneHoverEvent * event ) {
 		return;
 	}
 
-	restoreColor(false, 0, true);
+    QList<ConnectorItem *> visited;
+	restoreColor(visited);
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
 	if (infoGraphicsView != NULL) {
 		infoGraphicsView->hoverLeaveConnectorItem(event, this);
@@ -451,7 +451,8 @@ void ConnectorItem::connectorHover(ItemBase * itemBase, bool hovering) {
 		setHoverColor();			// could make this light up buses as well
 	}
 	else {
-		restoreColor(false, 0, true);
+        QList<ConnectorItem *> visited;
+		restoreColor(visited);
 	}
 	if (this->m_attachedTo != NULL) {
 		m_attachedTo->connectorHover(this, itemBase, hovering);
@@ -467,13 +468,15 @@ void ConnectorItem::connectTo(ConnectorItem * connected) {
 
 	m_connectedTo.append(connected);
 	//DebugDialog::debug(QString("connect to cc:%4 this:%1 to:%2 %3").arg((long) this, 0, 16).arg((long) connected, 0, 16).arg(connected->attachedTo()->modelPartShared()->title()).arg(m_connectedTo.count()) );
-	restoreColor(true, 0, true);
+    QList<ConnectorItem *> visited;
+	restoreColor(visited);
 	if (m_attachedTo != NULL) {
 		m_attachedTo->connectionChange(this, connected, true);
 	}
 }
 
 ConnectorItem * ConnectorItem::removeConnection(ItemBase * itemBase) {
+    QList<ConnectorItem *> visited;
 	for (int i = 0; i < m_connectedTo.count(); i++) {
 		if (m_connectedTo[i]->attachedTo() == itemBase) {
 			ConnectorItem * removed = m_connectedTo[i];
@@ -481,7 +484,7 @@ ConnectorItem * ConnectorItem::removeConnection(ItemBase * itemBase) {
 			if (m_attachedTo != NULL) {
 				m_attachedTo->connectionChange(this, removed, false);
 			}
-			restoreColor(true, 0, true);
+			restoreColor(visited);
 			DebugDialog::debug(QString("remove from:%1 to:%2 count%3")
 				.arg((long) this, 0, 16)
 				.arg(itemBase->modelPartShared()->title())
@@ -497,7 +500,8 @@ void ConnectorItem::removeConnection(ConnectorItem * connectedItem, bool emitCha
 	if (connectedItem == NULL) return;
 
 	m_connectedTo.removeOne(connectedItem);
-	restoreColor(true, 0, true);
+    QList<ConnectorItem *> visited;
+	restoreColor(visited);
 	if (emitChange) {
 		m_attachedTo->connectionChange(this, connectedItem, false);
 	}
@@ -506,82 +510,62 @@ void ConnectorItem::removeConnection(ConnectorItem * connectedItem, bool emitCha
 void ConnectorItem::tempConnectTo(ConnectorItem * item, bool applyColor) {
 	if (!m_connectedTo.contains(item)) m_connectedTo.append(item);
 
-	if(applyColor) restoreColor(true, 0, true);
+	if(applyColor) {
+        QList<ConnectorItem *> visited;
+        restoreColor(visited);
+    }
 }
 
 void ConnectorItem::tempRemove(ConnectorItem * item, bool applyColor) {
 	m_connectedTo.removeOne(item);
 
-	if(applyColor) restoreColor(true, 0, true);
+	if(applyColor) {    
+        QList<ConnectorItem *> visited;
+        restoreColor(visited);
+    }
 }
 
-void ConnectorItem::restoreColor(bool doBuses, int busConnectionCount, bool doCross) 
+void ConnectorItem::restoreColor(QList<ConnectorItem *> & visited) 
 {
-	setMarked(true);
+    if (visited.contains(this)) return;
+    visited.append(this);
+
 	if (!attachedTo()->isEverVisible()) return;
 
-	/*
-		DebugDialog::debug(QString("restore color dobus:%1 bccount:%2 docross:%3 cid:'%4' '%5' id:%6 '%7' vid:%8 vlid:%9")
-		.arg(doBuses)
-		.arg(busConnectionCount)
-		.arg(doCross)
-		.arg(this->connectorSharedID())
-		.arg(this->connectorSharedName())
-		.arg(this->attachedToID())
-		.arg(this->attachedToInstanceTitle())
-		.arg(this->attachedToViewID())
-		.arg(this->attachedToViewLayerID())
-		);
-		*/
+    QList<ConnectorItem *> connectorItems;
+    connectorItems.append(this);
+    collectEqualPotential(connectorItems, true, getSkipFlags());
+    visited.append(connectorItems);
+    QSet<ItemBase *> attachedTo;
+    foreach (ConnectorItem * connectorItem, connectorItems) {
+        if (connectorItem->isEverVisible()) {
+            if (connectorItem->attachedToItemType() != ModelPart::Wire) {
+                attachedTo.insert(connectorItem->attachedTo()->layerKinChief());
+            }
+        }
+    }
 
-	int connectedToCount = busConnectionCount;
-	if (attachedToItemType() == ModelPart::Wire) {
-		doBuses = doCross = false;
-		foreach (ConnectorItem * toConnectorItem, m_connectedTo) {
-			if (toConnectorItem->attachedTo()->isEverVisible()) {
-				connectedToCount = 1;
-				break;
-			}
-		}
-	}
-	else if (connectedToCount == 0) {
-		connectedToCount = isConnectedToPart() ? 1 : 0;
-	}
+    foreach (ConnectorItem * connectorItem, connectorItems) {
+        if (connectorItem->isEverVisible()) {
+	        //QString how;
+	        if (attachedTo.count() <= 1) {
+		        if (connectorItem->connectorType() == Connector::Female) {
+                    if (connectorItem->connectionsCount() > 0) connectorItem->setUnconnectedColor();
+			        else connectorItem->setNormalColor();
+			        //how = "normal";	
+		        }
+		        else {
+			        connectorItem->setUnconnectedColor();
+			        //how = "unconnected";
+		        }
+	        }
+	        else {
+		        connectorItem->setConnectedColor();
+		        //how = "connected";
+	        }
+        }
+    }
 
-	if (doBuses) {
-		Bus * b = bus();
-		if (b != NULL) {
-			QList<ConnectorItem *> busConnectedItems;
-			attachedTo()->busConnectorItems(b, this, busConnectedItems);
-			busConnectedItems.removeOne(this);
-			foreach (ConnectorItem * busConnectorItem, busConnectedItems) {
-				busConnectorItem->restoreColor(false, connectedToCount, true);
-			}
-		}
-	}
-
-	if (doCross) {
-		ConnectorItem * crossConnectorItem = getCrossLayerConnectorItem();
-		if (crossConnectorItem) {
-			crossConnectorItem->restoreColor(false, connectedToCount, false);
-		}
-	}
-
-	QString how;
-	if (connectedToCount <= 0) {
-		if (connectorType() == Connector::Female) {
-			setNormalColor();
-			how = "normal";	
-		}
-		else {
-			setUnconnectedColor();
-			how = "unconnected";
-		}
-	}
-	else {
-		setConnectedColor();
-		how = "connected";
-	}
 
 	/*
 	DebugDialog::debug(QString("restore color dobus:%1 bccount:%2 docross:%3 cid:'%4' '%5' id:%6 '%7' vid:%8 vlid:%9 %10")
@@ -840,8 +824,9 @@ void ConnectorItem::mousePressEvent(QGraphicsSceneMouseEvent *event) {
 	m_equalPotentialDisplayItems.append(this);
 	collectEqualPotential(m_equalPotentialDisplayItems, true, ViewGeometry::NoFlag);
 	//m_equalPotentialDisplayItems.removeAt(0);									// not sure whether to leave the clicked one in or out of the list
-	foreach (ConnectorItem * connectorItem, m_equalPotentialDisplayItems) {
-		connectorItem->showEqualPotential(true);
+	QList<ConnectorItem *> visited;
+    foreach (ConnectorItem * connectorItem, m_equalPotentialDisplayItems) {
+		connectorItem->showEqualPotential(true, visited);
 	}
 	
 	if (m_rubberBandLeg && this->m_attachedTo != NULL && m_attachedTo->acceptsMousePressLegEvent(this, event)) {
@@ -1550,9 +1535,9 @@ bool ConnectorItem::connectionIsAllowed(ConnectorItem * other) {
 	return true;
 }
 
-void ConnectorItem::showEqualPotential(bool show) {
+void ConnectorItem::showEqualPotential(bool show, QList<ConnectorItem *> & visited) {
 	if (!show) {
-		restoreColor(false, 0, true);
+		restoreColor(visited);
 		return;
 	}
 
@@ -1565,8 +1550,9 @@ void ConnectorItem::showEqualPotential(bool show) {
 }
 
 void ConnectorItem::clearEqualPotentialDisplay() {
+    QList<ConnectorItem *> visited;
 	foreach (ConnectorItem * connectorItem, m_equalPotentialDisplayItems) {
-		connectorItem->showEqualPotential(false);
+		connectorItem->restoreColor(visited);
 	}
 	m_equalPotentialDisplayItems.clear();
 }
@@ -1904,14 +1890,6 @@ void ConnectorItem::collectConnectorNames(QList<ConnectorItem *> & connectorItem
 	}
 }
 
-bool ConnectorItem::marked() {
-	return m_marked;
-}
-
-void ConnectorItem::setMarked(bool m) {
-	m_marked = m;
-}
-
 double ConnectorItem::calcClipRadius() {
 	if (m_circular) {
 		return radius() - (strokeWidth() / 2.0);
@@ -2073,8 +2051,9 @@ ConnectorItem * ConnectorItem::releaseDrag() {
 
 		// clean up
 		setOverConnectorItem(NULL);
-		clearConnectorHover();
-		restoreColor(false, 0, true);
+		clearConnectorHover();    
+        QList<ConnectorItem *> visited;
+		restoreColor(visited);
 	}
 	attachedTo()->clearConnectorHover();
 	return result;
@@ -2861,3 +2840,9 @@ void ConnectorItem::setGroundFillSeed(bool seed)
 	if (cross) cross->m_groundFillSeed = seed;
 }
 
+ViewGeometry::WireFlags ConnectorItem::getSkipFlags() {
+    InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
+    if (infoGraphicsView == NULL) return ViewGeometry::RatsnestFlag;
+
+    return (ViewGeometry::RatsnestFlag | ViewGeometry::NormalFlag | ViewGeometry::PCBTraceFlag | ViewGeometry::SchematicTraceFlag) ^ infoGraphicsView->getTraceFlag();
+}

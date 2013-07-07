@@ -2252,11 +2252,12 @@ const QString &MainWindow::selectedModuleID() {
 }
 
 void MainWindow::redrawSketch() {
+    QList<ConnectorItem *> visited;
 	foreach (QGraphicsItem * item, m_currentGraphicsView->scene()->items()) {
 		item->update();
 		ConnectorItem * c = dynamic_cast<ConnectorItem *>(item);
 		if (c != NULL) {
-			c->restoreColor(false, 0, true);
+			c->restoreColor(visited);
 		}
 	}
 }
@@ -2513,6 +2514,7 @@ void MainWindow::routingStatusLabelMouse(QMouseEvent*, bool show) {
 			toShow.insert(connectorItem);
 		}
 	}
+	QList<ConnectorItem *> visited;
 	foreach (ConnectorItem * connectorItem, toShow) {
 		if (show) {
 			DebugDialog::debug(QString("unrouted %1 %2 %3 %4")
@@ -2523,11 +2525,11 @@ void MainWindow::routingStatusLabelMouse(QMouseEvent*, bool show) {
 		}
 
 		if (connectorItem->isActive() && connectorItem->isVisible() && !connectorItem->hidden() && !connectorItem->layerHidden()) {
-			connectorItem->showEqualPotential(show);
+			connectorItem->showEqualPotential(show, visited);
 		}
 		else {
 			connectorItem = connectorItem->getCrossLayerConnectorItem();
-			if (connectorItem) connectorItem->showEqualPotential(show);
+			if (connectorItem) connectorItem->showEqualPotential(show, visited);
 		}
 	}
 

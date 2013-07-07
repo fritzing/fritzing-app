@@ -3424,10 +3424,9 @@ bool SketchWidget::checkMoved(bool wait)
 		item->clearConnectorHover();
 	}
 
+    QList<ConnectorItem *> visited;
 	foreach (ConnectorItem * connectorItem, restoreConnectorItems) {
-		if (!connectorItem->marked()) {
-			connectorItem->restoreColor(false, 0, true);
-		}
+		connectorItem->restoreColor(visited);
 	}
 
 	// must restore legs after connections are restored (redo direction)
@@ -7939,21 +7938,13 @@ void SketchWidget::tidyWires() {
 
 void SketchWidget::updateConnectors() {
 	// update issue with 4.5.0?
+
+    QList<ConnectorItem *> visited;
 	foreach (QGraphicsItem* item, scene()->items()) {
 		ConnectorItem * connectorItem = dynamic_cast<ConnectorItem *>(item);
 		if (connectorItem == NULL) continue;
 
-		connectorItem->setMarked(false);
-	}
-
-	foreach (QGraphicsItem* item, scene()->items()) {
-		ConnectorItem * connectorItem = dynamic_cast<ConnectorItem *>(item);
-		if (connectorItem == NULL) continue;
-		if (connectorItem->marked()) {
-			continue;
-		}
-
-		connectorItem->restoreColor(true, 0, true);
+		connectorItem->restoreColor(visited);
 	}
 }
 
@@ -9390,13 +9381,14 @@ void SketchWidget::showUnrouted() {
         }
     }
 
+	QList<ConnectorItem *> visited;
 	foreach (ConnectorItem * connectorItem, toShow) {
 		if (connectorItem->isActive() && connectorItem->isVisible() && !connectorItem->hidden() && !connectorItem->layerHidden()) {
-			connectorItem->showEqualPotential(true);
+			connectorItem->showEqualPotential(true, visited);
 		}
 		else {
 			connectorItem = connectorItem->getCrossLayerConnectorItem();
-			if (connectorItem) connectorItem->showEqualPotential(true);
+			if (connectorItem) connectorItem->showEqualPotential(true, visited);
 		}
 	}
 
@@ -9407,13 +9399,14 @@ void SketchWidget::showUnrouted() {
             "Note: you can also trigger this display by mousing down on the routing status text in the status bar.").arg(message));
 
 
+	visited.clear();
     foreach (ConnectorItem * connectorItem, toShow) {
 		if (connectorItem->isActive() && connectorItem->isVisible() && !connectorItem->hidden() && !connectorItem->layerHidden()) {
-			connectorItem->showEqualPotential(false);
+			connectorItem->showEqualPotential(false, visited);
 		}
 		else {
 			connectorItem = connectorItem->getCrossLayerConnectorItem();
-			if (connectorItem) connectorItem->showEqualPotential(false);
+			if (connectorItem) connectorItem->showEqualPotential(false, visited);
 		}
 	}
 }

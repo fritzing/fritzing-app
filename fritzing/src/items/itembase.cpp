@@ -1860,13 +1860,9 @@ void ItemBase::updateConnectors()
 {
 	if (!isEverVisible()) return;
 
-	// assumes all connectors have previously been initialized unmarked;
-	//int count = 0;
+    QList<ConnectorItem *> visited;
 	foreach(ConnectorItem * connectorItem, cachedConnectorItems()) {
-		if (connectorItem->marked()) continue;
-
-		connectorItem->restoreColor(false, 0, false);
-		//count++;
+		connectorItem->restoreColor(visited);
 	}
 	//DebugDialog::debug(QString("set up connectors restore:%1").arg(count));
 }

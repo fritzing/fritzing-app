@@ -3,6 +3,7 @@
 
 tdir=`dirname $BASH_SOURCE`
 cd $tdir
+cd ..
 currentdir=$(pwd)
 
 echo "current directory"
@@ -22,28 +23,6 @@ echo $fritzingdir
 echo "removing translations"
 rm $fritzingdir/translations/*.ts
 find $fritzingdir/translations -name "*.qm" -size -128c -delete
-
-echo "more cleaning"
-cd $fritzingdir/parts/user
-rm -rf *
-cd ../svg/user/breadboard
-rm -rf *
-cd ../schematic
-rm -rf *
-cd "../new schematic"
-rm -rf *
-cd ../pcb
-rm -rf *
-cd ../icon
-rm -rf *
-cd ..
-rmdir "new schematic"
-
-cd $fritzingdir/pdb/user
-rm -rf *
-
-cd $fritzingdir/bins/more
-rm -rf sparkfun-*.fzb
 
 echo "still more cleaning"
 cd $fritzingdir

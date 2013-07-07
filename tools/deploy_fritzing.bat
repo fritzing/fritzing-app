@@ -1,5 +1,7 @@
 cd /d %~dp0
+cd ..
 
+rmdir .\release\deploy /s /q
 mkdir .\release\deploy
 
 xcopy .\translations .\release\deploy\translations /E  /I
@@ -23,17 +25,12 @@ xcopy .\release\*.dll .\release\deploy
 del .\release\deploy\translations\*.ts
 cd release
 cd deploy
+del/s placeholder.txt
 cd translations
 for /f "usebackq delims=;" %%A in (`dir /b *.qm`) do If %%~zA LSS 1024 del "%%A"
 cd ..
 cd ..
 cd ..
 
-del .\release\deploy\parts\svg\user\breadboard\*.svg
-del .\release\deploy\parts\svg\user\icon\*.svg
-del .\release\deploy\parts\svg\user\pcb\*.svg
-del .\release\deploy\parts\svg\user\schematic\*.svg
-del ".\release\deploy\parts\svg\user\new schematic\*.svg"
-rmdir ".\release\deploy\parts\svg\user\new schematic"
 
 echo don't forget about the msvc files and the lib folder

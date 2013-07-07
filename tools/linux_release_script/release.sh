@@ -32,28 +32,6 @@ compile_folder="build-$arch_aux"
 #svn export http://fritzing.googlecode.com/svn/trunk/fritzing $compile_folder
 git clone https://code.google.com/p/fritzing/ $compile_folder
 
-# get rid of user folder contents and bins
-current_dir=$(pwd)
-cd $compile_folder/fritzing/parts/user
-rm -rf *
-cd ../svg/user/breadboard
-rm -rf *
-cd ../schematic
-rm -rf *
-cd "../new schematic"
-rm -rf *
-cd ../pcb
-rm -rf *
-cd ../icon
-rm -rf *
-cd ..
-rmdir "new schematic"
-cd $current_dir
-cd $compile_folder/fritzing/pdb/user
-rm -rf *
-cd $current_dir
-cd $compile_folder/fritzing/bins/more
-rm -rf sparkfun-*.fzb
 cd $current_dir
 cd $compile_folder/fritzing/src/lib
 rm -rf boost*				# depend on linux boost installation 

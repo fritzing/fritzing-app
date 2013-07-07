@@ -99,8 +99,8 @@ public:
 	bool wiredTo(ConnectorItem *, ViewGeometry::WireFlags skipFlags);
 	void clearConnector();
 	bool connectionIsAllowed(ConnectorItem * other);
-	void restoreColor(bool doBuses, int busConnectedCount, bool doCross);
-	void showEqualPotential(bool show);
+	void restoreColor(QList<ConnectorItem *> & visited);
+	void showEqualPotential(bool show, QList<ConnectorItem *> & visited);
 	void setHoverColor();
 	bool isGrounded();
 	ConnectorItem * chooseFromSpec(ViewLayer::ViewLayerPlacement);
@@ -111,8 +111,6 @@ public:
 	ConnectorItem * getCrossLayerConnectorItem();
 	void displayRatsnest(QList<ConnectorItem *> & partsConnectorItems, ViewGeometry::WireFlags myFlag);
 	void clearRatsnestDisplay(QList<ConnectorItem *> & connectorItems);
-	bool marked();
-	void setMarked(bool);
 	double calcClipRadius();
 	bool isEffectivelyCircular();
 	void paint( QPainter * painter, const QStyleOptionGraphicsItem * option, QWidget * widget = 0 );
@@ -183,6 +181,7 @@ protected:
 	bool legMousePressEvent(QGraphicsSceneMouseEvent *event);
 	void repoly(const QPolygonF & poly, bool relative);
 	QPainterPath shapeAux(double width) const;
+    ViewGeometry::WireFlags getSkipFlags();
 
 	enum CursorLocation {
 		InNotFound = 0,
@@ -214,7 +213,6 @@ protected:
 	bool m_connectorHovering;
 	bool m_spaceBarWasPressed;
 	bool m_hoverEnterSpaceBarWasPressed;
-	bool m_marked;
 	bool m_hybrid;
 	bool m_bigDot;
 	bool m_rubberBandLeg;

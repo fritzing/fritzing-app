@@ -370,7 +370,8 @@ void ClipableWire::dispatchHoverAux(bool inInner, Wire * inWire)
 			return;
 		}
 		if (m_trackHoverLastItem) {
-			m_trackHoverLastItem->restoreColor(false, 0, true);
+            QList<ConnectorItem *> visited;
+			m_trackHoverLastItem->restoreColor(visited);
 			m_trackHoverLastItem->attachedTo()->hoverLeaveConnectorItem();
 			m_trackHoverLastItem = NULL;
 		}
@@ -383,7 +384,8 @@ void ClipableWire::dispatchHoverAux(bool inInner, Wire * inWire)
 	else {
 		//DebugDialog::debug("got none");
 		if (m_trackHoverLastItem != NULL) {
-			m_trackHoverLastItem->restoreColor(false, 0, true);
+            QList<ConnectorItem *> visited;
+			m_trackHoverLastItem->restoreColor(visited);
 			m_trackHoverLastItem->attachedTo()->hoverLeaveConnectorItem();
 			m_trackHoverLastItem = NULL;
 		}

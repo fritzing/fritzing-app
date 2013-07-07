@@ -226,13 +226,11 @@ void SchematicSketchWidget::updateBigDots()
 		//DebugDialog::debug(QString("update big dot %1 %2").arg(traceWire->id()).arg(connectorItem->connectorSharedID()));
 
 		connectorItems.append(connectorItem);
-		connectorItem->setMarked(false);
 	}
 
+    QList<ConnectorItem *> visited;
 	foreach (ConnectorItem * connectorItem, connectorItems) {
-		if (!connectorItem->marked()) {
-			connectorItem->restoreColor(false, 0, false);
-		}
+	    connectorItem->restoreColor(visited);
 	}
 }
 

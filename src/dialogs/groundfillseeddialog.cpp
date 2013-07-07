@@ -141,8 +141,9 @@ void GroundFillSeedDialog::showEqualPotential(ConnectorItem * connectorItem, boo
 		QList<ConnectorItem *> connectorItems;
 		connectorItems.append(connectorItem);
 		ConnectorItem::collectEqualPotential(connectorItems, true, ViewGeometry::NoFlag);
+	    QList<ConnectorItem *> visited;
 		foreach (ConnectorItem * ci, connectorItems) {
-			ci->showEqualPotential(show);
+			ci->showEqualPotential(show, visited);
 		}
 	}
 }

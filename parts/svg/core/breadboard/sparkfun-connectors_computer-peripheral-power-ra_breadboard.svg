@@ -61,10 +61,10 @@
 		<path fill="#B3B3B3" d="M67.146,42.404V32.138l-5.934-5.756H6.545l-5.934,5.756v10.266H67.146z M1.602,32.556l5.345-5.182h53.864
 			l5.346,5.182v8.857H1.602V32.556z"/>
 		<g>
-			<circle id="connector3pin_1_" fill="none" cx="41.009" cy="5.783" r="3.565"/>
-			<circle id="connector1pin_1_" fill="none" cx="55.272" cy="5.783" r="3.565"/>
-			<circle id="connector2pin_1_" fill="none" cx="26.747" cy="5.783" r="3.565"/>
-			<circle id="connector0pin_1_" fill="none" cx="12.485" cy="5.783" r="3.565"/>
+			<circle id="connector3pin" fill="none" cx="41.009" cy="5.783" r="3.565"/>
+			<circle id="connector1pin" fill="none" cx="55.272" cy="5.783" r="3.565"/>
+			<circle id="connector2pin" fill="none" cx="26.747" cy="5.783" r="3.565"/>
+			<circle id="connector0pin" fill="none" cx="12.485" cy="5.783" r="3.565"/>
 		</g>
 		<polygon fill="#CCCCCC" points="67.146,32.138 61.212,26.382 61.212,6.323 67.146,12.076 		"/>
 		<polygon fill="#F2F2F2" points="0.611,32.138 6.545,26.382 6.545,6.323 0.611,12.076 		"/>

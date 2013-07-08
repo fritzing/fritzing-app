@@ -4,17 +4,15 @@
 <svg version="1.1" id="Ebene_1" xmlns:svg="http://www.w3.org/2000/svg"
 	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16.725px"
 	 height="32.901px" viewBox="0 0 16.725 32.901" enable-background="new 0 0 16.725 32.901" xml:space="preserve">
-<g id="copper1">
-	<rect id="connector1pad" x="5.492" y="31.058" fill="#F7BD13" width="0.744" height="1.844"/>
-	<rect id="connector0pad" x="10.488" y="31.058" fill="#F7BD13" width="0.744" height="1.844"/>
-	<g id="copper0">
-	</g>
-</g>
+<g id="breadboard">
+	<rect id="connector1pin" x="5.492" y="31.058" fill="#F7BD13" width="0.744" height="1.844"/>
+	<rect id="connector0pin" x="10.488" y="31.058" fill="#F7BD13" width="0.744" height="1.844"/>
+
 <g id="icon">
 	<g>
 		<g>
-			<rect x="5.492" y="26.7" fill="#8C8C8C" width="0.744" height="6.201"/>
-			<rect x="10.488" y="26.7" fill="#8C8C8C" width="0.744" height="6.201"/>
+			<rect x="5.492" y="26.7" fill="#8C8C8C" width="0.744" height="6.201" />
+			<rect x="10.488" y="26.7" fill="#8C8C8C" width="0.744" height="6.201" />
 		</g>
 		<ellipse fill="#1A1A1A" cx="8.363" cy="24.919" rx="8.363" ry="5.854"/>
 		<rect y="23.728" fill="#1A1A1A" width="16.719" height="1.191"/>
@@ -63,4 +61,4 @@
 			c0,0.896,0.315,1.737,0.863,2.482C1.526,7.874,1.574,7.841,1.63,7.82l0.443-0.178C1.46,6.898,1.101,6.034,1.101,5.109z"/>
 	</g>
 </g>
-</svg>
+</g></svg>

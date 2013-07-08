@@ -5,10 +5,10 @@
 	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="60.523px"
 	 height="65.249px" viewBox="0 0 60.523 65.249" enable-background="new 0 0 60.523 65.249" xml:space="preserve">
 <g id="breadboard">
-	<circle id="connector0pin_1_" fill="none" cx="30.392" cy="38.51" r="2.612"/>
-	<circle id="connector2pin_2_" fill="none" cx="51.595" cy="38.538" r="2.612"/>
-	<circle id="connector1pin_1_" fill="none" cx="9.047" cy="38.538" r="2.612"/>
-	<circle id="connector3pin_1_" fill="none" cx="16.247" cy="31.395" r="2.612"/>
+	<circle id="connector0pin" fill="none" cx="30.392" cy="38.51" r="2.612"/>
+	<circle id="connector2pin" fill="none" cx="51.595" cy="38.538" r="2.612"/>
+	<circle id="connector1pin" fill="none" cx="9.047" cy="38.538" r="2.612"/>
+	<circle id="connector3pin" fill="none" cx="16.247" cy="31.395" r="2.612"/>
 	<circle id="connector4pin" fill="none" cx="44.593" cy="31.366" r="2.612"/>
 </g>
 <g>

@@ -14,11 +14,11 @@
 	<circle id="connector6pin" fill="none" stroke="#9A916C" stroke-width="0.4898" cx="75.24" cy="32.832" r="1.97"/>
 	<circle id="connector7pin" fill="none" stroke="#9A916C" stroke-width="0.4898" cx="82.44" cy="32.832" r="1.97"/>
 	<circle id="connector8pin" fill="none" stroke="#9A916C" stroke-width="0.4898" cx="82.44" cy="4.032" r="1.97"/>
-	<circle id="connector10pin" fill="none" stroke="#9A916C" stroke-width="0.4898" cx="68.04" cy="4.032" r="1.97"/>
-	<circle id="connector12pin" fill="none" stroke="#9A916C" stroke-width="0.4898" cx="53.64" cy="4.032" r="1.97"/>
-	<circle id="connector13pin" fill="none" stroke="#9A916C" stroke-width="0.4898" cx="46.44" cy="4.032" r="1.97"/>
-	<circle id="connector14pin" fill="none" stroke="#9A916C" stroke-width="0.4898" cx="39.24" cy="4.032" r="1.97"/>
-	<circle id="connector15pin" fill="none" stroke="#9A916C" stroke-width="0.4898" cx="32.04" cy="4.032" r="1.97"/>
+	<circle id="connector9pin" fill="none" stroke="#9A916C" stroke-width="0.4898" cx="68.04" cy="4.032" r="1.97"/>
+	<circle id="connector10pin" fill="none" stroke="#9A916C" stroke-width="0.4898" cx="53.64" cy="4.032" r="1.97"/>
+	<circle id="connector11pin" fill="none" stroke="#9A916C" stroke-width="0.4898" cx="46.44" cy="4.032" r="1.97"/>
+	<circle id="connector12pin" fill="none" stroke="#9A916C" stroke-width="0.4898" cx="39.24" cy="4.032" r="1.97"/>
+	<circle id="connector13pin" fill="none" stroke="#9A916C" stroke-width="0.4898" cx="32.04" cy="4.032" r="1.97"/>
 </g>
 <text transform="matrix(1 0 0 1 -366.26 -1112.0681)" font-family="'MyriadPro-Regular'" font-size="12">&lt;module fritzingVersion=&quot;0.7.5b.06.14.6067&quot;&gt;</text>
 <text transform="matrix(1 0 0 1 -366.26 -1097.6677)" font-family="'MyriadPro-Regular'" font-size="12"> &lt;boundingRects&gt;</text>

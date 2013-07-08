@@ -4,12 +4,10 @@
 <svg version="1.1" id="Ebene_1" xmlns:svg="http://www.w3.org/2000/svg"
 	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40.818px"
 	 height="80.301px" viewBox="0 0 40.818 80.301" enable-background="new 0 0 40.818 80.301" xml:space="preserve">
-<g id="copper1">
-	<rect id="connector1pad" x="12.357" y="75.766" fill="#F7BD13" width="1.815" height="4.535"/>
-	<rect id="connector0pad" x="26.646" y="75.766" fill="#F7BD13" width="1.815" height="4.535"/>
-	<g id="copper0">
-	</g>
-</g>
+<g id="breadboard">
+	<rect id="connector1pin" x="12.357" y="75.766" fill="#F7BD13" width="1.815" height="4.535"/>
+	<rect id="connector0pin" x="26.646" y="75.766" fill="#F7BD13" width="1.815" height="4.535"/>
+
 <g id="icon">
 	<g>
 		<g>
@@ -63,5 +61,5 @@
 			c-0.006,0.033-0.013,0.069-0.019,0.1c-0.007,0.037-0.007,0.077-0.009,0.114c-0.029,0.262-0.045,0.527-0.045,0.792
 			c0,2.189,0.769,4.243,2.106,6.059c0.115-0.074,0.23-0.153,0.37-0.208l1.08-0.432C3.562,16.835,2.687,14.727,2.687,12.47z"/>
 	</g>
-</g>
+</g></g>
 </svg>

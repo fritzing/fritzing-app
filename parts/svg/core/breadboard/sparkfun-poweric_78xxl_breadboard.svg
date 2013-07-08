@@ -6,12 +6,10 @@
 	 height="56.736px" viewBox="0 0 29.736 56.736" enable-background="new 0 0 29.736 56.736" xml:space="preserve">
 <path fill="#B2B2B2" d="M2.556,0L0,3.492v15.25h29.736V3.492L27.18,0H2.556z M14.976,14.616c-2.585,0-4.681-2.096-4.681-4.68
 	c0-2.585,2.096-4.681,4.681-4.681c2.584,0,4.68,2.096,4.68,4.681C19.656,12.52,17.56,14.616,14.976,14.616z"/>
-<circle id="connector1pad" fill="none" cx="7.776" cy="54.936" r="1.8"/>
-<circle id="connector0pad" fill="none" cx="14.976" cy="54.936" r="1.8"/>
-<circle id="connector2pad" fill="none" cx="22.176" cy="54.936" r="1.8"/>
-<circle id="connector1pad_1_" fill="none" cx="7.776" cy="54.936" r="1.8"/>
-<circle id="connector0pad_1_" fill="none" cx="14.976" cy="54.936" r="1.8"/>
-<circle id="connector2pad_1_" fill="none" cx="22.176" cy="54.936" r="1.8"/>
+<circle id="connector1pin" fill="none" cx="7.776" cy="54.936" r="1.8"/>
+<circle id="connector0pin" fill="none" cx="14.976" cy="54.936" r="1.8"/>
+<circle id="connector2pin" fill="none" cx="22.176" cy="54.936" r="1.8"/>
+
 <path fill="#8C8C8C" d="M14.976,7.193c2.251,0,4.13,1.592,4.577,3.712c0.066-0.313,0.103-0.636,0.103-0.969
 	c0-2.585-2.096-4.681-4.68-4.681c-2.585,0-4.681,2.096-4.681,4.681c0,0.333,0.037,0.656,0.103,0.969
 	C10.845,8.785,12.724,7.193,14.976,7.193z"/>

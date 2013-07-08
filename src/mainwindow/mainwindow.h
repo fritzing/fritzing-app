@@ -196,6 +196,7 @@ public:
 	void updatePartsBin(const QString & moduleID);
 	bool hasCustomBoardShape();
     void selectPartsWithModuleID(ModelPart *);
+    void addToSketch(QList<ModelPart *> &);
 	void newDesignRulesCheck(bool showOkMessage);
 
 public:

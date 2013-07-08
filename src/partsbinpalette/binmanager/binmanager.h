@@ -136,6 +136,7 @@ class BinManager : public QFrame {
 		void saveBin();
 		void saveBinAs();
 		void renameBin();
+        void copyToSketch();
 		void exportSelected();
 		bool removeSelected();
 		void findSelected();
@@ -192,6 +193,7 @@ protected:
 		QAction *m_saveBinAsAction;
 		QAction *m_saveBinAsBundledAction;
 		QAction *m_renameBinAction;
+		QAction *m_copyToSketchAction;
 
 		QAction *m_showListViewAction;
 		QAction *m_showIconViewAction;

@@ -6,7 +6,7 @@
 	 height="58.225px" viewBox="0 0 66.223 58.225" enable-background="new 0 0 66.223 58.225" xml:space="preserve">
 <g>
 	<circle id="connector0pin" fill="none" cx="3.348" cy="26.516" r="2.988"/>
-	<circle id="connector1pin" fill="none" cx="62.875" cy="26.516" r="2.988"/>
+	<circle id="connector2pin" fill="none" cx="62.875" cy="26.516" r="2.988"/>
 	<g>
 		<circle fill="#666666" cx="3.146" cy="26.515" r="2.584"/>
 		<circle fill="#666666" cx="63.148" cy="26.515" r="2.584"/>

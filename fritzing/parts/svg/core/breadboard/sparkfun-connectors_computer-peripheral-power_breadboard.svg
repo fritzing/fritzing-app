@@ -50,10 +50,10 @@
 <path fill="#F2F2F2" d="M0,0v18.155l5.991,5.81h55.193l5.991-5.81V0H0z M66.176,17.732l-5.396,5.232H6.396L1,17.732V1h65.176V17.732
 	z"/>
 <g>
-	<circle id="connector3pin_1_" fill="none" cx="26.388" cy="26.016" r="3.6"/>
-	<circle id="connector1pin_1_" fill="none" cx="11.988" cy="26.016" r="3.6"/>
-	<circle id="connector2pin_1_" fill="none" cx="40.788" cy="26.016" r="3.6"/>
-	<circle id="connector0pin_1_" fill="none" cx="55.188" cy="26.016" r="3.6"/>
+	<circle id="connector3pin" fill="none" cx="26.388" cy="26.016" r="3.6"/>
+	<circle id="connector1pin" fill="none" cx="11.988" cy="26.016" r="3.6"/>
+	<circle id="connector2pin" fill="none" cx="40.788" cy="26.016" r="3.6"/>
+	<circle id="connector0pin" fill="none" cx="55.188" cy="26.016" r="3.6"/>
 </g>
 <polygon fill="#E6E6E6" points="0,18.155 5.991,23.965 5.991,37.835 0,32.025 "/>
 <polygon fill="#B3B3B3" points="67.176,18.155 61.185,23.965 61.185,37.835 67.176,32.025 "/>

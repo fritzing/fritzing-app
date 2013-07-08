@@ -4,18 +4,14 @@
 <svg version="1.1" id="Ebene_1" xmlns:svg="http://www.w3.org/2000/svg"
 	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20.561px"
 	 height="40.459px" viewBox="0 0 20.561 40.459" enable-background="new 0 0 20.561 40.459" xml:space="preserve">
-<g>
-	<g id="copper1_1_">
-		<rect id="connector1pad_1_" x="6.833" y="37.531" fill="#F7BD13" width="0.753" height="2.834"/>
-		<rect id="connector0pad_1_" x="12.927" y="37.531" fill="#F7BD13" width="0.837" height="2.834"/>
-		<g id="copper0_1_">
-		</g>
-	</g>
+<g id="breadboard">
+		<rect id="connector1pin" x="6.833" y="37.531" fill="#F7BD13" width="0.753" height="2.834"/>
+		<rect id="connector0pin" x="12.927" y="37.531" fill="#F7BD13" width="0.837" height="2.834"/>
 	<g id="icon">
 		<g>
 			<g>
-				<rect x="6.753" y="32.834" fill="#8C8C8C" width="0.914" height="7.625"/>
-				<rect x="12.896" y="32.834" fill="#8C8C8C" width="0.915" height="7.625"/>
+				<rect x="6.753" y="32.834" fill="#8C8C8C" width="0.914" height="7.625" />
+				<rect x="12.896" y="32.834" fill="#8C8C8C" width="0.915" height="7.625" />
 			</g>
 			<path fill="#1A1A1A" d="M10.283,23.443c5.679,0,10.284,3.225,10.284,7.201c0,3.973-4.605,7.195-10.284,7.195
 				C4.603,37.84,0,34.617,0,30.644C0,26.668,4.603,23.443,10.283,23.443z"/>

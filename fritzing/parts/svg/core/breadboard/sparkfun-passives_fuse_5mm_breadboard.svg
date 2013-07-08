@@ -4,19 +4,12 @@
 <svg version="1.1" id="Ebene_1" xmlns:svg="http://www.w3.org/2000/svg"
 	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="66.773px"
 	 height="20.586px" viewBox="0 0 66.773 20.586" enable-background="new 0 0 66.773 20.586" xml:space="preserve">
-<g id="copper1">
-	<circle id="connector0pad" fill="none" cx="5.04" cy="10.293" r="4.32"/>
-	<circle id="connector1pad" fill="none" cx="21.599" cy="10.293" r="4.32"/>
-	<circle id="connector3pad" fill="none" cx="61.733" cy="10.293" r="4.319"/>
-	<circle id="connector2pad" fill="none" cx="45.174" cy="10.293" r="4.32"/>
-	<g id="copper0">
-		<circle id="connector0pad_1_" fill="none" cx="5.04" cy="10.293" r="4.32"/>
-		<circle id="connector1pad_1_" fill="none" cx="21.599" cy="10.293" r="4.32"/>
-		<circle id="connector3pad_1_" fill="none" cx="61.733" cy="10.293" r="4.319"/>
-		<circle id="connector2pad_1_" fill="none" cx="45.174" cy="10.293" r="4.32"/>
-	</g>
-</g>
-<g>
+<g id="breadboard">
+	<circle id="connector0pin" fill="none" cx="5.04" cy="10.293" r="4.32"/>
+	<circle id="connector1pin" fill="none" cx="21.599" cy="10.293" r="4.32"/>
+	<circle id="connector3pin" fill="none" cx="61.733" cy="10.293" r="4.319"/>
+	<circle id="connector2pin" fill="none" cx="45.174" cy="10.293" r="4.32"/>
+
 	<g opacity="0.5">
 		<path fill="#D2D2D2" d="M50.635,18.786c0.384,0,0.751-3.798,0.751-8.481c0-4.683-0.095-8.07-0.441-8.482
 			c0.385,0,0.694,3.799,0.694,8.482c0,4.684-0.311,8.481-0.694,8.481H50.635z"/>

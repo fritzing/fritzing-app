@@ -995,6 +995,10 @@ void BinManager::createCombinedMenu()
 	m_renameBinAction->setStatusTip(tr("Rename parts bin..."));
 	connect(m_renameBinAction, SIGNAL(triggered()),this, SLOT(renameBin()));
 
+	m_copyToSketchAction = new QAction(tr("Copy to Sketch"), this);
+	m_copyToSketchAction->setStatusTip(tr("Copy all the parts in the bin to a sketch"));
+	connect(m_copyToSketchAction, SIGNAL(triggered()),this, SLOT(copyToSketch()));
+
 	m_showListViewAction = new QAction(tr("Show Bin in List View"), this);
 	m_showListViewAction->setCheckable(true);
 	m_showListViewAction->setStatusTip(tr("Display parts as a list"));
@@ -1015,6 +1019,9 @@ void BinManager::createCombinedMenu()
 	m_combinedMenu->addAction(m_saveBinAsAction);
 	m_combinedMenu->addAction(m_saveBinAsBundledAction);
 	m_combinedMenu->addAction(m_renameBinAction);
+#ifndef QT_NO_DEBUG
+	m_combinedMenu->addAction(m_copyToSketchAction);
+#endif
 	m_combinedMenu->addSeparator();
 	m_combinedMenu->addAction(m_showIconViewAction);
 	m_combinedMenu->addAction(m_showListViewAction);
@@ -1332,3 +1339,16 @@ void BinManager::reloadPart(const QString & moduleID) {
 		bin->reloadPart(moduleID);
 	}
 }
+
+void BinManager::copyToSketch() {
+	PartsBinPaletteWidget * bin = currentBin();
+	if (bin == NULL) return;
+
+    QList<ModelPart *> modelParts = bin->getAllParts();
+    if (modelParts.count() == 0) return;
+
+    if (m_mainWindow) {
+        m_mainWindow->addToSketch(modelParts);
+    }
+}
+

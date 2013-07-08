@@ -957,3 +957,14 @@ void PartsBinPaletteWidget::reloadPart(const QString & moduleID) {
 	m_iconView->reloadPart(moduleID);
 	m_listView->reloadPart(moduleID);
 }
+
+QList<ModelPart *> PartsBinPaletteWidget::getAllParts() {
+    QList<ModelPart*> empty;
+    if (m_model == NULL) return empty;
+
+    if (m_model->root() == NULL) return empty;
+
+    return m_model->root()->getAllParts();
+}
+
+

@@ -2818,6 +2818,12 @@ void MainWindow::selectPartsWithModuleID(ModelPart * modelPart) {
     m_currentGraphicsView->selectItemsWithModuleID(modelPart);
 }
 
+void MainWindow::addToSketch(QList<ModelPart *> & modelParts) {
+    if (m_currentGraphicsView == NULL) return;
+
+    m_currentGraphicsView->addToSketch(modelParts);
+}
+
 void MainWindow::initProgrammingWidget() {
     return; // not yet implemented
 

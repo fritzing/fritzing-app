@@ -63,6 +63,7 @@ class PartsBinPaletteWidget : public QFrame, public Bundler {
 		ModelPart * selectedModelPart();
 		ItemBase * selectedItemBase();
 		bool hasAlienParts();
+        QList<ModelPart *> getAllParts();
 
 		void setInfoViewOnHover(bool infoViewOnHover);
 		void addPart(const QString& moduleID, int position);

@@ -2068,6 +2068,7 @@ void SketchWidget::dropItemEvent(QDropEvent *event) {
     ModelPart::ItemType itemType = modelPart->itemType();
 
 	QUndoCommand* parentCommand = new TemporaryCommand(tr("Add %1").arg(m_droppingItem->title()));
+
 	stackSelectionState(false, parentCommand);
 	CleanUpWiresCommand * cuw = new CleanUpWiresCommand(this, CleanUpWiresCommand::Noop, parentCommand);
 	new CleanUpRatsnestsCommand(this, CleanUpWiresCommand::UndoOnly, parentCommand);
@@ -9448,6 +9449,28 @@ void SketchWidget::selectItemsWithModuleID(ModelPart * modelPart) {
 
     selectItems(itemBases.values());
 }
+
+void SketchWidget::addToSketch(QList<ModelPart *> & modelParts) {
+    QUndoCommand* parentCommand = new QUndoCommand(tr("Add %1 parts").arg(modelParts.count()));
+	stackSelectionState(false, parentCommand);
+	new CleanUpWiresCommand(this, CleanUpWiresCommand::Noop, parentCommand);
+	new CleanUpRatsnestsCommand(this, CleanUpWiresCommand::UndoOnly, parentCommand);
+
+    int ix = 0;
+    foreach (ModelPart * modelPart, modelParts) {
+        ViewGeometry viewGeometry;
+        int x = (ix % 10) * 100;
+        int y = (ix / 10) * 100;
+        ix++;
+        viewGeometry.setLoc(QPointF(x, y));
+        ViewLayer::ViewLayerPlacement viewLayerPlacement;
+        getDroppedItemViewLayerPlacement(modelPart, viewLayerPlacement);  
+	    newAddItemCommand(BaseCommand::CrossView, modelPart, modelPart->moduleID(), viewLayerPlacement, viewGeometry, ItemBase::getNextID(), true, -1, true, parentCommand);
+    }
+
+    m_undoStack->waitPush(parentCommand, 10);
+}
+
 
 void SketchWidget::selectItems(QList<ItemBase *> startingItemBases) {
     QSet<ItemBase *> itemBases;

@@ -15,7 +15,7 @@
 </properties>
 <views>
 <breadboardView>
-<layers image="breadboard/Si470x-Eval-v11_breadboard.svg">
+<layers image="breadboard/sparkfun-rf_si470x_breadboard.svg">
 <layer layerId="breadboard"/>
 </layers>
 </breadboardView>

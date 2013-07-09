@@ -158,6 +158,7 @@ bool zLessThan(QGraphicsItem * & p1, QGraphicsItem * & p2)
 SketchWidget::SketchWidget(ViewLayer::ViewID viewID, QWidget *parent, int size, int minSize)
     : InfoGraphicsView(parent)
 {
+    m_itemMenu = NULL;
     m_pasting = false;
     m_rubberBandLegWasEnabled = m_curvyWires = false;
 	m_middleMouseIsPressed = false;

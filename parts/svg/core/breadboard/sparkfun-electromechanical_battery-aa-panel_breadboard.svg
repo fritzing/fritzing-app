@@ -67,7 +67,7 @@
         <path fill="#606060" d="M2041.11,324.917c-3.90278,0,-3.90278,-143.361,0,-143.361l-0.111111,0.0138889c0,8.84722,4.23611,15.9722,4.23611,15.9722c10.25,0,18.6111,7.16667,18.6111,16.0139l0,79.2917c0,8.83333,-8.38889,15.9861,-18.6111,15.9861c0,0,-4.23611,7.16667,-4.23611,15.9861L2041.11,324.917L2041.11,324.917z"/>
        </g>
        <g>
-        <text fill="#FFFFFF" font-family="'ArialMT'" transform="matrix(1, 0, 0, 1, 458.232, 307.099)" font-size="161.096">AA Battery</text>
+        <text fill="#FFFFFF" font-family="'OCRA'" transform="matrix(1, 0, 0, 1, 458.232, 307.099)" font-size="161.096">AA Battery</text>
        </g>
        <g>
         <g opacity="0.35">
@@ -134,8 +134,8 @@
         </g>
        </g>
       </g>
-      <text fill="#F8F8F8" font-family="'ArialMT'" transform="matrix(1, 0, 0, 1, 1872.44, 303.803)" font-size="130">+</text>
-      <text fill="#F8F8F8" font-family="'ArialMT'" transform="matrix(1, 0, 0, 1, 168.315, 296.315)" font-size="130">-</text>
+      <text fill="#F8F8F8" font-family="'OCRA'" transform="matrix(1, 0, 0, 1, 1872.44, 303.803)" font-size="130">+</text>
+      <text fill="#F8F8F8" font-family="'OCRA'" transform="matrix(1, 0, 0, 1, 168.315, 296.315)" font-size="130">-</text>
      </g>
     </g>
    </g>

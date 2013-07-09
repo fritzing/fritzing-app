@@ -36,7 +36,7 @@
 	<rect id="rect36" x="8.066" y="5.414" fill="#BF5901" width="1.665" height="7.042"/>
 	<rect id="rect38" x="4.695" y="9.184" fill="#FF9234" width="3.371" height="0.333"/>
 	<rect id="rect40" x="9.731" y="9.184" fill="#FF9234" width="3.371" height="0.333"/>
-	<text id="text42" transform="matrix(1 0 0 1 7.1208 14.3918)" font-family="'ArialMT'" font-size="2">E01</text>
+	<text id="text42" transform="matrix(1 0 0 1 7.1208 14.3918)" font-family="'OCRA'" font-size="2">E01</text>
 	<rect id="rect44" x="4.441" y="0.214" fill="#666666" width="8.917" height="1.345"/>
 	<rect id="rect12" x="4.441" y="0" fill="#E6E6E6" width="8.917" height="0.375"/>
 	<rect id="rect12_1_" x="4.441" y="0.189" fill="#CCCCCC" width="8.917" height="0.255"/>

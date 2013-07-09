@@ -21,8 +21,8 @@
 		c-0.024,1.121,0.864,2.051,1.986,2.076h1.7c1.105,0.103,1.958,1.017,1.984,2.126v37.7c0.179,0.987,0.987,1.737,1.984,1.843h52.442
 		c1.104-0.104,1.957-1.017,1.984-2.126V38.452C62.108,37.343,62.961,36.43,64.065,36.326z"/>
 
-<text transform="matrix(1 0 0 1 25.5974 10.7141)" fill="#808080" font-family="'ArialMT'" font-size="7.0382">T9A</text>
-<text transform="matrix(1 0 0 1 2.9402 21.9724)" fill="#808080" font-family="'ArialMT'" font-size="4.6414">12VDC</text>
+<text transform="matrix(1 0 0 1 25.5974 10.7141)" fill="#808080" font-family="'OCRA'" font-size="7.0382">T9A</text>
+<text transform="matrix(1 0 0 1 2.9402 21.9724)" fill="#808080" font-family="'OCRA'" font-size="4.6414">12VDC</text>
 <g>
 	<circle fill="#1A1A1A" cx="35.291" cy="40.089" r="4.912"/>
 	<circle cx="35.291" cy="40.594" r="1.154"/>

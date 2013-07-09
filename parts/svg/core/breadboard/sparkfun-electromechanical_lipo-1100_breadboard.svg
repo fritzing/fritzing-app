@@ -29,11 +29,11 @@
 		c1.972,0,3.623,2.267,3.623,4.055V146.566L95.959,146.566z"/>
 	<g>
 		<text transform="matrix(1 0 0 1 59.8359 42.5681)" font-family="'EurostileLTStd'" font-size="12.1064">-</text>
-		<text transform="matrix(-4.371139e-008 1 -1 -4.371139e-008 57.9048 46.2371)" font-family="'ArialMT'" font-size="12.1064">E603450 7B20</text>
-		<text transform="matrix(-4.371139e-008 1 -1 -4.371139e-008 43.3784 46.2371)" font-family="'ArialMT'" font-size="12.1064">E7B02-D60-1</text>
+		<text transform="matrix(-4.371139e-008 1 -1 -4.371139e-008 57.9048 46.2371)" font-family="'OCRA'" font-size="12.1064">E603450 7B20</text>
+		<text transform="matrix(-4.371139e-008 1 -1 -4.371139e-008 43.3784 46.2371)" font-family="'OCRA'" font-size="12.1064">E7B02-D60-1</text>
 		
 			<text transform="matrix(-4.371139e-008 1 -1 -4.371139e-008 28.8506 35.4773)" font-family="'EurostileLTStd'" font-size="12.1064">+</text>
-		<text transform="matrix(-4.371139e-008 1 -1 -4.371139e-008 28.8506 46.2371)" font-family="'ArialMT'" font-size="12.1064">1000mAh 3.7V</text>
+		<text transform="matrix(-4.371139e-008 1 -1 -4.371139e-008 28.8506 46.2371)" font-family="'OCRA'" font-size="12.1064">1000mAh 3.7V</text>
 	</g>
 </g>
 </svg>

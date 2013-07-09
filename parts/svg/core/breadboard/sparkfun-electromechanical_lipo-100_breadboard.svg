@@ -27,8 +27,8 @@
 		v4.06c0-0.879-1.021-2.257-1.824-2.257H9.966c-0.804,0-1.82,1.378-1.82,2.257V2.17c0-0.885,1.018-1.626,1.82-1.626H87.788
 		L87.788,0.544z"/>
 	<g>
-		<text transform="matrix(1 0 0 1 28.2537 18.5391)" font-family="'ArialMT'" font-size="8.752">6SP 061225</text>
-		<text transform="matrix(1 0 0 1 28.2537 27.9639)" font-family="'ArialMT'" font-size="8.752">110mAh 3.7V</text>
+		<text transform="matrix(1 0 0 1 28.2537 18.5391)" font-family="'OCRA'" font-size="8.752">6SP 061225</text>
+		<text transform="matrix(1 0 0 1 28.2537 27.9639)" font-family="'OCRA'" font-size="8.752">110mAh 3.7V</text>
 	</g>
 </g>
 </svg>

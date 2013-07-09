@@ -5,8 +5,8 @@
 	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="13.232px"
 	 height="35.113px" viewBox="0 0 13.232 35.113" enable-background="new 0 0 13.232 35.113" xml:space="preserve">
 <polygon fill="#FFFFFF" points="12.916,17.223 0.317,17.223 0,16.338 0,0 13.233,0 13.233,16.389 "/>
-<g>
-	<g id="breadboard">
+<g id="breadboard">
+	<g >
 		<circle id="connector0pin" fill="none" cx="10.216" cy="34.176" r="1.494"/>
 		<circle id="connector1pin" fill="none" cx="3.017" cy="34.176" r="1.494"/>
 	</g>

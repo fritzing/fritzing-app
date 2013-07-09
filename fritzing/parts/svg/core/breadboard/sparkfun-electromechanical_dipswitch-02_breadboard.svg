@@ -3,14 +3,14 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="19.296px" height="28.699px" viewBox="0 0 19.296 28.699" enable-background="new 0 0 19.296 28.699" xml:space="preserve">
-<g id="Ebene_2">
+<g id="breadboard">
 	<g>
 		<circle id="connector0pin" fill="none" cx="6.048" cy="27.603" r="1.512"/>
 		<circle id="connector1pin" fill="none" cx="13.248" cy="27.603" r="1.512"/>
 		<circle id="connector2pin" fill="none" cx="13.248" cy="6.003" r="1.512"/>
 		<circle id="connector3pin" fill="none" cx="6.048" cy="6.003" r="1.512"/>
 	</g>
-</g>
+
 <g id="Ebene_1_1_" xmlns:svg="http://www.w3.org/2000/svg">
 	<g>
 		<g>
@@ -131,5 +131,5 @@
 			</g>
 		</g>
 	</g>
-</g>
+</g></g>
 </svg>

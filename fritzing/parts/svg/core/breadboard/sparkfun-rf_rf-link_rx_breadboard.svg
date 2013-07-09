@@ -4,9 +4,9 @@
 <svg version="1.1" id="Ebene_1" xmlns:svg="http://www.w3.org/2000/svg"
 	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="116.352px"
 	 height="42.626px" viewBox="0 -19.874 116.352 42.626" enable-background="new 0 -19.874 116.352 42.626" xml:space="preserve">
+<g id="breadboard">
 <rect x="0" y="-19.874" fill="#1F7A34" width="116.352" height="31.25"/>
 <rect x="0" y="10.929" opacity="0.2" width="116.352" height="0.447"/>
-<g id="breadboard">
 	<circle id="connector0pin" fill="none" cx="4.176" cy="20.7" r="2.052"/>
 	<circle id="connector1pin" fill="none" cx="11.376" cy="20.7" r="2.052"/>
 	<circle id="connector2pin" fill="none" cx="18.576" cy="20.7" r="2.052"/>
@@ -15,7 +15,7 @@
 	<circle id="connector3pin" fill="none" cx="97.776" cy="20.7" r="2.052"/>
 	<circle id="connector4pin" fill="none" cx="104.976" cy="20.7" r="2.052"/>
 	<circle id="connector7pin" fill="none" cx="112.176" cy="20.7" r="2.052"/>
-</g>
+
 <g>
 	<polygon fill="#B8AF82" points="113.328,20.406 112.77,22.752 111.588,22.752 111.031,20.406 111.031,8.983 113.328,8.983 	"/>
 	<polygon fill="#E2D6A1" points="112.77,22.752 112.926,22.096 111.432,22.096 111.588,22.752 	"/>
@@ -186,5 +186,5 @@
 	<rect x="45.933" y="9.417" width="10.16" height="0.447"/>
 	<path d="M86.343-11.12c0,3.3,2.7,6,6,6h15.888c3.3,0,6-2.7,6-6v0.447c0,3.3-2.7,6-6,6H92.343c-3.3,0-6-2.7-6-6V-11.12z"/>
 	<path d="M87.648-11.781c0,3.3,2.7,6,6,6h13.278c3.3,0,6-2.7,6-6v0.447c0,3.3-2.7,6-6,6H93.648c-3.3,0-6-2.7-6-6V-11.781z"/>
-</g>
+</g></g>
 </svg>

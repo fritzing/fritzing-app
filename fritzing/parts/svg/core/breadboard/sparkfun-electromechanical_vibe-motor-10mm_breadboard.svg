@@ -4,9 +4,10 @@
 <svg version="1.1" id="Ebene_1" xmlns:svg="http://www.w3.org/2000/svg"
 	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="37.653px"
 	 height="34.328px" viewBox="-9.346 0 37.653 34.328" enable-background="new -9.346 0 37.653 34.328" xml:space="preserve">
+<g id="breadboard">
 <rect x="-4.804" y="15.659" fill="#CCCCCC" width="5.395" height="5.605"/>
 <rect x="-4.804" y="15.659" fill="#E6E6E6" width="5.395" height="5.103"/>
-<g id="breadboard">
+
 	<circle id="connector0pin" fill="none" cx="5.094" cy="34.328" r="1.755"/>
 	<circle id="connector1pin" fill="none" cx="-9.035" cy="34.328" r="1.755"/>
 	<g>
@@ -16,7 +17,7 @@
 	<g>
 		<polygon fill="#FF0000" points="-9.31,34.221 -9.31,16.875 0.525,16.875 0.525,17.312 -8.872,17.312 -8.871,34.221 		"/>
 	</g>
-</g>
+
 <circle fill="#CCCCCC" cx="14.154" cy="18.292" r="14.153"/>
 <path opacity="0.2" d="M0,17.839c0,7.817,6.337,14.154,14.153,14.154s14.153-6.337,14.153-14.154v0.453
 	c0,7.817-6.337,14.154-14.153,14.154S0,26.11,0,18.292V17.839z"/>
@@ -27,4 +28,5 @@
 <path opacity="0.3" fill="#FFFFFF" d="M28.307,13.662c0,7.815-6.336,14.152-14.153,14.152C6.337,27.814,0,21.477,0,13.662v0.492
 	c0,7.816,6.337,14.153,14.153,14.153c7.817,0,14.153-6.337,14.153-14.153V13.662z"/>
 <circle fill="#CCCCCC" cx="14.174" cy="14.173" r="0.799"/>
+</g>
 </svg>

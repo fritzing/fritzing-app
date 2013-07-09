@@ -8,7 +8,7 @@
 	<circle id="connector0pin" fill="none" cx="1.724" cy="22.679" r="1.102"/>
 	<circle id="connector1pin" fill="none" cx="8.925" cy="8.28" r="1.102"/>
 	<circle id="connector2pin" fill="none" cx="16.124" cy="22.679" r="1.102"/>
-</g>
+
 <g>
 	<path id="path20" fill="#B3B3B3" d="M0.001,1.081V18.88h8.896h8.9V1.08L0.001,1.081z"/>
 	<rect id="rect11" x="0.001" y="18.504" fill="#1A1A1A" width="17.799" height="2.375"/>
@@ -80,5 +80,5 @@
 	<path id="path74" fill="#FF9234" d="M9.731,4.248v3.27h3.271v1.667H9.731v3.272H8.066V9.184H4.796V7.517h3.271v-3.27L9.731,4.248
 		 M9.831,4.147H9.73H8.066h-0.1v0.103v3.169H4.796H4.695v0.1v1.667v0.103h0.101h3.171v3.17v0.1h0.1h1.665h0.103v-0.1v-3.17h3.174
 		h0.1V9.184V7.517v-0.1h-0.1H9.831v-3.17V4.147L9.831,4.147z"/>
-</g>
+</g></g>
 </svg>

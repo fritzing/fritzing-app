@@ -63,7 +63,7 @@
 	
 		<line fill="none" stroke="#F8F8F8" stroke-width="0.2032" stroke-linecap="round" x1="214.729" y1="94.649" x2="12.619" y2="94.649"/>
 	<text transform="matrix(1 0 0 1 16.4736 14.1714)" fill="#F8F8F8" font-family="'ArialMT'" font-size="3.744">1</text>
-</g>
+
 <g id="tuxgr_16x2_r2_oval" transform="matrix(1, 0, 0, 1, 2.43071, 28.1397)">
 	<g>
 		<path fill="#303030" d="M215.421,43.438c-0.734,0-1.336-0.604-1.336-1.336V16.28c0-0.734,0.602-1.338,1.336-1.338h0.057V-5.107
@@ -246,5 +246,5 @@
 				C21.909-13.981,21.287-13.36,20.523-13.36z"/>
 		</g>
 	</g>
-</g>
+</g></g>
 </svg>

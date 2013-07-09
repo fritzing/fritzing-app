@@ -4,7 +4,7 @@
 <svg version="1.1" id="Ebene_1" xmlns:svg="http://www.w3.org/2000/svg"
 	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="58.176px" height="63.3px"
 	 viewBox="0 0 58.176 63.3" enable-background="new 0 0 58.176 63.3" xml:space="preserve">
-<g>
+<g id="breadboard">
 	<rect x="10.614" y="57.896" fill="#CCCCCC" width="0.948" height="5.404"/>
 	<rect x="53.814" y="57.896" fill="#CCCCCC" width="0.947" height="5.404"/>
 	<g id="breadboard">
@@ -269,7 +269,7 @@
 			c0.063,0.164,0.164,0.287,0.299,0.368c0.136,0.081,0.282,0.122,0.44,0.122c0.192,0,0.354-0.056,0.487-0.166
 			C51.912,26.658,52.003,26.494,52.05,26.276z"/>
 	</g>
-</g>
+
 <polyline fill="none" stroke="#808080" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
 	41.318,13.771 41.318,17.903 39.152,17.903 39.152,13.771 36.782,13.771 36.782,15.532 39.05,15.532 36.782,17.903 "/>
 <g>
@@ -299,4 +299,5 @@
 	c0,0.55,0.45,1,1,1h56.176c0.551,0,1-0.45,1-1V28.375z"/>
 <path opacity="0.75" enable-background="new    " d="M58.176,57.75c0,0.551-0.449,1-1,1H1c-0.55,0-1-0.449-1-1v-0.5
 	c0,0.551,0.45,1,1,1h56.176c0.551,0,1-0.449,1-1V57.75z"/>
+</g>
 </svg>

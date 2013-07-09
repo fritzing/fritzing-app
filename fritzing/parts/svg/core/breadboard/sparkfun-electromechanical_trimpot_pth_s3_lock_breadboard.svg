@@ -4,9 +4,9 @@
 <svg version="1.1" id="Ebene_1" xmlns:svg="http://www.w3.org/2000/svg"
 	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="22.176px"
 	 height="27.236px" viewBox="0 0 22.176 27.236" enable-background="new 0 0 22.176 27.236" xml:space="preserve">
-<g>
+<g  id="breadboard">
 	<path fill="#808080" d="M17.831,27.238h1.051v-8h-1.051V27.238z"/>
-</g>
+
 <g>
 	<path fill="#808080" d="M10.62,27.238h1.051v-8H10.62V27.238z"/>
 </g>
@@ -86,4 +86,5 @@
 </g>
 <rect y="19.536" fill="#131E48" width="22.176" height="6.487"/>
 <rect y="19.025" opacity="0.18" fill="#FFFFFF" enable-background="new    " width="22.176" height="1.054"/>
+</g>
 </svg>

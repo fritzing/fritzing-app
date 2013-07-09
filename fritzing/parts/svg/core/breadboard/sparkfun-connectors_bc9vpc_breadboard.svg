@@ -7,7 +7,7 @@
 <g id="breadboard">
 	<circle id="connector0pin" fill="none" stroke="#9A916C" stroke-width="0.254" cx="150.66" cy="24.66" r="3.24"/>
 	<circle id="connector1pin" fill="none" stroke="#9A916C" stroke-width="0.254" cx="150.66" cy="61.38" r="3.24"/>
-</g>
+
 <g>
 	<path fill="#4D4D4D" d="M0,83.88c0,0.792,0.648,1.44,1.44,1.44h156.823c0.792,0,1.44-0.648,1.44-1.44V1.44
 		c0-0.792-0.648-1.44-1.44-1.44H1.44C0.648,0,0,0.648,0,1.44V83.88z"/>
@@ -243,4 +243,4 @@
 <rect x="4.559" y="19.255" opacity="0.15" fill="#FFFFFF" width="2.454" height="10.231"/>
 <rect x="3.332" y="55.839" opacity="0.15" fill="#FFFFFF" width="2.454" height="10.231"/>
 <rect x="4.559" y="55.839" opacity="0.15" fill="#FFFFFF" width="2.454" height="10.231"/>
-</svg>
+</g></svg>

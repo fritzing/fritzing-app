@@ -5,7 +5,7 @@
  <desc   id="0.0" oldid="0.0">
   <referenceFile   id="0.0.0" oldid="0.0.0">starter-poti2.svg</referenceFile>
  </desc>
- <g   id="0.1">
+ <g   id="breadboard">
   <rect  width="1.517" x="13.858" y="0.583" fill="#0E0E0E"  height="0.647" id="0.1.0"/>
   <g   id="0.1.1">
    <polygon  fill="none" points="6.879,58.632 7.955,58.632 7.955,59.749 6.879,59.749 "  id="connector0pin"/>

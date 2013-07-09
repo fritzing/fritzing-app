@@ -4,10 +4,10 @@
 <svg version="1.1" id="Ebene_1" xmlns:svg="http://www.w3.org/2000/svg"
 	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="119.52px"
 	 height="199.979px" viewBox="0 0 119.52 199.979" enable-background="new 0 0 119.52 199.979" xml:space="preserve">
-<g id="breadboard" display="none">
+<g id="breadboard" >
 	<polygon display="inline" fill="#4D4D4D" points="23.542,72.72 0,72.72 0,0 47.084,0 47.084,34.105 72.436,34.105 72.436,0 
 		119.52,0 119.52,72.72 95.979,72.72 95.979,38.614 23.542,38.614 	"/>
-</g>
+
 <g>
 	<path fill="#333333" d="M59.759,124.116c-1.168,0-2.213-0.436-2.952-1.117c-0.679,0.627-1.101,1.465-1.101,2.393
 		c0,1.94,1.813,3.511,4.053,3.511c2.241,0,4.054-1.568,4.054-3.511c0-0.928-0.423-1.766-1.102-2.393
@@ -228,5 +228,5 @@
 	<circle fill="#B3B3B3" cx="95.038" cy="176.99" r="0.917"/>
 	<path fill="#B3B3B3" d="M94.121,155.365v21.625h1.833v-21.625"/>
 	<circle fill="#999999" cx="95.038" cy="155.365" r="0.917"/>
-</g>
+</g></g>
 </svg>

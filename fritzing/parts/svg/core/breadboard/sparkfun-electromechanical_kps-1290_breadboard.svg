@@ -12,7 +12,7 @@
 	<rect id="connector0pin" x="5.671" y="21.506" fill="#8C8C8C" width="1.814" height="3.273"/>
 	<rect id="connector1pin" x="12.871" y="21.506" fill="#8C8C8C" width="1.816" height="3.273"/>
 	<rect id="connector2pin" x="20.069" y="21.506" fill="#8C8C8C" width="1.813" height="3.273"/>
-</g>
+
 <g>
 	<g>
 		<rect id="rect4_1_" x="5.668" y="14.818" fill="#8C8C8C" width="1.814" height="9.936"/>
@@ -82,5 +82,5 @@
 	<g>
 		<rect x="14.644" y="0.241" fill="#CCCCCC" width="0.086" height="3.407"/>
 	</g>
-</g>
+</g></g>
 </svg>

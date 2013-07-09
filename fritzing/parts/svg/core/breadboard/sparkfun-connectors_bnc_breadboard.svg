@@ -4,11 +4,10 @@
 <svg version="1.1" id="Ebene_1" xmlns:svg="http://www.w3.org/2000/svg"
 	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28.801px"
 	 height="61.021px" viewBox="0 0 28.801 61.021" enable-background="new 0 0 28.801 61.021" xml:space="preserve">
-<g>
 	<g id="breadboard">
 		<circle id="connector2pin" fill="none" stroke="#9A916C" stroke-width="0.254" cx="18" cy="8.424" r="1.494"/>
 		<circle id="connector3pin" fill="none" stroke="#9A916C" stroke-width="0.254" cx="10.801" cy="8.424" r="1.494"/>
-	</g>
+
 	<rect y="0" fill="#CCCCCC" width="28.8" height="42.379"/>
 	<g>
 		<g>

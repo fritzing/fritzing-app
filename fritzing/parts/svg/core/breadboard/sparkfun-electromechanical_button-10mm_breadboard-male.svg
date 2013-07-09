@@ -6,7 +6,7 @@
 	 height="30.34px" viewBox="1.259 0 11.857 30.34" enable-background="new 1.259 0 11.857 30.34" xml:space="preserve">
 <g id="breadboard">
 	<circle id="connector0pin" fill="none" stroke="#9A916C" stroke-width="0.254" cx="6.375" cy="15.17" r="1.777"/>
-</g>
+
 <g>
 	<ellipse fill="#B3B3B3" cx="5" cy="15.17" rx="3.741" ry="15.17"/>
 	<g>
@@ -36,5 +36,5 @@
 		<path fill="#F2F2F2" d="M3.657,6.107c0,0,0.833-5.313,2.451-4.938c1.291,0.299,2.48,4.265,2.52,6.327
 			c0.01,0.523-0.363,2.037-0.476,1.548C7.791,7.483,7.348,2.09,5.807,2.17C4.599,2.232,4.214,5.295,3.657,6.107z"/>
 	</g>
-</g>
+</g></g>
 </svg>

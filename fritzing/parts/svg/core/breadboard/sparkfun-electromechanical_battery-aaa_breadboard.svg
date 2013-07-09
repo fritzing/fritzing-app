@@ -9,7 +9,7 @@
 	<circle id="connector1pin" fill="none" stroke="#9A916C" stroke-width="0.254" cx="5.229" cy="16.342" r="2.772"/>
 	<circle id="connector2pin" fill="none" stroke="#9A916C" stroke-width="0.254" cx="106.029" cy="16.342" r="2.772"/>
 	<circle id="connector0pin" fill="none" stroke="#9A916C" stroke-width="0.254" cx="127.629" cy="16.342" r="2.772"/>
-</g>
+
 <g>
 	<g>
 		<g>
@@ -174,4 +174,5 @@
 </g>
 <text transform="matrix(1 0 0 1 11.1306 18.8381)" fill="#F8F8F8" font-family="'ArialMT'" font-size="9.36">-</text>
 <text transform="matrix(1 0 0 1 118.697 18.8381)" fill="#F8F8F8" font-family="'ArialMT'" font-size="9.36">+</text>
+</g>
 </svg>

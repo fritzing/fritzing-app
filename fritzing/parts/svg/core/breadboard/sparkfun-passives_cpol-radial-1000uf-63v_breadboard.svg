@@ -7,13 +7,12 @@
 <g id="breadboard">
 	<circle id="connector1pin" fill="none" cx="12.168" cy="90.755" r="1.908"/>
 	<circle id="connector0pin" fill="none" cx="33.768" cy="90.755" r="1.89"/>
-</g>
-<g id="breadboard_1_">
+
 	<g>
-		<g id="connector1pin_1_">
+		<g id="">
 			<rect x="26.225" y="83.919" fill="none" width="2.692" height="0.898"/>
 		</g>
-		<g id="connector0pin_1_">
+		<g id="">
 			<rect x="17.246" y="83.919" fill="none" width="2.692" height="0.898"/>
 		</g>
 		<g id="connector0leg">

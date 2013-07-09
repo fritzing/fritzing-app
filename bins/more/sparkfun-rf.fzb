@@ -450,13 +450,7 @@
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-RF-SM5100B-SPECIAL_FOR_TESTING!!' modelIndex='64'>
-<views>
-<iconView layer='icon'>
-<geometry z='-1' x='-1' y='-1'></geometry>
-</iconView>
-</views>
-</instance>
+
 <instance moduleIdRef='SparkFun-RF-SMA661AS-' modelIndex='65'>
 <views>
 <iconView layer='icon'>

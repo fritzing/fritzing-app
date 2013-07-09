@@ -39,7 +39,7 @@
 		c0-0.852-0.135-1.549-0.301-1.549s-0.303,0.697-0.303,1.549v8.155c0,0.852-0.695,1.589-1.547,1.637c0,0-4.279,0.242-9.237,0.242
 		c-4.957,0-9.236-0.242-9.236-0.242c-0.852-0.048-1.547-0.785-1.547-1.637V41.774z"/>
 </g>
-<text transform="matrix(1.0163 0 0 1 17.2998 42.5334)" fill="#F8F8F8" font-family="'ArialMT'" font-size="5">I</text>
-<text transform="matrix(1.0163 0 0 1 16.0288 17.3621)" fill="#F8F8F8" font-family="'ArialMT'" font-size="5">O</text>
+<text transform="matrix(1.0163 0 0 1 17.2998 42.5334)" fill="#F8F8F8" font-family="'OCRA'" font-size="5">I</text>
+<text transform="matrix(1.0163 0 0 1 16.0288 17.3621)" fill="#F8F8F8" font-family="'OCRA'" font-size="5">O</text>
 </g>
 </svg>

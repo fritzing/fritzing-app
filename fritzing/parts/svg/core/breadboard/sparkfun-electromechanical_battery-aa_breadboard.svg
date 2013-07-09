@@ -96,7 +96,7 @@
 					z"/>
 			</g>
 			<g>
-				<text transform="matrix(1 0 0 1 32.9927 22.1111)" fill="#FFFFFF" font-family="'ArialMT'" font-size="11.5989">AA Battery</text>
+				<text transform="matrix(1 0 0 1 32.9927 22.1111)" fill="#FFFFFF" font-family="'OCRA'" font-size="11.5989">AA Battery</text>
 			</g>
 			<g>
 				<g opacity="0.35">
@@ -177,8 +177,8 @@
 				</g>
 			</g>
 		</g>
-		<text transform="matrix(1 0 0 1 134.8154 21.8738)" fill="#F8F8F8" font-family="'ArialMT'" font-size="9.36">+</text>
-		<text transform="matrix(1 0 0 1 12.1187 21.3347)" fill="#F8F8F8" font-family="'ArialMT'" font-size="9.36">-</text>
+		<text transform="matrix(1 0 0 1 134.8154 21.8738)" fill="#F8F8F8" font-family="'OCRA'" font-size="9.36">+</text>
+		<text transform="matrix(1 0 0 1 12.1187 21.3347)" fill="#F8F8F8" font-family="'OCRA'" font-size="9.36">-</text>
 	</g>
 </g>
 </svg>

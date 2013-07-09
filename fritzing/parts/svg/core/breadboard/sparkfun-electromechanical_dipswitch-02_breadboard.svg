@@ -112,10 +112,10 @@
 				<rect x="11.8" y="10.849" fill="#FFFFFF" width="0.193" height="1.105"/>
 				<rect x="11.996" y="10.898" fill="#FFFFFF" width="1.594" height="0.192"/>
 			</g>
-			<text transform="matrix(1 0 0 1 5.2183 4.741)" fill="#FFFFFF" font-family="'ArialMT'" font-size="5.2111">ON</text>
-			<text transform="matrix(1 0 0 1 4.5356 20.615)" fill="#FFFFFF" font-family="'ArialMT'" font-size="5.2111">1</text>
-			<text transform="matrix(1 0 0 1 7.9546 20.615)" fill="#FFFFFF" font-family="'ArialMT'" font-size="5.2111"> </text>
-			<text transform="matrix(1 0 0 1 11.5562 20.615)" fill="#FFFFFF" font-family="'ArialMT'" font-size="5.2111">2</text>
+			<text transform="matrix(1 0 0 1 5.2183 4.741)" fill="#FFFFFF" font-family="'OCRA'" font-size="5.2111">ON</text>
+			<text transform="matrix(1 0 0 1 4.5356 20.615)" fill="#FFFFFF" font-family="'OCRA'" font-size="5.2111">1</text>
+			<text transform="matrix(1 0 0 1 7.9546 20.615)" fill="#FFFFFF" font-family="'OCRA'" font-size="5.2111"> </text>
+			<text transform="matrix(1 0 0 1 11.5562 20.615)" fill="#FFFFFF" font-family="'OCRA'" font-size="5.2111">2</text>
 			<g>
 				<rect y="15.773" opacity="0.2" fill="#FFFFFF" enable-background="new    " width="0.288" height="6.021"/>
 				<rect y="21.795" opacity="0.2" fill="#FFFFFF" enable-background="new    " width="0.288" height="5.041"/>

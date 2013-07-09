@@ -102,35 +102,35 @@
 	<rect y="9.865" fill="#333333" width="1.728" height="5.909"/>
 	<rect x="60.623" y="6.412" fill="#07466F" width="1.729" height="9.361"/>
 	<rect x="60.623" y="9.865" fill="#333333" width="1.729" height="5.909"/>
-	<text transform="matrix(1 0 0 1 5.2183 4.7419)" fill="#FFFFFF" font-family="'ArialMT'" font-size="5.2111">ON</text>
-	<text transform="matrix(1 0 0 1 50.6875 4.7419)" fill="#FFFFFF" font-family="'ArialMT'" font-size="5.2111">DIP</text>
+	<text transform="matrix(1 0 0 1 5.2183 4.7419)" fill="#FFFFFF" font-family="'OCRA'" font-size="5.2111">ON</text>
+	<text transform="matrix(1 0 0 1 50.6875 4.7419)" fill="#FFFFFF" font-family="'OCRA'" font-size="5.2111">DIP</text>
 	<g enable-background="new    ">
 		<g>
-			<text transform="matrix(1 0 0 1 54.7813 20.616)" fill="#FFFFFF" font-family="'ArialMT'" font-size="5.2111">8</text>
+			<text transform="matrix(1 0 0 1 54.7813 20.616)" fill="#FFFFFF" font-family="'OCRA'" font-size="5.2111">8</text>
 		</g>
 		<g>
-			<text transform="matrix(1 0 0 1 47.5811 20.616)" fill="#FFFFFF" font-family="'ArialMT'" font-size="5.2111">7</text>
+			<text transform="matrix(1 0 0 1 47.5811 20.616)" fill="#FFFFFF" font-family="'OCRA'" font-size="5.2111">7</text>
 		</g>
 		<g>
-			<text transform="matrix(1 0 0 1 40.3809 20.616)" fill="#FFFFFF" font-family="'ArialMT'" font-size="5.2111">6</text>
+			<text transform="matrix(1 0 0 1 40.3809 20.616)" fill="#FFFFFF" font-family="'OCRA'" font-size="5.2111">6</text>
 		</g>
 		<g>
-			<text transform="matrix(1 0 0 1 33.1807 20.616)" fill="#FFFFFF" font-family="'ArialMT'" font-size="5.2111">5</text>
+			<text transform="matrix(1 0 0 1 33.1807 20.616)" fill="#FFFFFF" font-family="'OCRA'" font-size="5.2111">5</text>
 		</g>
 		<g>
-			<text transform="matrix(1 0 0 1 25.9805 20.616)" fill="#FFFFFF" font-family="'ArialMT'" font-size="5.2111">4</text>
+			<text transform="matrix(1 0 0 1 25.9805 20.616)" fill="#FFFFFF" font-family="'OCRA'" font-size="5.2111">4</text>
 		</g>
 		<g>
-			<text transform="matrix(1 0 0 1 18.7803 20.616)" fill="#FFFFFF" font-family="'ArialMT'" font-size="5.2111">3</text>
+			<text transform="matrix(1 0 0 1 18.7803 20.616)" fill="#FFFFFF" font-family="'OCRA'" font-size="5.2111">3</text>
 		</g>
 		<g>
-			<text transform="matrix(1 0 0 1 11.5801 20.616)" fill="#FFFFFF" font-family="'ArialMT'" font-size="5.2111">2</text>
+			<text transform="matrix(1 0 0 1 11.5801 20.616)" fill="#FFFFFF" font-family="'OCRA'" font-size="5.2111">2</text>
 		</g>
 		<g>
-			<text transform="matrix(1 0 0 1 4.3799 20.616)" fill="#FFFFFF" font-family="'ArialMT'" font-size="5.2111">1</text>
+			<text transform="matrix(1 0 0 1 4.3799 20.616)" fill="#FFFFFF" font-family="'OCRA'" font-size="5.2111">1</text>
 		</g>
 	</g>
-	<text transform="matrix(1 0 0 1 7.9546 20.616)" fill="#FFFFFF" font-family="'ArialMT'" font-size="5.2111"> </text>
+	<text transform="matrix(1 0 0 1 7.9546 20.616)" fill="#FFFFFF" font-family="'OCRA'" font-size="5.2111"> </text>
 	<rect y="15.774" opacity="0.2" fill="#FFFFFF" enable-background="new    " width="0.288" height="6.021"/>
 	<rect y="21.795" opacity="0.2" fill="#FFFFFF" enable-background="new    " width="0.288" height="5.041"/>
 	<rect x="62.063" y="0" opacity="0.2" enable-background="new    " width="0.289" height="6.412"/>

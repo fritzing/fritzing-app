@@ -4,7 +4,7 @@
 <svg version="1.1" id="Ebene_1" xmlns:svg="http://www.w3.org/2000/svg"
 	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="22.368px"
 	 height="37.701px" viewBox="0.144 0 22.368 37.701" enable-background="new 0.144 0 22.368 37.701" xml:space="preserve">
-<g>
+<g id="breadboard">
 	<polygon fill="#999999" points="8.112,26.326 8.112,21.615 7.344,21.615 7.344,25.989 0.155,33.178 0.144,33.178 0.144,37.701 
 		0.912,37.701 0.912,33.507 8.09,26.328 	"/>
 	<polygon fill="#999999" points="9.745,21.615 9.745,28.225 7.358,30.612 7.344,30.615 7.344,37.701 8.112,37.701 8.112,30.944 

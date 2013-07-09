@@ -4,8 +4,8 @@
 <svg version="1.1" id="Ebene_1" xmlns:svg="http://www.w3.org/2000/svg"
 	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="68.604px"
 	 height="74.269px" viewBox="0 0 68.604 74.269" enable-background="new 0 0 68.604 74.269" xml:space="preserve">
-<g>
-	<g id="breadboard">
+<g id="breadboard">
+	<g >
 		<circle id="connector9pin" fill="none" cx="3.302" cy="71.886" r="1.647"/>
 		<circle id="connector8pin" fill="none" cx="3.302" cy="66.217" r="1.647"/>
 		<circle id="connector7pin" fill="none" cx="3.302" cy="60.547" r="1.647"/>

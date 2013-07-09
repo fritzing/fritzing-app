@@ -4,7 +4,7 @@
 <svg version="1.1" id="Ebene_1" xmlns:svg="http://www.w3.org/2000/svg"
 	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="66.223px"
 	 height="58.225px" viewBox="0 0 66.223 58.225" enable-background="new 0 0 66.223 58.225" xml:space="preserve">
-<g>
+<g id="breadboard">
 	<circle id="connector0pin" fill="none" cx="3.348" cy="26.516" r="2.988"/>
 	<circle id="connector2pin" fill="none" cx="62.875" cy="26.516" r="2.988"/>
 	<g>

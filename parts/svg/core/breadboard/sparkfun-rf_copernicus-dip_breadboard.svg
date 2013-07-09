@@ -4,9 +4,9 @@
 <svg version="1.1" id="Ebene_1" xmlns:svg="http://www.w3.org/2000/svg"
 	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100.914px"
 	 height="81.402px" viewBox="0 0 100.914 81.402" enable-background="new 0 0 100.914 81.402" xml:space="preserve">
-<g>
+<g id="breadboard">
 	<rect x="28.338" y="0" fill="#FF0000" width="72.576" height="72.576"/>
-	<g id="silkscreen">
+
 		
 			<line fill="none" stroke="#F0F0F0" stroke-width="0.2032" stroke-linecap="round" x1="73.626" y1="65.088" x2="77.227" y2="65.088"/>
 		
@@ -255,7 +255,7 @@
 			<line fill="none" stroke="#F0F0F0" stroke-width="0.2032" stroke-linecap="round" x1="84.426" y1="7.488" x2="80.824" y2="7.488"/>
 		
 			<line fill="none" stroke="#F0F0F0" stroke-width="0.2032" stroke-linecap="round" x1="100.626" y1="2.088" x2="100.626" y2="5.688"/>
-	</g>
+
 	<g>
 		<polygon fill="#B8AF82" points="47.774,79.056 47.214,81.401 46.029,81.401 45.474,79.056 45.474,72.925 47.774,72.925 		"/>
 		<polygon fill="#E2D6A1" points="47.214,81.401 47.369,80.747 45.876,80.747 46.029,81.401 		"/>
@@ -681,5 +681,5 @@
 	<rect x="28.338" y="24.96" fill="#CCCCCC" width="7.488" height="2.511"/>
 	<rect x="28.338" y="21.869" fill="#999999" width="7.488" height="0.335"/>
 	<rect x="28.338" y="19.405" fill="#CCCCCC" width="7.488" height="2.512"/>
-</g>
+</g>	
 </svg>

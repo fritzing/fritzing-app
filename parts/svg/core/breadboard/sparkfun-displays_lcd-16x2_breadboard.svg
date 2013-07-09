@@ -4,7 +4,7 @@
 <svg version="1.1" id="Ebene_1" xmlns:svg="http://www.w3.org/2000/svg"
 	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="227.348px"
 	 height="102.623px" viewBox="0 0 227.348 102.623" enable-background="new 0 0 227.348 102.623" xml:space="preserve">
-<g>
+<g id="breadboard">
 	<circle id="connector0pin" fill="none" stroke="#9A916C" stroke-width="0.4318" cx="22.965" cy="7.375" r="2.052"/>
 	<circle id="connector1pin" fill="none" stroke="#9A916C" stroke-width="0.4318" cx="30.166" cy="7.375" r="2.052"/>
 	<circle id="connector2pin" fill="none" stroke="#9A916C" stroke-width="0.4318" cx="37.365" cy="7.375" r="2.052"/>
@@ -25,7 +25,7 @@
 	<circle id="nonconn9" cx="7.375" cy="95.249" r="3.968"/>
 	<circle id="nonconn10" cx="219.973" cy="7.375" r="3.969"/>
 	<circle id="nonconn11" cx="219.973" cy="95.249" r="3.968"/>
-</g>
+
 <path fill="#1F7A34" d="M0,0h227.347v102.623H0V0z M21.525,7.375c0,0.795,0.645,1.44,1.44,1.44c0.795,0,1.44-0.645,1.44-1.44
 	c0.001-0.795-0.644-1.44-1.439-1.441c-0.795,0-1.44,0.644-1.441,1.439C21.525,7.374,21.525,7.374,21.525,7.375z M28.726,7.375
 	c0,0.795,0.644,1.44,1.439,1.441s1.44-0.644,1.441-1.439c0,0,0-0.001,0-0.002c0-0.795-0.644-1.44-1.439-1.441
@@ -262,5 +262,5 @@
 				C21.909-20,21.287-19.378,20.523-19.378z"/>
 		</g>
 	</g>
-</g>
+</g></g>
 </svg>

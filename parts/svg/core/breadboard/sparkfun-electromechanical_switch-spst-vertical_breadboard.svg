@@ -3,13 +3,13 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="36.01px" height="61.516px" viewBox="0 0 36.01 61.516" enable-background="new 0 0 36.01 61.516" xml:space="preserve">
-<g id="Ebene_2">
+<g id="breadboard">
 	<path fill="#1F7A34" d="M0,0h36.01v61.516H0V0z M16.02,35.008c0,1.096,0.889,1.984,1.984,1.984s1.983-0.89,1.983-1.984
 		s-0.889-1.984-1.983-1.984S16.02,33.912,16.02,35.008z M16.02,15.165c0,1.096,0.889,1.983,1.984,1.983s1.983-0.889,1.983-1.983
 		c0-1.096-0.889-1.984-1.983-1.984S16.02,14.07,16.02,15.165z"/>
 	<circle id="connector1pin" fill="none" stroke="#9A916C" stroke-width="0.443" cx="18.005" cy="35.008" r="2.612"/>
 	<circle id="connector0pin" fill="none" stroke="#9A916C" stroke-width="0.443" cx="18.005" cy="15.165" r="2.612"/>
-</g>
+
 <g id="Ebene_1_1_" xmlns:svg="http://www.w3.org/2000/svg">
 	<polyline fill="#333333" points="0,0 36.01,0 36.01,52.442 0,52.442 0,0 	"/>
 	<polygon fill="#4D4D4D" points="4.683,45.363 5.429,45.462 5.234,7.011 4.683,7.135 	"/>
@@ -41,4 +41,5 @@
 </g>
 <text transform="matrix(1.0163 0 0 1 17.2998 42.5334)" fill="#F8F8F8" font-family="'ArialMT'" font-size="5">I</text>
 <text transform="matrix(1.0163 0 0 1 16.0288 17.3621)" fill="#F8F8F8" font-family="'ArialMT'" font-size="5">O</text>
+</g>
 </svg>

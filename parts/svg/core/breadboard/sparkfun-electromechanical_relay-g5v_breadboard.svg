@@ -5,9 +5,7 @@
 	 height="34.209px" viewBox="0 0 36.576 34.209" xml:space="preserve">
 <path fill="#1A1A1A" d="M19.455,8.967c0,0.503-0.412,0.916-0.916,0.916H0.916C0.412,9.882,0,9.47,0,8.967V1.386
 	C0,0.883,0.412,0.47,0.916,0.47H18.54c0.503,0,0.916,0.412,0.916,0.916L19.455,8.967L19.455,8.967z"/>
-<image width="39" height="3" xlink:href="A3684AFE.png"  transform="matrix(0.48 0 0 0.48 0 0.4702)">
-</image>
-<g>
+<g id="breadboard">
 	<g>
 		<rect x="3.59" y="33.674" fill="#CCCCCC" width="0.595" height="0.478"/>
 		<rect x="25.19" y="33.674" fill="#CCCCCC" width="0.596" height="0.478"/>
@@ -29,11 +27,12 @@
 	</image>
 	<image width="77" height="2" xlink:href="A3684B06.png"  transform="matrix(0.48 0 0 0.48 0 32.7969)">
 	</image>
-</g>
+
 <g>
 	<text transform="matrix(1 0 0 1 4.1851 17.8516)" fill="#808080" font-family="'Droid Sans'" font-size="2.531">12VDC</text>
 	<text transform="matrix(1 0 0 1 4.1851 20.3516)" fill="#808080" font-family="'Droid Sans'" font-size="2.531">MADE IN CHINA</text>
 </g>
 <path fill="#B3B3B3" d="M2.622,18.604c0,0.504-0.412,0.916-0.916,0.916H1.704c-0.503,0-0.916-0.412-0.916-0.916V6.52
 	c0-0.503,0.412-0.916,0.916-0.916h0.002c0.503,0,0.916,0.412,0.916,0.916V18.604z"/>
+</g>
 </svg>

@@ -25,7 +25,7 @@
 	<circle id="connector17pin" fill="none" stroke="#9A916C" stroke-width="0.254" cx="18.288" cy="3.888" r="1.512"/>
 	<circle id="connector18pin" fill="none" stroke="#9A916C" stroke-width="0.254" cx="11.088" cy="3.888" r="1.512"/>
 	<circle id="connector19pin" fill="none" stroke="#9A916C" stroke-width="0.254" cx="3.888" cy="3.888" r="1.512"/>
-</g>
+
 <rect x="0.044" y="0.065" fill="#333333" width="71.296" height="25.489"/>
 <polygon fill="#CCCCCC" points="71.979,21.976 71.979,6.747 72.62,5.749 72.62,4.065 71.34,0.065 71.34,25.375 72.62,29.375 
 	72.62,25.977 "/>
@@ -66,5 +66,5 @@
 	<g>
 		<rect x="1.675" y="5.536" fill="#FF1000" width="4.986" height="14.549"/>
 	</g>
-</g>
+</g></g>
 </svg>

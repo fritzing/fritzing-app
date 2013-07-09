@@ -4,10 +4,10 @@
 <svg version="1.1" id="Ebene_1" xmlns:svg="http://www.w3.org/2000/svg"
 	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="51.023px"
 	 height="54.728px" viewBox="0 0 51.023 54.728" enable-background="new 0 0 51.023 54.728" xml:space="preserve">
-<g>
+
 	<g id="breadboard">
 		<circle fill="#1A1A1A" cx="25.512" cy="29.216" r="25.512"/>
-	</g>
+
 	<rect y="25.511" fill="#1A1A1A" width="51.023" height="3.705"/>
 	<g id="breadboard_1_">
 		<circle fill="#333333" cx="25.512" cy="25.511" r="25.511"/>
@@ -20,5 +20,5 @@
 		<path opacity="0.2" d="M0.012,24.985c0,14.09,11.422,25.512,25.512,25.512s25.512-11.422,25.512-25.512l-0.012,0.526
 			c0,14.089-11.422,25.511-25.512,25.511S0,39.601,0,25.512"/>
 	</g>
-</g>
+	</g>
 </svg>

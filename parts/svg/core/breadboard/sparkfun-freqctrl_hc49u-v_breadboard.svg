@@ -4,7 +4,7 @@
 <svg version="1.1" id="Ebene_1" xmlns:svg="http://www.w3.org/2000/svg"
 	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="30.672px"
 	 height="37.567px" viewBox="0 0 30.672 37.567" enable-background="new 0 0 30.672 37.567" xml:space="preserve">
-<g>
+<g id="breadboard">
 	<g id="connector1leg">
 		<path fill="#8C8C8C" d="M22.536,37.568c-0.414,0-0.75-0.336-0.75-0.75v-1.346c0-0.414,0.336-0.75,0.75-0.75s0.75,0.336,0.75,0.75
 			v1.346C23.286,37.232,22.95,37.568,22.536,37.568z"/>
@@ -19,8 +19,8 @@
 	<g>
 		<rect x="7.463" y="25.596" fill="#8C8C8C" width="1.346" height="9.876"/>
 	</g>
-</g>
-<g id="breadboard">
+
+<g >
 	<circle id="connector0pin" fill="none" cx="8.136" cy="36.056" r="1.512"/>
 	<circle id="connector1pin" fill="none" cx="22.536" cy="36.056" r="1.512"/>
 </g>
@@ -42,5 +42,5 @@
 		H9.211c-4.4,0-8,2.818-8,6.262V6.618z"/>
 	<path opacity="0.2" d="M1.211,6.618c0,3.444,3.6,6.262,8,6.262h12.25c4.4,0,8-2.817,8-6.262V6.284c0,3.444-3.6,6.262-8,6.262H9.211
 		c-4.4,0-8-2.817-8-6.262V6.618z"/>
-</g>
+</g></g>
 </svg>

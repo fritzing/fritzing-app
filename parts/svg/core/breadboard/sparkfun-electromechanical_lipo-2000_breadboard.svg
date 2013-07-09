@@ -4,7 +4,7 @@
 <svg version="1.1" id="Ebene_1" xmlns:svg="http://www.w3.org/2000/svg"
 	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="158.533px"
 	 height="172.764px" viewBox="0 -17.604 158.533 172.764" enable-background="new 0 -17.604 158.533 172.764" xml:space="preserve">
-<g>
+<g id="breadboard">
 	<path id="path4_1_" fill="#D2D2D2" d="M127.423,0.566c1.186,0,2.016,1.078,2.016,2.02v150.555c0,1.337-0.684,2.019-2.016,2.019
 		H2.018c-1.068,0-2.018-0.841-2.018-2.019V2.581c0-1.097,0.791-2.017,2.018-2.017L127.423,0.566L127.423,0.566z"/>
 	<path id="path4_2_" fill="#FFC900" d="M0,35.896V2.586c0-1.099,0.791-2.023,2.018-2.023l125.406,0.003l0,0

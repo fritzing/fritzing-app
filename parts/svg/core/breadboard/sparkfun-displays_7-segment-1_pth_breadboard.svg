@@ -15,7 +15,7 @@
 	<circle id="connector2pin" fill="none" cx="25.872" cy="78.174" r="2.041"/>
 	<circle id="connector3pin" fill="none" cx="33.071" cy="78.174" r="2.041"/>
 	<circle id="connector4pin" fill="none" cx="40.272" cy="78.174" r="2.041"/>
-</g>
+
 <g>
 	<g>
 		<path fill="#4D4D4D" d="M41.048,74.606h-1.656v3.625c0,0,0.5,0.637,0.828,0.637s0.828-0.637,0.828-0.637V74.606z"/>
@@ -53,5 +53,5 @@
 		<circle fill="#EF1818" cx="44.719" cy="57.019" r="2.741"/>
 		<circle fill="#646464" cx="7.025" cy="57.019" r="2.741"/>
 	</g>
-</g>
+</g></g>
 </svg>

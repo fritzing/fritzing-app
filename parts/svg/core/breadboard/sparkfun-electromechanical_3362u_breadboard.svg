@@ -9,7 +9,7 @@
 	<circle id="connector1pin" fill="none" cx="10.98" cy="26.488" r="2.052"/>
 	<circle id="connector2pin" fill="none" cx="18.18" cy="26.488" r="2.052"/>
 	<path fill="none" stroke="#F8F8F8" stroke-width="0.127" stroke-linecap="round" d="M0.18,16.408"/>
-</g>
+
 <g>
 	<path fill="#808080" d="M17.832,27.238h1.051v-8h-1.051V27.238z"/>
 </g>
@@ -87,4 +87,4 @@
 </g>
 <rect y="19.536" fill="#131E48" width="22.175" height="6.487"/>
 <rect y="19.025" opacity="0.18" fill="#FFFFFF" enable-background="new    " width="22.175" height="1.054"/>
-</svg>
+</g></svg>

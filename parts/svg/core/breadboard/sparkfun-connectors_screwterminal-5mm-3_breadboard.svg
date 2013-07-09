@@ -4,13 +4,12 @@
 <svg version="1.1" id="Ebene_1" xmlns:svg="http://www.w3.org/2000/svg"
 	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="46.988px"
 	 height="27.393px" viewBox="0 0 46.988 27.393" enable-background="new 0 0 46.988 27.393" xml:space="preserve">
-<g id="copper1">
+<g id="breadboard">
 	<circle id="connector0pad" fill="none" cx="8.918" cy="25.694" r="2.631"/>
 	<circle id="connector1pad" fill="none" cx="23.091" cy="25.694" r="2.631"/>
 	<circle id="connector2pad" fill="none" cx="37.265" cy="25.694" r="2.631"/>
-</g>
 <g>
-	<g id="breadboard_10_">
+	<g >
 		<polygon fill="#254E89" points="0,2.787 0.563,2.787 0.563,7.349 0,7.349 0,18.207 46.428,18.207 46.428,7.349 46.989,7.349 
 			46.989,2.787 46.428,2.787 46.428,0 0,0 		"/>
 	</g>
@@ -127,5 +126,5 @@
 		<polygon fill="#545252" points="10.948,3.85 9.648,3.85 9.648,2.254 8.441,2.254 8.441,3.85 7.146,3.85 7.146,5.078 8.441,5.078 
 			8.441,6.674 9.648,6.674 9.648,5.078 10.948,5.078 		"/>
 	</g>
-</g>
+</g></g>
 </svg>

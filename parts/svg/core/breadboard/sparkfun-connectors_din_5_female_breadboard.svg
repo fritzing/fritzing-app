@@ -10,7 +10,7 @@
 	<circle id="connector1pin" fill="none" cx="9.047" cy="38.538" r="2.612"/>
 	<circle id="connector3pin" fill="none" cx="16.247" cy="31.395" r="2.612"/>
 	<circle id="connector4pin" fill="none" cx="44.593" cy="31.366" r="2.612"/>
-</g>
+
 <g>
 	<g>
 		<g>
@@ -171,4 +171,5 @@
 	<polygon fill="#4D4D4D" points="60.164,65.429 60.523,65.429 60.523,10.5 60.164,10.86 	"/>
 </g>
 <polygon fill="#CCCCCC" points="0.436,65.069 0.147,65.429 0.147,10.5 0.436,10.5 "/>
+</g>
 </svg>

@@ -21,8 +21,7 @@
 	<circle id="connector10pin" fill="none" stroke="#9A916C" stroke-width="0.489" cx="67.929" cy="3.922" r="1.827"/>
 	<circle id="connector14pin" fill="none" stroke="#9A916C" stroke-width="0.489" cx="39.128" cy="3.922" r="1.827"/>
 	<circle id="connector15pin" fill="none" stroke="#9A916C" stroke-width="0.489" cx="31.928" cy="3.922" r="1.827"/>
-</g>
-<g id="breadboard_1_">
+
 	<polygon fill="#323232" points="0,0 113.365,0 114.48,1 114.48,36.863 1,36.863 0,35.556 	"/>
 	<polygon fill="#646464" points="9.718,3.491 22.16,3.491 22.989,4.318 21.329,6.808 10.545,6.808 8.89,4.318 	"/>
 	<polygon fill="#EF1818" points="23.819,5.147 24.648,6.808 22.989,15.934 21.329,17.591 19.672,15.934 21.329,7.636 	"/>

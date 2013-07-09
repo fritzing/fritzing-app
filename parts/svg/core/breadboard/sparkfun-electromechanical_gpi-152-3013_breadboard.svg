@@ -15,7 +15,7 @@
 	<circle id="connector3pin" fill="none" cx="4.882" cy="19.709" r="2.699"/>
 	<circle id="connector4pin" fill="none" cx="4.882" cy="47.205" r="2.699"/>
 	<circle id="connector5pin" fill="none" cx="69.683" cy="47.205" r="2.699"/>
-</g>
+
 <g>
 	<g>
 		<rect x="22.371" y="36.346" fill="#CCCCCC" width="3.484" height="7.473"/>
@@ -91,5 +91,5 @@
 	<rect x="22.371" y="36.346" opacity="0.2" fill="#1A1A1A" width="3.484" height="1.524"/>
 	<rect x="35.54" y="36.346" opacity="0.2" fill="#1A1A1A" width="3.485" height="1.524"/>
 	<rect x="48.71" y="36.346" opacity="0.2" fill="#1A1A1A" width="3.483" height="1.524"/>
-</g>
+</g></g>
 </svg>

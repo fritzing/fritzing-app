@@ -8,7 +8,7 @@
 	<circle id="connector0pin" fill="none" stroke="#9A916C" stroke-width="0.4318" cx="6.453" cy="16.772" r="2.052"/>
 	<circle id="connector1pin" fill="none" stroke="#9A916C" stroke-width="0.4318" cx="6.453" cy="24.476" r="2.052"/>
 	<circle id="connector2pin" fill="none" stroke="#9A916C" stroke-width="0.4318" cx="6.453" cy="32.18" r="2.052"/>
-</g>
+
 <rect id="rect27_3_" x="0" y="32.172" fill="#333333" width="12.945" height="9.17"/>
 <rect id="rect51_3_" x="0" y="0" fill="#666666" width="12.906" height="32.604"/>
 <rect id="rect49_2_" x="3.251" y="6.624" width="6.453" height="19.36"/>
@@ -80,5 +80,5 @@
 	</g>
 	<rect x="3.699" y="17.36" opacity="0.1" fill="#FFFFFF" enable-background="new    " width="0.18" height="5.678"/>
 	<rect x="3.879" y="17.36" opacity="0.1" fill="#FFFFFF" enable-background="new    " width="5.45" height="0.181"/>
-</g>
+</g></g>
 </svg>

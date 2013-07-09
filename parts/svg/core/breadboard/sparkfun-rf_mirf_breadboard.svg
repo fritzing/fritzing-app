@@ -113,7 +113,7 @@
 		<line fill="none" stroke="#F8F8F8" stroke-width="0.1524" stroke-linecap="round" x1="-14.184" y1="23.616" x2="-15.984" y2="21.817"/>
 	
 		<line fill="none" stroke="#F8F8F8" stroke-width="0.1524" stroke-linecap="round" x1="-19.583" y1="21.817" x2="-15.984" y2="21.817"/>
-</g>
+
 <g>
 	<rect x="12.486" y="5.18" fill="#333333" width="7.838" height="11.864"/>
 	<path fill="#F0F0F0" d="M12.368,17.125V5.099h8.076v12.026H12.368z M12.61,5.261v11.702h7.591V5.261H12.61z"/>
@@ -175,4 +175,5 @@
 <rect x="-21.6" y="-58.75" opacity="0.2" fill="#FFFFFF" width="50.832" height="0.542"/>
 <path opacity="0.2" fill="#FFFFFF" d="M2.917-54.275c0-0.497,0.403-0.9,0.9-0.9c0.496,0,0.899,0.403,0.899,0.9v-0.542
 	c0-0.497-0.403-0.9-0.899-0.9c-0.498,0-0.9,0.403-0.9,0.9V-54.275z"/>
+</g>
 </svg>

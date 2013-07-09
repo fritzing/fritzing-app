@@ -4,15 +4,15 @@
 <svg version="1.1" id="Ebene_1" xmlns:svg="http://www.w3.org/2000/svg"
 	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="29.127px"
 	 height="27.681px" viewBox="0 0 29.127 27.681" enable-background="new 0 0 29.127 27.681" xml:space="preserve">
-<g>
-	<g id="copper1">
+<g  id="breadboard">
+
 		<g id="connector0pad">
 			<circle fill="none" cx="7.158" cy="25.827" r="2.361"/>
 		</g>
 		<g id="connector1pad">
 			<circle fill="none" cx="21.33" cy="25.827" r="2.361"/>
 		</g>
-	</g>
+
 	<g>
 		<polygon fill="#254E89" points="0,2.816 0.567,2.816 0.567,7.427 0,7.427 0,18.398 14.279,18.398 28.557,18.398 28.557,7.427 
 			29.127,7.427 29.127,2.816 28.557,2.816 28.557,0 14.279,0 0,0 		"/>

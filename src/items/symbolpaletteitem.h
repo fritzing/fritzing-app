@@ -65,15 +65,15 @@ public:
 	double voltage();
 	void setProp(const QString & prop, const QString & value);
 	void setVoltage(double);
+	QString retrieveSvg(ViewLayer::ViewLayerID, QHash<QString, QString> & svgHash, bool blackOnly, double dpi, double & factor);
 	bool collectExtraInfo(QWidget * parent, const QString & family, const QString & prop, const QString & value, bool swappingEnabled, QString & returnProp, QString & returnValue, QWidget * & returnWidget, bool & hide);
 	QString getProperty(const QString & key);
 	ConnectorItem * connector0();
 	ConnectorItem * connector1();
-	QString retrieveSvg(ViewLayer::ViewLayerID, QHash<QString, QString> & svgHash, bool blackOnly, double dpi, double & factor);
 	PluralType isPlural();
 	void addedToScene(bool temporary);
 	bool hasPartNumberProperty();
-	bool isOnlyNetLabel();
+	virtual bool isOnlyNetLabel();
 	bool hasPartLabel();
 	bool getAutoroutable();
 	void setAutoroutable(bool);
@@ -91,11 +91,9 @@ public slots:
 protected:
 	void removeMeFromBus(double voltage);
 	double useVoltage(ConnectorItem * connectorItem);
-	QString makeSvg(ViewLayer::ViewLayerID);
-	QString makeNetLabelSvg(ViewLayer::ViewLayerID);
+	virtual QString makeSvg(ViewLayer::ViewLayerID);
 	QString replaceTextElement(QString svg);
     ViewLayer::ViewID useViewIDForPixmap(ViewLayer::ViewID, bool swappingEnabled);
-    QString retrieveNetLabelSvg(ViewLayer::ViewLayerID, QHash<QString, QString> & svgHash, bool blackOnly, double dpi, double & factor);
     void resetLayerKin();
 
 protected:
@@ -104,6 +102,25 @@ protected:
 	QPointer<ConnectorItem> m_connector1;
 	bool m_voltageReference;
 	bool m_isNetLabel;
+};
+
+
+class NetLabel : public SymbolPaletteItem 
+{
+Q_OBJECT
+
+public:
+	NetLabel(ModelPart *, ViewLayer::ViewID, const ViewGeometry & viewGeometry, long id, QMenu * itemMenu, bool doLabel);
+	~NetLabel();
+
+    void addedToScene(bool temporary);
+	QString retrieveSvg(ViewLayer::ViewLayerID, QHash<QString, QString> & svgHash, bool blackOnly, double dpi, double & factor);
+	PluralType isPlural();
+	bool isOnlyNetLabel();
+
+protected:
+    QString makeSvg(ViewLayer::ViewLayerID);
+
 };
 
 #endif

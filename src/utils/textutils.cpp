@@ -592,7 +592,11 @@ bool TextUtils::pxToInches(QDomElement &elem, const QString &attrName, bool isIl
 	return false;
 }
 
-QString TextUtils::svgMatrix(QMatrix & matrix) {
+QString TextUtils::svgMatrix(const QMatrix & matrix) {
+	return QString("matrix(%1, %2, %3, %4, %5, %6)").arg(matrix.m11()).arg(matrix.m12()).arg(matrix.m21()).arg(matrix.m22()).arg(matrix.dx()).arg(matrix.dy());
+}
+
+QString TextUtils::svgMatrix(const QTransform & matrix) {
 	return QString("matrix(%1, %2, %3, %4, %5, %6)").arg(matrix.m11()).arg(matrix.m12()).arg(matrix.m21()).arg(matrix.m22()).arg(matrix.dx()).arg(matrix.dy());
 }
 

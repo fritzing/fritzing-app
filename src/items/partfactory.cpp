@@ -123,6 +123,9 @@ ItemBase * PartFactory::createPartAux( ModelPart * modelPart, ViewLayer::ViewID 
 		case ModelPart::Ruler:
 			return new Ruler(modelPart, viewID, viewGeometry, id, itemMenu, doLabel);
 		case ModelPart::Symbol:
+            if (modelPart->moduleID().contains(ModuleIDNames::NetLabelModuleIDName)) {
+			    return new NetLabel(modelPart, viewID, viewGeometry, id, itemMenu, doLabel);
+            }
 			return new SymbolPaletteItem(modelPart, viewID, viewGeometry, id, itemMenu, doLabel);
 		case ModelPart::Via:
 			return new Via(modelPart, viewID, viewGeometry, id, itemMenu, doLabel);

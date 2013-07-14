@@ -1305,12 +1305,19 @@ void ItemBase::flipItem(Qt::Orientations orientation) {
 }
 
 void ItemBase::transformItem(const QTransform & currTransf, bool includeRatsnest) {
-	//DebugDialog::debug(QString("\ttransform item %1").arg((long) this, 0, 16));
+    //debugInfo("transform item " + TextUtils::svgMatrix(currTransf));
+
+    QTransform trns = getViewGeometry().transform();
+    //debugInfo("\t" + TextUtils::svgMatrix(trns));
+
+    
 
 	if (m_hasRubberBandLeg) {
 		prepareGeometryChange();
 	}
 	QRectF rect = this->boundingRectWithoutLegs();
+
+    //debugInfo(QString("\t bounding rect w:%1, h:%2").arg(rect.width()).arg(rect.height()));
 	double x = rect.width() / 2.0;
 	double y = rect.height() / 2.0;
 	QTransform transf = QTransform().translate(-x, -y) * currTransf * QTransform().translate(x, y);
@@ -1320,8 +1327,10 @@ void ItemBase::transformItem(const QTransform & currTransf, bool includeRatsnest
         QList<ConnectorItem *> already;
 		updateConnections(includeRatsnest, already);
 	}
-	//QTransform t = this->transform();
-	//DebugDialog::debug(QString("matrix m11:%1 m12:%2 m21:%3 m22:%4").arg(t.m11()).arg(t.m12()).arg(t.m21()).arg(t.m22()));
+
+    trns = getViewGeometry().transform();
+    //debugInfo("\t" + TextUtils::svgMatrix(trns));
+
 	update();
 }
 
@@ -1925,7 +1934,7 @@ void ItemBase::debugInfo(const QString & msg) const
 
 void ItemBase::debugInfo2(const QString & msg) const
 {
-	DebugDialog::debug(QString("%1 ti:'%2' id:%3 it:'%4' vid:%9 vlid:%5 spec:%6 z:%10 flg:%7 gi:%8")
+	DebugDialog::debug(QString("%1 ti:'%2' id:%3 it:'%4' vid:%9 vlid:%5 spec:%6 x:%11 y:%12 z:%10 flg:%7 gi:%8")
 		.arg(msg)
 		.arg(this->title())
 		.arg(this->id())
@@ -1936,6 +1945,8 @@ void ItemBase::debugInfo2(const QString & msg) const
 		.arg((long) dynamic_cast<const QGraphicsItem *const>(this), 0, 16)
 		.arg(m_viewID)
         .arg(this->zValue())
+        .arg(this->pos().x())
+        .arg(this->pos().y())
 	);
 
 	/*
@@ -2088,6 +2099,7 @@ void ItemBase::setSharedRendererEx(FSvgRenderer * newRenderer) {
 		update();
 	}
 	m_size = newRenderer->defaultSizeF();
+    //debugInfo(QString("set size %1, %2").arg(m_size.width()).arg(m_size.height()));
 }
 
 bool ItemBase::reloadRenderer(const QString & svg, bool fastLoad) {
@@ -2120,6 +2132,8 @@ bool ItemBase::resetRenderer(const QString & svg, QString & newSvg) {
     FSvgRenderer * newRenderer = new FSvgRenderer();
     bool result = newRenderer->loadSvgString(svg, newSvg);
     if (result) {
+        //DebugDialog::debug("reloaded");
+        //DebugDialog::debug(newSvg);
         setSharedRendererEx(newRenderer);
     }
     else {

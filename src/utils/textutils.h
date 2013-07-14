@@ -66,7 +66,8 @@ public:
 	static bool fixPixelDimensionsIn(QString &fileContent);
 	static bool addCopper1(const QString & filename, QDomDocument & doc, const QString & srcAtt, const QString & destAtt);
 	static void setSVGTransform(QDomElement &, QMatrix &);
-	static QString svgMatrix(QMatrix &);
+	static QString svgMatrix(const QMatrix &);
+	static QString svgMatrix(const QTransform &);
 	static QString svgTransform(const QString & svg, QTransform & transform, bool translate, const QString extra);
 	static bool getSvgSizes(QDomDocument & doc, double & sWidth, double & sHeight, double & vbWidth, double & vbHeight);
 	static bool findText(const QDomNode & node, QString & text);

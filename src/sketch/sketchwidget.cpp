@@ -361,7 +361,8 @@ void SketchWidget::loadFromModelParts(QList<ModelPart *> & modelParts, BaseComma
 					PaletteItem * paletteItem = qobject_cast<PaletteItem *>(itemBase);
 					if (paletteItem != NULL) {
 						// wires don't have transforms
-						paletteItem->setTransforms();
+						
+                        //paletteItem->setTransforms();     // jrc 14 july 2013: this call seems redundant--transforms have already been set up by now
 						gotOne = true;
 					}
 				}

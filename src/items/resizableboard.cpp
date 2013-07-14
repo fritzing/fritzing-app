@@ -732,9 +732,8 @@ void ResizableBoard::mouseMoveEvent(QGraphicsSceneMouseEvent * event) {
 		if (changeTransform) {
 			QTransform oldT = transform();
 
-			DebugDialog::debug(QString("t old m:%1,%2,%3,%4 d:%5,%6 p:%7,%8 sz:%9,%10")
-				.arg(oldT.m11()).arg(oldT.m12()).arg(oldT.m21()).arg(oldT.m22())
-				.arg(oldT.toAffine().dx()).arg(oldT.toAffine().dy())
+			DebugDialog::debug(QString("t old m:%1 p:%2,%3 sz:%4,%5")
+                .arg(TextUtils::svgMatrix(oldT))
 				.arg(pos().x()).arg(pos().y())
 				.arg(oldSize.width()).arg(oldSize.height()));
 
@@ -755,9 +754,8 @@ void ResizableBoard::mouseMoveEvent(QGraphicsSceneMouseEvent * event) {
 			}
 			
 			QTransform t = transform();
-			DebugDialog::debug(QString("t new m:%1,%2,%3,%4 d:%5,%6 p:%7,%8 sz:%9,%10")
-				.arg(t.m11()).arg(t.m12()).arg(t.m21()).arg(t.m22())
-				.arg(t.toAffine().dx()).arg(t.toAffine().dy())
+			DebugDialog::debug(QString("t new m:%1 p:%2,%3 sz:%4,%5")
+				.arg(TextUtils::svgMatrix(t))
 				.arg(pos().x()).arg(pos().y())
 				.arg(size.width()).arg(size.height()));
 		}

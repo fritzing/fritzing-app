@@ -459,18 +459,18 @@ void MainWindow::pasteAux(bool pasteInPlace)
 	if (m_sketchModel->paste(m_referenceModel, itemData, modelParts, boundingRects, false)) {
 		QUndoCommand * parentCommand = new QUndoCommand("Paste");
 
-		QRectF r;
-		QRectF boundingRect = boundingRects.value(m_breadboardGraphicsView->viewName(), r);
+        QList<SketchWidget *> sketchWidgets;
+        sketchWidgets << m_breadboardGraphicsView << m_schematicGraphicsView << m_pcbGraphicsView;
+        sketchWidgets.removeOne(m_currentGraphicsView);
+        sketchWidgets.prepend(m_currentGraphicsView);
+
 		QList<long> newIDs;
-		m_breadboardGraphicsView->loadFromModelParts(modelParts, BaseCommand::SingleView, parentCommand, true, pasteInPlace ? &r : &boundingRect, false, newIDs);
-
-		boundingRect = boundingRects.value(m_pcbGraphicsView->viewName(), r);
-		newIDs.clear();
-		m_pcbGraphicsView->loadFromModelParts(modelParts, BaseCommand::SingleView, parentCommand, true, pasteInPlace ? &r : &boundingRect, false, newIDs);
-
-		boundingRect = boundingRects.value(m_schematicGraphicsView->viewName(), r);
-		newIDs.clear();
-		m_schematicGraphicsView->loadFromModelParts(modelParts, BaseCommand::SingleView, parentCommand, true, pasteInPlace ? &r : &boundingRect, false, newIDs);
+        foreach (SketchWidget * sketchWidget, sketchWidgets) {
+            newIDs.clear();
+            QRectF r;
+		    QRectF boundingRect = boundingRects.value(sketchWidget->viewName(), r);
+		    sketchWidget->loadFromModelParts(modelParts, BaseCommand::SingleView, parentCommand, true, pasteInPlace ? &r : &boundingRect, false, newIDs);
+        }
 
 		foreach (long id, newIDs) {
 			new IncLabelTextCommand(m_breadboardGraphicsView, id, parentCommand);
@@ -484,7 +484,6 @@ void MainWindow::pasteAux(bool pasteInPlace)
         m_pcbGraphicsView->setPasting(false);
         m_schematicGraphicsView->setPasting(false);
 	}
-
 
     m_currentGraphicsView->updateInfoView();
 }

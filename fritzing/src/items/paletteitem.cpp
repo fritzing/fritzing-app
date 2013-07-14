@@ -308,11 +308,20 @@ void PaletteItem::transformItem2(const QMatrix & matrix) {
 }
 
 void PaletteItem::setTransforms() {
+    // only ever called when loading from file
+    // jrc 14 july 2013: this call seems redundant--transforms have already been set up by now
+
     QTransform transform = getViewGeometry().transform();
     if (transform.isIdentity()) return;
 
+    //debugInfo("set transforms " + TextUtils::svgMatrix(transform));
+    //debugInfo("\t " + TextUtils::svgMatrix(this->transform()));
+
+
 	setTransform(transform);
 	for (int i = 0; i < m_layerKin.count(); i++) {
+        //debugInfo("\t " + TextUtils::svgMatrix(m_layerKin[i]->getViewGeometry().transform()));
+        //debugInfo("\t " + TextUtils::svgMatrix(m_layerKin[i]->transform()));
 		m_layerKin[i]->setTransform2(m_layerKin[i]->getViewGeometry().transform());
 	}
 }
@@ -1524,6 +1533,7 @@ void PaletteItem::resetLayerKin(const QString & svg) {
 }
 
 QTransform PaletteItem::untransform() {
+    //DebugDialog::debug("untransform");
     QTransform chiefTransform = this->transform();
     chiefTransform.setMatrix(chiefTransform.m11(), chiefTransform.m12(), chiefTransform.m13(), chiefTransform.m21(), chiefTransform.m22(), chiefTransform.m23(), 0, 0, chiefTransform.m33()); 
     bool identity = chiefTransform.isIdentity();
@@ -1539,6 +1549,7 @@ QTransform PaletteItem::untransform() {
 }
 
 void PaletteItem::retransform(const QTransform & chiefTransform) {
+    //DebugDialog::debug("retransform");
     if (!chiefTransform.isIdentity()) {
         transformItem(chiefTransform, false);
         foreach (ItemBase * lkpi, layerKin()) {    

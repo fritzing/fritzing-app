@@ -411,6 +411,8 @@ bool PaletteItemBase::setUpImage(ModelPart * modelPart, const LayerHash & viewLa
 
 	//DebugDialog::debug(QString("setting layer %1 view:%2 z:%3").arg(modelPart->title()).arg(viewID).arg(this->z()) );
 	this->setZValue(this->z());
+    //DebugDialog::debug("loaded");
+    //DebugDialog::debug(layerAttributes.loaded());
 	this->setSharedRendererEx(renderer);
 
 	m_svg = true;

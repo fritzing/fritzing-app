@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="SVG1" xmlns:xml="http://www.w3.org/XML/1998/namespace"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28.35px"
+	 height="48.756px" viewBox="0 0 28.35 48.756" enable-background="new 0 0 28.35 48.756" xml:space="preserve">
+<g id="breadboard">
+	
+		<line id="connector0leg" fill="none" stroke="#8C8C8C" stroke-width="2.16" stroke-linecap="round" x1="3.272" y1="48.756" x2="3.272" y2="54.756"/>
+	
+		<line id="connector1leg" fill="none" stroke="#8C8C8C" stroke-width="2.16" stroke-linecap="round" x1="10.469" y1="48.756" x2="10.469" y2="54.756"/>
+	
+		<line id="connector2leg" fill="none" stroke="#8C8C8C" stroke-width="2.16" stroke-linecap="round" x1="17.669" y1="48.756" x2="17.669" y2="54.756"/>
+	
+		<line id="connector3leg" fill="none" stroke="#8C8C8C" stroke-width="2.16" stroke-linecap="round" x1="24.869" y1="48.756" x2="24.869" y2="54.756"/>
+	<rect id="connector0pin" x="2.192" y="47.707" fill="none" width="2.16" height="0.726"/>
+	<rect id="connector1pin" x="9.39" y="47.707" fill="none" width="2.16" height="0.726"/>
+	<rect id="connector2pin" x="16.589" y="47.707" fill="none" width="2.16" height="0.726"/>
+	<rect id="connector3pin" x="23.789" y="47.707" fill="none" width="2.16" height="0.726"/>
+	<rect id="rect4" x="2.192" y="33.144" fill="#8C8C8C" width="2.16" height="15.612"/>
+	<rect id="rect6" x="9.39" y="33.144" fill="#8C8C8C" width="2.159" height="15.612"/>
+	<rect id="rect8" x="16.589" y="33.144" fill="#8C8C8C" width="2.158" height="15.612"/>
+	<rect id="rect9" x="23.789" y="33.144" fill="#8C8C8C" width="2.16" height="15.612"/>
+	<polygon id="polygon21" fill="#8C8C8C" points="5.791,40.446 4.179,41.167 2.365,41.167 0.751,40.446 0.751,31.681 5.791,31.681 	
+		"/>
+	<polygon id="polygon23" fill="#8C8C8C" points="12.99,40.446 11.377,41.167 9.564,41.167 7.95,40.446 7.95,31.681 12.99,31.681 	
+		"/>
+	<polygon id="polygon25" fill="#8C8C8C" points="20.189,40.446 18.576,41.167 16.763,41.167 15.151,40.446 15.151,31.681 
+		20.189,31.681 	"/>
+	<polygon id="polygon26" fill="#8C8C8C" points="27.388,40.446 25.774,41.167 23.962,41.167 22.35,40.446 22.35,31.681 
+		27.388,31.681 	"/>
+	<path d="M24.737,0.001H13.938v1.807c3.14,0,5.67,1.774,5.67,3.972c-0.001,2.191-2.536,3.97-5.67,3.97v5.104h10.799V0.001z"/>
+	<path fill="#808080" d="M8.27,5.772c0-2.193,2.537-3.97,5.668-3.97V0H3.14l0.024,14.854h10.771V9.74
+		C10.807,9.74,8.27,7.964,8.27,5.772z"/>
+	<rect x="19.706" y="22.337" fill="#141414" width="8.643" height="16"/>
+	<rect x="0" y="22.337" fill="#333333" width="8.643" height="16"/>
+	<path id="path40" fill="#262626" d="M0,28.196v5.166c2.038,0,3.688-1.151,3.688-2.584C3.691,29.354,2.037,28.196,0,28.196z"/>
+	<path id="path47" d="M28.347,28.196c-2.038,0-3.688,1.154-3.688,2.582c0,1.429,1.646,2.584,3.688,2.584V28.196z"/>
+	<path fill="#1A1A1A" d="M0,22.337v7.119c2.168,0,3.93,1.154,3.93,2.584c0,1.436-1.761,2.584-3.93,2.584v3.713h28.349v-16H0z
+		 M28.346,34.622c-2.169,0-3.93-1.146-3.93-2.582c0-1.428,1.761-2.584,3.93-2.584V34.622z"/>
+	<rect id="rect49" x="0" y="18.99" width="28.349" height="3.349"/>
+	<rect id="rect51" x="0" y="14.847" fill="#333333" width="28.349" height="4.138"/>
+	<rect id="rect53" x="0" y="0.001" width="28.35" height="3.063"/>
+	<path id="path55" fill="#1A1A1A" d="M0,2.314V14.85h28.349V2.314H0z M14.174,12.087c-3.333,0-6.032-1.772-6.032-3.969
+		c0-2.188,2.699-3.969,6.032-3.969c3.335,0,6.031,1.777,6.031,3.969C20.205,10.31,17.508,12.087,14.174,12.087z"/>
+	<g id="g47">
+		<path id="path49" fill="#663300" d="M8.918,23.969v1.075h-0.54v1.08H7.839v0.54h-1.08v-0.54h-0.54v-1.08h-0.54v-1.075h1.079v1.075
+			h1.08v-1.075H8.918z"/>
+		<path id="path51" fill="#663300" d="M14.319,24.508h0.541v1.078h-0.541v0.54h0.541v0.54h-1.621v-0.54H12.7v0.54h-1.08V23.97h2.691
+			L14.319,24.508L14.319,24.508z M13.78,24.508H12.7v1.078h1.072L13.78,24.508L13.78,24.508z"/>
+		<path id="path53" fill="#663300" d="M18.639,23.969v0.537h-2.16v0.538H18.1v0.54h-1.621v0.54h2.16v0.54h-3.24v-2.695H18.639z"/>
+		<path id="path56" fill="#663300" d="M19.719,26.127h-0.54v-1.618h0.54V23.97h2.697v0.537h-2.158v1.618h1.08v-0.54h-0.54v-0.54
+			h1.618v1.62h-2.697V26.127z"/>
+	</g>
+</g>
+</svg>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="_x30_" xmlns:xml="http://www.w3.org/XML/1998/namespace"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="30px" height="62px"
+	 viewBox="0 0 30 62" enable-background="new 0 0 30 62" xml:space="preserve">
+<desc  id="0.0" oldid="0.0">
+	<referenceFile  id="0.0.0" oldid="0.0.0">breadboard.svg</referenceFile>
+</desc>
+<g id="breadboard">
+	<polygon id="_x30_.2" points="0,36.85 0,0 28.348,0 29.872,1.44 29.872,38.289 1.526,38.289 	"/>
+	<rect id="connector0pin" x="3.027" y="37.618" fill="#8C8C8C" width="2.151" height="23.532"/>
+	<rect id="connector0terminal" x="4.101" y="61.127" fill="none" width="0.004" height="0.048"/>
+	<rect id="connector1pin" x="10.227" y="37.618" fill="#8C8C8C" width="2.151" height="23.532"/>
+	<rect id="connector1terminal" x="11.3" y="61.127" fill="none" width="0.004" height="0.048"/>
+	<rect id="connector2pin" x="24.626" y="37.618" fill="#8C8C8C" width="2.151" height="23.532"/>
+	<rect id="connector2terminal" x="25.699" y="61.127" fill="none" width="0.005" height="0.048"/>
+	<rect id="_x30_.6" fill="#303030" width="28.348" height="36.85"/>
+	<path id="color_path32_3_" d="M13.403,36.121c6.521,0,8.486,0.72,8.486,0.72l0.002-28.226c0-3.912-3.496-7.087-7.821-7.087
+		c-4.318,0-7.823,3.169-7.823,7.087L6.243,36.841C6.243,36.841,6.882,36.121,13.403,36.121z"/>
+	<path id="path34_1_" fill="#FFFFFF" d="M18.039,5.281l1.585-0.273c-0.931-1.131-2.298-1.956-3.908-2.237l0.28,1.08
+		C16.839,4.121,17.548,4.631,18.039,5.281z"/>
+	<path id="path38_1_" fill="#FFFFFF" d="M9.119,36.266c0.791-0.076,1.168-0.076,1.169-0.076l-0.039-22.744V8.619
+		c0-1.471,0.936-2.729,2.289-3.35l-0.026-0.053l-1.377-1.511C9.293,4.707,8.056,6.527,8.056,8.617l0.04,27.754
+		C8.096,36.371,8.328,36.34,9.119,36.266z"/>
+	<path id="color_path32_2_" d="M13.425,36.102c6.521,0,8.485,0.719,8.485,0.719l0.003,0.186l-15.647,0.02V36.82
+		C6.266,36.82,6.905,36.102,13.425,36.102z"/>
+</g>
+</svg>

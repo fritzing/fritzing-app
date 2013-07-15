@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="96.725px"
+	 height="170.242px" viewBox="0 0 96.725 170.242" enable-background="new 0 0 96.725 170.242" xml:space="preserve">
+<g id="copper1">
+	<g id="copper0">
+	</g>
+</g>
+<g id="copper1_1_">
+	<g id="copper0_1_">
+		<circle id="connector0pad" fill="none" stroke="#F7BD13" stroke-width="0.5715" cx="34.157" cy="5.669" r="2.79"/>
+		<circle id="connector1pad" fill="none" stroke="#F7BD13" stroke-width="0.5715" cx="62.503" cy="5.669" r="2.79"/>
+	</g>
+</g>
+<g id="silkscreen_1_">
+	
+		<line fill="none" stroke="#F0F0F0" stroke-width="0.2032" stroke-linecap="round" x1="0.142" y1="170.078" x2="96.518" y2="170.078"/>
+	
+		<line fill="none" stroke="#F0F0F0" stroke-width="0.2032" stroke-linecap="round" x1="96.518" y1="170.078" x2="96.518" y2="22.677"/>
+	
+		<line fill="none" stroke="#F0F0F0" stroke-width="0.2032" stroke-linecap="round" x1="96.518" y1="22.677" x2="0.142" y2="22.677"/>
+	
+		<line fill="none" stroke="#F0F0F0" stroke-width="0.2032" stroke-linecap="round" x1="0.142" y1="22.677" x2="0.142" y2="170.078"/>
+	<line fill="none" stroke="#F0F0F0" stroke-width="0.127" stroke-linecap="round" x1="45.495" y1="0" x2="45.495" y2="11.338"/>
+	<line fill="none" stroke="#F0F0F0" stroke-width="0.127" stroke-linecap="round" x1="51.165" y1="0" x2="51.165" y2="11.338"/>
+</g>
+</svg>

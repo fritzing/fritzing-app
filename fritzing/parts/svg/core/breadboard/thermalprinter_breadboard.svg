@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Ebene_1" xmlns:xml="http://www.w3.org/XML/1998/namespace"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="240.461px"
+	 height="146.197px" viewBox="0 0 240.461 146.197" enable-background="new 0 0 240.461 146.197" xml:space="preserve">
+<g id="breadboard">
+	<path fill="#2E2E2E" d="M29.397,146.197c-1.828,0-4.566-0.838-6.084-1.858l-17.34-11.68c-1.517-1.021-1.261-1.858,0.567-1.858
+		h227.38c1.83,0,2.085,0.84,0.567,1.858l-17.338,11.68c-1.519,1.021-4.253,1.858-6.081,1.858H29.397z"/>
+	<path fill="#424242" d="M240.461,136.549c0,1.83-1.497,3.325-3.327,3.325H3.326c-1.828,0-3.326-1.495-3.326-3.325V17.191
+		c0-1.828,1.498-3.325,3.326-3.325h233.808c1.83,0,3.327,1.497,3.327,3.325V136.549z"/>
+	<path fill="#737373" d="M53.438,95.062v27.832c0,1.829-1.496,3.323-3.324,3.323h-6.709c-1.828,0-3.324-1.494-3.324-3.323V95.062"/>
+	<path fill="#1F1F1F" d="M53.438,94.694v27.832c0,1.829-1.496,3.325-3.326,3.325h-6.705c-1.83,0-3.326-1.496-3.326-3.325V94.694"/>
+	<rect x="40.948" y="96.668" fill="#424242" width="11.618" height="22.953"/>
+	<rect x="40.948" y="115.809" opacity="0.2" enable-background="new    " width="11.618" height="3.812"/>
+	<rect x="40.948" y="96.668" opacity="0.2" enable-background="new    " width="11.618" height="0.922"/>
+	<path opacity="0.6" fill="#2B2B2B" enable-background="new    " d="M0,132.906c0,1.826,1.498,3.319,3.326,3.319h233.808
+		c1.83,0,3.327-1.493,3.327-3.319v3.648c0,1.824-1.497,3.317-3.327,3.317H3.326c-1.828,0-3.326-1.493-3.326-3.317V132.906z"/>
+	<path opacity="0.4" fill="#A1A1A1" enable-background="new    " d="M0,20.834c0-1.826,1.498-3.317,3.326-3.317h233.808
+		c1.83,0,3.327,1.491,3.327,3.317v-3.646c0-1.826-1.497-3.319-3.327-3.319H3.326C1.498,13.866,0,15.359,0,17.186V20.834z"/>
+	<g>
+		
+			<line opacity="0.1" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-miterlimit="10" enable-background="new    " x1="2.653" y1="21.565" x2="2.653" y2="132.905"/>
+		
+			<line opacity="0.1" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-miterlimit="10" enable-background="new    " x1="237.81" y1="21.565" x2="237.81" y2="132.905"/>
+	</g>
+	<path fill="none" stroke="#1F1F1F" stroke-width="1.0997" stroke-miterlimit="10" d="M209.022,13.866V119.96
+		c0,1.83-1.497,3.327-3.325,3.327H56.76c-1.825,0-3.322-1.497-3.322-3.327V13.866"/>
+	<rect x="64.619" y="54.475" opacity="0.1" enable-background="new    " width="133.219" height="68.975"/>
+	<rect x="65.533" y="56.259" fill="#E6E6E6" width="131.391" height="67.028"/>
+	<rect x="65.533" y="110.273" opacity="0.1" enable-background="new    " width="131.391" height="13.015"/>
+	<rect x="65.533" y="80.883" opacity="0.3" fill="#FFFFFF" enable-background="new    " width="131.391" height="34.44"/>
+	<rect x="65.533" y="83.525" opacity="0.5" fill="#FFFFFF" enable-background="new    " width="131.391" height="17.605"/>
+	<g transform="matrix(1 0 0 1 71.2852 83.7344)" opacity="0.6">
+		<text transform="matrix(1 0 0 1 6.713867e-004 -2.746582e-004)" font-family="'OCRA'" font-size="5.3702">###############################</text>
+		<text transform="matrix(1 0 0 1 6.713867e-004 6.445)" font-family="'OCRA'" font-size="5.3702">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</text>
+		<text transform="matrix(1 0 0 1 6.713867e-004 12.8884)" font-family="'OCRA'" font-size="5.3702">&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;</text>
+		<text transform="matrix(1 0 0 1 6.713867e-004 19.3337)" font-family="'OCRA'" font-size="5.3702">AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</text>
+		<text transform="matrix(1 0 0 1 6.713867e-004 25.7771)" font-family="'OCRA'" font-size="5.3702">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</text>
+		<text transform="matrix(1 0 0 1 6.713867e-004 32.2204)" font-family="'OCRA'" font-size="5.3702">BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB</text>
+		<text transform="matrix(1 0 0 1 6.713867e-004 38.6657)" font-family="'OCRA'" font-size="5.3702">ccccccccccccccccccccccccccccccc</text>
+	</g>
+	<rect x="65.533" y="121.669" opacity="0.2" enable-background="new    " width="131.391" height="1.616"/>
+	<rect x="65.533" y="119.307" opacity="0.2" enable-background="new    " width="131.391" height="4.143"/>
+	<g>
+		<path fill="#616161" d="M32.206,35.354c0-3.028-2.458-5.487-5.488-5.487c-3.028,0-5.485,2.459-5.485,5.487v0.001L32.206,35.354
+			L32.206,35.354z"/>
+		<path fill="#616161" d="M26.718,40.844c3.03,0,5.488-2.455,5.488-5.487H21.232C21.232,38.387,23.69,40.844,26.718,40.844z"/>
+	</g>
+	<g>
+		<path fill="#424242" d="M26.718,40.274c-2.712,0-4.919-2.207-4.919-4.919s2.207-4.918,4.919-4.918s4.919,2.207,4.919,4.918
+			C31.637,38.067,29.43,40.274,26.718,40.274z"/>
+		<path fill="#141414" d="M26.718,30.546c2.656,0,4.812,2.153,4.812,4.811c0,2.654-2.153,4.81-4.812,4.81
+			c-2.655,0-4.81-2.151-4.81-4.81C21.908,32.699,24.064,30.546,26.718,30.546 M26.718,30.326c-2.771,0-5.027,2.255-5.027,5.028
+			c0,2.771,2.256,5.027,5.027,5.027c2.773,0,5.029-2.256,5.029-5.027C31.747,32.582,29.491,30.326,26.718,30.326L26.718,30.326z"/>
+	</g>
+	<path opacity="0.1" fill="#CFCFCF" enable-background="new    " d="M28.876,32.765c1.395,1.308,1.715,3.251,0.839,4.552
+		c0.096-0.076,0.194-0.137,0.277-0.227c1.198-1.274,0.937-3.468-0.587-4.893c-1.521-1.428-3.726-1.551-4.92-0.273
+		c-0.094,0.098-0.159,0.209-0.23,0.313C25.493,31.257,27.469,31.447,28.876,32.765z"/>
+	<path opacity="0.2" enable-background="new    " d="M26.718,47.461c-3.028,0-5.485,2.46-5.485,5.488c0,3.033,2.457,5.49,5.485,5.49
+		c3.03,0,5.488-2.457,5.488-5.49C32.206,49.921,29.748,47.461,26.718,47.461z"/>
+	<path opacity="0.2" enable-background="new    " d="M26.718,48.203c-2.62,0-4.746,2.127-4.746,4.746
+		c0,2.623,2.126,4.748,4.746,4.748s4.746-2.125,4.746-4.748C31.464,50.33,29.338,48.203,26.718,48.203z"/>
+	<g>
+		
+			<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="-72.6829" y1="632.7166" x2="-72.6829" y2="639.7931" gradientTransform="matrix(1 0 0 1 99.4009 -583.293)">
+			<stop  offset="0" style="stop-color:#000000"/>
+			<stop  offset="1" style="stop-color:#474747"/>
+		</linearGradient>
+		<path fill="url(#SVGID_1_)" d="M26.718,49.026c-2.163,0-3.926,1.758-3.926,3.923c0,2.166,1.763,3.924,3.926,3.924
+			c2.165,0,3.926-1.758,3.926-3.924C30.644,50.784,28.883,49.026,26.718,49.026L26.718,49.026z"/>
+	</g>
+	<circle fill="#85E842" cx="26.72" cy="52.949" r="4.032"/>
+	<path opacity="0.5" fill="#E0FAE2" enable-background="new    " d="M26.722,50.062c-0.908,0-1.695,0.348-2.124,0.857
+		c0.539,0,1.216-0.172,2.124-0.172s1.563,0.172,2.12,0.172C28.415,50.41,27.63,50.062,26.722,50.062z"/>
+	<g opacity="0.2">
+		<path d="M26.718,49.493c1.907,0,3.459,1.55,3.459,3.456c0,1.907-1.552,3.458-3.459,3.458c-1.903,0-3.455-1.551-3.455-3.458
+			C23.263,51.043,24.814,49.493,26.718,49.493 M26.718,48.918c-2.225,0-4.028,1.807-4.028,4.031s1.806,4.033,4.028,4.033
+			c2.229,0,4.034-1.809,4.034-4.033S28.947,48.918,26.718,48.918L26.718,48.918z"/>
+	</g>
+	<g>
+		
+			<line id="connector4leg" fill="none" stroke="#32BF4F" stroke-width="3" stroke-linecap="round" x1="131.025" y1="6.5" x2="131.025" y2="1.5"/>
+		<path fill="none" stroke="#32BF4F" stroke-width="3" d="M131.025,15.943V6.5"/>
+		<rect id="connector4pin" x="129.532" y="5.513" fill="none" width="2.997" height="1.257"/>
+		
+			<line id="connector3leg" fill="none" stroke="#FFFF00" stroke-width="3" stroke-linecap="round" x1="123.826" y1="6.5" x2="123.826" y2="1.5"/>
+		<path fill="none" stroke="#FFFF00" stroke-width="3" d="M123.826,15.943V6.5"/>
+		<rect id="connector3pin" x="122.332" y="5.513" fill="none" width="3" height="1.257"/>
+		
+			<line id="connector2leg" fill="none" stroke="#000000" stroke-width="3" stroke-linecap="round" x1="116.566" y1="6.5" x2="116.566" y2="1.5"/>
+		<path fill="none" stroke="#000000" stroke-width="3" d="M116.565,15.943V6.5"/>
+		<rect id="connector2pin" x="115.071" y="5.513" fill="none" width="3" height="1.257"/>
+		
+			<line id="connector1leg" fill="none" stroke="#FF0000" stroke-width="3" stroke-linecap="round" x1="199.522" y1="6.5" x2="199.522" y2="1.5"/>
+		<path fill="none" stroke="#FF0000" stroke-width="3" d="M199.521,15.943V6.5"/>
+		<rect id="connector1pin" x="198.026" y="5.513" fill="none" width="3" height="1.257"/>
+		
+			<line id="connector0leg" fill="none" stroke="#000000" stroke-width="3" stroke-linecap="round" x1="192.379" y1="6.5" x2="192.379" y2="1.5"/>
+		<path fill="none" stroke="#000000" stroke-width="3" d="M192.379,15.943l0.017-9.443"/>
+		<rect id="connector0pin" x="190.888" y="5.513" fill="none" width="2.997" height="1.257"/>
+	</g>
+</g>
+</svg>

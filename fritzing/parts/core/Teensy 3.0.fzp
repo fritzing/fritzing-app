@@ -1,15 +1,15 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<module fritzingVersion="0.4.4b.10.03.4492" moduleId="Teensy3.0" referenceFile="Teensy 3.0.fzp" replacedby="fixed Teensy3.0">
+<module fritzingVersion="0.4.4b.10.03.4492" moduleId="Teensy3.0" referenceFile="Teensy 3.0.fzp">
  <author>Fabian Althaus</author>
  <title>Teensy 3.0</title>
  <label>Teensy</label>
- <date>Di Apr 16 2013</date>
+ <date>mo jul 15 2013</date>
  <tags>
   <tag>Teensy 3.0</tag>
   <tag>microcontroller</tag>
  </tags>
  <properties>
-  <property name="family">//obsolete// microcontroller board (teensy)</property>
+  <property name="family">microcontroller board (teensy)</property>
   <property name="variant">Teensy 3.0</property>
   <property name="processor">ATmega</property>
   <property name="part number"></property>
@@ -84,7 +84,8 @@ p, li { white-space: pre-wrap; }
      <p svgId="connector16pin" layer="schematic"/>
     </schematicView>
     <pcbView>
-     <p svgId="connector16pin" layer="unknown"/>
+     <p svgId="connector16pin" layer="copper0"/>
+     <p svgId="connector16pin" layer="copper1"/>
     </pcbView>
    </views>
   </connector>
@@ -601,7 +602,7 @@ p, li { white-space: pre-wrap; }
  </connectors>
  <buses>
   <bus id="GND">
-   <nodeMember connectorId="connector15"/>
+   <nodeMember connectorId="connector16"/>
    <nodeMember connectorId="connector0"/>
   </bus>
   <bus id="VCC">

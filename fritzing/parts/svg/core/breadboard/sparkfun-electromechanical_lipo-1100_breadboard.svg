@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Ebene_1" xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="124.223px"
+	 height="166.93px" viewBox="0 0 124.223 166.93" enable-background="new 0 0 124.223 166.93" xml:space="preserve">
+<g id="breadboard">
+	<path id="path4_1_" fill="#D2D2D2" d="M94.17,17.281c1.187,0,2.018,1.077,2.018,2.021v145.667c0,1.337-0.686,2.02-2.018,2.02H2.834
+		c-1.068,0-2.018-0.842-2.018-2.02V19.294c0-1.097,0.791-2.018,2.018-2.018L94.17,17.281L94.17,17.281z"/>
+	<path id="path4_2_" fill="#FFC900" d="M0.817,52.61V19.301c0-1.1,0.791-2.023,2.018-2.023l91.335,0.004l0,0
+		c1.187,0,2.018,1.077,2.018,2.023v33.302H0.817V52.61z"/>
+	<path id="path4_3_" opacity="0.36" fill="#1D1D1D" enable-background="new    " d="M0.817,42.485V19.301
+		c0-1.1,0.791-2.023,2.018-2.023l91.335,0.004l0,0c1.187,0,2.018,1.077,2.018,2.023v23.174H0.817V42.485z"/>
+	<g id="path112_1_">
+		<path d="M55.211,17.243c0-3.708,0-13.549,15.072-13.549c9.58,0,16.554,4.077,23.293,8.021c5.933,3.473,11.534,6.749,18.388,6.749
+			h12.264v2.617h-12.264c-7.561,0-13.463-3.453-19.713-7.107c-6.443-3.772-13.099-7.667-21.968-7.667
+			c-12.446-0.003-12.446,7.113-12.446,10.936H55.211z"/>
+	</g>
+	<g id="path114_1_">
+		<path fill="#FF0000" d="M42.949,17.214c0-4.807,4.914-17.271,27.322-17.271c9.739,0,16.18,3.229,22.402,6.359
+			c5.825,2.922,11.323,5.687,19.288,5.687h12.255v2.617h-12.255c-8.584,0-14.62-3.032-20.46-5.965
+			C85.55,5.656,79.395,2.56,70.272,2.56C50.109,2.559,45.574,13.415,45.574,17.218h-2.625V17.214z"/>
+	</g>
+	<path id="path22_1_" opacity="0.35" enable-background="new    " d="M1.756,22.36c0-1.79,1.651-4.063,3.62-4.063h9.048
+		c-1.968,0-5.033,2.28-5.033,4.063v139.523c0,1.789,3.065,4.054,5.033,4.054H5.376c-1.969,0-3.62-2.265-3.62-4.054V22.36
+		L1.756,22.36z"/>
+	<path id="path22_2_" opacity="0.35" fill="#FFFFFF" enable-background="new    " d="M95.132,161.665
+		c0,1.789-1.65,4.063-3.623,4.063h-9.044c1.958,0,5.028-2.274,5.028-4.063V22.146c0-1.788-3.07-4.055-5.028-4.055h9.044
+		c1.973,0,3.623,2.267,3.623,4.055V161.665L95.132,161.665z"/>
+	<g>
+		<text transform="matrix(1 0 0 1 59.0085 57.6682)" font-family="'EurostileLTStd'" font-size="12.1064">-</text>
+		<text transform="matrix(-4.371139e-008 1 -1 -4.371139e-008 57.0764 66.6707)" font-family="'DroidSans'" font-size="12.1064">E603450 7B20</text>
+		<text transform="matrix(-4.371139e-008 1 -1 -4.371139e-008 42.5491 66.6707)" font-family="'DroidSans'" font-size="12.1064">E7B02-D60-1</text>
+		
+			<text transform="matrix(-4.371139e-008 1 -1 -4.371139e-008 28.0217 50.5769)" font-family="'EurostileLTStd'" font-size="12.1064">+</text>
+		<text transform="matrix(-4.371139e-008 1 -1 -4.371139e-008 28.0217 66.6707)" font-family="'DroidSans'" font-size="12.1064">1000mAh 3.7V</text>
+	</g>
+	<rect id="connector1pin" x="111.924" y="18.461" fill="none" width="12.293" height="2.623"/>
+	<rect id="connector0pin" x="111.924" y="11.978" fill="none" width="12.293" height="2.621"/>
+</g>
+</svg>

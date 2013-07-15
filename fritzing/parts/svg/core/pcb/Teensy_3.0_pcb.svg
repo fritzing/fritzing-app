@@ -7,7 +7,7 @@
 <desc  id="0.0" oldid="0.0">
 	<referenceFile  id="0.0.0" oldid="0.0.0">Teensy_3.0_pcb.svg</referenceFile>
 </desc>
-<g id="silkscreen_1_">
+<g id="silkscreen">
 	<path id="silkscreen" fill="none" stroke="#FFFFFF" stroke-width="0.5" stroke-miterlimit="10" d="M2.835,0.799v49.209h100.063
 		V0.799H2.835z"/>
 </g>

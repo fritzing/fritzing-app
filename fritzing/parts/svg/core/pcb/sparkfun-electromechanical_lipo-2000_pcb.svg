@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="202.646px"
+	 height="155.16px" viewBox="0 0 202.646 155.16" enable-background="new 0 0 202.646 155.16" xml:space="preserve">
+<g id="copper1">
+	<g id="copper0">
+		<circle id="connector0pad" fill="none" stroke="#F7BD13" stroke-width="0.5715" cx="189.786" cy="89.951" r="2.79"/>
+		<circle id="connector1pad" fill="none" stroke="#F7BD13" stroke-width="0.5715" cx="189.786" cy="61.606" r="2.79"/>
+	</g>
+</g>
+<g id="silkscreen">
+	<line fill="none" stroke="#F0F0F0" stroke-width="0.127" stroke-linecap="round" x1="0.188" y1="154.98" x2="0.188" y2="90.18"/>
+	<line fill="none" stroke="#F0F0F0" stroke-width="0.127" stroke-linecap="round" x1="0.188" y1="90.18" x2="0.188" y2="86.58"/>
+	<line fill="none" stroke="#F0F0F0" stroke-width="0.127" stroke-linecap="round" x1="0.188" y1="86.58" x2="0.188" y2="64.98"/>
+	<line fill="none" stroke="#F0F0F0" stroke-width="0.127" stroke-linecap="round" x1="0.188" y1="64.98" x2="0.188" y2="61.38"/>
+	<line fill="none" stroke="#F0F0F0" stroke-width="0.127" stroke-linecap="round" x1="0.188" y1="61.38" x2="0.188" y2="0.18"/>
+	<line fill="none" stroke="#F0F0F0" stroke-width="0.127" stroke-linecap="round" x1="0.188" y1="0.18" x2="176.589" y2="0.18"/>
+	
+		<line fill="none" stroke="#F0F0F0" stroke-width="0.127" stroke-linecap="round" x1="176.589" y1="0.18" x2="176.589" y2="154.98"/>
+	
+		<line fill="none" stroke="#F0F0F0" stroke-width="0.127" stroke-linecap="round" x1="176.589" y1="154.98" x2="0.188" y2="154.98"/>
+	
+		<line fill="none" stroke="#F0F0F0" stroke-width="0.127" stroke-linecap="round" x1="184.117" y1="78.614" x2="195.455" y2="78.614"/>
+	
+		<line fill="none" stroke="#F0F0F0" stroke-width="0.127" stroke-linecap="round" x1="184.117" y1="72.944" x2="195.455" y2="72.944"/>
+</g>
+</svg>

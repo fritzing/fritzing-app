@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<module fritzingVersion="0.4.4b.10.03.4492" moduleId="Teensy3.0" referenceFile="Teensy 3.0.fzp">
+<module fritzingVersion="0.4.4b.10.03.4492" moduleId="Teensy3.0" referenceFile="Teensy 3.0.fzp" replacedby="fixed Teensy3.0">
  <author>Fabian Althaus</author>
  <title>Teensy 3.0</title>
  <label>Teensy</label>
@@ -9,7 +9,7 @@
   <tag>microcontroller</tag>
  </tags>
  <properties>
-  <property name="family">microcontroller board (teensy)</property>
+  <property name="family">//obsolete// microcontroller board (teensy)</property>
   <property name="variant">Teensy 3.0</property>
   <property name="processor">ATmega</property>
   <property name="part number"></property>

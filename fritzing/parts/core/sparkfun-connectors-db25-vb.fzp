@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><module fritzingVersion="0.7.2b" moduleId="SparkFun-Connectors-DB25-H">
-<!-- generated from Sparkfun Eagle Library 'SparkFun-Connectors' DB25 H -->
+<?xml version="1.0" encoding="UTF-8"?><module fritzingVersion="0.7.2b" moduleId="SparkFun-Connectors-DB25-VB">
+<!-- generated from Sparkfun Eagle Library 'SparkFun-Connectors' DB25 VB -->
 <version>4</version>
 <date>2013-02-13</date>
 <label>X</label>
@@ -8,17 +8,18 @@
 <title>DB25</title>
 <tags>
 <tag>DB25</tag>
-<tag>H</tag>
-<tag>M25H</tag>
+<tag>M25VB</tag>
+<tag>VB</tag>
 </tags>
 <properties>
-<property name="package">m25h</property>
-<property name="family">sparkfun DB25 Connector</property>
-<property name="variant">h</property>
+<property name="family">sparkfun DB Connector</property>
+<property name="package">db25</property>
+<property name="variant">vb</property>
+<property name="gender">male</property>
 </properties>
 <views>
 <breadboardView>
-<layers image="breadboard/sparkfun-connectors_m25h_breadboard.svg">
+<layers image="breadboard/sparkfun-connectors_m25vb_breadboard.svg">
 <layer layerId="breadboard"/>
 </layers>
 </breadboardView>
@@ -28,14 +29,14 @@
 </layers>
 </schematicView>
 <pcbView>
-<layers image="pcb/sparkfun-connectors_m25h_pcb.svg">
+<layers image="pcb/sparkfun-connectors_m25vb_pcb.svg">
 <layer layerId="copper1"/>
 <layer layerId="silkscreen"/>
 <layer layerId="copper0"/>
 </layers>
 </pcbView>
 <iconView>
-<layers image="icon/M25H.svg">
+<layers image="icon/M25VB.svg">
 <layer layerId="icon"/>
 </layers>
 </iconView>

@@ -12,9 +12,10 @@
 <tag>F25D</tag>
 </tags>
 <properties>
-<property name="package">f25d</property>
-<property name="family">sparkfun DB25 Connector</property>
-<property name="variant">male</property>
+<property name="family">sparkfun DB Connector</property>
+<property name="package">db25</property>
+<property name="variant">d</property>
+<property name="gender">female</property>
 </properties>
 <views>
 <breadboardView>

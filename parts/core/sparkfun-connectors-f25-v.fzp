@@ -1,41 +1,42 @@
-<?xml version="1.0" encoding="UTF-8"?><module fritzingVersion="0.7.2b" moduleId="SparkFun-Connectors-DB25-V">
-<!-- generated from Sparkfun Eagle Library 'SparkFun-Connectors' DB25 V -->
+<?xml version="1.0" encoding="UTF-8"?><module fritzingVersion="0.7.2b" moduleId="SparkFun-Connectors-F25-V">
+<!-- generated from Sparkfun Eagle Library 'SparkFun-Connectors' F25 V -->
 <version>4</version>
 <date>2013-02-13</date>
 <label>X</label>
 <author>www.fritzing.org</author>
-<description>Various DB25 connectors</description>
-<title>DB25</title>
+<description>25 Pin male connector. PCB edge mount for regular PCB thicknesses. This connector will connect directly to the back of a PC parallel port or through a normal DB25 extension cable (M/F). SKU: PRT-08287</description>
+<title>F25</title>
 <tags>
 <tag>V</tag>
-<tag>DB25</tag>
-<tag>M25V</tag>
+<tag>F25</tag>
+<tag>F25V</tag>
 </tags>
 <properties>
-<property name="package">m25v</property>
-<property name="family">sparkfun DB25 Connector</property>
+<property name="family">sparkfun DB Connector</property>
+<property name="package">db25</property>
 <property name="variant">v</property>
+<property name="gender">female</property>
 </properties>
 <views>
 <breadboardView>
-<layers image="breadboard/sparkfun-connectors_m25v_breadboard.svg">
+<layers image="breadboard/sparkfun-connectors_f25v_breadboard.svg">
 <layer layerId="breadboard"/>
 </layers>
 </breadboardView>
 <schematicView>
-<layers image="schematic/sparkfun-connectors_db25_schematic.svg">
+<layers image="schematic/sparkfun-connectors_f25_schematic.svg">
 <layer layerId="schematic"/>
 </layers>
 </schematicView>
 <pcbView>
-<layers image="pcb/sparkfun-connectors_m25v_pcb.svg">
+<layers image="pcb/sparkfun-connectors_f25v_pcb.svg">
 <layer layerId="copper1"/>
 <layer layerId="silkscreen"/>
 <layer layerId="copper0"/>
 </layers>
 </pcbView>
 <iconView>
-<layers image="icon/M25V.svg">
+<layers image="icon/F25V.svg">
 <layer layerId="icon"/>
 </layers>
 </iconView>

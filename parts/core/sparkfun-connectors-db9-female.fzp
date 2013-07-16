@@ -12,9 +12,9 @@ Standard DB9 (D-Sub 9) serial connector. Can be used for CAN bus as well as RS48
 <tag>FEMALE</tag>
 </tags>
 <properties>
+<property name="family">sparkfun DB Connector</property>
 <property name="package">db9</property>
-<property name="family">sparkfun DB9 Connector</property>
-<property name="variant">female</property>
+<property name="gender">female</property>
 </properties>
 <views>
 <breadboardView>

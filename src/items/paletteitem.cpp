@@ -550,9 +550,15 @@ QStringList PaletteItem::collectValues(const QString & family, const QString & p
     if (prop.compare("layer") == 0) {
         if (modelPart()->flippedSMD()) {
             QStringList values = PaletteItemBase::collectValues(family, prop, value);
-            if (values.count() == 0) {
+            for (int ix = values.count() - 1; ix >= 0; ix--) {
+                if (values.at(ix).isEmpty()) {
+                    values.removeAt(ix);
+                }
+            }
+            if (values.count() < 2) {
                 ItemBase * itemBase = modelPart()->viewItem(ViewLayer::PCBView);
                 if (itemBase) {
+                    values.clear();
                     values << TranslatedPropertyNames.value("bottom") << TranslatedPropertyNames.value("top");
                     if (itemBase->viewLayerID() == ViewLayer::Copper0) {
                         value = values.at(0);

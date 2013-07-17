@@ -305,6 +305,8 @@
 	<file>resources/templates/jumper_pcb_svg_2nd_template.txt</file>
 	<file>resources/templates/generic_female_pin_header_schem_template.txt</file>
 	<file>resources/templates/generic_male_pin_header_schem_template.txt</file>
+	<file>resources/templates/generic_female_10thin_pin_header_schem_template.txt</file>
+	<file>resources/templates/generic_male_10thin_pin_header_schem_template.txt</file>
 	<file>resources/templates/generic_female_pin_header_bread_template.txt</file>
 	<file>resources/templates/generic_female_pin_header_bread_2nd_template.txt</file>
 	<file>resources/templates/generic_rounded_female_pin_header_bread_template.txt</file>

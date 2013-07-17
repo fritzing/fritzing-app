@@ -24,7 +24,7 @@ Commonly found on the back of a computer for PS2 keyboard and mice. Schematic an
 </layers>
 </breadboardView>
 <schematicView>
-<layers image="schematic/sparkfun-connectors_m06_schematic.svg">
+<layers image="schematic/generic_female_pin_header_6_100mil_10thin_schematic.svg">
 <layer layerId="schematic"/>
 </layers>
 </schematicView>

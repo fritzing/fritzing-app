@@ -607,22 +607,35 @@ QString PinHeader::makeSchematicSvg(const QString & expectedFileName)
 	QStringList pieces = expectedFileName.split("_");
 	if (pieces.count() < 7) return "";
 
-	int pins = pieces.at(pieces.count() - 3).toInt();
+    QString spacingString;
+    int pins = TextUtils::getPinsAndSpacing(expectedFileName, spacingString);
 	QString form = expectedFileName.contains("female") ? "female" :"male";
-	double unitHeight = GraphicsUtils::StandardSchematicSeparationMils / 1000;  // inches
+    bool sizeTenth = expectedFileName.contains("10thin");
+
+    double width, unitHeight;
+    if (sizeTenth) {
+        width = 0.2;
+        unitHeight = GraphicsUtils::StandardSchematicSeparation10thinMils / 1000;  // inches
+    }
+    else {
+        unitHeight = GraphicsUtils::StandardSchematicSeparationMils / 1000;  // inches
+        width = 0.87;
+    }
 	double unitHeightPoints = unitHeight * 72;
 
 	QString header("<?xml version='1.0' encoding='utf-8'?>\n"
 				"<svg version='1.2' baseProfile='tiny' id='svg2' xmlns:svg='http://www.w3.org/2000/svg' "
-				"xmlns='http://www.w3.org/2000/svg'  x='0in' y='0in' width='0.87in' "
-				"height='%1in' viewBox='0 0 62.641 %2'>\n"
+				"xmlns='http://www.w3.org/2000/svg'  x='0in' y='0in' width='%3in' "
+				"height='%1in' viewBox='0 0 %4 %2'>\n"
 				"<g id='schematic' >\n");
 
 
-	QString svg = header.arg(unitHeight * pins).arg(unitHeightPoints * pins);
+	QString svg = header.arg(unitHeight * pins).arg(unitHeightPoints * pins).arg(width).arg(width * 72);
 
-	svg += TextUtils::incrementTemplate(QString(":/resources/templates/generic_%1_pin_header_schem_template.txt").arg(form.contains("female") ? "female" : "male"),
-							 pins, unitHeightPoints, TextUtils::standardMultiplyPinFunction, TextUtils::standardCopyPinFunction, NULL);
+    QString templateFile = QString(":/resources/templates/generic_%1_%2pin_header_schem_template.txt")
+                                                .arg(form.contains("female") ? "female" : "male")
+                                                .arg(sizeTenth ? "10thin_" : "");
+	svg += TextUtils::incrementTemplate(templateFile, pins, unitHeightPoints, TextUtils::standardMultiplyPinFunction, TextUtils::standardCopyPinFunction, NULL);
 		
 
 	svg += "</g>\n</svg>";

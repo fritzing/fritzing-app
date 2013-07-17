@@ -437,10 +437,10 @@ void Board::moreCheckImage(const QString & filename) {
 
     QString msg = tr("<b>The custom shape has been loaded, and you will see the new board shortly.</b><br/><br/>");
     msg += tr("Before actual PCB production we recommend that you test your custom shape by using the 'File > Export for Production > Extended Gerber' option. ");
-    msg += tr("Check the resulting contour file with a Gerber viewer application to make sure the shape came out as expected.<br/><br/>");
+    msg += tr("Check the resulting contour file with a Gerber-viewer application to make sure the shape came out as expected.<br/><br/>");
 
-    msg += tr("The rest of this message concerns 'cutouts' (circular- or irregularly- shaped holes in the PCB). ");
-    msg += tr("If you did not intend to add cutouts to your custom shape, you can close this window now.<br/><br/>");
+    msg += tr("The rest of this message concerns 'cutouts'. ");
+    msg += tr("These are circular or irregularly-shaped holes that you can optionally incorporate into a custom PCB shape.<br/><br/>");
     if (subpaths == 1) {
         msg += tr("<b>The custom shape has no cutouts.</b>");
     }

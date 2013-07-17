@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module fritzingVersion="0.6.5b.01.02.5717" moduleId="0169a1437c0125d6d12452c99a8c3cc3">
-    <version>4</version>
+    <version replacedby="SparkFun-DigitalIC-ATMEGA168-">4</version>
     <author>drew</author>
     <title>Atmega 168 TQFP32</title>
     <label>ATmega168 TQFP</label>
@@ -10,12 +10,12 @@
     </tags>
     <properties>
         <property name="package">TQFP32-5MM</property>
-        <property name="family">Microcontroller</property>
+        <property name="family">/obsolete/Microcontroller</property>
         <property name="editable pin labels">true</property>
         <property name="chip label">ATmega168</property>
         <property name="part number"></property>
     </properties>
-    <description>ATmel's ever popular 168 in a TQFP package</description>
+    <description>THIS PACKAGE DOES NOT EXIST IN REALITY. ATmel's ever popular 168 in a TQFP package!</description>
     <views>
         <iconView>
             <layers image="icon/Atmega_168_TQFP32_icon.svg">

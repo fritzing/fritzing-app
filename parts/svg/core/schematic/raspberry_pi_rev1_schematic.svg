@@ -1,910 +1,365 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<!DOCTYPE svg [
-	<!ENTITY ns_extend "http://ns.adobe.com/Extensibility/1.0/">
-	<!ENTITY ns_ai "http://ns.adobe.com/AdobeIllustrator/10.0/">
-	<!ENTITY ns_graphs "http://ns.adobe.com/Graphs/1.0/">
-	<!ENTITY ns_vars "http://ns.adobe.com/Variables/1.0/">
-	<!ENTITY ns_imrep "http://ns.adobe.com/ImageReplacement/1.0/">
-	<!ENTITY ns_sfw "http://ns.adobe.com/SaveForWeb/1.0/">
-	<!ENTITY ns_custom "http://ns.adobe.com/GenericCustomNamespace/1.0/">
-	<!ENTITY ns_adobe_xpath "http://ns.adobe.com/XPath/1.0/">
-]>
-<svg version="1.2" baseProfile="tiny"
-	 id="_x30_" xmlns:x="&ns_extend;" xmlns:i="&ns_ai;" xmlns:graph="&ns_graphs;" xmlns:xml="http://www.w3.org/XML/1998/namespace"
+<svg version="1.2" baseProfile="tiny" id="_x30_" xmlns:xml="http://www.w3.org/XML/1998/namespace"
 	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="273.6px"
 	 height="397.594px" viewBox="0 0 273.6 397.594" xml:space="preserve">
-<switch>
-	<foreignObject requiredExtensions="&ns_ai;" x="0" y="0" width="1" height="1">
-		<i:pgfRef  xlink:href="#adobe_illustrator_pgf">
-		</i:pgfRef>
-	</foreignObject>
-	<g i:extraneous="self">
-		<desc  oldid="0.0" id="0.0">
-			<referenceFile  oldid="0.0.0" id="0.0.0">controller_raspberry_pi_schematic.svg</referenceFile>
-		</desc>
-		<g id="_x30_.1" transform="translate(-237.1692,55.2746)">
-			<g id="_x30_.1.0">
-				<g id="layer1">
-					<g id="_x30_.1.0.0.0_1_" transform="matrix(1.25,0,0,1.25,237.10357,-55.273538)">
-						<g id="_x30_.1.0.0.0.0">
-							<g id="schematic">
-								<g id="schematic_1_">
-									
-										<rect id="_x30_.1.0.0.0" x="18.02" y="18.232" fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" width="182.945" height="281.875"/>
-									
-										<line id="_x30_.1.0.0.1" fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" x1="1.013" y1="52.248" x2="17.06" y2="52.248"/>
-									<rect id="connector43pin" x="0.052" y="51.288" fill="none" width="17.008" height="1.92"/>
-									<rect id="connector43terminal" x="0.052" y="51.288" fill="none" width="1.92" height="1.92"/>
-									<g id="_x30_.1.0.0.0.0.0.0.4" transform="matrix(0.8 0 0 0.8 22.2445 54.1683)">
-										<g id="_x30_.1.0.0.0.0.0.0.4.0">
-											
-												<text id="label43" transform="matrix(1 0 0 1 1.525879e-005 6.713867e-004)" font-family="'DroidSans'" font-size="9.936">MOSI</text>
-										</g>
-									</g>
-									
-										<line id="_x30_.1.0.0.5" fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" x1="1.013" y1="69.256" x2="17.06" y2="69.256"/>
-									<rect id="connector20pin" x="0.052" y="68.295" fill="none" width="17.008" height="1.92"/>
-									<rect id="connector20terminal" x="2.027" y="69.253" fill="none" width="0.034" height="0.004"/>
-									<rect id="connector49terminal" x="0.052" y="68.295" fill="none" width="1.92" height="1.92"/>
-									<g id="_x30_.1.0.0.0.0.0.0.9" transform="matrix(0.8 0 0 0.8 22.2445 71.1761)">
-										<g id="_x30_.1.0.0.0.0.0.0.9.0">
-											
-												<text id="label49" transform="matrix(1 0 0 1 4.577637e-005 -3.356934e-004)" font-family="'DroidSans'" font-size="9.936">MISO</text>
-										</g>
-									</g>
-									
-										<line id="_x30_.1.0.0.9" fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" x1="1.013" y1="86.263" x2="17.06" y2="86.263"/>
-									<rect id="connector22pin" x="0.052" y="85.303" fill="none" width="17.008" height="1.92"/>
-									<rect id="connector22terminal" x="2.027" y="86.261" fill="none" width="0.034" height="0.004"/>
-									<rect id="connector58terminal" x="0.052" y="85.303" fill="none" width="1.92" height="1.92"/>
-									<g id="_x30_.1.0.0.0.0.0.0.14" transform="matrix(0.8 0 0 0.8 22.2445 88.1839)">
-										<g id="_x30_.1.0.0.0.0.0.0.14.0">
-											
-												<text id="label58" transform="matrix(1 0 0 1 7.629395e-005 -3.662109e-004)" font-family="'DroidSans'" font-size="9.936">SCLK</text>
-										</g>
-									</g>
-									
-										<line id="_x30_.1.0.0.13" fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" x1="1.013" y1="103.272" x2="17.06" y2="103.272"/>
-									<rect id="connector23pin" x="0.052" y="102.312" fill="none" width="17.008" height="1.92"/>
-									<rect id="connector23terminal" x="2.027" y="103.27" fill="none" width="0.034" height="0.004"/>
-									<rect id="connector0terminal_1_" x="0.052" y="102.312" fill="none" width="1.92" height="1.92"/>
-									<g id="_x30_.1.0.0.0.0.0.0.19" transform="matrix(0.8 0 0 0.8 22.2445 105.1925)">
-										<g id="_x30_.1.0.0.0.0.0.0.19.0">
-											
-												<text id="label0" transform="matrix(1 0 0 1 7.629395e-005 5.493164e-004)" font-family="'DroidSans'" font-size="9.936">CEO_N</text>
-										</g>
-									</g>
-									
-										<line id="_x30_.1.0.0.17" fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" x1="1.013" y1="120.28" x2="17.06" y2="120.28"/>
-									<rect id="connector25pin" x="0.052" y="119.319" fill="none" width="17.008" height="1.92"/>
-									<rect id="connector25terminal" x="2.027" y="120.277" fill="none" width="0.034" height="0.005"/>
-									<rect id="connector1terminal_1_" x="0.052" y="119.319" fill="none" width="1.92" height="1.92"/>
-									<g id="_x30_.1.0.0.0.0.0.0.24" transform="matrix(0.8 0 0 0.8 22.2445 122.1996)">
-										<g id="_x30_.1.0.0.0.0.0.0.24.0">
-											
-												<text id="label1" transform="matrix(1 0 0 1 7.629395e-005 4.577637e-004)" font-family="'DroidSans'" font-size="9.936">CE1_N</text>
-										</g>
-									</g>
-									
-										<line id="_x30_.1.0.0.21" fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" x1="200.965" y1="52.248" x2="217.973" y2="52.248"/>
-									<rect id="connector6pin" x="201.925" y="170.317" fill="none" width="17.008" height="1.92"/>
-									<rect id="connector6terminal" x="217.121" y="171.275" fill="none" width="0.034" height="0.004"/>
-									<rect id="connector61terminal" x="217.012" y="170.317" fill="none" width="1.92" height="1.92"/>
-									<g id="label61">
-										<g id="_x30_.1.0.0.24.0">
-											<g id="_x30_.1.0.0.24.0.0">
-												<g id="_x30_.1.0.0.0.0.0.0.35.0.0.0" transform="matrix(0.8 0 0 0.8 177.3238 225.3152)">
-													<g id="_x30_.1.0.0.0.0.0.0.35.0.0.0.0">
-														
-															<text id="_x30_.1.0.0.24.0.0.0" transform="matrix(1 0 0 1 -0.2431 4.882813e-004)" font-family="'DroidSans'" font-size="9.936">RXD</text>
-													</g>
-												</g>
-											</g>
-											<g id="_x30_.1.0.0.24.0.1">
-												<g id="_x30_.1.0.0.0.0.0.0.35.0.1.0" transform="matrix(0.8 0 0 0.8 177.3238 208.0355)">
-													<g id="_x30_.1.0.0.0.0.0.0.35.0.1.0.0">
-														
-															<text id="_x30_.1.0.0.24.0.1.0" transform="matrix(1 0 0 1 -0.2431 4.882813e-004)" font-family="'DroidSans'" font-size="9.936">TXD</text>
-													</g>
-												</g>
-											</g>
-											<g id="_x30_.1.0.0.24.0.2">
-												<g id="_x30_.1.0.0.0.0.0.0.35.0.2.0" transform="matrix(0.8 0 0 0.8 178.0723 276.7894)">
-													<g id="_x30_.1.0.0.0.0.0.0.35.0.2.0.0">
-														<text transform="matrix(1 0 0 1 -28.3163 5.187988e-004)" font-family="'DroidSans'" font-size="9.936">G</text>
-														<text transform="matrix(1 0 0 1 -21.4609 5.187988e-004)" font-family="'DroidSans'" font-size="9.936">P</text>
-														<text transform="matrix(1 0 0 1 -15.7363 5.187988e-004)" font-family="'DroidSans'" font-size="9.936">I</text>
-														<text transform="matrix(1 0 0 1 -12.4667 5.187988e-004)" font-family="'DroidSans'" font-size="9.936">O</text>
-														<text transform="matrix(1 0 0 1 -5.0917 5.187988e-004)" font-family="'DroidSans'" font-size="9.936">0</text>
-														<text transform="matrix(1 0 0 1 0.3809 5.187988e-004)" font-family="'DroidSans'" font-size="9.936">/</text>
-														<text transform="matrix(1 0 0 1 4.087 5.187988e-004)" font-family="'DroidSans'" font-size="9.936">S</text>
-														<text transform="matrix(1 0 0 1 9.2442 5.187988e-004)" font-family="'DroidSans'" font-size="9.936">D</text>
-														<text transform="matrix(1 0 0 1 15.9444 5.187988e-004)" font-family="'DroidSans'" font-size="9.936">A</text>
-													</g>
-												</g>
-											</g>
-											<g id="_x30_.1.0.0.24.0.3">
-												<g id="_x30_.1.0.0.0.0.0.0.35.0.3.0" transform="matrix(0.8 0 0 0.8 179.566 259.5097)">
-													<g id="_x30_.1.0.0.0.0.0.0.35.0.3.0.0">
-														<text transform="matrix(1 0 0 1 -28.3123 5.493164e-004)" font-family="'DroidSans'" font-size="9.936">G</text>
-														<text transform="matrix(1 0 0 1 -21.4569 5.493164e-004)" font-family="'DroidSans'" font-size="9.936">P</text>
-														<text transform="matrix(1 0 0 1 -15.7323 5.493164e-004)" font-family="'DroidSans'" font-size="9.936">I</text>
-														<text transform="matrix(1 0 0 1 -12.4627 5.493164e-004)" font-family="'DroidSans'" font-size="9.936">O</text>
-														<text transform="matrix(1 0 0 1 -5.0877 5.493164e-004)" font-family="'DroidSans'" font-size="9.936">1</text>
-														<text transform="matrix(1 0 0 1 0.3849 5.493164e-004)" font-family="'DroidSans'" font-size="9.936">/</text>
-														<text transform="matrix(1 0 0 1 4.091 5.493164e-004)" font-family="'DroidSans'" font-size="9.936">S</text>
-														<text transform="matrix(1 0 0 1 9.2482 5.493164e-004)" font-family="'DroidSans'" font-size="9.936">C</text>
-														<text transform="matrix(1 0 0 1 15.2404 5.493164e-004)" font-family="'DroidSans'" font-size="9.936">L</text>
-													</g>
-												</g>
-											</g>
-											<g id="_x30_.1.0.0.24.0.4">
-												<g id="_x30_.1.0.0.0.0.0.0.35.0.4.0" transform="matrix(0.8 0 0 0.8 173.3238 174.3261)">
-													<g id="_x30_.1.0.0.0.0.0.0.35.0.4.0.0">
-														<text transform="matrix(1 0 0 1 -6.2459 -21.2582)" font-family="'DroidSans'" font-size="9.936">G</text>
-														<text transform="matrix(1 0 0 1 0.6096 -21.2582)" font-family="'DroidSans'" font-size="9.936">P</text>
-														<text transform="matrix(1 0 0 1 6.3342 -21.2582)" font-family="'DroidSans'" font-size="9.936">I</text>
-														<text transform="matrix(1 0 0 1 9.6037 -21.2582)" font-family="'DroidSans'" font-size="9.936">O</text>
-														<text transform="matrix(1 0 0 1 16.9787 -21.2582)" font-family="'DroidSans'" font-size="9.936">1</text>
-														<text transform="matrix(1 0 0 1 22.4514 -21.2582)" font-family="'DroidSans'" font-size="9.936">7</text>
-													</g>
-												</g>
-											</g>
-										</g>
-										<g id="_x30_.1.0.0.24.1">
-											<g id="_x30_.1.0.0.0.0.0.0.35.1.0" transform="matrix(0.8 0 0 0.8 173.3238 157.0464)">
-												<g id="_x30_.1.0.0.0.0.0.0.35.1.0.0">
-													<text transform="matrix(1 0 0 1 -6.2459 -21.2582)" font-family="'DroidSans'" font-size="9.936">G</text>
-													<text transform="matrix(1 0 0 1 0.6096 -21.2582)" font-family="'DroidSans'" font-size="9.936">P</text>
-													<text transform="matrix(1 0 0 1 6.3342 -21.2582)" font-family="'DroidSans'" font-size="9.936">I</text>
-													<text transform="matrix(1 0 0 1 9.6037 -21.2582)" font-family="'DroidSans'" font-size="9.936">O</text>
-													<text transform="matrix(1 0 0 1 16.9787 -21.2582)" font-family="'DroidSans'" font-size="9.936">1</text>
-													<text transform="matrix(1 0 0 1 22.4514 -21.2582)" font-family="'DroidSans'" font-size="9.936">8</text>
-												</g>
-											</g>
-										</g>
-										<g id="_x30_.1.0.0.24.2">
-											<g id="_x30_.1.0.0.0.0.0.0.35.2.0" transform="matrix(0.8 0 0 0.8 173.3238 139.7667)">
-												<g id="_x30_.1.0.0.0.0.0.0.35.2.0.0">
-													<text transform="matrix(1 0 0 1 -6.2458 -21.2582)" font-family="'DroidSans'" font-size="9.936">G</text>
-													<text transform="matrix(1 0 0 1 0.6096 -21.2582)" font-family="'DroidSans'" font-size="9.936">P</text>
-													<text transform="matrix(1 0 0 1 6.3342 -21.2582)" font-family="'DroidSans'" font-size="9.936">I</text>
-													<text transform="matrix(1 0 0 1 9.6038 -21.2582)" font-family="'DroidSans'" font-size="9.936">O</text>
-													<text transform="matrix(1 0 0 1 16.9788 -21.2582)" font-family="'DroidSans'" font-size="9.936">2</text>
-													<text transform="matrix(1 0 0 1 22.4514 -21.2582)" font-family="'DroidSans'" font-size="9.936">1</text>
-												</g>
-											</g>
-										</g>
-										<g id="_x30_.1.0.0.24.3">
-											<g id="_x30_.1.0.0.0.0.0.0.35.3.0" transform="matrix(0.8 0 0 0.8 173.3238 123.287)">
-												<g id="_x30_.1.0.0.0.0.0.0.35.3.0.0">
-													<text transform="matrix(1 0 0 1 -6.2458 -21.2582)" font-family="'DroidSans'" font-size="9.936">G</text>
-													<text transform="matrix(1 0 0 1 0.6097 -21.2582)" font-family="'DroidSans'" font-size="9.936">P</text>
-													<text transform="matrix(1 0 0 1 6.3343 -21.2582)" font-family="'DroidSans'" font-size="9.936">I</text>
-													<text transform="matrix(1 0 0 1 9.6038 -21.2582)" font-family="'DroidSans'" font-size="9.936">O</text>
-													<text transform="matrix(1 0 0 1 16.9788 -21.2582)" font-family="'DroidSans'" font-size="9.936">2</text>
-													<text transform="matrix(1 0 0 1 22.4515 -21.2582)" font-family="'DroidSans'" font-size="9.936">2</text>
-												</g>
-											</g>
-										</g>
-										<g id="_x30_.1.0.0.24.4">
-											<g id="_x30_.1.0.0.0.0.0.0.35.4.0" transform="matrix(0.8 0 0 0.8 173.3238 106.8073)">
-												<g id="_x30_.1.0.0.0.0.0.0.35.4.0.0">
-													<text transform="matrix(1 0 0 1 -6.2458 -21.2582)" font-family="'DroidSans'" font-size="9.936">G</text>
-													<text transform="matrix(1 0 0 1 0.6097 -21.2582)" font-family="'DroidSans'" font-size="9.936">P</text>
-													<text transform="matrix(1 0 0 1 6.3343 -21.2582)" font-family="'DroidSans'" font-size="9.936">I</text>
-													<text transform="matrix(1 0 0 1 9.6038 -21.2582)" font-family="'DroidSans'" font-size="9.936">O</text>
-													<text transform="matrix(1 0 0 1 16.9788 -21.2582)" font-family="'DroidSans'" font-size="9.936">2</text>
-													<text transform="matrix(1 0 0 1 22.4515 -21.2582)" font-family="'DroidSans'" font-size="9.936">3</text>
-												</g>
-											</g>
-										</g>
-										<g id="_x30_.1.0.0.24.5">
-											<g id="_x30_.1.0.0.0.0.0.0.35.5.0" transform="matrix(0.8 0 0 0.8 173.3238 89.5277)">
-												<g id="_x30_.1.0.0.0.0.0.0.35.5.0.0">
-													<text transform="matrix(1 0 0 1 -6.2458 -21.2583)" font-family="'DroidSans'" font-size="9.936">G</text>
-													<text transform="matrix(1 0 0 1 0.6097 -21.2583)" font-family="'DroidSans'" font-size="9.936">P</text>
-													<text transform="matrix(1 0 0 1 6.3343 -21.2583)" font-family="'DroidSans'" font-size="9.936">I</text>
-													<text transform="matrix(1 0 0 1 9.6038 -21.2583)" font-family="'DroidSans'" font-size="9.936">O</text>
-													<text transform="matrix(1 0 0 1 16.9788 -21.2583)" font-family="'DroidSans'" font-size="9.936">2</text>
-													<text transform="matrix(1 0 0 1 22.4515 -21.2583)" font-family="'DroidSans'" font-size="9.936">4</text>
-												</g>
-											</g>
-										</g>
-										<g id="_x30_.1.0.0.24.6">
-											<g id="_x30_.1.0.0.0.0.0.0.35.6.0" transform="matrix(0.8 0 0 0.8 173.3238 72.248)">
-												<g id="_x30_.1.0.0.0.0.0.0.35.6.0.0">
-													<text transform="matrix(1 0 0 1 -6.2458 -21.2583)" font-family="'DroidSans'" font-size="9.936">G</text>
-													<text transform="matrix(1 0 0 1 0.6097 -21.2583)" font-family="'DroidSans'" font-size="9.936">P</text>
-													<text transform="matrix(1 0 0 1 6.3343 -21.2583)" font-family="'DroidSans'" font-size="9.936">I</text>
-													<text transform="matrix(1 0 0 1 9.6038 -21.2583)" font-family="'DroidSans'" font-size="9.936">O</text>
-													<text transform="matrix(1 0 0 1 16.9788 -21.2583)" font-family="'DroidSans'" font-size="9.936">2</text>
-													<text transform="matrix(1 0 0 1 22.4515 -21.2583)" font-family="'DroidSans'" font-size="9.936">5</text>
-												</g>
-											</g>
-										</g>
-										<g id="_x30_.1.0.0.24.7">
-											<g id="_x30_.1.0.0.0.0.0.0.35.7.0" transform="matrix(0.8 0 0 0.8 173.3238 54.9683)">
-												<g id="_x30_.1.0.0.0.0.0.0.35.7.0.0">
-													<text transform="matrix(1 0 0 1 -0.7741 148.7866)" font-family="'DroidSans'" font-size="9.936">G</text>
-													<text transform="matrix(1 0 0 1 6.0814 148.7866)" font-family="'DroidSans'" font-size="9.936">P</text>
-													<text transform="matrix(1 0 0 1 11.806 148.7866)" font-family="'DroidSans'" font-size="9.936">I</text>
-													<text transform="matrix(1 0 0 1 15.0765 148.7866)" font-family="'DroidSans'" font-size="9.936">O</text>
-													<text transform="matrix(1 0 0 1 22.4505 148.7866)" font-family="'DroidSans'" font-size="9.936">4</text>
-												</g>
-											</g>
-										</g>
-									</g>
-									
-										<line id="_x30_.1.0.0.25" fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" x1="200.965" y1="69.256" x2="217.973" y2="69.256"/>
-									<rect id="connector21pin" x="201.926" y="51.289" fill="none" width="17.008" height="1.92"/>
-									<rect id="connector21terminal" x="217.122" y="52.246" fill="none" width="0.034" height="0.004"/>
-									<rect id="connector62terminal" x="217.013" y="51.289" fill="none" width="1.92" height="1.92"/>
-									
-										<line id="_x30_.1.0.0.28" fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" x1="200.965" y1="86.263" x2="217.973" y2="86.263"/>
-									<rect id="connector17pin" x="201.926" y="68.296" fill="none" width="17.008" height="1.92"/>
-									<rect id="connector17terminal" x="217.122" y="69.254" fill="none" width="0.034" height="0.004"/>
-									<rect id="connector63terminal" x="217.013" y="68.296" fill="none" width="1.92" height="1.92"/>
-									
-										<line id="_x30_.1.0.0.31" fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" x1="200.965" y1="103.272" x2="217.973" y2="103.272"/>
-									<rect id="connector15pin" x="201.926" y="85.305" fill="none" width="17.008" height="1.92"/>
-									<rect id="connector15terminal" x="217.122" y="86.264" fill="none" width="0.034" height="0.004"/>
-									<rect id="connector64terminal" x="217.013" y="85.305" fill="none" width="1.92" height="1.92"/>
-									
-										<line id="_x30_.1.0.0.34" fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" x1="200.965" y1="120.28" x2="217.973" y2="120.28"/>
-									<rect id="connector14pin" x="201.926" y="102.314" fill="none" width="17.008" height="1.92"/>
-									<rect id="connector14terminal" x="217.122" y="103.271" fill="none" width="0.034" height="0.004"/>
-									<rect id="connector65terminal" x="217.013" y="102.314" fill="none" width="1.92" height="1.92"/>
-									
-										<line id="_x30_.1.0.0.37" fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" x1="200.965" y1="137.288" x2="217.973" y2="137.288"/>
-									<rect id="connector12pin" x="201.926" y="119.32" fill="none" width="17.008" height="1.92"/>
-									<rect id="connector12terminal" x="217.122" y="120.278" fill="none" width="0.034" height="0.004"/>
-									<rect id="connector66terminal" x="217.013" y="119.32" fill="none" width="1.92" height="1.92"/>
-									
-										<line id="_x30_.1.0.0.40" fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" x1="200.965" y1="154.295" x2="217.973" y2="154.295"/>
-									<rect id="connector11pin" x="201.926" y="136.328" fill="none" width="17.008" height="1.92"/>
-									<rect id="connector11terminal" x="217.122" y="137.286" fill="none" width="0.034" height="0.004"/>
-									<rect id="connector67terminal" x="217.013" y="136.328" fill="none" width="1.92" height="1.92"/>
-									
-										<line id="_x30_.1.0.0.43" fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" x1="200.965" y1="171.302" x2="217.973" y2="171.302"/>
-									<rect id="connector10pin" x="201.924" y="153.337" fill="none" width="17.008" height="1.92"/>
-									<rect id="connector10terminal" x="217.119" y="154.295" fill="none" width="0.034" height="0.005"/>
-									<rect id="connector68terminal" x="217.011" y="153.337" fill="none" width="1.92" height="1.92"/>
-									
-										<line id="_x30_.1.0.0.46" fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" x1="200.965" y1="205.319" x2="217.973" y2="205.319"/>
-									<rect id="connector7pin" x="201.926" y="204.359" fill="none" width="17.008" height="1.92"/>
-									<rect id="connector7terminal" x="217.121" y="205.317" fill="none" width="0.034" height="0.005"/>
-									<rect id="connector52terminal" x="217.012" y="204.359" fill="none" width="1.92" height="1.92"/>
-									
-										<line id="_x30_.1.0.0.49" fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" x1="200.965" y1="222.327" x2="217.973" y2="222.327"/>
-									<rect id="connector9pin" x="201.926" y="221.367" fill="none" width="17.008" height="1.92"/>
-									<rect id="connector9terminal" x="217.121" y="222.325" fill="none" width="0.034" height="0.005"/>
-									<rect id="connector53terminal" x="217.012" y="221.367" fill="none" width="1.92" height="1.92"/>
-									
-										<line id="_x30_.1.0.0.52" fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" x1="200.965" y1="256.343" x2="217.973" y2="256.343"/>
-									<rect id="connector39pin" x="201.926" y="255.382" fill="none" width="17.008" height="1.92"/>
-									<rect id="connector39terminal" x="217.012" y="255.382" fill="none" width="1.92" height="1.92"/>
-									
-										<line id="_x30_.1.0.0.55" fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" x1="200.965" y1="273.351" x2="217.973" y2="273.351"/>
-									<rect id="connector41pin" x="201.926" y="272.392" fill="none" width="17.008" height="1.919"/>
-									<rect id="connector41terminal" x="217.012" y="272.392" fill="none" width="1.92" height="1.919"/>
-									<g id="_x30_.1.0.0.58">
-										<g id="_x30_.1.0.0.0.0.0.0.79.0" transform="matrix(0.8 0 0 0.8 72.6812 52.248)">
-											<g id="_x30_.1.0.0.0.0.0.0.79.0.0">
-												<text id="label" transform="matrix(1 0 0 1 -1.220703e-004 4.272461e-004)" font-family="'DroidSans'" font-size="18">RaspberryPi</text>
-											</g>
-										</g>
-										<g id="_x30_.1.0.0.0.0.0.0.79.1" transform="matrix(0.8 0 0 0.8 84.9586 69.2566)">
-											<g id="_x30_.1.0.0.0.0.0.0.79.1.0">
-												<text id="label_1_" transform="matrix(1 0 0 1 13.8636 3.662109e-004)" font-family="'DroidSans'" font-size="18">Rev1</text>
-											</g>
-										</g>
-										<g id="_x30_.1.0.0.58.2">
-											
-												<line id="_x30_.1.0.0.58.2.0" fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" x1="94.733" y1="1.224" x2="94.733" y2="17.272"/>
-											<rect id="connector0pin" x="93.773" y="0.264" fill="none" width="1.92" height="17.008"/>
-											<rect id="connector0terminal" x="94.73" y="1.408" fill="none" width="0.004" height="0.034"/>
-											<polygon id="connector86terminal" fill="none" points="93.773,0.264 95.692,0.264 95.692,0.264 											"/>
-											<g id="_x30_.1.0.0.0.0.0.0.79.2.4" transform="matrix(0.8 0 0 0.8 88.0976 27.3527)">
-												<g id="_x30_.1.0.0.0.0.0.0.79.2.4.0">
-													
-														<text id="label86" transform="matrix(1 0 0 1 -6.103516e-005 3.051758e-004)" font-family="'DroidSans'" font-size="9.936">3V3</text>
-												</g>
-											</g>
-											
-												<line id="_x30_.1.0.0.58.2.4" fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" x1="128.748" y1="1.224" x2="128.748" y2="17.272"/>
-											<rect id="connector40pin" x="127.788" y="0.264" fill="none" width="1.92" height="17.008"/>
-											<polygon id="connector40terminal" fill="none" points="127.788,0.264 129.708,0.264 129.708,0.264 											"/>
-											<g id="_x30_.1.0.0.0.0.0.0.79.2.8" transform="matrix(0.8 0 0 0.8 124.3019 27.3527)">
-												<g id="_x30_.1.0.0.0.0.0.0.79.2.8.0">
-													
-														<text id="label40" transform="matrix(1 0 0 1 4.577637e-004 2.441406e-004)" font-family="'DroidSans'" font-size="9.936">5V</text>
-												</g>
-											</g>
-											<rect id="connector46pin" x="127.788" y="0.264" fill="none" width="1.92" height="17.008"/>
-											<polygon id="connector46terminal" fill="none" points="127.788,0.264 129.709,0.264 129.709,0.264 											"/>
-											<rect id="connector84pin" x="127.788" y="0.264" fill="none" width="1.92" height="17.008"/>
-											<polygon id="connector84terminal" fill="none" points="127.788,0.264 129.709,0.264 129.709,0.264 											"/>
-											<rect id="connector1pin" x="127.788" y="0.264" fill="none" width="1.92" height="17.008"/>
-											<rect id="connector1terminal" x="128.746" y="1.408" fill="none" width="0.005" height="0.034"/>
-											<polygon id="connector87terminal" fill="none" points="127.788,0.264 129.709,0.264 129.709,0.264 											"/>
-											<rect id="connector30pin" x="93.774" y="0.264" fill="none" width="1.92" height="17.008"/>
-											<rect id="connector66terminal_1_" x="93.774" y="0.265" fill="none" width="1.92" height="1.92"/>
-										</g>
-										<rect id="connector27pin" x="127.791" y="0.264" fill="none" width="1.92" height="17.008"/>
-										<rect id="connector63terminal_1_" x="127.791" y="0.265" fill="none" width="1.92" height="1.92"/>
-									</g>
-									<g id="_x30_.1.0.0.59">
-										
-											<line id="_x30_.1.0.0.59.0" fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" x1="109.494" y1="301.067" x2="109.494" y2="317.115"/>
-										<rect id="connector44pin" x="108.532" y="301.067" fill="none" width="1.92" height="17.008"/>
-										<polygon id="connector44terminal" fill="none" points="108.532,318.075 110.452,318.075 110.452,318.075 										"/>
-										<g id="_x30_.1.0.0.0.0.0.0.80.3" transform="matrix(0.8 0 0 0.8 101.1344 296.4589)">
-											<g id="_x30_.1.0.0.0.0.0.0.80.3.0">
-												
-													<text id="label44" transform="matrix(1 0 0 1 3.967285e-004 -7.019043e-004)" font-family="'DroidSans'" font-size="9.936">GND</text>
-											</g>
-										</g>
-										<rect id="connector88pin" x="108.532" y="301.067" fill="none" width="1.92" height="17.008"/>
-										<polygon id="connector88terminal" fill="none" points="108.532,318.075 110.452,318.075 110.452,318.075 										"/>
-										<rect id="connector89pin" x="108.532" y="301.067" fill="none" width="1.92" height="17.008"/>
-										<polygon id="connector89terminal" fill="none" points="108.532,318.075 110.452,318.075 110.452,318.075 										"/>
-										<rect id="connector50pin" x="108.532" y="301.067" fill="none" width="1.92" height="17.008"/>
-										<polygon id="connector50terminal" fill="none" points="108.532,318.075 110.452,318.075 110.452,318.075 										"/>
-										<rect id="connector5pin" x="108.532" y="301.067" fill="none" width="1.92" height="17.008"/>
-										<rect id="connector5terminal" x="109.491" y="316.347" fill="none" width="0.004" height="0.034"/>
-										<polygon id="connector57terminal" fill="none" points="108.532,318.075 110.452,318.075 110.452,318.075 										"/>
-										<rect id="connector26pin" x="108.53" y="301.067" fill="none" width="1.92" height="17.008"/>
-										<rect id="connector64terminal_1_" x="108.53" y="316.154" fill="none" width="1.92" height="1.92"/>
-										<rect id="connector28pin" x="108.534" y="301.067" fill="none" width="1.92" height="17.008"/>
-										<rect id="connector65terminal_1_" x="108.534" y="316.154" fill="none" width="1.92" height="1.92"/>
-										<rect id="connector29pin" x="108.534" y="301.067" fill="none" width="1.92" height="17.008"/>
-										<rect id="connector67terminal_1_" x="108.534" y="316.154" fill="none" width="1.92" height="1.92"/>
-										<rect id="connector31pin" x="108.53" y="301.067" fill="none" width="1.92" height="17.008"/>
-										<rect id="connector68terminal_1_" x="108.53" y="316.154" fill="none" width="1.92" height="1.92"/>
-									</g>
-									<rect id="connector18pin" x="0.052" y="51.288" fill="none" width="17.008" height="1.92"/>
-									<rect id="connector18terminal" x="2.027" y="52.246" fill="none" width="0.034" height="0.004"/>
-									<rect id="connector85terminal" x="0.052" y="51.288" fill="none" width="1.92" height="1.92"/>
-									<rect id="connector4pin" x="201.926" y="255.382" fill="none" width="17.008" height="1.92"/>
-									<rect id="connector4terminal" x="217.284" y="256.34" fill="none" width="0.034" height="0.003"/>
-									<rect id="connector55terminal" x="217.012" y="255.382" fill="none" width="1.92" height="1.92"/>
-									<rect id="connector2pin" x="201.926" y="272.392" fill="none" width="17.008" height="1.919"/>
-									<rect id="connector2terminal" x="217.284" y="273.35" fill="none" width="0.034" height="0.003"/>
-									<rect id="connector56terminal" x="217.012" y="272.392" fill="none" width="1.92" height="1.919"/>
+<desc  oldid="0.0" id="0.0">
+	<referenceFile  oldid="0.0.0" id="0.0.0">controller_raspberry_pi_schematic.svg</referenceFile>
+</desc>
+<g id="_x30_.1" transform="translate(-237.1692,55.2746)">
+	<g id="_x30_.1.0">
+		<g id="layer1">
+			<g id="_x30_.1.0.0.0_1_" transform="matrix(1.25,0,0,1.25,237.10357,-55.273538)">
+				<g id="_x30_.1.0.0.0.0">
+					<g id="schematic">
+						<g id="schematic_1_">
+							
+								<rect id="_x30_.1.0.0.0" x="18.02" y="18.232" fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" width="182.945" height="281.875"/>
+							
+								<line id="_x30_.1.0.0.1" fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" x1="1.013" y1="52.248" x2="17.06" y2="52.248"/>
+							<rect id="connector43pin" x="0.052" y="51.288" fill="none" width="17.008" height="1.92"/>
+							<rect id="connector43terminal" x="0.052" y="51.288" fill="none" width="1.92" height="1.92"/>
+							<g id="_x30_.1.0.0.0.0.0.0.4" transform="matrix(0.8 0 0 0.8 22.2445 54.1683)">
+								<g id="_x30_.1.0.0.0.0.0.0.4.0">
+									<text id="label43" transform="matrix(1 0 0 1 1.525879e-005 6.713867e-004)" font-family="'DroidSans'" font-size="9.936">MOSI</text>
 								</g>
 							</g>
+							
+								<line id="_x30_.1.0.0.5" fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" x1="1.013" y1="69.256" x2="17.06" y2="69.256"/>
+							<rect id="connector20pin" x="0.052" y="68.295" fill="none" width="17.008" height="1.92"/>
+							<rect id="connector20terminal" x="2.027" y="69.253" fill="none" width="0.034" height="0.004"/>
+							<rect id="connector49terminal" x="0.052" y="68.295" fill="none" width="1.92" height="1.92"/>
+							<g id="_x30_.1.0.0.0.0.0.0.9" transform="matrix(0.8 0 0 0.8 22.2445 71.1761)">
+								<g id="_x30_.1.0.0.0.0.0.0.9.0">
+									
+										<text id="label49" transform="matrix(1 0 0 1 4.577637e-005 -3.356934e-004)" font-family="'DroidSans'" font-size="9.936">MISO</text>
+								</g>
+							</g>
+							
+								<line id="_x30_.1.0.0.9" fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" x1="1.013" y1="86.263" x2="17.06" y2="86.263"/>
+							<rect id="connector22pin" x="0.052" y="85.303" fill="none" width="17.008" height="1.92"/>
+							<rect id="connector22terminal" x="2.027" y="86.261" fill="none" width="0.034" height="0.004"/>
+							<rect id="connector58terminal" x="0.052" y="85.303" fill="none" width="1.92" height="1.92"/>
+							<g id="_x30_.1.0.0.0.0.0.0.14" transform="matrix(0.8 0 0 0.8 22.2445 88.1839)">
+								<g id="_x30_.1.0.0.0.0.0.0.14.0">
+									
+										<text id="label58" transform="matrix(1 0 0 1 7.629395e-005 -3.662109e-004)" font-family="'DroidSans'" font-size="9.936">SCLK</text>
+								</g>
+							</g>
+							
+								<line id="_x30_.1.0.0.13" fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" x1="1.013" y1="103.272" x2="17.06" y2="103.272"/>
+							<rect id="connector23pin" x="0.052" y="102.312" fill="none" width="17.008" height="1.92"/>
+							<rect id="connector23terminal" x="2.027" y="103.27" fill="none" width="0.034" height="0.004"/>
+							<rect id="connector0terminal_1_" x="0.052" y="102.312" fill="none" width="1.92" height="1.92"/>
+							<g id="_x30_.1.0.0.0.0.0.0.19" transform="matrix(0.8 0 0 0.8 22.2445 105.1925)">
+								<g id="_x30_.1.0.0.0.0.0.0.19.0">
+									<text id="label0" transform="matrix(1 0 0 1 7.629395e-005 5.493164e-004)" font-family="'DroidSans'" font-size="9.936">CEO_N</text>
+								</g>
+							</g>
+							
+								<line id="_x30_.1.0.0.17" fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" x1="1.013" y1="120.28" x2="17.06" y2="120.28"/>
+							<rect id="connector25pin" x="0.052" y="119.319" fill="none" width="17.008" height="1.92"/>
+							<rect id="connector25terminal" x="2.027" y="120.277" fill="none" width="0.034" height="0.005"/>
+							<rect id="connector1terminal_1_" x="0.052" y="119.319" fill="none" width="1.92" height="1.92"/>
+							<g id="_x30_.1.0.0.0.0.0.0.24" transform="matrix(0.8 0 0 0.8 22.2445 122.1996)">
+								<g id="_x30_.1.0.0.0.0.0.0.24.0">
+									<text id="label1" transform="matrix(1 0 0 1 7.629395e-005 4.577637e-004)" font-family="'DroidSans'" font-size="9.936">CE1_N</text>
+								</g>
+							</g>
+							
+								<line id="_x30_.1.0.0.21" fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" x1="200.965" y1="52.248" x2="217.973" y2="52.248"/>
+							<rect id="connector6pin" x="201.925" y="170.317" fill="none" width="17.008" height="1.92"/>
+							<rect id="connector6terminal" x="217.121" y="171.275" fill="none" width="0.034" height="0.004"/>
+							<rect id="connector61terminal" x="217.012" y="170.317" fill="none" width="1.92" height="1.92"/>
+							<g id="label61">
+								<g id="_x30_.1.0.0.24.0">
+									<g id="_x30_.1.0.0.24.0.0">
+										<g id="_x30_.1.0.0.0.0.0.0.35.0.0.0" transform="matrix(0.8 0 0 0.8 177.3238 225.3152)">
+											<g id="_x30_.1.0.0.0.0.0.0.35.0.0.0.0">
+												
+													<text id="_x30_.1.0.0.24.0.0.0" transform="matrix(1 0 0 1 -0.2431 4.882813e-004)" font-family="'DroidSans'" font-size="9.936">RXD</text>
+											</g>
+										</g>
+									</g>
+									<g id="_x30_.1.0.0.24.0.1">
+										<g id="_x30_.1.0.0.0.0.0.0.35.0.1.0" transform="matrix(0.8 0 0 0.8 177.3238 208.0355)">
+											<g id="_x30_.1.0.0.0.0.0.0.35.0.1.0.0">
+												
+													<text id="_x30_.1.0.0.24.0.1.0" transform="matrix(1 0 0 1 -0.2431 4.882813e-004)" font-family="'DroidSans'" font-size="9.936">TXD</text>
+											</g>
+										</g>
+									</g>
+									<g id="_x30_.1.0.0.24.0.2">
+										<g id="_x30_.1.0.0.0.0.0.0.35.0.2.0" transform="matrix(0.8 0 0 0.8 178.0723 276.7894)">
+											<g id="_x30_.1.0.0.0.0.0.0.35.0.2.0.0">
+												<text transform="matrix(1 0 0 1 -28.3163 5.187988e-004)" font-family="'DroidSans'" font-size="9.936">G</text>
+												<text transform="matrix(1 0 0 1 -21.4609 5.187988e-004)" font-family="'DroidSans'" font-size="9.936">P</text>
+												<text transform="matrix(1 0 0 1 -15.7363 5.187988e-004)" font-family="'DroidSans'" font-size="9.936">I</text>
+												<text transform="matrix(1 0 0 1 -12.4667 5.187988e-004)" font-family="'DroidSans'" font-size="9.936">O</text>
+												<text transform="matrix(1 0 0 1 -5.0917 5.187988e-004)" font-family="'DroidSans'" font-size="9.936">0</text>
+												<text transform="matrix(1 0 0 1 0.3809 5.187988e-004)" font-family="'DroidSans'" font-size="9.936">/</text>
+												<text transform="matrix(1 0 0 1 4.087 5.187988e-004)" font-family="'DroidSans'" font-size="9.936">S</text>
+												<text transform="matrix(1 0 0 1 9.2442 5.187988e-004)" font-family="'DroidSans'" font-size="9.936">D</text>
+												<text transform="matrix(1 0 0 1 15.9444 5.187988e-004)" font-family="'DroidSans'" font-size="9.936">A</text>
+											</g>
+										</g>
+									</g>
+									<g id="_x30_.1.0.0.24.0.3">
+										<g id="_x30_.1.0.0.0.0.0.0.35.0.3.0" transform="matrix(0.8 0 0 0.8 179.566 259.5097)">
+											<g id="_x30_.1.0.0.0.0.0.0.35.0.3.0.0">
+												<text transform="matrix(1 0 0 1 -28.3123 5.493164e-004)" font-family="'DroidSans'" font-size="9.936">G</text>
+												<text transform="matrix(1 0 0 1 -21.4569 5.493164e-004)" font-family="'DroidSans'" font-size="9.936">P</text>
+												<text transform="matrix(1 0 0 1 -15.7323 5.493164e-004)" font-family="'DroidSans'" font-size="9.936">I</text>
+												<text transform="matrix(1 0 0 1 -12.4627 5.493164e-004)" font-family="'DroidSans'" font-size="9.936">O</text>
+												<text transform="matrix(1 0 0 1 -5.0877 5.493164e-004)" font-family="'DroidSans'" font-size="9.936">1</text>
+												<text transform="matrix(1 0 0 1 0.3849 5.493164e-004)" font-family="'DroidSans'" font-size="9.936">/</text>
+												<text transform="matrix(1 0 0 1 4.091 5.493164e-004)" font-family="'DroidSans'" font-size="9.936">S</text>
+												<text transform="matrix(1 0 0 1 9.2482 5.493164e-004)" font-family="'DroidSans'" font-size="9.936">C</text>
+												<text transform="matrix(1 0 0 1 15.2404 5.493164e-004)" font-family="'DroidSans'" font-size="9.936">L</text>
+											</g>
+										</g>
+									</g>
+									<g id="_x30_.1.0.0.24.0.4">
+										<g id="_x30_.1.0.0.0.0.0.0.35.0.4.0" transform="matrix(0.8 0 0 0.8 173.3238 174.3261)">
+											<g id="_x30_.1.0.0.0.0.0.0.35.0.4.0.0">
+												<text transform="matrix(1 0 0 1 -6.2459 -21.2582)" font-family="'DroidSans'" font-size="9.936">G</text>
+												<text transform="matrix(1 0 0 1 0.6096 -21.2582)" font-family="'DroidSans'" font-size="9.936">P</text>
+												<text transform="matrix(1 0 0 1 6.3342 -21.2582)" font-family="'DroidSans'" font-size="9.936">I</text>
+												<text transform="matrix(1 0 0 1 9.6037 -21.2582)" font-family="'DroidSans'" font-size="9.936">O</text>
+												<text transform="matrix(1 0 0 1 16.9787 -21.2582)" font-family="'DroidSans'" font-size="9.936">1</text>
+												<text transform="matrix(1 0 0 1 22.4514 -21.2582)" font-family="'DroidSans'" font-size="9.936">7</text>
+											</g>
+										</g>
+									</g>
+								</g>
+								<g id="_x30_.1.0.0.24.1">
+									<g id="_x30_.1.0.0.0.0.0.0.35.1.0" transform="matrix(0.8 0 0 0.8 173.3238 157.0464)">
+										<g id="_x30_.1.0.0.0.0.0.0.35.1.0.0">
+											<text transform="matrix(1 0 0 1 -6.2459 -21.2582)" font-family="'DroidSans'" font-size="9.936">G</text>
+											<text transform="matrix(1 0 0 1 0.6096 -21.2582)" font-family="'DroidSans'" font-size="9.936">P</text>
+											<text transform="matrix(1 0 0 1 6.3342 -21.2582)" font-family="'DroidSans'" font-size="9.936">I</text>
+											<text transform="matrix(1 0 0 1 9.6037 -21.2582)" font-family="'DroidSans'" font-size="9.936">O</text>
+											<text transform="matrix(1 0 0 1 16.9787 -21.2582)" font-family="'DroidSans'" font-size="9.936">1</text>
+											<text transform="matrix(1 0 0 1 22.4514 -21.2582)" font-family="'DroidSans'" font-size="9.936">8</text>
+										</g>
+									</g>
+								</g>
+								<g id="_x30_.1.0.0.24.2">
+									<g id="_x30_.1.0.0.0.0.0.0.35.2.0" transform="matrix(0.8 0 0 0.8 173.3238 139.7667)">
+										<g id="_x30_.1.0.0.0.0.0.0.35.2.0.0">
+											<text transform="matrix(1 0 0 1 -6.2458 -21.2582)" font-family="'DroidSans'" font-size="9.936">G</text>
+											<text transform="matrix(1 0 0 1 0.6096 -21.2582)" font-family="'DroidSans'" font-size="9.936">P</text>
+											<text transform="matrix(1 0 0 1 6.3342 -21.2582)" font-family="'DroidSans'" font-size="9.936">I</text>
+											<text transform="matrix(1 0 0 1 9.6038 -21.2582)" font-family="'DroidSans'" font-size="9.936">O</text>
+											<text transform="matrix(1 0 0 1 16.9788 -21.2582)" font-family="'DroidSans'" font-size="9.936">2</text>
+											<text transform="matrix(1 0 0 1 22.4514 -21.2582)" font-family="'DroidSans'" font-size="9.936">1</text>
+										</g>
+									</g>
+								</g>
+								<g id="_x30_.1.0.0.24.3">
+									<g id="_x30_.1.0.0.0.0.0.0.35.3.0" transform="matrix(0.8 0 0 0.8 173.3238 123.287)">
+										<g id="_x30_.1.0.0.0.0.0.0.35.3.0.0">
+											<text transform="matrix(1 0 0 1 -6.2458 -21.2582)" font-family="'DroidSans'" font-size="9.936">G</text>
+											<text transform="matrix(1 0 0 1 0.6097 -21.2582)" font-family="'DroidSans'" font-size="9.936">P</text>
+											<text transform="matrix(1 0 0 1 6.3343 -21.2582)" font-family="'DroidSans'" font-size="9.936">I</text>
+											<text transform="matrix(1 0 0 1 9.6038 -21.2582)" font-family="'DroidSans'" font-size="9.936">O</text>
+											<text transform="matrix(1 0 0 1 16.9788 -21.2582)" font-family="'DroidSans'" font-size="9.936">2</text>
+											<text transform="matrix(1 0 0 1 22.4515 -21.2582)" font-family="'DroidSans'" font-size="9.936">2</text>
+										</g>
+									</g>
+								</g>
+								<g id="_x30_.1.0.0.24.4">
+									<g id="_x30_.1.0.0.0.0.0.0.35.4.0" transform="matrix(0.8 0 0 0.8 173.3238 106.8073)">
+										<g id="_x30_.1.0.0.0.0.0.0.35.4.0.0">
+											<text transform="matrix(1 0 0 1 -6.2458 -21.2582)" font-family="'DroidSans'" font-size="9.936">G</text>
+											<text transform="matrix(1 0 0 1 0.6097 -21.2582)" font-family="'DroidSans'" font-size="9.936">P</text>
+											<text transform="matrix(1 0 0 1 6.3343 -21.2582)" font-family="'DroidSans'" font-size="9.936">I</text>
+											<text transform="matrix(1 0 0 1 9.6038 -21.2582)" font-family="'DroidSans'" font-size="9.936">O</text>
+											<text transform="matrix(1 0 0 1 16.9788 -21.2582)" font-family="'DroidSans'" font-size="9.936">2</text>
+											<text transform="matrix(1 0 0 1 22.4515 -21.2582)" font-family="'DroidSans'" font-size="9.936">3</text>
+										</g>
+									</g>
+								</g>
+								<g id="_x30_.1.0.0.24.5">
+									<g id="_x30_.1.0.0.0.0.0.0.35.5.0" transform="matrix(0.8 0 0 0.8 173.3238 89.5277)">
+										<g id="_x30_.1.0.0.0.0.0.0.35.5.0.0">
+											<text transform="matrix(1 0 0 1 -6.2458 -21.2583)" font-family="'DroidSans'" font-size="9.936">G</text>
+											<text transform="matrix(1 0 0 1 0.6097 -21.2583)" font-family="'DroidSans'" font-size="9.936">P</text>
+											<text transform="matrix(1 0 0 1 6.3343 -21.2583)" font-family="'DroidSans'" font-size="9.936">I</text>
+											<text transform="matrix(1 0 0 1 9.6038 -21.2583)" font-family="'DroidSans'" font-size="9.936">O</text>
+											<text transform="matrix(1 0 0 1 16.9788 -21.2583)" font-family="'DroidSans'" font-size="9.936">2</text>
+											<text transform="matrix(1 0 0 1 22.4515 -21.2583)" font-family="'DroidSans'" font-size="9.936">4</text>
+										</g>
+									</g>
+								</g>
+								<g id="_x30_.1.0.0.24.6">
+									<g id="_x30_.1.0.0.0.0.0.0.35.6.0" transform="matrix(0.8 0 0 0.8 173.3238 72.248)">
+										<g id="_x30_.1.0.0.0.0.0.0.35.6.0.0">
+											<text transform="matrix(1 0 0 1 -6.2458 -21.2583)" font-family="'DroidSans'" font-size="9.936">G</text>
+											<text transform="matrix(1 0 0 1 0.6097 -21.2583)" font-family="'DroidSans'" font-size="9.936">P</text>
+											<text transform="matrix(1 0 0 1 6.3343 -21.2583)" font-family="'DroidSans'" font-size="9.936">I</text>
+											<text transform="matrix(1 0 0 1 9.6038 -21.2583)" font-family="'DroidSans'" font-size="9.936">O</text>
+											<text transform="matrix(1 0 0 1 16.9788 -21.2583)" font-family="'DroidSans'" font-size="9.936">2</text>
+											<text transform="matrix(1 0 0 1 22.4515 -21.2583)" font-family="'DroidSans'" font-size="9.936">5</text>
+										</g>
+									</g>
+								</g>
+								<g id="_x30_.1.0.0.24.7">
+									<g id="_x30_.1.0.0.0.0.0.0.35.7.0" transform="matrix(0.8 0 0 0.8 173.3238 54.9683)">
+										<g id="_x30_.1.0.0.0.0.0.0.35.7.0.0">
+											<text transform="matrix(1 0 0 1 -0.7741 148.7866)" font-family="'DroidSans'" font-size="9.936">G</text>
+											<text transform="matrix(1 0 0 1 6.0814 148.7866)" font-family="'DroidSans'" font-size="9.936">P</text>
+											<text transform="matrix(1 0 0 1 11.806 148.7866)" font-family="'DroidSans'" font-size="9.936">I</text>
+											<text transform="matrix(1 0 0 1 15.0765 148.7866)" font-family="'DroidSans'" font-size="9.936">O</text>
+											<text transform="matrix(1 0 0 1 22.4505 148.7866)" font-family="'DroidSans'" font-size="9.936">4</text>
+										</g>
+									</g>
+								</g>
+							</g>
+							
+								<line id="_x30_.1.0.0.25" fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" x1="200.965" y1="69.256" x2="217.973" y2="69.256"/>
+							<rect id="connector21pin" x="201.926" y="51.289" fill="none" width="17.008" height="1.92"/>
+							<rect id="connector21terminal" x="217.122" y="52.246" fill="none" width="0.034" height="0.004"/>
+							<rect id="connector62terminal" x="217.013" y="51.289" fill="none" width="1.92" height="1.92"/>
+							
+								<line id="_x30_.1.0.0.28" fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" x1="200.965" y1="86.263" x2="217.973" y2="86.263"/>
+							<rect id="connector17pin" x="201.926" y="68.296" fill="none" width="17.008" height="1.92"/>
+							<rect id="connector17terminal" x="217.122" y="69.254" fill="none" width="0.034" height="0.004"/>
+							<rect id="connector63terminal" x="217.013" y="68.296" fill="none" width="1.92" height="1.92"/>
+							
+								<line id="_x30_.1.0.0.31" fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" x1="200.965" y1="103.272" x2="217.973" y2="103.272"/>
+							<rect id="connector15pin" x="201.926" y="85.305" fill="none" width="17.008" height="1.92"/>
+							<rect id="connector15terminal" x="217.122" y="86.264" fill="none" width="0.034" height="0.004"/>
+							<rect id="connector64terminal" x="217.013" y="85.305" fill="none" width="1.92" height="1.92"/>
+							
+								<line id="_x30_.1.0.0.34" fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" x1="200.965" y1="120.28" x2="217.973" y2="120.28"/>
+							<rect id="connector14pin" x="201.926" y="102.314" fill="none" width="17.008" height="1.92"/>
+							<rect id="connector14terminal" x="217.122" y="103.271" fill="none" width="0.034" height="0.004"/>
+							<rect id="connector65terminal" x="217.013" y="102.314" fill="none" width="1.92" height="1.92"/>
+							
+								<line id="_x30_.1.0.0.37" fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" x1="200.965" y1="137.288" x2="217.973" y2="137.288"/>
+							<rect id="connector12pin" x="201.926" y="119.32" fill="none" width="17.008" height="1.92"/>
+							<rect id="connector12terminal" x="217.122" y="120.278" fill="none" width="0.034" height="0.004"/>
+							<rect id="connector66terminal" x="217.013" y="119.32" fill="none" width="1.92" height="1.92"/>
+							
+								<line id="_x30_.1.0.0.40" fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" x1="200.965" y1="154.295" x2="217.973" y2="154.295"/>
+							<rect id="connector11pin" x="201.926" y="136.328" fill="none" width="17.008" height="1.92"/>
+							<rect id="connector11terminal" x="217.122" y="137.286" fill="none" width="0.034" height="0.004"/>
+							<rect id="connector67terminal" x="217.013" y="136.328" fill="none" width="1.92" height="1.92"/>
+							
+								<line id="_x30_.1.0.0.43" fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" x1="200.965" y1="171.302" x2="217.973" y2="171.302"/>
+							<rect id="connector10pin" x="201.924" y="153.337" fill="none" width="17.008" height="1.92"/>
+							<rect id="connector10terminal" x="217.119" y="154.295" fill="none" width="0.034" height="0.005"/>
+							<rect id="connector68terminal" x="217.011" y="153.337" fill="none" width="1.92" height="1.92"/>
+							
+								<line id="_x30_.1.0.0.46" fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" x1="200.965" y1="205.319" x2="217.973" y2="205.319"/>
+							<rect id="connector7pin" x="201.926" y="204.359" fill="none" width="17.008" height="1.92"/>
+							<rect id="connector7terminal" x="217.121" y="205.317" fill="none" width="0.034" height="0.005"/>
+							<rect id="connector52terminal" x="217.012" y="204.359" fill="none" width="1.92" height="1.92"/>
+							
+								<line id="_x30_.1.0.0.49" fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" x1="200.965" y1="222.327" x2="217.973" y2="222.327"/>
+							<rect id="connector9pin" x="201.926" y="221.367" fill="none" width="17.008" height="1.92"/>
+							<rect id="connector9terminal" x="217.121" y="222.325" fill="none" width="0.034" height="0.005"/>
+							<rect id="connector53terminal" x="217.012" y="221.367" fill="none" width="1.92" height="1.92"/>
+							
+								<line id="_x30_.1.0.0.52" fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" x1="200.965" y1="256.343" x2="217.973" y2="256.343"/>
+							<rect id="connector39pin" x="201.926" y="255.382" fill="none" width="17.008" height="1.92"/>
+							<rect id="connector39terminal" x="217.012" y="255.382" fill="none" width="1.92" height="1.92"/>
+							
+								<line id="_x30_.1.0.0.55" fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" x1="200.965" y1="273.351" x2="217.973" y2="273.351"/>
+							<rect id="connector41pin" x="201.926" y="272.392" fill="none" width="17.008" height="1.919"/>
+							<rect id="connector41terminal" x="217.012" y="272.392" fill="none" width="1.92" height="1.919"/>
+							<g id="_x30_.1.0.0.58">
+								<g id="_x30_.1.0.0.0.0.0.0.79.0" transform="matrix(0.8 0 0 0.8 72.6812 52.248)">
+									<g id="_x30_.1.0.0.0.0.0.0.79.0.0">
+										<text id="label" transform="matrix(1 0 0 1 -1.220703e-004 4.272461e-004)" font-family="'DroidSans'" font-size="18">RaspberryPi</text>
+									</g>
+								</g>
+								<g id="_x30_.1.0.0.0.0.0.0.79.1" transform="matrix(0.8 0 0 0.8 84.9586 69.2566)">
+									<g id="_x30_.1.0.0.0.0.0.0.79.1.0">
+										<text id="label_1_" transform="matrix(1 0 0 1 13.8636 3.662109e-004)" font-family="'DroidSans'" font-size="18">Rev1</text>
+									</g>
+								</g>
+								<g id="_x30_.1.0.0.58.2">
+									
+										<line id="_x30_.1.0.0.58.2.0" fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" x1="94.733" y1="1.224" x2="94.733" y2="17.272"/>
+									<rect id="connector0pin" x="93.773" y="0.264" fill="none" width="1.92" height="17.008"/>
+									<rect id="connector0terminal" x="94.73" y="1.408" fill="none" width="0.004" height="0.034"/>
+									<polygon id="connector86terminal" fill="none" points="93.773,0.264 95.692,0.264 95.692,0.264 									"/>
+									<g id="_x30_.1.0.0.0.0.0.0.79.2.4" transform="matrix(0.8 0 0 0.8 88.0976 27.3527)">
+										<g id="_x30_.1.0.0.0.0.0.0.79.2.4.0">
+											
+												<text id="label86" transform="matrix(1 0 0 1 -6.103516e-005 3.051758e-004)" font-family="'DroidSans'" font-size="9.936">3V3</text>
+										</g>
+									</g>
+									
+										<line id="_x30_.1.0.0.58.2.4" fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" x1="128.748" y1="1.224" x2="128.748" y2="17.272"/>
+									<rect id="connector40pin" x="127.788" y="0.264" fill="none" width="1.92" height="17.008"/>
+									<polygon id="connector40terminal" fill="none" points="127.788,0.264 129.708,0.264 129.708,0.264 									"/>
+									<g id="_x30_.1.0.0.0.0.0.0.79.2.8" transform="matrix(0.8 0 0 0.8 124.3019 27.3527)">
+										<g id="_x30_.1.0.0.0.0.0.0.79.2.8.0">
+											
+												<text id="label40" transform="matrix(1 0 0 1 4.577637e-004 2.441406e-004)" font-family="'DroidSans'" font-size="9.936">5V</text>
+										</g>
+									</g>
+									<rect id="connector46pin" x="127.788" y="0.264" fill="none" width="1.92" height="17.008"/>
+									<polygon id="connector46terminal" fill="none" points="127.788,0.264 129.709,0.264 129.709,0.264 									"/>
+									<rect id="connector84pin" x="127.788" y="0.264" fill="none" width="1.92" height="17.008"/>
+									<polygon id="connector84terminal" fill="none" points="127.788,0.264 129.709,0.264 129.709,0.264 									"/>
+									<rect id="connector1pin" x="127.788" y="0.264" fill="none" width="1.92" height="17.008"/>
+									<rect id="connector1terminal" x="128.746" y="1.408" fill="none" width="0.005" height="0.034"/>
+									<polygon id="connector87terminal" fill="none" points="127.788,0.264 129.709,0.264 129.709,0.264 									"/>
+									<rect id="connector30pin" x="93.774" y="0.264" fill="none" width="1.92" height="17.008"/>
+									<rect id="connector66terminal_1_" x="93.774" y="0.265" fill="none" width="1.92" height="1.92"/>
+								</g>
+								<rect id="connector27pin" x="127.791" y="0.264" fill="none" width="1.92" height="17.008"/>
+								<rect id="connector63terminal_1_" x="127.791" y="0.265" fill="none" width="1.92" height="1.92"/>
+							</g>
+							<g id="_x30_.1.0.0.59">
+								
+									<line id="_x30_.1.0.0.59.0" fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" x1="109.494" y1="301.067" x2="109.494" y2="317.115"/>
+								<rect id="connector44pin" x="108.532" y="301.067" fill="none" width="1.92" height="17.008"/>
+								<polygon id="connector44terminal" fill="none" points="108.532,318.075 110.452,318.075 110.452,318.075 								"/>
+								<g id="_x30_.1.0.0.0.0.0.0.80.3" transform="matrix(0.8 0 0 0.8 101.1344 296.4589)">
+									<g id="_x30_.1.0.0.0.0.0.0.80.3.0">
+										
+											<text id="label44" transform="matrix(1 0 0 1 3.967285e-004 -7.019043e-004)" font-family="'DroidSans'" font-size="9.936">GND</text>
+									</g>
+								</g>
+								<rect id="connector88pin" x="108.532" y="301.067" fill="none" width="1.92" height="17.008"/>
+								<polygon id="connector88terminal" fill="none" points="108.532,318.075 110.452,318.075 110.452,318.075 								"/>
+								<rect id="connector89pin" x="108.532" y="301.067" fill="none" width="1.92" height="17.008"/>
+								<polygon id="connector89terminal" fill="none" points="108.532,318.075 110.452,318.075 110.452,318.075 								"/>
+								<rect id="connector50pin" x="108.532" y="301.067" fill="none" width="1.92" height="17.008"/>
+								<polygon id="connector50terminal" fill="none" points="108.532,318.075 110.452,318.075 110.452,318.075 								"/>
+								<rect id="connector5pin" x="108.532" y="301.067" fill="none" width="1.92" height="17.008"/>
+								<rect id="connector5terminal" x="109.491" y="316.347" fill="none" width="0.004" height="0.034"/>
+								<polygon id="connector57terminal" fill="none" points="108.532,318.075 110.452,318.075 110.452,318.075 								"/>
+								<rect id="connector26pin" x="108.53" y="301.067" fill="none" width="1.92" height="17.008"/>
+								<rect id="connector64terminal_1_" x="108.53" y="316.154" fill="none" width="1.92" height="1.92"/>
+								<rect id="connector28pin" x="108.534" y="301.067" fill="none" width="1.92" height="17.008"/>
+								<rect id="connector65terminal_1_" x="108.534" y="316.154" fill="none" width="1.92" height="1.92"/>
+								<rect id="connector29pin" x="108.534" y="301.067" fill="none" width="1.92" height="17.008"/>
+								<rect id="connector67terminal_1_" x="108.534" y="316.154" fill="none" width="1.92" height="1.92"/>
+								<rect id="connector31pin" x="108.53" y="301.067" fill="none" width="1.92" height="17.008"/>
+								<rect id="connector68terminal_1_" x="108.53" y="316.154" fill="none" width="1.92" height="1.92"/>
+							</g>
+							<rect id="connector18pin" x="0.052" y="51.288" fill="none" width="17.008" height="1.92"/>
+							<rect id="connector18terminal" x="2.027" y="52.246" fill="none" width="0.034" height="0.004"/>
+							<rect id="connector85terminal" x="0.052" y="51.288" fill="none" width="1.92" height="1.92"/>
+							<rect id="connector4pin" x="201.926" y="255.382" fill="none" width="17.008" height="1.92"/>
+							<rect id="connector4terminal" x="217.284" y="256.34" fill="none" width="0.034" height="0.003"/>
+							<rect id="connector55terminal" x="217.012" y="255.382" fill="none" width="1.92" height="1.92"/>
+							<rect id="connector2pin" x="201.926" y="272.392" fill="none" width="17.008" height="1.919"/>
+							<rect id="connector2terminal" x="217.284" y="273.35" fill="none" width="0.034" height="0.003"/>
+							<rect id="connector56terminal" x="217.012" y="272.392" fill="none" width="1.92" height="1.919"/>
 						</g>
 					</g>
-					<polygon id="polygon7398" points="484.857,201.375 478.976,204.771 478.976,197.98 					"/>
-					<polygon id="polygon7400" points="478.976,222.631 484.857,219.238 484.857,226.033 					"/>
 				</g>
 			</g>
+			<polygon id="polygon7398" points="484.857,201.375 478.976,204.771 478.976,197.98 			"/>
+			<polygon id="polygon7400" points="478.976,222.631 484.857,219.238 484.857,226.033 			"/>
 		</g>
 	</g>
-</switch>
-<i:pgf  id="adobe_illustrator_pgf">
-	<![CDATA[
-	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
-	]]>
-	<![CDATA[
-	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
-	]]>
-	<![CDATA[
-	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
-	]]>
-	<![CDATA[
-	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
-	]]>
-	<![CDATA[
-	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
-	]]>
-	<![CDATA[
-	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
-	]]>
-	<![CDATA[
-	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
-	]]>
-	<![CDATA[
-	X75+/92Hb8//eXl6/vxZB5Qvv6k/PX34+vJNrUMvT99+/fJfjWihIPDq1Y+//PT9d/8D6XSlgA==
-	]]>
-</i:pgf>
+</g>
 </svg>

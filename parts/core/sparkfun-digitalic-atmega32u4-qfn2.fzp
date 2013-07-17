@@ -13,8 +13,9 @@
 </tags>
 <properties>
 <property name="package">qfn-44-nopad</property>
-<property name="family">sparkfun ATmega</property>
-<property name="chip">atmega32</property>
+<property name="family">Microcontroller</property>
+<property name="editable pin labels">true</property>
+<property name="chip label">atmega32</property>
 <property name="variant">qfn2</property>
 </properties>
 <views>

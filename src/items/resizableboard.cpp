@@ -435,20 +435,23 @@ void Board::moreCheckImage(const QString & filename) {
         }
     }
 
-    QString msg;
+    QString msg = tr("<b>The custom shape has been loaded, and you will see the new board shortly.</b><br/><br/>");
+    msg += tr("Before actual PCB production we recommend that you test your custom shape by using the 'File > Export for Production > Extended Gerber' option. ");
+    msg += tr("Check the resulting contour file with a Gerber viewer application to make sure the shape came out as expected.<br/><br/>");
+
+    msg += tr("The rest of this message concerns 'cutouts' (circular- or irregularly- shaped holes in the PCB). ");
+    msg += tr("If you did not intend to add cutouts to your custom shape, you can close this window now.<br/><br/>");
     if (subpaths == 1) {
-        msg = tr("Fritzing thinks the custom shape has no cutouts.");
+        msg += tr("<b>The custom shape has no cutouts.</b>");
     }
     else {
-        msg = tr("Fritzing thinks the custom shape has %n cutouts.", "", subpaths - 1);
+        msg += tr("<b>The custom shape has %n cutouts.</b>", "", subpaths - 1);
         if (subpaths != mCount) {
-            msg += tr("\nHowever, the cutouts may not be formatted correctly.");
+            msg += tr("<br/>However, the cutouts may not be formatted correctly.");
         }
     }
-    msg +=  tr("\n\nIf you intended your custom shape to have cutouts and you did not get the expected result ");
-    msg += tr("it is because Fritzing requires that you make cutouts using a shape 'subtraction' or 'difference' operation in your vector graphics editor.\n\n");
-    msg += tr("In any case we recommend that you test your custom shape by using the 'File > Export for Production > Extended Gerber' option ");
-    msg += tr("and checking the resulting contour file with a Gerber viewer application.");
+    msg +=  tr("<br/><br/>If you intended your custom shape to have cutouts and you did not get the expected result, ");
+    msg += tr("it is because Fritzing requires that you make cutouts using a shape 'subtraction' or 'difference' operation in your vector graphics editor.");
     QMessageBox::information(NULL, "Custom Shape", msg);
 }
 

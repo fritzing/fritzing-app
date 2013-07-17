@@ -431,6 +431,14 @@
         <source>Do you really want to remove &apos;%1&apos; from the bin? This operation cannot be undone.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Copy to Sketch</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy all the parts in the bin to a sketch</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Board</name>
@@ -952,6 +960,26 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     <message>
         <source>obsolete</source>
         <translation>废弃的</translation>
+    </message>
+    <message>
+        <source>Placement</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>pcb layer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>location</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>rotation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>degrees</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3141,6 +3169,78 @@ Go ahead and revert?</source>
         <source>Move to top layer</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Align Left</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Align selected items at the left</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Align Horizontal Center</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Align selected items at the horizontal center</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Align Right</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Align selected items at the right</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Align Top</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Align selected items at the top</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Align Vertical Center</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Align selected items at the vertical center</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Align Bottom</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Align selected items at the bottom</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Align</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>top and bottom</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>bottom</source>
+        <translation type="unfinished">底部</translation>
+    </message>
+    <message>
+        <source>top</source>
+        <translation type="unfinished">顶部</translation>
+    </message>
+    <message>
+        <source>Ground Fill (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copper Fill (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MazeRouter</name>
@@ -3227,6 +3327,13 @@ Reason: %2 (errcode %3)</source>
     <message>
         <source>chip label</source>
         <translation>芯片标签</translation>
+    </message>
+</context>
+<context>
+    <name>NetLabel</name>
+    <message>
+        <source>net label</source>
+        <translation type="unfinished">网络标签</translation>
     </message>
 </context>
 <context>
@@ -4682,6 +4789,10 @@ shift键转换滚动轴
     </message>
     <message>
         <source>Code (*.%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>While it is possible to read and edit %1 programming files, it is not yet possible to use Fritzing to compile or upload these programs to a microcontroller.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -6228,6 +6339,10 @@ Note: you can also trigger this display by mousing down on the routing status te
         <source>Resize ruler to %1 %2</source>
         <translation type="unfinished">复位标尺为%1 %2</translation>
     </message>
+    <message>
+        <source>Add %1 parts</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SqliteReferenceModel</name>
@@ -6273,12 +6388,16 @@ Note: you can also trigger this display by mousing down on the routing status te
         </translation>
     </message>
     <message>
-        <source>strip length</source>
-        <translation>条长度</translation>
+        <source>rows</source>
+        <translation type="unfinished">行</translation>
     </message>
     <message>
-        <source>strips</source>
-        <translation>条</translation>
+        <source>columns</source>
+        <translation type="unfinished">列</translation>
+    </message>
+    <message>
+        <source>%1 layout</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -6286,10 +6405,6 @@ Note: you can also trigger this display by mousing down on the routing status te
     <message>
         <source>voltage</source>
         <translation>电压</translation>
-    </message>
-    <message>
-        <source>net label</source>
-        <translation>网络标签</translation>
     </message>
     <message>
         <source>label</source>

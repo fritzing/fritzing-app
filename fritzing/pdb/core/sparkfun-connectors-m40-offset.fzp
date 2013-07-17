@@ -24,7 +24,7 @@
 </layers>
 </breadboardView>
 <schematicView>
-<layers image='schematic/sparkfun-connectors_m40_schematic.svg'>
+<layers image='schematic/generic_female_pin_header_40_100mil_10thin_schematic.svg'>
 <layer layerId='schematic'/>
 </layers>
 </schematicView>

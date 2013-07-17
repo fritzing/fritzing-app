@@ -79,6 +79,7 @@ public:
 	static const double SVGDPI;
 	static const double InchesPerMeter;
 	static const double StandardSchematicSeparationMils;
+	static const double StandardSchematicSeparation10thinMils;
 
 
 };

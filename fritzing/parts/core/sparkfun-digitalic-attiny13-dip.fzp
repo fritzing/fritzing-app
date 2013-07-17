@@ -1,21 +1,23 @@
-<?xml version="1.0" encoding="UTF-8"?><module fritzingVersion="0.7.2b" moduleId="SparkFun-DigitalIC-ATTINY45-DIP8">
-<!-- generated from Sparkfun Eagle Library 'SparkFun-DigitalIC' ATTINY45 DIP8 -->
+<?xml version="1.0" encoding="UTF-8"?><module fritzingVersion="0.7.2b" moduleId="SparkFun-DigitalIC-ATTINY13-DIP">
+<!-- generated from Sparkfun Eagle Library 'SparkFun-DigitalIC' ATTINY13 DIP -->
 <version>4</version>
 <date>2013-02-13</date>
 <label>U</label>
 <author>www.fritzing.org</author>
-<description>Atmel 8-pin 2/4/8kB flash uC</description>
-<title>ATTINY45</title>
+<description>Atmel 8-pin 1kB flash uC</description>
+<title>ATTINY13</title>
 <tags>
-<tag>ATTINY45</tag>
-<tag>DIP8</tag>
+<tag>DIP</tag>
+<tag>ATTINY13</tag>
 <tag>DIP08</tag>
 </tags>
 <properties>
 <property name="package">dip08</property>
-<property name="family">sparkfun ATtiny</property>
-<property name="chip">attiny45</property>
-<property name="variant">dip8</property>
+<property name="family">Microcontroller</property>
+<property name="chip label">attiny13</property>
+<property name="variant">dip</property>
+<property name="editable pin labels">true</property>
+<property name="part number"></property>
 </properties>
 <views>
 <breadboardView>

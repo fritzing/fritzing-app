@@ -13,8 +13,9 @@
 </tags>
 <properties>
 <property name="package">qfn20</property>
-<property name="family">sparkfun ATtiny</property>
-<property name="chip">attiny24</property>
+<property name="family">Microcontroller</property>
+<property name="editable pin labels">true</property>
+<property name="chip label">attiny24</property>
 <property name="variant">qfn</property>
 </properties>
 <views>

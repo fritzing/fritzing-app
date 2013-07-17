@@ -1,0 +1,5 @@
+
+	<line id="connector%1pin" fill="none" stroke="#000000" stroke-width="0.43" stroke-linecap="round" stroke-linejoin="round" x1="0.086" y1="[3.6]" x2="7.471" y2="[3.6]"/>
+	<rect id="connector%1terminal" x="-0.273" y="[3.504]" fill="none" width="0.546" height="0.208"/>
+	<polyline fill="none" stroke="#000000" stroke-width="0.43" stroke-linecap="round" stroke-linejoin="round" points="9.898,[1.643] 14.291,[3.6] 9.898,[5.556]"/>
+	<line id="line" fill="none" stroke="#000000" stroke-width="0.43" stroke-linecap="round" stroke-linejoin="round" x1="14.291" y1="[3.6]" x2="4.781" y2="[3.6]"/>

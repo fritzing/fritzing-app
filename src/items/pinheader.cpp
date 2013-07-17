@@ -44,6 +44,14 @@ $Date: 2013-04-22 23:44:56 +0200 (Mo, 22. Apr 2013) $
 
 //////////////////////////////////////////////////
 
+QString doubleCopyPinFunction(int pin, const QString & argString, void *)
+{
+	return argString.arg(pin * 2).arg(pin * 2 + 1);
+}
+
+//////////////////////////////////////////////////
+
+
 static QStringList Forms;
 
 QString PinHeader::FemaleFormString;
@@ -611,10 +619,12 @@ QString PinHeader::makeSchematicSvg(const QString & expectedFileName)
     int pins = TextUtils::getPinsAndSpacing(expectedFileName, spacingString);
 	QString form = expectedFileName.contains("female") ? "female" :"male";
     bool sizeTenth = expectedFileName.contains("10thin");
+    bool isDouble = sizeTenth && expectedFileName.contains("double");
 
     double width, unitHeight;
+    double divisor = isDouble ? 2 : 1;
     if (sizeTenth) {
-        width = 0.2;
+        width = isDouble ? 0.5 : 0.2;
         unitHeight = GraphicsUtils::StandardSchematicSeparation10thinMils / 1000;  // inches
     }
     else {
@@ -630,12 +640,19 @@ QString PinHeader::makeSchematicSvg(const QString & expectedFileName)
 				"<g id='schematic' >\n");
 
 
-	QString svg = header.arg(unitHeight * pins).arg(unitHeightPoints * pins).arg(width).arg(width * 72);
+	QString svg = header.arg(unitHeight * pins / divisor).arg(unitHeightPoints * pins / divisor).arg(width).arg(width * 72);
 
-    QString templateFile = QString(":/resources/templates/generic_%1_%2pin_header_schem_template.txt")
+    QString templateFile = QString(":/resources/templates/generic_%1_%2%3pin_header_schem_template.txt")
                                                 .arg(form.contains("female") ? "female" : "male")
-                                                .arg(sizeTenth ? "10thin_" : "");
-	svg += TextUtils::incrementTemplate(templateFile, pins, unitHeightPoints, TextUtils::standardMultiplyPinFunction, TextUtils::standardCopyPinFunction, NULL);
+                                                .arg(sizeTenth ? "10thin_" : "")
+                                                .arg(isDouble ? "double_" : "")
+                                                ;
+    if (isDouble) {
+	    svg += TextUtils::incrementTemplate(templateFile, pins / 2, unitHeightPoints, TextUtils::standardMultiplyPinFunction, doubleCopyPinFunction, NULL);
+    }
+    else {
+	    svg += TextUtils::incrementTemplate(templateFile, pins, unitHeightPoints, TextUtils::standardMultiplyPinFunction, TextUtils::standardCopyPinFunction, NULL);
+    }
 		
 
 	svg += "</g>\n</svg>";

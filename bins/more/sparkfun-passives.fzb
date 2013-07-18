@@ -448,35 +448,7 @@
 </iconView>
 </views>
 </instance>
-<instance modelIndex="69" moduleIdRef="SparkFun-Passives-RESISTOR-1206">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="70" moduleIdRef="SparkFun-Passives-RESISTOR-AXIAL-0.3">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
 <instance modelIndex="71" moduleIdRef="SparkFun-Passives-RESISTOR-2010">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="72" moduleIdRef="SparkFun-Passives-RESISTOR-0805-RES">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="73" moduleIdRef="SparkFun-Passives-RESISTOR-0603-RES">
 <views>
 <iconView layer="icon">
 <geometry x="-1" y="-1" z="-1"/>
@@ -490,13 +462,6 @@
 </iconView>
 </views>
 </instance>
-<instance modelIndex="75" moduleIdRef="SparkFun-Passives-RESISTOR-PTH-1_6W">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
 <instance modelIndex="76" moduleIdRef="SparkFun-Passives-RESISTOR-2512">
 <views>
 <iconView layer="icon">
@@ -504,41 +469,7 @@
 </iconView>
 </views>
 </instance>
-<instance modelIndex="77" moduleIdRef="SparkFun-Passives-RESISTOR-PTH-1_4W">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="78" moduleIdRef="SparkFun-Passives-RESISTOR-PTH-1_2W">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="79" moduleIdRef="SparkFun-Passives-RESISTOR-PTH-1W">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="80" moduleIdRef="SparkFun-Passives-RESISTOR-PTH-2W">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="81" moduleIdRef="SparkFun-Passives-RESISTOR-KIT">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
+
 <instance modelIndex="82" moduleIdRef="SparkFun-Passives-RESISTOR-ARRAY-0603-ARV">
 <views>
 <iconView layer="icon">

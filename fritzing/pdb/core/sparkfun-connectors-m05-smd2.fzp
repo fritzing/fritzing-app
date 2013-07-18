@@ -36,7 +36,7 @@ Standard 5-pin 0.1 header. Use with straight break away headers (SKU : PRT-00116
 </layers>
 </pcbView>
 <iconView>
-<layers image='breadboard/sparkfun-connectors_1x05-1mm-ra_breadboard.svg'>
+<layers image='icon/1x05-1mm-ra.svg'>
 <layer layerId='icon'/>
 </layers>
 </iconView>

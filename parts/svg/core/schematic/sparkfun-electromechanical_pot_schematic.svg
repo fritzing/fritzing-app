@@ -21,16 +21,16 @@
 <line class='other' x1='2.54' y1='11.1725' x2='3.175' y2='9.90247' stroke='#000000' stroke-width='0.1524' stroke-linecap='round'/>
 <line class='pin' id='connector2pin' connectorname='A' x1='1.143' y1='15.3635' x2='1.143' y2='12.8235' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
 <rect class='terminal' id='connector2terminal' x='1.143' y='15.3635' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
-<g transform='translate(0.896056,14.0935)'><g transform='rotate(270)'>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='0' y='0' text-anchor='middle'>3</text>
+<g transform='translate(0.772584,14.0935)'><g transform='rotate(270)'>
+<text class='text' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#8c8c8c' font-size='0.881944' x='0' y='0' text-anchor='middle'>3</text>
 </g></g>
 <line class='pin' id='connector0pin' connectorname='E' x1='1.143' y1='0.123472' x2='1.143' y2='2.66347' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
 <rect class='terminal' id='connector0terminal' x='1.143' y='0.123472' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
-<g transform='translate(0.896056,1.39347)'><g transform='rotate(270)'>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='0' y='0' text-anchor='middle'>1</text>
+<g transform='translate(0.772584,1.39347)'><g transform='rotate(270)'>
+<text class='text' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#8c8c8c' font-size='0.881944' x='0' y='0' text-anchor='middle'>1</text>
 </g></g>
 <line class='pin' id='connector1pin' connectorname='S' x1='6.223' y1='7.74347' x2='3.683' y2='7.74347' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
 <rect class='terminal' id='connector1terminal' x='6.223' y='7.74347' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='4.953' y='7.49653' text-anchor='middle'>2</text>
+<text class='text' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#8c8c8c' font-size='0.881944' x='4.953' y='7.37306' text-anchor='middle'>2</text>
 </g>
 </svg>

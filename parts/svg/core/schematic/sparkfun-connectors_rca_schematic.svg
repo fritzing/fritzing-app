@@ -10,15 +10,15 @@
 <rect class='other' x='0.0762' y='0' width='10.16' height='1.524' stroke='none' stroke-width='0' fill='#000000' stroke-linecap='round'/>
 <line class='pin' id='connector2pin' connectorname='SWITCH' x1='12.7762' y1='3.302' x2='10.2362' y2='3.302' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
 <rect class='terminal' id='connector2terminal' x='12.7762' y='3.302' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='11.5062' y='3.05506' text-anchor='middle'>3</text>
+<text class='text' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#8c8c8c' font-size='0.881944' x='11.5062' y='2.93158' text-anchor='middle'>3</text>
 <line class='pin' id='connector1pin' connectorname='SHELL' x1='12.7762' y1='5.842' x2='10.2362' y2='5.842' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
 <rect class='terminal' id='connector1terminal' x='12.7762' y='5.842' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='11.5062' y='5.59506' text-anchor='middle'>2</text>
+<text class='text' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#8c8c8c' font-size='0.881944' x='11.5062' y='5.47158' text-anchor='middle'>2</text>
 <line class='pin' id='connector0pin' connectorname='PIN' x1='12.7762' y1='0.762' x2='10.2362' y2='0.762' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
 <rect class='terminal' id='connector0terminal' x='12.7762' y='0.762' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='11.5062' y='0.515056' text-anchor='middle'>1</text>
+<text class='text' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#8c8c8c' font-size='0.881944' x='11.5062' y='0.391584' text-anchor='middle'>1</text>
 <line class='other' x1='7.6962' y1='3.302' x2='7.6962' y2='0.762' stroke='#000000' stroke-width='0.1524' stroke-linecap='round'/>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.79248' x='7.9502' y='2.286' text-anchor='start'>OPEN WHEN</text>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.79248' x='7.9502' y='3.048' text-anchor='start'>CONNECTED</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#505050' font-size='0.79248' x='7.9502' y='2.286' text-anchor='start'>OPEN WHEN</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#505050' font-size='0.79248' x='7.9502' y='3.048' text-anchor='start'>CONNECTED</text>
 </g>
 </svg>

@@ -44,21 +44,21 @@
 <line class='other' x1='9.01347' y1='20.51' x2='6.47347' y2='21.78' stroke='#000000' stroke-width='0.127' stroke-linecap='round'/>
 <line class='other' x1='6.47347' y1='11.112' x2='7.23547' y2='10.604' stroke='#000000' stroke-width='0.127' stroke-linecap='round'/>
 <line class='other' x1='7.99747' y1='10.35' x2='8.75947' y2='9.842' stroke='#000000' stroke-width='0.127' stroke-linecap='round'/>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.05664' x='4.18747' y='14.922' text-anchor='start'>IR</text>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.05664' x='4.18747' y='20.002' text-anchor='start'>VIS</text>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.05664' x='3.17147' y='4' text-anchor='start'>SENSOR</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#505050' font-size='1.05664' x='4.18747' y='14.922' text-anchor='start'>IR</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#505050' font-size='1.05664' x='4.18747' y='20.002' text-anchor='start'>VIS</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#505050' font-size='1.05664' x='3.17147' y='4' text-anchor='start'>SENSOR</text>
 <line class='pin' id='connector3pin' connectorname='4' x1='15.3635' y1='5.27' x2='12.8235' y2='5.27' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
 <rect class='terminal' id='connector3terminal' x='15.3635' y='5.27' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='14.0935' y='5.02306' text-anchor='middle'>4</text>
+<text class='text' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#8c8c8c' font-size='0.881944' x='14.0935' y='4.89958' text-anchor='middle'>4</text>
 <line class='pin' id='connector2pin' connectorname='3' x1='0.123472' y1='5.27' x2='2.66347' y2='5.27' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
 <rect class='terminal' id='connector2terminal' x='0.123472' y='5.27' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='1.39347' y='5.02306' text-anchor='middle'>3</text>
+<text class='text' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#8c8c8c' font-size='0.881944' x='1.39347' y='4.89958' text-anchor='middle'>3</text>
 <line class='pin' id='connector0pin' connectorname='1' x1='0.123472' y1='17.97' x2='2.66347' y2='17.97' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
 <rect class='terminal' id='connector0terminal' x='0.123472' y='17.97' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='1.39347' y='17.7231' text-anchor='middle'>1</text>
+<text class='text' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#8c8c8c' font-size='0.881944' x='1.39347' y='17.5996' text-anchor='middle'>1</text>
 <line class='pin' id='connector1pin' connectorname='2' x1='15.3635' y1='17.97' x2='12.8235' y2='17.97' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
 <rect class='terminal' id='connector1terminal' x='15.3635' y='17.97' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='14.0935' y='17.7231' text-anchor='middle'>2</text>
+<text class='text' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#8c8c8c' font-size='0.881944' x='14.0935' y='17.5996' text-anchor='middle'>2</text>
 <path class='other' stroke='none' fill='#000000' stroke-width='0' d='M6.47347,9.588L6.72747,9.588L6.47347,9.08L6.21947,9.588z' stroke-linecap='round'/>
 <path class='other' stroke='none' fill='#000000' stroke-width='0' d='M7.99747,8.826L8.25147,8.826L7.99747,8.318L7.74347,8.826z' stroke-linecap='round'/>
 </g>

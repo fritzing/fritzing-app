@@ -9,6 +9,6 @@
 <circle class='other' cx='4.18747' cy='2.54' r='1.524' stroke='#000000' stroke-width='0.0508' fill='none' />
 <line class='pin' id='connector0pin' connectorname='MOUNT' x1='0.123472' y1='2.54' x2='2.66347' y2='2.54' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
 <rect class='terminal' id='connector0terminal' x='0.123472' y='2.54' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='1.39347' y='2.29306' text-anchor='middle'>1</text>
+<text class='text' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#8c8c8c' font-size='0.881944' x='1.39347' y='2.16958' text-anchor='middle'>1</text>
 </g>
 </svg>

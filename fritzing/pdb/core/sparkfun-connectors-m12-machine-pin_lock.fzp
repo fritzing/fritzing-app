@@ -25,7 +25,7 @@ Standard 12-pin 0.1 header. Use with straight break away headers (SKU : PRT-0011
 </layers>
 </breadboardView>
 <schematicView>
-<layers image='schematic/sparkfun-connectors_m12_schematic.svg'>
+<layers image='schematic/generic_female_pin_header_12_100mil_10thin_schematic.svg'>
 <layer layerId='schematic'/>
 </layers>
 </schematicView>

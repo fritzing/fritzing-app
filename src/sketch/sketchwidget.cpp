@@ -9459,16 +9459,22 @@ void SketchWidget::addToSketch(QList<ModelPart *> & modelParts) {
 	new CleanUpRatsnestsCommand(this, CleanUpWiresCommand::UndoOnly, parentCommand);
 
     int ix = 0;
+    QList<long> ids;
+    int columns = 10;
     foreach (ModelPart * modelPart, modelParts) {
         ViewGeometry viewGeometry;
-        int x = (ix % 10) * 100;
-        int y = (ix / 10) * 100;
+        int x = (ix % columns) * 100;
+        int y = (ix / columns) * 100;
         ix++;
         viewGeometry.setLoc(QPointF(x, y));
         ViewLayer::ViewLayerPlacement viewLayerPlacement;
         getDroppedItemViewLayerPlacement(modelPart, viewLayerPlacement);  
-	    newAddItemCommand(BaseCommand::CrossView, modelPart, modelPart->moduleID(), viewLayerPlacement, viewGeometry, ItemBase::getNextID(), true, -1, true, parentCommand);
+        long id = ItemBase::getNextID();
+	    newAddItemCommand(BaseCommand::CrossView, modelPart, modelPart->moduleID(), viewLayerPlacement, viewGeometry, id, true, -1, true, parentCommand);
+        ids.append(id);
     }
+
+    new PackItemsCommand(this, columns, ids, parentCommand);
 
     m_undoStack->waitPush(parentCommand, 10);
 }
@@ -9940,4 +9946,55 @@ bool SketchWidget::viewportEvent(QEvent *event) {
 
     return result;
 }
+
+void SketchWidget::packItems(int columns, const QList<long> & ids, QUndoCommand *parent, bool doEmit)
+{
+    if (ids.count() < 2) return;
+
+    QList<ItemBase *> itemBases;
+    foreach (long id, ids) {
+        ItemBase * itemBase = findItem(id);
+        if (itemBase == NULL) return;
+
+        itemBases << itemBase;
+        itemBase->saveGeometry();
+    }
+
+    QPointF initial = itemBases.at(0)->pos();
+    double top = initial.y();
+
+    QVector<double> heights((ids.count() + columns - 1) / columns, 0);
+    for (int i = 0; i < itemBases.count(); i++) {
+        ItemBase * itemBase = itemBases.at(i);
+        QRectF r = itemBase->sceneBoundingRect();
+        if (r.height() > heights.at(i / columns)) {
+            heights[i / columns] = r.height();
+        }
+    }
+
+    double offset = 10;
+    double left;
+    for (int i = 0; i < itemBases.count(); i++) {
+        if (i % columns == 0) {
+            left = initial.x();
+        }
+
+        ItemBase * itemBase = itemBases.at(i);
+        ViewGeometry vg1 = itemBase->getViewGeometry();
+        ViewGeometry vg2 = vg1;
+        vg2.setLoc(QPointF(left, top)); 
+        new MoveItemCommand(this, itemBase->id(), vg1, vg2, true, parent);
+        itemBase->setPos(left, top);
+        left += itemBase->sceneBoundingRect().width() + offset;
+        if (i % columns == columns - 1) {
+            top += heights.at(i / columns) + offset;
+        }
+    }
+
+    if (doEmit) {
+        emit packItemsSignal(columns, ids, parent, false);
+    }
+}
+
+
 

@@ -1003,7 +1003,7 @@ void BoardLogoItem::reloadLayerKin(double mmW, double mmH)
 }
 
 bool BoardLogoItem::canRetrieveLayer(ViewLayer::ViewLayerID viewLayerID) {
-    return LogoItem::canRetrieveLayer(viewLayerID) || viewLayerID == LogoItem::layer();
+    return LogoItem::canRetrieveLayer(viewLayerID) || viewLayerID == LogoItem::layer() || viewLayerID == ViewLayer::Silkscreen0 || viewLayerID == ViewLayer::Silkscreen1;
 }
 
 bool BoardLogoItem::reloadImage(const QString & svg, const QSizeF & aspectRatio, const QString & fileName, bool addName) 

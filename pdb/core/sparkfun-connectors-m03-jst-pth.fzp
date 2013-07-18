@@ -37,7 +37,7 @@ Standard 3-pin 0.1 header. Use with straight break away headers (SKU : PRT-00116
 </layers>
 </pcbView>
 <iconView>
-<layers image='icon/JST-3-PTH.svg'>
+<layers image='icon/jst-3-pth.svg'>
 <layer layerId='icon'/>
 </layers>
 </iconView>

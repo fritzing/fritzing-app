@@ -71,6 +71,7 @@ Resistor::Resistor( ModelPart * modelPart, ViewLayer::ViewID viewID, const ViewG
 	if (PinSpacings.count() == 0) {
 		PinSpacings.insert("100 mil (stand-up right)", "pcb/axial_stand0_2_100mil_pcb.svg");
 		PinSpacings.insert("100 mil (stand-up left)", "pcb/axial_stand1_2_100mil_pcb.svg");
+		PinSpacings.insert("200 mil", "pcb/axial_lay_2_200mil_pcb.svg");
 		PinSpacings.insert("300 mil", "pcb/axial_lay_2_300mil_pcb.svg");
 		PinSpacings.insert("400 mil", "pcb/axial_lay_2_400mil_pcb.svg");
 		PinSpacings.insert("500 mil", "pcb/axial_lay_2_500mil_pcb.svg");

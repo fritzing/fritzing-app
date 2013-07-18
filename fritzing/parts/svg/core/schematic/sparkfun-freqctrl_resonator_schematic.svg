@@ -29,12 +29,12 @@
 <line class='other' x1='3.3782' y1='6.9342' x2='3.3782' y2='9.4742' stroke='#000000' stroke-width='0.1524' stroke-linecap='round'/>
 <line class='pin' id='connector2pin' connectorname='3' x1='5.9182' y1='1.8542' x2='5.9182' y2='1.8542' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
 <rect class='terminal' id='connector2terminal' x='5.9182' y='1.8542' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='5.9182' y='1.60726' text-anchor='middle'>3</text>
+<text class='text' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#8c8c8c' font-size='0.881944' x='5.9182' y='1.48378' text-anchor='middle'>3</text>
 <line class='pin' id='connector0pin' connectorname='1' x1='0.8382' y1='1.8542' x2='0.8382' y2='1.8542' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
 <rect class='terminal' id='connector0terminal' x='0.8382' y='1.8542' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='0.8382' y='1.60726' text-anchor='middle'>1</text>
+<text class='text' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#8c8c8c' font-size='0.881944' x='0.8382' y='1.48378' text-anchor='middle'>1</text>
 <line class='pin' id='connector1pin' connectorname='2' x1='3.3782' y1='9.4742' x2='3.3782' y2='9.4742' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
 <rect class='terminal' id='connector1terminal' x='3.3782' y='9.4742' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='3.3782' y='9.22726' text-anchor='middle'>2</text>
+<text class='text' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#8c8c8c' font-size='0.881944' x='3.3782' y='9.10378' text-anchor='middle'>2</text>
 </g>
 </svg>

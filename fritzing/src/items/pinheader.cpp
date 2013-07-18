@@ -46,7 +46,12 @@ $Date: 2013-04-22 23:44:56 +0200 (Mo, 22. Apr 2013) $
 
 QString doubleCopyPinFunction(int pin, const QString & argString, void *)
 {
-	return argString.arg(pin * 2).arg(pin * 2 + 1);
+	return argString.arg(pin * 2).arg(pin * 2 + 1).arg(pin * 2 + 1).arg(pin * 2 + 2);
+}
+
+QString stdIncCopyPinFunction(int pin, const QString & argString, void *)
+{
+	return argString.arg(pin).arg(pin + 1);
 }
 
 //////////////////////////////////////////////////
@@ -647,8 +652,13 @@ QString PinHeader::makeSchematicSvg(const QString & expectedFileName)
                                                 .arg(sizeTenth ? "10thin_" : "")
                                                 .arg(isDouble ? "double_" : "")
                                                 ;
-    if (isDouble) {
-	    svg += TextUtils::incrementTemplate(templateFile, pins / 2, unitHeightPoints, TextUtils::standardMultiplyPinFunction, doubleCopyPinFunction, NULL);
+    if (sizeTenth) {
+        if (isDouble) {
+	        svg += TextUtils::incrementTemplate(templateFile, pins / 2, unitHeightPoints, TextUtils::standardMultiplyPinFunction, doubleCopyPinFunction, NULL);
+        }
+        else {
+	        svg += TextUtils::incrementTemplate(templateFile, pins, unitHeightPoints, TextUtils::standardMultiplyPinFunction, stdIncCopyPinFunction, NULL);
+        }
     }
     else {
 	    svg += TextUtils::incrementTemplate(templateFile, pins, unitHeightPoints, TextUtils::standardMultiplyPinFunction, TextUtils::standardCopyPinFunction, NULL);

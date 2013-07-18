@@ -1160,4 +1160,22 @@ protected:
 
 /////////////////////////////////////////////
 
+class PackItemsCommand : public BaseCommand
+{
+public:
+    PackItemsCommand(class SketchWidget *sketchWidget, int columns, const QList<long> & ids, QUndoCommand *parent);
+    void undo();
+    void redo();
+
+protected:
+	QString getParamString() const;
+
+protected:
+    int m_columns;
+    QList<long> m_ids;
+    bool m_firstTime;
+};
+
+/////////////////////////////////////////////
+
 #endif // COMMANDS_H

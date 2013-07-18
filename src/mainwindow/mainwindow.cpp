@@ -691,6 +691,9 @@ void MainWindow::connectPair(SketchWidget * signaller, SketchWidget * slotter)
 									 slotter, SLOT(swapStart(SwapThing &, bool)),
 									 Qt::DirectConnection);
 
+	succeeded = succeeded && connect(signaller, SIGNAL(packItemsSignal(int, const QList<long> &, QUndoCommand *, bool)),
+									 slotter, SLOT(packItems(int, const QList<long> &, QUndoCommand *, bool)));
+
 	succeeded = succeeded && connect(signaller, SIGNAL(addSubpartSignal(long, long, bool)), slotter, SLOT(addSubpart(long, long, bool)));
 
 	if (!succeeded) {

@@ -1,25 +1,69 @@
-<?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<!-- Created with Fritzing (http://www.fritzing.org/) -->
-<svg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' version='1.2' baseProfile='tiny' x='0in' y='0in' width='0.305in' height='0.225in' viewBox='0 0 7.747 5.715' >
-<g id='breadboard'>
-<path fill='#1F7A34' stroke='none' stroke-width='0' d='M0,0l7.747,0 0,5.715 -7.747,0 0,-5.715z
-M0.8255,2.9845a0.508,0.508 0 1 0 1.016,0 0.508,0.508 0 1 0 -1.016,0z
-M3.3655,3.2385a0.508,0.508 0 1 0 1.016,0 0.508,0.508 0 1 0 -1.016,0z
-M5.9055,2.9845a0.508,0.508 0 1 0 1.016,0 0.508,0.508 0 1 0 -1.016,0z
-'/>
-<circle id='connector0pin' connectorname='1' cx='1.3335' cy='2.9845' r='0.7239' stroke='#9A916C' stroke-width='0.4318' fill='none' />
-<path stroke='none' stroke-width='0' d='m0.3937,2.0447 1.8796,0 0,1.8796 -1.8796,0 0,-3zM0.8255,2.9845a0.508,0.508 0 1 0 1.016,0 0.508,0.508 0 1 0 -1.016,0z
-' fill='#9A916C' />
-<circle id='connector1pin' connectorname='2' cx='3.8735' cy='3.2385' r='0.7239' stroke='#9A916C' stroke-width='0.4318' fill='none' />
-<circle id='connector2pin' connectorname='3' cx='6.4135' cy='2.9845' r='0.7239' stroke='#9A916C' stroke-width='0.4318' fill='none' />
-<line class='other' x1='0.0635' y1='0.0635' x2='0.0635' y2='5.6515' stroke='#f8f8f8' stroke-width='0.127' stroke-linecap='round'/>
-<line class='other' x1='7.6835' y1='0.0635' x2='7.6835' y2='5.6515' stroke='#f8f8f8' stroke-width='0.127' stroke-linecap='round'/>
-<line class='other' x1='7.6835' y1='0.0635' x2='0.0635' y2='0.0635' stroke='#f8f8f8' stroke-width='0.127' stroke-linecap='round'/>
-<line class='other' x1='7.6835' y1='5.6515' x2='6.4135' y2='5.6515' stroke='#f8f8f8' stroke-width='0.127' stroke-linecap='round'/>
-<line class='other' x1='6.4135' y1='5.6515' x2='1.3335' y2='5.6515' stroke='#f8f8f8' stroke-width='0.127' stroke-linecap='round'/>
-<line class='other' x1='1.3335' y1='5.6515' x2='0.0635' y2='5.6515' stroke='#f8f8f8' stroke-width='0.127' stroke-linecap='round'/>
-<line class='other' x1='1.3335' y1='5.6515' x2='1.3335' y2='4.3815' stroke='#f8f8f8' stroke-width='0.127' stroke-linecap='round'/>
-<line class='other' x1='1.3335' y1='4.3815' x2='6.4135' y2='4.3815' stroke='#f8f8f8' stroke-width='0.127' stroke-linecap='round'/>
-<line class='other' x1='6.4135' y1='4.3815' x2='6.4135' y2='5.6515' stroke='#f8f8f8' stroke-width='0.127' stroke-linecap='round'/>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.2" baseProfile="tiny" id="Layer_1" xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="21.96px"
+	 height="27.517px" viewBox="0 0 21.96 27.517" xml:space="preserve">
+<g id="breadboard">
+	<circle id="connector0pin" fill="none" stroke="#9A916C" stroke-width="0.4318" cx="3.78" cy="19.074" r="2.052"/>
+	<circle id="connector1pin" fill="none" stroke="#9A916C" stroke-width="0.4318" cx="10.98" cy="19.794" r="2.052"/>
+	<circle id="connector2pin" fill="none" stroke="#9A916C" stroke-width="0.4318" cx="18.18" cy="19.074" r="2.052"/>
+	<path fill="#E6E6E6" d="M0,10.614h21.96v13.924H0V10.614z M2.34,19.075c0,0.795,0.645,1.439,1.44,1.439
+		c0.795,0,1.44-0.645,1.44-1.439c0-0.796-0.645-1.44-1.44-1.44C2.985,17.634,2.34,18.279,2.34,19.075z M9.54,19.794
+		c0,0.795,0.645,0.438,1.44,0.438c0.795,0,1.439,0.356,1.439-0.438c0-0.796-0.645-1.44-1.439-1.44
+		C10.185,18.354,9.54,18.999,9.54,19.794z M16.74,19.075c0,0.795,0.645,1.439,1.44,1.439c0.795,0,1.44-0.645,1.44-1.439
+		c0-0.796-0.645-1.441-1.439-1.441s-1.44,0.645-1.441,1.439C16.74,19.073,16.74,19.074,16.74,19.075z"/>
+	<g>
+		<rect x="1.728" y="17.022" fill="#999999" width="4.104" height="4.104"/>
+		<rect x="8.928" y="17.022" fill="#999999" width="4.104" height="4.104"/>
+		<rect x="16.129" y="17.022" fill="#999999" width="4.104" height="4.104"/>
+		<title>MTA100_3.fp</title>
+		<desc>Geda footprint file &apos;MTA100_3.fp&apos; converted by Fritzing</desc>
+		<rect x="3.779" y="10.735" fill="#FDDFB1" width="14.363" height="3.949"/>
+		<path fill="#C3C3C3" d="M18.149,6.622c0-3.973-3.221-6.192-7.193-6.192c-3.973,0-7.193,2.22-7.193,6.192
+			c0,0.108,0.011,0.213,0.016,0.319v7.743h14.363V6.757C18.143,6.711,18.149,6.667,18.149,6.622z"/>
+		<rect x="3.48" y="14.593" fill-opacity="0.2" width="14.662" height="0.183"/>
+		<rect x="0.001" y="10.725" fill="#FFFFFF" fill-opacity="0.1" width="3.778" height="0.269"/>
+		<rect x="19.085" y="10.725" fill="#FFFFFF" fill-opacity="0.1" width="2.875" height="0.269"/>
+		<g>
+			<polygon fill="#666666" points="2.023,10.65 5.544,10.65 5.544,20.841 2.023,20.841 			"/>
+		</g>
+		<g>
+			<polygon fill="#666666" points="9.216,10.614 12.744,10.614 12.744,20.841 9.216,20.841 			"/>
+		</g>
+		<g>
+			<polygon fill="#666666" points="16.418,10.65 19.944,10.65 19.944,20.841 16.418,20.841 			"/>
+		</g>
+		<g>
+			<rect x="2.876" y="7.981" fill="#B3B3B3" width="1.812" height="1.817"/>
+			<polygon fill="#CCCCCC" points="2.02,7.122 2.876,7.981 4.774,7.981 5.543,7.122 			"/>
+			<polygon fill="#999999" points="4.686,9.796 4.686,7.995 5.543,7.122 5.543,10.65 			"/>
+			<polygon fill="#808080" points="2.876,9.796 4.686,9.796 5.543,10.65 2.02,10.65 			"/>
+			<polygon fill="#CCCCCC" points="2.02,7.122 2.876,7.991 2.876,9.796 2.02,10.65 			"/>
+		</g>
+		<g>
+			<rect x="10.074" y="7.981" fill="#B3B3B3" width="1.813" height="1.817"/>
+			<polygon fill="#CCCCCC" points="9.218,7.122 10.074,7.981 11.973,7.981 12.743,7.122 			"/>
+			<polygon fill="#999999" points="11.885,9.796 11.885,7.995 12.743,7.122 12.743,10.65 			"/>
+			<polygon fill="#808080" points="10.074,9.796 11.885,9.796 12.743,10.65 9.218,10.65 			"/>
+			<polygon fill="#CCCCCC" points="9.218,7.122 10.074,7.991 10.074,9.796 9.218,10.65 			"/>
+		</g>
+		<g>
+			<rect x="17.276" y="7.981" fill="#B3B3B3" width="1.813" height="1.817"/>
+			<polygon fill="#CCCCCC" points="16.418,7.122 17.276,7.981 19.172,7.981 19.944,7.122 			"/>
+			<polygon fill="#999999" points="19.084,9.796 19.084,7.995 19.944,7.122 19.944,10.65 			"/>
+			<polygon fill="#808080" points="17.276,9.796 19.084,9.796 19.944,10.65 16.418,10.65 			"/>
+			<polygon fill="#CCCCCC" points="16.418,7.122 17.276,7.991 17.276,9.796 16.418,10.65 			"/>
+		</g>
+		<line fill="#FDDFB1" x1="19.98" y1="7.122" x2="19.98" y2="20.841"/>
+		<path fill="#E6E6E6" d="M18.149,6.192C18.149,2.22,14.928,0,10.956,0C6.983,0,3.763,2.22,3.763,6.192v0.429
+			c0-3.973,3.22-6.192,7.193-6.192c3.972,0,7.193,2.22,7.193,6.192V6.192z"/>
+	</g>
 </g>
+<rect x="2.023" y="10.645" fill="#4D4D4D" width="3.52" height="0.215"/>
+<rect x="9.221" y="10.645" fill="#4D4D4D" width="3.519" height="0.215"/>
+<rect x="16.422" y="10.642" fill="#4D4D4D" width="3.52" height="0.215"/>
+<rect x="2.023" y="20.837" fill="#4D4D4D" width="3.52" height="0.289"/>
+<rect x="9.221" y="20.837" fill="#4D4D4D" width="3.519" height="0.289"/>
+<rect x="16.422" y="20.833" fill="#4D4D4D" width="3.52" height="0.289"/>
+<rect y="24.538" fill="#C3C3C3" width="21.96" height="2.979"/>
 </svg>

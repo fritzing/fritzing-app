@@ -48,26 +48,26 @@
 	
 		<line id="connector4pin" fill="none" stroke="#787878" stroke-width="0.2469" stroke-linecap="round" x1="0.35" y1="36.36" x2="7.55" y2="36.36"/>
 	<rect id="connector4terminal" x="0.35" y="36.36" fill="none" width="0" height="0"/>
-	<text transform="matrix(1 0 0 1 3.2268 35.6602)" fill="#787878" font-family="'OCRA'" font-size="2">9</text>
+	<text transform="matrix(1 0 0 1 3.2268 35.6602)" fill="#787878" font-family="'Droid Sans'" font-size="2">9</text>
 	
 		<line id="connector3pin" fill="none" stroke="#787878" stroke-width="0.2469" stroke-linecap="round" x1="50.75" y1="29.16" x2="43.55" y2="29.16"/>
 	<rect id="connector3terminal" x="50.75" y="29.16" fill="none" width="0" height="0"/>
-	<text transform="matrix(1 0 0 1 46.426 28.4609)" fill="#787878" font-family="'OCRA'" font-size="2">6</text>
+	<text transform="matrix(1 0 0 1 46.426 28.4609)" fill="#787878" font-family="'Droid Sans'" font-size="2">6</text>
 	
 		<line id="connector5pin" fill="none" stroke="#787878" stroke-width="0.2469" stroke-linecap="round" x1="50.75" y1="36.36" x2="43.55" y2="36.36"/>
 	<rect id="connector5terminal" x="50.75" y="36.36" fill="none" width="0" height="0"/>
-	<text transform="matrix(1 0 0 1 46.426 35.6602)" fill="#787878" font-family="'OCRA'" font-size="2">10</text>
+	<text transform="matrix(1 0 0 1 46.426 35.6602)" fill="#787878" font-family="'Droid Sans'" font-size="2">10</text>
 	
 		<line id="connector0pin" fill="none" stroke="#787878" stroke-width="0.2469" stroke-linecap="round" x1="50.75" y1="7.56" x2="43.55" y2="7.56"/>
 	<rect id="connector0terminal" x="50.75" y="7.56" fill="none" width="0" height="0"/>
-	<text transform="matrix(1 0 0 1 46.426 6.8594)" fill="#787878" font-family="'OCRA'" font-size="2">1</text>
+	<text transform="matrix(1 0 0 1 46.426 6.8594)" fill="#787878" font-family="'Droid Sans'" font-size="2">1</text>
 	
 		<line id="connector1pin" fill="none" stroke="#787878" stroke-width="0.2469" stroke-linecap="round" x1="0.35" y1="7.56" x2="7.55" y2="7.56"/>
 	<rect id="connector1terminal" x="0.35" y="7.56" fill="none" width="0" height="0"/>
-	<text transform="matrix(1 0 0 1 3.2268 6.8594)" fill="#787878" font-family="'OCRA'" font-size="2">2</text>
+	<text transform="matrix(1 0 0 1 3.2268 6.8594)" fill="#787878" font-family="'Droid Sans'" font-size="2">2</text>
 	
 		<line id="connector2pin" fill="none" stroke="#787878" stroke-width="0.2469" stroke-linecap="round" x1="50.75" y1="14.76" x2="43.55" y2="14.76"/>
 	<rect id="connector2terminal" x="50.75" y="14.76" fill="none" width="0" height="0"/>
-	<text transform="matrix(1 0 0 1 46.426 14.0605)" fill="#787878" font-family="'OCRA'" font-size="2">5</text>
+	<text transform="matrix(1 0 0 1 46.426 14.0605)" fill="#787878" font-family="'Droid Sans'" font-size="2">5</text>
 </g>
 </svg>

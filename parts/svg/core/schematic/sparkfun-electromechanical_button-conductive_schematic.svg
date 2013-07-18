@@ -15,9 +15,9 @@
 <circle class='other' cx='7.74347' cy='5.8066' r='5.6796' stroke='#000000' stroke-width='0.254' fill='none' />
 <line class='pin' id='connector0pin' connectorname='1' x1='0.123472' y1='5.8066' x2='0.123472' y2='5.8066' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
 <rect class='terminal' id='connector0terminal' x='0.123472' y='5.8066' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='0.123472' y='5.55966' text-anchor='middle'>1</text>
+<text class='text' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#8c8c8c' font-size='0.881944' x='0.123472' y='5.43618' text-anchor='middle'>1</text>
 <line class='pin' id='connector1pin' connectorname='2' x1='15.3635' y1='5.8066' x2='15.3635' y2='5.8066' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
 <rect class='terminal' id='connector1terminal' x='15.3635' y='5.8066' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='15.3635' y='5.55966' text-anchor='middle'>2</text>
+<text class='text' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#8c8c8c' font-size='0.881944' x='15.3635' y='5.43618' text-anchor='middle'>2</text>
 </g>
 </svg>

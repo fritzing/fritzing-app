@@ -3,7 +3,7 @@
 <svg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' version='1.2' baseProfile='tiny' x='0in' y='0in' width='0.17in' height='0.409722in' viewBox='0 0 4.318 10.4069' >
 <g id='schematic'>
 <rect class='interior rect' x='0.889' y='0.123472' width='2.54' height='10.16' stroke='none' stroke-width='0' fill='#ffffff' />
-<text class='text' id='label' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.94028' x='2.159' y='5.20347' text-anchor='middle'></text>
+<text class='text' id='label' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#000000' font-size='1.49931' x='2.159' y='4.40382' text-anchor='middle'>MOTOR</text>
 <line class='other' x1='0.889' y1='1.39347' x2='0.889' y2='3.42547' stroke='#000000' stroke-width='0.3175' stroke-linecap='round'/>
 <line class='other' x1='0.889' y1='1.39347' x2='2.159' y2='1.39347' stroke='#000000' stroke-width='0.3175' stroke-linecap='round'/>
 <line class='other' x1='2.159' y1='1.39347' x2='3.429' y2='1.39347' stroke='#000000' stroke-width='0.3175' stroke-linecap='round'/>
@@ -20,15 +20,15 @@
 <circle class='other' cx='2.159' cy='5.20347' r='2.032' stroke='#000000' stroke-width='0.254' fill='none' />
 <line class='pin' id='connector0pin' connectorname='+' x1='2.159' y1='0.123472' x2='2.159' y2='0.123472' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
 <rect class='terminal' id='connector0terminal' x='2.159' y='0.123472' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='2.159' y='-0.123472' text-anchor='middle'>1</text>
-<g transform='translate(2.89983,0.864304)'><g transform='rotate(270)'>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.5875' x='0' y='0' text-anchor='end'>+</text>
+<text class='text' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#8c8c8c' font-size='0.881944' x='2.159' y='-0.246944' text-anchor='middle'>1</text>
+<g transform='translate(2.40594,0.864304)'><g transform='rotate(270)'>
+<text class='text' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#787878' font-size='1.23472' x='0' y='0' text-anchor='end'>+</text>
 </g></g>
 <line class='pin' id='connector1pin' connectorname='-' x1='2.159' y1='10.2835' x2='2.159' y2='10.2835' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
 <rect class='terminal' id='connector1terminal' x='2.159' y='10.2835' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='2.159' y='10.0365' text-anchor='middle'>2</text>
-<g transform='translate(2.89983,11.0243)'><g transform='rotate(270)'>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.5875' x='0' y='0' text-anchor='end'>-</text>
+<text class='text' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#8c8c8c' font-size='0.881944' x='2.159' y='9.91306' text-anchor='middle'>2</text>
+<g transform='translate(2.40594,11.0243)'><g transform='rotate(270)'>
+<text class='text' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#787878' font-size='1.23472' x='0' y='0' text-anchor='end'>-</text>
 </g></g>
 </g>
 </svg>

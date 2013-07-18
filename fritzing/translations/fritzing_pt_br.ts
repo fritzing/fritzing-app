@@ -431,6 +431,14 @@
         <source>Do you really want to remove &apos;%1&apos; from the bin? This operation cannot be undone.</source>
         <translation>Você realmente deseja remover &apos;%1&apos; do pacote? Esta operação não pode ser desfeita.</translation>
     </message>
+    <message>
+        <source>Copy to Sketch</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy all the parts in the bin to a sketch</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Board</name>
@@ -960,6 +968,26 @@ Também é possível escolher um conector como ponto de aterramento clicando com
     <message>
         <source>obsolete</source>
         <translation>obsoleto</translation>
+    </message>
+    <message>
+        <source>Placement</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>pcb layer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>location</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>rotation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>degrees</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3145,6 +3173,78 @@ Ir em frente e desfazer?</translation>
         <source>Move to top layer</source>
         <translation>Mover para camada superior</translation>
     </message>
+    <message>
+        <source>Align Left</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Align selected items at the left</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Align Horizontal Center</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Align selected items at the horizontal center</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Align Right</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Align selected items at the right</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Align Top</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Align selected items at the top</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Align Vertical Center</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Align selected items at the vertical center</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Align Bottom</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Align selected items at the bottom</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Align</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>top and bottom</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>bottom</source>
+        <translation type="unfinished">inferior</translation>
+    </message>
+    <message>
+        <source>top</source>
+        <translation type="unfinished">superior</translation>
+    </message>
+    <message>
+        <source>Ground Fill (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copper Fill (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MazeRouter</name>
@@ -3233,6 +3333,13 @@ Razão: %2 (código do erro %3)</translation>
     <message>
         <source>chip label</source>
         <translation>etiqueta do chip</translation>
+    </message>
+</context>
+<context>
+    <name>NetLabel</name>
+    <message>
+        <source>net label</source>
+        <translation type="unfinished">etiqueta de rede</translation>
     </message>
 </context>
 <context>
@@ -4694,6 +4801,10 @@ shift troca eixo de scroll</translation>
     <message>
         <source>Code (*.%1)</source>
         <translation>Código (*.%1)</translation>
+    </message>
+    <message>
+        <source>While it is possible to read and edit %1 programming files, it is not yet possible to use Fritzing to compile or upload these programs to a microcontroller.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -6244,6 +6355,10 @@ Nota: você pode também acionar este aviso passando o mouse pelo texto de estad
         <source>Resize ruler to %1 %2</source>
         <translation>Redimensionar a régua para %1 %2</translation>
     </message>
+    <message>
+        <source>Add %1 parts</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SqliteReferenceModel</name>
@@ -6289,13 +6404,16 @@ Nota: você pode também acionar este aviso passando o mouse pelo texto de estad
         </translation>
     </message>
     <message>
-        <source>strip length</source>
-        <translatorcomment>comprimento das trilhas</translatorcomment>
-        <translation>comprimento da trilhas</translation>
+        <source>rows</source>
+        <translation type="unfinished">linhas</translation>
     </message>
     <message>
-        <source>strips</source>
-        <translation>trilhas</translation>
+        <source>columns</source>
+        <translation type="unfinished">colunas</translation>
+    </message>
+    <message>
+        <source>%1 layout</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -6303,10 +6421,6 @@ Nota: você pode também acionar este aviso passando o mouse pelo texto de estad
     <message>
         <source>voltage</source>
         <translation>tensão</translation>
-    </message>
-    <message>
-        <source>net label</source>
-        <translation>etiqueta de rede</translation>
     </message>
     <message>
         <source>label</source>

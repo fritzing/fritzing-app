@@ -12,13 +12,13 @@
 <path class='other' fill='none' d='M0.127,12.8235 A1.27,1.27 0 0 0 1.397,11.5535' stroke-width='0.254' stroke='#000000' />
 <line class='pin' id='connector0pin' connectorname='1' x1='0.127' y1='0.123472' x2='0.127' y2='2.66347' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
 <rect class='terminal' id='connector0terminal' x='0.127' y='0.123472' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
-<g transform='translate(-0.119944,1.39347)'><g transform='rotate(270)'>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='0' y='0' text-anchor='middle'>1</text>
+<g transform='translate(-0.243416,1.39347)'><g transform='rotate(270)'>
+<text class='text' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#8c8c8c' font-size='0.881944' x='0' y='0' text-anchor='middle'>1</text>
 </g></g>
 <line class='pin' id='connector1pin' connectorname='2' x1='0.127' y1='15.3635' x2='0.127' y2='12.8235' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
 <rect class='terminal' id='connector1terminal' x='0.127' y='15.3635' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
-<g transform='translate(-0.119944,14.0935)'><g transform='rotate(270)'>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='0' y='0' text-anchor='middle'>2</text>
+<g transform='translate(-0.243416,14.0935)'><g transform='rotate(270)'>
+<text class='text' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#8c8c8c' font-size='0.881944' x='0' y='0' text-anchor='middle'>2</text>
 </g></g>
 </g>
 </svg>

@@ -431,6 +431,14 @@
         <source>Do you really want to remove &apos;%1&apos; from the bin? This operation cannot be undone.</source>
         <translation>Weet u zeker dat u &apos;%1&apos; wilt verwijderen uit de koffer? Dit kan niet ongedaan worden gemaakt.</translation>
     </message>
+    <message>
+        <source>Copy to Sketch</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy all the parts in the bin to a sketch</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Board</name>
@@ -960,6 +968,26 @@ Het is ook mogelijk om op een connector rechts te klikken en kies &apos;Maak gro
     <message>
         <source>obsolete</source>
         <translation>verouderd</translation>
+    </message>
+    <message>
+        <source>Placement</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>pcb layer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>location</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>rotation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>degrees</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3145,6 +3173,78 @@ Doorgaan en terug naar vorige versie?</translation>
         <source>Move to top layer</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Align Left</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Align selected items at the left</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Align Horizontal Center</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Align selected items at the horizontal center</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Align Right</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Align selected items at the right</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Align Top</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Align selected items at the top</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Align Vertical Center</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Align selected items at the vertical center</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Align Bottom</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Align selected items at the bottom</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Align</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>top and bottom</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>bottom</source>
+        <translation type="unfinished">onder</translation>
+    </message>
+    <message>
+        <source>top</source>
+        <translation type="unfinished">boven</translation>
+    </message>
+    <message>
+        <source>Ground Fill (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copper Fill (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MazeRouter</name>
@@ -3233,6 +3333,13 @@ Reden : %2 (errcode %3)</translation>
     <message>
         <source>chip label</source>
         <translation>IC label</translation>
+    </message>
+</context>
+<context>
+    <name>NetLabel</name>
+    <message>
+        <source>net label</source>
+        <translation type="unfinished">net label</translation>
     </message>
 </context>
 <context>
@@ -4688,6 +4795,10 @@ De shift toets wisselt de as</translation>
     <message>
         <source>Code (*.%1)</source>
         <translation>Code (*.%1)</translation>
+    </message>
+    <message>
+        <source>While it is possible to read and edit %1 programming files, it is not yet possible to use Fritzing to compile or upload these programs to a microcontroller.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -6234,6 +6345,10 @@ Noot:Je kunt dit venster ook oproepen door op de tekst van de routing status te 
         <source>Resize ruler to %1 %2</source>
         <translation>Wijzig grootte van meetlat naar %1 %2</translation>
     </message>
+    <message>
+        <source>Add %1 parts</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SqliteReferenceModel</name>
@@ -6280,12 +6395,16 @@ Noot:Je kunt dit venster ook oproepen door op de tekst van de routing status te 
         </translation>
     </message>
     <message>
-        <source>strip length</source>
-        <translation>strip lengte</translation>
+        <source>rows</source>
+        <translation type="unfinished">rijen</translation>
     </message>
     <message>
-        <source>strips</source>
-        <translation>strips</translation>
+        <source>columns</source>
+        <translation type="unfinished">kolommen</translation>
+    </message>
+    <message>
+        <source>%1 layout</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -6293,10 +6412,6 @@ Noot:Je kunt dit venster ook oproepen door op de tekst van de routing status te 
     <message>
         <source>voltage</source>
         <translation>spanning</translation>
-    </message>
-    <message>
-        <source>net label</source>
-        <translation>net label</translation>
     </message>
     <message>
         <source>label</source>

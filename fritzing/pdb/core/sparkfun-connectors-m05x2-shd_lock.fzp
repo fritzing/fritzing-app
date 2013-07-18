@@ -25,7 +25,7 @@ Standard 10-pin dual row 0.1 header. Commonly used with AVR-ISP. Use with Spark 
 </layers>
 </breadboardView>
 <schematicView>
-<layers image='schematic/sparkfun-connectors_m05x2_schematic.svg'>
+<layers image='schematic/generic_female_pin_header_10_100mil_10thin_double_schematic.svg'>
 <layer layerId='schematic'/>
 </layers>
 </schematicView>

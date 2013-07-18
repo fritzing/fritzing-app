@@ -24,7 +24,7 @@ Standard 8-pin 0.1 header. Use with straight break away headers (SKU : PRT-00116
 </layers>
 </breadboardView>
 <schematicView>
-<layers image='schematic/sparkfun-connectors_m08_schematic.svg'>
+<layers image='schematic/generic_female_pin_header_8_100mil_10thin_schematic.svg'>
 <layer layerId='schematic'/>
 </layers>
 </schematicView>

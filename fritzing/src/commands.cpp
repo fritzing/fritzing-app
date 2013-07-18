@@ -2201,6 +2201,40 @@ QString AddSubpartCommand::getParamString() const {
 		;
 }
 
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+PackItemsCommand::PackItemsCommand(SketchWidget *sketchWidget, int columns, const QList<long> & ids, QUndoCommand *parent)
+    : BaseCommand(BaseCommand::CrossView, sketchWidget, parent)
+{
+    m_ids = ids;
+    m_columns = columns;
+    m_firstTime = true;
+}
+
+void PackItemsCommand::undo()
+{
+    BaseCommand::undo();
+}
+
+void PackItemsCommand::redo()
+{
+    if (m_firstTime) {
+        m_sketchWidget->packItems(m_columns, m_ids, m_parentCommand, true);
+        m_firstTime = false;
+    }
+
+    BaseCommand::redo();
+}
+
+QString PackItemsCommand::getParamString() const {
+	return QString("PackItemsCommand ") 
+		+ BaseCommand::getParamString() + 
+		QString(" columns:%1 count:%2")
+		.arg(m_columns)
+		.arg(m_ids.count())	
+		;
+}
+
 ////////////////////////////////////
 
 TemporaryCommand::TemporaryCommand(const QString & text) : QUndoCommand(text) {

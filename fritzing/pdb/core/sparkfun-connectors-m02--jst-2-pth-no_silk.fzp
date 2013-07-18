@@ -2,7 +2,7 @@
 <module fritzingVersion='0.7.2b' moduleId='SparkFun-Connectors-M02--JST-2-PTH-NO_SILK'>
 <!-- generated from Sparkfun Eagle Library 'SparkFun-Connectors' M02 -JST-2-PTH-NO_SILK -->
 <version>4</version>
-<date>2013-02-13</date>
+<date>2013-07-15</date>
 <label>JP</label>
 <author>www.fritzing.org</author>
 <description>&lt;b&gt;Header 2&lt;/b&gt;
@@ -25,7 +25,7 @@ Standard 2-pin 0.1 header. Use with straight break away headers (SKU : PRT-00116
 </layers>
 </breadboardView>
 <schematicView>
-<layers image='schematic/sparkfun-connectors_m02_schematic.svg'>
+<layers image='schematic/generic_female_pin_header_2_100mil_10thin_schematic.svg'>
 <layer layerId='schematic'/>
 </layers>
 </schematicView>
@@ -37,7 +37,7 @@ Standard 2-pin 0.1 header. Use with straight break away headers (SKU : PRT-00116
 </layers>
 </pcbView>
 <iconView>
-<layers image='breadboard/sparkfun-connectors_jst-2-pth-ns_breadboard.svg'>
+<layers image='icon/jst-2-pth.svg'>
 <layer layerId='icon'/>
 </layers>
 </iconView>

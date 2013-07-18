@@ -564,6 +564,7 @@ signals:
     void cleanupRatsnestsSignal(bool doEmit);
     void addSubpartSignal(long id, long subpartID, bool doEmit);
     void getDroppedItemViewLayerPlacementSignal(ModelPart * modelPart, ViewLayer::ViewLayerPlacement &);
+    void packItemsSignal(int columns, const QList<long> & ids, QUndoCommand *parent, bool doEmit);
 
 protected slots:
 	void itemAddedSlot(ModelPart *, ItemBase *, ViewLayer::ViewLayerPlacement, const ViewGeometry &, long id, SketchWidget * dropOrigin);
@@ -632,6 +633,7 @@ public slots:
 	void ratsnestConnect(long id, const QString & connectorID, bool connect, bool doEmit);
     void cleanupRatsnests(bool doEmit);
     void addSubpart(long id, long subpartid, bool doEmit);
+    void packItems(int columns, const QList<long> & ids, QUndoCommand *parent, bool doEmit);
 
 protected:
 	enum StatusConnectStatus {

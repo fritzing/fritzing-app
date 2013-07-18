@@ -3,7 +3,19 @@
 <svg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' version='1.2' baseProfile='tiny' x='0in' y='0in' width='3.11122in' height='1.80986in' viewBox='0 0 79.025 45.9705' >
 <g id='schematic'>
 <rect class='interior rect' x='0.127' y='5.20347' width='76.2' height='40.64' stroke='none' stroke-width='0' fill='#ffffff' />
-<text class='text' id='label' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.94028' x='38.227' y='25.5235' text-anchor='middle'></text>
+<text class='text' id='label' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#000000' font-size='1.49931' x='38.227' y='22.3249' text-anchor='middle'>7</text>
+<rect class='interior rect' x='0.127' y='5.20347' width='76.2' height='40.64' stroke='none' stroke-width='0' fill='#ffffff' />
+<text class='text' id='label' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#000000' font-size='1.49931' x='38.227' y='22.3249' text-anchor='middle'>7</text>
+<text class='text' id='label' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#000000' font-size='1.49931' x='38.227' y='23.9242' text-anchor='middle'>SEGMENT</text>
+<rect class='interior rect' x='0.127' y='5.20347' width='76.2' height='40.64' stroke='none' stroke-width='0' fill='#ffffff' />
+<text class='text' id='label' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#000000' font-size='1.49931' x='38.227' y='22.3249' text-anchor='middle'>7</text>
+<text class='text' id='label' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#000000' font-size='1.49931' x='38.227' y='23.9242' text-anchor='middle'>SEGMENT</text>
+<text class='text' id='label' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#000000' font-size='1.49931' x='38.227' y='25.5235' text-anchor='middle'>4DIGIT</text>
+<rect class='interior rect' x='0.127' y='5.20347' width='76.2' height='40.64' stroke='none' stroke-width='0' fill='#ffffff' />
+<text class='text' id='label' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#000000' font-size='1.49931' x='38.227' y='22.3249' text-anchor='middle'>7</text>
+<text class='text' id='label' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#000000' font-size='1.49931' x='38.227' y='23.9242' text-anchor='middle'>SEGMENT</text>
+<text class='text' id='label' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#000000' font-size='1.49931' x='38.227' y='25.5235' text-anchor='middle'>4DIGIT</text>
+<text class='text' id='label' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#000000' font-size='1.49931' x='38.227' y='27.1228' text-anchor='middle'>YOUNGSUN</text>
 <line class='other' x1='76.327' y1='5.20347' x2='76.327' y2='45.8435' stroke='#000000' stroke-width='0.3175' stroke-linecap='round'/>
 <line class='other' x1='76.327' y1='45.8435' x2='0.127' y2='45.8435' stroke='#000000' stroke-width='0.3175' stroke-linecap='round'/>
 <line class='other' x1='0.127' y1='45.8435' x2='0.127' y2='5.20347' stroke='#000000' stroke-width='0.3175' stroke-linecap='round'/>
@@ -183,167 +195,167 @@
 <circle class='other' cx='37.465' cy='35.6835' r='1.27' stroke='#000000' stroke-width='0.508' fill='none' />
 <circle class='other' cx='38.735' cy='25.5235' r='1.27' stroke='#000000' stroke-width='0.508' fill='none' />
 <circle class='other' cx='58.547' cy='20.4435' r='1.27' stroke='#000000' stroke-width='0.508' fill='none' />
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.3208' x='11.303' y='18.4115' text-anchor='start'>A</text>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.3208' x='15.875' y='24.7615' text-anchor='start'>B</text>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.3208' x='14.605' y='37.4615' text-anchor='start'>C</text>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.3208' x='8.763' y='43.8115' text-anchor='start'>D</text>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.3208' x='3.937' y='37.4615' text-anchor='start'>E</text>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.3208' x='5.207' y='24.7615' text-anchor='start'>F</text>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.3208' x='10.033' y='31.1115' text-anchor='start'>G</text>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.3208' x='17.145' y='43.8115' text-anchor='start'>DP</text>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.3208' x='29.083' y='18.4115' text-anchor='start'>A</text>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.3208' x='33.655' y='24.7615' text-anchor='start'>B</text>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.3208' x='32.385' y='37.4615' text-anchor='start'>C</text>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.3208' x='26.543' y='43.8115' text-anchor='start'>D</text>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.3208' x='21.717' y='37.4615' text-anchor='start'>E</text>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.3208' x='22.987' y='24.7615' text-anchor='start'>F</text>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.3208' x='27.813' y='31.1115' text-anchor='start'>G</text>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.3208' x='34.925' y='43.8115' text-anchor='start'>DP</text>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.3208' x='49.403' y='18.4115' text-anchor='start'>A</text>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.3208' x='53.975' y='24.7615' text-anchor='start'>B</text>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.3208' x='52.705' y='37.4615' text-anchor='start'>C</text>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.3208' x='46.863' y='43.8115' text-anchor='start'>D</text>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.3208' x='42.037' y='37.4615' text-anchor='start'>E</text>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.3208' x='43.307' y='24.7615' text-anchor='start'>F</text>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.3208' x='48.133' y='31.1115' text-anchor='start'>G</text>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.3208' x='55.245' y='43.8115' text-anchor='start'>DP</text>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.3208' x='67.183' y='18.4115' text-anchor='start'>A</text>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.3208' x='71.755' y='24.7615' text-anchor='start'>B</text>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.3208' x='70.485' y='37.4615' text-anchor='start'>C</text>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.3208' x='64.643' y='43.8115' text-anchor='start'>D</text>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.3208' x='59.817' y='37.4615' text-anchor='start'>E</text>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.3208' x='61.087' y='24.7615' text-anchor='start'>F</text>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.3208' x='65.913' y='31.1115' text-anchor='start'>G</text>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.3208' x='73.025' y='43.8115' text-anchor='start'>DP</text>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.3208' x='36.703' y='31.1115' text-anchor='start'>COL</text>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.3208' x='57.023' y='18.4115' text-anchor='start'>APOS</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#505050' font-size='1.3208' x='11.303' y='18.4115' text-anchor='start'>A</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#505050' font-size='1.3208' x='15.875' y='24.7615' text-anchor='start'>B</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#505050' font-size='1.3208' x='14.605' y='37.4615' text-anchor='start'>C</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#505050' font-size='1.3208' x='8.763' y='43.8115' text-anchor='start'>D</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#505050' font-size='1.3208' x='3.937' y='37.4615' text-anchor='start'>E</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#505050' font-size='1.3208' x='5.207' y='24.7615' text-anchor='start'>F</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#505050' font-size='1.3208' x='10.033' y='31.1115' text-anchor='start'>G</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#505050' font-size='1.3208' x='17.145' y='43.8115' text-anchor='start'>DP</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#505050' font-size='1.3208' x='29.083' y='18.4115' text-anchor='start'>A</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#505050' font-size='1.3208' x='33.655' y='24.7615' text-anchor='start'>B</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#505050' font-size='1.3208' x='32.385' y='37.4615' text-anchor='start'>C</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#505050' font-size='1.3208' x='26.543' y='43.8115' text-anchor='start'>D</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#505050' font-size='1.3208' x='21.717' y='37.4615' text-anchor='start'>E</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#505050' font-size='1.3208' x='22.987' y='24.7615' text-anchor='start'>F</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#505050' font-size='1.3208' x='27.813' y='31.1115' text-anchor='start'>G</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#505050' font-size='1.3208' x='34.925' y='43.8115' text-anchor='start'>DP</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#505050' font-size='1.3208' x='49.403' y='18.4115' text-anchor='start'>A</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#505050' font-size='1.3208' x='53.975' y='24.7615' text-anchor='start'>B</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#505050' font-size='1.3208' x='52.705' y='37.4615' text-anchor='start'>C</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#505050' font-size='1.3208' x='46.863' y='43.8115' text-anchor='start'>D</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#505050' font-size='1.3208' x='42.037' y='37.4615' text-anchor='start'>E</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#505050' font-size='1.3208' x='43.307' y='24.7615' text-anchor='start'>F</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#505050' font-size='1.3208' x='48.133' y='31.1115' text-anchor='start'>G</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#505050' font-size='1.3208' x='55.245' y='43.8115' text-anchor='start'>DP</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#505050' font-size='1.3208' x='67.183' y='18.4115' text-anchor='start'>A</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#505050' font-size='1.3208' x='71.755' y='24.7615' text-anchor='start'>B</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#505050' font-size='1.3208' x='70.485' y='37.4615' text-anchor='start'>C</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#505050' font-size='1.3208' x='64.643' y='43.8115' text-anchor='start'>D</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#505050' font-size='1.3208' x='59.817' y='37.4615' text-anchor='start'>E</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#505050' font-size='1.3208' x='61.087' y='24.7615' text-anchor='start'>F</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#505050' font-size='1.3208' x='65.913' y='31.1115' text-anchor='start'>G</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#505050' font-size='1.3208' x='73.025' y='43.8115' text-anchor='start'>DP</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#505050' font-size='1.3208' x='36.703' y='31.1115' text-anchor='start'>COL</text>
+<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#505050' font-size='1.3208' x='57.023' y='18.4115' text-anchor='start'>APOS</text>
 <line class='pin' id='connector1pin' connectorname='DIG2' x1='10.287' y1='0.123472' x2='10.287' y2='5.20347' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
 <rect class='terminal' id='connector1terminal' x='10.287' y='0.123472' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
-<g transform='translate(10.0401,2.66347)'><g transform='rotate(270)'>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='0' y='0' text-anchor='middle'>2</text>
+<g transform='translate(9.91658,2.66347)'><g transform='rotate(270)'>
+<text class='text' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#8c8c8c' font-size='0.881944' x='0' y='0' text-anchor='middle'>2</text>
 </g></g>
-<g transform='translate(11.0278,5.9443)'><g transform='rotate(270)'>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.5875' x='0' y='0' text-anchor='end'>DIG2</text>
+<g transform='translate(10.5339,5.9443)'><g transform='rotate(270)'>
+<text class='text' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#787878' font-size='1.23472' x='0' y='0' text-anchor='end'>DIG2</text>
 </g></g>
 <line class='pin' id='connector5pin' connectorname='DIG3' x1='12.827' y1='0.123472' x2='12.827' y2='5.20347' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
 <rect class='terminal' id='connector5terminal' x='12.827' y='0.123472' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
-<g transform='translate(12.5801,2.66347)'><g transform='rotate(270)'>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='0' y='0' text-anchor='middle'>6</text>
+<g transform='translate(12.4566,2.66347)'><g transform='rotate(270)'>
+<text class='text' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#8c8c8c' font-size='0.881944' x='0' y='0' text-anchor='middle'>6</text>
 </g></g>
-<g transform='translate(13.5678,5.9443)'><g transform='rotate(270)'>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.5875' x='0' y='0' text-anchor='end'>DIG3</text>
+<g transform='translate(13.0739,5.9443)'><g transform='rotate(270)'>
+<text class='text' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#787878' font-size='1.23472' x='0' y='0' text-anchor='end'>DIG3</text>
 </g></g>
 <line class='pin' id='connector7pin' connectorname='DIG4' x1='15.367' y1='0.123472' x2='15.367' y2='5.20347' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
 <rect class='terminal' id='connector7terminal' x='15.367' y='0.123472' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
-<g transform='translate(15.1201,2.66347)'><g transform='rotate(270)'>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='0' y='0' text-anchor='middle'>8</text>
+<g transform='translate(14.9966,2.66347)'><g transform='rotate(270)'>
+<text class='text' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#8c8c8c' font-size='0.881944' x='0' y='0' text-anchor='middle'>8</text>
 </g></g>
-<g transform='translate(16.1078,5.9443)'><g transform='rotate(270)'>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.5875' x='0' y='0' text-anchor='end'>DIG4</text>
+<g transform='translate(15.6139,5.9443)'><g transform='rotate(270)'>
+<text class='text' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#787878' font-size='1.23472' x='0' y='0' text-anchor='end'>DIG4</text>
 </g></g>
 <line class='pin' id='connector3pin' connectorname='COL-A' x1='25.527' y1='0.123472' x2='25.527' y2='5.20347' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
 <rect class='terminal' id='connector3terminal' x='25.527' y='0.123472' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
-<g transform='translate(25.2801,2.66347)'><g transform='rotate(270)'>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='0' y='0' text-anchor='middle'>4</text>
+<g transform='translate(25.1566,2.66347)'><g transform='rotate(270)'>
+<text class='text' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#8c8c8c' font-size='0.881944' x='0' y='0' text-anchor='middle'>4</text>
 </g></g>
-<g transform='translate(26.2678,5.9443)'><g transform='rotate(270)'>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.5875' x='0' y='0' text-anchor='end'>COL-A</text>
+<g transform='translate(25.7739,5.9443)'><g transform='rotate(270)'>
+<text class='text' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#787878' font-size='1.23472' x='0' y='0' text-anchor='end'>COL-A</text>
 </g></g>
 <line class='pin' id='connector9pin' connectorname='APOS-A' x1='66.167' y1='0.123472' x2='66.167' y2='5.20347' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
 <rect class='terminal' id='connector9terminal' x='66.167' y='0.123472' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
-<g transform='translate(65.9201,2.66347)'><g transform='rotate(270)'>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='0' y='0' text-anchor='middle'>10</text>
+<g transform='translate(65.7966,2.66347)'><g transform='rotate(270)'>
+<text class='text' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#8c8c8c' font-size='0.881944' x='0' y='0' text-anchor='middle'>10</text>
 </g></g>
-<g transform='translate(66.9078,5.9443)'><g transform='rotate(270)'>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.5875' x='0' y='0' text-anchor='end'>APOS-A</text>
+<g transform='translate(66.4139,5.9443)'><g transform='rotate(270)'>
+<text class='text' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#787878' font-size='1.23472' x='0' y='0' text-anchor='end'>APOS-A</text>
 </g></g>
 <line class='pin' id='connector13pin' connectorname='A' x1='38.227' y1='0.123472' x2='38.227' y2='5.20347' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
 <rect class='terminal' id='connector13terminal' x='38.227' y='0.123472' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
-<g transform='translate(37.9801,2.66347)'><g transform='rotate(270)'>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='0' y='0' text-anchor='middle'>14</text>
+<g transform='translate(37.8566,2.66347)'><g transform='rotate(270)'>
+<text class='text' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#8c8c8c' font-size='0.881944' x='0' y='0' text-anchor='middle'>14</text>
 </g></g>
-<g transform='translate(38.9678,5.9443)'><g transform='rotate(270)'>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.5875' x='0' y='0' text-anchor='end'>A</text>
+<g transform='translate(38.4739,5.9443)'><g transform='rotate(270)'>
+<text class='text' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#787878' font-size='1.23472' x='0' y='0' text-anchor='end'>A</text>
 </g></g>
 <line class='pin' id='connector15pin' connectorname='B' x1='40.767' y1='0.123472' x2='40.767' y2='5.20347' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
 <rect class='terminal' id='connector15terminal' x='40.767' y='0.123472' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
-<g transform='translate(40.5201,2.66347)'><g transform='rotate(270)'>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='0' y='0' text-anchor='middle'>16</text>
+<g transform='translate(40.3966,2.66347)'><g transform='rotate(270)'>
+<text class='text' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#8c8c8c' font-size='0.881944' x='0' y='0' text-anchor='middle'>16</text>
 </g></g>
-<g transform='translate(41.5078,5.9443)'><g transform='rotate(270)'>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.5875' x='0' y='0' text-anchor='end'>B</text>
+<g transform='translate(41.0139,5.9443)'><g transform='rotate(270)'>
+<text class='text' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#787878' font-size='1.23472' x='0' y='0' text-anchor='end'>B</text>
 </g></g>
 <line class='pin' id='connector12pin' connectorname='C' x1='43.307' y1='0.123472' x2='43.307' y2='5.20347' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
 <rect class='terminal' id='connector12terminal' x='43.307' y='0.123472' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
-<g transform='translate(43.0601,2.66347)'><g transform='rotate(270)'>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='0' y='0' text-anchor='middle'>13</text>
+<g transform='translate(42.9366,2.66347)'><g transform='rotate(270)'>
+<text class='text' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#8c8c8c' font-size='0.881944' x='0' y='0' text-anchor='middle'>13</text>
 </g></g>
-<g transform='translate(44.0478,5.9443)'><g transform='rotate(270)'>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.5875' x='0' y='0' text-anchor='end'>C</text>
+<g transform='translate(43.5539,5.9443)'><g transform='rotate(270)'>
+<text class='text' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#787878' font-size='1.23472' x='0' y='0' text-anchor='end'>C</text>
 </g></g>
 <line class='pin' id='connector2pin' connectorname='D' x1='45.847' y1='0.123472' x2='45.847' y2='5.20347' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
 <rect class='terminal' id='connector2terminal' x='45.847' y='0.123472' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
-<g transform='translate(45.6001,2.66347)'><g transform='rotate(270)'>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='0' y='0' text-anchor='middle'>3</text>
+<g transform='translate(45.4766,2.66347)'><g transform='rotate(270)'>
+<text class='text' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#8c8c8c' font-size='0.881944' x='0' y='0' text-anchor='middle'>3</text>
 </g></g>
-<g transform='translate(46.5878,5.9443)'><g transform='rotate(270)'>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.5875' x='0' y='0' text-anchor='end'>D</text>
+<g transform='translate(46.0939,5.9443)'><g transform='rotate(270)'>
+<text class='text' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#787878' font-size='1.23472' x='0' y='0' text-anchor='end'>D</text>
 </g></g>
 <line class='pin' id='connector4pin' connectorname='E' x1='48.387' y1='0.123472' x2='48.387' y2='5.20347' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
 <rect class='terminal' id='connector4terminal' x='48.387' y='0.123472' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
-<g transform='translate(48.1401,2.66347)'><g transform='rotate(270)'>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='0' y='0' text-anchor='middle'>5</text>
+<g transform='translate(48.0166,2.66347)'><g transform='rotate(270)'>
+<text class='text' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#8c8c8c' font-size='0.881944' x='0' y='0' text-anchor='middle'>5</text>
 </g></g>
-<g transform='translate(49.1278,5.9443)'><g transform='rotate(270)'>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.5875' x='0' y='0' text-anchor='end'>E</text>
+<g transform='translate(48.6339,5.9443)'><g transform='rotate(270)'>
+<text class='text' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#787878' font-size='1.23472' x='0' y='0' text-anchor='end'>E</text>
 </g></g>
 <line class='pin' id='connector10pin' connectorname='F' x1='50.927' y1='0.123472' x2='50.927' y2='5.20347' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
 <rect class='terminal' id='connector10terminal' x='50.927' y='0.123472' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
-<g transform='translate(50.6801,2.66347)'><g transform='rotate(270)'>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='0' y='0' text-anchor='middle'>11</text>
+<g transform='translate(50.5566,2.66347)'><g transform='rotate(270)'>
+<text class='text' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#8c8c8c' font-size='0.881944' x='0' y='0' text-anchor='middle'>11</text>
 </g></g>
-<g transform='translate(51.6678,5.9443)'><g transform='rotate(270)'>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.5875' x='0' y='0' text-anchor='end'>F</text>
+<g transform='translate(51.1739,5.9443)'><g transform='rotate(270)'>
+<text class='text' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#787878' font-size='1.23472' x='0' y='0' text-anchor='end'>F</text>
 </g></g>
 <line class='pin' id='connector14pin' connectorname='G' x1='53.467' y1='0.123472' x2='53.467' y2='5.20347' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
 <rect class='terminal' id='connector14terminal' x='53.467' y='0.123472' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
-<g transform='translate(53.2201,2.66347)'><g transform='rotate(270)'>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='0' y='0' text-anchor='middle'>15</text>
+<g transform='translate(53.0966,2.66347)'><g transform='rotate(270)'>
+<text class='text' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#8c8c8c' font-size='0.881944' x='0' y='0' text-anchor='middle'>15</text>
 </g></g>
-<g transform='translate(54.2078,5.9443)'><g transform='rotate(270)'>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.5875' x='0' y='0' text-anchor='end'>G</text>
+<g transform='translate(53.7139,5.9443)'><g transform='rotate(270)'>
+<text class='text' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#787878' font-size='1.23472' x='0' y='0' text-anchor='end'>G</text>
 </g></g>
 <line class='pin' id='connector6pin' connectorname='DP' x1='56.007' y1='0.123472' x2='56.007' y2='5.20347' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
 <rect class='terminal' id='connector6terminal' x='56.007' y='0.123472' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
-<g transform='translate(55.7601,2.66347)'><g transform='rotate(270)'>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='0' y='0' text-anchor='middle'>7</text>
+<g transform='translate(55.6366,2.66347)'><g transform='rotate(270)'>
+<text class='text' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#8c8c8c' font-size='0.881944' x='0' y='0' text-anchor='middle'>7</text>
 </g></g>
-<g transform='translate(56.7478,5.9443)'><g transform='rotate(270)'>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.5875' x='0' y='0' text-anchor='end'>DP</text>
+<g transform='translate(56.2539,5.9443)'><g transform='rotate(270)'>
+<text class='text' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#787878' font-size='1.23472' x='0' y='0' text-anchor='end'>DP</text>
 </g></g>
 <line class='pin' id='connector11pin' connectorname='COL-C' x1='28.067' y1='0.123472' x2='28.067' y2='5.20347' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
 <rect class='terminal' id='connector11terminal' x='28.067' y='0.123472' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
-<g transform='translate(27.8201,2.66347)'><g transform='rotate(270)'>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='0' y='0' text-anchor='middle'>12</text>
+<g transform='translate(27.6966,2.66347)'><g transform='rotate(270)'>
+<text class='text' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#8c8c8c' font-size='0.881944' x='0' y='0' text-anchor='middle'>12</text>
 </g></g>
-<g transform='translate(28.8078,5.9443)'><g transform='rotate(270)'>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.5875' x='0' y='0' text-anchor='end'>COL-C</text>
+<g transform='translate(28.3139,5.9443)'><g transform='rotate(270)'>
+<text class='text' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#787878' font-size='1.23472' x='0' y='0' text-anchor='end'>COL-C</text>
 </g></g>
 <line class='pin' id='connector8pin' connectorname='APOS-C' x1='68.707' y1='0.123472' x2='68.707' y2='5.20347' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
 <rect class='terminal' id='connector8terminal' x='68.707' y='0.123472' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
-<g transform='translate(68.4601,2.66347)'><g transform='rotate(270)'>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='0' y='0' text-anchor='middle'>9</text>
+<g transform='translate(68.3366,2.66347)'><g transform='rotate(270)'>
+<text class='text' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#8c8c8c' font-size='0.881944' x='0' y='0' text-anchor='middle'>9</text>
 </g></g>
-<g transform='translate(69.4478,5.9443)'><g transform='rotate(270)'>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.5875' x='0' y='0' text-anchor='end'>APOS-C</text>
+<g transform='translate(68.9539,5.9443)'><g transform='rotate(270)'>
+<text class='text' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#787878' font-size='1.23472' x='0' y='0' text-anchor='end'>APOS-C</text>
 </g></g>
 <line class='pin' id='connector0pin' connectorname='DIG1' x1='7.747' y1='0.123472' x2='7.747' y2='5.20347' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
 <rect class='terminal' id='connector0terminal' x='7.747' y='0.123472' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
-<g transform='translate(7.50006,2.66347)'><g transform='rotate(270)'>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='0.70556' x='0' y='0' text-anchor='middle'>1</text>
+<g transform='translate(7.37658,2.66347)'><g transform='rotate(270)'>
+<text class='text' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#8c8c8c' font-size='0.881944' x='0' y='0' text-anchor='middle'>1</text>
 </g></g>
-<g transform='translate(8.48783,5.9443)'><g transform='rotate(270)'>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#787878' font-size='1.5875' x='0' y='0' text-anchor='end'>DIG1</text>
+<g transform='translate(7.99394,5.9443)'><g transform='rotate(270)'>
+<text class='text' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#787878' font-size='1.23472' x='0' y='0' text-anchor='end'>DIG1</text>
 </g></g>
 </g>
 </svg>

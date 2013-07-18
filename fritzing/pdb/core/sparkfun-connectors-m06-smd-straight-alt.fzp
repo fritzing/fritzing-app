@@ -34,7 +34,7 @@ will be further integrated into the Sparkfun Library for other footprints.  It c
 </layers>
 </breadboardView>
 <schematicView>
-<layers image='schematic/sparkfun-connectors_m06_schematic.svg'>
+<layers image='schematic/generic_female_pin_header_6_100mil_10thin_schematic.svg'>
 <layer layerId='schematic'/>
 </layers>
 </schematicView>

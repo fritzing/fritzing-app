@@ -84,14 +84,16 @@ def main():
                         if viewFiles:
                             fn = os.path.basename(image)
                             try:
-                                viewFiles.remove(fn)
+                                if fn in viewFiles:
+                                    print "{0} uses {1}/{2}".format(os.path.basename(root), dn, fn)
+                                    viewFiles.remove(fn)
                             except:
                                 pass
                         
                         
     for key in svgfiles.keys():
         for name in svgfiles.get(key):
-            print "git rm fritzing/parts/svg/{0}/{1}".format(key, name)
+            print "unused {0}/{1}".format(key, name)
 
             
 if __name__ == "__main__":

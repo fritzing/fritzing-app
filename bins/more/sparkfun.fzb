@@ -187,6 +187,28 @@
    </views>
   </instance>
   
+    <instance moduleIdRef="SparkFun-Boards-WIZ811MJ-">
+   <views>
+    <iconView layer="icon">
+     <geometry x="-1" y="-1" z="-1"/>
+    </iconView>
+   </views>
+  </instance>
+    <instance moduleIdRef="SparkFun-Boards-XPORT-">
+   <views>
+    <iconView layer="icon">
+     <geometry x="-1" y="-1" z="-1"/>
+    </iconView>
+   </views>
+  </instance>
+   <instance moduleIdRef="SparkFun-Boards-XPORT-DIRECT-">
+   <views>
+    <iconView layer="icon">
+     <geometry x="-1" y="-1" z="-1"/>
+    </iconView>
+   </views>
+  </instance>
+  
 
    <instance moduleIdRef="__spacer__" modelIndex="3" path="Sensors">
         <views>
@@ -335,129 +357,6 @@
     </iconView>
    </views>
   </instance>  
-  
-<instance moduleIdRef="__spacer__" modelIndex="3" path="LilyPad">
-        <views>
-          <iconView layer="icon">
-            <geometry z="-1" x="-1" y="-1"></geometry>
-          </iconView>
-        </views>
-   </instance>
-  <instance moduleIdRef="Arduino Lilypad">
-   <views>
-    <iconView layer="icon">
-     <geometry x="-1" y="-1" z="-1"/>
-    </iconView>
-   </views>
-  </instance>
-   <instance moduleIdRef="LilyPad-Simple-v22">
-   <views>
-    <iconView layer="icon">
-     <geometry x="-1" y="-1" z="-1"/>
-    </iconView>
-   </views>
-  </instance>
-  <instance moduleIdRef="LilyPad Coincell-Battery-v17">
-   <views>
-    <iconView layer="icon">
-     <geometry x="-1" y="-1" z="-1"/>
-    </iconView>
-   </views>
-  </instance>
-  <instance moduleIdRef="Buzzer-v15">
-   <views>
-    <iconView layer="icon">
-     <geometry x="-1" y="-1" z="-1"/>
-    </iconView>
-   </views>
-  </instance>
- <instance moduleIdRef="LilyPad Battery-Connect-v11">
-   <views>
-    <iconView layer="icon">
-     <geometry x="-1" y="-1" z="-1"/>
-    </iconView>
-   </views>
-  </instance>
-  <instance moduleIdRef="LilyPad SimplePower-v13">
-   <views>
-    <iconView layer="icon">
-     <geometry x="-1" y="-1" z="-1"/>
-    </iconView>
-   </views>
-  </instance>
-  <instance moduleIdRef="LilyPad-Accelerometer-v17">
-   <views>
-    <iconView layer="icon">
-     <geometry x="-1" y="-1" z="-1"/>
-    </iconView>
-   </views>
-  </instance>
-  <instance moduleIdRef="LilyPad-Button-v12">
-   <views>
-    <iconView layer="icon">
-     <geometry x="-1" y="-1" z="-1"/>
-    </iconView>
-   </views>
-  </instance>
-  <instance moduleIdRef="LilyPad-Light Sensor-v13">
-   <views>
-    <iconView layer="icon">
-     <geometry x="-1" y="-1" z="-1"/>
-    </iconView>
-   </views>
-  </instance>
-
-  <instance moduleIdRef="LilyPad-slide-switch13">
-   <views>
-    <iconView layer="icon">
-     <geometry x="-1" y="-1" z="-1"/>
-    </iconView>
-   </views>
-  </instance>
-  <instance moduleIdRef="LilyPad-Temp-v12">
-   <views>
-    <iconView layer="icon">
-     <geometry x="-1" y="-1" z="-1"/>
-    </iconView>
-   </views>
-  </instance>
-  <instance moduleIdRef="LilyPad-XBee-v15">
-   <views>
-    <iconView layer="icon">
-     <geometry x="-1" y="-1" z="-1"/>
-    </iconView>
-   </views>
-  </instance>
-  <instance moduleIdRef="LilyPad_LED-v14">
-   <views>
-    <iconView layer="icon">
-     <geometry x="-1" y="-1" z="-1"/>
-    </iconView>
-   </views>
-  </instance>
-  <instance moduleIdRef="Lilypad_PowerSupply-v16">
-   <views>
-    <iconView layer="icon">
-     <geometry x="-1" y="-1" z="-1"/>
-    </iconView>
-   </views>
-  </instance>
-  
-      <instance moduleIdRef="PowerSupply-Lipo-v14">
-   <views>
-    <iconView layer="icon">
-     <geometry x="-1" y="-1" z="-1"/>
-    </iconView>
-   </views>
-  </instance>
-    <instance moduleIdRef="Tricolor-LED v16">
-   <views>
-    <iconView layer="icon">
-     <geometry x="-1" y="-1" z="-1"/>
-    </iconView>
-   </views>
-  </instance>
-  
   
 <instance moduleIdRef="__spacer__" modelIndex="3" path="Other">
         <views>

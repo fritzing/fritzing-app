@@ -633,7 +633,7 @@
                 </iconView>
             </views>
 		</instance>
-	    <instance moduleIdRef="Raspberry Pi" modelIndex="48" path="parts/core/Raspberry_Pi.fzp">
+	    <instance moduleIdRef="Raspberry Pi (rev2)" modelIndex="48" path="parts/core/Raspberry_Pi(rev2).fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>

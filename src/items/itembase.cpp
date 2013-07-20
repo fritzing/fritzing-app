@@ -108,8 +108,8 @@ QHash<QString, QString> ItemBase::TranslatedPropertyNames;
 
 QPointer<ReferenceModel> ItemBase::TheReferenceModel = NULL;
 
-QString ItemBase::partInstanceDefaultTitle;
-QList<ItemBase *> ItemBase::emptyList;
+QString ItemBase::PartInstanceDefaultTitle;
+const QList<ItemBase *> ItemBase::emptyList;
 
 const QColor ItemBase::hoverColor(0,0,0);
 const double ItemBase::hoverOpacity = .20;
@@ -320,7 +320,7 @@ void ItemBase::initNames() {
 
 	}
 
-	partInstanceDefaultTitle = tr("Part");
+	PartInstanceDefaultTitle = tr("Part");
 
 	QSettings settings;
 	QString colorName = settings.value("ConnectedColor").toString();
@@ -1062,7 +1062,7 @@ void ItemBase::setDefaultTooltip() {
 			return;
 		}
 
-		QString title = ItemBase::partInstanceDefaultTitle;
+		QString title = ItemBase::PartInstanceDefaultTitle;
 		QString inst = instanceTitle();
 		if(!inst.isNull() && !inst.isEmpty()) {
 			title = inst;
@@ -2377,7 +2377,7 @@ void ItemBase::createShape(LayerAttributes & layerAttributes) {
     QSize imgSize(qCeil(sourceRes.width()), qCeil(sourceRes.height()));
     QImage image(imgSize, QImage::Format_Mono);
     image.fill(0xffffffff);
-    GraphicsUtils::renderOne(&doc, &image, sourceRes);
+    renderOne(&doc, &image, sourceRes);
     QBitmap bitmap = QBitmap::fromImage(image);
     QRegion region(bitmap);
     m_selectionShape.addRegion(region);
@@ -2396,4 +2396,15 @@ const QPainterPath & ItemBase::selectionShape() {
 void ItemBase::setTransform2(const QTransform & transform)
 {
     setTransform(transform);
+}
+
+void ItemBase::renderOne(QDomDocument * masterDoc, QImage * image, const QRectF & renderRect) {
+    QByteArray byteArray = masterDoc->toByteArray();
+	QSvgRenderer renderer(byteArray);
+	QPainter painter;
+	painter.begin(image);
+	painter.setRenderHint(QPainter::Antialiasing, false);
+    painter.setRenderHint(QPainter::SmoothPixmapTransform, false);
+	renderer.render(&painter, renderRect);
+	painter.end();
 }

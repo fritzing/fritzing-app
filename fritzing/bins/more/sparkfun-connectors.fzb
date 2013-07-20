@@ -113,20 +113,8 @@
 </iconView>
 </views>
 </instance>
-<instance modelIndex="22" moduleIdRef="SparkFun-Connectors-AVR_SPI_PROG2-PTH2">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="23" moduleIdRef="SparkFun-Connectors-AVR_SPI_PROG2-LOCK">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
+
+
 <instance modelIndex="24" moduleIdRef="SparkFun-Connectors-AVR_SPI_PROG2-SMD">
 <views>
 <iconView layer="icon">
@@ -570,13 +558,6 @@
 </views>
 </instance>
 
-<instance modelIndex="122" moduleIdRef="SparkFun-Connectors-M05X2-SHD_LOCK">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
 <instance modelIndex="123" moduleIdRef="SparkFun-Connectors-M05X2-SHD_SMD">
 <views>
 <iconView layer="icon">

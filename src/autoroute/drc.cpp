@@ -430,7 +430,7 @@ bool DRC::startAux(QString & message, QStringList & messages, QList<CollidingThi
         QDomElement root = masterDoc->documentElement();
         SvgFileSplitter::forceStrokeWidth(root, 2 * keepoutMils, "#000000", true, false);
 
-        GraphicsUtils::renderOne(masterDoc, m_plusImage, sourceRes);
+        ItemBase::renderOne(masterDoc, m_plusImage, sourceRes);
         #ifndef QT_NO_DEBUG
 	        m_plusImage->save(FolderUtils::getUserDataStorePath("") + QString("/testDRCmaster%1.png").arg(viewLayerPlacement));
         #endif
@@ -669,7 +669,7 @@ void DRC::splitNet(QDomDocument * masterDoc, QList<ConnectorItem *> & equi, QIma
         SvgFileSplitter::forceStrokeWidth(element, -2 * keepoutMils, "#000000", false, false);
     }
 
-    GraphicsUtils::renderOne(masterDoc, plusImage, sourceRes);
+    ItemBase::renderOne(masterDoc, plusImage, sourceRes);
 
     foreach (QDomElement element, net) {
         // restore to keepout size
@@ -697,7 +697,7 @@ void DRC::splitNet(QDomDocument * masterDoc, QList<ConnectorItem *> & equi, QIma
         element.removeAttribute("net");
     }
 
-    GraphicsUtils::renderOne(masterDoc, minusImage, sourceRes);
+    ItemBase::renderOne(masterDoc, minusImage, sourceRes);
     #ifndef QT_NO_DEBUG
 	    minusImage->save(FolderUtils::getUserDataStorePath("") + QString("/testDRCNotNet%1_%2.png").arg(viewLayerPlacement).arg(index));
     #endif

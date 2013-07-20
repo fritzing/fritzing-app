@@ -29,7 +29,6 @@ $Date: 2013-03-10 21:27:34 +0100 (So, 10. Mrz 2013) $
 #include <QList>
 #include <QLineF>
 #include <QBuffer>
-#include <QSvgRenderer>
 #include <qmath.h>
 #include <QtDebug>
 
@@ -545,13 +544,3 @@ bool GraphicsUtils::isFlipped(const QMatrix & matrix, double & rotation) {
     return false;
 }
 
-void GraphicsUtils::renderOne(QDomDocument * masterDoc, QImage * image, const QRectF & renderRect) {
-    QByteArray byteArray = masterDoc->toByteArray();
-	QSvgRenderer renderer(byteArray);
-	QPainter painter;
-	painter.begin(image);
-	painter.setRenderHint(QPainter::Antialiasing, false);
-    painter.setRenderHint(QPainter::SmoothPixmapTransform, false);
-	renderer.render(&painter, renderRect);
-	painter.end();
-}

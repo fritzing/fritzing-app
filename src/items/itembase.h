@@ -381,6 +381,8 @@ public:
 	static const QString ITEMBASE_FONT_PREFIX;
 	static const QString ITEMBASE_FONT_SUFFIX;
 	static QHash<QString, QString> TranslatedPropertyNames;
+    static QString PartInstanceDefaultTitle;
+	static const QList<ItemBase *> emptyList;
 	const static QColor hoverColor;
 	const static double hoverOpacity;
 	const static QColor connectorHoverColor;
@@ -390,10 +392,10 @@ public:
 	static void initNames();
 	static void cleanup();
 	static ItemBase * extractTopLevelItemBase(QGraphicsItem * thing);
-	static QString partInstanceDefaultTitle;
-	static QList<ItemBase *> emptyList;
 	static QString translatePropertyName(const QString & key);
 	static void setReferenceModel(class ReferenceModel *);
+    static void renderOne(QDomDocument *, QImage *, const QRectF & renderRect);
+
 
 
 };

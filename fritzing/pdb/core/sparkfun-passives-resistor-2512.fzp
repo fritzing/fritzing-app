@@ -13,18 +13,21 @@ Basic schematic elements and footprints for 0603, 1206, and PTH resistors.</desc
 <tag>RESISTOR</tag>
 </tags>
 <properties>
-<property name="package">r2512</property>
-<property name="family">sparkfun Resistor</property>
-<property name="variant">2512</property>
+<property name="package">2512 [SMD]</property>
+<property name="family">Resistor</property>
+        <property name="Resistance" showInLabel="yes">220</property>
+      <property name="power" showInLabel="yes"/>
+      <property name="tolerance" showInLabel="yes">&#177;5%</property>
+
 </properties>
 <views>
 <breadboardView>
-<layers image="breadboard/sparkfun-passives_r2512_breadboard.svg">
+<layers image="breadboard/resistor_220.svg">
 <layer layerId="breadboard"/>
 </layers>
 </breadboardView>
 <schematicView>
-<layers image="schematic/sparkfun-passives_resistor_schematic.svg">
+<layers image="schematic/resistor.svg">
 <layer layerId="schematic"/>
 </layers>
 </schematicView>
@@ -35,17 +38,17 @@ Basic schematic elements and footprints for 0603, 1206, and PTH resistors.</desc
 </layers>
 </pcbView>
 <iconView>
-<layers image="breadboard/sparkfun-passives_r2512_breadboard.svg">
+<layers image="icon/resistor_icon_220.svg">
 <layer layerId="icon"/>
 </layers>
 </iconView>
 </views>
 <connectors>
-<connector id="connector0" name="1" type="male">
-<description>1</description>
+<connector id="connector0" name="Pin 0" type="male">
+<description>Pin0</description>
 <views>
 <breadboardView>
-<p layer="breadboard" svgId="connector0pin"/>
+<p layer="breadboard" svgId="connector0pin" legId="connector0leg"/>
 </breadboardView>
 <schematicView>
 <p layer="schematic" svgId="connector0pin" terminalId="connector0terminal"/>
@@ -55,11 +58,11 @@ Basic schematic elements and footprints for 0603, 1206, and PTH resistors.</desc
 </pcbView>
 </views>
 </connector>
-<connector id="connector1" name="2" type="male">
-<description>2</description>
+<connector id="connector1" name="Pin 1" type="male">
+<description>Pin 1</description>
 <views>
 <breadboardView>
-<p layer="breadboard" svgId="connector1pin"/>
+<p layer="breadboard" svgId="connector1pin"  legId="connector1leg"/>
 </breadboardView>
 <schematicView>
 <p layer="schematic" svgId="connector1pin" terminalId="connector1terminal"/>

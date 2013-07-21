@@ -22,7 +22,7 @@
 <property name="package">tqfp100</property>
 <property name="family">Microcontroller</property>
 <property name="chip label">atmega2560</property>
-<property name="editable pin labels">true</property>
+<property name="editable pin labels">false</property>
 <property name="variant">au</property>
 </properties>
 <views>

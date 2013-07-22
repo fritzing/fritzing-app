@@ -14,7 +14,7 @@
 <properties>
 <property name="package">tqfp64</property>
 <property name="family">Microcontroller</property>
-<property name="editable pin labels">true</property>
+<property name="editable pin labels">false</property>
 <property name="chip label">atmega128</property>
 <property name="variant">smd</property>
 </properties>

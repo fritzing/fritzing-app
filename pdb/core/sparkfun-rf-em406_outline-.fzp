@@ -26,9 +26,7 @@
 </schematicView>
 <pcbView>
 <layers image="pcb/sparkfun-rf_em406_outline_pcb.svg">
-<layer layerId="copper1"/>
 <layer layerId="silkscreen"/>
-<layer layerId="copper0"/>
 </layers>
 </pcbView>
 <iconView>

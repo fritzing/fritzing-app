@@ -13,7 +13,7 @@
 <properties>
 <property name="package">so08-eiaj</property>
 <property name="family">Microcontroller</property>
-<property name="editable pin labels">true</property>
+<property name="editable pin labels">false</property>
 <property name="chip label">attiny45</property>
 </properties>
 <views>

@@ -14,7 +14,7 @@
 <properties>
 <property name="package">qfn20</property>
 <property name="family">Microcontroller</property>
-<property name="editable pin labels">true</property>
+<property name="editable pin labels">false</property>
 <property name="chip label">attiny24</property>
 <property name="variant">qfn</property>
 </properties>

@@ -9,20 +9,6 @@
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-LED-LED-5MM' modelIndex='1'>
-<views>
-<iconView layer='icon'>
-<geometry z='-1' x='-1' y='-1'></geometry>
-</iconView>
-</views>
-</instance>
-<instance moduleIdRef='SparkFun-LED-LED-3MM' modelIndex='2'>
-<views>
-<iconView layer='icon'>
-<geometry z='-1' x='-1' y='-1'></geometry>
-</iconView>
-</views>
-</instance>
 <instance moduleIdRef='SparkFun-LED-LED-1206' modelIndex='3'>
 <views>
 <iconView layer='icon'>
@@ -45,20 +31,6 @@
 </views>
 </instance>
 <instance moduleIdRef='SparkFun-LED-LED--FKIT-1206' modelIndex='6'>
-<views>
-<iconView layer='icon'>
-<geometry z='-1' x='-1' y='-1'></geometry>
-</iconView>
-</views>
-</instance>
-<instance moduleIdRef='SparkFun-LED-LED--3MM-NO_SILK' modelIndex='7'>
-<views>
-<iconView layer='icon'>
-<geometry z='-1' x='-1' y='-1'></geometry>
-</iconView>
-</views>
-</instance>
-<instance moduleIdRef='SparkFun-LED-LED-5MM-KIT' modelIndex='8'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>

@@ -27,9 +27,7 @@ designer an idea of what how the receiver will fit on the board.  THIS DEVICE DO
 </schematicView>
 <pcbView>
 <layers image="pcb/sparkfun-rf_em408_outline_pcb.svg">
-<layer layerId="copper1"/>
 <layer layerId="silkscreen"/>
-<layer layerId="copper0"/>
 </layers>
 </pcbView>
 <iconView>

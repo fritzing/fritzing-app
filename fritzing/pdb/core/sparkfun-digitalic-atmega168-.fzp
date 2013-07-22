@@ -15,7 +15,7 @@
 <property name="package">SMD(tqfp32-8mm)</property>
 <property name="family">Microcontroller</property>
 <property name="chip label">atmega168</property>
-<property name="editable pin labels">true</property>
+<property name="editable pin labels">false</property>
         <property name="part number"></property>
 </properties>
 <views>

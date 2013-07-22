@@ -322,20 +322,21 @@ int SVG2gerber::allPaths2gerber(ForWhy forWhy) {
 	// circles
     for(uint i = 0; i < circleList.length(); i++){
         QDomElement circle = circleList.item(i).toElement();
-		if (circle.attribute("drill").compare("0") == 0) {
-			// this is not a hole or contact
-			continue;
-		}
 
         double centerx = circle.attribute("cx").toDouble();
         double centery = circle.attribute("cy").toDouble();
         double r = circle.attribute("r").toDouble();
 		if (r == 0) continue;
 
+        QString drillAttribute = circle.attribute("drill", "");
+		bool noDrill = (drillAttribute.compare("0") == 0 || drillAttribute.compare("no", Qt::CaseInsensitive) == 0 || drillAttribute.compare("false", Qt::CaseInsensitive) == 0);
+
         double stroke_width = circle.attribute("stroke-width").toDouble();
 		double hole = ((2*r) - stroke_width) / 1000;  // convert mils (standard fritzing resolution) to inches
 
 		if (forWhy == ForDrill) {
+            if (noDrill) continue;
+
 			QString drill_cx = QString("%1").arg((int) (flipxNoRound(centerx) * 10), 6, 10, QChar('0'));				// drill file is in inches 00.0000, converting mils to 10000ths
 			QString drill_cy = QString("%1").arg((int) (flipyNoRound(centery) * 10), 6, 10, QChar('0'));				// drill file is in inches 00.0000, converting mils to 10000ths
             QString aperture = QString("C%1").arg(hole, 0, 'f');
@@ -366,7 +367,7 @@ int SVG2gerber::allPaths2gerber(ForWhy forWhy) {
 			diam += 2 * MaskClearance;
 		}
 
-        if (forWhy != ForCopper && fill=="none" && forWhy != ForMask){
+        if ((forWhy != ForCopper && fill=="none" && forWhy != ForMask) || (forWhy == ForCopper && noDrill)) {
 			aperture = QString("C,%1X%2").arg(diam, 0, 'f').arg(hole);
         }
         else {

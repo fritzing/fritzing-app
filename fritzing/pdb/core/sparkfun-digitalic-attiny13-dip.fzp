@@ -16,7 +16,7 @@
 <property name="family">Microcontroller</property>
 <property name="chip label">attiny13</property>
 <property name="variant">dip</property>
-<property name="editable pin labels">true</property>
+<property name="editable pin labels">false</property>
 <property name="part number"></property>
 </properties>
 <views>

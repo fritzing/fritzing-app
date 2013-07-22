@@ -1,0 +1,369 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module fritzingVersion='0.7.2b' icon='sparkfun-etc.png'>
+<title>SparkFun-Etc.</title>
+<instances>
+
+<instance moduleIdRef="__spacer__" modelIndex="3" path="Displays">
+        <views>
+          <iconView layer="icon">
+            <geometry z="-1" x="-1" y="-1"></geometry>
+          </iconView>
+        </views>
+      </instance>
+
+<instance moduleIdRef='SparkFun-Displays-NOKIA6100_LCD-' modelIndex='0'>
+<views>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
+</iconView>
+</views>
+</instance>
+<instance moduleIdRef='SparkFun-Displays-7-SEGMENT-DISPLAY-1_-RED-' modelIndex='1'>
+<views>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
+</iconView>
+</views>
+</instance>
+<instance moduleIdRef='SparkFun-Displays-LCD_CFAX-' modelIndex='2'>
+<views>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
+</iconView>
+</views>
+</instance>
+<instance moduleIdRef='SparkFun-Displays-7-SEGMENT-4DIGIT-FOR_POGOBED_ONLY' modelIndex='3'>
+<views>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
+</iconView>
+</views>
+</instance>
+<instance moduleIdRef='SparkFun-Displays-7-SEGMENT-DISPLAY-PTH' modelIndex='4'>
+<views>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
+</iconView>
+</views>
+</instance>
+<instance moduleIdRef='SparkFun-Displays-LCD_BACKLIGHT_PADS-' modelIndex='5'>
+<views>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
+</iconView>
+</views>
+</instance>
+<instance moduleIdRef='SparkFun-Displays-LCD-G12864-BARE' modelIndex='6'>
+<views>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
+</iconView>
+</views>
+</instance>
+<instance moduleIdRef='SparkFun-Displays-7-SEGMENT-4DIGIT-YOUNGSUN-LONGPADS' modelIndex='7'>
+<views>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
+</iconView>
+</views>
+</instance>
+<instance moduleIdRef='SparkFun-Displays-LCD-16X2-8X2-KIT' modelIndex='8'>
+<views>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
+</iconView>
+</views>
+</instance>
+<instance moduleIdRef='SparkFun-Displays-ALPHANUMERIC-PTH' modelIndex='9'>
+<views>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
+</iconView>
+</views>
+</instance>
+
+<instance moduleIdRef="__spacer__" modelIndex="3" path="Frequency Control">
+        <views>
+          <iconView layer="icon">
+            <geometry z="-1" x="-1" y="-1"></geometry>
+          </iconView>
+        </views>
+      </instance>
+      
+ <instance moduleIdRef='SparkFun-FreqCtrl-RESONATOR-PTH' modelIndex='0'>
+<views>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
+</iconView>
+</views>
+</instance>
+<instance moduleIdRef='SparkFun-FreqCtrl-OSCILLATOR-5X3-PIN1-INDICATED' modelIndex='1'>
+<views>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
+</iconView>
+</views>
+</instance>
+<instance moduleIdRef='SparkFun-FreqCtrl-DS3234-' modelIndex='2'>
+<views>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
+</iconView>
+</views>
+</instance>
+<instance moduleIdRef='SparkFun-FreqCtrl-SIT8002-' modelIndex='3'>
+<views>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
+</iconView>
+</views>
+</instance>
+<instance moduleIdRef='SparkFun-FreqCtrl-RESONATOR-WIDE-' modelIndex='4'>
+<views>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
+</iconView>
+</views>
+</instance>
+<instance moduleIdRef='SparkFun-FreqCtrl-DS1307-SO8' modelIndex='5'>
+<views>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
+</iconView>
+</views>
+</instance>
+<instance moduleIdRef='SparkFun-FreqCtrl-RESONATOR_NOCAP-' modelIndex='6'>
+<views>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
+</iconView>
+</views>
+</instance>
+<instance moduleIdRef='SparkFun-FreqCtrl-CRYSTAL-10.5X4.8' modelIndex='7'>
+<views>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
+</iconView>
+</views>
+</instance>
+<instance moduleIdRef='SparkFun-FreqCtrl-DS1077-' modelIndex='8'>
+<views>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
+</iconView>
+</views>
+</instance>
+
+          <instance moduleIdRef="__spacer__" modelIndex="3" path="LEDS">
+        <views>
+          <iconView layer="icon">
+            <geometry z="-1" x="-1" y="-1"></geometry>
+          </iconView>
+        </views>
+      </instance>
+
+<instance moduleIdRef='SparkFun-LED-LED-10MM' modelIndex='0'>
+<views>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
+</iconView>
+</views>
+</instance>
+<instance moduleIdRef='SparkFun-LED-LUXEON-SMD' modelIndex='1'>
+<views>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
+</iconView>
+</views>
+</instance>
+<instance moduleIdRef='SparkFun-LED-LED_RING-' modelIndex='2'>
+<views>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
+</iconView>
+</views>
+</instance>
+<instance moduleIdRef='SparkFun-LED-LIGHTPIPE-7511-' modelIndex='3'>
+<views>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
+</iconView>
+</views>
+</instance>
+<instance moduleIdRef='SparkFun-LED-APA3010SF4C-' modelIndex='4'>
+<views>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
+</iconView>
+</views>
+</instance>
+<instance moduleIdRef='SparkFun-LED-LED-TRICOLOR-' modelIndex='5'>
+<views>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
+</iconView>
+</views>
+</instance>
+<instance moduleIdRef='SparkFun-LED-LUXEON-REBEL-' modelIndex='6'>
+<views>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
+</iconView>
+</views>
+</instance>
+<instance moduleIdRef='SparkFun-LED-LTE-302-' modelIndex='7'>
+<views>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
+</iconView>
+</views>
+</instance>
+<instance moduleIdRef='SparkFun-LED-LED_BARGRAPH_10-' modelIndex='8'>
+<views>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
+</iconView>
+</views>
+</instance>
+
+
+
+          <instance moduleIdRef="__spacer__" modelIndex="3" path="Passives">
+        <views>
+          <iconView layer="icon">
+            <geometry z="-1" x="-1" y="-1"></geometry>
+          </iconView>
+        </views>
+      </instance>
+
+<instance moduleIdRef='SparkFun-Passives-SOLDERJUMPER_2WAY-PASTE2_3' modelIndex='0'>
+<views>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
+</iconView>
+</views>
+</instance>
+<instance moduleIdRef='SparkFun-Passives-CAP-KIT' modelIndex='1'>
+<views>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
+</iconView>
+</views>
+</instance>
+<instance moduleIdRef='SparkFun-Passives-GND_CONNECT-' modelIndex='2'>
+<views>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
+</iconView>
+</views>
+</instance>
+<instance moduleIdRef='SparkFun-Passives-FB-' modelIndex='3'>
+<views>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
+</iconView>
+</views>
+</instance>
+<instance moduleIdRef='SparkFun-Passives-SOLDERJUMPER_2WAY-OLD-PASTE2_3' modelIndex='4'>
+<views>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
+</iconView>
+</views>
+</instance>
+<instance moduleIdRef='SparkFun-Passives-JUMPER-2-SMD-NO-NS' modelIndex='5'>
+<views>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
+</iconView>
+</views>
+</instance>
+<instance moduleIdRef='SparkFun-Passives-JUMPER-3-2-3' modelIndex='6'>
+<views>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
+</iconView>
+</views>
+</instance>
+
+<instance moduleIdRef='SparkFun-Passives-CAP_POL-1206-KIT' modelIndex='8'>
+<views>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
+</iconView>
+</views>
+</instance>
+<instance moduleIdRef='SparkFun-Passives-JUMPER-2-OLD-SMD-NO' modelIndex='9'>
+<views>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
+</iconView>
+</views>
+</instance>
+<instance moduleIdRef='SparkFun-Passives-FUSE-X20MM' modelIndex='10'>
+<views>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
+</iconView>
+</views>
+</instance>
+<instance moduleIdRef='SparkFun-Passives-RESISTOR-ARRAY-0603-ARV' modelIndex='11'>
+<views>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
+</iconView>
+</views>
+</instance>
+<instance moduleIdRef='SparkFun-Passives-RPACK*--BUSSED-SIP-PTH-5' modelIndex='12'>
+<views>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
+</iconView>
+</views>
+</instance>
+<instance moduleIdRef='SparkFun-Passives-CAP_ADJ-SMD' modelIndex='13'>
+<views>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
+</iconView>
+</views>
+</instance>
+<instance moduleIdRef='SparkFun-Passives-SOLDERJUMPER-OLD-NO' modelIndex='14'>
+<views>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
+</iconView>
+</views>
+</instance>
+<instance moduleIdRef='SparkFun-Passives-JUMPER-3-OLD-2-3' modelIndex='15'>
+<views>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
+</iconView>
+</views>
+</instance>
+<instance moduleIdRef='SparkFun-Passives-SOLDERJUMPER-NO' modelIndex='16'>
+<views>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
+</iconView>
+</views>
+</instance>
+<instance moduleIdRef='SparkFun-Passives-INDUCTOR-CR54-KIT' modelIndex='17'>
+<views>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
+</iconView>
+</views>
+</instance>
+<instance moduleIdRef='SparkFun-Passives-TEST-POINT-3X5' modelIndex='18'>
+<views>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
+</iconView>
+</views>
+</instance>
+
+
+</instances>
+</module>

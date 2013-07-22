@@ -5,12 +5,12 @@
 	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="87.125px"
 	 height="86.732px" viewBox="0 0 87.125 86.732" enable-background="new 0 0 87.125 86.732" xml:space="preserve">
 <g id="schematic">
-	<rect x="14.75" y="0.146" fill="#FFFFFF" width="57.6" height="86.399"/>
+	<rect x="14.75" y="0.146" fill="#FFFFFF" width="57.6" height="86.398"/>
 	<text id="label" transform="matrix(1 0 0 1 26.0615 37.0769)" font-family="'DroidSans'" font-size="4.25">SN74LV4052APWR</text>
-	<line fill="none" stroke="#000000" stroke-linecap="round" x1="14.75" y1="0.146" x2="14.75" y2="86.547"/>
-	<line fill="none" stroke="#000000" stroke-linecap="round" x1="14.75" y1="86.547" x2="72.35" y2="86.547"/>
-	<line fill="none" stroke="#000000" stroke-linecap="round" x1="72.35" y1="86.547" x2="72.35" y2="0.146"/>
-	<line fill="none" stroke="#000000" stroke-linecap="round" x1="72.35" y1="0.146" x2="14.75" y2="0.146"/>
+	<line fill="none" stroke="#000000" stroke-width="0.9" stroke-linecap="round" x1="14.75" y1="0.146" x2="14.75" y2="86.547"/>
+	<line fill="none" stroke="#000000" stroke-width="0.9" stroke-linecap="round" x1="14.75" y1="86.547" x2="72.35" y2="86.547"/>
+	<line fill="none" stroke="#000000" stroke-width="0.9" stroke-linecap="round" x1="72.35" y1="86.547" x2="72.35" y2="0.146"/>
+	<line fill="none" stroke="#000000" stroke-width="0.9" stroke-linecap="round" x1="72.35" y1="0.146" x2="14.75" y2="0.146"/>
 	
 		<line id="connector0pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="86.75" y1="57.747" x2="72.35" y2="57.747"/>
 	<path id="connector0terminal" fill="none" d="M86.75,57.747L86.75,57.747L86.75,57.747z"/>

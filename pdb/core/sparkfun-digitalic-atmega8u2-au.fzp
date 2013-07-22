@@ -14,7 +14,7 @@
 <properties>
 <property name="package">tqfp32-08</property>
 <property name="family">Microcontroller</property>
-<property name="editable pin labels">true</property>
+<property name="editable pin labels">false</property>
 <property name="chip label">atmega8</property>
 <property name="variant">au</property>
 </properties>

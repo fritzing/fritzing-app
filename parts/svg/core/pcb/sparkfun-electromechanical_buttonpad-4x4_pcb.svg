@@ -642,38 +642,38 @@
 <line class='other' x1='86.717' y1='35.43' x2='86.337' y2='33.05' stroke='#F7BD13' stroke-width='0.254' stroke-linecap='round'/>
 <line class='other' x1='87.327' y1='32.54' x2='87.327' y2='34.63' stroke='#F7BD13' stroke-width='0.254' stroke-linecap='round'/>
 <line class='other' x1='82.867' y1='39' x2='80.537' y2='38.26' stroke='#F7BD13' stroke-width='0.254' stroke-linecap='round'/>
-<circle class='other' cx='12.327' cy='65' r='7.5' stroke='#F7BD13' stroke-width='0.254' fill='none' />
-<circle class='other' cx='12.337' cy='64.99' r='4.5' stroke='#F7BD13' stroke-width='0.254' fill='none' />
-<circle class='other' cx='37.327' cy='65' r='7.5' stroke='#F7BD13' stroke-width='0.254' fill='none' />
-<circle class='other' cx='37.337' cy='64.99' r='4.5' stroke='#F7BD13' stroke-width='0.254' fill='none' />
-<circle class='other' cx='12.327' cy='90' r='7.5' stroke='#F7BD13' stroke-width='0.254' fill='none' />
-<circle class='other' cx='12.337' cy='89.99' r='4.5' stroke='#F7BD13' stroke-width='0.254' fill='none' />
-<circle class='other' cx='37.327' cy='90' r='7.5' stroke='#F7BD13' stroke-width='0.254' fill='none' />
-<circle class='other' cx='37.337' cy='89.99' r='4.5' stroke='#F7BD13' stroke-width='0.254' fill='none' />
-<circle class='other' cx='62.327' cy='65' r='7.5' stroke='#F7BD13' stroke-width='0.254' fill='none' />
-<circle class='other' cx='62.337' cy='64.99' r='4.5' stroke='#F7BD13' stroke-width='0.254' fill='none' />
-<circle class='other' cx='87.327' cy='65' r='7.5' stroke='#F7BD13' stroke-width='0.254' fill='none' />
-<circle class='other' cx='87.337' cy='64.99' r='4.5' stroke='#F7BD13' stroke-width='0.254' fill='none' />
-<circle class='other' cx='62.327' cy='90' r='7.5' stroke='#F7BD13' stroke-width='0.254' fill='none' />
-<circle class='other' cx='62.337' cy='89.99' r='4.5' stroke='#F7BD13' stroke-width='0.254' fill='none' />
-<circle class='other' cx='87.327' cy='90' r='7.5' stroke='#F7BD13' stroke-width='0.254' fill='none' />
-<circle class='other' cx='87.337' cy='89.99' r='4.5' stroke='#F7BD13' stroke-width='0.254' fill='none' />
-<circle class='other' cx='12.327' cy='15' r='7.5' stroke='#F7BD13' stroke-width='0.254' fill='none' />
-<circle class='other' cx='12.337' cy='14.99' r='4.5' stroke='#F7BD13' stroke-width='0.254' fill='none' />
-<circle class='other' cx='37.327' cy='15' r='7.5' stroke='#F7BD13' stroke-width='0.254' fill='none' />
-<circle class='other' cx='37.337' cy='14.99' r='4.5' stroke='#F7BD13' stroke-width='0.254' fill='none' />
-<circle class='other' cx='12.327' cy='40' r='7.5' stroke='#F7BD13' stroke-width='0.254' fill='none' />
-<circle class='other' cx='12.337' cy='39.99' r='4.5' stroke='#F7BD13' stroke-width='0.254' fill='none' />
-<circle class='other' cx='37.327' cy='40' r='7.5' stroke='#F7BD13' stroke-width='0.254' fill='none' />
-<circle class='other' cx='37.337' cy='39.99' r='4.5' stroke='#F7BD13' stroke-width='0.254' fill='none' />
-<circle class='other' cx='62.327' cy='15' r='7.5' stroke='#F7BD13' stroke-width='0.254' fill='none' />
-<circle class='other' cx='62.337' cy='14.99' r='4.5' stroke='#F7BD13' stroke-width='0.254' fill='none' />
-<circle class='other' cx='87.327' cy='15' r='7.5' stroke='#F7BD13' stroke-width='0.254' fill='none' />
-<circle class='other' cx='87.337' cy='14.99' r='4.5' stroke='#F7BD13' stroke-width='0.254' fill='none' />
-<circle class='other' cx='62.327' cy='40' r='7.5' stroke='#F7BD13' stroke-width='0.254' fill='none' />
-<circle class='other' cx='62.337' cy='39.99' r='4.5' stroke='#F7BD13' stroke-width='0.254' fill='none' />
-<circle class='other' cx='87.327' cy='40' r='7.5' stroke='#F7BD13' stroke-width='0.254' fill='none' />
-<circle class='other' cx='87.337' cy='39.99' r='4.5' stroke='#F7BD13' stroke-width='0.254' fill='none' />
+<circle class='other' cx='12.327' cy='65' r='7.5' stroke='#F7BD13' stroke-width='0.254' fill='none' drill="no" />
+<circle class='other' cx='12.337' cy='64.99' r='4.5' stroke='#F7BD13' stroke-width='0.254' fill='none' drill="no" />
+<circle class='other' cx='37.327' cy='65' r='7.5' stroke='#F7BD13' stroke-width='0.254' fill='none' drill="no" />
+<circle class='other' cx='37.337' cy='64.99' r='4.5' stroke='#F7BD13' stroke-width='0.254' fill='none' drill="no" />
+<circle class='other' cx='12.327' cy='90' r='7.5' stroke='#F7BD13' stroke-width='0.254' fill='none' drill="no" />
+<circle class='other' cx='12.337' cy='89.99' r='4.5' stroke='#F7BD13' stroke-width='0.254' fill='none' drill="no" />
+<circle class='other' cx='37.327' cy='90' r='7.5' stroke='#F7BD13' stroke-width='0.254' fill='none' drill="no" />
+<circle class='other' cx='37.337' cy='89.99' r='4.5' stroke='#F7BD13' stroke-width='0.254' fill='none' drill="no" />
+<circle class='other' cx='62.327' cy='65' r='7.5' stroke='#F7BD13' stroke-width='0.254' fill='none' drill="no" />
+<circle class='other' cx='62.337' cy='64.99' r='4.5' stroke='#F7BD13' stroke-width='0.254' fill='none' drill="no" />
+<circle class='other' cx='87.327' cy='65' r='7.5' stroke='#F7BD13' stroke-width='0.254' fill='none' drill="no" />
+<circle class='other' cx='87.337' cy='64.99' r='4.5' stroke='#F7BD13' stroke-width='0.254' fill='none' drill="no" />
+<circle class='other' cx='62.327' cy='90' r='7.5' stroke='#F7BD13' stroke-width='0.254' fill='none' drill="no" />
+<circle class='other' cx='62.337' cy='89.99' r='4.5' stroke='#F7BD13' stroke-width='0.254' fill='none' drill="no" />
+<circle class='other' cx='87.327' cy='90' r='7.5' stroke='#F7BD13' stroke-width='0.254' fill='none' drill="no" />
+<circle class='other' cx='87.337' cy='89.99' r='4.5' stroke='#F7BD13' stroke-width='0.254' fill='none' drill="no" />
+<circle class='other' cx='12.327' cy='15' r='7.5' stroke='#F7BD13' stroke-width='0.254' fill='none'drill="no"  />
+<circle class='other' cx='12.337' cy='14.99' r='4.5' stroke='#F7BD13' stroke-width='0.254' fill='none' drill="no" />
+<circle class='other' cx='37.327' cy='15' r='7.5' stroke='#F7BD13' stroke-width='0.254' fill='none' drill="no" />
+<circle class='other' cx='37.337' cy='14.99' r='4.5' stroke='#F7BD13' stroke-width='0.254' fill='none'drill="no" />
+<circle class='other' cx='12.327' cy='40' r='7.5' stroke='#F7BD13' stroke-width='0.254' fill='none' drill="no" />
+<circle class='other' cx='12.337' cy='39.99' r='4.5' stroke='#F7BD13' stroke-width='0.254' fill='none' drill="no" />
+<circle class='other' cx='37.327' cy='40' r='7.5' stroke='#F7BD13' stroke-width='0.254' fill='none' drill="no" />
+<circle class='other' cx='37.337' cy='39.99' r='4.5' stroke='#F7BD13' stroke-width='0.254' fill='none' drill="no" />
+<circle class='other' cx='62.327' cy='15' r='7.5' stroke='#F7BD13' stroke-width='0.254' fill='none' drill="no" />
+<circle class='other' cx='62.337' cy='14.99' r='4.5' stroke='#F7BD13' stroke-width='0.254' fill='none' drill="no" />
+<circle class='other' cx='87.327' cy='15' r='7.5' stroke='#F7BD13' stroke-width='0.254' fill='none' drill="no" />
+<circle class='other' cx='87.337' cy='14.99' r='4.5' stroke='#F7BD13' stroke-width='0.254' fill='none' drill="no" />
+<circle class='other' cx='62.327' cy='40' r='7.5' stroke='#F7BD13' stroke-width='0.254' fill='none' drill="no" />
+<circle class='other' cx='62.337' cy='39.99' r='4.5' stroke='#F7BD13' stroke-width='0.254' fill='none' drill="no" />
+<circle class='other' cx='87.327' cy='40' r='7.5' stroke='#F7BD13' stroke-width='0.254' fill='none' drill="no" />
+<circle class='other' cx='87.337' cy='39.99' r='4.5' stroke='#F7BD13' stroke-width='0.254' fill='none' drill="no" />
 <circle id='connector41pad' connectorname='GND8' cx='11.627' cy='65' r='0.627' stroke='#F7BD13' stroke-width='0.254' fill='none' />
 <circle id='connector43pad' connectorname='BLU8' cx='13.627' cy='65' r='0.627' stroke='#F7BD13' stroke-width='0.254' fill='none' />
 <circle id='connector42pad' connectorname='GRN8' cx='15.627' cy='65' r='0.627' stroke='#F7BD13' stroke-width='0.254' fill='none' />

@@ -1,10 +1,7 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <!-- Created with Fritzing (http://www.fritzing.org/) -->
 <svg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' version='1.2' baseProfile='tiny' x='0in' y='0in' width='1.89083in' height='1.50106in' viewBox='0 0 48.027 38.127' >
-<g id='copper1'>
-<g id='copper0'>
-</g>
-</g>
+
 <g id='silkscreen'>
 <line class='other' x1='47.9635' y1='35.6635' x2='47.9635' y2='0.0635' stroke='#f0f0f0' stroke-width='0.127' stroke-linecap='round'/>
 <line class='other' x1='47.9635' y1='0.0635' x2='9.8635' y2='0.0635' stroke='#f0f0f0' stroke-width='0.127' stroke-linecap='round'/>

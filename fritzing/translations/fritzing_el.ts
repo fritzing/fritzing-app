@@ -645,68 +645,75 @@ A custom board svg typically has one or two silkscreen layers and one board laye
         <translation>το svg δεν χωρά στην μορφή της προσαρμοσμένης πλακέτας</translation>
     </message>
     <message>
-        <location filename="../src/items/resizableboard.cpp" line="440"/>
-        <source>Fritzing thinks the custom shape has no cutouts.</source>
-        <translation>Το Fritzing πιστεύει πως το σχήμα δεν έχει εγκοπές.</translation>
+        <location filename="../src/items/resizableboard.cpp" line="438"/>
+        <source>&lt;b&gt;The custom shape has been loaded, and you will see the new board shortly.&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
-    <message numerus="yes">
+    <message>
+        <location filename="../src/items/resizableboard.cpp" line="439"/>
+        <source>Before actual PCB production we recommend that you test your custom shape by using the &apos;File &gt; Export for Production &gt; Extended Gerber&apos; option. </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/items/resizableboard.cpp" line="440"/>
+        <source>Check the resulting contour file with a Gerber-viewer application to make sure the shape came out as expected.&lt;br/&gt;&lt;br/&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/items/resizableboard.cpp" line="442"/>
+        <source>The rest of this message concerns &apos;cutouts&apos;. </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/items/resizableboard.cpp" line="443"/>
-        <source>Fritzing thinks the custom shape has %n cutouts.</source>
-        <translation>
-            <numerusform>Το Fritzing πιστεύει πως το σχήμα έχει %n εγκοπές (cutouts).</numerusform>
-            <numerusform>Το Fritzing πιστεύει πως το σχήμα έχει %n εγκοπές (cutouts).</numerusform>
-        </translation>
+        <source>These are circular or irregularly-shaped holes that you can optionally incorporate into a custom PCB shape.&lt;br/&gt;&lt;br/&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/items/resizableboard.cpp" line="445"/>
-        <source>
-However, the cutouts may not be formatted correctly.</source>
-        <translation>
-Ωστόσο, οι εγκοπές (cutouts) να μην έχουν σχεδιαστεί σωστά.</translation>
+        <source>&lt;b&gt;The custom shape has no cutouts.&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
-    <message>
+    <message numerus="yes">
         <location filename="../src/items/resizableboard.cpp" line="448"/>
-        <source>
-
-If you intended your custom shape to have cutouts and you did not get the expected result </source>
-        <translation>
-
-αν είχατε σκοπό το σχέδιο σας να έχει εγκοπές (cutouts) και δεν πήρατε το αναμενόμενο αποτέλεσμα </translation>
-    </message>
-    <message>
-        <location filename="../src/items/resizableboard.cpp" line="449"/>
-        <source>it is because Fritzing requires that you make cutouts using a shape &apos;subtraction&apos; or &apos;difference&apos; operation in your vector graphics editor.
-
-</source>
-        <translation>είναι διότι το Fritzing απαιτεί να κάνετε τις εγκοπές χρησιμοποιώντας ένα σχήμα αφαίρεσης ή διαφοράς στον επεξεργαστή σας γραφικών ανυσμάτων.</translation>
+        <source>&lt;b&gt;The custom shape has %n cutouts.&lt;/b&gt;</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
     </message>
     <message>
         <location filename="../src/items/resizableboard.cpp" line="450"/>
-        <source>In any case we recommend that you test your custom shape by using the &apos;File &gt; Export for Production &gt; Extended Gerber&apos; option </source>
-        <translation>Σε κάθε περίπτωση σας συνιστούμε να δοκιμάσετε το σχήμα σας χρησιμοποιώντας την επιλογή &apos;Αρχείο &gt; Εξαγωγή για Παραγωγή &gt; Εκτεταμένο Gerber&apos; </translation>
+        <source>&lt;br/&gt;However, the cutouts may not be formatted correctly.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/items/resizableboard.cpp" line="451"/>
-        <source>and checking the resulting contour file with a Gerber viewer application.</source>
-        <translation>και ελέγχοντας το περίγραμμα που προκύπτει με μία εφαρμογή απεικόνισης Gerber.</translation>
+        <location filename="../src/items/resizableboard.cpp" line="453"/>
+        <source>&lt;br/&gt;&lt;br/&gt;If you intended your custom shape to have cutouts and you did not get the expected result, </source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/items/resizableboard.cpp" line="519"/>
+        <location filename="../src/items/resizableboard.cpp" line="454"/>
+        <source>it is because Fritzing requires that you make cutouts using a shape &apos;subtraction&apos; or &apos;difference&apos; operation in your vector graphics editor.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/items/resizableboard.cpp" line="522"/>
         <source>Unable to load</source>
         <translation>Αδυναμία φόρτωσης</translation>
     </message>
     <message>
-        <location filename="../src/items/resizableboard.cpp" line="520"/>
+        <location filename="../src/items/resizableboard.cpp" line="523"/>
         <source>Unable to load image from %1 %2</source>
         <translation>Αδυναμία φόρτωσης εικόνας από %1 %2</translation>
     </message>
     <message>
-        <location filename="../src/items/resizableboard.cpp" line="527"/>
+        <location filename="../src/items/resizableboard.cpp" line="530"/>
         <source>Can load, but</source>
         <translation>Μπορεί να φορτωθεί, αλλά</translation>
     </message>
     <message>
-        <location filename="../src/items/resizableboard.cpp" line="528"/>
+        <location filename="../src/items/resizableboard.cpp" line="531"/>
         <source>The image from %1 can be loaded, but %2
 Use the file?</source>
         <translation>Η εικόνα από %1 μπορεί να φορτωθεί, αλλά %2
@@ -1553,60 +1560,60 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="761"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="764"/>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1304"/>
         <source>Rotate</source>
         <translation>Περιστροφή</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="769"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="772"/>
         <source>Share</source>
         <translation>Διαμοιρασμός</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="778"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="781"/>
         <source>Flip</source>
         <translation>Αναστροφή</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="786"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="789"/>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2532"/>
         <source>Autoroute</source>
         <translation>Αυτο-Δρομολόγιση</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="794"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="797"/>
         <source>Order PCB</source>
         <translation>Παραγγελία PCB</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="810"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="813"/>
         <source>Both Layers</source>
         <translation>Τα δύο Επίπεδα</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="815"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="818"/>
         <source>Bottom Layer</source>
         <translation>Κάτω Επίπεδο</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="820"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="823"/>
         <source>Top Layer</source>
         <translation>Πάνω Επίπεδο</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="852"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="855"/>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="832"/>
         <source>Add a note</source>
         <translation>Προσθήκη Σημείωσης</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="862"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="865"/>
         <source>Export for PCB</source>
         <translation>Εξαγωγή σε PCB</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="945"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="948"/>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="149"/>
         <source>Ready</source>
         <translation>Έτοιμο</translation>
@@ -1661,67 +1668,67 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
         <translation>Shift+Ctrl+Tab</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="836"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="839"/>
         <source>View from Above</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="843"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="846"/>
         <source>View from Below</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1119"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="1122"/>
         <source>Save %1</source>
         <translation>Αποθήκευση %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1203"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="1206"/>
         <source>Unable to open &apos;%1&apos;: %2</source>
         <translation>Αδυναμία ανοίγματος του &apos;%1&apos;: %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1446"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="1449"/>
         <source>Unable to open shareable &apos;%1&apos;: %2</source>
         <translation>Αδυναμία ανοίγματος του κοινόχρηστου &apos;%1&apos;: %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1489"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="1492"/>
         <source>Unable to open shareable part &apos;%1&apos;: %2</source>
         <translation>Αδυναμία ανοίγματος του κοινόχρηστου εξαρτήματος &apos;%1&apos;: %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1514"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="1517"/>
         <source>Unable to load part from &apos;%1&apos;</source>
         <translation>Αδυναμία φόρτωσης του εξαρτήματος &apos;%1&apos;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1543"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="1546"/>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="839"/>
         <source>Specify a file name</source>
         <translation>Προσδιορίστε ένα όνομα αρχείου</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="2129"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="2132"/>
         <source>Change image to %2</source>
         <translation>Αλλαγή εικόνας σε %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="2481"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="2484"/>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="839"/>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="273"/>
         <source>Fritzing (*%1)</source>
         <translation>Fritzing (*%1)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1202"/>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1220"/>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1445"/>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1488"/>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1503"/>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1513"/>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1578"/>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="2189"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="1205"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="1223"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="1448"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="1491"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="1506"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="1516"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="1581"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="2192"/>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="169"/>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="174"/>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="618"/>
@@ -1760,47 +1767,47 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
         <translation>Αδυναμία εξαγωγής του %1 ως κοινόχρηστο</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1221"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="1224"/>
         <source>No Sketch found in &apos;%1&apos;</source>
         <translation>Δεν βρέθηκε κανένα σχέδιο στο &apos;%1&apos;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1545"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="1548"/>
         <source>Fritzing Part (*%1)</source>
         <translation>Εξάρτημα Fritzing (*%1)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1579"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="1582"/>
         <source>Unable to export %1 to shareable sketch</source>
         <translation>Αδυναμία εξαγωγής του %1 σε κοινόχρηστο σχέδιο</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1618"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="1621"/>
         <source>MainWindow::moveToPartsFolder mainwindow missing</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1633"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="1636"/>
         <source>There is already a part with id &apos;%1&apos; loaded into Fritzing.</source>
         <translation>Υπάρχει ήδη ένα εξάρτημα με ταυτότητα &apos;%1&apos; που έχει φορτωθεί στο Fritzing.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1692"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="1695"/>
         <source>Do you want to keep the imported parts?</source>
         <translation>Θέλετε να διατηρήσετε τα εισαγμένα εξαρτήματα;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1756"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="1759"/>
         <source>No connections to route</source>
         <translation>Δεν υπάρχουν συνδέσεις για δρομολόγιση</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1759"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="1762"/>
         <source>Routing completed</source>
         <translation>Η δρομολόγιση ολοκληρώθηκε</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1762"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="1765"/>
         <source>Routing completed using %n jumper part(s)</source>
         <translation>
             <numerusform>Η δρομολόγιση ολοκληρώθηκε χρησιμοποιώντας %n βραχυκυκλωτήρες</numerusform>
@@ -1808,7 +1815,7 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1765"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="1768"/>
         <source>%1 of %2 nets routed - %n connector(s) still to be routed</source>
         <translation>
             <numerusform>%1 από %2 δίκτυα δρομολογήθηκαν - %n συνδετήρες προς δρομολόγηση</numerusform>
@@ -1816,90 +1823,90 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
         </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1801"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="1804"/>
         <source>%1 - [%2]</source>
         <translation>%1 - [%2]</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1933"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="1936"/>
         <source>No copper top layer</source>
         <translation>Δεν υπάρχει πάνω επίπεδο χαλκού</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1934"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="1937"/>
         <source>The copper top (copper 1) layer is not available on a one-sided board.  Please switch the board to double-sided or choose the copper bottom (copper 0) layer.</source>
         <translation>Το πανω επίπεδο χαλκού (copper 1) δεν είναι διαθέσιμο σε μία μονής όψης πλακέτα.  Παρακαλώ αλλάξτε την πλακέτα σε διπλής όψης ή επιλέξτε το κάτω επίπεδο (copper 0) χαλκού.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="2011"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="2014"/>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3677"/>
         <source>Sorry!</source>
         <translation>Συγνώμη!</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="2012"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="2015"/>
         <source>No part with those characteristics.
 We&apos;re working to avoid this message, and only let you choose between properties that do exist</source>
         <translation>Δεν υπάρχει εξάρτημα με αυτά τα χαρακτηριστικά.
 Προσπαθούμε να αποφύγουμε το μήνυμα αυτό, και σας επιτρέπουμε να επιλέξετε μεταξύ ιδιοτήτων που υπάρχουν</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="2024"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="2027"/>
         <source>No exactly matching part found; Fritzing chose the closest match.</source>
         <translation>Δεν βρέθηκε ακριβώς το  εξάρτημα, το Fritzing επέλεξε το πιο ταιριαστό.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="2061"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="2064"/>
         <source>Change to single layer pcb</source>
         <translation>Αλλαγή σε τυπωμένο μονής όψης</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="2061"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="2064"/>
         <source>Change to two layer pcb</source>
         <translation>Αλλαγή σε τυπωμένο διπλής όψης</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="2094"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="2097"/>
         <source>Swapped %1 with module %2</source>
         <translation>Ανταλλάχτηκε το το άρθρωμα %1 με το %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="2190"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="2193"/>
         <source>Svg %1 is missing a &apos;%2&apos; layer. For more information on how to create a custom board shape, see the tutorial at &lt;a href=&apos;http://fritzing.org/learning/tutorials/designing-pcb/pcb-custom-shape/&apos;&gt;http://fritzing.org/learning/tutorials/designing-pcb/pcb-custom-shape/&lt;/a&gt;.</source>
         <translation>Το Svg %1 στερείται ενός &apos;%2&apos; επιπέδου. Για περισσότερες πληροφορίες για την δημιουργία προσαρμοσμένου σχήματος πλακετών δείτε το βοήθημα στο &lt;a href=&apos;http://fritzing.org/learning/tutorials/designing-pcb/pcb-custom-shape/&apos;&gt;http://fritzing.org/learning/tutorials/designing-pcb/pcb-custom-shape/&lt;/a&gt;.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="2227"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="2230"/>
         <source>loading %1</source>
         <translation>φόρτωση %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="2236"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="2239"/>
         <source>Loading...</source>
         <translation>Φόρτωση...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="2242"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="2245"/>
         <source>new sketch</source>
         <translation>νέο σχέδιο</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="2386"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="2389"/>
         <source>Backing up &apos;%1&apos;</source>
         <translation>Αντιγραφή ασφαλείας &apos;%1&apos;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="2537"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="2540"/>
         <source>Unrouted connections</source>
         <translation>Μη δρομολογημένες συνδέσεις</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="2538"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="2541"/>
         <source>There are no unrouted connections in this view.</source>
         <translation>Δεν υπάρχουν μη δρομολογημένες συνδέσεις σε αυτή την προβολή.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="2838"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="2841"/>
         <source>Code</source>
         <translation>Κώδικας</translation>
     </message>
@@ -1909,7 +1916,7 @@ We&apos;re working to avoid this message, and only let you choose between proper
         <translation>Ctrl+D</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="2577"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="2580"/>
         <source>%1 %2 %3</source>
         <translation>%1 %2 %3</translation>
     </message>
@@ -7487,17 +7494,17 @@ Fritzing still works, but you won&apos;t be able to change parts properties.</so
 <context>
     <name>Resistor</name>
     <message>
-        <location filename="../src/items/resistor.cpp" line="135"/>
+        <location filename="../src/items/resistor.cpp" line="136"/>
         <source>Resistor</source>
         <translation>Αντίσταση</translation>
     </message>
     <message>
-        <location filename="../src/items/resistor.cpp" line="262"/>
+        <location filename="../src/items/resistor.cpp" line="263"/>
         <source>resistance</source>
         <translation>αντίσταση</translation>
     </message>
     <message>
-        <location filename="../src/items/resistor.cpp" line="279"/>
+        <location filename="../src/items/resistor.cpp" line="280"/>
         <source>You can either type in a resistance value, or select one from the drop down. Format nnn.dP where P is one of &apos;umkMG&apos;</source>
         <translation>Μπορείτε να να πληκτρολογήσετε μία τιμή αντίστασης, ή να επιλέξετε από την λίστα. Μορφή nnn.dP όπου P ένα από τα &apos;umkMG&apos;</translation>
     </message>
@@ -7505,103 +7512,103 @@ Fritzing still works, but you won&apos;t be able to change parts properties.</so
 <context>
     <name>ResizableBoard</name>
     <message>
-        <location filename="../src/items/resizableboard.cpp" line="1004"/>
+        <location filename="../src/items/resizableboard.cpp" line="1007"/>
         <source>shape</source>
         <translation>σχήμα</translation>
     </message>
     <message>
-        <location filename="../src/items/resizableboard.cpp" line="1020"/>
+        <location filename="../src/items/resizableboard.cpp" line="1023"/>
         <source>width: %1mm</source>
         <translation>πλάτος: %1mm</translation>
     </message>
     <message>
-        <location filename="../src/items/resizableboard.cpp" line="1025"/>
+        <location filename="../src/items/resizableboard.cpp" line="1028"/>
         <source>height: %1mm</source>
         <translation>ύψος: %1mm</translation>
     </message>
     <message>
-        <location filename="../src/items/resizableboard.cpp" line="1283"/>
+        <location filename="../src/items/resizableboard.cpp" line="1286"/>
         <source>width(mm)</source>
         <translation>πλάτος(mm)</translation>
     </message>
     <message>
-        <location filename="../src/items/resizableboard.cpp" line="1295"/>
+        <location filename="../src/items/resizableboard.cpp" line="1298"/>
         <source>height(mm)</source>
         <translation>ύψος(mm)</translation>
     </message>
     <message>
-        <location filename="../src/items/resizableboard.cpp" line="1333"/>
+        <location filename="../src/items/resizableboard.cpp" line="1336"/>
         <source>keep aspect ratio</source>
         <translation>διατήρηση αναλογιών</translation>
     </message>
     <message>
-        <location filename="../src/items/resizableboard.cpp" line="1347"/>
+        <location filename="../src/items/resizableboard.cpp" line="1350"/>
         <source>Revert</source>
         <translation>Αναίρεση</translation>
     </message>
     <message>
-        <location filename="../src/items/resizableboard.cpp" line="1361"/>
+        <location filename="../src/items/resizableboard.cpp" line="1364"/>
         <source>size</source>
         <translation>μέγεθος</translation>
     </message>
     <message>
-        <location filename="../src/items/resizableboard.cpp" line="1369"/>
-        <location filename="../src/items/resizableboard.cpp" line="1480"/>
+        <location filename="../src/items/resizableboard.cpp" line="1372"/>
+        <location filename="../src/items/resizableboard.cpp" line="1483"/>
         <source>custom</source>
         <translation>προσαρμοσμένη</translation>
     </message>
     <message>
-        <location filename="../src/items/resizableboard.cpp" line="1490"/>
+        <location filename="../src/items/resizableboard.cpp" line="1493"/>
         <source>A0 (1030x1456)</source>
         <translation>A0 (1030x1456)</translation>
     </message>
     <message>
-        <location filename="../src/items/resizableboard.cpp" line="1490"/>
+        <location filename="../src/items/resizableboard.cpp" line="1493"/>
         <source>A1 (728x1030)</source>
         <translation>A1 (728x1030)</translation>
     </message>
     <message>
-        <location filename="../src/items/resizableboard.cpp" line="1490"/>
+        <location filename="../src/items/resizableboard.cpp" line="1493"/>
         <source>A2 (515x728)</source>
         <translation>A2 (515x728)</translation>
     </message>
     <message>
-        <location filename="../src/items/resizableboard.cpp" line="1490"/>
+        <location filename="../src/items/resizableboard.cpp" line="1493"/>
         <source>A3 (364x515)</source>
         <translation>A3 (364x515)</translation>
     </message>
     <message>
-        <location filename="../src/items/resizableboard.cpp" line="1490"/>
+        <location filename="../src/items/resizableboard.cpp" line="1493"/>
         <source>A4 (257x364)</source>
         <translation>A4 (257x364)</translation>
     </message>
     <message>
-        <location filename="../src/items/resizableboard.cpp" line="1490"/>
+        <location filename="../src/items/resizableboard.cpp" line="1493"/>
         <source>A5 (182x257)</source>
         <translation>A5 (182x257)</translation>
     </message>
     <message>
-        <location filename="../src/items/resizableboard.cpp" line="1490"/>
+        <location filename="../src/items/resizableboard.cpp" line="1493"/>
         <source>A6 (128x182)</source>
         <translation>A6 (128x182)</translation>
     </message>
     <message>
-        <location filename="../src/items/resizableboard.cpp" line="1491"/>
+        <location filename="../src/items/resizableboard.cpp" line="1494"/>
         <source>Letter (8.5x11)</source>
         <translation>Letter (8.5x11)</translation>
     </message>
     <message>
-        <location filename="../src/items/resizableboard.cpp" line="1491"/>
+        <location filename="../src/items/resizableboard.cpp" line="1494"/>
         <source>Legal (8.5x14)</source>
         <translation>Legal (8.5x14)</translation>
     </message>
     <message>
-        <location filename="../src/items/resizableboard.cpp" line="1491"/>
+        <location filename="../src/items/resizableboard.cpp" line="1494"/>
         <source>Ledger (17x11)</source>
         <translation>Ledger (17x11)</translation>
     </message>
     <message>
-        <location filename="../src/items/resizableboard.cpp" line="1491"/>
+        <location filename="../src/items/resizableboard.cpp" line="1494"/>
         <source>Tabloid (11x17)</source>
         <translation>Tabloid (11x17)) {11x?}</translation>
     </message>
@@ -7787,13 +7794,13 @@ Fritzing still works, but you won&apos;t be able to change parts properties.</so
     </message>
     <message>
         <location filename="../src/sketch/sketchwidget.cpp" line="3523"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9515"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9521"/>
         <source>Select %1</source>
         <translation>Επιλογή %1</translation>
     </message>
     <message>
         <location filename="../src/sketch/sketchwidget.cpp" line="3526"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9518"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9524"/>
         <source>Select %1 items</source>
         <translation>Επιλογή %1 αντικειμένων</translation>
     </message>
@@ -8053,7 +8060,7 @@ Note: you can also trigger this display by mousing down on the routing status te
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9512"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9518"/>
         <source>Deselect all</source>
         <translation>Αποεπιλογή όλων</translation>
     </message>

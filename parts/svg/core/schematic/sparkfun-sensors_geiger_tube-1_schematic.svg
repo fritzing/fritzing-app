@@ -1,16 +1,22 @@
-<?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<!-- Created with Fritzing (http://www.fritzing.org/) -->
-<svg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' version='1.2' baseProfile='tiny' x='0in' y='0in' width='0.807861in' height='0.407861in' viewBox='0 0 20.5197 10.3597' >
-<g id='schematic'>
-<line class='pin' id='connector0pin' connectorname='A' x1='0.123472' y1='5.20347' x2='5.20347' y2='5.20347' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
-<rect class='terminal' id='connector0terminal' x='0.123472' y='5.20347' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
-<text class='text' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#8c8c8c' font-size='0.881944' x='2.66347' y='4.83306' text-anchor='middle'>1</text>
-<line class='pin' id='connector1pin' connectorname='C' x1='0.123472' y1='0.123472' x2='5.20347' y2='0.123472' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
-<rect class='terminal' id='connector1terminal' x='0.123472' y='0.123472' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
-<text class='text' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#8c8c8c' font-size='0.881944' x='2.66347' y='-0.246944' text-anchor='middle'>2</text>
-<path class='other' fill='none' d='M15.3635,0.123472 A5.08,5.08 0 1 1 15.3635,10.2835' stroke-width='0.1524' stroke='#000000' />
-<line class='other' x1='5.20347' y1='0.123472' x2='15.3635' y2='0.123472' stroke='#000000' stroke-width='0.1524' stroke-linecap='round'/>
-<line class='other' x1='15.3635' y1='10.2835' x2='0.123472' y2='10.2835' stroke='#000000' stroke-width='0.1524' stroke-linecap='round'/>
-<line class='other' x1='5.20347' y1='5.20347' x2='15.3635' y2='5.20347' stroke='#000000' stroke-width='0.1524' stroke-linecap='round'/>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="58.166px"
+	 height="33.516px" viewBox="0 0 58.166 33.516" enable-background="new 0 0 58.166 33.516" xml:space="preserve">
+<g id="schematic">
+	
+		<line id="connector0pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="0.35" y1="18.601" x2="14.75" y2="18.601"/>
+	<rect id="connector0terminal" x="0.35" y="18.601" fill="none" width="0" height="0"/>
+	<text transform="matrix(1 0 0 1 6.8623 17.551)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">1</text>
+	
+		<line id="connector1pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="0.35" y1="4.2" x2="14.75" y2="4.2"/>
+	<rect id="connector1terminal" x="0.35" y="4.2" fill="none" width="0" height="0"/>
+	<text transform="matrix(1 0 0 1 6.8623 3.1506)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">2</text>
+	<path fill="none" stroke="#000000" stroke-width="0.9" d="M43.55,4.2c7.953,0,14.4,6.447,14.4,14.4
+		C57.95,26.553,51.503,33,43.55,33l0,0"/>
+	<line fill="none" stroke="#000000" stroke-width="0.9" stroke-linecap="round" x1="14.75" y1="4.2" x2="43.55" y2="4.2"/>
+	<line fill="none" stroke="#000000" stroke-width="0.9" stroke-linecap="round" x1="43.55" y1="33" x2="0.35" y2="33"/>
+	<line fill="none" stroke="#000000" stroke-width="0.9" stroke-linecap="round" x1="14.75" y1="18.601" x2="43.55" y2="18.601"/>
 </g>
 </svg>

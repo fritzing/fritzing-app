@@ -1,24 +1,32 @@
-<?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<!-- Created with Fritzing (http://www.fritzing.org/) -->
-<svg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' version='1.2' baseProfile='tiny' x='0in' y='0in' width='0.727302in' height='0.842402in' viewBox='0 0 18.4735 21.397' >
-<g id='schematic'>
-<line class='other' x1='7.74347' y1='11.11' x2='2.66347' y2='11.11' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
-<line class='other' x1='2.66347' y1='11.11' x2='2.66347' y2='21.27' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
-<line class='other' x1='2.66347' y1='21.27' x2='7.74347' y2='21.27' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
-<g transform='translate(6.47347,20)'><g transform='rotate(270)'>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#505050' font-size='3.302' x='0' y='0' text-anchor='start'>USB</text>
-</g></g>
-<line class='pin' id='connector3pin' connectorname='D+' x1='0.123472' y1='12.38' x2='2.66347' y2='12.38' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
-<rect class='terminal' id='connector3terminal' x='0.123472' y='12.38' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
-<text class='text' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#8c8c8c' font-size='0.881944' x='1.39347' y='12.0096' text-anchor='middle'>4</text>
-<line class='pin' id='connector2pin' connectorname='D-' x1='0.123472' y1='14.92' x2='2.66347' y2='14.92' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
-<rect class='terminal' id='connector2terminal' x='0.123472' y='14.92' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
-<text class='text' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#8c8c8c' font-size='0.881944' x='1.39347' y='14.5496' text-anchor='middle'>3</text>
-<line class='pin' id='connector4pin' connectorname='VBUS' x1='0.123472' y1='17.46' x2='2.66347' y2='17.46' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
-<rect class='terminal' id='connector4terminal' x='0.123472' y='17.46' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
-<text class='text' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#8c8c8c' font-size='0.881944' x='1.39347' y='17.0896' text-anchor='middle'>5</text>
-<line class='pin' id='connector5pin' connectorname='GND' x1='0.123472' y1='20' x2='2.66347' y2='20' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
-<rect class='terminal' id='connector5terminal' x='0.123472' y='20' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
-<text class='text' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#8c8c8c' font-size='0.881944' x='1.39347' y='19.6296' text-anchor='middle'>6</text>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.2" baseProfile="tiny" id="Layer_1" xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="22.417px"
+	 height="29.779px" viewBox="0 0 22.417 29.779" xml:space="preserve">
+<g id="schematic">
+	<polyline fill="none" stroke="#000000" stroke-width="0.9" stroke-linecap="round" points="7.55,29.315 21.95,29.315 21.95,0.514 
+		7.55,0.514 	"/>
+	<line fill="none" stroke="#000000" stroke-width="0.9" stroke-linecap="round" x1="7.55" y1="0.514" x2="7.55" y2="29.315"/>
+	<g transform="translate(6.47347,20)">
+		<g transform="rotate(270)">
+			<text transform="matrix(1 0 0 1 -3.6301 11.8764)" fill="#505050" font-family="'DroidSans'" font-size="9.36">USB</text>
+		</g>
+	</g>
+	
+		<line id="connector3pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="0.35" y1="4.115" x2="7.55" y2="4.115"/>
+	<rect id="connector3terminal" x="0.35" y="4.115" fill="none" width="0" height="0"/>
+	<text transform="matrix(1 0 0 1 3.262 3.0647)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">4</text>
+	
+		<line id="connector2pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="0.35" y1="11.315" x2="7.55" y2="11.315"/>
+	<rect id="connector2terminal" x="0.35" y="11.315" fill="none" width="0" height="0"/>
+	<text transform="matrix(1 0 0 1 3.262 10.2639)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">3</text>
+	
+		<line id="connector4pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="0.35" y1="18.514" x2="7.55" y2="18.514"/>
+	<rect id="connector4terminal" x="0.35" y="18.514" fill="none" width="0" height="0.001"/>
+	<text transform="matrix(1 0 0 1 3.262 17.4651)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">5</text>
+	
+		<line id="connector5pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="0.35" y1="25.714" x2="7.55" y2="25.714"/>
+	<rect id="connector5terminal" x="0.35" y="25.714" fill="none" width="0" height="0.001"/>
+	<text transform="matrix(1 0 0 1 3.262 24.6643)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">6</text>
 </g>
 </svg>

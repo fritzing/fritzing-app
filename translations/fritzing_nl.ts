@@ -529,47 +529,6 @@ Use the file?</source>
 Wil je het bestand gebruiken?</translation>
     </message>
     <message>
-        <source>Fritzing thinks the custom shape has no cutouts.</source>
-        <translation>Fritzing denkt dat de aangepaste vorm geen uitsnedes heeft.</translation>
-    </message>
-    <message numerus="yes">
-        <source>Fritzing thinks the custom shape has %n cutouts.</source>
-        <translation>
-            <numerusform>Fritzing denkt dat de aangepaste vorm %n uitsnede heeft.</numerusform>
-            <numerusform>Fritzing denkt dat de aangepaste vorm %n uitsnedes heeft.</numerusform>
-        </translation>
-    </message>
-    <message>
-        <source>
-However, the cutouts may not be formatted correctly.</source>
-        <translation>
-Maar de uitsnedes kunnen mogelijk onjuist geformatteerd zijn.</translation>
-    </message>
-    <message>
-        <source>
-
-If you intended your custom shape to have cutouts and you did not get the expected result </source>
-        <translation>
-
-Als je aangepaste vorm uitsnedes zou moet hebben, maar je krijgt niet het verwachtte relultaat </translation>
-    </message>
-    <message>
-        <source>it is because Fritzing requires that you make cutouts using a shape &apos;subtraction&apos; or &apos;difference&apos; operation in your vector graphics editor.
-
-</source>
-        <translation>is dat, omdat Fritzing verlangt dat je de uitsnedes maakt door middel van een vorm via de &apos;substractie&apos; of &apos;verschil&apos; methode binnen je vector programma.
-
-</translation>
-    </message>
-    <message>
-        <source>In any case we recommend that you test your custom shape by using the &apos;File &gt; Export for Production &gt; Extended Gerber&apos; option </source>
-        <translation>In ieder geval adviseren we je, om de aangepaste vorm te testen via: &apos;Bestand &gt; Exporteer &gt; voor Productie &gt; Extended Gerber&apos; </translation>
-    </message>
-    <message>
-        <source>and checking the resulting contour file with a Gerber viewer application.</source>
-        <translation>en het resultaat van het countour bestand te controleren via een Gerber viewer.</translation>
-    </message>
-    <message>
         <source>
 
 A custom board svg typically has one or two silkscreen layers and one board layer.
@@ -578,6 +537,49 @@ A custom board svg typically has one or two silkscreen layers and one board laye
     </message>
     <message>
         <source>because there are multiple &lt;silkscreen0&gt; layers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;The custom shape has been loaded, and you will see the new board shortly.&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Before actual PCB production we recommend that you test your custom shape by using the &apos;File &gt; Export for Production &gt; Extended Gerber&apos; option. </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Check the resulting contour file with a Gerber-viewer application to make sure the shape came out as expected.&lt;br/&gt;&lt;br/&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The rest of this message concerns &apos;cutouts&apos;. </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>These are circular or irregularly-shaped holes that you can optionally incorporate into a custom PCB shape.&lt;br/&gt;&lt;br/&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;The custom shape has no cutouts.&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message numerus="yes">
+        <source>&lt;b&gt;The custom shape has %n cutouts.&lt;/b&gt;</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>&lt;br/&gt;However, the cutouts may not be formatted correctly.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;br/&gt;&lt;br/&gt;If you intended your custom shape to have cutouts and you did not get the expected result, </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>it is because Fritzing requires that you make cutouts using a shape &apos;subtraction&apos; or &apos;difference&apos; operation in your vector graphics editor.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

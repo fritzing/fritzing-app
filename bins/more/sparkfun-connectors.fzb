@@ -1,1290 +1,589 @@
-<?xml version="1.0" encoding="UTF-8"?><module fritzingVersion="0.7.2b" icon="sparkfun-connectors.png">
+<?xml version='1.0' encoding='UTF-8'?>
+<module fritzingVersion='0.7.2b' icon='sparkfun-connectors.png'>
 <title>SparkFun-Connectors</title>
 <instances>
-
-
-
-
-
-
-
-<instance modelIndex="7" moduleIdRef="SparkFun-Connectors-ATX24-RH">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="8" moduleIdRef="SparkFun-Connectors-AUDIO-JACK-PTH">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="9" moduleIdRef="SparkFun-Connectors-AUDIO-JACK-2.5MM">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="10" moduleIdRef="SparkFun-Connectors-AUDIO-JACK-SPECIAL_POGO_PINS">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="11" moduleIdRef="SparkFun-Connectors-AUDIO-JACK-SMD">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="12" moduleIdRef="SparkFun-Connectors-AUDIO-JACK-SMD2">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="13" moduleIdRef="SparkFun-Connectors-AUDIO-JACK2-PTH">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="14" moduleIdRef="SparkFun-Connectors-AUDIO-JACK2-SMD">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="15" moduleIdRef="SparkFun-Connectors-AVR_MINI_PROG-SMD">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="16" moduleIdRef="SparkFun-Connectors-AVR_SPI_PRG_6-PTH">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="17" moduleIdRef="SparkFun-Connectors-AVR_SPI_PRG_6-NS">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="18" moduleIdRef="SparkFun-Connectors-AVR_SPI_PRG_6-OFFSET_PADS">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="19" moduleIdRef="SparkFun-Connectors-AVR_SPI_PRG_6-2X3_LOCK">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="20" moduleIdRef="SparkFun-Connectors-AVR_SPI_PROG-">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="21" moduleIdRef="SparkFun-Connectors-AVR_SPI_PROG2-PTH">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-
-
-<instance modelIndex="24" moduleIdRef="SparkFun-Connectors-AVR_SPI_PROG2-SMD">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="25" moduleIdRef="SparkFun-Connectors-BANANA_CONN-">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="26" moduleIdRef="SparkFun-Connectors-BC9VPC-">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="27" moduleIdRef="SparkFun-Connectors-BNC-PTH">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="28" moduleIdRef="SparkFun-Connectors-DB9-FEMALE">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="29" moduleIdRef="SparkFun-Connectors-DB9-MALE">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="30" moduleIdRef="SparkFun-Connectors-DB25-D">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="31" moduleIdRef="SparkFun-Connectors-DB25-H">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="32" moduleIdRef="SparkFun-Connectors-DB25-HP">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="33" moduleIdRef="SparkFun-Connectors-DB25-V">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="34" moduleIdRef="SparkFun-Connectors-DB25-VP">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="35" moduleIdRef="SparkFun-Connectors-DB25-VB">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="36" moduleIdRef="SparkFun-Connectors-DIN7-">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="37" moduleIdRef="SparkFun-Connectors-DS_TOUCH_CONNECTOR-">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="38" moduleIdRef="SparkFun-Connectors-EB-85A-SMD">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="39" moduleIdRef="SparkFun-Connectors-EM406-">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="40" moduleIdRef="SparkFun-Connectors-EM408_CON-">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="41" moduleIdRef="SparkFun-Connectors-F25-D">
+<instance moduleIdRef='SparkFun-Connectors-USD-SOCKET-NEW' modelIndex='0'>
 <views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance modelIndex="42" moduleIdRef="SparkFun-Connectors-F25-H">
+<instance moduleIdRef='SparkFun-Connectors-MINI-DIN6-PTH' modelIndex='1'>
 <views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance modelIndex="43" moduleIdRef="SparkFun-Connectors-F25-HP">
+<instance moduleIdRef='SparkFun-Connectors-AUDIO-JACK2-SMD' modelIndex='2'>
 <views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance modelIndex="44" moduleIdRef="SparkFun-Connectors-F25-V">
+<instance moduleIdRef='SparkFun-Connectors-ATX24-RH' modelIndex='3'>
 <views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance modelIndex="45" moduleIdRef="SparkFun-Connectors-F25-VP">
+<instance moduleIdRef='SparkFun-Connectors-LITTLEBITS_MALE-' modelIndex='4'>
 <views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance modelIndex="46" moduleIdRef="SparkFun-Connectors-F25-VB">
+<instance moduleIdRef='SparkFun-Connectors-M01-SNAP-MALE' modelIndex='5'>
 <views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance modelIndex="47" moduleIdRef="SparkFun-Connectors-FTDI_BASIC-PTH">
+<instance moduleIdRef='SparkFun-Connectors-M02-SPRING-2.54-RA' modelIndex='6'>
 <views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance modelIndex="48" moduleIdRef="SparkFun-Connectors-IPOD_CONNECTOR_FEMALE-">
+<instance moduleIdRef='SparkFun-Connectors-FTDI_BASIC-PTH' modelIndex='7'>
 <views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance modelIndex="49" moduleIdRef="SparkFun-Connectors-IPOD_CONNECTOR_MALE-">
+<instance moduleIdRef='SparkFun-Connectors-M03-SMD' modelIndex='8'>
 <views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance modelIndex="50" moduleIdRef="SparkFun-Connectors-KENT_LCD_CONN-">
+<instance moduleIdRef='SparkFun-Connectors-M04-SMD2' modelIndex='9'>
 <views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance modelIndex="51" moduleIdRef="SparkFun-Connectors-LITTLEBITS_FEMALE-">
+<instance moduleIdRef='SparkFun-Connectors-M05-SMD2' modelIndex='10'>
 <views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance modelIndex="52" moduleIdRef="SparkFun-Connectors-LITTLEBITS_MALE-">
+<instance moduleIdRef='SparkFun-Connectors-M06-EM406' modelIndex='11'>
 <views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance modelIndex="53" moduleIdRef="SparkFun-Connectors-LITTLE_BITS_CONN-">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
 
-<instance modelIndex="55" moduleIdRef="SparkFun-Connectors-M01-SMD">
+<instance moduleIdRef='SparkFun-Connectors-M08-BM08B-SRSS-TB' modelIndex='13'>
 <views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-
 
 
-<instance modelIndex="59" moduleIdRef="SparkFun-Connectors-M01-OFFSET">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="60" moduleIdRef="SparkFun-Connectors-M01-SMD-4.5X1.5">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="61" moduleIdRef="SparkFun-Connectors-M01-SNAP-FEMALE">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="62" moduleIdRef="SparkFun-Connectors-M01-SNAP-MALE">
+<instance moduleIdRef='SparkFun-Connectors-M10-2MMSMD' modelIndex='15'>
 <views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
 
-
-
-<instance modelIndex="66" moduleIdRef="SparkFun-Connectors-M02--JST-2MM-SMT">
+<instance moduleIdRef='SparkFun-Connectors-M12-MACHINE-PIN_LOCK' modelIndex='17'>
 <views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-
-<instance modelIndex="68" moduleIdRef="SparkFun-Connectors-M02-4UCON-15767">
+<instance moduleIdRef='SparkFun-Connectors-ZUNE_CONNECTOR_MALE-' modelIndex='18'>
 <views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance modelIndex="69" moduleIdRef="SparkFun-Connectors-M02-ROCKER">
+<instance moduleIdRef='SparkFun-Connectors-50-PIN-CENTRONICS-F-FEMALE' modelIndex='19'>
 <views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
 
 
-<instance modelIndex="72" moduleIdRef="SparkFun-Connectors-M02-POLAR_LOCK">
+<instance moduleIdRef='SparkFun-Connectors-M16-MACHIINE-PIN_LOCK' modelIndex='23'>
 <views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
 
-<instance modelIndex="74" moduleIdRef="SparkFun-Connectors-M02-3.5MM_LOCK">
+<instance moduleIdRef='SparkFun-Connectors-PIC-ICSP-MINI-' modelIndex='26'>
 <views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-
-
-<instance modelIndex="77" moduleIdRef="SparkFun-Connectors-M02-JST-PTH-2">
+<instance moduleIdRef='SparkFun-Connectors-50-PIN-CENTRONICS-M-MALE' modelIndex='27'>
 <views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
 
-<instance modelIndex="80" moduleIdRef="SparkFun-Connectors-M02--JST-2-PTH-NO_SILK">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="81" moduleIdRef="SparkFun-Connectors-M02-JST-PTH-2-KIT">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="82" moduleIdRef="SparkFun-Connectors-M02-SPRING-2.54-RA">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
 
-<instance modelIndex="88" moduleIdRef="SparkFun-Connectors-M03-POLAR_LOCK">
+<instance moduleIdRef='SparkFun-Connectors-M05X2-SHD_SMD' modelIndex='29'>
 <views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance modelIndex="89" moduleIdRef="SparkFun-Connectors-M03-SCREW_LOCK">
+<instance moduleIdRef='SparkFun-Connectors-MAGJACK-2-' modelIndex='30'>
 <views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
 
 
-<instance modelIndex="92" moduleIdRef="SparkFun-Connectors-M03-JST-PTH">
+<instance moduleIdRef='SparkFun-Connectors-ZIFSOCKET-28-3-ZIFFSOCKET-28-3' modelIndex='32'>
 <views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
 
-
-<instance modelIndex="95" moduleIdRef="SparkFun-Connectors-M03-">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="96" moduleIdRef="SparkFun-Connectors-M03-SMD">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
 
 
-<instance modelIndex="103" moduleIdRef="SparkFun-Connectors-M04-POLAR_LOCK">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="104" moduleIdRef="SparkFun-Connectors-M04-SMD">
+<instance moduleIdRef='SparkFun-Connectors-COMPUTER-PERIPHERAL-POWER-VERTICAL' modelIndex='35'>
 <views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
 
 
-<instance modelIndex="107" moduleIdRef="SparkFun-Connectors-M04-JST-PTH">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="108" moduleIdRef="SparkFun-Connectors-M04-SCREW_LOCK">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="109" moduleIdRef="SparkFun-Connectors-M04-SMD2">
+<instance moduleIdRef='SparkFun-Connectors-PSP_CONNECTOR-' modelIndex='37'>
 <views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
 
-
-
-
-
-
-<instance modelIndex="116" moduleIdRef="SparkFun-Connectors-M05-SMD">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="117" moduleIdRef="SparkFun-Connectors-M05-SMD2">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="118" moduleIdRef="SparkFun-Connectors-M05X2-PTH">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="119" moduleIdRef="SparkFun-Connectors-M05X2-RA">
+<instance moduleIdRef='SparkFun-Connectors-LITTLE_BITS_CONN-' modelIndex='39'>
 <views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance modelIndex="120" moduleIdRef="SparkFun-Connectors-M05X2-RAF">
+<instance moduleIdRef='SparkFun-Connectors-USB--MICROB' modelIndex='40'>
 <views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-
-<instance modelIndex="123" moduleIdRef="SparkFun-Connectors-M05X2-SHD_SMD">
+<instance moduleIdRef='SparkFun-Connectors-EB-85A-SMD' modelIndex='41'>
 <views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-
-
-<instance modelIndex="126" moduleIdRef="SparkFun-Connectors-M06-RA">
+<instance moduleIdRef='SparkFun-Connectors-RCA--LOCK' modelIndex='42'>
 <views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance modelIndex="127" moduleIdRef="SparkFun-Connectors-M06-SMD">
+<instance moduleIdRef='SparkFun-Connectors-M40-OFFSET' modelIndex='43'>
 <views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-
-
-<instance modelIndex="130" moduleIdRef="SparkFun-Connectors-M06-POLAR_LOCK">
+<instance moduleIdRef='SparkFun-Connectors-DB9-MALE' modelIndex='44'>
 <views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance modelIndex="131" moduleIdRef="SparkFun-Connectors-M06-RA_LOCK">
+<instance moduleIdRef='SparkFun-Connectors-DIN7-' modelIndex='45'>
 <views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-
-
-
-<instance modelIndex="135" moduleIdRef="SparkFun-Connectors-M06-1X06-SMD_EDGE_FEMALE">
+<instance moduleIdRef='SparkFun-Connectors-AVR_SPI_PRG_6-2X3_LOCK' modelIndex='46'>
 <views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-
-<instance modelIndex="137" moduleIdRef="SparkFun-Connectors-M06-SMDF">
+<instance moduleIdRef='SparkFun-Connectors-AVR_MINI_PROG-SMD' modelIndex='47'>
 <views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance modelIndex="138" moduleIdRef="SparkFun-Connectors-M06-SMD-FEMALE-V2">
+<instance moduleIdRef='SparkFun-Connectors-SIMHOLDER2-' modelIndex='48'>
 <views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance modelIndex="139" moduleIdRef="SparkFun-Connectors-M06-SMD-STRAIGHT">
+<instance moduleIdRef='SparkFun-Connectors-SIMHOLDER3-' modelIndex='49'>
 <views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance modelIndex="140" moduleIdRef="SparkFun-Connectors-M06-SMD-STRAIGHT-ALT">
+<instance moduleIdRef='SparkFun-Connectors-RJ11-6-PTH' modelIndex='50'>
 <views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance modelIndex="141" moduleIdRef="SparkFun-Connectors-M06-SMD-STRAIGHT-COMBO">
+<instance moduleIdRef='SparkFun-Connectors-BANANA_CONN-' modelIndex='51'>
 <views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance modelIndex="142" moduleIdRef="SparkFun-Connectors-M06-EM406">
+<instance moduleIdRef='SparkFun-Connectors-IPOD_CONNECTOR_MALE-' modelIndex='52'>
 <views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-
-
-<instance modelIndex="152" moduleIdRef="SparkFun-Connectors-M08-SMD-STRAIGHT">
+<instance moduleIdRef='SparkFun-Connectors-SIMHOLDER-' modelIndex='53'>
 <views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance modelIndex="153" moduleIdRef="SparkFun-Connectors-M08-SMD-STRAIGHT-ALT">
+<instance moduleIdRef='SparkFun-Connectors-SMA_EDGE-' modelIndex='54'>
 <views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance modelIndex="154" moduleIdRef="SparkFun-Connectors-M08-SMD-COMBO">
+<instance moduleIdRef='SparkFun-Connectors-RJ9-PTH' modelIndex='55'>
 <views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance modelIndex="155" moduleIdRef="SparkFun-Connectors-M08-BM08B-SRSS-TB">
+<instance moduleIdRef='SparkFun-Connectors-STARBOARD_PWR--TALL' modelIndex='56'>
 <views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-
-
-
-
-
-
-
-<instance modelIndex="163" moduleIdRef="SparkFun-Connectors-M10-2MMSMD">
+<instance moduleIdRef='SparkFun-Connectors-PIC-ICSP-POLAR_LOCK' modelIndex='57'>
 <views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-
-
-
-<instance modelIndex="167" moduleIdRef="SparkFun-Connectors-M10X2-2X10_LOCK">
+<instance moduleIdRef='SparkFun-Connectors-SD_CARD_SOCKET-4UCON' modelIndex='58'>
 <views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance modelIndex="168" moduleIdRef="SparkFun-Connectors-M10X2-SPECIAL">
+<instance moduleIdRef='SparkFun-Connectors-AVR_SPI_PROG-' modelIndex='59'>
 <views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-
-
-
-
-<instance modelIndex="173" moduleIdRef="SparkFun-Connectors-M12-MACHINE-PIN_LOCK">
+<instance moduleIdRef='SparkFun-Connectors-MMA_ACCEL_CONNECTOR-' modelIndex='60'>
 <views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
-
-
-
-
-
-
-
-
-
-<instance modelIndex="197" moduleIdRef="SparkFun-Connectors-M40-OFFSET">
+<instance moduleIdRef='SparkFun-Connectors-MAGJACK-POE-' modelIndex='62'>
 <views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
 
-<instance modelIndex="199" moduleIdRef="SparkFun-Connectors-MAGJACK-">
+<instance moduleIdRef='SparkFun-Connectors-DS_TOUCH_CONNECTOR-' modelIndex='64'>
 <views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance modelIndex="200" moduleIdRef="SparkFun-Connectors-MAGJACK-2-">
+<instance moduleIdRef='SparkFun-Connectors-M10X2-2X10_LOCK' modelIndex='65'>
 <views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance modelIndex="201" moduleIdRef="SparkFun-Connectors-MAGJACK-POE-">
+<instance moduleIdRef='SparkFun-Connectors-OBDII-' modelIndex='66'>
 <views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance modelIndex="202" moduleIdRef="SparkFun-Connectors-MIDI_CONN_FEMALE_SUPPORT-">
+<instance moduleIdRef='SparkFun-Connectors-TOUCH-SCREEN-' modelIndex='67'>
 <views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance modelIndex="203" moduleIdRef="SparkFun-Connectors-MIDI_CONN_FEMALE-">
+<instance moduleIdRef='SparkFun-Connectors-SMARTCARD-SMD' modelIndex='68'>
 <views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance modelIndex="204" moduleIdRef="SparkFun-Connectors-MINI-DIN6-PTH">
+<instance moduleIdRef='SparkFun-Connectors-EM408_CON-' modelIndex='69'>
 <views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance modelIndex="205" moduleIdRef="SparkFun-Connectors-MMA_ACCEL_CONNECTOR-">
+<instance moduleIdRef='SparkFun-Connectors-USB+SHIELD-' modelIndex='70'>
 <views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance modelIndex="206" moduleIdRef="SparkFun-Connectors-OBDII-">
+<instance moduleIdRef='SparkFun-Connectors-MIDI_CONN_FEMALE-' modelIndex='71'>
 <views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance modelIndex="207" moduleIdRef="SparkFun-Connectors-PIC-ICSP-PTH">
+<instance moduleIdRef='SparkFun-Connectors-SCREENKEYMATINGCONNECTOR-' modelIndex='72'>
 <views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance modelIndex="208" moduleIdRef="SparkFun-Connectors-PIC-ICSP-POLAR_LOCK">
+
+<instance moduleIdRef='SparkFun-Connectors-KENT_LCD_CONN-' modelIndex='74'>
 <views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance modelIndex="209" moduleIdRef="SparkFun-Connectors-PIC-ICSP-MINI-">
+<instance moduleIdRef='SparkFun-Connectors-USB_MICROB_PLUG--SMT' modelIndex='75'>
 <views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
 
 
-
-
-<instance modelIndex="214" moduleIdRef="SparkFun-Connectors-POWER_JACK-SMD">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="215" moduleIdRef="SparkFun-Connectors-POWER_JACK-SLT">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="216" moduleIdRef="SparkFun-Connectors-POWER_JACK-PTH">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="217" moduleIdRef="SparkFun-Connectors-POWER_JACK-COMBO">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="218" moduleIdRef="SparkFun-Connectors-POWER_JACK-PTH_LOCK">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="219" moduleIdRef="SparkFun-Connectors-PSP_CONNECTOR-">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="220" moduleIdRef="SparkFun-Connectors-PSP_TOUCH_CONNECTOR-">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="221" moduleIdRef="SparkFun-Connectors-RJ9-PTH">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="222" moduleIdRef="SparkFun-Connectors-RJ11-6-PTH">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="223" moduleIdRef="SparkFun-Connectors-RJ45-8-PTH">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="224" moduleIdRef="SparkFun-Connectors-SCREENKEYMATINGCONNECTOR-">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="225" moduleIdRef="SparkFun-Connectors-SIMHOLDER-">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="226" moduleIdRef="SparkFun-Connectors-SIMHOLDER2-">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="227" moduleIdRef="SparkFun-Connectors-SIMHOLDER3-">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="228" moduleIdRef="SparkFun-Connectors-SMARTCARD-SMD">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="229" moduleIdRef="SparkFun-Connectors-SMA_EDGE-">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="230" moduleIdRef="SparkFun-Connectors-STARBOARD_GND-">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="231" moduleIdRef="SparkFun-Connectors-STARBOARD_GND--SMALL">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="232" moduleIdRef="SparkFun-Connectors-STARBOARD_GND--WIDE">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="233" moduleIdRef="SparkFun-Connectors-STARBOARD_GND--SMALL2">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="234" moduleIdRef="SparkFun-Connectors-STARBOARD_PWR--WIDE">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="235" moduleIdRef="SparkFun-Connectors-STARBOARD_PWR--TALL">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="236" moduleIdRef="SparkFun-Connectors-TOUCH-SCREEN-">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="237" moduleIdRef="SparkFun-Connectors-U.FL-">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="238" moduleIdRef="SparkFun-Connectors-USB--A-H">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="239" moduleIdRef="SparkFun-Connectors-USB--A-S">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="240" moduleIdRef="SparkFun-Connectors-USB--MB-H">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="241" moduleIdRef="SparkFun-Connectors-USB--B-S">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="242" moduleIdRef="SparkFun-Connectors-USB-OLD">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="243" moduleIdRef="SparkFun-Connectors-USB-PTH">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="244" moduleIdRef="SparkFun-Connectors-USB--JST-2MM-SMT">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="245" moduleIdRef="SparkFun-Connectors-USB-SMD">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="246" moduleIdRef="SparkFun-Connectors-USB-PCB">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="247" moduleIdRef="SparkFun-Connectors-USB-PTH-VERTICAL">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="248" moduleIdRef="SparkFun-Connectors-USB-USB-A-S-NOSILK">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="249" moduleIdRef="SparkFun-Connectors-USB--A-SMD">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="250" moduleIdRef="SparkFun-Connectors-USB--SMD-NS">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="251" moduleIdRef="SparkFun-Connectors-USB-_">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="252" moduleIdRef="SparkFun-Connectors-USB--MICROB">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="253" moduleIdRef="SparkFun-Connectors-USB+SHIELD-">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="254" moduleIdRef="SparkFun-Connectors-USB-MINIB--5PIN">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="255" moduleIdRef="SparkFun-Connectors-USB_MICROB_PLUG-">
-<views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
-</iconView>
-</views>
-</instance>
-<instance modelIndex="256" moduleIdRef="SparkFun-Connectors-USB_MICROB_PLUG--PTH">
+<instance moduleIdRef='SparkFun-Connectors-BNC-PTH' modelIndex='78'>
 <views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance modelIndex="257" moduleIdRef="SparkFun-Connectors-USB_MICROB_PLUG--PTH2">
+<instance moduleIdRef='SparkFun-Connectors-AVR_SPI_PROG2-SMD' modelIndex='79'>
 <views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance modelIndex="258" moduleIdRef="SparkFun-Connectors-USB_MICROB_PLUG--SMT">
+<instance moduleIdRef='SparkFun-Connectors-EM406-' modelIndex='80'>
 <views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance modelIndex="259" moduleIdRef="SparkFun-Connectors-USD-SOCKET-USD">
+<instance moduleIdRef='SparkFun-Connectors-MIDI_CONN_FEMALE_SUPPORT-' modelIndex='81'>
 <views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance modelIndex="260" moduleIdRef="SparkFun-Connectors-USD-SOCKET-NEW">
+<instance moduleIdRef='SparkFun-Connectors-F25-VB' modelIndex='82'>
 <views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance modelIndex="261" moduleIdRef="SparkFun-Connectors-WATN001002BF-">
+<instance moduleIdRef='SparkFun-Connectors-LITTLEBITS_FEMALE-' modelIndex='83'>
 <views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance modelIndex="262" moduleIdRef="SparkFun-Connectors-XLR3_NCFAH2-">
+<instance moduleIdRef='SparkFun-Connectors-U.FL-' modelIndex='84'>
 <views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance modelIndex="263" moduleIdRef="SparkFun-Connectors-ZIFSOCKET-28-3-ZIFFSOCKET-28-3">
+<instance moduleIdRef='SparkFun-Connectors-BC9VPC-' modelIndex='85'>
 <views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance modelIndex="264" moduleIdRef="SparkFun-Connectors-ZIFSOCKET-40-6-DIL40-6-ZIF_SOCKET">
+<instance moduleIdRef='SparkFun-Connectors-PSP_TOUCH_CONNECTOR-' modelIndex='86'>
 <views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance modelIndex="265" moduleIdRef="SparkFun-Connectors-ZUNE_CONNECTOR_MALE-">
+<instance moduleIdRef='SparkFun-Connectors-USB_AB-' modelIndex='87'>
 <views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance modelIndex="266" moduleIdRef="SparkFun-Connectors-50-PIN-CENTRONICS-F-FEMALE">
+<instance moduleIdRef='SparkFun-Connectors-XLR3_NCFAH2-' modelIndex='88'>
 <views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance modelIndex="267" moduleIdRef="SparkFun-Connectors-50-PIN-CENTRONICS-M-MALE">
+<instance moduleIdRef='SparkFun-Connectors-RJ45-8-PTH' modelIndex='89'>
 <views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance modelIndex="268" moduleIdRef="SparkFun-Connectors-RCA-">
+
+
+<instance moduleIdRef='SparkFun-Connectors-STARBOARD_GND--SMALL2' modelIndex='91'>
 <views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance modelIndex="269" moduleIdRef="SparkFun-Connectors-RCA--LOCK">
+<instance moduleIdRef='SparkFun-Connectors-MAGJACK-' modelIndex='92'>
 <views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance modelIndex="270" moduleIdRef="SparkFun-Connectors-USB_AB-">
+<instance moduleIdRef='SparkFun-Connectors-POWER_JACK-PTH_LOCK' modelIndex='93'>
 <views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-
 
-
-<instance modelIndex="274" moduleIdRef="SparkFun-Connectors-M16-MACHIINE-PIN_LOCK">
+<instance moduleIdRef='SparkFun-Connectors-DB25-VB' modelIndex='95'>
 <views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-
-
-
-
-
-
-
-
-<instance modelIndex="283" moduleIdRef="SparkFun-Connectors-M11-SMD">
+<instance moduleIdRef='SparkFun-Connectors-WATN001002BF-' modelIndex='96'>
 <views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-
-<instance modelIndex="285" moduleIdRef="SparkFun-Connectors-M11-SMD_NO_HOLES">
+<instance moduleIdRef='SparkFun-Connectors-USB-MINIB--5PIN' modelIndex='97'>
 <views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-
-<instance modelIndex="287" moduleIdRef="SparkFun-Connectors-COMPUTER-PERIPHERAL-POWER-RA">
+<instance moduleIdRef='SparkFun-Connectors-IPOD_CONNECTOR_FEMALE-' modelIndex='98'>
 <views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance modelIndex="288" moduleIdRef="SparkFun-Connectors-COMPUTER-PERIPHERAL-POWER-VERTICAL">
+<instance moduleIdRef='SparkFun-Connectors-ZIFSOCKET-40-6-DIL40-6-ZIF_SOCKET' modelIndex='99'>
 <views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance modelIndex="289" moduleIdRef="SparkFun-Connectors-SD_CARD_SOCKET-4UCON">
+<instance moduleIdRef='SparkFun-Connectors-AUDIO-JACK-SMD2' modelIndex='100'>
 <views>
-<iconView layer="icon">
-<geometry x="-1" y="-1" z="-1"/>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>

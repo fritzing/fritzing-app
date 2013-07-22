@@ -30,7 +30,7 @@ applications.</description>
 </layers>
 </schematicView>
 <pcbView>
-<layers image="pcb/sparkfun-poweric_multiwatt15_6400bgheatsink_pcb.svg">
+<layers image="pcb/sparkfun-poweric_multiwatt15_6400bgheatsink_2_pcb.svg">
 <layer layerId="copper1"/>
 <layer layerId="silkscreen"/>
 <layer layerId="copper0"/>

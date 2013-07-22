@@ -12,7 +12,7 @@
 <tag>HP</tag>
 </tags>
 <properties>
-<property name="family">sparkfun DB25 Connector</property>
+<property name="family">sparkfun DB Connector</property>
 <property name="package">db25</property>
 <property name="variant">hp</property>
 <property name="gender">male</property>

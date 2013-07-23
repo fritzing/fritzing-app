@@ -2,98 +2,98 @@
 <module fritzingVersion='0.7.2b' icon='sparkfun-digitalic.png'>
 <title>SparkFun-DigitalIC</title>
 <instances>
-<instance moduleIdRef='SparkFun-DigitalIC-AT25FS010-' modelIndex='0'>
+<instance moduleIdRef='SparkFun-DigitalIC-SCANTOOL-' modelIndex='0'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-AT45DB041B-' modelIndex='1'>
+<instance moduleIdRef='SparkFun-DigitalIC-74LVC138AD-' modelIndex='1'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-AT45DB041B-WIDE' modelIndex='2'>
+<instance moduleIdRef='SparkFun-DigitalIC-74ACT125D-' modelIndex='2'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-AT45DB161D-' modelIndex='3'>
+<instance moduleIdRef='SparkFun-DigitalIC-A6282--ES' modelIndex='3'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-ATMEGA8U2-AU' modelIndex='4'>
+<instance moduleIdRef='SparkFun-DigitalIC-ENC28J60-' modelIndex='4'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-ATMEGA32U4-QFN' modelIndex='5'>
+<instance moduleIdRef='SparkFun-DigitalIC-ATTINY13-DIP' modelIndex='5'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-ATMEGA32U4-QFN2' modelIndex='6'>
+<instance moduleIdRef='SparkFun-DigitalIC-PIC32MX440F512H-' modelIndex='6'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-ATMEGA128-_SMD' modelIndex='7'>
+<instance moduleIdRef='SparkFun-DigitalIC-ATMEGA168-' modelIndex='7'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-ATMEGA128--SMD' modelIndex='8'>
+<instance moduleIdRef='SparkFun-DigitalIC-PIC16F913-SOIC28' modelIndex='8'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-ATMEGA168-MLF' modelIndex='9'>
+<instance moduleIdRef='SparkFun-DigitalIC-SC16IS750-' modelIndex='9'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-ATMEGA168-' modelIndex='10'>
+<instance moduleIdRef='SparkFun-DigitalIC-NAND256-' modelIndex='10'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-ATMEGA2560-AU' modelIndex='11'>
+<instance moduleIdRef='SparkFun-DigitalIC-CP210X_USB_UART-' modelIndex='11'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-ATTINY13-SOIC' modelIndex='12'>
+<instance moduleIdRef='SparkFun-DigitalIC-PIC16F88-DIP-' modelIndex='12'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-ATTINY13-DIP' modelIndex='13'>
+<instance moduleIdRef='SparkFun-DigitalIC-PIC18F2455-SMD' modelIndex='13'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
@@ -107,812 +107,616 @@
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-ATTINY45-' modelIndex='15'>
+<instance moduleIdRef='SparkFun-DigitalIC-EEPROM-I2C-SMD' modelIndex='15'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-ATTINY45-DIP8' modelIndex='16'>
+<instance moduleIdRef='SparkFun-DigitalIC-SPI_FLASH-X25XX-SMD1' modelIndex='16'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-AVR-MEGA8--MI' modelIndex='17'>
+<instance moduleIdRef='SparkFun-DigitalIC-M74HC238-' modelIndex='17'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-AVR-MEGA8--AI' modelIndex='18'>
+<instance moduleIdRef='SparkFun-DigitalIC-PIC16F883-' modelIndex='18'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-AVR-MEGA8-P-PTH' modelIndex='19'>
+<instance moduleIdRef='SparkFun-DigitalIC-CP2103_USB_UART-' modelIndex='19'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-AVR-MEGA8-P-SIM' modelIndex='20'>
+<instance moduleIdRef='SparkFun-DigitalIC-PIC18F2550-' modelIndex='20'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-AVR-MEGA8-P-ZIF_SOCKET' modelIndex='21'>
+<instance moduleIdRef='SparkFun-DigitalIC-XMEGA-100-SMD' modelIndex='21'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-AVR-MEGA8-P-KIT' modelIndex='22'>
+<instance moduleIdRef='SparkFun-DigitalIC-74*595-' modelIndex='22'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-CP210X_USB_UART-' modelIndex='23'>
+<instance moduleIdRef='SparkFun-DigitalIC-NCP303LSN09-' modelIndex='23'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-CP2103_USB_UART-' modelIndex='24'>
+<instance moduleIdRef='SparkFun-DigitalIC-FT2232D-' modelIndex='24'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-CY7C64215-' modelIndex='25'>
+<instance moduleIdRef='SparkFun-DigitalIC-MAX232-PTH' modelIndex='25'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-DOSONCHIP-IC-LQFP' modelIndex='26'>
+<instance moduleIdRef='SparkFun-DigitalIC-XR2206-' modelIndex='26'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-DOSONCHIP-IC-QFN' modelIndex='27'>
+<instance moduleIdRef='SparkFun-DigitalIC-DSPIC30F6015-SMD' modelIndex='27'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-DOSONCHIP-IC-QFN_ALT1' modelIndex='28'>
+<instance moduleIdRef='SparkFun-DigitalIC-PCA9306-' modelIndex='28'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-DSPIC30F4011-DIL' modelIndex='29'>
+<instance moduleIdRef='SparkFun-DigitalIC-MAX3421E-SMD' modelIndex='29'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-DSPIC30F4011-' modelIndex='30'>
+<instance moduleIdRef='SparkFun-DigitalIC-PIC16F688-SMD' modelIndex='30'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-DSPIC30F6015-SMD' modelIndex='31'>
+<instance moduleIdRef='SparkFun-DigitalIC-74*08-SE' modelIndex='31'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-DSPIC33FJ256GP710-_' modelIndex='32'>
+<instance moduleIdRef='SparkFun-DigitalIC-MAX7456-GROUNDPAD' modelIndex='32'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-EEPROM-I2C-SMD' modelIndex='33'>
+<instance moduleIdRef='SparkFun-DigitalIC-ATTINY45-DIP8' modelIndex='33'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-ENC28J60-' modelIndex='34'>
+<instance moduleIdRef='SparkFun-DigitalIC-MBED_NXP_LPC1768-' modelIndex='34'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-EP2C8_PQ208-' modelIndex='35'>
+<instance moduleIdRef='SparkFun-DigitalIC-NC7WZ07-' modelIndex='35'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-FT232RL-SSOP' modelIndex='36'>
+<instance moduleIdRef='SparkFun-DigitalIC-ATMEGA32U4-QFN2' modelIndex='36'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-FT232RL-BASIC-SSOP' modelIndex='37'>
+<instance moduleIdRef='SparkFun-DigitalIC-STM811-' modelIndex='37'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-FT232RQ-' modelIndex='38'>
+<instance moduleIdRef='SparkFun-DigitalIC-ATMEGA8U2-AU' modelIndex='38'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-FT245RL-' modelIndex='39'>
+<instance moduleIdRef='SparkFun-DigitalIC-FT232RL-SSOP' modelIndex='39'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-FT2232D-' modelIndex='40'>
+<instance moduleIdRef='SparkFun-DigitalIC-DSPIC33FJ256GP710-_' modelIndex='40'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-HEF4543-PTH' modelIndex='41'>
+<instance moduleIdRef='SparkFun-DigitalIC-RS485_SP491-' modelIndex='41'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-HEX_CONVERTER-' modelIndex='42'>
+<instance moduleIdRef='SparkFun-DigitalIC-INVERTER-__' modelIndex='42'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-ICL3232-' modelIndex='43'>
+<instance moduleIdRef='SparkFun-DigitalIC-FT232RQ-' modelIndex='43'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-INVERTER-' modelIndex='44'>
+<instance moduleIdRef='SparkFun-DigitalIC-SPEAKJET-SMD' modelIndex='44'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-INVERTER-__' modelIndex='45'>
+<instance moduleIdRef='SparkFun-DigitalIC-AT45DB041B-WIDE' modelIndex='45'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-INVERTING_SCHMITT_TRIGGER-' modelIndex='46'>
+<instance moduleIdRef='SparkFun-DigitalIC-VS1103-' modelIndex='46'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-ISD1900-ISD1932' modelIndex='47'>
+<instance moduleIdRef='SparkFun-DigitalIC-MCP2551-' modelIndex='47'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-LPC213X-' modelIndex='48'>
+<instance moduleIdRef='SparkFun-DigitalIC-VS1000-' modelIndex='48'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-LPC2103-' modelIndex='49'>
+<instance moduleIdRef='SparkFun-DigitalIC-ICL3232-' modelIndex='49'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-M74HC238-' modelIndex='50'>
+<instance moduleIdRef='SparkFun-DigitalIC-P8X32A-Q44-' modelIndex='50'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-M93C46-' modelIndex='51'>
+<instance moduleIdRef='SparkFun-DigitalIC-VS1002-' modelIndex='51'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-MAX232-SOIC16' modelIndex='52'>
+<instance moduleIdRef='SparkFun-DigitalIC-PCF8575C-' modelIndex='52'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-MAX232-PTH' modelIndex='53'>
+<instance moduleIdRef='SparkFun-DigitalIC-CY7C64215-' modelIndex='53'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-MAX485-DIL' modelIndex='54'>
+<instance moduleIdRef='SparkFun-DigitalIC-ATMEGA128--SMD' modelIndex='54'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-MAX3421E-SMD' modelIndex='55'>
+<instance moduleIdRef='SparkFun-DigitalIC-ISD1900-ISD1932' modelIndex='55'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-MAX7219-DIP' modelIndex='56'>
+<instance moduleIdRef='SparkFun-DigitalIC-DOSONCHIP-IC-QFN_ALT1' modelIndex='56'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-MAX7456-' modelIndex='57'>
+<instance moduleIdRef='SparkFun-DigitalIC-FT245RL-' modelIndex='57'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-MAX7456-GROUNDPAD' modelIndex='58'>
+<instance moduleIdRef='SparkFun-DigitalIC-HEF4543-PTH' modelIndex='58'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-MC9S12XS64-' modelIndex='59'>
+<instance moduleIdRef='SparkFun-DigitalIC-UM-FPU_V3_1-SO' modelIndex='59'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-MCP130-SOT' modelIndex='60'>
+<instance moduleIdRef='SparkFun-DigitalIC-STP16CP05-' modelIndex='60'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-MCP2551-' modelIndex='61'>
+<instance moduleIdRef='SparkFun-DigitalIC-INVERTING_SCHMITT_TRIGGER-' modelIndex='61'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-NAND256-' modelIndex='62'>
+<instance moduleIdRef='SparkFun-DigitalIC-74*32-SE' modelIndex='62'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-NC7WZ07-' modelIndex='63'>
+<instance moduleIdRef='SparkFun-DigitalIC-AT25FS010-' modelIndex='63'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-NCP303LSN09-' modelIndex='64'>
+<instance moduleIdRef='SparkFun-DigitalIC-MCP130-SOT' modelIndex='64'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-P8X32A-Q44-' modelIndex='65'>
+<instance moduleIdRef='SparkFun-DigitalIC-ATMEGA2560-AU' modelIndex='65'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-PCA9306-' modelIndex='66'>
+<instance moduleIdRef='SparkFun-DigitalIC-TC7SU04F-' modelIndex='66'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-PCF8575C-' modelIndex='67'>
+<instance moduleIdRef='SparkFun-DigitalIC-XMEGA-A3--AU' modelIndex='67'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-PIC16F88-DIP-' modelIndex='68'>
+<instance moduleIdRef='SparkFun-DigitalIC-USB3318-' modelIndex='68'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-PIC16F88-SSOP-' modelIndex='69'>
+<instance moduleIdRef='SparkFun-DigitalIC-M93C46-' modelIndex='69'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-PIC16F688-SMD' modelIndex='70'>
+<instance moduleIdRef='SparkFun-DigitalIC-MC9S12XS64-' modelIndex='70'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-PIC16F883-' modelIndex='71'>
+<instance moduleIdRef='SparkFun-DigitalIC-LPC213X-' modelIndex='71'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-PIC16F913-SOIC28' modelIndex='72'>
+<instance moduleIdRef='SparkFun-DigitalIC-PIC24HJ32GP202-SMD' modelIndex='72'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-PIC18F2455-SMD' modelIndex='73'>
+<instance moduleIdRef='SparkFun-DigitalIC-PL-2303XA-' modelIndex='73'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-PIC18F2550-' modelIndex='74'>
+<instance moduleIdRef='SparkFun-DigitalIC-UBW32_PIC32MX4XXL-TQFP100' modelIndex='74'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-PIC24FXXXDAX06-' modelIndex='75'>
+<instance moduleIdRef='SparkFun-DigitalIC-MAX485-DIL' modelIndex='75'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-PIC24HJ32GP202-DIP' modelIndex='76'>
+<instance moduleIdRef='SparkFun-DigitalIC-LPC2103-' modelIndex='76'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-PIC24HJ32GP202-SMD' modelIndex='77'>
+<instance moduleIdRef='SparkFun-DigitalIC-SN74LVC1G08-' modelIndex='77'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-PIC32MX440F512H-' modelIndex='78'>
+<instance moduleIdRef='SparkFun-DigitalIC-W5100-' modelIndex='78'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-PL-2303XA-' modelIndex='79'>
+<instance moduleIdRef='SparkFun-DigitalIC-74HC04_HEX_INVERTER-' modelIndex='79'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-RS485-SOIC' modelIndex='80'>
+<instance moduleIdRef='SparkFun-DigitalIC-EP2C8_PQ208-' modelIndex='80'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-RS485_SP491-' modelIndex='81'>
+<instance moduleIdRef='SparkFun-DigitalIC-WS2801-' modelIndex='81'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-SC16IS750-' modelIndex='82'>
+<instance moduleIdRef='SparkFun-DigitalIC-WTV020SD-' modelIndex='82'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-SCANTOOL-' modelIndex='83'>
+<instance moduleIdRef='SparkFun-DigitalIC-HEX_CONVERTER-' modelIndex='83'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-SN74HC251-_SMD' modelIndex='84'>
+<instance moduleIdRef='SparkFun-DigitalIC-XC3S250_500E-PQ208-' modelIndex='84'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-SN74LVC1G08-' modelIndex='85'>
+<instance moduleIdRef='SparkFun-DigitalIC-AVR-MEGA8-P-KIT' modelIndex='85'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-SPEAKJET-DIP' modelIndex='86'>
+<instance moduleIdRef='SparkFun-DigitalIC-DSPIC30F4011-' modelIndex='86'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-SPEAKJET-SMD' modelIndex='87'>
+<instance moduleIdRef='SparkFun-DigitalIC-STW5093-' modelIndex='87'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-SPI_FLASH-X25XX-SMD' modelIndex='88'>
+<instance moduleIdRef='SparkFun-DigitalIC-74AHC1G08-' modelIndex='88'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-SPI_FLASH-X25XX-SMD1' modelIndex='89'>
+<instance moduleIdRef='SparkFun-DigitalIC-AT45DB161D-' modelIndex='89'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-STM811-' modelIndex='90'>
+<instance moduleIdRef='SparkFun-DigitalIC-RS485-SOIC' modelIndex='90'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-STP16CP05-' modelIndex='91'>
+<instance moduleIdRef='SparkFun-DigitalIC-SN74HC251-_SMD' modelIndex='91'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-STW5093-' modelIndex='92'>
+<instance moduleIdRef='SparkFun-DigitalIC-FT232RL-BASIC-SSOP' modelIndex='92'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-TC7SU04F-' modelIndex='93'>
+<instance moduleIdRef='SparkFun-DigitalIC-PIC24FXXXDAX06-' modelIndex='93'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-TJA1040-' modelIndex='94'>
+<instance moduleIdRef='SparkFun-DigitalIC-XS1_L1_64LQFP-' modelIndex='94'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-TLC5940--NT' modelIndex='95'>
+<instance moduleIdRef='SparkFun-DigitalIC-VS1033-' modelIndex='95'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-TLC5940--RHB' modelIndex='96'>
+<instance moduleIdRef='SparkFun-DigitalIC-PIC16F88-SSOP-' modelIndex='96'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-TLC5940-PWP' modelIndex='97'>
+<instance moduleIdRef='SparkFun-DigitalIC-MAX7219-DIP' modelIndex='97'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-UBW32_PIC32MX4XXL-TQFP100' modelIndex='98'>
+<instance moduleIdRef='SparkFun-DigitalIC-UNBUFFERED_INVERTER-' modelIndex='98'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-UNBUFFERED_INVERTER-' modelIndex='99'>
+<instance moduleIdRef='SparkFun-DigitalIC-AVR-MEGA8--AI' modelIndex='99'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-UM-FPU_V3_1-DIL' modelIndex='100'>
+<instance moduleIdRef='SparkFun-DigitalIC-TJA1040-' modelIndex='100'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-UM-FPU_V3_1-SO' modelIndex='101'>
+<instance moduleIdRef='SparkFun-DigitalIC-TLC5940-PWP' modelIndex='101'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-DigitalIC-USB3318-' modelIndex='102'>
-<views>
-<iconView layer='icon'>
-<geometry z='-1' x='-1' y='-1'></geometry>
-</iconView>
-</views>
-</instance>
-<instance moduleIdRef='SparkFun-DigitalIC-VS1000-' modelIndex='103'>
-<views>
-<iconView layer='icon'>
-<geometry z='-1' x='-1' y='-1'></geometry>
-</iconView>
-</views>
-</instance>
-<instance moduleIdRef='SparkFun-DigitalIC-VS1002-' modelIndex='104'>
-<views>
-<iconView layer='icon'>
-<geometry z='-1' x='-1' y='-1'></geometry>
-</iconView>
-</views>
-</instance>
-<instance moduleIdRef='SparkFun-DigitalIC-VS1033-' modelIndex='105'>
-<views>
-<iconView layer='icon'>
-<geometry z='-1' x='-1' y='-1'></geometry>
-</iconView>
-</views>
-</instance>
-<instance moduleIdRef='SparkFun-DigitalIC-VS1103-' modelIndex='106'>
-<views>
-<iconView layer='icon'>
-<geometry z='-1' x='-1' y='-1'></geometry>
-</iconView>
-</views>
-</instance>
-<instance moduleIdRef='SparkFun-DigitalIC-W5100-' modelIndex='107'>
-<views>
-<iconView layer='icon'>
-<geometry z='-1' x='-1' y='-1'></geometry>
-</iconView>
-</views>
-</instance>
-<instance moduleIdRef='SparkFun-DigitalIC-WS2801-' modelIndex='108'>
-<views>
-<iconView layer='icon'>
-<geometry z='-1' x='-1' y='-1'></geometry>
-</iconView>
-</views>
-</instance>
-<instance moduleIdRef='SparkFun-DigitalIC-XC3S250_500E-PQ208-' modelIndex='109'>
-<views>
-<iconView layer='icon'>
-<geometry z='-1' x='-1' y='-1'></geometry>
-</iconView>
-</views>
-</instance>
-<instance moduleIdRef='SparkFun-DigitalIC-XMEGA-100-SMD' modelIndex='110'>
-<views>
-<iconView layer='icon'>
-<geometry z='-1' x='-1' y='-1'></geometry>
-</iconView>
-</views>
-</instance>
-<instance moduleIdRef='SparkFun-DigitalIC-XMEGA-A3--AU' modelIndex='111'>
-<views>
-<iconView layer='icon'>
-<geometry z='-1' x='-1' y='-1'></geometry>
-</iconView>
-</views>
-</instance>
-<instance moduleIdRef='SparkFun-DigitalIC-XR2206-' modelIndex='112'>
-<views>
-<iconView layer='icon'>
-<geometry z='-1' x='-1' y='-1'></geometry>
-</iconView>
-</views>
-</instance>
-<instance moduleIdRef='SparkFun-DigitalIC-XS1_L1_64LQFP-' modelIndex='113'>
-<views>
-<iconView layer='icon'>
-<geometry z='-1' x='-1' y='-1'></geometry>
-</iconView>
-</views>
-</instance>
-<instance moduleIdRef='SparkFun-DigitalIC-74*08-SE' modelIndex='114'>
-<views>
-<iconView layer='icon'>
-<geometry z='-1' x='-1' y='-1'></geometry>
-</iconView>
-</views>
-</instance>
-<instance moduleIdRef='SparkFun-DigitalIC-74*32-SE' modelIndex='115'>
-<views>
-<iconView layer='icon'>
-<geometry z='-1' x='-1' y='-1'></geometry>
-</iconView>
-</views>
-</instance>
-<instance moduleIdRef='SparkFun-DigitalIC-74*157-FK' modelIndex='116'>
-<views>
-<iconView layer='icon'>
-<geometry z='-1' x='-1' y='-1'></geometry>
-</iconView>
-</views>
-</instance>
-<instance moduleIdRef='SparkFun-DigitalIC-74*157-N' modelIndex='117'>
-<views>
-<iconView layer='icon'>
-<geometry z='-1' x='-1' y='-1'></geometry>
-</iconView>
-</views>
-</instance>
-<instance moduleIdRef='SparkFun-DigitalIC-74*157-SO' modelIndex='118'>
-<views>
-<iconView layer='icon'>
-<geometry z='-1' x='-1' y='-1'></geometry>
-</iconView>
-</views>
-</instance>
-<instance moduleIdRef='SparkFun-DigitalIC-74*595-N' modelIndex='119'>
-<views>
-<iconView layer='icon'>
-<geometry z='-1' x='-1' y='-1'></geometry>
-</iconView>
-</views>
-</instance>
-<instance moduleIdRef='SparkFun-DigitalIC-74*595-D' modelIndex='120'>
-<views>
-<iconView layer='icon'>
-<geometry z='-1' x='-1' y='-1'></geometry>
-</iconView>
-</views>
-</instance>
-<instance moduleIdRef='SparkFun-DigitalIC-74*595-FK' modelIndex='121'>
-<views>
-<iconView layer='icon'>
-<geometry z='-1' x='-1' y='-1'></geometry>
-</iconView>
-</views>
-</instance>
-<instance moduleIdRef='SparkFun-DigitalIC-74*595-' modelIndex='122'>
-<views>
-<iconView layer='icon'>
-<geometry z='-1' x='-1' y='-1'></geometry>
-</iconView>
-</views>
-</instance>
-<instance moduleIdRef='SparkFun-DigitalIC-74ACT125D-' modelIndex='123'>
-<views>
-<iconView layer='icon'>
-<geometry z='-1' x='-1' y='-1'></geometry>
-</iconView>
-</views>
-</instance>
-<instance moduleIdRef='SparkFun-DigitalIC-74AHC1G08-' modelIndex='124'>
-<views>
-<iconView layer='icon'>
-<geometry z='-1' x='-1' y='-1'></geometry>
-</iconView>
-</views>
-</instance>
-<instance moduleIdRef='SparkFun-DigitalIC-74HC04_HEX_INVERTER-' modelIndex='125'>
-<views>
-<iconView layer='icon'>
-<geometry z='-1' x='-1' y='-1'></geometry>
-</iconView>
-</views>
-</instance>
-<instance moduleIdRef='SparkFun-DigitalIC-74LVC138AD-' modelIndex='126'>
-<views>
-<iconView layer='icon'>
-<geometry z='-1' x='-1' y='-1'></geometry>
-</iconView>
-</views>
-</instance>
-<instance moduleIdRef='SparkFun-DigitalIC-A6282--LP' modelIndex='127'>
-<views>
-<iconView layer='icon'>
-<geometry z='-1' x='-1' y='-1'></geometry>
-</iconView>
-</views>
-</instance>
-<instance moduleIdRef='SparkFun-DigitalIC-A6282--ES' modelIndex='128'>
-<views>
-<iconView layer='icon'>
-<geometry z='-1' x='-1' y='-1'></geometry>
-</iconView>
-</views>
-</instance>
-<instance moduleIdRef='SparkFun-DigitalIC-WTV020SD-' modelIndex='129'>
-<views>
-<iconView layer='icon'>
-<geometry z='-1' x='-1' y='-1'></geometry>
-</iconView>
-</views>
-</instance>
-<instance moduleIdRef='SparkFun-DigitalIC-MBED_NXP_LPC1768-' modelIndex='130'>
+<instance moduleIdRef='SparkFun-DigitalIC-74*157-SO' modelIndex='102'>
 <views>
 <iconView layer='icon'>
 <geometry z='-1' x='-1' y='-1'></geometry>

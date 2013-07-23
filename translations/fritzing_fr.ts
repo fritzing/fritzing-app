@@ -443,35 +443,12 @@
 <context>
     <name>Board</name>
     <message>
-        <source>
-
-If you intended your custom shape to have cutouts and you did not get the expected result </source>
-        <translation>
-
-Si vous aviez l&apos;intention de votre forme personnalisée ai des découpes et que vous n&apos;avez pas obtenu le résultat attendu </translation>
-    </message>
-    <message numerus="yes">
-        <source>Fritzing thinks the custom shape has %n cutouts.</source>
-        <translation>
-            <numerusform>Fritzing pense que la forme personalisée possède %n découpes.</numerusform>
-            <numerusform>Frintzing pense que les formes personalisées possèdent %n découpes.</numerusform>
-        </translation>
-    </message>
-    <message>
-        <source>Fritzing thinks the custom shape has no cutouts.</source>
-        <translation>Fritzing pense que la forme personnalisée n&apos;a pas de découpes.</translation>
-    </message>
-    <message>
         <source>because there are multiple &lt;silkscreen0&gt; layers</source>
         <translation>car il ya plusieurs couches pour &lt;silkscreen0&gt;</translation>
     </message>
     <message>
         <source>because there is no &lt;board&gt; layer</source>
         <translation>car il y a plusieur calques &lt;board&gt;</translation>
-    </message>
-    <message>
-        <source>In any case we recommend that you test your custom shape by using the &apos;File &gt; Export for Production &gt; Extended Gerber&apos; option </source>
-        <translation>Dans tous les cas, nous vous recommandons de tester votre forme personnalisée en utilisant le menu &apos;Fichier&gt; Exporter pour la production&gt;Option Geber étendue</translation>
     </message>
     <message>
         <source>Select an image file to load</source>
@@ -488,12 +465,6 @@ Si vous aviez l&apos;intention de votre forme personnalisée ai des découpes et
     <message>
         <source>Images</source>
         <translation>Images</translation>
-    </message>
-    <message>
-        <source>it is because Fritzing requires that you make cutouts using a shape &apos;subtraction&apos; or &apos;difference&apos; operation in your vector graphics editor.
-
-</source>
-        <translation>c&apos;est parce que Fritzing nécessite que vous faire les découpes à l&apos;aide d&apos;une forme de &apos;soustraction&apos; ou opérationde &apos;différence&apos; dans votre éditeur de graphiques vectoriels.</translation>
     </message>
     <message>
         <source>because there are multiple &lt;board&gt; layers</source>
@@ -547,22 +518,12 @@ Utilisez le fichier?</translation>
 </translation>
     </message>
     <message>
-        <source>and checking the resulting contour file with a Gerber viewer application.</source>
-        <translation>et vérifier le contour du fichier obtenu avec une application de visualisation Gerber.</translation>
-    </message>
-    <message>
         <source>image file</source>
         <translation>fichier image</translation>
     </message>
     <message>
         <source>due to an xml problem: %1 line:%2 column:%3</source>
         <translation>suite à un problème:%1 à la ligne:%2 colonne:%3</translation>
-    </message>
-    <message>
-        <source>
-However, the cutouts may not be formatted correctly.</source>
-        <translation>
-Toutefois, les découpes ne peuvent pas être formaté correctement.</translation>
     </message>
     <message>
         <source>Unable to load image from %1 %2</source>
@@ -579,6 +540,49 @@ Toutefois, les découpes ne peuvent pas être formaté correctement.</translatio
     <message>
         <source>the svg doesn&apos;t fit the custom board format</source>
         <translation>the svg doesn&apos;t fit the custom board format</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;The custom shape has been loaded, and you will see the new board shortly.&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Before actual PCB production we recommend that you test your custom shape by using the &apos;File &gt; Export for Production &gt; Extended Gerber&apos; option. </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Check the resulting contour file with a Gerber-viewer application to make sure the shape came out as expected.&lt;br/&gt;&lt;br/&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The rest of this message concerns &apos;cutouts&apos;. </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>These are circular or irregularly-shaped holes that you can optionally incorporate into a custom PCB shape.&lt;br/&gt;&lt;br/&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;The custom shape has no cutouts.&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message numerus="yes">
+        <source>&lt;b&gt;The custom shape has %n cutouts.&lt;/b&gt;</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>&lt;br/&gt;However, the cutouts may not be formatted correctly.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;br/&gt;&lt;br/&gt;If you intended your custom shape to have cutouts and you did not get the expected result, </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>it is because Fritzing requires that you make cutouts using a shape &apos;subtraction&apos; or &apos;difference&apos; operation in your vector graphics editor.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

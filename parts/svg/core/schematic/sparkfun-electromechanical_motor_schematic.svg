@@ -5,7 +5,9 @@
 	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="12.24px" height="29.5px"
 	 viewBox="0 0 12.24 29.5" enable-background="new 0 0 12.24 29.5" xml:space="preserve">
 <g id="schematic">
-	<rect x="2.52" y="0.35" fill="#FFFFFF" width="7.2" height="28.8"/>
+	<path fill="#FFFFFF" stroke="#000000" stroke-width="0.9" d="M11.88,14.75c0-2.17-1.2-4.058-2.973-5.04H9.72V3.95h-3.6h-3.6v5.76
+		h0.813c-1.772,0.982-2.974,2.87-2.974,5.04s1.201,4.059,2.974,5.04H2.52v5.761h3.6h3.6V19.79H8.906
+		C10.679,18.809,11.88,16.92,11.88,14.75z"/>
 	<text id="label" transform="matrix(1 0 0 1 4.3203 16.2754)" font-family="'DroidSans'" font-size="4.25">M</text>
 	<line fill="none" stroke="#000000" stroke-width="0.9" stroke-linecap="round" x1="2.52" y1="3.95" x2="2.52" y2="9.71"/>
 	<line fill="none" stroke="#000000" stroke-width="0.9" stroke-linecap="round" x1="2.52" y1="3.95" x2="6.12" y2="3.95"/>
@@ -20,16 +22,16 @@
 	<circle fill="none" stroke="#000000" stroke-width="0.9" cx="6.12" cy="14.75" r="5.76"/>
 	
 		<line id="connector0pin" fill="none" stroke="#787878" stroke-width="0.2469" stroke-linecap="round" x1="6.12" y1="0.35" x2="6.12" y2="0.35"/>
-	<rect id="connector0terminal" x="6.12" y="0.35" fill="none" width="0" height="0"/>
-	<text transform="matrix(1 0 0 1 7.2441 2.6328)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">1</text>
+	<polygon id="connector0terminal" fill="none" points="6.12,0.35 6.12,0.35 6.12,0.35 	"/>
+	<text transform="matrix(1 0 0 1 7.2441 2.6333)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">1</text>
 	<g transform="translate(2.40594,0.864304)">
 		<g transform="rotate(270)">
-			<text transform="matrix(0 1 -1 0 -6.5244 2.7464)" fill="#787878" font-family="'DroidSans'" font-size="3.5">+</text>
+			<text transform="matrix(0 1 -1 0 -6.5248 2.7464)" fill="#787878" font-family="'DroidSans'" font-size="3.5">+</text>
 		</g>
 	</g>
 	
 		<line id="connector1pin" fill="none" stroke="#787878" stroke-width="0.2469" stroke-linecap="round" x1="6.12" y1="29.15" x2="6.12" y2="29.15"/>
-	<rect id="connector1terminal" x="6.12" y="29.15" fill="none" width="0" height="0"/>
+	<polygon id="connector1terminal" fill="none" points="6.12,29.15 6.12,29.15 6.12,29.15 	"/>
 	<text transform="matrix(1 0 0 1 7.2441 28.5156)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">2</text>
 	<g transform="translate(2.40594,11.0243)">
 		<g transform="rotate(270)">

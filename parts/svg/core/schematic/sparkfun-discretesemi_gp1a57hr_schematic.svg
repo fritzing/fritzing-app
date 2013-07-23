@@ -2,126 +2,97 @@
 <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Layer_1" xmlns:svg="http://www.w3.org/2000/svg"
-	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="51.16px"
-	 height="51.091px" viewBox="0 0 51.16 51.091" enable-background="new 0 0 51.16 51.091" xml:space="preserve">
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="51.16px" height="51.09px"
+	 viewBox="0 0 51.16 51.09" enable-background="new 0 0 51.16 51.09" xml:space="preserve">
 <g id="schematic">
-	<line fill="none" stroke="#000000" stroke-width="0.9" stroke-linecap="round" x1="0.36" y1="7.549" x2="36.36" y2="7.549"/>
-	<line fill="none" stroke="#000000" stroke-width="0.9" stroke-linecap="round" x1="36.36" y1="7.549" x2="43.56" y2="7.549"/>
-	<line fill="none" stroke="#000000" stroke-width="0.9" stroke-linecap="round" x1="43.56" y1="7.549" x2="43.56" y2="21.949"/>
-	<line fill="none" stroke="#000000" stroke-width="0.9" stroke-linecap="round" x1="43.56" y1="21.949" x2="43.56" y2="43.549"/>
-	<line fill="none" stroke="#000000" stroke-width="0.9" stroke-linecap="round" x1="43.56" y1="43.549" x2="36.36" y2="43.549"/>
-	<line fill="none" stroke="#000000" stroke-width="0.9" stroke-linecap="round" x1="36.36" y1="43.549" x2="7.56" y2="43.549"/>
-	<line fill="none" stroke="#000000" stroke-width="0.9" stroke-linecap="round" x1="7.56" y1="43.549" x2="0.36" y2="43.549"/>
-	<line fill="none" stroke="#000000" stroke-width="0.9" stroke-linecap="round" x1="0.36" y1="43.549" x2="0.36" y2="7.549"/>
-	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="7.56" y1="43.549" x2="7.56" y2="34.189"/>
-	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="7.56" y1="34.189" x2="3.96" y2="34.189"/>
-	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="11.16" y1="34.189" x2="7.56" y2="34.189"/>
-	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="11.16" y1="34.189" x2="10.44" y2="33.469"/>
-	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="10.44" y1="33.469" x2="9.72" y2="32.75"/>
-	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="9.72" y1="32.75" x2="9" y2="32.029"/>
-	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="9" y1="32.029" x2="8.28" y2="31.309"/>
-	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="8.28" y1="31.309" x2="7.92" y2="30.949"/>
-	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="7.92" y1="30.949" x2="7.56" y2="30.59"/>
-	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="7.56" y1="30.59" x2="7.2" y2="30.949"/>
-	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="7.2" y1="30.949" x2="6.84" y2="31.309"/>
-	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="6.84" y1="31.309" x2="6.12" y2="32.029"/>
-	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="6.12" y1="32.029" x2="5.4" y2="32.75"/>
-	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="5.4" y1="32.75" x2="4.68" y2="33.469"/>
-	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="4.68" y1="33.469" x2="3.96" y2="34.189"/>
-	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="11.88" y1="30.59" x2="7.56" y2="30.59"/>
-	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="7.56" y1="30.59" x2="3.24" y2="30.59"/>
-	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="7.56" y1="30.59" x2="7.56" y2="7.549"/>
-	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="31.319" y1="26.989" x2="31.319" y2="30.59"/>
-	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="31.319" y1="30.59" x2="31.319" y2="34.91"/>
-	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="31.319" y1="34.91" x2="31.319" y2="38.51"/>
-	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="31.319" y1="34.91" x2="34.92" y2="38.51"/>
-	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="31.319" y1="30.59" x2="36.36" y2="25.548"/>
-	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="36.36" y1="37.068" x2="33.479" y2="39.949"/>
-	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="33.479" y1="39.949" x2="33.84" y2="39.949"/>
-	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="33.84" y1="39.949" x2="34.2" y2="39.949"/>
-	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="34.2" y1="39.949" x2="34.56" y2="39.949"/>
-	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="34.56" y1="39.949" x2="34.92" y2="39.949"/>
-	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="34.92" y1="39.949" x2="35.28" y2="39.949"/>
-	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="35.28" y1="39.949" x2="35.64" y2="39.949"/>
-	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="35.64" y1="39.949" x2="36.36" y2="39.949"/>
-	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="36.36" y1="39.949" x2="36.36" y2="39.229"/>
-	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="36.36" y1="39.229" x2="36.36" y2="38.869"/>
-	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="36.36" y1="38.869" x2="36.36" y2="38.51"/>
-	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="36.36" y1="38.51" x2="36.36" y2="38.148"/>
-	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="36.36" y1="38.148" x2="36.36" y2="37.789"/>
-	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="36.36" y1="37.789" x2="36.36" y2="37.43"/>
-	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="36.36" y1="37.43" x2="36.36" y2="37.068"/>
-	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="14.04" y1="39.229" x2="17.28" y2="35.99"/>
-	<polygon points="18.628,37.336 18.628,36.438 18.628,35.539 18.628,34.643 17.729,34.643 16.831,34.643 15.933,34.643 	"/>
-	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="36.36" y1="43.549" x2="36.36" y2="39.949"/>
-	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="10.44" y1="33.469" x2="4.68" y2="33.469"/>
-	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="5.4" y1="32.75" x2="9.72" y2="32.75"/>
-	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="9" y1="32.029" x2="6.12" y2="32.029"/>
-	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="6.84" y1="31.309" x2="8.28" y2="31.309"/>
-	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="4.68" y1="33.83" x2="10.44" y2="33.83"/>
-	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="9.72" y1="33.109" x2="5.4" y2="33.109"/>
-	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="6.12" y1="32.389" x2="9" y2="32.389"/>
-	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="8.28" y1="31.67" x2="6.84" y2="31.67"/>
-	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="7.2" y1="30.949" x2="7.92" y2="30.949"/>
-	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="36" y1="37.789" x2="34.2" y2="39.59"/>
-	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="36" y1="38.148" x2="34.56" y2="39.59"/>
-	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="36" y1="38.51" x2="34.92" y2="39.59"/>
-	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="36" y1="38.869" x2="35.28" y2="39.59"/>
-	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="36" y1="39.229" x2="35.64" y2="39.59"/>
-	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="36" y1="39.59" x2="35.64" y2="39.949"/>
-	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="36.36" y1="37.43" x2="33.84" y2="39.949"/>
-	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="36.36" y1="37.789" x2="34.2" y2="39.949"/>
-	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="36.36" y1="38.148" x2="34.56" y2="39.949"/>
-	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="36.36" y1="38.51" x2="34.92" y2="39.949"/>
-	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="36.36" y1="38.869" x2="35.28" y2="39.949"/>
-	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="36.36" y1="39.229" x2="35.64" y2="39.949"/>
-	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="36.36" y1="7.549" x2="36.36" y2="10.429"/>
-	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="36.36" y1="10.429" x2="37.8" y2="11.149"/>
-	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="37.8" y1="11.149" x2="34.92" y2="12.589"/>
-	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="34.92" y1="12.589" x2="37.8" y2="14.029"/>
-	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="37.8" y1="14.029" x2="34.92" y2="15.469"/>
-	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="34.92" y1="15.469" x2="36.36" y2="16.189"/>
-	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="36.36" y1="16.189" x2="36.36" y2="21.949"/>
-	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="36.36" y1="21.949" x2="36.36" y2="25.548"/>
-	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="36.36" y1="21.949" x2="43.56" y2="21.949"/>
+	<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round" points="7.56,43.549 
+		36.359,43.549 43.561,43.549 43.561,21.949 43.561,7.549 36.359,7.549 0.36,7.549 0.36,43.549 	"/>
+	
+		<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="7.56" y1="43.549" x2="7.56" y2="34.189"/>
+	<polygon stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" points="11.16,34.189 7.56,30.59 
+		7.2,30.949 3.96,34.189 	"/>
+	
+		<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="11.88" y1="30.59" x2="7.56" y2="30.59"/>
+	
+		<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="7.56" y1="30.59" x2="3.24" y2="30.59"/>
+	
+		<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="7.56" y1="30.59" x2="7.56" y2="7.549"/>
+	
+		<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="31.318" y1="26.989" x2="31.318" y2="30.59"/>
+	
+		<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="31.318" y1="30.59" x2="31.318" y2="34.911"/>
+	
+		<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="31.318" y1="34.911" x2="31.318" y2="38.51"/>
+	
+		<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="31.318" y1="34.911" x2="34.92" y2="38.51"/>
+	
+		<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="31.318" y1="30.59" x2="36.359" y2="25.548"/>
+	<polygon stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" points="36.359,39.949 
+		36.359,37.068 33.479,39.949 	"/>
+	
+		<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="14.04" y1="39.229" x2="17.28" y2="35.99"/>
+	<polygon stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" points="18.628,37.336 
+		18.628,34.643 15.933,34.643 	"/>
+	
+		<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="36.359" y1="43.549" x2="36.359" y2="39.949"/>
+	
+		<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="36.359" y1="7.549" x2="36.359" y2="10.429"/>
+	
+		<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="36.359" y1="10.429" x2="37.8" y2="11.149"/>
+	
+		<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="37.8" y1="11.149" x2="34.92" y2="12.589"/>
+	
+		<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="34.92" y1="12.589" x2="37.8" y2="14.029"/>
+	
+		<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="37.8" y1="14.029" x2="34.92" y2="15.469"/>
+	
+		<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="34.92" y1="15.469" x2="36.359" y2="16.189"/>
+	
+		<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="36.359" y1="16.189" x2="36.359" y2="21.949"/>
+	
+		<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="36.359" y1="21.949" x2="36.359" y2="25.548"/>
+	
+		<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="36.359" y1="21.949" x2="43.561" y2="21.949"/>
 	<text transform="matrix(1 0 0 1 28.0967 14.0288)" fill="#505050" font-family="'DroidSans'" font-size="2.8346">15K</text>
 	
-		<line id="connector1pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="7.56" y1="0.349" x2="7.56" y2="7.549"/>
-	<rect id="connector1terminal" x="7.56" y="0.349" fill="none" width="0" height="0"/>
+		<line id="connector1pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round" x1="7.56" y1="0.349" x2="7.56" y2="7.549"/>
+	<polygon id="connector1terminal" fill="none" points="7.56,0.349 7.56,0.349 7.56,0.349 	"/>
 	<g transform="translate(2.29658,2.936)">
 		<g transform="rotate(270)">
 			<text transform="matrix(1 0 0 1 -1.7002 4.2132)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">2</text>
 		</g>
 	</g>
 	
-		<line id="connector0pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="7.56" y1="50.75" x2="7.56" y2="43.549"/>
-	<rect id="connector0terminal" x="7.56" y="50.75" fill="none" width="0" height="0"/>
+		<line id="connector0pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round" x1="7.56" y1="50.75" x2="7.56" y2="43.549"/>
+	<polygon id="connector0terminal" fill="none" points="7.56,50.75 7.56,50.75 7.56,50.75 	"/>
 	<g transform="translate(2.29658,18.176)">
 		<g transform="rotate(270)">
-			<text transform="matrix(1 0 0 1 -29.6619 4.2132)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">1</text>
+			<text transform="matrix(1 0 0 1 -29.6624 4.2132)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">1</text>
 		</g>
 	</g>
 	
-		<line id="connector4pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="36.36" y1="50.75" x2="36.36" y2="43.549"/>
-	<rect id="connector4terminal" x="36.36" y="50.75" fill="none" width="0" height="0"/>
+		<line id="connector4pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round" x1="36.359" y1="50.75" x2="36.359" y2="43.549"/>
+	<polygon id="connector4terminal" fill="none" points="36.359,50.75 36.359,50.75 36.359,50.75 	"/>
 	<g transform="translate(12.4566,18.176)">
 		<g transform="rotate(270)">
-			<text transform="matrix(1 0 0 1 -29.6619 22.8539)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">5</text>
+			<text transform="matrix(1 0 0 1 -29.6624 22.8539)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">5</text>
 		</g>
 	</g>
 	
-		<line id="connector2pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="36.36" y1="0.349" x2="36.36" y2="7.549"/>
-	<rect id="connector2terminal" x="36.36" y="0.349" fill="none" width="0" height="0"/>
+		<line id="connector2pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round" x1="36.359" y1="0.349" x2="36.359" y2="7.549"/>
+	<polygon id="connector2terminal" fill="none" points="36.359,0.349 36.359,0.349 36.359,0.349 	"/>
 	<g transform="translate(12.4566,2.936)">
 		<g transform="rotate(270)">
 			<text transform="matrix(1 0 0 1 -1.7002 22.8539)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">3</text>
 		</g>
 	</g>
 	
-		<line id="connector3pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="50.76" y1="21.949" x2="43.56" y2="21.949"/>
-	<rect id="connector3terminal" x="50.76" y="21.949" fill="none" width="0.001" height="0"/>
+		<line id="connector3pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round" x1="50.76" y1="21.949" x2="43.561" y2="21.949"/>
+	<polygon id="connector3terminal" fill="none" points="50.76,21.949 50.762,21.949 50.762,21.949 	"/>
 	<text transform="matrix(1 0 0 1 46.4707 20.8979)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">4</text>
+	
+		<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="14.04" y1="32.163" x2="17.28" y2="28.922"/>
+	<polygon stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" points="18.628,30.27 18.628,27.575 
+		15.933,27.575 	"/>
 </g>
-<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="14.04" y1="32.162" x2="17.28" y2="28.922"/>
-<polygon points="18.628,30.27 18.628,29.371 18.628,28.471 18.628,27.575 17.729,27.575 16.831,27.575 15.933,27.575 "/>
 </svg>

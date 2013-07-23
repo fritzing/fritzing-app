@@ -2,30 +2,29 @@
 <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Layer_1" xmlns:svg="http://www.w3.org/2000/svg"
-	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="15.121px"
-	 height="29.51px" viewBox="0 0 15.121 29.51" enable-background="new 0 0 15.121 29.51" xml:space="preserve">
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="15.248px"
+	 height="29.708px" viewBox="0 0 15.248 29.708" enable-background="new 0 0 15.248 29.708" xml:space="preserve">
 <g id="schematic">
-	<line fill="none" stroke="#000000" stroke-width="0.9" stroke-linecap="round" x1="7.56" y1="7.56" x2="7.56" y2="21.96"/>
-	<line fill="none" stroke="#000000" stroke-width="0.9" stroke-linecap="round" x1="0.36" y1="0.36" x2="14.759" y2="0.36"/>
-	<line fill="none" stroke="#000000" stroke-width="0.9" stroke-linecap="round" x1="7.56" y1="7.56" x2="14.759" y2="0.36"/>
-	<line fill="none" stroke="#000000" stroke-width="0.9" stroke-linecap="round" x1="7.56" y1="7.56" x2="0.36" y2="0.36"/>
-	<line fill="none" stroke="#000000" stroke-width="0.9" stroke-linecap="round" x1="14.759" y1="14.76" x2="14.759" y2="21.96"/>
-	<line fill="none" stroke="#000000" stroke-width="0.9" stroke-linecap="round" x1="11.16" y1="14.76" x2="14.759" y2="14.76"/>
-	<circle fill="none" stroke="#000000" stroke-width="0.9" cx="7.56" cy="14.76" r="3.22"/>
+	<line fill="none" stroke="#000000" stroke-width="0.9" stroke-linecap="round" x1="7.625" y1="7.658" x2="7.625" y2="22.058"/>
+	<polygon fill="none" stroke="#000000" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round" points="14.823,0.458 
+		0.424,0.458 7.625,7.658 	"/>
+	<line fill="none" stroke="#000000" stroke-width="0.9" stroke-linecap="round" x1="14.823" y1="14.859" x2="14.823" y2="22.058"/>
+	<line fill="none" stroke="#000000" stroke-width="0.9" stroke-linecap="round" x1="11.225" y1="14.859" x2="14.823" y2="14.859"/>
+	<circle fill="none" stroke="#000000" stroke-width="0.9" cx="7.625" cy="14.858" r="3.219"/>
 	
-		<line id="connector7pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="14.759" y1="29.159" x2="14.759" y2="21.96"/>
-	<rect id="connector7terminal" x="14.759" y="29.159" fill="none" width="0.001" height="0.001"/>
+		<line id="connector7pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="14.823" y1="29.257" x2="14.823" y2="22.058"/>
+	<rect id="connector7terminal" x="14.823" y="29.257" fill="none" width="0.001" height="0.002"/>
 	<g transform="translate(4.83658,9.017)">
 		<g transform="rotate(270)">
-			<text transform="matrix(1 0 0 1 -17.2323 8.8748)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">8</text>
+			<text transform="matrix(1 0 0 1 -17.3299 8.9388)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">8</text>
 		</g>
 	</g>
 	
-		<line id="connector6pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="7.56" y1="29.159" x2="7.56" y2="21.96"/>
-	<rect id="connector6terminal" x="7.56" y="29.159" fill="none" width="0" height="0.001"/>
+		<line id="connector6pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="7.625" y1="29.257" x2="7.625" y2="22.058"/>
+	<rect id="connector6terminal" x="7.625" y="29.257" fill="none" width="0" height="0.002"/>
 	<g transform="translate(2.29658,9.017)">
 		<g transform="rotate(270)">
-			<text transform="matrix(1 0 0 1 -17.2323 4.2137)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">7</text>
+			<text transform="matrix(1 0 0 1 -17.3299 4.2786)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">7</text>
 		</g>
 	</g>
 </g>

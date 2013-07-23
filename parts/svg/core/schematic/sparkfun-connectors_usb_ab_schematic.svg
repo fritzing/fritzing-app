@@ -1,36 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.2" baseProfile="tiny" id="Layer_1" xmlns:svg="http://www.w3.org/2000/svg"
-	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="22.401px"
-	 height="36.885px" viewBox="0 0 22.401 36.885" xml:space="preserve">
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="22.4px" height="36.885px"
+	 viewBox="0 0 22.4 36.885" enable-background="new 0 0 22.4 36.885" xml:space="preserve">
 <g id="schematic">
-	<polyline fill="none" stroke="#000000" stroke-width="0.9" stroke-linecap="round" points="7.55,36.438 21.95,36.438 21.95,0.438 
-		7.55,0.438 	"/>
-	<line fill="none" stroke="#000000" stroke-width="0.9" stroke-linecap="round" x1="7.55" y1="0.438" x2="7.55" y2="36.438"/>
+	
+		<rect x="7.55" y="0.438" fill="#FFFFFF" stroke="#000000" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round" width="14.4" height="36"/>
 	<g transform="translate(6.47347,34)">
 		<g transform="rotate(270)">
-			<text transform="matrix(1 0 0 1 1.2859 11.8764)" fill="#505050" font-family="'DroidSans'" font-size="9.36">USBAB</text>
+			<text transform="matrix(1 0 0 1 8.3621 9.8764)" font-family="'DroidSans'" font-size="4.252">USBAB</text>
 		</g>
 	</g>
 	
 		<line id="connector4pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="0.35" y1="18.438" x2="7.55" y2="18.438"/>
-	<rect id="connector4terminal" x="0.35" y="18.438" fill="none" width="0" height="0"/>
-	<text transform="matrix(1 0 0 1 3.262 17.387)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">5</text>
+	<polygon id="connector4terminal" fill="none" points="0.35,18.438 0.35,18.438 0.35,18.438 	"/>
+	<text transform="matrix(1 0 0 1 3.2625 17.387)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">5</text>
 	
 		<line id="connector5pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="0.35" y1="25.638" x2="7.55" y2="25.638"/>
-	<rect id="connector5terminal" x="0.35" y="25.638" fill="none" width="0" height="0"/>
-	<text transform="matrix(1 0 0 1 3.262 24.5881)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">6</text>
+	<polygon id="connector5terminal" fill="none" points="0.35,25.638 0.35,25.638 0.35,25.638 	"/>
+	<text transform="matrix(1 0 0 1 3.2625 24.5881)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">6</text>
 	
 		<line id="connector8pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="0.35" y1="32.837" x2="7.55" y2="32.837"/>
 	<rect id="connector8terminal" x="0.35" y="32.837" fill="none" width="0" height="0.001"/>
-	<text transform="matrix(1 0 0 1 3.262 31.7874)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">9</text>
+	<text transform="matrix(1 0 0 1 3.2625 31.7874)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">9</text>
 	
 		<line id="connector6pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="0.35" y1="4.037" x2="7.55" y2="4.037"/>
 	<rect id="connector6terminal" x="0.35" y="4.037" fill="none" width="0" height="0.001"/>
-	<text transform="matrix(1 0 0 1 3.262 2.9866)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">7</text>
+	<text transform="matrix(1 0 0 1 3.2625 2.9866)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">7</text>
 	
 		<line id="connector7pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="0.35" y1="11.238" x2="7.55" y2="11.238"/>
-	<rect id="connector7terminal" x="0.35" y="11.238" fill="none" width="0" height="0"/>
-	<text transform="matrix(1 0 0 1 3.262 10.1877)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">8</text>
+	<polygon id="connector7terminal" fill="none" points="0.35,11.238 0.35,11.238 0.35,11.238 	"/>
+	<text transform="matrix(1 0 0 1 3.2625 10.1877)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">8</text>
 </g>
 </svg>

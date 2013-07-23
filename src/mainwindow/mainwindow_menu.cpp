@@ -3359,6 +3359,23 @@ void MainWindow::startSaveInstancesSlot(const QString & fileName, ModelPart *, Q
 		streamWriter.writeTextElement("originalFileName", m_fwFilename);
 	}
 
+    if (m_pcbGraphicsView) {
+        QList<ItemBase *> boards = m_pcbGraphicsView->findBoard();
+        if (boards.count()) {
+            streamWriter.writeStartElement("boards");
+            foreach (ItemBase * board, boards) {
+                QRectF r = board->sceneBoundingRect();
+                double w = 2.54 * r.width() / GraphicsUtils::SVGDPI;
+                double h = 2.54 * r.height() / GraphicsUtils::SVGDPI;
+                streamWriter.writeStartElement("board");
+                streamWriter.writeAttribute("width", QString("%1cm").arg(w));
+                streamWriter.writeAttribute("height", QString("%1cm").arg(h));
+                streamWriter.writeEndElement();
+            }
+            streamWriter.writeEndElement();
+        }
+    }
+
 	if (m_linkedProgramFiles.count() > 0) {
 		streamWriter.writeStartElement("programs");
 		QSettings settings;

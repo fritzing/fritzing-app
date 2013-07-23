@@ -3368,6 +3368,9 @@ void MainWindow::startSaveInstancesSlot(const QString & fileName, ModelPart *, Q
                 double w = 2.54 * r.width() / GraphicsUtils::SVGDPI;
                 double h = 2.54 * r.height() / GraphicsUtils::SVGDPI;
                 streamWriter.writeStartElement("board");
+                streamWriter.writeAttribute("moduleId", QString("%1").arg(board->moduleID()));
+                streamWriter.writeAttribute("title", QString("%1").arg(board->title()));
+                streamWriter.writeAttribute("instance", QString("%1").arg(board->instanceTitle()));
                 streamWriter.writeAttribute("width", QString("%1cm").arg(w));
                 streamWriter.writeAttribute("height", QString("%1cm").arg(h));
                 streamWriter.writeEndElement();

@@ -5,20 +5,20 @@
 	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="22.389px"
 	 height="22.443px" viewBox="0 0 22.389 22.443" enable-background="new 0 0 22.389 22.443" xml:space="preserve">
 <g id="schematic">
-	<circle fill="none" stroke="#000000" stroke-width="0.9" cx="7.56" cy="7.678" r="7.2"/>
+	<circle fill="#FFFFFF" stroke="#000000" stroke-width="0.9" cx="7.56" cy="7.678" r="7.2"/>
 	<circle fill="none" stroke="#000000" stroke-width="0.9" cx="7.56" cy="7.678" r="1.609"/>
-	<text transform="matrix(1 0 0 1 8.6853 20.3335)" fill="#505050" font-family="'DroidSans'" font-size="3.8268">GND</text>
-	<text transform="matrix(1 0 0 1 14.572 3.6782)" fill="#505050" font-family="'DroidSans'" font-size="3.8268">OUT</text>
+	<text transform="matrix(1 0 0 1 8.6858 20.3337)" fill="#505050" font-family="'DroidSans'" font-size="3.8268">GND</text>
+	<text transform="matrix(1 0 0 1 14.5715 3.6785)" fill="#505050" font-family="'DroidSans'" font-size="3.8268">OUT</text>
 	
 		<line id="connector3pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="21.96" y1="7.678" x2="7.56" y2="7.678"/>
-	<rect id="connector3terminal" x="21.96" y="7.678" fill="none" width="0.001" height="0"/>
-	<text transform="matrix(1 0 0 1 17.9055 6.6274)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">4</text>
+	<polygon id="connector3terminal" fill="none" points="21.96,7.678 21.961,7.678 21.961,7.678 	"/>
+	<text transform="matrix(1 0 0 1 17.9055 6.6277)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">4</text>
 	
 		<line id="connector2pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="7.56" y1="22.078" x2="7.56" y2="14.878"/>
-	<rect id="connector2terminal" x="7.56" y="22.078" fill="none" width="0" height="0"/>
+	<polygon id="connector2terminal" fill="none" points="7.56,22.078 7.56,22.078 7.56,22.078 	"/>
 	<g transform="translate(2.29658,12.81)">
 		<g transform="rotate(270)">
-			<text transform="matrix(0 1 -1 0 -6.9815 2.588)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">3</text>
+			<text transform="matrix(0 1 -1 0 -6.9818 2.5884)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">3</text>
 		</g>
 	</g>
 </g>

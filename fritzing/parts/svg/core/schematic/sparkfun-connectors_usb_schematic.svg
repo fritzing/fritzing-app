@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.2" baseProfile="tiny" id="Layer_1" xmlns:svg="http://www.w3.org/2000/svg"
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns:svg="http://www.w3.org/2000/svg"
 	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="22.417px"
-	 height="29.779px" viewBox="0 0 22.417 29.779" xml:space="preserve">
+	 height="29.779px" viewBox="0 0 22.417 29.779" enable-background="new 0 0 22.417 29.779" xml:space="preserve">
 <g id="schematic">
-	<polyline fill="none" stroke="#000000" stroke-width="0.9" stroke-linecap="round" points="7.55,29.315 21.95,29.315 21.95,0.514 
-		7.55,0.514 	"/>
-	<line fill="none" stroke="#000000" stroke-width="0.9" stroke-linecap="round" x1="7.55" y1="0.514" x2="7.55" y2="29.315"/>
+	
+		<rect x="7.55" y="0.514" fill="#FFFFFF" stroke="#000000" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round" width="14.401" height="28.801"/>
 	<g transform="translate(6.47347,20)">
 		<g transform="rotate(270)">
-			<text transform="matrix(1 0 0 1 -3.6301 11.8764)" fill="#505050" font-family="'DroidSans'" font-size="9.36">USB</text>
+			<text transform="matrix(0 1 -1 0 3.5559 4.2516)" font-family="'DroidSans'" font-size="4.252">USB</text>
 		</g>
 	</g>
 	
 		<line id="connector3pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="0.35" y1="4.115" x2="7.55" y2="4.115"/>
-	<rect id="connector3terminal" x="0.35" y="4.115" fill="none" width="0" height="0"/>
-	<text transform="matrix(1 0 0 1 3.262 3.0647)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">4</text>
+	<polygon id="connector3terminal" fill="none" points="0.35,4.115 0.35,4.115 0.35,4.115 	"/>
+	<text transform="matrix(1 0 0 1 3.2622 3.0652)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">4</text>
 	
 		<line id="connector2pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="0.35" y1="11.315" x2="7.55" y2="11.315"/>
-	<rect id="connector2terminal" x="0.35" y="11.315" fill="none" width="0" height="0"/>
-	<text transform="matrix(1 0 0 1 3.262 10.2639)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">3</text>
+	<polygon id="connector2terminal" fill="none" points="0.35,11.315 0.35,11.315 0.35,11.315 	"/>
+	<text transform="matrix(1 0 0 1 3.2622 10.2644)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">3</text>
 	
 		<line id="connector4pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="0.35" y1="18.514" x2="7.55" y2="18.514"/>
 	<rect id="connector4terminal" x="0.35" y="18.514" fill="none" width="0" height="0.001"/>
-	<text transform="matrix(1 0 0 1 3.262 17.4651)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">5</text>
+	<text transform="matrix(1 0 0 1 3.2622 17.4656)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">5</text>
 	
 		<line id="connector5pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="0.35" y1="25.714" x2="7.55" y2="25.714"/>
 	<rect id="connector5terminal" x="0.35" y="25.714" fill="none" width="0" height="0.001"/>
-	<text transform="matrix(1 0 0 1 3.262 24.6643)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">6</text>
+	<text transform="matrix(1 0 0 1 3.2622 24.6648)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">6</text>
 </g>
 </svg>

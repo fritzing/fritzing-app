@@ -6,9 +6,8 @@
 	 viewBox="0 0 43.91 43.92" enable-background="new 0 0 43.91 43.92" xml:space="preserve">
 <g id="schematic">
 	<rect x="14.75" y="0.36" fill="#FFFFFF" width="28.8" height="43.2"/>
-	<text id="label" transform="matrix(1 0 0 1 22.668 17.4268)" font-family="'DroidSans'" font-size="4.25">EM408</text>
 	<rect x="14.75" y="0.36" fill="#FFFFFF" width="28.8" height="43.2"/>
-	<text id="label_1_" transform="matrix(1 0 0 1 27.0332 20.3945)" font-family="'DroidSans'" font-size="4.25">EM408</text>
+	<text id="label_1_" transform="matrix(1 0 0 1 27.0332 20.3955)" font-family="'DroidSans'" font-size="4.25">EM408</text>
 	<text id="label_2_" transform="matrix(1 0 0 1 29.1504 24.9277)" font-family="'DroidSans'" font-size="4.25">CON</text>
 	<line fill="none" stroke="#000000" stroke-width="0.9" stroke-linecap="round" x1="14.75" y1="0.36" x2="14.75" y2="43.56"/>
 	<line fill="none" stroke="#000000" stroke-width="0.9" stroke-linecap="round" x1="14.75" y1="43.56" x2="43.55" y2="43.56"/>
@@ -16,27 +15,27 @@
 	<line fill="none" stroke="#000000" stroke-width="0.9" stroke-linecap="round" x1="43.55" y1="0.36" x2="14.75" y2="0.36"/>
 	
 		<line id="connector0pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="0.35" y1="7.56" x2="14.75" y2="7.56"/>
-	<rect id="connector0terminal" x="0.35" y="7.56" fill="none" width="0" height="0"/>
+	<polygon id="connector0terminal" fill="none" points="0.35,7.56 0.35,7.56 0.35,7.56 	"/>
 	<text transform="matrix(1 0 0 1 6.8613 6.5107)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">1</text>
 	<text transform="matrix(1 0 0 1 16.8496 8.2607)" fill="#787878" font-family="'DroidSans'" font-size="3.5">EN</text>
 	
 		<line id="connector2pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="0.35" y1="14.76" x2="14.75" y2="14.76"/>
-	<rect id="connector2terminal" x="0.35" y="14.76" fill="none" width="0" height="0"/>
-	<text transform="matrix(1 0 0 1 6.8613 13.71)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">3</text>
-	<text transform="matrix(1 0 0 1 16.8496 15.46)" fill="#787878" font-family="'DroidSans'" font-size="3.5">GND</text>
+	<polygon id="connector2terminal" fill="none" points="0.35,14.76 0.35,14.76 0.35,14.76 	"/>
+	<text transform="matrix(1 0 0 1 6.8613 13.7109)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">3</text>
+	<text transform="matrix(1 0 0 1 16.8496 15.4609)" fill="#787878" font-family="'DroidSans'" font-size="3.5">GND</text>
 	
 		<line id="connector4pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="0.35" y1="21.96" x2="14.75" y2="21.96"/>
-	<rect id="connector4terminal" x="0.35" y="21.96" fill="none" width="0" height="0"/>
+	<polygon id="connector4terminal" fill="none" points="0.35,21.96 0.35,21.96 0.35,21.96 	"/>
 	<text transform="matrix(1 0 0 1 6.8613 20.9111)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">5</text>
 	<text transform="matrix(1 0 0 1 16.8496 22.6611)" fill="#787878" font-family="'DroidSans'" font-size="3.5">RX</text>
 	
 		<line id="connector5pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="0.35" y1="29.16" x2="14.75" y2="29.16"/>
-	<rect id="connector5terminal" x="0.35" y="29.16" fill="none" width="0" height="0"/>
-	<text transform="matrix(1 0 0 1 6.8613 28.1104)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">6</text>
-	<text transform="matrix(1 0 0 1 16.8496 29.8604)" fill="#787878" font-family="'DroidSans'" font-size="3.5">TX</text>
+	<polygon id="connector5terminal" fill="none" points="0.35,29.16 0.35,29.16 0.35,29.16 	"/>
+	<text transform="matrix(1 0 0 1 6.8613 28.1113)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">6</text>
+	<text transform="matrix(1 0 0 1 16.8496 29.8613)" fill="#787878" font-family="'DroidSans'" font-size="3.5">TX</text>
 	
 		<line id="connector6pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="0.35" y1="36.36" x2="14.75" y2="36.36"/>
-	<rect id="connector6terminal" x="0.35" y="36.36" fill="none" width="0" height="0"/>
+	<polygon id="connector6terminal" fill="none" points="0.35,36.36 0.35,36.36 0.35,36.36 	"/>
 	<text transform="matrix(1 0 0 1 6.8613 35.3115)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">7</text>
 	<text transform="matrix(1 0 0 1 16.8496 37.0596)" fill="#787878" font-family="'DroidSans'" font-size="3.5">VCC</text>
 </g>

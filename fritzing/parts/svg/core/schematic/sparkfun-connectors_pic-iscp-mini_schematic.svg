@@ -1,24 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.2" baseProfile="tiny" id="Layer_1" xmlns:svg="http://www.w3.org/2000/svg"
-	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="36.926px"
-	 height="44.352px" viewBox="0 0 36.926 44.352" xml:space="preserve">
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="44.088px"
+	 height="44.352px" viewBox="0 0 44.088 44.352" enable-background="new 0 0 44.088 44.352" xml:space="preserve">
 <g id="schematic">
-	<rect x="18.35" y="0.576" fill="#FFFFFF" width="25.2" height="43.199"/>
-	<text transform="matrix(1 0 0 1 20.5449 15.3743)" font-family="'DroidSans'" font-size="4.25">P</text>
-	<text transform="matrix(1 0 0 1 22.9941 15.3743)" font-family="'DroidSans'" font-size="4.25">I</text>
-	<text transform="matrix(1 0 0 1 24.3926 15.3743)" font-family="'DroidSans'" font-size="4.25">C</text>
-	<rect x="18.35" y="0.576" fill="#FFFFFF" width="25.2" height="43.199"/>
-	<text transform="matrix(1 0 0 1 20.5449 15.3743)" font-family="'DroidSans'" font-size="4.25">P</text>
-	<text transform="matrix(1 0 0 1 22.9941 15.3743)" font-family="'DroidSans'" font-size="4.25">I</text>
-	<text transform="matrix(1 0 0 1 24.3926 15.3743)" font-family="'DroidSans'" font-size="4.25">C</text>
-	<text id="label_2_" transform="matrix(1 0 0 1 19.4209 19.9084)" font-family="'DroidSans'" font-size="4.25">ISCP</text>
-	<rect x="11.15" y="0.576" fill="#FFFFFF" width="32.4" height="43.199"/>
-	<text transform="matrix(1 0 0 1 31.7666 15.3743)" font-family="'DroidSans'" font-size="4.25">P</text>
-	<text transform="matrix(1 0 0 1 34.2148 15.3743)" font-family="'DroidSans'" font-size="4.25">I</text>
-	<text transform="matrix(1 0 0 1 35.6143 15.3743)" font-family="'DroidSans'" font-size="4.25">C</text>
-	<text id="label_4_" transform="matrix(1 0 0 1 30.6426 19.9084)" font-family="'DroidSans'" font-size="4.25">ISCP</text>
-	<text id="label_5_" transform="matrix(1 0 0 1 30.1338 24.4417)" font-family="'DroidSans'" font-size="4.25">MINI</text>
+	<rect x="18.35" y="0.576" fill="#FFFFFF" width="25.2" height="43.198"/>
+	<rect x="18.35" y="0.576" fill="#FFFFFF" width="25.2" height="43.198"/>
+	<rect x="11.15" y="0.576" fill="#FFFFFF" width="32.4" height="43.198"/>
+	<text id="label_4" transform="matrix(1 0 0 1 30.6426 19.9084)" font-family="'DroidSans'" font-size="4.25">ISCP</text>
+	<text id="label_5" transform="matrix(1 0 0 1 30.1338 24.4417)" font-family="'DroidSans'" font-size="4.25">MINI</text>
 	<line fill="none" stroke="#000000" stroke-width="0.9" stroke-linecap="round" x1="11.15" y1="0.576" x2="43.55" y2="0.576"/>
 	<line fill="none" stroke="#000000" stroke-width="0.9" stroke-linecap="round" x1="18.35" y1="22.176" x2="14.75" y2="22.176"/>
 	<line fill="none" stroke="#000000" stroke-width="0.9" stroke-linecap="round" x1="18.35" y1="14.976" x2="14.75" y2="14.976"/>
@@ -35,25 +26,26 @@
 	<text transform="matrix(1 0 0 1 19.4209 8.4739)" fill="#787878" font-family="'DroidSans'" font-size="3.5">VPP</text>
 	
 		<line id="connector1pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="0.35" y1="14.976" x2="14.75" y2="14.976"/>
-	<rect id="connector1terminal" x="0.35" y="14.976" fill="none" width="0" height="0"/>
+	<polygon id="connector1terminal" fill="none" points="0.35,14.976 0.35,14.976 0.35,14.976 	"/>
 	<text transform="matrix(1 0 0 1 6.8604 13.925)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">2</text>
 	<text transform="matrix(1 0 0 1 19.4209 15.676)" fill="#787878" font-family="'DroidSans'" font-size="3.5">V</text>
 	<text transform="matrix(1 0 0 1 21.3379 15.676)" fill="#787878" font-family="'DroidSans'" font-size="3.5">C</text>
 	<text transform="matrix(1 0 0 1 23.3789 15.676)" fill="#787878" font-family="'DroidSans'" font-size="3.5">C</text>
 	
 		<line id="connector2pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="0.35" y1="22.176" x2="14.75" y2="22.176"/>
-	<rect id="connector2terminal" x="0.35" y="22.176" fill="none" width="0" height="0"/>
+	<polygon id="connector2terminal" fill="none" points="0.35,22.176 0.35,22.176 0.35,22.176 	"/>
 	<text transform="matrix(1 0 0 1 6.8604 21.1252)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">3</text>
 	<text transform="matrix(1 0 0 1 19.4209 22.8743)" fill="#787878" font-family="'DroidSans'" font-size="3.5">GND</text>
 	
 		<line id="connector3pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="0.35" y1="29.376" x2="14.75" y2="29.376"/>
-	<rect id="connector3terminal" x="0.35" y="29.376" fill="none" width="0" height="0"/>
+	<polygon id="connector3terminal" fill="none" points="0.35,29.376 0.35,29.376 0.35,29.376 	"/>
 	<text transform="matrix(1 0 0 1 6.8604 28.3254)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">4</text>
 	<text transform="matrix(1 0 0 1 19.4209 30.0754)" fill="#787878" font-family="'DroidSans'" font-size="3.5">PGD</text>
 	
 		<line id="connector4pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="0.35" y1="36.576" x2="14.75" y2="36.576"/>
-	<rect id="connector4terminal" x="0.35" y="36.576" fill="none" width="0" height="0"/>
+	<polygon id="connector4terminal" fill="none" points="0.35,36.576 0.35,36.576 0.35,36.576 	"/>
 	<text transform="matrix(1 0 0 1 6.8604 35.5247)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">5</text>
 	<text transform="matrix(1 0 0 1 19.4209 37.2747)" fill="#787878" font-family="'DroidSans'" font-size="3.5">PGC</text>
+	<text id="label" transform="matrix(1 0 0 1 31.7666 15.3743)" font-family="'DroidSans'" font-size="4.25">PIC</text>
 </g>
 </svg>

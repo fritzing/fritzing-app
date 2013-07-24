@@ -3959,31 +3959,35 @@ void MainWindow::linkToProgramFile(const QString & filename, const QString & lan
 	}
 }
 
-void MainWindow::newDesignRulesCheck() 
+QStringList MainWindow::newDesignRulesCheck() 
 {
-    newDesignRulesCheck(true);
+    return newDesignRulesCheck(true);
 }
 
-void MainWindow::newDesignRulesCheck(bool showOkMessage) 
+QStringList MainWindow::newDesignRulesCheck(bool showOkMessage) 
 {
-	if (m_currentGraphicsView == NULL) return;
+    QStringList results;
+
+	if (m_currentGraphicsView == NULL) return results;
 
 	PCBSketchWidget * pcbSketchWidget = qobject_cast<PCBSketchWidget *>(m_currentGraphicsView);
-	if (pcbSketchWidget == NULL) return;
+	if (pcbSketchWidget == NULL) return results;
 	
     ItemBase * board = NULL;
     if (pcbSketchWidget->autorouteTypePCB()) {
         int boardCount;
 		board = pcbSketchWidget->findSelectedBoard(boardCount);
         if (boardCount == 0) {
-            QMessageBox::critical(this, tr("Fritzing"),
-                       tr("Your sketch does not have a board yet! DRC only works with a PCB."));
-            return;
+            QString message = tr("Your sketch does not have a board yet! DRC only works with a PCB.");
+            results << message;
+            QMessageBox::critical(this, tr("Fritzing"), message);
+            return results;
         }
         if (board == NULL) {
-            QMessageBox::critical(this, tr("Fritzing"),
-                       tr("Please select a PCB. DRC only works on one board at a time."));
-            return;
+            QString message = tr("Please select a PCB. DRC only works on one board at a time.");
+            results << message;
+            QMessageBox::critical(this, tr("Fritzing"), message);
+            return results;
         }
 	}
 
@@ -4014,7 +4018,7 @@ void MainWindow::newDesignRulesCheck(bool showOkMessage)
 
 	ProcessEventBlocker::processEvents();
 	ProcessEventBlocker::block();
-	drc.start(showOkMessage, pcbSketchWidget->getKeepout() * 1000 / GraphicsUtils::SVGDPI);     // pixels to mils
+	results = drc.start(showOkMessage, pcbSketchWidget->getKeepout() * 1000 / GraphicsUtils::SVGDPI);     // pixels to mils
 	ProcessEventBlocker::unblock();
 
 	pcbSketchWidget->setLayerActive(ViewLayer::Copper1, copper1Active);
@@ -4022,7 +4026,7 @@ void MainWindow::newDesignRulesCheck(bool showOkMessage)
 	pcbSketchWidget->setLayerActive(ViewLayer::Copper0, copper0Active);
 	pcbSketchWidget->setLayerActive(ViewLayer::Silkscreen0, copper0Active);
 	updateActiveLayerButtons();
-
+    return results;
 }
 
 void MainWindow::changeTraceLayer() {

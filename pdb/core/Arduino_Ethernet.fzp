@@ -30,7 +30,7 @@ The 6-pin serial programming header is compatible with the USB Serial adapter an
  <views>
   <breadboardView>
    <layers image="breadboard/Arduino_Ethernet_breadboard.svg">
-    <layer layerId="breadboard"/>
+    <layer layerId="breadboardbreadboard"/>
    </layers>
   </breadboardView>
   <schematicView>

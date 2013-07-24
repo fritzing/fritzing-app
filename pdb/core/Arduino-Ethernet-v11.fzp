@@ -3,21 +3,29 @@
 <version>4</version>
 <date>2011-11-29</date>
 <author>SparkFun</author>
-<description>&lt;p&gt;
-	&lt;strong&gt;Description:&lt;/strong&gt; Ever wonder what would happen if you stacked an Ethernet shield on an Arduino Pro microcontroller and ran over it with a steam roller? Well, it would probably just break. But in a cartoon world it might turn into the Ethernet Pro! The Ethernet Pro is an Arduino-sized, shield-compatible microcontroller with all of the functionality of the Ethernet shield built right in!&lt;/p&gt;
-&lt;p&gt;
-	The Ethernet Pro is based on the same hardware as the Ethernet shield (Wiznet W5100) in the same configuration so it is a drop-in replacement for the &amp;quot;Arduino/Ethernet double-stack,&amp;quot; and works with all of the existing Ethernet shield libraries and code. This board features the &amp;#39;Optiboot&amp;#39; bootloader, so be sure to select &amp;quot;Arduino Uno&amp;quot; in the Arduino IDE when you program it. The board can be programmed using either an FTDI Basic or the ATmega8U2 breakout (w/ USB-to-Serial firmware).&lt;/p&gt;
-&lt;p&gt;
-	&lt;strong&gt;Documents: &lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-	&lt;li&gt;
-		&lt;a href=&quot;http://dlnmh9ip6v2uc.cloudfront.net/datasheets/Dev/Arduino/Boards/Arduino-Ethernet-v112pg.pdf&quot; target=&quot;_blank&quot;&gt;Schematic&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;
-		&lt;a href=&quot;http://dlnmh9ip6v2uc.cloudfront.net/datasheets/Dev/Arduino/Boards/Arduino-Ethernet-v11.zip&quot; target=&quot;_blank&quot;&gt;Eagle Files&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;
-		&lt;a href=&quot;http://www.sparkfun.com/datasheets/DevTools/Arduino/W5100_Datasheet_v1_1_6.pdf&quot; target=&quot;_blank&quot;&gt;Datasheet&lt;/a&gt; (W5100)&lt;/li&gt;
-	&lt;li&gt;
-		&lt;a href=&quot;http://arduino.cc/en/Main/ArduinoEthernetShield&quot; target=&quot;_blank&quot;&gt;Arduino EthernetShield Page&lt;/a&gt;&lt;/li&gt;
+<description>&lt;p&gt;
+
+
+	&lt;strong&gt;Description:&lt;/strong&gt; Ever wonder what would happen if you stacked an Ethernet shield on an Arduino Pro microcontroller and ran over it with a steam roller? Well, it would probably just break. But in a cartoon world it might turn into the Ethernet Pro! The Ethernet Pro is an Arduino-sized, shield-compatible microcontroller with all of the functionality of the Ethernet shield built right in!&lt;/p&gt;
+&lt;p&gt;
+The Ethernet Pro is based on the same hardware as the Ethernet shield (Wiznet W5100) in the same configuration so it is a drop-in replacement for the &amp;quot;Arduino/Ethernet double-stack,&amp;quot; and works with all of the existing Ethernet shield libraries and code. This board features the &amp;#39;Optiboot&amp;#39; bootloader, so be sure to select &amp;quot;Arduino Uno&amp;quot; in the Arduino IDE when you program it. The board can be programmed using either an FTDI Basic or the ATmega8U2 breakout (w/ USB-to-Serial firmware).&lt;/p&gt;
+&lt;p&gt;
+	&lt;strong&gt;Documents: &lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;
+		&lt;a href=&quot;http://dlnmh9ip6v2uc.cloudfront.net/datasheets/Dev/Arduino/Boards/Arduino-Ethernet-v112pg.pdf&quot; target=&quot;_blank&quot;&gt;Schematic&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a href=&quot;http://dlnmh9ip6v2uc.cloudfront.net/datasheets/Dev/Arduino/Boards/Arduino-Ethernet-v11.zip&quot; target=&quot;_blank&quot;&gt;Eagle Files&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a href=&quot;http://www.sparkfun.com/datasheets/DevTools/Arduino/W5100_Datasheet_v1_1_6.pdf&quot; target=&quot;_blank&quot;&gt;Datasheet&lt;/a&gt; (W5100)&lt;/li&gt;
+
+
+	&lt;li&gt;
+
+
+		&lt;a href=&quot;http://arduino.cc/en/Main/ArduinoEthernetShield&quot; target=&quot;_blank&quot;&gt;Arduino EthernetShield Page&lt;/a&gt;&lt;/li&gt;
+
+
 &lt;/ul&gt;</description>
 <title>Ethernet Pro</title>
 <url>http://www.sparkfun.com/products/10536</url>
@@ -35,7 +43,7 @@
 <views>
 <breadboardView>
 <layers image='breadboard/Arduino-Ethernet-v11_breadboard.svg'>
-<layer layerId='breadboard'/>
+<layer layerId='breadboardbreadboard'/>
 </layers>
 </breadboardView>
 <schematicView>

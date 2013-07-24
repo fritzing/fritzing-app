@@ -22,7 +22,7 @@ Note: The LilyPad Coin Cell Battery Holder is a design conceived by Felicia Will
 <views>
 <breadboardView>
 <layers image='breadboard/LilyPad Battery-Connect-v11_breadboard.svg'>
-<layer layerId='breadboard'/>
+<layer layerId='breadboardbreadboard'/>
 </layers>
 </breadboardView>
 <schematicView>

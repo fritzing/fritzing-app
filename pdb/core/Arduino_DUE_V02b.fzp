@@ -31,7 +31,7 @@ The Due has a dedicated forum for discussing the board.</description>
  <views>
   <breadboardView>
    <layers image="breadboard/Arduino_DUE_V02b_breadboard.svg">
-    <layer layerId="breadboard"/>
+    <layer layerId="breadboardbreadboard"/>
    </layers>
   </breadboardView>
   <schematicView>

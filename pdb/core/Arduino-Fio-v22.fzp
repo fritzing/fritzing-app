@@ -22,7 +22,7 @@ Arduino Fio is compatible with Funnel. It has connections for a Lithium Polymer 
 <views>
 <breadboardView>
 <layers image='breadboard/Arduino-Fio-v22_breadboard.svg'>
-<layer layerId='breadboard'/>
+<layer layerId='breadboardbreadboard'/>
 </layers>
 </breadboardView>
 <schematicView>

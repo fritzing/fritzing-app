@@ -30,7 +30,7 @@ For information on using the board with the Android OS, see Google's ADK documen
  <views>
   <breadboardView>
    <layers image="breadboard/Arduino_ADK_MEGA_2560-Rev3_breadboard.svg">
-    <layer layerId="breadboard"/>
+    <layer layerId="breadboardbreadboard"/>
    </layers>
   </breadboardView>
   <schematicView>

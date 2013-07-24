@@ -13,11 +13,12 @@
         <tag>through-hole</tag>
     </tags>
     <properties>
-        <property name="package">DIP8 [THT]</property>
+        <property name="package">dip</property>
         <property name="version">Attiny85-20PU</property>
         <property name="family">Microcontroller</property>
         <property name="type">Atmel AVR</property>
         <property name="part number"></property>
+		<property name="variant">dip08 THT</property>
     </properties>
     <description>Atmel ATtiny85 microcontroller. So small but so powerfull.</description>
     <views>

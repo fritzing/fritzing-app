@@ -12,11 +12,11 @@
 <tag>DIP08</tag>
 </tags>
 <properties>
-<property name="package">dip08</property>
+<property name="package">dip</property>
 <property name="family">Microcontroller</property>
 <property name="editable pin labels">false</property>
 <property name="chip label">attiny45</property>
-<property name="variant">dip8</property>
+<property name="variant">dip08</property>
 </properties>
 <views>
 <breadboardView>

@@ -12,11 +12,11 @@
 <tag>SMD</tag>
 </tags>
 <properties>
-<property name="package">tqfp64_14x14mm</property>
+<property name="package">tqfp</property>
 <property name="family">Microcontroller</property>
 <property name="editable pin labels">false</property>
 <property name="chip label">atmega128</property>
-<property name="variant">SMD</property>
+<property name="variant">tqfp64 14mm</property>
 </properties>
 <views>
 <breadboardView>

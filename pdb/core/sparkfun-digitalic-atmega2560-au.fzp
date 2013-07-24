@@ -19,11 +19,11 @@
 <tag>TQFP100</tag>
 </tags>
 <properties>
-<property name="package">tqfp100</property>
+<property name="package">tqfp</property>
 <property name="family">Microcontroller</property>
 <property name="chip label">atmega2560</property>
 <property name="editable pin labels">false</property>
-<property name="variant">au</property>
+<property name="variant">tqfp100-au 14mm</property>
 </properties>
 <views>
 <breadboardView>

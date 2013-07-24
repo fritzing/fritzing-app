@@ -197,7 +197,7 @@ public:
 	bool hasCustomBoardShape();
     void selectPartsWithModuleID(ModelPart *);
     void addToSketch(QList<ModelPart *> &);
-	void newDesignRulesCheck(bool showOkMessage);
+	QStringList newDesignRulesCheck(bool showOkMessage);
 
 public:
 	static void initNames();
@@ -387,7 +387,7 @@ protected slots:
 
 	void openProgramWindow();
 	void linkToProgramFile(const QString & filename, const QString & language, const QString & programmer, bool addLink, bool strong);
-	void newDesignRulesCheck();
+	QStringList newDesignRulesCheck();
 	void subSwapSlot(SketchWidget *, ItemBase *, const QString & newModuleID, ViewLayer::ViewLayerPlacement, long & newID, QUndoCommand * parentCommand);
 	void updateLayerMenuSlot();
 	bool save();

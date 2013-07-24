@@ -1,23 +1,31 @@
-<?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<!-- Created with Fritzing (http://www.fritzing.org/) -->
-<svg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' version='1.2' baseProfile='tiny' x='0in' y='0in' width='0.21in' height='0.409861in' viewBox='0 0 5.334 10.4105' >
-<g id='schematic'>
-<line class='other' x1='2.667' y1='2.667' x2='2.667' y2='7.747' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
-<line class='other' x1='0.127' y1='0.127' x2='5.207' y2='0.127' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
-<line class='other' x1='2.667' y1='2.667' x2='5.207' y2='0.127' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
-<line class='other' x1='2.667' y1='2.667' x2='0.127' y2='0.127' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
-<line class='other' x1='5.207' y1='5.207' x2='5.207' y2='7.747' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
-<line class='other' x1='3.937' y1='5.207' x2='5.207' y2='5.207' stroke='#000000' stroke-width='0.254' stroke-linecap='round'/>
-<circle class='other' cx='2.667' cy='5.207' r='1.1359' stroke='#000000' stroke-width='0.254' fill='none' />
-<line class='pin' id='connector7pin' connectorname='GND' x1='5.207' y1='10.287' x2='5.207' y2='7.747' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
-<rect class='terminal' id='connector7terminal' x='5.207' y='10.287' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
-<g transform='translate(4.83658,9.017)'><g transform='rotate(270)'>
-<text class='text' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#8c8c8c' font-size='0.881944' x='0' y='0' text-anchor='middle'>8</text>
-</g></g>
-<line class='pin' id='connector6pin' connectorname='SIGNAL' x1='2.667' y1='10.287' x2='2.667' y2='7.747' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
-<rect class='terminal' id='connector6terminal' x='2.667' y='10.287' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
-<g transform='translate(2.29658,9.017)'><g transform='rotate(270)'>
-<text class='text' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#8c8c8c' font-size='0.881944' x='0' y='0' text-anchor='middle'>7</text>
-</g></g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="15.248px"
+	 height="29.708px" viewBox="0 0 15.248 29.708" enable-background="new 0 0 15.248 29.708" xml:space="preserve">
+<g id="schematic">
+	<circle fill="#FFFFFF" stroke="#000000" stroke-width="0.9" cx="7.625" cy="14.858" r="3.219"/>
+	<line fill="none" stroke="#000000" stroke-width="0.9" stroke-linecap="round" x1="7.625" y1="7.658" x2="7.625" y2="22.058"/>
+	<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round" points="
+		14.823,0.458 0.424,0.458 7.625,7.658 	"/>
+	<line fill="none" stroke="#000000" stroke-width="0.9" stroke-linecap="round" x1="14.823" y1="14.859" x2="14.823" y2="22.058"/>
+	<line fill="none" stroke="#000000" stroke-width="0.9" stroke-linecap="round" x1="11.226" y1="14.859" x2="14.823" y2="14.859"/>
+	
+		<line id="connector7pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="14.823" y1="29.256" x2="14.823" y2="22.058"/>
+	<rect id="connector7terminal" x="14.823" y="29.256" fill="none" width="0.001" height="0.002"/>
+	<g transform="translate(4.83658,9.017)">
+		<g transform="rotate(270)">
+			<text transform="matrix(1 0 0 1 -17.3302 8.9388)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">8</text>
+		</g>
+	</g>
+	
+		<line id="connector6pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="7.625" y1="29.256" x2="7.625" y2="22.058"/>
+	<rect id="connector6terminal" x="7.625" y="29.256" fill="none" width="0" height="0.002"/>
+	<g transform="translate(2.29658,9.017)">
+		<g transform="rotate(270)">
+			<text transform="matrix(1 0 0 1 -17.3302 4.2786)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">7</text>
+		</g>
+	</g>
 </g>
 </svg>

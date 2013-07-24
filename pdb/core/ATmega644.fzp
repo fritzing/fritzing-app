@@ -19,10 +19,10 @@
 				<property name="version">Atmega644</property>
       	<property name="family">Microcontroller</property>
 				<property name="type">Atmel AVR</property>
- 				<property name="package">PDPI 40 [THT]</property>
+ 				<property name="package">pdpi</property>
         <property name="chip label">Atmega644</property>
         <property name="pins">40</property>
-        <property name="spacing">600mil</property>
+        <property name="variant">pdpi40 THT</property>
     </properties>
     <description>AVR 8-bit microcontroller.</description>
     <views>

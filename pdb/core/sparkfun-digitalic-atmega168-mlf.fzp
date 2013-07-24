@@ -12,11 +12,11 @@
 <tag>ATMEGA168</tag>
 </tags>
 <properties>
-<property name="package">mlf32</property>
+<property name="package">mlf</property>
 <property name="family">Microcontroller</property>
 <property name="editable pin labels">false</property>
 <property name="chip label">atmega128</property>
-<property name="variant">mlf</property>
+<property name="variant">mlf32</property>
 </properties>
 <views>
 <breadboardView>

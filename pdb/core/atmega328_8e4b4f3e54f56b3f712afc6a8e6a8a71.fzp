@@ -14,9 +14,11 @@
     </tags>
     <properties>
         <property name="version">Atmega328-20PU</property>
-        <property name="package">DIP28 (Dual Inline) [THT]</property>
+        <property name="package">dip</property>
         <property name="family">Microcontroller</property>
         <property name="type">ATMEGA328</property>
+			<property name="variant">dip28 THT</property>
+		 
     </properties>
     <description>Atmel ATmega328 microcontroller.</description>
     <views>

@@ -12,11 +12,11 @@
 <tag>ATMEGA32U4</tag>
 </tags>
 <properties>
-<property name="package">qfn-44</property>
+<property name="package">qfn</property>
 <property name="family">Microcontroller</property>
 <property name="editable pin labels">false</property>
 <property name="chip label">atmega32</property>
-<property name="variant">qfn</property>
+<property name="variant">qfn44 (pad)</property>
 </properties>
 <views>
 <breadboardView>

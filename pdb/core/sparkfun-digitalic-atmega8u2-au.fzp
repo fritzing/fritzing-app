@@ -12,11 +12,11 @@
 <tag>AU</tag>
 </tags>
 <properties>
-<property name="package">tqfp32-08</property>
+<property name="package">tqfp</property>
 <property name="family">Microcontroller</property>
 <property name="editable pin labels">false</property>
 <property name="chip label">atmega8</property>
-<property name="variant">au</property>
+<property name="variant">tqfp32-au 8mm</property>
 </properties>
 <views>
 <breadboardView>

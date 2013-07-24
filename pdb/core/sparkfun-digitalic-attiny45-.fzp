@@ -11,10 +11,11 @@
 <tag>SO08-EIAJ</tag>
 </tags>
 <properties>
-<property name="package">so08-eiaj</property>
+<property name="package">so</property>
 <property name="family">Microcontroller</property>
 <property name="editable pin labels">false</property>
 <property name="chip label">attiny45</property>
+<property name="variant">so08-eiaj</property>
 </properties>
 <views>
 <breadboardView>

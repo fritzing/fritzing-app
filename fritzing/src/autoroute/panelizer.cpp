@@ -54,6 +54,7 @@ $Date: 2013-04-22 01:45:43 +0200 (Mo, 22. Apr 2013) $
 
 static int OutlineLayer = 0;
 static int SilkTopLayer = 0;
+static QString PanelizerOutputPath;
 
 ///////////////////////////////////////////////////////////
 
@@ -226,6 +227,7 @@ PanelItem::PanelItem(PanelItem * from) {
 
 void Panelizer::panelize(FApplication * app, const QString & panelFilename, bool customPartsOnly) 
 {
+    initPanelizerOutput(panelFilename);
 
 	QFile panelizerFile(panelFilename);
 
@@ -233,7 +235,7 @@ void Panelizer::panelize(FApplication * app, const QString & panelFilename, bool
     QDir copyDir = info.absoluteDir();
     copyDir.cd("copies");
     if (!copyDir.exists()) {
-		DebugDialog::debug(QString("unable to create 'copies' folder in '%1'").arg(info.absoluteDir().absolutePath()));
+		writePanelizerOutput(QString("unable to create 'copies' folder in '%1'").arg(info.absoluteDir().absolutePath()));
 		return;
 	}
 
@@ -246,13 +248,13 @@ void Panelizer::panelize(FApplication * app, const QString & panelFilename, bool
 
 	QDomDocument panelizerDocument;
 	if (!panelizerDocument.setContent(&panelizerFile, true, &errorStr, &errorLine, &errorColumn)) {
-		DebugDialog::debug(QString("Unable to parse '%1': '%2' line:%3 column:%4").arg(panelFilename).arg(errorStr).arg(errorLine).arg(errorColumn));
+		writePanelizerOutput(QString("Unable to parse '%1': '%2' line:%3 column:%4").arg(panelFilename).arg(errorStr).arg(errorLine).arg(errorColumn));
 		return;
 	}
 
 	QDomElement panelizerRoot = panelizerDocument.documentElement();
 	if (panelizerRoot.isNull() || panelizerRoot.tagName() != "panelizer") {
-		DebugDialog::debug(QString("root element is not 'panelizer'"));
+		writePanelizerOutput(QString("root element is not 'panelizer'"));
 		return;
 	}
 
@@ -274,7 +276,7 @@ void Panelizer::panelize(FApplication * app, const QString & panelFilename, bool
 	QDir svgDir(outputDir);
 	svgDir.cd("svg");
 	if (!svgDir.exists()) {
-		DebugDialog::debug(QString("unable to create svg folder in '%1'").arg(pinfo.absolutePath()));
+		writePanelizerOutput(QString("unable to create svg folder in '%1'").arg(pinfo.absolutePath()));
 		return;
 	}
 
@@ -283,7 +285,7 @@ void Panelizer::panelize(FApplication * app, const QString & panelFilename, bool
 	QDir gerberDir(outputDir);
 	gerberDir.cd("gerber");
 	if (!gerberDir.exists()) {
-		DebugDialog::debug(QString("unable to create gerber folder in '%1'").arg(pinfo.absolutePath()));
+		writePanelizerOutput(QString("unable to create gerber folder in '%1'").arg(pinfo.absolutePath()));
 		return;
 	}
 
@@ -292,7 +294,7 @@ void Panelizer::panelize(FApplication * app, const QString & panelFilename, bool
 	QDir fzDir(outputDir);
 	fzDir.cd("fz");
 	if (!fzDir.exists()) {
-		DebugDialog::debug(QString("unable to create fz folder in '%1'").arg(pinfo.absolutePath()));
+		writePanelizerOutput(QString("unable to create fz folder in '%1'").arg(pinfo.absolutePath()));
 		return;
 	}
 
@@ -302,7 +304,7 @@ void Panelizer::panelize(FApplication * app, const QString & panelFilename, bool
 	QDomElement boards = panelizerRoot.firstChildElement("boards");
 	QDomElement board = boards.firstChildElement("board");
 	if (board.isNull()) {
-		DebugDialog::debug(QString("no <board> elements found"));
+		writePanelizerOutput(QString("no <board> elements found"));
 		return;
 	}
 
@@ -310,13 +312,13 @@ void Panelizer::panelize(FApplication * app, const QString & panelFilename, bool
 	QDomElement paths = panelizerRoot.firstChildElement("paths");
 	QDomElement path = paths.firstChildElement("path");
 	if (path.isNull()) {
-		DebugDialog::debug(QString("no <path> elements found"));
+		writePanelizerOutput(QString("no <path> elements found"));
 		return;
 	}
 
 	collectFiles(pinfo.absoluteDir(), path, fzzFilePaths);
     if (fzzFilePaths.count() == 0) {
-		DebugDialog::debug(QString("no fzz files found in paths"));
+		writePanelizerOutput(QString("no fzz files found in paths"));
 		return;
 	}
 	
@@ -475,12 +477,10 @@ void Panelizer::panelize(FApplication * app, const QString & panelFilename, bool
 
     TextUtils::writeUtf8(panelFilename, panelizerDocument.toString(4));
 
-    DebugDialog::debug("");
-    DebugDialog::debug(QString("Panelizer finished: %1 panel(s), with %2 additional copy(ies) for each panel").arg(planePairs.count()).arg(duplicates - 1));
-    QMessageBox::information(NULL, QObject::tr("Fritzing"), 
-        QObject::tr("Panelizer finished: %1 panel(s), with %2 additional copy(ies) for each panel").arg(planePairs.count()).arg(duplicates - 1)
-    );
-
+    QString message = QString("Panelizer finished: %1 panel(s), with %2 additional copy(ies) for each panel").arg(planePairs.count()).arg(duplicates - 1);
+    writePanelizerOutput("--------------------------------");
+    writePanelizerOutput(message);
+    QMessageBox::information(NULL, QObject::tr("Fritzing"), message);
 }
 
 
@@ -745,32 +745,32 @@ bool Panelizer::checkBoards(QDomElement & board, QHash<QString, QString> & fzzFi
 		bool ok;
 		int optional = board.attribute("maxOptionalCount", "").toInt(&ok);
 		if (!ok) {
-			DebugDialog::debug(QString("maxOptionalCount for board '%1' not an integer: '%2'").arg(boardname).arg(board.attribute("maxOptionalCount")));
+			writePanelizerOutput(QString("maxOptionalCount for board '%1' not an integer: '%2'").arg(boardname).arg(board.attribute("maxOptionalCount")));
 			return false;
 		}
 
 		int optionalPriority = board.attribute("optionalPriority", "").toInt(&ok);
         Q_UNUSED(optionalPriority);
 		if (!ok) {
-			DebugDialog::debug(QString("optionalPriority for board '%1' not an integer: '%2'").arg(boardname).arg(board.attribute("optionalPriority")));
+			writePanelizerOutput(QString("optionalPriority for board '%1' not an integer: '%2'").arg(boardname).arg(board.attribute("optionalPriority")));
 			return false;
 		}
 
 		int required = board.attribute("requiredCount", "").toInt(&ok);
 		if (!ok) {
-			DebugDialog::debug(QString("required for board '%1' not an integer: '%2'").arg(boardname).arg(board.attribute("maxOptionalCount")));
+			writePanelizerOutput(QString("required for board '%1' not an integer: '%2'").arg(boardname).arg(board.attribute("maxOptionalCount")));
 			return false;
 		}
 
         if (optional > 0 || required> 0) {
 		    QString path = fzzFilePaths.value(boardname, "");
 		    if (path.isEmpty()) {
-			    DebugDialog::debug(QString("File for board '%1' not found in search paths").arg(boardname));
+			    writePanelizerOutput(QString("File for board '%1' not found in search paths").arg(boardname));
 			    return false;
 		    }
         }
         else {
-            DebugDialog::debug(QString("skipping board '%1'").arg(boardname));
+            writePanelizerOutput(QString("skipping board '%1'").arg(boardname));
         }
 
 		board = board.nextSiblingElement("board");
@@ -800,7 +800,7 @@ bool Panelizer::openWindows(QDomElement & boardElement, QHash<QString, QString> 
     }
 
     if (bigPanelType == NULL) {
-        DebugDialog::debug("No panel types defined");
+        writePanelizerOutput("No panel types defined");
         return false;
     }
 
@@ -824,17 +824,17 @@ bool Panelizer::openWindows(QDomElement & boardElement, QHash<QString, QString> 
         QFileInfo copyInfo(copyPath);
 
         if (!copyInfo.exists()) {
-            DebugDialog::debug(QString("failed to load copy'%1'").arg(copyPath));
+            writePanelizerOutput(QString("failed to load copy'%1'").arg(copyPath));
             return false;
         }
 
         if (!originalInfo.exists()) {
-            DebugDialog::debug(QString("failed to find original'%1'").arg(originalPath));
+            writePanelizerOutput(QString("failed to find original'%1'").arg(originalPath));
             return false;
         }
 
         if (originalInfo.lastModified() > copyInfo.lastModified()) {
-            DebugDialog::debug(QString("copy %1 is not up to date--rerun the inscriber").arg(copyPath));
+            writePanelizerOutput(QString("copy %1 is not up to date--rerun the inscriber").arg(copyPath));
             return false;
         }
 
@@ -844,7 +844,7 @@ bool Panelizer::openWindows(QDomElement & boardElement, QHash<QString, QString> 
 		FolderUtils::setOpenSaveFolderAux(fzDir.absolutePath());
 
 		if (!mainWindow->loadWhich(copyPath, false, false, "")) {
-			DebugDialog::debug(QString("failed to load '%1'").arg(copyPath));
+			writePanelizerOutput(QString("failed to load '%1'").arg(copyPath));
 			return false;
 		}
 
@@ -924,10 +924,9 @@ bool Panelizer::openWindows(QDomElement & boardElement, QHash<QString, QString> 
 		    }
 
 		    if (tooBig) {
-			    DebugDialog::debug(QString("board is too big for panel '%1'").arg(originalPath));
+			    writePanelizerOutput(QString("board is too big for panel '%1'").arg(originalPath));
 			    return false;
 		    }
-
 
             makeSVGs(mainWindow, boardItem, boardName, layerThingList, norotateDir, copyInfo);
 
@@ -956,7 +955,7 @@ bool Panelizer::initPanelParams(QDomElement & root, PanelParams & panelParams)
 {
 	panelParams.prefix = root.attribute("prefix");
 	if (panelParams.prefix.isEmpty()) {
-		DebugDialog::debug(QString("Output file prefix not specified"));
+		writePanelizerOutput(QString("Output file prefix not specified"));
 		return false;
 	}
 
@@ -970,25 +969,25 @@ bool Panelizer::initPanelParams(QDomElement & root, PanelParams & panelParams)
         bool ok;
 	    panelType->width = TextUtils::convertToInches(panel.attribute("width"), &ok, false);
 	    if (!ok) {
-		    DebugDialog::debug(QString("Can't parse panel width '%1'").arg(panel.attribute("width")));
+		    writePanelizerOutput(QString("Can't parse panel width '%1'").arg(panel.attribute("width")));
 		    return false;
 	    }
 
 	    panelType->height = TextUtils::convertToInches(panel.attribute("height"), &ok, false);
 	    if (!ok) {
-		    DebugDialog::debug(QString("Can't parse panel height '%1'").arg(panel.attribute("height")));
+		    writePanelizerOutput(QString("Can't parse panel height '%1'").arg(panel.attribute("height")));
 		    return false;
 	    }
 
 	    panelType->c1 = panel.attribute("c1").toDouble(&ok);
 	    if (!ok) {
-		    DebugDialog::debug(QString("Can't parse panel c1 '%1'").arg(panel.attribute("c1")));
+		    writePanelizerOutput(QString("Can't parse panel c1 '%1'").arg(panel.attribute("c1")));
 		    return false;
 	    }
 
 	    panelType->c2 = panel.attribute("c2").toDouble(&ok);
 	    if (!ok) {
-		    DebugDialog::debug(QString("Can't parse panel c2 '%1'").arg(panel.attribute("c2")));
+		    writePanelizerOutput(QString("Can't parse panel c2 '%1'").arg(panel.attribute("c2")));
 		    return false;
 	    }
 
@@ -998,20 +997,20 @@ bool Panelizer::initPanelParams(QDomElement & root, PanelParams & panelParams)
     }
 
     if (panelParams.panelTypes.count() == 0) {
-		DebugDialog::debug(QString("No panel types defined."));
+		writePanelizerOutput(QString("No panel types defined."));
 		return false;
     }
 
     bool ok;
 	panelParams.panelSpacing = TextUtils::convertToInches(root.attribute("spacing"), &ok, false);
 	if (!ok) {
-		DebugDialog::debug(QString("Can't parse panel spacing '%1'").arg(root.attribute("spacing")));
+		writePanelizerOutput(QString("Can't parse panel spacing '%1'").arg(root.attribute("spacing")));
 		return false;
 	}
 
 	panelParams.panelBorder = TextUtils::convertToInches(root.attribute("border"), &ok, false);
 	if (!ok) {
-		DebugDialog::debug(QString("Can't parse panel border '%1'").arg(root.attribute("border")));
+		writePanelizerOutput(QString("Can't parse panel border '%1'").arg(root.attribute("border")));
 		return false;
 	}
 
@@ -1242,6 +1241,8 @@ void Panelizer::addOptional(int optionalCount, QList<PanelItem *> & refPanelItem
 
 void Panelizer::inscribe(FApplication * app, const QString & panelFilename, bool drc) 
 {
+    initPanelizerOutput(panelFilename);
+
 	QFile file(panelFilename);
 
     QFileInfo info(panelFilename);
@@ -1261,13 +1262,13 @@ void Panelizer::inscribe(FApplication * app, const QString & panelFilename, bool
 
 	QDomDocument domDocument;
 	if (!domDocument.setContent(&file, true, &errorStr, &errorLine, &errorColumn)) {
-		DebugDialog::debug(QString("Unable to parse '%1': '%2' line:%3 column:%4").arg(panelFilename).arg(errorStr).arg(errorLine).arg(errorColumn));
+        writePanelizerOutput(QString("Unable to parse '%1': '%2' line:%3 column:%4").arg(panelFilename).arg(errorStr).arg(errorLine).arg(errorColumn));
 		return;
 	}
 
 	QDomElement root = domDocument.documentElement();
 	if (root.isNull() || root.tagName() != "panelizer") {
-		DebugDialog::debug(QString("root element is not 'panelizer'"));
+		writePanelizerOutput(QString("root element is not 'panelizer'"));
 		return;
 	}
 
@@ -1278,7 +1279,7 @@ void Panelizer::inscribe(FApplication * app, const QString & panelFilename, bool
 	QDir fzDir(outputDir);
 	fzDir.cd("fz");
 	if (!fzDir.exists()) {
-		DebugDialog::debug(QString("unable to create fz folder in '%1'").arg(outputDir.absolutePath()));
+		writePanelizerOutput(QString("unable to create fz folder in '%1'").arg(outputDir.absolutePath()));
 		return;
 	}
 
@@ -1287,7 +1288,7 @@ void Panelizer::inscribe(FApplication * app, const QString & panelFilename, bool
 	QDomElement boards = root.firstChildElement("boards");
 	QDomElement board = boards.firstChildElement("board");
 	if (board.isNull()) {
-		DebugDialog::debug(QString("no <board> elements found"));
+		writePanelizerOutput(QString("no <board> elements found"));
 		return;
 	}
 
@@ -1295,14 +1296,14 @@ void Panelizer::inscribe(FApplication * app, const QString & panelFilename, bool
 	QDomElement paths = root.firstChildElement("paths");
 	QDomElement path = paths.firstChildElement("path");
 	if (path.isNull()) {
-		DebugDialog::debug(QString("no <path> elements found"));
+		writePanelizerOutput(QString("no <path> elements found"));
 		return;
 	}
 
     QFileInfo pinfo(panelFilename);
 	collectFiles(pinfo.absoluteDir(), path, fzzFilePaths);
 	if (fzzFilePaths.count() == 0) {
-		DebugDialog::debug(QString("no fzz files found in paths"));
+		writePanelizerOutput(QString("no fzz files found in paths"));
 		return;
 	}
 	
@@ -1367,7 +1368,7 @@ MainWindow * Panelizer::inscribeBoard(QDomElement & board, QHash<QString, QStrin
 	FolderUtils::setOpenSaveFolderAux(fzDir.absolutePath());
 
 	if (!mainWindow->loadWhich(copyPath, false, false, "")) {
-		DebugDialog::debug(QString("failed to load '%1'").arg(copyPath));
+		writePanelizerOutput(QString("failed to load '%1'").arg(copyPath));
 		return mainWindow;
 	}
 
@@ -1375,8 +1376,9 @@ MainWindow * Panelizer::inscribeBoard(QDomElement & board, QHash<QString, QStrin
 
     int moved = mainWindow->pcbView()->checkLoadedTraces();
     if (moved > 0) {
-        QMessageBox::warning(NULL, QObject::tr("Fritzing"), QObject::tr("%1 wires moved from their saved position in %2.").arg(moved).arg(originalPath));
-        DebugDialog::debug(QString("\ncheckloadedtraces %1\n").arg(originalPath)); 
+        QString message = QObject::tr("%1 wires moved from their saved position in %2.").arg(moved).arg(originalPath);
+        QMessageBox::warning(NULL, QObject::tr("Fritzing"), message);
+        writePanelizerOutput(message); 
     }
 
 	foreach (QGraphicsItem * item, mainWindow->pcbView()->scene()->items()) {
@@ -1438,7 +1440,14 @@ MainWindow * Panelizer::inscribeBoard(QDomElement & board, QHash<QString, QStrin
 	    foreach (ItemBase * boardItem, boards) {
             mainWindow->pcbView()->selectAllItems(false, false);
             boardItem->setSelected(true);
-            mainWindow->newDesignRulesCheck(false);
+            QStringList messages = mainWindow->newDesignRulesCheck(false);
+            if (messages.count() > 0) {
+                QFileInfo info(mainWindow->fileName());
+                writePanelizerOutput(QString("%1 drc complaints on %2").arg(messages.count()).arg(info.fileName()));
+                //foreach (QString message, messages) {
+                //    writePanelizerOutput("\t" + message);
+                //}
+            }
         }
     }
 
@@ -1701,6 +1710,10 @@ int Panelizer::checkText(MainWindow * mainWindow, bool displayMessage) {
         QMessageBox::warning(NULL, "Text", QString("There are %1 possible instances of parts with <path> elements missing stroke/fill/stroke-width attributes").arg(missing.count()));
     }
 
+    if (missing.count() > 0) {
+        writePanelizerOutput(QString("There are %1 possible instances of parts with <path> elements missing stroke/fill/stroke-width attributes in %2").arg(missing.count()).arg(mainWindow->fileName()));
+    }
+
     return  missing.count();
 }
 
@@ -1726,7 +1739,10 @@ int Panelizer::checkDonuts(MainWindow * mainWindow, bool displayMessage) {
         }
         mainWindow->pcbView()->selectItems(itemBases.toList());
         QMessageBox::warning(NULL, "Donuts", QString("There are %1 possible donut connectors").arg(donuts.count() / 2));
-        DebugDialog::debug(QString("possible donuts in %1").arg(mainWindow->fileName()));
+    }
+
+    if (donuts.count() > 0) {
+        writePanelizerOutput(QString("%1 possible donuts in %2").arg(donuts.count() / 2).arg(mainWindow->fileName()));
     }
 
     return donuts.count() / 2;
@@ -1832,4 +1848,22 @@ double Panelizer::calcCost(PanelParams & panelParams, QList<PlanePair *> & plane
     }
 
     return total;
+}
+
+void Panelizer::writePanelizerOutput(const QString & message) {
+    DebugDialog::debug(message);
+    if (PanelizerOutputPath.length() > 0) {
+        QFile file(PanelizerOutputPath);
+        if (file.open(QFile::Append)) {
+		    QTextStream out(&file);
+		    out.setCodec("UTF-8");
+		    out << message << "\n";
+		    file.close();
+        }
+    }
+}
+
+void Panelizer::initPanelizerOutput(const QString & panelFilename) {
+    QFileInfo info(panelFilename);
+    PanelizerOutputPath = info.absoluteDir().absoluteFilePath("panelizer_output.txt");
 }

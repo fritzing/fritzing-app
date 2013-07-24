@@ -62,7 +62,7 @@ public:
 	DRC(class PCBSketchWidget *, class ItemBase * board);
 	virtual ~DRC(void);
 
-	bool start(bool showOkMessage, double keepoutMils);
+	QStringList start(bool showOkMessage, double keepoutMils);
 
 public:
     static void splitNetPrep(QDomDocument * masterDoc, QList<class ConnectorItem *> & equi, const Markers &, QList<QDomElement> & net, QList<QDomElement> & alsoNet, QList<QDomElement> & notNet, bool checkIntersection);

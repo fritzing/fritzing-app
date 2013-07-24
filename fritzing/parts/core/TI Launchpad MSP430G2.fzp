@@ -40,7 +40,7 @@ See: http://e2e.ti.com/group/msp430launchpad/w/default.aspx</description>
         <pcbView>
             <layers image="pcb/TI_Launchpad_MSP430G2_pcb.svg">
                 <layer layerId="copper0"/>
-                <layer layerId="unknown"/>
+                <layer layerId='silkscreen'/>
                 <layer layerId="copper1"/>
             </layers>
         </pcbView>

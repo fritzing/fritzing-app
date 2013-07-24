@@ -5,20 +5,17 @@
 	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="29.5px" height="9.072px"
 	 viewBox="0 0 29.5 9.072" enable-background="new 0 0 29.5 9.072" xml:space="preserve">
 <g id="schematic">
-	<line fill="none" stroke="#000000" stroke-width="0.9" stroke-linecap="round" x1="7.55" y1="1.656" x2="21.95" y2="1.656"/>
-	<line fill="none" stroke="#000000" stroke-width="0.9" stroke-linecap="round" x1="21.95" y1="1.656" x2="21.95" y2="7.416"/>
-	<line fill="none" stroke="#000000" stroke-width="0.9" stroke-linecap="round" x1="21.95" y1="7.416" x2="7.55" y2="7.416"/>
-	<line fill="none" stroke="#000000" stroke-width="0.9" stroke-linecap="round" x1="7.55" y1="7.416" x2="7.55" y2="1.656"/>
+	<rect x="7.55" y="1.656" fill="#FFFFFF" stroke="#000000" stroke-width="0.9" stroke-linecap="round" width="14.4" height="5.76"/>
 	<line fill="none" stroke="#000000" stroke-width="0.75" stroke-linecap="round" x1="21.95" y1="0.216" x2="19.07" y2="0.216"/>
 	<line fill="none" stroke="#000000" stroke-width="0.75" stroke-linecap="round" x1="10.43" y1="8.856" x2="19.07" y2="0.216"/>
 	<line fill="none" stroke="#000000" stroke-width="0.75" stroke-linecap="round" x1="7.55" y1="8.856" x2="10.43" y2="8.856"/>
 	
 		<line id="connector1pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="29.15" y1="4.536" x2="21.95" y2="4.536"/>
-	<rect id="connector1terminal" x="29.15" y="4.536" fill="none" width="0" height="0"/>
+	<polygon id="connector1terminal" fill="none" points="29.15,4.536 29.15,4.536 29.15,4.536 	"/>
 	<text transform="matrix(1 0 0 1 24.8613 3.4871)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">2</text>
 	
 		<line id="connector0pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="0.35" y1="4.536" x2="7.55" y2="4.536"/>
-	<rect id="connector0terminal" x="0.35" y="4.536" fill="none" width="0" height="0"/>
+	<polygon id="connector0terminal" fill="none" points="0.35,4.536 0.35,4.536 0.35,4.536 	"/>
 	<text transform="matrix(1 0 0 1 3.2617 3.4871)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">1</text>
 </g>
 </svg>

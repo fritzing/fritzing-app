@@ -5,22 +5,22 @@
 	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="22.311px"
 	 height="43.92px" viewBox="0 0 22.311 43.92" enable-background="new 0 0 22.311 43.92" xml:space="preserve">
 <g id="schematic">
+	<circle fill="#FFFFFF" stroke="#000000" stroke-width="0.9" cx="7.56" cy="7.56" r="7.2"/>
 	<line fill="none" stroke="#000000" stroke-width="0.9" stroke-linecap="round" x1="7.56" y1="14.76" x2="7.56" y2="43.56"/>
-	<circle fill="none" stroke="#000000" cx="7.56" cy="7.56" r="3.22"/>
-	<circle fill="none" stroke="#000000" cx="7.56" cy="7.56" r="7.2"/>
+	<circle fill="none" stroke="#000000" stroke-width="0.9" cx="7.56" cy="7.56" r="3.22"/>
 	
 		<line id="connector0pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="0.36" y1="21.96" x2="7.56" y2="21.96"/>
-	<rect id="connector0terminal" x="0.36" y="21.96" fill="none" width="0" height="0"/>
+	<polygon id="connector0terminal" fill="none" points="0.36,21.96 0.36,21.96 0.36,21.96 	"/>
 	<text transform="matrix(1 0 0 1 3.2712 20.9111)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">1</text>
 	
 		<line id="connector4pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="21.96" y1="7.56" x2="7.56" y2="7.56"/>
-	<rect id="connector4terminal" x="21.96" y="7.56" fill="none" width="0.001" height="0"/>
-	<text transform="matrix(1 0 0 1 17.0095 6.5107)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">5</text>
+	<polygon id="connector4terminal" fill="none" points="21.96,7.56 21.961,7.56 21.961,7.56 	"/>
+	<text transform="matrix(1 0 0 1 17.009 6.5107)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">5</text>
 	<line id="connector1pin" fill="none" x1="0.36" y1="21.96" x2="7.56" y2="21.96"/>
-	<rect id="connector1terminal" x="0.36" y="21.96" fill="none" width="0" height="0"/>
+	<polygon id="connector1terminal" fill="none" points="0.36,21.96 0.36,21.96 0.36,21.96 	"/>
 	<line id="connector2pin" fill="none" x1="0.36" y1="21.96" x2="7.56" y2="21.96"/>
-	<rect id="connector2terminal" x="0.36" y="21.96" fill="none" width="0" height="0"/>
+	<polygon id="connector2terminal" fill="none" points="0.36,21.96 0.36,21.96 0.36,21.96 	"/>
 	<line id="connector3pin" fill="none" x1="0.36" y1="21.96" x2="7.56" y2="21.96"/>
-	<rect id="connector3terminal" x="0.36" y="21.96" fill="none" width="0" height="0"/>
+	<polygon id="connector3terminal" fill="none" points="0.36,21.96 0.36,21.96 0.36,21.96 	"/>
 </g>
 </svg>

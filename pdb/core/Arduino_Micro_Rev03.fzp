@@ -23,7 +23,7 @@ The Micro is similar to the Arduino Leonardo in that the ATmega32u4 has built-in
 <views>
 <breadboardView>
 <layers image='breadboard/Arduino_Micro_Rev03_breadboard.svg'>
-<layer layerId='breadboard'/>
+<layer layerId='breadboardbreadboard'/>
 </layers>
 </breadboardView>
 <schematicView>

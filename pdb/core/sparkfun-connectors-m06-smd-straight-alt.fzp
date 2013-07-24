@@ -29,7 +29,7 @@ will be further integrated into the Sparkfun Library for other footprints.  It c
 </properties>
 <views>
 <breadboardView>
-<layers image='breadboard/sparkfun-connectors_1x06_smd_straight_alt_breadboard.svg'>
+<layers image='breadboard/generic_female_pin_header_6_100mil_bread.svg'>
 <layer layerId='breadboard'/>
 </layers>
 </breadboardView>

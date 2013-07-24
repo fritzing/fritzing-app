@@ -20,7 +20,7 @@ Standard 1-pin 0.1 header. Use with straight break away headers (SKU : PRT-00116
 </properties>
 <views>
 <breadboardView>
-<layers image='breadboard/sparkfun-connectors_1x01_offset_breadboard.svg'>
+<layers image='breadboard/generic_female_pin_header_1_100mil_bread.svg'>
 <layer layerId='breadboard'/>
 </layers>
 </breadboardView>

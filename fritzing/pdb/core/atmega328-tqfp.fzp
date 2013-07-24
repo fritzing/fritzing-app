@@ -1,23 +1,26 @@
-<?xml version="1.0" encoding="UTF-8"?><module fritzingVersion="0.7.2b" moduleId="SparkFun-DigitalIC-ATMEGA168-">
-<!-- generated from Sparkfun Eagle Library 'SparkFun-DigitalIC' ATMEGA168  -->
-<version>4</version>
-<date>2013-02-13</date>
-<label>U</label>
-<author>www.fritzing.org</author>
-<description>Atmel 32-pin 8-bit micro, 16k flash.</description>
-<title>ATMEGA168</title>
-<tags>
-<tag>TQFP32-08</tag>
-<tag>ATMEGA168</tag>
-<tag>SMD</tag>
-</tags>
-<properties>
-<property name="package">tqfp</property>
+<?xml version="1.0" encoding="UTF-8"?>
+<module fritzingVersion="0.6.3b.08.16.5401" moduleId="atmega328-tqfp">
+    <version>4</version>
+    <author>fabian althaus</author>
+    <title>ATmega328</title>
+    <label>Atmega328</label>
+    <date>2023-06-24</date>
+    <tags>
+        <tag>AVR</tag>
+        <tag>ATmega</tag>
+        <tag>ATmega328</tag>
+        <tag>IC</tag>
+        <tag>TQFP</tag>
+        <tag>Microcontroller</tag>
+        <tag>Atmel</tag>
+        <tag>SMD</tag>
+    </tags>
+    <properties>
+	<property name="package">tqfp</property>
 <property name="family">Microcontroller</property>
-<property name="chip label">atmega168</property>
+<property name="chip label">atmega328</property>
 <property name="editable pin labels">false</property>
 <property name="variant">tqfp32 8mm</property>
-        <property name="part number"></property>
 </properties>
 <views>
 <breadboardView>
@@ -26,7 +29,7 @@
 </layers>
 </breadboardView>
 <schematicView>
-<layers image="schematic/sparkfun-digitalic_atmega168_schematic.svg">
+<layers image="schematic/sparkfun-digitalic_atmega328_schematic.svg">
 <layer layerId="schematic"/>
 </layers>
 </schematicView>
@@ -134,7 +137,7 @@
 <p layer="breadboard" svgId="connector20pin"/>
 </breadboardView>
 <schematicView>
-<p layer="schematic" svgId="connector4pin" terminalId="connector4terminal"/>
+<p layer="schematic" svgId="connector20pin" terminalId="connector4terminal"/>
 </schematicView>
 <pcbView>
 <p layer="copper1" svgId="connector20pad"/>

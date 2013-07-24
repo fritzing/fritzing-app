@@ -25,7 +25,7 @@
   </iconView>
   <breadboardView>
    <layers image="breadboard/raspberry_pi_rev2_breadboard.svg">
-    <layer layerId="breadboard"/>
+    <layer layerId="breadboardbreadboard"/>
    </layers>
   </breadboardView>
   <schematicView>

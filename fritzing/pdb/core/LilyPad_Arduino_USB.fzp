@@ -24,7 +24,7 @@ The LilyPad Arduino USB differs from previous LilyPad boards in that the ATmega3
 <views>
 <breadboardView>
 <layers image='breadboard/LilyPad_Arduino_USB_breadboard.svg'>
-<layer layerId='breadboard'/>
+<layer layerId='breadboardbreadboard'/>
 </layers>
 </breadboardView>
 <schematicView>

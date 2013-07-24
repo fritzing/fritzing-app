@@ -33,7 +33,7 @@ The Esplora has built-in USB communication; it can appear to a connected compute
  <views>
   <breadboardView>
    <layers image="breadboard/Arduino_Esplora_breadboard.svg">
-    <layer layerId="breadboard"/>
+    <layer layerId="breadboardbreadboard"/>
    </layers>
   </breadboardView>
   <schematicView>

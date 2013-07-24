@@ -261,7 +261,7 @@ DRC::~DRC(void)
     }
 }
 
-bool DRC::start(bool showOkMessage, double keepoutMils) {
+QStringList DRC::start(bool showOkMessage, double keepoutMils) {
 	QString message;
     QStringList messages;
     QList<CollidingThing *> collidingThings;
@@ -302,7 +302,7 @@ bool DRC::start(bool showOkMessage, double keepoutMils) {
         m_displayImage = NULL;
 	}
 
-    return result;
+    return messages;
 }
 
 bool DRC::startAux(QString & message, QStringList & messages, QList<CollidingThing *> & collidingThings, double keepoutMils) {

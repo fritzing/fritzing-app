@@ -12,10 +12,11 @@
 <tag>SMD</tag>
 </tags>
 <properties>
-<property name="package">SMD(tqfp32-8mm)</property>
+<property name="package">tqfp</property>
 <property name="family">Microcontroller</property>
 <property name="chip label">atmega168</property>
 <property name="editable pin labels">false</property>
+<property name="variant">tqfp32 8mm</property>
         <property name="part number"></property>
 </properties>
 <views>

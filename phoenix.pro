@@ -44,7 +44,13 @@ win32 {
 }
 macx {
         MOC_DIR = build/moc
-        CONFIG += x86_64 #x86 ppc
+	
+	# the CONFIG setting builds for all three Mac platforms
+	# comment out the platforms you do not use, for example
+	# CONFIG += x86_64 #x86 ppc
+	# will build for the Intel 64 platform only
+	
+        CONFIG += x86_64 x86 ppc
 	QMAKE_INFO_PLIST = FritzingInfo.plist
 	#DEFINES += QT_NO_DEBUG   		# uncomment this for xcode
         LIBS += /usr/lib/libz.dylib

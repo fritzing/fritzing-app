@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module fritzingVersion="0.5.2b.02.18.4756" moduleId="ti_launchpad-rev1.5">
-    <author>Sander Isendoorn</author>
+    <author>Fabian Althaus</author>
     <title>TI Launchpad MSP430G2</title>
     <label>Launchpad</label>
-    <date>2011-06-07</date>
+    <date>2013-07-25</date>
     <tags>
         <tag>launchpad</tag>
         <tag>msp430</tag>

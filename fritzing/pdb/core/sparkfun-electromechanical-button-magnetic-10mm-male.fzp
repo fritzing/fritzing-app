@@ -36,7 +36,7 @@
 </layers>
 </pcbView>
 <iconView>
-<layers image="breadboard/sparkfun-electromechanical_button-10mm_breadboard.svg">
+<layers image="breadboard/sparkfun-electromechanical_button-10mm_breadboard-male.svg">
 <layer layerId="icon"/>
 </layers>
 </iconView>

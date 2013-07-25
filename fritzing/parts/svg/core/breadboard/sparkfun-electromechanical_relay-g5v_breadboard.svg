@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="Ebene_1" xmlns:svg="http://www.w3.org/2000/svg"
+<svg version="1.2" baseProfile="tiny" id="Ebene_1" xmlns:svg="http://www.w3.org/2000/svg"
 	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="36.576px"
-	 height="34.209px" viewBox="0 0 36.576 34.209" enable-background="new 0 0 36.576 34.209" xml:space="preserve">
+	 height="34.917px" viewBox="0 0 36.576 34.917" xml:space="preserve">
 <g id="breadboard">
 	<g>
 		<g>
@@ -24,11 +23,10 @@
 			<g>
 				<path fill="#1A1A1A" d="M36.576,12.35c0,0.551-0.45,1-1,1H1c-0.55,0-1-0.449-1-1V1c0-0.553,0.45-1,1-1h34.576
 					c0.55,0,1,0.447,1,1V12.35z"/>
-				<path opacity="0.1" fill="#FFFFFF" enable-background="new    " d="M35.576,0.308H1c-0.55,0-1,0.447-1,1V1c0-0.553,0.45-1,1-1
-					h34.576V0.308z"/>
+				<path fill="#FFFFFF" fill-opacity="0.1" d="M35.576,0.308H1c-0.55,0-1,0.447-1,1V1c0-0.553,0.45-1,1-1h34.576V0.308z"/>
 			</g>
-			<path fill="#1A1A1A" d="M36.576,32.737c0,0.551-0.45,1-1,1H1c-0.55,0-1-0.449-1-1v-11.35c0-0.556,0.45-1,1-1h34.576
-				c0.55,0,1,0.444,1,1V32.737z"/>
+			<path fill="#1A1A1A" d="M36.576,32.737c0,0.551-0.45,1-1,1H1c-0.55,0-1-0.449-1-1v-11.35c0-0.557,0.45-1,1-1h34.576
+				c0.55,0,1,0.443,1,1V32.737z"/>
 			<path fill="#333333" d="M35.949,0H3.888v3.605c0,0.503-0.412,0.916-0.916,0.916H0v17.052c0,0.347,0.283,0.629,0.627,0.629h35.322
 				c0.345,0,0.627-0.282,0.627-0.629V0.627C36.576,0.283,36.294,0,35.949,0z"/>
 		</g>
@@ -36,18 +34,18 @@
 		<text transform="matrix(1 0 0 1 6.3496 5.6631)" fill="#808080" font-family="'DroidSans'" font-size="2.531">G5V-1</text>
 	</g>
 	<g>
-		<text transform="matrix(1 0 0 1 4.1851 17.8516)" fill="#808080" font-family="'DroidSans'" font-size="2.531">12VDC</text>
-		<text transform="matrix(1 0 0 1 4.1851 20.3516)" fill="#808080" font-family="'DroidSans'" font-size="2.531">MADE IN CHINA</text>
+		<text transform="matrix(1 0 0 1 4.1851 17.8525)" fill="#808080" font-family="'DroidSans'" font-size="2.531">12VDC</text>
+		<text transform="matrix(1 0 0 1 4.1851 20.3525)" fill="#808080" font-family="'DroidSans'" font-size="2.531">MADE IN CHINA</text>
 	</g>
 	<path fill="#B3B3B3" d="M2.622,18.604c0,0.504-0.412,0.916-0.916,0.916H1.704c-0.503,0-0.916-0.412-0.916-0.916V6.52
 		c0-0.503,0.412-0.916,0.916-0.916h0.002c0.503,0,0.916,0.412,0.916,0.916V18.604z"/>
-	<path opacity="0.1" fill="#FFFFFF" enable-background="new    " d="M3.888,0.313h32.061c0.345,0,0.627,0.283,0.627,0.627V0.627
+	<path fill="#FFFFFF" fill-opacity="0.1" d="M3.888,0.313h32.061c0.345,0,0.627,0.283,0.627,0.627V0.627
 		C36.576,0.283,36.294,0,35.949,0H3.888V0.313z"/>
-	<path opacity="0.1" fill="#FFFFFF" enable-background="new    " d="M0,4.834h2.972c0.504,0,0.916-0.413,0.916-0.916V3.605
-		c0,0.503-0.412,0.916-0.916,0.916H0V4.834z"/>
-	<path opacity="0.7" enable-background="new    " d="M0,32.417c0,0.551,0.45,1,1,1h34.576c0.55,0,1-0.449,1-1v0.32
-		c0,0.551-0.45,1-1,1H1c-0.55,0-1-0.449-1-1V32.417z"/>
-	<path opacity="0.1" enable-background="new    " d="M36.576,21.253c0,0.348-0.282,0.629-0.627,0.629H0.627
-		C0.283,21.882,0,21.601,0,21.253v0.32c0,0.347,0.283,0.629,0.627,0.629h35.322c0.345,0,0.627-0.282,0.627-0.629V21.253z"/>
+	<path fill="#FFFFFF" fill-opacity="0.1" d="M0,4.834h2.972c0.504,0,0.916-0.413,0.916-0.916V3.605c0,0.503-0.412,0.916-0.916,0.916
+		H0V4.834z"/>
+	<path fill-opacity="0.7" d="M0,32.417c0,0.551,0.45,1,1,1h34.576c0.55,0,1-0.449,1-1v0.32c0,0.551-0.45,1-1,1H1
+		c-0.55,0-1-0.449-1-1V32.417z"/>
+	<path fill-opacity="0.1" d="M36.576,21.253c0,0.348-0.282,0.629-0.627,0.629H0.627C0.283,21.882,0,21.601,0,21.253v0.32
+		c0,0.347,0.283,0.629,0.627,0.629h35.322c0.345,0,0.627-0.282,0.627-0.629V21.253z"/>
 </g>
 </svg>

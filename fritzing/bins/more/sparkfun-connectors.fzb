@@ -587,5 +587,51 @@
 </iconView>
 </views>
 </instance>
+<instance moduleIdRef='SparkFun-Sensors-CAMERA_CMOS_CON-SMD' modelIndex='100'>
+<views>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
+</iconView>
+</views>
+</instance>
+<instance moduleIdRef='SparkFun-Sensors-CAMERA_CMOS_CON-PLUG' modelIndex='100'>
+<views>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
+</iconView>
+</views>
+</instance>
+<instance moduleIdRef='SparkFun-Displays-LCD-G12864-BARE' modelIndex='100'>
+<views>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
+</iconView>
+</views>
+</instance>
+<instance moduleIdRef='SparkFun-RF-GM862-GM862_CONNECTOR' modelIndex='100'>
+<views>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
+</iconView>
+</views>
+</instance>
+<instance moduleIdRef='SparkFun-Electromechanical-BUTTON-MAGNETIC-10MM-female' modelIndex='100'>
+<views>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
+</iconView>
+</views>
+</instance>
+
+<instance moduleIdRef='SparkFun-Electromechanical-BUTTON-MAGNETIC-10MM-male' modelIndex='100'>
+<views>
+<iconView layer='icon'>
+<geometry z='-1' x='-1' y='-1'></geometry>
+</iconView>
+</views>
+</instance>
+
+
+
 </instances>
 </module>

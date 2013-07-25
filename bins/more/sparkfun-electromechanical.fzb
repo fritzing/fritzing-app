@@ -37,13 +37,7 @@
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-Electromechanical-BUTTON-MAGNETIC-18MM' modelIndex='5'>
-<views>
-<iconView layer='icon'>
-<geometry z='-1' x='-1' y='-1'></geometry>
-</iconView>
-</views>
-</instance>
+
 <instance moduleIdRef='SparkFun-Electromechanical-BUTTONPAD-2X2--SPECIAL' modelIndex='6'>
 <views>
 <iconView layer='icon'>
@@ -303,13 +297,8 @@
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-Electromechanical-TURRET-1520-PTH' modelIndex='43'>
-<views>
-<iconView layer='icon'>
-<geometry z='-1' x='-1' y='-1'></geometry>
-</iconView>
-</views>
-</instance>
+
+
 <instance moduleIdRef='SparkFun-Electromechanical-SWITCH-MOMENTARY-2-PTH_REED2' modelIndex='44'>
 <views>
 <iconView layer='icon'>

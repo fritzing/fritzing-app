@@ -4,64 +4,100 @@
 	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="58.527px"
 	 height="15.023px" viewBox="0 0 58.527 15.023" xml:space="preserve">
 <g id="breadboard">
-	<rect id="connector12pin" x="45.846" y="9.354" fill="#CCCCCC" width="2.834" height="5.669"/>
-	<rect id="connector8pin" x="31.446" y="9.354" fill="#CCCCCC" width="2.835" height="5.669"/>
-	<rect id="connector4pin" x="17.047" y="9.354" fill="#CCCCCC" width="2.834" height="5.669"/>
-	<rect id="connector15pin" x="53.046" fill="#CCCCCC" width="2.835" height="5.669"/>
-	<rect id="connector11pin" x="38.646" fill="#CCCCCC" width="2.835" height="5.669"/>
-	<rect id="connector7pin" x="24.246" fill="#CCCCCC" width="2.835" height="5.669"/>
-	<rect id="connector2pin" x="9.846" fill="#CCCCCC" width="2.834" height="5.669"/>
-	<rect id="connector1pin" x="2.646" fill="#CCCCCC" width="2.835" height="5.669"/>
-	<rect id="connector3pin" x="9.846" y="9.354" fill="#CCCCCC" width="2.834" height="5.669"/>
-	<rect id="connector5pin" x="17.047" fill="#CCCCCC" width="2.834" height="5.669"/>
-	<rect id="connector6pin" x="24.246" y="9.354" fill="#CCCCCC" width="2.835" height="5.669"/>
-	<rect id="connector9pin" x="31.446" fill="#CCCCCC" width="2.835" height="5.669"/>
-	<rect id="connector10pin" x="38.646" y="9.354" fill="#CCCCCC" width="2.835" height="5.669"/>
-	<rect id="connector13pin" x="45.846" fill="#CCCCCC" width="2.834" height="5.669"/>
-	<rect id="connector14pin" x="53.046" y="9.354" fill="#CCCCCC" width="2.835" height="5.669"/>
-	<rect id="connector0pin" x="2.646" y="9.354" fill="#CCCCCC" width="2.835" height="5.669"/>
-</g>
-<g>
-	<rect x="0.464" y="3.904" fill="#404040" width="57.6" height="7.199"/>
-	<rect x="2.674" y="6.113" width="2.781" height="2.781"/>
-	<polygon fill="#2A2A29" points="1.648,5.088 2.672,6.113 5.455,6.113 6.48,5.088 	"/>
-	<polygon fill="#474747" points="6.48,5.088 5.455,6.116 5.455,8.896 6.48,9.92 	"/>
-	<polygon fill="#595959" points="6.479,9.92 5.454,8.896 2.672,8.896 1.648,9.92 	"/>
-	<polygon fill="#373737" points="1.646,9.92 2.672,8.895 2.672,6.113 1.646,5.088 	"/>
-	<rect x="9.874" y="6.113" width="2.78" height="2.781"/>
-	<polygon fill="#2A2A29" points="8.847,5.088 9.872,6.113 12.655,6.113 13.68,5.088 	"/>
-	<polygon fill="#474747" points="13.68,5.088 12.655,6.116 12.655,8.896 13.68,9.92 	"/>
-	<polygon fill="#595959" points="13.678,9.92 12.654,8.896 9.872,8.896 8.847,9.92 	"/>
-	<polygon fill="#373737" points="8.845,9.92 9.872,8.895 9.872,6.113 8.845,5.088 	"/>
-	<rect x="17.074" y="6.113" width="2.781" height="2.781"/>
-	<polygon fill="#2A2A29" points="16.048,5.088 17.072,6.113 19.855,6.113 20.88,5.088 	"/>
-	<polygon fill="#474747" points="20.88,5.088 19.855,6.116 19.855,8.896 20.88,9.92 	"/>
-	<polygon fill="#595959" points="20.879,9.92 19.854,8.896 17.072,8.896 16.048,9.92 	"/>
-	<polygon fill="#373737" points="16.046,9.92 17.072,8.895 17.072,6.113 16.046,5.088 	"/>
-	<rect x="24.274" y="6.113" width="2.781" height="2.781"/>
-	<polygon fill="#2A2A29" points="23.248,5.088 24.272,6.113 27.055,6.113 28.08,5.088 	"/>
-	<polygon fill="#474747" points="28.08,5.088 27.055,6.116 27.055,8.896 28.08,9.92 	"/>
-	<polygon fill="#595959" points="28.079,9.92 27.053,8.896 24.272,8.896 23.248,9.92 	"/>
-	<polygon fill="#373737" points="23.246,9.92 24.272,8.895 24.272,6.113 23.246,5.088 	"/>
-	<rect x="31.473" y="6.113" width="2.781" height="2.781"/>
-	<polygon fill="#2A2A29" points="30.448,5.088 31.471,6.113 34.255,6.113 35.28,5.088 	"/>
-	<polygon fill="#474747" points="35.28,5.088 34.255,6.116 34.255,8.896 35.28,9.92 	"/>
-	<polygon fill="#595959" points="35.279,9.92 34.254,8.896 31.471,8.896 30.448,9.92 	"/>
-	<polygon fill="#373737" points="30.446,9.92 31.471,8.895 31.471,6.113 30.446,5.088 	"/>
-	<rect x="38.674" y="6.113" width="2.781" height="2.781"/>
-	<polygon fill="#2A2A29" points="37.648,5.088 38.672,6.113 41.455,6.113 42.48,5.088 	"/>
-	<polygon fill="#474747" points="42.48,5.088 41.455,6.116 41.455,8.896 42.48,9.92 	"/>
-	<polygon fill="#595959" points="42.479,9.92 41.454,8.896 38.672,8.896 37.648,9.92 	"/>
-	<polygon fill="#373737" points="37.646,9.92 38.672,8.895 38.672,6.113 37.646,5.088 	"/>
-	<rect x="45.874" y="6.113" width="2.78" height="2.781"/>
-	<polygon fill="#2A2A29" points="44.847,5.088 45.872,6.113 48.655,6.113 49.68,5.088 	"/>
-	<polygon fill="#474747" points="49.68,5.088 48.655,6.116 48.655,8.896 49.68,9.92 	"/>
-	<polygon fill="#595959" points="49.678,9.92 48.654,8.896 45.872,8.896 44.847,9.92 	"/>
-	<polygon fill="#373737" points="44.845,9.92 45.872,8.895 45.872,6.113 44.845,5.088 	"/>
-	<rect x="53.074" y="6.113" width="2.781" height="2.781"/>
-	<polygon fill="#2A2A29" points="52.048,5.088 53.072,6.113 55.855,6.113 56.88,5.088 	"/>
-	<polygon fill="#474747" points="56.88,5.088 55.855,6.116 55.855,8.896 56.88,9.92 	"/>
-	<polygon fill="#595959" points="56.879,9.92 55.854,8.896 53.072,8.896 52.048,9.92 	"/>
-	<polygon fill="#373737" points="52.046,9.92 53.072,8.895 53.072,6.113 52.046,5.088 	"/>
+	<g>
+		<g>
+			<rect x="53.048" y="0" fill="#CCCCCC" width="2.809" height="6.113"/>
+		</g>
+		<g>
+			<rect x="45.847" y="0" fill="#CCCCCC" width="2.809" height="6.113"/>
+		</g>
+		<g>
+			<rect x="38.647" y="0" fill="#CCCCCC" width="2.809" height="6.113"/>
+		</g>
+		<g>
+			<rect x="31.447" y="0" fill="#CCCCCC" width="2.809" height="6.113"/>
+		</g>
+		<g>
+			<rect x="24.247" y="0" fill="#CCCCCC" width="2.809" height="6.113"/>
+		</g>
+		<g>
+			<rect x="17.047" y="0" fill="#CCCCCC" width="2.809" height="6.113"/>
+		</g>
+		<g>
+			<rect x="9.846" y="0" fill="#CCCCCC" width="2.809" height="6.113"/>
+		</g>
+		<g>
+			<rect x="2.646" y="0" fill="#CCCCCC" width="2.809" height="6.113"/>
+		</g>
+	</g>
+	<g>
+		<g>
+			<rect x="53.048" y="8.894" fill="#CCCCCC" width="2.809" height="6.113"/>
+		</g>
+		<g>
+			<rect x="45.847" y="8.894" fill="#CCCCCC" width="2.809" height="6.113"/>
+		</g>
+		<g>
+			<rect x="38.647" y="8.894" fill="#CCCCCC" width="2.809" height="6.113"/>
+		</g>
+		<g>
+			<rect x="31.447" y="8.894" fill="#CCCCCC" width="2.809" height="6.113"/>
+		</g>
+		<g>
+			<rect x="24.247" y="8.894" fill="#CCCCCC" width="2.809" height="6.113"/>
+		</g>
+		<g>
+			<rect x="17.047" y="8.894" fill="#CCCCCC" width="2.809" height="6.113"/>
+		</g>
+		<g>
+			<rect x="9.846" y="8.894" fill="#CCCCCC" width="2.809" height="6.113"/>
+		</g>
+		<g>
+			<rect x="2.646" y="8.894" fill="#CCCCCC" width="2.809" height="6.113"/>
+		</g>
+	</g>
+	<g>
+		<rect x="0.464" y="3.904" fill="#404040" width="57.601" height="7.199"/>
+		<rect x="2.674" y="6.113" width="2.781" height="2.781"/>
+		<polygon fill="#2A2A29" points="1.648,5.088 2.672,6.113 5.455,6.113 6.48,5.088 		"/>
+		<polygon fill="#474747" points="6.48,5.088 5.455,6.116 5.455,8.896 6.48,9.92 		"/>
+		<polygon fill="#595959" points="6.479,9.92 5.454,8.896 2.672,8.896 1.648,9.92 		"/>
+		<polygon fill="#373737" points="1.646,9.92 2.672,8.895 2.672,6.113 1.646,5.088 		"/>
+		<rect x="9.874" y="6.113" width="2.78" height="2.781"/>
+		<polygon fill="#2A2A29" points="8.847,5.088 9.872,6.113 12.655,6.113 13.68,5.088 		"/>
+		<polygon fill="#474747" points="13.68,5.088 12.655,6.116 12.655,8.896 13.68,9.92 		"/>
+		<polygon fill="#595959" points="13.678,9.92 12.654,8.896 9.872,8.896 8.847,9.92 		"/>
+		<polygon fill="#373737" points="8.845,9.92 9.872,8.895 9.872,6.113 8.845,5.088 		"/>
+		<rect x="17.074" y="6.113" width="2.781" height="2.781"/>
+		<polygon fill="#2A2A29" points="16.048,5.088 17.072,6.113 19.855,6.113 20.88,5.088 		"/>
+		<polygon fill="#474747" points="20.88,5.088 19.855,6.116 19.855,8.896 20.88,9.92 		"/>
+		<polygon fill="#595959" points="20.879,9.92 19.854,8.896 17.072,8.896 16.048,9.92 		"/>
+		<polygon fill="#373737" points="16.046,9.92 17.072,8.895 17.072,6.113 16.046,5.088 		"/>
+		<rect x="24.274" y="6.113" width="2.781" height="2.781"/>
+		<polygon fill="#2A2A29" points="23.248,5.088 24.272,6.113 27.055,6.113 28.08,5.088 		"/>
+		<polygon fill="#474747" points="28.08,5.088 27.055,6.116 27.055,8.896 28.08,9.92 		"/>
+		<polygon fill="#595959" points="28.079,9.92 27.053,8.896 24.272,8.896 23.248,9.92 		"/>
+		<polygon fill="#373737" points="23.246,9.92 24.272,8.895 24.272,6.113 23.246,5.088 		"/>
+		<rect x="31.473" y="6.113" width="2.78" height="2.781"/>
+		<polygon fill="#2A2A29" points="30.448,5.088 31.471,6.113 34.255,6.113 35.28,5.088 		"/>
+		<polygon fill="#474747" points="35.28,5.088 34.255,6.116 34.255,8.896 35.28,9.92 		"/>
+		<polygon fill="#595959" points="35.279,9.92 34.254,8.896 31.471,8.896 30.448,9.92 		"/>
+		<polygon fill="#373737" points="30.446,9.92 31.471,8.895 31.471,6.113 30.446,5.088 		"/>
+		<rect x="38.674" y="6.113" width="2.781" height="2.781"/>
+		<polygon fill="#2A2A29" points="37.648,5.088 38.672,6.113 41.455,6.113 42.48,5.088 		"/>
+		<polygon fill="#474747" points="42.48,5.088 41.455,6.116 41.455,8.896 42.48,9.92 		"/>
+		<polygon fill="#595959" points="42.479,9.92 41.454,8.896 38.672,8.896 37.648,9.92 		"/>
+		<polygon fill="#373737" points="37.646,9.92 38.672,8.895 38.672,6.113 37.646,5.088 		"/>
+		<rect x="45.874" y="6.113" width="2.78" height="2.781"/>
+		<polygon fill="#2A2A29" points="44.847,5.088 45.872,6.113 48.655,6.113 49.68,5.088 		"/>
+		<polygon fill="#474747" points="49.68,5.088 48.655,6.116 48.655,8.896 49.68,9.92 		"/>
+		<polygon fill="#595959" points="49.678,9.92 48.654,8.896 45.872,8.896 44.847,9.92 		"/>
+		<polygon fill="#373737" points="44.845,9.92 45.872,8.895 45.872,6.113 44.845,5.088 		"/>
+		<rect x="53.074" y="6.113" width="2.781" height="2.781"/>
+		<polygon fill="#2A2A29" points="52.048,5.088 53.072,6.113 55.855,6.113 56.88,5.088 		"/>
+		<polygon fill="#474747" points="56.88,5.088 55.855,6.116 55.855,8.896 56.88,9.92 		"/>
+		<polygon fill="#595959" points="56.879,9.92 55.854,8.896 53.072,8.896 52.048,9.92 		"/>
+		<polygon fill="#373737" points="52.046,9.92 53.072,8.895 53.072,6.113 52.046,5.088 		"/>
+	</g>
 </g>
 </svg>

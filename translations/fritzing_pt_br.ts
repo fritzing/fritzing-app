@@ -5775,10 +5775,6 @@ is already there, we won&apos;t add it again, right?</source>
         <translation>Texto</translation>
     </message>
     <message>
-        <source>Panelizer finished: %1 panel(s), with %2 additional copy(ies) for each panel</source>
-        <translation>Criador de painéis terminou: %1 painél(is), com %2 cópia(s) adicionais para cada painél</translation>
-    </message>
-    <message>
         <source>%1 layer export is empty (case 2).</source>
         <translation>exportação da camada %1 está vazia (2º caso).</translation>
     </message>

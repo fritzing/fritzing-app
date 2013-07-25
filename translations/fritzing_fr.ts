@@ -5674,10 +5674,6 @@ is already there, we won&apos;t add it again, right?</source>
         <translation>Paramètres de description des connecteurs</translation>
     </message>
     <message>
-        <source>Panelizer finished: %1 panel(s), with %2 additional copy(ies) for each panel</source>
-        <translation>Panelisation terminéi: %1 panneau(s), avec %2 copie supplémentaire(s) pour chaque panneau</translation>
-    </message>
-    <message>
         <source>Clear Settings</source>
         <translation>Réinitialiser les paramètres</translation>
     </message>

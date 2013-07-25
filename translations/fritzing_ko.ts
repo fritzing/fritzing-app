@@ -1729,14 +1729,14 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3101"/>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3130"/>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3135"/>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3616"/>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3739"/>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3959"/>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3964"/>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4091"/>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4096"/>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4108"/>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4113"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3636"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3759"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3983"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3989"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4115"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4120"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4132"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4137"/>
         <source>Fritzing</source>
         <translation>Fritzing</translation>
     </message>
@@ -1816,7 +1816,7 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="2014"/>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3677"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3697"/>
         <source>Sorry!</source>
         <translation>죄송합니다!</translation>
     </message>
@@ -1965,7 +1965,7 @@ We&apos;re working to avoid this message, and only let you choose between proper
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="188"/>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="265"/>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3778"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3798"/>
         <source>Cancel</source>
         <translation>취소</translation>
     </message>
@@ -3554,84 +3554,84 @@ Would you like to convert &apos;%1&apos; to the .fzz format now or open it read-
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3779"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3799"/>
         <source>OK</source>
         <translation type="unfinished">확인</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3801"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3821"/>
         <source>Set the grid size for %1.</source>
         <translation type="unfinished"> %1의 그리드 사이즈 설정.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3808"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3828"/>
         <source>Grid Size:</source>
         <translation type="unfinished">그리드 사이즈:</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3822"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3842"/>
         <source>in</source>
         <translation type="unfinished">in</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3825"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3845"/>
         <source>mm</source>
         <translation type="unfinished">mm</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3834"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3854"/>
         <source>Restore Default</source>
         <translation type="unfinished">기본값 복원</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3960"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3981"/>
         <source>Your sketch does not have a board yet! DRC only works with a PCB.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3965"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3987"/>
         <source>Please select a PCB. DRC only works on one board at a time.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3973"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3997"/>
         <source>DRC Progress...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4092"/>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4109"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4116"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4133"/>
         <source>Your sketch does not have a board yet! Please add a PCB in order to use copper fill operations.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4097"/>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4114"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4121"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4138"/>
         <source>Please select a PCB. Copper fill operations only work on one board at a time.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4181"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4205"/>
         <source>%1 background Color</source>
         <translation type="unfinished">%1 배경색</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4214"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4238"/>
         <source>Enter Text</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4215"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4239"/>
         <source>Text will match part label, description, title, etc. Enter text to search for:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4253"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4277"/>
         <source>Search</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4253"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4277"/>
         <source>No parts matched search term &apos;%1&apos;.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3995,43 +3995,43 @@ Go ahead and revert?</source>
         <translation>&amp;와이어 색상</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3535"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3555"/>
         <source>Launch %1...</source>
         <translation>%1 실행...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3616"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3636"/>
         <source>No outdated parts found.
 All your parts are up-to-date.</source>
         <translation>오래된 부품을 찾을 수 없습니다.
 모든 부품은 최신입니다.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3621"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3641"/>
         <source>Outdated parts</source>
         <translation>오랜된 부품</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3622"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3642"/>
         <source>Found %n outdated parts. Do you want to update them now?</source>
         <translation>
             <numerusform>%n 오래된 부품 발견. 지금 업데이트를 할까요?</numerusform>
         </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3678"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3698"/>
         <source>unable to find replacement for %1.
 </source>
         <translation>%1을 대체할 것을 찾지 못했습니다.
 </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3734"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3754"/>
         <source>Update %1 part(s)</source>
         <translation>%1 부품 업데이트</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3739"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3759"/>
         <source>Successfully updated %1 part(s).
 Please check all views for potential side-effects.</source>
         <translation>성공적으로 %1 부품이 업데이트
@@ -6308,9 +6308,9 @@ shift 키 스크롤축을 변경</translation>
         <location filename="../src/autoroute/mazerouter/mazerouter.cpp" line="622"/>
         <location filename="../src/autoroute/mazerouter/mazerouter.cpp" line="665"/>
         <location filename="../src/autoroute/mazerouter/mazerouter.cpp" line="734"/>
-        <location filename="../src/autoroute/panelizer.cpp" line="480"/>
-        <location filename="../src/autoroute/panelizer.cpp" line="1361"/>
-        <location filename="../src/autoroute/panelizer.cpp" line="1378"/>
+        <location filename="../src/autoroute/panelizer.cpp" line="483"/>
+        <location filename="../src/autoroute/panelizer.cpp" line="1362"/>
+        <location filename="../src/autoroute/panelizer.cpp" line="1380"/>
         <location filename="../src/fapplication.cpp" line="925"/>
         <location filename="../src/mainwindow/fritzingwindow.cpp" line="50"/>
         <location filename="../src/mainwindow/fritzingwindow.cpp" line="143"/>
@@ -6430,7 +6430,7 @@ shift 키 스크롤축을 변경</translation>
         <translation>와이어</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3771"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3791"/>
         <source>Set Grid Size</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7222,17 +7222,12 @@ Fritzing은 여전히 ​​작동하지만 부품 속성을 변경할 수 없�
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/autoroute/panelizer.cpp" line="481"/>
-        <source>Panelizer finished: %1 panel(s), with %2 additional copy(ies) for each panel</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/autoroute/panelizer.cpp" line="1361"/>
+        <location filename="../src/autoroute/panelizer.cpp" line="1362"/>
         <source>unable to copy file &apos;%1&apos; to &apos;%2&apos;.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/autoroute/panelizer.cpp" line="1378"/>
+        <location filename="../src/autoroute/panelizer.cpp" line="1379"/>
         <location filename="../src/fapplication.cpp" line="925"/>
         <source>%1 wires moved from their saved position in %2.</source>
         <translation type="unfinished"></translation>

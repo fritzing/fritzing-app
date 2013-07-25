@@ -5,7 +5,7 @@ def usage():
         print """
 usage:
     unusedsvgs.py -f [fzp folder] -s [svg folder]
-    adds a copper1 layer if there isn't one found already.
+    lists orphan svgs
 """
     
         

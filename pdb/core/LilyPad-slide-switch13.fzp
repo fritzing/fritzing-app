@@ -26,7 +26,7 @@ Thin 0.8mm PCB</description>
 <views>
 <breadboardView>
 <layers image='breadboard/LilyPad-slide-switch13_breadboard.svg'>
-<layer layerId='breadboard'/>
+<layer layerId='breadboardbreadboard'/>
 </layers>
 </breadboardView>
 <schematicView>

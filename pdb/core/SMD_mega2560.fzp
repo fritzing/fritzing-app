@@ -18,7 +18,9 @@
 	<property name="version">Atmega2560</property>
 	<property name="family">Microcontroller</property>
 	<property name="type">Atmel AVR</property>
-	<property name="package">SMD</property>
+	<property name="package">tqfp</property>
+	<property name="variant">tqfp100 8mm</property>
+	
 </properties>
 
 <views>

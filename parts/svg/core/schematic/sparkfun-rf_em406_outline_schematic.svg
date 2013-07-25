@@ -1,16 +1,18 @@
-<?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<!-- Created with Fritzing (http://www.fritzing.org/) -->
-<svg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' version='1.2' baseProfile='tiny' x='0in' y='0in' width='0.999882in' height='0.429331in' viewBox='0 0 25.397 10.905' >
-<g id='schematic'>
-<rect class='interior rect' x='0.127' y='5.698' width='10.16' height='5.08' stroke='none' stroke-width='0' fill='#ffffff' />
-<text class='text' id='label' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#000000' font-size='1.49931' x='5.207' y='6.63869' text-anchor='middle'>EM406</text>
-<rect class='interior rect' x='0.127' y='5.698' width='10.16' height='5.08' stroke='none' stroke-width='0' fill='#ffffff' />
-<text class='text' id='label' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#000000' font-size='1.49931' x='5.207' y='6.63869' text-anchor='middle'>EM406</text>
-<text class='text' id='label' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#000000' font-size='1.49931' x='5.207' y='8.238' text-anchor='middle'>OUTLINE</text>
-<line class='other' x1='0.127' y1='10.778' x2='0.127' y2='5.698' stroke='#000000' stroke-width='0.3175' stroke-linecap='round'/>
-<line class='other' x1='0.127' y1='5.698' x2='10.287' y2='5.698' stroke='#000000' stroke-width='0.3175' stroke-linecap='round'/>
-<line class='other' x1='10.287' y1='5.698' x2='10.287' y2='10.778' stroke='#000000' stroke-width='0.3175' stroke-linecap='round'/>
-<line class='other' x1='10.287' y1='10.778' x2='0.127' y2='10.778' stroke='#000000' stroke-width='0.3175' stroke-linecap='round'/>
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#505050' font-size='2.3114' x='1.397' y='9' text-anchor='start'>EM406</text>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="29.663px"
+	 height="15.456px" viewBox="0 0 29.663 15.456" enable-background="new 0 0 29.663 15.456" xml:space="preserve">
+<g id="schematic">
+	<rect x="0.36" y="0.569" fill="#FFFFFF" width="28.8" height="14.399"/>
+	<rect x="0.36" y="0.569" fill="#FFFFFF" width="28.8" height="14.399"/>
+	<line fill="none" stroke="#000000" stroke-width="0.9" stroke-linecap="round" x1="0.36" y1="14.968" x2="0.36" y2="0.569"/>
+	<line fill="none" stroke="#000000" stroke-width="0.9" stroke-linecap="round" x1="0.36" y1="0.569" x2="29.16" y2="0.569"/>
+	<line fill="none" stroke="#000000" stroke-width="0.9" stroke-linecap="round" x1="29.16" y1="0.569" x2="29.16" y2="14.968"/>
+	<line fill="none" stroke="#000000" stroke-width="0.9" stroke-linecap="round" x1="29.16" y1="14.968" x2="0.36" y2="14.968"/>
+	<g>
+		<text transform="matrix(1 0 0 1 3.9597 9.261)" font-family="'DroidSans'" font-size="4.25">EM406</text>
+	</g>
 </g>
 </svg>

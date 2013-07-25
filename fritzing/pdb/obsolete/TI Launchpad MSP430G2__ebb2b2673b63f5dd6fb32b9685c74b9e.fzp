@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module fritzingVersion="0.5.2b.02.18.4756" moduleId="ti_launchpad-rev1.5">
-    <author>Fabian Althaus</author>
+<module fritzingVersion="0.5.2b.02.18.4756" moduleId="8bb87b363eb8de621156a14fe615639f">
+    <author>Sander Isendoorn</author>
     <title>TI Launchpad MSP430G2</title>
     <label>Launchpad</label>
-    <date>2013-07-25</date>
+    <date>2011-06-07</date>
     <tags>
         <tag>launchpad</tag>
         <tag>msp430</tag>
@@ -11,36 +11,32 @@
         <tag>ti</tag>
     </tags>
     <properties>
-  <property name="family">microcontroller board (texas instruments)</property>
-  <property name="part number"></property>
-  <property name="categorie">LaunchPad</property>
-  <property name="type">MSP430 (rev1.5)</property>
-
+        <property name="family">MSP430</property>
     </properties>
     <description>The LaunchPad is an easy-to-use, affordable, and scalable introduction to the world of microcontrollers and the MSP430 family.
 
 See: http://e2e.ti.com/group/msp430launchpad/w/default.aspx</description>
     <views>
         <iconView>
-            <layers image="icon/TI_Launchpad_MSP430G2_icon.svg">
+            <layers image="icon/TI_Launchpad_MSP430G2__ebb2b2673b63f5dd6__icon__d5bd55db9735ae6f290efdcaf7dcbe5f.svg">
                 <layer layerId="breadboard"/>
                 <layer layerId="icon"/>
             </layers>
         </iconView>
         <breadboardView>
-            <layers image="breadboard/TI_Launchpad_MSP430G2_breadboard.svg">
+            <layers image="breadboard/TI_Launchpad_MSP430G2__ebb2b2673b63f5dd6__breadboard__98696ce55bfaf674ef9c24f01d976248.svg">
                 <layer layerId="breadboard"/>
             </layers>
         </breadboardView>
         <schematicView>
-            <layers image="schematic/TI_Launchpad_MSP430G2_schematic.svg">
+            <layers image="schematic/TI_Launchpad_MSP430G2__ebb2b2673b63f5dd6__schematic__757b16f66078595db54ede6cdf9a8d2a.svg">
                 <layer layerId="schematic"/>
             </layers>
         </schematicView>
         <pcbView>
-            <layers image="pcb/TI_Launchpad_MSP430G2_pcb.svg">
+            <layers image="pcb/TI_Launchpad_MSP430G2__ebb2b2673b63f5dd6__pcb__dc852d1a041bd74f567f3fc8d950cecd.svg">
                 <layer layerId="copper0"/>
-                <layer layerId='silkscreen'/>
+                <layer layerId="unknown"/>
                 <layer layerId="copper1"/>
             </layers>
         </pcbView>

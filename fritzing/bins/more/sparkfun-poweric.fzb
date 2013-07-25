@@ -282,13 +282,8 @@
 </iconView>
 </views>
 </instance>
-<instance moduleIdRef='SparkFun-PowerIC-STA540-6400BG_W_SOLDERPOSTS' modelIndex='40'>
-<views>
-<iconView layer='icon'>
-<geometry z='-1' x='-1' y='-1'></geometry>
-</iconView>
-</views>
-</instance>
+
+
 <instance moduleIdRef='SparkFun-PowerIC-V_REG_NCP50X-' modelIndex='41'>
 <views>
 <iconView layer='icon'>

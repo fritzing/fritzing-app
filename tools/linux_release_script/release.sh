@@ -1,7 +1,8 @@
 #!/bin/bash
 arch_aux=`uname -m`
 
- 
+current_dir=$(pwd)
+
 if [ "$1" = "" ]
 then
   echo "Usage: $0 <need a version string such as '0.6.4b' (without the quotes)>"

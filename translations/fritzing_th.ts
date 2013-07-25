@@ -5710,10 +5710,6 @@ Fritzing still works, but you won&apos;t be able to change parts properties.</so
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Panelizer finished: %1 panel(s), with %2 additional copy(ies) for each panel</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>%1 layer export is empty (case 2).</source>
         <translation type="unfinished"></translation>
     </message>

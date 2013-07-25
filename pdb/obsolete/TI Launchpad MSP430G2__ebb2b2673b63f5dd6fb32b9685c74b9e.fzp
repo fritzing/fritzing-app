@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module fritzingVersion="0.5.2b.02.18.4756" moduleId="8bb87b363eb8de621156a14fe615639f">
+ <version replacedby="ti_launchpad-rev1.5">4</version>
     <author>Sander Isendoorn</author>
     <title>TI Launchpad MSP430G2</title>
     <label>Launchpad</label>
@@ -11,7 +12,7 @@
         <tag>ti</tag>
     </tags>
     <properties>
-        <property name="family">MSP430</property>
+        <property name="family">/obsolet/MSP430</property>
     </properties>
     <description>The LaunchPad is an easy-to-use, affordable, and scalable introduction to the world of microcontrollers and the MSP430 family.
 

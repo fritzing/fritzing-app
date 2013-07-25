@@ -1,8 +1,11 @@
-<?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<!-- Created with Fritzing (http://www.fritzing.org/) -->
-<svg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' version='1.2' baseProfile='tiny' x='0in' y='0in' width='0.978622in' height='0.416417in' viewBox='0 0 24.857 10.577' >
-<g id='schematic'>
-<circle class='other' cx='5.207' cy='5.37' r='5.08' stroke='#000000' stroke-width='0.254' fill='none' />
-<text class='text' font-family='OCRA' stroke='none' stroke-width='0' fill='#505050' font-size='1.651' x='1.857' y='6' text-anchor='start'>MAGNET</text>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="29.625px"
+	 height="29.982px" viewBox="0 0 29.625 29.982" enable-background="new 0 0 29.625 29.982" xml:space="preserve">
+<g id="schematic">
+	<circle fill="#FFFFFF" stroke="#000000" stroke-width="0.9" cx="14.76" cy="15.222" r="14.4"/>
+	<text transform="matrix(1 0 0 1 5.2627 17.0056)" fill="#505050" font-family="'DroidSans'" font-size="4.68">MAGNET</text>
 </g>
 </svg>

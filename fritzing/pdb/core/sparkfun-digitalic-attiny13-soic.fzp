@@ -12,12 +12,11 @@
 <tag>ATTINY13</tag>
 </tags>
 <properties>
-<property name="package">so08</property>
+<property name="package">so</property>
 <property name="family">Microcontroller</property>
 <property name="editable pin labels">false</property>
 <property name="chip label">attiny13</property>
-
-<property name="variant">soic</property>
+<property name="variant">soic-08</property>
 </properties>
 <views>
 <breadboardView>

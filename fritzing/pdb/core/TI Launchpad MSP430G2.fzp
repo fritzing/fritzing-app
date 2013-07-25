@@ -28,7 +28,7 @@ See: http://e2e.ti.com/group/msp430launchpad/w/default.aspx</description>
             </layers>
         </iconView>
         <breadboardView>
-            <layers image="breadboard/TI_Launchpad_MSP430G2_breadboard.svg">
+            <layers image="breadboard/TI_Launchpad_MSP430G2.1_breadboard.svg">
                 <layer layerId="breadboard"/>
             </layers>
         </breadboardView>

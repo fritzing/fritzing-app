@@ -12,7 +12,7 @@
 				<tag>fritzing core</tag>
     </tags>
     <properties>
-        <property name="family">Potentiometer</property>
+        <property name="family">/obsolete/Potentiometer</property>
         <property name="track">Linear</property>
         <property name="type">Rotary Shaft Potentiometer</property>
         <property name="size">Rotary - 9mm</property>

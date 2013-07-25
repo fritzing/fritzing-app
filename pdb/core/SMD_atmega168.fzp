@@ -12,9 +12,11 @@
         <tag>smd</tag>
     </tags>
     <properties>
-        <property name="version">atmega168-20PU</property>
-        <property name="package">TQFP32 [SMD]</property>
-        <property name="family">Microcontroller (AVR)</property>
+	<property name="chip label">atmega168-20PU</property>
+        <property name="package">tqfp</property>
+        <property name="family">Microcontroller</property>
+		<property name="editable pin labels">false</property>
+		<property name="variant">tqfp32 8mm</property>
     </properties>
     <description>Atmel ATmega168 microcontroller.  The hardware hacker favorite.</description>
     <views>

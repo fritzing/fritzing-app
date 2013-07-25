@@ -13,7 +13,7 @@
     </tags>
     <properties>
         <property name="version">Atmega168-20PU</property>
-        <property name="family">Microcontroller</property>
+        <property name="family">/obsolte/Microcontroller</property>
 				<property name="type">Atmel AVR</property>
    		<property name="package">DIP28 [THT]</property></properties>
     <description>Atmel ATmega168 microcontroller.  The hardware hacker favorite.</description>

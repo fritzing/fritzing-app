@@ -5,11 +5,7 @@
 <author>althaus</author>
 <description>It&apos;s blue! It&apos;s thin! It&apos;s the Arduino Pro Mini! SparkFun&apos;s minimal design approach to Arduino. This is a 5V Arduino running the 16MHz bootloader. Arduino Pro Mini does not come with connectors populated so that you can solder in any connector or wire with any orientation you need. We recommend first time Arduino users start with the Uno R3. It&apos;s a great board that will get you up and running quickly. The Arduino Pro series is meant for users that understand the limitations of system voltage (5V), lack of connectors, and USB off board.
 
-
-
 We really wanted to minimize the cost of an Arduino. In order to accomplish this we used all SMD components, made it two layer, etc. This board connects directly to the FTDI Basic Breakout board and supports auto-reset. The Arduino Pro Mini also works with the FTDI cable but the FTDI cable does not bring out the DTR pin so the auto-reset feature will not work. There is a voltage regulator on board so it can accept voltage up to 12VDC. If you&apos;re supplying unregulated power to the board, be sure to connect to the &quot;RAW&quot; pin on not VCC.
-
-
 
 The latest and greatest version of this board breaks out the ADC6 and ADC7 pins as well as adds footprints for optional I2C pull-up resistors! We also took the opportunity to slap it with the OSHW logo.</description>
 <title>Arduino Pro Mini v13</title>
@@ -26,7 +22,7 @@ The latest and greatest version of this board breaks out the ADC6 and ADC7 pins 
 <views>
 <breadboardView>
 <layers image='breadboard/Arduino-Pro-Mini-v13_breadboard.svg'>
-<layer layerId='breadboard'/>
+<layer layerId='breadboardbreadboard'/>
 </layers>
 </breadboardView>
 <schematicView>

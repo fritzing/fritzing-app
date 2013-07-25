@@ -15,7 +15,7 @@
 <properties>
 <property name="package">Magnetic-snap</property>
 <property name="family">Button</property>
-<property name="variant">10mm female</property>
+<property name="variant">10mm  female</property>
 </properties>
 <views>
 <breadboardView>

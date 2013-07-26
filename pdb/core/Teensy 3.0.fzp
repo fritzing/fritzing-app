@@ -44,7 +44,7 @@ p, li { white-space: pre-wrap; }
   </pcbView>
  </views>
  <connectors>
-  <connector type="female" id="connector15" name="3V3">
+  <connector type="male" id="connector15" name="3V3">
    <description>3.3V Input</description>
    <views>
     <breadboardView>
@@ -59,7 +59,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" id="connector7" name="D6">
+  <connector type="male" id="connector7" name="D6">
    <description>Digital Inpout/Output and PWM</description>
    <views>
     <breadboardView>
@@ -74,7 +74,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" id="connector16" name="GND">
+  <connector type="male" id="connector16" name="GND">
    <description>Ground</description>
    <views>
     <breadboardView>
@@ -89,7 +89,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" id="connector8" name="D7">
+  <connector type="male" id="connector8" name="D7">
    <description>Digital Inpout/Output and RX3</description>
    <views>
     <breadboardView>
@@ -104,7 +104,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" id="connector17" name="Program">
+  <connector type="male" id="connector17" name="Program">
    <description>Program</description>
    <views>
     <breadboardView>
@@ -119,7 +119,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" id="connector9" name="D8">
+  <connector type="male" id="connector9" name="D8">
    <description>Digital Inpout/Output and TX3</description>
    <views>
     <breadboardView>
@@ -134,7 +134,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" id="connector18" name="Reset">
+  <connector type="male" id="connector18" name="Reset">
    <description>Reset</description>
    <views>
     <breadboardView>
@@ -149,7 +149,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" id="connector19" name="D13">
+  <connector type="male" id="connector19" name="D13">
    <description>Digital I/O</description>
    <views>
     <breadboardView>
@@ -164,7 +164,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" id="connector20" name="A0/D14">
+  <connector type="male" id="connector20" name="A0/D14">
    <description>Analog Input/Digital I/O</description>
    <views>
     <breadboardView>
@@ -179,7 +179,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" id="connector21" name="A1/D15">
+  <connector type="male" id="connector21" name="A1/D15">
    <description>Analog Input/Digital I/O</description>
    <views>
     <breadboardView>
@@ -194,7 +194,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" id="connector22" name="A2/D16">
+  <connector type="male" id="connector22" name="A2/D16">
    <description>Analog Input/Digital I/O</description>
    <views>
     <breadboardView>
@@ -209,7 +209,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" id="connector23" name="A3/D17">
+  <connector type="male" id="connector23" name="A3/D17">
    <description>Analog Input/Digital I/O</description>
    <views>
     <breadboardView>
@@ -224,7 +224,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" id="connector24" name="A4/D18">
+  <connector type="male" id="connector24" name="A4/D18">
    <description>Analog Input/Digital I/O - SDA</description>
    <views>
     <breadboardView>
@@ -239,7 +239,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" id="connector25" name="A5/D19">
+  <connector type="male" id="connector25" name="A5/D19">
    <description>Analog Input/Digital I/O - SCL</description>
    <views>
     <breadboardView>
@@ -254,7 +254,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" id="connector26" name="A6/D20">
+  <connector type="male" id="connector26" name="A6/D20">
    <description>Analog Input/Digital I/O, PWM</description>
    <views>
     <breadboardView>
@@ -269,7 +269,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" id="connector27" name="A7/D21">
+  <connector type="male" id="connector27" name="A7/D21">
    <description>Analog Input/Digital I/O, PWM</description>
    <views>
     <breadboardView>
@@ -284,7 +284,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" id="connector28" name="A8/D22">
+  <connector type="male" id="connector28" name="A8/D22">
    <description>Analog Input/Digital I/O, PWM</description>
    <views>
     <breadboardView>
@@ -299,7 +299,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" id="connector29" name="A9/D23">
+  <connector type="male" id="connector29" name="A9/D23">
    <description>Analog Input/Digital I/O, PWM</description>
    <views>
     <breadboardView>
@@ -314,7 +314,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" id="connector30" name="3V3">
+  <connector type="male" id="connector30" name="3V3">
    <description>+3.3V Input (100mA max)</description>
    <views>
     <breadboardView>
@@ -329,7 +329,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" id="connector0" name="GND">
+  <connector type="male" id="connector0" name="GND">
    <description>Ground</description>
    <views>
     <breadboardView>
@@ -344,7 +344,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" id="connector1" name="D0">
+  <connector type="male" id="connector1" name="D0">
    <description>Digital I/O and RX1</description>
    <views>
     <breadboardView>
@@ -359,7 +359,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" id="connector10" name="D9">
+  <connector type="male" id="connector10" name="D9">
    <description>Digital I/O, PWM and RX2</description>
    <views>
     <breadboardView>
@@ -374,7 +374,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" id="connector2" name="D1">
+  <connector type="male" id="connector2" name="D1">
    <description>Digital I/O and TX1</description>
    <views>
     <breadboardView>
@@ -389,7 +389,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" id="connector3" name="D2">
+  <connector type="male" id="connector3" name="D2">
    <description>Digital I/O</description>
    <views>
     <breadboardView>
@@ -404,7 +404,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" id="connector11" name="D10">
+  <connector type="male" id="connector11" name="D10">
    <description>Digital I/O, PWM and TX2</description>
    <views>
     <breadboardView>
@@ -419,7 +419,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" id="connector4" name="D3">
+  <connector type="male" id="connector4" name="D3">
    <description>Digital I/O and PWM</description>
    <views>
     <breadboardView>
@@ -434,7 +434,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" id="connector12" name="D11">
+  <connector type="male" id="connector12" name="D11">
    <description>Digital I/O</description>
    <views>
     <breadboardView>
@@ -449,7 +449,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" id="connector5" name="D4">
+  <connector type="male" id="connector5" name="D4">
    <description>Digital I/O and PWM</description>
    <views>
     <breadboardView>
@@ -464,7 +464,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" id="connector13" name="D12">
+  <connector type="male" id="connector13" name="D12">
    <description>Digital I/O</description>
    <views>
     <breadboardView>
@@ -479,7 +479,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" id="connector6" name="D5">
+  <connector type="male" id="connector6" name="D5">
    <description>Digital I/O and PWM</description>
    <views>
     <breadboardView>
@@ -494,7 +494,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" id="connector14" name="VBat">
+  <connector type="male" id="connector14" name="VBat">
    <description>Voltage Input, use 3V coin cell for real time clock</description>
    <views>
     <breadboardView>
@@ -509,7 +509,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" id="connector31" name="AGND">
+  <connector type="male" id="connector31" name="AGND">
    <description>Ground</description>
    <views>
     <breadboardView>
@@ -524,7 +524,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" id="connector32" name="Vin">
+  <connector type="male" id="connector32" name="Vin">
    <description>3.7V to 5.5V </description>
    <views>
     <breadboardView>
@@ -539,7 +539,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" id="connector33" name="A11">
+  <connector type="male" id="connector33" name="A11">
    <description>Analog Input</description>
    <views>
     <breadboardView>
@@ -554,7 +554,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" id="connector34" name="A10">
+  <connector type="male" id="connector34" name="A10">
    <description>Analog Input</description>
    <views>
     <breadboardView>
@@ -569,7 +569,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" id="connector35" name="AREF">
+  <connector type="male" id="connector35" name="AREF">
    <description>Aref</description>
    <views>
     <breadboardView>
@@ -584,7 +584,7 @@ p, li { white-space: pre-wrap; }
     </pcbView>
    </views>
   </connector>
-  <connector type="female" id="connector36" name="VUSB">
+  <connector type="male" id="connector36" name="VUSB">
    <description>VUSB</description>
    <views>
     <breadboardView>

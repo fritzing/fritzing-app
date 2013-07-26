@@ -670,4 +670,6 @@ ModelPart * PaletteModel::makeSubpart(ModelPart * originalModelPart, const QDomE
     return modelPart;
 }
 
-
+QList<ModelPart *> PaletteModel::allParts() {
+    return m_partHash.values();
+}

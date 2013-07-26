@@ -999,6 +999,10 @@ void BinManager::createCombinedMenu()
 	m_copyToSketchAction->setStatusTip(tr("Copy all the parts in the bin to a sketch"));
 	connect(m_copyToSketchAction, SIGNAL(triggered()),this, SLOT(copyToSketch()));
 
+	m_copyAllToSketchAction = new QAction(tr("Copy all to Sketch"), this);
+	m_copyAllToSketchAction->setStatusTip(tr("Copy all loaded parts to the sketch"));
+	connect(m_copyAllToSketchAction, SIGNAL(triggered()),this, SLOT(copyAllToSketch()));
+
 	m_showListViewAction = new QAction(tr("Show Bin in List View"), this);
 	m_showListViewAction->setCheckable(true);
 	m_showListViewAction->setStatusTip(tr("Display parts as a list"));
@@ -1021,6 +1025,7 @@ void BinManager::createCombinedMenu()
 	m_combinedMenu->addAction(m_renameBinAction);
 #ifndef QT_NO_DEBUG
 	m_combinedMenu->addAction(m_copyToSketchAction);
+	m_combinedMenu->addAction(m_copyAllToSketchAction);
 #endif
 	m_combinedMenu->addSeparator();
 	m_combinedMenu->addAction(m_showIconViewAction);
@@ -1346,6 +1351,14 @@ void BinManager::copyToSketch() {
 
     QList<ModelPart *> modelParts = bin->getAllParts();
     if (modelParts.count() == 0) return;
+
+    if (m_mainWindow) {
+        m_mainWindow->addToSketch(modelParts);
+    }
+}
+
+void BinManager::copyAllToSketch() {
+    QList<ModelPart *> modelParts;
 
     if (m_mainWindow) {
         m_mainWindow->addToSketch(modelParts);

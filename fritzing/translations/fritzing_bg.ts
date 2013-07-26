@@ -169,52 +169,57 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="169"/>
+        <location filename="../src/help/aboutbox.cpp" line="168"/>
+        <source>to Nikolay Stankov for the Bulgarian translation, </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/help/aboutbox.cpp" line="170"/>
         <source>and to Arthur Zanona, Nuno Pessanha Santos, Leandro Nunes, and Gabriel Ferreira for the Portuguese (Brazilian) translation. </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="173"/>
+        <location filename="../src/help/aboutbox.cpp" line="174"/>
         <source>Fritzing is made possible with funding from the </source>
         <translation>Създаването на &quot;Fritzing&quot; е осъществено с финансиране от: </translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="174"/>
+        <location filename="../src/help/aboutbox.cpp" line="175"/>
         <source>MWFK Brandenburg, the sponsorship of the Design </source>
         <translation>MWFK Brandenburg, спонсорството за дизайна</translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="175"/>
+        <location filename="../src/help/aboutbox.cpp" line="176"/>
         <source>Department of Bauhaus-University Weimar, </source>
         <translation>Департамента по Строителство към Университета във Weimar</translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="176"/>
+        <location filename="../src/help/aboutbox.cpp" line="177"/>
         <source>IxDS, an anonymous donor, Parallax, Picaxe, Sparkfun, </source>
         <translation>IxDS, анонимен дарител ,  Parallax, Picaxe, Sparkfun, </translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="177"/>
-        <source>and from each purchase of a Fritzing Starter Kit.</source>
-        <translation>и от всяка една покупка на  &quot;Fritzing&quot; комплект за начинаещи</translation>
+        <location filename="../src/help/aboutbox.cpp" line="178"/>
+        <source>and from each purchase of a Fritzing Starter Kit or a PCB from Fritzing Fab.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="181"/>
+        <location filename="../src/help/aboutbox.cpp" line="182"/>
         <source>Special thanks goes out as well to all the students </source>
         <translation>Със специални благодарности към всички студенти </translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="182"/>
+        <location filename="../src/help/aboutbox.cpp" line="183"/>
         <source>and alpha testers who were brave enough to give </source>
         <translation>и всички алфа тестери които бяха достатъчно смели да направят</translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="183"/>
+        <location filename="../src/help/aboutbox.cpp" line="184"/>
         <source>Fritzing a test spin. </source>
         <translation>пробно кръгче на &quot;Fritzing&quot;</translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="186"/>
+        <location filename="../src/help/aboutbox.cpp" line="187"/>
         <source>&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;</source>
         <translation>&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;</translation>
     </message>

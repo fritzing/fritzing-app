@@ -169,56 +169,61 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="169"/>
+        <location filename="../src/help/aboutbox.cpp" line="168"/>
+        <source>to Nikolay Stankov for the Bulgarian translation, </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/help/aboutbox.cpp" line="170"/>
         <source>and to Arthur Zanona, Nuno Pessanha Santos, Leandro Nunes, and Gabriel Ferreira for the Portuguese (Brazilian) translation. </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="173"/>
+        <location filename="../src/help/aboutbox.cpp" line="174"/>
         <source>Fritzing is made possible with funding from the </source>
         <translatorcomment>Fritzing থেকে অর্থায়ন সঙ্গে তৈরি সম্ভব</translatorcomment>
         <translation>ফ্রিটজিংগ এর আনুদানে ইহা সম্ভব </translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="174"/>
+        <location filename="../src/help/aboutbox.cpp" line="175"/>
         <source>MWFK Brandenburg, the sponsorship of the Design </source>
         <translation>MWFK Brandenburg,এর উদ্যোক্তা বা ডিজাইনার </translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="175"/>
+        <location filename="../src/help/aboutbox.cpp" line="176"/>
         <source>Department of Bauhaus-University Weimar, </source>
         <translatorcomment>Buhaus বিশ্ববিদ্যাল এর weimer ডিপার্টমেন্ট,&gt;বিভাগ</translatorcomment>
         <translation>Buhaus বিশ্ববিদ্যালয় weimer ডিপার্টমেন্ট,</translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="176"/>
+        <location filename="../src/help/aboutbox.cpp" line="177"/>
         <source>IxDS, an anonymous donor, Parallax, Picaxe, Sparkfun, </source>
         <translatorcomment> লম্বন</translatorcomment>
         <translation>IxDS, বেনামী দাতা,parallax,Picaxe, Sperkfun,</translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="177"/>
-        <source>and from each purchase of a Fritzing Starter Kit.</source>
-        <translation>এবং প্রত্যেকটি Fritzing স্টার্টার কিট কেনার,জন্য</translation>
+        <location filename="../src/help/aboutbox.cpp" line="178"/>
+        <source>and from each purchase of a Fritzing Starter Kit or a PCB from Fritzing Fab.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="181"/>
+        <location filename="../src/help/aboutbox.cpp" line="182"/>
         <source>Special thanks goes out as well to all the students </source>
         <translation>সকল ছাত্র ছাত্রিদের বিশেষ ধন্যবাদ দেয়াহল </translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="182"/>
+        <location filename="../src/help/aboutbox.cpp" line="183"/>
         <source>and alpha testers who were brave enough to give </source>
         <translation>এবং পরীক্ষক গনকে যারা পর্যাপ্ত অভিমত প্রদান করেছেন</translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="183"/>
+        <location filename="../src/help/aboutbox.cpp" line="184"/>
         <source>Fritzing a test spin. </source>
         <translatorcomment>Fritzing  পর্যবেক্ষণ</translatorcomment>
         <translation>ফ্রিটজিংগ পরীক্ষন</translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="186"/>
+        <location filename="../src/help/aboutbox.cpp" line="187"/>
         <source>&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;</source>
         <translation>&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;</translation>
     </message>

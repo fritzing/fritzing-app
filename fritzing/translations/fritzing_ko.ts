@@ -452,101 +452,111 @@
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1002"/>
+        <source>Copy all to Sketch</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1003"/>
+        <source>Copy all loaded parts to the sketch</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1006"/>
         <source>Show Bin in List View</source>
         <translation>리스트 뷰에 저장소 보이기</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1004"/>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1008"/>
         <source>Display parts as a list</source>
         <translation>부품을 리스트로 보이기</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1007"/>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1011"/>
         <source>Show Bin in Icon View</source>
         <translation>아이콘 뷰에 저장소 보이기</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1009"/>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1013"/>
         <source>Display parts as icons</source>
         <translation>부품을 아이콘으로 보이기</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1029"/>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1034"/>
         <source>Edit Part (new parts editor)...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1030"/>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1035"/>
         <source>Export Part...</source>
         <translation>부품 내보내기...</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1031"/>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1036"/>
         <source>Remove Part</source>
         <translation>부품 제거</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1032"/>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1037"/>
         <source>Find Part in Sketch</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1075"/>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1080"/>
         <source>Delete bin</source>
         <translation>저장소 삭제</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1076"/>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1081"/>
         <source>Do you really want to delete bin &apos;%1&apos;?  This action cannot be undone.</source>
         <translation>저장소 &apos;%1&apos;를 삭제하시겠습니까?  이 작업은 실행 취소할 수 없습니다.</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1126"/>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1131"/>
         <source>Read-only bin</source>
         <translation>읽기 전용 저장소</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1126"/>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1131"/>
         <source>This bin cannot be renamed.</source>
         <translation>이 저장소는 이름을 변경 할 수 없습니다.</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1133"/>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1138"/>
         <source>Rename bin</source>
         <translation>저장소 이름 변경</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1134"/>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1139"/>
         <source>Please choose a name for the bin:</source>
         <translation>저장소의 이름을 선택하세요:</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1204"/>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1209"/>
         <source>Remove from Bin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1204"/>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1209"/>
         <source>Unable to remove part &apos;%1&apos;--it is in use in a sketch</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1210"/>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1215"/>
         <source>Remove from bin</source>
         <translation>저장소에서 삭제</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1211"/>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1216"/>
         <source>Do you really want to remove &apos;%1&apos; from the bin? This operation cannot be undone.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1308"/>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1313"/>
         <source>Select a Fritzing File to Open</source>
         <translation type="unfinished">열 Fritzing 파일 선택하기</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1310"/>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1315"/>
         <source>Fritzing Files (*%1 *%2 *%3);;Fritzing Part (*%1);;Fritzing Bin (*%2);;Fritzing Shareable Bin (*%3)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -904,39 +914,39 @@ Use the file?</source>
         <translation>Fritzing이 이벤트 %2에서 예외 상황 %1을 발견</translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="1625"/>
+        <location filename="../src/fapplication.cpp" line="1630"/>
         <source>Import files from previous version?</source>
         <translation>이전 버젼에서 파일을 가져올까요?</translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="1626"/>
+        <location filename="../src/fapplication.cpp" line="1631"/>
         <source>Do you want to import parts and bins that you have created with earlier versions of Fritzing?
 </source>
         <translation>이전 버젼의 Fritzing으로 부터 생성된 부품과 저장소를 거져올까요?</translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="1627"/>
+        <location filename="../src/fapplication.cpp" line="1632"/>
         <source>
 Note: You can import them later using the &quot;Help&quot; &gt; &quot;Import parts and bins from old version...&quot; menu action.</source>
         <translation>노트: 나중에 &quot;도움말&quot; &gt; &quot;이전 버젼에서 부품 및 저장소 가져오기...&quot; 메뉴에서 가져오기를 할 수 있습니다.</translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="1633"/>
+        <location filename="../src/fapplication.cpp" line="1638"/>
         <source>Import</source>
         <translation>가져오기</translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="1634"/>
+        <location filename="../src/fapplication.cpp" line="1639"/>
         <source>Do not import now</source>
         <translation>지금 가져오지 않기</translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="1668"/>
+        <location filename="../src/fapplication.cpp" line="1673"/>
         <source>Please specify an .fzz file name to save to (cancel will delete the backup)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="1668"/>
+        <location filename="../src/fapplication.cpp" line="1673"/>
         <source>Fritzing (*%1)</source>
         <translation type="unfinished">Fritzing (*%1)</translation>
     </message>
@@ -7747,13 +7757,13 @@ Fritzing은 여전히 ​​작동하지만 부품 속성을 변경할 수 없�
     </message>
     <message>
         <location filename="../src/sketch/sketchwidget.cpp" line="3523"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9521"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9525"/>
         <source>Select %1</source>
         <translation>%1 선택</translation>
     </message>
     <message>
         <location filename="../src/sketch/sketchwidget.cpp" line="3526"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9524"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9528"/>
         <source>Select %1 items</source>
         <translation>%1 아이템 선택</translation>
     </message>
@@ -8004,12 +8014,12 @@ Note: you can also trigger this display by mousing down on the routing status te
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9456"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9460"/>
         <source>Add %1 parts</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9518"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9522"/>
         <source>Deselect all</source>
         <translation type="unfinished"></translation>
     </message>

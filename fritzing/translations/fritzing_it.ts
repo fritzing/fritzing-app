@@ -443,6 +443,14 @@
         <source>Copy all the parts in the bin to a sketch</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Copy all to Sketch</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy all loaded parts to the sketch</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Board</name>

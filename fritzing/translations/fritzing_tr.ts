@@ -442,101 +442,111 @@
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1002"/>
+        <source>Copy all to Sketch</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1003"/>
+        <source>Copy all loaded parts to the sketch</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1006"/>
         <source>Show Bin in List View</source>
         <translation>Bin dosyasını liste biçiminde görüntüle</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1004"/>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1008"/>
         <source>Display parts as a list</source>
         <translation>Elemanları liste biçiminde göster</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1007"/>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1011"/>
         <source>Show Bin in Icon View</source>
         <translation>Bin dosyasını Küçük Simge olarak Göster</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1009"/>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1013"/>
         <source>Display parts as icons</source>
         <translation>Elemanları küçük simgeler olarak göster</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1029"/>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1034"/>
         <source>Edit Part (new parts editor)...</source>
         <translation>Elemanı düzenle (yeni eleman düzenleyicisi)...</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1030"/>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1035"/>
         <source>Export Part...</source>
         <translation>Elamanı Dışa Aktar...</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1031"/>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1036"/>
         <source>Remove Part</source>
         <translation>Elemanı kaldır</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1032"/>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1037"/>
         <source>Find Part in Sketch</source>
         <translation>Elemanı çizimde bul</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1075"/>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1080"/>
         <source>Delete bin</source>
         <translation>Bin dosyasını sil</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1076"/>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1081"/>
         <source>Do you really want to delete bin &apos;%1&apos;?  This action cannot be undone.</source>
         <translation>Bin &apos;%1&apos;&apos;i silmek istediğinize emin misiniz?  Bu geri dönüşsüz bir karardır.</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1126"/>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1131"/>
         <source>Read-only bin</source>
         <translation>Salt okunur bin</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1126"/>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1131"/>
         <source>This bin cannot be renamed.</source>
         <translation>Bu bin yeniden adlandırılamaz.</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1133"/>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1138"/>
         <source>Rename bin</source>
         <translation>Bin&apos;i yeniden adlandır</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1134"/>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1139"/>
         <source>Please choose a name for the bin:</source>
         <translation>Lütfen bin için bir ad seçiniz:</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1204"/>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1209"/>
         <source>Remove from Bin</source>
         <translation>Bin dosyasından kaldır</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1204"/>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1209"/>
         <source>Unable to remove part &apos;%1&apos;--it is in use in a sketch</source>
         <translation>Eleman &apos;%1&apos; kaldırılamıyor--şu anda bir çizimde kullanılmakta</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1210"/>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1215"/>
         <source>Remove from bin</source>
         <translation>bin&apos;den kaldır</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1211"/>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1216"/>
         <source>Do you really want to remove &apos;%1&apos; from the bin? This operation cannot be undone.</source>
         <translation>&apos;%1%&apos;&apos;i bin&apos;den kaldırmak istediğinize emin misiniz? Bu geri dönüşsüz bir karardır.</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1308"/>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1313"/>
         <source>Select a Fritzing File to Open</source>
         <translation>Açmak için bir Fritzing Dosyası seç</translation>
     </message>
     <message>
-        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1310"/>
+        <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1315"/>
         <source>Fritzing Files (*%1 *%2 *%3);;Fritzing Part (*%1);;Fritzing Bin (*%2);;Fritzing Shareable Bin (*%3)</source>
         <translation>Fritzing Dosyaları (*%1 *%2 *%3);;Fritzing Eleman (*%1);;Fritzing Bin (*%2);;Fritzing Paylaşılabilir Bin (*%3)</translation>
     </message>
@@ -907,40 +917,40 @@ Dosya kullanılsın mı?</translation>
         <translation>Fritzing %2&apos;de %1&apos;den bir istisna yakaladı</translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="1625"/>
+        <location filename="../src/fapplication.cpp" line="1630"/>
         <source>Import files from previous version?</source>
         <translation>Dosyaları bir önceki sürümden içe aktar?</translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="1626"/>
+        <location filename="../src/fapplication.cpp" line="1631"/>
         <source>Do you want to import parts and bins that you have created with earlier versions of Fritzing?
 </source>
         <translation>Fritizing&apos;in daha önceki sürümlerinde oluşturduğunuz elemanları ve bin dosyalarını içer aktarmak ister misiniz?</translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="1627"/>
+        <location filename="../src/fapplication.cpp" line="1632"/>
         <source>
 Note: You can import them later using the &quot;Help&quot; &gt; &quot;Import parts and bins from old version...&quot; menu action.</source>
         <translation>
 Not:Onları daha sonra menüdeki &quot;Yardım&quot; &gt; &quot;Eski sürümdeki elemanları ve bin dosyalarını içe aktar...&quot;&apos;ı kullanarak aktarabilirsiniz.</translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="1633"/>
+        <location filename="../src/fapplication.cpp" line="1638"/>
         <source>Import</source>
         <translation>İçe aktar</translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="1634"/>
+        <location filename="../src/fapplication.cpp" line="1639"/>
         <source>Do not import now</source>
         <translation>Şimdi içe aktarma</translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="1668"/>
+        <location filename="../src/fapplication.cpp" line="1673"/>
         <source>Please specify an .fzz file name to save to (cancel will delete the backup)</source>
         <translation>Lütfen kaydetmek için bir .fzz dosyası belirtin (iptal etmek yedeklen veriyi silecektir)</translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="1668"/>
+        <location filename="../src/fapplication.cpp" line="1673"/>
         <source>Fritzing (*%1)</source>
         <translation>Fritzing(*%1)</translation>
     </message>
@@ -7788,13 +7798,13 @@ Fritzing hala çalışıyor ancak elemanın özelliklerini değiştiremeyeceksin
     </message>
     <message>
         <location filename="../src/sketch/sketchwidget.cpp" line="3523"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9521"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9525"/>
         <source>Select %1</source>
         <translation>%1&apos;i seç</translation>
     </message>
     <message>
         <location filename="../src/sketch/sketchwidget.cpp" line="3526"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9524"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9528"/>
         <source>Select %1 items</source>
         <translation>%1 öğelerini seç</translation>
     </message>
@@ -8053,12 +8063,12 @@ Not:Bu görüntüyü fareyi durum çubuğundaki yönlendirme durumu metni üzeri
         <translation>&apos;%1&apos; elemanı çizimde bulunamadı</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9456"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9460"/>
         <source>Add %1 parts</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9518"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9522"/>
         <source>Deselect all</source>
         <translation>Tümünü seçmeyi bırak</translation>
     </message>

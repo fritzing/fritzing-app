@@ -88,10 +88,6 @@
         <translation>A &amp;#313;ubom&amp;iacute;r Ducho&amp;#328; pour la traduction en slovaque,</translation>
     </message>
     <message>
-        <source>and from each purchase of a Fritzing Starter Kit.</source>
-        <translation>et pour chaque achat d&apos;un kit de démarrage Fritzing.</translation>
-    </message>
-    <message>
         <source>Fritzing a test spin. </source>
         <translation>Fritzing un tour dl&apos;essai.</translation>
     </message>
@@ -174,6 +170,14 @@
     <message>
         <source>Travis Robertson, Stefan Hermann, Brendan Howell, </source>
         <translation>Travis Robertson, Stefan Hermann, Brendan Howell, </translation>
+    </message>
+    <message>
+        <source>to Nikolay Stankov for the Bulgarian translation, </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>and from each purchase of a Fritzing Starter Kit or a PCB from Fritzing Fab.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

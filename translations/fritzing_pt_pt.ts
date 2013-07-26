@@ -120,10 +120,6 @@
         <translation>IxDS,um patrocinador anônimo, Parallax, Picaxe, Sparkfun, </translation>
     </message>
     <message>
-        <source>and from each purchase of a Fritzing Starter Kit.</source>
-        <translation>e todos os que compraram o kit para iniciantes da Fritzing.</translation>
-    </message>
-    <message>
         <source>Special thanks goes out as well to all the students </source>
         <translation>Agradecimentos especiais vão também para todos os estudantes </translation>
     </message>
@@ -173,6 +169,14 @@
     </message>
     <message>
         <source>and to Arthur Zanona, Nuno Pessanha Santos, Leandro Nunes, and Gabriel Ferreira for the Portuguese (Brazilian) translation. </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>to Nikolay Stankov for the Bulgarian translation, </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>and from each purchase of a Fritzing Starter Kit or a PCB from Fritzing Fab.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

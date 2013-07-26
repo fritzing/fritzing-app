@@ -165,6 +165,7 @@ QString("<br /><br /><br /><br /><br /><br /><br /><br /><br />") +
     tr("to Alexander Kaltsas for the Greek translation, " ) +
     tr("to Lionel Michel and Yvan Kloster for the French translation, " ) +
     tr("to Cihan Mete Bahad&#x0131;r for the Turkish translation, " ) +
+    tr("to Nikolay Stankov for the Bulgarian translation, " ) +
    
 	tr("and to Arthur Zanona, Nuno Pessanha Santos, Leandro Nunes, and Gabriel Ferreira for the Portuguese (Brazilian) translation. " ) +
 "</p>" +
@@ -174,7 +175,7 @@ QString("<br /><br /><br /><br /><br /><br /><br /><br /><br />") +
 	tr("MWFK Brandenburg, the sponsorship of the Design ") +
 	tr("Department of Bauhaus-University Weimar, ") +
 	tr("IxDS, an anonymous donor, Parallax, Picaxe, Sparkfun, ") +
-	tr("and from each purchase of a Fritzing Starter Kit.") +
+	tr("and from each purchase of a Fritzing Starter Kit or a PCB from Fritzing Fab.") +
 "</p>" +
 
 "<p>" +

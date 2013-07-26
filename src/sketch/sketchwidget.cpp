@@ -9977,7 +9977,7 @@ void SketchWidget::packItems(int columns, const QList<long> & ids, QUndoCommand 
     }
 
     double offset = 10;
-    double left;
+    double left = 0;
     for (int i = 0; i < itemBases.count(); i++) {
         if (i % columns == 0) {
             left = initial.x();

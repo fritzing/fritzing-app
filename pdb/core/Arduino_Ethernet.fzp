@@ -56,7 +56,7 @@ The 6-pin serial programming header is compatible with the USB Serial adapter an
    <description>D8</description>
    <views>
     <breadboardView>
-     <p svgId="connector210pin" layer="breadboard"/>
+     <p svgId="connector210pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector210pin" layer="schematic" terminalId="connector210terminal"/>
@@ -71,7 +71,7 @@ The 6-pin serial programming header is compatible with the USB Serial adapter an
    <description>D9 PWM</description>
    <views>
     <breadboardView>
-     <p svgId="connector211pin" layer="breadboard"/>
+     <p svgId="connector211pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector211pin" layer="schematic" terminalId="connector211terminal"/>
@@ -86,7 +86,7 @@ The 6-pin serial programming header is compatible with the USB Serial adapter an
    <description>D10 PWM/SS</description>
    <views>
     <breadboardView>
-     <p svgId="connector212pin" layer="breadboard"/>
+     <p svgId="connector212pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector212pin" layer="schematic" terminalId="connector212terminal"/>
@@ -101,7 +101,7 @@ The 6-pin serial programming header is compatible with the USB Serial adapter an
    <description>D11/MOSI</description>
    <views>
     <breadboardView>
-     <p svgId="connector213pin" layer="breadboard"/>
+     <p svgId="connector213pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector213pin" layer="schematic" terminalId="connector213terminal"/>
@@ -116,7 +116,7 @@ The 6-pin serial programming header is compatible with the USB Serial adapter an
    <description>D12/MISO</description>
    <views>
     <breadboardView>
-     <p svgId="connector214pin" layer="breadboard"/>
+     <p svgId="connector214pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector214pin" layer="schematic" terminalId="connector214terminal"/>
@@ -131,7 +131,7 @@ The 6-pin serial programming header is compatible with the USB Serial adapter an
    <description>D13/SCK</description>
    <views>
     <breadboardView>
-     <p svgId="connector215pin" layer="breadboard"/>
+     <p svgId="connector215pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector215pin" layer="schematic" terminalId="connector215terminal"/>
@@ -146,7 +146,7 @@ The 6-pin serial programming header is compatible with the USB Serial adapter an
    <description>GND</description>
    <views>
     <breadboardView>
-     <p svgId="connector216pin" layer="breadboard"/>
+     <p svgId="connector216pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector216pin" layer="schematic" terminalId="connector216terminal"/>
@@ -161,7 +161,7 @@ The 6-pin serial programming header is compatible with the USB Serial adapter an
    <description>AREF</description>
    <views>
     <breadboardView>
-     <p svgId="connector217pin" layer="breadboard"/>
+     <p svgId="connector217pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector217pin" layer="schematic" terminalId="connector217terminal"/>
@@ -176,7 +176,7 @@ The 6-pin serial programming header is compatible with the USB Serial adapter an
    <description>A0</description>
    <views>
     <breadboardView>
-     <p svgId="connector218pin" layer="breadboard"/>
+     <p svgId="connector218pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector218pin" layer="schematic" terminalId="connector218terminal"/>
@@ -191,7 +191,7 @@ The 6-pin serial programming header is compatible with the USB Serial adapter an
    <description>A1</description>
    <views>
     <breadboardView>
-     <p svgId="connector219pin" layer="breadboard"/>
+     <p svgId="connector219pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector219pin" layer="schematic" terminalId="connector219terminal"/>
@@ -206,7 +206,7 @@ The 6-pin serial programming header is compatible with the USB Serial adapter an
    <description>A2</description>
    <views>
     <breadboardView>
-     <p svgId="connector220pin" layer="breadboard"/>
+     <p svgId="connector220pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector220pin" layer="schematic" terminalId="connector220terminal"/>
@@ -221,7 +221,7 @@ The 6-pin serial programming header is compatible with the USB Serial adapter an
    <description>A3</description>
    <views>
     <breadboardView>
-     <p svgId="connector221pin" layer="breadboard"/>
+     <p svgId="connector221pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector221pin" layer="schematic" terminalId="connector221terminal"/>
@@ -236,7 +236,7 @@ The 6-pin serial programming header is compatible with the USB Serial adapter an
    <description>A4</description>
    <views>
     <breadboardView>
-     <p svgId="connector222pin" layer="breadboard"/>
+     <p svgId="connector222pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector222pin" layer="schematic" terminalId="connector222terminal"/>
@@ -251,7 +251,7 @@ The 6-pin serial programming header is compatible with the USB Serial adapter an
    <description>A5</description>
    <views>
     <breadboardView>
-     <p svgId="connector223pin" layer="breadboard"/>
+     <p svgId="connector223pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector223pin" layer="schematic" terminalId="connector223terminal"/>
@@ -266,7 +266,7 @@ The 6-pin serial programming header is compatible with the USB Serial adapter an
    <description>D0/RX</description>
    <views>
     <breadboardView>
-     <p svgId="connector224pin" layer="breadboard"/>
+     <p svgId="connector224pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector224pin" layer="schematic" terminalId="connector224terminal"/>
@@ -281,7 +281,7 @@ The 6-pin serial programming header is compatible with the USB Serial adapter an
    <description>D1/TX</description>
    <views>
     <breadboardView>
-     <p svgId="connector225pin" layer="breadboard"/>
+     <p svgId="connector225pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector225pin" layer="schematic" terminalId="connector225terminal"/>
@@ -296,7 +296,7 @@ The 6-pin serial programming header is compatible with the USB Serial adapter an
    <description>D2 PWM</description>
    <views>
     <breadboardView>
-     <p svgId="connector226pin" layer="breadboard"/>
+     <p svgId="connector226pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector226pin" layer="schematic" terminalId="connector226terminal"/>
@@ -311,7 +311,7 @@ The 6-pin serial programming header is compatible with the USB Serial adapter an
    <description>D3 PWM</description>
    <views>
     <breadboardView>
-     <p svgId="connector227pin" layer="breadboard"/>
+     <p svgId="connector227pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector227pin" layer="schematic" terminalId="connector227terminal"/>
@@ -326,7 +326,7 @@ The 6-pin serial programming header is compatible with the USB Serial adapter an
    <description>D4</description>
    <views>
     <breadboardView>
-     <p svgId="connector228pin" layer="breadboard"/>
+     <p svgId="connector228pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector228pin" layer="schematic" terminalId="connector228terminal"/>
@@ -341,7 +341,7 @@ The 6-pin serial programming header is compatible with the USB Serial adapter an
    <description>D5 PWM</description>
    <views>
     <breadboardView>
-     <p svgId="connector229pin" layer="breadboard"/>
+     <p svgId="connector229pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector229pin" layer="schematic" terminalId="connector229terminal"/>
@@ -356,7 +356,7 @@ The 6-pin serial programming header is compatible with the USB Serial adapter an
    <description>D6 PWM</description>
    <views>
     <breadboardView>
-     <p svgId="connector230pin" layer="breadboard"/>
+     <p svgId="connector230pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector230pin" layer="schematic" terminalId="connector230terminal"/>
@@ -371,7 +371,7 @@ The 6-pin serial programming header is compatible with the USB Serial adapter an
    <description>D7</description>
    <views>
     <breadboardView>
-     <p svgId="connector231pin" layer="breadboard"/>
+     <p svgId="connector231pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector231pin" layer="schematic" terminalId="connector231terminal"/>
@@ -386,7 +386,7 @@ The 6-pin serial programming header is compatible with the USB Serial adapter an
    <description>GND</description>
    <views>
     <breadboardView>
-     <p svgId="connector232pin" layer="breadboard" terminalId="connector232terminal"/>
+     <p svgId="connector232pin" layer="breadboardbreadboard" terminalId="connector232terminal"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector232pin" layer="schematic" terminalId="connector232terminal"/>
@@ -400,7 +400,7 @@ The 6-pin serial programming header is compatible with the USB Serial adapter an
    <description>5V</description>
    <views>
     <breadboardView>
-     <p svgId="connector234pin" layer="breadboard" terminalId="connector234terminal"/>
+     <p svgId="connector234pin" layer="breadboardbreadboard" terminalId="connector234terminal"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector234pin" layer="schematic" terminalId="connector234terminal"/>
@@ -414,7 +414,7 @@ The 6-pin serial programming header is compatible with the USB Serial adapter an
    <description>PD0</description>
    <views>
     <breadboardView>
-     <p svgId="connector235pin" layer="breadboard" terminalId="connector235terminal"/>
+     <p svgId="connector235pin" layer="breadboardbreadboard" terminalId="connector235terminal"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector235pin" layer="schematic" terminalId="connector235terminal"/>
@@ -428,7 +428,7 @@ The 6-pin serial programming header is compatible with the USB Serial adapter an
    <description>PD1</description>
    <views>
     <breadboardView>
-     <p svgId="connector236pin" layer="breadboard" terminalId="connector236terminal"/>
+     <p svgId="connector236pin" layer="breadboardbreadboard" terminalId="connector236terminal"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector236pin" layer="schematic" terminalId="connector236terminal"/>
@@ -442,7 +442,7 @@ The 6-pin serial programming header is compatible with the USB Serial adapter an
    <description>RTS</description>
    <views>
     <breadboardView>
-     <p svgId="connector237pin" layer="breadboard" terminalId="connector237terminal"/>
+     <p svgId="connector237pin" layer="breadboardbreadboard" terminalId="connector237terminal"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector237pin" layer="schematic" terminalId="connector237terminal"/>
@@ -456,7 +456,7 @@ The 6-pin serial programming header is compatible with the USB Serial adapter an
    <description>RESET</description>
    <views>
     <breadboardView>
-     <p svgId="connector248pin" layer="breadboard"/>
+     <p svgId="connector248pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector248pin" layer="schematic" terminalId="connector248terminal"/>
@@ -471,7 +471,7 @@ The 6-pin serial programming header is compatible with the USB Serial adapter an
    <description>3V3</description>
    <views>
     <breadboardView>
-     <p svgId="connector249pin" layer="breadboard"/>
+     <p svgId="connector249pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector249pin" layer="schematic" terminalId="connector249terminal"/>
@@ -486,7 +486,7 @@ The 6-pin serial programming header is compatible with the USB Serial adapter an
    <description>5V</description>
    <views>
     <breadboardView>
-     <p svgId="connector250pin" layer="breadboard"/>
+     <p svgId="connector250pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector250pin" layer="schematic" terminalId="connector250terminal"/>
@@ -501,7 +501,7 @@ The 6-pin serial programming header is compatible with the USB Serial adapter an
    <description>GND</description>
    <views>
     <breadboardView>
-     <p svgId="connector251pin" layer="breadboard"/>
+     <p svgId="connector251pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector251pin" layer="schematic" terminalId="connector251terminal"/>
@@ -516,7 +516,7 @@ The 6-pin serial programming header is compatible with the USB Serial adapter an
    <description>GND</description>
    <views>
     <breadboardView>
-     <p svgId="connector252pin" layer="breadboard"/>
+     <p svgId="connector252pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector252pin" layer="schematic" terminalId="connector252terminal"/>
@@ -531,7 +531,7 @@ The 6-pin serial programming header is compatible with the USB Serial adapter an
    <description>VIN</description>
    <views>
     <breadboardView>
-     <p svgId="connector253pin" layer="breadboard"/>
+     <p svgId="connector253pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector253pin" layer="schematic" terminalId="connector253terminal"/>

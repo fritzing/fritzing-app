@@ -9453,6 +9453,10 @@ void SketchWidget::selectItemsWithModuleID(ModelPart * modelPart) {
 }
 
 void SketchWidget::addToSketch(QList<ModelPart *> & modelParts) {
+    if (modelParts.count() == 0) {
+        modelParts = this->m_referenceModel->allParts();
+    }
+
     QUndoCommand* parentCommand = new QUndoCommand(tr("Add %1 parts").arg(modelParts.count()));
 	stackSelectionState(false, parentCommand);
 	new CleanUpWiresCommand(this, CleanUpWiresCommand::Noop, parentCommand);

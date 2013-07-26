@@ -43,7 +43,7 @@
   </pcbView>
  </views>
  <connectors>
-  <connector type="female" id="connector15" name="GPIO4">
+  <connector type="male" id="connector15" name="GPIO4">
    <description>GPIO Pin 4</description>
    <views>
     <breadboardView>
@@ -58,7 +58,7 @@
     </pcbView>
    </views>
   </connector>
-  <connector type="female" id="connector7" name="GPIO 14">
+  <connector type="male" id="connector7" name="GPIO 14">
    <description>GPIO 14/Serial TXD</description>
    <views>
     <breadboardView>
@@ -73,7 +73,7 @@
     </pcbView>
    </views>
   </connector>
-  <connector type="female" id="connector17" name="GPIO 24">
+  <connector type="male" id="connector17" name="GPIO 24">
    <description>GPIO 24</description>
    <views>
     <breadboardView>
@@ -88,7 +88,7 @@
     </pcbView>
    </views>
   </connector>
-  <connector type="female" id="connector9" name="GPIO 15">
+  <connector type="male" id="connector9" name="GPIO 15">
    <description>GPIO 15/Serial RXD</description>
    <views>
     <breadboardView>
@@ -103,7 +103,7 @@
     </pcbView>
    </views>
   </connector>
-  <connector type="female" id="connector18" name="GPIO 10">
+  <connector type="male" id="connector18" name="GPIO 10">
    <description>GPIO 10/MOSI</description>
    <views>
     <breadboardView>
@@ -118,7 +118,7 @@
     </pcbView>
    </views>
   </connector>
-  <connector type="female" id="connector20" name="GPIO 9">
+  <connector type="male" id="connector20" name="GPIO 9">
    <description>GPIO 9/MISO</description>
    <views>
     <breadboardView>
@@ -133,7 +133,7 @@
     </pcbView>
    </views>
   </connector>
-  <connector type="female" id="connector21" name="GPIO 25">
+  <connector type="male" id="connector21" name="GPIO 25">
    <description>GPIO 25</description>
    <views>
     <breadboardView>
@@ -148,7 +148,7 @@
     </pcbView>
    </views>
   </connector>
-  <connector type="female" id="connector22" name="GPIO 11">
+  <connector type="male" id="connector22" name="GPIO 11">
    <description>GPIO 11/SCLK (Serial Clock)</description>
    <views>
     <breadboardView>
@@ -163,7 +163,7 @@
     </pcbView>
    </views>
   </connector>
-  <connector type="female" id="connector23" name="GPIO 8">
+  <connector type="male" id="connector23" name="GPIO 8">
    <description>GPIO 8/CE0 (Cable Select Line 0)</description>
    <views>
     <breadboardView>
@@ -178,7 +178,7 @@
     </pcbView>
    </views>
   </connector>
-  <connector type="female" id="connector25" name="GPIO 7">
+  <connector type="male" id="connector25" name="GPIO 7">
    <description>GPIO 7/CE1 (Cable Select Line 1)</description>
    <views>
     <breadboardView>
@@ -193,7 +193,7 @@
     </pcbView>
    </views>
   </connector>
-  <connector type="female" id="connector0" name="3V3">
+  <connector type="male" id="connector0" name="3V3">
    <description>Output Voltage 3V3</description>
    <views>
     <breadboardView>
@@ -208,7 +208,7 @@
     </pcbView>
    </views>
   </connector>
-  <connector type="female" id="connector1" name="5V">
+  <connector type="male" id="connector1" name="5V">
    <description>Output Voltage 5V</description>
    <views>
     <breadboardView>
@@ -223,7 +223,7 @@
     </pcbView>
    </views>
   </connector>
-  <connector type="female" id="connector10" name="GPIO 17">
+  <connector type="male" id="connector10" name="GPIO 17">
    <description>GPIO 17</description>
    <views>
     <breadboardView>
@@ -238,7 +238,7 @@
     </pcbView>
    </views>
   </connector>
-  <connector type="female" id="connector2" name="GIPO 0">
+  <connector type="male" id="connector2" name="GIPO 0">
    <description>GPIO 0/SDA (Serial Data)</description>
    <views>
     <breadboardView>
@@ -253,7 +253,7 @@
     </pcbView>
    </views>
   </connector>
-  <connector type="female" id="connector11" name="GPIO 18">
+  <connector type="male" id="connector11" name="GPIO 18">
    <description>GPIO 18/PCM_CLK</description>
    <views>
     <breadboardView>
@@ -268,7 +268,7 @@
     </pcbView>
    </views>
   </connector>
-  <connector type="female" id="connector4" name="GIPO 1">
+  <connector type="male" id="connector4" name="GIPO 1">
    <description>GIPO 1/SCL (Serial Clock)</description>
    <views>
     <breadboardView>
@@ -283,7 +283,7 @@
     </pcbView>
    </views>
   </connector>
-  <connector type="female" id="connector12" name="GPIO 21">
+  <connector type="male" id="connector12" name="GPIO 21">
    <description>GPIO 21</description>
    <views>
     <breadboardView>
@@ -298,7 +298,7 @@
     </pcbView>
    </views>
   </connector>
-  <connector type="female" id="connector5" name="GND">
+  <connector type="male" id="connector5" name="GND">
    <description>Ground</description>
    <views>
     <breadboardView>
@@ -313,7 +313,7 @@
     </pcbView>
    </views>
   </connector>
-  <connector type="female" id="connector6" name="GPIO 23">
+  <connector type="male" id="connector6" name="GPIO 23">
    <description>GPIO 23</description>
    <views>
     <breadboardView>
@@ -328,7 +328,7 @@
     </pcbView>
    </views>
   </connector>
-  <connector type="female" id="connector14" name="GPIO22">
+  <connector type="male" id="connector14" name="GPIO22">
    <description>GPIO Pin 22</description>
    <views>
     <breadboardView>
@@ -343,7 +343,7 @@
     </pcbView>
    </views>
   </connector>
-  <connector type="female" id="connector26" name="GND">
+  <connector type="male" id="connector26" name="GND">
    <description>Ground</description>
    <views>
     <breadboardView>
@@ -358,7 +358,7 @@
     </pcbView>
    </views>
   </connector>
-  <connector type="female" id="connector27" name="5V">
+  <connector type="male" id="connector27" name="5V">
    <description>Output Voltage 5V</description>
    <views>
     <breadboardView>
@@ -373,7 +373,7 @@
     </pcbView>
    </views>
   </connector>
-  <connector type="female" id="connector28" name="GND">
+  <connector type="male" id="connector28" name="GND">
    <description>Ground</description>
    <views>
     <breadboardView>
@@ -388,7 +388,7 @@
     </pcbView>
    </views>
   </connector>
-  <connector type="female" id="connector29" name="GND">
+  <connector type="male" id="connector29" name="GND">
    <description>Ground</description>
    <views>
     <breadboardView>
@@ -403,7 +403,7 @@
     </pcbView>
    </views>
   </connector>
-  <connector type="female" id="connector30" name="3V3">
+  <connector type="male" id="connector30" name="3V3">
    <description>3.3V Input</description>
    <views>
     <breadboardView>
@@ -418,7 +418,7 @@
     </pcbView>
    </views>
   </connector>
-  <connector type="female" id="connector31" name="GND">
+  <connector type="male" id="connector31" name="GND">
    <description>Ground</description>
    <views>
     <breadboardView>

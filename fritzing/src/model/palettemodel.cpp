@@ -671,5 +671,9 @@ ModelPart * PaletteModel::makeSubpart(ModelPart * originalModelPart, const QDomE
 }
 
 QList<ModelPart *> PaletteModel::allParts() {
-    return m_partHash.values();
+    QList<ModelPart *> modelParts;
+    foreach (ModelPart * modelPart, m_partHash.values()) {
+        if (!modelPart->isObsolete()) modelParts.append(modelPart);
+    }
+    return modelParts;
 }

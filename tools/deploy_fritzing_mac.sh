@@ -41,6 +41,10 @@ cd part-gen-scripts
 rm -rf *
 cd ..
 rmdir part-gen-scripts
+cd not_quite_ready
+rm -rf *
+cd ..
+rmdir not_quite_ready
 rm -rf phoenix*
 cd pri
 rm -rf *

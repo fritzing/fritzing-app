@@ -59,6 +59,7 @@ public:
 	void setOrdererChildren(QList<QObject*> children);
     void search(ModelPart * modelPart, const QStringList & searchStrings, QList<ModelPart *> & modelParts, bool allowObsolete);
     QList<ModelPart *> findContribNoBin();
+    QList<ModelPart *> allParts();
 
 protected:
 	QHash<QString, ModelPart *> m_partHash;

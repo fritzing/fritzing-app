@@ -59,7 +59,7 @@ The Esplora has built-in USB communication; it can appear to a connected compute
    <description>GND</description>
    <views>
     <breadboardView>
-     <p svgId="connector130pin" layer="breadboard" terminalId="connector130terminal"/>
+     <p svgId="connector130pin" layer="breadboardbreadboard" terminalId="connector130terminal"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector130pin" layer="schematic" terminalId="connector130terminal"/>
@@ -73,7 +73,7 @@ The Esplora has built-in USB communication; it can appear to a connected compute
    <description>INA</description>
    <views>
     <breadboardView>
-     <p svgId="connector131pin" layer="breadboard" terminalId="connector131terminal"/>
+     <p svgId="connector131pin" layer="breadboardbreadboard" terminalId="connector131terminal"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector131pin" layer="schematic" terminalId="connector131terminal"/>
@@ -87,7 +87,7 @@ The Esplora has built-in USB communication; it can appear to a connected compute
    <description>5V</description>
    <views>
     <breadboardView>
-     <p svgId="connector132pin" layer="breadboard" terminalId="connector132terminal"/>
+     <p svgId="connector132pin" layer="breadboardbreadboard" terminalId="connector132terminal"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector132pin" layer="schematic" terminalId="connector132terminal"/>
@@ -101,7 +101,7 @@ The Esplora has built-in USB communication; it can appear to a connected compute
    <description>GND</description>
    <views>
     <breadboardView>
-     <p svgId="connector133pin" layer="breadboard" terminalId="connector133terminal"/>
+     <p svgId="connector133pin" layer="breadboardbreadboard" terminalId="connector133terminal"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector133pin" layer="schematic" terminalId="connector133terminal"/>
@@ -115,7 +115,7 @@ The Esplora has built-in USB communication; it can appear to a connected compute
    <description>INB</description>
    <views>
     <breadboardView>
-     <p svgId="connector134pin" layer="breadboard" terminalId="connector134terminal"/>
+     <p svgId="connector134pin" layer="breadboardbreadboard" terminalId="connector134terminal"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector134pin" layer="schematic" terminalId="connector134terminal"/>
@@ -129,7 +129,7 @@ The Esplora has built-in USB communication; it can appear to a connected compute
    <description>5V</description>
    <views>
     <breadboardView>
-     <p svgId="connector135pin" layer="breadboard" terminalId="connector135terminal"/>
+     <p svgId="connector135pin" layer="breadboardbreadboard" terminalId="connector135terminal"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector135pin" layer="schematic" terminalId="connector135terminal"/>
@@ -143,7 +143,7 @@ The Esplora has built-in USB communication; it can appear to a connected compute
    <description>5V</description>
    <views>
     <breadboardView>
-     <p svgId="connector161pin" layer="breadboard"/>
+     <p svgId="connector161pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector161pin" layer="schematic" terminalId="connector161terminal"/>
@@ -158,7 +158,7 @@ The Esplora has built-in USB communication; it can appear to a connected compute
    <description>MISO</description>
    <views>
     <breadboardView>
-     <p svgId="connector162pin" layer="breadboard"/>
+     <p svgId="connector162pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector162pin" layer="schematic" terminalId="connector162terminal"/>
@@ -173,7 +173,7 @@ The Esplora has built-in USB communication; it can appear to a connected compute
    <description>SCK</description>
    <views>
     <breadboardView>
-     <p svgId="connector163pin" layer="breadboard"/>
+     <p svgId="connector163pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector163pin" layer="schematic" terminalId="connector163terminal"/>
@@ -188,7 +188,7 @@ The Esplora has built-in USB communication; it can appear to a connected compute
    <description>MOSI</description>
    <views>
     <breadboardView>
-     <p svgId="connector164pin" layer="breadboard"/>
+     <p svgId="connector164pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector164pin" layer="schematic" terminalId="connector164terminal"/>
@@ -203,7 +203,7 @@ The Esplora has built-in USB communication; it can appear to a connected compute
    <description>D7/LCD_CS</description>
    <views>
     <breadboardView>
-     <p svgId="connector165pin" layer="breadboard"/>
+     <p svgId="connector165pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector165pin" layer="schematic" terminalId="connector165terminal"/>
@@ -218,7 +218,7 @@ The Esplora has built-in USB communication; it can appear to a connected compute
    <description>IO8/CARD_CS</description>
    <views>
     <breadboardView>
-     <p svgId="connector166pin" layer="breadboard"/>
+     <p svgId="connector166pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector166pin" layer="schematic" terminalId="connector166terminal"/>
@@ -233,7 +233,7 @@ The Esplora has built-in USB communication; it can appear to a connected compute
    <description>IO11/DC_LCD</description>
    <views>
     <breadboardView>
-     <p svgId="connector167pin" layer="breadboard"/>
+     <p svgId="connector167pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector167pin" layer="schematic" terminalId="connector167terminal"/>
@@ -248,7 +248,7 @@ The Esplora has built-in USB communication; it can appear to a connected compute
    <description>RST_LCD</description>
    <views>
     <breadboardView>
-     <p svgId="connector168pin" layer="breadboard"/>
+     <p svgId="connector168pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector168pin" layer="schematic" terminalId="connector168terminal"/>
@@ -263,7 +263,7 @@ The Esplora has built-in USB communication; it can appear to a connected compute
    <description>5V</description>
    <views>
     <breadboardView>
-     <p svgId="connector169pin" layer="breadboard"/>
+     <p svgId="connector169pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector169pin" layer="schematic" terminalId="connector169terminal"/>
@@ -278,7 +278,7 @@ The Esplora has built-in USB communication; it can appear to a connected compute
    <description>GND</description>
    <views>
     <breadboardView>
-     <p svgId="connector170pin" layer="breadboard"/>
+     <p svgId="connector170pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector170pin" layer="schematic" terminalId="connector170terminal"/>
@@ -293,7 +293,7 @@ The Esplora has built-in USB communication; it can appear to a connected compute
    <description>11</description>
    <views>
     <breadboardView>
-     <p svgId="connector171pin" layer="breadboard"/>
+     <p svgId="connector171pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector171pin" layer="schematic" terminalId="connector171terminal"/>
@@ -308,7 +308,7 @@ The Esplora has built-in USB communication; it can appear to a connected compute
    <description>12</description>
    <views>
     <breadboardView>
-     <p svgId="connector172pin" layer="breadboard"/>
+     <p svgId="connector172pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector172pin" layer="schematic" terminalId="connector172terminal"/>
@@ -323,7 +323,7 @@ The Esplora has built-in USB communication; it can appear to a connected compute
    <description>13</description>
    <views>
     <breadboardView>
-     <p svgId="connector173pin" layer="breadboard"/>
+     <p svgId="connector173pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector173pin" layer="schematic" terminalId="connector173terminal"/>
@@ -338,7 +338,7 @@ The Esplora has built-in USB communication; it can appear to a connected compute
    <description>14</description>
    <views>
     <breadboardView>
-     <p svgId="connector174pin" layer="breadboard"/>
+     <p svgId="connector174pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector174pin" layer="schematic" terminalId="connector174terminal"/>
@@ -353,7 +353,7 @@ The Esplora has built-in USB communication; it can appear to a connected compute
    <description>15</description>
    <views>
     <breadboardView>
-     <p svgId="connector175pin" layer="breadboard"/>
+     <p svgId="connector175pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector175pin" layer="schematic" terminalId="connector175terminal"/>
@@ -368,7 +368,7 @@ The Esplora has built-in USB communication; it can appear to a connected compute
    <description>16</description>
    <views>
     <breadboardView>
-     <p svgId="connector176pin" layer="breadboard"/>
+     <p svgId="connector176pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector176pin" layer="schematic" terminalId="connector176terminal"/>
@@ -383,7 +383,7 @@ The Esplora has built-in USB communication; it can appear to a connected compute
    <description>17</description>
    <views>
     <breadboardView>
-     <p svgId="connector177pin" layer="breadboard"/>
+     <p svgId="connector177pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector177pin" layer="schematic" terminalId="connector177terminal"/>
@@ -398,7 +398,7 @@ The Esplora has built-in USB communication; it can appear to a connected compute
    <description>18</description>
    <views>
     <breadboardView>
-     <p svgId="connector178pin" layer="breadboard"/>
+     <p svgId="connector178pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector178pin" layer="schematic" terminalId="connector178terminal"/>
@@ -413,7 +413,7 @@ The Esplora has built-in USB communication; it can appear to a connected compute
    <description>19</description>
    <views>
     <breadboardView>
-     <p svgId="connector179pin" layer="breadboard"/>
+     <p svgId="connector179pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector179pin" layer="schematic" terminalId="connector179terminal"/>
@@ -428,7 +428,7 @@ The Esplora has built-in USB communication; it can appear to a connected compute
    <description>20</description>
    <views>
     <breadboardView>
-     <p svgId="connector180pin" layer="breadboard"/>
+     <p svgId="connector180pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector180pin" layer="schematic" terminalId="connector180terminal"/>
@@ -443,7 +443,7 @@ The Esplora has built-in USB communication; it can appear to a connected compute
    <description>GND</description>
    <views>
     <breadboardView>
-     <p svgId="connector196pin" layer="breadboard" terminalId="connector196terminal"/>
+     <p svgId="connector196pin" layer="breadboardbreadboard" terminalId="connector196terminal"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector196pin" layer="schematic" terminalId="connector196terminal"/>
@@ -457,7 +457,7 @@ The Esplora has built-in USB communication; it can appear to a connected compute
    <description>OUT2</description>
    <views>
     <breadboardView>
-     <p svgId="connector197pin" layer="breadboard" terminalId="connector197terminal"/>
+     <p svgId="connector197pin" layer="breadboardbreadboard" terminalId="connector197terminal"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector197pin" layer="schematic" terminalId="connector197terminal"/>
@@ -471,7 +471,7 @@ The Esplora has built-in USB communication; it can appear to a connected compute
    <description>5V</description>
    <views>
     <breadboardView>
-     <p svgId="connector198pin" layer="breadboard" terminalId="connector198terminal"/>
+     <p svgId="connector198pin" layer="breadboardbreadboard" terminalId="connector198terminal"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector198pin" layer="schematic" terminalId="connector198terminal"/>
@@ -485,7 +485,7 @@ The Esplora has built-in USB communication; it can appear to a connected compute
    <description>GND</description>
    <views>
     <breadboardView>
-     <p svgId="connector199pin" layer="breadboard" terminalId="connector199terminal"/>
+     <p svgId="connector199pin" layer="breadboardbreadboard" terminalId="connector199terminal"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector199pin" layer="schematic" terminalId="connector199terminal"/>
@@ -499,7 +499,7 @@ The Esplora has built-in USB communication; it can appear to a connected compute
    <description>OUT3</description>
    <views>
     <breadboardView>
-     <p svgId="connector200pin" layer="breadboard" terminalId="connector200terminal"/>
+     <p svgId="connector200pin" layer="breadboardbreadboard" terminalId="connector200terminal"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector200pin" layer="schematic" terminalId="connector200terminal"/>
@@ -513,7 +513,7 @@ The Esplora has built-in USB communication; it can appear to a connected compute
    <description>5V</description>
    <views>
     <breadboardView>
-     <p svgId="connector201pin" layer="breadboard" terminalId="connector201terminal"/>
+     <p svgId="connector201pin" layer="breadboardbreadboard" terminalId="connector201terminal"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector201pin" layer="schematic" terminalId="connector201terminal"/>

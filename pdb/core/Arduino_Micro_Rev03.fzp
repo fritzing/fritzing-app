@@ -48,7 +48,7 @@ The Micro is similar to the Arduino Leonardo in that the ATmega32u4 has built-in
 <connector id='connector41' type='female' name='MISO'>
 <description>MISO</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector41pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector41pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector41pin' terminalId='connector41terminal'/></schematicView>
 <pcbView>
@@ -58,7 +58,7 @@ The Micro is similar to the Arduino Leonardo in that the ATmega32u4 has built-in
 <connector id='connector42' type='female' name='5V'>
 <description>5V</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector42pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector42pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector42pin' terminalId='connector42terminal'/></schematicView>
 <pcbView>
@@ -68,7 +68,7 @@ The Micro is similar to the Arduino Leonardo in that the ATmega32u4 has built-in
 <connector id='connector43' type='female' name='SCK'>
 <description>SCK</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector43pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector43pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector43pin' terminalId='connector43terminal'/></schematicView>
 <pcbView>
@@ -78,7 +78,7 @@ The Micro is similar to the Arduino Leonardo in that the ATmega32u4 has built-in
 <connector id='connector44' type='female' name='MOSI'>
 <description>MOSI</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector44pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector44pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector44pin' terminalId='connector44terminal'/></schematicView>
 <pcbView>
@@ -88,7 +88,7 @@ The Micro is similar to the Arduino Leonardo in that the ATmega32u4 has built-in
 <connector id='connector45' type='female' name='RESET'>
 <description>RESET</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector45pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector45pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector45pin' terminalId='connector45terminal'/></schematicView>
 <pcbView>
@@ -98,7 +98,7 @@ The Micro is similar to the Arduino Leonardo in that the ATmega32u4 has built-in
 <connector id='connector46' type='female' name='GND'>
 <description>GND</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector46pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector46pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector46pin' terminalId='connector46terminal'/></schematicView>
 <pcbView>
@@ -108,7 +108,7 @@ The Micro is similar to the Arduino Leonardo in that the ATmega32u4 has built-in
 <connector id='connector47' type='female' name='MOSI'>
 <description>MOSI</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector47pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector47pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector47pin' terminalId='connector47terminal'/></schematicView>
 <pcbView>
@@ -118,7 +118,7 @@ The Micro is similar to the Arduino Leonardo in that the ATmega32u4 has built-in
 <connector id='connector48' type='female' name='RXLED/SS'>
 <description>RXLED/SS</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector48pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector48pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector48pin' terminalId='connector48terminal'/></schematicView>
 <pcbView>
@@ -128,7 +128,7 @@ The Micro is similar to the Arduino Leonardo in that the ATmega32u4 has built-in
 <connector id='connector49' type='female' name='D1/TX'>
 <description>D1/TX</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector49pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector49pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector49pin' terminalId='connector49terminal'/></schematicView>
 <pcbView>
@@ -138,7 +138,7 @@ The Micro is similar to the Arduino Leonardo in that the ATmega32u4 has built-in
 <connector id='connector50' type='female' name='D0/RX'>
 <description>D0/RX</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector50pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector50pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector50pin' terminalId='connector50terminal'/></schematicView>
 <pcbView>
@@ -148,7 +148,7 @@ The Micro is similar to the Arduino Leonardo in that the ATmega32u4 has built-in
 <connector id='connector51' type='female' name='RESET'>
 <description>RESET</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector51pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector51pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector51pin' terminalId='connector51terminal'/></schematicView>
 <pcbView>
@@ -158,7 +158,7 @@ The Micro is similar to the Arduino Leonardo in that the ATmega32u4 has built-in
 <connector id='connector52' type='female' name='GND'>
 <description>GND</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector52pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector52pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector52pin' terminalId='connector52terminal'/></schematicView>
 <pcbView>
@@ -168,7 +168,7 @@ The Micro is similar to the Arduino Leonardo in that the ATmega32u4 has built-in
 <connector id='connector53' type='female' name='D2/SDA'>
 <description>D2/SDA</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector53pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector53pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector53pin' terminalId='connector53terminal'/></schematicView>
 <pcbView>
@@ -178,7 +178,7 @@ The Micro is similar to the Arduino Leonardo in that the ATmega32u4 has built-in
 <connector id='connector54' type='female' name='D3/SCL'>
 <description>D3/SCL</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector54pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector54pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector54pin' terminalId='connector54terminal'/></schematicView>
 <pcbView>
@@ -188,7 +188,7 @@ The Micro is similar to the Arduino Leonardo in that the ATmega32u4 has built-in
 <connector id='connector55' type='female' name='D4 PWM/A6'>
 <description>D4 PWM/A6</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector55pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector55pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector55pin' terminalId='connector55terminal'/></schematicView>
 <pcbView>
@@ -198,7 +198,7 @@ The Micro is similar to the Arduino Leonardo in that the ATmega32u4 has built-in
 <connector id='connector56' type='female' name='D5 PWM'>
 <description>D5 PWM</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector56pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector56pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector56pin' terminalId='connector56terminal'/></schematicView>
 <pcbView>
@@ -208,7 +208,7 @@ The Micro is similar to the Arduino Leonardo in that the ATmega32u4 has built-in
 <connector id='connector57' type='female' name='D6 PWM/A7'>
 <description>D6 PWM/A7</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector57pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector57pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector57pin' terminalId='connector57terminal'/></schematicView>
 <pcbView>
@@ -218,7 +218,7 @@ The Micro is similar to the Arduino Leonardo in that the ATmega32u4 has built-in
 <connector id='connector58' type='female' name='D7'>
 <description>D7</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector58pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector58pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector58pin' terminalId='connector58terminal'/></schematicView>
 <pcbView>
@@ -228,7 +228,7 @@ The Micro is similar to the Arduino Leonardo in that the ATmega32u4 has built-in
 <connector id='connector59' type='female' name='D8 PWM/A8'>
 <description>D8 PWM/A8</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector59pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector59pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector59pin' terminalId='connector59terminal'/></schematicView>
 <pcbView>
@@ -238,7 +238,7 @@ The Micro is similar to the Arduino Leonardo in that the ATmega32u4 has built-in
 <connector id='connector60' type='female' name='D9 PWM/A9'>
 <description>D9 PWM/A9</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector60pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector60pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector60pin' terminalId='connector60terminal'/></schematicView>
 <pcbView>
@@ -248,7 +248,7 @@ The Micro is similar to the Arduino Leonardo in that the ATmega32u4 has built-in
 <connector id='connector61' type='female' name='D10 PWM/A10'>
 <description>D10 PWM/A10</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector61pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector61pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector61pin' terminalId='connector61terminal'/></schematicView>
 <pcbView>
@@ -258,7 +258,7 @@ The Micro is similar to the Arduino Leonardo in that the ATmega32u4 has built-in
 <connector id='connector62' type='female' name='D11 PWM'>
 <description>D11 PWM</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector62pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector62pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector62pin' terminalId='connector62terminal'/></schematicView>
 <pcbView>
@@ -268,7 +268,7 @@ The Micro is similar to the Arduino Leonardo in that the ATmega32u4 has built-in
 <connector id='connector63' type='female' name='D12 PWM/A11'>
 <description>D12 PWM/A11</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector63pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector63pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector63pin' terminalId='connector63terminal'/></schematicView>
 <pcbView>
@@ -278,7 +278,7 @@ The Micro is similar to the Arduino Leonardo in that the ATmega32u4 has built-in
 <connector id='connector64' type='female' name='SCK'>
 <description>SCK</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector64pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector64pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector64pin' terminalId='connector64terminal'/></schematicView>
 <pcbView>
@@ -288,7 +288,7 @@ The Micro is similar to the Arduino Leonardo in that the ATmega32u4 has built-in
 <connector id='connector65' type='female' name='MISO'>
 <description>MISO</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector65pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector65pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector65pin' terminalId='connector65terminal'/></schematicView>
 <pcbView>
@@ -298,7 +298,7 @@ The Micro is similar to the Arduino Leonardo in that the ATmega32u4 has built-in
 <connector id='connector66' type='female' name='VIN'>
 <description>VIN</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector66pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector66pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector66pin' terminalId='connector66terminal'/></schematicView>
 <pcbView>
@@ -308,7 +308,7 @@ The Micro is similar to the Arduino Leonardo in that the ATmega32u4 has built-in
 <connector id='connector67' type='female' name='GND'>
 <description>GND</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector67pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector67pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector67pin' terminalId='connector67terminal'/></schematicView>
 <pcbView>
@@ -318,7 +318,7 @@ The Micro is similar to the Arduino Leonardo in that the ATmega32u4 has built-in
 <connector id='connector68' type='female' name='RESET'>
 <description>RESET</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector68pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector68pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector68pin' terminalId='connector68terminal'/></schematicView>
 <pcbView>
@@ -328,7 +328,7 @@ The Micro is similar to the Arduino Leonardo in that the ATmega32u4 has built-in
 <connector id='connector69' type='female' name='5V'>
 <description>5V</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector69pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector69pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector69pin' terminalId='connector69terminal'/></schematicView>
 <pcbView>
@@ -338,7 +338,7 @@ The Micro is similar to the Arduino Leonardo in that the ATmega32u4 has built-in
 <connector id='connector72' type='female' name='A5'>
 <description>A5</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector72pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector72pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector72pin' terminalId='connector72terminal'/></schematicView>
 <pcbView>
@@ -348,7 +348,7 @@ The Micro is similar to the Arduino Leonardo in that the ATmega32u4 has built-in
 <connector id='connector73' type='female' name='A4'>
 <description>A4</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector73pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector73pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector73pin' terminalId='connector73terminal'/></schematicView>
 <pcbView>
@@ -358,7 +358,7 @@ The Micro is similar to the Arduino Leonardo in that the ATmega32u4 has built-in
 <connector id='connector74' type='female' name='A3'>
 <description>A3</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector74pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector74pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector74pin' terminalId='connector74terminal'/></schematicView>
 <pcbView>
@@ -368,7 +368,7 @@ The Micro is similar to the Arduino Leonardo in that the ATmega32u4 has built-in
 <connector id='connector75' type='female' name='A2'>
 <description>A2</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector75pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector75pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector75pin' terminalId='connector75terminal'/></schematicView>
 <pcbView>
@@ -378,7 +378,7 @@ The Micro is similar to the Arduino Leonardo in that the ATmega32u4 has built-in
 <connector id='connector76' type='female' name='A1'>
 <description>A1</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector76pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector76pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector76pin' terminalId='connector76terminal'/></schematicView>
 <pcbView>
@@ -388,7 +388,7 @@ The Micro is similar to the Arduino Leonardo in that the ATmega32u4 has built-in
 <connector id='connector77' type='female' name='A0'>
 <description>A0</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector77pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector77pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector77pin' terminalId='connector77terminal'/></schematicView>
 <pcbView>
@@ -398,7 +398,7 @@ The Micro is similar to the Arduino Leonardo in that the ATmega32u4 has built-in
 <connector id='connector78' type='female' name='AREF'>
 <description>AREF</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector78pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector78pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector78pin' terminalId='connector78terminal'/></schematicView>
 <pcbView>
@@ -408,7 +408,7 @@ The Micro is similar to the Arduino Leonardo in that the ATmega32u4 has built-in
 <connector id='connector79' type='female' name='3V3'>
 <description>3V3</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector79pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector79pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector79pin' terminalId='connector79terminal'/></schematicView>
 <pcbView>
@@ -418,7 +418,7 @@ The Micro is similar to the Arduino Leonardo in that the ATmega32u4 has built-in
 <connector id='connector80' type='female' name='D13 PWM'>
 <description>D13 PWM</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector80pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector80pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector80pin' terminalId='connector80terminal'/></schematicView>
 <pcbView>

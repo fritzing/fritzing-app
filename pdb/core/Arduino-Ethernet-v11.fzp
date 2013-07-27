@@ -68,7 +68,7 @@ The Ethernet Pro is based on the same hardware as the Ethernet shield (Wiznet W5
 <connector id='connector0' type='female' name='AD0'>
 <description>AD0</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector0pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector0pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector0pin' terminalId='connector0terminal'/></schematicView>
 <pcbView>
@@ -78,7 +78,7 @@ The Ethernet Pro is based on the same hardware as the Ethernet shield (Wiznet W5
 <connector id='connector1' type='female' name='AD1'>
 <description>AD1</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector1pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector1pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector1pin' terminalId='connector1terminal'/></schematicView>
 <pcbView>
@@ -88,7 +88,7 @@ The Ethernet Pro is based on the same hardware as the Ethernet shield (Wiznet W5
 <connector id='connector2' type='female' name='AD2'>
 <description>AD2</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector2pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector2pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector2pin' terminalId='connector2terminal'/></schematicView>
 <pcbView>
@@ -98,7 +98,7 @@ The Ethernet Pro is based on the same hardware as the Ethernet shield (Wiznet W5
 <connector id='connector3' type='female' name='AD3'>
 <description>AD3</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector3pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector3pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector3pin' terminalId='connector3terminal'/></schematicView>
 <pcbView>
@@ -108,7 +108,7 @@ The Ethernet Pro is based on the same hardware as the Ethernet shield (Wiznet W5
 <connector id='connector4' type='female' name='AD4'>
 <description>AD4</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector4pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector4pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector4pin' terminalId='connector4terminal'/></schematicView>
 <pcbView>
@@ -118,7 +118,7 @@ The Ethernet Pro is based on the same hardware as the Ethernet shield (Wiznet W5
 <connector id='connector5' type='female' name='AD5'>
 <description>AD5</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector5pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector5pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector5pin' terminalId='connector5terminal'/></schematicView>
 <pcbView>
@@ -128,7 +128,7 @@ The Ethernet Pro is based on the same hardware as the Ethernet shield (Wiznet W5
 <connector id='connector68' type='female' name='IO8'>
 <description>IO8</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector68pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector68pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector68pin' terminalId='connector68terminal'/></schematicView>
 <pcbView>
@@ -138,7 +138,7 @@ The Ethernet Pro is based on the same hardware as the Ethernet shield (Wiznet W5
 <connector id='connector69' type='female' name='IO9'>
 <description>IO9</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector69pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector69pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector69pin' terminalId='connector69terminal'/></schematicView>
 <pcbView>
@@ -148,7 +148,7 @@ The Ethernet Pro is based on the same hardware as the Ethernet shield (Wiznet W5
 <connector id='connector70' type='female' name='*CS'>
 <description>*CS</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector70pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector70pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector70pin' terminalId='connector70terminal'/></schematicView>
 <pcbView>
@@ -158,7 +158,7 @@ The Ethernet Pro is based on the same hardware as the Ethernet shield (Wiznet W5
 <connector id='connector71' type='female' name='MOSI'>
 <description>MOSI</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector71pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector71pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector71pin' terminalId='connector71terminal'/></schematicView>
 <pcbView>
@@ -168,7 +168,7 @@ The Ethernet Pro is based on the same hardware as the Ethernet shield (Wiznet W5
 <connector id='connector72' type='female' name='MISO'>
 <description>MISO</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector72pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector72pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector72pin' terminalId='connector72terminal'/></schematicView>
 <pcbView>
@@ -178,7 +178,7 @@ The Ethernet Pro is based on the same hardware as the Ethernet shield (Wiznet W5
 <connector id='connector73' type='female' name='SCLK'>
 <description>SCLK</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector73pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector73pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector73pin' terminalId='connector73terminal'/></schematicView>
 <pcbView>
@@ -188,7 +188,7 @@ The Ethernet Pro is based on the same hardware as the Ethernet shield (Wiznet W5
 <connector id='connector74' type='female' name='GND'>
 <description>GND</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector74pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector74pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector74pin' terminalId='connector74terminal'/></schematicView>
 <pcbView>
@@ -198,7 +198,7 @@ The Ethernet Pro is based on the same hardware as the Ethernet shield (Wiznet W5
 <connector id='connector75' type='female' name='AREF'>
 <description>AREF</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector75pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector75pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector75pin' terminalId='connector75terminal'/></schematicView>
 <pcbView>
@@ -208,7 +208,7 @@ The Ethernet Pro is based on the same hardware as the Ethernet shield (Wiznet W5
 <connector id='connector76' type='female' name='IO0'>
 <description>IO0</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector76pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector76pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector76pin' terminalId='connector76terminal'/></schematicView>
 <pcbView>
@@ -218,7 +218,7 @@ The Ethernet Pro is based on the same hardware as the Ethernet shield (Wiznet W5
 <connector id='connector77' type='female' name='IO1'>
 <description>IO1</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector77pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector77pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector77pin' terminalId='connector77terminal'/></schematicView>
 <pcbView>
@@ -228,7 +228,7 @@ The Ethernet Pro is based on the same hardware as the Ethernet shield (Wiznet W5
 <connector id='connector78' type='female' name='IO2'>
 <description>IO2</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector78pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector78pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector78pin' terminalId='connector78terminal'/></schematicView>
 <pcbView>
@@ -238,7 +238,7 @@ The Ethernet Pro is based on the same hardware as the Ethernet shield (Wiznet W5
 <connector id='connector79' type='female' name='IO3'>
 <description>IO3</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector79pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector79pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector79pin' terminalId='connector79terminal'/></schematicView>
 <pcbView>
@@ -248,7 +248,7 @@ The Ethernet Pro is based on the same hardware as the Ethernet shield (Wiznet W5
 <connector id='connector80' type='female' name='IO4'>
 <description>IO4</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector80pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector80pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector80pin' terminalId='connector80terminal'/></schematicView>
 <pcbView>
@@ -258,7 +258,7 @@ The Ethernet Pro is based on the same hardware as the Ethernet shield (Wiznet W5
 <connector id='connector81' type='female' name='IO5'>
 <description>IO5</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector81pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector81pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector81pin' terminalId='connector81terminal'/></schematicView>
 <pcbView>
@@ -268,7 +268,7 @@ The Ethernet Pro is based on the same hardware as the Ethernet shield (Wiznet W5
 <connector id='connector82' type='female' name='IO6'>
 <description>IO6</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector82pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector82pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector82pin' terminalId='connector82terminal'/></schematicView>
 <pcbView>
@@ -278,7 +278,7 @@ The Ethernet Pro is based on the same hardware as the Ethernet shield (Wiznet W5
 <connector id='connector83' type='female' name='IO7'>
 <description>IO7</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector83pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector83pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector83pin' terminalId='connector83terminal'/></schematicView>
 <pcbView>
@@ -288,7 +288,7 @@ The Ethernet Pro is based on the same hardware as the Ethernet shield (Wiznet W5
 <connector id='connector98' type='female' name='MISO'>
 <description>MISO</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector98pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector98pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector98pin' terminalId='connector98terminal'/></schematicView>
 <pcbView>
@@ -298,7 +298,7 @@ The Ethernet Pro is based on the same hardware as the Ethernet shield (Wiznet W5
 <connector id='connector99' type='female' name='5V'>
 <description>5V</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector99pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector99pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector99pin' terminalId='connector99terminal'/></schematicView>
 <pcbView>
@@ -308,7 +308,7 @@ The Ethernet Pro is based on the same hardware as the Ethernet shield (Wiznet W5
 <connector id='connector100' type='female' name='SCLK'>
 <description>SCLK</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector100pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector100pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector100pin' terminalId='connector100terminal'/></schematicView>
 <pcbView>
@@ -318,7 +318,7 @@ The Ethernet Pro is based on the same hardware as the Ethernet shield (Wiznet W5
 <connector id='connector101' type='female' name='MOSI'>
 <description>MOSI</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector101pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector101pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector101pin' terminalId='connector101terminal'/></schematicView>
 <pcbView>
@@ -328,7 +328,7 @@ The Ethernet Pro is based on the same hardware as the Ethernet shield (Wiznet W5
 <connector id='connector102' type='female' name='RESET'>
 <description>RESET</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector102pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector102pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector102pin' terminalId='connector102terminal'/></schematicView>
 <pcbView>
@@ -338,7 +338,7 @@ The Ethernet Pro is based on the same hardware as the Ethernet shield (Wiznet W5
 <connector id='connector103' type='female' name='GND'>
 <description>GND</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector103pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector103pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector103pin' terminalId='connector103terminal'/></schematicView>
 <pcbView>
@@ -348,7 +348,7 @@ The Ethernet Pro is based on the same hardware as the Ethernet shield (Wiznet W5
 <connector id='connector128' type='female' name='RESET'>
 <description>RESET</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector128pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector128pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector128pin' terminalId='connector128terminal'/></schematicView>
 <pcbView>
@@ -358,7 +358,7 @@ The Ethernet Pro is based on the same hardware as the Ethernet shield (Wiznet W5
 <connector id='connector129' type='female' name='3.3V'>
 <description>3.3V</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector129pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector129pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector129pin' terminalId='connector129terminal'/></schematicView>
 <pcbView>
@@ -368,7 +368,7 @@ The Ethernet Pro is based on the same hardware as the Ethernet shield (Wiznet W5
 <connector id='connector130' type='female' name='5V'>
 <description>5V</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector130pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector130pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector130pin' terminalId='connector130terminal'/></schematicView>
 <pcbView>
@@ -378,7 +378,7 @@ The Ethernet Pro is based on the same hardware as the Ethernet shield (Wiznet W5
 <connector id='connector131' type='female' name='GND'>
 <description>GND</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector131pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector131pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector131pin' terminalId='connector131terminal'/></schematicView>
 <pcbView>
@@ -388,7 +388,7 @@ The Ethernet Pro is based on the same hardware as the Ethernet shield (Wiznet W5
 <connector id='connector132' type='female' name='GND'>
 <description>GND</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector132pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector132pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector132pin' terminalId='connector132terminal'/></schematicView>
 <pcbView>
@@ -398,7 +398,7 @@ The Ethernet Pro is based on the same hardware as the Ethernet shield (Wiznet W5
 <connector id='connector133' type='female' name='VIN'>
 <description>VIN</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector133pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector133pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector133pin' terminalId='connector133terminal'/></schematicView>
 <pcbView>

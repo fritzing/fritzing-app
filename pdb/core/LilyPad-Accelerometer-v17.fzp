@@ -58,7 +58,7 @@ Thin 0.8mm PCB</description>
 <connector id='connector12' type='female' name='COM'>
 <description>COM</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector12pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector12pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector12pin' terminalId='connector12terminal'/></schematicView>
 <pcbView>
@@ -68,7 +68,7 @@ Thin 0.8mm PCB</description>
 <connector id='connector13' type='female' name='XOUT'>
 <description>XOUT</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector13pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector13pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector13pin' terminalId='connector13terminal'/></schematicView>
 <pcbView>
@@ -78,7 +78,7 @@ Thin 0.8mm PCB</description>
 <connector id='connector14' type='female' name='YOUT'>
 <description>YOUT</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector14pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector14pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector14pin' terminalId='connector14terminal'/></schematicView>
 <pcbView>
@@ -88,7 +88,7 @@ Thin 0.8mm PCB</description>
 <connector id='connector15' type='female' name='ZOUT'>
 <description>ZOUT</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector15pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector15pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector15pin' terminalId='connector15terminal'/></schematicView>
 <pcbView>
@@ -98,7 +98,7 @@ Thin 0.8mm PCB</description>
 <connector id='connector16' type='female' name='5V'>
 <description>5V</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector16pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector16pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector16pin' terminalId='connector16terminal'/></schematicView>
 <pcbView>

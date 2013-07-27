@@ -52,7 +52,7 @@ Thin 0.8mm PCB</description>
 <connector id='connector0' type='female' name='+'>
 <description>+</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector0pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector0pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector0pin' terminalId='connector0terminal'/></schematicView>
 <pcbView>
@@ -62,7 +62,7 @@ Thin 0.8mm PCB</description>
 <connector id='connector1' type='female' name='-'>
 <description>-</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector1pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector1pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector1pin' terminalId='connector1terminal'/></schematicView>
 <pcbView>
@@ -72,7 +72,7 @@ Thin 0.8mm PCB</description>
 <connector id='connector2' type='female' name='S'>
 <description>S</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector2pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector2pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector2pin' terminalId='connector2terminal'/></schematicView>
 <pcbView>

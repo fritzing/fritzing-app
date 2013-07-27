@@ -47,7 +47,7 @@ LilyPad is a wearable e-textile technology developed by Leah Buechley and cooper
 <connector id='connector0' type='female' name='A2'>
 <description>A2</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector0pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector0pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector0pin' terminalId='connector0terminal'/></schematicView>
 <pcbView>
@@ -57,7 +57,7 @@ LilyPad is a wearable e-textile technology developed by Leah Buechley and cooper
 <connector id='connector1' type='female' name='A3'>
 <description>A3</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector1pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector1pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector1pin' terminalId='connector1terminal'/></schematicView>
 <pcbView>
@@ -67,7 +67,7 @@ LilyPad is a wearable e-textile technology developed by Leah Buechley and cooper
 <connector id='connector2' type='female' name='A4'>
 <description>A4</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector2pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector2pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector2pin' terminalId='connector2terminal'/></schematicView>
 <pcbView>
@@ -77,7 +77,7 @@ LilyPad is a wearable e-textile technology developed by Leah Buechley and cooper
 <connector id='connector3' type='female' name='A5'>
 <description>A5</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector3pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector3pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector3pin' terminalId='connector3terminal'/></schematicView>
 <pcbView>
@@ -87,7 +87,7 @@ LilyPad is a wearable e-textile technology developed by Leah Buechley and cooper
 <connector id='connector56' type='female' name='D11'>
 <description>D11</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector56pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector56pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector56pin' terminalId='connector56terminal'/></schematicView>
 <pcbView>
@@ -97,7 +97,7 @@ LilyPad is a wearable e-textile technology developed by Leah Buechley and cooper
 <connector id='connector57' type='female' name='D6'>
 <description>D6</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector57pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector57pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector57pin' terminalId='connector57terminal'/></schematicView>
 <pcbView>
@@ -107,7 +107,7 @@ LilyPad is a wearable e-textile technology developed by Leah Buechley and cooper
 <connector id='connector58' type='female' name='D9'>
 <description>D9</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector58pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector58pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector58pin' terminalId='connector58terminal'/></schematicView>
 <pcbView>
@@ -117,7 +117,7 @@ LilyPad is a wearable e-textile technology developed by Leah Buechley and cooper
 <connector id='connector59' type='female' name='D10'>
 <description>D10</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector59pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector59pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector59pin' terminalId='connector59terminal'/></schematicView>
 <pcbView>
@@ -127,7 +127,7 @@ LilyPad is a wearable e-textile technology developed by Leah Buechley and cooper
 <connector id='connector60' type='female' name='D5'>
 <description>D5</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector60pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector60pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector60pin' terminalId='connector60terminal'/></schematicView>
 <pcbView>
@@ -137,7 +137,7 @@ LilyPad is a wearable e-textile technology developed by Leah Buechley and cooper
 <connector id='connector61' type='female' name='GND'>
 <description>GND</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector61pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector61pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector61pin' terminalId='connector61terminal'/></schematicView>
 <pcbView>
@@ -147,7 +147,7 @@ LilyPad is a wearable e-textile technology developed by Leah Buechley and cooper
 <connector id='connector62' type='female' name='VCC'>
 <description>VCC</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector62pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector62pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector62pin' terminalId='connector62terminal'/></schematicView>
 <pcbView>

@@ -53,7 +53,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector0' type='female' name='A8'>
 <description>A8</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector0pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector0pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector0pin' terminalId='connector0terminal'/></schematicView>
 <pcbView>
@@ -63,7 +63,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector1' type='female' name='A9'>
 <description>A9</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector1pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector1pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector1pin' terminalId='connector1terminal'/></schematicView>
 <pcbView>
@@ -73,7 +73,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector2' type='female' name='A10'>
 <description>A10</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector2pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector2pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector2pin' terminalId='connector2terminal'/></schematicView>
 <pcbView>
@@ -83,7 +83,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector3' type='female' name='A11'>
 <description>A11</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector3pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector3pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector3pin' terminalId='connector3terminal'/></schematicView>
 <pcbView>
@@ -93,7 +93,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector4' type='female' name='A12'>
 <description>A12</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector4pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector4pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector4pin' terminalId='connector4terminal'/></schematicView>
 <pcbView>
@@ -103,7 +103,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector5' type='female' name='A13'>
 <description>A13</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector5pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector5pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector5pin' terminalId='connector5terminal'/></schematicView>
 <pcbView>
@@ -113,7 +113,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector6' type='female' name='A14'>
 <description>A14</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector6pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector6pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector6pin' terminalId='connector6terminal'/></schematicView>
 <pcbView>
@@ -123,7 +123,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector7' type='female' name='A15'>
 <description>A15</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector7pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector7pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector7pin' terminalId='connector7terminal'/></schematicView>
 <pcbView>
@@ -133,7 +133,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector8' type='female' name='A0'>
 <description>A0</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector8pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector8pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector8pin' terminalId='connector8terminal'/></schematicView>
 <pcbView>
@@ -143,7 +143,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector9' type='female' name='A1'>
 <description>A1</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector9pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector9pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector9pin' terminalId='connector9terminal'/></schematicView>
 <pcbView>
@@ -153,7 +153,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector10' type='female' name='A2'>
 <description>A2</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector10pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector10pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector10pin' terminalId='connector10terminal'/></schematicView>
 <pcbView>
@@ -163,7 +163,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector11' type='female' name='A3'>
 <description>A3</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector11pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector11pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector11pin' terminalId='connector11terminal'/></schematicView>
 <pcbView>
@@ -173,7 +173,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector12' type='female' name='A4'>
 <description>A4</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector12pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector12pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector12pin' terminalId='connector12terminal'/></schematicView>
 <pcbView>
@@ -183,7 +183,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector13' type='female' name='A5'>
 <description>A5</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector13pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector13pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector13pin' terminalId='connector13terminal'/></schematicView>
 <pcbView>
@@ -193,7 +193,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector14' type='female' name='A6'>
 <description>A6</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector14pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector14pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector14pin' terminalId='connector14terminal'/></schematicView>
 <pcbView>
@@ -203,7 +203,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector15' type='female' name='A7'>
 <description>A7</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector15pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector15pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector15pin' terminalId='connector15terminal'/></schematicView>
 <pcbView>
@@ -213,7 +213,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector46' type='female' name='D21/SCL'>
 <description>D21/SCL</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector46pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector46pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector46pin' terminalId='connector46terminal'/></schematicView>
 <pcbView>
@@ -223,7 +223,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector47' type='female' name='D20/SDA'>
 <description>D20/SDA</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector47pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector47pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector47pin' terminalId='connector47terminal'/></schematicView>
 <pcbView>
@@ -233,7 +233,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector48' type='female' name='D19/RX1'>
 <description>D19/RX1</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector48pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector48pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector48pin' terminalId='connector48terminal'/></schematicView>
 <pcbView>
@@ -243,7 +243,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector49' type='female' name='D18/TX1'>
 <description>D18/TX1</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector49pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector49pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector49pin' terminalId='connector49terminal'/></schematicView>
 <pcbView>
@@ -253,7 +253,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector50' type='female' name='D17 PWM/RX2'>
 <description>D17 PWM/RX2</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector50pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector50pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector50pin' terminalId='connector50terminal'/></schematicView>
 <pcbView>
@@ -263,7 +263,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector51' type='female' name='D16 PWM/TX2'>
 <description>D16 PWM/TX2</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector51pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector51pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector51pin' terminalId='connector51terminal'/></schematicView>
 <pcbView>
@@ -273,7 +273,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector52' type='female' name='D15/RX3'>
 <description>D15/RX3</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector52pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector52pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector52pin' terminalId='connector52terminal'/></schematicView>
 <pcbView>
@@ -283,7 +283,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector53' type='female' name='D14/TX3'>
 <description>D14/TX3</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector53pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector53pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector53pin' terminalId='connector53terminal'/></schematicView>
 <pcbView>
@@ -293,7 +293,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector234' type='female' name='SCL'>
 <description>SCL</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector234pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector234pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector234pin' terminalId='connector234terminal'/></schematicView>
 <pcbView>
@@ -303,7 +303,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector235' type='female' name='SDA'>
 <description>SDA</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector235pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector235pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector235pin' terminalId='connector235terminal'/></schematicView>
 <pcbView>
@@ -313,7 +313,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector236' type='female' name='AREF'>
 <description>AREF</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector236pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector236pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector236pin' terminalId='connector236terminal'/></schematicView>
 <pcbView>
@@ -323,7 +323,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector237' type='female' name='GND'>
 <description>GND</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector237pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector237pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector237pin' terminalId='connector237terminal'/></schematicView>
 <pcbView>
@@ -333,7 +333,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector238' type='female' name='D13 PWM'>
 <description>D13 PWM</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector238pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector238pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector238pin' terminalId='connector238terminal'/></schematicView>
 <pcbView>
@@ -343,7 +343,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector239' type='female' name='D12 PWM'>
 <description>D12 PWM</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector239pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector239pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector239pin' terminalId='connector239terminal'/></schematicView>
 <pcbView>
@@ -353,7 +353,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector240' type='female' name='D11 PWM'>
 <description>D11 PWM</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector240pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector240pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector240pin' terminalId='connector240terminal'/></schematicView>
 <pcbView>
@@ -363,7 +363,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector241' type='female' name='D10 PWM'>
 <description>D10 PWM</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector241pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector241pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector241pin' terminalId='connector241terminal'/></schematicView>
 <pcbView>
@@ -373,7 +373,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector242' type='female' name='D9 PWM'>
 <description>D9 PWM</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector242pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector242pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector242pin' terminalId='connector242terminal'/></schematicView>
 <pcbView>
@@ -383,7 +383,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector243' type='female' name='D8 PWM'>
 <description>D8 PWM</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector243pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector243pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector243pin' terminalId='connector243terminal'/></schematicView>
 <pcbView>
@@ -393,7 +393,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector254' type='female' name='IOREF'>
 <description>IOREF</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector254pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector254pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector254pin' terminalId='connector254terminal'/></schematicView>
 <pcbView>
@@ -403,7 +403,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector255' type='female' name='IOREF'>
 <description>IOREF</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector255pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector255pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector255pin' terminalId='connector255terminal'/></schematicView>
 <pcbView>
@@ -413,7 +413,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector256' type='female' name='RESET'>
 <description>RESET</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector256pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector256pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector256pin' terminalId='connector256terminal'/></schematicView>
 <pcbView>
@@ -423,7 +423,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector257' type='female' name='3V3'>
 <description>3V3</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector257pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector257pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector257pin' terminalId='connector257terminal'/></schematicView>
 <pcbView>
@@ -433,7 +433,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector258' type='female' name='5V'>
 <description>5V</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector258pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector258pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector258pin' terminalId='connector258terminal'/></schematicView>
 <pcbView>
@@ -443,7 +443,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector259' type='female' name='GND'>
 <description>GND</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector259pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector259pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector259pin' terminalId='connector259terminal'/></schematicView>
 <pcbView>
@@ -453,7 +453,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector260' type='female' name='GND'>
 <description>GND</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector260pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector260pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector260pin' terminalId='connector260terminal'/></schematicView>
 <pcbView>
@@ -463,7 +463,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector261' type='female' name='VIN'>
 <description>VIN</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector261pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector261pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector261pin' terminalId='connector261terminal'/></schematicView>
 <pcbView>
@@ -473,7 +473,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector262' type='female' name='D0 RX0'>
 <description>D0 RX0</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector262pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector262pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector262pin' terminalId='connector262terminal'/></schematicView>
 <pcbView>
@@ -483,7 +483,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector263' type='female' name='D1 TX0'>
 <description>D1 TX0</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector263pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector263pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector263pin' terminalId='connector263terminal'/></schematicView>
 <pcbView>
@@ -493,7 +493,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector264' type='female' name='D2 PWM'>
 <description>D2 PWM</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector264pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector264pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector264pin' terminalId='connector264terminal'/></schematicView>
 <pcbView>
@@ -503,7 +503,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector265' type='female' name='D3 PWM'>
 <description>D3 PWM</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector265pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector265pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector265pin' terminalId='connector265terminal'/></schematicView>
 <pcbView>
@@ -513,7 +513,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector266' type='female' name='D4 PWM'>
 <description>D4 PWM</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector266pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector266pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector266pin' terminalId='connector266terminal'/></schematicView>
 <pcbView>
@@ -523,7 +523,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector267' type='female' name='D5 PWM'>
 <description>D5 PWM</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector267pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector267pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector267pin' terminalId='connector267terminal'/></schematicView>
 <pcbView>
@@ -533,7 +533,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector268' type='female' name='D6 PWM'>
 <description>D6 PWM</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector268pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector268pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector268pin' terminalId='connector268terminal'/></schematicView>
 <pcbView>
@@ -543,7 +543,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector269' type='female' name='D7 PWM'>
 <description>D7 PWM</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector269pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector269pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector269pin' terminalId='connector269terminal'/></schematicView>
 <pcbView>
@@ -553,7 +553,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector343' type='female' name='5V'>
 <description>5V</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector343pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector343pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector343pin' terminalId='connector343terminal'/></schematicView>
 <pcbView>
@@ -563,7 +563,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector344' type='female' name='5V'>
 <description>5V</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector344pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector344pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector344pin' terminalId='connector344terminal'/></schematicView>
 <pcbView>
@@ -573,7 +573,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector345' type='female' name='D22'>
 <description>D22</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector345pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector345pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector345pin' terminalId='connector345terminal'/></schematicView>
 <pcbView>
@@ -583,7 +583,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector346' type='female' name='D23'>
 <description>D23</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector346pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector346pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector346pin' terminalId='connector346terminal'/></schematicView>
 <pcbView>
@@ -593,7 +593,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector347' type='female' name='D24'>
 <description>D24</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector347pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector347pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector347pin' terminalId='connector347terminal'/></schematicView>
 <pcbView>
@@ -603,7 +603,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector348' type='female' name='D25'>
 <description>D25</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector348pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector348pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector348pin' terminalId='connector348terminal'/></schematicView>
 <pcbView>
@@ -613,7 +613,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector349' type='female' name='D26'>
 <description>D26</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector349pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector349pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector349pin' terminalId='connector349terminal'/></schematicView>
 <pcbView>
@@ -623,7 +623,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector350' type='female' name='D27'>
 <description>D27</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector350pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector350pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector350pin' terminalId='connector350terminal'/></schematicView>
 <pcbView>
@@ -633,7 +633,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector351' type='female' name='D28'>
 <description>D28</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector351pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector351pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector351pin' terminalId='connector351terminal'/></schematicView>
 <pcbView>
@@ -643,7 +643,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector352' type='female' name='D29'>
 <description>D29</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector352pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector352pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector352pin' terminalId='connector352terminal'/></schematicView>
 <pcbView>
@@ -653,7 +653,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector353' type='female' name='D30'>
 <description>D30</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector353pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector353pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector353pin' terminalId='connector353terminal'/></schematicView>
 <pcbView>
@@ -663,7 +663,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector354' type='female' name='D31'>
 <description>D31</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector354pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector354pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector354pin' terminalId='connector354terminal'/></schematicView>
 <pcbView>
@@ -673,7 +673,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector355' type='female' name='D32'>
 <description>D32</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector355pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector355pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector355pin' terminalId='connector355terminal'/></schematicView>
 <pcbView>
@@ -683,7 +683,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector356' type='female' name='D33'>
 <description>D33</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector356pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector356pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector356pin' terminalId='connector356terminal'/></schematicView>
 <pcbView>
@@ -693,7 +693,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector357' type='female' name='D34'>
 <description>D34</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector357pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector357pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector357pin' terminalId='connector357terminal'/></schematicView>
 <pcbView>
@@ -703,7 +703,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector358' type='female' name='D35'>
 <description>D35</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector358pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector358pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector358pin' terminalId='connector358terminal'/></schematicView>
 <pcbView>
@@ -713,7 +713,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector359' type='female' name='D36'>
 <description>D36</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector359pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector359pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector359pin' terminalId='connector359terminal'/></schematicView>
 <pcbView>
@@ -723,7 +723,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector360' type='female' name='D37'>
 <description>D37</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector360pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector360pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector360pin' terminalId='connector360terminal'/></schematicView>
 <pcbView>
@@ -733,7 +733,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector361' type='female' name='D38'>
 <description>D38</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector361pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector361pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector361pin' terminalId='connector361terminal'/></schematicView>
 <pcbView>
@@ -743,7 +743,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector362' type='female' name='D39'>
 <description>D39</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector362pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector362pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector362pin' terminalId='connector362terminal'/></schematicView>
 <pcbView>
@@ -753,7 +753,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector363' type='female' name='D40'>
 <description>D40</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector363pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector363pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector363pin' terminalId='connector363terminal'/></schematicView>
 <pcbView>
@@ -763,7 +763,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector364' type='female' name='D41'>
 <description>D41</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector364pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector364pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector364pin' terminalId='connector364terminal'/></schematicView>
 <pcbView>
@@ -773,7 +773,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector365' type='female' name='D42'>
 <description>D42</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector365pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector365pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector365pin' terminalId='connector365terminal'/></schematicView>
 <pcbView>
@@ -783,7 +783,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector366' type='female' name='D43'>
 <description>D43</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector366pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector366pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector366pin' terminalId='connector366terminal'/></schematicView>
 <pcbView>
@@ -793,7 +793,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector367' type='female' name='D44'>
 <description>D44</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector367pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector367pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector367pin' terminalId='connector367terminal'/></schematicView>
 <pcbView>
@@ -803,7 +803,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector368' type='female' name='D45'>
 <description>D45</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector368pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector368pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector368pin' terminalId='connector368terminal'/></schematicView>
 <pcbView>
@@ -813,7 +813,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector369' type='female' name='D46'>
 <description>D46</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector369pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector369pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector369pin' terminalId='connector369terminal'/></schematicView>
 <pcbView>
@@ -823,7 +823,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector370' type='female' name='D47'>
 <description>D47</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector370pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector370pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector370pin' terminalId='connector370terminal'/></schematicView>
 <pcbView>
@@ -833,7 +833,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector371' type='female' name='D48'>
 <description>D48</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector371pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector371pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector371pin' terminalId='connector371terminal'/></schematicView>
 <pcbView>
@@ -843,7 +843,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector372' type='female' name='D49'>
 <description>D49</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector372pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector372pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector372pin' terminalId='connector372terminal'/></schematicView>
 <pcbView>
@@ -853,7 +853,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector373' type='female' name='D50'>
 <description>D50</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector373pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector373pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector373pin' terminalId='connector373terminal'/></schematicView>
 <pcbView>
@@ -863,7 +863,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector374' type='female' name='D51'>
 <description>D51</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector374pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector374pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector374pin' terminalId='connector374terminal'/></schematicView>
 <pcbView>
@@ -873,7 +873,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector375' type='female' name='D52'>
 <description>D52</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector375pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector375pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector375pin' terminalId='connector375terminal'/></schematicView>
 <pcbView>
@@ -883,7 +883,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector376' type='female' name='D53'>
 <description>D53</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector376pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector376pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector376pin' terminalId='connector376terminal'/></schematicView>
 <pcbView>
@@ -893,7 +893,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector377' type='female' name='GND'>
 <description>GND</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector377pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector377pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector377pin' terminalId='connector377terminal'/></schematicView>
 <pcbView>
@@ -903,7 +903,7 @@ Revision 3 of the board has the following new features:
 <connector id='connector378' type='female' name='GND'>
 <description>GND</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector378pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector378pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector378pin' terminalId='connector378terminal'/></schematicView>
 <pcbView>

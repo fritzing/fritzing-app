@@ -52,7 +52,7 @@ Thin 0.8mm PCB</description>
 <connector id='connector2' type='female' name='VCC'>
 <description>VCC</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector2pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector2pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector2pin' terminalId='connector2terminal'/></schematicView>
 <pcbView>
@@ -62,7 +62,7 @@ Thin 0.8mm PCB</description>
 <connector id='connector3' type='female' name='GND'>
 <description>GND</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector3pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector3pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector3pin' terminalId='connector3terminal'/></schematicView>
 <pcbView>
@@ -72,7 +72,7 @@ Thin 0.8mm PCB</description>
 <connector id='connector4' type='female' name='VO'>
 <description>VO</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector4pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector4pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector4pin' terminalId='connector4terminal'/></schematicView>
 <pcbView>

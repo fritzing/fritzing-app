@@ -54,7 +54,7 @@ Thin 0.8mm PCB</description>
 <connector id='connector27' type='female' name='+'>
 <description>+</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector27pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector27pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector27pin' terminalId='connector27terminal'/></schematicView>
 <pcbView>
@@ -64,7 +64,7 @@ Thin 0.8mm PCB</description>
 <connector id='connector28' type='female' name='GND'>
 <description>GND</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector28pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector28pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector28pin' terminalId='connector28terminal'/></schematicView>
 <pcbView>
@@ -74,7 +74,7 @@ Thin 0.8mm PCB</description>
 <connector id='connector29' type='female' name='GND'>
 <description>GND</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector29pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector29pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector29pin' terminalId='connector29terminal'/></schematicView>
 <pcbView>
@@ -84,7 +84,7 @@ Thin 0.8mm PCB</description>
 <connector id='connector30' type='female' name='GND'>
 <description>GND</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector30pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector30pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector30pin' terminalId='connector30terminal'/></schematicView>
 <pcbView>

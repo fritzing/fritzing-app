@@ -55,7 +55,7 @@ Thin 0.8mm PCB</description>
 <connector id='connector12' type='female' name='RESET'>
 <description>RESET</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector12pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector12pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector12pin' terminalId='connector12terminal'/></schematicView>
 <pcbView>
@@ -65,7 +65,7 @@ Thin 0.8mm PCB</description>
 <connector id='connector13' type='female' name='1'>
 <description>1</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector13pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector13pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector13pin' terminalId='connector13terminal'/></schematicView>
 <pcbView>
@@ -75,7 +75,7 @@ Thin 0.8mm PCB</description>
 <connector id='connector14' type='female' name='TX-O'>
 <description>TX-O</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector14pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector14pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector14pin' terminalId='connector14terminal'/></schematicView>
 <pcbView>
@@ -85,7 +85,7 @@ Thin 0.8mm PCB</description>
 <connector id='connector15' type='female' name='RX-I'>
 <description>RX-I</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector15pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector15pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector15pin' terminalId='connector15terminal'/></schematicView>
 <pcbView>
@@ -95,7 +95,7 @@ Thin 0.8mm PCB</description>
 <connector id='connector16' type='female' name='3.3V'>
 <description>3.3V</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector16pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector16pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector16pin' terminalId='connector16terminal'/></schematicView>
 <pcbView>
@@ -105,7 +105,7 @@ Thin 0.8mm PCB</description>
 <connector id='connector17' type='female' name='5'>
 <description>5</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector17pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector17pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector17pin' terminalId='connector17terminal'/></schematicView>
 <pcbView>
@@ -115,7 +115,7 @@ Thin 0.8mm PCB</description>
 <connector id='connector18' type='female' name='GND'>
 <description>GND</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector18pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector18pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector18pin' terminalId='connector18terminal'/></schematicView>
 <pcbView>
@@ -125,7 +125,7 @@ Thin 0.8mm PCB</description>
 <connector id='connector27' type='female' name='D5'>
 <description>D5</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector27pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector27pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector27pin' terminalId='connector27terminal'/></schematicView>
 <pcbView>
@@ -135,7 +135,7 @@ Thin 0.8mm PCB</description>
 <connector id='connector28' type='female' name='RTS'>
 <description>RTS</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector28pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector28pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector28pin' terminalId='connector28terminal'/></schematicView>
 <pcbView>
@@ -145,7 +145,7 @@ Thin 0.8mm PCB</description>
 <connector id='connector29' type='female' name='D3'>
 <description>D3</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector29pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector29pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector29pin' terminalId='connector29terminal'/></schematicView>
 <pcbView>
@@ -155,7 +155,7 @@ Thin 0.8mm PCB</description>
 <connector id='connector30' type='female' name='D2'>
 <description>D2</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector30pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector30pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector30pin' terminalId='connector30terminal'/></schematicView>
 <pcbView>
@@ -165,7 +165,7 @@ Thin 0.8mm PCB</description>
 <connector id='connector31' type='female' name='D1'>
 <description>D1</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector31pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector31pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector31pin' terminalId='connector31terminal'/></schematicView>
 <pcbView>
@@ -175,7 +175,7 @@ Thin 0.8mm PCB</description>
 <connector id='connector32' type='female' name='D0'>
 <description>D0</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector32pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector32pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector32pin' terminalId='connector32terminal'/></schematicView>
 <pcbView>
@@ -185,7 +185,7 @@ Thin 0.8mm PCB</description>
 <connector id='connector33' type='female' name='VCC'>
 <description>VCC</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector33pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector33pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector33pin' terminalId='connector33terminal'/></schematicView>
 <pcbView>
@@ -195,7 +195,7 @@ Thin 0.8mm PCB</description>
 <connector id='connector34' type='female' name='GND'>
 <description>GND</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector34pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector34pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector34pin' terminalId='connector34terminal'/></schematicView>
 <pcbView>
@@ -205,7 +205,7 @@ Thin 0.8mm PCB</description>
 <connector id='connector35' type='female' name='D4'>
 <description>D4</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector35pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector35pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector35pin' terminalId='connector35terminal'/></schematicView>
 <pcbView>
@@ -215,7 +215,7 @@ Thin 0.8mm PCB</description>
 <connector id='connector36' type='female' name='CTS'>
 <description>CTS</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector36pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector36pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector36pin' terminalId='connector36terminal'/></schematicView>
 <pcbView>
@@ -225,7 +225,7 @@ Thin 0.8mm PCB</description>
 <connector id='connector37' type='female' name='ON'>
 <description>ON</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector37pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector37pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector37pin' terminalId='connector37terminal'/></schematicView>
 <pcbView>
@@ -235,7 +235,7 @@ Thin 0.8mm PCB</description>
 <connector id='connector38' type='female' name='VREF'>
 <description>VREF</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector38pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector38pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector38pin' terminalId='connector38terminal'/></schematicView>
 <pcbView>
@@ -245,7 +245,7 @@ Thin 0.8mm PCB</description>
 <connector id='connector39' type='female' name='RES'>
 <description>RES</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector39pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector39pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector39pin' terminalId='connector39terminal'/></schematicView>
 <pcbView>
@@ -255,7 +255,7 @@ Thin 0.8mm PCB</description>
 <connector id='connector40' type='female' name='D11'>
 <description>D11</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector40pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector40pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector40pin' terminalId='connector40terminal'/></schematicView>
 <pcbView>
@@ -265,7 +265,7 @@ Thin 0.8mm PCB</description>
 <connector id='connector41' type='female' name='D12'>
 <description>D12</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector41pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector41pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector41pin' terminalId='connector41terminal'/></schematicView>
 <pcbView>
@@ -275,7 +275,7 @@ Thin 0.8mm PCB</description>
 <connector id='connector42' type='female' name='TX-O'>
 <description>TX-O</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector42pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector42pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector42pin' terminalId='connector42terminal'/></schematicView>
 <pcbView>
@@ -285,7 +285,7 @@ Thin 0.8mm PCB</description>
 <connector id='connector43' type='female' name='RX-I'>
 <description>RX-I</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector43pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector43pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector43pin' terminalId='connector43terminal'/></schematicView>
 <pcbView>
@@ -295,7 +295,7 @@ Thin 0.8mm PCB</description>
 <connector id='connector44' type='female' name='GND'>
 <description>GND</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector44pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector44pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector44pin' terminalId='connector44terminal'/></schematicView>
 <pcbView>
@@ -305,7 +305,7 @@ Thin 0.8mm PCB</description>
 <connector id='connector45' type='female' name='3.3V'>
 <description>3.3V</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector45pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector45pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector45pin' terminalId='connector45terminal'/></schematicView>
 <pcbView>
@@ -315,7 +315,7 @@ Thin 0.8mm PCB</description>
 <connector id='connector46' type='female' name='DTR'>
 <description>DTR</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector46pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector46pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector46pin' terminalId='connector46terminal'/></schematicView>
 <pcbView>
@@ -325,7 +325,7 @@ Thin 0.8mm PCB</description>
 <connector id='connector47' type='female' name='RSSI'>
 <description>RSSI</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector47pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector47pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector47pin' terminalId='connector47terminal'/></schematicView>
 <pcbView>

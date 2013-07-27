@@ -56,7 +56,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>A8</description>
    <views>
     <breadboardView>
-     <p svgId="connector0pin" layer="breadboard"/>
+     <p svgId="connector0pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector0pin" layer="schematic" terminalId="connector0terminal"/>
@@ -71,7 +71,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>A9</description>
    <views>
     <breadboardView>
-     <p svgId="connector1pin" layer="breadboard"/>
+     <p svgId="connector1pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector1pin" layer="schematic" terminalId="connector1terminal"/>
@@ -86,7 +86,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>A10</description>
    <views>
     <breadboardView>
-     <p svgId="connector2pin" layer="breadboard"/>
+     <p svgId="connector2pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector2pin" layer="schematic" terminalId="connector2terminal"/>
@@ -101,7 +101,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>A11</description>
    <views>
     <breadboardView>
-     <p svgId="connector3pin" layer="breadboard"/>
+     <p svgId="connector3pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector3pin" layer="schematic" terminalId="connector3terminal"/>
@@ -116,7 +116,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>A12</description>
    <views>
     <breadboardView>
-     <p svgId="connector4pin" layer="breadboard"/>
+     <p svgId="connector4pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector4pin" layer="schematic" terminalId="connector4terminal"/>
@@ -131,7 +131,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>A13</description>
    <views>
     <breadboardView>
-     <p svgId="connector5pin" layer="breadboard"/>
+     <p svgId="connector5pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector5pin" layer="schematic" terminalId="connector5terminal"/>
@@ -146,7 +146,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>A14</description>
    <views>
     <breadboardView>
-     <p svgId="connector6pin" layer="breadboard"/>
+     <p svgId="connector6pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector6pin" layer="schematic" terminalId="connector6terminal"/>
@@ -161,7 +161,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>A15</description>
    <views>
     <breadboardView>
-     <p svgId="connector7pin" layer="breadboard"/>
+     <p svgId="connector7pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector7pin" layer="schematic" terminalId="connector7terminal"/>
@@ -176,7 +176,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>A0</description>
    <views>
     <breadboardView>
-     <p svgId="connector8pin" layer="breadboard"/>
+     <p svgId="connector8pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector8pin" layer="schematic" terminalId="connector8terminal"/>
@@ -191,7 +191,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>A1</description>
    <views>
     <breadboardView>
-     <p svgId="connector9pin" layer="breadboard"/>
+     <p svgId="connector9pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector9pin" layer="schematic" terminalId="connector9terminal"/>
@@ -206,7 +206,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>A2</description>
    <views>
     <breadboardView>
-     <p svgId="connector10pin" layer="breadboard"/>
+     <p svgId="connector10pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector10pin" layer="schematic" terminalId="connector10terminal"/>
@@ -221,7 +221,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>A3</description>
    <views>
     <breadboardView>
-     <p svgId="connector11pin" layer="breadboard"/>
+     <p svgId="connector11pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector11pin" layer="schematic" terminalId="connector11terminal"/>
@@ -236,7 +236,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>A4</description>
    <views>
     <breadboardView>
-     <p svgId="connector12pin" layer="breadboard"/>
+     <p svgId="connector12pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector12pin" layer="schematic" terminalId="connector12terminal"/>
@@ -251,7 +251,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>A5</description>
    <views>
     <breadboardView>
-     <p svgId="connector13pin" layer="breadboard"/>
+     <p svgId="connector13pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector13pin" layer="schematic" terminalId="connector13terminal"/>
@@ -266,7 +266,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>A6</description>
    <views>
     <breadboardView>
-     <p svgId="connector14pin" layer="breadboard"/>
+     <p svgId="connector14pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector14pin" layer="schematic" terminalId="connector14terminal"/>
@@ -281,7 +281,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>A7</description>
    <views>
     <breadboardView>
-     <p svgId="connector15pin" layer="breadboard"/>
+     <p svgId="connector15pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector15pin" layer="schematic" terminalId="connector15terminal"/>
@@ -296,7 +296,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>D21/SCL</description>
    <views>
     <breadboardView>
-     <p svgId="connector68pin" layer="breadboard"/>
+     <p svgId="connector68pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector68pin" layer="schematic" terminalId="connector68terminal"/>
@@ -311,7 +311,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>D20/SDA</description>
    <views>
     <breadboardView>
-     <p svgId="connector69pin" layer="breadboard"/>
+     <p svgId="connector69pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector69pin" layer="schematic" terminalId="connector69terminal"/>
@@ -326,7 +326,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>D19/RX1</description>
    <views>
     <breadboardView>
-     <p svgId="connector70pin" layer="breadboard"/>
+     <p svgId="connector70pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector70pin" layer="schematic" terminalId="connector70terminal"/>
@@ -341,7 +341,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>D18/TX1</description>
    <views>
     <breadboardView>
-     <p svgId="connector71pin" layer="breadboard"/>
+     <p svgId="connector71pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector71pin" layer="schematic" terminalId="connector71terminal"/>
@@ -356,7 +356,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>D17/RX2</description>
    <views>
     <breadboardView>
-     <p svgId="connector72pin" layer="breadboard"/>
+     <p svgId="connector72pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector72pin" layer="schematic" terminalId="connector72terminal"/>
@@ -371,7 +371,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>D16/TX2</description>
    <views>
     <breadboardView>
-     <p svgId="connector73pin" layer="breadboard"/>
+     <p svgId="connector73pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector73pin" layer="schematic" terminalId="connector73terminal"/>
@@ -386,7 +386,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>D15/RX3</description>
    <views>
     <breadboardView>
-     <p svgId="connector74pin" layer="breadboard"/>
+     <p svgId="connector74pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector74pin" layer="schematic" terminalId="connector74terminal"/>
@@ -401,7 +401,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>D14/TX3</description>
    <views>
     <breadboardView>
-     <p svgId="connector75pin" layer="breadboard"/>
+     <p svgId="connector75pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector75pin" layer="schematic" terminalId="connector75terminal"/>
@@ -416,7 +416,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>ICSP2 MISO</description>
    <views>
     <breadboardView>
-     <p svgId="connector274pin" layer="breadboard"/>
+     <p svgId="connector274pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector274pin" layer="schematic" terminalId="connector274terminal"/>
@@ -430,7 +430,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>5V</description>
    <views>
     <breadboardView>
-     <p svgId="connector275pin" layer="breadboard"/>
+     <p svgId="connector275pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector275pin" layer="schematic" terminalId="connector275terminal"/>
@@ -444,7 +444,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>ICSP2 SCK</description>
    <views>
     <breadboardView>
-     <p svgId="connector276pin" layer="breadboard"/>
+     <p svgId="connector276pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector276pin" layer="schematic" terminalId="connector276terminal"/>
@@ -459,7 +459,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>ICSP2 MOSI</description>
    <views>
     <breadboardView>
-     <p svgId="connector277pin" layer="breadboard"/>
+     <p svgId="connector277pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector277pin" layer="schematic" terminalId="connector277terminal"/>
@@ -473,7 +473,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>RESET2</description>
    <views>
     <breadboardView>
-     <p svgId="connector278pin" layer="breadboard"/>
+     <p svgId="connector278pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector278pin" layer="schematic" terminalId="connector278terminal"/>
@@ -487,7 +487,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>GND</description>
    <views>
     <breadboardView>
-     <p svgId="connector279pin" layer="breadboard"/>
+     <p svgId="connector279pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector279pin" layer="schematic" terminalId="connector279terminal"/>
@@ -501,7 +501,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>AREF</description>
    <views>
     <breadboardView>
-     <p svgId="connector282pin" layer="breadboard"/>
+     <p svgId="connector282pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector282pin" layer="schematic" terminalId="connector282terminal"/>
@@ -516,7 +516,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>GND</description>
    <views>
     <breadboardView>
-     <p svgId="connector283pin" layer="breadboard"/>
+     <p svgId="connector283pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector283pin" layer="schematic" terminalId="connector283terminal"/>
@@ -531,7 +531,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>D13 PWM</description>
    <views>
     <breadboardView>
-     <p svgId="connector284pin" layer="breadboard"/>
+     <p svgId="connector284pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector284pin" layer="schematic" terminalId="connector284terminal"/>
@@ -546,7 +546,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>D12 PWM</description>
    <views>
     <breadboardView>
-     <p svgId="connector285pin" layer="breadboard"/>
+     <p svgId="connector285pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector285pin" layer="schematic" terminalId="connector285terminal"/>
@@ -561,7 +561,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>D11 PWM</description>
    <views>
     <breadboardView>
-     <p svgId="connector286pin" layer="breadboard"/>
+     <p svgId="connector286pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector286pin" layer="schematic" terminalId="connector286terminal"/>
@@ -576,7 +576,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>D10 PWM</description>
    <views>
     <breadboardView>
-     <p svgId="connector287pin" layer="breadboard"/>
+     <p svgId="connector287pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector287pin" layer="schematic" terminalId="connector287terminal"/>
@@ -591,7 +591,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>D9 PWM</description>
    <views>
     <breadboardView>
-     <p svgId="connector288pin" layer="breadboard"/>
+     <p svgId="connector288pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector288pin" layer="schematic" terminalId="connector288terminal"/>
@@ -606,7 +606,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>D8 PWM</description>
    <views>
     <breadboardView>
-     <p svgId="connector289pin" layer="breadboard"/>
+     <p svgId="connector289pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector289pin" layer="schematic" terminalId="connector289terminal"/>
@@ -621,7 +621,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>IOREF</description>
    <views>
     <breadboardView>
-     <p svgId="connector302pin" layer="breadboard"/>
+     <p svgId="connector302pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector302pin" layer="schematic" terminalId="connector302terminal"/>
@@ -636,7 +636,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>IOREF</description>
    <views>
     <breadboardView>
-     <p svgId="connector303pin" layer="breadboard"/>
+     <p svgId="connector303pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector303pin" layer="schematic" terminalId="connector303terminal"/>
@@ -651,7 +651,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>RESET</description>
    <views>
     <breadboardView>
-     <p svgId="connector304pin" layer="breadboard"/>
+     <p svgId="connector304pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector304pin" layer="schematic" terminalId="connector304terminal"/>
@@ -666,7 +666,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>3V3</description>
    <views>
     <breadboardView>
-     <p svgId="connector305pin" layer="breadboard"/>
+     <p svgId="connector305pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector305pin" layer="schematic" terminalId="connector305terminal"/>
@@ -681,7 +681,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>5V</description>
    <views>
     <breadboardView>
-     <p svgId="connector306pin" layer="breadboard"/>
+     <p svgId="connector306pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector306pin" layer="schematic" terminalId="connector306terminal"/>
@@ -696,7 +696,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>GND</description>
    <views>
     <breadboardView>
-     <p svgId="connector307pin" layer="breadboard"/>
+     <p svgId="connector307pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector307pin" layer="schematic" terminalId="connector307terminal"/>
@@ -711,7 +711,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>GND</description>
    <views>
     <breadboardView>
-     <p svgId="connector308pin" layer="breadboard"/>
+     <p svgId="connector308pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector308pin" layer="schematic" terminalId="connector308terminal"/>
@@ -726,7 +726,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>VIN</description>
    <views>
     <breadboardView>
-     <p svgId="connector309pin" layer="breadboard"/>
+     <p svgId="connector309pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector309pin" layer="schematic" terminalId="connector309terminal"/>
@@ -741,7 +741,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>D0/RX0</description>
    <views>
     <breadboardView>
-     <p svgId="connector310pin" layer="breadboard"/>
+     <p svgId="connector310pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector310pin" layer="schematic" terminalId="connector310terminal"/>
@@ -756,7 +756,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>D1/TX0</description>
    <views>
     <breadboardView>
-     <p svgId="connector311pin" layer="breadboard"/>
+     <p svgId="connector311pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector311pin" layer="schematic" terminalId="connector311terminal"/>
@@ -771,7 +771,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>D2 PWM</description>
    <views>
     <breadboardView>
-     <p svgId="connector312pin" layer="breadboard"/>
+     <p svgId="connector312pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector312pin" layer="schematic" terminalId="connector312terminal"/>
@@ -786,7 +786,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>D3 PWM</description>
    <views>
     <breadboardView>
-     <p svgId="connector313pin" layer="breadboard"/>
+     <p svgId="connector313pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector313pin" layer="schematic" terminalId="connector313terminal"/>
@@ -801,7 +801,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>D4 PWM</description>
    <views>
     <breadboardView>
-     <p svgId="connector314pin" layer="breadboard"/>
+     <p svgId="connector314pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector314pin" layer="schematic" terminalId="connector314terminal"/>
@@ -816,7 +816,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>D5 PWM</description>
    <views>
     <breadboardView>
-     <p svgId="connector315pin" layer="breadboard"/>
+     <p svgId="connector315pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector315pin" layer="schematic" terminalId="connector315terminal"/>
@@ -831,7 +831,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>D6 PWM</description>
    <views>
     <breadboardView>
-     <p svgId="connector316pin" layer="breadboard"/>
+     <p svgId="connector316pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector316pin" layer="schematic" terminalId="connector316terminal"/>
@@ -846,7 +846,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>D7 PWM</description>
    <views>
     <breadboardView>
-     <p svgId="connector317pin" layer="breadboard"/>
+     <p svgId="connector317pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector317pin" layer="schematic" terminalId="connector317terminal"/>
@@ -861,7 +861,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>5V</description>
    <views>
     <breadboardView>
-     <p svgId="connector462pin" layer="breadboard"/>
+     <p svgId="connector462pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector462pin" layer="schematic" terminalId="connector462terminal"/>
@@ -876,7 +876,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>5V</description>
    <views>
     <breadboardView>
-     <p svgId="connector463pin" layer="breadboard"/>
+     <p svgId="connector463pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector463pin" layer="schematic" terminalId="connector463terminal"/>
@@ -891,7 +891,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>D22</description>
    <views>
     <breadboardView>
-     <p svgId="connector464pin" layer="breadboard"/>
+     <p svgId="connector464pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector464pin" layer="schematic" terminalId="connector464terminal"/>
@@ -906,7 +906,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>D23</description>
    <views>
     <breadboardView>
-     <p svgId="connector465pin" layer="breadboard"/>
+     <p svgId="connector465pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector465pin" layer="schematic" terminalId="connector465terminal"/>
@@ -921,7 +921,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>D24</description>
    <views>
     <breadboardView>
-     <p svgId="connector466pin" layer="breadboard"/>
+     <p svgId="connector466pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector466pin" layer="schematic" terminalId="connector466terminal"/>
@@ -936,7 +936,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>D25</description>
    <views>
     <breadboardView>
-     <p svgId="connector467pin" layer="breadboard"/>
+     <p svgId="connector467pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector467pin" layer="schematic" terminalId="connector467terminal"/>
@@ -951,7 +951,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>D26</description>
    <views>
     <breadboardView>
-     <p svgId="connector468pin" layer="breadboard"/>
+     <p svgId="connector468pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector468pin" layer="schematic" terminalId="connector468terminal"/>
@@ -966,7 +966,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>D27</description>
    <views>
     <breadboardView>
-     <p svgId="connector469pin" layer="breadboard"/>
+     <p svgId="connector469pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector469pin" layer="schematic" terminalId="connector469terminal"/>
@@ -981,7 +981,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>D28</description>
    <views>
     <breadboardView>
-     <p svgId="connector470pin" layer="breadboard"/>
+     <p svgId="connector470pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector470pin" layer="schematic" terminalId="connector470terminal"/>
@@ -996,7 +996,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>D29</description>
    <views>
     <breadboardView>
-     <p svgId="connector471pin" layer="breadboard"/>
+     <p svgId="connector471pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector471pin" layer="schematic" terminalId="connector471terminal"/>
@@ -1011,7 +1011,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>D30</description>
    <views>
     <breadboardView>
-     <p svgId="connector472pin" layer="breadboard"/>
+     <p svgId="connector472pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector472pin" layer="schematic" terminalId="connector472terminal"/>
@@ -1026,7 +1026,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>D31</description>
    <views>
     <breadboardView>
-     <p svgId="connector473pin" layer="breadboard"/>
+     <p svgId="connector473pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector473pin" layer="schematic" terminalId="connector473terminal"/>
@@ -1041,7 +1041,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>D32</description>
    <views>
     <breadboardView>
-     <p svgId="connector474pin" layer="breadboard"/>
+     <p svgId="connector474pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector474pin" layer="schematic" terminalId="connector474terminal"/>
@@ -1056,7 +1056,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>D33</description>
    <views>
     <breadboardView>
-     <p svgId="connector475pin" layer="breadboard"/>
+     <p svgId="connector475pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector475pin" layer="schematic" terminalId="connector475terminal"/>
@@ -1071,7 +1071,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>D34</description>
    <views>
     <breadboardView>
-     <p svgId="connector476pin" layer="breadboard"/>
+     <p svgId="connector476pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector476pin" layer="schematic" terminalId="connector476terminal"/>
@@ -1086,7 +1086,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>D35</description>
    <views>
     <breadboardView>
-     <p svgId="connector477pin" layer="breadboard"/>
+     <p svgId="connector477pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector477pin" layer="schematic" terminalId="connector477terminal"/>
@@ -1101,7 +1101,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>D36</description>
    <views>
     <breadboardView>
-     <p svgId="connector478pin" layer="breadboard"/>
+     <p svgId="connector478pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector478pin" layer="schematic" terminalId="connector478terminal"/>
@@ -1116,7 +1116,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>D37</description>
    <views>
     <breadboardView>
-     <p svgId="connector479pin" layer="breadboard"/>
+     <p svgId="connector479pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector479pin" layer="schematic" terminalId="connector479terminal"/>
@@ -1131,7 +1131,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>D38</description>
    <views>
     <breadboardView>
-     <p svgId="connector480pin" layer="breadboard"/>
+     <p svgId="connector480pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector480pin" layer="schematic" terminalId="connector480terminal"/>
@@ -1146,7 +1146,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>D39</description>
    <views>
     <breadboardView>
-     <p svgId="connector481pin" layer="breadboard"/>
+     <p svgId="connector481pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector481pin" layer="schematic" terminalId="connector481terminal"/>
@@ -1161,7 +1161,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>D40</description>
    <views>
     <breadboardView>
-     <p svgId="connector482pin" layer="breadboard"/>
+     <p svgId="connector482pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector482pin" layer="schematic" terminalId="connector482terminal"/>
@@ -1176,7 +1176,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>D41</description>
    <views>
     <breadboardView>
-     <p svgId="connector483pin" layer="breadboard"/>
+     <p svgId="connector483pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector483pin" layer="schematic" terminalId="connector483terminal"/>
@@ -1191,7 +1191,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>D42</description>
    <views>
     <breadboardView>
-     <p svgId="connector484pin" layer="breadboard"/>
+     <p svgId="connector484pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector484pin" layer="schematic" terminalId="connector484terminal"/>
@@ -1206,7 +1206,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>D43</description>
    <views>
     <breadboardView>
-     <p svgId="connector485pin" layer="breadboard"/>
+     <p svgId="connector485pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector485pin" layer="schematic" terminalId="connector485terminal"/>
@@ -1221,7 +1221,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>D44</description>
    <views>
     <breadboardView>
-     <p svgId="connector486pin" layer="breadboard"/>
+     <p svgId="connector486pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector486pin" layer="schematic" terminalId="connector486terminal"/>
@@ -1236,7 +1236,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>D45</description>
    <views>
     <breadboardView>
-     <p svgId="connector487pin" layer="breadboard"/>
+     <p svgId="connector487pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector487pin" layer="schematic" terminalId="connector487terminal"/>
@@ -1251,7 +1251,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>D46</description>
    <views>
     <breadboardView>
-     <p svgId="connector488pin" layer="breadboard"/>
+     <p svgId="connector488pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector488pin" layer="schematic" terminalId="connector488terminal"/>
@@ -1266,7 +1266,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>D47</description>
    <views>
     <breadboardView>
-     <p svgId="connector489pin" layer="breadboard"/>
+     <p svgId="connector489pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector489pin" layer="schematic" terminalId="connector489terminal"/>
@@ -1281,7 +1281,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>D48</description>
    <views>
     <breadboardView>
-     <p svgId="connector490pin" layer="breadboard"/>
+     <p svgId="connector490pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector490pin" layer="schematic" terminalId="connector490terminal"/>
@@ -1296,7 +1296,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>D49</description>
    <views>
     <breadboardView>
-     <p svgId="connector491pin" layer="breadboard"/>
+     <p svgId="connector491pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector491pin" layer="schematic" terminalId="connector491terminal"/>
@@ -1311,7 +1311,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>D50/MISO</description>
    <views>
     <breadboardView>
-     <p svgId="connector492pin" layer="breadboard"/>
+     <p svgId="connector492pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector492pin" layer="schematic" terminalId="connector492terminal"/>
@@ -1326,7 +1326,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>D51/MOSI</description>
    <views>
     <breadboardView>
-     <p svgId="connector493pin" layer="breadboard"/>
+     <p svgId="connector493pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector493pin" layer="schematic" terminalId="connector493terminal"/>
@@ -1341,7 +1341,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>D52/SCK</description>
    <views>
     <breadboardView>
-     <p svgId="connector494pin" layer="breadboard"/>
+     <p svgId="connector494pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector494pin" layer="schematic" terminalId="connector494terminal"/>
@@ -1356,7 +1356,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>D53/SS</description>
    <views>
     <breadboardView>
-     <p svgId="connector495pin" layer="breadboard"/>
+     <p svgId="connector495pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector495pin" layer="schematic" terminalId="connector495terminal"/>
@@ -1371,7 +1371,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>GND</description>
    <views>
     <breadboardView>
-     <p svgId="connector496pin" layer="breadboard"/>
+     <p svgId="connector496pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector496pin" layer="schematic" terminalId="connector496terminal"/>
@@ -1386,7 +1386,7 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>GND</description>
    <views>
     <breadboardView>
-     <p svgId="connector497pin" layer="breadboard"/>
+     <p svgId="connector497pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector497pin" layer="schematic" terminalId="connector497terminal"/>

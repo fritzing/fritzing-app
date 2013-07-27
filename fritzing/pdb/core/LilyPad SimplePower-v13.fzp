@@ -46,7 +46,7 @@ LilyPad is a wearable e-textile technology developed by Leah Buechley and cooper
 <connector id='connector16' type='female' name='GND'>
 <description>GND</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector16pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector16pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector16pin' terminalId='connector16terminal'/></schematicView>
 <pcbView>
@@ -56,7 +56,7 @@ LilyPad is a wearable e-textile technology developed by Leah Buechley and cooper
 <connector id='connector17' type='female' name='+'>
 <description>+</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector17pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector17pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector17pin' terminalId='connector17terminal'/></schematicView>
 <pcbView>

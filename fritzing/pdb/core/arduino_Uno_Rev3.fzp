@@ -53,7 +53,7 @@ Atmega 16U2 replace the 8U2.&#xd;&#xd;
    <description>A0</description>
    <views>
     <breadboardView>
-     <p svgId="connector0pin" layer="breadboard"/>
+     <p svgId="connector0pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector0pin" layer="schematic" terminalId="connector0terminal"/>
@@ -68,7 +68,7 @@ Atmega 16U2 replace the 8U2.&#xd;&#xd;
    <description>A1</description>
    <views>
     <breadboardView>
-     <p svgId="connector1pin" layer="breadboard"/>
+     <p svgId="connector1pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector1pin" layer="schematic" terminalId="connector1terminal"/>
@@ -83,7 +83,7 @@ Atmega 16U2 replace the 8U2.&#xd;&#xd;
    <description>A2</description>
    <views>
     <breadboardView>
-     <p svgId="connector2pin" layer="breadboard"/>
+     <p svgId="connector2pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector2pin" layer="schematic" terminalId="connector2terminal"/>
@@ -98,7 +98,7 @@ Atmega 16U2 replace the 8U2.&#xd;&#xd;
    <description>A3</description>
    <views>
     <breadboardView>
-     <p svgId="connector3pin" layer="breadboard"/>
+     <p svgId="connector3pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector3pin" layer="schematic" terminalId="connector3terminal"/>
@@ -113,7 +113,7 @@ Atmega 16U2 replace the 8U2.&#xd;&#xd;
    <description>A4/SDA</description>
    <views>
     <breadboardView>
-     <p svgId="connector4pin" layer="breadboard"/>
+     <p svgId="connector4pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector4pin" layer="schematic" terminalId="connector4terminal"/>
@@ -128,7 +128,7 @@ Atmega 16U2 replace the 8U2.&#xd;&#xd;
    <description>A5/SCL</description>
    <views>
     <breadboardView>
-     <p svgId="connector5pin" layer="breadboard"/>
+     <p svgId="connector5pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector5pin" layer="schematic" terminalId="connector5terminal"/>
@@ -143,7 +143,7 @@ Atmega 16U2 replace the 8U2.&#xd;&#xd;
    <description>ICSP MISO</description>
    <views>
     <breadboardView>
-     <p svgId="connector39pin" layer="breadboard"/>
+     <p svgId="connector39pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector39pin" layer="schematic" terminalId="connector39terminal"/>
@@ -157,7 +157,7 @@ Atmega 16U2 replace the 8U2.&#xd;&#xd;
    <description>5V</description>
    <views>
     <breadboardView>
-     <p svgId="connector40pin" layer="breadboard"/>
+     <p svgId="connector40pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector40pin" layer="schematic" terminalId="connector40terminal"/>
@@ -171,7 +171,7 @@ Atmega 16U2 replace the 8U2.&#xd;&#xd;
    <description>ICSP SCK</description>
    <views>
     <breadboardView>
-     <p svgId="connector41pin" layer="breadboard"/>
+     <p svgId="connector41pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector41pin" layer="schematic" terminalId="connector41terminal"/>
@@ -186,7 +186,7 @@ Atmega 16U2 replace the 8U2.&#xd;&#xd;
    <description>ICSP MOSI</description>
    <views>
     <breadboardView>
-     <p svgId="connector42pin" layer="breadboard"/>
+     <p svgId="connector42pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector42pin" layer="schematic" terminalId="connector42terminal"/>
@@ -201,7 +201,7 @@ Atmega 16U2 replace the 8U2.&#xd;&#xd;
    <description>RESET</description>
    <views>
     <breadboardView>
-     <p svgId="connector43pin" layer="breadboard"/>
+     <p svgId="connector43pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector43pin" layer="schematic" terminalId="connector43terminal"/>
@@ -216,7 +216,7 @@ Atmega 16U2 replace the 8U2.&#xd;&#xd;
    <description>GND</description>
    <views>
     <breadboardView>
-     <p svgId="connector44pin" layer="breadboard"/>
+     <p svgId="connector44pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector44pin" layer="schematic" terminalId="connector44terminal"/>
@@ -231,7 +231,7 @@ Atmega 16U2 replace the 8U2.&#xd;&#xd;
    <description>ICSP2 MISO</description>
    <views>
     <breadboardView>
-     <p svgId="connector45pin" layer="breadboard"/>
+     <p svgId="connector45pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector45pin" layer="schematic" terminalId="connector45terminal"/>
@@ -245,7 +245,7 @@ Atmega 16U2 replace the 8U2.&#xd;&#xd;
    <description>5V</description>
    <views>
     <breadboardView>
-     <p svgId="connector46pin" layer="breadboard"/>
+     <p svgId="connector46pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector46pin" layer="schematic" terminalId="connector46terminal"/>
@@ -260,7 +260,7 @@ Atmega 16U2 replace the 8U2.&#xd;&#xd;
    <description>ICSP2 SCK</description>
    <views>
     <breadboardView>
-     <p svgId="connector47pin" layer="breadboard"/>
+     <p svgId="connector47pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector47pin" layer="schematic" terminalId="connector47terminal"/>
@@ -274,7 +274,7 @@ Atmega 16U2 replace the 8U2.&#xd;&#xd;
    <description>ICSP MOSI</description>
    <views>
     <breadboardView>
-     <p svgId="connector48pin" layer="breadboard"/>
+     <p svgId="connector48pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector48pin" layer="schematic" terminalId="connector48terminal"/>
@@ -289,7 +289,7 @@ Atmega 16U2 replace the 8U2.&#xd;&#xd;
    <description>RESET2</description>
    <views>
     <breadboardView>
-     <p svgId="connector49pin" layer="breadboard"/>
+     <p svgId="connector49pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector49pin" layer="schematic" terminalId="connector49terminal"/>
@@ -304,7 +304,7 @@ Atmega 16U2 replace the 8U2.&#xd;&#xd;
    <description>GND</description>
    <views>
     <breadboardView>
-     <p svgId="connector50pin" layer="breadboard"/>
+     <p svgId="connector50pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector50pin" layer="schematic" terminalId="connector50terminal"/>
@@ -319,7 +319,7 @@ Atmega 16U2 replace the 8U2.&#xd;&#xd;
    <description>D8</description>
    <views>
     <breadboardView>
-     <p svgId="connector51pin" layer="breadboard"/>
+     <p svgId="connector51pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector51pin" layer="schematic" terminalId="connector51terminal"/>
@@ -334,7 +334,7 @@ Atmega 16U2 replace the 8U2.&#xd;&#xd;
    <description>D9 PWM</description>
    <views>
     <breadboardView>
-     <p svgId="connector52pin" layer="breadboard"/>
+     <p svgId="connector52pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector52pin" layer="schematic" terminalId="connector52terminal"/>
@@ -349,7 +349,7 @@ Atmega 16U2 replace the 8U2.&#xd;&#xd;
    <description>D10 PWM/SS</description>
    <views>
     <breadboardView>
-     <p svgId="connector53pin" layer="breadboard"/>
+     <p svgId="connector53pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector53pin" layer="schematic" terminalId="connector53terminal"/>
@@ -364,7 +364,7 @@ Atmega 16U2 replace the 8U2.&#xd;&#xd;
    <description>D11 PWM/MOSI</description>
    <views>
     <breadboardView>
-     <p svgId="connector54pin" layer="breadboard"/>
+     <p svgId="connector54pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector54pin" layer="schematic" terminalId="connector54terminal"/>
@@ -379,7 +379,7 @@ Atmega 16U2 replace the 8U2.&#xd;&#xd;
    <description>D12/MISO</description>
    <views>
     <breadboardView>
-     <p svgId="connector55pin" layer="breadboard"/>
+     <p svgId="connector55pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector55pin" layer="schematic" terminalId="connector55terminal"/>
@@ -394,7 +394,7 @@ Atmega 16U2 replace the 8U2.&#xd;&#xd;
    <description>D13/SCK</description>
    <views>
     <breadboardView>
-     <p svgId="connector56pin" layer="breadboard"/>
+     <p svgId="connector56pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector56pin" layer="schematic" terminalId="connector56terminal"/>
@@ -409,7 +409,7 @@ Atmega 16U2 replace the 8U2.&#xd;&#xd;
    <description>GND</description>
    <views>
     <breadboardView>
-     <p svgId="connector57pin" layer="breadboard"/>
+     <p svgId="connector57pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector57pin" layer="schematic" terminalId="connector57terminal"/>
@@ -424,7 +424,7 @@ Atmega 16U2 replace the 8U2.&#xd;&#xd;
    <description>AREF</description>
    <views>
     <breadboardView>
-     <p svgId="connector58pin" layer="breadboard"/>
+     <p svgId="connector58pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector58pin" layer="schematic" terminalId="connector58terminal"/>
@@ -439,7 +439,7 @@ Atmega 16U2 replace the 8U2.&#xd;&#xd;
    <description>A4/SDA</description>
    <views>
     <breadboardView>
-     <p svgId="connector59pin" layer="breadboard"/>
+     <p svgId="connector59pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector59pin" layer="schematic" terminalId="connector59terminal"/>
@@ -454,7 +454,7 @@ Atmega 16U2 replace the 8U2.&#xd;&#xd;
    <description>A5/SCL</description>
    <views>
     <breadboardView>
-     <p svgId="connector60pin" layer="breadboard"/>
+     <p svgId="connector60pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector60pin" layer="schematic" terminalId="connector60terminal"/>
@@ -469,7 +469,7 @@ Atmega 16U2 replace the 8U2.&#xd;&#xd;
    <description>D0/RX</description>
    <views>
     <breadboardView>
-     <p svgId="connector61pin" layer="breadboard"/>
+     <p svgId="connector61pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector61pin" layer="schematic" terminalId="connector61terminal"/>
@@ -484,7 +484,7 @@ Atmega 16U2 replace the 8U2.&#xd;&#xd;
    <description>D1/TX</description>
    <views>
     <breadboardView>
-     <p svgId="connector62pin" layer="breadboard"/>
+     <p svgId="connector62pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector62pin" layer="schematic" terminalId="connector62terminal"/>
@@ -499,7 +499,7 @@ Atmega 16U2 replace the 8U2.&#xd;&#xd;
    <description>D2</description>
    <views>
     <breadboardView>
-     <p svgId="connector63pin" layer="breadboard"/>
+     <p svgId="connector63pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector63pin" layer="schematic" terminalId="connector63terminal"/>
@@ -514,7 +514,7 @@ Atmega 16U2 replace the 8U2.&#xd;&#xd;
    <description>D3 PWM</description>
    <views>
     <breadboardView>
-     <p svgId="connector64pin" layer="breadboard"/>
+     <p svgId="connector64pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector64pin" layer="schematic" terminalId="connector64terminal"/>
@@ -529,7 +529,7 @@ Atmega 16U2 replace the 8U2.&#xd;&#xd;
    <description>D4</description>
    <views>
     <breadboardView>
-     <p svgId="connector65pin" layer="breadboard"/>
+     <p svgId="connector65pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector65pin" layer="schematic" terminalId="connector65terminal"/>
@@ -544,7 +544,7 @@ Atmega 16U2 replace the 8U2.&#xd;&#xd;
    <description>D5 PWM</description>
    <views>
     <breadboardView>
-     <p svgId="connector66pin" layer="breadboard"/>
+     <p svgId="connector66pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector66pin" layer="schematic" terminalId="connector66terminal"/>
@@ -559,7 +559,7 @@ Atmega 16U2 replace the 8U2.&#xd;&#xd;
    <description>D6 PWM</description>
    <views>
     <breadboardView>
-     <p svgId="connector67pin" layer="breadboard"/>
+     <p svgId="connector67pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector67pin" layer="schematic" terminalId="connector67terminal"/>
@@ -574,7 +574,7 @@ Atmega 16U2 replace the 8U2.&#xd;&#xd;
    <description>D7</description>
    <views>
     <breadboardView>
-     <p svgId="connector68pin" layer="breadboard"/>
+     <p svgId="connector68pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector68pin" layer="schematic" terminalId="connector68terminal"/>
@@ -589,7 +589,7 @@ Atmega 16U2 replace the 8U2.&#xd;&#xd;
    <description>IOREF</description>
    <views>
     <breadboardView>
-     <p svgId="connector84pin" layer="breadboard"/>
+     <p svgId="connector84pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector84pin" layer="schematic" terminalId="connector84terminal"/>
@@ -604,7 +604,7 @@ Atmega 16U2 replace the 8U2.&#xd;&#xd;
    <description>RESET</description>
    <views>
     <breadboardView>
-     <p svgId="connector85pin" layer="breadboard"/>
+     <p svgId="connector85pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector85pin" layer="schematic" terminalId="connector85terminal"/>
@@ -619,7 +619,7 @@ Atmega 16U2 replace the 8U2.&#xd;&#xd;
    <description>3V3</description>
    <views>
     <breadboardView>
-     <p svgId="connector86pin" layer="breadboard"/>
+     <p svgId="connector86pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector86pin" layer="schematic" terminalId="connector86terminal"/>
@@ -634,7 +634,7 @@ Atmega 16U2 replace the 8U2.&#xd;&#xd;
    <description>5V</description>
    <views>
     <breadboardView>
-     <p svgId="connector87pin" layer="breadboard"/>
+     <p svgId="connector87pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector87pin" layer="schematic" terminalId="connector87terminal"/>
@@ -649,7 +649,7 @@ Atmega 16U2 replace the 8U2.&#xd;&#xd;
    <description>GND</description>
    <views>
     <breadboardView>
-     <p svgId="connector88pin" layer="breadboard"/>
+     <p svgId="connector88pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector88pin" layer="schematic" terminalId="connector88terminal"/>
@@ -664,7 +664,7 @@ Atmega 16U2 replace the 8U2.&#xd;&#xd;
    <description>GND</description>
    <views>
     <breadboardView>
-     <p svgId="connector89pin" layer="breadboard"/>
+     <p svgId="connector89pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector89pin" layer="schematic" terminalId="connector89terminal"/>
@@ -679,7 +679,7 @@ Atmega 16U2 replace the 8U2.&#xd;&#xd;
    <description>VIN</description>
    <views>
     <breadboardView>
-     <p svgId="connector90pin" layer="breadboard"/>
+     <p svgId="connector90pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector90pin" layer="schematic" terminalId="connector90terminal"/>
@@ -694,7 +694,7 @@ Atmega 16U2 replace the 8U2.&#xd;&#xd;
    <description>not connected</description>
    <views>
     <breadboardView>
-     <p svgId="connector91pin" layer="breadboard"/>
+     <p svgId="connector91pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector91pin" layer="schematic" terminalId="connector91terminal"/>

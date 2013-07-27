@@ -46,7 +46,7 @@ The Leonardo differs from all preceding boards in that the ATmega32u4 has built-
 <connector id='connector76' type='female' name='D0/RX'>
 <description>D0/RX</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector76pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector76pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector76pin' terminalId='connector76terminal'/></schematicView>
 <pcbView>
@@ -56,7 +56,7 @@ The Leonardo differs from all preceding boards in that the ATmega32u4 has built-
 <connector id='connector77' type='female' name='D1/TX'>
 <description>D1/TX</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector77pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector77pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector77pin' terminalId='connector77terminal'/></schematicView>
 <pcbView>
@@ -66,7 +66,7 @@ The Leonardo differs from all preceding boards in that the ATmega32u4 has built-
 <connector id='connector78' type='female' name='D2/SDA'>
 <description>D2/SDA</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector78pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector78pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector78pin' terminalId='connector78terminal'/></schematicView>
 <pcbView>
@@ -76,7 +76,7 @@ The Leonardo differs from all preceding boards in that the ATmega32u4 has built-
 <connector id='connector79' type='female' name='D3 PWM/SCL'>
 <description>D3 PWM/SCL</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector79pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector79pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector79pin' terminalId='connector79terminal'/></schematicView>
 <pcbView>
@@ -86,7 +86,7 @@ The Leonardo differs from all preceding boards in that the ATmega32u4 has built-
 <connector id='connector80' type='female' name='D4/A6'>
 <description>D4/A6</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector80pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector80pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector80pin' terminalId='connector80terminal'/></schematicView>
 <pcbView>
@@ -96,7 +96,7 @@ The Leonardo differs from all preceding boards in that the ATmega32u4 has built-
 <connector id='connector81' type='female' name='D5 PWM'>
 <description>D5 PWM</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector81pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector81pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector81pin' terminalId='connector81terminal'/></schematicView>
 <pcbView>
@@ -106,7 +106,7 @@ The Leonardo differs from all preceding boards in that the ATmega32u4 has built-
 <connector id='connector82' type='female' name='D6 PWM/A7'>
 <description>D6 PWM/A7</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector82pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector82pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector82pin' terminalId='connector82terminal'/></schematicView>
 <pcbView>
@@ -116,7 +116,7 @@ The Leonardo differs from all preceding boards in that the ATmega32u4 has built-
 <connector id='connector83' type='female' name='D7'>
 <description>D7</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector83pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector83pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector83pin' terminalId='connector83terminal'/></schematicView>
 <pcbView>
@@ -126,7 +126,7 @@ The Leonardo differs from all preceding boards in that the ATmega32u4 has built-
 <connector id='connector84' type='female' name='IOREF'>
 <description>IOREF</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector84pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector84pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector84pin' terminalId='connector84terminal'/></schematicView>
 <pcbView>
@@ -136,7 +136,7 @@ The Leonardo differs from all preceding boards in that the ATmega32u4 has built-
 <connector id='connector85' type='female' name='IOREF'>
 <description>IOREF</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector85pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector85pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector85pin' terminalId='connector85terminal'/></schematicView>
 <pcbView>
@@ -146,7 +146,7 @@ The Leonardo differs from all preceding boards in that the ATmega32u4 has built-
 <connector id='connector86' type='female' name='RESET'>
 <description>RESET</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector86pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector86pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector86pin' terminalId='connector86terminal'/></schematicView>
 <pcbView>
@@ -156,7 +156,7 @@ The Leonardo differs from all preceding boards in that the ATmega32u4 has built-
 <connector id='connector87' type='female' name='3V3'>
 <description>3V3</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector87pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector87pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector87pin' terminalId='connector87terminal'/></schematicView>
 <pcbView>
@@ -166,7 +166,7 @@ The Leonardo differs from all preceding boards in that the ATmega32u4 has built-
 <connector id='connector88' type='female' name='5V'>
 <description>5V</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector88pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector88pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector88pin' terminalId='connector88terminal'/></schematicView>
 <pcbView>
@@ -176,7 +176,7 @@ The Leonardo differs from all preceding boards in that the ATmega32u4 has built-
 <connector id='connector89' type='female' name='GND'>
 <description>GND</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector89pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector89pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector89pin' terminalId='connector89terminal'/></schematicView>
 <pcbView>
@@ -186,7 +186,7 @@ The Leonardo differs from all preceding boards in that the ATmega32u4 has built-
 <connector id='connector90' type='female' name='GND'>
 <description>GND</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector90pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector90pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector90pin' terminalId='connector90terminal'/></schematicView>
 <pcbView>
@@ -196,7 +196,7 @@ The Leonardo differs from all preceding boards in that the ATmega32u4 has built-
 <connector id='connector91' type='female' name='VIN'>
 <description>VIN</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector91pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector91pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector91pin' terminalId='connector91terminal'/></schematicView>
 <pcbView>
@@ -206,7 +206,7 @@ The Leonardo differs from all preceding boards in that the ATmega32u4 has built-
 <connector id='connector92' type='female' name='A0'>
 <description>A0</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector92pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector92pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector92pin' terminalId='connector92terminal'/></schematicView>
 <pcbView>
@@ -216,7 +216,7 @@ The Leonardo differs from all preceding boards in that the ATmega32u4 has built-
 <connector id='connector93' type='female' name='A1'>
 <description>A1</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector93pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector93pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector93pin' terminalId='connector93terminal'/></schematicView>
 <pcbView>
@@ -226,7 +226,7 @@ The Leonardo differs from all preceding boards in that the ATmega32u4 has built-
 <connector id='connector94' type='female' name='A2'>
 <description>A2</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector94pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector94pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector94pin' terminalId='connector94terminal'/></schematicView>
 <pcbView>
@@ -236,7 +236,7 @@ The Leonardo differs from all preceding boards in that the ATmega32u4 has built-
 <connector id='connector95' type='female' name='A3'>
 <description>A3</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector95pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector95pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector95pin' terminalId='connector95terminal'/></schematicView>
 <pcbView>
@@ -246,7 +246,7 @@ The Leonardo differs from all preceding boards in that the ATmega32u4 has built-
 <connector id='connector96' type='female' name='A4'>
 <description>A4</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector96pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector96pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector96pin' terminalId='connector96terminal'/></schematicView>
 <pcbView>
@@ -256,7 +256,7 @@ The Leonardo differs from all preceding boards in that the ATmega32u4 has built-
 <connector id='connector97' type='female' name='A5'>
 <description>A5</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector97pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector97pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector97pin' terminalId='connector97terminal'/></schematicView>
 <pcbView>
@@ -266,7 +266,7 @@ The Leonardo differs from all preceding boards in that the ATmega32u4 has built-
 <connector id='connector98' type='female' name='D8/A8'>
 <description>D8/A8</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector98pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector98pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector98pin' terminalId='connector98terminal'/></schematicView>
 <pcbView>
@@ -276,7 +276,7 @@ The Leonardo differs from all preceding boards in that the ATmega32u4 has built-
 <connector id='connector99' type='female' name='D9 PWM/A9'>
 <description>D9 PWM/A9</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector99pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector99pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector99pin' terminalId='connector99terminal'/></schematicView>
 <pcbView>
@@ -286,7 +286,7 @@ The Leonardo differs from all preceding boards in that the ATmega32u4 has built-
 <connector id='connector100' type='female' name='D10 PWM/A10'>
 <description>D10 PWM/A10</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector100pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector100pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector100pin' terminalId='connector100terminal'/></schematicView>
 <pcbView>
@@ -296,7 +296,7 @@ The Leonardo differs from all preceding boards in that the ATmega32u4 has built-
 <connector id='connector101' type='female' name='D11 PWM'>
 <description>D11 PWM</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector101pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector101pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector101pin' terminalId='connector101terminal'/></schematicView>
 <pcbView>
@@ -306,7 +306,7 @@ The Leonardo differs from all preceding boards in that the ATmega32u4 has built-
 <connector id='connector102' type='female' name='D12/A11'>
 <description>D12/A11</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector102pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector102pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector102pin' terminalId='connector102terminal'/></schematicView>
 <pcbView>
@@ -316,7 +316,7 @@ The Leonardo differs from all preceding boards in that the ATmega32u4 has built-
 <connector id='connector103' type='female' name='D13 PWM'>
 <description>D13 PWM</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector103pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector103pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector103pin' terminalId='connector103terminal'/></schematicView>
 <pcbView>
@@ -326,7 +326,7 @@ The Leonardo differs from all preceding boards in that the ATmega32u4 has built-
 <connector id='connector104' type='female' name='GND'>
 <description>GND</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector104pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector104pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector104pin' terminalId='connector104terminal'/></schematicView>
 <pcbView>
@@ -336,7 +336,7 @@ The Leonardo differs from all preceding boards in that the ATmega32u4 has built-
 <connector id='connector105' type='female' name='AREF'>
 <description>AREF</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector105pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector105pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector105pin' terminalId='connector105terminal'/></schematicView>
 <pcbView>
@@ -346,7 +346,7 @@ The Leonardo differs from all preceding boards in that the ATmega32u4 has built-
 <connector id='connector106' type='female' name='SDA'>
 <description>SDA</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector106pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector106pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector106pin' terminalId='connector106terminal'/></schematicView>
 <pcbView>
@@ -356,7 +356,7 @@ The Leonardo differs from all preceding boards in that the ATmega32u4 has built-
 <connector id='connector107' type='female' name='SCL'>
 <description>SCL</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector107pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector107pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector107pin' terminalId='connector107terminal'/></schematicView>
 <pcbView>

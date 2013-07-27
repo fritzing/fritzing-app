@@ -47,7 +47,7 @@ Note: The LilyPad Coin Cell Battery Holder is a design conceived by Felicia Will
 <connector id='connector5' type='female' name='-'>
 <description>-</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector5pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector5pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector5pin' terminalId='connector5terminal'/></schematicView>
 <pcbView>
@@ -57,7 +57,7 @@ Note: The LilyPad Coin Cell Battery Holder is a design conceived by Felicia Will
 <connector id='connector6' type='female' name='+'>
 <description>+</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector6pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector6pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector6pin' terminalId='connector6terminal'/></schematicView>
 <pcbView>
@@ -67,7 +67,7 @@ Note: The LilyPad Coin Cell Battery Holder is a design conceived by Felicia Will
 <connector id='connector7' type='female' name='-'>
 <description>-</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector7pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector7pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector7pin' terminalId='connector7terminal'/></schematicView>
 <pcbView>
@@ -77,7 +77,7 @@ Note: The LilyPad Coin Cell Battery Holder is a design conceived by Felicia Will
 <connector id='connector8' type='female' name='+'>
 <description>+</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector8pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector8pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector8pin' terminalId='connector8terminal'/></schematicView>
 <pcbView>

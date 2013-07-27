@@ -49,7 +49,7 @@ The Arduino Pro was designed and manufactured by SparkFun Electronics. </descrip
    <description>D1/TX</description>
    <views>
     <breadboardView>
-     <p svgId="connector18pin" layer="breadboard"/>
+     <p svgId="connector18pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector18pin" layer="schematic" terminalId="connector18terminal"/>
@@ -64,7 +64,7 @@ The Arduino Pro was designed and manufactured by SparkFun Electronics. </descrip
    <description>D0/RX</description>
    <views>
     <breadboardView>
-     <p svgId="connector19pin" layer="breadboard"/>
+     <p svgId="connector19pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector19pin" layer="schematic" terminalId="connector19terminal"/>
@@ -79,7 +79,7 @@ The Arduino Pro was designed and manufactured by SparkFun Electronics. </descrip
    <description>D2</description>
    <views>
     <breadboardView>
-     <p svgId="connector20pin" layer="breadboard"/>
+     <p svgId="connector20pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector20pin" layer="schematic" terminalId="connector20terminal"/>
@@ -94,7 +94,7 @@ The Arduino Pro was designed and manufactured by SparkFun Electronics. </descrip
    <description>D3 PWM</description>
    <views>
     <breadboardView>
-     <p svgId="connector21pin" layer="breadboard"/>
+     <p svgId="connector21pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector21pin" layer="schematic" terminalId="connector21terminal"/>
@@ -109,7 +109,7 @@ The Arduino Pro was designed and manufactured by SparkFun Electronics. </descrip
    <description>D4/A6</description>
    <views>
     <breadboardView>
-     <p svgId="connector22pin" layer="breadboard"/>
+     <p svgId="connector22pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector22pin" layer="schematic" terminalId="connector22terminal"/>
@@ -124,7 +124,7 @@ The Arduino Pro was designed and manufactured by SparkFun Electronics. </descrip
    <description>D5 PWM</description>
    <views>
     <breadboardView>
-     <p svgId="connector23pin" layer="breadboard"/>
+     <p svgId="connector23pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector23pin" layer="schematic" terminalId="connector23terminal"/>
@@ -139,7 +139,7 @@ The Arduino Pro was designed and manufactured by SparkFun Electronics. </descrip
    <description>D6 PWM</description>
    <views>
     <breadboardView>
-     <p svgId="connector24pin" layer="breadboard"/>
+     <p svgId="connector24pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector24pin" layer="schematic" terminalId="connector24terminal"/>
@@ -154,7 +154,7 @@ The Arduino Pro was designed and manufactured by SparkFun Electronics. </descrip
    <description>D7</description>
    <views>
     <breadboardView>
-     <p svgId="connector25pin" layer="breadboard"/>
+     <p svgId="connector25pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector25pin" layer="schematic" terminalId="connector25terminal"/>
@@ -169,7 +169,7 @@ The Arduino Pro was designed and manufactured by SparkFun Electronics. </descrip
    <description>A0</description>
    <views>
     <breadboardView>
-     <p svgId="connector26pin" layer="breadboard"/>
+     <p svgId="connector26pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector26pin" layer="schematic" terminalId="connector26terminal"/>
@@ -184,7 +184,7 @@ The Arduino Pro was designed and manufactured by SparkFun Electronics. </descrip
    <description>A1</description>
    <views>
     <breadboardView>
-     <p svgId="connector27pin" layer="breadboard"/>
+     <p svgId="connector27pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector27pin" layer="schematic" terminalId="connector27terminal"/>
@@ -199,7 +199,7 @@ The Arduino Pro was designed and manufactured by SparkFun Electronics. </descrip
    <description>A2</description>
    <views>
     <breadboardView>
-     <p svgId="connector28pin" layer="breadboard"/>
+     <p svgId="connector28pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector28pin" layer="schematic" terminalId="connector28terminal"/>
@@ -214,7 +214,7 @@ The Arduino Pro was designed and manufactured by SparkFun Electronics. </descrip
    <description>A3</description>
    <views>
     <breadboardView>
-     <p svgId="connector29pin" layer="breadboard"/>
+     <p svgId="connector29pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector29pin" layer="schematic" terminalId="connector29terminal"/>
@@ -229,7 +229,7 @@ The Arduino Pro was designed and manufactured by SparkFun Electronics. </descrip
    <description>A4</description>
    <views>
     <breadboardView>
-     <p svgId="connector30pin" layer="breadboard"/>
+     <p svgId="connector30pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector30pin" layer="schematic" terminalId="connector30terminal"/>
@@ -244,7 +244,7 @@ The Arduino Pro was designed and manufactured by SparkFun Electronics. </descrip
    <description>A5</description>
    <views>
     <breadboardView>
-     <p svgId="connector31pin" layer="breadboard"/>
+     <p svgId="connector31pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector31pin" layer="schematic" terminalId="connector31terminal"/>
@@ -259,7 +259,7 @@ The Arduino Pro was designed and manufactured by SparkFun Electronics. </descrip
    <description>D8</description>
    <views>
     <breadboardView>
-     <p svgId="connector32pin" layer="breadboard"/>
+     <p svgId="connector32pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector32pin" layer="schematic" terminalId="connector32terminal"/>
@@ -274,7 +274,7 @@ The Arduino Pro was designed and manufactured by SparkFun Electronics. </descrip
    <description>D9 PWM</description>
    <views>
     <breadboardView>
-     <p svgId="connector33pin" layer="breadboard"/>
+     <p svgId="connector33pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector33pin" layer="schematic" terminalId="connector33terminal"/>
@@ -289,7 +289,7 @@ The Arduino Pro was designed and manufactured by SparkFun Electronics. </descrip
    <description>D10 PWM/SS</description>
    <views>
     <breadboardView>
-     <p svgId="connector34pin" layer="breadboard"/>
+     <p svgId="connector34pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector34pin" layer="schematic" terminalId="connector34terminal"/>
@@ -304,7 +304,7 @@ The Arduino Pro was designed and manufactured by SparkFun Electronics. </descrip
    <description>D11/MOSI</description>
    <views>
     <breadboardView>
-     <p svgId="connector35pin" layer="breadboard"/>
+     <p svgId="connector35pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector35pin" layer="schematic" terminalId="connector35terminal"/>
@@ -319,7 +319,7 @@ The Arduino Pro was designed and manufactured by SparkFun Electronics. </descrip
    <description>D12/MISO</description>
    <views>
     <breadboardView>
-     <p svgId="connector36pin" layer="breadboard"/>
+     <p svgId="connector36pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector36pin" layer="schematic" terminalId="connector36terminal"/>
@@ -334,7 +334,7 @@ The Arduino Pro was designed and manufactured by SparkFun Electronics. </descrip
    <description>D13/SCK</description>
    <views>
     <breadboardView>
-     <p svgId="connector37pin" layer="breadboard"/>
+     <p svgId="connector37pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector37pin" layer="schematic" terminalId="connector37terminal"/>
@@ -349,7 +349,7 @@ The Arduino Pro was designed and manufactured by SparkFun Electronics. </descrip
    <description>GND</description>
    <views>
     <breadboardView>
-     <p svgId="connector38pin" layer="breadboard"/>
+     <p svgId="connector38pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector38pin" layer="schematic" terminalId="connector38terminal"/>
@@ -364,7 +364,7 @@ The Arduino Pro was designed and manufactured by SparkFun Electronics. </descrip
    <description>AREF</description>
    <views>
     <breadboardView>
-     <p svgId="connector39pin" layer="breadboard"/>
+     <p svgId="connector39pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector39pin" layer="schematic" terminalId="connector39terminal"/>
@@ -379,7 +379,7 @@ The Arduino Pro was designed and manufactured by SparkFun Electronics. </descrip
    <description>RESET</description>
    <views>
     <breadboardView>
-     <p svgId="connector44pin" layer="breadboard"/>
+     <p svgId="connector44pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector44pin" layer="schematic" terminalId="connector44terminal"/>
@@ -394,7 +394,7 @@ The Arduino Pro was designed and manufactured by SparkFun Electronics. </descrip
    <description>3V3</description>
    <views>
     <breadboardView>
-     <p svgId="connector45pin" layer="breadboard"/>
+     <p svgId="connector45pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector45pin" layer="schematic" terminalId="connector45terminal"/>
@@ -409,7 +409,7 @@ The Arduino Pro was designed and manufactured by SparkFun Electronics. </descrip
    <description>VCC</description>
    <views>
     <breadboardView>
-     <p svgId="connector46pin" layer="breadboard"/>
+     <p svgId="connector46pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector46pin" layer="schematic" terminalId="connector46terminal"/>
@@ -424,7 +424,7 @@ The Arduino Pro was designed and manufactured by SparkFun Electronics. </descrip
    <description>GND</description>
    <views>
     <breadboardView>
-     <p svgId="connector47pin" layer="breadboard"/>
+     <p svgId="connector47pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector47pin" layer="schematic" terminalId="connector47terminal"/>
@@ -439,7 +439,7 @@ The Arduino Pro was designed and manufactured by SparkFun Electronics. </descrip
    <description>GND</description>
    <views>
     <breadboardView>
-     <p svgId="connector48pin" layer="breadboard"/>
+     <p svgId="connector48pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector48pin" layer="schematic" terminalId="connector48terminal"/>
@@ -454,7 +454,7 @@ The Arduino Pro was designed and manufactured by SparkFun Electronics. </descrip
    <description>LIPO</description>
    <views>
     <breadboardView>
-     <p svgId="connector49pin" layer="breadboard"/>
+     <p svgId="connector49pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector49pin" layer="schematic" terminalId="connector49terminal"/>
@@ -469,7 +469,7 @@ The Arduino Pro was designed and manufactured by SparkFun Electronics. </descrip
    <description>MISO</description>
    <views>
     <breadboardView>
-     <p svgId="connector50pin" layer="breadboard"/>
+     <p svgId="connector50pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector50pin" layer="schematic" terminalId="connector50terminal"/>
@@ -484,7 +484,7 @@ The Arduino Pro was designed and manufactured by SparkFun Electronics. </descrip
    <description>3V3</description>
    <views>
     <breadboardView>
-     <p svgId="connector51pin" layer="breadboard"/>
+     <p svgId="connector51pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector51pin" layer="schematic" terminalId="connector51terminal"/>
@@ -498,7 +498,7 @@ The Arduino Pro was designed and manufactured by SparkFun Electronics. </descrip
    <description>SCK</description>
    <views>
     <breadboardView>
-     <p svgId="connector52pin" layer="breadboard"/>
+     <p svgId="connector52pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector52pin" layer="schematic" terminalId="connector52terminal"/>
@@ -513,7 +513,7 @@ The Arduino Pro was designed and manufactured by SparkFun Electronics. </descrip
    <description>MOSI</description>
    <views>
     <breadboardView>
-     <p svgId="connector53pin" layer="breadboard"/>
+     <p svgId="connector53pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector53pin" layer="schematic" terminalId="connector53terminal"/>
@@ -527,7 +527,7 @@ The Arduino Pro was designed and manufactured by SparkFun Electronics. </descrip
    <description>RESET</description>
    <views>
     <breadboardView>
-     <p svgId="connector54pin" layer="breadboard"/>
+     <p svgId="connector54pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector54pin" layer="schematic" terminalId="connector54terminal"/>
@@ -541,7 +541,7 @@ The Arduino Pro was designed and manufactured by SparkFun Electronics. </descrip
    <description>GND</description>
    <views>
     <breadboardView>
-     <p svgId="connector55pin" layer="breadboard"/>
+     <p svgId="connector55pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector55pin" layer="schematic" terminalId="connector55terminal"/>
@@ -555,7 +555,7 @@ The Arduino Pro was designed and manufactured by SparkFun Electronics. </descrip
    <description>DTR</description>
    <views>
     <breadboardView>
-     <p svgId="connector59pin" layer="breadboard" terminalId="connector59terminal"/>
+     <p svgId="connector59pin" layer="breadboardbreadboard" terminalId="connector59terminal"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector59pin" layer="schematic" terminalId="connector59terminal"/>
@@ -570,7 +570,7 @@ The Arduino Pro was designed and manufactured by SparkFun Electronics. </descrip
    <description>TX</description>
    <views>
     <breadboardView>
-     <p svgId="connector60pin" layer="breadboard" terminalId="connector60terminal"/>
+     <p svgId="connector60pin" layer="breadboardbreadboard" terminalId="connector60terminal"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector60pin" layer="schematic" terminalId="connector60terminal"/>
@@ -585,7 +585,7 @@ The Arduino Pro was designed and manufactured by SparkFun Electronics. </descrip
    <description>RX</description>
    <views>
     <breadboardView>
-     <p svgId="connector61pin" layer="breadboard" terminalId="connector61terminal"/>
+     <p svgId="connector61pin" layer="breadboardbreadboard" terminalId="connector61terminal"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector61pin" layer="schematic" terminalId="connector61terminal"/>
@@ -599,7 +599,7 @@ The Arduino Pro was designed and manufactured by SparkFun Electronics. </descrip
    <description>3V3</description>
    <views>
     <breadboardView>
-     <p svgId="connector62pin" layer="breadboard" terminalId="connector62terminal"/>
+     <p svgId="connector62pin" layer="breadboardbreadboard" terminalId="connector62terminal"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector62pin" layer="schematic" terminalId="connector62terminal"/>
@@ -614,7 +614,7 @@ The Arduino Pro was designed and manufactured by SparkFun Electronics. </descrip
    <description>GND</description>
    <views>
     <breadboardView>
-     <p svgId="connector63pin" layer="breadboard" terminalId="connector63terminal"/>
+     <p svgId="connector63pin" layer="breadboardbreadboard" terminalId="connector63terminal"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector63pin" layer="schematic" terminalId="connector63terminal"/>
@@ -628,7 +628,7 @@ The Arduino Pro was designed and manufactured by SparkFun Electronics. </descrip
    <description>GND</description>
    <views>
     <breadboardView>
-     <p svgId="connector64pin" layer="breadboard" terminalId="connector64terminal"/>
+     <p svgId="connector64pin" layer="breadboardbreadboard" terminalId="connector64terminal"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector64pin" layer="schematic" terminalId="connector64terminal"/>
@@ -642,7 +642,7 @@ The Arduino Pro was designed and manufactured by SparkFun Electronics. </descrip
    <description>GND</description>
    <views>
     <breadboardView>
-     <p svgId="connector65pin" layer="breadboard"/>
+     <p svgId="connector65pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector65pin" layer="schematic" terminalId="connector65terminal"/>
@@ -657,7 +657,7 @@ The Arduino Pro was designed and manufactured by SparkFun Electronics. </descrip
    <description>LIPO</description>
    <views>
     <breadboardView>
-     <p svgId="connector66pin" layer="breadboard"/>
+     <p svgId="connector66pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector66pin" layer="schematic" terminalId="connector66terminal"/>
@@ -672,7 +672,7 @@ The Arduino Pro was designed and manufactured by SparkFun Electronics. </descrip
    <description>GND</description>
    <views>
     <breadboardView>
-     <p svgId="connector67pin" layer="breadboard"/>
+     <p svgId="connector67pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector67pin" layer="schematic" terminalId="connector67terminal"/>
@@ -687,7 +687,7 @@ The Arduino Pro was designed and manufactured by SparkFun Electronics. </descrip
    <description>5V</description>
    <views>
     <breadboardView>
-     <p svgId="connector68pin" layer="breadboard"/>
+     <p svgId="connector68pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector68pin" layer="schematic"/>

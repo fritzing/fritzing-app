@@ -49,7 +49,7 @@ The LilyPad Arduino USB differs from previous LilyPad boards in that the ATmega3
 <connector id='connector0' type='female' name='3V3'>
 <description>3V3</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector0pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector0pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector0pin' terminalId='connector0terminal'/></schematicView>
 <pcbView>
@@ -59,7 +59,7 @@ The LilyPad Arduino USB differs from previous LilyPad boards in that the ATmega3
 <connector id='connector1' type='female' name='GND'>
 <description>GND</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector1pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector1pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector1pin' terminalId='connector1terminal'/></schematicView>
 <pcbView>
@@ -69,7 +69,7 @@ The LilyPad Arduino USB differs from previous LilyPad boards in that the ATmega3
 <connector id='connector2' type='female' name='A2'>
 <description>A2</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector2pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector2pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector2pin' terminalId='connector2terminal'/></schematicView>
 <pcbView>
@@ -79,7 +79,7 @@ The LilyPad Arduino USB differs from previous LilyPad boards in that the ATmega3
 <connector id='connector3' type='female' name='A3'>
 <description>A3</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector3pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector3pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector3pin' terminalId='connector3terminal'/></schematicView>
 <pcbView>
@@ -89,7 +89,7 @@ The LilyPad Arduino USB differs from previous LilyPad boards in that the ATmega3
 <connector id='connector4' type='female' name='A4'>
 <description>A4</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector4pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector4pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector4pin' terminalId='connector4terminal'/></schematicView>
 <pcbView>
@@ -99,7 +99,7 @@ The LilyPad Arduino USB differs from previous LilyPad boards in that the ATmega3
 <connector id='connector5' type='female' name='A5'>
 <description>A5</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector5pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector5pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector5pin' terminalId='connector5terminal'/></schematicView>
 <pcbView>
@@ -109,7 +109,7 @@ The LilyPad Arduino USB differs from previous LilyPad boards in that the ATmega3
 <connector id='connector24' type='female' name='D2'>
 <description>D2</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector24pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector24pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector24pin' terminalId='connector24terminal'/></schematicView>
 <pcbView>
@@ -119,7 +119,7 @@ The LilyPad Arduino USB differs from previous LilyPad boards in that the ATmega3
 <connector id='connector25' type='female' name='D3'>
 <description>D3</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector25pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector25pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector25pin' terminalId='connector25terminal'/></schematicView>
 <pcbView>
@@ -129,7 +129,7 @@ The LilyPad Arduino USB differs from previous LilyPad boards in that the ATmega3
 <connector id='connector26' type='female' name='D9'>
 <description>D9</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector26pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector26pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector26pin' terminalId='connector26terminal'/></schematicView>
 <pcbView>
@@ -139,7 +139,7 @@ The LilyPad Arduino USB differs from previous LilyPad boards in that the ATmega3
 <connector id='connector27' type='female' name='D10'>
 <description>D10</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector27pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector27pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector27pin' terminalId='connector27terminal'/></schematicView>
 <pcbView>
@@ -149,7 +149,7 @@ The LilyPad Arduino USB differs from previous LilyPad boards in that the ATmega3
 <connector id='connector28' type='female' name='D11'>
 <description>D11</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector28pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector28pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector28pin' terminalId='connector28terminal'/></schematicView>
 <pcbView>

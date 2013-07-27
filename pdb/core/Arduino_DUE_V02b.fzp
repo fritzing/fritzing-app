@@ -57,7 +57,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>A8</description>
    <views>
     <breadboardView>
-     <p svgId="connector0pin" layer="breadboard"/>
+     <p svgId="connector0pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector0pin" layer="schematic" terminalId="connector0terminal"/>
@@ -72,7 +72,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>A9</description>
    <views>
     <breadboardView>
-     <p svgId="connector1pin" layer="breadboard"/>
+     <p svgId="connector1pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector1pin" layer="schematic" terminalId="connector1terminal"/>
@@ -87,7 +87,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>A10</description>
    <views>
     <breadboardView>
-     <p svgId="connector2pin" layer="breadboard"/>
+     <p svgId="connector2pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector2pin" layer="schematic" terminalId="connector2terminal"/>
@@ -102,7 +102,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>A11</description>
    <views>
     <breadboardView>
-     <p svgId="connector3pin" layer="breadboard"/>
+     <p svgId="connector3pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector3pin" layer="schematic" terminalId="connector3terminal"/>
@@ -117,7 +117,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>DAC0</description>
    <views>
     <breadboardView>
-     <p svgId="connector4pin" layer="breadboard"/>
+     <p svgId="connector4pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector4pin" layer="schematic" terminalId="connector4terminal"/>
@@ -132,7 +132,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>DAC1</description>
    <views>
     <breadboardView>
-     <p svgId="connector5pin" layer="breadboard"/>
+     <p svgId="connector5pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector5pin" layer="schematic" terminalId="connector5terminal"/>
@@ -147,7 +147,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>CANRX</description>
    <views>
     <breadboardView>
-     <p svgId="connector6pin" layer="breadboard"/>
+     <p svgId="connector6pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector6pin" layer="schematic" terminalId="connector6terminal"/>
@@ -162,7 +162,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>CANTX</description>
    <views>
     <breadboardView>
-     <p svgId="connector7pin" layer="breadboard"/>
+     <p svgId="connector7pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector7pin" layer="schematic" terminalId="connector7terminal"/>
@@ -177,7 +177,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>A0</description>
    <views>
     <breadboardView>
-     <p svgId="connector8pin" layer="breadboard"/>
+     <p svgId="connector8pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector8pin" layer="schematic" terminalId="connector8terminal"/>
@@ -192,7 +192,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>A1</description>
    <views>
     <breadboardView>
-     <p svgId="connector9pin" layer="breadboard"/>
+     <p svgId="connector9pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector9pin" layer="schematic" terminalId="connector9terminal"/>
@@ -207,7 +207,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>A2</description>
    <views>
     <breadboardView>
-     <p svgId="connector10pin" layer="breadboard"/>
+     <p svgId="connector10pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector10pin" layer="schematic" terminalId="connector10terminal"/>
@@ -222,7 +222,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>A3</description>
    <views>
     <breadboardView>
-     <p svgId="connector11pin" layer="breadboard"/>
+     <p svgId="connector11pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector11pin" layer="schematic" terminalId="connector11terminal"/>
@@ -237,7 +237,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>A4</description>
    <views>
     <breadboardView>
-     <p svgId="connector12pin" layer="breadboard"/>
+     <p svgId="connector12pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector12pin" layer="schematic" terminalId="connector12terminal"/>
@@ -252,7 +252,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>A5</description>
    <views>
     <breadboardView>
-     <p svgId="connector13pin" layer="breadboard"/>
+     <p svgId="connector13pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector13pin" layer="schematic" terminalId="connector13terminal"/>
@@ -267,7 +267,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>A6</description>
    <views>
     <breadboardView>
-     <p svgId="connector14pin" layer="breadboard"/>
+     <p svgId="connector14pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector14pin" layer="schematic" terminalId="connector14terminal"/>
@@ -282,7 +282,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>A7</description>
    <views>
     <breadboardView>
-     <p svgId="connector15pin" layer="breadboard"/>
+     <p svgId="connector15pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector15pin" layer="schematic" terminalId="connector15terminal"/>
@@ -297,7 +297,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>D14/TX3</description>
    <views>
     <breadboardView>
-     <p svgId="connector103pin" layer="breadboard"/>
+     <p svgId="connector103pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector103pin" layer="schematic" terminalId="connector103terminal"/>
@@ -312,7 +312,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>D15/RX3</description>
    <views>
     <breadboardView>
-     <p svgId="connector104pin" layer="breadboard"/>
+     <p svgId="connector104pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector104pin" layer="schematic" terminalId="connector104terminal"/>
@@ -327,7 +327,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>D16/TX2</description>
    <views>
     <breadboardView>
-     <p svgId="connector105pin" layer="breadboard"/>
+     <p svgId="connector105pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector105pin" layer="schematic" terminalId="connector105terminal"/>
@@ -342,7 +342,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>D17/RX2</description>
    <views>
     <breadboardView>
-     <p svgId="connector106pin" layer="breadboard"/>
+     <p svgId="connector106pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector106pin" layer="schematic" terminalId="connector106terminal"/>
@@ -357,7 +357,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>D18/TX1</description>
    <views>
     <breadboardView>
-     <p svgId="connector107pin" layer="breadboard"/>
+     <p svgId="connector107pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector107pin" layer="schematic" terminalId="connector107terminal"/>
@@ -372,7 +372,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>D19/RX1</description>
    <views>
     <breadboardView>
-     <p svgId="connector108pin" layer="breadboard"/>
+     <p svgId="connector108pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector108pin" layer="schematic" terminalId="connector108terminal"/>
@@ -387,7 +387,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>D20/SDA3</description>
    <views>
     <breadboardView>
-     <p svgId="connector109pin" layer="breadboard"/>
+     <p svgId="connector109pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector109pin" layer="schematic" terminalId="connector109terminal"/>
@@ -402,7 +402,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>D21/SCL3</description>
    <views>
     <breadboardView>
-     <p svgId="connector110pin" layer="breadboard"/>
+     <p svgId="connector110pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector110pin" layer="schematic" terminalId="connector110terminal"/>
@@ -418,7 +418,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>unused</description>
    <views>
     <breadboardView>
-     <p svgId="connector250pin" layer="breadboard"/>
+     <p svgId="connector250pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector250pin" layer="schematic" terminalId="connector250terminal"/>
@@ -433,7 +433,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>IOREF</description>
    <views>
     <breadboardView>
-     <p svgId="connector251pin" layer="breadboard"/>
+     <p svgId="connector251pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector251pin" layer="schematic" terminalId="connector251terminal"/>
@@ -448,7 +448,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>MASTER-RESET</description>
    <views>
     <breadboardView>
-     <p svgId="connector252pin" layer="breadboard"/>
+     <p svgId="connector252pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector252pin" layer="schematic" terminalId="connector252terminal"/>
@@ -463,7 +463,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>IOREF</description>
    <views>
     <breadboardView>
-     <p svgId="connector253pin" layer="breadboard"/>
+     <p svgId="connector253pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector253pin" layer="schematic" terminalId="connector253terminal"/>
@@ -478,7 +478,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>5V</description>
    <views>
     <breadboardView>
-     <p svgId="connector254pin" layer="breadboard"/>
+     <p svgId="connector254pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector254pin" layer="schematic" terminalId="connector254terminal"/>
@@ -493,7 +493,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>GND</description>
    <views>
     <breadboardView>
-     <p svgId="connector255pin" layer="breadboard"/>
+     <p svgId="connector255pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector255pin" layer="schematic" terminalId="connector255terminal"/>
@@ -508,7 +508,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>GND</description>
    <views>
     <breadboardView>
-     <p svgId="connector256pin" layer="breadboard"/>
+     <p svgId="connector256pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector256pin" layer="schematic" terminalId="connector256terminal"/>
@@ -523,7 +523,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>VIN</description>
    <views>
     <breadboardView>
-     <p svgId="connector257pin" layer="breadboard"/>
+     <p svgId="connector257pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector257pin" layer="schematic" terminalId="connector257terminal"/>
@@ -538,7 +538,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>D8 PWM</description>
    <views>
     <breadboardView>
-     <p svgId="connector258pin" layer="breadboard"/>
+     <p svgId="connector258pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector258pin" layer="schematic" terminalId="connector258terminal"/>
@@ -553,7 +553,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>D9 PWM</description>
    <views>
     <breadboardView>
-     <p svgId="connector259pin" layer="breadboard"/>
+     <p svgId="connector259pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector259pin" layer="schematic" terminalId="connector259terminal"/>
@@ -568,7 +568,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>D10 PWM/SS0</description>
    <views>
     <breadboardView>
-     <p svgId="connector260pin" layer="breadboard"/>
+     <p svgId="connector260pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector260pin" layer="schematic" terminalId="connector260terminal"/>
@@ -583,7 +583,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>D11 PWM</description>
    <views>
     <breadboardView>
-     <p svgId="connector261pin" layer="breadboard"/>
+     <p svgId="connector261pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector261pin" layer="schematic" terminalId="connector261terminal"/>
@@ -598,7 +598,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>D12 PWM</description>
    <views>
     <breadboardView>
-     <p svgId="connector262pin" layer="breadboard"/>
+     <p svgId="connector262pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector262pin" layer="schematic" terminalId="connector262terminal"/>
@@ -613,7 +613,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>D13 PWM</description>
    <views>
     <breadboardView>
-     <p svgId="connector263pin" layer="breadboard"/>
+     <p svgId="connector263pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector263pin" layer="schematic" terminalId="connector263terminal"/>
@@ -628,7 +628,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>GND</description>
    <views>
     <breadboardView>
-     <p svgId="connector264pin" layer="breadboard"/>
+     <p svgId="connector264pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector264pin" layer="schematic" terminalId="connector264terminal"/>
@@ -643,7 +643,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>AREF</description>
    <views>
     <breadboardView>
-     <p svgId="connector265pin" layer="breadboard"/>
+     <p svgId="connector265pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector265pin" layer="schematic" terminalId="connector265terminal"/>
@@ -658,7 +658,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>SDA1</description>
    <views>
     <breadboardView>
-     <p svgId="connector266pin" layer="breadboard"/>
+     <p svgId="connector266pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector266pin" layer="schematic" terminalId="connector266terminal"/>
@@ -673,7 +673,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>SCL1</description>
    <views>
     <breadboardView>
-     <p svgId="connector267pin" layer="breadboard"/>
+     <p svgId="connector267pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector267pin" layer="schematic" terminalId="connector267terminal"/>
@@ -688,7 +688,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>D0/RX</description>
    <views>
     <breadboardView>
-     <p svgId="connector268pin" layer="breadboard"/>
+     <p svgId="connector268pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector268pin" layer="schematic" terminalId="connector268terminal"/>
@@ -703,7 +703,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>D1/TX</description>
    <views>
     <breadboardView>
-     <p svgId="connector269pin" layer="breadboard"/>
+     <p svgId="connector269pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector269pin" layer="schematic" terminalId="connector269terminal"/>
@@ -718,7 +718,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>D2 PWM</description>
    <views>
     <breadboardView>
-     <p svgId="connector270pin" layer="breadboard"/>
+     <p svgId="connector270pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector270pin" layer="schematic" terminalId="connector270terminal"/>
@@ -733,7 +733,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>D3 PWM</description>
    <views>
     <breadboardView>
-     <p svgId="connector271pin" layer="breadboard"/>
+     <p svgId="connector271pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector271pin" layer="schematic" terminalId="connector271terminal"/>
@@ -748,7 +748,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>D4 PWM/SS1</description>
    <views>
     <breadboardView>
-     <p svgId="connector272pin" layer="breadboard"/>
+     <p svgId="connector272pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector272pin" layer="schematic" terminalId="connector272terminal"/>
@@ -763,7 +763,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>D5 PWM</description>
    <views>
     <breadboardView>
-     <p svgId="connector273pin" layer="breadboard"/>
+     <p svgId="connector273pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector273pin" layer="schematic" terminalId="connector273terminal"/>
@@ -778,7 +778,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>D6 PWM</description>
    <views>
     <breadboardView>
-     <p svgId="connector274pin" layer="breadboard"/>
+     <p svgId="connector274pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector274pin" layer="schematic" terminalId="connector274terminal"/>
@@ -793,7 +793,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>D7 PWM</description>
    <views>
     <breadboardView>
-     <p svgId="connector275pin" layer="breadboard"/>
+     <p svgId="connector275pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector275pin" layer="schematic" terminalId="connector275terminal"/>
@@ -808,7 +808,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>5V</description>
    <views>
     <breadboardView>
-     <p svgId="connector560pin" layer="breadboard"/>
+     <p svgId="connector560pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector560pin" layer="schematic" terminalId="connector560terminal"/>
@@ -823,7 +823,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>5V</description>
    <views>
     <breadboardView>
-     <p svgId="connector561pin" layer="breadboard"/>
+     <p svgId="connector561pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector561pin" layer="schematic" terminalId="connector561terminal"/>
@@ -838,7 +838,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>D22</description>
    <views>
     <breadboardView>
-     <p svgId="connector562pin" layer="breadboard"/>
+     <p svgId="connector562pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector562pin" layer="schematic" terminalId="connector562terminal"/>
@@ -853,7 +853,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>D23</description>
    <views>
     <breadboardView>
-     <p svgId="connector563pin" layer="breadboard"/>
+     <p svgId="connector563pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector563pin" layer="schematic" terminalId="connector563terminal"/>
@@ -868,7 +868,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>D24</description>
    <views>
     <breadboardView>
-     <p svgId="connector564pin" layer="breadboard"/>
+     <p svgId="connector564pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector564pin" layer="schematic" terminalId="connector564terminal"/>
@@ -883,7 +883,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>D25</description>
    <views>
     <breadboardView>
-     <p svgId="connector565pin" layer="breadboard"/>
+     <p svgId="connector565pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector565pin" layer="schematic" terminalId="connector565terminal"/>
@@ -898,7 +898,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>D26</description>
    <views>
     <breadboardView>
-     <p svgId="connector566pin" layer="breadboard"/>
+     <p svgId="connector566pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector566pin" layer="schematic" terminalId="connector566terminal"/>
@@ -913,7 +913,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>D27</description>
    <views>
     <breadboardView>
-     <p svgId="connector567pin" layer="breadboard"/>
+     <p svgId="connector567pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector567pin" layer="schematic" terminalId="connector567terminal"/>
@@ -928,7 +928,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>D28</description>
    <views>
     <breadboardView>
-     <p svgId="connector568pin" layer="breadboard"/>
+     <p svgId="connector568pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector568pin" layer="schematic" terminalId="connector568terminal"/>
@@ -943,7 +943,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>D29</description>
    <views>
     <breadboardView>
-     <p svgId="connector569pin" layer="breadboard"/>
+     <p svgId="connector569pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector569pin" layer="schematic" terminalId="connector569terminal"/>
@@ -958,7 +958,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>D30</description>
    <views>
     <breadboardView>
-     <p svgId="connector570pin" layer="breadboard"/>
+     <p svgId="connector570pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector570pin" layer="schematic" terminalId="connector570terminal"/>
@@ -973,7 +973,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>D31</description>
    <views>
     <breadboardView>
-     <p svgId="connector571pin" layer="breadboard"/>
+     <p svgId="connector571pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector571pin" layer="schematic" terminalId="connector571terminal"/>
@@ -988,7 +988,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>D32</description>
    <views>
     <breadboardView>
-     <p svgId="connector572pin" layer="breadboard"/>
+     <p svgId="connector572pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector572pin" layer="schematic" terminalId="connector572terminal"/>
@@ -1003,7 +1003,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>D33</description>
    <views>
     <breadboardView>
-     <p svgId="connector573pin" layer="breadboard"/>
+     <p svgId="connector573pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector573pin" layer="schematic" terminalId="connector573terminal"/>
@@ -1018,7 +1018,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>D34</description>
    <views>
     <breadboardView>
-     <p svgId="connector574pin" layer="breadboard"/>
+     <p svgId="connector574pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector574pin" layer="schematic" terminalId="connector574terminal"/>
@@ -1033,7 +1033,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>D35</description>
    <views>
     <breadboardView>
-     <p svgId="connector575pin" layer="breadboard"/>
+     <p svgId="connector575pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector575pin" layer="schematic" terminalId="connector575terminal"/>
@@ -1048,7 +1048,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>D36</description>
    <views>
     <breadboardView>
-     <p svgId="connector576pin" layer="breadboard"/>
+     <p svgId="connector576pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector576pin" layer="schematic" terminalId="connector576terminal"/>
@@ -1063,7 +1063,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>D37</description>
    <views>
     <breadboardView>
-     <p svgId="connector577pin" layer="breadboard"/>
+     <p svgId="connector577pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector577pin" layer="schematic" terminalId="connector577terminal"/>
@@ -1078,7 +1078,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>D38</description>
    <views>
     <breadboardView>
-     <p svgId="connector578pin" layer="breadboard"/>
+     <p svgId="connector578pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector578pin" layer="schematic" terminalId="connector578terminal"/>
@@ -1093,7 +1093,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>D39</description>
    <views>
     <breadboardView>
-     <p svgId="connector579pin" layer="breadboard"/>
+     <p svgId="connector579pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector579pin" layer="schematic" terminalId="connector579terminal"/>
@@ -1108,7 +1108,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>D40</description>
    <views>
     <breadboardView>
-     <p svgId="connector580pin" layer="breadboard"/>
+     <p svgId="connector580pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector580pin" layer="schematic" terminalId="connector580terminal"/>
@@ -1123,7 +1123,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>D41</description>
    <views>
     <breadboardView>
-     <p svgId="connector581pin" layer="breadboard"/>
+     <p svgId="connector581pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector581pin" layer="schematic" terminalId="connector581terminal"/>
@@ -1138,7 +1138,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>D42</description>
    <views>
     <breadboardView>
-     <p svgId="connector582pin" layer="breadboard"/>
+     <p svgId="connector582pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector582pin" layer="schematic" terminalId="connector582terminal"/>
@@ -1153,7 +1153,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>D43</description>
    <views>
     <breadboardView>
-     <p svgId="connector583pin" layer="breadboard"/>
+     <p svgId="connector583pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector583pin" layer="schematic" terminalId="connector583terminal"/>
@@ -1168,7 +1168,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>D44</description>
    <views>
     <breadboardView>
-     <p svgId="connector584pin" layer="breadboard"/>
+     <p svgId="connector584pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector584pin" layer="schematic" terminalId="connector584terminal"/>
@@ -1183,7 +1183,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>D45</description>
    <views>
     <breadboardView>
-     <p svgId="connector585pin" layer="breadboard"/>
+     <p svgId="connector585pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector585pin" layer="schematic" terminalId="connector585terminal"/>
@@ -1198,7 +1198,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>D46</description>
    <views>
     <breadboardView>
-     <p svgId="connector586pin" layer="breadboard"/>
+     <p svgId="connector586pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector586pin" layer="schematic" terminalId="connector586terminal"/>
@@ -1213,7 +1213,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>D47</description>
    <views>
     <breadboardView>
-     <p svgId="connector587pin" layer="breadboard"/>
+     <p svgId="connector587pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector587pin" layer="schematic" terminalId="connector587terminal"/>
@@ -1228,7 +1228,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>D48</description>
    <views>
     <breadboardView>
-     <p svgId="connector588pin" layer="breadboard"/>
+     <p svgId="connector588pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector588pin" layer="schematic" terminalId="connector588terminal"/>
@@ -1243,7 +1243,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>D49</description>
    <views>
     <breadboardView>
-     <p svgId="connector589pin" layer="breadboard"/>
+     <p svgId="connector589pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector589pin" layer="schematic" terminalId="connector589terminal"/>
@@ -1258,7 +1258,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>D50</description>
    <views>
     <breadboardView>
-     <p svgId="connector590pin" layer="breadboard"/>
+     <p svgId="connector590pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector590pin" layer="schematic" terminalId="connector590terminal"/>
@@ -1273,7 +1273,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>D51</description>
    <views>
     <breadboardView>
-     <p svgId="connector591pin" layer="breadboard"/>
+     <p svgId="connector591pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector591pin" layer="schematic" terminalId="connector591terminal"/>
@@ -1288,7 +1288,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>D52</description>
    <views>
     <breadboardView>
-     <p svgId="connector592pin" layer="breadboard"/>
+     <p svgId="connector592pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector592pin" layer="schematic" terminalId="connector592terminal"/>
@@ -1303,7 +1303,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>D53</description>
    <views>
     <breadboardView>
-     <p svgId="connector593pin" layer="breadboard"/>
+     <p svgId="connector593pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector593pin" layer="schematic" terminalId="connector593terminal"/>
@@ -1318,7 +1318,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>GND</description>
    <views>
     <breadboardView>
-     <p svgId="connector594pin" layer="breadboard"/>
+     <p svgId="connector594pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector594pin" layer="schematic" terminalId="connector594terminal"/>
@@ -1333,7 +1333,7 @@ The Due has a dedicated forum for discussing the board.</description>
    <description>GND</description>
    <views>
     <breadboardView>
-     <p svgId="connector595pin" layer="breadboard"/>
+     <p svgId="connector595pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector595pin" layer="schematic" terminalId="connector595terminal"/>

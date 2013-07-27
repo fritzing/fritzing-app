@@ -45,7 +45,7 @@
 <connector id='connector170' type='female' name='MISO'>
 <description>MISO</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector170pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector170pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector170pin' terminalId='connector170terminal'/></schematicView>
 <pcbView>
@@ -55,7 +55,7 @@
 <connector id='connector171' type='female' name='5V'>
 <description>5V</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector171pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector171pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector171pin' terminalId='connector171terminal'/></schematicView>
 <pcbView>
@@ -65,7 +65,7 @@
 <connector id='connector172' type='female' name='SCK/IO13'>
 <description>SCK/IO13</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector172pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector172pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector172pin' terminalId='connector172terminal'/></schematicView>
 <pcbView>
@@ -75,7 +75,7 @@
 <connector id='connector173' type='female' name='MOSI'>
 <description>MOSI</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector173pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector173pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector173pin' terminalId='connector173terminal'/></schematicView>
 <pcbView>
@@ -85,7 +85,7 @@
 <connector id='connector174' type='female' name='RESET'>
 <description>RESET</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector174pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector174pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector174pin' terminalId='connector174terminal'/></schematicView>
 <pcbView>
@@ -95,7 +95,7 @@
 <connector id='connector175' type='female' name='GND'>
 <description>GND</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector175pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector175pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector175pin' terminalId='connector175terminal'/></schematicView>
 <pcbView>
@@ -105,7 +105,7 @@
 <connector id='connector176' type='female' name='D8'>
 <description>D8</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector176pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector176pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector176pin' terminalId='connector176terminal'/></schematicView>
 <pcbView>
@@ -115,7 +115,7 @@
 <connector id='connector177' type='female' name='PWM D9'>
 <description>PWM D9</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector177pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector177pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector177pin' terminalId='connector177terminal'/></schematicView>
 <pcbView>
@@ -125,7 +125,7 @@
 <connector id='connector178' type='female' name='SS/PWM D10'>
 <description>SS/PWM D10</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector178pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector178pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector178pin' terminalId='connector178terminal'/></schematicView>
 <pcbView>
@@ -135,7 +135,7 @@
 <connector id='connector179' type='female' name='MOSI/PWM D11'>
 <description>MOSI/PWM D11</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector179pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector179pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector179pin' terminalId='connector179terminal'/></schematicView>
 <pcbView>
@@ -145,7 +145,7 @@
 <connector id='connector180' type='female' name='MISO/D12'>
 <description>MISO/D12</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector180pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector180pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector180pin' terminalId='connector180terminal'/></schematicView>
 <pcbView>
@@ -155,7 +155,7 @@
 <connector id='connector181' type='female' name='SCK/D13'>
 <description>SCK/D13</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector181pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector181pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector181pin' terminalId='connector181terminal'/></schematicView>
 <pcbView>
@@ -165,7 +165,7 @@
 <connector id='connector182' type='female' name='GND'>
 <description>GND</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector182pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector182pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector182pin' terminalId='connector182terminal'/></schematicView>
 <pcbView>
@@ -175,7 +175,7 @@
 <connector id='connector183' type='female' name='AREF'>
 <description>AREF</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector183pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector183pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector183pin' terminalId='connector183terminal'/></schematicView>
 <pcbView>
@@ -185,7 +185,7 @@
 <connector id='connector184' type='female' name='A4/SDA'>
 <description>A4/SDA</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector184pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector184pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector184pin' terminalId='connector184terminal'/></schematicView>
 <pcbView>
@@ -195,7 +195,7 @@
 <connector id='connector185' type='female' name='A5/SCL'>
 <description>A5/SCL</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector185pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector185pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector185pin' terminalId='connector185terminal'/></schematicView>
 <pcbView>
@@ -205,7 +205,7 @@
 <connector id='connector186' type='female' name='A0'>
 <description>A0</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector186pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector186pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector186pin' terminalId='connector186terminal'/></schematicView>
 <pcbView>
@@ -215,7 +215,7 @@
 <connector id='connector187' type='female' name='A1'>
 <description>A1</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector187pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector187pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector187pin' terminalId='connector187terminal'/></schematicView>
 <pcbView>
@@ -225,7 +225,7 @@
 <connector id='connector188' type='female' name='A2'>
 <description>A2</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector188pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector188pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector188pin' terminalId='connector188terminal'/></schematicView>
 <pcbView>
@@ -235,7 +235,7 @@
 <connector id='connector189' type='female' name='A3'>
 <description>A3</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector189pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector189pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector189pin' terminalId='connector189terminal'/></schematicView>
 <pcbView>
@@ -245,7 +245,7 @@
 <connector id='connector190' type='female' name='A4'>
 <description>A4</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector190pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector190pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector190pin' terminalId='connector190terminal'/></schematicView>
 <pcbView>
@@ -255,7 +255,7 @@
 <connector id='connector191' type='female' name='A5'>
 <description>A5</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector191pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector191pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector191pin' terminalId='connector191terminal'/></schematicView>
 <pcbView>
@@ -265,7 +265,7 @@
 <connector id='connector192' type='female' name='RX/D0'>
 <description>RX/D0</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector192pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector192pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector192pin' terminalId='connector192terminal'/></schematicView>
 <pcbView>
@@ -275,7 +275,7 @@
 <connector id='connector193' type='female' name='TX/D1'>
 <description>TX/D1</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector193pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector193pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector193pin' terminalId='connector193terminal'/></schematicView>
 <pcbView>
@@ -285,7 +285,7 @@
 <connector id='connector194' type='female' name='D2'>
 <description>D2</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector194pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector194pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector194pin' terminalId='connector194terminal'/></schematicView>
 <pcbView>
@@ -295,7 +295,7 @@
 <connector id='connector195' type='female' name='PWM D3'>
 <description>PWM D3</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector195pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector195pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector195pin' terminalId='connector195terminal'/></schematicView>
 <pcbView>
@@ -305,7 +305,7 @@
 <connector id='connector196' type='female' name='D4'>
 <description>D4</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector196pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector196pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector196pin' terminalId='connector196terminal'/></schematicView>
 <pcbView>
@@ -315,7 +315,7 @@
 <connector id='connector197' type='female' name='PWM D5'>
 <description>PWM D5</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector197pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector197pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector197pin' terminalId='connector197terminal'/></schematicView>
 <pcbView>
@@ -325,7 +325,7 @@
 <connector id='connector198' type='female' name='PWM D6'>
 <description>PWM D6</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector198pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector198pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector198pin' terminalId='connector198terminal'/></schematicView>
 <pcbView>
@@ -335,7 +335,7 @@
 <connector id='connector199' type='female' name='RESET WT11/D7'>
 <description>RESET WT11/D7</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector199pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector199pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector199pin' terminalId='connector199terminal'/></schematicView>
 <pcbView>
@@ -345,7 +345,7 @@
 <connector id='connector200' type='female' name='JP1_1'>
 <description>JP1_1</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector200pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector200pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector200pin' terminalId='connector200terminal'/></schematicView>
 <pcbView>
@@ -355,7 +355,7 @@
 <connector id='connector201' type='female' name='JP1_2'>
 <description>JP1_2</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector201pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector201pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector201pin' terminalId='connector201terminal'/></schematicView>
 <pcbView>
@@ -365,7 +365,7 @@
 <connector id='connector216' type='female' name='VIN'>
 <description>VIN</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector216pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector216pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector216pin' terminalId='connector216terminal'/></schematicView>
 <pcbView>
@@ -375,7 +375,7 @@
 <connector id='connector217' type='female' name='GND'>
 <description>GND</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector217pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector217pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector217pin' terminalId='connector217terminal'/></schematicView>
 <pcbView>
@@ -385,7 +385,7 @@
 <connector id='connector218' type='female' name='GND'>
 <description>GND</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector218pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector218pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector218pin' terminalId='connector218terminal'/></schematicView>
 <pcbView>
@@ -395,7 +395,7 @@
 <connector id='connector219' type='female' name='5V'>
 <description>5V</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector219pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector219pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector219pin' terminalId='connector219terminal'/></schematicView>
 <pcbView>
@@ -405,7 +405,7 @@
 <connector id='connector220' type='female' name='3V3'>
 <description>3V3</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector220pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector220pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector220pin' terminalId='connector220terminal'/></schematicView>
 <pcbView>
@@ -415,7 +415,7 @@
 <connector id='connector221' type='female' name='RESET'>
 <description>RESET</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector221pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector221pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector221pin' terminalId='connector221terminal'/></schematicView>
 <pcbView>
@@ -425,7 +425,7 @@
 <connector id='connector222' type='female' name='5V'>
 <description>5V</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector222pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector222pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector222pin' terminalId='connector222terminal'/></schematicView>
 <pcbView>
@@ -435,7 +435,7 @@
 <connector id='connector223' type='female' name='N/C'>
 <description>N/C</description><views>
 <breadboardView>
-<p layer='breadboard' svgId='connector223pin'/></breadboardView>
+<p layer='breadboardbreadboard' svgId='connector223pin'/></breadboardView>
 <schematicView>
 <p layer='schematic' svgId='connector223pin' terminalId='connector223terminal'/></schematicView>
 <pcbView>

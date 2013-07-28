@@ -33,7 +33,7 @@ $Date: 2009-01-03 18:55:48 +0100 (Sat, 03 Jan 2009) $
 	<key>CFBundleExecutable</key>
 	<string>Fritzing</string>
 	<key>CFBundleGetInfoString</key>
-	<string>Fritzing 0.8.3 (b048f 2013-07-27)</string>
+	<string>Fritzing 0.8.4 (b048f 2013-07-28)</string>
 	<key>CFBundleIconFile</key>
 	<string>fritzing_icon.icns</string>
 	<key>CFBundleIdentifier</key>

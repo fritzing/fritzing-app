@@ -963,7 +963,7 @@ Note: You can import them later using the &quot;Help&quot; &gt; &quot;Import par
     <message>
         <location filename="../src/mainwindow/fritzingwindow.cpp" line="73"/>
         <source>&amp;Close Window</source>
-        <translation>и Затвори Прозореца</translation>
+        <translation>Затвори Прозореца</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/fritzingwindow.cpp" line="74"/>
@@ -2049,7 +2049,7 @@ We&apos;re working to avoid this message, and only let you choose between proper
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="921"/>
         <source>&amp;Save</source>
-        <translation>и Записан</translation>
+        <translation>Запази</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="922"/>
@@ -2065,7 +2065,7 @@ We&apos;re working to avoid this message, and only let you choose between proper
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="926"/>
         <source>&amp;Save As...</source>
-        <translation>и Запази като...</translation>
+        <translation>Запази като...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="927"/>
@@ -2205,7 +2205,7 @@ We&apos;re working to avoid this message, and only let you choose between proper
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1000"/>
         <source>&amp;Print...</source>
-        <translation>и Отпечатай</translation>
+        <translation>Отпечатай</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1001"/>
@@ -2289,7 +2289,7 @@ We&apos;re working to avoid this message, and only let you choose between proper
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="256"/>
         <source>the .fz file format is obsolete</source>
-        <translation>файловия формар  .fz е остарял </translation>
+        <translation>файловия формат  .fz е остарял </translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="257"/>
@@ -2364,7 +2364,7 @@ Would you like to convert &apos;%1&apos; to the .fzz format now or open it read-
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="562"/>
         <source>&amp;Open...</source>
-        <translation>и Отваряне...</translation>
+        <translation>Отваряне...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="563"/>
@@ -2389,7 +2389,7 @@ Would you like to convert &apos;%1&apos; to the .fzz format now or open it read-
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="592"/>
         <source>&amp;Quit</source>
-        <translation>и Изход</translation>
+        <translation>Изход</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="593"/>
@@ -2404,7 +2404,7 @@ Would you like to convert &apos;%1&apos; to the .fzz format now or open it read-
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="601"/>
         <source>&amp;Open Example</source>
-        <translation>и Отвори Пример</translation>
+        <translation>Отвори Пример</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="623"/>
@@ -2419,7 +2419,7 @@ Would you like to convert &apos;%1&apos; to the .fzz format now or open it read-
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="721"/>
         <source>&amp;Open Recent Files</source>
-        <translation>и Отвори последните файлове</translation>
+        <translation>Отвори последните файлове</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="751"/>
@@ -2441,7 +2441,7 @@ Would you like to convert &apos;%1&apos; to the .fzz format now or open it read-
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="776"/>
         <source>&amp;Cut</source>
-        <translation>и Изрежи</translation>
+        <translation>Изрежи</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="777"/>
@@ -2496,7 +2496,7 @@ Would you like to convert &apos;%1&apos; to the .fzz format now or open it read-
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="796"/>
         <source>&amp;Duplicate</source>
-        <translation>и Дублирай</translation>
+        <translation>Дублирай</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="798"/>
@@ -2506,7 +2506,7 @@ Would you like to convert &apos;%1&apos; to the .fzz format now or open it read-
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="801"/>
         <source>&amp;Delete</source>
-        <translation>и Изтрий</translation>
+        <translation>Изтрий</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="802"/>
@@ -2531,7 +2531,7 @@ Would you like to convert &apos;%1&apos; to the .fzz format now or open it read-
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="822"/>
         <source>&amp;Select All</source>
-        <translation>и Селектирай всичко</translation>
+        <translation>Селектирай всичко (select)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="823"/>
@@ -2546,7 +2546,7 @@ Would you like to convert &apos;%1&apos; to the .fzz format now or open it read-
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="827"/>
         <source>&amp;Deselect</source>
-        <translation>и Отмени селекцията</translation>
+        <translation>Отмени селекцията(deselect)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="828"/>
@@ -2562,7 +2562,7 @@ Would you like to convert &apos;%1&apos; to the .fzz format now or open it read-
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="835"/>
         <source>&amp;Preferences...</source>
-        <translation>и Настройки</translation>
+        <translation>Настройки</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="836"/>
@@ -2648,12 +2648,12 @@ Would you like to convert &apos;%1&apos; to the .fzz format now or open it read-
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1270"/>
         <source>&amp;Edit</source>
-        <translation>и Промени</translation>
+        <translation>Промени (edit)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="846"/>
         <source>&amp;Add to bin...</source>
-        <translation>и добави към низа от части</translation>
+        <translation>Добави към низа от части...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="847"/>
@@ -2757,7 +2757,7 @@ Go ahead and revert?</source>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="815"/>
         <source>&amp;Delete Wire</source>
-        <translation>и Изтриий проводник</translation>
+        <translation>Изтриий проводник</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="842"/>
@@ -2792,7 +2792,7 @@ Go ahead and revert?</source>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="891"/>
         <source>&amp;Flip Horizontal</source>
-        <translation>и огледално обръщане по Хоризонталата</translation>
+        <translation>Огледално обръщане по Хоризонталата</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="892"/>
@@ -2802,7 +2802,7 @@ Go ahead and revert?</source>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="895"/>
         <source>&amp;Flip Vertical</source>
-        <translation>и огледално обръщане по Вертикалата</translation>
+        <translation>Огледално обръщане по Вертикалата</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="896"/>
@@ -2902,7 +2902,7 @@ Go ahead and revert?</source>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1095"/>
         <source>&amp;Show All Layers</source>
-        <translation>и Покажи всички слоеве</translation>
+        <translation>Покажи всички слоеве</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1096"/>
@@ -2912,7 +2912,7 @@ Go ahead and revert?</source>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1099"/>
         <source>&amp;Hide All Layers</source>
-        <translation>и Скрий всички слоеве</translation>
+        <translation>Скрий всички слоеве</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1100"/>
@@ -2922,12 +2922,12 @@ Go ahead and revert?</source>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="965"/>
         <source>&amp;Show part label</source>
-        <translation>и Покажи етикет на частта</translation>
+        <translation>Покажи етикет на частта</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="969"/>
         <source>&amp;Export...</source>
-        <translation>и Експортирай</translation>
+        <translation>Експортирай...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="970"/>
@@ -3021,7 +3021,7 @@ Go ahead and revert?</source>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1013"/>
         <source>&amp;Zoom In</source>
-        <translation>и Доближи</translation>
+        <translation>Доближи(увеличи)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1014"/>
@@ -3041,7 +3041,7 @@ Go ahead and revert?</source>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1025"/>
         <source>&amp;Zoom Out</source>
-        <translation>и Отдалечи</translation>
+        <translation>Отдалечи (zoom out)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1026"/>
@@ -3056,7 +3056,7 @@ Go ahead and revert?</source>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1030"/>
         <source>&amp;Fit in Window</source>
-        <translation>и Събери до размера на прозореца</translation>
+        <translation>Събери до размера на прозореца</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1031"/>
@@ -3071,7 +3071,7 @@ Go ahead and revert?</source>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1035"/>
         <source>&amp;Actual Size</source>
-        <translation>и Реален размер</translation>
+        <translation>Реален размер</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1036"/>
@@ -3136,7 +3136,7 @@ Go ahead and revert?</source>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1062"/>
         <source>&amp;Show Breadboard</source>
-        <translation>и Покажи Прототипна платка</translation>
+        <translation>Покажи Прототипна платка</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1063"/>
@@ -3151,7 +3151,7 @@ Go ahead and revert?</source>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1067"/>
         <source>&amp;Show Schematic</source>
-        <translation>и Покажи Схемата</translation>
+        <translation>Покажи Схемата</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1068"/>
@@ -3166,7 +3166,7 @@ Go ahead and revert?</source>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1072"/>
         <source>&amp;Show PCB</source>
-        <translation>и Покажи печатна платка(PCB)</translation>
+        <translation>Покажи печатна платка(PCB)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1073"/>
@@ -3206,7 +3206,7 @@ Go ahead and revert?</source>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1106"/>
         <source>&amp;Minimize</source>
-        <translation>и Минимизирай</translation>
+        <translation>Минимизирай</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1107"/>
@@ -3291,7 +3291,7 @@ Go ahead and revert?</source>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1157"/>
         <source>&amp;About</source>
-        <translation>и Относно</translation>
+        <translation>Относно програмата</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1162"/>
@@ -3306,7 +3306,7 @@ Go ahead and revert?</source>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1166"/>
         <source>&amp;About Qt</source>
-        <translation>и Oтносно Qt</translation>
+        <translation>Oтносно Qt</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1167"/>
@@ -3332,7 +3332,7 @@ Go ahead and revert?</source>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1180"/>
         <source>&amp;Import parts and bins from old version...</source>
-        <translation>и Внесете части и бинарни файлове с частъи от стара версия</translation>
+        <translation>Внесете части и бинарни файлове с части от стара версия</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1181"/>
@@ -3352,12 +3352,12 @@ Go ahead and revert?</source>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1203"/>
         <source>&amp;File</source>
-        <translation>и Файл</translation>
+        <translation>Файл</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1221"/>
         <source>&amp;Export</source>
-        <translation>и Внеси </translation>
+        <translation>Изнеси (експортирай)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1252"/>
@@ -3372,7 +3372,7 @@ Go ahead and revert?</source>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1293"/>
         <source>&amp;Part</source>
-        <translation>и Частта</translation>
+        <translation>Частта</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1305"/>
@@ -3387,12 +3387,12 @@ Go ahead and revert?</source>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1350"/>
         <source>&amp;View</source>
-        <translation>и Изглед</translation>
+        <translation>Изглед</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1379"/>
         <source>&amp;Window</source>
-        <translation>и Прозорец</translation>
+        <translation>Прозорец</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1395"/>
@@ -3404,7 +3404,7 @@ Go ahead and revert?</source>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1454"/>
         <source>&amp;Help</source>
-        <translation>и Помощ</translation>
+        <translation>Помощ</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1615"/>
@@ -3879,12 +3879,12 @@ Go ahead and revert?</source>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1427"/>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1440"/>
         <source>&amp;Routing</source>
-        <translation>и Автоматично подреждане на писти</translation>
+        <translation>Автоматично подреждане на писти</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2540"/>
         <source>&amp;Create trace from ratsnest</source>
-        <translation>и Създай писта от &quot;миша&quot; връзка</translation>
+        <translation>Създай писта от &quot;миша&quot; връзка</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2541"/>
@@ -3894,7 +3894,7 @@ Go ahead and revert?</source>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2544"/>
         <source>&amp;Create wire from ratsnest</source>
-        <translation>и Създай проводник от &quot;мишите връзки&quot;</translation>
+        <translation>Създай проводник от &quot;мишите връзки&quot;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2545"/>
@@ -4030,7 +4030,7 @@ Go ahead and revert?</source>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3221"/>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3278"/>
         <source>&amp;Wire Color</source>
-        <translation>и Цвят на проводника</translation>
+        <translation>Цвят на проводника</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3555"/>

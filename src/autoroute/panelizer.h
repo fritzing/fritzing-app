@@ -139,7 +139,7 @@ protected:
     static int bestFitLoop(QList<PanelItem *> & refPanelItems, PanelParams &, bool customPartsOnly, QList<PlanePair *> & returnPlanePairs, QList<PanelItem *> & returnInsertPanelItems, const QDir & svgDir);
     static double calcCost(PanelParams &, QList<PlanePair *> &, int divisor);
     static void writePanelizerOutput(const QString & message);
-    static void initPanelizerOutput(const QString & filename);
+    static void initPanelizerOutput(const QString & filename, const QString & initialMsg);
 };
 
 #endif

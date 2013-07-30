@@ -227,7 +227,9 @@ PanelItem::PanelItem(PanelItem * from) {
 
 void Panelizer::panelize(FApplication * app, const QString & panelFilename, bool customPartsOnly) 
 {
-    initPanelizerOutput(panelFilename);
+    QString msg = "panelize";
+    if (customPartsOnly) msg += " custom parts";
+    initPanelizerOutput(panelFilename, msg);
 
 	QFile panelizerFile(panelFilename);
 
@@ -1241,7 +1243,7 @@ void Panelizer::addOptional(int optionalCount, QList<PanelItem *> & refPanelItem
 
 void Panelizer::inscribe(FApplication * app, const QString & panelFilename, bool drc) 
 {
-    initPanelizerOutput(panelFilename);
+    initPanelizerOutput(panelFilename, "inscribe");
 
 	QFile file(panelFilename);
 
@@ -1376,7 +1378,8 @@ MainWindow * Panelizer::inscribeBoard(QDomElement & board, QHash<QString, QStrin
 
     int moved = mainWindow->pcbView()->checkLoadedTraces();
     if (moved > 0) {
-        QString message = QObject::tr("%1 wires moved from their saved position in %2.").arg(moved).arg(originalPath);
+        QFileInfo info(originalPath);
+        QString message = QObject::tr("%2 ... %1 wires moved from their saved position").arg(moved).arg(info.fileName());
         QMessageBox::warning(NULL, QObject::tr("Fritzing"), message);
         writePanelizerOutput(message); 
     }
@@ -1443,7 +1446,7 @@ MainWindow * Panelizer::inscribeBoard(QDomElement & board, QHash<QString, QStrin
             QStringList messages = mainWindow->newDesignRulesCheck(false);
             if (messages.count() > 0) {
                 QFileInfo info(mainWindow->fileName());
-                writePanelizerOutput(QString("%1 drc complaints on %2").arg(messages.count()).arg(info.fileName()));
+                writePanelizerOutput(QString("%2 ... %1 drc complaints").arg(messages.count()).arg(info.fileName()));
                 //foreach (QString message, messages) {
                 //    writePanelizerOutput("\t" + message);
                 //}
@@ -1711,7 +1714,10 @@ int Panelizer::checkText(MainWindow * mainWindow, bool displayMessage) {
     }
 
     if (missing.count() > 0) {
-        writePanelizerOutput(QString("There are %1 possible instances of parts with <path> elements missing stroke/fill/stroke-width attributes in %2").arg(missing.count()).arg(mainWindow->fileName()));
+        QFileInfo info(mainWindow->fileName());
+        writePanelizerOutput(QString("%2 ... There are %1 possible instances of parts with <path> elements missing stroke/fill/stroke-width attributes")
+                .arg(missing.count()).arg(info.fileName())
+            );
     }
 
     return  missing.count();
@@ -1742,7 +1748,8 @@ int Panelizer::checkDonuts(MainWindow * mainWindow, bool displayMessage) {
     }
 
     if (donuts.count() > 0) {
-        writePanelizerOutput(QString("%1 possible donuts in %2").arg(donuts.count() / 2).arg(mainWindow->fileName()));
+        QFileInfo info(mainWindow->fileName());
+        writePanelizerOutput(QString("%2 ... %1 possible donuts").arg(donuts.count() / 2).arg(info.fileName()));
     }
 
     return donuts.count() / 2;
@@ -1863,7 +1870,12 @@ void Panelizer::writePanelizerOutput(const QString & message) {
     }
 }
 
-void Panelizer::initPanelizerOutput(const QString & panelFilename) {
+void Panelizer::initPanelizerOutput(const QString & panelFilename, const QString & msg) {
     QFileInfo info(panelFilename);
     PanelizerOutputPath = info.absoluteDir().absoluteFilePath("panelizer_output.txt");
+
+    QDateTime dt = QDateTime::currentDateTime();
+    writePanelizerOutput(QString("\n--------- %1 --- %2 ---")
+                            .arg(msg).arg(dt.toString())
+                        );
 }

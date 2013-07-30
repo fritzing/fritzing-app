@@ -39,6 +39,7 @@ HEADERS += brdapplication.h \
     $$FRITZING_SRC/svg/svgpathgrammar_p.h  \
     $$FRITZING_SRC/svg/svgpathrunner.h  
      
+RESOURCES +=  $$FRITZING_SRC/../phoenixresources.qrc
 
 win32 {
 	DEFINES += _CRT_SECURE_NO_DEPRECATE

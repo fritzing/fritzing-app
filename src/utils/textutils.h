@@ -101,7 +101,7 @@ public:
 	static void replaceChildText(QDomNode & node, const QString & text);
 	static void replaceElementChildText(QDomElement & root, const QString & elementName, const QString & text);
 	static QString removeSVGHeader(QString & string);
-	static QString getMacAddress();
+	//static QString getMacAddress();
 	static QString expandAndFill(const QString & svg, const QString & color, double expandBy);
 	static void expandAndFillAux(QDomElement &, const QString & color, double expandBy);
     static bool writeUtf8(const QString & fileName, const QString & text);
@@ -121,6 +121,7 @@ public:
     static bool ensureViewBox(QDomDocument doc, double dpi, QRectF & rect, bool toInches, double & w, double & h, bool getwh);
     static QString findAnchor(const QDomElement & text);
     static double getStrokeWidth(QDomElement &, double defaultValue);
+    static void resplit(QStringList & names, const QString & split);
 
 public:
 	static const QRegExp FindWhitespace;

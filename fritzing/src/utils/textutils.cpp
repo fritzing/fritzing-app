@@ -1801,10 +1801,10 @@ void TextUtils::collectTransforms(QDomElement & root, QList<QDomElement> & trans
     }
 }
 
-bool TextUtils::fixFonts(QString & svg, const QString & destFont) {
+bool TextUtils::fixFonts(QString & svg, const QString & destFont, bool & reallyFixed) {
 	bool changed = removeFontFamilySingleQuotes(svg);
-	changed |= fixUnavailableFontFamilies(svg, destFont);
-
+    reallyFixed = fixUnavailableFontFamilies(svg, destFont);
+	changed |= reallyFixed;
 	return changed;
 }
 

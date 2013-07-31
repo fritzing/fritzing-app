@@ -42,7 +42,8 @@ protected:
     double stringWidthMM(double fontSize, const QString & string);
     QList<ConnectorLocation *> initConnectors(const QDomElement & root, const QSvgRenderer &, const QString & fzpFilename, const QString & svgFilename);
     double lrtb(QList<ConnectorLocation *> &, const QRectF & viewBox);
-    void setHidden(QList<ConnectorLocation *> &, double oldUnit);
+    void setHidden(QList<ConnectorLocation *> &);
+    bool ensureTerminalPoints(const QString & fzpFilename, const QString & svgFilename, QDomElement & fzpRoot);
 
 
 protected:

@@ -16,6 +16,7 @@ struct ConnectorLocation {
     int id;
     QRectF bounds;
     QPointF terminalPoint;
+    bool hidden;
 
     enum Side {
         Unknown,
@@ -41,6 +42,7 @@ protected:
     double stringWidthMM(double fontSize, const QString & string);
     QList<ConnectorLocation *> initConnectors(const QDomElement & root, const QSvgRenderer &, const QString & fzpFilename, const QString & svgFilename);
     double lrtb(QList<ConnectorLocation *> &, const QRectF & viewBox);
+    void setHidden(QList<ConnectorLocation *> &, double oldUnit);
 
 
 protected:
@@ -61,6 +63,7 @@ protected:
     QList<ConnectorLocation *> m_rights;
     QList<ConnectorLocation *> m_bottoms;
     QImage * m_image;
+    double m_fudge;
 };
 
 

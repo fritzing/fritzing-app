@@ -31,8 +31,7 @@
 //	TODO:  
 //
 //		put measurements into a file that is part of resources
-//      no pin numbers for hidden pins
-//      no pin text for hidden pin texts
+//      funky pin numbers?
 //
 //      deal with parts that don't have terminal points (modify original fzp and svg)
 //	
@@ -51,6 +50,57 @@ bool xLessThan(ConnectorLocation * cl1, ConnectorLocation * cl2)
 bool yLessThan(ConnectorLocation * cl1, ConnectorLocation * cl2)
 {
     return cl1->terminalPoint.y() < cl2->terminalPoint.y();
+}
+
+double getY(const QPointF & p) {
+    return p.y();
+}
+
+double getX(const QPointF & p) {
+    return p.x();
+}
+
+void setHiddenAux(QList<ConnectorLocation *> & allConnectorLocations, double oldUnit, QList<ConnectorLocation *> & sideConnectorLocations, double (*get)(const QPointF &), double fudge)
+{
+    int i = 0;
+    while (i < sideConnectorLocations.count() - 1) {
+        QList<ConnectorLocation *> same;
+        ConnectorLocation * basis = sideConnectorLocations.at(i);
+        same << basis;
+        for (int j = i + 1; j < sideConnectorLocations.count(); j++) {
+            i = j;
+            ConnectorLocation * next = sideConnectorLocations.at(j);
+            if (qAbs(get(basis->terminalPoint )- get(next->terminalPoint)) < fudge) {
+                same << next;
+            }
+            else {
+                break;
+            }
+        }
+        if (same.count() > 1) {
+            foreach (ConnectorLocation * connectorLocation, same) {
+                connectorLocation->hidden = true;
+            }
+            for (int ix = allConnectorLocations.count() - 1; ix >= 0; ix--) {
+                ConnectorLocation * that = allConnectorLocations.at(ix);
+                if (same.contains(that)) {
+                    // assume the topmost is the one at the end of allConnectorLocations
+                    // the rest are hidden
+                    that->hidden = false;
+                    sideConnectorLocations.removeOne(that);
+                    int maxIndex = -1;
+                    foreach (ConnectorLocation * s, same) {
+                        int ix = sideConnectorLocations.indexOf(s);
+                        if (ix > maxIndex) maxIndex = ix;
+                    }
+                    // visible one should be the topmost of the set
+                    sideConnectorLocations.insert(maxIndex + 1, that);
+                    break;
+                }
+            }
+        }
+    }
+
 }
 
 /////////////////////////////////
@@ -84,6 +134,7 @@ static const double ImageFactor = 5;
 QString makePinNumber(const ConnectorLocation * connectorLocation, double x1, double y1, double x2, double y2) {
 
     if (connectorLocation->id < 0) return "";
+    if (connectorLocation->hidden) return "";
 
     QString text;
     double tx = 0;
@@ -121,6 +172,8 @@ QString makePinNumber(const ConnectorLocation * connectorLocation, double x1, do
 
 QString makePinText(const ConnectorLocation * connectorLocation, double x1, double y1, double x2, double y2, bool anchorAtStart) 
 {
+    if (connectorLocation->hidden) return "";
+
     QString text;
 
     bool rotate = false;
@@ -173,8 +226,8 @@ QString makePin(const ConnectorLocation * connectorLocation, double x1, double y
             .arg(y1)
             .arg(x2)
             .arg(y2)
-            .arg(PinColor)
-            .arg(PinWidth)
+            .arg(connectorLocation->hidden ? "none" : PinColor)
+            .arg(connectorLocation->hidden ? 0 : PinWidth)
             .arg(connectorLocation->svgID)
             ;
 }
@@ -367,7 +420,6 @@ void S2SApplication::onefzp(QString & fzpFilename) {
     TextUtils::resplit(titles, " ");
     TextUtils::resplit(titles, "_");
     TextUtils::resplit(titles, "-");
-    TextUtils::resplit(titles, ".");
 
     QString schematicFileName;
     QDomNodeList nodeList = root.elementsByTagName("schematicView");
@@ -399,6 +451,7 @@ void S2SApplication::onefzp(QString & fzpFilename) {
         qDebug() << "\tempty viewbox";
     }
     double oldUnit = lrtb(connectorLocations, viewBox);
+    setHidden(connectorLocations, oldUnit);
 
     double minPinV = 0;
     double maxPinV = 0;
@@ -482,6 +535,11 @@ void S2SApplication::onefzp(QString & fzpFilename) {
     double fullHeight = vUnits;
     if (m_tops.count()) fullHeight += 2;
     if (m_bottoms.count()) fullHeight += 2;
+
+    
+
+
+    // construct svg
 
     QString svg = TextUtils::makeSVGHeader(25.4, 25.4, fullWidth * NewUnit, fullHeight * NewUnit);
     double rectL = RectWidth / 2;
@@ -642,6 +700,7 @@ QList<ConnectorLocation *> S2SApplication::initConnectors(const QDomElement & ro
         else {
             ConnectorLocation * connectorLocation = new ConnectorLocation;
             connectorLocation->id = -1;
+            connectorLocation->hidden = false;
             QString id = connector.attribute("id");
             int ix = IntegerFinder.indexIn(id);
             if (ix > 0) {
@@ -690,7 +749,7 @@ QList<ConnectorLocation *> S2SApplication::initConnectors(const QDomElement & ro
 
 double S2SApplication::lrtb(QList<ConnectorLocation *> & connectorLocations, const QRectF & viewBox) 
 {
-    double fudge = qMax(m_maxRight - m_minLeft, m_maxBottom - m_minTop) / 200;
+    m_fudge = qMax(m_maxRight - m_minLeft, m_maxBottom - m_minTop) / 300;
 
     foreach (ConnectorLocation * connectorLocation, connectorLocations) {
         double d[4];
@@ -758,13 +817,13 @@ double S2SApplication::lrtb(QList<ConnectorLocation *> & connectorLocations, con
 
     int most = 0;
     foreach (double distance, distances) {
-        int d = qRound(distance / fudge);
+        int d = qRound(distance / m_fudge);
         if (d > most) most = d;
     }
 
     QVector<int> dbins(most + 2, 0);
     foreach (double distance, distances) {
-        int d = qRound(distance / fudge);
+        int d = qRound(distance / m_fudge);
         dbins[d] += 1;
     }
 
@@ -781,10 +840,19 @@ double S2SApplication::lrtb(QList<ConnectorLocation *> & connectorLocations, con
         qDebug() << "\tbiggest 0" << totalPins;
     }
 
-    double oldUnit = biggestIndex * fudge;
+    double oldUnit = biggestIndex * m_fudge;
 
-    message(QString("\tunit is roughly %1, bin:%2 pins:%3 fudge:%4").arg(oldUnit).arg(biggest).arg(totalPins).arg(fudge));
+    message(QString("\tunit is roughly %1, bin:%2 pins:%3 fudge:%4").arg(oldUnit).arg(biggest).arg(totalPins).arg(m_fudge));
     message(QString("\tl:%1 t:%2 r:%3 b:%4").arg(m_lefts.count()).arg(m_tops.count()).arg(m_rights.count()).arg(m_bottoms.count()));
 
     return oldUnit;
+}
+
+
+void S2SApplication::setHidden(QList<ConnectorLocation *> & connectorLocations, double oldUnit) 
+{
+    setHiddenAux(connectorLocations, oldUnit, m_lefts, getY, m_fudge);
+    setHiddenAux(connectorLocations, oldUnit, m_rights, getY, m_fudge);
+    setHiddenAux(connectorLocations, oldUnit, m_tops, getX, m_fudge);
+    setHiddenAux(connectorLocations, oldUnit, m_bottoms, getX, m_fudge);
 }

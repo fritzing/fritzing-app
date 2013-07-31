@@ -114,7 +114,7 @@ public:
     static bool elevateTransform(QDomElement &);
     static bool fixMuch(QString &svg, bool fixStrokeWidth);
 	static bool fixInternalUnits(QString & svg);
-	static bool fixFonts(QString & svg, const QString & destFont);
+	static bool fixFonts(QString & svg, const QString & destFont, bool & reallyFixed);
 	static void fixStyleAttribute(QDomElement & element);
     static QString parseForModuleID(const QString & fzp);
 	static QString getRandText();

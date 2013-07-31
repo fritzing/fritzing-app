@@ -60,7 +60,7 @@ double getX(const QPointF & p) {
     return p.x();
 }
 
-void setHiddenAux(QList<ConnectorLocation *> & allConnectorLocations, double oldUnit, QList<ConnectorLocation *> & sideConnectorLocations, double (*get)(const QPointF &), double fudge)
+void setHiddenAux(QList<ConnectorLocation *> & allConnectorLocations, QList<ConnectorLocation *> & sideConnectorLocations, double (*get)(const QPointF &), double fudge)
 {
     int i = 0;
     while (i < sideConnectorLocations.count() - 1) {
@@ -391,15 +391,15 @@ void S2SApplication::saveFile(const QString & content, const QString & path)
 	}
 }
 
-void S2SApplication::onefzp(QString & fzpFilename) {
-    if (!fzpFilename.endsWith(".fzp")) return;
+void S2SApplication::onefzp(QString & fzpFileName) {
+    if (!fzpFileName.endsWith(".fzp")) return;
 
     m_lefts.clear();
     m_rights.clear();
     m_tops.clear();
     m_bottoms.clear();
 
-    QFile file(m_fzpDir.absoluteFilePath(fzpFilename));
+    QFile file(m_fzpDir.absoluteFilePath(fzpFileName));
 
 	QString errorStr;
 	int errorLine;
@@ -407,7 +407,7 @@ void S2SApplication::onefzp(QString & fzpFilename) {
 
 	QDomDocument dom;
 	if (!dom.setContent(&file, true, &errorStr, &errorLine, &errorColumn)) {
-		message(QString("failed loading fzp %1, %2 line:%3 col:%4").arg(fzpFilename).arg(errorStr).arg(errorLine).arg(errorColumn));
+		message(QString("failed loading fzp %1, %2 line:%3 col:%4").arg(fzpFileName).arg(errorStr).arg(errorLine).arg(errorColumn));
 		return;
 	}
 
@@ -431,27 +431,29 @@ void S2SApplication::onefzp(QString & fzpFilename) {
     }
 
     if (schematicFileName.isEmpty()) {
-		message(QString("schematic not found for fzp %1").arg(fzpFilename));
+		message(QString("schematic not found for fzp %1").arg(fzpFileName));
         return;
     }
+
+    if (!ensureTerminalPoints(fzpFileName, schematicFileName, root)) return;
 
     message(schematicFileName);
 
     QSvgRenderer renderer;
     bool loaded = renderer.load(m_oldSvgDir.absoluteFilePath(schematicFileName));
     if (!loaded) {
-		message(QString("unabled to load schematic %1 for fzp %2").arg(schematicFileName).arg(fzpFilename));
+		message(QString("unabled to load schematic %1 for fzp %2").arg(schematicFileName).arg(fzpFileName));
         return;
     }
 
-    QList<ConnectorLocation *> connectorLocations = initConnectors(root, renderer, fzpFilename, schematicFileName);
+    QList<ConnectorLocation *> connectorLocations = initConnectors(root, renderer, fzpFileName, schematicFileName);
 
     QRectF viewBox = renderer.viewBoxF();
     if (viewBox.isEmpty()) {
         qDebug() << "\tempty viewbox";
     }
     double oldUnit = lrtb(connectorLocations, viewBox);
-    setHidden(connectorLocations, oldUnit);
+    setHidden(connectorLocations);
 
     double minPinV = 0;
     double maxPinV = 0;
@@ -849,10 +851,94 @@ double S2SApplication::lrtb(QList<ConnectorLocation *> & connectorLocations, con
 }
 
 
-void S2SApplication::setHidden(QList<ConnectorLocation *> & connectorLocations, double oldUnit) 
+void S2SApplication::setHidden(QList<ConnectorLocation *> & connectorLocations) 
 {
-    setHiddenAux(connectorLocations, oldUnit, m_lefts, getY, m_fudge);
-    setHiddenAux(connectorLocations, oldUnit, m_rights, getY, m_fudge);
-    setHiddenAux(connectorLocations, oldUnit, m_tops, getX, m_fudge);
-    setHiddenAux(connectorLocations, oldUnit, m_bottoms, getX, m_fudge);
+    setHiddenAux(connectorLocations, m_lefts, getY, m_fudge);
+    setHiddenAux(connectorLocations, m_rights, getY, m_fudge);
+    setHiddenAux(connectorLocations, m_tops, getX, m_fudge);
+    setHiddenAux(connectorLocations, m_bottoms, getX, m_fudge);
 }
+
+bool S2SApplication::ensureTerminalPoints(const QString & fzpFileName, const QString & svgFileName, QDomElement & fzpRoot) {
+    QList<QDomElement> missing;
+    QDomElement connectors = fzpRoot.firstChildElement("connectors");
+    QDomElement connector = connectors.firstChildElement("connector");
+    while (!connector.isNull()) {
+        QDomElement views = connector.firstChildElement("views");
+        QDomElement schematicView = views.firstChildElement("schematicView");
+        QDomElement p = schematicView.firstChildElement("p");
+        QString terminalID = p.attribute("terminalId");
+        if (terminalID.isEmpty()) {
+            missing << p;
+        }
+
+        connector = connector.nextSiblingElement("connector");
+    }
+
+    if (missing.count() == 0) return true;
+
+    QSvgRenderer renderer;
+    bool loaded = renderer.load(m_oldSvgDir.absoluteFilePath(svgFileName));
+    if (!loaded) {
+		message(QString("unabled to load schematic %1 for fzp %2").arg(svgFileName).arg(fzpFileName));
+        return false;
+    }
+
+	QString errorStr;
+	int errorLine;
+	int errorColumn;
+
+    QFile file(m_oldSvgDir.absoluteFilePath(svgFileName));
+	QDomDocument dom;
+	if (!dom.setContent(&file, true, &errorStr, &errorLine, &errorColumn)) {
+		message(QString("failed loading schematic %1, %2 line:%3 col:%4").arg(svgFileName).arg(errorStr).arg(errorLine).arg(errorColumn));
+		return false;
+	}
+
+    QDomElement svgRoot = dom.documentElement();
+
+    bool fzpChanged = false;
+    bool svgChanged = false;
+
+    foreach (QDomElement p, missing) {
+        QDomElement connector = p.parentNode().parentNode().parentNode().toElement();
+        QString name = connector.attribute("id");
+        if (name.isEmpty()) {
+            qDebug() << "empty name in connector";
+        }
+        else {
+            // assumes the file is well behaved, and the terminalID isn't already in use
+            QString terminalName = name + "terminal";
+            p.setAttribute("terminalId", terminalName);
+            fzpChanged = true;
+
+            QDomElement terminalElement = TextUtils::findElementWithAttribute(svgRoot, "id", terminalName);
+            if (terminalElement.isNull()) {
+                QString svgID = p.attribute("svgId");
+                QDomElement connectorElement = TextUtils::findElementWithAttribute(svgRoot, "id", svgID);
+                QRectF bounds = renderer.boundsOnElement(svgID);
+                QDomElement rect = svgRoot.ownerDocument().createElement("rect");
+                connectorElement.parentNode().insertAfter(rect, connectorElement);
+                rect.setAttribute("x", bounds.left());
+                rect.setAttribute("y", bounds.top());
+                rect.setAttribute("width", bounds.width());
+                rect.setAttribute("height", bounds.height());
+                rect.setAttribute("fill", "none");
+                rect.setAttribute("stroke", "none");
+                rect.setAttribute("stroke-width", 0);
+                rect.setAttribute("id", terminalName);
+                svgChanged = true;
+            }
+        }
+    }
+
+    if (svgChanged) {
+        TextUtils::writeUtf8(m_oldSvgDir.absoluteFilePath(svgFileName), TextUtils::removeXMLEntities(dom.toString(4)));
+    }
+    if (fzpChanged) {
+        TextUtils::writeUtf8(m_fzpDir.absoluteFilePath(fzpFileName), TextUtils::removeXMLEntities(fzpRoot.ownerDocument().toString(4)));
+    }
+
+    return true;
+}
+

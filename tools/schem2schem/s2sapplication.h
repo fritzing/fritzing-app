@@ -44,6 +44,7 @@ protected:
     double lrtb(QList<ConnectorLocation *> &, const QRectF & viewBox);
     void setHidden(QList<ConnectorLocation *> &);
     bool ensureTerminalPoints(const QString & fzpFilename, const QString & svgFilename, QDomElement & fzpRoot);
+    double spaceTitle(QStringList & titles, int openUnits);
 
 
 protected:

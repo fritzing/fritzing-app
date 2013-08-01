@@ -1903,9 +1903,15 @@ QString TextUtils::findAnchor(const QDomElement & text) {
 
 void TextUtils::resplit(QStringList & names, const QString & split) {
     QStringList result;
+    QString appender = split;
+    if (appender == " ") appender = "";
     foreach (QString name, names) {
         QStringList sub = name.split(split, QString::SkipEmptyParts);
-        foreach (QString s, sub) result.append(s);
+        for (int i = 0; i < sub.count(); i++) {
+            QString s = sub.at(i);
+            if (i < sub.count() - 1) s.append(appender);
+            result.append(s);
+        }
     }
     names.clear();
     names.append(result);

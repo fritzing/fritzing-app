@@ -20,6 +20,7 @@
 #include <QResource>
 #include <QImage>
 #include <QPainter>
+#include <QBitArray>
 
 #include "../../src/utils/textutils.h"
 #include "../../src/utils/schematicrectconstants.h"
@@ -31,8 +32,7 @@
 //
 //	TODO:  
 //
-//		put measurements into a file that is part of resources
-//      funky pin numbers?  from brd files?
+//      pin numbers in brd2svg--something to add to params files?
 //	
 //      copy old schematics to obsolete (with prefix)
 //      readonly old style vs. read/write new style
@@ -122,6 +122,7 @@ QString makePinNumber(const ConnectorLocation * connectorLocation, double x1, do
 
     if (connectorLocation->id < 0) return "";
     if (connectorLocation->hidden) return "";
+    if (!connectorLocation->displayPinNumber) return "";
 
     QString text;
     double tx = 0;
@@ -695,7 +696,8 @@ QList<ConnectorLocation *> S2SApplication::initConnectors(const QDomElement & ro
 
     QDomElement connectors = root.firstChildElement("connectors");
     QDomElement connector = connectors.firstChildElement("connector");
-    bool zeroBased = false;
+    QBitArray idlist;
+    int noIDCount = 0;
     while (!connector.isNull()) {
         QDomElement schematicView = connector.firstChildElement("views").firstChildElement("schematicView");
         QString svgID = schematicView.firstChildElement("p").attribute("svgId");
@@ -706,11 +708,20 @@ QList<ConnectorLocation *> S2SApplication::initConnectors(const QDomElement & ro
             ConnectorLocation * connectorLocation = new ConnectorLocation;
             connectorLocation->id = -1;
             connectorLocation->hidden = false;
+            connectorLocation->displayPinNumber = false;
             QString id = connector.attribute("id");
             int ix = IntegerFinder.indexIn(id);
             if (ix > 0) {
                 connectorLocation->id = IntegerFinder.cap(0).toInt();
-                if (connectorLocation->id == 0) zeroBased = true;
+                if (idlist.size() < connectorLocation->id + 1) {
+                    int oldsize = idlist.size();
+                    idlist.resize(connectorLocation->id + 1);
+                    for (int i = oldsize; i < idlist.size(); i++) idlist.setBit(i, false);
+                }
+                idlist.setBit(connectorLocation->id, true);
+            }
+            else {
+                noIDCount++;
             }
             connectorLocation->name = connector.attribute("name");
             connectorLocation->terminalID = schematicView.firstChildElement("p").attribute("terminalId");
@@ -743,7 +754,27 @@ QList<ConnectorLocation *> S2SApplication::initConnectors(const QDomElement & ro
         connector = connector.nextSiblingElement("connector");
     }
 
-    if (zeroBased) {
+    if (noIDCount > 0) {
+        qDebug() << "no id count" << noIDCount;
+    }
+
+    bool display = true;
+    if (!idlist.at(0) && !idlist.at(1)) {
+        display = false;
+    }
+    else {
+        int present = 0;
+        for (int i = 0; i < idlist.size(); i++) {
+            if (idlist.at(i)) present++;
+        }
+        display = (present >= .66 * idlist.size());
+    }
+
+    foreach (ConnectorLocation * connectorLocation, connectorLocations) {
+        connectorLocation->displayPinNumber = display;
+    }
+
+    if (display && idlist.at(0)) {
         foreach (ConnectorLocation * connectorLocation, connectorLocations) {
             connectorLocation->id++;
         }

@@ -17,6 +17,7 @@ struct ConnectorLocation {
     QRectF bounds;
     QPointF terminalPoint;
     bool hidden;
+    bool displayPinNumber;
 
     enum Side {
         Unknown,

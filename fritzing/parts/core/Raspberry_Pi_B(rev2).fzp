@@ -1,20 +1,20 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<module fritzingVersion="0.7.4b.04.10.5970" moduleId="Raspberry Pi (rev2)" referenceFile="Raspberry_Pi(rev2).fzp">
+<module fritzingVersion="0.7.4b.04.10.5970" moduleId="Raspberry Pi B(rev2)" referenceFile="Raspberry_Pi_B(rev2).fzp">
  <version>5</version>
  <author>Fabian Althaus</author>
- <title>Raspberry Pi rev2</title>
- <label>Raspberry Pi rev2</label>
+ <title>Raspberry Pi B rev2</title>
+ <label>Raspberry Pi B rev2</label>
  <date>July 17 2013</date>
  <tags>
   <tag>Raspberry</tag>
   <tag>Raspberry Pi</tag>
   <tag>RPi</tag>
-  <tag>Rev 2</tag>
+  <tag>B Rev 2</tag>
  </tags>
  <properties>
   <property name="family">CPU Board (Raspberry Pi)</property>
   <property name="processor">Broadcom SoC BCM2835 ARMv6</property>
-  <property name="variant">Raspberry Pi (Rev 02)</property>
+  <property name="variant">Raspberry Pi B(Rev 02)</property>
  </properties>
  <description>The awesome Raspberry Pi ARM Board</description>
  <views>
@@ -43,18 +43,18 @@
   </pcbView>
  </views>
  <connectors>
-  <connector type="male" id="connector15" name="GPIO4">
-   <description>GPIO Pin 4</description>
+  <connector type="male" id="connector15" name="GPIO 4">
+   <description>GPIO 4</description>
    <views>
     <breadboardView>
-     <p svgId="connector15pin" layer="breadboardbreadboard"/>
+     <p svgId="connector6pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
-     <p svgId="connector15pin" layer="schematic" terminalId="connector15terminal"/>
+     <p svgId="connector6pin" layer="schematic" terminalId="connector6terminal"/>
     </schematicView>
     <pcbView>
-     <p svgId="connector15pin" layer="copper1"/>
-     <p svgId="connector15pin" layer="copper0"/>
+     <p svgId="connector6pin" layer="copper1"/>
+     <p svgId="connector6pin" layer="copper0"/>
     </pcbView>
    </views>
   </connector>
@@ -317,14 +317,14 @@
    <description>GPIO 23</description>
    <views>
     <breadboardView>
-     <p svgId="connector6pin" layer="breadboardbreadboard"/>
+     <p svgId="connector15pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
-     <p svgId="connector6pin" layer="schematic" terminalId="connector6terminal"/>
+     <p svgId="connector15pin" layer="schematic" terminalId="connector15terminal"/>
     </schematicView>
     <pcbView>
-     <p svgId="connector6pin" layer="copper1"/>
-     <p svgId="connector6pin" layer="copper0"/>
+     <p svgId="connector15pin" layer="copper1"/>
+     <p svgId="connector15pin" layer="copper0"/>
     </pcbView>
    </views>
   </connector>

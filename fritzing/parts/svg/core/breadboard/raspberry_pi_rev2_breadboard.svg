@@ -12,55 +12,13 @@
 		<g id="text3739_1_">
 			<g id="_x30_.1.0.0.0.20.0" transform="matrix(1 0 0 1 52.9396 963.4302)">
 				<g id="_x30_.1.0.0.20.0">
-<<<<<<< Updated upstream
-					
-						<text id="tspan8658_1_" transform="matrix(1 0 0 1 -1.7013 -861.5386)" fill="#FFFFFF" font-family="'DroidSans'" font-size="6.0898">Raspberry Pi</text>
-=======
-					<text transform="matrix(1 0 0 1 -1.7013 -861.5386)" fill="#FFFFFF" font-family="'DroidSans'" font-size="6.0898">Raspberry Pi</text>
-					<text transform="matrix(1 0 0 1 -1.7013 -854.231)" fill="#FFFFFF" font-family="'DroidSans'" font-size="6.0898">Model B (R2)</text>
->>>>>>> Stashed changes
+					<text id="tspan8658_1_" transform="matrix(1 0 0 1 -1.7013 -861.5386)" enable-background="new    "><tspan x="0" y="0" fill="#FFFFFF" font-family="'DroidSans'" font-size="6.0898">Raspberry Pi</tspan><tspan x="0" y="7.308" fill="#FFFFFF" font-family="'DroidSans'" font-size="6.0898">Model B (R2)</tspan></text>
 				</g>
 			</g>
 		</g>
 		<g id="text3739-6-1_1_">
 			<g id="_x30_.1.0.0.0.21.0" transform="matrix(1 0 0 1 53.3649 969.3745)">
 				<g id="_x30_.1.0.0.21.0">
-<<<<<<< Updated upstream
-					<text transform="matrix(1 0 0 1 -1.7731 -862.5474)" fill="#FFFFFF" font-family="'DroidSans'" font-size="2.9053">h</text>
-					<text transform="matrix(1 0 0 1 -0.0617 -862.5474)" fill="#FFFFFF" font-family="'DroidSans'" font-size="2.9053">t</text>
-					<text transform="matrix(1 0 0 1 0.951 -862.5474)" fill="#FFFFFF" font-family="'DroidSans'" font-size="2.9053">t</text>
-					<text transform="matrix(1 0 0 1 1.9349 -862.5474)" fill="#FFFFFF" font-family="'DroidSans'" font-size="2.9053">p</text>
-					<text transform="matrix(1 0 0 1 3.638 -862.5474)" fill="#FFFFFF" font-family="'DroidSans'" font-size="2.9053">:</text>
-					<text transform="matrix(1 0 0 1 4.4173 -862.5474)" fill="#FFFFFF" font-family="'DroidSans'" font-size="2.9053">/</text>
-					<text transform="matrix(1 0 0 1 5.5003 -862.5474)" fill="#FFFFFF" font-family="'DroidSans'" font-size="2.9053">/</text>
-					<text transform="matrix(1 0 0 1 6.5843 -862.5474)" fill="#FFFFFF" font-family="'DroidSans'" font-size="2.9053">w</text>
-					<text transform="matrix(1 0 0 1 8.7518 -862.5474)" fill="#FFFFFF" font-family="'DroidSans'" font-size="2.9053">w</text>
-					<text transform="matrix(1 0 0 1 10.9193 -862.5474)" fill="#FFFFFF" font-family="'DroidSans'" font-size="2.9053">w</text>
-					<text transform="matrix(1 0 0 1 13.0877 -862.5474)" fill="#FFFFFF" font-family="'DroidSans'" font-size="2.9053">.</text>
-					<text transform="matrix(1 0 0 1 13.8665 -862.5474)" fill="#FFFFFF" font-family="'DroidSans'" font-size="2.9053">r</text>
-					<text transform="matrix(1 0 0 1 14.9969 -862.5474)" fill="#FFFFFF" font-family="'DroidSans'" font-size="2.9053">a</text>
-					<text transform="matrix(1 0 0 1 16.5384 -862.5474)" fill="#FFFFFF" font-family="'DroidSans'" font-size="2.9053">s</text>
-					<text transform="matrix(1 0 0 1 17.8499 -862.5474)" fill="#FFFFFF" font-family="'DroidSans'" font-size="2.9053">p</text>
-					<text transform="matrix(1 0 0 1 19.5516 -862.5474)" fill="#FFFFFF" font-family="'DroidSans'" font-size="2.9053">b</text>
-					<text transform="matrix(1 0 0 1 21.2547 -862.5474)" fill="#FFFFFF" font-family="'DroidSans'" font-size="2.9053">e</text>
-					<text transform="matrix(1 0 0 1 22.8089 -862.5474)" fill="#FFFFFF" font-family="'DroidSans'" font-size="2.9053">r</text>
-					<text transform="matrix(1 0 0 1 23.9676 -862.5474)" fill="#FFFFFF" font-family="'DroidSans'" font-size="2.9053">r</text>
-					<text transform="matrix(1 0 0 1 25.1268 -862.5474)" fill="#FFFFFF" font-family="'DroidSans'" font-size="2.9053">y</text>
-					<text transform="matrix(1 0 0 1 26.5467 -862.5474)" fill="#FFFFFF" font-family="'DroidSans'" font-size="2.9053">p</text>
-					<text transform="matrix(1 0 0 1 28.2494 -862.5474)" fill="#FFFFFF" font-family="'DroidSans'" font-size="2.9053">i</text>
-					<text transform="matrix(1 0 0 1 29.0008 -862.5474)" fill="#FFFFFF" font-family="'DroidSans'" font-size="2.9053">.</text>
-					<text transform="matrix(1 0 0 1 29.7801 -862.5474)" fill="#FFFFFF" font-family="'DroidSans'" font-size="2.9053">o</text>
-					<text transform="matrix(1 0 0 1 31.4564 -862.5474)" fill="#FFFFFF" font-family="'DroidSans'" font-size="2.9053">r</text>
-					<text transform="matrix(1 0 0 1 32.5872 -862.5474)" fill="#FFFFFF" font-family="'DroidSans'" font-size="2.9053">g</text>
-				</g>
-			</g>
-		</g>
-		<g id="text3739-6-1_2_">
-			<g id="_x30_.1.0.0.0.22.0" transform="matrix(1 0 0 1 53.3649 975.6118)">
-				<g id="_x30_.1.0.0.22.0">
-					
-						<text id="tspan8662_2_" transform="matrix(1 0 0 1 -1.7731 -863.606)" fill="#FFFFFF" font-family="'DroidSans'" font-size="3.8062">Rev2</text>
-=======
 					<text transform="matrix(1 0 0 1 -1.7731 -855.5405)" fill="#FFFFFF" font-family="'DroidSans'" font-size="2.9053">h</text>
 					<text transform="matrix(1 0 0 1 -0.0617 -855.5405)" fill="#FFFFFF" font-family="'DroidSans'" font-size="2.9053">t</text>
 					<text transform="matrix(1 0 0 1 0.951 -855.5405)" fill="#FFFFFF" font-family="'DroidSans'" font-size="2.9053">t</text>
@@ -87,7 +45,6 @@
 					<text transform="matrix(1 0 0 1 29.7801 -855.5405)" fill="#FFFFFF" font-family="'DroidSans'" font-size="2.9053">o</text>
 					<text transform="matrix(1 0 0 1 31.4564 -855.5405)" fill="#FFFFFF" font-family="'DroidSans'" font-size="2.9053">r</text>
 					<text transform="matrix(1 0 0 1 32.5872 -855.5405)" fill="#FFFFFF" font-family="'DroidSans'" font-size="2.9053">g</text>
->>>>>>> Stashed changes
 				</g>
 			</g>
 		</g>
@@ -2201,8 +2158,6 @@
 				<g id="_x30_.1.1.0.2.0">
 					
 						<text id="tspan10137" transform="matrix(0 -1 0.9999 0 -861.0801 -905.4923)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.9576">5V</text>
-<<<<<<< Updated upstream
-=======
 				</g>
 			</g>
 		</g>
@@ -2211,7 +2166,6 @@
 				<g id="_x30_.1.1.0.3.0">
 					
 						<text id="tspan10141" transform="matrix(0 -1 0.9999 0 -835.9829 -902.637)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.9576">2</text>
->>>>>>> Stashed changes
 				</g>
 			</g>
 		</g>
@@ -2220,8 +2174,6 @@
 				<g id="_x30_.1.1.0.4.0">
 					
 						<text id="tspan10145" transform="matrix(0 -1 0.9999 0 -853.9597 -914.4893)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.9576">5V</text>
-<<<<<<< Updated upstream
-=======
 				</g>
 			</g>
 		</g>
@@ -2230,7 +2182,6 @@
 				<g id="_x30_.1.1.0.5.0">
 					
 						<text id="tspan10149" transform="matrix(0 -1 0.9999 0 -828.8586 -911.6379)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.9576">3</text>
->>>>>>> Stashed changes
 				</g>
 			</g>
 		</g>
@@ -2408,26 +2359,6 @@
 			</g>
 			<path id="path10293" fill="#FFFFFF" d="M29.165,27.778l1.188,1.663h-2.375L29.165,27.778z"/>
 		</g>
-		<g id="text10139">
-			<g id="_x30_.1.1.0.0.3.0" transform="matrix(1.0001 0 0 1.0001 852.3604 950.7224)">
-				<g id="_x30_.1.1.0.3.0">
-					
-						<text id="tspan10141" transform="matrix(0 -1 0.9999 0 -836.3999 -898.5662)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.2598">2</text>
-				</g>
-			</g>
-		</g>
-		
-			<text transform="matrix(-4.371576e-008 -1.0001 1 -4.371139e-008 15.8768 49.9321)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.2598">/SDA</text>
-		<g id="text10139_1_">
-			<g id="_x30_.1.1.0.0.3.0_1_" transform="matrix(1.0001 0 0 1.0001 852.3604 950.7224)">
-				<g id="_x30_.1.1.0.3.0_1_">
-					
-						<text id="tspan10141_1_" transform="matrix(0 -1 0.9999 0 -829.2185 -898.5662)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.2598">3</text>
-				</g>
-			</g>
-		</g>
-		
-			<text transform="matrix(-4.371576e-008 -1.0001 1 -4.371139e-008 23.0589 49.9321)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.2598">/SCL</text>
 	</g>
 </g>
 </svg>

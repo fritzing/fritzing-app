@@ -94,26 +94,26 @@
 </g>
 <g id="copper1">
 	<g id="copper0">
-		<circle id="connector161pad" fill="none" stroke="#F7BD13" stroke-width="0.72" cx="308.208" cy="43.92" r="1.777"/>
-		<circle id="connector162pad" fill="none" stroke="#F7BD13" stroke-width="0.72" cx="308.208" cy="51.12" r="1.777"/>
-		<circle id="connector163pad" fill="none" stroke="#F7BD13" stroke-width="0.72" cx="308.208" cy="58.32" r="1.777"/>
-		<circle id="connector164pad" fill="none" stroke="#F7BD13" stroke-width="0.72" cx="308.208" cy="65.52" r="1.777"/>
-		<circle id="connector165pad" fill="none" stroke="#F7BD13" stroke-width="0.72" cx="308.208" cy="72.72" r="1.777"/>
-		<circle id="connector166pad" fill="none" stroke="#F7BD13" stroke-width="0.72" cx="308.208" cy="79.92" r="1.777"/>
-		<circle id="connector167pad" fill="none" stroke="#F7BD13" stroke-width="0.72" cx="308.208" cy="87.12" r="1.777"/>
-		<circle id="connector168pad" fill="none" stroke="#F7BD13" stroke-width="0.72" cx="308.208" cy="94.319" r="1.777"/>
-		<circle id="connector169pad" fill="none" stroke="#F7BD13" stroke-width="0.72" cx="308.208" cy="101.521" r="1.777"/>
-		<circle id="connector170pad" fill="none" stroke="#F7BD13" stroke-width="0.72" cx="308.208" cy="108.72" r="1.777"/>
-		<circle id="connector171pad" fill="none" stroke="#F7BD13" stroke-width="0.72" cx="157.008" cy="43.92" r="1.777"/>
-		<circle id="connector172pad" fill="none" stroke="#F7BD13" stroke-width="0.72" cx="157.008" cy="51.12" r="1.777"/>
-		<circle id="connector173pad" fill="none" stroke="#F7BD13" stroke-width="0.72" cx="157.008" cy="58.32" r="1.777"/>
-		<circle id="connector174pad" fill="none" stroke="#F7BD13" stroke-width="0.72" cx="157.008" cy="65.52" r="1.777"/>
-		<circle id="connector175pad" fill="none" stroke="#F7BD13" stroke-width="0.72" cx="157.008" cy="72.72" r="1.777"/>
-		<circle id="connector176pad" fill="none" stroke="#F7BD13" stroke-width="0.72" cx="157.008" cy="79.92" r="1.777"/>
-		<circle id="connector177pad" fill="none" stroke="#F7BD13" stroke-width="0.72" cx="157.008" cy="87.12" r="1.777"/>
-		<circle id="connector178pad" fill="none" stroke="#F7BD13" stroke-width="0.72" cx="157.008" cy="94.319" r="1.777"/>
-		<circle id="connector179pad" fill="none" stroke="#F7BD13" stroke-width="0.72" cx="157.008" cy="101.521" r="1.777"/>
-		<circle id="connector180pad" fill="none" stroke="#F7BD13" stroke-width="0.72" cx="157.008" cy="108.72" r="1.777"/>
+		<circle id="connector161pad" fill="none" stroke="#F7BD13" cx="308.208" cy="43.92" r="1.955"/>
+		<circle id="connector162pad" fill="none" stroke="#F7BD13" cx="308.208" cy="51.12" r="1.955"/>
+		<circle id="connector163pad" fill="none" stroke="#F7BD13" cx="308.208" cy="58.32" r="1.955"/>
+		<circle id="connector164pad" fill="none" stroke="#F7BD13" cx="308.208" cy="65.52" r="1.955"/>
+		<circle id="connector165pad" fill="none" stroke="#F7BD13" cx="308.208" cy="72.72" r="1.955"/>
+		<circle id="connector166pad" fill="none" stroke="#F7BD13" cx="308.208" cy="79.92" r="1.955"/>
+		<circle id="connector167pad" fill="none" stroke="#F7BD13" cx="308.208" cy="87.12" r="1.955"/>
+		<circle id="connector168pad" fill="none" stroke="#F7BD13" cx="308.208" cy="94.319" r="1.955"/>
+		<circle id="connector169pad" fill="none" stroke="#F7BD13" cx="308.208" cy="101.521" r="1.955"/>
+		<circle id="connector170pad" fill="none" stroke="#F7BD13" cx="308.208" cy="108.72" r="1.955"/>
+		<circle id="connector171pad" fill="none" stroke="#F7BD13" cx="157.008" cy="43.92" r="1.955"/>
+		<circle id="connector172pad" fill="none" stroke="#F7BD13" cx="157.008" cy="51.12" r="1.955"/>
+		<circle id="connector173pad" fill="none" stroke="#F7BD13" cx="157.008" cy="58.32" r="1.955"/>
+		<circle id="connector174pad" fill="none" stroke="#F7BD13" cx="157.008" cy="65.52" r="1.955"/>
+		<circle id="connector175pad" fill="none" stroke="#F7BD13" cx="157.008" cy="72.72" r="1.955"/>
+		<circle id="connector176pad" fill="none" stroke="#F7BD13" cx="157.008" cy="79.92" r="1.955"/>
+		<circle id="connector177pad" fill="none" stroke="#F7BD13" cx="157.008" cy="87.12" r="1.955"/>
+		<circle id="connector178pad" fill="none" stroke="#F7BD13" cx="157.008" cy="94.319" r="1.955"/>
+		<circle id="connector179pad" fill="none" stroke="#F7BD13" cx="157.008" cy="101.521" r="1.955"/>
+		<circle id="connector180pad" fill="none" stroke="#F7BD13" cx="157.008" cy="108.72" r="1.955"/>
 	</g>
 </g>
 </svg>

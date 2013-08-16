@@ -35,7 +35,7 @@
    </layers>
   </schematicView>
   <pcbView>
-   <layers image="pcb/axial_lay_2_300mil_pcb.svg">
+   <layers image="pcb/Textile_analog_sensor_pcb.svg">
     <layer layerId="copper0"/>
     <layer layerId="silkscreen"/>
     <layer layerId="copper1"/>

@@ -5,9 +5,9 @@
 	 width="288.736px" height="151.2px" viewBox="0 0 288.736 151.2" enable-background="new 0 0 288.736 151.2" xml:space="preserve">
 <g id="silkscreen">
 	<path id="_x30_.1.0" fill="none" stroke="#FFFFFF" stroke-width="0.576" d="M273.631,0.288l7.188,7.172v28.69l7.188,7.172v96.83
-		l-7.188,7.175v0.762c0.162,1.396-0.838,2.66-2.232,2.824c-0.199,0.022-0.398,0.022-0.598,0H3.375
-		c-1.397,0.164-2.663-0.834-2.829-2.229c-0.023-0.198-0.024-0.396-0.001-0.596V3.112C0.382,1.715,1.383,0.45,2.779,0.288
-		c0.198-0.023,0.397-0.023,0.596,0H273.631"/>
+		l-7.188,7.175v0.762c0.162,1.396-0.838,2.66-2.232,2.824c-0.198,0.022-0.397,0.022-0.598,0H3.375
+		c-1.396,0.164-2.663-0.834-2.829-2.229c-0.022-0.198-0.023-0.396-0.001-0.596V3.112C0.382,1.715,1.383,0.45,2.779,0.288
+		c0.198-0.023,0.396-0.023,0.596,0H273.631"/>
 	<g id="_x30_.1.5">
 		<title  id="0.1.5.0">element:ADCH</title>
 		<g id="_x30_.1.5.1">
@@ -1029,7 +1029,7 @@
 				<g id="_x30_.2.9.0.0" transform="matrix(1, 0, 0, 1, 199.772, 16.2)">
 					<g id="_x30_.2.9.0.0.0" transform="rotate(270)">
 						
-							<text id="_x30_.2.9.0.0.0.0" transform="matrix(1 0 0 1 3.051758e-004 -17.6802)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">0</text>
+							<text id="_x30_.2.9.0.0.0.0" transform="matrix(1 0 0 1 3.051758e-004 -17.6804)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">0</text>
 					</g>
 				</g>
 			</g>
@@ -1039,7 +1039,7 @@
 				<g id="_x30_.2.10.0.0" transform="matrix(1, 0, 0, 1, 192.572, 16.2)">
 					<g id="_x30_.2.10.0.0.0" transform="rotate(270)">
 						
-							<text id="_x30_.2.10.0.0.0.0" transform="matrix(1 0 0 1 3.051758e-004 -17.6794)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">1</text>
+							<text id="_x30_.2.10.0.0.0.0" transform="matrix(1 0 0 1 3.051758e-004 -17.6796)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">1</text>
 					</g>
 				</g>
 			</g>
@@ -1049,7 +1049,7 @@
 				<g id="_x30_.2.11.0.0" transform="matrix(1, 0, 0, 1, 185.372, 16.2)">
 					<g id="_x30_.2.11.0.0.0" transform="rotate(270)">
 						
-							<text id="_x30_.2.11.0.0.0.0" transform="matrix(1 0 0 1 3.051758e-004 -17.6786)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">2</text>
+							<text id="_x30_.2.11.0.0.0.0" transform="matrix(1 0 0 1 3.051758e-004 -17.6788)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">2</text>
 					</g>
 				</g>
 			</g>
@@ -1059,7 +1059,7 @@
 				<g id="_x30_.2.12.0.0" transform="matrix(1, 0, 0, 1, 178.172, 16.2)">
 					<g id="_x30_.2.12.0.0.0" transform="rotate(270)">
 						
-							<text id="_x30_.2.12.0.0.0.0" transform="matrix(1 0 0 1 3.051758e-004 -17.6798)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">3</text>
+							<text id="_x30_.2.12.0.0.0.0" transform="matrix(1 0 0 1 3.051758e-004 -17.68)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">3</text>
 					</g>
 				</g>
 			</g>
@@ -1069,7 +1069,7 @@
 				<g id="_x30_.2.13.0.0" transform="matrix(1, 0, 0, 1, 170.972, 16.2)">
 					<g id="_x30_.2.13.0.0.0" transform="rotate(270)">
 						
-							<text id="_x30_.2.13.0.0.0.0" transform="matrix(1 0 0 1 3.051758e-004 -17.6795)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">4</text>
+							<text id="_x30_.2.13.0.0.0.0" transform="matrix(1 0 0 1 3.051758e-004 -17.6792)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">4</text>
 					</g>
 				</g>
 			</g>
@@ -1079,7 +1079,7 @@
 				<g id="_x30_.2.14.0.0" transform="matrix(1, 0, 0, 1, 163.772, 16.2)">
 					<g id="_x30_.2.14.0.0.0" transform="rotate(270)">
 						
-							<text id="_x30_.2.14.0.0.0.0" transform="matrix(1 0 0 1 3.051758e-004 -17.6807)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">5</text>
+							<text id="_x30_.2.14.0.0.0.0" transform="matrix(1 0 0 1 3.051758e-004 -17.6804)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">5</text>
 					</g>
 				</g>
 			</g>
@@ -1089,7 +1089,7 @@
 				<g id="_x30_.2.15.0.0" transform="matrix(1, 0, 0, 1, 156.572, 16.2)">
 					<g id="_x30_.2.15.0.0.0" transform="rotate(270)">
 						
-							<text id="_x30_.2.15.0.0.0.0" transform="matrix(1 0 0 1 3.051758e-004 -17.6799)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">6</text>
+							<text id="_x30_.2.15.0.0.0.0" transform="matrix(1 0 0 1 3.051758e-004 -17.6796)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">6</text>
 					</g>
 				</g>
 			</g>
@@ -1099,7 +1099,7 @@
 				<g id="_x30_.2.16.0.0" transform="matrix(1, 0, 0, 1, 149.372, 16.2)">
 					<g id="_x30_.2.16.0.0.0" transform="rotate(270)">
 						
-							<text id="_x30_.2.16.0.0.0.0" transform="matrix(1 0 0 1 3.051758e-004 -17.6801)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">7</text>
+							<text id="_x30_.2.16.0.0.0.0" transform="matrix(1 0 0 1 3.051758e-004 -17.6808)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">7</text>
 					</g>
 				</g>
 			</g>
@@ -1109,7 +1109,7 @@
 				<g id="_x30_.2.17.0.0" transform="matrix(1, 0, 0, 1, 138.572, 16.2)">
 					<g id="_x30_.2.17.0.0.0" transform="rotate(270)">
 						
-							<text id="_x30_.2.17.0.0.0.0" transform="matrix(1 0 0 1 3.051758e-004 -17.6799)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">8</text>
+							<text id="_x30_.2.17.0.0.0.0" transform="matrix(1 0 0 1 3.051758e-004 -17.6796)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">8</text>
 					</g>
 				</g>
 			</g>
@@ -1119,7 +1119,7 @@
 				<g id="_x30_.2.18.0.0" transform="matrix(1, 0, 0, 1, 131.372, 16.2)">
 					<g id="_x30_.2.18.0.0.0" transform="rotate(270)">
 						
-							<text id="_x30_.2.18.0.0.0.0" transform="matrix(1 0 0 1 3.051758e-004 -17.6801)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">9</text>
+							<text id="_x30_.2.18.0.0.0.0" transform="matrix(1 0 0 1 3.051758e-004 -17.6808)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">9</text>
 					</g>
 				</g>
 			</g>
@@ -1129,7 +1129,7 @@
 				<g id="_x30_.2.19.0.0" transform="matrix(1, 0, 0, 1, 124.172, 19.8)">
 					<g id="_x30_.2.19.0.0.0" transform="rotate(270)">
 						
-							<text id="_x30_.2.19.0.0.0.0" transform="matrix(1 0 0 1 6.713867e-004 -17.6802)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">10</text>
+							<text id="_x30_.2.19.0.0.0.0" transform="matrix(1 0 0 1 6.713867e-004 -17.68)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">10</text>
 					</g>
 				</g>
 			</g>
@@ -1139,7 +1139,7 @@
 				<g id="_x30_.2.20.0.0" transform="matrix(1, 0, 0, 1, 116.972, 19.8)">
 					<g id="_x30_.2.20.0.0.0" transform="rotate(270)">
 						
-							<text id="_x30_.2.20.0.0.0.0" transform="matrix(1 0 0 1 6.713867e-004 -17.6804)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">11</text>
+							<text id="_x30_.2.20.0.0.0.0" transform="matrix(1 0 0 1 6.713867e-004 -17.6802)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">11</text>
 					</g>
 				</g>
 			</g>
@@ -1149,7 +1149,7 @@
 				<g id="_x30_.2.21.0.0" transform="matrix(1, 0, 0, 1, 109.772, 19.8)">
 					<g id="_x30_.2.21.0.0.0" transform="rotate(270)">
 						
-							<text id="_x30_.2.21.0.0.0.0" transform="matrix(1 0 0 1 6.713867e-004 -17.6806)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">12</text>
+							<text id="_x30_.2.21.0.0.0.0" transform="matrix(1 0 0 1 6.713867e-004 -17.6804)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">12</text>
 					</g>
 				</g>
 			</g>
@@ -1159,7 +1159,7 @@
 				<g id="_x30_.2.22.0.0" transform="matrix(1, 0, 0, 1, 102.572, 19.8)">
 					<g id="_x30_.2.22.0.0.0" transform="rotate(270)">
 						
-							<text id="_x30_.2.22.0.0.0.0" transform="matrix(1 0 0 1 6.713867e-004 -17.6798)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">13</text>
+							<text id="_x30_.2.22.0.0.0.0" transform="matrix(1 0 0 1 6.713867e-004 -17.6796)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">13</text>
 					</g>
 				</g>
 			</g>
@@ -1169,7 +1169,7 @@
 			<g id="_x30_.2.23.1" transform="matrix(1, 0, 0, 1, 164.132, 137.88)">
 				<g id="_x30_.2.23.1.0" transform="rotate(270)">
 					
-						<text id="_x30_.2.23.1.0.0" transform="matrix(1 0 0 1 -0.6293 -17.6383)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">A0</text>
+						<text id="_x30_.2.23.1.0.0" transform="matrix(1 0 0 1 -0.6293 -17.6381)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">A0</text>
 				</g>
 			</g>
 		</g>
@@ -1178,7 +1178,7 @@
 			<g id="_x30_.2.24.1" transform="matrix(1, 0, 0, 1, 170.612, 137.88)">
 				<g id="_x30_.2.24.1.0" transform="rotate(270)">
 					
-						<text id="_x30_.2.24.1.0.0" transform="matrix(1 0 0 1 -0.6293 -17.6378)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">A1</text>
+						<text id="_x30_.2.24.1.0.0" transform="matrix(1 0 0 1 -0.6293 -17.6376)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">A1</text>
 				</g>
 			</g>
 		</g>
@@ -1187,7 +1187,7 @@
 			<g id="_x30_.2.25.1" transform="matrix(1, 0, 0, 1, 178.532, 137.88)">
 				<g id="_x30_.2.25.1.0" transform="rotate(270)">
 					
-						<text id="_x30_.2.25.1.0.0" transform="matrix(1 0 0 1 -0.6293 -17.6374)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">A2</text>
+						<text id="_x30_.2.25.1.0.0" transform="matrix(1 0 0 1 -0.6293 -17.6376)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">A2</text>
 				</g>
 			</g>
 		</g>
@@ -1196,7 +1196,7 @@
 			<g id="_x30_.2.26.1" transform="matrix(1, 0, 0, 1, 185.732, 137.88)">
 				<g id="_x30_.2.26.1.0" transform="rotate(270)">
 					
-						<text id="_x30_.2.26.1.0.0" transform="matrix(1 0 0 1 -0.6293 -17.6382)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">A3</text>
+						<text id="_x30_.2.26.1.0.0" transform="matrix(1 0 0 1 -0.6293 -17.6384)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">A3</text>
 				</g>
 			</g>
 		</g>
@@ -1205,7 +1205,7 @@
 			<g id="_x30_.2.27.1" transform="matrix(1, 0, 0, 1, 192.932, 137.88)">
 				<g id="_x30_.2.27.1.0" transform="rotate(270)">
 					
-						<text id="_x30_.2.27.1.0.0" transform="matrix(1 0 0 1 -0.6293 -17.637)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">A4</text>
+						<text id="_x30_.2.27.1.0.0" transform="matrix(1 0 0 1 -0.6293 -17.6373)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">A4</text>
 				</g>
 			</g>
 		</g>
@@ -1214,7 +1214,7 @@
 			<g id="_x30_.2.28.1" transform="matrix(1, 0, 0, 1, 199.772, 137.88)">
 				<g id="_x30_.2.28.1.0" transform="rotate(270)">
 					
-						<text id="_x30_.2.28.1.0.0" transform="matrix(1 0 0 1 -0.6293 -17.6372)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">A5</text>
+						<text id="_x30_.2.28.1.0.0" transform="matrix(1 0 0 1 -0.6293 -17.6375)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">A5</text>
 				</g>
 			</g>
 		</g>
@@ -1223,7 +1223,7 @@
 			<g id="_x30_.2.29.1" transform="matrix(1, 0, 0, 1, 206.972, 137.88)">
 				<g id="_x30_.2.29.1.0" transform="rotate(270)">
 					
-						<text id="_x30_.2.29.1.0.0" transform="matrix(1 0 0 1 -0.6293 -17.6379)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">6</text>
+						<text id="_x30_.2.29.1.0.0" transform="matrix(1 0 0 1 -0.6293 -17.6382)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">6</text>
 				</g>
 			</g>
 		</g>
@@ -1232,7 +1232,7 @@
 			<g id="_x30_.2.30.1" transform="matrix(1, 0, 0, 1, 214.532, 137.88)">
 				<g id="_x30_.2.30.1.0" transform="rotate(270)">
 					
-						<text id="_x30_.2.30.1.0.0" transform="matrix(1 0 0 1 -0.6293 -17.6393)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">A7</text>
+						<text id="_x30_.2.30.1.0.0" transform="matrix(1 0 0 1 -0.6293 -17.6396)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">A7</text>
 				</g>
 			</g>
 		</g>
@@ -1241,7 +1241,7 @@
 			<g id="_x30_.2.31.1" transform="matrix(1, 0, 0, 1, 228.932, 137.88)">
 				<g id="_x30_.2.31.1.0" transform="rotate(270)">
 					
-						<text id="_x30_.2.31.1.0.0" transform="matrix(1 0 0 1 -0.6293 -17.637)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">A8</text>
+						<text id="_x30_.2.31.1.0.0" transform="matrix(1 0 0 1 -0.6293 -17.6373)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">A8</text>
 				</g>
 			</g>
 		</g>
@@ -1250,7 +1250,7 @@
 			<g id="_x30_.2.32.1" transform="matrix(1, 0, 0, 1, 236.132, 137.88)">
 				<g id="_x30_.2.32.1.0" transform="rotate(270)">
 					
-						<text id="_x30_.2.32.1.0.0" transform="matrix(1 0 0 1 -0.6293 -17.6398)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">A9</text>
+						<text id="_x30_.2.32.1.0.0" transform="matrix(1 0 0 1 -0.6293 -17.6401)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">A9</text>
 				</g>
 			</g>
 		</g>
@@ -1259,7 +1259,7 @@
 			<g id="_x30_.2.33.1" transform="matrix(1, 0, 0, 1, 243.332, 137.88)">
 				<g id="_x30_.2.33.1.0" transform="rotate(270)">
 					
-						<text id="_x30_.2.33.1.0.0" transform="matrix(1 0 0 1 -0.6293 -17.6367)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">A10</text>
+						<text id="_x30_.2.33.1.0.0" transform="matrix(1 0 0 1 -0.6293 -17.637)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">A10</text>
 				</g>
 			</g>
 		</g>
@@ -1268,7 +1268,7 @@
 			<g id="_x30_.2.34.1" transform="matrix(1, 0, 0, 1, 250.532, 137.88)">
 				<g id="_x30_.2.34.1.0" transform="rotate(270)">
 					
-						<text id="_x30_.2.34.1.0.0" transform="matrix(1 0 0 1 -0.6293 -17.6394)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">A11</text>
+						<text id="_x30_.2.34.1.0.0" transform="matrix(1 0 0 1 -0.6293 -17.6397)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">A11</text>
 				</g>
 			</g>
 		</g>
@@ -1277,7 +1277,7 @@
 			<g id="_x30_.2.35.1" transform="matrix(1, 0, 0, 1, 257.732, 137.88)">
 				<g id="_x30_.2.35.1.0" transform="rotate(270)">
 					
-						<text id="_x30_.2.35.1.0.0" transform="matrix(1 0 0 1 -0.6293 -17.6402)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">A12</text>
+						<text id="_x30_.2.35.1.0.0" transform="matrix(1 0 0 1 -0.6293 -17.6405)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">A12</text>
 				</g>
 			</g>
 		</g>
@@ -1286,7 +1286,7 @@
 			<g id="_x30_.2.36.1" transform="matrix(1, 0, 0, 1, 264.932, 137.88)">
 				<g id="_x30_.2.36.1.0" transform="rotate(270)">
 					
-						<text id="_x30_.2.36.1.0.0" transform="matrix(1 0 0 1 -0.6293 -17.6371)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">A13</text>
+						<text id="_x30_.2.36.1.0.0" transform="matrix(1 0 0 1 -0.6293 -17.6374)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">A13</text>
 				</g>
 			</g>
 		</g>
@@ -1295,7 +1295,7 @@
 			<g id="_x30_.2.37.1" transform="matrix(1, 0, 0, 1, 272.132, 137.88)">
 				<g id="_x30_.2.37.1.0" transform="rotate(270)">
 					
-						<text id="_x30_.2.37.1.0.0" transform="matrix(1 0 0 1 -0.6293 -17.6398)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">A14</text>
+						<text id="_x30_.2.37.1.0.0" transform="matrix(1 0 0 1 -0.6293 -17.6401)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">A14</text>
 				</g>
 			</g>
 		</g>
@@ -1304,121 +1304,121 @@
 			<g id="_x30_.2.38.1" transform="matrix(1, 0, 0, 1, 278.972, 137.88)">
 				<g id="_x30_.2.38.1.0" transform="rotate(270)">
 					
-						<text id="_x30_.2.38.1.0.0" transform="matrix(1 0 0 1 -0.6293 -17.64)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">A15</text>
+						<text id="_x30_.2.38.1.0.0" transform="matrix(1 0 0 1 -0.6293 -17.6403)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">A15</text>
 				</g>
 			</g>
 		</g>
 		<g id="_x30_.2.40">
 			<title  id="0.2.40.0">text:22</title>
-			<text id="_x30_.2.40.1" transform="matrix(1 0 0 1 255.8916 16.1997)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">22</text>
+			<text id="_x30_.2.40.1" transform="matrix(1 0 0 1 255.8913 16.1997)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">22</text>
 		</g>
 		<g id="_x30_.2.41">
 			<title  id="0.2.41.0">text:24</title>
-			<text id="_x30_.2.41.1" transform="matrix(1 0 0 1 255.8916 23.3999)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">24</text>
+			<text id="_x30_.2.41.1" transform="matrix(1 0 0 1 255.8913 23.3999)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">24</text>
 		</g>
 		<g id="_x30_.2.42">
 			<title  id="0.2.42.0">text:26</title>
-			<text id="_x30_.2.42.1" transform="matrix(1 0 0 1 255.8916 30.6001)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">26</text>
+			<text id="_x30_.2.42.1" transform="matrix(1 0 0 1 255.8913 30.6001)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">26</text>
 		</g>
 		<g id="_x30_.2.43">
 			<title  id="0.2.43.0">text:28</title>
-			<text id="_x30_.2.43.1" transform="matrix(1 0 0 1 255.8916 37.8003)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">28</text>
+			<text id="_x30_.2.43.1" transform="matrix(1 0 0 1 255.8913 37.8003)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">28</text>
 		</g>
 		<g id="_x30_.2.44">
 			<title  id="0.2.44.0">text:30</title>
-			<text id="_x30_.2.44.1" transform="matrix(1 0 0 1 255.8916 45.0005)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">30</text>
+			<text id="_x30_.2.44.1" transform="matrix(1 0 0 1 255.8913 45.0005)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">30</text>
 		</g>
 		<g id="_x30_.2.45">
 			<title  id="0.2.45.0">text:31</title>
-			<text id="_x30_.2.45.1" transform="matrix(1 0 0 1 279.293 45.0005)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">31</text>
+			<text id="_x30_.2.45.1" transform="matrix(1 0 0 1 279.2927 45.0005)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">31</text>
 		</g>
 		<g id="_x30_.2.46">
 			<title  id="0.2.46.0">text:32</title>
-			<text id="_x30_.2.46.1" transform="matrix(1 0 0 1 255.8916 52.1997)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">32</text>
+			<text id="_x30_.2.46.1" transform="matrix(1 0 0 1 255.8913 52.1997)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">32</text>
 		</g>
 		<g id="_x30_.2.47">
 			<title  id="0.2.47.0">text:33</title>
-			<text id="_x30_.2.47.1" transform="matrix(1 0 0 1 279.293 52.1997)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">33</text>
+			<text id="_x30_.2.47.1" transform="matrix(1 0 0 1 279.2927 52.1997)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">33</text>
 		</g>
 		<g id="_x30_.2.48">
 			<title  id="0.2.48.0">text:34</title>
-			<text id="_x30_.2.48.1" transform="matrix(1 0 0 1 255.8916 59.3999)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">34</text>
+			<text id="_x30_.2.48.1" transform="matrix(1 0 0 1 255.8913 59.3999)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">34</text>
 		</g>
 		<g id="_x30_.2.49">
 			<title  id="0.2.49.0">text:35</title>
-			<text id="_x30_.2.49.1" transform="matrix(1 0 0 1 279.293 59.3999)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">35</text>
+			<text id="_x30_.2.49.1" transform="matrix(1 0 0 1 279.2927 59.3999)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">35</text>
 		</g>
 		<g id="_x30_.2.50">
 			<title  id="0.2.50.0">text:36</title>
-			<text id="_x30_.2.50.1" transform="matrix(1 0 0 1 255.8916 66.6001)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">36</text>
+			<text id="_x30_.2.50.1" transform="matrix(1 0 0 1 255.8913 66.6001)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">36</text>
 		</g>
 		<g id="_x30_.2.51">
 			<title  id="0.2.51.0">text:37</title>
-			<text id="_x30_.2.51.1" transform="matrix(1 0 0 1 279.293 66.6001)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">37</text>
+			<text id="_x30_.2.51.1" transform="matrix(1 0 0 1 279.2927 66.6001)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">37</text>
 		</g>
 		<g id="_x30_.2.52">
 			<title  id="0.2.52.0">text:38</title>
-			<text id="_x30_.2.52.1" transform="matrix(1 0 0 1 255.8916 73.8003)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">38</text>
+			<text id="_x30_.2.52.1" transform="matrix(1 0 0 1 255.8913 73.8003)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">38</text>
 		</g>
 		<g id="_x30_.2.53">
 			<title  id="0.2.53.0">text:39</title>
-			<text id="_x30_.2.53.1" transform="matrix(1 0 0 1 279.293 73.8003)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">39</text>
+			<text id="_x30_.2.53.1" transform="matrix(1 0 0 1 279.2927 73.8003)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">39</text>
 		</g>
 		<g id="_x30_.2.54">
 			<title  id="0.2.54.0">text:41</title>
-			<text id="_x30_.2.54.1" transform="matrix(1 0 0 1 279.293 81.0005)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">41</text>
+			<text id="_x30_.2.54.1" transform="matrix(1 0 0 1 279.2927 81.0005)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">41</text>
 		</g>
 		<g id="_x30_.2.55">
 			<title  id="0.2.55.0">text:40</title>
-			<text id="_x30_.2.55.1" transform="matrix(1 0 0 1 255.8916 81.0005)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">40</text>
+			<text id="_x30_.2.55.1" transform="matrix(1 0 0 1 255.8913 81.0005)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">40</text>
 		</g>
 		<g id="_x30_.2.56">
 			<title  id="0.2.56.0">text:43</title>
-			<text id="_x30_.2.56.1" transform="matrix(1 0 0 1 279.293 88.1997)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">43</text>
+			<text id="_x30_.2.56.1" transform="matrix(1 0 0 1 279.2927 88.1997)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">43</text>
 		</g>
 		<g id="_x30_.2.57">
 			<title  id="0.2.57.0">text:42</title>
-			<text id="_x30_.2.57.1" transform="matrix(1 0 0 1 255.8916 88.1997)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">42</text>
+			<text id="_x30_.2.57.1" transform="matrix(1 0 0 1 255.8913 88.1997)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">42</text>
 		</g>
 		<g id="_x30_.2.58">
 			<title  id="0.2.58.0">text:45</title>
-			<text id="_x30_.2.58.1" transform="matrix(1 0 0 1 279.293 95.3999)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">45</text>
+			<text id="_x30_.2.58.1" transform="matrix(1 0 0 1 279.2927 95.3999)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">45</text>
 		</g>
 		<g id="_x30_.2.59">
 			<title  id="0.2.59.0">text:47</title>
-			<text id="_x30_.2.59.1" transform="matrix(1 0 0 1 279.293 102.6001)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">47</text>
+			<text id="_x30_.2.59.1" transform="matrix(1 0 0 1 279.2927 102.6001)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">47</text>
 		</g>
 		<g id="_x30_.2.60">
 			<title  id="0.2.60.0">text:49</title>
-			<text id="_x30_.2.60.1" transform="matrix(1 0 0 1 279.293 109.8003)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">49</text>
+			<text id="_x30_.2.60.1" transform="matrix(1 0 0 1 279.2927 109.8003)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">49</text>
 		</g>
 		<g id="_x30_.2.61">
 			<title  id="0.2.61.0">text:51</title>
-			<text id="_x30_.2.61.1" transform="matrix(1 0 0 1 279.293 117.0005)" fill="#FFFFFF" font-family="'OCRA'" font-size="2.5">MOSI</text>
+			<text id="_x30_.2.61.1" transform="matrix(1 0 0 1 279.2927 117.0005)" fill="#FFFFFF" font-family="'OCRA'" font-size="2.5">MOSI</text>
 		</g>
 		<g id="_x30_.2.62">
 			<title  id="0.2.62.0">text:44</title>
-			<text id="_x30_.2.62.1" transform="matrix(1 0 0 1 255.8916 95.3999)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">44</text>
+			<text id="_x30_.2.62.1" transform="matrix(1 0 0 1 255.8913 95.3999)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">44</text>
 		</g>
 		<g id="_x30_.2.63">
 			<title  id="0.2.63.0">text:46</title>
-			<text id="_x30_.2.63.1" transform="matrix(1 0 0 1 255.8916 102.6001)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">46</text>
+			<text id="_x30_.2.63.1" transform="matrix(1 0 0 1 255.8913 102.6001)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">46</text>
 		</g>
 		<g id="_x30_.2.64">
 			<title  id="0.2.64.0">text:50</title>
-			<text id="_x30_.2.64.1" transform="matrix(1 0 0 1 255.3076 117.0005)" fill="#FFFFFF" font-family="'OCRA'" font-size="2.5">MISO</text>
+			<text id="_x30_.2.64.1" transform="matrix(1 0 0 1 255.3073 117.0005)" fill="#FFFFFF" font-family="'OCRA'" font-size="2.5">MISO</text>
 		</g>
 		<g id="_x30_.2.65">
 			<title  id="0.2.65.0">text:48</title>
-			<text id="_x30_.2.65.1" transform="matrix(1 0 0 1 255.8916 109.8003)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">48</text>
+			<text id="_x30_.2.65.1" transform="matrix(1 0 0 1 255.8913 109.8003)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">48</text>
 		</g>
 		<g id="_x30_.2.66">
 			<title  id="0.2.66.0">text:53</title>
-			<text id="_x30_.2.66.1" transform="matrix(1 0 0 1 279.293 124.1997)" fill="#FFFFFF" font-family="'OCRA'" font-size="2.5">SS</text>
+			<text id="_x30_.2.66.1" transform="matrix(1 0 0 1 279.2927 124.1997)" fill="#FFFFFF" font-family="'OCRA'" font-size="2.5">SS</text>
 		</g>
 		<g id="_x30_.2.67">
 			<title  id="0.2.67.0">text:52</title>
-			<text id="_x30_.2.67.1" transform="matrix(1 0 0 1 255.8916 124.1997)" fill="#FFFFFF" font-family="'OCRA'" font-size="2.5">SCK</text>
+			<text id="_x30_.2.67.1" transform="matrix(1 0 0 1 255.8913 124.1997)" fill="#FFFFFF" font-family="'OCRA'" font-size="2.5">SCK</text>
 		</g>
 		<g id="_x30_.2.70">
 			<title  id="0.2.70.0">element:C1</title>
@@ -1606,7 +1606,7 @@
 				<g id="_x30_.2.103.0.0" transform="matrix(1, 0, 0, 1, 88.087, 25.9574)">
 					<g id="_x30_.2.103.0.0.0" transform="rotate(270)">
 						
-							<text id="_x30_.2.103.0.0.0.0" transform="matrix(1 0 0 1 0.4257 -17.6803)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">AREF</text>
+							<text id="_x30_.2.103.0.0.0.0" transform="matrix(1 0 0 1 0.4257 -17.6811)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">AREF</text>
 					</g>
 				</g>
 			</g>
@@ -1616,7 +1616,7 @@
 				<g id="_x30_.2.104.0.0" transform="matrix(1, 0, 0, 1, 95.6779, 22.2854)">
 					<g id="_x30_.2.104.0.0.0" transform="rotate(270)">
 						
-							<text id="_x30_.2.104.0.0.0.0" transform="matrix(1 0 0 1 -2.441406e-004 -17.6803)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">GND</text>
+							<text id="_x30_.2.104.0.0.0.0" transform="matrix(1 0 0 1 -2.441406e-004 -17.6802)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">GND</text>
 					</g>
 				</g>
 			</g>
@@ -1626,7 +1626,7 @@
 				<g id="_x30_.2.105.0.0" transform="matrix(1, 0, 0, 1, 192.572, 30.96)">
 					<g id="_x30_.2.105.0.0.0" transform="rotate(270)">
 						
-							<text id="_x30_.2.105.0.0.0.0" transform="matrix(1 0 0 1 5.187988e-004 -17.6814)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">TX0</text>
+							<text id="_x30_.2.105.0.0.0.0" transform="matrix(1 0 0 1 5.187988e-004 -17.6817)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">TX0</text>
 					</g>
 				</g>
 			</g>
@@ -1636,7 +1636,7 @@
 				<g id="_x30_.2.106.0.0" transform="matrix(1, 0, 0, 1, 199.772, 30.96)">
 					<g id="_x30_.2.106.0.0.0" transform="rotate(270)">
 						
-							<text id="_x30_.2.106.0.0.0.0" transform="matrix(1 0 0 1 5.187988e-004 -17.6822)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">RX0</text>
+							<text id="_x30_.2.106.0.0.0.0" transform="matrix(1 0 0 1 5.187988e-004 -17.6825)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">RX0</text>
 					</g>
 				</g>
 			</g>
@@ -1646,7 +1646,7 @@
 				<g id="_x30_.2.108.0.0" transform="matrix(1, 0, 0, 1, 113.647, 139.141)">
 					<g id="_x30_.2.108.0.0.0" transform="rotate(270)">
 						
-							<text id="_x30_.2.108.0.0.0.0" transform="matrix(1 0 0 1 0.6239 -18.3751)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.25">RESET</text>
+							<text id="_x30_.2.108.0.0.0.0" transform="matrix(1 0 0 1 0.6239 -18.3759)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.25">RESET</text>
 					</g>
 				</g>
 			</g>
@@ -1657,7 +1657,7 @@
 					<g id="_x30_.2.109.0.0.0">
 						<g id="_x30_.2.109.0.0.0.0" transform="rotate(270)">
 							
-								<text id="_x30_.2.109.0.0.0.0.0" transform="matrix(1 0 0 1 0.6239 -18.3749)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.25">3V3</text>
+								<text id="_x30_.2.109.0.0.0.0.0" transform="matrix(1 0 0 1 0.6239 -18.3757)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.25">3V3</text>
 						</g>
 					</g>
 				</g>
@@ -1667,31 +1667,31 @@
 			<g id="_x30_.2.110.0">
 				<g id="_x30_.2.110.0.0">
 					
-						<text id="_x30_.2.110.0.0.0" transform="matrix(4.489659e-011 -1 1 4.489659e-011 109.7133 138.5171)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.25">5V</text>
+						<text id="_x30_.2.110.0.0.0" transform="matrix(4.489659e-011 -1 1 4.489659e-011 109.7125 138.5171)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.25">5V</text>
 				</g>
 			</g>
 		</g>
 		<g id="_x30_.2.111">
 			<title  id="0.2.111.0">text:VIN</title>
 			
-				<text id="_x30_.2.111.1" transform="matrix(4.489659e-011 -1 1 4.489659e-011 131.5424 138.5103)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.25">VIN</text>
+				<text id="_x30_.2.111.1" transform="matrix(4.489659e-011 -1 1 4.489659e-011 131.5416 138.5103)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.25">VIN</text>
 		</g>
 		<g id="_x30_.2.112">
 			<title  id="0.2.112.0">text:GND</title>
 			
-				<text id="_x30_.2.112.1" transform="matrix(4.489659e-011 -1 1 4.489659e-011 124.1127 138.5093)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.25">GND</text>
+				<text id="_x30_.2.112.1" transform="matrix(4.489659e-011 -1 1 4.489659e-011 124.1119 138.5093)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.25">GND</text>
 		</g>
 		<g id="_x30_.2.113">
 			<title  id="0.2.113.0">text:GND</title>
 			
-				<text id="_x30_.2.113.1" transform="matrix(4.489659e-011 -1 1 4.489659e-011 116.9126 138.5093)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.25">GND</text>
+				<text id="_x30_.2.113.1" transform="matrix(4.489659e-011 -1 1 4.489659e-011 116.9117 138.5093)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.25">GND</text>
 		</g>
 		<g id="_x30_.2.114">
 			<g id="_x30_.2.114.0">
 				<g id="_x30_.2.114.0.0" transform="matrix(1, 0, 0, 1, 257.372, 30.96)">
 					<g id="_x30_.2.114.0.0.0" transform="rotate(270)">
 						
-							<text id="_x30_.2.114.0.0.0.0" transform="matrix(1 0 0 1 1.3618 -17.8564)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">SDA 20</text>
+							<text id="_x30_.2.114.0.0.0.0" transform="matrix(1 0 0 1 1.3618 -17.8568)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">SDA 20</text>
 					</g>
 				</g>
 			</g>
@@ -1701,7 +1701,7 @@
 				<g id="_x30_.2.115.0.0" transform="matrix(1, 0, 0, 1, 264.572, 30.96)">
 					<g id="_x30_.2.115.0.0.0" transform="rotate(270)">
 						
-							<text id="_x30_.2.115.0.0.0.0" transform="matrix(1 0 0 1 1.3618 -17.8572)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">SCL 21</text>
+							<text id="_x30_.2.115.0.0.0.0" transform="matrix(1 0 0 1 1.3618 -17.8575)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">SCL 21</text>
 					</g>
 				</g>
 			</g>
@@ -1711,7 +1711,7 @@
 				<g id="_x30_.2.117.0.0" transform="matrix(1, 0, 0, 1, 228.572, 30.96)">
 					<g id="_x30_.2.117.0.0.0" transform="rotate(270)">
 						
-							<text id="_x30_.2.117.0.0.0.0" transform="matrix(1 0 0 1 1.3618 -17.8572)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">TX2 16</text>
+							<text id="_x30_.2.117.0.0.0.0" transform="matrix(1 0 0 1 1.3618 -17.8575)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">TX2 16</text>
 					</g>
 				</g>
 			</g>
@@ -1721,7 +1721,7 @@
 				<g id="_x30_.2.118.0.0" transform="matrix(1, 0, 0, 1, 235.772, 30.96)">
 					<g id="_x30_.2.118.0.0.0" transform="rotate(270)">
 						
-							<text id="_x30_.2.118.0.0.0.0" transform="matrix(1 0 0 1 1.3618 -17.858)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">RX2 17</text>
+							<text id="_x30_.2.118.0.0.0.0" transform="matrix(1 0 0 1 1.3618 -17.8583)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">RX2 17</text>
 					</g>
 				</g>
 			</g>
@@ -1731,7 +1731,7 @@
 				<g id="_x30_.2.119.0.0" transform="matrix(1, 0, 0, 1, 221.372, 30.96)">
 					<g id="_x30_.2.119.0.0.0" transform="rotate(270)">
 						
-							<text id="_x30_.2.119.0.0.0.0" transform="matrix(1 0 0 1 1.3618 -17.8564)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">RX3 15</text>
+							<text id="_x30_.2.119.0.0.0.0" transform="matrix(1 0 0 1 1.3618 -17.8567)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">RX3 15</text>
 					</g>
 				</g>
 			</g>
@@ -1741,7 +1741,7 @@
 			<g id="_x30_.2.120.1" transform="matrix(1, 0, 0, 1, 214.172, 30.96)">
 				<g id="_x30_.2.120.1.0" transform="rotate(270)">
 					
-						<text id="_x30_.2.120.1.0.0" transform="matrix(1 0 0 1 1.3618 -17.8576)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">TX3 14</text>
+						<text id="_x30_.2.120.1.0.0" transform="matrix(1 0 0 1 1.3618 -17.8578)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">TX3 14</text>
 				</g>
 			</g>
 		</g>
@@ -1750,7 +1750,7 @@
 				<g id="_x30_.2.121.0.0" transform="matrix(1, 0, 0, 1, 250.172, 30.96)">
 					<g id="_x30_.2.121.0.0.0" transform="rotate(270)">
 						
-							<text id="_x30_.2.121.0.0.0.0" transform="matrix(1 0 0 1 1.3618 -17.8576)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">RX1 19</text>
+							<text id="_x30_.2.121.0.0.0.0" transform="matrix(1 0 0 1 1.3618 -17.8578)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">RX1 19</text>
 					</g>
 				</g>
 			</g>
@@ -1760,18 +1760,18 @@
 				<g id="_x30_.2.122.0.0" transform="matrix(1, 0, 0, 1, 242.972, 30.96)">
 					<g id="_x30_.2.122.0.0.0" transform="rotate(270)">
 						
-							<text id="_x30_.2.122.0.0.0.0" transform="matrix(1 0 0 1 1.3618 -17.8568)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">TX1 18</text>
+							<text id="_x30_.2.122.0.0.0.0" transform="matrix(1 0 0 1 1.3618 -17.8571)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">TX1 18</text>
 					</g>
 				</g>
 			</g>
 		</g>
 		<g id="_x30_.2.124">
 			<title  id="0.2.124.0">text:5V</title>
-			<text id="_x30_.2.124.1" transform="matrix(1 0 0 1 259.9384 3.4966)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.25">5V</text>
+			<text id="_x30_.2.124.1" transform="matrix(1 0 0 1 259.9382 3.4966)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.25">5V</text>
 		</g>
 		<g id="_x30_.2.125">
 			<title  id="0.2.125.0">text:GND</title>
-			<text id="_x30_.2.125.1" transform="matrix(1 0 0 1 276.7724 136.8003)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">GND</text>
+			<text id="_x30_.2.125.1" transform="matrix(1 0 0 1 276.7722 136.8003)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">GND</text>
 		</g>
 		<g id="_x30_.2.128">
 			<title  id="0.2.128.0">text:M.Banzi</title>
@@ -1793,7 +1793,7 @@
 				<g id="_x30_.2.133.0.0" transform="matrix(1, 0, 0, 1, 106.087, 139.141)">
 					<g id="_x30_.2.133.0.0.0" transform="rotate(270)">
 						
-							<text id="_x30_.2.133.0.0.0.0" transform="matrix(0 1 -1 0 4.6923 -28.5128)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.25">IOREF</text>
+							<text id="_x30_.2.133.0.0.0.0" transform="matrix(0 1 -1 0 4.6923 -28.5131)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.25">IOREF</text>
 					</g>
 				</g>
 			</g>
@@ -2078,63 +2078,63 @@
 			</g>
 		</g>
 		<g id="_x30_.2.182">
-			<path id="_x30_.2.182.0" fill="#FFFFFF" d="M172.521,18.089c0.004,0,0.01-0.001,0.014,0h1.945c0.125,0,0.238,0.068,0.297,0.178
-				c0.063,0.11,0.053,0.243-0.016,0.347l-0.977,1.459c-0.125,0.188-0.438,0.188-0.563,0l-0.93-1.394
-				c-0.066-0.062-0.113-0.152-0.113-0.253C172.184,18.24,172.336,18.089,172.521,18.089z"/>
+			<path id="_x30_.2.182.0" fill="#FFFFFF" d="M172.521,18.089c0.004,0,0.01-0.001,0.014,0h1.945c0.125,0,0.237,0.068,0.297,0.178
+				c0.063,0.11,0.053,0.243-0.016,0.347l-0.978,1.459c-0.125,0.188-0.438,0.188-0.563,0l-0.931-1.394
+				c-0.065-0.062-0.112-0.152-0.112-0.253C172.184,18.24,172.336,18.089,172.521,18.089z"/>
 		</g>
 		<g id="_x30_.2.183">
-			<path id="_x30_.2.183.0" fill="#FFFFFF" d="M181.728,20.213c-0.004,0-0.008,0.001-0.014,0h-1.943
-				c-0.125,0-0.238-0.068-0.299-0.178c-0.063-0.11-0.053-0.243,0.018-0.347l0.977-1.459c0.125-0.188,0.438-0.188,0.563,0
+			<path id="_x30_.2.183.0" fill="#FFFFFF" d="M181.728,20.213c-0.004,0-0.008,0.001-0.015,0h-1.942
+				c-0.125,0-0.238-0.068-0.299-0.178c-0.063-0.11-0.054-0.243,0.018-0.347l0.977-1.459c0.125-0.188,0.438-0.188,0.563,0
 				l0.932,1.394c0.068,0.062,0.111,0.152,0.111,0.253C182.066,20.062,181.912,20.213,181.728,20.213z"/>
 		</g>
 	</g>
 </g>
 <g id="copper1">
 	<g id="copper0">
-		<circle id="connector1pad" fill="none" stroke="#F7BD13" stroke-width="0.8113" cx="216.293" cy="144" r="1.61"/>
-		<circle id="connector2pad" fill="none" stroke="#F7BD13" stroke-width="0.8113" cx="223.49" cy="144" r="1.61"/>
-		<circle id="connector3pad" fill="none" stroke="#F7BD13" stroke-width="0.8113" cx="230.693" cy="144" r="1.61"/>
-		<circle id="connector4pad" fill="none" stroke="#F7BD13" stroke-width="0.8113" cx="237.893" cy="144" r="1.61"/>
-		<circle id="connector289pad" fill="none" stroke="#F7BD13" stroke-width="0.8113" cx="118.371" cy="7.2" r="1.61"/>
-		<circle id="connector5pad" fill="none" stroke="#F7BD13" stroke-width="0.8113" cx="245.092" cy="144" r="1.61"/>
-		<circle id="connector6pad" fill="none" stroke="#F7BD13" stroke-width="0.8113" cx="252.293" cy="144" r="1.61"/>
-		<circle id="connector7pad" fill="none" stroke="#F7BD13" stroke-width="0.8113" cx="259.49" cy="144" r="1.61"/>
+		<circle id="connector1pad" fill="none" stroke="#F7BD13" stroke-width="1.0295" cx="216.293" cy="144" r="1.883"/>
+		<circle id="connector2pad" fill="none" stroke="#F7BD13" stroke-width="1.0295" cx="223.49" cy="144" r="1.883"/>
+		<circle id="connector3pad" fill="none" stroke="#F7BD13" stroke-width="1.0295" cx="230.693" cy="144" r="1.883"/>
+		<circle id="connector4pad" fill="none" stroke="#F7BD13" stroke-width="1.0295" cx="237.893" cy="144" r="1.883"/>
+		<circle id="connector289pad" fill="none" stroke="#F7BD13" stroke-width="1.0295" cx="118.371" cy="7.2" r="1.884"/>
+		<circle id="connector5pad" fill="none" stroke="#F7BD13" stroke-width="1.0295" cx="245.091" cy="144" r="1.883"/>
+		<circle id="connector6pad" fill="none" stroke="#F7BD13" stroke-width="1.0295" cx="252.293" cy="144" r="1.883"/>
+		<circle id="connector7pad" fill="none" stroke="#F7BD13" stroke-width="1.0295" cx="259.49" cy="144" r="1.883"/>
 		<circle id="connector481pad" fill="none" stroke="#F7BD13" stroke-width="1.0295" cx="273.893" cy="72" r="1.861"/>
-		<circle id="connector8pad" fill="none" stroke="#F7BD13" stroke-width="0.8113" cx="144.292" cy="144" r="1.61"/>
-		<circle id="connector9pad" fill="none" stroke="#F7BD13" stroke-width="0.8113" cx="151.491" cy="144" r="1.61"/>
-		<circle id="connector305pad" fill="none" stroke="#F7BD13" stroke-width="0.8113" cx="101.092" cy="144" r="1.61"/>
-		<circle id="connector10pad" fill="none" stroke="#F7BD13" stroke-width="0.8113" cx="158.693" cy="144" r="1.61"/>
-		<circle id="connector11pad" fill="none" stroke="#F7BD13" stroke-width="0.8113" cx="165.893" cy="144" r="1.61"/>
-		<circle id="connector12pad" fill="none" stroke="#F7BD13" stroke-width="0.8113" cx="173.092" cy="144" r="1.61"/>
-		<circle id="connector13pad" fill="none" stroke="#F7BD13" stroke-width="0.8113" cx="180.293" cy="144" r="1.61"/>
-		<circle id="connector14pad" fill="none" stroke="#F7BD13" stroke-width="0.8113" cx="187.49" cy="144" r="1.61"/>
+		<circle id="connector8pad" fill="none" stroke="#F7BD13" stroke-width="1.0295" cx="144.292" cy="144" r="1.883"/>
+		<circle id="connector9pad" fill="none" stroke="#F7BD13" stroke-width="1.0295" cx="151.491" cy="144" r="1.883"/>
+		<circle id="connector305pad" fill="none" stroke="#F7BD13" stroke-width="1.0295" cx="101.091" cy="144" r="1.883"/>
+		<circle id="connector10pad" fill="none" stroke="#F7BD13" stroke-width="1.0295" cx="158.693" cy="144" r="1.883"/>
+		<circle id="connector11pad" fill="none" stroke="#F7BD13" stroke-width="1.0295" cx="165.893" cy="144" r="1.883"/>
+		<circle id="connector12pad" fill="none" stroke="#F7BD13" stroke-width="1.0295" cx="173.091" cy="144" r="1.883"/>
+		<circle id="connector13pad" fill="none" stroke="#F7BD13" stroke-width="1.0295" cx="180.293" cy="144" r="1.883"/>
+		<circle id="connector14pad" fill="none" stroke="#F7BD13" stroke-width="1.0295" cx="187.49" cy="144" r="1.883"/>
 		<circle id="connector465pad" fill="none" stroke="#F7BD13" stroke-width="1.0295" cx="273.893" cy="14.4" r="1.861"/>
-		<circle id="connector15pad" fill="none" stroke="#F7BD13" stroke-width="0.8113" cx="194.693" cy="144" r="1.61"/>
+		<circle id="connector15pad" fill="none" stroke="#F7BD13" stroke-width="1.0295" cx="194.693" cy="144" r="1.883"/>
 		<circle id="connector497pad" fill="none" stroke="#F7BD13" stroke-width="1.0295" cx="273.893" cy="129.6" r="1.861"/>
-		<circle id="connector313pad" fill="none" stroke="#F7BD13" stroke-width="0.8113" cx="158.693" cy="7.2" r="1.61"/>
+		<circle id="connector313pad" fill="none" stroke="#F7BD13" stroke-width="1.0295" cx="158.693" cy="7.2" r="1.884"/>
 		<circle id="connector473pad" fill="none" stroke="#F7BD13" stroke-width="1.0295" cx="273.893" cy="43.2" r="1.861"/>
 		<circle id="connector489pad" fill="none" stroke="#F7BD13" stroke-width="1.0295" cx="273.893" cy="100.8" r="1.861"/>
-		<circle id="connector285pad" fill="none" stroke="#F7BD13" stroke-width="0.8113" cx="89.572" cy="7.2" r="1.61"/>
-		<circle id="connector309pad" fill="none" stroke="#F7BD13" stroke-width="0.8113" cx="129.892" cy="144" r="1.61"/>
-		<circle id="connector317pad" fill="none" stroke="#F7BD13" stroke-width="0.8113" cx="129.892" cy="7.2" r="1.61"/>
+		<circle id="connector285pad" fill="none" stroke="#F7BD13" stroke-width="1.0295" cx="89.572" cy="7.2" r="1.884"/>
+		<circle id="connector309pad" fill="none" stroke="#F7BD13" stroke-width="1.0295" cx="129.892" cy="144" r="1.883"/>
+		<circle id="connector317pad" fill="none" stroke="#F7BD13" stroke-width="1.0295" cx="129.892" cy="7.2" r="1.884"/>
 		<circle id="connector469pad" fill="none" stroke="#F7BD13" stroke-width="1.0295" cx="273.893" cy="28.8" r="1.861"/>
 		<circle id="connector477pad" fill="none" stroke="#F7BD13" stroke-width="1.0295" cx="273.893" cy="57.6" r="1.861"/>
 		<circle id="connector485pad" fill="none" stroke="#F7BD13" stroke-width="1.0295" cx="273.893" cy="86.4" r="1.861"/>
 		<circle id="connector493pad" fill="none" stroke="#F7BD13" stroke-width="1.0295" cx="273.893" cy="115.2" r="1.861"/>
-		<circle id="connector68pad" fill="none" stroke="#F7BD13" stroke-width="0.8113" cx="245.092" cy="7.2" r="1.61"/>
-		<circle id="connector69pad" fill="none" stroke="#F7BD13" stroke-width="0.8113" cx="237.893" cy="7.2" r="1.61"/>
-		<circle id="connector70pad" fill="none" stroke="#F7BD13" stroke-width="0.8113" cx="230.693" cy="7.2" r="1.61"/>
-		<circle id="connector283pad" fill="none" stroke="#F7BD13" stroke-width="0.8113" cx="75.172" cy="7.2" r="1.61"/>
-		<circle id="connector71pad" fill="none" stroke="#F7BD13" stroke-width="0.8113" cx="223.49" cy="7.2" r="1.61"/>
-		<circle id="connector287pad" fill="none" stroke="#F7BD13" stroke-width="0.8113" cx="103.972" cy="7.2" r="1.61"/>
-		<circle id="connector72pad" fill="none" stroke="#F7BD13" stroke-width="0.8113" cx="216.293" cy="7.2" r="1.61"/>
-		<circle id="connector73pad" fill="none" stroke="#F7BD13" stroke-width="0.8113" cx="209.092" cy="7.2" r="1.61"/>
-		<circle id="connector74pad" fill="none" stroke="#F7BD13" stroke-width="0.8113" cx="201.893" cy="7.2" r="1.61"/>
-		<circle id="connector75pad" fill="none" stroke="#F7BD13" stroke-width="0.8113" cx="194.693" cy="7.2" r="1.61"/>
-		<circle id="connector303pad" fill="none" stroke="#F7BD13" stroke-width="0.8113" cx="86.692" cy="144" r="1.61"/>
-		<circle id="connector307pad" fill="none" stroke="#F7BD13" stroke-width="0.8113" cx="115.492" cy="144" r="1.61"/>
-		<circle id="connector311pad" fill="none" stroke="#F7BD13" stroke-width="0.8113" cx="173.092" cy="7.2" r="1.61"/>
-		<circle id="connector315pad" fill="none" stroke="#F7BD13" stroke-width="0.8113" cx="144.292" cy="7.2" r="1.61"/>
+		<circle id="connector68pad" fill="none" stroke="#F7BD13" stroke-width="1.0295" cx="245.091" cy="7.2" r="1.884"/>
+		<circle id="connector69pad" fill="none" stroke="#F7BD13" stroke-width="1.0295" cx="237.893" cy="7.2" r="1.884"/>
+		<circle id="connector70pad" fill="none" stroke="#F7BD13" stroke-width="1.0295" cx="230.693" cy="7.2" r="1.884"/>
+		<circle id="connector283pad" fill="none" stroke="#F7BD13" stroke-width="1.0295" cx="75.172" cy="7.2" r="1.884"/>
+		<circle id="connector71pad" fill="none" stroke="#F7BD13" stroke-width="1.0295" cx="223.49" cy="7.2" r="1.884"/>
+		<circle id="connector287pad" fill="none" stroke="#F7BD13" stroke-width="1.0295" cx="103.972" cy="7.2" r="1.884"/>
+		<circle id="connector72pad" fill="none" stroke="#F7BD13" stroke-width="1.0295" cx="216.293" cy="7.2" r="1.884"/>
+		<circle id="connector73pad" fill="none" stroke="#F7BD13" stroke-width="1.0295" cx="209.091" cy="7.2" r="1.884"/>
+		<circle id="connector74pad" fill="none" stroke="#F7BD13" stroke-width="1.0295" cx="201.893" cy="7.2" r="1.884"/>
+		<circle id="connector75pad" fill="none" stroke="#F7BD13" stroke-width="1.0295" cx="194.693" cy="7.2" r="1.884"/>
+		<circle id="connector303pad" fill="none" stroke="#F7BD13" stroke-width="1.0295" cx="86.692" cy="144" r="1.883"/>
+		<circle id="connector307pad" fill="none" stroke="#F7BD13" stroke-width="1.0295" cx="115.492" cy="144" r="1.883"/>
+		<circle id="connector311pad" fill="none" stroke="#F7BD13" stroke-width="1.0295" cx="173.091" cy="7.2" r="1.884"/>
+		<circle id="connector315pad" fill="none" stroke="#F7BD13" stroke-width="1.0295" cx="144.292" cy="7.2" r="1.884"/>
 		<circle id="connector463pad" fill="none" stroke="#F7BD13" stroke-width="1.0295" cx="273.893" cy="7.2" r="1.861"/>
 		<circle id="connector467pad" fill="none" stroke="#F7BD13" stroke-width="1.0295" cx="273.893" cy="21.6" r="1.861"/>
 		<circle id="connector471pad" fill="none" stroke="#F7BD13" stroke-width="1.0295" cx="273.893" cy="36" r="1.861"/>
@@ -2144,18 +2144,18 @@
 		<circle id="connector487pad" fill="none" stroke="#F7BD13" stroke-width="1.0295" cx="273.893" cy="93.6" r="1.861"/>
 		<circle id="connector491pad" fill="none" stroke="#F7BD13" stroke-width="1.0295" cx="273.893" cy="108" r="1.861"/>
 		<circle id="connector495pad" fill="none" stroke="#F7BD13" stroke-width="1.0295" cx="273.893" cy="122.4" r="1.861"/>
-		<circle id="connector282pad" fill="none" stroke="#F7BD13" stroke-width="0.8113" cx="67.972" cy="7.2" r="1.61"/>
-		<circle id="connector284pad" fill="none" stroke="#F7BD13" stroke-width="0.8113" cx="82.371" cy="7.2" r="1.61"/>
-		<circle id="connector286pad" fill="none" stroke="#F7BD13" stroke-width="0.8113" cx="96.772" cy="7.2" r="1.61"/>
-		<circle id="connector288pad" fill="none" stroke="#F7BD13" stroke-width="0.8113" cx="111.172" cy="7.2" r="1.61"/>
-		<circle id="connector302pad" fill="none" stroke="#F7BD13" stroke-width="0.8113" cx="79.492" cy="144" r="1.61"/>
-		<circle id="connector304pad" fill="none" stroke="#F7BD13" stroke-width="0.8113" cx="93.892" cy="144" r="1.61"/>
-		<circle id="connector306pad" fill="none" stroke="#F7BD13" stroke-width="0.8113" cx="108.292" cy="144" r="1.61"/>
-		<circle id="connector308pad" fill="none" stroke="#F7BD13" stroke-width="0.8113" cx="122.692" cy="144" r="1.61"/>
-		<circle id="connector310pad" fill="none" stroke="#F7BD13" stroke-width="0.8113" cx="180.293" cy="7.2" r="1.61"/>
-		<circle id="connector312pad" fill="none" stroke="#F7BD13" stroke-width="0.8113" cx="165.893" cy="7.2" r="1.61"/>
-		<circle id="connector314pad" fill="none" stroke="#F7BD13" stroke-width="0.8113" cx="151.491" cy="7.2" r="1.61"/>
-		<circle id="connector316pad" fill="none" stroke="#F7BD13" stroke-width="0.8113" cx="137.091" cy="7.2" r="1.61"/>
+		<circle id="connector282pad" fill="none" stroke="#F7BD13" stroke-width="1.0295" cx="67.972" cy="7.2" r="1.884"/>
+		<circle id="connector284pad" fill="none" stroke="#F7BD13" stroke-width="1.0295" cx="82.371" cy="7.2" r="1.884"/>
+		<circle id="connector286pad" fill="none" stroke="#F7BD13" stroke-width="1.0295" cx="96.772" cy="7.2" r="1.884"/>
+		<circle id="connector288pad" fill="none" stroke="#F7BD13" stroke-width="1.0295" cx="111.172" cy="7.2" r="1.884"/>
+		<circle id="connector302pad" fill="none" stroke="#F7BD13" stroke-width="1.0295" cx="79.492" cy="144" r="1.883"/>
+		<circle id="connector304pad" fill="none" stroke="#F7BD13" stroke-width="1.0295" cx="93.892" cy="144" r="1.883"/>
+		<circle id="connector306pad" fill="none" stroke="#F7BD13" stroke-width="1.0295" cx="108.292" cy="144" r="1.883"/>
+		<circle id="connector308pad" fill="none" stroke="#F7BD13" stroke-width="1.0295" cx="122.692" cy="144" r="1.883"/>
+		<circle id="connector310pad" fill="none" stroke="#F7BD13" stroke-width="1.0295" cx="180.293" cy="7.2" r="1.884"/>
+		<circle id="connector312pad" fill="none" stroke="#F7BD13" stroke-width="1.0295" cx="165.893" cy="7.2" r="1.884"/>
+		<circle id="connector314pad" fill="none" stroke="#F7BD13" stroke-width="1.0295" cx="151.491" cy="7.2" r="1.884"/>
+		<circle id="connector316pad" fill="none" stroke="#F7BD13" stroke-width="1.0295" cx="137.091" cy="7.2" r="1.884"/>
 		<circle id="connector462pad" fill="none" stroke="#F7BD13" stroke-width="1.0295" cx="266.693" cy="7.2" r="1.861"/>
 		<circle id="connector464pad" fill="none" stroke="#F7BD13" stroke-width="1.0295" cx="266.693" cy="14.4" r="1.861"/>
 		<circle id="connector466pad" fill="none" stroke="#F7BD13" stroke-width="1.0295" cx="266.693" cy="21.6" r="1.861"/>
@@ -2174,7 +2174,7 @@
 		<circle id="connector492pad" fill="none" stroke="#F7BD13" stroke-width="1.0295" cx="266.693" cy="115.2" r="1.861"/>
 		<circle id="connector494pad" fill="none" stroke="#F7BD13" stroke-width="1.0295" cx="266.693" cy="122.4" r="1.861"/>
 		<circle id="connector496pad" fill="none" stroke="#F7BD13" stroke-width="1.0295" cx="266.693" cy="129.6" r="1.861"/>
-		<circle id="connector0pad" fill="none" stroke="#F7BD13" stroke-width="0.8113" cx="209.092" cy="144" r="1.61"/>
+		<circle id="connector0pad" fill="none" stroke="#F7BD13" stroke-width="1.0295" cx="209.091" cy="144" r="1.883"/>
 	</g>
 </g>
 </svg>

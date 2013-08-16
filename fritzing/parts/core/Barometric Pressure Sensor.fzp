@@ -30,7 +30,7 @@
             </layers>
         </breadboardView>
         <pcbView>
-            <layers image="pcb/jumper_7_100mil_pcb.svg">
+            <layers image="pcb/Barometric_Pressure_Sensor_pcb.svg">
                 <layer layerId="copper0"/>
                 <layer layerId="silkscreen"/>
                 <layer layerId="copper1"/>

@@ -24,8 +24,9 @@ $Date: 2013-04-22 23:44:56 +0200 (Mo, 22. Apr 2013) $
 
 ********************************************************************/
 
-#include <QNetworkInterface>
+//#include <QNetworkInterface>
 #include <QTextDocument>
+#include <QTextStream>
 
 #include "textutils.h"
 #include "misc.h"
@@ -1537,7 +1538,7 @@ QString TextUtils::removeSVGHeader(QString & string) {
 	return string;
 }
 
-
+/*
 QString TextUtils::getMacAddress()
 {
 	// http://stackoverflow.com/questions/7609953/obtaining-mac-address-on-windows-in-qt
@@ -1549,7 +1550,7 @@ QString TextUtils::getMacAddress()
     }
     return QString();
 }
-
+*/
 
 QString TextUtils::expandAndFill(const QString & svg, const QString & color, double expandBy)
 {
@@ -1800,10 +1801,10 @@ void TextUtils::collectTransforms(QDomElement & root, QList<QDomElement> & trans
     }
 }
 
-bool TextUtils::fixFonts(QString & svg, const QString & destFont) {
+bool TextUtils::fixFonts(QString & svg, const QString & destFont, bool & reallyFixed) {
 	bool changed = removeFontFamilySingleQuotes(svg);
-	changed |= fixUnavailableFontFamilies(svg, destFont);
-
+    reallyFixed = fixUnavailableFontFamilies(svg, destFont);
+	changed |= reallyFixed;
 	return changed;
 }
 
@@ -1900,4 +1901,18 @@ QString TextUtils::findAnchor(const QDomElement & text) {
     return findAnchor(text.parentNode().toElement());
 }
 
-
+void TextUtils::resplit(QStringList & names, const QString & split) {
+    QStringList result;
+    QString appender = split;
+    if (appender == " ") appender = "";
+    foreach (QString name, names) {
+        QStringList sub = name.split(split, QString::SkipEmptyParts);
+        for (int i = 0; i < sub.count(); i++) {
+            QString s = sub.at(i);
+            if (i < sub.count() - 1) s.append(appender);
+            result.append(s);
+        }
+    }
+    names.clear();
+    names.append(result);
+}

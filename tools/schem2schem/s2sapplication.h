@@ -55,6 +55,7 @@ protected:
     QDir m_oldSvgDir;
     QString m_newSvgPath;
     QDir m_newSvgDir;
+    bool m_fzpzStyle;
     QString m_filePath;
     QString m_andPath;
     double m_minLeft;

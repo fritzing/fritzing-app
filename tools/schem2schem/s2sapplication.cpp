@@ -235,6 +235,7 @@ QString makeTerminal(const ConnectorLocation * connectorLocation, double x, doub
 S2SApplication::S2SApplication(int argc, char *argv[]) : QCoreApplication(argc, argv)
 {
     m_image = new QImage(50 * ImageFactor, 5 * ImageFactor, QImage::Format_Mono);
+    m_fzpzStyle = false;
 }
 
 void S2SApplication::start() {
@@ -276,9 +277,10 @@ void S2SApplication::start() {
 void S2SApplication::usage() {
     message("\nusage: s2s "
                 "-ff <path to fzps> "
-                "-f <path to list of fzps (each item in list must relative path)> "
+                "-f <path to list of fzps (each item in list must be a relative path)> "
                 "-os <path to old schematic svgs> "
                 "-ns <path to new schematic svgs> "
+                "[-fzpz (translate to fzpz style filenames)] "
                 "\n"
     );
 }
@@ -291,6 +293,11 @@ bool S2SApplication::initArguments() {
             (args[i].compare("--help", Qt::CaseInsensitive) == 0))
         {
             return false;
+        }
+
+        if (args[i].compare("-fzpz", Qt::CaseInsensitive) == 0) {
+            m_fzpzStyle = true;
+            continue;
         }
 
 		if (i + 1 < args.length()) {
@@ -425,6 +432,11 @@ void S2SApplication::onefzp(QString & fzpFileName) {
     if (schematicFileName.isEmpty()) {
 		message(QString("schematic not found for fzp %1").arg(fzpFileName));
         return;
+    }
+
+    if (m_fzpzStyle) {
+         schematicFileName.replace("/", ".");
+         schematicFileName = "svg." + schematicFileName;
     }
 
     if (!ensureTerminalPoints(fzpFileName, schematicFileName, root)) return;

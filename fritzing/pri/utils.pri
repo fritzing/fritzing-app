@@ -45,6 +45,7 @@ src/utils/folderutils.h \
 src/utils/graphicsutils.h \
 src/utils/graphutils.h \
 src/utils/ratsnestcolors.h \
+src/utils/schematicrectconstants.h \
 src/utils/textutils.h \
 src/utils/zoomslider.h 
  
@@ -67,6 +68,7 @@ src/utils/folderutils.cpp \
 src/utils/graphicsutils.cpp \
 src/utils/graphutils.cpp \
 src/utils/ratsnestcolors.cpp \
+src/utils/schematicrectconstants.cpp \
 src/utils/textutils.cpp \
 src/utils/zoomslider.cpp 
 

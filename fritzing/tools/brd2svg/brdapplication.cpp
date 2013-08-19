@@ -243,9 +243,9 @@ void BrdApplication::start() {
 	}
 
     QDir andFolder(m_andPath);
-    bool fontsOK = registerFonts(andFolder);
+    bool fontsOK = registerFonts();
     if (!fontsOK) {
-		qDebug() << QString("unable to register fonts:%1").arg(andFolder.absoluteFilePath("fonts.rcc"));
+		qDebug() << "unable to register fonts";
 		return;	
     }
 
@@ -3968,20 +3968,18 @@ QString BrdApplication::findSubpart(const QString & name, QHash<QString, QString
     return "";
 }
 
-bool BrdApplication::registerFonts(const QDir & andFolder) {
-    bool result = QResource::registerResource(andFolder.absoluteFilePath("fonts.rcc"));
-    if (!result) return result;
+bool BrdApplication::registerFonts() {
 
-	int ix = QFontDatabase::addApplicationFont(":DroidSans.ttf");
+	int ix = QFontDatabase::addApplicationFont(":/resources/fonts/DroidSans.ttf");
     if (ix < 0) return false;
 
-	ix = QFontDatabase::addApplicationFont(":DroidSans-Bold.ttf");
+	ix = QFontDatabase::addApplicationFont(":/resources/fonts/DroidSans-Bold.ttf");
     if (ix < 0) return false;
 
-	ix = QFontDatabase::addApplicationFont(":DroidSansMono.ttf");
+	ix = QFontDatabase::addApplicationFont(":/resources/fonts/DroidSansMono.ttf");
     if (ix < 0) return false;
 
-	ix = QFontDatabase::addApplicationFont(":OCRA.ttf");
+	ix = QFontDatabase::addApplicationFont(":/resources/fonts/OCRA.ttf");
     return ix >= 0;
 }
 

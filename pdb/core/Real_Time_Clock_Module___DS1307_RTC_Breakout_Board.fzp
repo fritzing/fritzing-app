@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <module fritzingVersion="0.6.3b.08.16.5401" moduleId="Real_Time_Clock_Module___DS1307_RTC_Breakout_Board">
     <author>Mike</author>
     <title>Real Time Clock Module - DS1307 RTC Breakout Board</title>
@@ -11,7 +11,7 @@
     </tags>
     <properties>
         <property name="family">Real Time Clock Breakout</property>
-        <property name="part number"></property>
+        <property name="part number"/>
     </properties>
     <description>This a custom designed module for the DS1307 Real Time Clock. The module comes fully assembled and pre-programmed with the current time (ok, so it's our current time - MST). The included Lithium coin cell battery (CR1225 41mAh) will run the module for a minimum of 9 years (17 years typical) without external 5V power. The DS1307 is accessed via the I2C protocol. We've written a test-bed to program the modules. This test-bed code should give you some insight on how to interface the module to any microcontroller using our example software I2C and BCD routines.
 
@@ -133,7 +133,7 @@ Battery backup included
 
 
 
-Dimensions: 0.75x0.75&quot; (20x20mm)
+Dimensions: 0.75x0.75" (20x20mm)
 
 
 
@@ -291,78 +291,78 @@ Bildr Tutorial</description>
         </iconView>
     </views>
     <connectors>
-        <connector id="connector5" type="male" name="5V">
+        <connector type="male" id="connector5" name="5V">
             <description>5V</description>
             <views>
                 <breadboardView>
-                    <p layer="breadboard" svgId="connector5pin"/>
+                    <p svgId="connector5pin" layer="breadboard"/>
                 </breadboardView>
                 <schematicView>
-                    <p layer="schematic" svgId="connector5pin"/>
+                    <p svgId="connector5pin" layer="schematic" terminalId="connector5terminal"/>
                 </schematicView>
                 <pcbView>
-                    <p layer="copper1" svgId="connector5pad"/>
-                    <p layer="copper0" svgId="connector5pad"/>
+                    <p svgId="connector5pad" layer="copper1"/>
+                    <p svgId="connector5pad" layer="copper0"/>
                 </pcbView>
             </views>
         </connector>
-        <connector id="connector6" type="male" name="GND">
+        <connector type="male" id="connector6" name="GND">
             <description>GND</description>
             <views>
                 <breadboardView>
-                    <p layer="breadboard" svgId="connector6pin"/>
+                    <p svgId="connector6pin" layer="breadboard"/>
                 </breadboardView>
                 <schematicView>
-                    <p layer="schematic" svgId="connector6"/>
+                    <p svgId="connector6" layer="schematic" terminalId="connector6terminal"/>
                 </schematicView>
                 <pcbView>
-                    <p layer="copper1" svgId="connector6pad"/>
-                    <p layer="copper0" svgId="connector6pad"/>
+                    <p svgId="connector6pad" layer="copper1"/>
+                    <p svgId="connector6pad" layer="copper0"/>
                 </pcbView>
             </views>
         </connector>
-        <connector id="connector7" type="male" name="SQW">
+        <connector type="male" id="connector7" name="SQW">
             <description>SQW</description>
             <views>
                 <breadboardView>
-                    <p layer="breadboard" svgId="connector7pin"/>
+                    <p svgId="connector7pin" layer="breadboard"/>
                 </breadboardView>
                 <schematicView>
-                    <p layer="schematic" svgId="connector7"/>
+                    <p svgId="connector7" layer="schematic" terminalId="connector7terminal"/>
                 </schematicView>
                 <pcbView>
-                    <p layer="copper1" svgId="connector7pad"/>
-                    <p layer="copper0" svgId="connector7pad"/>
+                    <p svgId="connector7pad" layer="copper1"/>
+                    <p svgId="connector7pad" layer="copper0"/>
                 </pcbView>
             </views>
         </connector>
-        <connector id="connector8" type="male" name="SCL">
+        <connector type="male" id="connector8" name="SCL">
             <description>SCL</description>
             <views>
                 <breadboardView>
-                    <p layer="breadboard" svgId="connector8pin"/>
+                    <p svgId="connector8pin" layer="breadboard"/>
                 </breadboardView>
                 <schematicView>
-                    <p layer="schematic" svgId="connector8pin"/>
+                    <p svgId="connector8pin" layer="schematic" terminalId="connector8terminal"/>
                 </schematicView>
                 <pcbView>
-                    <p layer="copper1" svgId="connector8pad"/>
-                    <p layer="copper0" svgId="connector8pad"/>
+                    <p svgId="connector8pad" layer="copper1"/>
+                    <p svgId="connector8pad" layer="copper0"/>
                 </pcbView>
             </views>
         </connector>
-        <connector id="connector9" type="male" name="SDA">
+        <connector type="male" id="connector9" name="SDA">
             <description>SDA</description>
             <views>
                 <breadboardView>
-                    <p layer="breadboard" svgId="connector9pin"/>
+                    <p svgId="connector9pin" layer="breadboard"/>
                 </breadboardView>
                 <schematicView>
-                    <p layer="schematic" svgId="connector9pin"/>
+                    <p svgId="connector9pin" layer="schematic" terminalId="connector9terminal"/>
                 </schematicView>
                 <pcbView>
-                    <p layer="copper1" svgId="connector9pad"/>
-                    <p layer="copper0" svgId="connector9pad"/>
+                    <p svgId="connector9pad" layer="copper1"/>
+                    <p svgId="connector9pad" layer="copper0"/>
                 </pcbView>
             </views>
         </connector>

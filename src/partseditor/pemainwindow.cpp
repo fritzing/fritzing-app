@@ -1571,7 +1571,9 @@ void PEMainWindow::loadImage()
 					break;
 				}
 			}
-			if (TextUtils::fixFonts(svg, destFont)) {
+            bool reallyFixed = false;
+            TextUtils::fixFonts(svg, destFont, reallyFixed);
+			if (reallyFixed) {
     			QMessageBox::information(NULL, tr("Fonts"), 
 					tr("Fritzing currently only supports OCRA and Droid fonts--these have been substituted in for the fonts in '%1'").arg(origPath));
 			}

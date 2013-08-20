@@ -37,7 +37,7 @@ $Date: 2013-05-10 17:47:21 +0200 (Fr, 10. Mai 2013) $
 
 QString Version::m_majorVersion("0");       
 QString Version::m_minorVersion("8");
-QString Version::m_minorSubVersion("3");
+QString Version::m_minorSubVersion("4");
 QString Version::m_modifier("b");
 QString Version::m_svnRevision("$Revision: 048f $:");
 QString Version::m_svnDate("$Date: 2013-07-28 12:06:21 +0200 (So, 28 Jul 2013) $");

@@ -89,7 +89,7 @@ protected:
 	bool match(QDomElement & contact, QDomElement & connector, bool doDebug);
 	bool matchAnd(QDomElement & contact, QDomElement & connector);
     QString findSubpart(const QString & name, QHash<QString, QString> & subpartAliases, QDir & subpartsFolder);
-    bool registerFonts(const QDir & andFolder);
+    bool registerFonts();
 
 protected:
     QString m_workingPath;

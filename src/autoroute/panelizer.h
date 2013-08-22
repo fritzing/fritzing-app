@@ -140,6 +140,8 @@ protected:
     static double calcCost(PanelParams &, QList<PlanePair *> &, int divisor);
     static void writePanelizerOutput(const QString & message);
     static void initPanelizerOutput(const QString & filename, const QString & initialMsg);
+    static void collectFilenames(const QString & filenames);
+    static void writePanelizerFilenames(const QString & panelFilename);
 };
 
 #endif

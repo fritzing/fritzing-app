@@ -2676,8 +2676,25 @@ void MainWindow::dragEnterEvent(QDragEnterEvent *event)
                     return;
                 }
             }
+
+            if (fn.endsWith("txt")) {
+                QFile file(fn);
+                if (file.open(QFile::ReadOnly)) {
+                    QTextStream stream(&file);
+                    while (!stream.atEnd()) {
+                        QString line = stream.readLine().trimmed();
+                        foreach (QString ext, fritzingExtensions()) {
+                            if (line.endsWith(ext)) {
+                                event->acceptProposedAction();
+                                return;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
+
 }
 
 void MainWindow::dropEvent(QDropEvent *event)
@@ -2692,6 +2709,8 @@ void MainWindow::dropEvent(QDropEvent *event)
         for (int i = 0; i < urlList.size() && i < 32; ++i) {
             mainLoadAux(urlList.at(i).toLocalFile());
         }
+
+        return;
     }
 }
 

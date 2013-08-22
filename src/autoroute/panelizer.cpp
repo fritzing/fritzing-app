@@ -55,6 +55,7 @@ $Date: 2013-04-22 01:45:43 +0200 (Mo, 22. Apr 2013) $
 static int OutlineLayer = 0;
 static int SilkTopLayer = 0;
 static QString PanelizerOutputPath;
+static QSet<QString> PanelizerFileNames;
 
 ///////////////////////////////////////////////////////////
 
@@ -1327,6 +1328,8 @@ void Panelizer::inscribe(FApplication * app, const QString & panelFilename, bool
 		board = board.nextSiblingElement("board");
 	}
 
+    writePanelizerFilenames(panelFilename);
+
 	// TODO: delete temp fz folder
 
 }
@@ -1382,6 +1385,7 @@ MainWindow * Panelizer::inscribeBoard(QDomElement & board, QHash<QString, QStrin
         QString message = QObject::tr("%2 ... %1 wires moved from their saved position").arg(moved).arg(info.fileName());
         QMessageBox::warning(NULL, QObject::tr("Fritzing"), message);
         writePanelizerOutput(message); 
+        collectFilenames(info.fileName());
     }
 
 	foreach (QGraphicsItem * item, mainWindow->pcbView()->scene()->items()) {
@@ -1447,6 +1451,7 @@ MainWindow * Panelizer::inscribeBoard(QDomElement & board, QHash<QString, QStrin
             if (messages.count() > 0) {
                 QFileInfo info(mainWindow->fileName());
                 writePanelizerOutput(QString("%2 ... %1 drc complaints").arg(messages.count()).arg(info.fileName()));
+                collectFilenames(info.fileName());
                 //foreach (QString message, messages) {
                 //    writePanelizerOutput("\t" + message);
                 //}
@@ -1718,6 +1723,7 @@ int Panelizer::checkText(MainWindow * mainWindow, bool displayMessage) {
         writePanelizerOutput(QString("%2 ... There are %1 possible instances of parts with <path> elements missing stroke/fill/stroke-width attributes")
                 .arg(missing.count()).arg(info.fileName())
             );
+        collectFilenames(info.fileName());
     }
 
     return  missing.count();
@@ -1750,6 +1756,7 @@ int Panelizer::checkDonuts(MainWindow * mainWindow, bool displayMessage) {
     if (donuts.count() > 0) {
         QFileInfo info(mainWindow->fileName());
         writePanelizerOutput(QString("%2 ... %1 possible donuts").arg(donuts.count() / 2).arg(info.fileName()));
+        collectFilenames(mainWindow->fileName());
     }
 
     return donuts.count() / 2;
@@ -1871,6 +1878,7 @@ void Panelizer::writePanelizerOutput(const QString & message) {
 }
 
 void Panelizer::initPanelizerOutput(const QString & panelFilename, const QString & msg) {
+    PanelizerFileNames.clear();
     QFileInfo info(panelFilename);
     PanelizerOutputPath = info.absoluteDir().absoluteFilePath("panelizer_output.txt");
 
@@ -1878,4 +1886,28 @@ void Panelizer::initPanelizerOutput(const QString & panelFilename, const QString
     writePanelizerOutput(QString("\n--------- %1 --- %2 ---")
                             .arg(msg).arg(dt.toString())
                         );
+}
+
+void Panelizer::collectFilenames(const QString & filename) {
+    if (filename.endsWith(".fz")) {
+        PanelizerFileNames.insert(filename + "z");
+    }
+    else PanelizerFileNames.insert(filename);
+}
+
+void Panelizer::writePanelizerFilenames(const QString & panelFilename) {
+    if (PanelizerFileNames.count() == 0) return;
+
+    QFileInfo info(panelFilename);
+    QDateTime dt = QDateTime::currentDateTime();
+    QString path = info.absoluteDir().absoluteFilePath("panelizer_files_%1.txt").arg(dt.toString().replace(":", "."));
+    QFile file(path);
+    if (file.open(QFile::WriteOnly)) {
+        QTextStream out(&file);
+		out.setCodec("UTF-8");
+        foreach (QString name, PanelizerFileNames) {
+            out << name << "\n";
+        }
+        file.close();
+    }
 }

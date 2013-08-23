@@ -1595,13 +1595,6 @@ Go ahead and revert?</source>
 
 Continuer ou annuler?</translation>
     </message>
-    <message numerus="yes">
-        <source>Found %n outdated parts. Do you want to update them now?</source>
-        <translation>
-            <numerusform>%n composant obsolète a été trouvé. Voullez-vous effectuer une mise à jour maintenant?</numerusform>
-            <numerusform>%n composants obsolètes ont été trouvés. Voullez-vous effectuer une mise à jour maintenant?</numerusform>
-        </translation>
-    </message>
     <message>
         <source>Select All Autoroutable Traces</source>
         <translation>Sélectionner toutes les pistes autoroutées</translation>
@@ -3257,6 +3250,24 @@ Voulez-vous convertir &apos;%1&apos; au format . Fzz maintenant ou l&apos;ouvrir
     </message>
     <message>
         <source>Copper Fill (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>There are outdated parts in this sketch. </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>We strongly recommend that you update these parts to the latest version. </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This may result in some small changes to your sketch, because parts or connectors may be shifted. </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>
+
+Do you want to update now?</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -5787,6 +5798,10 @@ Fritzing va continuer à fonctionner, mais vous n&apos;aurez pas la possibilité
         <source>No connections to route.</source>
         <translation>Aucune connection à router.</translation>
     </message>
+    <message>
+        <source>%2 ... %1 wires moved from their saved position</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>QShortcut</name>
@@ -6448,10 +6463,6 @@ Remarque: vous pouvez également déclencher cet affichage en positionnant la so
         <translation>&lt;/ul&gt;</translation>
     </message>
     <message>
-        <source>&lt;li&gt;To drag the canvas, hold down the space bar and drag it with the mouse.&lt;/li&gt;</source>
-        <translation>&lt;li&gt;Pour faire glisser le canevas, maintenez la barre d&apos;espace et faites-la glisser avec la souris.&lt;/li&gt;</translation>
-    </message>
-    <message>
         <source>&lt;li&gt;An icon in the parts bin may actually represent multiple related parts.  So when you drag an icon from the parts bin into a sketch, make sure you look at the inspector.  The inspector will display the range of choices available for you to modify a part, or swap it for a related part. The parts bin icon will also be a little &apos;stack&apos; and not just a flat icon.&lt;/li&gt;</source>
         <translation>&lt;li&gt;Une icône dans la corbeille parties peut en fait représenter plusieurs composants. Ainsi, lorsque vous faites glisser une icône à partir du magasin pièces dans une esquisse, assurez-vous que vous regardez l&apos;inspecteur. L&apos;inspecteur affiche l&apos;éventail des choix disponibles pour vous permettre de modifier un composant ou l&apos;échanger contre une composant liée.&lt;/li&gt;</translation>
     </message>
@@ -6538,6 +6549,46 @@ Remarque: vous pouvez également déclencher cet affichage en positionnant la so
     <message>
         <source>&lt;li&gt;If you can&apos;t find a part in the Parts Bin, the Generic IC is your friend.  Drag it onto your sketch, then use the widgets in the Inspector to: choose from among 25 different through-hole and SMD packages; change the pin label; and--for DIPs and SIPs--change the number of pins.  You can also change the pin names with the Pin Label editor&lt;/li&gt;</source>
         <translation>&lt;li&gt;Si vous ne pouvez pas trouver une pièce dans le casier de pièces, le générique IC est votre ami. Faites-le glisser sur votre esquisse, puis utilisez les widgets dans l&apos;Inspecteur pour: choisir parmi 25 différents paquets à travers-trou et CMS; modifier l&apos;étiquette de pin, et - pour les DIP et SIP - modifier le nombre de broches. Vous pouvez également modifier les noms des pins avec l&apos;éditeur d&apos;étiquettes de broche.&lt;/li&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;li&gt;&lt;h4&gt;parts&lt;/h4&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;/ul&gt;&lt;/li&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;li&gt;&lt;h4&gt;moving and selection&lt;/h4&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;li&gt;&lt;h4&gt;curves and rubber band legs&lt;/h4&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;li&gt;&lt;h4&gt;rotation&lt;/h4&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;li&gt;&lt;h4&gt;layers and views&lt;/h4&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;li&gt;To drag the canvas, hold down the space bar and drag with the mouse.&lt;/li&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;li&gt;&lt;h4&gt;part labels&lt;/h4&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;li&gt;To move a part label independently from its part, select the part first--both the part and the label will be highlighted. Once the label is selected you can drag it.&lt;/li&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;li&gt;&lt;h4&gt;wires and bendpoints&lt;/h4&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

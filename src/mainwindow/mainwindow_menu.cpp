@@ -301,7 +301,7 @@ bool MainWindow::loadWhich(const QString & fileName, bool setAsLastOpened, bool 
 			if (bundledFileName.isEmpty()) return false;	
 		}
 
-    	mainLoad(fileName, displayName);
+    	mainLoad(fileName, displayName, true);
 		result = true;
 
 		QFile file(fileName);
@@ -343,7 +343,7 @@ bool MainWindow::loadWhich(const QString & fileName, bool setAsLastOpened, bool 
 	return result;
 }
 
-void MainWindow::mainLoad(const QString & fileName, const QString & displayName) {
+void MainWindow::mainLoad(const QString & fileName, const QString & displayName, bool checkObsolete) {
 
 	if (m_fileProgressDialog) {
 		m_fileProgressDialog->setMaximum(200);
@@ -443,6 +443,15 @@ void MainWindow::mainLoad(const QString & fileName, const QString & displayName)
     if (m_programView) {
         QFileInfo fileInfo(m_fwFilename);
         m_programView->linkFiles(m_linkedProgramFiles, fileInfo.absoluteDir().absolutePath());
+    }
+
+    if (checkObsolete) {
+        if (m_pcbGraphicsView) {
+            int obs = m_pcbGraphicsView->selectAllObsolete();
+	        if (obs > 0) {
+                checkSwapObsolete(obs);
+            }
+        }
     }
 
 }
@@ -3663,19 +3672,29 @@ void MainWindow::selectAllObsolete(bool displayFeedback) {
         QMessageBox::information(this, tr("Fritzing"), tr("No outdated parts found.\nAll your parts are up-to-date.") );
     } 
 	else {
-        QMessageBox::StandardButton answer = QMessageBox::question(
-                this,
-                tr("Outdated parts"),
-                tr("Found %n outdated parts. Do you want to update them now?", "", obs),
-                QMessageBox::Yes | QMessageBox::No,
-                QMessageBox::Yes
-        );
-        // TODO: make button texts translatable
-        if (answer == QMessageBox::Yes) {
-            swapObsolete();
-        }
+        checkSwapObsolete(obs);
 	}
 }
+
+void MainWindow::checkSwapObsolete(int obs) {
+    Q_UNUSED(obs);
+    QMessageBox::StandardButton answer = QMessageBox::question(
+            this,
+            tr("Outdated parts"),
+            tr("There are outdated parts in this sketch. ") +
+            tr("We strongly recommend that you update these parts to the latest version. ") +
+            tr("This may result in some small changes to your sketch, because parts or connectors may be shifted. ") +
+            tr("\n\nDo you want to update now?"),
+            QMessageBox::Yes | QMessageBox::No,
+            QMessageBox::Yes
+    );
+    // TODO: make button texts translatable
+    if (answer == QMessageBox::Yes) {
+        swapObsolete();
+    }
+}
+
+
 
 ModelPart * MainWindow::findReplacedby(ModelPart * originalModelPart) {
 	ModelPart * newModelPart = originalModelPart;

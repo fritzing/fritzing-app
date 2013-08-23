@@ -139,7 +139,7 @@ public:
     MainWindow(QFile & fileToLoad);
 	~MainWindow();
 
-    void mainLoad(const QString & fileName, const QString & displayName);
+    void mainLoad(const QString & fileName, const QString & displayName, bool checkObsolete);
 	bool loadWhich(const QString & fileName, bool setAsLastOpened, bool addToRecent, const QString & displayName);
 	void notClosableForAWhile();
 	QAction *raiseWindowAction();
@@ -592,6 +592,7 @@ protected:
 	virtual QWidget * currentTabWidget();
 	virtual bool activeLayerWidgetAlwaysOn();
     bool copySvg(const QString & path, QFileInfoList & svgEntryInfoList);
+    void checkSwapObsolete(int obsoleteCount);
 
 protected:
 	static void removeActionsStartingAt(QMenu *menu, int start=0);

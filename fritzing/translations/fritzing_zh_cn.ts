@@ -2144,12 +2144,6 @@ All your parts are up-to-date.</source>
         <source>Outdated parts</source>
         <translation>已过期元件</translation>
     </message>
-    <message numerus="yes">
-        <source>Found %n outdated parts. Do you want to update them now?</source>
-        <translation>
-            <numerusform>找到 %n 个过期元件。现在想更新他们么?</numerusform>
-        </translation>
-    </message>
     <message>
         <source>Successfully updated %1 part(s).
 Please check all views for potential side-effects.</source>
@@ -3258,6 +3252,24 @@ Go ahead and revert?</source>
     </message>
     <message>
         <source>Copper Fill (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>There are outdated parts in this sketch. </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>We strongly recommend that you update these parts to the latest version. </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This may result in some small changes to your sketch, because parts or connectors may be shifted. </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>
+
+Do you want to update now?</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -5789,6 +5801,10 @@ Fritzing仍然在工作，但不能改变元件的属性.</translation>
         <source>silk layer %1 export is empty</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>%2 ... %1 wires moved from their saved position</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>QShortcut</name>
@@ -6505,10 +6521,6 @@ Note: you can also trigger this display by mousing down on the routing status te
         <translation>&lt;li&gt;在原理图和PCB视图中，如果按住Alt键(Linux:Meta)拖动一个曲点,将会从那个曲点处拖出一条新导线。&lt;/li&gt;</translation>
     </message>
     <message>
-        <source>&lt;li&gt;To drag the canvas, hold down the space bar and drag it with the mouse.&lt;/li&gt;</source>
-        <translation>&lt;li&gt;要拖动画布，按住空格键使用鼠标拖动它。&lt;/li&gt;</translation>
-    </message>
-    <message>
         <source>&lt;li&gt;In Breadboard view, to drag out a wire from the end of a rubber-band leg, drag with the Alt (Linux: Meta) key down.&lt;/li&gt;</source>
         <translation>&lt;li&gt;在面包板视图中，从针脚拖出一条线，按住Alt（Linux：Meta）键。&lt;/li&gt;</translation>
     </message>
@@ -6539,6 +6551,46 @@ Note: you can also trigger this display by mousing down on the routing status te
     <message>
         <source>&lt;li&gt;To more precisely move a selection of parts, use the arrow keys.  Shift-arrow moves by 10 units.&lt;/li&gt;</source>
         <translation>&lt;li&gt;更精确的移动选定的元件，使用方向键。shift-方向键移动10个单位。&lt;/li&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;li&gt;&lt;h4&gt;parts&lt;/h4&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;/ul&gt;&lt;/li&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;li&gt;&lt;h4&gt;moving and selection&lt;/h4&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;li&gt;&lt;h4&gt;curves and rubber band legs&lt;/h4&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;li&gt;&lt;h4&gt;rotation&lt;/h4&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;li&gt;&lt;h4&gt;layers and views&lt;/h4&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;li&gt;To drag the canvas, hold down the space bar and drag with the mouse.&lt;/li&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;li&gt;&lt;h4&gt;part labels&lt;/h4&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;li&gt;To move a part label independently from its part, select the part first--both the part and the label will be highlighted. Once the label is selected you can drag it.&lt;/li&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;li&gt;&lt;h4&gt;wires and bendpoints&lt;/h4&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

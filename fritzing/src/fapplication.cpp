@@ -1673,7 +1673,7 @@ QList<MainWindow *> FApplication::recoverBackups()
 			QString bundledFileName = FolderUtils::getSaveFileName(NULL, tr("Please specify an .fzz file name to save to (cancel will delete the backup)"), originalPath, tr("Fritzing (*%1)").arg(FritzingBundleExtension), &fileExt);
 			if (!bundledFileName.isEmpty()) {
 				MainWindow *currentRecoveredSketch = MainWindow::newMainWindow(m_referenceModel, originalBaseName, true, true);
-    			currentRecoveredSketch->mainLoad(backupName, bundledFileName);
+    			currentRecoveredSketch->mainLoad(backupName, bundledFileName, true);
 				currentRecoveredSketch->saveAsShareable(bundledFileName, true);
 				currentRecoveredSketch->setCurrentFile(bundledFileName, true, true);
 				currentRecoveredSketch->showAllFirstTimeHelp(false);

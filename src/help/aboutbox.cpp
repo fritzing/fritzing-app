@@ -86,6 +86,7 @@ AboutBox::AboutBox(QWidget *parent)
 	versionMain->setFont(smallFont);
 	versionMain->setGeometry(45, 150, 300, 20);
 	versionMain->setAlignment(Qt::AlignBottom | Qt::AlignHCenter);
+    versionMain->setTextInteractionFlags(Qt::TextSelectableByMouse);
 
 	// Link to website
 	QLabel *linkToFritzing = new QLabel(this);

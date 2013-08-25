@@ -3665,7 +3665,7 @@ void MainWindow::selectAllObsolete() {
 }
 
 void MainWindow::selectAllObsolete(bool displayFeedback) {
-	int obs = m_currentGraphicsView->selectAllObsolete();
+	int obs = m_pcbGraphicsView->selectAllObsolete();
 	if (!displayFeedback) return;
 
 	if (obs <= 0) {
@@ -3721,7 +3721,7 @@ void MainWindow::swapObsolete() {
 void MainWindow::swapObsolete(bool displayFeedback) {
 
 	QSet<ItemBase *> itemBases;
-	foreach (QGraphicsItem * item, m_currentGraphicsView->scene()->selectedItems()) {
+	foreach (QGraphicsItem * item, m_pcbGraphicsView->scene()->selectedItems()) {
 		ItemBase * itemBase = dynamic_cast<ItemBase *>(item);
 		if (itemBase == NULL) continue;
 		if (!itemBase->isObsolete()) continue;

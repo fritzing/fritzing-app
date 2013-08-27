@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.2" baseProfile="tiny" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+	 x="0px" y="0px" width="113.386px" height="113.386px" viewBox="0 0 113.386 113.386" xml:space="preserve">
+<desc>Fritzing footprint SVG</desc>
+<g id="silkscreen">
+	<line fill="none" stroke="#FFFFFF" stroke-width="0.7" x1="5.4" y1="2.736" x2="8.064" y2="2.736"/>
+	<line fill="none" stroke="#FFFFFF" stroke-width="0.7" x1="18.863" y1="2.736" x2="21.6" y2="2.736"/>
+	<line fill="none" stroke="#FFFFFF" stroke-width="0.7" x1="8.064" y1="0.936" x2="18.863" y2="0.936"/>
+	<line fill="none" stroke="#FFFFFF" stroke-width="0.7" x1="18.863" y1="0.936" x2="18.863" y2="4.536"/>
+	<line fill="none" stroke="#FFFFFF" stroke-width="0.7" x1="18.863" y1="4.536" x2="8.064" y2="4.536"/>
+	<line fill="none" stroke="#FFFFFF" stroke-width="0.7" x1="8.064" y1="4.536" x2="8.064" y2="0.936"/>
+	<rect y="0" fill="none" stroke="#FFFFFF" stroke-width="0.7" width="113.386" height="113.386"/>
+</g>
+<g id="copper0">
+	<g id="copper1">
+		<rect x="0.72" y="0.72" fill="none" stroke="#FFBF00" stroke-width="0.9" width="3.96" height="3.96"/>
+		<circle id="connector0pin" fill="none" stroke="#FFBF00" stroke-width="0.9" cx="2.7" cy="2.7" r="1.98"/>
+		<circle id="connector1pin" fill="none" stroke="#FFBF00" stroke-width="0.9" cx="24.3" cy="2.7" r="1.98"/>
+	</g>
+</g>
+<g id="keepout">
+</g>
+<g id="soldermask">
+</g>
+</svg>

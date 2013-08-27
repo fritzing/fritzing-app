@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module fritzingVersion="0.3.15b.02.03.3943" moduleId="alps-starter-pot9mm" referenceFile="alps-starter-pot9mm.fzp">
+ <version>5</version>
+ <author>f.althaus</author>
+ <title>Rotary Potentiometer (Small)</title>
+ <label>R</label>
+ <date>Aug 19 2013</date>
+ <tags>
+  <tag>potentiometer</tag>
+  <tag>poti</tag>
+  <tag>adjustable</tag>
+  <tag>resistor</tag>
+  <tag>fritzing core</tag>
+ </tags>
+ <properties>
+  <property name="family">potentiometer</property>
+  <property name="type">Rotary Shaft Potentiometer</property>
+  <property name="Maximum Resistance" showInLabel="yes">100k&#937;</property>
+  <property name="Track">Linear</property>
+    <property showInLabel="yes" name="power"></property>
+  <property name="size">Rotary - 9mm</property>
+  <property name="part number"></property>
+ <property name="package">THT</property>
+ </properties>
+  <taxonomy>discreteParts.resistors.adjustable.potentiometer</taxonomy>
+ <description>A rotary adjustable resistor (potentiometer).</description>
+ <views>
+  <iconView>
+   <layers image="icon/starter-poti-small_icon.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+  <schematicView>
+   <layers image="schematic/basic_poti.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/alps-starter-pot9mm_pcb.svg">
+    <layer layerId="copper0"/>
+    <layer layerId="silkscreen"/>
+    <layer layerId="copper1"/>
+   </layers>
+  </pcbView>
+  <breadboardView>
+   <layers image="breadboard/starter-poti-small_breadboard.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+ </views>
+ <connectors>
+  <connector type="male" id="connector0" name="leg1">
+   <description>leg1</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector0pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector0pin" layer="schematic" terminalId="connector0terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector0pin" layer="copper0"/>
+     <p svgId="connector0pin" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" id="connector1" name="wiper">
+   <description>wiper</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector1pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector1pin" layer="schematic" terminalId="connector1terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector1pin" layer="copper0"/>
+     <p svgId="connector1pin" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" id="connector2" name="leg2">
+   <description>leg2</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector2pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector2pin" layer="schematic" terminalId="connector2terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector2pin" layer="copper0"/>
+     <p svgId="connector2pin" layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+ </connectors>
+</module>

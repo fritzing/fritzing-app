@@ -95,7 +95,7 @@
                 </iconView>
             </views>
         </instance>
-        <instance moduleIdRef="Arduino-Pro-Mini-v13" modelIndex="5584" path="pdb/core/Arduino-Pro-Mini-v13.fzp" >
+        <instance moduleIdRef="Arduino-Pro-Mini-v13-a4+5" modelIndex="5584" path="pdb/core/Arduino-Pro-Mini-v13-a4+5.fzp" >
             <views>
                 <iconView layer="">
                     <geometry z="0" x="-1" y="-1"/>

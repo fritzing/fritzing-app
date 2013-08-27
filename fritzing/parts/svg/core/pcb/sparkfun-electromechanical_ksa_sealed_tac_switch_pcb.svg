@@ -3,29 +3,29 @@
 <svg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' version='1.2' baseProfile='tiny' x='0in' y='0in' width='0.405in' height='0.305in' viewBox='0 0 10.287 7.747' >
 <g id='copper1'>
 <circle id='connector0pad' connectorname='P$1' cx='1.3335' cy='1.3335' r='0.627' stroke='#F7BD13' stroke-width='0.254' fill='none' />
-<path stroke='none' stroke-width='0' d='m0.5795,0.5795 1.508,0 0,1.508 -1.508,0 0,-3zM0.8335,1.3335a0.5,0.5 0 1 0 1,0 0.5,0.5 0 1 0 -1,0z
+<path stroke='none' stroke-width='0' d='m0.5795,0.5795 1.508,0 0,1.508 -1.508,0 0,-1.508zM0.8335,1.3335a0.5,0.5 0 1 0 1,0 0.5,0.5 0 1 0 -1,0z
 ' fill='#F7BD13' />
 <circle id='connector1pad' connectorname='P$2' cx='8.9535' cy='1.3335' r='0.627' stroke='#F7BD13' stroke-width='0.254' fill='none' />
-<path stroke='none' stroke-width='0' d='m8.1995,0.5795 1.508,0 0,1.508 -1.508,0 0,-3zM8.4535,1.3335a0.5,0.5 0 1 0 1,0 0.5,0.5 0 1 0 -1,0z
+<path stroke='none' stroke-width='0' d='m8.1995,0.5795 1.508,0 0,1.508 -1.508,0 0,-1.508zM8.4535,1.3335a0.5,0.5 0 1 0 1,0 0.5,0.5 0 1 0 -1,0z
 ' fill='#F7BD13' />
 <circle id='connector2pad' connectorname='P$3' cx='1.3335' cy='6.4135' r='0.627' stroke='#F7BD13' stroke-width='0.254' fill='none' />
-<path stroke='none' stroke-width='0' d='m0.5795,5.6595 1.508,0 0,1.508 -1.508,0 0,-3zM0.8335,6.4135a0.5,0.5 0 1 0 1,0 0.5,0.5 0 1 0 -1,0z
+<path stroke='none' stroke-width='0' d='m0.5795,5.6595 1.508,0 0,1.508 -1.508,0 0,-1.508zM0.8335,6.4135a0.5,0.5 0 1 0 1,0 0.5,0.5 0 1 0 -1,0z
 ' fill='#F7BD13' />
 <circle id='connector3pad' connectorname='P$4' cx='8.9535' cy='6.4135' r='0.627' stroke='#F7BD13' stroke-width='0.254' fill='none' />
-<path stroke='none' stroke-width='0' d='m8.1995,5.6595 1.508,0 0,1.508 -1.508,0 0,-3zM8.4535,6.4135a0.5,0.5 0 1 0 1,0 0.5,0.5 0 1 0 -1,0z
+<path stroke='none' stroke-width='0' d='m8.1995,5.6595 1.508,0 0,1.508 -1.508,0 0,-1.508zM8.4535,6.4135a0.5,0.5 0 1 0 1,0 0.5,0.5 0 1 0 -1,0z
 ' fill='#F7BD13' />
 <g id='copper0'>
 <circle id='connector0pad' connectorname='P$1' cx='1.3335' cy='1.3335' r='0.627' stroke='#F7BD13' stroke-width='0.254' fill='none' />
-<path stroke='none' stroke-width='0' d='m0.5795,0.5795 1.508,0 0,1.508 -1.508,0 0,-3zM0.8335,1.3335a0.5,0.5 0 1 0 1,0 0.5,0.5 0 1 0 -1,0z
+<path stroke='none' stroke-width='0' d='m0.5795,0.5795 1.508,0 0,1.508 -1.508,0 0,-1.508zM0.8335,1.3335a0.5,0.5 0 1 0 1,0 0.5,0.5 0 1 0 -1,0z
 ' fill='#F7BD13' />
 <circle id='connector1pad' connectorname='P$2' cx='8.9535' cy='1.3335' r='0.627' stroke='#F7BD13' stroke-width='0.254' fill='none' />
-<path stroke='none' stroke-width='0' d='m8.1995,0.5795 1.508,0 0,1.508 -1.508,0 0,-3zM8.4535,1.3335a0.5,0.5 0 1 0 1,0 0.5,0.5 0 1 0 -1,0z
+<path stroke='none' stroke-width='0' d='m8.1995,0.5795 1.508,0 0,1.508 -1.508,0 0,-1.508zM8.4535,1.3335a0.5,0.5 0 1 0 1,0 0.5,0.5 0 1 0 -1,0z
 ' fill='#F7BD13' />
 <circle id='connector2pad' connectorname='P$3' cx='1.3335' cy='6.4135' r='0.627' stroke='#F7BD13' stroke-width='0.254' fill='none' />
-<path stroke='none' stroke-width='0' d='m0.5795,5.6595 1.508,0 0,1.508 -1.508,0 0,-3zM0.8335,6.4135a0.5,0.5 0 1 0 1,0 0.5,0.5 0 1 0 -1,0z
+<path stroke='none' stroke-width='0' d='m0.5795,5.6595 1.508,0 0,1.508 -1.508,0 0,-1.508zM0.8335,6.4135a0.5,0.5 0 1 0 1,0 0.5,0.5 0 1 0 -1,0z
 ' fill='#F7BD13' />
 <circle id='connector3pad' connectorname='P$4' cx='8.9535' cy='6.4135' r='0.627' stroke='#F7BD13' stroke-width='0.254' fill='none' />
-<path stroke='none' stroke-width='0' d='m8.1995,5.6595 1.508,0 0,1.508 -1.508,0 0,-3zM8.4535,6.4135a0.5,0.5 0 1 0 1,0 0.5,0.5 0 1 0 -1,0z
+<path stroke='none' stroke-width='0' d='m8.1995,5.6595 1.508,0 0,1.508 -1.508,0 0,-1.508zM8.4535,6.4135a0.5,0.5 0 1 0 1,0 0.5,0.5 0 1 0 -1,0z
 ' fill='#F7BD13' />
 </g>
 </g>

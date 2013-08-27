@@ -3,7 +3,7 @@
 <svg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' version='1.2' baseProfile='tiny' x='0in' y='0in' width='0.108in' height='0.608in' viewBox='0 0 2.7432 15.4432' >
 <g id='copper1'>
 <circle id='connector0pad' connectorname='P$1' cx='1.3716' cy='1.3716' r='0.527' stroke='#F7BD13' stroke-width='0.254' fill='none' />
-<path stroke='none' stroke-width='0' d='m0.7176,0.7176 1.308,0 0,1.308 -1.308,0 0,-3zM0.9716,1.3716a0.4,0.4 0 1 0 0.8,0 0.4,0.4 0 1 0 -0.8,0z
+<path stroke='none' stroke-width='0' d='m0.7176,0.7176 1.308,0 0,1.308 -1.308,0 0,-1.308zM0.9716,1.3716a0.4,0.4 0 1 0 0.8,0 0.4,0.4 0 1 0 -0.8,0z
 ' fill='#F7BD13' />
 <circle id='connector1pad' connectorname='P$2' cx='1.3716' cy='3.9116' r='0.527' stroke='#F7BD13' stroke-width='0.254' fill='none' />
 <circle id='connector2pad' connectorname='P$3' cx='1.3716' cy='6.4516' r='0.527' stroke='#F7BD13' stroke-width='0.254' fill='none' />
@@ -12,7 +12,7 @@
 <circle id='connector5pad' connectorname='P$6' cx='1.3716' cy='14.0716' r='0.527' stroke='#F7BD13' stroke-width='0.254' fill='none' />
 <g id='copper0'>
 <circle id='connector0pad' connectorname='P$1' cx='1.3716' cy='1.3716' r='0.527' stroke='#F7BD13' stroke-width='0.254' fill='none' />
-<path stroke='none' stroke-width='0' d='m0.7176,0.7176 1.308,0 0,1.308 -1.308,0 0,-3zM0.9716,1.3716a0.4,0.4 0 1 0 0.8,0 0.4,0.4 0 1 0 -0.8,0z
+<path stroke='none' stroke-width='0' d='m0.7176,0.7176 1.308,0 0,1.308 -1.308,0 0,-1.308zM0.9716,1.3716a0.4,0.4 0 1 0 0.8,0 0.4,0.4 0 1 0 -0.8,0z
 ' fill='#F7BD13' />
 <circle id='connector1pad' connectorname='P$2' cx='1.3716' cy='3.9116' r='0.527' stroke='#F7BD13' stroke-width='0.254' fill='none' />
 <circle id='connector2pad' connectorname='P$3' cx='1.3716' cy='6.4516' r='0.527' stroke='#F7BD13' stroke-width='0.254' fill='none' />

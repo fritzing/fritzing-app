@@ -4,12 +4,12 @@
 <g id='copper1'>
 <circle id='connector1pad' connectorname='2' cx='4.2926' cy='8.1026' r='0.6731' stroke='#F7BD13' stroke-width='0.3302' fill='none' />
 <circle id='connector0pad' connectorname='1' cx='11.9126' cy='8.1026' r='0.66675' stroke='#F7BD13' stroke-width='0.3175' fill='none' />
-<path stroke='none' stroke-width='0' d='m11.0871,7.2771 1.651,0 0,1.651 -1.651,0 0,-3zM11.4046,8.1026a0.508,0.508 0 1 0 1.016,0 0.508,0.508 0 1 0 -1.016,0z
+<path stroke='none' stroke-width='0' d='m11.0871,7.2771 1.651,0 0,1.651 -1.651,0 0,-1.651zM11.4046,8.1026a0.508,0.508 0 1 0 1.016,0 0.508,0.508 0 1 0 -1.016,0z
 ' fill='#F7BD13' />
 <g id='copper0'>
 <circle id='connector1pad' connectorname='2' cx='4.2926' cy='8.1026' r='0.6731' stroke='#F7BD13' stroke-width='0.3302' fill='none' />
 <circle id='connector0pad' connectorname='1' cx='11.9126' cy='8.1026' r='0.66675' stroke='#F7BD13' stroke-width='0.3175' fill='none' />
-<path stroke='none' stroke-width='0' d='m11.0871,7.2771 1.651,0 0,1.651 -1.651,0 0,-3zM11.4046,8.1026a0.508,0.508 0 1 0 1.016,0 0.508,0.508 0 1 0 -1.016,0z
+<path stroke='none' stroke-width='0' d='m11.0871,7.2771 1.651,0 0,1.651 -1.651,0 0,-1.651zM11.4046,8.1026a0.508,0.508 0 1 0 1.016,0 0.508,0.508 0 1 0 -1.016,0z
 ' fill='#F7BD13' />
 </g>
 </g>

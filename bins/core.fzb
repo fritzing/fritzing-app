@@ -108,7 +108,7 @@
                 </iconView>
             </views>
         </instance>
-        <instance moduleIdRef="e55c4e524988a0331c383c6d9b004770_8" modelIndex="14" path="parts/core/starter-poti-small.fzp">
+        <instance moduleIdRef="alps-starter-pot9mm" modelIndex="14" path="parts/core/alps-starter-pot9mm.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>

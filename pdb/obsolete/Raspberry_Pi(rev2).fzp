@@ -1,20 +1,20 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<module fritzingVersion="0.7.4b.04.10.5970" moduleId="Raspberry Pi (rev1)" referenceFile="Raspberry_Pi(rev1).fzp">
- <version>5</version>
+<module fritzingVersion="0.7.4b.04.10.5970" moduleId="Raspberry Pi (rev2)" referenceFile="Raspberry_Pi(rev2).fzp">
+ <version replacedby="Raspberry Pi B(rev2)">5</version>
  <author>Fabian Althaus</author>
- <title>Raspberry Pi rev1</title>
- <label>Raspberry Pi rev1</label>
+ <title>Raspberry Pi rev2</title>
+ <label>Raspberry Pi rev2</label>
  <date>July 17 2013</date>
  <tags>
   <tag>Raspberry</tag>
   <tag>Raspberry Pi</tag>
   <tag>RPi</tag>
-  <tag>Rev 1</tag>
+  <tag>Rev 2</tag>
  </tags>
  <properties>
-  <property name="family">CPU Board (Raspberry Pi)</property>
+  <property name="family">/obsolte/CPU Board (Raspberry Pi)</property>
   <property name="processor">Broadcom SoC BCM2835 ARMv6</property>
-  <property name="variant">Raspberry Pi (Rev 01)</property>
+  <property name="variant">Raspberry Pi (Rev 02)</property>
  </properties>
  <description>The awesome Raspberry Pi ARM Board</description>
  <views>
@@ -24,17 +24,17 @@
    </layers>
   </iconView>
   <breadboardView>
-   <layers image="breadboard/raspberry_pi_rev1_breadboard.svg">
+   <layers image="breadboard/raspberry_pi_rev2_breadboard.svg">
     <layer layerId="breadboardbreadboard"/>
    </layers>
   </breadboardView>
   <schematicView>
-   <layers image="schematic/raspberry_pi_rev1_schematic.svg">
+   <layers image="schematic/raspberry_pi_rev2_schematic.svg">
     <layer layerId="schematic"/>
    </layers>
   </schematicView>
   <pcbView>
-   <layers image="pcb/Raspberry_Pi_rev1_pcb.svg">
+   <layers image="pcb/Raspberry_Pi_rev2_pcb.svg">
     <layer layerId="copper0"/>
 	
     <layer layerId="copper1"/>
@@ -238,8 +238,8 @@
     </pcbView>
    </views>
   </connector>
-  <connector type="male" id="connector2" name="GIPO 0">
-   <description>GPIO 0/SDA (Serial Data)</description>
+  <connector type="male" id="connector2" name="GIPO 2">
+   <description>GIPO 2/SDA (Serial Data)</description>
    <views>
     <breadboardView>
      <p svgId="connector2pin" layer="breadboardbreadboard"/>
@@ -268,8 +268,8 @@
     </pcbView>
    </views>
   </connector>
-  <connector type="male" id="connector4" name="GIPO 1">
-   <description>GIPO 1/SCL (Serial Clock)</description>
+  <connector type="male" id="connector4" name="GIPO 3">
+   <description>GIPO 3/SCL (Serial Clock)</description>
    <views>
     <breadboardView>
      <p svgId="connector4pin" layer="breadboardbreadboard"/>
@@ -283,8 +283,8 @@
     </pcbView>
    </views>
   </connector>
-  <connector type="male" id="connector12" name="GPIO 21">
-   <description>GPIO 21</description>
+  <connector type="male" id="connector12" name="GPIO 27">
+   <description>GPIO 27</description>
    <views>
     <breadboardView>
      <p svgId="connector12pin" layer="breadboardbreadboard"/>
@@ -328,8 +328,8 @@
     </pcbView>
    </views>
   </connector>
-  <connector type="male" id="connector14" name="GPIO22">
-   <description>GPIO Pin 22</description>
+  <connector type="male" id="connector14" name="GPIO 22">
+   <description>GPIO 22</description>
    <views>
     <breadboardView>
      <p svgId="connector14pin" layer="breadboardbreadboard"/>
@@ -404,7 +404,7 @@
    </views>
   </connector>
   <connector type="male" id="connector30" name="3V3">
-   <description>3.3V Input</description>
+   <description>Output Voltage 3V3</description>
    <views>
     <breadboardView>
      <p svgId="connector30pin" layer="breadboardbreadboard"/>
@@ -434,7 +434,7 @@
    </views>
   </connector>
  </connectors>
-   <buses>
+  <buses>
   <bus id="5V">
    <nodeMember connectorId="connector1"/>
    <nodeMember connectorId="connector27"/>

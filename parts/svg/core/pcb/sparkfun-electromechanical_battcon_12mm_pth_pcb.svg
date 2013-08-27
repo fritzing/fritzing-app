@@ -3,18 +3,18 @@
 <svg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' version='1.2' baseProfile='tiny' x='0in' y='0in' width='0.613in' height='0.49492in' viewBox='0 0 15.5702 12.571' >
 <g id='copper1'>
 <circle id='connector0pad' connectorname='VCC@1' cx='1.1811' cy='6.11938' r='1.0541' stroke='#F7BD13' stroke-width='0.254' fill='none' />
-<path stroke='none' stroke-width='0' d='m0,4.93828 2.3622,0 0,2.3622 -2.3622,0 0,-3zM0.254,6.11938a0.9271,0.9271 0 1 0 1.8542,0 0.9271,0.9271 0 1 0 -1.8542,0z
+<path stroke='none' stroke-width='0' d='m0,4.93828 2.3622,0 0,2.3622 -2.3622,0 0,-2.3622zM0.254,6.11938a0.9271,0.9271 0 1 0 1.8542,0 0.9271,0.9271 0 1 0 -1.8542,0z
 ' fill='#F7BD13' />
 <circle id='connector1pad' connectorname='VCC@2' cx='14.3891' cy='6.11938' r='1.0541' stroke='#F7BD13' stroke-width='0.254' fill='none' />
-<path stroke='none' stroke-width='0' d='m13.208,4.93828 2.3622,0 0,2.3622 -2.3622,0 0,-3zM13.462,6.11938a0.9271,0.9271 0 1 0 1.8542,0 0.9271,0.9271 0 1 0 -1.8542,0z
+<path stroke='none' stroke-width='0' d='m13.208,4.93828 2.3622,0 0,2.3622 -2.3622,0 0,-2.3622zM13.462,6.11938a0.9271,0.9271 0 1 0 1.8542,0 0.9271,0.9271 0 1 0 -1.8542,0z
 ' fill='#F7BD13' />
 <rect id='connector2pad' connectorname='GND' x='3.9751' y='2.30938' width='7.62' height='7.62' stroke='none' stroke-width='0' fill='#F7BD13' stroke-linecap='round'/>
 <g id='copper0'>
 <circle id='connector0pad' connectorname='VCC@1' cx='1.1811' cy='6.11938' r='1.0541' stroke='#F7BD13' stroke-width='0.254' fill='none' />
-<path stroke='none' stroke-width='0' d='m0,4.93828 2.3622,0 0,2.3622 -2.3622,0 0,-3zM0.254,6.11938a0.9271,0.9271 0 1 0 1.8542,0 0.9271,0.9271 0 1 0 -1.8542,0z
+<path stroke='none' stroke-width='0' d='m0,4.93828 2.3622,0 0,2.3622 -2.3622,0 0,-2.3622zM0.254,6.11938a0.9271,0.9271 0 1 0 1.8542,0 0.9271,0.9271 0 1 0 -1.8542,0z
 ' fill='#F7BD13' />
 <circle id='connector1pad' connectorname='VCC@2' cx='14.3891' cy='6.11938' r='1.0541' stroke='#F7BD13' stroke-width='0.254' fill='none' />
-<path stroke='none' stroke-width='0' d='m13.208,4.93828 2.3622,0 0,2.3622 -2.3622,0 0,-3zM13.462,6.11938a0.9271,0.9271 0 1 0 1.8542,0 0.9271,0.9271 0 1 0 -1.8542,0z
+<path stroke='none' stroke-width='0' d='m13.208,4.93828 2.3622,0 0,2.3622 -2.3622,0 0,-2.3622zM13.462,6.11938a0.9271,0.9271 0 1 0 1.8542,0 0.9271,0.9271 0 1 0 -1.8542,0z
 ' fill='#F7BD13' />
 </g>
 </g>

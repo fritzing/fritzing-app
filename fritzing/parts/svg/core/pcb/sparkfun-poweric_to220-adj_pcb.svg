@@ -3,13 +3,13 @@
 <svg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' version='1.2' baseProfile='tiny' x='0in' y='0in' width='0.408in' height='0.183in' viewBox='0 0 10.3632 4.6482' >
 <g id='copper1'>
 <circle id='connector0pad' connectorname='ADJ' cx='2.6416' cy='2.6416' r='0.7199' stroke='#F7BD13' stroke-width='0.4398' fill='none' />
-<path stroke='none' stroke-width='0' d='m1.7018,1.7018 1.8796,0 0,1.8796 -1.8796,0 0,-3zM2.1416,2.6416a0.5,0.5 0 1 0 1,0 0.5,0.5 0 1 0 -1,0z
+<path stroke='none' stroke-width='0' d='m1.7018,1.7018 1.8796,0 0,1.8796 -1.8796,0 0,-1.8796zM2.1416,2.6416a0.5,0.5 0 1 0 1,0 0.5,0.5 0 1 0 -1,0z
 ' fill='#F7BD13' />
 <circle id='connector2pad' connectorname='OUT' cx='5.1816' cy='2.6416' r='0.7199' stroke='#F7BD13' stroke-width='0.4398' fill='none' />
 <circle id='connector1pad' connectorname='IN' cx='7.7216' cy='2.6416' r='0.7199' stroke='#F7BD13' stroke-width='0.4398' fill='none' />
 <g id='copper0'>
 <circle id='connector0pad' connectorname='ADJ' cx='2.6416' cy='2.6416' r='0.7199' stroke='#F7BD13' stroke-width='0.4398' fill='none' />
-<path stroke='none' stroke-width='0' d='m1.7018,1.7018 1.8796,0 0,1.8796 -1.8796,0 0,-3zM2.1416,2.6416a0.5,0.5 0 1 0 1,0 0.5,0.5 0 1 0 -1,0z
+<path stroke='none' stroke-width='0' d='m1.7018,1.7018 1.8796,0 0,1.8796 -1.8796,0 0,-1.8796zM2.1416,2.6416a0.5,0.5 0 1 0 1,0 0.5,0.5 0 1 0 -1,0z
 ' fill='#F7BD13' />
 <circle id='connector2pad' connectorname='OUT' cx='5.1816' cy='2.6416' r='0.7199' stroke='#F7BD13' stroke-width='0.4398' fill='none' />
 <circle id='connector1pad' connectorname='IN' cx='7.7216' cy='2.6416' r='0.7199' stroke='#F7BD13' stroke-width='0.4398' fill='none' />

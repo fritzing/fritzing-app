@@ -257,7 +257,7 @@ public:
 	virtual ViewLayer::ViewLayerID getWireViewLayerID(const ViewGeometry & viewGeometry, ViewLayer::ViewLayerPlacement);
 	ItemBase * findItem(long id);
 	long createWire(ConnectorItem * from, ConnectorItem * to, ViewGeometry::WireFlags, bool dontUpdate, BaseCommand::CrossViewType, QUndoCommand * parentCommand);
-	int selectAllObsolete();
+	QList<ItemBase *> selectAllObsolete();
 	int selectAllMoveLock();
 	void setMoveLock(long id, bool lock);
 	bool partLabelsVisible();

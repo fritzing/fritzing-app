@@ -8188,7 +8188,7 @@ void SketchWidget::resizeJumperItem(long itemID, QPointF pos, QPointF c0, QPoint
 	qobject_cast<JumperItem *>(item)->resize(pos, c0, c1);
 }
 
-int SketchWidget::selectAllObsolete() 
+QList<ItemBase *> SketchWidget::selectAllObsolete() 
 {
 	QSet<ItemBase *> itemBases;
 	foreach (QGraphicsItem * item, scene()->items()) {
@@ -8199,7 +8199,8 @@ int SketchWidget::selectAllObsolete()
 		itemBases.insert(itemBase->layerKinChief());
 	}
 
-	return selectAllItems(itemBases, QObject::tr("Select outdated parts"));
+	int count = selectAllItems(itemBases, QObject::tr("Select outdated parts"));
+    return itemBases.toList();
 }
 
 int SketchWidget::selectAllMoveLock() 

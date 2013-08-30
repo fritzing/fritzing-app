@@ -447,9 +447,9 @@ void MainWindow::mainLoad(const QString & fileName, const QString & displayName,
 
     if (checkObsolete) {
         if (m_pcbGraphicsView) {
-            int obs = m_pcbGraphicsView->selectAllObsolete();
-	        if (obs > 0) {
-                checkSwapObsolete(obs);
+            QList<ItemBase *> items = m_pcbGraphicsView->selectAllObsolete();
+	        if (items.count() > 0) {
+                checkSwapObsolete(items);
             }
         }
     }
@@ -3664,24 +3664,25 @@ void MainWindow::selectAllObsolete() {
 	selectAllObsolete(true);
 }
 
-void MainWindow::selectAllObsolete(bool displayFeedback) {
-	int obs = m_pcbGraphicsView->selectAllObsolete();
-	if (!displayFeedback) return;
+QList<ItemBase *> MainWindow::selectAllObsolete(bool displayFeedback) {
+	QList<ItemBase *> items = m_pcbGraphicsView->selectAllObsolete();
+	if (!displayFeedback) return items;
 
-	if (obs <= 0) {
+	if (items.count() <= 0) {
         QMessageBox::information(this, tr("Fritzing"), tr("No outdated parts found.\nAll your parts are up-to-date.") );
     } 
 	else {
-        checkSwapObsolete(obs);
+        checkSwapObsolete(items);
 	}
+
+    return items;
 }
 
-void MainWindow::checkSwapObsolete(int obs) {
-    Q_UNUSED(obs);
+void MainWindow::checkSwapObsolete(QList<ItemBase *> & items) {
     QMessageBox::StandardButton answer = QMessageBox::question(
             this,
             tr("Outdated parts"),
-            tr("There are outdated parts in this sketch. ") +
+            tr("There are %n outdated part(s) in this sketch. ", "", items.count()) +
             tr("We strongly recommend that you update these parts to the latest version. ") +
             tr("This may result in some small changes to your sketch, because parts or connectors may be shifted. ") +
             tr("\n\nDo you want to update now?"),
@@ -3690,7 +3691,7 @@ void MainWindow::checkSwapObsolete(int obs) {
     );
     // TODO: make button texts translatable
     if (answer == QMessageBox::Yes) {
-        swapObsolete();
+        swapObsolete(true, items);
     }
 }
 
@@ -3715,22 +3716,28 @@ ModelPart * MainWindow::findReplacedby(ModelPart * originalModelPart) {
 }
 
 void MainWindow::swapObsolete() {
-	swapObsolete(true);
+    QList<ItemBase *> items;
+	swapObsolete(true, items);
 }
 
-void MainWindow::swapObsolete(bool displayFeedback) {
-
+void MainWindow::swapObsolete(bool displayFeedback, QList<ItemBase *> & items) {
 	QSet<ItemBase *> itemBases;
-	foreach (QGraphicsItem * item, m_pcbGraphicsView->scene()->selectedItems()) {
-		ItemBase * itemBase = dynamic_cast<ItemBase *>(item);
-		if (itemBase == NULL) continue;
-		if (!itemBase->isObsolete()) continue;
 
-		itemBase = itemBase->layerKinChief();
-		itemBases.insert(itemBase);
-	}
+    if (items.count() == 0) {
+	    foreach (QGraphicsItem * item, m_pcbGraphicsView->scene()->selectedItems()) {
+		    ItemBase * itemBase = dynamic_cast<ItemBase *>(item);
+		    if (itemBase == NULL) continue;
+		    if (!itemBase->isObsolete()) continue;
 
-	if (itemBases.count() <= 0) return;
+		    itemBase = itemBase->layerKinChief();
+		    itemBases.insert(itemBase);
+	    }
+
+	    if (itemBases.count() <= 0) return;
+    }
+    else {
+        foreach (ItemBase * itemBase, items) itemBases.insert(itemBase);
+    }
 
 	QUndoCommand* parentCommand = new QUndoCommand();
     int count = 0;

@@ -1378,7 +1378,7 @@ void MainWindow::loadBundledSketch(const QString &fileName, bool addToRecent, bo
 	}
 
 	// the bundled itself
-	this->mainLoad(sketchName, "");
+	this->mainLoad(sketchName, "", true);
 	setCurrentFile(fileName, addToRecent, setAsLastOpened);
 }
 

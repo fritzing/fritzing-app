@@ -9,217 +9,217 @@
         <translation>Sürüm %1.%2.%3 &lt;small&gt;(%4%5 %6)%7 [Qt %8]&lt;/small&gt;</translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="92"/>
+        <location filename="../src/help/aboutbox.cpp" line="93"/>
         <source>&lt;a href=&quot;http://www.fritzing.org&quot;&gt;www.fritzing.org&lt;/a&gt;</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="103"/>
+        <location filename="../src/help/aboutbox.cpp" line="104"/>
         <source>&lt;b&gt;GNU GPL v3 on the code and CreativeCommons:BY-SA on the rest</source>
         <translation>&lt;b&gt;Kod için GNU GPL v3 ve geri kalanlar için CreativeCommons:BY-SA</translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="121"/>
+        <location filename="../src/help/aboutbox.cpp" line="122"/>
         <source>&lt;b&gt;2007-%1 Fachhochschule Potsdam&lt;/b&gt;</source>
         <translation>&lt;b&gt;2007-%1 Potsdam Yüksek Okulu&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="133"/>
+        <location filename="../src/help/aboutbox.cpp" line="134"/>
         <source>Fritzing is made by: </source>
         <translation>Fritzing&apos;i oluşturanlar: </translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="134"/>
+        <location filename="../src/help/aboutbox.cpp" line="135"/>
         <source>Prof. Reto Wettach, Andr&amp;eacute; Kn&amp;ouml;rig, Myriel Milicevic, </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="135"/>
+        <location filename="../src/help/aboutbox.cpp" line="136"/>
         <source>Zach Eveland, Dirk van Oosterbosch, </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="136"/>
+        <location filename="../src/help/aboutbox.cpp" line="137"/>
         <source>Jonathan Cohen, Marcus Paeschke, Omer Yosha, </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="137"/>
+        <location filename="../src/help/aboutbox.cpp" line="138"/>
         <source>Travis Robertson, Stefan Hermann, Brendan Howell, </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="138"/>
+        <location filename="../src/help/aboutbox.cpp" line="139"/>
         <source>Mariano Crowe, Johannes Landstorfer, </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="139"/>
+        <location filename="../src/help/aboutbox.cpp" line="140"/>
         <source>Jenny Chowdhury, Lionel Michel, Jannis Leidel, </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="140"/>
+        <location filename="../src/help/aboutbox.cpp" line="141"/>
         <source>Bryant Mairs, Uleshka Asher, and Daniel Tzschentke. </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="144"/>
+        <location filename="../src/help/aboutbox.cpp" line="145"/>
         <source>Special thanks goes out to: </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="145"/>
+        <location filename="../src/help/aboutbox.cpp" line="146"/>
         <source>Jussi &amp;Auml;ngeslev&amp;auml;, Massimo Banzi, Ayah Bdeir, </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="146"/>
+        <location filename="../src/help/aboutbox.cpp" line="147"/>
         <source>Durrell Bishop, David Cuartielles, Fabian Hemmert, </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="147"/>
+        <location filename="../src/help/aboutbox.cpp" line="148"/>
         <source>Gero Herkenrath, Jeff Hoefs, Tom Hulbert, </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="148"/>
+        <location filename="../src/help/aboutbox.cpp" line="149"/>
         <source>Tom Igoe, Hans-Peter Kadel, Till Savelkoul, </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="149"/>
+        <location filename="../src/help/aboutbox.cpp" line="150"/>
         <source>Jan Sieber, Yaniv Steiner, Olaf Val, </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="150"/>
+        <location filename="../src/help/aboutbox.cpp" line="151"/>
         <source>Michaela Vieser and Julia Werner.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="154"/>
+        <location filename="../src/help/aboutbox.cpp" line="155"/>
         <source>Thanks to Kurt Badelt and Miguel Solis for the Spanish translation, </source>
         <translation>Kurt Badelt ve Miguel Solis&apos;e İspanyolca tercüme katkıları için, </translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="155"/>
+        <location filename="../src/help/aboutbox.cpp" line="156"/>
         <source>to Gianluca Urgese for the Italian translation, </source>
         <translation>Gianluca Urgese&apos;ye İtalyanca tercüme katkıları için, </translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="156"/>
+        <location filename="../src/help/aboutbox.cpp" line="157"/>
         <source>to Nuno Pessanha Santos for the Portuguese (European) translation, </source>
         <translation>Nuno Pessanha Santos&apos;a Portekizce(Avrupa) tercüme katkıları için, </translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="157"/>
+        <location filename="../src/help/aboutbox.cpp" line="158"/>
         <source>to Yuelin and Ninjia  for the Chinese (Simplified) translation, </source>
         <translation>Yuelin ve Ninjia&apos;ya Çince tercüme katkıları için, </translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="158"/>
+        <location filename="../src/help/aboutbox.cpp" line="159"/>
         <source>to Hiroshi Suzuki for the Japanese translation, </source>
         <translation>Hiroshi Suzuki&apos;ye Japonca tercüme katkıları için, </translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="159"/>
+        <location filename="../src/help/aboutbox.cpp" line="160"/>
         <source>to Robert Lee for the Chinese (Traditional) translation, </source>
         <translation>Robert Lee&apos;ye Çince(Geleneksel) tercüme katkıları için, </translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="160"/>
+        <location filename="../src/help/aboutbox.cpp" line="161"/>
         <source>to Vladimir Savinov for the Russian translation, </source>
         <translation>Vladimir Savinov&apos;a Rusca tercüme katkıları için, </translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="161"/>
+        <location filename="../src/help/aboutbox.cpp" line="162"/>
         <source>to Steven Noppe and Davy Uittenbogerd for the Dutch translation, </source>
         <translation>Steven Noppe ve Davy Uittenbogerd&apos;e Flemenkçe.tercüme katkıları için, </translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="162"/>
+        <location filename="../src/help/aboutbox.cpp" line="163"/>
         <source>to Josef Dustira for the Czech translation, </source>
         <translation>Josef Dustira&apos;ya Çekce tercüme katkıları için, </translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="163"/>
+        <location filename="../src/help/aboutbox.cpp" line="164"/>
         <source>to Jinbuhm Kim for the Korean translation, </source>
         <translation>Jinbuhm Kim&apos;e Korece tercüme katkıları için, </translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="164"/>
+        <location filename="../src/help/aboutbox.cpp" line="165"/>
         <source>to &amp;#313;ubom&amp;iacute;r Ducho&amp;#328; for the Slovak translation, </source>
         <translation>&amp;#313;ubom&amp;iacute;r Ducho&amp;#328;&apos;e Slovakça tercüme katkıları için, </translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="165"/>
+        <location filename="../src/help/aboutbox.cpp" line="166"/>
         <source>to Alexander Kaltsas for the Greek translation, </source>
         <translation>Alexander Kaltsas&apos;a Yunanca tercüme katkıları için, </translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="166"/>
+        <location filename="../src/help/aboutbox.cpp" line="167"/>
         <source>to Lionel Michel and Yvan Kloster for the French translation, </source>
         <translation>Lionel Michel ve Yvan Kloster&apos;e Fransızca tercüme katkıları için, </translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="167"/>
+        <location filename="../src/help/aboutbox.cpp" line="168"/>
         <source>to Cihan Mete Bahad&amp;#x0131;r for the Turkish translation, </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="168"/>
+        <location filename="../src/help/aboutbox.cpp" line="169"/>
         <source>to Nikolay Stankov for the Bulgarian translation, </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="170"/>
+        <location filename="../src/help/aboutbox.cpp" line="171"/>
         <source>and to Arthur Zanona, Nuno Pessanha Santos, Leandro Nunes, and Gabriel Ferreira for the Portuguese (Brazilian) translation. </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="174"/>
+        <location filename="../src/help/aboutbox.cpp" line="175"/>
         <source>Fritzing is made possible with funding from the </source>
         <translation>Fritzing aşağıdaki finansmanlar sayesinde hayat bulabilmiştir </translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="175"/>
+        <location filename="../src/help/aboutbox.cpp" line="176"/>
         <source>MWFK Brandenburg, the sponsorship of the Design </source>
         <translation>MWFK Brandenburg, Bauhaus Tasarım Departmanı sponsorluğu </translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="176"/>
+        <location filename="../src/help/aboutbox.cpp" line="177"/>
         <source>Department of Bauhaus-University Weimar, </source>
         <translation>Weimar Üniversitesi, </translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="177"/>
+        <location filename="../src/help/aboutbox.cpp" line="178"/>
         <source>IxDS, an anonymous donor, Parallax, Picaxe, Sparkfun, </source>
         <translation>IxDS, bir anonim bağışçı, Parallax, Picaxe, Sparkfun, </translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="178"/>
+        <location filename="../src/help/aboutbox.cpp" line="179"/>
         <source>and from each purchase of a Fritzing Starter Kit or a PCB from Fritzing Fab.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="182"/>
+        <location filename="../src/help/aboutbox.cpp" line="183"/>
         <source>Special thanks goes out as well to all the students </source>
         <translation>Fritznig&apos;e test turu atma imkanı sağlayan tüm öğrencilere </translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="183"/>
+        <location filename="../src/help/aboutbox.cpp" line="184"/>
         <source>and alpha testers who were brave enough to give </source>
         <translation>ve cesur alfa testçilerine </translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="184"/>
+        <location filename="../src/help/aboutbox.cpp" line="185"/>
         <source>Fritzing a test spin. </source>
         <translation>ayrıca teşekkürler. </translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="187"/>
+        <location filename="../src/help/aboutbox.cpp" line="188"/>
         <source>&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;</source>
         <translation></translation>
     </message>
@@ -1755,13 +1755,13 @@ Ayrıca konnektör üzerine sağ tıklanarak &apos;Ayarla Toprak Dolgu Tanecik&a
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3166"/>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3171"/>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3672"/>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3805"/>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4029"/>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4035"/>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4161"/>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4166"/>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4178"/>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4183"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3812"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4036"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4042"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4168"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4173"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4185"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4190"/>
         <source>Fritzing</source>
         <translation>Fritzing</translation>
     </message>
@@ -1841,7 +1841,7 @@ Ayrıca konnektör üzerine sağ tıklanarak &apos;Ayarla Toprak Dolgu Tanecik&a
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="2014"/>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3743"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3750"/>
         <source>Sorry!</source>
         <translation>Özür Dileriz!</translation>
     </message>
@@ -1981,7 +1981,7 @@ We&apos;re working to avoid this message, and only let you choose between proper
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="188"/>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="292"/>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3844"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3851"/>
         <source>Cancel</source>
         <translation>İptal</translation>
     </message>
@@ -2986,29 +2986,24 @@ Would you like to convert &apos;%1&apos; to the .fzz format now or open it read-
         <translation>geçitler</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3684"/>
-        <source>There are outdated parts in this sketch. </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3685"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3686"/>
         <source>We strongly recommend that you update these parts to the latest version. </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3686"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3687"/>
         <source>This may result in some small changes to your sketch, because parts or connectors may be shifted. </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3687"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3688"/>
         <source>
 
 Do you want to update now?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3744"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3751"/>
         <source>unable to find replacement for %1.
 </source>
         <translation>%1&apos;in yerine geçebilecek birşey bulunamıyor.
@@ -3655,23 +3650,30 @@ Devam et ve geri döndür?</translation>
         <source>Shift+Ctrl+1</source>
         <translation>Shift Ctrl+1</translation>
     </message>
+    <message numerus="yes">
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3685"/>
+        <source>There are %n outdated part(s) in this sketch. </source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+        </translation>
+    </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4284"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4291"/>
         <source>Enter Text</source>
         <translation>Yazı yaz</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4285"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4292"/>
         <source>Text will match part label, description, title, etc. Enter text to search for:</source>
         <translation>Yazı eleman etiketi, açıklaması, başlığı, vb. eşleştirecek Aramak için birşey yazın:</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4323"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4330"/>
         <source>Search</source>
         <translation>Ara</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4323"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4330"/>
         <source>No parts matched search term &apos;%1&apos;.</source>
         <translation>&apos;%1&apos; ile ilgili hiçbir sonuç bulunamadı.</translation>
     </message>
@@ -3781,64 +3783,64 @@ Devam et ve geri döndür?</translation>
         <translation>Lütfen tek bir Baskı Devre seçin--toprak dolgulama işlemi tek seferde yalnızca bir board için yapılabilir.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3845"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3852"/>
         <source>OK</source>
         <translation>TAMAM</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3867"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3874"/>
         <source>Set the grid size for %1.</source>
         <translation>Izagara aralığını %1&apos;e göre ayarla.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3874"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3881"/>
         <source>Grid Size:</source>
         <translation>Izagara Aralığı:</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3888"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3895"/>
         <source>in</source>
         <translation>inç</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3891"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3898"/>
         <source>mm</source>
         <translation>mm</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3900"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3907"/>
         <source>Restore Default</source>
         <translation>Varsayılana Dön</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4027"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4034"/>
         <source>Your sketch does not have a board yet! DRC only works with a PCB.</source>
         <translation>Çiziminiz henüz bir board içermiyor!  Tasarım kuralları kontrolü(DRC) sadece bir Baskı Devre ile yapılabilir.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4033"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4040"/>
         <source>Please select a PCB. DRC only works on one board at a time.</source>
         <translation>Lütfen tek bir Baskı Devre seçin. DRC tek eferde yalnızca bir board ile çalışabilmekte.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4043"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4050"/>
         <source>DRC Progress...</source>
         <translation>Tasarım Kural Kontrolü(DRC) İlerliyor...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4162"/>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4179"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4169"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4186"/>
         <source>Your sketch does not have a board yet! Please add a PCB in order to use copper fill operations.</source>
         <translation>Çiziminiz henüz bir board içermiyor! Lütfen bakır dolgu işlemleri yapabilmek için bir Baskı Devre ekleyin.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4167"/>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4184"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4174"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4191"/>
         <source>Please select a PCB. Copper fill operations only work on one board at a time.</source>
         <translation>Lütfen tek bir Baskı Devre seçin. Bakır dolgu işlemleri tek seferde yalnızca bir board için yapılabilir.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4251"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4258"/>
         <source>%1 background Color</source>
         <translation>Arka Plan Rengi %1</translation>
     </message>
@@ -4070,19 +4072,19 @@ All your parts are up-to-date.</source>
 Tüm elemanlarınız güncel.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3683"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3684"/>
         <source>Outdated parts</source>
         <translation>Süresi Geçmiş elemanlar</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3805"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3812"/>
         <source>Successfully updated %1 part(s).
 Please check all views for potential side-effects.</source>
         <translation>%1 elemanın güncellemesi başarılı.
 Tüm görünümleri olası yan etkiler için kontrol edin.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3800"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3807"/>
         <source>Update %1 part(s)</source>
         <translation>%1 elemanı güncelle</translation>
     </message>
@@ -6494,7 +6496,7 @@ shift tuşu ilerleme eksenini değiştirir</translation>
         <translation>Kablo</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3837"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3844"/>
         <source>Set Grid Size</source>
         <translation>Izgaranın Sıklığını Ayarla</translation>
     </message>
@@ -6797,7 +6799,7 @@ Fritzing hala çalışıyor ancak elemanın özelliklerini değiştiremeyeceksin
         <translation>Zamanı geçmiş elemanları seç</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="8216"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="8217"/>
         <source>Select locked parts</source>
         <translation>Kilitli parçaları seç</translation>
     </message>
@@ -7817,13 +7819,13 @@ Fritzing hala çalışıyor ancak elemanın özelliklerini değiştiremeyeceksin
     </message>
     <message>
         <location filename="../src/sketch/sketchwidget.cpp" line="3523"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9525"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9526"/>
         <source>Select %1</source>
         <translation>%1&apos;i seç</translation>
     </message>
     <message>
         <location filename="../src/sketch/sketchwidget.cpp" line="3526"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9528"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9529"/>
         <source>Select %1 items</source>
         <translation>%1 öğelerini seç</translation>
     </message>
@@ -8023,7 +8025,7 @@ Fritzing hala çalışıyor ancak elemanın özelliklerini değiştiremeyeceksin
     </message>
     <message>
         <location filename="../src/sketch/sketchwidget.cpp" line="7761"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="8645"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="8646"/>
         <source>Resize board to %1 %2</source>
         <translation>Board&apos;u %1&apos;e %2 tekrardan ölçeklendir</translation>
     </message>
@@ -8043,32 +8045,32 @@ Fritzing hala çalışıyor ancak elemanın özelliklerini değiştiremeyeceksin
         <translation>%1 öğelerinden tüm kablo bağlantılarını kes</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="8296"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="8297"/>
         <source>Change image from %1 to %2</source>
         <translation>Resmi %1&apos;den %2&apos;ye değiştir</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9106"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9107"/>
         <source>change pin labels</source>
         <translation>pin etiketlerini değiştir</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9398"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9399"/>
         <source>Unrouted connections are highlighted in yellow.</source>
         <translation>Yönlendirilmemiş bağlantılar sarı ile vurgulanmıştır.</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9399"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9400"/>
         <source>There are no unrouted connections</source>
         <translation>Yönlendirilmemiş bağlantı yok</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9400"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9401"/>
         <source>Unrouted connections</source>
         <translation>Yönlendirilmemiş bağlantılar</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9401"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9402"/>
         <source>%1
 
 Note: you can also trigger this display by mousing down on the routing status text in the status bar.</source>
@@ -8077,17 +8079,17 @@ Note: you can also trigger this display by mousing down on the routing status te
 Not:Bu görüntüyü fareyi durum çubuğundaki yönlendirme durumu metni üzerinde aşağı kaydırarak da tetikleyebilirsiniz.</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9448"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9449"/>
         <source>Part &apos;%1&apos; not found in sketch</source>
         <translation>&apos;%1&apos; elemanı çizimde bulunamadı</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9460"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9461"/>
         <source>Add %1 parts</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9522"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9523"/>
         <source>Deselect all</source>
         <translation>Tümünü seçmeyi bırak</translation>
     </message>

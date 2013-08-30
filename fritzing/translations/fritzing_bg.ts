@@ -9,217 +9,217 @@
         <translation>Версия %1.%2.%3 &lt;small&gt;(%4%5 %6)%7 [Qt %8]&lt;/small&gt;</translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="92"/>
+        <location filename="../src/help/aboutbox.cpp" line="93"/>
         <source>&lt;a href=&quot;http://www.fritzing.org&quot;&gt;www.fritzing.org&lt;/a&gt;</source>
         <translation>&lt;a href=&quot;http://www.fritzing.org&quot;&gt;www.fritzing.org&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="103"/>
+        <location filename="../src/help/aboutbox.cpp" line="104"/>
         <source>&lt;b&gt;GNU GPL v3 on the code and CreativeCommons:BY-SA on the rest</source>
         <translation>&lt;b&gt;GNU GPL v3 права над кода и CreativeCommons:BY-SA над всичко останало</translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="121"/>
+        <location filename="../src/help/aboutbox.cpp" line="122"/>
         <source>&lt;b&gt;2007-%1 Fachhochschule Potsdam&lt;/b&gt;</source>
         <translation>&lt;b&gt;2007-%1 Университет за приложни науки  Постдам&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="133"/>
+        <location filename="../src/help/aboutbox.cpp" line="134"/>
         <source>Fritzing is made by: </source>
         <translation>Fritzing е създаден от: </translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="134"/>
+        <location filename="../src/help/aboutbox.cpp" line="135"/>
         <source>Prof. Reto Wettach, Andr&amp;eacute; Kn&amp;ouml;rig, Myriel Milicevic, </source>
         <translation>Професор. Reto Wettach, Andr&amp;eacute; Kn&amp;ouml;rig, Myriel Milicevic, </translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="135"/>
+        <location filename="../src/help/aboutbox.cpp" line="136"/>
         <source>Zach Eveland, Dirk van Oosterbosch, </source>
         <translation>Zach Eveland, Dirk van Oosterbosch, </translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="136"/>
+        <location filename="../src/help/aboutbox.cpp" line="137"/>
         <source>Jonathan Cohen, Marcus Paeschke, Omer Yosha, </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="137"/>
+        <location filename="../src/help/aboutbox.cpp" line="138"/>
         <source>Travis Robertson, Stefan Hermann, Brendan Howell, </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="138"/>
+        <location filename="../src/help/aboutbox.cpp" line="139"/>
         <source>Mariano Crowe, Johannes Landstorfer, </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="139"/>
+        <location filename="../src/help/aboutbox.cpp" line="140"/>
         <source>Jenny Chowdhury, Lionel Michel, Jannis Leidel, </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="140"/>
+        <location filename="../src/help/aboutbox.cpp" line="141"/>
         <source>Bryant Mairs, Uleshka Asher, and Daniel Tzschentke. </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="144"/>
+        <location filename="../src/help/aboutbox.cpp" line="145"/>
         <source>Special thanks goes out to: </source>
         <translation>Със специални благодарности към:</translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="145"/>
+        <location filename="../src/help/aboutbox.cpp" line="146"/>
         <source>Jussi &amp;Auml;ngeslev&amp;auml;, Massimo Banzi, Ayah Bdeir, </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="146"/>
+        <location filename="../src/help/aboutbox.cpp" line="147"/>
         <source>Durrell Bishop, David Cuartielles, Fabian Hemmert, </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="147"/>
+        <location filename="../src/help/aboutbox.cpp" line="148"/>
         <source>Gero Herkenrath, Jeff Hoefs, Tom Hulbert, </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="148"/>
+        <location filename="../src/help/aboutbox.cpp" line="149"/>
         <source>Tom Igoe, Hans-Peter Kadel, Till Savelkoul, </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="149"/>
+        <location filename="../src/help/aboutbox.cpp" line="150"/>
         <source>Jan Sieber, Yaniv Steiner, Olaf Val, </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="150"/>
+        <location filename="../src/help/aboutbox.cpp" line="151"/>
         <source>Michaela Vieser and Julia Werner.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="154"/>
+        <location filename="../src/help/aboutbox.cpp" line="155"/>
         <source>Thanks to Kurt Badelt and Miguel Solis for the Spanish translation, </source>
         <translation>С благодарности към Kurt Badelt и Miguel Solis за Испанския превод,</translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="155"/>
+        <location filename="../src/help/aboutbox.cpp" line="156"/>
         <source>to Gianluca Urgese for the Italian translation, </source>
         <translation>на Gianluca Urgese за Италианския превод</translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="156"/>
+        <location filename="../src/help/aboutbox.cpp" line="157"/>
         <source>to Nuno Pessanha Santos for the Portuguese (European) translation, </source>
         <translation>на Nuno Pessanha Santos за Португалския (Европейски) превод, </translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="157"/>
+        <location filename="../src/help/aboutbox.cpp" line="158"/>
         <source>to Yuelin and Ninjia  for the Chinese (Simplified) translation, </source>
         <translation>на Yuelin and Ninjia за превода от Китайски (Опростен) , </translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="158"/>
+        <location filename="../src/help/aboutbox.cpp" line="159"/>
         <source>to Hiroshi Suzuki for the Japanese translation, </source>
         <translation>на Hiroshi Suzuk за Японския превод, </translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="159"/>
+        <location filename="../src/help/aboutbox.cpp" line="160"/>
         <source>to Robert Lee for the Chinese (Traditional) translation, </source>
         <translation>на Robert Lee за превода от Китайски (Традиционен) език, </translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="160"/>
+        <location filename="../src/help/aboutbox.cpp" line="161"/>
         <source>to Vladimir Savinov for the Russian translation, </source>
         <translation>на Владимир Савинов за превода от Руски език</translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="161"/>
+        <location filename="../src/help/aboutbox.cpp" line="162"/>
         <source>to Steven Noppe and Davy Uittenbogerd for the Dutch translation, </source>
         <translation>на Steven Noppe и Davy Uittenbogerd за превода от Холандски език, </translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="162"/>
+        <location filename="../src/help/aboutbox.cpp" line="163"/>
         <source>to Josef Dustira for the Czech translation, </source>
         <translation>на Josef Dustira за превода от Чешки език, </translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="163"/>
+        <location filename="../src/help/aboutbox.cpp" line="164"/>
         <source>to Jinbuhm Kim for the Korean translation, </source>
         <translation>на Jinbuhm Kim за превода от Корейски език</translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="164"/>
+        <location filename="../src/help/aboutbox.cpp" line="165"/>
         <source>to &amp;#313;ubom&amp;iacute;r Ducho&amp;#328; for the Slovak translation, </source>
         <translation>на  &amp;#313;ubom&amp;iacute;r Ducho&amp;#328; за превода от Словашки</translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="165"/>
+        <location filename="../src/help/aboutbox.cpp" line="166"/>
         <source>to Alexander Kaltsas for the Greek translation, </source>
         <translation>на Alexander Kaltsas за превода от Гръдски език, </translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="166"/>
+        <location filename="../src/help/aboutbox.cpp" line="167"/>
         <source>to Lionel Michel and Yvan Kloster for the French translation, </source>
         <translation>на Lionel Michel и Yvan Kloster за Френския превод, </translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="167"/>
+        <location filename="../src/help/aboutbox.cpp" line="168"/>
         <source>to Cihan Mete Bahad&amp;#x0131;r for the Turkish translation, </source>
         <translation>на Cihan Mete Bahad&amp;#x0131;r за превода от Турски език</translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="168"/>
+        <location filename="../src/help/aboutbox.cpp" line="169"/>
         <source>to Nikolay Stankov for the Bulgarian translation, </source>
         <translation>на Николай Станков за Българския превод</translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="170"/>
+        <location filename="../src/help/aboutbox.cpp" line="171"/>
         <source>and to Arthur Zanona, Nuno Pessanha Santos, Leandro Nunes, and Gabriel Ferreira for the Portuguese (Brazilian) translation. </source>
         <translation>и на Arthur Zanona, Nuno Pessanha Santos, Leandro Nunes, and Gabriel Ferreira за Португалския (Бразилски)превод. </translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="174"/>
+        <location filename="../src/help/aboutbox.cpp" line="175"/>
         <source>Fritzing is made possible with funding from the </source>
         <translation>Създаването на &quot;Fritzing&quot; е осъществено с финансиране от: </translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="175"/>
+        <location filename="../src/help/aboutbox.cpp" line="176"/>
         <source>MWFK Brandenburg, the sponsorship of the Design </source>
         <translation>MWFK Brandenburg, спонсорството за дизайна</translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="176"/>
+        <location filename="../src/help/aboutbox.cpp" line="177"/>
         <source>Department of Bauhaus-University Weimar, </source>
         <translation>Департамента по Строителство към Университета във Weimar</translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="177"/>
+        <location filename="../src/help/aboutbox.cpp" line="178"/>
         <source>IxDS, an anonymous donor, Parallax, Picaxe, Sparkfun, </source>
         <translation>IxDS, анонимен дарител ,  Parallax, Picaxe, Sparkfun, </translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="178"/>
+        <location filename="../src/help/aboutbox.cpp" line="179"/>
         <source>and from each purchase of a Fritzing Starter Kit or a PCB from Fritzing Fab.</source>
         <translation>и от всяка покупка на нашия комплект за начинаещи или на печатна платка от фабриката на Fritzing.</translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="182"/>
+        <location filename="../src/help/aboutbox.cpp" line="183"/>
         <source>Special thanks goes out as well to all the students </source>
         <translation>Със специални благодарности към всички студенти </translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="183"/>
+        <location filename="../src/help/aboutbox.cpp" line="184"/>
         <source>and alpha testers who were brave enough to give </source>
         <translation>и всички алфа тестери които бяха достатъчно смели да направят</translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="184"/>
+        <location filename="../src/help/aboutbox.cpp" line="185"/>
         <source>Fritzing a test spin. </source>
         <translation>пробно кръгче на &quot;Fritzing&quot;</translation>
     </message>
     <message>
-        <location filename="../src/help/aboutbox.cpp" line="187"/>
+        <location filename="../src/help/aboutbox.cpp" line="188"/>
         <source>&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;</source>
         <translation>&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;</translation>
     </message>
@@ -1760,13 +1760,13 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3166"/>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3171"/>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3672"/>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3805"/>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4029"/>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4035"/>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4161"/>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4166"/>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4178"/>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4183"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3812"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4036"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4042"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4168"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4173"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4185"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4190"/>
         <source>Fritzing</source>
         <translation>Frizting</translation>
     </message>
@@ -1848,7 +1848,7 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="2014"/>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3743"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3750"/>
         <source>Sorry!</source>
         <translation>Съжелявам!</translation>
     </message>
@@ -1997,7 +1997,7 @@ We&apos;re working to avoid this message, and only let you choose between proper
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="188"/>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="292"/>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3844"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3851"/>
         <source>Cancel</source>
         <translation>Отмени</translation>
     </message>
@@ -3581,23 +3581,31 @@ Go ahead and revert?</source>
         <source>Shift+Ctrl+1</source>
         <translation>Shift+Ctrl+1</translation>
     </message>
+    <message numerus="yes">
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3685"/>
+        <source>There are %n outdated part(s) in this sketch. </source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4284"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4291"/>
         <source>Enter Text</source>
         <translation>Въведи Текст</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4285"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4292"/>
         <source>Text will match part label, description, title, etc. Enter text to search for:</source>
         <translation>Текстът ще бъде съпоставен с етикета на частта ,описанието,заглавието и и тн. Въведете текст който да се използва за критерии :</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4323"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4330"/>
         <source>Search</source>
         <translation>Търси</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4323"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4330"/>
         <source>No parts matched search term &apos;%1&apos;.</source>
         <translation>Никакви части не съвпадат с думата за търсене  &apos;%1&apos;.</translation>
     </message>
@@ -3798,86 +3806,81 @@ Go ahead and revert?</source>
         <translation>Моля изберете Платка -- запълването с заземяваща писта може да обработва само по една платка на веднъж</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3684"/>
-        <source>There are outdated parts in this sketch. </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3685"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3686"/>
         <source>We strongly recommend that you update these parts to the latest version. </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3686"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3687"/>
         <source>This may result in some small changes to your sketch, because parts or connectors may be shifted. </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3687"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3688"/>
         <source>
 
 Do you want to update now?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3845"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3852"/>
         <source>OK</source>
         <translation>Потвърди</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3867"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3874"/>
         <source>Set the grid size for %1.</source>
         <translation>Задай размер на решетката (мрежата) за %1.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3874"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3881"/>
         <source>Grid Size:</source>
         <translation>Размер на решетката (мрежата):</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3888"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3895"/>
         <source>in</source>
         <translation>инча</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3891"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3898"/>
         <source>mm</source>
         <translation>мм.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3900"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3907"/>
         <source>Restore Default</source>
         <translation>Възстанови настройките по подразбиране</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4027"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4034"/>
         <source>Your sketch does not have a board yet! DRC only works with a PCB.</source>
         <translation>Вашата схема още си няма платка !Проверката за правилата при проектиране (DRC) работи само когато такава е налична.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4033"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4040"/>
         <source>Please select a PCB. DRC only works on one board at a time.</source>
         <translation>Моля изберете печатна платка. Проверката за правилата при проектиране (DRC) може да обработва само по една платка на веднъж.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4043"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4050"/>
         <source>DRC Progress...</source>
         <translation>Прогрес на проверката за правилата при дизайна ...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4162"/>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4179"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4169"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4186"/>
         <source>Your sketch does not have a board yet! Please add a PCB in order to use copper fill operations.</source>
         <translation>Вашата схема още си няма платка !Моля добавете такава за да можете за да изполвате запълването с медна писта</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4167"/>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4184"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4174"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4191"/>
         <source>Please select a PCB. Copper fill operations only work on one board at a time.</source>
         <translation>Моля изберете Платка -- запълването с медна писта може да обработва само по една платка на веднъж</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4251"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4258"/>
         <source>%1 background Color</source>
         <translation>%1 Цвят на фона</translation>
     </message>
@@ -4067,24 +4070,24 @@ All your parts are up-to-date.</source>
 Всички части са последната ревизия.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3683"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3684"/>
         <source>Outdated parts</source>
         <translation>Остарели части</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3744"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3751"/>
         <source>unable to find replacement for %1.
 </source>
         <translation>не може да се намери заменка за  %1.
 </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3800"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3807"/>
         <source>Update %1 part(s)</source>
         <translation>Обнови %1 част(и)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3805"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3812"/>
         <source>Successfully updated %1 part(s).
 Please check all views for potential side-effects.</source>
         <translation>Успешно са обновени %1 част(и)
@@ -6502,7 +6505,7 @@ shift разменя оста за scroll</translation>
         <translation>Жица(проводник)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3837"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3844"/>
         <source>Set Grid Size</source>
         <translation>Задай размера на решетката</translation>
     </message>
@@ -6805,7 +6808,7 @@ Fritzing все още работи ,но няма да можете да сме
         <translation>Избери остарелите морално части</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="8216"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="8217"/>
         <source>Select locked parts</source>
         <translation>Избери заключените части</translation>
     </message>
@@ -7829,13 +7832,13 @@ Fritzing все още работи ,но няма да можете да сме
     </message>
     <message>
         <location filename="../src/sketch/sketchwidget.cpp" line="3523"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9525"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9526"/>
         <source>Select %1</source>
         <translation>Избери %1</translation>
     </message>
     <message>
         <location filename="../src/sketch/sketchwidget.cpp" line="3526"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9528"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9529"/>
         <source>Select %1 items</source>
         <translation>Избери %1 предмети </translation>
     </message>
@@ -8031,7 +8034,7 @@ Fritzing все още работи ,но няма да можете да сме
     </message>
     <message>
         <location filename="../src/sketch/sketchwidget.cpp" line="7761"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="8645"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="8646"/>
         <source>Resize board to %1 %2</source>
         <translation>Преоразмери платката на %1 %2</translation>
     </message>
@@ -8051,32 +8054,32 @@ Fritzing все още работи ,но няма да можете да сме
         <translation>Откачи всички жици от %1 предмети </translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="8296"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="8297"/>
         <source>Change image from %1 to %2</source>
         <translation>Промени картинката от %1 на %2</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9106"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9107"/>
         <source>change pin labels</source>
         <translation>промени етикетите на пиновете </translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9398"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9399"/>
         <source>Unrouted connections are highlighted in yellow.</source>
         <translation>Непрекараните връзки са отбелязани в жълто</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9399"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9400"/>
         <source>There are no unrouted connections</source>
         <translation>Има непрекарани връзки</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9400"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9401"/>
         <source>Unrouted connections</source>
         <translation>Непрекарани връзки</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9401"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9402"/>
         <source>%1
 
 Note: you can also trigger this display by mousing down on the routing status text in the status bar.</source>
@@ -8085,17 +8088,17 @@ Note: you can also trigger this display by mousing down on the routing status te
 Забележка : бихте могли също да изкарате този дисплей като отидете с мишката върху статуса на рутиране на пистите в лентата с статуса</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9448"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9449"/>
         <source>Part &apos;%1&apos; not found in sketch</source>
         <translation>Частта &apos;%1&apos;не е намерена в схемата</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9460"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9461"/>
         <source>Add %1 parts</source>
         <translation>Добави %1 части</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9522"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9523"/>
         <source>Deselect all</source>
         <translation>Отмени селекцията от всичко</translation>
     </message>

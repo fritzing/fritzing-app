@@ -3253,10 +3253,6 @@ Doorgaan en terug naar vorige versie?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>There are outdated parts in this sketch. </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>We strongly recommend that you update these parts to the latest version. </source>
         <translation type="unfinished"></translation>
     </message>
@@ -3269,6 +3265,13 @@ Doorgaan en terug naar vorige versie?</translation>
 
 Do you want to update now?</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message numerus="yes">
+        <source>There are %n outdated part(s) in this sketch. </source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
     </message>
 </context>
 <context>

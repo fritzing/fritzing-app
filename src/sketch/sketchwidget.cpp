@@ -8199,7 +8199,7 @@ QList<ItemBase *> SketchWidget::selectAllObsolete()
 		itemBases.insert(itemBase->layerKinChief());
 	}
 
-	int count = selectAllItems(itemBases, QObject::tr("Select outdated parts"));
+	selectAllItems(itemBases, QObject::tr("Select outdated parts"));
     return itemBases.toList();
 }
 

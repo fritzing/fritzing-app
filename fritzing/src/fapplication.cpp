@@ -1784,8 +1784,10 @@ void FApplication::runExampleService(QDir & dir) {
 			DebugDialog::debug(QString("failed to load"));
 		}
 		else {
-			mainWindow->selectAllObsolete(false);
-			mainWindow->swapObsolete(false);
+			QList<ItemBase *> items = mainWindow->selectAllObsolete(false);
+			if (items.count() > 0) {
+                mainWindow->swapObsolete(false, items);
+            }
 			mainWindow->saveAsAux(path);    //   path + "z"
 			mainWindow->setCloseSilently(true);
 			mainWindow->close();

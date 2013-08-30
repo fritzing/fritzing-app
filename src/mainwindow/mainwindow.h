@@ -180,8 +180,8 @@ public:
 	void swapSelectedAux(ItemBase * itemBase, const QString & moduleID, bool useViewLayerPlacement, ViewLayer::ViewLayerPlacement, QMap<QString, QString> & propsMap);
     void swapLayers(ItemBase * itemBase, int layers, const QString & msg, int delay);
 	bool saveAsAux(const QString & fileName);
-	void swapObsolete(bool displayFeedback);
-	void selectAllObsolete(bool displayFeedback);
+	void swapObsolete(bool displayFeedback, QList<ItemBase *> &);
+	QList<ItemBase *> selectAllObsolete(bool displayFeedback);
 	void hideTempPartsBin();
 	const QString & fritzingVersion();
 	void removeGroundFill(ViewLayer::ViewLayerID, QUndoCommand * parentCommand);
@@ -592,7 +592,7 @@ protected:
 	virtual QWidget * currentTabWidget();
 	virtual bool activeLayerWidgetAlwaysOn();
     bool copySvg(const QString & path, QFileInfoList & svgEntryInfoList);
-    void checkSwapObsolete(int obsoleteCount);
+    void checkSwapObsolete(QList<ItemBase *> &);
 
 protected:
 	static void removeActionsStartingAt(QMenu *menu, int start=0);

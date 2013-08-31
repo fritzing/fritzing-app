@@ -1361,8 +1361,7 @@ MainWindow * Panelizer::inscribeBoard(QDomElement & board, QHash<QString, QStrin
     }
 
     QFile file(originalPath);
-    QFile::remove(copyPath);
-    bool ok = file.copy(copyPath);
+    bool ok = FolderUtils::slamCopy(file, copyPath);
     if (!ok) {
         QMessageBox::warning(NULL, QObject::tr("Fritzing"), QObject::tr("unable to copy file '%1' to '%2'.").arg(originalPath).arg(copyPath));
         return NULL;

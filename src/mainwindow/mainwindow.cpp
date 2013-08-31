@@ -1361,7 +1361,7 @@ void MainWindow::loadBundledSketch(const QString &fileName, bool addToRecent, bo
                 QFileInfo destInfo(destPath);
                 QFile file(destPath);
                 DebugDialog::debug(QString("found missing %1").arg(destPath));
-                file.copy(destInfo.absoluteDir().absoluteFilePath(suffix));         // make another copy that has the name used in the fzp file
+                FolderUtils::slamCopy(file, destInfo.absoluteDir().absoluteFilePath(suffix));         // make another copy that has the name used in the fzp file
                 svgEntryInfoList.removeAt(jx);
                 break;
             }
@@ -1423,7 +1423,7 @@ bool MainWindow::copySvg(const QString & path, QFileInfoList & svgEntryInfoList)
             QFile file(destPath);
             guidix = GuidMatcher.lastIndexIn(destPath);
             destPath.replace(guidix, GuidMatcher.cap(0).length(), originalGuid);
-            file.copy(destPath);
+            FolderUtils::slamCopy(file, destPath);
             DebugDialog::debug(QString("found matching svg %1").arg(destPath));
             svgEntryInfoList.removeAt(jx);
             return true;
@@ -1592,7 +1592,7 @@ QStringList MainWindow::saveBundledAux(ModelPart *mp, const QDir &destFolder) {
 	QFile file(partPath);
 	QString fn = ZIP_PART + QFileInfo(partPath).fileName();
 	names << fn;
-	file.copy(destFolder.path()+"/"+fn);
+    FolderUtils::slamCopy(file, destFolder.path()+"/"+fn);
 
 	QList<ViewLayer::ViewID> viewIDs;
 	viewIDs << ViewLayer::IconView << ViewLayer::BreadboardView << ViewLayer::SchematicView << ViewLayer::PCBView;
@@ -1607,7 +1607,7 @@ QStringList MainWindow::saveBundledAux(ModelPart *mp, const QDir &destFolder) {
 		basename.replace("/", ".");
 		QString fn = ZIP_SVG + basename;
 		names << fn;
-		file.copy(destFolder.path()+"/"+fn);
+        FolderUtils::slamCopy(file, destFolder.path()+"/"+fn);
 	}
 
 	return names;
@@ -1672,7 +1672,7 @@ QString MainWindow::copyToSvgFolder(const QFileInfo& file, bool addToAlien, cons
 		prefixFolder+"/svg/"+destFolder+"/"+viewFolder+"/"+fileName;
 
 	backupExistingFileIfExists(destFilePath);
-	if(svgfile.copy(destFilePath)) {
+	if(FolderUtils::slamCopy(svgfile, destFilePath)) {
 		if (addToAlien) {
 			m_alienFiles << destFilePath;
 		}
@@ -1689,7 +1689,7 @@ ModelPart* MainWindow::copyToPartsFolder(const QFileInfo& file, bool addToAlien,
 		prefixFolder+"/"+destFolder+"/"+file.fileName().remove(QRegExp("^"+ZIP_PART));
 
 	backupExistingFileIfExists(destFilePath);
-	if(partfile.copy(destFilePath)) {
+	if(FolderUtils::slamCopy(partfile, destFilePath)) {
 		if (addToAlien) {
 			m_alienFiles << destFilePath;
 			m_alienPartsMsg = tr("Do you want to keep the imported parts?");
@@ -1725,7 +1725,7 @@ void MainWindow::backupExistingFileIfExists(const QString &destFilePath) {
 		m_filesReplacedByAlienOnes << destFilePath;
 		QFile file(destFilePath);
 		bool alreadyExists = file.exists();
-		file.copy(m_tempDir.path()+"/"+fileBackupName);
+		FolderUtils::slamCopy(file, m_tempDir.path()+"/"+fileBackupName);
 
 		if(alreadyExists) {
 			file.remove(destFilePath);
@@ -1739,7 +1739,7 @@ void MainWindow::recoverBackupedFiles() {
 		if(file.exists(originalFilePath)) {
 			file.remove();
 		}
-		file.copy(originalFilePath);
+		FolderUtils::slamCopy(file, originalFilePath);
 	}
 	resetTempFolder();
 }

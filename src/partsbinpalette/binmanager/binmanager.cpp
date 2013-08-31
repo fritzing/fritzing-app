@@ -303,7 +303,7 @@ QString BinManager::createIfBinNotExists(const QString & dest, const QString & s
 {
     QString binPath = dest;
     QFile file(source);
-	file.copy(binPath);
+	FolderUtils::slamCopy(file, binPath);
 	return binPath;
 }
 
@@ -1277,7 +1277,7 @@ void BinManager::copyFilesToContrib(ModelPart * mp, QWidget * originator) {
 	QFile fzp(path);
 	
 	QString parts = FolderUtils::getUserDataStorePath("parts");
-	fzp.copy(parts + "/contrib/" + info.fileName());
+    FolderUtils::slamCopy(fzp, parts + "/contrib/" + info.fileName());
 	QString prefix = parts + "/svg/contrib/";
 
 	QDir dir = info.absoluteDir();
@@ -1291,7 +1291,7 @@ void BinManager::copyFilesToContrib(ModelPart * mp, QWidget * originator) {
 		QString fn = mp->hasBaseNameFor(viewID);
 		if (!fn.isEmpty()) {
 			QFile svg(dir.absoluteFilePath(fn));
-			svg.copy(prefix + fn);
+            FolderUtils::slamCopy(svg, prefix + fn);
 		}
 	}
 }

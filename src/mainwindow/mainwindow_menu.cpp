@@ -306,7 +306,7 @@ bool MainWindow::loadWhich(const QString & fileName, bool setAsLastOpened, bool 
 
 		QFile file(fileName);
 		QDir dest(m_fzzFolder);
-		file.copy(dest.absoluteFilePath(info.fileName()));			// copy the .fz file directly
+		FolderUtils::slamCopy(file, dest.absoluteFilePath(info.fileName()));			// copy the .fz file directly
 
 		if (answer == QMessageBox::Yes) {
 			saveAsShareable(bundledFileName, false);					// false to prevent saving a bundle inside the bundle
@@ -3073,7 +3073,7 @@ void MainWindow::importFilesFromPrevInstall() {
 	if(myOldPartsBinFile.exists()) {
 		QDateTime now = QDateTime::currentDateTime();
 		QString newNamePostfix = QString("__imported_on__%1.fzb").arg(now.toString("yyyy-MM-dd_hh-mm-ss"));
-		myOldPartsBinFile.copy(userDataPath+myPartsBinRelPath.replace(".fzb",newNamePostfix));
+		FolderUtils::slamCopy(myOldPartsBinFile, userDataPath+myPartsBinRelPath.replace(".fzb",newNamePostfix));
 	}
 
 	QMessageBox::information(

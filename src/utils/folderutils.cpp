@@ -397,7 +397,7 @@ bool FolderUtils::createZipAndSaveTo(const QDir &dirToCompress, const QString &f
 		QFile::remove(filepath);
 	}
 	QFile file(tempZipFile);
-	file.copy(filepath);
+	FolderUtils::slamCopy(file, filepath);
 	file.remove();
 
 	if(zip.getZipError()!=0) {
@@ -575,4 +575,12 @@ void FolderUtils::copyBin(const QString & dest, const QString & source) {
 #endif
 
     );
+}
+
+bool FolderUtils::slamCopy(QFile & file, const QString & dest) {
+    bool result = file.copy(dest);
+    if (result) return result;
+
+    file.remove(dest);
+    return file.copy(dest);
 }

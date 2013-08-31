@@ -872,7 +872,7 @@ void MainWindow::saveBundledNonAtomicEntity(QString &filename, const QString &ex
 			LinkedFile * linkedFile = m_linkedProgramFiles.at(i);
 			QFileInfo fileInfo(linkedFile->linkedFilename);
 			QFile file(linkedFile->linkedFilename);
-			file.copy(destFolder.absoluteFilePath(fileInfo.fileName()));
+			FolderUtils::slamCopy(file, destFolder.absoluteFilePath(fileInfo.fileName()));
 		}
         skipSuffixes << FritzingBinExtension << FritzingBundleExtension;
 	}

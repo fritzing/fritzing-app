@@ -30,7 +30,8 @@ $Date: 2012-09-16 23:31:00 +0200 (So, 16. Sep 2012) $
 #include "../utils/textutils.h"
 #include "../debugdialog.h"
 #include <QMatrix>
-#include <QRegExp>   
+#include <QRegExp>
+#include <QTextStream>   
 #include <qmath.h>
 
 SvgFlattener::SvgFlattener() : SvgFileSplitter()
@@ -291,41 +292,29 @@ void SvgFlattener::replaceElementID(const QString & filename, const QString & sv
     }
 }
 
-void SvgFlattener::flipSMDSvg(const QString & filename, const QString & svg, QDomDocument & domDocument, const QString & elementID, const QString & altElementID, double printerScale, Qt::Orientations orientation) 
+void SvgFlattener::flipSMDSvg(const QString & filename, const QString & svg, QDomDocument & flipDoc, const QString & elementID, const QString & altElementID, double printerScale, Qt::Orientations orientation) 
 {
+    QDomDocument domDocument;
     if (!loadDocIf(filename, svg, domDocument)) return;
 
     QDomElement root = domDocument.documentElement();
-
-	QSvgRenderer renderer;
-	bool loaded;
-	if (filename.isEmpty()) {
-		loaded = renderer.load(svg.toUtf8());
-	}
-	else {
-		loaded = renderer.load(filename);
-	}
-
-	if (!loaded) return;
-
 	QDomElement element = TextUtils::findElementWithAttribute(root, "id", elementID);
 	if (!element.isNull()) {
 		QDomElement altElement = TextUtils::findElementWithAttribute(root, "id", altElementID);
-		flipSMDElement(domDocument, renderer, element, elementID, altElement, altElementID, printerScale,  orientation);
+		QString svg = flipSMDElement(domDocument, element, elementID, altElement, altElementID, printerScale,  orientation);
+        if (svg.length() > 0) {
+            flipDoc.setContent(svg);
+        }
 	}
 
-#ifndef QT_NO_DEBUG
-	//QString temp = domDocument.toString();
-	//Q_UNUSED(temp);
-#endif
 }
 
-void SvgFlattener::flipSMDElement(QDomDocument & domDocument, QSvgRenderer & renderer, QDomElement & element, const QString & att, QDomElement altElement, const QString & altAtt, double printerScale, Qt::Orientations orientation) 
+QString SvgFlattener::flipSMDElement(QDomDocument & domDocument, QDomElement & element, const QString & att, QDomElement altElement, const QString & altAtt, double printerScale, Qt::Orientations orientation) 
 {
 	Q_UNUSED(printerScale);
 	Q_UNUSED(att);
 
-	QMatrix m = renderer.matrixForElement(att) * TextUtils::elementToMatrix(element);
+	QMatrix m;
 	//QRectF bounds = renderer.boundsOnElement(att);
     QRectF bounds;   // want part bounds, not layer bounds
     double w, h;
@@ -334,6 +323,13 @@ void SvgFlattener::flipSMDElement(QDomDocument & domDocument, QSvgRenderer & ren
 	QMatrix mMinus = m.inverted();
     QMatrix cm = mMinus * ((orientation & Qt::Vertical) ? QMatrix().scale(-1, 1) : QMatrix().scale(1, -1)) * m;
 	QDomElement newElement = element.cloneNode(true).toElement();
+
+#ifndef QT_NODEBUG
+    QString string;
+    QTextStream textStream(&string);
+    newElement.save(textStream, 1);
+#endif
+
 	newElement.removeAttribute("id");
 	QDomElement pElement = domDocument.createElement("g");
 	pElement.setAttribute("id", altAtt);
@@ -341,12 +337,30 @@ void SvgFlattener::flipSMDElement(QDomDocument & domDocument, QSvgRenderer & ren
     QDomElement mElement = domDocument.createElement("g");
 	TextUtils::setSVGTransform(mElement, cm);
     pElement.appendChild(mElement);
-    mElement.appendChild(newElement);
+    QDomElement tElementChild = domDocument.createElement("g");
+    QDomElement tElementParent = tElementChild;
+
+    QDomElement parent = element.parentNode().toElement();
+    while (!parent.isNull()) {
+        QString transform = parent.attribute("transform");
+        if (!transform.isEmpty()) {
+            QDomElement t = domDocument.createElement("g");
+            t.setAttribute("transform", transform);
+            t.appendChild(tElementParent);
+            tElementParent = t;
+        }
+        parent = parent.parentNode().toElement();
+    }
+    mElement.appendChild(tElementParent);
+
+    tElementChild.appendChild(newElement);
 	if (!altElement.isNull()) {
-		mElement.appendChild(altElement);
+		tElementChild.appendChild(altElement);
 		altElement.removeAttribute("id");
 	}
-	element.parentNode().appendChild(pElement);
+ 
+	domDocument.documentElement().appendChild(pElement);
+    return domDocument.toString();
 }
 
 bool SvgFlattener::loadDocIf(const QString & filename, const QString & svg, QDomDocument & domDocument) {

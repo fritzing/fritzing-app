@@ -44,7 +44,7 @@ public:
 	static void replaceElementID(const QString & filename, const QString & svg, QDomDocument & flipDoc, const QString & elementID, const QString & altElementID);
 
 protected:
-	static void flipSMDElement(QDomDocument & domDocument, QSvgRenderer & renderer, QDomElement & element, const QString & att, QDomElement altAtt, const QString & altElementID, double printerScale, Qt::Orientations);
+	static QString flipSMDElement(QDomDocument & domDocument, QDomElement & element, const QString & att, QDomElement altAtt, const QString & altElementID, double printerScale, Qt::Orientations);
     static bool hasOtherTransform(QDomElement & element);
     static bool hasTranslate(QDomElement & element);
     static bool loadDocIf(const QString & filename, const QString & svg, QDomDocument & domDocument);

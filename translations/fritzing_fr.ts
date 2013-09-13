@@ -5441,7 +5441,7 @@ is already there, we won&apos;t add it again, right?</source>
     </message>
     <message>
         <source>PCB View</source>
-        <translation>Vue de la platine d&apos;essai</translation>
+        <translation type="unfinished">Vue du circuit imprimé</translation>
     </message>
     <message>
         <source>Sorry, can&apos;t handle pad type %1</source>
@@ -5549,7 +5549,7 @@ is already there, we won&apos;t add it again, right?</source>
     </message>
     <message>
         <source>pcb view</source>
-        <translation>vue de la platine d&apos;essai</translation>
+        <translation type="unfinished">vue du circuit imprimé</translation>
     </message>
     <message>
         <source>File %1 already exists: it won&apos;t be overwritten</source>

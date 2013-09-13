@@ -6397,8 +6397,8 @@ shift key swaps scroll axis</source>
         <location filename="../src/autoroute/mazerouter/mazerouter.cpp" line="665"/>
         <location filename="../src/autoroute/mazerouter/mazerouter.cpp" line="734"/>
         <location filename="../src/autoroute/panelizer.cpp" line="486"/>
-        <location filename="../src/autoroute/panelizer.cpp" line="1367"/>
-        <location filename="../src/autoroute/panelizer.cpp" line="1386"/>
+        <location filename="../src/autoroute/panelizer.cpp" line="1366"/>
+        <location filename="../src/autoroute/panelizer.cpp" line="1385"/>
         <location filename="../src/fapplication.cpp" line="925"/>
         <location filename="../src/mainwindow/fritzingwindow.cpp" line="50"/>
         <location filename="../src/mainwindow/fritzingwindow.cpp" line="143"/>
@@ -7237,12 +7237,12 @@ is already there, we won&apos;t add it again, right?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/autoroute/panelizer.cpp" line="1367"/>
+        <location filename="../src/autoroute/panelizer.cpp" line="1366"/>
         <source>unable to copy file &apos;%1&apos; to &apos;%2&apos;.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/autoroute/panelizer.cpp" line="1385"/>
+        <location filename="../src/autoroute/panelizer.cpp" line="1384"/>
         <source>%2 ... %1 wires moved from their saved position</source>
         <translation type="unfinished"></translation>
     </message>
@@ -8320,7 +8320,7 @@ Note: you can also trigger this display by mousing down on the routing status te
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/items/tracewire.cpp" line="84"/>
+        <location filename="../src/items/tracewire.cpp" line="90"/>
         <source>width</source>
         <translation type="unfinished"></translation>
     </message>
@@ -8652,12 +8652,12 @@ Note: you can also trigger this display by mousing down on the routing status te
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/items/wire.cpp" line="1542"/>
+        <location filename="../src/items/wire.cpp" line="1543"/>
         <source>color</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/items/wire.cpp" line="1566"/>
+        <location filename="../src/items/wire.cpp" line="1567"/>
         <source>Banded</source>
         <translation type="unfinished"></translation>
     </message>

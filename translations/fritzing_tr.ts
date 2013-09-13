@@ -6420,8 +6420,8 @@ shift tuşu ilerleme eksenini değiştirir</translation>
         <location filename="../src/autoroute/mazerouter/mazerouter.cpp" line="665"/>
         <location filename="../src/autoroute/mazerouter/mazerouter.cpp" line="734"/>
         <location filename="../src/autoroute/panelizer.cpp" line="486"/>
-        <location filename="../src/autoroute/panelizer.cpp" line="1367"/>
-        <location filename="../src/autoroute/panelizer.cpp" line="1386"/>
+        <location filename="../src/autoroute/panelizer.cpp" line="1366"/>
+        <location filename="../src/autoroute/panelizer.cpp" line="1385"/>
         <location filename="../src/fapplication.cpp" line="925"/>
         <location filename="../src/mainwindow/fritzingwindow.cpp" line="50"/>
         <location filename="../src/mainwindow/fritzingwindow.cpp" line="143"/>
@@ -7296,12 +7296,12 @@ Fritzing hala çalışıyor ancak elemanın özelliklerini değiştiremeyeceksin
         <translation>Toprak Dolgu Tane Düzenleyici</translation>
     </message>
     <message>
-        <location filename="../src/autoroute/panelizer.cpp" line="1367"/>
+        <location filename="../src/autoroute/panelizer.cpp" line="1366"/>
         <source>unable to copy file &apos;%1&apos; to &apos;%2&apos;.</source>
         <translation>&apos;%1&apos; &apos;%2&apos;&apos;ye kopyalanamıyor.</translation>
     </message>
     <message>
-        <location filename="../src/autoroute/panelizer.cpp" line="1385"/>
+        <location filename="../src/autoroute/panelizer.cpp" line="1384"/>
         <source>%2 ... %1 wires moved from their saved position</source>
         <translation type="unfinished"></translation>
     </message>
@@ -8384,7 +8384,7 @@ Not:Bu görüntüyü fareyi durum çubuğundaki yönlendirme durumu metni üzeri
         <translation>Tıkla aşağı düşür&apos;den seç ya da %1 ile %2 arasında herhangi bir değer yaz</translation>
     </message>
     <message>
-        <location filename="../src/items/tracewire.cpp" line="84"/>
+        <location filename="../src/items/tracewire.cpp" line="90"/>
         <source>width</source>
         <translation>genişlik</translation>
     </message>
@@ -8716,12 +8716,12 @@ Not:Bu görüntüyü fareyi durum çubuğundaki yönlendirme durumu metni üzeri
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/items/wire.cpp" line="1542"/>
+        <location filename="../src/items/wire.cpp" line="1543"/>
         <source>color</source>
         <translation>renk</translation>
     </message>
     <message>
-        <location filename="../src/items/wire.cpp" line="1566"/>
+        <location filename="../src/items/wire.cpp" line="1567"/>
         <source>Banded</source>
         <translation type="unfinished"></translation>
     </message>

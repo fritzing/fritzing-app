@@ -50,6 +50,7 @@ $Date: 2013-04-22 23:44:56 +0200 (Mo, 22. Apr 2013) $
 #include <QApplication>
 #include <QColor>
 #include <QColorDialog>
+#include <QBuffer>
 
 static QStringList LogoImageNames;
 static QStringList Logo0ImageNames;
@@ -408,22 +409,58 @@ void LogoItem::loadImage(const QString & fileName, bool addName)
 		if (image.format() != QImage::Format_RGB32 && image.format() != QImage::Format_ARGB32) {
 			image = image.convertToFormat(QImage::Format_Mono);
 		}
+		
+        double res = image.dotsPerMeterX() / GraphicsUtils::InchesPerMeter;
+        if (this->m_standardizeColors) {
+		    GroundPlaneGenerator gpg;
+		    gpg.setLayerName(layerName());
+		    gpg.setMinRunSize(1, 1);
+		    gpg.scanImage(image, image.width(), image.height(), 1, res, colorString(), false, false, QSizeF(0, 0), 0, QPointF(0, 0));
+		    if (gpg.newSVGs().count() < 1) {
+			    QMessageBox::information(
+				    NULL,
+				    tr("Unable to display"),
+				    tr("Unable to display image from %1").arg(fileName)
+			    );
+			    return;
+		    }
 
-		GroundPlaneGenerator gpg;
-		gpg.setLayerName(layerName());
-		gpg.setMinRunSize(1, 1);
-		double res = image.dotsPerMeterX() / GraphicsUtils::InchesPerMeter;
-		gpg.scanImage(image, image.width(), image.height(), 1, res, colorString(), false, false, QSizeF(0, 0), 0, QPointF(0, 0));
-		if (gpg.newSVGs().count() < 1) {
-			QMessageBox::information(
-				NULL,
-				tr("Unable to display"),
-				tr("Unable to display image from %1").arg(fileName)
-			);
-			return;
-		}
+            svg = gpg.mergeSVGs("", layerName());
+        }
+        else {
+            svg = TextUtils::makeSVGHeader(res, res, image.width(), image.height());
+            int ix = svg.lastIndexOf(">");
+            svg.replace(ix, 1, "xmlns:xlink='http://www.w3.org/1999/xlink'>");
+            QString type = "png";
+            QByteArray bytes;
+            if (fileName.endsWith(".png") || fileName.endsWith(".jpg") || fileName.endsWith("jpeg")) {
+                if (!fileName.endsWith(".png")) type = "jpg";
+                QFile file(fileName);
+                file.open(QFile::ReadOnly);
+                bytes = file.readAll();
+            }
+            else {
+                QBuffer buffer(&bytes);
+                buffer.open(QIODevice::WriteOnly);
+                image.save(&buffer, "PNG"); // writes image into bytes in PNG format
+            }
 
-        svg = gpg.mergeSVGs("", layerName());
+            svg += QString("<image x='0' y='0' width='%1' height='%2' xlink:href='data:image/%3;base64,")
+                .arg(image.width()).arg(image.height()).arg(type);
+
+            int remaining = bytes.count();
+            ix = 0;
+            while (remaining > 0) {
+                QByteArray sixty = bytes.mid(ix, qMin(remaining, 60));
+                svg += QString(sixty.toBase64());
+                svg += "\n";
+                ix += 60;
+                remaining -= 60;
+            }
+
+            svg += "'/>\n";
+            svg += "</svg>";
+        }
 	}
 
 	reloadImage(svg, QSizeF(0, 0), fileName, addName);
@@ -833,6 +870,7 @@ BreadboardLogoItem::BreadboardLogoItem( ModelPart * modelPart, ViewLayer::ViewID
 		modelPart->setLocalProp("color", color);
 	}
     m_color = color;
+    m_standardizeColors = false;
 }
 
 BreadboardLogoItem::~BreadboardLogoItem() {

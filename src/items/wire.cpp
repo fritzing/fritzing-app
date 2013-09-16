@@ -1535,6 +1535,7 @@ bool Wire::collectExtraInfo(QWidget * parent, const QString & family, const QStr
 {
 	if (prop.compare("width", Qt::CaseInsensitive) == 0) {
 		// don't display width property
+        hide = true;
 		return false;
 	}
 

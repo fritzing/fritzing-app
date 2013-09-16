@@ -2148,13 +2148,6 @@ Todos os seus componentes estão atualizados.</translation>
         <source>Outdated parts</source>
         <translation>Componentes desatualizados</translation>
     </message>
-    <message numerus="yes">
-        <source>Found %n outdated parts. Do you want to update them now?</source>
-        <translation>
-            <numerusform>Foram encontradas %n componentes desatualizados. Deseja atualizar esses componentes?</numerusform>
-            <numerusform>Foram encontradas %n componentes desatualizados. Deseja atualizar esses componentes?</numerusform>
-        </translation>
-    </message>
     <message>
         <source>Successfully updated %1 part(s).
 Please check all views for potential side-effects.</source>
@@ -3258,6 +3251,27 @@ Ir em frente e desfazer?</translation>
     <message>
         <source>Copper Fill (%1)</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>We strongly recommend that you update these parts to the latest version. </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This may result in some small changes to your sketch, because parts or connectors may be shifted. </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>
+
+Do you want to update now?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message numerus="yes">
+        <source>There are %n outdated part(s) in this sketch. </source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
     </message>
 </context>
 <context>
@@ -5794,6 +5808,10 @@ is already there, we won&apos;t add it again, right?</source>
         <source>silk layer %1 export is empty</source>
         <translation>exportação da camada de impressão %1 está vazia</translation>
     </message>
+    <message>
+        <source>%2 ... %1 wires moved from their saved position</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>QShortcut</name>
@@ -6516,10 +6534,6 @@ Nota: você pode também acionar este aviso passando o mouse pelo texto de estad
         <translation>&lt;li&gt;Na Visão Esquemático ou PCB, se você arrastar a partir de um ponto de flexão com o Alt pressionado (Linux: Meta), você arrastará um novo fio a partir desse ponto de curva.&lt;/li&gt;</translation>
     </message>
     <message>
-        <source>&lt;li&gt;To drag the canvas, hold down the space bar and drag it with the mouse.&lt;/li&gt;</source>
-        <translation>&lt;li&gt;Para arrastar o canvas, segure a barra de espaço e arraste-a com o mouse.&lt;/li&gt;</translation>
-    </message>
-    <message>
         <source>&lt;li&gt;In Breadboard view, to drag out a wire from the end of a rubber-band leg, drag with the Alt (Linux: Meta) key down.&lt;/li&gt;</source>
         <translation>&lt;li&gt;Na vista de Breadboard, para largar um fio do final de um ponto de flexão, arrasta com o Alt (Linux: Meta) pressionado&lt;/li&gt;</translation>
     </message>
@@ -6550,6 +6564,46 @@ Nota: você pode também acionar este aviso passando o mouse pelo texto de estad
     <message>
         <source>&lt;li&gt;To more precisely move a selection of parts, use the arrow keys.  Shift-arrow moves by 10 units.&lt;/li&gt;</source>
         <translation>&lt;li&gt;Para mover mais precisamente uma seleção de componentes, utilize as setas do teclado.  Segurando Shift aumenta a movimentação por 10 unidades.&lt;/li&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;li&gt;&lt;h4&gt;parts&lt;/h4&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;/ul&gt;&lt;/li&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;li&gt;&lt;h4&gt;moving and selection&lt;/h4&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;li&gt;&lt;h4&gt;curves and rubber band legs&lt;/h4&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;li&gt;&lt;h4&gt;rotation&lt;/h4&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;li&gt;&lt;h4&gt;layers and views&lt;/h4&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;li&gt;To drag the canvas, hold down the space bar and drag with the mouse.&lt;/li&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;li&gt;&lt;h4&gt;part labels&lt;/h4&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;li&gt;To move a part label independently from its part, select the part first--both the part and the label will be highlighted. Once the label is selected you can drag it.&lt;/li&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;li&gt;&lt;h4&gt;wires and bendpoints&lt;/h4&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

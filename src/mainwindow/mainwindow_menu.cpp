@@ -301,12 +301,12 @@ bool MainWindow::loadWhich(const QString & fileName, bool setAsLastOpened, bool 
 			if (bundledFileName.isEmpty()) return false;	
 		}
 
-    	mainLoad(fileName, displayName);
+    	mainLoad(fileName, displayName, true);
 		result = true;
 
 		QFile file(fileName);
 		QDir dest(m_fzzFolder);
-		file.copy(dest.absoluteFilePath(info.fileName()));			// copy the .fz file directly
+		FolderUtils::slamCopy(file, dest.absoluteFilePath(info.fileName()));			// copy the .fz file directly
 
 		if (answer == QMessageBox::Yes) {
 			saveAsShareable(bundledFileName, false);					// false to prevent saving a bundle inside the bundle
@@ -343,7 +343,7 @@ bool MainWindow::loadWhich(const QString & fileName, bool setAsLastOpened, bool 
 	return result;
 }
 
-void MainWindow::mainLoad(const QString & fileName, const QString & displayName) {
+void MainWindow::mainLoad(const QString & fileName, const QString & displayName, bool checkObsolete) {
 
 	if (m_fileProgressDialog) {
 		m_fileProgressDialog->setMaximum(200);
@@ -443,6 +443,15 @@ void MainWindow::mainLoad(const QString & fileName, const QString & displayName)
     if (m_programView) {
         QFileInfo fileInfo(m_fwFilename);
         m_programView->linkFiles(m_linkedProgramFiles, fileInfo.absoluteDir().absolutePath());
+    }
+
+    if (checkObsolete) {
+        if (m_pcbGraphicsView) {
+            QList<ItemBase *> items = m_pcbGraphicsView->selectAllObsolete();
+	        if (items.count() > 0) {
+                checkSwapObsolete(items);
+            }
+        }
     }
 
 }
@@ -3064,7 +3073,7 @@ void MainWindow::importFilesFromPrevInstall() {
 	if(myOldPartsBinFile.exists()) {
 		QDateTime now = QDateTime::currentDateTime();
 		QString newNamePostfix = QString("__imported_on__%1.fzb").arg(now.toString("yyyy-MM-dd_hh-mm-ss"));
-		myOldPartsBinFile.copy(userDataPath+myPartsBinRelPath.replace(".fzb",newNamePostfix));
+		FolderUtils::slamCopy(myOldPartsBinFile, userDataPath+myPartsBinRelPath.replace(".fzb",newNamePostfix));
 	}
 
 	QMessageBox::information(
@@ -3655,27 +3664,38 @@ void MainWindow::selectAllObsolete() {
 	selectAllObsolete(true);
 }
 
-void MainWindow::selectAllObsolete(bool displayFeedback) {
-	int obs = m_currentGraphicsView->selectAllObsolete();
-	if (!displayFeedback) return;
+QList<ItemBase *> MainWindow::selectAllObsolete(bool displayFeedback) {
+	QList<ItemBase *> items = m_pcbGraphicsView->selectAllObsolete();
+	if (!displayFeedback) return items;
 
-	if (obs <= 0) {
+	if (items.count() <= 0) {
         QMessageBox::information(this, tr("Fritzing"), tr("No outdated parts found.\nAll your parts are up-to-date.") );
     } 
 	else {
-        QMessageBox::StandardButton answer = QMessageBox::question(
-                this,
-                tr("Outdated parts"),
-                tr("Found %n outdated parts. Do you want to update them now?", "", obs),
-                QMessageBox::Yes | QMessageBox::No,
-                QMessageBox::Yes
-        );
-        // TODO: make button texts translatable
-        if (answer == QMessageBox::Yes) {
-            swapObsolete();
-        }
+        checkSwapObsolete(items);
 	}
+
+    return items;
 }
+
+void MainWindow::checkSwapObsolete(QList<ItemBase *> & items) {
+    QMessageBox::StandardButton answer = QMessageBox::question(
+            this,
+            tr("Outdated parts"),
+            tr("There are %n outdated part(s) in this sketch. ", "", items.count()) +
+            tr("We strongly recommend that you update these parts to the latest version. ") +
+            tr("This may result in some small changes to your sketch, because parts or connectors may be shifted. ") +
+            tr("\n\nDo you want to update now?"),
+            QMessageBox::Yes | QMessageBox::No,
+            QMessageBox::Yes
+    );
+    // TODO: make button texts translatable
+    if (answer == QMessageBox::Yes) {
+        swapObsolete(true, items);
+    }
+}
+
+
 
 ModelPart * MainWindow::findReplacedby(ModelPart * originalModelPart) {
 	ModelPart * newModelPart = originalModelPart;
@@ -3696,22 +3716,28 @@ ModelPart * MainWindow::findReplacedby(ModelPart * originalModelPart) {
 }
 
 void MainWindow::swapObsolete() {
-	swapObsolete(true);
+    QList<ItemBase *> items;
+	swapObsolete(true, items);
 }
 
-void MainWindow::swapObsolete(bool displayFeedback) {
-
+void MainWindow::swapObsolete(bool displayFeedback, QList<ItemBase *> & items) {
 	QSet<ItemBase *> itemBases;
-	foreach (QGraphicsItem * item, m_currentGraphicsView->scene()->selectedItems()) {
-		ItemBase * itemBase = dynamic_cast<ItemBase *>(item);
-		if (itemBase == NULL) continue;
-		if (!itemBase->isObsolete()) continue;
 
-		itemBase = itemBase->layerKinChief();
-		itemBases.insert(itemBase);
-	}
+    if (items.count() == 0) {
+	    foreach (QGraphicsItem * item, m_pcbGraphicsView->scene()->selectedItems()) {
+		    ItemBase * itemBase = dynamic_cast<ItemBase *>(item);
+		    if (itemBase == NULL) continue;
+		    if (!itemBase->isObsolete()) continue;
 
-	if (itemBases.count() <= 0) return;
+		    itemBase = itemBase->layerKinChief();
+		    itemBases.insert(itemBase);
+	    }
+
+	    if (itemBases.count() <= 0) return;
+    }
+    else {
+        foreach (ItemBase * itemBase, items) itemBases.insert(itemBase);
+    }
 
 	QUndoCommand* parentCommand = new QUndoCommand();
     int count = 0;

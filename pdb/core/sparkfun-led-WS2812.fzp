@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?><module fritzingVersion="0.7.2b" moduleId="LED-SMD_RGB(WS2812)">
+<version>4</version>
+<date>2013-09-17</date>
+<label>RGB SMD LED</label>
+<author>fabian althaus</author>
+<description>The WS2812 is an RGB LED with a WS2811 control IC built right into the LED. This really blew our minds to see the control IC of an individually addressable RGB LED was moved into the actual LED, so we wanted to offer this amazing product to you! They&apos;re great when you need a lot of color from not a lot of board space, now more so than ever.</description>
+<title>SMD RGB LED (WS2812)</title>
+<tags>
+<tag>SMD</tag>
+<tag>5050</tag>
+<tag>WS2812</tag>
+<tag>RGB</tag>
+<tag>LED</tag>
+</tags>
+<properties>
+<property name="package">5050</property>
+<property name="family">sparkfun led</property>
+<property name="variant">WS2812</property>
+</properties>
+<views>
+<breadboardView>
+<layers image="breadboard/sparkfun-led-WS2812_breadboard.svg">
+<layer layerId="breadboard"/>
+</layers>
+</breadboardView>
+<schematicView>
+<layers image="schematic/sparkfun-led-WS2812_schematic.svg">
+<layer layerId="schematic"/>
+</layers>
+</schematicView>
+<pcbView>
+<layers image="pcb/sparkfun-5050_pcb.svg">
+<layer layerId="copper1"/>
+<layer layerId="silkscreen"/>
+</layers>
+</pcbView>
+<iconView>
+<layers image="breadboard/sparkfun-led-WS2812_breadboard.svg">
+<layer layerId="icon"/>
+</layers>
+</iconView>
+</views>
+<connectors>
+<connector id="connector0" name="DOut" type="male">
+<description>DOut - Control data signal output</description>
+<views>
+<breadboardView>
+<p layer="breadboard" svgId="connector0pin"/>
+</breadboardView>
+<schematicView>
+<p layer="schematic" svgId="connector0pin" terminalId="connector0terminal"/>
+</schematicView>
+<pcbView>
+<p layer="copper1" svgId="connector0pad"/>
+</pcbView>
+</views>
+</connector>
+<connector id="connector1" name="DIn" type="male">
+<description>DIn - Control data signal input</description>
+<views>
+<breadboardView>
+<p layer="breadboard" svgId="connector1pin"/>
+</breadboardView>
+<schematicView>
+<p layer="schematic" svgId="connector1pin" terminalId="connector1terminal"/>
+</schematicView>
+<pcbView>
+<p layer="copper1" svgId="connector1pad"/>
+</pcbView>
+</views>
+</connector>
+<connector id="connector2" name="VCC" type="male">
+<description>Vcc - Power supply control circuit</description>
+<views>
+<breadboardView>
+<p layer="breadboard" svgId="connector2pin"/>
+</breadboardView>
+<schematicView>
+<p layer="schematic" svgId="connector2pin" terminalId="connector2terminal"/>
+</schematicView>
+<pcbView>
+<p layer="copper1" svgId="connector2pad"/>
+</pcbView>
+</views>
+</connector>
+<connector id="connector3" name="NC" type="male">
+<description>NC</description>
+<views>
+<breadboardView>
+<p layer="breadboard" svgId="connector3pin"/>
+</breadboardView>
+<schematicView>
+<p layer="schematic" svgId="connector3pin" terminalId="connector3terminal"/>
+</schematicView>
+<pcbView>
+<p layer="copper1" svgId="connector3pad"/>
+</pcbView>
+</views>
+</connector>
+<connector id="connector4" name="VDD" type="male">
+<description>VDD - Power supply LED</description>
+<views>
+<breadboardView>
+<p layer="breadboard" svgId="connector4pin"/>
+</breadboardView>
+<schematicView>
+<p layer="schematic" svgId="connector4pin" terminalId="connector4terminal"/>
+</schematicView>
+<pcbView>
+<p layer="copper1" svgId="connector4pad"/>
+</pcbView>
+</views>
+</connector>
+<connector id="connector5" name="VSS" type="male">
+<description>VSS - Ground</description>
+<views>
+<breadboardView>
+<p layer="breadboard" svgId="connector5pin"/>
+</breadboardView>
+<schematicView>
+<p layer="schematic" svgId="connector5pin" terminalId="connector5terminal"/>
+</schematicView>
+<pcbView>
+<p layer="copper1" svgId="connector5pad"/>
+</pcbView>
+</views>
+</connector>
+</connectors>
+<buses>
+</buses>
+</module>

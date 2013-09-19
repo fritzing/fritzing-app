@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module fritzingVersion="0.4.3b.09.26.4458" moduleId="LilyPad Vibe Motor">
+    <author>J.A. Korten - JKSOFT Educational</author>
+    <title>Lilypad Vibe Motor</title>
+    <label>Lilypad Vibe</label>
+    <date>2010-11-18</date>
+    <tags>
+        <tag>Lilypad</tag>
+	<tag>Vibe</tag>
+	<tag>Motor</tag>
+    </tags>
+    <properties>
+        <property name="family">microcontroller board (lilypad)</property>
+        <property name="type">Vibe Board</property>
+    </properties>
+    <description>Description: Apply 5V and be shaken by this small, but powerful vibration motor. Works great as an physical indicator without notifying anyone but the wearer. (See: http://www.sparkfun.com/products/8468)</description>
+    <views>
+        <iconView>
+            <layers image="breadboard/Lilypad_Vib_Motor.svg">
+                <layer layerId="icon"/>
+            </layers>
+        </iconView>
+        <breadboardView>
+            <layers image="breadboard/Lilypad_Vibe_Motor.svg">
+                <layer layerId="breadboard"/>
+            </layers>
+        </breadboardView>
+        <schematicView>
+            <layers image="schematic/Lilypad_Vibe_Motor.svg">
+                <layer layerId="schematic"/>
+            </layers>
+        </schematicView>
+        <pcbView>
+            <layers image="pcb/Lilypad_Vibe_Motor.svg">
+                <layer layerId="copper0"/>
+                <layer layerId="silkscreen"/>
+                <layer layerId="copper1"/>
+            </layers>
+        </pcbView>
+    </views>
+    <connectors>
+        <connector id="connector18" type="female" name="Supply">
+            <description>Pin to 5V</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector18"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector18pin"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper1" svgId="connector18"/>
+                    <p layer="copper0" svgId="connector18"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector1" type="female" name="GND">
+            <description>Pin to GND</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector1"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector1pin"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper1" svgId="connector1"/>
+                    <p layer="copper0" svgId="connector1"/>
+                </pcbView>
+            </views>
+        </connector>
+    </connectors>
+</module>

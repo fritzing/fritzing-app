@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.2" baseProfile="tiny" id="Layer_1" xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="51.1px" height="36.795px"
+	 viewBox="0 0 51.1 36.795" xml:space="preserve">
+<g id="schematic">
+	
+		<rect x="7.55" y="7.739" fill="#FFFFFF" stroke="#000000" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round" width="36" height="21.6"/>
+	
+		<line id="connector0pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="50.749" y1="14.938" x2="43.549" y2="14.938"/>
+	<rect id="connector0terminal" x="50.749" y="14.938" fill="none" width="0" height="0.001"/>
+	<text transform="matrix(1 0 0 1 46.4597 13.8877)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">1</text>
+	
+		<line id="connector1pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="0.35" y1="14.938" x2="7.55" y2="14.938"/>
+	<rect id="connector1terminal" x="0.35" y="14.938" fill="none" width="0" height="0.001"/>
+	<text transform="matrix(1 0 0 1 3.262 13.8877)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">2</text>
+	<text transform="matrix(1 0 0 1 27.2732 34.1641)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">6</text>
+	<text transform="matrix(1 0 0 1 30.4041 5.3867)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">5</text>
+	
+		<line id="connector2pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="18.553" y1="7.675" x2="18.553" y2="0.475"/>
+	<rect id="connector2terminal" x="18.553" y="0.474" fill="none" width="0" height="0.002"/>
+	<text transform="matrix(1 0 0 1 19.6028 5.3867)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">3</text>
+	<text transform="matrix(1 0 0 1 34.0046 16.0273)" fill="#787878" font-family="'DroidSans'" font-size="3.5">DOut</text>
+	<text transform="matrix(1 0 0 1 8.7253 16.0273)" fill="#787878" font-family="'DroidSans'" font-size="3.5">D</text>
+	<text transform="matrix(1 0 0 1 11.0857 16.0273)" fill="#787878" font-family="'DroidSans'" font-size="3.5">I</text>
+	<text transform="matrix(1 0 0 1 12.2712 16.0273)" fill="#787878" font-family="'DroidSans'" font-size="3.5">n</text>
+	
+		<line id="connector3pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="0.351" y1="22.138" x2="7.55" y2="22.138"/>
+	<rect id="connector3terminal" x="0.351" y="22.138" fill="none" width="0" height="0.001"/>
+	
+		<line id="connector4pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="29.354" y1="7.675" x2="29.354" y2="0.475"/>
+	<rect id="connector4terminal" x="29.354" y="0.475" fill="none" width="0" height="0.001"/>
+	
+		<line id="connector5pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="25.55" y1="29.25" x2="25.55" y2="36.449"/>
+	<rect id="connector5terminal" x="25.55" y="36.448" fill="none" width="0" height="0.002"/>
+	<text transform="matrix(1 0 0 1 3.2625 21.0874)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">4</text>
+	<text transform="matrix(1 0 0 1 8.7258 23.2271)" fill="#787878" font-family="'DroidSans'" font-size="3.5">N/C</text>
+	<text transform="matrix(1 0 0 1 15.7336 12.1021)" fill="#787878" font-family="'DroidSans'" font-size="3.5">V</text>
+	<text transform="matrix(1 0 0 1 17.6511 12.1021)" fill="#787878" font-family="'DroidSans'" font-size="3.5">C</text>
+	<text transform="matrix(1 0 0 1 19.6917 12.1021)" fill="#787878" font-family="'DroidSans'" font-size="3.5">C</text>
+	<text transform="matrix(1 0 0 1 26.3738 12.1021)" fill="#787878" font-family="'DroidSans'" font-size="3.5">VDD</text>
+	<text transform="matrix(1 0 0 1 22.6892 27.2881)" fill="#787878" font-family="'DroidSans'" font-size="3.5">VSS</text>
+	<text transform="matrix(1 0 0 1 17.2859 17.3706)" font-family="'DroidSans'" font-size="4.252">WS2812</text>
+	<text transform="matrix(1 0 0 1 16.7375 22.4731)" font-family="'DroidSans'" font-size="4.252">RGB LED</text>
+</g>
+</svg>

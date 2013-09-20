@@ -22,6 +22,7 @@ SOURCES += main.cpp \
     miscutils.cpp \
     $$FRITZING_SRC/utils/textutils.cpp \
     $$FRITZING_SRC/utils/graphicsutils.cpp  \
+    $$FRITZING_SRC/utils/schematicrectconstants.cpp  \
     $$FRITZING_SRC/svg/svgfilesplitter.cpp  \
     $$FRITZING_SRC/svg/svgpathlexer.cpp  \    
     $$FRITZING_SRC/svg/svgpathparser.cpp \
@@ -33,6 +34,7 @@ HEADERS += brdapplication.h \
     $$FRITZING_SRC/utils/textutils.h \
     $$FRITZING_SRC/utils/misc.h \
     $$FRITZING_SRC/utils/graphicsutils.h  \
+    $$FRITZING_SRC/utils/schematicrectconstants.h  \
     $$FRITZING_SRC/svg/svgfilesplitter.h  \
     $$FRITZING_SRC/svg/svgpathlexer.h  \    
     $$FRITZING_SRC/svg/svgpathparser.h  \

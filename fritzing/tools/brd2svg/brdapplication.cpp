@@ -1912,7 +1912,7 @@ QString BrdApplication::genSchematic(QDomElement & root, QDomElement & paramsRoo
 				busMids.insert(contact.attribute("signal").toLower(), mid);
 			}
 			svg += schematicPinText(contact.attribute("connectorIndex"), signal, pinLength + pinTextIndent, ly + pinTextVert, bigPinFontSize, "start", false);
-            svg += schematicPinNumber(halfPinThickness, pinLength, ly, smallPinFontSize, pinSmallTextVert, contact.attribute("connectorIndex"), false);
+            svg += schematicPinNumber(pinLength / 2, ly, smallPinFontSize, pinSmallTextVert, contact.attribute("connectorIndex"), false);
 		}
 
 		if (!bus) ly += unitLength;
@@ -1951,7 +1951,7 @@ QString BrdApplication::genSchematic(QDomElement & root, QDomElement & paramsRoo
 				busMids.insert(contact.attribute("signal").toLower(), mid);
 			}
 			svg += schematicPinText(contact.attribute("connectorIndex"), signal, width - pinLength - pinTextIndent, ly + pinTextVert, bigPinFontSize, "end", false);
-            svg += schematicPinNumber(width - pinLength - halfPinThickness, width - halfPinThickness, ly, smallPinFontSize, pinSmallTextVert, contact.attribute("connectorIndex"), false);
+            svg += schematicPinNumber(width - (pinLength / 2) , ly, smallPinFontSize, pinSmallTextVert, contact.attribute("connectorIndex"), false);
 		}
 
 		if (!bus) ly += unitLength;
@@ -1980,7 +1980,7 @@ QString BrdApplication::genSchematic(QDomElement & root, QDomElement & paramsRoo
 				busMids.insert(contact.attribute("signal").toLower(), mid);
 			}
             svg += schematicPinText(contact.attribute("connectorIndex"), signal, lx, pinLength - pinTextVert, bigPinFontSize, "end", true);
-            svg += schematicPinNumber(width - pinLength - halfPinThickness, width - halfPinThickness, pinLength - pinTextVert, smallPinFontSize, pinSmallTextVert, contact.attribute("connectorIndex"), true);
+            svg += schematicPinNumber(lx, pinLength / 2, smallPinFontSize, pinSmallTextVert, contact.attribute("connectorIndex"), true);
 		}
 
 		if (!bus) lx += unitLength;
@@ -2009,19 +2009,8 @@ QString BrdApplication::genSchematic(QDomElement & root, QDomElement & paramsRoo
 				busMids.insert(contact.attribute("signal").toLower(), mid);
 			}
 
-            /*
-			svg += QString("<text id='label%1' x='%2' y='%3' font-family=\"%7\" stroke='none' fill='%6' text-anchor='middle' font-size='%5' >%4</text>\n")
-						.arg(contact.attribute("connectorIndex"))
-						.arg(lx)
-						.arg(height - pinLength - pinTextVert)
-						.arg(TextUtils::escapeAnd(signal))
-						.arg(bigPinFontSize)
-                        .arg(SchematicRectConstants::PinTextColor)
-                        .arg(SchematicRectConstants::FontFamily)
-                        ;
-            */
             svg += schematicPinText(contact.attribute("connectorIndex"), signal, lx, height - (pinLength - pinTextVert), bigPinFontSize, "start", true);
-            svg += schematicPinNumber(width - pinLength - halfPinThickness, width - halfPinThickness, height - (pinLength - pinTextVert), smallPinFontSize, pinSmallTextVert, contact.attribute("connectorIndex"), true);
+            svg += schematicPinNumber(lx, height - (pinLength / 2), smallPinFontSize, pinSmallTextVert, contact.attribute("connectorIndex"), true);
 		}
 
 		if (!bus) lx += unitLength;
@@ -3990,11 +3979,11 @@ bool BrdApplication::registerFonts() {
     return ix >= 0;
 }
 
-QString BrdApplication::schematicPinNumber(qreal x1, qreal x2, qreal y, qreal pinSmallTextHeight, qreal pinSmallTextVert, const QString & id, bool rotate)
+QString BrdApplication::schematicPinNumber(qreal x, qreal y, qreal pinSmallTextHeight, qreal pinSmallTextVert, const QString & id, bool rotate)
 {
     QString text;
 
-    qreal useX = ((x2 + x1) / 2);
+    qreal useX = x;
     qreal useY = y + pinSmallTextVert;
 
     if (rotate) {

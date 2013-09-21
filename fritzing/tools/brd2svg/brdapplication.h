@@ -90,7 +90,7 @@ protected:
 	bool matchAnd(QDomElement & contact, QDomElement & connector);
     QString findSubpart(const QString & name, QHash<QString, QString> & subpartAliases, QDir & subpartsFolder);
     bool registerFonts();
-    QString schematicPinNumber(qreal x, qreal y, qreal pinSmallTextHeight, qreal pinSmallTextVert, const QString & id, bool rotate);
+    QString schematicPinNumber(qreal x, qreal y, qreal pinSmallTextHeight, const QString & id, bool rotate);
     QString schematicPinText(const QString & id, const QString & signal, qreal x, qreal y, qreal bigPinFontSize, const QString & anchor, bool rotate);
 
 protected:

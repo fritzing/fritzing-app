@@ -43,8 +43,9 @@
 //		elliptical pads
 //		draw holes with metal, but not treated as connector
 //
-//		copy output directly to fritzing folders (or wherever)
-//
+//      determine offset from top and bottom using text length of powers and grounds
+//      don't draw pin numbers of there is no connector 0 or 1
+//      fix text offsets
 //
 /////////////////////////////////
  
@@ -1775,7 +1776,6 @@ QString BrdApplication::genSchematic(QDomElement & root, QDomElement & paramsRoo
 	qreal pinLength = 2 * unitLength;
     qreal pinTextIndent = 1000 * SchematicRectConstants::PinTextIndent / 25.4;
     qreal pinTextVert = 1000 * SchematicRectConstants::PinTextVert / 25.4;
-    qreal pinSmallTextVert = 1000 * SchematicRectConstants::PinSmallTextVert / 25.4;
     qreal rectThickness = 1000 * SchematicRectConstants::RectStrokeWidth / 25.4;
 
 	QString boardName = getBoardName(root);
@@ -1912,7 +1912,7 @@ QString BrdApplication::genSchematic(QDomElement & root, QDomElement & paramsRoo
 				busMids.insert(contact.attribute("signal").toLower(), mid);
 			}
 			svg += schematicPinText(contact.attribute("connectorIndex"), signal, pinLength + pinTextIndent, ly + pinTextVert, bigPinFontSize, "start", false);
-            svg += schematicPinNumber(pinLength / 2, ly, smallPinFontSize, pinSmallTextVert, contact.attribute("connectorIndex"), false);
+            svg += schematicPinNumber(pinLength / 2, ly, smallPinFontSize, contact.attribute("connectorIndex"), false);
 		}
 
 		if (!bus) ly += unitLength;
@@ -1951,7 +1951,7 @@ QString BrdApplication::genSchematic(QDomElement & root, QDomElement & paramsRoo
 				busMids.insert(contact.attribute("signal").toLower(), mid);
 			}
 			svg += schematicPinText(contact.attribute("connectorIndex"), signal, width - pinLength - pinTextIndent, ly + pinTextVert, bigPinFontSize, "end", false);
-            svg += schematicPinNumber(width - (pinLength / 2) , ly, smallPinFontSize, pinSmallTextVert, contact.attribute("connectorIndex"), false);
+            svg += schematicPinNumber(width - (pinLength / 2) , ly, smallPinFontSize, contact.attribute("connectorIndex"), false);
 		}
 
 		if (!bus) ly += unitLength;
@@ -1980,7 +1980,7 @@ QString BrdApplication::genSchematic(QDomElement & root, QDomElement & paramsRoo
 				busMids.insert(contact.attribute("signal").toLower(), mid);
 			}
             svg += schematicPinText(contact.attribute("connectorIndex"), signal, lx, pinLength - pinTextVert, bigPinFontSize, "end", true);
-            svg += schematicPinNumber(lx, pinLength / 2, smallPinFontSize, pinSmallTextVert, contact.attribute("connectorIndex"), true);
+            svg += schematicPinNumber(lx, pinLength / 2, smallPinFontSize, contact.attribute("connectorIndex"), true);
 		}
 
 		if (!bus) lx += unitLength;
@@ -2010,7 +2010,7 @@ QString BrdApplication::genSchematic(QDomElement & root, QDomElement & paramsRoo
 			}
 
             svg += schematicPinText(contact.attribute("connectorIndex"), signal, lx, height - (pinLength - pinTextVert), bigPinFontSize, "start", true);
-            svg += schematicPinNumber(lx, height - (pinLength / 2), smallPinFontSize, pinSmallTextVert, contact.attribute("connectorIndex"), true);
+            svg += schematicPinNumber(lx, height - (pinLength / 2), smallPinFontSize, contact.attribute("connectorIndex"), true);
 		}
 
 		if (!bus) lx += unitLength;
@@ -3979,17 +3979,18 @@ bool BrdApplication::registerFonts() {
     return ix >= 0;
 }
 
-QString BrdApplication::schematicPinNumber(qreal x, qreal y, qreal pinSmallTextHeight, qreal pinSmallTextVert, const QString & id, bool rotate)
+QString BrdApplication::schematicPinNumber(qreal x, qreal y, qreal pinSmallTextHeight, const QString & id, bool rotate)
 {
     QString text;
 
     qreal useX = x;
-    qreal useY = y + pinSmallTextVert;
+    qreal offset = 1000 * (SchematicRectConstants::PinWidth - SchematicRectConstants::PinSmallTextVert) / 25.4;
+    qreal useY = y - offset;
 
     if (rotate) {
 		text += QString("<g transform='translate(%1,%2)'><g transform='rotate(%3)'>\n")
-			.arg(useX)
-			.arg(useY)
+			.arg(useX - offset)
+			.arg(useY + offset)
 			.arg(270);
 		useX = 0;
 		useY = 0;
@@ -4017,12 +4018,13 @@ QString BrdApplication::schematicPinText(const QString & id, const QString & sig
 {
     QString text;
     if (rotate) {
-        qreal yOffset = (anchor == "start" ? -SchematicRectConstants::PinTextIndent : SchematicRectConstants::PinTextIndent);
-        qreal xOffset = SchematicRectConstants::PinTextVert;
+        qreal yOffset = SchematicRectConstants::PinTextIndent + SchematicRectConstants::RectStrokeWidth;
+        if (anchor == "start") yOffset = -yOffset;
+        qreal xOffset = SchematicRectConstants::PinTextVert + SchematicRectConstants::PinWidth;
         xOffset = 1000 * xOffset / 25.4;
         yOffset = 1000 * yOffset / 25.4;
 		text += QString("<g transform='translate(%1,%2)'><g transform='rotate(%3)'>\n")
-			.arg(x + xOffset + xOffset)
+			.arg(x + xOffset)
 			.arg(y + yOffset)
 			.arg(270);
 		x = 0;

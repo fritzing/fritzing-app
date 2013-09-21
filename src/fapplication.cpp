@@ -1518,6 +1518,11 @@ bool FApplication::notify(QObject *receiver, QEvent *e)
         QMessageBox::critical(NULL, tr("Fritzing failure"), tr("Fritzing caught an exception %1 from %2 in event %3")
 			.arg(str).arg(receiver->objectName()).arg(e->type()));
 	}
+    catch (std::exception& exp) {
+        // suggested in https://code.google.com/p/fritzing/issues/detail?id=2698
+        qDebug() << QString("notify %1 %2").arg(receiver->metaObject()->className()).arg(e->type());
+        QMessageBox::critical(NULL, tr("Fritzing failure"), tr("Fritzing caught an exception from %1 in event %2: %3").arg(receiver->objectName()).arg(e->type()).arg(exp.what()));
+    }
     catch (...) {
         QMessageBox::critical(NULL, tr("Fritzing failure"), tr("Fritzing caught an exception from %1 in event %2").arg(receiver->objectName()).arg(e->type()));
     }

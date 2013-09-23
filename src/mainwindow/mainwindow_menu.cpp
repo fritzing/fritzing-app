@@ -199,7 +199,7 @@ void MainWindow::mainLoadAux(const QString & fileName)
     }
 
     if (!fileName.endsWith(FritzingSketchExtension) && !fileName.endsWith(FritzingBundleExtension)) {
-        loadWhich(fileName, false, false, "");  
+        loadWhich(fileName, false, false, true, "");  
         return;
     }
 
@@ -228,7 +228,7 @@ void MainWindow::mainLoadAux(const QString & fileName)
     file.close();
 
     MainWindow* mw = newMainWindow(m_referenceModel, fileName, true, true);
-	mw->loadWhich(fileName, true, true, "");
+	mw->loadWhich(fileName, true, true, true, "");
     mw->clearFileProgressDialog();
 	closeIfEmptySketch(mw);
 }
@@ -252,7 +252,7 @@ void MainWindow::revert() {
 
     QFileInfo info(fileName());
     if (info.exists() || !FolderUtils::isEmptyFileName(this->m_fwFilename, untitledFileName())) {
-	    mw->loadWhich(fileName(), true, true, "");
+	    mw->loadWhich(fileName(), true, true, true, "");
     }
     else {
 	    mw->addDefaultParts();
@@ -269,7 +269,7 @@ void MainWindow::revert() {
     this->close();
 }
 
-bool MainWindow::loadWhich(const QString & fileName, bool setAsLastOpened, bool addToRecent, const QString & displayName)
+bool MainWindow::loadWhich(const QString & fileName, bool setAsLastOpened, bool addToRecent, bool checkObsolete, const QString & displayName)
 {
 	if (!QFileInfo(fileName).exists()) {
 		QMessageBox::warning(NULL, tr("Fritzing"), tr("File '%1' not found").arg(fileName));
@@ -301,7 +301,7 @@ bool MainWindow::loadWhich(const QString & fileName, bool setAsLastOpened, bool 
 			if (bundledFileName.isEmpty()) return false;	
 		}
 
-    	mainLoad(fileName, displayName, true);
+    	mainLoad(fileName, displayName, checkObsolete);
 		result = true;
 
 		QFile file(fileName);
@@ -318,7 +318,7 @@ bool MainWindow::loadWhich(const QString & fileName, bool setAsLastOpened, bool 
 		}
     } 
 	else if(fileName.endsWith(FritzingBundleExtension)) {
-    	loadBundledSketch(fileName, addToRecent, setAsLastOpened);
+    	loadBundledSketch(fileName, addToRecent, setAsLastOpened, checkObsolete);
 		result = true;
     } 
 	else if (
@@ -352,7 +352,6 @@ void MainWindow::mainLoad(const QString & fileName, const QString & displayName,
 	this->show();
 	showAllFirstTimeHelp(false);
 	ProcessEventBlocker::processEvents();
-
 
 	QString displayName2 = displayName;
 	if (displayName.isEmpty()) {
@@ -2531,7 +2530,7 @@ void MainWindow::openRecentOrExampleFile() {
 		MainWindow* mw = newMainWindow(m_referenceModel, action->data().toString(), true, true);
 		bool readOnly = m_openExampleActions.contains(action->text());
 		mw->setReadOnly(readOnly);
-		mw->loadWhich(filename,!readOnly,!readOnly,"");
+		mw->loadWhich(filename, !readOnly,!readOnly,!readOnly, "");
 		mw->clearFileProgressDialog();
 		closeIfEmptySketch(mw);
 	}

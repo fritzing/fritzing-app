@@ -788,7 +788,7 @@ void FApplication::runGerberServiceAux()
 		m_started = true;
         
 		FolderUtils::setOpenSaveFolderAux(m_outputFolder);
-		if (mainWindow->loadWhich(filepath, false, false, "")) {
+		if (mainWindow->loadWhich(filepath, false, false, false, "")) {
             QFileInfo info(filepath);
             GerberGenerator::exportToGerber(info.completeBaseName(), m_outputFolder, NULL, mainWindow->pcbView(), false);
 		}
@@ -824,7 +824,7 @@ void FApplication::runSvgServiceAux()
 		m_started = true;
         
 		FolderUtils::setOpenSaveFolderAux(m_outputFolder);
-		if (mainWindow->loadWhich(filepath, false, false, "")) {
+		if (mainWindow->loadWhich(filepath, false, false, false, "")) {
             QFileInfo info(filepath);
             QList<ViewLayer::ViewID> ids;
             ids << ViewLayer::BreadboardView << ViewLayer::SchematicView << ViewLayer::PCBView;
@@ -911,7 +911,7 @@ void FApplication::runDRCService() {
 
             mainWindow->setCloseSilently(true);
 
-	        if (!mainWindow->loadWhich(filepath, false, false, "")) {
+	        if (!mainWindow->loadWhich(filepath, false, false, false, "")) {
 		        DebugDialog::debug(QString("failed to load '%1'").arg(filepath));
 		        mainWindow->close();
                 delete mainWindow;
@@ -1154,7 +1154,7 @@ void FApplication::finish()
 
 void FApplication::loadNew(QString path) {
 	MainWindow * mw = MainWindow::newMainWindow(m_referenceModel, path, true, true);
-	if (!mw->loadWhich(path, false, true, "")) {
+	if (!mw->loadWhich(path, false, true, true, "")) {
 		mw->close();
 	}
 	mw->clearFileProgressDialog();
@@ -1163,7 +1163,7 @@ void FApplication::loadNew(QString path) {
 void FApplication::loadOne(MainWindow * mw, QString path, int loaded) {
 	if (loaded == 0) {
 		mw->showFileProgressDialog(path);
-		mw->loadWhich(path, true, true, "");
+		mw->loadWhich(path, true, true, true, "");
 	}
 	else {
 		loadNew(path);
@@ -1563,7 +1563,7 @@ void FApplication::loadSomething(const QString & prevVersion) {
         foreach (QString filename, m_filesToLoad) {
             DebugDialog::debug(QString("Loading non-service file %1").arg(filename));
             MainWindow *mainWindow = MainWindow::newMainWindow(m_referenceModel, filename, true, true);
-            mainWindow->loadWhich(filename, true, true, "");
+            mainWindow->loadWhich(filename, true, true, true, "");
             if (filename.endsWith(FritzingSketchExtension) || filename.endsWith(FritzingBundleExtension)) {
             }
             else {
@@ -1620,7 +1620,7 @@ QList<MainWindow *> FApplication::loadLastOpenSketch() {
     DebugDialog::debug(QString("Loading last open sketch %1").arg(lastSketchPath));
     settings.remove("lastOpenSketch");				// clear the preference, in case the load crashes
     MainWindow *mainWindow = MainWindow::newMainWindow(m_referenceModel, lastSketchPath, true, true);
-    mainWindow->loadWhich(lastSketchPath, true, true, "");
+    mainWindow->loadWhich(lastSketchPath, true, true, true, "");
     sketches << mainWindow;
     settings.setValue("lastOpenSketch", lastSketchPath);	// the load works, so restore the preference
 	return sketches;
@@ -1745,12 +1745,16 @@ void FApplication::runInscriptionService()
 {	
 	m_started = true;
     bool drc = false;
+    bool noMessages = false;
     foreach (QString arg, m_arguments) {
         if (arg.compare("-drc", Qt::CaseInsensitive) == 0) {
             drc = true;
         }
+        if (arg.compare("-nm", Qt::CaseInsensitive) == 0) {
+            noMessages = true;
+        }
     }
-	Panelizer::inscribe(this, m_panelFilename, drc);
+	Panelizer::inscribe(this, m_panelFilename, drc, noMessages);
 }
 
 QList<MainWindow *> FApplication::orderedTopLevelMainWindows() {
@@ -1785,7 +1789,7 @@ void FApplication::runExampleService(QDir & dir) {
 
 		FolderUtils::setOpenSaveFolderAux(dir.absolutePath());
 
-		if (!mainWindow->loadWhich(path, false, false, "")) {
+		if (!mainWindow->loadWhich(path, false, false, true, "")) {
 			DebugDialog::debug(QString("failed to load"));
 		}
 		else {

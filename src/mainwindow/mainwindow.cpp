@@ -1196,7 +1196,7 @@ void MainWindow::setInfoViewOnHover(bool infoViewOnHover) {
 	m_binManager->setInfoViewOnHover(infoViewOnHover);
 }
 
-void MainWindow::loadBundledSketch(const QString &fileName, bool addToRecent, bool setAsLastOpened) {
+void MainWindow::loadBundledSketch(const QString &fileName, bool addToRecent, bool setAsLastOpened, bool checkObsolete) {
 
     QString error;
 	if(!FolderUtils::unzipTo(fileName, m_fzzFolder, error)) {
@@ -1378,7 +1378,7 @@ void MainWindow::loadBundledSketch(const QString &fileName, bool addToRecent, bo
 	}
 
 	// the bundled itself
-	this->mainLoad(sketchName, "", true);
+	this->mainLoad(sketchName, "", checkObsolete);
 	setCurrentFile(fileName, addToRecent, setAsLastOpened);
 }
 

@@ -348,12 +348,12 @@ bool FApplication::init() {
 			toRemove << i << i + 1;
 		}
 
-		if ((m_arguments[i].compare("-drc", Qt::CaseInsensitive) == 0) ||
-			(m_arguments[i].compare("--drc", Qt::CaseInsensitive) == 0)) {
-			m_serviceType = DRCService;
-			m_outputFolder = m_arguments[i + 1];
-			toRemove << i << i + 1;
-		}
+		//if ((m_arguments[i].compare("-drc", Qt::CaseInsensitive) == 0) ||
+		//	(m_arguments[i].compare("--drc", Qt::CaseInsensitive) == 0)) {
+		//	m_serviceType = DRCService;
+		//	m_outputFolder = m_arguments[i + 1];
+		//	toRemove << i << i + 1;
+		//}
 
 		if ((m_arguments[i].compare("-db", Qt::CaseInsensitive) == 0) ||
             (m_arguments[i].compare("-database", Qt::CaseInsensitive) == 0) ||

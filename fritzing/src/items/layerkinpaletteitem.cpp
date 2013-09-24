@@ -344,7 +344,7 @@ void SchematicTextLayerKinPaletteItem::positionTexts(QList<QDomElement> & texts)
     }
 
     QRectF br = boundingRect();
-    QImage image(qCeil(br.width()), qCeil(br.height()), QImage::Format_Mono);
+    QImage image(qCeil(br.width()) * 2, qCeil(br.height()) * 2, QImage::Format_Mono);  // schematic text is so small it doesn't render unless bitmap is double-sized
 
     foreach (QDomElement text, texts) {
         TextThing textThing;
@@ -383,18 +383,14 @@ void SchematicTextLayerKinPaletteItem::renderText(QImage & image, QDomElement & 
 
     // TODO: handle inherited fill/stroke values
     QString oldFill = text.attribute("fill");
-    if (!oldFill.isEmpty()) {
-        text.setAttribute("fill", "black");
-    }
+    text.setAttribute("fill", "black");
     QString oldStroke = text.attribute("stroke");
-    if (!oldStroke.isEmpty()) {
-        text.setAttribute("stroke", "black");
-    }
+    text.setAttribute("stroke", "black");
     text.setTagName("text");
 
-
     image.fill(0xffffffff);
-    QSvgRenderer renderer(text.ownerDocument().toByteArray());
+    QByteArray byteArray = text.ownerDocument().toByteArray();
+    QSvgRenderer renderer(byteArray);
 	QPainter painter;
 	painter.begin(&image);
 	painter.setRenderHint(QPainter::Antialiasing, false);
@@ -448,8 +444,10 @@ void SchematicTextLayerKinPaletteItem::renderText(QImage & image, QDomElement & 
     text.setTagName("g");
     if (oldid.isEmpty()) text.removeAttribute("id");
     else text.setAttribute("id", oldid);
-    if (!oldFill.isEmpty()) text.setAttribute("fill", oldFill);
-    if (!oldStroke.isEmpty()) text.setAttribute("stroke", oldStroke);
+    if (oldFill.isEmpty()) text.removeAttribute("fill");
+    else text.setAttribute("fill", oldFill);
+    if (oldStroke.isEmpty()) text.removeAttribute("stroke");
+    else text.setAttribute("stroke", oldStroke);
 }
 
 void SchematicTextLayerKinPaletteItem::clearTextThings() {

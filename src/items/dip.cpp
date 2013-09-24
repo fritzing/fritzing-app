@@ -28,6 +28,7 @@ $Date: 2013-04-22 23:44:56 +0200 (Mo, 22. Apr 2013) $
 #include "../utils/textutils.h"
 #include "../utils/graphicsutils.h"
 #include "../utils/familypropertycombobox.h"
+#include "../utils/schematicrectconstants.h"
 #include "../connectors/connectoritem.h"
 #include "../fsvgrenderer.h"
 #include "pinheader.h"
@@ -167,6 +168,97 @@ QString Dip::makeSchematicSvg(const QString & expectedFileName)
 }
 
 QString Dip::makeSchematicSvg(const QStringList & labels) 
+{
+	double increment = 1000 * SchematicRectConstants::NewUnit / 25.4;  
+	double border = 1000 * SchematicRectConstants::RectStrokeWidth / 25.4;
+	double labelFontSize = 130;
+    double titleFontSize = 235;
+
+    double halfBorder = border / 2;
+    int pins = labels.count();
+	double totalHeight = (pins * increment / 2) + increment + border;
+	double pinWidth = increment + increment + border;
+	double centralWidth = increment * 4;
+	double pinTextWidth = 0;
+	double defaultLabelWidth = border;
+
+	double textMax = defaultLabelWidth;
+	QFont font("Droid Sans", labelFontSize * 72 / GraphicsUtils::StandardFritzingDPI, QFont::Normal);
+	QFontMetricsF fm(font);
+	for (int i = 0; i < labels.count(); i++) {
+		double w = fm.width(labels.at(i));
+		if (w > textMax) textMax = w;
+	}
+	if (textMax > defaultLabelWidth) {
+		pinTextWidth += (textMax - defaultLabelWidth) * 2 * 1000 / 72;
+	}
+	centralWidth += pinTextWidth;
+	int totalWidth = centralWidth + pinWidth;
+
+
+	QString header("<?xml version='1.0' encoding='UTF-8' standalone='no'?>\n"
+					"<svg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' version='1.2' baseProfile='tiny' \n"
+					"width='%4in' height='%1in' viewBox='0 0 %5 %2' >\n"
+					"<g id='schematic' >\n"
+					"<rect x='%9' y='%10' fill='none' width='%6' height='%3' stroke='#000000' stroke-linejoin='round' stroke-linecap='round' stroke-width='%11' />\n"
+					"<text id='label' x='%7' y='%12' font-family='Droid Sans' stroke='none' fill='#000000' text-anchor='middle' font-size='%8' >IC</text>\n");
+
+	QString svg = header
+				.arg(totalHeight / 1000)
+				.arg(totalHeight)
+				.arg(totalHeight - border)
+				.arg(totalWidth / 1000.0)
+				.arg(totalWidth)
+				.arg(centralWidth)
+				.arg(totalWidth / 2.0)
+                .arg(titleFontSize)
+
+                .arg(increment + border)
+                .arg(halfBorder)
+                .arg(border)
+                .arg(increment + increment / 2)
+				;
+  
+	QString repeatL("<line fill='none' stroke='#000000' stroke-linejoin='round' stroke-linecap='round' stroke-width='%1' x1='%2' y1='percent1' x2='%3' y2='percent1'  />\n"
+					"<rect x='0' y='percent2' fill='none' width='%3' height='%1' stroke='none' id='connectorpercent3pin' stroke-width='0' />\n"
+					"<rect x='0' y='percent2' fill='none' width='%1' height='%1' stroke='none' id='connectorpercent3terminal' stroke-width='0' />\n"
+					"<text id='labelpercent3' x='%4' y='percent4' font-family='Droid Sans' stroke='none' fill='#000000' text-anchor='start' font-size='percent6' >percent5</text>\n");
+    repeatL = repeatL.arg(border).arg(halfBorder).arg(increment).arg(increment + increment / 2).replace("percent", "%");
+
+	
+	QString repeatR("<line fill='none' stroke='#000000' stroke-linejoin='round' stroke-linecap='round' stroke-width='%1' x1='percent7' y1='percent1' x2='percent8' y2='percent1'  />\n"
+					"<rect x='percent9' y='percent2' fill='none' width='%2' height='%1' id='connectorpercent3pin' stroke='none' stroke-width='0' />\n"
+					"<rect x='percent10' y='percent2' fill='none' width='%1' height='%1' id='connectorpercent3terminal' stroke='none' stroke-width='0' />\n"
+					"<text id='labelpercent3' x='percent11' y='percent4' font-family='Droid Sans' stroke='none' fill='#000000' text-anchor='end' font-size='percent6' >percent5</text>\n");
+    repeatR = repeatR.arg(border).arg(increment).replace("percent", "%");
+
+	int y = 300;
+	for (int i = 0; i < pins / 2; i++) {
+		svg += repeatL.arg(15 + y).arg(y).arg(i).arg(y + 50).arg(labels.at(i)).arg(labelFontSize);
+		svg += repeatR
+				.arg(15 + y)
+				.arg(y)
+				.arg(pins - i - 1)
+				.arg(y + 50)
+				.arg(labels.at(pins - i - 1))
+				.arg(labelFontSize)
+
+				.arg(totalWidth - 300)
+				.arg(totalWidth - 15)
+				.arg(totalWidth - 300)
+				.arg(totalWidth - 30)
+				.arg(totalWidth - 390)								
+				;
+		y += increment;
+	}
+
+	svg += "</g>\n";
+	svg += "</svg>\n";
+
+	return svg;
+}
+
+QString Dip::obsoleteMakeSchematicSvg(const QStringList & labels) 
 {
 	int pins = labels.count();
 	int increment = GraphicsUtils::StandardSchematicSeparationMils;  

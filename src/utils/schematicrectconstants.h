@@ -28,6 +28,8 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 #define SCHEMATICRECTCONTANTS_H
 
 #include <QString>
+#include <QList>
+#include <QDomElement>
 
 // all measurements in millimeters
 
@@ -53,6 +55,12 @@ public:
     static const double NewUnit;     
 
     static const QString FontFamily;
+
+public:
+    static QString genSchematicDIP(QList<QDomElement> & powers, QList<QDomElement> & grounds, QList<QDomElement> & lefts,
+	            QList<QDomElement> & rights, QList<QDomElement> & vias, QStringList & busNames, 
+                QString & boardName, bool usingParam, bool genericSMD, QString (*getConnectorName)(const QDomElement &));
+
 };
 
 

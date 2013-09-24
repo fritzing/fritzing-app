@@ -43,7 +43,6 @@
 //		elliptical pads
 //		draw holes with metal, but not treated as connector
 //
-//      text rotation failing
 //      pcb fails with no connectors
 //
 /////////////////////////////////

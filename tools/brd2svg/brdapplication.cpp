@@ -27,6 +27,7 @@
 
 #include "utils/textutils.h"
 #include "utils/graphicsutils.h"
+#include "utils/schematicrectconstants.h"
 #include "svg/svgfilesplitter.h"
 
 #ifdef Q_WS_WIN
@@ -42,8 +43,7 @@
 //		elliptical pads
 //		draw holes with metal, but not treated as connector
 //
-//		copy output directly to fritzing folders (or wherever)
-//
+//      pcb fails with no connectors
 //
 /////////////////////////////////
  
@@ -1730,8 +1730,22 @@ QString BrdApplication::genSchematic(QDomElement & root, QDomElement & paramsRoo
 	QStringList busNames;
 	getSides(root, paramsRoot, powers, grounds, lefts, rights, unused, vias, busNames, true, false);
 
+
 	int powersBuses = 0, groundsBuses = 0, leftsBuses = 0, rightsBuses = 0;
 	QList<QDomElement> busContacts;
+
+    QList<QDomElement> all = powers;
+    all.append(lefts);
+    all.append(rights);
+    all.append(grounds);
+    bool gotZero = false;
+    bool gotOne = false;
+    foreach (QDomElement contact, all) {
+        bool ok;
+        if (contact.attribute("connectorIndex").toInt() == 1) gotOne = true;
+        if (contact.attribute("connectorIndex").toInt(&ok) == 0 && ok) gotZero = true;
+    }
+
 	foreach (QDomElement contact, powers) {
 		contact.setAttribute("ltrb", "power");
 		if (contact.attribute("bus", 0).compare("1") == 0) {
@@ -1765,11 +1779,16 @@ QString BrdApplication::genSchematic(QDomElement & root, QDomElement & paramsRoo
 		//qDebug() << "sch bus" << contact.attribute("signal") << contact.attribute("name") << contact.attribute("connectorIndex");
 	//}
 
-	qreal bigFontSize = 1000. * 18 / 72;
-	qreal smallFontSize = 1000 * 10 / 72;
-	qreal thickness = 1000 * 2.4 / 72;
-	qreal halfThickness = thickness / 2;
-	qreal length = 1000 * 7.5 / 25.4;
+	qreal bigFontSize = 1000 * SchematicRectConstants::PinBigTextHeight / 25.4;
+	qreal bigPinFontSize = 1000 * SchematicRectConstants::PinBigTextHeight / 25.4;
+	qreal smallPinFontSize = 1000 * SchematicRectConstants::PinSmallTextHeight / 25.4;
+	qreal pinThickness = 1000 * SchematicRectConstants::PinWidth / 25.4;
+	qreal halfPinThickness = pinThickness / 2;
+	qreal unitLength = 1000 * SchematicRectConstants::NewUnit / 25.4;
+	qreal pinLength = 2 * unitLength;
+    qreal pinTextIndent = 1000 * SchematicRectConstants::PinTextIndent / 25.4;
+    qreal pinTextVert = 1000 * SchematicRectConstants::PinTextVert / 25.4;
+    qreal rectThickness = 1000 * SchematicRectConstants::RectStrokeWidth / 25.4;
 
 	QString boardName = getBoardName(root);
 	bool usingParam = false;
@@ -1801,6 +1820,8 @@ QString BrdApplication::genSchematic(QDomElement & root, QDomElement & paramsRoo
 	qreal titleWidth = 0;
 	qreal leftWidth = 0;
 	qreal rightWidth = 0;
+    qreal topWidth = 0;
+    qreal bottomWidth = 0;
 	QFont bigFont("DroidSans");
 	bigFont.setPointSizeF(bigFontSize * 72 / 1000.0);
 	QFontMetricsF bigFontMetrics(bigFont);
@@ -1808,9 +1829,9 @@ QString BrdApplication::genSchematic(QDomElement & root, QDomElement & paramsRoo
 		qreal w = bigFontMetrics.width(title);
 		if (w > titleWidth) titleWidth = w;
 	}
-	QFont smallFont("DroidSans");
-	smallFont.setPointSizeF(smallFontSize * 72 / 1000.0);
-	QFontMetricsF smallFontMetrics(smallFont);
+	QFont pinTextFont("DroidSans");
+	pinTextFont.setPointSizeF(bigPinFontSize * 72 / 1000.0);
+	QFontMetricsF smallFontMetrics(pinTextFont);
 	foreach (QDomElement element, lefts) {
 		qreal w = smallFontMetrics.width(getConnectorName(element));
 		if (w > leftWidth) leftWidth = w;
@@ -1818,6 +1839,14 @@ QString BrdApplication::genSchematic(QDomElement & root, QDomElement & paramsRoo
 	foreach (QDomElement element, rights) {
 		qreal w = smallFontMetrics.width(getConnectorName(element));
 		if (w > rightWidth) rightWidth = w;
+	}
+	foreach (QDomElement element, powers) {
+		qreal w = smallFontMetrics.width(getConnectorName(element));
+		if (w > topWidth) topWidth = w;
+	}
+	foreach (QDomElement element, grounds) {
+		qreal w = smallFontMetrics.width(getConnectorName(element));
+		if (w > bottomWidth) bottomWidth = w;
 	}
 
 	// title is symmetric so leave max room on both sides
@@ -1828,45 +1857,74 @@ QString BrdApplication::genSchematic(QDomElement & root, QDomElement & paramsRoo
 	leftWidth = 1000 * leftWidth / 72.0;
 	rightWidth = 1000 * rightWidth / 72.0;
 	titleWidth = 1000 * titleWidth / 72.0;
+	topWidth = 1000 * topWidth / 72.0;
+	bottomWidth = 1000 * bottomWidth / 72.0;
 
-	qreal textWidth = (leftWidth + rightWidth + titleWidth + 60 + 60); // 60 is the text indentation plus a little fudge
-	qreal width = (qCeil(textWidth / length) * length) + thickness + (length * 2);
-	int room = qFloor(width / length) - 4;
-	if (powers.count() - powersBuses > room) width += (length * (powers.count() - powersBuses - room));
-	if (grounds.count() - groundsBuses > room) width += (length * (grounds.count() - groundsBuses - room));
+	qreal textWidth = (leftWidth + rightWidth + titleWidth + pinTextIndent + pinTextIndent); 
+    qreal width = (qCeil(textWidth / unitLength) * unitLength);
+    if (lefts.count() > 0) width += pinLength;
+    if (rights.count() > 0) width += pinLength;
+	int room = qFloor(width / unitLength) - 4;
+	if (powers.count() - powersBuses > room) width += (pinLength * (powers.count() - powersBuses - room));
+	if (grounds.count() - groundsBuses > room) width += (pinLength * (grounds.count() - groundsBuses - room));
 
-	qreal top = halfThickness;
-	qreal height = (2 * length) + thickness;
+	qreal rectTop = rectThickness / 2;
+	qreal height = 0;
+    qreal startTitle = 0;
 	if (powers.count() > 0) {
-		height += length;
-		top += length;
+        qreal dh = pinLength + qCeil(topWidth / unitLength) * unitLength;
+        startTitle = dh;
+		height += dh;
+		rectTop += pinLength - rectThickness / 2;
 	}
-	qreal bottom = halfThickness;
+    else {
+        height += unitLength;
+        startTitle = unitLength;
+    }
+	qreal rectBottom = rectThickness / 2;
 	if (grounds.count() > 0) {
-		bottom += length;
-		height += length;
+        qreal dh = pinLength + qCeil(bottomWidth / unitLength) * unitLength;
+		rectBottom += pinLength - (rectThickness / 2);
+		height += dh;
 	}
-	height += qMax(titles.count(), qMax(lefts.count() - leftsBuses, rights.count() - rightsBuses)) * length;
-	height += length;
+    else height += unitLength;
+    int l1 = qMax(0, lefts.count() - leftsBuses - 1);
+    l1 = qMax(l1,  rights.count() - rightsBuses - 1);
+    l1 = qMax(l1, qCeil(titles.count() * bigFontSize / unitLength));
+	height += l1 * unitLength;
 
 	QString svg = TextUtils::makeSVGHeader(1000, 1000, width, height);
 	svg += "<desc>Fritzing schematic generated by brd2svg</desc>\n";
 	svg += "<g id='schematic'>\n";
+    qreal rectLeft = rectThickness / 2;
+    qreal rectMinus = 0;
+    if (lefts.count()) {
+        rectLeft = pinLength;
+        rectMinus += pinLength;
+    }
+    if (rights.count()) {
+        rectMinus += pinLength;
+    }
+
 	svg += QString("<rect x='%4' y='%3' fill='none' width='%1' height='%2' stroke='#000000' stroke-linejoin='round' stroke-linecap='round' stroke-width='%5' />\n")
-						.arg(width - (2 * length) - thickness)
-						.arg(height - bottom - top)
-						.arg(top)
-						.arg(length + halfThickness)
-						.arg(SW(thickness));
+						.arg(width - rectMinus - (rectThickness / 2))
+						.arg(height - rectBottom - rectTop)
+						.arg(rectTop)
+						.arg(rectLeft)
+						.arg(SW(rectThickness));
 	
-	qreal y = 2 * length;
+	qreal y = qFloor((height / 2) / unitLength) * unitLength;
+    y -= bigFontSize * qCeil(titles.count() / 2.0);
+    if (y < startTitle) y = startTitle;
 	foreach (QString title, titles) {
-		svg += QString("<text id='label' x='%1' y='%3' font-family='DroidSans' stroke='none' fill='#000000' text-anchor='middle' font-size='%4' >%2</text>\n")
+		svg += QString("<text id='label' x='%1' y='%3' font-family=\"%5\" stroke='none' fill='#000000' text-anchor='middle' font-size='%4' >%2</text>\n")
 						.arg(width / 2.0)
 						.arg(TextUtils::escapeAnd(title))
-						.arg(y + top)
-						.arg(bigFontSize);
-		y += length;
+						.arg(y)
+						.arg(bigFontSize)
+                        .arg(SchematicRectConstants::FontFamily)
+                        ;
+		y += bigFontSize;
 	}
 
 	QHash<QString, QString> busMids;
@@ -1884,140 +1942,127 @@ QString BrdApplication::genSchematic(QDomElement & root, QDomElement & paramsRoo
 					.arg(contact.attribute("connectorIndex"));
 	}
 
-	qreal ly = top + (2 * length);
+	qreal ly = rectTop + (2 * unitLength);
 	foreach (QDomElement contact, lefts) {
 		bool bus = contact.attribute("bus", 0).compare("1") == 0;
 		if (!contact.isNull() && !bus) {
 			QString signal = getConnectorName(contact);
-			svg += QString("<line fill='none' stroke='#000000' stroke-linejoin='round' stroke-linecap='round' stroke-width='%2' x1='%4' y1='%1' x2='%3' y2='%1' />\n")
-						.arg(ly).arg(SW(thickness)).arg(length).arg(halfThickness);
+			svg += QString("<line fill='none' stroke='%5' stroke-linejoin='round' stroke-linecap='round' stroke-width='%2' x1='%4' y1='%1' x2='%3' y2='%1' />\n")
+						.arg(ly).arg(SW(pinThickness)).arg(pinLength).arg(halfPinThickness).arg(SchematicRectConstants::PinColor);
 			viaY = ly;
-			viaX = halfThickness;
+			viaX = halfPinThickness;
 
 			QString mid = QString("<rect x='0' y='%1' fill='none' width='%3' height='%4' id='connector%2pin' connectorName='%5' stroke-width='0' />\n")
-						.arg(ly - halfThickness).arg(contact.attribute("connectorIndex")).arg(length).arg(thickness).arg(signal);	
+						.arg(ly - halfPinThickness).arg(contact.attribute("connectorIndex")).arg(pinLength).arg(pinThickness).arg(signal);	
 			mid += QString("<rect x='0' y='%1' fill='none' width='%3' height='%3' id='connector%2terminal' stroke-width='0' />\n")
-						.arg(ly - halfThickness).arg(contact.attribute("connectorIndex")).arg(thickness);
+						.arg(ly - halfPinThickness).arg(contact.attribute("connectorIndex")).arg(pinThickness);
 			svg += mid;
 			if (busNames.contains(contact.attribute("signal"), Qt::CaseInsensitive)) {
 				busMids.insert(contact.attribute("signal").toLower(), mid);
 			}
-			svg += QString("<text id='label%1' x='%5' y='%2' font-family='DroidSans' stroke='none' fill='#000000' text-anchor='start' font-size='%4' >%3</text>\n")
-						.arg(contact.attribute("connectorIndex"))
-						.arg(ly - halfThickness + 50)
-						.arg(TextUtils::escapeAnd(signal))
-						.arg(smallFontSize)
-						.arg(length + 90);
+			svg += schematicPinText(contact.attribute("connectorIndex"), signal, pinLength + pinTextIndent, ly + pinTextVert, bigPinFontSize, "start", false);
+            svg += schematicPinNumber(pinLength / 2, ly, smallPinFontSize, contact.attribute("connectorIndex"), false, gotZero, gotOne);
 		}
 
-		if (!bus) ly += length;
+		if (!bus) ly += unitLength;
 	}
 	
-	ly = top + (2 * length);
+	ly = rectTop + (2 * unitLength);
 	foreach (QDomElement contact, rights) {
 		bool bus = contact.attribute("bus", 0).compare("1") == 0;
 		if (!contact.isNull() && !bus) {
 			QString signal = getConnectorName(contact);
-			svg += QString("<line fill='none' stroke='#000000' stroke-linejoin='round' stroke-linecap='round' stroke-width='%4' x1='%1' y1='%2' x2='%3' y2='%2' />\n")
-						.arg(width - length - halfThickness)
+			svg += QString("<line fill='none' stroke='%5' stroke-linejoin='round' stroke-linecap='round' stroke-width='%4' x1='%1' y1='%2' x2='%3' y2='%2' />\n")
+						.arg(width - pinLength - halfPinThickness)
 						.arg(ly)
-						.arg(width - halfThickness)
-						.arg(SW(thickness));
+						.arg(width - halfPinThickness)
+						.arg(SW(pinThickness))
+                        .arg(SchematicRectConstants::PinColor)
+                        ;
 
 			viaY = ly;
-			viaX = width - length - halfThickness;
+			viaX = width - pinLength - halfPinThickness;
 
 			QString mid = QString("<rect x='%1' y='%2' fill='none' width='%4' height='%5' id='connector%3pin' connectorname='%6' stroke-width='0' />\n")
-						.arg(width - length)
-						.arg(ly - halfThickness)
+						.arg(width - pinLength)
+						.arg(ly - halfPinThickness)
 						.arg(contact.attribute("connectorIndex"))
-						.arg(length)
-						.arg(thickness)
+						.arg(pinLength)
+						.arg(pinThickness)
 						.arg(signal);	
 			mid += QString("<rect x='%1' y='%2' fill='none' width='%4' height='%4' id='connector%3terminal' stroke-width='0' />\n")
-						.arg(width - thickness)
-						.arg(ly - halfThickness)
+						.arg(width - pinThickness)
+						.arg(ly - halfPinThickness)
 						.arg(contact.attribute("connectorIndex"))
-						.arg(thickness);
+						.arg(pinThickness);
 			svg += mid;
 			if (busNames.contains(contact.attribute("signal"), Qt::CaseInsensitive)) {
 				busMids.insert(contact.attribute("signal").toLower(), mid);
 			}
-			svg += QString("<text id='label%1' x='%2' y='%3' font-family='DroidSans' stroke='none' fill='#000000' text-anchor='end' font-size='%5' >%4</text>\n")
-						.arg(contact.attribute("connectorIndex"))
-						.arg(width - length - 90)
-						.arg(ly - halfThickness + 50)
-						.arg(TextUtils::escapeAnd(signal))
-						.arg(smallFontSize);
+			svg += schematicPinText(contact.attribute("connectorIndex"), signal, width - pinLength - pinTextIndent, ly + pinTextVert, bigPinFontSize, "end", false);
+            svg += schematicPinNumber(width - (pinLength / 2) , ly, smallPinFontSize, contact.attribute("connectorIndex"), false, gotZero, gotOne);
 		}
 
-		if (!bus) ly += length;
+		if (!bus) ly += unitLength;
 	}
 
 	qreal lx = width / 2;
-	if ((powers.count() - powersBuses) % 2 == 0) lx -= (length / 2);
 	if (powers.count() - powersBuses > 2) {
-		lx -= (length * (powers.count() - powersBuses) / 2);
+		lx -= (unitLength * (powers.count() - powersBuses) / 2);
 	}
+    lx = qFloor(lx / unitLength) * unitLength;
 	foreach (QDomElement contact, powers) {
 		bool bus = contact.attribute("bus", 0).compare("1") == 0;
 		if (!contact.isNull() && !bus) {
 			QString signal = getConnectorName(contact);
-			svg += QString("<line fill='none' stroke='#000000' stroke-linejoin='round' stroke-linecap='round' stroke-width='%4' x1='%1' y1='%2' x2='%1' y2='%3' />\n")
-						.arg(lx).arg(halfThickness).arg(length).arg(SW(thickness));
-			viaY = halfThickness;
+			svg += QString("<line fill='none' stroke='%5' stroke-linejoin='round' stroke-linecap='round' stroke-width='%4' x1='%1' y1='%2' x2='%1' y2='%3' />\n")
+						.arg(lx).arg(halfPinThickness).arg(pinLength).arg(SW(pinThickness)).arg(SchematicRectConstants::PinColor);
+			viaY = halfPinThickness;
 			viaX = lx;
 
 			QString mid = QString("<rect x='%1' y='%2' fill='none' width='%4' height='%5' id='connector%3pin' connectorname='%6' stroke-width='0' />\n")
-						.arg(lx - halfThickness).arg(0).arg(contact.attribute("connectorIndex")).arg(thickness).arg(length).arg(signal);	
+						.arg(lx - halfPinThickness).arg(0).arg(contact.attribute("connectorIndex")).arg(pinThickness).arg(pinLength).arg(signal);	
 			mid += QString("<rect x='%1' y='%2' fill='none' width='%4' height='0' id='connector%3terminal' stroke-width='0' />\n")
-						.arg(lx - halfThickness).arg(0).arg(contact.attribute("connectorIndex")).arg(thickness);
+						.arg(lx - halfPinThickness).arg(0).arg(contact.attribute("connectorIndex")).arg(pinThickness);
 			svg += mid;
 			if (busNames.contains(contact.attribute("signal"), Qt::CaseInsensitive)) {
 				busMids.insert(contact.attribute("signal").toLower(), mid);
 			}
-			svg += QString("<text id='label%1' x='%2' y='%3' font-family='DroidSans' stroke='none' fill='#000000' text-anchor='middle' font-size='%5' >%4</text>\n")
-						.arg(contact.attribute("connectorIndex"))
-						.arg(lx)
-						.arg(length + 175)
-						.arg(TextUtils::escapeAnd(signal))
-						.arg(smallFontSize);
+            svg += schematicPinText(contact.attribute("connectorIndex"), signal, lx, pinLength - pinTextVert, bigPinFontSize, "end", true);
+            svg += schematicPinNumber(lx, pinLength / 2, smallPinFontSize, contact.attribute("connectorIndex"), true, gotZero, gotOne);
 		}
 
-		if (!bus) lx += length;
+		if (!bus) lx += unitLength;
 	}
 
 	lx = width / 2;
-	if ((grounds.count() - groundsBuses) % 2 == 0) lx -= (length / 2);
 	if (grounds.count() - groundsBuses > 2) {
-		lx -= (length * (grounds.count() - groundsBuses) / 2);
+		lx -= (unitLength * (grounds.count() - groundsBuses) / 2);
 	}
+    lx = qFloor(lx / unitLength) * unitLength;
 	foreach (QDomElement contact, grounds) {
 		bool bus = contact.attribute("bus", 0).compare("1") == 0;
 		if (!contact.isNull() && !bus) {
 			QString signal = getConnectorName(contact);
-			svg += QString("<line fill='none' stroke='#000000' stroke-linejoin='round' stroke-linecap='round' stroke-width='%4' x1='%1' y1='%2' x2='%1' y2='%3' />\n")
-						.arg(lx).arg(height - length).arg(height - halfThickness).arg(SW(thickness));
-			viaY = height - length;
+			svg += QString("<line fill='none' stroke='%5' stroke-linejoin='round' stroke-linecap='round' stroke-width='%4' x1='%1' y1='%2' x2='%1' y2='%3' />\n")
+						.arg(lx).arg(height - pinLength).arg(height - halfPinThickness).arg(SW(pinThickness)).arg(SchematicRectConstants::PinColor);
+			viaY = height - pinLength;
 			viaX = lx;
 
 			QString mid = QString("<rect x='%1' y='%2' fill='none' width='%4' height='%5' id='connector%3pin' connectorname='%6' stroke-width='0' />\n")
-						.arg(lx - halfThickness).arg(height - length).arg(contact.attribute("connectorIndex")).arg(thickness).arg(length).arg(signal);	
+						.arg(lx - halfPinThickness).arg(height - pinLength).arg(contact.attribute("connectorIndex")).arg(pinThickness).arg(pinLength).arg(signal);	
 			mid += QString("<rect x='%1' y='%2' fill='none' width='%4' height='0' id='connector%3terminal' stroke-width='0' />\n")
-						.arg(lx - halfThickness).arg(height).arg(contact.attribute("connectorIndex")).arg(thickness);
+						.arg(lx - halfPinThickness).arg(height).arg(contact.attribute("connectorIndex")).arg(pinThickness);
 			svg += mid;
 			if (busNames.contains(contact.attribute("signal"), Qt::CaseInsensitive)) {
 				busMids.insert(contact.attribute("signal").toLower(), mid);
 			}
-			svg += QString("<text id='label%1' x='%2' y='%3' font-family='DroidSans' stroke='none' fill='#000000' text-anchor='middle' font-size='%5' >%4</text>\n")
-						.arg(contact.attribute("connectorIndex")).
-						arg(lx).
-						arg(height - length - 80).
-						arg(TextUtils::escapeAnd(signal)).
-						arg(smallFontSize);
+
+            svg += schematicPinText(contact.attribute("connectorIndex"), signal, lx, height - (pinLength - pinTextVert), bigPinFontSize, "start", true);
+            svg += schematicPinNumber(lx, height - (pinLength / 2), smallPinFontSize, contact.attribute("connectorIndex"), true, gotZero, gotOne);
 		}
 
-		if (!bus) lx += length;
+		if (!bus) lx += unitLength;
 	}
 
 	svg.replace("viax=''", QString("x='%1'").arg(viaX));
@@ -3981,5 +4026,83 @@ bool BrdApplication::registerFonts() {
 
 	ix = QFontDatabase::addApplicationFont(":/resources/fonts/OCRA.ttf");
     return ix >= 0;
+}
+
+QString BrdApplication::schematicPinNumber(qreal x, qreal y, qreal pinSmallTextHeight, const QString & cid, bool rotate, bool gotZero, bool gotOne)
+{
+    if (!gotZero && !gotOne) return "";
+
+    QString id = cid;
+    if (gotZero) {
+        id = QString::number(cid.toInt() + 1);
+    }
+
+    QString text;
+
+    qreal useX = x;
+    qreal offset = 1000 * (SchematicRectConstants::PinWidth - SchematicRectConstants::PinSmallTextVert) / 25.4;
+    qreal useY = y - offset;
+
+    if (rotate) {
+		text += QString("<g transform='translate(%1,%2)'><g transform='rotate(%3)'>\n")
+			.arg(useX - offset)
+			.arg(useY + offset)
+			.arg(270);
+		useX = 0;
+		useY = 0;
+    }
+
+    text += QString("<text class='text' font-family=%8 stroke='none' stroke-width='%6' fill='%7' font-size='%1' x='%2' y='%3' text-anchor='%4'>%5</text>\n")
+					.arg(pinSmallTextHeight)
+					.arg(useX)
+					.arg(useY)
+					.arg("middle")
+					.arg(id)
+					.arg(0)  // SW(width)
+					.arg(SchematicRectConstants::PinTextColor) 
+                    .arg(SchematicRectConstants::FontFamily)
+                    ; 
+
+    if (rotate) {
+        text += "</g></g>\n";
+    }
+
+    return text;
+}
+
+QString BrdApplication::schematicPinText(const QString & id, const QString & signal, qreal x, qreal y, qreal bigPinFontSize, const QString & anchor, bool rotate)
+{
+    QString text;
+    if (rotate) {
+        qreal yOffset = SchematicRectConstants::PinTextIndent + SchematicRectConstants::RectStrokeWidth;
+        if (anchor == "start") yOffset = -yOffset;
+        qreal xOffset = SchematicRectConstants::PinTextVert + SchematicRectConstants::PinWidth;
+        xOffset = 1000 * xOffset / 25.4;
+        yOffset = 1000 * yOffset / 25.4;
+		text += QString("<g transform='translate(%1,%2)'><g transform='rotate(%3)'>\n")
+			.arg(x + xOffset)
+			.arg(y + yOffset)
+			.arg(270);
+		x = 0;
+		y = 0;
+        //xOffset = yOffset = 0;
+    }
+
+    text += QString("<text id='label%1' x='%5' y='%2' font-family=\"%7\" stroke='none' fill='%6' text-anchor='%8' font-size='%4' >%3</text>\n")
+						.arg(id)
+						.arg(y)
+						.arg(TextUtils::escapeAnd(signal))
+						.arg(bigPinFontSize)
+						.arg(x)
+                        .arg(SchematicRectConstants::PinTextColor)
+                        .arg(SchematicRectConstants::FontFamily)
+                        .arg(anchor)
+                        ;
+
+    if (rotate) {
+        text += "</g></g>\n";
+    }
+
+    return text;
 }
 

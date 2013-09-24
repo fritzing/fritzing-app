@@ -53,6 +53,8 @@ public:
 	static QString makeBreadboardSipSvg(const QString & expectedFileName);
 	static QString makeBreadboardDipSvg(const QString & expectedFileName);
 
+	static QString obsoleteMakeSchematicSvg(const QStringList & labels);
+
 public slots:
 	void swapEntry(const QString & text);
 

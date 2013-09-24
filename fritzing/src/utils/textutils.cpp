@@ -1916,3 +1916,4 @@ void TextUtils::resplit(QStringList & names, const QString & split) {
     names.clear();
     names.append(result);
 }
+

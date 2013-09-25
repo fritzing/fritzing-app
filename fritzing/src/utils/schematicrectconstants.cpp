@@ -276,9 +276,8 @@ QString SchematicRectConstants::genSchematicDIP(QList<QDomElement> & powers, QLi
 	qreal height = 0;
     qreal startTitle = 0;
 	if (powers.count() > 0) {
-        qreal dh = pinLength + qCeil(topWidth / unitLength) * unitLength;
-        startTitle = dh;
-		height += dh;
+        startTitle = pinLength + qCeil(topWidth / unitLength) * unitLength;
+		height += startTitle;
 		rectTop += pinLength - rectThickness / 2;
 	}
     else {
@@ -346,7 +345,7 @@ QString SchematicRectConstants::genSchematicDIP(QList<QDomElement> & powers, QLi
 					.arg(contact.attribute("connectorIndex"));
 	}
 
-	qreal ly = rectTop + (2 * unitLength);
+	qreal ly = startTitle;
 	foreach (QDomElement contact, lefts) {
 		bool bus = contact.attribute("bus", 0).compare("1") == 0;
 		if (!contact.isNull() && !bus) {
@@ -358,7 +357,7 @@ QString SchematicRectConstants::genSchematicDIP(QList<QDomElement> & powers, QLi
 
 			QString mid = QString("<rect x='0' y='%1' fill='none' width='%3' height='%4' id='connector%2pin' connectorName='%5' stroke-width='0' />\n")
 						.arg(ly - halfPinThickness).arg(contact.attribute("connectorIndex")).arg(pinLength).arg(pinThickness).arg(signal);	
-			mid += QString("<rect x='0' y='%1' fill='none' width='%3' height='%3' id='connector%2terminal' stroke-width='0' />\n")
+			mid += QString("<rect x='0' y='%1' fill='none' width='0' height='%3' id='connector%2terminal' stroke-width='0' />\n")
 						.arg(ly - halfPinThickness).arg(contact.attribute("connectorIndex")).arg(pinThickness);
 			svg += mid;
 			if (busNames.contains(contact.attribute("signal"), Qt::CaseInsensitive)) {
@@ -371,7 +370,7 @@ QString SchematicRectConstants::genSchematicDIP(QList<QDomElement> & powers, QLi
 		if (!bus) ly += unitLength;
 	}
 	
-	ly = rectTop + (2 * unitLength);
+	ly = startTitle;
 	foreach (QDomElement contact, rights) {
 		bool bus = contact.attribute("bus", 0).compare("1") == 0;
 		if (!contact.isNull() && !bus) {
@@ -394,8 +393,8 @@ QString SchematicRectConstants::genSchematicDIP(QList<QDomElement> & powers, QLi
 						.arg(pinLength)
 						.arg(pinThickness)
 						.arg(signal);	
-			mid += QString("<rect x='%1' y='%2' fill='none' width='%4' height='%4' id='connector%3terminal' stroke-width='0' />\n")
-						.arg(width - pinThickness)
+			mid += QString("<rect x='%1' y='%2' fill='none' width='0' height='%4' id='connector%3terminal' stroke-width='0' />\n")
+						.arg(width)
 						.arg(ly - halfPinThickness)
 						.arg(contact.attribute("connectorIndex"))
 						.arg(pinThickness);

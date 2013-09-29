@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_3" xmlns:xml="http://www.w3.org/XML/1998/namespace"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="58.693px"
+	 height="57.695px" viewBox="0 0 58.693 57.695" enable-background="new 0 0 58.693 57.695" xml:space="preserve">
+	 
+<g id="silkscreen">
+	<circle fill="none" stroke="#FFFFFF" stroke-width="0.576" cx="29.347" cy="28.847" r="28.347"/>
+</g>
+<g id="copper0">
+	<g id="copper1">
+		<path id="connector1" fill="none" stroke="#F7BD13" stroke-width="1.44" d="M13.764,16.412c-0.231-1.311-1.473-2.185-2.783-1.961
+			c-1.305,0.228-2.182,1.472-1.953,2.782c0.225,1.305,1.468,2.183,2.776,1.957C13.114,18.96,13.99,17.718,13.764,16.412z"/>
+		<path id="connector18" fill="none" stroke="#F7BD13" stroke-width="1.44" d="M46.349,17.566c0.165,1.321,1.361,2.258,2.679,2.102
+			c1.316-0.161,2.255-1.359,2.093-2.677c-0.157-1.318-1.354-2.255-2.673-2.1C47.128,15.052,46.19,16.249,46.349,17.566z"/>
+	</g>
+</g>
+
+</svg>

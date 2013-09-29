@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.2" baseProfile="tiny" id="Layer_1" xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="14.737px"
+	 height="18.142px" viewBox="0 0 14.737 18.142" xml:space="preserve">
+<g id="copper1">
+	<rect id="connector0pad" x="1.415" y="13.89" fill="#F7BD13" width="2.834" height="4.252"/>
+	<rect id="connector1pad" x="5.95" y="13.89" fill="#F7BD13" width="2.836" height="4.252"/>
+	<rect id="connector2pad" x="10.487" y="13.89" fill="#F7BD13" width="2.835" height="4.252"/>
+	<rect id="connector3pad" x="10.487" fill="#F7BD13" width="2.835" height="4.252"/>
+	<rect id="connector4pad" x="5.95" fill="#F7BD13" width="2.836" height="4.252"/>
+	<rect id="connector5pad" x="1.415" fill="#F7BD13" width="2.834" height="4.252"/>
+</g>
+<g id="silkscreen">
+	<polyline id="path" fill="none" stroke="#FFFFFF" stroke-width="0.4" stroke-miterlimit="10" points="13.82,1.985 14.455,1.985 
+		14.455,16.158 13.82,16.158 	"/>
+	<polyline id="path_2_" fill="none" stroke="#FFFFFF" stroke-width="0.4" stroke-miterlimit="10" points="0.917,16.158 
+		0.282,16.158 0.282,1.985 0.917,1.985 	"/>
+</g>
+</svg>

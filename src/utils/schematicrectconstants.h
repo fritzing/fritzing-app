@@ -60,6 +60,7 @@ public:
     static QString genSchematicDIP(QList<QDomElement> & powers, QList<QDomElement> & grounds, QList<QDomElement> & lefts,
 	            QList<QDomElement> & rights, QList<QDomElement> & vias, QStringList & busNames, 
                 QString & boardName, bool usingParam, bool genericSMD, QString (*getConnectorName)(const QDomElement &));
+    static QString simpleGetConnectorName(const QDomElement & element);
 
 };
 

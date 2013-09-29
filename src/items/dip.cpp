@@ -42,10 +42,6 @@ static int MaxSipPins = 128;
 static int MinDipPins = 4;
 static int MaxDipPins = 128;
 
-inline QString getConnectorName(const QDomElement & element) {
-    return element.attribute("name");
-}
-
 //////////////////////////////////////////////////
 
 Dip::Dip( ModelPart * modelPart, ViewLayer::ViewID viewID, const ViewGeometry & viewGeometry, long id, QMenu * itemMenu, bool doLabel)
@@ -190,7 +186,7 @@ QString Dip::makeSchematicSvg(const QStringList & labels)
     }
     QList<QDomElement> empty;
     QStringList busNames;
-    return SchematicRectConstants::genSchematicDIP(empty, empty, lefts, rights, empty, busNames, QString("IC"), false, false, getConnectorName);
+    return SchematicRectConstants::genSchematicDIP(empty, empty, lefts, rights, empty, busNames, QString("IC"), false, false, SchematicRectConstants::simpleGetConnectorName);
 }
 
 QString Dip::obsoleteMakeSchematicSvg(const QStringList & labels) 

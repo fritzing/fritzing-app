@@ -27,6 +27,7 @@ $Date: 2013-04-22 23:44:56 +0200 (Mo, 22. Apr 2013) $
 #include "mysterypart.h"
 #include "../utils/graphicsutils.h"
 #include "../utils/familypropertycombobox.h"
+#include "../utils/schematicrectconstants.h"
 #include "../fsvgrenderer.h"
 #include "../sketch/infographicsview.h"
 #include "../commands.h"
@@ -366,6 +367,59 @@ QString MysteryPart::makeSchematicSvg(const QString & expectedFileName)
 
 QString MysteryPart::makeSchematicSvg(const QStringList & labels, bool sip) 
 {	
+    QDomDocument fakeDoc;
+
+    QList<QDomElement> lefts;
+    for (int i = 0; i < labels.count(); i++) {
+        QDomElement element = fakeDoc.createElement("contact");
+        element.setAttribute("connectorIndex", i);
+        element.setAttribute("name", labels.at(i));
+        lefts.append(element);
+    }
+    QList<QDomElement> empty;
+    QStringList busNames;
+
+    QString titleText = sip ? "IC" : "?";
+    QString svg = SchematicRectConstants::genSchematicDIP(empty, empty, lefts, empty, empty, busNames, titleText, false, false, SchematicRectConstants::simpleGetConnectorName);
+    if (sip) return svg;
+    
+    // add the mystery part graphic
+    QDomDocument doc;
+    if (!doc.setContent(svg)) return svg;
+
+    QRectF viewBox;
+    double w, h;
+    TextUtils::ensureViewBox(doc, GraphicsUtils::StandardFritzingDPI, viewBox, false, w, h, false);
+
+    double newUnit = 1000 * SchematicRectConstants::NewUnit / 25.4;
+    double rectStroke = 2 * 1000 * SchematicRectConstants::RectStrokeWidth / 25.4;
+    QString circle = QString("<circle cx='%1' cy='%2' r='%3' fill='black' stroke-width='0' stroke='none' />\n");
+	circle += QString("<text x='%1' fill='#FFFFFF' y='%4' font-family=\"%5\" text-anchor='middle' font-weight='bold' stroke='none' stroke-width='0' font-size='%6' >?</text>\n");
+    circle = circle
+                .arg(viewBox.width() - rectStroke - (newUnit / 2))
+                .arg(rectStroke + (newUnit / 2))
+                .arg(newUnit / 2)
+
+                .arg(rectStroke + (newUnit / 2) + (newUnit / 3))   // offset so the text appears in the center of the circle
+                .arg(SchematicRectConstants::FontFamily)
+                .arg(newUnit)
+                ;
+
+    QDomDocument temp;
+    temp.setContent(QString("<g>" + circle + "</g>"));
+
+    QDomElement root = doc.documentElement();
+    QDomElement schematic = TextUtils::findElementWithAttribute(root, "id", "schematic");
+    if (schematic.isNull()) return svg;
+
+    QDomElement tempRoot = temp.documentElement();
+    schematic.appendChild(tempRoot);
+
+    return doc.toString(1);
+}
+
+QString MysteryPart::obsoleteMakeSchematicSvg(const QStringList & labels, bool sip) 
+{	
 	int increment = GraphicsUtils::StandardSchematicSeparationMils;   // 7.5mm;
 	int border = 30;
 	double totalHeight = (labels.count() * increment) + increment + border;
@@ -444,6 +498,7 @@ QString MysteryPart::makeSchematicSvg(const QStringList & labels, bool sip)
 	svg += "</svg>\n";
 	return svg;
 }
+
 
 QString MysteryPart::makeBreadboardSvg(const QString & expectedFileName) 
 {

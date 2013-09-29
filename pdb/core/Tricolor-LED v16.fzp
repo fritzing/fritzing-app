@@ -23,7 +23,7 @@ Thin 0.8mm PCB</description>
 <tag>Light</tag>
 </tags>
 <properties>
-<property name='family'>/obsolete/microcontroller board (lilypad)</property>
+<property name='family'>microcontroller board (lilypad)</property>
 <property name='type'>LED</property>
 <property name='Colors'>3</property>
 </properties>

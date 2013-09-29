@@ -142,6 +142,11 @@ QString schematicPinText(const QString & id, const QString & signal, qreal x, qr
     return text;
 }
 
+
+QString SchematicRectConstants::simpleGetConnectorName(const QDomElement & element) {
+    return element.attribute("name");
+}
+
 QString SchematicRectConstants::genSchematicDIP(QList<QDomElement> & powers, QList<QDomElement> & grounds, QList<QDomElement> & lefts,
 	            QList<QDomElement> & rights, QList<QDomElement> & vias, QStringList & busNames, 
                 QString & boardName, bool usingParam, bool genericSMD, QString (*getConnectorName)(const QDomElement &)) 
@@ -254,8 +259,8 @@ QString SchematicRectConstants::genSchematicDIP(QList<QDomElement> & powers, QLi
 	}
 
 	// title is symmetric so leave max room on both sides
-	if (leftWidth > rightWidth) rightWidth = leftWidth;
-	if (rightWidth > leftWidth) leftWidth = rightWidth;
+	if (leftWidth > rightWidth && rightWidth > 0) rightWidth = leftWidth;
+	if (rightWidth > leftWidth && leftWidth > 0) leftWidth = rightWidth;
 
 	// convert from pixels (which seem to be points) back to mils
 	leftWidth = 1000 * leftWidth / 72.0;
@@ -264,7 +269,7 @@ QString SchematicRectConstants::genSchematicDIP(QList<QDomElement> & powers, QLi
 	topWidth = 1000 * topWidth / 72.0;
 	bottomWidth = 1000 * bottomWidth / 72.0;
 
-	qreal textWidth = (leftWidth + rightWidth + titleWidth + pinTextIndent + pinTextIndent); 
+	qreal textWidth = (leftWidth + rightWidth + titleWidth + (rightWidth > 0 ? pinTextIndent : 0) + (leftWidth > 0 ? pinTextIndent : 0)); 
     qreal width = (qCeil(textWidth / unitLength) * unitLength);
     if (lefts.count() > 0) width += pinLength;
     if (rights.count() > 0) width += pinLength;
@@ -321,7 +326,7 @@ QString SchematicRectConstants::genSchematicDIP(QList<QDomElement> & powers, QLi
     if (y < startTitle) y = startTitle;
 	foreach (QString title, titles) {
 		svg += QString("<text id='label' x='%1' y='%3' font-family=\"%5\" stroke='none' fill='#000000' text-anchor='middle' font-size='%4' >%2</text>\n")
-						.arg(width / 2.0)
+						.arg(rectLeft + (width - rectMinus) / 2)
 						.arg(TextUtils::escapeAnd(title))
 						.arg(y)
 						.arg(bigFontSize)

@@ -57,6 +57,7 @@ $Date: 2013-04-28 00:56:34 +0200 (So, 28. Apr 2013) $
 #include "../sketch/pcbsketchwidget.h"
 #include "../svg/svgfilesplitter.h"
 #include "../utils/folderutils.h"
+#include "../utils/fmessagebox.h"
 #include "../utils/lockmanager.h"
 #include "../utils/textutils.h"
 #include "../utils/graphicsutils.h"
@@ -1200,7 +1201,7 @@ void MainWindow::loadBundledSketch(const QString &fileName, bool addToRecent, bo
 
     QString error;
 	if(!FolderUtils::unzipTo(fileName, m_fzzFolder, error)) {
-		QMessageBox::warning(
+		FMessageBox::warning(
 			this,
 			tr("Fritzing"),
 			tr("Unable to open '%1': %2").arg(fileName).arg(error)
@@ -1218,7 +1219,7 @@ void MainWindow::loadBundledSketch(const QString &fileName, bool addToRecent, bo
 	namefilters << "*"+FritzingSketchExtension;
 	QFileInfoList entryInfoList = dir.entryInfoList(namefilters);
 	if (entryInfoList.count() == 0) {
-		QMessageBox::warning(
+		FMessageBox::warning(
 			this,
 			tr("Fritzing"),
 			tr("No Sketch found in '%1'").arg(fileName)
@@ -1443,7 +1444,7 @@ bool MainWindow::loadBundledNonAtomicEntity(const QString &fileName, Bundler* bu
 
     QString error;
 	if(!FolderUtils::unzipTo(fileName, unzipDirPath, error)) {
-		QMessageBox::warning(
+		FMessageBox::warning(
 			this,
 			tr("Fritzing"),
 			tr("Unable to open shareable '%1': %2").arg(fileName).arg(error)
@@ -1486,7 +1487,7 @@ ModelPart* MainWindow::loadBundledPart(const QString &fileName, bool addToBin) {
 
     QString error;
 	if(!FolderUtils::unzipTo(fileName, unzipDirPath, error)) {
-		QMessageBox::warning(
+		FMessageBox::warning(
 			this,
 			tr("Fritzing"),
 			tr("Unable to open shareable part '%1': %2").arg(fileName).arg(error)
@@ -1501,7 +1502,7 @@ ModelPart* MainWindow::loadBundledPart(const QString &fileName, bool addToBin) {
 	    mps = moveToPartsFolder(unzipDir, this, addToBin, true, FolderUtils::getUserDataStorePath("parts"), "user", true);
     }
     catch (const QString & msg) {
-		QMessageBox::warning(
+		FMessageBox::warning(
 			this,
 			tr("Fritzing"),
 			msg
@@ -1511,7 +1512,7 @@ ModelPart* MainWindow::loadBundledPart(const QString &fileName, bool addToBin) {
 
 	if (mps.count() != 1) {
 		// if this fails, that means that the bundled was wrong
-		QMessageBox::warning(
+		FMessageBox::warning(
 			this,
 			tr("Fritzing"),
 			tr("Unable to load part from '%1'").arg(fileName)
@@ -1576,7 +1577,7 @@ void MainWindow::saveBundledPart(const QString &moduleId) {
 
     QStringList skipSuffixes;
 	if(!FolderUtils::createZipAndSaveTo(destFolder, bundledFileName, skipSuffixes)) {
-		QMessageBox::warning(
+		FMessageBox::warning(
 			this,
 			tr("Fritzing"),
 			tr("Unable to export %1 to shareable sketch").arg(bundledFileName)

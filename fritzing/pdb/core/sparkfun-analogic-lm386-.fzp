@@ -22,7 +22,7 @@
 </layers>
 </breadboardView>
 <schematicView>
-<layers image="schematic/sparkfun-analogic_op-amp_-full_schematic.svg">
+<layers image="schematic/sparkfun-analogic_op-amp_-lm386.svg">
 <layer layerId="schematic"/>
 </layers>
 </schematicView>

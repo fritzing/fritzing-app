@@ -60,23 +60,25 @@ QWidget *SketchAreaWidget::contentView() {
 void SketchAreaWidget::createLayout() {
 	m_toolbar = new QFrame(this);
 	m_toolbar->setObjectName("sketchAreaToolbar");
-	m_toolbar->setFixedHeight(60);
+    m_toolbar->setFixedHeight(66);
 
 	QFrame *leftButtons = new QFrame(m_toolbar);
 	m_buttonsContainer = new QHBoxLayout(leftButtons);
 	m_buttonsContainer->setMargin(0);
-	m_buttonsContainer->setSpacing(3);
+    m_buttonsContainer->setSpacing(0);
+    m_buttonsContainer->setObjectName("leftButton");
 
 	QFrame *middleButtons = new QFrame(m_toolbar);
 	middleButtons->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::MinimumExpanding);
 	m_labelContainer = new QVBoxLayout(middleButtons);
 	m_labelContainer->setSpacing(0);
-	m_labelContainer->setMargin(0);
+    m_labelContainer->setMargin(0);
+    m_labelContainer->setObjectName("middleButton");
 
 	QFrame *rightButtons = new QFrame(m_toolbar);
 
 	QHBoxLayout *toolbarLayout = new QHBoxLayout(m_toolbar);
-	toolbarLayout->setMargin(2);
+    toolbarLayout->setMargin(0);
 	toolbarLayout->setSpacing(0);
 	toolbarLayout->addWidget(leftButtons);
 	toolbarLayout->addWidget(middleButtons);

@@ -39,17 +39,11 @@ win32 {
         INCLUDEPATH += $$[QT_INSTALL_PREFIX]/src/3rdparty/zlib
 	DEFINES += _CRT_SECURE_NO_DEPRECATE
         DEFINES += _WINDOWS
-        LIBS += setupapi.lib
-        LIBS += advapi32.lib   # only seems necessary for QtCreator 2.5.2 and up
+        LIBS += C:/Users/joev/Documents/AAA/Fritzing/fritzing/fritzing/SetupAPI.Lib
+     #   LIBS += advapi32.lib   # only seems necessary for QtCreator 2.5.2 and up
 }
 macx {
         MOC_DIR = build/moc
-	
-	# the CONFIG setting builds for all three Mac platforms
-	# comment out the platforms you do not use, for example
-	# CONFIG += x86_64 #x86 ppc
-	# will build for the Intel 64 platform only
-	
         CONFIG += x86_64 x86 ppc
 	QMAKE_INFO_PLIST = FritzingInfo.plist
 	#DEFINES += QT_NO_DEBUG   		# uncomment this for xcode

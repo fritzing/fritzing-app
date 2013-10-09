@@ -39,6 +39,7 @@ QStatusBar {
 
 QStatusBar::item {
         border: none;
+		color:rgb(255,0,255);
 }
 
 /* PEMainWindow seems to be needed here rathern in newpartseditor.qss */
@@ -54,68 +55,83 @@ PEMainWindow {
         background-color: rgb(255,255,255);
 }
 
+/* ################### Splashbar try #################### */
+splash {
+	
+	height:100px;
+	color:rgb(255,0,255);
+	background:rgb(0,255,0);
+	}
 
 /* ################### the toolbar #################### */
 
-QToolBar {
-	    border: 5px;
-        background: rgb(0, 255, 0);
-        color: rgb(214,50,34);
+
+SketchArea #middleButton {
+        background-color: rgb(0,255,0);
+		color: rgb(0,255,255);
 }
 
 #fileToolBar QToolButton,
 #editToolBar QToolButton {
-        border: 1px solid rgb(214,50,34);
-        margin: 5px 5px;
+		height:66px;
+        border: none;
+        margin: 50px 0px;
         color: rgb(214,50,34);
         background-color: rgb(214,50,34);
+
 }
-#fileToolBar QToolButton:hover,
-#editToolBar QToolButton:hover {
-        background-color: rgb(255,0,0);
-        color: rgb(255,255,255); /* doesnt work, why ??? */
-}
+
 #fileToolBar QToolButton:pressed,
 #editToolBar QToolButton:pressed {
-        border-color: rgb(242,57,38);
         background-color: rgb(242,57,38);
-        color: rgb(214,50,34); /* doesnt work, why ??? */
+		color: rgb(214,50,34); /* doesnt work, why ??? */
+		
 }
-
-
-SketchArea QToolButton {
-      /*  background-color: transparent;*/
-}
-
 
 
 #sketchAreaToolbar {
         background-color: rgb(214,50,34); /*background of toolbar*/
         border: none;
         padding: 0;
+		
+}
+
+QHBoxLayout#leftButton {
+        background-color: rgb(214,50,255); /*background of toolbar*/
+        border: 5px;
+        margin: 50;
+		
 }
 
 #sketchAreaToolbar QLabel {
-        font-weight: normal;
+        font-weight: bold;
         color: rgb(214,50,34);
+		border: none;
 }
 
 #sketchAreaToolbar QToolButton {
         background: transparent;
         border: none;
-        margin: 0;
+		color:rgb(255,0,255);
+        height:60px;
+
 }
 
-#sketchAreaToolbar QToolButton:hover {
-        background: rgb(255,0,255);
+
+ 
+ #sketchAreaToolbar QToolButton:hover {   /* hover on toolbar buttons */
+        background: rgb(242,57,38);
         border: none;
-        margin: 0;
+		color: rgb(236,236,236);
+		height:66px;
 }
 
-#sketchAreaToolbar QToolButton::menu-button {
+#sketchAreaToolbar QToolButton::menu-button { /*the little arrow to open the submenu*/
         border: none;
         background-color: none;
-        padding-top: 17px;
+        padding-top: 0px;
+		height:60px;
+		padding-right:5px;
 }
 
 /* ################### zoomslider #################### */

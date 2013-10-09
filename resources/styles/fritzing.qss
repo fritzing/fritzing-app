@@ -1,53 +1,37 @@
-/*
-
-lightest red:	rgb(126,54,77);
-medium red_l:	rgb(108,36,60); (little lighter for hover)
-medium red:		rgb(84,24,44);
-darkest red_l:  rgb(81,0,27); (little lighter for hover)
-darkest red:	rgb(51,0,17);
-
-light grey:		rgb(217,217,217);
-medium grey_l:	rgb(190,190,190); (lighter grey for hovers)
-medium grey:	rgb(164,164,164);
-medium grey_d:	rgb(117,117,117); (shadowish border around widgets)
-dark grey:		rgb(126,126,126);
-darker grey		rgb(87,87,87); (used as font color only so far)
-
-*/
-
-
 /* ########### the main window and general things ############## */
 
 MainWindow {
-        /* layout here */
-
+        /* layout here  */
+		background-color:rgb(217,217,217); /*mainbackground color*/
         /* styling there */
-        background-color: #666666;
-        font-family: "Lucida Grande", LucidaSans, Tahoma, Arial, sans-serif;
+        font-family: Droid Sans, LucidaSans, Tahoma, Arial, sans-serif;
         font-size: 10px;
         color: rgb(255,255,255);
 }
 
 QStatusBar {
-        background-color: rgb(84,24,44);
+        background-color: rgb(130,31,9); /* the statusbar at the bottom */
 }
 
 #statusBarContainer {
-        background-color: rgb(84,24,44);
+        background-color: rgb(130,31,9);/* the statusbar at the bottom */
 }
 
 /* this separates palettes from each other and is movable */
 MainWindow::separator {
-        background-color: #666666;
+        background-color: rgb(101,101,101);
+}
+
+MainWindow::toolbar {
+        background-color: rgb(255,0,255);
 }
 
 MainWindow QLabel {
-        color: rgb(0,0,0);
+        color: rgb(50,50,50);
 }
 
 QStatusBar {
         left: 6px;
-
         color: rgb(255,255,255);
         font-weight: bold;
         font-size: 10px;
@@ -60,43 +44,78 @@ QStatusBar::item {
 /* PEMainWindow seems to be needed here rathern in newpartseditor.qss */
 /* this separates palettes from each other and is movable */
 PEMainWindow::separator {
-        background-color: #666666;
+        background-color: rgb(177,177,177);
 }
 
 PEMainWindow {
         /* layout here */
 
         /* styling there */
-        background-color: #afafb4;
+        background-color: rgb(255,255,255);
 }
 
 
 /* ################### the toolbar #################### */
-QToolBar {
-        border: 0px;
-        /* spacing: 10px; spacing of items in the toolbar */
 
-        background-color: rgb(51,0,17);
-        color: rgb(126,54,77);
+QToolBar {
+	    border: 5px;
+        background: rgb(0, 255, 0);
+        color: rgb(214,50,34);
 }
 
 #fileToolBar QToolButton,
 #editToolBar QToolButton {
-        border: 1px solid rgb(126,54,77);
+        border: 1px solid rgb(214,50,34);
         margin: 5px 5px;
-        color: rgb(126,54,77);
-        background-color: rgb(51,0,17);
+        color: rgb(214,50,34);
+        background-color: rgb(214,50,34);
 }
 #fileToolBar QToolButton:hover,
 #editToolBar QToolButton:hover {
-        background-color: rgb(81,0,27);
+        background-color: rgb(255,0,0);
         color: rgb(255,255,255); /* doesnt work, why ??? */
 }
 #fileToolBar QToolButton:pressed,
 #editToolBar QToolButton:pressed {
-        border-color: rgb(126,54,77);
-        background-color: rgb(126,54,77);
-        color: rgb(51,0,17); /* doesnt work, why ??? */
+        border-color: rgb(242,57,38);
+        background-color: rgb(242,57,38);
+        color: rgb(214,50,34); /* doesnt work, why ??? */
+}
+
+
+SketchArea QToolButton {
+      /*  background-color: transparent;*/
+}
+
+
+
+#sketchAreaToolbar {
+        background-color: rgb(214,50,34); /*background of toolbar*/
+        border: none;
+        padding: 0;
+}
+
+#sketchAreaToolbar QLabel {
+        font-weight: normal;
+        color: rgb(214,50,34);
+}
+
+#sketchAreaToolbar QToolButton {
+        background: transparent;
+        border: none;
+        margin: 0;
+}
+
+#sketchAreaToolbar QToolButton:hover {
+        background: rgb(255,0,255);
+        border: none;
+        margin: 0;
+}
+
+#sketchAreaToolbar QToolButton::menu-button {
+        border: none;
+        background-color: none;
+        padding-top: 17px;
 }
 
 /* ################### zoomslider #################### */
@@ -118,7 +137,7 @@ QToolBar {
         padding: 0px;
         border: none;
         color: rgb(255,255,255);
-        background-color: rgb(84,24,44);
+        background-color: rgb(130,31,9);
         width: 35px;
         max-width: 35px;
         min-width: 35px;
@@ -166,13 +185,12 @@ FDockWidget {
         /* only relevant if palette is floating
            and only visible with tabs inside the widget
            such as Parts Library */
-        background-color: rgb(164,164,164);
+        background-color: rgb(217,217,217);
 
         /* this defines the title text! */
-        font-size: 10px;
-        font-weight: 600;
-        text-transform: uppercase;
-        color: #777;
+        font-size: 12px;
+        font-weight: 300;
+        color: rgb(101,101,101);
 
         titlebar-close-icon: url(:/resources/images/icons/dockWidgetEmpty_icon.png);
         titlebar-normal-icon: url(:/resources/images/icons/dockWidgetEmpty_icon.png);
@@ -180,26 +198,26 @@ FDockWidget {
 
 #topMostDock {
         margin: 0px;
-        margin-top: 6px;
+        margin-top: 8px;
         border: 0px;
 }
 
 #bottomMostDock {
         margin: 0px;
-        margin-bottom: 6px;
+        margin-bottom: 8px;
         border: 0px;
 }
 
 FDockWidget::title {
-        height: 10px;
+        height: 16px;
         /*border-top-left-radius: 5px;*/
         /*border-top-right-radius: 5px;*/
-        background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                     stop: 0 #ededed, stop: 1.0 #ccc);
-        border-top: 1px #e3e3e3 solid;
+        background: rgb(217,217,217);
+        border-top: 4px rgb(51,51,51) solid;
         padding-left: 6px;
         padding-top: 2px;
         padding-bottom: 0px;
+		
 }
 FDockWidget::close-button,
 FDockWidget::float-button {
@@ -250,13 +268,13 @@ AutoCloseMessageBox {
 
 HtmlInfoView {
     /*
-        border: 1px solid rgb(117,117,117);
+        border: 1px solid rgb(177,177,177);
         border-top: 0px;
         */
 }
 
 #infoViewMainFrame {
-        background-color: rgb(175,175,180);
+        background-color: rgb(217,217,217);
         border: 0px;
         margin: 0px;
         padding: 0px;
@@ -273,7 +291,7 @@ HtmlInfoView {
 }
 
 #iconFrame {
-        background-color: rgb(175,175,180);
+        background-color: rgb(217,217,217);
         /* how to set background for each icon? */
         max-height: 32px;
         min-height: 32px;
@@ -281,7 +299,7 @@ HtmlInfoView {
         padding: 0px;
 }
 #iconLabel {
-        background-color: rgb(155,155,160);
+        background-color: rgb(255,255,255);
 }
 
 #infoViewLockCheckbox {
@@ -305,7 +323,8 @@ HtmlInfoView {
         padding: 0px 0px 1px 0px;
         font-size: 10px;
         font-weight: normal;
-        color: rgb(70,70,70);     /*rgb(110,110,110);*/
+        color: rgb(51,51,51);     
+		/*just the part discription titel not the part main-titel*/ 
 }
 
 
@@ -314,7 +333,7 @@ HtmlInfoView {
         padding: 0px 0px 1px 0px;
         font-size: 10px;
         font-weight: normal;
-        color: rgb(70,70,70);/*rgb(110,110,110);*/
+        color: rgb(214,50,34);/*rgb(110,110,110);*/
 }
 
 
@@ -326,7 +345,7 @@ HtmlInfoView {
         font-weight: bold;
         text-align: left;
         font-size: 10px;
-        color: rgb(84,24,44);
+        color: rgb(130,31,9);
 }
 
 /* Properties */
@@ -336,18 +355,18 @@ HtmlInfoView {
 
 #propNameLabel {
         font-size: 10px;
-        color: rgb(70,70,70);
+        color: rgb(51,51,51);
         min-width: 65px;
         max-width: 65px;
         margin: 0px 0px 0px 4px;
         padding: 3px 3px 3px 0px;
-        border-top: 1px solid rgb(155,155,155);
+        border-top: 1px solid rgb(177,177,177);
 }
 #propValueFrame {
         margin: 0px;
         border: 0px;
         padding: 1px 0px 1px 0px;
-        border-top: 1px solid rgb(155,155,155);
+        border-top: 1px solid rgb(177,177,177);
 }
 #propValueLabel {
         font-size: 10px;
@@ -356,17 +375,14 @@ HtmlInfoView {
 
 #infoViewSpinBoxLabel {
         font-size: 10px;
-        color: rgb(0,0,0);
+        color: rgb(217,217,217);
 }
 
 /* complex property values */
 
 
 #infoViewDoubleSpinBox {
-        background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-            stop: 0 rgb(200,200,200), stop: 0.1 rgb(230,230,230),
-            stop: 0.1 rgb(230,230,230), stop: 0.5 rgb(245,245,245),
-            stop: 0.5 rgb(245,245,245), stop: 1.0 rgb(255,255,255));
+        background: rgb(255,255,255);
         font-size: 10px;
         color: rgb(0,0,0);
         border: none;
@@ -382,24 +398,20 @@ HtmlInfoView {
 }
 
 #infoViewComboBox:disabled {
-	color:rgb(60, 60, 60);
+	color:rgb(50, 50, 50);
 }
 #infoViewComboBox:!editable:disabled {
-	background: rgb(144,144,144);
+	background: rgb(255,255,255);
 }
 #infoViewComboBox:editable:disabled {
-	background: rgb(144,144,144);
+	background: rgb(255,255,255);
 }
 
 #infoViewComboBox:!editable {
-        background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                    stop: 0 rgb(225,225,225), stop: 0.4 rgb(220,220,220),
-                    stop: 0.5 rgb(215,215,215), stop: 1.0 rgb(210,210,210));
+        background: rgb(255,255,255);
 }
 #infoViewComboBox:hover  {
-        background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                    stop: 0 rgb(235,235,235), stop: 0.4 rgb(230,230,230),
-                    stop: 0.5 rgb(225,225,225), stop: 1.0 rgb(220,220,220));
+        background: rgb(255,255,255);
 }
 #infoViewComboBox:on  {
 }
@@ -409,18 +421,18 @@ HtmlInfoView {
 
 /* drop-down buton of the combobox */
 #infoViewComboBox::drop-down:button {
-        background: transparent;
+        background: rgb(236,236,236);
 }
 #infoViewComboBox::drop-down:hover {
-        background: transparent;
+        background: rgb(236,236,236);
 }
 #infoViewComboBox::drop-down:on {
-        background: transparent;
+        background: rgb(236,236,236);
 }
 
 /* drop-down list of the combobox */
 #infoViewComboBox QAbstractItemView {
-        background-color: rgb(235, 235, 235);
+        background-color: rgb(236,236,236);
         margin: 0px;
         padding: 0px;
 }
@@ -428,45 +440,31 @@ HtmlInfoView {
 
 
 #infoViewComboBox:editable {
-        background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-            stop: 0 rgb(200,200,200), stop: 0.1 rgb(230,230,230),
-            stop: 0.1 rgb(230,230,230), stop: 0.5 rgb(245,245,245),
-            stop: 0.5 rgb(245,245,245), stop: 1.0 rgb(255,255,255));
+        background: rgb(236,236,236);
 }
 #infoViewComboBox:editable:hover,
 #infoViewComboBox:editable:on {
 /* BUG: for some reason this background is shown _behind_ the :editable background */
-        background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                  stop: 0 rgb(210,210,210), stop: 0.1 rgb(240,240,240),
-                  stop: 0.1 rgb(240,240,240), stop: 0.5 rgb(255,255,255),
-                  stop: 0.5 rgb(255,255,255), stop: 1.0 rgb(255,255,255));
+        background:rgb(236,236,236);
 }
 #infoViewComboBox::drop-down:editable {
         border-left: 1px solid rgb(180,180,180);
-        background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                    stop: 0 rgb(225,225,225), stop: 0.4 rgb(220,220,220),
-                    stop: 0.5 rgb(215,215,215), stop: 1.0 rgb(210,210,210));
+        background: rgb(236,236,236);
 }
 
 
 #infoViewLineEdit {
         font-size: 10px;
         color: rgb(0,0,0);
-        background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                          stop: 0 rgb(200,200,200), stop: 0.1 rgb(230,230,230),
-                          stop: 0.1 rgb(230,230,230), stop: 0.5 rgb(245,245,245),
-                          stop: 0.5 rgb(245,245,245), stop: 1.0 rgb(255,255,255));
+        background: rgb(255,255,255);
         border: none;
 }
 #infoViewLineEdit:hover, #infoViewLineEdit:focus  {
-        background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                  stop: 0 rgb(210,210,210), stop: 0.1 rgb(240,240,240),
-                  stop: 0.1 rgb(240,240,240), stop: 0.5 rgb(255,255,255),
-                  stop: 0.5 rgb(255,255,255), stop: 1.0 rgb(255,255,255));
+        background: rgb(236,236,236);;
 }
 
 #infoViewLineEdit:disabled {
-	background: rgb(144,144,144);
+	background: rgb(217,217,217);
 	color: rgb(60,60,60);
 }
 
@@ -484,23 +482,18 @@ HtmlInfoView {
         font-size: 10px;
         /*min-width: 100px;*/
         text-align: center;
-        background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                    stop: 0 rgb(225,225,225), stop: 0.4 rgb(220,220,220),
-                    stop: 0.5 rgb(215,215,215), stop: 1.0 rgb(210,210,210));
+        background: rgb(236,236,236);
         border: 1px solid rgb(160,160,160);
         border-radius: 4px;
         padding: 4px;
 }
 #infoViewButton:hover  {
-        background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                    stop: 0 rgb(235,235,235), stop: 0.4 rgb(230,230,230),
-                    stop: 0.5 rgb(225,225,225), stop: 1.0 rgb(220,220,220));
+        background: rgb(255,255,255);
 }
+
 #infoViewButton:pressed,
 #infoViewButton:on {
-        background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                    stop: 0 rgb(220,220,220), stop: 0.4 rgb(225,225,225),
-                    stop: 0.5 rgb(230,230,230), stop: 1.0 rgb(235,235,235));
+        background: rgb(255,255,255);
 }
 
 #infoViewGroupBox {
@@ -563,15 +556,6 @@ HtmlInfoView {
 }
 
 
-/*
-light grey:		rgb(217,217,217);
-medium grey_l:	rgb(190,190,190); (lighter grey for hovers)
-medium grey:	rgb(164,164,164);
-medium grey_d:	rgb(117,117,117); (shadowish border around widgets)
-dark grey:		rgb(126,126,126);
-*/
-
-
 /***************** Parts Bin *****************/
 
 #partsBinHeader {
@@ -582,7 +566,7 @@ dark grey:		rgb(126,126,126);
 }
 
 #partsBinHeaderSeparator {
-        border: 1px solid #707070;
+        border: 1px solid rgb(177,177,177);
 }
 
 SearchLineEdit,  #searchStackWidget {
@@ -590,10 +574,10 @@ SearchLineEdit,  #searchStackWidget {
         height: 20px;
 }
 
-#partsBinLabel {
-        background-color: rgb(175,175,180);
-        font-size: 11px;
-        color: #474747;
+#partsBinLabel { /*the chosen libery-labelname and background*/
+        background-color: rgb(217,217,217);
+        font-size: 14px;
+        color: rgb(50,50,50);
         font-weight: bold;
         /*text-transform: uppercase;*/
         padding: 0;
@@ -601,29 +585,26 @@ SearchLineEdit,  #searchStackWidget {
 }
 
 PartsBinIconView {
-        padding: 2px;
+        padding: 0px;
+		background-color: rgb(255,0,255);
+		color: rgb(255,255,0);
+        border: 1px;
 }
 
-PartsBinListView {
-        selection-background-color: #BEBEBE;
-        background-color: rgb(175,175,180);
+PartsBinListView { /*the styling if you look the parts-window in list view mode*/
+        selection-background-color: rgb(177,177,177);
+        background-color:rgb(217,217,217);
         border: 0;
         border-bottom: 1px solid #D0D0D0;
 }
 
-PartsBinIconView
-{
-        background-color: #555555;/*#B2B2B2;*/
-        border: 0;
-        border-bottom: 1px solid #D0D0D0;
-}
 
 #partsBinHeader,
 #partsBinContainer,
 PartsBinPaletteWidget,
 PartsBinPaletteWidget SimpleEditableLabelWidget,
 PartsBinPaletteWidget InfoGraphicsView {
-        background-color: rgb(175,175,180);
+        background-color: rgb(217,217,217); /*background of parts library*/
         border: none;
 }
 
@@ -635,6 +616,7 @@ StackTabBar {
         /* trying to get rid of the line
         across the top of the tabs */
         border: none;
+		background-color:rgb(255,0,255);
 }
 
 StackTabBar::tab {
@@ -656,22 +638,22 @@ StackTabBar::tab {
         min-height: 32px;
         max-height: 32px;
         border: 0;
-        background: rgb(175,175,180);
+        background: rgb(217,217,217); /*this is the color for the active tab*/
 
         font-weight: 600;
 }
 
-StackTabBar::tab:selected {
-        color: #6b3e4d;
+StackTabBar::tab:selected { /*color for not active tab*/
+        color: rgb(177,177,177);
 }
 
 StackTabBar::tab:!selected {
-        background-color: #878787; /*#9b9b9b;*/
-        color: #444444;/*#686868;*/
+        background-color: rgb(177,177,177); /*#9b9b9b;*/ /*color for not active tab*/
+        color: rgb(217,0,217);/*#686868;*/
 }
 
 StackTabBar::tab:!selected:hover {
-        background-color: rgb(164,164,164);
+        background-color: rgb(236,236,236); /*the hover status of the library buttons*/
 }
 
 StackTabBar[current="true"]::tab:selected {
@@ -721,45 +703,17 @@ StackTabBar[current="true"]::tab:selected {
 /**************** sketch area widgets ****************/
 
 
-SketchArea QToolButton {
-        background-color: transparent;
-}
-
-#sketchAreaToolbar {
-        background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                 stop: 0 #e5e5e5, stop: 1.0 #b8b8b8);
-
-        border: none;
-        padding: 0;
-}
-
-#sketchAreaToolbar QLabel {
-        font-weight: normal;
-        color: #444;
-}
-
-#sketchAreaToolbar QToolButton {
-        background: none;
-        border: none;
-        margin: 0;
-}
-
-#sketchAreaToolbar QToolButton::menu-button {
-        border: none;
-        background-color: none;
-        padding-top: 17px;
-}
 
 SketchWidget {
         border: 0px;
 }
 
 TripleNavigator {
-        background-color: rgb(164,164,164);
+        background-color: rgb(217,217,217);
 }
 
 #tripleNavigatorBottomMargin {
-        background-color: #666;
+        background-color: rgb(217,217,217);
 }
 
 QSplitter::handle {
@@ -783,19 +737,19 @@ WaitPushUndoStack {
 ViewSwitcherButton {
         font-size: 11px;
         font-weight: bold;
-        font-family: "Lucida Grande", LucidaSans, Tahoma, Arial, sans-serif;
+        font-family: Droid Sans, LucidaSans, Tahoma, Arial, sans-serif;
 }
 
 ViewSwitcher {
         font-size: 11px;
         font-weight: bold;
-        font-family: "Lucida Grande", LucidaSans, Tahoma, Arial, sans-serif;
+        font-family: Droid Sans, LucidaSans, Tahoma, Arial, sans-serif;
 }
 
 SearchLineEdit {
         color: #000000;
         font-size: 11px;
-        font-family: "Lucida Grande", LucidaSans, Tahoma, Arial, sans-serif;
+        font-family: Droid Sans, LucidaSans, Tahoma, Arial, sans-serif;
         border: 1px solid rgb(140,140,140);
 }
 
@@ -805,10 +759,10 @@ SearchLineEdit {
 #quoteOrder {
         font-size: 16px;
         font-weight: bold;
-        color: rgb(126,54,77);
+        color: rgb(214,50,34);
         margin: 0px 0px 0px 18px;
         text-align: left;
-        font-family: "Droid Sans";
+        font-family: Droid Sans;
         font-weight: bold;
 }
 
@@ -817,7 +771,7 @@ SearchLineEdit {
         color: #000000;
         margin: 0px 0px 0px 10px;
         text-align: left;
-        font-family: "Droid Sans";
+        font-family: Droid Sans;
 }
 
 #quoteAdditional {
@@ -825,7 +779,7 @@ SearchLineEdit {
         color: #000000;
         margin: 0px 0px 0px 10px;
         text-align: left;
-        font-family: "Droid Sans";
+        font-family: Droid Sans;
 }
 
 #quoteTable {
@@ -833,7 +787,7 @@ SearchLineEdit {
         border: 0px solid transparent;
         margin: 0px 0px 0px 10px;
         font-size: 11px;
-        font-family: "Droid Sans";
+        font-family: Droid Sans;
 }
 
 #quoteTable QHeaderView {
@@ -852,6 +806,6 @@ SearchLineEdit {
         text-align: center;						/* text-align: center is not implemented.  QSS is shit. */
         qproperty-alignment: AlignCenter;
         font-size: 16px;
-        font-family: "Droid Sans";
+        font-family: Droid Sans;
         font-weight: bold;
 }

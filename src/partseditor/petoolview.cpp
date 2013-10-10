@@ -217,7 +217,7 @@ void PEToolView::enableConnectorChanges(bool enableTerminalPointDrag, bool enabl
 		    m_terminalPointDragState->setEnabled(true);
 	    }
 	    else {
-		    m_terminalPointDragState->setText(tr("<font color='gray'>Dragging disabled</font>"));
+            m_terminalPointDragState->setText(tr("<font color='gray'>Dragging disabled</font>"));
 		    m_terminalPointDragState->setEnabled(false);
 	    }
     }

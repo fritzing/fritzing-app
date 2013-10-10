@@ -86,7 +86,7 @@ void MainWindow::createDockWindows()
     m_undoView->setMinimumSize(DockMinWidth, UndoHistoryMinHeight);
 
 	m_tripleNavigator = new TripleNavigator(this);
-	
+    this ->setObjectName("tripleNav");
     m_navigators << (m_miniViewContainerBreadboard = new MiniViewContainer(m_tripleNavigator));
 	m_miniViewContainerBreadboard->filterMousePress();
 	connect(m_miniViewContainerBreadboard, SIGNAL(navigatorMousePressedSignal(MiniViewContainer *)),

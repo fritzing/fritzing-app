@@ -4,17 +4,20 @@ MainWindow {
         /* layout here  */
 		background-color:rgb(217,217,217); /*mainbackground color*/
         /* styling there */
-        font-family: Droid Sans, LucidaSans, Tahoma, Arial, sans-serif;
+        font-family: Droid Sans, sans-serif;
         font-size: 10px;
         color: rgb(255,255,255);
 }
 
+
 QStatusBar {
         background-color: rgb(130,31,9); /* the statusbar at the bottom */
+		color: rgb(255,255,255);
 }
 
 #statusBarContainer {
         background-color: rgb(130,31,9);/* the statusbar at the bottom */
+		color: rgb(255,255,255);
 }
 
 /* this separates palettes from each other and is movable */
@@ -23,7 +26,7 @@ MainWindow::separator {
 }
 
 MainWindow::toolbar {
-        background-color: rgb(255,0,255);
+        background-color: rgb(0,0,255);
 }
 
 MainWindow QLabel {
@@ -39,21 +42,49 @@ QStatusBar {
 
 QStatusBar::item {
         border: none;
-		color:rgb(255,0,255);
 }
 
 /* PEMainWindow seems to be needed here rathern in newpartseditor.qss */
 /* this separates palettes from each other and is movable */
 PEMainWindow::separator {
-        background-color: rgb(177,177,177);
+        background: rgb(177,177,177);
 }
 
 PEMainWindow {
         /* layout here */
 
         /* styling there */
-        background-color: rgb(255,255,255);
+        background: rgb(255,255,255);
 }
+
+
+/* ################### Mainmenubar windows #################### */
+QMenuBar {
+	background-color: rgb(217,217,217);
+}
+
+QMenuBar::item {
+	background: rgb(217,217,217);
+	color:rgb(51,51,51);
+	background-image:none;
+}
+
+QMenu {
+	background-color: rgb(217,217,217);
+}
+
+
+QMenu::selected {
+	background-color: rgb(242,57,38);
+}
+
+QMenu::hover {
+	background-color: rgb(242,57,38);
+}
+
+
+
+
 
 /* ################### Splashbar try #################### */
 splash {
@@ -65,74 +96,72 @@ splash {
 
 /* ################### the toolbar #################### */
 
-
-SketchArea #middleButton {
-        background-color: rgb(0,255,0);
-		color: rgb(0,255,255);
-}
-
 #fileToolBar QToolButton,
 #editToolBar QToolButton {
-		height:66px;
         border: none;
-        margin: 50px 0px;
         color: rgb(214,50,34);
-        background-color: rgb(214,50,34);
+        background: rgb(214,50,34);
 
 }
 
 #fileToolBar QToolButton:pressed,
 #editToolBar QToolButton:pressed {
-        background-color: rgb(242,57,38);
+        background: rgb(242,57,38);
 		color: rgb(214,50,34); /* doesnt work, why ??? */
-		
+		margin: 0px;
 }
 
 
 #sketchAreaToolbar {
-        background-color: rgb(214,50,34); /*background of toolbar*/
+        background: rgb(214,50,34); /*background of toolbar*/
         border: none;
         padding: 0;
 		
 }
 
-QHBoxLayout#leftButton {
-        background-color: rgb(214,50,255); /*background of toolbar*/
-        border: 5px;
-        margin: 50;
+#sketchToolButton {
+        border: none;
+        padding: 0;
+		height:66px;
 		
 }
 
+ 
 #sketchAreaToolbar QLabel {
         font-weight: bold;
         color: rgb(214,50,34);
 		border: none;
+		padding-top:5px;
 }
 
-#sketchAreaToolbar QToolButton {
+#sketchAreaToolbar QToolButton { /*all the button styleing*/
         background: transparent;
         border: none;
-		color:rgb(255,0,255);
-        height:60px;
-
+		color:rgb(255,255,255);
+		margin: 0px;
+		height:66px;
+		padding:5px;
+		font-weight: regluar;
 }
 
-
- 
  #sketchAreaToolbar QToolButton:hover {   /* hover on toolbar buttons */
         background: rgb(242,57,38);
         border: none;
 		color: rgb(236,236,236);
+		margin: 0px;
 		height:66px;
 }
+
 
 #sketchAreaToolbar QToolButton::menu-button { /*the little arrow to open the submenu*/
         border: none;
         background-color: none;
         padding-top: 0px;
-		height:60px;
-		padding-right:5px;
+		padding-right:10px;
+		margin: 0px;
 }
+
+
 
 /* ################### zoomslider #################### */
 
@@ -665,7 +694,7 @@ StackTabBar::tab:selected { /*color for not active tab*/
 
 StackTabBar::tab:!selected {
         background-color: rgb(177,177,177); /*#9b9b9b;*/ /*color for not active tab*/
-        color: rgb(217,0,217);/*#686868;*/
+        color: rgb(255,255,0);/*#686868;*/
 }
 
 StackTabBar::tab:!selected:hover {
@@ -716,17 +745,34 @@ StackTabBar[current="true"]::tab:selected {
      image: url(:/resources/images/icons/noArrow_icon.png);
 }
 
+
+
 /**************** sketch area widgets ****************/
-
-
 
 SketchWidget {
         border: 0px;
+		font-weight: bold;
 }
 
+
+
+tripleNav {
+background-image:none;
+}
+
+#tripleNav:QLabel{
+	font-weight: bold;
+	font-size:10px;
+	background-image:none;
+	margin:10px;
+}
+/*
 TripleNavigator {
         background-color: rgb(217,217,217);
+		background-image: none;
 }
+
+
 
 #tripleNavigatorBottomMargin {
         background-color: rgb(217,217,217);
@@ -739,29 +785,49 @@ QSplitter::handle {
      background-color: #666666;
 }
 
-#tripleNavigatorLabel {
-        height: 11;
-        color: #000000;
-        font-size: 10px;
+#tripleNavigator QLabel{
+	font-weight: bold;
+	font-size:35px;
+	background-image:none;
 }
+	
+#tripleNavigator QLabel::item {
+        height: 14;
+        color: rgb(255,0,255);
+        font-size: 40px;
+		font-weight: bold;
+}
+*/
 
 WaitPushUndoStack {
         background-color: white;
         color: black;
 }
-
-ViewSwitcherButton {
-        font-size: 11px;
-        font-weight: bold;
-        font-family: Droid Sans, LucidaSans, Tahoma, Arial, sans-serif;
+/*
+ViewSwitcher::item {
+        font-size: 40px;
+        font-family: Droid Sans, sans-serif;
+		background-image:none;
 }
 
 ViewSwitcher {
-        font-size: 11px;
-        font-weight: bold;
-        font-family: Droid Sans, LucidaSans, Tahoma, Arial, sans-serif;
+        font-size: 40px;
+        font-family: Droid Sans, sans-serif;
+		background-image:none;
 }
 
+ViewSwitcherButton {
+        font-size: 40px;
+        font-family: Droid Sans, sans-serif;
+		background-image:none;
+}
+
+sketchWidget ViewSwitcher {
+        font-size: 5px;
+        font-weight: bold;
+        font-family: Droid Sans, sans-serif;
+}
+*/
 SearchLineEdit {
         color: #000000;
         font-size: 11px;

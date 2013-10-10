@@ -41,9 +41,9 @@ QString ViewSwitcherButton::ResourcePathPattern = (":/resources/images/icons/seg
 QBitmap * ViewSwitcher::m_mask = NULL;
 
 #ifdef Q_WS_MAC
-	static const int pointSize = 11;
+    static const int pointSize = 12;
 #else
-	static const int pointSize = 8;
+    static const int pointSize = 10;
 #endif
 
 static const int extraWidth = 8;
@@ -244,12 +244,12 @@ void ViewSwitcherButton::cleanup()
 ViewSwitcher::ViewSwitcher(bool includeCodeView) : QFrame()
 {
 	// TODO Mariano: couldn't get this applied with the qss file
-	setStyleSheet("ViewSwitcher {border: 0px; background-color: transparent; margin-top: 0px; margin-left: 0px; } ViewSwitcherButton {	margin: 0px;}");
+   // setStyleSheet("ViewSwitcher { border: 0px; background-color: transparent; margin-top: 0px; margin-left: 0px; } ViewSwitcherButton {margin: 0px;}");
 
 	m_closeButton = NULL;
 
 	m_layout = new QHBoxLayout(this);
-	m_layout->setSpacing(0);
+    m_layout->setSpacing(0);
 	m_layout->setMargin(0);
 	
 	//m_closeButton = new SketchMainHelpCloseButton("PCB" ,this);
@@ -302,9 +302,9 @@ ViewSwitcher::ViewSwitcher(bool includeCodeView) : QFrame()
 	m_layout->setSizeConstraint(QLayout::SetFixedSize);
 
 #ifndef QT_NO_DEBUG
-	//foreach (ViewSwitcherButton * b, m_buttons) {
-		//b->setStyleSheet("background-color: green;");
-	//}
+    // foreach (ViewSwitcherButton * b, m_buttons) {
+     //   b->setStyleSheet("background-color: green;");
+//    }
 #endif
 }
 
@@ -362,7 +362,7 @@ void ViewSwitcher::createMask()
 {
 	if (m_mask != NULL) return;
 
-	setStyleSheet("ViewSwitcher {border: 0px; background-color: rgb(0,255,255); margin: 0px; } ViewSwitcherButton {	margin: 0px;}");
+    //setStyleSheet("ViewSwitcher {border: 0px; background-color: rgb(0,255,255); margin: 0px; } ViewSwitcherButton {	margin-right: 2px;}");
 
 	QSize size = this->size();
 	//DebugDialog::debug(QString("vs size %1 %2").arg(size.width()).arg(size.height()));
@@ -374,7 +374,7 @@ void ViewSwitcher::createMask()
 	bitmap.fill(Qt::white);
 	QImage bImage = bitmap.toImage();
 
-	QRgb value = qRgb(0, 0, 0); 
+    QRgb value = qRgb(0, 0, 0);
 	bImage.setColor(0, value);
 	value = qRgb(255, 255, 255); 
 	bImage.setColor(1, value);
@@ -392,7 +392,7 @@ void ViewSwitcher::createMask()
 
 	}
 
-	setStyleSheet("ViewSwitcher {border: 0px; background-color: transparent; margin: 0px; } ViewSwitcherButton {	margin: 0px;}");
+   // setStyleSheet("ViewSwitcher {border: 0px; background-color: transparent; margin: 0px; } ViewSwitcherButton {	margin: 0px;}");
 	
 	m_mask = new QBitmap(QBitmap::fromImage(bImage));
 }

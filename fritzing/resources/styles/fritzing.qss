@@ -165,24 +165,48 @@ splash {
 
 /* ################### zoomslider #################### */
 
+QSlider::groove:horizontal { /*this is the slider - "line" */
+	background:rgb(214,50,34);
+	height: 2px;
+	border-radius:-5px;
+	margin-bottom:10px;
+	margin-top:0px;
+}
+
+
+QSlider::handle:horizontal { /*this is the handle: it needs negative margin to be "bigger" than the slider - "line" */
+	width:10px; 
+	height:10px;
+	margin-top: -4px;
+	margin-bottom: -4px;
+	background-clip: content;
+	background-image: url(:/resources/images/icons/zoomSlider.png);
+
+}
+
+QSlider::handle:horizontal:hover {
+	width:10px;
+	height:10px;
+	margin-top: -4px;
+	margin-bottom: -4px;
+	background-image: url(:/resources/images/icons/zoomSliderHover.png);
+
+}
+
+
 #ZoomSliderFrame {
-        border:0px;
-        margin:0px;
-        padding:0px;
-        height: 16px;
         max-height: 16px;
         min-height: 16px;
-        width: 202px;
         max-width: 202px;
         min-width: 202px;
 }
 
-#ZoomSliderValue {
+#ZoomSliderValue { /*this is the number in percent of left to the zoomslider*/
         margin: 0px;
         padding: 0px;
         border: none;
         color: rgb(255,255,255);
-        background-color: rgb(130,31,9);
+        background-color: transparent;
         width: 35px;
         max-width: 35px;
         min-width: 35px;
@@ -195,13 +219,6 @@ splash {
         max-width: 15px;
         min-width: 15px;
         text-align: left;
-}
-
-#ZoomSliderSlider {
-        height: 16px;
-        width: 100px;
-        max-width: 100px;
-        min-width: 100px;
 }
 
 #ZoomSliderButton {
@@ -231,10 +248,9 @@ FDockWidget {
            and only visible with tabs inside the widget
            such as Parts Library */
         background-color: rgb(217,217,217);
-
         /* this defines the title text! */
-        font-size: 12px;
-        font-weight: 300;
+        font-size: 14px;
+		font-weight: 150;
         color: rgb(101,101,101);
 
         titlebar-close-icon: url(:/resources/images/icons/dockWidgetEmpty_icon.png);
@@ -254,7 +270,9 @@ FDockWidget {
 }
 
 FDockWidget::title {
-        height: 16px;
+      font-size: 20px;
+		font-weight: 300;
+        height: 35px;
         /*border-top-left-radius: 5px;*/
         /*border-top-right-radius: 5px;*/
         background: rgb(217,217,217);
@@ -273,32 +291,45 @@ FDockWidget::float-button {
         subcontrol-origin: margin;
         position: absolute;
         top: 2px;  bottom: 0px;
+		height:12px;
+		width:12px;
 }
 
 FDockWidget::close-button {
         right: 2px;
         image: url(:/resources/images/icons/dockWidgetCloseNormal_icon.png);
+
 }
 FDockWidget::close-button:hover {
         border: none;
         image: url(:/resources/images/icons/dockWidgetCloseHover_icon.png);
+				height:12px;
+		width:12px;
 }
 FDockWidget::close-button:pressed {
         border: none;
         image: url(:/resources/images/icons/dockWidgetClosePressed_icon.png);
+				height:12px;
+		width:12px;
 }
 
 FDockWidget::float-button {
         right: 17px;
         image: url(:/resources/images/icons/dockWidgetFloatNormal_icon.png);
+				height:12px;
+		width:12px;
 }
 FDockWidget::float-button:hover {
         border: none;
         image: url(:/resources/images/icons/dockWidgetFloatHover_icon.png);
+				height:12px;
+		width:12px;
 }
 FDockWidget::float-button:pressed {
         border: none;
         background-image: url(:/resources/images/icons/dockWidgetFloatPressed_icon.png);
+				height:12px;
+		width:12px;
 }
 
 
@@ -604,14 +635,13 @@ HtmlInfoView {
 /***************** Parts Bin *****************/
 
 #partsBinHeader {
-  margin: 0;
-  padding: 2px;
-  max-height: 20px;
-  height: 20px;
+  padding: 0px;
+  max-height: 28px;
+  height: 28px;
 }
 
 #partsBinHeaderSeparator {
-        border: 1px solid rgb(177,177,177);
+        border: 2px solid rgb(177,177,177);
 }
 
 SearchLineEdit,  #searchStackWidget {
@@ -621,19 +651,25 @@ SearchLineEdit,  #searchStackWidget {
 
 #partsBinLabel { /*the chosen libery-labelname and background*/
         background-color: rgb(217,217,217);
-        font-size: 14px;
+        font-size: 20px;
         color: rgb(50,50,50);
         font-weight: bold;
         /*text-transform: uppercase;*/
-        padding: 0;
+        padding-left: 2px;
         margin: 0;
 }
 
+
 PartsBinIconView {
-        padding: 0px;
-		background-color: rgb(255,0,255);
-		color: rgb(255,255,0);
-        border: 1px;
+        padding: 3px; /*this is the size of the grey-border around the partsbin-iconview*/
+}
+
+PartsBinIconView QPushButton{
+        padding: 3px; 
+		selection-background-color: rgb(177,177,177);
+        background-color:rgb(217,217,217);
+        border: 0;
+        border-bottom: 1px solid #D0D0D0;/*this is the size of the grey-border around the partsbin-iconview*/
 }
 
 PartsBinListView { /*the styling if you look the parts-window in list view mode*/
@@ -698,10 +734,12 @@ StackTabBar::tab:!selected {
 }
 
 StackTabBar::tab:!selected:hover {
-        background-color: rgb(236,236,236); /*the hover status of the library buttons*/
+        background-color: rgb(236,236,236); 
+		/*the hover status of the library buttons*/
 }
 
 StackTabBar[current="true"]::tab:selected {
+		border:2px solid #00f;
         /*background-color: black;
         color: white;*/
 }
@@ -729,16 +767,22 @@ StackTabBar[current="true"]::tab:selected {
         background-image: url(:/resources/images/icons/partsBinCombinedMenu_icon.png);
         background-repeat: no-repeat;
         border: none;
+		height:12px;
+		width:12px;
 }
 
 #partsBinCombinedMenuButton:pressed {
         background-image: url(:/resources/images/icons/partsBinCombinedMenuPressed_icon.png);
         background-repeat: no-repeat;
+		height:12px;
+		width:12px;
 }
 
 #partsBinCombinedMenuButton:hover {
         background-image: url(:/resources/images/icons/partsBinCombinedMenuHover_icon.png);
         background-repeat: no-repeat;
+		height:12px;
+		width:12px;
 }
 
 #partsBinCombinedMenuButton::menu-indicator {

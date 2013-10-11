@@ -176,6 +176,26 @@
 				<sketch id="ArduinoISP"/>
 			</category>
 		</category>
+		<category name="Fritzing CreatorKit">
+			<sketch id="Blink"/>
+			<sketch id="Loop"/>
+			<sketch id="Button"/>
+			<sketch id="TrafficLight"/>
+			<sketch id="TiltSwitch"/>
+			<sketch id="Knock"/>
+			<sketch id="Melody"/>
+			<sketch id="AnalogInputPot"/>
+			<sketch id="Photocell"/>
+			<sketch id="AnalogInputToServo"/>
+			<sketch id="Color-Fader"/>
+			<sketch id="AnalogInputOutput"/>
+			<sketch id="Touch_Switch"/>
+			<sketch id="Relay"/>
+			<sketch id="TemperaturSensorLM35"/>
+			<sketch id="CosmicRayGun"/>
+			<separator />
+			<url name="Get your own Fritzing Creator Kit" href="http://fritzing.myshopify.com/products/fritzing-creator-kit" />
+		</category>
 		<category name="Fritzing Starter Kit">
 			<sketch id="Blink"/>
 			<sketch id="Loop"/>
@@ -196,22 +216,7 @@
 			<separator />
 			<url name="Get your own Fritzing Starter Kit" href="http://fritzing.org/shop/starter-kit/" />
 		</category>
-		<category name="Fritzing Super Upgrade Kit">
-			<sketch id="AnalogInputFSR"/>			
-			<sketch id="555TouchSwitch"/>
-			<sketch id="LCD"/>
-			<sketch id="Countdown"/>
-			<sketch id="Shift_Register"/>
-			<sketch id="Shift_Register_2x"/>
-			<sketch id="LEDmatrix_simple"/>	
-			<sketch id="Timer"/>						
-			<sketch id="DC_motor_control"/>
-			<sketch id="Mood-Light"/>
-			<sketch id="Optocoupler"/>
-			<sketch id="Sabotage-Detection"/>
-			<separator />
-			<url name="Get your own Fritzing Super Upgrade Kit" href="http://fritzing.org/shop/super-upgrade-kit/" />			
-		</category>
+	
 		<!--
 		<category name="Fritzing EDGY">
 			<sketch id="EDGY-motor-control"/>

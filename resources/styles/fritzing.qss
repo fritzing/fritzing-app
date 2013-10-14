@@ -5,7 +5,7 @@ MainWindow {
 		background-color:rgb(217,217,217); /*mainbackground color*/
         /* styling there */
         font-family: Droid Sans, sans-serif;
-        font-size: 10px;
+        font-size: 12px;
         color: rgb(255,255,255);
 }
 
@@ -42,6 +42,7 @@ QStatusBar {
 
 QStatusBar::item {
         border: none;
+		color: rgb(255,255,255);
 }
 
 /* PEMainWindow seems to be needed here rathern in newpartseditor.qss */
@@ -135,7 +136,6 @@ splash {
 }
 
 #sketchAreaToolbar QToolButton { /*all the button styleing*/
-        background: transparent;
         border: none;
 		color:rgb(255,255,255);
 		margin: 0px;
@@ -350,36 +350,37 @@ HtmlInfoView {
 }
 
 #infoViewMainFrame {
-        background-color: rgb(217,217,217);
+        background-color: #d9d9d9;
         border: 0px;
         margin: 0px;
         padding: 0px;
+		font-size:14px;
 }
 
 #instanceTitleEditor {
         /* background-color is set programmatically */
         text-align: left;
-        font-size: 14px;
+        font-size: 16px;
         font-weight: 600;
         border: 0px;
         margin: 5px 5px 5px 5px;
         padding: 0px;
+		background-color: #ececec;
 }
 
-#iconFrame {
-        background-color: rgb(217,217,217);
-        /* how to set background for each icon? */
-        max-height: 32px;
-        min-height: 32px;
+#iconFrame { /*background-color in the icon-row*/
+        background-color: #d9d9d9;
+        max-height: 34px;
+        min-height: 34px;
         margin: 0px 0px 0px 5px;
         padding: 0px;
 }
-#iconLabel {
-        background-color: rgb(255,255,255);
+#iconLabel { 
+        background-color: #fff;
 }
 
 #infoViewLockCheckbox {
-        font-size: 10px;
+        font-size: 12px;
         padding: 0px;
         margin: 0px;
 }
@@ -387,7 +388,7 @@ HtmlInfoView {
 
 
 #infoViewPartFrame {
-        font-size: 10px;
+        font-size: 12px;
         padding: 0px;
         margin: 0px;
 }
@@ -395,11 +396,12 @@ HtmlInfoView {
 /* part description/subtitle */
 #infoViewPartTitle,
 #infoViewPartVersion {
-        margin: 0px 4px 0px 4px;
+        margin: 0px 5px 0px 5px;
         padding: 0px 0px 1px 0px;
-        font-size: 10px;
+        font-size: 12px;
         font-weight: normal;
         color: rgb(51,51,51);     
+		background: #d9d9d9;   
 		/*just the part discription titel not the part main-titel*/ 
 }
 
@@ -407,21 +409,21 @@ HtmlInfoView {
 #infoViewPartUrl {
         margin: 0px 4px 0px 4px;
         padding: 0px 0px 1px 0px;
-        font-size: 10px;
+        font-size: 12px;
         font-weight: normal;
-        color: rgb(214,50,34);/*rgb(110,110,110);*/
+        color: #d63222;/*rgb(110,110,110);*/
 }
 
 
-/* section title */
+/* section title - these are the subtitels in the infoview (like: placement, properties, tags etc.) */
 #expandableViewLabel {
         padding: 0px 0px 3px 0px;
         margin: 4px 0px 0px 4px;
         border: 0px;
         font-weight: bold;
         text-align: left;
-        font-size: 10px;
-        color: rgb(130,31,9);
+        font-size: 12px;
+        color: #D63222;
 }
 
 /* Properties */
@@ -475,19 +477,20 @@ HtmlInfoView {
 
 #infoViewComboBox:disabled {
 	color:rgb(50, 50, 50);
+	background: #d9d9d9;
 }
 #infoViewComboBox:!editable:disabled {
-	background: rgb(255,255,255);
+	background: #d9d9d9;
 }
 #infoViewComboBox:editable:disabled {
-	background: rgb(255,255,255);
+	background: #d9d9d9;
 }
 
 #infoViewComboBox:!editable {
-        background: rgb(255,255,255);
+        background:#ececec;
 }
 #infoViewComboBox:hover  {
-        background: rgb(255,255,255);
+        background: #fff;
 }
 #infoViewComboBox:on  {
 }
@@ -497,46 +500,47 @@ HtmlInfoView {
 
 /* drop-down buton of the combobox */
 #infoViewComboBox::drop-down:button {
-        background: rgb(236,236,236);
+        background: #ececec;
 }
 #infoViewComboBox::drop-down:hover {
-        background: rgb(236,236,236);
+        background: #ececec;
 }
 #infoViewComboBox::drop-down:on {
-        background: rgb(236,236,236);
+        background:#ececec;
 }
 
 /* drop-down list of the combobox */
 #infoViewComboBox QAbstractItemView {
-        background-color: rgb(236,236,236);
+        background-color: #ececec;
         margin: 0px;
         padding: 0px;
+		color:#333;
 }
 
 
 
 #infoViewComboBox:editable {
-        background: rgb(236,236,236);
+        background: #fff;
 }
 #infoViewComboBox:editable:hover,
 #infoViewComboBox:editable:on {
 /* BUG: for some reason this background is shown _behind_ the :editable background */
-        background:rgb(236,236,236);
+        background: #fff;
 }
 #infoViewComboBox::drop-down:editable {
-        border-left: 1px solid rgb(180,180,180);
-        background: rgb(236,236,236);
+        border-left: 1px solid #989898;
+        background: #ececec;
 }
 
 
 #infoViewLineEdit {
-        font-size: 10px;
+        font-size: 12px;
         color: rgb(0,0,0);
         background: rgb(255,255,255);
         border: none;
 }
 #infoViewLineEdit:hover, #infoViewLineEdit:focus  {
-        background: rgb(236,236,236);;
+        background:#fff;
 }
 
 #infoViewLineEdit:disabled {
@@ -546,7 +550,7 @@ HtmlInfoView {
 
 /* the label between the two spinners in the schematic frame */
 #infoViewOfLabel {
-        font-size: 10px;
+        font-size: 12px;
         padding: 0px;
         margin: 0px;
         width: 30px;
@@ -555,7 +559,7 @@ HtmlInfoView {
 }
 
 #infoViewButton {
-        font-size: 10px;
+        font-size: 12px;
         /*min-width: 100px;*/
         text-align: center;
         background: rgb(236,236,236);
@@ -574,7 +578,7 @@ HtmlInfoView {
 
 #infoViewGroupBox {
         border: 1px solid gray;
-        font-size: 10px;
+        font-size: 12px;
         font-weight: bold;
         margin: 5px 0px 0px 0px;
         padding: 15px 0px 0px 0px;
@@ -583,13 +587,13 @@ HtmlInfoView {
 }
 
 #infoViewLabel {
-        font-size: 10px;
+        font-size: 12px;
         min-width: 60px;
         max-width: 60px;
 }
 
 #infoViewCheckBox {
-        font-size: 10px;
+        font-size: 12px;
         padding: 0px;
         margin: 0px;
 }
@@ -604,7 +608,7 @@ HtmlInfoView {
 }
 
 #connectionsLabel {
-        font-size: 10px;
+        font-size: 12px;
         color: rgb(87,87,87);
         min-width: 65px;
         max-width: 65px;
@@ -796,27 +800,37 @@ StackTabBar[current="true"]::tab:selected {
 SketchWidget {
         border: 0px;
 		font-weight: bold;
+		background-image:none;
 }
 
 
 
 tripleNav {
 background-image:none;
+background:transparent;
 }
 
-#tripleNav:QLabel{
+#tripleNav::QLabel{
+	background:transparent;
 	font-weight: bold;
-	font-size:10px;
 	background-image:none;
 	margin:10px;
 }
 /*
-TripleNavigator {
-        background-color: rgb(217,217,217);
+#tripleNav QLabel{
+	background:transparent;	
+	font-size:12px;
+	background-image:none;
+}
+*/
+
+TripleNavigator QLabel {
+        background:transparent;
 		background-image: none;
+			font-size:35px;
 }
 
-
+/*
 
 #tripleNavigatorBottomMargin {
         background-color: rgb(217,217,217);
@@ -934,4 +948,63 @@ SearchLineEdit {
         font-size: 16px;
         font-family: Droid Sans;
         font-weight: bold;
+}
+
+
+/*a styled loading/progress bar */
+
+ QProgressBar {
+     border: none;
+     border-radius: 0px;
+	 background-color: #821F09;
+	text-align: center;
+	color:#fff;
+	font-weight:bold;
+		
+ }
+
+ QProgressBar::chunk {
+     background-color: #f32926;
+     width: 20px;
+	text-align: center;
+	
+ }
+ 
+  QToolTip {
+     border: 1px solid transparent;
+     padding: 5px;
+     border-radius: 3px;
+	 background:#821F09;
+	 color:#fff;
+ }
+
+/***********RADIOBUTTON STYLING *****************/
+
+QRadioButton::indicator  {
+    width: 13px;
+    height: 13px;
+}
+ 
+QRadioButton::indicator::unchecked  {
+    image: url(:/resources/images/icons/nocheck.png);
+}
+ 
+QRadioButton::indicator:unchecked:hover  {
+    image: url(:/resources/images/icons/checkhover.png);
+}
+ 
+QRadioButton::indicator:unchecked:pressed  {
+    image: url(:/resources/images/icons/checkactive.png);
+}
+ 
+QRadioButton::indicator::checked  {
+    image: url(:/resources/images/icons/check.png);
+}
+ 
+QRadioButton::indicator:checked:hover  {
+    image: url(:/resources/images/icons/checkhover.png);
+}
+ 
+QRadioButton::indicator:checked:pressed  {
+    image: url(:/resources/images/icons/checkactive.png);
 }

@@ -689,6 +689,7 @@ void PEMainWindow::connectPairs() {
 
 QMenu *PEMainWindow::breadboardWireMenu() {
 	QMenu *menu = new QMenu(QObject::tr("Internal Connections"), this);
+
 	menu->addAction(m_deleteBusConnectionAct);
     connect( menu, SIGNAL(aboutToShow()), this, SLOT(updateWireMenu()));
 	return menu;
@@ -3218,6 +3219,7 @@ void PEMainWindow::replaceProperty(const QString & key, const QString & value, Q
 
 QWidget * PEMainWindow::createTabWidget() {
 	return new QTabWidget(this);
+    this-> setObjectName("peTabs");
 }
 
 void PEMainWindow::addTab(QWidget * widget, const QString & label) {

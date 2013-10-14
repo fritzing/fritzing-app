@@ -12,29 +12,27 @@
 	padding: 5px 0px 5px 0px;
 	margin: 0px;
 	border: 0px;
-	background-color: #D63222;
+	background-color: #fff;
 }
 
 #programmingWindow #footer QLabel {
-        color: #FFFFFF;
-}
-
-QLabel {
-        color: #656565;
+        color: #333;
+		background:#f0f; /*this is the pink shit*/
 }
 
 
 #programmingWindow QTabWidget::pane {
 	top: %1px;  	/* the value is swapped in at runtime in ProgramWindow::setup() */
  	padding: 0px;
-	margin: 0px;
-	border-top: 6px solid #821F09;	
-	position: absolute;
+	margin-top: 0px;
+	border-top: none;
+	/*position: absolute;*/
 }
 
 #programmingWindow QTabWidget::tab-bar {
  	left: 0px;
-	top: %2px;		/* the value is swapped in at runtime in ProgramWindow::setup()  */
+	top: %2px;		
+	/* the value is swapped in at runtime in ProgramWindow::setup()  */
 }
 
 #programmingWindow QTabBar::tab {
@@ -42,33 +40,36 @@ QLabel {
         margin-left: 3px;
         margin-right: 3px;
         margin-bottom: 0px;
-        border-top-left-radius: 4px;
-        border-top-right-radius: 4px;
         padding-top: 2px;
         padding-bottom: 2px;
         padding-left: 6px;
         padding-right: 6px;
-        color: #CCB6BD;
-        background-color: #821F09;
+        background-color: #ac6a5b;
         border-bottom: 0px;
         min-width: 6.5em;
         min-height: 1.5em;
+
 }
 
-#programmingWindow QTabBar::tab:selected {
-	background-color: #D63222;
-        border-bottom: 0;
+#programmingWindow QTabBar::tab:selected { /*the active tab*/
+	background-color: #fff;
+        border-bottom: none;
 	font-weight: bold;
+	color: #821F09;
 }
 
-#programmingWindow QTabBar::tab:!selected {
+#programmingWindow QTabBar::tab:!selected { /*the inactive tabs*/
         padding-top: 0;
-	border: 2px solid #D63222;
-        border-bottom: 0;
+		border: none;
+		color: #D1ACA4;
+		font-weight:bold;
 }
 
-#programmingWindow QTabBar::tab:!selected:hover {
+#programmingWindow QTabBar::tab:!selected:hover {  /*the inactive tab- hover*/
         background-color: #F23926;
+		border:none;
+		color: #fff;
+		font-weight:bold;
 }
 
 #programmingWindow QTabBar::close-button {
@@ -87,17 +88,21 @@ QLabel {
 }
 
 #programmingWindow #console {
-	background-color: #000000;
+	background-color: #fff;
 	color: orange; 
 }
 
 #programmingWindow #unableToProgramLabel {
-	color: black;
+	color: #333;
 	background-color: #FFFFC2;
 	padding-left: 5px;
 	padding-right: 5px;
 	padding-top: 1px;
 	padding-bottom: 1px;
+}
+
+#programmingWindow{
+	background-color: #d63222;
 }
 
 #programmingWindow QComboBox,
@@ -106,9 +111,12 @@ QLabel {
 #programmingWindow QPushButton:active{
 	background-image:none;
 	color: #fff;
-	background:transparent;
+	background:#d63222;
 	font-size:12px;
+	border:none;
 	height: 34px;
+	padding-left:4px;
+	padding-right:4px;
 	}
 #programmingWindow QComboBox:hover,
 #programmingWindow QPushButton:hover{
@@ -135,8 +143,8 @@ QLabel {
 #programmingWindow QComboBox:disabled,
 #programmingWindow QPushButton:disabled{
 	background-image:none;
-	color: #656565;
-	background:transparent;
+	background:#AC6A5B;
+	color: #d1aca4;
 	font-size:12px;
 	border:none;
 	height: 34px;
@@ -169,6 +177,7 @@ QLabel {
         background-color: rgb(236,236,236);
         margin: 0px;
         padding: 0px;
+		border:none;
 }
 
 

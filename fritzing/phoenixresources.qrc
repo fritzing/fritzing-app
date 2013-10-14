@@ -308,5 +308,7 @@
         <file>resources/templates/stripboards.xml</file>
         <file>resources/images/icons/zoomSlider.png</file>
         <file>resources/images/icons/zoomSliderHover.png</file>
+        <file>resources/images/icons/checkhover.png</file>
+        <file>resources/images/icons/checkactive.png</file>
     </qresource>
 </RCC>

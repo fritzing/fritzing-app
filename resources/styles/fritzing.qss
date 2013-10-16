@@ -60,40 +60,214 @@ PEMainWindow {
 
 
 /* ################### Mainmenubar windows #################### */
+
 QMenuBar {
-	background-color: rgb(217,217,217);
+	background-color: #d9d9d9;
 }
 
 QMenuBar::item {
-	background: rgb(217,217,217);
+	spacing: 10px; /* spacing between menu bar items */
+     padding: 5px 10px;
+	background: #d9d9d9;
 	color:rgb(51,51,51);
 	background-image:none;
+
 }
 
-QMenu {
-	background-color: rgb(217,217,217);
+QMenuBar::item:selected {
+	background: #666;
+	color:#fff;
+	background-image:none;
+
+}
+
+QMenuBar::item:pressed {
+	background: #666;
+	color:#fff;
+	background-image:none;
+
 }
 
 
-QMenu::selected {
-	background-color: rgb(242,57,38);
+QMenu{
+	background-color: #d9d9d9;
+	color:#333;
+	margin: 0px;
+	border:none;
 }
 
-QMenu::hover {
-	background-color: rgb(242,57,38);
+QMenu::item {
+	background-color: #d9d9d9;
+	color:#333;
+}
+
+QMenu::item:selected {
+	background-color: #666;
+	color:#fff;
+}
+
+ QMenu::separator {
+	background-color: #c1c1c1;
+	height:2px;
+
 }
 
 
+ QMenu::indicator:non-exclusive:checked {
+     image: url(:/resources/images/icons/check.png);
+	 	 background-color:transparent;
+		 	border:none;
+ }
+ 
+ QMenu::indicator:non-exclusive:unchecked {
+     image: url(:/resources/images/icons/nocheck.png);
+	 	 background-color:transparent;
+		 	border:none;
+ }
 
 
+ /* 
+ QMenu::icon:checked {
+     top: 1px;
+     right: 1px;
+     bottom: 1px;
+     left: 1px;
+ }
 
-/* ################### Splashbar try #################### */
+  QMenu::icon:unchecked { 
+     top: 1px;
+     right: 1px;
+     bottom: 1px;
+     left: 1px;
+ }
+
+ QMenu::indicator {
+	 background:#f0f;
+     width: 13px;
+     height: 13px;
+ }
+ 
+QMenu::indicator:non-exclusive:unchecked {
+     image: url(:/resources/images/icons/nocheck.png);
+	 	 background-color:transparent;
+		 	border:none;
+ }
+
+ QMenu::indicator:non-exclusive:unchecked:selected {
+     image: url(:/resources/images/icons/nocheck.png);
+	 	 background-color:transparent;
+		 	border:none;
+ }
+
+ QMenu::indicator:non-exclusive:checked {
+     image: url(:/resources/images/icons/check.png);
+	 	 background-color:transparent;
+		 	border:none;
+ }
+
+ QMenu::indicator:non-exclusive:checked:selected {
+     image: url(:/resources/images/icons/checkactive.png);
+	 	 background-color:transparent;
+		 	border:none;
+ }
+
+ QMenu::indicator:exclusive:unchecked {
+     image: url(:/resources/images/icons/nocheck.png);
+	 	 background-color:transparent;
+		 	border:none;
+ }
+
+ QMenu::indicator:exclusive:unchecked:selected {
+     image: url(:/resources/images/icons/nocheck.png);
+	 	 background-color:transparent;
+		 	border:none;
+ }
+
+ QMenu::indicator:exclusive:checked {
+     image: url(:/resources/images/icons/check.png);
+	 	 background-color:transparent;
+		 	border:none;
+ }
+
+ QMenu::indicator:exclusive:checked:selected {
+     image: url(:/resources/images/icons/checkhover.png);
+	 	 background-color:transparent;
+		 	border:none;
+ }
+ 
+ */
+
+/*a styled loading/progress bar */
+
+ QProgressBar {
+     border: none;
+     border-radius: 0px;
+	 background-color: #821F09;
+	text-align: center;
+	color:#fff;
+	font-weight:bold;
+		
+ }
+
+ QProgressBar::chunk {
+     background-color: #f32926;
+     width: 20px;
+	text-align: center;
+	
+ }
+ 
+ /* ############ tooltips for the partsbin and toolbar NOT the main window ########*/
+  
+  QToolTip {
+     border: 1px solid transparent;
+     padding: 2px;
+     border-radius: 3px;
+	 background:#fff;
+	 color:#333;
+ }
+
+/* ############## RADIOBUTTON STYLING  ###########*/
+
+QRadioButton::indicator  {
+    width: 13px;
+    height: 13px;
+}
+ 
+QRadioButton::indicator::unchecked  {
+    image: url(:/resources/images/icons/nocheck.png);
+}
+ 
+QRadioButton::indicator:unchecked:hover  {
+    image: url(:/resources/images/icons/checkhover.png);
+}
+ 
+QRadioButton::indicator:unchecked:pressed  {
+    image: url(:/resources/images/icons/checkactive.png);
+}
+ 
+QRadioButton::indicator::checked  {
+    image: url(:/resources/images/icons/check.png);
+}
+ 
+QRadioButton::indicator:checked:hover  {
+    image: url(:/resources/images/icons/checkhover.png);
+}
+ 
+QRadioButton::indicator:checked:pressed  {
+    image: url(:/resources/images/icons/checkactive.png);
+}
+
+
+/* ################### Splashbar try #################### 
 splash {
 	
 	height:100px;
 	color:rgb(255,0,255);
 	background:rgb(0,255,0);
 	}
+*/
+
+
 
 /* ################### the toolbar #################### */
 
@@ -639,6 +813,7 @@ HtmlInfoView {
 /***************** Parts Bin *****************/
 
 #partsBinHeader {
+margin:0;
   padding: 0px;
   max-height: 28px;
   height: 28px;
@@ -655,7 +830,7 @@ SearchLineEdit,  #searchStackWidget {
 
 #partsBinLabel { /*the chosen libery-labelname and background*/
         background-color: rgb(217,217,217);
-        font-size: 20px;
+        font-size: 14px;
         color: rgb(50,50,50);
         font-weight: bold;
         /*text-transform: uppercase;*/
@@ -804,7 +979,7 @@ SketchWidget {
 }
 
 
-
+/**************** the  breadboard-, schematic-, pcb-view switcher ****************/
 tripleNav {
 background-image:none;
 background:transparent;
@@ -948,63 +1123,4 @@ SearchLineEdit {
         font-size: 16px;
         font-family: Droid Sans;
         font-weight: bold;
-}
-
-
-/*a styled loading/progress bar */
-
- QProgressBar {
-     border: none;
-     border-radius: 0px;
-	 background-color: #821F09;
-	text-align: center;
-	color:#fff;
-	font-weight:bold;
-		
- }
-
- QProgressBar::chunk {
-     background-color: #f32926;
-     width: 20px;
-	text-align: center;
-	
- }
- 
-  QToolTip {
-     border: 1px solid transparent;
-     padding: 5px;
-     border-radius: 3px;
-	 background:#821F09;
-	 color:#fff;
- }
-
-/***********RADIOBUTTON STYLING *****************/
-
-QRadioButton::indicator  {
-    width: 13px;
-    height: 13px;
-}
- 
-QRadioButton::indicator::unchecked  {
-    image: url(:/resources/images/icons/nocheck.png);
-}
- 
-QRadioButton::indicator:unchecked:hover  {
-    image: url(:/resources/images/icons/checkhover.png);
-}
- 
-QRadioButton::indicator:unchecked:pressed  {
-    image: url(:/resources/images/icons/checkactive.png);
-}
- 
-QRadioButton::indicator::checked  {
-    image: url(:/resources/images/icons/check.png);
-}
- 
-QRadioButton::indicator:checked:hover  {
-    image: url(:/resources/images/icons/checkhover.png);
-}
- 
-QRadioButton::indicator:checked:pressed  {
-    image: url(:/resources/images/icons/checkactive.png);
 }

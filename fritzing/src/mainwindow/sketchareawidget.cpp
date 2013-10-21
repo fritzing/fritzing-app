@@ -110,7 +110,7 @@ void SketchAreaWidget::addStatusBar(QStatusBar *statusBar) {
 QWidget *SketchAreaWidget::separator(QWidget* parent) {
 	QLabel *separator = new QLabel(parent);
 	separator->setPixmap(QPixmap(":/resources/images/toolbar_icons/toolbar_separator.png"));
-	separator->setStyleSheet("margin-left: 10px; margin-right: 10px;");
+    separator->setStyleSheet("margin-left: 10px; margin-right: 100px;");
 	return separator;
 }
 

@@ -806,7 +806,8 @@ QWidget *MainWindow::createActiveLayerButton(SketchAreaWidget *parent)
 	actions << m_activeLayerBothAct << m_activeLayerBottomAct << m_activeLayerTopAct;
 
 	m_activeLayerButtonWidget = new QStackedWidget;
-	m_activeLayerButtonWidget->setMaximumWidth(90);
+    // m_activeLayerButtonWidget->setMaximumWidth(90);
+    m_activeLayerButtonWidget->setObjectName("activeLayerButton");
 
 	SketchToolButton * button = new SketchToolButton("ActiveLayer", parent, actions);
 	button->setDefaultAction(m_activeLayerBottomAct);
@@ -832,7 +833,8 @@ QWidget *MainWindow::createViewFromButton(SketchAreaWidget *parent)
 	actions << m_viewFromAboveAct << m_viewFromBelowAct;
 
 	m_viewFromButtonWidget = new QStackedWidget;
-	m_viewFromButtonWidget->setMaximumWidth(90);
+    // m_viewFromButtonWidget->setMaximumWidth(95);
+    m_viewFromButtonWidget->setObjectName("viewFromButton");
 
 	SketchToolButton * button = new SketchToolButton("ViewFromT", parent, actions);
 	button->setDefaultAction(m_viewFromBelowAct);

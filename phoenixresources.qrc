@@ -310,5 +310,8 @@
         <file>resources/images/icons/zoomSliderHover.png</file>
         <file>resources/images/icons/checkhover.png</file>
         <file>resources/images/icons/checkactive.png</file>
+        <file>resources/images/icons/smalToolarrow-inactive.png</file>
+        <file>resources/images/icons/smalToolarrow-normal.png</file>
+        <file>resources/images/icons/smalToolarrow-active.png</file>
     </qresource>
 </RCC>

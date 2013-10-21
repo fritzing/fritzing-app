@@ -585,11 +585,11 @@ bool PCBSketchWidget::canCreateWire(Wire * dragWire, ConnectorItem * from, Conne
 }
 
 double PCBSketchWidget::getRatsnestOpacity() {
-	return 0.7;
+    return 0.4;
 }
 
 double PCBSketchWidget::getRatsnestWidth() {
-	return 0.7;
+    return 0.1;
 }
 
 ConnectorItem * PCBSketchWidget::findNearestPartConnectorItem(ConnectorItem * fromConnectorItem) {

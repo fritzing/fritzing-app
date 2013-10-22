@@ -312,6 +312,6 @@
         <file>resources/images/icons/checkactive.png</file>
         <file>resources/images/icons/smalToolarrow-inactive.png</file>
         <file>resources/images/icons/smalToolarrow-normal.png</file>
-        <file>resources/images/icons/smalToolarrow-active.png</file>
+        <file>resources/images/icons/smalToolarrow-pressed.png</file>
     </qresource>
 </RCC>

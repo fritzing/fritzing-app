@@ -15,22 +15,24 @@
 	background-color: #fff;
 }
 
-#programmingWindow #footer QLabel {
+#programmingWindow #footer QLabel {  /*this is the labelcolor beside the dropdowns in the Programming Window*/
         color: #333;
-		background:#f0f; /*this is the pink shit*/
+		background:transparent;
+		padding: 0px 5px;
 }
 
 
 #programmingWindow QTabWidget::pane {
 	top: %1px;  	/* the value is swapped in at runtime in ProgramWindow::setup() */
- 	padding: 0px;
+ 	padding: 5px;
 	margin-top: 0px;
 	border-top: none;
 	/*position: absolute;*/
 }
 
 #programmingWindow QTabWidget::tab-bar {
- 	left: 0px;
+ 	left: 10px;
+	right: 10px;
 	top: %2px;		
 	/* the value is swapped in at runtime in ProgramWindow::setup()  */
 }

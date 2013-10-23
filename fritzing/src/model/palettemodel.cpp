@@ -36,6 +36,7 @@ $Date: 2013-04-29 13:10:59 +0200 (Mo, 29. Apr 2013) $
 #include "../version/version.h"
 #include "../layerattributes.h"
 #include "../utils/folderutils.h"
+#include "../utils/fmessagebox.h"
 #include "../utils/textutils.h"
 #include "../items/moduleidnames.h"
 #include "../items/partfactory.h"
@@ -95,7 +96,7 @@ PaletteModel::~PaletteModel()
 void PaletteModel::initParts(bool dbExists) {
 	QDir * dir = FolderUtils::getApplicationSubFolder("parts");
 	if (dir == NULL) {
-	    QMessageBox::information(NULL, QObject::tr("Fritzing"),
+	    FMessageBox::information(NULL, QObject::tr("Fritzing"),
 	                             QObject::tr("Parts folder not found.") );
 		return;
 	}
@@ -105,7 +106,7 @@ void PaletteModel::initParts(bool dbExists) {
 
 	loadParts(dbExists);
 	if (m_root == NULL) {
-	    QMessageBox::information(NULL, QObject::tr("Fritzing"),
+	    FMessageBox::information(NULL, QObject::tr("Fritzing"),
 	                             QObject::tr("No parts found.") );
 	}
 }
@@ -233,7 +234,7 @@ ModelPart * PaletteModel::loadPart(const QString & path, bool update) {
   
     QFile file(path);
     if (!file.open(QFile::ReadOnly | QFile::Text)) {
-        QMessageBox::warning(NULL, QObject::tr("Fritzing"),
+        FMessageBox::warning(NULL, QObject::tr("Fritzing"),
                              QObject::tr("Cannot read file %1:\n%2.")
                              .arg(path)
                              .arg(file.errorString()));
@@ -252,7 +253,7 @@ ModelPart * PaletteModel::loadPart(const QString & path, bool update) {
 	int errorColumn;
 	QDomDocument domDocument;
 	if (!domDocument.setContent(&file, true, &errorStr, &errorLine, &errorColumn)) {
-		QMessageBox::information(NULL, QObject::tr("Fritzing"),
+		FMessageBox::information(NULL, QObject::tr("Fritzing"),
 								QObject::tr("Parse error (2) at line %1, column %2:\n%3\n%4")
 								.arg(errorLine)
 								.arg(errorColumn)
@@ -374,7 +375,7 @@ ModelPart * PaletteModel::loadPart(const QString & path, bool update) {
 
 	if (m_partHash.value(moduleID, NULL)) {
 		if(!update) {
-			QMessageBox::warning(NULL, QObject::tr("Fritzing"),
+			FMessageBox::warning(NULL, QObject::tr("Fritzing"),
 							 QObject::tr("The part '%1' at '%2' does not have a unique module id '%3'.")
 							 .arg(modelPart->title())
 							 .arg(path)

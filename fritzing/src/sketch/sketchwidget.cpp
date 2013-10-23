@@ -79,6 +79,7 @@ $Date: 2013-04-29 07:24:08 +0200 (Mon, 29 Apr 2013) $
 #include "../utils/textutils.h"
 #include "../utils/bezier.h"
 #include "../utils/cursormaster.h"
+#include "../utils/fmessagebox.h"
 #include "../fsvgrenderer.h"
 #include "../items/resistor.h"
 #include "../items/mysterypart.h"
@@ -936,11 +937,11 @@ PaletteItem* SketchWidget::addPartItem(ModelPart * modelPart, ViewLayer::ViewLay
 	else {
 		// nobody falls through to here now?
 
-		QMessageBox::information(NULL, QObject::tr("Fritzing"),
+		FMessageBox::information(NULL, QObject::tr("Fritzing"),
 			QObject::tr("Error reading file %1: %2.").arg(modelPart->path()).arg(error) );
 
 
-		DebugDialog::debug(QString("addPartItem renderImage failed %1").arg(modelPart->moduleID()) );
+		DebugDialog::debug(QString("addPartItem renderImage failed %1 %2").arg(modelPart->moduleID()).arg(error));
 
 		//paletteItem->modelPart()->removeViewItem(paletteItem);
 		//delete paletteItem;

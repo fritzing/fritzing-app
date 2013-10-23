@@ -114,6 +114,9 @@ int main(int argc, char *argv[])
 			if (app->runAsService()) {
 				// for example: -g C:\Users\jonathan\fritzing2\fz\Test_multiple.fz -go C:\Users\jonathan\fritzing2\fz\gerber
 				result = app->serviceStartup();
+                if (result == 1) {
+					result = app->exec();
+                }
 			}
 			else {
 				result = app->startup();

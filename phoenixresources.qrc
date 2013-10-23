@@ -313,5 +313,13 @@
         <file>resources/images/icons/smalToolarrow-inactive.png</file>
         <file>resources/images/icons/smalToolarrow-normal.png</file>
         <file>resources/images/icons/smalToolarrow-pressed.png</file>
+        <file>resources/images/icons/spinArrowButtonUpNormal.png</file>
+        <file>resources/images/icons/spinArrowButtonUpPressed.png</file>
+        <file>resources/images/icons/spinArrowButtonDownNormal.png</file>
+        <file>resources/images/icons/spinArrowButtonDownPressed.png</file>
+        <file>resources/images/icons/TabScrollArrowButtonUpNormal.png</file>
+        <file>resources/images/icons/TabScrollArrowButtonUpPressed.png</file>
+        <file>resources/images/icons/TabScrollArrowButtonDownNormal.png</file>
+        <file>resources/images/icons/TabScrollArrowButtonDownPressed.png</file>
     </qresource>
 </RCC>

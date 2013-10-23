@@ -42,6 +42,7 @@ $Date: 2013-04-19 12:51:22 +0200 (Fr, 19. Apr 2013) $
 #include "help/tipsandtricks.h"
 #include "utils/folderutils.h"
 #include "utils/lockmanager.h"
+#include "utils/fmessagebox.h"
 #include "dialogs/translatorlistmodel.h"
 #include "partsbinpalette/partsbinview.h"
 #include "partsbinpalette/svgiconwidget.h"
@@ -348,12 +349,12 @@ bool FApplication::init() {
 			toRemove << i << i + 1;
 		}
 
-		if ((m_arguments[i].compare("-drc", Qt::CaseInsensitive) == 0) ||
-			(m_arguments[i].compare("--drc", Qt::CaseInsensitive) == 0)) {
-			m_serviceType = DRCService;
-			m_outputFolder = m_arguments[i + 1];
-			toRemove << i << i + 1;
-		}
+		//if ((m_arguments[i].compare("-drc", Qt::CaseInsensitive) == 0) ||
+		//	(m_arguments[i].compare("--drc", Qt::CaseInsensitive) == 0)) {
+		//	m_serviceType = DRCService;
+		//	m_outputFolder = m_arguments[i + 1];
+		//	toRemove << i << i + 1;
+		//}
 
 		if ((m_arguments[i].compare("-db", Qt::CaseInsensitive) == 0) ||
             (m_arguments[i].compare("-database", Qt::CaseInsensitive) == 0) ||
@@ -723,6 +724,17 @@ int FApplication::serviceStartup() {
 	}
 
 	switch (m_serviceType) {
+        case PortService:
+            initService();
+            {
+                MainWindow * sketch = MainWindow::newMainWindow(m_referenceModel, "", true, true);
+                if (sketch) {
+                    sketch->show();
+                    sketch->clearFileProgressDialog();
+                }
+            }
+            return 1;
+
 		case GedaService:
 			runGedaService();
 			return 0;
@@ -788,7 +800,7 @@ void FApplication::runGerberServiceAux()
 		m_started = true;
         
 		FolderUtils::setOpenSaveFolderAux(m_outputFolder);
-		if (mainWindow->loadWhich(filepath, false, false, "")) {
+		if (mainWindow->loadWhich(filepath, false, false, false, "")) {
             QFileInfo info(filepath);
             GerberGenerator::exportToGerber(info.completeBaseName(), m_outputFolder, NULL, mainWindow->pcbView(), false);
 		}
@@ -807,7 +819,7 @@ void FApplication::initService()
 
 void FApplication::runSvgService()
 {
-    initService();
+
     runSvgServiceAux();
 }
 
@@ -824,7 +836,7 @@ void FApplication::runSvgServiceAux()
 		m_started = true;
         
 		FolderUtils::setOpenSaveFolderAux(m_outputFolder);
-		if (mainWindow->loadWhich(filepath, false, false, "")) {
+		if (mainWindow->loadWhich(filepath, false, false, false, "")) {
             QFileInfo info(filepath);
             QList<ViewLayer::ViewID> ids;
             ids << ViewLayer::BreadboardView << ViewLayer::SchematicView << ViewLayer::PCBView;
@@ -911,7 +923,7 @@ void FApplication::runDRCService() {
 
             mainWindow->setCloseSilently(true);
 
-	        if (!mainWindow->loadWhich(filepath, false, false, "")) {
+	        if (!mainWindow->loadWhich(filepath, false, false, false, "")) {
 		        DebugDialog::debug(QString("failed to load '%1'").arg(filepath));
 		        mainWindow->close();
                 delete mainWindow;
@@ -1154,7 +1166,7 @@ void FApplication::finish()
 
 void FApplication::loadNew(QString path) {
 	MainWindow * mw = MainWindow::newMainWindow(m_referenceModel, path, true, true);
-	if (!mw->loadWhich(path, false, true, "")) {
+	if (!mw->loadWhich(path, false, true, true, "")) {
 		mw->close();
 	}
 	mw->clearFileProgressDialog();
@@ -1163,7 +1175,7 @@ void FApplication::loadNew(QString path) {
 void FApplication::loadOne(MainWindow * mw, QString path, int loaded) {
 	if (loaded == 0) {
 		mw->showFileProgressDialog(path);
-		mw->loadWhich(path, true, true, "");
+		mw->loadWhich(path, true, true, true, "");
 	}
 	else {
 		loadNew(path);
@@ -1487,8 +1499,9 @@ which is really not intended for hundreds of widgets.
 
 bool FApplication::runAsService() {
     if (m_serviceType == PortService) {
+        DebugDialog::setEnabled(true);
         initServer();
-        return false;
+        //return false;
     }
 
 	return m_serviceType != NoService;
@@ -1515,11 +1528,16 @@ bool FApplication::notify(QObject *receiver, QEvent *e)
         return QApplication::notify(receiver, e);
     }
 	catch (char const *str) {
-        QMessageBox::critical(NULL, tr("Fritzing failure"), tr("Fritzing caught an exception %1 from %2 in event %3")
+        FMessageBox::critical(NULL, tr("Fritzing failure"), tr("Fritzing caught an exception %1 from %2 in event %3")
 			.arg(str).arg(receiver->objectName()).arg(e->type()));
 	}
+    catch (std::exception& exp) {
+        // suggested in https://code.google.com/p/fritzing/issues/detail?id=2698
+        qDebug() << QString("notify %1 %2").arg(receiver->metaObject()->className()).arg(e->type());
+        FMessageBox::critical(NULL, tr("Fritzing failure"), tr("Fritzing caught an exception from %1 in event %2: %3").arg(receiver->objectName()).arg(e->type()).arg(exp.what()));
+    }
     catch (...) {
-        QMessageBox::critical(NULL, tr("Fritzing failure"), tr("Fritzing caught an exception from %1 in event %2").arg(receiver->objectName()).arg(e->type()));
+        FMessageBox::critical(NULL, tr("Fritzing failure"), tr("Fritzing caught an exception from %1 in event %2").arg(receiver->objectName()).arg(e->type()));
     }
 	closeAllWindows2();
 	QApplication::exit(-1);
@@ -1558,7 +1576,7 @@ void FApplication::loadSomething(const QString & prevVersion) {
         foreach (QString filename, m_filesToLoad) {
             DebugDialog::debug(QString("Loading non-service file %1").arg(filename));
             MainWindow *mainWindow = MainWindow::newMainWindow(m_referenceModel, filename, true, true);
-            mainWindow->loadWhich(filename, true, true, "");
+            mainWindow->loadWhich(filename, true, true, true, "");
             if (filename.endsWith(FritzingSketchExtension) || filename.endsWith(FritzingBundleExtension)) {
             }
             else {
@@ -1615,7 +1633,7 @@ QList<MainWindow *> FApplication::loadLastOpenSketch() {
     DebugDialog::debug(QString("Loading last open sketch %1").arg(lastSketchPath));
     settings.remove("lastOpenSketch");				// clear the preference, in case the load crashes
     MainWindow *mainWindow = MainWindow::newMainWindow(m_referenceModel, lastSketchPath, true, true);
-    mainWindow->loadWhich(lastSketchPath, true, true, "");
+    mainWindow->loadWhich(lastSketchPath, true, true, true, "");
     sketches << mainWindow;
     settings.setValue("lastOpenSketch", lastSketchPath);	// the load works, so restore the preference
 	return sketches;
@@ -1626,7 +1644,7 @@ void FApplication::doLoadPrevious(MainWindow * sketchWindow) {
     // This should be done before any files are loaded as it requires a restart.
     // As this can generate UI it should come after the splash screen has closed.
 
-    QMessageBox messageBox(sketchWindow);
+    FMessageBox messageBox(sketchWindow);
     messageBox.setWindowTitle(tr("Import files from previous version?"));
     messageBox.setText(tr("Do you want to import parts and bins that you have created with earlier versions of Fritzing?\n"));
     messageBox.setInformativeText(tr("\nNote: You can import them later using the \"Help\" > \"Import parts and bins "
@@ -1740,12 +1758,16 @@ void FApplication::runInscriptionService()
 {	
 	m_started = true;
     bool drc = false;
+    bool noMessages = false;
     foreach (QString arg, m_arguments) {
         if (arg.compare("-drc", Qt::CaseInsensitive) == 0) {
             drc = true;
         }
+        if (arg.compare("-nm", Qt::CaseInsensitive) == 0) {
+            noMessages = true;
+        }
     }
-	Panelizer::inscribe(this, m_panelFilename, drc);
+	Panelizer::inscribe(this, m_panelFilename, drc, noMessages);
 }
 
 QList<MainWindow *> FApplication::orderedTopLevelMainWindows() {
@@ -1780,7 +1802,7 @@ void FApplication::runExampleService(QDir & dir) {
 
 		FolderUtils::setOpenSaveFolderAux(dir.absolutePath());
 
-		if (!mainWindow->loadWhich(path, false, false, "")) {
+		if (!mainWindow->loadWhich(path, false, false, true, "")) {
 			DebugDialog::debug(QString("failed to load"));
 		}
 		else {
@@ -1811,6 +1833,7 @@ void FApplication::cleanFzzs() {
 }
 
 void FApplication::initServer() {
+    FMessageBox::BlockMessages = true;
     m_fServer = new FServer(this);
     connect(m_fServer, SIGNAL(newConnection(int)), this, SLOT(newConnection(int)));
     m_fServer->listen(QHostAddress::Any, m_portNumber);

@@ -140,7 +140,7 @@ public:
 	~MainWindow();
 
     void mainLoad(const QString & fileName, const QString & displayName, bool checkObsolete);
-	bool loadWhich(const QString & fileName, bool setAsLastOpened, bool addToRecent, const QString & displayName);
+	bool loadWhich(const QString & fileName, bool setAsLastOpened, bool addToRecent, bool checkObsolete, const QString & displayName);
 	void notClosableForAWhile();
 	QAction *raiseWindowAction();
 	QSizeGrip *sizeGrip();
@@ -551,7 +551,7 @@ protected:
 	void groundFillAux(bool fillGroundTraces, ViewLayer::ViewLayerID viewLayerID);
     void groundFillAux2(bool fillGroundTraces);
 	void connectStartSave(bool connect);
-	void loadBundledSketch(const QString &fileName, bool addToRecent, bool setAsLastOpened);
+	void loadBundledSketch(const QString &fileName, bool addToRecent, bool setAsLastOpened, bool checkObsolete);
     void dropEvent(QDropEvent *event);
     void dragEnterEvent(QDragEnterEvent *event);
     void mainLoadAux(const QString & fileName);

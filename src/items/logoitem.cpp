@@ -28,6 +28,7 @@ $Date: 2013-04-22 23:44:56 +0200 (Mo, 22. Apr 2013) $
 #include "../utils/graphicsutils.h"
 #include "../utils/folderutils.h"
 #include "../utils/textutils.h"
+#include "../utils/fmessagebox.h"
 #include "../fsvgrenderer.h"
 #include "../sketch/infographicsview.h"
 #include "../svg/svgfilesplitter.h"
@@ -417,7 +418,7 @@ void LogoItem::loadImage(const QString & fileName, bool addName)
 		    gpg.setMinRunSize(1, 1);
 		    gpg.scanImage(image, image.width(), image.height(), 1, res, colorString(), false, false, QSizeF(0, 0), 0, QPointF(0, 0));
 		    if (gpg.newSVGs().count() < 1) {
-			    QMessageBox::information(
+			    FMessageBox::information(
 				    NULL,
 				    tr("Unable to display"),
 				    tr("Unable to display image from %1").arg(fileName)

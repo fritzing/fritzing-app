@@ -36,6 +36,7 @@ src/utils/expandinglabel.h \
 src/utils/familypropertycombobox.h \
 src/utils/fileprogressdialog.h \
 src/utils/flineedit.h \
+src/utils/fmessagebox.h \
 src/utils/focusoutcombobox.h \
 src/utils/fsizegrip.h \
 src/utils/lockmanager.h \
@@ -59,6 +60,7 @@ src/utils/cursormaster.cpp \
 src/utils/expandinglabel.cpp \
 src/utils/fileprogressdialog.cpp \
 src/utils/flineedit.cpp \
+src/utils/fmessagebox.cpp \
 src/utils/focusoutcombobox.cpp \
 src/utils/fsizegrip.cpp \
 src/utils/lockmanager.cpp \

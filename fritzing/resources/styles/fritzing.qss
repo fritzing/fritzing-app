@@ -96,6 +96,7 @@ QMenuBar::item:pressed {
 
 }
 
+/*########### style of the dropdowns ######*/
 
 QMenu{
 	background-color: #d9d9d9;
@@ -119,26 +120,58 @@ QMenu::item:selected {
  QMenu::separator {
 	background-color: #c1c1c1;
 	height:2px;
-
 } 
-
 
  QMenu::indicator {
      width: 15px;
      height: 15px;
  }
  
+ /*############## indicator:non-exclusive is a checkbox ###########*/
  QMenu::indicator:non-exclusive:checked {
      image: url(:/resources/images/icons/check.png);
 	 	 background-color:transparent;
 		 	border:none;
  }
  
- QMenu::indicator:non-exclusive:unchecked {  /*the checkbox for the mainmenu*/
+ QMenu::indicator:non-exclusive:checked:selected {
+     image: url(:/resources/images/icons/checkhover.png);
+	 	 background-color:transparent;
+		 	border:none;
+ }
+
+ QMenu::indicator:non-exclusive:unchecked {  /*the checkbox for the mainmenu */
     image: url(:/resources/images/icons/nocheck.png);
 	 	 background-color:#d9d9d9;
 		 	border:transparent;
+			
  }
+
+  QMenu::indicator:non-exclusive:unchecked:selected {
+     image: url(:/resources/images/icons/check.png);
+	 	 background-color:#666;
+		 	border:none;
+ }
+
+/* #### some menu-stylelings, but it seems that they do not change anything #####
+
+ QMenu::icon:checked {
+     top: 10px;
+     right: 10px;
+     bottom: 10px;
+     left: 10px;
+	 background:#f0f;
+ }
+ 
+  QMenu::icon:unchecked { 
+     top: 1px;
+     right: 1px;
+     bottom: 1px;
+     left: 1px;
+	 background:#0f0;
+ }
+ 
+
 
  QMenu::indicator:exclusive:unchecked {
      image: url(:/resources/images/icons/nocheck.png);
@@ -146,43 +179,8 @@ QMenu::item:selected {
 		 	border:none;
  }
 
- QMenu::icon:checked {
-     top: 10px;
-     right: 10px;
-     bottom: 10px;
-     left: 10px;
- }
- 
-
-
-  QMenu::icon:unchecked { 
-     top: 1px;
-     right: 1px;
-     bottom: 1px;
-     left: 1px;
- }
-
-/* 
-QMenu::indicator:non-exclusive:unchecked {
-     image: url(:/resources/images/icons/nocheck.png);
-	 	 background-color:transparent;
-		 	border:none;
- }
-
- QMenu::indicator:non-exclusive:unchecked:selected {
-     image: url(:/resources/images/icons/nocheck.png);
-	 	 background-color:transparent;
-		 	border:none;
- }
-
  QMenu::indicator:non-exclusive:checked {
      image: url(:/resources/images/icons/check.png);
-	 	 background-color:transparent;
-		 	border:none;
- }
-
- QMenu::indicator:non-exclusive:checked:selected {
-     image: url(:/resources/images/icons/checkactive.png);
 	 	 background-color:transparent;
 		 	border:none;
  }
@@ -742,11 +740,18 @@ HtmlInfoView {
 #infoViewComboBox:editable {
         background: #fff;
 }
+
 #infoViewComboBox:editable:hover,
 #infoViewComboBox:editable:on {
 /* BUG: for some reason this background is shown _behind_ the :editable background */
         background: #fff;
 }
+
+#infoViewComboBox:hover
+ {
+        background: #ececec;
+}
+
 #infoViewComboBox::drop-down:editable {
         border-left: 1px solid #989898;
         background: #ececec;
@@ -778,22 +783,26 @@ HtmlInfoView {
         max-width: 30px;
 }
 
+/* this is the style of buttons - mostly in generic parts like: "edit pin lables"-button */
 #infoViewButton {
         font-size: 12px;
         /*min-width: 100px;*/
         text-align: center;
-        background: rgb(236,236,236);
-        border: 1px solid rgb(160,160,160);
-        border-radius: 4px;
+        background: #ececec;
+        border: 0px solid transparent;
+        border-radius: 0px;
         padding: 4px;
+		color: #323232;
 }
+
 #infoViewButton:hover  {
-        background: rgb(255,255,255);
+        background: #fff;
 }
 
 #infoViewButton:pressed,
 #infoViewButton:on {
-        background: rgb(255,255,255);
+        background: #666;
+		color: #fff;
 }
 
 #infoViewGroupBox {
@@ -804,7 +813,10 @@ HtmlInfoView {
         padding: 15px 0px 0px 0px;
 }
 #infoViewGroupBox::title {
+	color: #323232;
 }
+
+
 
 #infoViewLabel {
         font-size: 12px;
@@ -817,10 +829,38 @@ HtmlInfoView {
         padding: 0px;
         margin: 0px;
 }
+/*
 #infoViewCheckBox::indicator {
-        /* needs a nice checkmark graphic */
+	     image: url(:/resources/images/icons/check.png);
+
 }
 
+#infoViewCheckBox::indicator:non-exclusive:checked {
+     image: url(:/resources/images/icons/check.png);
+	 	 background-color:transparent;
+		 	border:none;
+}
+
+#infoViewCheckBox::indicator:non-exclusive:checked:selected {
+     image: url(:/resources/images/icons/checkhover.png);
+	 	 background-color:transparent;
+		 	border:none;
+ }
+
+#infoViewCheckBox::indicator:non-exclusive:unchecked {  //checkbox styling
+    image: url(:/resources/images/icons/nocheck.png);
+	 	 background-color:#d9d9d9;
+		 	border:transparent;
+			
+ }
+ 
+#infoViewCheckBox::indicator:non-exclusive:unchecked:selected {
+     image: url(:/resources/images/icons/check.png);
+	 	 background-color:#666;
+		 	border:none;
+ }
+
+*/
 
 /* Connections */
 #connectionsFrame {
@@ -922,7 +962,7 @@ StackTabBar {
         /* trying to get rid of the line
         across the top of the tabs */
         border: none;
-		background-color:rgb(255,0,255);
+		background-color:transparent;
 }
 
 StackTabBar::tab {
@@ -1070,7 +1110,7 @@ QSplitter::handle {
 
 WaitPushUndoStack {
         background-color: white;
-        color: #f0f;
+        color: #00f;
 }
 /*
 ViewSwitcher::item {

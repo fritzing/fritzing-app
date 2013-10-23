@@ -964,7 +964,7 @@ QWidget * PaletteItem::createHoleSettings(QWidget * parent, HoleSettings & holeS
 
 	    QLabel * label = new QLabel(tr("Hole Diameter"));
 	    label->setMinimumHeight(RowHeight);
-	    label->setObjectName("infoViewLabel");
+        label->setObjectName("infoViewGroupBoxLabel");
 	    gridLayout->addWidget(label, 0, 0);
 
 	    holeSettings.thicknessEdit = new QLineEdit(subFrame);

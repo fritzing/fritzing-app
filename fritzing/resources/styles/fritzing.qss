@@ -5,7 +5,7 @@ MainWindow {
 		background-color:rgb(217,217,217); /*mainbackground color*/
         /* styling there */
         font-family: Droid Sans, sans-serif;
-        font-size: 12px;
+        font-size: 11px;
         color: rgb(255,255,255);
 }
 
@@ -21,12 +21,15 @@ QStatusBar {
 }
 
 #statusBarContainer QTooltip{
-     border: 1px solid transparent;
-     padding: 2px;
-     border-radius: 3px;
+     border: 1px solid #fff;
+     padding: 3px;
+     border-radius: 1px;
 	 background:#fff;
 	 color:#333;
+	  opacity: 200;
 }
+
+
 
 /* this separates palettes from each other and is movable */
 MainWindow::separator {
@@ -34,7 +37,7 @@ MainWindow::separator {
 }
 
 MainWindow::toolbar {
-        background-color: rgb(0,0,255);
+        background-color: #fff;
 }
 
 MainWindow QLabel {
@@ -45,7 +48,7 @@ QStatusBar {
         left: 6px;
         color: rgb(255,255,255);
         font-weight: bold;
-        font-size: 10px;
+        font-size: 11px;
 }
 
 QStatusBar::item {
@@ -221,7 +224,7 @@ QMenu::item:selected {
 
  QProgressBar::chunk {
      background-color: #f32926;
-     width: 20px;
+     width: 30px;
 	text-align: center;
 	
  }
@@ -229,11 +232,12 @@ QMenu::item:selected {
  /* ############ tooltips for the partsbin and toolbar NOT the main window ########*/
   
   QToolTip {
-     border: 1px solid transparent;
-     padding: 2px;
-     border-radius: 3px;
+     border: 1px solid #fff;
+     padding: 3px;
+     border-radius: 1px;
 	 background:#fff;
 	 color:#333;
+	  opacity: 200;
  }
 
 /* ############## RADIOBUTTON STYLING  ###########*/
@@ -288,7 +292,7 @@ splash {
 	border: none;
     color: rgb(214,50,34);
     background: rgb(214,50,34);
-	width:80px;
+	width:70px;
 	padding:0px 5px;
 }
 
@@ -298,7 +302,7 @@ splash {
     background: rgb(242,57,38);
 	color: rgb(214,50,34); /* doesnt work, why ??? */
 	margin: 0px;
-	width:80px;
+	width:70px;
 	padding:0px 5px;
 }
 
@@ -315,7 +319,7 @@ splash {
         border: none;
         padding: 0px;
 		height:66px;
-			width:80px;
+			width:70px;
 }
 
  
@@ -334,7 +338,7 @@ splash {
 		height:66px;
 		padding:5px;
 		font-weight: regluar;
-		width:80px;
+		width:70px;
 }
 
  #sketchAreaToolbar QToolButton:hover {   /* hover on toolbar buttons */
@@ -508,46 +512,42 @@ FDockWidget::float-button {
         subcontrol-position: top right;
         subcontrol-origin: margin;
         position: absolute;
-        top: 2px;  bottom: 0px;
-		height:12px;
-		width:12px;
+        top: 4px;  bottom: 0px;
+		height:15px;
+		width:15px;
 }
 
 FDockWidget::close-button {
         right: 2px;
         image: url(:/resources/images/icons/dockWidgetCloseNormal_icon.png);
 
+
 }
 FDockWidget::close-button:hover {
         border: none;
         image: url(:/resources/images/icons/dockWidgetCloseHover_icon.png);
-				height:12px;
-		width:12px;
+
 }
 FDockWidget::close-button:pressed {
         border: none;
         image: url(:/resources/images/icons/dockWidgetClosePressed_icon.png);
-				height:12px;
-		width:12px;
+
 }
 
 FDockWidget::float-button {
         right: 17px;
         image: url(:/resources/images/icons/dockWidgetFloatNormal_icon.png);
-				height:12px;
-		width:12px;
+
 }
 FDockWidget::float-button:hover {
         border: none;
         image: url(:/resources/images/icons/dockWidgetFloatHover_icon.png);
-				height:12px;
-		width:12px;
+
 }
 FDockWidget::float-button:pressed {
         border: none;
         background-image: url(:/resources/images/icons/dockWidgetFloatPressed_icon.png);
-				height:12px;
-		width:12px;
+
 }
 
 
@@ -593,12 +593,13 @@ HtmlInfoView {
         margin: 0px 0px 0px 5px;
         padding: 0px;
 }
+
 #iconLabel { 
         background-color: #fff;
 }
 
 #infoViewLockCheckbox {
-        font-size: 12px;
+        font-size: 11px;
         padding: 0px;
         margin: 0px;
 }
@@ -606,19 +607,20 @@ HtmlInfoView {
 
 
 #infoViewPartFrame {
-        font-size: 12px;
+        font-size: 11px;
         padding: 0px;
         margin: 0px;
+		color:#f0f;
 }
 
 /* part description/subtitle */
 #infoViewPartTitle,
 #infoViewPartVersion {
-        margin: 0px 5px 0px 5px;
+        margin: 3px 5px 3px 5px;
         padding: 0px 0px 1px 0px;
-        font-size: 12px;
+        font-size: 11px;
         font-weight: normal;
-        color: rgb(51,51,51);     
+        color: #323232;     
 		background: #d9d9d9;   
 		/*just the part discription titel not the part main-titel*/ 
 }
@@ -627,7 +629,7 @@ HtmlInfoView {
 #infoViewPartUrl {
         margin: 0px 4px 0px 4px;
         padding: 0px 0px 1px 0px;
-        font-size: 12px;
+        font-size: 11px;
         font-weight: normal;
         color: #d63222;/*rgb(110,110,110);*/
 }
@@ -640,53 +642,80 @@ HtmlInfoView {
         border: 0px;
         font-weight: bold;
         text-align: left;
-        font-size: 12px;
+        font-size: 11px;
         color: #D63222;
 }
 
 /* Properties */
 #infoViewPropertyFrame {
-        margin: 0px 4px 0px 0px;
+        margin: 2px 4px 2px 0px;
 }
 
 #propNameLabel {
-        font-size: 10px;
+        font-size: 11px;
         color: rgb(51,51,51);
         min-width: 65px;
         max-width: 65px;
         margin: 0px 0px 0px 4px;
         padding: 3px 3px 3px 0px;
-        border-top: 1px solid rgb(177,177,177);
+        border-top: 1px solid #b1b1b1;
+		font-weight: normal;
 }
 #propValueFrame {
         margin: 0px;
         border: 0px;
         padding: 1px 0px 1px 0px;
-        border-top: 1px solid rgb(177,177,177);
+        border-top: 1px solid #b1b1b1;
 }
 #propValueLabel {
-        font-size: 10px;
+        font-size: 11px;
         padding: 3px 3px 3px 0px;
+		font-weight: normal;
 }
 
 #infoViewSpinBoxLabel {
-        font-size: 10px;
-        color: rgb(217,217,217);
+        font-size: 11px;
+        color: #d9d9d9;
+		font-weight: normal;
 }
 
-/* complex property values */
 
 
+/* complex property values with up and down arrows */
 #infoViewDoubleSpinBox {
         background: rgb(255,255,255);
-        font-size: 10px;
-        color: rgb(0,0,0);
+        font-size: 11px;
+        color: #000;
         border: none;
+		
 }
+#infoViewDoubleSpinBox::down-button {
+        background: #fff;
+		border: none;
+		image: url(:/resources/images/icons/spinArrowButtonDownNormal.png);
+		margin-bottom:1px;
+}
+#infoViewDoubleSpinBox::down-button:pressed {
+        background: #fff;
+		border: none;
+		image: url(:/resources/images/icons/spinArrowButtonDownPressed.png);
+		margin-bottom:1px;
+}
+#infoViewDoubleSpinBox::up-button {
+        background: #fff;
+		border-bottom: none;
+		image: url(:/resources/images/icons/spinArrowButtonUpNormal.png);
+}
+#infoViewDoubleSpinBox::up-button:pressed  {
+        background: #fff;
+		border-bottom: none;
+		image: url(:/resources/images/icons/spinArrowButtonUpPressed.png);
+}
+
 
 
 #infoViewComboBox {
-        font-size: 10px;
+        font-size: 11px;
         color: rgb(0,0,0);
         border: none;
         /*padding-left: 5px;*/
@@ -694,7 +723,7 @@ HtmlInfoView {
 }
 
 #infoViewComboBox:disabled {
-	color:rgb(50, 50, 50);
+	color:#323232;
 	background: #d9d9d9;
 }
 #infoViewComboBox:!editable:disabled {
@@ -712,6 +741,9 @@ HtmlInfoView {
 }
 #infoViewComboBox:on  {
 }
+
+/* drop-down arrow of the combobox */
+
 #infoViewComboBox::down-arrow {
         image: url(:/resources/images/icons/combobox-arrow.png);
 }
@@ -730,7 +762,7 @@ HtmlInfoView {
 /* drop-down list of the combobox */
 #infoViewComboBox QAbstractItemView {
         background-color: #ececec;
-        margin: 0px;
+        margin: 3px 0px;
         padding: 0px;
 		color:#333;
 }
@@ -759,7 +791,7 @@ HtmlInfoView {
 
 
 #infoViewLineEdit {
-        font-size: 12px;
+        font-size: 11px;
         color: rgb(0,0,0);
         background: rgb(255,255,255);
         border: none;
@@ -775,8 +807,8 @@ HtmlInfoView {
 
 /* the label between the two spinners in the schematic frame */
 #infoViewOfLabel {
-        font-size: 12px;
-        padding: 0px;
+        font-size: 11px;
+        padding: 3px 3px 3px 0px;
         margin: 0px;
         width: 30px;
         min-width: 30px;
@@ -785,14 +817,16 @@ HtmlInfoView {
 
 /* this is the style of buttons - mostly in generic parts like: "edit pin lables"-button */
 #infoViewButton {
-        font-size: 12px;
+        font-size: 11px;
         /*min-width: 100px;*/
         text-align: center;
         background: #ececec;
-        border: 0px solid transparent;
+        border: 1px solid #b1b1b1;
         border-radius: 0px;
-        padding: 4px;
+        padding: 2px;
 		color: #323232;
+		margin-top:3px;
+		margin-bottom:3px;
 }
 
 #infoViewButton:hover  {
@@ -805,30 +839,27 @@ HtmlInfoView {
 		color: #fff;
 }
 
-#infoViewGroupBox {
+/* the title if you have a "advanced settings" box - i.e. gereric ics */
+#infoViewGroupBox { 
         border: 1px solid gray;
-        font-size: 12px;
+        font-size: 11px;
         font-weight: bold;
         margin: 5px 0px 0px 0px;
-        padding: 15px 0px 0px 0px;
-}
-#infoViewGroupBox::title {
-	color: #323232;
+        padding: 15px 2px 5px 2px;
 }
 
+/* the text inside the advanced settings box */
+#infoViewGroupBoxLabel {
+        font-size: 11px;
 
-
-#infoViewLabel {
-        font-size: 12px;
-        min-width: 60px;
-        max-width: 60px;
 }
 
 #infoViewCheckBox {
-        font-size: 12px;
+        font-size: 11px;
         padding: 0px;
-        margin: 0px;
+        margin-right: 2px;
 }
+
 /*
 #infoViewCheckBox::indicator {
 	     image: url(:/resources/images/icons/check.png);
@@ -868,7 +899,7 @@ HtmlInfoView {
 }
 
 #connectionsLabel {
-        font-size: 12px;
+        font-size: 11px;
         color: rgb(87,87,87);
         min-width: 65px;
         max-width: 65px;
@@ -878,7 +909,7 @@ HtmlInfoView {
 }
 
 #connectionsValue {
-        font-size: 10px;
+        font-size: 11px;
         color: black;
         margin: 0px;
         border: 0px;
@@ -889,7 +920,7 @@ HtmlInfoView {
 /* Tags */
 
 #tagsValue {
-        font-size: 10px;
+        font-size: 11px;
         margin: 0px 4px 0px 4px;
         padding: 2px 0px 0px 0px;
         border-top: 1px solid rgb(155,155,155);
@@ -957,8 +988,8 @@ PartsBinPaletteWidget InfoGraphicsView {
 
 PartsBinPaletteWidget,
 StackTabWidget,
-StackTabWidget::pane,
-StackTabBar {
+StackTabWidget::pane
+{
         /* trying to get rid of the line
         across the top of the tabs */
         border: none;
@@ -993,14 +1024,51 @@ StackTabBar::tab:!selected:hover {
 }
 
 StackTabBar[current="true"]::tab:selected {
-		border:2px solid #00f;
+		border:5px solid #00f;
         /*background-color: black;
         color: white;*/
 }
 
+/*styling for the scrolling arrows for the part-bins*/
+StackTabBar QToolButton {
+	background: rgba(217,217,217,200);
+	border:0px;
+}
+
+
+StackTabBar QToolButton::up-arrow {
+	background-image: url(:/resources/images/icons/TabScrollArrowButtonUpNormal.png);
+	background-repeat: none;
+		background-position: center;
+}
+
+StackTabBar QToolButton::up-arrow:pressed {
+	background-image: url(:/resources/images/icons/TabScrollArrowButtonUpPressed.png);
+	background-repeat: none;
+		background-position: center;
+}
+
+
+StackTabBar QToolButton::down-arrow{
+		background-image: url(:/resources/images/icons/TabScrollArrowButtonDownNormal.png);
+		background-repeat: none;
+		background-position: center;
+}
+
+
+StackTabBar QToolButton::down-arrow:pressed{
+		background-image: url(:/resources/images/icons/TabScrollArrowButtonDownPressed.png);
+		background-repeat: none;
+		background-position: center;
+}
+
+
+
+
+
 #binToolButton {
         background-color: transparent;
-        font-size: 10px;
+        font-size: 11px;
 }
 
 #partsBinCombinedMenuButton
@@ -1055,32 +1123,48 @@ SketchWidget {
 
 
 /**************** the  breadboard-, schematic-, pcb-view switcher ****************/
-tripleNav {
-background-image:none;
-background:transparent;
 
+/*
+QWidget#tripleNav {
+background:#00f;
+border: 4px solid #f00;
 }
+
+/*this one is able to set some backgroundcolor, but cannot remove the bg
+#viewSwitcher QWidget{
+	background: #f0f;
+	border: 4px solid transparent;
+	}
+	
+
+#viewSwitcher QLabel { 
+	background: rgba (250,0,250,0);
+	margin:20px;
+	
+	}
+
+
 
 #tripleNav::QLabel{
 	background:transparent;
 	font-weight: bold;
 	background-image:none;
 	margin:10px;
-}
+} */
 /*
 #tripleNav QLabel{
 	background:transparent;	
 	font-size:12px;
 	background-image:none;
 }
-*/
+
 
 TripleNavigator QLabel {
         background:transparent;
 		background-image: none;
 			font-size:20px;
 }
-
+*/
 /*
 
 #tripleNavigatorBottomMargin {
@@ -1110,7 +1194,7 @@ QSplitter::handle {
 
 WaitPushUndoStack {
         background-color: white;
-        color: #00f;
+        color: #0f0;
 }
 /*
 ViewSwitcher::item {
@@ -1200,3 +1284,4 @@ SearchLineEdit {
         font-family: Droid Sans;
         font-weight: bold;
 }
+

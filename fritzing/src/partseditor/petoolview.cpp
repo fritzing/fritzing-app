@@ -144,7 +144,7 @@ PEToolView::PEToolView(QWidget * parent) : QWidget(parent)
 
     m_terminalPointX = new PEDoubleSpinBox;
     m_terminalPointX->setDecimals(4);
-	m_terminalPointX->setToolTip(tr("Modifies the x-coordinate of the terminal point"));
+    m_terminalPointX->setToolTip(tr("Modifies the x-coordinate of the terminal point"));
     posNumberLayout->addWidget(m_terminalPointX);
     connect(m_terminalPointX, SIGNAL(getSpinAmount(double &)), this, SLOT(getSpinAmountSlot(double &)), Qt::DirectConnection);
     connect(m_terminalPointX, SIGNAL(valueChanged(double)), this, SLOT(terminalPointEntry()));
@@ -156,7 +156,7 @@ PEToolView::PEToolView(QWidget * parent) : QWidget(parent)
 
     m_terminalPointY = new PEDoubleSpinBox;
     m_terminalPointY->setDecimals(4);
-	m_terminalPointY->setToolTip(tr("Modifies the y-coordinate of the terminal point"));
+    m_terminalPointY->setToolTip(tr("Modifies the y-coordinate of the terminal point"));
     posNumberLayout->addWidget(m_terminalPointY);
     connect(m_terminalPointY, SIGNAL(getSpinAmount(double &)), this, SLOT(getSpinAmountSlot(double &)), Qt::DirectConnection);
     connect(m_terminalPointY, SIGNAL(valueChanged(double)), this, SLOT(terminalPointEntry()));

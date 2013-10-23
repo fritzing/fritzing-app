@@ -128,6 +128,7 @@ bool ViewSwitcherDockWidget::event(QEvent *event)
 void ViewSwitcherDockWidget::setViewSwitcher(ViewSwitcher * viewSwitcher)
 {
 	m_viewSwitcher = viewSwitcher;
+    m_viewSwitcher -> setObjectName("viewSwitcher");
 	setTitleBarWidget(viewSwitcher);
 	topLevelChangedSlotAux(isFloating());
 }

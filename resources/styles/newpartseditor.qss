@@ -78,33 +78,31 @@ QMenu#peTabs  {
 QLabel{
 	background:transparent;
 	background-image:none;
-	font-size: 12px;
-	
+	font-size: 11px;
 	} 
 	
 QComboBox,
 QPushButton,
 QPushButton:enabled,
 QPushButton:active{
-	background-image:none;
-	color: #fff;
-	background:#d63222;
-	font-size:12px;
-	height: 18px;
-	min-width:18px;
-	padding:2px;
-	border:none;
+		background-image:none;
+		font-size: 11px;
+		text-align: center;
+        background: #ececec;
+        border: 1px solid #b1b1b1;
+        border-radius: 0px;
+		color: #323232;
+		padding:5px;
+		margin-top:3px;
+		margin-bottom:3px;
 	}
 
 QComboBox:hover,
 QPushButton:hover{
 	background-image:none;
-	color: #d9d9d9;
-	background:#f23926;
-	font-size:12px;
-	border:none;
-	height: 18px;
-	min-width:18px;
+	color: #fff;
+	background:#666;
+	font-size:11px;
 	}
 	
 
@@ -113,8 +111,8 @@ QPushButton:pressed{
 	background-image:none;
 	color: #d9d9d9;
 	background:#f23926;
-	font-size:12px;
-	border:none;
+	font-size:11px;
+
 	}
 
 QComboBox:disabled,
@@ -122,8 +120,8 @@ QPushButton:disabled{
 	background-image:none;
 	color: #656565;
 	background:transparent;
-	font-size:12px;
-	border:none;
+	font-size:11px;
+
 	}
 
 /* drop-down buton of the combobox */
@@ -174,3 +172,52 @@ QSplitter::handle {
      background-color: #666666;
 } 
 
+/* spinbox styling for connector position */
+QDoubleSpinBox {
+        background: rgb(255,255,255);
+        font-size: 11px;
+        color: #000;
+        border: none;
+		
+}
+
+QDoubleSpinBox::down-button {
+        background: #fff;
+		border: none;
+		image: url(:/resources/images/icons/spinArrowButtonDownNormal.png);
+		margin-bottom:1px;
+}
+
+QDoubleSpinBox::down-button:pressed {
+        background: #fff;
+		border: none;
+		image: url(:/resources/images/icons/spinArrowButtonDownPressed.png);
+		margin-bottom:1px;
+}
+
+QDoubleSpinBox::up-button {
+        background: #fff;
+		border-bottom: none;
+		image: url(:/resources/images/icons/spinArrowButtonUpNormal.png);
+}
+
+QDoubleSpinBox::up-button:pressed  {
+        background: #fff;
+		border-bottom: none;
+		image: url(:/resources/images/icons/spinArrowButtonUpPressed.png);
+}
+
+/*
+QTableView {
+     selection-background-color: #f0f;
+	 background-image:none;
+	 image:none;
+ }
+ 
+QTreeWidgetItem {
+     selection-background-color: #f0f;
+	 background-image:none;
+	 image:none;
+	 }
+	 
+*/

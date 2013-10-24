@@ -30,6 +30,7 @@ $Date: 2013-04-22 23:44:56 +0200 (Mo, 22. Apr 2013) $
 #include "../sketch/infographicsview.h"
 #include "../commands.h"
 #include "../utils/textutils.h"
+#include "../utils/schematicrectconstants.h"
 #include "partlabel.h"
 
 #include <QDomNodeList>
@@ -151,8 +152,36 @@ QString ScrewTerminal::makeBreadboardSvg(const QString & expectedFileName)
 	return svg;
 }
 
-
 QString ScrewTerminal::makeSchematicSvg(const QString & expectedFileName) 
+{
+	QStringList pieces = expectedFileName.split("_");
+
+	int pins = pieces.at(2).toInt();			
+	double increment = SchematicRectConstants::NewUnit / 25.4;
+    double incrementPoints = 72 * increment;		// 72 dpi
+    double pinWidthPoints = 72 * SchematicRectConstants::PinWidth / 25.4;
+    double pinLength = 2 * increment;
+    double pinLengthPoints = 2 * incrementPoints;
+
+	QString header("<?xml version='1.0' encoding='utf-8'?>\n"
+					"<svg version='1.1' baseProfile='basic' id='svg2' xmlns:svg='http://www.w3.org/2000/svg'\n"
+					"xmlns='http://www.w3.org/2000/svg'  x='0px' y='0px' width='%1in'\n"
+					"height='percent1in' viewBox='0 0 %2 [percent2]' xml:space='preserve'>\n"
+					"<g id='schematic'>\n");
+    header = header.arg(increment + pinLength).arg(incrementPoints + pinLengthPoints);
+
+	QString repeat("<line id='connector%1pin' fill='none' stroke='#000000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' x1='0.998' y1='[9.723]' x2='17.845' y2='[9.723]'/>\n"
+					"<rect id='connector%1terminal' x='0' y='[8.725]' width='0.998' height='1.997'/>\n"
+					"<circle fill='none' stroke-width='2' stroke='#000000' cx='52.9215' cy='[9.723]' r='8.7195' />\n"
+					"<line id='line' fill='none' stroke='#000000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' x1='43.202' y1='[9.723]' x2='16.452' y2='[9.723]'/>\n");
+
+	QString svg = TextUtils::incrementTemplateString(header.arg(increment * pins).arg(incrementPoints), 1, incrementPoints * (pins - 1), TextUtils::incMultiplyPinFunction, TextUtils::noCopyPinFunction, NULL);
+	svg += TextUtils::incrementTemplateString(repeat, pins, incrementPoints, TextUtils::standardMultiplyPinFunction, TextUtils::standardCopyPinFunction, NULL);
+	svg += "</g>\n</svg>";
+
+	return svg;
+}
+QString ScrewTerminal::obsoleteMakeSchematicSvg(const QString & expectedFileName) 
 {
 	QStringList pieces = expectedFileName.split("_");
 

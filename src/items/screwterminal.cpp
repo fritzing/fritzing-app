@@ -169,11 +169,24 @@ QString ScrewTerminal::makeSchematicSvg(const QString & expectedFileName)
 					"height='percent1in' viewBox='0 0 %2 [percent2]' xml:space='preserve'>\n"
 					"<g id='schematic'>\n");
     header = header.arg(increment + pinLength).arg(incrementPoints + pinLengthPoints);
+    header.replace("percent", "%");
 
-	QString repeat("<line id='connector%1pin' fill='none' stroke='#000000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' x1='0.998' y1='[9.723]' x2='17.845' y2='[9.723]'/>\n"
-					"<rect id='connector%1terminal' x='0' y='[8.725]' width='0.998' height='1.997'/>\n"
-					"<circle fill='none' stroke-width='2' stroke='#000000' cx='52.9215' cy='[9.723]' r='8.7195' />\n"
-					"<line id='line' fill='none' stroke='#000000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' x1='43.202' y1='[9.723]' x2='16.452' y2='[9.723]'/>\n");
+	QString repeat("<line id='connectorpercent1pin' fill='none' stroke='%1' stroke-width='%2' stroke-linecap='round' stroke-linejoin='round' x1='%3' y1='[%5]' x2='%4' y2='[%5]'/>\n"
+					"<rect id='connectorpercent1terminal' x='0' y='[%6]' width='0' height='%2'/>\n"
+					"<circle fill='none' stroke-width='%2' stroke='%1' cx='%7' cy='[%5]' r='%8' />\n"
+					);
+    
+    repeat = repeat
+                .arg(SchematicRectConstants::PinColor)
+                .arg(pinWidthPoints)
+                .arg(pinWidthPoints / 2)
+                .arg(pinLengthPoints - pinWidthPoints)
+                .arg(incrementPoints / 2)
+                .arg((incrementPoints - pinWidthPoints) / 2)
+                .arg(pinLengthPoints + (incrementPoints / 2) - pinWidthPoints)
+                .arg((incrementPoints / 2) - pinWidthPoints)
+                ;
+    repeat.replace("percent", "%");
 
 	QString svg = TextUtils::incrementTemplateString(header.arg(increment * pins).arg(incrementPoints), 1, incrementPoints * (pins - 1), TextUtils::incMultiplyPinFunction, TextUtils::noCopyPinFunction, NULL);
 	svg += TextUtils::incrementTemplateString(repeat, pins, incrementPoints, TextUtils::standardMultiplyPinFunction, TextUtils::standardCopyPinFunction, NULL);

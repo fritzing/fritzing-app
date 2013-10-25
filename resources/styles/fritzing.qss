@@ -286,13 +286,27 @@ splash {
 
 
 /* ################### the toolbar #################### */
+RoutingStatusLabel {
+color: #f00;
+background:#00f;
+}	
+
+ToolBarSeperator {
+	background:#f0f;
+}
+
+#RoutingStatusLabel {
+color: #f0f;
+background:#00f;
+
+}
 
 #fileToolBar QToolButton,
 #editToolBar QToolButton {
 	border: none;
     color: rgb(214,50,34);
     background: rgb(214,50,34);
-	width:70px;
+	width:75px;
 	padding:0px 5px;
 }
 
@@ -302,7 +316,7 @@ splash {
     background: rgb(242,57,38);
 	color: rgb(214,50,34); /* doesnt work, why ??? */
 	margin: 0px;
-	width:70px;
+	width:75px;
 	padding:0px 5px;
 }
 
@@ -319,7 +333,7 @@ splash {
         border: none;
         padding: 0px;
 		height:66px;
-			width:70px;
+			width:75px;
 }
 
  
@@ -338,7 +352,7 @@ splash {
 		height:66px;
 		padding:5px;
 		font-weight: regluar;
-		width:70px;
+		width:75px;
 }
 
  #sketchAreaToolbar QToolButton:hover {   /* hover on toolbar buttons */
@@ -348,6 +362,14 @@ splash {
 		margin: 0px;
 		height:66px;
 }
+
+ #sketchAreaToolbar QToolButton:disabled {   /* hover on toolbar buttons */
+        border: none;
+		color: rgb(236,236,236);
+		margin: 0px;
+		height:66px;
+}
+
 
 
 #sketchAreaToolbar QToolButton::menu-button { /*the little arrow to open the submenu*/

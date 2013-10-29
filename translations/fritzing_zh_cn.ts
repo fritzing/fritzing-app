@@ -775,6 +775,10 @@ Note: You can import them later using the &quot;Help&quot; &gt; &quot;Import par
         <source>Fritzing (*%1)</source>
         <translation>Fritzing (*%1)</translation>
     </message>
+    <message>
+        <source>Fritzing caught an exception from %1 in event %2: %3</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>FritzingWindow</name>

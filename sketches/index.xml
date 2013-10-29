@@ -54,19 +54,19 @@
 		<sketch id="Fading" name="Fading" src="core/Fritzing Creator Kit DE+EN/creator-kit-en/Fritzing/Fading.fzz"/>
 		<sketch id="FlipFlop" name="FlipFlop" src="core/Fritzing Creator Kit DE+EN/creator-kit-en/Fritzing/FlipFlop.fzz"/>
 		<sketch id="H-Bridge" name="H-Bridge" src="core/Fritzing Creator Kit DE+EN/creator-kit-en/Fritzing/H-Bridge.fzz"/>		
-		<sketch id="Lauflicht" name="Lauflicht" src="core/Fritzing Creator Kit DE+EN/creator-kit-en/Fritzing/Lauflicht.fzz"/>
-		<sketch id="Lichtautomatik" name="Lichtautomatik" src="core/Fritzing Creator Kit DE+EN/creator-kit-en/Fritzing/Lichtautomatik.fzz"/>
+		<sketch id="Chaserlights" name="Chaserlights" src="core/Fritzing Creator Kit DE+EN/creator-kit-en/Fritzing/Chaserlights.fzz"/>
+		<sketch id="AutomaticLightingSystem" name="AutomaticLightingSystem" src="core/Fritzing Creator Kit DE+EN/creator-kit-en/Fritzing/AutomaticLightingSystem.fzz"/>
 		<sketch id="Matrix" name="Matrix" src="core/Fritzing Creator Kit DE+EN/creator-kit-en/Fritzing/Matrix.fzz"/>
-		<sketch id="Nachtlicht" name="Nachtlicht" src="core/Fritzing Creator Kit DE+EN/creator-kit-en/Fritzing/Nachtlicht.fzz"/>
+		<sketch id="Nightlight" name="Nightlight" src="core/Fritzing Creator Kit DE+EN/creator-kit-en/Fritzing/Nightlight.fzz"/>
 		<sketch id="Ping-Pong" name="Ping-Pong" src="core/Fritzing Creator Kit DE+EN/creator-kit-en/Fritzing/Ping-Pong.fzz"/>
 		<sketch id="Potentiometer" name="Potentiometer" src="core/Fritzing Creator Kit DE+EN/creator-kit-en/Fritzing/Potentiometer.fzz"/>
 		<sketch id="Processing_RGB" name="Processing_RGB" src="core/Fritzing Creator Kit DE+EN/creator-kit-en/Fritzing/Processing_RGB.fzz"/>
 		<sketch id="Servo" name="Servo" src="core/Fritzing Creator Kit DE+EN/creator-kit-en/Fritzing/Servo.fzz"/>	
 		<sketch id="Synthesizer" name="Synthesizer" src="core/Fritzing Creator Kit DE+EN/creator-kit-en/Fritzing/Synthesizer.fzz"/>
 		<sketch id="TwitterSaurus" name="TwitterSaurus" src="core/Fritzing Creator Kit DE+EN/creator-kit-en/Fritzing/TwitterSaurus.fzz"/>
-		<sketch id="Verstaerkung" name="Verstaerkung" src="core/Fritzing Creator Kit DE+EN/creator-kit-en/Fritzing/Verstaerkung.fzz"/>
-		<sketch id="Wahrsager" name="Wahrsager" src="core/Fritzing Creator Kit DE+EN/creator-kit-en/Fritzing/Wahrsager.fzz"/>
-		<sketch id="Zaubertafel" name="Zaubertafel" src="core/Fritzing Creator Kit DE+EN/creator-kit-en/Fritzing/Zaubertafel.fzz"/>	
+		<sketch id="Amplification" name="Amplification" src="core/Fritzing Creator Kit DE+EN/creator-kit-en/Fritzing/Amplification.fzz"/>
+		<sketch id="Fortuneteller" name="Fortuneteller" src="core/Fritzing Creator Kit DE+EN/creator-kit-en/Fritzing/Fortuneteller.fzz"/>
+		<sketch id="MagicBoard" name="MagicBoard" src="core/Fritzing Creator Kit DE+EN/creator-kit-en/Fritzing/MagicBoard.fzz"/>	
 </sketches>
 	<categories>
 		<category name="Arduino">
@@ -194,8 +194,8 @@
 			</category>
 		</category>
 		<category name="Fritzing CreatorKit">
-			<sketch id="Amblification"/>
-			<sketch id="AutomaticLightningSystem"/>
+			<sketch id="Amplification"/>
+			<sketch id="AutomaticLightingSystem"/>
 			<sketch id="Blink"/>
 			<sketch id="Chaserlights"/>
 			<sketch id="Fading"/>

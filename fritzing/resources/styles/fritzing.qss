@@ -286,18 +286,15 @@ splash {
 
 
 /* ################### the toolbar #################### */
-RoutingStatusLabel {
-color: #f00;
-background:#00f;
-}	
+	
 
-ToolBarSeperator {
+ToolBarSeparator {
 	background:#f0f;
 }
 
-#RoutingStatusLabel {
-color: #f0f;
-background:#00f;
+#routingStateLabel {
+	color: rgb(255,255,255);
+	background:rgb(214,50,34);
 
 }
 
@@ -351,7 +348,7 @@ background:#00f;
 		margin: 0px;
 		height:66px;
 		padding:5px;
-		font-weight: regluar;
+		font-weight: regular;
 		width:75px;
 }
 

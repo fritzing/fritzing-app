@@ -63,19 +63,20 @@ void SketchAreaWidget::createLayout() {
     m_toolbar->setFixedHeight(66);
 
 	QFrame *leftButtons = new QFrame(m_toolbar);
-	m_buttonsContainer = new QHBoxLayout(leftButtons);
-    m_buttonsContainer->setMargin(0);
-    m_buttonsContainer->setSpacing(0);
-
+	m_leftButtonsContainer = new QHBoxLayout(leftButtons);
+    m_leftButtonsContainer->setMargin(0);
+    m_leftButtonsContainer->setSpacing(0);
 
 	QFrame *middleButtons = new QFrame(m_toolbar);
 	middleButtons->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::MinimumExpanding);
-	m_labelContainer = new QVBoxLayout(middleButtons);
-	m_labelContainer->setSpacing(0);
-    m_labelContainer->setMargin(0);
-
+	m_middleButtonsContainer = new QVBoxLayout(middleButtons);
+	m_middleButtonsContainer->setSpacing(0);
+    m_middleButtonsContainer->setMargin(0);
 
 	QFrame *rightButtons = new QFrame(m_toolbar);
+	m_rightButtonsContainer = new QHBoxLayout(rightButtons);
+    m_rightButtonsContainer->setMargin(0);
+    m_rightButtonsContainer->setSpacing(0);
 
 	QHBoxLayout *toolbarLayout = new QHBoxLayout(m_toolbar);
     toolbarLayout->setMargin(0);
@@ -92,13 +93,16 @@ void SketchAreaWidget::createLayout() {
 }
 
 void SketchAreaWidget::setToolbarWidgets(QList<QWidget*> widgets) {
+    bool goLeft = true;
 	foreach(QWidget* widget, widgets) {
 		if(widget->objectName() != RoutingStateLabelName) {
-			m_buttonsContainer->addWidget(widget);
+            if (goLeft) m_leftButtonsContainer->addWidget(widget);
+            else m_rightButtonsContainer->addWidget(widget);
 		} else {
-			m_labelContainer->addSpacerItem(new QSpacerItem(0,1,QSizePolicy::Maximum));
-			m_labelContainer->addWidget(widget);
-			m_labelContainer->addSpacerItem(new QSpacerItem(0,1,QSizePolicy::Maximum));
+			m_middleButtonsContainer->addSpacerItem(new QSpacerItem(0,1,QSizePolicy::Maximum));
+			m_middleButtonsContainer->addWidget(widget);
+			m_middleButtonsContainer->addSpacerItem(new QSpacerItem(0,1,QSizePolicy::Maximum));
+            goLeft = false;
 		}
 	}
 }
@@ -111,7 +115,7 @@ QWidget *SketchAreaWidget::separator(QWidget* parent) {
 	QLabel *separator = new QLabel(parent);
 	separator->setPixmap(QPixmap(":/resources/images/toolbar_icons/toolbar_separator.png"));
     separator->setStyleSheet("margin-left: 1px; margin-right: 1px;");
-  /*  this->setObjectName("ToolBarSeperator"); */
+    separator->setObjectName("ToolBarSeparator");
 	return separator;
 }
 

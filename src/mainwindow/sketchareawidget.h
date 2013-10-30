@@ -58,8 +58,9 @@ protected:
 	QWidget *m_contentView;
 
 	QFrame *m_toolbar;
-	QHBoxLayout *m_buttonsContainer;
-	QVBoxLayout *m_labelContainer;
+	QHBoxLayout *m_leftButtonsContainer;
+	QVBoxLayout *m_middleButtonsContainer;
+	QHBoxLayout *m_rightButtonsContainer;
 	QFrame *m_statusBarArea;
 	class ExpandingLabel * m_routingStatusLabel;
 

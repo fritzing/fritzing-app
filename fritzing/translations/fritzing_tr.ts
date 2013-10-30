@@ -738,7 +738,7 @@ Dosya kullanılsın mı?</translation>
 <context>
     <name>BoardLogoItem</name>
     <message>
-        <location filename="../src/items/logoitem.cpp" line="1041"/>
+        <location filename="../src/items/logoitem.cpp" line="1080"/>
         <source>shape</source>
         <translation>Tasarım</translation>
     </message>
@@ -746,18 +746,18 @@ Dosya kullanılsın mı?</translation>
 <context>
     <name>BreadboardLogoItem</name>
     <message>
-        <location filename="../src/items/logoitem.cpp" line="853"/>
-        <location filename="../src/items/logoitem.cpp" line="876"/>
+        <location filename="../src/items/logoitem.cpp" line="892"/>
+        <location filename="../src/items/logoitem.cpp" line="915"/>
         <source>color</source>
         <translation>Renk</translation>
     </message>
     <message>
-        <location filename="../src/items/logoitem.cpp" line="856"/>
+        <location filename="../src/items/logoitem.cpp" line="895"/>
         <source>Set text color</source>
         <translation>Yazı karakter rengini ayarla</translation>
     </message>
     <message>
-        <location filename="../src/items/logoitem.cpp" line="870"/>
+        <location filename="../src/items/logoitem.cpp" line="909"/>
         <source>Select text color</source>
         <translation>Yazı karakter rengini seç</translation>
     </message>
@@ -901,56 +901,62 @@ Dosya kullanılsın mı?</translation>
 <context>
     <name>FApplication</name>
     <message>
-        <location filename="../src/fapplication.cpp" line="1518"/>
-        <location filename="../src/fapplication.cpp" line="1522"/>
+        <location filename="../src/fapplication.cpp" line="1531"/>
+        <location filename="../src/fapplication.cpp" line="1537"/>
+        <location filename="../src/fapplication.cpp" line="1540"/>
         <source>Fritzing failure</source>
         <translation>Fritzing hatası</translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="1518"/>
+        <location filename="../src/fapplication.cpp" line="1531"/>
         <source>Fritzing caught an exception %1 from %2 in event %3</source>
         <translation>Fritzing %3&apos;de %2&apos;den %1 bir istisna yakaladı</translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="1522"/>
+        <location filename="../src/fapplication.cpp" line="1537"/>
+        <source>Fritzing caught an exception from %1 in event %2: %3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/fapplication.cpp" line="1540"/>
         <source>Fritzing caught an exception from %1 in event %2</source>
         <translation>Fritzing %2&apos;de %1&apos;den bir istisna yakaladı</translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="1630"/>
+        <location filename="../src/fapplication.cpp" line="1648"/>
         <source>Import files from previous version?</source>
         <translation>Dosyaları bir önceki sürümden içe aktar?</translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="1631"/>
+        <location filename="../src/fapplication.cpp" line="1649"/>
         <source>Do you want to import parts and bins that you have created with earlier versions of Fritzing?
 </source>
         <translation>Fritizing&apos;in daha önceki sürümlerinde oluşturduğunuz elemanları ve bin dosyalarını içer aktarmak ister misiniz?</translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="1632"/>
+        <location filename="../src/fapplication.cpp" line="1650"/>
         <source>
 Note: You can import them later using the &quot;Help&quot; &gt; &quot;Import parts and bins from old version...&quot; menu action.</source>
         <translation>
 Not:Onları daha sonra menüdeki &quot;Yardım&quot; &gt; &quot;Eski sürümdeki elemanları ve bin dosyalarını içe aktar...&quot;&apos;ı kullanarak aktarabilirsiniz.</translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="1638"/>
+        <location filename="../src/fapplication.cpp" line="1656"/>
         <source>Import</source>
         <translation>İçe aktar</translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="1639"/>
+        <location filename="../src/fapplication.cpp" line="1657"/>
         <source>Do not import now</source>
         <translation>Şimdi içe aktarma</translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="1673"/>
+        <location filename="../src/fapplication.cpp" line="1691"/>
         <source>Please specify an .fzz file name to save to (cancel will delete the backup)</source>
         <translation>Lütfen kaydetmek için bir .fzz dosyası belirtin (iptal etmek yedeklen veriyi silecektir)</translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="1673"/>
+        <location filename="../src/fapplication.cpp" line="1691"/>
         <source>Fritzing (*%1)</source>
         <translation>Fritzing(*%1)</translation>
     </message>
@@ -1510,58 +1516,58 @@ Ayrıca konnektör üzerine sağ tıklanarak &apos;Ayarla Toprak Dolgu Tanecik&a
 <context>
     <name>LogoItem</name>
     <message>
-        <location filename="../src/items/logoitem.cpp" line="223"/>
-        <location filename="../src/items/logoitem.cpp" line="589"/>
+        <location filename="../src/items/logoitem.cpp" line="225"/>
+        <location filename="../src/items/logoitem.cpp" line="627"/>
         <source>logo</source>
         <translation>logo</translation>
     </message>
     <message>
-        <location filename="../src/items/logoitem.cpp" line="247"/>
+        <location filename="../src/items/logoitem.cpp" line="249"/>
         <source>shape</source>
         <translation>Şekil</translation>
     </message>
     <message>
-        <location filename="../src/items/logoitem.cpp" line="322"/>
+        <location filename="../src/items/logoitem.cpp" line="324"/>
         <source>due to a rendering error</source>
         <translation>bir model işleme hatasından dolayı</translation>
     </message>
     <message>
-        <location filename="../src/items/logoitem.cpp" line="336"/>
+        <location filename="../src/items/logoitem.cpp" line="338"/>
         <source>because the svg is empty</source>
         <translation>svg boş olduğundan dolayı</translation>
     </message>
     <message>
-        <location filename="../src/items/logoitem.cpp" line="341"/>
+        <location filename="../src/items/logoitem.cpp" line="343"/>
         <source>because this appears to be a SVG file exported from CorelDRAW without choosing the &apos;presentation attributes&apos; setting</source>
         <translation>bu ilgili SVG dosyasının CorelDRAW&apos;dan dışa aktarılırken herhangi bir &apos;sunum özelliği&apos;ayarı yapılmadığından dolayı görülmektedir</translation>
     </message>
     <message>
-        <location filename="../src/items/logoitem.cpp" line="355"/>
+        <location filename="../src/items/logoitem.cpp" line="357"/>
         <source>due to an xml problem: %1 line:%2 column:%3</source>
         <translation>bir xml probleminden dolayı:%1 satır :%2 sütun:%3</translation>
     </message>
     <message>
-        <location filename="../src/items/logoitem.cpp" line="361"/>
+        <location filename="../src/items/logoitem.cpp" line="363"/>
         <source>because the file has no root element</source>
         <translation>çünkü dosyanın kaynak kısmı yok</translation>
     </message>
     <message>
-        <location filename="../src/items/logoitem.cpp" line="366"/>
+        <location filename="../src/items/logoitem.cpp" line="368"/>
         <source>because the file has no &lt;svg&gt; element</source>
         <translation>çünkü dosyanın &lt;svg&gt; kısmı yok</translation>
     </message>
     <message>
-        <location filename="../src/items/logoitem.cpp" line="404"/>
+        <location filename="../src/items/logoitem.cpp" line="406"/>
         <source>for unknown reasons--possibly the image file is corrupted</source>
         <translation>bilinmeyen nedenler için--büyük olasılıkla resim(img) dosyası bozuk</translation>
     </message>
     <message>
-        <location filename="../src/items/logoitem.cpp" line="420"/>
+        <location filename="../src/items/logoitem.cpp" line="423"/>
         <source>Unable to display</source>
         <translation>Görüntülenemeiyor</translation>
     </message>
     <message>
-        <location filename="../src/items/logoitem.cpp" line="421"/>
+        <location filename="../src/items/logoitem.cpp" line="424"/>
         <source>Unable to display image from %1</source>
         <translation>%1&apos;deki resim görüntülenemiyor</translation>
     </message>
@@ -1569,170 +1575,170 @@ Ayrıca konnektör üzerine sağ tıklanarak &apos;Ayarla Toprak Dolgu Tanecik&a
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="764"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="765"/>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1340"/>
         <source>Rotate</source>
         <translation>Döndür</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="772"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="773"/>
         <source>Share</source>
         <translation>Paylaş</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="781"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="782"/>
         <source>Flip</source>
         <translation>Çevir</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="789"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="790"/>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2568"/>
         <source>Autoroute</source>
         <translation>Oto-Yönlendir</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="797"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="798"/>
         <source>Order PCB</source>
         <translation>Baskı Devre&apos;yi sipariş et</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="813"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="814"/>
         <source>Both Layers</source>
         <translation>Her İki Katman</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="818"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="819"/>
         <source>Bottom Layer</source>
         <translation>Alt Katman</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="823"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="824"/>
         <source>Top Layer</source>
         <translation>Üst Katman</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="855"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="856"/>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="868"/>
         <source>Add a note</source>
         <translation>Not ekle</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="865"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="866"/>
         <source>Export for PCB</source>
         <translation>Baskı Devre için dışa aktar</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="948"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="949"/>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="149"/>
         <source>Ready</source>
         <translation>Hazır</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="258"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="259"/>
         <source>Ctrl+R</source>
         <comment>Rotate Clockwise</comment>
         <translatorcomment>Saat Yönünde Döndür</translatorcomment>
         <translation>Ctrl+R</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="260"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="261"/>
         <source>Alt+Ctrl+R</source>
         <comment>Rotate Clockwise</comment>
         <translatorcomment>Saat Yönünde Döndür</translatorcomment>
         <translation>Alt+Ctrl+R</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="262"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="263"/>
         <source>Meta+Ctrl+R</source>
         <comment>Rotate Clockwise</comment>
         <translatorcomment>There is no meta key for turkish keyboard so the translation refers to Rotate Clokwise&apos;s translation</translatorcomment>
         <translation>Saat Yönünde Döndür</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="265"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="266"/>
         <source>Shift+Ctrl+R</source>
         <comment>Rotate Counterclockwise</comment>
         <translatorcomment>Saat Yönünün Tersine Döndür</translatorcomment>
         <translation>Shift+Ctrl+R</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="267"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="268"/>
         <source>Alt+Shift+Ctrl+R</source>
         <comment>Rotate Counterclockwise</comment>
         <translatorcomment>Saat Yönünün Tersine Döndür</translatorcomment>
         <translation>Alt+Shift+Ctrl+R</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="269"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="270"/>
         <source>Meta+Shift+Ctrl+R</source>
         <comment>Rotate Counterclockwise</comment>
         <translatorcomment>There is no meta key for turkish keyboard so the translation refers to Rotate Counteclockwise&apos;s translation</translatorcomment>
         <translation>Saat Yönünün Tersine Döndür</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="272"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="273"/>
         <source>Shift+Ctrl+Tab</source>
         <comment>Toggle Active Layer</comment>
         <translatorcomment>Mevcut Katmanı Değiştir</translatorcomment>
         <translation>Shift+Ctrl+Tab</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="839"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="840"/>
         <source>View from Above</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="846"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="847"/>
         <source>View from Below</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1122"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="1123"/>
         <source>Save %1</source>
         <translation>%1&apos;i Kaydet</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1206"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="1207"/>
         <source>Unable to open &apos;%1&apos;: %2</source>
         <translation>&apos;%1&apos; açılamıyor: %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1449"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="1450"/>
         <source>Unable to open shareable &apos;%1&apos;: %2</source>
         <translation>Paylaşılabilir &apos;%1&apos; açılamıyor: %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1492"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="1493"/>
         <source>Unable to open shareable part &apos;%1&apos;: %2</source>
         <translation>Paylaşılabilir eleman &apos;%1&apos; açılamıyor: %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1517"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="1518"/>
         <source>Unable to load part from &apos;%1&apos;</source>
         <translation>ELeman &apos;%1&apos;&apos;den yüklenemiyor</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1546"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="1547"/>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="839"/>
         <source>Specify a file name</source>
         <translation>Bir dosya adı belirtin</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="2484"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="2485"/>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="839"/>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="300"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="301"/>
         <source>Fritzing (*%1)</source>
         <translation>Fritzing (*%1)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1205"/>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1223"/>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1448"/>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1491"/>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1506"/>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1516"/>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1581"/>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="2192"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="1206"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="1224"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="1449"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="1492"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="1507"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="1517"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="1582"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="2193"/>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="169"/>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="174"/>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="618"/>
@@ -1743,9 +1749,9 @@ Ayrıca konnektör üzerine sağ tıklanarak &apos;Ayarla Toprak Dolgu Tanecik&a
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1238"/>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1571"/>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1576"/>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="210"/>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="221"/>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="275"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="211"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="222"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="276"/>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2348"/>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2527"/>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2796"/>
@@ -1771,154 +1777,154 @@ Ayrıca konnektör üzerine sağ tıklanarak &apos;Ayarla Toprak Dolgu Tanecik&a
         <translation>%1 dışa paylaşılabilir olarak aktarılamıyor</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1224"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="1225"/>
         <source>No Sketch found in &apos;%1&apos;</source>
         <translation>&apos;%1&apos; herhangi bir Çizime rastlanmadı</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1548"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="1549"/>
         <source>Fritzing Part (*%1)</source>
         <translation>Fritzing Elemanı (*%1)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1582"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="1583"/>
         <source>Unable to export %1 to shareable sketch</source>
         <translation>&apos;%1&apos; paylaşılabilir çizime aktarılamıyor</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1621"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="1622"/>
         <source>MainWindow::moveToPartsFolder mainwindow missing</source>
         <translation>AnaPencere::ElemanlarDosyasınataşı anapencere yok</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1636"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="1637"/>
         <source>There is already a part with id &apos;%1&apos; loaded into Fritzing.</source>
         <translation>Hali hazırda &apos;%1&apos; isimli eleman Fritzing&apos;e yüklenmiş durumda.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1695"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="1696"/>
         <source>Do you want to keep the imported parts?</source>
         <translation>İçe aktarılmış elemanları saklamak istiyor musunuz?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1759"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="1760"/>
         <source>No connections to route</source>
         <translation>Yönlendirme için bağlantı yok</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1762"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="1763"/>
         <source>Routing completed</source>
         <translation>Yönlendirme tamamlandı</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1765"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="1766"/>
         <source>Routing completed using %n jumper part(s)</source>
         <translation>
             <numerusform>Yönlendirme %n jumper eleman(lar)ı kullanılarak tamamlandı</numerusform>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1768"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="1769"/>
         <source>%1 of %2 nets routed - %n connector(s) still to be routed</source>
         <translation>
             <numerusform>%1 bağlantıdan %2&apos;si yönlendirildi %n konnektör halen yönlendirilmeyi bekliyor</numerusform>
         </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1804"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="1805"/>
         <source>%1 - [%2]</source>
         <translation>%1 - [%2]</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1936"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="1937"/>
         <source>No copper top layer</source>
         <translation>Bakır üst katman yok</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1937"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="1938"/>
         <source>The copper top (copper 1) layer is not available on a one-sided board.  Please switch the board to double-sided or choose the copper bottom (copper 0) layer.</source>
         <translation>Bakır üst (bakır 1) katmanı tek taraflı board&apos;da mevcut değil. Lütfen board&apos;u çift taraflı olarak değiştirin ya da bakır alt (bakır 0) katmanını seçin.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="2014"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="2015"/>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3750"/>
         <source>Sorry!</source>
         <translation>Özür Dileriz!</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="2015"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="2016"/>
         <source>No part with those characteristics.
 We&apos;re working to avoid this message, and only let you choose between properties that do exist</source>
         <translation>Bu özellikte bir eleman yok.
  Bu mesajı engellemek için çalışıyoruz ve size varolan özelliklerden birini seçme imkanı sunuyoruz</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="2027"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="2028"/>
         <source>No exactly matching part found; Fritzing chose the closest match.</source>
         <translation>Tam olarak eşleşen bir eleman bulunamadı;Fritzing en yakın eşleşmeyi seçti.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="2064"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="2065"/>
         <source>Change to single layer pcb</source>
         <translation>Tek katmanlıı baskı devre&apos;ye çevir</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="2064"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="2065"/>
         <source>Change to two layer pcb</source>
         <translation>Çift katmanlı baskı devreye çevir</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="2097"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="2098"/>
         <source>Swapped %1 with module %2</source>
         <translation>%2 %1 modülü ile yer değiştirdi</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="2132"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="2133"/>
         <source>Change image to %2</source>
         <translation>Resmi %2&apos;ye çevir</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="2193"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="2194"/>
         <source>Svg %1 is missing a &apos;%2&apos; layer. For more information on how to create a custom board shape, see the tutorial at &lt;a href=&apos;http://fritzing.org/learning/tutorials/designing-pcb/pcb-custom-shape/&apos;&gt;http://fritzing.org/learning/tutorials/designing-pcb/pcb-custom-shape/&lt;/a&gt;.</source>
         <translation>Svg %1&apos;de bir %2 katmanı bulunmuyor.Özel bir board oluşturmanın nasıl yapılacağına dair bilgi için linkte bulunan öğretici notlara bakabilirsiniz &lt;a href=&apos;http://fritzing.org/learning/tutorials/designing-pcb/pcb-custom-shape/&apos;&gt;http://fritzing.org/learning/tutorials/designing-pcb/pcb-custom-shape/&lt;/a&gt;.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="2230"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="2231"/>
         <source>loading %1</source>
         <translation>%1 yükleniyor</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="2239"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="2240"/>
         <source>Loading...</source>
         <translation>Yükleniyor...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="2245"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="2246"/>
         <source>new sketch</source>
         <translation>yeni çizim</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="2389"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="2390"/>
         <source>Backing up &apos;%1&apos;</source>
         <translation>&apos;%1&apos; yedekleniyor</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="2540"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="2541"/>
         <source>Unrouted connections</source>
         <translation>Yönlendirilmemiş bağlantılar</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="2541"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="2542"/>
         <source>There are no unrouted connections in this view.</source>
         <translation>Bu görünümde yönlendirilmemiş bir bağlantı yok.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="2580"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="2581"/>
         <source>%1 %2 %3</source>
         <translation>%1 %2 %3</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="2860"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="2861"/>
         <source>Code</source>
         <translation>Kod</translation>
     </message>
@@ -1980,7 +1986,7 @@ We&apos;re working to avoid this message, and only let you choose between proper
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="188"/>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="292"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="293"/>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3851"/>
         <source>Cancel</source>
         <translation>İptal</translation>
@@ -2024,30 +2030,30 @@ We&apos;re working to avoid this message, and only let you choose between proper
         <translation>&apos;%1&apos; kaydedildi</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="145"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="146"/>
         <source>Select a Fritzing File to Open</source>
         <translation>Açmak için bir Fritzing Dosyası Seçin</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="211"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="212"/>
         <source>Cannot find file %1.</source>
         <translation>%1 dosyası bulunamadı.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="222"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="223"/>
         <source>Cannot read file  1 %1:
 %2.</source>
         <translation>Dosya okunamadı  1 %1:
 %2.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="275"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="276"/>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2527"/>
         <source>File &apos;%1&apos; not found</source>
         <translation>&apos;%1&apos; dosyası bulunamadı</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="332"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="333"/>
         <source>directly loading parts</source>
         <translation>elemanları direk olarak yüklüyor</translation>
     </message>
@@ -2562,12 +2568,12 @@ We&apos;re working to avoid this message, and only let you choose between proper
         <translation>Mevcut seçimi saat yönünde 45 derece döndür</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="283"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="284"/>
         <source>the .fz file format is obsolete</source>
         <translation>.fz dosya biçimi eski</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="284"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="285"/>
         <source>The .fz file format has been deprecated.
 
 Would you like to convert &apos;%1&apos; to the .fzz format now or open it read-only?
@@ -2577,22 +2583,22 @@ Would you like to convert &apos;%1&apos; to the .fzz format now or open it read-
 </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="285"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="286"/>
         <source>The conversion process will not modify &apos;%1&apos;.</source>
         <translation>Dönüştürme işlemi &apos;%1&apos;i değiştiremeyecek.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="290"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="291"/>
         <source>Convert</source>
         <translation>Dönüştür</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="291"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="292"/>
         <source>Read-only</source>
         <translation>Salt-okunur</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="300"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="301"/>
         <source>Please specify an .fzz file name to save &apos;%1&apos; to</source>
         <translation>&apos;%1&apos;i kaydetmek için lütfen bir .fzz biçimli dosya adı belirtin</translation>
     </message>
@@ -3015,17 +3021,17 @@ Do you want to update now?</source>
         <translation>&amp;Breadboard&apos;u Göster</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="147"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="148"/>
         <source>Fritzing Files (*%1 *%2 *%3 *%4 *%5);;Fritzing (*%1);;Fritzing Shareable (*%2);;Fritzing Part (*%3);;Fritzing Bin (*%4);;Fritzing Shareable Bin (*%5)</source>
         <translation>Fritzing Dosyaları (*%1 *%2 *%3 *%4 *%5);;Fritzing(*%1);;Firtzing Paylaşılabilir (*%2);;Fritzing Elemanı (*%3);;Fritzing Bin(*%4);;Fritzing paylaşılabilir Bin(*%5)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="239"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="240"/>
         <source>Revert?</source>
         <translation>Geri Döndür?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="240"/>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="241"/>
         <source>This operation can not be undone--you will lose all of your changes.
 
 Go ahead and revert?</source>
@@ -4104,19 +4110,19 @@ Tüm görünümleri olası yan etkiler için kontrol edin.</translation>
         <translation>Geriye Alınmış İşlemler</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="452"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="453"/>
         <location filename="../src/mainwindow/mainwindow_dock.cpp" line="106"/>
         <source>Breadboard</source>
         <translation>Breadboard</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="461"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="462"/>
         <location filename="../src/mainwindow/mainwindow_dock.cpp" line="107"/>
         <source>Schematic</source>
         <translation>Şematik</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="470"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="471"/>
         <location filename="../src/mainwindow/mainwindow_dock.cpp" line="108"/>
         <source>PCB</source>
         <translation>Baskı Devre</translation>
@@ -4207,24 +4213,24 @@ Tüm görünümleri olası yan etkiler için kontrol edin.</translation>
 <context>
     <name>ModelBase</name>
     <message numerus="yes">
-        <location filename="../src/model/modelbase.cpp" line="354"/>
+        <location filename="../src/model/modelbase.cpp" line="355"/>
         <source>Unable to find the following %n part(s):</source>
         <translation>
             <numerusform>İlgili %n eleman bulunamıyor:</numerusform>
         </translation>
     </message>
     <message>
-        <location filename="../src/model/modelbase.cpp" line="357"/>
+        <location filename="../src/model/modelbase.cpp" line="358"/>
         <source>at</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/model/modelbase.cpp" line="430"/>
+        <location filename="../src/model/modelbase.cpp" line="431"/>
         <source>File save failed!</source>
         <translation>Dosya kayıt hatası!</translation>
     </message>
     <message>
-        <location filename="../src/model/modelbase.cpp" line="431"/>
+        <location filename="../src/model/modelbase.cpp" line="432"/>
         <source>Couldn&apos;t overwrite file &apos;%1&apos;.
 Reason: %2 (errcode %3)</source>
         <translation>&apos;%1&apos; dosyası üzerine yazılamıyor.
@@ -6421,27 +6427,27 @@ shift tuşu ilerleme eksenini değiştirir</translation>
         <location filename="../src/autoroute/mazerouter/mazerouter.cpp" line="734"/>
         <location filename="../src/autoroute/panelizer.cpp" line="486"/>
         <location filename="../src/autoroute/panelizer.cpp" line="1366"/>
-        <location filename="../src/autoroute/panelizer.cpp" line="1385"/>
-        <location filename="../src/fapplication.cpp" line="925"/>
+        <location filename="../src/autoroute/panelizer.cpp" line="1392"/>
+        <location filename="../src/fapplication.cpp" line="937"/>
         <location filename="../src/mainwindow/fritzingwindow.cpp" line="50"/>
         <location filename="../src/mainwindow/fritzingwindow.cpp" line="143"/>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3046"/>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3080"/>
-        <location filename="../src/model/modelbase.cpp" line="77"/>
-        <location filename="../src/model/modelbase.cpp" line="90"/>
-        <location filename="../src/model/modelbase.cpp" line="101"/>
-        <location filename="../src/model/modelbase.cpp" line="108"/>
-        <location filename="../src/model/modelbase.cpp" line="173"/>
-        <location filename="../src/model/modelbase.cpp" line="360"/>
-        <location filename="../src/model/modelbase.cpp" line="413"/>
-        <location filename="../src/model/palettemodel.cpp" line="98"/>
-        <location filename="../src/model/palettemodel.cpp" line="108"/>
-        <location filename="../src/model/palettemodel.cpp" line="236"/>
-        <location filename="../src/model/palettemodel.cpp" line="255"/>
-        <location filename="../src/model/palettemodel.cpp" line="377"/>
+        <location filename="../src/model/modelbase.cpp" line="78"/>
+        <location filename="../src/model/modelbase.cpp" line="91"/>
+        <location filename="../src/model/modelbase.cpp" line="102"/>
+        <location filename="../src/model/modelbase.cpp" line="109"/>
+        <location filename="../src/model/modelbase.cpp" line="174"/>
+        <location filename="../src/model/modelbase.cpp" line="361"/>
+        <location filename="../src/model/modelbase.cpp" line="414"/>
+        <location filename="../src/model/palettemodel.cpp" line="99"/>
+        <location filename="../src/model/palettemodel.cpp" line="109"/>
+        <location filename="../src/model/palettemodel.cpp" line="237"/>
+        <location filename="../src/model/palettemodel.cpp" line="256"/>
+        <location filename="../src/model/palettemodel.cpp" line="378"/>
         <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="519"/>
         <location filename="../src/program/programtab.cpp" line="620"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="939"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="940"/>
         <location filename="../src/svg/gerbergenerator.cpp" line="368"/>
         <source>Fritzing</source>
         <translation>Fritzing</translation>
@@ -6462,12 +6468,12 @@ shift tuşu ilerleme eksenini değiştirir</translation>
         <translation>Yönlendirmek için bağlantı yok.</translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="1271"/>
+        <location filename="../src/fapplication.cpp" line="1283"/>
         <source>&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;&amp;#169; 2007-%1 Fachhochschule Potsdam&lt;/font&gt;</source>
         <translation>&lt;font yüz=&apos;Lucida Grande, Tahoma, Sans Serif&apos; boyut=&apos;2&apos; renk=&apos;#eaf4ed&apos;&gt;&amp;#169; 2007-%1 Potsdam Yüksekokulu&lt;/font&gt;</translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="1285"/>
+        <location filename="../src/fapplication.cpp" line="1297"/>
         <source>&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;Version %1.%2.%3 (%4%5)%6&lt;/font&gt;</source>
         <translation>&lt;font yüz=&apos;Lucida Grande, Tahoma, Sans Serif&apos; boyut=&apos;2&apos; renk=&apos;#eaf4ed&apos;&gt;Sürüm %1.%2.%3.(%4%5)%6 &lt;/font&gt;</translation>
     </message>
@@ -6501,15 +6507,15 @@ shift tuşu ilerleme eksenini değiştirir</translation>
         <translation>Izgaranın Sıklığını Ayarla</translation>
     </message>
     <message>
-        <location filename="../src/model/modelbase.cpp" line="78"/>
-        <location filename="../src/model/palettemodel.cpp" line="237"/>
+        <location filename="../src/model/modelbase.cpp" line="79"/>
+        <location filename="../src/model/palettemodel.cpp" line="238"/>
         <source>Cannot read file %1:
 %2.</source>
         <translation>%1 okunamıyor:
 %2.</translation>
     </message>
     <message>
-        <location filename="../src/model/modelbase.cpp" line="91"/>
+        <location filename="../src/model/modelbase.cpp" line="92"/>
         <source>Parse error (1) at line %1, column %2:
 %3
 %4</source>
@@ -6518,22 +6524,22 @@ shift tuşu ilerleme eksenini değiştirir</translation>
 %4</translation>
     </message>
     <message>
-        <location filename="../src/model/modelbase.cpp" line="101"/>
+        <location filename="../src/model/modelbase.cpp" line="102"/>
         <source>The file %1 is not a Fritzing file (2).</source>
         <translation>%1 dosyası bir Fritzing dosyası (2) değil.</translation>
     </message>
     <message>
-        <location filename="../src/model/modelbase.cpp" line="108"/>
+        <location filename="../src/model/modelbase.cpp" line="109"/>
         <source>The file %1 is not a Fritzing file (4).</source>
         <translation>%1 dosyası bir Fritzing dosyası (4) değil.</translation>
     </message>
     <message>
-        <location filename="../src/model/modelbase.cpp" line="173"/>
+        <location filename="../src/model/modelbase.cpp" line="174"/>
         <source>The file %1 is not a Fritzing file (3).</source>
         <translation>%1 dosyası bir Fritzing dosyası (3) değil.</translation>
     </message>
     <message>
-        <location filename="../src/model/modelbase.cpp" line="414"/>
+        <location filename="../src/model/modelbase.cpp" line="415"/>
         <source>Cannot write file temp:
 %1
 %2
@@ -6544,17 +6550,17 @@ shift tuşu ilerleme eksenini değiştirir</translation>
 %3.</translation>
     </message>
     <message>
-        <location filename="../src/model/palettemodel.cpp" line="99"/>
+        <location filename="../src/model/palettemodel.cpp" line="100"/>
         <source>Parts folder not found.</source>
         <translation>Elemanlar klasörü bulunamadı.</translation>
     </message>
     <message>
-        <location filename="../src/model/palettemodel.cpp" line="109"/>
+        <location filename="../src/model/palettemodel.cpp" line="110"/>
         <source>No parts found.</source>
         <translation>Hiçbir eleman bulunamadı.</translation>
     </message>
     <message>
-        <location filename="../src/model/palettemodel.cpp" line="256"/>
+        <location filename="../src/model/palettemodel.cpp" line="257"/>
         <source>Parse error (2) at line %1, column %2:
 %3
 %4</source>
@@ -6563,7 +6569,7 @@ shift tuşu ilerleme eksenini değiştirir</translation>
 %4</translation>
     </message>
     <message>
-        <location filename="../src/model/palettemodel.cpp" line="378"/>
+        <location filename="../src/model/palettemodel.cpp" line="379"/>
         <source>The part &apos;%1&apos; at &apos;%2&apos; does not have a unique module id &apos;%3&apos;.</source>
         <translation>&apos;%2&apos;&apos;deki &apos;%1&apos; elemanının özgün bir &apos;%3&apos; modül kimliği yok.</translation>
     </message>
@@ -6660,14 +6666,14 @@ halihazırda orda, onu tekrar eklemeyeceğiz, doğru mu?</translation>
         <translation>dosyalar</translation>
     </message>
     <message>
-        <location filename="../src/referencemodel/sqlitereferencemodel.cpp" line="93"/>
-        <location filename="../src/referencemodel/sqlitereferencemodel.cpp" line="143"/>
-        <location filename="../src/referencemodel/sqlitereferencemodel.cpp" line="160"/>
+        <location filename="../src/referencemodel/sqlitereferencemodel.cpp" line="94"/>
+        <location filename="../src/referencemodel/sqlitereferencemodel.cpp" line="144"/>
+        <location filename="../src/referencemodel/sqlitereferencemodel.cpp" line="161"/>
         <source>Oops!</source>
         <translation>Hop!</translation>
     </message>
     <message>
-        <location filename="../src/referencemodel/sqlitereferencemodel.cpp" line="94"/>
+        <location filename="../src/referencemodel/sqlitereferencemodel.cpp" line="95"/>
         <source>Sorry, we have a problem with the swapping mechanism.
 Fritzing still works, but you won&apos;t be able to change parts properties.</source>
         <translation>Özür dileriz takas mekanizmamızda bir problem var.
@@ -6727,79 +6733,79 @@ Fritzing hala çalışıyor ancak elemanın özelliklerini değiştiremeyeceksin
         <translation>Şematik Görünüm</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="940"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="941"/>
         <source>Error reading file %1: %2.</source>
         <translation>%1: %2 dosyasını okuma hatası.</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3626"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3627"/>
         <source>%1 %2,%3 %4</source>
         <translation>%1 %2,%3 %4</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3655"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3656"/>
         <source>Change leg of %1,%2</source>
         <translation>%1,%2&apos;nin ayaklarını değiştir</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3813"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3814"/>
         <source>%1 %2 %3</source>
         <translation>%1 %2 %3</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="4081"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="4082"/>
         <source>%1 Layer</source>
         <translation>%1 Katmanı</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="4305"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="4322"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="4306"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="4323"/>
         <source>Bring forward</source>
         <translation>İlerlet</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="4314"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="4315"/>
         <source>Send backward</source>
         <translation>Gerilet</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="4331"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="4332"/>
         <source>Bring to front</source>
         <translation>Öne Çıkar</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="5607"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="5608"/>
         <source>Split Wire</source>
         <translation>Kabloyu Böl</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="5668"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="5669"/>
         <source>Join Wire</source>
         <translation>Kabloları Birleştir</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7922"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7923"/>
         <source>Trace wires</source>
         <translation>Hat kablolar</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7925"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7926"/>
         <source>Ratsnest wires</source>
         <translation>Yumak kablolar</translation>
     </message>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="2242"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7927"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7928"/>
         <source>Select all %1</source>
         <translation>Tüm %1&apos;i seç</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="8202"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="8203"/>
         <source>Select outdated parts</source>
         <translation>Zamanı geçmiş elemanları seç</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="8217"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="8218"/>
         <source>Select locked parts</source>
         <translation>Kilitli parçaları seç</translation>
     </message>
@@ -7301,12 +7307,12 @@ Fritzing hala çalışıyor ancak elemanın özelliklerini değiştiremeyeceksin
         <translation>&apos;%1&apos; &apos;%2&apos;&apos;ye kopyalanamıyor.</translation>
     </message>
     <message>
-        <location filename="../src/autoroute/panelizer.cpp" line="1384"/>
+        <location filename="../src/autoroute/panelizer.cpp" line="1390"/>
         <source>%2 ... %1 wires moved from their saved position</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/fapplication.cpp" line="925"/>
+        <location filename="../src/fapplication.cpp" line="937"/>
         <source>%1 wires moved from their saved position in %2.</source>
         <translation>%1 kablo kaydedilmiş %2 yerlerinden hareket ettirildi.</translation>
     </message>
@@ -7385,28 +7391,28 @@ Fritzing hala çalışıyor ancak elemanın özelliklerini değiştiremeyeceksin
 <context>
     <name>QShortcut</name>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="481"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="482"/>
         <source>Ctrl</source>
         <comment>for naming shortcut keys on menu items</comment>
         <translatorcomment>menü nesneleri üzerindeki kısayol tuşlarının adlandırılması için</translatorcomment>
         <translation>Ctrl</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="482"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="483"/>
         <source>Alt</source>
         <comment>for naming shortcut keys on menu items</comment>
         <translatorcomment>menü nesneleri üzerindeki kısayol tuşlarının adlandırılması için</translatorcomment>
         <translation>Alt</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="483"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="484"/>
         <source>Shift</source>
         <comment>for naming shortcut keys on menu items</comment>
         <translatorcomment>menü nesneleri üzerindeki kısayol tuşlarının adlandırılması için</translatorcomment>
         <translation>Shift</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="484"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="485"/>
         <source>Meta</source>
         <comment>for naming shortcut keys on menu items</comment>
         <translatorcomment>There is no Meta key in Turkish Keyboards//comments turkish translation: &quot;Menu öğelerindeki kısayolları adlandırmak için&quot;</translatorcomment>
@@ -7768,309 +7774,309 @@ Fritzing hala çalışıyor ancak elemanın özelliklerini değiştiremeyeceksin
 <context>
     <name>SketchWidget</name>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="728"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="729"/>
         <source>loading part</source>
         <translation>elemanı yüklüyor</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="732"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="733"/>
         <source>done loading</source>
         <translation>yükleme tamamlandı</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="1179"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="1180"/>
         <source>%1 %2</source>
         <translation>%1 %2</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="1182"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="1183"/>
         <source>%1 %2 items</source>
         <translation>%1 %2 öğeleri</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="1589"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="1590"/>
         <source>Select All</source>
         <translation>Tümünü Seç</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="1589"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="1590"/>
         <source>Deselect</source>
         <translation>Seçmeyi Bırak</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="2072"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="2073"/>
         <source>Add %1</source>
         <translation>%1 Ekle</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="2175"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="2176"/>
         <source>Selection</source>
         <translation>Seçim</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3338"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3339"/>
         <source>Move %2 (%1)</source>
         <translation>%2&apos;yi taşı (%1)</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3341"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3342"/>
         <source>Move %2 items (%1)</source>
         <translation>%2 öğelerini taşı (%1)</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3523"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9526"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3524"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9527"/>
         <source>Select %1</source>
         <translation>%1&apos;i seç</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3526"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9529"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3527"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9530"/>
         <source>Select %1 items</source>
         <translation>%1 öğelerini seç</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3614"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3797"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3615"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3798"/>
         <source>Disconnect</source>
         <translation>Bağlantıyı Kes</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3805"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3806"/>
         <source>Change</source>
         <translation>Değiştir</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3622"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3809"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3623"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3810"/>
         <source>Connect</source>
         <translation>Bağla</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3623"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3810"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3624"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3811"/>
         <source>to %1</source>
         <translation>%1&apos;e</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3863"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3864"/>
         <source>Create and connect wire</source>
         <translation>Kablo oluştur ve bağla</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="4617"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="4618"/>
         <source>Rotate %2 (%1)</source>
         <translation>%2&apos;yi Döndür (%1)</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="5896"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="5897"/>
         <source>Note text change</source>
         <translation>Not metni değişimi</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7150"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7151"/>
         <source>Rotate</source>
         <translation>Dödür</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7150"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7151"/>
         <source>Flip</source>
         <translation>Çevir</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="5768"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="5769"/>
         <source>Double-click</source>
         <translation>Çift-tık</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="1098"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="1099"/>
         <source>Delete ratsnest</source>
         <translation>Yumağı sil</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3615"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3616"/>
         <source>from %1</source>
         <translation>%1&apos;den</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3618"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3619"/>
         <source>Move leg of</source>
         <translatorcomment>there is no special of word in turkish its used as suffix generally</translatorcomment>
         <translation>Ayağını taşı</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3678"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3679"/>
         <source>Change leg curvature for %1.</source>
         <translation>%1 için ayak eğikliğini değiştir.</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3704"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3705"/>
         <source>Change leg bendpoint for %1.</source>
         <translation>%1 için ayak esnetme noktasını değiştir.</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3988"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3989"/>
         <source>Fritzing</source>
         <translation>Fritzing</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3988"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3989"/>
         <source>This seems like an attempt to create a trace across layers. This circumstance should not arise: please contact the developers.</source>
         <translation>Bu katmanlar arası bir hat oluşturma girişimi gibi görünüyor. Bu durumlar ortaya çıkmamalı: lütfen geliştiricilerle iletişime geçin.</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3995"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3996"/>
         <source>Create and connect %1</source>
         <translation>%1 oluştur ve bağla</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3995"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3996"/>
         <source>wire</source>
         <translation>kablo</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3995"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3996"/>
         <source>trace</source>
         <translation>hat</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="4803"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="4804"/>
         <source>Flip %2 (%1)</source>
         <translation>%2&apos;yi çevir (%1)</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="5768"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="5769"/>
         <source>Drag or double-click</source>
         <translation>Sürükle ya da çift-tıkla</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="5769"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="5770"/>
         <source>or alt-drag to move the segment</source>
         <translation>ya da parçayı sürüklemek için alt-sürükle</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="5834"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="5835"/>
         <source>Double-click to delete this bend point</source>
         <translation>Bu esnetme noktasını silmek için çift tıkla</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="5922"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="5923"/>
         <source>Change %1 label to &apos;%2&apos;</source>
         <translation>%1 etiketini &apos;%2&apos;&apos;ye çevir</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="6435"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="6436"/>
         <source>Change %1 color from %2 to %3</source>
         <translation>%1 rengini %2&apos;den %3&apos;e çevir</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="6441"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="6442"/>
         <source>Change color of %1 wires to %2</source>
         <translation>%1 kablolarının rengini %2&apos;ye çevir</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="6487"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="6488"/>
         <source>Change %1 width from %2 to %3</source>
         <translation>%1 genişliğini %2&apos;den %3&apos;e çevir</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="6493"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="6494"/>
         <source>Change width of %1 wires to %2</source>
         <translation>%1 kablolarının genişliğini %2&apos;ye çevir</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7143"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7144"/>
         <source>Move label &apos;%1&apos;</source>
         <translation>&apos;%1&apos; etiketini taşı</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7150"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7151"/>
         <source>%1 label &apos;%2&apos;</source>
         <translation>%1 etiketi &apos;%2&apos;</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/sketch/sketchwidget.cpp" line="7185"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7186"/>
         <source>show %n part label(s)</source>
         <translation>
             <numerusform>%n eleman etiket(ler)ini göster</numerusform>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/sketch/sketchwidget.cpp" line="7188"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7189"/>
         <source>hide %n part label(s)</source>
         <translation>
             <numerusform>%n eleman etiket(ler)ini gizle</numerusform>
         </translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7738"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7739"/>
         <source>Resize ruler to %1 %2</source>
         <translation>Cetveli %1&apos;e %2 tekrar ölçeklendir</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7202"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7203"/>
         <source>Resize Note</source>
         <translation>Notu Tekrar Ölçeklendir</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7607"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7608"/>
         <source>Change Resistance from %1 to %2</source>
         <translation>Direnç değerini %1&apos;den %2&apos;ye değiştir</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7631"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7640"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7632"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7641"/>
         <source>Change %1 from %2 to %3</source>
         <translation>%1&apos;i %2&apos;den %3&apos;e değiştir</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7761"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="8646"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7762"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="8647"/>
         <source>Resize board to %1 %2</source>
         <translation>Board&apos;u %1&apos;e %2 tekrardan ölçeklendir</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7818"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7819"/>
         <source>Create wire from Ratsnest</source>
         <translation>Yumaktan kablo oluştur</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="8016"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="8017"/>
         <source>Disconnect all wires from %1</source>
         <translation>%1&apos;den tüm kablo bağlantılarını kes</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="8019"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="8020"/>
         <source>Disconnect all wires from %1 items</source>
         <translation>%1 öğelerinden tüm kablo bağlantılarını kes</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="8297"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="8298"/>
         <source>Change image from %1 to %2</source>
         <translation>Resmi %1&apos;den %2&apos;ye değiştir</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9107"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9108"/>
         <source>change pin labels</source>
         <translation>pin etiketlerini değiştir</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9399"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9400"/>
         <source>Unrouted connections are highlighted in yellow.</source>
         <translation>Yönlendirilmemiş bağlantılar sarı ile vurgulanmıştır.</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9400"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9401"/>
         <source>There are no unrouted connections</source>
         <translation>Yönlendirilmemiş bağlantı yok</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9401"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9402"/>
         <source>Unrouted connections</source>
         <translation>Yönlendirilmemiş bağlantılar</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9402"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9403"/>
         <source>%1
 
 Note: you can also trigger this display by mousing down on the routing status text in the status bar.</source>
@@ -8079,17 +8085,17 @@ Note: you can also trigger this display by mousing down on the routing status te
 Not:Bu görüntüyü fareyi durum çubuğundaki yönlendirme durumu metni üzerinde aşağı kaydırarak da tetikleyebilirsiniz.</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9449"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9450"/>
         <source>Part &apos;%1&apos; not found in sketch</source>
         <translation>&apos;%1&apos; elemanı çizimde bulunamadı</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9461"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9462"/>
         <source>Add %1 parts</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9523"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9524"/>
         <source>Deselect all</source>
         <translation>Tümünü seçmeyi bırak</translation>
     </message>
@@ -8097,8 +8103,8 @@ Not:Bu görüntüyü fareyi durum çubuğundaki yönlendirme durumu metni üzeri
 <context>
     <name>SqliteReferenceModel</name>
     <message>
-        <location filename="../src/referencemodel/sqlitereferencemodel.cpp" line="129"/>
-        <location filename="../src/referencemodel/sqlitereferencemodel.cpp" line="146"/>
+        <location filename="../src/referencemodel/sqlitereferencemodel.cpp" line="130"/>
+        <location filename="../src/referencemodel/sqlitereferencemodel.cpp" line="147"/>
         <source>The swapping mechanism is disabled for:
 
 </source>
@@ -8107,22 +8113,22 @@ Not:Bu görüntüyü fareyi durum çubuğundaki yönlendirme durumu metni üzeri
 </translation>
     </message>
     <message>
-        <location filename="../src/referencemodel/sqlitereferencemodel.cpp" line="141"/>
+        <location filename="../src/referencemodel/sqlitereferencemodel.cpp" line="142"/>
         <source>and %1 other parts</source>
         <translation>ve %1 diğer eleman</translation>
     </message>
     <message>
-        <location filename="../src/referencemodel/sqlitereferencemodel.cpp" line="158"/>
+        <location filename="../src/referencemodel/sqlitereferencemodel.cpp" line="159"/>
         <source>and %1 other properties</source>
         <translation>ve %1 diğer özellik</translation>
     </message>
     <message>
-        <location filename="../src/referencemodel/sqlitereferencemodel.cpp" line="920"/>
+        <location filename="../src/referencemodel/sqlitereferencemodel.cpp" line="921"/>
         <source>property &apos;%1&apos; in part &apos;%2&apos; with id &apos;%3&apos;.</source>
         <translation>&apos;%3&apos; kimlikli &apos;%2&apos; elemanındaki &apos;%1&apos; özelliği.</translation>
     </message>
     <message>
-        <location filename="../src/referencemodel/sqlitereferencemodel.cpp" line="951"/>
+        <location filename="../src/referencemodel/sqlitereferencemodel.cpp" line="952"/>
         <source>part &apos;%1&apos; with id &apos;%2&apos;; possibly because it has no &apos;family&apos; property.</source>
         <translation>&apos;%2&apos; kimlikli &apos;%1&apos; elemanı; muhtemelen harhangi bir &apos;aile&apos; özelliği olmadığı için.</translation>
     </message>

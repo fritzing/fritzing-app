@@ -163,6 +163,7 @@ void BinManager::initStandardBins()
 	openCoreBinIn();
 		
 	//DebugDialog::debug("after core bin");
+    currentChanged(m_stackTabWidget->currentIndex());
 
 	connectTabWidget();
 }
@@ -468,6 +469,24 @@ PartsBinPaletteWidget* BinManager::newBin() {
 }
 
 void BinManager::currentChanged(int index) {
+	for (int i = 0; i < m_stackTabWidget->count(); i++) {
+		PartsBinPaletteWidget* bin = (PartsBinPaletteWidget *) m_stackTabWidget->widget(i);
+        if (bin == NULL) continue;
+        if (!bin->hasMonoIcon()) continue;
+
+        if (i == index) {
+            m_stackTabWidget->setTabIcon(i, bin->icon());
+        }
+        else {
+            m_stackTabWidget->setTabIcon(i, bin->monoIcon());
+        }
+
+    }
+
+        
+
+    
+
 	PartsBinPaletteWidget *bin = getBin(index);
 	if (bin) setAsCurrentBin(bin);
 }

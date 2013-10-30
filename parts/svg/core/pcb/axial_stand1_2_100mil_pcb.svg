@@ -7,7 +7,7 @@
  </g>
  <g id="copper0" >
  <g id="copper1" >
-  <rect width="55" x="10" y="35" fill="none" height="55" stroke="rgb(255, 191, 0)" stroke-width="20" />
+  <!--  <rect width="55" x="10" y="35" fill="none" height="55" stroke="rgb(255, 191, 0)" stroke-width="20" /> -->
   <circle fill="none" cx="37.5" cy="62.5" stroke="rgb(255, 191, 0)" r="27.5" id="connector0pin" stroke-width="20" />
   <circle fill="none" cx="137.5" cy="62.5" stroke="rgb(255, 191, 0)" r="27.5" id="connector1pin" stroke-width="20" />
  </g>

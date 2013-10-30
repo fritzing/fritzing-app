@@ -777,6 +777,10 @@ Nota: Você pode importa-los posteriormente usando o menu de ação &quot;Ajuda&
         <source>Fritzing (*%1)</source>
         <translation>Fritzing (*%1)</translation>
     </message>
+    <message>
+        <source>Fritzing caught an exception from %1 in event %2: %3</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>FritzingWindow</name>

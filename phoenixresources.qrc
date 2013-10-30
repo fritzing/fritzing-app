@@ -261,17 +261,24 @@
         <file>resources/bins/order.xml</file>
         <file>resources/bins/pe.fzb</file>
         <file>resources/bins/icons/Arduino.png</file>
+        <file>resources/bins/icons/Arduino-mono.png</file>
         <file>resources/bins/icons/Core.png</file>
         <file>resources/bins/icons/Custom1.png</file>
         <file>resources/bins/icons/Mine.png</file>
         <file>resources/bins/icons/PICAXE.png</file>
+        <file>resources/bins/icons/PICAXE-mono.png</file>
         <file>resources/bins/icons/Search.png</file>
         <file>resources/bins/icons/Lilypad.png</file>
+        <file>resources/bins/icons/Lilypad-mono.png</file>
         <file>resources/bins/icons/Snootlab.png</file>
+        <file>resources/bins/icons/Snootlab-mono.png</file>
         <file>resources/bins/icons/SparkFun.png</file>
+        <file>resources/bins/icons/SparkFun-mono.png</file>
         <file>resources/bins/icons/Contrib.png</file>
         <file>resources/bins/icons/Parallax.png</file>
+        <file>resources/bins/icons/Parallax-mono.png</file>
         <file>resources/bins/icons/Pololu.png</file>
+        <file>resources/bins/icons/Pololu-mono.png</file>
         <file>resources/bins/icons/Temp.png</file>
         <file>resources/templates/jumper_copper0LayerTemplate.txt</file>
         <file>resources/templates/jumper_jumperwiresLayerTemplate.txt</file>

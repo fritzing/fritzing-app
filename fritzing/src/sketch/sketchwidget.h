@@ -279,7 +279,6 @@ public:
 	virtual double defaultGridSizeInches();
 	void clearPasteOffset();
 	virtual ViewLayer::ViewLayerPlacement defaultViewLayerPlacement(ModelPart *);
-	void addFixedToCenterItem2(class SketchMainHelp *item);
 	void collectAllNets(QHash<class ConnectorItem *, int> & indexer, QList< QList<class ConnectorItem *>* > & allPartConnectorItems, bool includeSingletons, bool bothSides);
 	virtual bool routeBothSides();
 	virtual void changeLayer(long id, double z, ViewLayer::ViewLayerID viewLayerID);
@@ -470,7 +469,6 @@ protected:
 	bool resizingBoardRelease();
 	void resizeBoard();
     void resizeWithHandle(ItemBase * itemBase, double mmW, double mmH);
-	virtual QPoint calcFixedToCenterItemOffset(const QRect & viewPortRect, const QSizeF & helpSize);
 	virtual bool acceptsTrace(const ViewGeometry &);
 	virtual ItemBase * placePartDroppedInOtherView(ModelPart *, ViewLayer::ViewLayerPlacement, const ViewGeometry & viewGeometry, long id, SketchWidget * dropOrigin);
 	void showPartLabelsAux(bool show, QList<ItemBase *> & itemBases);
@@ -544,7 +542,6 @@ signals:
 	void showLabelFirstTimeSignal(long itemID, bool show, bool doEmit);
 	void dropPasteSignal(SketchWidget *);
 	void changeBoardLayersSignal(int, bool doEmit);
-	void firstTimeHelpHidden();
 	void deleteTracesSignal(QSet<ItemBase *> & deletedItems, QHash<ItemBase *, SketchWidget *> & otherDeletedItems, QList<long> & deletedIDs, bool isForeign, QUndoCommand * parentCommand);
 	void makeDeleteItemCommandPrepSignal(ItemBase * itemBase, bool foreign, QUndoCommand * parentCommand);
 	void makeDeleteItemCommandFinalSignal(ItemBase * itemBase, bool foreign, QUndoCommand * parentCommand);
@@ -691,9 +688,6 @@ protected:
 	QList<ItemBase *> m_additionalSavedItems;
 	int m_ignoreSelectionChangeEvents;
 	bool m_current;
-
-	class SketchMainHelp * m_fixedToCenterItem;
-	QPoint m_fixedToCenterItemOffset;
 
 	QString m_lastColorSelected;
 

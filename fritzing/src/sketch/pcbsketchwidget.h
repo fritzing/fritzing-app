@@ -163,7 +163,6 @@ protected:
 	bool resizingJumperItemPress(ItemBase *);
 	bool resizingJumperItemRelease();
 	void resizeJumperItem();
-	QPoint calcFixedToCenterItemOffset(const QRect & viewPortRect, const QSizeF & helpSize);
 	void dealWithDefaultParts();
 	bool connectorItemHasSpec(ConnectorItem * connectorItem, ViewLayer::ViewLayerPlacement spec);
 	ViewLayer::ViewLayerPlacement createWireViewLayerPlacement(ConnectorItem * from, ConnectorItem * to);

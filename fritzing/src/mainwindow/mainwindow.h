@@ -54,7 +54,6 @@ class QListWidget;
 class QMenu;
 QT_END_NAMESPACE
 
-class Helper;
 class FSizeGrip;
 
 typedef class FDockWidget * (*DockFactory)(const QString & title, QWidget * parent);
@@ -145,7 +144,6 @@ public:
 	QAction *raiseWindowAction();
 	QSizeGrip *sizeGrip();
 	QStatusBar *realStatusBar();
-	void showAllFirstTimeHelp(bool show);
 	void enableCheckUpdates(bool enabled);
 
 	void getPartsEditorNewAnd(ItemBase * fromItem);
@@ -314,7 +312,6 @@ protected slots:
 	void flipVertical();
 	void showAllLayers();
 	void hideAllLayers();
-	void showInViewHelp();
 	void addBendpoint();
 	void convertToVia();
 	void convertToBendpoint();
@@ -395,7 +392,6 @@ protected slots:
 	virtual void backupSketch();
 	void undoStackCleanChanged(bool isClean);
 	void autosaveNeeded(int index = 0);
-	void firstTimeHelpHidden();
 	void changeTraceLayer();
 	void routingStatusLabelMousePress(QMouseEvent*);
 	void routingStatusLabelMouseRelease(QMouseEvent*);
@@ -562,7 +558,6 @@ protected:
     virtual void initDock();
     virtual void initMenus();
     virtual void moreInitDock();
-    virtual void initHelper();
     virtual void createFileMenu();
     virtual void createEditMenu();
     virtual void createPartMenu();
@@ -828,7 +823,6 @@ protected:
     QAction *m_openDonateAct;
     QAction *m_examplesAct;
     QAction *m_partsRefAct;
-    QAction *m_showInViewHelpAct;;
     QAction *m_visitFritzingDotOrgAct;
     QAction *m_checkForUpdatesAct;
     QAction *m_aboutQtAct;
@@ -863,12 +857,9 @@ protected:
 	QDockWidget * m_navigatorDock;
 	QPointer<class FSizeGrip> m_sizeGrip;
 
-	friend class Helper;
-
 	QPointer<class ViewSwitcher> m_viewSwitcher;
 	QPointer<class ViewSwitcherDockWidget> m_viewSwitcherDock;
 
-	QPointer<Helper> m_helper;
 	QTimer m_setUpDockManagerTimer;
 	QPointer<class FileProgressDialog> m_fileProgressDialog;
 	QPointer<class ZoomSlider> m_zoomSlider;

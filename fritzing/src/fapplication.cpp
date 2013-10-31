@@ -31,7 +31,6 @@ $Date: 2013-04-19 12:51:22 +0200 (Fr, 19. Apr 2013) $
 #include "fsplashscreen.h"
 #include "version/version.h"
 #include "dialogs/prefsdialog.h"
-#include "help/helper.h"
 #include "fsvgrenderer.h"
 #include "version/versionchecker.h"
 #include "version/updatedialog.h"
@@ -509,7 +508,6 @@ bool FApplication::init() {
 	ItemBase::initNames();
 	ViewLayer::initNames();
 	Connector::initNames();
-	Helper::initText();
 	BinManager::initNames();
 	PaletteModel::initNames();
 	SvgIconWidget::initNames();
@@ -1694,7 +1692,6 @@ QList<MainWindow *> FApplication::recoverBackups()
     			currentRecoveredSketch->mainLoad(backupName, bundledFileName, true);
 				currentRecoveredSketch->saveAsShareable(bundledFileName, true);
 				currentRecoveredSketch->setCurrentFile(bundledFileName, true, true);
-				currentRecoveredSketch->showAllFirstTimeHelp(false);
 				recoveredSketches << currentRecoveredSketch;
 
 				/*

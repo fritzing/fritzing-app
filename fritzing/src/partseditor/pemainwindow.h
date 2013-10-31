@@ -118,7 +118,6 @@ protected:
     void initSketchWidgets();
     void initProgrammingWidget();
     void initDock();
-    void initHelper();
     void moreInitDock();
     void createActions();
     void createMenus();

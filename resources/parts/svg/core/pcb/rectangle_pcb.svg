@@ -8,7 +8,7 @@
      id="board">
     <rect
       id="boardoutline"
-       fill="#338040"
+       fill="#ffffff"
        fill-opacity="0.5"
        stroke="#338040"
        stroke-width="0.2032"
@@ -21,7 +21,7 @@
      id="silkscreen">
      <rect
        fill="none"
-       stroke="#ffffff"
+       stroke="#000000"
        stroke-width="0.2032"
        width="99.7968"
        height="59.7968"
@@ -32,7 +32,7 @@
      id="silkscreen0">
      <rect
        fill="none"
-       stroke="#bbbbcc"
+       stroke="#000000"
        stroke-width="0.2032"
        width="99.7968"
        height="59.7968"

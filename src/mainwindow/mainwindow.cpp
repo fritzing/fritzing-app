@@ -73,7 +73,6 @@ $Date: 2013-04-28 00:56:34 +0200 (So, 28. Apr 2013) $
 #include "../items/screwterminal.h"
 #include "../items/dip.h"
 #include "../processeventblocker.h"
-#include "../help/helper.h"
 #include "../sketchtoolbutton.h"
 #include "../partsbinpalette/binmanager/binmanager.h"
 #include "../fsvgrenderer.h"
@@ -180,7 +179,7 @@ MainWindow::MainWindow(ReferenceModel *referenceModel, QWidget * parent) :
 	m_dontKeepMargins = true;
 
     m_settingsPrefix = "main/";
-    m_showProgramAct = m_raiseWindowAct = m_showPartsBinIconViewAct = m_showAllLayersAct = m_hideAllLayersAct = m_showInViewHelpAct = m_rotate90cwAct = m_showBreadboardAct = m_showSchematicAct = m_showPCBAct = NULL;
+    m_showProgramAct = m_raiseWindowAct = m_showPartsBinIconViewAct = m_showAllLayersAct = m_hideAllLayersAct = m_rotate90cwAct = m_showBreadboardAct = m_showSchematicAct = m_showPCBAct = NULL;
     m_fileMenu = m_editMenu = m_partMenu = m_windowMenu = m_pcbTraceMenu = m_schematicTraceMenu = m_breadboardTraceMenu = m_viewMenu = NULL;
     m_miniViewContainerBreadboard = NULL;
     m_infoView = NULL;
@@ -204,7 +203,6 @@ MainWindow::MainWindow(ReferenceModel *referenceModel, QWidget * parent) :
 	m_fileProgressDialog = NULL;
 	m_currentGraphicsView = NULL;
 	m_comboboxChanged = false;
-	m_helper = NULL;
 
     // Add a timer for autosaving
 	m_backingUp = m_autosaveNeeded = false;
@@ -359,8 +357,6 @@ void MainWindow::init(ReferenceModel *referenceModel, bool lockFiles) {
 
 	connectPairs();
 
-	initHelper();
-
 	// do this the first time, since the current_changed signal wasn't sent
 	int tab = 0;
     if (m_navigators.count() > 0) {
@@ -430,10 +426,6 @@ MainWindow::~MainWindow()
 		FolderUtils::rmdir(m_fzzFolder);
 	}
 }	
-
-void MainWindow::initHelper() {
-    m_helper = new Helper(this, true);
-}
 
 void MainWindow::initLockedFiles(bool lockFiles) {
 	LockManager::initLockedFiles("fzz", m_fzzFolder, m_fzzFiles, lockFiles ? LockManager::SlowTime : 0);
@@ -563,10 +555,6 @@ void MainWindow::connectPairs() {
 	succeeded =  succeeded && connect(m_pcbGraphicsView, SIGNAL(subSwapSignal(SketchWidget *, ItemBase *, const QString &, ViewLayer::ViewLayerPlacement, long &, QUndoCommand *)),
 						this, SLOT(subSwapSlot(SketchWidget *, ItemBase *, const QString &, ViewLayer::ViewLayerPlacement, long &, QUndoCommand *)),
 						Qt::DirectConnection);
-
-	succeeded =  succeeded && connect(m_pcbGraphicsView, SIGNAL(firstTimeHelpHidden()), this, SLOT(firstTimeHelpHidden()));
-	succeeded =  succeeded && connect(m_schematicGraphicsView, SIGNAL(firstTimeHelpHidden()), this, SLOT(firstTimeHelpHidden()));
-	succeeded =  succeeded && connect(m_breadboardGraphicsView, SIGNAL(firstTimeHelpHidden()), this, SLOT(firstTimeHelpHidden()));
 
 	succeeded =  succeeded && connect(m_pcbGraphicsView, SIGNAL(updateLayerMenuSignal()), this, SLOT(updateLayerMenuSlot()));
 	succeeded =  succeeded && connect(m_pcbGraphicsView, SIGNAL(changeBoardLayersSignal(int, bool )), this, SLOT(changeBoardLayers(int, bool )));
@@ -1032,15 +1020,6 @@ void MainWindow::tabWidget_currentChanged(int index) {
 	    m_navigators[index]->miniViewMousePressedSlot();
     }
 	emit viewSwitched(index);
-
-    if (m_showInViewHelpAct) {
-	    if (m_helper == NULL) {
-		    m_showInViewHelpAct->setChecked(false);
-	    }
-	    else {
-		    m_showInViewHelpAct->setChecked(m_helper->helpVisible(currentTabIndex()));
-	    }
-    }
 
     if (m_infoView) {
 	    m_currentGraphicsView->updateInfoView();
@@ -1875,33 +1854,6 @@ void MainWindow::resizeEvent(QResizeEvent * event) {
 	FritzingWindow::resizeEvent(event);
 }
 
-void MainWindow::showInViewHelp() {
-	//delete m_helper;
-	if (m_helper == NULL) {
-		m_helper = new Helper(this, true);
-		return;
-	}
-
-	bool toggle = !m_helper->helpVisible(currentTabIndex());
-	showAllFirstTimeHelp(toggle);
-
-	/*
-	m_helper->toggleHelpVisibility(currentTabIndex());
-	*/
-
-	m_showInViewHelpAct->setChecked(m_helper->helpVisible(currentTabIndex()));
-}
-
-
-void MainWindow::showAllFirstTimeHelp(bool show) {
-	if (m_helper) {
-		for (int i = 0; i < 3; i++) {
-			m_helper->setHelpVisibility(i, show);
-		}
-	}
-	m_showInViewHelpAct->setChecked(show);
-}
-
 void MainWindow::enableCheckUpdates(bool enabled)
 {
 	if (m_checkForUpdatesAct != NULL) {
@@ -2493,10 +2445,6 @@ QStringList MainWindow::getExtensions() {
 	QStringList extensions;
 	extensions.append(fileExtension());
 	return extensions;
-}
-
-void MainWindow::firstTimeHelpHidden() {
-	m_showInViewHelpAct->setChecked(false);
 }
 
 void MainWindow::routingStatusLabelMousePress(QMouseEvent* event) {

@@ -32,12 +32,6 @@
         <file>resources/images/helpImageBreadboard.png</file>
         <file>resources/images/helpImageSchematic.png</file>
         <file>resources/images/helpImagePCB.png</file>
-        <file>resources/images/inViewHelpCloseButtonBreadboard.png</file>
-        <file>resources/images/inViewHelpCloseButtonSchematic.png</file>
-        <file>resources/images/inViewHelpCloseButtonPCB.png</file>
-        <file>resources/images/inViewHelpPartsBinArrow.png</file>
-        <file>resources/images/inViewHelpAutorouteArrow.png</file>
-        <file>resources/images/inViewHelpSwitchButtonsArrow.png</file>
         <file>resources/images/splitterHandle.png</file>
         <file>resources/images/part_lock.svg</file>
         <file>resources/images/part_sticky.svg</file>
@@ -243,7 +237,6 @@
         <file>resources/styles/partseditor.qss</file>
         <file>resources/styles/newpartseditor.qss</file>
         <file>resources/styles/programwindow.qss</file>
-        <file>resources/styles/inviewhelp.qss</file>
         <file>resources/styles/linux-fritzing.qss</file>
         <file>resources/styles/linux-kde-oxygen-fritzing.qss</file>
         <file>resources/styles/linux-gnome-fritzing.qss</file>

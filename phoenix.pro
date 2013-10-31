@@ -39,7 +39,7 @@ win32 {
         INCLUDEPATH += $$[QT_INSTALL_PREFIX]/src/3rdparty/zlib
 	DEFINES += _CRT_SECURE_NO_DEPRECATE
         DEFINES += _WINDOWS
-        LIBS += C:/Users/joev/Documents/AAA/Fritzing/fritzing/fritzing/SetupAPI.Lib
+        LIBS += SetupAPI.Lib
      #   LIBS += advapi32.lib   # only seems necessary for QtCreator 2.5.2 and up
 }
 macx {

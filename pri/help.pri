@@ -16,12 +16,8 @@
 # $Author: cohen@irascible.com $:
 # $Date: 2012-01-03 16:53:58 +0100 (Di, 03. Jan 2012) $
 # ********************************************************************/
-HEADERS += src/help/sketchmainhelp.h \
-    src/help/helper.h \
-    src/help/aboutbox.h \
+HEADERS += src/help/aboutbox.h \
     src/help/tipsandtricks.h
     
-SOURCES += src/help/sketchmainhelp.cpp \
-    src/help/helper.cpp \
-    src/help/aboutbox.cpp \
+SOURCES += src/help/aboutbox.cpp \
     src/help/tipsandtricks.cpp

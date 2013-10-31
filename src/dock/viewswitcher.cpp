@@ -34,7 +34,6 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 
 #include "viewswitcher.h"
 #include "../debugdialog.h"
-//#include "../help/sketchmainhelp.h"
 
 QHash<QString, QPixmap *> ViewSwitcherButton::Pixmaps;
 QString ViewSwitcherButton::ResourcePathPattern = (":/resources/images/icons/segmentedSwitcher%1%2.png");
@@ -246,14 +245,9 @@ ViewSwitcher::ViewSwitcher(bool includeCodeView) : QFrame()
 	// TODO Mariano: couldn't get this applied with the qss file
    // setStyleSheet("ViewSwitcher { border: 0px; background-color: transparent; margin-top: 0px; margin-left: 0px; } ViewSwitcherButton {margin: 0px;}");
 
-	m_closeButton = NULL;
-
 	m_layout = new QHBoxLayout(this);
     m_layout->setSpacing(0);
 	m_layout->setMargin(0);
-	
-	//m_closeButton = new SketchMainHelpCloseButton("PCB" ,this);
-	//m_layout->addWidget(m_closeButton);
 
 	QFont font = this->font();
 	font.setPointSize(pointSize);

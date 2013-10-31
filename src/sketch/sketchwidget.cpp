@@ -72,7 +72,6 @@ $Date: 2013-04-29 07:24:08 +0200 (Mon, 29 Apr 2013) $
 #include "../items/note.h"
 #include "../svg/svgfilesplitter.h"
 #include "../svg/svgflattener.h"
-#include "../help/sketchmainhelp.h"
 #include "../infoview/htmlinfoview.h"
 #include "../items/resizableboard.h"
 #include "../utils/graphicsutils.h"
@@ -180,7 +179,6 @@ SketchWidget::SketchWidget(ViewLayer::ViewID viewID, QWidget *parent, int size, 
 	m_dragBendpointWire = NULL;
 	m_lastHoverEnterItem = NULL;
 	m_lastHoverEnterConnectorItem = NULL;
-	m_fixedToCenterItem = NULL;
 	m_spaceBarWasPressed = m_spaceBarIsPressed = false;
 	m_current = false;
 	m_ignoreSelectionChangeEvents = 0;
@@ -2868,23 +2866,10 @@ void SketchWidget::categorizeDragWires(QSet<Wire *> & wires, QList<ItemBase *> &
 	}
 }
 
-void SketchWidget::clickBackground(QMouseEvent * event) 
+void SketchWidget::clickBackground(QMouseEvent *) 
 {
 	// in here if you clicked on the sketch itself,
 
-	if (m_fixedToCenterItem && m_fixedToCenterItem->getVisible()) {
-		QRectF r(m_fixedToCenterItemOffset, m_fixedToCenterItem->size());
-		if (r.contains(event->pos())) {
-			QMouseEvent newEvent(event->type(), event->pos() - m_fixedToCenterItemOffset,
-				event->globalPos(), event->button(), event->buttons(), event->modifiers());
-			if (m_fixedToCenterItem->forwardMousePressEvent(&newEvent)) {
-				// update background
-				setBackground(background());
-				this->update();
-				emit firstTimeHelpHidden();
-			}
-		}
-	}
 }
 
 void SketchWidget::prepDragWire(Wire * wire) 
@@ -3054,18 +3039,6 @@ void SketchWidget::mouseMoveEvent(QMouseEvent *event) {
                 delete m_movingSVGRenderer;
 				m_movingSVGRenderer = NULL;
 				return;
-			}
-		}
-	}
-
-	if (event->buttons() == Qt::NoButton) {
-		if (m_fixedToCenterItem && m_fixedToCenterItem->getVisible()) {
-			QSize size((int) m_fixedToCenterItem->size().width(), (int) m_fixedToCenterItem->size().height());
-			QRect r(m_fixedToCenterItemOffset, size);
-			bool within = r.contains(event->pos()) && (itemAt(event->pos()) == NULL);
-			if (m_fixedToCenterItem->setMouseWithin(within)) {
-				// seems to be the only way to force a redraw of the background here
-				setBackground(background());
 			}
 		}
 	}
@@ -7448,9 +7421,6 @@ QString SketchWidget::makeWireSVGAux(Wire * wire, double width, const QString & 
 	}
 }
 
-void SketchWidget::addFixedToCenterItem2(SketchMainHelp * item) {
-	m_fixedToCenterItem = item;
-}
 
 void SketchWidget::drawBackground( QPainter * painter, const QRectF & rect )
 {
@@ -7504,6 +7474,8 @@ void SketchWidget::drawBackground( QPainter * painter, const QRectF & rect )
         }
 	}
 
+
+    /*
 	// always draw the widget in the same place in the window
 	// no matter how the view is zoomed or scrolled
 
@@ -7512,16 +7484,6 @@ void SketchWidget::drawBackground( QPainter * painter, const QRectF & rect )
 			QWidget * widget = m_fixedToCenterItem->widget();
 			if (widget != NULL) {
 				QSizeF helpSize = m_fixedToCenterItem->size();
-
-				/*
-				// add in scrollbar widths so image doesn't jump when scroll bars appear or disappear?
-				if (verticalScrollBar()->isVisible()) {
-					vp.setWidth(vp.width() + verticalScrollBar()->width());
-				}
-				if (horizontalScrollBar()->isVisible()) {
-					vp.setHeight(vp.height() + horizontalScrollBar()->height());
-				}
-				*/
 			
 				m_fixedToCenterItemOffset = calcFixedToCenterItemOffset(painter->viewport(), helpSize);
 
@@ -7534,13 +7496,17 @@ void SketchWidget::drawBackground( QPainter * painter, const QRectF & rect )
 			}
 		}
 	}
+
+    */
 }
 
+/*
 QPoint SketchWidget::calcFixedToCenterItemOffset(const QRect & viewPortRect, const QSizeF & helpSize) {
 	QPoint p((int) ((viewPortRect.width() - helpSize.width()) / 2.0),
 			 (int) ((viewPortRect.height() - helpSize.height()) / 2.0));
 	return p;
 }
+*/
 
 void SketchWidget::pushCommand(QUndoCommand * command, QObject * thing) {
 	if (m_undoStack) {

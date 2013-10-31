@@ -351,7 +351,6 @@ void MainWindow::mainLoad(const QString & fileName, const QString & displayName,
 		m_fileProgressDialog->setValue(102);
 	}
 	this->show();
-	showAllFirstTimeHelp(false);
 	ProcessEventBlocker::processEvents();
 
 	QString displayName2 = displayName;
@@ -1176,12 +1175,6 @@ void MainWindow::createHelpMenuActions() {
 	m_partsRefAct->setStatusTip(tr("Open Parts Reference"));
 	connect(m_partsRefAct, SIGNAL(triggered(bool)), this, SLOT(openPartsReference()));
 
-	m_showInViewHelpAct = new QAction(tr("First Time Help"), this);
-	m_showInViewHelpAct->setStatusTip(tr("Show or Hide First Time Help"));
-	m_showInViewHelpAct->setCheckable(true);
-	m_showInViewHelpAct->setChecked(true);
-	connect(m_showInViewHelpAct, SIGNAL(triggered(bool)), this, SLOT(showInViewHelp()));
-
 	/*m_visitFritzingDotOrgAct = new QAction(tr("Visit fritzing.org"), this);
 	m_visitFritzingDotOrgAct->setStatusTip(tr("www.fritzing.org"));
 	connect(m_visitFritzingDotOrgAct, SIGNAL(triggered(bool)), this, SLOT(visitFritzingDotOrg()));*/
@@ -1488,7 +1481,6 @@ void MainWindow::createTraceMenus()
 void MainWindow::createHelpMenu()
 {
     m_helpMenu = menuBar()->addMenu(tr("&Help"));
-    m_helpMenu->addAction(m_showInViewHelpAct);
     m_helpMenu->addAction(m_openHelpAct);
     m_helpMenu->addAction(m_examplesAct);
     m_helpMenu->addAction(m_partsRefAct);

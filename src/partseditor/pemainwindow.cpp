@@ -956,10 +956,6 @@ bool PEMainWindow::setInitialItem(PaletteItem * paletteItem)
     return true;
 }
 
-void PEMainWindow::initHelper()
-{
-}
-
 void PEMainWindow::initZoom() {
     if (m_currentGraphicsView) {
 		ViewThing * viewThing = m_viewThings.value(m_currentGraphicsView->viewID());

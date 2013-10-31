@@ -103,7 +103,6 @@ class ViewSwitcher : public QFrame {
 		QHBoxLayout *m_layout;
 		QList<ViewSwitcherButton*> m_buttons;
 		static QBitmap * m_mask;
-		class SketchMainHelpCloseButton * m_closeButton;
 		QWidget * m_buttonHolder;
 };
 

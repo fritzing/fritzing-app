@@ -40,9 +40,9 @@ const QString ViewLayer::Copper0Color = "#ccc68f";  // "#F28A00";
 const QString ViewLayer::Copper1Color = "#ccc68f";  // "#FFCB33"; 
 const QString ViewLayer::Copper0WireColor = "#F28A00";
 const QString ViewLayer::Copper1WireColor = "#FFCB33"; 
-const QString ViewLayer::Silkscreen1Color = "#ffffff";
-const QString ViewLayer::Silkscreen0Color = "#bbbbcc";
-const QString ViewLayer::BoardColor = "#338040";
+const QString ViewLayer::Silkscreen1Color = "#000000";
+const QString ViewLayer::Silkscreen0Color = "#000000";
+const QString ViewLayer::BoardColor = "#ffffff";
 
 static LayerList CopperBottomLayers;
 static LayerList CopperTopLayers;

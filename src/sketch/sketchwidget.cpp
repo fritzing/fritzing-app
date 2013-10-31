@@ -7436,6 +7436,27 @@ void SketchWidget::drawBackground( QPainter * painter, const QRectF & rect )
 	
 	InfoGraphicsView::drawForeground(painter, rect);
 
+	// always draw the logo in the same place in the window
+	// no matter how the view is zoomed or scrolled
+
+    static QPixmap * bgPixmap = NULL;
+    if (bgPixmap == NULL) {
+        bgPixmap = new QPixmap(":resources/images/fritzing_logo_background.png");
+    }
+    if (bgPixmap) {
+		QPointF p = painter->viewport().bottomLeft();
+        int hOffset = 0;
+        if (horizontalScrollBar()->isVisible()) {
+            hOffset = horizontalScrollBar()->height();
+        }
+        p += QPointF(25, hOffset - 25 - bgPixmap->height());
+	    painter->save();
+	    painter->setWindow(painter->viewport());
+	    painter->setTransform(QTransform());
+	    painter->drawPixmap(p,*bgPixmap);
+	    painter->restore();
+    }
+
 	if (m_showGrid) {
         QColor gridColor(0, 0, 0, 20);
 		double gridSize = m_gridSizeInches * GraphicsUtils::SVGDPI;
@@ -7475,29 +7496,7 @@ void SketchWidget::drawBackground( QPainter * painter, const QRectF & rect )
 	}
 
 
-    /*
-	// always draw the widget in the same place in the window
-	// no matter how the view is zoomed or scrolled
 
-	if (m_fixedToCenterItem != NULL) {
-		if (m_fixedToCenterItem->getVisible()) {
-			QWidget * widget = m_fixedToCenterItem->widget();
-			if (widget != NULL) {
-				QSizeF helpSize = m_fixedToCenterItem->size();
-			
-				m_fixedToCenterItemOffset = calcFixedToCenterItemOffset(painter->viewport(), helpSize);
-
-				painter->save();
-				painter->setWindow(painter->viewport());
-				painter->setTransform(QTransform());
-				painter->drawPixmap(m_fixedToCenterItemOffset, m_fixedToCenterItem->getPixmap());
-				//painter->fillRect(m_fixedToCenterItemOffset.x(), m_fixedToCenterItemOffset.y(), helpsize.width(), helpsize.height(), QBrush(QColor(Qt::blue)));
-				painter->restore();
-			}
-		}
-	}
-
-    */
 }
 
 /*

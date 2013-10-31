@@ -334,6 +334,7 @@ void PartsBinPaletteWidget::grabTitle(const QString & title, QString & iconFilen
 		painter.end();	
 		//image.save(FolderUtils::getUserDataStorePath("") + "/test icon.png");
 		m_icon = new QIcon(QPixmap::fromImage(image));
+        m_monoIcon = new QIcon(":resources/bins/icons/Custom1-mono.png");
 
         // TODO: hack svg to make a mono icon
 	}

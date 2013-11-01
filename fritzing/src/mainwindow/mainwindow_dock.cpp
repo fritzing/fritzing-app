@@ -31,11 +31,11 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 #include "mainwindow.h"
 #include "../dock/triplenavigator.h"
 #include "../utils/fsizegrip.h"
-#include "../dock/viewswitcherdockwidget.h"
 #include "../utils/misc.h"
 #include "../partsbinpalette/binmanager/binmanager.h"
 #include "../infoview/htmlinfoview.h"
 #include "../dock/layerpalette.h"
+#include "../mainwindow/fdockwidget.h"
 #include "../utils/fileprogressdialog.h"
 #include "../debugdialog.h"
 
@@ -48,10 +48,6 @@ static const int UndoHistoryDefaultHeight = 70;
 static const int UndoHistoryMinHeight = UndoHistoryDefaultHeight;
 const int MainWindow::DockMinWidth = 130;
 const int MainWindow::DockMinHeight = 30;
-
-FDockWidget * makeViewSwitcherDock(const QString & title, QWidget * parent) {
-	return new ViewSwitcherDockWidget(title, parent);
-}
 
 ///////////////////////////////////////
 
@@ -69,14 +65,6 @@ void MainWindow::createDockWindows()
 	QWidget * widget = new QWidget();
 	widget->setMinimumHeight(0);
 	widget->setMaximumHeight(0);
-	FDockWidget * dock = makeDock(tr("View Switcher"), widget, 0,  0, Qt::RightDockWidgetArea, makeViewSwitcherDock);
-	m_viewSwitcherDock = qobject_cast<ViewSwitcherDockWidget *>(dock);
-	connect(this, SIGNAL(mainWindowMoved(QWidget *)), m_viewSwitcherDock, SLOT(windowMoved(QWidget *)));
-
-#ifndef QT_NO_DEBUG
-	//dock->setStyleSheet("background-color: red;");
-	//m_viewSwitcher->setStyleSheet("background-color: blue;");
-#endif
 
 	makeDock(BinManager::Title, m_binManager, PartsBinMinHeight, PartsBinHeightDefault/*, Qt::LeftDockWidgetArea*/);
 
@@ -273,11 +261,6 @@ void MainWindow::initDock() {
 
 void MainWindow::moreInitDock() {
 	//DebugDialog::debug("create view switcher");
-
-	m_viewSwitcher = new ViewSwitcher(m_programView != NULL);
-	connect(m_viewSwitcher, SIGNAL(viewSwitched(int)), this, SLOT(viewSwitchedTo(int)));
-	connect(this, SIGNAL(viewSwitched(int)), m_viewSwitcher, SLOT(viewSwitchedTo(int)));
-	m_viewSwitcher->viewSwitchedTo(0);
 
     createDockWindows();
 

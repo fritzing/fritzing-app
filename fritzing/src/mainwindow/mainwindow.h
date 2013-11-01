@@ -45,7 +45,6 @@ $Date: 2013-04-28 14:14:07 +0200 (So, 28. Apr 2013) $
 #include "../viewlayer.h"
 #include "../program/programwindow.h"
 #include "../svg/svg2gerber.h"
-#include "../dock/viewswitcher.h"
 #include "../routingstatus.h"
 
 QT_BEGIN_NAMESPACE
@@ -607,6 +606,9 @@ protected:
 	QPointer<SketchAreaWidget> m_pcbWidget;
 	QPointer<class PCBSketchWidget> m_pcbGraphicsView;
 
+	QPointer<SketchAreaWidget> m_welcomeWidget;
+	QPointer<class WelcomeView> m_welcomeView;
+
     QPointer<class BinManager> m_binManager;
     QPointer<class MiniViewContainer> m_miniViewContainerBreadboard;
     QPointer<class MiniViewContainer> m_miniViewContainerSchematic;
@@ -856,9 +858,6 @@ protected:
 	QPointer<class TripleNavigator> m_tripleNavigator;
 	QDockWidget * m_navigatorDock;
 	QPointer<class FSizeGrip> m_sizeGrip;
-
-	QPointer<class ViewSwitcher> m_viewSwitcher;
-	QPointer<class ViewSwitcherDockWidget> m_viewSwitcherDock;
 
 	QTimer m_setUpDockManagerTimer;
 	QPointer<class FileProgressDialog> m_fileProgressDialog;

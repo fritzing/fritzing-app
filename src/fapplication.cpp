@@ -35,7 +35,6 @@ $Date: 2013-04-19 12:51:22 +0200 (Fr, 19. Apr 2013) $
 #include "version/versionchecker.h"
 #include "version/updatedialog.h"
 #include "itemdrag.h"
-#include "dock/viewswitcher.h"
 #include "items/wire.h"
 #include "partsbinpalette/binmanager/binmanager.h"
 #include "help/tipsandtricks.h"
@@ -533,7 +532,6 @@ FApplication::~FApplication(void)
 	ItemBase::cleanup();
 	Wire::cleanup();
 	DebugDialog::cleanup();
-	ViewSwitcher::cleanup();
 	ItemDrag::cleanup();
 	Version::cleanup();
 	TipsAndTricks::cleanup();

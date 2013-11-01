@@ -18,51 +18,29 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 ********************************************************************
 
-$Revision: 6373 $:
-$Author: cohen@irascible.com $:
-$Date: 2012-09-06 08:39:51 +0200 (Do, 06. Sep 2012) $
+$Revision: 6483 $:
+$Author: irascibl@gmail.com $:
+$Date: 2012-09-26 15:45:37 +0200 (Mi, 26. Sep 2012) $
 
 ********************************************************************/
 
 
-#ifndef VIEWSWITCHERDOCKWIDGET_H
-#define VIEWSWITCHERDOCKWIDGET_H
 
-#include "../mainwindow/fdockwidget.h"
+#ifndef WELCOMEVIEW_H
+#define WELCOMEVIEW_H
 
 
-class ViewSwitcherDockWidget : public FDockWidget
+#include <QTextEdit>
+
+
+class WelcomeView : public QTextEdit
 {
-    Q_OBJECT
-
+Q_OBJECT
 public:
-    ViewSwitcherDockWidget(const QString & title, QWidget * parent = 0);
-	~ViewSwitcherDockWidget();
-	
-	void setViewSwitcher(class ViewSwitcher *);
-	void setVisible(bool visible);
-	void restorePreference();
-	void prestorePreference();
-
-public slots:
-	void windowMoved(QWidget *);
-	void topLevelChangedSlot(bool topLevel);
-
-protected slots:
-	void savePreference();
-
-protected:
-	void calcWithin();
-	bool event(QEvent *event);
-	void resizeEvent(QResizeEvent * event);
-	void topLevelChangedSlotAux(bool topLevel);
-
-protected:
-	class ViewSwitcher * m_viewSwitcher;
-	QPoint m_offsetFromParent;
-	bool m_within;
-	QBitmap * m_bitmap;
+	WelcomeView(QWidget * parent = 0);
+	~WelcomeView();
 
 };
+
 
 #endif

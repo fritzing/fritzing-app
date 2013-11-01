@@ -1149,18 +1149,6 @@ background:#00f;
 border: 4px solid #f00;
 }
 
-/*this one is able to set some backgroundcolor, but cannot remove the bg
-#viewSwitcher QWidget{
-	background: #f0f;
-	border: 4px solid transparent;
-	}
-	
-
-#viewSwitcher QLabel { 
-	background: rgba (250,0,250,0);
-	margin:20px;
-	
-	}
 
 
 
@@ -1215,31 +1203,7 @@ WaitPushUndoStack {
         background-color: white;
         color: #0f0;
 }
-/*
-ViewSwitcher::item {
-        font-size: 40px;
-        font-family: Droid Sans, sans-serif;
-		background-image:none;
-}
 
-ViewSwitcher {
-        font-size: 40px;
-        font-family: Droid Sans, sans-serif;
-		background-image:none;
-}
-
-ViewSwitcherButton {
-        font-size: 40px;
-        font-family: Droid Sans, sans-serif;
-		background-image:none;
-}
-
-sketchWidget ViewSwitcher {
-        font-size: 5px;
-        font-weight: bold;
-        font-family: Droid Sans, sans-serif;
-}
-*/
 SearchLineEdit {
         color: #000000;
         font-size: 11px;

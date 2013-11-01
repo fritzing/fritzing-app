@@ -35,7 +35,6 @@ QMultiHash<ViewLayer::ViewLayerID, ViewLayer::ViewLayerID> ViewLayer::alternativ
 QMultiHash<ViewLayer::ViewLayerID, ViewLayer::ViewLayerID> ViewLayer::unconnectables;
 QHash<QString, ViewLayer::ViewLayerID> ViewLayer::xmlHash;
 
-//204 198 43
 const QString ViewLayer::Copper0Color = "#ccc68f";  // "#F28A00";
 const QString ViewLayer::Copper1Color = "#ccc68f";  // "#FFCB33"; 
 const QString ViewLayer::Copper0WireColor = "#F28A00";

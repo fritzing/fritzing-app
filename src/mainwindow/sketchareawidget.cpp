@@ -121,7 +121,6 @@ QWidget *SketchAreaWidget::separator(QWidget* parent) {
 
 void SketchAreaWidget::setRoutingStatusLabel(ExpandingLabel * rsl) {
 	m_routingStatusLabel = rsl;
-  /*  m_routingStatusLabel-> setObjectName("RoutingStatusLabel"); */
 }
 
 ExpandingLabel * SketchAreaWidget::routingStatusLabel() {

@@ -55,6 +55,7 @@ $Date: 2013-04-28 00:56:34 +0200 (So, 28. Apr 2013) $
 #include "../sketch/breadboardsketchwidget.h"
 #include "../sketch/schematicsketchwidget.h"
 #include "../sketch/pcbsketchwidget.h"
+#include "../sketch/welcomeview.h"
 #include "../svg/svgfilesplitter.h"
 #include "../utils/folderutils.h"
 #include "../utils/fmessagebox.h"
@@ -78,8 +79,6 @@ $Date: 2013-04-28 00:56:34 +0200 (So, 28. Apr 2013) $
 #include "../fsvgrenderer.h"
 #include "../utils/fsizegrip.h"
 #include "../utils/expandinglabel.h"
-#include "../dock/viewswitcher.h"
-#include "../dock/viewswitcherdockwidget.h"
 #include "../utils/autoclosemessagebox.h"
 #include "../utils/fileprogressdialog.h"
 #include "../utils/clickablelabel.h"
@@ -198,7 +197,6 @@ MainWindow::MainWindow(ReferenceModel *referenceModel, QWidget * parent) :
 	m_programView = m_programWindow = NULL;
 	m_windowMenuSeparator = NULL;
 	m_schematicWireColorMenu = m_breadboardWireColorMenu = NULL;
-	m_viewSwitcherDock = NULL;
 	m_checkForUpdatesAct = NULL;
 	m_fileProgressDialog = NULL;
 	m_currentGraphicsView = NULL;
@@ -280,24 +278,26 @@ MainWindow::MainWindow(ReferenceModel *referenceModel, QWidget * parent) :
 }
 
 QWidget * MainWindow::createTabWidget() {
-	return new QStackedWidget(this);
+	//return new QStackedWidget(this);
+    return new QTabWidget(this);
 }
 
 void MainWindow::addTab(QWidget * widget, const QString & label) {
-	Q_UNUSED(label);
-	qobject_cast<QStackedWidget *>(m_tabWidget)->addWidget(widget);
+	//Q_UNUSED(label);
+	//qobject_cast<QStackedWidget *>(m_tabWidget)->addWidget(widget);
+    qobject_cast<QTabWidget *>(m_tabWidget)->addTab(widget, label);
 }
 
 int MainWindow::currentTabIndex() {
-	return qobject_cast<QStackedWidget *>(m_tabWidget)->currentIndex();
+	return qobject_cast<QTabWidget *>(m_tabWidget)->currentIndex();
 }
 
 void MainWindow::setCurrentTabIndex(int index) {
-	qobject_cast<QStackedWidget *>(m_tabWidget)->setCurrentIndex(index);
+	qobject_cast<QTabWidget *>(m_tabWidget)->setCurrentIndex(index);
 }
 
 QWidget * MainWindow::currentTabWidget() {
-	return qobject_cast<QStackedWidget *>(m_tabWidget)->currentWidget();
+	return qobject_cast<QTabWidget *>(m_tabWidget)->currentWidget();
 }
 
 void MainWindow::init(ReferenceModel *referenceModel, bool lockFiles) {
@@ -314,6 +314,11 @@ void MainWindow::init(ReferenceModel *referenceModel, bool lockFiles) {
 	}
 
     initLockedFiles(lockFiles);
+
+
+    m_welcomeView = new WelcomeView(this);
+	SketchAreaWidget * sketchAreaWidget = new SketchAreaWidget(m_welcomeView, this);
+	addTab(sketchAreaWidget, tr("Welcome"));
 
     initSketchWidgets();
     initProgrammingWidget();
@@ -372,17 +377,11 @@ void MainWindow::init(ReferenceModel *referenceModel, bool lockFiles) {
 	}
 
 	QSettings settings;
-    if (m_viewSwitcherDock) {
-        m_viewSwitcherDock->prestorePreference();
-    }
+
 	if(!settings.value(m_settingsPrefix + "state").isNull()) {
 		restoreState(settings.value(m_settingsPrefix + "state").toByteArray());
 		restoreGeometry(settings.value(m_settingsPrefix + "geometry").toByteArray());
 	}
-    if (m_viewSwitcherDock) {
-        m_viewSwitcherDock->restorePreference();
-        m_viewSwitcherDock->setViewSwitcher(m_viewSwitcher);
-    }
 
 	setMinimumSize(0,0);
 	m_tabWidget->setMinimumWidth(500);
@@ -923,6 +922,8 @@ void MainWindow::updateZoomSlider(double zoom) {
 }
 
 SketchAreaWidget *MainWindow::currentSketchArea() {
+    if (m_currentGraphicsView == NULL) return NULL;
+
 	return dynamic_cast<SketchAreaWidget*>(m_currentGraphicsView->parent());
 }
 
@@ -2266,7 +2267,7 @@ void MainWindow::changeBoardLayers(int layers, bool doEmit) {
 	Q_UNUSED(doEmit);
 	Q_UNUSED(layers);
 	updateActiveLayerButtons();
-	m_currentGraphicsView->updateConnectors();
+	if (m_currentGraphicsView) m_currentGraphicsView->updateConnectors();
 }
 
 void MainWindow::updateActiveLayerButtons() {
@@ -2456,7 +2457,9 @@ void MainWindow::routingStatusLabelMouseRelease(QMouseEvent* event) {
 }
 
 void MainWindow::routingStatusLabelMouse(QMouseEvent*, bool show) {
-	if (show) DebugDialog::debug("-------");
+	//if (show) DebugDialog::debug("-------");
+
+    if (m_currentGraphicsView == NULL) return;
 
 	QSet<ConnectorItem *> toShow;
 	foreach (QGraphicsItem * item, m_currentGraphicsView->scene()->items()) {
@@ -2472,13 +2475,13 @@ void MainWindow::routingStatusLabelMouse(QMouseEvent*, bool show) {
 	}
 	QList<ConnectorItem *> visited;
 	foreach (ConnectorItem * connectorItem, toShow) {
-		if (show) {
-			DebugDialog::debug(QString("unrouted %1 %2 %3 %4")
-				.arg(connectorItem->attachedToInstanceTitle())
-				.arg(connectorItem->attachedToID())
-				.arg(connectorItem->attachedTo()->title())
-				.arg(connectorItem->connectorSharedName()));
-		}
+		//if (show) {
+		//	DebugDialog::debug(QString("unrouted %1 %2 %3 %4")
+		//		.arg(connectorItem->attachedToInstanceTitle())
+		//		.arg(connectorItem->attachedToID())
+		//		.arg(connectorItem->attachedTo()->title())
+		//		.arg(connectorItem->connectorSharedName()));
+		//}
 
 		if (connectorItem->isActive() && connectorItem->isVisible() && !connectorItem->hidden() && !connectorItem->layerHidden()) {
 			connectorItem->showEqualPotential(show, visited);

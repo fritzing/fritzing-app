@@ -307,7 +307,7 @@ ViewThing::ViewThing() {
 PEMainWindow::PEMainWindow(ReferenceModel * referenceModel, QWidget * parent)
 	: MainWindow(referenceModel, parent)
 {
-	m_viewThings.insert(ViewLayer::BreadboardView, new ViewThing);
+    m_viewThings.insert(ViewLayer::BreadboardView, new ViewThing);
 	m_viewThings.insert(ViewLayer::SchematicView, new ViewThing);
 	m_viewThings.insert(ViewLayer::PCBView, new ViewThing);
 	m_viewThings.insert(ViewLayer::IconView, new ViewThing);
@@ -3214,8 +3214,9 @@ void PEMainWindow::replaceProperty(const QString & key, const QString & value, Q
 }
 
 QWidget * PEMainWindow::createTabWidget() {
-	return new QTabWidget(this);
-    this-> setObjectName("peTabs");
+    QTabWidget * tabWidget = new QTabWidget(this);
+    tabWidget->setObjectName("peTabs");
+	return tabWidget;
 }
 
 void PEMainWindow::addTab(QWidget * widget, const QString & label) {

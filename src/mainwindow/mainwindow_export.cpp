@@ -551,6 +551,8 @@ void MainWindow::doExport() {
 
 void MainWindow::exportAux(QString fileName, QImage::Format format, int quality, bool removeBackground) 
 {
+    if (m_currentGraphicsView == NULL) return;
+
     double resMultiplier = 3;
 
     QRectF itemsBoundingRect;

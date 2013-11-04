@@ -194,6 +194,10 @@ ItemBase * PartFactory::createPartAux( ModelPart * modelPart, ViewLayer::ViewID 
 					}
 
 				}
+                // TODO: use the list in properties.xml
+                if (moduleID == "alps-starter-pot9mm") {
+				    return new Capacitor(modelPart, viewID, viewGeometry, id, itemMenu, doLabel);
+                }
 				QString family = modelPart->properties().value("family", "");
 				if (family.compare("mystery part", Qt::CaseInsensitive) == 0) {
 					return new MysteryPart(modelPart, viewID, viewGeometry, id, itemMenu, doLabel);

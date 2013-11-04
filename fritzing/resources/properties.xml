@@ -137,6 +137,7 @@
   
 <property  name="maximum resistance" symbol="&#937;" minValue="" maxValue="" defaultValue="" numeric="yes" editable="yes">
   	<suffix suffix="PotentiometerModuleID"/>
+	<suffix suffix="alps-starter-pot9mm" />
 </property>
   
 <property name="inductance" symbol="H" minValue="" maxValue="" defaultValue="" numeric="yes" editable="yes">

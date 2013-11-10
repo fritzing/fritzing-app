@@ -422,7 +422,7 @@ bool PaletteItemBase::setUpImage(ModelPart * modelPart, const LayerHash & viewLa
 	}
 
 	if (!m_viewGeometry.transform().isIdentity()) {
-		setTransform(m_viewGeometry.transform());
+		setInitialTransform(m_viewGeometry.transform());
 		update();
 	}
 
@@ -788,6 +788,11 @@ QString PaletteItemBase::normalizeSvg(QString & svg, ViewLayer::ViewLayerID view
 	return splitter.elementString(xmlName);
 }
 
+
+void PaletteItemBase::setInitialTransform(const QTransform &matrix)
+{
+    setTransform(matrix);
+}
 
 /*
 

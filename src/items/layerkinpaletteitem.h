@@ -101,6 +101,7 @@ protected:
     void positionTexts(QList<QDomElement> & texts);
     void initTextThings();
     QString vflip(const QString & svg, bool isFlipped);
+    void setInitialTransform(const QTransform &);
 
 protected:
     bool m_flipped;

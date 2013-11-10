@@ -489,3 +489,7 @@ QString SchematicTextLayerKinPaletteItem::vflip(const QString & svg, bool isFlip
 
     return doc.toString();
 }
+
+void SchematicTextLayerKinPaletteItem::setInitialTransform(const QTransform & matrix) {
+    setTransform2(matrix);
+}

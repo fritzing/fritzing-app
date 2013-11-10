@@ -401,6 +401,8 @@ bool PaletteItemBase::setUpImage(ModelPart * modelPart, const LayerHash & viewLa
 		return false;
 	}
 
+    cacheLoaded(layerAttributes);
+
 	m_canFlipVertical = modelPart->canFlipVertical(layerAttributes.viewID);
 	m_canFlipHorizontal = modelPart->canFlipHorizontal(layerAttributes.viewID);
 	m_filename = layerAttributes.filename();
@@ -788,10 +790,13 @@ QString PaletteItemBase::normalizeSvg(QString & svg, ViewLayer::ViewLayerID view
 	return splitter.elementString(xmlName);
 }
 
-
 void PaletteItemBase::setInitialTransform(const QTransform &matrix)
 {
     setTransform(matrix);
+}
+
+void PaletteItemBase::cacheLoaded(const LayerAttributes &)
+{
 }
 
 /*

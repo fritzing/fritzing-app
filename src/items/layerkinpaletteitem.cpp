@@ -217,11 +217,9 @@ SchematicTextLayerKinPaletteItem::SchematicTextLayerKinPaletteItem(PaletteItemBa
 {
 }
 
-bool SchematicTextLayerKinPaletteItem::setUpImage(ModelPart * modelPart, const LayerHash & viewLayers, LayerAttributes & layerAttributes)
+void SchematicTextLayerKinPaletteItem::cacheLoaded(const LayerAttributes & layerAttributes)
 {
-	bool result = PaletteItemBase::setUpImage(modelPart, viewLayers, layerAttributes);
     this->setProperty("textSvg", layerAttributes.loaded());
-    return result;
 }
 
 void SchematicTextLayerKinPaletteItem::setTransform2(const QTransform & currTransf) {
@@ -488,4 +486,8 @@ QString SchematicTextLayerKinPaletteItem::vflip(const QString & svg, bool isFlip
     }
 
     return doc.toString();
+}
+
+void SchematicTextLayerKinPaletteItem::setInitialTransform(const QTransform & matrix) {
+    setTransform2(matrix);
 }

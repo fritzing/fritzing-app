@@ -53,6 +53,7 @@ $Date: 2013-04-28 14:14:07 +0200 (So, 28. Apr 2013) $
 #include "../infoview/htmlinfoview.h"
 #include "../utils/bendpointaction.h"
 #include "../sketch/fgraphicsscene.h"
+#include "../utils/fmessagebox.h"
 #include "../utils/fileprogressdialog.h"
 #include "../svg/svgfilesplitter.h"
 #include "../version/version.h"
@@ -207,7 +208,7 @@ void MainWindow::mainLoadAux(const QString & fileName)
 
 	QFile file(fileName);
 	if (!file.exists()) {
-       QMessageBox::warning(this, tr("Fritzing"),
+       FMessageBox::warning(this, tr("Fritzing"),
                              tr("Cannot find file %1.")
                              .arg(fileName));
 
@@ -218,7 +219,7 @@ void MainWindow::mainLoadAux(const QString & fileName)
 
 
     if (!file.open(QFile::ReadOnly | QFile::Text)) {
-        QMessageBox::warning(this, tr("Fritzing"),
+        FMessageBox::warning(this, tr("Fritzing"),
                              tr("Cannot read file  1 %1:\n%2.")
                              .arg(fileName)
                              .arg(file.errorString()));
@@ -272,14 +273,14 @@ void MainWindow::revert() {
 bool MainWindow::loadWhich(const QString & fileName, bool setAsLastOpened, bool addToRecent, bool checkObsolete, const QString & displayName)
 {
 	if (!QFileInfo(fileName).exists()) {
-		QMessageBox::warning(NULL, tr("Fritzing"), tr("File '%1' not found").arg(fileName));
+		FMessageBox::warning(NULL, tr("Fritzing"), tr("File '%1' not found").arg(fileName));
 		return false;
 	}
 
 	bool result = false;
     if (fileName.endsWith(FritzingSketchExtension)) {
 		QFileInfo info(fileName);
-		QMessageBox messageBox(NULL);
+		FMessageBox messageBox(NULL);
 		messageBox.setWindowTitle(tr("the .fz file format is obsolete"));
 		messageBox.setText(tr("The .fz file format has been deprecated.\n\nWould you like to convert '%1' to the .fzz format now or open it read-only?\n").arg(info.fileName()));
 		messageBox.setInformativeText(tr("The conversion process will not modify '%1'.").arg(info.fileName()));
@@ -3041,7 +3042,7 @@ void MainWindow::importFilesFromPrevInstall() {
             QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
 	if(prevInstallPath.isNull()) return;
 	if(!QFileInfo(prevInstallPath+"/parts").exists()) {
-		QMessageBox::critical(
+		FMessageBox::critical(
 			this, QObject::tr("Fritzing"),
 			tr("The folder \"%1\" isn't a Fritzing installation folder").arg(prevInstallPath));
 		return;
@@ -3075,7 +3076,7 @@ void MainWindow::importFilesFromPrevInstall() {
 		FolderUtils::slamCopy(myOldPartsBinFile, userDataPath+myPartsBinRelPath.replace(".fzb",newNamePostfix));
 	}
 
-	QMessageBox::information(
+	FMessageBox::information(
 		this, QObject::tr("Fritzing"),
 		tr("You will have to restart Fritzing in order to use the imported parts"));
 }
@@ -3678,7 +3679,7 @@ QList<ItemBase *> MainWindow::selectAllObsolete(bool displayFeedback) {
 }
 
 void MainWindow::checkSwapObsolete(QList<ItemBase *> & items) {
-    QMessageBox::StandardButton answer = QMessageBox::question(
+    QMessageBox::StandardButton answer = FMessageBox::question(
             this,
             tr("Outdated parts"),
             tr("There are %n outdated part(s) in this sketch. ", "", items.count()) +
@@ -3744,7 +3745,7 @@ void MainWindow::swapObsolete(bool displayFeedback, QList<ItemBase *> & items) {
 	foreach (ItemBase * itemBase, itemBases) {
 		ModelPart * newModelPart = findReplacedby(itemBase->modelPart());
 		if (newModelPart == NULL) {
-			QMessageBox::information(
+			FMessageBox::information(
 				this,
 				tr("Sorry!"),
 				tr( "unable to find replacement for %1.\n").arg(itemBase->title())
@@ -4032,13 +4033,13 @@ QStringList MainWindow::newDesignRulesCheck(bool showOkMessage)
         if (boardCount == 0) {
             QString message = tr("Your sketch does not have a board yet! DRC only works with a PCB.");
             results << message;
-            QMessageBox::critical(this, tr("Fritzing"), message);
+            FMessageBox::critical(this, tr("Fritzing"), message);
             return results;
         }
         if (board == NULL) {
             QString message = tr("Please select a PCB. DRC only works on one board at a time.");
             results << message;
-            QMessageBox::critical(this, tr("Fritzing"), message);
+            FMessageBox::critical(this, tr("Fritzing"), message);
             return results;
         }
 	}

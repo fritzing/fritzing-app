@@ -11,7 +11,7 @@
  </g>
  <g id="copper0" >
  <g id="copper1" >
-  <rect width="64" x="7" y="29" fill="none" height="64" stroke="rgb(255, 191, 0)" stroke-width="20" />
+  <!--  <rect width="64" x="7" y="29" fill="none" height="64" stroke="rgb(255, 191, 0)" stroke-width="20" /> -->
   <circle fill="none" cx="41" cy="60" stroke="rgb(255, 191, 0)" r="31" id="connector0pin" stroke-width="20" />
   <circle fill="none" cx="641" cy="60" stroke="rgb(255, 191, 0)" r="31" id="connector1pin" stroke-width="20" />
  </g> 

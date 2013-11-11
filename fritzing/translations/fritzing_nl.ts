@@ -57,7 +57,7 @@
     </message>
     <message>
         <source>Durrell Bishop, David Cuartielles, Fabian Hemmert, </source>
-        <translation>aDurrell Bishop, David Cuartielles, Fabian Hemmert, </translation>
+        <translation>Durrell Bishop, David Cuartielles, Fabian Hemmert, </translation>
     </message>
     <message>
         <source>Gero Herkenrath, Jeff Hoefs, Tom Hulbert, </source>
@@ -161,23 +161,23 @@
     </message>
     <message>
         <source>to Lionel Michel and Yvan Kloster for the French translation, </source>
-        <translation type="unfinished"></translation>
+        <translation>aan Lionel Michel en Yvan Kloster voor de Franse vertaling, </translation>
     </message>
     <message>
         <source>to Cihan Mete Bahad&amp;#x0131;r for the Turkish translation, </source>
-        <translation type="unfinished"></translation>
+        <translation>aan Cihan Mete Bahadır voor de Turkse vertaling, </translation>
     </message>
     <message>
         <source>and to Arthur Zanona, Nuno Pessanha Santos, Leandro Nunes, and Gabriel Ferreira for the Portuguese (Brazilian) translation. </source>
-        <translation type="unfinished"></translation>
+        <translation>en aan Arthur Zanona, Nuno Pessanha Santos, Leandro Nunes, and Gabriel Ferreira voor de Portugeese (Braziliaanse) vertaling. </translation>
     </message>
     <message>
         <source>to Nikolay Stankov for the Bulgarian translation, </source>
-        <translation type="unfinished"></translation>
+        <translation>aan Nikolay Stankov voor de Bulgaarse vertaling, </translation>
     </message>
     <message>
         <source>and from each purchase of a Fritzing Starter Kit or a PCB from Fritzing Fab.</source>
-        <translation type="unfinished"></translation>
+        <translation>en van elke aankoop van een Fritzing Starter Kit of een PCB van Fritzing Fab.</translation>
     </message>
 </context>
 <context>
@@ -437,19 +437,19 @@
     </message>
     <message>
         <source>Copy to Sketch</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopieer naar Sketch</translation>
     </message>
     <message>
         <source>Copy all the parts in the bin to a sketch</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopieer alle onderdelen in de koffer naar een sketch</translation>
     </message>
     <message>
         <source>Copy all to Sketch</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopieer alles naar Sketch</translation>
     </message>
     <message>
         <source>Copy all loaded parts to the sketch</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopieer alle geladen onderdelen naar de sketch</translation>
     </message>
 </context>
 <context>
@@ -520,7 +520,7 @@
     </message>
     <message>
         <source>the svg doesn&apos;t fit the custom board format</source>
-        <translation>de SVG past niet op het standaar bord formaat</translation>
+        <translation>de SVG past niet op het standaard bord formaat</translation>
     </message>
     <message>
         <source>Unable to load</source>
@@ -545,54 +545,56 @@ Wil je het bestand gebruiken?</translation>
 
 A custom board svg typically has one or two silkscreen layers and one board layer.
 </source>
-        <translation type="unfinished"></translation>
+        <translation>
+
+Een aangepast bord svg heeft normaal gesproken een of twee silkscreen lagen en een bordlaag.</translation>
     </message>
     <message>
         <source>because there are multiple &lt;silkscreen0&gt; layers</source>
-        <translation type="unfinished"></translation>
+        <translation>omdat er meerdere &lt;silkscreen0&gt; lagen zijn</translation>
     </message>
     <message>
         <source>&lt;b&gt;The custom shape has been loaded, and you will see the new board shortly.&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;De aangepaste vorm is geladen en zal snel in beeld komen.&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;</translation>
     </message>
     <message>
         <source>Before actual PCB production we recommend that you test your custom shape by using the &apos;File &gt; Export for Production &gt; Extended Gerber&apos; option. </source>
-        <translation type="unfinished"></translation>
+        <translation>Voordat je de PCB gaat produceren, raden we je aan om de aangepaste vorm van het bord te testen. Ga naar Bestand &gt; Exporteer &gt;voor Productie &gt; Extended Gerber.</translation>
     </message>
     <message>
         <source>Check the resulting contour file with a Gerber-viewer application to make sure the shape came out as expected.&lt;br/&gt;&lt;br/&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Controleer het contour bestand met een Gerber-Viewer programma om er zeker van te zijn dat de vorm van de PCB juist is &lt;br/&gt;&lt;br/&gt;</translation>
     </message>
     <message>
         <source>The rest of this message concerns &apos;cutouts&apos;. </source>
-        <translation type="unfinished"></translation>
+        <translation>De rest van deze melding gaat over &apos;uitsnedes&apos;.</translation>
     </message>
     <message>
         <source>These are circular or irregularly-shaped holes that you can optionally incorporate into a custom PCB shape.&lt;br/&gt;&lt;br/&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Dit zijn cirkelvormige of onregelmatig gevormde gaten, welke optioneel toegevoegd kunnen worden aan een aangepaste bord vorm. &lt;br/&gt;&lt;br/&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;The custom shape has no cutouts.&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;De aangepaste vorm bevat geen uitsnedes.&lt;/b&gt;</translation>
     </message>
     <message numerus="yes">
         <source>&lt;b&gt;The custom shape has %n cutouts.&lt;/b&gt;</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>&lt;b&gt;De aangepaste vorm heeft %n uitsnede.&lt;/b&gt;</numerusform>
+            <numerusform>&lt;b&gt;De aangepaste vorm heeft %n uitsnedes.&lt;/b&gt;</numerusform>
         </translation>
     </message>
     <message>
         <source>&lt;br/&gt;However, the cutouts may not be formatted correctly.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;br/&gt;Het kan zijn dat de uitsnedes niet het juiste formaat hebben.</translation>
     </message>
     <message>
         <source>&lt;br/&gt;&lt;br/&gt;If you intended your custom shape to have cutouts and you did not get the expected result, </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;br/&gt;&lt;br/&gt;Als je aangepaste vorm uitsnedes zou moeten hebben en je krijgt niet het gewenste resultaat, </translation>
     </message>
     <message>
         <source>it is because Fritzing requires that you make cutouts using a shape &apos;subtraction&apos; or &apos;difference&apos; operation in your vector graphics editor.</source>
-        <translation type="unfinished"></translation>
+        <translation>is dat omdat Fritzing verlangt dat je de uitsnedes maakt door middel van een vorm via de &apos;substractie&apos; of &apos;verschil&apos; uitvoer binnen je vector programma.</translation>
     </message>
 </context>
 <context>
@@ -606,22 +608,22 @@ A custom board svg typically has one or two silkscreen layers and one board laye
     <name>BreadboardLogoItem</name>
     <message>
         <source>color</source>
-        <translation type="unfinished">kleur</translation>
+        <translation>kleur</translation>
     </message>
     <message>
         <source>Set text color</source>
-        <translation type="unfinished"></translation>
+        <translation>Stel tekst kleur in</translation>
     </message>
     <message>
         <source>Select text color</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecteer tekst kleur</translation>
     </message>
 </context>
 <context>
     <name>Capacitor</name>
     <message>
         <source>Select from the dropdown, or type in a %1 value</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecteer uit het dropdown menu of typ een %1 waarde</translation>
     </message>
 </context>
 <context>
@@ -776,6 +778,10 @@ Noot: Je kunt ze ook later importeren via &quot;Help&quot; &gt;&quot;Importeer o
     <message>
         <source>Fritzing (*%1)</source>
         <translation>Fritzing (*%1)</translation>
+    </message>
+    <message>
+        <source>Fritzing caught an exception from %1 in event %2: %3</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -985,23 +991,23 @@ Het is ook mogelijk om op een connector rechts te klikken en kies &apos;Maak gro
     </message>
     <message>
         <source>Placement</source>
-        <translation type="unfinished"></translation>
+        <translation>Plaatsing</translation>
     </message>
     <message>
         <source>pcb layer</source>
-        <translation type="unfinished"></translation>
+        <translation>pcb laag</translation>
     </message>
     <message>
         <source>location</source>
-        <translation type="unfinished"></translation>
+        <translation>locatie</translation>
     </message>
     <message>
         <source>rotation</source>
-        <translation type="unfinished"></translation>
+        <translation>rotatie</translation>
     </message>
     <message>
         <source>degrees</source>
-        <translation type="unfinished"></translation>
+        <translation>graden</translation>
     </message>
 </context>
 <context>
@@ -1164,31 +1170,31 @@ Het is ook mogelijk om op een connector rechts te klikken en kies &apos;Maak gro
     </message>
     <message>
         <source>banded</source>
-        <translation type="unfinished"></translation>
+        <translation>gestreept</translation>
     </message>
     <message>
         <source>top</source>
-        <translation type="unfinished">boven</translation>
+        <translation>boven</translation>
     </message>
     <message>
         <source>bottom</source>
-        <translation type="unfinished">onder</translation>
+        <translation>onder</translation>
     </message>
     <message>
         <source>copper bottom</source>
-        <translation type="unfinished"></translation>
+        <translation>koper onderkant</translation>
     </message>
     <message>
         <source>copper top</source>
-        <translation type="unfinished"></translation>
+        <translation>koper bovenkant</translation>
     </message>
     <message>
         <source>silkscreen bottom</source>
-        <translation type="unfinished"></translation>
+        <translation>silkscreen onderkant</translation>
     </message>
     <message>
         <source>silkscreen top</source>
-        <translation type="unfinished"></translation>
+        <translation>silkscreen bovenkant</translation>
     </message>
 </context>
 <context>
@@ -1640,7 +1646,7 @@ Wij werken er momenteel aan om dit bericht te vermijden en je te laten kiezen tu
     </message>
     <message>
         <source>Copy selection</source>
-        <translation>Kopiëer selectie</translation>
+        <translation>Kopieer selectie</translation>
     </message>
     <message>
         <source>&amp;Paste</source>
@@ -3102,175 +3108,177 @@ Doorgaan en terug naar vorige versie?</translation>
     </message>
     <message>
         <source>SPICE Netlist...</source>
-        <translation type="unfinished"></translation>
+        <translation>SPICE Netlist...</translation>
     </message>
     <message>
         <source>Save a netlist in SPICE format</source>
-        <translation type="unfinished"></translation>
+        <translation>Sla een netlist op in SPICE formaat</translation>
     </message>
     <message>
         <source>Unable to open &apos;%1&apos;: %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Niet mogelijk om %1 te openen:%2</translation>
     </message>
     <message>
         <source>Unable to open shareable &apos;%1&apos;: %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Niet mogelijk om &apos;%1&apos; te openen als uitwisselbare:%2</translation>
     </message>
     <message>
         <source>Unable to open shareable part &apos;%1&apos;: %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Niet mogelijk om &apos;%1&apos; te openen als uitwisselbaar onderdeel:%2</translation>
     </message>
     <message>
         <source>Export SPICE Netlist...</source>
-        <translation type="unfinished"></translation>
+        <translation>Exporteer SPICE NetList...</translation>
     </message>
     <message>
         <source>Set Ground Fill Keepout...</source>
-        <translation type="unfinished"></translation>
+        <translation>Stel Ground Vulling Veiligheidsafstand In...</translation>
     </message>
     <message>
         <source>Set the minimum distance between ground fill and traces or connectors</source>
-        <translation type="unfinished"></translation>
+        <translation>Stel de minimale veiligheidsafstand in tussen een ground vulling en banen of aansluitingen</translation>
     </message>
     <message>
         <source>Enter Text</source>
-        <translation type="unfinished"></translation>
+        <translation>Voer Text in</translation>
     </message>
     <message>
         <source>View from Above</source>
-        <translation type="unfinished"></translation>
+        <translation>Bekijk van Boven</translation>
     </message>
     <message>
         <source>View from Below</source>
-        <translation type="unfinished"></translation>
+        <translation>Bekijk van Onder</translation>
     </message>
     <message>
         <source>View from below</source>
-        <translation type="unfinished"></translation>
+        <translation>Bekijk van onder</translation>
     </message>
     <message>
         <source>View the PCB from the bottom layers upwards</source>
-        <translation type="unfinished"></translation>
+        <translation>Bekijk de PCB vanaf de onderste laag omhoog</translation>
     </message>
     <message>
         <source>View from above</source>
-        <translation type="unfinished"></translation>
+        <translation>Bekijk van boven</translation>
     </message>
     <message>
         <source>View the PCB from the top layers downwards</source>
-        <translation type="unfinished"></translation>
+        <translation>Bekijk de PCB vanaf de bovenste laag naar onder</translation>
     </message>
     <message>
         <source>Delete Minus</source>
-        <translation type="unfinished"></translation>
+        <translation>Verwijder Minimaal</translation>
     </message>
     <message>
         <source>Delete selection without attached wires</source>
-        <translation type="unfinished"></translation>
+        <translation>Verwijder de selectie zonder gekoppelde draden</translation>
     </message>
     <message>
         <source>Delete Wire up to bendpoints</source>
-        <translation type="unfinished"></translation>
+        <translation>Verwijder de draad tot een buigpunt</translation>
     </message>
     <message>
         <source>Move to bottom layer</source>
-        <translation type="unfinished"></translation>
+        <translation>Verplaats naar onderste laag</translation>
     </message>
     <message>
         <source>Move to top layer</source>
-        <translation type="unfinished"></translation>
+        <translation>Verplaats naar de bovenste laag</translation>
     </message>
     <message>
         <source>Align Left</source>
-        <translation type="unfinished"></translation>
+        <translation>Links Uitlijnen</translation>
     </message>
     <message>
         <source>Align selected items at the left</source>
-        <translation type="unfinished"></translation>
+        <translation>Lijn de geselecteerde onderdelen links uit</translation>
     </message>
     <message>
         <source>Align Horizontal Center</source>
-        <translation type="unfinished"></translation>
+        <translation>Horizontaal Gecentreerd Uitlijnen</translation>
     </message>
     <message>
         <source>Align selected items at the horizontal center</source>
-        <translation type="unfinished"></translation>
+        <translation>Lijn de geselecteerde onderdelen Horizontaal gecentreerd uit</translation>
     </message>
     <message>
         <source>Align Right</source>
-        <translation type="unfinished"></translation>
+        <translation>Rechts Uitlijnen</translation>
     </message>
     <message>
         <source>Align selected items at the right</source>
-        <translation type="unfinished"></translation>
+        <translation>Lijn de geselecteerde onderdelen rechts uit</translation>
     </message>
     <message>
         <source>Align Top</source>
-        <translation type="unfinished"></translation>
+        <translation>Boven Uitlijnen</translation>
     </message>
     <message>
         <source>Align selected items at the top</source>
-        <translation type="unfinished"></translation>
+        <translation>Lijn de geselecteerde onderdelen boven uit</translation>
     </message>
     <message>
         <source>Align Vertical Center</source>
-        <translation type="unfinished"></translation>
+        <translation>Vertikaal Gecentreerd Uitlijnen</translation>
     </message>
     <message>
         <source>Align selected items at the vertical center</source>
-        <translation type="unfinished"></translation>
+        <translation>Lijn de geselecteerde onderdelen vertikaal gecentreerd uit</translation>
     </message>
     <message>
         <source>Align Bottom</source>
-        <translation type="unfinished"></translation>
+        <translation>Onder Uitlijnen</translation>
     </message>
     <message>
         <source>Align selected items at the bottom</source>
-        <translation type="unfinished"></translation>
+        <translation>Lijn de geselecteerde onderdelen onder uit</translation>
     </message>
     <message>
         <source>Align</source>
-        <translation type="unfinished"></translation>
+        <translation>Uitlijnen</translation>
     </message>
     <message>
         <source>top and bottom</source>
-        <translation type="unfinished"></translation>
+        <translation>boven en onder</translation>
     </message>
     <message>
         <source>bottom</source>
-        <translation type="unfinished">onder</translation>
+        <translation>onder</translation>
     </message>
     <message>
         <source>top</source>
-        <translation type="unfinished">boven</translation>
+        <translation>boven</translation>
     </message>
     <message>
         <source>Ground Fill (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ground vulling (%1)</translation>
     </message>
     <message>
         <source>Copper Fill (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Koper Vulling (%1)</translation>
     </message>
     <message>
         <source>We strongly recommend that you update these parts to the latest version. </source>
-        <translation type="unfinished"></translation>
+        <translation>We raden je ten zeerste aan om deze onderdelen  te updaten naar de laatste versie. </translation>
     </message>
     <message>
         <source>This may result in some small changes to your sketch, because parts or connectors may be shifted. </source>
-        <translation type="unfinished"></translation>
+        <translation>Dit kan resulteren in een kleine verandering in je sketch. Onderdelen of aansluitingen kunnen iets verplaatst zijn. </translation>
     </message>
     <message>
         <source>
 
 Do you want to update now?</source>
-        <translation type="unfinished"></translation>
+        <translation>
+
+Wil je nu updaten?</translation>
     </message>
     <message numerus="yes">
         <source>There are %n outdated part(s) in this sketch. </source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>Er is %n onderdeel niet up to date in deze sketch. </numerusform>
+            <numerusform>Er zijn %n onderdelen niet up to date in deze sketch. </numerusform>
         </translation>
     </message>
 </context>
@@ -3367,7 +3375,7 @@ Reden : %2 (errcode %3)</translation>
     <name>NetLabel</name>
     <message>
         <source>net label</source>
-        <translation type="unfinished">net label</translation>
+        <translation>net label</translation>
     </message>
 </context>
 <context>
@@ -3433,7 +3441,7 @@ Reden : %2 (errcode %3)</translation>
     </message>
     <message>
         <source>Clear ground fill seeds</source>
-        <translation>Verwijder gound vulling seeds</translation>
+        <translation>Verwijder ground vulling seeds</translation>
     </message>
     <message>
         <source>%1 Fill: please select the board you want to apply fill to.</source>
@@ -3481,42 +3489,48 @@ Reden : %2 (errcode %3)</translation>
     </message>
     <message>
         <source>Enter Keepout</source>
-        <translation type="unfinished"></translation>
+        <translation>Voer veiligheids afstand in</translation>
     </message>
     <message>
         <source>Keepout is in mils (.001 inches).
 
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Veiligheidsafstand is in mils (.001 inches).
+
+</translation>
     </message>
     <message>
         <source>Note that due to aliasing, distances may be too short by up to 2 mils
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Houd er rekening mee dat door kartelvorming afstanden tot 2 mils te kort kunnen zijn
+</translation>
     </message>
     <message>
         <source>so you may want to increase the keepout value by that much.
 
 </source>
-        <translation type="unfinished"></translation>
+        <translation>dus je zult de veiligheidsafstand met die waarde moeten vergroten.
+</translation>
     </message>
     <message>
         <source>10 mils is a good default choice.
 
 </source>
-        <translation type="unfinished"></translation>
+        <translation>10 mils is een goede standaard keuze.
+
+</translation>
     </message>
     <message>
         <source>Enter keepout value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Voer veiligheids afstand in:</translation>
     </message>
     <message>
         <source>Fritzing Fab Quote</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing Fab Offerte</translation>
     </message>
     <message>
         <source>Sorry, http://fab.fritzing.org is not responding to the quote request. Please check your network connection and/or try again later.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sorry, http://fab.fritzing.org reageert niet op je offerte verzoek. Controleer je netwerkinstellingen en/of probeer later opnieuw.</translation>
     </message>
 </context>
 <context>
@@ -4072,19 +4086,19 @@ Doorgaan en opslaan?</translation>
     </message>
     <message>
         <source>Unable to load fzp from %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Niet mogelijk om fzp te laden van %1</translation>
     </message>
     <message>
         <source>Unable to create new connector--you may have to start over.</source>
-        <translation type="unfinished"></translation>
+        <translation>Niet mogelijk om een nieuwe aansluiting te maken--Misschien moet je opnieuw beginnen.</translation>
     </message>
     <message>
         <source>Filename prefix</source>
-        <translation type="unfinished"></translation>
+        <translation>Bestandsnaam voorvoegsel</translation>
     </message>
     <message>
         <source>Please enter a prefix to help you identify the part files. The names will have the form &apos;PREFIX_%1&apos;. (It is not necessary to change the prefix, since a unique suffix is always added.)</source>
-        <translation type="unfinished"></translation>
+        <translation>Voer een voorvoegsel in om je onderdeelbestanden te herkennen. De namen zullen er als volgt uitzien &apos;VOORVOEGSEL_%1&apos; (Het is niet noodzakelijk om het voorvoegsel te veranderen, omdat altijd een uniek achtervoegsel gemaakt wordt.)</translation>
     </message>
 </context>
 <context>
@@ -4763,7 +4777,7 @@ De shift toets wisselt de as</translation>
     </message>
     <message>
         <source>Curvy wires and legs</source>
-        <translation type="unfinished"></translation>
+        <translation>Gebogen draden en poten</translation>
     </message>
 </context>
 <context>
@@ -4826,7 +4840,7 @@ De shift toets wisselt de as</translation>
     </message>
     <message>
         <source>While it is possible to read and edit %1 programming files, it is not yet possible to use Fritzing to compile or upload these programs to a microcontroller.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hoewel het mogelijk is om %1 programmeer bestanden te openen en aan te passen, is het nog niet mogelijk om met Fritzing deze bestanden te compileren of te uploaden op een microcontroller.</translation>
     </message>
 </context>
 <context>
@@ -4949,7 +4963,7 @@ De shift toets wisselt de as</translation>
     </message>
     <message>
         <source>Copy selection</source>
-        <translation>Kopiëer selectie</translation>
+        <translation>Kopieer selectie</translation>
     </message>
     <message>
         <source>&amp;Paste</source>
@@ -5382,7 +5396,7 @@ Fritzing werkt nog steeds, maar je kunt geen eigenschappen van de onderdelen wij
     </message>
     <message>
         <source>Copying file %1</source>
-        <translation>Kopiëert bestand %1</translation>
+        <translation>Kopieert bestand %1</translation>
     </message>
     <message>
         <source>File %1 already exists: it won&apos;t be overwritten</source>
@@ -5768,43 +5782,43 @@ Fritzing werkt nog steeds, maar je kunt geen eigenschappen van de onderdelen wij
     </message>
     <message>
         <source>%1 layer export is empty.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 laag export is leeg.</translation>
     </message>
     <message>
         <source>exported drill file is empty</source>
-        <translation type="unfinished"></translation>
+        <translation>het geëxporteerde boorbestand is leeg</translation>
     </message>
     <message>
         <source>exported mask layer %1 is empty</source>
-        <translation type="unfinished"></translation>
+        <translation>de geëxporteerde masker laag %1 is leeg</translation>
     </message>
     <message>
         <source>exported paste mask layer is empty</source>
-        <translation type="unfinished"></translation>
+        <translation>de geëxporteerde soldeerpasta masker laag is leeg</translation>
     </message>
     <message>
         <source>%1 layer: unable to save to &apos;%2&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 laag: niet mogelijk om naar &apos;%2&apos; op te slaan</translation>
     </message>
     <message>
         <source>Unable to save pick and place file: %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Niet mogelijk om pick and place bestand op te slaan:%2</translation>
     </message>
     <message>
         <source>Text</source>
-        <translation type="unfinished"></translation>
+        <translation>Tekst</translation>
     </message>
     <message>
         <source>%1 layer export is empty (case 2).</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 laag export is leeg (case 2).</translation>
     </message>
     <message>
         <source>silk layer %1 export is empty</source>
-        <translation type="unfinished"></translation>
+        <translation>silkscreen laag %1 export is leeg</translation>
     </message>
     <message>
         <source>%2 ... %1 wires moved from their saved position</source>
-        <translation type="unfinished"></translation>
+        <translation>%2 ...%1 draden verplaatst van hun opgeslagen positie</translation>
     </message>
 </context>
 <context>
@@ -5838,54 +5852,54 @@ Fritzing werkt nog steeds, maar je kunt geen eigenschappen van de onderdelen wij
     </message>
     <message>
         <source>Order your PCB from Fritzing Fab</source>
-        <translation type="unfinished"></translation>
+        <translation>Bestel je PCB van Fritzing Fab</translation>
     </message>
     <message>
         <source>Price per board</source>
-        <translation type="unfinished"></translation>
+        <translation>Prijs per bord</translation>
     </message>
     <message>
         <source>Price</source>
-        <translation type="unfinished"></translation>
+        <translation>Prijs</translation>
     </message>
     <message>
         <source>Copies</source>
-        <translation type="unfinished"></translation>
+        <translation>Aantal</translation>
     </message>
     <message>
         <source>Visit Fritzing Fab</source>
-        <translation type="unfinished"></translation>
+        <translation>Bezoek Fritzing Fab</translation>
     </message>
     <message>
         <source>Fritzing Fab Quote</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing Fab Offerte</translation>
     </message>
     <message numerus="yes">
         <source>The total area of the %n PCB(s) in this sketch is</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>De totale oppervlakte van deze %n PCB in deze sketch is</numerusform>
+            <numerusform>De totale oppervlakte van de %n PCB&apos;s in deze sketch is</numerusform>
         </translation>
     </message>
     <message>
         <source>Please note that prices do not include shipping,&lt;br /&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Houd er rekening mee dat de prijzen exclusief verzendkosten,&lt;br /&gt;</translation>
     </message>
     <message>
         <source>possible additional taxes, or the checking fee.&lt;br /&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>btw en eventuele bankkosten zijn.&lt;br /&gt;</translation>
     </message>
     <message>
         <source> %1 cm%3 (%2 in%3).&lt;br /&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation> %1 cm%3 (%2 in%3).&lt;br /&gt;</translation>
     </message>
     <message>
         <source>Use Fritzing Fab to produce a PCB from your sketch.&lt;br /&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Maak gebruik van Fritzing Fab om een PCB te laten produceren van je sketch&lt;br /&gt;</translation>
     </message>
     <message>
         <source>Take advantage of our quantity discount:</source>
-        <translation type="unfinished"></translation>
+        <translation>Maak gebruik van onze kwantumkoring:</translation>
     </message>
 </context>
 <context>
@@ -5931,7 +5945,7 @@ Fritzing werkt nog steeds, maar je kunt geen eigenschappen van de onderdelen wij
     </message>
     <message>
         <source>You can either type in a resistance value, or select one from the drop down. Format nnn.dP where P is one of &apos;umkMG&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>Je kunt een weerstandwaarde invoeren of selecteren uit het dropdown menu. Formaat nnn.dP waar P staat voor een &apos;umkMG&apos;</translation>
     </message>
 </context>
 <context>
@@ -6375,7 +6389,7 @@ Noot:Je kunt dit venster ook oproepen door op de tekst van de routing status te 
     </message>
     <message>
         <source>Add %1 parts</source>
-        <translation type="unfinished"></translation>
+        <translation>Voeg %1 onderdelen toe</translation>
     </message>
 </context>
 <context>
@@ -6424,15 +6438,15 @@ Noot:Je kunt dit venster ook oproepen door op de tekst van de routing status te 
     </message>
     <message>
         <source>rows</source>
-        <translation type="unfinished">rijen</translation>
+        <translation>rijen</translation>
     </message>
     <message>
         <source>columns</source>
-        <translation type="unfinished">kolommen</translation>
+        <translation>kolommen</translation>
     </message>
     <message>
         <source>%1 layout</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 layout</translation>
     </message>
 </context>
 <context>
@@ -6498,7 +6512,7 @@ Noot:Je kunt dit venster ook oproepen door op de tekst van de routing status te 
     </message>
     <message>
         <source>&lt;li&gt;To edit a part label, double-click it, or use the text input widget in the inspector window.&lt;/li&gt;</source>
-        <translation>&lt;li&gt;Om een onderdeel label te bewerken, bubbel-klik er op, of gebruik de tekst invoer in de inspector.&lt;/li&gt;</translation>
+        <translation>&lt;li&gt;Om een onderdeel label te bewerken, dubbel-klik er op, of gebruik de tekst invoer in de inspector.&lt;/li&gt;</translation>
     </message>
     <message>
         <source>&lt;li&gt;To add a bendpoint to a wire, double-click where you want the bendpoint.&lt;/li&gt;</source>
@@ -6559,43 +6573,43 @@ Noot:Je kunt dit venster ook oproepen door op de tekst van de routing status te 
     </message>
     <message>
         <source>&lt;li&gt;&lt;h4&gt;parts&lt;/h4&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;li&gt;&lt;h4&gt;onderdelen&lt;/h4&gt;</translation>
     </message>
     <message>
         <source>&lt;/ul&gt;&lt;/li&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;/ul&gt;&lt;/li&gt;</translation>
     </message>
     <message>
         <source>&lt;li&gt;&lt;h4&gt;moving and selection&lt;/h4&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;li&gt;&lt;h4&gt;verplaatsten en selectie&lt;/h4&gt;</translation>
     </message>
     <message>
         <source>&lt;li&gt;&lt;h4&gt;curves and rubber band legs&lt;/h4&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;li&gt;&lt;h4&gt;curves en gebogen poten&lt;/h4&gt;</translation>
     </message>
     <message>
         <source>&lt;li&gt;&lt;h4&gt;rotation&lt;/h4&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;li&gt;&lt;h4&gt;roteren&lt;/h4&gt;</translation>
     </message>
     <message>
         <source>&lt;li&gt;&lt;h4&gt;layers and views&lt;/h4&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;li&gt;&lt;h4&gt;lagen en weergaven&lt;/h4&gt;</translation>
     </message>
     <message>
         <source>&lt;li&gt;To drag the canvas, hold down the space bar and drag with the mouse.&lt;/li&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;li&gt;Om het werkveld te verplaatsen, houd de spatiebalk indrukt en sleep met de muis.&lt;/li&gt;</translation>
     </message>
     <message>
         <source>&lt;li&gt;&lt;h4&gt;part labels&lt;/h4&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;li&gt;&lt;h4&gt;onderdeel labels&lt;/h4&gt;</translation>
     </message>
     <message>
         <source>&lt;li&gt;To move a part label independently from its part, select the part first--both the part and the label will be highlighted. Once the label is selected you can drag it.&lt;/li&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;li&gt; Om een onderdeellabel te verplaatsen, selcteer je eerst het onderdeel-- zowel onderdeel als het label zijn hightlighted. Als je het label selecteert kun je het verplaatsen. &lt;/li&gt;</translation>
     </message>
     <message>
         <source>&lt;li&gt;&lt;h4&gt;wires and bendpoints&lt;/h4&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;li&gt;&lt;h4&gt;draden en buigpunten&lt;/h4&gt;</translation>
     </message>
 </context>
 <context>
@@ -6862,11 +6876,11 @@ Noot:Je kunt dit venster ook oproepen door op de tekst van de routing status te 
     </message>
     <message>
         <source>Banded</source>
-        <translation type="unfinished"></translation>
+        <translation>Gestreept</translation>
     </message>
     <message>
         <source>pink</source>
-        <translation type="unfinished"></translation>
+        <translation>roze</translation>
     </message>
 </context>
 <context>

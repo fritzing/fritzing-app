@@ -778,6 +778,10 @@ Remarque: vous pouvez les importer ultérieurement en utilisant la rubrique &quo
         <source>Please specify an .fzz file name to save to (cancel will delete the backup)</source>
         <translation>S&apos;il vous plaît spécifier un nom de fichier .Fzz pour l&apos;enregistrement (annuler supprimera la sauvegarde)</translation>
     </message>
+    <message>
+        <source>Fritzing caught an exception from %1 in event %2: %3</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>FritzingWindow</name>

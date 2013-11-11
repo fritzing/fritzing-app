@@ -29,6 +29,7 @@ $Date: 2013-04-14 10:13:52 +0200 (So, 14. Apr 2013) $
 #include "../items/partfactory.h"
 #include "../items/moduleidnames.h"
 #include "../utils/textutils.h"
+#include "../utils/fmessagebox.h"
 #include "../version/version.h"
 #include "../viewgeometry.h"
 
@@ -74,7 +75,7 @@ bool ModelBase::loadFromFile(const QString & fileName, ModelBase * referenceMode
 
     QFile file(fileName);
     if (!file.open(QFile::ReadOnly | QFile::Text)) {
-        QMessageBox::warning(NULL, QObject::tr("Fritzing"),
+        FMessageBox::warning(NULL, QObject::tr("Fritzing"),
                              QObject::tr("Cannot read file %1:\n%2.")
                              .arg(fileName)
                              .arg(file.errorString()));
@@ -87,7 +88,7 @@ bool ModelBase::loadFromFile(const QString & fileName, ModelBase * referenceMode
     QDomDocument domDocument;
 
     if (!domDocument.setContent(&file, true, &errorStr, &errorLine, &errorColumn)) {
-        QMessageBox::information(NULL, QObject::tr("Fritzing"),
+        FMessageBox::information(NULL, QObject::tr("Fritzing"),
                                  QObject::tr("Parse error (1) at line %1, column %2:\n%3\n%4")
                                  .arg(errorLine)
                                  .arg(errorColumn)
@@ -98,14 +99,14 @@ bool ModelBase::loadFromFile(const QString & fileName, ModelBase * referenceMode
 
     QDomElement root = domDocument.documentElement();
    	if (root.isNull()) {
-        QMessageBox::information(NULL, QObject::tr("Fritzing"), QObject::tr("The file %1 is not a Fritzing file (2).").arg(fileName));
+        FMessageBox::information(NULL, QObject::tr("Fritzing"), QObject::tr("The file %1 is not a Fritzing file (2).").arg(fileName));
    		return false;
 	}
 
 	emit loadedRoot(fileName, this, root);
 
     if (root.tagName() != "module") {
-        QMessageBox::information(NULL, QObject::tr("Fritzing"), QObject::tr("The file %1 is not a Fritzing file (4).").arg(fileName));
+        FMessageBox::information(NULL, QObject::tr("Fritzing"), QObject::tr("The file %1 is not a Fritzing file (4).").arg(fileName));
         return false;
     }
 
@@ -170,7 +171,7 @@ bool ModelBase::loadFromFile(const QString & fileName, ModelBase * referenceMode
 
 	QDomElement instances = root.firstChildElement("instances");
 	if (instances.isNull()) {
-        QMessageBox::information(NULL, QObject::tr("Fritzing"), QObject::tr("The file %1 is not a Fritzing file (3).").arg(fileName));
+        FMessageBox::information(NULL, QObject::tr("Fritzing"), QObject::tr("The file %1 is not a Fritzing file (3).").arg(fileName));
         return false;
 	}
 
@@ -357,7 +358,7 @@ bool ModelBase::loadInstances(QDomDocument & domDocument, QDomElement & instance
 				.arg(key).arg(tr("at")).arg(missingModules.value(key, ""));
 		}
 		unableToFind += "</table></body></html>";
-		QMessageBox::warning(NULL, QObject::tr("Fritzing"), unableToFind);
+		FMessageBox::warning(NULL, QObject::tr("Fritzing"), unableToFind);
 	}
 
 
@@ -410,7 +411,7 @@ void ModelBase::save(const QString & fileName, bool asPart) {
 	QString temp = dir.absoluteFilePath("temp.xml");
     QFile file1(temp);
     if (!file1.open(QFile::WriteOnly | QFile::Text)) {
-        QMessageBox::warning(NULL, QObject::tr("Fritzing"),
+        FMessageBox::warning(NULL, QObject::tr("Fritzing"),
                              QObject::tr("Cannot write file temp:\n%1\n%2\n%3.")
 							  .arg(temp)
 							  .arg(fileName)
@@ -425,7 +426,7 @@ void ModelBase::save(const QString & fileName, bool asPart) {
 	QFile original(fileName);
 	if(original.exists() && !original.remove()) {
 		file1.remove();
-		QMessageBox::warning(
+		FMessageBox::warning(
 			NULL,
 			tr("File save failed!"),
 			tr("Couldn't overwrite file '%1'.\nReason: %2 (errcode %3)")

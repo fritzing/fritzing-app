@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <module fritzingVersion="0.4.3b.09.26.4458" moduleId="LilyPad Vibe Motor">
     <author>J.A. Korten - JKSOFT Educational</author>
     <title>Lilypad Vibe Motor</title>
@@ -6,8 +6,8 @@
     <date>2010-11-18</date>
     <tags>
         <tag>Lilypad</tag>
-	<tag>Vibe</tag>
-	<tag>Motor</tag>
+        <tag>Vibe</tag>
+        <tag>Motor</tag>
     </tags>
     <properties>
         <property name="family">microcontroller board (lilypad)</property>
@@ -39,33 +39,33 @@
         </pcbView>
     </views>
     <connectors>
-        <connector id="connector18" type="female" name="Supply">
+        <connector type="female" id="connector18" name="Supply">
             <description>Pin to 5V</description>
             <views>
                 <breadboardView>
-                    <p layer="breadboard" svgId="connector18"/>
+                    <p svgId="connector18" layer="breadboard"/>
                 </breadboardView>
                 <schematicView>
-                    <p layer="schematic" svgId="connector18pin"/>
+                    <p svgId="connector18pin" layer="schematic" terminalId="connector18terminal"/>
                 </schematicView>
                 <pcbView>
-                    <p layer="copper1" svgId="connector18"/>
-                    <p layer="copper0" svgId="connector18"/>
+                    <p svgId="connector18" layer="copper1"/>
+                    <p svgId="connector18" layer="copper0"/>
                 </pcbView>
             </views>
         </connector>
-        <connector id="connector1" type="female" name="GND">
+        <connector type="female" id="connector1" name="GND">
             <description>Pin to GND</description>
             <views>
                 <breadboardView>
-                    <p layer="breadboard" svgId="connector1"/>
+                    <p svgId="connector1" layer="breadboard"/>
                 </breadboardView>
                 <schematicView>
-                    <p layer="schematic" svgId="connector1pin"/>
+                    <p svgId="connector1pin" layer="schematic" terminalId="connector1terminal"/>
                 </schematicView>
                 <pcbView>
-                    <p layer="copper1" svgId="connector1"/>
-                    <p layer="copper0" svgId="connector1"/>
+                    <p svgId="connector1" layer="copper1"/>
+                    <p svgId="connector1" layer="copper0"/>
                 </pcbView>
             </views>
         </connector>

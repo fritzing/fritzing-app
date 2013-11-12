@@ -83,7 +83,9 @@ public:
     QHash<QString, QString> getAutorouterSettings();
     void setAutorouterSettings(QHash<QString, QString> &);
 	ViewLayer::ViewLayerPlacement getViewLayerPlacement(ModelPart *, QDomElement & instance, QDomElement & view, ViewGeometry &);
-
+    bool isOldStyleSchematic();
+    void setOldStyleSchematic(bool oldStyleSchematic);
+    
 public slots:
 	void setVoltage(double voltage, bool doEmit);
 	void setProp(ItemBase *, const QString & propName, const QString & translatedPropName, const QString & oldValue, const QString & newValue, bool redraw);
@@ -107,6 +109,7 @@ protected:
 
 protected:
 	QTimer m_updateDotsTimer;
+    bool m_oldStyleSchematic;
 
     static QSizeF m_jumperItemSize;
 

@@ -414,6 +414,27 @@ void MainWindow::mainLoad(const QString & fileName, const QString & displayName,
 	newIDs.clear();
 	m_schematicGraphicsView->loadFromModelParts(modelParts, BaseCommand::SingleView, NULL, false, NULL, false, newIDs);
 
+    if (!m_readOnly && m_schematicGraphicsView->isOldStyleSchematic()) {
+	    QFileInfo info(fileName);
+        FMessageBox messageBox(NULL);
+		messageBox.setWindowTitle(tr("Schematic view update"));
+		messageBox.setText(tr("With version 0.8.5, there is a new graphics standard for schematic view part images.\n\nWould you like to convert '%1' to the new standard now or open it read-only?\n").arg(info.fileName()));
+		messageBox.setInformativeText(tr("The conversion process will not modify '%1', until you save the file. It will be necessary for you to rearrange parts and connections in the schematic view, as the sizes of most part images will have changed.").arg(info.fileName()));
+		messageBox.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
+		messageBox.setDefaultButton(QMessageBox::Yes);
+		messageBox.setIcon(QMessageBox::Question);
+		messageBox.setWindowModality(Qt::WindowModal);
+		messageBox.setButtonText(QMessageBox::Yes, tr("Convert"));
+		messageBox.setButtonText(QMessageBox::No, tr("Read-only"));
+		QMessageBox::StandardButton answer = (QMessageBox::StandardButton) messageBox.exec();
+
+		QString bundledFileName;
+		if (answer == QMessageBox::Yes) {
+            m_schematicGraphicsView->setOldStyleSchematic(false);
+		}
+        
+    }
+
 	ProcessEventBlocker::processEvents();
 	if (m_fileProgressDialog) {
 		m_fileProgressDialog->setValue(198);

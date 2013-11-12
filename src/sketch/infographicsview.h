@@ -118,6 +118,8 @@ public:
     virtual void moveItem(ItemBase *, double x, double y);
 	virtual void rotateX(double degrees, bool rubberBandLegEnabled, ItemBase * originatingItem);
 
+    virtual bool isOldStyleSchematic();
+
 public slots:
 	virtual void setVoltage(double, bool doEmit);
 	virtual void resizeBoard(double w, double h, bool doEmit);

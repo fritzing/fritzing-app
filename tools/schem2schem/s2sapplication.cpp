@@ -278,7 +278,7 @@ void S2SApplication::usage() {
     message("\nusage: s2s "
                 "-ff <path to fzps> "
                 "-f <path to list of fzps (each item in list must be a relative path)> "
-                "-os <path to old schematic svgs> "
+                "-os <path to old schematic svgs (e.g. '.../pdb/core')> "
                 "-ns <path to new schematic svgs> "
                 "[-fzpz (translate to fzpz style filenames)] "
                 "\n"

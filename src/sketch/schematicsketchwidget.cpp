@@ -34,6 +34,7 @@ $Date: 2013-04-21 09:50:09 +0200 (So, 21. Apr 2013) $
 #include "../items/moduleidnames.h"
 #include "../fsvgrenderer.h"
 #include "../utils/graphicsutils.h"
+#include "../version/version.h"
 
 #include <limits>
 
@@ -57,6 +58,7 @@ bool sameGround(ConnectorItem * c1, ConnectorItem * c2)
 SchematicSketchWidget::SchematicSketchWidget(ViewLayer::ViewID viewID, QWidget *parent)
     : PCBSketchWidget(viewID, parent)
 {
+    m_oldStyleSchematic = false;
 	m_shortName = QObject::tr("schem");
 	m_viewName = QObject::tr("Schematic View");
 	initBackgroundColor();
@@ -465,6 +467,34 @@ void SchematicSketchWidget::loadFromModelParts(QList<ModelPart *> & modelParts, 
 						bool offsetPaste, const QRectF * boundingRect, bool seekOutsideConnections, QList<long> & newIDs)
 {
 	SketchWidget::loadFromModelParts(modelParts, crossViewType, parentCommand, offsetPaste, boundingRect, seekOutsideConnections, newIDs);
+
+    if (parentCommand == NULL) {
+        QString fritzingVersion = m_sketchModel->fritzingVersion();
+        m_oldStyleSchematic = !Version::greaterThan("0.8.4b", fritzingVersion);
+        if (!m_oldStyleSchematic) {
+            return;
+        }
+
+        bool gotWire = false;
+        foreach (QGraphicsItem * item, scene()->items()) {
+		    Wire * wire = dynamic_cast<Wire *>(item);
+		    if (wire == NULL) continue;
+
+		    if (wire->hasFlag(getTraceFlag())) {
+                gotWire = true;
+                break;
+		    }
+	    }
+
+        if (!gotWire) {
+            // if there are no wires, assume no need to use old style schematic graphics
+            m_oldStyleSchematic = false;
+            // what about custom schematics?
+            return;
+        }
+
+        m_oldStyleSchematic = true;
+    }
 }
 
 void SchematicSketchWidget::selectAllWires(ViewGeometry::WireFlag flag) 
@@ -527,4 +557,14 @@ void SchematicSketchWidget::getDroppedItemViewLayerPlacement(ModelPart * modelPa
 ViewLayer::ViewLayerPlacement SchematicSketchWidget::getViewLayerPlacement(ModelPart * modelPart, QDomElement & instance, QDomElement & view, ViewGeometry & viewGeometry) 
 {
     return SketchWidget::getViewLayerPlacement(modelPart, instance, view, viewGeometry);
+}
+
+bool SchematicSketchWidget::isOldStyleSchematic() 
+{
+    return m_oldStyleSchematic;
+}
+
+void SchematicSketchWidget::setOldStyleSchematic(bool oldStyleSchematic) 
+{
+    m_oldStyleSchematic = oldStyleSchematic;
 }

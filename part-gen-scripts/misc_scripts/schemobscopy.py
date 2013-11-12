@@ -1,16 +1,13 @@
 
-import getopt, sys, os, re
+import getopt, sys, os, re, shutil
     
 def usage():
     print """
 usage:
-    schemobs.py -f <fritzing folder> -h <hand drawn schematic folder> -g <generated schematics folder>
+    schemobscopy.py -f <fritzing folder> -h <hand drawn schematic folder> -g <generated schematics folder>
     
-    in the <parts folder>/svg/schematic folder match files from the -h and -g folders
-    print the list of files unaccounted for in -f and -g
-    ignore the ones that start with sparkfun-
-    
-    optionally copy the old files into obsolete with a prefix of "0.3.schem" and copy the new files into place
+    in the <parts folder>/svg/core/schematic folder match files from the -h and -g folders
+    copy the old files into obsolete with a prefix of "0.3.schem" and copy the new files into place
     """
         
        
@@ -53,44 +50,20 @@ def main():
         usage()
         return
         
-    toMatch = []
-    schemDir = os.path.join(fritzingDir, "parts", "svg", "core", "schematic")
-    for filename in os.listdir(schemDir):
-        if filename.startswith("sparkfun-"):
-            continue
-        
-        toMatch.append(filename)
-        
-        
     for filename in os.listdir(handDir):
-        if not filename in toMatch:
-            print "unable to find {0} from hand".format(filename)
-        else:
-            toMatch.remove(filename)
+        copyOne(filename, handDir, fritzingDir)
             
     for filename in os.listdir(generatedDir):
-        if not filename in toMatch:
-            print "unable to find {0} from generated".format(filename)
-        else:
-            toMatch.remove(filename)
-    
-    print ""
-    pdbDir = os.path.join(fritzingDir, "pdb", "core")
-    fzps = []
-    for filename in os.listdir(pdbDir):
-        infile = open(os.path.join(pdbDir, filename), "r")
-        txt = infile.read()
-        infile.close()
-        for matchName in toMatch:
-            if matchName in txt:
-                print "no match for {0} in {1}".format(matchName, filename)
-                fzps.append(filename)
-                toMatch.remove(matchName)
-                break
-    
-    print ""
-    for filename in fzps:
-        print filename
+        copyOne(filename, generatedDir, fritzingDir)
+ 
+def copyOne(filename, fromDir, fritzingDir):
+    schDir = os.path.join(fritzingDir, "parts", "svg", "core", "schematic")
+    obsDir = os.path.join(fritzingDir, "parts", "svg", "obsolete", "schematic")
+    try:
+        shutil.copy(os.path.join(schDir, filename), os.path.join(obsDir, "0.3.schem." + filename))
+        shutil.copy(os.path.join(fromDir, filename), os.path.join(schDir, filename))
+    except:
+        print "unable to copy", filename
     
 if __name__ == "__main__":
     main()

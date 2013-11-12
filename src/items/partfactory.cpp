@@ -217,7 +217,7 @@ ItemBase * PartFactory::createPartAux( ModelPart * modelPart, ViewLayer::ViewID 
 	}
 }
 
-QString PartFactory::getSvgFilename(ModelPart * modelPart, const QString & baseName, bool generate, bool handleSubparts) 
+QString PartFactory::getSvgFilename(ModelPart * modelPart, const QString & baseName, bool generate, bool handleSubparts, bool useOldSchematic) 
 {
 	QStringList tempPaths;
 	QString postfix = "/"+ SvgFilesDir +"/%1/"+ baseName;
@@ -275,7 +275,7 @@ QString PartFactory::getSvgFilename(ModelPart * modelPart, const QString & baseN
     {
         ModelPartShared * superpart = modelPart->modelPartShared();
         QString schematicName = superpart->imageFileName(ViewLayer::SchematicView);
-        QString originalPath = getSvgFilename(modelPart, schematicName, true, false);
+        QString originalPath = getSvgFilename(modelPart, schematicName, true, false, useOldSchematic);  
         foreach (ModelPartShared * mps, superpart->subparts()) {
             QString schematicFileName = mps->imageFileName(ViewLayer::SchematicView);
             if (schematicFileName.isEmpty()) continue;

@@ -1601,7 +1601,11 @@ QStringList MainWindow::saveBundledAux(ModelPart *mp, const QDir &destFolder) {
 		QString basename = mp->hasBaseNameFor(viewID);
 		if (basename.isEmpty()) continue;
 
-		QString filename = PartFactory::getSvgFilename(mp, basename, true, true);
+        bool useOldSchematic = false;
+        if (viewID == ViewLayer::SchematicView) {
+            useOldSchematic = (m_schematicGraphicsView->isOldStyleSchematic());
+        }
+		QString filename = PartFactory::getSvgFilename(mp, basename, true, true, useOldSchematic);
 		if (filename.isEmpty()) continue;
 
 		QFile file(filename);

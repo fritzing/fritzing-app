@@ -38,7 +38,7 @@ class PartFactory
 {
 public:
 	static class ItemBase * createPart(class ModelPart *, ViewLayer::ViewLayerPlacement, ViewLayer::ViewID, const class ViewGeometry & viewGeometry, long id, QMenu * itemMenu, QMenu * wireMenu, bool doLabel);
-	static QString getSvgFilename(class ModelPart *, const QString & filename, bool generate, bool handleSubparts);
+	static QString getSvgFilename(class ModelPart *, const QString & filename, bool generate, bool handleSubparts, bool oldSchematic);
 	static QString getFzpFilename(const QString & moduleID);
 	static void initFolder();
 	static void cleanup();

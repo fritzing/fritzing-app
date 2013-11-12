@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1"
+	 id="svg2" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" inkscape:output_extension="org.inkscape.output.svg.inkscape" sodipodi:version="0.32" inkscape:version="0.46" sodipodi:docname="diode.svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="23.309px"
+	 height="65.666px" viewBox="0 0 23.309 65.666" enable-background="new 0 0 23.309 65.666" xml:space="preserve">
+<g id="schematic">
+<rect id="connector1terminal" x="11.679" y="0.843" width="0.208" height="0.208"/>
+<rect id="connector0terminal" x="11.695" y="64.632" width="0.208" height="0.207"/>
+<rect id="connector1pin" x="11.075" y="0.739" width="1.375" height="10.338"/>
+<rect id="connector0pin" x="11.075" y="53.319" width="1.375" height="11.766"/>
+<line fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" x1="11.799" y1="41.489" x2="11.799" y2="64.442"/>
+<line fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" x1="22.217" y1="42" x2="1.38" y2="42"/>
+<line fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" x1="11.799" y1="1.049" x2="11.799" y2="23.244"/>
+<line fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" x1="1.38" y1="42" x2="1.38" y2="36.167"/>
+<line fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" x1="22.217" y1="42" x2="22.217" y2="36.167"/>
+<polygon fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" points="11.655,41.489 
+	6.387,32.366 1.12,23.244 11.655,23.244 22.189,23.244 16.922,32.366 "/>
+</g>
+</svg>

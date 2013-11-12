@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg"  x="0px" y="0px"
+	 width="0.432in" height="1.176in" viewBox="0 0 31.104 84.723" >
+<g id="schematic">
+	<rect id="connector1terminal" x="2.094" y="84.013" width="0.209" height="0.208"/>
+	<rect id="connector0terminal" x="2.094" y="1.07" width="0.207" height="0.207"/>
+	<rect id="connector1pin" x="1.109" y="72.868" width="2.179" height="10.834"/>
+	<rect id="connector0pin" x="1.053" y="1.174" width="2.29" height="11.744"/>
+	
+		<path fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="square" stroke-linejoin="round" stroke-miterlimit="12" d="
+		M2.216,24.173c2.59,0,4.67,2.095,4.67,4.684c0,2.584-2.08,4.683-4.67,4.683c2.59,0,4.67,2.098,4.67,4.684
+		c0,2.584-2.08,4.682-4.67,4.682c2.59,0,4.67,2.099,4.67,4.682c0,2.578-2.096,4.679-4.684,4.679c2.586,0,4.684,2.102,4.684,4.684
+		c0,2.584-2.08,4.683-4.67,4.683"/>
+	<rect x="12.462" y="2.085" width="9.946" height="17.322"/>
+	<g>
+		
+			<line fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="square" stroke-linejoin="round" stroke-miterlimit="12" x1="14.083" y1="24.173" x2="14.083" y2="61.629"/>
+		
+			<line fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="12" x1="2.202" y1="1.362" x2="2.202" y2="24.173"/>
+		
+			<line fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="12" x1="2.202" y1="62.889" x2="2.202" y2="83.702"/>
+		
+			<line fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="square" stroke-linejoin="round" stroke-miterlimit="12" x1="20.788" y1="24.173" x2="20.788" y2="61.629"/>
+	</g>
+	<g>
+		<polygon points="24.929,8.389 27.516,1.98 30.103,8.389 		"/>
+		<polygon points="30.104,13.104 27.518,19.512 24.93,13.104 		"/>
+		
+			<line fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="round" stroke-miterlimit="12" x1="27.517" y1="8.389" x2="27.517" y2="15.263"/>
+	</g>
+</g>
+</svg>

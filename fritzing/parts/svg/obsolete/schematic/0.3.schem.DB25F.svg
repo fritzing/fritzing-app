@@ -1,0 +1,696 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.2"
+   width="139.70006"
+   height="704.70001"
+   viewBox="0 0 1552.2229 7830"
+   id="svg3101">
+  <metadata
+     id="metadata3240">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs3238" />
+  <g
+     id="schematic">
+    <rect
+       width="1200"
+       height="7800"
+       x="15"
+       y="14.999846"
+       id="rect3104"
+       style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" />
+    <circle
+       cx="1330"
+       cy="200"
+       r="150"
+       transform="translate(-1100,-1.5458251e-4)"
+       id="circle3107"
+       style="fill:#000000;stroke-width:0" />
+    <line
+       x1="1248.3333"
+       y1="314.99985"
+       x2="1533.3333"
+       y2="314.99985"
+       id="line3111"
+       style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" />
+    <rect
+       width="300"
+       height="30"
+       x="1233.3333"
+       y="299.99985"
+       id="connector24pin"
+       style="fill:none;stroke-width:0" />
+    <rect
+       width="30"
+       height="30"
+       x="1522.2229"
+       y="299.99985"
+       id="connector24terminal"
+       style="fill:none;stroke-width:0" />
+    <text
+       x="1069.2161"
+       y="7552.4707"
+       id="label0"
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">1</text>
+    <line
+       x1="1248.3333"
+       y1="614.99982"
+       x2="1533.3333"
+       y2="614.99982"
+       id="line3116"
+       style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" />
+    <rect
+       width="300"
+       height="30"
+       x="1233.3333"
+       y="599.99982"
+       id="connector23pin"
+       style="fill:none;stroke-width:0" />
+    <rect
+       width="30"
+       height="30"
+       x="1522.2229"
+       y="599.99982"
+       id="connector23terminal"
+       style="fill:none;stroke-width:0" />
+    <text
+       x="1050.3635"
+       y="7253.0581"
+       id="label1"
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">2</text>
+    <line
+       x1="1248.3333"
+       y1="914.99982"
+       x2="1533.3333"
+       y2="914.99982"
+       id="line3121"
+       style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" />
+    <rect
+       width="300"
+       height="30"
+       x="1233.3333"
+       y="899.99982"
+       id="connector22pin"
+       style="fill:none;stroke-width:0" />
+    <rect
+       width="30"
+       height="30"
+       x="1522.2229"
+       y="899.99982"
+       id="connector22terminal"
+       style="fill:none;stroke-width:0" />
+    <text
+       x="1050.4905"
+       y="6952.3442"
+       id="label2"
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">3</text>
+    <line
+       x1="1248.3333"
+       y1="1214.9999"
+       x2="1533.3333"
+       y2="1214.9999"
+       id="line3126"
+       style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" />
+    <rect
+       width="300"
+       height="30"
+       x="1233.3333"
+       y="1199.9999"
+       id="connector21pin"
+       style="fill:none;stroke-width:0" />
+    <rect
+       width="30"
+       height="30"
+       x="1522.2229"
+       y="1199.9999"
+       id="connector21terminal"
+       style="fill:none;stroke-width:0" />
+    <text
+       x="1045.3489"
+       y="6652.4873"
+       id="label3"
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">4</text>
+    <line
+       x1="1248.3333"
+       y1="1514.9999"
+       x2="1533.3333"
+       y2="1514.9999"
+       id="line3131"
+       style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" />
+    <rect
+       width="300"
+       height="30"
+       x="1233.3333"
+       y="1499.9999"
+       id="connector20pin"
+       style="fill:none;stroke-width:0" />
+    <rect
+       width="30"
+       height="30"
+       x="1522.2229"
+       y="1499.9999"
+       id="connector20terminal"
+       style="fill:none;stroke-width:0" />
+    <text
+       x="1049.9827"
+       y="6351.5195"
+       id="label4"
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">5</text>
+    <line
+       x1="1248.3333"
+       y1="1814.9999"
+       x2="1533.3333"
+       y2="1814.9999"
+       id="line3136"
+       style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" />
+    <rect
+       width="300"
+       height="30"
+       x="1233.3333"
+       y="1799.9999"
+       id="connector19pin"
+       style="fill:none;stroke-width:0" />
+    <rect
+       width="30"
+       height="30"
+       x="1522.2229"
+       y="1799.9999"
+       id="connector19terminal"
+       style="fill:none;stroke-width:0" />
+    <text
+       x="1048.7131"
+       y="6052.1069"
+       id="label5"
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">6</text>
+    <line
+       x1="1248.3333"
+       y1="2114.9998"
+       x2="1533.3333"
+       y2="2114.9998"
+       id="line3141"
+       style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" />
+    <rect
+       width="300"
+       height="30"
+       x="1233.3333"
+       y="2099.9998"
+       id="connector18pin"
+       style="fill:none;stroke-width:0" />
+    <rect
+       width="30"
+       height="30"
+       x="1522.2229"
+       y="2099.9998"
+       id="connector18terminal"
+       style="fill:none;stroke-width:0" />
+    <text
+       x="1048.967"
+       y="5751.9961"
+       id="label6"
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">7</text>
+    <line
+       x1="1248.3333"
+       y1="2414.9998"
+       x2="1533.3333"
+       y2="2414.9998"
+       id="line3146"
+       style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" />
+    <rect
+       width="300"
+       height="30"
+       x="1233.3333"
+       y="2399.9998"
+       id="connector17pin"
+       style="fill:none;stroke-width:0" />
+    <rect
+       width="30"
+       height="30"
+       x="1522.2229"
+       y="2399.9998"
+       id="connector17terminal"
+       style="fill:none;stroke-width:0" />
+    <text
+       x="1049.3479"
+       y="5452.0122"
+       id="label7"
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">8</text>
+    <line
+       x1="1248.3333"
+       y1="2714.9998"
+       x2="1533.3333"
+       y2="2714.9998"
+       id="line3151"
+       style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" />
+    <rect
+       width="300"
+       height="30"
+       x="1233.3333"
+       y="2699.9998"
+       id="connector16pin"
+       style="fill:none;stroke-width:0" />
+    <rect
+       width="30"
+       height="30"
+       x="1522.2229"
+       y="2699.9998"
+       id="connector16terminal"
+       style="fill:none;stroke-width:0" />
+    <text
+       x="1049.094"
+       y="5151.8696"
+       id="label8"
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">9</text>
+    <line
+       x1="1248.3333"
+       y1="3014.9998"
+       x2="1533.3333"
+       y2="3014.9998"
+       id="line3156"
+       style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" />
+    <rect
+       width="300"
+       height="30"
+       x="1233.3333"
+       y="2999.9998"
+       id="connector15pin"
+       style="fill:none;stroke-width:0" />
+    <rect
+       width="30"
+       height="30"
+       x="1522.2229"
+       y="2999.9998"
+       id="connector15terminal"
+       style="fill:none;stroke-width:0" />
+    <text
+       x="977.23853"
+       y="4851.854"
+       id="label9"
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">10</text>
+    <line
+       x1="1248.3333"
+       y1="3314.9998"
+       x2="1533.3333"
+       y2="3314.9998"
+       id="line3161"
+       style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" />
+    <rect
+       width="300"
+       height="30"
+       x="1233.3333"
+       y="3299.9998"
+       id="connector14pin"
+       style="fill:none;stroke-width:0" />
+    <rect
+       width="30"
+       height="30"
+       x="1522.2229"
+       y="3299.9998"
+       id="connector14terminal"
+       style="fill:none;stroke-width:0" />
+    <text
+       x="997.6145"
+       y="4551.6792"
+       id="label10"
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">11</text>
+    <line
+       x1="1248.3333"
+       y1="3614.9998"
+       x2="1533.3333"
+       y2="3614.9998"
+       id="line3166"
+       style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" />
+    <rect
+       width="300"
+       height="30"
+       x="1233.3333"
+       y="3599.9998"
+       id="connector13pin"
+       style="fill:none;stroke-width:0" />
+    <rect
+       width="30"
+       height="30"
+       x="1522.2229"
+       y="3599.9998"
+       id="connector13terminal"
+       style="fill:none;stroke-width:0" />
+    <text
+       x="978.76196"
+       y="4252.2671"
+       id="label11"
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">12</text>
+    <line
+       x1="1248.3333"
+       y1="3914.9998"
+       x2="1533.3333"
+       y2="3914.9998"
+       id="line3171"
+       style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" />
+    <rect
+       width="300"
+       height="30"
+       x="1233.3333"
+       y="3899.9998"
+       id="connector12pin"
+       style="fill:none;stroke-width:0" />
+    <rect
+       width="30"
+       height="30"
+       x="1522.2229"
+       y="3899.9998"
+       id="connector12terminal"
+       style="fill:none;stroke-width:0" />
+    <text
+       x="978.88892"
+       y="3951.5527"
+       id="label12"
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">13</text>
+    <line
+       x1="1248.3333"
+       y1="4215"
+       x2="1533.3333"
+       y2="4215"
+       id="line3176"
+       style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" />
+    <rect
+       width="300"
+       height="30"
+       x="1233.3333"
+       y="4200"
+       id="connector11pin"
+       style="fill:none;stroke-width:0" />
+    <rect
+       width="30"
+       height="30"
+       x="1522.2229"
+       y="4200"
+       id="connector11terminal"
+       style="fill:none;stroke-width:0" />
+    <text
+       x="973.74731"
+       y="3651.696"
+       id="label13"
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">14</text>
+    <line
+       x1="1248.3333"
+       y1="4515"
+       x2="1533.3333"
+       y2="4515"
+       id="line3181"
+       style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" />
+    <rect
+       width="300"
+       height="30"
+       x="1233.3333"
+       y="4500"
+       id="connector10pin"
+       style="fill:none;stroke-width:0" />
+    <rect
+       width="30"
+       height="30"
+       x="1522.2229"
+       y="4500"
+       id="connector10terminal"
+       style="fill:none;stroke-width:0" />
+    <text
+       x="978.3811"
+       y="3350.7285"
+       id="label14"
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">15</text>
+    <line
+       x1="1248.3333"
+       y1="4815"
+       x2="1533.3333"
+       y2="4815"
+       id="line3186"
+       style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" />
+    <rect
+       width="300"
+       height="30"
+       x="1233.3333"
+       y="4800"
+       id="connector9pin"
+       style="fill:none;stroke-width:0" />
+    <rect
+       width="30"
+       height="30"
+       x="1522.2229"
+       y="4800"
+       id="connector9terminal"
+       style="fill:none;stroke-width:0" />
+    <text
+       x="977.11157"
+       y="3051.3157"
+       id="label15"
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">16</text>
+    <line
+       x1="1248.3333"
+       y1="5115"
+       x2="1533.3333"
+       y2="5115"
+       id="line3191"
+       style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" />
+    <rect
+       width="300"
+       height="30"
+       x="1233.3333"
+       y="5100"
+       id="connector8pin"
+       style="fill:none;stroke-width:0" />
+    <rect
+       width="30"
+       height="30"
+       x="1522.2229"
+       y="5100"
+       id="connector8terminal"
+       style="fill:none;stroke-width:0" />
+    <text
+       x="977.36548"
+       y="2751.2046"
+       id="label16"
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">17</text>
+    <line
+       x1="1248.3333"
+       y1="5415"
+       x2="1533.3333"
+       y2="5415"
+       id="line3196"
+       style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" />
+    <rect
+       width="300"
+       height="30"
+       x="1233.3333"
+       y="5400"
+       id="connector7pin"
+       style="fill:none;stroke-width:0" />
+    <rect
+       width="30"
+       height="30"
+       x="1522.2229"
+       y="5400"
+       id="connector7terminal"
+       style="fill:none;stroke-width:0" />
+    <text
+       x="977.74634"
+       y="2451.2207"
+       id="label17"
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">18</text>
+    <line
+       x1="1248.3333"
+       y1="5715"
+       x2="1533.3333"
+       y2="5715"
+       id="line3201"
+       style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" />
+    <rect
+       width="300"
+       height="30"
+       x="1233.3333"
+       y="5700"
+       id="connector6pin"
+       style="fill:none;stroke-width:0" />
+    <rect
+       width="30"
+       height="30"
+       x="1522.2229"
+       y="5700"
+       id="connector6terminal"
+       style="fill:none;stroke-width:0" />
+    <text
+       x="977.49243"
+       y="2151.0789"
+       id="label18"
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">19</text>
+    <line
+       x1="1248.3333"
+       y1="6015"
+       x2="1533.3333"
+       y2="6015"
+       id="line3206"
+       style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" />
+    <rect
+       width="300"
+       height="30"
+       x="1233.3333"
+       y="6000"
+       id="connector5pin"
+       style="fill:none;stroke-width:0" />
+    <rect
+       width="30"
+       height="30"
+       x="1522.2229"
+       y="6000"
+       id="connector5terminal"
+       style="fill:none;stroke-width:0" />
+    <text
+       x="977.23853"
+       y="1851.0635"
+       id="label19"
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">20</text>
+    <line
+       x1="1248.3333"
+       y1="6315"
+       x2="1533.3333"
+       y2="6315"
+       id="line3211"
+       style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" />
+    <rect
+       width="300"
+       height="30"
+       x="1233.3333"
+       y="6300"
+       id="connector4pin"
+       style="fill:none;stroke-width:0" />
+    <rect
+       width="30"
+       height="30"
+       x="1522.2229"
+       y="6300"
+       id="connector4terminal"
+       style="fill:none;stroke-width:0" />
+    <text
+       x="997.6145"
+       y="1551.5551"
+       id="label20"
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">21</text>
+    <line
+       x1="1248.3333"
+       y1="6615"
+       x2="1533.3333"
+       y2="6615"
+       id="line3216"
+       style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" />
+    <rect
+       width="300"
+       height="30"
+       x="1233.3333"
+       y="6600"
+       id="connector3pin"
+       style="fill:none;stroke-width:0" />
+    <rect
+       width="30"
+       height="30"
+       x="1522.2229"
+       y="6600"
+       id="connector3terminal"
+       style="fill:none;stroke-width:0" />
+    <text
+       x="978.76196"
+       y="1251.4758"
+       id="label21"
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">22</text>
+    <line
+       x1="1248.3333"
+       y1="6915"
+       x2="1533.3333"
+       y2="6915"
+       id="line3253"
+       style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" />
+    <rect
+       width="300"
+       height="30"
+       x="1233.3333"
+       y="6900"
+       id="connector2pin"
+       style="fill:none;stroke-width:0" />
+    <rect
+       width="30"
+       height="30"
+       x="1522.2229"
+       y="6900"
+       id="connector2terminal"
+       style="fill:none;stroke-width:0" />
+    <text
+       x="978.88892"
+       y="950.76257"
+       id="label22"
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">23</text>
+    <line
+       x1="1248.3333"
+       y1="7215"
+       x2="1533.3333"
+       y2="7215"
+       id="line3226"
+       style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" />
+    <rect
+       width="300"
+       height="30"
+       x="1233.3333"
+       y="7200"
+       id="connector1pin"
+       style="fill:none;stroke-width:0" />
+    <rect
+       width="30"
+       height="30"
+       x="1522.2229"
+       y="7200"
+       id="connector1terminal"
+       style="fill:none;stroke-width:0" />
+    <text
+       x="973.74731"
+       y="651.31799"
+       id="label23"
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">24</text>
+    <line
+       x1="1248.3333"
+       y1="7515"
+       x2="1533.3333"
+       y2="7515"
+       id="line3231"
+       style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" />
+    <rect
+       width="300"
+       height="30"
+       x="1233.3333"
+       y="7500"
+       id="connector0pin"
+       style="fill:none;stroke-width:0" />
+    <rect
+       width="30"
+       height="30"
+       x="1522.2229"
+       y="7500"
+       id="connector0terminal"
+       style="fill:none;stroke-width:0" />
+    <text
+       x="978.3811"
+       y="350.60373"
+       id="label24"
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">25</text>
+  </g>
+</svg>

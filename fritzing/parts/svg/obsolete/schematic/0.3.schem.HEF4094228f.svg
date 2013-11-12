@@ -1,0 +1,795 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="2.42083in"
+   x="0px"
+   version="1.1"
+   y="0px"
+   height="3.58854in"
+   viewBox="0 0 174.3 258.375"
+   id="Layer_1"
+   enable-background="new 0 0 174.3 258.375"
+   xml:space="preserve"
+   
+   >
+ <metadata
+   id="metadata276">
+  <rdf:RDF>
+   <cc:Work
+   rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type
+   rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs
+   id="defs274" />
+ <sodipodi:namedview
+   showgrid="false"
+   objecttolerance="10"
+   pagecolor="#ffffff"
+   bordercolor="#666666"
+   id="namedview272"
+   borderopacity="1"
+   guidetolerance="10"
+   gridtolerance="10"
+   
+   
+   
+   
+   
+   
+   
+   
+    />
+ <g
+   id="schematic">
+  <rect
+   width="10"
+   x="1.15"
+   y="59.226"
+   fill="none"
+   height="2"
+   id="connector0pin" />
+  <rect
+   width="10"
+   x="1.15"
+   y="85.226"
+   fill="none"
+   height="2"
+   id="connector1pin" />
+  <rect
+   width="10"
+   x="1.15"
+   y="111.226"
+   fill="none"
+   height="2"
+   id="connector2pin" />
+  <rect
+   width="10"
+   x="1.15"
+   y="137.227"
+   fill="none"
+   height="2"
+   id="connector3pin" />
+  <rect
+   width="10"
+   x="1.15"
+   y="163.227"
+   fill="none"
+   height="2"
+   id="connector4pin" />
+  <rect
+   width="10"
+   x="1.15"
+   y="189.227"
+   fill="none"
+   height="2"
+   id="connector5pin" />
+  <rect
+   width="10"
+   x="1.15"
+   y="215.227"
+   fill="none"
+   height="2"
+   id="connector6pin" />
+  <rect
+   width="10"
+   x="1.15"
+   y="241.227"
+   fill="none"
+   height="2"
+   id="connector7pin" />
+  <rect
+   width="10"
+   x="163.15"
+   y="241.227"
+   fill="none"
+   height="2"
+   id="connector8pin" />
+  <rect
+   width="10"
+   x="163.15"
+   y="215.227"
+   fill="none"
+   height="2"
+   id="connector9pin" />
+  <rect
+   width="10"
+   x="163.15"
+   y="189.227"
+   fill="none"
+   height="2"
+   id="connector10pin" />
+  <rect
+   width="10"
+   x="163.15"
+   y="163.227"
+   fill="none"
+   height="2"
+   id="connector11pin" />
+  <rect
+   width="10"
+   x="163.15"
+   y="137.227"
+   fill="none"
+   height="2"
+   id="connector12pin" />
+  <rect
+   width="10"
+   x="163.15"
+   y="111.226"
+   fill="none"
+   height="2"
+   id="connector13pin" />
+  <rect
+   width="10"
+   x="163.15"
+   y="85.226"
+   fill="none"
+   height="2"
+   id="connector14pin" />
+	<rect
+   width="10"
+   x="163.15"
+   y="59.226"
+   fill="none"
+   height="2" 
+   id="connector15pin" />
+  <rect
+   width="10"
+   x="163.15"
+   y="59.226"
+   fill="none"
+   height="2"
+   id="rect22" />
+  <rect
+   width="2"
+   x="1.15"
+   y="59.226"
+   fill="none"
+   height="2"
+   id="connector0terminal" />
+  <rect
+   width="2"
+   x="1.15"
+   y="85.226"
+   fill="none"
+   height="2"
+   id="connector1terminal" />
+  <rect
+   width="2"
+   x="1.15"
+   y="111.226"
+   fill="none"
+   height="2"
+   id="connector2terminal" />
+  <rect
+   width="2"
+   x="1.15"
+   y="137.227"
+   fill="none"
+   height="2"
+   id="connector3terminal" />
+  <rect
+   width="2"
+   x="1.15"
+   y="163.227"
+   fill="none"
+   height="2"
+   id="connector4terminal" />
+  <rect
+   width="2"
+   x="1.15"
+   y="189.227"
+   fill="none"
+   height="2"
+   id="connector5terminal" />
+  <rect
+   width="2"
+   x="1.15"
+   y="215.227"
+   fill="none"
+   height="2"
+   id="connector6terminal" />
+  <rect
+   width="2"
+   x="1.15"
+   y="241.227"
+   fill="none"
+   height="2"
+   id="connector7terminal" />
+  <rect
+   width="2"
+   x="171.15"
+   y="241.227"
+   fill="none"
+   height="2"
+   id="connector8terminal" />
+  <rect
+   width="2"
+   x="171.15"
+   y="215.227"
+   fill="none"
+   height="2"
+   id="connector9terminal" />
+  <rect
+   width="2"
+   x="171.15"
+   y="189.227"
+   fill="none"
+   height="2"
+   id="connector10terminal" />
+  <rect
+   width="2"
+   x="171.15"
+   y="163.227"
+   fill="none"
+   height="2"
+   id="connector11terminal" />
+  <rect
+   width="2"
+   x="171.15"
+   y="137.227"
+   fill="none"
+   height="2"
+   id="connector12terminal" />
+  <rect
+   width="2"
+   x="171.15"
+   y="111.226"
+   fill="none"
+   height="2"
+   id="connector13terminal" />
+  <rect
+   width="2"
+   x="171.15"
+   y="85.226"
+   fill="none"
+   height="2"
+   id="connector14terminal" />
+
+	<rect
+   width="2"
+   x="171.15"
+   y="59.226"
+   fill="none"
+   height="2" 
+   id="connector15terminal" />
+
+  <rect
+   width="2"
+   x="171.15"
+   y="59.226"
+   fill="none"
+   height="2"
+   id="rect39" />
+  <rect
+   width="110"
+   x="32.15"
+   y="45.226"
+   fill="none"
+   height="212"
+   stroke="#000000"
+   stroke-linejoin="round"
+   id="box"
+   stroke-linecap="round"
+   stroke-width="2.3" />
+  <line
+   fill="none"
+   stroke="#000000"
+   stroke-linejoin="round"
+   stroke-linecap="round"
+   id="line37"
+   y1="60.226"
+   stroke-width="2.3"
+   x1="1.15"
+   y2="60.226"
+   x2="32.15" />
+  <line
+   fill="none"
+   stroke="#000000"
+   stroke-linejoin="round"
+   stroke-linecap="round"
+   id="line39"
+   y1="86.226"
+   stroke-width="2.3"
+   x1="1.15"
+   y2="86.226"
+   x2="32.15" />
+  <line
+   fill="none"
+   stroke="#000000"
+   stroke-linejoin="round"
+   stroke-linecap="round"
+   id="line41"
+   y1="112.226"
+   stroke-width="2.3"
+   x1="1.15"
+   y2="112.226"
+   x2="32.15" />
+  <line
+   fill="none"
+   stroke="#000000"
+   stroke-linejoin="round"
+   stroke-linecap="round"
+   id="line43"
+   y1="138.227"
+   stroke-width="2.3"
+   x1="1.15"
+   y2="138.227"
+   x2="32.15" />
+  <line
+   fill="none"
+   stroke="#000000"
+   stroke-linejoin="round"
+   stroke-linecap="round"
+   id="line45"
+   y1="164.227"
+   stroke-width="2.3"
+   x1="1.15"
+   y2="164.227"
+   x2="32.15" />
+  <line
+   fill="none"
+   stroke="#000000"
+   stroke-linejoin="round"
+   stroke-linecap="round"
+   id="line47"
+   y1="190.227"
+   stroke-width="2.3"
+   x1="1.15"
+   y2="190.227"
+   x2="32.15" />
+  <line
+   fill="none"
+   stroke="#000000"
+   stroke-linejoin="round"
+   stroke-linecap="round"
+   id="line49"
+   y1="216.227"
+   stroke-width="2.3"
+   x1="1.15"
+   y2="216.227"
+   x2="32.15" />
+  <line
+   fill="none"
+   stroke="#000000"
+   stroke-linejoin="round"
+   stroke-linecap="round"
+   id="line51"
+   y1="242.227"
+   stroke-width="2.3"
+   x1="1.15"
+   y2="242.227"
+   x2="32.15" />
+  <line
+   fill="none"
+   stroke="#000000"
+   stroke-linejoin="round"
+   stroke-linecap="round"
+   id="line53"
+   y1="242.227"
+   stroke-width="2.3"
+   x1="142.15"
+   y2="242.227"
+   x2="173.15" />
+  <line
+   fill="none"
+   stroke="#000000"
+   stroke-linejoin="round"
+   stroke-linecap="round"
+   id="line55"
+   y1="216.227"
+   stroke-width="2.3"
+   x1="142.15"
+   y2="216.227"
+   x2="173.15" />
+  <line
+   fill="none"
+   stroke="#000000"
+   stroke-linejoin="round"
+   stroke-linecap="round"
+   id="line57"
+   y1="190.227"
+   stroke-width="2.3"
+   x1="142.15"
+   y2="190.227"
+   x2="173.15" />
+  <line
+   fill="none"
+   stroke="#000000"
+   stroke-linejoin="round"
+   stroke-linecap="round"
+   id="line59"
+   y1="164.227"
+   stroke-width="2.3"
+   x1="142.15"
+   y2="164.227"
+   x2="173.15" />
+  <line
+   fill="none"
+   stroke="#000000"
+   stroke-linejoin="round"
+   stroke-linecap="round"
+   id="line61"
+   y1="138.227"
+   stroke-width="2.3"
+   x1="142.15"
+   y2="138.227"
+   x2="173.15" />
+  <line
+   fill="none"
+   stroke="#000000"
+   stroke-linejoin="round"
+   stroke-linecap="round"
+   id="line63"
+   y1="112.226"
+   stroke-width="2.3"
+   x1="142.15"
+   y2="112.226"
+   x2="173.15" />
+  <line
+   fill="none"
+   stroke="#000000"
+   stroke-linejoin="round"
+   stroke-linecap="round"
+   id="line65"
+   y1="86.226"
+   stroke-width="2.3"
+   x1="142.15"
+   y2="86.226"
+   x2="173.15" />
+  <line
+   fill="none"
+   stroke="#000000"
+   stroke-linejoin="round"
+   stroke-linecap="round"
+   id="line67"
+   y1="60.226"
+   stroke-width="2.3"
+   x1="142.15"
+   y2="60.226"
+   x2="173.15" />
+  <g
+   id="numbersOnPins">
+   <g
+   id="g70">
+    <path
+   id="path72"
+   d="M22.288,57.077v-0.972h2.099v-5.732l-1.919,0.755l-0.192-1.007l2.363-0.84h0.863v6.824h1.847v0.972H22.288z" />
+   </g>
+   <g
+   id="g74">
+    <path
+   id="path76"
+   d="M22.096,83.077v-0.876l1.715-1.69c1.644-1.607,1.932-2.159,1.932-2.915c0-0.815-0.553-1.463-1.548-1.463c-0.708,0-1.366,0.3-1.763,0.612l-0.264-0.936c0.588-0.372,1.354-0.636,2.219-0.636c1.703,0,2.531,1.067,2.531,2.242c0,1.02-0.372,1.799-1.919,3.263l-1.451,1.379v0.012c0.503-0.012,1.379-0.023,2.471-0.023h1.188v1.031H22.096z" />
+   </g>
+   <g
+   id="g78">
+    <path
+   id="path80"
+   d="M23.811,109.197c-0.54,0-1.091-0.084-1.486-0.192l0.119-0.971c0.433,0.144,0.937,0.239,1.476,0.239c1.307,0,1.991-0.588,1.991-1.439s-0.673-1.391-1.943-1.391c-0.432,0-0.768,0.012-1.175,0.06v-0.863h0.275c1.68,0,2.688-0.456,2.688-1.439c0-0.707-0.563-1.14-1.476-1.14c-0.659,0-1.223,0.181-1.715,0.444l-0.107-0.947c0.563-0.229,1.223-0.396,2.015-0.396c1.607,0,2.423,0.804,2.423,1.871c0,0.924-0.552,1.548-1.486,1.823l-0.013,0.012c0.973,0.097,1.691,0.888,1.691,1.823C27.085,108.226,25.802,109.197,23.811,109.197z" />
+   </g>
+   <g
+   id="g82">
+    <path
+   id="path84"
+   d="M26.45,133.277v1.8h-1.067v-1.8H21.76l-0.084-0.875l3.31-5.121h1.464v5.014h1.282v0.982H26.45L26.45,133.277z M25.394,128.36h-0.012l-2.604,3.971c0.72-0.036,2.136-0.036,2.614-0.036L25.394,128.36L25.394,128.36z" />
+   </g>
+   <g
+   id="g86">
+    <path
+   id="path88"
+   d="M23.859,161.186c-0.526,0-0.971-0.049-1.438-0.156v-0.994c0.443,0.145,0.947,0.229,1.522,0.229c1.283,0,1.991-0.625,1.991-1.607c0-0.959-0.804-1.463-2.039-1.463c-0.504,0-0.996,0.048-1.307,0.096v-4.006h4.222v1.031h-3.214v2.039c0.204-0.013,0.479-0.023,0.66-0.023c1.859,0,2.842,0.959,2.842,2.193C27.097,160.13,25.802,161.186,23.859,161.186z" />
+   </g>
+   <g
+   id="g90">
+    <path
+   id="path92"
+   d="M24.747,187.197c-1.691,0-2.724-1.199-2.724-3.286c0-3.334,1.655-4.737,3.982-4.737c0.252,0,0.54,0.012,0.708,0.036v0.947c-0.24-0.036-0.479-0.062-0.792-0.062c-1.595,0-2.423,0.924-2.734,2.508c-0.023,0.119-0.071,0.336-0.107,0.588h0.012c0.396-0.66,1.116-1.021,1.943-1.021c1.56,0,2.423,1.009,2.423,2.278C27.457,186.105,26.377,187.197,24.747,187.197z M24.807,183.061c-1.008,0-1.595,0.814-1.595,1.486c0,0.971,0.563,1.764,1.631,1.764c0.959,0,1.511-0.695,1.511-1.68C26.354,183.707,25.826,183.061,24.807,183.061z" />
+   </g>
+   <g
+   id="g94">
+    <path
+   id="path96"
+   d="M24.339,213.077H23.08c0.792-2.171,1.871-4.665,3.01-6.765c-0.276,0.013-1.847,0.023-2.962,0.023h-1.055v-1.057h5.265v0.937C26.126,208.473,25.034,211.038,24.339,213.077z" />
+   </g>
+   <g
+   id="g98">
+    <path
+   id="path100"
+   d="M24.626,239.197c-1.56,0-2.579-0.768-2.579-1.955c0-0.995,0.792-1.596,1.667-2.1c-0.912-0.468-1.477-1.02-1.477-1.918c0-1.188,1.021-2.063,2.52-2.063s2.386,0.792,2.386,1.896c0,0.899-0.684,1.451-1.487,1.932c0.863,0.443,1.68,0.994,1.68,2.087C27.337,238.382,26.162,239.197,24.626,239.197z M24.615,235.563c-0.757,0.42-1.439,0.863-1.439,1.596c0,0.672,0.552,1.162,1.559,1.162c0.828,0,1.477-0.42,1.477-1.139C26.21,236.331,25.454,235.947,24.615,235.563z M24.675,232.025c-0.84,0-1.319,0.502-1.319,1.103c0,0.647,0.443,0.983,1.403,1.452c0.695-0.396,1.283-0.792,1.283-1.428C26.042,232.443,25.502,232.025,24.675,232.025z" />
+   </g>
+   <g
+   id="g102">
+    <path
+   id="path104"
+   d="M147.931,239.186c-0.312,0-0.647-0.023-0.96-0.084v-0.972c0.335,0.084,0.72,0.12,1.079,0.12c1.535,0,2.375-0.792,2.65-2.339c0.035-0.229,0.061-0.372,0.107-0.576h-0.013c-0.383,0.552-1.043,0.888-1.871,0.888c-1.535,0-2.387-1.008-2.387-2.351c0-1.644,1.128-2.711,2.688-2.711c1.631,0,2.698,0.996,2.698,3.286C151.924,237.854,150.234,239.186,147.931,239.186z M149.142,232.049c-0.947,0-1.512,0.73-1.512,1.655c0,0.972,0.552,1.595,1.512,1.595c1.021,0,1.583-0.684,1.583-1.499C150.725,232.793,150.173,232.049,149.142,232.049z" />
+   </g>
+   <g
+   id="g106">
+    <path
+   id="path108"
+   d="M146.887,213.077v-0.972h2.099v-5.732l-1.919,0.755l-0.191-1.007l2.362-0.84h0.863v6.824h1.849v0.972H146.887L146.887,213.077z" />
+    <path
+   id="path110"
+   d="M155.826,213.197c-1.716,0-2.663-1.057-2.663-4.055c0-2.733,1.176-3.981,2.807-3.981c1.548,0,2.65,0.924,2.65,3.935C158.62,212.082,157.241,213.197,155.826,213.197z M155.885,206.073c-0.888,0-1.56,0.768-1.56,2.997c0,2.207,0.407,3.203,1.56,3.203c0.983,0,1.571-0.996,1.571-3.106C157.457,206.854,156.953,206.073,155.885,206.073z" />
+   </g>
+   <g
+   id="g112">
+    <path
+   id="path114"
+   d="M146.887,187.077v-0.972h2.099v-5.732l-1.919,0.755l-0.191-1.007l2.362-0.84h0.863v6.824h1.849v0.972H146.887L146.887,187.077z" />
+    <path
+   id="path116"
+   d="M153.487,187.077v-0.972h2.1v-5.732l-1.919,0.755l-0.192-1.007l2.363-0.84h0.863v6.824h1.848v0.972H153.487L153.487,187.077z" />
+   </g>
+   <g
+   id="g118">
+    <path
+   id="path120"
+   d="M146.887,161.077v-0.972h2.099v-5.732l-1.919,0.755l-0.191-1.007l2.362-0.84h0.863v6.824h1.849v0.972H146.887L146.887,161.077z" />
+    <path
+   id="path122"
+   d="M153.294,161.077v-0.876l1.715-1.69c1.644-1.606,1.932-2.159,1.932-2.915c0-0.814-0.552-1.463-1.547-1.463c-0.708,0-1.367,0.301-1.764,0.612l-0.264-0.937c0.588-0.371,1.354-0.636,2.219-0.636c1.703,0,2.531,1.067,2.531,2.242c0,1.021-0.373,1.799-1.921,3.263l-1.45,1.379v0.012c0.504-0.012,1.379-0.022,2.471-0.022h1.188v1.031H153.294z" />
+   </g>
+   <g
+   id="g124">
+    <path
+   id="path126"
+   d="M146.887,135.077v-0.972h2.099v-5.732l-1.919,0.755l-0.191-1.007l2.362-0.84h0.863v6.824h1.849v0.972H146.887L146.887,135.077z" />
+    <path
+   id="path128"
+   d="M155.009,135.197c-0.539,0-1.091-0.084-1.486-0.192l0.119-0.971c0.433,0.144,0.937,0.239,1.477,0.239c1.308,0,1.99-0.588,1.99-1.439s-0.672-1.391-1.942-1.391c-0.433,0-0.769,0.012-1.176,0.06v-0.862h0.275c1.679,0,2.688-0.457,2.688-1.439c0-0.707-0.563-1.14-1.476-1.14c-0.66,0-1.224,0.181-1.715,0.444l-0.108-0.947c0.563-0.229,1.225-0.396,2.016-0.396c1.606,0,2.423,0.804,2.423,1.871c0,0.924-0.552,1.548-1.487,1.822l-0.012,0.013c0.971,0.097,1.691,0.888,1.691,1.823C158.285,134.227,157,135.197,155.009,135.197z" />
+   </g>
+   <g
+   id="g130">
+    <path
+   id="path132"
+   d="M146.887,109.077v-0.972h2.099v-5.732l-1.919,0.755l-0.191-1.007l2.362-0.84h0.863v6.824h1.849v0.972H146.887z" />
+    <path
+   id="path134"
+   d="M157.648,107.278v1.799h-1.065v-1.799h-3.623l-0.084-0.876l3.311-5.121h1.463v5.014h1.283v0.983H157.648z M156.593,102.36h-0.012l-2.604,3.971c0.72-0.036,2.135-0.036,2.615-0.036L156.593,102.36L156.593,102.36z" />
+   </g>
+   <g
+   id="g136">
+    <path
+   id="path138"
+   d="M146.887,83.077v-0.972h2.099v-5.732l-1.919,0.755l-0.191-1.007l2.362-0.84h0.863v6.824h1.849v0.972H146.887z" />
+    <path
+   id="path140"
+   d="M155.058,83.186c-0.527,0-0.972-0.049-1.438-0.156v-0.995c0.442,0.144,0.946,0.228,1.522,0.228c1.283,0,1.99-0.624,1.99-1.607c0-0.959-0.803-1.463-2.039-1.463c-0.504,0-0.995,0.048-1.307,0.096v-4.006h4.222v1.031h-3.214v2.039c0.203-0.012,0.479-0.023,0.659-0.023c1.857,0,2.843,0.959,2.843,2.194C158.296,82.13,157,83.186,155.058,83.186z" />
+   </g>
+   <g
+   id="g142">
+    <path
+   id="path144"
+   d="M146.887,57.077v-0.972h2.099v-5.732l-1.919,0.755l-0.191-1.007l2.362-0.84h0.863v6.824h1.849v0.972H146.887z" />
+    <path
+   id="path146"
+   d="M155.945,57.197c-1.689,0-2.723-1.199-2.723-3.286c0-3.334,1.656-4.737,3.982-4.737c0.252,0,0.539,0.012,0.707,0.036v0.947c-0.239-0.036-0.479-0.061-0.791-0.061c-1.597,0-2.424,0.924-2.734,2.507c-0.023,0.12-0.072,0.336-0.107,0.588h0.013c0.396-0.66,1.114-1.02,1.941-1.02c1.561,0,2.423,1.008,2.423,2.278C158.656,56.105,157.576,57.197,155.945,57.197z M156.005,53.06c-1.008,0-1.596,0.815-1.596,1.487c0,0.971,0.563,1.763,1.631,1.763c0.96,0,1.512-0.695,1.512-1.679C157.552,53.707,157.025,53.06,156.005,53.06z" />
+   </g>
+  </g>
+  <g
+   id="textOnPins">
+   <g
+   style="font-size:12px;font-style:normal;font-weight:normal;line-height:112.00000048%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans"
+   id="text3253"
+   xml:space="preserve"
+   transform="matrix(0.80000112,0,0,0.80000112,0,-1.1991692e-4)">
+    <text
+   x="46.374653"
+   y="71.845482"
+   id="tspan3255">STROBE</text>
+
+   </g>
+   <g
+   style="font-size:12px;font-style:normal;font-weight:normal;line-height:112.00000048%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans"
+   id="text3257"
+   xml:space="preserve"
+   transform="matrix(0.80000112,0,0,0.80000112,0,-1.1991692e-4)">
+    <text
+   x="46.374653"
+   y="105.97023"
+   id="tspan3259">DATA</text>
+
+   </g>
+   <g
+   style="font-size:12px;font-style:normal;font-weight:normal;line-height:112.00000048%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans"
+   id="text3261"
+   xml:space="preserve"
+   transform="matrix(0.80000112,0,0,0.80000112,0,-1.1991692e-4)">
+    <text
+   x="47.687141"
+   y="138.34499"
+   id="tspan3263">CLOCK</text>
+
+   </g>
+   <g
+   style="font-size:12px;font-style:normal;font-weight:normal;line-height:112.00000048%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans"
+   id="text3265"
+   xml:space="preserve"
+   transform="matrix(0.80000112,0,0,0.80000112,0,-1.1991692e-4)">
+    <text
+   x="49.43713"
+   y="170.71974"
+   id="tspan3267">Q1</text>
+
+   </g>
+   <g
+   style="font-size:12px;font-style:normal;font-weight:normal;line-height:112.00000048%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans"
+   id="text3269"
+   xml:space="preserve"
+   transform="matrix(0.80000112,0,0,0.80000112,0,-1.1991692e-4)">
+    <text
+   x="48.999634"
+   y="201.34451"
+   id="tspan3271">Q2</text>
+
+   </g>
+   <g
+   style="font-size:12px;font-style:normal;font-weight:normal;line-height:112.00000048%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans"
+   id="text3273"
+   xml:space="preserve"
+   transform="matrix(0.80000112,0,0,0.80000112,0,-1.1991692e-4)">
+    <text
+   x="51.187115"
+   y="234.59425"
+   id="tspan3275">Q3</text>
+
+   </g>
+   <g
+   style="font-size:12px;font-style:normal;font-weight:normal;line-height:112.00000048%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans"
+   id="text3277"
+   xml:space="preserve"
+   transform="matrix(0.80000112,0,0,0.80000112,0,-1.1991692e-4)">
+    <text
+   x="51.187115"
+   y="267.40652"
+   id="tspan3279">Q4</text>
+
+   </g>
+   <g
+   style="font-size:12px;font-style:normal;font-weight:normal;line-height:112.00000048%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans"
+   id="text3281"
+   xml:space="preserve"
+   transform="matrix(0.80000112,0,0,0.80000112,0,-1.1991692e-4)">
+    <text
+   x="51.187115"
+   y="302.84375"
+   id="tspan3289">Vss (GND)</text>
+
+   </g>
+   <g
+   style="font-size:12px;font-style:normal;font-weight:normal;line-height:112.00000048%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans"
+   id="text3285"
+   xml:space="preserve"
+   transform="matrix(0.80000112,0,0,0.80000112,0,-1.1991692e-4)">
+    <text
+   x="140.87395"
+   y="74.470467"
+   id="tspan3287">VDD</text>
+
+   </g>
+   <g
+   style="font-size:9.60001373px;font-style:normal;font-weight:normal;line-height:112.00000048%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans"
+   id="text3293"
+   xml:space="preserve">
+    <text
+   x="107.09934"
+   y="80.926208"
+   id="tspan3295">Output </text>
+
+    <text
+   x="107.09934"
+   y="91.678223"
+   id="tspan3297">enable</text>
+
+   </g>
+   <g
+   style="font-size:12px;font-style:normal;font-weight:normal;line-height:112.00000048%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans"
+   id="text3299"
+   xml:space="preserve"
+   transform="matrix(0.80000112,0,0,0.80000112,0,-1.1991692e-4)">
+    <text
+   x="139.99895"
+   y="137.46999"
+   id="tspan3301">Q5</text>
+
+   </g>
+   <g
+   style="font-size:12px;font-style:normal;font-weight:normal;line-height:112.00000048%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans"
+   id="text3303"
+   xml:space="preserve"
+   transform="matrix(0.80000112,0,0,0.80000112,0,-1.1991692e-4)">
+    <text
+   x="140.43645"
+   y="168.09476"
+   id="tspan3305">Q6</text>
+
+   </g>
+   <g
+   style="font-size:12px;font-style:normal;font-weight:normal;line-height:112.00000048%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans"
+   id="text3307"
+   xml:space="preserve"
+   transform="matrix(0.80000112,0,0,0.80000112,0,-1.1991692e-4)">
+    <text
+   x="140.87395"
+   y="202.657"
+   id="tspan3309">Q7</text>
+
+   </g>
+   <g
+   style="font-size:12px;font-style:normal;font-weight:normal;line-height:112.00000048%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans"
+   id="text3311"
+   xml:space="preserve"
+   transform="matrix(0.80000112,0,0,0.80000112,0,-1.1991692e-4)">
+    <text
+   x="141.31145"
+   y="234.59425"
+   id="tspan3313">Q8</text>
+
+   </g>
+   <g
+   style="font-size:12px;font-style:normal;font-weight:normal;line-height:112.00000048%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans"
+   id="text3315"
+   xml:space="preserve"
+   transform="matrix(0.80000112,0,0,0.80000112,0,-1.1991692e-4)">
+    <text
+   x="141.31145"
+   y="270.46899"
+   id="tspan3317">Q's</text>
+
+   </g>
+   <g
+   style="font-size:12px;font-style:normal;font-weight:normal;line-height:112.00000048%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans"
+   id="text3319"
+   xml:space="preserve"
+   transform="matrix(0.80000112,0,0,0.80000112,0,-1.1991692e-4)">
+    <text
+   x="142.62393"
+   y="299.34378"
+   id="tspan3321">Qs</text>
+
+   </g>
+  </g>
+  <text
+   style="font-size:23.87940025px;font-family:DroidDroid Sans"
+   id="text270"
+   transform="translate(38.532,31.7617)"
+   font-size="23.8794">HEF4094</text>
+
+
+
+ </g>
+</svg>

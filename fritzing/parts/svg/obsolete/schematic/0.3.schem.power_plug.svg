@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1"
+	 id="svg2" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" sodipodi:docname="peltier_sensor.svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" sodipodi:version="0.32" xmlns:svg="http://www.w3.org/2000/svg" inkscape:version="0.46" inkscape:output_extension="org.inkscape.output.svg.inkscape"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="0.96in"
+	 height="0.85in" viewBox="0 0 69.32 60.957" enable-background="new 0 0 69.32 60.957" xml:space="preserve">
+<g id="schematic">
+	<line id="connector2pin" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="23.25" y1="19.401" x2="1" y2="19.401"/>
+	<rect id="connector2terminal" x="0" y="18.244" fill="none" width="1" height="2"/>
+	<line id="connector0pin" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="23.25" y1="19.401" x2="1" y2="19.401"/>
+	<rect id="connector0terminal" x="0" y="18.244" fill="none" width="1" height="2"/>
+	<line id="connector1pin" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="23.25" y1="39.4" x2="1" y2="39.4"/>
+	<rect id="connector1terminal" x="0" y="38.244" fill="none" width="1" height="2"/>
+	<rect id="box" x="24.069" y="1" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="43.957" height="58.957"/>
+	<polygon points="49.518,14.139 39.209,28.273 46.243,29.659 37.426,46.818 54.668,26.092 47.334,24.213 	"/>
+</g>
+</svg>

@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1 Basic//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-basic.dtd'>
+<!-- Generator: Adobe Illustrator 15.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg xmlns="http://www.w3.org/2000/svg" width="2.48061in" xml:space="preserve" xmlns:xml="http://www.w3.org/XML/1998/namespace" x="0px" version="1.1" y="0px" height="2.15701in" viewBox="0 0 178.604 155.305" baseProfile="basic" id="Ebene_1">
+ <g  id="schematic">
+  <rect  width="128.924" x="24.84" y="22.75" fill="none" height="109.664" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="2.3"/>
+  <text  font-family="Droid Sans" id="label" transform="matrix(1 0 0 1 57.3928 66.4873)" font-size="16.92">Thermal</text>
+  <text  font-family="Droid Sans" id="label_1_" transform="matrix(1 0 0 1 62.738 88.6865)" font-size="16.92">Printer</text>
+  <line  fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="154.085" stroke-width="2.3" x1="92.868" y2="133.564" x2="92.868"/>
+  <rect  width="2.159" x="91.788" y="133.564" fill="none" height="21.601" id="connector0pin"/>
+  <rect  width="2.159" x="91.788" y="153.005" fill="none" height="2.16" id="connector0terminal"/>
+  <text  font-family="Droid Sans" id="label0" transform="matrix(1 0 0 1 80.5032 124.4736)" font-size="9.36">GND</text>
+  <line  fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="1.08" stroke-width="2.3" x1="90.345" y2="21.6" x2="90.345"/>
+  <rect  width="2.16" x="89.264" fill="none" height="21.6" id="connector1pin"/>
+  <rect  width="2.16" x="89.264" fill="none" height="2.16" id="connector1terminal"/>
+  <text  font-family="Droid Sans" id="label1" transform="matrix(1 0 0 1 84.4065 36.5586)" font-size="9.36">VH</text>
+  <line  fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="77.288" stroke-width="2.3" x1="153.764" y2="77.288" x2="175.365"/>
+  <rect  width="21.601" x="154.845" y="76.208" fill="none" height="2.159" id="connector4pin"/>
+  <rect  width="2.16" x="176.445" y="76.208" fill="none" height="2.159" id="connector4terminal"/>
+  <text  font-family="Droid Sans" id="label4" transform="matrix(1 0 0 1 131.8665 79.8076)" font-size="9.36">TXD</text>
+  <line  fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="154.085" stroke-width="2.3" x1="92.867" y2="133.564" x2="92.867"/>
+  <rect  width="2.16" x="91.787" y="133.564" fill="none" height="21.601" id="connector2pin"/>
+  <rect  width="2.16" x="91.787" y="153.005" fill="none" height="2.16" id="connector2terminal"/>
+  <line  fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="77.288" stroke-width="2.3" x1="24.84" y2="77.288" x2="3.24"/>
+  <rect  width="21.6" x="2.16" y="76.208" fill="none" height="2.159" id="connector3pin"/>
+  <rect  width="2.16" x="0" y="76.208" fill="none" height="2.159" id="connector3terminal"/>
+  <text  font-family="Droid Sans" id="label3" transform="matrix(1 0 0 1 29.0188 79.8076)" font-size="9.36">RXD</text>
+ </g>
+</svg>

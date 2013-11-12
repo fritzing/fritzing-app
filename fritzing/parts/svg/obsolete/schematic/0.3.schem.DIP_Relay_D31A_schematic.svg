@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.2" baseProfile="tiny"
+	 id="Layer_1" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="188.994px"
+	 height="227.252px" viewBox="0 0 188.994 227.252" xml:space="preserve">
+<g id="schematic">
+	<g id="layer1" transform="translate(-201.99844,-375.87344)">
+		
+			<rect id="rect5" x="229.05" y="377.13" fill="none" stroke="#000000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="133.685" height="224.75"/>
+		
+			<line fill="none" stroke="#000000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" x1="203.299" y1="412.88" x2="228.949" y2="412.88"/>
+		<text id="label0" transform="matrix(1 0 0 1 236.7865 424.7804)" font-family="'DroidSans'" font-size="11.7">1</text>
+		
+			<line fill="none" stroke="#000000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" x1="362.737" y1="412.88" x2="389.737" y2="412.88"/>
+		
+			<line fill="none" stroke="#000000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" x1="203.299" y1="439.88" x2="228.949" y2="439.88"/>
+		
+			<line fill="none" stroke="#000000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" x1="362.737" y1="439.88" x2="389.737" y2="439.88"/>
+		
+			<line fill="none" stroke="#000000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" x1="203.299" y1="547.88" x2="228.949" y2="547.88"/>
+		
+			<line fill="none" stroke="#000000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" x1="362.737" y1="547.88" x2="389.737" y2="547.88"/>
+		
+			<line fill="none" stroke="#000000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" x1="203.299" y1="574.881" x2="228.949" y2="574.881"/>
+		<text id="label6" transform="matrix(1 0 0 1 236.829 586.2999)" font-family="'DroidSans'" font-size="11.7">7</text>
+		
+			<line fill="none" stroke="#000000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" x1="362.737" y1="574.881" x2="389.737" y2="574.881"/>
+		<text id="label0-3" transform="matrix(1 0 0 1 348.9867 558.9308)" font-family="'DroidSans'" font-size="11.7">9</text>
+		<text id="label0-6" transform="matrix(1 0 0 1 343.0883 450.6027)" font-family="'DroidSans'" font-size="11.7">13</text>
+		<text id="label0-0" transform="matrix(1 0 0 1 342.4867 423.881)" font-family="'DroidSans'" font-size="11.7">14</text>
+		<text id="label0-4" transform="matrix(1 0 0 1 236.829 558.299)" font-family="'DroidSans'" font-size="11.7">6-</text>
+		<text id="label0-49" transform="matrix(1 0 0 1 236.829 451.5988)" font-family="'DroidSans'" font-size="11.7">2+</text>
+		<text id="label0-8" transform="matrix(1 0 0 1 349.2191 586.8644)" font-family="'DroidSans'" font-size="11.7">8</text>
+		<g id="g3256" transform="matrix(1.2500001,0,0,1.2500001,201.9491,375.78003)">
+			<path id="path3070" fill="none" stroke="#000000" stroke-width="1.3663" stroke-linecap="square" stroke-miterlimit="1" d="
+				M59,61.8c3.314,0,6,2.686,6,6c0,3.313-2.686,6-6,6"/>
+			<path id="path3070-9" fill="none" stroke="#000000" stroke-width="1.7079" stroke-linecap="square" stroke-miterlimit="1" d="
+				M59,109.8c3.314,0,6,2.686,6,6c0,3.313-2.686,6-6,6"/>
+			<path id="path3070-2" fill="none" stroke="#000000" stroke-width="1.7079" stroke-linecap="square" stroke-miterlimit="1" d="
+				M59,97.8c3.314,0,6,2.686,6,6c0,3.313-2.686,6-6,6"/>
+			<path id="path3070-28" fill="none" stroke="#000000" stroke-width="1.7079" stroke-linecap="square" stroke-miterlimit="1" d="
+				M59,85.8c3.314,0,6,2.686,6,6c0,3.313-2.686,6-6,6"/>
+			<path id="path3070-97" fill="none" stroke="#000000" stroke-width="1.3663" stroke-linecap="square" stroke-miterlimit="1" d="
+				M59,73.8c3.314,0,6,2.686,6,6c0,3.313-2.686,6-6,6"/>
+			<path id="path3890" fill="none" stroke="#000000" stroke-width="0.8" d="M21.4,51.4h37.311v10.4"/>
+			<path id="path3892" fill="none" stroke="#000000" stroke-width="0.8" d="M21.4,137.8h37.311v-16"/>
+			<path id="path3896" fill="none" stroke="#000000" stroke-width="1.7079" stroke-linecap="square" stroke-miterlimit="1" d="
+				M39.377,51.444c0,0.282-0.229,0.51-0.511,0.51c-0.282,0.001-0.511-0.228-0.511-0.51l0,0c0-0.282,0.228-0.511,0.51-0.511
+				C39.148,50.932,39.377,51.161,39.377,51.444C39.377,51.443,39.377,51.443,39.377,51.444z"/>
+			<path id="path3896-2" fill="none" stroke="#000000" stroke-width="1.7079" stroke-linecap="square" stroke-miterlimit="1" d="
+				M39.547,137.746c0,0.282-0.229,0.511-0.511,0.511c-0.282,0-0.511-0.228-0.511-0.51c0-0.001,0-0.001,0-0.001
+				c0-0.282,0.229-0.511,0.511-0.511C39.318,137.235,39.547,137.464,39.547,137.746C39.547,137.746,39.547,137.746,39.547,137.746z"
+				/>
+			<path id="rect3916" fill="none" stroke="#000000" stroke-width="1.3663" stroke-linecap="square" stroke-miterlimit="1" d="
+				M38.9,86.611l5.175,10.623H33.726C33.726,97.234,38.88,86.611,38.9,86.611z"/>
+			<path id="path3921" fill="none" stroke="#000000" stroke-width="0.8" d="M38.865,87.145V51.42"/>
+			<path id="path3928" fill="none" stroke="#000000" stroke-width="1.3535" d="M32.991,85.796h11.555"/>
+		</g>
+		<path id="path3934" fill="none" stroke="#000000" stroke-width="1.7079" stroke-dasharray="10.2472,1.7079" d="M290.747,452.043
+			v76.6"/>
+		<path id="path3936" fill="none" stroke="#000000" d="M362.75,547.878l-72.003,0.17v-19.575"/>
+		<g id="g3270" transform="matrix(1.2500001,0,0,1.2500001,201.9491,375.78003)">
+			<path id="path3064" fill="none" stroke="#000000" d="M22.661,159.195h104.959"/>
+			<path id="path3066" fill="none" stroke="#000000" d="M22.661,29.553h104.959"/>
+			<path id="path3946" fill="none" stroke="#000000" stroke-width="0.8" d="M102.941,29.825l0.136,52.156"/>
+			<path id="path3948" fill="none" stroke="#000000" stroke-width="0.8" d="M102.997,101.807v57.059"/>
+			<path id="path3952" fill="none" stroke="#000000" stroke-width="0.8" d="M103.036,81.749l8.034,20.019"/>
+			<path id="path3896-2-1" fill="none" stroke="#000000" stroke-width="1.7079" stroke-linecap="square" stroke-miterlimit="1" d="
+				M103.458,159.075c0,0.282-0.228,0.51-0.511,0.511c-0.281,0-0.509-0.229-0.511-0.511l0,0c0-0.282,0.23-0.511,0.511-0.511
+				C103.23,158.564,103.458,158.792,103.458,159.075C103.458,159.075,103.458,159.075,103.458,159.075z"/>
+			<path id="path3896-2-6" fill="none" stroke="#000000" stroke-width="1.7079" stroke-linecap="square" stroke-miterlimit="1" d="
+				M103.41,29.658c0,0.282-0.228,0.511-0.509,0.511c-0.283,0-0.511-0.228-0.511-0.51c0-0.001,0-0.001,0-0.001
+				c0-0.282,0.228-0.511,0.509-0.511C103.182,29.147,103.41,29.375,103.41,29.658C103.41,29.658,103.41,29.658,103.41,29.658z"/>
+		</g>
+		<path id="path3919" fill="none" stroke="#000000" d="M250.749,497.194v50.433"/>
+		<text id="label" transform="matrix(1 0 0 1 263.1362 401.7706)" font-family="'DroidSans'" font-size="21.15">D31A*</text>
+	</g>
+	<rect id="connector6" x="0" y="197.818" fill="none" width="18.815" height="2.378"/>
+	<rect id="connector6terminal" x="0" y="197.818" fill="none" width="0.894" height="2.378"/>
+	<rect id="connector7" x="168.74" y="197.808" fill="none" width="20.245" height="2.379"/>
+	<rect id="connector7terminal" x="188.092" y="197.808" fill="none" width="0.894" height="2.379"/>
+	<rect id="connector8" x="170.179" y="170.818" fill="none" width="18.815" height="2.378"/>
+	<rect id="connector8terminal" x="188.101" y="170.818" fill="none" width="0.894" height="2.378"/>
+	<rect id="connector12" x="170.179" y="62.818" fill="none" width="18.815" height="2.378"/>
+	<rect id="connector12terminal" x="188.425" y="62.818" fill="none" width="0.569" height="2.378"/>
+	<rect id="connector13" x="170.179" y="35.818" fill="none" width="18.815" height="2.378"/>
+	<rect id="connector13terminal" x="188.308" y="35.818" fill="none" width="0.687" height="2.378"/>
+	<rect id="connector0" x="0" y="35.818" fill="none" width="18.815" height="2.378"/>
+	<rect id="connector0terminal" x="0" y="35.818" fill="none" width="0.894" height="2.378"/>
+	<rect id="connector1" x="0.001" y="62.818" fill="none" width="18.815" height="2.378"/>
+	<rect id="connector1terminal" x="0.001" y="62.818" fill="none" width="0.895" height="2.378"/>
+	<rect id="connector5" x="0" y="170.818" fill="none" width="18.815" height="2.378"/>
+	<rect id="connector5terminal" x="0" y="170.818" fill="none" width="0.894" height="2.378"/>
+</g>
+</svg>

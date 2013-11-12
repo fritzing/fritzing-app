@@ -1,0 +1,168 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- Created with Fritzing (http://www.fritzing.org/) -->
+<svg width="3.12222in" x="0in" version="1.2" y="0in" xmlns="http://www.w3.org/2000/svg" height="6.22222in" viewBox="0 0 3122.22 6222.22" baseProfile="tiny" xmlns:svg="http://www.w3.org/2000/svg">
+ <g id="schematic">
+  <rect width="2513" x="315" y="15" fill="none" height="6195" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="30"/>
+  <text x="1566.5" y="465" font-family="Droid Sans" fill="#000000" text-anchor="middle" stroke="none" id="label" font-size="235">PIC 16F877A</text>
+  <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="315" stroke-width="30" x1="15" y2="315" x2="300"/>
+  <rect width="300" x="0" y="300" fill="none" height="30" stroke="none" id="connector0pin" stroke-width="0"/>
+  <rect width="30" x="0" y="300" fill="none" height="30" stroke="none" id="connector0terminal" stroke-width="0"/>
+  <text x="390" y="350" font-family="Droid Sans" fill="#000000" text-anchor="start" stroke="none" id="label0" font-size="130">MCLR</text>
+  <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="315" stroke-width="30" x1="2833" y2="315" x2="3118"/>
+  <rect width="300" x="2833" y="300" fill="none" height="30" stroke="none" id="connector39pin" stroke-width="0"/>>
+<rect width="30" x="3103" y="300" fill="none" height="30" stroke="none" id="connector39terminal" stroke-width="0"/>>
+<text x="2743" y="350" font-family="Droid Sans" fill="#000000" text-anchor="end" stroke="none" id="label39" font-size="130">RB7</text>>
+<line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="610" stroke-width="30" x1="15" y2="610" x2="300"/>
+  <rect width="300" x="0" y="595" fill="none" height="30" stroke="none" id="connector1pin" stroke-width="0"/>
+  <rect width="30" x="0" y="595" fill="none" height="30" stroke="none" id="connector1terminal" stroke-width="0"/>
+  <text x="390" y="645" font-family="Droid Sans" fill="#000000" text-anchor="start" stroke="none" id="label1" font-size="130">RA0/AN0</text>
+  <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="610" stroke-width="30" x1="2833" y2="610" x2="3118"/>
+  <rect width="300" x="2833" y="595" fill="none" height="30" stroke="none" id="connector38pin" stroke-width="0"/>>
+<rect width="30" x="3103" y="595" fill="none" height="30" stroke="none" id="connector38terminal" stroke-width="0"/>>
+<text x="2743" y="645" font-family="Droid Sans" fill="#000000" text-anchor="end" stroke="none" id="label38" font-size="130">RB6</text>>
+<line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="905" stroke-width="30" x1="15" y2="905" x2="300"/>
+  <rect width="300" x="0" y="890" fill="none" height="30" stroke="none" id="connector2pin" stroke-width="0"/>
+  <rect width="30" x="0" y="890" fill="none" height="30" stroke="none" id="connector2terminal" stroke-width="0"/>
+  <text x="390" y="940" font-family="Droid Sans" fill="#000000" text-anchor="start" stroke="none" id="label2" font-size="130">RA1/AN1</text>
+  <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="905" stroke-width="30" x1="2833" y2="905" x2="3118"/>
+  <rect width="300" x="2833" y="890" fill="none" height="30" stroke="none" id="connector37pin" stroke-width="0"/>>
+<rect width="30" x="3103" y="890" fill="none" height="30" stroke="none" id="connector37terminal" stroke-width="0"/>>
+<text x="2743" y="940" font-family="Droid Sans" fill="#000000" text-anchor="end" stroke="none" id="label37" font-size="130">RB5</text>>
+<line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="1200" stroke-width="30" x1="15" y2="1200" x2="300"/>
+  <rect width="300" x="0" y="1185" fill="none" height="30" stroke="none" id="connector3pin" stroke-width="0"/>
+  <rect width="30" x="0" y="1185" fill="none" height="30" stroke="none" id="connector3terminal" stroke-width="0"/>
+  <text x="390" y="1235" font-family="Droid Sans" fill="#000000" text-anchor="start" stroke="none" id="label3" font-size="130">RA2/AN2</text>
+  <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="1200" stroke-width="30" x1="2833" y2="1200" x2="3118"/>
+  <rect width="300" x="2833" y="1185" fill="none" height="30" stroke="none" id="connector36pin" stroke-width="0"/>>
+<rect width="30" x="3103" y="1185" fill="none" height="30" stroke="none" id="connector36terminal" stroke-width="0"/>>
+<text x="2743" y="1235" font-family="Droid Sans" fill="#000000" text-anchor="end" stroke="none" id="label36" font-size="130">RB4</text>>
+<line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="1495" stroke-width="30" x1="15" y2="1495" x2="300"/>
+  <rect width="300" x="0" y="1480" fill="none" height="30" stroke="none" id="connector4pin" stroke-width="0"/>
+  <rect width="30" x="0" y="1480" fill="none" height="30" stroke="none" id="connector4terminal" stroke-width="0"/>
+  <text x="390" y="1530" font-family="Droid Sans" fill="#000000" text-anchor="start" stroke="none" id="label4" font-size="130">RA3/AN3</text>
+  <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="1495" stroke-width="30" x1="2833" y2="1495" x2="3118"/>
+  <rect width="300" x="2833" y="1480" fill="none" height="30" stroke="none" id="connector35pin" stroke-width="0"/>>
+<rect width="30" x="3103" y="1480" fill="none" height="30" stroke="none" id="connector35terminal" stroke-width="0"/>>
+<text x="2743" y="1530" font-family="Droid Sans" fill="#000000" text-anchor="end" stroke="none" id="label35" font-size="130">RB3</text>>
+<line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="1790" stroke-width="30" x1="15" y2="1790" x2="300"/>
+  <rect width="300" x="0" y="1775" fill="none" height="30" stroke="none" id="connector5pin" stroke-width="0"/>
+  <rect width="30" x="0" y="1775" fill="none" height="30" stroke="none" id="connector5terminal" stroke-width="0"/>
+  <text x="390" y="1825" font-family="Droid Sans" fill="#000000" text-anchor="start" stroke="none" id="label5" font-size="130">RA4</text>
+  <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="1790" stroke-width="30" x1="2833" y2="1790" x2="3118"/>
+  <rect width="300" x="2833" y="1775" fill="none" height="30" stroke="none" id="connector34pin" stroke-width="0"/>>
+<rect width="30" x="3103" y="1775" fill="none" height="30" stroke="none" id="connector34terminal" stroke-width="0"/>>
+<text x="2743" y="1825" font-family="Droid Sans" fill="#000000" text-anchor="end" stroke="none" id="label34" font-size="130">RB2</text>>
+<line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="2085" stroke-width="30" x1="15" y2="2085" x2="300"/>
+  <rect width="300" x="0" y="2070" fill="none" height="30" stroke="none" id="connector6pin" stroke-width="0"/>
+  <rect width="30" x="0" y="2070" fill="none" height="30" stroke="none" id="connector6terminal" stroke-width="0"/>
+  <text x="390" y="2120" font-family="Droid Sans" fill="#000000" text-anchor="start" stroke="none" id="label6" font-size="130">RA5/AN4/SS</text>
+  <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="2085" stroke-width="30" x1="2833" y2="2085" x2="3118"/>
+  <rect width="300" x="2833" y="2070" fill="none" height="30" stroke="none" id="connector33pin" stroke-width="0"/>>
+<rect width="30" x="3103" y="2070" fill="none" height="30" stroke="none" id="connector33terminal" stroke-width="0"/>>
+<text x="2743" y="2120" font-family="Droid Sans" fill="#000000" text-anchor="end" stroke="none" id="label33" font-size="130">RB1</text>>
+<line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="2380" stroke-width="30" x1="15" y2="2380" x2="300"/>
+  <rect width="300" x="0" y="2365" fill="none" height="30" stroke="none" id="connector7pin" stroke-width="0"/>
+  <rect width="30" x="0" y="2365" fill="none" height="30" stroke="none" id="connector7terminal" stroke-width="0"/>
+  <text x="390" y="2415" font-family="Droid Sans" fill="#000000" text-anchor="start" stroke="none" id="label7" font-size="130">RE0/RD/AN5</text>
+  <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="2380" stroke-width="30" x1="2833" y2="2380" x2="3118"/>
+  <rect width="300" x="2833" y="2365" fill="none" height="30" stroke="none" id="connector32pin" stroke-width="0"/>>
+<rect width="30" x="3103" y="2365" fill="none" height="30" stroke="none" id="connector32terminal" stroke-width="0"/>>
+<text x="2743" y="2415" font-family="Droid Sans" fill="#000000" text-anchor="end" stroke="none" id="label32" font-size="130">RB0/INT</text>>
+<line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="2675" stroke-width="30" x1="15" y2="2675" x2="300"/>
+  <rect width="300" x="0" y="2660" fill="none" height="30" stroke="none" id="connector8pin" stroke-width="0"/>
+  <rect width="30" x="0" y="2660" fill="none" height="30" stroke="none" id="connector8terminal" stroke-width="0"/>
+  <text x="390" y="2710" font-family="Droid Sans" fill="#000000" text-anchor="start" stroke="none" id="label8" font-size="130">RE1/WR/AN6</text>
+  <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="2675" stroke-width="30" x1="2833" y2="2675" x2="3118"/>
+  <rect width="300" x="2833" y="2660" fill="none" height="30" stroke="none" id="connector31pin" stroke-width="0"/>>
+<rect width="30" x="3103" y="2660" fill="none" height="30" stroke="none" id="connector31terminal" stroke-width="0"/>>
+<text x="2743" y="2710" font-family="Droid Sans" fill="#000000" text-anchor="end" stroke="none" id="label31" font-size="130">VDD</text>>
+<line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="2970" stroke-width="30" x1="15" y2="2970" x2="300"/>
+  <rect width="300" x="0" y="2955" fill="none" height="30" stroke="none" id="connector9pin" stroke-width="0"/>
+  <rect width="30" x="0" y="2955" fill="none" height="30" stroke="none" id="connector9terminal" stroke-width="0"/>
+  <text x="390" y="3005" font-family="Droid Sans" fill="#000000" text-anchor="start" stroke="none" id="label9" font-size="130">RE2/CS/AN7</text>
+  <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="2970" stroke-width="30" x1="2833" y2="2970" x2="3118"/>
+  <rect width="300" x="2833" y="2955" fill="none" height="30" stroke="none" id="connector30pin" stroke-width="0"/>>
+<rect width="30" x="3103" y="2955" fill="none" height="30" stroke="none" id="connector30terminal" stroke-width="0"/>>
+<text x="2743" y="3005" font-family="Droid Sans" fill="#000000" text-anchor="end" stroke="none" id="label30" font-size="130">VSS</text>>
+<line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="3265" stroke-width="30" x1="15" y2="3265" x2="300"/>
+  <rect width="300" x="0" y="3250" fill="none" height="30" stroke="none" id="connector10pin" stroke-width="0"/>
+  <rect width="30" x="0" y="3250" fill="none" height="30" stroke="none" id="connector10terminal" stroke-width="0"/>
+  <text x="390" y="3300" font-family="Droid Sans" fill="#000000" text-anchor="start" stroke="none" id="label10" font-size="130">VDD</text>
+  <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="3265" stroke-width="30" x1="2833" y2="3265" x2="3118"/>
+  <rect width="300" x="2833" y="3250" fill="none" height="30" stroke="none" id="connector29pin" stroke-width="0"/>>
+<rect width="30" x="3103" y="3250" fill="none" height="30" stroke="none" id="connector29terminal" stroke-width="0"/>>
+<text x="2743" y="3300" font-family="Droid Sans" fill="#000000" text-anchor="end" stroke="none" id="label29" font-size="130">RD7/PSP7</text>>
+<line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="3560" stroke-width="30" x1="15" y2="3560" x2="300"/>
+  <rect width="300" x="0" y="3545" fill="none" height="30" stroke="none" id="connector11pin" stroke-width="0"/>
+  <rect width="30" x="0" y="3545" fill="none" height="30" stroke="none" id="connector11terminal" stroke-width="0"/>
+  <text x="390" y="3595" font-family="Droid Sans" fill="#000000" text-anchor="start" stroke="none" id="label11" font-size="130">VSS</text>
+  <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="3560" stroke-width="30" x1="2833" y2="3560" x2="3118"/>
+  <rect width="300" x="2833" y="3545" fill="none" height="30" stroke="none" id="connector28pin" stroke-width="0"/>>
+<rect width="30" x="3103" y="3545" fill="none" height="30" stroke="none" id="connector28terminal" stroke-width="0"/>>
+<text x="2743" y="3595" font-family="Droid Sans" fill="#000000" text-anchor="end" stroke="none" id="label28" font-size="130">RD6/PSP6</text>>
+<line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="3855" stroke-width="30" x1="15" y2="3855" x2="300"/>
+  <rect width="300" x="0" y="3840" fill="none" height="30" stroke="none" id="connector12pin" stroke-width="0"/>
+  <rect width="30" x="0" y="3840" fill="none" height="30" stroke="none" id="connector12terminal" stroke-width="0"/>
+  <text x="390" y="3890" font-family="Droid Sans" fill="#000000" text-anchor="start" stroke="none" id="label12" font-size="130">OSC1/CLKIN</text>
+  <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="3855" stroke-width="30" x1="2833" y2="3855" x2="3118"/>
+  <rect width="300" x="2833" y="3840" fill="none" height="30" stroke="none" id="connector27pin" stroke-width="0"/>>
+<rect width="30" x="3103" y="3840" fill="none" height="30" stroke="none" id="connector27terminal" stroke-width="0"/>>
+<text x="2743" y="3890" font-family="Droid Sans" fill="#000000" text-anchor="end" stroke="none" id="label27" font-size="130">RD5/PSP5</text>>
+<line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="4150" stroke-width="30" x1="15" y2="4150" x2="300"/>
+  <rect width="300" x="0" y="4135" fill="none" height="30" stroke="none" id="connector13pin" stroke-width="0"/>
+  <rect width="30" x="0" y="4135" fill="none" height="30" stroke="none" id="connector13terminal" stroke-width="0"/>
+  <text x="390" y="4185" font-family="Droid Sans" fill="#000000" text-anchor="start" stroke="none" id="label13" font-size="130">OSC2/CLKOUT</text>
+  <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="4150" stroke-width="30" x1="2833" y2="4150" x2="3118"/>
+  <rect width="300" x="2833" y="4135" fill="none" height="30" stroke="none" id="connector26pin" stroke-width="0"/>>
+<rect width="30" x="3103" y="4135" fill="none" height="30" stroke="none" id="connector26terminal" stroke-width="0"/>>
+<text x="2743" y="4185" font-family="Droid Sans" fill="#000000" text-anchor="end" stroke="none" id="label26" font-size="130">RD4/PSP4</text>>
+<line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="4445" stroke-width="30" x1="15" y2="4445" x2="300"/>
+  <rect width="300" x="0" y="4430" fill="none" height="30" stroke="none" id="connector14pin" stroke-width="0"/>
+  <rect width="30" x="0" y="4430" fill="none" height="30" stroke="none" id="connector14terminal" stroke-width="0"/>
+  <text x="390" y="4480" font-family="Droid Sans" fill="#000000" text-anchor="start" stroke="none" id="label14" font-size="130">RC0</text>
+  <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="4445" stroke-width="30" x1="2833" y2="4445" x2="3118"/>
+  <rect width="300" x="2833" y="4430" fill="none" height="30" stroke="none" id="connector25pin" stroke-width="0"/>>
+<rect width="30" x="3103" y="4430" fill="none" height="30" stroke="none" id="connector25terminal" stroke-width="0"/>>
+<text x="2743" y="4480" font-family="Droid Sans" fill="#000000" text-anchor="end" stroke="none" id="label25" font-size="130">RC7/RX/DT</text>>
+<line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="4740" stroke-width="30" x1="15" y2="4740" x2="300"/>
+  <rect width="300" x="0" y="4725" fill="none" height="30" stroke="none" id="connector15pin" stroke-width="0"/>
+  <rect width="30" x="0" y="4725" fill="none" height="30" stroke="none" id="connector15terminal" stroke-width="0"/>
+  <text x="390" y="4775" font-family="Droid Sans" fill="#000000" text-anchor="start" stroke="none" id="label15" font-size="130">RC1</text>
+  <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="4740" stroke-width="30" x1="2833" y2="4740" x2="3118"/>
+  <rect width="300" x="2833" y="4725" fill="none" height="30" stroke="none" id="connector24pin" stroke-width="0"/>>
+<rect width="30" x="3103" y="4725" fill="none" height="30" stroke="none" id="connector24terminal" stroke-width="0"/>>
+<text x="2743" y="4775" font-family="Droid Sans" fill="#000000" text-anchor="end" stroke="none" id="label24" font-size="130">RC6/TX/CK</text>>
+<line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="5035" stroke-width="30" x1="15" y2="5035" x2="300"/>
+  <rect width="300" x="0" y="5020" fill="none" height="30" stroke="none" id="connector16pin" stroke-width="0"/>
+  <rect width="30" x="0" y="5020" fill="none" height="30" stroke="none" id="connector16terminal" stroke-width="0"/>
+  <text x="390" y="5070" font-family="Droid Sans" fill="#000000" text-anchor="start" stroke="none" id="label16" font-size="130">RC2</text>
+  <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="5035" stroke-width="30" x1="2833" y2="5035" x2="3118"/>
+  <rect width="300" x="2833" y="5020" fill="none" height="30" stroke="none" id="connector23pin" stroke-width="0"/>>
+<rect width="30" x="3103" y="5020" fill="none" height="30" stroke="none" id="connector23terminal" stroke-width="0"/>>
+<text x="2743" y="5070" font-family="Droid Sans" fill="#000000" text-anchor="end" stroke="none" id="label23" font-size="130">RC5</text>>
+<line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="5330" stroke-width="30" x1="15" y2="5330" x2="300"/>
+  <rect width="300" x="0" y="5315" fill="none" height="30" stroke="none" id="connector17pin" stroke-width="0"/>
+  <rect width="30" x="0" y="5315" fill="none" height="30" stroke="none" id="connector17terminal" stroke-width="0"/>
+  <text x="390" y="5365" font-family="Droid Sans" fill="#000000" text-anchor="start" stroke="none" id="label17" font-size="130">RC3</text>
+  <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="5330" stroke-width="30" x1="2833" y2="5330" x2="3118"/>
+  <rect width="300" x="2833" y="5315" fill="none" height="30" stroke="none" id="connector22pin" stroke-width="0"/>>
+<rect width="30" x="3103" y="5315" fill="none" height="30" stroke="none" id="connector22terminal" stroke-width="0"/>>
+<text x="2743" y="5365" font-family="Droid Sans" fill="#000000" text-anchor="end" stroke="none" id="label22" font-size="130">RC4</text>>
+<line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="5625" stroke-width="30" x1="15" y2="5625" x2="300"/>
+  <rect width="300" x="0" y="5610" fill="none" height="30" stroke="none" id="connector18pin" stroke-width="0"/>
+  <rect width="30" x="0" y="5610" fill="none" height="30" stroke="none" id="connector18terminal" stroke-width="0"/>
+  <text x="390" y="5660" font-family="Droid Sans" fill="#000000" text-anchor="start" stroke="none" id="label18" font-size="130">RD0/PSP0</text>
+  <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="5625" stroke-width="30" x1="2833" y2="5625" x2="3118"/>
+  <rect width="300" x="2833" y="5610" fill="none" height="30" stroke="none" id="connector21pin" stroke-width="0"/>>
+<rect width="30" x="3103" y="5610" fill="none" height="30" stroke="none" id="connector21terminal" stroke-width="0"/>>
+<text x="2743" y="5660" font-family="Droid Sans" fill="#000000" text-anchor="end" stroke="none" id="label21" font-size="130">RD3/PSP3</text>>
+<line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="5920" stroke-width="30" x1="15" y2="5920" x2="300"/>
+  <rect width="300" x="0" y="5905" fill="none" height="30" stroke="none" id="connector19pin" stroke-width="0"/>
+  <rect width="30" x="0" y="5905" fill="none" height="30" stroke="none" id="connector19terminal" stroke-width="0"/>
+  <text x="390" y="5955" font-family="Droid Sans" fill="#000000" text-anchor="start" stroke="none" id="label19" font-size="130">RD1/PSP1</text>
+  <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="5920" stroke-width="30" x1="2833" y2="5920" x2="3118"/>
+  <rect width="300" x="2833" y="5905" fill="none" height="30" stroke="none" id="connector20pin" stroke-width="0"/>>
+<rect width="30" x="3103" y="5905" fill="none" height="30" stroke="none" id="connector20terminal" stroke-width="0"/>>
+<text x="2743" y="5955" font-family="Droid Sans" fill="#000000" text-anchor="end" stroke="none" id="label20" font-size="130">RD2/PSP2</text>>
+</g>
+</svg>

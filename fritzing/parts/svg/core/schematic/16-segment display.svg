@@ -1,101 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1 Basic//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-basic.dtd">
-<svg version="1.1" baseProfile="basic" id="svg" xmlns:xml="http://www.w3.org/XML/1998/namespace"
-	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1.8in"
-	 height="3.28in" viewBox="0 0 129.6 236.16" xml:space="preserve">
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="svg" xmlns:xml="http://www.w3.org/XML/1998/namespace"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="43.281px"
+	 height="79.221px" viewBox="0 0 43.281 79.221" enable-background="new 0 0 43.281 79.221" xml:space="preserve">
 <g id="schematic">
-<rect id="connector0pin" x="0.001" y="20.323" fill="none" width="9.962" height="1.992"/>
-<rect id="connector0terminal" x="0.001" y="20.323" fill="none" width="1.992" height="1.992"/>
-<rect id="connector1pin" x="0.001" y="41.523" fill="none" width="9.962" height="1.992"/>
-<rect id="connector1terminal" x="0.001" y="41.523" fill="none" width="1.992" height="1.992"/>
-<rect id="connector2pin" x="0" y="62.722" fill="none" width="9.963" height="1.992"/>
-<rect id="connector2terminal" x="0" y="62.722" fill="none" width="1.992" height="1.992"/>
-<rect id="connector3pin" x="0.001" y="83.955" fill="none" width="9.962" height="1.993"/>
-<rect id="connector3terminal" x="0.001" y="83.955" fill="none" width="1.992" height="1.993"/>
-<rect id="connector4pin" x="0.001" y="105.156" fill="none" width="9.962" height="1.992"/>
-<rect id="connector4terminal" x="0.001" y="105.156" fill="none" width="1.992" height="1.992"/>
-<rect id="connector5pin" x="0" y="126.287" fill="none" width="9.963" height="1.992"/>
-<rect id="connector5terminal" x="0" y="126.287" fill="none" width="1.991" height="1.992"/>
-<rect id="connector6pin" x="0" y="147.488" fill="none" width="9.963" height="1.992"/>
-<rect id="connector6terminal" x="0" y="147.488" fill="none" width="1.991" height="1.992"/>
-<rect id="connector7pin" x="0" y="168.688" fill="none" width="9.963" height="1.994"/>
-<rect id="connector7terminal" x="0" y="168.688" fill="none" width="1.992" height="1.994"/>
-<rect id="connector8pin" x="0" y="189.922" fill="none" width="9.963" height="1.992"/>
-<rect id="connector8terminal" x="0" y="189.922" fill="none" width="1.991" height="1.992"/>
-<rect id="connector9pin" x="117.245" y="189.871" fill="none" width="9.963" height="1.992"/>
-<rect id="connector9terminal" x="125.217" y="189.871" fill="none" width="1.991" height="1.992"/>
-<rect id="connector10pin" x="117.245" y="168.67" fill="none" width="9.963" height="1.992"/>
-<rect id="connector10terminal" x="125.217" y="168.67" fill="none" width="1.991" height="1.992"/>
-<rect id="connector11pin" x="62.581" y="223.424" fill="none" width="1.992" height="9.963"/>
-<rect id="connector11terminal" x="62.581" y="231.396" fill="none" width="1.992" height="1.989"/>
-<rect id="connector12pin" x="117.245" y="147.467" fill="none" width="9.963" height="1.992"/>
-<rect id="connector12terminal" x="125.217" y="147.467" fill="none" width="1.991" height="1.992"/>
-<rect id="connector13pin" x="117.245" y="126.305" fill="none" width="9.963" height="1.992"/>
-<rect id="connector13terminal" x="125.217" y="126.305" fill="none" width="1.991" height="1.992"/>
-<rect id="connector14pin" x="117.245" y="105.104" fill="none" width="9.963" height="1.993"/>
-<rect id="connector14terminal" x="125.217" y="105.104" fill="none" width="1.991" height="1.993"/>
-<rect id="connector15pin" x="117.245" y="83.904" fill="none" width="9.963" height="1.992"/>
-<rect id="connector15terminal" x="125.217" y="83.904" fill="none" width="1.991" height="1.992"/>
-<rect id="connector16pin" x="117.245" y="62.704" fill="none" width="9.963" height="1.993"/>
-<rect id="connector16terminal" x="125.217" y="62.704" fill="none" width="1.991" height="1.993"/>
-<rect id="connector17pin" x="117.245" y="41.522" fill="none" width="9.963" height="1.991"/>
-<rect id="connector17terminal" x="125.217" y="41.522" fill="none" width="1.991" height="1.991"/>
-	<line fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" x1="21.202" y1="21.315" x2="0.001" y2="21.315"/>
-	<line fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" x1="21.206" y1="42.519" x2="0.005" y2="42.519"/>
-	<line fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" x1="21.206" y1="63.719" x2="0.005" y2="63.719"/>
-	<line fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" x1="21.206" y1="84.918" x2="0.005" y2="84.918"/>
-	
-		<line fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" x1="63.578" y1="212.186" x2="63.578" y2="233.387"/>
-	
-		<line fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" x1="127.208" y1="42.519" x2="106.007" y2="42.519"/>
-	
-		<line fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" x1="127.208" y1="63.719" x2="106.007" y2="63.719"/>
-	
-		<line fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" x1="127.208" y1="84.918" x2="106.007" y2="84.918"/>
-	<line fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" x1="21.202" y1="106.08" x2="0.001" y2="106.08"/>
-	<line fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" x1="21.206" y1="127.283" x2="0.005" y2="127.283"/>
-	<line fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" x1="21.206" y1="148.484" x2="0.005" y2="148.484"/>
-	<line fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" x1="21.206" y1="169.684" x2="0.005" y2="169.684"/>
-	<line fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" x1="21.206" y1="190.918" x2="0.005" y2="190.918"/>
-	
-		<line fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" x1="127.208" y1="106.084" x2="106.007" y2="106.084"/>
-	
-		<line fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" x1="127.208" y1="127.283" x2="106.007" y2="127.283"/>
-	
-		<line fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" x1="127.208" y1="148.484" x2="106.007" y2="148.484"/>
-	
-		<line fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" x1="127.208" y1="169.684" x2="106.007" y2="169.684"/>
-	
-		<line fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" x1="127.208" y1="190.918" x2="106.007" y2="190.918"/>
-	<polygon fill="none" stroke="#000000" stroke-width="2.4016" points="21.206,0.118 106.007,0.118 105.978,212.186 21.178,212.186 	
-		"/>
+	<rect id="connector0pin" x="0" y="6.861" fill="none" width="3.391" height="0.678"/>
+	<rect id="connector0terminal" x="0" y="6.861" fill="none" width="0.68" height="0.678"/>
+	<rect id="connector1pin" x="0" y="14.061" fill="none" width="3.391" height="0.677"/>
+	<rect id="connector1terminal" x="0" y="14.061" fill="none" width="0.68" height="0.677"/>
+	<rect id="connector2pin" x="0" y="21.261" fill="none" width="3.391" height="0.676"/>
+	<rect id="connector2terminal" x="0" y="21.261" fill="none" width="0.679" height="0.676"/>
+	<rect id="connector3pin" x="0" y="28.471" fill="none" width="3.391" height="0.677"/>
+	<rect id="connector3terminal" x="0" y="28.471" fill="none" width="0.68" height="0.677"/>
+	<rect id="connector4pin" x="0" y="35.672" fill="none" width="3.391" height="0.677"/>
+	<rect id="connector4terminal" x="0" y="35.672" fill="none" width="0.68" height="0.677"/>
+	<rect id="connector5pin" x="0" y="42.847" fill="none" width="3.391" height="0.679"/>
+	<rect id="connector5terminal" x="0" y="42.847" fill="none" width="0.679" height="0.679"/>
+	<rect id="connector6pin" x="0" y="50.047" fill="none" width="3.391" height="0.679"/>
+	<rect id="connector6terminal" x="0" y="50.047" fill="none" width="0.679" height="0.679"/>
+	<rect id="connector7pin" x="0" y="57.248" fill="none" width="3.391" height="0.68"/>
+	<rect id="connector7terminal" x="0" y="57.248" fill="none" width="0.679" height="0.68"/>
+	<rect id="connector8pin" x="0" y="64.458" fill="none" width="3.391" height="0.679"/>
+	<rect id="connector8terminal" x="0" y="64.458" fill="none" width="0.679" height="0.679"/>
+	<rect id="connector9pin" x="39.891" y="64.442" fill="none" width="3.392" height="0.677"/>
+	<rect id="connector9terminal" x="42.604" y="64.442" fill="none" width="0.679" height="0.677"/>
+	<rect id="connector10pin" x="39.891" y="57.241" fill="none" width="3.392" height="0.677"/>
+	<rect id="connector10terminal" x="42.604" y="57.241" fill="none" width="0.679" height="0.677"/>
+	<rect id="connector11pin" x="21.292" y="75.836" fill="none" width="0.679" height="3.385"/>
+	<rect id="connector11terminal" x="21.292" y="78.544" fill="none" width="0.679" height="0.677"/>
+	<rect id="connector12pin" x="39.891" y="50.041" fill="none" width="3.392" height="0.677"/>
+	<rect id="connector12terminal" x="42.604" y="50.041" fill="none" width="0.679" height="0.677"/>
+	<rect id="connector13pin" x="39.891" y="42.854" fill="none" width="3.392" height="0.676"/>
+	<rect id="connector13terminal" x="42.604" y="42.854" fill="none" width="0.679" height="0.676"/>
+	<rect id="connector14pin" x="39.891" y="35.654" fill="none" width="3.392" height="0.679"/>
+	<rect id="connector14terminal" x="42.604" y="35.654" fill="none" width="0.679" height="0.679"/>
+	<rect id="connector15pin" x="39.891" y="28.455" fill="none" width="3.392" height="0.677"/>
+	<rect id="connector15terminal" x="42.604" y="28.455" fill="none" width="0.679" height="0.677"/>
+	<rect id="connector16pin" x="39.891" y="21.254" fill="none" width="3.392" height="0.679"/>
+	<rect id="connector16terminal" x="42.604" y="21.254" fill="none" width="0.679" height="0.679"/>
+	<rect id="connector17pin" x="39.891" y="14.061" fill="none" width="3.392" height="0.677"/>
+	<rect id="connector17terminal" x="42.604" y="14.061" fill="none" width="0.679" height="0.677"/>
+	<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.9" points="7.215,0 36.068,0 36.057,72.019 7.206,72.019 	"/>
 	<g>
-		<path d="M79.011,65.768l-0.842,7.992L65.112,90.288l0.841-7.993L79.011,65.768"/>
-		<path d="M48.604,65.666l9.584,16.526l-0.859,8.199l-9.584-16.527L48.604,65.666"/>
-		<path d="M64.017,100.717l9.582,16.526l-0.861,8.194l-9.583-16.526L64.017,100.717"/>
-		<path d="M56.233,100.819l-0.841,7.989l-13.059,16.527l0.841-7.99L56.233,100.819"/>
-		<path d="M62.959,99.438l-2.866,27.267h-5.387l2.864-27.267H62.959"/>
-		<path d="M66.64,64.402l-2.866,27.27H58.39l2.865-27.27H66.64"/>
-		<path d="M60.36,92.856l-0.566,5.396H44.785l-2.374-2.655l3.028-2.741H60.36"/>
-		<path d="M76.556,92.856l2.377,2.652l-3.029,2.744H60.983l0.569-5.396H76.556"/>
-		<path d="M84.531,60.337c0.925,1.262,1.335,2.84,1.156,4.509l-2.85,27.131l-3.025,2.736l-2.371-2.648l2.849-27.095
-			c0.022-0.246-0.004-0.488-0.086-0.714L84.531,60.337"/>
-		<path d="M79.724,96.395l2.371,2.647l-2.846,27.09c-0.185,1.716-0.957,3.343-2.201,4.634l-3.424-3.822
-			c0.121-0.213,0.196-0.445,0.223-0.687l2.85-27.126L79.724,96.395"/>
-		<path d="M88.392,126.932c1.752,0,3.176,1.426,3.176,3.176c0,1.752-1.424,3.179-3.176,3.179c-1.75,0-3.178-1.427-3.178-3.179
-			C85.216,128.357,86.642,126.932,88.392,126.932"/>
-		<path d="M41.531,96.395l2.371,2.65l-2.848,27.091c-0.025,0.242,0.005,0.484,0.086,0.71l-4.328,3.915
-			c-0.924-1.258-1.332-2.836-1.157-4.502l2.853-27.127L41.531,96.395"/>
-		<path d="M41.934,127.73c0.215,0.104,0.452,0.158,0.695,0.158h14.05l-0.566,5.395H41.937c-1.667,0-3.183-0.578-4.333-1.637
-			L41.934,127.73"/>
-		<path d="M72.741,127.738l3.426,3.826c-1.41,1.11-3.103,1.721-4.816,1.721H57.305l0.566-5.395h14.171
-			C72.282,127.889,72.519,127.838,72.741,127.738"/>
-		<path d="M44.299,60.335l3.421,3.826c-0.121,0.21-0.198,0.444-0.225,0.686l-2.851,27.131l-3.024,2.736l-2.371-2.648l2.848-27.095
-			C42.278,63.254,43.054,61.629,44.299,60.335"/>
-		<path d="M79.406,57.82c1.669,0,3.187,0.577,4.335,1.635l-4.33,3.918c-0.216-0.104-0.451-0.156-0.695-0.156h-14.05l0.566-5.397
-			H79.406"/>
-		<path d="M64.04,57.82l-0.565,5.397H49.302c-0.239,0-0.478,0.052-0.699,0.147l-3.425-3.829c1.412-1.111,3.101-1.717,4.813-1.717
-			L64.04,57.82"/>
+		<path d="M26.882,22.295l-0.285,2.716l-4.441,5.611l0.285-2.714L26.882,22.295"/>
+		<path d="M16.537,22.261l3.261,5.61l-0.293,2.783l-3.261-5.612L16.537,22.261"/>
+		<path d="M21.781,34.164l3.26,5.612l-0.294,2.782l-3.259-5.612L21.781,34.164"/>
+		<path d="M19.132,34.198l-0.285,2.714l-4.442,5.613l0.285-2.714L19.132,34.198"/>
+		<path d="M21.421,33.73l-0.975,9.26h-1.834l0.975-9.26H21.421"/>
+		<path d="M22.674,21.832l-0.976,9.26h-1.832l0.975-9.26H22.674"/>
+		<path d="M20.536,31.494l-0.19,1.833h-5.106l-0.809-0.899l1.029-0.934H20.536"/>
+		<path d="M26.047,31.494l0.81,0.901l-1.028,0.932H20.75l0.193-1.833H26.047"/>
+		<path d="M28.76,20.451c0.316,0.429,0.455,0.965,0.396,1.529l-0.971,9.214l-1.027,0.929l-0.809-0.896l0.971-9.202
+			c0.007-0.083-0.002-0.166-0.029-0.243L28.76,20.451"/>
+		<path d="M27.125,32.697l0.81,0.899l-0.971,9.198c-0.063,0.583-0.324,1.137-0.749,1.573L25.05,43.07
+			c0.041-0.07,0.065-0.149,0.075-0.231l0.972-9.212L27.125,32.697"/>
+		<path d="M30.074,43.067c0.597,0,1.08,0.485,1.08,1.079s-0.483,1.078-1.08,1.078c-0.596,0-1.081-0.484-1.081-1.078
+			S29.479,43.067,30.074,43.067"/>
+		<path d="M14.131,32.697l0.807,0.899l-0.97,9.2c-0.008,0.082,0.003,0.164,0.029,0.241l-1.473,1.327
+			c-0.314-0.428-0.453-0.962-0.395-1.527l0.972-9.212L14.131,32.697"/>
+		<path d="M14.267,43.337c0.072,0.036,0.154,0.056,0.236,0.056h4.78l-0.193,1.832h-4.821c-0.567,0-1.083-0.195-1.476-0.557
+			L14.267,43.337"/>
+		<path d="M24.749,43.341l1.165,1.3c-0.479,0.378-1.057,0.584-1.639,0.584h-4.778l0.192-1.832h4.82
+			C24.592,43.392,24.674,43.375,24.749,43.341"/>
+		<path d="M15.073,20.451l1.163,1.299c-0.041,0.07-0.067,0.149-0.076,0.231l-0.97,9.213l-1.029,0.931l-0.806-0.898l0.968-9.202
+			C14.384,21.441,14.648,20.89,15.073,20.451"/>
+		<path d="M27.016,19.596c0.568,0,1.084,0.195,1.477,0.554l-1.473,1.333c-0.074-0.037-0.153-0.055-0.236-0.055h-4.78l0.19-1.832
+			H27.016"/>
+		<path d="M21.788,19.596l-0.19,1.832h-4.822c-0.082,0-0.163,0.018-0.237,0.051l-1.166-1.3c0.48-0.377,1.057-0.583,1.638-0.583
+			H21.788"/>
+	</g>
+	<g>
+		<line fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" x1="7.214" y1="7.198" x2="0" y2="7.198"/>
+		<line fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" x1="7.215" y1="14.4" x2="0.002" y2="14.4"/>
+		<line fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" x1="7.215" y1="21.6" x2="0.002" y2="21.6"/>
+		<line fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" x1="7.215" y1="28.797" x2="0.002" y2="28.797"/>
+		<line fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" x1="21.633" y1="72.019" x2="21.633" y2="79.22"/>
+		<line fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" x1="43.281" y1="14.4" x2="36.068" y2="14.4"/>
+		<line fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" x1="43.281" y1="21.6" x2="36.068" y2="21.6"/>
+		<line fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" x1="43.281" y1="28.797" x2="36.068" y2="28.797"/>
+		<line fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" x1="7.214" y1="35.986" x2="0" y2="35.986"/>
+		<line fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" x1="7.215" y1="43.186" x2="0.002" y2="43.186"/>
+		<line fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" x1="7.215" y1="50.386" x2="0.002" y2="50.386"/>
+		<line fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" x1="7.215" y1="57.587" x2="0.002" y2="57.587"/>
+		<line fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" x1="7.215" y1="64.798" x2="0.002" y2="64.798"/>
+		<line fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" x1="43.281" y1="35.988" x2="36.068" y2="35.988"/>
+		<line fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" x1="43.281" y1="43.186" x2="36.068" y2="43.186"/>
+		<line fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" x1="43.281" y1="50.386" x2="36.068" y2="50.386"/>
+		<line fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" x1="43.281" y1="57.587" x2="36.068" y2="57.587"/>
+		<line fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" x1="43.281" y1="64.798" x2="36.068" y2="64.798"/>
 	</g>
 </g>
 </svg>

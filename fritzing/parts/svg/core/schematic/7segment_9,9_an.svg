@@ -1,204 +1,452 @@
-<?xml version='1.0' encoding='utf-8'?>
-<!DOCTYPE svg>
-<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In  -->
-<svg xmlns="http://www.w3.org/2000/svg" width="4.70833in" xml:space="preserve" xmlns:xml="http://www.w3.org/XML/1998/namespace" x="0px" version="1.2" y="0px" height="1.11111in" viewBox="0 0 339 80" baseProfile="tiny">
-<g id="schematic"> 
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="113.129px" height="28.742px" viewBox="0 0 113.129 28.742" enable-background="new 0 0 113.129 28.742"
+	 xml:space="preserve">
+<g>
+	<polyline fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" stroke-miterlimit="10" points="3.6,7.2 
+		104.4,7.2 104.4,14.401 	"/>
+	<g>
+		<rect id="connector3pin" x="53.51" y="0.112" fill="none" width="0.982" height="0.981"/>
+		<rect id="connector8pin" x="53.509" y="0.108" fill="none" width="0.981" height="0.981"/>
+		<rect id="connector3terminal" x="53.51" y="0.112" fill="none" width="0.982" height="0.981"/>
+		<rect id="connector8terminal" x="53.509" y="0.11" fill="none" width="0.981" height="0.981"/>
+		<rect id="connector1pin" x="89.509" y="27.816" fill="none" width="0.981" height="0.982"/>
+		<rect id="connector2pin" x="75.109" y="27.818" fill="none" width="0.98" height="0.98"/>
+		<rect id="connector4pin" x="60.708" y="27.816" fill="none" width="0.981" height="0.982"/>
+		<rect id="connector6pin" x="31.908" y="27.816" fill="none" width="0.982" height="0.982"/>
+		<rect id="connector7pin" x="3.104" y="27.816" fill="none" width="0.982" height="0.982"/>
+		<rect id="connector9pin" x="103.908" y="27.818" fill="none" width="0.98" height="0.98"/>
+		<rect id="connector1terminal" x="89.509" y="27.816" fill="none" width="0.981" height="0.982"/>
+		<rect id="connector2terminal" x="75.109" y="27.818" fill="none" width="0.98" height="0.98"/>
+		<rect id="connector4terminal" x="46.31" y="27.816" fill="none" width="0.982" height="0.982"/>
+		<rect id="connector6terminal" x="17.508" y="27.816" fill="none" width="0.982" height="0.982"/>
+		<rect id="connector7terminal" x="3.104" y="27.816" fill="none" width="0.982" height="0.982"/>
+		<rect id="connector9terminal" x="103.908" y="27.818" fill="none" width="0.98" height="0.98"/>
+	</g>
+	<g>
+		<g>
+			<g>
+				<g>
+					<g id="schematic_31_">
+						<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="90" y1="21.6" x2="86.398" y2="21.6"/>
+						<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="93.6" y1="21.6" x2="90" y2="21.6"/>
+						<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="86.398,14.399 90,14.399 
+							93.6,14.399 90,21.6 						"/>
+						<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="90" y1="21.6" x2="90" y2="14.399"/>
+						
+							<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="97.109" y1="18.898" x2="94.77" y2="16.561"/>
+						
+							<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="96.749" y1="22.141" x2="94.409" y2="19.8"/>
+						
+							<line id="connector1pin_31_" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" x1="90" y1="21.6" x2="90" y2="28.8"/>
+						<polygon id="connector1terminal_31_" fill="none" points="89.999,28.8 90,28.8 90,28.8 						"/>
+						
+							<line id="connector0pin_31_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="90" y1="14.399" x2="90" y2="7.199"/>
+						<rect id="connector0terminal_31_" x="89.999" y="7.199" fill="none" width="0.001" height="0.001"/>
+						<path d="M96.209,19.438L97.648,18l1.08,2.521L96.209,19.438z"/>
+						<path d="M95.85,22.68l1.439-1.439l1.08,2.521L95.85,22.68z"/>
+					</g>
+				</g>
+			</g>
+			<g>
+				<g>
+					<g id="schematic_30_">
+						<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="75.6" y1="21.6" x2="72" y2="21.6"/>
+						<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="79.2" y1="21.6" x2="75.6" y2="21.6"/>
+						<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="72,14.399 75.6,14.399 
+							79.2,14.399 75.6,21.6 						"/>
+						<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="75.6" y1="21.6" x2="75.6" y2="14.399"/>
+						
+							<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="82.709" y1="18.898" x2="80.37" y2="16.561"/>
+						
+							<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="82.35" y1="22.141" x2="80.009" y2="19.8"/>
+						
+							<line id="connector1pin_30_" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" x1="75.6" y1="21.6" x2="75.6" y2="28.8"/>
+						<path id="connector1terminal_30_" fill="none" d="M75.6,28.8L75.6,28.8L75.6,28.8z"/>
+						
+							<line id="connector0pin_30_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="75.6" y1="14.399" x2="75.6" y2="7.199"/>
+						<rect id="connector0terminal_30_" x="75.6" y="7.199" fill="none" width="0" height="0.001"/>
+						<path d="M81.809,19.438L83.249,18l1.08,2.521L81.809,19.438z"/>
+						<path d="M81.45,22.68l1.438-1.439l1.079,2.521L81.45,22.68z"/>
+					</g>
+				</g>
+			</g>
+			<g>
+				<g>
+					<g id="schematic_29_">
+						<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="61.2" y1="21.6" x2="57.6" y2="21.6"/>
+						<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="64.8" y1="21.6" x2="61.2" y2="21.6"/>
+						<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="57.6,14.399 61.2,14.399 
+							64.8,14.399 61.2,21.6 						"/>
+						<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="61.2" y1="21.6" x2="61.2" y2="14.399"/>
+						
+							<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="68.311" y1="18.898" x2="65.971" y2="16.561"/>
+						
+							<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="67.949" y1="22.141" x2="65.609" y2="19.8"/>
+						
+							<line id="connector1pin_29_" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" x1="61.2" y1="21.6" x2="61.2" y2="28.8"/>
+						<polygon id="connector1terminal_29_" fill="none" points="61.199,28.8 61.2,28.8 61.2,28.8 						"/>
+						
+							<line id="connector0pin_29_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="61.2" y1="14.399" x2="61.2" y2="7.199"/>
+						<rect id="connector0terminal_29_" x="61.199" y="7.199" fill="none" width="0.001" height="0.001"/>
+						<path d="M67.409,19.438L68.85,18l1.08,2.521L67.409,19.438z"/>
+						<path d="M67.05,22.68l1.438-1.439l1.08,2.521L67.05,22.68z"/>
+					</g>
+				</g>
+			</g>
+			<g>
+				<g>
+					<g id="schematic_28_">
+						<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="46.8" y1="21.6" x2="43.2" y2="21.6"/>
+						<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="50.4" y1="21.6" x2="46.8" y2="21.6"/>
+						<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="43.2,14.399 46.8,14.399 
+							50.4,14.399 46.8,21.6 						"/>
+						<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="46.8" y1="21.6" x2="46.8" y2="14.399"/>
+						
+							<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="53.91" y1="18.898" x2="51.57" y2="16.561"/>
+						
+							<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="53.549" y1="22.141" x2="51.209" y2="19.8"/>
+						
+							<line id="connector1pin_28_" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" x1="46.8" y1="21.6" x2="46.8" y2="28.8"/>
+						<polygon id="connector1terminal_28_" fill="none" points="46.799,28.8 46.8,28.8 46.8,28.8 						"/>
+						
+							<line id="connector0pin_28_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="46.8" y1="14.399" x2="46.8" y2="7.199"/>
+						<rect id="connector0terminal_28_" x="46.799" y="7.199" fill="none" width="0.001" height="0.001"/>
+						<path d="M53.009,19.438L54.449,18l1.08,2.521L53.009,19.438z"/>
+						<path d="M52.65,22.68l1.439-1.439l1.08,2.521L52.65,22.68z"/>
+					</g>
+				</g>
+			</g>
+			<g>
+				<g>
+					<g id="schematic_27_">
+						<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="32.4" y1="21.6" x2="28.8" y2="21.6"/>
+						<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="36" y1="21.6" x2="32.4" y2="21.6"/>
+						<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="28.8,14.399 32.4,14.399 
+							36,14.399 32.4,21.6 						"/>
+						<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="32.4" y1="21.6" x2="32.4" y2="14.399"/>
+						
+							<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="39.51" y1="18.898" x2="37.17" y2="16.561"/>
+						
+							<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="39.149" y1="22.141" x2="36.81" y2="19.8"/>
+						
+							<line id="connector1pin_27_" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" x1="32.4" y1="21.6" x2="32.4" y2="28.8"/>
+						<polygon id="connector1terminal_27_" fill="none" points="32.399,28.8 32.4,28.8 32.4,28.8 						"/>
+						
+							<line id="connector0pin_27_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="32.4" y1="14.399" x2="32.4" y2="7.199"/>
+						<rect id="connector0terminal_27_" x="32.399" y="7.199" fill="none" width="0.001" height="0.001"/>
+						<path d="M38.609,19.438L40.049,18l1.08,2.521L38.609,19.438z"/>
+						<path d="M38.25,22.68l1.439-1.439l1.08,2.521L38.25,22.68z"/>
+					</g>
+				</g>
+			</g>
+			<g>
+				<g>
+					<g id="schematic_26_">
+						<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="18" y1="21.6" x2="14.4" y2="21.6"/>
+						<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="21.6" y1="21.6" x2="18" y2="21.6"/>
+						<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="14.4,14.399 18,14.399 
+							21.6,14.399 18,21.6 						"/>
+						<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="18" y1="21.6" x2="18" y2="14.399"/>
+						
+							<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="25.11" y1="18.898" x2="22.77" y2="16.561"/>
+						
+							<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="24.75" y1="22.141" x2="22.41" y2="19.8"/>
+						
+							<line id="connector1pin_26_" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" x1="18" y1="21.6" x2="18" y2="28.8"/>
+						<polygon id="connector1terminal_26_" fill="none" points="18,28.8 18.001,28.8 18.001,28.8 						"/>
+						
+							<line id="connector0pin_26_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="18" y1="14.399" x2="18" y2="7.199"/>
+						<rect id="connector0terminal_26_" x="18" y="7.199" fill="none" width="0.001" height="0.001"/>
+						<path d="M24.209,19.438L25.649,18l1.08,2.521L24.209,19.438z"/>
+						<path d="M23.85,22.68l1.439-1.439l1.08,2.521L23.85,22.68z"/>
+					</g>
+				</g>
+			</g>
+			<g>
+				<g>
+					<g id="schematic_25_">
+						<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="3.601" y1="21.6" x2="0" y2="21.6"/>
+						<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="7.2" y1="21.6" x2="3.601" y2="21.6"/>
+						<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="0,14.399 3.601,14.399 
+							7.2,14.399 3.601,21.6 						"/>
+						
+							<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="3.601" y1="21.6" x2="3.601" y2="14.399"/>
+						
+							<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="10.71" y1="18.898" x2="8.37" y2="16.561"/>
+						<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="10.35" y1="22.141" x2="8.01" y2="19.8"/>
+						
+							<line id="connector1pin_25_" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" x1="3.601" y1="21.6" x2="3.601" y2="28.8"/>
+						<polygon id="connector1terminal_25_" fill="none" points="3.6,28.8 3.601,28.8 3.601,28.8 						"/>
+						
+							<line id="connector0pin_25_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="3.601" y1="14.399" x2="3.601" y2="7.199"/>
+						<rect id="connector0terminal_25_" x="3.6" y="7.199" fill="none" width="0.001" height="0.001"/>
+						<path d="M9.81,19.438L11.25,18l1.08,2.521L9.81,19.438z"/>
+						<path d="M9.45,22.68l1.439-1.439l1.08,2.521L9.45,22.68z"/>
+					</g>
+				</g>
+			</g>
+		</g>
+		<g>
+			<g>
+				<g>
+					<g id="schematic_24_">
+						<rect id="connector0terminal_24_" x="89.999" y="21.6" fill="none" width="0.001" height="0"/>
+					</g>
+				</g>
+			</g>
+			<g>
+				<g>
+					<g id="schematic_23_">
+						<rect id="connector0terminal_23_" x="75.6" y="21.6" fill="none" width="0" height="0"/>
+					</g>
+				</g>
+			</g>
+			<g>
+				<g>
+					<g id="schematic_22_">
+						<rect id="connector0terminal_22_" x="61.199" y="21.6" fill="none" width="0.001" height="0"/>
+					</g>
+				</g>
+			</g>
+			<g>
+				<g>
+					<g id="schematic_21_">
+						<rect id="connector0terminal_21_" x="46.799" y="21.6" fill="none" width="0.001" height="0"/>
+					</g>
+				</g>
+			</g>
+			<g>
+				<g>
+					<g id="schematic_20_">
+						<rect id="connector0terminal_20_" x="32.399" y="21.6" fill="none" width="0.001" height="0"/>
+					</g>
+				</g>
+			</g>
+			<g>
+				<g>
+					<g id="schematic_19_">
+						<rect id="connector0terminal_19_" x="18" y="21.6" fill="none" width="0.001" height="0"/>
+					</g>
+				</g>
+			</g>
+			<g>
+				<g>
+					<g id="schematic_18_">
+						<rect id="connector0terminal_18_" x="3.6" y="21.6" fill="none" width="0.001" height="0"/>
+					</g>
+				</g>
+			</g>
+		</g>
+		<g>
+			<g>
+				<g>
+					<g id="schematic_9_">
+						<polygon id="connector1terminal_9_" fill="none" points="104.398,29.292 104.4,29.292 104.4,29.292 						"/>
+					</g>
+				</g>
+			</g>
+			<g>
+				<g>
+					<g id="schematic_8_">
+						<polygon id="connector1terminal_8_" fill="none" points="89.999,29.292 90,29.292 90,29.292 						"/>
+					</g>
+				</g>
+			</g>
+			<g>
+				<g>
+					<g id="schematic_7_">
+						<path id="connector1terminal_7_" fill="none" d="M75.6,29.292L75.6,29.292L75.6,29.292z"/>
+					</g>
+				</g>
+			</g>
+			<g>
+				<g>
+					<g id="schematic_6_">
+						<polygon id="connector1terminal_6_" fill="none" points="61.199,29.292 61.2,29.292 61.2,29.292 						"/>
+					</g>
+				</g>
+			</g>
+			<g>
+				<g>
+					<g id="schematic_5_">
+						<polygon id="connector1terminal_5_" fill="none" points="46.799,29.292 46.8,29.292 46.8,29.292 						"/>
+					</g>
+				</g>
+			</g>
+			<g>
+				<g>
+					<g id="schematic_4_">
+						<polygon id="connector1terminal_4_" fill="none" points="32.399,29.292 32.4,29.292 32.4,29.292 						"/>
+					</g>
+				</g>
+			</g>
+			<g>
+				<g>
+					<g id="schematic_3_">
+						<polygon id="connector1terminal_3_" fill="none" points="18,29.292 18.001,29.292 18.001,29.292 						"/>
+					</g>
+				</g>
+			</g>
+			<g>
+				<g>
+					<g id="schematic_2_">
+						<polygon id="connector1terminal_1_" fill="none" points="3.6,29.292 3.601,29.292 3.601,29.292 						"/>
+					</g>
+				</g>
+			</g>
+		</g>
+	</g>
+	<text transform="matrix(1 0 0 1 106.1992 28.4922)" fill="#787878" font-family="'Droid Sans'" font-size="2">6</text>
+	<text transform="matrix(1 0 0 1 91.7998 28.4922)" fill="#787878" font-family="'Droid Sans'" font-size="2">1</text>
+	<text transform="matrix(1 0 0 1 55.5298 4.6992)" fill="#787878" font-family="'Droid Sans'" font-size="2">3, 8</text>
+	<text transform="matrix(1 0 0 1 77.4004 28.4922)" fill="#787878" font-family="'Droid Sans'" font-size="2">2</text>
+	<text transform="matrix(1 0 0 1 63 28.4922)" fill="#787878" font-family="'Droid Sans'" font-size="2">4</text>
+	<text transform="matrix(1 0 0 1 48.6001 28.4922)" fill="#787878" font-family="'Droid Sans'" font-size="2">5</text>
+	<text transform="matrix(1 0 0 1 34.2002 28.4922)" fill="#787878" font-family="'Droid Sans'" font-size="2">7</text>
+	<text transform="matrix(1 0 0 1 19.8003 28.4922)" fill="#787878" font-family="'Droid Sans'" font-size="2">9</text>
+	<text transform="matrix(1 0 0 1 5.4004 28.4922)" fill="#787878" font-family="'Droid Sans'" font-size="2">10</text>
 	
-	<rect xmlns="http://www.w3.org/2000/svg" width="2" x="13.37" y="77.599" fill="none" stroke="none" height="1.372"    id="connector10pin"/>
-	 <rect xmlns="http://www.w3.org/2000/svg" width="2" x="56.54" y="77.599" fill="none" stroke="none" height="1.372"   id="connector9pin"/>
-	 <rect xmlns="http://www.w3.org/2000/svg" width="2" x="99.739" y="77.599" fill="none" stroke="none" height="1.372"  id="connector7pin"/>
-	 <rect xmlns="http://www.w3.org/2000/svg" width="2" x="142.939" y="77.526" fill="none" stroke="none" height="1.372" id="connector5pin"/>
-	 <rect xmlns="http://www.w3.org/2000/svg" width="2" x="186.139" y="77.671" fill="none" stroke="none" height="1.372" id="connector4pin"/>
-	 <rect xmlns="http://www.w3.org/2000/svg" width="2" x="229.309" y="77.671" fill="none" stroke="none" height="1.372" id="connector2pin"/>
-	 <rect xmlns="http://www.w3.org/2000/svg" width="2" x="272.509" y="77.671" fill="none" stroke="none" height="1.372" id="connector1pin"/>
-	 <rect xmlns="http://www.w3.org/2000/svg" width="2" x="315.709" y="77.599" fill="none" stroke="none" height="1.372" id="connector6pin"/>
-	 <rect xmlns="http://www.w3.org/2000/svg" width="2" x="164.6" y="4.776" fill="none" stroke="none" height="1.225"    id="connector3pin"/>
-	 <rect xmlns="http://www.w3.org/2000/svg" width="2" x="164.6" y="4.776" fill="none" stroke="none" height="1.225"    id="connector8pin"/>
-
-	 <rect xmlns="http://www.w3.org/2000/svg" width="2" x="13.37" y="77.599" fill="none" stroke="none" height="1.372"   id="connector10terminal"/>
-	 <rect xmlns="http://www.w3.org/2000/svg" width="2" x="56.54" y="77.599" fill="none" stroke="none" height="1.372"   id="connector9terminal"/>
-	 <rect xmlns="http://www.w3.org/2000/svg" width="2" x="99.739" y="77.599" fill="none" stroke="none" height="1.372"  id="connector7terminal"/>
-	 <rect xmlns="http://www.w3.org/2000/svg" width="2" x="142.939" y="77.526" fill="none" stroke="none" height="1.372" id="connector5terminal"/>
-	 <rect xmlns="http://www.w3.org/2000/svg" width="2" x="186.139" y="77.671" fill="none" stroke="none" height="1.372" id="connector4terminal"/>
-	 <rect xmlns="http://www.w3.org/2000/svg" width="2" x="229.309" y="77.671" fill="none" stroke="none" height="1.372" id="connector2terminal"/>
-	 <rect xmlns="http://www.w3.org/2000/svg" width="2" x="272.509" y="77.671" fill="none" stroke="none" height="1.372" id="connector1terminal"/>
-	 <rect xmlns="http://www.w3.org/2000/svg" width="2" x="315.709" y="77.599" fill="none" stroke="none" height="1.372" id="connector6terminal"/>
-	 <rect xmlns="http://www.w3.org/2000/svg" width="2" x="164.6" y="4.776" fill="none" stroke="none" height="1.225"    id="connector3terminal"/>
-	 <rect xmlns="http://www.w3.org/2000/svg" width="2" x="164.6" y="4.776" fill="none" stroke="none" height="1.225"    id="connector8terminal"/>
-	
-	
-<defs xmlns="http://www.w3.org/2000/svg"/>
- <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="20.187" stroke-width="2" x1="14.4" y2="20.187" x2="316.739"/>
- <path xmlns="http://www.w3.org/2000/svg" d="M15.37,56.315v21.601c0,0.551-0.448,0.998-1.001,0.998l0,0c-0.552,0-0.999-0.447-0.999-0.998l0,0V56.315"/>
- <path xmlns="http://www.w3.org/2000/svg" d="M58.54,56.315v21.601c0,0.551-0.448,0.998-1.001,0.998l0,0c-0.552,0-0.999-0.447-0.999-0.998l0,0V56.315"/>
- <path xmlns="http://www.w3.org/2000/svg" d="M101.739,56.315v21.601c0,0.551-0.448,0.998-1.001,0.998l0,0c-0.552,0-0.999-0.447-0.999-0.998l0,0V56.315"/>
- <path xmlns="http://www.w3.org/2000/svg" d="M144.939,56.187v21.601c0,0.551-0.448,0.998-1.001,0.998l0,0c-0.552,0-0.999-0.447-0.999-0.998l0,0V56.187"/>
- <path xmlns="http://www.w3.org/2000/svg" d="M188.139,56.444v21.601c0,0.551-0.448,0.998-1.001,0.998l0,0c-0.552,0-0.999-0.447-0.999-0.998l0,0V56.444"/>
- <path xmlns="http://www.w3.org/2000/svg" d="M231.309,56.444v21.601c0,0.551-0.448,0.998-1.001,0.998l0,0c-0.552,0-0.999-0.447-0.999-0.998l0,0V56.444"/>
- <path xmlns="http://www.w3.org/2000/svg" d="M274.509,56.444v21.601c0,0.551-0.448,0.998-1.001,0.998l0,0c-0.552,0-0.999-0.447-0.999-0.998l0,0V56.444"/>
- <path xmlns="http://www.w3.org/2000/svg" d="M317.709,56.315v21.601c0,0.551-0.448,0.998-1.001,0.998l0,0c-0.552,0-0.999-0.447-0.999-0.998l0,0V56.315"/>
- <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="20.187" stroke-width="2" x1="165.6" y2="5.786" x2="165.6"/>
- <path xmlns="http://www.w3.org/2000/svg" d="M24.925,32.288c0.359,0,0.69,0.193,0.869,0.508l0,0c0.179,0.312,0.175,0.695-0.012,1.006l0,0L15.258,51.44c-0.18,0.303-0.506,0.488-0.858,0.488l0,0c-0.35,0-0.68-0.186-0.858-0.486l0,0L2.991,33.804c-0.185-0.312-0.188-0.695-0.012-1.008l0,0c0.177-0.314,0.508-0.51,0.871-0.51l0,0L24.925,32.288 M14.398,48.978l8.766-14.689H5.611L14.398,48.978L14.398,48.978z"/>
- <path xmlns="http://www.w3.org/2000/svg" d="M3.616,51.927c-0.554,0-1-0.445-1-0.998l0,0c0-0.553,0.447-1,1-1l0,0h21.05c0.553,0,1.001,0.447,1.001,1l0,0c0,0.553-0.448,0.998-1.001,0.998l0,0H3.616L3.616,51.927z"/>
- <path xmlns="http://www.w3.org/2000/svg" d="M13.399,33.05V21.03c0-0.553,0.448-0.998,1.001-0.998l0,0c0.553,0,0.999,0.445,0.999,0.998l0,0v12.02c0,0.553-0.446,1-0.999,1l0,0C13.846,34.05,13.399,33.601,13.399,33.05L13.399,33.05z"/>
- <path xmlns="http://www.w3.org/2000/svg" d="M13.4,62.026V50.831c0-0.555,0.448-1.002,0.999-1.002l0,0c0.553,0,1.001,0.447,1.001,1.002l0,0v11.195c0,0.551-0.448,0.998-1.001,0.998l0,0C13.847,63.024,13.4,62.577,13.4,62.026L13.4,62.026z"/>
- <polygon xmlns="http://www.w3.org/2000/svg" points="34.073,53.593 36.054,59.085 31.14,55.931 32.607,54.761 "/>
- <path xmlns="http://www.w3.org/2000/svg" d="M29.426,56.017l2.557-2.037l1.465-1.17l1.091-0.871L38,61.519L29.426,56.017L29.426,56.017z"/>
- <path xmlns="http://www.w3.org/2000/svg" d="M34.701,58.993l-9.404-11.787c-0.345-0.434-0.271-1.062,0.158-1.406l0,0c0.434-0.344,1.062-0.271,1.405,0.16l0,0l9.404,11.785c0.345,0.434,0.273,1.062-0.158,1.406l0,0c-0.185,0.146-0.404,0.219-0.622,0.219l0,0C35.191,59.37,34.9,59.241,34.701,58.993L34.701,58.993z"/>
- <polygon xmlns="http://www.w3.org/2000/svg" points="27.521,58.583 29.506,64.073 24.592,60.921 26.056,59.751 "/>
- <path xmlns="http://www.w3.org/2000/svg" d="M22.877,61.007l2.556-2.039l1.464-1.168l1.089-0.869l3.469,9.58L22.877,61.007L22.877,61.007z"/>
- <path xmlns="http://www.w3.org/2000/svg" d="M28.154,63.981l-7.327-9.184c-0.345-0.434-0.271-1.062,0.158-1.406l0,0c0.431-0.346,1.062-0.271,1.406,0.16l0,0l7.325,9.182c0.345,0.432,0.273,1.061-0.158,1.404l0,0c-0.186,0.146-0.404,0.219-0.623,0.219l0,0C28.641,64.358,28.35,64.229,28.154,63.981L28.154,63.981z"/>
- <polygon xmlns="http://www.w3.org/2000/svg" fill="none" points="43.23,77.503 0.03,77.503 0,12.833 43.23,12.962 "/>
- <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#CCCCCC" stroke-linecap="round" y1="28.132" stroke-width="0.5" x1="20.7" y2="28.132" x2="18"/>
- <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#CCCCCC" stroke-linecap="round" y1="25.433" stroke-width="0.5" x1="18.45" y2="25.433" x2="21.15"/>
- <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#CCCCCC" stroke-linecap="round" y1="28.132" stroke-width="0.5" x1="21.6" y2="28.132" x2="21.6"/>
- <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#CCCCCC" stroke-linecap="round" y1="25.433" stroke-width="0.5" x1="18.45" y2="28.132" x2="18"/>
- <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#CCCCCC" stroke-linecap="round" y1="22.731" stroke-width="0.5" x1="18.9" y2="25.433" x2="18.45"/>
- <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#CCCCCC" stroke-linecap="round" y1="25.433" stroke-width="0.5" x1="21.15" y2="28.132" x2="20.7"/>
- <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#CCCCCC" stroke-linecap="round" y1="22.731" stroke-width="0.5" x1="21.6" y2="25.433" x2="21.15"/>
- <text xmlns="http://www.w3.org/2000/svg" font-family="Droid Sans" transform="matrix(1 0 0 1 15.9302 75.6689)" font-size="6">10</text>
- <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000" stroke-linecap="round" y1="22.731" stroke-width="0.5" x1="21.6" y2="22.731" x2="18.9"/>
- <path xmlns="http://www.w3.org/2000/svg" d="M68.125,32.288c0.359,0,0.69,0.193,0.869,0.508l0,0c0.179,0.312,0.175,0.695-0.012,1.006l0,0L58.458,51.44c-0.18,0.303-0.506,0.488-0.858,0.488l0,0c-0.35,0-0.68-0.186-0.858-0.486l0,0L46.19,33.804c-0.185-0.312-0.188-0.695-0.012-1.008l0,0c0.177-0.314,0.508-0.51,0.871-0.51l0,0L68.125,32.288 M57.598,48.978l8.766-14.689H48.811L57.598,48.978L57.598,48.978z"/>
- <path xmlns="http://www.w3.org/2000/svg" d="M46.815,51.927c-0.554,0-1-0.445-1-0.998l0,0c0-0.553,0.447-1,1-1l0,0h21.05c0.553,0,1.001,0.447,1.001,1l0,0c0,0.553-0.448,0.998-1.001,0.998l0,0H46.815L46.815,51.927z"/>
- <path xmlns="http://www.w3.org/2000/svg" d="M56.599,33.05V21.03c0-0.553,0.448-0.998,1.001-0.998l0,0c0.553,0,0.999,0.445,0.999,0.998l0,0v12.02c0,0.553-0.446,1-0.999,1l0,0C57.046,34.05,56.599,33.601,56.599,33.05L56.599,33.05z"/>
- <path xmlns="http://www.w3.org/2000/svg" d="M56.6,62.026V50.831c0-0.555,0.448-1.002,0.999-1.002l0,0c0.553,0,1.001,0.447,1.001,1.002l0,0v11.195c0,0.551-0.448,0.998-1.001,0.998l0,0C57.047,63.024,56.6,62.577,56.6,62.026L56.6,62.026z"/>
- <polygon xmlns="http://www.w3.org/2000/svg" points="77.272,53.593 79.254,59.085 74.34,55.931 75.807,54.761 "/>
- <path xmlns="http://www.w3.org/2000/svg" d="M72.626,56.017l2.557-2.037l1.465-1.17l1.091-0.871l3.461,9.58L72.626,56.017L72.626,56.017z"/>
- <path xmlns="http://www.w3.org/2000/svg" d="M77.9,58.993l-9.404-11.787c-0.345-0.434-0.271-1.062,0.158-1.406l0,0c0.434-0.344,1.062-0.271,1.405,0.16l0,0l9.404,11.785c0.345,0.434,0.273,1.062-0.158,1.406l0,0c-0.185,0.146-0.404,0.219-0.622,0.219l0,0C78.391,59.37,78.1,59.241,77.9,58.993L77.9,58.993z"/>
- <polygon xmlns="http://www.w3.org/2000/svg" points="70.721,58.583 72.706,64.073 67.792,60.921 69.256,59.751 "/>
- <path xmlns="http://www.w3.org/2000/svg" d="M66.077,61.007l2.556-2.039l1.464-1.168l1.089-0.869l3.469,9.58L66.077,61.007L66.077,61.007z"/>
- <path xmlns="http://www.w3.org/2000/svg" d="M71.354,63.981l-7.327-9.184c-0.345-0.434-0.271-1.062,0.158-1.406l0,0c0.431-0.346,1.062-0.271,1.406,0.16l0,0l7.325,9.182c0.345,0.432,0.273,1.061-0.158,1.404l0,0c-0.186,0.146-0.404,0.219-0.623,0.219l0,0C71.841,64.358,71.55,64.229,71.354,63.981L71.354,63.981z"/>
- <polygon xmlns="http://www.w3.org/2000/svg" fill="none" points="86.43,77.503 43.23,77.503 43.2,12.833 86.43,12.962 "/>
- <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#CCCCCC" stroke-linecap="round" y1="22.731" stroke-width="0.5" x1="64.799" y2="22.731" x2="62.1"/>
- <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#CCCCCC" stroke-linecap="round" y1="28.132" stroke-width="0.5" x1="63.899" y2="28.132" x2="61.2"/>
- <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#CCCCCC" stroke-linecap="round" y1="25.433" stroke-width="0.5" x1="61.65" y2="25.433" x2="64.35"/>
- <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#CCCCCC" stroke-linecap="round" y1="28.132" stroke-width="0.5" x1="64.799" y2="28.132" x2="64.799"/>
- <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#CCCCCC" stroke-linecap="round" y1="25.433" stroke-width="0.5" x1="61.65" y2="28.132" x2="61.2"/>
- <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#CCCCCC" stroke-linecap="round" y1="22.731" stroke-width="0.5" x1="62.1" y2="25.433" x2="61.65"/>
- <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#CCCCCC" stroke-linecap="round" y1="25.433" stroke-width="0.5" x1="64.35" y2="28.132" x2="63.899"/>
- <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000" stroke-linecap="round" y1="22.731" stroke-width="0.5" x1="64.8" y2="25.433" x2="64.35"/>
- <text xmlns="http://www.w3.org/2000/svg" font-family="Droid Sans" transform="matrix(1 0 0 1 61.2896 75.6689)" font-size="6">9</text>
- <path xmlns="http://www.w3.org/2000/svg" d="M111.325,32.288c0.359,0,0.69,0.193,0.869,0.508l0,0c0.179,0.312,0.175,0.695-0.012,1.006l0,0L101.658,51.44c-0.18,0.303-0.506,0.488-0.858,0.488l0,0c-0.35,0-0.68-0.186-0.858-0.486l0,0L89.391,33.804c-0.185-0.312-0.188-0.695-0.012-1.008l0,0c0.177-0.314,0.508-0.51,0.871-0.51l0,0L111.325,32.288 M100.798,48.978l8.766-14.689H92.011L100.798,48.978L100.798,48.978z"/>
- <path xmlns="http://www.w3.org/2000/svg" d="M90.016,51.927c-0.554,0-1-0.445-1-0.998l0,0c0-0.553,0.447-1,1-1l0,0h21.05c0.553,0,1.001,0.447,1.001,1l0,0c0,0.553-0.448,0.998-1.001,0.998l0,0H90.016L90.016,51.927z"/>
- <path xmlns="http://www.w3.org/2000/svg" d="M99.799,33.05V21.03c0-0.553,0.448-0.998,1.001-0.998l0,0c0.553,0,0.999,0.445,0.999,0.998l0,0v12.02c0,0.553-0.446,1-0.999,1l0,0C100.246,34.05,99.799,33.601,99.799,33.05L99.799,33.05z"/>
- <path xmlns="http://www.w3.org/2000/svg" d="M99.8,62.026V50.831c0-0.555,0.448-1.002,0.999-1.002l0,0c0.553,0,1.001,0.447,1.001,1.002l0,0v11.195c0,0.551-0.448,0.998-1.001,0.998l0,0C100.247,63.024,99.8,62.577,99.8,62.026L99.8,62.026z"/>
- <polygon xmlns="http://www.w3.org/2000/svg" points="120.473,53.593 122.454,59.085 117.54,55.931 119.007,54.761 "/>
- <path xmlns="http://www.w3.org/2000/svg" d="M115.826,56.017l2.557-2.037l1.465-1.17l1.091-0.871l3.461,9.58L115.826,56.017L115.826,56.017z"/>
- <path xmlns="http://www.w3.org/2000/svg" d="M121.101,58.993l-9.404-11.787c-0.345-0.434-0.271-1.062,0.158-1.406l0,0c0.434-0.344,1.062-0.271,1.405,0.16l0,0l9.404,11.785c0.345,0.434,0.273,1.062-0.158,1.406l0,0c-0.185,0.146-0.404,0.219-0.622,0.219l0,0C121.591,59.37,121.3,59.241,121.101,58.993L121.101,58.993z"/>
- <polygon xmlns="http://www.w3.org/2000/svg" points="113.921,58.583 115.906,64.073 110.992,60.921 112.456,59.751 "/>
- <path xmlns="http://www.w3.org/2000/svg" d="M109.277,61.007l2.556-2.039l1.464-1.168l1.089-0.869l3.469,9.58L109.277,61.007L109.277,61.007z"/>
- <path xmlns="http://www.w3.org/2000/svg" d="M114.554,63.981l-7.327-9.184c-0.345-0.434-0.271-1.062,0.158-1.406l0,0c0.431-0.346,1.062-0.271,1.406,0.16l0,0l7.325,9.182c0.345,0.432,0.273,1.061-0.158,1.404l0,0c-0.186,0.146-0.404,0.219-0.623,0.219l0,0C115.041,64.358,114.75,64.229,114.554,63.981L114.554,63.981z"/>
- <polygon xmlns="http://www.w3.org/2000/svg" fill="none" points="129.63,77.503 86.43,77.503 86.4,12.833 129.63,12.962 "/>
- <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#CCCCCC" stroke-linecap="round" y1="22.731" stroke-width="0.5" x1="108" y2="22.731" x2="105.3"/>
- <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#CCCCCC" stroke-linecap="round" y1="28.132" stroke-width="0.5" x1="107.1" y2="28.132" x2="104.4"/>
- <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#CCCCCC" stroke-linecap="round" y1="25.433" stroke-width="0.5" x1="104.85" y2="25.433" x2="107.55"/>
- <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#CCCCCC" stroke-linecap="round" y1="28.132" stroke-width="0.5" x1="108" y2="28.132" x2="108"/>
- <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#CCCCCC" stroke-linecap="round" y1="25.433" stroke-width="0.5" x1="104.85" y2="28.132" x2="104.4"/>
- <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#CCCCCC" stroke-linecap="round" y1="22.731" stroke-width="0.5" x1="105.3" y2="25.433" x2="104.85"/>
- <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#CCCCCC" stroke-linecap="round" y1="22.731" stroke-width="0.5" x1="108" y2="25.433" x2="107.55"/>
- <text xmlns="http://www.w3.org/2000/svg" font-family="Droid Sans" transform="matrix(1 0 0 1 104.4897 75.6689)" font-size="6">7</text>
- <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000" stroke-linecap="round" y1="25.433" stroke-width="0.5" x1="107.55" y2="28.132" x2="107.1"/>
- <path xmlns="http://www.w3.org/2000/svg" d="M154.495,32.288c0.359,0,0.69,0.193,0.869,0.508l0,0c0.179,0.312,0.175,0.695-0.012,1.006l0,0L144.828,51.44c-0.18,0.303-0.506,0.488-0.858,0.488l0,0c-0.35,0-0.68-0.186-0.858-0.486l0,0l-10.551-17.639c-0.185-0.312-0.188-0.695-0.012-1.008l0,0c0.177-0.314,0.508-0.51,0.871-0.51l0,0L154.495,32.288 M143.968,48.978l8.766-14.689h-17.553L143.968,48.978L143.968,48.978z"/>
- <path xmlns="http://www.w3.org/2000/svg" d="M133.186,51.927c-0.554,0-1-0.445-1-0.998l0,0c0-0.553,0.447-1,1-1l0,0h21.05c0.553,0,1.001,0.447,1.001,1l0,0c0,0.553-0.448,0.998-1.001,0.998l0,0H133.186L133.186,51.927z"/>
- <path xmlns="http://www.w3.org/2000/svg" d="M142.969,33.05V21.03c0-0.553,0.448-0.998,1.001-0.998l0,0c0.553,0,0.999,0.445,0.999,0.998l0,0v12.02c0,0.553-0.446,1-0.999,1l0,0C143.416,34.05,142.969,33.601,142.969,33.05L142.969,33.05z"/>
- <path xmlns="http://www.w3.org/2000/svg" d="M142.97,62.026V50.831c0-0.555,0.448-1.002,0.999-1.002l0,0c0.553,0,1.001,0.447,1.001,1.002l0,0v11.195c0,0.551-0.448,0.998-1.001,0.998l0,0C143.417,63.024,142.97,62.577,142.97,62.026L142.97,62.026z"/>
- <polygon xmlns="http://www.w3.org/2000/svg" points="163.643,53.593 165.624,59.085 160.71,55.931 162.177,54.761 "/>
- <path xmlns="http://www.w3.org/2000/svg" d="M158.996,56.017l2.557-2.037l1.465-1.17l1.091-0.871l3.461,9.58L158.996,56.017L158.996,56.017z"/>
- <path xmlns="http://www.w3.org/2000/svg" d="M164.271,58.993l-9.404-11.787c-0.345-0.434-0.271-1.062,0.158-1.406l0,0c0.434-0.344,1.062-0.271,1.405,0.16l0,0l9.404,11.785c0.345,0.434,0.273,1.062-0.158,1.406l0,0c-0.185,0.146-0.404,0.219-0.622,0.219l0,0C164.761,59.37,164.47,59.241,164.271,58.993L164.271,58.993z"/>
- <polygon xmlns="http://www.w3.org/2000/svg" points="157.091,58.583 159.076,64.073 154.162,60.921 155.626,59.751 "/>
- <path xmlns="http://www.w3.org/2000/svg" d="M152.447,61.007l2.556-2.039l1.464-1.168l1.089-0.869l3.469,9.58L152.447,61.007L152.447,61.007z"/>
- <path xmlns="http://www.w3.org/2000/svg" d="M157.724,63.981l-7.327-9.184c-0.345-0.434-0.271-1.062,0.158-1.406l0,0c0.431-0.346,1.062-0.271,1.406,0.16l0,0l7.325,9.182c0.345,0.432,0.273,1.061-0.158,1.404l0,0c-0.186,0.146-0.404,0.219-0.623,0.219l0,0C158.211,64.358,157.92,64.229,157.724,63.981L157.724,63.981z"/>
- <polygon xmlns="http://www.w3.org/2000/svg" fill="none" points="172.8,77.503 129.6,77.503 129.57,12.833 172.8,12.962 "/>
- <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#CCCCCC" stroke-linecap="round" y1="22.731" stroke-width="0.5" x1="151.169" y2="22.731" x2="148.47"/>
- <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#CCCCCC" stroke-linecap="round" y1="25.433" stroke-width="0.5" x1="148.02" y2="25.433" x2="150.72"/>
- <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#CCCCCC" stroke-linecap="round" y1="28.132" stroke-width="0.5" x1="151.169" y2="28.132" x2="151.169"/>
- <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#CCCCCC" stroke-linecap="round" y1="25.433" stroke-width="0.5" x1="148.02" y2="28.132" x2="147.57"/>
- <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#CCCCCC" stroke-linecap="round" y1="22.731" stroke-width="0.5" x1="148.47" y2="25.433" x2="148.02"/>
- <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#CCCCCC" stroke-linecap="round" y1="25.433" stroke-width="0.5" x1="150.72" y2="28.132" x2="150.27"/>
- <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#CCCCCC" stroke-linecap="round" y1="22.731" stroke-width="0.5" x1="151.17" y2="25.433" x2="150.72"/>
- <text xmlns="http://www.w3.org/2000/svg" font-family="Droid Sans" transform="matrix(1 0 0 1 147.6597 75.6689)" font-size="6">5</text>
- <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000" stroke-linecap="round" y1="28.132" stroke-width="0.5" x1="150.27" y2="28.132" x2="147.57"/>
- <path xmlns="http://www.w3.org/2000/svg" d="M197.726,32.288c0.359,0,0.69,0.193,0.869,0.508l0,0c0.179,0.312,0.175,0.695-0.012,1.006l0,0L188.059,51.44c-0.18,0.303-0.506,0.488-0.858,0.488l0,0c-0.35,0-0.68-0.186-0.858-0.486l0,0l-10.551-17.639c-0.185-0.312-0.188-0.695-0.012-1.008l0,0c0.177-0.314,0.508-0.51,0.871-0.51l0,0L197.726,32.288 M187.198,48.978l8.766-14.689h-17.553L187.198,48.978L187.198,48.978z"/>
- <path xmlns="http://www.w3.org/2000/svg" d="M176.416,51.927c-0.554,0-1-0.445-1-0.998l0,0c0-0.553,0.447-1,1-1l0,0h21.05c0.553,0,1.001,0.447,1.001,1l0,0c0,0.553-0.448,0.998-1.001,0.998l0,0H176.416L176.416,51.927z"/>
- <path xmlns="http://www.w3.org/2000/svg" d="M186.199,33.05V21.03c0-0.553,0.448-0.998,1.001-0.998l0,0c0.553,0,0.999,0.445,0.999,0.998l0,0v12.02c0,0.553-0.446,1-0.999,1l0,0C186.646,34.05,186.199,33.601,186.199,33.05L186.199,33.05z"/>
- <path xmlns="http://www.w3.org/2000/svg" d="M186.2,62.026V50.831c0-0.555,0.448-1.002,0.999-1.002l0,0c0.553,0,1.001,0.447,1.001,1.002l0,0v11.195c0,0.551-0.448,0.998-1.001,0.998l0,0C186.647,63.024,186.2,62.577,186.2,62.026L186.2,62.026z"/>
- <polygon xmlns="http://www.w3.org/2000/svg" points="206.873,53.593 208.854,59.085 203.94,55.931 205.407,54.761 "/>
- <path xmlns="http://www.w3.org/2000/svg" d="M202.227,56.017l2.557-2.037l1.465-1.17l1.091-0.871l3.461,9.58L202.227,56.017L202.227,56.017z"/>
- <path xmlns="http://www.w3.org/2000/svg" d="M207.501,58.993l-9.404-11.787c-0.345-0.434-0.271-1.062,0.158-1.406l0,0c0.434-0.344,1.062-0.271,1.405,0.16l0,0l9.404,11.785c0.345,0.434,0.273,1.062-0.158,1.406l0,0c-0.185,0.146-0.404,0.219-0.622,0.219l0,0C207.991,59.37,207.7,59.241,207.501,58.993L207.501,58.993z"/>
- <polygon xmlns="http://www.w3.org/2000/svg" points="200.321,58.583 202.307,64.073 197.393,60.921 198.856,59.751 "/>
- <path xmlns="http://www.w3.org/2000/svg" d="M195.678,61.007l2.556-2.039l1.464-1.168l1.089-0.869l3.469,9.58L195.678,61.007L195.678,61.007z"/>
- <path xmlns="http://www.w3.org/2000/svg" d="M200.954,63.981l-7.327-9.184c-0.345-0.434-0.271-1.062,0.158-1.406l0,0c0.431-0.346,1.062-0.271,1.406,0.16l0,0l7.325,9.182c0.345,0.432,0.273,1.061-0.158,1.404l0,0c-0.186,0.146-0.404,0.219-0.623,0.219l0,0C201.441,64.358,201.15,64.229,200.954,63.981L200.954,63.981z"/>
- <polygon xmlns="http://www.w3.org/2000/svg" fill="none" points="216.03,77.503 172.831,77.503 172.8,12.833 216.03,12.962 "/>
- <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#CCCCCC" stroke-linecap="round" y1="22.731" stroke-width="0.5" x1="194.4" y2="22.731" x2="191.7"/>
- <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#CCCCCC" stroke-linecap="round" y1="28.132" stroke-width="0.5" x1="193.5" y2="28.132" x2="190.8"/>
- <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#CCCCCC" stroke-linecap="round" y1="25.433" stroke-width="0.5" x1="191.25" y2="25.433" x2="193.95"/>
- <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#CCCCCC" stroke-linecap="round" y1="28.132" stroke-width="0.5" x1="194.4" y2="28.132" x2="194.4"/>
- <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#CCCCCC" stroke-linecap="round" y1="22.731" stroke-width="0.5" x1="191.701" y2="25.433" x2="191.25"/>
- <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#CCCCCC" stroke-linecap="round" y1="25.433" stroke-width="0.5" x1="193.95" y2="28.132" x2="193.5"/>
- <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#CCCCCC" stroke-linecap="round" y1="22.731" stroke-width="0.5" x1="194.4" y2="25.433" x2="193.95"/>
- <text xmlns="http://www.w3.org/2000/svg" font-family="Droid Sans" transform="matrix(1 0 0 1 190.8901 75.668)" font-size="6">4</text>
- <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000" stroke-linecap="round" y1="25.433" stroke-width="0.5" x1="191.25" y2="28.132" x2="190.8"/>
- <path xmlns="http://www.w3.org/2000/svg" d="M240.925,32.288c0.359,0,0.69,0.193,0.869,0.508l0,0c0.179,0.312,0.175,0.695-0.012,1.006l0,0L231.258,51.44c-0.18,0.303-0.506,0.488-0.858,0.488l0,0c-0.35,0-0.68-0.186-0.858-0.486l0,0l-10.551-17.639c-0.185-0.312-0.188-0.695-0.012-1.008l0,0c0.177-0.314,0.508-0.51,0.871-0.51l0,0L240.925,32.288 M230.398,48.978l8.766-14.689h-17.553L230.398,48.978L230.398,48.978z"/>
- <path xmlns="http://www.w3.org/2000/svg" d="M219.616,51.927c-0.554,0-1-0.445-1-0.998l0,0c0-0.553,0.447-1,1-1l0,0h21.05c0.553,0,1.001,0.447,1.001,1l0,0c0,0.553-0.448,0.998-1.001,0.998l0,0H219.616L219.616,51.927z"/>
- <path xmlns="http://www.w3.org/2000/svg" d="M229.399,33.05V21.03c0-0.553,0.448-0.998,1.001-0.998l0,0c0.553,0,0.999,0.445,0.999,0.998l0,0v12.02c0,0.553-0.446,1-0.999,1l0,0C229.846,34.05,229.399,33.601,229.399,33.05L229.399,33.05z"/>
- <path xmlns="http://www.w3.org/2000/svg" d="M229.4,62.026V50.831c0-0.555,0.448-1.002,0.999-1.002l0,0c0.553,0,1.001,0.447,1.001,1.002l0,0v11.195c0,0.551-0.448,0.998-1.001,0.998l0,0C229.847,63.024,229.4,62.577,229.4,62.026L229.4,62.026z"/>
- <polygon xmlns="http://www.w3.org/2000/svg" points="250.073,53.593 252.054,59.085 247.14,55.931 248.607,54.761 "/>
- <path xmlns="http://www.w3.org/2000/svg" d="M245.426,56.017l2.557-2.037l1.465-1.17l1.091-0.871l3.461,9.58L245.426,56.017L245.426,56.017z"/>
- <path xmlns="http://www.w3.org/2000/svg" d="M250.701,58.993l-9.404-11.787c-0.345-0.434-0.271-1.062,0.158-1.406l0,0c0.434-0.344,1.062-0.271,1.405,0.16l0,0l9.404,11.785c0.345,0.434,0.273,1.062-0.158,1.406l0,0c-0.185,0.146-0.404,0.219-0.622,0.219l0,0C251.191,59.37,250.9,59.241,250.701,58.993L250.701,58.993z"/>
- <polygon xmlns="http://www.w3.org/2000/svg" points="243.521,58.583 245.506,64.073 240.592,60.921 242.056,59.751 "/>
- <path xmlns="http://www.w3.org/2000/svg" d="M238.877,61.007l2.556-2.039l1.464-1.168l1.089-0.869l3.469,9.58L238.877,61.007L238.877,61.007z"/>
- <path xmlns="http://www.w3.org/2000/svg" d="M244.154,63.981l-7.327-9.184c-0.345-0.434-0.271-1.062,0.158-1.406l0,0c0.431-0.346,1.062-0.271,1.406,0.16l0,0l7.325,9.182c0.345,0.432,0.273,1.061-0.158,1.404l0,0c-0.186,0.146-0.404,0.219-0.623,0.219l0,0C244.641,64.358,244.35,64.229,244.154,63.981L244.154,63.981z"/>
- <polygon xmlns="http://www.w3.org/2000/svg" fill="none" points="259.23,77.503 216.03,77.503 216,12.833 259.23,12.962 "/>
- <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#CCCCCC" stroke-linecap="round" y1="22.731" stroke-width="0.5" x1="237.6" y2="22.731" x2="234.9"/>
- <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#CCCCCC" stroke-linecap="round" y1="28.132" stroke-width="0.5" x1="236.7" y2="28.132" x2="234"/>
- <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#CCCCCC" stroke-linecap="round" y1="25.433" stroke-width="0.5" x1="234.45" y2="25.433" x2="237.15"/>
- <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#CCCCCC" stroke-linecap="round" y1="28.132" stroke-width="0.5" x1="237.6" y2="28.132" x2="237.6"/>
- <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#CCCCCC" stroke-linecap="round" y1="25.433" stroke-width="0.5" x1="234.45" y2="28.132" x2="234"/>
- <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000" stroke-linecap="round" y1="22.731" stroke-width="0.5" x1="234.9" y2="25.433" x2="234.45"/>
- <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#CCCCCC" stroke-linecap="round" y1="25.433" stroke-width="0.5" x1="237.15" y2="28.132" x2="236.7"/>
- <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#CCCCCC" stroke-linecap="round" y1="22.731" stroke-width="0.5" x1="237.6" y2="25.433" x2="237.15"/>
- <text xmlns="http://www.w3.org/2000/svg" font-family="Droid Sans" transform="matrix(1 0 0 1 234.0898 75.668)" font-size="6">2</text>
- <path xmlns="http://www.w3.org/2000/svg" d="M284.125,32.288c0.359,0,0.69,0.193,0.869,0.508l0,0c0.179,0.312,0.175,0.695-0.012,1.006l0,0L274.458,51.44c-0.18,0.303-0.506,0.488-0.858,0.488l0,0c-0.35,0-0.68-0.186-0.858-0.486l0,0l-10.551-17.639c-0.185-0.312-0.188-0.695-0.012-1.008l0,0c0.177-0.314,0.508-0.51,0.871-0.51l0,0L284.125,32.288 M273.598,48.978l8.766-14.689h-17.553L273.598,48.978L273.598,48.978z"/>
- <path xmlns="http://www.w3.org/2000/svg" d="M262.816,51.927c-0.554,0-1-0.445-1-0.998l0,0c0-0.553,0.447-1,1-1l0,0h21.05c0.553,0,1.001,0.447,1.001,1l0,0c0,0.553-0.448,0.998-1.001,0.998l0,0H262.816L262.816,51.927z"/>
- <path xmlns="http://www.w3.org/2000/svg" d="M272.599,33.05V21.03c0-0.553,0.448-0.998,1.001-0.998l0,0c0.553,0,0.999,0.445,0.999,0.998l0,0v12.02c0,0.553-0.446,1-0.999,1l0,0C273.046,34.05,272.599,33.601,272.599,33.05L272.599,33.05z"/>
- <path xmlns="http://www.w3.org/2000/svg" d="M272.6,62.026V50.831c0-0.555,0.448-1.002,0.999-1.002l0,0c0.553,0,1.001,0.447,1.001,1.002l0,0v11.195c0,0.551-0.448,0.998-1.001,0.998l0,0C273.047,63.024,272.6,62.577,272.6,62.026L272.6,62.026z"/>
- <polygon xmlns="http://www.w3.org/2000/svg" points="293.273,53.593 295.254,59.085 290.34,55.931 291.807,54.761 "/>
- <path xmlns="http://www.w3.org/2000/svg" d="M288.626,56.017l2.557-2.037l1.465-1.17l1.091-0.871l3.461,9.58L288.626,56.017L288.626,56.017z"/>
- <path xmlns="http://www.w3.org/2000/svg" d="M293.901,58.993l-9.404-11.787c-0.345-0.434-0.271-1.062,0.158-1.406l0,0c0.434-0.344,1.062-0.271,1.405,0.16l0,0l9.404,11.785c0.345,0.434,0.273,1.062-0.158,1.406l0,0c-0.185,0.146-0.404,0.219-0.622,0.219l0,0C294.391,59.37,294.1,59.241,293.901,58.993L293.901,58.993z"/>
- <polygon xmlns="http://www.w3.org/2000/svg" points="286.721,58.583 288.707,64.073 283.792,60.921 285.256,59.751 "/>
- <path xmlns="http://www.w3.org/2000/svg" d="M282.078,61.007l2.556-2.039l1.464-1.168l1.089-0.869l3.469,9.58L282.078,61.007L282.078,61.007z"/>
- <path xmlns="http://www.w3.org/2000/svg" d="M287.354,63.981l-7.327-9.184c-0.345-0.434-0.271-1.062,0.158-1.406l0,0c0.431-0.346,1.062-0.271,1.406,0.16l0,0l7.325,9.182c0.345,0.432,0.273,1.061-0.158,1.404l0,0c-0.186,0.146-0.404,0.219-0.623,0.219l0,0C287.841,64.358,287.55,64.229,287.354,63.981L287.354,63.981z"/>
- <polygon xmlns="http://www.w3.org/2000/svg" fill="none" points="302.43,77.503 259.23,77.503 259.2,12.833 302.43,12.962 "/>
- <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#CCCCCC" stroke-linecap="round" y1="22.731" stroke-width="0.5" x1="280.8" y2="22.731" x2="278.1"/>
- <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#CCCCCC" stroke-linecap="round" y1="28.132" stroke-width="0.5" x1="279.9" y2="28.132" x2="277.2"/>
- <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#CCCCCC" stroke-linecap="round" y1="28.132" stroke-width="0.5" x1="280.8" y2="28.132" x2="280.8"/>
- <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#CCCCCC" stroke-linecap="round" y1="25.433" stroke-width="0.5" x1="277.65" y2="28.132" x2="277.2"/>
- <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#CCCCCC" stroke-linecap="round" y1="22.731" stroke-width="0.5" x1="278.101" y2="25.433" x2="277.65"/>
- <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#CCCCCC" stroke-linecap="round" y1="25.433" stroke-width="0.5" x1="280.35" y2="28.132" x2="279.9"/>
- <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#CCCCCC" stroke-linecap="round" y1="22.731" stroke-width="0.5" x1="280.8" y2="25.433" x2="280.35"/>
- <text xmlns="http://www.w3.org/2000/svg" font-family="Droid Sans" transform="matrix(1 0 0 1 277.29 75.668)" font-size="6">1</text>
- <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000" stroke-linecap="round" y1="25.433" stroke-width="0.5" x1="277.65" y2="25.433" x2="280.35"/>
- <path xmlns="http://www.w3.org/2000/svg" d="M327.295,32.288c0.359,0,0.69,0.193,0.869,0.508l0,0c0.179,0.312,0.175,0.695-0.012,1.006l0,0L317.628,51.44c-0.18,0.303-0.506,0.488-0.858,0.488l0,0c-0.35,0-0.68-0.186-0.858-0.486l0,0l-10.551-17.639c-0.185-0.312-0.188-0.695-0.012-1.008l0,0c0.177-0.314,0.508-0.51,0.871-0.51l0,0L327.295,32.288 M316.768,48.978l8.766-14.689h-17.553L316.768,48.978L316.768,48.978z"/>
- <path xmlns="http://www.w3.org/2000/svg" d="M305.986,51.927c-0.554,0-1-0.445-1-0.998l0,0c0-0.553,0.447-1,1-1l0,0h21.05c0.553,0,1.001,0.447,1.001,1l0,0c0,0.553-0.448,0.998-1.001,0.998l0,0H305.986L305.986,51.927z"/>
- <path xmlns="http://www.w3.org/2000/svg" d="M315.769,33.05V21.03c0-0.553,0.448-0.998,1.001-0.998l0,0c0.553,0,0.999,0.445,0.999,0.998l0,0v12.02c0,0.553-0.446,1-0.999,1l0,0C316.216,34.05,315.769,33.601,315.769,33.05L315.769,33.05z"/>
- <path xmlns="http://www.w3.org/2000/svg" d="M315.77,62.026V50.831c0-0.555,0.448-1.002,0.999-1.002l0,0c0.553,0,1.001,0.447,1.001,1.002l0,0v11.195c0,0.551-0.448,0.998-1.001,0.998l0,0C316.217,63.024,315.77,62.577,315.77,62.026L315.77,62.026z"/>
- <polygon xmlns="http://www.w3.org/2000/svg" points="336.443,53.593 338.424,59.085 333.51,55.931 334.977,54.761 "/>
- <path xmlns="http://www.w3.org/2000/svg" d="M331.796,56.017l2.557-2.037l1.465-1.17l1.091-0.871l3.461,9.58L331.796,56.017L331.796,56.017z"/>
- <path xmlns="http://www.w3.org/2000/svg" d="M337.071,58.993l-9.404-11.787c-0.345-0.434-0.271-1.062,0.158-1.406l0,0c0.434-0.344,1.062-0.271,1.405,0.16l0,0l9.404,11.785c0.345,0.434,0.273,1.062-0.158,1.406l0,0c-0.185,0.146-0.404,0.219-0.622,0.219l0,0C337.561,59.37,337.27,59.241,337.071,58.993L337.071,58.993z"/>
- <polygon xmlns="http://www.w3.org/2000/svg" points="329.891,58.583 331.876,64.073 326.962,60.921 328.426,59.751 "/>
- <path xmlns="http://www.w3.org/2000/svg" d="M325.248,61.007l2.556-2.039l1.464-1.168l1.089-0.869l3.469,9.58L325.248,61.007L325.248,61.007z"/>
- <path xmlns="http://www.w3.org/2000/svg" d="M330.524,63.981l-7.327-9.184c-0.345-0.434-0.271-1.062,0.158-1.406l0,0c0.431-0.346,1.062-0.271,1.406,0.16l0,0l7.325,9.182c0.345,0.432,0.273,1.061-0.158,1.404l0,0c-0.186,0.146-0.404,0.219-0.623,0.219l0,0C331.011,64.358,330.72,64.229,330.524,63.981L330.524,63.981z"/>
- <polygon xmlns="http://www.w3.org/2000/svg" fill="none" points="345.6,77.503 302.4,77.503 302.37,12.833 345.6,12.962 "/>
- <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#CCCCCC" stroke-linecap="round" y1="22.731" stroke-width="0.5" x1="323.97" y2="22.731" x2="321.27"/>
- <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#CCCCCC" stroke-linecap="round" y1="28.132" stroke-width="0.5" x1="323.07" y2="28.132" x2="320.37"/>
- <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#CCCCCC" stroke-linecap="round" y1="25.433" stroke-width="0.5" x1="320.82" y2="25.433" x2="323.52"/>
- <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000" stroke-linecap="round" y1="28.132" stroke-width="0.75" x1="323.97" y2="28.132" x2="323.97"/>
- <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#CCCCCC" stroke-linecap="round" y1="25.433" stroke-width="0.5" x1="320.82" y2="28.132" x2="320.37"/>
- <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#CCCCCC" stroke-linecap="round" y1="22.731" stroke-width="0.5" x1="321.271" y2="25.433" x2="320.82"/>
- <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#CCCCCC" stroke-linecap="round" y1="25.433" stroke-width="0.5" x1="323.52" y2="28.132" x2="323.07"/>
- <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#CCCCCC" stroke-linecap="round" y1="22.731" stroke-width="0.5" x1="323.97" y2="25.433" x2="323.52"/>
- <text xmlns="http://www.w3.org/2000/svg" font-family="Droid Sans" transform="matrix(1 0 0 1 320.46 75.668)" font-size="6">6</text>
- <text xmlns="http://www.w3.org/2000/svg" font-family="Droid Sans" transform="matrix(1 0 0 1 169.9604 14.1064)" font-size="6">3,8</text>
-
+		<line fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-miterlimit="10" x1="54" y1="7.2" x2="54" y2="0"/>
+	<g>
+		<g>
+			<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="7.075" y1="12.991" x2="4.885" y2="12.991"/>
+			<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="5.25" y1="10.802" x2="7.44" y2="10.802"/>
+			<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="7.806" y1="12.991" x2="7.806" y2="12.991"/>
+			<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="5.25" y1="10.802" x2="4.885" y2="12.991"/>
+			<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="5.615" y1="8.61" x2="5.25" y2="10.802"/>
+			<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="7.44" y1="10.802" x2="7.075" y2="12.991"/>
+			<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="7.806" y1="8.61" x2="7.44" y2="10.802"/>
+			<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="7.806" y1="8.61" x2="5.615" y2="8.61"/>
+		</g>
+		<g>
+			<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="22.179" y1="8.61" x2="19.989" y2="8.61"/>
+			
+				<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="21.449" y1="12.991" x2="19.259" y2="12.991"/>
+			
+				<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="19.624" y1="10.802" x2="21.815" y2="10.802"/>
+			
+				<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="22.179" y1="12.991" x2="22.179" y2="12.991"/>
+			
+				<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="19.624" y1="10.802" x2="19.259" y2="12.991"/>
+			<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="19.989" y1="8.61" x2="19.624" y2="10.802"/>
+			
+				<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="21.815" y1="10.802" x2="21.449" y2="12.991"/>
+			<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="22.18" y1="8.61" x2="21.815" y2="10.802"/>
+		</g>
+		<g>
+			<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="36.554" y1="8.61" x2="34.363" y2="8.61"/>
+			
+				<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="35.824" y1="12.991" x2="33.633" y2="12.991"/>
+			
+				<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="33.999" y1="10.802" x2="36.189" y2="10.802"/>
+			
+				<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="36.554" y1="12.991" x2="36.554" y2="12.991"/>
+			
+				<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="33.999" y1="10.802" x2="33.633" y2="12.991"/>
+			<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="34.363" y1="8.61" x2="33.999" y2="10.802"/>
+			<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="36.554" y1="8.61" x2="36.189" y2="10.802"/>
+			
+				<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="36.189" y1="10.802" x2="35.824" y2="12.991"/>
+		</g>
+		<g>
+			<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="50.927" y1="8.61" x2="48.738" y2="8.61"/>
+			
+				<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="48.373" y1="10.802" x2="50.563" y2="10.802"/>
+			
+				<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="50.927" y1="12.991" x2="50.927" y2="12.991"/>
+			
+				<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="48.373" y1="10.802" x2="48.007" y2="12.991"/>
+			<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="48.738" y1="8.61" x2="48.373" y2="10.802"/>
+			
+				<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="50.563" y1="10.802" x2="50.198" y2="12.991"/>
+			<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="50.928" y1="8.61" x2="50.563" y2="10.802"/>
+			
+				<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="50.198" y1="12.991" x2="48.007" y2="12.991"/>
+		</g>
+		<g>
+			<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="65.302" y1="8.61" x2="63.111" y2="8.61"/>
+			
+				<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="64.572" y1="12.991" x2="62.381" y2="12.991"/>
+			
+				<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="62.747" y1="10.802" x2="64.938" y2="10.802"/>
+			
+				<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="65.302" y1="12.991" x2="65.302" y2="12.991"/>
+			<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="63.113" y1="8.61" x2="62.747" y2="10.802"/>
+			
+				<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="64.938" y1="10.802" x2="64.572" y2="12.991"/>
+			<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="65.302" y1="8.61" x2="64.938" y2="10.802"/>
+			
+				<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="62.747" y1="10.802" x2="62.381" y2="12.991"/>
+		</g>
+		<g>
+			<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="79.675" y1="8.61" x2="77.486" y2="8.61"/>
+			
+				<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="78.945" y1="12.991" x2="76.756" y2="12.991"/>
+			
+				<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="77.121" y1="10.802" x2="79.311" y2="10.802"/>
+			
+				<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="79.675" y1="12.991" x2="79.675" y2="12.991"/>
+			
+				<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="77.121" y1="10.802" x2="76.756" y2="12.991"/>
+			<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="77.486" y1="8.61" x2="77.121" y2="10.802"/>
+			
+				<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="79.311" y1="10.802" x2="78.945" y2="12.991"/>
+			<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="79.675" y1="8.61" x2="79.311" y2="10.802"/>
+		</g>
+		<g>
+			<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="94.05" y1="8.61" x2="91.859" y2="8.61"/>
+			<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="93.32" y1="12.991" x2="91.13" y2="12.991"/>
+			<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="94.05" y1="12.991" x2="94.05" y2="12.991"/>
+			<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="91.496" y1="10.802" x2="91.13" y2="12.991"/>
+			<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="91.861" y1="8.61" x2="91.496" y2="10.802"/>
+			<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="93.686" y1="10.802" x2="93.32" y2="12.991"/>
+			<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="94.05" y1="8.61" x2="93.686" y2="10.802"/>
+			
+				<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="91.496" y1="10.802" x2="93.686" y2="10.802"/>
+		</g>
+		<g>
+			<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="108.418" y1="8.61" x2="106.24" y2="8.61"/>
+			
+				<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="107.695" y1="12.991" x2="105.512" y2="12.991"/>
+			
+				<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="105.869" y1="10.802" x2="108.059" y2="10.802"/>
+			
+				<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="105.869" y1="10.802" x2="105.512" y2="12.991"/>
+			<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="106.24" y1="8.61" x2="105.869" y2="10.802"/>
+			
+				<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="108.059" y1="10.802" x2="107.695" y2="12.991"/>
+			
+				<line fill="none" stroke="#CCCCCC" stroke-width="0.5" stroke-linecap="round" x1="108.418" y1="8.61" x2="108.059" y2="10.802"/>
+		</g>
+	</g>
+</g>
+<g>
+	<g>
+		<g>
+			<g id="schematic_17_">
+				<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="104.4" y1="21.6" x2="100.799" y2="21.6"/>
+				<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="108" y1="21.6" x2="104.4" y2="21.6"/>
+				<polygon fill="#FFFFFF" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="100.799,14.401 104.4,14.401 
+					108,14.401 104.4,21.6 				"/>
+				<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="104.4" y1="21.6" x2="104.4" y2="14.401"/>
+				
+					<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="111.509" y1="18.9" x2="109.169" y2="16.563"/>
+				
+					<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" x1="111.148" y1="22.141" x2="108.809" y2="19.801"/>
+				
+					<line id="connector1pin_17_" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" x1="104.4" y1="21.6" x2="104.4" y2="28.801"/>
+				<polygon id="connector1terminal_17_" fill="none" points="104.398,28.801 104.4,28.801 104.4,28.801 				"/>
+				
+					<line id="connector0pin_17_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="104.4" y1="14.401" x2="104.4" y2="7.2"/>
+				<rect id="connector0terminal_17_" x="104.398" y="7.2" fill="none" width="0.002" height="0.001"/>
+				<path d="M110.609,19.439l1.438-1.438l1.08,2.521L110.609,19.439z"/>
+				<path d="M110.25,22.68l1.439-1.438l1.08,2.52L110.25,22.68z"/>
+			</g>
+		</g>
+	</g>
+	<rect id="connector0terminal_9_" x="104.398" y="21.6" fill="none" width="0.002" height="0.002"/>
 </g>
 </svg>

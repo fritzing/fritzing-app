@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="32.617px"
+	 height="29.199px" viewBox="0 0 32.617 29.199" enable-background="new 0 0 32.617 29.199" xml:space="preserve">
+<g id="schematic">
+	<line fill="none" stroke="#000000" stroke-width="0.1524" stroke-linecap="round" x1="10.908" y1="29.001" x2="14.507" y2="25.4"/>
+	<line fill="none" stroke="#000000" stroke-width="0.1524" stroke-linecap="round" x1="14.507" y1="25.4" x2="18.106" y2="29.001"/>
+	<line fill="none" stroke="#000000" stroke-width="0.1524" stroke-linecap="round" x1="14.507" y1="21.8" x2="18.108" y2="18.201"/>
+	<line fill="none" stroke="#000000" stroke-width="0.1524" stroke-linecap="round" x1="18.108" y1="18.201" x2="21.707" y2="21.8"/>
+	
+		<line fill="none" stroke="#000000" stroke-width="0.1524" stroke-linecap="round" x1="18.108" y1="14.602" x2="21.707" y2="11.001"/>
+	
+		<line fill="none" stroke="#000000" stroke-width="0.1524" stroke-linecap="round" x1="21.707" y1="11.001" x2="25.31" y2="14.602"/>
+	
+		<line fill="none" stroke="#000000" stroke-width="0.1524" stroke-linecap="round" x1="18.106" y1="14.602" x2="21.707" y2="11.001"/>
+	
+		<line fill="none" stroke="#000000" stroke-width="0.1524" stroke-linecap="round" x1="21.707" y1="11.001" x2="25.31" y2="14.602"/>
+	<line fill="none" stroke="#000000" stroke-width="0.1524" stroke-linecap="round" x1="25.31" y1="7.401" x2="11.674" y2="7.401"/>
+	<line fill="none" stroke="#000000" stroke-width="0.1524" stroke-linecap="round" x1="11.674" y1="7.401" x2="8.074" y2="11.001"/>
+	<line fill="none" stroke="#000000" stroke-width="0.1524" stroke-linecap="round" x1="8.074" y1="11.001" x2="4.476" y2="7.401"/>
+	<line fill="none" stroke="#000000" stroke-width="0.1524" stroke-linecap="round" x1="25.31" y1="14.602" x2="25.31" y2="14.602"/>
+	<line fill="none" stroke="#000000" stroke-width="0.1524" stroke-linecap="round" x1="21.576" y1="21.8" x2="25.31" y2="21.8"/>
+	
+		<line fill="none" stroke="#000000" stroke-width="0.1524" stroke-linecap="round" x1="18.106" y1="29.001" x2="25.31" y2="29.001"/>
+	<rect x="0.109" y="7.401" width="3.6" height="21.602"/>
+	
+		<line id="connector0pin" fill="none" stroke="#000000" stroke-width="0.1524" stroke-linecap="round" x1="32.508" y1="7.401" x2="25.31" y2="7.401"/>
+	<polygon id="connector0terminal" fill="none" points="32.508,7.401 32.508,7.401 32.508,7.401 	"/>
+	
+		<line id="connector1pin" fill="none" stroke="#000000" stroke-width="0.1524" stroke-linecap="round" x1="32.508" y1="29.001" x2="25.31" y2="29.001"/>
+	<polygon id="connector1terminal" fill="none" points="32.508,29.001 32.508,29.001 32.508,29.001 	"/>
+	
+		<line id="connector2pin" fill="none" stroke="#000000" stroke-width="0.1524" stroke-linecap="round" x1="32.508" y1="14.602" x2="25.31" y2="14.602"/>
+	<polygon id="connector2terminal" fill="none" points="32.508,14.602 32.508,14.602 32.508,14.602 	"/>
+	<text transform="matrix(1 0 0 1 23.4453 6.2285)" font-family="'Droid Sans'" font-size="3.024">Sleeve</text>
+	<text transform="matrix(1 0 0 1 23.4453 27.9785)" font-family="'Droid Sans'" font-size="3.024">Ring2</text>
+	<text transform="matrix(1 0 0 1 23.4453 20.6455)" font-family="'Droid Sans'" font-size="3.024">Ring1</text>
+	<text transform="matrix(1 0 0 1 23.4453 13.3115)" font-family="'Droid Sans'" font-size="3.024">Tip</text>
+	
+		<line id="connector3pin" fill="none" stroke="#000000" stroke-width="0.1524" stroke-linecap="round" x1="32.508" y1="14.602" x2="25.31" y2="14.602"/>
+	<polygon id="connector3terminal" fill="none" points="32.508,14.602 32.508,14.602 32.508,14.602 	"/>
+	
+		<line id="connector4pin" fill="none" stroke="#000000" stroke-width="0.1524" stroke-linecap="round" x1="32.508" y1="21.8" x2="25.31" y2="21.8"/>
+	<polygon id="connector4terminal" fill="none" points="32.508,21.8 32.508,21.8 32.508,21.8 	"/>
+</g>
+</svg>

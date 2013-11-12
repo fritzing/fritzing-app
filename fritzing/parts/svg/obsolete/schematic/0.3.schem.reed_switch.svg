@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.0"
+   width="0.40000001in"
+   height="0.69999999in"
+   id="svg2">
+
+
+  <g
+     id="schematic">
+  <rect
+     width="1.893"
+     height="9.783"
+     x="15.646"
+     y="1.7"
+     id="connector0pin" />
+  <rect
+     width="0.86699998"
+     height="0.68400002"
+     x="16.125"
+     y="1.017"
+     id="connector0terminal" />
+  <rect
+     width="1.893"
+     height="9.7810001"
+     x="15.649"
+     y="52.417999"
+     id="connector1pin" />
+  <rect
+     width="0.86699998"
+     height="0.68599999"
+     x="16.128"
+     y="62.131001"
+     id="connector1terminal" />
+  <rect
+     width="1.893"
+     height="9.783"
+     x="15.646"
+     y="1.7"
+     id="connector2pin" />
+  <rect
+     width="0.86699998"
+     height="0.68400002"
+     x="16.125"
+     y="1.017"
+     id="connector2terminal" />
+  <rect
+     width="1.893"
+     height="9.7810001"
+     x="15.649"
+     y="52.417999"
+     id="connector3pin" />
+  <rect
+     width="0.86699998"
+     height="0.68599999"
+     x="16.128"
+     y="62.131001"
+     id="connector3terminal" />
+    <g
+       id="g12">
+      <line
+         fill="none"
+         stroke="#000000"
+         stroke-width="2.2284"
+         stroke-linecap="round"
+         x1="16.577999"
+         y1="44.006001"
+         x2="16.577999"
+         y2="61.91"
+         id="line14"
+         style="fill:none;stroke:#000000;stroke-width:2.22839999;stroke-linecap:round" />
+      <line
+         fill="none"
+         stroke="#000000"
+         stroke-width="2.2284"
+         stroke-linecap="round"
+         x1="16.577999"
+         y1="1.743"
+         x2="16.577999"
+         y2="19.799"
+         id="line16"
+         style="fill:none;stroke:#000000;stroke-width:2.22839999;stroke-linecap:round" />
+      <line
+         fill="none"
+         stroke="#000000"
+         stroke-width="2.2"
+         stroke-linecap="round"
+         x1="16.577999"
+         y1="44.006001"
+         x2="7"
+         y2="21.295"
+         id="line18"
+         style="fill:none;stroke:#000000;stroke-width:2.20000005;stroke-linecap:round" />
+  <rect
+     width="28.210844"
+     height="49.843372"
+     ry="5"
+     x="2.759037"
+     y="6.9578314"
+     id="rect2400"
+     style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,301 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg xmlns="http://www.w3.org/2000/svg"  width="300.71555" version="1.1" height="640.19531" id="svg5062">
+    <g  id="schematic">
+        <metadata  id="metadata7311">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+                <cc:Work xmlns:cc="http://creativecommons.org/ns#" rdf:about="" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+                    <dc:format xmlns:dc="http://purl.org/dc/elements/1.1/">image/svg+xml</dc:format>
+                    <dc:type xmlns:dc="http://purl.org/dc/elements/1.1/" rdf:resource="http://purl.org/dc/dcmitype/StillImage" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+                </cc:Work>
+            </rdf:RDF>
+        </metadata>
+        <defs  id="defs7309">
+            <defs  id="defs5064"/>
+            <sodipodi:namedview xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" fit-margin-top="10" fit-margin-left="1" showgrid="true" fit-margin-bottom="1" pagecolor="#ffffff" bordercolor="#666666" id="base" borderopacity="1.0" fit-margin-right="1">
+                <inkscape:grid xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" spacingx="7.5mm" empspacing="5" spacingy="7.5mm" snapvisiblegridlinesonly="true" enabled="true" units="mm" visible="true" dotted="false" type="xygrid" id="grid5291"/>
+            </sodipodi:namedview>
+        </defs>
+        <sodipodi:namedview xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" fit-margin-top="0" fit-margin-left="0" showgrid="true" fit-margin-bottom="0" objecttolerance="10" pagecolor="#ffffff" bordercolor="#666666" id="namedview7307" borderopacity="1" guidetolerance="10" gridtolerance="10" fit-margin-right="0">
+            <inkscape:grid xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" empspacing="5" spacingx="7.5mm" snapvisiblegridlinesonly="true" spacingy="7.5mm" enabled="true" visible="true" units="mm" dotted="false" type="xygrid" id="grid7655"/>
+        </sodipodi:namedview>
+        <g  id="g16932">
+            <g  id="g5460" transform="matrix(1.2499911,0,0,1,-266.57061,152.07183)">
+                <line  style="fill:none;stroke:#000000;stroke-width:2.4000001;stroke-linecap:round;stroke-linejoin:round" id="line5462" y1="141.451" x1="216.138" y2="141.451" x2="237.39799"/>
+            </g>
+            <rect  width="5" x="1.0831076" y="104.99921" height="5" style="fill:none" id="connector0"/>
+            <rect width="5" x="1.0831076" y="104.99921" fill="none" height="5" stroke="none" id="connector0terminal" stroke-width="0"/>
+            <rect  width="5" x="1.0831076" y="131.57402" height="5" style="fill:none" id="connector1"/>
+            <rect width="5" x="1.0831076" y="131.57402" fill="none" height="5" stroke="none" id="connector1terminal" stroke-width="0"/>
+            <rect  width="5" x="1.0831076" y="158.14882" height="5" style="fill:none" id="connector2"/>
+            <rect width="5" x="1.0831076" y="158.14882" fill="none" height="5" stroke="none" id="connector2terminal" stroke-width="0"/>
+            <rect  width="5" x="1.0831076" y="184.72362" height="5" style="fill:none" id="connector3"/>
+            <rect width="5" x="1.0831076" y="184.72362" fill="none" height="5" stroke="none" id="connector3terminal" stroke-width="0"/>
+            <rect  width="5" x="1.0831076" y="211.29843" height="5" style="fill:none" id="connector4"/>
+            <rect width="5" x="1.0831076" y="211.29843" fill="none" height="5" stroke="none" id="connector4terminal" stroke-width="0"/>
+            <rect  width="5" x="1.0831076" y="237.87323" height="5" style="fill:none" id="connector5"/>
+            <rect width="5" x="1.0831076" y="237.87323" fill="none" height="5" stroke="none" id="connector5terminal" stroke-width="0"/>
+            <rect  width="5" x="1.0831076" y="264.44803" height="5" style="fill:none" id="connector6"/>
+            <rect width="5" x="1.0831076" y="264.44803" fill="none" height="5" stroke="none" id="connector6terminal" stroke-width="0"/>
+            <rect  width="5" x="1.0831076" y="291.02283" height="5" style="fill:none" id="connector7"/>
+            <rect width="5" x="1.0831076" y="291.02283" fill="none" height="5" stroke="none" id="connector7terminal" stroke-width="0"/>
+            <rect  width="5" x="1.0831076" y="344.17245" height="5" style="fill:none" id="connector8"/>
+            <rect width="5" x="1.0831076" y="344.17245" fill="none" height="5" stroke="none" id="connector8terminal" stroke-width="0"/>
+            <rect  width="5" x="1.0831076" y="370.74725" height="5" style="fill:none" id="connector9"/>
+            <rect width="5" x="1.0831076" y="370.74725" fill="none" height="5" stroke="none" id="connector9terminal" stroke-width="0"/>
+            <rect  width="5" x="1.0831076" y="397.32205" height="5" style="fill:none" id="connector10"/>
+            <rect width="5" x="1.0831076" y="397.32205" fill="none" height="5" stroke="none" id="connector10terminal" stroke-width="0"/>
+            <rect  width="5" x="1.0831076" y="423.89685" height="5" style="fill:none" id="connector11"/>
+            <rect width="5" x="1.0831076" y="423.89685" fill="none" height="5" stroke="none" id="connector11terminal" stroke-width="0"/>
+            <rect  width="5" x="1.0831076" y="450.47165" height="5" style="fill:none" id="connector12"/>
+            <rect width="5" x="1.0831076" y="450.47165" fill="none" height="5" stroke="none" id="connector12terminal" stroke-width="0"/>
+            <rect  width="5" x="1.0831076" y="477.04645" height="5" style="fill:none" id="connector13"/>
+            <rect width="5" x="1.0831076" y="477.04645" fill="none" height="5" stroke="none" id="connector13terminal" stroke-width="0"/>
+            <rect  width="5" x="1.0831076" y="503.62128" height="5" style="fill:none" id="connector14"/>
+            <rect width="5" x="1.0831076" y="503.62128" fill="none" height="5" stroke="none" id="connector14terminal" stroke-width="0"/>
+            <rect  width="5" x="1.0831076" y="530.19604" height="5" style="fill:none" id="connector15"/>
+            <rect width="5" x="1.0831076" y="530.19604" fill="none" height="5" stroke="none" id="connector15terminal" stroke-width="0"/>
+            <rect  width="5" x="293.55466" y="104.99922" height="5" style="fill:none" id="connector16"/>
+            <rect width="5" x="293.55466" y="104.99922" fill="none" height="5" stroke="none" id="connector16terminal" stroke-width="0"/>
+            <rect  width="5" x="293.55466" y="131.57402" height="5" style="fill:none" id="connector17"/>
+            <rect width="5" x="293.55466" y="131.57402" fill="none" height="5" stroke="none" id="connector17terminal" stroke-width="0"/>
+            <rect  width="5" x="293.55466" y="158.14883" height="5" style="fill:none" id="connector18"/>
+            <rect width="5" x="293.55466" y="158.14883" fill="none" height="5" stroke="none" id="connector18terminal" stroke-width="0"/>
+            <rect  width="5" x="293.55466" y="184.72363" height="5" style="fill:none" id="connector19"/>
+            <rect width="5" x="293.55466" y="184.72363" fill="none" height="5" stroke="none" id="connector19terminal" stroke-width="0"/>
+            <rect  width="5" x="293.55466" y="211.29843" height="5" style="fill:none" id="connector20"/>
+            <rect width="5" x="293.55466" y="211.29843" fill="none" height="5" stroke="none" id="connector20terminal" stroke-width="0"/>
+            <rect  width="5" x="293.55466" y="237.87323" height="5" style="fill:none" id="connector21"/>
+            <rect width="5" x="293.55466" y="237.87323" fill="none" height="5" stroke="none" id="connector21terminal" stroke-width="0"/>
+            <rect  width="5" x="293.55466" y="264.44806" height="5" style="fill:none" id="connector22"/>
+            <rect width="5" x="293.55466" y="264.44806" fill="none" height="5" stroke="none" id="connector22terminal" stroke-width="0"/>
+            <rect  width="5" x="293.55466" y="291.02286" height="5" style="fill:none" id="connector23"/>
+            <rect width="5" x="293.55466" y="291.02286" fill="none" height="5" stroke="none" id="connector23terminal" stroke-width="0"/>
+            <rect  width="5" x="293.55466" y="344.17245" height="5" style="fill:none" id="connector24"/>
+            <rect width="5" x="293.55466" y="344.17245" fill="none" height="5" stroke="none" id="connector24terminal" stroke-width="0"/>
+            <rect  width="5" x="293.55466" y="370.74725" height="5" style="fill:none" id="connector25"/>
+            <rect width="5" x="293.55466" y="370.74725" fill="none" height="5" stroke="none" id="connector25terminal" stroke-width="0"/>
+            <rect  width="5" x="293.55466" y="397.32205" height="5" style="fill:none" id="connector26"/>
+            <rect width="5" x="293.55466" y="397.32205" fill="none" height="5" stroke="none" id="connector26terminal" stroke-width="0"/>
+            <rect  width="5" x="293.55466" y="423.89685" height="5" style="fill:none" id="connector27"/>
+            <rect width="5" x="293.55466" y="423.89685" fill="none" height="5" stroke="none" id="connector27terminal" stroke-width="0"/>
+            <rect  width="5" x="293.55466" y="450.47165" height="5" style="fill:none" id="connector28"/>
+            <rect width="5" x="293.55466" y="450.47165" fill="none" height="5" stroke="none" id="connector28terminal" stroke-width="0"/>
+            <rect  width="5" x="293.55466" y="477.04645" height="5" style="fill:none" id="connector29"/>
+            <rect width="5" x="293.55466" y="477.04645" fill="none" height="5" stroke="none" id="connector29terminal" stroke-width="0"/>
+            <rect  width="5" x="293.55466" y="503.62128" height="5" style="fill:none" id="connector30"/>
+            <rect width="5" x="293.55466" y="503.62128" fill="none" height="5" stroke="none" id="connector30terminal" stroke-width="0"/>
+            <rect  width="5" x="293.55466" y="530.19604" height="5" style="fill:none" id="connector31"/>
+            <rect width="5" x="293.55466" y="530.19604" fill="none" height="5" stroke="none" id="connector31terminal" stroke-width="0"/>
+            <rect  width="5" x="293.55466" y="51.849606" height="5" style="fill:none" id="connector32"/>
+            <rect width="5" x="293.55466" y="51.849606" fill="none" height="5" stroke="none" id="connector32terminal" stroke-width="0"/>
+            <rect  width="5" x="293.55466" y="25.274803" height="5" style="fill:none" id="connector33"/>
+            <rect width="5" x="293.55466" y="25.274803" fill="none" height="5" stroke="none" id="connector33terminal" stroke-width="0"/>
+            <rect  width="5" x="1.0831076" y="51.849606" height="5" style="fill:none" id="connector34"/>
+            <rect width="5" x="1.0831076" y="51.849606" fill="none" height="5" stroke="none" id="connector34terminal" stroke-width="0"/>
+            <rect  width="5" x="1.0831076" y="51.849606" height="5" style="fill:none" id="connector35"/>
+            <rect width="5" x="1.0831076" y="51.849606" fill="none" height="5" stroke="none" id="connector35terminal" stroke-width="0"/>
+            <rect  width="5" x="293.55466" y="583.3457" height="5" style="fill:none" id="connector36"/>
+            <rect width="5" x="293.55466" y="583.3457" fill="none" height="5" stroke="none" id="connector36terminal" stroke-width="0"/>
+            <rect  width="5" x="293.55466" y="609.92047" height="5" style="fill:none" id="connector37"/>
+            <rect width="5" x="293.55466" y="609.92047" fill="none" height="5" stroke="none" id="connector37terminal" stroke-width="0"/>
+            <rect  width="5" x="1.0831076" y="25.279692" height="5" style="fill:none" id="connector38"/>
+            <rect width="5" x="1.0831076" y="25.279692" fill="none" height="5" stroke="none" id="connector38terminal" stroke-width="0"/>
+            <rect  width="5" x="1.0831076" y="25.279692" height="5" style="fill:none" id="connector39"/>
+            <rect width="5" x="1.0831076" y="25.279692" fill="none" height="5" stroke="none" id="connector39terminal" stroke-width="0"/>
+            <g  id="g16782">
+                <rect  width="239.17323" x="30.17477" y="1.1999954" height="637.79529" style="fill:none;stroke:#000000;stroke-width:2.4000001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none" id="rect5404"/>
+                <g  id="g5406" transform="matrix(1.2499911,0,0,1,-266.57061,-113.6762)">
+                    <line  style="fill:none;stroke:#000000;stroke-width:2.4000001;stroke-linecap:round;stroke-linejoin:round" id="line5408" y1="141.451" y2="141.451" x1="216.138" x2="237.39799"/>
+                </g>
+                <text  x="38.749569" y="31.295317" style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text5410" font-size="10">5V</text>
+                <g  id="g5412" transform="matrix(1.2499911,0,0,1,-266.57061,-87.1014)">
+                    <line  style="fill:none;stroke:#000000;stroke-width:2.4000001;stroke-linecap:round;stroke-linejoin:round" id="line5414" y1="141.451" x1="216.138" y2="141.451" x2="237.39799"/>
+                </g>
+                <text  x="38.749569" y="57.870132" style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text5416" font-size="10">3.3V</text>
+                <g  id="g5418" transform="matrix(1.2499911,0,0,1,-266.57061,-33.95179)">
+                    <line  style="fill:none;stroke:#000000;stroke-width:2.4000001;stroke-linecap:round;stroke-linejoin:round" id="line5420" y1="141.451" x1="216.138" y2="141.451" x2="237.39799"/>
+                </g>
+                <text  x="38.749569" y="111.01973" style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text5422" font-size="10">D0/RX0</text>
+                <g  id="g5424" transform="matrix(1.2499911,0,0,1,-266.57061,-7.37699)">
+                    <line  style="fill:none;stroke:#000000;stroke-width:2.4000001;stroke-linecap:round;stroke-linejoin:round" id="line5426" y1="141.451" y2="141.451" x1="216.138" x2="237.39799"/>
+                </g>
+                <text  x="38.749569" y="137.59456" style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text5428" font-size="10">D1/TX0</text>
+                <g  id="g5430" transform="matrix(1.2499911,0,0,1,-266.57061,19.19782)">
+                    <line  style="fill:none;stroke:#000000;stroke-width:2.4000001;stroke-linecap:round;stroke-linejoin:round" id="line5432" y1="141.451" y2="141.451" x1="216.138" x2="237.39799"/>
+                </g>
+                <text  x="38.749569" y="164.16933" style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text5434" font-size="10">D2/RX1</text>
+                <g  id="g5436" transform="matrix(1.2499911,0,0,1,-266.57061,45.77262)">
+                    <line  style="fill:none;stroke:#000000;stroke-width:2.4000001;stroke-linecap:round;stroke-linejoin:round" id="line5438" y1="141.451" x1="216.138" y2="141.451" x2="237.39799"/>
+                </g>
+                <text  x="38.749569" y="190.74416" style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text5440" font-size="10">D3/TX1</text>
+                <g  id="g5442" transform="matrix(1.2499911,0,0,1,-266.57061,72.34742)">
+                    <line  style="fill:none;stroke:#000000;stroke-width:2.4000001;stroke-linecap:round;stroke-linejoin:round" id="line5444" y1="141.451" y2="141.451" x1="216.138" x2="237.39799"/>
+                </g>
+                <text  x="38.749569" y="217.31895" style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text5446" font-size="10">D4</text>
+                <g  id="g5448" transform="matrix(1.2499911,0,0,1,-266.57061,98.92222)">
+                    <line  style="fill:none;stroke:#000000;stroke-width:2.4000001;stroke-linecap:round;stroke-linejoin:round" id="line5450" y1="141.451" x1="216.138" y2="141.451" x2="237.39799"/>
+                </g>
+                <text  x="38.749569" y="243.89378" style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text5452" font-size="10">D5</text>
+                <g  id="g5454" transform="matrix(1.2499911,0,0,1,-266.57061,125.49703)">
+                    <line  style="fill:none;stroke:#000000;stroke-width:2.4000001;stroke-linecap:round;stroke-linejoin:round" id="line5456" y1="141.451" x1="216.138" y2="141.451" x2="237.39799"/>
+                </g>
+                <text  x="38.749569" y="270.46854" style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text5458" font-size="10">D6</text>
+                <text  x="38.749569" y="297.04337" style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text5464" font-size="10">D7</text>
+                <g  id="g5466" transform="matrix(1.2499911,0,0,1,-266.57061,205.22144)">
+                    <line  style="fill:none;stroke:#000000;stroke-width:2.4000001;stroke-linecap:round;stroke-linejoin:round" id="line5468" y1="141.451" y2="141.451" x1="216.138" x2="237.39799"/>
+                </g>
+                <text  x="38.749569" y="350.19293" style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text5470" font-size="10">D8/SCL</text>
+                <g  id="g5472" transform="matrix(1.2499911,0,0,1,-266.57061,231.79624)">
+                    <line  style="fill:none;stroke:#000000;stroke-width:2.4000001;stroke-linecap:round;stroke-linejoin:round" id="line5474" y1="141.451" x1="216.138" y2="141.451" x2="237.39799"/>
+                </g>
+                <text  x="38.749569" y="376.76776" style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text5476" font-size="10">D9/SDA</text>
+                <g  id="g5478" transform="matrix(1.2499911,0,0,1,-266.57061,258.37105)">
+                    <line  style="fill:none;stroke:#000000;stroke-width:2.4000001;stroke-linecap:round;stroke-linejoin:round" id="line5480" y1="141.451" x1="216.138" y2="141.451" x2="237.39799"/>
+                </g>
+                <text  x="38.749569" y="403.34253" style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text5482" font-size="10">D10</text>
+                <g  id="g5484" transform="matrix(1.2499911,0,0,1,-266.57061,284.94585)">
+                    <line  style="fill:none;stroke:#000000;stroke-width:2.4000001;stroke-linecap:round;stroke-linejoin:round" id="line5486" y1="141.451" y2="141.451" x1="216.138" x2="237.39799"/>
+                </g>
+                <text  x="38.749569" y="429.91736" style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text5488" font-size="10">D11</text>
+                <g  id="g5490" transform="matrix(1.2499911,0,0,1,-266.57061,311.52065)">
+                    <line  style="fill:none;stroke:#000000;stroke-width:2.4000001;stroke-linecap:round;stroke-linejoin:round" id="line5492" y1="141.451" x1="216.138" y2="141.451" x2="237.39799"/>
+                </g>
+                <text  x="38.749569" y="456.49219" style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text5494" font-size="10">D12</text>
+                <g  id="g5496" transform="matrix(1.2499911,0,0,1,-266.57061,338.09545)">
+                    <line  style="fill:none;stroke:#000000;stroke-width:2.4000001;stroke-linecap:round;stroke-linejoin:round" id="line5498" y1="141.451" y2="141.451" x1="216.138" x2="237.39799"/>
+                </g>
+                <text  x="38.749569" y="483.06702" style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text5500" font-size="10">D13</text>
+                <g  id="g5502" transform="matrix(1.2499911,0,0,1,-266.57061,364.67026)">
+                    <line  style="fill:none;stroke:#000000;stroke-width:2.4000001;stroke-linecap:round;stroke-linejoin:round" id="line5504" y1="141.451" y2="141.451" x1="216.138" x2="237.39799"/>
+                </g>
+                <text  x="38.749569" y="509.64178" style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text5506" font-size="10">D14</text>
+                <g  id="g5508" transform="matrix(1.2499911,0,0,1,-266.57061,391.24506)">
+                    <line  style="fill:none;stroke:#000000;stroke-width:2.4000001;stroke-linecap:round;stroke-linejoin:round" id="line5510" y1="141.451" x1="216.138" y2="141.451" x2="237.39799"/>
+                </g>
+                <text  x="38.749569" y="536.21661" style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text5512" font-size="10">D15</text>
+                <g  id="g6282" transform="matrix(-1.2499911,0,0,1,566.09338,-33.95178)">
+                    <line  style="fill:none;stroke:#000000;stroke-width:2.4000001;stroke-linecap:round;stroke-linejoin:round" id="line6284" y1="141.451" y2="141.451" x1="216.138" x2="237.39799"/>
+                </g>
+                <text  x="242.10623" y="111.01973" style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text6286" font-size="10">D16</text>
+                <g  id="g6288" transform="matrix(-1.2499911,0,0,1,566.09338,-7.37698)">
+                    <line  style="fill:none;stroke:#000000;stroke-width:2.4000001;stroke-linecap:round;stroke-linejoin:round" id="line6290" y1="141.451" x1="216.138" y2="141.451" x2="237.39799"/>
+                </g>
+                <text  x="242.12576" y="137.59456" style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text6292" font-size="10">D17</text>
+                <g  id="g6294" transform="matrix(-1.2499911,0,0,1,566.09338,19.19783)">
+                    <line  style="fill:none;stroke:#000000;stroke-width:2.4000001;stroke-linecap:round;stroke-linejoin:round" id="line6296" y1="141.451" x1="216.138" y2="141.451" x2="237.39799"/>
+                </g>
+                <text  x="242.15506" y="164.16933" style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text6298" font-size="10">D18</text>
+                <g  id="g6300" transform="matrix(-1.2499911,0,0,1,566.09338,45.77263)">
+                    <line  style="fill:none;stroke:#000000;stroke-width:2.4000001;stroke-linecap:round;stroke-linejoin:round" id="line6302" y1="141.451" y2="141.451" x1="216.138" x2="237.39799"/>
+                </g>
+                <text  x="242.13553" y="190.74416" style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text6304" font-size="10">D19</text>
+                <g  id="g6306" transform="matrix(-1.2499911,0,0,1,566.09338,72.34743)">
+                    <line  style="fill:none;stroke:#000000;stroke-width:2.4000001;stroke-linecap:round;stroke-linejoin:round" id="line6308" y1="141.451" x1="216.138" y2="141.451" x2="237.39799"/>
+                </g>
+                <text  x="227.9949" y="217.31895" style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text6310" font-size="10">SS/D20</text>
+                <g  id="g6312" transform="matrix(-1.2499911,0,0,1,566.09338,98.92223)">
+                    <line  style="fill:none;stroke:#000000;stroke-width:2.4000001;stroke-linecap:round;stroke-linejoin:round" id="line6314" y1="141.451" y2="141.451" x1="216.138" x2="237.39799"/>
+                </g>
+                <text  x="215.22635" y="243.89378" style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text6316" font-size="10">MOSI/D21</text>
+                <g  id="g6318" transform="matrix(-1.2499911,0,0,1,566.09338,125.49704)">
+                    <line  style="fill:none;stroke:#000000;stroke-width:2.4000001;stroke-linecap:round;stroke-linejoin:round" id="line6320" y1="141.451" y2="141.451" x1="216.138" x2="237.39799"/>
+                </g>
+                <text  x="213.77615" y="270.46854" style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text6322" font-size="10">MISO/D22</text>
+                <g  id="g6324" transform="matrix(-1.2499911,0,0,1,566.09338,152.07184)">
+                    <line  style="fill:none;stroke:#000000;stroke-width:2.4000001;stroke-linecap:round;stroke-linejoin:round" id="line6326" y1="141.451" x1="216.138" y2="141.451" x2="237.39799"/>
+                </g>
+                <text  x="221.48123" y="297.04337" style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text6328" font-size="10">SCK/D23</text>
+                <g  id="g6330" transform="matrix(-1.2499911,0,0,1,566.09338,205.22144)">
+                    <line  style="fill:none;stroke:#000000;stroke-width:2.4000001;stroke-linecap:round;stroke-linejoin:round" id="line6332" y1="141.451" x1="216.138" y2="141.451" x2="237.39799"/>
+                </g>
+                <text  x="241.84744" y="350.19293" style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text6334" font-size="10">D24</text>
+                <g  id="g6336" transform="matrix(-1.2499911,0,0,1,566.09338,231.79624)">
+                    <line  style="fill:none;stroke:#000000;stroke-width:2.4000001;stroke-linecap:round;stroke-linejoin:round" id="line6338" y1="141.451" y2="141.451" x1="216.138" x2="237.39799"/>
+                </g>
+                <text  x="242.20389" y="376.76776" style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text6340" font-size="10">D25</text>
+                <g  id="g6342" transform="matrix(-1.2499911,0,0,1,566.09338,258.37105)">
+                    <line  style="fill:none;stroke:#000000;stroke-width:2.4000001;stroke-linecap:round;stroke-linejoin:round" id="line6344" y1="141.451" y2="141.451" x1="216.138" x2="237.39799"/>
+                </g>
+                <text  x="242.10623" y="403.34253" style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text6346" font-size="10">D26</text>
+                <g  id="g6348" transform="matrix(-1.2499911,0,0,1,566.09338,284.94585)">
+                    <line  style="fill:none;stroke:#000000;stroke-width:2.4000001;stroke-linecap:round;stroke-linejoin:round" id="line6350" y1="141.451" x1="216.138" y2="141.451" x2="237.39799"/>
+                </g>
+                <text  x="242.12576" y="429.91736" style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text6352" font-size="10">D27</text>
+                <g  id="g6354" transform="matrix(-1.2499911,0,0,1,566.09338,311.52065)">
+                    <line  style="fill:none;stroke:#000000;stroke-width:2.4000001;stroke-linecap:round;stroke-linejoin:round" id="line6356" y1="141.451" y2="141.451" x1="216.138" x2="237.39799"/>
+                </g>
+                <text  x="242.15506" y="456.49219" style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text6358" font-size="10">D28</text>
+                <g  id="g6360" transform="matrix(-1.2499911,0,0,1,566.09338,338.09545)">
+                    <line  style="fill:none;stroke:#000000;stroke-width:2.4000001;stroke-linecap:round;stroke-linejoin:round" id="line6362" y1="141.451" x1="216.138" y2="141.451" x2="237.39799"/>
+                </g>
+                <text  x="242.13553" y="483.06702" style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text6364" font-size="10">D29</text>
+                <g  id="g6366" transform="matrix(-1.2499911,0,0,1,566.09338,364.67026)">
+                    <line  style="fill:none;stroke:#000000;stroke-width:2.4000001;stroke-linecap:round;stroke-linejoin:round" id="line6368" y1="141.451" x1="216.138" y2="141.451" x2="237.39799"/>
+                </g>
+                <text  x="242.116" y="509.64178" style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text6370" font-size="10">D30</text>
+                <g  id="g6372" transform="matrix(-1.2499911,0,0,1,566.09338,391.24506)">
+                    <line  style="fill:none;stroke:#000000;stroke-width:2.4000001;stroke-linecap:round;stroke-linejoin:round" id="line6374" y1="141.451" y2="141.451" x1="216.138" x2="237.39799"/>
+                </g>
+                <text  x="243.68338" y="536.21661" style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text6376" font-size="10">D31</text>
+                <g  id="g6378" transform="matrix(-1.2499911,0,0,1,566.09338,444.39467)">
+                    <line  style="fill:none;stroke:#000000;stroke-width:2.4000001;stroke-linecap:round;stroke-linejoin:round" id="line6380" y1="141.451" y2="141.451" x1="216.138" x2="237.39799"/>
+                </g>
+                <text  x="239.08865" y="589.36621" style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text6382" font-size="10">GND</text>
+                <g  id="g6384" transform="matrix(-1.2499911,0,0,1,566.09338,470.96947)">
+                    <line  style="fill:none;stroke:#000000;stroke-width:2.4000001;stroke-linecap:round;stroke-linejoin:round" id="line6386" y1="141.451" x1="216.138" y2="141.451" x2="237.39799"/>
+                </g>
+                <text  x="239.08865" y="615.94104" style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text6388" font-size="10">GND</text>
+                <g  id="g6390" transform="matrix(-1.2499911,0,0,1,566.09338,-113.6762)">
+                    <line  style="fill:none;stroke:#000000;stroke-width:2.4000001;stroke-linecap:round;stroke-linejoin:round" id="line6392" y1="141.451" x1="216.138" y2="141.451" x2="237.39799"/>
+                </g>
+                <text  x="237.57498" y="31.295362" style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text6394" font-size="10">AREF</text>
+                <g  id="g6396" transform="matrix(-1.2499911,0,0,1,566.09338,-87.1014)">
+                    <line  style="fill:none;stroke:#000000;stroke-width:2.4000001;stroke-linecap:round;stroke-linejoin:round" id="line6398" y1="141.451" y2="141.451" x1="216.138" x2="237.39799"/>
+                </g>
+                <text  x="232.77029" y="57.870193" style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text6400" font-size="10">RESET</text>
+                <text  x="116.88589" y="29.794798" style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text6432" font-size="18">Wiring S</text>
+                <text  x="-215.79843" y="124.47398" style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text6434" transform="matrix(-4.371139e-8,-1,1,-4.371139e-8,0,0)" font-size="10">PORT0</text>
+                <text  x="220.10623" y="350.19293" style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text6436" font-size="10">A0</text>
+                <text  x="220.10623" y="376.76776" style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text6438" font-size="10">A1</text>
+                <text  x="220.10623" y="403.34253" style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text6440" font-size="10">A2</text>
+                <text  x="220.10623" y="429.91736" style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text6442" font-size="10">A3</text>
+                <text  x="220.10623" y="456.49219" style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text6444" font-size="10">A4</text>
+                <text  x="220.10623" y="483.06702" style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text6446" font-size="10">A5</text>
+                <text  x="220.10623" y="509.64178" style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text6448" font-size="10">A6</text>
+                <text  x="220.10623" y="536.21661" style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text6450" font-size="10">A7</text>
+                <path  style="fill:none;stroke:#000000;stroke-width:2.4000001;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" id="path6456" d="m 109.89918,107.49921 0,186.02363"/>
+                <text  x="-454.97168" y="124.47398" style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text6458" font-size="10" transform="matrix(-4.371139e-8,-1,1,-4.371139e-8,0,0)">PORT1</text>
+                <path  style="fill:none;stroke:#000000;stroke-width:2.4000001;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" id="path6460" d="m 109.89918,346.67243 0,186.02363"/>
+                <path  style="fill:none;stroke:#000000;stroke-width:2.4000001;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" id="path6464" d="m 56.74958,213.79843 0,79.72441"/>
+                <text  x="-264.94803" y="71.324379" style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text6466" font-size="10" transform="matrix(-4.371139e-8,-1,1,-4.371139e-8,0,0)">PWM</text>
+                <text  x="-215.79846" y="182.19839" style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text6468" transform="matrix(-4.371139e-8,-1,1,-4.371139e-8,0,0)" font-size="10">PORT2</text>
+                <path  style="fill:none;stroke:#000000;stroke-width:2.4000001;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" id="path6470" d="m 189.62359,107.49921 0,186.02363"/>
+                <text  x="-454.97168" y="182.19839" style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text6472" font-size="10" transform="matrix(-4.371139e-8,-1,1,-4.371139e-8,0,0)">PORT3</text>
+                <path  style="fill:none;stroke:#000000;stroke-width:2.4000001;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" id="path6474" d="m 189.62359,346.67243 0,186.02363"/>
+                <text  x="-460.97168" y="208.77322" style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text6480" transform="matrix(-4.371139e-8,-1,1,-4.371139e-8,0,0)" font-size="10">ANALOG</text>
+                <path  style="fill:none;stroke:#000000;stroke-width:2.4000001;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" id="path6482" d="m 216.1984,346.67243 0,186.02363"/>
+                <g  xml:space="preserve" xmlns:xml="http://www.w3.org/XML/1998/namespace" style="font-size:7px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text3234" transform="translate(-341.87247,-200.76848)">
+                    <text  x="352.54352" y="410.6778" id="tspan3236">PWM</text>
+                </g>
+                <g  xml:space="preserve" xmlns:xml="http://www.w3.org/XML/1998/namespace" style="font-size:7px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text3266" transform="translate(-341.87247,-200.76848)">
+                    <text  x="352.54352" y="436.6778" id="tspan3268">PWM</text>
+                </g>
+                <g  xml:space="preserve" xmlns:xml="http://www.w3.org/XML/1998/namespace" style="font-size:7px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text3270" transform="translate(-341.87247,-200.76848)">
+                    <text  x="352.54352" y="462.6778" id="tspan3272">PWM</text>
+                </g>
+                <g  xml:space="preserve" xmlns:xml="http://www.w3.org/XML/1998/namespace" style="font-size:7px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text3274" transform="translate(-341.87247,-200.76848)">
+                    <text  x="352.54352" y="488.6778" id="tspan3276">PWM</text>
+                </g>
+                <g  xml:space="preserve" xmlns:xml="http://www.w3.org/XML/1998/namespace" style="font-size:7px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text3278" transform="translate(-341.87247,-200.76848)">
+                    <text  x="615.05688" y="384.33807" id="tspan3280">PWM</text>
+                </g>
+                <g  xml:space="preserve" xmlns:xml="http://www.w3.org/XML/1998/namespace" style="font-size:7px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text3282" transform="translate(-341.87247,-200.76848)">
+                    <text  x="615.05688" y="410.33807" id="tspan3284">PWM</text>
+                </g>
+                <path  style="fill:none;stroke:#000000;stroke-width:2.36074305;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" id="path7657" d="m 220.71146,187.04306 0,26.4603"/>
+                <text  x="-211.25749" y="214.19582" style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text8427" transform="matrix(-4.371139e-8,-1,1,-4.371139e-8,0,0)" font-size="10">PWM</text>
+            </g>
+        </g>
+    </g>
+</svg>

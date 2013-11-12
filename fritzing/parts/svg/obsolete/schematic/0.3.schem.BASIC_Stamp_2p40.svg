@@ -1,0 +1,173 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+<svg xmlns="http://www.w3.org/2000/svg" width="2.67299in" xml:space="preserve" xmlns:xml="http://www.w3.org/XML/1998/namespace" x="0px" version="1.2" y="0px" height="6.33333in" viewBox="0 0 192.455 456" baseProfile="tiny" id="Ebene_1">
+ <g id="schematic">
+  <rect width="146.905" x="21.6" y="1.08" fill="none" height="453.6" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="2.4"/>
+  <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="22.68" stroke-width="2.4" x1="1.08" y2="22.68" x2="21.6"/>
+  <rect width="21.601" x="0" y="21.6" fill="none" height="2.16" id="connector0pin"/>
+  <rect width="2.16" x="0" y="21.6" fill="none" height="2.16" id="connector0terminal"/>
+  <text font-family="Droid Sans" id="label0" transform="matrix(1 0 0 1 27.0002 25.2)" font-size="9.36">SOUT</text>
+  <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="22.68" stroke-width="2.4" x1="168.574" y2="22.68" x2="190.175"/>
+  <rect width="21.6" x="168.575" y="21.6" fill="none" height="2.16" id="connector39pin"/>
+  <rect width="2.16" x="190.175" y="21.6" fill="none" height="2.16" id="connector39terminal"/>
+  <text font-family="Droid Sans" id="label39" transform="matrix(1 0 0 1 147.2253 25.2)" font-size="9.36">VIN</text>
+  <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="44.28" stroke-width="2.4" x1="1.08" y2="44.28" x2="21.6"/>
+  <rect width="21.601" x="0" y="43.2" fill="none" height="2.159" id="connector1pin"/>
+  <rect width="2.16" x="0" y="43.2" fill="none" height="2.159" id="connector1terminal"/>
+  <text font-family="Droid Sans" id="label1" transform="matrix(1 0 0 1 27.0002 46.8)" font-size="9.36">SIN</text>
+  <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="44.28" stroke-width="2.4" x1="168.574" y2="44.28" x2="190.175"/>
+  <rect width="21.6" x="168.575" y="43.2" fill="none" height="2.159" id="connector38pin"/>
+  <rect width="2.16" x="190.175" y="43.2" fill="none" height="2.159" id="connector38terminal"/>
+  <text font-family="Droid Sans" id="label38" transform="matrix(1 0 0 1 147.5046 46.8)" font-size="9.36">VSS</text>
+  <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="65.88" stroke-width="2.4" x1="1.08" y2="65.88" x2="21.6"/>
+  <rect width="21.601" x="0" y="64.8" fill="none" height="2.16" id="connector2pin"/>
+  <rect width="2.16" x="0" y="64.8" fill="none" height="2.16" id="connector2terminal"/>
+  <text font-family="Droid Sans" transform="matrix(1 0 0 1 27.0002 68.4001)" font-size="9.36">A</text>
+  <text font-family="Droid Sans" transform="matrix(1 0 0 1 32.1282 68.4001)" font-size="9.36">T</text>
+  <text font-family="Droid Sans" transform="matrix(1 0 0 1 36.9866 68.4001)" font-size="9.36">N</text>
+  <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="65.88" stroke-width="2.4" x1="168.574" y2="65.88" x2="190.175"/>
+  <rect width="21.6" x="168.575" y="64.8" fill="none" height="2.16" id="connector37pin"/>
+  <rect width="2.16" x="190.175" y="64.8" fill="none" height="2.16" id="connector37terminal"/>
+  <text font-family="Droid Sans" id="label37" transform="matrix(1 0 0 1 147.2166 68.4001)" font-size="9.36">RES</text>
+  <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="87.48" stroke-width="2.4" x1="1.08" y2="87.48" x2="21.6"/>
+  <rect width="21.601" x="0" y="86.4" fill="none" height="2.16" id="connector3pin"/>
+  <rect width="2.16" x="0" y="86.4" fill="none" height="2.16" id="connector3terminal"/>
+  <text font-family="Droid Sans" id="label3" transform="matrix(1 0 0 1 27.0002 89.9998)" font-size="9.36">VSS</text>
+  <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="87.48" stroke-width="2.4" x1="168.574" y2="87.48" x2="190.175"/>
+  <rect width="21.6" x="168.575" y="86.4" fill="none" height="2.16" id="connector36pin"/>
+  <rect width="2.16" x="190.175" y="86.4" fill="none" height="2.16" id="connector36terminal"/>
+  <text font-family="Droid Sans" id="label36" transform="matrix(1 0 0 1 144.4148 89.9998)" font-size="9.36">VDD</text>
+  <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="109.08" stroke-width="2.4" x1="1.08" y2="109.08" x2="21.6"/>
+  <rect width="21.601" x="0" y="108" fill="none" height="2.16" id="connector4pin"/>
+  <rect width="2.16" x="0" y="108" fill="none" height="2.16" id="connector4terminal"/>
+  <text font-family="Droid Sans" id="label4" transform="matrix(1 0 0 1 27.0002 111.5999)" font-size="9.36">P0</text>
+  <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="109.08" stroke-width="2.4" x1="168.574" y2="109.08" x2="190.175"/>
+  <rect width="21.6" x="168.575" y="108" fill="none" height="2.16" id="connector35pin"/>
+  <rect width="2.16" x="190.175" y="108" fill="none" height="2.16" id="connector35terminal"/>
+  <text font-family="Droid Sans" id="label35" transform="matrix(1 0 0 1 147.1072 111.5999)" font-size="9.36">X15</text>
+  <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="130.68" stroke-width="2.4" x1="1.08" y2="130.68" x2="21.6"/>
+  <rect width="21.601" x="0" y="129.6" fill="none" height="2.16" id="connector5pin"/>
+  <rect width="2.16" x="0" y="129.6" fill="none" height="2.16" id="connector5terminal"/>
+  <text font-family="Droid Sans" id="label5" transform="matrix(1 0 0 1 27.0002 133.2)" font-size="9.36">P1</text>
+  <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="130.68" stroke-width="2.4" x1="168.574" y2="130.68" x2="190.175"/>
+  <rect width="21.6" x="168.575" y="129.6" fill="none" height="2.16" id="connector34pin"/>
+  <rect width="2.16" x="190.175" y="129.6" fill="none" height="2.16" id="connector34terminal"/>
+  <text font-family="Droid Sans" id="label34" transform="matrix(1 0 0 1 147.1072 133.2)" font-size="9.36">X14</text>
+  <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="152.28" stroke-width="2.4" x1="1.08" y2="152.28" x2="21.6"/>
+  <rect width="21.601" x="0" y="151.2" fill="none" height="2.159" id="connector6pin"/>
+  <rect width="2.16" x="0" y="151.2" fill="none" height="2.159" id="connector6terminal"/>
+  <text font-family="Droid Sans" id="label6" transform="matrix(1 0 0 1 27.0002 154.8)" font-size="9.36">P2</text>
+  <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="152.28" stroke-width="2.4" x1="168.574" y2="152.28" x2="190.175"/>
+  <rect width="21.6" x="168.575" y="151.2" fill="none" height="2.159" id="connector33pin"/>
+  <rect width="2.16" x="190.175" y="151.2" fill="none" height="2.159" id="connector33terminal"/>
+  <text font-family="Droid Sans" id="label33" transform="matrix(1 0 0 1 147.1072 154.8)" font-size="9.36">X13</text>
+  <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="173.88" stroke-width="2.4" x1="1.08" y2="173.88" x2="21.6"/>
+  <rect width="21.601" x="0" y="172.8" fill="none" height="2.16" id="connector7pin"/>
+  <rect width="2.16" x="0" y="172.8" fill="none" height="2.16" id="connector7terminal"/>
+  <text font-family="Droid Sans" id="label7" transform="matrix(1 0 0 1 27.0002 176.4001)" font-size="9.36">P3</text>
+  <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="173.88" stroke-width="2.4" x1="168.574" y2="173.88" x2="190.175"/>
+  <rect width="21.6" x="168.575" y="172.8" fill="none" height="2.16" id="connector32pin"/>
+  <rect width="2.16" x="190.175" y="172.8" fill="none" height="2.16" id="connector32terminal"/>
+  <text font-family="Droid Sans" id="label32" transform="matrix(1 0 0 1 147.1072 176.4001)" font-size="9.36">X12</text>
+  <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="195.48" stroke-width="2.4" x1="1.08" y2="195.48" x2="21.6"/>
+  <rect width="21.601" x="0" y="194.4" fill="none" height="2.16" id="connector8pin"/>
+  <rect width="2.16" x="0" y="194.4" fill="none" height="2.16" id="connector8terminal"/>
+  <text font-family="Droid Sans" id="label8" transform="matrix(1 0 0 1 27.0002 197.9998)" font-size="9.36">P4</text>
+  <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="195.48" stroke-width="2.4" x1="168.574" y2="195.48" x2="190.175"/>
+  <rect width="21.6" x="168.575" y="194.4" fill="none" height="2.16" id="connector31pin"/>
+  <rect width="2.16" x="190.175" y="194.4" fill="none" height="2.16" id="connector31terminal"/>
+  <text font-family="Droid Sans" id="label31" transform="matrix(1 0 0 1 147.1072 197.9998)" font-size="9.36">X11</text>
+  <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="217.08" stroke-width="2.4" x1="1.08" y2="217.08" x2="21.6"/>
+  <rect width="21.601" x="0" y="216" fill="none" height="2.16" id="connector9pin"/>
+  <rect width="2.16" x="0" y="216" fill="none" height="2.16" id="connector9terminal"/>
+  <text font-family="Droid Sans" id="label9" transform="matrix(1 0 0 1 27.0002 219.5999)" font-size="9.36">P5</text>
+  <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="217.08" stroke-width="2.4" x1="168.574" y2="217.08" x2="190.175"/>
+  <rect width="21.6" x="168.575" y="216" fill="none" height="2.16" id="connector30pin"/>
+  <rect width="2.16" x="190.175" y="216" fill="none" height="2.16" id="connector30terminal"/>
+  <text font-family="Droid Sans" id="label30" transform="matrix(1 0 0 1 147.1072 219.5999)" font-size="9.36">X10</text>
+  <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="238.68" stroke-width="2.4" x1="1.08" y2="238.68" x2="21.6"/>
+  <rect width="21.601" x="0" y="237.6" fill="none" height="2.16" id="connector10pin"/>
+  <rect width="2.16" x="0" y="237.6" fill="none" height="2.16" id="connector10terminal"/>
+  <text font-family="Droid Sans" id="label10" transform="matrix(1 0 0 1 27.0002 241.2004)" font-size="9.36">P6</text>
+  <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="238.68" stroke-width="2.4" x1="168.574" y2="238.68" x2="190.175"/>
+  <rect width="21.6" x="168.575" y="237.6" fill="none" height="2.16" id="connector29pin"/>
+  <rect width="2.16" x="190.175" y="237.6" fill="none" height="2.16" id="connector29terminal"/>
+  <text font-family="Droid Sans" id="label29" transform="matrix(1 0 0 1 152.2625 241.2004)" font-size="9.36">X9</text>
+  <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="260.28" stroke-width="2.4" x1="1.08" y2="260.28" x2="21.6"/>
+  <rect width="21.601" x="0" y="259.2" fill="none" height="2.159" id="connector11pin"/>
+  <rect width="2.16" x="0" y="259.2" fill="none" height="2.159" id="connector11terminal"/>
+  <text font-family="Droid Sans" id="label11" transform="matrix(1 0 0 1 27.0002 262.8)" font-size="9.36">P7</text>
+  <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="260.28" stroke-width="2.4" x1="168.574" y2="260.28" x2="190.175"/>
+  <rect width="21.6" x="168.575" y="259.2" fill="none" height="2.159" id="connector28pin"/>
+  <rect width="2.16" x="190.175" y="259.2" fill="none" height="2.159" id="connector28terminal"/>
+  <text font-family="Droid Sans" id="label28" transform="matrix(1 0 0 1 152.2625 262.8)" font-size="9.36">X8</text>
+  <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="281.88" stroke-width="2.4" x1="1.08" y2="281.88" x2="21.6"/>
+  <rect width="21.601" x="0" y="280.8" fill="none" height="2.16" id="connector12pin"/>
+  <rect width="2.16" x="0" y="280.8" fill="none" height="2.16" id="connector12terminal"/>
+  <text font-family="Droid Sans" id="label12" transform="matrix(1 0 0 1 27.0002 284.3997)" font-size="9.36">P8</text>
+  <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="281.88" stroke-width="2.4" x1="168.574" y2="281.88" x2="190.175"/>
+  <rect width="21.6" x="168.575" y="280.8" fill="none" height="2.16" id="connector27pin"/>
+  <rect width="2.16" x="190.175" y="280.8" fill="none" height="2.16" id="connector27terminal"/>
+  <text font-family="Droid Sans" id="label27" transform="matrix(1 0 0 1 152.2625 284.3997)" font-size="9.36">X7</text>
+  <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="303.48" stroke-width="2.4" x1="1.08" y2="303.48" x2="21.6"/>
+  <rect width="21.601" x="0" y="302.4" fill="none" height="2.16" id="connector13pin"/>
+  <rect width="2.16" x="0" y="302.4" fill="none" height="2.16" id="connector13terminal"/>
+  <text font-family="Droid Sans" id="label13" transform="matrix(1 0 0 1 27.0002 305.9993)" font-size="9.36">P9</text>
+  <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="303.48" stroke-width="2.4" x1="168.574" y2="303.48" x2="190.175"/>
+  <rect width="21.6" x="168.575" y="302.4" fill="none" height="2.16" id="connector26pin"/>
+  <rect width="2.16" x="190.175" y="302.4" fill="none" height="2.16" id="connector26terminal"/>
+  <text font-family="Droid Sans" id="label26" transform="matrix(1 0 0 1 152.2625 305.9993)" font-size="9.36">X6</text>
+  <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="325.079" stroke-width="2.4" x1="1.08" y2="325.079" x2="21.6"/>
+  <rect width="21.601" x="0" y="324" fill="none" height="2.159" id="connector14pin"/>
+  <rect width="2.16" x="0" y="324" fill="none" height="2.159" id="connector14terminal"/>
+  <text font-family="Droid Sans" id="label14" transform="matrix(1 0 0 1 27.0002 327.5999)" font-size="9.36">P10</text>
+  <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="325.079" stroke-width="2.4" x1="168.574" y2="325.079" x2="190.175"/>
+  <rect width="21.6" x="168.575" y="324" fill="none" height="2.159" id="connector25pin"/>
+  <rect width="2.16" x="190.175" y="324" fill="none" height="2.159" id="connector25terminal"/>
+  <text font-family="Droid Sans" id="label25" transform="matrix(1 0 0 1 152.2625 327.5999)" font-size="9.36">X5</text>
+  <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="346.68" stroke-width="2.4" x1="1.08" y2="346.68" x2="21.6"/>
+  <rect width="21.601" x="0" y="345.6" fill="none" height="2.16" id="connector15pin"/>
+  <rect width="2.16" x="0" y="345.6" fill="none" height="2.16" id="connector15terminal"/>
+  <text font-family="Droid Sans" id="label15" transform="matrix(1 0 0 1 27.0002 349.2004)" font-size="9.36">P11</text>
+  <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="346.68" stroke-width="2.4" x1="168.574" y2="346.68" x2="190.175"/>
+  <rect width="21.6" x="168.575" y="345.6" fill="none" height="2.16" id="connector24pin"/>
+  <rect width="2.16" x="190.175" y="345.6" fill="none" height="2.16" id="connector24terminal"/>
+  <text font-family="Droid Sans" id="label24" transform="matrix(1 0 0 1 152.2625 349.2004)" font-size="9.36">X4</text>
+  <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="368.28" stroke-width="2.4" x1="1.08" y2="368.28" x2="21.6"/>
+  <rect width="21.601" x="0" y="367.199" fill="none" height="2.16" id="connector16pin"/>
+  <rect width="2.16" x="0" y="367.199" fill="none" height="2.16" id="connector16terminal"/>
+  <text font-family="Droid Sans" id="label16" transform="matrix(1 0 0 1 27.0002 370.8)" font-size="9.36">P12</text>
+  <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="368.28" stroke-width="2.4" x1="168.574" y2="368.28" x2="190.175"/>
+  <rect width="21.6" x="168.575" y="367.199" fill="none" height="2.16" id="connector23pin"/>
+  <rect width="2.16" x="190.175" y="367.199" fill="none" height="2.16" id="connector23terminal"/>
+  <text font-family="Droid Sans" id="label23" transform="matrix(1 0 0 1 152.2625 370.8)" font-size="9.36">X3</text>
+  <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="389.88" stroke-width="2.4" x1="1.08" y2="389.88" x2="21.6"/>
+  <rect width="21.601" x="0" y="388.8" fill="none" height="2.16" id="connector17pin"/>
+  <rect width="2.16" x="0" y="388.8" fill="none" height="2.16" id="connector17terminal"/>
+  <text font-family="Droid Sans" id="label17" transform="matrix(1 0 0 1 27.0002 392.3997)" font-size="9.36">P13</text>
+  <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="389.88" stroke-width="2.4" x1="168.574" y2="389.88" x2="190.175"/>
+  <rect width="21.6" x="168.575" y="388.8" fill="none" height="2.16" id="connector22pin"/>
+  <rect width="2.16" x="190.175" y="388.8" fill="none" height="2.16" id="connector22terminal"/>
+  <text font-family="Droid Sans" id="label22" transform="matrix(1 0 0 1 152.2625 392.3997)" font-size="9.36">X2</text>
+  <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="411.48" stroke-width="2.4" x1="1.08" y2="411.48" x2="21.6"/>
+  <rect width="21.601" x="0" y="410.4" fill="none" height="2.16" id="connector18pin"/>
+  <rect width="2.16" x="0" y="410.4" fill="none" height="2.16" id="connector18terminal"/>
+  <text font-family="Droid Sans" id="label18" transform="matrix(1 0 0 1 27.0002 413.9993)" font-size="9.36">P14</text>
+  <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="411.48" stroke-width="2.4" x1="168.574" y2="411.48" x2="190.175"/>
+  <rect width="21.6" x="168.575" y="410.4" fill="none" height="2.16" id="connector21pin"/>
+  <rect width="2.16" x="190.175" y="410.4" fill="none" height="2.16" id="connector21terminal"/>
+  <text font-family="Droid Sans" id="label21" transform="matrix(1 0 0 1 152.2625 413.9993)" font-size="9.36">X1</text>
+  <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="433.079" stroke-width="2.4" x1="1.08" y2="433.079" x2="21.6"/>
+  <rect width="21.601" x="0" y="432" fill="none" height="2.159" id="connector19pin"/>
+  <rect width="2.16" x="0" y="432" fill="none" height="2.159" id="connector19terminal"/>
+  <text font-family="Droid Sans" id="label19" transform="matrix(1 0 0 1 27.0002 435.5999)" font-size="9.36">P15</text>
+  <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="433.079" stroke-width="2.4" x1="168.574" y2="433.079" x2="190.175"/>
+  <rect width="21.6" x="168.575" y="432" fill="none" height="2.159" id="connector20pin"/>
+  <rect width="2.16" x="190.175" y="432" fill="none" height="2.159" id="connector20terminal"/>
+  <text font-family="Droid Sans" id="label20" transform="matrix(1 0 0 1 152.2625 435.5999)" font-size="9.36">X0</text>
+  <text font-family="Droid Sans" id="label" transform="matrix(1 0 0 1 75.1843 141.0833)" font-size="18">Basic</text>
+  <text font-family="Droid Sans" id="label_1_" transform="matrix(1 0 0 1 70.2722 162.3694)" font-size="18">Stamp</text>
+  <text font-family="Droid Sans" transform="matrix(1 0 0 1 85.8777 183.6584)" font-size="18">2p</text>
+ <line fill="none" stroke="#000000" y1="59.96" stroke-width="0.5" x1="147.95" y2="59.96" x2="162.224"/>
+ </g>
+</svg>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1"
+	 id="svg2" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:svg="http://www.w3.org/2000/svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" sodipodi:docname="voltage_regulator_7833.svg" inkscape:output_extension="org.inkscape.output.svg.inkscape" sodipodi:version="0.32" inkscape:version="0.46"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="91.571px"
+	 height="72.074px" viewBox="0 0 91.571 72.074" enable-background="new 0 0 91.571 72.074" xml:space="preserve">
+<defs>
+	
+	
+		<inkscape:perspective  sodipodi:type="inkscape:persp3d" inkscape:vp_y="0 : 1000 : 0" inkscape:vp_x="0 : 51.299999 : 1" inkscape:vp_z="123.03 : 51.299999 : 1" id="perspective97" inkscape:persp3d-origin="61.514999 : 34.199999 : 1">
+		</inkscape:perspective>
+</defs>
+<sodipodi:namedview  inkscape:cy="73.609207" inkscape:cx="61.514999" inkscape:zoom="8.25" gridtolerance="10.0" borderopacity="1.0" guidetolerance="10.0" bordercolor="#666666" pagecolor="#ffffff" objecttolerance="10.0" showgrid="false" id="base" inkscape:current-layer="svg2" inkscape:window-y="11" inkscape:window-x="1024" inkscape:window-height="728" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:window-width="1262">
+	</sodipodi:namedview>
+<g id="schematic">
+	
+		<line id="connector0pin" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="23.313" y1="27.546" x2="1.003" y2="27.546"/>
+	<rect id="connector0terminal" y="26.386" fill="none" width="1.003" height="2.006"/>
+	
+		<line id="connector1pin" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="46.036" y1="71.832" x2="46.036" y2="48.769"/>
+	<rect id="connector1terminal" x="45.033" y="71.437" fill="none" width="2.005" height="1.003"/>
+	
+		<line id="connector2pin" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="91.571" y1="27.546" x2="68.508" y2="27.546"/>
+	<rect id="connector2terminal" x="91.249" y="26.386" fill="none" width="1.004" height="2.006"/>
+	
+		<rect id="rect17" x="24.135" y="9.095" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="44.078" height="39.063"/>
+	<text transform="matrix(1 0 0 1 26.6401 30.3284)" font-family="'Droid Sans'" font-size="7.5">IN</text>
+	<text transform="matrix(1 0 0 1 51.5591 29.9534)" font-family="'Droid Sans'" font-size="7.5">OUT</text>
+	<text transform="matrix(1 0 0 1 38.1885 46.5305)" font-family="'Droid Sans'" font-size="7.5">GND</text>
+	<text transform="matrix(1 0 0 1 35.0161 18.9451)" font-family="'Droid Sans'" font-size="9">7833</text>
+</g>
+</svg>

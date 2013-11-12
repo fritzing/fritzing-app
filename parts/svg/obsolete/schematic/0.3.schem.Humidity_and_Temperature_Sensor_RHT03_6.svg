@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg xmlns="http://www.w3.org/2000/svg"  width="122.033px" xml:space="preserve" xmlns:xml="http://www.w3.org/XML/1998/namespace" x="0px" version="1.1" y="0px" height="170.826px" viewBox="0 0 122.033 170.826" id="Ebene_1" enable-background="new 0 0 122.033 170.826">
+    <g  id="schematic">
+        <g  id="Capa_x0020_1">
+            <g  id="_124346152">
+                <line  fill="none" stroke="#000000" stroke-linejoin="round" id="_124350400" stroke-linecap="round" y1="149.425" stroke-width="0.672" x1="66.465" y2="170.826" x2="66.464"/>
+            </g>
+            <rect  width="89.215" x="21.857" y="21.402" fill="none" height="128.023" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.635"/>
+            <line  fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="89.195" stroke-width="0.672" x1="0.411" y2="89.195" x2="21.812"/>
+            <line  fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="0" stroke-width="0.672" x1="66.465" y2="21.402" x2="66.465"/>
+            <line  fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="170.825" stroke-width="0.672" x1="66.465" y2="149.425" x2="66.465"/>
+            <text  font-family="'Droid Sans'" transform="matrix(1 0 0 1 44.2554 65.675)" font-size="16.4904">RHT03</text>
+            <text  font-family="'Droid Sans'" transform="matrix(1 0 0 1 59.9717 31.5081)" font-size="8.9345">VCC</text>
+            <text  font-family="'Droid Sans'" transform="matrix(1 0 0 1 25.2217 91.1643)" font-size="8.9345">DATA-Signal</text>
+            <text  font-family="'Droid Sans'" transform="matrix(1 0 0 1 57.9717 145.4143)" font-size="8.9345">GND</text>
+        </g>
+        <rect  width="4" x="64.465" y="0" fill="none" height="4" id="connector8"/>
+        <rect width="4" x="64.465" y="0" fill="none" height="4" stroke="none" id="connector8terminal" stroke-width="0"/>
+        <rect  width="4" y="87.195" fill="none" height="4" id="connector9"/>
+        <rect width="4" x="0" y="87.19499999999999" fill="none" height="4" stroke="none" id="connector9terminal" stroke-width="0"/>
+        <rect  width="4" x="64.464" y="166.825" fill="none" height="4" id="connector10"/>
+        <rect width="4" x="64.464" y="166.825" fill="none" height="4" stroke="none" id="connector10terminal" stroke-width="0"/>
+        <rect  width="4" x="64.465" y="166.825" fill="none" height="4" id="connector11"/>
+        <rect width="4" x="64.465" y="166.825" fill="none" height="4" stroke="none" id="connector11terminal" stroke-width="0"/>
+    </g>
+</svg>

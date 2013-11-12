@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="svg2" xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="30.379px"
+	 height="61.799px" viewBox="0 0 30.379 61.799" enable-background="new 0 0 30.379 61.799" xml:space="preserve">
+<g id="schematic">
+<rect id="connector0pin" x="7.842" y="0.685" width="1.893" height="9.782"/>
+<rect id="connector0terminal" x="8.32" y="0" width="0.867" height="0.684"/>
+<rect id="connector1pin" x="7.845" y="51.4" width="1.894" height="9.783"/>
+<rect id="connector1terminal" x="8.324" y="61.112" width="0.867" height="0.686"/>
+	<g>
+		<polyline fill="none" stroke="#000000" stroke-width="2.2284" stroke-linecap="round" points="8.773,0.727 8.773,18.782 
+			12.273,20.646 5.023,24.679 12.273,28.714 5.023,32.749 12.273,36.782 5.023,40.817 8.773,42.989 8.773,60.893 		"/>
+		<polygon points="13.684,28.702 23.484,25.703 23.484,31.702 		"/>
+		<polyline fill="none" stroke="#000000" stroke-width="2.2284" stroke-linecap="round" points="19.477,28.727 27.852,28.727 
+			27.852,43.602 8.773,52.061 		"/>
+	</g>
+</g>
+</svg>

@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>
+<!-- Generator: Adobe Illustrator 15.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg xmlns="http://www.w3.org/2000/svg"  width="2.985in" xml:space="preserve" xmlns:xml="http://www.w3.org/XML/1998/namespace" x="0px" version="1.1" y="0px" height="1.96115in" viewBox="0 0 214.92 141.203" id="Layer_3" enable-background="new 0 0 214.92 141.203">
+    <g  id="schematic">
+        <rect  width="2.1" x="106.669" y="130.715" fill="none" height="10.488" id="connector1pin"/>
+        <rect width="2.1" x="106.669" y="130.715" fill="none" height="10.488" stroke="none" id="connector1terminal" stroke-width="0"/>
+        <rect  width="2.1" x="106.669" y="139.211" fill="none" height="1.992"/>
+        <rect  width="10.487" x="203.425" y="63.581" fill="none" height="2.101"/>
+        <rect  width="1.994" x="211.918" y="63.581" fill="none" height="2.101"/>
+        <rect  width="1.993" x="211.927" y="84.818" fill="none" height="2.099"/>
+        <rect  width="2.099" x="106.67" y="1" fill="none" height="10.488" id="connector18pin"/>
+        <rect width="2.099" x="106.67" y="1" fill="none" height="10.488" stroke="none" id="connector18terminal" stroke-width="0"/>
+        <rect  width="2.099" x="106.67" y="1" fill="none" height="1.995"/>
+        <rect  width="169.972" x="22.705" y="22.237" fill="none" height="97.729" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="2.415"/>
+        <line  fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="22.237" stroke-width="1.9517" x1="107.69" y2="1" x2="107.69"/>
+        <text  font-family="DroidSans" transform="matrix(1 0 0 1 98.8271 39.3962)" font-size="9.9889">5V</text>
+        <text  font-family="DroidSans" transform="matrix(1 0 0 1 93.5391 53.9441)" font-size="9.9889">Power</text>
+        <line  fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="141.203" stroke-width="1.9517" x1="107.717" y2="119.965" x2="107.717"/>
+        <text  font-family="DroidSans" transform="matrix(1 0 0 1 97.187 109.7781)" font-size="9.9889">GND</text>
+        <text  font-family="DroidSans" transform="matrix(1 0 0 1 59.96 80.1013)" font-size="12">Lilypad Vibe motor</text>
+    </g>
+</svg>

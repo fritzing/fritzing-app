@@ -1,0 +1,1486 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Fritzing (http://www.fritzing.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="1.84222in"
+   x="0in"
+   version="1.2"
+   y="0in"
+   height="3.92222in"
+   viewBox="0 0 1822.22 3922.22"
+   id="svg2"
+   
+   >
+  <metadata
+     id="metadata316">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs314" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     id="namedview312"
+     showgrid="false"
+      />
+  <g
+     id="schematic"
+     stroke-width="0">
+    <rect
+       width="1200"
+       x="315"
+       y="15"
+       fill="none"
+       height="3900"
+       stroke="#000000"
+       stroke-linejoin="round"
+       stroke-linecap="round"
+       stroke-width="30"
+       id="rect5" />
+    <text
+       x="2060.8716"
+       y="-802.93262"
+       id="label"
+       font-size="235"
+       style="font-size:235px;text-anchor:middle;fill:#000000;stroke:none;font-family:Droid Sans"
+       transform="matrix(0,1,-1,0,0,0)">HC4067</text>
+    <line
+       fill="none"
+       stroke="#000000"
+       stroke-linejoin="round"
+       stroke-linecap="round"
+       y1="315"
+       stroke-width="30"
+       x1="15"
+       y2="315"
+       x2="300"
+       id="line8" />
+    <rect
+       width="300"
+       x="0"
+       y="300"
+       fill="none"
+       height="30"
+       id="connector0pin"
+       stroke-width="0" />
+    <rect
+       width="30"
+       x="0"
+       y="300"
+       fill="none"
+       height="30"
+       id="connector0terminal"
+       stroke-width="0" />
+    <text
+       x="390"
+       y="350"
+       id="label0"
+       font-size="130"
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">C. I/O</text>
+    <line
+       fill="none"
+       stroke="#000000"
+       stroke-linejoin="round"
+       stroke-linecap="round"
+       y1="315"
+       stroke-width="30"
+       x1="1515"
+       y2="315"
+       x2="1815"
+       id="line13" />
+    <rect
+       width="300"
+       x="1530"
+       y="300"
+       fill="none"
+       height="30"
+       id="connector23pin"
+       stroke-width="0" />
+    <rect
+       width="30"
+       x="1830"
+       y="300"
+       fill="none"
+       height="30"
+       id="connector23terminal"
+       stroke-width="0" />
+    <text
+       x="1440"
+       y="350"
+       id="label23"
+       font-size="130"
+       style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans">Vdd(Vin)</text>
+    <line
+       fill="none"
+       stroke="#000000"
+       stroke-linejoin="round"
+       stroke-linecap="round"
+       y1="615"
+       stroke-width="30"
+       x1="15"
+       y2="615"
+       x2="300"
+       id="line18" />
+    <rect
+       width="300"
+       x="0"
+       y="600"
+       fill="none"
+       height="30"
+       id="connector1pin"
+       stroke-width="0" />
+    <rect
+       width="30"
+       x="0"
+       y="600"
+       fill="none"
+       height="30"
+       id="connector1terminal"
+       stroke-width="0" />
+    <text
+       x="390"
+       y="650"
+       id="label1"
+       font-size="130"
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">TG7</text>
+    <line
+       fill="none"
+       stroke="#000000"
+       stroke-linejoin="round"
+       stroke-linecap="round"
+       y1="615"
+       stroke-width="30"
+       x1="1515"
+       y2="615"
+       x2="1815"
+       id="line23" />
+    <rect
+       width="300"
+       x="1530"
+       y="600"
+       fill="none"
+       height="30"
+       id="connector22pin"
+       stroke-width="0" />
+    <rect
+       width="30"
+       x="1830"
+       y="600"
+       fill="none"
+       height="30"
+       id="connector22terminal"
+       stroke-width="0" />
+    <text
+       x="1440"
+       y="650"
+       id="label22"
+       font-size="130"
+       style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans">TG8</text>
+    <line
+       fill="none"
+       stroke="#000000"
+       stroke-linejoin="round"
+       stroke-linecap="round"
+       y1="915"
+       stroke-width="30"
+       x1="15"
+       y2="915"
+       x2="300"
+       id="line28" />
+    <rect
+       width="300"
+       x="0"
+       y="900"
+       fill="none"
+       height="30"
+       id="connector2pin"
+       stroke-width="0" />
+    <rect
+       width="30"
+       x="0"
+       y="900"
+       fill="none"
+       height="30"
+       id="connector2terminal"
+       stroke-width="0" />
+    <text
+       x="390"
+       y="950"
+       id="label2"
+       font-size="130"
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">TG6</text>
+    <line
+       fill="none"
+       stroke="#000000"
+       stroke-linejoin="round"
+       stroke-linecap="round"
+       y1="915"
+       stroke-width="30"
+       x1="1515"
+       y2="915"
+       x2="1815"
+       id="line33" />
+    <rect
+       width="300"
+       x="1530"
+       y="900"
+       fill="none"
+       height="30"
+       id="connector21pin"
+       stroke-width="0" />
+    <rect
+       width="30"
+       x="1830"
+       y="900"
+       fill="none"
+       height="30"
+       id="connector21terminal"
+       stroke-width="0" />
+    <text
+       x="1440"
+       y="950"
+       id="label21"
+       font-size="130"
+       style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans">TG9</text>
+    <line
+       fill="none"
+       stroke="#000000"
+       stroke-linejoin="round"
+       stroke-linecap="round"
+       y1="1215"
+       stroke-width="30"
+       x1="15"
+       y2="1215"
+       x2="300"
+       id="line38" />
+    <rect
+       width="300"
+       x="0"
+       y="1200"
+       fill="none"
+       height="30"
+       id="connector3pin"
+       stroke-width="0" />
+    <rect
+       width="30"
+       x="0"
+       y="1200"
+       fill="none"
+       height="30"
+       id="connector3terminal"
+       stroke-width="0" />
+    <text
+       x="390"
+       y="1250"
+       id="label3"
+       font-size="130"
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">TG5</text>
+    <line
+       fill="none"
+       stroke="#000000"
+       stroke-linejoin="round"
+       stroke-linecap="round"
+       y1="1215"
+       stroke-width="30"
+       x1="1515"
+       y2="1215"
+       x2="1815"
+       id="line43" />
+    <rect
+       width="300"
+       x="1530"
+       y="1200"
+       fill="none"
+       height="30"
+       id="connector20pin"
+       stroke-width="0" />
+    <rect
+       width="30"
+       x="1830"
+       y="1200"
+       fill="none"
+       height="30"
+       id="connector20terminal"
+       stroke-width="0" />
+    <text
+       x="1440"
+       y="1250"
+       id="label20"
+       font-size="130"
+       style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans">TG10</text>
+    <line
+       fill="none"
+       stroke="#000000"
+       stroke-linejoin="round"
+       stroke-linecap="round"
+       y1="1515"
+       stroke-width="30"
+       x1="15"
+       y2="1515"
+       x2="300"
+       id="line48" />
+    <rect
+       width="300"
+       x="0"
+       y="1500"
+       fill="none"
+       height="30"
+       id="connector4pin"
+       stroke-width="0" />
+    <rect
+       width="30"
+       x="0"
+       y="1500"
+       fill="none"
+       height="30"
+       id="connector4terminal"
+       stroke-width="0" />
+    <text
+       x="390"
+       y="1550"
+       id="label4"
+       font-size="130"
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">TG4</text>
+    <line
+       fill="none"
+       stroke="#000000"
+       stroke-linejoin="round"
+       stroke-linecap="round"
+       y1="1515"
+       stroke-width="30"
+       x1="1515"
+       y2="1515"
+       x2="1815"
+       id="line53" />
+    <rect
+       width="300"
+       x="1530"
+       y="1500"
+       fill="none"
+       height="30"
+       id="connector19pin"
+       stroke-width="0" />
+    <rect
+       width="30"
+       x="1830"
+       y="1500"
+       fill="none"
+       height="30"
+       id="connector19terminal"
+       stroke-width="0" />
+    <text
+       x="1440"
+       y="1550"
+       id="label19"
+       font-size="130"
+       style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans">TG11</text>
+    <line
+       fill="none"
+       stroke="#000000"
+       stroke-linejoin="round"
+       stroke-linecap="round"
+       y1="1815"
+       stroke-width="30"
+       x1="15"
+       y2="1815"
+       x2="300"
+       id="line58" />
+    <rect
+       width="300"
+       x="0"
+       y="1800"
+       fill="none"
+       height="30"
+       id="connector5pin"
+       stroke-width="0" />
+    <rect
+       width="30"
+       x="0"
+       y="1800"
+       fill="none"
+       height="30"
+       id="connector5terminal"
+       stroke-width="0" />
+    <text
+       x="390"
+       y="1850"
+       id="label5"
+       font-size="130"
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">TG3</text>
+    <line
+       fill="none"
+       stroke="#000000"
+       stroke-linejoin="round"
+       stroke-linecap="round"
+       y1="1815"
+       stroke-width="30"
+       x1="1515"
+       y2="1815"
+       x2="1815"
+       id="line63" />
+    <rect
+       width="300"
+       x="1530"
+       y="1800"
+       fill="none"
+       height="30"
+       stroke-width="0"
+       id="rect65" />
+    <rect
+       width="30"
+       x="1830"
+       y="1800"
+       fill="none"
+       height="30"
+       stroke-width="0"
+       id="rect67" />
+    <text
+       x="1440"
+       y="1850"
+       id="label18"
+       font-size="130"
+       style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans">TG12</text>
+    <line
+       fill="none"
+       stroke="#000000"
+       stroke-linejoin="round"
+       stroke-linecap="round"
+       y1="2115"
+       stroke-width="30"
+       x1="15"
+       y2="2115"
+       x2="300"
+       id="line70" />
+    <rect
+       width="300"
+       x="0"
+       y="2100"
+       fill="none"
+       height="30"
+       id="connector6pin"
+       stroke-width="0" />
+    <rect
+       width="30"
+       x="0"
+       y="2100"
+       fill="none"
+       height="30"
+       id="connector6terminal"
+       stroke-width="0" />
+    <text
+       x="390"
+       y="2150"
+       id="label6"
+       font-size="130"
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">TG2</text>
+    <line
+       fill="none"
+       stroke="#000000"
+       stroke-linejoin="round"
+       stroke-linecap="round"
+       y1="2115"
+       stroke-width="30"
+       x1="1515"
+       y2="2115"
+       x2="1815"
+       id="line75" />
+    <rect
+       width="300"
+       x="1530"
+       y="2100"
+       fill="none"
+       height="30"
+       id="connector17pin"
+       stroke-width="0" />
+    <rect
+       width="30"
+       x="1830"
+       y="2100"
+       fill="none"
+       height="30"
+       id="connector17terminal"
+       stroke-width="0" />
+    <text
+       x="1440"
+       y="2150"
+       id="label17"
+       font-size="130"
+       style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans">TG13</text>
+    <line
+       fill="none"
+       stroke="#000000"
+       stroke-linejoin="round"
+       stroke-linecap="round"
+       y1="2415"
+       stroke-width="30"
+       x1="15"
+       y2="2415"
+       x2="300"
+       id="line80" />
+    <rect
+       width="300"
+       x="0"
+       y="2400"
+       fill="none"
+       height="30"
+       id="connector7pin"
+       stroke-width="0" />
+    <rect
+       width="30"
+       x="0"
+       y="2400"
+       fill="none"
+       height="30"
+       id="connector7terminal"
+       stroke-width="0" />
+    <text
+       x="390"
+       y="2450"
+       id="label7"
+       font-size="130"
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">TG1</text>
+    <line
+       fill="none"
+       stroke="#000000"
+       stroke-linejoin="round"
+       stroke-linecap="round"
+       y1="2415"
+       stroke-width="30"
+       x1="1515"
+       y2="2415"
+       x2="1815"
+       id="line85" />
+    <rect
+       width="300"
+       x="1530"
+       y="2400"
+       fill="none"
+       height="30"
+       id="connector16pin"
+       stroke-width="0" />
+    <rect
+       width="30"
+       x="1830"
+       y="2400"
+       fill="none"
+       height="30"
+       id="connector16terminal"
+       stroke-width="0" />
+    <text
+       x="1440"
+       y="2450"
+       id="label16"
+       font-size="130"
+       style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans">TG14</text>
+    <line
+       fill="none"
+       stroke="#000000"
+       stroke-linejoin="round"
+       stroke-linecap="round"
+       y1="2715"
+       stroke-width="30"
+       x1="15"
+       y2="2715"
+       x2="300"
+       id="line90" />
+    <rect
+       width="300"
+       x="0"
+       y="2700"
+       fill="none"
+       height="30"
+       id="connector8pin"
+       stroke-width="0" />
+    <rect
+       width="30"
+       x="0"
+       y="2700"
+       fill="none"
+       height="30"
+       id="connector8terminal"
+       stroke-width="0" />
+    <text
+       x="390"
+       y="2750"
+       id="label8"
+       font-size="130"
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">TG0</text>
+    <line
+       fill="none"
+       stroke="#000000"
+       stroke-linejoin="round"
+       stroke-linecap="round"
+       y1="2715"
+       stroke-width="30"
+       x1="1515"
+       y2="2715"
+       x2="1815"
+       id="line95" />
+    <rect
+       width="300"
+       x="1530"
+       y="2700"
+       fill="none"
+       height="30"
+       id="connector15pin"
+       stroke-width="0" />
+    <rect
+       width="30"
+       x="1830"
+       y="2700"
+       fill="none"
+       height="30"
+       id="connector15terminal"
+       stroke-width="0" />
+    <text
+       x="1440"
+       y="2750"
+       id="label15"
+       font-size="130"
+       style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans">TG15</text>
+    <line
+       fill="none"
+       stroke="#000000"
+       stroke-linejoin="round"
+       stroke-linecap="round"
+       y1="3015"
+       stroke-width="30"
+       x1="15"
+       y2="3015"
+       x2="300"
+       id="line100" />
+    <rect
+       width="300"
+       x="0"
+       y="3000"
+       fill="none"
+       height="30"
+       id="connector9pin"
+       stroke-width="0" />
+    <rect
+       width="30"
+       x="0"
+       y="3000"
+       fill="none"
+       height="30"
+       id="connector9terminal"
+       stroke-width="0" />
+    <text
+       x="390"
+       y="3050"
+       id="label9"
+       font-size="130"
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">A</text>
+    <line
+       fill="none"
+       stroke="#000000"
+       stroke-linejoin="round"
+       stroke-linecap="round"
+       y1="3015"
+       stroke-width="30"
+       x1="1515"
+       y2="3015"
+       x2="1815"
+       id="line105" />
+    <rect
+       width="300"
+       x="1530"
+       y="3000"
+       fill="none"
+       height="30"
+       id="connector14pin"
+       stroke-width="0" />
+    <rect
+       width="30"
+       x="1830"
+       y="3000"
+       fill="none"
+       height="30"
+       id="connector14terminal"
+       stroke-width="0" />
+    <text
+       x="1440"
+       y="3050"
+       id="label14"
+       font-size="130"
+       style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans">Inhibit</text>
+    <line
+       fill="none"
+       stroke="#000000"
+       stroke-linejoin="round"
+       stroke-linecap="round"
+       y1="3315"
+       stroke-width="30"
+       x1="15"
+       y2="3315"
+       x2="300"
+       id="line110" />
+    <rect
+       width="300"
+       x="0"
+       y="3300"
+       fill="none"
+       height="30"
+       id="connector10pin"
+       stroke-width="0" />
+    <rect
+       width="30"
+       x="0"
+       y="3300"
+       fill="none"
+       height="30"
+       id="connector10terminal"
+       stroke-width="0" />
+    <text
+       x="390"
+       y="3350"
+       id="label10"
+       font-size="130"
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">B</text>
+    <line
+       fill="none"
+       stroke="#000000"
+       stroke-linejoin="round"
+       stroke-linecap="round"
+       y1="3315"
+       stroke-width="30"
+       x1="1515"
+       y2="3315"
+       x2="1815"
+       id="line115" />
+    <rect
+       width="300"
+       x="1530"
+       y="3300"
+       fill="none"
+       height="30"
+       id="connector13pin"
+       stroke-width="0" />
+    <rect
+       width="30"
+       x="1830"
+       y="3300"
+       fill="none"
+       height="30"
+       id="connector13terminal"
+       stroke-width="0" />
+    <text
+       x="1440"
+       y="3350"
+       id="label13"
+       font-size="130"
+       style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans">C</text>
+    <line
+       fill="none"
+       stroke="#000000"
+       stroke-linejoin="round"
+       stroke-linecap="round"
+       y1="3615"
+       stroke-width="30"
+       x1="15"
+       y2="3615"
+       x2="300"
+       id="line120" />
+    <rect
+       width="300"
+       x="0"
+       y="3600"
+       fill="none"
+       height="30"
+       id="connector11pin"
+       stroke-width="0" />
+    <rect
+       width="30"
+       x="0"
+       y="3600"
+       fill="none"
+       height="30"
+       id="connector11terminal"
+       stroke-width="0" />
+    <text
+       x="390"
+       y="3650"
+       id="label11"
+       font-size="130"
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">Vss(Gnd)</text>
+    <line
+       fill="none"
+       stroke="#000000"
+       stroke-linejoin="round"
+       stroke-linecap="round"
+       y1="3615"
+       stroke-width="30"
+       x1="1515"
+       y2="3615"
+       x2="1815"
+       id="line125" />
+    <rect
+       width="300"
+       x="1530"
+       y="3600"
+       fill="none"
+       height="30"
+       id="connector12pin"
+       stroke-width="0" />
+    <rect
+       width="30"
+       x="1830"
+       y="3600"
+       fill="none"
+       height="30"
+       id="connector12terminal"
+       stroke-width="0" />
+
+	    <rect
+	       width="300"
+	       x="1530"
+	       y="1800"
+	       fill="none"
+	       height="29.99999999999987"
+	       id="connector18pin" />
+	
+		    <rect
+		       width="30"
+		       x="1830"
+		       y="1800"
+		       fill="none"
+		       height="30"
+		       id="connector18terminal" />
+	
+    <text
+       x="1440"
+       y="3650"
+       id="label12"
+       font-size="130"
+       style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans">D</text>
+    <rect
+       width="0.002"
+       x="1871.235585284281"
+       y="1801.882207357859"
+       fill="none"
+       height="0.002"
+       id="rect130" />
+    <rect
+       width="0.002"
+       x="1871.235585284281"
+       y="1801.882207357859"
+       fill="none"
+       height="0.002"
+       id="rect133" />
+    <rect
+       width="300.0000000000001"
+       x="1556.235585284281"
+       y="1786.882207357859"
+       fill="none"
+       height="29.99999999999987"
+       id="rect135" />
+    <rect
+       width="0.002"
+       x="1871.235585284281"
+       y="1801.882207357859"
+       fill="none"
+       height="0.002"
+       id="rect137" />
+    <rect
+       width="300.0000000000001"
+       x="1556.235585284281"
+       y="1786.882207357859"
+       fill="none"
+       height="29.99999999999987"
+       id="rect139" />
+    <rect
+       width="0.002"
+       x="1871.235585284281"
+       y="1801.882207357859"
+       fill="none"
+       height="0.002"
+       id="rect141" />
+    <rect
+       width="300.0000000000001"
+       x="1556.235585284281"
+       y="1786.882207357859"
+       fill="none"
+       height="29.99999999999987"
+       id="rect143" />
+    <rect
+       width="0.002"
+       x="1871.235585284281"
+       y="1801.882207357859"
+       fill="none"
+       height="0.002"
+       id="rect145" />
+    <rect
+       width="300.0000000000001"
+       x="1556.235585284281"
+       y="1786.882207357859"
+       fill="none"
+       height="29.99999999999987"
+       id="rect147" />
+    <rect
+       width="0.002"
+       x="1871.235585284281"
+       y="1801.882207357859"
+       fill="none"
+       height="0.002"
+       id="rect149" />
+    <rect
+       width="300.0000000000001"
+       x="1556.235585284281"
+       y="1786.882207357859"
+       fill="none"
+       height="29.99999999999987"
+       id="rect151" />
+    <rect
+       width="0.002"
+       x="1871.235585284281"
+       y="1801.882207357859"
+       fill="none"
+       height="0.002"
+       id="rect153" />
+    <rect
+       width="300.0000000000001"
+       x="1556.235585284281"
+       y="1786.882207357859"
+       fill="none"
+       height="29.99999999999987"
+       id="rect155" />
+    <rect
+       width="0.002"
+       x="1871.235585284281"
+       y="1801.882207357859"
+       fill="none"
+       height="0.002"
+       id="rect157" />
+    <rect
+       width="300.0000000000001"
+       x="1556.235585284281"
+       y="1786.882207357859"
+       fill="none"
+       height="29.99999999999987"
+       id="rect159" />
+    <rect
+       width="0.002"
+       x="1871.235585284281"
+       y="1801.882207357859"
+       fill="none"
+       height="0.002"
+       id="rect161" />
+    <rect
+       width="300.0000000000001"
+       x="1556.235585284281"
+       y="1786.882207357859"
+       fill="none"
+       height="29.99999999999987"
+       id="rect163" />
+    <rect
+       width="0.002"
+       x="1871.235585284281"
+       y="1801.882207357859"
+       fill="none"
+       height="0.002"
+       id="rect165" />
+    <rect
+       width="300.0000000000001"
+       x="1556.235585284281"
+       y="1786.882207357859"
+       fill="none"
+       height="29.99999999999987"
+       id="rect167" />
+    <rect
+       width="0.002"
+       x="1871.235585284281"
+       y="1801.882207357859"
+       fill="none"
+       height="0.002"
+       id="rect169" />
+    <rect
+       width="300.0000000000001"
+       x="1556.235585284281"
+       y="1786.882207357859"
+       fill="none"
+       height="29.99999999999987"
+       id="rect171" />
+    <rect
+       width="0.002"
+       x="1871.235585284281"
+       y="1801.882207357859"
+       fill="none"
+       height="0.002"
+       id="rect173" />
+    <rect
+       width="300.0000000000001"
+       x="1556.235585284281"
+       y="1786.882207357859"
+       fill="none"
+       height="29.99999999999987"
+       id="rect175" />
+    <rect
+       width="0.002"
+       x="1871.235585284281"
+       y="1801.882207357859"
+       fill="none"
+       height="0.002"
+       id="rect177" />
+    <rect
+       width="300.0000000000001"
+       x="1556.235585284281"
+       y="1786.882207357859"
+       fill="none"
+       height="29.99999999999987"
+       id="rect179" />
+    <rect
+       width="0.002"
+       x="1871.235585284281"
+       y="1801.882207357859"
+       fill="none"
+       height="0.002"
+       id="rect181" />
+    <rect
+       width="300.0000000000001"
+       x="1556.235585284281"
+       y="1786.882207357859"
+       fill="none"
+       height="29.99999999999987"
+       id="rect183" />
+    <rect
+       width="0.002"
+       x="1871.235585284281"
+       y="1801.882207357859"
+       fill="none"
+       height="0.002"
+       id="rect185" />
+    <rect
+       width="300.0000000000001"
+       x="1556.235585284281"
+       y="1786.882207357859"
+       fill="none"
+       height="29.99999999999987"
+       id="rect187" />
+    <rect
+       width="0.002"
+       x="1871.235585284281"
+       y="1801.882207357859"
+       fill="none"
+       height="0.002"
+       id="rect189" />
+    <rect
+       width="300.0000000000001"
+       x="1556.235585284281"
+       y="1786.882207357859"
+       fill="none"
+       height="29.99999999999987"
+       id="rect191" />
+    <rect
+       width="0.002"
+       x="1871.235585284281"
+       y="1801.882207357859"
+       fill="none"
+       height="0.002"
+       id="rect193" />
+    <rect
+       width="300.0000000000001"
+       x="1556.235585284281"
+       y="1786.882207357859"
+       fill="none"
+       height="29.99999999999987"
+       id="rect195" />
+    <rect
+       width="0.002"
+       x="1871.235585284281"
+       y="1801.882207357859"
+       fill="none"
+       height="0.002"
+       id="rect197" />
+    <rect
+       width="300.0000000000001"
+       x="1556.235585284281"
+       y="1786.882207357859"
+       fill="none"
+       height="29.99999999999987"
+       id="rect199" />
+    <rect
+       width="0.002"
+       x="1871.235585284281"
+       y="1801.882207357859"
+       fill="none"
+       height="0.002"
+       id="rect201" />
+    <rect
+       width="300.0000000000001"
+       x="1556.235585284281"
+       y="1786.882207357859"
+       fill="none"
+       height="29.99999999999987"
+       id="rect203" />
+    <rect
+       width="0.002"
+       x="1871.235585284281"
+       y="1801.882207357859"
+       fill="none"
+       height="0.002"
+       id="rect205" />
+    <rect
+       width="300.0000000000001"
+       x="1556.235585284281"
+       y="1786.882207357859"
+       fill="none"
+       height="29.99999999999987"
+       id="rect207" />
+    <rect
+       width="0.002"
+       x="1871.235585284281"
+       y="1801.882207357859"
+       fill="none"
+       height="0.002"
+       id="rect209" />
+    <rect
+       width="300.0000000000001"
+       x="1556.235585284281"
+       y="1786.882207357859"
+       fill="none"
+       height="29.99999999999987"
+       id="rect211" />
+    <rect
+       width="0.002"
+       x="1871.235585284281"
+       y="1801.882207357859"
+       fill="none"
+       height="0.002"
+       id="rect213" />
+    <rect
+       width="300.0000000000001"
+       x="1556.235585284281"
+       y="1786.882207357859"
+       fill="none"
+       height="29.99999999999987"
+       id="rect215" />
+    <rect
+       width="0.002"
+       x="1871.235585284281"
+       y="1801.882207357859"
+       fill="none"
+       height="0.002"
+       id="rect217" />
+    <rect
+       width="300.0000000000001"
+       x="1556.235585284281"
+       y="1786.882207357859"
+       fill="none"
+       height="29.99999999999987"
+       id="rect219" />
+    <rect
+       width="0.002"
+       x="1871.235585284281"
+       y="1801.882207357859"
+       fill="none"
+       height="0.002"
+       id="rect221" />
+    <rect
+       width="300.0000000000001"
+       x="1556.235585284281"
+       y="1786.882207357859"
+       fill="none"
+       height="29.99999999999987"
+       id="rect223" />
+    <rect
+       width="0.002"
+       x="1871.235585284281"
+       y="1801.882207357859"
+       fill="none"
+       height="0.002"
+       id="rect225" />
+    <rect
+       width="300.0000000000001"
+       x="1556.235585284281"
+       y="1786.882207357859"
+       fill="none"
+       height="29.99999999999987"
+       id="rect227" />
+    <rect
+       width="0.002"
+       x="1871.235585284281"
+       y="1801.882207357859"
+       fill="none"
+       height="0.002"
+       id="rect229" />
+    <rect
+       width="300.0000000000001"
+       x="1556.235585284281"
+       y="1786.882207357859"
+       fill="none"
+       height="29.99999999999987"
+       id="rect231" />
+    <rect
+       width="0.002"
+       x="1871.235585284281"
+       y="1801.882207357859"
+       fill="none"
+       height="0.002"
+       id="rect233" />
+    <rect
+       width="300.0000000000001"
+       x="1556.235585284281"
+       y="1786.882207357859"
+       fill="none"
+       height="29.99999999999987"
+       id="rect235" />
+    <rect
+       width="0.002"
+       x="1871.235585284281"
+       y="1801.882207357859"
+       fill="none"
+       height="0.002"
+       id="rect237" />
+    <rect
+       width="300.0000000000001"
+       x="1556.235585284281"
+       y="1786.882207357859"
+       fill="none"
+       height="29.99999999999987"
+       id="rect239" />
+    <rect
+       width="0.002"
+       x="1871.235585284281"
+       y="1801.882207357859"
+       fill="none"
+       height="0.002"
+       id="rect241" />
+    <rect
+       width="300.0000000000001"
+       x="1556.235585284281"
+       y="1786.882207357859"
+       fill="none"
+       height="29.99999999999987"
+       id="rect243" />
+    <rect
+       width="0.002"
+       x="1871.235585284281"
+       y="1801.882207357859"
+       fill="none"
+       height="0.002"
+       id="rect245" />
+    <rect
+       width="300.0000000000001"
+       x="1556.235585284281"
+       y="1786.882207357859"
+       fill="none"
+       height="29.99999999999987"
+       id="rect247" />
+    <rect
+       width="0.002"
+       x="1871.235585284281"
+       y="1801.882207357859"
+       fill="none"
+       height="0.002"
+       id="rect249" />
+    <rect
+       width="300.0000000000001"
+       x="1556.235585284281"
+       y="1786.882207357859"
+       fill="none"
+       height="29.99999999999987"
+       id="rect251" />
+    <rect
+       width="0.002"
+       x="1871.235585284281"
+       y="1801.882207357859"
+       fill="none"
+       height="0.002"
+       id="rect253" />
+    <rect
+       width="300.0000000000001"
+       x="1556.235585284281"
+       y="1786.882207357859"
+       fill="none"
+       height="29.99999999999987"
+       id="rect255" />
+    <rect
+       width="0.002"
+       x="1871.235585284281"
+       y="1801.882207357859"
+       fill="none"
+       height="0.002"
+       id="rect257" />
+    <rect
+       width="300.0000000000001"
+       x="1556.235585284281"
+       y="1786.882207357859"
+       fill="none"
+       height="29.99999999999987"
+       id="rect259" />
+    <rect
+       width="0.002"
+       x="1871.235585284281"
+       y="1801.882207357859"
+       fill="none"
+       height="0.002"
+       id="rect261" />
+    <rect
+       width="300.0000000000001"
+       x="1556.235585284281"
+       y="1786.882207357859"
+       fill="none"
+       height="29.99999999999987"
+       id="rect263" />
+    <rect
+       width="0.002"
+       x="1871.235585284281"
+       y="1801.882207357859"
+       fill="none"
+       height="0.002"
+       id="rect265" />
+    <rect
+       width="300.0000000000001"
+       x="1556.235585284281"
+       y="1786.882207357859"
+       fill="none"
+       height="29.99999999999987"
+       id="rect267" />
+    <rect
+       width="0.002"
+       x="1871.235585284281"
+       y="1801.882207357859"
+       fill="none"
+       height="0.002"
+       id="rect269" />
+    <rect
+       width="300.0000000000001"
+       x="1556.235585284281"
+       y="1786.882207357859"
+       fill="none"
+       height="29.99999999999987"
+       id="rect271" />
+    <rect
+       width="0.002"
+       x="1871.235585284281"
+       y="1801.882207357859"
+       fill="none"
+       height="0.002"
+       id="rect273" />
+    <rect
+       width="300.0000000000001"
+       x="1556.235585284281"
+       y="1786.882207357859"
+       fill="none"
+       height="29.99999999999987"
+       id="rect275" />
+    <rect
+       width="0.002"
+       x="1871.235585284281"
+       y="1801.882207357859"
+       fill="none"
+       height="0.002"
+       id="rect277" />
+    <rect
+       width="300.0000000000001"
+       x="1556.235585284281"
+       y="1786.882207357859"
+       fill="none"
+       height="29.99999999999987"
+       id="rect279" />
+    <rect
+       width="0.002"
+       x="1871.235585284281"
+       y="1801.882207357859"
+       fill="none"
+       height="0.002"
+       id="rect281" />
+    <rect
+       width="300.0000000000001"
+       x="1556.235585284281"
+       y="1786.882207357859"
+       fill="none"
+       height="29.99999999999987"
+       id="rect283" />
+    <rect
+       width="0.002"
+       x="1871.235585284281"
+       y="1801.882207357859"
+       fill="none"
+       height="0.002"
+       id="rect285" />
+    <rect
+       width="300.0000000000001"
+       x="1556.235585284281"
+       y="1786.882207357859"
+       fill="none"
+       height="29.99999999999987"
+       id="rect287" />
+    <rect
+       width="0.002"
+       x="1871.235585284281"
+       y="1801.882207357859"
+       fill="none"
+       height="0.002"
+       id="rect289" />
+    <rect
+       width="300.0000000000001"
+       x="1556.235585284281"
+       y="1786.882207357859"
+       fill="none"
+       height="29.99999999999987"
+       id="rect291" />
+    <rect
+       width="0.002"
+       x="1871.235585284281"
+       y="1801.882207357859"
+       fill="none"
+       height="0.002"
+       id="rect293" />
+    <rect
+       width="300.0000000000001"
+       x="1556.235585284281"
+       y="1786.882207357859"
+       fill="none"
+       height="29.99999999999987"
+       id="rect295" />
+    <rect
+       width="0.002"
+       x="1871.235585284281"
+       y="1801.882207357859"
+       fill="none"
+       height="0.002"
+       id="rect297" />
+    <rect
+       width="300.0000000000001"
+       x="1556.235585284281"
+       y="1786.882207357859"
+       fill="none"
+       height="29.99999999999987"
+       id="rect299" />
+    <rect
+       width="0.002"
+       x="1871.235585284281"
+       y="1801.882207357859"
+       fill="none"
+       height="0.002"
+       id="rect301" />
+    <rect
+       width="300.0000000000001"
+       x="1556.235585284281"
+       y="1786.882207357859"
+       fill="none"
+       height="29.99999999999987"
+       id="rect303" />
+
+  </g>
+</svg>

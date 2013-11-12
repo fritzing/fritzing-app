@@ -1,0 +1,236 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Generator: Adobe Illustrator 15.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg xmlns="http://www.w3.org/2000/svg"  width="885.82672" xml:space="preserve" xmlns:xml="http://www.w3.org/XML/1998/namespace" x="0px" version="1.1" y="0px" height="354.33069" viewBox="0 0 708.66112 283.46449" id="svg">
+    <g  id="schematic">
+        <metadata  id="metadata4712">
+            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+                <cc:Work xmlns:cc="http://creativecommons.org/ns#" rdf:about="" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+                    <dc:format xmlns:dc="http://purl.org/dc/elements/1.1/">image/svg+xml</dc:format>
+                    <dc:type xmlns:dc="http://purl.org/dc/elements/1.1/" rdf:resource="http://purl.org/dc/dcmitype/StillImage" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+                    <dc:title xmlns:dc="http://purl.org/dc/elements/1.1/"/>
+                </cc:Work>
+            </rdf:RDF>
+        </metadata>
+        <defs  id="defs4710"/>
+        <sodipodi:namedview xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" showgrid="true" objecttolerance="10" pagecolor="#ffffff" units="mm" bordercolor="#666666" id="namedview4708" borderopacity="1" guidetolerance="10" gridtolerance="10">
+            <inkscape:grid xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" empspacing="10" spacingx="1mm" snapvisiblegridlinesonly="true" spacingy="1mm" enabled="true" units="mm" visible="true" type="xygrid" id="grid4736"/>
+        </sodipodi:namedview>
+        <line  style="fill:none;stroke:#000000;stroke-width:2.78977323;stroke-linecap:butt;stroke-linejoin:round" id="line4482-70-2" y1="226.77159" x1="255.118" y2="198.42513" x2="255.118"/>
+        <line  style="fill:none;stroke:#000000;stroke-width:1.00000012;stroke-opacity:1" id="connector28pin" y1="226.77158" x1="255.11798" y2="206.92908" x2="255.11798"/>
+        <rect width="1.000000119999982" x="254.61797994" y="206.42907994" fill="none" height="20.84250011999998" stroke="none" id="connector28terminal" stroke-width="0"/>
+        <line  style="fill:none;stroke:#000000;stroke-width:2.78977323;stroke-linecap:butt;stroke-linejoin:round" id="line4482-70" y1="226.77159" x1="141.73218" y2="198.42513" x2="141.73218"/>
+        <line  style="fill:none;stroke:#000000;stroke-width:2.78977323;stroke-linecap:butt;stroke-linejoin:round" id="line4482-74" y1="226.77158" x1="113.38573" y2="198.42514" x2="113.38573"/>
+        <line  style="fill:none;stroke:#000000;stroke-width:2.78977323;stroke-linecap:butt;stroke-linejoin:round" id="line4482-4" y1="226.77158" x1="85.039299" y2="198.42514" x2="85.039299"/>
+        <line  style="fill:none;stroke:#000000;stroke-width:2.78977323;stroke-linecap:butt;stroke-linejoin:round" id="line4482-30" y1="56.692886" x1="510.23605" y2="85.039337" x2="510.23605"/>
+        <line  style="fill:none;stroke:#000000;stroke-width:2.78977323;stroke-linecap:butt;stroke-linejoin:round" id="line4482-9" y1="56.692883" x1="481.88962" y2="85.039337" x2="481.88962"/>
+        <line  style="fill:none;stroke:#000000;stroke-width:2.78977323;stroke-linecap:butt;stroke-linejoin:round" id="line4482-56" y1="56.692886" x1="453.54315" y2="85.039337" x2="453.54315"/>
+        <line  style="fill:none;stroke:#000000;stroke-width:2.78977323;stroke-linecap:butt;stroke-linejoin:round" id="line4482-06" y1="56.692879" x1="425.19672" y2="85.039337" x2="425.19672"/>
+        <line  style="fill:none;stroke:#000000;stroke-width:2.78977323;stroke-linecap:butt;stroke-linejoin:round" id="line4482-3" y1="56.692883" x1="396.85025" y2="85.039337" x2="396.85025"/>
+        <line  style="fill:none;stroke:#000000;stroke-width:2.78977323;stroke-linecap:butt;stroke-linejoin:round" id="line4482-1" y1="56.692886" x1="368.50381" y2="85.039337" x2="368.50381"/>
+        <line  style="fill:none;stroke:#000000;stroke-width:2.78977323;stroke-linecap:butt;stroke-linejoin:round" id="line4482-214" y1="56.692886" x1="340.15735" y2="85.039337" x2="340.15735"/>
+        <line  style="fill:none;stroke:#000000;stroke-width:2.78977323;stroke-linecap:butt;stroke-linejoin:round" id="line4482-21" y1="56.692883" x1="311.81091" y2="85.039337" x2="311.81091"/>
+        <line  style="fill:none;stroke:#000000;stroke-width:2.78977323;stroke-linecap:butt;stroke-linejoin:round" id="line4482-05" y1="56.692886" x1="283.46445" y2="85.039337" x2="283.46445"/>
+        <line  style="fill:none;stroke:#000000;stroke-width:2.78977323;stroke-linecap:butt;stroke-linejoin:round" id="line4482-2" y1="56.692886" x1="255.118" y2="85.039337" x2="255.118"/>
+        <line  style="fill:none;stroke:#000000;stroke-width:2.78977323;stroke-linecap:butt;stroke-linejoin:round" id="line4482-5" y1="56.692883" x1="226.77155" y2="85.039337" x2="226.77155"/>
+        <line  style="fill:none;stroke:#000000;stroke-width:2.78977323;stroke-linecap:butt;stroke-linejoin:round" id="line4482-8" y1="56.692883" x1="198.42509" y2="85.039337" x2="198.42509"/>
+        <line  style="fill:none;stroke:#000000;stroke-width:2.78977323;stroke-linecap:butt;stroke-linejoin:round" id="line4482-0" y1="56.692883" x1="170.07864" y2="85.039337" x2="170.07864"/>
+        <line  style="fill:none;stroke:#000000;stroke-width:2.78977323;stroke-linecap:butt;stroke-linejoin:round" id="line4482-78" y1="56.692883" x1="141.73219" y2="85.039337" x2="141.73219"/>
+        <line  style="fill:none;stroke:#000000;stroke-width:2.78977323;stroke-linecap:butt;stroke-linejoin:round" id="line4482-7" y1="56.692886" x1="113.38575" y2="85.039337" x2="113.38575"/>
+        <g  id="g4410" transform="translate(104.5259,-19.535959)">
+            <text  x="81.479225" y="166.2285" style="font-size:17.97999954px;font-family:Droid Sans" id="text4714" font-size="17.98">Adafruit Atmega32u4 Breakout Board</text>
+        </g>
+        <line  style="fill:none;stroke:#000000;stroke-width:2.78977323;stroke-linecap:butt;stroke-linejoin:round" id="line4482" y1="56.692886" x1="85.039299" y2="85.039337" x2="85.039299"/>
+        <rect  width="651.96838" x="28.346397" y="85.039337" height="113.3858" style="fill:none;stroke:#000000;stroke-width:1.73099697;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" id="rect4765"/>
+        <line  style="fill:none;stroke:#000000;stroke-opacity:1" id="connector1pin" y1="56.692886" stroke-width="1" x1="113.38575" y2="76.5354" x2="113.38575"/>
+        <rect width="1" x="112.88575" y="56.192886" fill="none" height="20.84251399999999" stroke="none" id="connector1terminal" stroke-width="0"/>
+        <line  style="fill:none;stroke:#000000;stroke-width:1.00000012;stroke-opacity:1" id="connector2pin" y1="56.692886" x1="141.73219" y2="76.535393" x2="141.73219"/>
+        <rect width="1.000000119999982" x="141.23218994" y="56.19288594" fill="none" height="20.84250712" stroke="none" id="connector2terminal" stroke-width="0"/>
+        <line  style="fill:none;stroke:#000000;stroke-width:1.00000012;stroke-opacity:1" id="connector3pin" y1="56.692886" x1="170.07864" y2="76.5354" x2="170.07864"/>
+        <rect width="1.000000119999982" x="169.57863994" y="56.19288594" fill="none" height="20.84251412" stroke="none" id="connector3terminal" stroke-width="0"/>
+        <line  style="fill:none;stroke:#000000;stroke-width:1.00000012;stroke-opacity:1" id="connector4pin" y1="56.692886" x1="198.42509" y2="76.5354" x2="198.42509"/>
+        <rect width="1.000000119999982" x="197.92508994" y="56.19288594" fill="none" height="20.84251412" stroke="none" id="connector4terminal" stroke-width="0"/>
+        <line  style="fill:none;stroke:#000000;stroke-width:1.00000012;stroke-opacity:1" id="connector5pin" y1="56.692886" x1="226.77155" y2="76.5354" x2="226.77155"/>
+        <rect width="1.000000119999982" x="226.27154994" y="56.19288594" fill="none" height="20.84251412" stroke="none" id="connector5terminal" stroke-width="0"/>
+        <line  style="fill:none;stroke:#000000;stroke-width:1.00000012;stroke-opacity:1" id="connector6pin" y1="56.692886" x1="255.118" y2="76.535393" x2="255.118"/>
+        <rect width="1.000000119999982" x="254.61799994" y="56.19288594" fill="none" height="20.84250712" stroke="none" id="connector6terminal" stroke-width="0"/>
+        <line  style="fill:none;stroke:#000000;stroke-width:1.00000012;stroke-opacity:1" id="connector7pin" y1="56.692886" x1="283.46445" y2="76.535393" x2="283.46445"/>
+        <rect width="1.000000119999982" x="282.96444994" y="56.19288594" fill="none" height="20.84250712" stroke="none" id="connector7terminal" stroke-width="0"/>
+        <line  style="fill:none;stroke:#000000;stroke-width:1.00000012;stroke-opacity:1" id="connector8pin" y1="56.692886" x1="311.81091" y2="76.5354" x2="311.81091"/>
+        <rect width="1.000000119999982" x="311.31090994" y="56.19288594" fill="none" height="20.84251412" stroke="none" id="connector8terminal" stroke-width="0"/>
+        <line  style="fill:none;stroke:#000000;stroke-width:1.00000012;stroke-opacity:1" id="connector9pin" y1="56.692886" x1="340.15735" y2="76.5354" x2="340.15735"/>
+        <rect width="1.000000119999982" x="339.65734994" y="56.19288594" fill="none" height="20.84251412" stroke="none" id="connector9terminal" stroke-width="0"/>
+        <line  style="fill:none;stroke:#000000;stroke-width:1.00000012;stroke-opacity:1" id="connector10pin" y1="56.692886" x1="368.50381" y2="76.5354" x2="368.50381"/>
+        <rect width="1.000000119999982" x="368.00380994" y="56.19288594" fill="none" height="20.84251412" stroke="none" id="connector10terminal" stroke-width="0"/>
+        <line  style="fill:none;stroke:#000000;stroke-width:1.00000012;stroke-opacity:1" id="connector11pin" y1="56.692886" x1="396.85025" y2="76.5354" x2="396.85025"/>
+        <rect width="1.000000119999982" x="396.35024994" y="56.19288594" fill="none" height="20.84251412" stroke="none" id="connector11terminal" stroke-width="0"/>
+        <line  style="fill:none;stroke:#000000;stroke-width:1.00000012;stroke-opacity:1" id="connector12pin" y1="56.692886" x1="425.19672" y2="76.5354" x2="425.19672"/>
+        <rect width="1.000000119999982" x="424.69671994" y="56.19288594" fill="none" height="20.84251412" stroke="none" id="connector12terminal" stroke-width="0"/>
+        <line  style="fill:none;stroke:#000000;stroke-width:1.00000012;stroke-opacity:1" id="connector13pin" y1="56.692886" x1="453.54315" y2="76.5354" x2="453.54315"/>
+        <rect width="1.000000119999982" x="453.04314994" y="56.19288594" fill="none" height="20.84251412" stroke="none" id="connector13terminal" stroke-width="0"/>
+        <line  style="fill:none;stroke:#000000;stroke-width:1.00000012;stroke-opacity:1" id="connector14pin" y1="56.692886" x1="481.88962" y2="76.5354" x2="481.88962"/>
+        <rect width="1.000000119999982" x="481.38961994" y="56.19288594" fill="none" height="20.84251412" stroke="none" id="connector14terminal" stroke-width="0"/>
+        <line  style="fill:none;stroke:#000000;stroke-width:1.00000012;stroke-opacity:1" id="connector15pin" y1="56.692886" x1="510.23605" y2="76.5354" x2="510.23605"/>
+        <rect width="1.000000119999982" x="509.73604994" y="56.19288594" fill="none" height="20.84251412" stroke="none" id="connector15terminal" stroke-width="0"/>
+        <line  style="fill:none;stroke:#000000;stroke-width:1.00000012;stroke-opacity:1" id="connector22pin" y1="226.77158" x1="85.039284" y2="206.92908" x2="85.039284"/>
+        <rect width="1.00000012000001" x="84.53928393999999" y="206.42907994" fill="none" height="20.84250011999998" stroke="none" id="connector22terminal" stroke-width="0"/>
+        <line  style="fill:none;stroke:#000000;stroke-width:1.00000012;stroke-opacity:1" id="connector23pin" y1="226.77158" x1="113.38575" y2="206.92908" x2="113.38575"/>
+        <rect width="1.00000012000001" x="112.88574994" y="206.42907994" fill="none" height="20.84250011999998" stroke="none" id="connector23terminal" stroke-width="0"/>
+        <line  style="fill:none;stroke:#000000;stroke-width:1.00000012;stroke-opacity:1" id="connector24pin" y1="226.77158" x1="141.73216" y2="206.92908" x2="141.73216"/>
+        <rect width="1.000000119999982" x="141.23215994" y="206.42907994" fill="none" height="20.84250011999998" stroke="none" id="connector24terminal" stroke-width="0"/>
+        <line  style="fill:none;stroke:#000000;stroke-width:1.00000012;stroke-opacity:1" id="connector0pin" y1="56.692886" x1="85.039299" y2="76.5354" x2="85.039299"/>
+        <rect width="1.00000012000001" x="84.53929894" y="56.19288594" fill="none" height="20.84251412" stroke="none" id="connector0terminal" stroke-width="0"/>
+        <g  xml:space="preserve" xmlns:xml="http://www.w3.org/XML/1998/namespace" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text3475">
+            <text  x="79.37001" y="100.65108" id="tspan3477">5V</text>
+        </g>
+        <g  xml:space="preserve" xmlns:xml="http://www.w3.org/XML/1998/namespace" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text3475-7">
+            <text  x="110.1261" y="100.5354" id="tspan3477-4">A</text>
+        </g>
+        <g  xml:space="preserve" xmlns:xml="http://www.w3.org/XML/1998/namespace" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text3475-2">
+            <text  x="136.06291" y="100.65108" id="tspan3477-5">F0</text>
+        </g>
+        <g  xml:space="preserve" xmlns:xml="http://www.w3.org/XML/1998/namespace" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text3475-1">
+            <text  x="164.40936" y="100.65108" id="tspan3477-3">F1</text>
+        </g>
+        <g  xml:space="preserve" xmlns:xml="http://www.w3.org/XML/1998/namespace" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text3475-6">
+            <text  x="192.75581" y="100.65108" id="tspan3477-8">F4</text>
+        </g>
+        <g  xml:space="preserve" xmlns:xml="http://www.w3.org/XML/1998/namespace" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text3475-74">
+            <text  x="221.10226" y="100.65108" id="tspan3477-9">F5</text>
+        </g>
+        <g  xml:space="preserve" xmlns:xml="http://www.w3.org/XML/1998/namespace" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text3475-24">
+            <text  x="249.44872" y="100.65108" id="tspan3477-45">F6</text>
+        </g>
+        <g  xml:space="preserve" xmlns:xml="http://www.w3.org/XML/1998/namespace" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text3475-9">
+            <text  x="277.79517" y="100.65108" id="tspan3477-1">F7</text>
+        </g>
+        <g  xml:space="preserve" xmlns:xml="http://www.w3.org/XML/1998/namespace" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text3475-28">
+            <text  x="306.1416" y="100.65108" id="tspan3477-96">C7</text>
+        </g>
+        <g  xml:space="preserve" xmlns:xml="http://www.w3.org/XML/1998/namespace" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text3475-0">
+            <text  x="334.48807" y="100.65108" id="tspan3477-6">C6</text>
+        </g>
+        <g  xml:space="preserve" xmlns:xml="http://www.w3.org/XML/1998/namespace" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text3475-4">
+            <text  x="362.8345" y="100.65108" id="tspan3477-0">B7</text>
+        </g>
+        <g  xml:space="preserve" xmlns:xml="http://www.w3.org/XML/1998/namespace" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text3475-94">
+            <text  x="391.18097" y="100.65108" id="tspan3477-54">B6</text>
+        </g>
+        <g  xml:space="preserve" xmlns:xml="http://www.w3.org/XML/1998/namespace" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text3475-66">
+            <text  x="419.5274" y="100.65108" id="tspan3477-39">B5</text>
+        </g>
+        <g  xml:space="preserve" xmlns:xml="http://www.w3.org/XML/1998/namespace" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text3475-95">
+            <text  x="447.87387" y="100.65108" id="tspan3477-2">B5</text>
+        </g>
+        <g  xml:space="preserve" xmlns:xml="http://www.w3.org/XML/1998/namespace" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text3475-13">
+            <text  x="476.22031" y="100.65108" id="tspan3477-09">GND</text>
+        </g>
+        <g  xml:space="preserve" xmlns:xml="http://www.w3.org/XML/1998/namespace" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text3475-91">
+            <text  x="504.56677" y="100.65108" id="tspan3477-34">VCC</text>
+        </g>
+        <line  style="fill:none;stroke:#000000;stroke-width:2.78977323;stroke-linecap:butt;stroke-linejoin:round" id="line4482-70-1" y1="226.77161" x1="170.07866" y2="198.42514" x2="170.07866"/>
+        <line  style="fill:none;stroke:#000000;stroke-width:1.00000012;stroke-opacity:1" id="connector25pin" y1="226.77159" x1="170.07864" y2="206.92909" x2="170.07864"/>
+        <rect width="1.000000119999982" x="169.57863994" y="206.42908994" fill="none" height="20.84250011999998" stroke="none" id="connector25terminal" stroke-width="0"/>
+        <line  style="fill:none;stroke:#000000;stroke-width:2.78977323;stroke-linecap:butt;stroke-linejoin:round" id="line4482-70-6" y1="226.77161" x1="198.42511" y2="198.42513" x2="198.42511"/>
+        <line  style="fill:none;stroke:#000000;stroke-width:1.00000012;stroke-opacity:1" id="connector26pin" y1="226.77159" x1="198.42509" y2="206.92908" x2="198.42509"/>
+        <rect width="1.000000119999982" x="197.92508994" y="206.42907994" fill="none" height="20.84251011999999" stroke="none" id="connector26terminal" stroke-width="0"/>
+        <line  style="fill:none;stroke:#000000;stroke-width:2.78977323;stroke-linecap:butt;stroke-linejoin:round" id="line4482-70-3" y1="226.77161" x1="226.77156" y2="198.42513" x2="226.77156"/>
+        <line  style="fill:none;stroke:#000000;stroke-width:1.00000012;stroke-opacity:1" id="connector27pin" y1="226.77159" x1="226.77155" y2="206.92908" x2="226.77155"/>
+        <rect width="1.000000119999982" x="226.27154994" y="206.42907994" fill="none" height="20.84251011999999" stroke="none" id="connector27terminal" stroke-width="0"/>
+        <line  style="fill:none;stroke:#000000;stroke-width:2.78977323;stroke-linecap:butt;stroke-linejoin:round" id="line4482-70-39" y1="226.77161" x1="283.46448" y2="198.42514" x2="283.46448"/>
+        <line  style="fill:none;stroke:#000000;stroke-width:1.00000012;stroke-opacity:1" id="connector29pin" y1="226.77159" x1="283.46445" y2="206.92909" x2="283.46445"/>
+        <rect width="1.000000119999982" x="282.96444994" y="206.42908994" fill="none" height="20.84250011999998" stroke="none" id="connector29terminal" stroke-width="0"/>
+        <line  style="fill:none;stroke:#000000;stroke-width:2.78977323;stroke-linecap:butt;stroke-linejoin:round" id="line4482-70-4" y1="226.77159" x1="311.81088" y2="198.42513" x2="311.81088"/>
+        <line  style="fill:none;stroke:#000000;stroke-width:1.00000012;stroke-opacity:1" id="connector30pin" y1="226.77158" x1="311.81088" y2="206.92908" x2="311.81088"/>
+        <rect width="1.000000119999982" x="311.31087994" y="206.42907994" fill="none" height="20.84250011999998" stroke="none" id="connector30terminal" stroke-width="0"/>
+        <line  style="fill:none;stroke:#000000;stroke-width:2.78977323;stroke-linecap:butt;stroke-linejoin:round" id="line4482-70-41" y1="226.77159" x1="340.15735" y2="198.42513" x2="340.15735"/>
+        <line  style="fill:none;stroke:#000000;stroke-width:1.00000012;stroke-opacity:1" id="connector31pin" y1="226.77158" x1="340.15732" y2="206.92908" x2="340.15732"/>
+        <rect width="1.000000119999982" x="339.65731994" y="206.42907994" fill="none" height="20.84250011999998" stroke="none" id="connector31terminal" stroke-width="0"/>
+        <line  style="fill:none;stroke:#000000;stroke-width:2.78977323;stroke-linecap:butt;stroke-linejoin:round" id="line4482-70-12" y1="226.77159" x1="368.50378" y2="198.42513" x2="368.50378"/>
+        <line  style="fill:none;stroke:#000000;stroke-width:1.00000012;stroke-opacity:1" id="connector32pin" y1="226.77158" x1="368.50378" y2="206.92908" x2="368.50378"/>
+        <rect width="1.000000119999982" x="368.00377994" y="206.42907994" fill="none" height="20.84250011999998" stroke="none" id="connector32terminal" stroke-width="0"/>
+        <line  style="fill:none;stroke:#000000;stroke-width:2.78977323;stroke-linecap:butt;stroke-linejoin:round" id="line4482-70-391" y1="226.77159" x1="396.85025" y2="198.42513" x2="396.85025"/>
+        <line  style="fill:none;stroke:#000000;stroke-width:1.00000012;stroke-opacity:1" id="connector33pin" y1="226.77158" x1="396.85022" y2="206.92908" x2="396.85022"/>
+        <rect width="1.000000119999982" x="396.35021994" y="206.42907994" fill="none" height="20.84250011999998" stroke="none" id="connector33terminal" stroke-width="0"/>
+        <line  style="fill:none;stroke:#000000;stroke-width:2.78977323;stroke-linecap:butt;stroke-linejoin:round" id="line4482-70-8" y1="226.77159" x1="425.19669" y2="198.42513" x2="425.19669"/>
+        <line  style="fill:none;stroke:#000000;stroke-width:1.00000012;stroke-opacity:1" id="connector34pin" y1="226.77158" x1="425.19669" y2="206.92908" x2="425.19669"/>
+        <rect width="1.000000119999982" x="424.69668994" y="206.42907994" fill="none" height="20.84250011999998" stroke="none" id="connector34terminal" stroke-width="0"/>
+        <line  style="fill:none;stroke:#000000;stroke-width:2.78977323;stroke-linecap:butt;stroke-linejoin:round" id="line4482-70-5" y1="226.77159" x1="453.54315" y2="198.42513" x2="453.54315"/>
+        <line  style="fill:none;stroke:#000000;stroke-width:1.00000012;stroke-opacity:1" id="connector35pin" y1="226.77158" x1="453.54312" y2="206.92908" x2="453.54312"/>
+        <rect width="1.000000119999982" x="453.04311994" y="206.42907994" fill="none" height="20.84250011999998" stroke="none" id="connector35terminal" stroke-width="0"/>
+        <line  style="fill:none;stroke:#000000;stroke-width:2.78977323;stroke-linecap:butt;stroke-linejoin:round" id="line4482-70-9" y1="226.77159" x1="481.88959" y2="198.42513" x2="481.88959"/>
+        <line  style="fill:none;stroke:#000000;stroke-width:1.00000012;stroke-opacity:1" id="connector36pin" y1="226.77158" x1="481.88956" y2="206.92908" x2="481.88956"/>
+        <rect width="1.000000119999982" x="481.38955994" y="206.42907994" fill="none" height="20.84250011999998" stroke="none" id="connector36terminal" stroke-width="0"/>
+        <line  style="fill:none;stroke:#000000;stroke-width:2.78977323;stroke-linecap:butt;stroke-linejoin:round" id="line4482-70-63" y1="226.77159" x1="510.23602" y2="198.42513" x2="510.23602"/>
+        <line  style="fill:none;stroke:#000000;stroke-width:1.00000012;stroke-opacity:1" id="connector37pin" y1="226.77158" x1="510.23602" y2="206.92908" x2="510.23602"/>
+        <rect width="1.000000119999982" x="509.73601994" y="206.42907994" fill="none" height="20.84250011999998" stroke="none" id="connector37terminal" stroke-width="0"/>
+        <g  xml:space="preserve" xmlns:xml="http://www.w3.org/XML/1998/namespace" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text3475-10">
+            <text  x="79.369972" y="189.9212" id="tspan3477-41">3V</text>
+        </g>
+        <g  xml:space="preserve" xmlns:xml="http://www.w3.org/XML/1998/namespace" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text3475-7-1">
+            <text  x="107.06646" y="189.9212" id="tspan3477-4-8">E6</text>
+        </g>
+        <g  xml:space="preserve" xmlns:xml="http://www.w3.org/XML/1998/namespace" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text3475-2-6">
+            <text  x="136.06287" y="189.9212" id="tspan3477-5-4">B0</text>
+        </g>
+        <g  xml:space="preserve" xmlns:xml="http://www.w3.org/XML/1998/namespace" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text3475-1-3">
+            <text  x="164.40933" y="189.9212" id="tspan3477-3-4">B1</text>
+        </g>
+        <g  xml:space="preserve" xmlns:xml="http://www.w3.org/XML/1998/namespace" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text3475-6-7">
+            <text  x="192.75577" y="189.9212" id="tspan3477-8-7">B2</text>
+        </g>
+        <g  xml:space="preserve" xmlns:xml="http://www.w3.org/XML/1998/namespace" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text3475-74-0">
+            <text  x="221.10222" y="189.9212" id="tspan3477-9-7">B3</text>
+        </g>
+        <g  xml:space="preserve" xmlns:xml="http://www.w3.org/XML/1998/namespace" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text3475-24-4">
+            <text  x="249.44868" y="189.9212" id="tspan3477-45-5">D0</text>
+        </g>
+        <g  xml:space="preserve" xmlns:xml="http://www.w3.org/XML/1998/namespace" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text3475-9-3">
+            <text  x="277.79517" y="189.9212" id="tspan3477-1-0">D1</text>
+        </g>
+        <g  xml:space="preserve" xmlns:xml="http://www.w3.org/XML/1998/namespace" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text3475-28-7">
+            <text  x="306.1416" y="189.9212" id="tspan3477-96-2">D2</text>
+        </g>
+        <g  xml:space="preserve" xmlns:xml="http://www.w3.org/XML/1998/namespace" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text3475-0-9">
+            <text  x="334.48804" y="189.9212" id="tspan3477-6-9">D3</text>
+        </g>
+        <g  xml:space="preserve" xmlns:xml="http://www.w3.org/XML/1998/namespace" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text3475-4-3">
+            <text  x="362.83447" y="189.9212" id="tspan3477-0-0">D4</text>
+        </g>
+        <g  xml:space="preserve" xmlns:xml="http://www.w3.org/XML/1998/namespace" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text3475-94-2">
+            <text  x="391.18094" y="189.9212" id="tspan3477-54-7">D5</text>
+        </g>
+        <g  xml:space="preserve" xmlns:xml="http://www.w3.org/XML/1998/namespace" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text3475-66-9">
+            <text  x="419.52737" y="189.9212" id="tspan3477-39-9">D6</text>
+        </g>
+        <g  xml:space="preserve" xmlns:xml="http://www.w3.org/XML/1998/namespace" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text3475-95-5">
+            <text  x="447.87384" y="189.9212" id="tspan3477-2-2">D7</text>
+        </g>
+        <g  xml:space="preserve" xmlns:xml="http://www.w3.org/XML/1998/namespace" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text3475-13-0">
+            <text  x="470.55103" y="189.9212" id="tspan3477-09-8">GND</text>
+        </g>
+        <g  xml:space="preserve" xmlns:xml="http://www.w3.org/XML/1998/namespace" style="font-size:9.59999752px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text3475-13-0-8">
+            <text  x="500.39749" y="189.9212" id="tspan3477-09-8-2">RST</text>
+        </g>
+        <line  style="fill:none;stroke:#000000;stroke-width:2.78977323;stroke-linecap:butt;stroke-linejoin:round" id="line4482-30-1" y1="56.692886" x1="566.92896" y2="85.039337" x2="566.92896"/>
+        <line  style="fill:none;stroke:#000000;stroke-width:1.00000012;stroke-opacity:1" id="connector16pin" y1="56.692886" x1="566.92896" y2="76.535393" x2="566.92896"/>
+        <rect width="1.000000120000095" x="566.4289599399999" y="56.19288594" fill="none" height="20.84250712" stroke="none" id="connector16terminal" stroke-width="0"/>
+        <line  style="fill:none;stroke:#000000;stroke-width:2.78977323;stroke-linecap:butt;stroke-linejoin:round" id="line4482-30-5" y1="56.692886" x1="595.27539" y2="85.039337" x2="595.27539"/>
+        <line  style="fill:none;stroke:#000000;stroke-width:1.00000012;stroke-opacity:1" id="connector17pin" y1="56.692886" x1="595.27539" y2="76.5354" x2="595.27539"/>
+        <rect width="1.000000120000095" x="594.77538994" y="56.19288594" fill="none" height="20.84251412" stroke="none" id="connector17terminal" stroke-width="0"/>
+        <line  style="fill:none;stroke:#000000;stroke-width:2.78977323;stroke-linecap:butt;stroke-linejoin:round" id="line4482-30-59" y1="56.692886" x1="623.62189" y2="85.039337" x2="623.62189"/>
+        <line  style="fill:none;stroke:#000000;stroke-width:1.00000012;stroke-opacity:1" id="connector18pin" y1="56.692886" x1="623.62189" y2="76.5354" x2="623.62189"/>
+        <rect width="1.000000120000095" x="623.12188994" y="56.19288594" fill="none" height="20.84251412" stroke="none" id="connector18terminal" stroke-width="0"/>
+        <line  style="fill:none;stroke:#000000;stroke-width:2.78977323;stroke-linecap:butt;stroke-linejoin:round" id="line4482-70-63-8" y1="226.77159" x1="566.92896" y2="198.42513" x2="566.92896"/>
+        <line  style="fill:none;stroke:#000000;stroke-width:1.00000012;stroke-opacity:1" id="connector19pin" y1="226.77158" x1="566.92896" y2="206.92908" x2="566.92896"/>
+        <rect width="1.000000120000095" x="566.4289599399999" y="206.42907994" fill="none" height="20.84250011999998" stroke="none" id="connector19terminal" stroke-width="0"/>
+        <line  style="fill:none;stroke:#000000;stroke-width:2.78977323;stroke-linecap:butt;stroke-linejoin:round" id="line4482-70-63-4" y1="226.77159" x1="595.27539" y2="198.42513" x2="595.27539"/>
+        <line  style="fill:none;stroke:#000000;stroke-width:1.00000012;stroke-opacity:1" id="connector20pin" y1="226.77158" x1="595.27539" y2="206.92908" x2="595.27539"/>
+        <rect width="1.000000120000095" x="594.77538994" y="206.42907994" fill="none" height="20.84250011999998" stroke="none" id="connector20terminal" stroke-width="0"/>
+        <line  style="fill:none;stroke:#000000;stroke-width:2.78977323;stroke-linecap:butt;stroke-linejoin:round" id="line4482-70-63-5" y1="226.77159" x1="623.62183" y2="198.42513" x2="623.62183"/>
+        <line  style="fill:none;stroke:#000000;stroke-width:1.00000012;stroke-opacity:1" id="connector21pin" y1="226.77158" x1="623.62183" y2="206.92908" x2="623.62183"/>
+        <rect width="1.000000120000095" x="623.12182994" y="206.42907994" fill="none" height="20.84250011999998" stroke="none" id="connector21terminal" stroke-width="0"/>
+        <g  xml:space="preserve" xmlns:xml="http://www.w3.org/XML/1998/namespace" style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans" id="text4035" transform="matrix(0.79999983,0,0,0.79999983,-5.25e-5,0)">
+            <text  x="741.04791" y="173.31136" style="font-size:19.99999996000000024px;-inkscape-font-specification:Droid Sans;font-family:Droid Sans" id="tspan4037">ISP</text>
+        </g>
+    </g>
+</svg>

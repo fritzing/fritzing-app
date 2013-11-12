@@ -1,0 +1,293 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="164.7" version="1.2" height="433.70001" viewBox="0 0 1830 4818.8886" id="svg3620">
+
+ <g  id="schematic" transform="translate(0,288.8853)">
+  <rect  width="1200" x="315" y="15" height="4500" style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="rect3623"/>
+  <g style="font-size:235px;text-align:center;line-height:125%;writing-mode:lr;text-anchor:middle;fill:#000000;stroke:none;font-family:Droid Sans" id="label" font-size="235">
+   <text x="905.40253" y="-62.860195" id="tspan4126">PICAXE-28X1</text>
+  </g>
+  <line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line3626" y1="315" x1="15" y2="315" x2="300"/>
+  <rect  width="300" x="0" y="300" height="30" style="fill:none;stroke-width:0" id="connector0pin"/>
+  <rect  width="30" x="0" y="300" height="30" style="fill:none;stroke-width:0" id="connector0terminal"/>
+  <g style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans;text-align:start;writing-mode:lr;line-height:125%" id="label0" font-size="130">
+   <text x="390" y="350" id="tspan4060">Reset</text>
+  </g>
+  <line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line3631" y1="315" x1="1515" y2="315" x2="1815"/>
+  <rect  width="300" x="1530" y="300" height="30" style="fill:none;stroke-width:0" id="connector27pin"/>
+  <rect  width="30" x="1830" y="300" height="30" style="fill:none;stroke-width:0" id="connector27terminal"/>
+  <g style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans;text-align:end;writing-mode:lr;line-height:125%" id="label27" font-size="130">
+   <text x="1440" y="350" id="tspan4062">Out 7</text>
+  </g>
+  <line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line3636" y1="615" x1="15" y2="615" x2="300"/>
+  <rect  width="300" x="0" y="600" height="30" style="fill:none;stroke-width:0" id="connector1pin"/>
+  <rect  width="30" x="0" y="600" height="30" style="fill:none;stroke-width:0" id="connector1terminal"/>
+  <g style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans;text-align:start;writing-mode:lr;line-height:125%" id="label1" font-size="130">
+   <text x="390" y="650" id="tspan4078">In A0</text>
+  </g>
+  <line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line3641" y1="615" x1="1515" y2="615" x2="1815"/>
+  <rect  width="300" x="1530" y="600" height="30" style="fill:none;stroke-width:0" id="connector26pin"/>
+  <rect  width="30" x="1830" y="600" height="30" style="fill:none;stroke-width:0" id="connector26terminal"/>
+  <g style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans;text-align:end;writing-mode:lr;line-height:125%" id="label26" font-size="130">
+   <text x="1440" y="650" id="tspan4064">Out 6</text>
+  </g>
+  <line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line3646" y1="915" x1="15" y2="915" x2="300"/>
+  <rect  width="300" x="0" y="900" height="30" style="fill:none;stroke-width:0" id="connector2pin"/>
+  <rect  width="30" x="0" y="900" height="30" style="fill:none;stroke-width:0" id="connector2terminal"/>
+  <g style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans;text-align:start;writing-mode:lr;line-height:125%" id="label2" font-size="130">
+   <text x="390" y="950" id="tspan4080">In A1</text>
+  </g>
+  <line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line3651" y1="915" x1="1515" y2="915" x2="1815"/>
+  <rect  width="300" x="1530" y="900" height="30" style="fill:none;stroke-width:0" id="connector25pin"/>
+  <rect  width="30" x="1830" y="900" height="30" style="fill:none;stroke-width:0" id="connector25terminal"/>
+  <g style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans;text-align:end;writing-mode:lr;line-height:125%" id="label25" font-size="130">
+   <text x="1440" y="950" id="tspan4066">Out 5</text>
+  </g>
+  <line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line3656" y1="1215" x1="15" y2="1215" x2="300"/>
+  <rect  width="300" x="0" y="1200" height="30" style="fill:none;stroke-width:0" id="connector3pin"/>
+  <rect  width="30" x="0" y="1200" height="30" style="fill:none;stroke-width:0" id="connector3terminal"/>
+  <g style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans;text-align:start;writing-mode:lr;line-height:125%" id="label3" font-size="130">
+   <text x="390" y="1250" id="tspan4082">In A2</text>
+  </g>
+  <line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line3661" y1="1215" x1="1515" y2="1215" x2="1815"/>
+  <rect  width="300" x="1530" y="1200" height="30" style="fill:none;stroke-width:0" id="connector24pin"/>
+  <rect  width="30" x="1830" y="1200" height="30" style="fill:none;stroke-width:0" id="connector24terminal"/>
+  <g style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans;text-align:end;writing-mode:lr;line-height:125%" id="label24" font-size="130">
+   <text x="1440" y="1250" id="tspan4068">Out 4</text>
+  </g>
+  <line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line3666" y1="1515" x1="15" y2="1515" x2="300"/>
+  <rect  width="300" x="0" y="1500" height="30" style="fill:none;stroke-width:0" id="connector4pin"/>
+  <rect  width="30" x="0" y="1500" height="30" style="fill:none;stroke-width:0" id="connector4terminal"/>
+  <g style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans;text-align:start;writing-mode:lr;line-height:125%" id="label4" font-size="130">
+   <text x="390" y="1550" id="tspan4084">In A3</text>
+  </g>
+  <line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line3671" y1="1515" x1="1515" y2="1515" x2="1815"/>
+  <rect  width="300" x="1530" y="1500" height="30" style="fill:none;stroke-width:0" id="connector23pin"/>
+  <rect  width="30" x="1830" y="1500" height="30" style="fill:none;stroke-width:0" id="connector23terminal"/>
+  <g style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans;text-align:end;writing-mode:lr;line-height:125%" id="label23" font-size="130">
+   <text x="1440" y="1550" id="tspan4070">Out 3</text>
+  </g>
+  <line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line3676" y1="1815" x1="15" y2="1815" x2="300"/>
+  <rect  width="300" x="0" y="1800" height="30" style="fill:none;stroke-width:0" id="connector5pin"/>
+  <rect  width="30" x="0" y="1800" height="30" style="fill:none;stroke-width:0" id="connector5terminal"/>
+  <g style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans;text-align:start;writing-mode:lr;line-height:125%" id="label5" font-size="130">
+   <text x="390" y="1850" id="tspan4086">Serial In</text>
+  </g>
+  <line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line3681" y1="1815" x1="1515" y2="1815" x2="1815"/>
+  <rect  width="300" x="1530" y="1800" height="30" style="fill:none;stroke-width:0" id="connector22pin"/>
+  <rect  width="30" x="1830" y="1800" height="30" style="fill:none;stroke-width:0" id="connector22terminal"/>
+  <g style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans;text-align:end;writing-mode:lr;line-height:125%" id="label22" font-size="130">
+   <text x="1440" y="1850" id="tspan4072">Out 2</text>
+  </g>
+  <line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line3686" y1="2115" x1="15" y2="2115" x2="300"/>
+  <rect  width="300" x="0" y="2100" height="30" style="fill:none;stroke-width:0" id="connector6pin"/>
+  <rect  width="30" x="0" y="2100" height="30" style="fill:none;stroke-width:0" id="connector6terminal"/>
+  <g style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans;text-align:start;writing-mode:lr;line-height:125%" id="label6" font-size="130">
+   <text x="390" y="2150" id="tspan4088">Serial Out</text>
+  </g>
+  <line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line3691" y1="2115" x1="1515" y2="2115" x2="1815"/>
+  <rect  width="300" x="1530" y="2100" height="30" style="fill:none;stroke-width:0" id="connector21pin"/>
+  <rect  width="30" x="1830" y="2100" height="30" style="fill:none;stroke-width:0" id="connector21terminal"/>
+  <g style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans;text-align:end;writing-mode:lr;line-height:125%" id="label21" font-size="130">
+   <text x="1440" y="2150" id="tspan4074">Out 1</text>
+  </g>
+  <line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line3696" y1="2415" x1="15" y2="2415" x2="300"/>
+  <rect  width="300" x="0" y="2400" height="30" style="fill:none;stroke-width:0" id="connector7pin"/>
+  <rect  width="30" x="0" y="2400" height="30" style="fill:none;stroke-width:0" id="connector7terminal"/>
+  <g style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans;text-align:start;writing-mode:lr;line-height:125%" id="label7" font-size="130">
+   <text x="390" y="2450" id="tspan4090">0V</text>
+  </g>
+  <line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line3701" y1="2415" x1="1515" y2="2415" x2="1815"/>
+  <rect  width="300" x="1530" y="2400" height="30" style="fill:none;stroke-width:0" id="connector20pin"/>
+  <rect  width="30" x="1830" y="2400" height="30" style="fill:none;stroke-width:0" id="connector20terminal"/>
+  <g style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans;text-align:end;writing-mode:lr;line-height:125%" id="label20" font-size="130">
+   <text x="1440" y="2450" id="tspan4076">Out 0</text>
+  </g>
+  <line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line3706" y1="2715" x1="15" y2="2715" x2="300"/>
+  <rect  width="300" x="0" y="2700" height="30" style="fill:none;stroke-width:0" id="connector8pin"/>
+  <rect  width="30" x="0" y="2700" height="30" style="fill:none;stroke-width:0" id="connector8terminal"/>
+  <g style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans;text-align:start;writing-mode:lr;line-height:125%" id="label8" font-size="130">
+   <text x="390" y="2750" id="tspan4092">Resonator</text>
+  </g>
+  <line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line3711" y1="2715" x1="1515" y2="2715" x2="1815"/>
+  <rect  width="300" x="1530" y="2700" height="30" style="fill:none;stroke-width:0" id="connector19pin"/>
+  <rect  width="30" x="1830" y="2700" height="30" style="fill:none;stroke-width:0" id="connector19terminal"/>
+  <g style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans;text-align:end;writing-mode:lr;line-height:125%" id="label19" font-size="130">
+   <text x="1440" y="2750" id="tspan4120">+V</text>
+  </g>
+  <line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line3716" y1="3015" x1="15" y2="3015" x2="300"/>
+  <rect  width="300" x="0" y="3000" height="30" style="fill:none;stroke-width:0" id="connector9pin"/>
+  <rect  width="30" x="0" y="3000" height="30" style="fill:none;stroke-width:0" id="connector9terminal"/>
+  <g style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans;text-align:start;writing-mode:lr;line-height:125%" id="label9" font-size="130">
+   <text x="390" y="3050" id="tspan4094">Resonator</text>
+  </g>
+  <line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line3721" y1="3015" x1="1515" y2="3015" x2="1815"/>
+  <rect  width="300" x="1530" y="3000" height="30" style="fill:none;stroke-width:0" id="connector18pin"/>
+  <rect  width="30" x="1830" y="3000" height="30" style="fill:none;stroke-width:0" id="connector18terminal"/>
+  <g style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans;text-align:end;writing-mode:lr;line-height:125%" id="label18" font-size="130">
+   <text x="1440" y="3050" id="tspan4118">0V</text>
+  </g>
+  <line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line3726" y1="3315" x1="15" y2="3315" x2="300"/>
+  <rect  width="300" x="0" y="3300" height="30" style="fill:none;stroke-width:0" id="connector10pin"/>
+  <rect  width="30" x="0" y="3300" height="30" style="fill:none;stroke-width:0" id="connector10terminal"/>
+  <g style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans;text-align:start;writing-mode:lr;line-height:125%" id="label10" font-size="130">
+   <text x="390" y="3350" id="tspan4100">In 0</text>
+  </g>
+  <line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line3731" y1="3315" x1="1515" y2="3315" x2="1815"/>
+  <rect  width="300" x="1530" y="3300" height="30" style="fill:none;stroke-width:0" id="connector17pin"/>
+  <rect  width="30" x="1830" y="3300" height="30" style="fill:none;stroke-width:0" id="connector17terminal"/>
+  <g style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans;text-align:end;writing-mode:lr;line-height:125%" id="label17" font-size="130">
+   <text x="1440" y="3350" id="tspan4102">In 7</text>
+  </g>
+  <line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line3736" y1="3615" x1="15" y2="3615" x2="300"/>
+  <rect  width="300" x="0" y="3600" height="30" style="fill:none;stroke-width:0" id="connector11pin"/>
+  <rect  width="30" x="0" y="3600" height="30" style="fill:none;stroke-width:0" id="connector11terminal"/>
+  <g style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans;text-align:start;writing-mode:lr;line-height:125%" id="label11" font-size="130">
+   <text x="390" y="3650" id="tspan4108">In 1</text>
+  </g>
+  <line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line3741" y1="3615" x1="1515" y2="3615" x2="1815"/>
+  <rect  width="300" x="1530" y="3600" height="30" style="fill:none;stroke-width:0" id="connector16pin"/>
+  <rect  width="30" x="1830" y="3600" height="30" style="fill:none;stroke-width:0" id="connector16terminal"/>
+  <g style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans;text-align:end;writing-mode:lr;line-height:125%" id="label16" font-size="130">
+   <text x="1440" y="3650" id="tspan4116">In 6</text>
+  </g>
+  <line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line3746" y1="3915" x1="15" y2="3915" x2="300"/>
+  <rect  width="300" x="0" y="3900" height="30" style="fill:none;stroke-width:0" id="connector12pin"/>
+  <rect  width="30" x="0" y="3900" height="30" style="fill:none;stroke-width:0" id="connector12terminal"/>
+  <g style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans;text-align:start;writing-mode:lr;line-height:125%" id="label12" font-size="130">
+   <text x="390" y="3950" id="tspan4106">In 2</text>
+  </g>
+  <line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line3751" y1="3915" x1="1515" y2="3915" x2="1815"/>
+  <rect  width="300" x="1530" y="3900" height="30" style="fill:none;stroke-width:0" id="connector15pin"/>
+  <rect  width="30" x="1830" y="3900" height="30" style="fill:none;stroke-width:0" id="connector15terminal"/>
+  <g style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans;text-align:end;writing-mode:lr;line-height:125%" id="label15" font-size="130">
+   <text x="1440" y="3950" id="tspan4114">In 5</text>
+  </g>
+  <line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line3756" y1="4215" x1="15" y2="4215" x2="300"/>
+  <rect  width="300" x="0" y="4200" height="30" style="fill:none;stroke-width:0" id="connector13pin"/>
+  <rect  width="30" x="0" y="4200" height="30" style="fill:none;stroke-width:0" id="connector13terminal"/>
+  <g style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans;text-align:start;writing-mode:lr;line-height:125%" id="label13" font-size="130">
+   <text x="390" y="4250" id="tspan4110">In 3</text>
+  </g>
+  <line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line3761" y1="4215" x1="1515" y2="4215" x2="1815"/>
+  <rect  width="300" x="1530" y="4200" height="30" style="fill:none;stroke-width:0" id="connector14pin"/>
+  <rect  width="30" x="1830" y="4200" height="30" style="fill:none;stroke-width:0" id="connector14terminal"/>
+  <g style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans;text-align:end;writing-mode:lr;line-height:125%" id="label14" font-size="130">
+   <text x="1440" y="4250" id="tspan4112">In 4</text>
+  </g>
+  <rect  width="30.000002" x="1829.2106" y="890.08331" height="30.000002" style="fill:none;stroke-width:0" id="connector35terminal"/>
+  <rect  width="30.000002" x="1829.2106" y="1190.0831" height="30.000002" style="fill:none;stroke-width:0" id="connector34terminal"/>
+  <rect  width="30.000002" x="1829.2106" y="1490.0833" height="30.000002" style="fill:none;stroke-width:0" id="connector33terminal"/>
+  <rect  width="30.000002" x="1829.2106" y="1790.0833" height="30.000002" style="fill:none;stroke-width:0" id="connector32terminal"/>
+  <rect  width="30.000002" x="1829.2106" y="2090.0833" height="30.000002" style="fill:none;stroke-width:0" id="connector31terminal"/>
+  <rect  width="30.000002" x="1829.2106" y="2390.0833" height="30.000002" style="fill:none;stroke-width:0" id="connector30terminal"/>
+  <rect  width="30.000002" x="1829.2106" y="2690.0833" height="30.000002" style="fill:none;stroke-width:0" id="connector29terminal"/>
+  <rect  width="30.000002" x="1829.2106" y="2990.0833" height="30.000002" style="fill:none;stroke-width:0" id="connector28terminal"/>
+  <rect  width="30.000002" x="1829.2106" y="3290.083" height="30.000002" style="fill:none;stroke-width:0" id="connector27terminal-1"/>
+  <rect  width="30.000002" x="1829.2106" y="3590.0833" height="30.000002" style="fill:none;stroke-width:0" id="connector26terminal-1"/>
+  <rect  width="30.000002" x="1829.2106" y="3890.0833" height="30.000002" style="fill:none;stroke-width:0" id="connector25terminal-5"/>
+  <rect  width="30.000002" x="1829.2106" y="4190.0835" height="30.000002" style="fill:none;stroke-width:0" id="connector24terminal-2"/>
+  <g style="font-size:130px;text-align:start;line-height:125%;writing-mode:lr;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans" id="label0-1-2-4" font-size="130">
+   <text x="1626.6927" y="2067.2244" id="tspan4044">22</text>
+  </g>
+  <g style="font-size:130px;text-align:start;line-height:125%;writing-mode:lr;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans" id="label0-0-3-5" font-size="130">
+   <text x="1620.7408" y="2359.29" id="tspan4046">21</text>
+  </g>
+  <g style="font-size:130px;text-align:start;line-height:125%;writing-mode:lr;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans" id="label0-5-1-7" font-size="130">
+   <text x="1619.566" y="1773.6865" id="tspan4042">23</text>
+  </g>
+  <g style="font-size:130px;text-align:start;line-height:125%;writing-mode:lr;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans" id="label0-11-87-1" font-size="130">
+   <text x="1625.2523" y="1470.842" id="tspan4040">24</text>
+  </g>
+  <g style="font-size:130px;text-align:start;line-height:125%;writing-mode:lr;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans" id="label0-7-27-2" font-size="130">
+   <text x="1630.4288" y="1165.8698" id="tspan4038">25</text>
+  </g>
+  <g style="font-size:130px;text-align:start;line-height:125%;writing-mode:lr;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans" id="label0-4-3-6" font-size="130">
+   <text x="1629.9042" y="864.03912" id="tspan4036">26</text>
+  </g>
+  <g style="font-size:130px;text-align:start;line-height:125%;writing-mode:lr;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans" id="label0-7-27-50" font-size="130">
+   <text x="1611.2606" y="4163.1997" id="tspan4058">15</text>
+  </g>
+  <g style="font-size:130px;text-align:start;line-height:125%;writing-mode:lr;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans" id="label0-4-3-8" font-size="130">
+   <text x="1620.8942" y="3861.9558" id="tspan4056">16</text>
+  </g>
+  <g style="font-size:130px;text-align:start;line-height:125%;writing-mode:lr;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans" id="label0-2-9-02" font-size="130">
+   <text x="1630.3893" y="3559.8147" id="tspan4054">17</text>
+  </g>
+  <g style="font-size:130px;text-align:start;line-height:125%;writing-mode:lr;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans" id="label0-2-9-1-8" font-size="130">
+   <text x="1632.993" y="3256.1624" id="tspan4052">18</text>
+  </g>
+  <g style="font-size:130px;text-align:start;line-height:125%;writing-mode:lr;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans" id="label0-2-9-0-5" font-size="130">
+   <text x="1628.2159" y="2966.1184" id="tspan4050">19</text>
+  </g>
+  <g style="font-size:130px;text-align:start;line-height:125%;writing-mode:lr;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans" id="label0-2-9-8-9" font-size="130">
+   <text x="1620.3593" y="2666.5315" id="tspan4048">20</text>
+  </g>
+  <g style="font-size:130px;text-align:start;line-height:125%;writing-mode:lr;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans" id="label0-4-3-6-7" font-size="130">
+   <text x="1626.6724" y="554.56219" id="tspan4034">27</text>
+  </g>
+  <g style="font-size:130px;text-align:start;line-height:125%;writing-mode:lr;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans" id="label0-4-3-6-4" font-size="130">
+   <text x="1617.075" y="257.04095" id="tspan4032">28</text>
+  </g>
+  
+ <g   transform="translate(0,288.8853)">
+ <rect  width="30.000002" x="23.213112" y="610.50391" height="30.000002" style="fill:none;stroke-width:0" id="connector0terminal-1"/>
+ <rect  width="30.000002" x="23.213112" y="910.50385" height="30.000002" style="fill:none;stroke-width:0" id="connector1terminal-7"/>
+ <rect  width="30.000002" x="23.213112" y="1210.5038" height="30.000002" style="fill:none;stroke-width:0" id="connector2terminal-4"/>
+ <rect  width="30.000002" x="23.213112" y="1510.5039" height="30.000002" style="fill:none;stroke-width:0" id="connector3terminal-0"/>
+ <rect  width="30.000002" x="23.213112" y="1810.5039" height="30.000002" style="fill:none;stroke-width:0" id="connector4terminal-9"/>
+ <rect  width="30.000002" x="23.213112" y="2110.5046" height="30.000002" style="fill:none;stroke-width:0" id="connector5terminal-4"/>
+ <rect  width="30.000002" x="23.213112" y="2410.5068" height="30.000002" style="fill:none;stroke-width:0" id="connector6terminal-8"/>
+ <rect  width="30.000002" x="23.213112" y="2710.5068" height="30.000002" style="fill:none;stroke-width:0" id="connector7terminal-8"/>
+ <rect  width="30.000002" x="23.213112" y="3010.5068" height="30.000002" style="fill:none;stroke-width:0" id="connector8terminal-2"/>
+ <rect  width="30.000002" x="23.213112" y="3310.5068" height="30.000002" style="fill:none;stroke-width:0" id="connector9terminal-4"/>
+ <rect  width="30.000002" x="23.213112" y="3610.5068" height="30.000002" style="fill:none;stroke-width:0" id="connector10terminal-5"/>
+ <rect  width="30.000002" x="23.213112" y="3910.5068" height="30.000002" style="fill:none;stroke-width:0" id="connector11terminal-5"/>
+ <rect  width="30.000002" x="23.213112" y="4210.5044" height="30.000002" style="fill:none;stroke-width:0" id="connector12terminal-1"/>
+ <rect  width="30.000002" x="23.213112" y="4510.5005" height="30.000002" style="fill:none;stroke-width:0" id="connector13terminal-7"/>
+ <g style="font-size:130px;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans" id="label0-1-2" font-size="130">
+  <text x="142.155" y="865.31146" id="tspan3194">2</text>
+ </g>
+ <g style="font-size:130px;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans" id="label0-0-3" font-size="130">
+  <text x="152.86984" y="564.72888" id="tspan3192">1</text>
+ </g>
+ <g style="font-size:130px;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans" id="label0-5-1" font-size="130">
+  <text x="150.32004" y="1165.2083" id="tspan3196">3</text>
+ </g>
+ <g style="font-size:130px;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans" id="label0-11-87" font-size="130">
+  <text x="138.83493" y="1462.8688" id="tspan3198">4</text>
+ </g>
+ <g style="font-size:130px;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans" id="label0-7-27" font-size="130">
+  <text x="145.89108" y="1760.7858" id="tspan3200">5</text>
+ </g>
+ <g style="font-size:130px;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans" id="label0-4-3" font-size="130">
+  <text x="139.811" y="2071.947" id="tspan3202">6</text>
+ </g>
+ <g style="font-size:130px;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans" id="label0-2-9" font-size="130">
+  <text x="127.2424" y="2367.3452" id="tspan3204">7</text>
+ </g>
+ <g style="font-size:130px;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans" id="label0-2-9-1" font-size="130">
+  <text x="137.28122" y="2661.6482" id="tspan3229">8</text>
+ </g>
+ <g style="font-size:130px;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans" id="label0-2-9-0" font-size="130">
+  <text x="153.24899" y="2968.1772" id="tspan3231">9</text>
+ </g>
+ <g style="font-size:130px;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans" id="label0-2-9-8" font-size="130">
+  <text x="71.462135" y="3267.3889" id="tspan3556">10</text>
+ </g>
+ <g style="font-size:130px;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans" id="label0-1-2-7" font-size="130">
+  <text x="76.391335" y="3868.459" id="tspan3552">12</text>
+ </g>
+ <g style="font-size:130px;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans" id="label0-0-3-1" font-size="130">
+  <text x="79.671364" y="3560.4409" id="tspan3554">11</text>
+ </g>
+ <g style="font-size:130px;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans" id="label0-5-1-9" font-size="130">
+  <text x="84.556618" y="4168.3521" id="tspan3546">13</text>
+ </g>
+ <g style="font-size:130px;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans" id="label0-11-87-7" font-size="130">
+  <text x="87.941879" y="4466.0034" id="tspan3548">14</text>
+ </g>
+ </g>
+ </g>
+ 
+
+</svg>

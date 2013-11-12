@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1 Basic//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-basic.dtd">
+<svg version="1.1" baseProfile="basic" id="Ebene_1"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1.533in" height="0.672in"
+	 viewBox="0 0 110.4 48.4" xml:space="preserve">
+<g id="schematic">
+<rect id="connector0pin" x="1.2" y="23.2" fill="none" width="10" height="2"/>
+<rect id="connector1pin" x="99.2" y="23.2" fill="none" width="10" height="2"/>
+<rect id="connector0terminal" x="1.2" y="23.2" fill="none" width="2" height="2"/>
+<rect id="connector1terminal" x="107.2" y="23.2" fill="none" width="2" height="2"/>
+	<g id="diagram">
+		
+			<circle fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" cx="55.2" cy="24.2" r="23"/>
+		
+			<line fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" x1="1.2" y1="24.2" x2="32.2" y2="24.2"/>
+		
+			<line fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" x1="29.366" y1="47.2" x2="81.035" y2="47.2"/>
+		
+			<line fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" x1="78.2" y1="24.2" x2="109.2" y2="24.2"/>
+	</g>
+</g>
+</svg>

@@ -1,0 +1,182 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- Created with Fritzing (http://www.fritzing.org/) -->
+<svg width="427.39993" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" x="0in" version="1.2" y="0in" xmlns="http://www.w3.org/2000/svg" height="569.69995" viewBox="0 0 4748.8881 6330" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:cc="http://creativecommons.org/ns#" id="svg3871" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:svg="http://www.w3.org/2000/svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape">
+ <g id="schematic">
+  <metadata id="metadata4081">
+   <rdf:RDF>
+    <cc:Work rdf:about="">
+     <dc:format>image/svg+xml</dc:format>
+     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+     <dc:title/>
+    </cc:Work>
+   </rdf:RDF>
+  </metadata>
+  <defs id="defs4079">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>></defs>
+  <sodipodi:namedview fit-margin-top="0" fit-margin-left="0" showgrid="false" fit-margin-bottom="0" objecttolerance="10" pagecolor="#ffffff" bordercolor="#666666" id="namedview4077" borderopacity="1" guidetolerance="10" gridtolerance="10" fit-margin-right="0"/>
+  <text x="6162.9385" y="3142.0222" style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans" id="label29" font-size="130"/>
+  <g id="g4266">
+   <rect width="4093.668" x="314.99991" y="15" height="6300" style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="rect3874"/>
+   <text x="2430.2434" y="298.61777" style="font-size:235px;text-anchor:middle;fill:#000000;stroke:none;font-family:Droid Sans" id="label" font-size="235">Atmega644</text>
+   <line style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line3877" y1="315" x1="14.999791" y2="315" x2="299.99991"/>
+   <rect width="300" x="-0.00021000663" y="299.99997" height="30" style="fill:none;stroke-width:0" id="connector0pin"/>
+   <rect width="30" x="-0.00021000663" y="299.99997" height="30" style="fill:none;stroke-width:0" id="connector0terminal"/>
+   <text x="389.99991" y="350" style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans" id="label0" font-size="130">1PB0:PCINT8/XCK0/T0</text>
+   <line style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line3882" y1="315" x1="4403.8887" y2="315" x2="4703.8887"/>
+   <rect width="300" x="4418.8887" y="299.99997" height="30" style="fill:none;stroke-width:0" id="connector39pin"/>
+   <rect width="30" x="4718.8882" y="299.99997" height="30" style="fill:none;stroke-width:0" id="connector39terminal"/>
+   <text x="4328.8887" y="350" style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans" id="label39" font-size="130">ADC0/PCINT0:PA0 40</text>
+   <line style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line3887" y1="615" x1="14.999791" y2="615" x2="299.99991"/>
+   <rect width="300" x="-0.00021000663" y="600" height="30" style="fill:none;stroke-width:0" id="connector1pin"/>
+   <rect width="30" x="-0.00021000663" y="600" height="30" style="fill:none;stroke-width:0" id="connector1terminal"/>
+   <text x="389.99991" y="650" style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans" id="label1" font-size="130">2PB1:PCINT9/CLKO/T1</text>
+   <line style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line3892" y1="615" x1="4403.8887" y2="615" x2="4703.8887"/>
+   <rect width="300" x="4418.8887" y="600" height="30" style="fill:none;stroke-width:0" id="connector38pin"/>
+   <rect width="30" x="4718.8882" y="600" height="30" style="fill:none;stroke-width:0" id="connector38terminal"/>
+   <text x="4328.8887" y="650" style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans" id="label38" font-size="130">ADC1/PCINT1:PA1 39</text>
+   <line style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line3897" y1="915.00012" x1="14.999791" y2="915.00012" x2="299.99991"/>
+   <rect width="300" x="-0.00021000663" y="900.00012" height="30" style="fill:none;stroke-width:0" id="connector2pin"/>
+   <rect width="30" x="-0.00021000663" y="900.00012" height="30" style="fill:none;stroke-width:0" id="connector2terminal"/>
+   <text x="389.99991" y="950.00012" style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans" id="label2" font-size="130">3 PB2:PCINT10/INT2/AIN0</text>
+   <line style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line3902" y1="915.00012" x1="4403.8887" y2="915.00012" x2="4703.8887"/>
+   <rect width="300" x="4418.8887" y="900.00012" height="30" style="fill:none;stroke-width:0" id="connector37pin"/>
+   <rect width="30" x="4718.8882" y="900.00012" height="30" style="fill:none;stroke-width:0" id="connector37terminal"/>
+   <text x="4328.8887" y="950.00012" style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans" id="label37" font-size="130">ADC2/PCINT2:PA2 38</text>
+   <line style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line3907" y1="1215" x1="14.999791" y2="1215" x2="299.99991"/>
+   <rect width="300" x="-0.00021000663" y="1200" height="30" style="fill:none;stroke-width:0" id="connector3pin"/>
+   <rect width="30" x="-0.00021000663" y="1200" height="30" style="fill:none;stroke-width:0" id="connector3terminal"/>
+   <text x="389.99991" y="1250" style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans" id="label3" font-size="130">4 PB3:PCINT11/OC0A/AIN1</text>
+   <line style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line3912" y1="1215" x1="4403.8887" y2="1215" x2="4703.8887"/>
+   <rect width="300" x="4418.8887" y="1200" height="30" style="fill:none;stroke-width:0" id="connector36pin"/>
+   <rect width="30" x="4718.8882" y="1200" height="30" style="fill:none;stroke-width:0" id="connector36terminal"/>
+   <text x="4328.8887" y="1250" style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans" id="label36" font-size="130">ADC3/PCINT3:PA3 37</text>
+   <line style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line3917" y1="1515" x1="14.999791" y2="1515" x2="299.99991"/>
+   <rect width="300" x="-0.00021000663" y="1500" height="30" style="fill:none;stroke-width:0" id="connector4pin"/>
+   <rect width="30" x="-0.00021000663" y="1500" height="30" style="fill:none;stroke-width:0" id="connector4terminal"/>
+   <text x="389.99991" y="1550" style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans" id="label4" font-size="130">5 PB4:PCINT12/OC0B/SS</text>
+   <line style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line3922" y1="1515" x1="4403.8887" y2="1515" x2="4703.8887"/>
+   <rect width="300" x="4418.8887" y="1500" height="30" style="fill:none;stroke-width:0" id="connector35pin"/>
+   <rect width="30" x="4718.8882" y="1500" height="30" style="fill:none;stroke-width:0" id="connector35terminal"/>
+   <text x="4328.8887" y="1550" style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans" id="label35" font-size="130">ADC4/PCINT4:PA4 36</text>
+   <line style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line3927" y1="1815" x1="14.999791" y2="1815" x2="299.99991"/>
+   <rect width="300" x="-0.00021000663" y="1800" height="30" style="fill:none;stroke-width:0" id="connector5pin"/>
+   <rect width="30" x="-0.00021000663" y="1800" height="30" style="fill:none;stroke-width:0" id="connector5terminal"/>
+   <text x="389.99991" y="1850" style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans" id="label5" font-size="130">6 PB5:PCINT13/MOSI</text>
+   <line style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line3932" y1="1815" x1="4403.8887" y2="1815" x2="4703.8887"/>
+   <rect width="300" x="4418.8887" y="1800" height="30" style="fill:none;stroke-width:0" id="connector34pin"/>
+   <rect width="30" x="4718.8882" y="1800" height="30" style="fill:none;stroke-width:0" id="connector34terminal"/>
+   <text x="4328.8887" y="1850" style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans" id="label34" font-size="130">ADC5/PCINT5:PA5 35</text>
+   <line style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line3937" y1="2115" x1="14.999791" y2="2115" x2="299.99991"/>
+   <rect width="300" x="-0.00021000663" y="2100" height="30" style="fill:none;stroke-width:0" id="connector6pin"/>
+   <rect width="30" x="-0.00021000663" y="2100" height="30" style="fill:none;stroke-width:0" id="connector6terminal"/>
+   <text x="389.99991" y="2150" style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans" id="label6" font-size="130">7 PB6:PCINT14/MISO</text>
+   <line style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line3942" y1="2115" x1="4403.8887" y2="2115" x2="4703.8887"/>
+   <rect width="300" x="4418.8887" y="2100" height="30" style="fill:none;stroke-width:0" id="connector33pin"/>
+   <rect width="30" x="4718.8882" y="2100" height="30" style="fill:none;stroke-width:0" id="connector33terminal"/>
+   <text x="4328.8887" y="2150" style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans" id="label33" font-size="130">ADC6/PCINT6:PA6 34</text>
+   <line style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line3947" y1="2415" x1="14.999791" y2="2415" x2="299.99991"/>
+   <rect width="300" x="-0.00021000663" y="2400" height="30" style="fill:none;stroke-width:0" id="connector7pin"/>
+   <rect width="30" x="-0.00021000663" y="2400" height="30" style="fill:none;stroke-width:0" id="connector7terminal"/>
+   <text x="389.99991" y="2450" style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans" id="label7" font-size="130">8 PB7:PCINT15/SCK</text>
+   <line style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line3952" y1="2415" x1="4403.8887" y2="2415" x2="4703.8887"/>
+   <rect width="300" x="4418.8887" y="2400" height="30" style="fill:none;stroke-width:0" id="connector32pin"/>
+   <rect width="30" x="4718.8882" y="2400" height="30" style="fill:none;stroke-width:0" id="connector32terminal"/>
+   <text x="4328.8887" y="2450" style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans" id="label32" font-size="130">ADC7/PCINT7:PA7 33</text>
+   <line style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line3957" y1="2715" x1="14.999791" y2="2715" x2="299.99991"/>
+   <rect width="300" x="-0.00021000663" y="2700" height="30" style="fill:none;stroke-width:0" id="connector8pin"/>
+   <rect width="30" x="-0.00021000663" y="2700" height="30" style="fill:none;stroke-width:0" id="connector8terminal"/>
+   <text x="389.99991" y="2750" style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans" id="label8" font-size="130">9 RESET</text>
+   <line style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line3962" y1="2715" x1="4403.8887" y2="2715" x2="4703.8887"/>
+   <rect width="300" x="4418.8887" y="2700" height="30" style="fill:none;stroke-width:0" id="connector31pin"/>
+   <rect width="30" x="4718.8882" y="2700" height="30" style="fill:none;stroke-width:0" id="connector31terminal"/>
+   <text x="4328.8887" y="2750" style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans" id="label31" font-size="130">AREF 32</text>
+   <line style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line3967" y1="3015" x1="14.999791" y2="3015" x2="299.99991"/>
+   <rect width="300" x="-0.00021000663" y="3000" height="30" style="fill:none;stroke-width:0" id="connector9pin"/>
+   <rect width="30" x="-0.00021000663" y="3000" height="30" style="fill:none;stroke-width:0" id="connector9terminal"/>
+   <text x="389.99991" y="3050" style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans" id="label9" font-size="130">10 VCC</text>
+   <line style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line3972" y1="3015" x1="4403.8887" y2="3015" x2="4703.8887"/>
+   <rect width="300" x="4418.8887" y="3000" height="30" style="fill:none;stroke-width:0" id="connector30pin"/>
+   <rect width="30" x="4718.8882" y="3000" height="30" style="fill:none;stroke-width:0" id="connector30terminal"/>
+   <text x="4328.8887" y="3050" style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans" id="label30" font-size="130">GND 31</text>
+   <line style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line3977" y1="3315" x1="14.999791" y2="3315" x2="299.99991"/>
+   <rect width="300" x="-0.00021000663" y="3300" height="30" style="fill:none;stroke-width:0" id="connector10pin"/>
+   <rect width="30" x="-0.00021000663" y="3300" height="30" style="fill:none;stroke-width:0" id="connector10terminal"/>
+   <text x="389.99991" y="3350" style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans" id="label10" font-size="130">11 GND</text>
+   <line style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line3982" y1="3315" x1="4403.8887" y2="3315" x2="4703.8887"/>
+   <rect width="300" x="4418.8887" y="3300" height="30" style="fill:none;stroke-width:0" id="connector29pin"/>
+   <rect width="30" x="4718.8882" y="3300" height="30" style="fill:none;stroke-width:0" id="connector29terminal"/>
+   <text x="4328.8887" y="3350" style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans" id="text4245" font-size="130">AVCC 30</text>
+   <line style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line3987" y1="3615" x1="14.999791" y2="3615" x2="299.99991"/>
+   <rect width="300" x="-0.00021000663" y="3600" height="30" style="fill:none;stroke-width:0" id="connector11pin"/>
+   <rect width="30" x="-0.00021000663" y="3600" height="30" style="fill:none;stroke-width:0" id="connector11terminal"/>
+   <text x="389.99991" y="3650" style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans" id="label11" font-size="130">12 XTAL2</text>
+   <line style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line3992" y1="3615" x1="4403.8887" y2="3615" x2="4703.8887"/>
+   <rect width="300" x="4418.8887" y="3600" height="30" style="fill:none;stroke-width:0" id="connector28pin"/>
+   <rect width="30" x="4718.8882" y="3600" height="30" style="fill:none;stroke-width:0" id="connector28terminal"/>
+   <text x="4328.8887" y="3650" style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans" id="label28" font-size="130">TOSC2/PCINT23:PC7 29</text>
+   <line style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line3997" y1="3915.0002" x1="14.999791" y2="3915.0002" x2="299.99991"/>
+   <rect width="300" x="-0.00021000663" y="3900.0002" height="30" style="fill:none;stroke-width:0" id="connector12pin"/>
+   <rect width="30" x="-0.00021000663" y="3900.0002" height="30" style="fill:none;stroke-width:0" id="connector12terminal"/>
+   <text x="389.99991" y="3950.0002" style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans" id="label12" font-size="130">13 XTAL1</text>
+   <line style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line4002" y1="3915.0002" x1="4403.8887" y2="3915.0002" x2="4703.8887"/>
+   <rect width="300" x="4418.8887" y="3900.0002" height="30" style="fill:none;stroke-width:0" id="connector27pin"/>
+   <rect width="30" x="4718.8882" y="3900.0002" height="30" style="fill:none;stroke-width:0" id="connector27terminal"/>
+   <text x="4328.8887" y="3950.0002" style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans" id="label27" font-size="130">TOSC1/PCINT22:PC6 28</text>
+   <line style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line4007" y1="4215" x1="14.999791" y2="4215" x2="299.99991"/>
+   <rect width="300" x="-0.00021000663" y="4200" height="30" style="fill:none;stroke-width:0" id="connector13pin"/>
+   <rect width="30" x="-0.00021000663" y="4200" height="30" style="fill:none;stroke-width:0" id="connector13terminal"/>
+   <text x="389.99991" y="4250" style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans" id="label13" font-size="130">14 PD0:PCINT24/RXD0</text>
+   <line style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line4012" y1="4215" x1="4403.8887" y2="4215" x2="4703.8887"/>
+   <rect width="300" x="4418.8887" y="4200" height="30" style="fill:none;stroke-width:0" id="connector26pin"/>
+   <rect width="30" x="4718.8882" y="4200" height="30" style="fill:none;stroke-width:0" id="connector26terminal"/>
+   <text x="4328.8887" y="4250" style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans" id="label26" font-size="130">TDI/PCINT21:PC5 27</text>
+   <line style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line4017" y1="4515" x1="14.999791" y2="4515" x2="299.99991"/>
+   <rect width="300" x="-0.00021000663" y="4500" height="30" style="fill:none;stroke-width:0" id="connector14pin"/>
+   <rect width="30" x="-0.00021000663" y="4500" height="30" style="fill:none;stroke-width:0" id="connector14terminal"/>
+   <text x="389.99991" y="4550" style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans" id="label14" font-size="130">15 PD1:PCINT25/TXD0</text>
+   <line style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line4022" y1="4515" x1="4403.8887" y2="4515" x2="4703.8887"/>
+   <rect width="300" x="4418.8887" y="4500" height="30" style="fill:none;stroke-width:0" id="connector25pin"/>
+   <rect width="30" x="4718.8882" y="4500" height="30" style="fill:none;stroke-width:0" id="connector25terminal"/>
+   <text x="4328.8887" y="4550" style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans" id="label25" font-size="130">TDO/PCINT20:PC4 26</text>
+   <line style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line4027" y1="4815" x1="14.999791" y2="4815" x2="299.99991"/>
+   <rect width="300" x="-0.00021000663" y="4800" height="30" style="fill:none;stroke-width:0" id="connector15pin"/>
+   <rect width="30" x="-0.00021000663" y="4800" height="30" style="fill:none;stroke-width:0" id="connector15terminal"/>
+   <text x="389.99991" y="4850" style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans" id="label15" font-size="130">16 PD2:PCINT26/INT0</text>
+   <line style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line4032" y1="4815" x1="4403.8887" y2="4815" x2="4703.8887"/>
+   <rect width="300" x="4418.8887" y="4800" height="30" style="fill:none;stroke-width:0" id="connector24pin"/>
+   <rect width="30" x="4718.8882" y="4800" height="30" style="fill:none;stroke-width:0" id="connector24terminal"/>
+   <text x="4328.8887" y="4850" style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans" id="label24" font-size="130">TMS/PCINT19:PC3 25</text>
+   <line style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line4037" y1="5115" x1="14.999791" y2="5115" x2="299.99991"/>
+   <rect width="300" x="-0.00021000663" y="5100" height="30" style="fill:none;stroke-width:0" id="connector16pin"/>
+   <rect width="30" x="-0.00021000663" y="5100" height="30" style="fill:none;stroke-width:0" id="connector16terminal"/>
+   <text x="389.99991" y="5150" style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans" id="label16" font-size="130">17 PD3:PCINT27/INT1</text>
+   <line style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line4042" y1="5115" x1="4403.8887" y2="5115" x2="4703.8887"/>
+   <rect width="300" x="4418.8887" y="5100" height="30" style="fill:none;stroke-width:0" id="connector23pin"/>
+   <rect width="30" x="4718.8882" y="5100" height="30" style="fill:none;stroke-width:0" id="connector23terminal"/>
+   <text x="4328.8887" y="5150" style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans" id="label23" font-size="130">TCK/PCINT18:PC2 24</text>
+   <line style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line4047" y1="5415" x1="14.999791" y2="5415" x2="299.99991"/>
+   <rect width="300" x="-0.00021000663" y="5400" height="30" style="fill:none;stroke-width:0" id="connector17pin"/>
+   <rect width="30" x="-0.00021000663" y="5400" height="30" style="fill:none;stroke-width:0" id="connector17terminal"/>
+   <text x="389.99991" y="5450" style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans" id="label17" font-size="130">18 PD4:PCINT28/OC1B</text>
+   <line style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line4052" y1="5415" x1="4403.8887" y2="5415" x2="4703.8887"/>
+   <rect width="300" x="4418.8887" y="5400" height="30" style="fill:none;stroke-width:0" id="connector22pin"/>
+   <rect width="30" x="4718.8882" y="5400" height="30" style="fill:none;stroke-width:0" id="connector22terminal"/>
+   <text x="4328.8887" y="5450" style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans" id="label22" font-size="130">SDA/PCINT17:PC1 23</text>
+   <line style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line4057" y1="5715" x1="14.999791" y2="5715" x2="299.99991"/>
+   <rect width="300" x="-0.00021000663" y="5700" height="30" style="fill:none;stroke-width:0" id="connector18pin"/>
+   <rect width="30" x="-0.00021000663" y="5700" height="30" style="fill:none;stroke-width:0" id="connector18terminal"/>
+   <text x="389.99991" y="5750" style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans" id="label18" font-size="130">19 PD5:PCINT29/OC1A</text>
+   <line style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line4062" y1="5715" x1="4403.8887" y2="5715" x2="4703.8887"/>
+   <rect width="300" x="4418.8887" y="5700" height="30" style="fill:none;stroke-width:0" id="connector21pin"/>
+   <rect width="30" x="4718.8882" y="5700" height="30" style="fill:none;stroke-width:0" id="connector21terminal"/>
+   <text x="4328.8887" y="5750" style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans" id="label21" font-size="130">SCL/PCINT16:PC0 22</text>
+   <line style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line4067" y1="6015" x1="14.999791" y2="6015" x2="299.99991"/>
+   <rect width="300" x="-0.00021000663" y="6000" height="30" style="fill:none;stroke-width:0" id="connector19pin"/>
+   <rect width="30" x="-0.00021000663" y="6000" height="30" style="fill:none;stroke-width:0" id="connector19terminal"/>
+   <text x="389.99991" y="6050" style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans" id="label19" font-size="130">20 PD6:PCINT30/OC2B/ICP</text>
+   <line style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line4072" y1="6015" x1="4403.8887" y2="6015" x2="4703.8887"/>
+   <rect width="300" x="4418.8887" y="6000" height="30" style="fill:none;stroke-width:0" id="connector20pin"/>
+   <rect width="30" x="4718.8882" y="6000" height="30" style="fill:none;stroke-width:0" id="connector20terminal"/>
+   <text x="4328.8887" y="6050" style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans" id="label20" font-size="130">OC2A/PCINT31:PD7 21</text>
+  </g>
+ </g>
+</svg>

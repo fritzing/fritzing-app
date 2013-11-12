@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="174.34px" height="174.173px" viewBox="0 0 174.34 174.173" enable-background="new 0 0 174.34 174.173"
+	 xml:space="preserve">
+<g id="schematic">
+	<rect id="connector0pin" x="74.15" y="163.15" width="2" height="10"/>
+	<rect id="connector1pin" x="1.15" y="122.15" width="10" height="2"/>
+	<rect id="connector2pin" x="163.15" y="86.15" width="10" height="2"/>
+	<rect id="connector3pin" x="110.15" y="1.15" width="2" height="10"/>
+	<rect id="connector4pin" x="110.15" y="163.15" width="2" height="10"/>
+	<rect id="connector5pin" x="1.15" y="50.15" width="10" height="2"/>
+	<rect id="connector6pin" x="1.15" y="86.15" width="10" height="2"/>
+	<rect id="connector7pin" x="74.15" y="1.15" width="2" height="10"/>
+	<rect id="connector0terminal" x="74.15" y="171.15" width="2" height="2"/>
+	<rect id="connector1terminal" x="1.15" y="122.15" width="2" height="2"/>
+	<rect id="connector2terminal" x="171.15" y="86.15" width="2" height="2"/>
+	<rect id="connector3terminal" x="110.15" y="1.15" width="2" height="2"/>
+	<rect id="connector4terminal" x="110.15" y="171.15" width="2" height="2"/>
+	<rect id="connector5terminal" x="1.15" y="50.15" width="2" height="2"/>
+	<rect id="connector6terminal" x="1.15" y="86.15" width="2" height="2"/>
+	<rect id="connector7terminal" x="74.15" y="1.15" width="2" height="2"/>
+	
+		<rect x="32.15" y="32.15" fill="none" stroke="#000000" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" width="110" height="110"/>
+	
+		<line fill="none" stroke="#000000" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" x1="142.15" y1="87.15" x2="173.15" y2="87.15"/>
+	
+		<line fill="none" stroke="#000000" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" x1="1.15" y1="87.15" x2="32.15" y2="87.15"/>
+	
+		<line fill="none" stroke="#000000" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" x1="1.15" y1="51.15" x2="32.15" y2="51.15"/>
+	
+		<line fill="none" stroke="#000000" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" x1="1.15" y1="123.15" x2="32.15" y2="123.15"/>
+	
+		<line fill="none" stroke="#000000" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" x1="75.15" y1="173.15" x2="75.15" y2="142.15"/>
+	
+		<line fill="none" stroke="#000000" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" x1="111.15" y1="173.15" x2="111.15" y2="142.15"/>
+	
+		<line fill="none" stroke="#000000" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" x1="75.15" y1="1.15" x2="75.15" y2="32.15"/>
+	
+		<line fill="none" stroke="#000000" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" x1="111.15" y1="1.15" x2="111.15" y2="32.15"/>
+	<text transform="matrix(1 0 0 1 22.7971 47.4592)" font-family="'Droid Sans'" font-size="9">7</text>
+	<text transform="matrix(1 0 0 1 66.3684 26.9827)" font-family="'Droid Sans'" font-size="9">8</text>
+	<text transform="matrix(1 0 0 1 101.595 26.9827)" font-family="'Droid Sans'" font-size="9">4</text>
+	<text transform="matrix(1 0 0 1 66.3684 154.0071)" font-family="'Droid Sans'" font-size="9">1</text>
+	<text transform="matrix(1 0 0 1 101.595 154.0071)" font-family="'Droid Sans'" font-size="9">5</text>
+	<text transform="matrix(1 0 0 1 66.3684 137.7913)" font-family="'Droid Sans'" font-size="9">GND</text>
+	<text transform="matrix(1 0 0 1 36.3577 125.6497)" font-family="'Droid Sans'" font-size="9">TR</text>
+	<text transform="matrix(1 0 0 1 36.3577 89.8997)" font-family="'Droid Sans'" font-size="9">THR</text>
+	<text transform="matrix(1 0 0 1 131.3577 89.8997)" font-family="'Droid Sans'" font-size="9">Q</text>
+	<text transform="matrix(1 0 0 1 36.3577 53.8997)" font-family="'Droid Sans'" font-size="9">DIS</text>
+	<text transform="matrix(1 0 0 1 105.4661 137.7913)" font-family="'Droid Sans'" font-size="9">CV</text>
+	<text transform="matrix(1 0 0 1 72.1184 43.5603)" font-family="'Droid Sans'" font-size="9">V</text>
+	<text transform="matrix(1 0 0 1 68.8171 81.7854)"><tspan x="0" y="0" font-family="'Droid Sans'" font-size="15.9251">555</tspan><tspan x="0" y="19.111" font-family="'Droid Sans'" font-size="15.9251">Timer</tspan></text>
+	<text transform="matrix(1 0 0 1 107.9661 43.5603)" font-family="'Droid Sans'" font-size="9">R</text>
+	<text transform="matrix(1 0 0 1 147.0969 83.9602)" font-family="'Droid Sans'" font-size="9">3</text>
+	<text transform="matrix(1 0 0 1 22.7971 83.9602)" font-family="'Droid Sans'" font-size="9">6</text>
+	<text transform="matrix(1 0 0 1 22.7971 120.1252)" font-family="'Droid Sans'" font-size="9">2</text>
+</g>
+</svg>

@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+<svg width="1.76753in" x="0px" version="1.1" y="0px" xmlns="http://www.w3.org/2000/svg" height="2.38329in" viewBox="0 0 127.262 171.597" xmlns:xml="http://www.w3.org/XML/1998/namespace" id="Schematic" enable-background="new 0 0 127.262 171.597" xml:space="preserve">
+ <g id="schematic">
+  <rect width="84.955" x="20.485" y="21.067" fill="#FFFFFF" xmlns="http://www.w3.org/2000/svg" height="128.154" stroke="#000000" stroke-width="2.4"/>
+  <line fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#000000" y1="65.302" stroke-width="2.4" x1="0" y2="65.302" x2="21.26" id="connector0pin"/>
+  <line fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#000000" y1="83.728" stroke-width="2.4" x1="0" y2="83.728" x2="21.26" id="connector1pin"/>
+  <line fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#000000" y1="104.987" stroke-width="2.4" x1="106.002" y2="104.987" x2="127.262" id="connector2pin"/>
+  <line fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#000000" y1="83.728" stroke-width="2.4" x1="106.002" y2="83.728" x2="127.262" id="connector3pin"/>
+  <line fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#000000" y1="65.302" stroke-width="2.4" x1="106.002" y2="65.302" x2="127.262" id="connector4pin"/>
+  <line fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#000000" y1="21.259" stroke-width="2.4" x1="63.631" y2="-0.001" x2="63.631" id="connector5pin"/>
+  <line fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#000000" y1="171.597" stroke-width="2.4" x1="63.631" y2="150.337" x2="63.631" id="connector6pin"/>
+  <text font-family="Droid Sans" xmlns="http://www.w3.org/2000/svg" transform="matrix(1 0 0 1 42.9414 85.0264)" font-size="18">SCP</text>
+  <text font-family="Droid Sans" xmlns="http://www.w3.org/2000/svg" transform="matrix(1 0 0 1 36.0615 106.6919)" font-size="18">1000</text>
+  <text font-family="Droid Sans" xmlns="http://www.w3.org/2000/svg" transform="matrix(1 0 0 1 53.1099 143.7559)" font-size="10">GND</text>
+  <text font-family="Droid Sans" xmlns="http://www.w3.org/2000/svg" transform="matrix(1 0 0 1 56.4902 31.3477)" font-size="10">Vcc</text>
+  <text font-family="Droid Sans" xmlns="http://www.w3.org/2000/svg" transform="matrix(1 0 0 1 22.6172 69.687)" font-size="10">DRDY</text>
+  <text font-family="Droid Sans" xmlns="http://www.w3.org/2000/svg" transform="matrix(1 0 0 1 22.6172 89.687)" font-size="10">CSB</text>
+  <text font-family="Droid Sans" xmlns="http://www.w3.org/2000/svg" transform="matrix(1 0 0 1 78.5991 108.0176)" font-size="10">MISO</text>
+  <text font-family="Droid Sans" xmlns="http://www.w3.org/2000/svg" transform="matrix(1 0 0 1 78.5991 87.0137)" font-size="10">MOSI</text>
+  <text font-family="Droid Sans" xmlns="http://www.w3.org/2000/svg" transform="matrix(1 0 0 1 86.2896 68.0054)" font-size="10">SCK</text>
+  <rect width="2.16" y="64.354" fill="none" xmlns="http://www.w3.org/2000/svg" height="2.16" id="connector0terminal"/>
+  <rect width="2.16" x="0.11" y="82.631" fill="none" xmlns="http://www.w3.org/2000/svg" height="2.16" id="connector1terminal"/>
+  <rect width="2.16" x="125.102" y="103.882" fill="none" xmlns="http://www.w3.org/2000/svg" height="2.16" id="connector2terminal"/>
+  <rect width="2.16" x="125.112" y="82.632" fill="none" xmlns="http://www.w3.org/2000/svg" height="2.16" id="connector3terminal"/>
+  <rect width="2.16" x="125.102" y="64.258" fill="none" xmlns="http://www.w3.org/2000/svg" height="2.16" id="connector4terminal"/>
+  <rect width="2.16" x="62.488" y="0.133" fill="none" xmlns="http://www.w3.org/2000/svg" height="2.16" id="connector5terminal"/>
+  <rect width="2.16" x="62.488" y="169.381" fill="none" xmlns="http://www.w3.org/2000/svg" height="2.16" id="connector6terminal"/>
+ </g>
+</svg>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1"
+	 id="svg2" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:svg="http://www.w3.org/2000/svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" sodipodi:docname="StepperMotor-Unipolar_schematic.svg" inkscape:output_extension="org.inkscape.output.svg.inkscape" sodipodi:version="0.32" inkscape:version="0.46"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="103.896px"
+	 height="128.041px" viewBox="0 0 103.896 128.041" enable-background="new 0 0 103.896 128.041" xml:space="preserve">
+<defs>
+	
+	
+		<inkscape:perspective  sodipodi:type="inkscape:persp3d" inkscape:vp_y="0 : 1000 : 0" inkscape:vp_x="0 : 40.478638 : 1" inkscape:vp_z="69.321533 : 40.478638 : 1" id="perspective9295" inkscape:persp3d-origin="34.660767 : 26.985758 : 1">
+		</inkscape:perspective>
+</defs>
+<sodipodi:namedview  inkscape:cy="83.418703" inkscape:cx="37.357029" inkscape:zoom="2.8533569" gridtolerance="10.0" borderopacity="1.0" guidetolerance="10.0" bordercolor="#666666" pagecolor="#ffffff" objecttolerance="10.0" showgrid="false" id="base" inkscape:object-nodes="true" inkscape:current-layer="schematic" inkscape:window-y="152" inkscape:window-x="363" inkscape:window-height="742" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:window-width="1182">
+	<inkscape:grid  type="xygrid" enabled="true" visible="true" id="grid2400"></inkscape:grid>
+</sodipodi:namedview>
+<g id="schematic" transform="translate(-4.1992186e-7,23.61008)">
+	
+		<line id="connector0pin" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="23.25" y1="19.401" x2="1" y2="19.401"/>
+	<rect id="connector0terminal" x="0" y="18.244" fill="none" width="1" height="2"/>
+	
+		<line id="connector1pin" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="23.25" y1="39.401" x2="1" y2="39.401"/>
+	<rect id="connector1terminal" x="0" y="38.244" fill="none" width="1" height="2"/>
+	
+		<line id="connector2pin" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="23.25" y1="59.401" x2="1" y2="59.401"/>
+	<rect id="connector2terminal" x="0" y="58.244" fill="none" width="1" height="2"/>
+	
+		<line id="connector3pin" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="42.524" y1="81.181" x2="42.524" y2="103.431"/>
+	<rect id="connector3terminal" x="42.024" y="102.431" fill="none" width="1" height="2"/>
+	
+		<line id="connector4pin" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="62.524" y1="81.181" x2="62.524" y2="103.431"/>
+	<rect id="connector4terminal" x="62.024" y="102.431" fill="none" width="1" height="2"/>
+	
+		<line id="connector5pin" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="82.524" y1="81.181" x2="82.524" y2="103.431"/>
+	<rect id="connector5terminal" x="82.024" y="102.431" fill="none" width="1" height="2"/>
+	
+		<rect id="box" x="24.069" y="1" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="78.828" height="78.957"/>
+	<path id="innerSchematic" fill="none" stroke="#000000" d="M25.25,19.401h9.542c0,0,6,0.055,6,5c0,4.821-6,5-6,5s6-0.107,6,5
+		c0,5.229-6,5-6,5s6-0.323,6,5c0,5.206-6,5-6,5s6-0.075,6,5c0,4.951-6,5-6,5H25.25 M42.524,79.181v-9.543c0,0,0.055-6,5-6
+		c4.821,0,5,6,5,6s-0.106-6,5-6c5.23,0,5,6,5,6s-0.322-6,5-6c5.206,0,5,6,5,6s-0.075-6,5-6c4.951,0,5,6,5,6v9.543 M79.78,40.479
+		c0,8.996-7.301,16.297-16.297,16.297c-8.995,0-16.296-7.301-16.296-16.297c0-8.995,7.301-16.297,16.296-16.297
+		C72.479,24.182,79.78,31.483,79.78,40.479z M62.524,69.638v9.764 M34.792,39.401H23.25"/>
+</g>
+<text transform="matrix(1 0 0 1 24.0686 12.9446)"><tspan x="0" y="0" font-family="'Droid Sans'" font-size="9">STEPPER</tspan><tspan x="0" y="9" font-family="'Droid Sans'" font-size="9">MOTOR</tspan></text>
+<text transform="matrix(1 0 0 1 45.0237 39.9246)" font-family="'Droid Sans'" font-size="7.5">ROB-08420</text>
+<text transform="matrix(1 0 0 1 13.2244 39.9246)" font-family="'Droid Sans'" font-size="9">A</text>
+<text transform="matrix(1 0 0 1 32.2244 115.9158)" font-family="'Droid Sans'" font-size="9">B</text>
+<text transform="matrix(1 0 0 1 52.8879 115.9158)" font-family="'Droid Sans'" font-size="9">0</text>
+<text transform="matrix(1 0 0 1 72.8879 115.9158)" font-family="'Droid Sans'" font-size="9">D</text>
+<text transform="matrix(1 0 0 1 13.2244 59.1746)" font-family="'Droid Sans'" font-size="9">0</text>
+<text transform="matrix(1 0 0 1 13.2244 78.9246)" font-family="'Droid Sans'" font-size="9">C</text>
+</svg>

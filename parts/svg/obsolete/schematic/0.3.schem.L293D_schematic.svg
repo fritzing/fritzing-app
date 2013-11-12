@@ -1,0 +1,120 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="163.9998" x="0in" inkscape:version="0.47 r22583" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" version="1.2" y="0in" height="268" viewBox="0 0 1822.22 2977.7775" sodipodi:docname="SCH-L293D.svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" id="svg2910">
+ <g  id="schematic" transform="translate(0,255.55774)">
+  <rect  width="1200" x="315" y="15" height="2700" style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="rect2913"/>
+  <text  x="915" y="-54.067371" style="font-size:235px;text-anchor:middle;fill:#000000;stroke:none;font-family:Droid Sans" id="label" font-size="235">L293D</text>
+  <line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line2916" y1="315" x1="15" y2="315" x2="300"/>
+  <rect  width="300" x="0" y="300" height="30" style="fill:none;stroke-width:0" id="connector0pin"/>
+  <rect  width="30" x="0" y="300" height="30" style="fill:none;stroke-width:0" id="connector0terminal"/>
+  <g sodipodi:linespacing="125%" style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans;text-align:start;writing-mode:lr;line-height:125%" id="label0" font-size="130">
+   <text x="390" sodipodi:role="line" y="350" id="tspan3323">EN1</text>
+  </g>
+  <line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line2921" y1="315" x1="1515" y2="315" x2="1815"/>
+  <rect  width="300" x="1530" y="300" height="30" style="fill:none;stroke-width:0" id="connector15pin"/>
+  <rect  width="30" x="1830" y="300" height="30" style="fill:none;stroke-width:0" id="connector15terminal"/>
+  <g sodipodi:linespacing="125%" style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans;text-align:end;writing-mode:lr;line-height:125%" id="label15" font-size="130">
+   <text x="1440" sodipodi:role="line" y="350" id="tspan3335">+V</text>
+  </g>
+  <line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line2926" y1="615" x1="15" y2="615" x2="300"/>
+  <rect  width="300" x="0" y="600" height="30" style="fill:none;stroke-width:0" id="connector1pin"/>
+  <rect  width="30" x="0" y="600" height="30" style="fill:none;stroke-width:0" id="connector1terminal"/>
+  <g sodipodi:linespacing="125%" style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans;text-align:start;writing-mode:lr;line-height:125%" id="label1" font-size="130">
+   <text x="390" sodipodi:role="line" y="650" id="tspan3325">IN1</text>
+  </g>
+  <line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line2931" y1="615" x1="1515" y2="615" x2="1815"/>
+  <rect  width="300" x="1530" y="600" height="30" style="fill:none;stroke-width:0" id="connector14pin"/>
+  <rect  width="30" x="1830" y="600" height="30" style="fill:none;stroke-width:0" id="connector14terminal"/>
+  <g sodipodi:linespacing="125%" style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans;text-align:end;writing-mode:lr;line-height:125%" id="label14" font-size="130">
+   <text x="1440" sodipodi:role="line" y="650" id="tspan3337">IN4</text>
+  </g>
+  <line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line2936" y1="915" x1="15" y2="915" x2="300"/>
+  <rect  width="300" x="0" y="900" height="30" style="fill:none;stroke-width:0" id="connector2pin"/>
+  <rect  width="30" x="0" y="900" height="30" style="fill:none;stroke-width:0" id="connector2terminal"/>
+  <g sodipodi:linespacing="125%" style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans;text-align:start;writing-mode:lr;line-height:125%" id="label2" font-size="130">
+   <text x="390" sodipodi:role="line" y="950" id="tspan3327">OUT1</text>
+  </g>
+  <line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line2941" y1="915" x1="1515" y2="915" x2="1815"/>
+  <rect  width="300" x="1530" y="900" height="30" style="fill:none;stroke-width:0" id="connector13pin"/>
+  <rect  width="30" x="1830" y="900" height="30" style="fill:none;stroke-width:0" id="connector13terminal"/>
+  <g sodipodi:linespacing="125%" style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans;text-align:end;writing-mode:lr;line-height:125%" id="label13" font-size="130">
+   <text x="1440" sodipodi:role="line" y="950" id="tspan3339">OUT4</text>
+  </g>
+  <line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line2946" y1="1215" x1="15" y2="1215" x2="300"/>
+  <rect  width="300" x="0" y="1200" height="30" style="fill:none;stroke-width:0" id="connector3pin"/>
+  <rect  width="30" x="0" y="1200" height="30" style="fill:none;stroke-width:0" id="connector3terminal"/>
+  <g sodipodi:linespacing="125%" style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans;text-align:start;writing-mode:lr;line-height:125%" id="label3" font-size="130">
+   <text x="390" sodipodi:role="line" y="1250" id="tspan3313">0V</text>
+  </g>
+  <line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line2951" y1="1215" x1="1515" y2="1215" x2="1815"/>
+  <rect  width="300" x="1530" y="1200" height="30" style="fill:none;stroke-width:0" id="connector12pin"/>
+  <rect  width="30" x="1830" y="1200" height="30" style="fill:none;stroke-width:0" id="connector12terminal"/>
+  <g sodipodi:linespacing="125%" style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans;text-align:end;writing-mode:lr;line-height:125%" id="label12" font-size="130">
+   <text x="1440" sodipodi:role="line" y="1250" id="tspan3347">0V</text>
+  </g>
+  <line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line2956" y1="1515" x1="15" y2="1515" x2="300"/>
+  <rect  width="300" x="0" y="1500" height="30" style="fill:none;stroke-width:0" id="connector4pin"/>
+  <rect  width="30" x="0" y="1500" height="30" style="fill:none;stroke-width:0" id="connector4terminal"/>
+  <g sodipodi:linespacing="125%" style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans;text-align:start;writing-mode:lr;line-height:125%" id="label4" font-size="130">
+   <text x="390" sodipodi:role="line" y="1550" id="tspan3321">0V</text>
+  </g>
+  <line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line2961" y1="1515" x1="1515" y2="1515" x2="1815"/>
+  <rect  width="300" x="1530" y="1500" height="30" style="fill:none;stroke-width:0" id="connector11pin"/>
+  <rect  width="30" x="1830" y="1500" height="30" style="fill:none;stroke-width:0" id="connector11terminal"/>
+  <g sodipodi:linespacing="125%" style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans;text-align:end;writing-mode:lr;line-height:125%" id="label11" font-size="130">
+   <text x="1440" sodipodi:role="line" y="1550" id="tspan3349">0V</text>
+  </g>
+  <line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line2966" y1="1815" x1="15" y2="1815" x2="300"/>
+  <rect  width="300" x="0" y="1800" height="30" style="fill:none;stroke-width:0" id="connector5pin"/>
+  <rect  width="30" x="0" y="1800" height="30" style="fill:none;stroke-width:0" id="connector5terminal"/>
+  <g sodipodi:linespacing="125%" style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans;text-align:start;writing-mode:lr;line-height:125%" id="label5" font-size="130">
+   <text x="390" sodipodi:role="line" y="1850" id="tspan3329">OUT2</text>
+  </g>
+  <line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line2971" y1="1815" x1="1515" y2="1815" x2="1815"/>
+  <rect  width="300" x="1530" y="1800" height="30" style="fill:none;stroke-width:0" id="connector10pin"/>
+  <rect  width="30" x="1830" y="1800" height="30" style="fill:none;stroke-width:0" id="connector10terminal"/>
+  <g sodipodi:linespacing="125%" style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans;text-align:end;writing-mode:lr;line-height:125%" id="label10" font-size="130">
+   <text x="1440" sodipodi:role="line" y="1850" id="tspan3341">OUT3</text>
+  </g>
+  <line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line2976" y1="2115" x1="15" y2="2115" x2="300"/>
+  <rect  width="300" x="0" y="2100" height="30" style="fill:none;stroke-width:0" id="connector6pin"/>
+  <rect  width="30" x="0" y="2100" height="30" style="fill:none;stroke-width:0" id="connector6terminal"/>
+  <g sodipodi:linespacing="125%" style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans;text-align:start;writing-mode:lr;line-height:125%" id="label6" font-size="130">
+   <text x="390" sodipodi:role="line" y="2150" id="tspan3331">IN2</text>
+  </g>
+  <line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line2981" y1="2115" x1="1515" y2="2115" x2="1815"/>
+  <rect  width="300" x="1530" y="2100" height="30" style="fill:none;stroke-width:0" id="connector9pin"/>
+  <rect  width="30" x="1830" y="2100" height="30" style="fill:none;stroke-width:0" id="connector9terminal"/>
+  <g sodipodi:linespacing="125%" style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans;text-align:end;writing-mode:lr;line-height:125%" id="label9" font-size="130">
+   <text x="1440" sodipodi:role="line" y="2150" id="tspan3343">IN3</text>
+  </g>
+  <line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line2986" y1="2415" x1="15" y2="2415" x2="300"/>
+  <rect  width="300" x="0" y="2400" height="30" style="fill:none;stroke-width:0" id="connector7pin"/>
+  <rect  width="30" x="0" y="2400" height="30" style="fill:none;stroke-width:0" id="connector7terminal"/>
+  <g sodipodi:linespacing="125%" style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans;text-align:start;writing-mode:lr;line-height:125%" id="label7" font-size="130">
+   <text x="390" sodipodi:role="line" y="2450" id="tspan3351">+Vmotor</text>
+  </g>
+  <line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line2991" y1="2415" x1="1515" y2="2415" x2="1815"/>
+  <rect  width="300" x="1530" y="2400" height="30" style="fill:none;stroke-width:0" id="connector8pin"/>
+  <rect  width="30" x="1830" y="2400" height="30" style="fill:none;stroke-width:0" id="connector8terminal"/>
+  <g sodipodi:linespacing="125%" style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans;text-align:end;writing-mode:lr;line-height:125%" id="label8" font-size="130">
+   <text x="1440" sodipodi:role="line" y="2450" id="tspan3345">EN2</text>
+  </g>
+  <text  x="-2333.501" y="-1503.6727" style="font-size:235px;text-anchor:middle;fill:#000000;stroke:none;font-family:Droid Sans" id="label-7" font-size="235">L293D</text>
+  <text  x="1732.692" y="261.50464" style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans" id="label15-4-0" font-size="130">16</text>
+  <text  x="1732.692" y="561.50458" style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans" id="label14-2-2" font-size="130">15</text>
+  <text  x="1732.692" y="861.50458" style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans" id="label13-2-4" font-size="130">14</text>
+  <text  x="1732.692" y="1161.5045" style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans" id="label12-8-8" font-size="130">13</text>
+  <text  x="1732.692" y="1461.5045" style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans" id="label11-1-6" font-size="130">12</text>
+  <text  x="1732.692" y="1761.5045" style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans" id="label10-8-5" font-size="130">11</text>
+  <text  x="1732.692" y="2061.5046" style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans" id="label9-1-0" font-size="130">10</text>
+  <text  x="1732.692" y="2361.5044" style="font-size:130px;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans" id="label8-6-9" font-size="130">9</text>
+  <text  x="161.71967" y="264.75668" style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans" id="label0-4-0" font-size="130">1</text>
+  <text  x="161.71967" y="564.75659" style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans" id="label1-7-0" font-size="130">2</text>
+  <text  x="161.71967" y="864.75659" style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans" id="label2-4-6" font-size="130">3</text>
+  <text  x="161.71967" y="1164.7566" style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans" id="label3-5-1" font-size="130">4</text>
+  <text  x="161.71967" y="1464.7565" style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans" id="label4-9-3" font-size="130">5</text>
+  <text  x="161.71967" y="1764.7565" style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans" id="label5-4-8" font-size="130">6</text>
+  <text  x="161.71967" y="2064.7566" style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans" id="label6-7-9" font-size="130">7</text>
+  <text  x="161.71967" y="2364.7563" style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans" id="label7-5-3" font-size="130">8</text>
+ </g>
+</svg>

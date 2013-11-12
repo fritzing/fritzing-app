@@ -1,0 +1,369 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- Created with Fritzing (http://www.fritzing.org/) -->
+<svg xmlns="http://www.w3.org/2000/svg" width="232.70421" x="0in" version="1.2" y="0in" height="593.26123" viewBox="0 0 2585.6023 6591.7919" id="svg2">
+ <metadata  id="metadata212">
+  <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work xmlns:cc="http://creativecommons.org/ns#" rdf:about="" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <dc:format xmlns:dc="http://purl.org/dc/elements/1.1/">image/svg+xml</dc:format>
+    <dc:type xmlns:dc="http://purl.org/dc/elements/1.1/" rdf:resource="http://purl.org/dc/dcmitype/StillImage" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <dc:title xmlns:dc="http://purl.org/dc/elements/1.1/"/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs  id="defs210"/>
+ <sodipodi:namedview xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" fit-margin-top="0" fit-margin-left="0" showgrid="false" fit-margin-bottom="0" objecttolerance="10" pagecolor="#ffffff" bordercolor="#666666" id="namedview208" borderopacity="1" guidetolerance="10" showguides="true" gridtolerance="10" fit-margin-right="0"/>
+ <g  style="stroke-width:0" id="schematic" transform="translate(352.81223,261.79166)">
+  <rect  width="1200" x="315" y="15" height="6300" style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="rect5"/>
+  <g style="font-size:235px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;fill:#000000;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="label" font-size="235">
+   <text x="904.37958" y="-88.639809" id="tspan3144">M5450 LED Driver</text>
+  </g>
+  <line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line8" y1="315" x1="15" y2="315" x2="300"/>
+  <rect  width="300" x="0" y="300" height="30" style="fill:none;stroke:none" id="connector0pin"/>
+  <rect  width="30" x="0" y="300" height="30" style="fill:none;stroke:none" id="connector0terminal"/>
+  <text  x="390" y="350" style="font-size:130px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="label0" font-size="130">1</text>
+  <line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line13" y1="315" x1="1530" y2="315" x2="1815"/>
+  <rect  width="300" x="1530" y="300" height="30" style="fill:none;stroke:none" id="connector39pin"/>
+
+><rect  width="30" x="1800" y="300" height="30" style="fill:none;stroke:none" id="connector39terminal"/>
+
+><text  x="1440" y="350" style="font-size:130px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="label39" font-size="130">40</text>
+
+><line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line18" y1="615" x1="15" y2="615" x2="300"/>
+  <rect  width="300" x="0" y="600" height="30" style="fill:none;stroke:none" id="connector1pin"/>
+  <rect  width="30" x="0" y="600" height="30" style="fill:none;stroke:none" id="connector1terminal"/>
+  <text  x="390" y="650" style="font-size:130px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="label1" font-size="130">2</text>
+  <line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line23" y1="615" x1="1530" y2="615" x2="1815"/>
+  <rect  width="300" x="1530" y="600" height="30" style="fill:none;stroke:none" id="connector38pin"/>
+
+><rect  width="30" x="1800" y="600" height="30" style="fill:none;stroke:none" id="connector38terminal"/>
+
+><text  x="1440" y="650" style="font-size:130px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="label38" font-size="130">39</text>
+
+><line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line28" y1="915" x1="15" y2="915" x2="300"/>
+  <rect  width="300" x="0" y="900" height="30" style="fill:none;stroke:none" id="connector2pin"/>
+  <rect  width="30" x="0" y="900" height="30" style="fill:none;stroke:none" id="connector2terminal"/>
+  <text  x="390" y="950" style="font-size:130px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="label2" font-size="130">3</text>
+  <line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line33" y1="915" x1="1530" y2="915" x2="1815"/>
+  <rect  width="300" x="1530" y="900" height="30" style="fill:none;stroke:none" id="connector37pin"/>
+
+><rect  width="30" x="1800" y="900" height="30" style="fill:none;stroke:none" id="connector37terminal"/>
+
+><text  x="1440" y="950" style="font-size:130px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="label37" font-size="130">38</text>
+
+><line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line38" y1="1215" x1="15" y2="1215" x2="300"/>
+  <rect  width="300" x="0" y="1200" height="30" style="fill:none;stroke:none" id="connector3pin"/>
+  <rect  width="30" x="0" y="1200" height="30" style="fill:none;stroke:none" id="connector3terminal"/>
+  <text  x="390" y="1250" style="font-size:130px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="label3" font-size="130">4</text>
+  <line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line43" y1="1215" x1="1530" y2="1215" x2="1815"/>
+  <rect  width="300" x="1530" y="1200" height="30" style="fill:none;stroke:none" id="connector36pin"/>
+
+><rect  width="30" x="1800" y="1200" height="30" style="fill:none;stroke:none" id="connector36terminal"/>
+
+><text  x="1440" y="1250" style="font-size:130px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="label36" font-size="130">37</text>
+
+><line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line48" y1="1515" x1="15" y2="1515" x2="300"/>
+  <rect  width="300" x="0" y="1500" height="30" style="fill:none;stroke:none" id="connector4pin"/>
+  <rect  width="30" x="0" y="1500" height="30" style="fill:none;stroke:none" id="connector4terminal"/>
+  <text  x="390" y="1550" style="font-size:130px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="label4" font-size="130">5</text>
+  <line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line53" y1="1515" x1="1530" y2="1515" x2="1815"/>
+  <rect  width="300" x="1530" y="1500" height="30" style="fill:none;stroke:none" id="connector35pin"/>
+
+><rect  width="30" x="1800" y="1500" height="30" style="fill:none;stroke:none" id="connector35terminal"/>
+
+><text  x="1440" y="1550" style="font-size:130px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="label35" font-size="130">36</text>
+
+><line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line58" y1="1815" x1="15" y2="1815" x2="300"/>
+  <rect  width="300" x="0" y="1800" height="30" style="fill:none;stroke:none" id="connector5pin"/>
+  <rect  width="30" x="0" y="1800" height="30" style="fill:none;stroke:none" id="connector5terminal"/>
+  <text  x="390" y="1850" style="font-size:130px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="label5" font-size="130">6</text>
+  <line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line63" y1="1815" x1="1530" y2="1815" x2="1815"/>
+  <rect  width="300" x="1530" y="1800" height="30" style="fill:none;stroke:none" id="connector34pin"/>
+
+><rect  width="30" x="1800" y="1800" height="30" style="fill:none;stroke:none" id="connector34terminal"/>
+
+><text  x="1440" y="1850" style="font-size:130px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="label34" font-size="130">35</text>
+
+><line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line68" y1="2115" x1="15" y2="2115" x2="300"/>
+  <rect  width="300" x="0" y="2100" height="30" style="fill:none;stroke:none" id="connector6pin"/>
+  <rect  width="30" x="0" y="2100" height="30" style="fill:none;stroke:none" id="connector6terminal"/>
+  <text  x="390" y="2150" style="font-size:130px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="label6" font-size="130">7</text>
+  <line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line73" y1="2115" x1="1530" y2="2115" x2="1815"/>
+  <rect  width="300" x="1530" y="2100" height="30" style="fill:none;stroke:none" id="connector33pin"/>
+
+><rect  width="30" x="1800" y="2100" height="30" style="fill:none;stroke:none" id="connector33terminal"/>
+
+><text  x="1440" y="2150" style="font-size:130px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="label33" font-size="130">34</text>
+
+><line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line78" y1="2415" x1="15" y2="2415" x2="300"/>
+  <rect  width="300" x="0" y="2400" height="30" style="fill:none;stroke:none" id="connector7pin"/>
+  <rect  width="30" x="0" y="2400" height="30" style="fill:none;stroke:none" id="connector7terminal"/>
+  <text  x="390" y="2450" style="font-size:130px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="label7" font-size="130">8</text>
+  <line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line83" y1="2415" x1="1530" y2="2415" x2="1815"/>
+  <rect  width="300" x="1530" y="2400" height="30" style="fill:none;stroke:none" id="connector32pin"/>
+
+><rect  width="30" x="1800" y="2400" height="30" style="fill:none;stroke:none" id="connector32terminal"/>
+
+><text  x="1440" y="2450" style="font-size:130px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="label32" font-size="130">33</text>
+
+><line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line88" y1="2715" x1="15" y2="2715" x2="300"/>
+  <rect  width="300" x="0" y="2700" height="30" style="fill:none;stroke:none" id="connector8pin"/>
+  <rect  width="30" x="0" y="2700" height="30" style="fill:none;stroke:none" id="connector8terminal"/>
+  <text  x="390" y="2750" style="font-size:130px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="label8" font-size="130">9</text>
+  <line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line93" y1="2715" x1="1530" y2="2715" x2="1815"/>
+  <rect  width="300" x="1530" y="2700" height="30" style="fill:none;stroke:none" id="connector31pin"/>
+
+><rect  width="30" x="1800" y="2700" height="30" style="fill:none;stroke:none" id="connector31terminal"/>
+
+><text  x="1440" y="2750" style="font-size:130px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="label31" font-size="130">32</text>
+
+><line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line98" y1="3015" x1="15" y2="3015" x2="300"/>
+  <rect  width="300" x="0" y="3000" height="30" style="fill:none;stroke:none" id="connector9pin"/>
+  <rect  width="30" x="0" y="3000" height="30" style="fill:none;stroke:none" id="connector9terminal"/>
+  <text  x="390" y="3050" style="font-size:130px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="label9" font-size="130">10</text>
+  <line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line103" y1="3015" x1="1530" y2="3015" x2="1815"/>
+  <rect  width="300" x="1530" y="3000" height="30" style="fill:none;stroke:none" id="connector30pin"/>
+
+><rect  width="30" x="1800" y="3000" height="30" style="fill:none;stroke:none" id="connector30terminal"/>
+
+><text  x="1440" y="3050" style="font-size:130px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="label30" font-size="130">31</text>
+
+><line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line108" y1="3315" x1="15" y2="3315" x2="300"/>
+  <rect  width="300" x="0" y="3300" height="30" style="fill:none;stroke:none" id="connector10pin"/>
+  <rect  width="30" x="0" y="3300" height="30" style="fill:none;stroke:none" id="connector10terminal"/>
+  <text  x="390" y="3350" style="font-size:130px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="label10" font-size="130">11</text>
+  <line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line113" y1="3315" x1="1530" y2="3315" x2="1815"/>
+  <rect  width="300" x="1530" y="3300" height="30" style="fill:none;stroke:none" id="connector29pin"/>
+
+><rect  width="30" x="1800" y="3300" height="30" style="fill:none;stroke:none" id="connector29terminal"/>
+
+><text  x="1440" y="3350" style="font-size:130px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="label29" font-size="130">30</text>
+
+><line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line118" y1="3615" x1="15" y2="3615" x2="300"/>
+  <rect  width="300" x="0" y="3600" height="30" style="fill:none;stroke:none" id="connector11pin"/>
+  <rect  width="30" x="0" y="3600" height="30" style="fill:none;stroke:none" id="connector11terminal"/>
+  <text  x="390" y="3650" style="font-size:130px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="label11" font-size="130">12</text>
+  <line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line123" y1="3615" x1="1530" y2="3615" x2="1815"/>
+  <rect  width="300" x="1530" y="3600" height="30" style="fill:none;stroke:none" id="connector28pin"/>
+
+><rect  width="30" x="1800" y="3600" height="30" style="fill:none;stroke:none" id="connector28terminal"/>
+
+><text  x="1440" y="3650" style="font-size:130px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="label28" font-size="130">29</text>
+
+><line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line128" y1="3915" x1="15" y2="3915" x2="300"/>
+  <rect  width="300" x="0" y="3900" height="30" style="fill:none;stroke:none" id="connector12pin"/>
+  <rect  width="30" x="0" y="3900" height="30" style="fill:none;stroke:none" id="connector12terminal"/>
+  <text  x="390" y="3950" style="font-size:130px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="label12" font-size="130">13</text>
+  <line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line133" y1="3915" x1="1530" y2="3915" x2="1815"/>
+  <rect  width="300" x="1530" y="3900" height="30" style="fill:none;stroke:none" id="connector27pin"/>
+
+><rect  width="30" x="1800" y="3900" height="30" style="fill:none;stroke:none" id="connector27terminal"/>
+
+><text  x="1440" y="3950" style="font-size:130px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="label27" font-size="130">28</text>
+
+><line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line138" y1="4215" x1="15" y2="4215" x2="300"/>
+  <rect  width="300" x="0" y="4200" height="30" style="fill:none;stroke:none" id="connector13pin"/>
+  <rect  width="30" x="0" y="4200" height="30" style="fill:none;stroke:none" id="connector13terminal"/>
+  <text  x="390" y="4250" style="font-size:130px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="label13" font-size="130">14</text>
+  <line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line143" y1="4215" x1="1530" y2="4215" x2="1815"/>
+  <rect  width="300" x="1530" y="4200" height="30" style="fill:none;stroke:none" id="connector26pin"/>
+
+><rect  width="30" x="1800" y="4200" height="30" style="fill:none;stroke:none" id="connector26terminal"/>
+
+><text  x="1440" y="4250" style="font-size:130px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="label26" font-size="130">27</text>
+
+><line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line148" y1="4515" x1="15" y2="4515" x2="300"/>
+  <rect  width="300" x="0" y="4500" height="30" style="fill:none;stroke:none" id="connector14pin"/>
+  <rect  width="30" x="0" y="4500" height="30" style="fill:none;stroke:none" id="connector14terminal"/>
+  <text  x="390" y="4550" style="font-size:130px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="label14" font-size="130">15</text>
+  <line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line153" y1="4515" x1="1530" y2="4515" x2="1815"/>
+  <rect  width="300" x="1530" y="4500" height="30" style="fill:none;stroke:none" id="connector25pin"/>
+
+><rect  width="30" x="1800" y="4500" height="30" style="fill:none;stroke:none" id="connector25terminal"/>
+
+><text  x="1440" y="4550" style="font-size:130px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="label25" font-size="130">26</text>
+
+><line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line158" y1="4815" x1="15" y2="4815" x2="300"/>
+  <rect  width="300" x="0" y="4800" height="30" style="fill:none;stroke:none" id="connector15pin"/>
+  <rect  width="30" x="0" y="4800" height="30" style="fill:none;stroke:none" id="connector15terminal"/>
+  <text  x="390" y="4850" style="font-size:130px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="label15" font-size="130">16</text>
+  <line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line163" y1="4815" x1="1530" y2="4815" x2="1815"/>
+  <rect  width="300" x="1530" y="4800" height="30" style="fill:none;stroke:none" id="connector24pin"/>
+
+><rect  width="30" x="1800" y="4800" height="30" style="fill:none;stroke:none" id="connector24terminal"/>
+
+><text  x="1440" y="4850" style="font-size:130px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="label24" font-size="130">25</text>
+
+><line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line168" y1="5115" x1="15" y2="5115" x2="300"/>
+  <rect  width="300" x="0" y="5100" height="30" style="fill:none;stroke:none" id="connector16pin"/>
+  <rect  width="30" x="0" y="5100" height="30" style="fill:none;stroke:none" id="connector16terminal"/>
+  <text  x="390" y="5150" style="font-size:130px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="label16" font-size="130">17</text>
+  <line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line173" y1="5115" x1="1530" y2="5115" x2="1815"/>
+  <rect  width="300" x="1530" y="5100" height="30" style="fill:none;stroke:none" id="connector23pin"/>
+
+><rect  width="30" x="1800" y="5100" height="30" style="fill:none;stroke:none" id="connector23terminal"/>
+
+><text  x="1440" y="5150" style="font-size:130px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="label23" font-size="130">24</text>
+
+><line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line178" y1="5415" x1="15" y2="5415" x2="300"/>
+  <rect  width="300" x="0" y="5400" height="30" style="fill:none;stroke:none" id="connector17pin"/>
+  <rect  width="30" x="0" y="5400" height="30" style="fill:none;stroke:none" id="connector17terminal"/>
+  <text  x="390" y="5450" style="font-size:130px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="label17" font-size="130">18</text>
+  <line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line183" y1="5415" x1="1530" y2="5415" x2="1815"/>
+  <rect  width="300" x="1530" y="5400" height="30" style="fill:none;stroke:none" id="connector22pin"/>
+
+><rect  width="30" x="1800" y="5400" height="30" style="fill:none;stroke:none" id="connector22terminal"/>
+
+><text  x="1440" y="5450" style="font-size:130px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="label22" font-size="130">23</text>
+
+><line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line188" y1="5715" x1="15" y2="5715" x2="300"/>
+  <rect  width="300" x="0" y="5700" height="30" style="fill:none;stroke:none" id="connector18pin"/>
+  <rect  width="30" x="0" y="5700" height="30" style="fill:none;stroke:none" id="connector18terminal"/>
+  <text  x="390" y="5750" style="font-size:130px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="label18" font-size="130">19</text>
+  <line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line193" y1="5715" x1="1530" y2="5715" x2="1815"/>
+  <rect  width="300" x="1530" y="5700" height="30" style="fill:none;stroke:none" id="connector21pin"/>
+
+><rect  width="30" x="1800" y="5700" height="30" style="fill:none;stroke:none" id="connector21terminal"/>
+
+><text  x="1440" y="5750" style="font-size:130px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="label21" font-size="130">22</text>
+
+><line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line198" y1="6015" x1="15" y2="6015" x2="300"/>
+  <rect  width="300" x="0" y="6000" height="30" style="fill:none;stroke:none" id="connector19pin"/>
+  <rect  width="30" x="0" y="6000" height="30" style="fill:none;stroke:none" id="connector19terminal"/>
+  <text  x="390" y="6050" style="font-size:130px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="label19" font-size="130">20</text>
+  <line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line203" y1="6015" x1="1530" y2="6015" x2="1815"/>
+  <rect  width="300" x="1530" y="6000" height="30" style="fill:none;stroke:none" id="connector20pin"/>
+
+><rect  width="30" x="1800" y="6000" height="30" style="fill:none;stroke:none" id="connector20terminal"/>
+
+><text  x="1440" y="6050" style="font-size:130px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="label20" font-size="130">21</text>
+
+><g style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans" id="text4260" xml:space="preserve" transform="matrix(11.111112,0,0,11.111112,-25.396792,-294.38103)"/>
+  <g id="text4264" xml:space="preserve" transform="matrix(11.111112,0,0,11.111112,-25.396792,-294.38103)"/>
+  <g style="font-size:133.33334351px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text4268" xml:space="preserve">
+   <text x="101.85127" y="248.88191" id="tspan4270">V</text>
+  </g>
+  <g style="font-size:86.66789246px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;baseline-shift:sub;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text4272" xml:space="preserve">
+   <text x="182.21848" y="268.97372" id="tspan4274">SS</text>
+  </g>
+  <g style="font-size:111.11112213px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text4276" xml:space="preserve">
+   <text x="75.062218" y="573.6994" id="tspan4278">O17</text>
+  </g>
+  <g style="font-size:111.11112213px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text4280" xml:space="preserve">
+   <text x="68.364944" y="858.33325" id="tspan4284">O16</text>
+  </g>
+  <g style="font-size:111.11112213px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text4288" xml:space="preserve">
+   <text x="68.364944" y="1166.4073" id="tspan4290">O15</text>
+  </g>
+  <g style="font-size:111.11112213px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text4292" xml:space="preserve">
+   <text x="71.713585" y="1467.7844" id="tspan4294">O14</text>
+  </g>
+  <g style="font-size:111.11112213px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text4296" xml:space="preserve">
+   <text x="68.364952" y="1765.8129" id="tspan4298">O13</text>
+  </g>
+  <g style="font-size:111.11112213px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text4300" xml:space="preserve">
+   <text x="71.713585" y="2073.8872" id="tspan4302">O12</text>
+  </g>
+  <g style="font-size:111.11112213px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text4304" xml:space="preserve">
+   <text x="81.759483" y="2368.5669" id="tspan4306">O11</text>
+  </g>
+  <g style="font-size:111.11112213px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text4308" xml:space="preserve">
+   <text x="71.713585" y="2673.2927" id="tspan4310">O10</text>
+  </g>
+  <g style="font-size:111.11112213px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text4312" xml:space="preserve">
+   <text x="128.64035" y="2967.9724" id="tspan4314">O9</text>
+  </g>
+  <g style="font-size:111.11112213px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text4316" xml:space="preserve">
+   <text x="128.64034" y="3266.001" id="tspan4318">O8</text>
+  </g>
+  <g style="font-size:111.11112213px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text4320" xml:space="preserve">
+   <text x="135.33762" y="3580.7722" id="tspan4322">O7</text>
+  </g>
+  <g style="font-size:111.11112213px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text4324" xml:space="preserve">
+   <text x="135.3376" y="3878.8005" id="tspan4326">O6</text>
+  </g>
+  <g style="font-size:111.11112213px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text4328" xml:space="preserve">
+   <text x="131.98898" y="4176.8291" id="tspan4330">O5</text>
+  </g>
+  <g style="font-size:111.11112213px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text4332" xml:space="preserve">
+   <text x="135.33762" y="4471.5088" id="tspan4334">O4</text>
+  </g>
+  <g style="font-size:111.11112213px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text4336" xml:space="preserve">
+   <text x="135.33763" y="4769.5371" id="tspan4338">O3</text>
+  </g>
+  <g style="font-size:111.11112213px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text4340" xml:space="preserve">
+   <text x="131.98898" y="5070.9141" id="tspan4342">O2</text>
+  </g>
+  <g style="font-size:111.11112213px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text4344" xml:space="preserve">
+   <text x="142.0349" y="5372.291" id="tspan4346">O1</text>
+  </g>
+  <g style="font-size:111.11112213px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text4348" xml:space="preserve">
+   <text x="95.154015" y="5951.6045" id="tspan4350">V</text>
+  </g>
+  <g style="font-size:86.66789246px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;baseline-shift:sub;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text4352" xml:space="preserve">
+   <text x="162.12669" y="5975.0454" id="tspan4354">DD</text>
+  </g>
+  <g style="font-size:111.11112213px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text4356" xml:space="preserve">
+   <text x="-363.60876" y="5666.9712" id="tspan4358">BRIGHTNESS</text>
+  </g>
+  <g style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text4360" xml:space="preserve" transform="matrix(11.111112,0,0,11.111112,-352.8123,-261.79166)">
+   <text x="172.08626" y="47.166126" id="tspan4362">O18</text>
+  </g>
+  <g style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text4364" xml:space="preserve" transform="matrix(11.111112,0,0,11.111112,-352.8123,-261.79166)">
+   <text x="171.78488" y="74.892807" id="tspan4366">O19</text>
+  </g>
+  <g style="font-size:111.11112213px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text4368" xml:space="preserve">
+   <text x="1559.2573" y="868.37903" id="tspan4370">O20</text>
+  </g>
+  <g style="font-size:111.11112213px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text4372" xml:space="preserve">
+   <text x="1555.9087" y="1166.4073" id="tspan4374">O21</text>
+  </g>
+  <g style="font-size:111.11112213px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text4376" xml:space="preserve">
+   <text x="1555.9087" y="1464.4358" id="tspan4378">O22</text>
+  </g>
+  <g style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text4380" xml:space="preserve" transform="matrix(11.111112,0,0,11.111112,-352.8123,-261.79166)">
+   <text x="171.48351" y="181.58026" id="tspan4382">O23</text>
+  </g>
+  <g style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text4384" xml:space="preserve" transform="matrix(11.111112,0,0,11.111112,-352.8123,-261.79166)">
+   <text x="171.48351" y="210.21107" id="tspan4386">O24</text>
+  </g>
+  <g style="font-size:111.11112213px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text4388" xml:space="preserve">
+   <text x="1549.2115" y="2368.5669" id="tspan4390">O25</text>
+  </g>
+  <g style="font-size:111.11112213px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text4392" xml:space="preserve">
+   <text x="1549.2115" y="2666.5952" id="tspan4394">O26</text>
+  </g>
+  <g style="font-size:111.11112213px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text4396" xml:space="preserve">
+   <text x="1549.2115" y="2961.2751" id="tspan4398">O27</text>
+  </g>
+  <g style="font-size:111.11112213px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text4400" xml:space="preserve">
+   <text x="1552.5601" y="3259.3035" id="tspan4402">O28</text>
+  </g>
+  <g style="font-size:111.11112213px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text4404" xml:space="preserve">
+   <text x="1549.2114" y="3567.3774" id="tspan4406">O29</text>
+  </g>
+  <g style="font-size:111.11112213px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text4408" xml:space="preserve">
+   <text x="1549.2115" y="3865.406" id="tspan4410">O30</text>
+  </g>
+  <g style="font-size:111.11112213px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text4412" xml:space="preserve">
+   <text x="1549.2115" y="4170.1318" id="tspan4414">O31</text>
+  </g>
+  <g style="font-size:111.11112213px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text4416" xml:space="preserve">
+   <text x="1549.2114" y="4464.8115" id="tspan4418">O32</text>
+  </g>
+  <g style="font-size:111.11112213px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text4420" xml:space="preserve">
+   <text x="1549.2115" y="4769.5371" id="tspan4422">O33</text>
+  </g>
+  <g style="font-size:111.11112213px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text4424" xml:space="preserve">
+   <text x="1549.2115" y="5070.9141" id="tspan4426">O34</text>
+  </g>
+  <g style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text4428" xml:space="preserve" transform="matrix(11.111112,0,0,11.111112,-352.8123,-261.79166)">
+   <text x="171.48351" y="506.46466" id="tspan4430">DATA ENABLE</text>
+  </g>
+  <g style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text4432" xml:space="preserve" transform="matrix(11.111112,0,0,11.111112,-352.8123,-261.79166)">
+   <text x="171.78488" y="533.28723" id="tspan4434">DATA IN</text>
+  </g>
+  <g style="font-size:111.11112213px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans" id="text4436" xml:space="preserve">
+   <text x="1552.5601" y="5961.6504" id="tspan4438">CLOCK IN</text>
+  </g>
+ </g>
+</svg>

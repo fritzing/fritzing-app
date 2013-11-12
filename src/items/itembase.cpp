@@ -1381,7 +1381,12 @@ FSvgRenderer * ItemBase::setUpImage(ModelPart * modelPart, LayerAttributes & lay
 
 
 	//DebugDialog::debug(QString("set up image elapsed (1) %1").arg(t.elapsed()) );
-	QString filename = PartFactory::getSvgFilename(modelPart, modelPartShared->imageFileName(layerAttributes.viewID, layerAttributes.viewLayerID), true, true);
+    bool useOldSchematic = false;
+    if (layerAttributes.viewID == ViewLayer::SchematicView) {
+        InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
+        useOldSchematic = (infoGraphicsView != NULL && infoGraphicsView->isOldStyleSchematic());
+    }
+	QString filename = PartFactory::getSvgFilename(modelPart, modelPartShared->imageFileName(layerAttributes.viewID, layerAttributes.viewLayerID), true, true, useOldSchematic);
 
 //#ifndef QT_NO_DEBUG
 	//DebugDialog::debug(QString("set up image elapsed (2) %1").arg(t.elapsed()) );
@@ -2178,7 +2183,13 @@ QPixmap * ItemBase::getPixmap(ViewLayer::ViewID vid, bool swappingEnabled, QSize
 	QString baseName = modelPart()->hasBaseNameFor(vid);
 	if (baseName.isEmpty()) return NULL;
 
-	QString filename = PartFactory::getSvgFilename(modelPart(), baseName, true, true);
+
+    bool useOldSchematic = false;
+    if (m_viewID == ViewLayer::SchematicView) {
+        InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
+        useOldSchematic = (infoGraphicsView != NULL && infoGraphicsView->isOldStyleSchematic());
+    }
+	QString filename = PartFactory::getSvgFilename(modelPart(), baseName, true, true, useOldSchematic);
 	if (filename.isEmpty()) {
 		return NULL;
 	}

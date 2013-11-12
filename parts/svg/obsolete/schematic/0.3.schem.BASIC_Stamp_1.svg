@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+<svg xmlns="http://www.w3.org/2000/svg" width="2.19194in" xml:space="preserve" xmlns:xml="http://www.w3.org/XML/1998/namespace" x="0px" version="1.2" y="0px" height="4.53332in" viewBox="0 0 157.82 326.399" baseProfile="tiny" id="svg2">
+ <g id="schematic">
+  <rect width="133.818" x="23.22" y="1.08" fill="none" height="324" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="2.4"/>
+  <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="22.68" stroke-width="2.4" x1="1.62" y2="22.68" x2="22.14"/>
+  <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="44.28" stroke-width="2.4" x1="1.62" y2="44.28" x2="22.14"/>
+  <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="65.88" stroke-width="2.4" x1="1.62" y2="65.88" x2="22.14"/>
+  <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="87.48" stroke-width="2.4" x1="1.62" y2="87.48" x2="22.14"/>
+  <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="109.08" stroke-width="2.4" x1="1.62" y2="109.08" x2="22.14"/>
+  <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="130.68" stroke-width="2.4" x1="1.62" y2="130.68" x2="22.14"/>
+  <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="152.28" stroke-width="2.4" x1="1.62" y2="152.28" x2="22.14"/>
+  <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="173.88" stroke-width="2.4" x1="1.62" y2="173.88" x2="22.14"/>
+  <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="195.481" stroke-width="2.4" x1="1.62" y2="195.481" x2="22.14"/>
+  <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="217.081" stroke-width="2.4" x1="1.62" y2="217.081" x2="22.14"/>
+  <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="238.679" stroke-width="2.4" x1="1.62" y2="238.679" x2="22.14"/>
+  <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="260.28" stroke-width="2.4" x1="1.62" y2="260.28" x2="22.14"/>
+  <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="281.88" stroke-width="2.4" x1="1.62" y2="281.88" x2="22.14"/>
+  <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" y1="303.481" stroke-width="2.4" x1="1.62" y2="303.481" x2="22.14"/>
+  <text font-family="Droid Sans" id="label0" transform="matrix(1 0 0 1 28.0793 25.2007)" font-size="9.36">VIN</text>
+  <text font-family="Droid Sans" id="label1" transform="matrix(1 0 0 1 28.0793 46.8003)" font-size="9.36">VSS</text>
+  <text font-family="Droid Sans" transform="matrix(1 0 0 1 28.0793 68.4009)" font-size="9.36">P</text>
+  <text font-family="Droid Sans" transform="matrix(1 0 0 1 33.3811 68.4009)" font-size="9.36">C</text>
+  <text font-family="Droid Sans" transform="matrix(1 0 0 1 38.8376 68.4009)" font-size="9.36">O</text>
+  <text font-family="Droid Sans" transform="matrix(1 0 0 1 28.0793 90.0005)" font-size="9.36">P</text>
+  <text font-family="Droid Sans" transform="matrix(1 0 0 1 33.3811 90.0005)" font-size="9.36">C</text>
+  <text font-family="Droid Sans" transform="matrix(1 0 0 1 39.0251 90.0005)" font-size="9.36">I</text>
+  <text font-family="Droid Sans" id="label4" transform="matrix(1 0 0 1 28.0793 111.6011)" font-size="9.36">VDD</text>
+  <text font-family="Droid Sans" id="label5" transform="matrix(1 0 0 1 28.0793 133.2007)" font-size="9.36">RES</text>
+  <text font-family="Droid Sans" id="label6" transform="matrix(1 0 0 1 28.0793 154.8003)" font-size="9.36">P0</text>
+  <text font-family="Droid Sans" id="label7" transform="matrix(1 0 0 1 28.0793 176.3999)" font-size="9.36">P1</text>
+  <text font-family="Droid Sans" id="label8" transform="matrix(1 0 0 1 28.0793 198.0005)" font-size="9.36">P2</text>
+  <text font-family="Droid Sans" id="label9" transform="matrix(1 0 0 1 28.0793 219.6011)" font-size="9.36">P3</text>
+  <text font-family="Droid Sans" id="label10" transform="matrix(1 0 0 1 28.0793 241.2007)" font-size="9.36">P4</text>
+  <text font-family="Droid Sans" id="label11" transform="matrix(1 0 0 1 28.0793 262.8003)" font-size="9.36">P5</text>
+  <text font-family="Droid Sans" id="label12" transform="matrix(1 0 0 1 28.0793 284.3999)" font-size="9.36">P6</text>
+  <text font-family="Droid Sans" id="label12_1_" transform="matrix(1 0 0 1 28.0793 305.9663)" font-size="9.36">P7</text>
+  <text font-family="Droid Sans" id="label" transform="matrix(1 0 0 1 75.7898 83.5796)" font-size="18">Basic</text>
+  <text font-family="Droid Sans" id="label_1_" transform="matrix(1 0 0 1 63.5818 103.5796)" font-size="18">Stamp 1</text>
+ <rect width="21.601" x="0.54" y="21.6" fill="none" height="2.16" id="connector0pin"/>
+ <rect width="2.16" x="0.54" y="21.6" fill="none" height="2.16" id="connector0terminal"/>
+ <rect width="21.601" x="0.54" y="43.2" fill="none" height="2.16" id="connector1pin"/>
+ <rect width="2.16" x="0.54" y="43.2" fill="none" height="2.16" id="connector1terminal"/>
+ <rect width="21.601" x="0.54" y="64.8" fill="none" height="2.16" id="connector2pin"/>
+ <rect width="2.16" x="0.54" y="64.8" fill="none" height="2.16" id="connector2terminal"/>
+ <rect width="21.601" x="0.54" y="86.4" fill="none" height="2.16" id="connector3pin"/>
+ <rect width="2.16" x="0.54" y="86.4" fill="none" height="2.16" id="connector3terminal"/>
+ <rect width="21.601" x="0.54" y="108" fill="none" height="2.16" id="connector4pin"/>
+ <rect width="2.16" x="0.54" y="108" fill="none" height="2.16" id="connector4terminal"/>
+ <rect width="21.601" x="0.54" y="129.6" fill="none" height="2.16" id="connector5pin"/>
+ <rect width="2.16" x="0.54" y="129.6" fill="none" height="2.16" id="connector5terminal"/>
+ <rect width="21.601" x="0.54" y="151.2" fill="none" height="2.16" id="connector6pin"/>
+ <rect width="2.16" x="0.54" y="151.2" fill="none" height="2.16" id="connector6terminal"/>
+ <rect width="21.601" x="0.54" y="172.8" fill="none" height="2.16" id="connector7pin"/>
+ <rect width="2.16" x="0.54" y="172.8" fill="none" height="2.16" id="connector7terminal"/>
+ <rect width="21.601" x="0.54" y="194.401" fill="none" height="2.159" id="connector8pin"/>
+ <rect width="2.16" x="0.54" y="194.401" fill="none" height="2.159" id="connector8terminal"/>
+ <rect width="21.601" x="0.54" y="216" fill="none" height="2.16" id="connector9pin"/>
+ <rect width="2.16" x="0.54" y="216" fill="none" height="2.16" id="connector9terminal"/>
+ <rect width="21.601" x="0.54" y="237.599" fill="none" height="2.16" id="connector10pin"/>
+ <rect width="2.16" x="0.54" y="237.599" fill="none" height="2.16" id="connector10terminal"/>
+ <rect width="21.601" x="0.54" y="259.2" fill="none" height="2.16" id="connector11pin"/>
+ <rect width="2.16" x="0.54" y="259.2" fill="none" height="2.16" id="connector11terminal"/>
+ <rect width="21.601" x="0.54" y="280.8" fill="none" height="2.16" id="connector12pin"/>
+ <rect width="2.16" x="0.54" y="280.8" fill="none" height="2.16" id="connector12terminal"/>
+ <rect width="21.601" x="0.54" y="302.401" fill="none" height="2.159" id="connector13pin"/>
+ <rect width="2.16" x="0.54" y="302.401" fill="none" height="2.159" id="connector13terminal"/>
+ <line fill="none" stroke="#000000" y1="125.067" stroke-width="0.5" x1="28.799" y2="125.067" x2="42.662"/>
+ </g>
+</svg>

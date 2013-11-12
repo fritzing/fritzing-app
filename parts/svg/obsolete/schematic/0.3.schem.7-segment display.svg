@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1 Basic//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-basic.dtd">
+<svg version="1.1" baseProfile="basic" id="svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+	 x="0px" y="0px" width="129.96px" height="129.96px" viewBox="0 0 129.96 129.96" xml:space="preserve">
+<g id="schematic">
+<rect id="connector0pin" x="1.2" y="21.463" fill="none" width="9.989" height="1.998"/>
+<rect id="connector0terminal" x="1.2" y="21.463" fill="none" width="1.998" height="1.998"/>
+<rect id="connector1pin" x="1.2" y="42.722" fill="none" width="9.989" height="1.998"/>
+<rect id="connector1terminal" x="1.2" y="42.722" fill="none" width="1.998" height="1.998"/>
+<rect id="connector2pin" x="63.981" y="118.767" fill="none" width="1.998" height="9.99"/>
+<rect id="connector2terminal" x="63.981" y="126.759" fill="none" width="1.998" height="1.998"/>
+<rect id="connector3pin" x="1.2" y="63.981" fill="none" width="9.989" height="1.999"/>
+<rect id="connector3terminal" x="1.2" y="63.981" fill="none" width="1.998" height="1.999"/>
+<rect id="connector4pin" x="1.2" y="85.241" fill="none" width="9.989" height="1.998"/>
+<rect id="connector4terminal" x="1.2" y="85.241" fill="none" width="1.998" height="1.998"/>
+<rect id="connector5pin" x="119.97" y="85.242" fill="none" width="9.99" height="1.998"/>
+<rect id="connector5terminal" x="127.963" y="85.242" fill="none" width="1.997" height="1.998"/>
+<rect id="connector6pin" x="119.97" y="63.982" fill="none" width="9.99" height="1.998"/>
+<rect id="connector6terminal" x="127.963" y="63.982" fill="none" width="1.997" height="1.998"/>
+<rect id="connector7pin" x="63.983" y="118.767" fill="none" width="1.998" height="9.99"/>
+<rect id="connector7terminal" x="63.983" y="126.759" fill="none" width="1.998" height="1.998"/>
+<rect id="connector8pin" x="119.97" y="42.722" fill="none" width="9.99" height="1.999"/>
+<rect id="connector8terminal" x="127.963" y="42.722" fill="none" width="1.997" height="1.999"/>
+<rect id="connector9pin" x="119.97" y="21.463" fill="none" width="9.99" height="1.998"/>
+<rect id="connector9terminal" x="127.963" y="21.463" fill="none" width="1.997" height="1.998"/>
+	<line fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" x1="22.46" y1="22.459" x2="1.2" y2="22.459"/>
+	<line fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" x1="22.464" y1="43.721" x2="1.204" y2="43.721"/>
+	<line fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" x1="22.464" y1="64.98" x2="1.204" y2="64.98"/>
+	<line fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" x1="22.464" y1="86.24" x2="1.204" y2="86.24"/>
+	
+		<line fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" x1="64.982" y1="107.498" x2="64.982" y2="128.757"/>
+	<line fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" x1="128.76" y1="22.462" x2="107.5" y2="22.462"/>
+	<line fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" x1="128.76" y1="43.721" x2="107.5" y2="43.721"/>
+	<line fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" x1="128.76" y1="64.98" x2="107.5" y2="64.98"/>
+	<line fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" x1="128.76" y1="86.24" x2="107.5" y2="86.24"/>
+	<rect x="22.464" y="1.204" fill="none" stroke="#000000" stroke-width="2.4016" width="85.036" height="106.294"/>
+	<g>
+		<path d="M78.195,29.615l-2.688,21.912l1.188,1.354l0.669,0.763l2.475-2.203l2.694-21.952c0.162-1.334-0.139-2.596-0.85-3.606
+			l-3.143,2.798l-0.398,0.354C78.203,29.218,78.222,29.417,78.195,29.615z"/>
+		<polygon fill="#FFFFFF" points="77.363,53.643 77.363,53.643 76.694,52.88 		"/>
+		<path d="M76.921,28.159c0.196,0,0.387,0.044,0.559,0.125l3.543-3.155c-0.906-0.84-2.112-1.297-3.447-1.297H56.838
+			c-1.381,0-2.75,0.487-3.904,1.38l1.692,1.929l0.996,1.136c0.179-0.077,0.37-0.117,0.562-0.117L76.921,28.159L76.921,28.159z"/>
+		<polygon fill="#FFFFFF" points="78.142,29.034 78.142,29.034 78.541,28.679 		"/>
+		<polygon points="74.14,56.514 75.23,55.543 76.616,54.308 76.418,54.084 74.757,52.188 52.654,52.188 50.18,54.395 51.031,55.367 
+			52.039,56.514 		"/>
+		<path d="M76.616,54.308l-0.197-0.224L76.616,54.308z"/>
+		<polygon fill="#FFFFFF" points="76.694,52.88 75.507,51.527 75.507,51.527 		"/>
+		<polygon fill="#FFFFFF" points="75.23,55.543 76.616,54.308 76.616,54.308 		"/>
+		<path d="M74.804,57.262l-2.697,21.951c-0.021,0.191-0.086,0.379-0.186,0.551l1.401,1.599l1.282,1.464
+			c1.02-1.043,1.666-2.353,1.836-3.734l2.691-21.915l-1.857-2.116l-1.45,1.292L74.804,57.262z"/>
+		<polygon points="77.275,55.06 77.275,55.06 75.825,56.352 		"/>
+		<path fill="#FFFFFF" d="M74.14,56.514l1.09-0.971L74.14,56.514z"/>
+		<path d="M49.874,80.544c-0.196,0-0.387-0.045-0.559-0.127l-3.543,3.154c0.908,0.84,2.114,1.297,3.447,1.297h20.738
+			c1.381,0,2.748-0.486,3.902-1.379l-2.688-3.062c-0.179,0.076-0.369,0.117-0.561,0.117H49.874z"/>
+		<polygon points="71.175,80.421 73.862,83.484 73.862,83.484 		"/>
+		<polygon fill="#FFFFFF" points="74.605,82.826 74.605,82.826 73.323,81.362 		"/>
+		<path d="M49.433,55.06l-2.473,2.202l-2.696,21.951c-0.164,1.334,0.137,2.596,0.85,3.607l3.54-3.152
+			c-0.061-0.184-0.08-0.381-0.055-0.58l2.69-21.912l-0.904-1.031L49.433,55.06z"/>
+		<polygon points="50.384,56.145 51.289,57.176 51.289,57.175 		"/>
+		<path fill="#FFFFFF" d="M50.18,54.395l0.852,0.972L50.18,54.395z"/>
+		<polygon fill="#FFFFFF" points="45.776,83.572 49.318,80.417 49.318,80.417 		"/>
+		<path d="M50.353,29.609l-2.691,21.917l1.857,2.116l2.472-2.203l2.697-21.952c0.023-0.19,0.088-0.378,0.187-0.549l-2.687-3.062
+			C51.169,26.923,50.522,28.231,50.353,29.609z"/>
+		<rect x="53.531" y="25.372" width="0" height="4.073"/>
+		<polygon fill="#FFFFFF" points="55.622,28.275 55.622,28.275 54.626,27.14 		"/>
+		<rect x="51.417" y="51.633" fill="#FFFFFF" width="0" height="3.317"/>
+		<polygon fill="#FFFFFF" points="50.18,54.395 50.18,54.395 50.18,54.395 		"/>
+		<path d="M83.074,78.962c-1.471,0-2.668,1.197-2.668,2.668c0,1.473,1.197,2.67,2.668,2.67c1.474,0,2.672-1.197,2.672-2.67
+			C85.746,80.16,84.547,78.962,83.074,78.962z"/>
+		<path d="M83.074,84.3c-1.471,0-2.668-1.197-2.668-2.67c0-1.471,1.197-2.668,2.668-2.668c1.474,0,2.672,1.197,2.672,2.668
+			C85.746,83.103,84.547,84.3,83.074,84.3z"/>
+	</g>
+</g>
+</svg>

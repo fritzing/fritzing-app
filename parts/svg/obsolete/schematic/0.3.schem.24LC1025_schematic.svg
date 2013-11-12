@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="164.7" inkscape:version="0.47 r22583" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" version="1.2" height="161.7" viewBox="0 0 1830 1796.6664" sodipodi:docname="SCH-24LC1025.svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" id="svg2870">
+ <metadata  id="metadata2920">
+  <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work xmlns:cc="http://creativecommons.org/ns#" rdf:about="" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <dc:format xmlns:dc="http://purl.org/dc/elements/1.1/">image/svg+xml</dc:format>
+    <dc:type xmlns:dc="http://purl.org/dc/elements/1.1/" rdf:resource="http://purl.org/dc/dcmitype/StillImage" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <dc:title xmlns:dc="http://purl.org/dc/elements/1.1/"/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs  id="defs2918">
+  <inkscape:perspective xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" inkscape:vp_x="0 : 80.849998 : 1" inkscape:vp_y="0 : 1000 : 0" inkscape:vp_z="164.7 : 80.849998 : 1" sodipodi:type="inkscape:persp3d" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" id="perspective2964" inkscape:persp3d-origin="82.349998 : 53.899999 : 1"/>
+  <inkscape:perspective xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" id="perspective3070"/>
+  <inkscape:perspective xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" id="perspective2960"/>
+  <inkscape:perspective xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" id="perspective2956"/>
+  <inkscape:perspective xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" id="perspective2922"/>
+  <inkscape:perspective xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" id="perspective3244"/>
+  <inkscape:perspective xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" id="perspective5068"/>
+  <inkscape:perspective xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" id="perspective2966"/>
+  <inkscape:perspective xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" id="perspective2970"/>
+  <inkscape:perspective xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" id="perspective2970-0"/>
+ </defs>
+ <sodipodi:namedview xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" inkscape:window-height="553" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" inkscape:zoom="1.4594929" inkscape:cx="82.349998" inkscape:cy="80.849998" showgrid="false" inkscape:window-width="800" objecttolerance="10" pagecolor="#ffffff" bordercolor="#666666" inkscape:window-x="-4" inkscape:window-y="-4" inkscape:window-maximized="1" inkscape:current-layer="schematic" id="namedview2916" borderopacity="1" guidetolerance="10" gridtolerance="10"/>
+ <g  id="schematic" transform="translate(0,266.66759)">
+  <rect  width="1200" x="315" y="15" height="1500" style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="rect2873"/>
+  <g style="font-size:235px;text-align:center;line-height:125%;writing-mode:lr;text-anchor:middle;fill:#000000;stroke:none;font-family:Droid Sans" id="label" font-size="235">
+   <text x="908.51697" y="-66.610168" id="tspan2962">24LC1025</text>
+  </g>
+  <line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line2876" y1="315" x1="15" y2="315" x2="300"/>
+  <rect  width="300" x="0" y="300" height="30" style="fill:none;stroke-width:0" id="connector0pin"/>
+  <rect  width="30" x="0" y="300" height="30" style="fill:none;stroke-width:0" id="connector0terminal"/>
+  <g style="font-size:130px;text-align:start;line-height:125%;writing-mode:lr;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans" id="label0" font-size="130">
+   <text x="390" y="350" id="tspan3072">A0</text>
+  </g>
+  <line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line2881" y1="315" x1="1515" y2="315" x2="1815"/>
+  <rect  width="300" x="1530" y="300" height="30" style="fill:none;stroke-width:0" id="connector7pin"/>
+  <rect  width="30" x="1830" y="300" height="30" style="fill:none;stroke-width:0" id="connector7terminal"/>
+  <g style="font-size:130px;text-align:end;line-height:125%;writing-mode:lr;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans" id="label7" font-size="130">
+   <text x="1440" y="350" id="tspan3080">+V</text>
+  </g>
+  <line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line2886" y1="615" x1="15" y2="615" x2="300"/>
+  <rect  width="300" x="0" y="600" height="30" style="fill:none;stroke-width:0" id="connector1pin"/>
+  <rect  width="30" x="0" y="600" height="30" style="fill:none;stroke-width:0" id="connector1terminal"/>
+  <g style="font-size:130px;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans" id="label1" font-size="130">
+   <text x="397.61301" y="635.98309" id="tspan3074">A1</text>
+  </g>
+  <line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line2891" y1="615" x1="1515" y2="615" x2="1815"/>
+  <rect  width="300" x="1530" y="600" height="30" style="fill:none;stroke-width:0" id="connector6pin"/>
+  <rect  width="30" x="1830" y="600" height="30" style="fill:none;stroke-width:0" id="connector6terminal"/>
+  <g style="font-size:130px;text-align:end;line-height:125%;writing-mode:lr-tb;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans" id="label6" font-size="130">
+   <text x="1438.87" y="637.1131" id="tspan3082">WP</text>
+  </g>
+  <line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line2896" y1="915" x1="15" y2="915" x2="300"/>
+  <rect  width="300" x="0" y="900" height="30" style="fill:none;stroke-width:0" id="connector2pin"/>
+  <rect  width="30" x="0" y="900" height="30" style="fill:none;stroke-width:0" id="connector2terminal"/>
+  <g sodipodi:linespacing="100%" style="font-size:130px;text-align:start;line-height:100%;writing-mode:lr;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans" id="label2" font-size="130">
+   <text x="390" sodipodi:role="line" y="950" id="tspan2966">A2 (CS)</text>
+  </g>
+  <line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line2901" y1="915" x1="1515" y2="915" x2="1815"/>
+  <rect  width="300" x="1530" y="900" height="30" style="fill:none;stroke-width:0" id="connector5pin"/>
+  <rect  width="30" x="1830" y="900" height="30" style="fill:none;stroke-width:0" id="connector5terminal"/>
+  <g style="font-size:130px;text-align:end;line-height:125%;writing-mode:lr;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans" id="label5" font-size="130">
+   <text x="1440" y="950" id="tspan3084">SCL</text>
+  </g>
+  <line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line2906" y1="1215" x1="15" y2="1215" x2="300"/>
+  <rect  width="300" x="0" y="1200" height="30" style="fill:none;stroke-width:0" id="connector3pin"/>
+  <rect  width="30" x="0" y="1200" height="30" style="fill:none;stroke-width:0" id="connector3terminal"/>
+  <g style="font-size:130px;text-align:start;line-height:125%;writing-mode:lr;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans" id="label3" font-size="130">
+   <text x="390" y="1250" id="tspan3078">0V</text>
+  </g>
+  <line  style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" id="line2911" y1="1215" x1="1515" y2="1215" x2="1815"/>
+  <rect  width="300" x="1530" y="1200" height="30" style="fill:none;stroke-width:0" id="connector4pin"/>
+  <rect  width="30" x="1830" y="1200" height="30" style="fill:none;stroke-width:0" id="connector4terminal"/>
+  <g style="font-size:130px;text-align:end;line-height:125%;writing-mode:lr;text-anchor:end;fill:#000000;stroke:none;font-family:Droid Sans" id="label4" font-size="130">
+   <text x="1440" y="1250" id="tspan3086">SDA</text>
+  </g>
+  <g style="font-size:130px;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans" id="label0-1-2" font-size="130">
+   <text x="136.45079" y="580.89374" id="tspan3194">2</text>
+  </g>
+  <g style="font-size:130px;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans" id="label0-0-3" font-size="130">
+   <text x="136.87395" y="281.26321" id="tspan3192">1</text>
+  </g>
+  <g style="font-size:130px;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans" id="label0-5-1" font-size="130">
+   <text x="131.64973" y="877.9342" id="tspan3196">3</text>
+  </g>
+  <g style="font-size:130px;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans" id="label0-11-87" font-size="130">
+   <text x="124.92551" y="1182.0775" id="tspan3198">4</text>
+  </g>
+  <g style="font-size:130px;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans" id="label0-7-27" font-size="130">
+   <text x="1630.5182" y="1182.7264" id="tspan3200">5</text>
+  </g>
+  <g style="font-size:130px;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans" id="label0-4-3" font-size="130">
+   <text x="1636.2705" y="873.23596" id="tspan3202">6</text>
+  </g>
+  <g style="font-size:130px;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans" id="label0-2-9" font-size="130">
+   <text x="1628.4626" y="583.65527" id="tspan3204">7</text>
+  </g>
+  <g style="font-size:130px;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans" id="label0-2-9-0" font-size="130">
+   <text x="1636.3502" y="279.31409" id="tspan5085">8</text>
+  </g>
+ </g>
+</svg>

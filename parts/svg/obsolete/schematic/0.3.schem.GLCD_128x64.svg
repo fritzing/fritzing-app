@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Ebene_1" xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="561.625px"
+	 height="256.895px" viewBox="0 0 561.625 256.895" enable-background="new 0 0 561.625 256.895" xml:space="preserve">
+<g id="schematic">
+	<g id="layer1" transform="translate(-82.044643,-372.4865)">
+		<path id="rect5049" d="M110.391,602.806h2.4v26.575h-2.4V602.806z"/>
+		<path id="rect5049-7" d="M136.966,602.806h2.4v26.575h-2.4V602.806z"/>
+		<path id="rect5049-6" d="M163.541,602.806h2.4v26.575h-2.4V602.806z"/>
+		<path id="rect5049-9" d="M190.115,602.806h2.4v26.575h-2.4V602.806z"/>
+		<path id="rect5049-3" d="M216.69,602.806h2.4v26.575h-2.4V602.806z"/>
+		<path id="rect5049-1" d="M243.265,602.806h2.4v26.575h-2.4V602.806z"/>
+		<path id="rect5049-0" d="M269.84,602.806h2.4v26.575h-2.4V602.806z"/>
+		<path id="rect5049-08" d="M296.415,602.806h2.4v26.575h-2.4V602.806z"/>
+		<path id="rect5049-4" d="M322.989,602.806h2.4v26.575h-2.4V602.806z"/>
+		<path id="rect5049-98" d="M349.564,602.806h2.4v26.575h-2.4V602.806z"/>
+		<path id="rect5049-2" d="M376.139,602.806h2.399v26.575h-2.399V602.806z"/>
+		<path id="rect5049-5" d="M402.714,602.806h2.4v26.575h-2.4V602.806z"/>
+		<path id="rect5049-27" d="M429.289,602.806h2.4v26.575h-2.4V602.806z"/>
+		<path id="rect5049-90" d="M455.864,602.806h2.399v26.575h-2.399V602.806z"/>
+		<path id="rect5049-06" d="M482.438,602.806h2.4v26.575h-2.4V602.806z"/>
+		<path id="rect5049-79" d="M509.013,602.806h2.399v26.575h-2.399V602.806z"/>
+		<path id="rect5049-93" d="M535.588,602.806h2.4v26.575h-2.4V602.806z"/>
+		<path id="rect5049-60" d="M562.163,602.806h2.4v26.575h-2.4V602.806z"/>
+		<path id="rect5049-96" d="M588.738,602.806h2.399v26.575h-2.399V602.806z"/>
+		<path id="rect5049-19" d="M615.312,602.806h2.4v26.575h-2.4V602.806z"/>
+		<path id="rect5235" d="M82.045,372.486v1.875v226.563v1.875h1.875h557.875h1.875v-1.875V374.361v-1.875h-1.875H83.92H82.045
+			L82.045,372.486z M85.763,376.236H639.92V599.08H85.763V376.236L85.763,376.236z"/>
+		<path id="rect5237" d="M117.482,409.705v1v122v1h1h488.719h1.031v-1v-122v-1h-1.031H118.482H117.482L117.482,409.705z
+			 M119.513,411.736h486.687v119.938H119.513V411.736L119.513,411.736z"/>
+		<text transform="matrix(1 0 0 1 150.6408 454.4843)" font-family="'Droid Sans'" font-size="17.7628">128 X 64 GLCD</text>
+		<g>
+			<g transform="matrix(0 -1 1 0 114.3972 592.6074)" >
+				<text font-family="'Droid Sans'" font-size="9.9073">20 K(-)</text>
+			</g>
+			<g transform="matrix(0 -1 1 0 141.0427 592.6074)" >
+				<text font-family="'Droid Sans'" font-size="9.9073">19 A(+)</text>
+			</g>
+			<g transform="matrix(0 -1 1 0 167.6882 592.6074)">
+				<text  font-family="'Droid Sans'" font-size="9.9073">18 V out</text>
+			</g>
+			<g transform="matrix(0 -1 1 0 194.3337 592.6074)">
+				<text  font-family="'Droid Sans'" font-size="9.9073">17 RESET</text>
+			</g>
+			<g  transform="matrix(0 -1 1 0 220.9792 592.6074)" >
+				<text font-family="'Droid Sans'" font-size="9.9073">16 CS2</text>
+			</g>
+			<g transform="matrix(0 -1 1 0 247.6247 592.6074)" >
+				<text font-family="'Droid Sans'" font-size="9.9073">15 CS1</text>
+			</g>
+			<g  transform="matrix(0 -1 1 0 274.2702 592.6074)" >
+				<text font-family="'Droid Sans'" font-size="9.9073">14 DB7</text>
+			</g>
+			<g transform="matrix(0 -1 1 0 300.9157 592.6074)" >
+				<text font-family="'Droid Sans'" font-size="9.9073">13 DB6</text>
+			</g>
+			<g transform="matrix(0 -1 1 0 327.5612 592.6074)">
+				<text  font-family="'Droid Sans'" font-size="9.9073">12 DB5</text>
+			</g>
+			<g  transform="matrix(0 -1 1 0 354.2068 592.6074)">
+				<text font-family="'Droid Sans'" font-size="9.9073">11 DB4</text>
+			</g>
+			<g transform="matrix(0 -1 1 0 380.8523 592.6074)">
+				<text  font-family="'Droid Sans'" font-size="9.9073">10 DB3</text>
+			</g>
+			<g transform="matrix(0 -1 1 0 407.4978 592.6074)" >
+				<text font-family="'Droid Sans'" font-size="9.9073">9 DB2</text>
+			</g>
+			<g  transform="matrix(0 -1 1 0 434.1433 592.6074)">
+				<text font-family="'Droid Sans'" font-size="9.9073">8 DB1</text>
+			</g>
+			<g transform="matrix(0 -1 1 0 460.7888 592.6074)" >
+				<text font-family="'Droid Sans'" font-size="9.9073">7 DB0</text>
+			</g>
+			<g transform="matrix(0 -1 1 0 487.4343 592.6074)">
+				<text  font-family="'Droid Sans'" font-size="9.9073">6 Enable</text>
+			</g>
+			<g transform="matrix(0 -1 1 0 514.0798 592.6074)">
+				<text  font-family="'Droid Sans'" font-size="9.9073">5 R/W</text>
+			</g>
+			<g transform="matrix(0 -1 1 0 540.7253 592.6074)" >
+				<text font-family="'Droid Sans'" font-size="9.9073">4 D/I</text>
+			</g>
+			<g transform="matrix(0 -1 1 0 567.3708 592.6074)" >
+				<text font-family="'Droid Sans'" font-size="9.9073">3 Vo</text>
+			</g>
+			<g transform="matrix(0 -1 1 0 594.0163 592.6074)">
+				<text  font-family="'Droid Sans'" font-size="9.9073">2 Vdd</text>
+			</g>
+			<g transform="matrix(0 -1 1 0 620.6618 592.6074)" >
+				<text font-family="'Droid Sans'" font-size="9.9073">1 Vss</text>
+			</g>
+		</g>
+	</g>
+	<rect id="connector0pin" x="531.188" y="231.756" fill="none" width="6.144" height="24.576"/>
+	<rect id="connector1pin" x="504.588" y="231.756" fill="none" width="6.145" height="24.576"/>
+	<rect id="connector2pin" x="477.988" y="231.756" fill="none" width="6.144" height="24.576"/>
+	<rect id="connector3pin" x="451.388" y="231.756" fill="none" width="6.145" height="24.576"/>
+	<rect id="connector4pin" x="424.788" y="231.756" fill="none" width="6.144" height="24.576"/>
+	<rect id="connector5pin" x="398.188" y="231.756" fill="none" width="6.144" height="24.576"/>
+	<rect id="connector6pin" x="371.588" y="231.756" fill="none" width="6.145" height="24.576"/>
+	<rect id="connector7pin" x="344.988" y="231.756" fill="none" width="6.144" height="24.576"/>
+	<rect id="connector8pin" x="318.388" y="231.756" fill="none" width="6.145" height="24.576"/>
+	<rect id="connector9pin" x="291.788" y="231.756" fill="none" width="6.144" height="24.576"/>
+	<rect id="connector10pin" x="265.188" y="231.756" fill="none" width="6.144" height="24.576"/>
+	<rect id="connector11pin" x="238.588" y="231.756" fill="none" width="6.144" height="24.576"/>
+	<rect id="connector12pin" x="211.988" y="231.756" fill="none" width="6.144" height="24.576"/>
+	<rect id="connector13pin" x="185.388" y="231.756" fill="none" width="6.144" height="24.576"/>
+	<rect id="connector14pin" x="158.788" y="231.756" fill="none" width="6.144" height="24.576"/>
+	<rect id="connector15pin" x="132.188" y="231.756" fill="none" width="6.144" height="24.576"/>
+	<rect id="connector16pin" x="105.588" y="231.756" fill="none" width="6.144" height="24.576"/>
+	<rect id="connector17pin" x="78.988" y="231.756" fill="none" width="6.144" height="24.576"/>
+	<rect id="connector18pin" x="52.388" y="231.756" fill="none" width="6.144" height="24.576"/>
+	<rect id="connector19pin" x="25.788" y="231.756" fill="none" width="6.144" height="24.576"/>
+	<polygon id="connector0terminal" fill="none" points="531.188,256.332 537.332,256.332 537.332,256.332 	"/>
+	<polygon id="connector1terminal" fill="none" points="504.588,256.332 510.732,256.332 510.732,256.332 	"/>
+	<polygon id="connector2terminal" fill="none" points="477.988,256.332 484.132,256.332 484.132,256.332 	"/>
+	<polygon id="connector3terminal" fill="none" points="451.388,256.332 457.532,256.332 457.532,256.332 	"/>
+	<polygon id="connector4terminal" fill="none" points="424.788,256.332 430.932,256.332 430.932,256.332 	"/>
+	<polygon id="connector5terminal" fill="none" points="398.188,256.332 404.332,256.332 404.332,256.332 	"/>
+	<polygon id="connector6terminal" fill="none" points="371.588,256.332 377.732,256.332 377.732,256.332 	"/>
+	<polygon id="connector7terminal" fill="none" points="344.988,256.332 351.132,256.332 351.132,256.332 	"/>
+	<polygon id="connector8terminal" fill="none" points="318.388,256.332 324.532,256.332 324.532,256.332 	"/>
+	<polygon id="connector9terminal" fill="none" points="291.788,256.332 297.932,256.332 297.932,256.332 	"/>
+	<polygon id="connector10terminal" fill="none" points="265.188,256.332 271.332,256.332 271.332,256.332 	"/>
+	<polygon id="connector11terminal" fill="none" points="238.588,256.332 244.732,256.332 244.732,256.332 	"/>
+	<polygon id="connector12terminal" fill="none" points="211.988,256.332 218.132,256.332 218.132,256.332 	"/>
+	<polygon id="connector13terminal" fill="none" points="185.388,256.332 191.532,256.332 191.532,256.332 	"/>
+	<polygon id="connector14terminal" fill="none" points="158.788,256.332 164.932,256.332 164.932,256.332 	"/>
+	<polygon id="connector15terminal" fill="none" points="132.188,256.332 138.332,256.332 138.332,256.332 	"/>
+	<polygon id="connector16terminal" fill="none" points="105.588,256.332 111.732,256.332 111.732,256.332 	"/>
+	<polygon id="connector17terminal" fill="none" points="78.988,256.332 85.132,256.332 85.132,256.332 	"/>
+	<polygon id="connector18terminal" fill="none" points="52.388,256.332 58.532,256.332 58.532,256.332 	"/>
+	<polygon id="connector19terminal" fill="none" points="25.788,256.332 31.932,256.332 31.932,256.332 	"/>
+</g>
+</svg>

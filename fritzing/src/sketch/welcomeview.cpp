@@ -33,6 +33,7 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 WelcomeView::WelcomeView(QWidget * parent) : QTextEdit(parent) 
 {
 	QString breadboardHelpText = tr(
+                "<br/>"
         "The <b>Breadboard View</b> is meant to look like a <i>real-life</i> breadboard prototype."
 	"<br/><br/>"
         "Begin by dragging a part from the Parts Bin, which is over at the top right. "

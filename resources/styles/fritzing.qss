@@ -31,6 +31,7 @@ QStatusBar {
 
 
 
+
 /* this separates palettes from each other and is movable */
 MainWindow::separator {
         background-color: rgb(101,101,101);
@@ -70,6 +71,65 @@ PEMainWindow {
 }
 
 
+/*########### MAIN WINDOW TABBAR #################*/
+#WelcomeView {
+	border:none;
+	}
+	
+		
+#sketch_tabs::tab-bar {
+	background:transparent;
+ 	top: 0px;
+ 	left: 5px;
+	right: 5px;	
+	border:none;
+}
+
+
+
+#sketch_tabs::pane {
+ 	padding: 0px 0px 0px 5px;
+	border: none;
+}
+
+
+#sketch_tabs QTabBar::tab  {
+        margin-top: 0px;
+        margin-left: 0px;
+        margin-right: 10px;
+        margin-bottom: 0px;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        padding-left: 10px;
+        padding-right: 10px;
+        background-color: #ac6a5b;
+        border-bottom: 0px;
+        min-width: 6.5em;
+        min-height: 2em;
+
+}
+
+#sketch_tabs QTabBar::tab:selected { /*the active tab*/
+	background-color: #fff;
+	border: none;
+	font-weight: bold;
+	color: #821F09;
+}
+
+#sketch_tabs QTabBar::tab:!selected { /*the inactive tabs*/
+        padding-top: 0;
+		border: none;
+		color: #D1ACA4;
+		font-weight:bold;
+}
+
+#sketch_tabs QTabBar::tab:!selected:hover {  /*the inactive tab- hover*/
+        background-color: #F23926;
+		border:none;
+		color: #fff;
+		font-weight:bold;
+}
+
 /* ################### Mainmenubar window #################### */
 
 QMenuBar {
@@ -78,7 +138,7 @@ QMenuBar {
 
 QMenuBar::item {
 	spacing: 10px; /* spacing between menu bar items */
-     padding: 5px 10px;
+     padding: 7px 10px;
 	background: #d9d9d9;
 	color:rgb(51,51,51);
 	background-image:none;

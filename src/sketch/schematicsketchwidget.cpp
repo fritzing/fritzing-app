@@ -467,34 +467,6 @@ void SchematicSketchWidget::loadFromModelParts(QList<ModelPart *> & modelParts, 
 						bool offsetPaste, const QRectF * boundingRect, bool seekOutsideConnections, QList<long> & newIDs)
 {
 	SketchWidget::loadFromModelParts(modelParts, crossViewType, parentCommand, offsetPaste, boundingRect, seekOutsideConnections, newIDs);
-
-    if (parentCommand == NULL) {
-        QString fritzingVersion = m_sketchModel->fritzingVersion();
-        m_oldStyleSchematic = !Version::greaterThan("0.8.4b", fritzingVersion);
-        if (!m_oldStyleSchematic) {
-            return;
-        }
-
-        bool gotWire = false;
-        foreach (QGraphicsItem * item, scene()->items()) {
-		    Wire * wire = dynamic_cast<Wire *>(item);
-		    if (wire == NULL) continue;
-
-		    if (wire->hasFlag(getTraceFlag())) {
-                gotWire = true;
-                break;
-		    }
-	    }
-
-        if (!gotWire) {
-            // if there are no wires, assume no need to use old style schematic graphics
-            m_oldStyleSchematic = false;
-            // what about custom schematics?
-            return;
-        }
-
-        m_oldStyleSchematic = true;
-    }
 }
 
 void SchematicSketchWidget::selectAllWires(ViewGeometry::WireFlag flag) 

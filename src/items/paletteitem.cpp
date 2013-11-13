@@ -138,9 +138,10 @@ PaletteItem::~PaletteItem() {
 	}
 }
 
-bool PaletteItem::renderImage(ModelPart * modelPart, ViewLayer::ViewID viewID, const LayerHash & viewLayers, ViewLayer::ViewLayerID viewLayerID, bool doConnectors, QString & error) {
+bool PaletteItem::renderImage(ModelPart * modelPart, ViewLayer::ViewID viewID, const LayerHash & viewLayers, ViewLayer::ViewLayerID viewLayerID, bool doConnectors, bool useOldSchematic, QString & error) {
 	LayerAttributes layerAttributes; 
     initLayerAttributes(layerAttributes, viewID, viewLayerID, viewLayerPlacement(), doConnectors, true);
+    layerAttributes.useOldSchematic = useOldSchematic;
 	bool result = setUpImage(modelPart, viewLayers, layerAttributes);
     error = layerAttributes.error;
 
@@ -201,6 +202,11 @@ void PaletteItem::loadLayerKin(const LayerHash & viewLayers, ViewLayer::ViewLaye
 void PaletteItem::makeOneKin(qint64 & id, ViewLayer::ViewLayerID viewLayerID, ViewLayer::ViewLayerPlacement viewLayerPlacement, ViewGeometry & viewGeometry, const LayerHash & viewLayers) {
     LayerAttributes layerAttributes;
     initLayerAttributes(layerAttributes, m_viewID, viewLayerID, viewLayerPlacement, true, true);
+    if (layerAttributes.viewID == ViewLayer::SchematicView) {
+        InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
+        layerAttributes.useOldSchematic = (infoGraphicsView != NULL && infoGraphicsView->isOldStyleSchematic());
+    }
+
     LayerKinPaletteItem * lkpi = newLayerKinPaletteItem(this, m_modelPart, viewGeometry, id, m_itemMenu, viewLayers, layerAttributes);
 	if (lkpi->ok()) {
 		DebugDialog::debug(QString("adding layer kin %1 %2 %3 %4")
@@ -456,7 +462,8 @@ void PaletteItem::resetImage(InfoGraphicsView * infoGraphicsView) {
     
 	LayerAttributes layerAttributes;
     initLayerAttributes(layerAttributes, viewID(), viewLayerID(), viewLayerPlacement(), true, !m_selectionShape.isEmpty());
-	this->setUpImage(modelPart(), infoGraphicsView->viewLayers(),layerAttributes);
+    layerAttributes.useOldSchematic = infoGraphicsView->isOldStyleSchematic();
+	this->setUpImage(modelPart(), infoGraphicsView->viewLayers(), layerAttributes);
 	
 	foreach (ItemBase * layerKin, m_layerKin) {
 		resetKinImage(layerKin, infoGraphicsView);
@@ -470,6 +477,7 @@ void PaletteItem::resetKinImage(ItemBase * layerKin, InfoGraphicsView * infoGrap
 	}
 	LayerAttributes layerAttributes;
     initLayerAttributes(layerAttributes, layerKin->viewID(), layerKin->viewLayerID(), layerKin->viewLayerPlacement(), true, !layerKin->selectionShape().isEmpty());
+    layerAttributes.useOldSchematic = infoGraphicsView->isOldStyleSchematic();
 	qobject_cast<PaletteItemBase *>(layerKin)->setUpImage(modelPart(), infoGraphicsView->viewLayers(), layerAttributes);
 }
 
@@ -1564,14 +1572,4 @@ void PaletteItem::retransform(const QTransform & chiefTransform) {
     }
 }
 
-void PaletteItem::initLayerAttributes(LayerAttributes & layerAttributes, ViewLayer::ViewID viewID, ViewLayer::ViewLayerID viewLayerID, ViewLayer::ViewLayerPlacement viewLayerPlacement, bool doConnectors, bool doCreateShape) {
-    layerAttributes.viewID = viewID;
-    layerAttributes.viewLayerID = viewLayerID;
-    layerAttributes.viewLayerPlacement = viewLayerPlacement;
-    layerAttributes.doConnectors = doConnectors;
-    layerAttributes.createShape = doCreateShape;
-    InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-	if (infoGraphicsView != NULL) {
-		layerAttributes.orientation = infoGraphicsView->smdOrientation();
-	}
-}
+

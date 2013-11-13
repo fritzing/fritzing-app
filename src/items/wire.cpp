@@ -970,10 +970,7 @@ FSvgRenderer * Wire::setUpConnectors(ModelPart * modelPart, ViewLayer::ViewID vi
 	clearConnectorItemCache();
 
 	LayerAttributes layerAttributes;
-    layerAttributes.viewID = viewID;
-    layerAttributes.viewLayerID = m_viewLayerID;
-    layerAttributes.viewLayerPlacement = m_viewLayerPlacement;
-    layerAttributes.createShape = layerAttributes.doConnectors = false;
+    this->initLayerAttributes(layerAttributes, viewID, m_viewLayerID, m_viewLayerPlacement, false, false);
 	FSvgRenderer * renderer = ItemBase::setUpImage(modelPart, layerAttributes);
 	if (renderer == NULL) {
 		return NULL;

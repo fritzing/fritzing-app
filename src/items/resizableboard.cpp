@@ -812,11 +812,8 @@ void ResizableBoard::resizePixels(double w, double h, const LayerHash & viewLaye
 
 bool ResizableBoard::resizeMM(double mmW, double mmH, const LayerHash & viewLayers) {
 	if (mmW == 0 || mmH == 0) {
-		LayerAttributes layerAttributes;
-        layerAttributes.viewID = m_viewID;
-        layerAttributes.viewLayerID = m_viewLayerID;
-        layerAttributes.viewLayerPlacement = m_viewLayerPlacement;
-        layerAttributes.createShape = layerAttributes.doConnectors = true;
+        LayerAttributes layerAttributes;
+        this->initLayerAttributes(layerAttributes, m_viewID, m_viewLayerID, m_viewLayerPlacement, true, true);
 		setUpImage(modelPart(), viewLayers, layerAttributes);
 		modelPart()->setLocalProp("height", QVariant());
 		modelPart()->setLocalProp("width", QVariant());

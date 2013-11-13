@@ -412,9 +412,23 @@ void MainWindow::mainLoad(const QString & fileName, const QString & displayName,
 	}
 
 	newIDs.clear();
-	m_schematicGraphicsView->loadFromModelParts(modelParts, BaseCommand::SingleView, NULL, false, NULL, false, newIDs);
+    QString fritzingVersion = m_sketchModel->fritzingVersion();
+    bool oldStyleSchematic = !Version::greaterThan("0.8.4b", fritzingVersion);
+    bool gotWire = false;
+    if (oldStyleSchematic) {
+        foreach (QGraphicsItem * item, m_pcbGraphicsView->scene()->items()) {
+		    Wire * wire = dynamic_cast<Wire *>(item);
+		    if (wire == NULL) continue;
 
-    if (!m_readOnly && m_schematicGraphicsView->isOldStyleSchematic()) {
+		    if (wire->hasFlag(m_schematicGraphicsView->getTraceFlag())) {
+                gotWire = true;
+                break;
+		    }
+	    }
+    }
+    if (!gotWire) oldStyleSchematic = false;
+
+    if (!m_readOnly && oldStyleSchematic) {
 	    QFileInfo info(fileName);
         FMessageBox messageBox(NULL);
 		messageBox.setWindowTitle(tr("Schematic view update"));
@@ -430,10 +444,12 @@ void MainWindow::mainLoad(const QString & fileName, const QString & displayName,
 
 		QString bundledFileName;
 		if (answer == QMessageBox::Yes) {
-            m_schematicGraphicsView->setOldStyleSchematic(false);
-		}
-        
+            oldStyleSchematic = false;
+		}        
     }
+
+    m_schematicGraphicsView->setOldStyleSchematic(oldStyleSchematic);
+	m_schematicGraphicsView->loadFromModelParts(modelParts, BaseCommand::SingleView, NULL, false, NULL, false, newIDs);
 
 	ProcessEventBlocker::processEvents();
 	if (m_fileProgressDialog) {

@@ -197,10 +197,7 @@ void SvgIconWidget::setItemBase(ItemBase * itemBase, bool plural)
 void SvgIconWidget::setupImage(bool plural, ViewLayer::ViewID viewID)
 {
 	LayerAttributes layerAttributes;
-    layerAttributes.viewID = viewID;
-    layerAttributes.viewLayerID = ViewLayer::Icon;
-    layerAttributes.viewLayerPlacement = ViewLayer::NewTop;
-    layerAttributes.createShape = layerAttributes.doConnectors = false;
+    m_itemBase->initLayerAttributes(layerAttributes, viewID, ViewLayer::Icon, ViewLayer::NewTop, false, false);
 	ModelPart * modelPart = m_itemBase->modelPart();
 	FSvgRenderer * renderer = m_itemBase->setUpImage(modelPart, layerAttributes);
     if (renderer == NULL) {

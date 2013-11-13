@@ -1364,6 +1364,8 @@ void ItemBase::saveLocAndTransform(QXmlStreamWriter & streamWriter)
 
 FSvgRenderer * ItemBase::setUpImage(ModelPart * modelPart, LayerAttributes & layerAttributes)
 {
+    // at this point "this" has not yet been added to the scene, so one cannot get back to the InfoGraphicsView 
+
     ModelPartShared * modelPartShared = modelPart->modelPartShared();
 
 	if (modelPartShared == NULL) {
@@ -1381,12 +1383,7 @@ FSvgRenderer * ItemBase::setUpImage(ModelPart * modelPart, LayerAttributes & lay
 
 
 	//DebugDialog::debug(QString("set up image elapsed (1) %1").arg(t.elapsed()) );
-    bool useOldSchematic = false;
-    if (layerAttributes.viewID == ViewLayer::SchematicView) {
-        InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-        useOldSchematic = (infoGraphicsView != NULL && infoGraphicsView->isOldStyleSchematic());
-    }
-	QString filename = PartFactory::getSvgFilename(modelPart, modelPartShared->imageFileName(layerAttributes.viewID, layerAttributes.viewLayerID), true, true, useOldSchematic);
+	QString filename = PartFactory::getSvgFilename(modelPart, modelPartShared->imageFileName(layerAttributes.viewID, layerAttributes.viewLayerID), true, true, layerAttributes.useOldSchematic);
 
 //#ifndef QT_NO_DEBUG
 	//DebugDialog::debug(QString("set up image elapsed (2) %1").arg(t.elapsed()) );
@@ -2183,13 +2180,7 @@ QPixmap * ItemBase::getPixmap(ViewLayer::ViewID vid, bool swappingEnabled, QSize
 	QString baseName = modelPart()->hasBaseNameFor(vid);
 	if (baseName.isEmpty()) return NULL;
 
-
-    bool useOldSchematic = false;
-    if (m_viewID == ViewLayer::SchematicView) {
-        InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-        useOldSchematic = (infoGraphicsView != NULL && infoGraphicsView->isOldStyleSchematic());
-    }
-	QString filename = PartFactory::getSvgFilename(modelPart(), baseName, true, true, useOldSchematic);
+	QString filename = PartFactory::getSvgFilename(modelPart(), baseName, true, true, false);
 	if (filename.isEmpty()) {
 		return NULL;
 	}
@@ -2418,4 +2409,16 @@ void ItemBase::renderOne(QDomDocument * masterDoc, QImage * image, const QRectF 
     painter.setRenderHint(QPainter::SmoothPixmapTransform, false);
 	renderer.render(&painter, renderRect);
 	painter.end();
+}
+
+void ItemBase::initLayerAttributes(LayerAttributes & layerAttributes, ViewLayer::ViewID viewID, ViewLayer::ViewLayerID viewLayerID, ViewLayer::ViewLayerPlacement viewLayerPlacement, bool doConnectors, bool doCreateShape) {
+    layerAttributes.viewID = viewID;
+    layerAttributes.viewLayerID = viewLayerID;
+    layerAttributes.viewLayerPlacement = viewLayerPlacement;
+    layerAttributes.doConnectors = doConnectors;
+    layerAttributes.createShape = doCreateShape;
+    InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
+	if (infoGraphicsView != NULL) {
+		layerAttributes.orientation = infoGraphicsView->smdOrientation();
+	}
 }

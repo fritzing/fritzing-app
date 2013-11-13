@@ -68,6 +68,7 @@ static QString PartFactoryFolderPath;
 static QHash<QString, LockedFile *> LockedFiles;
 static QString SvgFilesDir = "svg";
 static QHash<QString, QPointF> SubpartOffsets;
+static QString OldSchematicPrefix("0.3.schem.");
 
 ItemBase * PartFactory::createPart( ModelPart * modelPart, ViewLayer::ViewLayerPlacement viewLayerPlacement, ViewLayer::ViewID viewID, const ViewGeometry & viewGeometry, long id, QMenu * itemMenu, QMenu * wireMenu, bool doLabel)
 {
@@ -219,6 +220,19 @@ ItemBase * PartFactory::createPartAux( ModelPart * modelPart, ViewLayer::ViewID 
 
 QString PartFactory::getSvgFilename(ModelPart * modelPart, const QString & baseName, bool generate, bool handleSubparts, bool useOldSchematic) 
 {
+    if (useOldSchematic) {
+        int ix = baseName.indexOf("/");
+        QString result;
+        if (ix >= 0) {
+            QString oldName(baseName);
+            oldName.insert(ix + 1, OldSchematicPrefix);
+            result = getSvgFilename(modelPart, oldName, generate, handleSubparts, false);
+        }
+        if (!result.isEmpty()) return result;
+
+        useOldSchematic = false;
+    }
+
 	QStringList tempPaths;
 	QString postfix = "/"+ SvgFilesDir +"/%1/"+ baseName;
     QString userStore = FolderUtils::getUserDataStorePath("parts")+postfix;

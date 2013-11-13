@@ -91,7 +91,7 @@ public:
 	void transformItem2(const QMatrix &);
 	void setItemPos(QPointF & pos);
 
-	bool renderImage(ModelPart * modelPart, ViewLayer::ViewID viewID, const LayerHash & viewLayers, ViewLayer::ViewLayerID, bool doConnectors, QString & error);
+	bool renderImage(ModelPart * modelPart, ViewLayer::ViewID viewID, const LayerHash & viewLayers, ViewLayer::ViewLayerID, bool doConnectors, bool useOldSchematic, QString & error);
 
 	void setTransforms();
 	void syncKinMoved(QPointF offset, QPointF loc);
@@ -155,7 +155,6 @@ protected:
     void generateSwap(const QString & text, GenModuleID, GenFzp, GenSvg makeBreadboardSvg, GenSvg makeSchematicSvg, GenSvg makePcbSvg);
     bool makeLocalModifications(QByteArray & svg, const QString & filename);
     void makeOneKin(qint64 & id, ViewLayer::ViewLayerID, ViewLayer::ViewLayerPlacement, ViewGeometry &, const LayerHash &);
-    void initLayerAttributes(LayerAttributes & layerAttributes, ViewLayer::ViewID, ViewLayer::ViewLayerID, ViewLayer::ViewLayerPlacement, bool doConnectors, bool doCreateShape);
 
 protected:
     void setUpHoleSizes(const QString & type, HoleClassThing &);

@@ -42,7 +42,7 @@ public:
 	void setHidden(bool hidden);
 	void setInactive(bool inactivate);
 	void clearModelPart();
-	void init(LayerAttributes &, const LayerHash &viewLayers);
+	void initLKPI(LayerAttributes &, const LayerHash &viewLayers);
 	bool isSticky();
 	bool isBaseSticky();
 	void setSticky(bool);

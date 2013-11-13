@@ -893,7 +893,7 @@ PaletteItem* SketchWidget::addPartItem(ModelPart * modelPart, ViewLayer::ViewLay
     }
 
 	QString error;
-	bool result = paletteItem->renderImage(modelPart, viewID, m_viewLayers, viewLayerID, doConnectors, error);
+	bool result = paletteItem->renderImage(modelPart, viewID, m_viewLayers, viewLayerID, doConnectors, isOldStyleSchematic(), error);
 	if (!result) {
 		bool retry = false;
 		switch (viewLayerID) {
@@ -909,7 +909,7 @@ PaletteItem* SketchWidget::addPartItem(ModelPart * modelPart, ViewLayer::ViewLay
 				break;
 		}
 		if (retry) {
-			result = paletteItem->renderImage(modelPart, viewID, m_viewLayers, viewLayerID, doConnectors, error);
+			result = paletteItem->renderImage(modelPart, viewID, m_viewLayers, viewLayerID, doConnectors, isOldStyleSchematic(), error);
 		}
 	}
 

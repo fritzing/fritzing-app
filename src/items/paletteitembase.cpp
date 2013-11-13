@@ -605,7 +605,7 @@ LayerKinPaletteItem *PaletteItemBase::newLayerKinPaletteItem(PaletteItemBase * c
     else {
         lk = new LayerKinPaletteItem(chief, modelPart, layerAttributes.viewID, viewGeometry, id, itemMenu);
     }
-	lk->init(layerAttributes, viewLayers);
+	lk->initLKPI(layerAttributes, viewLayers);
 	return lk;
 }
 

@@ -232,6 +232,8 @@ public:
     void setSquashShape(bool);
     const QPainterPath & selectionShape();
     virtual void setTransform2(const QTransform &);
+    void initLayerAttributes(LayerAttributes & layerAttributes, ViewLayer::ViewID, ViewLayer::ViewLayerID, ViewLayer::ViewLayerPlacement, bool doConnectors, bool doCreateShape);
+
 
 public:
 	virtual void getConnectedColor(ConnectorItem *, QBrush * &, QPen * &, double & opacity, double & negativePenWidth, bool & negativeOffsetRect);

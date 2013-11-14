@@ -41,7 +41,7 @@ $Date: 2013-04-28 13:51:10 +0200 (So, 28. Apr 2013) $
 #include "../viewlayer.h"
 
 typedef QString (*GenModuleID)(QMap<QString, QString> & currPropsMap);
-typedef QString (*GenSvg)(const QString & expectedFileName);
+typedef QString (*GenSvg)(const QString & expectedFileName, bool useOldSchematic);
 typedef QString (*GenFzp)(const QString &);
 
 struct HoleClassThing {
@@ -153,7 +153,7 @@ protected:
     QString hackFzpHoleSize(const QString & moduleID, const QString & pcbFilename, const QString & holeSize);
     QString appendHoleSize(const QString & moduleID, const QString & holeSize, const QString & ringThickness);
     void generateSwap(const QString & text, GenModuleID, GenFzp, GenSvg makeBreadboardSvg, GenSvg makeSchematicSvg, GenSvg makePcbSvg);
-    bool makeLocalModifications(QByteArray & svg, const QString & filename);
+    bool makeLocalModifications(QByteArray & svg, const QString & filename, bool useOldSchematic);
     void makeOneKin(qint64 & id, ViewLayer::ViewLayerID, ViewLayer::ViewLayerPlacement, ViewGeometry &, const LayerHash &);
 
 protected:

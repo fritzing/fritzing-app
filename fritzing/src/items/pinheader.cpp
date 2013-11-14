@@ -444,8 +444,10 @@ QString PinHeader::genModuleID(QMap<QString, QString> & currPropsMap)
 	return "";
 }
 
-QString PinHeader::makePcbSvg(const QString & originalExpectedFileName) 
+QString PinHeader::makePcbSvg(const QString & originalExpectedFileName, bool useOldSchematic) 
 {
+    Q_UNUSED(useOldSchematic);
+
     QString expectedFileName = originalExpectedFileName;
     int hsix = expectedFileName.indexOf(HoleSizePrefix);
     if (hsix >= 0) {
@@ -616,7 +618,7 @@ void PinHeader::initSpacings() {
 	}
 }
 
-QString PinHeader::makeSchematicSvg(const QString & expectedFileName) 
+QString PinHeader::makeSchematicSvg(const QString & expectedFileName, bool useOldSchematic) 
 {
 	QStringList pieces = expectedFileName.split("_");
 	if (pieces.count() < 7) return "";
@@ -624,7 +626,7 @@ QString PinHeader::makeSchematicSvg(const QString & expectedFileName)
     QString spacingString;
     int pins = TextUtils::getPinsAndSpacing(expectedFileName, spacingString);
 	QString form = expectedFileName.contains("female") ? "female" :"male";
-    bool sizeTenth = expectedFileName.contains("10thin");
+    bool sizeTenth = expectedFileName.contains("10thin") || useOldSchematic == false;
     bool isDouble = sizeTenth && expectedFileName.contains("double");
 
     double width, unitHeight;
@@ -671,8 +673,10 @@ QString PinHeader::makeSchematicSvg(const QString & expectedFileName)
 	return svg;
 }
 
-QString PinHeader::makeBreadboardSvg(const QString & expectedFileName) 
+QString PinHeader::makeBreadboardSvg(const QString & expectedFileName, bool useOldSchematic) 
 {
+    Q_UNUSED(useOldSchematic);
+
 	QStringList pieces = expectedFileName.split("_");
 	if (pieces.count() < 7) return "";
 

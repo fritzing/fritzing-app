@@ -1355,19 +1355,19 @@ void PaletteItem::generateSwap(const QString & text, GenModuleID genModuleID, Ge
 
         QString name = viewNames.value("breadboardView", "");
         if (!PartFactory::svgFileExists(name, path)) {
-            QString svg = makeBreadboardSvg(name);
+            QString svg = makeBreadboardSvg(name, false);
 	        TextUtils::writeUtf8(path, svg);
         }
 
         name = viewNames.value("schematicView", "");
         if (!PartFactory::svgFileExists(name, path)) {
-            QString svg = makeSchematicSvg(name);
+            QString svg = makeSchematicSvg(name, false);
 	        TextUtils::writeUtf8(path, svg);
         }
 
         name = viewNames.value("pcbView", "");
         if (!PartFactory::svgFileExists(name, path)) {
-            QString svg = makePcbSvg(name);
+            QString svg = makePcbSvg(name, false);
 	        TextUtils::writeUtf8(path, svg);
         } 
     }
@@ -1445,7 +1445,7 @@ bool PaletteItem::changeDiameter(HoleSettings & holeSettings, QObject * sender)
 	return (newValue != oldValue);
 }
 
-bool PaletteItem::makeLocalModifications(QByteArray & svg, const QString & filename) {
+bool PaletteItem::makeLocalModifications(QByteArray & svg, const QString & filename, bool useOldSchematic) {
     // a bottleneck for modifying part svg xml at setupImage time
 
     // for saved-as-new-part parts (i.e. that are no longer MysteryParts) that still have a chip-label or custom pin names
@@ -1475,7 +1475,7 @@ bool PaletteItem::makeLocalModifications(QByteArray & svg, const QString & filen
             bool hasLayout, sip;
             QStringList labels = sipOrDipOrLabels(hasLayout, sip);
             if (labels.count() > 0) {
-                svg = PartFactory::makeSchematicSipOrDipOr(labels, hasLayout, sip).toUtf8();
+                svg = PartFactory::makeSchematicSipOrDipOr(labels, hasLayout, sip, useOldSchematic).toUtf8();
                 modified = true;
             }
         }

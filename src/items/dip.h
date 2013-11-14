@@ -47,9 +47,9 @@ public:
 	static QString genSipFZP(const QString & moduleid);
 	static QString genDipFZP(const QString & moduleid);
 	static QString genModuleID(QMap<QString, QString> & currPropsMap);
-	static QString makeSchematicSvg(const QString & expectedFileName);
-	static QString makeSchematicSvg(const QStringList & labels);
-	static QString makeBreadboardSvg(const QString & expectedFileName);
+	static QString makeSchematicSvg(const QString & expectedFileName, bool useOldSchematic);
+	static QString makeSchematicSvg(const QStringList & labels, bool useOldSchematic);
+	static QString makeBreadboardSvg(const QString & expectedFileName, bool useOldSchematic);
 	static QString makeBreadboardSipSvg(const QString & expectedFileName);
 	static QString makeBreadboardDipSvg(const QString & expectedFileName);
 

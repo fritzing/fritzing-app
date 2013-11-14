@@ -9085,7 +9085,7 @@ void SketchWidget::changePinLabelsSlot(ItemBase * itemBase, bool singleRow)
 
         QTransform transform = paletteItem->untransform();
 
-        QString svg = PartFactory::makeSchematicSipOrDipOr(labels, hasLayout, sip);
+        QString svg = PartFactory::makeSchematicSipOrDipOr(labels, hasLayout, sip, isOldStyleSchematic());
 		paletteItem->resetLayerKin(svg);
 		if (!hasLayout && !sip) {
 			paletteItem->resetConnectors();

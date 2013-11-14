@@ -128,8 +128,10 @@ void ScrewTerminal::initSpacings() {
 	}
 }
 
-QString ScrewTerminal::makeBreadboardSvg(const QString & expectedFileName) 
+QString ScrewTerminal::makeBreadboardSvg(const QString & expectedFileName, bool useOldSchematic) 
 {
+    Q_UNUSED(useOldSchematic);
+
 	QStringList pieces = expectedFileName.split("_");
 
 	int pins = pieces.at(2).toInt();
@@ -152,8 +154,10 @@ QString ScrewTerminal::makeBreadboardSvg(const QString & expectedFileName)
 	return svg;
 }
 
-QString ScrewTerminal::makeSchematicSvg(const QString & expectedFileName) 
+QString ScrewTerminal::makeSchematicSvg(const QString & expectedFileName, bool useOldSchematic) 
 {
+    if (useOldSchematic) return obsoleteMakeSchematicSvg(expectedFileName);
+
 	QStringList pieces = expectedFileName.split("_");
 
 	int pins = pieces.at(2).toInt();			
@@ -221,8 +225,10 @@ QString ScrewTerminal::obsoleteMakeSchematicSvg(const QString & expectedFileName
 	return svg;
 }
 
-QString ScrewTerminal::makePcbSvg(const QString & originalExpectedFileName) 
+QString ScrewTerminal::makePcbSvg(const QString & originalExpectedFileName, bool useOldSchematic) 
 {
+    Q_UNUSED(useOldSchematic);
+
     QString expectedFileName = originalExpectedFileName;
     int hsix = expectedFileName.indexOf(HoleSizePrefix);
     if (hsix >= 0) {

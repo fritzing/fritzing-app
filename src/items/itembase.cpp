@@ -1472,7 +1472,7 @@ FSvgRenderer * ItemBase::setUpImage(ModelPart * modelPart, LayerAttributes & lay
 
     QByteArray resultBytes; 
     if (!bytesToLoad.isEmpty()) {
-        if (makeLocalModifications(bytesToLoad, filename)) {
+        if (makeLocalModifications(bytesToLoad, filename, layerAttributes.useOldSchematic)) {
             if (layerAttributes.viewLayerID == ViewLayer::Schematic) {
                 bytesToLoad = SvgFileSplitter::hideText2(bytesToLoad);
             }
@@ -2214,7 +2214,7 @@ ViewLayer::ViewID ItemBase::useViewIDForPixmap(ViewLayer::ViewID vid, bool)
     return vid;
 }
 
-bool ItemBase::makeLocalModifications(QByteArray &, const QString &) {
+bool ItemBase::makeLocalModifications(QByteArray &, const QString &, bool ) {
     // a bottleneck for modifying part svg xml at setupImage time
     return false;
 }

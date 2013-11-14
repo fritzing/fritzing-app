@@ -48,12 +48,12 @@ public:
 	static QString partPath();
     static bool svgFileExists(const QString & expectedFileName, QString & path);
     static bool fzpFileExists(const QString & moduleID, QString & path);
-    static QString makeSchematicSipOrDipOr(const QStringList & labels, bool hasLayout, bool sip);
+    static QString makeSchematicSipOrDipOr(const QStringList & labels, bool hasLayout, bool sip, bool useOldSchematic);
 
 
 protected:
 	static QString getFzpFilenameAux(const QString & moduleID, GenFzp);
-	static QString getSvgFilenameAux(const QString & expectedFileName, const ModelPart *, GenSvg);
+	static QString getSvgFilenameAux(const QString & expectedFileName, const ModelPart *, bool useOldSchematic, GenSvg);
 	static class ItemBase * createPartAux(class ModelPart *, ViewLayer::ViewID, const class ViewGeometry & viewGeometry, long id, QMenu * itemMenu, QMenu * wireMenu, bool doLabel);
     static QDomElement showSubpart(QDomElement & root, const QString & subpart);
     static void fixSubpartBounds(QDomElement &, ModelPartShared *);

@@ -30,6 +30,7 @@ $Date: 2013-04-22 23:44:56 +0200 (Mo, 22. Apr 2013) $
 #include "../utils/familypropertycombobox.h"
 #include "../utils/schematicrectconstants.h"
 #include "../connectors/connectoritem.h"
+#include "../sketch/infographicsview.h"
 #include "../fsvgrenderer.h"
 #include "pinheader.h"
 
@@ -135,20 +136,23 @@ QString Dip::genModuleID(QMap<QString, QString> & currPropsMap)
 QString Dip::retrieveSchematicSvg(QString & svg) {
 	bool hasLocal = false;
 	QStringList labels = getPinLabels(hasLocal);
-		
+
+	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
+    bool useOldSchematic = (infoGraphicsView != NULL && infoGraphicsView->isOldStyleSchematic());	
+
 	if (hasLocal) {
 		if (this->isDIP()) {
-			svg = makeSchematicSvg(labels);
+			svg = makeSchematicSvg(labels, useOldSchematic);
 		}
 		else {
-			svg = MysteryPart::makeSchematicSvg(labels, true);
+			svg = MysteryPart::makeSchematicSvg(labels, true, useOldSchematic);
 		}
 	}
 
 	return TextUtils::replaceTextElement(svg, "label", m_chipLabel);
 }
 
-QString Dip::makeSchematicSvg(const QString & expectedFileName) 
+QString Dip::makeSchematicSvg(const QString & expectedFileName, bool useOldSchematic) 
 {
 	QStringList pieces = expectedFileName.split("_");
 	if (pieces.count() != 5) return "";
@@ -161,14 +165,16 @@ QString Dip::makeSchematicSvg(const QString & expectedFileName)
 	}
     
     if (expectedFileName.contains("sip", Qt::CaseInsensitive)) {
-        return MysteryPart::makeSchematicSvg(labels, true);
+        return MysteryPart::makeSchematicSvg(labels, true, useOldSchematic);
     }
 
-	return makeSchematicSvg(labels);
+	return makeSchematicSvg(labels, useOldSchematic);
 }
 
-QString Dip::makeSchematicSvg(const QStringList & labels) 
+QString Dip::makeSchematicSvg(const QStringList & labels, bool useOldSchematic) 
 {
+    if (useOldSchematic) return obsoleteMakeSchematicSvg(labels);
+
     QDomDocument fakeDoc;
 
     QList<QDomElement> lefts;
@@ -270,8 +276,10 @@ QString Dip::obsoleteMakeSchematicSvg(const QStringList & labels)
 	return svg;
 }
  
-QString Dip::makeBreadboardSvg(const QString & expectedFileName) 
+QString Dip::makeBreadboardSvg(const QString & expectedFileName, bool useOldSchematic) 
 {
+    Q_UNUSED(useOldSchematic);
+
 	if (expectedFileName.contains("_sip_")) return makeBreadboardSipSvg(expectedFileName);
 	if (expectedFileName.contains("_dip_")) return makeBreadboardDipSvg(expectedFileName);
 	return "";
@@ -395,13 +403,15 @@ bool Dip::changePinLabels(bool singleRow, bool sip) {
 	QStringList labels = getPinLabels(hasLocal);
 	if (labels.count() == 0) return true;
 
-	QString svg;
+	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
+    bool useOldSchematic = (infoGraphicsView != NULL && infoGraphicsView->isOldStyleSchematic());	
 
+	QString svg;
 	if (singleRow) {
-		svg = MysteryPart::makeSchematicSvg(labels, sip);
+		svg = MysteryPart::makeSchematicSvg(labels, sip, useOldSchematic);
 	}
 	else {
-		svg = Dip::makeSchematicSvg(labels);
+		svg = Dip::makeSchematicSvg(labels, useOldSchematic);
 	}
 
     QString chipLabel = modelPart()->localProp("chip label").toString();

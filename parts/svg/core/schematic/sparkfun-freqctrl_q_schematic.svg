@@ -16,12 +16,14 @@
 	<line fill="none" stroke="#000000" stroke-width="0.9" stroke-linecap="round" x1="10.43" y1="0.36" x2="10.43" y2="10.44"/>
 	<line fill="none" stroke="#000000" stroke-width="0.9" stroke-linecap="round" x1="4.67" y1="0.36" x2="4.67" y2="10.44"/>
 	
-		<line id="connector1pin" fill="none" stroke="#787878" stroke-width="0.2469" stroke-linecap="round" x1="14.75" y1="5.4" x2="14.75" y2="5.4"/>
-	<rect id="connector1terminal" x="14.75" y="5.4" fill="none" width="0" height="0"/>
+		<polyline id="connector1pin" fill="none" stroke="#8C8C8C" stroke-width="0.75" stroke-linecap="round" stroke-miterlimit="10" points="
+		11.034,5.4 14.75,5.4 14.75,5.4 	"/>
+	<path id="connector1terminal" fill="none" d="M14.75,5.4L14.75,5.4L14.75,5.4z"/>
 	<text transform="matrix(1 0 0 1 12.4036 4.3491)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">2</text>
 	
-		<line id="connector0pin" fill="none" stroke="#787878" stroke-width="0.2469" stroke-linecap="round" x1="0.35" y1="5.4" x2="0.35" y2="5.4"/>
-	<rect id="connector0terminal" x="0.35" y="5.4" fill="none" width="0" height="0"/>
-	<text transform="matrix(1 0 0 1 1.5364 4.3491)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">1</text>
+		<polyline id="connector0pin" fill="none" stroke="#8C8C8C" stroke-width="0.75" stroke-linecap="round" stroke-miterlimit="10" points="
+		3.753,5.4 0.35,5.4 0.35,5.4 	"/>
+	<path id="connector0terminal" fill="none" d="M0.35,5.4L0.35,5.4L0.35,5.4z"/>
+	<text transform="matrix(1 0 0 1 1.5374 4.3491)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">1</text>
 </g>
 </svg>

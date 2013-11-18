@@ -235,6 +235,7 @@ public slots:
     void orderFabHoverEnter();
     void orderFabHoverLeave();
     void setGroundFillKeepout();
+    void oldSchematicsSlot(const QString & filename, bool & useOldSchematics);
 
 protected slots:
 	void mainLoad();

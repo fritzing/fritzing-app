@@ -375,7 +375,10 @@ void MainWindow::mainLoad(const QString & fileName, const QString & displayName,
 				this, SLOT(loadedRootSlot(const QString &, ModelBase *, QDomElement &)), Qt::DirectConnection);
 	connect(m_sketchModel, SIGNAL(obsoleteSMDOrientationSignal()),
 				this, SLOT(obsoleteSMDOrientationSlot()), Qt::DirectConnection);
+	connect(m_sketchModel, SIGNAL(oldSchematicsSignal(const QString &, bool &)),
+				this, SLOT(oldSchematicsSlot(const QString &, bool &)), Qt::DirectConnection);
     m_obsoleteSMDOrientation = false;
+
 	m_sketchModel->loadFromFile(fileName, m_referenceModel, modelParts, true);
 
 	//DebugDialog::debug("core loaded");
@@ -385,6 +388,8 @@ void MainWindow::mainLoad(const QString & fileName, const QString & displayName,
 				this, SLOT(loadedRootSlot(const QString &, ModelBase *, QDomElement &)));
 	disconnect(m_sketchModel, SIGNAL(obsoleteSMDOrientationSignal()),
 				this, SLOT(obsoleteSMDOrientationSlot()));
+	disconnect(m_sketchModel, SIGNAL(oldSchematicSignal(bool &)),
+				this, SLOT(oldSchematicSlot(bool &)));
 
 	ProcessEventBlocker::processEvents();
 	if (m_fileProgressDialog) {
@@ -412,43 +417,6 @@ void MainWindow::mainLoad(const QString & fileName, const QString & displayName,
 	}
 
 	newIDs.clear();
-    QString fritzingVersion = m_sketchModel->fritzingVersion();
-    bool oldStyleSchematic = !Version::greaterThan("0.8.4b", fritzingVersion);
-    bool gotWire = false;
-    if (oldStyleSchematic) {
-        foreach (QGraphicsItem * item, m_pcbGraphicsView->scene()->items()) {
-		    Wire * wire = dynamic_cast<Wire *>(item);
-		    if (wire == NULL) continue;
-
-		    if (wire->hasFlag(m_schematicGraphicsView->getTraceFlag())) {
-                gotWire = true;
-                break;
-		    }
-	    }
-    }
-    if (!gotWire) oldStyleSchematic = false;
-
-    if (!m_readOnly && oldStyleSchematic) {
-	    QFileInfo info(fileName);
-        FMessageBox messageBox(NULL);
-		messageBox.setWindowTitle(tr("Schematic view update"));
-		messageBox.setText(tr("With version 0.8.5, there is a new graphics standard for schematic view part images.\n\nWould you like to convert '%1' to the new standard now or open it read-only?\n").arg(info.fileName()));
-		messageBox.setInformativeText(tr("The conversion process will not modify '%1', until you save the file. It will be necessary for you to rearrange parts and connections in the schematic view, as the sizes of most part images will have changed.").arg(info.fileName()));
-		messageBox.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
-		messageBox.setDefaultButton(QMessageBox::Yes);
-		messageBox.setIcon(QMessageBox::Question);
-		messageBox.setWindowModality(Qt::WindowModal);
-		messageBox.setButtonText(QMessageBox::Yes, tr("Convert"));
-		messageBox.setButtonText(QMessageBox::No, tr("Read-only"));
-		QMessageBox::StandardButton answer = (QMessageBox::StandardButton) messageBox.exec();
-
-		QString bundledFileName;
-		if (answer == QMessageBox::Yes) {
-            oldStyleSchematic = false;
-		}        
-    }
-
-    m_schematicGraphicsView->setOldStyleSchematic(oldStyleSchematic);
 	m_schematicGraphicsView->loadFromModelParts(modelParts, BaseCommand::SingleView, NULL, false, NULL, false, newIDs);
 
 	ProcessEventBlocker::processEvents();
@@ -3488,6 +3456,32 @@ void MainWindow::startSaveInstancesSlot(const QString & fileName, ModelPart *, Q
 
 void MainWindow::obsoleteSMDOrientationSlot() {
     m_obsoleteSMDOrientation = true;    
+}
+
+void MainWindow::oldSchematicsSlot(const QString &filename, bool & useOldSchematics) {
+    useOldSchematics = false;
+
+    if (m_readOnly) {
+        useOldSchematics = true;
+        return;
+    }
+
+	QFileInfo info(filename);
+    FMessageBox messageBox(NULL);
+	messageBox.setWindowTitle(tr("Schematic view update"));
+	messageBox.setText(tr("With version 0.8.5, there is a new graphics standard for schematic view part images.\n\nWould you like to convert '%1' to the new standard now or open it read-only?\n").arg(info.fileName()));
+	messageBox.setInformativeText(tr("The conversion process will not modify '%1', until you save the file. It will be necessary for you to rearrange parts and connections in the schematic view, as the sizes of most part images will have changed.").arg(info.fileName()));
+	messageBox.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
+	messageBox.setDefaultButton(QMessageBox::Yes);
+	messageBox.setIcon(QMessageBox::Question);
+	messageBox.setWindowModality(Qt::WindowModal);
+	messageBox.setButtonText(QMessageBox::Yes, tr("Convert"));
+	messageBox.setButtonText(QMessageBox::No, tr("Read-only"));
+	QMessageBox::StandardButton answer = (QMessageBox::StandardButton) messageBox.exec();
+
+	if (answer == QMessageBox::No) {
+        useOldSchematics = true;
+	}        
 }
 
 void MainWindow::loadedRootSlot(const QString & fname, ModelBase *, QDomElement & root) {

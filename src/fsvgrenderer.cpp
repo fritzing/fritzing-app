@@ -624,6 +624,10 @@ bool FSvgRenderer::setUpConnector(SvgIdLayer * svgIdLayer, bool ignoreTerminalPo
 
 	if (svgIdLayer == NULL) return false;
 
+    if (svgIdLayer->m_viewID = ViewLayer::SchematicView) {
+        DebugDialog::debug("delete me please");
+    }
+
 	if (svgIdLayer->processed(viewLayerPlacement)) {
 		// hybrids are not visible in some views
 		return svgIdLayer->svgVisible(viewLayerPlacement) || svgIdLayer->m_hybrid;

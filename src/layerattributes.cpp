@@ -31,7 +31,6 @@ LayerAttributes::LayerAttributes()
 {
     orientation = Qt::Vertical;
     createShape = true;
-    useOldSchematic = false;
 }
 
 const QString & LayerAttributes::filename() {

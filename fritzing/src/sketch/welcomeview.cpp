@@ -1,4 +1,4 @@
-/*******************************************************************
+/*********************************************************************
 
 Part of the Fritzing project - http://fritzing.org
 Copyright (c) 2007-2013 Fachhochschule Potsdam - http://fh-potsdam.de
@@ -27,11 +27,26 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 
 #include "welcomeview.h"
 
+#include <QTextEdit>
+#include <QHBoxLayout>
+#include <QVBoxLayout>
 
 //////////////////////////////////////
 
-WelcomeView::WelcomeView(QWidget * parent) : QTextEdit(parent) 
+WelcomeView::WelcomeView(QWidget * parent) : QFrame(parent) 
 {
+	initLayout();
+}
+
+WelcomeView::~WelcomeView() {
+}
+
+void WelcomeView::initLayout()
+{
+	QVBoxLayout * mainLayout = new QVBoxLayout();
+
+	QTextEdit * textEdit = new QTextEdit();
+
 	QString breadboardHelpText = tr(
                 "<br/>"
         "The <b>Breadboard View</b> is meant to look like a <i>real-life</i> breadboard prototype."
@@ -83,9 +98,9 @@ WelcomeView::WelcomeView(QWidget * parent) : QTextEdit(parent)
 		"</td></tr></table>");
 
 
-    this->setText(breadboardHelpText + "<br /><br />" + schematicHelpText + "<br /><br />" + pcbHelpText);
-}
+    textEdit->setText(breadboardHelpText + "<br /><br />" + schematicHelpText + "<br /><br />" + pcbHelpText);
 
-WelcomeView::~WelcomeView() {
 
+	mainLayout->addWidget(textEdit);
+	this->setLayout(mainLayout);
 }

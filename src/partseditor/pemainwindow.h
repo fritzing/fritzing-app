@@ -130,7 +130,7 @@ protected:
 	QMenu *schematicWireMenu();
 	QMenu *breadboardWireMenu();
 	void setTitle();
-    void createViewMenuActions();
+    void createViewMenuActions(bool showWelcome);
     void createFileMenuActions();
     void createViewMenu();
 	void createEditMenu();
@@ -192,6 +192,7 @@ protected:
     bool anyMarquee();
     bool anyVisible();
     QString makeDirName();
+	void initWelcomeView();
 
 protected slots:
     void initZoom();

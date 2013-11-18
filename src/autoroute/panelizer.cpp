@@ -435,6 +435,20 @@ void Panelizer::panelize(FApplication * app, const QString & panelFilename, bool
 
 		TextUtils::mergeSvg(doc, merger, "");
 		merger = TextUtils::mergeSvgFinish(doc);
+
+        int endix = merger.lastIndexOf("</svg>");
+        QString text = "<text x='%1' y='%2' text-anchor='end' fill='#000000' stroke='none' stroke-width='0' font-size='250' font-family='OCRA'>%3 panel %4  %5 %6</text>\n";
+        text = text
+                .arg(planePair->panelWidth * GraphicsUtils::StandardFritzingDPI)
+                .arg(planePair->panelHeight * GraphicsUtils::StandardFritzingDPI + (250 / 2))
+                .arg(outputDir.dirName())
+                .arg(planePair->index)
+                .arg(panelParams.prefix)
+                .arg(QTime::currentTime().toString())
+                ;
+
+        merger.insert(endix, text);
+
 		QString fname = svgDir.absoluteFilePath(QString("%1.%2.svg").arg(prefix).arg("identification"));
 		TextUtils::writeUtf8(fname, merger);
 

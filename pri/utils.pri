@@ -19,7 +19,7 @@
 
 # assume boost libraries are installed under linux
 win32|macx {
-	INCLUDEPATH += src/lib/boost_1_43_0
+	INCLUDEPATH += src/lib/boost_1_55_0
 }
 
 HEADERS += \

@@ -138,10 +138,9 @@ PaletteItem::~PaletteItem() {
 	}
 }
 
-bool PaletteItem::renderImage(ModelPart * modelPart, ViewLayer::ViewID viewID, const LayerHash & viewLayers, ViewLayer::ViewLayerID viewLayerID, bool doConnectors, bool useOldSchematic, QString & error) {
+bool PaletteItem::renderImage(ModelPart * modelPart, ViewLayer::ViewID viewID, const LayerHash & viewLayers, ViewLayer::ViewLayerID viewLayerID, bool doConnectors,  QString & error) {
 	LayerAttributes layerAttributes; 
     initLayerAttributes(layerAttributes, viewID, viewLayerID, viewLayerPlacement(), doConnectors, true);
-    layerAttributes.useOldSchematic = useOldSchematic;
 	bool result = setUpImage(modelPart, viewLayers, layerAttributes);
     error = layerAttributes.error;
 
@@ -202,10 +201,6 @@ void PaletteItem::loadLayerKin(const LayerHash & viewLayers, ViewLayer::ViewLaye
 void PaletteItem::makeOneKin(qint64 & id, ViewLayer::ViewLayerID viewLayerID, ViewLayer::ViewLayerPlacement viewLayerPlacement, ViewGeometry & viewGeometry, const LayerHash & viewLayers) {
     LayerAttributes layerAttributes;
     initLayerAttributes(layerAttributes, m_viewID, viewLayerID, viewLayerPlacement, true, true);
-    if (layerAttributes.viewID == ViewLayer::SchematicView) {
-        InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-        layerAttributes.useOldSchematic = (infoGraphicsView != NULL && infoGraphicsView->isOldStyleSchematic());
-    }
 
     LayerKinPaletteItem * lkpi = newLayerKinPaletteItem(this, m_modelPart, viewGeometry, id, m_itemMenu, viewLayers, layerAttributes);
 	if (lkpi->ok()) {
@@ -462,7 +457,6 @@ void PaletteItem::resetImage(InfoGraphicsView * infoGraphicsView) {
     
 	LayerAttributes layerAttributes;
     initLayerAttributes(layerAttributes, viewID(), viewLayerID(), viewLayerPlacement(), true, !m_selectionShape.isEmpty());
-    layerAttributes.useOldSchematic = infoGraphicsView->isOldStyleSchematic();
 	this->setUpImage(modelPart(), infoGraphicsView->viewLayers(), layerAttributes);
 	
 	foreach (ItemBase * layerKin, m_layerKin) {
@@ -477,7 +471,6 @@ void PaletteItem::resetKinImage(ItemBase * layerKin, InfoGraphicsView * infoGrap
 	}
 	LayerAttributes layerAttributes;
     initLayerAttributes(layerAttributes, layerKin->viewID(), layerKin->viewLayerID(), layerKin->viewLayerPlacement(), true, !layerKin->selectionShape().isEmpty());
-    layerAttributes.useOldSchematic = infoGraphicsView->isOldStyleSchematic();
 	qobject_cast<PaletteItemBase *>(layerKin)->setUpImage(modelPart(), infoGraphicsView->viewLayers(), layerAttributes);
 }
 
@@ -1355,19 +1348,19 @@ void PaletteItem::generateSwap(const QString & text, GenModuleID genModuleID, Ge
 
         QString name = viewNames.value("breadboardView", "");
         if (!PartFactory::svgFileExists(name, path)) {
-            QString svg = makeBreadboardSvg(name, false);
+            QString svg = makeBreadboardSvg(name);
 	        TextUtils::writeUtf8(path, svg);
         }
 
         name = viewNames.value("schematicView", "");
         if (!PartFactory::svgFileExists(name, path)) {
-            QString svg = makeSchematicSvg(name, false);
+            QString svg = makeSchematicSvg(name);
 	        TextUtils::writeUtf8(path, svg);
         }
 
         name = viewNames.value("pcbView", "");
         if (!PartFactory::svgFileExists(name, path)) {
-            QString svg = makePcbSvg(name, false);
+            QString svg = makePcbSvg(name);
 	        TextUtils::writeUtf8(path, svg);
         } 
     }
@@ -1445,7 +1438,7 @@ bool PaletteItem::changeDiameter(HoleSettings & holeSettings, QObject * sender)
 	return (newValue != oldValue);
 }
 
-bool PaletteItem::makeLocalModifications(QByteArray & svg, const QString & filename, bool useOldSchematic) {
+bool PaletteItem::makeLocalModifications(QByteArray & svg, const QString & filename) {
     // a bottleneck for modifying part svg xml at setupImage time
 
     // for saved-as-new-part parts (i.e. that are no longer MysteryParts) that still have a chip-label or custom pin names
@@ -1475,7 +1468,7 @@ bool PaletteItem::makeLocalModifications(QByteArray & svg, const QString & filen
             bool hasLayout, sip;
             QStringList labels = sipOrDipOrLabels(hasLayout, sip);
             if (labels.count() > 0) {
-                svg = PartFactory::makeSchematicSipOrDipOr(labels, hasLayout, sip, useOldSchematic).toUtf8();
+                svg = PartFactory::makeSchematicSipOrDipOr(labels, hasLayout, sip).toUtf8();
                 modified = true;
             }
         }

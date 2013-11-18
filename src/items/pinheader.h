@@ -67,14 +67,14 @@ public:
 public:
 	static void initNames();
 	static QString genFZP(const QString & moduleid);
-	static QString makePcbSvg(const QString & expectedFileName, bool useOldSchematic);
+	static QString makePcbSvg(const QString & expectedFileName);
 	static QString makePcbShroudedSvg(int pins);
 	static QString makePcbLongPadSvg(int pins, bool lock);
 	static QString makePcbLongPadLockSvg(int pins);
 	static QString makePcbMolexSvg(int pins);
 	static QString makePcbSMDSvg(const QString & expectedFileName);
-	static QString makeSchematicSvg(const QString & expectedFileName, bool useOldSchematic);
-	static QString makeBreadboardSvg(const QString & expectedFileName, bool useOldSchematic);
+	static QString makeSchematicSvg(const QString & expectedFileName);
+	static QString makeBreadboardSvg(const QString & expectedFileName);
 	static QString makeBreadboardShroudedSvg(int pins);
     static QString makeBreadboardDoubleSvg(const QString & expectedFileName, int pins);
 

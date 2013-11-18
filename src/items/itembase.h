@@ -326,7 +326,7 @@ protected:
 	void saveLocAndTransform(QXmlStreamWriter & streamWriter);
     QPixmap * getPixmap(ViewLayer::ViewID, bool swappingEnabled, QSize size);
     virtual ViewLayer::ViewID useViewIDForPixmap(ViewLayer::ViewID, bool swappingEnabled);
-    virtual bool makeLocalModifications(QByteArray & svg, const QString & filename, bool useOldSchematic);
+    virtual bool makeLocalModifications(QByteArray & svg, const QString & filename);
     void updateHidden();
     void createShape(LayerAttributes & layerAttributes);
 

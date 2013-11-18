@@ -29,6 +29,7 @@ $Date: 2013-04-14 10:13:52 +0200 (So, 14. Apr 2013) $
 #include "../items/partfactory.h"
 #include "../items/moduleidnames.h"
 #include "../utils/textutils.h"
+#include "../utils/folderutils.h"
 #include "../utils/fmessagebox.h"
 #include "../version/version.h"
 #include "../viewgeometry.h"
@@ -110,6 +111,7 @@ bool ModelBase::loadFromFile(const QString & fileName, ModelBase * referenceMode
         return false;
     }
 
+    bool checkForOldSchematics = true;
 	bool checkForRats = true;
 	bool checkForTraces = true;
     bool checkForMysteryParts = true;
@@ -137,8 +139,12 @@ bool ModelBase::loadFromFile(const QString & fileName, ModelBase * referenceMode
 	    versionThingRats.minorVersion = 7;
 	    versionThingRats.minorSubVersion = 13;
 	    checkForObsoleteSMDOrientation = !Version::greaterThan(versionThingRats, versionThingFz);
+        // with version 0.8.5 we get a new schematic template
+	    versionThingRats.minorVersion = 8;
+	    versionThingRats.minorSubVersion = 4;
+	    checkForOldSchematics = !Version::greaterThan(versionThingRats, versionThingFz);
 	}
-
+    
 	ModelPartSharedRoot * modelPartSharedRoot = this->rootModelPartShared();
 
     QDomElement title = root.firstChildElement("title");
@@ -223,6 +229,18 @@ bool ModelBase::loadFromFile(const QString & fileName, ModelBase * referenceMode
 		}
     }
 
+    m_useOldSchematics = false;
+    if (checkForOldSchematics) {
+        QDomElement instance = instances.firstChildElement("instance");
+   		while (!instance.isNull()) {
+			if (checkOldSchematics(instance)) {
+                emit oldSchematicsSignal(fileName, m_useOldSchematics);
+                break;
+            }
+			instance = instance.nextSiblingElement("instance");
+		}    
+    }
+
 	bool result = loadInstances(domDocument, instances, modelParts, checkViews);
 	emit loadedInstances(this, instances);
 	return result;
@@ -269,7 +287,7 @@ bool ModelBase::loadInstances(QDomDocument & domDocument, QDomElement & instance
 			continue;
 		}
 
-
+        bool generated = false;
    		modelPart = m_referenceModel->retrieveModelPart(moduleIDRef);
         if (modelPart == NULL) {
 			DebugDialog::debug(QString("module id %1 not found in database").arg(moduleIDRef));
@@ -279,6 +297,7 @@ bool ModelBase::loadInstances(QDomDocument & domDocument, QDomElement & instance
 				if (modelPart != NULL) {
                     instance.setAttribute("moduleIdRef", modelPart->moduleID());
                     moduleIDRef = modelPart->moduleID();
+                    generated = true;
 				}
 				if (modelPart == NULL) {
 					missingModules.insert(moduleIDRef, instance.attribute("path"));
@@ -287,6 +306,33 @@ bool ModelBase::loadInstances(QDomDocument & domDocument, QDomElement & instance
 				}
 			}
    		}
+
+        if (m_useOldSchematics) {
+            QString schematicFilename = modelPart->imageFileName(ViewLayer::SchematicView, ViewLayer::Schematic);
+            if (schematicFilename.startsWith("schematic")) {
+                DebugDialog::debug("schematic " + schematicFilename);
+                QString oldModuleIDRef = PartFactory::OldSchematicPrefix + moduleIDRef;
+                ModelPart * oldModelPart = m_referenceModel->retrieveModelPart(oldModuleIDRef);
+                if (oldModelPart == NULL) {
+                    int ix = schematicFilename.indexOf("/");
+                    schematicFilename.insert(ix + 1, PartFactory::OldSchematicPrefix);
+                    QString path = FolderUtils::getApplicationSubFolderPath("parts") + "/svg/obsolete/"+ schematicFilename;
+                    if (QFile::exists(path)) {
+                        // create oldModelPart, set up the new image file name, add it to refmodel
+
+                    }
+                    if (oldModelPart == NULL) {
+                        // try the fzp again
+                        // set up the new image file name, add it to refmodel
+                    }
+                }
+                if (oldModelPart) {
+                    modelPart = oldModelPart;
+                    moduleIDRef = oldModuleIDRef;
+                    // fix up instance?
+                }
+            }
+        }
 
         modelPart->setInBin(true);
    		modelPart = addModelPart(m_root, modelPart);
@@ -601,6 +647,23 @@ bool ModelBase::isRatsnest(QDomElement & instance) {
 
 	return false;
 }
+
+
+bool ModelBase::checkOldSchematics(QDomElement & instance)
+{
+	if (instance.attribute("moduleIdRef").compare(ModuleIDNames::WireModuleIDName) != 0) {
+        return false;
+    }
+
+    QDomElement views = instance.firstChildElement("views");
+    QDomElement schematicView = views.firstChildElement("schematicView");
+    QDomElement geometry = schematicView.firstChildElement("geometry");
+    if (geometry.isNull()) return false;
+
+    int flags = geometry.attribute("wireFlags", "0").toInt();
+    return (flags & ViewGeometry::SchematicTraceFlag) != 0;
+}
+
 
 bool ModelBase::checkObsoleteOrientation(QDomElement & instance)
 {

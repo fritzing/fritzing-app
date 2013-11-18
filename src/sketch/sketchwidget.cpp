@@ -893,7 +893,7 @@ PaletteItem* SketchWidget::addPartItem(ModelPart * modelPart, ViewLayer::ViewLay
     }
 
 	QString error;
-	bool result = paletteItem->renderImage(modelPart, viewID, m_viewLayers, viewLayerID, doConnectors, isOldStyleSchematic(), error);
+	bool result = paletteItem->renderImage(modelPart, viewID, m_viewLayers, viewLayerID, doConnectors, error);
 	if (!result) {
 		bool retry = false;
 		switch (viewLayerID) {
@@ -909,7 +909,7 @@ PaletteItem* SketchWidget::addPartItem(ModelPart * modelPart, ViewLayer::ViewLay
 				break;
 		}
 		if (retry) {
-			result = paletteItem->renderImage(modelPart, viewID, m_viewLayers, viewLayerID, doConnectors, isOldStyleSchematic(), error);
+			result = paletteItem->renderImage(modelPart, viewID, m_viewLayers, viewLayerID, doConnectors, error);
 		}
 	}
 
@@ -9085,7 +9085,7 @@ void SketchWidget::changePinLabelsSlot(ItemBase * itemBase, bool singleRow)
 
         QTransform transform = paletteItem->untransform();
 
-        QString svg = PartFactory::makeSchematicSipOrDipOr(labels, hasLayout, sip, isOldStyleSchematic());
+        QString svg = PartFactory::makeSchematicSipOrDipOr(labels, hasLayout, sip);
 		paletteItem->resetLayerKin(svg);
 		if (!hasLayout && !sip) {
 			paletteItem->resetConnectors();

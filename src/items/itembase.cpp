@@ -1383,7 +1383,7 @@ FSvgRenderer * ItemBase::setUpImage(ModelPart * modelPart, LayerAttributes & lay
 
 
 	//DebugDialog::debug(QString("set up image elapsed (1) %1").arg(t.elapsed()) );
-	QString filename = PartFactory::getSvgFilename(modelPart, modelPartShared->imageFileName(layerAttributes.viewID, layerAttributes.viewLayerID), true, true, layerAttributes.useOldSchematic);
+	QString filename = PartFactory::getSvgFilename(modelPart, modelPartShared->imageFileName(layerAttributes.viewID, layerAttributes.viewLayerID), true, true);
 
 //#ifndef QT_NO_DEBUG
 	//DebugDialog::debug(QString("set up image elapsed (2) %1").arg(t.elapsed()) );
@@ -1472,7 +1472,7 @@ FSvgRenderer * ItemBase::setUpImage(ModelPart * modelPart, LayerAttributes & lay
 
     QByteArray resultBytes; 
     if (!bytesToLoad.isEmpty()) {
-        if (makeLocalModifications(bytesToLoad, filename, layerAttributes.useOldSchematic)) {
+        if (makeLocalModifications(bytesToLoad, filename)) {
             if (layerAttributes.viewLayerID == ViewLayer::Schematic) {
                 bytesToLoad = SvgFileSplitter::hideText2(bytesToLoad);
             }
@@ -2180,7 +2180,7 @@ QPixmap * ItemBase::getPixmap(ViewLayer::ViewID vid, bool swappingEnabled, QSize
 	QString baseName = modelPart()->hasBaseNameFor(vid);
 	if (baseName.isEmpty()) return NULL;
 
-	QString filename = PartFactory::getSvgFilename(modelPart(), baseName, true, true, false);
+	QString filename = PartFactory::getSvgFilename(modelPart(), baseName, true, true);
 	if (filename.isEmpty()) {
 		return NULL;
 	}
@@ -2214,7 +2214,7 @@ ViewLayer::ViewID ItemBase::useViewIDForPixmap(ViewLayer::ViewID vid, bool)
     return vid;
 }
 
-bool ItemBase::makeLocalModifications(QByteArray &, const QString &, bool ) {
+bool ItemBase::makeLocalModifications(QByteArray &, const QString & ) {
     // a bottleneck for modifying part svg xml at setupImage time
     return false;
 }

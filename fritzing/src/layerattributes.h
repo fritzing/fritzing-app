@@ -41,7 +41,7 @@ public:
 	
 	const QString & filename();
 	void setFilename(const QString &);
-	const QByteArray & loaded();
+	const QByteArray & loaded() const;
 	void clearLoaded();
 	void setLoaded(const QByteArray &);
 

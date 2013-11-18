@@ -584,7 +584,7 @@ void PEMainWindow::createActions()
 	m_deleteBusConnectionAct = new WireAction(tr("Remove Internal Connection"), this);
 	connect(m_deleteBusConnectionAct, SIGNAL(triggered()), this, SLOT(deleteBusConnection()));
 
-    createViewMenuActions();
+    createViewMenuActions(false);
     createHelpMenuActions();
     createWindowMenuActions();
 	createActiveLayerActions();
@@ -983,8 +983,8 @@ void PEMainWindow::setTitle() {
 	setWindowTitle(QString("%1: %2 [%3]%4").arg(title).arg(partTitle).arg(viewName).arg(QtFunkyPlaceholder));
 }
 
-void PEMainWindow::createViewMenuActions() {
-    MainWindow::createViewMenuActions();
+void PEMainWindow::createViewMenuActions(bool showWelcome) {
+    MainWindow::createViewMenuActions(showWelcome);
 
 	m_showIconAct = new QAction(tr("Show Icon"), this);
 	m_showIconAct->setShortcut(tr("Ctrl+4"));
@@ -3918,5 +3918,8 @@ void PEMainWindow::clickedItemCandidateSlot(QGraphicsItem * item, bool & ok) {
 }
 
 void PEMainWindow::initProgrammingWidget() {
+}
+
+void PEMainWindow::initWelcomeView() {
 }
 

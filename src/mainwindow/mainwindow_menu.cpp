@@ -575,7 +575,7 @@ void MainWindow::createActions()
     createFileMenuActions();
     createEditMenuActions();
     createPartMenuActions();
-    createViewMenuActions();
+    createViewMenuActions(true);
     createWindowMenuActions();
     createHelpMenuActions();
 	createTraceMenuActions();
@@ -1044,7 +1044,7 @@ void MainWindow::createPartMenuActions() {
 
 }
 
-void MainWindow::createViewMenuActions() {
+void MainWindow::createViewMenuActions(bool showWelcome) {
 	m_zoomInAct = new QAction(tr("&Zoom In"), this);
 	m_zoomInAct->setShortcut(tr("Ctrl++"));
 	m_zoomInAct->setStatusTip(tr("Zoom in"));
@@ -1094,27 +1094,38 @@ void MainWindow::createViewMenuActions() {
 	m_setBackgroundColorAct->setStatusTip(tr("Set the background color of this view"));
 	connect(m_setBackgroundColorAct, SIGNAL(triggered()), this, SLOT(setBackgroundColor()));
 
+	QStringList controls;
+	controls << tr("Ctrl+1") << tr("Ctrl+2") << tr("Ctrl+3") << tr("Ctrl+4") << tr("Ctrl+5");
+	int controlIndex = 0;
+	if (showWelcome) {
+		m_showWelcomeAct = new QAction(tr("&Show Welcome"), this);
+		m_showWelcomeAct->setShortcut(controls.at(controlIndex++));
+		m_showWelcomeAct->setStatusTip(tr("Show the welcome view"));
+		connect(m_showWelcomeAct, SIGNAL(triggered()), this, SLOT(showWelcomeView()));
+	}
+
 	m_showBreadboardAct = new QAction(tr("&Show Breadboard"), this);
-	m_showBreadboardAct->setShortcut(tr("Ctrl+1"));
+	m_showBreadboardAct->setShortcut(controls.at(controlIndex++));
 	m_showBreadboardAct->setStatusTip(tr("Show the breadboard view"));
 	connect(m_showBreadboardAct, SIGNAL(triggered()), this, SLOT(showBreadboardView()));
 
 	m_showSchematicAct = new QAction(tr("&Show Schematic"), this);
-	m_showSchematicAct->setShortcut(tr("Ctrl+2"));
+	m_showSchematicAct->setShortcut(controls.at(controlIndex++));
 	m_showSchematicAct->setStatusTip(tr("Show the schematic view"));
 	connect(m_showSchematicAct, SIGNAL(triggered()), this, SLOT(showSchematicView()));
 
 	m_showPCBAct = new QAction(tr("&Show PCB"), this);
-	m_showPCBAct->setShortcut(tr("Ctrl+3"));
+	m_showPCBAct->setShortcut(controls.at(controlIndex++));
 	m_showPCBAct->setStatusTip(tr("Show the PCB view"));
 	connect(m_showPCBAct, SIGNAL(triggered()), this, SLOT(showPCBView()));
 
     if (m_programView) {
 	    m_showProgramAct = new QAction(tr("Show Code"), this);
-	    m_showProgramAct->setShortcut(tr("Ctrl+4"));
+	    m_showProgramAct->setShortcut(controls.at(controlIndex++));
 	    m_showProgramAct->setStatusTip(tr("Show the code (programming) view"));
 	    connect(m_showProgramAct, SIGNAL(triggered()), this, SLOT(showProgramView()));
         QList<QAction *> viewMenuActions;
+		if (m_welcomeView) viewMenuActions << m_showWelcomeAct;
         viewMenuActions << m_showBreadboardAct << m_showSchematicAct << m_showPCBAct << m_showProgramAct;
         m_programView->initViewMenu(viewMenuActions);
     }
@@ -1390,6 +1401,7 @@ void MainWindow::createViewMenu()
     m_viewMenu->addAction(m_setBackgroundColorAct);
 	m_viewMenu->addSeparator();
 
+	if (m_welcomeView) m_viewMenu->addAction(m_showWelcomeAct);
     m_viewMenu->addAction(m_showBreadboardAct);
     m_viewMenu->addAction(m_showSchematicAct);
     m_viewMenu->addAction(m_showPCBAct);
@@ -2128,20 +2140,28 @@ void MainWindow::actualSize() {
 	m_zoomSlider->setValue(dpi * 100.0 / GraphicsUtils::SVGDPI);
 }
 
-void MainWindow::showBreadboardView() {
+void MainWindow::showWelcomeView() {
 	setCurrentTabIndex(0);
 }
 
+void MainWindow::showBreadboardView() {
+	int ix = (m_welcomeView == NULL) ? 0 : 1;
+	setCurrentTabIndex(ix);
+}
+
 void MainWindow::showSchematicView() {
-	setCurrentTabIndex(1);
+	int ix = (m_welcomeView == NULL) ? 1 : 2;
+	setCurrentTabIndex(ix);
 }
 
 void MainWindow::showPCBView() {
-	setCurrentTabIndex(2);
+	int ix = (m_welcomeView == NULL) ? 2 : 3;
+	setCurrentTabIndex(ix);
 }
 
 void MainWindow::showProgramView() {
-	setCurrentTabIndex(3);
+	int ix = (m_welcomeView == NULL) ? 3 : 4;
+	setCurrentTabIndex(ix);
 }
 
 void MainWindow::setCurrentView(ViewLayer::ViewID viewID)

@@ -317,6 +317,7 @@ void MainWindow::init(ReferenceModel *referenceModel, bool lockFiles) {
 
 
     m_welcomeView = new WelcomeView(this);
+    m_welcomeView->setObjectName("WelcomeView");
 	SketchAreaWidget * sketchAreaWidget = new SketchAreaWidget(m_welcomeView, this);
 	addTab(sketchAreaWidget, tr("Welcome"));
 

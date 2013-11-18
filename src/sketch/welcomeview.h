@@ -29,17 +29,18 @@ $Date: 2012-09-26 15:45:37 +0200 (Mi, 26. Sep 2012) $
 #ifndef WELCOMEVIEW_H
 #define WELCOMEVIEW_H
 
+#include <QFrame>
 
-#include <QTextEdit>
-
-
-class WelcomeView : public QTextEdit
+class WelcomeView : public QFrame
 {
 Q_OBJECT
+
 public:
 	WelcomeView(QWidget * parent = 0);
 	~WelcomeView();
 
+protected:
+	void initLayout();
 };
 
 

@@ -35,6 +35,7 @@ $Date: 2013-04-28 14:14:07 +0200 (So, 28. Apr 2013) $
 #include <QPushButton>
 #include <QStackedWidget>
 #include <QSizeGrip>
+#include <QPointer>
 #include <QProcess>
 #include <QDockWidget>
 #include <QXmlStreamWriter>
@@ -260,6 +261,7 @@ protected slots:
     void showGrid();
     void setGridSize();
     void setBackgroundColor();
+    void showWelcomeView();
     void showBreadboardView();
     void showSchematicView();
     void showProgramView();
@@ -442,7 +444,7 @@ protected:
     void createOpenRecentMenu();
     void createEditMenuActions();
     void createPartMenuActions();
-    virtual void createViewMenuActions();
+    virtual void createViewMenuActions(bool showWelcome);
     void createWindowMenuActions();
     void createHelpMenuActions();
     virtual void createMenus();
@@ -554,6 +556,7 @@ protected:
     void massageOutput(QString & svg, bool doMask, bool doSilk, bool doPaste, QString & maskTop, QString & maskBottom, const QString & fileName, ItemBase * board, int dpi, const LayerList &);
     virtual void initLockedFiles(bool lockFiles);
     virtual void initSketchWidgets();
+	virtual void initWelcomeView();
     virtual void initDock();
     virtual void initMenus();
     virtual void moreInitDock();
@@ -607,7 +610,7 @@ protected:
 	QPointer<class PCBSketchWidget> m_pcbGraphicsView;
 
 	QPointer<SketchAreaWidget> m_welcomeWidget;
-	QPointer<class WelcomeView> m_welcomeView;
+	class WelcomeView * m_welcomeView;
 
     QPointer<class BinManager> m_binManager;
     QPointer<class MiniViewContainer> m_miniViewContainerBreadboard;
@@ -759,6 +762,7 @@ protected:
     QAction *m_showGridAct;
     QAction *m_setGridSizeAct;
     QAction *m_setBackgroundColorAct;
+    QAction *m_showWelcomeAct;
     QAction *m_showBreadboardAct;
     QAction *m_showSchematicAct;
     QAction *m_showProgramAct;

@@ -260,8 +260,8 @@
 	<file>resources/bins/icons/Core-mono.png</file>
         <file>resources/bins/icons/Custom1.png</file>
         <file>resources/bins/icons/Custom1-mono.png</file>
-        <file>resources/bins/icons/mine.png</file>
-        <file>resources/bins/icons/mine-mono.png</file>
+        <file>resources/bins/icons/Mine.png</file>
+        <file>resources/bins/icons/Mine-mono.png</file>
         <file>resources/bins/icons/PICAXE.png</file>
         <file>resources/bins/icons/PICAXE-mono.png</file>
         <file>resources/bins/icons/Search.png</file>

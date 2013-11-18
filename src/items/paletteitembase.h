@@ -101,6 +101,8 @@ protected:
 	void checkFreeRotation(Qt::KeyboardModifiers modifiers, QPointF scenePos);
 
 	virtual LayerKinPaletteItem * newLayerKinPaletteItem(PaletteItemBase * chief, ModelPart *, const ViewGeometry &, long id, QMenu* itemMenu, const LayerHash &, LayerAttributes &);
+    virtual void setInitialTransform(const QTransform &);
+    virtual void cacheLoaded(const LayerAttributes &);
 
 protected slots:
 	void partPropertyEntry();

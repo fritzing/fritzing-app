@@ -1016,6 +1016,7 @@ margin:0;
   padding: 0px;
   max-height: 28px;
   height: 28px;
+ 
 }
 
 #partsBinHeaderSeparator {
@@ -1033,8 +1034,9 @@ SearchLineEdit,  #searchStackWidget {
         color: rgb(50,50,50);
         font-weight: bold;
         /*text-transform: uppercase;*/
-        padding-left: 2px;
+        padding-left: 1px;
         margin: 0;
+
 }
 
 
@@ -1057,14 +1059,19 @@ PartsBinListView { /*the styling if you look the parts-window in list view mode*
         border-bottom: 1px solid #D0D0D0;
 }
 
-
 #partsBinHeader,
-#partsBinContainer,
 PartsBinPaletteWidget,
 PartsBinPaletteWidget SimpleEditableLabelWidget,
 PartsBinPaletteWidget InfoGraphicsView {
         background-color: rgb(217,217,217); /*background of parts library*/
         border: none;
+}
+
+#partsBinContainer
+{
+	
+	background-color: rgb(217,217,217); /*background of parts library*/
+border-top: 1px solid rgb(177,177,177);
 }
 
 
@@ -1206,61 +1213,6 @@ SketchWidget {
 
 /**************** the  breadboard-, schematic-, pcb-view switcher ****************/
 
-/*
-QWidget#tripleNav {
-background:#00f;
-border: 4px solid #f00;
-}
-
-
-
-
-#tripleNav::QLabel{
-	background:transparent;
-	font-weight: bold;
-	background-image:none;
-	margin:10px;
-} */
-/*
-#tripleNav QLabel{
-	background:transparent;	
-	font-size:12px;
-	background-image:none;
-}
-
-
-TripleNavigator QLabel {
-        background:transparent;
-		background-image: none;
-			font-size:20px;
-}
-*/
-/*
-
-#tripleNavigatorBottomMargin {
-        background-color: rgb(217,217,217);
-}
-
-QSplitter::handle {
-     height: 4px;
-     width: 4px;
-     color: #666666;
-     background-color: #666666;
-}
-
-#tripleNavigator QLabel{
-	font-weight: bold;
-	font-size:35px;
-	background-image:none;
-}
-	
-#tripleNavigator QLabel::item {
-        height: 14;
-        color: rgb(255,0,255);
-        font-size: 40px;
-		font-weight: bold;
-}
-*/
 
 WaitPushUndoStack {
         background-color: white;

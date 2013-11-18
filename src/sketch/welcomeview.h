@@ -30,6 +30,9 @@ $Date: 2012-09-26 15:45:37 +0200 (Mi, 26. Sep 2012) $
 #define WELCOMEVIEW_H
 
 #include <QFrame>
+#include <QLabel>
+#include <QList>
+#include <QWidget>
 
 class WelcomeView : public QFrame
 {
@@ -41,6 +44,16 @@ public:
 
 protected:
 	void initLayout();
+	QWidget * initRecent();
+	QWidget * initRight();
+	QWidget * initBlog();
+	QWidget * initKit();
+
+protected:
+	QList<QLabel *> m_recentList;
+	QLabel * m_tip;
+	QFrame * m_blog;
+	QFrame * m_creatorKit;
 };
 
 

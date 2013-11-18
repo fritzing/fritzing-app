@@ -178,7 +178,7 @@ MainWindow::MainWindow(ReferenceModel *referenceModel, QWidget * parent) :
 	m_dontKeepMargins = true;
 
     m_settingsPrefix = "main/";
-    m_showProgramAct = m_raiseWindowAct = m_showPartsBinIconViewAct = m_showAllLayersAct = m_hideAllLayersAct = m_rotate90cwAct = m_showBreadboardAct = m_showSchematicAct = m_showPCBAct = NULL;
+    m_showWelcomeAct = m_showProgramAct = m_raiseWindowAct = m_showPartsBinIconViewAct = m_showAllLayersAct = m_hideAllLayersAct = m_rotate90cwAct = m_showBreadboardAct = m_showSchematicAct = m_showPCBAct = NULL;
     m_fileMenu = m_editMenu = m_partMenu = m_windowMenu = m_pcbTraceMenu = m_schematicTraceMenu = m_breadboardTraceMenu = m_viewMenu = NULL;
     m_miniViewContainerBreadboard = NULL;
     m_infoView = NULL;
@@ -195,6 +195,7 @@ MainWindow::MainWindow(ReferenceModel *referenceModel, QWidget * parent) :
 	m_orderFabAct = NULL;
 	m_viewFromButtonWidget = m_activeLayerButtonWidget = NULL;
 	m_programView = m_programWindow = NULL;
+	m_welcomeView = NULL;
 	m_windowMenuSeparator = NULL;
 	m_schematicWireColorMenu = m_breadboardWireColorMenu = NULL;
 	m_checkForUpdatesAct = NULL;
@@ -316,11 +317,7 @@ void MainWindow::init(ReferenceModel *referenceModel, bool lockFiles) {
     initLockedFiles(lockFiles);
 
 
-    m_welcomeView = new WelcomeView(this);
-    m_welcomeView->setObjectName("WelcomeView");
-	SketchAreaWidget * sketchAreaWidget = new SketchAreaWidget(m_welcomeView, this);
-	addTab(sketchAreaWidget, tr("Welcome"));
-
+	initWelcomeView();
     initSketchWidgets();
     initProgrammingWidget();
 
@@ -983,6 +980,7 @@ void MainWindow::tabWidget_currentChanged(int index) {
 
     if (m_showBreadboardAct) {
 	    QList<QAction *> actions;
+		if (m_welcomeView) actions << m_showWelcomeAct;
 	    actions << m_showBreadboardAct << m_showSchematicAct << m_showPCBAct;
         if (m_programView) actions << m_showProgramAct;
 	    setActionsIcons(index, actions);
@@ -2856,5 +2854,12 @@ void MainWindow::orderFabHoverLeave() {
     if (m_rolloverQuoteDialog) {
         m_rolloverQuoteDialog->hide();
     }
+}
+
+void MainWindow::initWelcomeView() {
+    m_welcomeView = new WelcomeView(this);
+    m_welcomeView->setObjectName("WelcomeView");
+	SketchAreaWidget * sketchAreaWidget = new SketchAreaWidget(m_welcomeView, this);
+	addTab(sketchAreaWidget, tr("Welcome"));
 }
 

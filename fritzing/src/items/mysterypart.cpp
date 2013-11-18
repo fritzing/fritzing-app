@@ -137,12 +137,9 @@ QString MysteryPart::retrieveSchematicSvg(QString & svg) {
 
 	bool hasLocal = false;
 	QStringList labels = getPinLabels(hasLocal);
-
-	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-    bool useOldSchematic = (infoGraphicsView != NULL && infoGraphicsView->isOldStyleSchematic());	
 		
 	if (hasLocal) {
-		svg = makeSchematicSvg(labels, false, useOldSchematic);
+		svg = makeSchematicSvg(labels, false);
 	}
 
 	return TextUtils::replaceTextElement(svg, "label", m_chipLabel);
@@ -353,7 +350,7 @@ QString MysteryPart::genModuleID(QMap<QString, QString> & currPropsMap)
 	}
 }
 
-QString MysteryPart::makeSchematicSvg(const QString & expectedFileName, bool useOldSchematic) 
+QString MysteryPart::makeSchematicSvg(const QString & expectedFileName) 
 {
 	bool sip = expectedFileName.contains("sip", Qt::CaseInsensitive);
 
@@ -365,13 +362,11 @@ QString MysteryPart::makeSchematicSvg(const QString & expectedFileName, bool use
 		labels << QString::number(i + 1);
 	}
 
-	return makeSchematicSvg(labels, sip, useOldSchematic);
+	return makeSchematicSvg(labels, sip);
 }
 
-QString MysteryPart::makeSchematicSvg(const QStringList & labels, bool sip, bool useOldSchematic) 
+QString MysteryPart::makeSchematicSvg(const QStringList & labels, bool sip) 
 {	
-    if (useOldSchematic) return obsoleteMakeSchematicSvg(labels, sip);
-
     QDomDocument fakeDoc;
 
     QList<QDomElement> lefts;
@@ -505,10 +500,8 @@ QString MysteryPart::obsoleteMakeSchematicSvg(const QStringList & labels, bool s
 }
 
 
-QString MysteryPart::makeBreadboardSvg(const QString & expectedFileName, bool useOldSchematic) 
+QString MysteryPart::makeBreadboardSvg(const QString & expectedFileName) 
 {
-    Q_UNUSED(useOldSchematic);
-
 	if (expectedFileName.contains("_sip_")) return makeBreadboardSipSvg(expectedFileName);
 	if (expectedFileName.contains("_dip_")) return makeBreadboardDipSvg(expectedFileName);
 
@@ -617,9 +610,7 @@ bool MysteryPart::changePinLabels(bool singleRow, bool sip) {
 
     QTransform  transform = untransform();
 
-    InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
-    bool useOldSchematic = (infoGraphicsView != NULL && infoGraphicsView->isOldStyleSchematic());
-	QString svg = MysteryPart::makeSchematicSvg(labels, sip, useOldSchematic);
+	QString svg = MysteryPart::makeSchematicSvg(labels, sip);
 
     QString chipLabel = modelPart()->localProp("chip label").toString();
     if (!chipLabel.isEmpty()) {
@@ -659,10 +650,8 @@ void MysteryPart::swapEntry(const QString & text) {
     PaletteItem::swapEntry(text);
 }
 
-QString MysteryPart::makePcbDipSvg(const QString & expectedFileName, bool useOldSchematic) 
+QString MysteryPart::makePcbDipSvg(const QString & expectedFileName) 
 {
-    Q_UNUSED(useOldSchematic);
-
     QString spacingString;
 	int pins = TextUtils::getPinsAndSpacing(expectedFileName, spacingString);
     if (pins == 0) return "";  

@@ -58,7 +58,6 @@ bool sameGround(ConnectorItem * c1, ConnectorItem * c2)
 SchematicSketchWidget::SchematicSketchWidget(ViewLayer::ViewID viewID, QWidget *parent)
     : PCBSketchWidget(viewID, parent)
 {
-    m_oldStyleSchematic = false;
 	m_shortName = QObject::tr("schem");
 	m_viewName = QObject::tr("Schematic View");
 	initBackgroundColor();
@@ -531,12 +530,3 @@ ViewLayer::ViewLayerPlacement SchematicSketchWidget::getViewLayerPlacement(Model
     return SketchWidget::getViewLayerPlacement(modelPart, instance, view, viewGeometry);
 }
 
-bool SchematicSketchWidget::isOldStyleSchematic() 
-{
-    return m_oldStyleSchematic;
-}
-
-void SchematicSketchWidget::setOldStyleSchematic(bool oldStyleSchematic) 
-{
-    m_oldStyleSchematic = oldStyleSchematic;
-}

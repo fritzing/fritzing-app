@@ -80,7 +80,7 @@ void Perfboard::setProp(const QString & prop, const QString & value)
 		case ViewLayer::BreadboardView:
 			if (value.compare(m_size) != 0) {
                 QString temp = value;
-				QString svg = makeBreadboardSvg(temp, false);
+				QString svg = makeBreadboardSvg(temp);
 				reloadRenderer(svg, false);
 				//DebugDialog::debug(svg);
 			}
@@ -96,10 +96,8 @@ void Perfboard::setProp(const QString & prop, const QString & value)
     if (m_partLabel) m_partLabel->displayTextsIf();
 }
 
-QString Perfboard::makeBreadboardSvg(const QString & size, bool useOldSchematic) 
+QString Perfboard::makeBreadboardSvg(const QString & size) 
 {
-    Q_UNUSED(useOldSchematic);
-
 	QString BreadboardLayerTemplate = "";
 	QString ConnectorTemplate = "";
 

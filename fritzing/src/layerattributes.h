@@ -57,7 +57,6 @@ public:
     bool doConnectors;
     Qt::Orientations orientation;
     bool createShape;
-    bool useOldSchematic;
 };
 
 #endif

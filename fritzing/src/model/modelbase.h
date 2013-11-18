@@ -64,6 +64,7 @@ signals:
 	void loadingInstance(ModelBase *, QDomElement & instance);
 	void loadedInstances(ModelBase *, QDomElement & instances);
     void obsoleteSMDOrientationSignal();
+    void oldSchematicsSignal(const QString & filename, bool & useOldSchematics);
 
 protected:
 	void renewModelIndexes(QDomElement & root, const QString & childName, QHash<long, long> & oldToNew);
@@ -73,12 +74,14 @@ protected:
 	static void checkTraces(QDomElement & instance);
 	static void checkMystery(QDomElement & instance);
 	static bool checkObsoleteOrientation(QDomElement & instance);
+	static bool checkOldSchematics(QDomElement & instance);
 
 protected:
 	QPointer<ModelPart> m_root;
 	QPointer<ModelBase> m_referenceModel;
 	bool m_reportMissingModules;
 	QString m_fritzingVersion;
+    bool m_useOldSchematics;
 
 protected:
     static QList<QString> CoreList;

@@ -5,6 +5,11 @@ phoenix.pro.user
 *.user
 *.user*
 
+
+# no longer keep boost library in the source #
+#####################
+/fritzing/src/lib/boost*
+
 # Compiled source #
 ###################
 *.pyc
@@ -14,6 +19,8 @@ phoenix.pro.user
 *.exe
 *.o
 *.so
+*.suo
+*.pdb
 
 # Temporary files #
 ###############

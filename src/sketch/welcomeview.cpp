@@ -30,6 +30,8 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 #include <QTextEdit>
 #include <QHBoxLayout>
 #include <QVBoxLayout>
+#include <QPixmap>
+#include <QSpacerItem>
 
 //////////////////////////////////////
 
@@ -44,6 +46,129 @@ WelcomeView::~WelcomeView() {
 void WelcomeView::initLayout()
 {
 	QVBoxLayout * mainLayout = new QVBoxLayout();
+
+	QFrame * upper = new QFrame;
+	QHBoxLayout * upperLayout = new QHBoxLayout;
+
+	QWidget * recent = initRecent();
+	upperLayout->addWidget(recent);
+
+	QWidget * right = initRight();
+	upperLayout->addWidget(right);
+
+	upper->setLayout(upperLayout);
+
+	QFrame * tipFrame = new QFrame();
+	QHBoxLayout * tipLayout = new QHBoxLayout();
+
+	QLabel * tipTitle = new QLabel(tr("Tip:"));
+	tipTitle->setObjectName("tipTitle");
+	tipLayout->addWidget(tipTitle);
+
+	m_tip = new QLabel(tr("Some initial text for testing the tip of the day."));
+	m_tip->setObjectName("tip");
+	tipLayout->addWidget(m_tip);
+
+	tipLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Expanding));
+
+	tipFrame->setLayout(tipLayout);
+
+
+	mainLayout->addWidget(upper);
+	mainLayout->addWidget(tipFrame);
+	this->setLayout(mainLayout);
+}
+
+
+QWidget * WelcomeView::initRecent() {
+	QFrame * frame = new QFrame;
+	frame->setObjectName("recentFrame");
+	QVBoxLayout * frameLayout = new QVBoxLayout;
+
+	QStringList names;
+	names << "recentTitle" << "recentItem" << "recentItem" << "recentItem" << "recentItem" << "recentItem" << "recentItem" << "recentItem" << "recentSpace" << "recentNewSketch" << "recentOpenSketch";
+
+	foreach (QString name, names) {
+		QWidget * widget = NULL;
+		if (name == "recentSpace") {
+			widget = new QFrame;
+		}
+		else {
+			widget = new QLabel(name + " test >>");
+		}
+		widget->setObjectName(name);
+		frameLayout->addWidget(widget);
+	}
+
+	frame->setLayout(frameLayout);
+	return frame;
+}
+
+QWidget * WelcomeView::initRight() {
+	QFrame * frame = new QFrame;
+	frame->setObjectName("rightFrame");
+	QVBoxLayout * frameLayout = new QVBoxLayout;
+
+	QWidget * widget = initBlog();
+	frameLayout->addWidget(widget);
+
+	widget = initKit();
+	frameLayout->addWidget(widget);
+
+	frame->setLayout(frameLayout);
+	return frame;
+}
+
+QWidget * WelcomeView::initKit() {
+	QLabel * label = new QLabel;
+	label->setObjectName("kitFrame");
+	QPixmap pixmap(":/resources/images/welcome_kit.png");
+	label->setPixmap(pixmap);
+
+	return label;
+}
+
+
+QWidget * WelcomeView::initBlog() {
+	QFrame * frame = new QFrame;
+	frame->setObjectName("blogFrame");
+	QVBoxLayout * frameLayout = new QVBoxLayout;
+
+	QFrame * titleFrame = new QFrame;
+	titleFrame->setObjectName("blogTitleFrame");
+
+	QHBoxLayout * titleFrameLayout = new QHBoxLayout;
+
+	QLabel * titleLabel = new QLabel(tr("Fritzing Blog"));
+	titleLabel->setObjectName("blogTitle");
+	titleFrameLayout->addWidget(titleLabel);
+
+	QLabel * label = new QLabel("go to Fritzing Blog >>");
+	label->setObjectName("blogTitleGoto");
+	titleFrameLayout->addWidget(label);
+
+	titleFrameLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Expanding));
+
+	titleFrame->setLayout(titleFrameLayout);
+	frameLayout->addWidget(titleFrame);
+
+	for (int i = 0; i < 3; i++) {
+		QLabel * label = new QLabel("blog line title test");
+		label->setObjectName("blogLineTitle");
+		frameLayout->addWidget(label);
+
+		label = new QLabel("blog line text test");
+		label->setObjectName("blogLineText");
+		frameLayout->addWidget(label);
+	}
+
+	frame->setLayout(frameLayout);
+	return frame;
+
+}
+
+
+/*
 
 	QTextEdit * textEdit = new QTextEdit();
 
@@ -102,5 +227,6 @@ void WelcomeView::initLayout()
 
 
 	mainLayout->addWidget(textEdit);
-	this->setLayout(mainLayout);
-}
+
+
+	*/

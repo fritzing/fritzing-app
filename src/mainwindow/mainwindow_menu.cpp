@@ -2530,23 +2530,26 @@ void MainWindow::openURL() {
 void MainWindow::openRecentOrExampleFile() {
 	QAction *action = qobject_cast<QAction *>(sender());
 	if (action) {
-		QString filename = action->data().toString();
-		if (alreadyOpen(filename)) {
-			return;
-		}
-
-		if (!QFileInfo(filename).exists()) {
-			QMessageBox::warning(NULL, tr("Fritzing"), tr("File '%1' not found").arg(filename));
-			return;
-		}
-
-		MainWindow* mw = newMainWindow(m_referenceModel, action->data().toString(), true, true);
-		bool readOnly = m_openExampleActions.contains(action->text());
-		mw->setReadOnly(readOnly);
-		mw->loadWhich(filename, !readOnly,!readOnly,!readOnly, "");
-		mw->clearFileProgressDialog();
-		closeIfEmptySketch(mw);
+		openRecentOrExampleFile(action->data().toString(), action->text());
 	}
+}
+
+void MainWindow::openRecentOrExampleFile(const QString & filename, const QString & actionText) {
+	if (alreadyOpen(filename)) {
+		return;
+	}
+
+	if (!QFileInfo(filename).exists()) {
+		QMessageBox::warning(NULL, tr("Fritzing"), tr("File '%1' not found").arg(filename));
+		return;
+	}
+
+	MainWindow* mw = newMainWindow(m_referenceModel, filename, true, true);
+	bool readOnly = m_openExampleActions.contains(actionText);
+	mw->setReadOnly(readOnly);
+	mw->loadWhich(filename, !readOnly,!readOnly,!readOnly, "");
+	mw->clearFileProgressDialog();
+	closeIfEmptySketch(mw);
 }
 
 void MainWindow::removeActionsStartingAt(QMenu * menu, int start) {

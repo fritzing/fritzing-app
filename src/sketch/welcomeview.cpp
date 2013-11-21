@@ -32,12 +32,18 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 #include <QVBoxLayout>
 #include <QPixmap>
 #include <QSpacerItem>
+#include <QSettings>
+#include <QFileInfo>
 
 //////////////////////////////////////
 
 WelcomeView::WelcomeView(QWidget * parent) : QFrame(parent) 
 {
 	initLayout();
+
+	connect(this, SIGNAL(newSketch()), this->window(), SLOT(createNewSketch()));
+	connect(this, SIGNAL(openSketch()), this->window(), SLOT(mainLoad()));
+	connect(this, SIGNAL(recentSketch(const QString &, const QString &)), this->window(), SLOT(openRecentOrExampleFile(const QString &, const QString &)));
 }
 
 WelcomeView::~WelcomeView() {
@@ -90,14 +96,29 @@ QWidget * WelcomeView::initRecent() {
 
 	foreach (QString name, names) {
 		QWidget * widget = NULL;
+		QLabel * label = NULL;
 		if (name == "recentSpace") {
 			widget = new QFrame;
 		}
-		else {
-			widget = new QLabel(name + " test >>");
+		else if (name == "recentTitle") {
+			widget = new QLabel(tr("Recent Sketches"));
+		}
+		else if (name == "recentItem") {
+			QLabel * recentItem = new QLabel();
+			widget = label = recentItem;
+			m_recentList << recentItem;
+		}
+		else if (name == "recentNewSketch") {
+			widget = label = m_recentNew = new QLabel(QString("<a href='new'>%1</a>").arg(tr("New Sketch >>")));
+		}
+		else if (name == "recentOpenSketch") {
+			widget = label = m_recentOpen = new QLabel(QString("<a href='open'>%1</a>").arg(tr("Open Sketch >>")));
 		}
 		widget->setObjectName(name);
 		frameLayout->addWidget(widget);
+		if (label) {
+			connect(label, SIGNAL(linkActivated(const QString &)), this, SLOT(clickRecent(const QString &)));
+		}
 	}
 
 	frame->setLayout(frameLayout);
@@ -167,6 +188,45 @@ QWidget * WelcomeView::initBlog() {
 
 }
 
+void WelcomeView::showEvent(QShowEvent * event) {
+	QFrame::showEvent(event);
+	updateRecent();
+}
+
+void WelcomeView::updateRecent() {
+	if (m_recentList.count() == 0) return;
+
+	QSettings settings;
+	QStringList files = settings.value("recentFileList").toStringList();
+	int ix = 0;
+	for (int i = 0; i < files.size(); ++i) {
+		QFileInfo finfo(files[i]);
+		if (!finfo.exists()) continue;
+
+		QString text = QString("<a href='%1'>%2 >></a>").arg(finfo.absoluteFilePath()).arg(finfo.fileName());
+		m_recentList[ix]->setText(text);
+		m_recentList[ix]->setVisible(true);
+		if (++ix >= m_recentList.count()) {
+			break;
+		}
+	}
+
+	for (int j = ix; j < m_recentList.count(); ++j) {
+		m_recentList[j]->setVisible(false);
+	}
+}
+
+void WelcomeView::clickRecent(const QString & url) {
+	if (url == "open") {
+		emit openSketch();
+	}
+	else if (url == "new") {
+		emit newSketch();
+	}
+	else {
+		emit recentSketch(url, url);
+	}
+}
 
 /*
 

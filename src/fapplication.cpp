@@ -663,15 +663,22 @@ void FApplication::registerFonts() {
 	registerFont(":/resources/fonts/DroidSans.ttf", true);
 	registerFont(":/resources/fonts/DroidSans-Bold.ttf", false);
 	registerFont(":/resources/fonts/DroidSansMono.ttf", false);
-	registerFont(":/resources/fonts/OCRA.ttf", true);
+	registerFont(":/resources/fonts/ocr-a-tribute-bold-latin-1_0.ttf", true);
+	registerFont(":/resources/fonts/ocr-a-tribute-light-latin-1_0.ttf", true);
 
-	/*	
+	// "OCR A Tribute W01 Bold" 
+	// "OCR A Tribute W01 Light" 
+	// "OCR A Tribute W01 Regular" 
+
+	/*		
 		QFontDatabase database;
 		QStringList families = database.families (  );
 		foreach (QString string, families) {
 			DebugDialog::debug(string);			// should print out the name of the fonts you loaded
 		}
-	*/	
+	*/
+
+
 }
 
 ReferenceModel * FApplication::loadReferenceModel(const QString & databaseName, bool fullLoad) {

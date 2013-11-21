@@ -42,15 +42,28 @@ public:
 	WelcomeView(QWidget * parent = 0);
 	~WelcomeView();
 
+	void showEvent(QShowEvent * event);
+
 protected:
 	void initLayout();
 	QWidget * initRecent();
 	QWidget * initRight();
 	QWidget * initBlog();
 	QWidget * initKit();
+	void updateRecent();
+
+signals:
+	void newSketch();
+	void openSketch();
+	void recentSketch(const QString & filename, const QString & actionText);
+
+protected slots:
+	void clickRecent(const QString &);
 
 protected:
 	QList<QLabel *> m_recentList;
+	QLabel * m_recentNew;
+	QLabel * m_recentOpen;
 	QLabel * m_tip;
 	QFrame * m_blog;
 	QFrame * m_creatorKit;

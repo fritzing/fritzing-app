@@ -238,6 +238,7 @@ protected slots:
 	void mainLoad();
 	void revert();
 	void openRecentOrExampleFile();
+	void openRecentOrExampleFile(const QString & filename, const QString & actionText);
     void print();
     void doExport();
 	void exportEtchable();

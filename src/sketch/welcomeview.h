@@ -54,6 +54,7 @@ protected:
 	QWidget * initTip();
 	void updateRecent();
 	void readBlog(const QDomDocument &);
+    QWidget * makeRecentItem(const QString & objectName, const QString & iconText, const QString & textText, QLabel * & icon, QLabel * & text);
 
 signals:
 	void newSketch();
@@ -67,10 +68,9 @@ protected slots:
 
 protected:
 	QList<QLabel *> m_recentList;
+	QList<QLabel *> m_recentIconList;
 	QList<QLabel *> m_blogTitleList;
 	QList<QLabel *> m_blogTextList;
-	QLabel * m_recentNew;
-	QLabel * m_recentOpen;
 	QLabel * m_tip;
 	QFrame * m_blog;
 	QFrame * m_creatorKit;

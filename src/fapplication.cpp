@@ -672,13 +672,13 @@ void FApplication::registerFonts() {
     // "Droid Sans" 
     // "Droid Sans Mono" 
 		
-
+    /*
 		QFontDatabase database;
 		QStringList families = database.families (  );
 		foreach (QString string, families) {
 			DebugDialog::debug(string);			// should print out the name of the fonts you loaded
 		}
-
+*/
 
 
 }

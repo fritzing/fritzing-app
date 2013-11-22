@@ -123,7 +123,7 @@ void TipsAndTricks::initTipSets() {
 	TipSets.append(ts);
 
     ts = new TipSet;
-	ts->heading = tr("connectionst");
+	ts->heading = tr("connections");
 	ts->tips << tr("To see all the connectors connected to a given connector, hold the mouse down on the connector--all the connections will be highlighted.");
 	ts->tips << tr("A ratsnest line (very thin 'wire') between connection in one view means that those connections are somehow connected in another view.");
     TipSets.append(ts);
@@ -132,7 +132,7 @@ void TipsAndTricks::initTipSets() {
 	ts->heading = tr("pcb layout");
 	ts->tips << tr("Always lead a trace straight out of a pin. This helps to avoid unappreciated shorts.");
 	ts->tips << tr("Through-Hole parts can be traced from either side of a PCB.");
-	ts->tips << tr("It makes life easier to route traces horizontally on one side of a PCB horizontaly, and vertically on the other side.");
+	ts->tips << tr("It makes life easier to route traces horizontally on one side of a PCB and vertically on the other side.");
 	ts->tips << tr("Route in 45° angled traces to reduce noise.");
 	ts->tips << tr("If Fritzing is missing your special part and you don't want to build one by yourself, then use pinheaders as connectors and the grid to align them.");
 	ts->tips << tr("You can put your own Logo in the silkscreen of your PCB. Just use the Logo part of the core library and select your own file. SVG is the preferred format.");

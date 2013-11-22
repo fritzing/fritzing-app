@@ -162,6 +162,17 @@ QWidget * WelcomeView::initKit() {
 	QPixmap pixmap(":/resources/images/welcome_kit.png");
 	label->setPixmap(pixmap);
 
+	// use parent/child relation to manage overlaps
+	// not sure how to deal with variable length of title under different translations
+	QLabel * title = new QLabel(tr("Fritzing Creator Kit"), label);
+	title->setObjectName("kitTitle");
+	title->setGeometry(10,10,pixmap.width() - 10 - 10,20);
+
+	QLabel * url = new QLabel(QString("<a href='http://fritzing.org/shop/'>%1</a>").arg(tr("go to Fritzing Shop >>")), label);
+	url->setObjectName("kitTitleGoto");
+	url->setGeometry(115,10,pixmap.width() - 115 - 10, 20);
+	connect(url, SIGNAL(linkActivated(const QString &)), this, SLOT(clickBlog(const QString &)));
+
 	return label;
 }
 

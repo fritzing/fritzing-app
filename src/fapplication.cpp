@@ -669,14 +669,16 @@ void FApplication::registerFonts() {
 	// "OCR A Tribute W01 Bold" 
 	// "OCR A Tribute W01 Light" 
 	// "OCR A Tribute W01 Regular" 
+    // "Droid Sans" 
+    // "Droid Sans Mono" 
+		
 
-	/*		
 		QFontDatabase database;
 		QStringList families = database.families (  );
 		foreach (QString string, families) {
 			DebugDialog::debug(string);			// should print out the name of the fonts you loaded
 		}
-	*/
+
 
 
 }

@@ -33,6 +33,8 @@ $Date: 2012-09-26 15:45:37 +0200 (Mi, 26. Sep 2012) $
 #include <QLabel>
 #include <QList>
 #include <QWidget>
+#include <QNetworkReply>
+#include <QDomDocument>
 
 class WelcomeView : public QFrame
 {
@@ -51,6 +53,7 @@ protected:
 	QWidget * initBlog();
 	QWidget * initKit();
 	void updateRecent();
+	void readBlog(const QDomDocument &);
 
 signals:
 	void newSketch();
@@ -59,9 +62,13 @@ signals:
 
 protected slots:
 	void clickRecent(const QString &);
+    void gotBlogSnippet(QNetworkReply *);
+	void clickBlog(const QString &);
 
 protected:
 	QList<QLabel *> m_recentList;
+	QList<QLabel *> m_blogTitleList;
+	QList<QLabel *> m_blogTextList;
 	QLabel * m_recentNew;
 	QLabel * m_recentOpen;
 	QLabel * m_tip;

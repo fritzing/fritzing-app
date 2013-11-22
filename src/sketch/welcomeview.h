@@ -49,9 +49,9 @@ public:
 protected:
 	void initLayout();
 	QWidget * initRecent();
-	QWidget * initRight();
 	QWidget * initBlog();
 	QWidget * initKit();
+	QWidget * initTip();
 	void updateRecent();
 	void readBlog(const QDomDocument &);
 

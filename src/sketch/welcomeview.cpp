@@ -26,7 +26,7 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 
 //	TODO
 //
-//		multiple windows: update blog in all when one updates--share download data?
+//		multiple windows: update blog in all windows when one updates--share download data?
 //		tips and tricks: save list of viewed tricks?
 //
 

@@ -76,7 +76,8 @@ void TipsAndTricks::initTipSets() {
 	ts->heading = tr("parts");
 	ts->tips << tr("If you can't find a part in the Parts Bin, the Generic IC is your friend.  Drag it onto your sketch, then use the widgets in the Inspector to: choose from among 25 different through-hole and SMD packages; change the pin label; and--for DIPs and SIPs--change the number of pins.  You can also change the pin names with the Pin Label editor");
 	ts->tips << tr("An icon in the parts bin may actually represent multiple related parts.  So when you drag an icon from the parts bin into a sketch, make sure you look at the inspector.  The inspector will display the range of choices available for you to modify a part, or swap it for a related part. The parts bin icon will also be a little 'stack' and not just a flat icon.");
-	TipSets.append(ts);
+	ts->tips << tr("The Inspector Window--which lets you change the properties of parts--is only enabled for parts that are in a sketch (not for parts still in a Parts Bin).");
+    TipSets.append(ts);
 
 	ts = new TipSet;
 	ts->heading = tr("moving and selection");
@@ -120,6 +121,31 @@ void TipsAndTricks::initTipSets() {
 	ts->tips << tr("To drag a wire segment (a section of a wire between two bendpoints), drag it with the Alt (Linux: Meta) key down.  If you also hold down the shift key, the wire segment will be constrained to horizontal or vertical motion.");
 	ts->tips << tr("Use shift-drag on a wire end or bendpoint to constrain its wire segment to an angle of 45 degrees (or some multiple of 45 degrees).  If the wire segment is connected to other wire segments, the segment you're dragging will snap to make 90 degree angles with the neighboring wire segment.");
 	TipSets.append(ts);
+
+    ts = new TipSet;
+	ts->heading = tr("connectionst");
+	ts->tips << tr("To see all the connectors connected to a given connector, hold the mouse down on the connector--all the connections will be highlighted.");
+	ts->tips << tr("A ratsnest line (very thin 'wire') between connection in one view means that those connections are somehow connected in another view.");
+    TipSets.append(ts);
+
+    ts = new TipSet;
+	ts->heading = tr("pcb layout");
+	ts->tips << tr("Always lead a trace straight out of a pin. This helps to avoid unappreciated shorts.");
+	ts->tips << tr("Through-Hole parts can be traced from either side of a PCB.");
+	ts->tips << tr("It makes life easier to route traces horizontally on one side of a PCB horizontaly, and vertically on the other side.");
+	ts->tips << tr("Route in 45° angled traces to reduce noise.");
+	ts->tips << tr("If Fritzing is missing your special part and you don't want to build one by yourself, then use pinheaders as connectors and the grid to align them.");
+	ts->tips << tr("You can put your own Logo in the silkscreen of your PCB. Just use the Logo part of the core library and select your own file. SVG is the preferred format.");
+	ts->tips << tr("Smaller PCBs are more affortable then larger ones. Save space and money.");
+	ts->tips << tr("Use copper-blocker parts to mask out areas that you want free of copper fill.");
+    TipSets.append(ts);
+
+    ts = new TipSet;
+	ts->heading = tr("parts editor");
+    ts->tips << tr("To find the SVG file for one a part's views, click on the view tab, then use <b>Show in Folder</b> under the <b>File</b> Menu.");
+    TipSets.append(ts);
+
+
 }
 
 TipsAndTricks::~TipsAndTricks()

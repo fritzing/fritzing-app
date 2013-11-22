@@ -24,8 +24,14 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 
 ********************************************************************/
 
+//	TODO
+//
+//		multiple windows: update blog in all when one updates--share download data?
+//		tips and tricks: save list of viewed tricks?
+//
 
 #include "welcomeview.h"
+#include "../debugdialog.h"
 
 #include <QTextEdit>
 #include <QHBoxLayout>
@@ -34,6 +40,11 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 #include <QSpacerItem>
 #include <QSettings>
 #include <QFileInfo>
+#include <QNetworkAccessManager>
+#include <QDesktopServices>
+#include <QDomDocument>
+#include <QDomNodeList>
+#include <QDomElement>
 
 //////////////////////////////////////
 
@@ -44,6 +55,11 @@ WelcomeView::WelcomeView(QWidget * parent) : QFrame(parent)
 	connect(this, SIGNAL(newSketch()), this->window(), SLOT(createNewSketch()));
 	connect(this, SIGNAL(openSketch()), this->window(), SLOT(mainLoad()));
 	connect(this, SIGNAL(recentSketch(const QString &, const QString &)), this->window(), SLOT(openRecentOrExampleFile(const QString &, const QString &)));
+
+    QNetworkAccessManager * manager = new QNetworkAccessManager(this);
+	connect(manager, SIGNAL(finished(QNetworkReply *)), this, SLOT(gotBlogSnippet(QNetworkReply *)));
+	manager->get(QNetworkRequest(QUrl("http://blog.fritzing.org/recent-posts/")));
+
 }
 
 WelcomeView::~WelcomeView() {
@@ -164,9 +180,10 @@ QWidget * WelcomeView::initBlog() {
 	titleLabel->setObjectName("blogTitle");
 	titleFrameLayout->addWidget(titleLabel);
 
-	QLabel * label = new QLabel("go to Fritzing Blog >>");
+	QLabel * label = new QLabel(QString("<a href='http://blog.fritzing.org'>%1</a>").arg(tr("go to Fritzing Blog >>")));
 	label->setObjectName("blogTitleGoto");
 	titleFrameLayout->addWidget(label);
+	connect(label, SIGNAL(linkActivated(const QString &)), this, SLOT(clickBlog(const QString &)));
 
 	titleFrameLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Expanding));
 
@@ -177,10 +194,13 @@ QWidget * WelcomeView::initBlog() {
 		QLabel * label = new QLabel("blog line title test");
 		label->setObjectName("blogLineTitle");
 		frameLayout->addWidget(label);
+		m_blogTitleList << label;
 
 		label = new QLabel("blog line text test");
 		label->setObjectName("blogLineText");
 		frameLayout->addWidget(label);
+		m_blogTextList << label;
+		connect(label, SIGNAL(linkActivated(const QString &)), this, SLOT(clickBlog(const QString &)));
 	}
 
 	frame->setLayout(frameLayout);
@@ -219,14 +239,83 @@ void WelcomeView::updateRecent() {
 void WelcomeView::clickRecent(const QString & url) {
 	if (url == "open") {
 		emit openSketch();
+		return;
 	}
-	else if (url == "new") {
+	if (url == "new") {
 		emit newSketch();
+		return;
 	}
-	else {
-		emit recentSketch(url, url);
-	}
+
+	emit recentSketch(url, url);
 }
+
+
+void WelcomeView::gotBlogSnippet(QNetworkReply * networkReply) {
+
+	foreach (QLabel * label, m_blogTextList) label->setVisible(false);
+	foreach (QLabel * label, m_blogTitleList) label->setVisible(false);
+
+    QNetworkAccessManager * manager = networkReply->manager();
+	int responseCode = networkReply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
+	if (responseCode == 200) {
+        QString data(networkReply->readAll());
+        //DebugDialog::debug("response data " + data);
+		data = "<thing>" + data + "</thing>";		// make it one tree for xml parsing
+		QDomDocument doc;
+	    QString errorStr;
+	    int errorLine;
+	    int errorColumn;
+	    if (doc.setContent(data, &errorStr, &errorLine, &errorColumn)) {
+			readBlog(doc);
+	    }
+	}
+
+    manager->deleteLater();
+    networkReply->deleteLater();
+}
+
+void WelcomeView::clickBlog(const QString & url) {
+	QDesktopServices::openUrl(url);
+}
+
+void WelcomeView::readBlog(const QDomDocument & doc) {
+	QDomNodeList nodeList = doc.elementsByTagName("a");
+	int ix = 0;
+	for (int i = 0; i < nodeList.count(); i++) {
+		QDomElement element = nodeList.at(i).toElement();
+		QString title = element.attribute("title");
+		QString href = element.attribute("href");
+		if (title.isEmpty() || href.isEmpty()) continue;
+
+		m_blogTitleList[ix]->setText(title);
+		m_blogTextList[ix]->setText(QString("<a href='%1'>%2</a>").arg(href).arg(tr("read more >>")));
+		m_blogTitleList[ix]->setVisible(true);
+		m_blogTextList[ix]->setVisible(true);
+		if (++ix >= m_blogTextList.count()) {
+			break;
+		}
+
+	}
+
+		/*
+
+		<ul>
+<li>
+                <a href="http://blog.fritzing.org/2013/11/19/minimetalmaker/" title="MiniMetalMaker">MiniMetalMaker</a>
+                <a href="http://blog.fritzing.org/2013/11/19/minimetalmaker/"><small>Nov. 19, 2013</small></a> 
+            </li> <li>
+                <a href="http://blog.fritzing.org/2013/11/19/the-little-black-midi/" title="The Little Black Midi">The Little Black Midi</a>
+                <a href="http://blog.fritzing.org/2013/11/19/the-little-black-midi/"><small>Nov. 19, 2013</small></a> 
+            </li> <li>
+                <a href="http://blog.fritzing.org/2013/11/15/light-up-your-flat-with-charles-planetary-gear-system/" title="Light up your flat with Charles&#039; planetary gear system">Light up your flat with Charles' planetary gear system</a>
+                <a href="http://blog.fritzing.org/2013/11/15/light-up-your-flat-with-charles-planetary-gear-system/"><small>Nov. 15, 2013</small></a> 
+            </li> </ul>
+<a href="http://blog.fritzing.org">More posts&hellip;</a>"
+
+		*/
+
+}
+
 
 /*
 

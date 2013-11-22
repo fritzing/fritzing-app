@@ -37,9 +37,10 @@ QList<TipSet *>  TipsAndTricks::TipSets;
 TipsAndTricks::TipsAndTricks(QWidget *parent)
 	: QDialog(parent)
 {
+	initTipSets();
+
 	// Let's set the icon
 	this->setWindowIcon(QIcon(QPixmap(":resources/images/fritzing_icon.png")));
-	initTipSets();
 	QString html("<html><body>");
 	html += QString("<h3>%1</h3>").arg(tr("Fritzing Tips and Tricks"));
 	html += "<ul>";
@@ -52,13 +53,13 @@ TipsAndTricks::TipsAndTricks(QWidget *parent)
 	}
 	html += "</ul>";
 	html += "</body></html>"; 
-	m_textEdit->setHtml(html);
 
 	Singleton = this;
 	setWindowTitle(tr("Tips and Tricks"));
 	resize(400, 300);
 	m_textEdit = new QTextEdit();
 	m_textEdit->setReadOnly(true);
+	m_textEdit->setHtml(html);
 
 	QVBoxLayout * vLayout = new QVBoxLayout(this);
 	vLayout->addWidget(m_textEdit);
@@ -151,6 +152,8 @@ const QString & TipsAndTricks::randomTip() {
 	foreach (TipSet * tipSet, TipSets) {
 		tipCount += tipSet->tips.count();
 	}
+	if (tipCount == 0) return ___emptyString___;
+
 	int ix = qrand() % tipCount;
 	tipCount = 0;
 	foreach (TipSet * tipSet, TipSets) {

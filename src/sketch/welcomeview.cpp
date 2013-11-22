@@ -32,6 +32,7 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 
 #include "welcomeview.h"
 #include "../debugdialog.h"
+#include "../help/tipsandtricks.h"
 
 #include <QTextEdit>
 #include <QGridLayout>
@@ -61,6 +62,8 @@ WelcomeView::WelcomeView(QWidget * parent) : QFrame(parent)
 	connect(manager, SIGNAL(finished(QNetworkReply *)), this, SLOT(gotBlogSnippet(QNetworkReply *)));
 	manager->get(QNetworkRequest(QUrl("http://blog.fritzing.org/recent-posts/")));
 
+	TipsAndTricks::initTipSets();
+	m_tip->setText(QString("<a href='tip'>%1</a>").arg(TipsAndTricks::randomTip()));
 }
 
 WelcomeView::~WelcomeView() {
@@ -72,7 +75,6 @@ void WelcomeView::initLayout()
 
 	QWidget * recent = initRecent();
 	mainLayout->addWidget(recent, 0, 0);
-
 
 	QWidget * widget = initBlog();
 	mainLayout->addWidget(widget, 0, 1);
@@ -307,8 +309,9 @@ QWidget * WelcomeView::initTip() {
 	tipTitle->setObjectName("tipTitle");
 	tipLayout->addWidget(tipTitle);
 
-	m_tip = new QLabel(tr("Some initial text for testing the tip of the day."));
+	m_tip = new QLabel();
 	m_tip->setObjectName("tip");
+	connect(m_tip, SIGNAL(linkActivated(const QString &)), this->window(), SLOT(tipsAndTricks()));
 	tipLayout->addWidget(m_tip);
 
 	tipLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Expanding));

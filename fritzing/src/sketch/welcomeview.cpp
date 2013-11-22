@@ -34,6 +34,7 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 #include "../debugdialog.h"
 
 #include <QTextEdit>
+#include <QGridLayout>
 #include <QHBoxLayout>
 #include <QVBoxLayout>
 #include <QPixmap>
@@ -67,37 +68,21 @@ WelcomeView::~WelcomeView() {
 
 void WelcomeView::initLayout()
 {
-	QVBoxLayout * mainLayout = new QVBoxLayout();
-
-	QFrame * upper = new QFrame;
-	QHBoxLayout * upperLayout = new QHBoxLayout;
+	QGridLayout * mainLayout = new QGridLayout();
 
 	QWidget * recent = initRecent();
-	upperLayout->addWidget(recent);
-
-	QWidget * right = initRight();
-	upperLayout->addWidget(right);
-
-	upper->setLayout(upperLayout);
-
-	QFrame * tipFrame = new QFrame();
-	QHBoxLayout * tipLayout = new QHBoxLayout();
-
-	QLabel * tipTitle = new QLabel(tr("Tip:"));
-	tipTitle->setObjectName("tipTitle");
-	tipLayout->addWidget(tipTitle);
-
-	m_tip = new QLabel(tr("Some initial text for testing the tip of the day."));
-	m_tip->setObjectName("tip");
-	tipLayout->addWidget(m_tip);
-
-	tipLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Expanding));
-
-	tipFrame->setLayout(tipLayout);
+	mainLayout->addWidget(recent, 0, 0);
 
 
-	mainLayout->addWidget(upper);
-	mainLayout->addWidget(tipFrame);
+	QWidget * widget = initBlog();
+	mainLayout->addWidget(widget, 0, 1);
+
+	widget = initKit();
+	mainLayout->addWidget(widget, 1, 1);
+
+	widget = initTip();
+	mainLayout->addWidget(widget, 1, 0);
+
 	this->setLayout(mainLayout);
 }
 
@@ -141,20 +126,6 @@ QWidget * WelcomeView::initRecent() {
 	return frame;
 }
 
-QWidget * WelcomeView::initRight() {
-	QFrame * frame = new QFrame;
-	frame->setObjectName("rightFrame");
-	QVBoxLayout * frameLayout = new QVBoxLayout;
-
-	QWidget * widget = initBlog();
-	frameLayout->addWidget(widget);
-
-	widget = initKit();
-	frameLayout->addWidget(widget);
-
-	frame->setLayout(frameLayout);
-	return frame;
-}
 
 QWidget * WelcomeView::initKit() {
 	QLabel * label = new QLabel;
@@ -325,6 +296,26 @@ void WelcomeView::readBlog(const QDomDocument & doc) {
 
 		*/
 
+}
+
+QWidget * WelcomeView::initTip() {
+	QFrame * tipFrame = new QFrame();
+	tipFrame->setObjectName("tipFrame");
+	QHBoxLayout * tipLayout = new QHBoxLayout();
+
+	QLabel * tipTitle = new QLabel(tr("Tip:"));
+	tipTitle->setObjectName("tipTitle");
+	tipLayout->addWidget(tipTitle);
+
+	m_tip = new QLabel(tr("Some initial text for testing the tip of the day."));
+	m_tip->setObjectName("tip");
+	tipLayout->addWidget(m_tip);
+
+	tipLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Expanding));
+
+	tipFrame->setLayout(tipLayout);
+
+	return tipFrame;
 }
 
 

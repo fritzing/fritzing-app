@@ -95,39 +95,62 @@ QWidget * WelcomeView::initRecent() {
 	QVBoxLayout * frameLayout = new QVBoxLayout;
 
 	QStringList names;
-	names << "recentTitle" << "recentItem" << "recentItem" << "recentItem" << "recentItem" << "recentItem" << "recentItem" << "recentItem" << "recentSpace" << "recentNewSketch" << "recentOpenSketch";
+	names << "recentTitle" << "recentFrame" << "recentFrame" << "recentFrame" << "recentFrame" << "recentFrame" << "recentFrame" << "recentFrame" << "recentSpace" << "recentNewSketch" << "recentOpenSketch";
 
 	foreach (QString name, names) {
 		QWidget * widget = NULL;
-		QLabel * label = NULL;
-		if (name == "recentSpace") {
-			widget = new QFrame;
+        QLabel * icon = NULL;
+        QLabel * text = NULL;
+        if (name == "recentSpace") {
+			widget = new QLabel;
 		}
 		else if (name == "recentTitle") {
 			widget = new QLabel(tr("Recent Sketches"));
 		}
-		else if (name == "recentItem") {
-			QLabel * recentItem = new QLabel();
-			widget = label = recentItem;
-			m_recentList << recentItem;
+		else if (name == "recentFrame") {
+            widget = makeRecentItem(name, "", "", icon, text);
+            m_recentIconList << icon;
+            m_recentList << text;
 		}
 		else if (name == "recentNewSketch") {
-			widget = label = m_recentNew = new QLabel(QString("<a href='new'>%1</a>").arg(tr("New Sketch >>")));
+			widget = makeRecentItem(name, 
+                QString("<a href='new'><img src=':/resources/images/icons/arrowButtonUp.png' /></a>"),
+                QString("<a href='new'>%1</a>").arg(tr("New Sketch >>")),
+                icon,
+                text);
 		}
 		else if (name == "recentOpenSketch") {
-			widget = label = m_recentOpen = new QLabel(QString("<a href='open'>%1</a>").arg(tr("Open Sketch >>")));
+			widget = makeRecentItem(name, 
+                QString("<a href='open'><img src=':/resources/images/icons/arrowButtonUp.png' /></a>"),
+                QString("<a href='open'>%1</a>").arg(tr("Open Sketch >>")),
+                icon,
+                text);
 		}
 		widget->setObjectName(name);
 		frameLayout->addWidget(widget);
-		if (label) {
-			connect(label, SIGNAL(linkActivated(const QString &)), this, SLOT(clickRecent(const QString &)));
-		}
 	}
 
 	frame->setLayout(frameLayout);
 	return frame;
 }
 
+QWidget * WelcomeView::makeRecentItem(const QString & objectName, const QString & iconText, const QString & textText, QLabel * & icon, QLabel * & text) {
+    QFrame * rFrame = new QFrame;
+    QHBoxLayout * rFrameLayout = new QHBoxLayout;
+
+    icon = new QLabel(iconText);
+    icon->setObjectName("recentIcon");
+    connect(icon, SIGNAL(linkActivated(const QString &)), this, SLOT(clickRecent(const QString &)));
+    rFrameLayout->addWidget(icon);
+
+	text = new QLabel(textText);
+    text->setObjectName(objectName);
+    rFrameLayout->addWidget(text);
+    connect(text, SIGNAL(linkActivated(const QString &)), this, SLOT(clickRecent(const QString &)));
+
+    rFrame->setLayout(rFrameLayout);
+    return rFrame;
+}
 
 QWidget * WelcomeView::initKit() {
 	QLabel * label = new QLabel;
@@ -135,16 +158,21 @@ QWidget * WelcomeView::initKit() {
 	QPixmap pixmap(":/resources/images/welcome_kit.png");
 	label->setPixmap(pixmap);
 
-	// use parent/child relation to manage overlaps
-	// not sure how to deal with variable length of title under different translations
-	QLabel * title = new QLabel(tr("Fritzing Creator Kit"), label);
-	title->setObjectName("kitTitle");
-	title->setGeometry(10,10,pixmap.width() - 10 - 10,20);
+	// use parent/child relation to manage overlapping widgets
+    QFrame * overlapFrame = new QFrame(label);
+    QHBoxLayout * overlapFrameLayout = new QHBoxLayout;
+    overlapFrame->setGeometry(0, 0, pixmap.width(), 30);
 
-	QLabel * url = new QLabel(QString("<a href='http://fritzing.org/shop/'>%1</a>").arg(tr("go to Fritzing Shop >>")), label);
+	QLabel * title = new QLabel(tr("Fritzing Creator Kit"));
+	title->setObjectName("kitTitle");
+    overlapFrameLayout->addWidget(title);
+
+	QLabel * url = new QLabel(QString("<a href='http://fritzing.org/shop/'>%1</a>").arg(tr("go to Fritzing Shop >>")));
 	url->setObjectName("kitTitleGoto");
-	url->setGeometry(115,10,pixmap.width() - 115 - 10, 20);
 	connect(url, SIGNAL(linkActivated(const QString &)), this, SLOT(clickBlog(const QString &)));
+    overlapFrameLayout->addWidget(url);
+
+    overlapFrame->setLayout(overlapFrameLayout);
 
 	return label;
 }
@@ -175,12 +203,12 @@ QWidget * WelcomeView::initBlog() {
 	frameLayout->addWidget(titleFrame);
 
 	for (int i = 0; i < 3; i++) {
-		QLabel * label = new QLabel("blog line title test");
+		QLabel * label = new QLabel();
 		label->setObjectName("blogLineTitle");
 		frameLayout->addWidget(label);
 		m_blogTitleList << label;
 
-		label = new QLabel("blog line text test");
+		label = new QLabel();
 		label->setObjectName("blogLineText");
 		frameLayout->addWidget(label);
 		m_blogTextList << label;
@@ -188,6 +216,10 @@ QWidget * WelcomeView::initBlog() {
 	}
 
 	frame->setLayout(frameLayout);
+
+	foreach (QLabel * label, m_blogTextList) label->setVisible(false);
+	foreach (QLabel * label, m_blogTitleList) label->setVisible(false);
+
 	return frame;
 
 }
@@ -209,14 +241,15 @@ void WelcomeView::updateRecent() {
 
 		QString text = QString("<a href='%1'>%2 >></a>").arg(finfo.absoluteFilePath()).arg(finfo.fileName());
 		m_recentList[ix]->setText(text);
-		m_recentList[ix]->setVisible(true);
+		m_recentList[ix]->parentWidget()->setVisible(true);
+        m_recentIconList[ix]->setText(QString("<a href='%1'><img src=':/resources/images/icons/arrowButtonRight.png' /></a>").arg(finfo.absoluteFilePath()));
 		if (++ix >= m_recentList.count()) {
 			break;
 		}
 	}
 
 	for (int j = ix; j < m_recentList.count(); ++j) {
-		m_recentList[j]->setVisible(false);
+		m_recentList[j]->parentWidget()->setVisible(false);
 	}
 }
 
@@ -303,7 +336,7 @@ void WelcomeView::readBlog(const QDomDocument & doc) {
 QWidget * WelcomeView::initTip() {
 	QFrame * tipFrame = new QFrame();
 	tipFrame->setObjectName("tipFrame");
-	QHBoxLayout * tipLayout = new QHBoxLayout();
+	QVBoxLayout * tipLayout = new QVBoxLayout();
 
 	QLabel * tipTitle = new QLabel(tr("Tip:"));
 	tipTitle->setObjectName("tipTitle");

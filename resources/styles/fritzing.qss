@@ -4,7 +4,6 @@ MainWindow {
         /* layout here  */
 		background-color:rgb(217,217,217); /*mainbackground color*/
         /* styling there */
-        font-family: Droid Sans, sans-serif;
         font-size: 11px;
         color: rgb(255,255,255);
 }
@@ -69,6 +68,147 @@ PEMainWindow {
         /* styling there */
         background: rgb(255,255,255);
 }
+
+
+
+/* ################### WelcomeScreen styling (WC) #################### */
+
+WelcomeView {
+	background: #E6EEF2;
+	border:none;
+	font: "Droid Sans";
+
+	}
+
+WelcomeView QFrame {
+	background: #fff;
+	border-bottom: 8px solid #d9d9d9;	
+	}
+
+WelcomeView QFrame QLabel {
+/*	background: #fff; */
+    border:none;
+	font: bold "Droid Sans";
+	font-size:14px;
+	color: #323232;
+	}
+	
+/* -------- position of WC "content-blocks" ------------  */
+#tipFrame,
+#blogFrame,
+#kitFrame,
+#recentFrame {
+margin: 0px 0px 18px 35px;
+}
+
+
+#blogFrame,
+#kitFrame {
+margin: 0px 35px 18px 35px;
+}
+
+
+/* ----------- WC-"content-blocks"-titel-styleing  ------------- */	
+#recentTitle
+{
+	border-bottom: 2px solid #f0f;
+	padding:14px 0px 14px 0px;
+	margin-bottom: 8px;
+}	
+
+
+#kitTitle
+{
+ border-bottom: 2px solid #f0f;
+ 	 margin-left:20px;
+}	
+
+#blogTitle,
+#blogTitleGoto
+{
+	margin:0px;
+	padding:0px;
+}
+
+/* ----------- WC-"recentItem"-block  ------------- */	
+
+#recentOpenSketch,
+#recentNewSketch,
+QListwidget::#recentItem:selected
+{
+	color: #0f0; /*656565*/
+	text-decoration: none;
+	border:0px;
+	font-size: 12px;
+	}	
+
+#recentNewSketch,
+#recentItem
+{
+	margin:14px 0px 0px 10px;
+}
+
+#recentOpenSketch {
+	margin:14px 0px 14px 10px;
+}
+
+
+#recentSpace {
+	border-bottom: 2px solid #f0f;	
+	margin:7px 0px 7px 0px
+}	
+
+
+/* ----------- WC-"blog"-block  ------------- */	
+#blogTitleFrame {
+	border-bottom: 2px solid #f0f;
+	margin:0px;
+	padding:0px;
+}
+
+
+
+#blogLineTitle {
+	border:none;
+	font: regular "Droid Sans";
+	font-size: 14px;
+	margin:0px;
+	color: #000;
+}	
+
+#blogLineText {
+	color: #656565; /*656565*/
+	border:none;
+	font-size: 12px;
+	margin:0px;
+}
+
+
+/* ----------- WC-"tip"-block  ------------- */	
+#tipFrame {
+	background: #D5E1E9;
+	border-bottom: 8px solid #A9C6D6;
+	max-width: 350px;
+	}
+	
+#tipTitle{
+	color: #77ACC2;
+	font: bold "Droid Sans";
+	background: #D5E1E9;
+	margin:0px;
+	}	
+
+#tip  {
+	background: #D5E1E9;
+	border-bottom: none;
+	font: "OCR A Tribute W01 Regular";
+	font-size:16px;
+	text-decoration:none;
+	qproperty-wordWrap: true;
+	}
+	
+	
+
 
 
 
@@ -215,11 +355,7 @@ QMenu::item:selected {
  
  
 /*########### MAIN WINDOW TABBAR #################*/
-#WelcomeView {
-	border:none;
-	}
 	
-		
 #sketch_tabs::tab-bar {
 	background:transparent;
  	top: 0px;

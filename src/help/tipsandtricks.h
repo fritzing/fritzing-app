@@ -55,9 +55,7 @@ public:
 	static void showTipsAndTricks();
 	static void cleanup();
 	static const QString & randomTip();
-
-protected:
-	void initTipSets();
+	static void initTipSets();
 
 protected:
 	static TipsAndTricks* Singleton;

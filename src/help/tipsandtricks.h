@@ -32,8 +32,15 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 #include <QEvent>
 #include <QTextEdit>
 #include <QFile>
+#include <QList>
 
 #include "../utils/misc.h"
+
+
+struct TipSet {
+	QString heading;
+	QStringList tips;
+};
 
 class TipsAndTricks : public QDialog
 {
@@ -44,15 +51,17 @@ private:
 	~TipsAndTricks();
 
 public:
-
-public:
 	static void hideTipsAndTricks();
 	static void showTipsAndTricks();
 	static void cleanup();
-
+	static const QString & randomTip();
 
 protected:
-	static TipsAndTricks* singleton;
+	void initTipSets();
+
+protected:
+	static TipsAndTricks* Singleton;
+	static QList<TipSet *> TipSets;
 
 	QTextEdit* m_textEdit;
 

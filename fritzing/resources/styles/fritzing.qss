@@ -71,19 +71,182 @@ PEMainWindow {
 
 
 
+/* ################### Mainmenubar window #################### */
+
+QMenuBar {
+	background-color: #b1b1b1;
+	left:5px;
+}
+
+QMenuBar::item {
+	spacing: 10px; /* spacing between menu bar items */
+     padding: 7px 10px;
+	background: #b1b1b1;
+	color:rgb(51,51,51);
+	background-image:none;
+
+}
+
+QMenuBar::item:selected {
+	background: #666;
+	color:#fff;
+	background-image:none;
+
+}
+
+QMenuBar::item:pressed {
+	background: #666;
+	color:#fff;
+	background-image:none;
+
+}
+
+/*########### style of the dropdowns ######*/
+
+QMenu{
+	background-color: #b1b1b1;
+	color:#333;
+	margin: 0px 3px 0px 3px;
+	border:none;
+}
+
+QMenu::item {
+	background-color: #b1b1b1;
+	color:#333;
+	padding: 2px 15px 2px 15px;
+}
+
+QMenu::item:selected {
+	background-color: #666;
+	color:#fff;
+}
+
+ QMenu::separator {
+	background-color: #919191;
+	height:2px;
+} 
+
+ QMenu::indicator {
+     width: 15px;
+     height: 15px;
+ }
+ 
+ /*############## indicator:non-exclusive is a checkbox ###########*/
+ QMenu::indicator:non-exclusive:checked {
+     image: url(:/resources/images/icons/check.png);
+	 	 background-color:transparent;
+		 	border:none;
+ }
+ 
+ QMenu::indicator:non-exclusive:checked:selected {
+     image: url(:/resources/images/icons/checkhover.png);
+	 	 background-color:transparent;
+		 	border:none;
+ }
+
+ QMenu::indicator:non-exclusive:unchecked {  /*the checkbox for the mainmenu */
+    image: url(:/resources/images/icons/nocheck.png);
+	 	 background-color:#b1b1b1;
+		 	border:transparent;
+			
+ }
+
+  QMenu::indicator:non-exclusive:unchecked:selected {
+     image: url(:/resources/images/icons/check.png);
+	 	 background-color:#666;
+		 	border:none;
+ }
+ 
+ 
+/*########### MAIN WINDOW TABBAR #################*/
+	
+ 
+#sketch_tabs::pane { /*the tab-window*/
+ 	padding: 0px 0px 0px 0px;
+	border:none;
+	background:#f0f;
+}
+
+
+#sketch_tabs::tab-bar { /*this is the complete tab-bar*/
+ 	top: 0px;
+ 	left: 10px;
+	right: 0px;
+	
+}
+
+
+
+#sketch_tabs QTabBar::tab  {
+        margin: 0px 10px 0px 0px;
+   /*     padding-top: 2px;
+        padding-bottom: 2px;
+        padding-left: 10px;
+        padding-right: 10px;
+       */
+        min-width: 6.5em;
+        max-height: 35px;
+		height:35px;
+
+}
+
+#sketch_tabs QTabBar::tab:selected { /*the active tab*/
+	font-family: "Droid Sans";
+	font-size:14px;
+	background-color: transparent;
+	font-weight: regular;
+	color: #fff;
+	border:none;
+	padding-top:2px;
+	margin:0px;
+	image-position: left;
+	image: url(:/resources/images/icons/arrowButtonRight.png);
+	background-image: url(:/resources/images/icons/segmentedSwitcherXActiveFocus.png);
+}
+
+#sketch_tabs QTabBar::tab:selected:hover { /*the active tab hover*/
+	font-family: "Droid Sans";
+	font-size:14px;
+	background-color: transparent;
+	font-weight: regular;
+	color: #dadada;
+	border:none;
+	background-image: url(:/resources/images/icons/segmentedSwitcherXActiveFocusHover.png);
+}
+
+#sketch_tabs QTabBar::tab:!selected { /*the inactive tabs*/
+	background-color: transparent;
+	font-family: "Droid Sans";
+	font-size:14px;
+	color: #666;
+	font-weight:regular;
+	background-image: url(:/resources/images/icons/segmentedSwitcherXInactiveFocusHover.png);
+}
+
+#sketch_tabs QTabBar::tab:!selected:hover {  /*the inactive tab- hover*/
+	background-color: transparent;
+	font-family: "Droid Sans";
+	font-size:14px;
+	border:none;
+	color: #444;
+	font-weight:regular;
+	background-image: url(:/resources/images/icons/segmentedSwitcherXInactiveFocusHover.png);
+}
+
 /* ################### WelcomeScreen styling (WC) #################### */
 
 WelcomeView {
 	background: #E6EEF2;
 	border:none;
 	font: "Droid Sans";
-
-	}
+	margin:0px;
+	padding:0px;
+}
 
 WelcomeView QFrame {
 	background: #fff;
 	border-bottom: 8px solid #d9d9d9;	
-	}
+}
 
 WelcomeView QFrame QLabel {
 /*	background: #fff; */
@@ -91,7 +254,7 @@ WelcomeView QFrame QLabel {
 	font: bold "Droid Sans";
 	font-size:14px;
 	color: #323232;
-	}
+}
 	
 /* -------- position of WC "content-blocks" ------------  */
 #tipFrame,
@@ -133,11 +296,9 @@ margin: 0px 35px 18px 35px;
 /* ----------- WC-"recentItem"-block  ------------- */	
 
 #recentOpenSketch,
-#recentNewSketch,
-QListwidget::#recentItem:selected
+#recentNewSketch
 {
-	color: #0f0; /*656565*/
-	text-decoration: none;
+	/*656565*/
 	border:0px;
 	font-size: 12px;
 	}	
@@ -155,7 +316,7 @@ QListwidget::#recentItem:selected
 
 #recentSpace {
 	border-bottom: 2px solid #f0f;	
-	margin:7px 0px 7px 0px
+	margin:7px 0px 7px 0px;
 }	
 
 
@@ -203,211 +364,9 @@ QListwidget::#recentItem:selected
 	border-bottom: none;
 	font: "OCR A Tribute W01 Regular";
 	font-size:16px;
-	text-decoration:none;
+	qproperty-text-decoration:none;
 	qproperty-wordWrap: true;
 	}
-	
-	
-
-
-
-
-/* ################### Mainmenubar window #################### */
-
-QMenuBar {
-	background-color: #d9d9d9;
-	left:5px;
-}
-
-QMenuBar::item {
-	spacing: 10px; /* spacing between menu bar items */
-     padding: 7px 10px;
-	background: #d9d9d9;
-	color:rgb(51,51,51);
-	background-image:none;
-
-}
-
-QMenuBar::item:selected {
-	background: #666;
-	color:#fff;
-	background-image:none;
-
-}
-
-QMenuBar::item:pressed {
-	background: #666;
-	color:#fff;
-	background-image:none;
-
-}
-
-/*########### style of the dropdowns ######*/
-
-QMenu{
-	background-color: #d9d9d9;
-	color:#333;
-	margin: 0px 3px 0px 3px;
-	border:none;
-}
-
-QMenu::item {
-	background-color: #d9d9d9;
-	color:#333;
-	padding: 2px 15px 2px 15px;
-	
-}
-
-QMenu::item:selected {
-	background-color: #666;
-	color:#fff;
-}
-
- QMenu::separator {
-	background-color: #c1c1c1;
-	height:2px;
-} 
-
- QMenu::indicator {
-     width: 15px;
-     height: 15px;
- }
- 
- /*############## indicator:non-exclusive is a checkbox ###########*/
- QMenu::indicator:non-exclusive:checked {
-     image: url(:/resources/images/icons/check.png);
-	 	 background-color:transparent;
-		 	border:none;
- }
- 
- QMenu::indicator:non-exclusive:checked:selected {
-     image: url(:/resources/images/icons/checkhover.png);
-	 	 background-color:transparent;
-		 	border:none;
- }
-
- QMenu::indicator:non-exclusive:unchecked {  /*the checkbox for the mainmenu */
-    image: url(:/resources/images/icons/nocheck.png);
-	 	 background-color:#d9d9d9;
-		 	border:transparent;
-			
- }
-
-  QMenu::indicator:non-exclusive:unchecked:selected {
-     image: url(:/resources/images/icons/check.png);
-	 	 background-color:#666;
-		 	border:none;
- }
-
-/* #### some menu-stylelings, but it seems that they do not change anything #####
-
- QMenu::icon:checked {
-     top: 10px;
-     right: 10px;
-     bottom: 10px;
-     left: 10px;
-	 background:#f0f;
- }
- 
-  QMenu::icon:unchecked { 
-     top: 1px;
-     right: 1px;
-     bottom: 1px;
-     left: 1px;
-	 background:#0f0;
- }
- 
-
-
- QMenu::indicator:exclusive:unchecked {
-     image: url(:/resources/images/icons/nocheck.png);
-	 	 background-color:#f0f;
-		 	border:none;
- }
-
- QMenu::indicator:non-exclusive:checked {
-     image: url(:/resources/images/icons/check.png);
-	 	 background-color:transparent;
-		 	border:none;
- }
-
-
-
- QMenu::indicator:exclusive:unchecked:selected {
-     image: url(:/resources/images/icons/nocheck.png);
-	 	 background-color:transparent;
-		 	border:none;
- }
-
- QMenu::indicator:exclusive:checked {
-     image: url(:/resources/images/icons/check.png);
-	 	 background-color:transparent;
-		 	border:none;
- }
-
- QMenu::indicator:exclusive:checked:selected {
-     image: url(:/resources/images/icons/checkhover.png);
-	 	 background-color:transparent;
-		 	border:none;
- }
- 
- */
- 
- 
-/*########### MAIN WINDOW TABBAR #################*/
-	
-#sketch_tabs::tab-bar {
-	background:transparent;
- 	top: 0px;
- 	left: 5px;
-	right: 5px;	
-	border:none;
-}
-
-
-
-#sketch_tabs::pane {
- 	padding: 0px 0px 0px 5px;
-	border: none;
-}
-
-
-#sketch_tabs QTabBar::tab  {
-        margin-top: 0px;
-        margin-left: 0px;
-        margin-right: 10px;
-        margin-bottom: 0px;
-        padding-top: 2px;
-        padding-bottom: 2px;
-        padding-left: 10px;
-        padding-right: 10px;
-        background-color: #ac6a5b;
-        border-bottom: 0px;
-        min-width: 6.5em;
-        min-height: 2em;
-
-}
-
-#sketch_tabs QTabBar::tab:selected { /*the active tab*/
-	background-color: #fff;
-	border: none;
-	font-weight: bold;
-	color: #821F09;
-}
-
-#sketch_tabs QTabBar::tab:!selected { /*the inactive tabs*/
-        padding-top: 0;
-		border: none;
-		color: #D1ACA4;
-		font-weight:bold;
-}
-
-#sketch_tabs QTabBar::tab:!selected:hover {  /*the inactive tab- hover*/
-        background-color: #F23926;
-		border:none;
-		color: #fff;
-		font-weight:bold;
-}
 
 /*############### a styled loading/progress bar #################### */
 
@@ -764,7 +723,7 @@ FDockWidget::float-button:hover {
 }
 FDockWidget::float-button:pressed {
         border: none;
-        background-image: url(:/resources/images/icons/dockWidgetFloatPressed_icon.png);
+        image: url(:/resources/images/icons/dockWidgetFloatPressed_icon.png);
 
 }
 

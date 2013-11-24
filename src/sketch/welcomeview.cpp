@@ -38,6 +38,7 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 #include <QGridLayout>
 #include <QHBoxLayout>
 #include <QVBoxLayout>
+#include <QSpacerItem>
 #include <QPixmap>
 #include <QSpacerItem>
 #include <QSettings>
@@ -106,7 +107,7 @@ QWidget * WelcomeView::initRecent() {
 			widget = new QLabel;
 		}
 		else if (name == "recentTitle") {
-            widget = new QLabel(tr("your recent Sketches"));
+            widget = new QLabel(tr("Recent Sketches"));
 		}
         else if (name == "recentFileFrame") {
             widget = makeRecentItem(name,"","",icon,text);
@@ -130,6 +131,8 @@ QWidget * WelcomeView::initRecent() {
 		widget->setObjectName(name);
 		frameLayout->addWidget(widget);
 	}
+
+    frameLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Minimum, QSizePolicy::Expanding));
 
 	frame->setLayout(frameLayout);
 	return frame;
@@ -191,7 +194,7 @@ QWidget * WelcomeView::initBlog() {
 
 	QHBoxLayout * titleFrameLayout = new QHBoxLayout;
 
-    QLabel * titleLabel = new QLabel(tr("News and Stroies"));
+    QLabel * titleLabel = new QLabel(tr("News and Stories"));
 	titleLabel->setObjectName("blogTitle");
 	titleFrameLayout->addWidget(titleLabel);
 
@@ -222,6 +225,8 @@ QWidget * WelcomeView::initBlog() {
         frameLayout->addWidget(label);
         m_blogArtikelSpacer << label;
 	}
+
+    frameLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Minimum, QSizePolicy::Expanding));
 
 	frame->setLayout(frameLayout);
 
@@ -356,7 +361,7 @@ QWidget * WelcomeView::initTip() {
 	connect(m_tip, SIGNAL(linkActivated(const QString &)), this->window(), SLOT(tipsAndTricks()));
 	tipLayout->addWidget(m_tip);
 
-	tipLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Expanding));
+	tipLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Minimum, QSizePolicy::Expanding));
 
 	tipFrame->setLayout(tipLayout);
 

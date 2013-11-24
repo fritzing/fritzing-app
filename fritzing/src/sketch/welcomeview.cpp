@@ -63,7 +63,7 @@ WelcomeView::WelcomeView(QWidget * parent) : QFrame(parent)
 	manager->get(QNetworkRequest(QUrl("http://blog.fritzing.org/recent-posts/")));
 
 	TipsAndTricks::initTipSets();
-	m_tip->setText(QString("<a href='tip'>%1</a>").arg(TipsAndTricks::randomTip()));
+    m_tip->setText(QString("<a href='tip' style='text-decoration:none; color:#2e94af;'>%1</a>").arg(TipsAndTricks::randomTip()));
 }
 
 WelcomeView::~WelcomeView() {
@@ -91,11 +91,11 @@ void WelcomeView::initLayout()
 
 QWidget * WelcomeView::initRecent() {
 	QFrame * frame = new QFrame;
-	frame->setObjectName("recentFrame");
+    frame->setObjectName("recentFrame");
 	QVBoxLayout * frameLayout = new QVBoxLayout;
 
 	QStringList names;
-	names << "recentTitle" << "recentFrame" << "recentFrame" << "recentFrame" << "recentFrame" << "recentFrame" << "recentFrame" << "recentFrame" << "recentSpace" << "recentNewSketch" << "recentOpenSketch";
+    names << "recentTitle" << "recentFileFrame" << "recentFileFrame" << "recentFileFrame" << "recentFileFrame" << "recentFileFrame" << "recentFileFrame" << "recentSpace" << "recentNewSketch" << "recentOpenSketch";
 
 	foreach (QString name, names) {
 		QWidget * widget = NULL;
@@ -105,24 +105,24 @@ QWidget * WelcomeView::initRecent() {
 			widget = new QLabel;
 		}
 		else if (name == "recentTitle") {
-			widget = new QLabel(tr("Recent Sketches"));
+            widget = new QLabel(tr("your recent Sketches"));
 		}
-		else if (name == "recentFrame") {
-            widget = makeRecentItem(name, "", "", icon, text);
+        else if (name == "recentFileFrame") {
+            widget = makeRecentItem(name,"","",icon,text);
             m_recentIconList << icon;
             m_recentList << text;
 		}
-		else if (name == "recentNewSketch") {
+        else if (name == "recentNewSketch") {
 			widget = makeRecentItem(name, 
-                QString("<a href='new'><img src=':/resources/images/icons/arrowButtonUp.png' /></a>"),
-                QString("<a href='new'>%1</a>").arg(tr("New Sketch >>")),
+                QString("<a href='new' style='text-decoration:none; color:#666;'><img src=':/resources/images/icons/WS-new-icon.png' /></a>"),
+                QString("<a href='new' style='text-decoration:none; color:#666;'>%1</a>").arg(tr("New Sketch >>")),
                 icon,
                 text);
 		}
 		else if (name == "recentOpenSketch") {
 			widget = makeRecentItem(name, 
-                QString("<a href='open'><img src=':/resources/images/icons/arrowButtonUp.png' /></a>"),
-                QString("<a href='open'>%1</a>").arg(tr("Open Sketch >>")),
+                QString("<a href='open' style='text-decoration:none; color:#666;'><img src=':/resources/images/icons/WS-open-icon.png' /></a>"),
+                QString("<a href='open' style='text-decoration:none; color:#666;'>%1</a>").arg(tr("Open Sketch >>")),
                 icon,
                 text);
 		}
@@ -145,6 +145,7 @@ QWidget * WelcomeView::makeRecentItem(const QString & objectName, const QString 
 
 	text = new QLabel(textText);
     text->setObjectName(objectName);
+    text->setObjectName("recentText");
     rFrameLayout->addWidget(text);
     connect(text, SIGNAL(linkActivated(const QString &)), this, SLOT(clickRecent(const QString &)));
 
@@ -160,6 +161,7 @@ QWidget * WelcomeView::initKit() {
 
 	// use parent/child relation to manage overlapping widgets
     QFrame * overlapFrame = new QFrame(label);
+    overlapFrame->setObjectName("kitTitelFrame");
     QHBoxLayout * overlapFrameLayout = new QHBoxLayout;
     overlapFrame->setGeometry(0, 0, pixmap.width(), 30);
 
@@ -167,7 +169,7 @@ QWidget * WelcomeView::initKit() {
 	title->setObjectName("kitTitle");
     overlapFrameLayout->addWidget(title);
 
-	QLabel * url = new QLabel(QString("<a href='http://fritzing.org/shop/'>%1</a>").arg(tr("go to Fritzing Shop >>")));
+    QLabel * url = new QLabel(QString("<a href='http://fritzing.org/shop/'  style='text-decoration:none; display:block; font-weight:bold; color:#323232;'>%1</a>").arg(tr("| Shop >>")));
 	url->setObjectName("kitTitleGoto");
 	connect(url, SIGNAL(linkActivated(const QString &)), this, SLOT(clickBlog(const QString &)));
     overlapFrameLayout->addWidget(url);
@@ -188,18 +190,18 @@ QWidget * WelcomeView::initBlog() {
 
 	QHBoxLayout * titleFrameLayout = new QHBoxLayout;
 
-	QLabel * titleLabel = new QLabel(tr("Fritzing Blog"));
+    QLabel * titleLabel = new QLabel(tr("News and Stroies"));
 	titleLabel->setObjectName("blogTitle");
 	titleFrameLayout->addWidget(titleLabel);
 
-	QLabel * label = new QLabel(QString("<a href='http://blog.fritzing.org'>%1</a>").arg(tr("go to Fritzing Blog >>")));
+    QLabel * label = new QLabel(QString("<a href='http://blog.fritzing.org'  style='text-decoration:none; font-weight:bold; color:#323232;'>%1</a>").arg(tr("| Blog >>")));
 	label->setObjectName("blogTitleGoto");
 	titleFrameLayout->addWidget(label);
 	connect(label, SIGNAL(linkActivated(const QString &)), this, SLOT(clickBlog(const QString &)));
 
 	titleFrameLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Expanding));
 
-	titleFrame->setLayout(titleFrameLayout);
+    titleFrame->setLayout(titleFrameLayout);
 	frameLayout->addWidget(titleFrame);
 
 	for (int i = 0; i < 3; i++) {
@@ -213,12 +215,18 @@ QWidget * WelcomeView::initBlog() {
 		frameLayout->addWidget(label);
 		m_blogTextList << label;
 		connect(label, SIGNAL(linkActivated(const QString &)), this, SLOT(clickBlog(const QString &)));
+
+        label = new QLabel();
+        label->setObjectName("blogArtikelSpacer");
+        frameLayout->addWidget(label);
+        m_blogArtikelSpacer << label;
 	}
 
 	frame->setLayout(frameLayout);
 
 	foreach (QLabel * label, m_blogTextList) label->setVisible(false);
 	foreach (QLabel * label, m_blogTitleList) label->setVisible(false);
+    foreach (QLabel * label, m_blogArtikelSpacer) label->setVisible(true);
 
 	return frame;
 
@@ -239,10 +247,10 @@ void WelcomeView::updateRecent() {
 		QFileInfo finfo(files[i]);
 		if (!finfo.exists()) continue;
 
-		QString text = QString("<a href='%1'>%2 >></a>").arg(finfo.absoluteFilePath()).arg(finfo.fileName());
+        QString text = QString("<a href='%1'  style='text-decoration:none; color:#666;'>%2 >></a>").arg(finfo.absoluteFilePath()).arg(finfo.fileName());
 		m_recentList[ix]->setText(text);
 		m_recentList[ix]->parentWidget()->setVisible(true);
-        m_recentIconList[ix]->setText(QString("<a href='%1'><img src=':/resources/images/icons/arrowButtonRight.png' /></a>").arg(finfo.absoluteFilePath()));
+        m_recentIconList[ix]->setText(QString("<a href='%1'><img src=':/resources/images/icons/WS-fzz-icon.png' /></a>").arg(finfo.absoluteFilePath()));
 		if (++ix >= m_recentList.count()) {
 			break;
 		}
@@ -305,7 +313,7 @@ void WelcomeView::readBlog(const QDomDocument & doc) {
 		if (title.isEmpty() || href.isEmpty()) continue;
 
 		m_blogTitleList[ix]->setText(title);
-		m_blogTextList[ix]->setText(QString("<a href='%1'>%2</a>").arg(href).arg(tr("read more >>")));
+        m_blogTextList[ix]->setText(QString("<a href='%1' style='text-decoration:none; color:#666;'>%2</a>").arg(href).arg(tr("read more >>")));
 		m_blogTitleList[ix]->setVisible(true);
 		m_blogTextList[ix]->setVisible(true);
 		if (++ix >= m_blogTextList.count()) {

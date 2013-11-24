@@ -75,6 +75,8 @@ protected:
 	static void checkMystery(QDomElement & instance);
 	static bool checkObsoleteOrientation(QDomElement & instance);
 	static bool checkOldSchematics(QDomElement & instance);
+    ModelPart * createOldSchematicPart(ModelPart *, QString & moduleIDRef);
+    ModelPart * createOldSchematicPartAux(ModelPart *, const QString & oldModuleIDRef, const QString & oldSchematicFileName, const QString & oldSvgPath);
 
 protected:
 	QPointer<ModelPart> m_root;

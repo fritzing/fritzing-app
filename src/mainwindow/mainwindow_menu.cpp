@@ -3481,6 +3481,7 @@ void MainWindow::oldSchematicsSlot(const QString &filename, bool & useOldSchemat
 
 	if (answer == QMessageBox::No) {
         useOldSchematics = true;
+        this->setReadOnly(true);
 	}        
 }
 

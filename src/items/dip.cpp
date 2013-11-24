@@ -33,6 +33,7 @@ $Date: 2013-04-22 23:44:56 +0200 (Mo, 22. Apr 2013) $
 #include "../sketch/infographicsview.h"
 #include "../fsvgrenderer.h"
 #include "pinheader.h"
+#include "partfactory.h"
 
 #include <QFontMetricsF>
 
@@ -162,7 +163,15 @@ QString Dip::makeSchematicSvg(const QString & expectedFileName)
 	}
     
     if (expectedFileName.contains("sip", Qt::CaseInsensitive)) {
+        if (expectedFileName.contains(PartFactory::OldSchematicPrefix)) {
+            return MysteryPart::obsoleteMakeSchematicSvg(labels, true);
+        }       
+
         return MysteryPart::makeSchematicSvg(labels, true);
+    }
+
+    if (expectedFileName.contains(PartFactory::OldSchematicPrefix)) {
+        return obsoleteMakeSchematicSvg(labels);
     }
 
 	return makeSchematicSvg(labels);

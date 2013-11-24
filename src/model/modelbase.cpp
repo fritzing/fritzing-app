@@ -307,31 +307,8 @@ bool ModelBase::loadInstances(QDomDocument & domDocument, QDomElement & instance
 			}
    		}
 
-        if (m_useOldSchematics) {
-            QString schematicFilename = modelPart->imageFileName(ViewLayer::SchematicView, ViewLayer::Schematic);
-            if (schematicFilename.startsWith("schematic")) {
-                DebugDialog::debug("schematic " + schematicFilename);
-                QString oldModuleIDRef = PartFactory::OldSchematicPrefix + moduleIDRef;
-                ModelPart * oldModelPart = m_referenceModel->retrieveModelPart(oldModuleIDRef);
-                if (oldModelPart == NULL) {
-                    int ix = schematicFilename.indexOf("/");
-                    schematicFilename.insert(ix + 1, PartFactory::OldSchematicPrefix);
-                    QString path = FolderUtils::getApplicationSubFolderPath("parts") + "/svg/obsolete/"+ schematicFilename;
-                    if (QFile::exists(path)) {
-                        // create oldModelPart, set up the new image file name, add it to refmodel
-
-                    }
-                    if (oldModelPart == NULL) {
-                        // try the fzp again
-                        // set up the new image file name, add it to refmodel
-                    }
-                }
-                if (oldModelPart) {
-                    modelPart = oldModelPart;
-                    moduleIDRef = oldModuleIDRef;
-                    // fix up instance?
-                }
-            }
+        if (modelPart->isCore() && m_useOldSchematics) {
+            modelPart = createOldSchematicPart(modelPart, moduleIDRef);
         }
 
         modelPart->setInBin(true);
@@ -814,3 +791,74 @@ bool ModelBase::onCoreList(const QString & moduleID) {
     return CoreList.contains(moduleID);
 
 }
+
+ModelPart * ModelBase::createOldSchematicPart(ModelPart * modelPart, QString & moduleIDRef) {
+    QString schematicFilename = modelPart->imageFileName(ViewLayer::SchematicView, ViewLayer::Schematic);
+    if (!schematicFilename.startsWith("schematic")) {
+        return modelPart;
+    }
+
+    DebugDialog::debug("schematic " + schematicFilename);
+    QString oldModuleIDRef = PartFactory::OldSchematicPrefix + moduleIDRef;
+    ModelPart * oldModelPart = m_referenceModel->retrieveModelPart(oldModuleIDRef);         // cached after the first time it's created
+    if (oldModelPart) {
+        moduleIDRef = oldModuleIDRef;
+        return oldModelPart;
+    }
+
+    int ix = schematicFilename.indexOf("/");
+    schematicFilename.insert(ix + 1, PartFactory::OldSchematicPrefix);
+    QString oldSvgPath = FolderUtils::getApplicationSubFolderPath("parts") + "/svg/obsolete/"+ schematicFilename;
+    oldModelPart = createOldSchematicPartAux(modelPart, oldModuleIDRef, schematicFilename, oldSvgPath);
+    if (oldModelPart) {
+        moduleIDRef = oldModuleIDRef;
+        return oldModelPart;
+    }
+
+    // see whether it's a generated part
+    oldSvgPath = PartFactory::getSvgFilename(schematicFilename);
+    if (!oldSvgPath.isEmpty()) {
+        oldModelPart = createOldSchematicPartAux(modelPart, oldModuleIDRef, schematicFilename, oldSvgPath);
+        if (oldModelPart) {
+            moduleIDRef = oldModuleIDRef;
+            return oldModelPart;
+        }    
+    }
+    
+    return modelPart;
+}
+
+ModelPart * ModelBase::createOldSchematicPartAux(ModelPart * modelPart, const QString & oldModuleIDRef, const QString & oldSchematicFileName, const QString & oldSvgPath)
+{
+    if (!QFile::exists(oldSvgPath)) return NULL;
+
+    // create oldModelPart, set up the new image file name, add it to refmodel
+    QFile newFzp(modelPart->path());
+    QDomDocument oldDoc;
+    bool ok = oldDoc.setContent(&newFzp);
+    if (!ok) {
+        // this shouldn't happen
+        return NULL;
+    }
+
+    QDomElement root = oldDoc.documentElement();
+    root.setAttribute("moduleId", oldModuleIDRef);
+    QDomElement views = root.firstChildElement("views");
+    QDomElement schematicView = views.firstChildElement("schematicView");
+    QDomElement layers = schematicView.firstChildElement("layers");
+    if (layers.isNull()) {
+        // this shouldn't happen
+        return NULL;
+    }
+
+    layers.setAttribute("image", oldSchematicFileName);
+
+    QString oldFzpPath = PartFactory::fzpPath() + oldModuleIDRef + ".fzp";
+    if (!TextUtils::writeUtf8(oldFzpPath, oldDoc.toString())) {
+        // this shouldn't happen
+        return NULL;
+    }
+
+    return m_referenceModel->addPart(oldFzpPath, true, true);
+}
+

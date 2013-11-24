@@ -35,6 +35,7 @@ $Date: 2013-04-22 23:44:56 +0200 (Mo, 22. Apr 2013) $
 #include "../layerattributes.h"
 #include "partlabel.h"
 #include "pinheader.h"
+#include "partfactory.h"
 #include "../connectors/connectoritem.h"
 #include "../svg/svgfilesplitter.h"
 
@@ -361,6 +362,10 @@ QString MysteryPart::makeSchematicSvg(const QString & expectedFileName)
 	for (int i = 0; i < pins; i++) {
 		labels << QString::number(i + 1);
 	}
+
+    if (expectedFileName.contains(PartFactory::OldSchematicPrefix)) {
+        return obsoleteMakeSchematicSvg(labels, sip);
+    }     
 
 	return makeSchematicSvg(labels, sip);
 }

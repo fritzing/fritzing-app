@@ -32,6 +32,7 @@ $Date: 2013-04-22 23:44:56 +0200 (Mo, 22. Apr 2013) $
 #include "../utils/textutils.h"
 #include "../utils/schematicrectconstants.h"
 #include "partlabel.h"
+#include "partfactory.h"
 
 #include <QDomNodeList>
 #include <QDomDocument>
@@ -154,6 +155,10 @@ QString ScrewTerminal::makeBreadboardSvg(const QString & expectedFileName)
 
 QString ScrewTerminal::makeSchematicSvg(const QString & expectedFileName) 
 {
+    if (expectedFileName.contains(PartFactory::OldSchematicPrefix)) {
+        return obsoleteMakeSchematicSvg(expectedFileName);
+    }     
+
 	QStringList pieces = expectedFileName.split("_");
 
 	int pins = pieces.at(2).toInt();			

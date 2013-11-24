@@ -71,159 +71,17 @@ PEMainWindow {
 
 
 
-/* ################### WelcomeScreen styling (WC) #################### */
-
-WelcomeView {
-	background: #E6EEF2;
-	border:none;
-	font: "Droid Sans";
-
-	}
-
-WelcomeView QFrame {
-	background: #fff;
-	border-bottom: 8px solid #d9d9d9;	
-	}
-
-WelcomeView QFrame QLabel {
-/*	background: #fff; */
-    border:none;
-	font: bold "Droid Sans";
-	font-size:14px;
-	color: #323232;
-	}
-	
-/* -------- position of WC "content-blocks" ------------  */
-#tipFrame,
-#blogFrame,
-#kitFrame,
-#recentFrame {
-margin: 0px 0px 18px 35px;
-}
-
-
-#blogFrame,
-#kitFrame {
-margin: 0px 35px 18px 35px;
-}
-
-
-/* ----------- WC-"content-blocks"-titel-styleing  ------------- */	
-#recentTitle
-{
-	border-bottom: 2px solid #f0f;
-	padding:14px 0px 14px 0px;
-	margin-bottom: 8px;
-}	
-
-
-#kitTitle
-{
- border-bottom: 2px solid #f0f;
- 	 margin-left:20px;
-}	
-
-#blogTitle,
-#blogTitleGoto
-{
-	margin:0px;
-	padding:0px;
-}
-
-/* ----------- WC-"recentItem"-block  ------------- */	
-
-#recentOpenSketch,
-#recentNewSketch,
-#recentItem:selected
-{
-	color: #0f0; /*656565*/
-	text-decoration: none;
-	border:0px;
-	font-size: 12px;
-	}	
-
-#recentNewSketch,
-#recentItem
-{
-	margin:14px 0px 0px 10px;
-}
-
-#recentOpenSketch {
-	margin:14px 0px 14px 10px;
-}
-
-
-#recentSpace {
-	border-bottom: 2px solid #f0f;	
-	margin:7px 0px 7px 0px
-}	
-
-
-/* ----------- WC-"blog"-block  ------------- */	
-#blogTitleFrame {
-	border-bottom: 2px solid #f0f;
-	margin:0px;
-	padding:0px;
-}
-
-
-
-#blogLineTitle {
-	border:none;
-	font: regular "Droid Sans";
-	font-size: 14px;
-	margin:0px;
-	color: #000;
-}	
-
-#blogLineText {
-	color: #656565; /*656565*/
-	border:none;
-	font-size: 12px;
-	margin:0px;
-}
-
-
-/* ----------- WC-"tip"-block  ------------- */	
-#tipFrame {
-	background: #D5E1E9;
-	border-bottom: 8px solid #A9C6D6;
-	max-width: 350px;
-	}
-	
-#tipTitle{
-	color: #77ACC2;
-	font: bold "Droid Sans";
-	background: #D5E1E9;
-	margin:0px;
-	}	
-
-#tip  {
-	background: #D5E1E9;
-	border-bottom: none;
-	font: "OCR A Tribute W01 Regular";
-	font-size:16px;
-	text-decoration:none;
-	qproperty-wordWrap: true;
-	max-width: 350px;
-	}
-	
-	
-
-
-
-
 /* ################### Mainmenubar window #################### */
 
 QMenuBar {
-	background-color: #d9d9d9;
+	background-color: #b1b1b1;
 	left:5px;
 }
 
 QMenuBar::item {
 	spacing: 10px; /* spacing between menu bar items */
      padding: 7px 10px;
-	background: #d9d9d9;
+	background: #b1b1b1;
 	color:rgb(51,51,51);
 	background-image:none;
 
@@ -246,17 +104,16 @@ QMenuBar::item:pressed {
 /*########### style of the dropdowns ######*/
 
 QMenu{
-	background-color: #d9d9d9;
+	background-color: #b1b1b1;
 	color:#333;
 	margin: 0px 3px 0px 3px;
 	border:none;
 }
 
 QMenu::item {
-	background-color: #d9d9d9;
+	background-color: #b1b1b1;
 	color:#333;
 	padding: 2px 15px 2px 15px;
-	
 }
 
 QMenu::item:selected {
@@ -265,7 +122,7 @@ QMenu::item:selected {
 }
 
  QMenu::separator {
-	background-color: #c1c1c1;
+	background-color: #919191;
 	height:2px;
 } 
 
@@ -289,7 +146,7 @@ QMenu::item:selected {
 
  QMenu::indicator:non-exclusive:unchecked {  /*the checkbox for the mainmenu */
     image: url(:/resources/images/icons/nocheck.png);
-	 	 background-color:#d9d9d9;
+	 	 background-color:#b1b1b1;
 		 	border:transparent;
 			
  }
@@ -299,116 +156,298 @@ QMenu::item:selected {
 	 	 background-color:#666;
 		 	border:none;
  }
-
-/* #### some menu-stylelings, but it seems that they do not change anything #####
-
- QMenu::icon:checked {
-     top: 10px;
-     right: 10px;
-     bottom: 10px;
-     left: 10px;
-	 background:#f0f;
- }
- 
-  QMenu::icon:unchecked { 
-     top: 1px;
-     right: 1px;
-     bottom: 1px;
-     left: 1px;
-	 background:#0f0;
- }
- 
-
-
- QMenu::indicator:exclusive:unchecked {
-     image: url(:/resources/images/icons/nocheck.png);
-	 	 background-color:#f0f;
-		 	border:none;
- }
-
- QMenu::indicator:non-exclusive:checked {
-     image: url(:/resources/images/icons/check.png);
-	 	 background-color:transparent;
-		 	border:none;
- }
-
-
-
- QMenu::indicator:exclusive:unchecked:selected {
-     image: url(:/resources/images/icons/nocheck.png);
-	 	 background-color:transparent;
-		 	border:none;
- }
-
- QMenu::indicator:exclusive:checked {
-     image: url(:/resources/images/icons/check.png);
-	 	 background-color:transparent;
-		 	border:none;
- }
-
- QMenu::indicator:exclusive:checked:selected {
-     image: url(:/resources/images/icons/checkhover.png);
-	 	 background-color:transparent;
-		 	border:none;
- }
- 
- */
  
  
 /*########### MAIN WINDOW TABBAR #################*/
 	
-#sketch_tabs::tab-bar {
-	background:transparent;
- 	top: 0px;
- 	left: 5px;
-	right: 5px;	
+ 
+#sketch_tabs::pane { /*the tab-window*/
+ 	padding: 0px 0px 0px 0px;
 	border:none;
+	background:#d5e1e9;
+	margin:0px;
 }
 
 
-
-#sketch_tabs::pane {
- 	padding: 0px 0px 0px 5px;
-	border: none;
+#sketch_tabs::tab-bar { /*this is the complete tab-bar*/
+ 	top: 0px;
+ 	left: 10px;
+	right: 0px;
+	
 }
 
+#sketch_tabs QTabBar#WelcomeView {
+		image-position: left;
+	image: url(:/resources/images/icons/arrowButtonRight.png);
+	background-image: url(:/resources/images/icons/arrowButtonLeft.png);
+}
 
 #sketch_tabs QTabBar::tab  {
-        margin-top: 0px;
-        margin-left: 0px;
-        margin-right: 10px;
-        margin-bottom: 0px;
-        padding-top: 2px;
+    margin: 0px 10px -1px 0px;
+	min-width: 6.5em;
+    max-height: 35px;
+	height:35px;
+	
+  /*     padding-top: 2px;
         padding-bottom: 2px;
         padding-left: 10px;
-        padding-right: 10px;
-        background-color: #ac6a5b;
-        border-bottom: 0px;
-        min-width: 6.5em;
-        min-height: 2em;
-
+        padding-right: 10px; */
+	
 }
 
 #sketch_tabs QTabBar::tab:selected { /*the active tab*/
-	background-color: #fff;
-	border: none;
-	font-weight: bold;
-	color: #821F09;
+	font-family: "Droid Sans";
+	font-size:14px;
+	background-color: transparent;
+	font-weight: regular;
+	color: #fff;
+	border:none;
+	padding-top:2px;
+	margin-bottom:-1px;
+	background-image: url(:/resources/images/icons/segmentedSwitcherXActiveFocus.png);
+}
+
+#sketch_tabs QTabBar::tab:selected:hover { /*the active tab hover*/
+	font-family: "Droid Sans";
+	font-size:14px;
+	background-color: transparent;
+	font-weight: regular;
+	color: #dadada;
+	border:none;
+	margin-bottom:-1px;
+	background-image: url(:/resources/images/icons/segmentedSwitcherXActiveFocusHover.png);
 }
 
 #sketch_tabs QTabBar::tab:!selected { /*the inactive tabs*/
-        padding-top: 0;
-		border: none;
-		color: #D1ACA4;
-		font-weight:bold;
+	background-color: transparent;
+	font-family: "Droid Sans";
+	font-size:14px;
+	color: #666;
+	font-weight:regular;
+	margin-bottom:-1px;
+	background-image: url(:/resources/images/icons/segmentedSwitcherXInactiveFocusHover.png);
 }
 
 #sketch_tabs QTabBar::tab:!selected:hover {  /*the inactive tab- hover*/
-        background-color: #F23926;
-		border:none;
-		color: #fff;
-		font-weight:bold;
+	background-color: transparent;
+	font-family: "Droid Sans";
+	font-size:14px;
+	border:none;
+	color: #444;
+	font-weight:regular;
+	margin-bottom:-1px;
+	background-image: url(:/resources/images/icons/segmentedSwitcherXInactiveFocusHover.png);
 }
+
+/* ################### WelcomeScreen styling (WC) #################### */
+
+WelcomeView {
+	background: #E6EEF2;
+	border:0px;
+	margin:0px;
+	padding:0px;
+}
+
+WelcomeView QFrame {
+	border-bottom: 8px solid #d9d9d9;	
+}
+
+WelcomeView QFrame QLabel {
+    border:0px;
+	
+}
+	
+/* -------- position of WS"content-blocks" ------------  */
+#tipFrame,
+#recentFrame {
+    margin: 0px 0px 18px 35px;
+	background: #fff;
+	border-bottom: 8px solid #d9d9d9;	
+	font: "Droid Sans";
+	font-family: "Droid Sans";
+}
+
+
+#blogFrame {
+	margin: 0px 35px 18px 35px;
+	background: #fff;
+	border-bottom: 8px solid #d9d9d9;	
+	font: "Droid Sans";
+	font-family: "Droid Sans";
+}
+
+#kitFrame {
+	margin-left:35px;
+	margin-right:35px;
+	margin-top:0px;
+	background: #fff;
+	border-bottom: 8px solid #d9d9d9;	
+	font: "Droid Sans";
+	font-family: "Droid Sans";
+}
+
+/* ----------- WS-"recentItem"-block  ------------- */	
+
+#recentTitle {
+	border-bottom: 1px solid #c4c4c4;
+	padding: 5px 0px 15px 0px;
+	margin-left:5px;
+	margin-top:5px;
+	font-size:14px;
+	font-weight:bold;
+}
+
+#recentOpenSketch,
+#recentNewSketch,
+#recentFileFrame
+{
+	text-align:left;
+	border:none;
+	font-size: 12px;
+	margin:0px;
+	padding:0px;
+	}	
+
+#recentSpace 
+{
+	border-bottom: 1px solid #c4c4c4;
+}	
+/*
+#recentText
+{
+	text-decoration:none;
+	
+	}
+*/
+#recentIcon {
+max-height:15px;
+max-width:15px;
+border:none;
+}
+
+/* ----------- WS-"blog"-block  ------------- */	
+
+#blogTitleFrame
+{
+	border-bottom: 1px solid #c4c4c4;
+	margin-left:5px;
+	padding-bottom:6px;
+	background:#fff;
+	
+}	
+
+#blogTitle {
+/*	padding: 5px 0px 15px 0px;*/
+	font-size:14px;
+	font-weight:bold;
+	color:#c4c4c4;
+	margin:0px;
+	margin-left: 0px;
+	padding-left:0px;
+/*	
+	background:#00f;
+	border:none;
+	font-size:14px;
+	font-weight:bold;
+	color:#c4c4c4;
+*/
+}
+
+#blogTitleGoto {
+	color:#323232;
+	font-size:14px;
+	font-weight:bold;
+}
+
+#blogLineTitle {
+	font: regular "Droid Sans";
+	font-size: 14px;
+	margin:0px;
+	color: #000;
+	margin-left:15px;
+}	
+
+#blogLineText {
+	color: #656565; /*656565*/
+	border:none;
+	font-size: 12px;
+	margin:0px;
+	margin-left:15px;
+}
+
+#blogArtikelSpacer {
+	border-bottom:1px solid #c4c4c4; 
+	margin-top:10px;
+	margin-bottom:0px;
+}
+
+
+
+/* ----------- WC-"tip"-block  ------------- */	
+#tipFrame {
+	background: #D5E1E9;
+	border-bottom: 8px solid #A9C6D6;
+	max-width: 350px;
+	}
+	
+#tipTitle{
+	background: #D5E1E9;
+	font-size:14px;
+	color: #77ACC2;
+	font: bold "Droid Sans";
+	margin:0px;
+border:none;
+}	
+
+#tip  {
+	background: #D5E1E9;
+	border: none;
+	font: "OCR A Tribute W01 Regular";
+	font-family: "OCR A Tribute W01 Regular";
+	color:#2e94af;
+	font-size:16px;
+	qproperty-wordWrap: true;
+	qproperty-vertSizePolicy: Expanding;
+	}
+
+
+/* ----------- WS-"kit"-block  ------------- */	
+
+
+#kitTitelFrame {
+	border-bottom: 1px solid #c4c4c4;
+	margin-left:50px;
+	background:transparent;
+	
+/*	padding: 0px;
+	max-height:40px;
+	min-height:30px;
+*/
+}
+
+
+#kitTitle {
+/*	padding: 5px 0px 15px 0px;*/
+	color:#c4c4c4;
+	border:none;
+	font-size:14px;
+	font-weight:bold;
+	background:transparent;
+	min-height:16px;
+	max-width: 134px;
+}
+
+#kitTitleGoto
+{
+	min-height:16px;
+	color:#c4c4c4;
+	border:none;
+	font-size:14px;
+	font-weight:bold;
+	background:transparent;
+}
+
+
 
 /*############### a styled loading/progress bar #################### */
 
@@ -489,7 +528,7 @@ splash {
 	
 
 ToolBarSeparator {
-	background:#f0f;
+	background:#f00;
 }
 
 #routingStateLabel {
@@ -765,7 +804,7 @@ FDockWidget::float-button:hover {
 }
 FDockWidget::float-button:pressed {
         border: none;
-        background-image: url(:/resources/images/icons/dockWidgetFloatPressed_icon.png);
+        image: url(:/resources/images/icons/dockWidgetFloatPressed_icon.png);
 
 }
 

@@ -35,6 +35,7 @@ $Date: 2012-09-26 15:45:37 +0200 (Mi, 26. Sep 2012) $
 #include <QWidget>
 #include <QNetworkReply>
 #include <QDomDocument>
+#include <QDragEnterEvent>
 
 class WelcomeView : public QFrame
 {
@@ -45,6 +46,7 @@ public:
 	~WelcomeView();
 
 	void showEvent(QShowEvent * event);
+    void dragEnterEvent(QDragEnterEvent *event);
 
 protected:
 	void initLayout();

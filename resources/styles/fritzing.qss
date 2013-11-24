@@ -134,7 +134,7 @@ margin: 0px 35px 18px 35px;
 
 #recentOpenSketch,
 #recentNewSketch,
-QListwidget::#recentItem:selected
+#recentItem:selected
 {
 	color: #0f0; /*656565*/
 	text-decoration: none;
@@ -205,6 +205,7 @@ QListwidget::#recentItem:selected
 	font-size:16px;
 	text-decoration:none;
 	qproperty-wordWrap: true;
+	max-width: 350px;
 	}
 	
 	

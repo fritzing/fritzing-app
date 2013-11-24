@@ -52,7 +52,8 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 
 WelcomeView::WelcomeView(QWidget * parent) : QFrame(parent) 
 {
-	initLayout();
+    setAcceptDrops(false);
+    initLayout();
 
 	connect(this, SIGNAL(newSketch()), this->window(), SLOT(createNewSketch()));
 	connect(this, SIGNAL(openSketch()), this->window(), SLOT(mainLoad()));
@@ -354,6 +355,10 @@ QWidget * WelcomeView::initTip() {
 	return tipFrame;
 }
 
+void WelcomeView::dragEnterEvent(QDragEnterEvent *event)
+{
+    event->ignore();
+}
 
 /*
 

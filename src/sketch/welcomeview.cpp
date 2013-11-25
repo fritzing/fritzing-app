@@ -159,60 +159,58 @@ QWidget * WelcomeView::makeRecentItem(const QString & objectName, const QString 
 
 QWidget * WelcomeView::initKit() {
 
-    QFrame * frame2 = new QFrame();
-    frame2->setObjectName("shopFrame");
-    QVBoxLayout * frameLayout2 = new QVBoxLayout;
+    QFrame * frame = new QFrame();
+    frame->setObjectName("shopFrame");
+    QVBoxLayout * frameLayout = new QVBoxLayout;
 
 	// use parent/child relation to manage overlapping widgets
-        QFrame * overlapFrame = new QFrame();
-        overlapFrame->setObjectName("shopTitelFrame");
-        QHBoxLayout * overlapFrameLayout = new QHBoxLayout;
+    QFrame * titleFrame = new QFrame();
+    titleFrame->setObjectName("shopTitleFrame");
+    QHBoxLayout * titleFrameLayout = new QHBoxLayout;
+
    /* overlapFrame->setGeometry(0, 0, pixmap.width(), 30);*/
 
-        QLabel * title = new QLabel(tr("Fritzing Creator Kit"));
-        title->setObjectName("shopTitle");
-        overlapFrameLayout->addWidget(title);
+    QLabel * title = new QLabel(tr("Fritzing Creator Kit"));
+    title->setObjectName("shopTitle");
+    titleFrameLayout->addWidget(title);
 
-        QLabel * url = new QLabel(QString("<a href='http://fritzing.org/shop/'  style='text-decoration:none; display:block; font-weight:bold; color:#323232;'>%1</a>").arg(tr("| Shop >>")));
-        url->setObjectName("shopTitleGoto");
-        connect(url, SIGNAL(linkActivated(const QString &)), this, SLOT(clickBlog(const QString &)));
-        overlapFrameLayout->addWidget(url);
+    QLabel * url = new QLabel(QString("<a href='http://fritzing.org/shop/'  style='text-decoration:none; display:block; font-weight:bold; color:#323232;'>%1</a>").arg(tr("| Shop >>")));
+    url->setObjectName("shopTitleGoto");
+    connect(url, SIGNAL(linkActivated(const QString &)), this, SLOT(clickBlog(const QString &)));
+    titleFrameLayout->addWidget(url);
 
+    titleFrame->setLayout(titleFrameLayout);
 
-        overlapFrame->setLayout(overlapFrameLayout);
+    frameLayout->addWidget(titleFrame);
 
+    QLabel * label = new QLabel("<img src='/resources/images/welcome_kit.png' />");
+    label->setObjectName("shopImage");
+    frameLayout->addWidget(label);
 
-    frameLayout2->addWidget(overlapFrame);
-
-    QLabel * label2 = new QLabel(QString("<img src:'/resources/images/welcome_kit.png' />"));
-    label2->setObjectName("shopImage");
-    frameLayout2->addWidget(label2);
-
-
-    frameLayout2->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Minimum, QSizePolicy::Expanding));
-
+    frameLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Minimum, QSizePolicy::Expanding));
 
     QFrame * footerFrame = new QFrame();
-        footerFrame->setObjectName("shopFooterFrame");
+    footerFrame->setObjectName("shopFooterFrame");
 
-        QHBoxLayout * footerFrameLayout = new QHBoxLayout;
+    QHBoxLayout * footerFrameLayout = new QHBoxLayout;
 
-        footerFrameLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Expanding));
+    footerFrameLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Expanding));
 
-        QLabel * footerLabel = new QLabel(QString("<a href='http://fritzing.org/shop/'  style='text-decoration:none; color:#802742;'>%1</a>").arg(tr("Get your CreatorKit now.   ")));
-        footerLabel->setObjectName("shopLogoText");
-        footerFrameLayout->addWidget(footerLabel);
+    QLabel * footerLabel = new QLabel(QString("<a href='http://fritzing.org/creatorkit/'  style='text-decoration:none; color:#802742;'>%1</a>").arg(tr("Get your CreatorKit now.   ")));
+    footerLabel->setObjectName("shopLogoText");
+    footerFrameLayout->addWidget(footerLabel);
+    connect(footerLabel, SIGNAL(linkActivated(const QString &)), this, SLOT(clickBlog(const QString &)));
 
-       QLabel * footerLogoLabel = new QLabel(tr("<a href='http://fritzing.org/shop/'><img src=':/resources/images/icons/WS-shopLogo.png'/></a>"));
-        footerLogoLabel->setObjectName("shopLogo");
-        footerFrameLayout->addWidget(footerLogoLabel);
+    QLabel * footerLogoLabel = new QLabel(tr("<a href='http://fritzing.org/creatorkit/'><img src=':/resources/images/icons/WS-shopLogo.png'/></a>"));
+    footerLogoLabel->setObjectName("shopLogo");
+    footerFrameLayout->addWidget(footerLogoLabel);
+    connect(footerLogoLabel, SIGNAL(linkActivated(const QString &)), this, SLOT(clickBlog(const QString &)));
 
-        footerFrame->setLayout(footerFrameLayout);
-     frameLayout2->addWidget(footerFrame);
+    footerFrame->setLayout(footerFrameLayout);
+    frameLayout->addWidget(footerFrame);
 
-      frame2->setLayout(frameLayout2);
-      return frame2;
-
+    frame->setLayout(frameLayout);
+    return frame;
 }
 
 
@@ -241,21 +239,21 @@ QWidget * WelcomeView::initBlog() {
 	frameLayout->addWidget(titleFrame);
 
 	for (int i = 0; i < 3; i++) {
-		QLabel * label = new QLabel();
+     /*   QFrame * blogEntry = new QFrame;
+        m_blogEntryList << blogEntry;
+       */
+
+
+        QLabel * label = new QLabel;
 		label->setObjectName("blogLineTitle");
-		frameLayout->addWidget(label);
-		m_blogTitleList << label;
+        frameLayout->addWidget(label);
+        m_blogTitleList << label;
 
 		label = new QLabel();
 		label->setObjectName("blogLineText");
-		frameLayout->addWidget(label);
-		m_blogTextList << label;
-		connect(label, SIGNAL(linkActivated(const QString &)), this, SLOT(clickBlog(const QString &)));
-
-        label = new QLabel();
-        label->setObjectName("blogArtikelSpacer");
         frameLayout->addWidget(label);
-        m_blogArtikelSpacer << label;
+        m_blogTextList << label;
+		connect(label, SIGNAL(linkActivated(const QString &)), this, SLOT(clickBlog(const QString &)));
 	}
 
 
@@ -269,9 +267,7 @@ QWidget * WelcomeView::initBlog() {
 
 
 
-	foreach (QLabel * label, m_blogTextList) label->setVisible(false);
-	foreach (QLabel * label, m_blogTitleList) label->setVisible(false);
-    foreach (QLabel * label, m_blogArtikelSpacer) label->setVisible(true);
+  /*  foreach (QFrame * blogEntry, m_blogEntryList) blogEntry->setVisible(false);*/
 
 
 
@@ -346,8 +342,7 @@ void WelcomeView::clickRecent(const QString & url) {
 
 void WelcomeView::gotBlogSnippet(QNetworkReply * networkReply) {
 
-	foreach (QLabel * label, m_blogTextList) label->setVisible(false);
-	foreach (QLabel * label, m_blogTitleList) label->setVisible(false);
+  /*  foreach (QFrame * blogEntry, m_blogEntryList) blogEntry->setVisible(false); */
 
     QNetworkAccessManager * manager = networkReply->manager();
 	int responseCode = networkReply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
@@ -383,8 +378,7 @@ void WelcomeView::readBlog(const QDomDocument & doc) {
 
 		m_blogTitleList[ix]->setText(title);
         m_blogTextList[ix]->setText(QString("<a href='%1' style='text-decoration:none; color:#666;'>%2</a>").arg(href).arg(tr("read more >>")));
-		m_blogTitleList[ix]->setVisible(true);
-		m_blogTextList[ix]->setVisible(true);
+     /*   m_blogEntryList[ix]->setVisible(true);*/
 		if (++ix >= m_blogTextList.count()) {
 			break;
 		}

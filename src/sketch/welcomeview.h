@@ -74,6 +74,7 @@ protected:
 	QList<QLabel *> m_blogTitleList;
 	QList<QLabel *> m_blogTextList;
     QList<QLabel *> m_blogArtikelSpacer;
+    QList<QLabel *> m_blogLogo;
 	QLabel * m_tip;
 	QFrame * m_blog;
 	QFrame * m_creatorKit;

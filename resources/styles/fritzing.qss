@@ -258,8 +258,15 @@ WelcomeView QFrame QLabel {
 }
 	
 /* -------- position of WS"content-blocks" ------------  */
-#tipFrame,
 #recentFrame {
+    margin: 15px 0px 18px 35px;
+	background: #fff;
+	border-bottom: 8px solid #d9d9d9;	
+	font: "Droid Sans";
+	font-family: "Droid Sans";
+}
+#tipFrame
+{
     margin: 0px 0px 18px 35px;
 	background: #fff;
 	border-bottom: 8px solid #d9d9d9;	
@@ -269,17 +276,15 @@ WelcomeView QFrame QLabel {
 
 
 #blogFrame {
-	margin: 0px 35px 18px 35px;
+	margin: 15px 35px 18px 35px;
 	background: #fff;
 	border-bottom: 8px solid #d9d9d9;	
 	font: "Droid Sans";
 	font-family: "Droid Sans";
 }
 
-#kitFrame {
-	margin-left:35px;
-	margin-right:35px;
-	margin-top:0px;
+#shopFrame {
+	margin: 0px 35px 18px 35px;
 	background: #fff;
 	border-bottom: 8px solid #d9d9d9;	
 	font: "Droid Sans";
@@ -295,6 +300,7 @@ WelcomeView QFrame QLabel {
 	margin-top:5px;
 	font-size:14px;
 	font-weight:bold;
+	min-height:16px;
 }
 
 #recentOpenSketch,
@@ -304,8 +310,8 @@ WelcomeView QFrame QLabel {
 	text-align:left;
 	border:none;
 	font-size: 12px;
-	margin:0px;
-	padding:0px;
+	height:12px;
+	background:transparent;
 	}	
 
 #recentSpace 
@@ -322,6 +328,8 @@ WelcomeView QFrame QLabel {
 #recentIcon {
 max-height:15px;
 max-width:15px;
+min-height:15px;
+min-width:15px;
 border:none;
 }
 
@@ -332,6 +340,7 @@ border:none;
 	border-bottom: 1px solid #c4c4c4;
 	margin-left:5px;
 	padding-bottom:6px;
+	padding-top:1px;
 	background:#fff;
 	
 }	
@@ -382,6 +391,27 @@ border:none;
 }
 
 
+#blogLogo {
+	background:#fff;
+/*		background-image: url(:/resources/images/icons/WS-blogLogo.png); 
+	background-position:right;
+	background-repeat:none; */
+	min-height:22px;
+	max-height:22px;
+}
+
+#blogLogoText {
+		background:#fff;
+		font-weight:regular; 
+		font: "Droid Sans" regular 12px;
+/*  background-image: url(:/resources/images/icons/WS-blogLogo.png); 
+	background-position:right;
+	background-repeat:none; */
+	min-height:22px;
+	max-height:22px;
+}
+
+
 
 /* ----------- WC-"tip"-block  ------------- */	
 #tipFrame {
@@ -395,7 +425,8 @@ border:none;
 	font-size:14px;
 	color: #77ACC2;
 	font: bold "Droid Sans";
-	margin:0px;
+	margin-left:5px;
+	margin-bottom:10px;
 border:none;
 }	
 
@@ -407,27 +438,27 @@ border:none;
 	color:#2e94af;
 	font-size:16px;
 	qproperty-wordWrap: true;
-	qproperty-vertSizePolicy: Expanding;
+	padding:5px;
 	}
 
 
-/* ----------- WS-"kit"-block  ------------- */	
+/* ----------- WS-"shop"-block  ------------- */	
 
 
-#kitTitelFrame {
+#shopTitelFrame {
 	border-bottom: 1px solid #c4c4c4;
-	margin-left:50px;
+	/*margin-left:50px;*/
 	background:transparent;
 	
-/*	padding: 0px;
+	padding: 0px;
 	max-height:40px;
 	min-height:30px;
-*/
+
 }
 
 
-#kitTitle {
-/*	padding: 5px 0px 15px 0px;*/
+#shopTitle {
+
 	color:#c4c4c4;
 	border:none;
 	font-size:14px;
@@ -437,7 +468,7 @@ border:none;
 	max-width: 134px;
 }
 
-#kitTitleGoto
+#shopTitleGoto
 {
 	min-height:16px;
 	color:#c4c4c4;

@@ -621,10 +621,12 @@ QString PinHeader::makeSchematicSvg(const QString & expectedFileName)
 	QStringList pieces = expectedFileName.split("_");
 	if (pieces.count() < 7) return "";
 
+    bool useOldSchematic = expectedFileName.contains(PartFactory::OldSchematicPrefix);
+
     QString spacingString;
     int pins = TextUtils::getPinsAndSpacing(expectedFileName, spacingString);
 	QString form = expectedFileName.contains("female") ? "female" :"male";
-    bool sizeTenth = expectedFileName.contains("10thin");
+    bool sizeTenth = expectedFileName.contains("10thin") || !useOldSchematic;  // some parts before version 0.8.5 used the 0.1 grid
     bool isDouble = sizeTenth && expectedFileName.contains("double");
 
     double width, unitHeight;

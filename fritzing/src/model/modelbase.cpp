@@ -859,6 +859,9 @@ ModelPart * ModelBase::createOldSchematicPartAux(ModelPart * modelPart, const QS
         return NULL;
     }
 
-    return m_referenceModel->addPart(oldFzpPath, true, true);
+    ModelPart * oldModelPart = m_referenceModel->addPart(oldFzpPath, true, true);
+    oldModelPart->setCore(modelPart->isCore());
+    oldModelPart->setContrib(modelPart->isContrib());
+    return oldModelPart;
 }
 

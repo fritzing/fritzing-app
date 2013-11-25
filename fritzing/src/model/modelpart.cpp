@@ -32,6 +32,7 @@ $Date: 2013-04-07 12:14:50 +0200 (So, 07. Apr 2013) $
 #include "../version/version.h"
 #include "../utils/folderutils.h"
 #include "../items/itembase.h"
+#include "../items/partfactory.h"
 
 #include <QDomElement>
 #include <QBitArray>
@@ -252,6 +253,7 @@ void ModelPart::saveInstance(QXmlStreamWriter & streamWriter)
 	streamWriter.writeStartElement("instance");
 	if (m_modelPartShared != NULL) {
 		QString moduleIdRef = m_modelPartShared->moduleID();
+        moduleIdRef.remove(PartFactory::OldSchematicPrefix);
 		streamWriter.writeAttribute("moduleIdRef", moduleIdRef);
 		streamWriter.writeAttribute("modelIndex", QString::number(m_index));
 		streamWriter.writeAttribute("path", m_modelPartShared->path());
@@ -342,7 +344,9 @@ void ModelPart::saveAsPart(QXmlStreamWriter & streamWriter, bool startDocument) 
 		streamWriter.writeStartDocument();
     	streamWriter.writeStartElement("module");
 		streamWriter.writeAttribute("fritzingVersion", Version::versionString());
-		streamWriter.writeAttribute("moduleId", m_modelPartShared->moduleID());
+        QString moduleID = m_modelPartShared->moduleID();
+        moduleID.remove(PartFactory::OldSchematicPrefix);
+		streamWriter.writeAttribute("moduleId", moduleID);
     	writeTag(streamWriter,"version",m_modelPartShared->version());
     	writeTag(streamWriter,"author",m_modelPartShared->author());
     	writeTag(streamWriter,"title",title());

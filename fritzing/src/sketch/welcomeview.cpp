@@ -183,7 +183,7 @@ QWidget * WelcomeView::initKit() {
 
     frameLayout->addWidget(titleFrame);
 
-    QLabel * label = new QLabel("<img src='/resources/images/welcome_kit.png' />");
+    QLabel * label = new QLabel("<img src=':/resources/images/welcome_kit.png' />");
     label->setObjectName("shopImage");
     frameLayout->addWidget(label);
 
@@ -239,21 +239,43 @@ QWidget * WelcomeView::initBlog() {
 	frameLayout->addWidget(titleFrame);
 
 	for (int i = 0; i < 3; i++) {
-     /*   QFrame * blogEntry = new QFrame;
-        m_blogEntryList << blogEntry;
-       */
+     QFrame * blogEntry = new QFrame;
+     m_blogEntryList << blogEntry;
+     blogEntry->setObjectName("blogEntry");
+     QHBoxLayout * blogEntryLayout = new QHBoxLayout;
 
+            /* QFrame * blogEntryPicture = new QFrame; */
 
-        QLabel * label = new QLabel;
-		label->setObjectName("blogLineTitle");
-        frameLayout->addWidget(label);
-        m_blogTitleList << label;
+            QLabel * picLabel = new QLabel;
+            picLabel->setObjectName("blogEntryPicture");
+            blogEntryLayout->addWidget(picLabel);
+           /* m_blogEntryPicture << picLabel;*/
 
-		label = new QLabel();
-		label->setObjectName("blogLineText");
-        frameLayout->addWidget(label);
-        m_blogTextList << label;
-		connect(label, SIGNAL(linkActivated(const QString &)), this, SLOT(clickBlog(const QString &)));
+            QFrame * blogEntryTextFrame = new QFrame;
+            blogEntryTextFrame ->setObjectName("blogEntryTextFrame");
+            QVBoxLayout * blogEntryTextLayout = new QVBoxLayout;
+
+                QLabel * label = new QLabel();
+                label->setObjectName("blogEntryTitle");
+                blogEntryTextLayout->addWidget(label);
+                m_blogTitleList << label;
+
+                label = new QLabel();
+                label->setObjectName("blogEntryText");
+                blogEntryTextLayout->addWidget(label);
+                m_blogTextList << label;
+                connect(label, SIGNAL(linkActivated(const QString &)), this, SLOT(clickBlog(const QString &)));
+
+                label = new QLabel();
+                label->setObjectName("blogEntryDate");
+                blogEntryTextLayout->addWidget(label);
+                m_blogEntryDate << label;
+
+            blogEntryTextFrame->setLayout(blogEntryTextLayout);
+            blogEntryLayout->addWidget(blogEntryTextFrame);
+
+        blogEntry->setLayout(blogEntryLayout);
+        frameLayout->addWidget(blogEntry);
 	}
 
 
@@ -267,7 +289,7 @@ QWidget * WelcomeView::initBlog() {
 
 
 
-  /*  foreach (QFrame * blogEntry, m_blogEntryList) blogEntry->setVisible(false);*/
+    foreach (QFrame * blogEntry, m_blogEntryList) blogEntry->setVisible(true);
 
 
 
@@ -288,7 +310,6 @@ QWidget * WelcomeView::initBlog() {
         footerFrameLayout->addWidget(footerLabel);
 
     footerFrame->setLayout(footerFrameLayout);
-
 
     frameLayout->addWidget(footerFrame);
 
@@ -342,7 +363,7 @@ void WelcomeView::clickRecent(const QString & url) {
 
 void WelcomeView::gotBlogSnippet(QNetworkReply * networkReply) {
 
-  /*  foreach (QFrame * blogEntry, m_blogEntryList) blogEntry->setVisible(false); */
+    foreach (QFrame * blogEntry, m_blogEntryList) blogEntry->setVisible(false);
 
     QNetworkAccessManager * manager = networkReply->manager();
 	int responseCode = networkReply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
@@ -378,7 +399,7 @@ void WelcomeView::readBlog(const QDomDocument & doc) {
 
 		m_blogTitleList[ix]->setText(title);
         m_blogTextList[ix]->setText(QString("<a href='%1' style='text-decoration:none; color:#666;'>%2</a>").arg(href).arg(tr("read more >>")));
-     /*   m_blogEntryList[ix]->setVisible(true);*/
+      m_blogEntryList[ix]->setVisible(true);
 		if (++ix >= m_blogTextList.count()) {
 			break;
 		}

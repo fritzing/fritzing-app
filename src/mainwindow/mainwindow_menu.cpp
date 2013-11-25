@@ -72,6 +72,7 @@ $Date: 2013-04-28 14:14:07 +0200 (So, 28. Apr 2013) $
 #include "../utils/autoclosemessagebox.h"
 #include "../processeventblocker.h"
 #include "../sketchtoolbutton.h"
+#include "../help/firsttimehelpdialog.h"
 
 ////////////////////////////////////////////////////////
 
@@ -566,6 +567,14 @@ void MainWindow::about()
 void MainWindow::tipsAndTricks()
 {
 	TipsAndTricks::showTipsAndTricks();
+}
+
+void MainWindow::firstTimeHelp()
+{
+    if (m_currentGraphicsView == NULL) return;	
+
+    FirstTimeHelpDialog::setViewID(m_currentGraphicsView->viewID());
+    FirstTimeHelpDialog::showFirstTimeHelp();
 }
 
 void MainWindow::createActions()
@@ -1203,6 +1212,10 @@ void MainWindow::createHelpMenuActions() {
 	m_tipsAndTricksAct->setStatusTip(tr("Display some handy Fritzing tips and tricks"));
 	connect(m_tipsAndTricksAct, SIGNAL(triggered()), this, SLOT(tipsAndTricks()));
 
+	m_firstTimeHelpAct = new QAction(tr("First Time Help"), this);
+	m_firstTimeHelpAct->setStatusTip(tr("Display First Time Help"));
+	connect(m_firstTimeHelpAct, SIGNAL(triggered()), this, SLOT(firstTimeHelp()));
+
 	m_aboutQtAct = new QAction(tr("&About Qt"), this);
 	m_aboutQtAct->setStatusTip(tr("Show Qt's about box"));
 	connect(m_aboutQtAct, SIGNAL(triggered()), qApp, SLOT(aboutQt()));
@@ -1508,6 +1521,7 @@ void MainWindow::createHelpMenu()
 	m_helpMenu->addAction(m_aboutAct);
     m_helpMenu->addAction(m_openDonateAct);
 	m_helpMenu->addAction(m_tipsAndTricksAct);
+	m_helpMenu->addAction(m_firstTimeHelpAct);
 #ifndef QT_NO_DEBUG
 	m_helpMenu->addAction(m_aboutQtAct);
 #endif

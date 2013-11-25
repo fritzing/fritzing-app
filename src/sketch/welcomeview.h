@@ -66,6 +66,7 @@ signals:
 protected slots:
 	void clickRecent(const QString &);
     void gotBlogSnippet(QNetworkReply *);
+    void gotBlogImage(QNetworkReply *);
 	void clickBlog(const QString &);
 
 protected:

@@ -39,6 +39,7 @@ $Date: 2013-04-22 23:44:56 +0200 (Mo, 22. Apr 2013) $
 #include "../items/via.h"
 #include "../fsvgrenderer.h"
 #include "../items/note.h"
+#include "../items/partfactory.h"
 #include "../eagle/fritzing2eagle.h"
 #include "../sketch/breadboardsketchwidget.h"
 #include "../sketch/schematicsketchwidget.h"
@@ -823,6 +824,7 @@ void MainWindow::saveAsShareable(const QString & path, bool saveModel)
             continue;
         }
 		if (itemBase->modelPart()->isCore()) continue;
+        if (itemBase->moduleID().contains(PartFactory::OldSchematicPrefix)) continue;
 	
 		saveParts.insert(itemBase->moduleID(), itemBase->modelPart());
 	}

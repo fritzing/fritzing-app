@@ -87,6 +87,7 @@ $Date: 2013-04-28 00:56:34 +0200 (So, 28. Apr 2013) $
 #include "../items/logoitem.h"
 #include "../utils/zoomslider.h"
 #include "../partseditor/pemainwindow.h"
+#include "../help/firsttimehelpdialog.h"
 
 ///////////////////////////////////////////////
 
@@ -986,9 +987,14 @@ void MainWindow::tabWidget_currentChanged(int index) {
 	    setActionsIcons(index, actions);
     }
 
-	if (widget == NULL) return;
+	if (widget == NULL) {
+        m_firstTimeHelpAct->setEnabled(false);
+        return;
+    }
 
 	m_zoomSlider->setValue(m_currentGraphicsView->retrieveZoom());
+    FirstTimeHelpDialog::setViewID(m_currentGraphicsView->viewID());
+    m_firstTimeHelpAct->setEnabled(true);
 
 	connect(
 		m_currentGraphicsView,					// don't connect directly to the scene here, connect to the widget's signal

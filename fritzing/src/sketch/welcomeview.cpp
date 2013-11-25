@@ -444,16 +444,16 @@ void WelcomeView::readBlog(const QDomDocument & doc) {
         text.remove("\r");
         text.remove("\n");
         m_blogEntryTextList[ix]->setText(text);
-        if (stuff.value("img", "").isEmpty()) {
-            m_blogEntryPictureList[ix]->setText("");
-        }
-        else {
-            QString pic = QString("<a href='%1' style='text-decoration:none; color:#666;'><img src='%2' /></a>").arg(stuff.value("href")).arg(stuff.value("img"));
-		    m_blogEntryPictureList[ix]->setText(pic);
+        m_blogEntryPictureList[ix]->setText("");
+        if (!stuff.value("img", "").isEmpty()) {
+            QNetworkAccessManager * manager = new QNetworkAccessManager(this);
+            manager->setProperty("index", ix);
+            manager->setProperty("href", stuff.value("href"));
+	        connect(manager, SIGNAL(finished(QNetworkReply *)), this, SLOT(gotBlogImage(QNetworkReply *)));
+	        manager->get(QNetworkRequest(QUrl(stuff.value("img"))));
         }
 
         QString dateStuff;
-
         if (!stuff.value("date", "").isEmpty()) {
             dateStuff.append(stuff.value("date"));
             dateStuff.append("    ");
@@ -468,6 +468,21 @@ void WelcomeView::readBlog(const QDomDocument & doc) {
 		}
 
 	}
+}
+
+void WelcomeView::gotBlogImage(QNetworkReply * networkReply) {
+
+    QNetworkAccessManager * manager = networkReply->manager();
+	int responseCode = networkReply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
+	if (responseCode == 200) {
+        QByteArray data(networkReply->readAll());
+        QString pic = QString("<a href='%1' style='text-decoration:none; color:#666;'><img src='data:image/jpg;base64,%2' /></a>").arg(manager->property("href").toString()).arg(QString(data.toBase64()));
+		m_blogEntryPictureList[manager->property("index").toInt()]->setText(pic);
+		
+	}
+
+    manager->deleteLater();
+    networkReply->deleteLater();
 }
 
 QWidget * WelcomeView::initTip() {

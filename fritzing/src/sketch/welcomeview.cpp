@@ -62,7 +62,7 @@ WelcomeView::WelcomeView(QWidget * parent) : QFrame(parent)
 
     QNetworkAccessManager * manager = new QNetworkAccessManager(this);
 	connect(manager, SIGNAL(finished(QNetworkReply *)), this, SLOT(gotBlogSnippet(QNetworkReply *)));
-	manager->get(QNetworkRequest(QUrl("http://blog.fritzing.org/recent-posts-app/")));
+	manager->get(QNetworkRequest(QUrl("http://blog.fritzing.org/recent-posts/")));
 
 	TipsAndTricks::initTipSets();
     m_tip->setText(QString("<a href='tip' style='text-decoration:none; color:#2e94af;'>%1</a>").arg(TipsAndTricks::randomTip()));
@@ -183,7 +183,7 @@ QWidget * WelcomeView::initKit() {
 
     frameLayout->addWidget(titleFrame);
 
-    QLabel * label = new QLabel("<img src='/resources/images/welcome_kit.png' />");
+    QLabel * label = new QLabel("<img src=':/resources/images/welcome_kit.png' />");
     label->setObjectName("shopImage");
     frameLayout->addWidget(label);
 
@@ -239,21 +239,43 @@ QWidget * WelcomeView::initBlog() {
 	frameLayout->addWidget(titleFrame);
 
 	for (int i = 0; i < 3; i++) {
-     /*   QFrame * blogEntry = new QFrame;
-        m_blogEntryList << blogEntry;
-       */
+     QFrame * blogEntry = new QFrame;
+     m_blogEntryList << blogEntry;
+     blogEntry->setObjectName("blogEntry");
+     QHBoxLayout * blogEntryLayout = new QHBoxLayout;
 
+            /* QFrame * blogEntryPicture = new QFrame; */
 
-        QLabel * label = new QLabel;
-		label->setObjectName("blogLineTitle");
-        frameLayout->addWidget(label);
-        m_blogTitleList << label;
+            QLabel * picLabel = new QLabel;
+            picLabel->setObjectName("blogEntryPicture");
+            blogEntryLayout->addWidget(picLabel);
+           /* m_blogEntryPicture << picLabel;*/
 
-		label = new QLabel();
-		label->setObjectName("blogLineText");
-        frameLayout->addWidget(label);
-        m_blogTextList << label;
-		connect(label, SIGNAL(linkActivated(const QString &)), this, SLOT(clickBlog(const QString &)));
+            QFrame * blogEntryTextFrame = new QFrame;
+            blogEntryTextFrame ->setObjectName("blogEntryTextFrame");
+            QVBoxLayout * blogEntryTextLayout = new QVBoxLayout;
+
+                QLabel * label = new QLabel();
+                label->setObjectName("blogEntryTitle");
+                blogEntryTextLayout->addWidget(label);
+                m_blogTitleList << label;
+
+                label = new QLabel();
+                label->setObjectName("blogEntryText");
+                blogEntryTextLayout->addWidget(label);
+                m_blogTextList << label;
+                connect(label, SIGNAL(linkActivated(const QString &)), this, SLOT(clickBlog(const QString &)));
+
+                label = new QLabel();
+                label->setObjectName("blogEntryDate");
+                blogEntryTextLayout->addWidget(label);
+                m_blogEntryDate << label;
+
+            blogEntryTextFrame->setLayout(blogEntryTextLayout);
+            blogEntryLayout->addWidget(blogEntryTextFrame);
+
+        blogEntry->setLayout(blogEntryLayout);
+        frameLayout->addWidget(blogEntry);
 	}
 
 
@@ -267,7 +289,7 @@ QWidget * WelcomeView::initBlog() {
 
 
 
-  /*  foreach (QFrame * blogEntry, m_blogEntryList) blogEntry->setVisible(false);*/
+    foreach (QFrame * blogEntry, m_blogEntryList) blogEntry->setVisible(true);
 
 
 
@@ -288,7 +310,6 @@ QWidget * WelcomeView::initBlog() {
         footerFrameLayout->addWidget(footerLabel);
 
     footerFrame->setLayout(footerFrameLayout);
-
 
     frameLayout->addWidget(footerFrame);
 
@@ -342,7 +363,7 @@ void WelcomeView::clickRecent(const QString & url) {
 
 void WelcomeView::gotBlogSnippet(QNetworkReply * networkReply) {
 
-  /*  foreach (QFrame * blogEntry, m_blogEntryList) blogEntry->setVisible(false); */
+    foreach (QFrame * blogEntry, m_blogEntryList) blogEntry->setVisible(false);
 
     QNetworkAccessManager * manager = networkReply->manager();
 	int responseCode = networkReply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
@@ -367,74 +388,41 @@ void WelcomeView::clickBlog(const QString & url) {
 	QDesktopServices::openUrl(url);
 }
 
-
-		/*
-
-        // sample output from http://blog.fritzing.org/recent-posts-app/
-
-
-<ul>
-    <li>
-        <img src=""/>
-        <a class="title" href="http://blog.fritzing.org/2013/11/19/minimetalmaker/" title="MiniMetalMaker">MiniMetalMaker</a>
-        <p class="date">Nov. 19, 2013</p>
-        <p class="author">Nushin Isabelle</p>
-        <p class="intro">We have heard a lot about synthetic 3D printers for home use - now we are entering the home use met...</p>
-    </li> 
-    <li>
-        <img src="http://blog.fritzing.org/wp-content/uploads/doku-deckblatt.jpg"/>
-        <a class="title" href="http://blog.fritzing.org/2013/11/19/the-little-black-midi/" title="The Little Black Midi">The Little Black Midi</a>
-        <p class="date">Nov. 19, 2013</p>
-        <p class="author">Nushin Isabelle</p>
-        <p class="intro">Howdy!
-
-We thought we should delight our readers a little by showing some dainties of creative ele...</p>
-    </li> 
-    <li>
-        <img src="http://blog.fritzing.org/wp-content/uploads/charles1.jpg"/>
-        <a class="title" href="http://blog.fritzing.org/2013/11/15/light-up-your-flat-with-charles-planetary-gear-system/" title="Light up your flat with Charles&#039; planetary gear system">Light up your flat with Charles' planetary gear system</a>
-        <p class="date">Nov. 15, 2013</p>
-        <p class="author">Nushin Isabelle</p>
-        <p class="intro">Today, we got a visitor in the Fritzing Lab: Our neighbour, Charles Oleg, came by to show us his new...</p>
-    </li> 
-</ul>
-		*/
-
-
 void WelcomeView::readBlog(const QDomDocument & doc) {
-	QDomNodeList nodeList = doc.elementsByTagName("li");
+	QDomNodeList nodeList = doc.elementsByTagName("a");
 	int ix = 0;
 	for (int i = 0; i < nodeList.count(); i++) {
 		QDomElement element = nodeList.at(i).toElement();
-        QDomElement child = element.firstChildElement();
-        QHash<QString, QString> stuff;
-        while (!child.isNull()) {
-            if (child.tagName() == "img") {
-                stuff.insert("img", child.attribute("src"));
-            }
-            else {
-                QString clss = child.attribute("class");
-                if (clss == "title") {
-                    stuff.insert("title", child.attribute("title"));
-                    stuff.insert("href", child.attribute("href"));
-                }
-                else {
-                    stuff.insert(clss, element.text());
-                }
-            }
-            child = child.nextSiblingElement();
-        }
-        if (stuff.value("title", "").isEmpty()) continue;
-        if (stuff.value("href", "").isEmpty()) continue;
-            
-		m_blogTitleList[ix]->setText(stuff.value("title"));
-        m_blogTextList[ix]->setText(QString("<a href='%1' style='text-decoration:none; color:#666;'>%2</a>").arg(stuff.value("href")).arg(tr("read more >>")));
-     /*   m_blogEntryList[ix]->setVisible(true);*/
+		QString title = element.attribute("title");
+		QString href = element.attribute("href");
+		if (title.isEmpty() || href.isEmpty()) continue;
+
+		m_blogTitleList[ix]->setText(title);
+        m_blogTextList[ix]->setText(QString("<a href='%1' style='text-decoration:none; color:#666;'>%2</a>").arg(href).arg(tr("read more >>")));
+      m_blogEntryList[ix]->setVisible(true);
 		if (++ix >= m_blogTextList.count()) {
 			break;
 		}
 
 	}
+
+		/*
+
+		<ul>
+<li>
+                <a href="http://blog.fritzing.org/2013/11/19/minimetalmaker/" title="MiniMetalMaker">MiniMetalMaker</a>
+                <a href="http://blog.fritzing.org/2013/11/19/minimetalmaker/"><small>Nov. 19, 2013</small></a> 
+            </li> <li>
+                <a href="http://blog.fritzing.org/2013/11/19/the-little-black-midi/" title="The Little Black Midi">The Little Black Midi</a>
+                <a href="http://blog.fritzing.org/2013/11/19/the-little-black-midi/"><small>Nov. 19, 2013</small></a> 
+            </li> <li>
+                <a href="http://blog.fritzing.org/2013/11/15/light-up-your-flat-with-charles-planetary-gear-system/" title="Light up your flat with Charles&#039; planetary gear system">Light up your flat with Charles' planetary gear system</a>
+                <a href="http://blog.fritzing.org/2013/11/15/light-up-your-flat-with-charles-planetary-gear-system/"><small>Nov. 15, 2013</small></a> 
+            </li> </ul>
+<a href="http://blog.fritzing.org">More posts&hellip;</a>"
+
+		*/
+
 }
 
 QWidget * WelcomeView::initTip() {
@@ -463,13 +451,7 @@ void WelcomeView::dragEnterEvent(QDragEnterEvent *event)
     event->ignore();
 }
 
-
-
-
-
-
 /*
-    // old first time help text
 
 	QTextEdit * textEdit = new QTextEdit();
 

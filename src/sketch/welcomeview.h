@@ -72,7 +72,8 @@ protected:
 	QList<QLabel *> m_recentList;
 	QList<QLabel *> m_recentIconList;
 	QList<QLabel *> m_blogTitleList;
-	QList<QLabel *> m_blogTextList;
+    QList<QLabel *> m_blogTextList;
+    QList<QFrame *> m_blogEntryList;
     QList<QLabel *> m_blogArtikelSpacer;
     QList<QLabel *> m_blogLogo;
 	QLabel * m_tip;

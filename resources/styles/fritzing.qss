@@ -384,6 +384,22 @@ border:none;
 	margin-left:15px;
 }
 
+#blogEntryTitle {
+	background:#f00;
+}
+
+#blogEntryText {
+	background:#0f0;
+}
+
+#blogEntryDate {
+	background:#00f;
+}
+#blogEntryPicture {
+	background:#f0f;
+}
+
+
 #blogArtikelSpacer {
 	border-bottom:1px solid #c4c4c4; 
 	margin-top:10px;

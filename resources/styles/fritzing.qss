@@ -177,7 +177,7 @@ QMenu::item:selected {
 }
 
 #sketch_tabs QTabBar#WelcomeView {
-		image-position: left;
+	image-position: left;
 	image: url(:/resources/images/icons/arrowButtonRight.png);
 	background-image: url(:/resources/images/icons/arrowButtonLeft.png);
 }
@@ -202,7 +202,6 @@ QMenu::item:selected {
 	font-weight: regular;
 	color: #fff;
 	border:none;
-	padding-top:2px;
 	margin-bottom:-1px;
 	background-image: url(:/resources/images/icons/segmentedSwitcherXActiveFocus.png);
 }
@@ -291,16 +290,18 @@ WelcomeView QFrame QLabel {
 	font-family: "Droid Sans";
 }
 
+
 /* ----------- WS-"recentItem"-block  ------------- */	
 
 #recentTitle {
 	border-bottom: 1px solid #c4c4c4;
-	padding: 5px 0px 15px 0px;
-	margin-left:5px;
-	margin-top:5px;
+	padding: 8px 0px 8px 0px;
+	margin:0px 5px 0px 5px;
 	font-size:14px;
 	font-weight:bold;
-	min-height:16px;
+	min-height:18px;
+	max-height:18px;
+
 }
 
 #recentOpenSketch,
@@ -335,31 +336,33 @@ border:none;
 
 /* ----------- WS-"blog"-block  ------------- */	
 
+
+/******* this is the styling for the blog-frame-title ***********/
+
+#blogTitleFrameLayout {
+
+	}
+
 #blogTitleFrame
-{
+{ 
 	border-bottom: 1px solid #c4c4c4;
-	margin-left:5px;
-	padding-bottom:6px;
-	padding-top:1px;
+	padding: 8px 0px 8px 0px;
+	margin:0px 5px 0px 5px;
+	font-size:14px;
+	font-weight:bold;
+	min-height:18px;
+	max-height:18px;
 	background:#fff;
 	
 }	
 
 #blogTitle {
-/*	padding: 5px 0px 15px 0px;*/
 	font-size:14px;
 	font-weight:bold;
 	color:#c4c4c4;
-	margin:0px;
-	margin-left: 0px;
-	padding-left:0px;
-/*	
-	background:#00f;
-	border:none;
-	font-size:14px;
-	font-weight:bold;
-	color:#c4c4c4;
-*/
+	margin-left:1px;
+	margin-right:2px;
+
 }
 
 #blogTitleGoto {
@@ -368,61 +371,64 @@ border:none;
 	font-weight:bold;
 }
 
-#blogLineTitle {
+
+/******* this is the styling for the blog-entries ***********/
+#blogEntry{
+	border-bottom:1px solid #c4c4c4; 
+	max-height: 65px;
+	background:transparent;
+	margin-top:0px;
+	padding-bottom:2px;
+	
+}
+
+#blogEntryTitle {
 	font: regular "Droid Sans";
 	font-size: 14px;
 	margin:0px;
 	color: #000;
-	margin-left:15px;
-}	
+	qproperty-wordWrap: true;
+	min-height: 18px;
 
-#blogLineText {
+}
+
+#blogEntryText {
 	color: #656565; /*656565*/
 	border:none;
 	font-size: 12px;
 	margin:0px;
-	margin-left:15px;
-}
+	qproperty-wordWrap: true;
+		min-height: 16px;
 
-#blogEntryTitle {
-	background:#f00;
-}
-
-#blogEntryText {
-	background:#0f0;
 }
 
 #blogEntryDate {
-	background:#00f;
+	color: #656565; /*656565*/
+	border:none;
+	font-size: 10px;
+	margin:0px;
+	min-height: 14px;
+
 }
 #blogEntryPicture {
 	background:#f0f;
+	max-width: 60px;
+	min-width:45px;
+	max-height: 60px;
+	min-height:45px;
 }
 
-
-#blogArtikelSpacer {
-	border-bottom:1px solid #c4c4c4; 
-	margin-top:10px;
-	margin-bottom:0px;
-}
-
-
+/******* this is the styling for the blog-footer ***********/
 #blogLogo {
 	background:#fff;
-/*		background-image: url(:/resources/images/icons/WS-blogLogo.png); 
-	background-position:right;
-	background-repeat:none; */
 	min-height:22px;
 	max-height:22px;
 }
 
 #blogLogoText {
-		background:#fff;
-		font-weight:regular; 
-		font: "Droid Sans" regular 12px;
-/*  background-image: url(:/resources/images/icons/WS-blogLogo.png); 
-	background-position:right;
-	background-repeat:none; */
+	background:#fff;
+	font-weight:regular; 
+	font: "Droid Sans" regular 12px;
 	min-height:22px;
 	max-height:22px;
 }
@@ -434,16 +440,18 @@ border:none;
 	background: #D5E1E9;
 	border-bottom: 8px solid #A9C6D6;
 	max-width: 350px;
+	padding-left:5px;
 	}
 	
-#tipTitle{
-	background: #D5E1E9;
-	font-size:14px;
+#tipTitle {
 	color: #77ACC2;
-	font: bold "Droid Sans";
-	margin-left:5px;
-	margin-bottom:10px;
-border:none;
+	border-bottom: none;
+	padding: 8px 0px 9px 0px;
+	margin:0px 5px 0px 5px;
+	font-size:14px;
+	font-weight:bold;
+	min-height:18px;
+	max-height:18px;
 }	
 
 #tip  {
@@ -454,34 +462,34 @@ border:none;
 	color:#2e94af;
 	font-size:16px;
 	qproperty-wordWrap: true;
-	padding:5px;
+
+	padding: 0px 5px 10px 5px;
+
 	}
 
 
 /* ----------- WS-"shop"-block  ------------- */	
 
 
-#shopTitelFrame {
-	border-bottom: 1px solid #c4c4c4;
-	/*margin-left:50px;*/
-	background:transparent;
-	
-	padding: 0px;
-	max-height:40px;
-	min-height:30px;
 
+#shopTitleFrame {
+	border-bottom: 1px solid #c4c4c4;
+	padding: 8px 0px 8px 0px;
+	margin:0px 5px 0px 5px;
+	font-size:14px;
+	font-weight:bold;
+	min-height:18px;
+	max-height:18px;
+	background:#fff;
 }
 
 
 #shopTitle {
-
-	color:#c4c4c4;
-	border:none;
 	font-size:14px;
 	font-weight:bold;
-	background:transparent;
-	min-height:16px;
-	max-width: 134px;
+	color:#c4c4c4;
+	margin-left:1px;
+	margin-right:2px;
 }
 
 #shopTitleGoto
@@ -492,6 +500,16 @@ border:none;
 	font-size:14px;
 	font-weight:bold;
 	background:transparent;
+}
+
+#shopImage {
+	min-height:20px;
+	}
+	
+#shopFooterFrame {
+		border-top:1px solid #c4c4c4; 
+		background:transparent;
+		border-bottom:none;
 }
 
 
@@ -568,7 +586,6 @@ splash {
 	background:rgb(0,255,0);
 	}
 */
-
 
 
 /* ################### the toolbar #################### */

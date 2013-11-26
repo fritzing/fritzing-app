@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="svg2" xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px" height="40.311px"
+	 viewBox="0 0 40 40.311" enable-background="new 0 0 40 40.311" xml:space="preserve">
+<g id="schematic">
+	<rect id="connector0pin" x="0.08" y="33.071" width="8.5" height="1.584"/>
+	<rect id="connector1pin" x="29.663" y="0.279" width="1.416" height="4.959"/>
+	<rect id="connector1terminal" x="30.044" y="0.324" width="0.75" height="0.799"/>
+	<rect id="connector0terminal" x="0.08" y="33.329" width="0.749" height="0.8"/>
+	<rect id="connector2pin" x="29.679" y="35.404" width="1.416" height="4.96"/>
+	<rect id="connector2terminal" x="30.06" y="39.512" width="0.75" height="0.799"/>
+	<g>
+		<polygon points="0.079,34.867 0.079,32.867 11.911,32.867 11.911,6.784 11.913,5.783 13.912,5.783 13.912,34.867 		"/>
+		<polygon points="16.746,13.367 16.746,5.783 29.495,5.783 29.495,0.285 31.495,0.285 31.495,7.784 18.745,7.784 18.745,12.076 
+			18.745,13.367 		"/>
+		<polygon points="29.495,40.451 29.495,34.867 16.746,34.867 16.746,27.367 18.745,27.367 18.745,32.867 31.493,32.867 
+			31.493,39.451 31.495,40.451 		"/>
+		<line fill="none" x1="17.745" y1="16.242" x2="17.745" y2="24.326"/>
+		<polygon points="16.769,25.301 16.769,15.267 18.722,15.267 18.722,25.301 		"/>
+		<polygon points="22.663,24.16 32.558,20.537 22.663,16.407 		"/>
+		<line fill="none" x1="31.286" y1="20.03" x2="23.204" y2="20.03"/>
+		<polygon points="17.776,21.303 17.776,19.354 27.812,19.354 27.812,21.303 		"/>
+	</g>
+</g>
+<text transform="matrix(1 0 0 1 0.4512 31.6191)" font-family="'Droid Sans'" font-size="8.017">G</text>
+<text transform="matrix(1 0 0 1 33.373 39.9121)" font-family="'Droid Sans'" font-size="8.017">S</text>
+<text transform="matrix(1 0 0 1 33.373 5.7837)" font-family="'Droid Sans'" font-size="8.017">D</text>
+</svg>

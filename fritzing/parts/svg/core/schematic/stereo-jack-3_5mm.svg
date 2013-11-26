@@ -1,26 +1,36 @@
-<?xml version='1.0' encoding='utf-8'?>
-<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
-<svg xmlns="http://www.w3.org/2000/svg" width="1.76392in" xml:space="preserve" xmlns:xml="http://www.w3.org/XML/1998/namespace" x="0px" version="1.2" y="0px" height="1.16136in" viewBox="0 0 127.002 83.618" baseProfile="tiny" id="svg2">
- <g id="schematic">
- <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000" stroke-linejoin="round" id="connector0pin" stroke-linecap="round" y1="9.935" stroke-width="2" x1="110.126" y2="9.935" x2="126.974"/>
- <rect xmlns="http://www.w3.org/2000/svg" width="0.998" x="125.976" y="8.937" height="1.997" id="connector0terminal"/>
- <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000" stroke-linejoin="round" id="connector1pin" stroke-linecap="round" y1="31.179" stroke-width="2" x1="109.128" y2="31.179" x2="125.976"/>
- <rect xmlns="http://www.w3.org/2000/svg" width="0.998" x="125.976" y="30.181" height="1.997" id="connector1terminal"/>
- <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000" stroke-linejoin="round" id="connector2pin" stroke-linecap="round" y1="31.178" stroke-width="2" x1="109.128" y2="31.178" x2="125.976"/>
- <rect xmlns="http://www.w3.org/2000/svg" width="0.998" x="125.976" y="30.18" height="1.998" id="connector2terminal"/>
- <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000" stroke-linejoin="round" id="connector3pin" stroke-linecap="round" y1="73.698" stroke-width="2" x1="109.128" y2="73.698" x2="125.976"/>
- <rect xmlns="http://www.w3.org/2000/svg" width="0.998" x="125.976" y="72.7" height="1.996" id="connector3terminal"/>
- <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000" stroke-linejoin="round" id="connector4pin" stroke-linecap="round" y1="73.698" stroke-width="2" x1="109.128" y2="73.698" x2="125.976"/>
- <rect xmlns="http://www.w3.org/2000/svg" width="0.998" x="125.976" y="72.7" height="1.997" id="connector4terminal"/>
-  <polyline xmlns="http://www.w3.org/2000/svg" fill="none" points="88.303,9.92 10.7,9.92 10.7,73.699 " stroke="#000000" stroke-width="2.4"/>
-  <polyline xmlns="http://www.w3.org/2000/svg" fill="none" points="88.303,31.18 42.349,31.18 31.611,41.918 20.873,31.18 " stroke="#000000" stroke-width="2.4"/>
-  <polyline xmlns="http://www.w3.org/2000/svg" fill="none" points="88.303,73.699 62.294,73.699 52.125,63.531 42.349,73.308 " stroke="#000000" stroke-width="2.4"/>
-  <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000" y1="9.92" stroke-width="2.4" x1="105.743" y2="9.92" x2="127.002"/>
-  <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000" y1="31.18" stroke-width="2.4" x1="105.743" y2="31.18" x2="127.002"/>
-  <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000" y1="73.698" stroke-width="2.4" x1="105.743" y2="73.698" x2="127.002"/>
-  <circle xmlns="http://www.w3.org/2000/svg" fill="none" cx="97.023" cy="73.698" stroke="#000000" r="8.72" stroke-width="2.4"/>
-  <circle xmlns="http://www.w3.org/2000/svg" fill="none" cx="97.023" cy="31.179" stroke="#000000" r="8.72" stroke-width="2.4"/>
-  <circle xmlns="http://www.w3.org/2000/svg" fill="none" cx="97.023" cy="9.919" stroke="#000000" r="8.72" stroke-width="2.4"/>
-  <rect xmlns="http://www.w3.org/2000/svg" width="9.5" x="1.2" y="20.937" fill="none" height="52.763" stroke="#000000" stroke-width="2.4"/>
- </g> 
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="36.584px"
+	 height="21.321px" viewBox="0 0 36.584 21.321" enable-background="new 0 0 36.584 21.321" xml:space="preserve">
+<g id="schematic">
+	
+		<line fill="none" stroke="#000000" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round" x1="18" y1="19.926" x2="21.601" y2="16.326"/>
+	
+		<line fill="none" stroke="#000000" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round" x1="21.601" y1="16.326" x2="25.2" y2="19.926"/>
+	
+		<line fill="none" stroke="#000000" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round" x1="25.2" y1="19.926" x2="28.8" y2="19.926"/>
+	
+		<line fill="none" stroke="#000000" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round" x1="28.8" y1="12.726" x2="18" y2="12.726"/>
+	
+		<line fill="none" stroke="#000000" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round" x1="18" y1="12.726" x2="14.4" y2="16.326"/>
+	
+		<line fill="none" stroke="#000000" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round" x1="14.4" y1="16.326" x2="10.8" y2="12.726"/>
+	
+		<line fill="none" stroke="#000000" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round" x1="28.8" y1="5.527" x2="7.2" y2="5.527"/>
+	<rect y="10.567" width="14.4" height="4.319"/>
+	
+		<line id="connector0pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="36" y1="12.726" x2="28.8" y2="12.726"/>
+	<rect id="connector0terminal" x="36" y="12.726" fill="none" width="0.001" height="0.001"/>
+	<text transform="matrix(1 0 0 1 25.7002 11.0022)" font-family="'DroidSans'" font-size="3.024">RIGHT</text>
+	
+		<line id="connector3pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="36" y1="19.926" x2="28.8" y2="19.926"/>
+	<rect id="connector3terminal" x="36" y="19.926" fill="none" width="0.001" height="0"/>
+	<text transform="matrix(1 0 0 1 25.7002 18.2034)" font-family="'DroidSans'" font-size="3.024">LEFT</text>
+	
+		<line id="connector2pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="36" y1="5.527" x2="28.8" y2="5.527"/>
+	<rect id="connector2terminal" x="36" y="5.527" fill="none" width="0.001" height="0"/>
+	<text transform="matrix(1 0 0 1 25.7002 3.802)" font-family="'DroidSans'" font-size="3.024">SLEEVE</text>
+</g>
 </svg>

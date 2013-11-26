@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  --><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'><svg enable-background="new 0 0 147.25 122.998" height="1.7083in" id="Layer_1" inkscape:output_extension="org.inkscape.output.svg.inkscape" inkscape:version="0.46" sodipodi:docname="lm358_schematic.svg" sodipodi:version="0.32" version="1.1" viewBox="0 0 147.25 122.998" width="2.0451389in" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+<sodipodi:namedview bordercolor="#666666" borderopacity="1.0" gridtolerance="10.0" guidetolerance="10.0" id="base" inkscape:current-layer="Layer_1" inkscape:cx="87.149994" inkscape:cy="104.14999" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:window-height="726" inkscape:window-width="645" inkscape:window-x="1330" inkscape:window-y="0" inkscape:zoom="2.3715796" objecttolerance="10.0" pagecolor="#ffffff" showgrid="false">
+	</sodipodi:namedview>
+<defs>
+	
+	
+		<inkscape:perspective id="perspective43" inkscape:persp3d-origin="87.149994 : 69.433329 : 1" inkscape:vp_x="0 : 104.14999 : 1" inkscape:vp_y="0 : 1000 : 0" inkscape:vp_z="174.29999 : 104.14999 : 1" sodipodi:type="inkscape:persp3d">
+		</inkscape:perspective>
+</defs>
+<g id="schematic">
+	<rect height="1.999" id="connector2pin" width="10" x="4.132" y="98.404"/>
+	<rect height="2" id="connector0pin" width="10" x="4.132" y="32.405"/>
+	<rect height="2" id="connector1pin" width="10" x="4.132" y="65.433"/>
+	<rect height="2" id="connector0terminal" width="2" x="2.982" y="32.405"/>
+	<rect height="2" id="connector1terminal" width="2" x="2.982" y="65.433"/>
+	<rect height="1.999" id="connector2terminal" width="2" x="2.982" y="98.404"/>
+	
+		<rect fill="none" height="107.998" id="rect2707" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.9988" width="109.998" x="35.132" y="12.405"/>
+	
+		<line fill="none" id="line2711" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.3" x1="4.132" x2="34.414" y1="66.433" y2="66.433"/>
+	
+		<line fill="none" id="line2713" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.3" x1="4.132" x2="34.414" y1="33.405" y2="33.405"/>
+	
+		<line fill="none" id="line2715" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.3" x1="4.132" x2="34.414" y1="99.461" y2="99.461"/>
+	<polyline fill="none" id="line2956" points="54.129,91.604    57.731,91.604 61.333,91.604 61.333,77.204 90.129,77.204 90.129,91.604 118.932,91.604 118.932,77.204 126.13,77.204  " stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+	<polyline fill="none" id="line2956_2_" points="54.131,55.605    75.73,55.605 75.73,41.205 104.531,41.205 104.531,55.605 126.13,55.605  " stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+	
+		<line fill="none" stroke="#000000" stroke-dasharray="2,3" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" x1="118.932" x2="118.932" y1="98.802" y2="34.004"/>
+	
+		<line fill="none" stroke="#000000" stroke-dasharray="2,3" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" x1="104.531" x2="104.531" y1="98.802" y2="34.004"/>
+	
+		<line fill="none" stroke="#000000" stroke-dasharray="2,3" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" x1="90.131" x2="90.131" y1="98.802" y2="34.004"/>
+	
+		<line fill="none" stroke="#000000" stroke-dasharray="2,3" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" x1="75.73" x2="75.73" y1="98.802" y2="34.004"/>
+	
+		<line fill="none" stroke="#000000" stroke-dasharray="2,3" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" x1="61.333" x2="61.333" y1="98.802" y2="34.004"/>
+	<text font-family="'Droid Sans'" font-size="8" transform="matrix(1 0 0 1 36.1318 8.8054)">rotary encoder</text>
+	<text font-family="'Droid Sans'" font-size="8" transform="matrix(1 0 0 1 38.5508 36.0037)">A</text>
+	<text font-family="'Droid Sans'" font-size="8" transform="matrix(1 0 0 1 38.499 102.2419)">B</text>
+	<text font-family="'Droid Sans'" font-size="8" transform="matrix(1 0 0 1 38.5713 69.0037)">C</text>
+</g>
+</svg>

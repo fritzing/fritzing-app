@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Made by Carlos Hansen Web: www.tlaana.com  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="fuse2" xmlns:xml="http://www.w3.org/XML/1998/namespace"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="102.066px"
+	 height="22.357px" viewBox="0 0 102.066 22.357" enable-background="new 0 0 102.066 22.357" xml:space="preserve">
+<g id="schematic">
+	<path id="w" fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" stroke-miterlimit="10" d="M76.598,11.178
+		c0,5.511-5.774,9.979-12.898,9.979c-7.123,0-12.674-4.468-12.674-9.979S45.475,1.2,38.352,1.2s-12.898,4.468-12.898,9.979"/>
+	
+		<circle id="p1" fill="#FFFFFF" stroke="#000000" stroke-width="2.4" stroke-linecap="round" stroke-miterlimit="10" cx="25.452" cy="11.178" r="2.994"/>
+	
+		<circle id="p0" fill="#FFFFFF" stroke="#000000" stroke-width="2.4" stroke-linecap="round" stroke-miterlimit="10" cx="76.597" cy="11.178" r="2.994"/>
+	
+		<line id="connector0pin" fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" stroke-miterlimit="10" x1="1.2" y1="11.177" x2="22.46" y2="11.177"/>
+	
+		<line id="connector1pin" fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" stroke-miterlimit="10" x1="79.606" y1="11.177" x2="100.866" y2="11.177"/>
+	<rect id="connector0terminal" x="0.7" y="10.677" fill="none" width="1" height="1"/>
+	<rect id="connector1terminal" x="100.366" y="10.677" fill="none" width="1" height="1"/>
+</g>
+</svg>

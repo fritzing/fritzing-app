@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns:xml="http://www.w3.org/XML/1998/namespace"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="54.337px"
+	 height="90.131px" viewBox="0 0 54.337 90.131" enable-background="new 0 0 54.337 90.131" xml:space="preserve">
+<g id="schematic">
+	<rect id="connector1pin" x="26.677" y="80.131" fill="none" width="2" height="10"/>
+	<rect id="connector0pin" x="26.677" y="0.231" fill="none" width="2" height="10"/>
+	<rect id="connector1terminal" x="26.677" y="88.131" fill="none" width="2" height="2"/>
+	<rect id="connector0terminal" x="26.677" y="0.231" fill="none" width="2" height="2"/>
+	<g id="text">
+		<g>
+			<path d="M31.788,66.542v-1.113h5.544v1.113H31.788z"/>
+		</g>
+		<g>
+			<path fill="#FF0000" d="M34.027,25.778h-2.34v-1.211h2.34v-2.192h1.067v2.192h2.326v1.211h-2.326v2.208h-1.066L34.027,25.778
+				L34.027,25.778z"/>
+		</g>
+	</g>
+	<g id="diagram">
+		
+			<line fill="none" stroke="#000000" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" x1="27.677" y1="1.38" x2="27.677" y2="32.38"/>
+		
+			<line fill="none" stroke="#000000" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" x1="27.677" y1="57.881" x2="27.677" y2="88.881"/>
+		
+			<line fill="none" stroke="#000000" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" x1="53.177" y1="32.38" x2="1.177" y2="32.38"/>
+		
+			<line fill="none" stroke="#000000" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" x1="41.844" y1="40.88" x2="12.51" y2="40.88"/>
+		
+			<line fill="none" stroke="#000000" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" x1="53.177" y1="49.381" x2="1.177" y2="49.381"/>
+		
+			<line fill="none" stroke="#000000" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" x1="41.844" y1="57.881" x2="12.51" y2="57.881"/>
+	</g>
+</g>
+</svg>

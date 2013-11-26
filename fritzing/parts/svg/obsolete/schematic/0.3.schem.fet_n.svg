@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="svg2" xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="38.125px"
+	 height="40.255px" viewBox="0 0 38.125 40.255" enable-background="new 0 0 38.125 40.255" xml:space="preserve">
+<g>
+	<g id="schematic">
+		<g>
+			<polygon points="0,34.671 0,32.671 11.832,32.671 11.832,6.587 11.834,5.586 13.833,5.586 13.833,34.671 			"/>
+			<polygon points="16.667,13.17 16.667,5.586 29.416,5.586 29.416,0.088 31.416,0.088 31.416,7.587 18.666,7.587 18.666,11.879 
+				18.666,13.17 			"/>
+			<polygon points="29.416,40.255 29.416,34.671 16.667,34.671 16.667,27.171 18.666,27.171 18.666,32.671 31.414,32.671 
+				31.414,39.255 31.416,40.255 			"/>
+			<line fill="none" x1="17.666" y1="16.045" x2="17.666" y2="24.13"/>
+			<polygon points="16.689,25.104 16.689,15.07 18.643,15.07 18.643,25.104 			"/>
+			<polygon points="27.479,16.21 17.584,19.833 27.479,23.964 			"/>
+			<line fill="none" x1="31.207" y1="19.833" x2="23.125" y2="19.833"/>
+			<polygon points="22.148,20.808 22.148,18.858 32.184,18.858 32.184,20.808 			"/>
+		</g>
+		<rect id="connector0pin" x="0.001" y="32.874" width="8.5" height="1.584"/>
+		<rect id="connector1pin" x="29.584" y="0.083" width="1.416" height="4.959"/>
+		<rect id="connector1terminal" x="29.965" y="0.127" width="0.75" height="0.799"/>
+		<rect id="connector0terminal" x="0.001" y="33.132" width="0.749" height="0.801"/>
+		<rect id="connector2pin" x="29.6" y="35.208" width="1.416" height="4.959"/>
+		<rect id="connector2terminal" x="29.98" y="39.315" width="0.75" height="0.799"/>
+	</g>
+	<text transform="matrix(1 0 0 1 0.2061 31.4219)" font-family="'Droid Sans'" font-size="8.017">G</text>
+	<text transform="matrix(1 0 0 1 32.5996 39.7148)" font-family="'Droid Sans'" font-size="8.017">S</text>
+	<text transform="matrix(1 0 0 1 32.1836 6.6294)" font-family="'Droid Sans'" font-size="8.017">D</text>
+</g>
+</svg>

@@ -52,7 +52,7 @@ protected:
 	void initLayout();
 	QWidget * initRecent();
 	QWidget * initBlog();
-	QWidget * initKit();
+	QWidget * initShop();
 	QWidget * initTip();
 	void updateRecent();
 	void readBlog(const QDomDocument &);
@@ -80,6 +80,10 @@ protected:
 	QLabel * m_tip;
 	QFrame * m_blog;
 	QFrame * m_creatorKit;
+    QFrame * m_fabContentFrame;
+    QFrame * m_fabFooterFrame;
+    QFrame * m_shopContentFrame;
+    QFrame * m_shopFooterFrame;
 };
 
 

@@ -101,9 +101,7 @@ QWidget * WelcomeView::initRecent() {
 	QFrame * frame = new QFrame;
     frame->setObjectName("recentFrame");
 	QVBoxLayout * frameLayout = new QVBoxLayout;
-
-    frameLayout->setMargin(0);
-    frameLayout->setSpacing(0);
+    zeroMargin(frameLayout);
 
 
 	QStringList names;
@@ -152,6 +150,8 @@ QWidget * WelcomeView::makeRecentItem(const QString & objectName, const QString 
     QFrame * rFrame = new QFrame;
     QHBoxLayout * rFrameLayout = new QHBoxLayout;
 
+    zeroMargin(rFrameLayout);
+
     icon = new QLabel(iconText);
     icon->setObjectName("recentIcon");
     connect(icon, SIGNAL(linkActivated(const QString &)), this, SLOT(clickRecent(const QString &)));
@@ -172,41 +172,76 @@ QWidget * WelcomeView::initKit() {
     QFrame * frame = new QFrame();
     frame->setObjectName("shopFrame");
     QVBoxLayout * frameLayout = new QVBoxLayout;
-
-    frameLayout->setMargin(0);
-    frameLayout->setSpacing(0);
+    zeroMargin(frameLayout);
 
 
 	// use parent/child relation to manage overlapping widgets
     QFrame * titleFrame = new QFrame();
     titleFrame->setObjectName("shopTitleFrame");
     QHBoxLayout * titleFrameLayout = new QHBoxLayout;
-
-    titleFrameLayout->setMargin(0);
-    titleFrameLayout->setSpacing(0);
+    zeroMargin(titleFrameLayout);
 
    /* overlapFrame->setGeometry(0, 0, pixmap.width(), 30);*/
 
-    QLabel * title = new QLabel(tr("Fritzing Creator Kit"));
+    QLabel * title = new QLabel(tr("Fab"));
     title->setObjectName("shopTitle");
     titleFrameLayout->addWidget(title);
 
-    QLabel * url = new QLabel(QString("<a href='http://fritzing.org/shop/'  style='text-decoration:none; display:block; font-weight:bold; color:#323232;'>%1</a>").arg(tr("| Shop >>")));
+    QLabel * url = new QLabel(QString("<a href='http://fritzing.org/shop/'  style='text-decoration:none; display:block; font-weight:bold; color:#323232;'>%1</a>").arg(tr("| Shop")));
     url->setObjectName("shopTitleGoto");
     connect(url, SIGNAL(linkActivated(const QString &)), this, SLOT(clickBlog(const QString &)));
     titleFrameLayout->addWidget(url);
 
-
     titleFrameLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Expanding));
-
-
     titleFrame->setLayout(titleFrameLayout);
 
     frameLayout->addWidget(titleFrame);
 
+
+    {
+    QFrame * contentFrame = new QFrame();
+    contentFrame->setObjectName("shopContentFrame");
+
+    QHBoxLayout * contentFrameLayout = new QHBoxLayout;
+    zeroMargin(contentFrameLayout);
+
     QLabel * label = new QLabel("<img src=':/resources/images/welcome_kit.png' />");
-    label->setObjectName("shopImage");
-    frameLayout->addWidget(label);
+    label->setObjectName("shopContentImage");
+    contentFrameLayout->addWidget(label);
+
+        QFrame * contentTextFrame = new QFrame();
+        contentTextFrame->setObjectName("shopContentTextFrame");
+
+        QVBoxLayout * contentTextFrameLayout = new QVBoxLayout;
+        zeroMargin(contentTextFrameLayout);
+
+        contentTextFrameLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Expanding));
+
+        label = new QLabel(QString("Fritzing CreatorKit"));
+        label->setObjectName("shopContentTextHeadline");
+        contentTextFrameLayout->addWidget(label);
+        connect(label, SIGNAL(linkActivated(const QString &)), this, SLOT(clickBlog(const QString &)));
+
+        label = new QLabel(QString("Lorem Ipsum si dolor amet de si dalirium de la lorem ipsum si dolor amet Lorem Ipsum si dolor amet de si dalirium de la lorem ipsum si dolor amet Lorem Ipsum si dolor amet de si dalirium de la lorem ipsum si dolor amet Lorem Ipsum si dolor amet de si dalirium de la lorem ipsum si dolor amet Lorem Ipsum si dolor amet de si dalirium de la lorem ipsum si dolor amet "));
+        label->setObjectName("shopContentTextDescription");
+        contentTextFrameLayout->addWidget(label);
+        connect(label, SIGNAL(linkActivated(const QString &)), this, SLOT(clickBlog(const QString &)));
+
+        label = new QLabel(QString("<a href='http://fritzing.org/creatorkit/'  style='text-decoration:none; color:#802742;'>%1</a>").arg(tr("Get your CreatorKit now.   ")));
+        label->setObjectName("shopContentTextCaption");
+        contentTextFrameLayout->addWidget(label);
+        connect(label, SIGNAL(linkActivated(const QString &)), this, SLOT(clickBlog(const QString &)));
+
+        contentTextFrameLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Expanding));
+
+        contentTextFrame->setLayout(contentTextFrameLayout);
+
+        contentFrameLayout->addWidget(contentTextFrame);
+
+    contentFrame->setLayout(contentFrameLayout);
+
+    frameLayout->addWidget(contentFrame);
+
 
     frameLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Minimum, QSizePolicy::Expanding));
 
@@ -214,7 +249,7 @@ QWidget * WelcomeView::initKit() {
     footerFrame->setObjectName("shopFooterFrame");
 
     QHBoxLayout * footerFrameLayout = new QHBoxLayout;
-
+    zeroMargin(footerFrameLayout);
     footerFrameLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Expanding));
 
     QLabel * footerLabel = new QLabel(QString("<a href='http://fritzing.org/creatorkit/'  style='text-decoration:none; color:#802742;'>%1</a>").arg(tr("Get your CreatorKit now.   ")));
@@ -231,6 +266,79 @@ QWidget * WelcomeView::initKit() {
     frameLayout->addWidget(footerFrame);
 
     frame->setLayout(frameLayout);
+    }
+
+    {
+        QFrame * contentFrame = new QFrame();
+        contentFrame->setObjectName("shopContentFrame");
+
+        QHBoxLayout * contentFrameLayout = new QHBoxLayout;
+        zeroMargin(contentFrameLayout);
+
+        QLabel * label = new QLabel("<img src=':/resources/images/welcome_kit.png' />");
+        label->setObjectName("shopContentImage");
+        contentFrameLayout->addWidget(label);
+
+            QFrame * contentTextFrame = new QFrame();
+            contentTextFrame->setObjectName("shopContentTextFrame");
+
+            QVBoxLayout * contentTextFrameLayout = new QVBoxLayout;
+            zeroMargin(contentTextFrameLayout);
+
+            contentTextFrameLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Expanding));
+
+            label = new QLabel(QString("Fritzing CreatorKit"));
+            label->setObjectName("shopContentTextHeadline");
+            contentTextFrameLayout->addWidget(label);
+            connect(label, SIGNAL(linkActivated(const QString &)), this, SLOT(clickBlog(const QString &)));
+
+            label = new QLabel(QString("Lorem Ipsum si dolor amet de si dalirium de la lorem ipsum si dolor amet Lorem Ipsum si dolor amet de si dalirium de la lorem ipsum si dolor amet Lorem Ipsum si dolor amet de si dalirium de la lorem ipsum si dolor amet Lorem Ipsum si dolor amet de si dalirium de la lorem ipsum si dolor amet Lorem Ipsum si dolor amet de si dalirium de la lorem ipsum si dolor amet "));
+            label->setObjectName("shopContentTextDescription");
+            contentTextFrameLayout->addWidget(label);
+            connect(label, SIGNAL(linkActivated(const QString &)), this, SLOT(clickBlog(const QString &)));
+
+            label = new QLabel(QString("<a href='http://fritzing.org/creatorkit/'  style='text-decoration:none; color:#802742;'>%1</a>").arg(tr("Get your CreatorKit now.   ")));
+            label->setObjectName("shopContentTextCaption");
+            contentTextFrameLayout->addWidget(label);
+            connect(label, SIGNAL(linkActivated(const QString &)), this, SLOT(clickBlog(const QString &)));
+
+            contentTextFrameLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Expanding));
+
+            contentTextFrame->setLayout(contentTextFrameLayout);
+
+            contentFrameLayout->addWidget(contentTextFrame);
+
+        contentFrame->setLayout(contentFrameLayout);
+
+        frameLayout->addWidget(contentFrame);
+
+
+    frameLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Minimum, QSizePolicy::Expanding));
+
+    QFrame * footerFrame = new QFrame();
+    footerFrame->setObjectName("shopFooterFrame");
+
+    QHBoxLayout * footerFrameLayout = new QHBoxLayout;
+    zeroMargin(footerFrameLayout);
+    footerFrameLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Expanding));
+
+    QLabel * footerLabel = new QLabel(QString("<a href='http://fritzing.org/creatorkit/'  style='text-decoration:none; color:#802742;'>%1</a>").arg(tr("Get your CreatorKit now.   ")));
+    footerLabel->setObjectName("shopLogoText");
+    footerFrameLayout->addWidget(footerLabel);
+    connect(footerLabel, SIGNAL(linkActivated(const QString &)), this, SLOT(clickBlog(const QString &)));
+
+    QLabel * footerLogoLabel = new QLabel(tr("<a href='http://fritzing.org/creatorkit/'><img src=':/resources/images/icons/WS-shopLogo.png'/></a>"));
+    footerLogoLabel->setObjectName("shopLogo");
+    footerFrameLayout->addWidget(footerLogoLabel);
+    connect(footerLogoLabel, SIGNAL(linkActivated(const QString &)), this, SLOT(clickBlog(const QString &)));
+
+    footerFrame->setLayout(footerFrameLayout);
+    frameLayout->addWidget(footerFrame);
+
+    }
+
+    frame->setLayout(frameLayout);
+
     return frame;
 }
 
@@ -270,7 +378,7 @@ QWidget * WelcomeView::initBlog() {
          m_blogEntryList << blogEntry;
          blogEntry->setObjectName("blogEntry");
          QHBoxLayout * blogEntryLayout = new QHBoxLayout;
-
+         zeroMargin(blogEntryLayout);
             /* QFrame * blogEntryPicture = new QFrame; */
 
             QLabel * picLabel = new QLabel;
@@ -282,6 +390,7 @@ QWidget * WelcomeView::initBlog() {
             QFrame * blogEntryTextFrame = new QFrame;
             blogEntryTextFrame ->setObjectName("blogEntryTextFrame");
             QVBoxLayout * blogEntryTextLayout = new QVBoxLayout;
+            zeroMargin(blogEntryTextLayout);
 
                 QLabel * label = new QLabel();
                 label->setObjectName("blogEntryTitle");
@@ -312,6 +421,7 @@ QWidget * WelcomeView::initBlog() {
     footerFrame->setObjectName("blogFooterFrame");
 
         QHBoxLayout * footerFrameLayout = new QHBoxLayout;
+        zeroMargin(footerFrameLayout);
 
         footerFrameLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Expanding));
 

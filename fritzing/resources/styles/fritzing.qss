@@ -130,7 +130,18 @@ QMenu::item:selected {
      width: 15px;
      height: 15px;
  }
- 
+
+QMenu::item:disabled {
+	background-color: #888;
+	color:#dadada;
+
+}
+QMenu::item:disabled:selected {
+	background-color: #777;
+	color:#dadada;
+
+}
+
  /*############## indicator:non-exclusive is a checkbox ###########*/
  QMenu::indicator:non-exclusive:checked {
      image: url(:/resources/images/icons/check.png);
@@ -387,7 +398,7 @@ border:none;
 	font-size: 14px;
 	margin:0px;
 	color: #000;
-	qproperty-wordWrap: true;
+
 	min-height: 18px;
 
 }
@@ -397,8 +408,7 @@ border:none;
 	border:none;
 	font-size: 12px;
 	margin:0px;
-	qproperty-wordWrap: true;
-		min-height: 16px;
+	min-height: 16px;
 
 }
 
@@ -407,7 +417,7 @@ border:none;
 	border:none;
 	font-size: 10px;
 	margin:0px;
-	min-height: 14px;
+	min-height: 11px;
 
 }
 #blogEntryPicture {
@@ -502,9 +512,40 @@ border:none;
 	background:transparent;
 }
 
-#shopImage {
+#shopContentFrame {
+	/*background:#00f; */
+	border:none;
+	font: "Droid Sans";
+	}
+
+
+#shopContentImage {
 	min-height:20px;
 	}
+	
+	
+#shopContentTextFrame {
+	/*background:#00f; */
+	border:none;
+	}
+
+
+	
+#shopContentTextHeadline {
+	font-size:16px;
+	font-weight:bold;
+	}
+	
+	#shopContentTextDescription {
+	font-size:14px;
+	font-weight:regular;
+	qproperty-wordWrap: true;
+	}
+	
+	#shopContentTextCaption {
+	font-size:11px;
+	}
+	
 	
 #shopFooterFrame {
 		border-top:1px solid #c4c4c4; 

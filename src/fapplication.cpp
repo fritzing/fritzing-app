@@ -65,6 +65,7 @@ $Date: 2013-04-19 12:51:22 +0200 (Fr, 19. Apr 2013) $
 #include "autoroute/panelizer.h"
 #include "sketch/sketchwidget.h"
 #include "sketch/pcbsketchwidget.h"
+#include "help/firsttimehelpdialog.h"
 
 // dependency injection :P
 #include "referencemodel/sqlitereferencemodel.h"
@@ -535,6 +536,7 @@ FApplication::~FApplication(void)
 	ItemDrag::cleanup();
 	Version::cleanup();
 	TipsAndTricks::cleanup();
+	FirstTimeHelpDialog::cleanup();
 	TranslatorListModel::cleanup();
 	FolderUtils::cleanup();
 	SearchLineEdit::cleanup();

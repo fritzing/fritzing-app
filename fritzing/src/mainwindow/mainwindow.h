@@ -244,6 +244,7 @@ protected slots:
 	void exportEtchable();
     void about();
 	void tipsAndTricks();
+	void firstTimeHelp();
     void copy();
     void cut();
     void paste();
@@ -639,7 +640,6 @@ protected:
     // Fritzing Menu
     QMenu *m_fritzingMenu;
     QAction *m_aboutAct;
-    QAction *m_tipsAndTricksAct;
     QAction *m_preferencesAct;
     QAction *m_quitAct;
     QAction *m_exceptionAct;
@@ -837,6 +837,8 @@ protected:
 	QAction *m_enableDebugAct;
     QAction *m_importFilesFromPrevInstallAct;
 	QAction *m_partsEditorHelpAct;
+    QAction *m_tipsAndTricksAct;
+    QAction *m_firstTimeHelpAct;
 
 	// Wire Color Menu
 	QMenu * m_breadboardWireColorMenu;

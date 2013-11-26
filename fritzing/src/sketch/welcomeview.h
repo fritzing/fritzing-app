@@ -66,18 +66,17 @@ signals:
 protected slots:
 	void clickRecent(const QString &);
     void gotBlogSnippet(QNetworkReply *);
+    void gotBlogImage(QNetworkReply *);
 	void clickBlog(const QString &);
 
 protected:
 	QList<QLabel *> m_recentList;
 	QList<QLabel *> m_recentIconList;
-	QList<QLabel *> m_blogTitleList;
-    QList<QLabel *> m_blogTextList;
     QList<QFrame *> m_blogEntryList;
-    QList<QFrame *> m_blogEntryPicture;
-    QList<QFrame *> m_blogEntryDate;
-    QList<QLabel *> m_blogArtikelSpacer;
-    QList<QLabel *> m_blogLogo;
+    QList<QLabel *> m_blogEntryTitleList;
+    QList<QLabel *> m_blogEntryTextList;
+    QList<QLabel *> m_blogEntryPictureList;
+    QList<QLabel *> m_blogEntryDateList;
 	QLabel * m_tip;
 	QFrame * m_blog;
 	QFrame * m_creatorKit;

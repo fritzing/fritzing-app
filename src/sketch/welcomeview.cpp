@@ -49,6 +49,11 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 #include <QDomNodeList>
 #include <QDomElement>
 
+void zeroMargin(QLayout * layout) {
+    layout->setMargin(0);
+    layout->setSpacing(0);
+}
+
 //////////////////////////////////////
 
 WelcomeView::WelcomeView(QWidget * parent) : QFrame(parent) 
@@ -62,7 +67,7 @@ WelcomeView::WelcomeView(QWidget * parent) : QFrame(parent)
 
     QNetworkAccessManager * manager = new QNetworkAccessManager(this);
 	connect(manager, SIGNAL(finished(QNetworkReply *)), this, SLOT(gotBlogSnippet(QNetworkReply *)));
-	manager->get(QNetworkRequest(QUrl("http://blog.fritzing.org/recent-posts/")));
+	manager->get(QNetworkRequest(QUrl("http://blog.fritzing.org/recent-posts-app/")));
 
 	TipsAndTricks::initTipSets();
     m_tip->setText(QString("<a href='tip' style='text-decoration:none; color:#2e94af;'>%1</a>").arg(TipsAndTricks::randomTip()));
@@ -234,8 +239,7 @@ QWidget * WelcomeView::initBlog() {
     QFrame * frame = new QFrame();
 	frame->setObjectName("blogFrame");
 	QVBoxLayout * frameLayout = new QVBoxLayout;
-    frameLayout->setMargin(0);
-    frameLayout->setSpacing(0);
+    zeroMargin(frameLayout);
 
 
     QFrame * titleFrame = new QFrame();
@@ -243,8 +247,7 @@ QWidget * WelcomeView::initBlog() {
 
 
 	QHBoxLayout * titleFrameLayout = new QHBoxLayout;
-    titleFrameLayout->setMargin(0);
-    titleFrameLayout->setSpacing(0);
+    zeroMargin(titleFrameLayout);
 
 
     QLabel * titleLabel = new QLabel(tr("News and Stories"));
@@ -262,17 +265,18 @@ QWidget * WelcomeView::initBlog() {
 	frameLayout->addWidget(titleFrame);
 
 	for (int i = 0; i < 3; i++) {
-     QFrame * blogEntry = new QFrame;
-     m_blogEntryList << blogEntry;
-     blogEntry->setObjectName("blogEntry");
-     QHBoxLayout * blogEntryLayout = new QHBoxLayout;
+         QFrame * blogEntry = new QFrame;
+         m_blogEntryList << blogEntry;
+         blogEntry->setObjectName("blogEntry");
+         QHBoxLayout * blogEntryLayout = new QHBoxLayout;
 
             /* QFrame * blogEntryPicture = new QFrame; */
 
             QLabel * picLabel = new QLabel;
             picLabel->setObjectName("blogEntryPicture");
             blogEntryLayout->addWidget(picLabel);
-           /* m_blogEntryPicture << picLabel;*/
+            m_blogEntryPictureList << picLabel;
+            connect(picLabel, SIGNAL(linkActivated(const QString &)), this, SLOT(clickBlog(const QString &)));
 
             QFrame * blogEntryTextFrame = new QFrame;
             blogEntryTextFrame ->setObjectName("blogEntryTextFrame");
@@ -281,18 +285,18 @@ QWidget * WelcomeView::initBlog() {
                 QLabel * label = new QLabel();
                 label->setObjectName("blogEntryTitle");
                 blogEntryTextLayout->addWidget(label);
-                m_blogTitleList << label;
+                m_blogEntryTitleList << label;
+                connect(label, SIGNAL(linkActivated(const QString &)), this, SLOT(clickBlog(const QString &)));
 
                 label = new QLabel();
                 label->setObjectName("blogEntryText");
                 blogEntryTextLayout->addWidget(label);
-                m_blogTextList << label;
-                connect(label, SIGNAL(linkActivated(const QString &)), this, SLOT(clickBlog(const QString &)));
+                m_blogEntryTextList << label;
 
                 label = new QLabel();
                 label->setObjectName("blogEntryDate");
                 blogEntryTextLayout->addWidget(label);
-                m_blogEntryDate << label;
+                m_blogEntryDateList << label;
 
             blogEntryTextFrame->setLayout(blogEntryTextLayout);
             blogEntryLayout->addWidget(blogEntryTextFrame);
@@ -302,9 +306,6 @@ QWidget * WelcomeView::initBlog() {
 	}
 
   /*  frameLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Minimum, QSizePolicy::Expanding));*/
-
-    foreach (QFrame * blogEntry, m_blogEntryList) blogEntry->setVisible(false);
-
 
     QFrame * footerFrame = new QFrame();
     footerFrame->setObjectName("blogFooterFrame");
@@ -327,6 +328,8 @@ QWidget * WelcomeView::initBlog() {
     frameLayout->addWidget(footerFrame);
 
     frame->setLayout(frameLayout);
+
+    foreach (QFrame * blogEntry, m_blogEntryList) blogEntry->setVisible(false);
 
     return frame;
 }
@@ -382,7 +385,7 @@ void WelcomeView::gotBlogSnippet(QNetworkReply * networkReply) {
 	int responseCode = networkReply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
 	if (responseCode == 200) {
         QString data(networkReply->readAll());
-        //DebugDialog::debug("response data " + data);
+        DebugDialog::debug("response data " + data);
 		data = "<thing>" + data + "</thing>";		// make it one tree for xml parsing
 		QDomDocument doc;
 	    QString errorStr;
@@ -401,43 +404,109 @@ void WelcomeView::clickBlog(const QString & url) {
 	QDesktopServices::openUrl(url);
 }
 
+		/*
+
+        // sample output from http://blog.fritzing.org/recent-posts-app/
+
+
+<ul>
+    <li>
+        <img src=""/>
+        <a class="title" href="http://blog.fritzing.org/2013/11/19/minimetalmaker/" title="MiniMetalMaker">MiniMetalMaker</a>
+        <p class="date">Nov. 19, 2013</p>
+        <p class="author">Nushin Isabelle</p>
+        <p class="intro">We have heard a lot about synthetic 3D printers for home use - now we are entering the home use met...</p>
+    </li> 
+    <li>
+        <img src="http://blog.fritzing.org/wp-content/uploads/doku-deckblatt.jpg"/>
+        <a class="title" href="http://blog.fritzing.org/2013/11/19/the-little-black-midi/" title="The Little Black Midi">The Little Black Midi</a>
+        <p class="date">Nov. 19, 2013</p>
+        <p class="author">Nushin Isabelle</p>
+        <p class="intro">Howdy!
+
+We thought we should delight our readers a little by showing some dainties of creative ele...</p>
+    </li> 
+    <li>
+        <img src="http://blog.fritzing.org/wp-content/uploads/charles1.jpg"/>
+        <a class="title" href="http://blog.fritzing.org/2013/11/15/light-up-your-flat-with-charles-planetary-gear-system/" title="Light up your flat with Charles&#039; planetary gear system">Light up your flat with Charles' planetary gear system</a>
+        <p class="date">Nov. 15, 2013</p>
+        <p class="author">Nushin Isabelle</p>
+        <p class="intro">Today, we got a visitor in the Fritzing Lab: Our neighbour, Charles Oleg, came by to show us his new...</p>
+    </li> 
+</ul>
+		*/
+
+
 void WelcomeView::readBlog(const QDomDocument & doc) {
-	QDomNodeList nodeList = doc.elementsByTagName("a");
+	QDomNodeList nodeList = doc.elementsByTagName("li");
 	int ix = 0;
 	for (int i = 0; i < nodeList.count(); i++) {
 		QDomElement element = nodeList.at(i).toElement();
-		QString title = element.attribute("title");
-		QString href = element.attribute("href");
-		if (title.isEmpty() || href.isEmpty()) continue;
+        QDomElement child = element.firstChildElement();
+        QHash<QString, QString> stuff;
+        while (!child.isNull()) {
+            if (child.tagName() == "img") {
+                stuff.insert("img", child.attribute("src"));
+            }
+            else {
+                QString clss = child.attribute("class");
+                if (clss == "title") {
+                    stuff.insert("title", child.attribute("title"));
+                    stuff.insert("href", child.attribute("href"));
+                }
+                else {
+                    stuff.insert(clss, child.text());
+                }
+            }
+            child = child.nextSiblingElement();
+        }
+        if (stuff.value("title", "").isEmpty()) continue;
+        if (stuff.value("href", "").isEmpty()) continue;
+            
+		m_blogEntryTitleList[ix]->setText(QString("<a href='%1' style='text-decoration:none; color:#666;'>%2</a>").arg(stuff.value("href")).arg(stuff.value("title")));
+        QString text = stuff.value("intro", "");
+        text.remove("\r");
+        text.remove("\n");
+        m_blogEntryTextList[ix]->setText(text);
+        m_blogEntryPictureList[ix]->setText("");
+        if (!stuff.value("img", "").isEmpty()) {
+            QNetworkAccessManager * manager = new QNetworkAccessManager(this);
+            manager->setProperty("index", ix);
+            manager->setProperty("href", stuff.value("href"));
+	        connect(manager, SIGNAL(finished(QNetworkReply *)), this, SLOT(gotBlogImage(QNetworkReply *)));
+	        manager->get(QNetworkRequest(QUrl(stuff.value("img"))));
+        }
 
-		m_blogTitleList[ix]->setText(title);
-        m_blogTextList[ix]->setText(QString("<a href='%1' style='text-decoration:none; color:#666;'>%2</a>").arg(href).arg(tr("read more >>")));
+        QString dateStuff;
+        if (!stuff.value("date", "").isEmpty()) {
+            dateStuff.append(stuff.value("date"));
+            dateStuff.append("    ");
+        }
+        dateStuff.append(stuff.value("author"));
 
+        m_blogEntryDateList[ix]->setText(dateStuff);
+        
         m_blogEntryList[ix]->setVisible(true);
-
-		if (++ix >= m_blogTextList.count()) {
+		if (++ix >= m_blogEntryTextList.count()) {
 			break;
 		}
 
 	}
+}
 
-		/*
+void WelcomeView::gotBlogImage(QNetworkReply * networkReply) {
 
-		<ul>
-<li>
-                <a href="http://blog.fritzing.org/2013/11/19/minimetalmaker/" title="MiniMetalMaker">MiniMetalMaker</a>
-                <a href="http://blog.fritzing.org/2013/11/19/minimetalmaker/"><small>Nov. 19, 2013</small></a> 
-            </li> <li>
-                <a href="http://blog.fritzing.org/2013/11/19/the-little-black-midi/" title="The Little Black Midi">The Little Black Midi</a>
-                <a href="http://blog.fritzing.org/2013/11/19/the-little-black-midi/"><small>Nov. 19, 2013</small></a> 
-            </li> <li>
-                <a href="http://blog.fritzing.org/2013/11/15/light-up-your-flat-with-charles-planetary-gear-system/" title="Light up your flat with Charles&#039; planetary gear system">Light up your flat with Charles' planetary gear system</a>
-                <a href="http://blog.fritzing.org/2013/11/15/light-up-your-flat-with-charles-planetary-gear-system/"><small>Nov. 15, 2013</small></a> 
-            </li> </ul>
-<a href="http://blog.fritzing.org">More posts&hellip;</a>"
+    QNetworkAccessManager * manager = networkReply->manager();
+	int responseCode = networkReply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
+	if (responseCode == 200) {
+        QByteArray data(networkReply->readAll());
+        QString pic = QString("<a href='%1' style='text-decoration:none; color:#666;'><img src='data:image/jpg;base64,%2' /></a>").arg(manager->property("href").toString()).arg(QString(data.toBase64()));
+		m_blogEntryPictureList[manager->property("index").toInt()]->setText(pic);
+		
+	}
 
-		*/
-
+    manager->deleteLater();
+    networkReply->deleteLater();
 }
 
 QWidget * WelcomeView::initTip() {
@@ -468,66 +537,3 @@ void WelcomeView::dragEnterEvent(QDragEnterEvent *event)
 {
     event->ignore();
 }
-
-/*
-
-	QTextEdit * textEdit = new QTextEdit();
-
-	QString breadboardHelpText = tr(
-                "<br/>"
-        "The <b>Breadboard View</b> is meant to look like a <i>real-life</i> breadboard prototype."
-	"<br/><br/>"
-        "Begin by dragging a part from the Parts Bin, which is over at the top right. "
-        "Then pull in more parts, connecting them by clicking on the connectors and dragging wires. "
-        "The process is similar to how you would arrange things in the physical world. "
-	"<br/><br/>"
-        "After you're finished creating your sketch in the breadboard view, try the other views. "
-        "You can switch by clicking the other views in either the View Switcher or the Navigator on the lower right. "
-        "Because different views have different purposes, parts will look different in the other views.");
-
-	QString schematicHelpText = tr(
-        "Welcome to the <b>Schematic View</b>"
-	"<br/><br/>"
-        "This is a more abstract way to look at components and connections than the Breadboard View. "
-        "You have the same elements as you have on your breadboard, "
-        "they just look different. This representation is closer to the traditional diagrams used by engineers."
-        "<br/><br/>"
-        "You can press &lt;Shift&gt;-click with the mouse to create bend points and tidy up your connections. "
-        "The Schematic View can help you check that you have made the right connections between components. "
-        "You can also print out your schematic for documentation.");
-
-	QString pcbHelpText = tr(
-        "The <b>PCB View</b> is where you design how the components will appear on a physical PCB (Printed Circuit Board)."
-	"<br/><br/>"
-        "PCBs can be made at home or in a small lab using DIY etching processes. "
-        "They also can be sent to professional PCB manufacturing services for more precise fabrication. "
-        "<br/>"
-		"<table><tr><td>"
-		"The first thing you will need is a board to place your parts on. "
-		"There should already be one beneath this widget, but if not, "
-		"drag in the board icon from the parts bin (image at right). "
-		"</td><td>"
-		"<img src=\":resources/parts/svg/core/icon/rectangle_pcb.svg\" />"
-		"</td></tr></table>"
-        "<br/><br/>"
-	    "To lay out your PCB, rearrange all the components so they fit nicely on the board. "
-        "Then try to shift them around to minimize the length and confusion of connections. "
-        "You can also resize rectangular boards. "
-		"<br/>"
-		"<table><tr><td>"
-        "Once the parts are sorted out, you connect them with copper traces. "
-		"You can drag out a trace from individual connections or use "
-        "the autorouter to generate them. "
-		"The Autoroute button is at the bottom of the window (image at right)."
-		"</td><td>"
-		"<img src=\":resources/images/icons/toolbarAutorouteEnabled_icon.png\" />"
-		"</td></tr></table>");
-
-
-    textEdit->setText(breadboardHelpText + "<br /><br />" + schematicHelpText + "<br /><br />" + pcbHelpText);
-
-
-	mainLayout->addWidget(textEdit);
-
-
-	*/

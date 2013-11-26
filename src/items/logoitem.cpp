@@ -937,11 +937,11 @@ CopperLogoItem::CopperLogoItem( ModelPart * modelPart, ViewLayer::ViewID viewID,
 	: LogoItem(modelPart, viewID, viewGeometry, id, itemMenu, doLabel)
 {
 	if (Copper1ImageNames.count() == 0) {
-		Copper1ImageNames << "Fritzing icon copper1";
+		Copper1ImageNames << "Made with Fritzing copper1" << "Fritzing icon copper1";
 	}
 
 	if (Copper0ImageNames.count() == 0) {
-		Copper0ImageNames << "Fritzing icon copper0";
+		Copper0ImageNames << "Made with Fritzing copper0" << "Fritzing icon copper0";
 	}
 
 	m_hasLogo = (modelPart->moduleID().endsWith(ModuleIDNames::LogoTextModuleIDName));

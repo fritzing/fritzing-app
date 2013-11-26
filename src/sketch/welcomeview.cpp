@@ -48,6 +48,7 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 #include <QDomDocument>
 #include <QDomNodeList>
 #include <QDomElement>
+#include <QBuffer>
 
 void zeroMargin(QLayout * layout) {
     layout->setMargin(0);
@@ -610,8 +611,16 @@ void WelcomeView::gotBlogImage(QNetworkReply * networkReply) {
 	int responseCode = networkReply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
 	if (responseCode == 200) {
         QByteArray data(networkReply->readAll());
-        QString pic = QString("<a href='%1' style='text-decoration:none; color:#666;'><img src='data:image/jpg;base64,%2' /></a>").arg(manager->property("href").toString()).arg(QString(data.toBase64()));
-		m_blogEntryPictureList[manager->property("index").toInt()]->setText(pic);
+        QPixmap pixmap;
+        if (pixmap.loadFromData(data)) {
+            QPixmap scaled = pixmap.scaled(QSize(60, 60), Qt::KeepAspectRatio);
+            QByteArray scaledData;
+            QBuffer buffer(&scaledData);
+            buffer.open( QIODevice::WriteOnly );
+            scaled.save( &buffer, "PNG" );
+            QString pic = QString("<a href='%1' style='text-decoration:none; color:#666;'><img src='data:image/png;base64,%2' /></a>").arg(manager->property("href").toString()).arg(QString(scaledData.toBase64()));
+		    m_blogEntryPictureList[manager->property("index").toInt()]->setText(pic);
+        }
 		
 	}
 

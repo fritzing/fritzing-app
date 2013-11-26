@@ -96,6 +96,10 @@ QWidget * WelcomeView::initRecent() {
     frame->setObjectName("recentFrame");
 	QVBoxLayout * frameLayout = new QVBoxLayout;
 
+    frameLayout->setMargin(0);
+    frameLayout->setSpacing(0);
+
+
 	QStringList names;
     names << "recentTitle" << "recentFileFrame" << "recentFileFrame" << "recentFileFrame" << "recentFileFrame" << "recentFileFrame" << "recentFileFrame" << "recentSpace" << "recentNewSketch" << "recentOpenSketch";
 
@@ -163,10 +167,17 @@ QWidget * WelcomeView::initKit() {
     frame->setObjectName("shopFrame");
     QVBoxLayout * frameLayout = new QVBoxLayout;
 
+    frameLayout->setMargin(0);
+    frameLayout->setSpacing(0);
+
+
 	// use parent/child relation to manage overlapping widgets
     QFrame * titleFrame = new QFrame();
     titleFrame->setObjectName("shopTitleFrame");
     QHBoxLayout * titleFrameLayout = new QHBoxLayout;
+
+    titleFrameLayout->setMargin(0);
+    titleFrameLayout->setSpacing(0);
 
    /* overlapFrame->setGeometry(0, 0, pixmap.width(), 30);*/
 
@@ -178,6 +189,10 @@ QWidget * WelcomeView::initKit() {
     url->setObjectName("shopTitleGoto");
     connect(url, SIGNAL(linkActivated(const QString &)), this, SLOT(clickBlog(const QString &)));
     titleFrameLayout->addWidget(url);
+
+
+    titleFrameLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Expanding));
+
 
     titleFrame->setLayout(titleFrameLayout);
 
@@ -215,14 +230,22 @@ QWidget * WelcomeView::initKit() {
 
 
 QWidget * WelcomeView::initBlog() {
+
     QFrame * frame = new QFrame();
 	frame->setObjectName("blogFrame");
 	QVBoxLayout * frameLayout = new QVBoxLayout;
+    frameLayout->setMargin(0);
+    frameLayout->setSpacing(0);
+
 
     QFrame * titleFrame = new QFrame();
 	titleFrame->setObjectName("blogTitleFrame");
 
+
 	QHBoxLayout * titleFrameLayout = new QHBoxLayout;
+    titleFrameLayout->setMargin(0);
+    titleFrameLayout->setSpacing(0);
+
 
     QLabel * titleLabel = new QLabel(tr("News and Stories"));
 	titleLabel->setObjectName("blogTitle");
@@ -278,19 +301,9 @@ QWidget * WelcomeView::initBlog() {
         frameLayout->addWidget(blogEntry);
 	}
 
+  /*  frameLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Minimum, QSizePolicy::Expanding));*/
 
- /*
-    label = new QLabel();
-    label->setObjectName("blogLogo");
-    frameLayout->addWidget(label);
-    m_blogLogo << label;
-*/
-    frameLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Minimum, QSizePolicy::Expanding));
-
-
-
-    foreach (QFrame * blogEntry, m_blogEntryList) blogEntry->setVisible(true);
-
+    foreach (QFrame * blogEntry, m_blogEntryList) blogEntry->setVisible(false);
 
 
     QFrame * footerFrame = new QFrame();
@@ -399,7 +412,9 @@ void WelcomeView::readBlog(const QDomDocument & doc) {
 
 		m_blogTitleList[ix]->setText(title);
         m_blogTextList[ix]->setText(QString("<a href='%1' style='text-decoration:none; color:#666;'>%2</a>").arg(href).arg(tr("read more >>")));
-      m_blogEntryList[ix]->setVisible(true);
+
+        m_blogEntryList[ix]->setVisible(true);
+
 		if (++ix >= m_blogTextList.count()) {
 			break;
 		}
@@ -429,6 +444,9 @@ QWidget * WelcomeView::initTip() {
 	QFrame * tipFrame = new QFrame();
 	tipFrame->setObjectName("tipFrame");
 	QVBoxLayout * tipLayout = new QVBoxLayout();
+
+    tipLayout->setMargin(0);
+    tipLayout->setSpacing(0);
 
 	QLabel * tipTitle = new QLabel(tr("Tip:"));
 	tipTitle->setObjectName("tipTitle");

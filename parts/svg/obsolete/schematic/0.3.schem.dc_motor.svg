@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns:xml="http://www.w3.org/XML/1998/namespace"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="110.3px" height="48.3px"
+	 viewBox="0 0 110.3 48.3" enable-background="new 0 0 110.3 48.3" xml:space="preserve">
+<g id="schematic">
+	<rect id="connector0pin" x="1.15" y="23.15" fill="none" width="10" height="2"/>
+	<rect id="connector1pin" x="99.15" y="23.15" fill="none" width="10" height="2"/>
+	<rect id="connector0terminal" x="1.15" y="23.15" fill="none" width="2" height="2"/>
+	<rect id="connector1terminal" x="107.15" y="23.15" fill="none" width="2" height="2"/>
+	<g id="diagram">
+		<circle fill="none" stroke="#000000" stroke-width="2.3" cx="55.15" cy="24.15" r="23"/>
+		
+			<line fill="none" stroke="#000000" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" x1="1.15" y1="24.15" x2="32.15" y2="24.15"/>
+		
+			<line fill="none" stroke="#000000" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" x1="78.15" y1="24.15" x2="109.15" y2="24.15"/>
+	</g>
+	<text transform="matrix(1 0 0 1 45.1509 32.4038)" font-family="'Droid Sans'" font-size="24.3547">M</text>
+</g>
+</svg>

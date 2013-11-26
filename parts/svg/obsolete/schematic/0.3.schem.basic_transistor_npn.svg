@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="svg2" xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="50.63px"
+	 height="63.021px" viewBox="0 0 50.63 63.021" enable-background="new 0 0 50.63 63.021" xml:space="preserve">
+<g id="schematic" transform="translate(18,0)">
+	<g transform="translate(-18,0)">
+		<rect id="connector1pin" x="42.633" y="1.237" width="1.894" height="9.783"/>
+		<rect id="connector1terminal" x="43.142" y="0.876" width="0.866" height="0.684"/>
+		<rect id="connector2pin" x="41.968" y="52.568" width="2.023" height="9.781"/>
+		<rect id="connector2terminal" x="43" y="62.131" width="0.867" height="0.686"/>
+		<rect id="connector0pin" x="2.057" y="30.747" width="9.781" height="1.894"/>
+		<rect id="connector0terminal" x="1.591" y="31.268" width="0.686" height="0.867"/>
+	</g>
+	<g id="g10" transform="translate(-0.464,0)">
+		<path id="path12" d="M24.464,61.909V44.004c0-0.615,0.498-1.111,1.112-1.111l0,0c0.615,0,1.113,0.496,1.113,1.111l0,0v17.905
+			c0,0.614-0.498,1.112-1.113,1.112l0,0C24.962,63.021,24.464,62.523,24.464,61.909L24.464,61.909z"/>
+	</g>
+	<g id="g14">
+		<path id="path16" d="M24.463,19.799V1.742c0-0.616,0.498-1.114,1.115-1.114l0,0c0.614,0,1.112,0.498,1.112,1.114l0,0v18.057
+			c0,0.615-0.498,1.113-1.112,1.113l0,0C24.961,20.912,24.463,20.414,24.463,19.799L24.463,19.799z"/>
+	</g>
+	<g id="g18">
+		<polygon id="polygon20" points="11.687,42.379 11.687,21.365 13.915,21.365 13.915,42.379 		"/>
+	</g>
+	<circle id="circle22" fill="none" stroke="#000000" stroke-width="1.8499" cx="16.558" cy="31.807" r="14.953"/>
+	<g id="g24" transform="matrix(1.0372442,0,0,1,0.6180304,0)">
+		<path id="path26" d="M-15.345,33c-0.689,0-1.249-0.559-1.249-1.247l0,0c0-0.69,0.56-1.249,1.249-1.249l0,0h25.678
+			c0.689,0,1.249,0.559,1.249,1.249l0,0c0,0.688-0.56,1.247-1.249,1.247l0,0H-15.345L-15.345,33z"/>
+	</g>
+	<g id="g28">
+		<g id="g30">
+			<path id="path32" d="M0,0"/>
+		</g>
+		<g id="g34" transform="matrix(0.9712211,0,0,0.9055168,2.3963302,3.732273)">
+			<polygon id="polygon36" points="9.529,33.402 10.846,31.897 18.645,38.722 17.328,40.227 			"/>
+		</g>
+		<g id="g38">
+			<polygon id="polygon40" points="20.68,36.1 25.921,44.803 16.598,40.765 			"/>
+		</g>
+	</g>
+	<g id="g42">
+		<polygon id="polygon44" points="12.005,29.762 25.072,19.084 26.181,20.491 13.112,31.168 		"/>
+	</g>
+</g>
+</svg>

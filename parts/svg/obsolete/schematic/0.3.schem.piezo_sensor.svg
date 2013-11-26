@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1 Basic//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-basic.dtd'>
+<svg xmlns="http://www.w3.org/2000/svg" width="0.902292in" xml:space="preserve" xmlns:xml="http://www.w3.org/XML/1998/namespace" x="0px" version="1.1" y="0px" height="1.56381in" viewBox="0 0 64.965 112.594" baseProfile="basic" id="Layer_1" >
+ <g xmlns="http://www.w3.org/2000/svg" id="schematic" >
+  <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000" stroke-linejoin="round" id="line3" stroke-linecap="square" y1="1.15" stroke-width="2.3" x1="16.823" y2="46.829" x2="16.823" />
+  <rect xmlns="http://www.w3.org/2000/svg" width="18.56" x="7.537" y="51.47" fill="none" height="9.659" stroke="#000000" stroke-linejoin="round" id="rect5" stroke-linecap="round" stroke-width="2.3" />
+  <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000" stroke-linejoin="round" id="line7" stroke-linecap="round" y1="47.028" stroke-width="2.3" x1="24.052" y2="47.028" x2="9.582" />
+  <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000" stroke-linejoin="round" id="line9" stroke-linecap="square" y1="111.443" stroke-width="2.3" x1="16.81" y2="65.766" x2="16.81" />
+  <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000" stroke-linejoin="round" id="line11" stroke-linecap="round" y1="65.564" stroke-width="2.3" x1="9.582" y2="65.564" x2="24.052" />
+  <polygon xmlns="http://www.w3.org/2000/svg" fill="none" points="63.812,100.127 32.48,73.13 32.48,39.465 63.812,12.466" stroke="#000000" stroke-linejoin="round" id="polygon13" stroke-linecap="round" stroke-width="2.3" />
+  <rect xmlns="http://www.w3.org/2000/svg" width="31.331" x="1.15" y="39.465" fill="none" height="33.665" stroke="#000000" stroke-linejoin="round" id="rect15" stroke-linecap="round" stroke-width="2.3" />
+ <rect xmlns="http://www.w3.org/2000/svg" width="2" x="15.836" height="10" id="connector0pin" />
+ <rect xmlns="http://www.w3.org/2000/svg" width="2" x="15.836" y="102.594" height="10" id="connector1pin" />
+ <rect xmlns="http://www.w3.org/2000/svg" width="2" x="15.836" height="2" id="connector0terminal" />
+ <rect xmlns="http://www.w3.org/2000/svg" width="2" x="15.836" y="110.594" height="2" id="connector1terminal" />
+ </g>
+</svg>

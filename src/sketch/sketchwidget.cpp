@@ -5310,7 +5310,8 @@ void SketchWidget::prepDeleteProps(ItemBase * itemBase, long id, const QString &
 					new SetPropCommand(this, id, "logo", logoProp, logoProp, true, parentCommand);
 				}
 				else if (!shapeProp.isEmpty()) {
-					new LoadLogoImageCommand(this, id, shapeProp, logo->modelPart()->localProp("aspectratio").toSizeF(), logo->prop("lastfilename"), "", false, parentCommand);
+                    QString newName = logo->getNewLayerFileName(propsMap.value("layer"));
+					new LoadLogoImageCommand(this, id, shapeProp, logo->modelPart()->localProp("aspectratio").toSizeF(), logo->prop("lastfilename"), newName, false, parentCommand);
 				}
 				prepDeleteOtherProps(itemBase, id, newModuleID, propsMap, parentCommand);
 			}
@@ -7095,6 +7096,18 @@ void SketchWidget::setInstanceTitle(long itemID, const QString & oldText, const 
 	}
 	else {
 		if (oldText.compare(newText) == 0) return;
+
+        /*
+        // this doesn't work correctly--undo somehow gets messed up
+        LogoItem * logoItem = qobject_cast<LogoItem *>(itemBase);
+        if (logoItem && logoItem->hasLogo()) {
+            // instead of changing part label, change logo
+            if (logoItem->logo().compare(newText) == 0) return;
+
+            setProp(logoItem, "logo", tr("logo"), logoItem->logo(), newText, true);
+            return;
+        }
+        */
 
 		partLabelChangedAux(itemBase, oldText, newText);
 	}

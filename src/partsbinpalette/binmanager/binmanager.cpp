@@ -47,6 +47,7 @@ $Date: 2013-04-14 00:08:36 +0200 (So, 14. Apr 2013) $
 #include "../../utils/textutils.h"
 #include "../../utils/fileprogressdialog.h"
 #include "../../referencemodel/referencemodel.h"
+#include "../../items/partfactory.h"
 #include "../partsbinpalettewidget.h"
 #include "../partsbinview.h"
 
@@ -902,7 +903,11 @@ void BinManager::search(const QString & searchText) {
     searchBin->removeParts();
     foreach (ModelPart * modelPart, modelParts) {
         //DebugDialog::debug(modelPart->title());
-        if (modelPart->itemType() != ModelPart::SchematicSubpart) {
+        if (modelPart->itemType() == ModelPart::SchematicSubpart) {
+        }
+        else if (modelPart->moduleID().contains(PartFactory::OldSchematicPrefix)) {
+        }
+        else {
             this->addPartTo(searchBin, modelPart, false);
         }
         progress.incValue();

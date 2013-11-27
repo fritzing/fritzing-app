@@ -843,35 +843,7 @@ QString LogoItem::flipSvgAux(QString & newSvg)
 QString LogoItem::getNewLayerFileName(const QString & newLayerName) {
     if (newLayerName.isEmpty()) return "";
 
-    QFileInfo info(this->prop("lastfilename"));
-    QString oldname = info.completeBaseName();
-    QString rootname;
-    if (LogoImageNames.contains(oldname)) {
-        rootname = oldname;
-    }
-    else {
-        QStringList names = oldname.split(" ");
-        names.removeLast();
-        oldname = names.join(" ");
-        if (LogoImageNames.contains(oldname)) {
-            rootname = oldname;
-        }
-    }
-    if (rootname.isEmpty()) return "";
-
-    if (newLayerName == ViewLayer::viewLayerXmlNameFromID(ViewLayer::Silkscreen0)) {
-        rootname += " 0"; 
-        if (!Logo0ImageNames.contains(rootname)) return "";
-    }
-    else if (newLayerName == ViewLayer::viewLayerXmlNameFromID(ViewLayer::Copper0)) {
-        rootname += " copper0";
-        if (!Copper0ImageNames.contains(rootname)) return "";
-    }
-    else if (newLayerName == ViewLayer::viewLayerXmlNameFromID(ViewLayer::Copper1)) {
-        rootname += " copper1";
-        if (!Copper1ImageNames.contains(rootname)) return "";
-    }
-    return info.absoluteDir().absoluteFilePath(rootname + "." + info.suffix());
+    return this->prop("lastfilename");
 }
 
 ///////////////////////////////////////////////////////////////////////

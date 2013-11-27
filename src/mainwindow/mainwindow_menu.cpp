@@ -681,10 +681,28 @@ void MainWindow::populateMenuFromXMLFile(QMenu *parentMenu, QStringList &actions
 QHash<QString, struct SketchDescriptor *> MainWindow::indexAvailableElements(QDomElement &domElem, const QString &srcPrefix, QStringList & actionsTracker) {
 	QHash<QString, struct SketchDescriptor *> retval;
 	QDomElement sketch = domElem.firstChildElement("sketch");
+
+    QLocale locale;
+    QString localeName = locale.name().toLower();     // get default translation, a string of the form "language_country" where country is a two-letter code.
+
+    // TODO: eventually need to deal with language/country differences like pt_br vs. pt_pt
+
 	while(!sketch.isNull()) {
 		const QString id = sketch.attribute("id");
-		const QString name = sketch.attribute("name");
-		QString srcAux = sketch.attribute("src");
+        QDomElement language = sketch.firstChildElement("language");
+        QDomElement backupLang;
+        QDomElement bestLang;
+        while (!language.isNull()) {
+            if (language.attribute("country") == "en") backupLang = language;
+            if (localeName.endsWith(language.attribute("country"))) {
+                bestLang = language;
+                break;
+            }
+            language = language.nextSiblingElement("language");
+        }
+        if (bestLang.isNull()) bestLang = backupLang;
+		const QString name = bestLang.attribute("name");
+		QString srcAux = bestLang.attribute("src");
 		// if it's an absolute path, don't prefix it
 		const QString src = QFileInfo(srcAux).exists()? srcAux: srcPrefix+srcAux;
 		if(QFileInfo(src).exists()) {

@@ -28,6 +28,34 @@ QStatusBar {
 	  opacity: 200;
 }
 
+QScrollBar:vertical {               
+         border: 0px; 
+         background:rgba(255,255,255,10); 
+         width:10px;     
+         margin: 0px 0px 0px 0px; 
+     } 
+	 
+QScrollBar::handle:vertical { 
+		border: 2px solid #666;
+		border-radius: 2px;
+         background: #666;
+         min-height: 0px; 
+      
+     }
+	 
+QScrollBar::add-line:vertical { 
+         background: #fff; 
+         height: 10px; 
+         subcontrol-position: bottom; 
+         subcontrol-origin: margin; 
+     }
+	 
+QScrollBar::sub-line:vertical { 
+         background:#fff; 
+         height: 10px; 
+         subcontrol-position: top; 
+         subcontrol-origin: margin; 
+     } 
 
 
 
@@ -384,7 +412,7 @@ border:none;
 
 
 /******* this is the styling for the blog-entries ***********/
-#blogEntry{
+#blogEntry {
 	border-bottom:1px solid #c4c4c4; 
 	max-height: 65px;
 	background:transparent;
@@ -398,9 +426,7 @@ border:none;
 	font-size: 14px;
 	margin:0px;
 	color: #000;
-
 	min-height: 18px;
-
 }
 
 #blogEntryText {
@@ -409,7 +435,6 @@ border:none;
 	font-size: 12px;
 	margin:0px;
 	min-height: 16px;
-
 }
 
 #blogEntryDate {
@@ -418,8 +443,8 @@ border:none;
 	font-size: 10px;
 	margin:0px;
 	min-height: 11px;
-
 }
+
 #blogEntryPicture {
 	background:#f0f;
 	max-width: 60px;
@@ -429,6 +454,12 @@ border:none;
 }
 
 /******* this is the styling for the blog-footer ***********/
+#blogFooterFrame{
+
+		background:transparent;
+		border-bottom:none;
+	
+	}
 #blogLogo {
 	background:#fff;
 	min-height:22px;
@@ -464,6 +495,13 @@ border:none;
 	max-height:18px;
 }	
 
+#tipScrollArea 
+{
+	border:none;
+	padding: 0px 0px 10px 0px;
+	}
+	
+	
 #tip  {
 	background: #D5E1E9;
 	border: none;
@@ -512,42 +550,56 @@ border:none;
 	background:transparent;
 }
 
-#shopContentFrame {
+#shopContentFrame,
+#fabContentFrame
+{
 	/*background:#00f; */
 	border:none;
 	font: "Droid Sans";
+
 	}
 
 
-#shopContentImage {
-	min-height:20px;
+#shopContentImage,
+#fabContentImage
+{
+	background:#f0f;
+	max-width: 200px;
+	min-width:45px;
+	max-height: 200px;
+	min-height:45px;
 	}
 	
 	
-#shopContentTextFrame {
+#shopContentTextFrame,
+#fabContentTextFrame{
 	/*background:#00f; */
 	border:none;
 	}
 
 
-	
-#shopContentTextHeadline {
+#shopContentTextHeadline,	
+#fabContentTextHeadline {
 	font-size:16px;
 	font-weight:bold;
 	}
-	
-	#shopContentTextDescription {
+
+#shopContentTextDescription,
+#fabContentTextDescription	{
 	font-size:14px;
 	font-weight:regular;
 	qproperty-wordWrap: true;
 	}
 	
-	#shopContentTextCaption {
-	font-size:11px;
+#shopContentTextCaption,
+#fabContentTextCaption
+{
+
+font-size:11px;
 	}
 	
-	
-#shopFooterFrame {
+#shopFooterFrame,	
+#fabFooterFrame {
 		border-top:1px solid #c4c4c4; 
 		background:transparent;
 		border-bottom:none;

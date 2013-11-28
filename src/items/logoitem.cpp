@@ -65,8 +65,8 @@ LogoItem::LogoItem( ModelPart * modelPart, ViewLayer::ViewID viewID, const ViewG
 	if (LogoImageNames.count() == 0) {
         // TODO: load these names from somewhere
 
-		LogoImageNames << "Made with Fritzing" << "Fritzing icon" << "OHANDA logo" << "OSHW logo";
-		Logo0ImageNames << "Made with Fritzing 0" << "Fritzing icon 0" << "OHANDA logo 0" << "OSHW logo 0";
+		LogoImageNames << "new Made with Fritzing" << "new Fritzing icon" << "OHANDA logo" << "OSHW logo";
+		Logo0ImageNames << "new Made with Fritzing 0" << "new Fritzing icon 0" << "OHANDA logo 0" << "OSHW logo 0";
 	}
 
     m_svgOnly = false;
@@ -941,11 +941,11 @@ CopperLogoItem::CopperLogoItem( ModelPart * modelPart, ViewLayer::ViewID viewID,
     // TODO: load these names from somewhere
 
 	if (Copper1ImageNames.count() == 0) {
-		Copper1ImageNames << "Made with Fritzing copper1" << "Fritzing icon copper1" << "OHANDA logo copper1" << "OSHW logo copper1";
+		Copper1ImageNames << "new Made with Fritzing copper1" << "new Fritzing icon copper1" << "OHANDA logo copper1" << "OSHW logo copper1";
 	}
 
 	if (Copper0ImageNames.count() == 0) {
-		Copper0ImageNames << "Made with Fritzing copper0" << "Fritzing icon copper0" << "OHANDA logo copper0" << "OSHW logo copper1";
+		Copper0ImageNames << "new Made with Fritzing copper0" << "new Fritzing icon copper0" << "OHANDA logo copper0" << "OSHW logo copper1";
 	}
 
 	m_hasLogo = (modelPart->moduleID().endsWith(ModuleIDNames::LogoTextModuleIDName));

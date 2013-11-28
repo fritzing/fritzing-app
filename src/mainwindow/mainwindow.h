@@ -233,6 +233,7 @@ public slots:
     void orderFabHoverEnter();
     void orderFabHoverLeave();
     void setGroundFillKeepout();
+    void showWelcomeView();
 
 protected slots:
 	void mainLoad();
@@ -263,7 +264,6 @@ protected slots:
     void showGrid();
     void setGridSize();
     void setBackgroundColor();
-    void showWelcomeView();
     void showBreadboardView();
     void showSchematicView();
     void showProgramView();
@@ -562,6 +562,7 @@ protected:
     virtual void initDock();
     virtual void initMenus();
     virtual void moreInitDock();
+    virtual void setInitialView();
     virtual void createFileMenu();
     virtual void createEditMenu();
     virtual void createPartMenu();

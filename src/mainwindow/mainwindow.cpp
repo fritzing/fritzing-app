@@ -21,7 +21,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 $Revision: 6995 $:
 $Author: irascibl@gmail.com $:
-$Date: 2013-04-28 00:56:34 +0200 (So, 28. Apr 2013) $
+$Date: 2013-04-28 00:56:34 +0200 (So, 28. Apr 2013) $lo
 
 ********************************************************************/
 
@@ -361,13 +361,7 @@ void MainWindow::init(ReferenceModel *referenceModel, bool lockFiles) {
 
 	connectPairs();
 
-	// do this the first time, since the current_changed signal wasn't sent
-	int tab = 0;
-    if (m_navigators.count() > 0) {
-	    currentNavigatorChanged(m_navigators[tab]);
-    }
-	tabWidget_currentChanged(tab+1);
-	tabWidget_currentChanged(tab);
+    setInitialView();
 
 	this->installEventFilter(this);
 
@@ -2867,5 +2861,18 @@ void MainWindow::initWelcomeView() {
     m_welcomeView->setObjectName("WelcomeView");
 	SketchAreaWidget * sketchAreaWidget = new SketchAreaWidget(m_welcomeView, this);
     addTab(sketchAreaWidget, tr("Welcome"));
+}
+
+void MainWindow::setInitialView() {
+    	// do this the first time, since the current_changed signal wasn't sent
+	int tab = 0;
+    if (m_navigators.count() > 0) {
+	    currentNavigatorChanged(m_navigators[tab]);
+    }
+	tabWidget_currentChanged(tab+1);
+    tabWidget_currentChanged(tab);
+
+    // default to breadboard view
+    this->setCurrentTabIndex(1);
 }
 

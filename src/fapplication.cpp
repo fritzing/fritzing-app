@@ -1596,7 +1596,8 @@ void FApplication::loadSomething(const QString & prevVersion) {
     // Find any previously open sketches to reload
     if (!loadPrevious && sketchesToLoad.isEmpty()) {
 		DebugDialog::debug(QString("load last open"));
-		sketchesToLoad = loadLastOpenSketch();
+        // new logic here, we no longer open the most recent sketch, since it can be reached in one click from the welcome page
+		//sketchesToLoad = loadLastOpenSketch();
 	}
 
 	MainWindow * newBlankSketch = NULL;
@@ -1623,6 +1624,8 @@ void FApplication::loadSomething(const QString & prevVersion) {
 	}
 	else if (newBlankSketch) {
 		newBlankSketch->hideTempPartsBin();
+        // new empty sketch defaults to welcome view
+        newBlankSketch->showWelcomeView();
 	}
 }
 

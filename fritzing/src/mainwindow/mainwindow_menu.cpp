@@ -1322,7 +1322,7 @@ void MainWindow::createFileMenu() {
 
 	m_exportMenu->addAction(m_exportBomAct);
 	m_exportMenu->addAction(m_exportNetlistAct);
-	//m_exportMenu->addAction(m_exportSpiceNetlistAct);
+	m_exportMenu->addAction(m_exportSpiceNetlistAct);
 
 	//m_exportMenu->addAction(m_exportEagleAct);
 }

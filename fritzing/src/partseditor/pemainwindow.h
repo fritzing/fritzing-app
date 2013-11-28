@@ -119,6 +119,7 @@ protected:
     void initProgrammingWidget();
     void initDock();
     void moreInitDock();
+    void setInitialView();
     void createActions();
     void createMenus();
     QList<QWidget*> getButtonsForView(ViewLayer::ViewID);

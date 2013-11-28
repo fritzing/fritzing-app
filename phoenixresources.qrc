@@ -163,16 +163,22 @@
         <file>resources/parts/core/roundrect_pcb_two_layers.fzp</file>
         <file>resources/parts/core/logotext.fzp</file>
         <file>resources/parts/core/logoimage.fzp</file>
-        <file>resources/parts/core/copper1logotext.fzp</file>
-        <file>resources/parts/core/copper1logoimage.fzp</file>
-        <file>resources/parts/core/copper0logotext.fzp</file>
-        <file>resources/parts/core/copper0logoimage.fzp</file>
-        <file>resources/parts/core/silkscreen0logotext.fzp</file>
         <file>resources/parts/core/silkscreen0logoimage.fzp</file>
-        <file>resources/parts/core/schematiclogotext.fzp</file>
-        <file>resources/parts/core/schematiclogoimage.fzp</file>
-        <file>resources/parts/core/breadboardlogotext.fzp</file>
         <file>resources/parts/core/breadboardlogoimage.fzp</file>
+        <file>resources/parts/core/copper1logoimage.fzp</file>
+        <file>resources/parts/core/copper0logoimage.fzp</file>
+        <file>resources/parts/core/schematiclogoimage.fzp</file>
+        <file>resources/parts/core/newlogoimage.fzp</file>
+        <file>resources/parts/core/newsilkscreen0logoimage.fzp</file>
+        <file>resources/parts/core/newbreadboardlogoimage.fzp</file>
+        <file>resources/parts/core/newcopper1logoimage.fzp</file>
+        <file>resources/parts/core/newcopper0logoimage.fzp</file>
+        <file>resources/parts/core/newschematiclogoimage.fzp</file>
+        <file>resources/parts/core/copper1logotext.fzp</file>
+        <file>resources/parts/core/copper0logotext.fzp</file>
+        <file>resources/parts/core/silkscreen0logotext.fzp</file>
+        <file>resources/parts/core/schematiclogotext.fzp</file>
+        <file>resources/parts/core/breadboardlogotext.fzp</file>
         <file>resources/parts/core/boardlogoimage.fzp</file>
         <file>resources/parts/core/boardlogoimage_one_layer.fzp</file>
         <file>resources/parts/core/ground.fzp</file>

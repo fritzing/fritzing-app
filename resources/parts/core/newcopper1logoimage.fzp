@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<module moduleId="Copper1LogoImageModuleID" >
- <version replacedby="newCopper1LogoImageModuleID">4</version>
+<module moduleId="newCopper1LogoImageModuleID" >
+ <version>4</version>
  <author>Brendan Howell</author>
  <title>Copper Image</title>
  <date>2008-11-25</date>
@@ -28,17 +28,17 @@
    </layers>
   </iconView>
   <breadboardView>
-   <layers image="pcb/Fritzing icon copper1.svg" >
+   <layers image="pcb/new Fritzing icon copper1.svg" >
     <layer layerId="unknown" />
    </layers>
   </breadboardView>
   <schematicView>
-   <layers image="pcb/Fritzing icon copper1.svg" >
+   <layers image="pcb/new Fritzing icon copper1.svg" >
     <layer layerId="unknown" />
    </layers>
   </schematicView>
   <pcbView>
-   <layers image="pcb/Fritzing icon copper1.svg" >
+   <layers image="pcb/new Fritzing icon copper1.svg" >
     <layer layerId="copper1"/>
    </layers>
   </pcbView>

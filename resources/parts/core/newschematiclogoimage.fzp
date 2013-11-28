@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<module moduleId="Copper1LogoImageModuleID" >
- <version replacedby="newCopper1LogoImageModuleID">4</version>
+<module moduleId="newSchematicLogoImageModuleID" >
+ <version>4</version>
  <author>Brendan Howell</author>
- <title>Copper Image</title>
+ <title>Schematic Image</title>
  <date>2008-11-25</date>
  <label>IMG</label>
  <tags>
-  <tag>pcb</tag>
+  <tag>schematic</tag>
   <tag>part</tag>
   <tag>diy</tag>
   <tag>fritzing core</tag>
@@ -16,30 +16,29 @@
    <property name="filename" ></property>
    <property name="shape" ></property>
    <property name="type" >image</property>
-   <property name="layer" >copper1</property>
  </properties>
- <taxonomy>discreteParts.pcb.logo</taxonomy>
- <description>For adding images to the top copper layer of the board</description>
+ <taxonomy>discreteParts.schematic.logo</taxonomy>
+ <description>For adding images to the schematic view</description>
  <views>
   <defaultUnits>mm</defaultUnits>
   <iconView>
-   <layers image="icon/copper1_logo.svg" >
+   <layers image="icon/schematic_logo.svg" >
     <layer layerId="icon" />
    </layers>
   </iconView>
   <breadboardView>
-   <layers image="pcb/Fritzing icon copper1.svg" >
+   <layers image="schematic/new Fritzing icon.svg" >
     <layer layerId="unknown" />
    </layers>
   </breadboardView>
   <schematicView>
-   <layers image="pcb/Fritzing icon copper1.svg" >
-    <layer layerId="unknown" />
+   <layers image="schematic/new Fritzing icon.svg" >
+    <layer layerId="schematic" />
    </layers>
   </schematicView>
   <pcbView>
-   <layers image="pcb/Fritzing icon copper1.svg" >
-    <layer layerId="copper1"/>
+   <layers image="schematic/new Fritzing icon.svg" >
+    <layer layerId="unknown"/>
    </layers>
   </pcbView>
  </views>

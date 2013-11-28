@@ -118,7 +118,7 @@ protected:
 	void appendStuff(ItemBase* item, bool swappingEnabled); //finds out if it's a wire or something else
 	void appendWireStuff(Wire* wire, bool swappingEnabled);
 	void appendItemStuff(ItemBase* base, bool swappingEnabled);
-	void appendItemStuff(ItemBase * base, ModelPart * modelPart, bool swappingEnabled, bool labelIsVisible = false);
+	void appendItemStuff(ItemBase * base, ModelPart * modelPart, bool swappingEnabled);
 
 	void setInstanceTitleColors(class FLineEdit * edit, const QColor & base, const QColor & text);
 

@@ -280,8 +280,8 @@ void Board::fileNameEntry(const QString & filename) {
 	foreach (QString name, getImageNames()) {
 		if (filename.compare(name) == 0) {
 			QString f = FolderUtils::getApplicationSubFolderPath("parts") + "/svg/core/pcb/" + filename + ".svg";
-			return prepLoadImageAux(f, false);
-			break;
+			prepLoadImageAux(f, false);
+			return;
 		}
 	}
 

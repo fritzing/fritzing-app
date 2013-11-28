@@ -85,6 +85,10 @@ LogoItem::LogoItem( ModelPart * modelPart, ViewLayer::ViewID viewID, const ViewG
 LogoItem::~LogoItem() {
 }
 
+bool LogoItem::hasLogo() {
+    return m_hasLogo;
+}
+
 QString LogoItem::getShapeForRenderer(const QString & svg) {
     return svg;
 }
@@ -836,6 +840,12 @@ QString LogoItem::flipSvgAux(QString & newSvg)
 	int gix = newSvg.indexOf("<g");
 	newSvg.replace(gix, 2, "<g _flipped_='1' transform='" + TextUtils::svgMatrix(cm) + "'");
 	return newSvg;
+}
+
+QString LogoItem::getNewLayerFileName(const QString & newLayerName) {
+    if (newLayerName.isEmpty()) return "";
+
+    return this->prop("lastfilename");
 }
 
 ///////////////////////////////////////////////////////////////////////

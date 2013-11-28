@@ -845,7 +845,11 @@ QString LogoItem::flipSvgAux(QString & newSvg)
 QString LogoItem::getNewLayerFileName(const QString & newLayerName) {
     if (newLayerName.isEmpty()) return "";
 
-    return this->prop("lastfilename");
+    QString lastfilename = this->prop("lastfilename");
+    if (QFile::exists(lastfilename)) return lastfilename;
+
+    DebugDialog::debug(QString("logo item image '%1' doesn't exist").arg(lastfilename));
+    return "";
 }
 
 ///////////////////////////////////////////////////////////////////////

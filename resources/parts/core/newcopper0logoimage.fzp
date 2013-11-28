@@ -28,17 +28,17 @@
    </layers>
   </iconView>
   <breadboardView>
-   <layers image="pcb/new Fritzing icon copper1.svg" >
+   <layers image="pcb/new Fritzing icon.svg" >
     <layer layerId="unknown" />
    </layers>
   </breadboardView>
   <schematicView>
-   <layers image="pcb/new Fritzing icon copper1.svg" >
+   <layers image="pcb/new Fritzing icon.svg" >
     <layer layerId="unknown" />
    </layers>
   </schematicView>
   <pcbView>
-   <layers image="pcb/new Fritzing icon copper1.svg" >
+   <layers image="pcb/new Fritzing icon.svg" >
     <layer layerId="copper0"/>
    </layers>
   </pcbView>

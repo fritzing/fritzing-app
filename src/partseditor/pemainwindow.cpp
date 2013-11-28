@@ -3923,3 +3923,9 @@ void PEMainWindow::initProgrammingWidget() {
 void PEMainWindow::initWelcomeView() {
 }
 
+void PEMainWindow::setInitialView() {
+    	// do this the first time, since the current_changed signal wasn't sent
+	int tab = 0;
+	tabWidget_currentChanged(tab+1);
+	tabWidget_currentChanged(tab);
+}

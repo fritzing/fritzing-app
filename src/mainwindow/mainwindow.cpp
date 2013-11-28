@@ -689,6 +689,17 @@ void MainWindow::setCurrentFile(const QString &filename, bool addToRecent, bool 
 	if(setAsLastOpened) {
 		QSettings settings;
 		settings.setValue("lastOpenSketch",filename);
+
+        QStringList files = settings.value("lastTabList").toStringList();
+        for (int ix = files.count() - 1; ix >= 0; ix--) {
+            if (files[ix].mid(1) == filename) {
+                bool ok;
+                int lastTab = files[ix].left(1).toInt(&ok);
+                if (ok) {
+                    setCurrentTabIndex(lastTab);
+                }
+            }
+        }
 	}
 
 	updateRaiseWindowAction();
@@ -703,6 +714,8 @@ void MainWindow::setCurrentFile(const QString &filename, bool addToRecent, bool 
 			files.removeLast();
 
 		settings.setValue("recentFileList", files);
+
+        // TODO: if lastTab file is not on recent list, remove it from the settings
 	}
 
     foreach (QWidget *widget, QApplication::topLevelWidgets()) {
@@ -1095,6 +1108,16 @@ void MainWindow::closeEvent(QCloseEvent *event) {
 	QSettings settings;
 	settings.setValue(m_settingsPrefix + "state",saveState());
 	settings.setValue(m_settingsPrefix + "geometry",saveGeometry());
+    
+	QStringList files = settings.value("lastTabList").toStringList();
+    for (int ix = files.count() - 1; ix >= 0; ix--) {
+        if (files[ix].mid(1) == m_fwFilename) files.removeAt(ix);
+    }
+	files.prepend(QString("%1%2").arg(this->currentTabIndex()).arg(m_fwFilename));
+	while (files.size() > MaxRecentFiles)
+		files.removeLast();
+
+	settings.setValue("lastTabList", files);
 
 	QMainWindow::closeEvent(event);
 }

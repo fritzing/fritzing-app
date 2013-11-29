@@ -28,7 +28,67 @@ QStatusBar {
 	  opacity: 200;
 }
 
+QScrollBar:vertical{               
+         border: 0px; 
+         background:rgba(255,255,255,10); 
+         width:10px;     
+         margin: 0px 0px 0px 0px; 
+     } 
+	 
+QScrollBar::handle:vertical{ 
+		border: 2px solid #666;
+		border-radius: 2px;
+         background: #666;
+         min-height: 0px; 
+      
+     }
+	 
+QScrollBar::add-line:vertical{ 
+         background: #fff; 
+         height: 10px; 
+         subcontrol-position: bottom; 
+         subcontrol-origin: margin; 
+     }
+	 
+QScrollBar::sub-line:vertical{ 
+         background:#fff; 
+         height: 10px; 
+         subcontrol-position: top; 
+         subcontrol-origin: margin; 
+     } 
+	 
 
+QScrollBar:horizontal
+{
+        border: 0px; 
+         background:rgba(255,255,255,10); 
+         height:10px;     
+         margin: 0px 0px 0px 0px; 
+	}
+
+QScrollBar::handle:horizontal
+{
+			border: 2px solid #666;
+		border-radius: 2px;
+         background: #666;
+         min-width: 0px; 
+	}
+ 
+QScrollBar::add-line:horizontal
+{
+	         background: #fff; 
+         width: 10px; 
+subcontrol-position: right;
+subcontrol-origin: margin;
+}
+ 
+QScrollBar::sub-line:horizontal
+{
+	         background:#fff; 
+         width: 10px; 
+	subcontrol-position: left;
+subcontrol-origin: margin;
+	}
 
 
 /* this separates palettes from each other and is movable */
@@ -270,6 +330,7 @@ WelcomeView QFrame QLabel {
 /* -------- position of WS"content-blocks" ------------  */
 #recentFrame {
     margin: 15px 0px 18px 35px;
+	padding-bottom:5px;
 	background: #fff;
 	border-bottom: 8px solid #d9d9d9;	
 	font: "Droid Sans";
@@ -304,45 +365,88 @@ WelcomeView QFrame QLabel {
 
 /* ----------- WS-"recentItem"-block  ------------- */	
 
-#recentTitle {
-	border-bottom: 1px solid #c4c4c4;
-	padding: 8px 0px 8px 0px;
-	margin:0px 5px 0px 5px;
-	font-size:14px;
+#recentTitle
+{ 
+	border-bottom: 1px solid #c4c4c4;	
+/*padding: 8px 0px 8px 0px; */
+	margin:5px;
+font-size:14px;
 	font-weight:bold;
-	min-height:18px;
-	max-height:18px;
-
+	min-height:28px;
+	max-height:28px;
+	background:transparent;
+	
+}	
+#recentTitleSpace
+{ 
+	margin:0px;
+	background:transparent;
+	
 }
 
+/*
+#recentTitle {
+	font-size:14px;
+	font-weight:bold;
+	color:#323232;
+	margin-left:0px;
+	margin-right:2px;
+	padding:0px;
+
+border:none;
+margin:5px;
+}
+*/
 #recentOpenSketch,
-#recentNewSketch,
-#recentFileFrame
-{
+#recentNewSketch{
+	margin: 3px 5px 11px 5px;
+	padding:0px;
 	text-align:left;
 	border:none;
 	font-size: 12px;
-	height:12px;
+	min-height:16px;
+	max-height:22px;
 	background:transparent;
+	
 	}	
 
+#recentFileFrame
+{
+	margin: 3px 5px 11px 5px;
+	padding:0px;
+	text-align:left;
+	border:none;
+	font-size: 12px;
+	min-height:16px;
+	max-height:22px;
+	background:transparent;
+	
+	}	
 #recentSpace 
 {
+	padding:0px;
+	margin:1px 5px;
 	border-bottom: 1px solid #c4c4c4;
 }	
-/*
+
 #recentText
 {
-	text-decoration:none;
-	
-	}
-*/
-#recentIcon {
-max-height:15px;
-max-width:15px;
-min-height:15px;
-min-width:15px;
+margin:0px;
+padding:0px;
 border:none;
+background:transparent;
+}
+#recentIcon
+{
+margin:0px;
+padding:0px;
+image-position:center;
+max-width:18px;
+max-height:15px;
+min-width:18px;
+min-height:15px;
+border:none;
+background:transparent;
 }
 
 /* ----------- WS-"blog"-block  ------------- */	
@@ -384,7 +488,7 @@ border:none;
 
 
 /******* this is the styling for the blog-entries ***********/
-#blogEntry{
+#blogEntry {
 	border-bottom:1px solid #c4c4c4; 
 	max-height: 65px;
 	background:transparent;
@@ -398,9 +502,7 @@ border:none;
 	font-size: 14px;
 	margin:0px;
 	color: #000;
-
 	min-height: 18px;
-
 }
 
 #blogEntryText {
@@ -409,7 +511,6 @@ border:none;
 	font-size: 12px;
 	margin:0px;
 	min-height: 16px;
-
 }
 
 #blogEntryDate {
@@ -418,8 +519,8 @@ border:none;
 	font-size: 10px;
 	margin:0px;
 	min-height: 11px;
-
 }
+
 #blogEntryPicture {
 	background:#f0f;
 	max-width: 60px;
@@ -429,6 +530,12 @@ border:none;
 }
 
 /******* this is the styling for the blog-footer ***********/
+#blogFooterFrame{
+		margin:5px;
+		background:transparent;
+		border-bottom:none;
+	
+	}
 #blogLogo {
 	background:#fff;
 	min-height:22px;
@@ -464,6 +571,42 @@ border:none;
 	max-height:18px;
 }	
 
+#tipScrollArea 
+{
+	border:none;
+	padding: 0px 0px 10px 0px;
+	}
+
+#tipScrollArea QScrollBar:vertical{               
+         border: 0px; 
+         background:#D5E1E9; 
+         width:10px;     
+         margin: 0px 0px 0px 0px; 
+     } 
+	 
+#tipScrollArea QScrollBar::handle:vertical{ 
+		border: 2px solid #77ACC2;
+		border-radius: 2px;
+         background: #77ACC2;
+         min-height: 0px; 
+      
+     }
+	 
+#tipScrollArea QScrollBar::add-line:vertical{ 
+         background: #D5E1E9; 
+         height: 10px; 
+         subcontrol-position: bottom; 
+         subcontrol-origin: margin; 
+     }
+	 
+#tipScrollArea QScrollBar::sub-line:vertical{ 
+         background:#D5E1E9; 
+         height: 10px; 
+         subcontrol-position: top; 
+         subcontrol-origin: margin; 
+     } 
+	
+	
 #tip  {
 	background: #D5E1E9;
 	border: none;
@@ -472,8 +615,7 @@ border:none;
 	color:#2e94af;
 	font-size:16px;
 	qproperty-wordWrap: true;
-
-	padding: 0px 5px 10px 5px;
+	padding: 0px 5px 10px 10px;
 
 	}
 
@@ -512,45 +654,67 @@ border:none;
 	background:transparent;
 }
 
-#shopContentFrame {
+#shopContentFrame,
+#fabContentFrame
+{
 	/*background:#00f; */
 	border:none;
 	font: "Droid Sans";
+	margin-left:5px;
 	}
 
 
-#shopContentImage {
-	min-height:20px;
+#shopContentImage,
+#fabContentImage
+{
+	background:#f0f;
+	min-width:45px;
+	min-height:45px;
 	}
 	
 	
-#shopContentTextFrame {
+#shopContentTextFrame,
+#fabContentTextFrame{
 	/*background:#00f; */
+	margin: 5px 5px;
 	border:none;
+	min-width:200px;
 	}
 
-
-	
-#shopContentTextHeadline {
+#fabContentSpacer{
+height:3px;
+background:#f0f;
+margin:0px;
+}
+#shopContentTextHeadline,	
+#fabContentTextHeadline {
 	font-size:16px;
 	font-weight:bold;
+	max-height:20px;
 	}
-	
-	#shopContentTextDescription {
+
+#shopContentTextDescription,
+#fabContentTextDescription	{
 	font-size:14px;
 	font-weight:regular;
 	qproperty-wordWrap: true;
 	}
 	
-	#shopContentTextCaption {
-	font-size:11px;
-	}
+#shopContentTextCaption,
+#fabContentTextCaption
+{
+
+font-size:11px;
+max-height:14px;
+}
 	
-	
-#shopFooterFrame {
+#shopFooterFrame,	
+#fabFooterFrame {
 		border-top:1px solid #c4c4c4; 
 		background:transparent;
 		border-bottom:none;
+		margin:5px;
+		padding-top:5px;
 }
 
 

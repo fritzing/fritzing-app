@@ -56,6 +56,27 @@ void zeroMargin(QLayout * layout) {
     layout->setSpacing(0);
 }
 
+QString cleanData(const QString & data) {
+    static QRegExp ListItemMatcher("<li>.*</li>");
+    ListItemMatcher.setMinimal(true);           // equivalent of lazy matcher
+
+    QDomDocument doc;
+    QStringList listItems;
+    int pos = 0;
+    while (pos < data.count()) {
+        int ix = data.indexOf(ListItemMatcher, pos);
+        if (ix < 0) break;
+
+        QString listItem = ListItemMatcher.cap(0);
+        DebugDialog::debug("ListItem " + listItem);
+        if (doc.setContent(listItem)) {
+            listItems << listItem;
+        }
+        pos += listItem.count();
+    }
+    return listItems.join("");
+}
+
 //////////////////////////////////////
 
 WelcomeView::WelcomeView(QWidget * parent) : QFrame(parent) 
@@ -246,6 +267,7 @@ QWidget * WelcomeView::initShop() {
         connect(label, SIGNAL(linkActivated(const QString &)), this, SLOT(clickBlog(const QString &)));
 
         label = new QLabel(QString("<a href='http://fritzing.org/creatorkit/'  style='text-decoration:none; color:#802742;'>%1</a>").arg(tr("order now >>")));
+
         label->setObjectName("shopContentTextCaption");
         contentTextFrameLayout->addWidget(label);
         connect(label, SIGNAL(linkActivated(const QString &)), this, SLOT(clickBlog(const QString &)));
@@ -270,12 +292,12 @@ QWidget * WelcomeView::initShop() {
         zeroMargin(footerFrameLayout);
         footerFrameLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Expanding));
 
-        QLabel * footerLabel = new QLabel(QString("<a href='http://fritzing.org/creatorkit/'  style='text-decoration:none; color:#802742;'>%1</a>").arg(tr("Get your Creator Kit now.   ")));
+        QLabel * footerLabel = new QLabel(QString("<a href='http://creatorkit.fritzing.org/'  style='text-decoration:none; color:#802742;'>%1</a>").arg(tr("Get your Creator Kit now.   ")));
         footerLabel->setObjectName("shopLogoText");
         footerFrameLayout->addWidget(footerLabel);
         connect(footerLabel, SIGNAL(linkActivated(const QString &)), this, SLOT(clickBlog(const QString &)));
 
-        QLabel * footerLogoLabel = new QLabel(tr("<a href='http://fritzing.org/creatorkit/'><img src=':/resources/images/icons/WS-shopLogo.png'/></a>"));
+        QLabel * footerLogoLabel = new QLabel(tr("<a href='http://creatorkit.fritzing.org/'><img src=':/resources/images/icons/WS-shopLogo.png'/></a>"));
         footerLogoLabel->setObjectName("shopLogo");
         footerFrameLayout->addWidget(footerLogoLabel);
         connect(footerLogoLabel, SIGNAL(linkActivated(const QString &)), this, SLOT(clickBlog(const QString &)));
@@ -529,14 +551,14 @@ void WelcomeView::gotBlogSnippet(QNetworkReply * networkReply) {
 	if (responseCode == 200) {
         QString data(networkReply->readAll());
         DebugDialog::debug("response data " + data);
-		data = "<thing>" + data + "</thing>";		// make it one tree for xml parsing
+		data = "<thing>" + cleanData(data) + "</thing>";		// make it one tree for xml parsing
 		QDomDocument doc;
 	    QString errorStr;
 	    int errorLine;
 	    int errorColumn;
 	    if (doc.setContent(data, &errorStr, &errorLine, &errorColumn)) {
-			readBlog(doc);
-	    }
+		    readBlog(doc);
+        }
 	}
 
     manager->deleteLater();

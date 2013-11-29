@@ -1393,6 +1393,50 @@ void MainWindow::exportSpiceNetlist() {
         output += "\n";
     }
 
+    QString incl = ".include";
+    if (output.contains(incl, Qt::CaseInsensitive)) {
+        QStringList lines = output.split("\n");
+        QList<QDir *> paths;
+        paths << FolderUtils::getApplicationSubFolder("pdb");
+        paths << FolderUtils::getApplicationSubFolder("parts");
+        paths << new QDir(FolderUtils::getUserDataStorePath("parts"));
+
+        QString output2;
+        foreach (QString line, lines) {
+            int ix = line.toLower().indexOf(incl); 
+            if (ix < 0) {
+                output2 += line + "\n";
+                continue;
+            }
+
+            QString temp = line;
+            temp.replace(ix, incl.length(), "");
+            QString filename = temp.trimmed();
+            
+            bool gotOne = false;
+            foreach (QDir * dir, paths) {
+                foreach (QString folder, ModelPart::possibleFolders()) {
+                    QDir sub(*dir);
+                    sub.cd(folder);
+                    sub.cd("spicemodels");
+                    if (QFile::exists(sub.absoluteFilePath(filename))) {
+                        output2 += incl.toUpper() + " " + QDir::toNativeSeparators(sub.absoluteFilePath(filename)) + "\n";
+                        gotOne = true;
+                        break;
+                    }
+                }
+                if (gotOne) break;
+            }
+
+            // can't find the include file, so just restore the original line
+            if (!gotOne) {
+                output2 += line + "\n";
+            }
+        }
+
+        output = output2;
+        foreach (QDir * dir, paths) delete dir;
+    }
 
     output += ".TRAN 1ms 100ms\n";
     output += "* .AC DEC 100 100 1MEG\n";

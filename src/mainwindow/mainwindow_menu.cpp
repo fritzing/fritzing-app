@@ -95,6 +95,20 @@ bool sortSketchDescriptors(SketchDescriptor * s1, SketchDescriptor * s2){
     return s1->name.toLower() < s2->name.toLower();
 }
 
+QDomElement getBestLanguageChild(const QString & localeName, const QDomElement & parent)
+{
+    QDomElement language = parent.firstChildElement("language");
+    QDomElement backupLang;
+    while (!language.isNull()) {
+        if (language.attribute("country") == "en") backupLang = language;
+        if (localeName.endsWith(language.attribute("country"))) {
+            return language;
+        }
+        language = language.nextSiblingElement("language");
+    }
+    return backupLang;
+}
+
 ////////////////////////////////////////////////////////
 
 GridSizeThing::GridSizeThing(const QString & vName, const QString & sName, double defaultSize, const QString & gsText) 
@@ -657,34 +671,44 @@ void MainWindow::populateMenuFromXMLFile(QMenu *parentMenu, QStringList &actions
 	QDomElement indexDomElem = domElem.firstChildElement("sketches");
 	QDomElement taxonomyDomElem = domElem.firstChildElement("categories");
 
-	QHash<QString, struct SketchDescriptor *> index = indexAvailableElements(indexDomElem, folderPath, actionsTracker);
+    QLocale locale;
+    QString localeName = locale.name().toLower();     // get default translation, a string of the form "language_country" where country is a two-letter code.
+
+
+	QHash<QString, struct SketchDescriptor *> index = indexAvailableElements(indexDomElem, folderPath, actionsTracker, localeName);
 	QList<SketchDescriptor *> sketchDescriptors(index.values());
 	qSort(sketchDescriptors.begin(), sketchDescriptors.end(), sortSketchDescriptors);
 
 	if (sketchDescriptors.size() > 0) {
 		// set up the "all" category
 		QDomElement all = dom.createElement("category");
-		all.setAttribute("name", tr("All"));
 		taxonomyDomElem.appendChild(all);
+        QDomElement language = dom.createElement("language");
+        language.setAttribute("name", tr("All"));
+        all.appendChild(language);
 		foreach (SketchDescriptor * sketchDescriptor, sketchDescriptors) {
 			QDomElement sketch = dom.createElement("sketch");
 			sketch.setAttribute("id", sketchDescriptor->id);
 			all.appendChild(sketch);
 		}
 	}
-	populateMenuWithIndex(index, parentMenu, taxonomyDomElem);
+	populateMenuWithIndex(index, parentMenu, taxonomyDomElem, localeName);
 	foreach (SketchDescriptor * sketchDescriptor, index.values()) {
 		delete sketchDescriptor;
 	}
 }
 
-QHash<QString, struct SketchDescriptor *> MainWindow::indexAvailableElements(QDomElement &domElem, const QString &srcPrefix, QStringList & actionsTracker) {
+QHash<QString, struct SketchDescriptor *> MainWindow::indexAvailableElements(QDomElement &domElem, const QString &srcPrefix, QStringList & actionsTracker, const QString & localeName) {
 	QHash<QString, struct SketchDescriptor *> retval;
 	QDomElement sketch = domElem.firstChildElement("sketch");
+
+    // TODO: eventually need to deal with language/country differences like pt_br vs. pt_pt
+
 	while(!sketch.isNull()) {
 		const QString id = sketch.attribute("id");
-		const QString name = sketch.attribute("name");
-		QString srcAux = sketch.attribute("src");
+        QDomElement bestLang = getBestLanguageChild(localeName, sketch);
+		QString name = bestLang.attribute("name");
+		QString srcAux = bestLang.attribute("src");
 		// if it's an absolute path, don't prefix it
 		const QString src = QFileInfo(srcAux).exists()? srcAux: srcPrefix+srcAux;
 		if(QFileInfo(src).exists()) {
@@ -699,7 +723,7 @@ QHash<QString, struct SketchDescriptor *> MainWindow::indexAvailableElements(QDo
 	return retval;
 }
 
-void MainWindow::populateMenuWithIndex(const QHash<QString, struct SketchDescriptor *>  &index, QMenu * parentMenu, QDomElement &domElem) {
+void MainWindow::populateMenuWithIndex(const QHash<QString, struct SketchDescriptor *>  &index, QMenu * parentMenu, QDomElement &domElem, const QString & localeName) {
 	// note: the <sketch> element here is not the same as the <sketch> element in indexAvailableElements()
 	QDomElement e = domElem.firstChildElement();
 	while(!e.isNull()) {
@@ -717,17 +741,19 @@ void MainWindow::populateMenuWithIndex(const QHash<QString, struct SketchDescrip
 			}
 		} 
 		else if (e.nodeName() == "category") {
-			QString name = e.attribute("name");
+            QDomElement bestLang = getBestLanguageChild(localeName, e);
+			QString name = bestLang.attribute("name");
 			QMenu * currMenu = new QMenu(name, parentMenu);
 			parentMenu->addMenu(currMenu);
-			populateMenuWithIndex(index, currMenu, e);
+			populateMenuWithIndex(index, currMenu, e, localeName);
 		}
 		else if (e.nodeName() == "separator") {
 			parentMenu->addSeparator();
 		}
 		else if (e.nodeName() == "url") {
-			QAction * action = new QAction(e.attribute("name"), this);
-			action->setData(e.attribute("href"));
+            QDomElement bestLang = getBestLanguageChild(localeName, e);
+			QAction * action = new QAction(bestLang.attribute("name"), this);
+			action->setData(bestLang.attribute("href"));
 			connect(action, SIGNAL(triggered()), this, SLOT(openURL()));
 			parentMenu->addAction(action);
 		}
@@ -1296,7 +1322,7 @@ void MainWindow::createFileMenu() {
 
 	m_exportMenu->addAction(m_exportBomAct);
 	m_exportMenu->addAction(m_exportNetlistAct);
-	//m_exportMenu->addAction(m_exportSpiceNetlistAct);
+	m_exportMenu->addAction(m_exportSpiceNetlistAct);
 
 	//m_exportMenu->addAction(m_exportEagleAct);
 }

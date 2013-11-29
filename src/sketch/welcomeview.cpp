@@ -81,6 +81,7 @@ QString cleanData(const QString & data) {
 
 WelcomeView::WelcomeView(QWidget * parent) : QFrame(parent) 
 {
+    m_tip = NULL;
     setAcceptDrops(false);
     initLayout();
 
@@ -93,7 +94,7 @@ WelcomeView::WelcomeView(QWidget * parent) : QFrame(parent)
 	manager->get(QNetworkRequest(QUrl("http://blog.fritzing.org/recent-posts-app/")));
 
 	TipsAndTricks::initTipSets();
-    m_tip->setText(QString("<a href='tip' style='text-decoration:none; color:#2e94af;'>%1</a>").arg(TipsAndTricks::randomTip()));
+    nextTip();
 }
 
 WelcomeView::~WelcomeView() {
@@ -502,7 +503,7 @@ QWidget * WelcomeView::initBlog() {
         footerFrameLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Expanding));
 
 
-        QLabel * footerLabel = new QLabel(QString("<a href='http://blog.fritzing.org'  style='text-decoration:none; color:#802742;'>%1</a>").arg(tr("News on the Fritzing Project.   ")));
+        QLabel * footerLabel = new QLabel(QString("<a href='http://blog.fritzing.org'  style='text-decoration:none; color:#802742;'>%1</a>").arg(tr("Fritzing Project News.   ")));
         footerLabel->setObjectName("blogLogoText");
         footerFrameLayout->addWidget(footerLabel);
         connect(footerLabel, SIGNAL(linkActivated(const QString &)), this, SLOT(clickBlog(const QString &)));
@@ -611,6 +612,11 @@ void WelcomeView::clickBlog(const QString & url) {
         m_fabContentFrame->setVisible(false);
         m_shopFooterFrame->setVisible(true);
         m_shopContentFrame->setVisible(true);
+        return;
+    }
+
+    if (url == "nextTip") {
+        nextTip();
         return;
     }
  
@@ -787,4 +793,10 @@ QWidget * WelcomeView::initTip() {
 void WelcomeView::dragEnterEvent(QDragEnterEvent *event)
 {
     event->ignore();
+}
+
+void WelcomeView::nextTip() {
+    if (m_tip == NULL) return;
+
+    m_tip->setText(QString("<a href='tip' style='text-decoration:none; color:#2e94af;'>%1</a>").arg(TipsAndTricks::randomTip()));
 }

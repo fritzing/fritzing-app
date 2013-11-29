@@ -714,6 +714,7 @@ void MainWindow::setCurrentFile(const QString &filename, bool addToRecent, bool 
 			files.removeLast();
 
 		settings.setValue("recentFileList", files);
+        QTimer::singleShot(1, this, SLOT(updateWelcomeViewRecentList()));
 
         // TODO: if lastTab file is not on recent list, remove it from the settings
 	}
@@ -2899,3 +2900,16 @@ void MainWindow::setInitialView() {
     this->setCurrentTabIndex(1);
 }
 
+void MainWindow::updateWelcomeViewRecentList(bool doEmit) {
+    if (m_welcomeView) {
+        m_welcomeView->updateRecent();
+        if (doEmit) {
+             foreach (QWidget *widget, QApplication::topLevelWidgets()) {
+                MainWindow *mainWin = qobject_cast<MainWindow *>(widget);
+                if (mainWin && mainWin != this) {
+                    mainWin->updateWelcomeViewRecentList(false);
+                }
+            }
+        }
+    }
+}

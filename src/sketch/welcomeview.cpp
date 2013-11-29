@@ -104,9 +104,23 @@ QWidget * WelcomeView::initRecent() {
 	QVBoxLayout * frameLayout = new QVBoxLayout;
     zeroMargin(frameLayout);
 
+ /*  QFrame * titleFrame = new QFrame();
+    titleFrame->setObjectName("recentTitleFrame");
 
+    QVBoxLayout * titleFrameLayout = new QVBoxLayout;
+    zeroMargin(titleFrameLayout);
+
+    QLabel * titleLabel = new QLabel(tr("recent Sketches"));
+    titleLabel->setObjectName("recentTitle");
+    titleFrameLayout->addWidget(titleLabel);
+
+    titleFrameLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Expanding));
+
+    titleFrame->setLayout(titleFrameLayout);
+    frameLayout->addWidget(titleFrame);
+*/
 	QStringList names;
-    names << "recentTitle" << "recentFileFrame" << "recentFileFrame" << "recentFileFrame" << "recentFileFrame" << "recentFileFrame" << "recentFileFrame" << "recentSpace" << "recentNewSketch" << "recentOpenSketch";
+    names << "recentTitle" << "recentTitleSpace"  << "recentFileFrame" << "recentFileFrame" << "recentFileFrame" << "recentFileFrame" << "recentFileFrame" << "recentFileFrame" << "recentSpace" << "recentNewSketch" << "recentOpenSketch";
 
 	foreach (QString name, names) {
 		QWidget * widget = NULL;
@@ -115,9 +129,12 @@ QWidget * WelcomeView::initRecent() {
         if (name == "recentSpace") {
 			widget = new QLabel;
 		}
-		else if (name == "recentTitle") {
-            widget = new QLabel(tr("Recent Sketches"));
-		}
+        else if (name == "recentTitle") {
+            widget = new QLabel(tr("recent Sketches"));
+        }
+        else if (name == "recentTitleSpace") {
+            widget = new QLabel();
+        }
         else if (name == "recentFileFrame") {
             widget = makeRecentItem(name,"","",icon,text);
             m_recentIconList << icon;
@@ -125,14 +142,14 @@ QWidget * WelcomeView::initRecent() {
 		}
         else if (name == "recentNewSketch") {
 			widget = makeRecentItem(name, 
-                QString("<a href='new' style='text-decoration:none; color:#666;'><img src=':/resources/images/icons/WS-new-icon.png' /></a>"),
+                QString("<a href='new' style='text-decoration:none; color:#666; margin-right:5px;'><img src=':/resources/images/icons/WS-new-icon.png' /></a>"),
                 QString("<a href='new' style='text-decoration:none; color:#666;'>%1</a>").arg(tr("New Sketch >>")),
                 icon,
                 text);
 		}
 		else if (name == "recentOpenSketch") {
 			widget = makeRecentItem(name, 
-                QString("<a href='open' style='text-decoration:none; color:#666;'><img src=':/resources/images/icons/WS-open-icon.png' /></a>"),
+                QString("<a href='open' style='text-decoration:none; color:#666; margin-right:5px;'><img src=':/resources/images/icons/WS-open-icon.png' /></a>"),
                 QString("<a href='open' style='text-decoration:none; color:#666;'>%1</a>").arg(tr("Open Sketch >>")),
                 icon,
                 text);
@@ -216,19 +233,19 @@ QWidget * WelcomeView::initShop() {
         QVBoxLayout * contentTextFrameLayout = new QVBoxLayout;
         zeroMargin(contentTextFrameLayout);
 
-        contentTextFrameLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Expanding));
+        /* contentTextFrameLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Expanding));*/
 
         label = new QLabel(QString("Fritzing CreatorKit"));
         label->setObjectName("shopContentTextHeadline");
         contentTextFrameLayout->addWidget(label);
         connect(label, SIGNAL(linkActivated(const QString &)), this, SLOT(clickBlog(const QString &)));
 
-        label = new QLabel(QString("CreatorKit si dolor amet Lorem Ipsum si dolor amet de si dalirium de la lorem ipsum si dolor amet Lorem Ipsum si dolor amet de si dalirium de la lorem ipsum si dolor amet Lorem Ipsum si dolor amet de si dalirium de la lorem ipsum si dolor amet Lorem Ipsum si dolor amet de si dalirium de la lorem ipsum si dolor amet "));
+        label = new QLabel(QString("Get Your own Fritzing Creator Kit and become an electronical inventor"));
         label->setObjectName("shopContentTextDescription");
         contentTextFrameLayout->addWidget(label);
         connect(label, SIGNAL(linkActivated(const QString &)), this, SLOT(clickBlog(const QString &)));
 
-        label = new QLabel(QString("<a href='http://fritzing.org/creatorkit/'  style='text-decoration:none; color:#802742;'>%1</a>").arg(tr("Get your Creator Kit now.   ")));
+        label = new QLabel(QString("<a href='http://fritzing.org/creatorkit/'  style='text-decoration:none; color:#802742;'>%1</a>").arg(tr("order now >>")));
         label->setObjectName("shopContentTextCaption");
         contentTextFrameLayout->addWidget(label);
         connect(label, SIGNAL(linkActivated(const QString &)), this, SLOT(clickBlog(const QString &)));
@@ -286,19 +303,21 @@ QWidget * WelcomeView::initShop() {
             QVBoxLayout * contentTextFrameLayout = new QVBoxLayout;
             zeroMargin(contentTextFrameLayout);
 
-            contentTextFrameLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Expanding));
+           /* contentTextFrameLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Expanding));*/
+            label = new QLabel();
+            label->setObjectName("fabContentSpacer");
 
             label = new QLabel(QString("Fritzing Fab"));
             label->setObjectName("fabContentTextHeadline");
             contentTextFrameLayout->addWidget(label);
             connect(label, SIGNAL(linkActivated(const QString &)), this, SLOT(clickBlog(const QString &)));
 
-            label = new QLabel(QString("Friting Fab de la lorem ipsum si dolor amet Lorem Ipsum si dolor amet de si dalirium de la lorem ipsum si dolor amet Lorem Ipsum si dolor amet de si dalirium de la lorem ipsum si dolor amet Lorem Ipsum si dolor amet de si dalirium de la lorem ipsum si dolor amet "));
+            label = new QLabel(QString("Fritzing Fab brings your Hardware easily on your desk with your own design and high quality"));
             label->setObjectName("fabContentTextDescription");
             contentTextFrameLayout->addWidget(label);
             connect(label, SIGNAL(linkActivated(const QString &)), this, SLOT(clickBlog(const QString &)));
 
-            label = new QLabel(QString("<a href='http://fab.fritzing.org/'  style='text-decoration:none; color:#802742;'>%1</a>").arg(tr("Something Fritzing Fab.   ")));
+            label = new QLabel(QString("<a href='http://fab.fritzing.org/'  style='text-decoration:none; color:#802742;'>%1</a>").arg(tr("produce your first pcb now >>")));
             label->setObjectName("fabContentTextCaption");
             contentTextFrameLayout->addWidget(label);
             connect(label, SIGNAL(linkActivated(const QString &)), this, SLOT(clickBlog(const QString &)));

@@ -125,49 +125,68 @@ QWidget * WelcomeView::initRecent() {
 	QVBoxLayout * frameLayout = new QVBoxLayout;
     zeroMargin(frameLayout);
 
- /*  QFrame * titleFrame = new QFrame();
-    titleFrame->setObjectName("recentTitleFrame");
-
-    QVBoxLayout * titleFrameLayout = new QVBoxLayout;
+    QFrame * titleFrame = new QFrame;
+    titleFrame-> setObjectName("recentTitleFrame");
+    QHBoxLayout * titleFrameLayout = new QHBoxLayout;
     zeroMargin(titleFrameLayout);
+    QLabel * label = new QLabel(tr("Recent Sketches"));
 
-    QLabel * titleLabel = new QLabel(tr("recent Sketches"));
-    titleLabel->setObjectName("recentTitle");
-    titleFrameLayout->addWidget(titleLabel);
+    label->setObjectName("recentTitle");
+    titleFrameLayout->addWidget(label);
+    titleFrame ->setLayout(titleFrameLayout);
 
-    titleFrameLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Expanding));
-
-    titleFrame->setLayout(titleFrameLayout);
     frameLayout->addWidget(titleFrame);
-*/
-	QStringList names;
-    names << "recentTitleFrame" << "recentTitleSpace"  << "recentFileFrame" << "recentFileFrame" << "recentFileFrame" << "recentFileFrame" << "recentFileFrame" << "recentFileFrame" << "recentSpace" << "recentNewSketch" << "recentOpenSketch";
+
+    QScrollArea * scrollArea = new QScrollArea;
+    scrollArea->setObjectName("recentScrollArea");
+    scrollArea->setWidgetResizable(true);
+    scrollArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+
+    QFrame * scrollContent = new QFrame ();
+    QVBoxLayout * scrollContentLayout = new QVBoxLayout(scrollArea);
+    scrollContent->setObjectName("scrollContent");
+    zeroMargin(scrollContentLayout);
+    scrollArea->setWidget(scrollContent);
+
+    frameLayout->addWidget(scrollArea);
+
+    QStringList names;
+    names  << "recentFileFrame" << "recentFileFrame"  << "recentFileFrame" << "recentFileFrame" << "recentFileFrame" << "recentFileFrame" << "recentFileFrame" << "recentFileFrame" << "recentSpace" << "recentNewSketch" << "recentOpenSketch";
 
 	foreach (QString name, names) {
 		QWidget * widget = NULL;
+        QLayout * whichLayout = frameLayout;
         QLabel * icon = NULL;
         QLabel * text = NULL;
         if (name == "recentSpace") {
-			widget = new QLabel;
+            widget = new QLabel();
 		}
-        else if (name == "recentTitleFrame") {
+  /* else if (name == "recentTitleFrame") {
+          //  widget = new QLabel(tr("Recent Sketches"));
+
             QFrame * titleFrame = new QFrame();
             widget = titleFrame;
             QHBoxLayout * titleFrameLayout = new QHBoxLayout;
             zeroMargin(titleFrameLayout);
+
             QLabel * label = new QLabel(tr("Recent Sketches"));
             label->setObjectName("recentTitle");
             titleFrameLayout->addWidget(label);
+
+            label = new QLabel();
+           label->setObjectName("recent2Title");
+            titleFrameLayout->addWidget(label);
+
             titleFrame->setLayout(titleFrameLayout);
-        }
+        }*/
         else if (name == "recentTitleSpace") {
-            //widget = new QLabel();
-            continue;
-        }
+                widget = new QLabel();
+            }
         else if (name == "recentFileFrame") {
             widget = makeRecentItem(name,"","",icon,text);
             m_recentIconList << icon;
             m_recentList << text;
+            whichLayout = scrollContentLayout;
 		}
         else if (name == "recentNewSketch") {
 			widget = makeRecentItem(name, 
@@ -175,6 +194,7 @@ QWidget * WelcomeView::initRecent() {
                 QString("<a href='new' style='text-decoration:none; color:#666;'>%1</a>").arg(tr("New Sketch >>")),
                 icon,
                 text);
+
 		}
 		else if (name == "recentOpenSketch") {
 			widget = makeRecentItem(name, 
@@ -183,11 +203,12 @@ QWidget * WelcomeView::initRecent() {
                 icon,
                 text);
 		}
+
 		widget->setObjectName(name);
-		frameLayout->addWidget(widget);
+        whichLayout->addWidget(widget);
 	}
 
-    frameLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Minimum, QSizePolicy::Expanding));
+  //  frameLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Minimum, QSizePolicy::Expanding));
 
 	frame->setLayout(frameLayout);
 	return frame;
@@ -460,12 +481,15 @@ QWidget * WelcomeView::initBlog() {
                 blogEntryTextLayout->addWidget(label);
                 m_blogEntryDateList << label;
 
-            blogEntryTextFrame->setLayout(blogEntryTextLayout);
+            blogEntryTextFrame ->setLayout(blogEntryTextLayout);
+
             blogEntryLayout->addWidget(blogEntryTextFrame);
 
-        blogEntry->setLayout(blogEntryLayout);
-        frameLayout->addWidget(blogEntry);
+            blogEntry -> setLayout(blogEntryLayout);
+
+          frameLayout->addWidget(blogEntry);
 	}
+
 
   /*  frameLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Minimum, QSizePolicy::Expanding));*/
 
@@ -724,12 +748,36 @@ QWidget * WelcomeView::initTip() {
 
 	m_tip = new QLabel();
 	m_tip->setObjectName("tip");
-	connect(m_tip, SIGNAL(linkActivated(const QString &)), this->window(), SLOT(tipsAndTricks()));
+    //connect(m_tip, SIGNAL(linkActivated(const QString &)), this->window(), SLOT(tipsAndTricks()));
 
     scrollArea->setWidget(m_tip);
 	tipLayout->addWidget(scrollArea);
 
 /*	tipLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Minimum, QSizePolicy::Expanding));*/
+    QFrame * footerFrame = new QFrame();
+    footerFrame->setObjectName("tipFooterFrame");
+
+        QHBoxLayout * footerFrameLayout = new QHBoxLayout;
+        zeroMargin(footerFrameLayout);
+
+
+        QLabel * footerLabel = new QLabel(QString("<a href='http://blog.fritzing.org'  style='text-decoration:none; color:#802742;'>%1</a>").arg(tr("All Tips")));
+        footerLabel->setObjectName("allTips");
+        footerFrameLayout->addWidget(footerLabel);
+        connect(footerLabel, SIGNAL(linkActivated(const QString &)), this->window(), SLOT(tipsAndTricks()));
+
+        footerFrameLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Expanding));
+
+
+        footerLabel = new QLabel(QString("<a href='http://blog.fritzing.org'  style='text-decoration:none; color:#802742;'>%1</a>").arg(tr("Next Tip >>")));
+        footerLabel->setObjectName("nextTip");
+        footerFrameLayout->addWidget(footerLabel);
+        connect(footerLabel, SIGNAL(linkActivated(const QString &)), this->window(), SLOT(tipsAndTricks()));
+
+
+        footerFrame->setLayout(footerFrameLayout);
+
+    tipLayout->addWidget(footerFrame);
 
 	tipFrame->setLayout(tipLayout);
 

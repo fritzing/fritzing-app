@@ -364,47 +364,50 @@ WelcomeView QFrame QLabel {
 
 
 /* ----------- WS-"recentItem"-block  ------------- */	
+#recentTitleFrame {
+	border-bottom: 1px solid #c4c4c4;
 
+	margin:0px 5px 0px 5px;
+	font-size:14px;
+	font-weight:bold;
+	min-height:35px;
+	max-height:35px;
+	background:#fff;
+	
+ }
+ 
 #recentTitle
 { 
-	border-bottom: 1px solid #c4c4c4;	
-/*padding: 8px 0px 8px 0px; */
-	margin:5px;
-font-size:14px;
-	font-weight:bold;
-	min-height:28px;
-	max-height:28px;
-	background:transparent;
-	
-}	
-#recentTitleSpace
-{ 
-	margin:0px;
-	background:transparent;
-	
-}
-
-/*
-#recentTitle {
 	font-size:14px;
 	font-weight:bold;
 	color:#323232;
-	margin-left:0px;
+	background:#fff;
+	margin-left:1px;
 	margin-right:2px;
-	padding:0px;
+	max-height:16px;
+}	
 
-border:none;
-margin:5px;
+#scrollContentLayout,
+#scrollContent,
+#recentScrollArea{
+	border:none;
+	margin:0px;
+	padding:0px;
+	background:#fff;
+	}
+	
+#scrollContent {
+	min-height:300px;
 }
-*/
+
 #recentOpenSketch,
 #recentNewSketch{
-	margin: 3px 5px 11px 5px;
+	margin: 3px 5px 5px 5px;
 	padding:0px;
 	text-align:left;
 	border:none;
 	font-size: 12px;
-	min-height:16px;
+	min-height:14px;
 	max-height:22px;
 	background:transparent;
 	
@@ -412,29 +415,38 @@ margin:5px;
 
 #recentFileFrame
 {
-	margin: 3px 5px 11px 5px;
+	
+	border:none;
+	margin: 3px 5px 5px 5px;
 	padding:0px;
 	text-align:left;
-	border:none;
 	font-size: 12px;
-	min-height:16px;
+	min-height:22px;
 	max-height:22px;
-	background:transparent;
-	
+	background:#fff;
+
+
 	}	
+	
 #recentSpace 
 {
 	padding:0px;
-	margin:1px 5px;
+	margin:0px 5px;
 	border-bottom: 1px solid #c4c4c4;
+	max-height:1px;
+	background:transparent;
 }	
 
 #recentText
 {
+font-size: 12px;
 margin:0px;
 padding:0px;
 border:none;
-background:transparent;
+background:#fff;
+max-height:20px;
+min-height:20px;
+
 }
 #recentIcon
 {
@@ -442,12 +454,13 @@ margin:0px;
 padding:0px;
 image-position:center;
 max-width:18px;
-max-height:15px;
+max-height:20px;
 min-width:18px;
-min-height:15px;
+min-height:20px;
 border:none;
 background:transparent;
 }
+
 
 /* ----------- WS-"blog"-block  ------------- */	
 
@@ -488,44 +501,47 @@ background:transparent;
 
 
 /******* this is the styling for the blog-entries ***********/
+
 #blogEntry {
 	border-bottom:1px solid #c4c4c4; 
+	margin:0px 5px 0px 5px;
 	max-height: 65px;
-	background:transparent;
-	margin-top:0px;
-	padding-bottom:2px;
-	
+	min-height:65px;
+	background:#fff;
 }
 
 #blogEntryTitle {
 	font: regular "Droid Sans";
 	font-size: 14px;
-	margin:0px;
 	color: #000;
 	min-height: 18px;
+	margin-left:5px;
+	background:#fff transparent;
 }
 
 #blogEntryText {
 	color: #656565; /*656565*/
 	border:none;
 	font-size: 12px;
-	margin:0px;
 	min-height: 16px;
+	margin-left:5px;
+	background:#fff transparent;
 }
 
 #blogEntryDate {
 	color: #656565; /*656565*/
 	border:none;
 	font-size: 10px;
-	margin:0px;
+	margin-left:5px;
 	min-height: 11px;
+	background:#fff;
 }
 
 #blogEntryPicture {
-	background:#f0f;
-	max-width: 60px;
-	min-width:45px;
-	max-height: 60px;
+	background:#fff;
+	max-width: 80px;
+	min-width:80px;
+	max-height: 65px;
 	min-height:45px;
 }
 
@@ -620,6 +636,13 @@ background:transparent;
 	}
 
 
+#tipFooterFrame{
+		margin:5px;
+		background:transparent;
+		border-bottom:none;
+	
+	}
+	
 /* ----------- WS-"shop"-block  ------------- */	
 
 

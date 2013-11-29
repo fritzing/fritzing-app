@@ -661,6 +661,7 @@ void WelcomeView::gotBlogImage(QNetworkReply * networkReply) {
         QByteArray data(networkReply->readAll());
         QPixmap pixmap;
         if (pixmap.loadFromData(data)) {
+            // TODO: would be nice if the size wasn't hard-coded
             QPixmap scaled = pixmap.scaled(QSize(60, 60), Qt::KeepAspectRatio);
             QByteArray scaledData;
             QBuffer buffer(&scaledData);

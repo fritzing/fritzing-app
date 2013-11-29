@@ -138,18 +138,13 @@ QWidget * WelcomeView::initRecent() {
 
     frameLayout->addWidget(titleFrame);
 
-    QScrollArea * scrollArea = new QScrollArea;
-    scrollArea->setObjectName("recentScrollArea");
-    scrollArea->setWidgetResizable(true);
-    scrollArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    m_recentListWidget = new QListWidget();
+    m_recentListWidget->setObjectName("recentList");
+    m_recentListWidget->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    connect(m_recentListWidget, SIGNAL(itemClicked (QListWidgetItem *)), this, SLOT(recentItemClicked(QListWidgetItem *)));
 
-    QFrame * scrollContent = new QFrame ();
-    QVBoxLayout * scrollContentLayout = new QVBoxLayout(scrollArea);
-    scrollContent->setObjectName("scrollContent");
-    zeroMargin(scrollContentLayout);
-    scrollArea->setWidget(scrollContent);
 
-    frameLayout->addWidget(scrollArea);
+    frameLayout->addWidget(m_recentListWidget);
 
     QStringList names;
     names  << "recentFileFrame" << "recentFileFrame"  << "recentFileFrame" << "recentFileFrame" << "recentFileFrame" << "recentFileFrame" << "recentFileFrame" << "recentFileFrame" << "recentSpace" << "recentNewSketch" << "recentOpenSketch";
@@ -162,32 +157,10 @@ QWidget * WelcomeView::initRecent() {
         if (name == "recentSpace") {
             widget = new QLabel();
 		}
-  /* else if (name == "recentTitleFrame") {
-          //  widget = new QLabel(tr("Recent Sketches"));
-
-            QFrame * titleFrame = new QFrame();
-            widget = titleFrame;
-            QHBoxLayout * titleFrameLayout = new QHBoxLayout;
-            zeroMargin(titleFrameLayout);
-
-            QLabel * label = new QLabel(tr("Recent Sketches"));
-            label->setObjectName("recentTitle");
-            titleFrameLayout->addWidget(label);
-
-            label = new QLabel();
-           label->setObjectName("recent2Title");
-            titleFrameLayout->addWidget(label);
-
-            titleFrame->setLayout(titleFrameLayout);
-        }*/
         else if (name == "recentTitleSpace") {
                 widget = new QLabel();
             }
         else if (name == "recentFileFrame") {
-            widget = makeRecentItem(name,"","",icon,text);
-            m_recentIconList << icon;
-            m_recentList << text;
-            whichLayout = scrollContentLayout;
 		}
         else if (name == "recentNewSketch") {
 			widget = makeRecentItem(name, 
@@ -205,8 +178,10 @@ QWidget * WelcomeView::initRecent() {
                 text);
 		}
 
-		widget->setObjectName(name);
-        whichLayout->addWidget(widget);
+        if (widget) {
+		    widget->setObjectName(name);
+            whichLayout->addWidget(widget);
+        }
 	}
 
   //  frameLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Minimum, QSizePolicy::Expanding));
@@ -530,35 +505,28 @@ void WelcomeView::showEvent(QShowEvent * event) {
 }
 
 void WelcomeView::updateRecent() {
-	if (m_recentList.count() == 0) return;
+	if (m_recentListWidget == NULL) return;
 
 	QSettings settings;
 	QStringList files = settings.value("recentFileList").toStringList();
-	int ix = 0;
+    m_recentListWidget->clear();
+
+    QIcon icon(":/resources/images/icons/WS-fzz-icon.png");
 	for (int i = 0; i < files.size(); ++i) {
 		QFileInfo finfo(files[i]);
 		if (!finfo.exists()) continue;
 
-        QString text = QString("<a href='%1'  style='text-decoration:none; color:#666;'>%2 >></a>").arg(finfo.absoluteFilePath()).arg(finfo.fileName());
-		m_recentList[ix]->setText(text);
-		m_recentList[ix]->parentWidget()->setVisible(true);
-        m_recentIconList[ix]->setText(QString("<a href='%1'><img src=':/resources/images/icons/WS-fzz-icon.png' /></a>").arg(finfo.absoluteFilePath()));
-		if (++ix >= m_recentList.count()) {
-			break;
-		}
+        QListWidgetItem * item = new QListWidgetItem(icon, finfo.fileName());
+        item->setData(Qt::UserRole, finfo.absoluteFilePath());
+        m_recentListWidget->addItem(item);
 	}
 
     if (files.size() == 0) {
         // put in a placeholder if there are no recent files
-        m_recentList[0]->setText(tr("No recent sketches found"));
-        m_recentList[0]->parentWidget()->setVisible(true);
-        m_recentIconList[0]->setText("<img src=':/resources/images/icons/WS-fzz-icon.png' />");
-        ix = 1;
+        QListWidgetItem * item = new QListWidgetItem(icon, tr("No recent sketches found"));
+        item->setData(Qt::UserRole, "");
+        m_recentListWidget->addItem(item);
     }
-
-	for (int j = ix; j < m_recentList.count(); ++j) {
-		m_recentList[j]->parentWidget()->setVisible(false);
-	}
 }
 
 void WelcomeView::clickRecent(const QString & url) {
@@ -570,8 +538,6 @@ void WelcomeView::clickRecent(const QString & url) {
 		emit newSketch();
 		return;
 	}
-
-	emit recentSketch(url, url);
 }
 
 
@@ -799,4 +765,11 @@ void WelcomeView::nextTip() {
     if (m_tip == NULL) return;
 
     m_tip->setText(QString("<a href='tip' style='text-decoration:none; color:#2e94af;'>%1</a>").arg(TipsAndTricks::randomTip()));
+}
+
+void WelcomeView::recentItemClicked(QListWidgetItem * item) {
+    QString data = item->data(Qt::UserRole).toString();
+    if (data.isEmpty()) return;
+
+	emit recentSketch(data, data);
 }

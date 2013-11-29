@@ -72,12 +72,14 @@ protected slots:
 protected:
 	QList<QLabel *> m_recentList;
 	QList<QLabel *> m_recentIconList;
+
     QList<QFrame *> m_blogEntryList;
     QList<QLabel *> m_blogEntryTitleList;
     QList<QLabel *> m_blogEntryTextList;
     QList<QLabel *> m_blogEntryPictureList;
     QList<QLabel *> m_blogEntryDateList;
-	QLabel * m_tip;
+
+    QLabel * m_tip;
 	QFrame * m_blog;
 	QFrame * m_creatorKit;
     QFrame * m_fabContentFrame;

@@ -427,6 +427,7 @@ protected slots:
     void setViewFromBelowToggle();
     void setViewFromBelow();
     void setViewFromAbove();
+    void updateWelcomeViewRecentList(bool doEmit = true);
 
 protected:
 	void initSketchWidget(SketchWidget *);

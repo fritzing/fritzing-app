@@ -57,6 +57,7 @@ protected:
 	void updateRecent();
 	void readBlog(const QDomDocument &);
     QWidget * makeRecentItem(const QString & objectName, const QString & iconText, const QString & textText, QLabel * & icon, QLabel * & text);
+    void nextTip();
 
 signals:
 	void newSketch();

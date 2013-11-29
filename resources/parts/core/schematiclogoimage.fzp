@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <module moduleId="SchematicLogoImageModuleID" >
- <version>4</version>
+ <version replacedby="newSchematicLogoImageModuleID">4</version>
  <author>Brendan Howell</author>
  <title>Schematic Image</title>
  <date>2008-11-25</date>

@@ -460,11 +460,10 @@ void HtmlInfoView::appendWireStuff(Wire* wire, bool swappingEnabled) {
 void HtmlInfoView::appendItemStuff(ItemBase* base, bool swappingEnabled) {
 	if (base == NULL) return;
 
-	appendItemStuff(base, base->modelPart(), swappingEnabled, base->isPartLabelVisible());
+	appendItemStuff(base, base->modelPart(), swappingEnabled);
 }
 
-void HtmlInfoView::appendItemStuff(ItemBase * itemBase, ModelPart * modelPart, bool swappingEnabled, bool labelIsVisible) {
-	Q_UNUSED(labelIsVisible);
+void HtmlInfoView::appendItemStuff(ItemBase * itemBase, ModelPart * modelPart, bool swappingEnabled) {
 
 	if (modelPart == NULL) return;
 	if (modelPart->modelPartShared() == NULL) return;

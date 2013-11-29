@@ -147,7 +147,7 @@ QWidget * WelcomeView::initRecent() {
     frameLayout->addWidget(m_recentListWidget);
 
     QStringList names;
-    names  << "recentFileFrame" << "recentFileFrame"  << "recentFileFrame" << "recentFileFrame" << "recentFileFrame" << "recentFileFrame" << "recentFileFrame" << "recentFileFrame" << "recentSpace" << "recentNewSketch" << "recentOpenSketch";
+    names << "recentFileFrame" << "recentFileFrame" << "recentFileFrame"  << "recentFileFrame" << "recentFileFrame"  << "recentFileFrame" << "recentFileFrame" << "recentFileFrame" << "recentFileFrame" << "recentFileFrame" << "recentFileFrame" << "recentSpace" << "recentNewSketch" << "recentOpenSketch";
 
 	foreach (QString name, names) {
 		QWidget * widget = NULL;

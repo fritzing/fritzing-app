@@ -141,7 +141,7 @@ QWidget * WelcomeView::initRecent() {
     frameLayout->addWidget(titleFrame);
 */
 	QStringList names;
-    names << "recentTitle" << "recentTitleSpace"  << "recentFileFrame" << "recentFileFrame" << "recentFileFrame" << "recentFileFrame" << "recentFileFrame" << "recentFileFrame" << "recentSpace" << "recentNewSketch" << "recentOpenSketch";
+    names << "recentTitleFrame" << "recentTitleSpace"  << "recentFileFrame" << "recentFileFrame" << "recentFileFrame" << "recentFileFrame" << "recentFileFrame" << "recentFileFrame" << "recentSpace" << "recentNewSketch" << "recentOpenSketch";
 
 	foreach (QString name, names) {
 		QWidget * widget = NULL;
@@ -150,11 +150,19 @@ QWidget * WelcomeView::initRecent() {
         if (name == "recentSpace") {
 			widget = new QLabel;
 		}
-        else if (name == "recentTitle") {
-            widget = new QLabel(tr("recent Sketches"));
+        else if (name == "recentTitleFrame") {
+            QFrame * titleFrame = new QFrame();
+            widget = titleFrame;
+            QHBoxLayout * titleFrameLayout = new QHBoxLayout;
+            zeroMargin(titleFrameLayout);
+            QLabel * label = new QLabel(tr("Recent Sketches"));
+            label->setObjectName("recentTitle");
+            titleFrameLayout->addWidget(label);
+            titleFrame->setLayout(titleFrameLayout);
         }
         else if (name == "recentTitleSpace") {
-            widget = new QLabel();
+            //widget = new QLabel();
+            continue;
         }
         else if (name == "recentFileFrame") {
             widget = makeRecentItem(name,"","",icon,text);

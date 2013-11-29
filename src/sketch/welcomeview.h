@@ -36,6 +36,7 @@ $Date: 2012-09-26 15:45:37 +0200 (Mi, 26. Sep 2012) $
 #include <QNetworkReply>
 #include <QDomDocument>
 #include <QDragEnterEvent>
+#include <QListWidget>
 
 class WelcomeView : public QFrame
 {
@@ -69,11 +70,9 @@ protected slots:
     void gotBlogSnippet(QNetworkReply *);
     void gotBlogImage(QNetworkReply *);
 	void clickBlog(const QString &);
+    void recentItemClicked(QListWidgetItem *);
 
 protected:
-	QList<QLabel *> m_recentList;
-	QList<QLabel *> m_recentIconList;
-
     QList<QFrame *> m_blogEntryList;
     QList<QLabel *> m_blogEntryTitleList;
     QList<QLabel *> m_blogEntryTextList;
@@ -82,6 +81,7 @@ protected:
 
     QLabel * m_tip;
 	QFrame * m_blog;
+    QListWidget * m_recentListWidget;
 	QFrame * m_creatorKit;
     QFrame * m_fabContentFrame;
     QFrame * m_fabFooterFrame;

@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module moduleId="newCopper0LogoImageModuleID" >
+ <version>4</version>
+ <author>Brendan Howell</author>
+ <title>Copper Image</title>
+ <date>2008-11-25</date>
+ <label>IMG</label>
+ <tags>
+  <tag>pcb</tag>
+  <tag>part</tag>
+  <tag>diy</tag>
+  <tag>fritzing core</tag>
+ </tags>
+ <properties>
+   <property name="family" >Logo</property>
+   <property name="filename" ></property>
+   <property name="shape" ></property>
+   <property name="type" >image</property>
+   <property name="layer" >copper0</property>
+ </properties>
+ <taxonomy>discreteParts.pcb.logo</taxonomy>
+ <description>For adding images to the bottom copper layer of the board</description>
+ <views>
+  <defaultUnits>mm</defaultUnits>
+  <iconView>
+   <layers image="icon/copper0_logo.svg" >
+    <layer layerId="icon" />
+   </layers>
+  </iconView>
+  <breadboardView>
+   <layers image="pcb/new Fritzing icon.svg" >
+    <layer layerId="unknown" />
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="pcb/new Fritzing icon.svg" >
+    <layer layerId="unknown" />
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/new Fritzing icon.svg" >
+    <layer layerId="copper0"/>
+   </layers>
+  </pcbView>
+ </views>
+ <connectors/>
+ <buses/>
+</module>

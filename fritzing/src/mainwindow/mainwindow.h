@@ -233,6 +233,7 @@ public slots:
     void orderFabHoverEnter();
     void orderFabHoverLeave();
     void setGroundFillKeepout();
+    void showWelcomeView();
 
 protected slots:
 	void mainLoad();
@@ -263,7 +264,6 @@ protected slots:
     void showGrid();
     void setGridSize();
     void setBackgroundColor();
-    void showWelcomeView();
     void showBreadboardView();
     void showSchematicView();
     void showProgramView();
@@ -440,8 +440,8 @@ protected:
     void createOpenExampleMenu();
 	void createActiveLayerActions();
     void populateMenuFromXMLFile(QMenu *parentMenu, QStringList &actionsTracker, const QString &folderPath, const QString &indexFileName);
-    QHash<QString, struct SketchDescriptor *> indexAvailableElements(QDomElement &domElem, const QString &srcPrefix, QStringList & actionsTracker);
-    void populateMenuWithIndex(const QHash<QString, struct SketchDescriptor *> &, QMenu * parentMenu, QDomElement &domElem);
+    QHash<QString, struct SketchDescriptor *> indexAvailableElements(QDomElement &domElem, const QString &srcPrefix, QStringList & actionsTracker, const QString & localeName);
+    void populateMenuWithIndex(const QHash<QString, struct SketchDescriptor *> &, QMenu * parentMenu, QDomElement &domElem, const QString & localeName);
     void populateMenuFromFolderContent(QMenu *parentMenu, const QString &path);
     void createOpenRecentMenu();
     void createEditMenuActions();
@@ -562,6 +562,7 @@ protected:
     virtual void initDock();
     virtual void initMenus();
     virtual void moreInitDock();
+    virtual void setInitialView();
     virtual void createFileMenu();
     virtual void createEditMenu();
     virtual void createPartMenu();

@@ -58,7 +58,6 @@ protected:
 	QWidget * initTip();
 	void readBlog(const QDomDocument &);
     QWidget * makeRecentItem(const QString & objectName, const QString & iconText, const QString & textText, QLabel * & icon, QLabel * & text);
-    void nextTip();
 
 signals:
 	void newSketch();
@@ -71,6 +70,7 @@ protected slots:
     void gotBlogImage(QNetworkReply *);
 	void clickBlog(const QString &);
     void recentItemClicked(QListWidgetItem *);
+    void nextTip();
 
 protected:
     QList<QFrame *> m_blogEntryList;

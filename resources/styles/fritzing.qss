@@ -36,9 +36,9 @@ QScrollBar:vertical{
      } 
 	 
 QScrollBar::handle:vertical{ 
-		border: 2px solid #666;
+		border: 2px solid #b2b2b2;
 		border-radius: 2px;
-         background: #666;
+         background: #b2b2b2;
          min-height: 0px; 
       
      }
@@ -68,9 +68,9 @@ QScrollBar:horizontal
 
 QScrollBar::handle:horizontal
 {
-			border: 2px solid #666;
+			border: 2px solid #b2b2b2;
 		border-radius: 2px;
-         background: #666;
+         background: #b2b2b2;
          min-width: 0px; 
 	}
  
@@ -366,13 +366,13 @@ WelcomeView QFrame QLabel {
 /* ----------- WS-"recentItem"-block  ------------- */	
 #recentTitleFrame {
 	border-bottom: 1px solid #c4c4c4;
-
 	margin:0px 5px 0px 5px;
 	font-size:14px;
 	font-weight:bold;
-	min-height:35px;
-	max-height:35px;
+	min-height:34px;
+	max-height:34px;
 	background:#fff;
+	padding:0px;
 	
  }
  
@@ -387,18 +387,7 @@ WelcomeView QFrame QLabel {
 	max-height:16px;
 }	
 
-#scrollContentLayout,
-#scrollContent,
-#recentScrollArea{
-	border:none;
-	margin:0px;
-	padding:0px;
-	background:#fff;
-	}
-	
-#scrollContent {
-	min-height:300px;
-}
+
 
 #recentOpenSketch,
 #recentNewSketch{
@@ -413,21 +402,48 @@ WelcomeView QFrame QLabel {
 	
 	}	
 
-#recentFileFrame
+#recentList
 {
 	
 	border:none;
-	margin: 3px 5px 5px 5px;
+	margin: 5px 5px 5px 5px;
 	padding:0px;
 	text-align:left;
 	font-size: 12px;
-	min-height:22px;
-	max-height:22px;
 	background:#fff;
-
+	font: regular "Droid Sans";
 
 	}	
-	
+
+#recentList::item
+{
+	margin:0px;
+	border:none;
+	padding:0px;
+	text-align:left;
+	font-size: 12px;
+	background:#fff;
+	color:#666;
+	font: regular "Droid Sans";
+min-height:14px;
+max-height:24px;
+	}	
+
+#recentList::item:selected
+{
+	margin:0px;
+	border:none;
+	padding:0px;
+	text-align:left;
+	font-size: 12px;
+	background:#fff;
+	color:#666;
+	font: regular "Droid Sans";
+min-height:14px;
+max-height:24px;
+
+	}	
+
 #recentSpace 
 {
 	padding:0px;
@@ -440,7 +456,7 @@ WelcomeView QFrame QLabel {
 #recentText
 {
 font-size: 12px;
-margin:0px;
+margin-left:3px;
 padding:0px;
 border:none;
 background:#fff;
@@ -450,7 +466,7 @@ min-height:20px;
 }
 #recentIcon
 {
-margin:0px;
+margin-left:1px;
 padding:0px;
 image-position:center;
 max-width:18px;
@@ -508,6 +524,7 @@ background:transparent;
 	max-height: 65px;
 	min-height:65px;
 	background:#fff;
+	min-width: 200px;
 }
 
 #blogEntryTitle {
@@ -579,8 +596,8 @@ background:transparent;
 #tipTitle {
 	color: #77ACC2;
 	border-bottom: none;
-	padding: 8px 0px 9px 0px;
-	margin:0px 5px 0px 5px;
+	padding: 0px;
+	margin:8px 5px 8px 5px;
 	font-size:14px;
 	font-weight:bold;
 	min-height:18px;
@@ -631,13 +648,13 @@ background:transparent;
 	color:#2e94af;
 	font-size:16px;
 	qproperty-wordWrap: true;
-	padding: 0px 5px 10px 10px;
+	padding: 0px 10px 10px 10px;
 
 	}
 
 
 #tipFooterFrame{
-		margin:5px;
+		margin:5px 10px 5px 10px;
 		background:transparent;
 		border-bottom:none;
 	

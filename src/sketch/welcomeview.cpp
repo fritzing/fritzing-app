@@ -50,6 +50,67 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 #include <QDomElement>
 #include <QBuffer>
 #include <QScrollArea>
+#include <QStyleOption>
+
+static const int TitleRole = Qt::UserRole;
+static const int IntroRole = Qt::UserRole + 1;
+static const int DateRole = Qt::UserRole + 2;
+static const int AuthorRole = Qt::UserRole + 3;
+static const int IconRole = Qt::UserRole + 4;
+static const int ImageSpace = 60;
+
+////////////////////////////////////////////////////////////////////////////////
+ 
+BlogListDelegate::BlogListDelegate(QObject *parent) : QAbstractItemDelegate(parent)
+{
+}
+ 
+BlogListDelegate::~BlogListDelegate()
+{
+}
+
+void BlogListDelegate::paint ( QPainter * painter, const QStyleOptionViewItem & option, const QModelIndex & index) const
+{
+	//BACKGROUND
+    painter->fillRect(option.rect, painter->background());
+
+ 
+	//GET TITLE, DESCRIPTION AND ICON
+	QIcon ic = QIcon(qvariant_cast<QPixmap>(index.data(IconRole)));
+	QString title = index.data(TitleRole).toString();
+	QString date = index.data(DateRole).toString();
+	QString author = index.data(AuthorRole).toString();
+	QString intro = index.data(IntroRole).toString();
+    if (date.isEmpty()) date = author;
+    else date += " " + author;
+ 
+    QRect ret;
+	int imageSpace = ImageSpace + 10;
+
+	//TITLE
+	painter->setFont( option.font );
+	painter->drawText(imageSpace, option.rect.top(), option.rect.width(), option.rect.height(), Qt::AlignLeft, title, &ret);
+ 
+    //INTRO
+	painter->setFont( option.font );
+	painter->drawText(imageSpace, ret.bottom(), option.rect.width(), option.rect.height(), Qt::AlignLeft, intro, &ret);
+
+	painter->setFont( option.font );
+	painter->drawText(imageSpace, ret.bottom(), option.rect.width(), option.rect.height(), Qt::AlignLeft, date, &ret);
+
+    if (!ic.isNull()) {
+		//ICON
+		QRect ir = option.rect.adjusted(5, 5, -10, -10);
+		ic.paint(painter, ir, Qt::AlignVCenter|Qt::AlignLeft);
+	}
+}
+ 
+QSize BlogListDelegate::sizeHint ( const QStyleOptionViewItem & option, const QModelIndex & index ) const
+{
+	return QSize(200, 70); // very dumb value
+}
+ 
+///////////////////////////////////////////////////////////////////////////////
 
 void zeroMargin(QLayout * layout) {
     layout->setMargin(0);
@@ -399,14 +460,11 @@ QWidget * WelcomeView::initBlog() {
 	QVBoxLayout * frameLayout = new QVBoxLayout;
     zeroMargin(frameLayout);
 
-
     QFrame * titleFrame = new QFrame();
 	titleFrame->setObjectName("blogTitleFrame");
 
-
 	QHBoxLayout * titleFrameLayout = new QHBoxLayout;
     zeroMargin(titleFrameLayout);
-
 
     QLabel * titleLabel = new QLabel(tr("News and Stories"));
 	titleLabel->setObjectName("blogTitle");
@@ -422,52 +480,13 @@ QWidget * WelcomeView::initBlog() {
     titleFrame->setLayout(titleFrameLayout);
 	frameLayout->addWidget(titleFrame);
 
-	for (int i = 0; i < 3; i++) {
-         QFrame * blogEntry = new QFrame;
-         m_blogEntryList << blogEntry;
-         blogEntry->setObjectName("blogEntry");
-         QHBoxLayout * blogEntryLayout = new QHBoxLayout;
-         zeroMargin(blogEntryLayout);
-            /* QFrame * blogEntryPicture = new QFrame; */
+    m_blogListWidget = new QListWidget;
+    m_blogListWidget->setObjectName("blogEntryList");
+    m_blogListWidget->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    m_blogListWidget->setItemDelegate(new BlogListDelegate(m_blogListWidget));
+    connect(m_blogListWidget, SIGNAL(itemClicked (QListWidgetItem *)), this, SLOT(blogItemClicked(QListWidgetItem *)));
 
-            QLabel * picLabel = new QLabel;
-            picLabel->setObjectName("blogEntryPicture");
-            blogEntryLayout->addWidget(picLabel);
-            m_blogEntryPictureList << picLabel;
-            connect(picLabel, SIGNAL(linkActivated(const QString &)), this, SLOT(clickBlog(const QString &)));
-
-            QFrame * blogEntryTextFrame = new QFrame;
-            blogEntryTextFrame ->setObjectName("blogEntryTextFrame");
-            QVBoxLayout * blogEntryTextLayout = new QVBoxLayout;
-            zeroMargin(blogEntryTextLayout);
-
-                QLabel * label = new QLabel();
-                label->setObjectName("blogEntryTitle");
-                blogEntryTextLayout->addWidget(label);
-                m_blogEntryTitleList << label;
-                connect(label, SIGNAL(linkActivated(const QString &)), this, SLOT(clickBlog(const QString &)));
-
-                label = new QLabel();
-                label->setObjectName("blogEntryText");
-                blogEntryTextLayout->addWidget(label);
-                m_blogEntryTextList << label;
-
-                label = new QLabel();
-                label->setObjectName("blogEntryDate");
-                blogEntryTextLayout->addWidget(label);
-                m_blogEntryDateList << label;
-
-            blogEntryTextFrame ->setLayout(blogEntryTextLayout);
-
-            blogEntryLayout->addWidget(blogEntryTextFrame);
-
-            blogEntry -> setLayout(blogEntryLayout);
-
-          frameLayout->addWidget(blogEntry);
-	}
-
-
-  /*  frameLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Minimum, QSizePolicy::Expanding));*/
+    frameLayout->addWidget(m_blogListWidget);
 
     QFrame * footerFrame = new QFrame();
     footerFrame->setObjectName("blogFooterFrame");
@@ -476,7 +495,6 @@ QWidget * WelcomeView::initBlog() {
         zeroMargin(footerFrameLayout);
 
         footerFrameLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Expanding));
-
 
         QLabel * footerLabel = new QLabel(QString("<a href='http://blog.fritzing.org'  style='text-decoration:none; color:#802742;'>%1</a>").arg(tr("Fritzing Project News.   ")));
         footerLabel->setObjectName("blogLogoText");
@@ -494,7 +512,6 @@ QWidget * WelcomeView::initBlog() {
 
     frame->setLayout(frameLayout);
 
-    foreach (QFrame * blogEntry, m_blogEntryList) blogEntry->setVisible(false);
 
     return frame;
 }
@@ -540,10 +557,7 @@ void WelcomeView::clickRecent(const QString & url) {
 	}
 }
 
-
 void WelcomeView::gotBlogSnippet(QNetworkReply * networkReply) {
-
-    foreach (QFrame * blogEntry, m_blogEntryList) blogEntry->setVisible(false);
 
     QNetworkAccessManager * manager = networkReply->manager();
 	int responseCode = networkReply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
@@ -623,6 +637,8 @@ We thought we should delight our readers a little by showing some dainties of cr
 
 
 void WelcomeView::readBlog(const QDomDocument & doc) {
+    m_blogListWidget->clear();
+
 	QDomNodeList nodeList = doc.elementsByTagName("li");
 	int ix = 0;
 	for (int i = 0; i < nodeList.count(); i++) {
@@ -647,35 +663,30 @@ void WelcomeView::readBlog(const QDomDocument & doc) {
         }
         if (stuff.value("title", "").isEmpty()) continue;
         if (stuff.value("href", "").isEmpty()) continue;
-            
-		m_blogEntryTitleList[ix]->setText(QString("<a href='%1' style='text-decoration:none; color:#666;'>%2</a>").arg(stuff.value("href")).arg(stuff.value("title")));
+
+        QListWidgetItem * item = new QListWidgetItem();
+        item->setData(TitleRole, stuff.value("title"));
+        item->setData(Qt::UserRole, stuff.value("href"));      
         QString text = stuff.value("intro", "");
         text.remove("\r");
         text.remove("\n");
-        m_blogEntryTextList[ix]->setText(text);
-        m_blogEntryPictureList[ix]->setText("");
+        item->setData(IntroRole, text);
+        m_blogListWidget->addItem(item);
+
         if (!stuff.value("img", "").isEmpty()) {
             QNetworkAccessManager * manager = new QNetworkAccessManager(this);
             manager->setProperty("index", ix);
-            manager->setProperty("href", stuff.value("href"));
 	        connect(manager, SIGNAL(finished(QNetworkReply *)), this, SLOT(gotBlogImage(QNetworkReply *)));
 	        manager->get(QNetworkRequest(QUrl(stuff.value("img"))));
         }
 
-        QString dateStuff;
+
         if (!stuff.value("date", "").isEmpty()) {
-            dateStuff.append(stuff.value("date"));
-            dateStuff.append("    ");
+            item->setData(DateRole, stuff.value("date"));
         }
-        dateStuff.append(stuff.value("author"));
-
-        m_blogEntryDateList[ix]->setText(dateStuff);
-        
-        m_blogEntryList[ix]->setVisible(true);
-		if (++ix >= m_blogEntryTextList.count()) {
-			break;
-		}
-
+        if (!stuff.value("author", "").isEmpty()) {
+            item->setData(AuthorRole, stuff.value("author"));
+        }
 	}
 }
 
@@ -687,16 +698,13 @@ void WelcomeView::gotBlogImage(QNetworkReply * networkReply) {
         QByteArray data(networkReply->readAll());
         QPixmap pixmap;
         if (pixmap.loadFromData(data)) {
-            // TODO: would be nice if the size wasn't hard-coded
-            QPixmap scaled = pixmap.scaled(QSize(60, 60), Qt::KeepAspectRatio);
-            QByteArray scaledData;
-            QBuffer buffer(&scaledData);
-            buffer.open( QIODevice::WriteOnly );
-            scaled.save( &buffer, "PNG" );
-            QString pic = QString("<a href='%1' style='text-decoration:none; color:#666;'><img src='data:image/png;base64,%2' /></a>").arg(manager->property("href").toString()).arg(QString(scaledData.toBase64()));
-		    m_blogEntryPictureList[manager->property("index").toInt()]->setText(pic);
+            QPixmap scaled = pixmap.scaled(QSize(ImageSpace, ImageSpace), Qt::KeepAspectRatio);
+            int index = manager->property("index").toInt();
+            QListWidgetItem * item = m_blogListWidget->item(index);
+		    if (item) {
+                item->setData(IconRole, scaled);
+            }
         }
-		
 	}
 
     manager->deleteLater();

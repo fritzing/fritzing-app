@@ -37,7 +37,9 @@ $Date: 2012-09-26 15:45:37 +0200 (Mi, 26. Sep 2012) $
 #include <QDomDocument>
 #include <QDragEnterEvent>
 #include <QListWidget>
-
+#include <QPainter>
+#include <QAbstractItemDelegate>
+ 
 class WelcomeView : public QFrame
 {
 Q_OBJECT
@@ -73,21 +75,23 @@ protected slots:
     void nextTip();
 
 protected:
-    QList<QFrame *> m_blogEntryList;
-    QList<QLabel *> m_blogEntryTitleList;
-    QList<QLabel *> m_blogEntryTextList;
-    QList<QLabel *> m_blogEntryPictureList;
-    QList<QLabel *> m_blogEntryDateList;
-
+    QListWidget * m_blogListWidget;
     QLabel * m_tip;
-	QFrame * m_blog;
     QListWidget * m_recentListWidget;
-	QFrame * m_creatorKit;
     QFrame * m_fabContentFrame;
     QFrame * m_fabFooterFrame;
     QFrame * m_shopContentFrame;
     QFrame * m_shopFooterFrame;
 };
 
+class BlogListDelegate : public QAbstractItemDelegate
+{
+	public:
+		BlogListDelegate(QObject *parent = 0);
+		virtual ~BlogListDelegate(); 
+
+		void paint ( QPainter * painter, const QStyleOptionViewItem & option, const QModelIndex & index ) const;
+		QSize sizeHint ( const QStyleOptionViewItem & option, const QModelIndex & index ) const;
+};
 
 #endif

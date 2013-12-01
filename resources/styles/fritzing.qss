@@ -28,6 +28,7 @@ QStatusBar {
 	  opacity: 200;
 }
 
+
 QScrollBar:vertical {               
          border: 0px; 
          background:rgba(255,255,255,10); 
@@ -39,20 +40,20 @@ QScrollBar::handle:vertical {
 		border: 2px solid #b2b2b2;
 		border-radius: 2px;
          background: #b2b2b2;
-         min-height: 0px; 
+         min-height: 5px; 
       
      }
 	 
 QScrollBar::add-line:vertical { 
          background: none; 
-         height: 10px; 
+         height: 1px; 
          subcontrol-position: bottom; 
          subcontrol-origin: margin; 
      }
 	 
 QScrollBar::sub-line:vertical { 
          background:none; 
-         height: 10px; 
+         height: 1px; 
          subcontrol-position: top; 
          subcontrol-origin: margin; 
      } 
@@ -71,13 +72,13 @@ QScrollBar::handle:horizontal
 			border: 2px solid #b2b2b2;
 		border-radius: 2px;
          background: #b2b2b2;
-         min-width: 0px; 
+         min-width: 5px; 
 	}
  
 QScrollBar::add-line:horizontal
 {
 	         background: none; 
-         width: 10px; 
+         width: 1px; 
 subcontrol-position: right;
 subcontrol-origin: margin;
 }
@@ -85,13 +86,15 @@ subcontrol-origin: margin;
 QScrollBar::sub-line:horizontal
 {
 	         background:none; 
-         width: 10px; 
+         width: 1px; 
 	subcontrol-position: left;
 subcontrol-origin: margin;
 	}
-	
-QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
-      background: none;
+
+QScrollBar::add-page:vertical,
+QScrollBar::sub-page:vertical 
+{
+      background: transparent;
   }
 
 
@@ -339,7 +342,8 @@ WelcomeView QFrame QLabel {
 	border-bottom: 8px solid #d9d9d9;	
 	font: "Droid Sans";
 	font-family: "Droid Sans";
-	max-width: 350px;
+	max-width: 220px;
+	min-width: 220px;
 }
 #tipFrame
 {
@@ -348,7 +352,8 @@ WelcomeView QFrame QLabel {
 	border-bottom: 8px solid #d9d9d9;	
 	font: "Droid Sans";
 	font-family: "Droid Sans";
-	max-width: 350px;
+	max-width: 220px;
+min-width: 220px;
 }
 
 
@@ -533,6 +538,7 @@ background:transparent;
 	font: regular "Droid Sans";
 	color:#666;
 	qproperty-dateTextColor: #f00;
+		qproperty-dateTitleColor: #f0f;
 	}	
 
 #blogList::item
@@ -541,7 +547,7 @@ background:transparent;
 	border:none;
 	padding:0px;
 	text-align:left;
-	font-size: 12px;
+	font-size: 15px;
 	background:#fff;
 	color:#666;
 	font: regular "Droid Sans";
@@ -718,7 +724,7 @@ background:transparent;
 	background:#fff;
 }
 
-
+	
 #shopTitle {
 	font-size:14px;
 	font-weight:bold;
@@ -727,6 +733,14 @@ background:transparent;
 	margin-right:2px;
 }
 
+#fabTitle {
+	font-size:14px;
+	font-weight:bold;
+	color:#c4c4c4;
+	margin-left:1px;
+	margin-right:2px;
+}
+/*
 #shopTitleGoto
 {
 	min-height:16px;
@@ -736,11 +750,11 @@ background:transparent;
 	font-weight:bold;
 	background:transparent;
 }
-
+*/
 #shopContentFrame,
 #fabContentFrame
 {
-	/*background:#00f; */
+
 	border:none;
 	font: "Droid Sans";
 	margin:5px;
@@ -755,12 +769,14 @@ background:transparent;
 	background:#fff;
 	min-width:45px;
 	min-height:45px;
+	margin:0px;
+	padding:0px;
 	}
 	
-	
+
 #shopContentTextFrame,
 #fabContentTextFrame{
-	/*background:#00f; */
+
 	margin: 5px 5px;
 	border:none;
 	min-width:200px;
@@ -794,7 +810,7 @@ margin:0px;
 font-size:11px;
 max-height:14px;
 }
-	
+
 #shopFooterFrame,	
 #fabFooterFrame {
 		border-top:1px solid #c4c4c4; 
@@ -802,7 +818,7 @@ max-height:14px;
 		border-bottom:none;
 		margin:0px 5px 5px 5px;
 		padding-top:5px;
-		max-height:27px;
+
 }
 
 

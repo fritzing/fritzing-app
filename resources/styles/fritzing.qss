@@ -44,14 +44,14 @@ QScrollBar::handle:vertical{
      }
 	 
 QScrollBar::add-line:vertical{ 
-         background: #fff; 
+         background: none; 
          height: 10px; 
          subcontrol-position: bottom; 
          subcontrol-origin: margin; 
      }
 	 
 QScrollBar::sub-line:vertical{ 
-         background:#fff; 
+         background:none; 
          height: 10px; 
          subcontrol-position: top; 
          subcontrol-origin: margin; 
@@ -76,7 +76,7 @@ QScrollBar::handle:horizontal
  
 QScrollBar::add-line:horizontal
 {
-	         background: #fff; 
+	         background: none; 
          width: 10px; 
 subcontrol-position: right;
 subcontrol-origin: margin;
@@ -84,11 +84,15 @@ subcontrol-origin: margin;
  
 QScrollBar::sub-line:horizontal
 {
-	         background:#fff; 
+	         background:none; 
          width: 10px; 
 	subcontrol-position: left;
 subcontrol-origin: margin;
 	}
+	
+QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
+      background: none;
+  }
 
 
 /* this separates palettes from each other and is movable */
@@ -329,25 +333,27 @@ WelcomeView QFrame QLabel {
 	
 /* -------- position of WS"content-blocks" ------------  */
 #recentFrame {
-    margin: 15px 0px 18px 35px;
+    margin: 10px 0px 13px 15px;
 	padding-bottom:5px;
 	background: #fff;
 	border-bottom: 8px solid #d9d9d9;	
 	font: "Droid Sans";
 	font-family: "Droid Sans";
+	max-width: 350px;
 }
 #tipFrame
 {
-    margin: 0px 0px 18px 35px;
+    margin: 0px 0px 13px 15px;
 	background: #fff;
 	border-bottom: 8px solid #d9d9d9;	
 	font: "Droid Sans";
 	font-family: "Droid Sans";
+	max-width: 350px;
 }
 
 
 #blogFrame {
-	margin: 15px 35px 18px 35px;
+	margin: 10px 15px 13px 15px;
 	background: #fff;
 	border-bottom: 8px solid #d9d9d9;	
 	font: "Droid Sans";
@@ -355,7 +361,7 @@ WelcomeView QFrame QLabel {
 }
 
 #shopFrame {
-	margin: 0px 35px 18px 35px;
+	margin: 0px 15px 13px 15px;
 	background: #fff;
 	border-bottom: 8px solid #d9d9d9;	
 	font: "Droid Sans";
@@ -391,7 +397,7 @@ WelcomeView QFrame QLabel {
 
 #recentOpenSketch,
 #recentNewSketch{
-	margin: 3px 5px 5px 5px;
+	margin: 5px 5px 5px 5px;
 	padding:0px;
 	text-align:left;
 	border:none;
@@ -417,7 +423,7 @@ WelcomeView QFrame QLabel {
 
 #recentList::item
 {
-	margin:0px;
+	margin:3px 0px;
 	border:none;
 	padding:0px;
 	text-align:left;
@@ -618,8 +624,7 @@ background:transparent;
 #tipFrame {
 	background: #D5E1E9;
 	border-bottom: 8px solid #A9C6D6;
-	max-width: 350px;
-	padding-left:5px;
+
 	}
 	
 #tipTitle {
@@ -632,18 +637,24 @@ background:transparent;
 	min-height:18px;
 	max-height:18px;
 }	
-
-#tipScrollArea 
+#tipScrollArea
 {
 	border:none;
-	padding: 0px 0px 10px 0px;
+	padding: 0px 0px 0px 0px;
+	margin-right:5px;
+	background:#fff transparent;
+	}
+#tipScrollArea QScrollBar
+{
+	border:none;
+	background:#f0f;
 	}
 
 #tipScrollArea QScrollBar:vertical{               
          border: 0px; 
          background:#D5E1E9; 
          width:10px;     
-         margin: 0px 0px 0px 0px; 
+         margin: 0px; 
      } 
 	 
 #tipScrollArea QScrollBar::handle:vertical{ 
@@ -667,6 +678,8 @@ background:transparent;
          subcontrol-position: top; 
          subcontrol-origin: margin; 
      } 
+	 
+
 	
 	
 #tip  {
@@ -1157,10 +1170,10 @@ AutoCloseMessageBox {
 /* ################### info view #################### */
 
 HtmlInfoView {
-    /*
-        border: 1px solid rgb(177,177,177);
-        border-top: 0px;
-        */
+margin-right:5px;
+border:none;
+background:#d9d9d9;
+
 }
 
 #infoViewMainFrame {

@@ -713,14 +713,16 @@ background:transparent;
 	/*background:#00f; */
 	border:none;
 	font: "Droid Sans";
-	margin-left:5px;
+	margin:5px;
+	height:100%;
+	
 	}
 
 
 #shopContentImage,
 #fabContentImage
 {
-	background:#f0f;
+	background:#fff;
 	min-width:45px;
 	min-height:45px;
 	}
@@ -732,6 +734,7 @@ background:transparent;
 	margin: 5px 5px;
 	border:none;
 	min-width:200px;
+	
 	}
 
 #fabContentSpacer{
@@ -739,6 +742,7 @@ height:3px;
 background:#f0f;
 margin:0px;
 }
+
 #shopContentTextHeadline,	
 #fabContentTextHeadline {
 	font-size:16px;
@@ -766,8 +770,9 @@ max-height:14px;
 		border-top:1px solid #c4c4c4; 
 		background:transparent;
 		border-bottom:none;
-		margin:5px;
+		margin:0px 5px 5px 5px;
 		padding-top:5px;
+		max-height:27px;
 }
 
 

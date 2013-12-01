@@ -24,12 +24,6 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 
 ********************************************************************/
 
-//	TODO
-//
-//		multiple windows: update blog in all windows when one updates--share download data?
-//		tips and tricks: save list of viewed tricks?
-//
-
 #include "welcomeview.h"
 #include "../debugdialog.h"
 #include "../help/tipsandtricks.h"
@@ -51,13 +45,35 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 #include <QBuffer>
 #include <QScrollArea>
 #include <QStyleOption>
+#include <QStyle>
+
+////////////////////////////////////////////////////////////
 
 static const int TitleRole = Qt::UserRole;
 static const int IntroRole = Qt::UserRole + 1;
 static const int DateRole = Qt::UserRole + 2;
 static const int AuthorRole = Qt::UserRole + 3;
 static const int IconRole = Qt::UserRole + 4;
+static const int RefRole = Qt::UserRole + 5;
 static const int ImageSpace = 60;
+
+////////////////////////////////////////////////////////////////////////////////
+
+BlogListWidget::BlogListWidget(QWidget * parent) : QListWidget(parent)
+{
+}
+
+BlogListWidget::~BlogListWidget()
+{
+}
+
+QColor BlogListWidget::dateTextColor() const {
+    return m_dateTextColor;
+}
+
+void BlogListWidget::setDateTextColor(QColor color) {
+    m_dateTextColor = color;
+}
 
 ////////////////////////////////////////////////////////////////////////////////
  
@@ -71,43 +87,56 @@ BlogListDelegate::~BlogListDelegate()
 
 void BlogListDelegate::paint ( QPainter * painter, const QStyleOptionViewItem & option, const QModelIndex & index) const
 {
-	//BACKGROUND
-    painter->fillRect(option.rect, painter->background());
+	BlogListWidget * listWidget = qobject_cast<BlogListWidget *>(this->parent());
+    if (listWidget == NULL) return;
 
- 
-	//GET TITLE, DESCRIPTION AND ICON
-	QIcon ic = QIcon(qvariant_cast<QPixmap>(index.data(IconRole)));
+    QStyle * style = listWidget->style();
+    if (style == NULL) return;
+
+    //painter->fillRect(option.rect, painter->background());
+
+
+    style->drawPrimitive(QStyle::PE_PanelItemViewItem, &option, painter, listWidget);
+
+    QPixmap pixmap = qvariant_cast<QPixmap>(index.data(IconRole));
+	//QIcon ic = QIcon(qvariant_cast<QPixmap>(index.data(IconRole));
 	QString title = index.data(TitleRole).toString();
 	QString date = index.data(DateRole).toString();
 	QString author = index.data(AuthorRole).toString();
 	QString intro = index.data(IntroRole).toString();
-    if (date.isEmpty()) date = author;
-    else date += " " + author;
- 
+
     QRect ret;
 	int imageSpace = ImageSpace + 10;
 
-	//TITLE
-	painter->setFont( option.font );
-	painter->drawText(imageSpace, option.rect.top(), option.rect.width(), option.rect.height(), Qt::AlignLeft, title, &ret);
- 
-    //INTRO
-	painter->setFont( option.font );
-	painter->drawText(imageSpace, ret.bottom(), option.rect.width(), option.rect.height(), Qt::AlignLeft, intro, &ret);
+    QRect rect = option.rect.adjusted(imageSpace, 0, 0, 0);
+    style->drawItemText(painter, rect, Qt::AlignLeft, option.palette, true, title);
 
-	painter->setFont( option.font );
-	painter->drawText(imageSpace, ret.bottom(), option.rect.width(), option.rect.height(), Qt::AlignLeft, date, &ret);
+    rect = option.rect.adjusted(imageSpace, option.fontMetrics.lineSpacing(), 0, 0);
+    style->drawItemText(painter, rect, Qt::AlignLeft, option.palette, true, intro);
 
-    if (!ic.isNull()) {
-		//ICON
-		QRect ir = option.rect.adjusted(5, 5, -10, -10);
-		ic.paint(painter, ir, Qt::AlignVCenter|Qt::AlignLeft);
+    painter->save();
+    painter->setPen(listWidget->dateTextColor());
+    rect = option.rect.adjusted(imageSpace, option.fontMetrics.lineSpacing() * 2, 0, 0);
+    style->drawItemText(painter, rect, Qt::AlignLeft, option.palette, true, date);
+    painter->restore();
+
+    QRect textRect = style->itemTextRect(option.fontMetrics, option.rect, Qt::AlignLeft, true, date);
+    rect = option.rect.adjusted(imageSpace + textRect.width() + 7, option.fontMetrics.lineSpacing() * 2, 0, 0);
+    style->drawItemText(painter, rect, Qt::AlignLeft, option.palette, true, author);
+
+	//painter->drawText(imageSpace, option.rect.top(), option.rect.width(), option.rect.height(), Qt::AlignLeft, title, &ret);
+	//painter->drawText(imageSpace, ret.bottom(), option.rect.width(), option.rect.height(), Qt::AlignLeft, intro, &ret);
+	//painter->drawText(imageSpace, ret.bottom(), option.rect.width(), option.rect.height(), Qt::AlignLeft, date, &ret);
+
+    if (!pixmap.isNull()) {
+		//ic.paint(painter, option.rect, Qt::AlignVCenter|Qt::AlignLeft);
+        style->drawItemPixmap(painter, option.rect, Qt::AlignLeft, pixmap);
 	}
 }
  
 QSize BlogListDelegate::sizeHint ( const QStyleOptionViewItem & option, const QModelIndex & index ) const
 {
-	return QSize(200, 70); // very dumb value
+	return QSize(200, 60); // very dumb value
 }
  
 ///////////////////////////////////////////////////////////////////////////////
@@ -480,8 +509,8 @@ QWidget * WelcomeView::initBlog() {
     titleFrame->setLayout(titleFrameLayout);
 	frameLayout->addWidget(titleFrame);
 
-    m_blogListWidget = new QListWidget;
-    m_blogListWidget->setObjectName("blogEntryList");
+    m_blogListWidget = new BlogListWidget;
+    m_blogListWidget->setObjectName("blogList");
     m_blogListWidget->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     m_blogListWidget->setItemDelegate(new BlogListDelegate(m_blogListWidget));
     connect(m_blogListWidget, SIGNAL(itemClicked (QListWidgetItem *)), this, SLOT(blogItemClicked(QListWidgetItem *)));
@@ -666,7 +695,7 @@ void WelcomeView::readBlog(const QDomDocument & doc) {
 
         QListWidgetItem * item = new QListWidgetItem();
         item->setData(TitleRole, stuff.value("title"));
-        item->setData(Qt::UserRole, stuff.value("href"));      
+        item->setData(RefRole, stuff.value("href"));      
         QString text = stuff.value("intro", "");
         text.remove("\r");
         text.remove("\n");
@@ -781,3 +810,12 @@ void WelcomeView::recentItemClicked(QListWidgetItem * item) {
 
 	emit recentSketch(data, data);
 }
+
+
+void WelcomeView::blogItemClicked(QListWidgetItem * item) {
+    QString url = item->data(RefRole).toString();
+    if (url.isEmpty()) return;
+
+	QDesktopServices::openUrl(url);
+}
+

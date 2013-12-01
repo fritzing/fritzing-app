@@ -39,6 +39,22 @@ $Date: 2012-09-26 15:45:37 +0200 (Mi, 26. Sep 2012) $
 #include <QListWidget>
 #include <QPainter>
 #include <QAbstractItemDelegate>
+
+class BlogListWidget : public QListWidget 
+{
+    Q_OBJECT
+    Q_PROPERTY(QColor dateTextColor READ dateTextColor WRITE setDateTextColor DESIGNABLE true)
+
+public:
+    BlogListWidget(QWidget * parent = 0);
+    ~BlogListWidget();
+
+    QColor dateTextColor() const;
+    void setDateTextColor(QColor c);
+
+protected:
+    QColor m_dateTextColor;
+};
  
 class WelcomeView : public QFrame
 {
@@ -72,10 +88,11 @@ protected slots:
     void gotBlogImage(QNetworkReply *);
 	void clickBlog(const QString &);
     void recentItemClicked(QListWidgetItem *);
+    void blogItemClicked(QListWidgetItem *);
     void nextTip();
 
 protected:
-    QListWidget * m_blogListWidget;
+    BlogListWidget * m_blogListWidget;
     QLabel * m_tip;
     QListWidget * m_recentListWidget;
     QFrame * m_fabContentFrame;

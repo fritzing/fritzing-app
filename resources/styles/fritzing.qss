@@ -515,9 +515,37 @@ background:transparent;
 	font-weight:bold;
 }
 
+#blogList
+{
+	
+	border:none;
+	margin: 5px 5px 5px 5px;
+	padding:0px;
+	text-align:left;
+	font-size: 12px;
+	background:#fff;
+	font: regular "Droid Sans";
+	color:#666;
+	qproperty-dateTextColor: #f00;
+	}	
 
-/******* this is the styling for the blog-entries ***********/
+#blogList::item
+{
+	margin:0px;
+	border:none;
+	padding:0px;
+	text-align:left;
+	font-size: 12px;
+	background:#fff;
+	color:#666;
+	font: regular "Droid Sans";
+	border-bottom:1px solid #c4c4c4; 
+	}
 
+
+/******* this is the !!!obsolete!!! styling for the blog-entries ***********/
+
+/*
 #blogEntry {
 	border-bottom:1px solid #c4c4c4; 
 	margin:0px 5px 0px 5px;
@@ -561,6 +589,7 @@ background:transparent;
 	max-height: 65px;
 	min-height:45px;
 }
+*/
 
 /******* this is the styling for the blog-footer ***********/
 #blogFooterFrame{

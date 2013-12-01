@@ -109,6 +109,7 @@ QSize TagLabel::sizeHint() const
 HtmlInfoView::HtmlInfoView(QWidget * parent) : QScrollArea(parent) 
 {
     this->setWidgetResizable(true);
+
 	this->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
 	m_lastTitleItemBase = NULL;

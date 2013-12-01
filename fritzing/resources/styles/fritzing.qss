@@ -569,9 +569,10 @@ background:transparent;
 	margin-left:5px;
 	background:#fff transparent;
 }
-*/
+
+
 #blogEntryText {
-	color: #656565; /*656565*/
+	color: #656565;
 	border:none;
 	font-size: 12px;
 	min-height: 16px;
@@ -580,7 +581,7 @@ background:transparent;
 }
 
 #blogEntryDate {
-	color: #656565; /*656565*/
+	color: #656565;
 	border:none;
 	font-size: 10px;
 	margin-left:5px;

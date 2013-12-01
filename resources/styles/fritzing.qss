@@ -569,7 +569,7 @@ background:transparent;
 	margin-left:5px;
 	background:#fff transparent;
 }
-
+*/
 #blogEntryText {
 	color: #656565; /*656565*/
 	border:none;

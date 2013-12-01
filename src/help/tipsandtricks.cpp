@@ -130,7 +130,7 @@ void TipsAndTricks::initTipSets() {
 
     ts = new TipSet;
 	ts->heading = tr("pcb layout");
-	ts->tips << tr("Always lead a trace straight out of a pin. This helps to guard against short circuits.");
+	ts->tips << tr("Always lead a trace straight out of a pin. This helps to prevent short circuits.");
 	ts->tips << tr("Through-hole parts can be traced from either side of a PCB.");
 	ts->tips << tr("It makes life easier to route traces horizontally on one side of a PCB and vertically on the other side.");
 	ts->tips << tr("Route traces in 45-degree angles to reduce noise.");

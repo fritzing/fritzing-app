@@ -19,7 +19,7 @@ QStatusBar {
 		color: rgb(255,255,255);
 }
 
-#statusBarContainer QTooltip{
+#statusBarContainer QTooltip {
      border: 1px solid #fff;
      padding: 3px;
      border-radius: 1px;
@@ -28,14 +28,14 @@ QStatusBar {
 	  opacity: 200;
 }
 
-QScrollBar:vertical{               
+QScrollBar:vertical {               
          border: 0px; 
          background:rgba(255,255,255,10); 
          width:10px;     
          margin: 0px 0px 0px 0px; 
      } 
 	 
-QScrollBar::handle:vertical{ 
+QScrollBar::handle:vertical { 
 		border: 2px solid #b2b2b2;
 		border-radius: 2px;
          background: #b2b2b2;
@@ -43,14 +43,14 @@ QScrollBar::handle:vertical{
       
      }
 	 
-QScrollBar::add-line:vertical{ 
+QScrollBar::add-line:vertical { 
          background: none; 
          height: 10px; 
          subcontrol-position: bottom; 
          subcontrol-origin: margin; 
      }
 	 
-QScrollBar::sub-line:vertical{ 
+QScrollBar::sub-line:vertical { 
          background:none; 
          height: 10px; 
          subcontrol-position: top; 

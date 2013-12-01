@@ -770,7 +770,7 @@ QWidget * WelcomeView::initTip() {
         zeroMargin(footerFrameLayout);
 
 
-        QLabel * footerLabel = new QLabel(QString("<a href='http://blog.fritzing.org'  style='text-decoration:none; color:#802742;'>%1</a>").arg(tr("All Tips")));
+        QLabel * footerLabel = new QLabel(QString("<a href='http://blog.fritzing.org'  style='text-decoration:none; color:#802742;'>%1</a>").arg(tr("All Tips >>")));
         footerLabel->setObjectName("allTips");
         footerFrameLayout->addWidget(footerLabel);
         connect(footerLabel, SIGNAL(linkActivated(const QString &)), this->window(), SLOT(tipsAndTricks()));

@@ -19,7 +19,7 @@ QStatusBar {
 		color: rgb(255,255,255);
 }
 
-#statusBarContainer QTooltip{
+#statusBarContainer QTooltip {
      border: 1px solid #fff;
      padding: 3px;
      border-radius: 1px;
@@ -28,14 +28,14 @@ QStatusBar {
 	  opacity: 200;
 }
 
-QScrollBar:vertical{               
+QScrollBar:vertical {               
          border: 0px; 
          background:rgba(255,255,255,10); 
          width:10px;     
          margin: 0px 0px 0px 0px; 
      } 
 	 
-QScrollBar::handle:vertical{ 
+QScrollBar::handle:vertical { 
 		border: 2px solid #b2b2b2;
 		border-radius: 2px;
          background: #b2b2b2;
@@ -43,14 +43,14 @@ QScrollBar::handle:vertical{
       
      }
 	 
-QScrollBar::add-line:vertical{ 
+QScrollBar::add-line:vertical { 
          background: none; 
          height: 10px; 
          subcontrol-position: bottom; 
          subcontrol-origin: margin; 
      }
 	 
-QScrollBar::sub-line:vertical{ 
+QScrollBar::sub-line:vertical { 
          background:none; 
          height: 10px; 
          subcontrol-position: top; 
@@ -521,9 +521,37 @@ background:transparent;
 	font-weight:bold;
 }
 
+#blogList
+{
+	
+	border:none;
+	margin: 5px 5px 5px 5px;
+	padding:0px;
+	text-align:left;
+	font-size: 12px;
+	background:#fff;
+	font: regular "Droid Sans";
+	color:#666;
+	qproperty-dateTextColor: #f00;
+	}	
 
-/******* this is the styling for the blog-entries ***********/
+#blogList::item
+{
+	margin:0px;
+	border:none;
+	padding:0px;
+	text-align:left;
+	font-size: 12px;
+	background:#fff;
+	color:#666;
+	font: regular "Droid Sans";
+	border-bottom:1px solid #c4c4c4; 
+	}
 
+
+/******* this is the !!!obsolete!!! styling for the blog-entries ***********/
+
+/*
 #blogEntry {
 	border-bottom:1px solid #c4c4c4; 
 	margin:0px 5px 0px 5px;
@@ -567,6 +595,7 @@ background:transparent;
 	max-height: 65px;
 	min-height:45px;
 }
+*/
 
 /******* this is the styling for the blog-footer ***********/
 #blogFooterFrame{

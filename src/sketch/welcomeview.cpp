@@ -64,7 +64,7 @@ void zeroMargin(QLayout * layout) {
     layout->setSpacing(0);
 }
 
-int pointSize(const QString & sizeString) {
+int pixelSize(const QString & sizeString) {
     // assume all sizes are of the form Npx otherwise return -1
     QString temp = sizeString;
     temp.remove(" ");
@@ -77,6 +77,7 @@ int pointSize(const QString & sizeString) {
 
     return -1;
 }
+
 
 QString cleanData(const QString & data) {
     static QRegExp ListItemMatcher("<li>.*</li>");
@@ -135,6 +136,14 @@ void BlogListWidget::setTitleTextFontSize(QString size) {
     m_titleTextFontSize = size;
 }
 
+QString BlogListWidget::titleTextExtraLeading() const {
+    return m_titleTextExtraLeading;
+}
+
+void BlogListWidget::setTitleTextExtraLeading(QString leading) {
+    m_titleTextExtraLeading = leading;
+}
+
 /* blogEntry intro text properties color, fontfamily, fontsize*/
 QColor BlogListWidget::introTextColor() const {
     return m_introTextColor;
@@ -158,6 +167,14 @@ QString BlogListWidget::introTextFontSize() const {
 
 void BlogListWidget::setIntroTextFontSize(QString size) {
     m_introTextFontSize = size;
+}
+
+QString BlogListWidget::introTextExtraLeading() const {
+    return m_introTextExtraLeading;
+}
+
+void BlogListWidget::setIntroTextExtraLeading(QString leading) {
+    m_introTextExtraLeading = leading;
 }
 
 /* blogEntry Date text properties color, fontfamily, fontsize*/
@@ -185,7 +202,6 @@ QString BlogListWidget::dateTextFontSize() const {
 void BlogListWidget::setDateTextFontSize(QString size) {
     m_dateTextFontSize = size;
 }
-
 
 ////////////////////////////////////////////////////////////////////////////////
  
@@ -220,31 +236,40 @@ void BlogListDelegate::paint ( QPainter * painter, const QStyleOptionViewItem & 
     QRect ret;
 	int imageSpace = ImageSpace + 10;
 
+    // TITLE
     painter->setPen(listWidget->titleTextColor());
-    QFont titleFont(listWidget->titleTextFontFamily(), pointSize(listWidget->titleTextFontSize()));
+    QFont titleFont(listWidget->titleTextFontFamily());
+    titleFont.setPixelSize(pixelSize(listWidget->titleTextFontSize()));
+ //   titleFont.setStyleStrategy(QFont::PreferAntialias);
     painter->setFont(titleFont);
-    titleFont.setStyleStrategy(QFont::PreferAntialias);
-    QFontMetrics titleFontMetrics(titleFont);
-    QRect rect = option.rect.adjusted(imageSpace, 0, 0, 0);
+    QRect rect = option.rect.adjusted(imageSpace, 2, 0, 0);
     style->drawItemText(painter, rect, Qt::AlignLeft, option.palette, true, title);
+    QFontMetrics titleFontMetrics(titleFont);
 
+    // INTRO
     painter->setPen(listWidget->introTextColor());
-    QFont introFont(listWidget->introTextFontFamily(), pointSize(listWidget->introTextFontSize()));
+    QFont introFont(listWidget->introTextFontFamily());
+
+
+    introFont.setPixelSize(pixelSize(listWidget->introTextFontSize()));
     painter->setFont(introFont);
-    QFontMetrics introFontMetrics(introFont);
-    rect = option.rect.adjusted(imageSpace, titleFontMetrics.lineSpacing(), 0, 0);
+    rect = option.rect.adjusted(imageSpace, titleFontMetrics.lineSpacing() + pixelSize(listWidget->titleTextExtraLeading()) , 0, 0);
     style->drawItemText(painter, rect, Qt::AlignLeft, option.palette, true, intro);
+    QFontMetrics introFontMetrics(introFont);
 
+    // DATE
     painter->setPen(listWidget->dateTextColor());
-    QFont font(listWidget->dateTextFontFamily(), pointSize(listWidget->dateTextFontSize()));
+    QFont font(listWidget->dateTextFontFamily());
+    font.setPixelSize(pixelSize(listWidget->dateTextFontSize()));
     painter->setFont(font);
-    QFontMetrics dateTextFontMetrics(font);
-    rect = option.rect.adjusted(imageSpace, titleFontMetrics.lineSpacing() + introFontMetrics.lineSpacing(), 0, 0);
+    rect = option.rect.adjusted(imageSpace, titleFontMetrics.lineSpacing() + introFontMetrics.lineSpacing() + pixelSize(listWidget->introTextExtraLeading()), 0, 0);
     style->drawItemText(painter, rect, Qt::AlignLeft, option.palette, true, date);
+    QFontMetrics dateTextFontMetrics(font);
 
+    // AUTHOR
     painter->setFont(itemFont);
     QRect textRect = style->itemTextRect(dateTextFontMetrics, option.rect, Qt::AlignLeft, true, date);
-    rect = option.rect.adjusted(imageSpace + textRect.width() + 7, titleFontMetrics.lineSpacing() + introFontMetrics.lineSpacing(), 0, 0);
+    rect = option.rect.adjusted(imageSpace + textRect.width() + 7, titleFontMetrics.lineSpacing() + introFontMetrics.lineSpacing() + pixelSize(listWidget->introTextExtraLeading()), 0, 0);
     style->drawItemText(painter, rect, Qt::AlignLeft, option.palette, true, author);
 
     if (!pixmap.isNull()) {
@@ -399,24 +424,24 @@ QWidget * WelcomeView::initShop() {
     QVBoxLayout * frameLayout = new QVBoxLayout;
     zeroMargin(frameLayout);
 
-
-	// use parent/child relation to manage overlapping widgets
     QFrame * titleFrame = new QFrame();
     titleFrame->setObjectName("shopTitleFrame");
     QHBoxLayout * titleFrameLayout = new QHBoxLayout;
     zeroMargin(titleFrameLayout);
 
-   /* overlapFrame->setGeometry(0, 0, pixmap.width(), 30);*/
+    QLabel * shopTitle = new QLabel(QString("<a href='fab' style='font-family:Droid Sans; text-decoration:none; display:block; font-weight:bold; color:#323232;'>%1</a>").arg(tr("FAB")));
+    shopTitle->setObjectName("shopTitle");
+    connect(shopTitle, SIGNAL(linkActivated(const QString &)), this, SLOT(clickBlog(const QString &)));
+    titleFrameLayout->addWidget(shopTitle);
 
-    QLabel * title = new QLabel(QString("<a href='fab' style='text-decoration:none; display:block; font-weight:bold; color:#323232;'>%1</a>").arg(tr("FAB")));
-    title->setObjectName("shopTitle");
-    connect(title, SIGNAL(linkActivated(const QString &)), this, SLOT(clickBlog(const QString &)));
-    titleFrameLayout->addWidget(title);
+    QLabel * space = new QLabel(QString("|"));
+    space->setObjectName("fabshopTitleSpace");
+    titleFrameLayout->addWidget(space);
 
-    QLabel * url = new QLabel(QString("<a href='shop' style='text-decoration:none; display:block; font-weight:bold; color:#323232;'>%1</a>").arg(tr("| Shop")));
-    url->setObjectName("fabTitle");
-    connect(url, SIGNAL(linkActivated(const QString &)), this, SLOT(clickBlog(const QString &)));
-    titleFrameLayout->addWidget(url);
+    QLabel * fabTitle = new QLabel(QString("<a href='shop' style='text-decoration:none; font-family:Droid Sans; display:block; font-weight:bold; color:#323232;'>%1</a>").arg(tr("Shop")));
+    fabTitle->setObjectName("fabTitle");
+    connect(fabTitle, SIGNAL(linkActivated(const QString &)), this, SLOT(clickBlog(const QString &)));
+    titleFrameLayout->addWidget(fabTitle);
 
     titleFrameLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Expanding));
     titleFrame->setLayout(titleFrameLayout);
@@ -424,8 +449,13 @@ QWidget * WelcomeView::initShop() {
     frameLayout->addWidget(titleFrame);
 
     {
-        m_shopContentFrame = new QFrame();
-        m_shopContentFrame->setObjectName("shopContentFrame");
+        m_shopUberFrame = new QFrame();
+        m_shopUberFrame->setObjectName("shopUberFrame");
+        QVBoxLayout * shopUberFrameLayout = new QVBoxLayout;
+        zeroMargin(shopUberFrameLayout);
+
+        QFrame* shopContentFrame = new QFrame();
+        shopContentFrame->setObjectName("shopContentFrame");
 
         QHBoxLayout * contentFrameLayout = new QHBoxLayout;
         zeroMargin(contentFrameLayout);
@@ -451,7 +481,7 @@ QWidget * WelcomeView::initShop() {
 
             label = new QLabel(QString("Get Your own Fritzing Creator Kit and become an electronical inventor. It's as easy as bicycling."));
             label->setObjectName("shopContentTextDescription");
-            label->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+            label->setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::MinimumExpanding);
             contentTextFrameLayout->addWidget(label);
             connect(label, SIGNAL(linkActivated(const QString &)), this, SLOT(clickBlog(const QString &)));
 
@@ -467,15 +497,13 @@ QWidget * WelcomeView::initShop() {
 
             contentFrameLayout->addWidget(contentTextFrame);
 
-        m_shopContentFrame->setLayout(contentFrameLayout);
+        shopContentFrame->setLayout(contentFrameLayout);
 
-        frameLayout->addWidget(m_shopContentFrame);
+        shopUberFrameLayout->addWidget(shopContentFrame);
+        shopUberFrameLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Minimum, QSizePolicy::Expanding));
 
-
-        frameLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Minimum, QSizePolicy::Expanding));
-
-        m_shopFooterFrame = new QFrame();
-        m_shopFooterFrame->setObjectName("shopFooterFrame");
+        QFrame * shopFooterFrame = new QFrame();
+        shopFooterFrame->setObjectName("shopFooterFrame");
 
             QHBoxLayout * footerFrameLayout = new QHBoxLayout;
             zeroMargin(footerFrameLayout);
@@ -491,15 +519,22 @@ QWidget * WelcomeView::initShop() {
             footerFrameLayout->addWidget(footerLogoLabel);
             connect(footerLogoLabel, SIGNAL(linkActivated(const QString &)), this, SLOT(clickBlog(const QString &)));
 
-            m_shopFooterFrame->setLayout(footerFrameLayout);
+            shopFooterFrame->setLayout(footerFrameLayout);
 
-       frameLayout->addWidget(m_shopFooterFrame);
+       shopUberFrameLayout->addWidget(shopFooterFrame);
+       m_shopUberFrame->setLayout(shopUberFrameLayout);
+       frameLayout->addWidget(m_shopUberFrame);
 
     }
 
     {
-        m_fabContentFrame = new QFrame();
-        m_fabContentFrame->setObjectName("fabContentFrame");
+        m_fabUberFrame = new QFrame();
+        m_fabUberFrame->setObjectName("fabUberFrame");
+        QVBoxLayout * fabUberFrameLayout = new QVBoxLayout;
+        zeroMargin(fabUberFrameLayout);
+
+        QFrame * fabContentFrame = new QFrame();
+        fabContentFrame->setObjectName("fabContentFrame");
 
         QHBoxLayout * contentFrameLayout = new QHBoxLayout;
         zeroMargin(contentFrameLayout);
@@ -525,7 +560,7 @@ QWidget * WelcomeView::initShop() {
 
             label = new QLabel(QString("Fritzing FAB brings your Hardware easily on your desk with your own design and high quality."));
             label->setObjectName("fabContentTextDescription");
-            label->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+            label->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
             contentTextFrameLayout->addWidget(label);
             connect(label, SIGNAL(linkActivated(const QString &)), this, SLOT(clickBlog(const QString &)));
 
@@ -533,7 +568,6 @@ QWidget * WelcomeView::initShop() {
             label->setObjectName("fabContentTextCaption");
             label->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
             contentTextFrameLayout->addWidget(label);
-
             connect(label, SIGNAL(linkActivated(const QString &)), this, SLOT(clickBlog(const QString &)));
 
             contentTextFrameLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::MinimumExpanding));
@@ -542,14 +576,13 @@ QWidget * WelcomeView::initShop() {
 
             contentFrameLayout->addWidget(contentTextFrame);
 
-        m_fabContentFrame->setLayout(contentFrameLayout);
+        fabContentFrame->setLayout(contentFrameLayout);
 
-        frameLayout->addWidget(m_fabContentFrame);
+        fabUberFrameLayout->addWidget(fabContentFrame);
+        fabUberFrameLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Minimum, QSizePolicy::Expanding));
 
-        frameLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Minimum, QSizePolicy::Expanding));
-
-        m_fabFooterFrame = new QFrame();
-        m_fabFooterFrame->setObjectName("fabFooterFrame");
+        QFrame * fabFooterFrame = new QFrame();
+        fabFooterFrame->setObjectName("fabFooterFrame");
 
             QHBoxLayout * footerFrameLayout = new QHBoxLayout;
             zeroMargin(footerFrameLayout);
@@ -565,11 +598,15 @@ QWidget * WelcomeView::initShop() {
             footerFrameLayout->addWidget(footerLogoLabel);
             connect(footerLogoLabel, SIGNAL(linkActivated(const QString &)), this, SLOT(clickBlog(const QString &)));
 
-            m_fabFooterFrame->setLayout(footerFrameLayout);
+            fabFooterFrame->setLayout(footerFrameLayout);
 
-        frameLayout->addWidget(m_fabFooterFrame);
+        fabUberFrameLayout->addWidget(fabFooterFrame);
+        m_fabUberFrame->setLayout(fabUberFrameLayout);
+        frameLayout->addWidget(m_fabUberFrame);
 
     }
+
+
 
     frame->setLayout(frameLayout);
 
@@ -596,7 +633,7 @@ QWidget * WelcomeView::initBlog() {
 	titleLabel->setObjectName("blogTitle");
 	titleFrameLayout->addWidget(titleLabel);
 
-    QLabel * label = new QLabel(QString("<a href='http://blog.fritzing.org'  style='text-decoration:none; font-weight:bold; color:#323232;'>%1</a>").arg(tr("| Blog >>")));
+    QLabel * label = new QLabel(QString("<a href='http://blog.fritzing.org'  style='font-family:Droid Sans; text-decoration:none; font-weight:bold; color:#323232;'>%1</a>").arg(tr("| Blog >>")));
 	label->setObjectName("blogTitleGoto");
 	titleFrameLayout->addWidget(label);
 	connect(label, SIGNAL(linkActivated(const QString &)), this, SLOT(clickBlog(const QString &)));
@@ -622,7 +659,7 @@ QWidget * WelcomeView::initBlog() {
 
         footerFrameLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Expanding));
 
-        QLabel * footerLabel = new QLabel(QString("<a href='http://blog.fritzing.org'  style='text-decoration:none; color:#802742;'>%1</a>").arg(tr("Fritzing Project News.   ")));
+        QLabel * footerLabel = new QLabel(QString("<a href='http://blog.fritzing.org'  style='font-family:Droid Sans; text-decoration:none; color:#802742;'>%1</a>").arg(tr("Fritzing Project News.   ")));
         footerLabel->setObjectName("blogLogoText");
         footerFrameLayout->addWidget(footerLabel);
         connect(footerLabel, SIGNAL(linkActivated(const QString &)), this, SLOT(clickBlog(const QString &)));
@@ -706,18 +743,14 @@ void WelcomeView::gotBlogSnippet(QNetworkReply * networkReply) {
 
 void WelcomeView::clickBlog(const QString & url) {
     if (url == "fab") {
-        m_shopFooterFrame->setVisible(false);
-        m_shopContentFrame->setVisible(false);
-        m_fabFooterFrame->setVisible(true);
-        m_fabContentFrame->setVisible(true);
+        m_shopUberFrame->setVisible(false);
+        m_fabUberFrame->setVisible(true);
         return;
     }
 
     if (url == "shop") {
-        m_fabFooterFrame->setVisible(false);
-        m_fabContentFrame->setVisible(false);
-        m_shopFooterFrame->setVisible(true);
-        m_shopContentFrame->setVisible(true);
+        m_shopUberFrame->setVisible(true);
+        m_fabUberFrame->setVisible(false);
         return;
     }
 

@@ -109,6 +109,7 @@ MainWindow::toolbar {
 
 MainWindow QLabel {
         color: rgb(50,50,50);
+		font-family: Droid Sans;
 }
 
 QStatusBar {
@@ -116,24 +117,24 @@ QStatusBar {
         color: rgb(255,255,255);
         font-weight: bold;
         font-size: 11px;
+		font-family: Droid Sans;
 }
 
 QStatusBar::item {
+		font-family: Droid Sans;
         border: none;
 		color: rgb(255,255,255);
 }
 
 /* PEMainWindow seems to be needed here rathern in newpartseditor.qss */
 /* this separates palettes from each other and is movable */
-PEMainWindow::separator {
-        background: rgb(177,177,177);
-}
 
 PEMainWindow {
         /* layout here */
 
         /* styling there */
         background: rgb(255,255,255);
+		font-family: Droid Sans;
 }
 
 
@@ -143,6 +144,7 @@ PEMainWindow {
 QMenuBar {
 	background-color: #b1b1b1;
 	left:5px;
+	font-family: Droid Sans;
 }
 
 QMenuBar::item {
@@ -151,6 +153,7 @@ QMenuBar::item {
 	background: #b1b1b1;
 	color:rgb(51,51,51);
 	background-image:none;
+	font-family: Droid Sans;
 
 }
 
@@ -158,6 +161,7 @@ QMenuBar::item:selected {
 	background: #666;
 	color:#fff;
 	background-image:none;
+	font-family: Droid Sans;
 
 }
 
@@ -165,6 +169,7 @@ QMenuBar::item:pressed {
 	background: #666;
 	color:#fff;
 	background-image:none;
+	font-family: Droid Sans;
 
 }
 
@@ -175,17 +180,20 @@ QMenu{
 	color:#333;
 	margin: 0px 3px 0px 3px;
 	border:none;
+	font-family: Droid Sans;
 }
 
 QMenu::item {
 	background-color: #b1b1b1;
 	color:#333;
 	padding: 2px 15px 2px 15px;
+	font-family: Droid Sans;
 }
 
 QMenu::item:selected {
 	background-color: #666;
 	color:#fff;
+	font-family: Droid Sans;
 }
 
  QMenu::separator {
@@ -199,13 +207,15 @@ QMenu::item:selected {
  }
 
 QMenu::item:disabled {
-	background-color: #888;
+	background-color: #999;
 	color:#dadada;
+	font-family: Droid Sans;
 
 }
 QMenu::item:disabled:selected {
 	background-color: #777;
 	color:#dadada;
+	font-family: Droid Sans;
 
 }
 
@@ -244,6 +254,7 @@ QMenu::item:disabled:selected {
 	border:none;
 	background:#d5e1e9;
 	margin:0px;
+	font-family: Droid Sans;
 }
 
 
@@ -251,13 +262,14 @@ QMenu::item:disabled:selected {
  	top: 0px;
  	left: 10px;
 	right: 0px;
-	
+	font-family: Droid Sans;	
 }
 
 #sketch_tabs QTabBar#WelcomeView {
 	image-position: left;
 	image: url(:/resources/images/icons/arrowButtonRight.png);
 	background-image: url(:/resources/images/icons/arrowButtonLeft.png);
+	font-family: Droid Sans;
 }
 
 #sketch_tabs QTabBar::tab  {
@@ -265,7 +277,7 @@ QMenu::item:disabled:selected {
 	min-width: 6.5em;
     max-height: 35px;
 	height:35px;
-	
+	font-family: Droid Sans;	
   /*     padding-top: 2px;
         padding-bottom: 2px;
         padding-left: 10px;
@@ -274,7 +286,7 @@ QMenu::item:disabled:selected {
 }
 
 #sketch_tabs QTabBar::tab:selected { /*the active tab*/
-	font-family: "Droid Sans";
+	font-family: Droid Sans;
 	font-size:14px;
 	background-color: transparent;
 	font-weight: regular;
@@ -285,7 +297,7 @@ QMenu::item:disabled:selected {
 }
 
 #sketch_tabs QTabBar::tab:selected:hover { /*the active tab hover*/
-	font-family: "Droid Sans";
+	font-family: Droid Sans;
 	font-size:14px;
 	background-color: transparent;
 	font-weight: regular;
@@ -297,7 +309,7 @@ QMenu::item:disabled:selected {
 
 #sketch_tabs QTabBar::tab:!selected { /*the inactive tabs*/
 	background-color: transparent;
-	font-family: "Droid Sans";
+	font-family: Droid Sans;
 	font-size:14px;
 	color: #666;
 	font-weight:regular;
@@ -307,10 +319,10 @@ QMenu::item:disabled:selected {
 
 #sketch_tabs QTabBar::tab:!selected:hover {  /*the inactive tab- hover*/
 	background-color: transparent;
-	font-family: "Droid Sans";
+	font-family: Droid Sans;
 	font-size:14px;
 	border:none;
-	color: #444;
+	color: #222;
 	font-weight:regular;
 	margin-bottom:-1px;
 	background-image: url(:/resources/images/icons/segmentedSwitcherXInactiveFocusHover.png);
@@ -326,12 +338,13 @@ WelcomeView {
 }
 
 WelcomeView QFrame {
-	border-bottom: 8px solid #d9d9d9;	
+	border-bottom: 8px solid #d9d9d9;
+	font-family: Droid Sans;	
 }
 
 WelcomeView QFrame QLabel {
     border:0px;
-	
+	font-family: Droid Sans;	
 }
 	
 /* -------- position of WS"content-blocks" ------------  */
@@ -340,8 +353,8 @@ WelcomeView QFrame QLabel {
 	padding-bottom:5px;
 	background: #fff;
 	border-bottom: 8px solid #d9d9d9;	
-	font: "Droid Sans";
-	font-family: "Droid Sans";
+	font: Droid Sans;
+	font-family: Droid Sans;
 	max-width: 220px;
 	min-width: 220px;
 }
@@ -350,8 +363,8 @@ WelcomeView QFrame QLabel {
     margin: 0px 0px 13px 15px;
 	background: #fff;
 	border-bottom: 8px solid #d9d9d9;	
-	font: "Droid Sans";
-	font-family: "Droid Sans";
+	font: Droid Sans;
+	font-family: Droid Sans;
 	max-width: 220px;
 min-width: 220px;
 }
@@ -361,16 +374,16 @@ min-width: 220px;
 	margin: 10px 15px 13px 15px;
 	background: #fff;
 	border-bottom: 8px solid #d9d9d9;	
-	font: "Droid Sans";
-	font-family: "Droid Sans";
+	font: Droid Sans;
+	font-family: Droid Sans;
 }
 
 #shopFrame {
 	margin: 0px 15px 13px 15px;
 	background: #fff;
 	border-bottom: 8px solid #d9d9d9;	
-	font: "Droid Sans";
-	font-family: "Droid Sans";
+	font: Droid Sans;
+	font-family: Droid Sans;
 }
 
 
@@ -384,6 +397,7 @@ min-width: 220px;
 	max-height:34px;
 	background:#fff;
 	padding:0px;
+	font-family: Droid Sans;
 	
  }
  
@@ -395,6 +409,7 @@ min-width: 220px;
 	background:#fff;
 	margin-left:1px;
 	margin-right:2px;
+	font-family: Droid Sans;
 	max-height:16px;
 }	
 
@@ -422,7 +437,7 @@ min-width: 220px;
 	text-align:left;
 	font-size: 12px;
 	background:#fff;
-	font: regular "Droid Sans";
+	font: regular Droid Sans;
 
 	}	
 
@@ -435,7 +450,8 @@ min-width: 220px;
 	font-size: 12px;
 	background:#fff;
 	color:#666;
-	font: regular "Droid Sans";
+	font-weight: regular;
+	font-family: Droid Sans;
 min-height:14px;
 max-height:24px;
 	}	
@@ -449,7 +465,8 @@ max-height:24px;
 	font-size: 12px;
 	background:#fff;
 	color:#666;
-	font: regular "Droid Sans";
+	font-weight: regular;
+	font-family: Droid Sans;
 min-height:14px;
 max-height:24px;
 
@@ -517,6 +534,7 @@ background:transparent;
 	color:#c4c4c4;
 	margin-left:1px;
 	margin-right:2px;
+	font-family: Droid Sans;
 
 }
 
@@ -524,6 +542,7 @@ background:transparent;
 	color:#323232;
 	font-size:14px;
 	font-weight:bold;
+	font-family: Droid Sans;
 }
 
 #blogList
@@ -535,20 +554,24 @@ background:transparent;
 	text-align:left;
 	font-size: 10px;
 	background:#fff;
-	font: regular "Droid Sans";
+	font-weight: regular;
+	font-family: Droid Sans;
 	color:#656565;
 
 	qproperty-titleTextColor: #000;
-	qproperty-titleTextFontFamily: "Droid Sans";
+	qproperty-titleTextFontFamily: Droid Sans;
 	qproperty-titleTextFontSize:14px;	
-	
+	qproperty-titleTextExtraLeading:5px;	
+
 	qproperty-introTextColor: #656565;
-	qproperty-introTextFontFamily: "Droid Sans";
+	qproperty-introTextFontFamily:Droid Sans;
 	qproperty-introTextFontSize:12px;	
+	qproperty-introTextExtraLeading:7px;	
 
 	qproperty-dateTextColor: #656565;
-	qproperty-dateTextFontFamily: "Droid Sans";
+	qproperty-dateTextFontFamily: Droid Sans;
 	qproperty-dateTextFontSize:10px;
+
 }	
 
 #blogList::item
@@ -560,59 +583,11 @@ background:transparent;
 	font-size: 15px;
 	background:#fff;
 	color:#666;
-	font: regular "Droid Sans";
+	font-weight: regular;
+	font-family: Droid Sans;
 	border-bottom:1px solid #c4c4c4; 
 	}
 
-
-/******* this is the !!!obsolete!!! styling for the blog-entries ***********/
-
-/*
-#blogEntry {
-	border-bottom:1px solid #c4c4c4; 
-	margin:0px 5px 0px 5px;
-	max-height: 65px;
-	min-height:65px;
-	background:#fff;
-	min-width: 200px;
-}
-
-#blogEntryTitle {
-	font: regular "Droid Sans";
-	font-size: 14px;
-	color: #000;
-	min-height: 18px;
-	margin-left:5px;
-	background:#fff transparent;
-}
-
-
-#blogEntryText {
-	color: #656565;
-	border:none;
-	font-size: 12px;
-	min-height: 16px;
-	margin-left:5px;
-	background:#fff transparent;
-}
-
-#blogEntryDate {
-	color: #656565;
-	border:none;
-	font-size: 10px;
-	margin-left:5px;
-	min-height: 11px;
-	background:#fff;
-}
-
-#blogEntryPicture {
-	background:#fff;
-	max-width: 80px;
-	min-width:80px;
-	max-height: 65px;
-	min-height:45px;
-}
-*/
 
 /******* this is the styling for the blog-footer ***********/
 #blogFooterFrame{
@@ -629,8 +604,10 @@ background:transparent;
 
 #blogLogoText {
 	background:#fff;
-	font-weight:regular; 
-	font: "Droid Sans" regular 12px;
+	font-weight:regular;
+	font-weight: regular;
+	font-family: Droid Sans;	
+	font-size:12px;
 	min-height:22px;
 	max-height:22px;
 }
@@ -650,6 +627,7 @@ background:transparent;
 	padding: 0px;
 	margin:8px 5px 8px 5px;
 	font-size:14px;
+	font-family: Droid Sans;
 	font-weight:bold;
 	min-height:18px;
 	max-height:18px;
@@ -750,23 +728,14 @@ background:transparent;
 	margin-left:1px;
 	margin-right:2px;
 }
-/*
-#shopTitleGoto
-{
-	min-height:16px;
-	color:#c4c4c4;
-	border:none;
-	font-size:14px;
-	font-weight:bold;
-	background:transparent;
-}
-*/
+
 #shopContentFrame,
 #fabContentFrame
 {
 
 	border:none;
-	font: "Droid Sans";
+	font-weight: regular;
+	font-family: Droid Sans;
 	margin:5px;
 	height:100%;
 	
@@ -786,24 +755,19 @@ background:transparent;
 
 #shopContentTextFrame,
 #fabContentTextFrame{
-
-	margin: 5px 5px;
+	margin: 5px 5px 5px 15px;
 	border:none;
 	min-width:200px;
 	
 	}
 
-#fabContentSpacer{
-height:3px;
-background:#f0f;
-margin:0px;
-}
 
 #shopContentTextHeadline,	
 #fabContentTextHeadline {
 	font-size:16px;
 	font-weight:bold;
 	max-height:20px;
+	font-family: Droid Sans;
 	}
 
 #shopContentTextDescription,
@@ -811,12 +775,16 @@ margin:0px;
 	font-size:14px;
 	font-weight:regular;
 	qproperty-wordWrap: true;
+	font-family: Droid Sans;
+	min-height:65px;
+	background:#fff;
 	}
 	
 #shopContentTextCaption,
 #fabContentTextCaption
 {
-
+font-weight: regular;
+font-family: Droid Sans;
 font-size:11px;
 max-height:14px;
 }
@@ -828,6 +796,8 @@ max-height:14px;
 		border-bottom:none;
 		margin:0px 5px 5px 5px;
 		padding-top:5px;
+		font-weight: regular;
+		font-family: Droid Sans;
 
 }
 
@@ -848,7 +818,8 @@ max-height:14px;
  QProgressBar::chunk {
      background-color: #f32926;
      width: 30px;
-	text-align: center;
+	 text-align: center;
+	 font-family: Droid Sans;
 	
  }
  
@@ -860,7 +831,8 @@ max-height:14px;
      border-radius: 1px;
 	 background:#fff;
 	 color:#333;
-	  opacity: 200;
+	 opacity: 200;
+	 font-family: Droid Sans;
  }
 
 /* ############## RADIOBUTTON STYLING  ###########*/
@@ -1115,7 +1087,7 @@ FDockWidget {
         font-size: 14px;
 		font-weight: 150;
         color: rgb(101,101,101);
-
+		font-family: Droid Sans;
         titlebar-close-icon: url(:/resources/images/icons/dockWidgetEmpty_icon.png);
         titlebar-normal-icon: url(:/resources/images/icons/dockWidgetEmpty_icon.png);
 }
@@ -1136,6 +1108,7 @@ FDockWidget::title {
       font-size: 20px;
 		font-weight: 300;
         height: 35px;
+	font-family: Droid Sans;
         /*border-top-left-radius: 5px;*/
         /*border-top-right-radius: 5px;*/
         background: rgb(217,217,217);

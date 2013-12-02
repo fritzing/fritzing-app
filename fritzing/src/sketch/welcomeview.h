@@ -112,9 +112,10 @@ protected:
 	QWidget * initBlog();
 	QWidget * initShop();
 	QWidget * initTip();
-	void readBlog(const QDomDocument &);
+	void readBlog(const QDomDocument &, bool doEmit);
     QWidget * makeRecentItem(const QString & objectName, const QString & iconText, const QString & textText, QLabel * & icon, QLabel * & text);
     void getNextBlogImage(int ix);
+    void setBlogItemImage(QPixmap &, int index) ;
 
 signals:
 	void newSketch();

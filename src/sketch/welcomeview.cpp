@@ -57,6 +57,48 @@ static const int IconRole = Qt::UserRole + 4;
 static const int RefRole = Qt::UserRole + 5;
 static const int ImageSpace = 60;
 
+///////////////////////////////////////////////////////////////////////////////
+
+void zeroMargin(QLayout * layout) {
+    layout->setMargin(0);
+    layout->setSpacing(0);
+}
+
+int pointSize(const QString & sizeString) {
+    // assume all sizes are of the form Npx otherwise return -1
+    QString temp = sizeString;
+    temp.remove(" ");
+    if (temp.contains("px")) {
+        temp.remove("px");
+        bool ok;
+        int ps = temp.toInt(&ok);
+        if (ok) return ps;
+    }
+
+    return -1;
+}
+
+QString cleanData(const QString & data) {
+    static QRegExp ListItemMatcher("<li>.*</li>");
+    ListItemMatcher.setMinimal(true);           // equivalent of lazy matcher
+
+    QDomDocument doc;
+    QStringList listItems;
+    int pos = 0;
+    while (pos < data.count()) {
+        int ix = data.indexOf(ListItemMatcher, pos);
+        if (ix < 0) break;
+
+        QString listItem = ListItemMatcher.cap(0);
+        DebugDialog::debug("ListItem " + listItem);
+        if (doc.setContent(listItem)) {
+            listItems << listItem;
+        }
+        pos += listItem.count();
+    }
+    return listItems.join("");
+}
+
 ////////////////////////////////////////////////////////////////////////////////
 
 BlogListWidget::BlogListWidget(QWidget * parent) : QListWidget(parent)
@@ -83,6 +125,22 @@ void BlogListWidget::setDateTextColor(QColor color) {
     m_dateTextColor = color;
 }
 
+QString BlogListWidget::dateTextFontFamily() const {
+    return m_dateTextFontFamily;
+}
+
+void BlogListWidget::setDateTextFontFamily(QString family) {
+    m_dateTextFontFamily = family;
+}
+
+QString BlogListWidget::dateTextFontSize() const {
+    return m_dateTextFontSize;
+}
+
+void BlogListWidget::setDateTextFontSize(QString size) {
+    m_dateTextFontSize = size;
+}
+
 
 ////////////////////////////////////////////////////////////////////////////////
  
@@ -102,13 +160,9 @@ void BlogListDelegate::paint ( QPainter * painter, const QStyleOptionViewItem & 
     QStyle * style = listWidget->style();
     if (style == NULL) return;
 
-    //painter->fillRect(option.rect, painter->background());
-
-
     style->drawPrimitive(QStyle::PE_PanelItemViewItem, &option, painter, listWidget);
 
     QPixmap pixmap = qvariant_cast<QPixmap>(index.data(IconRole));
-	//QIcon ic = QIcon(qvariant_cast<QPixmap>(index.data(IconRole));
 	QString title = index.data(TitleRole).toString();
 	QString date = index.data(DateRole).toString();
 	QString author = index.data(AuthorRole).toString();
@@ -122,24 +176,23 @@ void BlogListDelegate::paint ( QPainter * painter, const QStyleOptionViewItem & 
     painter->setPen(listWidget->titleTextColor());
     QRect rect = option.rect.adjusted(imageSpace, 0, 0, 0);
     style->drawItemText(painter, rect, Qt::AlignLeft, option.palette, true, title);
-painter->restore();
+    painter->restore();
 
     rect = option.rect.adjusted(imageSpace, option.fontMetrics.lineSpacing(), 0, 0);
     style->drawItemText(painter, rect, Qt::AlignLeft, option.palette, true, intro);
 
     painter->save();
     painter->setPen(listWidget->dateTextColor());
+    QFont font(listWidget->dateTextFontFamily(), pointSize(listWidget->dateTextFontSize()));
+    painter->setFont(font);
+    QFontMetrics dateTextFontMetrics(font);
     rect = option.rect.adjusted(imageSpace, option.fontMetrics.lineSpacing() * 2, 0, 0);
     style->drawItemText(painter, rect, Qt::AlignLeft, option.palette, true, date);
     painter->restore();
 
-    QRect textRect = style->itemTextRect(option.fontMetrics, option.rect, Qt::AlignLeft, true, date);
+    QRect textRect = style->itemTextRect(dateTextFontMetrics, option.rect, Qt::AlignLeft, true, date);
     rect = option.rect.adjusted(imageSpace + textRect.width() + 7, option.fontMetrics.lineSpacing() * 2, 0, 0);
     style->drawItemText(painter, rect, Qt::AlignLeft, option.palette, true, author);
-
-	//painter->drawText(imageSpace, option.rect.top(), option.rect.width(), option.rect.height(), Qt::AlignLeft, title, &ret);
-	//painter->drawText(imageSpace, ret.bottom(), option.rect.width(), option.rect.height(), Qt::AlignLeft, intro, &ret);
-	//painter->drawText(imageSpace, ret.bottom(), option.rect.width(), option.rect.height(), Qt::AlignLeft, date, &ret);
 
     if (!pixmap.isNull()) {
 		//ic.paint(painter, option.rect, Qt::AlignVCenter|Qt::AlignLeft);
@@ -152,34 +205,6 @@ QSize BlogListDelegate::sizeHint ( const QStyleOptionViewItem & option, const QM
 	return QSize(200, 60); // very dumb value
 }
  
-///////////////////////////////////////////////////////////////////////////////
-
-void zeroMargin(QLayout * layout) {
-    layout->setMargin(0);
-    layout->setSpacing(0);
-}
-
-QString cleanData(const QString & data) {
-    static QRegExp ListItemMatcher("<li>.*</li>");
-    ListItemMatcher.setMinimal(true);           // equivalent of lazy matcher
-
-    QDomDocument doc;
-    QStringList listItems;
-    int pos = 0;
-    while (pos < data.count()) {
-        int ix = data.indexOf(ListItemMatcher, pos);
-        if (ix < 0) break;
-
-        QString listItem = ListItemMatcher.cap(0);
-        DebugDialog::debug("ListItem " + listItem);
-        if (doc.setContent(listItem)) {
-            listItems << listItem;
-        }
-        pos += listItem.count();
-    }
-    return listItems.join("");
-}
-
 //////////////////////////////////////
 
 WelcomeView::WelcomeView(QWidget * parent) : QFrame(parent) 

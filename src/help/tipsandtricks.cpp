@@ -185,7 +185,7 @@ const QString & TipsAndTricks::randomTip() {
 	foreach (TipSet * tipSet, TipSets) {
 		int count = tipSet->tips.count();
 		if (tipCount + count > ix) {
-			return tipSet->tips.at(ix - tipCount);
+            return tipSet->tips.at(ix - tipCount);
 		}
 		tipCount += count;
 	}

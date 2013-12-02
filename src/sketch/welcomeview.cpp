@@ -109,6 +109,8 @@ BlogListWidget::~BlogListWidget()
 {
 }
 
+/* blogEntry Title text properties color, fontfamily, fontsize*/
+
 QColor BlogListWidget::titleTextColor() const {
     return m_titleTextColor;
 }
@@ -116,6 +118,49 @@ QColor BlogListWidget::titleTextColor() const {
 void BlogListWidget::setTitleTextColor(QColor color) {
     m_titleTextColor = color;
 }
+
+QString BlogListWidget::titleTextFontFamily() const {
+    return m_titleTextFontFamily;
+}
+
+void BlogListWidget::setTitleTextFontFamily(QString family) {
+    m_titleTextFontFamily = family;
+}
+
+QString BlogListWidget::titleTextFontSize() const {
+    return m_titleTextFontSize;
+}
+
+void BlogListWidget::setTitleTextFontSize(QString size) {
+    m_titleTextFontSize = size;
+}
+
+/* blogEntry intro text properties color, fontfamily, fontsize*/
+QColor BlogListWidget::introTextColor() const {
+    return m_introTextColor;
+}
+
+void BlogListWidget::setIntroTextColor(QColor color) {
+    m_introTextColor = color;
+}
+
+QString BlogListWidget::introTextFontFamily() const {
+    return m_introTextFontFamily;
+}
+
+void BlogListWidget::setIntroTextFontFamily(QString family) {
+    m_introTextFontFamily = family;
+}
+
+QString BlogListWidget::introTextFontSize() const {
+    return m_introTextFontSize;
+}
+
+void BlogListWidget::setIntroTextFontSize(QString size) {
+    m_introTextFontSize = size;
+}
+
+/* blogEntry Date text properties color, fontfamily, fontsize*/
 
 QColor BlogListWidget::dateTextColor() const {
     return m_dateTextColor;
@@ -174,12 +219,19 @@ void BlogListDelegate::paint ( QPainter * painter, const QStyleOptionViewItem & 
 
     painter->save();
     painter->setPen(listWidget->titleTextColor());
+    QFont tileFont(listWidget->titleTextFontFamily(), pointSize(listWidget->titleTextFontSize()));
+    painter->setFont(tileFont);
     QRect rect = option.rect.adjusted(imageSpace, 0, 0, 0);
     style->drawItemText(painter, rect, Qt::AlignLeft, option.palette, true, title);
     painter->restore();
 
+    painter->save();
+    painter->setPen(listWidget->introTextColor());
+    QFont introFont(listWidget->introTextFontFamily(), pointSize(listWidget->introTextFontSize()));
+    painter->setFont(introFont);
     rect = option.rect.adjusted(imageSpace, option.fontMetrics.lineSpacing(), 0, 0);
     style->drawItemText(painter, rect, Qt::AlignLeft, option.palette, true, intro);
+    painter->restore();
 
     painter->save();
     painter->setPen(listWidget->dateTextColor());

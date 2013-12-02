@@ -46,7 +46,14 @@ class BlogListWidget : public QListWidget
     Q_PROPERTY(QColor dateTextColor READ dateTextColor WRITE setDateTextColor DESIGNABLE true)
     Q_PROPERTY(QString dateTextFontFamily READ dateTextFontFamily WRITE setDateTextFontFamily DESIGNABLE true)
     Q_PROPERTY(QString dateTextFontSize READ dateTextFontSize WRITE setDateTextFontSize DESIGNABLE true)
+
     Q_PROPERTY(QColor titleTextColor READ titleTextColor WRITE setTitleTextColor DESIGNABLE true)
+    Q_PROPERTY(QString titleTextFontFamily READ titleTextFontFamily WRITE setTitleTextFontFamily DESIGNABLE true)
+    Q_PROPERTY(QString titleTextFontSize READ titleTextFontSize WRITE setTitleTextFontSize DESIGNABLE true)
+
+    Q_PROPERTY(QColor introTextColor READ introTextColor WRITE setIntroTextColor DESIGNABLE true)
+    Q_PROPERTY(QString introTextFontFamily READ introTextFontFamily WRITE setIntroTextFontFamily DESIGNABLE true)
+    Q_PROPERTY(QString introTextFontSize READ introTextFontSize WRITE setIntroTextFontSize DESIGNABLE true)
 
 public:
     BlogListWidget(QWidget * parent = 0);
@@ -61,12 +68,30 @@ public:
 
     QColor titleTextColor() const;
     void setTitleTextColor(QColor);
+    QString titleTextFontFamily() const;
+    void setTitleTextFontFamily(QString);
+    QString titleTextFontSize() const;
+    void setTitleTextFontSize(QString);
+
+    QColor introTextColor() const;
+    void setIntroTextColor(QColor);
+    QString introTextFontFamily() const;
+    void setIntroTextFontFamily(QString);
+    QString introTextFontSize() const;
+    void setIntroTextFontSize(QString);
 
 protected:
     QColor m_dateTextColor;
     QString m_dateTextFontFamily;
     QString m_dateTextFontSize;
+
     QColor m_titleTextColor;
+    QString m_titleTextFontFamily;
+    QString m_titleTextFontSize;
+
+    QColor m_introTextColor;
+    QString m_introTextFontFamily;
+    QString m_introTextFontSize;
 };
  
 class WelcomeView : public QFrame

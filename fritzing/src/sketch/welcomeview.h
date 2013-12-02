@@ -120,8 +120,10 @@ protected:
 	QWidget * initBlog();
 	QWidget * initShop();
 	QWidget * initTip();
-	void readBlog(const QDomDocument &);
+	void readBlog(const QDomDocument &, bool doEmit);
     QWidget * makeRecentItem(const QString & objectName, const QString & iconText, const QString & textText, QLabel * & icon, QLabel * & text);
+    void getNextBlogImage(int ix);
+    void setBlogItemImage(QPixmap &, int index) ;
 
 signals:
 	void newSketch();
@@ -143,6 +145,7 @@ protected:
     QListWidget * m_recentListWidget;
     QFrame * m_fabUberFrame;
     QFrame * m_shopUberFrame;
+    QStringList m_blogImageRequestList;
 };
 
 class BlogListDelegate : public QAbstractItemDelegate

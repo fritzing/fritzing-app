@@ -688,18 +688,27 @@ void WelcomeView::gotBlogSnippet(QNetworkReply * networkReply) {
 
     QNetworkAccessManager * manager = networkReply->manager();
 	int responseCode = networkReply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
-	if (responseCode == 200) {
+    bool goodBlog = false;
+    QDomDocument doc;
+	QString errorStr;
+	int errorLine;
+	int errorColumn;	
+    if (responseCode == 200) {
         QString data(networkReply->readAll());
         DebugDialog::debug("response data " + data);
 		data = "<thing>" + cleanData(data) + "</thing>";		// make it one tree for xml parsing
-		QDomDocument doc;
-	    QString errorStr;
-	    int errorLine;
-	    int errorColumn;
 	    if (doc.setContent(data, &errorStr, &errorLine, &errorColumn)) {
 		    readBlog(doc);
+            goodBlog = true;
         }
 	}
+
+    if (!goodBlog) {
+        QString placeHolder = QString("<li><a class='title' href='nop' title='%1'></a></li>").arg(tr("Unable to access blog.fritzing.org"));
+        if (doc.setContent(placeHolder, &errorStr, &errorLine, &errorColumn)) {
+		    readBlog(doc);
+        }   
+    }
 
     manager->deleteLater();
     networkReply->deleteLater();
@@ -924,6 +933,7 @@ void WelcomeView::recentItemClicked(QListWidgetItem * item) {
 void WelcomeView::blogItemClicked(QListWidgetItem * item) {
     QString url = item->data(RefRole).toString();
     if (url.isEmpty()) return;
+    if (url == "nop") return;
 
 	QDesktopServices::openUrl(url);
 }

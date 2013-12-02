@@ -7471,7 +7471,6 @@ void SketchWidget::drawBackground( QPainter * painter, const QRectF & rect )
     }
 
 	if (m_showGrid) {
-        QColor gridColor(0, 0, 0, 20);
 		double gridSize = m_gridSizeInches * GraphicsUtils::SVGDPI;
         int intGridSize = int(gridSize * 10000);
         if (intGridSize > 0) {
@@ -7493,7 +7492,7 @@ void SketchWidget::drawBackground( QPainter * painter, const QRectF & rect )
             //DebugDialog::debug(QString("lines %1 %2").arg(linesX.count()).arg(linesY.count()));
 
 		    QPen pen;
-		    pen.setColor(gridColor);
+		    pen.setColor(m_gridColor);
 		    pen.setWidth(0);
 		    pen.setCosmetic(true);
 		    //pen.setStyle(Qt::DotLine);            
@@ -9980,5 +9979,10 @@ void SketchWidget::packItems(int columns, const QList<long> & ids, QUndoCommand 
     }
 }
 
+QColor SketchWidget::gridColor() const {
+    return m_gridColor;
+}
 
-
+void SketchWidget::setGridColor(QColor color) {
+    m_gridColor = color;
+}

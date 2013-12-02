@@ -1804,13 +1804,26 @@ StackTabBar QToolButton::down-arrow:pressed{
 
 
 
-/**************** sketch area widgets ****************/
+/**************** sketch widgets ****************/
 
 SketchWidget {
         border: 0px;
-		font-weight: bold;
-		background-image:none;
+	font-weight: bold;
+	background-image:none;
 }
+
+PCBSketchWidget {
+	qproperty-gridColor: rgba(150,200,250,20);
+}
+
+BreadboardSketchWidget {
+	qproperty-gridColor: rgba(0,50,100,20);
+}
+
+SchematicSketchWidget {
+	qproperty-gridColor: rgba(0,50,100,20);
+}
+
 
 
 /**************** the  breadboard-, schematic-, pcb-view switcher ****************/

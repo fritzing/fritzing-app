@@ -217,6 +217,7 @@ WelcomeView::WelcomeView(QWidget * parent) : QFrame(parent)
 	connect(this, SIGNAL(openSketch()), this->window(), SLOT(mainLoad()));
 	connect(this, SIGNAL(recentSketch(const QString &, const QString &)), this->window(), SLOT(openRecentOrExampleFile(const QString &, const QString &)));
 
+    // TODO: blog network calls should only happen once, not for each window?
     QNetworkAccessManager * manager = new QNetworkAccessManager(this);
 	connect(manager, SIGNAL(finished(QNetworkReply *)), this, SLOT(gotBlogSnippet(QNetworkReply *)));
 	manager->get(QNetworkRequest(QUrl("http://blog.fritzing.org/recent-posts-app/")));
@@ -711,9 +712,9 @@ We thought we should delight our readers a little by showing some dainties of cr
 
 void WelcomeView::readBlog(const QDomDocument & doc) {
     m_blogListWidget->clear();
+    m_blogImageRequestList.clear();
 
 	QDomNodeList nodeList = doc.elementsByTagName("li");
-	int ix = 0;
 	for (int i = 0; i < nodeList.count(); i++) {
 		QDomElement element = nodeList.at(i).toElement();
         QDomElement child = element.firstChildElement();
@@ -746,13 +747,7 @@ void WelcomeView::readBlog(const QDomDocument & doc) {
         item->setData(IntroRole, text);
         m_blogListWidget->addItem(item);
 
-        if (!stuff.value("img", "").isEmpty()) {
-            QNetworkAccessManager * manager = new QNetworkAccessManager(this);
-            manager->setProperty("index", ix);
-	        connect(manager, SIGNAL(finished(QNetworkReply *)), this, SLOT(gotBlogImage(QNetworkReply *)));
-	        manager->get(QNetworkRequest(QUrl(stuff.value("img"))));
-        }
-
+        m_blogImageRequestList << stuff.value("img", "");
 
         if (!stuff.value("date", "").isEmpty()) {
             item->setData(DateRole, stuff.value("date"));
@@ -761,18 +756,34 @@ void WelcomeView::readBlog(const QDomDocument & doc) {
             item->setData(AuthorRole, stuff.value("author"));
         }
 	}
+
+    getNextBlogImage(0);
+
+}
+
+void WelcomeView::getNextBlogImage(int ix) {
+    for (int i = ix; i < m_blogImageRequestList.count(); i++) {
+        QString image = m_blogImageRequestList.at(i);
+        if (image.isEmpty()) continue;
+
+        QNetworkAccessManager * manager = new QNetworkAccessManager(this);
+        manager->setProperty("index", i);
+	    connect(manager, SIGNAL(finished(QNetworkReply *)), this, SLOT(gotBlogImage(QNetworkReply *)));
+	    manager->get(QNetworkRequest(QUrl(image)));
+    }
 }
 
 void WelcomeView::gotBlogImage(QNetworkReply * networkReply) {
 
     QNetworkAccessManager * manager = networkReply->manager();
+    int index = manager->property("index").toInt();
+
 	int responseCode = networkReply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
 	if (responseCode == 200) {
         QByteArray data(networkReply->readAll());
         QPixmap pixmap;
         if (pixmap.loadFromData(data)) {
             QPixmap scaled = pixmap.scaled(QSize(ImageSpace, ImageSpace), Qt::KeepAspectRatio);
-            int index = manager->property("index").toInt();
             QListWidgetItem * item = m_blogListWidget->item(index);
 		    if (item) {
                 item->setData(IconRole, scaled);
@@ -782,6 +793,7 @@ void WelcomeView::gotBlogImage(QNetworkReply * networkReply) {
 
     manager->deleteLater();
     networkReply->deleteLater();
+    getNextBlogImage(index + 1);
 }
 
 QWidget * WelcomeView::initTip() {

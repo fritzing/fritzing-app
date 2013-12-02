@@ -14,8 +14,6 @@
 		c0-0.289,0.234-0.523,0.523-0.523s0.523,0.234,0.523,0.523h1.504c0-0.289,0.234-0.523,0.523-0.523s0.523,0.234,0.523,0.523h1.504
 		c0-0.289,0.234-0.523,0.523-0.523s0.523,0.234,0.523,0.523h1.504c0-0.289,0.234-0.523,0.523-0.523s0.523,0.234,0.523,0.523h1.504
 		c0-0.289,0.234-0.523,0.523-0.523s0.523,0.234,0.523,0.523h2.14V0.616H0z"/>
-	<image width="49" height="1" xlink:href="9D1C3E0F.png"  transform="matrix(0.48 0 0 0.48 0 0.6162)">
-	</image>
 	<rect x="1.701" y="2.201" fill="#CCCCCC" width="19.843" height="20.418"/>
 	<rect x="1.701" fill="#E6E6E6" width="19.843" height="20.418"/>
 	<rect fill="#E6E6E6" width="1.701" height="13.709"/>
@@ -95,20 +93,6 @@
 			S4.566,16.601,3.752,16.601z"/>
 	</g>
 	<rect x="1.56" fill="#F2F2F2" width="0.142" height="13.709"/>
-	<image width="1" height="5" xlink:href="9D1C3E0D.png"  transform="matrix(0.48 0 0 0.48 1.5596 13.709)">
-	</image>
 	<rect x="21.544" y="6.709" fill="#F2F2F2" width="0.142" height="13.709"/>
-	<image width="1" height="5" xlink:href="9D1C3E13.png"  transform="matrix(0.48 0 0 0.48 21.5439 20.418)">
-	</image>
-	<image width="42" height="1" xlink:href="9D1C3E15.png"  transform="matrix(0.48 0 0 0.48 1.7012 0)">
-	</image>
-	<image width="45" height="1" xlink:href="9D1C3E17.png"  transform="matrix(0.48 0 0 0.48 1.7012 22.2715)">
-	</image>
-	<image width="4" height="1" xlink:href="9D1C3E14.png"  transform="matrix(0.48 0 0 0.48 0 15.5635)">
-	</image>
-	<image width="3" height="1" xlink:href="9D1C3E1C.png"  transform="matrix(0.48 0 0 0.48 21.873 6.709)">
-	</image>
-	<image width="4" height="1" xlink:href="9D1C3E1D.png"  transform="matrix(0.48 0 0 0.48 0 0)">
-	</image>
 </g>
 </svg>

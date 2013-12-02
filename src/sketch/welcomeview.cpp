@@ -806,8 +806,9 @@ void WelcomeView::readBlog(const QDomDocument & doc, bool doEmit) {
         item->setData(TitleRole, stuff.value("title"));
         item->setData(RefRole, stuff.value("href"));      
         QString text = stuff.value("intro", "");
-        text.remove("\r");
-        text.remove("\n");
+        text.replace("\r", " ");
+        text.replace("\n", " ");
+        text.replace("\t", " ");
         item->setData(IntroRole, text);
         m_blogListWidget->addItem(item);
 

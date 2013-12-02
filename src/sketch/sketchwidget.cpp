@@ -9444,7 +9444,7 @@ void SketchWidget::addToSketch(QList<ModelPart *> & modelParts) {
 
     int ix = 0;
     QList<long> ids;
-    int columns = 10;
+    int columns = 50;
     foreach (ModelPart * modelPart, modelParts) {
         ViewGeometry viewGeometry;
         int x = (ix % columns) * 100;

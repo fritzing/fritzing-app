@@ -124,7 +124,8 @@ protected:
     QWidget * makeRecentItem(const QString & objectName, const QString & iconText, const QString & textText, QLabel * & icon, QLabel * & text);
     void getNextBlogImage(int ix);
     void setBlogItemImage(QPixmap &, int index) ;
-
+    QWidget * createShopContentFrame(const QString & imagePath, const QString & headline, const QString & description, 
+                                     const QString & url, const QString & urlText, const QString & urlText2, const QString & logoPath);
 signals:
 	void newSketch();
 	void openSketch();
@@ -143,8 +144,8 @@ protected:
     BlogListWidget * m_blogListWidget;
     QLabel * m_tip;
     QListWidget * m_recentListWidget;
-    QFrame * m_fabUberFrame;
-    QFrame * m_shopUberFrame;
+    QWidget * m_fabUberFrame;
+    QWidget * m_shopUberFrame;
     QStringList m_blogImageRequestList;
 };
 

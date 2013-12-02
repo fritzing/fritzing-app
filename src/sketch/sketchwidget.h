@@ -104,6 +104,7 @@ public:
 class SketchWidget : public InfoGraphicsView
 {
 	Q_OBJECT
+    Q_PROPERTY(QColor gridColor READ gridColor WRITE setGridColor DESIGNABLE true)
 
 public:
     SketchWidget(ViewLayer::ViewID, QWidget *parent=0, int size=400, int minSize=300);
@@ -332,6 +333,8 @@ public:
     void hidePartLayer(long id, ViewLayer::ViewLayerID, bool hide);
     void hidePartLayer(ItemBase *, ViewLayer::ViewLayerID, bool hide);
     void moveItem(ItemBase *, double x, double y);
+    QColor gridColor() const;
+    void setGridColor(QColor);
 
 protected:
     void dragEnterEvent(QDragEnterEvent *);
@@ -742,6 +745,7 @@ protected:
     bool m_pasting;
 	QPointer<class ResizableBoard> m_resizingBoard;
     QList< QPointer<ItemBase> > m_squashShapes;
+    QColor m_gridColor;
 
 public:
 	static ViewLayer::ViewLayerID defaultConnectorLayer(ViewLayer::ViewID viewId);

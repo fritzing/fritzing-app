@@ -46,6 +46,7 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 #include <QScrollArea>
 #include <QStyleOption>
 #include <QStyle>
+#include <QApplication>
 
 ////////////////////////////////////////////////////////////
 
@@ -282,13 +283,15 @@ void BlogListDelegate::paint ( QPainter * painter, const QStyleOptionViewItem & 
  
 QSize BlogListDelegate::sizeHint ( const QStyleOptionViewItem & option, const QModelIndex & index ) const
 {
-    return QSize(100, 60); // very dumb value
+    return QSize(100, ImageSpace); // very dumb value
 }
  
 //////////////////////////////////////
 
 WelcomeView::WelcomeView(QWidget * parent) : QFrame(parent) 
 {
+    this->setObjectName("welcomeView");
+        
     m_tip = NULL;
     setAcceptDrops(false);
     initLayout();
@@ -297,6 +300,7 @@ WelcomeView::WelcomeView(QWidget * parent) : QFrame(parent)
 	connect(this, SIGNAL(openSketch()), this->window(), SLOT(mainLoad()));
 	connect(this, SIGNAL(recentSketch(const QString &, const QString &)), this->window(), SLOT(openRecentOrExampleFile(const QString &, const QString &)));
 
+    // TODO: blog network calls should only happen once, not for each window?
     QNetworkAccessManager * manager = new QNetworkAccessManager(this);
 	connect(manager, SIGNAL(finished(QNetworkReply *)), this, SLOT(gotBlogSnippet(QNetworkReply *)));
 	manager->get(QNetworkRequest(QUrl("http://blog.fritzing.org/recent-posts-app/")));
@@ -721,21 +725,29 @@ void WelcomeView::clickRecent(const QString & url) {
 }
 
 void WelcomeView::gotBlogSnippet(QNetworkReply * networkReply) {
-
     QNetworkAccessManager * manager = networkReply->manager();
 	int responseCode = networkReply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
-	if (responseCode == 200) {
+    bool goodBlog = false;
+    QDomDocument doc;
+	QString errorStr;
+	int errorLine;
+	int errorColumn;	
+    if (responseCode == 200) {
         QString data(networkReply->readAll());
         DebugDialog::debug("response data " + data);
 		data = "<thing>" + cleanData(data) + "</thing>";		// make it one tree for xml parsing
-		QDomDocument doc;
-	    QString errorStr;
-	    int errorLine;
-	    int errorColumn;
 	    if (doc.setContent(data, &errorStr, &errorLine, &errorColumn)) {
-		    readBlog(doc);
+		    readBlog(doc, true);
+            goodBlog = true;
         }
 	}
+
+    if (!goodBlog) {
+        QString placeHolder = QString("<li><a class='title' href='nop' title='%1'></a></li>").arg(tr("Unable to access blog.fritzing.org"));
+        if (doc.setContent(placeHolder, &errorStr, &errorLine, &errorColumn)) {
+		    readBlog(doc, true);
+        }   
+    }
 
     manager->deleteLater();
     networkReply->deleteLater();
@@ -795,11 +807,11 @@ We thought we should delight our readers a little by showing some dainties of cr
 		*/
 
 
-void WelcomeView::readBlog(const QDomDocument & doc) {
+void WelcomeView::readBlog(const QDomDocument & doc, bool doEmit) {
     m_blogListWidget->clear();
+    m_blogImageRequestList.clear();
 
 	QDomNodeList nodeList = doc.elementsByTagName("li");
-	int ix = 0;
 	for (int i = 0; i < nodeList.count(); i++) {
 		QDomElement element = nodeList.at(i).toElement();
         QDomElement child = element.firstChildElement();
@@ -827,18 +839,13 @@ void WelcomeView::readBlog(const QDomDocument & doc) {
         item->setData(TitleRole, stuff.value("title"));
         item->setData(RefRole, stuff.value("href"));      
         QString text = stuff.value("intro", "");
-        text.remove("\r");
-        text.remove("\n");
+        text.replace("\r", " ");
+        text.replace("\n", " ");
+        text.replace("\t", " ");
         item->setData(IntroRole, text);
         m_blogListWidget->addItem(item);
 
-        if (!stuff.value("img", "").isEmpty()) {
-            QNetworkAccessManager * manager = new QNetworkAccessManager(this);
-            manager->setProperty("index", ix);
-	        connect(manager, SIGNAL(finished(QNetworkReply *)), this, SLOT(gotBlogImage(QNetworkReply *)));
-	        manager->get(QNetworkRequest(QUrl(stuff.value("img"))));
-        }
-
+        m_blogImageRequestList << stuff.value("img", "");
 
         if (!stuff.value("date", "").isEmpty()) {
             item->setData(DateRole, stuff.value("date"));
@@ -847,27 +854,55 @@ void WelcomeView::readBlog(const QDomDocument & doc) {
             item->setData(AuthorRole, stuff.value("author"));
         }
 	}
+
+    if (doEmit) {
+        getNextBlogImage(0);
+        foreach (QWidget *widget, QApplication::topLevelWidgets()) {
+            WelcomeView * other = widget->findChild<WelcomeView *>();
+            if (other == NULL) continue;
+            if (other == this) continue;
+
+            other->readBlog(doc, false);
+        }     
+    }
+}
+
+void WelcomeView::getNextBlogImage(int ix) {
+    for (int i = ix; i < m_blogImageRequestList.count(); i++) {
+        QString image = m_blogImageRequestList.at(i);
+        if (image.isEmpty()) continue;
+
+        QNetworkAccessManager * manager = new QNetworkAccessManager(this);
+        manager->setProperty("index", i);
+	    connect(manager, SIGNAL(finished(QNetworkReply *)), this, SLOT(gotBlogImage(QNetworkReply *)));
+	    manager->get(QNetworkRequest(QUrl(image)));
+    }
 }
 
 void WelcomeView::gotBlogImage(QNetworkReply * networkReply) {
-
     QNetworkAccessManager * manager = networkReply->manager();
+    int index = manager->property("index").toInt();
+
 	int responseCode = networkReply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
 	if (responseCode == 200) {
         QByteArray data(networkReply->readAll());
         QPixmap pixmap;
         if (pixmap.loadFromData(data)) {
             QPixmap scaled = pixmap.scaled(QSize(ImageSpace, ImageSpace), Qt::KeepAspectRatio);
-            int index = manager->property("index").toInt();
-            QListWidgetItem * item = m_blogListWidget->item(index);
-		    if (item) {
-                item->setData(IconRole, scaled);
+            setBlogItemImage(scaled, index);
+            foreach (QWidget *widget, QApplication::topLevelWidgets()) {
+                WelcomeView * other = widget->findChild<WelcomeView *>();
+                if (other == NULL) continue;
+                if (other == this) continue;
+
+                other->setBlogItemImage(scaled, index);
             }
-        }
+        }     
 	}
 
     manager->deleteLater();
     networkReply->deleteLater();
+    getNextBlogImage(index + 1);
 }
 
 QWidget * WelcomeView::initTip() {
@@ -945,7 +980,16 @@ void WelcomeView::recentItemClicked(QListWidgetItem * item) {
 void WelcomeView::blogItemClicked(QListWidgetItem * item) {
     QString url = item->data(RefRole).toString();
     if (url.isEmpty()) return;
+    if (url == "nop") return;
 
 	QDesktopServices::openUrl(url);
 }
 
+void WelcomeView::setBlogItemImage(QPixmap & pixmap, int index) {
+    // TODO: this is not totally thread-safe if there are multiple sketch widgets opened within a very short time
+
+    QListWidgetItem * item = m_blogListWidget->item(index);
+	if (item) {
+        item->setData(IconRole, pixmap);
+    }
+}

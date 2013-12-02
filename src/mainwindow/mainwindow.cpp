@@ -765,8 +765,9 @@ SketchToolButton *MainWindow::createRotateButton(SketchAreaWidget *parent) {
 SketchToolButton *MainWindow::createShareButton(SketchAreaWidget *parent) {
 	SketchToolButton *shareButton = new SketchToolButton("Share",parent, m_shareOnlineAct);
 	shareButton->setText(tr("Share"));
-	shareButton->setEnabledIcon();					// seems to need this to display button icon first time
-	return shareButton;
+    shareButton->setObjectName("shareProjectButton");
+    shareButton->setEnabledIcon();					// seems to need this to display button icon first time
+    return shareButton;
 }
 
 SketchToolButton *MainWindow::createFlipButton(SketchAreaWidget *parent) {
@@ -788,9 +789,10 @@ SketchToolButton *MainWindow::createAutorouteButton(SketchAreaWidget *parent) {
 }
 
 SketchToolButton *MainWindow::createOrderFabButton(SketchAreaWidget *parent) {
-	SketchToolButton *orderFabButton = new SketchToolButton("Order",parent, m_orderFabAct);
-	orderFabButton->setText(tr("Order PCB"));
-	orderFabButton->setEnabledIcon();					// seems to need this to display button icon first time
+    SketchToolButton *orderFabButton = new SketchToolButton("Order",parent, m_orderFabAct);
+    orderFabButton->setText(tr("Order PCB"));
+    orderFabButton->setObjectName("orderFabButton");
+    orderFabButton->setEnabledIcon();				// seems to need this to display button icon first time
 
 	return orderFabButton;
 }

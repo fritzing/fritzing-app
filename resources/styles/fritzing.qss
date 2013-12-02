@@ -537,11 +537,19 @@ background:transparent;
 	background:#fff;
 	font: regular "Droid Sans";
 	color:#666;
-	qproperty-dateTextColor: #f00;
-	qproperty-dateTextFontFamily: "FixedSys";
-	qproperty-dateTextFontSize:18px;
-	qproperty-titleTextColor: #f0f;
-	}	
+
+	qproperty-titleTextColor: #000;
+	qproperty-titleTextFontFamily: "Droid Sans";
+	qproperty-titleTextFontSize:14px;	
+	
+	qproperty-introTextColor: #656565;
+	qproperty-introTextFontFamily: "Droid Sans";
+	qproperty-introTextFontSize:12px;	
+
+	qproperty-dateTextColor: #656565;
+	qproperty-dateTextFontFamily: "Droid Sans";
+	qproperty-dateTextFontSize:10px;
+}	
 
 #blogList::item
 {

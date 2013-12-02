@@ -533,10 +533,10 @@ background:transparent;
 	margin: 5px 5px 5px 5px;
 	padding:0px;
 	text-align:left;
-	font-size: 12px;
+	font-size: 10px;
 	background:#fff;
 	font: regular "Droid Sans";
-	color:#666;
+	color:#656565;
 
 	qproperty-titleTextColor: #000;
 	qproperty-titleTextFontFamily: "Droid Sans";

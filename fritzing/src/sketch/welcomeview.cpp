@@ -199,11 +199,15 @@ BlogListDelegate::~BlogListDelegate()
 
 void BlogListDelegate::paint ( QPainter * painter, const QStyleOptionViewItem & option, const QModelIndex & index) const
 {
-	BlogListWidget * listWidget = qobject_cast<BlogListWidget *>(this->parent());
+    BlogListWidget * listWidget = qobject_cast<BlogListWidget *>(this->parent());
     if (listWidget == NULL) return;
 
     QStyle * style = listWidget->style();
     if (style == NULL) return;
+
+    painter->save();
+
+    QFont itemFont(painter->font());
 
     style->drawPrimitive(QStyle::PE_PanelItemViewItem, &option, painter, listWidget);
 
@@ -216,45 +220,44 @@ void BlogListDelegate::paint ( QPainter * painter, const QStyleOptionViewItem & 
     QRect ret;
 	int imageSpace = ImageSpace + 10;
 
-
-    painter->save();
     painter->setPen(listWidget->titleTextColor());
-    QFont tileFont(listWidget->titleTextFontFamily(), pointSize(listWidget->titleTextFontSize()));
-    painter->setFont(tileFont);
+    QFont titleFont(listWidget->titleTextFontFamily(), pointSize(listWidget->titleTextFontSize()));
+    painter->setFont(titleFont);
+    titleFont.setStyleStrategy(QFont::PreferAntialias);
+    QFontMetrics titleFontMetrics(titleFont);
     QRect rect = option.rect.adjusted(imageSpace, 0, 0, 0);
     style->drawItemText(painter, rect, Qt::AlignLeft, option.palette, true, title);
-    painter->restore();
 
-    painter->save();
     painter->setPen(listWidget->introTextColor());
     QFont introFont(listWidget->introTextFontFamily(), pointSize(listWidget->introTextFontSize()));
     painter->setFont(introFont);
-    rect = option.rect.adjusted(imageSpace, option.fontMetrics.lineSpacing(), 0, 0);
+    QFontMetrics introFontMetrics(introFont);
+    rect = option.rect.adjusted(imageSpace, titleFontMetrics.lineSpacing(), 0, 0);
     style->drawItemText(painter, rect, Qt::AlignLeft, option.palette, true, intro);
-    painter->restore();
 
-    painter->save();
     painter->setPen(listWidget->dateTextColor());
     QFont font(listWidget->dateTextFontFamily(), pointSize(listWidget->dateTextFontSize()));
     painter->setFont(font);
     QFontMetrics dateTextFontMetrics(font);
-    rect = option.rect.adjusted(imageSpace, option.fontMetrics.lineSpacing() * 2, 0, 0);
+    rect = option.rect.adjusted(imageSpace, titleFontMetrics.lineSpacing() + introFontMetrics.lineSpacing(), 0, 0);
     style->drawItemText(painter, rect, Qt::AlignLeft, option.palette, true, date);
-    painter->restore();
 
+    painter->setFont(itemFont);
     QRect textRect = style->itemTextRect(dateTextFontMetrics, option.rect, Qt::AlignLeft, true, date);
-    rect = option.rect.adjusted(imageSpace + textRect.width() + 7, option.fontMetrics.lineSpacing() * 2, 0, 0);
+    rect = option.rect.adjusted(imageSpace + textRect.width() + 7, titleFontMetrics.lineSpacing() + introFontMetrics.lineSpacing(), 0, 0);
     style->drawItemText(painter, rect, Qt::AlignLeft, option.palette, true, author);
 
     if (!pixmap.isNull()) {
 		//ic.paint(painter, option.rect, Qt::AlignVCenter|Qt::AlignLeft);
         style->drawItemPixmap(painter, option.rect, Qt::AlignLeft, pixmap);
 	}
+
+    painter->restore();
 }
  
 QSize BlogListDelegate::sizeHint ( const QStyleOptionViewItem & option, const QModelIndex & index ) const
 {
-	return QSize(200, 60); // very dumb value
+    return QSize(100, 60); // very dumb value
 }
  
 //////////////////////////////////////
@@ -327,7 +330,7 @@ QWidget * WelcomeView::initRecent() {
     frameLayout->addWidget(m_recentListWidget);
 
     QStringList names;
-    names << "recentFileFrame" << "recentFileFrame" << "recentFileFrame"  << "recentFileFrame" << "recentFileFrame"  << "recentFileFrame" << "recentFileFrame" << "recentFileFrame" << "recentFileFrame" << "recentFileFrame" << "recentFileFrame" << "recentSpace" << "recentNewSketch" << "recentOpenSketch";
+    names << "recentSpace" << "recentNewSketch" << "recentOpenSketch";
 
 	foreach (QString name, names) {
 		QWidget * widget = NULL;
@@ -339,9 +342,7 @@ QWidget * WelcomeView::initRecent() {
 		}
         else if (name == "recentTitleSpace") {
                 widget = new QLabel();
-            }
-        else if (name == "recentFileFrame") {
-		}
+        }
         else if (name == "recentNewSketch") {
 			widget = makeRecentItem(name, 
                 QString("<a href='new' style='text-decoration:none; color:#666; margin-right:5px;'><img src=':/resources/images/icons/WS-new-icon.png' /></a>"),

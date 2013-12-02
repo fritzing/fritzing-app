@@ -99,9 +99,9 @@ void SketchAreaWidget::setToolbarWidgets(QList<QWidget*> widgets) {
             if (goLeft) m_leftButtonsContainer->addWidget(widget);
             else m_rightButtonsContainer->addWidget(widget);
 		} else {
-			m_middleButtonsContainer->addSpacerItem(new QSpacerItem(0,1,QSizePolicy::Maximum));
+            m_middleButtonsContainer->addSpacerItem(new QSpacerItem(0,1,QSizePolicy::Maximum));
 			m_middleButtonsContainer->addWidget(widget);
-			m_middleButtonsContainer->addSpacerItem(new QSpacerItem(0,1,QSizePolicy::Maximum));
+            m_middleButtonsContainer->addSpacerItem(new QSpacerItem(0,1,QSizePolicy::Maximum));
             goLeft = false;
 		}
 	}

@@ -532,9 +532,11 @@ background:transparent;
 	font-size:14px;
 	font-weight:bold;
 	color:#c4c4c4;
-	margin-left:1px;
-	margin-right:2px;
+	margin-left:0px;
+	margin-right:0px;
 	font-family: Droid Sans;
+		margin-left:1px;
+	margin-right:2px;
 
 }
 
@@ -543,6 +545,8 @@ background:transparent;
 	font-size:14px;
 	font-weight:bold;
 	font-family: Droid Sans;
+		margin-left:1px;
+	margin-right:2px;
 }
 
 #blogList
@@ -561,12 +565,12 @@ background:transparent;
 	qproperty-titleTextColor: #000;
 	qproperty-titleTextFontFamily: Droid Sans;
 	qproperty-titleTextFontSize:14px;	
-	qproperty-titleTextExtraLeading:5px;	
+	qproperty-titleTextExtraLeading:3px;	
 
 	qproperty-introTextColor: #656565;
 	qproperty-introTextFontFamily:Droid Sans;
 	qproperty-introTextFontSize:12px;	
-	qproperty-introTextExtraLeading:7px;	
+	qproperty-introTextExtraLeading:5px;	
 
 	qproperty-dateTextColor: #656565;
 	qproperty-dateTextFontFamily: Droid Sans;
@@ -576,13 +580,11 @@ background:transparent;
 
 #blogList::item
 {
-	margin:0px;
 	border:none;
 	padding:0px;
 	text-align:left;
 	font-size: 15px;
 	background:#fff;
-	color:#666;
 	font-weight: regular;
 	font-family: Droid Sans;
 	border-bottom:1px solid #c4c4c4; 
@@ -602,16 +604,16 @@ background:transparent;
 	max-height:22px;
 }
 
+/*
 #blogLogoText {
 	background:#fff;
 	font-weight:regular;
-	font-weight: regular;
 	font-family: Droid Sans;	
 	font-size:12px;
 	min-height:22px;
 	max-height:22px;
 }
-
+*/
 
 
 /* ----------- WC-"tip"-block  ------------- */	
@@ -637,12 +639,12 @@ background:transparent;
 	border:none;
 	padding: 0px 0px 0px 0px;
 	margin-right:5px;
-	background:#fff transparent;
+
 	}
 #tipScrollArea QScrollBar
 {
 	border:none;
-	background:#f0f;
+		
 	}
 
 #tipScrollArea QScrollBar:vertical{               
@@ -692,7 +694,6 @@ background:transparent;
 
 #tipFooterFrame{
 		margin:5px 10px 5px 10px;
-		background:transparent;
 		border-bottom:none;
 	
 	}
@@ -801,7 +802,17 @@ max-height:14px;
 
 }
 
+#blogLogoText,
+#shopLogoText,
+#fabLogoText {
+	margin-right:5px;
+}
 
+#blogTitleSpace,
+#fabshopTitleSpace
+{
+	margin:0px, 3px;
+	}
 
 /*############### a styled loading/progress bar #################### */
 
@@ -996,6 +1007,55 @@ ToolBarSeparator {
 		margin: 2px;
 		background:none;
 }
+/*
+#sketchAreaToolbar orderFabButton {
+	background:#f0f;
+	color:#00f;
+	}
+	
+orderFabButton {
+	background:#fff;
+	color:#f0f;
+	}
+
+#orderFabButton {
+	color:#000;
+	padding-bottom:10px;
+	}
+*/
+#sketchAreaToolbar #orderFabButton {
+	background:transparent;
+	color:#fff;
+	image:url(:/resources/images/icons/toolbarOrderEnabled_icon.png);
+}
+
+#sketchAreaToolbar #orderFabButton:hover   {
+	background:transparent;
+	color:#fff;
+	image:url(:/resources/images/icons/toolbarOrderPressed_icon.png);
+	}
+#sketchAreaToolbar #orderFabButton:disabled   {
+	background:transparent;
+	color:#dadada;
+	image:url(:/resources/images/icons/toolbarOrderDisabled_icon.png);
+	}
+	
+#sketchAreaToolbar #shareProjectButton {
+	background:transparent;
+	color:#fff;
+	image:url(:/resources/images/icons/toolbarShareEnabled_icon.png);
+}
+
+#sketchAreaToolbar #shareProjectButton:hover   {
+	background:transparent;
+	color:#fff;
+	image:url(:/resources/images/icons/toolbarSharePressed_icon.png);
+	}
+#sketchAreaToolbar #shareProjectButton:disabled   {
+	background:transparent;
+	color:#dadada;
+	image:url(:/resources/images/icons/toolbarShareDisabled_icon.png);
+	}
 
 
 /* ################### zoomslider #################### */

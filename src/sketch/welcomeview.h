@@ -44,7 +44,8 @@ class BlogListWidget : public QListWidget
 {
     Q_OBJECT
     Q_PROPERTY(QColor dateTextColor READ dateTextColor WRITE setDateTextColor DESIGNABLE true)
- Q_PROPERTY(QColor dateTitleColor READ dateTitleColor WRITE setDateTitleColor DESIGNABLE true)
+    Q_PROPERTY(QColor titleTextColor READ titleTextColor WRITE setTitleTextColor DESIGNABLE true)
+
 public:
     BlogListWidget(QWidget * parent = 0);
     ~BlogListWidget();
@@ -52,12 +53,12 @@ public:
     QColor dateTextColor() const;
     void setDateTextColor(QColor c);
 
-    QColor dateTitleColor() const;
-    void setDateTitleColor(QColor c);
+    QColor titleTextColor() const;
+    void setTitleTextColor(QColor c);
 
 protected:
     QColor m_dateTextColor;
- QColor m_dateTitleColor;
+    QColor m_titleTextColor;
 };
  
 class WelcomeView : public QFrame

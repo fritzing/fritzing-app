@@ -538,7 +538,7 @@ background:transparent;
 	font: regular "Droid Sans";
 	color:#666;
 	qproperty-dateTextColor: #f00;
-		qproperty-dateTitleColor: #f0f;
+	qproperty-titleTextColor: #f0f;
 	}	
 
 #blogList::item

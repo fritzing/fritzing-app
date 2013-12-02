@@ -67,12 +67,12 @@ BlogListWidget::~BlogListWidget()
 {
 }
 
-QColor BlogListWidget::dateTitleColor() const {
-    return m_dateTitleColor;
+QColor BlogListWidget::titleTextColor() const {
+    return m_titleTextColor;
 }
 
-void BlogListWidget::setDateTitleColor(QColor color) {
-    m_dateTitleColor = color;
+void BlogListWidget::setTitleTextColor(QColor color) {
+    m_titleTextColor = color;
 }
 
 QColor BlogListWidget::dateTextColor() const {
@@ -119,7 +119,7 @@ void BlogListDelegate::paint ( QPainter * painter, const QStyleOptionViewItem & 
 
 
     painter->save();
-    painter->setPen(listWidget->dateTitleColor());
+    painter->setPen(listWidget->titleTextColor());
     QRect rect = option.rect.adjusted(imageSpace, 0, 0, 0);
     style->drawItemText(painter, rect, Qt::AlignLeft, option.palette, true, title);
 painter->restore();

@@ -46,6 +46,7 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 #include <QScrollArea>
 #include <QStyleOption>
 #include <QStyle>
+#include <QApplication>
 
 ////////////////////////////////////////////////////////////
 
@@ -257,13 +258,15 @@ void BlogListDelegate::paint ( QPainter * painter, const QStyleOptionViewItem & 
  
 QSize BlogListDelegate::sizeHint ( const QStyleOptionViewItem & option, const QModelIndex & index ) const
 {
-    return QSize(100, 60); // very dumb value
+    return QSize(100, ImageSpace); // very dumb value
 }
  
 //////////////////////////////////////
 
 WelcomeView::WelcomeView(QWidget * parent) : QFrame(parent) 
 {
+    this->setObjectName("welcomeView");
+        
     m_tip = NULL;
     setAcceptDrops(false);
     initLayout();
@@ -685,7 +688,6 @@ void WelcomeView::clickRecent(const QString & url) {
 }
 
 void WelcomeView::gotBlogSnippet(QNetworkReply * networkReply) {
-
     QNetworkAccessManager * manager = networkReply->manager();
 	int responseCode = networkReply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
     bool goodBlog = false;
@@ -698,7 +700,7 @@ void WelcomeView::gotBlogSnippet(QNetworkReply * networkReply) {
         DebugDialog::debug("response data " + data);
 		data = "<thing>" + cleanData(data) + "</thing>";		// make it one tree for xml parsing
 	    if (doc.setContent(data, &errorStr, &errorLine, &errorColumn)) {
-		    readBlog(doc);
+		    readBlog(doc, true);
             goodBlog = true;
         }
 	}
@@ -706,7 +708,7 @@ void WelcomeView::gotBlogSnippet(QNetworkReply * networkReply) {
     if (!goodBlog) {
         QString placeHolder = QString("<li><a class='title' href='nop' title='%1'></a></li>").arg(tr("Unable to access blog.fritzing.org"));
         if (doc.setContent(placeHolder, &errorStr, &errorLine, &errorColumn)) {
-		    readBlog(doc);
+		    readBlog(doc, true);
         }   
     }
 
@@ -772,7 +774,7 @@ We thought we should delight our readers a little by showing some dainties of cr
 		*/
 
 
-void WelcomeView::readBlog(const QDomDocument & doc) {
+void WelcomeView::readBlog(const QDomDocument & doc, bool doEmit) {
     m_blogListWidget->clear();
     m_blogImageRequestList.clear();
 
@@ -819,8 +821,16 @@ void WelcomeView::readBlog(const QDomDocument & doc) {
         }
 	}
 
-    getNextBlogImage(0);
+    if (doEmit) {
+        getNextBlogImage(0);
+        foreach (QWidget *widget, QApplication::topLevelWidgets()) {
+            WelcomeView * other = widget->findChild<WelcomeView *>();
+            if (other == NULL) continue;
+            if (other == this) continue;
 
+            other->readBlog(doc, false);
+        }     
+    }
 }
 
 void WelcomeView::getNextBlogImage(int ix) {
@@ -836,7 +846,6 @@ void WelcomeView::getNextBlogImage(int ix) {
 }
 
 void WelcomeView::gotBlogImage(QNetworkReply * networkReply) {
-
     QNetworkAccessManager * manager = networkReply->manager();
     int index = manager->property("index").toInt();
 
@@ -846,11 +855,15 @@ void WelcomeView::gotBlogImage(QNetworkReply * networkReply) {
         QPixmap pixmap;
         if (pixmap.loadFromData(data)) {
             QPixmap scaled = pixmap.scaled(QSize(ImageSpace, ImageSpace), Qt::KeepAspectRatio);
-            QListWidgetItem * item = m_blogListWidget->item(index);
-		    if (item) {
-                item->setData(IconRole, scaled);
+            setBlogItemImage(scaled, index);
+            foreach (QWidget *widget, QApplication::topLevelWidgets()) {
+                WelcomeView * other = widget->findChild<WelcomeView *>();
+                if (other == NULL) continue;
+                if (other == this) continue;
+
+                other->setBlogItemImage(scaled, index);
             }
-        }
+        }     
 	}
 
     manager->deleteLater();
@@ -938,3 +951,11 @@ void WelcomeView::blogItemClicked(QListWidgetItem * item) {
 	QDesktopServices::openUrl(url);
 }
 
+void WelcomeView::setBlogItemImage(QPixmap & pixmap, int index) {
+    // TODO: this is not totally thread-safe if there are multiple sketch widgets opened within a very short time
+
+    QListWidgetItem * item = m_blogListWidget->item(index);
+	if (item) {
+        item->setData(IconRole, pixmap);
+    }
+}

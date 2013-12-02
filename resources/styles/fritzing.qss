@@ -587,16 +587,26 @@ background:transparent;
 	background:#fff;
 	font-weight: regular;
 	font-family: Droid Sans;
-	border-bottom:1px solid #c4c4c4; 
+	border-bottom:1px solid #d4d4d4; 
 	}
 
 
 /******* this is the styling for the blog-footer ***********/
+
 #blogFooterFrame{
-		margin:5px;
+/*		border-top:1px solid #c4c4c4; 
+		padding-top:5px;
+		margin:0px, 5px, 5px, 5px;
 		background:transparent;
 		border-bottom:none;
-	
+	*/
+		border-top:1px solid #c4c4c4; 
+		background:transparent;
+		border-bottom:none;
+		margin:0px 5px 5px 5px;
+		padding-top:5px;
+		font-weight: regular;
+		font-family: Droid Sans;
 	}
 #blogLogo {
 	background:#fff;

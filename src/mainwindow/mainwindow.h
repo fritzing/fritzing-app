@@ -588,6 +588,7 @@ protected:
     virtual QString getStyleSheetSuffix();
 	virtual QWidget * createTabWidget();
 	virtual void addTab(QWidget * widget, const QString & label);
+	virtual void addTab(QWidget * widget, const QString & iconPath, const QString & label);
 	virtual int currentTabIndex();
 	virtual void setCurrentTabIndex(int);
 	virtual QWidget * currentTabWidget();

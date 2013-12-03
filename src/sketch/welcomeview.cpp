@@ -112,6 +112,10 @@ BlogListWidget::~BlogListWidget()
 {
 }
 
+QStringList & BlogListWidget::imageRequestList() {
+    return m_imageRequestList;
+}
+
 /* blogEntry Title text properties color, fontfamily, fontsize*/
 
 QColor BlogListWidget::titleTextColor() const {
@@ -303,6 +307,10 @@ WelcomeView::WelcomeView(QWidget * parent) : QFrame(parent)
     QNetworkAccessManager * manager = new QNetworkAccessManager(this);
 	connect(manager, SIGNAL(finished(QNetworkReply *)), this, SLOT(gotBlogSnippet(QNetworkReply *)));
 	manager->get(QNetworkRequest(QUrl("http://blog.fritzing.org/recent-posts-app/")));
+
+    manager = new QNetworkAccessManager(this);
+	connect(manager, SIGNAL(finished(QNetworkReply *)), this, SLOT(gotBlogSnippet(QNetworkReply *)));
+	manager->get(QNetworkRequest(QUrl("http://green.fritzing.org/projects/snippet/")));
 
 	TipsAndTricks::initTipSets();
     nextTip();
@@ -554,8 +562,6 @@ QWidget * WelcomeView::createShopContentFrame(const QString & imagePath, const Q
     return uberFrame;
 }
 
-
-
 QWidget * WelcomeView::initBlog() {
 
     QFrame * frame = new QFrame();
@@ -569,15 +575,16 @@ QWidget * WelcomeView::initBlog() {
 	QHBoxLayout * titleFrameLayout = new QHBoxLayout;
     zeroMargin(titleFrameLayout);
 
-    QLabel * titleLabel = new QLabel(tr("News and Stories"));
+    QLabel * titleLabel = new QLabel(QString("<a href='projects'  style='font-family:Droid Sans; text-decoration:none; font-weight:bold; color:#323232;'>%1</a>").arg(tr("Projects")));
 	titleLabel->setObjectName("blogTitle");
 	titleFrameLayout->addWidget(titleLabel);
+	connect(titleLabel, SIGNAL(linkActivated(const QString &)), this, SLOT(clickBlog(const QString &)));
 
     QLabel * titleSpace = new QLabel(tr("|"));
     titleSpace->setObjectName("blogTitleSpace");
     titleFrameLayout->addWidget(titleSpace);
 
-    QLabel * label = new QLabel(QString("<a href='http://blog.fritzing.org'  style='font-family:Droid Sans; text-decoration:none; font-weight:bold; color:#323232;'>%1</a>").arg(tr("Blog")));
+    QLabel * label = new QLabel(QString("<a href='blog'  style='font-family:Droid Sans; text-decoration:none; font-weight:bold; color:#323232;'>%1</a>").arg(tr("Blog")));
 	label->setObjectName("blogTitleGoto");
 	titleFrameLayout->addWidget(label);
 	connect(label, SIGNAL(linkActivated(const QString &)), this, SLOT(clickBlog(const QString &)));
@@ -587,40 +594,60 @@ QWidget * WelcomeView::initBlog() {
     titleFrame->setLayout(titleFrameLayout);
 	frameLayout->addWidget(titleFrame);
 
-    m_blogListWidget = new BlogListWidget;
-    m_blogListWidget->setObjectName("blogList");
-    m_blogListWidget->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    m_blogListWidget->setItemDelegate(new BlogListDelegate(m_blogListWidget));
-    connect(m_blogListWidget, SIGNAL(itemClicked (QListWidgetItem *)), this, SLOT(blogItemClicked(QListWidgetItem *)));
+    m_blogListWidget = createBlogContentFrame("http://blog.fritzing.org", tr("Fritzing News."), ":/resources/images/icons/WS-blogLogo.png");
+    m_blogUberFrame = m_blogListWidget;
+    while (m_blogUberFrame->parentWidget()) m_blogUberFrame = m_blogUberFrame->parentWidget();
+    frameLayout->addWidget(m_blogUberFrame);
 
-    frameLayout->addWidget(m_blogListWidget);
+    m_projectListWidget = createBlogContentFrame("http://fritzing.org/projects/", tr("Fritzing Projects."), ":/resources/images/icons/WS-blogLogo.png");
+    m_projectsUberFrame = m_projectListWidget;
+    while (m_projectsUberFrame->parentWidget()) m_projectsUberFrame = m_projectsUberFrame->parentWidget();
+    frameLayout->addWidget(m_projectsUberFrame);
+
+    frame->setLayout(frameLayout);
+
+    clickBlog("blog");
+
+    return frame;
+}
+
+BlogListWidget * WelcomeView::createBlogContentFrame(const QString & url, const QString & urlText, const QString & logoPath) {
+    QFrame * uberFrame = new QFrame;
+    QVBoxLayout * uberFrameLayout = new QVBoxLayout;
+    zeroMargin(uberFrameLayout);
+
+    BlogListWidget * listWidget = new BlogListWidget;
+    listWidget->setObjectName("blogList");
+    listWidget->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    listWidget->setItemDelegate(new BlogListDelegate(listWidget));
+    connect(listWidget, SIGNAL(itemClicked (QListWidgetItem *)), this, SLOT(blogItemClicked(QListWidgetItem *)));
+
+    uberFrameLayout->addWidget(listWidget);
 
     QFrame * footerFrame = new QFrame();
     footerFrame->setObjectName("blogFooterFrame");
 
-        QHBoxLayout * footerFrameLayout = new QHBoxLayout;
-        zeroMargin(footerFrameLayout);
+    QHBoxLayout * footerFrameLayout = new QHBoxLayout;
+    zeroMargin(footerFrameLayout);
 
-        footerFrameLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Expanding));
+    footerFrameLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Expanding));
 
-        QLabel * footerLabel = new QLabel(QString("<a href='http://blog.fritzing.org'  style='font-family:Droid Sans; text-decoration:none; color:#802742;'>%1</a>").arg(tr("Fritzing Project News.")));
-        footerLabel->setObjectName("blogLogoText");
-        footerFrameLayout->addWidget(footerLabel);
-        connect(footerLabel, SIGNAL(linkActivated(const QString &)), this, SLOT(clickBlog(const QString &)));
+    QLabel * footerLabel = new QLabel(QString("<a href='%1'  style='font-family:Droid Sans; text-decoration:none; color:#802742;'>%1</a>").arg(url).arg(urlText));
+    footerLabel->setObjectName("blogLogoText");
+    footerFrameLayout->addWidget(footerLabel);
+    connect(footerLabel, SIGNAL(linkActivated(const QString &)), this, SLOT(clickBlog(const QString &)));
 
-        footerLabel = new QLabel(tr("<a href='http://blog.fritzing.org'><img src=':/resources/images/icons/WS-blogLogo.png' /></a>"));
-        footerLabel->setObjectName("blogLogo");
-        footerFrameLayout->addWidget(footerLabel);
-        connect(footerLabel, SIGNAL(linkActivated(const QString &)), this, SLOT(clickBlog(const QString &)));
+    footerLabel = new QLabel(tr("<a href='%1'><img src='%2' /></a>").arg(url).arg(logoPath));
+    footerLabel->setObjectName("blogLogo");
+    footerFrameLayout->addWidget(footerLabel);
+    connect(footerLabel, SIGNAL(linkActivated(const QString &)), this, SLOT(clickBlog(const QString &)));
 
-        footerFrame->setLayout(footerFrameLayout);
+    footerFrame->setLayout(footerFrameLayout);
 
-    frameLayout->addWidget(footerFrame);
+    uberFrameLayout->addWidget(footerFrame);
+    uberFrame->setLayout(uberFrameLayout);
 
-    frame->setLayout(frameLayout);
-
-
-    return frame;
+    return listWidget;
 }
 
 void WelcomeView::showEvent(QShowEvent * event) {
@@ -665,6 +692,7 @@ void WelcomeView::clickRecent(const QString & url) {
 }
 
 void WelcomeView::gotBlogSnippet(QNetworkReply * networkReply) {
+    bool blog = networkReply->url().toString().contains("blog");
     QNetworkAccessManager * manager = networkReply->manager();
 	int responseCode = networkReply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
     bool goodBlog = false;
@@ -677,15 +705,16 @@ void WelcomeView::gotBlogSnippet(QNetworkReply * networkReply) {
         DebugDialog::debug("response data " + data);
 		data = "<thing>" + cleanData(data) + "</thing>";		// make it one tree for xml parsing
 	    if (doc.setContent(data, &errorStr, &errorLine, &errorColumn)) {
-		    readBlog(doc, true);
+		    readBlog(doc, true, blog);
             goodBlog = true;
         }
 	}
 
     if (!goodBlog) {
-        QString placeHolder = QString("<li><a class='title' href='nop' title='%1'></a></li>").arg(tr("Unable to access blog.fritzing.org"));
+        QString message = (blog) ? tr("Unable to access blog.fritzing.org") : tr("Unable to access friting.org/projects") ;
+        QString placeHolder = QString("<li><a class='title' href='nop' title='%1'></a></li>").arg(message);
         if (doc.setContent(placeHolder, &errorStr, &errorLine, &errorColumn)) {
-		    readBlog(doc, true);
+		    readBlog(doc, true, blog);
         }   
     }
 
@@ -710,32 +739,26 @@ void WelcomeView::clickBlog(const QString & url) {
         nextTip();
         return;
     }
+
+    if (url == "projects") {
+        m_projectsUberFrame->setVisible(true);
+        m_blogUberFrame->setVisible(false);
+        return;
+    }
+ 
+    if (url == "blog") {
+        m_projectsUberFrame->setVisible(false);
+        m_blogUberFrame->setVisible(true);
+        return;
+    }
  
 	QDesktopServices::openUrl(url);
 }
 
-		/*
+/*
 
-        // sample output from http://blog.fritzing.org/recent-posts-app/
-
-
+// sample output from http://blog.fritzing.org/recent-posts-app/
 <ul>
-    <li>
-        <img src=""/>
-        <a class="title" href="http://blog.fritzing.org/2013/11/19/minimetalmaker/" title="MiniMetalMaker">MiniMetalMaker</a>
-        <p class="date">Nov. 19, 2013</p>
-        <p class="author">Nushin Isabelle</p>
-        <p class="intro">We have heard a lot about synthetic 3D printers for home use - now we are entering the home use met...</p>
-    </li> 
-    <li>
-        <img src="http://blog.fritzing.org/wp-content/uploads/doku-deckblatt.jpg"/>
-        <a class="title" href="http://blog.fritzing.org/2013/11/19/the-little-black-midi/" title="The Little Black Midi">The Little Black Midi</a>
-        <p class="date">Nov. 19, 2013</p>
-        <p class="author">Nushin Isabelle</p>
-        <p class="intro">Howdy!
-
-We thought we should delight our readers a little by showing some dainties of creative ele...</p>
-    </li> 
     <li>
         <img src="http://blog.fritzing.org/wp-content/uploads/charles1.jpg"/>
         <a class="title" href="http://blog.fritzing.org/2013/11/15/light-up-your-flat-with-charles-planetary-gear-system/" title="Light up your flat with Charles&#039; planetary gear system">Light up your flat with Charles' planetary gear system</a>
@@ -744,12 +767,27 @@ We thought we should delight our readers a little by showing some dainties of cr
         <p class="intro">Today, we got a visitor in the Fritzing Lab: Our neighbour, Charles Oleg, came by to show us his new...</p>
     </li> 
 </ul>
-		*/
+
+// sample output from http://fritzing.org/projects/snippet/
+<ul>
+    <li>
+        <a class="image" href="/projects/sensor-infrarrojos-para-nuestro-robot">
+            <img src="" alt="Sensor Infrarrojos para nuestro Robot" />
+        </a>
+        <a class="title" href="/projects/sensor-infrarrojos-para-nuestro-robot" title="Sensor Infrarrojos para nuestro Robot">Sensor Infrarrojos para nuestro Robot</a>
+        <p class="date">1 week ago</p>
+        <p class="author">robotarduedu</p>
+        <p class="difficulty">for kids</p>
+        <p class="tags">in sensror infrarrojo, led infrarrojo, i.r., i.r., </p>
+    </li>
+</ul>#
+*/
 
 
-void WelcomeView::readBlog(const QDomDocument & doc, bool doEmit) {
-    m_blogListWidget->clear();
-    m_blogImageRequestList.clear();
+void WelcomeView::readBlog(const QDomDocument & doc, bool doEmit, bool blog) {
+    BlogListWidget * listWidget = (blog) ? m_blogListWidget : m_projectListWidget;
+    listWidget->clear();
+    listWidget->imageRequestList().clear();
 
 	QDomNodeList nodeList = doc.elementsByTagName("li");
 	for (int i = 0; i < nodeList.count(); i++) {
@@ -783,9 +821,9 @@ void WelcomeView::readBlog(const QDomDocument & doc, bool doEmit) {
         text.replace("\n", " ");
         text.replace("\t", " ");
         item->setData(IntroRole, text);
-        m_blogListWidget->addItem(item);
+        listWidget->addItem(item);
 
-        m_blogImageRequestList << stuff.value("img", "");
+        listWidget->imageRequestList() << stuff.value("img", "");
 
         if (!stuff.value("date", "").isEmpty()) {
             item->setData(DateRole, stuff.value("date"));
@@ -796,24 +834,26 @@ void WelcomeView::readBlog(const QDomDocument & doc, bool doEmit) {
 	}
 
     if (doEmit) {
-        getNextBlogImage(0);
+        getNextBlogImage(0, blog);
         foreach (QWidget *widget, QApplication::topLevelWidgets()) {
             WelcomeView * other = widget->findChild<WelcomeView *>();
             if (other == NULL) continue;
             if (other == this) continue;
 
-            other->readBlog(doc, false);
+            other->readBlog(doc, false, blog);
         }     
     }
 }
 
-void WelcomeView::getNextBlogImage(int ix) {
-    for (int i = ix; i < m_blogImageRequestList.count(); i++) {
-        QString image = m_blogImageRequestList.at(i);
+void WelcomeView::getNextBlogImage(int ix, bool blog) {
+    BlogListWidget * listWidget = (blog) ? m_blogListWidget : m_projectListWidget;
+    for (int i = ix; i < listWidget->imageRequestList().count(); i++) {
+        QString image = listWidget->imageRequestList().at(i);
         if (image.isEmpty()) continue;
 
         QNetworkAccessManager * manager = new QNetworkAccessManager(this);
         manager->setProperty("index", i);
+        manager->setProperty("blog", blog);
 	    connect(manager, SIGNAL(finished(QNetworkReply *)), this, SLOT(gotBlogImage(QNetworkReply *)));
 	    manager->get(QNetworkRequest(QUrl(image)));
     }
@@ -821,7 +861,10 @@ void WelcomeView::getNextBlogImage(int ix) {
 
 void WelcomeView::gotBlogImage(QNetworkReply * networkReply) {
     QNetworkAccessManager * manager = networkReply->manager();
+    if (manager == NULL) return;
+
     int index = manager->property("index").toInt();
+    bool blog = manager->property("blog").toBool();
 
 	int responseCode = networkReply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
 	if (responseCode == 200) {
@@ -829,20 +872,20 @@ void WelcomeView::gotBlogImage(QNetworkReply * networkReply) {
         QPixmap pixmap;
         if (pixmap.loadFromData(data)) {
             QPixmap scaled = pixmap.scaled(QSize(ImageSpace, ImageSpace), Qt::KeepAspectRatio);
-            setBlogItemImage(scaled, index);
+            setBlogItemImage(scaled, index, blog);
             foreach (QWidget *widget, QApplication::topLevelWidgets()) {
                 WelcomeView * other = widget->findChild<WelcomeView *>();
                 if (other == NULL) continue;
                 if (other == this) continue;
 
-                other->setBlogItemImage(scaled, index);
+                other->setBlogItemImage(scaled, index, blog);
             }
         }     
 	}
 
     manager->deleteLater();
     networkReply->deleteLater();
-    getNextBlogImage(index + 1);
+    getNextBlogImage(index + 1, blog);
 }
 
 QWidget * WelcomeView::initTip() {
@@ -928,10 +971,10 @@ void WelcomeView::blogItemClicked(QListWidgetItem * item) {
 	QDesktopServices::openUrl(url);
 }
 
-void WelcomeView::setBlogItemImage(QPixmap & pixmap, int index) {
+void WelcomeView::setBlogItemImage(QPixmap & pixmap, int index, bool blog) {
     // TODO: this is not totally thread-safe if there are multiple sketch widgets opened within a very short time
-
-    QListWidgetItem * item = m_blogListWidget->item(index);
+    BlogListWidget * listWidget = (blog) ? m_blogListWidget : m_projectListWidget;
+    QListWidgetItem * item = listWidget->item(index);
 	if (item) {
         item->setData(IconRole, pixmap);
     }

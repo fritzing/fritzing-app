@@ -86,6 +86,8 @@ public:
     QString dateTextFontSize() const;
     void setDateTextFontSize(QString);
 
+    QStringList & imageRequestList();
+
 protected:
     QColor m_titleTextColor;
     QString m_titleTextFontFamily;
@@ -100,6 +102,8 @@ protected:
     QColor m_dateTextColor;
     QString m_dateTextFontFamily;
     QString m_dateTextFontSize;
+
+    QStringList m_imageRequestList;
 };
  
 class WelcomeView : public QFrame
@@ -120,12 +124,14 @@ protected:
 	QWidget * initBlog();
 	QWidget * initShop();
 	QWidget * initTip();
-	void readBlog(const QDomDocument &, bool doEmit);
+	void readBlog(const QDomDocument &, bool doEmit, bool blog);
     QWidget * makeRecentItem(const QString & objectName, const QString & iconText, const QString & textText, QLabel * & icon, QLabel * & text);
-    void getNextBlogImage(int ix);
-    void setBlogItemImage(QPixmap &, int index) ;
+    void getNextBlogImage(int ix, bool blog);
+    void setBlogItemImage(QPixmap &, int index, bool blog) ;
     QWidget * createShopContentFrame(const QString & imagePath, const QString & headline, const QString & description, 
                                      const QString & url, const QString & urlText, const QString & urlText2, const QString & logoPath);
+    BlogListWidget * createBlogContentFrame(const QString & url, const QString & urlText, const QString & logoPath);
+
 signals:
 	void newSketch();
 	void openSketch();
@@ -142,11 +148,13 @@ protected slots:
 
 protected:
     BlogListWidget * m_blogListWidget;
+    BlogListWidget * m_projectListWidget;
+    QWidget * m_blogUberFrame;
+    QWidget * m_projectsUberFrame;
     QLabel * m_tip;
     QListWidget * m_recentListWidget;
     QWidget * m_fabUberFrame;
     QWidget * m_shopUberFrame;
-    QStringList m_blogImageRequestList;
 };
 
 class BlogListDelegate : public QAbstractItemDelegate

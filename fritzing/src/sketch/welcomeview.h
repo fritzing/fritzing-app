@@ -124,7 +124,7 @@ protected:
 	QWidget * initBlog();
 	QWidget * initShop();
 	QWidget * initTip();
-	void readBlog(const QDomDocument &, bool doEmit, bool blog);
+	void readBlog(const QDomDocument &, bool doEmit, bool blog, const QString & prefix);
     QWidget * makeRecentItem(const QString & objectName, const QString & iconText, const QString & textText, QLabel * & icon, QLabel * & text);
     void getNextBlogImage(int ix, bool blog);
     void setBlogItemImage(QPixmap &, int index, bool blog) ;

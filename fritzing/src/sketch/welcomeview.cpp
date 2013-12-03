@@ -693,6 +693,7 @@ void WelcomeView::clickRecent(const QString & url) {
 
 void WelcomeView::gotBlogSnippet(QNetworkReply * networkReply) {
     bool blog = networkReply->url().toString().contains("blog");
+    QString prefix = networkReply->url().scheme() + "://" + networkReply->url().authority();
     QNetworkAccessManager * manager = networkReply->manager();
 	int responseCode = networkReply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
     bool goodBlog = false;
@@ -705,7 +706,7 @@ void WelcomeView::gotBlogSnippet(QNetworkReply * networkReply) {
         DebugDialog::debug("response data " + data);
 		data = "<thing>" + cleanData(data) + "</thing>";		// make it one tree for xml parsing
 	    if (doc.setContent(data, &errorStr, &errorLine, &errorColumn)) {
-		    readBlog(doc, true, blog);
+		    readBlog(doc, true, blog, prefix);
             goodBlog = true;
         }
 	}
@@ -714,7 +715,7 @@ void WelcomeView::gotBlogSnippet(QNetworkReply * networkReply) {
         QString message = (blog) ? tr("Unable to access blog.fritzing.org") : tr("Unable to access friting.org/projects") ;
         QString placeHolder = QString("<li><a class='title' href='nop' title='%1'></a></li>").arg(message);
         if (doc.setContent(placeHolder, &errorStr, &errorLine, &errorColumn)) {
-		    readBlog(doc, true, blog);
+		    readBlog(doc, true, blog, prefix);
         }   
     }
 
@@ -780,11 +781,11 @@ void WelcomeView::clickBlog(const QString & url) {
         <p class="difficulty">for kids</p>
         <p class="tags">in sensror infrarrojo, led infrarrojo, i.r., i.r., </p>
     </li>
-</ul>#
+</ul>
 */
 
 
-void WelcomeView::readBlog(const QDomDocument & doc, bool doEmit, bool blog) {
+void WelcomeView::readBlog(const QDomDocument & doc, bool doEmit, bool blog, const QString & prefix) {
     BlogListWidget * listWidget = (blog) ? m_blogListWidget : m_projectListWidget;
     listWidget->clear();
     listWidget->imageRequestList().clear();
@@ -801,8 +802,19 @@ void WelcomeView::readBlog(const QDomDocument & doc, bool doEmit, bool blog) {
             else {
                 QString clss = child.attribute("class");
                 if (clss == "title") {
-                    stuff.insert("title", child.attribute("title"));
-                    stuff.insert("href", child.attribute("href"));
+                    QString title = child.attribute("title");
+                    QString href = child.attribute("href");
+                    if (!blog) {
+                        href.insert(0, prefix);
+                    }
+                    stuff.insert("title", title);
+                    stuff.insert("href", href);
+                }
+                else if (clss == "image") {
+                    QDomElement img = child.firstChildElement("img");
+                    QString src = img.attribute("src");
+                    if (!src.isEmpty()) src.insert(0, prefix);
+                    stuff.insert("img", src);
                 }
                 else {
                     stuff.insert(clss, child.text());
@@ -840,7 +852,7 @@ void WelcomeView::readBlog(const QDomDocument & doc, bool doEmit, bool blog) {
             if (other == NULL) continue;
             if (other == this) continue;
 
-            other->readBlog(doc, false, blog);
+            other->readBlog(doc, false, blog, prefix);
         }     
     }
 }

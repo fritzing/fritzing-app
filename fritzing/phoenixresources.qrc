@@ -21,8 +21,8 @@
         <file>resources/images/aboutbox_FHP.png</file>
         <file>resources/images/aboutbox_scrollfade.png</file>
         <file>resources/images/watermark_fritzing_outline.svg</file>
-	<file>resources/images/welcome_kit.png</file>
-	<file>resources/images/pcbs_2013.png</file>
+        <file>resources/images/welcome_kit.png</file>
+        <file>resources/images/pcbs_2013.png</file>
         <file>resources/images/dot.png</file>
         <file>resources/images/fritzing_icon.png</file>
         <file>resources/images/fritzing_logo_background.png</file>
@@ -63,6 +63,21 @@
         <file>resources/images/icons/Toolbar_Icon_Order.png</file>
         <file>resources/images/icons/check.png</file>
         <file>resources/images/icons/nocheck.png</file>
+        <file>resources/images/icons/TabWidgetCodeInactive_icon.png</file>
+        <file>resources/images/icons/TabWidgetCodeActive_icon.png</file>
+        <file>resources/images/icons/TabWidgetCodeHover_icon.png</file>
+        <file>resources/images/icons/TabWidgetSchematicActive_icon.png</file>
+        <file>resources/images/icons/TabWidgetSchematicInactive_icon.png</file>	
+        <file>resources/images/icons/TabWidgetSchematicHover_icon.png</file>
+        <file>resources/images/icons/TabWidgetBreadboardActive_icon.png</file>
+        <file>resources/images/icons/TabWidgetBreadboardInactive_icon.png</file>	
+        <file>resources/images/icons/TabWidgetBreadboardHover_icon.png</file>
+        <file>resources/images/icons/TabWidgetWelcomeActive_icon.png</file>
+        <file>resources/images/icons/TabWidgetWelcomeInactive_icon.png</file>	
+        <file>resources/images/icons/TabWidgetWelcomeHover_icon.png</file>
+        <file>resources/images/icons/TabWidgetPcbActive_icon.png</file>
+        <file>resources/images/icons/TabWidgetPcbInactive_icon.png</file>	
+        <file>resources/images/icons/TabWidgetPcbHover_icon.png</file>
         <file>resources/images/icons/toolbarExport_gbr_icon.png</file>
         <file>resources/images/icons/toolbarExport_gbx_icon.png</file>
         <file>resources/images/icons/toolbarExport_jpeg_icon.png</file>

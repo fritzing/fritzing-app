@@ -443,7 +443,7 @@ void MainWindow::initSketchWidgets() {
 	m_breadboardGraphicsView = new BreadboardSketchWidget(ViewLayer::BreadboardView, this);
 	initSketchWidget(m_breadboardGraphicsView);
 	m_breadboardWidget = new SketchAreaWidget(m_breadboardGraphicsView,this);
-	addTab(m_breadboardWidget, ":/resources/images/icons/arrowButtonRight.png", tr("Breadboard"));
+    addTab(m_breadboardWidget, ":/resources/images/icons/TabWidgetBreadboardActive_icon.png", tr("Breadboard"));
 
 	if (m_fileProgressDialog) {
 		m_fileProgressDialog->setValue(11);
@@ -452,7 +452,7 @@ void MainWindow::initSketchWidgets() {
 	m_schematicGraphicsView = new SchematicSketchWidget(ViewLayer::SchematicView, this);
 	initSketchWidget(m_schematicGraphicsView);
 	m_schematicWidget = new SketchAreaWidget(m_schematicGraphicsView, this);
-	addTab(m_schematicWidget, ":/resources/images/icons/arrowButtonRight.png", tr("Schematic"));
+    addTab(m_schematicWidget, ":/resources/images/icons/TabWidgetSchematicActive_icon.png", tr("Schematic"));
 
 	if (m_fileProgressDialog) {
 		m_fileProgressDialog->setValue(20);
@@ -461,7 +461,7 @@ void MainWindow::initSketchWidgets() {
 	m_pcbGraphicsView = new PCBSketchWidget(ViewLayer::PCBView, this);
 	initSketchWidget(m_pcbGraphicsView);
 	m_pcbWidget = new SketchAreaWidget(m_pcbGraphicsView, this);
-	addTab(m_pcbWidget, ":/resources/images/icons/arrowButtonRight.png", tr("PCB"));
+    addTab(m_pcbWidget, ":/resources/images/icons/TabWidgetPcbActive_icon.png", tr("PCB"));
 
 	if (m_fileProgressDialog) {
 		m_fileProgressDialog->setValue(29);
@@ -2895,7 +2895,7 @@ void MainWindow::initWelcomeView() {
     m_welcomeView = new WelcomeView(this);
     m_welcomeView->setObjectName("WelcomeView");
 	SketchAreaWidget * sketchAreaWidget = new SketchAreaWidget(m_welcomeView, this);
-    addTab(sketchAreaWidget, ":/resources/images/icons/arrowButtonRight.png", tr("Welcome"));
+    addTab(sketchAreaWidget, ":/resources/images/icons/TabWidgetWelcomeActive_icon.png", tr("Welcome"));
 }
 
 void MainWindow::setInitialView() {

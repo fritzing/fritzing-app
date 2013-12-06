@@ -69,22 +69,13 @@ class FTabWidget : public QTabWidget {
     Q_OBJECT
 public:
     FTabWidget(QWidget * parent = NULL);
-
-    void addPixmap(QPixmap &);
-
 };
 
 class FTabBar : public QTabBar {
     Q_OBJECT
 public:
     void paintEvent(QPaintEvent *);
-    void addPixmap(QPixmap &);
 
-protected:
-    void drawTab(QStylePainter & , QStyleOptionTabV3 &, int index);
-
-protected:
-    QList<QPixmap> m_pixmaps;
 };
 
 class SwapTimer : public QTimer

@@ -96,25 +96,18 @@ FTabWidget::FTabWidget(QWidget * parent) : QTabWidget(parent)
 {
     setElideMode(Qt::ElideRight);
     QTabBar * tabBar = new FTabBar;
+    tabBar->setObjectName("mainTabBar");
     setTabBar(tabBar);
-}
-
-void FTabWidget::addPixmap(QPixmap & pixmap) {
-    qobject_cast<FTabBar *>(tabBar())->addPixmap(pixmap);
-}
-
-void FTabBar::addPixmap(QPixmap & pixmap) {
-    m_pixmaps << pixmap;
 }
 
 void FTabBar::paintEvent(QPaintEvent * event) {
     static bool firstTime = true;
+    static int offset = 15;  // derived this empirically, no idea where it comes from
 
     if (firstTime) {
-        setElideMode(Qt::ElideRight);
         firstTime = false;
 
-        // TODO: figure out elide mode from language direction
+        // TODO: how to append spaces from the language direction
 
         for (int i = 0; i < this->count(); ++i) {
             QStyleOptionTabV3 tab;
@@ -124,7 +117,8 @@ void FTabBar::paintEvent(QPaintEvent * event) {
             int lastWidth = 0;
             while (true) {
                 QRect r = tab.fontMetrics.boundingRect(text);
-                if (r.width() != lastWidth && r.width() + iconSize().width() + 50 < tabRect(i).width()) {
+                // don't know where the 
+                if (r.width() != lastWidth && r.width() + iconSize().width() + offset < tabRect(i).width()) {
                     text += " ";
                     added++;
                     lastWidth = r.width();
@@ -141,6 +135,8 @@ void FTabBar::paintEvent(QPaintEvent * event) {
     }
 
     QTabBar::paintEvent(event);
+
+    /*
     return;
 
     // this code mostly lifted from QTabBar::paintEvent
@@ -176,38 +172,11 @@ void FTabBar::paintEvent(QPaintEvent * event) {
     }
 
 
-
-
-
-
-    /*
-
-    QStylePainter p(this);
-    QStyleOptionTab option;
-    initStyleOption(&option);
-    p.drawPrimitive(QStyle::PE_FrameTabBarBase, option);
-
-    QStylePainter painter(this);
-
-    for(int i = 0; i < this->count(); ++i)
-    {
-        QRect r = tabRect(i);
-        if (r.isNull()) continue;
-
-        QIcon icon = tabIcon(i);
-        
-        QStyleOptionTabV2 option;
-        initStyleOption(&option, i);
-        this->style()->drawItemPixmap(&painter, r.adjusted(10, 0, 0, 0), Qt::AlignLeft, icon.pixmap(r.height(), r.height()));
-
-		//option.shape = RoundedNorth;
-		//option.text = this->tabText(i);
-        //painter.drawControl(QStyle::CE_TabBarTab, option);
-    }
     */
+
 }
 
-
+/*
 void FTabBar::drawTab(QStylePainter & p, QStyleOptionTabV3 & tabV3, int index) 
 {
     //tabV3.iconSize = m_pixmaps.at(index).size();
@@ -215,19 +184,19 @@ void FTabBar::drawTab(QStylePainter & p, QStyleOptionTabV3 & tabV3, int index)
     //p.drawPixmap(tabV3.rect.left(), tabV3.rect.top(), m_pixmaps.at(index));
 
 
-    /*
-    QRect tr = tabV3.rect;
+    //QRect tr = tabV3.rect;
 
-    int alignment = Qt::AlignLeft | Qt::TextShowMnemonic;
-    if (!this->style()->styleHint(QStyle::SH_UnderlineShortcut, &tabV3, this))
-        alignment |= Qt::TextHideMnemonic;
+    //int alignment = Qt::AlignLeft | Qt::TextShowMnemonic;
+    //if (!this->style()->styleHint(QStyle::SH_UnderlineShortcut, &tabV3, this))
+    //    alignment |= Qt::TextHideMnemonic;
 
-    p.drawItemText(tr, alignment, tabV3.palette, tabV3.state & QStyle::State_Enabled, tabV3.text, QPalette::WindowText);
-    */
+    //p.drawItemText(tr, alignment, tabV3.palette, tabV3.state & QStyle::State_Enabled, tabV3.text, QPalette::WindowText);
 
-    p.drawControl(QStyle::CE_TabBarTabLabel, tabV3);
+
+    //p.drawControl(QStyle::CE_TabBarTabLabel, tabV3);
 
 }
+*/
 
 ///////////////////////////////////////////////
 
@@ -437,8 +406,7 @@ void MainWindow::addTab(QWidget * widget, const QString & iconPath, const QStrin
 	//qobject_cast<QStackedWidget *>(m_tabWidget)->addWidget(widget);
     QPixmap pixmap(iconPath);
     QIcon icon(pixmap);
-    FTabWidget * tabWidget = qobject_cast<FTabWidget *>(m_tabWidget);
-    tabWidget->addPixmap(pixmap);
+    QTabWidget * tabWidget = qobject_cast<QTabWidget *>(m_tabWidget);
     tabWidget->addTab(widget, icon, label);
 }
 

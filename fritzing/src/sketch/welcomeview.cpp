@@ -439,7 +439,7 @@ QWidget * WelcomeView::initShop() {
     QHBoxLayout * titleFrameLayout = new QHBoxLayout;
     zeroMargin(titleFrameLayout);
 
-    QLabel * shopTitle = new QLabel(QString("<a href='fab' style='font-family:Droid Sans; text-decoration:none; display:block; font-weight:bold; color:#323232;'>%1</a>").arg(tr("FAB")));
+    QLabel * shopTitle = new QLabel(QString("<a href='fab' style='font-family:Droid Sans; text-decoration:none; display:block; font-weight:bold; color:#323232;'>%1</a>").arg(tr("Fab")));
     shopTitle->setObjectName("shopTitle");
     connect(shopTitle, SIGNAL(linkActivated(const QString &)), this, SLOT(clickBlog(const QString &)));
     titleFrameLayout->addWidget(shopTitle);
@@ -470,8 +470,8 @@ QWidget * WelcomeView::initShop() {
     frameLayout->addWidget(m_shopUberFrame);
 
     m_fabUberFrame = createShopContentFrame(":/resources/images/pcbs_2013.png", 
-                                                tr("Fritzing FAB"), 
-                                                tr("Fritzing FAB easily brings you high quality hardware of your own design."),
+                                                tr("Fritzing Fab"),
+                                                tr("Fritzing Fab easily brings you high quality hardware of your own design."),
                                                 "http://fab.fritzing.org/",
                                                 tr("produce your first pcb now >>"),
                                                 tr("Order your PCB now."),

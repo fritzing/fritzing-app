@@ -517,7 +517,7 @@ background:transparent;
 
 #blogTitleFrame
 { 
-	/*border-bottom: 1px solid #c4c4c4; */
+	border-bottom: 1px solid #c4c4c4;
 	padding: 8px 0px 8px 0px;
 	margin:0px 5px 0px 5px;
 	font-size:14px;

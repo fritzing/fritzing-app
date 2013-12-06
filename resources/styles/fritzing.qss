@@ -248,8 +248,11 @@ QMenu::item:disabled:selected {
  
 /*########### MAIN WINDOW TABBAR #################*/
 	
- #sketch_tabs::tab-bar {
- 	qproperty-iconSize: 36px;
+
+#mainTabBar {	 
+	qproperty-iconSize: 36px;
+	font-family: Droid Sans;
+	font-size:14px;
 }
 	
 #sketch_tabs::pane { /*the tab-window*/

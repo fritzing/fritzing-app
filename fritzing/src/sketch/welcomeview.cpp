@@ -59,11 +59,26 @@ static const int RefRole = Qt::UserRole + 5;
 static const int ImageSpace = 65;
 static const int TopSpace = 5;
 
+QString WelcomeView::m_activeHeaderLabelColor = "#f0f";
+QString WelcomeView::m_inactiveHeaderLabelColor = "#00f";
+
 ///////////////////////////////////////////////////////////////////////////////
 
 void zeroMargin(QLayout * layout) {
     layout->setMargin(0);
     layout->setSpacing(0);
+}
+
+QString makeUrlText(const QString & url, const QString & urlText, const QString & color) {
+    return QString("<a href='%1' style='font-family:Droid Sans; text-decoration:none; font-weight:bold; color:%3;'>%2</a>").arg(url).arg(urlText).arg(color);
+}
+
+QString hackColor(QString oldText, const QString & color) {
+    int ix = oldText.indexOf("#");
+    if (ix >= 0) {
+        oldText.replace(QRegExp("#[^\"']+)"), color);
+    }
+    return oldText;
 }
 
 int pixelSize(const QString & sizeString) {
@@ -208,6 +223,8 @@ QString BlogListWidget::dateTextFontSize() const {
 void BlogListWidget::setDateTextFontSize(QString size) {
     m_dateTextFontSize = size;
 }
+
+
 
 ////////////////////////////////////////////////////////////////////////////////
  
@@ -570,30 +587,8 @@ QWidget * WelcomeView::initBlog() {
 	QVBoxLayout * frameLayout = new QVBoxLayout;
     zeroMargin(frameLayout);
 
-    QFrame * titleFrame = new QFrame();
-	titleFrame->setObjectName("blogTitleFrame");
-
-	QHBoxLayout * titleFrameLayout = new QHBoxLayout;
-    zeroMargin(titleFrameLayout);
-
-    QLabel * titleLabel = new QLabel(QString("<a href='projects'  style='font-family:Droid Sans; text-decoration:none; font-weight:bold; color:#323232;'>%1</a>").arg(tr("Projects")));
-    titleLabel->setObjectName("projectsTitle");
-	titleFrameLayout->addWidget(titleLabel);
-	connect(titleLabel, SIGNAL(linkActivated(const QString &)), this, SLOT(clickBlog(const QString &)));
-
-    QLabel * titleSpace = new QLabel(tr("|"));
-    titleSpace->setObjectName("blogTitleSpace");
-    titleFrameLayout->addWidget(titleSpace);
-
-    QLabel * label = new QLabel(QString("<a href='blog'  style='font-family:Droid Sans; text-decoration:none; font-weight:bold; color:#323232;'>%1</a>").arg(tr("Blog")));
-    label->setObjectName("blogTitle");
-	titleFrameLayout->addWidget(label);
-	connect(label, SIGNAL(linkActivated(const QString &)), this, SLOT(clickBlog(const QString &)));
-
-	titleFrameLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Expanding));
-
-    titleFrame->setLayout(titleFrameLayout);
-	frameLayout->addWidget(titleFrame);
+    QWidget * headerFrame = createHeaderFrame(tr("Projects"), "Projects", tr("Blog"), "Blog", m_inactiveHeaderLabelColor,  m_activeHeaderLabelColor, m_projectsLabel, m_blogLabel);
+    frameLayout->addWidget(headerFrame);
 
     m_blogListWidget = createBlogContentFrame("http://blog.fritzing.org", tr("Fritzing News."), ":/resources/images/icons/WS-blogLogo.png", "#802742");
     m_blogUberFrame = m_blogListWidget;
@@ -607,9 +602,39 @@ QWidget * WelcomeView::initBlog() {
 
     frame->setLayout(frameLayout);
 
+    DebugDialog::debug("first click blog");
+
     clickBlog("blog");
 
     return frame;
+}
+
+QFrame * WelcomeView::createHeaderFrame (const QString & url1, const QString & urlText1, const QString & url2, const QString & urlText2, const QString & inactiveColor, const QString & activeColor,
+                                         QLabel * & label1, QLabel * & label2){
+    QFrame * titleFrame = new QFrame();
+    titleFrame->setObjectName("blogTitleFrame");
+
+    QHBoxLayout * titleFrameLayout = new QHBoxLayout;
+    zeroMargin(titleFrameLayout);
+
+    label1 = new QLabel(makeUrlText(url1, urlText1, inactiveColor));
+    label1->setObjectName("projectsTitle");
+    titleFrameLayout->addWidget(label1);
+    connect(label1, SIGNAL(linkActivated(const QString &)), this, SLOT(clickBlog(const QString &)));
+
+    QLabel * titleSpace = new QLabel(tr("|"));
+    titleSpace->setObjectName("blogTitleSpace");
+    titleFrameLayout->addWidget(titleSpace);
+
+    label2 = new QLabel(makeUrlText(url2, urlText2, activeColor));
+    label2->setObjectName("blogTitle");
+    titleFrameLayout->addWidget(label2);
+    connect(label2, SIGNAL(linkActivated(const QString &)), this, SLOT(clickBlog(const QString &)));
+
+    titleFrameLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Expanding));
+    titleFrame->setLayout(titleFrameLayout);
+
+    return titleFrame;
 }
 
 BlogListWidget * WelcomeView::createBlogContentFrame(const QString & url, const QString & urlText, const QString & logoPath, const QString & footerLabelColor) {
@@ -728,12 +753,16 @@ void WelcomeView::clickBlog(const QString & url) {
     if (url == "fab") {
         m_shopUberFrame->setVisible(false);
         m_fabUberFrame->setVisible(true);
+   /*     m_headerLabelColor == "f0f";
+        m_inactiveHeaderLabelColor == "00f";*/
         return;
     }
 
     if (url == "shop") {
         m_shopUberFrame->setVisible(true);
         m_fabUberFrame->setVisible(false);
+      /*  m_inactiveHeaderLabelColor == "#f0f";
+        m_headerLabelColor == "#00f"; */
         return;
     }
 
@@ -742,15 +771,19 @@ void WelcomeView::clickBlog(const QString & url) {
         return;
     }
 
-    if (url == "projects") {
+    if (url == "Projects") {
         m_projectsUberFrame->setVisible(true);
         m_blogUberFrame->setVisible(false);
+        m_projectsLabel->setText(hackColor(m_projectsLabel->text(), m_activeHeaderLabelColor));
+        m_blogLabel->setText(hackColor(m_blogLabel->text(), m_inactiveHeaderLabelColor));
         return;
     }
  
-    if (url == "blog") {
+    if (url == "Blog") {
         m_projectsUberFrame->setVisible(false);
         m_blogUberFrame->setVisible(true);
+        //m_projectsLabel->setText(hackColor(m_projectsLabel->text(), m_inactiveHeaderLabelColor));
+        //m_blogLabel->setText(hackColor(m_blogLabel->text(), m_activeHeaderLabelColor));
         return;
     }
  

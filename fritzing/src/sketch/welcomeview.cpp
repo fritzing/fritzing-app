@@ -74,9 +74,10 @@ QString makeUrlText(const QString & url, const QString & urlText, const QString 
 }
 
 QString hackColor(QString oldText, const QString & color) {
-    int ix = oldText.indexOf("#");
+    QRegExp colorFinder("color:(#[^;]*);");
+    int ix = oldText.indexOf(colorFinder);
     if (ix >= 0) {
-        oldText.replace(QRegExp("#[^\"']+)"), color);
+        oldText.replace(colorFinder.cap(1), color);
     }
     return oldText;
 }
@@ -604,7 +605,7 @@ QWidget * WelcomeView::initBlog() {
 
     DebugDialog::debug("first click blog");
 
-    clickBlog("blog");
+    clickBlog("Blog");
 
     return frame;
 }
@@ -750,7 +751,7 @@ void WelcomeView::gotBlogSnippet(QNetworkReply * networkReply) {
 }
 
 void WelcomeView::clickBlog(const QString & url) {
-    if (url == "fab") {
+    if (url.toLower() == "fab") {
         m_shopUberFrame->setVisible(false);
         m_fabUberFrame->setVisible(true);
    /*     m_headerLabelColor == "f0f";
@@ -758,7 +759,7 @@ void WelcomeView::clickBlog(const QString & url) {
         return;
     }
 
-    if (url == "shop") {
+    if (url.toLower() == "shop") {
         m_shopUberFrame->setVisible(true);
         m_fabUberFrame->setVisible(false);
       /*  m_inactiveHeaderLabelColor == "#f0f";
@@ -766,12 +767,12 @@ void WelcomeView::clickBlog(const QString & url) {
         return;
     }
 
-    if (url == "nextTip") {
+    if (url.toLower() == "nexttip") {
         nextTip();
         return;
     }
 
-    if (url == "Projects") {
+    if (url.toLower() == "projects") {
         m_projectsUberFrame->setVisible(true);
         m_blogUberFrame->setVisible(false);
         m_projectsLabel->setText(hackColor(m_projectsLabel->text(), m_activeHeaderLabelColor));
@@ -779,11 +780,11 @@ void WelcomeView::clickBlog(const QString & url) {
         return;
     }
  
-    if (url == "Blog") {
+    if (url.toLower() == "blog") {
         m_projectsUberFrame->setVisible(false);
         m_blogUberFrame->setVisible(true);
-        //m_projectsLabel->setText(hackColor(m_projectsLabel->text(), m_inactiveHeaderLabelColor));
-        //m_blogLabel->setText(hackColor(m_blogLabel->text(), m_activeHeaderLabelColor));
+        m_projectsLabel->setText(hackColor(m_projectsLabel->text(), m_inactiveHeaderLabelColor));
+        m_blogLabel->setText(hackColor(m_blogLabel->text(), m_activeHeaderLabelColor));
         return;
     }
  

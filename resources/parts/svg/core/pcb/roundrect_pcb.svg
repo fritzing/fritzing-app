@@ -1,13 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg version="1.2" baseProfile="tiny"  xmlns="http://www.w3.org/2000/svg" 
-	 x="0px" y="0px" width="100mm" height="60mm" viewBox="0 0 100 60" >
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="283.465px" height="170.078px" viewBox="0 0 283.465 170.078" enable-background="new 0 0 283.465 170.078"
+	 xml:space="preserve">
 <g id="board">
-	<rect id="boardoutline" stroke-width="0.2032" stroke="#ffffff" fill="#338040" x="0.1016" y="0.1016" rx="10" ry="10" width="99.7068" height="59.7068" fill-opacity="0.5"  />
+	<path id="boardoutline" fill="#FFFFFF" fill-opacity="0.5" stroke="#111111" stroke-width="0.2032" d="M28.635,0.288h225.94
+		c15.655,0,28.347,12.69,28.347,28.346v112.555c0,15.656-12.691,28.347-28.347,28.347H28.635c-15.655,0-28.347-12.69-28.347-28.347
+		V28.634C0.288,12.979,12.979,0.288,28.635,0.288z"/>
 </g>
 <g id="silkscreen">
-	<rect fill="none" stroke="#000000" stroke-width="0.2032" x="0.1016" y="0.1016" rx="10" ry="10" width="99.7068" height="59.7068" />
+	<path fill="none" stroke="#000000" stroke-width="0.2032" d="M28.635,0.288h225.94c15.655,0,28.347,12.69,28.347,28.346v112.555
+		c0,15.656-12.691,28.347-28.347,28.347H28.635c-15.655,0-28.347-12.69-28.347-28.347V28.634
+		C0.288,12.979,12.979,0.288,28.635,0.288z"/>
 </g>
 <g id="silkscreen0">
-	<rect fill="none" stroke="#000000" stroke-width="0.2032" x="0.1016" y="0.1016" rx="10" ry="10" width="99.7068" height="59.7068" />
+	<path fill="none" stroke="#000000" stroke-width="0.2032" d="M28.635,0.288h225.94c15.655,0,28.347,12.69,28.347,28.346v112.555
+		c0,15.656-12.691,28.347-28.347,28.347H28.635c-15.655,0-28.347-12.69-28.347-28.347V28.634
+		C0.288,12.979,12.979,0.288,28.635,0.288z"/>
 </g>
 </svg>

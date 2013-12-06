@@ -2,21 +2,21 @@
 
 MainWindow {
         /* layout here  */
-		background-color:rgb(217,217,217); /*mainbackground color*/
+		background-color:#b1b1b1; /*mainbackground color - you see it behind the mainwindow-tabs*/
         /* styling there */
         font-size: 11px;
-        color: rgb(255,255,255);
+        color: #fff;
 }
 
 
 QStatusBar {
         background-color: rgb(130,31,9); /* the statusbar at the bottom */
-		color: rgb(255,255,255);
+		color: #fff;
 }
 
 #statusBarContainer {
         background-color: rgb(130,31,9);/* the statusbar at the bottom */
-		color: rgb(255,255,255);
+		color: #fff;
 }
 
 #statusBarContainer QTooltip {
@@ -114,7 +114,7 @@ MainWindow QLabel {
 
 QStatusBar {
         left: 6px;
-        color: rgb(255,255,255);
+        color: #fff;
         font-weight: bold;
         font-size: 11px;
 		font-family: Droid Sans;
@@ -123,7 +123,7 @@ QStatusBar {
 QStatusBar::item {
 		font-family: Droid Sans;
         border: none;
-		color: rgb(255,255,255);
+		color: #fff;
 }
 
 /* PEMainWindow seems to be needed here rathern in newpartseditor.qss */
@@ -133,7 +133,7 @@ PEMainWindow {
         /* layout here */
 
         /* styling there */
-        background: rgb(255,255,255);
+        background: #fff;
 		font-family: Droid Sans;
 }
 
@@ -142,7 +142,7 @@ PEMainWindow {
 /* ################### Mainmenubar window #################### */
 
 QMenuBar {
-	background-color: #b1b1b1;
+	background-color: #d9d9d9;
 	left:5px;
 	font-family: Droid Sans;
 }
@@ -150,7 +150,7 @@ QMenuBar {
 QMenuBar::item {
 	spacing: 10px; /* spacing between menu bar items */
      padding: 7px 10px;
-	background: #b1b1b1;
+	background: #d9d9d9;
 	color:rgb(51,51,51);
 	background-image:none;
 	font-family: Droid Sans;
@@ -158,7 +158,7 @@ QMenuBar::item {
 }
 
 QMenuBar::item:selected {
-	background: #666;
+	background: #aaa;
 	color:#fff;
 	background-image:none;
 	font-family: Droid Sans;
@@ -166,7 +166,7 @@ QMenuBar::item:selected {
 }
 
 QMenuBar::item:pressed {
-	background: #666;
+	background: #aaa;
 	color:#fff;
 	background-image:none;
 	font-family: Droid Sans;
@@ -175,8 +175,8 @@ QMenuBar::item:pressed {
 
 /*########### style of the dropdowns ######*/
 
-QMenu{
-	background-color: #b1b1b1;
+QMenu {
+	background-color: #d9d9d9;
 	color:#333;
 	margin: 0px 3px 0px 3px;
 	border:none;
@@ -184,21 +184,21 @@ QMenu{
 }
 
 QMenu::item {
-	background-color: #b1b1b1;
+	background-color: #d9d9d9;
 	color:#333;
 	padding: 2px 15px 2px 15px;
 	font-family: Droid Sans;
 }
 
 QMenu::item:selected {
-	background-color: #666;
+	background-color: #a5a5a5;
 	color:#fff;
 	font-family: Droid Sans;
 }
 
  QMenu::separator {
-	background-color: #919191;
-	height:2px;
+	background-color: #c1c1c1;
+	height:1px;
 } 
 
  QMenu::indicator {
@@ -207,15 +207,14 @@ QMenu::item:selected {
  }
 
 QMenu::item:disabled {
-	background-color: #999;
-	color:#dadada;
+	color:#b7b7b7;
 	font-family: Droid Sans;
 
 }
 QMenu::item:disabled:selected {
-	background-color: #777;
-	color:#dadada;
+	color:#b7b7b7;
 	font-family: Droid Sans;
+	background-color: #d9d9d9;
 
 }
 
@@ -234,22 +233,23 @@ QMenu::item:disabled:selected {
 
  QMenu::indicator:non-exclusive:unchecked {  /*the checkbox for the mainmenu */
     image: url(:/resources/images/icons/nocheck.png);
-	 	 background-color:#b1b1b1;
+	 	 background-color:transparent;
 		 	border:transparent;
 			
  }
 
   QMenu::indicator:non-exclusive:unchecked:selected {
      image: url(:/resources/images/icons/check.png);
-	 	 background-color:#666;
+	 	 background-color:transparent;
 		 	border:none;
  }
  
  
 /*########### MAIN WINDOW TABBAR #################*/
-	
- 
-#sketch_tabs::pane { /*the tab-window*/
+
+ /*the tab-window*/
+
+#sketch_tabs::pane { 
  	padding: 0px 0px 0px 0px;
 	border:none;
 	background:#d5e1e9;
@@ -263,6 +263,7 @@ QMenu::item:disabled:selected {
  	left: 10px;
 	right: 0px;
 	font-family: Droid Sans;	
+	background: #b1b1b1;
 }
 
 #sketch_tabs QTabBar#WelcomeView {
@@ -290,7 +291,7 @@ QMenu::item:disabled:selected {
 	font-size:14px;
 	background-color: transparent;
 	font-weight: regular;
-	color: #fff;
+	color: #eee;
 	border:none;
 	margin-bottom:-1px;
 	background-image: url(:/resources/images/icons/segmentedSwitcherXActiveFocus.png);
@@ -301,7 +302,7 @@ QMenu::item:disabled:selected {
 	font-size:14px;
 	background-color: transparent;
 	font-weight: regular;
-	color: #dadada;
+	color: #fff;
 	border:none;
 	margin-bottom:-1px;
 	background-image: url(:/resources/images/icons/segmentedSwitcherXActiveFocusHover.png);
@@ -322,7 +323,7 @@ QMenu::item:disabled:selected {
 	font-family: Droid Sans;
 	font-size:14px;
 	border:none;
-	color: #222;
+	color: #fff;
 	font-weight:regular;
 	margin-bottom:-1px;
 	background-image: url(:/resources/images/icons/segmentedSwitcherXInactiveFocusHover.png);
@@ -537,6 +538,7 @@ background:transparent;
 	font-family: Droid Sans;
 		margin-left:1px;
 	margin-right:2px;
+	qproperty-frameSwitcherColor: #f0f;
 
 }
 
@@ -586,7 +588,7 @@ background:transparent;
 	background:#fff;
 	font-weight: regular;
 	font-family: Droid Sans;
-	border-top:1px solid #d4d4d4; 
+	border-bottom:1px solid #d4d4d4; 
 	}
 
 
@@ -907,7 +909,7 @@ ToolBarSeparator {
 }
 
 #routingStateLabel {
-	color: rgb(255,255,255);
+	color: #fff;
 	background:rgb(214,50,34);
 
 }
@@ -958,7 +960,7 @@ ToolBarSeparator {
 
 #sketchAreaToolbar QToolButton { /*all the button styleing*/
         border: none;
-		color:rgb(255,255,255);
+		color:#fff;
 		margin: 0px;
 		height:66px;
 		padding:5px;
@@ -969,14 +971,14 @@ ToolBarSeparator {
  #sketchAreaToolbar QToolButton:hover {   /* hover on toolbar buttons */
         background: rgb(242,57,38);
         border: none;
-		color: rgb(236,236,236);
+		color: #ececec;
 		margin: 0px;
 		height:66px;
 }
 
  #sketchAreaToolbar QToolButton:disabled {   /* hover on toolbar buttons */
         border: none;
-		color: rgb(236,236,236);
+		color: #ececec;
 		margin: 0px;
 		height:66px;
 }
@@ -1109,7 +1111,7 @@ QSlider::handle:horizontal:hover {
         margin: 0px;
         padding: 0px;
         border: none;
-        color: rgb(255,255,255);
+        color: #fff;
         background-color: transparent;
         width: 35px;
         max-width: 35px;
@@ -1142,7 +1144,7 @@ QSlider::handle:horizontal:hover {
 #LocationLabel {
         font-size: 9px;
         font-weight: 500;
-        color: rgb(255,255,255);
+        color: #fff;
 }
 
 
@@ -1151,7 +1153,7 @@ FDockWidget {
         /* only relevant if palette is floating
            and only visible with tabs inside the widget
            such as Parts Library */
-        background-color: rgb(217,217,217);
+        background-color: #d9d9d9;
         /* this defines the title text! */
         font-size: 14px;
 		font-weight: 150;
@@ -1180,7 +1182,7 @@ FDockWidget::title {
 	font-family: Droid Sans;
         /*border-top-left-radius: 5px;*/
         /*border-top-right-radius: 5px;*/
-        background: rgb(217,217,217);
+        background: #d9d9d9;
         border-top: 4px rgb(51,51,51) solid;
         padding-left: 6px;
         padding-top: 2px;
@@ -1366,7 +1368,7 @@ background:#d9d9d9;
 
 /* complex property values with up and down arrows */
 #infoViewDoubleSpinBox {
-        background: rgb(255,255,255);
+        background: #fff;
         font-size: 11px;
         color: #000;
         border: none;
@@ -1476,7 +1478,7 @@ background:#d9d9d9;
 #infoViewLineEdit {
         font-size: 11px;
         color: rgb(0,0,0);
-        background: rgb(255,255,255);
+        background: #fff;
         border: none;
 }
 #infoViewLineEdit:hover, #infoViewLineEdit:focus  {
@@ -1484,8 +1486,8 @@ background:#d9d9d9;
 }
 
 #infoViewLineEdit:disabled {
-	background: rgb(217,217,217);
-	color: rgb(60,60,60);
+	background: #d9d9d9;
+	color: #3c3c3c;
 }
 
 /* the label between the two spinners in the schematic frame */
@@ -1583,12 +1585,12 @@ background:#d9d9d9;
 
 #connectionsLabel {
         font-size: 11px;
-        color: rgb(87,87,87);
+        color: #575757;
         min-width: 65px;
         max-width: 65px;
         margin: 0px 0px 0px 4px;
         padding: 3px 3px 3px 0px;
-        border-top: 1px solid rgb(155,155,155);
+        border-top: 1px solid #9b9b9b;
 }
 
 #connectionsValue {
@@ -1597,7 +1599,7 @@ background:#d9d9d9;
         margin: 0px;
         border: 0px;
         padding: 3px 3px 3px 0px;
-        border-top: 1px solid rgb(155,155,155);
+        border-top: 1px solid #9b9b9b;
 }
 
 /* Tags */
@@ -1606,7 +1608,7 @@ background:#d9d9d9;
         font-size: 11px;
         margin: 0px 4px 0px 4px;
         padding: 2px 0px 0px 0px;
-        border-top: 1px solid rgb(155,155,155);
+        border-top: 1px solid #9b9b9b;
 }
 
 
@@ -1621,7 +1623,7 @@ margin:0;
 }
 
 #partsBinHeaderSeparator {
-        border: 2px solid rgb(177,177,177);
+        border: 2px solid #b1b1b1;
 }
 
 SearchLineEdit,  #searchStackWidget {
@@ -1630,7 +1632,7 @@ SearchLineEdit,  #searchStackWidget {
 }
 
 #partsBinLabel { /*the chosen libery-labelname and background*/
-        background-color: rgb(217,217,217);
+        background-color: #d9d9d9;
         font-size: 14px;
         color: rgb(50,50,50);
         font-weight: bold;
@@ -1647,15 +1649,15 @@ PartsBinIconView {
 
 PartsBinIconView QPushButton{
         padding: 3px; 
-		selection-background-color: rgb(177,177,177);
-        background-color:rgb(217,217,217);
+		selection-background-color: #b1b1b1;
+        background-color:#d9d9d9;
         border: 0;
         border-bottom: 1px solid #D0D0D0;/*this is the size of the grey-border around the partsbin-iconview*/
 }
 
 PartsBinListView { /*the styling if you look the parts-window in list view mode*/
-        selection-background-color: rgb(177,177,177);
-        background-color:rgb(217,217,217);
+        selection-background-color: #b1b1b1;
+        background-color:#d9d9d9;
         border: 0;
         border-bottom: 1px solid #D0D0D0;
 }
@@ -1664,15 +1666,15 @@ PartsBinListView { /*the styling if you look the parts-window in list view mode*
 PartsBinPaletteWidget,
 PartsBinPaletteWidget SimpleEditableLabelWidget,
 PartsBinPaletteWidget InfoGraphicsView {
-        background-color: rgb(217,217,217); /*background of parts library*/
+        background-color: #d9d9d9; /*background of parts library*/
         border: none;
 }
 
 #partsBinContainer
 {
 	
-	background-color: rgb(217,217,217); /*background of parts library*/
-border-top: 1px solid rgb(177,177,177);
+	background-color: #d9d9d9; /*background of parts library*/
+border-top: 1px solid #b1b1b1;
 }
 
 
@@ -1694,22 +1696,22 @@ StackTabBar::tab {
         min-height: 32px;
         max-height: 32px;
         border: 0;
-        background: rgb(217,217,217); /*this is the color for the active tab*/
+        background: #d9d9d9; /*this is the color for the active tab*/
 
         font-weight: 600;
 }
 
 StackTabBar::tab:selected { /*color for not active tab*/
-        color: rgb(177,177,177);
+        color: #b1b1b1;
 }
 
 StackTabBar::tab:!selected {
-        background-color: rgb(177,177,177); /*#9b9b9b;*/ /*color for not active tab*/
-        color: rgb(255,255,0);/*#686868;*/
+        background-color: #b1b1b1; /*#9b9b9b;*/ /*color for not active tab*/
+        color: #ff0;/*#686868;*/
 }
 
 StackTabBar::tab:!selected:hover {
-        background-color: rgb(236,236,236); 
+        background-color: #ececec; 
 		/*the hover status of the library buttons*/
 }
 
@@ -1837,7 +1839,7 @@ SearchLineEdit {
         color: #000000;
         font-size: 11px;
         font-family: Droid Sans, LucidaSans, Tahoma, Arial, sans-serif;
-        border: 1px solid rgb(140,140,140);
+        border: 1px solid #8c8c8c;
 }
 
 

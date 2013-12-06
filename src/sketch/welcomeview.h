@@ -129,8 +129,8 @@ protected:
     void getNextBlogImage(int ix, bool blog);
     void setBlogItemImage(QPixmap &, int index, bool blog) ;
     QWidget * createShopContentFrame(const QString & imagePath, const QString & headline, const QString & description, 
-                                     const QString & url, const QString & urlText, const QString & urlText2, const QString & logoPath);
-    BlogListWidget * createBlogContentFrame(const QString & url, const QString & urlText, const QString & logoPath);
+                                     const QString & url, const QString & urlText, const QString & urlText2, const QString & logoPath, const QString & footerLabelColor);
+    BlogListWidget * createBlogContentFrame(const QString & url, const QString & urlText, const QString & logoPath, const QString & footerLabelColor);
 
 signals:
 	void newSketch();

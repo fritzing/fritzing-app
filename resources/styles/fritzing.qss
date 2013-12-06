@@ -249,7 +249,14 @@ QMenu::item:disabled:selected {
 
  /*the tab-window*/
 
-#sketch_tabs::pane { 
+#mainTabBar {	 
+	qproperty-iconSize: 36px;
+	font-family: Droid Sans;
+	font-size:14px;
+}
+	
+#sketch_tabs::pane { /*the tab-window*/
+
  	padding: 0px 0px 0px 0px;
 	border:none;
 	background:#d5e1e9;
@@ -257,13 +264,13 @@ QMenu::item:disabled:selected {
 	font-family: Droid Sans;
 }
 
-
 #sketch_tabs::tab-bar { /*this is the complete tab-bar*/
  	top: 0px;
  	left: 10px;
 	right: 0px;
 	font-family: Droid Sans;	
 	background: #b1b1b1;
+	font-size:14px;
 }
 
 #sketch_tabs QTabBar#WelcomeView {
@@ -275,8 +282,9 @@ QMenu::item:disabled:selected {
 
 #sketch_tabs QTabBar::tab  {
     margin: 0px 10px -1px 0px;
-	min-width: 6.5em;
-    max-height: 35px;
+	min-width: 150px;
+	max-width: 150px;
+        max-height: 35px;
 	height:35px;
 	font-family: Droid Sans;	
   /*     padding-top: 2px;

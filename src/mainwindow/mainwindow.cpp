@@ -42,6 +42,9 @@ $Date: 2013-04-28 00:56:34 +0200 (So, 28. Apr 2013) $lo
 #include <QStackedWidget>
 #include <QXmlStreamReader>
 #include <QShortcut>
+#include <QStyle>
+#include <QFontMetrics>
+
 
 #include "mainwindow.h"
 #include "../debugdialog.h"
@@ -88,6 +91,143 @@ $Date: 2013-04-28 00:56:34 +0200 (So, 28. Apr 2013) $lo
 #include "../utils/zoomslider.h"
 #include "../partseditor/pemainwindow.h"
 #include "../help/firsttimehelpdialog.h"
+
+FTabWidget::FTabWidget(QWidget * parent) : QTabWidget(parent)
+{
+    setElideMode(Qt::ElideRight);
+    QTabBar * tabBar = new FTabBar;
+    setTabBar(tabBar);
+}
+
+void FTabWidget::addPixmap(QPixmap & pixmap) {
+    qobject_cast<FTabBar *>(tabBar())->addPixmap(pixmap);
+}
+
+void FTabBar::addPixmap(QPixmap & pixmap) {
+    m_pixmaps << pixmap;
+}
+
+void FTabBar::paintEvent(QPaintEvent * event) {
+    static bool firstTime = true;
+
+    if (firstTime) {
+        setElideMode(Qt::ElideRight);
+        firstTime = false;
+
+        // TODO: figure out elide mode from language direction
+
+        for (int i = 0; i < this->count(); ++i) {
+            QStyleOptionTabV3 tab;
+            initStyleOption(&tab, 0);
+            QString text = tabText(i);
+            int added = 0;
+            int lastWidth = 0;
+            while (true) {
+                QRect r = tab.fontMetrics.boundingRect(text);
+                if (r.width() != lastWidth && r.width() + iconSize().width() + 50 < tabRect(i).width()) {
+                    text += " ";
+                    added++;
+                    lastWidth = r.width();
+                    continue;
+                }
+
+                if (added) {
+                    text.chop(1);
+                    setTabText(i, text);
+                    break;
+                }
+            }
+        }
+    }
+
+    QTabBar::paintEvent(event);
+    return;
+
+    // this code mostly lifted from QTabBar::paintEvent
+
+    QStyleOptionTabBarBaseV2 optTabBase;
+    optTabBase.init(this);
+    optTabBase.shape = this->shape();
+    optTabBase.documentMode = this->documentMode();
+
+    QStylePainter p(this);
+    int selected = this->currentIndex();
+
+    for (int i = 0; i < this->count(); ++i)
+         optTabBase.tabBarRect |= tabRect(i);
+
+    optTabBase.selectedTabRect = tabRect(selected);
+
+    p.drawPrimitive(QStyle::PE_FrameTabBarBase, optTabBase);
+
+    for (int i = 0; i < this->count(); ++i) {
+        if (i == selected) continue;
+
+        QStyleOptionTabV3 tab;
+        initStyleOption(&tab, i);
+        drawTab(p, tab, i);
+    }
+
+    // Draw the selected tab last to get it "on top"
+    if (selected >= 0) {
+        QStyleOptionTabV3 tab;
+        initStyleOption(&tab, selected);
+        drawTab(p, tab, selected);
+    }
+
+
+
+
+
+
+    /*
+
+    QStylePainter p(this);
+    QStyleOptionTab option;
+    initStyleOption(&option);
+    p.drawPrimitive(QStyle::PE_FrameTabBarBase, option);
+
+    QStylePainter painter(this);
+
+    for(int i = 0; i < this->count(); ++i)
+    {
+        QRect r = tabRect(i);
+        if (r.isNull()) continue;
+
+        QIcon icon = tabIcon(i);
+        
+        QStyleOptionTabV2 option;
+        initStyleOption(&option, i);
+        this->style()->drawItemPixmap(&painter, r.adjusted(10, 0, 0, 0), Qt::AlignLeft, icon.pixmap(r.height(), r.height()));
+
+		//option.shape = RoundedNorth;
+		//option.text = this->tabText(i);
+        //painter.drawControl(QStyle::CE_TabBarTab, option);
+    }
+    */
+}
+
+
+void FTabBar::drawTab(QStylePainter & p, QStyleOptionTabV3 & tabV3, int index) 
+{
+    //tabV3.iconSize = m_pixmaps.at(index).size();
+    p.drawControl(QStyle::CE_TabBarTabShape, tabV3);
+    //p.drawPixmap(tabV3.rect.left(), tabV3.rect.top(), m_pixmaps.at(index));
+
+
+    /*
+    QRect tr = tabV3.rect;
+
+    int alignment = Qt::AlignLeft | Qt::TextShowMnemonic;
+    if (!this->style()->styleHint(QStyle::SH_UnderlineShortcut, &tabV3, this))
+        alignment |= Qt::TextHideMnemonic;
+
+    p.drawItemText(tr, alignment, tabV3.palette, tabV3.state & QStyle::State_Enabled, tabV3.text, QPalette::WindowText);
+    */
+
+    p.drawControl(QStyle::CE_TabBarTabLabel, tabV3);
+
+}
 
 ///////////////////////////////////////////////
 
@@ -281,7 +421,8 @@ MainWindow::MainWindow(ReferenceModel *referenceModel, QWidget * parent) :
 
 QWidget * MainWindow::createTabWidget() {
 	//return new QStackedWidget(this);
-    return new QTabWidget(this);
+    FTabWidget * tabWidget = new FTabWidget(this);
+    return tabWidget;
 }
 
 void MainWindow::addTab(QWidget * widget, const QString & label) {
@@ -296,7 +437,9 @@ void MainWindow::addTab(QWidget * widget, const QString & iconPath, const QStrin
 	//qobject_cast<QStackedWidget *>(m_tabWidget)->addWidget(widget);
     QPixmap pixmap(iconPath);
     QIcon icon(pixmap);
-    qobject_cast<QTabWidget *>(m_tabWidget)->addTab(widget, icon, label);
+    FTabWidget * tabWidget = qobject_cast<FTabWidget *>(m_tabWidget);
+    tabWidget->addPixmap(pixmap);
+    tabWidget->addTab(widget, icon, label);
 }
 
 int MainWindow::currentTabIndex() {
@@ -462,6 +605,7 @@ void MainWindow::initSketchWidgets() {
 	initSketchWidget(m_pcbGraphicsView);
 	m_pcbWidget = new SketchAreaWidget(m_pcbGraphicsView, this);
     addTab(m_pcbWidget, ":/resources/images/icons/TabWidgetPcbActive_icon.png", tr("PCB"));
+
 
 	if (m_fileProgressDialog) {
 		m_fileProgressDialog->setValue(29);

@@ -132,6 +132,9 @@ protected:
                                      const QString & url, const QString & urlText, const QString & urlText2, const QString & logoPath, const QString & footerLabelColor);
     BlogListWidget * createBlogContentFrame(const QString & url, const QString & urlText, const QString & logoPath, const QString & footerLabelColor);
 
+    QFrame * createHeaderFrame(const QString & url1, const QString & urlText1, const QString & url2, const QString & urlText2, const QString & inactiveColor, const QString & activeColor, QLabel * & label1, QLabel * & label2);
+
+
 signals:
 	void newSketch();
 	void openSketch();
@@ -155,6 +158,12 @@ protected:
     QListWidget * m_recentListWidget;
     QWidget * m_fabUberFrame;
     QWidget * m_shopUberFrame;
+    QLabel * m_projectsLabel;
+    QLabel * m_blogLabel;
+
+    static QString m_activeHeaderLabelColor;
+    static QString m_inactiveHeaderLabelColor;
+
 };
 
 class BlogListDelegate : public QAbstractItemDelegate

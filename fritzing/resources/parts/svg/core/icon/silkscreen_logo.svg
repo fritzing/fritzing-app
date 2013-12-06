@@ -5,13 +5,13 @@
 	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="32.003px"
 	 height="32.003px" viewBox="0 0 32.003 32.003" enable-background="new 0 0 32.003 32.003" xml:space="preserve">
 <desc  xmlns="http://www.w3.org/2000/svg">Jumper SVG</desc>
-<rect id="rect2383_1_" x="-0.025" y="-0.026" fill="#86A28C" stroke="#568B53" stroke-width="1.9445" width="32.054" height="32.055"/>
-<polyline fill="none" stroke="#FFBF00" stroke-width="2" points="15.875,31.048 15.875,28.751 29.814,14.135 31.068,14.135 "/>
+<rect id="rect2383_1_" x="-0.025" y="-0.026" fill="#FFFFFF" stroke="#111111" stroke-width="1.9445" width="32.054" height="32.055"/>
+<polyline fill="none" stroke="#FF9F3F" stroke-width="2" points="15.875,31.048 15.875,28.751 29.814,14.135 31.068,14.135 "/>
 <g id="fritzing_icon_2_">
-	<rect x="2.906" y="18.554" fill="#FFFFFF" width="17.22" height="1.547"/>
+	<rect x="2.906" y="18.554" fill="#555555" width="17.221" height="1.547"/>
 	<g>
-		<circle fill="#FFFFFF" cx="10.903" cy="14.394" r="0.651"/>
-		<path fill="#FFFFFF" d="M2.906,2.881V17.58h17.22V2.881H2.906z M14.484,6.518c-0.175,0.101-0.402,0.154-0.668,0.154h-1.085
+		<circle fill="#555555" cx="10.903" cy="14.394" r="0.651"/>
+		<path fill="#555555" d="M2.906,2.881V17.58h17.221V2.881H2.906z M14.484,6.518c-0.175,0.101-0.402,0.154-0.668,0.154h-1.085
 			c-0.205,0-0.379,0.006-0.516,0.02c-0.105,0.011-0.19,0.051-0.264,0.125l-0.002,0.002l-0.003,0.002
 			c-0.104,0.099-0.168,0.208-0.199,0.336c-0.034,0.148-0.051,0.324-0.051,0.522v0.622h0.957c0.268,0,0.494,0.052,0.669,0.153
 			c0.208,0.119,0.312,0.337,0.312,0.647c0,0.376-0.169,0.552-0.312,0.634c-0.175,0.102-0.401,0.153-0.669,0.153h-0.957v2.909

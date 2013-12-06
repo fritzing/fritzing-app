@@ -230,9 +230,9 @@ Note::Note( ModelPart * modelPart, ViewLayer::ViewID viewID,  const ViewGeometry
 	}
 	m_pen.setWidth(borderWidth);
 	m_pen.setCosmetic(true);
-	m_pen.setBrush(QColor(0xff, 0xd5, 0x0e));
+    m_pen.setBrush(QColor(0xfa, 0xbc, 0x4f));
 
-	m_brush.setColor(QColor(0xfb, 0xf7, 0xab));
+    m_brush.setColor(QColor(0xff, 0xe9, 0xc8));
 	m_brush.setStyle(Qt::SolidPattern);
 
 	setPos(m_viewGeometry.loc());

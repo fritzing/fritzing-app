@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
-	 width="32px" height="36px" viewBox="0 0 36 40" >
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="32px" height="36px" viewBox="0 0 32 36" enable-background="new 0 0 32 36" xml:space="preserve">
 <g id="copper1">
-     <rect  id="connector0pad" x="2" y="2" fill="#FFBF00" stroke="none" stroke-width="0" width="28" height="32"/>
+	<rect id="connector0pad" x="1.778" y="2" fill="#CBC38E" width="24.888" height="28.444"/>
 </g>
 </svg>

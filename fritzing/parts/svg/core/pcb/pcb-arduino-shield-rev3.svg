@@ -2,30 +2,26 @@
 <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="svg2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="195.183px" height="152.025px" viewBox="0 0 195.183 152.025" enable-background="new 0 0 195.183 152.025"
+	 width="195.184px" height="152.025px" viewBox="0 0 195.184 152.025" enable-background="new 0 0 195.184 152.025"
 	 xml:space="preserve">
 <g id="board">
-	<path id="boardoutline" fill="#338040" fill-opacity="0.5" d="M183.208,0.818l4.307,4.304v32.276l7.182,7.172v92.526
-		l-7.182,7.172v4.35c0.164,1.396-0.838,2.66-2.234,2.824c-0.191,0.021-0.395,0.021-0.592,0H3.65
-		c-1.397,0.164-2.663-0.836-2.827-2.229c-0.023-0.197-0.023-0.396,0-0.596V3.642C0.66,2.245,1.661,0.98,3.058,0.818
-		c0.197-0.023,0.396-0.023,0.592,0H183.208"/>
-	
-		<rect id="pinguide1" x="50.612" y="4.605" fill="none" stroke="#338040" stroke-width="1.5" stroke-opacity="0.5" width="133.782" height="6.4"/>
-	
-		<rect id="pinguide2" x="76.533" y="141.271" fill="none" stroke="#338040" stroke-width="1.5" stroke-opacity="0.5" width="107.78" height="6.399"/>
-	
-		<rect id="usbconnector" x="1.605" y="27.595" fill="none" stroke="#338040" stroke-width="1.5" stroke-opacity="0.5" width="23.9" height="31.979"/>
+	<path id="boardoutline" fill="#FFFFFF" fill-opacity="0.5" d="M183.208,0.818l4.308,4.304v32.276l7.182,7.172v92.526l-7.182,7.172
+		v4.35c0.164,1.396-0.839,2.66-2.234,2.824c-0.191,0.021-0.395,0.021-0.592,0H3.65c-1.397,0.164-2.663-0.836-2.827-2.229
+		c-0.023-0.196-0.023-0.396,0-0.596V3.642C0.66,2.245,1.661,0.98,3.058,0.818c0.196-0.023,0.396-0.023,0.592,0H183.208"/>
+	<rect id="pinguide1" x="50.612" y="4.605" fill="none" stroke="#666666" stroke-opacity="0.5" width="133.782" height="6.399"/>
+	<rect id="pinguide2" x="76.533" y="141.271" fill="none" stroke="#666666" stroke-opacity="0.5" width="107.78" height="6.398"/>
+	<rect id="usbconnector" x="1.605" y="27.594" fill="none" stroke="#666666" stroke-opacity="0.5" width="23.899" height="31.979"/>
 </g>
 <g id="silkscreen">
 	<path id="outline" fill="none" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
-		M183.208,0.818l4.307,4.304v32.276l7.182,7.172v92.526l-7.182,7.172v4.35c0.164,1.396-0.838,2.66-2.234,2.824
-		c-0.191,0.021-0.395,0.021-0.592,0H3.65c-1.397,0.164-2.663-0.836-2.827-2.229c-0.023-0.197-0.023-0.396,0-0.596V3.642
-		C0.66,2.245,1.661,0.98,3.058,0.818c0.197-0.023,0.396-0.023,0.592,0H183.208"/>
+		M183.208,0.818l4.308,4.304v32.276l7.182,7.172v92.526l-7.182,7.172v4.35c0.164,1.396-0.839,2.66-2.234,2.824
+		c-0.191,0.021-0.395,0.021-0.592,0H3.65c-1.397,0.164-2.663-0.836-2.827-2.229c-0.023-0.196-0.023-0.396,0-0.596V3.642
+		C0.66,2.245,1.661,0.98,3.058,0.818c0.196-0.023,0.396-0.023,0.592,0H183.208"/>
 </g>
 <g id="silkscreen0">
-	<path id="outline" fill="none" stroke="#BBBBCC" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
-		M183.208,0.818l4.307,4.304v32.276l7.182,7.172v92.526l-7.182,7.172v4.35c0.164,1.396-0.838,2.66-2.234,2.824
-		c-0.191,0.021-0.395,0.021-0.592,0H3.65c-1.397,0.164-2.663-0.836-2.827-2.229c-0.023-0.197-0.023-0.396,0-0.596V3.642
-		C0.66,2.245,1.661,0.98,3.058,0.818c0.197-0.023,0.396-0.023,0.592,0H183.208"/>
+	<path id="outline_1_" fill="none" stroke="#111111" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+		M183.208,0.818l4.308,4.304v32.276l7.182,7.172v92.526l-7.182,7.172v4.35c0.164,1.396-0.839,2.66-2.234,2.824
+		c-0.191,0.021-0.395,0.021-0.592,0H3.65c-1.397,0.164-2.663-0.836-2.827-2.229c-0.023-0.196-0.023-0.396,0-0.596V3.642
+		C0.66,2.245,1.661,0.98,3.058,0.818c0.196-0.023,0.396-0.023,0.592,0H183.208"/>
 </g>
 </svg>

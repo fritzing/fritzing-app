@@ -517,7 +517,7 @@ background:transparent;
 
 #blogTitleFrame
 { 
-	border-bottom: 1px solid #c4c4c4;
+	/*border-bottom: 1px solid #c4c4c4; */
 	padding: 8px 0px 8px 0px;
 	margin:0px 5px 0px 5px;
 	font-size:14px;
@@ -540,7 +540,7 @@ background:transparent;
 
 }
 
-#blogTitleGoto {
+#projectsTitle{
 	color:#323232;
 	font-size:14px;
 	font-weight:bold;
@@ -581,13 +581,12 @@ background:transparent;
 #blogList::item
 {
 	border:none;
-	padding:0px;
 	text-align:left;
 	font-size: 15px;
 	background:#fff;
 	font-weight: regular;
 	font-family: Droid Sans;
-	border-bottom:1px solid #d4d4d4; 
+	border-top:1px solid #d4d4d4; 
 	}
 
 

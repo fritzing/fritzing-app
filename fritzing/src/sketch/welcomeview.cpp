@@ -246,7 +246,6 @@ void BlogListDelegate::paint ( QPainter * painter, const QStyleOptionViewItem & 
     painter->setPen(listWidget->titleTextColor());
     QFont titleFont(listWidget->titleTextFontFamily());
     titleFont.setPixelSize(pixelSize(listWidget->titleTextFontSize()));
- //   titleFont.setStyleStrategy(QFont::PreferAntialias);
     painter->setFont(titleFont);
     QRect rect = option.rect.adjusted(imageSpace, TopSpace, 0, 0);
     style->drawItemText(painter, rect, Qt::AlignLeft, option.palette, true, title);
@@ -273,12 +272,12 @@ void BlogListDelegate::paint ( QPainter * painter, const QStyleOptionViewItem & 
     // AUTHOR
     painter->setFont(itemFont);
     QRect textRect = style->itemTextRect(dateTextFontMetrics, option.rect, Qt::AlignLeft, true, date);
-    rect = option.rect.adjusted(imageSpace + textRect.width() + 7, TopSpace + titleFontMetrics.lineSpacing() + introFontMetrics.lineSpacing() + pixelSize(listWidget->introTextExtraLeading()), 0, 0);
+    rect = option.rect.adjusted(imageSpace + textRect.width() + 7, TopSpace + titleFontMetrics.lineSpacing() + introFontMetrics.lineSpacing() + 1  + pixelSize(listWidget->introTextExtraLeading()), 0, 0);
     style->drawItemText(painter, rect, Qt::AlignLeft, option.palette, true, author);
 
     if (!pixmap.isNull()) {
 		//ic.paint(painter, option.rect, Qt::AlignVCenter|Qt::AlignLeft);
-        style->drawItemPixmap(painter, option.rect.adjusted(0, TopSpace, 0, 0), Qt::AlignLeft, pixmap);
+        style->drawItemPixmap(painter, option.rect.adjusted(0, TopSpace, 0, -TopSpace), Qt::AlignLeft, pixmap);
 	}
 
     painter->restore();
@@ -465,7 +464,8 @@ QWidget * WelcomeView::initShop() {
                                                 "http://fritzing.org/creatorkit/",
                                                 tr("order now >>"),
                                                 tr("Get your Creator Kit now."),
-                                                ":/resources/images/icons/WS-shopLogo.png"
+                                                ":/resources/images/icons/WS-shopLogo.png",
+                                                "#f5a400"
                                                 );
     frameLayout->addWidget(m_shopUberFrame);
 
@@ -475,7 +475,8 @@ QWidget * WelcomeView::initShop() {
                                                 "http://fab.fritzing.org/",
                                                 tr("produce your first pcb now >>"),
                                                 tr("Order your PCB now."),
-                                                ":/resources/images/icons/WS-fabLogo.png"
+                                                ":/resources/images/icons/WS-fabLogo.png",
+                                                "#5f4d4a"
                                                 );
     frameLayout->addWidget(m_fabUberFrame);
 
@@ -487,7 +488,7 @@ QWidget * WelcomeView::initShop() {
 }
 
 QWidget * WelcomeView::createShopContentFrame(const QString & imagePath, const QString & headline, const QString & description, 
-                                              const QString & url, const QString & urlText, const QString & urlText2, const QString & logoPath) 
+                                              const QString & url, const QString & urlText, const QString & urlText2, const QString & logoPath, const QString & footerLabelColor )
 {
     QFrame * uberFrame = new QFrame();
     uberFrame->setObjectName("shopUberFrame");
@@ -545,7 +546,7 @@ QWidget * WelcomeView::createShopContentFrame(const QString & imagePath, const Q
     zeroMargin(footerFrameLayout);
     footerFrameLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::MinimumExpanding));
 
-    QLabel * footerLabel = new QLabel(QString("<a href='%1'  style='text-decoration:none; color:#f5a400;'>%2</a>").arg(url).arg(urlText2));
+    QLabel * footerLabel = new QLabel(QString("<a href='%1'  style='text-decoration:none; color:%3;'>%2</a>").arg(url).arg(urlText2).arg(footerLabelColor));
     footerLabel->setObjectName("shopLogoText");
     footerFrameLayout->addWidget(footerLabel);
     connect(footerLabel, SIGNAL(linkActivated(const QString &)), this, SLOT(clickBlog(const QString &)));
@@ -576,7 +577,7 @@ QWidget * WelcomeView::initBlog() {
     zeroMargin(titleFrameLayout);
 
     QLabel * titleLabel = new QLabel(QString("<a href='projects'  style='font-family:Droid Sans; text-decoration:none; font-weight:bold; color:#323232;'>%1</a>").arg(tr("Projects")));
-	titleLabel->setObjectName("blogTitle");
+    titleLabel->setObjectName("projectsTitle");
 	titleFrameLayout->addWidget(titleLabel);
 	connect(titleLabel, SIGNAL(linkActivated(const QString &)), this, SLOT(clickBlog(const QString &)));
 
@@ -585,7 +586,7 @@ QWidget * WelcomeView::initBlog() {
     titleFrameLayout->addWidget(titleSpace);
 
     QLabel * label = new QLabel(QString("<a href='blog'  style='font-family:Droid Sans; text-decoration:none; font-weight:bold; color:#323232;'>%1</a>").arg(tr("Blog")));
-	label->setObjectName("blogTitleGoto");
+    label->setObjectName("blogTitle");
 	titleFrameLayout->addWidget(label);
 	connect(label, SIGNAL(linkActivated(const QString &)), this, SLOT(clickBlog(const QString &)));
 
@@ -594,12 +595,12 @@ QWidget * WelcomeView::initBlog() {
     titleFrame->setLayout(titleFrameLayout);
 	frameLayout->addWidget(titleFrame);
 
-    m_blogListWidget = createBlogContentFrame("http://blog.fritzing.org", tr("Fritzing News."), ":/resources/images/icons/WS-blogLogo.png");
+    m_blogListWidget = createBlogContentFrame("http://blog.fritzing.org", tr("Fritzing News."), ":/resources/images/icons/WS-blogLogo.png", "#802742");
     m_blogUberFrame = m_blogListWidget;
     while (m_blogUberFrame->parentWidget()) m_blogUberFrame = m_blogUberFrame->parentWidget();
     frameLayout->addWidget(m_blogUberFrame);
 
-    m_projectListWidget = createBlogContentFrame("http://fritzing.org/projects/", tr("Fritzing Projects."), ":/resources/images/icons/WS-blogLogo.png");
+    m_projectListWidget = createBlogContentFrame("http://fritzing.org/projects/", tr("Fritzing Projects."), ":/resources/images/icons/WS-galleryLogo.png", "#00a55b");
     m_projectsUberFrame = m_projectListWidget;
     while (m_projectsUberFrame->parentWidget()) m_projectsUberFrame = m_projectsUberFrame->parentWidget();
     frameLayout->addWidget(m_projectsUberFrame);
@@ -611,7 +612,7 @@ QWidget * WelcomeView::initBlog() {
     return frame;
 }
 
-BlogListWidget * WelcomeView::createBlogContentFrame(const QString & url, const QString & urlText, const QString & logoPath) {
+BlogListWidget * WelcomeView::createBlogContentFrame(const QString & url, const QString & urlText, const QString & logoPath, const QString & footerLabelColor) {
     QFrame * uberFrame = new QFrame;
     QVBoxLayout * uberFrameLayout = new QVBoxLayout;
     zeroMargin(uberFrameLayout);
@@ -632,7 +633,7 @@ BlogListWidget * WelcomeView::createBlogContentFrame(const QString & url, const 
 
     footerFrameLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Expanding));
 
-    QLabel * footerLabel = new QLabel(QString("<a href='%1'  style='font-family:Droid Sans; text-decoration:none; color:#802742;'>%1</a>").arg(url).arg(urlText));
+    QLabel * footerLabel = new QLabel(QString("<a href='%1'  style='font-family:Droid Sans; text-decoration:none; color:%3;'>%2</a>").arg(url).arg(urlText).arg(footerLabelColor));
     footerLabel->setObjectName("blogLogoText");
     footerFrameLayout->addWidget(footerLabel);
     connect(footerLabel, SIGNAL(linkActivated(const QString &)), this, SLOT(clickBlog(const QString &)));

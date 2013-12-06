@@ -460,8 +460,8 @@ QWidget * WelcomeView::initShop() {
 
     m_shopUberFrame = createShopContentFrame(":/resources/images/welcome_kit.png", 
                                                 tr("Fritzing CreatorKit"), 
-                                                tr("Get a Fritzing Creator Kit and invent your own electronics. It's as easy as bicycling."),
-                                                "http://fritzing.org/creatorkit/",
+                                                tr("The Fritzing Creator Kit provides a fast, easy and entertaining introduction to the world of interactive electronics."),
+                                                "http://creatorkit.fritzing.org/",
                                                 tr("order now >>"),
                                                 tr("Get your Creator Kit now."),
                                                 ":/resources/images/icons/WS-shopLogo.png",
@@ -470,8 +470,8 @@ QWidget * WelcomeView::initShop() {
     frameLayout->addWidget(m_shopUberFrame);
 
     m_fabUberFrame = createShopContentFrame(":/resources/images/pcbs_2013.png", 
-                                                tr("Fritzing Fab"),
-                                                tr("Fritzing Fab easily brings you high quality hardware of your own design."),
+                                                tr("Fritzing FAB"),
+                                                tr("Fritzing FAB is an easy and affordable service for producing professional PCBs from your Fritzing sketches."),
                                                 "http://fab.fritzing.org/",
                                                 tr("produce your first pcb now >>"),
                                                 tr("Order your PCB now."),

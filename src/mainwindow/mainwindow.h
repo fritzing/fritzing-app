@@ -40,6 +40,9 @@ $Date: 2013-04-28 14:14:07 +0200 (So, 28. Apr 2013) $
 #include <QDockWidget>
 #include <QXmlStreamWriter>
 #include <QRegExp>
+#include <QProxyStyle>
+#include <QStyle>
+#include <QStylePainter>
 
 #include "fritzingwindow.h"
 #include "sketchareawidget.h"
@@ -61,6 +64,28 @@ typedef class FDockWidget * (*DockFactory)(const QString & title, QWidget * pare
 bool sortPartList(class ItemBase * b1, class ItemBase * b2);
 
 static const QString ORDERFABENABLED = "OrderFabEnabled";
+
+class FTabWidget : public QTabWidget {
+    Q_OBJECT
+public:
+    FTabWidget(QWidget * parent = NULL);
+
+    void addPixmap(QPixmap &);
+
+};
+
+class FTabBar : public QTabBar {
+    Q_OBJECT
+public:
+    void paintEvent(QPaintEvent *);
+    void addPixmap(QPixmap &);
+
+protected:
+    void drawTab(QStylePainter & , QStyleOptionTabV3 &, int index);
+
+protected:
+    QList<QPixmap> m_pixmaps;
+};
 
 class SwapTimer : public QTimer
 {
@@ -922,6 +947,5 @@ protected:
 	static int CascadeFactorY;
     static QRegExp GuidMatcher;
 };
-
 
 #endif

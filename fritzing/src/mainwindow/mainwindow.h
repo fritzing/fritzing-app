@@ -444,6 +444,7 @@ protected slots:
     void setViewFromBelow();
     void setViewFromAbove();
     void updateWelcomeViewRecentList(bool doEmit = true);
+    virtual void initZoom();
 
 protected:
 	void initSketchWidget(SketchWidget *);

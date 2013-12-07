@@ -247,11 +247,3 @@ void BreadboardSketchWidget::getBendpointWidths(Wire * wire, double width, doubl
 	bendpoint2Width = bendpointWidth = -1;
 	negativeOffsetRect = true;
 }
-
-double BreadboardSketchWidget::getRatsnestOpacity() {
-	return 0.7;
-}
-
-double BreadboardSketchWidget::getRatsnestWidth() {
-	return 0.7;
-}

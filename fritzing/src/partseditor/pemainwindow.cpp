@@ -957,17 +957,18 @@ bool PEMainWindow::setInitialItem(PaletteItem * paletteItem)
 }
 
 void PEMainWindow::initZoom() {
-    if (m_currentGraphicsView) {
-		ViewThing * viewThing = m_viewThings.value(m_currentGraphicsView->viewID());
-        if (!viewThing->everZoomed) {
-            viewThing->everZoomed = true;
-            m_currentGraphicsView->fitInWindow();
-        }
-		
-		if (viewThing->itemBase) {
-			m_peSvgView->setFilename(viewThing->referenceFile);
-		}
+    if (m_peToolView == NULL) return;
+    if (m_currentGraphicsView == NULL) return;
+	
+	ViewThing * viewThing = m_viewThings.value(m_currentGraphicsView->viewID());
+	if (viewThing->itemBase == NULL) return;
+			
+    if (!viewThing->everZoomed) {
+        viewThing->everZoomed = true;
+        m_currentGraphicsView->fitInWindow();
     }
+		
+	m_peSvgView->setFilename(viewThing->referenceFile);
 }
 
 void PEMainWindow::setTitle() {
@@ -2656,11 +2657,6 @@ void PEMainWindow::tabWidget_currentChanged(int index) {
         setTitle();
     }
     else {
-        // processeventblocker might be enough	
-		ViewThing * viewThing = m_viewThings.value(m_currentGraphicsView->viewID());
-		if (viewThing->itemBase != NULL) {
-			QTimer::singleShot(10, this, SLOT(initZoom()));
-		}
     }
 
 	updateAssignedConnectors();

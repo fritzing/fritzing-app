@@ -105,6 +105,8 @@ class SketchWidget : public InfoGraphicsView
 {
 	Q_OBJECT
     Q_PROPERTY(QColor gridColor READ gridColor WRITE setGridColor DESIGNABLE true)
+    Q_PROPERTY(double ratsnestWidth READ ratsnestWidth WRITE setRatsnestWidth DESIGNABLE true)
+    Q_PROPERTY(double ratsnestOpacity READ ratsnestOpacity WRITE setRatsnestOpacity DESIGNABLE true)
 
 public:
     SketchWidget(ViewLayer::ViewID, QWidget *parent=0, int size=400, int minSize=300);
@@ -313,8 +315,10 @@ public:
 	void renamePins(long itemID, const QStringList & labels, bool singleRow);
 	void getRatsnestColor(QColor &);
 	VirtualWire * makeOneRatsnestWire(ConnectorItem * source, ConnectorItem * dest, bool routed, QColor color, bool force);
-	virtual double getRatsnestOpacity();
-	virtual double getRatsnestWidth();
+	double ratsnestOpacity();
+    void setRatsnestOpacity(double);
+	double ratsnestWidth();
+    void setRatsnestWidth(double);
 	void setAnyInRotation();
 	ConnectorItem * findConnectorItem(ConnectorItem * foreignConnectorItem);
 	void setGroundFillSeed(long id, const QString & connectorID, bool seed);
@@ -335,6 +339,8 @@ public:
     void moveItem(ItemBase *, double x, double y);
     QColor gridColor() const;
     void setGridColor(QColor);
+    bool everZoomed() const;
+    void setEverZoomed(bool);
 
 protected:
     void dragEnterEvent(QDragEnterEvent *);
@@ -746,6 +752,9 @@ protected:
 	QPointer<class ResizableBoard> m_resizingBoard;
     QList< QPointer<ItemBase> > m_squashShapes;
     QColor m_gridColor;
+    bool m_everZoomed;
+    double m_ratsnestOpacity;
+    double m_ratsnestWidth;
 
 public:
 	static ViewLayer::ViewLayerID defaultConnectorLayer(ViewLayer::ViewID viewId);

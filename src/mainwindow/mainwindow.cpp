@@ -101,6 +101,9 @@ FTabWidget::FTabWidget(QWidget * parent) : QTabWidget(parent)
 }
 
 void FTabBar::paintEvent(QPaintEvent * event) {
+    // this is a hack to left-align the tab text by adding spaces to the text
+    // center-alignment is hard-coded deep into the way the tab is drawn in qcommonstyle.cpp
+
     static bool firstTime = true;
     static int offset = 15;  // derived this empirically, no idea where it comes from
 
@@ -1163,6 +1166,8 @@ void MainWindow::tabWidget_currentChanged(int index) {
 
 	// update issue with 4.5.1?: is this still valid (4.6.x?)
 	m_currentGraphicsView->updateConnectors();
+
+    QTimer::singleShot(10, this, SLOT(initZoom()));
 
 }
 
@@ -3034,4 +3039,26 @@ void MainWindow::updateWelcomeViewRecentList(bool doEmit) {
             }
         }
     }
+}
+
+void MainWindow::initZoom() {
+    if (m_currentGraphicsView == NULL) return;
+    if (m_currentGraphicsView->everZoomed()) return;
+    if (!m_currentGraphicsView->isVisible()) return;
+
+    bool parts = false;
+    foreach (QGraphicsItem * item, m_currentGraphicsView->items()) {
+        ItemBase * itemBase = dynamic_cast<ItemBase *>(item);
+        if (itemBase == NULL) continue;
+        if (!itemBase->isEverVisible()) continue;
+
+        parts = true;
+        break;
+    }
+			
+    if (parts) {
+        m_currentGraphicsView->fitInWindow();
+    }
+		
+    m_currentGraphicsView->setEverZoomed(true);
 }

@@ -109,7 +109,7 @@ QString cleanData(const QString & data) {
         if (ix < 0) break;
 
         QString listItem = ListItemMatcher.cap(0);
-        DebugDialog::debug("ListItem " + listItem);
+        //DebugDialog::debug("ListItem " + listItem);
         if (doc.setContent(listItem)) {
             listItems << listItem;
         }
@@ -122,6 +122,7 @@ QString cleanData(const QString & data) {
 
 BlogListWidget::BlogListWidget(QWidget * parent) : QListWidget(parent)
 {
+    connect(this, SIGNAL(itemEntered(QListWidgetItem *)), this, SLOT(itemEnteredSlot(QListWidgetItem *)));
 }
 
 BlogListWidget::~BlogListWidget()
@@ -225,7 +226,12 @@ void BlogListWidget::setDateTextFontSize(QString size) {
     m_dateTextFontSize = size;
 }
 
+void BlogListWidget::itemEnteredSlot(QListWidgetItem * item) {
+    QString url = item->data(RefRole).toString();
+    bool arrow = (url.isEmpty()) || (url == "nop");
 
+	setCursor(arrow ? Qt::ArrowCursor : Qt::PointingHandCursor);
+}
 
 ////////////////////////////////////////////////////////////////////////////////
  
@@ -603,7 +609,7 @@ QWidget * WelcomeView::initBlog() {
 
     frame->setLayout(frameLayout);
 
-    DebugDialog::debug("first click blog");
+    //DebugDialog::debug("first click blog");
 
     clickBlog("Blog");
 
@@ -730,7 +736,7 @@ void WelcomeView::gotBlogSnippet(QNetworkReply * networkReply) {
 	int errorColumn;	
     if (responseCode == 200) {
         QString data(networkReply->readAll());
-        DebugDialog::debug("response data " + data);
+        //DebugDialog::debug("response data " + data);
 		data = "<thing>" + cleanData(data) + "</thing>";		// make it one tree for xml parsing
 	    if (doc.setContent(data, &errorStr, &errorLine, &errorColumn)) {
 		    readBlog(doc, true, blog, prefix);
@@ -742,7 +748,7 @@ void WelcomeView::gotBlogSnippet(QNetworkReply * networkReply) {
         QString message = (blog) ? tr("Unable to access blog.fritzing.org") : tr("Unable to access friting.org/projects") ;
         QString placeHolder = QString("<li><a class='title' href='nop' title='%1'></a></li>").arg(message);
         if (doc.setContent(placeHolder, &errorStr, &errorLine, &errorColumn)) {
-		    readBlog(doc, true, blog, prefix);
+		    readBlog(doc, true, blog, "");
         }   
     }
 
@@ -879,6 +885,10 @@ void WelcomeView::readBlog(const QDomDocument & doc, bool doEmit, bool blog, con
             item->setData(AuthorRole, stuff.value("author"));
         }
 	}
+
+    if (listWidget->count() > 0) {
+        listWidget->itemEnteredSlot(listWidget->item(0));
+    }
 
     if (doEmit) {
         getNextBlogImage(0, blog);

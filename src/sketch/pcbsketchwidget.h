@@ -72,8 +72,6 @@ public:
 	QList<ItemBase *> findBoard();
     ItemBase * findSelectedBoard(int & boardCount);
     ItemBase * findBoardBeneath(ItemBase *);
-	double getRatsnestOpacity();
-	double getRatsnestWidth();
 
 	void setBoardLayers(int, bool redraw);
     void swapLayers(ItemBase * itemBase, int newLayers, QUndoCommand * parentCommand);

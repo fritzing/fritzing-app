@@ -122,14 +122,6 @@ void SchematicSketchWidget::ensureTraceLayerVisible() {
 	ensureLayerVisible(ViewLayer::SchematicTrace);
 }
 
-double SchematicSketchWidget::getRatsnestOpacity() {
-	return 0.7;
-}
-
-double SchematicSketchWidget::getRatsnestWidth() {
-	return 0.7;
-}
-
 void SchematicSketchWidget::setClipEnds(ClipableWire * vw, bool) {
 	vw->setClipEnds(false);
 }

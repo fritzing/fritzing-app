@@ -546,8 +546,6 @@ background:transparent;
 	font-family: Droid Sans;
 		margin-left:1px;
 	margin-right:2px;
-	qproperty-frameSwitcherColor: #f0f;
-
 }
 
 #projectsTitle{
@@ -1041,7 +1039,7 @@ orderFabButton {
 	color:#000;
 	padding-bottom:10px;
 	}
-*/
+
 #sketchAreaToolbar #orderFabButton {
 	background:transparent;
 	color:#fff;
@@ -1075,7 +1073,7 @@ orderFabButton {
 	color:#dadada;
 	image:url(:/resources/images/icons/toolbarShareDisabled_icon.png);
 	}
-
+*/
 
 /* ################### zoomslider #################### */
 
@@ -1823,14 +1821,20 @@ SketchWidget {
 
 PCBSketchWidget {
 	qproperty-gridColor: rgba(150,200,250,20);
+	qproperty-ratsnestOpacity: 0.4;
+	qproperty-ratsnestWidth: 0.1;
 }
 
 BreadboardSketchWidget {
 	qproperty-gridColor: rgba(0,50,100,20);
+	qproperty-ratsnestOpacity: 0.7;
+	qproperty-ratsnestWidth: 0.7;
 }
 
 SchematicSketchWidget {
 	qproperty-gridColor: rgba(0,50,100,20);
+	qproperty-ratsnestOpacity: 0.7;
+	qproperty-ratsnestWidth: 0.7;
 }
 
 

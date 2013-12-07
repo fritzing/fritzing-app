@@ -61,8 +61,6 @@ protected:
 	ViewLayer::ViewLayerID getLabelViewLayerID(ItemBase *);
 	double getTraceWidth();
 	const QString & traceColor(ViewLayer::ViewLayerPlacement);
-	double getRatsnestOpacity();
-	double getRatsnestWidth();
 };
 
 #endif

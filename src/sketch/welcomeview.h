@@ -88,6 +88,9 @@ public:
 
     QStringList & imageRequestList();
 
+public slots:
+    void itemEnteredSlot(QListWidgetItem *);
+
 protected:
     QColor m_titleTextColor;
     QString m_titleTextFontFamily;

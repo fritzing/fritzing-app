@@ -468,6 +468,8 @@ void MainWindow::mainLoad(const QString & fileName, const QString & displayName,
         }
     }
 
+
+    initZoom();
 }
 
 void MainWindow::copy() {

@@ -158,6 +158,7 @@ bool zLessThan(QGraphicsItem * & p1, QGraphicsItem * & p2)
 SketchWidget::SketchWidget(ViewLayer::ViewID viewID, QWidget *parent, int size, int minSize)
     : InfoGraphicsView(parent)
 {
+    m_everZoomed = false;
     m_itemMenu = NULL;
     m_pasting = false;
     m_rubberBandLegWasEnabled = m_curvyWires = false;
@@ -9151,20 +9152,27 @@ VirtualWire * SketchWidget::makeOneRatsnestWire(ConnectorItem * source, Connecto
 		wire->setVisible(false);
 	}
 
-	wire->setColor(color, getRatsnestOpacity());
-	wire->setWireWidth(getRatsnestWidth(), this, VirtualWire::ShapeWidthExtra + getRatsnestWidth());   
+	wire->setColor(color, ratsnestOpacity());
+	wire->setWireWidth(ratsnestWidth(), this, VirtualWire::ShapeWidthExtra + ratsnestWidth());   
 
 	return wire;
 }
 
-double SketchWidget::getRatsnestOpacity() {
-	return 1.0;
+double SketchWidget::ratsnestOpacity() {
+	return m_ratsnestOpacity;
 }
 
-double SketchWidget::getRatsnestWidth() {
-	return 1.0;
+void SketchWidget::setRatsnestOpacity(double opacity) {
+	m_ratsnestOpacity = opacity;
 }
 
+double SketchWidget::ratsnestWidth() {
+	return m_ratsnestWidth;
+}
+
+void SketchWidget::setRatsnestWidth(double width) {
+	m_ratsnestWidth = width;
+}
 void SketchWidget::makeRatsnestViewGeometry(ViewGeometry & viewGeometry, ConnectorItem * source, ConnectorItem * dest) 
 {
 	QPointF fromPos = source->sceneAdjustedTerminalPoint(NULL);
@@ -9985,4 +9993,12 @@ QColor SketchWidget::gridColor() const {
 
 void SketchWidget::setGridColor(QColor color) {
     m_gridColor = color;
+}
+
+bool SketchWidget::everZoomed() const {
+    return m_everZoomed;
+}
+
+void SketchWidget::setEverZoomed(bool everZoomed) {
+    m_everZoomed = everZoomed;
 }

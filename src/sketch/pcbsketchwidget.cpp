@@ -367,7 +367,7 @@ void PCBSketchWidget::dealWithDefaultParts() {
 	m_addDefaultParts = false;
 
 	QSizeF vpSize = this->viewport()->size();
-	QSizeF partSize(600, 200);
+	QSizeF partSize(300, 200);
 
 	//if (vpSize.height() < helpSize.height() + 50 + partSize.height()) {
 		//vpSize.setWidth(vpSize.width() - verticalScrollBar()->width());
@@ -567,14 +567,6 @@ bool PCBSketchWidget::canCreateWire(Wire * dragWire, ConnectorItem * from, Conne
 {
 	Q_UNUSED(dragWire);
 	return ((from != NULL) && (to != NULL));
-}
-
-double PCBSketchWidget::getRatsnestOpacity() {
-    return 0.4;
-}
-
-double PCBSketchWidget::getRatsnestWidth() {
-    return 0.1;
 }
 
 ConnectorItem * PCBSketchWidget::findNearestPartConnectorItem(ConnectorItem * fromConnectorItem) {

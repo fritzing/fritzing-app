@@ -2033,6 +2033,7 @@ void MainWindow::swapSelectedMap(const QString & family, const QString & prop, Q
 	if (itemBase == NULL) return;
 
 	QString generatedModuleID = currPropsMap.value("moduleID");
+    bool logoPadBlocker = false;
 
 	if (generatedModuleID.isEmpty()) {
         if (prop.compare("layer") == 0) {
@@ -2048,6 +2049,7 @@ void MainWindow::swapSelectedMap(const QString & family, const QString & prop, Q
 		        }
                 // use the xml name
                 currPropsMap.insert(prop, value);
+                logoPadBlocker = true;
 	        }
             else if (itemBase->itemType() == ModelPart::Wire) {
                 // assume this option is disabled for a one-sided board, so we would not get here?
@@ -2074,7 +2076,7 @@ void MainWindow::swapSelectedMap(const QString & family, const QString & prop, Q
 
     bool swapLayer = false;
     ViewLayer::ViewLayerPlacement newViewLayerPlacement = ViewLayer::UnknownPlacement;
-    if (prop.compare("layer") == 0) {
+    if (prop.compare("layer") == 0 && !logoPadBlocker) {  
         if (itemBase->modelPart()->flippedSMD() || itemBase->itemType() == ModelPart::Part) {
             ItemBase * viewItem = itemBase->modelPart()->viewItem(ViewLayer::PCBView);
             if (viewItem) {

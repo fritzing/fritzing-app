@@ -272,7 +272,7 @@ bool Resistor::collectExtraInfo(QWidget * parent, const QString & family, const 
 		validator->setSymbol(OhmSymbol);
 		validator->setConverter(TextUtils::convertFromPowerPrefix);
 		validator->setBounds(0, 9900000000.0);
-		validator->setRegExp(QRegExp(QString("((\\d{1,3})|(\\d{1,3}\\.)|(\\d{1,3}\\.\\d))[\\x%1umkMG]{0,1}[\\x03A9]{0,1}").arg(TextUtils::MicroSymbolCode, 4, 16, QChar('0'))));
+		validator->setRegExp(QRegExp(QString("((\\d{1,3})|(\\d{1,3}\\.)|(\\d{1,3}\\.\\d{1,2}))[\\x%1umkMG]{0,1}[\\x03A9]{0,1}").arg(TextUtils::MicroSymbolCode, 4, 16, QChar('0'))));
 		focusOutComboBox->setValidator(validator);
 		connect(focusOutComboBox, SIGNAL(currentIndexChanged(const QString &)), this, SLOT(resistanceEntry(const QString &)));
 

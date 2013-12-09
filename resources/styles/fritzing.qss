@@ -396,6 +396,49 @@ min-width: 220px;
 }
 
 
+/* -------------- WS-switchable Header style -------------/*
+/*#####this is used in blog/projects and shop/fab frame*/
+
+#wsSwitchableFrameHeader
+{ 
+	border-bottom: 1px solid #c4c4c4;
+	padding: 8px 0px 8px 0px;
+	margin:0px 5px 0px 5px;
+	font-size:14px;
+	font-weight:bold;
+	min-height:18px;
+	max-height:18px;
+	background:#fff;
+	
+}	
+
+#headerTitle1 {
+	font-size:14px;
+	font-weight:bold;
+	color:#c4c4c4;
+	margin-left:0px;
+	margin-right:0px;
+	font-family: Droid Sans;
+		margin-left:1px;
+	margin-right:2px;
+}
+
+#headerTitle2{
+	color:#323232;
+	font-size:14px;
+	font-weight:bold;
+	font-family: Droid Sans;
+		margin-left:1px;
+	margin-right:2px;
+}
+
+
+#headerTitleSpace
+{
+	margin:0px, 3px;
+	}
+
+
 /* ----------- WS-"recentItem"-block  ------------- */	
 #recentTitleFrame {
 	border-bottom: 1px solid #c4c4c4;
@@ -520,42 +563,10 @@ background:transparent;
 
 /******* this is the styling for the blog-frame-title ***********/
 
+
 #blogTitleFrameLayout {
 
 	}
-
-#blogTitleFrame
-{ 
-	border-bottom: 1px solid #c4c4c4;
-	padding: 8px 0px 8px 0px;
-	margin:0px 5px 0px 5px;
-	font-size:14px;
-	font-weight:bold;
-	min-height:18px;
-	max-height:18px;
-	background:#fff;
-	
-}	
-
-#blogTitle {
-	font-size:14px;
-	font-weight:bold;
-	color:#c4c4c4;
-	margin-left:0px;
-	margin-right:0px;
-	font-family: Droid Sans;
-		margin-left:1px;
-	margin-right:2px;
-}
-
-#projectsTitle{
-	color:#323232;
-	font-size:14px;
-	font-weight:bold;
-	font-family: Droid Sans;
-		margin-left:1px;
-	margin-right:2px;
-}
 
 #blogList
 {
@@ -600,21 +611,8 @@ background:transparent;
 
 /******* this is the styling for the blog-footer ***********/
 
-#blogFooterFrame{
-/*		border-top:1px solid #c4c4c4; 
-		padding-top:5px;
-		margin:0px, 5px, 5px, 5px;
-		background:transparent;
-		border-bottom:none;
-	*/
-		border-top:1px solid #c4c4c4; 
-		background:transparent;
-		border-bottom:none;
-		margin:0px 5px 5px 5px;
-		padding-top:5px;
-		font-weight: regular;
-		font-family: Droid Sans;
-	}
+
+		
 #blogLogo {
 	background:#fff;
 	min-height:22px;
@@ -718,7 +716,7 @@ background:transparent;
 /* ----------- WS-"shop"-block  ------------- */	
 
 
-
+/*
 #shopTitleFrame {
 	border-bottom: 1px solid #c4c4c4;
 	padding: 8px 0px 8px 0px;
@@ -746,6 +744,7 @@ background:transparent;
 	margin-left:1px;
 	margin-right:2px;
 }
+*/
 
 #shopContentFrame,
 #fabContentFrame
@@ -807,6 +806,7 @@ font-size:11px;
 max-height:14px;
 }
 
+#blogFooterFrame,
 #shopFooterFrame,	
 #fabFooterFrame {
 		border-top:1px solid #c4c4c4; 
@@ -825,11 +825,6 @@ max-height:14px;
 	margin-right:5px;
 }
 
-#blogTitleSpace,
-#fabshopTitleSpace
-{
-	margin:0px, 3px;
-	}
 
 /*############### a styled loading/progress bar #################### */
 
@@ -915,8 +910,10 @@ ToolBarSeparator {
 }
 
 #routingStateLabel {
-	color: #fff;
+	color: #ea9f84;
 	background:rgb(214,50,34);
+	font-family:Droid Sans;
+	font-size:16px;
 
 }
 

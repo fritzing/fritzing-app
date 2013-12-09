@@ -396,6 +396,49 @@ min-width: 220px;
 }
 
 
+/* -------------- WS-switchable Header style -------------/*
+/*#####this is used in blog/projects and shop/fab frame*/
+
+#wsSwitchableFrameHeader
+{ 
+	border-bottom: 1px solid #c4c4c4;
+	padding: 8px 0px 8px 0px;
+	margin:0px 5px 0px 5px;
+	font-size:14px;
+	font-weight:bold;
+	min-height:18px;
+	max-height:18px;
+	background:#fff;
+	
+}	
+
+#headerTitle1 {
+	font-size:14px;
+	font-weight:bold;
+	color:#c4c4c4;
+	margin-left:0px;
+	margin-right:0px;
+	font-family: Droid Sans;
+		margin-left:1px;
+	margin-right:2px;
+}
+
+#headerTitle2{
+	color:#323232;
+	font-size:14px;
+	font-weight:bold;
+	font-family: Droid Sans;
+		margin-left:1px;
+	margin-right:2px;
+}
+
+
+#headerTitleSpace
+{
+	margin:0px, 3px;
+	}
+
+
 /* ----------- WS-"recentItem"-block  ------------- */	
 #recentTitleFrame {
 	border-bottom: 1px solid #c4c4c4;
@@ -520,42 +563,10 @@ background:transparent;
 
 /******* this is the styling for the blog-frame-title ***********/
 
+
 #blogTitleFrameLayout {
 
 	}
-
-#blogTitleFrame
-{ 
-	border-bottom: 1px solid #c4c4c4;
-	padding: 8px 0px 8px 0px;
-	margin:0px 5px 0px 5px;
-	font-size:14px;
-	font-weight:bold;
-	min-height:18px;
-	max-height:18px;
-	background:#fff;
-	
-}	
-
-#blogTitle {
-	font-size:14px;
-	font-weight:bold;
-	color:#c4c4c4;
-	margin-left:0px;
-	margin-right:0px;
-	font-family: Droid Sans;
-		margin-left:1px;
-	margin-right:2px;
-}
-
-#projectsTitle{
-	color:#323232;
-	font-size:14px;
-	font-weight:bold;
-	font-family: Droid Sans;
-		margin-left:1px;
-	margin-right:2px;
-}
 
 #blogList
 {
@@ -600,21 +611,8 @@ background:transparent;
 
 /******* this is the styling for the blog-footer ***********/
 
-#blogFooterFrame{
-/*		border-top:1px solid #c4c4c4; 
-		padding-top:5px;
-		margin:0px, 5px, 5px, 5px;
-		background:transparent;
-		border-bottom:none;
-	*/
-		border-top:1px solid #c4c4c4; 
-		background:transparent;
-		border-bottom:none;
-		margin:0px 5px 5px 5px;
-		padding-top:5px;
-		font-weight: regular;
-		font-family: Droid Sans;
-	}
+
+		
 #blogLogo {
 	background:#fff;
 	min-height:22px;
@@ -718,7 +716,7 @@ background:transparent;
 /* ----------- WS-"shop"-block  ------------- */	
 
 
-
+/*
 #shopTitleFrame {
 	border-bottom: 1px solid #c4c4c4;
 	padding: 8px 0px 8px 0px;
@@ -746,6 +744,7 @@ background:transparent;
 	margin-left:1px;
 	margin-right:2px;
 }
+*/
 
 #shopContentFrame,
 #fabContentFrame
@@ -786,6 +785,7 @@ background:transparent;
 	font-weight:bold;
 	max-height:20px;
 	font-family: Droid Sans;
+	background:#fff;
 	}
 
 #shopContentTextDescription,
@@ -805,17 +805,23 @@ font-weight: regular;
 font-family: Droid Sans;
 font-size:11px;
 max-height:14px;
+background:#fff;
 }
 
+#blogFooterFrame,
 #shopFooterFrame,	
 #fabFooterFrame {
 		border-top:1px solid #c4c4c4; 
 		background:transparent;
 		border-bottom:none;
-		margin:0px 5px 5px 5px;
-		padding-top:5px;
+		margin:0px 5px 8px 5px;
 		font-weight: regular;
 		font-family: Droid Sans;
+		padding-top:10px;
+		padding-right:5px;
+	/*	padding:8px 0px 8px 0px; */
+		min-height:25px;
+		max-height:25px;
 
 }
 
@@ -825,11 +831,6 @@ max-height:14px;
 	margin-right:5px;
 }
 
-#blogTitleSpace,
-#fabshopTitleSpace
-{
-	margin:0px, 3px;
-	}
 
 /*############### a styled loading/progress bar #################### */
 
@@ -915,8 +916,10 @@ ToolBarSeparator {
 }
 
 #routingStateLabel {
-	color: #fff;
+	color: #ea9f84;
 	background:rgb(214,50,34);
+	font-family:Droid Sans;
+	font-size:16px;
 
 }
 
@@ -1024,6 +1027,82 @@ ToolBarSeparator {
 		margin: 2px;
 		background:none;
 }
+
+
+#sketchAreaToolbar #shareProjectButton{
+	color:#fff;
+	border-bottom: 5px solid #006737;
+	background:#00a55b;
+		height: 55px;
+	width:80px;
+	margin:5px 10px 5px 5px;
+	padding: 3px 0px 0px 0px;
+	}
+
+#sketchAreaToolbar #shareProjectButton:hover {
+	color:#fff;
+	border-bottom: 5px solid #148d50;
+	background:#6dba82;
+	padding: 3px 0px 0px 0px;
+	height: 55px;
+	width:80px;
+	margin:5px 10px 5px 5px;
+
+	}
+	
+	#sketchAreaToolbar #shareProjectButton:pressed {
+	color:#fff;
+	border-bottom: 5px solid #148d50;
+	background:#6dba82;
+	padding: 3px 0px 0px 0px;
+	height: 55px;
+	width:80px;
+	margin:5px 10px 5px 5px;
+	}
+	
+
+#sketchAreaToolbar #orderFabButton{
+	color:#fff;
+	border-bottom: 5px solid #3b2f2b;
+	background:#5f4d4a;
+	padding: 3px 0px 0px 0px;
+	height: 55px;
+	width:80px;
+	margin:5px 10px 5px 5px;
+}
+
+#sketchAreaToolbar #orderFabButton:hover {
+	color:#fff;
+	border-bottom: 5px solid #5e4c49;
+	background:#84716b;
+	padding: 3px 0px 0px 0px;
+	height: 55px;
+	width:80px;
+	margin:5px 10px 5px 5px;
+}
+
+	#sketchAreaToolbar #orderFabButton:pressed {
+	color:#fff;
+	border-bottom: 5px solid #5e4c49;
+	background:#84716b;
+		padding: 3px 0px 0px 0px;
+	height: 55px;
+	width:80px;
+	margin:5px 10px 5px 5px;
+	}
+	
+
+/*
+QLabel #shareProjectButton {
+	color:#ff0;
+	background:#0ff;
+	padding: 0px 0px 0px 0px;
+	height: 30px;
+	width:50px;
+	margin:10px 5px 10px 5px;
+	background-image:none;
+	}
+*/
 /*
 #sketchAreaToolbar orderFabButton {
 	background:#f0f;
@@ -1252,17 +1331,24 @@ AutoCloseMessageBox {
 /* ################### info view #################### */
 
 HtmlInfoView {
-margin-right:5px;
+margin-right:0px;
+padding-right:5px;
 border:none;
 background:#d9d9d9;
 
 }
 
+HtmlInfoView QScrollBar:vertical {               
+         border: 0px; 
+         background:rgba(255,255,255,10); 
+         width:10px;     
+         margin: 0px 0px 0px 0px; 
+     } 
+	 
 #infoViewMainFrame {
         background-color: #d9d9d9;
         border: 0px;
         margin: 0px;
-        padding: 0px;
 		font-size:14px;
 }
 

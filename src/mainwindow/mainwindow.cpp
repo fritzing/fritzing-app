@@ -913,9 +913,9 @@ SketchToolButton *MainWindow::createAutorouteButton(SketchAreaWidget *parent) {
 
 SketchToolButton *MainWindow::createOrderFabButton(SketchAreaWidget *parent) {
     SketchToolButton *orderFabButton = new SketchToolButton("Order",parent, m_orderFabAct);
-    orderFabButton->setText(tr("Order PCB"));
+    orderFabButton->setText(tr("Order Fab"));
     orderFabButton->setObjectName("orderFabButton");
-    orderFabButton->setEnabledIcon();				// seems to need this to display button icon first time
+    orderFabButton->setEnabledIcon();// seems to need this to display button icon first time
 
 	return orderFabButton;
 }

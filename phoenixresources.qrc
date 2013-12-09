@@ -147,6 +147,7 @@
         <file>resources/images/icons/arrowButtonDown.png</file>
         <file>resources/images/icons/arrowButtonLeft.png</file>
         <file>resources/images/icons/arrowButtonRight.png</file>
+	<file>resources/images/icons/toolbarShareBG_icon.png</file>
         <file>resources/images/icons/toolbarSharePressed_icon.png</file>
         <file>resources/images/icons/toolbarShareDisabled_icon.png</file>
         <file>resources/images/icons/toolbarShareEnabled_icon.png</file>

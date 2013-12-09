@@ -785,6 +785,7 @@ background:transparent;
 	font-weight:bold;
 	max-height:20px;
 	font-family: Droid Sans;
+	background:#fff;
 	}
 
 #shopContentTextDescription,
@@ -804,6 +805,7 @@ font-weight: regular;
 font-family: Droid Sans;
 font-size:11px;
 max-height:14px;
+background:#fff;
 }
 
 #blogFooterFrame,
@@ -1025,6 +1027,82 @@ ToolBarSeparator {
 		margin: 2px;
 		background:none;
 }
+
+
+#sketchAreaToolbar #shareProjectButton{
+	color:#fff;
+	border-bottom: 5px solid #006737;
+	background:#00a55b;
+		height: 55px;
+	width:80px;
+	margin:5px 10px 5px 5px;
+	padding: 3px 0px 0px 0px;
+	}
+
+#sketchAreaToolbar #shareProjectButton:hover {
+	color:#fff;
+	border-bottom: 5px solid #148d50;
+	background:#6dba82;
+	padding: 3px 0px 0px 0px;
+	height: 55px;
+	width:80px;
+	margin:5px 10px 5px 5px;
+
+	}
+	
+	#sketchAreaToolbar #shareProjectButton:pressed {
+	color:#fff;
+	border-bottom: 5px solid #148d50;
+	background:#6dba82;
+	padding: 3px 0px 0px 0px;
+	height: 55px;
+	width:80px;
+	margin:5px 10px 5px 5px;
+	}
+	
+
+#sketchAreaToolbar #orderFabButton{
+	color:#fff;
+	border-bottom: 5px solid #3b2f2b;
+	background:#5f4d4a;
+	padding: 3px 0px 0px 0px;
+	height: 55px;
+	width:80px;
+	margin:5px 10px 5px 5px;
+}
+
+#sketchAreaToolbar #orderFabButton:hover {
+	color:#fff;
+	border-bottom: 5px solid #5e4c49;
+	background:#84716b;
+	padding: 3px 0px 0px 0px;
+	height: 55px;
+	width:80px;
+	margin:5px 10px 5px 5px;
+}
+
+	#sketchAreaToolbar #orderFabButton:pressed {
+	color:#fff;
+	border-bottom: 5px solid #5e4c49;
+	background:#84716b;
+		padding: 3px 0px 0px 0px;
+	height: 55px;
+	width:80px;
+	margin:5px 10px 5px 5px;
+	}
+	
+
+/*
+QLabel #shareProjectButton {
+	color:#ff0;
+	background:#0ff;
+	padding: 0px 0px 0px 0px;
+	height: 30px;
+	width:50px;
+	margin:10px 5px 10px 5px;
+	background-image:none;
+	}
+*/
 /*
 #sketchAreaToolbar orderFabButton {
 	background:#f0f;
@@ -1253,17 +1331,24 @@ AutoCloseMessageBox {
 /* ################### info view #################### */
 
 HtmlInfoView {
-margin-right:5px;
+margin-right:0px;
+padding-right:5px;
 border:none;
 background:#d9d9d9;
 
 }
 
+HtmlInfoView QScrollBar:vertical {               
+         border: 0px; 
+         background:rgba(255,255,255,10); 
+         width:10px;     
+         margin: 0px 0px 0px 0px; 
+     } 
+	 
 #infoViewMainFrame {
         background-color: #d9d9d9;
         border: 0px;
         margin: 0px;
-        padding: 0px;
 		font-size:14px;
 }
 

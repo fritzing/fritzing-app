@@ -301,9 +301,12 @@ void Note::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWid
 		painter->setOpacity(InactiveOpacity);
 	}
 
-	painter->setPen(m_pen);
+	painter->setPen(Qt::NoPen);
 	painter->setBrush(m_brush);
     painter->drawRect(m_rect);
+    painter->setPen(m_pen);
+    painter->drawLine(0, m_rect.bottom(), m_rect.width(), m_rect.bottom());
+
 
 	if (option->state & QStyle::State_Selected) {
 		GraphicsUtils::qt_graphicsItem_highlightSelected(painter, option, boundingRect(), QPainterPath());
@@ -841,4 +844,11 @@ QString Note::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QString, QSt
 ViewLayer::ViewID Note::useViewIDForPixmap(ViewLayer::ViewID, bool) 
 {
     return ViewLayer::IconView;
+}
+
+void Note::addedToScene(bool temporary)
+{
+	positionGrip();
+
+    return ItemBase::addedToScene(temporary);
 }

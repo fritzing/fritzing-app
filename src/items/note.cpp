@@ -74,7 +74,9 @@ const int Note::emptyMinWidth = 40;
 const int Note::emptyMinHeight = 25;
 const int Note::initialMinWidth = 140;
 const int Note::initialMinHeight = 45;
-const int borderWidth = 3;
+const int borderWidth = 5;
+const int gripOffset = 3;
+const int TriangleOffset = 9;
 
 const double InactiveOpacity = 0.5;
 
@@ -229,7 +231,7 @@ Note::Note( ModelPart * modelPart, ViewLayer::ViewID viewID,  const ViewGeometry
 		m_rect.setRect(0, 0, viewGeometry.rect().width(), viewGeometry.rect().height());
 	}
 	m_pen.setWidth(borderWidth);
-	m_pen.setCosmetic(true);
+	m_pen.setCosmetic(false);
     m_pen.setBrush(QColor(0xfa, 0xbc, 0x4f));
 
     m_brush.setColor(QColor(0xff, 0xe9, 0xc8));
@@ -303,10 +305,26 @@ void Note::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWid
 
 	painter->setPen(Qt::NoPen);
 	painter->setBrush(m_brush);
-    painter->drawRect(m_rect);
-    painter->setPen(m_pen);
-    painter->drawLine(0, m_rect.bottom(), m_rect.width(), m_rect.bottom());
+    QPolygonF poly;
+    poly.append(m_rect.topLeft());
+    poly.append(m_rect.topRight() + QPointF(-TriangleOffset, 0));
+    poly.append(m_rect.topRight() + QPointF(0, TriangleOffset));
+    poly.append(m_rect.bottomRight());
+    poly.append(m_rect.bottomLeft());
+    painter->drawPolygon(poly);
 
+    painter->setBrush(m_pen.brush());
+    poly.clear();
+    poly.append(m_rect.topRight() + QPointF(-TriangleOffset, 0));
+    poly.append(m_rect.topRight() + QPointF(0, TriangleOffset));
+    poly.append(m_rect.topRight() + QPointF(-TriangleOffset, TriangleOffset));
+    painter->drawPolygon(poly);
+
+    painter->setPen(m_pen);
+    poly.clear();
+    poly.append(QPointF(0, m_rect.bottom() - borderWidth / 2.0));
+    poly.append(QPointF(m_rect.right(), m_rect.bottom() - borderWidth / 2.0));
+    painter->drawPolygon(poly);
 
 	if (option->state & QStyle::State_Selected) {
 		GraphicsUtils::qt_graphicsItem_highlightSelected(painter, option, boundingRect(), QPainterPath());
@@ -333,10 +351,10 @@ void Note::positionGrip() {
 	QSizeF gripSize = m_resizeGrip->boundingRect().size();
 	QSizeF sz = this->boundingRect().size(); 
 	double scale = m_resizeGrip->currentScale();
-	QPointF offset((gripSize.width() + borderWidth - 1) / scale, (gripSize.height() + borderWidth - 1) / scale);
+	QPointF offset((gripSize.width() + gripOffset - 1) / scale, (gripSize.height() + gripOffset - 1) / scale);
 	QPointF p(sz.width(), sz.height());
 	m_resizeGrip->setPos(p - offset);
-	m_graphicsTextItem->setPos(gripSize.width(), gripSize.height());
+	m_graphicsTextItem->setPos(gripSize.width() / 2, gripSize.height() / 2);
 	m_graphicsTextItem->setTextWidth(sz.width() - gripSize.width());
 }
 

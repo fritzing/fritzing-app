@@ -827,6 +827,7 @@ ItemBase * SketchWidget::addItemAux(ModelPart * modelPart, ViewLayer::ViewLayerP
 		newItem->setZValue(newItem->z());
 		newItem->setVisible(true);
 		addToScene(newItem, getNoteViewLayerID());
+        newItem->addedToScene(temporary);
 		return newItem;
 	}
 

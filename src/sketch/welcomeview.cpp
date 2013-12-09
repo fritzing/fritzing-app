@@ -59,8 +59,8 @@ static const int RefRole = Qt::UserRole + 5;
 static const int ImageSpace = 65;
 static const int TopSpace = 5;
 
-QString WelcomeView::m_activeHeaderLabelColor = "#f0f";
-QString WelcomeView::m_inactiveHeaderLabelColor = "#00f";
+QString WelcomeView::m_activeHeaderLabelColor = "#333";
+QString WelcomeView::m_inactiveHeaderLabelColor = "#b1b1b1";
 
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -294,9 +294,8 @@ void BlogListDelegate::paint ( QPainter * painter, const QStyleOptionViewItem & 
     QFontMetrics dateTextFontMetrics(font);
 
     // AUTHOR
-    painter->setFont(itemFont);
     QRect textRect = style->itemTextRect(dateTextFontMetrics, option.rect, Qt::AlignLeft, true, date);
-    rect = option.rect.adjusted(imageSpace + textRect.width() + 7, TopSpace + titleFontMetrics.lineSpacing() + introFontMetrics.lineSpacing() + 1  + pixelSize(listWidget->introTextExtraLeading()), 0, 0);
+    rect = option.rect.adjusted(imageSpace + textRect.width() + 7, TopSpace + titleFontMetrics.lineSpacing() + introFontMetrics.lineSpacing() + pixelSize(listWidget->introTextExtraLeading()), 0, 0);
     style->drawItemText(painter, rect, Qt::AlignLeft, option.palette, true, author);
 
     if (!pixmap.isNull()) {
@@ -458,29 +457,8 @@ QWidget * WelcomeView::initShop() {
     QVBoxLayout * frameLayout = new QVBoxLayout;
     zeroMargin(frameLayout);
 
-    QFrame * titleFrame = new QFrame();
-    titleFrame->setObjectName("shopTitleFrame");
-    QHBoxLayout * titleFrameLayout = new QHBoxLayout;
-    zeroMargin(titleFrameLayout);
-
-    QLabel * shopTitle = new QLabel(QString("<a href='fab' style='font-family:Droid Sans; text-decoration:none; display:block; font-weight:bold; color:#323232;'>%1</a>").arg(tr("Fab")));
-    shopTitle->setObjectName("shopTitle");
-    connect(shopTitle, SIGNAL(linkActivated(const QString &)), this, SLOT(clickBlog(const QString &)));
-    titleFrameLayout->addWidget(shopTitle);
-
-    QLabel * space = new QLabel(QString("|"));
-    space->setObjectName("fabshopTitleSpace");
-    titleFrameLayout->addWidget(space);
-
-    QLabel * fabTitle = new QLabel(QString("<a href='shop' style='text-decoration:none; font-family:Droid Sans; display:block; font-weight:bold; color:#323232;'>%1</a>").arg(tr("Shop")));
-    fabTitle->setObjectName("fabTitle");
-    connect(fabTitle, SIGNAL(linkActivated(const QString &)), this, SLOT(clickBlog(const QString &)));
-    titleFrameLayout->addWidget(fabTitle);
-
-    titleFrameLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Expanding));
-    titleFrame->setLayout(titleFrameLayout);
-
-    frameLayout->addWidget(titleFrame);
+    QWidget * headerFrame = createHeaderFrame(tr("Fab"), "Fab", tr("Shop"), "Shop", m_inactiveHeaderLabelColor,  m_activeHeaderLabelColor, m_fabLabel, m_shopLabel);
+    frameLayout->addWidget(headerFrame);
 
     m_shopUberFrame = createShopContentFrame(":/resources/images/welcome_kit.png", 
                                                 tr("Fritzing CreatorKit"), 
@@ -619,22 +597,22 @@ QWidget * WelcomeView::initBlog() {
 QFrame * WelcomeView::createHeaderFrame (const QString & url1, const QString & urlText1, const QString & url2, const QString & urlText2, const QString & inactiveColor, const QString & activeColor,
                                          QLabel * & label1, QLabel * & label2){
     QFrame * titleFrame = new QFrame();
-    titleFrame->setObjectName("blogTitleFrame");
+    titleFrame->setObjectName("wsSwitchableFrameHeader");
 
     QHBoxLayout * titleFrameLayout = new QHBoxLayout;
     zeroMargin(titleFrameLayout);
 
     label1 = new QLabel(makeUrlText(url1, urlText1, inactiveColor));
-    label1->setObjectName("projectsTitle");
+    label1->setObjectName("headerTitle1");
     titleFrameLayout->addWidget(label1);
     connect(label1, SIGNAL(linkActivated(const QString &)), this, SLOT(clickBlog(const QString &)));
 
     QLabel * titleSpace = new QLabel(tr("|"));
-    titleSpace->setObjectName("blogTitleSpace");
+    titleSpace->setObjectName("headerTitleSpace");
     titleFrameLayout->addWidget(titleSpace);
 
     label2 = new QLabel(makeUrlText(url2, urlText2, activeColor));
-    label2->setObjectName("blogTitle");
+    label2->setObjectName("headerTitle2");
     titleFrameLayout->addWidget(label2);
     connect(label2, SIGNAL(linkActivated(const QString &)), this, SLOT(clickBlog(const QString &)));
 
@@ -760,16 +738,17 @@ void WelcomeView::clickBlog(const QString & url) {
     if (url.toLower() == "fab") {
         m_shopUberFrame->setVisible(false);
         m_fabUberFrame->setVisible(true);
-   /*     m_headerLabelColor == "f0f";
-        m_inactiveHeaderLabelColor == "00f";*/
+        m_fabLabel->setText(hackColor(m_fabLabel->text(), m_activeHeaderLabelColor));
+        m_shopLabel->setText(hackColor(m_shopLabel->text(), m_inactiveHeaderLabelColor));
+
         return;
     }
 
     if (url.toLower() == "shop") {
         m_shopUberFrame->setVisible(true);
         m_fabUberFrame->setVisible(false);
-      /*  m_inactiveHeaderLabelColor == "#f0f";
-        m_headerLabelColor == "#00f"; */
+        m_fabLabel->setText(hackColor(m_fabLabel->text(), m_inactiveHeaderLabelColor));
+        m_shopLabel->setText(hackColor(m_shopLabel->text(), m_activeHeaderLabelColor));
         return;
     }
 

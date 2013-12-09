@@ -163,6 +163,8 @@ protected:
     QWidget * m_shopUberFrame;
     QLabel * m_projectsLabel;
     QLabel * m_blogLabel;
+    QLabel * m_fabLabel;
+    QLabel * m_shopLabel;
 
     static QString m_activeHeaderLabelColor;
     static QString m_inactiveHeaderLabelColor;

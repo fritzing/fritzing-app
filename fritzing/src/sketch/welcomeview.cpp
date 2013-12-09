@@ -546,7 +546,7 @@ QWidget * WelcomeView::createShopContentFrame(const QString & imagePath, const Q
 
     QHBoxLayout * footerFrameLayout = new QHBoxLayout;
     zeroMargin(footerFrameLayout);
-    footerFrameLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::MinimumExpanding));
+    footerFrameLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Expanding));
 
     QLabel * footerLabel = new QLabel(QString("<a href='%1'  style='text-decoration:none; color:%3;'>%2</a>").arg(url).arg(urlText2).arg(footerLabelColor));
     footerLabel->setObjectName("shopLogoText");
@@ -640,7 +640,6 @@ BlogListWidget * WelcomeView::createBlogContentFrame(const QString & url, const 
 
     QHBoxLayout * footerFrameLayout = new QHBoxLayout;
     zeroMargin(footerFrameLayout);
-
     footerFrameLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Expanding));
 
     QLabel * footerLabel = new QLabel(QString("<a href='%1'  style='font-family:Droid Sans; text-decoration:none; color:%3;'>%2</a>").arg(url).arg(urlText).arg(footerLabelColor));

@@ -812,10 +812,14 @@ max-height:14px;
 		border-top:1px solid #c4c4c4; 
 		background:transparent;
 		border-bottom:none;
-		margin:0px 5px 5px 5px;
-		padding-top:5px;
+		margin:0px 5px 8px 5px;
 		font-weight: regular;
 		font-family: Droid Sans;
+		padding-top:10px;
+		padding-right:5px;
+	/*	padding:8px 0px 8px 0px; */
+		min-height:25px;
+		max-height:25px;
 
 }
 

@@ -94,27 +94,49 @@ $Date: 2013-04-28 00:56:34 +0200 (So, 28. Apr 2013) $lo
 
 FTabWidget::FTabWidget(QWidget * parent) : QTabWidget(parent)
 {
-    setElideMode(Qt::ElideRight);
     QTabBar * tabBar = new FTabBar;
     tabBar->setObjectName("mainTabBar");
+    //connect(this, SIGNAL(currentChanged(int)), this, SLOT(tabIndexChanged(int)));
     setTabBar(tabBar);
 }
+
+//int FTabWidget::addTab(QWidget * page, const QIcon & icon, const QIcon & hoverIcon, const QIcon & inactiveIcon, const QString & label) 
+//{
+ //   // assumes tabs are not deleted or reordered
+//    m_inactiveIcons << inactiveIcon;
+//    m_hoverIcons << hoverIcon;
+//    m_icons << icon;
+//    return QTabWidget::addTab(page, icon, label);
+//}
+
+//void FTabWidget::tabIndexChanged(int index) {
+//    for (int i = 0; i < this->count(); ++i) {
+//        if (i == index) setTabIcon(i, m_icons.at(i));
+//        else setTabIcon(i, m_inactiveIcons.at(i));
+//    }
+//}
+
+FTabBar::FTabBar() : QTabBar()
+{
+    m_firstTime = true;
+}
+
 
 void FTabBar::paintEvent(QPaintEvent * event) {
     // this is a hack to left-align the tab text by adding spaces to the text
     // center-alignment is hard-coded deep into the way the tab is drawn in qcommonstyle.cpp
 
-    static bool firstTime = true;
     static int offset = 15;  // derived this empirically, no idea where it comes from
 
-    if (firstTime) {
-        firstTime = false;
+    if (m_firstTime) {
+        m_firstTime = false;
 
         // TODO: how to append spaces from the language direction
 
         for (int i = 0; i < this->count(); ++i) {
             QStyleOptionTabV3 tab;
             initStyleOption(&tab, 0);
+            DebugDialog::debug(QString("state %1").arg(tab.state));
             QString text = tabText(i);
             int added = 0;
             int lastWidth = 0;
@@ -393,6 +415,7 @@ MainWindow::MainWindow(ReferenceModel *referenceModel, QWidget * parent) :
 QWidget * MainWindow::createTabWidget() {
 	//return new QStackedWidget(this);
     FTabWidget * tabWidget = new FTabWidget(this);
+    tabWidget->setObjectName("sketch_tabs");
     return tabWidget;
 }
 
@@ -403,12 +426,32 @@ void MainWindow::addTab(QWidget * widget, const QString & label) {
 }
 
 
-void MainWindow::addTab(QWidget * widget, const QString & iconPath, const QString & label) {
+void MainWindow::addTab(QWidget * widget, const QString & iconPath, const QString & label, bool withIcon) {
+    if (!withIcon) {
+        addTab(widget, label);
+        return;
+    }
+
+    FTabWidget * tabWidget = qobject_cast<FTabWidget *>(m_tabWidget);
+    if (tabWidget == NULL) {
+        addTab(widget, label);
+        return;
+    }
+
 	//Q_UNUSED(label);
 	//qobject_cast<QStackedWidget *>(m_tabWidget)->addWidget(widget);
+    QIcon icon;
     QPixmap pixmap(iconPath);
-    QIcon icon(pixmap);
-    QTabWidget * tabWidget = qobject_cast<QTabWidget *>(m_tabWidget);
+    icon.addPixmap(pixmap, QIcon::Normal, QIcon::On);
+    QString inactivePath = iconPath;
+    inactivePath.replace("Active", "Inactive");
+    QPixmap inactivePixmap(inactivePath);
+    icon.addPixmap(inactivePixmap, QIcon::Normal, QIcon::Off);
+    QString hoverPath = iconPath;
+    hoverPath.replace("Active", "Hover");
+    QPixmap hoverPixmap(hoverPath);
+    icon.addPixmap(hoverPixmap, QIcon::Active, QIcon::On);
+
     tabWidget->addTab(widget, icon, label);
 }
 
@@ -427,7 +470,6 @@ QWidget * MainWindow::currentTabWidget() {
 void MainWindow::init(ReferenceModel *referenceModel, bool lockFiles) {
 
 	m_tabWidget = createTabWidget(); //   FTabWidget(this);
-	m_tabWidget->setObjectName("sketch_tabs");
 	setCentralWidget(m_tabWidget);
 
     m_referenceModel = referenceModel;
@@ -441,7 +483,7 @@ void MainWindow::init(ReferenceModel *referenceModel, bool lockFiles) {
 
 
 	initWelcomeView();
-    initSketchWidgets();
+    initSketchWidgets(true);
     initProgrammingWidget();
 
     m_undoView = new QUndoView();
@@ -549,14 +591,14 @@ void MainWindow::initLockedFiles(bool lockFiles) {
 	}
 }
 
-void MainWindow::initSketchWidgets() {
+void MainWindow::initSketchWidgets(bool withIcons) {
 	//DebugDialog::debug("init sketch widgets");
 
 	// all this belongs in viewLayer.xml
 	m_breadboardGraphicsView = new BreadboardSketchWidget(ViewLayer::BreadboardView, this);
 	initSketchWidget(m_breadboardGraphicsView);
 	m_breadboardWidget = new SketchAreaWidget(m_breadboardGraphicsView,this);
-    addTab(m_breadboardWidget, ":/resources/images/icons/TabWidgetBreadboardActive_icon.png", tr("Breadboard"));
+    addTab(m_breadboardWidget, ":/resources/images/icons/TabWidgetBreadboardActive_icon.png", tr("Breadboard"), withIcons);
 
 	if (m_fileProgressDialog) {
 		m_fileProgressDialog->setValue(11);
@@ -565,7 +607,7 @@ void MainWindow::initSketchWidgets() {
 	m_schematicGraphicsView = new SchematicSketchWidget(ViewLayer::SchematicView, this);
 	initSketchWidget(m_schematicGraphicsView);
 	m_schematicWidget = new SketchAreaWidget(m_schematicGraphicsView, this);
-    addTab(m_schematicWidget, ":/resources/images/icons/TabWidgetSchematicActive_icon.png", tr("Schematic"));
+    addTab(m_schematicWidget, ":/resources/images/icons/TabWidgetSchematicActive_icon.png", tr("Schematic"), withIcons);
 
 	if (m_fileProgressDialog) {
 		m_fileProgressDialog->setValue(20);
@@ -574,7 +616,7 @@ void MainWindow::initSketchWidgets() {
 	m_pcbGraphicsView = new PCBSketchWidget(ViewLayer::PCBView, this);
 	initSketchWidget(m_pcbGraphicsView);
 	m_pcbWidget = new SketchAreaWidget(m_pcbGraphicsView, this);
-    addTab(m_pcbWidget, ":/resources/images/icons/TabWidgetPcbActive_icon.png", tr("PCB"));
+    addTab(m_pcbWidget, ":/resources/images/icons/TabWidgetPcbActive_icon.png", tr("PCB"), withIcons);
 
 
 	if (m_fileProgressDialog) {
@@ -3013,7 +3055,7 @@ void MainWindow::initWelcomeView() {
     m_welcomeView = new WelcomeView(this);
     m_welcomeView->setObjectName("WelcomeView");
 	SketchAreaWidget * sketchAreaWidget = new SketchAreaWidget(m_welcomeView, this);
-    addTab(sketchAreaWidget, ":/resources/images/icons/TabWidgetWelcomeActive_icon.png", tr("Welcome"));
+    addTab(sketchAreaWidget, ":/resources/images/icons/TabWidgetWelcomeActive_icon.png", tr("Welcome"), true);
 }
 
 void MainWindow::setInitialView() {

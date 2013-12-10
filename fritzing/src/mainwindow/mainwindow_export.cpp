@@ -1684,3 +1684,33 @@ void MainWindow::massageOutput(QString & svg, bool doMask, bool doSilk, bool doP
 		svg = TextUtils::expandAndFill(svg, "black", GerberGenerator::MaskClearanceMils * 2 * dpi / 1000);
 	}
 }
+
+void MainWindow::dumpAllParts() {
+    if (m_currentGraphicsView == NULL) return;
+
+    QList<ItemBase *> already;
+    foreach (QGraphicsItem * item, m_currentGraphicsView->items()) {
+        ItemBase * ib = dynamic_cast<ItemBase *>(item);
+        if (ib == NULL) continue;
+
+        ItemBase * chief = ib->layerKinChief();
+        if (already.contains(chief)) continue;
+
+        already << chief;
+
+        QList<ItemBase *> itemBases;
+        itemBases << chief;
+        itemBases.append(chief->layerKin());
+        foreach (ItemBase * itemBase, itemBases) {
+            itemBase->debugInfo("");
+            foreach (ConnectorItem * connectorItem, itemBase->cachedConnectorItems()) {
+                if (connectorItem->connectionsCount() > 0) {
+                    connectorItem->debugInfo("\t");
+                    foreach (ConnectorItem * to, connectorItem->connectedToItems()) {
+                        to->debugInfo("\t\t");
+                    }
+                }
+            }
+        }
+    }
+}

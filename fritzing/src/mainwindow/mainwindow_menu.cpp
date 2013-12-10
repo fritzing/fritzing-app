@@ -937,6 +937,10 @@ void MainWindow::createPartMenuActions() {
 	m_exportNormalizedFlattenedSvgAction = new QAction(tr("Export Normalized Flattened SVG"), this);
 	m_exportNormalizedFlattenedSvgAction->setStatusTip(tr("Export 1000 dpi Flattened SVG of this part in this view"));
 	connect(m_exportNormalizedFlattenedSvgAction, SIGNAL(triggered()), this, SLOT(exportNormalizedFlattenedSVG()));
+
+	m_dumpAllPartsAction = new QAction(tr("Dump all parts"), this);
+	m_dumpAllPartsAction->setStatusTip(tr("Debug dump all parts in this view"));
+	connect(m_dumpAllPartsAction, SIGNAL(triggered()), this, SLOT(dumpAllParts()));
 #endif
 
 
@@ -1424,6 +1428,11 @@ void MainWindow::createPartMenu() {
     m_alignMenu->addAction(m_alignTopAct);
 	m_alignMenu->addAction(m_alignVerticalCenterAct);
 	m_alignMenu->addAction(m_alignBottomAct);
+
+#ifndef QT_NO_DEBUG
+    m_partMenu->addAction(m_dumpAllPartsAction);
+#endif
+
 }
 
 void MainWindow::createViewMenu()

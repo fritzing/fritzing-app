@@ -64,6 +64,7 @@ public:
 	bool hasPartNumberProperty();
 	bool rotationAllowed();
 	bool rotation45Allowed();
+    void addedToScene(bool temporary);
 
 protected:
 	QRectF boundingRect() const;

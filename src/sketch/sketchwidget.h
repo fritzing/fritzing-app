@@ -516,6 +516,7 @@ protected:
     QList<ItemBase *> collectSuperSubs(ItemBase *);
     void squashShapes(QPointF scenePos);
     void unsquashShapes();
+    virtual bool updateOK(ConnectorItem *, ConnectorItem *);
 
 protected:
 	static bool lessThan(int a, int b);

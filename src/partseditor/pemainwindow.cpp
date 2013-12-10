@@ -437,9 +437,11 @@ void PEMainWindow::closeEvent(QCloseEvent *event)
 void PEMainWindow::initLockedFiles(bool) {
 }
 
-void PEMainWindow::initSketchWidgets()
+void PEMainWindow::initSketchWidgets(bool whatever)
 {
-    MainWindow::initSketchWidgets();
+    Q_UNUSED(whatever);
+
+    MainWindow::initSketchWidgets(false);
 
 	m_iconGraphicsView = new IconSketchWidget(ViewLayer::IconView, this);
 	initSketchWidget(m_iconGraphicsView);
@@ -845,6 +847,8 @@ bool PEMainWindow::setInitialItem(PaletteItem * paletteItem)
 	}
 
     foreach (ViewThing * viewThing, m_viewThings.values()) {
+        if (viewThing->sketchWidget == NULL) continue;
+
         ItemBase * itemBase = originalModelPart->viewItem(viewThing->sketchWidget->viewID());
         if (itemBase == NULL) continue;
 
@@ -1781,6 +1785,8 @@ void PEMainWindow::reload(bool firstTime)
 	QList<ItemBase *> toDelete;
 
 	foreach (ViewThing * viewThing, m_viewThings.values()) {
+        if (viewThing->sketchWidget == NULL) continue;
+
 		foreach (QGraphicsItem * item, viewThing->sketchWidget->scene()->items()) {
 			ItemBase * itemBase = dynamic_cast<ItemBase *>(item);
 			if (itemBase) toDelete << itemBase;
@@ -2753,6 +2759,8 @@ QString PEMainWindow::getPartTitle() {
 
 void PEMainWindow::killPegi() {
     foreach (ViewThing * viewThing, m_viewThings.values()) {
+        if (viewThing->sketchWidget == NULL) continue;
+
         foreach (QGraphicsItem * item, viewThing->sketchWidget->scene()->items()) {
             PEGraphicsItem * pegi = dynamic_cast<PEGraphicsItem *>(item);
             if (pegi) delete pegi;
@@ -3211,7 +3219,7 @@ void PEMainWindow::replaceProperty(const QString & key, const QString & value, Q
 
 QWidget * PEMainWindow::createTabWidget() {
     QTabWidget * tabWidget = new QTabWidget(this);
-    tabWidget->setObjectName("peTabs");
+    tabWidget->setObjectName("pe_tabs");
 	return tabWidget;
 }
 

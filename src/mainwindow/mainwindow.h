@@ -404,6 +404,7 @@ protected slots:
     void obsoleteSMDOrientationSlot();
 	void exportNormalizedSVG();
 	void exportNormalizedFlattenedSVG();
+    void dumpAllParts();
 
 	void launchExternalProcess();
 	bool externalProcess(QString & name, QString & path, QStringList & args);
@@ -752,6 +753,7 @@ protected:
 	QAction *m_infoViewOnHoverAction;
 	QAction *m_exportNormalizedSvgAction;
 	QAction *m_exportNormalizedFlattenedSvgAction;
+	QAction *m_dumpAllPartsAction;
     QAction *m_openInPartsEditorNewAct;
     QMenu *m_addToBinMenu;
 

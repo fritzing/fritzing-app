@@ -725,7 +725,7 @@ void WelcomeView::gotBlogSnippet(QNetworkReply * networkReply) {
 	}
 
     if (!goodBlog) {
-        QString message = (blog) ? tr("Unable to access blog.fritzing.org") : tr("Unable to access friting.org/projects") ;
+        QString message = (blog) ? tr("Unable to reach blog.fritzing.org") : tr("Unable to reach friting.org/projects") ;
         QString placeHolder = QString("<li><a class='title' href='nop' title='%1'></a></li>").arg(message);
         if (doc.setContent(placeHolder, &errorStr, &errorLine, &errorColumn)) {
 		    readBlog(doc, true, blog, "");

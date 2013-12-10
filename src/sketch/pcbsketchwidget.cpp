@@ -2899,3 +2899,9 @@ bool PCBSketchWidget::dropOnBottom() {
 
     return viewFromBelow();
 }
+
+bool PCBSketchWidget::updateOK(ConnectorItem * c1, ConnectorItem * c2) {
+    // don't update if both connectors belong to parts--this isn't legit in schematic or pcb view
+    if (c1->attachedTo()->wireFlags()) return true;
+    return c2->attachedTo()->wireFlags() != 0;
+}

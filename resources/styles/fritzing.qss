@@ -6,6 +6,7 @@ MainWindow {
         /* styling there */
         font-size: 11px;
         color: #fff;
+		font-family:Droid Sans;
 }
 
 

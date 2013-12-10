@@ -79,6 +79,12 @@ void MiniViewContainer::setView(QGraphicsView * view)
 	forceResize();
 }
 
+QGraphicsView * MiniViewContainer::view() {
+    if (m_miniView == NULL) return NULL;
+
+    return m_miniView->view();
+}
+
 void MiniViewContainer::forceResize() {
 	// force a resize on a view change because otherwise some size or sceneRect isn't updated and the navigator is off
 	m_miniView->resize(this->size() / 2.0);

@@ -115,7 +115,7 @@ protected:
 	void closeEvent(QCloseEvent * event);
 	bool event(QEvent *);
     void initLockedFiles(bool lockFiles);
-    void initSketchWidgets();
+    void initSketchWidgets(bool withIcons);
     void initProgrammingWidget();
     void initDock();
     void moreInitDock();

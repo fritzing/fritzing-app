@@ -827,6 +827,7 @@ ItemBase * SketchWidget::addItemAux(ModelPart * modelPart, ViewLayer::ViewLayerP
 		newItem->setZValue(newItem->z());
 		newItem->setVisible(true);
 		addToScene(newItem, getNoteViewLayerID());
+        newItem->addedToScene(temporary);
 		return newItem;
 	}
 
@@ -5052,9 +5053,11 @@ void SketchWidget::changeConnectionAux(long fromID, const QString & fromConnecto
 	}
 
 	if (updateConnections) {
-        QList<ConnectorItem *> already;
-		fromConnectorItem->attachedTo()->updateConnections(fromConnectorItem, false, already);
-		toConnectorItem->attachedTo()->updateConnections(toConnectorItem, false, already);
+        if (updateOK(fromConnectorItem, toConnectorItem)) {
+            QList<ConnectorItem *> already;
+		    fromConnectorItem->attachedTo()->updateConnections(fromConnectorItem, false, already);
+		    toConnectorItem->attachedTo()->updateConnections(toConnectorItem, false, already);
+        }
 	}
 }
 
@@ -10001,4 +10004,8 @@ bool SketchWidget::everZoomed() const {
 
 void SketchWidget::setEverZoomed(bool everZoomed) {
     m_everZoomed = everZoomed;
+}
+
+bool SketchWidget::updateOK(ConnectorItem *, ConnectorItem *) {
+    return true;
 }

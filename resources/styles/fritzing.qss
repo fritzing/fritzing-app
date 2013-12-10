@@ -254,48 +254,58 @@ QMenu::item:disabled:selected {
 	qproperty-iconSize: 36px;
 	font-family: Droid Sans;
 	font-size:14px;
+	font-weight: regular;
 }
 	
-#sketch_tabs::pane { /*the tab-window*/
+#sketch_tabs::pane, 
+#pe_tabs::pane
+{ /*the tab-window*/
 
  	padding: 0px 0px 0px 0px;
 	border:none;
 	background:#d5e1e9;
 	margin:0px;
 	font-family: Droid Sans;
+	font-size:14px;
+	font-weight: regular;
 }
 
-#sketch_tabs::tab-bar { /*this is the complete tab-bar*/
+#sketch_tabs::tab-bar, 
+#pe_tabs::tab-bar 
+ /*this is the complete tab-bar*/
+{
  	top: 0px;
  	left: 10px;
 	right: 0px;
 	font-family: Droid Sans;	
-	background: #b1b1b1;
 	font-size:14px;
+	font-weight: regular;
+	background: #b1b1b1;
 }
 
-#sketch_tabs QTabBar#WelcomeView {
-	image-position: left;
-	image: url(:/resources/images/icons/arrowButtonRight.png);
-	background-image: url(:/resources/images/icons/arrowButtonLeft.png);
-	font-family: Droid Sans;
-}
-
-#sketch_tabs QTabBar::tab  {
-    margin: 0px 10px -1px 0px;
+#sketch_tabs QTabBar::tab  
+{
+        margin: 0px 10px -1px 0px;
 	min-width: 150px;
 	max-width: 150px;
-        max-height: 35px;
-	height:35px;
-	font-family: Droid Sans;	
-  /*     padding-top: 2px;
-        padding-bottom: 2px;
-        padding-left: 10px;
-        padding-right: 10px; */
-	
+	font-family: Droid Sans;
+	font-size:14px;	
+	font-weight: regular;
 }
 
-#sketch_tabs QTabBar::tab:selected { /*the active tab*/
+#pe_tabs QTabBar::tab  
+{
+	margin: 0px 10px -1px 10px;
+	font-family: Droid Sans;		
+	font-size:14px;
+	font-weight: regular;
+	min-height: 35px;
+}
+
+#sketch_tabs QTabBar::tab:selected, 
+#pe_tabs QTabBar::tab:selected 
+ /*the active tab*/
+ {
 	font-family: Droid Sans;
 	font-size:14px;
 	background-color: transparent;
@@ -306,7 +316,10 @@ QMenu::item:disabled:selected {
 	background-image: url(:/resources/images/icons/segmentedSwitcherXActiveFocus.png);
 }
 
-#sketch_tabs QTabBar::tab:selected:hover { /*the active tab hover*/
+#sketch_tabs QTabBar::tab:selected:hover, 
+#pe_tabs QTabBar::tab:selected:hover 
+/*the active tab hover*/
+{ 
 	font-family: Droid Sans;
 	font-size:14px;
 	background-color: transparent;
@@ -317,7 +330,10 @@ QMenu::item:disabled:selected {
 	background-image: url(:/resources/images/icons/segmentedSwitcherXActiveFocusHover.png);
 }
 
-#sketch_tabs QTabBar::tab:!selected { /*the inactive tabs*/
+#sketch_tabs QTabBar::tab:!selected,
+#pe_tabs QTabBar::tab:!selected
+/*the inactive tabs*/
+{ 
 	background-color: transparent;
 	font-family: Droid Sans;
 	font-size:14px;
@@ -327,7 +343,10 @@ QMenu::item:disabled:selected {
 	background-image: url(:/resources/images/icons/segmentedSwitcherXInactiveFocusHover.png);
 }
 
-#sketch_tabs QTabBar::tab:!selected:hover {  /*the inactive tab- hover*/
+#sketch_tabs QTabBar::tab:!selected:hover,
+ #pe_tabs QTabBar::tab:!selected:hover 
+ /*the inactive tab- hover*/
+ { 
 	background-color: transparent;
 	font-family: Droid Sans;
 	font-size:14px;
@@ -693,13 +712,10 @@ background:transparent;
      } 
 	 
 
-	
-	
 #tip  {
 	background: #D5E1E9;
 	border: none;
-	font: "OCR A Tribute W01 Regular";
-	font-family: "OCR A Tribute W01 Regular";
+	font-family: "OCRA";
 	color:#2e94af;
 	font-size:16px;
 	qproperty-wordWrap: true;

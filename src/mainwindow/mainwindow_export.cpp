@@ -1690,10 +1690,10 @@ void MainWindow::dumpAllParts() {
 
     QList<ItemBase *> already;
     foreach (QGraphicsItem * item, m_currentGraphicsView->items()) {
-        ItemBase * itemBase = dynamic_cast<ItemBase *>(item);
-        if (itemBase == NULL) continue;
+        ItemBase * ib = dynamic_cast<ItemBase *>(item);
+        if (ib == NULL) continue;
 
-        ItemBase * chief = itemBase->layerKinChief();
+        ItemBase * chief = ib->layerKinChief();
         if (already.contains(chief)) continue;
 
         already << chief;

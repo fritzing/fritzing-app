@@ -587,7 +587,6 @@ protected slots:
 	void wireConnectedSlot(long fromID, QString fromConnectorID, long toID, QString toConnectorID);
 	void wireDisconnectedSlot(long fromID, QString fromConnectorID);
 	void changeConnectionSlot(long fromID, QString fromConnectorID, long toID, QString toConnectorID, ViewLayer::ViewLayerPlacement, bool connect, bool updateConnections);
-	void navigatorScrollChange(double x, double y);
 	void restartPasteCount();
 	void dragIsDoneSlot(class ItemDrag *);
 	void statusMessage(QString message, int timeout = 0);

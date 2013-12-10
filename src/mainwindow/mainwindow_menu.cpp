@@ -65,7 +65,6 @@ $Date: 2013-04-28 14:14:07 +0200 (So, 28. Apr 2013) $
 #include "../utils/textutils.h"
 #include "../connectors/ercdata.h"
 #include "../items/moduleidnames.h"
-#include "../dock/miniviewcontainer.h"
 #include "../utils/zoomslider.h"
 #include "../dock/layerpalette.h"
 #include "../program/programwindow.h"
@@ -2357,18 +2356,6 @@ void MainWindow::toggleInfo(bool toggle) {
 		((QDockWidget*)m_infoView->parent())->show();
 	} else {
 		((QDockWidget*)m_infoView->parent())->hide();
-	}
-}
-
-void MainWindow::toggleNavigator(bool toggle) {
-	if(toggle) {
-		((QDockWidget*)m_miniViewContainerBreadboard->parent())->show();
-		((QDockWidget*)m_miniViewContainerSchematic->parent())->show();
-		((QDockWidget*)m_miniViewContainerPCB->parent())->show();
-	} else {
-		((QDockWidget*)m_miniViewContainerBreadboard->parent())->hide();
-		((QDockWidget*)m_miniViewContainerSchematic->parent())->hide();
-		((QDockWidget*)m_miniViewContainerPCB->parent())->hide();
 	}
 }
 

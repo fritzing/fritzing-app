@@ -278,8 +278,6 @@
         <file>resources/fonts/DroidSans.ttf</file>
         <file>resources/fonts/DroidSansMono.ttf</file>
         <file>resources/fonts/DroidSans-Bold.ttf</file>
-        <file>resources/fonts/ocr-a-tribute-bold-latin-1_0.ttf</file>
-        <file>resources/fonts/ocr-a-tribute-light-latin-1_0.ttf</file>
         <file>resources/fonts/NOTICE</file>
         <file>resources/fonts/OCRA.ttf</file>
         <file>resources/bins/my_parts.fzb</file>

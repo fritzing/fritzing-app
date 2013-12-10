@@ -183,6 +183,7 @@ protected:
     PaletteItem* addPartItem(ModelPart * modelPart, ViewLayer::ViewLayerPlacement, PaletteItem * paletteItem, bool doConnectors, bool & ok, ViewLayer::ViewID, bool temporary);
     void requestQuoteSoon();
     double getKeepoutMils();
+    bool updateOK(ConnectorItem *, ConnectorItem *);
 
 signals:
 	void subSwapSignal(SketchWidget *, ItemBase *, const QString & newModuleID, ViewLayer::ViewLayerPlacement, long & newID, QUndoCommand * parentCommand);

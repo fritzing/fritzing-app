@@ -39,6 +39,7 @@ class MiniViewContainer : public QWidget
 public:
 	MiniViewContainer(QWidget * parent = 0);
 	void setView(QGraphicsView *);	
+    QGraphicsView * view();
 	void resizeEvent ( QResizeEvent * event ); 
 	void filterMousePress();
 	void hideHandle(bool hide);

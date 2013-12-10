@@ -235,7 +235,6 @@ public:
 
 signals:
 	void alienPartsDismissed();
-	void viewSwitched(int);
 	void mainWindowMoved(QWidget *);
 	void changeActivationSignal(bool activate, QWidget * originator);
 	void externalProcessSignal(QString & name, QString & path, QStringList & args);
@@ -387,7 +386,6 @@ protected slots:
 
 	void applyReadOnlyChange(bool isReadOnly);
 	void currentNavigatorChanged(class MiniViewContainer *);
-	void viewSwitchedTo(int viewIndex);
 
 	void raiseAndActivate();
 	void activateWindowAux();

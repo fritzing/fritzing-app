@@ -1197,10 +1197,12 @@ void MainWindow::tabWidget_currentChanged(int index) {
 	setTitle();
 
 	// triggers a signal to the navigator widget
-    if (m_navigators.count() > index) {
-	    m_navigators[index]->miniViewMousePressedSlot();
+    foreach (MiniViewContainer * navigator, m_navigators) {
+        if (navigator != NULL && navigator->view() != NULL && navigator->view() == m_currentGraphicsView) {
+            navigator->miniViewMousePressedSlot();
+            break;
+        }
     }
-	emit viewSwitched(index);
 
     if (m_infoView) {
 	    m_currentGraphicsView->updateInfoView();
@@ -1957,19 +1959,28 @@ void MainWindow::applyReadOnlyChange(bool isReadOnly) {
 	//m_saveAct->setDisabled(isReadOnly);
 }
 
-void MainWindow::currentNavigatorChanged(MiniViewContainer * miniView)
+void MainWindow::currentNavigatorChanged(MiniViewContainer * miniViewContainer)
 {
-	int index = m_navigators.indexOf(miniView);
+    QTabWidget * tabWidget = qobject_cast<QTabWidget *>(m_tabWidget);
+    if (tabWidget == NULL) return;
+
+    int index = -1;
+    for (int i = 0; i < tabWidget->count(); i++) {
+        SketchAreaWidget * sketchAreaWidget = qobject_cast<SketchAreaWidget *>(tabWidget->widget(i));
+        if (sketchAreaWidget == NULL) continue;
+
+        if (sketchAreaWidget->contentView() == miniViewContainer->view()) {
+            index = i;
+            break;
+        }
+    }
+
 	if (index < 0) return;
 
 	int oldIndex = currentTabIndex();
 	if (oldIndex == index) return;
 
 	setCurrentTabIndex(index);
-}
-
-void MainWindow::viewSwitchedTo(int viewIndex) {
-	setCurrentTabIndex(viewIndex);
 }
 
 const QString MainWindow::fritzingTitle() {

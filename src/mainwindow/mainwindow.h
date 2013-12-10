@@ -69,13 +69,27 @@ class FTabWidget : public QTabWidget {
     Q_OBJECT
 public:
     FTabWidget(QWidget * parent = NULL);
+
+    //int addTab(QWidget * page, const QIcon & icon, const QIcon & hoverIcon, const QIcon & inactiveIcon, const QString & label);
+
+protected slots:
+    //void tabIndexChanged(int index);
+
+protected:
+    //QList<QIcon> m_inactiveIcons;
+    //QList<QIcon> m_hoverIcons;
+    //QList<QIcon> m_icons;
 };
 
 class FTabBar : public QTabBar {
     Q_OBJECT
 public:
+    FTabBar();
+
     void paintEvent(QPaintEvent *);
 
+protected:
+    bool m_firstTime;
 };
 
 class SwapTimer : public QTimer
@@ -575,7 +589,7 @@ protected:
 	QWidget * createGridSizeForm(GridSizeThing *);
     void massageOutput(QString & svg, bool doMask, bool doSilk, bool doPaste, QString & maskTop, QString & maskBottom, const QString & fileName, ItemBase * board, int dpi, const LayerList &);
     virtual void initLockedFiles(bool lockFiles);
-    virtual void initSketchWidgets();
+    virtual void initSketchWidgets(bool withIcons);
 	virtual void initWelcomeView();
     virtual void initDock();
     virtual void initMenus();
@@ -605,7 +619,7 @@ protected:
     virtual QString getStyleSheetSuffix();
 	virtual QWidget * createTabWidget();
 	virtual void addTab(QWidget * widget, const QString & label);
-	virtual void addTab(QWidget * widget, const QString & iconPath, const QString & label);
+	virtual void addTab(QWidget * widget, const QString & iconPath, const QString & label, bool withIcon);
 	virtual int currentTabIndex();
 	virtual void setCurrentTabIndex(int);
 	virtual QWidget * currentTabWidget();

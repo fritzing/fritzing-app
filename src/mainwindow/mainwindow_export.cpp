@@ -58,7 +58,6 @@ $Date: 2013-04-22 23:44:56 +0200 (Mo, 22. Apr 2013) $
 #include "../utils/textutils.h"
 #include "../connectors/ercdata.h"
 #include "../items/moduleidnames.h"
-#include "../dock/miniviewcontainer.h"
 #include "../utils/zoomslider.h"
 #include "../dock/layerpalette.h"
 #include "../program/programwindow.h"

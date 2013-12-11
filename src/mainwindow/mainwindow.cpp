@@ -894,6 +894,7 @@ ExpandingLabel * MainWindow::createRoutingStatusLabel(SketchAreaWidget * parent)
 	routingStatusLabel->viewport()->setCursor(Qt::WhatsThisCursor);
 
 	routingStatusLabel->setObjectName(SketchAreaWidget::RoutingStateLabelName);
+    routingStatusLabel->setToolTip(tr("Click to highlight unconnected parts"));
 	parent->setRoutingStatusLabel(routingStatusLabel);
 	RoutingStatus routingStatus;
 	routingStatus.zero();

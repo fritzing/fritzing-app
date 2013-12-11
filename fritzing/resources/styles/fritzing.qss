@@ -989,7 +989,7 @@ background:#fff;
 	
  }
  
- /* ############ tooltips for the partsbin and toolbar NOT the main window ########
+ /* ############ tooltips for the partsbin and toolbar NOT the main window ########*/
   QToolTip {
      border: 1px solid #fff;
      /* padding: 3px; */
@@ -999,7 +999,7 @@ background:#fff;
 	 opacity: 200;
 	 font-family: Droid Sans;
  }
-*/
+
   
 /* ############## RADIOBUTTON STYLING  ###########*/
 

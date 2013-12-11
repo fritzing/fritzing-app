@@ -30,7 +30,7 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 
 #include <QDialog>
 #include <QLabel>
-#include "../ViewLayer.h"
+#include "../viewlayer.h"
 
 class FirstTimeHelpDialog : public QDialog
 {

@@ -31,6 +31,8 @@
 	color: #000000;
 }
 
+
+
 /*try to change tab-menu without luck ... 
 
 QTabWidget#peTabs ::item {

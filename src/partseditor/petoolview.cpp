@@ -79,15 +79,17 @@ PEToolView::PEToolView(QWidget * parent) : QWidget(parent)
     m_pegi = NULL;
 
     QVBoxLayout * mainLayout = new QVBoxLayout;
-
+    mainLayout -> setObjectName("connectorFrame");
     QSplitter * splitter = new QSplitter(Qt::Vertical);
     mainLayout->addWidget(splitter);
 
     QFrame * connectorsFrame = new QFrame;
+
     QVBoxLayout * connectorsLayout = new QVBoxLayout;
 
     QLabel * label = new QLabel(tr("Connector List (a checkmark means the graphic was selected)"));
 	connectorsLayout->addWidget(label);
+
 
     m_connectorListWidget = new QTreeWidget();
 	m_connectorListWidget->setColumnCount(2);

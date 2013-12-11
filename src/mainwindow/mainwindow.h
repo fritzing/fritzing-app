@@ -163,6 +163,8 @@ struct TraceMenuThing {
 class MainWindow : public FritzingWindow
 {
     Q_OBJECT
+    Q_PROPERTY(int fireQuoteDelay READ fireQuoteDelay WRITE setFireQuoteDelay DESIGNABLE true)
+
 public:
     MainWindow(class ReferenceModel *referenceModel, QWidget * parent);
     MainWindow(QFile & fileToLoad);
@@ -226,6 +228,8 @@ public:
     void selectPartsWithModuleID(ModelPart *);
     void addToSketch(QList<ModelPart *> &);
 	QStringList newDesignRulesCheck(bool showOkMessage);
+    int fireQuoteDelay();
+    void setFireQuoteDelay(int);
 
 public:
 	static void initNames();
@@ -904,6 +908,7 @@ protected:
 	QList<LinkedFile *>  m_linkedProgramFiles;
 	QString m_backupFileNameAndPath;
 	QTimer m_autosaveTimer;
+    QTimer m_fireQuoteTimer;
 	bool m_autosaveNeeded;
 	bool m_backingUp;
 	QString m_bundledSketchName;
@@ -927,6 +932,8 @@ protected:
 	bool m_dontKeepMargins;
     QPointer<QDialog> m_rolloverQuoteDialog;
     bool m_obsoleteSMDOrientation;
+    QWidget * m_orderFabButton;
+    int m_fireQuoteDelay;
 
 public:
 	static int AutosaveTimeoutMinutes;

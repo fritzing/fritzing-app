@@ -30,6 +30,8 @@ QStatusBar {
 }
 
 
+
+
 QScrollBar:vertical {               
          border: 0px; 
          background:rgba(255,255,255,10); 
@@ -937,7 +939,10 @@ ToolBarSeparator {
 	background:rgb(214,50,34);
 	font-family:Droid Sans;
 	font-size:16px;
-
+	border: 0px;
+	background-color: transparent;
+	margin-top: 8px; 
+	margin-bottom: 5px;
 }
 
 #fileToolBar QToolButton,
@@ -2014,3 +2019,13 @@ SearchLineEdit {
         font-weight: bold;
 }
 
+/************************ About Box ****************************/
+
+#aboutText {
+	border: 0px;
+	background-color: transparent; 
+	margin-top: 0px; 
+	margin-bottom: 0px;
+}
+
+	

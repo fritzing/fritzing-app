@@ -34,9 +34,7 @@ ExpandingLabel::ExpandingLabel(QWidget *parent, int minSize) : QTextEdit(parent)
 }
 
 void ExpandingLabel::setLabelText(const QString& theText) {
-	QTextDocument *doc = new QTextDocument(this);
-	doc->setHtml(theText);
-	setDocument(doc);
+	document()->setHtml(theText);
 	setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 	setAlignment(Qt::AlignCenter);
 	setContextMenuPolicy(Qt::NoContextMenu);

@@ -22,7 +22,7 @@ QStatusBar {
 
 #statusBarContainer QTooltip {
      border: 1px solid #fff;
-     padding: 3px;
+     /* padding: 3px; */
      border-radius: 1px;
 	 background:#fff;
 	 color:#333;
@@ -875,7 +875,7 @@ background:#fff;
   
   QToolTip {
      border: 1px solid #fff;
-     padding: 3px;
+     /* padding: 3px; */
      border-radius: 1px;
 	 background:#fff;
 	 color:#333;

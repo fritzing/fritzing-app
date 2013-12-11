@@ -4319,6 +4319,9 @@ double SketchWidget::fitInWindow() {
 		itemsRect |= itemBase->sceneBoundingRect();
 	}
 
+    static const double borderFactor = 0.03;
+    itemsRect.adjust(-itemsRect.width() * borderFactor, -itemsRect.height() * borderFactor, itemsRect.width() * borderFactor, itemsRect.height() * borderFactor);
+
 	QRectF viewRect = rect();
 
 	//fitInView(itemsRect.x(), itemsRect.y(), itemsRect.width(), itemsRect.height(), Qt::KeepAspectRatio);

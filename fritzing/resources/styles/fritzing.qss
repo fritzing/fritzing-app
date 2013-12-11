@@ -1921,6 +1921,10 @@ StackTabBar QToolButton::down-arrow:pressed{
 
 /**************** sketch widgets ****************/
 
+MainWindow {
+	qproperty-fireQuoteDelay: 250;  /* milliseconds */
+}
+	
 SketchWidget {
         border: 0px;
 	font-weight: bold;

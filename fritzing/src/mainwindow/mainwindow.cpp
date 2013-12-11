@@ -340,6 +340,9 @@ MainWindow::MainWindow(ReferenceModel *referenceModel, QWidget * parent) :
     connect(&m_autosaveTimer, SIGNAL(timeout()), this, SLOT(backupSketch()));
     m_autosaveTimer.start(AutosaveTimeoutMinutes * 60 * 1000);
 
+    m_fireQuoteTimer.setSingleShot(true);
+    connect(&m_fireQuoteTimer, SIGNAL(timeout()), this, SLOT(fireQuote()));
+
 	resize(MainWindowDefaultWidth, MainWindowDefaultHeight);
 
 	m_backupFileNameAndPath = MainWindow::BackupFolder + "/" + TextUtils::getRandText() + FritzingSketchExtension;
@@ -944,6 +947,8 @@ SketchToolButton *MainWindow::createOrderFabButton(SketchAreaWidget *parent) {
     orderFabButton->setText(tr("Fabricate"));
     orderFabButton->setObjectName("orderFabButton");
     orderFabButton->setEnabledIcon();// seems to need this to display button icon first time
+    connect(orderFabButton, SIGNAL(entered()), this, SLOT(orderFabHoverEnter()));
+    connect(orderFabButton, SIGNAL(left()), this, SLOT(orderFabHoverLeave()));
 
 	return orderFabButton;
 }
@@ -1061,10 +1066,8 @@ QList<QWidget*> MainWindow::getButtonsForView(ViewLayer::ViewID viewId) {
                 ;
 
 			if (m_orderFabEnabled) {
-                SketchToolButton * orderFabButton = createOrderFabButton(parent);
-				retval << orderFabButton;
-                connect(orderFabButton, SIGNAL(entered()), this, SLOT(orderFabHoverEnter()));
-                connect(orderFabButton, SIGNAL(left()), this, SLOT(orderFabHoverLeave()));
+                m_orderFabButton = createOrderFabButton(parent);
+				retval << m_orderFabButton;
 			}
 
 
@@ -2976,13 +2979,16 @@ void MainWindow::initProgrammingWidget() {
 }
 
 void MainWindow::orderFabHoverEnter() {
+    m_fireQuoteTimer.stop();
     if (!QuoteDialog::quoteSucceeded()) return;
     if (m_rolloverQuoteDialog && m_rolloverQuoteDialog->isVisible()) return;
 
-    QTimer::singleShot(1, this, SLOT(fireQuote()));
+    m_fireQuoteTimer.setInterval(fireQuoteDelay());
+    m_fireQuoteTimer.start();
 }
 
 void MainWindow::fireQuote() {
+    m_fireQuoteTimer.stop();
     if (!QuoteDialog::quoteSucceeded()) return;
 
     m_rolloverQuoteDialog = m_pcbGraphicsView->quoteDialog(m_pcbWidget);
@@ -3000,16 +3006,20 @@ void MainWindow::fireQuote() {
 
     // seems to require setting position after show()
 
+    QRect b = m_orderFabButton->geometry();
+    QPoint bt = m_orderFabButton->parentWidget()->mapToGlobal(b.topRight());
     QRect t = m_pcbWidget->toolbar()->geometry();
     QPoint gt = m_pcbWidget->toolbar()->parentWidget()->mapToGlobal(t.topLeft());
     QRect q = m_rolloverQuoteDialog->geometry();
 
     // I don't understand why--perhaps due to the windowFlags--but q is already in global coordinates
-    q.moveBottom(gt.y() - 20);   
+    q.moveBottom(gt.y() - 20); 
+    q.moveRight(bt.x());
     m_rolloverQuoteDialog->setGeometry(q);
 }
 
 void MainWindow::orderFabHoverLeave() {
+    m_fireQuoteTimer.stop();
     //DebugDialog::debug("leave fab button");
     if (m_rolloverQuoteDialog) {
         m_rolloverQuoteDialog->hide();
@@ -3068,4 +3078,12 @@ void MainWindow::initZoom() {
     }
 		
     m_currentGraphicsView->setEverZoomed(true);
+}
+
+int MainWindow::fireQuoteDelay() {
+    return m_fireQuoteDelay;
+}
+
+void MainWindow::setFireQuoteDelay(int delay) {
+    m_fireQuoteDelay = delay;
 }

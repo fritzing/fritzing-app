@@ -318,7 +318,7 @@ WelcomeView::WelcomeView(QWidget * parent) : QFrame(parent)
     this->setObjectName("welcomeView");
         
     m_tip = NULL;
-    setAcceptDrops(false);
+    setAcceptDrops(true);
     initLayout();
 
 	connect(this, SIGNAL(newSketch()), this->window(), SLOT(createNewSketch()));
@@ -984,6 +984,7 @@ QWidget * WelcomeView::initTip() {
 
 void WelcomeView::dragEnterEvent(QDragEnterEvent *event)
 {
+    DebugDialog::debug("ignoring drag enter");
     event->ignore();
 }
 

@@ -74,9 +74,8 @@ const int Note::emptyMinWidth = 40;
 const int Note::emptyMinHeight = 25;
 const int Note::initialMinWidth = 140;
 const int Note::initialMinHeight = 45;
-const int borderWidth = 5;
-const int gripOffset = 3;
-const int TriangleOffset = 9;
+const int borderWidth = 7;
+const int TriangleOffset = 7;
 
 const double InactiveOpacity = 0.5;
 
@@ -240,11 +239,11 @@ Note::Note( ModelPart * modelPart, ViewLayer::ViewID viewID,  const ViewGeometry
 	setPos(m_viewGeometry.loc());
 
 	QPixmap pixmap(":/resources/images/icons/noteResizeGrip.png");
-	m_resizeGrip = new ResizeHandle(pixmap, Qt::SizeFDiagCursor, this);
+	m_resizeGrip = new ResizeHandle(pixmap, Qt::SizeFDiagCursor, false, this);
 	connect(m_resizeGrip, SIGNAL(mousePressSignal(QGraphicsSceneMouseEvent *, ResizeHandle *)), this, SLOT(handleMousePressSlot(QGraphicsSceneMouseEvent *, ResizeHandle *)));
 	connect(m_resizeGrip, SIGNAL(mouseMoveSignal(QGraphicsSceneMouseEvent *, ResizeHandle *)), this, SLOT(handleMouseMoveSlot(QGraphicsSceneMouseEvent *, ResizeHandle *)));
 	connect(m_resizeGrip, SIGNAL(mouseReleaseSignal(QGraphicsSceneMouseEvent *, ResizeHandle *)), this, SLOT(handleMouseReleaseSlot(QGraphicsSceneMouseEvent *, ResizeHandle *)));
-	connect(m_resizeGrip, SIGNAL(zoomChangedSignal(double)), this, SLOT(handleZoomChangedSlot(double)));
+	//connect(m_resizeGrip, SIGNAL(zoomChangedSignal(double)), this, SLOT(handleZoomChangedSlot(double)));
 
 	m_graphicsTextItem = new NoteGraphicsTextItem();
 	QFont font("Droid Sans", 9, QFont::Normal);
@@ -350,15 +349,11 @@ QPainterPath Note::shape() const
 void Note::positionGrip() {
 	QSizeF gripSize = m_resizeGrip->boundingRect().size();
 	QSizeF sz = this->boundingRect().size(); 
-	double scale = m_resizeGrip->currentScale();
-	QPointF offset((gripSize.width() + gripOffset - 1) / scale, (gripSize.height() + gripOffset - 1) / scale);
-	QPointF p(sz.width(), sz.height());
-	m_resizeGrip->setPos(p - offset);
-	m_graphicsTextItem->setPos(gripSize.width() / 2, gripSize.height() / 2);
-	m_graphicsTextItem->setTextWidth(sz.width() - gripSize.width());
+	QPointF p(sz.width() - gripSize.width(), sz.height() - gripSize.height());
+	m_resizeGrip->setPos(p);
+	m_graphicsTextItem->setPos(TriangleOffset / 2, TriangleOffset / 2);
+	m_graphicsTextItem->setTextWidth(sz.width() - TriangleOffset);
 }
-
-
 
 void Note::mousePressEvent(QGraphicsSceneMouseEvent * event) {
 	InfoGraphicsView *infographics = InfoGraphicsView::getInfoGraphicsView(this);

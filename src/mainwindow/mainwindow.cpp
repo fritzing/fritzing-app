@@ -54,7 +54,6 @@ $Date: 2013-04-28 00:56:34 +0200 (So, 28. Apr 2013) $lo
 #include "../infoview/htmlinfoview.h"
 #include "../waitpushundostack.h"
 #include "../layerattributes.h"
-#include "../dock/triplenavigator.h"
 #include "../sketch/breadboardsketchwidget.h"
 #include "../sketch/schematicsketchwidget.h"
 #include "../sketch/pcbsketchwidget.h"
@@ -314,7 +313,6 @@ MainWindow::MainWindow(ReferenceModel *referenceModel, QWidget * parent) :
     m_settingsPrefix = "main/";
     m_showWelcomeAct = m_showProgramAct = m_raiseWindowAct = m_showPartsBinIconViewAct = m_showAllLayersAct = m_hideAllLayersAct = m_rotate90cwAct = m_showBreadboardAct = m_showSchematicAct = m_showPCBAct = NULL;
     m_fileMenu = m_editMenu = m_partMenu = m_windowMenu = m_pcbTraceMenu = m_schematicTraceMenu = m_breadboardTraceMenu = m_viewMenu = NULL;
-    m_miniViewContainerBreadboard = NULL;
     m_infoView = NULL;
     m_addedToTemp = false;
     setAcceptDrops(true);
@@ -544,12 +542,6 @@ void MainWindow::init(ReferenceModel *referenceModel, bool lockFiles) {
 	m_tabWidget->setMinimumWidth(500);
 	m_tabWidget->setMinimumWidth(0);
 
-    if (m_miniViewContainerBreadboard) {
-	    m_miniViewContainerBreadboard->setView(m_breadboardGraphicsView);
-	    m_miniViewContainerSchematic->setView(m_schematicGraphicsView);
-	    m_miniViewContainerPCB->setView(m_pcbGraphicsView);
-    }
-
 	connect(this, SIGNAL(readOnlyChanged(bool)), this, SLOT(applyReadOnlyChange(bool)));
 
 	m_setUpDockManagerTimer.setSingleShot(true);
@@ -647,13 +639,6 @@ void MainWindow::initMenus() {
 	if (m_fileProgressDialog) {
 		m_fileProgressDialog->setValue(91);
 	}
-}
-
-
-				   
-
-void MainWindow::showNavigator() {
-	m_navigatorDock->setFloating(false);
 }
 
 void MainWindow::initSketchWidget(SketchWidget * sketchWidget) {
@@ -909,6 +894,7 @@ ExpandingLabel * MainWindow::createRoutingStatusLabel(SketchAreaWidget * parent)
 	routingStatusLabel->viewport()->setCursor(Qt::WhatsThisCursor);
 
 	routingStatusLabel->setObjectName(SketchAreaWidget::RoutingStateLabelName);
+    routingStatusLabel->setToolTip(tr("Click to highlight unconnected parts"));
 	parent->setRoutingStatusLabel(routingStatusLabel);
 	RoutingStatus routingStatus;
 	routingStatus.zero();
@@ -1195,12 +1181,6 @@ void MainWindow::tabWidget_currentChanged(int index) {
 	updateTransformationActions();
 
 	setTitle();
-
-	// triggers a signal to the navigator widget
-    if (m_navigators.count() > index) {
-	    m_navigators[index]->miniViewMousePressedSlot();
-    }
-	emit viewSwitched(index);
 
     if (m_infoView) {
 	    m_currentGraphicsView->updateInfoView();
@@ -1955,21 +1935,6 @@ void MainWindow::routingStatusSlot(SketchWidget * sketchWidget, const RoutingSta
 void MainWindow::applyReadOnlyChange(bool isReadOnly) {
 	Q_UNUSED(isReadOnly);
 	//m_saveAct->setDisabled(isReadOnly);
-}
-
-void MainWindow::currentNavigatorChanged(MiniViewContainer * miniView)
-{
-	int index = m_navigators.indexOf(miniView);
-	if (index < 0) return;
-
-	int oldIndex = currentTabIndex();
-	if (oldIndex == index) return;
-
-	setCurrentTabIndex(index);
-}
-
-void MainWindow::viewSwitchedTo(int viewIndex) {
-	setCurrentTabIndex(viewIndex);
 }
 
 const QString MainWindow::fritzingTitle() {
@@ -3061,9 +3026,7 @@ void MainWindow::initWelcomeView() {
 void MainWindow::setInitialView() {
     	// do this the first time, since the current_changed signal wasn't sent
 	int tab = 0;
-    if (m_navigators.count() > 0) {
-	    currentNavigatorChanged(m_navigators[tab]);
-    }
+
 	tabWidget_currentChanged(tab+1);
     tabWidget_currentChanged(tab);
 

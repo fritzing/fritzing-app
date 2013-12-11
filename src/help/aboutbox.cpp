@@ -190,10 +190,10 @@ tr("<br /><br /><br /><br /><br /><br /><br /><br />");
 	QPixmap fadepixmap(":/resources/images/aboutbox_scrollfade.png");
 
 	m_expandingLabel = new ExpandingLabel(this, AboutWidth);
+    m_expandingLabel->setObjectName("aboutText");
 	m_expandingLabel->setLabelText(data);
 	m_expandingLabel->setFont(smallFont);
 	m_expandingLabel->setGeometry(0, AboutText, AboutWidth, fadepixmap.height());
-	m_expandingLabel->setStyleSheet("border: 0px; background-color: transparent; margin-top: 0px; margin-bottom: 0px;");
 	
 	// setAlignment only aligns the "current paragraph"
 	// the QTextCursor code aligns all paragraphs

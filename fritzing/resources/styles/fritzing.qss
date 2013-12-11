@@ -134,7 +134,7 @@ PEMainWindow {
         /* layout here */
 
         /* styling there */
-        background: #fff;
+        background: #b1b1b1;
 		font-family: Droid Sans;
 }
 
@@ -257,7 +257,98 @@ QMenu::item:disabled:selected {
 	font-weight: regular;
 }
 	
-#sketch_tabs::pane, 
+#sketch_tabs::pane 
+{ /*the tab-window*/
+
+ 	padding: 0px 0px 0px 0px;
+	border:none;
+	background:#d5e1e9;
+	margin:0px;
+	font-family: Droid Sans;
+	font-size:14px;
+	font-weight: regular;
+}
+
+#sketch_tabs::tab-bar
+ /*this is the complete tab-bar*/
+{
+ 	top: 0px;
+ 	left: 10px;
+	right: 0px;
+	font-family: Droid Sans;	
+	font-size:14px;
+	font-weight: regular;
+	background: #b1b1b1;
+}
+
+
+
+
+#sketch_tabs QTabBar::tab  
+{
+        margin: 0px 10px -1px 0px;
+	min-width: 150px;
+	max-width: 150px;
+	font-family: Droid Sans;
+	font-size:14px;	
+	font-weight: regular;
+}
+
+
+
+#sketch_tabs QTabBar::tab:selected
+ /*the active tab*/
+ {
+	font-family: Droid Sans;
+	font-size:14px;
+	background-color: transparent;
+	font-weight: regular;
+	color: #eee;
+	border:none;
+	margin-bottom:-1px;
+	background-image: url(:/resources/images/icons/segmentedSwitcherXActiveFocus.png);
+}
+
+#sketch_tabs QTabBar::tab:selected:hover
+/*the active tab hover*/
+{ 
+	font-family: Droid Sans;
+	font-size:14px;
+	background-color: transparent;
+	font-weight: regular;
+	color: #fff;
+	border:none;
+	margin-bottom:-1px;
+	background-image: url(:/resources/images/icons/segmentedSwitcherXActiveFocusHover.png);
+}
+
+#sketch_tabs QTabBar::tab:!selected{
+/*the inactive tabs*/	
+	background-color: transparent;
+	font-family: Droid Sans;
+	font-size:14px;
+	color: #666;
+	font-weight:regular;
+	margin-bottom:-1px;
+	background-image: url(:/resources/images/icons/segmentedSwitcherXInactiveFocusHover.png);
+}
+
+#sketch_tabs QTabBar::tab:!selected:hover
+ /*the inactive tab- hover*/
+ { 
+	background-color: transparent;
+	font-family: Droid Sans;
+	font-size:14px;
+	border:none;
+	color: #fff;
+	font-weight:regular;
+	margin-bottom:-1px;
+	background-image: url(:/resources/images/icons/segmentedSwitcherXInactiveFocusHover.png);
+}
+
+
+
+/*############ parteditor styling ################*/
 #pe_tabs::pane
 { /*the tab-window*/
 
@@ -270,7 +361,6 @@ QMenu::item:disabled:selected {
 	font-weight: regular;
 }
 
-#sketch_tabs::tab-bar, 
 #pe_tabs::tab-bar 
  /*this is the complete tab-bar*/
 {
@@ -281,16 +371,7 @@ QMenu::item:disabled:selected {
 	font-size:14px;
 	font-weight: regular;
 	background: #b1b1b1;
-}
 
-#sketch_tabs QTabBar::tab  
-{
-        margin: 0px 10px -1px 0px;
-	min-width: 150px;
-	max-width: 150px;
-	font-family: Droid Sans;
-	font-size:14px;	
-	font-weight: regular;
 }
 
 #pe_tabs QTabBar::tab  
@@ -300,9 +381,9 @@ QMenu::item:disabled:selected {
 	font-size:14px;
 	font-weight: regular;
 	min-height: 35px;
+	background:#fff;
 }
 
-#sketch_tabs QTabBar::tab:selected, 
 #pe_tabs QTabBar::tab:selected 
  /*the active tab*/
  {
@@ -316,7 +397,7 @@ QMenu::item:disabled:selected {
 	background-image: url(:/resources/images/icons/segmentedSwitcherXActiveFocus.png);
 }
 
-#sketch_tabs QTabBar::tab:selected:hover, 
+
 #pe_tabs QTabBar::tab:selected:hover 
 /*the active tab hover*/
 { 
@@ -330,10 +411,8 @@ QMenu::item:disabled:selected {
 	background-image: url(:/resources/images/icons/segmentedSwitcherXActiveFocusHover.png);
 }
 
-#sketch_tabs QTabBar::tab:!selected,
-#pe_tabs QTabBar::tab:!selected
-/*the inactive tabs*/
-{ 
+#pe_tabs QTabBar::tab:!selected {
+/*the inactive tabs*/	
 	background-color: transparent;
 	font-family: Droid Sans;
 	font-size:14px;
@@ -343,7 +422,6 @@ QMenu::item:disabled:selected {
 	background-image: url(:/resources/images/icons/segmentedSwitcherXInactiveFocusHover.png);
 }
 
-#sketch_tabs QTabBar::tab:!selected:hover,
  #pe_tabs QTabBar::tab:!selected:hover 
  /*the inactive tab- hover*/
  { 
@@ -356,6 +434,46 @@ QMenu::item:disabled:selected {
 	margin-bottom:-1px;
 	background-image: url(:/resources/images/icons/segmentedSwitcherXInactiveFocusHover.png);
 }
+
+#connectorFrame {
+	background-color:#f0f;
+	}
+	
+
+#NewNewPartsEditorConnector0Frame {
+	background-color: #cccccc;
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+}
+
+#NewNewPartsEditorConnector1Frame {
+	background-color: #eeeeee;
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+}
+
+#NewNewPartsEditorConnectorFrame {
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+}
+
+
+#PESvgView {
+	background-color: #000000;
+	color: #000000;
+}
+
+#PEToolView2 {
+	background-color: #00f;
+	color: #000000;
+}
+
+PEToolView {
+	background-color:#f0f;
+	}
 
 /* ################### WelcomeScreen styling (WC) #################### */
 
@@ -717,7 +835,7 @@ background:transparent;
 	border: none;
 	font-family: "OCRA";
 	color:#2e94af;
-	font-size:16px;
+	font-size:13px;
 	qproperty-wordWrap: true;
 	padding: 0px 10px 10px 10px;
 
@@ -869,8 +987,7 @@ background:#fff;
 	
  }
  
- /* ############ tooltips for the partsbin and toolbar NOT the main window ########*/
-  
+ /* ############ tooltips for the partsbin and toolbar NOT the main window ########
   QToolTip {
      border: 1px solid #fff;
      padding: 3px;
@@ -880,7 +997,8 @@ background:#fff;
 	 opacity: 200;
 	 font-family: Droid Sans;
  }
-
+*/
+  
 /* ############## RADIOBUTTON STYLING  ###########*/
 
 QRadioButton::indicator  {

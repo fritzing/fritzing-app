@@ -491,6 +491,7 @@ void PEMainWindow::initSketchWidgets(bool whatever)
     m_connectorsView = new PEConnectorsView(this);
 	sketchAreaWidget = new SketchAreaWidget(m_connectorsView, this);
 	addTab(sketchAreaWidget, tr("Connectors"));
+
     connect(m_connectorsView, SIGNAL(connectorMetadataChanged(ConnectorMetadata *)), this, SLOT(connectorMetadataChanged(ConnectorMetadata *)), Qt::DirectConnection);
     connect(m_connectorsView, SIGNAL(connectorsTypeChanged(Connector::ConnectorType)), this, SLOT(connectorsTypeChanged(Connector::ConnectorType)));
     connect(m_connectorsView, SIGNAL(removedConnectors(QList<ConnectorMetadata *> &)), this, SLOT(removedConnectors(QList<ConnectorMetadata *> &)), Qt::DirectConnection);
@@ -521,6 +522,7 @@ void PEMainWindow::moreInitDock()
 
 
     m_peToolView = new PEToolView();
+    m_peToolView -> setObjectName("PEToolView2");
     connect(m_peToolView, SIGNAL(getSpinAmount(double &)), this, SLOT(getSpinAmount(double &)), Qt::DirectConnection);
     connect(m_peToolView, SIGNAL(terminalPointChanged(const QString &)), this, SLOT(terminalPointChanged(const QString &)));
     connect(m_peToolView, SIGNAL(terminalPointChanged(const QString &, double)), this, SLOT(terminalPointChanged(const QString &, double)));

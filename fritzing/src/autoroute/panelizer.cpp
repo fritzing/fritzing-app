@@ -41,6 +41,7 @@ $Date: 2013-04-22 01:45:43 +0200 (Mo, 22. Apr 2013) $
 #include "../version/version.h"
 #include "../processeventblocker.h"
 #include "../connectors/connectoritem.h"
+#include "../connectors/svgidlayer.h"
 
 #include "cmrouter/tileutils.h"
 
@@ -1463,6 +1464,7 @@ MainWindow * Panelizer::inscribeBoard(QDomElement & board, QHash<QString, QStrin
 
     checkDonuts(mainWindow, !noMessages);
     checkText(mainWindow, !noMessages);
+    checkCopperBoth(mainWindow, !noMessages);
 
     if (drc) {
 	    foreach (ItemBase * boardItem, boards) {
@@ -1781,6 +1783,118 @@ int Panelizer::checkDonuts(MainWindow * mainWindow, bool displayMessage) {
     }
 
     return donuts.count() / 2;
+}
+
+int Panelizer::checkCopperBoth(MainWindow * mainWindow, bool displayMessage) {
+    QList<ItemBase *> missing;
+
+    QList<ItemBase *> visited;
+    foreach (QGraphicsItem * item, mainWindow->pcbView()->scene()->items()) {
+        ItemBase * itemBase = dynamic_cast<ItemBase *>(item);
+        if (itemBase == NULL) continue;
+        if (!itemBase->isEverVisible()) continue;
+        if (itemBase->modelPart()->isCore()) continue;
+
+        itemBase = itemBase->layerKinChief();
+        if (visited.contains(itemBase)) continue;
+
+        visited << itemBase;
+
+        QString fzpPath = itemBase->modelPart()->path();
+        QFile file(fzpPath);
+        if (!file.open(QFile::ReadOnly)) {
+            DebugDialog::debug(QString("unable to open %1").arg(fzpPath));
+            continue;
+        }
+
+        QString fzp = file.readAll();
+        file.close();
+
+        bool copper0 = fzp.contains("copper0");
+        bool copper1 = fzp.contains("copper1");
+        if (!copper1 && !copper0) continue;
+
+        QString svgPath = itemBase->fsvgRenderer()->filename();
+        QFile file2(svgPath);
+        if (!file2.open(QFile::ReadOnly)) {
+            DebugDialog::debug(QString("itembase svg file open failure %1").arg(itemBase->id()));
+            continue;
+        }
+
+        QString svg = file2.readAll();
+        file2.close();
+
+        if (copper1 && !svg.contains("copper1")) {
+            missing << itemBase;
+            continue;
+        }
+
+        if (copper0 && !svg.contains("copper0")) {
+            missing << itemBase;
+            continue;
+        }
+
+        QDomDocument doc;
+        QString errorStr;
+	    int errorLine;
+	    int errorColumn;
+	    if (!doc.setContent(svg, &errorStr, &errorLine, &errorColumn)) {
+            DebugDialog::debug(QString("itembase svg xml failure %1 %2 %3 %4").arg(itemBase->id()).arg(errorStr).arg(errorLine).arg(errorColumn));
+            continue;
+        }
+
+        QDomElement root = doc.documentElement();
+    
+        if (copper1) {
+            if (!gotCopper("copper1", ViewLayer::Copper1, itemBase, root)) {
+                missing << itemBase;
+                continue;
+            }
+        }
+
+        if (copper0) {
+            if (!gotCopper("copper0", ViewLayer::Copper0, itemBase, root)) {
+                missing << itemBase;
+                continue;
+            }
+        }
+    }
+
+    if (displayMessage && missing.count() > 0) {
+        mainWindow->pcbView()->selectAllItems(false, false);
+        mainWindow->pcbView()->selectItems(missing);
+        QMessageBox::warning(NULL, "Text", QString("There are %1 possible instances of part svgs missing a copper id").arg(missing.count()));
+    }
+
+    if (missing.count() > 0) {
+        QFileInfo info(mainWindow->fileName());
+        writePanelizerOutput(QString("%2 ... There are %1 possible instances of part svgs missing a copper id")
+                .arg(missing.count()).arg(info.fileName())
+            );
+        collectFilenames(info.fileName());
+    }
+
+    return  missing.count();
+}
+
+bool Panelizer::gotCopper(const QString & layerName, ViewLayer::ViewLayerID viewLayerID, ItemBase * itemBase, const QDomElement & root) 
+{
+    QDomElement copperElement = TextUtils::findElementWithAttribute(root, "id", layerName);
+    
+    foreach (ConnectorItem * connectorItem, itemBase->cachedConnectorItems()) {
+        SvgIdLayer * svgIdLayer = connectorItem->connector()->fullPinInfo(itemBase->viewID(), viewLayerID);
+        if (svgIdLayer == NULL) {
+            DebugDialog::debug(QString("missing pin info for %1").arg(itemBase->id()));
+            return false;
+        }
+
+        QDomElement element = TextUtils::findElementWithAttribute(copperElement, "id", svgIdLayer->m_svgId);
+        if (element.isNull()) {
+            return false;
+        }
+    }
+
+    return true;
 }
 
 int Panelizer::bestFitLoop(QList<PanelItem *> & refPanelItems, PanelParams & panelParams, bool customPartsOnly, QList<PlanePair *> & returnPlanePairs, QList<PanelItem *> & returnInsertPanelItems, const QDir & svgDir) 

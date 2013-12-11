@@ -235,7 +235,6 @@ public:
 
 signals:
 	void alienPartsDismissed();
-	void viewSwitched(int);
 	void mainWindowMoved(QWidget *);
 	void changeActivationSignal(bool activate, QWidget * originator);
 	void externalProcessSignal(QString & name, QString & path, QStringList & args);
@@ -311,7 +310,6 @@ protected slots:
     void toggleToolbar(bool toggle);
     void togglePartLibrary(bool toggle);
     void toggleInfo(bool toggle);
-    void toggleNavigator(bool toggle);
     void toggleUndoHistory(bool toggle);
 	void toggleDebuggerOutput(bool toggle);
 	void openHelp();
@@ -386,8 +384,6 @@ protected slots:
 	void routingStatusSlot(class SketchWidget *, const RoutingStatus &);
 
 	void applyReadOnlyChange(bool isReadOnly);
-	void currentNavigatorChanged(class MiniViewContainer *);
-	void viewSwitchedTo(int viewIndex);
 
 	void raiseAndActivate();
 	void activateWindowAux();
@@ -432,7 +428,6 @@ protected slots:
 	void selectMoveLock();
 	void moveLock();
 	void setSticky();
-	void showNavigator();
 	void autorouterSettings();
 	void boardDeletedSlot();
 	void cursorLocationSlot(double, double);
@@ -650,10 +645,6 @@ protected:
 	class WelcomeView * m_welcomeView;
 
     QPointer<class BinManager> m_binManager;
-    QPointer<class MiniViewContainer> m_miniViewContainerBreadboard;
-    QPointer<class MiniViewContainer> m_miniViewContainerSchematic;
-    QPointer<class MiniViewContainer> m_miniViewContainerPCB;
-	QList <class MiniViewContainer *> m_navigators;
 	QPointer<QWidget> m_tabWidget;
     QPointer<ReferenceModel> m_referenceModel;
     QPointer<class SketchModel> m_sketchModel;
@@ -814,7 +805,6 @@ protected:
 	QAction *m_minimizeAct;
 	QAction *m_togglePartLibraryAct;
 	QAction *m_toggleInfoAct;
-	QAction *m_toggleNavigatorAct;
 	QAction *m_toggleUndoHistoryAct;
 	QAction *m_toggleDebuggerOutputAct;
 	QAction *m_windowMenuSeparator;
@@ -898,8 +888,6 @@ protected:
 
     QStringList m_openExampleActions;
 
-	QPointer<class TripleNavigator> m_tripleNavigator;
-	QDockWidget * m_navigatorDock;
 	QPointer<class FSizeGrip> m_sizeGrip;
 
 	QTimer m_setUpDockManagerTimer;

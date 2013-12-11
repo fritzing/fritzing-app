@@ -5071,18 +5071,6 @@ void SketchWidget::changeConnectionSlot(long fromID, QString fromConnectorID,
 					 connect, false, updateConnections);
 }
 
-void SketchWidget::navigatorScrollChange(double x, double y) {
-	QScrollBar * h = this->horizontalScrollBar();
-	QScrollBar * v = this->verticalScrollBar();
-	int xmin = h->minimum();
-   	int xmax = h->maximum();
-   	int ymin = v->minimum();
-   	int ymax = v->maximum();
-
-   	h->setValue((int) ((xmax - xmin) * x) + xmin);
-   	v->setValue((int) ((ymax - ymin) * y) + ymin);
-}
-
 void SketchWidget::keyReleaseEvent(QKeyEvent * event) {
 	//DebugDialog::debug(QString("key release event %1").arg(event->isAutoRepeat()));
 	if (m_movingByArrow) {

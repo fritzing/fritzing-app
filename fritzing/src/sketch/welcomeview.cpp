@@ -672,17 +672,20 @@ void WelcomeView::updateRecent() {
 	QStringList files = settings.value("recentFileList").toStringList();
     m_recentListWidget->clear();
 
+    bool gotOne = false;
+
     QIcon icon(":/resources/images/icons/WS-fzz-icon.png");
 	for (int i = 0; i < files.size(); ++i) {
 		QFileInfo finfo(files[i]);
 		if (!finfo.exists()) continue;
 
+        gotOne = true;
         QListWidgetItem * item = new QListWidgetItem(icon, finfo.fileName());
         item->setData(Qt::UserRole, finfo.absoluteFilePath());
         m_recentListWidget->addItem(item);
 	}
 
-    if (files.size() == 0) {
+    if (!gotOne) {
         // put in a placeholder if there are no recent files
         QListWidgetItem * item = new QListWidgetItem(icon, tr("No recent sketches found"));
         item->setData(Qt::UserRole, "");
@@ -722,7 +725,7 @@ void WelcomeView::gotBlogSnippet(QNetworkReply * networkReply) {
 	}
 
     if (!goodBlog) {
-        QString message = (blog) ? tr("Unable to access blog.fritzing.org") : tr("Unable to access friting.org/projects") ;
+        QString message = (blog) ? tr("Unable to reach blog.fritzing.org") : tr("Unable to reach friting.org/projects") ;
         QString placeHolder = QString("<li><a class='title' href='nop' title='%1'></a></li>").arg(message);
         if (doc.setContent(placeHolder, &errorStr, &errorLine, &errorColumn)) {
 		    readBlog(doc, true, blog, "");

@@ -332,7 +332,7 @@ WelcomeView::WelcomeView(QWidget * parent) : QFrame(parent)
 
     manager = new QNetworkAccessManager(this);
 	connect(manager, SIGNAL(finished(QNetworkReply *)), this, SLOT(gotBlogSnippet(QNetworkReply *)));
-	manager->get(QNetworkRequest(QUrl("http://green.fritzing.org/projects/snippet/")));
+	manager->get(QNetworkRequest(QUrl("http://fritzing.org/projects/snippet/")));
 
 	TipsAndTricks::initTipSets();
     nextTip();
@@ -709,6 +709,7 @@ void WelcomeView::gotBlogSnippet(QNetworkReply * networkReply) {
     QString prefix = networkReply->url().scheme() + "://" + networkReply->url().authority();
     QNetworkAccessManager * manager = networkReply->manager();
 	int responseCode = networkReply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
+
     bool goodBlog = false;
     QDomDocument doc;
 	QString errorStr;
@@ -725,11 +726,18 @@ void WelcomeView::gotBlogSnippet(QNetworkReply * networkReply) {
 	}
 
     if (!goodBlog) {
-        QString message = (blog) ? tr("Unable to reach blog.fritzing.org") : tr("Unable to reach friting.org/projects") ;
-        QString placeHolder = QString("<li><a class='title' href='nop' title='%1'></a></li>").arg(message);
-        if (doc.setContent(placeHolder, &errorStr, &errorLine, &errorColumn)) {
-		    readBlog(doc, true, blog, "");
-        }   
+        if (responseCode == 500 && !blog) {
+            QNetworkAccessManager * manager2 = new QNetworkAccessManager(this);
+	        connect(manager2, SIGNAL(finished(QNetworkReply *)), this, SLOT(gotBlogSnippet(QNetworkReply *)));
+	        manager2->get(QNetworkRequest(QUrl("http://green.fritzing.org/projects/snippet/")));
+        }
+        else {
+            QString message = (blog) ? tr("Unable to reach blog.fritzing.org") : tr("Unable to reach friting.org/projects") ;
+            QString placeHolder = QString("<li><a class='title' href='nop' title='%1'></a></li>").arg(message);
+            if (doc.setContent(placeHolder, &errorStr, &errorLine, &errorColumn)) {
+		        readBlog(doc, true, blog, "");
+            }  
+        }
     }
 
     manager->deleteLater();

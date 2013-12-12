@@ -84,6 +84,7 @@ void TipsAndTricks::initTipSets() {
 	ts->tips << tr("To constrain the motion of a part to horizontal or vertical, hold down the shift key as you drag it.");
 	ts->tips << tr("If you're having trouble selecting a part or a wire (segment), try selecting the part that's in the way and send it to the back: use the Raise and Lower functions on the Part menu or the context menu (right-click menu).");
 	ts->tips << tr("To more precisely move a selection of parts, use the arrow keys.  Shift-arrow moves by 10 units.");
+    ts->tips << tr("Click on the mouse position indicator in the status bar (at the bottom) to toggle the units from in to mm to px.");
 	TipSets.append(ts);
 
 	ts = new TipSet;
@@ -138,11 +139,12 @@ void TipsAndTricks::initTipSets() {
 	ts->tips << tr("You can put your own Logo in the silkscreen of your PCB. Just use the Logo part of the core library and select your own file. SVG is the best format.");
 	ts->tips << tr("Smaller PCBs are more affortable than larger ones. Save space and money.");
 	ts->tips << tr("Use copper-blocker parts to mask out areas that you want free of copper fill.");
+	ts->tips << tr("To change trace width, select a trace then use the <b>width</b> combo box in the Inspector. You can use the drop-down or just type in a number (from 8 to 128).");
     TipSets.append(ts);
 
     ts = new TipSet;
 	ts->heading = tr("parts editor");
-    ts->tips << tr("To find the SVG file for one a part's views, click on the view tab, then use <b>Show in Folder</b> under the <b>File</b> Menu.");
+    ts->tips << tr("To find the SVG file for a part's image in a given view, click on the tab for that view, then use <b>Show in Folder</b> under the <b>File</b> Menu.");
     TipSets.append(ts);
 
 

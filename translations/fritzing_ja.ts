@@ -778,6 +778,25 @@ Note: You can import them later using the &quot;Help&quot; &gt; &quot;Import par
     </message>
 </context>
 <context>
+    <name>FirstTimeHelpDialog</name>
+    <message>
+        <source>First Time Help</source>
+        <translation type="unfinished">Fritzing 起動時のヘルプを再表示</translation>
+    </message>
+    <message>
+        <source>&lt;br/&gt;The &lt;b&gt;Breadboard View&lt;/b&gt; is meant to look like a &lt;i&gt;real-life&lt;/i&gt; breadboard prototype.&lt;br/&gt;&lt;br/&gt;Begin by dragging a part from the Parts Bin, which is over at the top right. Then pull in more parts, connecting them by placing them on the breadboard or clicking on the connectors and dragging wires. The process is similar to how you would arrange things in the physical world. &lt;br/&gt;&lt;br/&gt;After you&apos;re finished creating your sketch in the breadboard view, try the other views. You can switch views by clicking the Tabs at the top of the window. Because different views have different purposes, parts will look different in the other views.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Welcome to the &lt;b&gt;Schematic View&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;This is a more abstract way to look at components and connections than the Breadboard View. You have the same elements as you have on your breadboard, they just look different. This representation is closer to the traditional diagrams used by engineers.&lt;br/&gt;&lt;br/&gt;After you have drawn wires between parts, you can press &amp;lt;Shift&amp;gt;-click with the mouse to create bend points and tidy up your connections. The Schematic View can help you check that you have made the right connections between components. You can also print out your schematic for documentation.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The &lt;b&gt;PCB View&lt;/b&gt; is where you layout the components will  on a physical PCB (Printed Circuit Board).&lt;br/&gt;&lt;br/&gt;PCBs can be made at home or in a small lab using DIY etching processes. They also can be sent to professional PCB manufacturing services for more precise fabrication. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;The first thing you will need is a board to place your parts on. There should already be one in your sketch, but if not, drag in the board icon from the Parts Bin. The icon matches thie image to the right: &lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/parts/svg/core/icon/rectangle_pcb.svg&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br/&gt;&lt;br/&gt;To lay out your PCB, arrange all the components so they fit nicely on the board. Then try to shift them around to minimize the length and confusion of connections. You can also resize rectangular boards. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;Once the parts are sorted out, you connect them with copper traces. You can drag out a trace from individual connections or use the autorouter to generate them. The Autoroute button is at the bottom of the window. The button matches the image to the right:&lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/images/icons/toolbarAutorouteEnabled_icon.png&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>FritzingWindow</name>
     <message>
         <source>&amp;Close Window</source>
@@ -858,21 +877,6 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     </message>
     <message>
         <source>OK and copper fill</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>Helper</name>
-    <message>
-        <source>The &lt;b&gt;Breadboard View&lt;/b&gt; is meant to look like a &lt;i&gt;real-life&lt;/i&gt; breadboard prototype.&lt;br/&gt;&lt;br/&gt;Begin by dragging a part from the Parts Bin, which is over at the top right. Then pull in more parts, connecting them by clicking on the connectors and dragging wires. The process is similar to how you would arrange things in the physical world. &lt;br/&gt;&lt;br/&gt;After you&apos;re finished creating your sketch in the breadboard view, try the other views. You can switch by clicking the other views in either the View Switcher or the Navigator on the lower right. Because different views have different purposes, parts will look different in the other views.</source>
-        <translation>&lt;b&gt;ブレットボード ビュー&lt;/b&gt; は実際のブレッドボードを使っているかのようにプロトタイピングができます.&lt;br/&gt;&lt;br/&gt;右上にあるパーツ・ビンからパーツを取り出してドラッグしてください。. 他のパーツも引っ張りだしてコネクタをクリックして接続し、ワイヤをドラッグして配線してください。.現実世界と似た感覚で作業が出来るでしょう。. &lt;br/&gt;&lt;br/&gt;ボレッドボードビューのスケッチを終了したら, 他のビューも試してみてください. ビューの切り替えは画面左上のスイッチャーか右下のナビゲータで切り替えることができます. ビューによって目的が異なり、パーツの外見も変わって表示されます.</translation>
-    </message>
-    <message>
-        <source>Welcome to the &lt;b&gt;Schematic View&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;This is a more abstract way to look at components and connections than the Breadboard View. You have the same elements as you have on your breadboard, they just look different. This representation is closer to the traditional diagrams used by engineers.&lt;br/&gt;&lt;br/&gt;You can press &amp;lt;Shift&amp;gt;-click with the mouse to create bend points and tidy up your connections. The Schematic View can help you check that you have made the right connections between components. You can also print out your schematic for documentation.</source>
-        <translation>ようこそ &lt;b&gt;回路図 ビュー&lt;/b&gt;へ&lt;br/&gt;&lt;br/&gt;このビューは、ブレッドボードビューよりも理論的に部品や配線をすることが出来ます。 このビューはブレッドボードビューと同じ要素を持っていますが見た目は違います. 回路図はエンジニアによって利用されています。.&lt;br/&gt;&lt;br/&gt;&amp;lt;Shift&amp;gt;キーを押しながらクリックすると配線を追加したり整理することが出来ます. 回路図ビューは部品の接続が正しいか確認したり、プリントアウトすることが出来ます.</translation>
-    </message>
-    <message>
-        <source>The &lt;b&gt;PCB View&lt;/b&gt; is where you design how the components will appear on a physical PCB (Printed Circuit Board).&lt;br/&gt;&lt;br/&gt;PCBs can be made at home or in a small lab using DIY etching processes. They also can be sent to professional PCB manufacturing services for more precise fabrication. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;The first thing you will need is a board to place your parts on. There should already be one beneath this widget, but if not, drag in the board icon from the parts bin (image at right). &lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/parts/svg/core/icon/rectangle_pcb.svg&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br/&gt;&lt;br/&gt;To lay out your PCB, rearrange all the components so they fit nicely on the board. Then try to shift them around to minimize the length and confusion of connections. You can also resize rectangular boards. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;Once the parts are sorted out, you connect them with copper traces. You can drag out a trace from individual connections or use the autorouter to generate them. The Autoroute button is at the bottom of the window (image at right).&lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/images/icons/toolbarAutorouteEnabled_icon.png&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1817,10 +1821,6 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
         <translation>Fritzing 起動時のヘルプを再表示</translation>
     </message>
     <message>
-        <source>Show or Hide First Time Help</source>
-        <translation>最初のヘルプを表示または隠す</translation>
-    </message>
-    <message>
         <source>Check for updates...</source>
         <translation>アップデートの確認...</translation>
     </message>
@@ -2475,10 +2475,6 @@ Please check all views for potential side-effects.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Order PCB</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Order a PCB...</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2928,10 +2924,6 @@ Go ahead and revert?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>View Switcher</source>
-        <translation type="unfinished">スイッチャーを表示</translation>
-    </message>
-    <message>
         <source>Inspector</source>
         <translation type="unfinished">インスペクター</translation>
     </message>
@@ -2950,10 +2942,6 @@ Go ahead and revert?</source>
     <message>
         <source>PCB</source>
         <translation type="unfinished">プリント基板</translation>
-    </message>
-    <message>
-        <source>Navigator</source>
-        <translation type="unfinished">ナビゲーター</translation>
     </message>
     <message>
         <source>Layers</source>
@@ -3258,6 +3246,42 @@ Do you want to update now?</source>
         <translation type="unfinished">
             <numerusform></numerusform>
         </translation>
+    </message>
+    <message>
+        <source>Click to highlight unconnected parts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fabricate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Welcome</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Dump all parts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Debug dump all parts in this view</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+5</source>
+        <translation type="unfinished">Ctrl+2 {5?}</translation>
+    </message>
+    <message>
+        <source>&amp;Show Welcome</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show the welcome view</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Display First Time Help</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -6416,139 +6440,187 @@ Note: you can also trigger this display by mousing down on the routing status te
         <translation>ヒントとコツ</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;body&gt;</source>
-        <translation>&lt;html&gt;&lt;body&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;h3&gt;Fritzing Tips and Tricks&lt;/h3&gt;</source>
-        <translation>&lt;h3&gt;Fritzing ヒントとコツ&lt;/h3&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;ul&gt;</source>
-        <translation>&lt;ul&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;li&gt;Use shift-drag on a wire end or bendpoint to constrain its wire segment to an angle of 45 degrees (or some multiple of 45 degrees).  If the wire segment is connected to other wire segments, the segment you&apos;re dragging will snap to make 90 degree angles with the neighboring wire segment.&lt;/li&gt;</source>
-        <translation>&lt;li&gt;シフトを押しながらワイヤの接続点や折り曲げ点をドラッグすると45°の単位の角度で移動できます,もし、ワイヤが他のワイヤと接続されている時には、ドラッグすることで近くにあるワイヤと90°の角度を保つようにスナップ(吸着)されます&lt;/li&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;li&gt;To constrain the motion of a part to horizontal or vertical, hold down the shift key as you drag it.&lt;/li&gt;</source>
-        <translation>&lt;li&gt;水平・垂直にパーツを動かしたい時にはシフトキーを押しながらドラッグします&lt;/li&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;li&gt;If you&apos;re having trouble selecting a part or a wire (segment), try selecting the part that&apos;s in the way and send it to the back: use the Raise and Lower functions on the Part menu or the context menu (right-click menu).&lt;/li&gt;</source>
-        <translation>&lt;li&gt;もし、パーツまたはワイヤの選択が出来ないときは最背面レイヤへ送ってください。&lt;/li&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;li&gt;When you export images from Fritzing, you can choose which layers are exported. Before you choose &apos;Export...&apos;, go into the &apos;View&apos; menu and hide the layers you don&apos;t want to be visible.&lt;/li&gt;</source>
-        <translation>&lt;li&gt;Fritzing のエクスポート機能を使うときは、対象レイヤを選んでから行ってください。エクスポートの前に、表示メニューから隠したいレイヤを非表示にしてから行ってください.&lt;/li&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;/ul&gt;</source>
-        <translation>&lt;/ul&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;li&gt;To edit a part label, double-click it, or use the text input widget in the inspector window.&lt;/li&gt;</source>
+        <source>Fritzing Tips and Tricks</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;li&gt;To add a bendpoint to a wire, double-click where you want the bendpoint.&lt;/li&gt;</source>
+        <source>parts</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;li&gt;To delete a bendpoint from a wire, double-click it.&lt;/li&gt;</source>
+        <source>If you can&apos;t find a part in the Parts Bin, the Generic IC is your friend.  Drag it onto your sketch, then use the widgets in the Inspector to: choose from among 25 different through-hole and SMD packages; change the pin label; and--for DIPs and SIPs--change the number of pins.  You can also change the pin names with the Pin Label editor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;li&gt;To toggle the visibility of layer in a view, go to the view menu and choose one of the view layer items.  Or open up the &lt;b&gt;Layers&lt;/b&gt; palette from the &lt;b&gt;Window&lt;/b&gt; menu.&lt;/li&gt;</source>
+        <source>An icon in the parts bin may actually represent multiple related parts.  So when you drag an icon from the parts bin into a sketch, make sure you look at the inspector.  The inspector will display the range of choices available for you to modify a part, or swap it for a related part. The parts bin icon will also be a little &apos;stack&apos; and not just a flat icon.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;li&gt;An icon in the parts bin may actually represent multiple related parts.  So when you drag an icon from the parts bin into a sketch, make sure you look at the inspector.  The inspector will display the range of choices available for you to modify a part, or swap it for a related part. The parts bin icon will also be a little &apos;stack&apos; and not just a flat icon.&lt;/li&gt;</source>
+        <source>The Inspector Window--which lets you change the properties of parts--is only enabled for parts that are in a sketch (not for parts still in a Parts Bin).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;li&gt;To drag a wire segment (a section of a wire between two bendpoints), drag it with the Alt (Linux: Meta) key down.  If you also hold down the shift key, the wire segment will be constrained to horizontal or vertical motion.&lt;/li&gt;</source>
+        <source>moving and selection</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;li&gt;In Schematic or PCB view, if you drag from a bendpoint with the Alt (Linux: Meta) key down, you will drag out a new wire from that bendpoint.&lt;/li&gt;</source>
+        <source>To constrain the motion of a part to horizontal or vertical, hold down the shift key as you drag it.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;li&gt;In Breadboard view, to drag out a wire from the end of a rubber-band leg, drag with the Alt (Linux: Meta) key down.&lt;/li&gt;</source>
+        <source>If you&apos;re having trouble selecting a part or a wire (segment), try selecting the part that&apos;s in the way and send it to the back: use the Raise and Lower functions on the Part menu or the context menu (right-click menu).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;li&gt;In Breadboard view, to drag a part with rubber-band legs while keeping it connected to the breadboard, hold the Alt (Linux: Meta) key down when you start dragging.&lt;/li&gt;</source>
+        <source>To more precisely move a selection of parts, use the arrow keys.  Shift-arrow moves by 10 units.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;li&gt;In Breadboard view, to add a curve to a wire or rubber-band leg, drag with the Control (Mac: Command) key down.  You can set whether curvy wires are the default in Preferences.&lt;/li&gt;</source>
+        <source>Click on the mouse position indicator in the status bar (at the bottom) to toggle the units from in to mm to px.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;li&gt;If you can&apos;t find a part in the Parts Bin, the Generic IC is your friend.  Drag it onto your sketch, then use the widgets in the Inspector to: choose from among 25 different through-hole and SMD packages; change the pin label; and--for DIPs and SIPs--change the number of pins.  You can also change the pin names with the Pin Label editor&lt;/li&gt;</source>
+        <source>curves and rubber band legs</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;li&gt;To free-rotate a part in Breadboard or PCB view, select it, then hover your mouse near one of the corners until you see the rotate cursor. Mouse down and that corner will follow your mouse as you drag.&lt;/li&gt;</source>
+        <source>In Breadboard view, to drag a part with rubber-band legs while keeping it connected to the breadboard, hold the Alt (Linux: Meta) key down when you start dragging.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;li&gt;To free-rotate a logo text or image item in PCB view hold down the Alt (Linux: meta) key and free-rotate as usual.&lt;/li&gt;</source>
+        <source>In Breadboard view, to drag out a wire from the end of a rubber-band leg, drag with the Alt (Linux: Meta) key down.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;li&gt;To display different properties in a part label, as well as rotate it, or change the font, right-click the label.&lt;/li&gt;</source>
+        <source>In Breadboard or PCB view, to add a curve to a wire or rubber-band leg, drag with the Control (Mac: Command) key down.  You can set whether curvy wires are the default in Preferences.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;li&gt;To more precisely move a selection of parts, use the arrow keys.  Shift-arrow moves by 10 units.&lt;/li&gt;</source>
+        <source>rotation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;li&gt;&lt;h4&gt;parts&lt;/h4&gt;</source>
+        <source>To free-rotate a part in Breadboard or PCB view, select it, then hover your mouse near one of the corners until you see the rotate cursor. Mouse down and that corner will follow your mouse as you drag.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;/ul&gt;&lt;/li&gt;</source>
+        <source>To free-rotate a logo text or image item in PCB view hold down the Alt (Linux: meta) key and free-rotate as usual.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;li&gt;&lt;h4&gt;moving and selection&lt;/h4&gt;</source>
+        <source>layers and views</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;li&gt;&lt;h4&gt;curves and rubber band legs&lt;/h4&gt;</source>
+        <source>To drag the canvas, hold down the space bar and drag with the mouse.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;li&gt;&lt;h4&gt;rotation&lt;/h4&gt;</source>
+        <source>To toggle the visibility of layer in a view, go to the view menu and choose one of the view layer items.  Or open up the &lt;b&gt;Layers&lt;/b&gt; palette from the &lt;b&gt;Window&lt;/b&gt; menu.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;li&gt;&lt;h4&gt;layers and views&lt;/h4&gt;</source>
+        <source>When you export images from Fritzing, you can choose which layers are exported. Before you choose &apos;Export...&apos;, go into the &apos;View&apos; menu and hide the layers you don&apos;t want to be visible.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;li&gt;To drag the canvas, hold down the space bar and drag with the mouse.&lt;/li&gt;</source>
+        <source>part labels</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;li&gt;&lt;h4&gt;part labels&lt;/h4&gt;</source>
+        <source>To edit a part label, double-click it, or use the text input widget in the inspector window.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;li&gt;To move a part label independently from its part, select the part first--both the part and the label will be highlighted. Once the label is selected you can drag it.&lt;/li&gt;</source>
+        <source>To display different properties in a part label, as well as rotate it, or change the font, right-click the label.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;li&gt;&lt;h4&gt;wires and bendpoints&lt;/h4&gt;</source>
+        <source>To move a part label independently from its part, select the part first--both the part and the label will be highlighted. Once the label is selected you can drag it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>wires and bendpoints</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>To add a bendpoint to a wire, double-click where you want the bendpoint.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>To delete a bendpoint from a wire, double-click it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>In Schematic or PCB view, if you drag from a bendpoint with the Alt (Linux: Meta) key down, you will drag out a new wire from that bendpoint.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>To drag a wire segment (a section of a wire between two bendpoints), drag it with the Alt (Linux: Meta) key down.  If you also hold down the shift key, the wire segment will be constrained to horizontal or vertical motion.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use shift-drag on a wire end or bendpoint to constrain its wire segment to an angle of 45 degrees (or some multiple of 45 degrees).  If the wire segment is connected to other wire segments, the segment you&apos;re dragging will snap to make 90 degree angles with the neighboring wire segment.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>connections</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>To see all the connectors connected to a given connector, hold the mouse down on the connector--all the connections will be highlighted.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A ratsnest line (very thin &apos;wire&apos;) between connection in one view means that those connections are somehow connected in another view.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>pcb layout</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Always lead a trace straight out of a pin. This helps to prevent short circuits.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Through-hole parts can be traced from either side of a PCB.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>It makes life easier to route traces horizontally on one side of a PCB and vertically on the other side.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Route traces in 45-degree angles to reduce noise.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>If Fritzing is missing your special part and you don&apos;t want to build one by yourself, then use pinheaders as connectors and the grid to align them.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You can put your own Logo in the silkscreen of your PCB. Just use the Logo part of the core library and select your own file. SVG is the best format.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Smaller PCBs are more affortable than larger ones. Save space and money.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use copper-blocker parts to mask out areas that you want free of copper fill.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>To change trace width, select a trace then use the &lt;b&gt;width&lt;/b&gt; combo box in the Inspector. You can use the drop-down or just type in a number (from 8 to 128).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>parts editor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>To find the SVG file for a part&apos;s image in a given view, click on the tab for that view, then use &lt;b&gt;Show in Folder&lt;/b&gt; under the &lt;b&gt;File&lt;/b&gt; Menu.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -6726,21 +6798,109 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
 </context>
 <context>
-    <name>ViewSwitcher</name>
+    <name>WelcomeView</name>
     <message>
-        <source>Breadboard</source>
-        <translation>ブレッドボード</translation>
+        <source>Recent Sketches</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Schematic</source>
-        <translation>回路図</translation>
+        <source>New Sketch</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>PCB</source>
-        <translation>プリント基板</translation>
+        <source>Open Sketch</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Code</source>
+        <source>Fab</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Shop</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fritzing CreatorKit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The Fritzing Creator Kit provides a fast, easy and entertaining introduction to the world of interactive electronics.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>order now &gt;&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Get your Creator Kit now.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fritzing Fan</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fritzing Fab is an easy and affordable service for producing professional PCBs from your Fritzing sketches.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>produce your first pcb now &gt;&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Order your PCB now.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;a href=&apos;%1&apos;&gt;&lt;img src=&apos;%2&apos;/&gt;&lt;/a&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Projects</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Blog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fritzing News.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fritzing Projects.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>|</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;a href=&apos;%1&apos;&gt;&lt;img src=&apos;%2&apos; /&gt;&lt;/a&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No recent sketches found</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to reach blog.fritzing.org</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to reach friting.org/projects</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tip of the Day:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All Tips</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Next Tip</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

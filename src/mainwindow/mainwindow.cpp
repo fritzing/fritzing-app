@@ -135,7 +135,7 @@ void FTabBar::paintEvent(QPaintEvent * event) {
         for (int i = 0; i < this->count(); ++i) {
             QStyleOptionTabV3 tab;
             initStyleOption(&tab, 0);
-            DebugDialog::debug(QString("state %1").arg(tab.state));
+            //DebugDialog::debug(QString("state %1").arg(tab.state));
             QString text = tabText(i);
             int added = 0;
             int lastWidth = 0;

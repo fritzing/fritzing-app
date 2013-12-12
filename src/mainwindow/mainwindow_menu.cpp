@@ -4119,7 +4119,6 @@ QStringList MainWindow::newDesignRulesCheck(bool showOkMessage)
 	connect(&drc, SIGNAL(setMaximumProgress(int)), &progress, SLOT(setMaximum(int)), Qt::DirectConnection);
 	connect(&drc, SIGNAL(setProgressValue(int)), &progress, SLOT(setValue(int)), Qt::DirectConnection);
 	connect(&drc, SIGNAL(setProgressMessage(const QString &)), &progress, SLOT(setMessage(const QString &)));
-	connect(&drc, SIGNAL(setProgressMessage2(const QString &)), &progress, SLOT(setMessage2(const QString &)));
 	connect(&drc, SIGNAL(hideProgress()), &progress, SLOT(close()));
 
 	ProcessEventBlocker::processEvents();

@@ -726,7 +726,7 @@ void WelcomeView::gotBlogSnippet(QNetworkReply * networkReply) {
 	}
 
     if (!goodBlog) {
-        if (responseCode == 500 && !blog) {
+        if ((responseCode == 500 || responseCode == 404) && !blog) {
             QNetworkAccessManager * manager2 = new QNetworkAccessManager(this);
 	        connect(manager2, SIGNAL(finished(QNetworkReply *)), this, SLOT(gotBlogSnippet(QNetworkReply *)));
 	        manager2->get(QNetworkRequest(QUrl("http://green.fritzing.org/projects/snippet/")));

@@ -665,7 +665,7 @@ void FApplication::registerFonts() {
 	registerFont(":/resources/fonts/DroidSans.ttf", true);
 	registerFont(":/resources/fonts/DroidSans-Bold.ttf", false);
 	registerFont(":/resources/fonts/DroidSansMono.ttf", false);
-	registerFont(":/resources/fonts/OCRA.ttf", false);
+	registerFont(":/resources/fonts/OCRA.ttf", true);
 
     // "Droid Sans" 
     // "Droid Sans Mono" 
@@ -1155,7 +1155,7 @@ void FApplication::registerFont(const QString &fontFile, bool reallyRegister) {
 		foreach (QString family, familyNames) {
 			InstalledFonts::InstalledFontsNameMapper.insert(family, finfo.completeBaseName());
 			InstalledFonts::InstalledFontsList << family;
-			//DebugDialog::debug("registering font family: "+family);
+			DebugDialog::debug(QString("registering font family: %1 %2").arg(family).arg(finfo.completeBaseName()));
 		}
 	}
 }

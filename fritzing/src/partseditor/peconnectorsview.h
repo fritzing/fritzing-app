@@ -47,7 +47,7 @@ $Date: 2012-10-02 07:21:40 +0200 (Di, 02. Okt 2012) $
 #include "../connectors/connector.h"
 #include "../referencemodel/referencemodel.h"
 
-class PEConnectorsView : public QWidget
+class PEConnectorsView : public QFrame
 {
 Q_OBJECT
 public:

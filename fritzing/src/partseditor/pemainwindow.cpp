@@ -522,7 +522,6 @@ void PEMainWindow::moreInitDock()
 
 
     m_peToolView = new PEToolView();
-    m_peToolView -> setObjectName("PEToolView2");
     connect(m_peToolView, SIGNAL(getSpinAmount(double &)), this, SLOT(getSpinAmount(double &)), Qt::DirectConnection);
     connect(m_peToolView, SIGNAL(terminalPointChanged(const QString &)), this, SLOT(terminalPointChanged(const QString &)));
     connect(m_peToolView, SIGNAL(terminalPointChanged(const QString &, double)), this, SLOT(terminalPointChanged(const QString &, double)));
@@ -545,6 +544,7 @@ void PEMainWindow::moreInitDock()
 
     if (m_infoView) {
         makeDock(tr("Inspector"), m_infoView, InfoViewMinHeight, InfoViewHeightDefault);
+        this -> setObjectName("PEInspector");
     }
 
     makeDock(tr("Layers"), m_layerPalette, DockMinWidth, DockMinHeight)->hide();

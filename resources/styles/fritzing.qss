@@ -1,13 +1,193 @@
-/* ########### the main window and general things ############## */
+/* ########### the partseditor window ############## 
+################################################
+################################################
+################################################ */
 
-MainWindow {
+#PEMainWindow
+{
+        font-size: 11px;
+        color: #fff;
+		font-family:Droid Sans;
+		background-color:#666666; 
+}
+/*
+
+#PEMainWindow FDockWidget
+{
+        font-size: 11px;
+        color: #fff;
+		font-family:Droid Sans;
+	background-color:#f0f;
+}
+
+/*
+#PEToolView {
+		background-color:#00f;
+	}
+	
+#PEConnectors,
+#dockFrame {
+		background-color:#f0f;
+	}
+		
+
+	
+	
+#connectorFrame {
+	background-color:#f0f;
+	}
+	
+
+#NewPartsEditorConnector0Frame {
+	background-color: #f0f;
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+}
+
+#NewPartsEditorConnector1Frame {
+	background-color: #0f0;
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+}
+
+#NewNewPartsEditorConnectorFrame {
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+}
+
+
+#PESvgView {
+	background-color: #000000;
+	color: #000000;
+}
+
+#PEToolView2 {
+	background-color: #00f;
+	color: #000000;
+}
+
+#PEToolView {
+	background-color:#f0f;
+	}
+	*/
+/*############ parteditor tabs ################*/
+
+#Inspector {
+		background-color:#f0f;
+	}
+	
+	#SVG {
+		background-color:#00f;
+	}
+	
+
+
+#pe_tabs::pane
+{ /*the tab-window*/
+
+ 	padding: 0px 0px 0px 0px;
+	border:none;
+	background:#d5e1e9;
+	margin:0px;
+	font-family: Droid Sans;
+	font-size:14px;
+	font-weight: regular;
+}
+
+#pe_tabs::tab-bar 
+ /*this is the complete tab-bar*/
+{
+ 	top: 0px;
+ 	left: 10px;
+	right: 0px;
+	font-family: Droid Sans;	
+	font-size:14px;
+	font-weight: regular;
+	background: #b1b1b1;
+
+}
+
+#pe_tabs QTabBar::tab  
+{
+	margin: 0px 10px -1px 10px;
+	font-family: Droid Sans;		
+	font-size:14px;
+	font-weight: regular;
+	min-height: 35px;
+	background:#fff;
+}
+
+#pe_tabs QTabBar::tab:selected 
+ /*the active tab*/
+ {
+	font-family: Droid Sans;
+	font-size:14px;
+	background-color: transparent;
+	font-weight: regular;
+	color: #eee;
+	border:none;
+	margin-bottom:-1px;
+	background-image: url(:/resources/images/icons/segmentedSwitcherXActiveFocus.png);
+}
+
+
+#pe_tabs QTabBar::tab:selected:hover 
+/*the active tab hover*/
+{ 
+	font-family: Droid Sans;
+	font-size:14px;
+	background-color: transparent;
+	font-weight: regular;
+	color: #fff;
+	border:none;
+	margin-bottom:-1px;
+	background-image: url(:/resources/images/icons/segmentedSwitcherXActiveFocusHover.png);
+}
+
+#pe_tabs QTabBar::tab:!selected {
+/*the inactive tabs*/	
+	background-color: transparent;
+	font-family: Droid Sans;
+	font-size:14px;
+	color: #666;
+	font-weight:regular;
+	margin-bottom:-1px;
+	background-image: url(:/resources/images/icons/segmentedSwitcherXInactiveFocusHover.png);
+}
+
+ #pe_tabs QTabBar::tab:!selected:hover 
+ /*the inactive tab- hover*/
+ { 
+	background-color: transparent;
+	font-family: Droid Sans;
+	font-size:14px;
+	border:none;
+	color: #fff;
+	font-weight:regular;
+	margin-bottom:-1px;
+	background-image: url(:/resources/images/icons/segmentedSwitcherXInactiveFocusHover.png);
+}
+
+	
+/* ########### the main window and general things ############## 
+################################################
+################################################
+################################################ */
+#theMainWindow
+{
         /* layout here  */
 		background-color:#b1b1b1; /*mainbackground color - you see it behind the mainwindow-tabs*/
         /* styling there */
         font-size: 11px;
         color: #fff;
 		font-family:Droid Sans;
+		selection-background-color: none;
+		selection-border: none;
 }
+
 
 
 QStatusBar {
@@ -129,19 +309,6 @@ QStatusBar::item {
 		color: #fff;
 }
 
-/* PEMainWindow seems to be needed here rathern in newpartseditor.qss */
-/* this separates palettes from each other and is movable */
-
-PEMainWindow {
-        /* layout here */
-
-        /* styling there */
-        background: #b1b1b1;
-		font-family: Droid Sans;
-}
-
-
-
 /* ################### Mainmenubar window #################### */
 
 QMenuBar {
@@ -221,27 +388,31 @@ QMenu::item:disabled:selected {
 
 }
 
- /*############## indicator:non-exclusive is a checkbox ###########*/
- QMenu::indicator:non-exclusive:checked {
+ /*############## indicator:non-exclusive is a  ###########*/
+QCheckBox::indicator:checked,
+QMenu::indicator:non-exclusive:checked {
      image: url(:/resources/images/icons/check.png);
 	 	 background-color:transparent;
 		 	border:none;
  }
  
- QMenu::indicator:non-exclusive:checked:selected {
+QCheckBox::indicator:checked:selected,
+QMenu::indicator:non-exclusive:checked:selected {
      image: url(:/resources/images/icons/checkhover.png);
 	 	 background-color:transparent;
 		 	border:none;
  }
-
- QMenu::indicator:non-exclusive:unchecked {  /*the checkbox for the mainmenu */
+ 
+QCheckBox::indicator:unchecked,
+QMenu::indicator:non-exclusive:unchecked {  /*the checkbox for the mainmenu */
     image: url(:/resources/images/icons/nocheck.png);
 	 	 background-color:transparent;
 		 	border:transparent;
 			
  }
-
-  QMenu::indicator:non-exclusive:unchecked:selected {
+ 
+QCheckBox::indicator:unchecked:selected,
+QMenu::indicator:non-exclusive:unchecked:selected {
      image: url(:/resources/images/icons/check.png);
 	 	 background-color:transparent;
 		 	border:none;
@@ -349,133 +520,6 @@ QMenu::item:disabled:selected {
 }
 
 
-
-/*############ parteditor styling ################*/
-#pe_tabs::pane
-{ /*the tab-window*/
-
- 	padding: 0px 0px 0px 0px;
-	border:none;
-	background:#d5e1e9;
-	margin:0px;
-	font-family: Droid Sans;
-	font-size:14px;
-	font-weight: regular;
-}
-
-#pe_tabs::tab-bar 
- /*this is the complete tab-bar*/
-{
- 	top: 0px;
- 	left: 10px;
-	right: 0px;
-	font-family: Droid Sans;	
-	font-size:14px;
-	font-weight: regular;
-	background: #b1b1b1;
-
-}
-
-#pe_tabs QTabBar::tab  
-{
-	margin: 0px 10px -1px 10px;
-	font-family: Droid Sans;		
-	font-size:14px;
-	font-weight: regular;
-	min-height: 35px;
-	background:#fff;
-}
-
-#pe_tabs QTabBar::tab:selected 
- /*the active tab*/
- {
-	font-family: Droid Sans;
-	font-size:14px;
-	background-color: transparent;
-	font-weight: regular;
-	color: #eee;
-	border:none;
-	margin-bottom:-1px;
-	background-image: url(:/resources/images/icons/segmentedSwitcherXActiveFocus.png);
-}
-
-
-#pe_tabs QTabBar::tab:selected:hover 
-/*the active tab hover*/
-{ 
-	font-family: Droid Sans;
-	font-size:14px;
-	background-color: transparent;
-	font-weight: regular;
-	color: #fff;
-	border:none;
-	margin-bottom:-1px;
-	background-image: url(:/resources/images/icons/segmentedSwitcherXActiveFocusHover.png);
-}
-
-#pe_tabs QTabBar::tab:!selected {
-/*the inactive tabs*/	
-	background-color: transparent;
-	font-family: Droid Sans;
-	font-size:14px;
-	color: #666;
-	font-weight:regular;
-	margin-bottom:-1px;
-	background-image: url(:/resources/images/icons/segmentedSwitcherXInactiveFocusHover.png);
-}
-
- #pe_tabs QTabBar::tab:!selected:hover 
- /*the inactive tab- hover*/
- { 
-	background-color: transparent;
-	font-family: Droid Sans;
-	font-size:14px;
-	border:none;
-	color: #fff;
-	font-weight:regular;
-	margin-bottom:-1px;
-	background-image: url(:/resources/images/icons/segmentedSwitcherXInactiveFocusHover.png);
-}
-
-#connectorFrame {
-	background-color:#f0f;
-	}
-	
-
-#NewNewPartsEditorConnector0Frame {
-	background-color: #cccccc;
-	margin: 0px;
-	padding: 0px;
-	border: 0px;
-}
-
-#NewNewPartsEditorConnector1Frame {
-	background-color: #eeeeee;
-	margin: 0px;
-	padding: 0px;
-	border: 0px;
-}
-
-#NewNewPartsEditorConnectorFrame {
-	margin: 0px;
-	padding: 0px;
-	border: 0px;
-}
-
-
-#PESvgView {
-	background-color: #000000;
-	color: #000000;
-}
-
-#PEToolView2 {
-	background-color: #00f;
-	color: #000000;
-}
-
-PEToolView {
-	background-color:#f0f;
-	}
 
 /* ################### WelcomeScreen styling (WC) #################### */
 
@@ -1231,69 +1275,6 @@ ToolBarSeparator {
 	margin:5px 10px 5px 5px;
 	}
 	
-
-/*
-QLabel #shareProjectButton {
-	color:#ff0;
-	background:#0ff;
-	padding: 0px 0px 0px 0px;
-	height: 30px;
-	width:50px;
-	margin:10px 5px 10px 5px;
-	background-image:none;
-	}
-*/
-/*
-#sketchAreaToolbar orderFabButton {
-	background:#f0f;
-	color:#00f;
-	}
-	
-orderFabButton {
-	background:#fff;
-	color:#f0f;
-	}
-
-#orderFabButton {
-	color:#000;
-	padding-bottom:10px;
-	}
-
-#sketchAreaToolbar #orderFabButton {
-	background:transparent;
-	color:#fff;
-	image:url(:/resources/images/icons/toolbarOrderEnabled_icon.png);
-}
-
-#sketchAreaToolbar #orderFabButton:hover   {
-	background:transparent;
-	color:#fff;
-	image:url(:/resources/images/icons/toolbarOrderPressed_icon.png);
-	}
-#sketchAreaToolbar #orderFabButton:disabled   {
-	background:transparent;
-	color:#dadada;
-	image:url(:/resources/images/icons/toolbarOrderDisabled_icon.png);
-	}
-	
-#sketchAreaToolbar #shareProjectButton {
-	background:transparent;
-	color:#fff;
-	image:url(:/resources/images/icons/toolbarShareEnabled_icon.png);
-}
-
-#sketchAreaToolbar #shareProjectButton:hover   {
-	background:transparent;
-	color:#fff;
-	image:url(:/resources/images/icons/toolbarSharePressed_icon.png);
-	}
-#sketchAreaToolbar #shareProjectButton:disabled   {
-	background:transparent;
-	color:#dadada;
-	image:url(:/resources/images/icons/toolbarShareDisabled_icon.png);
-	}
-*/
-
 /* ################### zoomslider #################### */
 
 QSlider::groove:horizontal { /*this is the slider - "line" */
@@ -1843,7 +1824,32 @@ HtmlInfoView QScrollBar:vertical {
         border-top: 1px solid #9b9b9b;
 }
 
+/**************** Layer window ***********************/
+LayerPalette, LayerPalette::title,
+LayerPalette QObject {
+	background: #d9d9d9;
+}
 
+#LayerWindow::indicator {
+	background: #f00;
+}
+
+#LayerWindowList {
+	background: transparent;
+
+}
+
+
+#LayerWindowFrame
+{
+	background: #f0f;
+
+	}
+
+#LayerWindowBoxes
+{
+	background:#0f0;
+	}
 /***************** Parts Bin *****************/
 
 #partsBinHeader {
@@ -1897,7 +1903,8 @@ PartsBinListView { /*the styling if you look the parts-window in list view mode*
 #partsBinHeader,
 PartsBinPaletteWidget,
 PartsBinPaletteWidget SimpleEditableLabelWidget,
-PartsBinPaletteWidget InfoGraphicsView {
+PartsBinPaletteWidget InfoGraphicsView
+{
         background-color: #d9d9d9; /*background of parts library*/
         border: none;
 }
@@ -2041,6 +2048,7 @@ StackTabBar QToolButton::down-arrow:pressed{
 
 MainWindow {
 	qproperty-fireQuoteDelay: 250;  /* milliseconds */
+	background:#aaa;
 }
 	
 SketchWidget {

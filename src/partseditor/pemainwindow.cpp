@@ -3221,12 +3221,14 @@ void PEMainWindow::replaceProperty(const QString & key, const QString & value, Q
 
 QWidget * PEMainWindow::createTabWidget() {
     QTabWidget * tabWidget = new QTabWidget(this);
+    tabWidget->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     tabWidget->setObjectName("pe_tabs");
 	return tabWidget;
 }
 
 void PEMainWindow::addTab(QWidget * widget, const QString & label) {
 	qobject_cast<QTabWidget *>(m_tabWidget)->addTab(widget, label);
+    this -> setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 }
 
 int PEMainWindow::currentTabIndex() {

@@ -472,7 +472,7 @@ QWidget * WelcomeView::initShop() {
     frameLayout->addWidget(m_shopUberFrame);
 
     m_fabUberFrame = createShopContentFrame(":/resources/images/pcbs_2013.png", 
-                                                tr("Fritzing Fan"),
+                                                tr("Fritzing Fab"),
                                                 tr("Fritzing Fab is an easy and affordable service for producing professional PCBs from your Fritzing sketches."),
                                                 "http://fab.fritzing.org/",
                                                 tr("produce your first pcb now >>"),

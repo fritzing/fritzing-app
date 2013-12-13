@@ -358,5 +358,9 @@
         <file>resources/images/icons/TabScrollArrowButtonUpPressed.png</file>
         <file>resources/images/icons/TabScrollArrowButtonDownNormal.png</file>
         <file>resources/images/icons/TabScrollArrowButtonDownPressed.png</file>
+	        <file>resources/images/icons/TabScrollArrowButtonLeftNormal.png</file>
+        <file>resources/images/icons/TabScrollArrowButtonLeftPressed.png</file>
+        <file>resources/images/icons/TabScrollArrowButtonRightNormal.png</file>
+        <file>resources/images/icons/TabScrollArrowButtonRightPressed.png</file>
     </qresource>
 </RCC>

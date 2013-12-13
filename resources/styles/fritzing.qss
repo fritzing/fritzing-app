@@ -10,79 +10,71 @@
 		font-family:Droid Sans;
 		background-color:#666666; 
 }
-/*
 
-#PEMainWindow FDockWidget
-{
+	
+#PEToolView::title {
+	border:1px solid #b1b1b1;
+	}
+
+
+#PEToolView, #peSVG,
+LayerPalette, LayerPalette::title,
+LayerPalette QObject {
+	background: #d9d9d9;
+}
+
+#PEToolView QPushButton {
         font-size: 11px;
-        color: #fff;
-		font-family:Droid Sans;
-	background-color:#f0f;
+        /*min-width: 100px;*/
+        text-align: center;
+        background: #ececec;
+        border: 1px solid #b1b1b1;
+        border-radius: 0px;
+        padding: 2px;
+		color: #323232;
+		margin-top:3px;
+		margin-bottom:3px;
 }
 
-/*
-#PEToolView {
-		background-color:#00f;
+#PEToolView QPushButton:hover  {
+        background: #fff;
+}
+
+#PEToolView QPushButton:pressed,
+#PEToolView QPushButton:on {
+        background: #666;
+		color: #fff;
+}
+
+#PEToolView QTreeWidget {
+	background: #fff;
+	show-decoration-selected: 1;
 	}
 	
-#PEConnectors,
-#dockFrame {
-		background-color:#f0f;
-	}
-		
 
-	
-	
-#connectorFrame {
-	background-color:#f0f;
+#PEToolView QTreeWidget::item:selected {
+	background:#dadada;
+	border:none;
 	}
 	
-
-#NewPartsEditorConnector0Frame {
-	background-color: #f0f;
-	margin: 0px;
-	padding: 0px;
-	border: 0px;
+#PEToolView QTreeWidget::item:selected:!active	 {
+	background:transparent;
+	border:none;
 }
 
-#NewPartsEditorConnector1Frame {
-	background-color: #0f0;
-	margin: 0px;
-	padding: 0px;
-	border: 0px;
-}
-
-#NewNewPartsEditorConnectorFrame {
-	margin: 0px;
-	padding: 0px;
-	border: 0px;
+#PEToolView QTreeWidget::item:selected:active	 {
+	background:#dadada;
+	border:none;
 }
 
 
-#PESvgView {
-	background-color: #000000;
-	color: #000000;
+#PEToolView QTreeWidget::item:hover	 {
+	background: #a5a5a5;
+	color:#fff;
+	border:none;
 }
 
-#PEToolView2 {
-	background-color: #00f;
-	color: #000000;
-}
-
-#PEToolView {
-	background-color:#f0f;
-	}
-	*/
 /*############ parteditor tabs ################*/
-
-#Inspector {
-		background-color:#f0f;
-	}
-	
-	#SVG {
-		background-color:#00f;
-	}
-	
 
 
 #pe_tabs::pane
@@ -118,6 +110,7 @@
 	font-weight: regular;
 	min-height: 35px;
 	background:#fff;
+	min-width:30px;
 }
 
 #pe_tabs QTabBar::tab:selected 
@@ -176,6 +169,9 @@
 ################################################
 ################################################
 ################################################ */
+
+
+
 #theMainWindow
 {
         /* layout here  */
@@ -279,6 +275,41 @@ QScrollBar::sub-page:vertical
 {
       background: transparent;
   }
+
+
+/* complex property values with up and down arrows */
+
+
+
+QDoubleSpinBox {
+        background: #fff;
+        font-size: 11px;
+        color: #000;
+        border: none;
+		
+}
+QDoubleSpinBox::down-button {
+        background: #fff;
+		border: none;
+		image: url(:/resources/images/icons/spinArrowButtonDownNormal.png);
+		margin-bottom:1px;
+}
+QDoubleSpinBox::down-button:pressed {
+        background: #fff;
+		border: none;
+		image: url(:/resources/images/icons/spinArrowButtonDownPressed.png);
+		margin-bottom:1px;
+}
+QDoubleSpinBox::up-button {
+        background: #fff;
+		border-bottom: none;
+		image: url(:/resources/images/icons/spinArrowButtonUpNormal.png);
+}
+DoubleSpinBox::up-button:pressed  {
+        background: #fff;
+		border-bottom: none;
+		image: url(:/resources/images/icons/spinArrowButtonUpPressed.png);
+}
 
 
 /* this separates palettes from each other and is movable */
@@ -1579,39 +1610,6 @@ HtmlInfoView QScrollBar:vertical {
 
 
 
-/* complex property values with up and down arrows */
-#infoViewDoubleSpinBox {
-        background: #fff;
-        font-size: 11px;
-        color: #000;
-        border: none;
-		
-}
-#infoViewDoubleSpinBox::down-button {
-        background: #fff;
-		border: none;
-		image: url(:/resources/images/icons/spinArrowButtonDownNormal.png);
-		margin-bottom:1px;
-}
-#infoViewDoubleSpinBox::down-button:pressed {
-        background: #fff;
-		border: none;
-		image: url(:/resources/images/icons/spinArrowButtonDownPressed.png);
-		margin-bottom:1px;
-}
-#infoViewDoubleSpinBox::up-button {
-        background: #fff;
-		border-bottom: none;
-		image: url(:/resources/images/icons/spinArrowButtonUpNormal.png);
-}
-#infoViewDoubleSpinBox::up-button:pressed  {
-        background: #fff;
-		border-bottom: none;
-		image: url(:/resources/images/icons/spinArrowButtonUpPressed.png);
-}
-
-
-
 #infoViewComboBox {
         font-size: 11px;
         color: rgb(0,0,0);
@@ -1824,32 +1822,7 @@ HtmlInfoView QScrollBar:vertical {
         border-top: 1px solid #9b9b9b;
 }
 
-/**************** Layer window ***********************/
-LayerPalette, LayerPalette::title,
-LayerPalette QObject {
-	background: #d9d9d9;
-}
 
-#LayerWindow::indicator {
-	background: #f00;
-}
-
-#LayerWindowList {
-	background: transparent;
-
-}
-
-
-#LayerWindowFrame
-{
-	background: #f0f;
-
-	}
-
-#LayerWindowBoxes
-{
-	background:#0f0;
-	}
 /***************** Parts Bin *****************/
 
 #partsBinHeader {
@@ -2043,55 +2016,40 @@ StackTabBar QToolButton::down-arrow:pressed{
 }
 
 
+/**************** LayerWindow and UndoWindow ***********************/
 
-/**************** sketch widgets ****************/
-
-MainWindow {
-	qproperty-fireQuoteDelay: 250;  /* milliseconds */
-	background:#aaa;
+LayerPalette, LayerPalette::title,
+LayerPalette QObject {
+	background: #d9d9d9;
 }
+
+QUndoView {
+	background: #d9d9d9;
+	show-decoration-selected: 1;
+	}
 	
-SketchWidget {
-        border: 0px;
-	font-weight: bold;
-	background-image:none;
+
+QUndoView::item:selected {
+	background:#dadada;
+	border:none;
+	}
+	
+QUndoView::item:selected:!active	 {
+	background:transparent;
+	border:none;
 }
 
-PCBSketchWidget {
-	qproperty-gridColor: rgba(150,200,250,20);
-	qproperty-ratsnestOpacity: 0.4;
-	qproperty-ratsnestWidth: 0.1;
-}
-
-BreadboardSketchWidget {
-	qproperty-gridColor: rgba(0,50,100,20);
-	qproperty-ratsnestOpacity: 0.7;
-	qproperty-ratsnestWidth: 0.7;
-}
-
-SchematicSketchWidget {
-	qproperty-gridColor: rgba(0,50,100,20);
-	qproperty-ratsnestOpacity: 0.7;
-	qproperty-ratsnestWidth: 0.7;
+QUndoView::item:selected:active	 {
+	background:transparent;
+	border:none;
 }
 
 
-
-/**************** the  breadboard-, schematic-, pcb-view switcher ****************/
-
-
-WaitPushUndoStack {
-        background-color: white;
-        color: #0f0;
+QUndoView::item:hover	 {
+	background: #a5a5a5;
+	color:#fff;
+	border:none;
 }
-
-SearchLineEdit {
-        color: #000000;
-        font-size: 11px;
-        font-family: Droid Sans, LucidaSans, Tahoma, Arial, sans-serif;
-        border: 1px solid #8c8c8c;
-}
-
 
 /**************** Fab Quote ****************/
 
@@ -2158,4 +2116,54 @@ SearchLineEdit {
 	margin-bottom: 0px;
 }
 
+
+
+
+/**************** sketch widgets ****************/
+
+MainWindow {
+	qproperty-fireQuoteDelay: 250;  /* milliseconds */
+	background:#aaa;
+}
+	
+SketchWidget {
+        border: 0px;
+	font-weight: bold;
+	background-image:none;
+}
+
+PCBSketchWidget {
+	qproperty-gridColor: rgba(150,200,250,20);
+	qproperty-ratsnestOpacity: 0.4;
+	qproperty-ratsnestWidth: 0.1;
+}
+
+BreadboardSketchWidget {
+	qproperty-gridColor: rgba(0,50,100,20);
+	qproperty-ratsnestOpacity: 0.7;
+	qproperty-ratsnestWidth: 0.7;
+}
+
+SchematicSketchWidget {
+	qproperty-gridColor: rgba(0,50,100,20);
+	qproperty-ratsnestOpacity: 0.7;
+	qproperty-ratsnestWidth: 0.7;
+}
+
+
+
+/**************** the  breadboard-, schematic-, pcb-view switcher ****************/
+
+
+WaitPushUndoStack {
+        background-color: white;
+        color: #0f0;
+}
+
+SearchLineEdit {
+        color: #000000;
+        font-size: 11px;
+        font-family: Droid Sans, LucidaSans, Tahoma, Arial, sans-serif;
+        border: 1px solid #8c8c8c;
+}
 	

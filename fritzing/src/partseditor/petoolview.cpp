@@ -60,7 +60,7 @@ void PEDoubleSpinBox::stepBy(int steps)
 
 //////////////////////////////////////
 
-PEToolView::PEToolView(QWidget * parent) : QFrame(parent)
+PEToolView::PEToolView(QWidget * parent) : QFrame (parent)
 {
     m_assignButton = NULL;
 

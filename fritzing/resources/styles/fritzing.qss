@@ -32,8 +32,8 @@ LayerPalette QObject {
         border-radius: 0px;
         padding: 2px;
 		color: #323232;
-		margin-top:3px;
-		margin-bottom:3px;
+		margin-top:0px;
+		margin-bottom:0px;
 }
 
 #PEToolView QPushButton:hover  {
@@ -48,22 +48,26 @@ LayerPalette QObject {
 
 #PEToolView QTreeWidget {
 	background: #fff;
+	color:#333;
 	show-decoration-selected: 1;
 	}
 	
 
 #PEToolView QTreeWidget::item:selected {
 	background:#dadada;
+	color:#333;
 	border:none;
 	}
 	
 #PEToolView QTreeWidget::item:selected:!active	 {
 	background:transparent;
+	color:#333;
 	border:none;
 }
 
 #PEToolView QTreeWidget::item:selected:active	 {
 	background:#dadada;
+	color:#333;
 	border:none;
 }
 
@@ -110,7 +114,7 @@ LayerPalette QObject {
 	font-weight: regular;
 	min-height: 35px;
 	background:#fff;
-	min-width:30px;
+	min-width:100px;
 }
 
 #pe_tabs QTabBar::tab:selected 
@@ -162,6 +166,38 @@ LayerPalette QObject {
 	font-weight:regular;
 	margin-bottom:-1px;
 	background-image: url(:/resources/images/icons/segmentedSwitcherXInactiveFocusHover.png);
+}
+
+
+#pe_tabs QToolButton {
+	background: rgba(217,217,217,200);
+	border:0px;
+}
+
+
+#pe_tabs QToolButton::right-arrow {
+	background-image: url(:/resources/images/icons/TabScrollArrowButtonRightNormal.png);
+	background-repeat: none;
+		background-position: center;
+}
+
+#pe_tabs QToolButton::right-arrow:pressed {
+	background-image: url(:/resources/images/icons/TabScrollArrowButtonRightPressed.png);
+	background-repeat: none;
+		background-position: center;
+}
+
+
+#pe_tabs QToolButton::left-arrow{
+		background-image: url(:/resources/images/icons/TabScrollArrowButtonLeftNormal.png);
+		background-repeat: none;
+		background-position: center;
+}
+
+#pe_tabs QToolButton::left-arrow:pressed{
+		background-image: url(:/resources/images/icons/TabScrollArrowButtonLeftPressed.png);
+		background-repeat: none;
+		background-position: center;
 }
 
 	
@@ -491,8 +527,8 @@ QMenu::indicator:non-exclusive:unchecked:selected {
 #sketch_tabs QTabBar::tab  
 {
         margin: 0px 10px -1px 0px;
-	min-width: 150px;
-	max-width: 150px;
+	min-width: 120px;
+	max-width: 120px;
 	font-family: Droid Sans;
 	font-size:14px;	
 	font-weight: regular;

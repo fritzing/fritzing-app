@@ -40,17 +40,19 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 
 //////////////////////////////////////
 
-PEConnectorsView::PEConnectorsView(QWidget * parent) : QWidget(parent) 
+PEConnectorsView::PEConnectorsView(QWidget * parent) : QFrame(parent)
 {
 	m_connectorCount = 0;
 
+    this -> setObjectName("peConnectors");
+    /*
     QFile styleSheet(":/resources/styles/newpartseditor.qss");
     if (!styleSheet.open(QIODevice::ReadOnly)) {
         DebugDialog::debug("Unable to open :/resources/styles/newpartseditor.qss");
     } else {
     	this->setStyleSheet(styleSheet.readAll());
     }
-
+*/
 	QVBoxLayout *mainLayout = new QVBoxLayout();
     mainLayout->setSizeConstraint( QLayout::SetMinAndMaxSize );
 	

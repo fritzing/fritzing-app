@@ -60,7 +60,7 @@ void PEDoubleSpinBox::stepBy(int steps)
 
 //////////////////////////////////////
 
-PEToolView::PEToolView(QWidget * parent) : QWidget(parent) 
+PEToolView::PEToolView(QWidget * parent) : QFrame(parent)
 {
     m_assignButton = NULL;
 
@@ -68,6 +68,7 @@ PEToolView::PEToolView(QWidget * parent) : QWidget(parent)
 	if (NoCheckImage == NULL) NoCheckImage = new QPixmap(":/resources/images/icons/nocheck.png");
 
     this->setObjectName("PEToolView");
+    /*
 
     QFile styleSheet(":/resources/styles/newpartseditor.qss");
     if (!styleSheet.open(QIODevice::ReadOnly)) {
@@ -75,7 +76,7 @@ PEToolView::PEToolView(QWidget * parent) : QWidget(parent)
     } else {
     	this->setStyleSheet(styleSheet.readAll());
     }
-
+*/
     m_pegi = NULL;
 
     QVBoxLayout * mainLayout = new QVBoxLayout;

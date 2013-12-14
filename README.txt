@@ -65,5 +65,5 @@ using the following steps (qmake is a tool supplied by Qt):
 Fritzing requires Qt 4.6 and up, and the Qt-sqlite and Qt-jpeg plugins.
 
 
-(c) 2007-2011 Fachhochschule Potsdam
+(c) 2007-2013 Fachhochschule Potsdam
 design.fh-potsdam.de

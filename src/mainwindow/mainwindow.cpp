@@ -1023,7 +1023,7 @@ SketchToolButton *MainWindow::createExportEtchableButton(SketchAreaWidget *paren
 }
 
 QWidget *MainWindow::createToolbarSpacer(SketchAreaWidget *parent) {
-	QFrame *toolbarSpacer = new QFrame(parent);
+    QFrame *toolbarSpacer = new QFrame(parent);
 	QHBoxLayout *spacerLayout = new QHBoxLayout(toolbarSpacer);
 	spacerLayout->addSpacerItem(new QSpacerItem(0,0,QSizePolicy::Expanding));
 

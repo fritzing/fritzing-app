@@ -390,6 +390,9 @@ QString Stripboard::genFZP(const QString & moduleid)
     int ix = fzp.indexOf(findString);
     if (ix > 0) {
         fzp.insert(ix + findString.count(), "<property name='layout'></property>");
+        if (moduleid.endsWith(ModuleIDNames::StripboardModuleIDName)) {
+            fzp.insert(ix + findString.count(), "<property name='oldstyle'>yes</property>");
+        }
     }
 	return fzp;
 }
@@ -418,7 +421,7 @@ void Stripboard::addedToScene(bool temporary)
     }
 
     bool oldStyle = false;
-    if (moduleID().endsWith(ModuleIDNames::StripboardModuleIDName)) {
+    if (moduleID().endsWith(ModuleIDNames::StripboardModuleIDName) ||  !modelPart()->properties().value("oldstyle", "").isEmpty()) {
         modelPart()->modelPartShared()->setModuleID(QString("%1.%2%3").arg(m_x).arg(m_y).arg(ModuleIDNames::Stripboard2ModuleIDName));
         oldStyle = true;
         m_layout = HorizontalString;

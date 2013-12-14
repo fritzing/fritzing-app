@@ -345,6 +345,10 @@ void WelcomeView::initLayout()
 {
 	QGridLayout * mainLayout = new QGridLayout();
 
+   //mainLayout->setSpacing (0);
+    //mainLayout->setContentsMargins (0, 0, 0, 0);
+    mainLayout->setSizeConstraint (QLayout::SetMaximumSize);
+
 	QWidget * recent = initRecent();
 	mainLayout->addWidget(recent, 0, 0);
 
@@ -356,6 +360,7 @@ void WelcomeView::initLayout()
 
 	widget = initTip();
 	mainLayout->addWidget(widget, 1, 0);
+
 
 	this->setLayout(mainLayout);
 }

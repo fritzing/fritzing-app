@@ -110,6 +110,7 @@ public slots:
 	void connectorsTypeChanged(Connector::ConnectorType);
 	void smdChanged(const QString &);
 	void showing(SketchWidget *);
+    void updateExportMenu();
 
 protected:
 	void closeEvent(QCloseEvent * event);

@@ -1092,10 +1092,10 @@ void MainWindow::createViewMenuActions(bool showWelcome) {
 
 	// instead of creating a filter to grab the shortcut, let's create a new action
 	// and append it to the window
-	QAction *zoomInAux = new QAction(this);
-	zoomInAux->setShortcut(tr("Ctrl+="));
-	connect(zoomInAux, SIGNAL(triggered()), this, SLOT(zoomIn()));
-	this->addAction(zoomInAux);
+	m_zoomInShortcut = new QAction(this);
+	m_zoomInShortcut->setShortcut(tr("Ctrl+="));
+	connect(m_zoomInShortcut, SIGNAL(triggered()), this, SLOT(zoomIn()));
+	this->addAction(m_zoomInShortcut);
 
 	m_zoomOutAct = new QAction(tr("&Zoom Out"), this);
 	m_zoomOutAct->setShortcut(tr("Ctrl+-"));
@@ -1303,6 +1303,7 @@ void MainWindow::createFileMenu() {
 
     m_fileMenu->addSeparator();
 	m_exportMenu = m_fileMenu->addMenu(tr("&Export"));
+    connect(m_exportMenu, SIGNAL(aboutToShow()), this, SLOT(updateExportMenu()));
     //m_fileMenu->addAction(m_pageSetupAct);
     m_fileMenu->addAction(m_printAct);
 
@@ -1568,7 +1569,14 @@ void MainWindow::updateLayerMenu(bool resetLayout) {
     if (m_viewMenu == NULL) return;
     if (m_showAllLayersAct == NULL) return;
 
-	QList<QAction *> actions;
+    QList<QAction *> actions;
+    actions << m_zoomInAct << m_zoomOutAct << m_zoomInShortcut << m_fitInWindowAct << m_actualSizeAct << 
+        m_100PercentSizeAct << m_alignToGridAct << m_showGridAct << m_setGridSizeAct << m_setBackgroundColorAct;
+
+    bool enabled = (m_currentGraphicsView != NULL);
+    foreach (QAction * action, actions) action->setEnabled(enabled);
+
+	actions.clear();
 
     if (m_showPartsBinIconViewAct) {
 	    if (m_binManager) {
@@ -1587,7 +1595,12 @@ void MainWindow::updateLayerMenu(bool resetLayout) {
     if (m_showAllLayersAct) m_viewMenu->addAction(m_showAllLayersAct);
     if (m_hideAllLayersAct) m_viewMenu->addAction(m_hideAllLayersAct);
 
-	if (m_currentGraphicsView == NULL) return;
+    m_hideAllLayersAct->setEnabled(false);
+	m_showAllLayersAct->setEnabled(false);
+
+    if (m_currentGraphicsView == NULL) {
+        return;
+    }
 
 	m_alignToGridAct->setChecked(m_currentGraphicsView->alignedToGrid());
 	m_showGridAct->setChecked(m_currentGraphicsView->showingGrid());
@@ -1609,9 +1622,6 @@ void MainWindow::updateLayerMenu(bool resetLayout) {
 		}
 	}
 
-
-	m_hideAllLayersAct->setEnabled(false);
-	m_showAllLayersAct->setEnabled(false);
 
 	if (keys.count() <= 0) return;
 
@@ -1762,13 +1772,17 @@ void MainWindow::updateWireMenu() {
 	else {
 		m_deleteWireAct->setText(tr("Delete Wire"));
 	}
-
-
 }
 
 void MainWindow::updatePartMenu() {
-	if (m_currentGraphicsView == NULL) return;
 	if (m_partMenu == NULL) return;
+
+    if (m_currentGraphicsView == NULL) {
+        foreach (QAction * action, m_partMenu->actions()) {
+            action->setEnabled(false);
+        }  
+        return;
+    }
 
 	ItemCount itemCount = m_currentGraphicsView->calcItemCount();
 
@@ -1793,7 +1807,7 @@ void MainWindow::updatePartMenu() {
     m_alignVerticalCenterAct->setEnabled(itemCount.selCount - itemCount.wireCount > 1);
     m_alignHorizontalCenterAct->setEnabled(itemCount.selCount - itemCount.wireCount > 1);
 
-	//DebugDialog::debug(QString("enable layer actions %1").arg(enable));
+	//DebugDialog::debug(QString("enable layer actions %1")upat.arg(enable));
 	m_bringToFrontAct->setEnabled(zenable);
 	m_bringForwardAct->setEnabled(zenable);
 	m_sendBackwardAct->setEnabled(zenable);
@@ -1973,6 +1987,14 @@ void MainWindow::updateItemMenu() {
 }
 
 void MainWindow::updateEditMenu() {
+	if (m_currentGraphicsView == NULL) {
+        foreach (QAction * action, m_editMenu->actions()) {
+            action->setEnabled(action == m_preferencesAct);
+        }
+        return;
+    }
+
+
 	QClipboard *clipboard = QApplication::clipboard();
 	m_pasteAct->setEnabled(false);
 	m_pasteInPlaceAct->setEnabled(false);
@@ -1987,27 +2009,25 @@ void MainWindow::updateEditMenu() {
 		}
 	}
 
-	if (m_currentGraphicsView != NULL) {
-		const QList<QGraphicsItem *> items =  m_currentGraphicsView->scene()->selectedItems();
-		bool copyActsEnabled = false;
-		bool deleteActsEnabled = false;
-		foreach (QGraphicsItem * item, items) {
-			if (m_currentGraphicsView->canDeleteItem(item, items.count())) {
-				deleteActsEnabled = true;
-			}
-			if (m_currentGraphicsView->canCopyItem(item, items.count())) {
-				copyActsEnabled = true;
-			}
+	const QList<QGraphicsItem *> items =  m_currentGraphicsView->scene()->selectedItems();
+	bool copyActsEnabled = false;
+	bool deleteActsEnabled = false;
+	foreach (QGraphicsItem * item, items) {
+		if (m_currentGraphicsView->canDeleteItem(item, items.count())) {
+			deleteActsEnabled = true;
 		}
-
-		//DebugDialog::debug(QString("enable cut/copy/duplicate/delete %1 %2 %3").arg(copyActsEnabled).arg(deleteActsEnabled).arg(m_currentWidget->viewID()) );
-		m_deleteAct->setEnabled(deleteActsEnabled);
-		m_deleteMinusAct->setEnabled(deleteActsEnabled);
-		m_deleteAct->setText(tr("Delete"));
-		m_cutAct->setEnabled(deleteActsEnabled && copyActsEnabled);
-		m_copyAct->setEnabled(copyActsEnabled);
-		m_duplicateAct->setEnabled(copyActsEnabled);
+		if (m_currentGraphicsView->canCopyItem(item, items.count())) {
+			copyActsEnabled = true;
+		}
 	}
+
+	//DebugDialog::debug(QString("enable cut/copy/duplicate/delete %1 %2 %3").arg(copyActsEnabled).arg(deleteActsEnabled).arg(m_currentWidget->viewID()) );
+	m_deleteAct->setEnabled(deleteActsEnabled);
+	m_deleteMinusAct->setEnabled(deleteActsEnabled);
+	m_deleteAct->setText(tr("Delete"));
+	m_cutAct->setEnabled(deleteActsEnabled && copyActsEnabled);
+	m_copyAct->setEnabled(copyActsEnabled);
+	m_duplicateAct->setEnabled(copyActsEnabled);
 }
 
 void MainWindow::updateTraceMenu() {
@@ -4408,5 +4428,12 @@ void MainWindow::setViewFromAbove() {
     if (m_pcbGraphicsView != NULL) {
         m_pcbGraphicsView->setViewFromBelow(false);
         updateActiveLayerButtons();
+    }
+}
+
+void MainWindow::updateExportMenu() {
+    bool enabled = m_currentGraphicsView != NULL;
+    foreach (QAction * action, m_exportMenu->actions()) {
+        action->setEnabled(enabled);
     }
 }

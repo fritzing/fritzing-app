@@ -3937,3 +3937,9 @@ void PEMainWindow::setInitialView() {
 	tabWidget_currentChanged(tab+1);
 	tabWidget_currentChanged(tab);
 }
+
+void PEMainWindow::updateExportMenu() {
+    foreach (QAction * action, m_exportMenu->actions()) {
+        action->setEnabled(false);
+    }
+}

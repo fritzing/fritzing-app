@@ -261,6 +261,7 @@ public slots:
 	void swapObsolete();
     void swapBoardImageSlot(SketchWidget * sketchWidget, ItemBase * itemBase, const QString & filename, const QString & moduleID, bool addName);
 	void updateTraceMenu();
+    virtual void updateExportMenu();
 	virtual void updateFileMenu();
     void showStatusMessage(const QString &);
     void orderFabHoverEnter();
@@ -786,6 +787,7 @@ protected:
     // View Menu
     QMenu *m_viewMenu;
     QAction *m_zoomInAct;
+    QAction *m_zoomInShortcut;
     QAction *m_zoomOutAct;
     QAction *m_fitInWindowAct;
     QAction *m_actualSizeAct;

@@ -146,7 +146,7 @@ Atmega 16U2 replace the 8U2.&#xd;&#xd;
      <p svgId="connector39pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
-     <p svgId="connector39pin" layer="schematic" terminalId="connector39terminal"/>
+     <p svgId="connector39pin" layer="unknown" terminalId="connector39terminal"/>
     </schematicView>
     <pcbView>
      <p svgId="connector39pad" layer="unknown"/>
@@ -160,7 +160,7 @@ Atmega 16U2 replace the 8U2.&#xd;&#xd;
      <p svgId="connector40pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
-     <p svgId="connector40pin" layer="schematic" terminalId="connector40terminal"/>
+     <p svgId="connector40pin" layer="unknown" terminalId="connector40terminal"/>
     </schematicView>
     <pcbView>
      <p svgId="connector40pad" layer="unknown"/>
@@ -174,7 +174,7 @@ Atmega 16U2 replace the 8U2.&#xd;&#xd;
      <p svgId="connector41pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
-     <p svgId="connector41pin" layer="schematic" terminalId="connector41terminal"/>
+     <p svgId="connector41pin" layer="unknown"/>
     </schematicView>
     <pcbView>
      <p svgId="connector41pad" layer="unknown"/>
@@ -189,7 +189,7 @@ Atmega 16U2 replace the 8U2.&#xd;&#xd;
      <p svgId="connector42pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
-     <p svgId="connector42pin" layer="schematic" terminalId="connector42terminal"/>
+     <p svgId="connector42pin" layer="unknown" terminalId="connector42terminal"/>
     </schematicView>
     <pcbView>
      <p svgId="connector42pad" layer="unknown"/>
@@ -204,7 +204,7 @@ Atmega 16U2 replace the 8U2.&#xd;&#xd;
      <p svgId="connector43pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
-     <p svgId="connector43pin" layer="schematic" terminalId="connector43terminal"/>
+     <p svgId="connector43pin" layer="unknown" terminalId="connector43terminal"/>
     </schematicView>
     <pcbView>
      <p svgId="connector43pad" layer="unknown"/>
@@ -270,8 +270,8 @@ Atmega 16U2 replace the 8U2.&#xd;&#xd;
     </pcbView>
    </views>
   </connector>
-  <connector type="female" id="connector48" name="ICSP MOSI">
-   <description>ICSP MOSI</description>
+  <connector type="female" id="connector48" name="ICSP2 MOSI">
+   <description>ICSP2 MOSI</description>
    <views>
     <breadboardView>
      <p svgId="connector48pin" layer="breadboardbreadboard"/>

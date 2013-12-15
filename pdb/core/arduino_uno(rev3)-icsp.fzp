@@ -177,7 +177,7 @@ Atmega 16U2 replace the 8U2.&#xd;&#xd;
      <p svgId="connector41pin" layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
-     <p svgId="connector41pin" layer="schematic" terminalId="connector41terminal"/>
+     <p svgId="connector41pin" layer="unknown" />
     </schematicView>
     <pcbView>
          <p svgId="connector41pad" layer="copper0"/>

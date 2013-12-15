@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <module moduleId="BreadboardLogoImageModuleID" >
- <version replacedby="newBreadboardLogoImageModuleID">4</version>
+ <version>4</version>
  <author>Jonathan Cohen</author>
  <title>Breadboard Image</title>
  <date>2012-10-23</date>

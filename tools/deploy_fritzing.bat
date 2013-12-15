@@ -33,4 +33,5 @@ cd ..
 cd ..
 
 
-echo don't forget about the msvc files and the lib folder
+echo don't forget about the msvc files
+echo don't forget about the lib folder

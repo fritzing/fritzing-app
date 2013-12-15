@@ -80,6 +80,25 @@ LogoItem::LogoItem( ModelPart * modelPart, ViewLayer::ViewID viewID, const ViewG
 		m_logo = modelPart->properties().value("logo", "logo");
 		modelPart->setLocalProp("logo", m_logo);
 	}
+
+    if (m_modelPart->moduleID() == ModuleIDNames::LogoImageModuleIDName) {
+        m_modelPart->modelPartShared()->setModuleID("new" + ModuleIDNames::LogoImageModuleIDName);
+    }
+    else if (m_modelPart->moduleID() == ModuleIDNames::Silkscreen0LogoImageModuleIDName) {
+        m_modelPart->modelPartShared()->setModuleID("new" + ModuleIDNames::Silkscreen0LogoImageModuleIDName);
+    }
+    else if (m_modelPart->moduleID() == ModuleIDNames::Copper1LogoImageModuleIDName) {
+        m_modelPart->modelPartShared()->setModuleID("new" + ModuleIDNames::Copper1LogoImageModuleIDName);
+    }
+    else if (m_modelPart->moduleID() == ModuleIDNames::Copper0LogoImageModuleIDName) {
+        m_modelPart->modelPartShared()->setModuleID("new" + ModuleIDNames::Copper0LogoImageModuleIDName);
+    }
+    else if (m_modelPart->moduleID() == ModuleIDNames::SchematicLogoImageModuleIDName) {
+        m_modelPart->modelPartShared()->setModuleID("new" + ModuleIDNames::SchematicLogoImageModuleIDName);
+    }
+    else if (m_modelPart->moduleID() == ModuleIDNames::BreadboardLogoImageModuleIDName) {
+        m_modelPart->modelPartShared()->setModuleID("new" + ModuleIDNames::BreadboardLogoImageModuleIDName);
+    }
 }
 
 LogoItem::~LogoItem() {

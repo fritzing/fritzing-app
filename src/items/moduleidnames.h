@@ -54,6 +54,7 @@ public:
 	static const QString ResistorModuleIDName;
 	static const QString LogoTextModuleIDName;
 	static const QString LogoImageModuleIDName;
+	static const QString Silkscreen0LogoImageModuleIDName;
 	static const QString Copper0LogoTextModuleIDName;
 	static const QString Copper0LogoImageModuleIDName;
 	static const QString Copper1LogoTextModuleIDName;

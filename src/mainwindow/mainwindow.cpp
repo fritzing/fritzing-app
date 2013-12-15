@@ -1057,8 +1057,7 @@ QList<QWidget*> MainWindow::getButtonsForView(ViewLayer::ViewID viewId) {
 			retval << createFlipButton(parent) <<  createAutorouteButton(parent) << createRoutingStatusLabel(parent);
 			break;
 		case ViewLayer::PCBView:
-			retval << SketchAreaWidget::separator(parent) 
-                << createViewFromButton(parent)
+			retval << createViewFromButton(parent)
 				<< createActiveLayerButton(parent) 
 				<< createAutorouteButton(parent) 
 				<< createExportEtchableButton(parent)

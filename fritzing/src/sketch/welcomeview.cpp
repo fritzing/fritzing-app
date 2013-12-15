@@ -731,18 +731,11 @@ void WelcomeView::gotBlogSnippet(QNetworkReply * networkReply) {
 	}
 
     if (!goodBlog) {
-        if ((responseCode == 500 || responseCode == 404) && !blog) {
-            QNetworkAccessManager * manager2 = new QNetworkAccessManager(this);
-	        connect(manager2, SIGNAL(finished(QNetworkReply *)), this, SLOT(gotBlogSnippet(QNetworkReply *)));
-	        manager2->get(QNetworkRequest(QUrl("http://green.fritzing.org/projects/snippet/")));
-        }
-        else {
-            QString message = (blog) ? tr("Unable to reach blog.fritzing.org") : tr("Unable to reach friting.org/projects") ;
-            QString placeHolder = QString("<li><a class='title' href='nop' title='%1'></a></li>").arg(message);
-            if (doc.setContent(placeHolder, &errorStr, &errorLine, &errorColumn)) {
-		        readBlog(doc, true, blog, "");
-            }  
-        }
+        QString message = (blog) ? tr("Unable to reach blog.fritzing.org") : tr("Unable to reach friting.org/projects") ;
+        QString placeHolder = QString("<li><a class='title' href='nop' title='%1'></a></li>").arg(message);
+        if (doc.setContent(placeHolder, &errorStr, &errorLine, &errorColumn)) {
+		    readBlog(doc, true, blog, "");
+        }  
     }
 
     manager->deleteLater();

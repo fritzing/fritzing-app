@@ -31,7 +31,6 @@ $Date: 2013-04-21 09:50:09 +0200 (So, 21. Apr 2013) $
 #include "../connectors/connectoritem.h"
 #include "../items/moduleidnames.h"
 #include "../waitpushundostack.h"
-#include "../help/sketchmainhelp.h"
 
 #include <QScrollBar>
 
@@ -221,33 +220,20 @@ void BreadboardSketchWidget::showEvent(QShowEvent * event) {
 	SketchWidget::showEvent(event);
 	if (m_addDefaultParts && (m_addedDefaultPart != NULL)) {
 		m_addDefaultParts = false;
-		if (m_fixedToCenterItem != NULL) {
-			QSizeF helpSize = m_fixedToCenterItem->size();
-			QSizeF partSize = m_addedDefaultPart->size();
-			QSizeF vpSize = this->viewport()->size();
-			//if (vpSize.height() < helpSize.height() + 50 + partSize.height()) {
-				//vpSize.setWidth(vpSize.width() - verticalScrollBar()->width());
-			//}
+		QSizeF partSize = m_addedDefaultPart->size();
+		QSizeF vpSize = this->viewport()->size();
+		//if (vpSize.height() < helpSize.height() + 50 + partSize.height()) {
+			//vpSize.setWidth(vpSize.width() - verticalScrollBar()->width());
+		//}
 
-			QPointF p;
-			p.setX((int) ((vpSize.width() - partSize.width()) / 2.0));
-			p.setY((int) helpSize.height());
-
-			// add a board to the empty sketch, and place it below the help area.
-
-            p += QPointF(4, 50);
-			QPointF q = mapToScene(p.toPoint());
-			m_addedDefaultPart->setPos(q);
-			alignOneToGrid(m_addedDefaultPart);
-			QTimer::singleShot(10, this, SLOT(vScrollToZero()));
-		}
+		QPointF p;
+		p.setX((int) ((vpSize.width() - partSize.width()) / 2.0));
+		p.setY((int) ((vpSize.height() - partSize.height()) / 2.0));
+		QPointF q = mapToScene(p.toPoint());
+		m_addedDefaultPart->setPos(q);
+		alignOneToGrid(m_addedDefaultPart);
+		QTimer::singleShot(10, this, SLOT(vScrollToZero()));
 	}
-}
-
-QPoint BreadboardSketchWidget::calcFixedToCenterItemOffset(const QRect & viewPortRect, const QSizeF & helpSize) {
-	QPoint p((int) ((viewPortRect.width() - helpSize.width()) / 2.0),
-			 30);
-	return p;
 }
 
 double BreadboardSketchWidget::getWireStrokeWidth(Wire *, double wireWidth)
@@ -260,12 +246,4 @@ void BreadboardSketchWidget::getBendpointWidths(Wire * wire, double width, doubl
 	Q_UNUSED(width);
 	bendpoint2Width = bendpointWidth = -1;
 	negativeOffsetRect = true;
-}
-
-double BreadboardSketchWidget::getRatsnestOpacity() {
-	return 0.7;
-}
-
-double BreadboardSketchWidget::getRatsnestWidth() {
-	return 0.7;
 }

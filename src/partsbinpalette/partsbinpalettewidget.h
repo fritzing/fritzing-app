@@ -88,8 +88,10 @@ class PartsBinPaletteWidget : public QFrame, public Bundler {
         bool open(QString fileName, QWidget * progressTarget, bool fastLoad);
 
 		bool currentViewIsIconView();
-		QIcon icon();
-		void saveBundledBin();	
+        QIcon icon();
+		QIcon monoIcon();
+		bool hasMonoIcon();
+        void saveBundledBin();	
 		QMenu * combinedMenu();
 		QMenu * binContextMenu();
 		QMenu * partContextMenu();
@@ -179,6 +181,7 @@ class PartsBinPaletteWidget : public QFrame, public Bundler {
 
 		FileProgressDialog * m_loadingProgressDialog;
 		QIcon * m_icon;
+        QIcon * m_monoIcon;
 		QAction *m_addPartToMeAction;
 		QStackedWidget * m_stackedWidget;
 		QStackedWidget * m_searchStackedWidget;

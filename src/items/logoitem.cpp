@@ -28,6 +28,7 @@ $Date: 2013-04-22 23:44:56 +0200 (Mo, 22. Apr 2013) $
 #include "../utils/graphicsutils.h"
 #include "../utils/folderutils.h"
 #include "../utils/textutils.h"
+#include "../utils/fmessagebox.h"
 #include "../fsvgrenderer.h"
 #include "../sketch/infographicsview.h"
 #include "../svg/svgfilesplitter.h"
@@ -50,6 +51,7 @@ $Date: 2013-04-22 23:44:56 +0200 (Mo, 22. Apr 2013) $
 #include <QApplication>
 #include <QColor>
 #include <QColorDialog>
+#include <QBuffer>
 
 static QStringList LogoImageNames;
 static QStringList Logo0ImageNames;
@@ -61,8 +63,10 @@ LogoItem::LogoItem( ModelPart * modelPart, ViewLayer::ViewID viewID, const ViewG
 	: ResizableBoard(modelPart, viewID, viewGeometry, id, itemMenu, doLabel)
 {
 	if (LogoImageNames.count() == 0) {
-		LogoImageNames << "Made with Fritzing" << "Fritzing icon" << "OHANDA logo" << "OSHW logo";
-		Logo0ImageNames << "Made with Fritzing 0" << "Fritzing icon 0" << "OHANDA logo 0" << "OSHW logo 0";
+        // TODO: load these names from somewhere
+
+		LogoImageNames << "new Made with Fritzing" << "new Fritzing icon" << "OHANDA logo" << "OSHW logo";
+		Logo0ImageNames << "new Made with Fritzing 0" << "new Fritzing icon 0" << "OHANDA logo 0" << "OSHW logo 0";
 	}
 
     m_svgOnly = false;
@@ -76,9 +80,32 @@ LogoItem::LogoItem( ModelPart * modelPart, ViewLayer::ViewID viewID, const ViewG
 		m_logo = modelPart->properties().value("logo", "logo");
 		modelPart->setLocalProp("logo", m_logo);
 	}
+
+    if (m_modelPart->moduleID() == ModuleIDNames::LogoImageModuleIDName) {
+        m_modelPart->modelPartShared()->setModuleID("new" + ModuleIDNames::LogoImageModuleIDName);
+    }
+    else if (m_modelPart->moduleID() == ModuleIDNames::Silkscreen0LogoImageModuleIDName) {
+        m_modelPart->modelPartShared()->setModuleID("new" + ModuleIDNames::Silkscreen0LogoImageModuleIDName);
+    }
+    else if (m_modelPart->moduleID() == ModuleIDNames::Copper1LogoImageModuleIDName) {
+        m_modelPart->modelPartShared()->setModuleID("new" + ModuleIDNames::Copper1LogoImageModuleIDName);
+    }
+    else if (m_modelPart->moduleID() == ModuleIDNames::Copper0LogoImageModuleIDName) {
+        m_modelPart->modelPartShared()->setModuleID("new" + ModuleIDNames::Copper0LogoImageModuleIDName);
+    }
+    else if (m_modelPart->moduleID() == ModuleIDNames::SchematicLogoImageModuleIDName) {
+        m_modelPart->modelPartShared()->setModuleID("new" + ModuleIDNames::SchematicLogoImageModuleIDName);
+    }
+    else if (m_modelPart->moduleID() == ModuleIDNames::BreadboardLogoImageModuleIDName) {
+        m_modelPart->modelPartShared()->setModuleID("new" + ModuleIDNames::BreadboardLogoImageModuleIDName);
+    }
 }
 
 LogoItem::~LogoItem() {
+}
+
+bool LogoItem::hasLogo() {
+    return m_hasLogo;
 }
 
 QString LogoItem::getShapeForRenderer(const QString & svg) {
@@ -408,22 +435,58 @@ void LogoItem::loadImage(const QString & fileName, bool addName)
 		if (image.format() != QImage::Format_RGB32 && image.format() != QImage::Format_ARGB32) {
 			image = image.convertToFormat(QImage::Format_Mono);
 		}
+		
+        double res = image.dotsPerMeterX() / GraphicsUtils::InchesPerMeter;
+        if (this->m_standardizeColors) {
+		    GroundPlaneGenerator gpg;
+		    gpg.setLayerName(layerName());
+		    gpg.setMinRunSize(1, 1);
+		    gpg.scanImage(image, image.width(), image.height(), 1, res, colorString(), false, false, QSizeF(0, 0), 0, QPointF(0, 0));
+		    if (gpg.newSVGs().count() < 1) {
+			    FMessageBox::information(
+				    NULL,
+				    tr("Unable to display"),
+				    tr("Unable to display image from %1").arg(fileName)
+			    );
+			    return;
+		    }
 
-		GroundPlaneGenerator gpg;
-		gpg.setLayerName(layerName());
-		gpg.setMinRunSize(1, 1);
-		double res = image.dotsPerMeterX() / GraphicsUtils::InchesPerMeter;
-		gpg.scanImage(image, image.width(), image.height(), 1, res, colorString(), false, false, QSizeF(0, 0), 0, QPointF(0, 0));
-		if (gpg.newSVGs().count() < 1) {
-			QMessageBox::information(
-				NULL,
-				tr("Unable to display"),
-				tr("Unable to display image from %1").arg(fileName)
-			);
-			return;
-		}
+            svg = gpg.mergeSVGs("", layerName());
+        }
+        else {
+            svg = TextUtils::makeSVGHeader(res, res, image.width(), image.height());
+            int ix = svg.lastIndexOf(">");
+            svg.replace(ix, 1, "xmlns:xlink='http://www.w3.org/1999/xlink'>");
+            QString type = "png";
+            QByteArray bytes;
+            if (fileName.endsWith(".png") || fileName.endsWith(".jpg") || fileName.endsWith("jpeg")) {
+                if (!fileName.endsWith(".png")) type = "jpg";
+                QFile file(fileName);
+                file.open(QFile::ReadOnly);
+                bytes = file.readAll();
+            }
+            else {
+                QBuffer buffer(&bytes);
+                buffer.open(QIODevice::WriteOnly);
+                image.save(&buffer, "PNG"); // writes image into bytes in PNG format
+            }
 
-        svg = gpg.mergeSVGs("", layerName());
+            svg += QString("<image x='0' y='0' width='%1' height='%2' xlink:href='data:image/%3;base64,")
+                .arg(image.width()).arg(image.height()).arg(type);
+
+            int remaining = bytes.count();
+            ix = 0;
+            while (remaining > 0) {
+                QByteArray sixty = bytes.mid(ix, qMin(remaining, 60));
+                svg += QString(sixty.toBase64());
+                svg += "\n";
+                ix += 60;
+                remaining -= 60;
+            }
+
+            svg += "'/>\n";
+            svg += "</svg>";
+        }
 	}
 
 	reloadImage(svg, QSizeF(0, 0), fileName, addName);
@@ -798,6 +861,16 @@ QString LogoItem::flipSvgAux(QString & newSvg)
 	return newSvg;
 }
 
+QString LogoItem::getNewLayerFileName(const QString & newLayerName) {
+    if (newLayerName.isEmpty()) return "";
+
+    QString lastfilename = this->prop("lastfilename");
+    if (QFile::exists(lastfilename)) return lastfilename;
+
+    DebugDialog::debug(QString("logo item image '%1' doesn't exist").arg(lastfilename));
+    return "";
+}
+
 ///////////////////////////////////////////////////////////////////////
 
 SchematicLogoItem::SchematicLogoItem( ModelPart * modelPart, ViewLayer::ViewID viewID, const ViewGeometry & viewGeometry, long id, QMenu * itemMenu, bool doLabel)
@@ -833,6 +906,7 @@ BreadboardLogoItem::BreadboardLogoItem( ModelPart * modelPart, ViewLayer::ViewID
 		modelPart->setLocalProp("color", color);
 	}
     m_color = color;
+    m_standardizeColors = false;
 }
 
 BreadboardLogoItem::~BreadboardLogoItem() {
@@ -897,12 +971,14 @@ bool BreadboardLogoItem::isBottom() {
 CopperLogoItem::CopperLogoItem( ModelPart * modelPart, ViewLayer::ViewID viewID, const ViewGeometry & viewGeometry, long id, QMenu * itemMenu, bool doLabel)
 	: LogoItem(modelPart, viewID, viewGeometry, id, itemMenu, doLabel)
 {
+    // TODO: load these names from somewhere
+
 	if (Copper1ImageNames.count() == 0) {
-		Copper1ImageNames << "Fritzing icon copper1";
+		Copper1ImageNames << "new Made with Fritzing copper1" << "new Fritzing icon copper1" << "OHANDA logo copper1" << "OSHW logo copper1";
 	}
 
 	if (Copper0ImageNames.count() == 0) {
-		Copper0ImageNames << "Fritzing icon copper0";
+		Copper0ImageNames << "new Made with Fritzing copper0" << "new Fritzing icon copper0" << "OHANDA logo copper0" << "OSHW logo copper1";
 	}
 
 	m_hasLogo = (modelPart->moduleID().endsWith(ModuleIDNames::LogoTextModuleIDName));

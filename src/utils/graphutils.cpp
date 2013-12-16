@@ -24,12 +24,6 @@ $Date: 2013-04-05 10:22:00 +0200 (Fr, 05. Apr 2013) $
 
 ********************************************************************/
 
-#include "graphutils.h"
-#include "../fsvgrenderer.h"
-#include "../items/wire.h"
-#include "../items/jumperitem.h"
-#include "../sketch/sketchwidget.h"
-#include "../debugdialog.h"
 
 #ifdef _MSC_VER 
 #pragma warning(push) 
@@ -49,6 +43,14 @@ $Date: 2013-04-05 10:22:00 +0200 (Fr, 05. Apr 2013) $
 #ifdef _MSC_VER 
 #pragma warning(pop)					// restore warning state
 #endif
+
+#include "graphutils.h"
+#include "../fsvgrenderer.h"
+#include "../items/wire.h"
+#include "../items/jumperitem.h"
+#include "../sketch/sketchwidget.h"
+#include "../debugdialog.h"
+
 
 void ConnectorEdge::setHeadTail(int h, int t) {
 	head = h;
@@ -408,24 +410,36 @@ bool GraphUtils::chooseRatsnestGraph(const QList<ConnectorItem *> * partConnecto
 		}
 	}
 
-	Graph g(edges, edges + num_edges, weights, num_nodes);
-	property_map<Graph, edge_weight_t>::type weightmap = get(edge_weight, g);
+    bool retval = false;
+    try {
+	    Graph g(edges, edges + num_edges, weights, num_nodes);
+	    property_map<Graph, edge_weight_t>::type weightmap = get(edge_weight, g);
 
-	std::vector < graph_traits < Graph >::vertex_descriptor > p(num_vertices(g));
+	    std::vector < graph_traits < Graph >::vertex_descriptor > p(num_vertices(g));
 
-	prim_minimum_spanning_tree(g, &p[0]);
+	    prim_minimum_spanning_tree(g, &p[0]);
 
-	for (std::size_t i = 0; i != p.size(); ++i) {
-		if (i == p[i]) continue;
-		if (reverseWeights[i][p[i]] == 0) continue;
+	    for (std::size_t i = 0; i != p.size(); ++i) {
+		    if (i == p[i]) continue;
+		    if (reverseWeights[i][p[i]] == 0) continue;
 
-		result.insert(temp[i], temp[p[i]]);
-	}
+		    result.insert(temp[i], temp[p[i]]);
+	    }
+        retval = true;
+    }
+    catch ( const std::exception& e ) {
+        // catch an error in boost 1.54
+        DebugDialog::debug(QString("boost spanning tree failure: %1").arg(e.what()));
+    }
+    catch(...) {
+        DebugDialog::debug("boost spanning tree failure");
+    }
+
 
 	delete edges;
 	delete weights;
 
-	return true;
+	return retval;
 }
 
 #define add_edge_d(i, j, g) \

@@ -39,7 +39,7 @@ $Date: 2013-03-09 08:18:59 +0100 (Sa, 09. Mrz 2013) $
 #include "../items/partfactory.h"
 #include "partsbinpalettewidget.h"
 
-#define ICON_SPACING 2
+#define ICON_SPACING 5
 
 PartsBinIconView::PartsBinIconView(ReferenceModel* referenceModel, PartsBinPaletteWidget *parent)
     : InfoGraphicsView((QWidget*)parent), PartsBinView(referenceModel, parent)
@@ -375,6 +375,7 @@ bool PartsBinIconView::inEmptyArea(const QPoint& pos) {
 QGraphicsWidget* PartsBinIconView::closestItemTo(const QPoint& pos) {
 	QPointF realPos = mapToScene(pos);
 	SvgIconWidget *item = NULL;
+    this -> setObjectName("partsIcon");
 	if((item = svgIconWidgetAt(realPos.x()+ICON_SPACING,realPos.y()+ICON_SPACING))) {
 		return item;
 	}
@@ -392,11 +393,12 @@ QGraphicsWidget* PartsBinIconView::closestItemTo(const QPoint& pos) {
 
 QList<QObject*> PartsBinIconView::orderedChildren() {
 	QList<QObject*> result;
+
 	for(int i=0; i < m_layout->count(); i++) {
 		SvgIconWidget *it = dynamic_cast<SvgIconWidget*>(m_layout->itemAt(i));
 		if(it) {
 			result << it->modelPart();
-		}
+        }
 	}
 	return result;
 }

@@ -1,5 +1,11 @@
-<svg xmlns='http://www.w3.org/2000/svg' width='.04in' height='.04in' viewBox='0 0 40 40' >
-<g id='groundplane'><g id='groundplane1'>
-<rect id='connector0pad' x='0' y='0' fill='none' width='40' height='40' stroke-width='1' stroke='rgb(255, 191, 0)' />
-</g></g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="2.879px" height="2.879px" viewBox="0 0 2.879 2.879" enable-background="new 0 0 2.879 2.879" xml:space="preserve">
+<g id="groundplane">
+	<g id="groundplane1">
+		<rect id="connector0pad" fill="none" stroke="#FFC58C" width="2.879" height="2.879"/>
+	</g>
+</g>
 </svg>

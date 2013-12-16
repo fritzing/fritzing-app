@@ -31,6 +31,21 @@ static QVariant emptyVariant;
 QHash<QString, QString> TranslatorListModel::m_languages;
 QList<QLocale *> TranslatorListModel::m_localeList;
 
+// More languages written in their own language can be found
+// at http://www.mozilla.com/en-US/firefox/all.html 
+
+// recipe for translating from mozilla strings into source code via windows:
+//		1. copy the string from the mozilla page into wordpad and save it as a unicode text file
+//		2. open that unicode text file as a binary file (e.g. in msvc)
+//		3. ignore the first two bytes (these are a signal that says "I'm unicode")
+//		4. initialize an array of ushort using the rest of the byte pairs
+//		5. don't forget to reverse the order of the bytes in each pair.
+
+// to add a new language to fritzing, find its two-letter language code: http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
+// then in the translations.pri file, add a new line translations/fritzing_XX.ts where you substitute the two letters for "XX".
+// If the language has multiple dialects, then you will need to add _YY to distinguish
+
+
 TranslatorListModel::TranslatorListModel(QFileInfoList & fileInfoList, QObject* parent)
 : QAbstractListModel(parent) 
 {
@@ -107,19 +122,6 @@ TranslatorListModel::TranslatorListModel(QFileInfoList & fileInfoList, QObject* 
         m_languages.insert("marathi", tr("Marathi - %1").arg(QString::fromUtf16(t18)));
 
 
-        // More languages written in their own language can be found
-        // at http://www.mozilla.com/en-US/firefox/all.html 
-
-		// recipe for translating from mozilla strings into source code via windows:
-		//		1. copy the string from the mozilla page into wordpad and save it as a unicode text file
-		//		2. open that unicode text file as a binary file (e.g. in msvc)
-		//		3. ignore the first two bytes (these are a signal that says "I'm unicode")
-		//		4. initialize an array of ushort using the rest of the byte pairs
-		//		5. don't forget to reverse the order of the bytes in each pair.
-
-		// to add a new language to fritzing, find its two-letter language code: http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
-		// then in the translations.pri file, add a new line translations/fritzing_XX.ts where you substitute the two letters for "XX".
-		// If the language has multiple dialects, then you will need to add _YY to distinguish
 	}
 
 	if (m_localeList.count() == 0) {

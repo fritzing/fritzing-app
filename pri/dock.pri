@@ -18,19 +18,12 @@
 # ********************************************************************/
 
 HEADERS += \
-src/dock/miniview.h \
-src/dock/miniviewcontainer.h \
-src/dock/triplenavigator.h \
 src/dock/layerpalette.h \
-src/dock/viewswitcherdockwidget.h \
-src/dock/viewswitcher.h 
+
  
 
 SOURCES += \
-src/dock/miniview.cpp \
-src/dock/miniviewcontainer.cpp \
 src/dock/layerpalette.cpp \
-src/dock/triplenavigator.cpp \
-src/dock/viewswitcherdockwidget.cpp \
-src/dock/viewswitcher.cpp
+
+
 

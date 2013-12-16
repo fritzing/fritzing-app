@@ -52,6 +52,7 @@ const QString ModuleIDNames::JustPowerModuleIDName = "JustPowerModuleID";
 const QString ModuleIDNames::ResistorModuleIDName = "ResistorModuleID";
 const QString ModuleIDNames::LogoTextModuleIDName = "LogoTextModuleID";
 const QString ModuleIDNames::LogoImageModuleIDName = "LogoImageModuleID";
+const QString ModuleIDNames::Silkscreen0LogoImageModuleIDName = "Silkscreen0LogoImageModuleID";
 const QString ModuleIDNames::Copper1LogoTextModuleIDName = "Copper1LogoTextModuleID";
 const QString ModuleIDNames::Copper1LogoImageModuleIDName = "Copper1LogoImageModuleID";
 const QString ModuleIDNames::Copper0LogoTextModuleIDName = "Copper0LogoTextModuleID";

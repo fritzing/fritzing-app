@@ -13,6 +13,8 @@ deploydir=$currentdir/../deploy
 echo "deploy directory"
 echo $deploydir
 
+mkdir $deploydir
+
 git clone https://code.google.com/p/fritzing/ $deploydir
 
 fritzingdir=$deploydir/fritzing
@@ -68,11 +70,11 @@ rmdir tools
 cd $currentdir
 
 
-phoenixdir=$currentdir/../phoenix-build-desktop-Qt_4_8_3__qt-everywhere-opensource-src-4_8_3__Release
+phoenixdir=$currentdir/../release_build
 cp -r $phoenixdir/Fritzing.app $deploydir
 
 
-/usr/local/Trolltech/Qt-4.8.3/bin/macdeployqt $deploydir/Fritzing.app 
+/usr/local/Trolltech/Qt-4.8.5/bin/macdeployqt $deploydir/Fritzing.app 
 cp -r $fritzingdir/* $deploydir/Fritzing.app/Contents/MacOS
 
 

@@ -1,20 +1,20 @@
 /* new parts editor  */
 
-#NewPartsEditorConnector0Frame {
+#NewNewPartsEditorConnector0Frame {
 	background-color: #cccccc;
 	margin: 0px;
 	padding: 0px;
 	border: 0px;
 }
 
-#NewPartsEditorConnector1Frame {
+#NewNewPartsEditorConnector1Frame {
 	background-color: #eeeeee;
 	margin: 0px;
 	padding: 0px;
 	border: 0px;
 }
 
-#NewPartsEditorConnectorFrame {
+#NewNewPartsEditorConnectorFrame {
 	margin: 0px;
 	padding: 0px;
 	border: 0px;
@@ -31,9 +31,195 @@
 	color: #000000;
 }
 
+
+
+/*try to change tab-menu without luck ... 
+
+QTabWidget#peTabs ::item {
+	background-image:none;
+	border: 10px solid #f0f;
+	color:#00f;
+	font-weight:bold;
+	}
+QTabWidget#peTabs{
+	border: 10px solid #f0f;
+	color:#00f;
+	font-weight:bold;
+		background-image:none;
+	}	
+	
+QTabWidget#peTabs ::pane {
+	border: 10px solid #f0f;
+		background-image:none;
+	}
+	
+QWidget#peTabs ::pane {
+	border: 10px solid #f0f;
+		background-image:none;
+	}
+	
+#peTabs QMenu {
+	background:#f0f;
+	background-image:none;
+	font-size: 10px;
+	font-weight: bold;
+	
+	} 
+	
+QMenu#peTabs  {
+	background:#f0f;
+	background-image:none;
+	font-size: 10px;
+	font-weight: bold;
+	
+	} 
+	 */
+	
+/* the Infos in the right window. */
+
+QLabel{
+	background:transparent;
+	background-image:none;
+	font-size: 11px;
+	} 
+	
+QComboBox,
+QPushButton,
+QPushButton:enabled,
+QPushButton:active{
+		background-image:none;
+		font-size: 11px;
+		text-align: center;
+        background: #ececec;
+        border: 1px solid #b1b1b1;
+        border-radius: 0px;
+		color: #323232;
+		padding:5px;
+		margin-top:3px;
+		margin-bottom:3px;
+	}
+
+QComboBox:hover,
+QPushButton:hover{
+	background-image:none;
+	color: #fff;
+	background:#666;
+	font-size:11px;
+	}
+	
+
+QComboBox:pressed,	
+QPushButton:pressed{
+	background-image:none;
+	color: #d9d9d9;
+	background:#f23926;
+	font-size:11px;
+
+	}
+
+QComboBox:disabled,
+QPushButton:disabled{
+	background-image:none;
+	color: #656565;
+	background:transparent;
+	font-size:11px;
+
+	}
+
+/* drop-down buton of the combobox */
+	
+QComboBox::drop-down:button {
+        background: transparent;
+		border:none;
+}
+
+
+QComboBox::drop-down:hover {
+        background: #f23926;
+		border:none;
+}
+
+
+QComboBox::drop-down:on {
+        background: #f23926;
+		border:none;
+}
+
+
+QComboBox::drop-down:selected {
+        background: #f23926;
+		border:none;
+}
+
+
+QComboBox::down-arrow {
+        image: url(:/resources/images/icons/combobox-arrow.png);
+		border:none;
+}
+/* drop-down list of the combobox */
+
+
+QComboBox::QAbstractItemView {
+        background-color: rgb(236,236,236);
+        margin: 0px;
+        padding: 0px;
+}
+
+
+
 QSplitter::handle {
      height: 4px;
      width: 4px;
      color: #666666;
      background-color: #666666;
 } 
+
+/* spinbox styling for connector position */
+QDoubleSpinBox {
+        background: rgb(255,255,255);
+        font-size: 11px;
+        color: #000;
+        border: none;
+		
+}
+
+QDoubleSpinBox::down-button {
+        background: #fff;
+		border: none;
+		image: url(:/resources/images/icons/spinArrowButtonDownNormal.png);
+		margin-bottom:1px;
+}
+
+QDoubleSpinBox::down-button:pressed {
+        background: #fff;
+		border: none;
+		image: url(:/resources/images/icons/spinArrowButtonDownPressed.png);
+		margin-bottom:1px;
+}
+
+QDoubleSpinBox::up-button {
+        background: #fff;
+		border-bottom: none;
+		image: url(:/resources/images/icons/spinArrowButtonUpNormal.png);
+}
+
+QDoubleSpinBox::up-button:pressed  {
+        background: #fff;
+		border-bottom: none;
+		image: url(:/resources/images/icons/spinArrowButtonUpPressed.png);
+}
+
+/*
+QTableView {
+     selection-background-color: #f0f;
+	 background-image:none;
+	 image:none;
+ }
+ 
+QTreeWidgetItem {
+     selection-background-color: #f0f;
+	 background-image:none;
+	 image:none;
+	 }
+	 
+*/

@@ -1,7 +1,7 @@
 <colors>
-	<view name="iconView" background="#C2C2C2">
+	<view name="iconView" background="#ececec">
 	</view>
-	<view name="breadboardView" background="#CCCCCC">
+	<view name="breadboardView" background="#fff">
 		<color name="blue" ratsnest="#157de6" wire="#418dd9" shadow="#1b5bb3" />
 		<color name="red" ratsnest="#cc1414"  wire="#cc1414" shadow="#8c0000" >
 			<connector name="3v3" />
@@ -20,7 +20,7 @@
 		<color name="brown" ratsnest="#8c3b00"  wire="#8c3b00" shadow="#6c2710" />
 		<color name="pink" ratsnest="#fa50e6"  wire="#fa50e6" shadow="#dc00dc" />
 	</view>
-	<view name="schematicView" background="#f2f2f2">
+	<view name="schematicView" background="#fff">
 		<color name="blue" ratsnest="#157de6"  wire="#418dd9" shadow="#418dd9"/>
 		<color name="red" ratsnest="#cc1414"  wire="#cc1414" shadow="#cc1414">
 			<connector name="3v3" />
@@ -39,7 +39,7 @@
 		<color name="brown" ratsnest="#8c3b00"  wire="#8c3b00" shadow="#8c3b00"/>
 		<color name="pink" ratsnest="#fa50e6"  wire="#fa50e6" shadow="#dc00dc" />
 	</view>	
-	<view name="pcbView" background="#A0A8B3">
+	<view name="pcbView" background="#333">
 		<color name="blue" ratsnest="#157de6" />
 		<color name="red" ratsnest="#cc1414" >
 			<connector name="3v3" />

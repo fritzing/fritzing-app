@@ -86,7 +86,7 @@
                 </iconView>
             </views>
         </instance>	
-						<instance moduleIdRef="Lilypad_PowerSupply-v16" modelIndex="5584" path="pdb/core/Lilypad_PowerSupply-v18.fzp">
+						<instance moduleIdRef="Lilypad_PowerSupply-v18" modelIndex="5584" path="pdb/core/Lilypad_PowerSupply-v18.fzp">
             <views>
                 <iconView layer="">
                     <geometry z="0" x="-1" y="-1"/>
@@ -168,6 +168,16 @@
             </views>
         </instance>	
 		<instance moduleIdRef="Tricolor-LED v16" modelIndex="5584" path="pdb/core/Tricolor-LED v16.fzp">
+            <views>
+                <iconView layer="">
+                    <geometry z="0" x="-1" y="-1"/>
+                </iconView>
+                <iconView layer="">
+                    <geometry z="0" x="-1" y="-1"/>
+                </iconView>
+            </views>
+        </instance>	
+			<instance moduleIdRef="LilyPad Vibe Motor" modelIndex="5584" path="pdb/core/LilyPad Vibe Motor.fzp">
             <views>
                 <iconView layer="">
                     <geometry z="0" x="-1" y="-1"/>

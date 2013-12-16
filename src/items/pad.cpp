@@ -76,7 +76,7 @@ QString Pad::makeLayerSvg(ViewLayer::ViewLayerID viewLayerID, double mmW, double
 	Q_UNUSED(milsW);
 	Q_UNUSED(milsH);
 
-	switch (viewLayerID) {
+ 	switch (viewLayerID) {
 		case ViewLayer::Copper0:
 		case ViewLayer::Copper1:
 			break;

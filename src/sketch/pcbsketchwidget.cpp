@@ -36,7 +36,6 @@ $Date: 2013-04-28 13:51:10 +0200 (So, 28. Apr 2013) $
 #include "../connectors/connectoritem.h"
 #include "../items/moduleidnames.h"
 #include "../items/partlabel.h"
-#include "../help/sketchmainhelp.h"
 #include "../fsvgrenderer.h"
 #include "../autoroute/autorouteprogressdialog.h"
 #include "../autoroute/drc.h"
@@ -356,12 +355,6 @@ void PCBSketchWidget::addDefaultParts() {
 	changeBoardLayers(2, true);
 }
 
-QPoint PCBSketchWidget::calcFixedToCenterItemOffset(const QRect & viewPortRect, const QSizeF & helpSize) {
-	QPoint p((int) ((viewPortRect.width() - helpSize.width()) / 2.0),
-			 30);
-	return p;
-}
-
 void PCBSketchWidget::showEvent(QShowEvent * event) {
 	SketchWidget::showEvent(event);
 	dealWithDefaultParts();
@@ -373,13 +366,8 @@ void PCBSketchWidget::dealWithDefaultParts() {
 
 	m_addDefaultParts = false;
 
-	if (m_fixedToCenterItem == NULL) return;
-
-	// place the default rectangular board in relation to the first time help area
-
-	QSizeF helpSize = m_fixedToCenterItem->size();
 	QSizeF vpSize = this->viewport()->size();
-	QSizeF partSize(600, 200);
+	QSizeF partSize(300, 200);
 
 	//if (vpSize.height() < helpSize.height() + 50 + partSize.height()) {
 		//vpSize.setWidth(vpSize.width() - verticalScrollBar()->width());
@@ -387,10 +375,7 @@ void PCBSketchWidget::dealWithDefaultParts() {
 
 	QPointF p;
 	p.setX((int) ((vpSize.width() - partSize.width()) / 2.0));
-	p.setY((int) helpSize.height());
-
-	// TODO: make these constants less arbitrary (get the size and location of the icon which the board is replacing)
-	p += QPointF(0, 50);
+	p.setY((int) ((vpSize.height() - partSize.height()) / 2.0));
 
 	// place it
 	QPointF q = mapToScene(p.toPoint());
@@ -582,14 +567,6 @@ bool PCBSketchWidget::canCreateWire(Wire * dragWire, ConnectorItem * from, Conne
 {
 	Q_UNUSED(dragWire);
 	return ((from != NULL) && (to != NULL));
-}
-
-double PCBSketchWidget::getRatsnestOpacity() {
-	return 0.7;
-}
-
-double PCBSketchWidget::getRatsnestWidth() {
-	return 0.7;
 }
 
 ConnectorItem * PCBSketchWidget::findNearestPartConnectorItem(ConnectorItem * fromConnectorItem) {
@@ -2921,4 +2898,10 @@ bool PCBSketchWidget::dropOnBottom() {
     if (!layerIsActive(ViewLayer::Copper1)) return true;
 
     return viewFromBelow();
+}
+
+bool PCBSketchWidget::updateOK(ConnectorItem * c1, ConnectorItem * c2) {
+    // don't update if both connectors belong to parts--this isn't legit in schematic or pcb view
+    if (c1->attachedTo()->wireFlags()) return true;
+    return c2->attachedTo()->wireFlags() != 0;
 }

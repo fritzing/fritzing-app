@@ -35,6 +35,7 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 #include <QMainWindow>
 
 class SketchAreaWidget : public QFrame {
+    Q_OBJECT
 public:
 	SketchAreaWidget(QWidget *contentView, QMainWindow *parent);
 	virtual ~SketchAreaWidget();
@@ -58,8 +59,9 @@ protected:
 	QWidget *m_contentView;
 
 	QFrame *m_toolbar;
-	QHBoxLayout *m_buttonsContainer;
-	QVBoxLayout *m_labelContainer;
+	QHBoxLayout *m_leftButtonsContainer;
+	QVBoxLayout *m_middleButtonsContainer;
+	QHBoxLayout *m_rightButtonsContainer;
 	QFrame *m_statusBarArea;
 	class ExpandingLabel * m_routingStatusLabel;
 

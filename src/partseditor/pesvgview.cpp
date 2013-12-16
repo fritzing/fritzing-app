@@ -41,16 +41,9 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 //////////////////////////////////////
 
 
-PESvgView::PESvgView(QWidget * parent) : QWidget(parent) 
+PESvgView::PESvgView(QWidget * parent) : QFrame(parent)
 {
-    this->setObjectName("PESvgView");
-
-    QFile styleSheet(":/resources/styles/newpartseditor.qss");
-    if (!styleSheet.open(QIODevice::ReadOnly)) {
-        DebugDialog::debug("Unable to open :/resources/styles/newpartseditor.qss");
-    } else {
-    	this->setStyleSheet(styleSheet.readAll());
-    }
+    this->setObjectName("peSVG");
 
     m_pegi = NULL;
   

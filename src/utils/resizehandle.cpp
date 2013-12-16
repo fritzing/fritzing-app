@@ -31,12 +31,12 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 
 #include <QCursor>
 
-ResizeHandle::ResizeHandle(const QPixmap &pixmap, const QCursor & cursor, QGraphicsItem *parent)
+ResizeHandle::ResizeHandle(const QPixmap &pixmap, const QCursor & cursor, bool ignoresTransforms, QGraphicsItem *parent)
 : QGraphicsPixmapItem(pixmap, parent)
 {
 	setCursor(cursor);
 	setVisible(true);
-	setFlag(QGraphicsItem::ItemIgnoresTransformations, true);
+	setFlag(QGraphicsItem::ItemIgnoresTransformations, ignoresTransforms);
 }
 
 ResizeHandle::~ResizeHandle() {
@@ -70,7 +70,7 @@ QVariant ResizeHandle::itemChange(GraphicsItemChange change, const QVariant &val
 {
 	switch (change) {
 		case QGraphicsItem::ItemSceneHasChanged: 
-			if (scene()) {
+			if (scaling()) {
 				ZoomableGraphicsView *sw = dynamic_cast<ZoomableGraphicsView*>(scene()->parent());
 				if (sw) {
 					connect(sw, SIGNAL(zoomChanged(double)), this, SLOT(zoomChangedSlot(double)));
@@ -90,7 +90,7 @@ void ResizeHandle::zoomChangedSlot(double scale) {
 }
 
 double ResizeHandle::currentScale() {
-	if(scene()) {
+	if (scaling()) {
 		ZoomableGraphicsView *sw = dynamic_cast<ZoomableGraphicsView*>(scene()->parent());
 		if(sw) {
 			return sw->currentZoom()/100;
@@ -107,5 +107,9 @@ void ResizeHandle::paint(QPainter *painter, const QStyleOptionGraphicsItem *opti
             QGraphicsPixmapItem::paint(painter, option, widget);
 		}
 	}
+}
+
+bool ResizeHandle::scaling() {
+    return (this->flags() & QGraphicsItem::ItemIgnoresTransformations) && (scene() != NULL);
 }
 

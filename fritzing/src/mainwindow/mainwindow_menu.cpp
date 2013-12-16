@@ -805,10 +805,14 @@ void MainWindow::createOpenRecentMenu() {
 }
 
 void MainWindow::updateFileMenu() {
+    m_printAct->setEnabled(m_currentGraphicsView != NULL);
+
 	updateRecentFileActions();
 	m_orderFabAct->setEnabled(true);
 
     m_revertAct->setEnabled(m_undoStack->canUndo());
+
+
 }
 
 void MainWindow::updateRecentFileActions() {

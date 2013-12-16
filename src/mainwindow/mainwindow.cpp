@@ -138,21 +138,18 @@ void FTabBar::paintEvent(QPaintEvent * event) {
             //DebugDialog::debug(QString("state %1").arg(tab.state));
             QString text = tabText(i);
             int added = 0;
-            int lastWidth = 0;
             while (true) {
                 QRect r = tab.fontMetrics.boundingRect(text);
-                if (r.width() != lastWidth && r.width() + iconSize().width() + offset < tabRect(i).width()) {
-                    text += " ";
-                    added++;
-                    lastWidth = r.width();
-                    continue;
-                }
-
-                if (added) {
-                    text.chop(1);
-                    setTabText(i, text);
+                if (r.width() + iconSize().width() + offset >= tabRect(i).width()) {
+                    if (added) {
+                        text.chop(1);
+                        setTabText(i, text);
+                    }
                     break;
                 }
+
+                text += " ";
+                added++;
             }
         }
     }

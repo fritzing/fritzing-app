@@ -138,6 +138,8 @@ void MainWindow::initNames()
 }
 
 void MainWindow::print() {
+    if (m_currentGraphicsView == NULL) return;
+
 	#ifndef QT_NO_PRINTER
 		QPrinter printer(QPrinter::HighResolution);
 
@@ -621,6 +623,8 @@ void MainWindow::exportAux(QString fileName, QImage::Format format, int quality,
 }
 
 void MainWindow::printAux(QPrinter &printer, bool removeBackground, bool paginate) {
+    if (m_currentGraphicsView == NULL) return;
+
 	int res = printer.resolution();
 	double scale2 = res / GraphicsUtils::SVGDPI;
 	DebugDialog::debug(QString("p.w:%1 p.h:%2 pager.w:%3 pager.h:%4 paperr.w:%5 paperr.h:%6 source.w:%7 source.h:%8")

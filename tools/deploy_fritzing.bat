@@ -35,3 +35,4 @@ cd ..
 
 echo don't forget about the msvc files
 echo don't forget about the lib folder
+echo C:\Program Files (x86)\Microsoft Visual Studio 11.0>editbin.exe C:\Users\jonathan\fritzing\fritzing\fritzing\release\Fritzing.exe /SUBSYSTEM:WINDOWS,5.01 /OSVERSION:5.1

@@ -97,7 +97,6 @@ protected:
 	double getRatsnestOpacity();
 	double getRatsnestWidth();
 	ViewLayer::ViewLayerID getLabelViewLayerID(ItemBase *);
-	QPoint calcFixedToCenterItemOffset(const QRect & viewPortRect, const QSizeF & helpSize);
 	void extraRenderSvgStep(ItemBase *, QPointF offset, double dpi, double printerScale, QString & outputSvg);
 	QString makeCircleSVG(QPointF p, double r, QPointF offset, double dpi, double printerScale);
 	ViewLayer::ViewLayerPlacement createWireViewLayerPlacement(ConnectorItem * from, ConnectorItem * to);

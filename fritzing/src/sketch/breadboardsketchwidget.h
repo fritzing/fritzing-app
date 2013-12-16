@@ -59,11 +59,8 @@ protected:
 	void setNewPartVisible(ItemBase *);
 	double defaultGridSizeInches();
 	ViewLayer::ViewLayerID getLabelViewLayerID(ItemBase *);
-	QPoint calcFixedToCenterItemOffset(const QRect & viewPortRect, const QSizeF & helpSize);
 	double getTraceWidth();
 	const QString & traceColor(ViewLayer::ViewLayerPlacement);
-	double getRatsnestOpacity();
-	double getRatsnestWidth();
 };
 
 #endif

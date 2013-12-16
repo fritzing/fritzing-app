@@ -217,11 +217,9 @@ SchematicTextLayerKinPaletteItem::SchematicTextLayerKinPaletteItem(PaletteItemBa
 {
 }
 
-bool SchematicTextLayerKinPaletteItem::setUpImage(ModelPart * modelPart, const LayerHash & viewLayers, LayerAttributes & layerAttributes)
+void SchematicTextLayerKinPaletteItem::cacheLoaded(const LayerAttributes & layerAttributes)
 {
-	bool result = PaletteItemBase::setUpImage(modelPart, viewLayers, layerAttributes);
     this->setProperty("textSvg", layerAttributes.loaded());
-    return result;
 }
 
 void SchematicTextLayerKinPaletteItem::setTransform2(const QTransform & currTransf) {
@@ -344,7 +342,7 @@ void SchematicTextLayerKinPaletteItem::positionTexts(QList<QDomElement> & texts)
     }
 
     QRectF br = boundingRect();
-    QImage image(qCeil(br.width()), qCeil(br.height()), QImage::Format_Mono);
+    QImage image(qCeil(br.width()) * 2, qCeil(br.height()) * 2, QImage::Format_Mono);  // schematic text is so small it doesn't render unless bitmap is double-sized
 
     foreach (QDomElement text, texts) {
         TextThing textThing;
@@ -383,18 +381,14 @@ void SchematicTextLayerKinPaletteItem::renderText(QImage & image, QDomElement & 
 
     // TODO: handle inherited fill/stroke values
     QString oldFill = text.attribute("fill");
-    if (!oldFill.isEmpty()) {
-        text.setAttribute("fill", "black");
-    }
+    text.setAttribute("fill", "black");
     QString oldStroke = text.attribute("stroke");
-    if (!oldStroke.isEmpty()) {
-        text.setAttribute("stroke", "black");
-    }
+    text.setAttribute("stroke", "black");
     text.setTagName("text");
 
-
     image.fill(0xffffffff);
-    QSvgRenderer renderer(text.ownerDocument().toByteArray());
+    QByteArray byteArray = text.ownerDocument().toByteArray();
+    QSvgRenderer renderer(byteArray);
 	QPainter painter;
 	painter.begin(&image);
 	painter.setRenderHint(QPainter::Antialiasing, false);
@@ -408,10 +402,12 @@ void SchematicTextLayerKinPaletteItem::renderText(QImage & image, QDomElement & 
     viewBox = renderer.viewBoxF();
     double x = text.attribute("x").toDouble();
     double y = text.attribute("y").toDouble();
-    QPointF p(image.width() * x / viewBox.width(), image.height() * y / viewBox.height());
+    QPointF xy(x, y);
     matrix = renderer.matrixForElement(IDString);
-    QPointF q = matrix.map(p);
-    QPoint iq((int) q.x(), (int) q.y());
+    QPointF mxy = matrix.map(xy);
+
+    QPointF p(image.width() * mxy.x() / viewBox.width(), image.height() * mxy.y() / viewBox.height());
+    QPoint iq((int) p.x(), (int) p.y());
 
     minX = image.width() + 1;
     maxX = -1;
@@ -448,8 +444,10 @@ void SchematicTextLayerKinPaletteItem::renderText(QImage & image, QDomElement & 
     text.setTagName("g");
     if (oldid.isEmpty()) text.removeAttribute("id");
     else text.setAttribute("id", oldid);
-    if (!oldFill.isEmpty()) text.setAttribute("fill", oldFill);
-    if (!oldStroke.isEmpty()) text.setAttribute("stroke", oldStroke);
+    if (oldFill.isEmpty()) text.removeAttribute("fill");
+    else text.setAttribute("fill", oldFill);
+    if (oldStroke.isEmpty()) text.removeAttribute("stroke");
+    else text.setAttribute("stroke", oldStroke);
 }
 
 void SchematicTextLayerKinPaletteItem::clearTextThings() {
@@ -490,4 +488,8 @@ QString SchematicTextLayerKinPaletteItem::vflip(const QString & svg, bool isFlip
     }
 
     return doc.toString();
+}
+
+void SchematicTextLayerKinPaletteItem::setInitialTransform(const QTransform & matrix) {
+    setTransform2(matrix);
 }

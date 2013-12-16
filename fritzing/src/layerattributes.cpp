@@ -41,7 +41,7 @@ void LayerAttributes::setFilename(const QString & filename) {
 	m_filename = filename;
 }
 
-const QByteArray & LayerAttributes::loaded() {
+const QByteArray & LayerAttributes::loaded() const {
 	return m_loaded;
 }
 

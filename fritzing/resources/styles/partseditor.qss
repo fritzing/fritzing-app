@@ -1,3 +1,5 @@
+/*
+
 #partsEditor QLabel {
 	font-family: LucidaGrande, LucidaSans, Tahoma, Arial, sans-serif;
 	font-size: 12px;
@@ -126,7 +128,7 @@ AbstractEditableLabelWidget QLabel {
 }
 
 #partTitle QLabel {
-	color: #E6E6E6;
+	color: #656565;
 	font-size: 18px;
 }
 
@@ -151,7 +153,7 @@ AbstractEditableLabelWidget QLabel {
 	padding-bottom: 4px;
 	padding-left: 6px;
 	padding-right: 6px;
-	color: #CCB6BD; 
+	color: #821F09; 
 	border-bottom: 0px;
 	min-width: 6.5em;
 	max-width: 6.5em;
@@ -162,14 +164,21 @@ AbstractEditableLabelWidget QLabel {
 }
 
 #partsEditor QTabBar::tab:selected {
-	background-color: #802643;
+	background-color: #D63222;
 	border-bottom: 0px;
+	font-weight: bold;
 }
 
 #partsEditor QTabBar::tab:!selected {
-	border: 2px solid #802643;
+	border: 2px solid #D63222;
 	border-bottom: 0px;
 }
+
+#partsEditor QTabBar::tab:!selected:hover {
+	border: #F23926;
+
+} 
+
 
 #scroll_test {
 	background-color: green;
@@ -220,3 +229,46 @@ PartsEditorViewsWidget {
 	margin-top: 5px;
 	font-size: 11px;
 }
+
+#partsEditor QComboBox,
+#partsEditor QPushButton,
+#partsEditor QPushButton:enabled,
+#partsEditor QPushButton:active{
+	background-image:none;
+	color: #fff;
+	background:transparent;
+	font-size:12px;
+	height: 34px;
+	}
+#partsEditor QComboBox:hover,
+#partsEditor QPushButton:hover{
+	background-image:none;
+	color: #d9d9d9;
+	background:#f23926;
+	font-size:12px;
+	border:none;
+	height: 34px;
+	
+	}
+	
+
+#partsEditor QComboBox:pressed,	
+#partsEditor QPushButton:pressed{
+	background-image:none;
+	color: #d9d9d9;
+	background:#f23926;
+	font-size:12px;
+	border:none;
+	height: 34px;
+	}
+	
+#partsEditor QComboBox:disabled,
+#partsEditor QPushButton:disabled{
+	background-image:none;
+	color: #656565;
+	background:transparent;
+	font-size:12px;
+	border:none;
+	height: 34px;
+	}
+*/

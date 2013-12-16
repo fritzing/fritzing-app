@@ -25,9 +25,11 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 ********************************************************************/
 
 #include "focusoutcombobox.h"
+#include "../debugdialog.h"
 
 FocusOutComboBox::FocusOutComboBox(QWidget * parent) : QComboBox(parent) {
 	setEditable(true);
+    m_wasOut = true;
     lineEdit()->installEventFilter( this );
 }
 
@@ -35,11 +37,14 @@ FocusOutComboBox::~FocusOutComboBox() {
 }
 
 void FocusOutComboBox::focusInEvent(QFocusEvent * e) {
+    //DebugDialog::debug("focus in");
     QComboBox::focusInEvent(e);
     checkSelectAll();
 }
 
 void FocusOutComboBox::focusOutEvent(QFocusEvent * e) {
+    //DebugDialog::debug("focus out");
+    m_wasOut = true;
 	QComboBox::focusOutEvent(e);
 	QString t = this->currentText();
 	QString it = this->itemText(this->currentIndex());
@@ -54,8 +59,14 @@ void FocusOutComboBox::focusOutEvent(QFocusEvent * e) {
 }
 
 bool FocusOutComboBox::eventFilter( QObject *target, QEvent *event ) {
+    // subclassing mouseReleaseEvent doesn't seem to work so use eventfilter instead
     if( target == lineEdit() && event->type() == QEvent::MouseButtonRelease ) {
-        checkSelectAll();
+        if (m_wasOut) {
+            // only select all the first time the focused lineEdit is clicked, not every time,
+            // otherwise you can't move the selection point with the mouse
+            checkSelectAll();
+            m_wasOut = false;
+        }
     }
     return false;
 }

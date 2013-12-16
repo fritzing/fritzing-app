@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE svg>
+<!-- Generator: Adobe Illustrator 15.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg xmlns="http://www.w3.org/2000/svg" width="0.581in" x="0px" version="1.1" y="0px" gorn="0"  height="0.586861in" viewBox="0 0 41.832 42.254" xmlns:xml="http://www.w3.org/XML/1998/namespace" id="Layer_1" enable-background="new 0 0 41.832 42.254" xml:space="preserve">
+    <desc >
+        <referenceFile >atlas-sientific_AssembledFemaleBNC_pcb.svg</referenceFile>
+    </desc>
+    <g gorn="0.1"  id="silkscreen">
+        <g gorn="0.1.0"  id="white">
+            <g >
+                <path fill="#FFFFFF"  d="M41.832,42.254H0V0h41.832V42.254z M0.73,41.615h40.373V0.64H0.73V41.615z"/>
+            </g>
+        </g>
+    </g>
+    <g  id="copper0">
+    <g id="copper1">
+        <rect width="3.168" x="26.729" y="2.503" fill="none"  height="3.168" stroke="#FDBF16" stroke-width="1.152"/>
+        <circle fill="none" cx="28.313" gorn="0.2.1"  cy="4.087" stroke="#FDBF16" id="connector2pin" r="1.584" stroke-width="1.152"/>
+        <circle fill="none" cx="21.036" gorn="0.2.2"  cy="4.087" stroke="#FDBF16" id="connector1pin" r="1.584" stroke-width="1.152"/>
+        <circle fill="none" cx="13.806" gorn="0.2.3"  cy="4.087" stroke="#FDBF16" id="connector0pin" r="1.584" stroke-width="1.152"/>
+    </g>
+    </g>
+</svg>

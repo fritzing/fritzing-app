@@ -1102,7 +1102,7 @@ background:#fff;
 
  QProgressBar::chunk {
      background-color: #f32926;
-     width: 30px;
+     width: 10px;
 	 text-align: center;
 	 font-family: Droid Sans;
 	

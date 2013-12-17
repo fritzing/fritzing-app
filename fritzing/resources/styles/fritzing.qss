@@ -1194,6 +1194,7 @@ QRadioButton::indicator:checked:pressed  {
         padding: 0px;
 }
 
+#exportButton,
 #viewFromButton,
 #activeLayerButton,
 #sketchToolButton {
@@ -1203,6 +1204,8 @@ QRadioButton::indicator:checked:pressed  {
 		max-width:110px;
 		min-width:95px;
 }
+
+
 
 #sketchAreaToolbar QLabel {
         font-weight: bold;

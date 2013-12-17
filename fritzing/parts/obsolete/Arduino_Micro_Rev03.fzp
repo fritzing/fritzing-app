@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <module fritzingVersion='0.5.2b.02.18.4756' moduleId='Arduino_Micro_Rev03'>
-<version>4</version>
+<version replacedby='Arduino_Micro_Rev03(fix)'>4</version>
 <date>2013-04-03</date>
 <author>althaus</author>
 <description>The Arduino Micro is a microcontroller board based on the ATmega32u4 (datasheet), developed in conjunction with Adafruit. It has 20 digital input/output pins (of which 7 can be used as PWM outputs and 12 as analog inputs), a 16 MHz crystal oscillator, a micro USB connection, an ICSP header, and a reset button. It contains everything needed to support the microcontroller; simply connect it to a computer with a micro USB cable to get started. It has a form factor that enables it to be easily placed on a breadboard.
@@ -17,7 +17,7 @@ The Micro is similar to the Arduino Leonardo in that the ATmega32u4 has built-in
 <tag>REV3</tag>
 </tags>
 <properties>
-<property name='family'>microcontroller board (arduino)</property>
+<property name='family'>/oboslete/microcontroller board (arduino)</property>
 <property name='type'>Arduino Micro (Rev3)</property>
 </properties>
 <views>

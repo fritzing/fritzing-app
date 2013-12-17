@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<module fritzingVersion='0.5.2b.02.18.4756' moduleId='Arduino-Fio-v22'>
+<module fritzingVersion='0.5.2b.02.18.4756' moduleId='Arduino-Fio-v22(fix)'>
 <version>5</version>
 <date>2013-04-11</date>
 <author>althaus</author>
@@ -31,7 +31,7 @@ Arduino Fio is compatible with Funnel. It has connections for a Lithium Polymer 
 </layers>
 </schematicView>
 <pcbView>
-<layers image='pcb/Arduino-Fio-v22_pcb.svg'>
+<layers image='pcb/Arduino-Fio-v22(fix)_pcb.svg'>
 <layer layerId='copper1'/>
 <layer layerId='silkscreen'/>
 <layer layerId='copper0'/>
@@ -187,9 +187,9 @@ Arduino Fio is compatible with Funnel. It has connections for a Lithium Polymer 
 <connector id='connector36' type='male' name='GND'>
 <description>GND</description><views>
 <breadboardView>
-<p layer='breadboardbreadboard' svgId='connector36pin'/></breadboardView>
+<p layer='unknown' svgId='connector36pin'/></breadboardView>
 <schematicView>
-<p layer='schematic' svgId='connector36pin' terminalId='connector36terminal'/></schematicView>
+<p layer='unknown' svgId='connector36pin' terminalId='connector36terminal'/></schematicView>
 <pcbView>
 <p layer='unknown' svgId='connector36pad'/></pcbView>
 </views>
@@ -197,9 +197,9 @@ Arduino Fio is compatible with Funnel. It has connections for a Lithium Polymer 
 <connector id='connector37' type='male' name='VBATT'>
 <description>VBATT</description><views>
 <breadboardView>
-<p layer='breadboardbreadboard' svgId='connector37pin'/></breadboardView>
+<p layer='unknown' svgId='connector37pin'/></breadboardView>
 <schematicView>
-<p layer='schematic' svgId='connector37pin' terminalId='connector37terminal'/></schematicView>
+<p layer='unknown' svgId='connector37pin' terminalId='connector37terminal'/></schematicView>
 <pcbView>
 <p layer='unknown' svgId='connector37pad'/></pcbView>
 </views>
@@ -207,7 +207,7 @@ Arduino Fio is compatible with Funnel. It has connections for a Lithium Polymer 
 <connector id='connector42' type='male' name='MISO'>
 <description>MISO</description><views>
 <breadboardView>
-<p layer='breadboardbreadboard' svgId='connector42pin'/></breadboardView>
+<p layer='unknown' svgId='connector42pin'/></breadboardView>
 <schematicView>
 <p layer='unknown' svgId='connector42pin' terminalId='connector42terminal'/></schematicView>
 <pcbView>
@@ -219,7 +219,7 @@ Arduino Fio is compatible with Funnel. It has connections for a Lithium Polymer 
 <connector id='connector43' type='male' name='VCC'>
 <description>VCC</description><views>
 <breadboardView>
-<p layer='breadboardbreadboard' svgId='connector43pin'/></breadboardView>
+<p layer='unknown' svgId='connector43pin'/></breadboardView>
 <schematicView>
 <p layer='unknown' svgId='connector43pin' terminalId='connector43terminal'/></schematicView>
 <pcbView>
@@ -229,7 +229,7 @@ Arduino Fio is compatible with Funnel. It has connections for a Lithium Polymer 
 <connector id='connector44' type='male' name='SCK'>
 <description>SCK</description><views>
 <breadboardView>
-<p layer='breadboardbreadboard' svgId='connector44pin'/></breadboardView>
+<p layer='unknown' svgId='connector44pin'/></breadboardView>
 <schematicView>
 <p layer='unknown' svgId='connector44pin' terminalId='connector44terminal'/></schematicView>
 <pcbView>
@@ -239,7 +239,7 @@ Arduino Fio is compatible with Funnel. It has connections for a Lithium Polymer 
 <connector id='connector45' type='male' name='MOSI'>
 <description>MOSI</description><views>
 <breadboardView>
-<p layer='breadboardbreadboard' svgId='connector45pin'/></breadboardView>
+<p layer='unknown' svgId='connector45pin'/></breadboardView>
 <schematicView>
 <p layer='unknown' svgId='connector45pin' terminalId='connector45terminal'/></schematicView>
 <pcbView>
@@ -249,7 +249,7 @@ Arduino Fio is compatible with Funnel. It has connections for a Lithium Polymer 
 <connector id='connector46' type='male' name='Reset'>
 <description>Reset</description><views>
 <breadboardView>
-<p layer='breadboardbreadboard' svgId='connector46pin'/></breadboardView>
+<p layer='unknown' svgId='connector46pin'/></breadboardView>
 <schematicView>
 <p layer='unknown' svgId='connector46pin' terminalId='connector46terminal'/></schematicView>
 <pcbView>
@@ -259,7 +259,7 @@ Arduino Fio is compatible with Funnel. It has connections for a Lithium Polymer 
 <connector id='connector47' type='male' name='GND'>
 <description>GND</description><views>
 <breadboardView>
-<p layer='breadboardbreadboard' svgId='connector47pin'/></breadboardView>
+<p layer='unkown' svgId='connector47pin'/></breadboardView>
 <schematicView>
 <p layer='unknown' svgId='connector47pin' terminalId='connector47terminal'/></schematicView>
 <pcbView>
@@ -409,9 +409,9 @@ Arduino Fio is compatible with Funnel. It has connections for a Lithium Polymer 
 <connector id='connector62' type='male' name='GND'>
 <description>GND</description><views>
 <breadboardView>
-<p layer='breadboardbreadboard' svgId='connector62pin'/></breadboardView>
+<p layer='unknown' svgId='connector62pin'/></breadboardView>
 <schematicView>
-<p layer='schematic' svgId='connector62pin' terminalId='connector62terminal'/></schematicView>
+<p layer='unknown' svgId='connector62pin' terminalId='connector62terminal'/></schematicView>
 <pcbView>
 <p layer='unknown' svgId='connector62pad'/></pcbView>
 </views>
@@ -419,9 +419,9 @@ Arduino Fio is compatible with Funnel. It has connections for a Lithium Polymer 
 <connector id='connector63' type='male' name='USB_VIN'>
 <description>USB_VIN</description><views>
 <breadboardView>
-<p layer='breadboardbreadboard' svgId='connector63pin'/></breadboardView>
+<p layer='unknown' svgId='connector63pin'/></breadboardView>
 <schematicView>
-<p layer='schematic' svgId='connector63pin' terminalId='connector63terminal'/></schematicView>
+<p layer='unknown' svgId='connector63pin' terminalId='connector63terminal'/></schematicView>
 <pcbView>
 <p layer='unknown' svgId='connector63pad'/></pcbView>
 </views>
@@ -429,9 +429,9 @@ Arduino Fio is compatible with Funnel. It has connections for a Lithium Polymer 
 <connector id='connector64' type='male' name='Off'>
 <description>Off</description><views>
 <breadboardView>
-<p layer='breadboardbreadboard' svgId='connector64pin'/></breadboardView>
+<p layer='unknown' svgId='connector64pin'/></breadboardView>
 <schematicView>
-<p layer='schematic' svgId='connector64pin' terminalId='connector64terminal'/></schematicView>
+<p layer='unknown' svgId='connector64pin' terminalId='connector64terminal'/></schematicView>
 <pcbView>
 <p layer='unknown' svgId='connector64pad'/></pcbView>
 </views>
@@ -439,9 +439,9 @@ Arduino Fio is compatible with Funnel. It has connections for a Lithium Polymer 
 <connector id='connector65' type='male' name='On'>
 <description>On</description><views>
 <breadboardView>
-<p layer='breadboardbreadboard' svgId='connector65pin'/></breadboardView>
+<p layer='unknown' svgId='connector65pin'/></breadboardView>
 <schematicView>
-<p layer='schematic' svgId='connector65pin' terminalId='connector65terminal'/></schematicView>
+<p layer='unknown' svgId='connector65pin' terminalId='connector65terminal'/></schematicView>
 <pcbView>
 <p layer='unknown' svgId='connector65pad'/></pcbView>
 </views>
@@ -449,9 +449,9 @@ Arduino Fio is compatible with Funnel. It has connections for a Lithium Polymer 
 <connector id='connector66' type='male' name='CTS'>
 <description>CTS</description><views>
 <breadboardView>
-<p layer='breadboardbreadboard' svgId='connector66pin'/></breadboardView>
+<p layer='unknown' svgId='connector66pin'/></breadboardView>
 <schematicView>
-<p layer='schematic' svgId='connector66pin' terminalId='connector66terminal'/></schematicView>
+<p layer='unknown' svgId='connector66pin' terminalId='connector66terminal'/></schematicView>
 <pcbView>
 <p layer='unknown' svgId='connector66pad'/></pcbView>
 </views>
@@ -459,9 +459,9 @@ Arduino Fio is compatible with Funnel. It has connections for a Lithium Polymer 
 <connector id='connector67' type='male' name='SLEEP_RQ'>
 <description>SLEEP_RQ</description><views>
 <breadboardView>
-<p layer='breadboardbreadboard' svgId='connector67pin'/></breadboardView>
+<p layer='unknown' svgId='connector67pin'/></breadboardView>
 <schematicView>
-<p layer='schematic' svgId='connector67pin' terminalId='connector67terminal'/></schematicView>
+<p layer='unknown' svgId='connector67pin' terminalId='connector67terminal'/></schematicView>
 <pcbView>
 <p layer='unknown' svgId='connector67pad'/></pcbView>
 </views>

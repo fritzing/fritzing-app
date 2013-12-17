@@ -2292,6 +2292,7 @@ long MainWindow::swapSelectedAuxAux(ItemBase * itemBase, const QString & moduleI
     swapThing.viewLayerPlacement = viewLayerPlacement;
     swapThing.parentCommand = parentCommand;
     swapThing.propsMap = propsMap;
+    swapThing.bbView = m_breadboardGraphicsView;
 
     long newID = 0;
     for (int i = 0; i < 3; i++) {

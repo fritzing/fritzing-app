@@ -1998,6 +1998,9 @@ void MainWindow::updateEditMenu() {
         return;
     }
 
+    foreach (QAction * action, m_editMenu->actions()) {
+        action->setEnabled(true);
+    }
 
 	QClipboard *clipboard = QApplication::clipboard();
 	m_pasteAct->setEnabled(false);

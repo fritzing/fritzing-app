@@ -6074,7 +6074,6 @@ void SketchWidget::setUpSwapReconnect(SwapThing & swapThing, ItemBase * itemBase
 	QHash<QString, QPolygonF> legs;
 	QHash<QString, ConnectorItem *> formerLegs;
 	if (m2f.count() > 0 && (m_viewID == ViewLayer::BreadboardView)) {
-        swapThing.bbView = this;
 		checkFit(newModelPart, itemBase, newID, found, notFound, m2f, swapThing.byWire, legs, formerLegs, swapThing.parentCommand);
 	}
 

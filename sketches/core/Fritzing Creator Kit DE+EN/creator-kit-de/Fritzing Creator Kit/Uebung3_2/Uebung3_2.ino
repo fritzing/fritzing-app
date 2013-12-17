@@ -5,8 +5,14 @@
   Dieses Beispiel aus dem Fritzing Creator Kit: www.fritzing.org/creator-kit.
 */
 
+// Pinbelegung für Arduino UNO
 int reihenPins[8] = {9,3,2,12,15,11,7,6};      // Anschlüsse der Reihenpins am Arduino
 int spaltenPins[8] = {13,8,17,10,5,16,4,14};   // Anschlüsse der Spaltenpins am Arduino
+
+
+// Pinbelegung für Arduino MEGA
+// int reihenPins[8] = {9,3,2,12,55,11,7,6};      // Anschlüsse der Reihenpins am Arduino
+// int spaltenPins[8] = {13,8,57,10,5,56,4,54};   // Anschlüsse der Spaltenpins am Arduino
 
 int imageNr=0;                                 // welches Bild wird gerade angezeigt
 

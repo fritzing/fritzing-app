@@ -783,12 +783,12 @@
 		<circle id="connector496pin" fill="none" stroke="#9A916C" stroke-width="1.0295" cx="284.373" cy="129.6" r="1.861"/>
 		<circle id="connector497pin" fill="none" stroke="#9A916C" stroke-width="1.0295" cx="291.572" cy="129.6" r="1.861"/>
 		<g>
-			<circle id="connector501pad" fill="none" stroke="#9A916C" stroke-width="0.8504" cx="205.567" cy="64.654" r="1.884"/>
-			<circle id="connector500pad" fill="none" stroke="#9A916C" stroke-width="0.8504" cx="198.367" cy="64.654" r="1.884"/>
-			<circle id="connector503pad" fill="none" stroke="#9A916C" stroke-width="0.8504" cx="205.567" cy="71.841" r="1.884"/>
-			<circle id="connector502pad" fill="none" stroke="#9A916C" stroke-width="0.8504" cx="198.367" cy="71.841" r="1.884"/>
-			<circle id="connector505pad" fill="none" stroke="#9A916C" stroke-width="0.8504" cx="205.567" cy="79.029" r="1.884"/>
-			<circle id="connector504pad" fill="none" stroke="#9A916C" stroke-width="0.8504" cx="198.367" cy="79.029" r="1.884"/>
+			<circle id="connector501pin" fill="none" stroke="#9A916C" stroke-width="0.8504" cx="205.567" cy="64.654" r="1.884"/>
+			<circle id="connector500pin" fill="none" stroke="#9A916C" stroke-width="0.8504" cx="198.367" cy="64.654" r="1.884"/>
+			<circle id="connector503pin" fill="none" stroke="#9A916C" stroke-width="0.8504" cx="205.567" cy="71.841" r="1.884"/>
+			<circle id="connector502pin" fill="none" stroke="#9A916C" stroke-width="0.8504" cx="198.367" cy="71.841" r="1.884"/>
+			<circle id="connector505pin" fill="none" stroke="#9A916C" stroke-width="0.8504" cx="205.567" cy="79.029" r="1.884"/>
+			<circle id="connector504pin" fill="none" stroke="#9A916C" stroke-width="0.8504" cx="198.367" cy="79.029" r="1.884"/>
 		</g>
 	</g>
 	<g id="_x31_x08" transform="matrix(1, 0, 0, 1, 223.16, 140.401)">

@@ -523,25 +523,10 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>5V</description>
    <views>
     <breadboardView>
-     <p svgId="connector500pin"   layer="breadboardbreadboard"/>
+     <p svgId="connector501pin"   layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector275pin" layer="schematic" terminalId="connector275terminal"/>
-    </schematicView>
-    <pcbView>
-              <p svgId="connector500pad"  layer="copper0"/>
-     <p svgId="connector500pad"  layer="copper1"/>
-    </pcbView>
-   </views>
-  </connector>
-  <connector type="female" id="connector501" name="ICSP SCK">
-   <description>ICSP SCK</description>
-   <views>
-    <breadboardView>
-     <p svgId="connector501pin"  layer="breadboardbreadboard"/>
-    </breadboardView>
-    <schematicView>
-     <p svgId="connector276pin" layer="schematic" terminalId="connector276terminal"/>
     </schematicView>
     <pcbView>
               <p svgId="connector501pad"  layer="copper0"/>
@@ -549,14 +534,14 @@ For information on using the board with the Android OS, see Google's ADK documen
     </pcbView>
    </views>
   </connector>
-  <connector type="female" id="connector502" name="ICSP MOSI">
-   <description>ICSP MOSI</description>
+  <connector type="female" id="connector502" name="ICSP SCK">
+   <description>ICSP SCK</description>
    <views>
     <breadboardView>
-     <p svgId="connector502pin"   layer="breadboardbreadboard"/>
+     <p svgId="connector502pin"  layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
-     <p svgId="connector277pin"  layer="schematic" terminalId="connector277terminal"/>
+     <p svgId="connector276pin" layer="schematic" terminalId="connector276terminal"/>
     </schematicView>
     <pcbView>
               <p svgId="connector502pad"  layer="copper0"/>
@@ -564,14 +549,14 @@ For information on using the board with the Android OS, see Google's ADK documen
     </pcbView>
    </views>
   </connector>
-  <connector type="female" id="connector503" name="RESET3">
-   <description>RESET3</description>
+  <connector type="female" id="connector503" name="ICSP MOSI">
+   <description>ICSP MOSI</description>
    <views>
     <breadboardView>
      <p svgId="connector503pin"   layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
-     <p svgId="connector278pin" layer="schematic"  terminalId="connector278terminal"/>
+     <p svgId="connector277pin"  layer="schematic" terminalId="connector277terminal"/>
     </schematicView>
     <pcbView>
               <p svgId="connector503pad"  layer="copper0"/>
@@ -579,18 +564,33 @@ For information on using the board with the Android OS, see Google's ADK documen
     </pcbView>
    </views>
   </connector>
-  <connector type="female" id="connector504" name="GND">
+  <connector type="female" id="connector504" name="RESET3">
+   <description>RESET3</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector504pin"   layer="breadboardbreadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector278pin" layer="schematic"  terminalId="connector278terminal"/>
+    </schematicView>
+    <pcbView>
+              <p svgId="connector504pad"  layer="copper0"/>
+     <p svgId="connector504pad"  layer="copper1"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="female" id="connector505" name="GND">
    <description>GND</description>
    <views>
     <breadboardView>
-     <p svgId="connector504pin"  layer="breadboardbreadboard"/>
+     <p svgId="connector505pin"  layer="breadboardbreadboard"/>
     </breadboardView>
     <schematicView>
      <p svgId="connector279pin" layer="schematic" terminalId="connector279terminal"/>
     </schematicView>
     <pcbView>
-              <p svgId="connector504pad"  layer="copper0"/>
-     <p svgId="connector504pad"  layer="copper1"/>
+              <p svgId="connector505pad"  layer="copper0"/>
+     <p svgId="connector505pad"  layer="copper1"/>
     </pcbView>
    </views>
   </connector>

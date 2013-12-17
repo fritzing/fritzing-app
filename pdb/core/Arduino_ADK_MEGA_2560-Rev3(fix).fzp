@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<module fritzingVersion="0.5.2b.02.18.4756" moduleId="Arduino_ADK_MEGA_2560-Rev3" referenceFile="Arduino_ADK_MEGA_2560-Rev3.fzp">
+<module fritzingVersion="0.5.2b.02.18.4756" moduleId="Arduino_ADK_MEGA_2560-Rev3(fix)" referenceFile="Arduino_ADK_MEGA_2560-Rev3(fix).fzp">
  <version>4</version>
  <date>Mi Apr 3 2013</date>
  <author>althaus</author>
@@ -416,10 +416,10 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>ICSP2 MISO</description>
    <views>
     <breadboardView>
-     <p svgId="connector274pin" layer="breadboardbreadboard"/>
+     <p svgId="connector274pin"  layer="unkown"/>
     </breadboardView>
     <schematicView>
-     <p svgId="connector274pin" layer="schematic" terminalId="connector274terminal"/>
+     <p svgId="connector274pin"  layer="unkown" terminalId="connector274terminal"/>
     </schematicView>
     <pcbView>
      <p svgId="connector274pad"  layer="unkown"/>
@@ -430,10 +430,10 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>5V</description>
    <views>
     <breadboardView>
-     <p svgId="connector275pin" layer="breadboardbreadboard"/>
+     <p svgId="connector275pin"  layer="unkown"/>
     </breadboardView>
     <schematicView>
-     <p svgId="connector275pin" layer="schematic" terminalId="connector275terminal"/>
+     <p svgId="connector275pin" layer="unkown" terminalId="connector275terminal"/>
     </schematicView>
     <pcbView>
      <p svgId="connector275pad"  layer="unkown"/>
@@ -444,14 +444,13 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>ICSP2 SCK</description>
    <views>
     <breadboardView>
-     <p svgId="connector276pin" layer="breadboardbreadboard"/>
+     <p svgId="connector276pin" layer="unkown"/>
     </breadboardView>
     <schematicView>
-     <p svgId="connector276pin" layer="schematic" terminalId="connector276terminal"/>
+     <p svgId="connector276pin" layer="unkown" terminalId="connector276terminal"/>
     </schematicView>
     <pcbView>
      <p svgId="connector276pad" layer="unkown"/>
-
     </pcbView>
    </views>
   </connector>
@@ -459,10 +458,10 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>ICSP2 MOSI</description>
    <views>
     <breadboardView>
-     <p svgId="connector277pin" layer="breadboardbreadboard"/>
+     <p svgId="connector277pin" layer="unkown"/>
     </breadboardView>
     <schematicView>
-     <p svgId="connector277pin" layer="schematic" terminalId="connector277terminal"/>
+     <p svgId="connector277pin" layer="unkown" terminalId="connector277terminal"/>
     </schematicView>
     <pcbView>
      <p svgId="connector277pad"  layer="unkown"/>
@@ -473,10 +472,10 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>RESET2</description>
    <views>
     <breadboardView>
-     <p svgId="connector278pin" layer="breadboardbreadboard"/>
+     <p svgId="connector278pin" layer="unkown"/>
     </breadboardView>
     <schematicView>
-     <p svgId="connector278pin" layer="schematic" terminalId="connector278terminal"/>
+     <p svgId="connector278pin" layer="unkown" terminalId="connector278terminal"/>
     </schematicView>
     <pcbView>
      <p svgId="connector278pad"  layer="unkown"/>
@@ -487,10 +486,10 @@ For information on using the board with the Android OS, see Google's ADK documen
    <description>GND</description>
    <views>
     <breadboardView>
-     <p svgId="connector279pin" layer="breadboardbreadboard"/>
+     <p svgId="connector279pin" layer="unkown"/>
     </breadboardView>
     <schematicView>
-     <p svgId="connector279pin" layer="schematic" terminalId="connector279terminal"/>
+     <p svgId="connector279pin" layer="unkown" terminalId="connector279terminal"/>
     </schematicView>
     <pcbView>
      <p svgId="connector279pad"  layer="unkown"/>
@@ -508,7 +507,7 @@ For information on using the board with the Android OS, see Google's ADK documen
     </schematicView>
     <pcbView>
      <p svgId="connector282pad" layer="copper0"/>
-     <p svgId="connector282pad" layer="copper1"/>
+   <p svgId="connector282pad" layer="copper1"/>
     </pcbView>
    </views>
   </connector>

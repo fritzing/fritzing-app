@@ -1004,6 +1004,7 @@ QWidget *MainWindow::createViewFromButton(SketchAreaWidget *parent)
 
 SketchToolButton *MainWindow::createNoteButton(SketchAreaWidget *parent) {
 	SketchToolButton *noteButton = new SketchToolButton("Notes",parent, m_addNoteAct);
+    noteButton->setObjectName("noteButton");
 	noteButton->setText(tr("Add a note"));
 	noteButton->setEnabledIcon();					// seems to need this to display button icon first time
 	return noteButton;
@@ -1013,6 +1014,7 @@ SketchToolButton *MainWindow::createExportEtchableButton(SketchAreaWidget *paren
 	QList<QAction*> actions;
 	actions << m_exportEtchablePdfAct << m_exportEtchableSvgAct << m_exportGerberAct;
 	SketchToolButton *exportEtchableButton = new SketchToolButton("Diy",parent, actions);
+    exportEtchableButton->setObjectName("exportButton");
 	exportEtchableButton->setDefaultAction(m_exportEtchablePdfAct);
 	exportEtchableButton->setText(tr("Export for PCB"));
 	exportEtchableButton->setEnabledIcon();				// seems to need this to display button icon first time

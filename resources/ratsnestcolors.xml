@@ -11,11 +11,11 @@
 			<connector name="gnd" />
 			<connector name="ground" />
 		</color>
-		<color name="yellow" ratsnest="#ffe24d"  wire="#ffe24d" shadow="#e6ab00" />
+		<color name="yellow" ratsnest="#a09c00"  wire="#a09c00" shadow="#e6ab00" />
 		<color name="green" ratsnest="#47cc79"  wire="#47cc79" shadow="#00a6d3" />
 		<color name="grey" ratsnest=""  wire="#999999" shadow="#666666" />
 		<color name="white" ratsnest=""  wire="#ffffff" shadow="#999999" />
-		<color name="orange" ratsnest="#ff7033"  wire="#ff7033" shadow="#d95821" />
+		<color name="orange" ratsnest="#33ffc5"  wire="#33ffc5" shadow="#d95821" />
 		<color name="purple" ratsnest="#ab58a2"  wire="#ab58a2" shadow="#7a3a73" />
 		<color name="brown" ratsnest="#8c3b00"  wire="#8c3b00" shadow="#6c2710" />
 		<color name="pink" ratsnest="#fa50e6"  wire="#fa50e6" shadow="#dc00dc" />
@@ -30,11 +30,11 @@
 			<connector name="gnd" />
 			<connector name="ground" />
 		</color>
-		<color name="yellow" ratsnest="#ffe24d"  wire="#ffe24d" shadow="#ffe24d"/>
+		<color name="yellow" ratsnest="#a09c00"  wire="#a09c00" shadow="#a09c00"/>
 		<color name="green" ratsnest="#47cc79"  wire="#47cc79" shadow="#47cc79" />
 		<color name="grey" ratsnest=""  wire="#999999"/>
 		<color name="white" ratsnest="" wire=""/>
-		<color name="orange" ratsnest="#ff7033"  wire="#ff7033" shadow="#ff7033"/>
+		<color name="orange" ratsnest="#33ffc5"  wire="#33ffc5" shadow="#33ffc5"/>
 		<color name="purple" ratsnest="#ab58a2"  wire="#ab58a2" shadow="#ab58a2"/>
 		<color name="brown" ratsnest="#8c3b00"  wire="#8c3b00" shadow="#8c3b00"/>
 		<color name="pink" ratsnest="#fa50e6"  wire="#fa50e6" shadow="#dc00dc" />
@@ -49,11 +49,11 @@
 			<connector name="gnd" />
 			<connector name="ground" />
 		</color>
-		<color name="yellow" ratsnest="#ffe24d" />
+		<color name="yellow" ratsnest="#a09c00" />
 		<color name="green" ratsnest="#47cc79" />
 		<color name="grey" ratsnest="" />
 		<color name="white" ratsnest="" />
-		<color name="orange" ratsnest="#ff7033" />
+		<color name="orange" ratsnest="#33ffc5" />
 		<color name="purple" ratsnest="#ab58a2" />
 		<color name="brown" ratsnest="#8c3b00" />
 		<color name="trace" wire="#F28A00" shadow="#F28A00" />

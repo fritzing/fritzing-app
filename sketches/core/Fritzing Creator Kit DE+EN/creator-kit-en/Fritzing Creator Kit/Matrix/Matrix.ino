@@ -5,10 +5,16 @@
   This example is part of the Fritzing Creator Kit: www.fritzing.org/creator-kit.
 */
 
-int rowPins[8] = {9,3,2,12,15,11,7,6};         // matrix rows connected to the Arduino
-int colPins[8] = {13,8,17,10,5,16,4,14};       // matrix columns connected to the Arduino
+// pin order for Arduino UNO
+int rowPins[8] = {9,3,2,12,15,11,7,6};      // matrix rows connected to the Arduino
+int colPins[8] = {13,8,17,10,5,16,4,14};   // matrix columns connected to the Arduino
 
-int image[8][8]={                              // the image displayed on the matrix : 1 = LED on, 0 = LED off
+
+// pin order for Arduino MEGA
+// int rowPins[8] = {9,3,2,12,55,11,7,6};       // matrix rows connected to the Arduino
+// int colPins[8] = {13,8,57,10,5,56,4,54};    // matrix columns connected to the Arduino
+
+int image[8][8]={                               // the image displayed on the matrix : 1 = LED on, 0 = LED off
   
 {0,1,0,0,0,0,1,0},  
 {1,1,1,0,0,1,1,1},

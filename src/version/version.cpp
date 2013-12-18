@@ -37,10 +37,10 @@ $Date: 2013-05-10 17:47:21 +0200 (Fr, 10. Mai 2013) $
 
 QString Version::m_majorVersion("0");       
 QString Version::m_minorVersion("8");
-QString Version::m_minorSubVersion("5");
+QString Version::m_minorSubVersion("6");
 QString Version::m_modifier("b");
-QString Version::m_svnRevision("$Revision: 8b2c $:");
-QString Version::m_svnDate("$Date: 2013-12-16 12:53:21 +0200 (Mo, 16 Dec 2013) $");
+QString Version::m_svnRevision("$Revision: 05b0 $:");
+QString Version::m_svnDate("$Date: 2013-12-18 10:16:21 +0200 (Mi, 18 Dec 2013) $");
 QString Version::m_revision;
 QString Version::m_date;
 QString Version::m_shortDate;

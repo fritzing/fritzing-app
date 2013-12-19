@@ -122,7 +122,6 @@ public:
 	static int placeBestFit(Tile * tile, UserData userData);
     static int checkDonuts(MainWindow *, bool displayMessage);
     static int checkText(MainWindow *, bool displayMessage);
-    static int checkCopperBoth(MainWindow *, bool displayMessage);
 
 protected:
 	static bool initPanelParams(QDomElement & root, PanelParams &);
@@ -143,7 +142,6 @@ protected:
     static void initPanelizerOutput(const QString & filename, const QString & initialMsg);
     static void collectFilenames(const QString & filenames);
     static void writePanelizerFilenames(const QString & panelFilename);
-    static bool gotCopper(const QString & layerName, ViewLayer::ViewLayerID, ItemBase *, const QDomElement & svgRoot);
 };
 
 #endif

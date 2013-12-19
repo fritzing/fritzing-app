@@ -94,6 +94,9 @@ protected:
     void updateDisplay();
 	bool startAux(QString & message, QStringList & messages, QList<CollidingThing *> &, double keepoutMils);
     CollidingThing * findItemsAt(QList<QPointF> &, ItemBase * board, const LayerList & viewLayerIDs, double keepout, double dpi, bool skipHoles, ConnectorItem * already);
+    void checkHoles(QStringList & messages, QList<CollidingThing *> & collidingThings, double dpi);
+    void checkCopperBoth(QStringList & messages, QList<CollidingThing *> & collidingThings, double dpi);
+    QList<ConnectorItem *> missingCopper(const QString & layerName, ViewLayer::ViewLayerID, ItemBase *, const QDomElement & svgRoot);
 
 protected:
     static void markSubs(QDomElement & root, const QString & mark);

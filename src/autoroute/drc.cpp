@@ -568,48 +568,8 @@ bool DRC::startAux(QString & message, QStringList & messages, QList<CollidingThi
             }
         }
     }
-    // check holes
-    foreach (QGraphicsItem * item, m_sketchWidget->scene()->collidingItems(m_board)) {
-        NonConnectorItem * nci = dynamic_cast<NonConnectorItem *>(item);
-        if (nci == NULL) continue;
-
-        QRectF ncibr = nci->sceneBoundingRect();
-        if (boardRect.contains(ncibr)) continue;
-
-        if (nci->attachedToItemType() == ModelPart::Wire) continue;
-        if (nci->attachedToItemType() == ModelPart::CopperFill) continue;
-
-        // TODO: skip pad part, logo item, smds
-
-        QRectF ir = boardRect.intersected(ncibr);
-        int x = qFloor((ir.left() - boardRect.left()) * dpi / GraphicsUtils::SVGDPI);
-        if (x < 0) x = 0;
-        int y = qFloor((ir.top() - boardRect.top()) * dpi / GraphicsUtils::SVGDPI);
-        if (y < 0) y = 0;
-        int w = qCeil(ir.width() * dpi / GraphicsUtils::SVGDPI);
-        if (x + w > m_displayImage->width()) w = m_displayImage->width() - x;
-        int h = qCeil(ir.height() * dpi / GraphicsUtils::SVGDPI);
-        if (y + h > m_displayImage->height()) h = m_displayImage->height() - y;
-
-        CollidingThing * collidingThing = new CollidingThing;
-        collidingThing->nonConnectorItem = nci;
-        for (int iy = 0; iy < h; iy++) {
-            for (int ix = 0; ix < w; ix++) {
-                QPoint p(ix + x, iy + y);
-                m_displayImage->setPixel(p, 1);
-                collidingThing->atPixels << p;
-            }
-        }
-        QStringList names = getNames(collidingThing);
-        QString name0 = names.at(0);
-        QString msg = tr("A hole in %1 may lie outside the border of the board and would be clipped.")
-            .arg(name0)
-            ;
-        messages << msg;
-        collidingThings << collidingThing;
-        emit setProgressMessage(msg);
-        updateDisplay();
-    }
+    checkHoles(messages, collidingThings,  dpi);
+    checkCopperBoth(messages, collidingThings, dpi);
 
     return true;
 }
@@ -1015,4 +975,171 @@ void DRC::extendBorder(double keepout, QImage * image) {
             }
         }
     }
+}
+
+void DRC::checkHoles(QStringList & messages, QList<CollidingThing *> & collidingThings, double dpi) {
+    QRectF boardRect = m_board->sceneBoundingRect();
+    foreach (QGraphicsItem * item, m_sketchWidget->scene()->collidingItems(m_board)) {
+        NonConnectorItem * nci = dynamic_cast<NonConnectorItem *>(item);
+        if (nci == NULL) continue;
+
+        QRectF ncibr = nci->sceneBoundingRect();
+        if (boardRect.contains(ncibr)) continue;
+
+        if (nci->attachedToItemType() == ModelPart::Wire) continue;
+        if (nci->attachedToItemType() == ModelPart::CopperFill) continue;
+
+        // TODO: skip pad part, logo item, smds
+
+        QRectF ir = boardRect.intersected(ncibr);
+        int x = qFloor((ir.left() - boardRect.left()) * dpi / GraphicsUtils::SVGDPI);
+        if (x < 0) x = 0;
+        int y = qFloor((ir.top() - boardRect.top()) * dpi / GraphicsUtils::SVGDPI);
+        if (y < 0) y = 0;
+        int w = qCeil(ir.width() * dpi / GraphicsUtils::SVGDPI);
+        if (x + w > m_displayImage->width()) w = m_displayImage->width() - x;
+        int h = qCeil(ir.height() * dpi / GraphicsUtils::SVGDPI);
+        if (y + h > m_displayImage->height()) h = m_displayImage->height() - y;
+
+        CollidingThing * collidingThing = new CollidingThing;
+        collidingThing->nonConnectorItem = nci;
+        for (int iy = 0; iy < h; iy++) {
+            for (int ix = 0; ix < w; ix++) {
+                QPoint p(ix + x, iy + y);
+                m_displayImage->setPixel(p, 1);
+                collidingThing->atPixels << p;
+            }
+        }
+        QStringList names = getNames(collidingThing);
+        QString name0 = names.at(0);
+        QString msg = tr("A hole in %1 may lie outside the border of the board and would be clipped.")
+            .arg(name0)
+            ;
+        messages << msg;
+        collidingThings << collidingThing;
+        emit setProgressMessage(msg);
+        updateDisplay();
+    }
+}
+
+void DRC::checkCopperBoth(QStringList & messages, QList<CollidingThing *> & collidingThings, double dpi) {
+    QRectF boardRect = m_board->sceneBoundingRect();
+    QList<ItemBase *> visited;
+    foreach (QGraphicsItem * item, m_sketchWidget->scene()->items()) {
+        ItemBase * itemBase = dynamic_cast<ItemBase *>(item);
+        if (itemBase == NULL) continue;
+        if (!itemBase->isEverVisible()) continue;
+        if (itemBase->modelPart()->isCore()) continue;
+
+        itemBase = itemBase->layerKinChief();
+        if (visited.contains(itemBase)) continue;
+
+        visited << itemBase;
+
+        QRectF ibr = item->sceneBoundingRect();
+        if (!boardRect.intersects(ibr)) continue;
+
+        QString fzpPath = itemBase->modelPart()->path();
+        QFile file(fzpPath);
+        if (!file.open(QFile::ReadOnly)) {
+            DebugDialog::debug(QString("unable to open %1").arg(fzpPath));
+            continue;
+        }
+
+        QString fzp = file.readAll();
+        file.close();
+
+        bool copper0 = fzp.contains("copper0");
+        bool copper1 = fzp.contains("copper1");
+        if (!copper1 && !copper0) continue;
+
+        QString svgPath = itemBase->fsvgRenderer()->filename();
+        QFile file2(svgPath);
+        if (!file2.open(QFile::ReadOnly)) {
+            DebugDialog::debug(QString("itembase svg file open failure %1").arg(itemBase->id()));
+            continue;
+        }
+
+        QString svg = file2.readAll();
+        file2.close();
+
+        QDomDocument doc;
+        QString errorStr;
+	    int errorLine;
+	    int errorColumn;
+	    if (!doc.setContent(svg, &errorStr, &errorLine, &errorColumn)) {
+            DebugDialog::debug(QString("itembase svg xml failure %1 %2 %3 %4").arg(itemBase->id()).arg(errorStr).arg(errorLine).arg(errorColumn));
+            continue;
+        }
+
+        QSet<ConnectorItem *> missing;
+        QDomElement root = doc.documentElement();
+    
+        if (copper1) {
+            foreach(ConnectorItem * ci, missingCopper("copper1", ViewLayer::Copper1, itemBase, root)) {
+                missing << ci;
+            }
+        }
+
+        if (copper0) {
+            foreach (ConnectorItem * ci, missingCopper("copper0", ViewLayer::Copper0, itemBase, root)) {
+                missing << ci;
+            }
+        }
+
+        foreach (ConnectorItem * ci, missing) {
+            QRectF ir = boardRect.intersected(ci->sceneBoundingRect());
+            int x = qFloor((ir.left() - boardRect.left()) * dpi / GraphicsUtils::SVGDPI);
+            if (x < 0) x = 0;
+            int y = qFloor((ir.top() - boardRect.top()) * dpi / GraphicsUtils::SVGDPI);
+            if (y < 0) y = 0;
+            int w = qCeil(ir.width() * dpi / GraphicsUtils::SVGDPI);
+            if (x + w > m_displayImage->width()) w = m_displayImage->width() - x;
+            int h = qCeil(ir.height() * dpi / GraphicsUtils::SVGDPI);
+            if (y + h > m_displayImage->height()) h = m_displayImage->height() - y;
+
+            CollidingThing * collidingThing = new CollidingThing;
+            collidingThing->nonConnectorItem = ci;
+            for (int iy = 0; iy < h; iy++) {
+                for (int ix = 0; ix < w; ix++) {
+                    QPoint p(ix + x, iy + y);
+                    m_displayImage->setPixel(p, 1);
+                    collidingThing->atPixels << p;
+                }
+            }
+            QStringList names = getNames(collidingThing);
+            QString name0 = names.at(0);
+            QString msg = tr("Connector %1 on %2 should have both copper top and bottom layers, but the svg only specifies one layer.")
+                .arg(ci->connectorSharedName())
+                .arg(name0)
+                ;
+            messages << msg;
+            collidingThings << collidingThing;
+            emit setProgressMessage(msg);
+            updateDisplay();
+        }
+    }
+
+}
+
+QList<ConnectorItem *> DRC::missingCopper(const QString & layerName, ViewLayer::ViewLayerID viewLayerID, ItemBase * itemBase, const QDomElement & root) 
+{
+    QDomElement copperElement = TextUtils::findElementWithAttribute(root, "id", layerName);
+    QList<ConnectorItem *> missing;
+    
+    foreach (ConnectorItem * connectorItem, itemBase->cachedConnectorItems()) {
+        SvgIdLayer * svgIdLayer = connectorItem->connector()->fullPinInfo(itemBase->viewID(), viewLayerID);
+        if (svgIdLayer == NULL) {
+            DebugDialog::debug(QString("missing pin info for %1").arg(itemBase->id()));
+            missing << connectorItem;
+            continue;
+        }
+
+        QDomElement element = TextUtils::findElementWithAttribute(copperElement, "id", svgIdLayer->m_svgId);
+        if (element.isNull()) {
+            missing << connectorItem;
+        }
+    }
+
+    return missing;
 }

@@ -106,13 +106,13 @@ ItemBase * PartFactory::createPartAux( ModelPart * modelPart, ViewLayer::ViewID 
 		case ModelPart::Board:
 			return new Board(modelPart, viewID, viewGeometry, id, itemMenu, doLabel);
 		case ModelPart::Logo:
-			if (modelPart->moduleID().startsWith("copper", Qt::CaseInsensitive)) {
+			if (modelPart->moduleID().contains("copper", Qt::CaseInsensitive)) {
 				return new CopperLogoItem(modelPart, viewID, viewGeometry, id, itemMenu, doLabel);
 			}
-            else if (modelPart->moduleID().startsWith("Schematic", Qt::CaseInsensitive)) {
+            else if (modelPart->moduleID().contains("schematic", Qt::CaseInsensitive)) {
                 return new SchematicLogoItem(modelPart, viewID, viewGeometry, id, itemMenu, doLabel);
             }
-            else if (modelPart->moduleID().startsWith("Breadboard", Qt::CaseInsensitive)) {
+            else if (modelPart->moduleID().contains("breadboard", Qt::CaseInsensitive)) {
                 return new BreadboardLogoItem(modelPart, viewID, viewGeometry, id, itemMenu, doLabel);
             }
             // make sure "board" match comes after "breadboard" match

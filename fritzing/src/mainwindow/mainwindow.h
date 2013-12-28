@@ -626,7 +626,7 @@ protected:
 	virtual QWidget * currentTabWidget();
 	virtual bool activeLayerWidgetAlwaysOn();
     bool copySvg(const QString & path, QFileInfoList & svgEntryInfoList);
-    void checkSwapObsolete(QList<ItemBase *> &);
+    void checkSwapObsolete(QList<ItemBase *> &, bool includeUpdateLaterMessage);
 
 protected:
 	static void removeActionsStartingAt(QMenu *menu, int start=0);

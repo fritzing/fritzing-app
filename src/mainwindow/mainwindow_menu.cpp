@@ -462,7 +462,7 @@ void MainWindow::mainLoad(const QString & fileName, const QString & displayName,
         if (m_pcbGraphicsView) {
             QList<ItemBase *> items = m_pcbGraphicsView->selectAllObsolete();
 	        if (items.count() > 0) {
-                checkSwapObsolete(items);
+                checkSwapObsolete(items, true);
             }
         }
     }
@@ -3752,19 +3752,22 @@ QList<ItemBase *> MainWindow::selectAllObsolete(bool displayFeedback) {
         QMessageBox::information(this, tr("Fritzing"), tr("No outdated parts found.\nAll your parts are up-to-date.") );
     } 
 	else {
-        checkSwapObsolete(items);
+        checkSwapObsolete(items, false);
 	}
 
     return items;
 }
 
-void MainWindow::checkSwapObsolete(QList<ItemBase *> & items) {
+void MainWindow::checkSwapObsolete(QList<ItemBase *> & items, bool includeUpdateLaterMessage) {
+    QString msg = includeUpdateLaterMessage ? tr("\n\nNote: if you want to update later, there are options under the 'Part' menu for dealing with outdated parts individually. ") : "";
+
     QMessageBox::StandardButton answer = FMessageBox::question(
             this,
             tr("Outdated parts"),
             tr("There are %n outdated part(s) in this sketch. ", "", items.count()) +
-            tr("We strongly recommend that you update these parts to the latest version. ") +
-            tr("This may result in some small changes to your sketch, because parts or connectors may be shifted. ") +
+            tr("We strongly recommend that you update these %n parts  to the latest version. ", "", items.count()) +
+            tr("This may result in changes to your sketch, as parts or connectors may be shifted. ") +
+            msg +
             tr("\n\nDo you want to update now?"),
             QMessageBox::Yes | QMessageBox::No,
             QMessageBox::Yes

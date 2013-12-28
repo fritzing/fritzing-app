@@ -681,6 +681,10 @@ A custom board svg typically has one or two silkscreen layers and one board laye
         <source>A hole in %1 may lie outside the border of the board and would be clipped.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Connector %1 on %2 should have both copper top and bottom layers, but the svg only specifies one layer.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DRCResultsDialog</name>
@@ -3218,14 +3222,6 @@ Go ahead and revert?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>We strongly recommend that you update these parts to the latest version. </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>This may result in some small changes to your sketch, because parts or connectors may be shifted. </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>
 
 Do you want to update now?</source>
@@ -3271,6 +3267,22 @@ Do you want to update now?</source>
     </message>
     <message>
         <source>Display First Time Help</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>
+
+Note: if you want to update later, there are options under the &apos;Part&apos; menu for dealing with outdated parts individually. </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message numerus="yes">
+        <source>We strongly recommend that you update these %n parts  to the latest version. </source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>This may result in changes to your sketch, as parts or connectors may be shifted. </source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -6554,10 +6566,6 @@ Note: you can also trigger this display by mousing down on the routing status te
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>A ratsnest line (very thin &apos;wire&apos;) between connection in one view means that those connections are somehow connected in another view.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>pcb layout</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6603,6 +6611,38 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
     <message>
         <source>To find the SVG file for a part&apos;s image in a given view, click on the tab for that view, then use &lt;b&gt;Show in Folder&lt;/b&gt; under the &lt;b&gt;File&lt;/b&gt; Menu.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>examples</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Get a jump start by looking at the example circuits under File &gt; Examples.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Can&apos;t find your part? Search for it by clicking the magnifier icon in the Parts Bin and type in some keywords</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A ratsnest line (very thin &apos;wire&apos;) between connections in one view means that those connections are somehow connected in another view.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>To create a custom shape for your PCB, import an SVG file.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>To make a stylish Arduino shield in no time, switch the shape of the PCB from a rectangle to the Arduino</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>pcb production</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Have your PCB quickly and easily produced with Fritzing Fab. Hover over the &apos;Fabricate&apos; button to get a quote.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -6818,10 +6858,6 @@ Note: you can also trigger this display by mousing down on the routing status te
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Fritzing Fan</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Fritzing Fab is an easy and affordable service for producing professional PCBs from your Fritzing sketches.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6883,6 +6919,10 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
     <message>
         <source>Next Tip</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fritzing Fab</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -107,7 +107,7 @@ QString addText(const QString & text, bool inUrl)
 
 	return QString("<tspan fill='%1' >%2</tspan>\n")
 				.arg(inUrl ? "#0000ff" : "#000000")
-				.arg(text)
+				.arg(TextUtils::convertExtendedChars(TextUtils::escapeAnd(text)))
 				;
 }
 

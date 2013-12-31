@@ -1140,6 +1140,7 @@ void MainWindow::tabWidget_currentChanged(int index) {
     }
 
 	hideShowTraceMenu();
+    updateEditMenu();
 
     if (m_showBreadboardAct) {
 	    QList<QAction *> actions;

@@ -72,6 +72,11 @@ void TipsAndTricks::initTipSets() {
 	QTime now = QTime::currentTime();
 	qsrand(now.msec());
 
+    QString localStorage = tr("Fritzing stores files for custom parts, generated parts, and for other temporary and long-term purposes in a 'local storage folder'. "
+                            "On Mac and Linux this is usually ~/.config/Fritzing/. "
+                            "Under Windows Vista and above, it is something like C:\\Users\[user name]\\AppData\\Roaming\\Fritzing\\; "
+                            "under Windows XP is something like C:\\Documents and Settings\\[user name]\\Application Data\\Fritzing\\.");
+
 	TipSet * ts = new TipSet;
 	ts->heading = tr("examples");
 	ts->tips << tr("Get a jump start by looking at the example circuits under File > Examples.");
@@ -138,6 +143,8 @@ void TipsAndTricks::initTipSets() {
     ts = new TipSet;
 	ts->heading = tr("parts editor");
     ts->tips << tr("To find the SVG file for a part's image in a given view, click on the tab for that view, then use <b>Show in Folder</b> under the <b>File</b> Menu.");
+    ts->tips << localStorage;
+    ts->tips << tr("Do not store your custom part files in the Fritzing installation folder. If you upgrade Fritzing they will be deleted. Also files in the Fritzing installation folder will not be saved in sketch (.fzz) files, so you won't be able to share them.");
     TipSets.append(ts);
 
     ts = new TipSet;
@@ -160,6 +167,16 @@ void TipsAndTricks::initTipSets() {
     ts->tips << tr("Have your PCB quickly and easily produced with Fritzing Fab. Hover over the 'Fabricate' button to get a quote.");  
     TipSets.append(ts);
     
+    ts = new TipSet;
+	ts->heading = tr("notes");
+    ts->tips << tr("To insert a clickable URL into a note, select some text in the note and type ctrl-l (Mac: command-l). (That's 'l' as in the first letter of 'link'.) To modify an existing link select the linked text and use ctrl-l (command-l) again.");
+    TipSets.append(ts);
+
+    ts = new TipSet;
+	ts->heading = tr("local file storage");
+    ts->tips << localStorage;
+    TipSets.append(ts);
+
 }
 
 TipsAndTricks::~TipsAndTricks()

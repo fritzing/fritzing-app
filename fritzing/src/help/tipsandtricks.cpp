@@ -56,7 +56,7 @@ TipsAndTricks::TipsAndTricks(QWidget *parent)
 
 	Singleton = this;
 	setWindowTitle(tr("Tips and Tricks"));
-	resize(400, 300);
+	resize(600, 500);
 	m_textEdit = new QTextEdit();
 	m_textEdit->setReadOnly(true);
 	m_textEdit->setHtml(html);
@@ -74,7 +74,7 @@ void TipsAndTricks::initTipSets() {
 
     QString localStorage = tr("Fritzing stores files for custom parts, generated parts, and for other temporary and long-term purposes in a 'local storage folder'. "
                             "On Mac and Linux this is usually ~/.config/Fritzing/. "
-                            "Under Windows Vista and above, it is something like C:\\Users\[user name]\\AppData\\Roaming\\Fritzing\\; "
+                            "Under Windows Vista and above, it is something like C:\\Users\\[user name]\\AppData\\Roaming\\Fritzing\\; "
                             "under Windows XP is something like C:\\Documents and Settings\\[user name]\\Application Data\\Fritzing\\.");
 
 	TipSet * ts = new TipSet;
@@ -142,9 +142,12 @@ void TipsAndTricks::initTipSets() {
 
     ts = new TipSet;
 	ts->heading = tr("parts editor");
+    ts->tips << tr("Check out Parts Editor Help under the <b>Help</b> Menu.");
+    ts->tips << tr("Before using the Parts Editor, see whether a Generic IC, Mystery Part, or Pin Header will do the job. Once you drop one of these into your sketch, you can change the number of pins, pin spacing, and other properties.");
+    ts->tips << tr("In the Parts Editor, to select a graphic underneath another graphic, use the mouse wheel while holding down the shift key.");
     ts->tips << tr("To find the SVG file for a part's image in a given view, click on the tab for that view, then use <b>Show in Folder</b> under the <b>File</b> Menu.");
     ts->tips << localStorage;
-    ts->tips << tr("Do not store your custom part files in the Fritzing installation folder. If you upgrade Fritzing they will be deleted. Also files in the Fritzing installation folder will not be saved in sketch (.fzz) files, so you won't be able to share them.");
+    ts->tips << tr("Do not store your custom part files in the Fritzing installation folder. If you upgrade Fritzing, these files will probably be deleted. Also, files in the Fritzing installation folder will not be saved in sketch (.fzz) files, so you won't be able to share them.");
     TipSets.append(ts);
 
     ts = new TipSet;

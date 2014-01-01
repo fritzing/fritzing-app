@@ -431,9 +431,6 @@ bool DRC::startAux(QString & message, QStringList & messages, QList<CollidingThi
         SvgFileSplitter::forceStrokeWidth(root, 2 * keepoutMils, "#000000", true, false);
 
         ItemBase::renderOne(masterDoc, m_plusImage, sourceRes);
-        #ifndef QT_NO_DEBUG
-	        m_plusImage->save(FolderUtils::getUserDataStorePath("") + QString("/testDRCmaster%1.png").arg(viewLayerPlacement));
-        #endif
 
 	    ProcessEventBlocker::processEvents();
         if (m_cancelled) {
@@ -545,6 +542,12 @@ bool DRC::startAux(QString & message, QStringList & messages, QList<CollidingThi
                 //DebugDialog::debug(QString("l:%1 t:%2 r:%3 b:%4").arg(l).arg(t).arg(r).arg(b));
                 QList<QPointF> atPixels;
                 if (pixelsCollide(m_plusImage, m_minusImage, m_displayImage, l, t, r, b, 1 /* 0x80ff0000 */, atPixels)) {
+
+                    #ifndef QT_NO_DEBUG
+	                    m_plusImage->save(FolderUtils::getUserDataStorePath("") + QString("/collidePlus%1_%2.png").arg(viewLayerPlacement).arg(index));
+	                    m_minusImage->save(FolderUtils::getUserDataStorePath("") + QString("/collideMinus%1_%2.png").arg(viewLayerPlacement).arg(index));
+                    #endif
+
                     CollidingThing * collidingThing = findItemsAt(atPixels, m_board, viewLayerIDs, keepoutMils, dpi, false, equ);
                     QStringList names = getNames(collidingThing);
                     QString name0 = names.at(0);
@@ -637,7 +640,7 @@ void DRC::splitNet(QDomDocument * masterDoc, QList<ConnectorItem *> & equi, QIma
     }
 
     #ifndef QT_NO_DEBUG
-	    plusImage->save(FolderUtils::getUserDataStorePath("") + QString("/testDRCNet%1_%2.png").arg(viewLayerPlacement).arg(index));
+	    plusImage->save(FolderUtils::getUserDataStorePath("") + QString("/splitNetPlus%1_%2.png").arg(viewLayerPlacement).arg(index));
     #else
         Q_UNUSED(viewLayerPlacement);
         Q_UNUSED(index);
@@ -659,7 +662,7 @@ void DRC::splitNet(QDomDocument * masterDoc, QList<ConnectorItem *> & equi, QIma
 
     ItemBase::renderOne(masterDoc, minusImage, sourceRes);
     #ifndef QT_NO_DEBUG
-	    minusImage->save(FolderUtils::getUserDataStorePath("") + QString("/testDRCNotNet%1_%2.png").arg(viewLayerPlacement).arg(index));
+	    minusImage->save(FolderUtils::getUserDataStorePath("") + QString("/splitNetMinus%1_%2.png").arg(viewLayerPlacement).arg(index));
     #endif
 
      // master doc restored to original state

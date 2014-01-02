@@ -7772,6 +7772,12 @@ Fritzing hala çalışıyor ancak elemanın özelliklerini değiştiremeyeceksin
         <translation>Yeni bir %1 rengi seç.</translation>
     </message>
     <message>
+        <location filename="../src/dialogs/setcolordialog.cpp" line="61"/>
+        <location filename="../src/dialogs/setcolordialog.cpp" line="75"/>
+        <source>Choose</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/dialogs/setcolordialog.cpp" line="65"/>
         <source>current %1 color (%2)</source>
         <translation>mevcut %1 rengi (%2)</translation>
@@ -7780,6 +7786,11 @@ Fritzing hala çalışıyor ancak elemanın özelliklerini değiştiremeyeceksin
         <location filename="../src/dialogs/setcolordialog.cpp" line="79"/>
         <source>standard %1 color (%2)</source>
         <translation>standart %1 rengi (%2)</translation>
+    </message>
+    <message>
+        <location filename="../src/dialogs/setcolordialog.cpp" line="89"/>
+        <source>Custom color ...</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/dialogs/setcolordialog.cpp" line="114"/>
@@ -8310,26 +8321,6 @@ Not:Bu görüntüyü fareyi durum çubuğundaki yönlendirme durumu metni üzeri
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/help/tipsandtricks.cpp" line="102"/>
-        <source>curves and rubber band legs</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/help/tipsandtricks.cpp" line="103"/>
-        <source>In Breadboard view, to drag a part with rubber-band legs while keeping it connected to the breadboard, hold the Alt (Linux: Meta) key down when you start dragging.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/help/tipsandtricks.cpp" line="104"/>
-        <source>In Breadboard view, to drag out a wire from the end of a rubber-band leg, drag with the Alt (Linux: Meta) key down.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/help/tipsandtricks.cpp" line="105"/>
-        <source>In Breadboard or PCB view, to add a curve to a wire or rubber-band leg, drag with the Control (Mac: Command) key down.  You can set whether curvy wires are the default in Preferences.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/help/tipsandtricks.cpp" line="109"/>
         <source>rotation</source>
         <translation type="unfinished"></translation>
@@ -8472,6 +8463,26 @@ Not:Bu görüntüyü fareyi durum çubuğundaki yönlendirme durumu metni üzeri
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="154"/>
         <source>pcb layout</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/help/tipsandtricks.cpp" line="102"/>
+        <source>curves and bendable legs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/help/tipsandtricks.cpp" line="103"/>
+        <source>In Breadboard view, to drag a part with bendable legs while keeping it connected to the breadboard, hold the Alt (Linux: Meta) key down when you start dragging.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/help/tipsandtricks.cpp" line="104"/>
+        <source>In Breadboard view, to drag out a wire from the end of a bendable leg, drag with the Alt (Linux: Meta) key down.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/help/tipsandtricks.cpp" line="105"/>
+        <source>In Breadboard or PCB view, to add a curve to a wire or bendable leg, drag with the Control (Mac: Command) key down.  You can set whether curvy wires are the default in Preferences.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

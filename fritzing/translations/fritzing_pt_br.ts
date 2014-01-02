@@ -6167,6 +6167,14 @@ is already there, we won&apos;t add it again, right?</source>
         <source>selected color (%1)</source>
         <translation>cor selecionada (%1)</translation>
     </message>
+    <message>
+        <source>Choose</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom color ...</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SketchWidget</name>
@@ -6551,22 +6559,6 @@ Nota: você pode também acionar este aviso passando o mouse pelo texto de estad
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>curves and rubber band legs</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>In Breadboard view, to drag a part with rubber-band legs while keeping it connected to the breadboard, hold the Alt (Linux: Meta) key down when you start dragging.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>In Breadboard view, to drag out a wire from the end of a rubber-band leg, drag with the Alt (Linux: Meta) key down.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>In Breadboard or PCB view, to add a curve to a wire or rubber-band leg, drag with the Control (Mac: Command) key down.  You can set whether curvy wires are the default in Preferences.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>rotation</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6752,6 +6744,22 @@ Nota: você pode também acionar este aviso passando o mouse pelo texto de estad
     </message>
     <message>
         <source>local file storage</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>curves and bendable legs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>In Breadboard view, to drag a part with bendable legs while keeping it connected to the breadboard, hold the Alt (Linux: Meta) key down when you start dragging.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>In Breadboard view, to drag out a wire from the end of a bendable leg, drag with the Alt (Linux: Meta) key down.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>In Breadboard or PCB view, to add a curve to a wire or bendable leg, drag with the Control (Mac: Command) key down.  You can set whether curvy wires are the default in Preferences.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

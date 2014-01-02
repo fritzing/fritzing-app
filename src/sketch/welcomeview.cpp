@@ -612,7 +612,7 @@ QFrame * WelcomeView::createHeaderFrame (const QString & url1, const QString & u
     titleFrameLayout->addWidget(label1);
     connect(label1, SIGNAL(linkActivated(const QString &)), this, SLOT(clickBlog(const QString &)));
 
-    QLabel * titleSpace = new QLabel(tr("|"));
+    QLabel * titleSpace = new QLabel("|");
     titleSpace->setObjectName("headerTitleSpace");
     titleFrameLayout->addWidget(titleSpace);
 

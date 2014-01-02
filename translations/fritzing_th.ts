@@ -160,10 +160,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>to Lionel Michel and Yvan Kloster for the French translation, </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>to Cihan Mete Bahad&amp;#x0131;r for the Turkish translation, </source>
         <translation type="unfinished"></translation>
     </message>
@@ -177,6 +173,10 @@
     </message>
     <message>
         <source>and from each purchase of a Fritzing Starter Kit or a PCB from Fritzing Fab.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>to Lionel Michel, Yvan Kloster, Alexandre Dussart, and Roald Baudoux for the French translation, </source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -6610,10 +6610,6 @@ Note: you can also trigger this display by mousing down on the routing status te
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>To find the SVG file for a part&apos;s image in a given view, click on the tab for that view, then use &lt;b&gt;Show in Folder&lt;/b&gt; under the &lt;b&gt;File&lt;/b&gt; Menu.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>examples</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6643,6 +6639,42 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
     <message>
         <source>Have your PCB quickly and easily produced with Fritzing Fab. Hover over the &apos;Fabricate&apos; button to get a quote.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fritzing stores files for custom parts, generated parts, and for other temporary and long-term purposes in a &apos;local storage folder&apos;. On Mac and Linux this is usually ~/.config/Fritzing/. Under Windows Vista and above, it is something like C:\Users\[user name]\AppData\Roaming\Fritzing\; under Windows XP is something like C:\Documents and Settings\[user name]\Application Data\Fritzing\.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Check out Parts Editor Help under the &lt;b&gt;Help&lt;/b&gt; Menu.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Before using the Parts Editor, see whether a Generic IC, Mystery Part, or Pin Header will do the job. Once you drop one of these into your sketch, you can change the number of pins, pin spacing, and other properties.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>In the Parts Editor, to select a graphic underneath another graphic, use the mouse wheel while holding down the shift key.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You can use the Parts Editor to find the SVG file for a part&apos;s image for a given view. In the Parts Editor, click on the tab for that view, then use &lt;b&gt;Show in Folder&lt;/b&gt; under the &lt;b&gt;File&lt;/b&gt; Menu</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Do not store your custom part files in the Fritzing installation folder. If you upgrade Fritzing, these files will probably be deleted. Also, files in the Fritzing installation folder will not be saved in sketch (.fzz) files, so you won&apos;t be able to share them.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>notes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>To insert a clickable URL into a note, select some text in the note and type ctrl-l (Mac: command-l). (That&apos;s &apos;l&apos; as in the first letter of &apos;link&apos;.) To modify an existing link select the linked text and use ctrl-l (command-l) again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>local file storage</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -6887,10 +6919,6 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
     <message>
         <source>Fritzing Projects.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>|</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

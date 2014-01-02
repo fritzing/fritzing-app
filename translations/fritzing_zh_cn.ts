@@ -2823,10 +2823,6 @@ Would you like to convert &apos;%1&apos; to the .fzz format now or open it read-
         <translation>恢复默认值</translation>
     </message>
     <message>
-        <source>%1 background Color</source>
-        <translation>%1 背景色</translation>
-    </message>
-    <message>
         <source>Fritzing Files (*%1 *%2 *%3 *%4 *%5);;Fritzing (*%1);;Fritzing Shareable (*%2);;Fritzing Part (*%3);;Fritzing Bin (*%4);;Fritzing Shareable Bin (*%5)</source>
         <translation>Fritzing 文件(*%1 *%2 *%3 *%4 *%5);;Fritzing (*%1);;Fritzing分享(*%2);;Fritzing元件(*%3);;Fritzing元件库(*%4);;Fritzing分享元件库(*%5)</translation>
     </message>
@@ -3312,6 +3308,10 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     </message>
     <message>
         <source>This may result in changes to your sketch, as parts or connectors may be shifted. </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 background</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

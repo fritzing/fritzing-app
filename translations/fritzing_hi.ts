@@ -3154,11 +3154,6 @@ Do you want to update now?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4340"/>
-        <source>%1 background Color</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1092"/>
         <source>&amp;Zoom In</source>
         <translation type="unfinished"></translation>
@@ -3850,6 +3845,11 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3769"/>
         <source>This may result in changes to your sketch, as parts or connectors may be shifted. </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4340"/>
+        <source>%1 background</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

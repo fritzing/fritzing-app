@@ -2817,6 +2817,11 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
 </translation>
     </message>
     <message>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4340"/>
+        <source>%1 background</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4373"/>
         <source>Enter Text</source>
         <translation>Text eingeben</translation>
@@ -3466,11 +3471,6 @@ Do you want to update now?</source>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4273"/>
         <source>Please select a PCB. Copper fill operations only work on one board at a time.</source>
         <translation>Bitte wähle erst eine Leiterplatte aus. Die Kupferfüllung kann nur auf einer Leiterplatte gleichzeitig ausgeführt werden.</translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4340"/>
-        <source>%1 background Color</source>
-        <translation>%1 Hintergrundfarbe</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2820"/>

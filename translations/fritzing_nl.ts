@@ -2823,10 +2823,6 @@ Wilt u &apos;%1&apos; converteren naar het .fzz bestandsfomaat of wilt u het als
         <translation>Standaard waarden</translation>
     </message>
     <message>
-        <source>%1 background Color</source>
-        <translation>%1 achtergrondkleur</translation>
-    </message>
-    <message>
         <source>Fritzing Files (*%1 *%2 *%3 *%4 *%5);;Fritzing (*%1);;Fritzing Shareable (*%2);;Fritzing Part (*%3);;Fritzing Bin (*%4);;Fritzing Shareable Bin (*%5)</source>
         <translation>Fritzing bestanden (*%1 *%2 *%3 *%4 *%5);;Fritzing (*%1);;Fritzing Uitwisselbaar (*%2);;Fritzing Onderdeel (*%3);;Fritzing Koffer (*%4);;Fritzing Uitwisselbare Koffer (*%5)</translation>
     </message>
@@ -3316,6 +3312,10 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     </message>
     <message>
         <source>This may result in changes to your sketch, as parts or connectors may be shifted. </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 background</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

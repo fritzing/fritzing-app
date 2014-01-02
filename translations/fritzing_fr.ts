@@ -5,19 +5,19 @@
     <name>AboutBox</name>
     <message>
         <source>Jonathan Cohen, Marcus Paeschke, Omer Yosha, </source>
-        <translation>Jonathan Cohen, Marcus Paeschke, Omer Yosha, </translation>
+        <translation type="unfinished"> Jonathan Cohen, Marcus Paeschke, Omer Yosha, </translation>
     </message>
     <message>
         <source>to Yuelin and Ninjia  for the Chinese (Simplified) translation, </source>
-        <translation>à Yuelin et Ninjia pour la traduction Chinois (simplifié),</translation>
+        <translation type="unfinished"> à Yuelin et Ninjia pour la traduction en Chinois (simplifié),</translation>
     </message>
     <message>
         <source>to Jinbuhm Kim for the Korean translation, </source>
-        <translation>à Jinbuhm Kim pour la traduction en coréen,</translation>
+        <translation type="unfinished"> à Jinbuhm Kim pour la traduction en coréen,</translation>
     </message>
     <message>
         <source>MWFK Brandenburg, the sponsorship of the Design </source>
-        <translation>MWFK Brandenburg, le parrainage de la conception</translation>
+        <translation type="unfinished"> MWFK Brandenburg, le parrainage du Département du Design</translation>
     </message>
     <message>
         <source>&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;</source>
@@ -29,31 +29,31 @@
     </message>
     <message>
         <source>Jan Sieber, Yaniv Steiner, Olaf Val, </source>
-        <translation>IxDS, an anonymous donor, Parallax, Picaxe, Sparkfun,</translation>
+        <translation type="unfinished"> IxDS, an anonymous donor, Parallax, Picaxe, Sparkfun,</translation>
     </message>
     <message>
         <source>to Cihan Mete Bahad&amp;#x0131;r for the Turkish translation, </source>
-        <translation>à Cihan Mete Bahad&amp;#x0131;r pour la traduction en turc,</translation>
+        <translation type="unfinished"> à Cihan Mete Bahad&amp;#x0131;r pour la traduction en turc,</translation>
     </message>
     <message>
         <source>Department of Bauhaus-University Weimar, </source>
-        <translation>Le département de Bauhaus-University Weimar,</translation>
+        <translation type="unfinished"> de l&apos;Université Bauhaus de Weimar,</translation>
     </message>
     <message>
         <source>to Vladimir Savinov for the Russian translation, </source>
-        <translation>à Vladimir Savinov pour la traduction en russe,</translation>
+        <translation type="unfinished"> à Vladimir Savinov pour la traduction en russe,</translation>
     </message>
     <message>
         <source>Jenny Chowdhury, Lionel Michel, Jannis Leidel, </source>
-        <translation>Jenny Chowdhury, Lionel Michel, Jannis Leidel,</translation>
+        <translation type="unfinished"> Jenny Chowdhury, Lionel Michel, Jannis Leidel,</translation>
     </message>
     <message>
         <source>Michaela Vieser and Julia Werner.</source>
-        <translation>Michaela Vieser et Julia Werner.</translation>
+        <translation type="unfinished"> Michaela Vieser et Julia Werner.</translation>
     </message>
     <message>
         <source>to Robert Lee for the Chinese (Traditional) translation, </source>
-        <translation>à Robert Lee pour le chinois (traditionnel),</translation>
+        <translation type="unfinished"> à Robert Lee pour le chinois (traditionnel),</translation>
     </message>
     <message>
         <source>&lt;a href=&quot;http://www.fritzing.org&quot;&gt;www.fritzing.org&lt;/a&gt;</source>
@@ -65,7 +65,7 @@
     </message>
     <message>
         <source>to Hiroshi Suzuki for the Japanese translation, </source>
-        <translation>à Hiroshi Suzuki pour la traduction en japonais,</translation>
+        <translation type="unfinished"> à Hiroshi Suzuki pour la traduction en japonais,</translation>
     </message>
     <message>
         <source>Thanks to Kurt Badelt and Miguel Solis for the Spanish translation, </source>
@@ -73,7 +73,7 @@
     </message>
     <message>
         <source>Mariano Crowe, Johannes Landstorfer, </source>
-        <translation>Mariano Crowe, Johannes Landstorfer, </translation>
+        <translation type="unfinished"> Mariano Crowe, Johannes Landstorfer, </translation>
     </message>
     <message>
         <source>Special thanks goes out to: </source>
@@ -81,11 +81,11 @@
     </message>
     <message>
         <source>to &amp;#313;ubom&amp;iacute;r Ducho&amp;#328; for the Slovak translation, </source>
-        <translation>A &amp;#313;ubom&amp;iacute;r Ducho&amp;#328; pour la traduction en slovaque,</translation>
+        <translation type="unfinished"> A &amp;#313;ubom&amp;iacute;r Ducho&amp;#328; pour la traduction en slovaque,</translation>
     </message>
     <message>
         <source>Fritzing a test spin. </source>
-        <translation type="unfinished">Fritzing un tour d&apos;essai.</translation>
+        <translation type="unfinished"> Fritzing un tour d&apos;essai.</translation>
     </message>
     <message>
         <source>IxDS, an anonymous donor, Parallax, Picaxe, Sparkfun, </source>
@@ -97,39 +97,39 @@
     </message>
     <message>
         <source>Jussi &amp;Auml;ngeslev&amp;auml;, Massimo Banzi, Ayah Bdeir, </source>
-        <translation>Jussi &amp;Auml;ngeslev&amp;auml;, Massimo Banzi, Ayah Bdeir,</translation>
+        <translation type="unfinished"> Jussi &amp;Auml;ngeslev&amp;auml;, Massimo Banzi, Ayah Bdeir,</translation>
     </message>
     <message>
         <source>Durrell Bishop, David Cuartielles, Fabian Hemmert, </source>
-        <translation>Durrell Bishop, David Cuartielles, Fabian Hemmert,</translation>
+        <translation type="unfinished"> Durrell Bishop, David Cuartielles, Fabian Hemmert,</translation>
     </message>
     <message>
         <source>Prof. Reto Wettach, Andr&amp;eacute; Kn&amp;ouml;rig, Myriel Milicevic, </source>
-        <translation>Prof. Reto Wettach, Andr&amp;eacute; Kn&amp;ouml;rig, Myriel Milicevic, </translation>
+        <translation type="unfinished"> Prof. Reto Wettach, Andr&amp;eacute; Kn&amp;ouml;rig, Myriel Milicevic, </translation>
     </message>
     <message>
         <source>to Josef Dustira for the Czech translation, </source>
-        <translation>à Josef Dustira pour la traduction tchèque,</translation>
+        <translation type="unfinished"> à Josef Dustira pour la traduction tchèque,</translation>
     </message>
     <message>
         <source>Gero Herkenrath, Jeff Hoefs, Tom Hulbert, </source>
-        <translation>Gero Herkenrath, Jeff Hoefs, Tom Hulbert,</translation>
+        <translation type="unfinished"> Gero Herkenrath, Jeff Hoefs, Tom Hulbert,</translation>
     </message>
     <message>
         <source>and to Arthur Zanona, Nuno Pessanha Santos, Leandro Nunes, and Gabriel Ferreira for the Portuguese (Brazilian) translation. </source>
-        <translation>et Arthur Zanona, Nuno Santos Pessanha, Leandro Nunes, et Gabriel Ferreira pour le (Brésil) traduction en portugais.</translation>
+        <translation type="unfinished">et Arthur Zanona, Nuno Santos Pessanha, Leandro Nunes, et Gabriel Ferreira pour la traduction en portugais (Brésil).</translation>
     </message>
     <message>
         <source>to Nuno Pessanha Santos for the Portuguese (European) translation, </source>
-        <translation>à Nuno Santos Pessanha pour la traduction portugais (européen),</translation>
+        <translation type="unfinished"> à Nuno Santos Pessanha pour la traduction en portugais (européen),</translation>
     </message>
     <message>
         <source>and alpha testers who were brave enough to give </source>
-        <translation>et les testeurs alpha qui étaient assez courageux pour faire un don</translation>
+        <translation type="unfinished"> et aux testeurs alpha qui étaient assez courageux pour faire avec</translation>
     </message>
     <message>
         <source>to Gianluca Urgese for the Italian translation, </source>
-        <translation>à Gianluca Urgese pour la traduction en italien,</translation>
+        <translation type="unfinished"> à Gianluca Urgese pour la traduction en italien,</translation>
     </message>
     <message>
         <source>Fritzing is made by: </source>
@@ -137,7 +137,7 @@
     </message>
     <message>
         <source>Zach Eveland, Dirk van Oosterbosch, </source>
-        <translation>Zach Eveland, Dirk van Oosterbosch, </translation>
+        <translation type="unfinished"> Zach Eveland, Dirk van Oosterbosch, </translation>
     </message>
     <message>
         <source>&lt;b&gt;GNU GPL v3 on the code and CreativeCommons:BY-SA on the rest</source>
@@ -145,7 +145,7 @@
     </message>
     <message>
         <source>to Steven Noppe and Davy Uittenbogerd for the Dutch translation, </source>
-        <translation>à Steven Noppe et Davy Uittenbogerd pour la traduction en néerlandais,</translation>
+        <translation type="unfinished"> à Steven Noppe et Davy Uittenbogerd pour la traduction en néerlandais,</translation>
     </message>
     <message>
         <source>&lt;b&gt;2007-%1 Fachhochschule Potsdam&lt;/b&gt;</source>
@@ -153,7 +153,7 @@
     </message>
     <message>
         <source>Tom Igoe, Hans-Peter Kadel, Till Savelkoul, </source>
-        <translation>Tom Igoe, Hans-Peter Kadel, Till Savelkoul,</translation>
+        <translation type="unfinished"> Tom Igoe, Hans-Peter Kadel, Till Savelkoul,</translation>
     </message>
     <message>
         <source>Fritzing is made possible with funding from the </source>
@@ -161,15 +161,15 @@
     </message>
     <message>
         <source>to Alexander Kaltsas for the Greek translation, </source>
-        <translation>à Kaltsas Alexander pour la traduction en grec,</translation>
+        <translation type="unfinished"> à Kaltsas Alexander pour la traduction en grec,</translation>
     </message>
     <message>
         <source>Travis Robertson, Stefan Hermann, Brendan Howell, </source>
-        <translation>Travis Robertson, Stefan Hermann, Brendan Howell, </translation>
+        <translation type="unfinished"> Travis Robertson, Stefan Hermann, Brendan Howell, </translation>
     </message>
     <message>
         <source>to Nikolay Stankov for the Bulgarian translation, </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"> à Nikolay Stankov pour la traduction bulgare</translation>
     </message>
     <message>
         <source>and from each purchase of a Fritzing Starter Kit or a PCB from Fritzing Fab.</source>
@@ -177,7 +177,7 @@
     </message>
     <message>
         <source>to Lionel Michel, Yvan Kloster, Alexandre Dussart, and Roald Baudoux for the French translation, </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"> à Lionel Michel, Yvan Kloster, Alexandre Dussart et Roald Baudoux pour la traduction française, </translation>
     </message>
 </context>
 <context>
@@ -361,7 +361,7 @@
     </message>
     <message>
         <source>Display parts as icons</source>
-        <translation>Afficher les composants sous forme d&apos;icônes</translation>
+        <translation type="unfinished">Afficher le magasin de composants sous forme d&apos;icônes</translation>
     </message>
     <message>
         <source>New bin (%1)</source>
@@ -1544,7 +1544,7 @@ Toutes vos composants sont à jour.</translation>
     </message>
     <message>
         <source>Show Parts Bin List View</source>
-        <translation type="unfinished">Afficher le magasin de composants sous forme de liste</translation>
+        <translation type="unfinished">Afficher les composants dans le magasin sous forme de liste</translation>
     </message>
     <message>
         <source>Add selected part to bin</source>
@@ -1556,7 +1556,7 @@ Toutes vos composants sont à jour.</translation>
     </message>
     <message>
         <source>View the PCB from the bottom layers upwards</source>
-        <translation type="unfinished">Afficher le circuit imprimé de la face inférieure et orienté vers le haut</translation>
+        <translation type="unfinished">Afficher le circuit imprimé vu de la face inférieure et orienté vers le haut</translation>
     </message>
     <message>
         <source>Please select a PCB. DRC only works on one board at a time.</source>
@@ -1568,7 +1568,7 @@ Toutes vos composants sont à jour.</translation>
     </message>
     <message>
         <source>Set the background color of this view</source>
-        <translation type="unfinished">Couleur d&apos;arrière plan de cette vue</translation>
+        <translation type="unfinished">Couleur d&apos;arrière-plan de cette vue</translation>
     </message>
     <message>
         <source>Please select a PCB. Copper fill operations only work on one board at a time.</source>
@@ -1632,7 +1632,7 @@ Continuer ou annuler?</translation>
     </message>
     <message>
         <source>Top Layer</source>
-        <translation type="unfinished">Face supérieure</translation>
+        <translation type="unfinished">Couche supérieure</translation>
     </message>
     <message>
         <source>Disconnect all wires connected to this connector</source>
@@ -1800,8 +1800,8 @@ Continuer ou annuler?</translation>
     </message>
     <message>
         <source>Export for PCB</source>
-        <translatorcomment>Field too small for an explicit translation</translatorcomment>
-        <translation type="unfinished">-&gt; circuit imprimé</translation>
+        <translatorcomment>Display field too small for a longer translation</translatorcomment>
+        <translation type="unfinished">Export circ.impr.</translation>
     </message>
     <message>
         <source>loading %1 (schematic)</source>
@@ -2614,7 +2614,7 @@ Nous travaillons à éliminer ce message afin de ne vous laisser choisir que des
     </message>
     <message>
         <source>Move to top layer</source>
-        <translation type="unfinished">Déplacer vers la face supérieurae</translation>
+        <translation type="unfinished">Déplacer vers la face supérieure</translation>
     </message>
     <message>
         <source>Share online...</source>
@@ -2767,7 +2767,7 @@ Voulez-vous convertir &apos;%1&apos; au format . Fzz maintenant ou l&apos;ouvrir
     </message>
     <message>
         <source>Bottom Layer</source>
-        <translation type="unfinished">Couche cuivre inférieure</translation>
+        <translation type="unfinished">Couche inférieure</translation>
     </message>
     <message>
         <source>All traces have not yet been routed.</source>
@@ -2779,7 +2779,7 @@ Voulez-vous convertir &apos;%1&apos; au format . Fzz maintenant ou l&apos;ouvrir
     </message>
     <message>
         <source>View the PCB from the top layers downwards</source>
-        <translation type="unfinished">Afficher le circuit imprimé de la face supérieure et orienté vers le bas</translation>
+        <translation type="unfinished">Afficher la face supérieure du circuit imprimé et orientée vers le bas</translation>
     </message>
     <message>
         <source>Copper Fill</source>
@@ -2847,7 +2847,7 @@ Voulez-vous convertir &apos;%1&apos; au format . Fzz maintenant ou l&apos;ouvrir
     </message>
     <message>
         <source>Set Background Color...</source>
-        <translation>Couleur de l&apos;arrière plan...</translation>
+        <translation type="unfinished">Couleur d&apos;arrière-plan...</translation>
     </message>
     <message>
         <source>Cannot find file %1.</source>
@@ -2875,7 +2875,7 @@ Voulez-vous convertir &apos;%1&apos; au format . Fzz maintenant ou l&apos;ouvrir
     </message>
     <message>
         <source>Undo History</source>
-        <translation type="unfinished">Historique d&apos;annulations</translation>
+        <translation type="unfinished">Historique d&apos;annulation</translation>
     </message>
     <message>
         <source>Save a Bill of Materials (BoM)/Shopping List as text</source>
@@ -2887,7 +2887,7 @@ Voulez-vous convertir &apos;%1&apos; au format . Fzz maintenant ou l&apos;ouvrir
     </message>
     <message>
         <source>Autorouter/DRC settings...</source>
-        <translation type="unfinished">Paramètres de l&apos;Autoroutage et des Règles De Conceptions (RDC)...</translation>
+        <translation type="unfinished">Paramètres de l&apos;Autoroutage et de vérification RDC...</translation>
     </message>
     <message>
         <source>Export SPICE Netlist...</source>
@@ -3075,7 +3075,7 @@ Voulez-vous convertir &apos;%1&apos; au format . Fzz maintenant ou l&apos;ouvrir
     </message>
     <message>
         <source>Move to other side of the board</source>
-        <translation type="unfinished">Déplacer de l&apos;autre côté de la carte</translation>
+        <translation type="unfinished">Déplacer vers l&apos;autre côté de la carte</translation>
     </message>
     <message>
         <source>&amp;Hide All Layers</source>
@@ -3106,8 +3106,8 @@ Voulez-vous convertir &apos;%1&apos; au format . Fzz maintenant ou l&apos;ouvrir
         <translation type="unfinished">Définit la distance minimale entre le remplissage des masses et des pistes ou connecteurs</translation>
     </message>
     <message>
-        <source>%1 background Color</source>
-        <translation>Couleur de l&apos;arrière plan %1</translation>
+        <source>%1 background</source>
+        <translation type="unfinished">de l&apos;arrière-plan pour la %1</translation>
     </message>
     <message>
         <source>Rotate 90° Clockwise</source>
@@ -3143,7 +3143,7 @@ Voulez-vous convertir &apos;%1&apos; au format . Fzz maintenant ou l&apos;ouvrir
     </message>
     <message>
         <source>Show Parts Bin Icon View</source>
-        <translation type="unfinished">Afficher les composants sous forme d&apos;icônes</translation>
+        <translation type="unfinished">Afficher les composants dans le magasin sous forme d&apos;icônes</translation>
     </message>
     <message>
         <source>Ctrl+R</source>
@@ -3243,7 +3243,7 @@ Voulez-vous convertir &apos;%1&apos; au format . Fzz maintenant ou l&apos;ouvrir
     </message>
     <message>
         <source>bottom</source>
-        <translation type="unfinished">face inférieure</translation>
+        <translation type="unfinished">couche inférieure</translation>
     </message>
     <message>
         <source>top</source>
@@ -3315,13 +3315,13 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     <message numerus="yes">
         <source>We strongly recommend that you update these %n parts  to the latest version. </source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>Nous vous recommandons fortement de mettre à jour ce composant %n avec la version la plus récente.</numerusform>
+            <numerusform>Nous vous recommandons fortement de mettre à jour ces composants %n avec leur version la plus récente.</numerusform>
         </translation>
     </message>
     <message>
         <source>This may result in changes to your sketch, as parts or connectors may be shifted. </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ceci peut produire des changements dans votre esquisse, des composants tout comme des connecteurs pouvant être décalés.</translation>
     </message>
 </context>
 <context>
@@ -3574,7 +3574,7 @@ Reason: %2 (errcode %3)</source>
     <name>PEConnectorsView</name>
     <message>
         <source>SMD</source>
-        <translation type="unfinished">Composants de surface</translation>
+        <translation type="unfinished">Composant de surface</translation>
     </message>
     <message>
         <source>number of connectors:</source>
@@ -3582,7 +3582,7 @@ Reason: %2 (errcode %3)</source>
     </message>
     <message>
         <source>Through-hole</source>
-        <translation type="unfinished">Composants traversants</translation>
+        <translation type="unfinished">Composant traversant</translation>
     </message>
     <message>
         <source>This is where you edit the connector metadata for the part</source>
@@ -3633,7 +3633,7 @@ Reason: %2 (errcode %3)</source>
     </message>
     <message>
         <source>This version of the new Parts Editor can not deal with separate copper0 and copper1 layers in &apos;%1&apos;. </source>
-        <translation>Cette version de l&apos;éditeur de nouveau composants ne peut pas traiter séparément les calques copper0 et copper1 dans &apos;%1&apos;.</translation>
+        <translation type="unfinished"> Cette version de l&apos;éditeur de nouveau composants ne peut pas traiter séparément les calques copper0 et copper1 dans &apos;%1&apos;.</translation>
     </message>
     <message>
         <source>Make a copy of the part and save it in the &apos;My Parts&apos; Bin</source>
@@ -3890,7 +3890,7 @@ Go ahead and save?</source>
     </message>
     <message>
         <source>If you make changes to breadboard view, or change connector metadata, the legs may no longer work. </source>
-        <translation type="unfinished">Si vous apportez des modifications à la vue de la platine d&apos;essai ou modifiez les métadonnées des connexions, les pattes peuvent ne plus fonctionner. </translation>
+        <translation type="unfinished"> Si vous apportez des modifications à la vue de la platine d&apos;essai ou modifiez les métadonnées des connexions, les pattes peuvent ne plus fonctionner.</translation>
     </message>
     <message>
         <source>Duplicate problem</source>
@@ -3961,7 +3961,7 @@ Go ahead and save?</source>
     </message>
     <message>
         <source>This warning will not be repeated in this session of Fritzing</source>
-        <translation type="unfinished">Cet avertissement ne sera pas répété dans cette session de Fritzing</translation>
+        <translation type="unfinished">Cet avertissement ne sera pas répété durant cette session de Fritzing</translation>
     </message>
     <message>
         <source>You may use a PNG or JPG image to construct your part, but it is better to use an SVG. </source>
@@ -4059,7 +4059,7 @@ Go ahead and save?</source>
         <source>You can safely make changes to Schematic or PCB view.
 
 </source>
-        <translation>Vous pouvez faire en toute sécurité les modifications au schéma ou de la vue du circuit imprimé.
+        <translation type="unfinished"> Vous pouvez faire en toute sécurité les modifications au schéma ou de la vue du circuit imprimé.
 
 </translation>
     </message>
@@ -4069,7 +4069,7 @@ Go ahead and save?</source>
     </message>
     <message>
         <source>Metadata</source>
-        <translation>Métadonnée</translation>
+        <translation type="unfinished">Métadonnées</translation>
     </message>
     <message>
         <source>Add %1 connectors</source>
@@ -4125,7 +4125,7 @@ Go ahead and save?</source>
     </message>
     <message>
         <source>This version of the Parts Editor does not yet support editing bendable legs, and the legs may not be displayed correctly in breadboard view . </source>
-        <translation type="unfinished">Cette version de l&apos;éditeur de composant ne prend pas encore en charge l&apos;édition de pattes pliables et les pattes peuvent ne pas s&apos;afficher correctement en mode platine d&apos;essai.</translation>
+        <translation type="unfinished"> Cette version de l&apos;éditeur de composant ne prend pas encore en charge l&apos;édition de pattes pliables et les pattes peuvent ne pas s&apos;afficher correctement dans la vue de la platine d&apos;essai.</translation>
     </message>
     <message>
         <source>The open sketches </source>
@@ -4148,7 +4148,7 @@ Go ahead and save?</source>
     </message>
     <message>
         <source>Tags</source>
-        <translation>Mots clés</translation>
+        <translation type="unfinished">Mots-clés</translation>
     </message>
     <message>
         <source>Label</source>
@@ -4250,7 +4250,7 @@ Go ahead and save?</source>
     </message>
     <message>
         <source>W</source>
-        <translation>W</translation>
+        <translation type="unfinished">O</translation>
     </message>
     <message>
         <source>east</source>
@@ -4306,7 +4306,7 @@ Go ahead and save?</source>
     </message>
     <message>
         <source>Connector List (a checkmark means the graphic was selected)</source>
-        <translation type="unfinished">Liste des connexions (une case cochée signifie que le graphique a été sélectionné)</translation>
+        <translation type="unfinished">Connexions (case cochée = graphique sélectionné)</translation>
     </message>
     <message>
         <source>&lt;font color=&apos;black&apos;&gt;Dragging enabled&lt;/font&gt;</source>
@@ -4761,7 +4761,7 @@ Majuscule permute l&apos;axe de défilement</translation>
     </message>
     <message>
         <source>Language</source>
-        <translation>Langue</translation>
+        <translation type="unfinished">Langue</translation>
     </message>
     <message>
         <source>Curvy wires and legs</source>
@@ -4844,7 +4844,7 @@ Alt ou la touche %1 = zoom</translation>
     </message>
     <message>
         <source>Language:</source>
-        <translation>Langue:</translation>
+        <translation type="unfinished">Langage :</translation>
     </message>
     <message>
         <source>Are you sure you want to remove &quot;%1&quot; from the sketch?</source>
@@ -5154,7 +5154,7 @@ Alt ou la touche %1 = zoom</translation>
     </message>
     <message>
         <source>Board</source>
-        <translation>Platine</translation>
+        <translation type="unfinished">Plaque</translation>
     </message>
     <message>
         <source>Internal Connections</source>
@@ -5310,7 +5310,7 @@ Alt ou la touche %1 = zoom</translation>
     </message>
     <message>
         <source>a label</source>
-        <translation>une étiquette</translation>
+        <translation type="unfinished">un mot-clé au choix</translation>
     </message>
     <message>
         <source>Parse error (1) at line %1, column %2:
@@ -5354,7 +5354,7 @@ is already there, we won&apos;t add it again, right?</source>
     </message>
     <message>
         <source>Cannot autoroute: no board (or multiple boards) found</source>
-        <translation>Autoroutage impossible:aucune carte ( ou carte multiples) trouvé</translation>
+        <translation type="unfinished">Autoroutage impossible:aucune carte (ou carte multiples) trouvé</translation>
     </message>
     <message>
         <source>Unable to save pick and place file: %2</source>
@@ -5446,7 +5446,7 @@ is already there, we won&apos;t add it again, right?</source>
     </message>
     <message>
         <source>Part Image</source>
-        <translation>Image du composant</translation>
+        <translation type="unfinished">Images des composants</translation>
     </message>
     <message>
         <source>Fritzing requires that you make cutouts using a shape &apos;subtraction&apos; or &apos;difference&apos; operation in your vector graphics editor.</source>
@@ -6158,7 +6158,7 @@ Fritzing va continuer à fonctionner, mais vous n&apos;aurez pas la possibilité
     </message>
     <message>
         <source>Make this the default %1 color</source>
-        <translation type="unfinished">Faire de %1 la couleur par défaut</translation>
+        <translation type="unfinished">Faire %1 la couleur par défaut</translation>
     </message>
     <message>
         <source>standard %1 color (%2)</source>
@@ -6516,11 +6516,11 @@ Remarque: vous pouvez également déclencher cet affichage en positionnant la so
     </message>
     <message>
         <source>If you can&apos;t find a part in the Parts Bin, the Generic IC is your friend.  Drag it onto your sketch, then use the widgets in the Inspector to: choose from among 25 different through-hole and SMD packages; change the pin label; and--for DIPs and SIPs--change the number of pins.  You can also change the pin names with the Pin Label editor</source>
-        <translation type="unfinished">Si vous ne pouvez trouver un composant dans le Magasin de composants, le circuit intégré générique (Generic IC) est votre ami. Faites-le glisser dans votre esquisse, ensuite utilisez les widgets de l&apos;inspector pour choisir parmi 25 formats différents en montage traversant ou de surface ; modifiez les noms des broches ; et -- pour les boîtiers DIL/DIP ou SIP -- modifiez le nombre de broches. Vous pouvez aussi modifier les noms des broches avec l&apos;éditeur de noms de broches (Pin Label editor)</translation>
+        <translation type="unfinished">Si vous ne pouvez trouver un composant dans le Magasin de Composants, le circuit intégré générique (Generic IC) est votre ami. Faites-le glisser dans votre esquisse, ensuite utilisez les widgets de l&apos;Inspecteur pour choisir parmi 25 formats différents en montage traversant ou de surface ; modifiez les noms des broches ; et - pour les boîtiers DIL/DIP ou SIP - modifiez le nombre de broches. Vous pouvez aussi changer les noms des broches avec l&apos;éditeur de noms de broches (Pin Label editor)</translation>
     </message>
     <message>
         <source>An icon in the parts bin may actually represent multiple related parts.  So when you drag an icon from the parts bin into a sketch, make sure you look at the inspector.  The inspector will display the range of choices available for you to modify a part, or swap it for a related part. The parts bin icon will also be a little &apos;stack&apos; and not just a flat icon.</source>
-        <translation type="unfinished">Une icône dans le magasin de composants peut en réalité représenter de multiples composants relatifs. Dès lors, lorsque vous faites glisser une icône dans une esquisse, assurez-vous de regarder l&apos;inspecteur. L&apos;inspecteur affichera les choix accessibles pour modifier un composant ou le remplacer par un autre. Le magasin de composants sera aussi une petite &quot;pile&quot; et pas juste une icône plate.</translation>
+        <translation type="unfinished">Une icône dans le magasin de composants peut en réalité représenter de multiples composants relatifs. Dès lors, lorsque vous faites glisser une icône dans une esquisse, assurez-vous de regarder l&apos;Inspecteur. L&apos;Inspecteur affichera les choix accessibles pour modifier un composant ou le remplacer par un autre. Le jeu de composants sera aussi représenté sous forme d&apos;une petite &quot;pile&quot; et pas juste par une icône plate.</translation>
     </message>
     <message>
         <source>The Inspector Window--which lets you change the properties of parts--is only enabled for parts that are in a sketch (not for parts still in a Parts Bin).</source>
@@ -6528,7 +6528,7 @@ Remarque: vous pouvez également déclencher cet affichage en positionnant la so
     </message>
     <message>
         <source>moving and selection</source>
-        <translation type="unfinished">déplacer et sélection</translation>
+        <translation type="unfinished">déplacer et sélectionner</translation>
     </message>
     <message>
         <source>To constrain the motion of a part to horizontal or vertical, hold down the shift key as you drag it.</source>
@@ -6536,7 +6536,7 @@ Remarque: vous pouvez également déclencher cet affichage en positionnant la so
     </message>
     <message>
         <source>If you&apos;re having trouble selecting a part or a wire (segment), try selecting the part that&apos;s in the way and send it to the back: use the Raise and Lower functions on the Part menu or the context menu (right-click menu).</source>
-        <translation type="unfinished">Si vous avez des difficultés à sélectionner un composant ou un (segment de) câble, essayez de sélectionner le composant qui obstrue le passage et envoyez-le dans le fond : employez les fonctions Disposer en avant et Disposer en arrière du menu Composants ou du menu contextuel (menu clic-droite).</translation>
+        <translation type="unfinished">Si vous avez des difficultés à sélectionner un composant ou un (segment de) câble, essayez de sélectionner le composant qui obstrue le passage et envoyez-le dans le fond : employez les fonctions Avancer et Reculer du menu Composants ou du menu contextuel (affiché par un clic droit).</translation>
     </message>
     <message>
         <source>To more precisely move a selection of parts, use the arrow keys.  Shift-arrow moves by 10 units.</source>
@@ -6548,11 +6548,11 @@ Remarque: vous pouvez également déclencher cet affichage en positionnant la so
     </message>
     <message>
         <source>curves and rubber band legs</source>
-        <translation type="unfinished">courbes et pattes élastiques</translation>
+        <translation type="unfinished">courbes et pattes pliables</translation>
     </message>
     <message>
         <source>In Breadboard view, to drag a part with rubber-band legs while keeping it connected to the breadboard, hold the Alt (Linux: Meta) key down when you start dragging.</source>
-        <translation type="unfinished">Dans la vue de la platine d&apos;essai, pour faire glisser un composant doté de pattes élastiques tout en préservant sa connexion à la platine, maintenez la touche Alt (Linux : Meta) enfoncée lorsque vous commencez le glissement.</translation>
+        <translation type="unfinished">Dans la vue de la platine d&apos;essai, pour faire glisser un composant doté de pattes pliables tout en préservant sa connexion à la platine, maintenez la touche Alt (Linux : Meta) enfoncée lorsque vous commencez le glissement.</translation>
     </message>
     <message>
         <source>In Breadboard view, to drag out a wire from the end of a rubber-band leg, drag with the Alt (Linux: Meta) key down.</source>
@@ -6560,7 +6560,7 @@ Remarque: vous pouvez également déclencher cet affichage en positionnant la so
     </message>
     <message>
         <source>In Breadboard or PCB view, to add a curve to a wire or rubber-band leg, drag with the Control (Mac: Command) key down.  You can set whether curvy wires are the default in Preferences.</source>
-        <translation type="unfinished">Dans les vues de la platine d&apos;essai et du circuit imprimé, pour ajouter une courbe à un câble ou à une patte élastique, faites glisser tout en enfonçant la touche Control (Mac : Command). Vous pouvez décider si les câbles sont courbes par défaut via les Préférences.</translation>
+        <translation type="unfinished">Dans les vues de la platine d&apos;essai et du circuit imprimé, pour ajouter une courbe à un câble ou à une patte pliable, faites glisser tout en enfonçant la touche Control (Mac : Command). Vous pouvez décider si les câbles sont courbes par défaut via les Préférences.</translation>
     </message>
     <message>
         <source>rotation</source>
@@ -6584,7 +6584,7 @@ Remarque: vous pouvez également déclencher cet affichage en positionnant la so
     </message>
     <message>
         <source>To toggle the visibility of layer in a view, go to the view menu and choose one of the view layer items.  Or open up the &lt;b&gt;Layers&lt;/b&gt; palette from the &lt;b&gt;Window&lt;/b&gt; menu.</source>
-        <translation type="unfinished">Pour faire apparaître ou disparaître un calque dans une vue, allez dans le menu Vue et choisissez un des calques. Vous pouvez aussi ouvrir la palette &lt;b&gt;Calques&lt;/b&gt; depuis le menu &lt;b&gt; Fenêtres&lt;/b&gt;.</translation>
+        <translation type="unfinished">Pour faire apparaître ou disparaître un calque dans une vue, allez dans le menu Vue et choisissez un des calques. Vous pouvez aussi ouvrir la palette &lt;b&gt;Calques&lt;/b&gt; depuis le menu &lt;b&gt; Fenêtre&lt;/b&gt;.</translation>
     </message>
     <message>
         <source>When you export images from Fritzing, you can choose which layers are exported. Before you choose &apos;Export...&apos;, go into the &apos;View&apos; menu and hide the layers you don&apos;t want to be visible.</source>
@@ -6613,7 +6613,7 @@ Remarque: vous pouvez également déclencher cet affichage en positionnant la so
     </message>
     <message>
         <source>To add a bendpoint to a wire, double-click where you want the bendpoint.</source>
-        <translation type="unfinished">Pour ajouter un point de connexion/articulation dans un câble, faites un double-clic  à l&apos;endroit d&apos;articulation souhaité.</translation>
+        <translation type="unfinished">Pour ajouter un point de connexion/articulation dans un câble, faites un double-clic  à l&apos;endroit souhaité.sur le câble.</translation>
     </message>
     <message>
         <source>To delete a bendpoint from a wire, double-click it.</source>
@@ -6677,7 +6677,7 @@ Remarque: vous pouvez également déclencher cet affichage en positionnant la so
     </message>
     <message>
         <source>To change trace width, select a trace then use the &lt;b&gt;width&lt;/b&gt; combo box in the Inspector. You can use the drop-down or just type in a number (from 8 to 128).</source>
-        <translation type="unfinished">Pour changer la largeur d&apos;une piste, sélectionnez une piste puis employez la combo-box &lt;b&gt;largeur&lt;/b&gt; dans l&apos;inspecteur. Vous pouvez utilisez le menu déroulant ou simplement frapper un nombre au clavier (entre 8 et 128).</translation>
+        <translation type="unfinished">Pour changer la largeur d&apos;une piste, sélectionnez une piste puis employez la combo-box &lt;b&gt;largeur&lt;/b&gt; dans l&apos;inspecteur. Vous pouvez utiliser le menu déroulant ou simplement frapper un nombre au clavier (entre 8 et 128).</translation>
     </message>
     <message>
         <source>parts editor</source>
@@ -6685,71 +6685,71 @@ Remarque: vous pouvez également déclencher cet affichage en positionnant la so
     </message>
     <message>
         <source>Fritzing stores files for custom parts, generated parts, and for other temporary and long-term purposes in a &apos;local storage folder&apos;. On Mac and Linux this is usually ~/.config/Fritzing/. Under Windows Vista and above, it is something like C:\Users\[user name]\AppData\Roaming\Fritzing\; under Windows XP is something like C:\Documents and Settings\[user name]\Application Data\Fritzing\.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fritzing mémorise des fichiers pour les composants personnalisés, les composants générés, temporairement ou à long terme dans un &quot;dossier de stockage local&quot;. Sous Mac et Linux, il s&apos;agit habituellement de ~/.config/Fritzing/. Sous Windows Vista et dans les versions ultérieures, il s&apos;agit de quelque chose comme C:\Users\[user name]\AppData\Roaming\Fritzing\; sous Windows XP cela ressemble à C:\Documents and Settings\[user name]\Application Data\Fritzing\.</translation>
     </message>
     <message>
         <source>examples</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">exemples</translation>
     </message>
     <message>
         <source>Get a jump start by looking at the example circuits under File &gt; Examples.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lancez-vous en jetant un coup d&apos;œil aux exemples de circuits à partir de Fichier &gt; Ouvrir un Exemple.</translation>
     </message>
     <message>
         <source>Can&apos;t find your part? Search for it by clicking the magnifier icon in the Parts Bin and type in some keywords</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Vous ne trouvez pas un composant ? Recherchez-le en cliquant sur l&apos;icône en forme de loupe dans le Magasin de Composants et tapez quelques mots-clés</translation>
     </message>
     <message>
         <source>A ratsnest line (very thin &apos;wire&apos;) between connections in one view means that those connections are somehow connected in another view.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">La présence d&apos;une ligne d&apos;enchevêtrement (&quot;fil&quot; très fin) entre connexions dans une vue signifie que ces connexions sont d&apos;une manière ou d&apos;une autre reliées dans une autre vue.</translation>
     </message>
     <message>
         <source>Check out Parts Editor Help under the &lt;b&gt;Help&lt;/b&gt; Menu.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Jetez un coup d&apos;œil à l&apos;Aide de l&apos;Editeur de Composants dans le menu &lt;b&gt;Aide&lt;/b&gt;.</translation>
     </message>
     <message>
         <source>Before using the Parts Editor, see whether a Generic IC, Mystery Part, or Pin Header will do the job. Once you drop one of these into your sketch, you can change the number of pins, pin spacing, and other properties.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Avant d&apos;employer l&apos;Editeur de Composants pour créer un nouveau composant, voyez si un circuit intégré générique, un composant-mystère ou une barrette de connecteurs ne peut convenir. Une fois que vous avez placé un de ces éléments dans votre esquisse, vous pouvez modifier le nombre de broches, l&apos;écart entre broches et d&apos;autres propriétés.</translation>
     </message>
     <message>
         <source>In the Parts Editor, to select a graphic underneath another graphic, use the mouse wheel while holding down the shift key.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Dans l&apos;Editeur de Composants, pour sélectionner un élément graphique qui se trouve sous un autre, employez la roulette de la sousis tout en maintenant enfoncée la touche majuscule.</translation>
     </message>
     <message>
         <source>You can use the Parts Editor to find the SVG file for a part&apos;s image for a given view. In the Parts Editor, click on the tab for that view, then use &lt;b&gt;Show in Folder&lt;/b&gt; under the &lt;b&gt;File&lt;/b&gt; Menu</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Vous pouvez employer l&apos;Editeur de Composants afin de trouver le fichier SVG correspondant à l&apos;image d&apos;un composant pour une vue donnée. Dans l&apos;Editeur de Composants, cliquez sur l&apos;onglet correspondant à cette vue, ensuite employez la commande &lt;b&gt;Voir dans le dossier&lt;/b&gt; dans le menu &lt;b&gt;Fichier&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Do not store your custom part files in the Fritzing installation folder. If you upgrade Fritzing, these files will probably be deleted. Also, files in the Fritzing installation folder will not be saved in sketch (.fzz) files, so you won&apos;t be able to share them.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ne sauvegardez pas vos fichiers de composants personnalisés dans le dossier d&apos;installation Fritzing. Si vous mettez Fritzing à jour, ces fichiers seront probablement supprimés. De même, les fichiers se trouvant dans le dossier d&apos;installation de Fritzing ne seront pas sauvés dans les fichiers d&apos;esquisse (.fzz), ce qui vous empêchera de les partager.</translation>
     </message>
     <message>
         <source>To create a custom shape for your PCB, import an SVG file.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pour créer une forme personnalisée pour votre circuit imprimé, importez un fichier SVG.</translation>
     </message>
     <message>
         <source>To make a stylish Arduino shield in no time, switch the shape of the PCB from a rectangle to the Arduino</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pour réaliser un shield Arduino en deux temps trois mouvements, basculez de la forme de circuit imprimé Rectangle à la forme Arduino Shield</translation>
     </message>
     <message>
         <source>pcb production</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">réalisation de circuit imprimé</translation>
     </message>
     <message>
         <source>Have your PCB quickly and easily produced with Fritzing Fab. Hover over the &apos;Fabricate&apos; button to get a quote.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Faites réaliser rapidement et facilement votre circuit imprimé avec Fritzing Fab. Placez le pointeur de souris au dessus du bouton &quot;Faire Fabriquer&quot; pour afficher une estimation des coûts.</translation>
     </message>
     <message>
         <source>notes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">aides-mémoires</translation>
     </message>
     <message>
         <source>To insert a clickable URL into a note, select some text in the note and type ctrl-l (Mac: command-l). (That&apos;s &apos;l&apos; as in the first letter of &apos;link&apos;.) To modify an existing link select the linked text and use ctrl-l (command-l) again.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pour insérer une url cliquable dans un aide-mémoire, sélectionnez du texte dans la note et tapez ctrl-l (Mac : command-l). (Il s&apos;agit bien de la lettre &quot;l&quot; comme la première lettre du mot &quot;lien&quot;). Pour modifier un lien existant, sélectionnnez le texte du lien et employez ctrl-l (command-l) à nouveau.</translation>
     </message>
     <message>
         <source>local file storage</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">sauvegarde locale des fichiers</translation>
     </message>
 </context>
 <context>
@@ -6985,7 +6985,7 @@ Remarque: vous pouvez également déclencher cet affichage en positionnant la so
     </message>
     <message>
         <source>Blog</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Blog</translation>
     </message>
     <message>
         <source>Fritzing News.</source>

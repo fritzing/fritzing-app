@@ -3441,8 +3441,8 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4340"/>
-        <source>%1 background Color</source>
-        <translation type="unfinished">pozadí %1</translation>
+        <source>%1 background</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4373"/>

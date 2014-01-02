@@ -3344,11 +3344,6 @@ Please check all views for potential side-effects.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4340"/>
-        <source>%1 background Color</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3890"/>
         <source>Update %1 part(s)</source>
         <translation type="unfinished"></translation>
@@ -3952,6 +3947,11 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3834"/>
         <source>unable to find replacement for %1.
 </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4340"/>
+        <source>%1 background</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

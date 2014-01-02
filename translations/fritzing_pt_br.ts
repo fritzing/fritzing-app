@@ -2821,10 +2821,6 @@ Você gostaria de converter &apos;%1&apos; para o formato .fzz agora ou abrí-lo
         <translation>Restaurar padrão</translation>
     </message>
     <message>
-        <source>%1 background Color</source>
-        <translation>Cor do fundo %1</translation>
-    </message>
-    <message>
         <source>Fritzing Files (*%1 *%2 *%3 *%4 *%5);;Fritzing (*%1);;Fritzing Shareable (*%2);;Fritzing Part (*%3);;Fritzing Bin (*%4);;Fritzing Shareable Bin (*%5)</source>
         <translation>Arquivos Fritzing (*%1 *%2 *%3 *%4 *%5);;Fritzing (*%1);;Compartilhável Fritzing (*%2);;Componente Fritzing (*%3);;Pacote Fritzing (*%4);;PacotesCompartilhável Fritzing (*%5)</translation>
     </message>
@@ -3312,6 +3308,10 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     </message>
     <message>
         <source>This may result in changes to your sketch, as parts or connectors may be shifted. </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 background</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

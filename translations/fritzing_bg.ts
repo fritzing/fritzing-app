@@ -3660,6 +3660,11 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4340"/>
+        <source>%1 background</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4373"/>
         <source>Enter Text</source>
         <translation>Въведи Текст</translation>
@@ -3938,11 +3943,6 @@ Do you want to update now?</source>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4273"/>
         <source>Please select a PCB. Copper fill operations only work on one board at a time.</source>
         <translation>Моля изберете Платка -- запълването с медна писта може да обработва само по една платка на веднъж</translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4340"/>
-        <source>%1 background Color</source>
-        <translation>%1 Цвят на фона</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2820"/>

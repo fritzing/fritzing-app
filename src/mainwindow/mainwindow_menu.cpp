@@ -4337,7 +4337,7 @@ void MainWindow::setBackgroundColor()
 	QColor cc = m_currentGraphicsView->background();
 	QColor scc = m_currentGraphicsView->standardBackground();
 
-	SetColorDialog setColorDialog(tr("%1 background Color").arg(m_currentGraphicsView->viewName()), cc, scc, true, this);
+	SetColorDialog setColorDialog(tr("%1 background").arg(m_currentGraphicsView->viewName()), cc, scc, true, this);
 	int result = setColorDialog.exec();
 	if (result == QDialog::Rejected) return;
 

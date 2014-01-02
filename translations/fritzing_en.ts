@@ -2802,6 +2802,11 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4340"/>
+        <source>%1 background</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4373"/>
         <source>Enter Text</source>
         <translation type="unfinished"></translation>
@@ -3498,11 +3503,6 @@ Do you want to update now?</source>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4256"/>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4273"/>
         <source>Please select a PCB. Copper fill operations only work on one board at a time.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4340"/>
-        <source>%1 background Color</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

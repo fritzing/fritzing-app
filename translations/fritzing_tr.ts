@@ -160,8 +160,8 @@
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="168"/>
-        <source>to Lionel Michel and Yvan Kloster for the French translation, </source>
-        <translation>Lionel Michel ve Yvan Kloster&apos;e Fransızca tercüme katkıları için, </translation>
+        <source>to Lionel Michel, Yvan Kloster, Alexandre Dussart, and Roald Baudoux for the French translation, </source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="169"/>
@@ -831,22 +831,22 @@ Dosya kullanılsın mı?</translation>
         <translation>Beklenmedik SVG modelleme hatası--fritzing.org ile iletişime geçin</translation>
     </message>
     <message>
-        <location filename="../src/autoroute/drc.cpp" line="551"/>
+        <location filename="../src/autoroute/drc.cpp" line="554"/>
         <source>%1 is overlapping (%2 layer)</source>
         <translation>%1 (%2 katmanıyla) üstüste gelmekte</translation>
     </message>
     <message>
-        <location filename="../src/autoroute/drc.cpp" line="1015"/>
+        <location filename="../src/autoroute/drc.cpp" line="1018"/>
         <source>A hole in %1 may lie outside the border of the board and would be clipped.</source>
         <translation>%1&apos;deki bir delik board sınırının dışına çıkabilir ve kırpılabilir.</translation>
     </message>
     <message>
-        <location filename="../src/autoroute/drc.cpp" line="1112"/>
+        <location filename="../src/autoroute/drc.cpp" line="1115"/>
         <source>Connector %1 on %2 should have both copper top and bottom layers, but the svg only specifies one layer.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/autoroute/drc.cpp" line="447"/>
+        <location filename="../src/autoroute/drc.cpp" line="444"/>
         <source>Too close to a border (%1 layer)</source>
         <translation>Sınıra çok yakın (%1 layer)</translation>
     </message>
@@ -1108,139 +1108,139 @@ Ayrıca konnektör üzerine sağ tıklanarak &apos;Ayarla Toprak Dolgu Tanecik&a
 <context>
     <name>HtmlInfoView</name>
     <message>
-        <location filename="../src/infoview/htmlinfoview.cpp" line="167"/>
+        <location filename="../src/infoview/htmlinfoview.cpp" line="168"/>
         <source>Change the part label here</source>
         <translation>Eleman etiketini burdan değiştir</translation>
     </message>
     <message>
-        <location filename="../src/infoview/htmlinfoview.cpp" line="194"/>
+        <location filename="../src/infoview/htmlinfoview.cpp" line="195"/>
         <source>Part breadboard view image</source>
         <translation>Elemanın breadboard görünüm resmi</translation>
     </message>
     <message>
-        <location filename="../src/infoview/htmlinfoview.cpp" line="196"/>
+        <location filename="../src/infoview/htmlinfoview.cpp" line="197"/>
         <source>Part schematic view image</source>
         <translation>Elemanın şematik görünüm resmi</translation>
     </message>
     <message>
-        <location filename="../src/infoview/htmlinfoview.cpp" line="198"/>
+        <location filename="../src/infoview/htmlinfoview.cpp" line="199"/>
         <source>Part pcb view image</source>
         <translation>Elemanın Baskı Devre görünüm resmi</translation>
     </message>
     <message>
-        <location filename="../src/infoview/htmlinfoview.cpp" line="205"/>
+        <location filename="../src/infoview/htmlinfoview.cpp" line="206"/>
         <source>Part version number</source>
         <translation>Eleman versiyon numarası</translation>
     </message>
     <message>
-        <location filename="../src/infoview/htmlinfoview.cpp" line="968"/>
+        <location filename="../src/infoview/htmlinfoview.cpp" line="986"/>
         <source>Locked</source>
         <translation>Kilitli</translation>
     </message>
     <message>
-        <location filename="../src/infoview/htmlinfoview.cpp" line="970"/>
+        <location filename="../src/infoview/htmlinfoview.cpp" line="988"/>
         <source>Change the locked state of the part in this view. A locked part can&apos;t be moved.</source>
         <translation>Elemanın bu görünümdeki kilit durumunu değiştirin. Kilitli bir elemanın yeri değiştirilemez.</translation>
     </message>
     <message>
-        <location filename="../src/infoview/htmlinfoview.cpp" line="976"/>
+        <location filename="../src/infoview/htmlinfoview.cpp" line="994"/>
         <source>Sticky</source>
         <translation>Yapışkan</translation>
     </message>
     <message>
-        <location filename="../src/infoview/htmlinfoview.cpp" line="978"/>
+        <location filename="../src/infoview/htmlinfoview.cpp" line="996"/>
         <source>Change the &quot;sticky&quot; state of the part in this view. When a sticky part is moved, objects on top of it also move.</source>
         <translation>Elemanın &quot;yapışkanlık&quot; durumunu bu görünüm için değiştir. Yağışkan bir elemanın yeri değiştirildiğinde onun üzerine bağlı diğer nesnelerin de yerleri değişir.</translation>
     </message>
     <message>
-        <location filename="../src/infoview/htmlinfoview.cpp" line="273"/>
+        <location filename="../src/infoview/htmlinfoview.cpp" line="274"/>
         <source>Properties</source>
         <translation>Özellikler</translation>
     </message>
     <message>
-        <location filename="../src/infoview/htmlinfoview.cpp" line="233"/>
+        <location filename="../src/infoview/htmlinfoview.cpp" line="234"/>
         <source>Placement</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/infoview/htmlinfoview.cpp" line="243"/>
+        <location filename="../src/infoview/htmlinfoview.cpp" line="244"/>
         <source>pcb layer</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/infoview/htmlinfoview.cpp" line="285"/>
+        <location filename="../src/infoview/htmlinfoview.cpp" line="286"/>
         <source>Tags</source>
         <translation>Etiketler</translation>
     </message>
     <message>
-        <location filename="../src/infoview/htmlinfoview.cpp" line="296"/>
+        <location filename="../src/infoview/htmlinfoview.cpp" line="297"/>
         <source>Connections</source>
         <translation>Bağlantılar</translation>
     </message>
     <message>
-        <location filename="../src/infoview/htmlinfoview.cpp" line="309"/>
+        <location filename="../src/infoview/htmlinfoview.cpp" line="310"/>
         <source>conn.</source>
         <translation>konn.</translation>
     </message>
     <message>
-        <location filename="../src/infoview/htmlinfoview.cpp" line="316"/>
+        <location filename="../src/infoview/htmlinfoview.cpp" line="317"/>
         <source>name</source>
         <translation>Ad</translation>
     </message>
     <message>
-        <location filename="../src/infoview/htmlinfoview.cpp" line="323"/>
+        <location filename="../src/infoview/htmlinfoview.cpp" line="324"/>
         <source>type</source>
         <translation>Tip</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/infoview/htmlinfoview.cpp" line="391"/>
+        <location filename="../src/infoview/htmlinfoview.cpp" line="392"/>
         <source>connected to %n item(s)</source>
         <translation>
             <numerusform>%n adet nesne(ler)e bağlı</numerusform>
         </translation>
     </message>
     <message>
-        <location filename="../src/infoview/htmlinfoview.cpp" line="428"/>
+        <location filename="../src/infoview/htmlinfoview.cpp" line="429"/>
         <source>(autoroutable)</source>
         <translation>(Oto-Yönlendirilebilir)</translation>
     </message>
     <message>
-        <location filename="../src/infoview/htmlinfoview.cpp" line="429"/>
+        <location filename="../src/infoview/htmlinfoview.cpp" line="430"/>
         <source>Wire</source>
         <translation>Kablo</translation>
     </message>
     <message>
-        <location filename="../src/infoview/htmlinfoview.cpp" line="432"/>
+        <location filename="../src/infoview/htmlinfoview.cpp" line="433"/>
         <source>Ratsnest wire</source>
         <translation>Kablo Yumağı</translation>
     </message>
     <message>
-        <location filename="../src/infoview/htmlinfoview.cpp" line="435"/>
+        <location filename="../src/infoview/htmlinfoview.cpp" line="436"/>
         <source>Trace wire %1</source>
         <translation>Hat kablosu %1</translation>
     </message>
     <message>
-        <location filename="../src/infoview/htmlinfoview.cpp" line="734"/>
+        <location filename="../src/infoview/htmlinfoview.cpp" line="752"/>
         <source>v. %1 %2</source>
         <translation>v.%1 %2</translation>
     </message>
     <message>
-        <location filename="../src/infoview/htmlinfoview.cpp" line="734"/>
+        <location filename="../src/infoview/htmlinfoview.cpp" line="752"/>
         <source>obsolete</source>
         <translation>kullanılmayan</translation>
     </message>
     <message>
-        <location filename="../src/infoview/htmlinfoview.cpp" line="988"/>
+        <location filename="../src/infoview/htmlinfoview.cpp" line="1006"/>
         <source>location</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/infoview/htmlinfoview.cpp" line="1036"/>
+        <location filename="../src/infoview/htmlinfoview.cpp" line="1054"/>
         <source>rotation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/infoview/htmlinfoview.cpp" line="1057"/>
+        <location filename="../src/infoview/htmlinfoview.cpp" line="1075"/>
         <source>degrees</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1708,52 +1708,52 @@ Ayrıca konnektör üzerine sağ tıklanarak &apos;Ayarla Toprak Dolgu Tanecik&a
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1280"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="1281"/>
         <source>Save %1</source>
         <translation>%1&apos;i Kaydet</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1364"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="1365"/>
         <source>Unable to open &apos;%1&apos;: %2</source>
         <translation>&apos;%1&apos; açılamıyor: %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1607"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="1608"/>
         <source>Unable to open shareable &apos;%1&apos;: %2</source>
         <translation>Paylaşılabilir &apos;%1&apos; açılamıyor: %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1650"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="1651"/>
         <source>Unable to open shareable part &apos;%1&apos;: %2</source>
         <translation>Paylaşılabilir eleman &apos;%1&apos; açılamıyor: %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1675"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="1676"/>
         <source>Unable to load part from &apos;%1&apos;</source>
         <translation>ELeman &apos;%1&apos;&apos;den yüklenemiyor</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1704"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="1705"/>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="844"/>
         <source>Specify a file name</source>
         <translation>Bir dosya adı belirtin</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="2603"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="2604"/>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="844"/>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="315"/>
         <source>Fritzing (*%1)</source>
         <translation>Fritzing (*%1)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1363"/>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1381"/>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1606"/>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1649"/>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1664"/>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1674"/>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1739"/>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="2311"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="1364"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="1382"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="1607"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="1650"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="1665"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="1675"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="1740"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="2312"/>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="170"/>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="175"/>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="621"/>
@@ -1792,159 +1792,159 @@ Ayrıca konnektör üzerine sağ tıklanarak &apos;Ayarla Toprak Dolgu Tanecik&a
         <translation>%1 dışa paylaşılabilir olarak aktarılamıyor</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1382"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="1383"/>
         <source>No Sketch found in &apos;%1&apos;</source>
         <translation>&apos;%1&apos; herhangi bir Çizime rastlanmadı</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1706"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="1707"/>
         <source>Fritzing Part (*%1)</source>
         <translation>Fritzing Elemanı (*%1)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1740"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="1741"/>
         <source>Unable to export %1 to shareable sketch</source>
         <translation>&apos;%1&apos; paylaşılabilir çizime aktarılamıyor</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1779"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="1780"/>
         <source>MainWindow::moveToPartsFolder mainwindow missing</source>
         <translation>AnaPencere::ElemanlarDosyasınataşı anapencere yok</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1794"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="1795"/>
         <source>There is already a part with id &apos;%1&apos; loaded into Fritzing.</source>
         <translation>Hali hazırda &apos;%1&apos; isimli eleman Fritzing&apos;e yüklenmiş durumda.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1853"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="1854"/>
         <source>Do you want to keep the imported parts?</source>
         <translation>İçe aktarılmış elemanları saklamak istiyor musunuz?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1917"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="1918"/>
         <source>No connections to route</source>
         <translation>Yönlendirme için bağlantı yok</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1920"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="1921"/>
         <source>Routing completed</source>
         <translation>Yönlendirme tamamlandı</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1923"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="1924"/>
         <source>Routing completed using %n jumper part(s)</source>
         <translation>
             <numerusform>Yönlendirme %n jumper eleman(lar)ı kullanılarak tamamlandı</numerusform>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1926"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="1927"/>
         <source>%1 of %2 nets routed - %n connector(s) still to be routed</source>
         <translation>
             <numerusform>%1 bağlantıdan %2&apos;si yönlendirildi %n konnektör halen yönlendirilmeyi bekliyor</numerusform>
         </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="1947"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="1948"/>
         <source>%1 - [%2]</source>
         <translation>%1 - [%2]</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="2053"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="2054"/>
         <source>No copper top layer</source>
         <translation>Bakır üst katman yok</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="2054"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="2055"/>
         <source>The copper top (copper 1) layer is not available on a one-sided board.  Please switch the board to double-sided or choose the copper bottom (copper 0) layer.</source>
         <translation>Bakır üst (bakır 1) katmanı tek taraflı board&apos;da mevcut değil. Lütfen board&apos;u çift taraflı olarak değiştirin ya da bakır alt (bakır 0) katmanını seçin.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="2132"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="2133"/>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3833"/>
         <source>Sorry!</source>
         <translation>Özür Dileriz!</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="2133"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="2134"/>
         <source>No part with those characteristics.
 We&apos;re working to avoid this message, and only let you choose between properties that do exist</source>
         <translation>Bu özellikte bir eleman yok.
  Bu mesajı engellemek için çalışıyoruz ve size varolan özelliklerden birini seçme imkanı sunuyoruz</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="2145"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="2146"/>
         <source>No exactly matching part found; Fritzing chose the closest match.</source>
         <translation>Tam olarak eşleşen bir eleman bulunamadı;Fritzing en yakın eşleşmeyi seçti.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="2182"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="2183"/>
         <source>Change to single layer pcb</source>
         <translation>Tek katmanlıı baskı devre&apos;ye çevir</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="2182"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="2183"/>
         <source>Change to two layer pcb</source>
         <translation>Çift katmanlı baskı devreye çevir</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="2215"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="2216"/>
         <source>Swapped %1 with module %2</source>
         <translation>%2 %1 modülü ile yer değiştirdi</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="2250"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="2251"/>
         <source>Change image to %2</source>
         <translation>Resmi %2&apos;ye çevir</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="2312"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="2313"/>
         <source>Svg %1 is missing a &apos;%2&apos; layer. For more information on how to create a custom board shape, see the tutorial at &lt;a href=&apos;http://fritzing.org/learning/tutorials/designing-pcb/pcb-custom-shape/&apos;&gt;http://fritzing.org/learning/tutorials/designing-pcb/pcb-custom-shape/&lt;/a&gt;.</source>
         <translation>Svg %1&apos;de bir %2 katmanı bulunmuyor.Özel bir board oluşturmanın nasıl yapılacağına dair bilgi için linkte bulunan öğretici notlara bakabilirsiniz &lt;a href=&apos;http://fritzing.org/learning/tutorials/designing-pcb/pcb-custom-shape/&apos;&gt;http://fritzing.org/learning/tutorials/designing-pcb/pcb-custom-shape/&lt;/a&gt;.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="2349"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="2350"/>
         <source>loading %1</source>
         <translation>%1 yükleniyor</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="2358"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="2359"/>
         <source>Loading...</source>
         <translation>Yükleniyor...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="2364"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="2365"/>
         <source>new sketch</source>
         <translation>yeni çizim</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="2508"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="2509"/>
         <source>Backing up &apos;%1&apos;</source>
         <translation>&apos;%1&apos; yedekleniyor</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="2657"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="2658"/>
         <source>Unrouted connections</source>
         <translation>Yönlendirilmemiş bağlantılar</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="2658"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="2659"/>
         <source>There are no unrouted connections in this view.</source>
         <translation>Bu görünümde yönlendirilmemiş bir bağlantı yok.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="2697"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="2698"/>
         <source>%1 %2 %3</source>
         <translation>%1 %2 %3</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="2977"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="2978"/>
         <source>Code</source>
         <translation>Kod</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="3032"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="3033"/>
         <source>Welcome</source>
         <translation type="unfinished"></translation>
     </message>
@@ -8245,263 +8245,303 @@ Not:Bu görüntüyü fareyi durum çubuğundaki yönlendirme durumu metni üzeri
         <translation>Öneriler ve Kurnazlıklar</translation>
     </message>
     <message>
-        <location filename="../src/help/tipsandtricks.cpp" line="76"/>
-        <source>examples</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/help/tipsandtricks.cpp" line="77"/>
-        <source>Get a jump start by looking at the example circuits under File &gt; Examples.</source>
+        <location filename="../src/help/tipsandtricks.cpp" line="75"/>
+        <source>Fritzing stores files for custom parts, generated parts, and for other temporary and long-term purposes in a &apos;local storage folder&apos;. On Mac and Linux this is usually ~/.config/Fritzing/. Under Windows Vista and above, it is something like C:\Users\[user name]\AppData\Roaming\Fritzing\; under Windows XP is something like C:\Documents and Settings\[user name]\Application Data\Fritzing\.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="81"/>
-        <source>parts</source>
+        <source>examples</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="82"/>
+        <source>Get a jump start by looking at the example circuits under File &gt; Examples.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/help/tipsandtricks.cpp" line="86"/>
+        <source>parts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/help/tipsandtricks.cpp" line="87"/>
         <source>Can&apos;t find your part? Search for it by clicking the magnifier icon in the Parts Bin and type in some keywords</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/help/tipsandtricks.cpp" line="83"/>
+        <location filename="../src/help/tipsandtricks.cpp" line="88"/>
         <source>If you can&apos;t find a part in the Parts Bin, the Generic IC is your friend.  Drag it onto your sketch, then use the widgets in the Inspector to: choose from among 25 different through-hole and SMD packages; change the pin label; and--for DIPs and SIPs--change the number of pins.  You can also change the pin names with the Pin Label editor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/help/tipsandtricks.cpp" line="84"/>
+        <location filename="../src/help/tipsandtricks.cpp" line="89"/>
         <source>An icon in the parts bin may actually represent multiple related parts.  So when you drag an icon from the parts bin into a sketch, make sure you look at the inspector.  The inspector will display the range of choices available for you to modify a part, or swap it for a related part. The parts bin icon will also be a little &apos;stack&apos; and not just a flat icon.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/help/tipsandtricks.cpp" line="85"/>
+        <location filename="../src/help/tipsandtricks.cpp" line="90"/>
         <source>The Inspector Window--which lets you change the properties of parts--is only enabled for parts that are in a sketch (not for parts still in a Parts Bin).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/help/tipsandtricks.cpp" line="89"/>
+        <location filename="../src/help/tipsandtricks.cpp" line="94"/>
         <source>moving and selection</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/help/tipsandtricks.cpp" line="90"/>
+        <location filename="../src/help/tipsandtricks.cpp" line="95"/>
         <source>To constrain the motion of a part to horizontal or vertical, hold down the shift key as you drag it.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/help/tipsandtricks.cpp" line="91"/>
+        <location filename="../src/help/tipsandtricks.cpp" line="96"/>
         <source>If you&apos;re having trouble selecting a part or a wire (segment), try selecting the part that&apos;s in the way and send it to the back: use the Raise and Lower functions on the Part menu or the context menu (right-click menu).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/help/tipsandtricks.cpp" line="92"/>
+        <location filename="../src/help/tipsandtricks.cpp" line="97"/>
         <source>To more precisely move a selection of parts, use the arrow keys.  Shift-arrow moves by 10 units.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/help/tipsandtricks.cpp" line="93"/>
+        <location filename="../src/help/tipsandtricks.cpp" line="98"/>
         <source>Click on the mouse position indicator in the status bar (at the bottom) to toggle the units from in to mm to px.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/help/tipsandtricks.cpp" line="97"/>
+        <location filename="../src/help/tipsandtricks.cpp" line="102"/>
         <source>curves and rubber band legs</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/help/tipsandtricks.cpp" line="98"/>
+        <location filename="../src/help/tipsandtricks.cpp" line="103"/>
         <source>In Breadboard view, to drag a part with rubber-band legs while keeping it connected to the breadboard, hold the Alt (Linux: Meta) key down when you start dragging.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/help/tipsandtricks.cpp" line="99"/>
+        <location filename="../src/help/tipsandtricks.cpp" line="104"/>
         <source>In Breadboard view, to drag out a wire from the end of a rubber-band leg, drag with the Alt (Linux: Meta) key down.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/help/tipsandtricks.cpp" line="100"/>
+        <location filename="../src/help/tipsandtricks.cpp" line="105"/>
         <source>In Breadboard or PCB view, to add a curve to a wire or rubber-band leg, drag with the Control (Mac: Command) key down.  You can set whether curvy wires are the default in Preferences.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/help/tipsandtricks.cpp" line="104"/>
+        <location filename="../src/help/tipsandtricks.cpp" line="109"/>
         <source>rotation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/help/tipsandtricks.cpp" line="105"/>
+        <location filename="../src/help/tipsandtricks.cpp" line="110"/>
         <source>To free-rotate a part in Breadboard or PCB view, select it, then hover your mouse near one of the corners until you see the rotate cursor. Mouse down and that corner will follow your mouse as you drag.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/help/tipsandtricks.cpp" line="106"/>
+        <location filename="../src/help/tipsandtricks.cpp" line="111"/>
         <source>To free-rotate a logo text or image item in PCB view hold down the Alt (Linux: meta) key and free-rotate as usual.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/help/tipsandtricks.cpp" line="110"/>
+        <location filename="../src/help/tipsandtricks.cpp" line="115"/>
         <source>layers and views</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/help/tipsandtricks.cpp" line="111"/>
+        <location filename="../src/help/tipsandtricks.cpp" line="116"/>
         <source>To drag the canvas, hold down the space bar and drag with the mouse.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/help/tipsandtricks.cpp" line="112"/>
+        <location filename="../src/help/tipsandtricks.cpp" line="117"/>
         <source>To toggle the visibility of layer in a view, go to the view menu and choose one of the view layer items.  Or open up the &lt;b&gt;Layers&lt;/b&gt; palette from the &lt;b&gt;Window&lt;/b&gt; menu.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/help/tipsandtricks.cpp" line="113"/>
+        <location filename="../src/help/tipsandtricks.cpp" line="118"/>
         <source>When you export images from Fritzing, you can choose which layers are exported. Before you choose &apos;Export...&apos;, go into the &apos;View&apos; menu and hide the layers you don&apos;t want to be visible.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/help/tipsandtricks.cpp" line="117"/>
+        <location filename="../src/help/tipsandtricks.cpp" line="122"/>
         <source>part labels</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/help/tipsandtricks.cpp" line="118"/>
+        <location filename="../src/help/tipsandtricks.cpp" line="123"/>
         <source>To edit a part label, double-click it, or use the text input widget in the inspector window.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/help/tipsandtricks.cpp" line="119"/>
+        <location filename="../src/help/tipsandtricks.cpp" line="124"/>
         <source>To display different properties in a part label, as well as rotate it, or change the font, right-click the label.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/help/tipsandtricks.cpp" line="120"/>
+        <location filename="../src/help/tipsandtricks.cpp" line="125"/>
         <source>To move a part label independently from its part, select the part first--both the part and the label will be highlighted. Once the label is selected you can drag it.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/help/tipsandtricks.cpp" line="124"/>
+        <location filename="../src/help/tipsandtricks.cpp" line="129"/>
         <source>wires and bendpoints</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/help/tipsandtricks.cpp" line="125"/>
+        <location filename="../src/help/tipsandtricks.cpp" line="130"/>
         <source>To add a bendpoint to a wire, double-click where you want the bendpoint.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/help/tipsandtricks.cpp" line="126"/>
+        <location filename="../src/help/tipsandtricks.cpp" line="131"/>
         <source>To delete a bendpoint from a wire, double-click it.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/help/tipsandtricks.cpp" line="127"/>
+        <location filename="../src/help/tipsandtricks.cpp" line="132"/>
         <source>In Schematic or PCB view, if you drag from a bendpoint with the Alt (Linux: Meta) key down, you will drag out a new wire from that bendpoint.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/help/tipsandtricks.cpp" line="128"/>
+        <location filename="../src/help/tipsandtricks.cpp" line="133"/>
         <source>To drag a wire segment (a section of a wire between two bendpoints), drag it with the Alt (Linux: Meta) key down.  If you also hold down the shift key, the wire segment will be constrained to horizontal or vertical motion.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/help/tipsandtricks.cpp" line="129"/>
+        <location filename="../src/help/tipsandtricks.cpp" line="134"/>
         <source>Use shift-drag on a wire end or bendpoint to constrain its wire segment to an angle of 45 degrees (or some multiple of 45 degrees).  If the wire segment is connected to other wire segments, the segment you&apos;re dragging will snap to make 90 degree angles with the neighboring wire segment.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/help/tipsandtricks.cpp" line="133"/>
+        <location filename="../src/help/tipsandtricks.cpp" line="138"/>
         <source>connections</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/help/tipsandtricks.cpp" line="134"/>
+        <location filename="../src/help/tipsandtricks.cpp" line="139"/>
         <source>To see all the connectors connected to a given connector, hold the mouse down on the connector--all the connections will be highlighted.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/help/tipsandtricks.cpp" line="160"/>
-        <source>Have your PCB quickly and easily produced with Fritzing Fab. Hover over the &apos;Fabricate&apos; button to get a quote.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/help/tipsandtricks.cpp" line="144"/>
-        <source>pcb layout</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/help/tipsandtricks.cpp" line="145"/>
-        <source>Always lead a trace straight out of a pin. This helps to prevent short circuits.</source>
+        <source>Check out Parts Editor Help under the &lt;b&gt;Help&lt;/b&gt; Menu.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="146"/>
-        <source>Through-hole parts can be traced from either side of a PCB.</source>
+        <source>Before using the Parts Editor, see whether a Generic IC, Mystery Part, or Pin Header will do the job. Once you drop one of these into your sketch, you can change the number of pins, pin spacing, and other properties.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="147"/>
-        <source>It makes life easier to route traces horizontally on one side of a PCB and vertically on the other side.</source>
+        <source>In the Parts Editor, to select a graphic underneath another graphic, use the mouse wheel while holding down the shift key.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="148"/>
-        <source>Route traces in 45-degree angles to reduce noise.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/help/tipsandtricks.cpp" line="149"/>
-        <source>If Fritzing is missing your special part and you don&apos;t want to build one by yourself, then use pinheaders as connectors and the grid to align them.</source>
+        <source>You can use the Parts Editor to find the SVG file for a part&apos;s image for a given view. In the Parts Editor, click on the tab for that view, then use &lt;b&gt;Show in Folder&lt;/b&gt; under the &lt;b&gt;File&lt;/b&gt; Menu</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="150"/>
-        <source>You can put your own Logo in the silkscreen of your PCB. Just use the Logo part of the core library and select your own file. SVG is the best format.</source>
+        <source>Do not store your custom part files in the Fritzing installation folder. If you upgrade Fritzing, these files will probably be deleted. Also, files in the Fritzing installation folder will not be saved in sketch (.fzz) files, so you won&apos;t be able to share them.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/help/tipsandtricks.cpp" line="153"/>
-        <source>To create a custom shape for your PCB, import an SVG file.</source>
+        <location filename="../src/help/tipsandtricks.cpp" line="170"/>
+        <source>Have your PCB quickly and easily produced with Fritzing Fab. Hover over the &apos;Fabricate&apos; button to get a quote.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/help/tipsandtricks.cpp" line="174"/>
+        <source>notes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/help/tipsandtricks.cpp" line="175"/>
+        <source>To insert a clickable URL into a note, select some text in the note and type ctrl-l (Mac: command-l). (That&apos;s &apos;l&apos; as in the first letter of &apos;link&apos;.) To modify an existing link select the linked text and use ctrl-l (command-l) again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/help/tipsandtricks.cpp" line="179"/>
+        <source>local file storage</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="154"/>
-        <source>To make a stylish Arduino shield in no time, switch the shape of the PCB from a rectangle to the Arduino</source>
+        <source>pcb layout</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/help/tipsandtricks.cpp" line="155"/>
+        <source>Always lead a trace straight out of a pin. This helps to prevent short circuits.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/help/tipsandtricks.cpp" line="156"/>
+        <source>Through-hole parts can be traced from either side of a PCB.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/help/tipsandtricks.cpp" line="157"/>
+        <source>It makes life easier to route traces horizontally on one side of a PCB and vertically on the other side.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="158"/>
-        <source>pcb production</source>
+        <source>Route traces in 45-degree angles to reduce noise.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="159"/>
+        <source>If Fritzing is missing your special part and you don&apos;t want to build one by yourself, then use pinheaders as connectors and the grid to align them.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/help/tipsandtricks.cpp" line="160"/>
+        <source>You can put your own Logo in the silkscreen of your PCB. Just use the Logo part of the core library and select your own file. SVG is the best format.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/help/tipsandtricks.cpp" line="163"/>
+        <source>To create a custom shape for your PCB, import an SVG file.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/help/tipsandtricks.cpp" line="164"/>
+        <source>To make a stylish Arduino shield in no time, switch the shape of the PCB from a rectangle to the Arduino</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/help/tipsandtricks.cpp" line="168"/>
+        <source>pcb production</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/help/tipsandtricks.cpp" line="169"/>
         <source>Smaller PCBs are more affortable than larger ones. Save space and money.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/help/tipsandtricks.cpp" line="151"/>
+        <location filename="../src/help/tipsandtricks.cpp" line="161"/>
         <source>Use copper-blocker parts to mask out areas that you want free of copper fill.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/help/tipsandtricks.cpp" line="135"/>
+        <location filename="../src/help/tipsandtricks.cpp" line="140"/>
         <source>A ratsnest line (very thin &apos;wire&apos;) between connections in one view means that those connections are somehow connected in another view.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/help/tipsandtricks.cpp" line="152"/>
+        <location filename="../src/help/tipsandtricks.cpp" line="162"/>
         <source>To change trace width, select a trace then use the &lt;b&gt;width&lt;/b&gt; combo box in the Inspector. You can use the drop-down or just type in a number (from 8 to 128).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/help/tipsandtricks.cpp" line="139"/>
+        <location filename="../src/help/tipsandtricks.cpp" line="144"/>
         <source>parts editor</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/help/tipsandtricks.cpp" line="140"/>
-        <source>To find the SVG file for a part&apos;s image in a given view, click on the tab for that view, then use &lt;b&gt;Show in Folder&lt;/b&gt; under the &lt;b&gt;File&lt;/b&gt; Menu.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -8809,11 +8849,6 @@ Not:Bu görüntüyü fareyi durum çubuğundaki yönlendirme durumu metni üzeri
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="588"/>
         <source>Fritzing Projects.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/sketch/welcomeview.cpp" line="615"/>
-        <source>|</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

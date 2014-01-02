@@ -29,7 +29,7 @@
     </message>
     <message>
         <source>Jan Sieber, Yaniv Steiner, Olaf Val, </source>
-        <translation type="unfinished"> IxDS, an anonymous donor, Parallax, Picaxe, Sparkfun,</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>to Cihan Mete Bahad&amp;#x0131;r for the Turkish translation, </source>
@@ -6164,6 +6164,14 @@ Fritzing va continuer à fonctionner, mais vous n&apos;aurez pas la possibilité
         <source>standard %1 color (%2)</source>
         <translation type="unfinished">couleur standard %1, nouvelle couleur (%2)</translation>
     </message>
+    <message>
+        <source>Choose</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom color ...</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SketchWidget</name>
@@ -6547,19 +6555,19 @@ Remarque: vous pouvez également déclencher cet affichage en positionnant la so
         <translation type="unfinished">Cliquer sur l&apos;indicateur de position de la souris dans la barre de statut (au bas de l&apos;écran) pour faire basculer l&apos;affichage des unités en mm ou en px.</translation>
     </message>
     <message>
-        <source>curves and rubber band legs</source>
+        <source>curves and bendable legs</source>
         <translation type="unfinished">courbes et pattes pliables</translation>
     </message>
     <message>
-        <source>In Breadboard view, to drag a part with rubber-band legs while keeping it connected to the breadboard, hold the Alt (Linux: Meta) key down when you start dragging.</source>
+        <source>In Breadboard view, to drag a part with bendable legs while keeping it connected to the breadboard, hold the Alt (Linux: Meta) key down when you start dragging.</source>
         <translation type="unfinished">Dans la vue de la platine d&apos;essai, pour faire glisser un composant doté de pattes pliables tout en préservant sa connexion à la platine, maintenez la touche Alt (Linux : Meta) enfoncée lorsque vous commencez le glissement.</translation>
     </message>
     <message>
-        <source>In Breadboard view, to drag out a wire from the end of a rubber-band leg, drag with the Alt (Linux: Meta) key down.</source>
+        <source>In Breadboard view, to drag out a wire from the end of a bendable leg, drag with the Alt (Linux: Meta) key down.</source>
         <translation type="unfinished">Dans la vue de la platine d&apos;essai, pour tirer un câble depuis l&apos;extrémité d&apos;une patte, effectuez le glissement en maintenant la touche Alt (Linux : Meta) enfoncée.</translation>
     </message>
     <message>
-        <source>In Breadboard or PCB view, to add a curve to a wire or rubber-band leg, drag with the Control (Mac: Command) key down.  You can set whether curvy wires are the default in Preferences.</source>
+        <source>In Breadboard or PCB view, to add a curve to a wire or bendable leg, drag with the Control (Mac: Command) key down.  You can set whether curvy wires are the default in Preferences.</source>
         <translation type="unfinished">Dans les vues de la platine d&apos;essai et du circuit imprimé, pour ajouter une courbe à un câble ou à une patte pliable, faites glisser tout en enfonçant la touche Control (Mac : Command). Vous pouvez décider si les câbles sont courbes par défaut via les Préférences.</translation>
     </message>
     <message>

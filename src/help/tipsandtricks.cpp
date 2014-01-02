@@ -99,10 +99,10 @@ void TipsAndTricks::initTipSets() {
 	TipSets.append(ts);
 
 	ts = new TipSet;
-	ts->heading = tr("curves and rubber band legs");
-	ts->tips << tr("In Breadboard view, to drag a part with rubber-band legs while keeping it connected to the breadboard, hold the Alt (Linux: Meta) key down when you start dragging.");
-	ts->tips << tr("In Breadboard view, to drag out a wire from the end of a rubber-band leg, drag with the Alt (Linux: Meta) key down.");
-	ts->tips << tr("In Breadboard or PCB view, to add a curve to a wire or rubber-band leg, drag with the Control (Mac: Command) key down.  You can set whether curvy wires are the default in Preferences.");
+	ts->heading = tr("curves and bendable legs");
+	ts->tips << tr("In Breadboard view, to drag a part with bendable legs while keeping it connected to the breadboard, hold the Alt (Linux: Meta) key down when you start dragging.");
+	ts->tips << tr("In Breadboard view, to drag out a wire from the end of a bendable leg, drag with the Alt (Linux: Meta) key down.");
+	ts->tips << tr("In Breadboard or PCB view, to add a curve to a wire or bendable leg, drag with the Control (Mac: Command) key down.  You can set whether curvy wires are the default in Preferences.");
 	TipSets.append(ts);
 	
 	ts = new TipSet;

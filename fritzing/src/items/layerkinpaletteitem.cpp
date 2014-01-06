@@ -402,10 +402,12 @@ void SchematicTextLayerKinPaletteItem::renderText(QImage & image, QDomElement & 
     viewBox = renderer.viewBoxF();
     double x = text.attribute("x").toDouble();
     double y = text.attribute("y").toDouble();
-    QPointF p(image.width() * x / viewBox.width(), image.height() * y / viewBox.height());
+    QPointF xy(x, y);
     matrix = renderer.matrixForElement(IDString);
-    QPointF q = matrix.map(p);
-    QPoint iq((int) q.x(), (int) q.y());
+    QPointF mxy = matrix.map(xy);
+
+    QPointF p(image.width() * mxy.x() / viewBox.width(), image.height() * mxy.y() / viewBox.height());
+    QPoint iq((int) p.x(), (int) p.y());
 
     minX = image.width() + 1;
     maxX = -1;

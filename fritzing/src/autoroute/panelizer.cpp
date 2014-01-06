@@ -41,6 +41,7 @@ $Date: 2013-04-22 01:45:43 +0200 (Mo, 22. Apr 2013) $
 #include "../version/version.h"
 #include "../processeventblocker.h"
 #include "../connectors/connectoritem.h"
+#include "../connectors/svgidlayer.h"
 
 #include "cmrouter/tileutils.h"
 
@@ -1782,6 +1783,7 @@ int Panelizer::checkDonuts(MainWindow * mainWindow, bool displayMessage) {
 
     return donuts.count() / 2;
 }
+
 
 int Panelizer::bestFitLoop(QList<PanelItem *> & refPanelItems, PanelParams & panelParams, bool customPartsOnly, QList<PlanePair *> & returnPlanePairs, QList<PanelItem *> & returnInsertPanelItems, const QDir & svgDir) 
 {

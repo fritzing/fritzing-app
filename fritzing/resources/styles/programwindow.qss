@@ -1,35 +1,40 @@
 
 #programmingWindow #header {
-	background-color: #330011;
-	padding: 2px; padding-bottom: 0;
+	background-color: #821F09;
+	padding: 0px; padding-bottom: 0;
 }
 
 #programmingWindow #center {
-	background-color: #52182C;
+	background-color: #821F09;
 }
 
 #programmingWindow #footer {
 	padding: 5px 0px 5px 0px;
 	margin: 0px;
 	border: 0px;
-	background-color: #802643;
+	background-color: #fff;
 }
 
-#programmingWindow #footer QLabel {
-        color: #FFFFFF;
+#programmingWindow #footer QLabel {  /*this is the labelcolor beside the dropdowns in the Programming Window*/
+        color: #333;
+		background:transparent;
+		padding: 0px 5px;
 }
+
 
 #programmingWindow QTabWidget::pane {
 	top: %1px;  	/* the value is swapped in at runtime in ProgramWindow::setup() */
- 	padding: 0px;
-	margin: 0px;
-	border-top: 6px solid #52182C;	
-	position: absolute;
+ 	padding: 5px;
+	margin-top: 0px;
+	border-top: none;
+	/*position: absolute;*/
 }
 
 #programmingWindow QTabWidget::tab-bar {
- 	left: 0px;
-	top: %2px;		/* the value is swapped in at runtime in ProgramWindow::setup()  */
+ 	left: 10px;
+	right: 10px;
+	top: %2px;		
+	/* the value is swapped in at runtime in ProgramWindow::setup()  */
 }
 
 #programmingWindow QTabBar::tab {
@@ -37,33 +42,36 @@
         margin-left: 3px;
         margin-right: 3px;
         margin-bottom: 0px;
-        border-top-left-radius: 4px;
-        border-top-right-radius: 4px;
         padding-top: 2px;
         padding-bottom: 2px;
         padding-left: 6px;
         padding-right: 6px;
-        color: #CCB6BD;
-        background-color: #52182C;
+        background-color: #ac6a5b;
         border-bottom: 0px;
         min-width: 6.5em;
         min-height: 1.5em;
+
 }
 
-#programmingWindow QTabBar::tab:selected {
-	background-color: #802643;
-        border-bottom: 0;
+#programmingWindow QTabBar::tab:selected { /*the active tab*/
+	background-color: #fff;
+        border-bottom: none;
 	font-weight: bold;
+	color: #821F09;
 }
 
-#programmingWindow QTabBar::tab:!selected {
+#programmingWindow QTabBar::tab:!selected { /*the inactive tabs*/
         padding-top: 0;
-	border: 2px solid #802643;
-        border-bottom: 0;
+		border: none;
+		color: #D1ACA4;
+		font-weight:bold;
 }
 
-#programmingWindow QTabBar::tab:!selected:hover {
-        background-color: #802643;
+#programmingWindow QTabBar::tab:!selected:hover {  /*the inactive tab- hover*/
+        background-color: #F23926;
+		border:none;
+		color: #fff;
+		font-weight:bold;
 }
 
 #programmingWindow QTabBar::close-button {
@@ -82,15 +90,127 @@
 }
 
 #programmingWindow #console {
-	background-color: #000000;
+	background-color: #fff;
 	color: orange; 
 }
 
 #programmingWindow #unableToProgramLabel {
-	color: black;
+	color: #333;
 	background-color: #FFFFC2;
 	padding-left: 5px;
 	padding-right: 5px;
 	padding-top: 1px;
 	padding-bottom: 1px;
+}
+
+#programmingWindow{
+	background-color: #d63222;
+}
+
+#programmingWindow QComboBox,
+#programmingWindow QPushButton,
+#programmingWindow QPushButton:enabled,
+#programmingWindow QPushButton:active{
+	background-image:none;
+	color: #fff;
+	background:#d63222;
+	font-size:12px;
+	border:none;
+	height: 34px;
+	padding-left:4px;
+	padding-right:4px;
+	}
+#programmingWindow QComboBox:hover,
+#programmingWindow QPushButton:hover{
+	background-image:none;
+	color: #d9d9d9;
+	background:#f23926;
+	font-size:12px;
+	border:none;
+	height: 34px;
+	
+	}
+	
+
+#programmingWindow QComboBox:pressed,	
+#programmingWindow QPushButton:pressed{
+	background-image:none;
+	color: #d9d9d9;
+	background:#f23926;
+	font-size:12px;
+	border:none;
+	height: 34px;
+	}
+	
+#programmingWindow QComboBox:disabled,
+#programmingWindow QPushButton:disabled{
+	background-image:none;
+	background:#AC6A5B;
+	color: #d1aca4;
+	font-size:12px;
+	border:none;
+	height: 34px;
+	}
+
+/* drop-down buton of the combobox */
+#programmingWindow QComboBox::drop-down:button {
+        background: transparent;
+		border:none;
+}
+#programmingWindow QComboBox::drop-down:hover {
+        background: #f23926;
+		border:none;
+}
+#programmingWindow QComboBox::drop-down:on {
+        background: #f23926;
+		border:none;
+}
+
+#programmingWindow QComboBox::drop-down:selected {
+        background: #f23926;
+		border:none;
+}
+#programmingWindow QComboBox::down-arrow {
+        image: url(:/resources/images/icons/combobox-arrow.png);
+		border:none;
+}
+/* drop-down list of the combobox */
+#programmingWindow QComboBox::QAbstractItemView {
+        background-color: rgb(236,236,236);
+        margin: 0px;
+        padding: 0px;
+		border:none;
+}
+
+
+/*************** WINDOW MENU ***************/
+
+QMenuBar {
+	background-color: rgb(217,217,217);
+		color:rgb(51,51,51);
+}
+QMenuBar::item {
+	background: rgb(217,217,217);
+	color:rgb(51,51,51);
+	background-image:none;
+}
+
+QMenu {
+	background-color: rgb(217,217,217);
+	background-image:none;
+		color:rgb(51,51,51);
+}
+
+
+QMenu::selected {
+	background-color: rgb(242,57,38);
+	background-image:none;
+		color:rgb(51,51,51);
+}
+
+QMenu::hover {
+	background-color: rgb(242,57,38);
+	background-image:none;
+	color:rgb(51,51,51);
+
 }

@@ -45,6 +45,9 @@ protected:
     bool eventFilter( QObject *target, QEvent *event );
     void checkSelectAll();
 
+protected:
+    bool m_wasOut;
+
 };
 
 

@@ -24,35 +24,29 @@
 #
 #********************************************************************/
 
-# Fritzing requires two Qt-provided plugins in order to run correctly, 
-# however the QTPLUGIN syntax only seems to work if Qt is built statically, 
+# Fritzing requires two Qt-provided plugins in order to run correctly,
+# however the QTPLUGIN syntax only seems to work if Qt is built statically,
 # so QTPLUGIN is included here only for information purposes:
 #
-# QTPLUGIN  += qjpeg qsqlite 
+# QTPLUGIN  += qjpeg qsqlite
 
 
 CONFIG += debug_and_release
 win32 {
 # release build using msvc 2010 needs to use Multi-threaded (/MT) for the code generation/runtime library option
 # release build using msvc 2010 needs to add msvcrt.lib;%(IgnoreSpecificDefaultLibraries) to the linker/no default libraries option
-	CONFIG -= embed_manifest_exe
+        CONFIG -= embed_manifest_exe
         INCLUDEPATH += $$[QT_INSTALL_PREFIX]/src/3rdparty/zlib
-	DEFINES += _CRT_SECURE_NO_DEPRECATE
+        DEFINES += _CRT_SECURE_NO_DEPRECATE
         DEFINES += _WINDOWS
-        LIBS += setupapi.lib
-        LIBS += advapi32.lib   # only seems necessary for QtCreator 2.5.2 and up
+        LIBS += $${PWD}/SetupAPI.Lib
+     #   LIBS += advapi32.lib   # only seems necessary for QtCreator 2.5.2 and up
 }
 macx {
         MOC_DIR = build/moc
-	
-	# the CONFIG setting builds for all three Mac platforms
-	# comment out the platforms you do not use, for example
-	# CONFIG += x86_64 #x86 ppc
-	# will build for the Intel 64 platform only
-	
         CONFIG += x86_64 x86 ppc
-	QMAKE_INFO_PLIST = FritzingInfo.plist
-	#DEFINES += QT_NO_DEBUG   		# uncomment this for xcode
+        QMAKE_INFO_PLIST = FritzingInfo.plist
+        #DEFINES += QT_NO_DEBUG   		# uncomment this for xcode
         LIBS += /usr/lib/libz.dylib
         LIBS += /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation
         LIBS += /System/Library/Frameworks/Carbon.framework/Carbon
@@ -65,54 +59,54 @@ unix {
             DEFINES += LINUX_64
         } else {
             DEFINES += LINUX_32
-	}
-	LIBS += -lz
+        }
+        LIBS += -lz
     }
-    
-	isEmpty(PREFIX) {
-		PREFIX = /usr
-	}
-	BINDIR = $$PREFIX/bin
-	DATADIR = $$PREFIX/share
-	PKGDATADIR = $$DATADIR/fritzing
 
-	DEFINES += DATADIR=\\\"$$DATADIR\\\" PKGDATADIR=\\\"$$PKGDATADIR\\\"
+        isEmpty(PREFIX) {
+                PREFIX = /usr
+        }
+        BINDIR = $$PREFIX/bin
+        DATADIR = $$PREFIX/share
+        PKGDATADIR = $$DATADIR/fritzing
 
-	target.path =$$BINDIR
+        DEFINES += DATADIR=\\\"$$DATADIR\\\" PKGDATADIR=\\\"$$PKGDATADIR\\\"
 
-	desktop.path = $$DATADIR/applications
-	desktop.files += fritzing.desktop
+        target.path =$$BINDIR
 
-	manpage.path = $$DATADIR/man/man1
-	manpage.files += Fritzing.1
+        desktop.path = $$DATADIR/applications
+        desktop.files += fritzing.desktop
 
-	icon.path = $$DATADIR/icons
-	icon.extra = install -D -m 0644 resources/images/fritzing_icon.png $(INSTALL_ROOT)$$DATADIR/icons/fritzing.png
+        manpage.path = $$DATADIR/man/man1
+        manpage.files += Fritzing.1
 
-	parts.path = $$PKGDATADIR
-	parts.files += parts
-	
-	pdb.path = $$PKGDATADIR
-	pdb.files += pdb
+        icon.path = $$DATADIR/icons
+        icon.extra = install -D -m 0644 resources/images/fritzing_icon.png $(INSTALL_ROOT)$$DATADIR/icons/fritzing.png
 
-	help.path = $$PKGDATADIR
-	help.files += help
+        parts.path = $$PKGDATADIR
+        parts.files += parts
 
-	sketches.path = $$PKGDATADIR
-	sketches.files += sketches
+        pdb.path = $$PKGDATADIR
+        pdb.files += pdb
 
-	bins.path = $$PKGDATADIR
-	bins.files += bins
+        help.path = $$PKGDATADIR
+        help.files += help
 
-	translations.path = $$PKGDATADIR/translations
-	translations.extra = find translations -name "*.qm" -size +128c -exec cp -pr {} $(INSTALL_ROOT)$$PKGDATADIR/translations \\;
+        sketches.path = $$PKGDATADIR
+        sketches.files += sketches
 
-	syntax.path = $$PKGDATADIR/translations/syntax
-	syntax.files += translations/syntax/*.xml
+        bins.path = $$PKGDATADIR
+        bins.files += bins
 
-	INSTALLS += target desktop manpage icon parts sketches bins translations syntax pdb help
+        translations.path = $$PKGDATADIR/translations
+        translations.extra = find translations -name "*.qm" -size +128c -exec cp -pr {} $(INSTALL_ROOT)$$PKGDATADIR/translations \\;
+
+        syntax.path = $$PKGDATADIR/translations/syntax
+        syntax.files += translations/syntax/*.xml
+
+        INSTALLS += target desktop manpage icon parts sketches bins translations syntax pdb help
 }
-		
+
 ICON = resources/images/fritzing_icon.icns
 QT += core gui svg xml network sql # opengl
 
@@ -140,16 +134,16 @@ include(pri/sketch.pri)
 include(pri/translations.pri)
 include(pri/program.pri)
 include(pri/qtsysteminfo.pri)
-	
+
 !contains(DEFINES, QUAZIP_INSTALLED) {
-	include(pri/quazip.pri)
+        include(pri/quazip.pri)
 }
 contains(DEFINES, QUAZIP_INSTALLED) {
-	INCLUDEPATH += /usr/include/quazip /usr/include/minizip
-	LIBS += -lquazip -lminizip
+        INCLUDEPATH += /usr/include/quazip /usr/include/minizip
+        LIBS += -lquazip -lminizip
 }
 
 TARGET = Fritzing
 TEMPLATE = app
 
-	
+

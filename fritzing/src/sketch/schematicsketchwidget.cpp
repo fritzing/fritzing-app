@@ -123,14 +123,6 @@ void SchematicSketchWidget::ensureTraceLayerVisible() {
 	ensureLayerVisible(ViewLayer::SchematicTrace);
 }
 
-double SchematicSketchWidget::getRatsnestOpacity() {
-	return 0.7;
-}
-
-double SchematicSketchWidget::getRatsnestWidth() {
-	return 0.7;
-}
-
 void SchematicSketchWidget::setClipEnds(ClipableWire * vw, bool) {
 	vw->setClipEnds(false);
 }
@@ -363,10 +355,6 @@ bool SchematicSketchWidget::isInLayers(ConnectorItem * connectorItem, ViewLayer:
 
 bool SchematicSketchWidget::routeBothSides() {
 	return false;
-}
-
-QPoint SchematicSketchWidget::calcFixedToCenterItemOffset(const QRect & viewPortRect, const QSizeF & helpSize) {
-	return SketchWidget::calcFixedToCenterItemOffset(viewPortRect, helpSize);
 }
 
 void SchematicSketchWidget::addDefaultParts() {

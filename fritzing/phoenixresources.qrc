@@ -1,11 +1,9 @@
 <RCC>
     <qresource prefix="/">
-
         <file>resources/zoomfactors.txt</file>
         <file>resources/ratsnestcolors.xml</file>
         <file>resources/properties.xml</file>
         <file>resources/vias.xml</file>
-
         <file>resources/images/splash/fhp_logo_small.png</file>
         <file>resources/images/splash/splash_progressbar.png</file>
         <file>resources/images/splash/fab_logo_bar.png</file>
@@ -17,14 +15,17 @@
         <file>resources/images/splash/fab_slice6.png</file>
         <file>resources/images/splash/splash_screen_start.png</file>
         <file>resources/images/splash/april1st.png</file>
-	<file>resources/images/splash/splash.xml</file>
+        <file>resources/images/splash/splash.xml</file>
         <file>resources/images/AboutBoxLogoShield.png</file>
         <file>resources/images/aboutbox_CC.png</file>
         <file>resources/images/aboutbox_FHP.png</file>
         <file>resources/images/aboutbox_scrollfade.png</file>
         <file>resources/images/watermark_fritzing_outline.svg</file>
+        <file>resources/images/welcome_kit.png</file>
+        <file>resources/images/pcbs_2013.png</file>
         <file>resources/images/dot.png</file>
         <file>resources/images/fritzing_icon.png</file>
+        <file>resources/images/fritzing_logo_background.png</file>
         <file>resources/images/breadboard_icon.png</file>
         <file>resources/images/schematic_icon.png</file>
         <file>resources/images/pcb_icon.png</file>
@@ -34,16 +35,9 @@
         <file>resources/images/helpImageBreadboard.png</file>
         <file>resources/images/helpImageSchematic.png</file>
         <file>resources/images/helpImagePCB.png</file>
-        <file>resources/images/inViewHelpCloseButtonBreadboard.png</file>
-        <file>resources/images/inViewHelpCloseButtonSchematic.png</file>
-        <file>resources/images/inViewHelpCloseButtonPCB.png</file>
-        <file>resources/images/inViewHelpPartsBinArrow.png</file>
-        <file>resources/images/inViewHelpAutorouteArrow.png</file>
-        <file>resources/images/inViewHelpSwitchButtonsArrow.png</file>
         <file>resources/images/splitterHandle.png</file>
         <file>resources/images/part_lock.svg</file>
         <file>resources/images/part_sticky.svg</file>
-	
         <file>resources/images/cursor/spot_face_cutter.bmp</file>
         <file>resources/images/cursor/spot_face_cutter_mask.bmp</file>
         <file>resources/images/cursor/curve.bmp</file>
@@ -66,10 +60,24 @@
         <file>resources/images/cursor/rotate_mask.bmp</file>
         <file>resources/images/cursor/scale.bmp</file>
         <file>resources/images/cursor/scale_mask.bmp</file>
-	
         <file>resources/images/icons/Toolbar_Icon_Order.png</file>
         <file>resources/images/icons/check.png</file>
         <file>resources/images/icons/nocheck.png</file>
+        <file>resources/images/icons/TabWidgetCodeInactive_icon.png</file>
+        <file>resources/images/icons/TabWidgetCodeActive_icon.png</file>
+        <file>resources/images/icons/TabWidgetCodeHover_icon.png</file>
+        <file>resources/images/icons/TabWidgetSchematicActive_icon.png</file>
+        <file>resources/images/icons/TabWidgetSchematicInactive_icon.png</file>	
+        <file>resources/images/icons/TabWidgetSchematicHover_icon.png</file>
+        <file>resources/images/icons/TabWidgetBreadboardActive_icon.png</file>
+        <file>resources/images/icons/TabWidgetBreadboardInactive_icon.png</file>	
+        <file>resources/images/icons/TabWidgetBreadboardHover_icon.png</file>
+        <file>resources/images/icons/TabWidgetWelcomeActive_icon.png</file>
+        <file>resources/images/icons/TabWidgetWelcomeInactive_icon.png</file>	
+        <file>resources/images/icons/TabWidgetWelcomeHover_icon.png</file>
+        <file>resources/images/icons/TabWidgetPcbActive_icon.png</file>
+        <file>resources/images/icons/TabWidgetPcbInactive_icon.png</file>	
+        <file>resources/images/icons/TabWidgetPcbHover_icon.png</file>
         <file>resources/images/icons/toolbarExport_gbr_icon.png</file>
         <file>resources/images/icons/toolbarExport_gbx_icon.png</file>
         <file>resources/images/icons/toolbarExport_jpeg_icon.png</file>
@@ -90,7 +98,7 @@
         <file>resources/images/icons/toolbarActiveLayerBPressed_icon.png</file>
         <file>resources/images/icons/toolbarActiveLayerTEnabled_icon.png</file>
         <file>resources/images/icons/toolbarActiveLayerTDisabled_icon.png</file>
-        <file>resources/images/icons/toolbarActiveLayerTPressed_icon.png</file>	
+        <file>resources/images/icons/toolbarActiveLayerTPressed_icon.png</file>
         <file>resources/images/icons/toolbarViewFromBEnabled_icon.png</file>
         <file>resources/images/icons/toolbarViewFromBDisabled_icon.png</file>
         <file>resources/images/icons/toolbarViewFromBPressed_icon.png</file>
@@ -122,16 +130,24 @@
         <file>resources/images/icons/dockWidgetCollapsePressed_icon.png</file>
         <file>resources/images/icons/noteResizeGrip.png</file>
         <file>resources/images/icons/combobox-arrow.png</file>
-	<file>resources/images/icons/segmentedSwitcherXActiveDimmed.png</file>
+        <file>resources/images/icons/segmentedSwitcherXActiveDimmed.png</file>
         <file>resources/images/icons/segmentedSwitcherXActiveFocus.png</file>
         <file>resources/images/icons/segmentedSwitcherXActiveFocusHover.png</file>
         <file>resources/images/icons/segmentedSwitcherXInactiveDimmed.png</file>
         <file>resources/images/icons/segmentedSwitcherXInactiveFocus.png</file>
         <file>resources/images/icons/segmentedSwitcherXInactiveFocusHover.png</file>
-        <file>resources/images/icons/arrowButtonUp.png</file>
+	<file>resources/images/icons/WS-new-icon.png</file>
+	<file>resources/images/icons/WS-open-icon.png</file>
+	<file>resources/images/icons/WS-fzz-icon.png</file>
+	<file>resources/images/icons/WS-blogLogo.png</file>
+	<file>resources/images/icons/WS-galleryLogo.png</file>
+	<file>resources/images/icons/WS-shopLogo.png</file>
+	<file>resources/images/icons/WS-fabLogo.png</file>
+	<file>resources/images/icons/arrowButtonUp.png</file>
         <file>resources/images/icons/arrowButtonDown.png</file>
         <file>resources/images/icons/arrowButtonLeft.png</file>
         <file>resources/images/icons/arrowButtonRight.png</file>
+	<file>resources/images/icons/toolbarShareBG_icon.png</file>
         <file>resources/images/icons/toolbarSharePressed_icon.png</file>
         <file>resources/images/icons/toolbarShareDisabled_icon.png</file>
         <file>resources/images/icons/toolbarShareEnabled_icon.png</file>
@@ -140,14 +156,14 @@
         <file>resources/images/icons/zoomSliderPlus.png</file>
         <file>resources/images/icons/zoomSliderPlusPressed.png</file>
         <file>resources/images/icons/searchField.png</file>
-	<file>resources/images/icons/noicon.png</file>
-	<file>resources/images/icons/parts_plural_v3_plur.png</file>
-	<file>resources/images/icons/parts_plural_v3_sing.png</file>
-	<file>resources/images/icons/asterisk.png</file>
-	<file>resources/images/icons/partsBinCombinedMenu_icon.png</file>
-	<file>resources/images/icons/partsBinCombinedMenuPressed_icon.png</file>
-	<file>resources/images/icons/partsBinCombinedMenuHover_icon.png</file>
-	<file>resources/images/icons/noArrow_icon.png</file>
+        <file>resources/images/icons/noicon.png</file>
+        <file>resources/images/icons/parts_plural_v3_plur.png</file>
+        <file>resources/images/icons/parts_plural_v3_sing.png</file>
+        <file>resources/images/icons/asterisk.png</file>
+        <file>resources/images/icons/partsBinCombinedMenu_icon.png</file>
+        <file>resources/images/icons/partsBinCombinedMenuPressed_icon.png</file>
+        <file>resources/images/icons/partsBinCombinedMenuHover_icon.png</file>
+        <file>resources/images/icons/noArrow_icon.png</file>
         <file>resources/images/icons/partsEditorZoomInVerButton.png</file>
         <file>resources/images/icons/partsEditorZoomOutVerButton.png</file>
         <file>resources/images/icons/partsEditorZoomInHorButton.png</file>
@@ -155,7 +171,6 @@
         <file>resources/images/icons/fabquote_button_hover.png</file>
         <file>resources/images/icons/fabquote_button_press.png</file>
         <file>resources/images/icons/fabquote_button_release.png</file>
-	
         <file>resources/parts/core/wire.fzp</file>
         <file>resources/parts/core/cmRuler.fzp</file>
         <file>resources/parts/core/note.fzp</file>
@@ -167,26 +182,32 @@
         <file>resources/parts/core/roundrect_pcb_two_layers.fzp</file>
         <file>resources/parts/core/logotext.fzp</file>
         <file>resources/parts/core/logoimage.fzp</file>
-        <file>resources/parts/core/copper1logotext.fzp</file>
-        <file>resources/parts/core/copper1logoimage.fzp</file>
-	<file>resources/parts/core/copper0logotext.fzp</file>
-        <file>resources/parts/core/copper0logoimage.fzp</file>
-	<file>resources/parts/core/silkscreen0logotext.fzp</file>
         <file>resources/parts/core/silkscreen0logoimage.fzp</file>
-	<file>resources/parts/core/schematiclogotext.fzp</file>
-        <file>resources/parts/core/schematiclogoimage.fzp</file>
-	<file>resources/parts/core/breadboardlogotext.fzp</file>
         <file>resources/parts/core/breadboardlogoimage.fzp</file>
+        <file>resources/parts/core/copper1logoimage.fzp</file>
+        <file>resources/parts/core/copper0logoimage.fzp</file>
+        <file>resources/parts/core/schematiclogoimage.fzp</file>
+        <file>resources/parts/core/newlogoimage.fzp</file>
+        <file>resources/parts/core/newsilkscreen0logoimage.fzp</file>
+        <file>resources/parts/core/newbreadboardlogoimage.fzp</file>
+        <file>resources/parts/core/newcopper1logoimage.fzp</file>
+        <file>resources/parts/core/newcopper0logoimage.fzp</file>
+        <file>resources/parts/core/newschematiclogoimage.fzp</file>
+        <file>resources/parts/core/copper1logotext.fzp</file>
+        <file>resources/parts/core/copper0logotext.fzp</file>
+        <file>resources/parts/core/silkscreen0logotext.fzp</file>
+        <file>resources/parts/core/schematiclogotext.fzp</file>
+        <file>resources/parts/core/breadboardlogotext.fzp</file>
         <file>resources/parts/core/boardlogoimage.fzp</file>
         <file>resources/parts/core/boardlogoimage_one_layer.fzp</file>
         <file>resources/parts/core/ground.fzp</file>
         <file>resources/parts/core/netlabel.fzp</file>
         <file>resources/parts/core/netlabel_left.fzp</file>
-	<file>resources/parts/core/via.fzp</file>
-	<file>resources/parts/core/pad.fzp</file>
-	<file>resources/parts/core/pad0.fzp</file>
-	<file>resources/parts/core/blocker.fzp</file>
-	<file>resources/parts/core/blocker0.fzp</file>
+        <file>resources/parts/core/via.fzp</file>
+        <file>resources/parts/core/pad.fzp</file>
+        <file>resources/parts/core/pad0.fzp</file>
+        <file>resources/parts/core/blocker.fzp</file>
+        <file>resources/parts/core/blocker0.fzp</file>
         <file>resources/parts/core/dcpower.fzp</file>
         <file>resources/parts/core/power.fzp</file>
         <file>resources/parts/core/power_label.fzp</file>
@@ -197,39 +218,36 @@
         <file>resources/parts/core/30.20StripboardModuleID.fzp</file>
         <file>resources/parts/core/30.20Stripboard2ModuleID.fzp</file>
         <file>resources/parts/core/schematic_frame.fzp</file>
-
         <file>resources/parts/svg/core/icon/iconPerfboard.svg</file>
         <file>resources/parts/svg/core/icon/iconStripboard.svg</file>
         <file>resources/parts/svg/core/icon/wireicon.svg</file>
         <file>resources/parts/svg/core/icon/rulericon.svg</file>
         <file>resources/parts/svg/core/icon/rectangle_pcb.svg</file>
         <file>resources/parts/svg/core/icon/silkscreen_logo.svg</file>
-        <file>resources/parts/svg/core/icon/silkscreen_text.svg</file>        
-	<file>resources/parts/svg/core/icon/copper0_text.svg</file>
-	<file>resources/parts/svg/core/icon/copper0_logo.svg</file>
- 	<file>resources/parts/svg/core/icon/copper1_text.svg</file>
-	<file>resources/parts/svg/core/icon/copper1_logo.svg</file>
- 	<file>resources/parts/svg/core/icon/schematic_text.svg</file>
-	<file>resources/parts/svg/core/icon/schematic_logo.svg</file>
- 	<file>resources/parts/svg/core/icon/breadboard_text.svg</file>
-	<file>resources/parts/svg/core/icon/breadboard_logo.svg</file>
+        <file>resources/parts/svg/core/icon/silkscreen_text.svg</file>
+        <file>resources/parts/svg/core/icon/copper0_text.svg</file>
+        <file>resources/parts/svg/core/icon/copper0_logo.svg</file>
+        <file>resources/parts/svg/core/icon/copper1_text.svg</file>
+        <file>resources/parts/svg/core/icon/copper1_logo.svg</file>
+        <file>resources/parts/svg/core/icon/schematic_text.svg</file>
+        <file>resources/parts/svg/core/icon/schematic_logo.svg</file>
+        <file>resources/parts/svg/core/icon/breadboard_text.svg</file>
+        <file>resources/parts/svg/core/icon/breadboard_logo.svg</file>
         <file>resources/parts/svg/core/icon/ground.svg</file>
         <file>resources/parts/svg/core/icon/cell.svg</file>
         <file>resources/parts/svg/core/icon/power.svg</file>
         <file>resources/parts/svg/core/icon/jumpericon.svg</file>
         <file>resources/parts/svg/core/icon/hole.svg</file>
-	<file>resources/parts/svg/core/icon/via.svg</file>
-	<file>resources/parts/svg/core/icon/pad.svg</file>
-	<file>resources/parts/svg/core/icon/blocker.svg</file>
-	<file>resources/parts/svg/core/icon/schematic_frame_icon.svg</file>
-	<file>resources/parts/svg/core/icon/groundplane.svg</file>
-	<file>resources/parts/svg/core/icon/note.svg</file>
-	
+        <file>resources/parts/svg/core/icon/via.svg</file>
+        <file>resources/parts/svg/core/icon/pad.svg</file>
+        <file>resources/parts/svg/core/icon/blocker.svg</file>
+        <file>resources/parts/svg/core/icon/schematic_frame_icon.svg</file>
+        <file>resources/parts/svg/core/icon/groundplane.svg</file>
+        <file>resources/parts/svg/core/icon/note.svg</file>
         <file>resources/parts/svg/core/breadboard/ruler.svg</file>
         <file>resources/parts/svg/core/breadboard/wire.svg</file>
         <file>resources/parts/svg/core/breadboard/30.20perfboard.svg</file>
         <file>resources/parts/svg/core/breadboard/breadboardlogo.svg</file>
-	
         <file>resources/parts/svg/core/pcb/rectangle_pcb.svg</file>
         <file>resources/parts/svg/core/pcb/ellipse_pcb.svg</file>
         <file>resources/parts/svg/core/pcb/roundrect_pcb.svg</file>
@@ -241,84 +259,108 @@
         <file>resources/parts/svg/core/pcb/via.svg</file>
         <file>resources/parts/svg/core/pcb/pad.svg</file>
         <file>resources/parts/svg/core/pcb/pad0.svg</file>
- 
         <file>resources/parts/svg/core/schematic/ground.svg</file>
         <file>resources/parts/svg/core/schematic/netlabel.svg</file>
         <file>resources/parts/svg/core/schematic/cell.svg</file>
         <file>resources/parts/svg/core/schematic/power.svg</file>
         <file>resources/parts/svg/core/schematic/frame.svg</file>
         <file>resources/parts/svg/core/schematic/schematiclogo.svg</file>
-	
-	<file>resources/styles/fritzing.qss</file>
+        <file>resources/styles/fritzing.qss</file>
         <file>resources/styles/partseditor.qss</file>
         <file>resources/styles/newpartseditor.qss</file>
         <file>resources/styles/programwindow.qss</file>
-        <file>resources/styles/inviewhelp.qss</file>
         <file>resources/styles/linux-fritzing.qss</file>
         <file>resources/styles/linux-kde-oxygen-fritzing.qss</file>
         <file>resources/styles/linux-gnome-fritzing.qss</file>
         <file>resources/styles/win-fritzing.qss</file>
         <file>resources/styles/mac-fritzing.qss</file>
         <file>resources/styles/updatedialog.css</file>
-	
         <file>resources/fonts/DroidSans.ttf</file>
         <file>resources/fonts/DroidSansMono.ttf</file>
         <file>resources/fonts/DroidSans-Bold.ttf</file>
         <file>resources/fonts/NOTICE</file>
-        <file>resources/fonts/OCRA.ttf</file>  <!-- downloaded from http://ansuz.sooke.bc.ca/page/fonts where it is licensed GPL 3  -->
-
+        <file>resources/fonts/OCRA.ttf</file>
         <file>resources/bins/my_parts.fzb</file>
-        <file>resources/bins/search.fzb</file>	
-        <file>resources/bins/temp.fzb</file>	
+        <file>resources/bins/search.fzb</file>
+        <file>resources/bins/temp.fzb</file>
         <file>resources/bins/order.xml</file>
-        <file>resources/bins/pe.fzb</file>	
+        <file>resources/bins/pe.fzb</file>
         <file>resources/bins/icons/Arduino.png</file>
+        <file>resources/bins/icons/Arduino-mono.png</file>
         <file>resources/bins/icons/Core.png</file>
+	<file>resources/bins/icons/Core-mono.png</file>
         <file>resources/bins/icons/Custom1.png</file>
+        <file>resources/bins/icons/Custom1-mono.png</file>
         <file>resources/bins/icons/Mine.png</file>
+        <file>resources/bins/icons/Mine-mono.png</file>
         <file>resources/bins/icons/PICAXE.png</file>
+        <file>resources/bins/icons/PICAXE-mono.png</file>
         <file>resources/bins/icons/Search.png</file>
         <file>resources/bins/icons/Lilypad.png</file>
+        <file>resources/bins/icons/Lilypad-mono.png</file>
         <file>resources/bins/icons/Snootlab.png</file>
+        <file>resources/bins/icons/Snootlab-mono.png</file>
         <file>resources/bins/icons/SparkFun.png</file>
+        <file>resources/bins/icons/SparkFun-mono.png</file>
         <file>resources/bins/icons/Contrib.png</file>
+	<file>resources/bins/icons/Contrib-mono.png</file>
         <file>resources/bins/icons/Parallax.png</file>
+        <file>resources/bins/icons/Parallax-mono.png</file>
         <file>resources/bins/icons/Pololu.png</file>
+        <file>resources/bins/icons/Pololu-mono.png</file>
         <file>resources/bins/icons/Temp.png</file>
-
-	<file>resources/templates/jumper_copper0LayerTemplate.txt</file>
+        <file>resources/bins/icons/Temp-mono.png</file>
+        <file>resources/templates/jumper_copper0LayerTemplate.txt</file>
         <file>resources/templates/jumper_jumperwiresLayerTemplate.txt</file>
-	<file>resources/templates/bom.html</file>
-	<file>resources/templates/bom_row.html</file>
-	<file>resources/templates/perfboard_boardLayerTemplate.txt</file>
-	<file>resources/templates/perfboard_connectorTemplate.txt</file>
-	<file>resources/templates/perfboard_connectorFzpTemplate.txt</file>
-	<file>resources/templates/perfboard_fzpTemplate.txt</file>
-	<file>resources/templates/generic_sip_connectorFzpTemplate.txt</file>
-	<file>resources/templates/generic_sip_fzpTemplate.txt</file>
-	<file>resources/templates/generic_dip_fzpTemplate.txt</file>
-	<file>resources/templates/mystery_part_sipFzpTemplate.txt</file>
-	<file>resources/templates/mystery_part_dipFzpTemplate.txt</file>
-	<file>resources/templates/generic_female_pin_header_fzpTemplate.txt</file>
-	<file>resources/templates/screw_terminal_fzpTemplate.txt</file>
-	<file>resources/templates/jumper_pcb_svg_template.txt</file>
-	<file>resources/templates/jumper_pcb_svg_2nd_template.txt</file>
-	<file>resources/templates/generic_female_pin_header_schem_template.txt</file>
-	<file>resources/templates/generic_male_pin_header_schem_template.txt</file>
-	<file>resources/templates/generic_female_10thin_pin_header_schem_template.txt</file>
-	<file>resources/templates/generic_male_10thin_pin_header_schem_template.txt</file>
-	<file>resources/templates/generic_female_10thin_double_pin_header_schem_template.txt</file>
-	<file>resources/templates/generic_male_10thin_double_pin_header_schem_template.txt</file>
-	<file>resources/templates/generic_female_pin_header_bread_template.txt</file>
-	<file>resources/templates/generic_female_pin_header_bread_2nd_template.txt</file>
-	<file>resources/templates/generic_rounded_female_pin_header_bread_template.txt</file>
-	<file>resources/templates/generic_rounded_female_pin_header_bread_2nd_template.txt</file>
-	<file>resources/templates/generic_male_pin_header_bread_template.txt</file>
-	<file>resources/templates/generic_male_pin_header_bread_2nd_template.txt</file>
-	<file>resources/templates/generic_sip_bread_template.txt</file>
-	<file>resources/templates/schematic_frame_template.txt</file>
-	<file>resources/templates/screw_terminal_bread_template.txt</file>
-	<file>resources/templates/stripboards.xml</file>
-	
+        <file>resources/templates/bom.html</file>
+        <file>resources/templates/bom_row.html</file>
+        <file>resources/templates/perfboard_boardLayerTemplate.txt</file>
+        <file>resources/templates/perfboard_connectorTemplate.txt</file>
+        <file>resources/templates/perfboard_connectorFzpTemplate.txt</file>
+        <file>resources/templates/perfboard_fzpTemplate.txt</file>
+        <file>resources/templates/generic_sip_connectorFzpTemplate.txt</file>
+        <file>resources/templates/generic_sip_fzpTemplate.txt</file>
+        <file>resources/templates/generic_dip_fzpTemplate.txt</file>
+        <file>resources/templates/mystery_part_sipFzpTemplate.txt</file>
+        <file>resources/templates/mystery_part_dipFzpTemplate.txt</file>
+        <file>resources/templates/generic_female_pin_header_fzpTemplate.txt</file>
+        <file>resources/templates/screw_terminal_fzpTemplate.txt</file>
+        <file>resources/templates/jumper_pcb_svg_template.txt</file>
+        <file>resources/templates/jumper_pcb_svg_2nd_template.txt</file>
+        <file>resources/templates/generic_female_pin_header_schem_template.txt</file>
+        <file>resources/templates/generic_male_pin_header_schem_template.txt</file>
+        <file>resources/templates/generic_female_10thin_pin_header_schem_template.txt</file>
+        <file>resources/templates/generic_male_10thin_pin_header_schem_template.txt</file>
+        <file>resources/templates/generic_female_10thin_double_pin_header_schem_template.txt</file>
+        <file>resources/templates/generic_male_10thin_double_pin_header_schem_template.txt</file>
+        <file>resources/templates/generic_female_pin_header_bread_template.txt</file>
+        <file>resources/templates/generic_female_pin_header_bread_2nd_template.txt</file>
+        <file>resources/templates/generic_rounded_female_pin_header_bread_template.txt</file>
+        <file>resources/templates/generic_rounded_female_pin_header_bread_2nd_template.txt</file>
+        <file>resources/templates/generic_male_pin_header_bread_template.txt</file>
+        <file>resources/templates/generic_male_pin_header_bread_2nd_template.txt</file>
+        <file>resources/templates/generic_sip_bread_template.txt</file>
+        <file>resources/templates/schematic_frame_template.txt</file>
+        <file>resources/templates/screw_terminal_bread_template.txt</file>
+        <file>resources/templates/stripboards.xml</file>
+        <file>resources/images/icons/zoomSlider.png</file>
+        <file>resources/images/icons/zoomSliderHover.png</file>
+        <file>resources/images/icons/checkhover.png</file>
+        <file>resources/images/icons/checkactive.png</file>
+        <file>resources/images/icons/smalToolarrow-inactive.png</file>
+        <file>resources/images/icons/smalToolarrow-normal.png</file>
+        <file>resources/images/icons/smalToolarrow-pressed.png</file>
+        <file>resources/images/icons/spinArrowButtonUpNormal.png</file>
+        <file>resources/images/icons/spinArrowButtonUpPressed.png</file>
+        <file>resources/images/icons/spinArrowButtonDownNormal.png</file>
+        <file>resources/images/icons/spinArrowButtonDownPressed.png</file>
+        <file>resources/images/icons/TabScrollArrowButtonUpNormal.png</file>
+        <file>resources/images/icons/TabScrollArrowButtonUpPressed.png</file>
+        <file>resources/images/icons/TabScrollArrowButtonDownNormal.png</file>
+        <file>resources/images/icons/TabScrollArrowButtonDownPressed.png</file>
+	        <file>resources/images/icons/TabScrollArrowButtonLeftNormal.png</file>
+        <file>resources/images/icons/TabScrollArrowButtonLeftPressed.png</file>
+        <file>resources/images/icons/TabScrollArrowButtonRightNormal.png</file>
+        <file>resources/images/icons/TabScrollArrowButtonRightPressed.png</file>
     </qresource>
 </RCC>

@@ -29,29 +29,22 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 #include <QApplication>
 
 #include "mainwindow.h"
-#include "../dock/triplenavigator.h"
 #include "../utils/fsizegrip.h"
-#include "../dock/viewswitcherdockwidget.h"
 #include "../utils/misc.h"
 #include "../partsbinpalette/binmanager/binmanager.h"
 #include "../infoview/htmlinfoview.h"
 #include "../dock/layerpalette.h"
+#include "../mainwindow/fdockwidget.h"
 #include "../utils/fileprogressdialog.h"
 #include "../debugdialog.h"
 
 /////////////////////////////////////
 
 static const int PartsBinMinHeight = 100;
-static const int NavigatorDefaultHeight = 60;
-static const int NavigatorMinHeight = 40;
 static const int UndoHistoryDefaultHeight = 70;
 static const int UndoHistoryMinHeight = UndoHistoryDefaultHeight;
 const int MainWindow::DockMinWidth = 130;
 const int MainWindow::DockMinHeight = 30;
-
-FDockWidget * makeViewSwitcherDock(const QString & title, QWidget * parent) {
-	return new ViewSwitcherDockWidget(title, parent);
-}
 
 ///////////////////////////////////////
 
@@ -69,14 +62,6 @@ void MainWindow::createDockWindows()
 	QWidget * widget = new QWidget();
 	widget->setMinimumHeight(0);
 	widget->setMaximumHeight(0);
-	FDockWidget * dock = makeDock(tr("View Switcher"), widget, 0,  0, Qt::RightDockWidgetArea, makeViewSwitcherDock);
-	m_viewSwitcherDock = qobject_cast<ViewSwitcherDockWidget *>(dock);
-	connect(this, SIGNAL(mainWindowMoved(QWidget *)), m_viewSwitcherDock, SLOT(windowMoved(QWidget *)));
-
-#ifndef QT_NO_DEBUG
-	//dock->setStyleSheet("background-color: red;");
-	//m_viewSwitcher->setStyleSheet("background-color: blue;");
-#endif
 
 	makeDock(BinManager::Title, m_binManager, PartsBinMinHeight, PartsBinHeightDefault/*, Qt::LeftDockWidgetArea*/);
 
@@ -84,30 +69,6 @@ void MainWindow::createDockWindows()
 
 	makeDock(tr("Undo History"), m_undoView, UndoHistoryMinHeight, UndoHistoryDefaultHeight)->hide();
     m_undoView->setMinimumSize(DockMinWidth, UndoHistoryMinHeight);
-
-	m_tripleNavigator = new TripleNavigator(this);
-	
-    m_navigators << (m_miniViewContainerBreadboard = new MiniViewContainer(m_tripleNavigator));
-	m_miniViewContainerBreadboard->filterMousePress();
-	connect(m_miniViewContainerBreadboard, SIGNAL(navigatorMousePressedSignal(MiniViewContainer *)),
-								this, SLOT(currentNavigatorChanged(MiniViewContainer *)));
-
-    m_navigators << (m_miniViewContainerSchematic = new MiniViewContainer(m_tripleNavigator));
-	m_miniViewContainerSchematic->filterMousePress();
-	connect(m_miniViewContainerSchematic, SIGNAL(navigatorMousePressedSignal(MiniViewContainer *)),
-								this, SLOT(currentNavigatorChanged(MiniViewContainer *)));
-
-    m_navigators << (m_miniViewContainerPCB = new MiniViewContainer(m_tripleNavigator));
-	m_miniViewContainerPCB->filterMousePress();
-	connect(m_miniViewContainerPCB, SIGNAL(navigatorMousePressedSignal(MiniViewContainer *)),
-								this, SLOT(currentNavigatorChanged(MiniViewContainer *)));
-
-
-	m_tripleNavigator->addView(m_miniViewContainerBreadboard, tr("Breadboard"));
-	m_tripleNavigator->addView(m_miniViewContainerSchematic, tr("Schematic"));
-	m_tripleNavigator->addView(m_miniViewContainerPCB, tr("PCB"));
-	m_navigatorDock = makeDock(tr("Navigator"), m_tripleNavigator, NavigatorMinHeight, NavigatorDefaultHeight);
-	m_navigatorDock->hide();
 
     makeDock(tr("Layers"), m_layerPalette, DockMinWidth, DockMinHeight)->hide();
     m_layerPalette->setMinimumSize(DockMinWidth, DockMinHeight);
@@ -212,12 +173,7 @@ void MainWindow::keepMargins() {
 
 void MainWindow::removeMargin(FDockWidget* dock) {
 	if(dock) {
-		TripleNavigator *tn = qobject_cast<TripleNavigator*>(dock->widget());
-		if(tn) {
-			tn->showBottomMargin(false);
-		} else {
-			dockMarginAux(dock, "", m_oldBottomDockStyle);
-		}
+		dockMarginAux(dock, "", m_oldBottomDockStyle);
 	}
 }
 
@@ -227,10 +183,7 @@ void MainWindow::addTopMargin(FDockWidget* dock) {
 
 void MainWindow::addBottomMargin(FDockWidget* dock) {
 	if(dock) {
-		TripleNavigator *tn = qobject_cast<TripleNavigator*>(dock->widget());
-		if(tn) {
-			tn->showBottomMargin(true);
-		} else if(qobject_cast<BinManager*>(dock->widget())) {
+		if(qobject_cast<BinManager*>(dock->widget())) {
 			// already has enought space
 		} else {
 			dockMarginAux(dock, "bottomMostDock", dock->widget()->styleSheet());
@@ -273,11 +226,6 @@ void MainWindow::initDock() {
 
 void MainWindow::moreInitDock() {
 	//DebugDialog::debug("create view switcher");
-
-	m_viewSwitcher = new ViewSwitcher(m_programView != NULL);
-	connect(m_viewSwitcher, SIGNAL(viewSwitched(int)), this, SLOT(viewSwitchedTo(int)));
-	connect(this, SIGNAL(viewSwitched(int)), m_viewSwitcher, SLOT(viewSwitchedTo(int)));
-	m_viewSwitcher->viewSwitchedTo(0);
 
     createDockWindows();
 

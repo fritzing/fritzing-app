@@ -196,7 +196,8 @@ QString Dip::makeSchematicSvg(const QStringList & labels)
     }
     QList<QDomElement> empty;
     QStringList busNames;
-    return SchematicRectConstants::genSchematicDIP(empty, empty, lefts, rights, empty, busNames, QString("IC"), false, false, SchematicRectConstants::simpleGetConnectorName);
+    QString ic("IC");
+    return SchematicRectConstants::genSchematicDIP(empty, empty, lefts, rights, empty, busNames, ic, false, false, SchematicRectConstants::simpleGetConnectorName);
 }
 
 QString Dip::obsoleteMakeSchematicSvg(const QStringList & labels) 

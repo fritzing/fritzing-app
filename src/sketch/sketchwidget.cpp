@@ -9999,3 +9999,102 @@ void SketchWidget::setEverZoomed(bool everZoomed) {
 bool SketchWidget::updateOK(ConnectorItem *, ConnectorItem *) {
     return true;
 }
+
+void SketchWidget::testConnectors()
+{
+    static const QString templateModuleID("generic_female_pin_header_1_100mil");
+	static QRectF templateBoundingRect;
+    static QPointF templateOffset;
+
+
+    QSet<ItemBase *> already;
+    foreach (QGraphicsItem * item, scene()->selectedItems()) {
+        ItemBase * itemBase = dynamic_cast<PaletteItemBase *>(item);
+        if (itemBase == NULL) continue;
+
+        already.insert(itemBase->layerKinChief());
+    }
+
+    if (already.count() == 0) return;
+
+    ModelPart * templateModelPart = referenceModel()->genFZP(templateModuleID, referenceModel());
+    if (templateBoundingRect.isNull()) {
+        long newID = ItemBase::getNextID();
+	    ViewGeometry viewGeometry;
+        ItemBase * templateItem = addItemAuxTemp(templateModelPart, ViewLayer::NewTop, viewGeometry, newID, true, viewID(), true);
+	    templateBoundingRect = templateItem->sceneBoundingRect();
+        QPointF templatePos = templateItem->cachedConnectorItems()[0]->sceneAdjustedTerminalPoint(NULL);
+        templateOffset = templatePos - templateBoundingRect.topLeft();
+        foreach (ItemBase * kin, templateItem->layerKin()) delete kin;
+        delete templateItem;
+    }
+
+    QUndoCommand * parentCommand = new QUndoCommand(tr("test connectors"));
+    new CleanUpWiresCommand(this, CleanUpWiresCommand::UndoOnly, parentCommand);
+	new CleanUpRatsnestsCommand(this, CleanUpWiresCommand::UndoOnly, parentCommand);
+
+    foreach (ItemBase * itemBase, already) {
+        QRectF sceneBoundingRect = itemBase->sceneBoundingRect();
+        QPointF center = sceneBoundingRect.center();
+
+        foreach (ConnectorItem * connectorItem, itemBase->cachedConnectorItems()) {
+            QPointF fromPos = connectorItem->sceneAdjustedTerminalPoint(NULL);
+            QPointF toPos = fromPos;
+            double d[4];
+            d[0] = qAbs(fromPos.x() - sceneBoundingRect.left());
+            d[1] = qAbs(fromPos.x() - sceneBoundingRect.right());
+            d[2] = qAbs(fromPos.y() - sceneBoundingRect.top());
+            d[3] = qAbs(fromPos.y() - sceneBoundingRect.bottom());
+            int best = 0;
+            for (int i = 1; i < 4; i++) {
+                if (d[i] < d[best]) best = i;
+            }
+            switch (best) {
+                case 0:
+                    // left
+                    toPos.setX(sceneBoundingRect.left() - (3 * templateBoundingRect.width()));
+                    break;
+                case 1:
+                    // right
+                    toPos.setX(sceneBoundingRect.right() + (3 * templateBoundingRect.width()));
+                    break;
+                case 2:
+                    // top
+                    toPos.setY(sceneBoundingRect.top() - (3 * templateBoundingRect.height()));
+                    break;
+                case 3:
+                    // bottom
+                    toPos.setY(sceneBoundingRect.bottom() + (3 * templateBoundingRect.height()));
+                    break;
+            }
+            
+
+            long newID = ItemBase::getNextID();
+            ViewGeometry vg;
+            vg.setLoc(toPos - templateOffset);
+            newAddItemCommand(BaseCommand::CrossView, templateModelPart, templateModelPart->moduleID(), itemBase->viewLayerPlacement(), vg, newID, true, -1, true, parentCommand);  
+
+            long wireID = ItemBase::getNextID();
+            ViewGeometry vgw;
+	        vgw.setLoc(fromPos);
+	        QLineF line(0, 0, toPos.x() - fromPos.x(), toPos.y() - fromPos.y());
+	        vgw.setLine(line);
+	        vgw.setWireFlags(getTraceFlag());
+            new AddItemCommand(this, BaseCommand::CrossView, ModuleIDNames::WireModuleIDName, itemBase->viewLayerPlacement(), vgw, wireID, false, -1, parentCommand);
+            new ChangeConnectionCommand(this, BaseCommand::CrossView,
+								itemBase->id(), connectorItem->connectorSharedID(),
+								wireID, "connector0",
+								itemBase->viewLayerPlacement(), true, parentCommand);
+            new ChangeConnectionCommand(this, BaseCommand::CrossView,
+								newID, "connector0",
+								wireID, "connector1",
+								itemBase->viewLayerPlacement(), true, parentCommand);
+        }
+    }
+
+    new CleanUpWiresCommand(this, CleanUpWiresCommand::RedoOnly, parentCommand);
+	new CleanUpRatsnestsCommand(this, CleanUpWiresCommand::RedoOnly, parentCommand);
+
+    m_undoStack->waitPush(parentCommand, PropChangeDelay);
+}
+

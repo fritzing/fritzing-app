@@ -265,6 +265,9 @@
         <file>resources/parts/svg/core/schematic/power.svg</file>
         <file>resources/parts/svg/core/schematic/frame.svg</file>
         <file>resources/parts/svg/core/schematic/schematiclogo.svg</file>
+	
+        <file>resources/parts/svg/obsolete/schematic/0.3.schem.netlabel.svg</file>
+
         <file>resources/styles/fritzing.qss</file>
         <file>resources/styles/partseditor.qss</file>
         <file>resources/styles/newpartseditor.qss</file>

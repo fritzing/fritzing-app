@@ -393,7 +393,7 @@
     </iconView>
    </views>
   </instance>
-  <instance moduleIdRef="Arduino-Pro-Mini-v11">
+  <instance moduleIdRef="Arduino-Pro-Mini-v13-a4+5">
    <views>
     <iconView layer="icon">
      <geometry x="-1" y="-1" z="-1"/>

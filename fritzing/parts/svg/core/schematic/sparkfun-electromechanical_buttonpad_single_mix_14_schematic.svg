@@ -20,11 +20,11 @@
 	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="29.15" y1="29.16" x2="25.55" y2="29.16"/>
 	
 		<line id="connector1pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="0.35" y1="36.36" x2="7.55" y2="36.36"/>
-	<polygon id="connector1terminal" fill="none" points="0.35,36.36 0.35,36.36 0.35,36.36 	"/>
+	<polygon id="connector1terminal" fill="none" points="0,36.717 1.068,36.701 1.053,36.029 0,36.029 	"/>
 	<text transform="matrix(1 0 0 1 3.2622 35.3086)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">2</text>
 	
 		<line id="connector0pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="0.35" y1="29.16" x2="7.55" y2="29.16"/>
-	<polygon id="connector0terminal" fill="none" points="0.35,29.16 0.35,29.16 0.35,29.16 	"/>
+	<polygon id="connector0terminal" fill="none" points="1.058,29.519 0,29.514 0,28.826 1.058,28.79 	"/>
 	<text transform="matrix(1 0 0 1 3.2622 28.1094)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">1</text>
 	
 		<line id="connector4pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="65.15" y1="29.16" x2="57.95" y2="29.16"/>
@@ -32,16 +32,16 @@
 	<text transform="matrix(1 0 0 1 60.8618 28.1094)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">5</text>
 	
 		<line id="connector2pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="0.35" y1="21.96" x2="7.55" y2="21.96"/>
-	<polygon id="connector2terminal" fill="none" points="0.35,21.96 0.35,21.96 0.35,21.96 	"/>
-	<text transform="matrix(1 0 0 1 3.2622 20.9102)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">3</text>
+	<polygon id="connector2terminal" fill="none" points="1.006,22.295 0,22.279 0,21.623 1.006,21.576 	"/>
+	<text transform="matrix(1 0 0 1 3.2622 20.9111)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">3</text>
 	
 		<line id="connector7pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="65.15" y1="7.56" x2="57.95" y2="7.56"/>
 	<polygon id="connector7terminal" fill="none" points="65.15,7.56 65.151,7.56 65.151,7.56 	"/>
-	<text transform="matrix(1 0 0 1 60.8618 6.5098)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">8</text>
+	<text transform="matrix(1 0 0 1 60.8618 6.5107)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">8</text>
 	
 		<line id="connector3pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="0.35" y1="7.56" x2="7.55" y2="7.56"/>
-	<polygon id="connector3terminal" fill="none" points="0.35,7.56 0.35,7.56 0.35,7.56 	"/>
-	<text transform="matrix(1 0 0 1 3.2622 6.5098)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">4</text>
+	<polygon id="connector3terminal" fill="none" points="0,7.904 1.131,7.904 1.131,7.217 0,7.201 	"/>
+	<text transform="matrix(1 0 0 1 3.2622 6.5107)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">4</text>
 	
 		<rect x="122.75" y="0.36" fill="#FFFFFF" stroke="#000000" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round" width="50.398" height="43.2"/>
 	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="122.75" y1="7.56" x2="144.35" y2="7.56"/>
@@ -57,11 +57,11 @@
 	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="144.35" y1="29.16" x2="140.75" y2="29.16"/>
 	
 		<line id="connector9pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="115.55" y1="36.36" x2="122.75" y2="36.36"/>
-	<polygon id="connector9terminal" fill="none" points="115.55,36.36 115.55,36.36 115.55,36.36 	"/>
+	<path id="connector9terminal" fill="none" d="M115.55,36.36L115.55,36.36L115.55,36.36z"/>
 	<text transform="matrix(1 0 0 1 117.7734 35.3086)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">10</text>
 	
 		<line id="connector5pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="115.55" y1="29.16" x2="122.75" y2="29.16"/>
-	<polygon id="connector5terminal" fill="none" points="115.55,29.16 115.55,29.16 115.55,29.16 	"/>
+	<path id="connector5terminal" fill="none" d="M115.55,29.16L115.55,29.16L115.55,29.16z"/>
 	<text transform="matrix(1 0 0 1 118.4609 28.1094)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">6</text>
 	
 		<line id="connector8pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="180.35" y1="29.16" x2="173.15" y2="29.16"/>
@@ -69,33 +69,33 @@
 	<text transform="matrix(1 0 0 1 176.0625 28.1094)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">9</text>
 	
 		<line id="connector6pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="115.55" y1="21.96" x2="122.75" y2="21.96"/>
-	<polygon id="connector6terminal" fill="none" points="115.55,21.96 115.55,21.96 115.55,21.96 	"/>
-	<text transform="matrix(1 0 0 1 118.4609 20.9102)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">7</text>
+	<path id="connector6terminal" fill="none" d="M115.55,21.96L115.55,21.96L115.55,21.96z"/>
+	<text transform="matrix(1 0 0 1 118.4609 20.9111)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">7</text>
 	
 		<line id="connector15pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="180.35" y1="7.56" x2="173.15" y2="7.56"/>
 	<polygon id="connector15terminal" fill="none" points="180.35,7.56 180.352,7.56 180.352,7.56 	"/>
-	<text transform="matrix(1 0 0 1 175.373 6.5098)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">16</text>
+	<text transform="matrix(1 0 0 1 175.373 6.5107)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">16</text>
 	
 		<line id="connector10pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="115.55" y1="7.56" x2="122.75" y2="7.56"/>
-	<polygon id="connector10terminal" fill="none" points="115.55,7.56 115.55,7.56 115.55,7.56 	"/>
-	<text transform="matrix(1 0 0 1 117.7734 6.5098)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">11</text>
+	<path id="connector10terminal" fill="none" d="M115.55,7.56L115.55,7.56L115.55,7.56z"/>
+	<text transform="matrix(1 0 0 1 117.7734 6.5107)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">11</text>
 	
-		<rect x="7.55" y="79.561" fill="#FFFFFF" stroke="#000000" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round" width="50.4" height="43.198"/>
-	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="7.55" y1="86.759" x2="29.15" y2="86.759"/>
-	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="29.15" y1="86.759" x2="36.35" y2="93.96"/>
-	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="36.35" y1="86.759" x2="57.95" y2="86.759"/>
-	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="29.15" y1="104.759" x2="29.15" y2="108.359"/>
+		<rect x="7.55" y="79.561" fill="#FFFFFF" stroke="#000000" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round" width="50.4" height="43.199"/>
+	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="7.55" y1="86.76" x2="29.15" y2="86.76"/>
+	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="29.15" y1="86.76" x2="36.35" y2="93.96"/>
+	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="36.35" y1="86.76" x2="57.95" y2="86.76"/>
+	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="29.15" y1="104.76" x2="29.15" y2="108.359"/>
 	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="29.15" y1="108.359" x2="29.15" y2="111.96"/>
 	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="29.15" y1="111.96" x2="32.75" y2="108.359"/>
-	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="32.75" y1="108.359" x2="29.15" y2="104.759"/>
-	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="32.75" y1="104.759" x2="32.75" y2="108.359"/>
+	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="32.75" y1="108.359" x2="29.15" y2="104.76"/>
+	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="32.75" y1="104.76" x2="32.75" y2="108.359"/>
 	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="32.75" y1="108.359" x2="32.75" y2="111.96"/>
 	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="32.75" y1="108.359" x2="36.35" y2="108.359"/>
 	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="29.15" y1="108.359" x2="25.55" y2="108.359"/>
 	
 		<line id="connector12pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="0.35" y1="115.561" x2="7.55" y2="115.561"/>
-	<polygon id="connector12terminal" fill="none" points="0.35,115.561 0.35,115.561 0.35,115.561 	"/>
-	<text transform="matrix(1 0 0 1 2.5723 114.5098)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">13</text>
+	<path id="connector12terminal" fill="none" d="M0.35,115.561L0.35,115.561L0.35,115.561z"/>
+	<text transform="matrix(1 0 0 1 2.5723 114.5107)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">13</text>
 	
 		<line id="connector14pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="0.35" y1="108.359" x2="7.55" y2="108.359"/>
 	<rect id="connector14terminal" x="0.35" y="108.359" fill="none" width="0" height="0.002"/>
@@ -106,29 +106,26 @@
 	<text transform="matrix(1 0 0 1 60.1743 107.3086)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">12</text>
 	
 		<line id="connector13pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="0.35" y1="101.16" x2="7.55" y2="101.16"/>
-	<polygon id="connector13terminal" fill="none" points="0.35,101.16 0.35,101.16 0.35,101.16 	"/>
+	<path id="connector13terminal" fill="none" d="M0.35,101.16L0.35,101.16L0.35,101.16z"/>
 	<text transform="matrix(1 0 0 1 2.5723 100.1094)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">14</text>
 	
-		<line id="connector29pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="65.15" y1="86.759" x2="57.95" y2="86.759"/>
-	<rect id="connector29terminal" x="65.15" y="86.759" fill="none" width="0.001" height="0.001"/>
+		<line id="connector29pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="65.15" y1="86.76" x2="57.95" y2="86.76"/>
+	<rect id="connector29terminal" x="65.15" y="86.76" fill="none" width="0.001" height="0"/>
 	<text transform="matrix(1 0 0 1 60.1743 85.709)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">30</text>
 	
-		<line id="connector24pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="0.35" y1="86.759" x2="7.55" y2="86.759"/>
-	<rect id="connector24terminal" x="0.35" y="86.759" fill="none" width="0" height="0.001"/>
+		<line id="connector24pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="0.35" y1="86.76" x2="7.55" y2="86.76"/>
+	<rect id="connector24terminal" x="0.35" y="86.76" fill="none" width="0" height="0"/>
 	<text transform="matrix(1 0 0 1 2.5723 85.709)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">25</text>
 	
-		<rect x="122.75" y="79.561" fill="#FFFFFF" stroke="#000000" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round" width="50.398" height="43.198"/>
-	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="122.75" y1="86.759" x2="144.35" y2="86.759"/>
-	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="144.35" y1="86.759" x2="151.55" y2="93.96"/>
-	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="151.55" y1="86.759" x2="173.15" y2="86.759"/>
-	
-		<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="144.35" y1="104.759" x2="144.35" y2="108.359"/>
+		<rect x="122.75" y="79.561" fill="#FFFFFF" stroke="#000000" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round" width="50.398" height="43.199"/>
+	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="122.75" y1="86.76" x2="144.35" y2="86.76"/>
+	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="144.35" y1="86.76" x2="151.55" y2="93.96"/>
+	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="151.55" y1="86.76" x2="173.15" y2="86.76"/>
+	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="144.35" y1="104.76" x2="144.35" y2="108.359"/>
 	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="144.35" y1="108.359" x2="144.35" y2="111.96"/>
 	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="144.35" y1="111.96" x2="147.95" y2="108.359"/>
-	
-		<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="147.95" y1="108.359" x2="144.35" y2="104.759"/>
-	
-		<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="147.95" y1="104.759" x2="147.95" y2="108.359"/>
+	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="147.95" y1="108.359" x2="144.35" y2="104.76"/>
+	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="147.95" y1="104.76" x2="147.95" y2="108.359"/>
 	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="147.95" y1="108.359" x2="147.95" y2="111.96"/>
 	
 		<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="147.95" y1="108.359" x2="151.55" y2="108.359"/>
@@ -136,8 +133,8 @@
 		<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="144.35" y1="108.359" x2="140.75" y2="108.359"/>
 	
 		<line id="connector18pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="115.55" y1="115.561" x2="122.75" y2="115.561"/>
-	<polygon id="connector18terminal" fill="none" points="115.55,115.561 115.55,115.561 115.55,115.561 	"/>
-	<text transform="matrix(1 0 0 1 117.7734 114.5098)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">19</text>
+	<path id="connector18terminal" fill="none" d="M115.55,115.561L115.55,115.561L115.55,115.561z"/>
+	<text transform="matrix(1 0 0 1 117.7734 114.5107)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">19</text>
 	
 		<line id="connector17pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="115.55" y1="108.359" x2="122.75" y2="108.359"/>
 	<rect id="connector17terminal" x="115.55" y="108.359" fill="none" width="0" height="0.002"/>
@@ -148,15 +145,15 @@
 	<text transform="matrix(1 0 0 1 175.373 107.3086)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">20</text>
 	
 		<line id="connector16pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="115.55" y1="101.16" x2="122.75" y2="101.16"/>
-	<polygon id="connector16terminal" fill="none" points="115.55,101.16 115.55,101.16 115.55,101.16 	"/>
+	<path id="connector16terminal" fill="none" d="M115.55,101.16L115.55,101.16L115.55,101.16z"/>
 	<text transform="matrix(1 0 0 1 117.7734 100.1094)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">17</text>
 	
-		<line id="connector35pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="180.35" y1="86.759" x2="173.15" y2="86.759"/>
-	<rect id="connector35terminal" x="180.35" y="86.759" fill="none" width="0.002" height="0.001"/>
+		<line id="connector35pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="180.35" y1="86.76" x2="173.15" y2="86.76"/>
+	<rect id="connector35terminal" x="180.35" y="86.76" fill="none" width="0.002" height="0"/>
 	<text transform="matrix(1 0 0 1 175.373 85.709)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">36</text>
 	
-		<line id="connector31pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="115.55" y1="86.759" x2="122.75" y2="86.759"/>
-	<rect id="connector31terminal" x="115.55" y="86.759" fill="none" width="0" height="0.001"/>
+		<line id="connector31pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="115.55" y1="86.76" x2="122.75" y2="86.76"/>
+	<rect id="connector31terminal" x="115.55" y="86.76" fill="none" width="0" height="0"/>
 	<text transform="matrix(1 0 0 1 117.7734 85.709)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">32</text>
 </g>
 </svg>

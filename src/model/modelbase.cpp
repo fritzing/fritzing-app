@@ -139,9 +139,9 @@ bool ModelBase::loadFromFile(const QString & fileName, ModelBase * referenceMode
 	    versionThingRats.minorVersion = 7;
 	    versionThingRats.minorSubVersion = 13;
 	    checkForObsoleteSMDOrientation = !Version::greaterThan(versionThingRats, versionThingFz);
-        // with version 0.8.5 we get a new schematic template
+        // with version 0.8.6 we get a new schematic template
 	    versionThingRats.minorVersion = 8;
-	    versionThingRats.minorSubVersion = 4;
+	    versionThingRats.minorSubVersion = 5;
 	    checkForOldSchematics = !Version::greaterThan(versionThingRats, versionThingFz);
 	}
     

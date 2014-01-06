@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+<svg xmlns="http://www.w3.org/2000/svg"  width="3.78654in" xml:space="preserve" xmlns:xml="http://www.w3.org/XML/1998/namespace" x="0px" version="1.1" y="0px" height="1.98951in" viewBox="0 0 272.631 143.245" id="Layer_1" enable-background="new 0 0 272.631 143.245">
+    <g  id="schematic">
+        <path  fill="none" stroke="#010101" stroke-linejoin="round" id="path3062" stroke-linecap="round" stroke-width="2.4" d="M244.855,71.665h26.575" stroke-miterlimit="10"/>
+        <path  fill="none" stroke="#010101" stroke-linejoin="round" id="path3064" stroke-linecap="round" stroke-width="2.4" d="M244.855,45.093h26.575" stroke-miterlimit="10"/>
+        <path  fill="none" stroke="#010101" stroke-linejoin="round" id="path3066" stroke-linecap="round" stroke-width="2.4" d="M244.324,98.716h26.574" stroke-miterlimit="10"/>
+        <path  fill="none" stroke="#010101" stroke-linejoin="round" id="path3068" stroke-linecap="round" stroke-width="2.4" d="M136.845,28.185c0,3.678,0,2.556,0-26.578" stroke-miterlimit="10"/>
+        <path  fill="none" stroke="#010101" stroke-linejoin="round" id="path3070" stroke-linecap="round" stroke-width="2.4" d="M136.448,115.339v26.58" stroke-miterlimit="10"/>
+        <path  fill="none" stroke="#010101" stroke-linejoin="round" id="path3072" stroke-linecap="round" stroke-width="1.5193" d="M29.335,29.346h214.477v85.065H29.335V29.346z" stroke-miterlimit="10"/>
+        <path  fill="none" stroke="#010101" stroke-linejoin="round" id="path3074" stroke-linecap="round" stroke-width="2.4" d="M2.188,71.474h26.575" stroke-miterlimit="10"/>
+        <path  fill="none" stroke="#010101" stroke-linejoin="round" id="path3076" stroke-linecap="round" stroke-width="2.4" d="M2.188,44.9h26.575" stroke-miterlimit="10"/>
+        <path  fill="none" stroke="#010101" stroke-linejoin="round" id="path3078" stroke-linecap="round" stroke-width="2.4" d="M1.655,98.523H28.23" stroke-miterlimit="10"/>
+        <text  fill="#010101" font-family="Droid Sans" transform="matrix(1 0 0 1 127.0806 110.4404)" font-size="10">GND</text>
+        <text  fill="#010101" font-family="Droid Sans" transform="matrix(1 0 0 1 133.4517 41.7881)" font-size="10">V+</text>
+        <text  fill="#010101" font-family="Droid Sans" transform="matrix(1 0 0 1 208.9082 48.4268)" font-size="10">GPIO</text>
+        <text  fill="#010101" font-family="Droid Sans" transform="matrix(1 0 0 1 204.1377 73.8643)" font-size="10">Speed</text>
+        <text  fill="#010101" font-family="Droid Sans" transform="matrix(1 0 0 1 191.4824 101.4229)" font-size="10">Direction</text>
+        <text  fill="#010101" font-family="Droid Sans" transform="matrix(1 0 0 1 40.6748 47.8975)" font-size="10">PGD</text>
+        <text  fill="#010101" font-family="Droid Sans" transform="matrix(1 0 0 1 40.6748 74.9268)" font-size="10">PGC</text>
+        <text  fill="#010101" font-family="Droid Sans" transform="matrix(1 0 0 1 41.2041 101.4229)" font-size="10">VPP</text>
+        <rect  width="27.563" x="244.423" y="43.444" fill="none" height="3.051" id="connector3"/>
+        <rect width="27.563" x="244.423" y="43.444" fill="none" height="3.051" stroke="none" id="connector3terminal" stroke-width="0"/>
+        <rect  width="2.965" x="134.617" y="115.422" fill="none" height="27.823" id="connector4"/>
+        <rect width="2.965" x="134.617" y="115.422" fill="none" height="27.823" stroke="none" id="connector4terminal" stroke-width="0"/>
+        <rect  width="28.407" y="96.705" fill="none" height="3.113" id="connector5"/>
+        <rect width="28.407" x="0" y="96.705" fill="none" height="3.113" stroke="none" id="connector5terminal" stroke-width="0"/>
+        <rect  width="27.296" x="0.9" y="69.883" fill="none" height="3.079" id="connector6"/>
+        <rect width="27.296" x="0.9" y="69.883" fill="none" height="3.079" stroke="none" id="connector6terminal" stroke-width="0"/>
+        <rect  width="27.785" x="0.581" y="43.135" fill="none" height="3.172" id="connector7"/>
+        <rect width="27.785" x="0.581" y="43.135" fill="none" height="3.172" stroke="none" id="connector7terminal" stroke-width="0"/>
+        <rect  width="5" x="133.414" y="24.21" fill="none" height="5"/>
+        <rect  width="27.246" x="244.471" y="96.921" fill="none" height="3.305" id="connector1"/>
+        <rect width="27.246" x="244.471" y="96.92100000000001" fill="none" height="3.305" stroke="none" id="connector1terminal" stroke-width="0"/>
+        <rect  width="28.013" x="244.213" y="70.067" fill="none" height="2.921" id="connector2"/>
+        <rect width="28.013" x="244.213" y="70.06699999999999" fill="none" height="2.921" stroke="none" id="connector2terminal" stroke-width="0"/>
+        <rect  width="2.729" x="135.165" fill="none" height="28.673" id="connector0"/>
+        <rect width="2.729" x="135.165" y="0" fill="none" height="28.673" stroke="none" id="connector0terminal" stroke-width="0"/>
+        <path  fill="none" stroke="#010101" stroke-linejoin="round" id="path3068_1_" stroke-linecap="round" stroke-width="2.4" d="M66.095,28.187c0,3.678,0,2.556,0-26.578" stroke-miterlimit="10"/>
+        <path  fill="none" stroke="#010101" stroke-linejoin="round" id="path3068_2_" stroke-linecap="round" stroke-width="2.4" d="M84.845,28.187c0,3.678,0,2.556,0-26.578" stroke-miterlimit="10"/>
+        <text  fill="#010101" font-family="Droid Sans" transform="matrix(1 0 0 1 59.9355 38.2881)" font-size="10">m+</text>
+        <text  fill="#010101" font-family="Droid Sans" transform="matrix(1 0 0 1 80.1855 38.2881)" font-size="10">m-</text>
+        <rect  width="2.970649771711251" x="64.48057445655681" y="-0.06689432871008266" fill="none" height="29.1113197023279" id="connector8"/>
+        <rect width="2.970649771711251" x="64.48057445655681" y="-0.06689432871008266" fill="none" height="29.1113197023279" stroke="none" id="connector8terminal" stroke-width="0"/>
+        <rect  width="2.970649771711297" x="83.04713552975228" y="-1.033449119051871" fill="none" height="31.19186984425004" id="connector9"/>
+        <rect width="2.970649771711297" x="83.04713552975228" y="-1.033449119051871" fill="none" height="31.19186984425004" stroke="none" id="connector9terminal" stroke-width="0"/>
+    </g>
+</svg>

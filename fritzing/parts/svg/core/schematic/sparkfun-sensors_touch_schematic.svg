@@ -13,12 +13,12 @@
 	<line fill="none" stroke="#000000" stroke-width="0.9" stroke-linecap="round" x1="7.55" y1="21.96" x2="7.55" y2="0.36"/>
 	
 		<line id="connector0pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="0.35" y1="7.56" x2="7.55" y2="7.56"/>
-	<rect id="connector0terminal" x="0.35" y="7.56" fill="none" width="0" height="0"/>
+	<polygon id="connector0terminal" fill="none" points="1.13,7.91 0,7.91 0,7.207 1.13,7.191 	"/>
 	<text transform="matrix(1 0 0 1 3.2607 6.5105)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">1</text>
 	<text transform="matrix(1 0 0 1 9.6484 8.2605)" fill="#787878" font-family="'DroidSans'" font-size="3.5">T1</text>
 	
 		<line id="connector1pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="0.35" y1="14.76" x2="7.55" y2="14.76"/>
-	<rect id="connector1terminal" x="0.35" y="14.76" fill="none" width="0" height="0"/>
+	<polygon id="connector1terminal" fill="none" points="1.067,15.113 0,15.097 0,14.394 1.052,14.41 	"/>
 	<text transform="matrix(1 0 0 1 3.2607 13.7107)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">2</text>
 	<text transform="matrix(1 0 0 1 9.6484 15.4607)" fill="#787878" font-family="'DroidSans'" font-size="3.5">T2</text>
 </g>

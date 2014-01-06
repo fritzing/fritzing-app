@@ -815,6 +815,14 @@ ModelPart * ModelBase::createOldSchematicPart(ModelPart * modelPart, QString & m
         return oldModelPart;
     }
 
+    oldSvgPath = ":resources/parts/svg/obsolete/"+ schematicFilename;
+    oldModelPart = createOldSchematicPartAux(modelPart, oldModuleIDRef, schematicFilename, oldSvgPath);
+    if (oldModelPart) {
+        moduleIDRef = oldModuleIDRef;
+        return oldModelPart;
+    }
+
+
     // see whether it's a generated part
     oldSvgPath = PartFactory::getSvgFilename(schematicFilename);
     if (!oldSvgPath.isEmpty()) {

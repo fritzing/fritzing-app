@@ -792,7 +792,7 @@
                 </iconView>
             </views>
         </instance>
-	<instance moduleIdRef="7658504bdcb62998a7281b0d1baaac37" modelIndex="48" path="parts/core/Arduino Ethernet Shield.fzp">
+	<instance moduleIdRef="Shield_Eth06-PoE" modelIndex="48" path="parts/core/Shield_Eth06-PoE.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>

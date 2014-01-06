@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE svg>
+<!-- Generator: Adobe Illustrator 15.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg xmlns="http://www.w3.org/2000/svg" width="0.796014in" x="0px" version="1.1" y="0px" gorn="0"  height="0.917403in" viewBox="0 0 57.313 66.053" xmlns:xml="http://www.w3.org/XML/1998/namespace" id="layer1" enable-background="new 0 0 57.313 66.053" xml:space="preserve">
+    <desc >
+        <referenceFile >PWR-SNS pcb.svg</referenceFile>
+    </desc>
+    <g gorn="0.1"  id="silkscreen">
+        <g gorn="0.1.0"  id="white">
+            <g >
+                <path fill="#FFFFFF"  d="M57.313,66.053H0V0h57.313V66.053z M1,65.053h55.313V1H1V65.053z"/>
+            </g>
+        </g>
+    </g>
+    <g  id="copper0">
+    <g  id="copper1">
+        <rect width="3.168" x="19.946" y="1.991" fill="none"  height="3.168" stroke="#FEBF10" stroke-width="1.152"/>
+        <circle fill="none" cx="21.53" gorn="0.2.1"  cy="3.575" stroke="#FEBF10" id="connector0pin" r="1.584" stroke-width="1.152"/>
+        <circle fill="none" cx="28.806" gorn="0.2.2"  cy="3.575" stroke="#FEBF10" id="connector1pin" r="1.584" stroke-width="1.152"/>
+        <circle fill="none" cx="36.036" gorn="0.2.3"  cy="3.575" stroke="#FEBF10" id="connector2pin" r="1.584" stroke-width="1.152"/>
+        <rect width="3.168" x="34.452" y="60.566" fill="none"  height="3.168" stroke="#FEBF10" stroke-width="1.152"/>
+        <circle fill="none" cx="36.036" gorn="0.2.5"  cy="62.15" stroke="#FEBF10" id="connector5pin" r="1.584" stroke-width="1.152"/>
+        <circle fill="none" cx="28.761" gorn="0.2.6"  cy="62.15" stroke="#FEBF10" id="connector4pin" r="1.584" stroke-width="1.152"/>
+        <circle fill="none" cx="21.53" gorn="0.2.7"  cy="62.15" stroke="#FEBF10" id="connector3pin" r="1.584" stroke-width="1.152"/>
+    </g>
+    </g>
+</svg>

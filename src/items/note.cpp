@@ -74,7 +74,8 @@ const int Note::emptyMinWidth = 40;
 const int Note::emptyMinHeight = 25;
 const int Note::initialMinWidth = 140;
 const int Note::initialMinHeight = 45;
-const int borderWidth = 3;
+const int borderWidth = 7;
+const int TriangleOffset = 7;
 
 const double InactiveOpacity = 0.5;
 
@@ -106,7 +107,7 @@ QString addText(const QString & text, bool inUrl)
 
 	return QString("<tspan fill='%1' >%2</tspan>\n")
 				.arg(inUrl ? "#0000ff" : "#000000")
-				.arg(text)
+				.arg(TextUtils::convertExtendedChars(TextUtils::escapeAnd(text)))
 				;
 }
 
@@ -229,20 +230,20 @@ Note::Note( ModelPart * modelPart, ViewLayer::ViewID viewID,  const ViewGeometry
 		m_rect.setRect(0, 0, viewGeometry.rect().width(), viewGeometry.rect().height());
 	}
 	m_pen.setWidth(borderWidth);
-	m_pen.setCosmetic(true);
-	m_pen.setBrush(QColor(0xff, 0xd5, 0x0e));
+	m_pen.setCosmetic(false);
+    m_pen.setBrush(QColor(0xfa, 0xbc, 0x4f));
 
-	m_brush.setColor(QColor(0xfb, 0xf7, 0xab));
+    m_brush.setColor(QColor(0xff, 0xe9, 0xc8));
 	m_brush.setStyle(Qt::SolidPattern);
 
 	setPos(m_viewGeometry.loc());
 
 	QPixmap pixmap(":/resources/images/icons/noteResizeGrip.png");
-	m_resizeGrip = new ResizeHandle(pixmap, Qt::SizeFDiagCursor, this);
+	m_resizeGrip = new ResizeHandle(pixmap, Qt::SizeFDiagCursor, false, this);
 	connect(m_resizeGrip, SIGNAL(mousePressSignal(QGraphicsSceneMouseEvent *, ResizeHandle *)), this, SLOT(handleMousePressSlot(QGraphicsSceneMouseEvent *, ResizeHandle *)));
 	connect(m_resizeGrip, SIGNAL(mouseMoveSignal(QGraphicsSceneMouseEvent *, ResizeHandle *)), this, SLOT(handleMouseMoveSlot(QGraphicsSceneMouseEvent *, ResizeHandle *)));
 	connect(m_resizeGrip, SIGNAL(mouseReleaseSignal(QGraphicsSceneMouseEvent *, ResizeHandle *)), this, SLOT(handleMouseReleaseSlot(QGraphicsSceneMouseEvent *, ResizeHandle *)));
-	connect(m_resizeGrip, SIGNAL(zoomChangedSignal(double)), this, SLOT(handleZoomChangedSlot(double)));
+	//connect(m_resizeGrip, SIGNAL(zoomChangedSignal(double)), this, SLOT(handleZoomChangedSlot(double)));
 
 	m_graphicsTextItem = new NoteGraphicsTextItem();
 	QFont font("Droid Sans", 9, QFont::Normal);
@@ -301,9 +302,28 @@ void Note::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWid
 		painter->setOpacity(InactiveOpacity);
 	}
 
-	painter->setPen(m_pen);
+	painter->setPen(Qt::NoPen);
 	painter->setBrush(m_brush);
-    painter->drawRect(m_rect);
+    QPolygonF poly;
+    poly.append(m_rect.topLeft());
+    poly.append(m_rect.topRight() + QPointF(-TriangleOffset, 0));
+    poly.append(m_rect.topRight() + QPointF(0, TriangleOffset));
+    poly.append(m_rect.bottomRight());
+    poly.append(m_rect.bottomLeft());
+    painter->drawPolygon(poly);
+
+    painter->setBrush(m_pen.brush());
+    poly.clear();
+    poly.append(m_rect.topRight() + QPointF(-TriangleOffset, 0));
+    poly.append(m_rect.topRight() + QPointF(0, TriangleOffset));
+    poly.append(m_rect.topRight() + QPointF(-TriangleOffset, TriangleOffset));
+    painter->drawPolygon(poly);
+
+    painter->setPen(m_pen);
+    poly.clear();
+    poly.append(QPointF(0, m_rect.bottom() - borderWidth / 2.0));
+    poly.append(QPointF(m_rect.right(), m_rect.bottom() - borderWidth / 2.0));
+    painter->drawPolygon(poly);
 
 	if (option->state & QStyle::State_Selected) {
 		GraphicsUtils::qt_graphicsItem_highlightSelected(painter, option, boundingRect(), QPainterPath());
@@ -329,15 +349,11 @@ QPainterPath Note::shape() const
 void Note::positionGrip() {
 	QSizeF gripSize = m_resizeGrip->boundingRect().size();
 	QSizeF sz = this->boundingRect().size(); 
-	double scale = m_resizeGrip->currentScale();
-	QPointF offset((gripSize.width() + borderWidth - 1) / scale, (gripSize.height() + borderWidth - 1) / scale);
-	QPointF p(sz.width(), sz.height());
-	m_resizeGrip->setPos(p - offset);
-	m_graphicsTextItem->setPos(gripSize.width(), gripSize.height());
-	m_graphicsTextItem->setTextWidth(sz.width() - gripSize.width());
+	QPointF p(sz.width() - gripSize.width(), sz.height() - gripSize.height());
+	m_resizeGrip->setPos(p);
+	m_graphicsTextItem->setPos(TriangleOffset / 2, TriangleOffset / 2);
+	m_graphicsTextItem->setTextWidth(sz.width() - TriangleOffset);
 }
-
-
 
 void Note::mousePressEvent(QGraphicsSceneMouseEvent * event) {
 	InfoGraphicsView *infographics = InfoGraphicsView::getInfoGraphicsView(this);
@@ -841,4 +857,11 @@ QString Note::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QString, QSt
 ViewLayer::ViewID Note::useViewIDForPixmap(ViewLayer::ViewID, bool) 
 {
     return ViewLayer::IconView;
+}
+
+void Note::addedToScene(bool temporary)
+{
+	positionGrip();
+
+    return ItemBase::addedToScene(temporary);
 }

@@ -107,6 +107,24 @@ bool alphaLessThan(QColor * c1, QColor * c2)
 	return c1->alpha() < c2->alpha();
 }
 
+void debugCompare(ItemBase * it) {
+    Wire * wire = dynamic_cast<Wire *>(it);
+    if (wire) {
+        QRectF r0 = wire->connector0()->rect();
+        QRectF r1 = wire->connector1()->rect();
+        if (qAbs(r0.left() - r1.left()) < 0.1 && 
+            qAbs(r0.right() - r1.right()) < 0.1 && 
+            qAbs(r0.top() - r1.top()) < 0.1 &&
+            qAbs(r0.bottom() - r1.bottom()) < 0.1)
+        {
+            wire->debugInfo("zero wire");
+            if (wire->viewID() == ViewLayer::PCBView) {
+                DebugDialog::debug("in pcb");
+            }
+        }
+    }
+}
+
 /////////////////////////////////////////////////////////////
 
 WireAction::WireAction(QAction * action) : QAction(action) {
@@ -168,6 +186,7 @@ FSvgRenderer * Wire::setUp(ViewLayer::ViewLayerID viewLayerID, const LayerHash &
 	FSvgRenderer * svgRenderer = setUpConnectors(m_modelPart, m_viewID);
 	if (svgRenderer != NULL) {
 		initEnds(m_viewGeometry, svgRenderer->viewBox(), infoGraphicsView);
+        //debugCompare(this);
 	}
 	setZValue(this->z());
 
@@ -641,6 +660,8 @@ void Wire::setConnector0Rect() {
 				0 - (rect.height()  / 2.0) );
 	m_connector0->setRect(rect);
 
+    //debugCompare(this);
+
 //	QPointF p = m_connector0->mapToScene(m_connector0->rect().center());
 //	m_connector0->debugInfo(QString("c0:%1 %2").arg(p.x()).arg(p.y()));
 //	p = m_connector1->mapToScene(m_connector1->rect().center());
@@ -654,6 +675,8 @@ void Wire::setConnector1Rect() {
 	rect.moveTo(this->line().dx() - (rect.width()  / 2.0),
 				this->line().dy() - (rect.height()  / 2.0) );
 	m_connector1->setRect(rect);
+
+    //debugCompare(this);
 
 //	QPointF p = m_connector0->mapToScene(m_connector0->rect().center());
 //	m_connector0->debugInfo(QString("c0:%1 %2").arg(p.x()).arg(p.y()));
@@ -888,7 +911,7 @@ void Wire::simpleConnectedMoved(ConnectorItem * from, ConnectorItem * to)
 
 	this->setPos(p1);
 	this->setLine(0,0, p2.x() - p1.x(), p2.y() - p1.y() );
-	//DebugDialog::debug(QString("set line %5: %1 %2, %3 %4, vis:%6 lyr:%7").arg(p1.x()).arg(p1.y()).arg(p2.x()).arg(p2.y()).arg(id()).arg(isVisible()).arg(m_viewID) );
+	//debugInfo(QString("set line  %1 %2, %3 %4, vis:%5").arg(p1.x()).arg(p1.y()).arg(p2.x()).arg(p2.y()).arg(isVisible()) );
 	setConnector1Rect();
 }
 
@@ -920,6 +943,9 @@ void Wire::calcNewLine(ConnectorItem * from, ConnectorItem * to, QPointF & p1, Q
 void Wire::connectedMoved(ConnectorItem * from, ConnectorItem * to, QList<ConnectorItem *> & already) {
 	// "from" is the connector on the part
 	// "to" is the connector on the wire
+
+    //from->debugInfo("connected moved");
+    //to->debugInfo("\tconnected moved");
 
 	simpleConnectedMoved(from, to);
 	return;
@@ -1671,6 +1697,7 @@ void Wire::setConnectorDimensionsAux(ConnectorItem * connectorItem, double width
 	QRectF r(p.x() - (width / 2), p.y() - (height / 2), width, height);
 	connectorItem->setRect(r);
 	connectorItem->setTerminalPoint(r.center() - r.topLeft());
+    //debugCompare(connectorItem->attachedTo());
 }
 
 void Wire::originalConnectorDimensions(double & width, double & height) 
@@ -1708,6 +1735,11 @@ QLineF Wire::line() const
 */
 void Wire::setLine(const QLineF &line)
 {
+
+    //if (line.length() < 0.5) {
+    //    debugInfo("zero line");
+    //}
+
     if (m_line == line)
         return;
     prepareGeometryChange();

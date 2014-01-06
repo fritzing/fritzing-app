@@ -37,7 +37,7 @@ class ResizeHandle : public QObject, public QGraphicsPixmapItem
 Q_OBJECT
 
 public:
-	ResizeHandle(const QPixmap & pixmap, const QCursor &, QGraphicsItem * parent = 0);
+	ResizeHandle(const QPixmap & pixmap, const QCursor &, bool ignoresTransforms, QGraphicsItem * parent = 0);
 	~ResizeHandle();
 
 	QPointF resizeOffset();
@@ -53,6 +53,7 @@ protected:
 	void mouseMoveEvent ( QGraphicsSceneMouseEvent * event );
 	void mouseReleaseEvent ( QGraphicsSceneMouseEvent * event );
 	QVariant itemChange(GraphicsItemChange change, const QVariant &value);
+    bool scaling();
 
 signals:
 	void mousePressSignal(QGraphicsSceneMouseEvent * event, ResizeHandle *);

@@ -1,0 +1,146 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module fritzingVersion="0.4.1b.07.17.4356" moduleId="atlas-sientific_D.O. Circuit" referenceFile="atlas-sientific_D.O. Circuit.fzp">
+ <author>Atlas Scientific </author>
+ <title>D.O. Circuit</title>
+ <label>D.O. Circuit</label>
+ <date>Fri Jul 19 2013</date>
+ <tags/>
+ <properties>
+  <property name="family">Dissolved
+Oxygen</property>
+  <property name="variant">V1</property>
+ </properties>
+ <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:8pt;">Our modern understanding of how oxygen dissolves in water comes from the work of Dr. Ray Weiss. At the time when he published his findings, January 12, 1970, virtually no one had a computer. The equation he developed was so complex; he had to publish lengthy look-up tables so people could determine the correct dissolved oxygen levels quickly. At the time, Dissolved Oxygen was an exotic parameter that could only be accurately measured by governments and universities. Who would ever need to know such information anyway? Today, D.O. readings are used in so many different industries it would be ridiculous to list them all here. The Atlas Scientific D.O. Circuit is our fifth generation Dissolved Oxygen Circuit. The Atlas Scientific Dissolved Oxygen Circuit has been designed specifically to help engineers manufacture their own, custom built, scientific equipment. An easy to use data protocol and a simple instruction set means the Atlas Scientific D.O. Circuit takes only minutes to set up.&lt;/span>&lt;/p>
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;">&lt;br />&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:8pt;">The Atlas Scientific Dissolved Oxygen Circuit is designed for both continuous and intermittent readings. After calibration, the Dissolved Oxygen Sensor can be immersed in a liquid and operate continuously for 12 months before recalibration is recommended.&lt;/span>&lt;/p>
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;">&lt;br />&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:8pt;">• Full range D.O. readings +/- 0.1&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:8pt;">• Accuracy within two significant figures (XX.XX Mg/L)&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:8pt;">• Temperature dependent or temperature independent readings&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:8pt;">• Fresh water/Saltwater/Brackish water readings&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:8pt;">• Conductivity dependent or conductivity independent readings&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:8pt;">• Simple 5 second calibration&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:8pt;">• Data output is in Mg/L&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:8pt;">• Dimensions: 13.9 mm X 20 mm (0.54&amp;quot; X0.78&amp;quot;)&lt;/span>&lt;/p>&lt;/body>&lt;/html></description>
+ <views>
+  <iconView>
+   <layers image="icon/atlas-sientific_D.O. Circuit_icon.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+  <schematicView>
+   <layers image="schematic/atlas-sientific_D.O. Circuit_schematic.svg">
+    <layer layerId="schematic"/>
+   </layers>
+  </schematicView>
+  <breadboardView>
+   <layers image="breadboard/atlas-sientific_D.O. Circuit_breadboard.svg">
+    <layer layerId="breadboard"/>
+   </layers>
+  </breadboardView>
+  <pcbView>
+   <layers image="pcb/atlas-sientific_D.O. Circuit_pcb.svg">
+    <layer layerId="copper0"/>
+    <layer layerId="silkscreen"/>
+    <layer layerId="copper1"/>
+   </layers>
+  </pcbView>
+ </views>
+ <connectors>
+  <connector type="male" id="connector0" name="GND">
+   <description>Supply Ground</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector0pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector0pin" layer="schematic" terminalId="connector0terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector0pin" layer="copper1"/>
+     <p svgId="connector0pin" layer="copper0"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" id="connector1" name="TX">
+   <description>Data Out</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector1pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector1pin" layer="schematic" terminalId="connector1terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector1pin" layer="copper1"/>
+     <p svgId="connector1pin" layer="copper0"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" id="connector2" name="RX">
+   <description>Data In</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector2pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector2pin" layer="schematic" terminalId="connector2terminal"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector2pin" layer="copper1"/>
+     <p svgId="connector2pin" layer="copper0"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" id="connector3" name="Vcc">
+   <description>Supply Voltage</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector3pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector3pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector3pin" layer="copper1"/>
+     <p svgId="connector3pin" layer="copper0"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" id="connector4" name="PRB">
+   <description>Probe (Sensor)</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector4pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector4pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector4pin" layer="copper1"/>
+     <p svgId="connector4pin" layer="copper0"/>
+    </pcbView>
+   </views>
+  </connector>
+  <connector type="male" id="connector5" name="GND">
+   <description>Supply Ground</description>
+   <views>
+    <breadboardView>
+     <p svgId="connector5pin" layer="breadboard"/>
+    </breadboardView>
+    <schematicView>
+     <p svgId="connector5pin" layer="schematic"/>
+    </schematicView>
+    <pcbView>
+     <p svgId="connector5pin" layer="copper1"/>
+     <p svgId="connector5pin" layer="copper0"/>
+    </pcbView>
+   </views>
+  </connector>
+ </connectors>
+ <url>https://www.atlas-scientific.com/product_pages/embedded/do.html</url>
+</module>

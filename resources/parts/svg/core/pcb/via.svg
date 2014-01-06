@@ -1,9 +1,12 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<svg version="1.2" xmlns="http://www.w3.org/2000/svg" width="0.075in" height="0.075in" viewBox="0 0 75 75" baseProfile="tiny" >
-  <desc>Via SVG</desc>
-  <g id="copper0" >  
-  <g id="copper1" > 
-    <circle fill="none" cx="37.5" cy="37.5" stroke="rgb(255, 191, 0)" r="13.7795" id="connector0pin" stroke-width="11.811" />
-  </g>  
-  </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="5.4px" height="5.4px" viewBox="0 0 5.4 5.4" enable-background="new 0 0 5.4 5.4" xml:space="preserve">
+<desc>Via SVG</desc>
+<g id="copper0">
+	<g id="copper1">
+		<circle id="connector0pin" fill="none" stroke="#FFC58C" stroke-width="0.75" cx="2.7" cy="2.7" r="0.992"/>
+	</g>
+</g>
 </svg>

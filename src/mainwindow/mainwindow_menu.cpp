@@ -65,13 +65,13 @@ $Date: 2013-04-28 14:14:07 +0200 (So, 28. Apr 2013) $
 #include "../utils/textutils.h"
 #include "../connectors/ercdata.h"
 #include "../items/moduleidnames.h"
-#include "../dock/miniviewcontainer.h"
 #include "../utils/zoomslider.h"
 #include "../dock/layerpalette.h"
 #include "../program/programwindow.h"
 #include "../utils/autoclosemessagebox.h"
 #include "../processeventblocker.h"
 #include "../sketchtoolbutton.h"
+#include "../help/firsttimehelpdialog.h"
 
 ////////////////////////////////////////////////////////
 
@@ -92,6 +92,20 @@ struct SketchDescriptor {
 
 bool sortSketchDescriptors(SketchDescriptor * s1, SketchDescriptor * s2){
     return s1->name.toLower() < s2->name.toLower();
+}
+
+QDomElement getBestLanguageChild(const QString & localeName, const QDomElement & parent)
+{
+    QDomElement language = parent.firstChildElement("language");
+    QDomElement backupLang;
+    while (!language.isNull()) {
+        if (language.attribute("country") == "en") backupLang = language;
+        if (localeName.endsWith(language.attribute("country"))) {
+            return language;
+        }
+        language = language.nextSiblingElement("language");
+    }
+    return backupLang;
 }
 
 ////////////////////////////////////////////////////////
@@ -351,7 +365,6 @@ void MainWindow::mainLoad(const QString & fileName, const QString & displayName,
 		m_fileProgressDialog->setValue(102);
 	}
 	this->show();
-	showAllFirstTimeHelp(false);
 	ProcessEventBlocker::processEvents();
 
 	QString displayName2 = displayName;
@@ -454,11 +467,13 @@ void MainWindow::mainLoad(const QString & fileName, const QString & displayName,
         if (m_pcbGraphicsView) {
             QList<ItemBase *> items = m_pcbGraphicsView->selectAllObsolete();
 	        if (items.count() > 0) {
-                checkSwapObsolete(items);
+                checkSwapObsolete(items, true);
             }
         }
     }
 
+
+    initZoom();
 }
 
 void MainWindow::copy() {
@@ -574,6 +589,14 @@ void MainWindow::tipsAndTricks()
 	TipsAndTricks::showTipsAndTricks();
 }
 
+void MainWindow::firstTimeHelp()
+{
+    if (m_currentGraphicsView == NULL) return;	
+
+    FirstTimeHelpDialog::setViewID(m_currentGraphicsView->viewID());
+    FirstTimeHelpDialog::showFirstTimeHelp();
+}
+
 void MainWindow::createActions()
 {
     createRaiseWindowActions();
@@ -581,7 +604,7 @@ void MainWindow::createActions()
     createFileMenuActions();
     createEditMenuActions();
     createPartMenuActions();
-    createViewMenuActions();
+    createViewMenuActions(true);
     createWindowMenuActions();
     createHelpMenuActions();
 	createTraceMenuActions();
@@ -654,34 +677,44 @@ void MainWindow::populateMenuFromXMLFile(QMenu *parentMenu, QStringList &actions
 	QDomElement indexDomElem = domElem.firstChildElement("sketches");
 	QDomElement taxonomyDomElem = domElem.firstChildElement("categories");
 
-	QHash<QString, struct SketchDescriptor *> index = indexAvailableElements(indexDomElem, folderPath, actionsTracker);
+    QLocale locale;
+    QString localeName = locale.name().toLower();     // get default translation, a string of the form "language_country" where country is a two-letter code.
+
+
+	QHash<QString, struct SketchDescriptor *> index = indexAvailableElements(indexDomElem, folderPath, actionsTracker, localeName);
 	QList<SketchDescriptor *> sketchDescriptors(index.values());
 	qSort(sketchDescriptors.begin(), sketchDescriptors.end(), sortSketchDescriptors);
 
 	if (sketchDescriptors.size() > 0) {
 		// set up the "all" category
 		QDomElement all = dom.createElement("category");
-		all.setAttribute("name", tr("All"));
 		taxonomyDomElem.appendChild(all);
+        QDomElement language = dom.createElement("language");
+        language.setAttribute("name", tr("All"));
+        all.appendChild(language);
 		foreach (SketchDescriptor * sketchDescriptor, sketchDescriptors) {
 			QDomElement sketch = dom.createElement("sketch");
 			sketch.setAttribute("id", sketchDescriptor->id);
 			all.appendChild(sketch);
 		}
 	}
-	populateMenuWithIndex(index, parentMenu, taxonomyDomElem);
+	populateMenuWithIndex(index, parentMenu, taxonomyDomElem, localeName);
 	foreach (SketchDescriptor * sketchDescriptor, index.values()) {
 		delete sketchDescriptor;
 	}
 }
 
-QHash<QString, struct SketchDescriptor *> MainWindow::indexAvailableElements(QDomElement &domElem, const QString &srcPrefix, QStringList & actionsTracker) {
+QHash<QString, struct SketchDescriptor *> MainWindow::indexAvailableElements(QDomElement &domElem, const QString &srcPrefix, QStringList & actionsTracker, const QString & localeName) {
 	QHash<QString, struct SketchDescriptor *> retval;
 	QDomElement sketch = domElem.firstChildElement("sketch");
+
+    // TODO: eventually need to deal with language/country differences like pt_br vs. pt_pt
+
 	while(!sketch.isNull()) {
 		const QString id = sketch.attribute("id");
-		const QString name = sketch.attribute("name");
-		QString srcAux = sketch.attribute("src");
+        QDomElement bestLang = getBestLanguageChild(localeName, sketch);
+		QString name = bestLang.attribute("name");
+		QString srcAux = bestLang.attribute("src");
 		// if it's an absolute path, don't prefix it
 		const QString src = QFileInfo(srcAux).exists()? srcAux: srcPrefix+srcAux;
 		if(QFileInfo(src).exists()) {
@@ -696,7 +729,7 @@ QHash<QString, struct SketchDescriptor *> MainWindow::indexAvailableElements(QDo
 	return retval;
 }
 
-void MainWindow::populateMenuWithIndex(const QHash<QString, struct SketchDescriptor *>  &index, QMenu * parentMenu, QDomElement &domElem) {
+void MainWindow::populateMenuWithIndex(const QHash<QString, struct SketchDescriptor *>  &index, QMenu * parentMenu, QDomElement &domElem, const QString & localeName) {
 	// note: the <sketch> element here is not the same as the <sketch> element in indexAvailableElements()
 	QDomElement e = domElem.firstChildElement();
 	while(!e.isNull()) {
@@ -714,17 +747,19 @@ void MainWindow::populateMenuWithIndex(const QHash<QString, struct SketchDescrip
 			}
 		} 
 		else if (e.nodeName() == "category") {
-			QString name = e.attribute("name");
+            QDomElement bestLang = getBestLanguageChild(localeName, e);
+			QString name = bestLang.attribute("name");
 			QMenu * currMenu = new QMenu(name, parentMenu);
 			parentMenu->addMenu(currMenu);
-			populateMenuWithIndex(index, currMenu, e);
+			populateMenuWithIndex(index, currMenu, e, localeName);
 		}
 		else if (e.nodeName() == "separator") {
 			parentMenu->addSeparator();
 		}
 		else if (e.nodeName() == "url") {
-			QAction * action = new QAction(e.attribute("name"), this);
-			action->setData(e.attribute("href"));
+            QDomElement bestLang = getBestLanguageChild(localeName, e);
+			QAction * action = new QAction(bestLang.attribute("name"), this);
+			action->setData(bestLang.attribute("href"));
 			connect(action, SIGNAL(triggered()), this, SLOT(openURL()));
 			parentMenu->addAction(action);
 		}
@@ -775,10 +810,14 @@ void MainWindow::createOpenRecentMenu() {
 }
 
 void MainWindow::updateFileMenu() {
+    m_printAct->setEnabled(m_currentGraphicsView != NULL);
+
 	updateRecentFileActions();
 	m_orderFabAct->setEnabled(true);
 
     m_revertAct->setEnabled(m_undoStack->canUndo());
+
+
 }
 
 void MainWindow::updateRecentFileActions() {
@@ -906,6 +945,10 @@ void MainWindow::createPartMenuActions() {
 	m_exportNormalizedFlattenedSvgAction = new QAction(tr("Export Normalized Flattened SVG"), this);
 	m_exportNormalizedFlattenedSvgAction->setStatusTip(tr("Export 1000 dpi Flattened SVG of this part in this view"));
 	connect(m_exportNormalizedFlattenedSvgAction, SIGNAL(triggered()), this, SLOT(exportNormalizedFlattenedSVG()));
+
+	m_dumpAllPartsAction = new QAction(tr("Dump all parts"), this);
+	m_dumpAllPartsAction->setStatusTip(tr("Debug dump all parts in this view"));
+	connect(m_dumpAllPartsAction, SIGNAL(triggered()), this, SLOT(dumpAllParts()));
 #endif
 
 
@@ -1050,7 +1093,7 @@ void MainWindow::createPartMenuActions() {
 
 }
 
-void MainWindow::createViewMenuActions() {
+void MainWindow::createViewMenuActions(bool showWelcome) {
 	m_zoomInAct = new QAction(tr("&Zoom In"), this);
 	m_zoomInAct->setShortcut(tr("Ctrl++"));
 	m_zoomInAct->setStatusTip(tr("Zoom in"));
@@ -1058,10 +1101,10 @@ void MainWindow::createViewMenuActions() {
 
 	// instead of creating a filter to grab the shortcut, let's create a new action
 	// and append it to the window
-	QAction *zoomInAux = new QAction(this);
-	zoomInAux->setShortcut(tr("Ctrl+="));
-	connect(zoomInAux, SIGNAL(triggered()), this, SLOT(zoomIn()));
-	this->addAction(zoomInAux);
+	m_zoomInShortcut = new QAction(this);
+	m_zoomInShortcut->setShortcut(tr("Ctrl+="));
+	connect(m_zoomInShortcut, SIGNAL(triggered()), this, SLOT(zoomIn()));
+	this->addAction(m_zoomInShortcut);
 
 	m_zoomOutAct = new QAction(tr("&Zoom Out"), this);
 	m_zoomOutAct->setShortcut(tr("Ctrl+-"));
@@ -1100,27 +1143,38 @@ void MainWindow::createViewMenuActions() {
 	m_setBackgroundColorAct->setStatusTip(tr("Set the background color of this view"));
 	connect(m_setBackgroundColorAct, SIGNAL(triggered()), this, SLOT(setBackgroundColor()));
 
+	QStringList controls;
+	controls << tr("Ctrl+1") << tr("Ctrl+2") << tr("Ctrl+3") << tr("Ctrl+4") << tr("Ctrl+5");
+	int controlIndex = 0;
+	if (showWelcome) {
+		m_showWelcomeAct = new QAction(tr("&Show Welcome"), this);
+		m_showWelcomeAct->setShortcut(controls.at(controlIndex++));
+		m_showWelcomeAct->setStatusTip(tr("Show the welcome view"));
+		connect(m_showWelcomeAct, SIGNAL(triggered()), this, SLOT(showWelcomeView()));
+	}
+
 	m_showBreadboardAct = new QAction(tr("&Show Breadboard"), this);
-	m_showBreadboardAct->setShortcut(tr("Ctrl+1"));
+	m_showBreadboardAct->setShortcut(controls.at(controlIndex++));
 	m_showBreadboardAct->setStatusTip(tr("Show the breadboard view"));
 	connect(m_showBreadboardAct, SIGNAL(triggered()), this, SLOT(showBreadboardView()));
 
 	m_showSchematicAct = new QAction(tr("&Show Schematic"), this);
-	m_showSchematicAct->setShortcut(tr("Ctrl+2"));
+	m_showSchematicAct->setShortcut(controls.at(controlIndex++));
 	m_showSchematicAct->setStatusTip(tr("Show the schematic view"));
 	connect(m_showSchematicAct, SIGNAL(triggered()), this, SLOT(showSchematicView()));
 
 	m_showPCBAct = new QAction(tr("&Show PCB"), this);
-	m_showPCBAct->setShortcut(tr("Ctrl+3"));
+	m_showPCBAct->setShortcut(controls.at(controlIndex++));
 	m_showPCBAct->setStatusTip(tr("Show the PCB view"));
 	connect(m_showPCBAct, SIGNAL(triggered()), this, SLOT(showPCBView()));
 
     if (m_programView) {
 	    m_showProgramAct = new QAction(tr("Show Code"), this);
-	    m_showProgramAct->setShortcut(tr("Ctrl+4"));
+	    m_showProgramAct->setShortcut(controls.at(controlIndex++));
 	    m_showProgramAct->setStatusTip(tr("Show the code (programming) view"));
 	    connect(m_showProgramAct, SIGNAL(triggered()), this, SLOT(showProgramView()));
         QList<QAction *> viewMenuActions;
+		if (m_welcomeView) viewMenuActions << m_showWelcomeAct;
         viewMenuActions << m_showBreadboardAct << m_showSchematicAct << m_showPCBAct << m_showProgramAct;
         m_programView->initViewMenu(viewMenuActions);
     }
@@ -1181,12 +1235,6 @@ void MainWindow::createHelpMenuActions() {
 	m_partsRefAct->setStatusTip(tr("Open Parts Reference"));
 	connect(m_partsRefAct, SIGNAL(triggered(bool)), this, SLOT(openPartsReference()));
 
-	m_showInViewHelpAct = new QAction(tr("First Time Help"), this);
-	m_showInViewHelpAct->setStatusTip(tr("Show or Hide First Time Help"));
-	m_showInViewHelpAct->setCheckable(true);
-	m_showInViewHelpAct->setChecked(true);
-	connect(m_showInViewHelpAct, SIGNAL(triggered(bool)), this, SLOT(showInViewHelp()));
-
 	/*m_visitFritzingDotOrgAct = new QAction(tr("Visit fritzing.org"), this);
 	m_visitFritzingDotOrgAct->setStatusTip(tr("www.fritzing.org"));
 	connect(m_visitFritzingDotOrgAct, SIGNAL(triggered(bool)), this, SLOT(visitFritzingDotOrg()));*/
@@ -1203,6 +1251,10 @@ void MainWindow::createHelpMenuActions() {
 	m_tipsAndTricksAct = new QAction(tr("Tips, Tricks and Shortcuts"), this);
 	m_tipsAndTricksAct->setStatusTip(tr("Display some handy Fritzing tips and tricks"));
 	connect(m_tipsAndTricksAct, SIGNAL(triggered()), this, SLOT(tipsAndTricks()));
+
+	m_firstTimeHelpAct = new QAction(tr("First Time Help"), this);
+	m_firstTimeHelpAct->setStatusTip(tr("Display First Time Help"));
+	connect(m_firstTimeHelpAct, SIGNAL(triggered()), this, SLOT(firstTimeHelp()));
 
 	m_aboutQtAct = new QAction(tr("&About Qt"), this);
 	m_aboutQtAct->setStatusTip(tr("Show Qt's about box"));
@@ -1260,6 +1312,7 @@ void MainWindow::createFileMenu() {
 
     m_fileMenu->addSeparator();
 	m_exportMenu = m_fileMenu->addMenu(tr("&Export"));
+    connect(m_exportMenu, SIGNAL(aboutToShow()), this, SLOT(updateExportMenu()));
     //m_fileMenu->addAction(m_pageSetupAct);
     m_fileMenu->addAction(m_printAct);
 
@@ -1284,7 +1337,7 @@ void MainWindow::createFileMenu() {
 
 	m_exportMenu->addAction(m_exportBomAct);
 	m_exportMenu->addAction(m_exportNetlistAct);
-	//m_exportMenu->addAction(m_exportSpiceNetlistAct);
+	m_exportMenu->addAction(m_exportSpiceNetlistAct);
 
 	//m_exportMenu->addAction(m_exportEagleAct);
 }
@@ -1384,6 +1437,11 @@ void MainWindow::createPartMenu() {
     m_alignMenu->addAction(m_alignTopAct);
 	m_alignMenu->addAction(m_alignVerticalCenterAct);
 	m_alignMenu->addAction(m_alignBottomAct);
+
+#ifndef QT_NO_DEBUG
+    m_partMenu->addAction(m_dumpAllPartsAction);
+#endif
+
 }
 
 void MainWindow::createViewMenu()
@@ -1402,6 +1460,7 @@ void MainWindow::createViewMenu()
     m_viewMenu->addAction(m_setBackgroundColorAct);
 	m_viewMenu->addSeparator();
 
+	if (m_welcomeView) m_viewMenu->addAction(m_showWelcomeAct);
     m_viewMenu->addAction(m_showBreadboardAct);
     m_viewMenu->addAction(m_showSchematicAct);
     m_viewMenu->addAction(m_showPCBAct);
@@ -1493,7 +1552,6 @@ void MainWindow::createTraceMenus()
 void MainWindow::createHelpMenu()
 {
     m_helpMenu = menuBar()->addMenu(tr("&Help"));
-    m_helpMenu->addAction(m_showInViewHelpAct);
     m_helpMenu->addAction(m_openHelpAct);
     m_helpMenu->addAction(m_examplesAct);
     m_helpMenu->addAction(m_partsRefAct);
@@ -1509,6 +1567,7 @@ void MainWindow::createHelpMenu()
 	m_helpMenu->addAction(m_aboutAct);
     m_helpMenu->addAction(m_openDonateAct);
 	m_helpMenu->addAction(m_tipsAndTricksAct);
+	m_helpMenu->addAction(m_firstTimeHelpAct);
 #ifndef QT_NO_DEBUG
 	m_helpMenu->addAction(m_aboutQtAct);
 #endif
@@ -1519,7 +1578,14 @@ void MainWindow::updateLayerMenu(bool resetLayout) {
     if (m_viewMenu == NULL) return;
     if (m_showAllLayersAct == NULL) return;
 
-	QList<QAction *> actions;
+    QList<QAction *> actions;
+    actions << m_zoomInAct << m_zoomOutAct << m_zoomInShortcut << m_fitInWindowAct << m_actualSizeAct << 
+        m_100PercentSizeAct << m_alignToGridAct << m_showGridAct << m_setGridSizeAct << m_setBackgroundColorAct;
+
+    bool enabled = (m_currentGraphicsView != NULL);
+    foreach (QAction * action, actions) action->setEnabled(enabled);
+
+	actions.clear();
 
     if (m_showPartsBinIconViewAct) {
 	    if (m_binManager) {
@@ -1538,7 +1604,12 @@ void MainWindow::updateLayerMenu(bool resetLayout) {
     if (m_showAllLayersAct) m_viewMenu->addAction(m_showAllLayersAct);
     if (m_hideAllLayersAct) m_viewMenu->addAction(m_hideAllLayersAct);
 
-	if (m_currentGraphicsView == NULL) return;
+    m_hideAllLayersAct->setEnabled(false);
+	m_showAllLayersAct->setEnabled(false);
+
+    if (m_currentGraphicsView == NULL) {
+        return;
+    }
 
 	m_alignToGridAct->setChecked(m_currentGraphicsView->alignedToGrid());
 	m_showGridAct->setChecked(m_currentGraphicsView->showingGrid());
@@ -1560,9 +1631,6 @@ void MainWindow::updateLayerMenu(bool resetLayout) {
 		}
 	}
 
-
-	m_hideAllLayersAct->setEnabled(false);
-	m_showAllLayersAct->setEnabled(false);
 
 	if (keys.count() <= 0) return;
 
@@ -1713,13 +1781,17 @@ void MainWindow::updateWireMenu() {
 	else {
 		m_deleteWireAct->setText(tr("Delete Wire"));
 	}
-
-
 }
 
 void MainWindow::updatePartMenu() {
-	if (m_currentGraphicsView == NULL) return;
 	if (m_partMenu == NULL) return;
+
+    if (m_currentGraphicsView == NULL) {
+        foreach (QAction * action, m_partMenu->actions()) {
+            action->setEnabled(false);
+        }  
+        return;
+    }
 
 	ItemCount itemCount = m_currentGraphicsView->calcItemCount();
 
@@ -1744,7 +1816,7 @@ void MainWindow::updatePartMenu() {
     m_alignVerticalCenterAct->setEnabled(itemCount.selCount - itemCount.wireCount > 1);
     m_alignHorizontalCenterAct->setEnabled(itemCount.selCount - itemCount.wireCount > 1);
 
-	//DebugDialog::debug(QString("enable layer actions %1").arg(enable));
+	//DebugDialog::debug(QString("enable layer actions %1")upat.arg(enable));
 	m_bringToFrontAct->setEnabled(zenable);
 	m_bringForwardAct->setEnabled(zenable);
 	m_sendBackwardAct->setEnabled(zenable);
@@ -1924,6 +1996,17 @@ void MainWindow::updateItemMenu() {
 }
 
 void MainWindow::updateEditMenu() {
+	if (m_currentGraphicsView == NULL) {
+        foreach (QAction * action, m_editMenu->actions()) {
+            action->setEnabled(action == m_preferencesAct);
+        }
+        return;
+    }
+
+    foreach (QAction * action, m_editMenu->actions()) {
+        action->setEnabled(true);
+    }
+
 	QClipboard *clipboard = QApplication::clipboard();
 	m_pasteAct->setEnabled(false);
 	m_pasteInPlaceAct->setEnabled(false);
@@ -1938,27 +2021,25 @@ void MainWindow::updateEditMenu() {
 		}
 	}
 
-	if (m_currentGraphicsView != NULL) {
-		const QList<QGraphicsItem *> items =  m_currentGraphicsView->scene()->selectedItems();
-		bool copyActsEnabled = false;
-		bool deleteActsEnabled = false;
-		foreach (QGraphicsItem * item, items) {
-			if (m_currentGraphicsView->canDeleteItem(item, items.count())) {
-				deleteActsEnabled = true;
-			}
-			if (m_currentGraphicsView->canCopyItem(item, items.count())) {
-				copyActsEnabled = true;
-			}
+	const QList<QGraphicsItem *> items =  m_currentGraphicsView->scene()->selectedItems();
+	bool copyActsEnabled = false;
+	bool deleteActsEnabled = false;
+	foreach (QGraphicsItem * item, items) {
+		if (m_currentGraphicsView->canDeleteItem(item, items.count())) {
+			deleteActsEnabled = true;
 		}
-
-		//DebugDialog::debug(QString("enable cut/copy/duplicate/delete %1 %2 %3").arg(copyActsEnabled).arg(deleteActsEnabled).arg(m_currentWidget->viewID()) );
-		m_deleteAct->setEnabled(deleteActsEnabled);
-		m_deleteMinusAct->setEnabled(deleteActsEnabled);
-		m_deleteAct->setText(tr("Delete"));
-		m_cutAct->setEnabled(deleteActsEnabled && copyActsEnabled);
-		m_copyAct->setEnabled(copyActsEnabled);
-		m_duplicateAct->setEnabled(copyActsEnabled);
+		if (m_currentGraphicsView->canCopyItem(item, items.count())) {
+			copyActsEnabled = true;
+		}
 	}
+
+	//DebugDialog::debug(QString("enable cut/copy/duplicate/delete %1 %2 %3").arg(copyActsEnabled).arg(deleteActsEnabled).arg(m_currentWidget->viewID()) );
+	m_deleteAct->setEnabled(deleteActsEnabled);
+	m_deleteMinusAct->setEnabled(deleteActsEnabled);
+	m_deleteAct->setText(tr("Delete"));
+	m_cutAct->setEnabled(deleteActsEnabled && copyActsEnabled);
+	m_copyAct->setEnabled(copyActsEnabled);
+	m_duplicateAct->setEnabled(copyActsEnabled);
 }
 
 void MainWindow::updateTraceMenu() {
@@ -2141,20 +2222,28 @@ void MainWindow::actualSize() {
 	m_zoomSlider->setValue(dpi * 100.0 / GraphicsUtils::SVGDPI);
 }
 
-void MainWindow::showBreadboardView() {
+void MainWindow::showWelcomeView() {
 	setCurrentTabIndex(0);
 }
 
+void MainWindow::showBreadboardView() {
+	int ix = (m_welcomeView == NULL) ? 0 : 1;
+	setCurrentTabIndex(ix);
+}
+
 void MainWindow::showSchematicView() {
-	setCurrentTabIndex(1);
+	int ix = (m_welcomeView == NULL) ? 1 : 2;
+	setCurrentTabIndex(ix);
 }
 
 void MainWindow::showPCBView() {
-	setCurrentTabIndex(2);
+	int ix = (m_welcomeView == NULL) ? 2 : 3;
+	setCurrentTabIndex(ix);
 }
 
 void MainWindow::showProgramView() {
-	setCurrentTabIndex(3);
+	int ix = (m_welcomeView == NULL) ? 3 : 4;
+	setCurrentTabIndex(ix);
 }
 
 void MainWindow::setCurrentView(ViewLayer::ViewID viewID)
@@ -2299,18 +2388,6 @@ void MainWindow::toggleInfo(bool toggle) {
 		((QDockWidget*)m_infoView->parent())->show();
 	} else {
 		((QDockWidget*)m_infoView->parent())->hide();
-	}
-}
-
-void MainWindow::toggleNavigator(bool toggle) {
-	if(toggle) {
-		((QDockWidget*)m_miniViewContainerBreadboard->parent())->show();
-		((QDockWidget*)m_miniViewContainerSchematic->parent())->show();
-		((QDockWidget*)m_miniViewContainerPCB->parent())->show();
-	} else {
-		((QDockWidget*)m_miniViewContainerBreadboard->parent())->hide();
-		((QDockWidget*)m_miniViewContainerSchematic->parent())->hide();
-		((QDockWidget*)m_miniViewContainerPCB->parent())->hide();
 	}
 }
 
@@ -2523,23 +2600,26 @@ void MainWindow::openURL() {
 void MainWindow::openRecentOrExampleFile() {
 	QAction *action = qobject_cast<QAction *>(sender());
 	if (action) {
-		QString filename = action->data().toString();
-		if (alreadyOpen(filename)) {
-			return;
-		}
-
-		if (!QFileInfo(filename).exists()) {
-			QMessageBox::warning(NULL, tr("Fritzing"), tr("File '%1' not found").arg(filename));
-			return;
-		}
-
-		MainWindow* mw = newMainWindow(m_referenceModel, action->data().toString(), true, true);
-		bool readOnly = m_openExampleActions.contains(action->text());
-		mw->setReadOnly(readOnly);
-		mw->loadWhich(filename, !readOnly,!readOnly,!readOnly, "");
-		mw->clearFileProgressDialog();
-		closeIfEmptySketch(mw);
+		openRecentOrExampleFile(action->data().toString(), action->text());
 	}
+}
+
+void MainWindow::openRecentOrExampleFile(const QString & filename, const QString & actionText) {
+	if (alreadyOpen(filename)) {
+		return;
+	}
+
+	if (!QFileInfo(filename).exists()) {
+		QMessageBox::warning(NULL, tr("Fritzing"), tr("File '%1' not found").arg(filename));
+		return;
+	}
+
+	MainWindow* mw = newMainWindow(m_referenceModel, filename, true, true);
+	bool readOnly = m_openExampleActions.contains(actionText);
+	mw->setReadOnly(readOnly);
+	mw->loadWhich(filename, !readOnly,!readOnly,!readOnly, "");
+	mw->clearFileProgressDialog();
+	closeIfEmptySketch(mw);
 }
 
 void MainWindow::removeActionsStartingAt(QMenu * menu, int start) {
@@ -3704,19 +3784,22 @@ QList<ItemBase *> MainWindow::selectAllObsolete(bool displayFeedback) {
         QMessageBox::information(this, tr("Fritzing"), tr("No outdated parts found.\nAll your parts are up-to-date.") );
     } 
 	else {
-        checkSwapObsolete(items);
+        checkSwapObsolete(items, false);
 	}
 
     return items;
 }
 
-void MainWindow::checkSwapObsolete(QList<ItemBase *> & items) {
+void MainWindow::checkSwapObsolete(QList<ItemBase *> & items, bool includeUpdateLaterMessage) {
+    QString msg = includeUpdateLaterMessage ? tr("\n\nNote: if you want to update later, there are options under the 'Part' menu for dealing with outdated parts individually. ") : "";
+
     QMessageBox::StandardButton answer = FMessageBox::question(
             this,
             tr("Outdated parts"),
             tr("There are %n outdated part(s) in this sketch. ", "", items.count()) +
-            tr("We strongly recommend that you update these parts to the latest version. ") +
-            tr("This may result in some small changes to your sketch, because parts or connectors may be shifted. ") +
+            tr("We strongly recommend that you update these %n parts  to the latest version. ", "", items.count()) +
+            tr("This may result in changes to your sketch, as parts or connectors may be shifted. ") +
+            msg +
             tr("\n\nDo you want to update now?"),
             QMessageBox::Yes | QMessageBox::No,
             QMessageBox::Yes
@@ -4098,7 +4181,6 @@ QStringList MainWindow::newDesignRulesCheck(bool showOkMessage)
 	connect(&drc, SIGNAL(setMaximumProgress(int)), &progress, SLOT(setMaximum(int)), Qt::DirectConnection);
 	connect(&drc, SIGNAL(setProgressValue(int)), &progress, SLOT(setValue(int)), Qt::DirectConnection);
 	connect(&drc, SIGNAL(setProgressMessage(const QString &)), &progress, SLOT(setMessage(const QString &)));
-	connect(&drc, SIGNAL(setProgressMessage2(const QString &)), &progress, SLOT(setMessage2(const QString &)));
 	connect(&drc, SIGNAL(hideProgress()), &progress, SLOT(close()));
 
 	ProcessEventBlocker::processEvents();
@@ -4287,7 +4369,7 @@ void MainWindow::setBackgroundColor()
 	QColor cc = m_currentGraphicsView->background();
 	QColor scc = m_currentGraphicsView->standardBackground();
 
-	SetColorDialog setColorDialog(tr("%1 background Color").arg(m_currentGraphicsView->viewName()), cc, scc, true, this);
+	SetColorDialog setColorDialog(tr("%1 background").arg(m_currentGraphicsView->viewName()), cc, scc, true, this);
 	int result = setColorDialog.exec();
 	if (result == QDialog::Rejected) return;
 
@@ -4388,5 +4470,12 @@ void MainWindow::setViewFromAbove() {
     if (m_pcbGraphicsView != NULL) {
         m_pcbGraphicsView->setViewFromBelow(false);
         updateActiveLayerButtons();
+    }
+}
+
+void MainWindow::updateExportMenu() {
+    bool enabled = m_currentGraphicsView != NULL;
+    foreach (QAction * action, m_exportMenu->actions()) {
+        action->setEnabled(enabled);
     }
 }

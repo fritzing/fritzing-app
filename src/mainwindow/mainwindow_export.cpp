@@ -59,7 +59,6 @@ $Date: 2013-04-22 23:44:56 +0200 (Mo, 22. Apr 2013) $
 #include "../utils/textutils.h"
 #include "../connectors/ercdata.h"
 #include "../items/moduleidnames.h"
-#include "../dock/miniviewcontainer.h"
 #include "../utils/zoomslider.h"
 #include "../dock/layerpalette.h"
 #include "../program/programwindow.h"
@@ -140,6 +139,8 @@ void MainWindow::initNames()
 }
 
 void MainWindow::print() {
+    if (m_currentGraphicsView == NULL) return;
+
 	#ifndef QT_NO_PRINTER
 		QPrinter printer(QPrinter::HighResolution);
 
@@ -552,6 +553,8 @@ void MainWindow::doExport() {
 
 void MainWindow::exportAux(QString fileName, QImage::Format format, int quality, bool removeBackground) 
 {
+    if (m_currentGraphicsView == NULL) return;
+
     double resMultiplier = 3;
 
     QRectF itemsBoundingRect;
@@ -621,6 +624,8 @@ void MainWindow::exportAux(QString fileName, QImage::Format format, int quality,
 }
 
 void MainWindow::printAux(QPrinter &printer, bool removeBackground, bool paginate) {
+    if (m_currentGraphicsView == NULL) return;
+
 	int res = printer.resolution();
 	double scale2 = res / GraphicsUtils::SVGDPI;
 	DebugDialog::debug(QString("p.w:%1 p.h:%2 pager.w:%3 pager.h:%4 paperr.w:%5 paperr.h:%6 source.w:%7 source.h:%8")
@@ -1393,6 +1398,50 @@ void MainWindow::exportSpiceNetlist() {
         output += "\n";
     }
 
+    QString incl = ".include";
+    if (output.contains(incl, Qt::CaseInsensitive)) {
+        QStringList lines = output.split("\n");
+        QList<QDir *> paths;
+        paths << FolderUtils::getApplicationSubFolder("pdb");
+        paths << FolderUtils::getApplicationSubFolder("parts");
+        paths << new QDir(FolderUtils::getUserDataStorePath("parts"));
+
+        QString output2;
+        foreach (QString line, lines) {
+            int ix = line.toLower().indexOf(incl); 
+            if (ix < 0) {
+                output2 += line + "\n";
+                continue;
+            }
+
+            QString temp = line;
+            temp.replace(ix, incl.length(), "");
+            QString filename = temp.trimmed();
+            
+            bool gotOne = false;
+            foreach (QDir * dir, paths) {
+                foreach (QString folder, ModelPart::possibleFolders()) {
+                    QDir sub(*dir);
+                    sub.cd(folder);
+                    sub.cd("spicemodels");
+                    if (QFile::exists(sub.absoluteFilePath(filename))) {
+                        output2 += incl.toUpper() + " " + QDir::toNativeSeparators(sub.absoluteFilePath(filename)) + "\n";
+                        gotOne = true;
+                        break;
+                    }
+                }
+                if (gotOne) break;
+            }
+
+            // can't find the include file, so just restore the original line
+            if (!gotOne) {
+                output2 += line + "\n";
+            }
+        }
+
+        output = output2;
+        foreach (QDir * dir, paths) delete dir;
+    }
 
     output += ".TRAN 1ms 100ms\n";
     output += "* .AC DEC 100 100 1MEG\n";
@@ -1639,4 +1688,34 @@ void MainWindow::massageOutput(QString & svg, bool doMask, bool doSilk, bool doP
 		if (fileName.contains("bottom")) maskBottom = svg; else maskTop = svg;
 		svg = TextUtils::expandAndFill(svg, "black", GerberGenerator::MaskClearanceMils * 2 * dpi / 1000);
 	}
+}
+
+void MainWindow::dumpAllParts() {
+    if (m_currentGraphicsView == NULL) return;
+
+    QList<ItemBase *> already;
+    foreach (QGraphicsItem * item, m_currentGraphicsView->items()) {
+        ItemBase * ib = dynamic_cast<ItemBase *>(item);
+        if (ib == NULL) continue;
+
+        ItemBase * chief = ib->layerKinChief();
+        if (already.contains(chief)) continue;
+
+        already << chief;
+
+        QList<ItemBase *> itemBases;
+        itemBases << chief;
+        itemBases.append(chief->layerKin());
+        foreach (ItemBase * itemBase, itemBases) {
+            itemBase->debugInfo("");
+            foreach (ConnectorItem * connectorItem, itemBase->cachedConnectorItems()) {
+                if (connectorItem->connectionsCount() > 0) {
+                    connectorItem->debugInfo("\t");
+                    foreach (ConnectorItem * to, connectorItem->connectedToItems()) {
+                        to->debugInfo("\t\t");
+                    }
+                }
+            }
+        }
+    }
 }

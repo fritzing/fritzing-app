@@ -39,6 +39,7 @@ $Date: 2013-04-22 23:44:56 +0200 (Mo, 22. Apr 2013) $
 #include "../fsvgrenderer.h"
 #include "../utils/flineedit.h"
 #include "../items/moduleidnames.h"
+#include "../items/symbolpaletteitem.h"
 #include "../items/paletteitem.h"
 #include "../utils/clickablelabel.h"
 #include "../utils/textutils.h"
@@ -109,6 +110,7 @@ QSize TagLabel::sizeHint() const
 HtmlInfoView::HtmlInfoView(QWidget * parent) : QScrollArea(parent) 
 {
     this->setWidgetResizable(true);
+
 	this->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
 	m_lastTitleItemBase = NULL;
@@ -460,11 +462,10 @@ void HtmlInfoView::appendWireStuff(Wire* wire, bool swappingEnabled) {
 void HtmlInfoView::appendItemStuff(ItemBase* base, bool swappingEnabled) {
 	if (base == NULL) return;
 
-	appendItemStuff(base, base->modelPart(), swappingEnabled, base->isPartLabelVisible());
+	appendItemStuff(base, base->modelPart(), swappingEnabled);
 }
 
-void HtmlInfoView::appendItemStuff(ItemBase * itemBase, ModelPart * modelPart, bool swappingEnabled, bool labelIsVisible) {
-	Q_UNUSED(labelIsVisible);
+void HtmlInfoView::appendItemStuff(ItemBase * itemBase, ModelPart * modelPart, bool swappingEnabled) {
 
 	if (modelPart == NULL) return;
 	if (modelPart->modelPartShared() == NULL) return;
@@ -475,6 +476,11 @@ void HtmlInfoView::appendItemStuff(ItemBase * itemBase, ModelPart * modelPart, b
 	QString nameString;
 	if (swappingEnabled) {
 		nameString = (itemBase) ? itemBase->title() : modelPart->title();
+        // TODO: handle this elsewhere
+        SymbolPaletteItem * symbol = qobject_cast<SymbolPaletteItem *>(itemBase);
+        if (symbol != NULL && symbol->isOnlyNetLabel()) {
+            nameString = symbol->getLabel();
+        }
 	}
 	else {
 		nameString = modelPart->description();
@@ -601,6 +607,14 @@ void HtmlInfoView::setInstanceTitle() {
     if (infoGraphicsView == NULL) return;
 
 	DebugDialog::debug(QString("set instance title to %1").arg(edit->text()));
+    if (m_currentItem->itemType() == ModelPart::Symbol) {
+        // TODO: handle this elsewhere, so htmlInfoView doesn't have to know about net labels
+        SymbolPaletteItem * symbol = qobject_cast<SymbolPaletteItem *>(m_currentItem);
+        if (symbol != NULL && symbol->isOnlyNetLabel()) {
+            infoGraphicsView->setProp(m_currentItem, "label", ItemBase::TranslatedPropertyNames.value("label"), symbol->getLabel(), edit->text(), true);
+            return;
+        }
+    }
 	infoGraphicsView->setInstanceTitle(m_currentItem->id(), m_partTitle->text(), edit->text(), true, false);
 }
 
@@ -642,22 +656,26 @@ void HtmlInfoView::setUpTitle(ItemBase * itemBase)
     }
 
 	m_lastTitleItemBase = itemBase;
-	if (itemBase) {
+    bool titleEnabled = true;
+	if (itemBase != NULL) {
 		QString title = itemBase->instanceTitle();
+        SymbolPaletteItem * symbol = qobject_cast<SymbolPaletteItem *>(itemBase);
+        if (symbol != NULL && symbol->isOnlyNetLabel()) {
+            title = symbol->getLabel();
+        }
 		if (title.isEmpty()) {
 			// assumes a part with an empty title only comes from the parts bin palette
-			m_titleEdit->setEnabled(false);
+			titleEnabled = false;
 			title = itemBase->title();
 		}
-		else {
-			m_titleEdit->setEnabled(true);
-		}
+        if (itemBase->viewID() == ViewLayer::IconView) titleEnabled = false;
 		m_titleEdit->setText(title);
 	}
 	else {
-		m_titleEdit->setEnabled(false);
+		titleEnabled = false;
 		m_titleEdit->setText("");
 	}
+    m_titleEdit->setEnabled(titleEnabled);
 	// helps keep it left aligned?
 	m_titleEdit->setCursorPosition(0);
 

@@ -58,7 +58,7 @@ SetColorDialog::SetColorDialog(const QString & message, QColor & currentColor, Q
 
 	QFrame * f1 = new QFrame();
 	QHBoxLayout * hLayout1 = new QHBoxLayout(f1);
-	QPushButton *button1 = new QPushButton("Choose");
+	QPushButton *button1 = new QPushButton(tr("Choose"));
 	button1->setFixedWidth(BUTTON_WIDTH);
 	connect(button1, SIGNAL(clicked()), this, SLOT(selectCurrent()));
 	hLayout1->addWidget(button1);
@@ -72,7 +72,7 @@ SetColorDialog::SetColorDialog(const QString & message, QColor & currentColor, Q
 
 	QFrame * f2 = new QFrame();
 	QHBoxLayout * hLayout2 = new QHBoxLayout(f2);
-	QPushButton *button2 = new QPushButton("Choose");
+	QPushButton *button2 = new QPushButton(tr("Choose"));
 	button2->setFixedWidth(BUTTON_WIDTH);
 	connect(button2, SIGNAL(clicked()), this, SLOT(selectStandard()));
 	hLayout2->addWidget(button2);
@@ -86,7 +86,7 @@ SetColorDialog::SetColorDialog(const QString & message, QColor & currentColor, Q
 
 	QFrame * f3 = new QFrame();
 	QHBoxLayout * hLayout3 = new QHBoxLayout(f3);
-	QPushButton *button3 = new QPushButton("Custom color ...");
+	QPushButton *button3 = new QPushButton(tr("Custom color ..."));
 	button3->setFixedWidth(BUTTON_WIDTH);
 	connect(button3, SIGNAL(clicked()), this, SLOT(selectCustom()));
 	hLayout3->addWidget(button3);

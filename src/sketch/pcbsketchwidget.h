@@ -72,8 +72,6 @@ public:
 	QList<ItemBase *> findBoard();
     ItemBase * findSelectedBoard(int & boardCount);
     ItemBase * findBoardBeneath(ItemBase *);
-	double getRatsnestOpacity();
-	double getRatsnestWidth();
 
 	void setBoardLayers(int, bool redraw);
     void swapLayers(ItemBase * itemBase, int newLayers, QUndoCommand * parentCommand);
@@ -163,7 +161,6 @@ protected:
 	bool resizingJumperItemPress(ItemBase *);
 	bool resizingJumperItemRelease();
 	void resizeJumperItem();
-	QPoint calcFixedToCenterItemOffset(const QRect & viewPortRect, const QSizeF & helpSize);
 	void dealWithDefaultParts();
 	bool connectorItemHasSpec(ConnectorItem * connectorItem, ViewLayer::ViewLayerPlacement spec);
 	ViewLayer::ViewLayerPlacement createWireViewLayerPlacement(ConnectorItem * from, ConnectorItem * to);
@@ -186,6 +183,7 @@ protected:
     PaletteItem* addPartItem(ModelPart * modelPart, ViewLayer::ViewLayerPlacement, PaletteItem * paletteItem, bool doConnectors, bool & ok, ViewLayer::ViewID, bool temporary);
     void requestQuoteSoon();
     double getKeepoutMils();
+    bool updateOK(ConnectorItem *, ConnectorItem *);
 
 signals:
 	void subSwapSignal(SketchWidget *, ItemBase *, const QString & newModuleID, ViewLayer::ViewLayerPlacement, long & newID, QUndoCommand * parentCommand);

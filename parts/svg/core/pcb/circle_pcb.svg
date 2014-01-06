@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg version="1.2" baseProfile="tiny"  xmlns="http://www.w3.org/2000/svg" 
-	 x="0px" y="0px" width="2.2in" height="2.2in" viewBox="0 0 2200 2200" >
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="158.4px" height="158.4px" viewBox="0 0 158.4 158.4" enable-background="new 0 0 158.4 158.4" xml:space="preserve">
 <g id="board">
-	<circle id="boardoutline" fill="#338040" cx="1100" cy="1100" r="1100" fill-opacity="0.5"  />
+	<circle id="boardoutline" fill="#FFFFFF" fill-opacity="0.5" cx="79.2" cy="79.2" r="79.2"/>
 </g>
 <g id="silkscreen">
-	<circle fill="none" stroke="#FFFFFF" stroke-width="8" cx="1100" cy="1100" r="1096" />
+	<circle fill="none" stroke="#444444" cx="79.2" cy="79.2" r="78.912"/>
 </g>
 <g id="silkscreen0">
-	<circle fill="none" stroke="#bbbbcc" stroke-width="8" cx="1100" cy="1100" r="1096" />
+	<circle fill="none" stroke="#111111" cx="79.2" cy="79.2" r="78.912"/>
 </g>
 </svg>

@@ -62,7 +62,7 @@ AboutBox::AboutBox(QWidget *parent)
 	// Big Icon
 	QLabel *logoShield = new QLabel(this);
 	logoShield->setPixmap(QPixmap(":/resources/images/AboutBoxLogoShield.png"));
-	logoShield->setGeometry(131, 8, 128, 128);
+    logoShield->setGeometry(17, 8, 356, 128);
 
 	// Version String
 	QLabel *versionMain = new QLabel(this);
@@ -122,7 +122,8 @@ AboutBox::AboutBox(QWidget *parent)
 	copyrightFHP->setText(tr("<b>2007-%1 Fachhochschule Potsdam</b>").arg(Version::year()));
 	copyrightFHP->setFont(extraSmallFont);
 	copyrightFHP->setGeometry(30 + w, 414, AboutWidth - 30 - 30 - w - w, 16);
-	copyrightFHP->setAlignment(Qt::AlignBottom | Qt::AlignHCenter);
+    copyrightFHP->setAlignment(Qt::AlignBottom | Qt::AlignHCenter);
+
 
 	// Scrolling Credits Text
 
@@ -136,9 +137,9 @@ QString("<br /><br /><br /><br /><br /><br /><br /><br /><br />") +
 	tr("Zach Eveland, Dirk van Oosterbosch, ") +
 	tr("Jonathan Cohen, Marcus Paeschke, Omer Yosha, ") +
 	tr("Travis Robertson, Stefan Hermann, Brendan Howell, ") +
-	tr("Mariano Crowe, Johannes Landstorfer, ") +
-	tr("Jenny Chowdhury, Lionel Michel, Jannis Leidel, ") +
-	tr("Bryant Mairs, Uleshka Asher, and Daniel Tzschentke. ") +
+    tr("Mariano Crowe, Johannes Landstorfer, ") +
+    tr("Jenny Chowdhury, Lionel Michel, Jannis Leidel, ") +
+    tr("Bryant Mairs, Uleshka Asher, and Daniel Tzschentke. ") +
 "</p>" +
 
 "<p>" +
@@ -164,7 +165,7 @@ QString("<br /><br /><br /><br /><br /><br /><br /><br /><br />") +
 	tr("to Jinbuhm Kim for the Korean translation, " ) +
 	tr("to &#313;ubom&iacute;r Ducho&#328; for the Slovak translation, " ) + 
     tr("to Alexander Kaltsas for the Greek translation, " ) +
-    tr("to Lionel Michel and Yvan Kloster for the French translation, " ) +
+    tr("to Lionel Michel, Yvan Kloster, Alexandre Dussart, and Roald Baudoux for the French translation, " ) +
     tr("to Cihan Mete Bahad&#x0131;r for the Turkish translation, " ) +
     tr("to Nikolay Stankov for the Bulgarian translation, " ) +
    
@@ -190,10 +191,10 @@ tr("<br /><br /><br /><br /><br /><br /><br /><br />");
 	QPixmap fadepixmap(":/resources/images/aboutbox_scrollfade.png");
 
 	m_expandingLabel = new ExpandingLabel(this, AboutWidth);
+    m_expandingLabel->setObjectName("aboutText");
 	m_expandingLabel->setLabelText(data);
 	m_expandingLabel->setFont(smallFont);
 	m_expandingLabel->setGeometry(0, AboutText, AboutWidth, fadepixmap.height());
-	m_expandingLabel->setStyleSheet("border: 0px; background-color: transparent; margin-top: 0px; margin-bottom: 0px;");
 	
 	// setAlignment only aligns the "current paragraph"
 	// the QTextCursor code aligns all paragraphs

@@ -60,7 +60,7 @@ void PEDoubleSpinBox::stepBy(int steps)
 
 //////////////////////////////////////
 
-PEToolView::PEToolView(QWidget * parent) : QWidget(parent) 
+PEToolView::PEToolView(QWidget * parent) : QFrame (parent)
 {
     m_assignButton = NULL;
 
@@ -68,6 +68,7 @@ PEToolView::PEToolView(QWidget * parent) : QWidget(parent)
 	if (NoCheckImage == NULL) NoCheckImage = new QPixmap(":/resources/images/icons/nocheck.png");
 
     this->setObjectName("PEToolView");
+    /*
 
     QFile styleSheet(":/resources/styles/newpartseditor.qss");
     if (!styleSheet.open(QIODevice::ReadOnly)) {
@@ -75,19 +76,21 @@ PEToolView::PEToolView(QWidget * parent) : QWidget(parent)
     } else {
     	this->setStyleSheet(styleSheet.readAll());
     }
-
+*/
     m_pegi = NULL;
 
     QVBoxLayout * mainLayout = new QVBoxLayout;
-
+    mainLayout -> setObjectName("connectorFrame");
     QSplitter * splitter = new QSplitter(Qt::Vertical);
     mainLayout->addWidget(splitter);
 
     QFrame * connectorsFrame = new QFrame;
+
     QVBoxLayout * connectorsLayout = new QVBoxLayout;
 
     QLabel * label = new QLabel(tr("Connector List (a checkmark means the graphic was selected)"));
 	connectorsLayout->addWidget(label);
+
 
     m_connectorListWidget = new QTreeWidget();
 	m_connectorListWidget->setColumnCount(2);
@@ -144,7 +147,7 @@ PEToolView::PEToolView(QWidget * parent) : QWidget(parent)
 
     m_terminalPointX = new PEDoubleSpinBox;
     m_terminalPointX->setDecimals(4);
-	m_terminalPointX->setToolTip(tr("Modifies the x-coordinate of the terminal point"));
+    m_terminalPointX->setToolTip(tr("Modifies the x-coordinate of the terminal point"));
     posNumberLayout->addWidget(m_terminalPointX);
     connect(m_terminalPointX, SIGNAL(getSpinAmount(double &)), this, SLOT(getSpinAmountSlot(double &)), Qt::DirectConnection);
     connect(m_terminalPointX, SIGNAL(valueChanged(double)), this, SLOT(terminalPointEntry()));
@@ -156,7 +159,7 @@ PEToolView::PEToolView(QWidget * parent) : QWidget(parent)
 
     m_terminalPointY = new PEDoubleSpinBox;
     m_terminalPointY->setDecimals(4);
-	m_terminalPointY->setToolTip(tr("Modifies the y-coordinate of the terminal point"));
+    m_terminalPointY->setToolTip(tr("Modifies the y-coordinate of the terminal point"));
     posNumberLayout->addWidget(m_terminalPointY);
     connect(m_terminalPointY, SIGNAL(getSpinAmount(double &)), this, SLOT(getSpinAmountSlot(double &)), Qt::DirectConnection);
     connect(m_terminalPointY, SIGNAL(valueChanged(double)), this, SLOT(terminalPointEntry()));
@@ -217,7 +220,7 @@ void PEToolView::enableConnectorChanges(bool enableTerminalPointDrag, bool enabl
 		    m_terminalPointDragState->setEnabled(true);
 	    }
 	    else {
-		    m_terminalPointDragState->setText(tr("<font color='gray'>Dragging disabled</font>"));
+            m_terminalPointDragState->setText(tr("<font color='gray'>Dragging disabled</font>"));
 		    m_terminalPointDragState->setEnabled(false);
 	    }
     }

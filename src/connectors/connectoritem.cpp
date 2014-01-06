@@ -878,9 +878,10 @@ ConnectorItem * ConnectorItem::firstConnectedToIsh() {
 	if (m_connectedTo.count() <= 0) return NULL;
 
 	foreach (ConnectorItem * connectorItem, m_connectedTo) {
-		if (connectorItem->attachedTo()->getRatsnest()) continue;
-		
-		if (connectorItem->isVisible()) return connectorItem;
+		if (connectorItem->attachedTo()->getRatsnest()) continue;	
+		if (!connectorItem->isVisible()) continue;
+
+        return connectorItem;
 	}
 
 	// TODO: not sure whether to return invisible connectors
@@ -1911,7 +1912,8 @@ void ConnectorItem::debugInfo(const QString & msg)
 {
 
 #ifndef QT_NO_DEBUG
-	QString s = QString("%1 cid:%2 cname:%3 title:%4 id:%5 type:%6 inst:%7 vlid:%8 vid:%9 spec:%10 flg:%11 hy:%12 bus:%13 r:%14 sw:%15")
+    QPointF p = sceneAdjustedTerminalPoint(NULL);
+	QString s = QString("%1 cid:%2 cname:%3 title:%4 id:%5 type:%6 inst:%7 vlid:%8 vid:%9 spec:%10 flg:%11 hy:%12 bus:%13 r:%14 sw:%15 pos:(%16 %17)")
 			.arg(msg)
 			.arg(this->connectorSharedID())
 			.arg(this->connectorSharedName())
@@ -1927,6 +1929,8 @@ void ConnectorItem::debugInfo(const QString & msg)
 			.arg((long) this->bus(), 0, 16)
             .arg(this->m_radius)
             .arg(this->m_strokeWidth)
+            .arg(p.x())
+            .arg(p.y())
             ;
 	//s.replace(" ", "_");
 	DebugDialog::debug(s);

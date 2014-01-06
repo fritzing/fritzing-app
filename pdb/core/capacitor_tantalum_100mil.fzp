@@ -11,7 +11,7 @@
     </tags>
   <properties>
   	<property name="family">Capacitor [unidirectional]</property>
-  	<property name="Capacitance" showInLabel="yes">1 &#x3BC;F</property>
+  	<property name="Capacitance" showInLabel="yes">1&#x3BC;F</property>
     <property name="package">100 mil [THT, tantalum]</property>
    <property name="voltage" showInLabel="yes"></property>
  </properties>

@@ -35,6 +35,7 @@ $Date: 2013-04-22 23:44:56 +0200 (Mo, 22. Apr 2013) $
 #include "../utils/graphicsutils.h"
 #include "../sketch/infographicsview.h"
 #include "partlabel.h"
+#include "partfactory.h"
 #include "layerkinpaletteitem.h"
 #include "../svg/svgfilesplitter.h"
 
@@ -541,13 +542,17 @@ NetLabel::~NetLabel() {
 }
 
 QString NetLabel::makeSvg(ViewLayer::ViewLayerID viewLayerID) {
-    static const double labelFontSize = 200;
-    static const double totalHeight = 300;
-    static const double arrowWidth = totalHeight / 2;
-    static const double strokeWidth = 10;
-    static const double halfStrokeWidth = strokeWidth / 2;
-    static const double labelOffset = 20;
-    static const double labelBaseLine = 220;
+
+    DebugDialog::debug("moduleid " + this->moduleID());
+    double divisor = moduleID().contains(PartFactory::OldSchematicPrefix) ? 1 : 3;
+
+    double labelFontSize = 200 /divisor;
+    double totalHeight = 300 / divisor;
+    double arrowWidth = totalHeight / 2;
+    double strokeWidth = 10 / divisor;
+    double halfStrokeWidth = strokeWidth / 2;
+    double labelOffset = 20 / divisor;
+    double labelBaseLine = 220 / divisor;
 
     QFont font("Droid Sans", labelFontSize * 72 / GraphicsUtils::StandardFritzingDPI, QFont::Normal);
 	QFontMetricsF fm(font);

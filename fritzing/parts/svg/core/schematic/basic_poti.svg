@@ -1,42 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="svg2" xmlns:xml="http://www.w3.org/XML/1998/namespace"
-	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="19px" height="43.199px"
-	 viewBox="0 0 19 43.199" enable-background="new 0 0 19 43.199" xml:space="preserve">
-<g id="schematic_2_">
-	<polyline fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="10.375,36.001 10.375,34.559 
-		7.494,32.4 13.974,28.799 7.494,25.199 13.974,21.6 7.494,18 13.974,14.4 7.494,10.8 10.375,8.64 10.375,7.2 	"/>
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28.8px" height="43.2px"
+	 viewBox="0 0 28.8 43.2" enable-background="new 0 0 28.8 43.2" xml:space="preserve">
+<g id="schematic">
+	<g>
+		<g>
+			<polyline fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="4.125,17.557 21.6,27.474 
+				21.6,37.743 			"/>
+			<g>
+				<polygon points="4.23,19.505 -0.022,15.188 5.819,16.8 				"/>
+			</g>
+		</g>
+	</g>
+	<polyline fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="14.401,36.001 14.401,34.559 
+		11.521,32.4 18.001,28.799 11.521,25.199 18.001,21.6 11.521,18 18.001,14.4 11.521,10.8 14.401,8.64 14.401,7.2 	"/>
+	<path id="connector2terminal" fill="none" d="M21.579,42.85L21.579,42.85L21.579,42.85z"/>
 	
-		<line id="connector0pin_2_" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" x1="10.375" y1="43.199" x2="10.375" y2="36.001"/>
-	<path id="connector0terminal_2_" fill="none" d="M10.375,43.199L10.375,43.199L10.375,43.199z"/>
+		<line id="connector2pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" x1="21.621" y1="42.85" x2="21.621" y2="36.001"/>
+	
+		<line id="connector0pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" x1="14.4" y1="42.85" x2="14.4" y2="36.001"/>
+	<path id="connector0terminal" fill="none" d="M14.4,42.85L14.4,42.85L14.4,42.85z"/>
 	<g transform="translate(0.9906,14.0462)">
 		<g transform="rotate(270)">
-			<text transform="matrix(1 0 0 1 -26.394 7.8698)" fill="#787878" font-family="'Droid Sans'" font-size="2">1</text>
+			<text transform="matrix(1 0 0 1 -26.058 11.1178)" fill="#787878" font-family="'DroidSans'" font-size="2">1</text>
 		</g>
 	</g>
 	<g transform="translate(0.9906,14.0462)">
 		<g transform="rotate(270)">
-			<text transform="matrix(1 0 0 1 -26.394 15.4943)" fill="#787878" font-family="'Droid Sans'" font-size="2">3</text>
+			<text transform="matrix(1 0 0 1 -25.894 19.3287)" fill="#787878" font-family="'DroidSans'" font-size="2">3</text>
 		</g>
 	</g>
 	
-		<line id="connector1pin_2_" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" x1="10.375" y1="0" x2="10.375" y2="7.2"/>
-	<path id="connector1terminal_2_" fill="none" d="M10.375,0L10.375,0L10.375,0z"/>
+		<line id="connector1pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" x1="14.4" y1="0.35" x2="14.4" y2="7.55"/>
+	<path id="connector1terminal" fill="none" d="M14.406,0L14.406,0L14.406,0z"/>
 	<g transform="translate(0.9906,1.3462)">
 		<g transform="rotate(270)">
-			<text transform="matrix(1 0 0 1 -3.094 7.8698)" fill="#787878" font-family="'Droid Sans'" font-size="2">2</text>
+			<text transform="matrix(1 0 0 1 -3.094 11.1403)" fill="#787878" font-family="'DroidSans'" font-size="2">2</text>
 		</g>
 	</g>
 </g>
-<g>
-	<g>
-		<polyline fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="4.125,19.59 17.575,27.474 
-			17.575,37.743 		"/>
-		<g>
-			<polygon points="4.286,21.428 0.033,17.111 5.875,18.723 			"/>
-		</g>
-	</g>
-</g>
-<line id="connector0pin_1_" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" x1="17.575" y1="43.199" x2="17.575" y2="36.001"/>
 </svg>

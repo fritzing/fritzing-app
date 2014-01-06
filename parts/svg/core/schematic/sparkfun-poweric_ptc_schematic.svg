@@ -5,18 +5,18 @@
 	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="36.7px" height="16.248px"
 	 viewBox="0 0 36.7 16.248" enable-background="new 0 0 36.7 16.248" xml:space="preserve">
 <g id="schematic">
-	<text id="label" transform="matrix(1 0 0 1 14.8047 3.5562)" font-family="'DroidSans'" font-size="4.25">PTC</text>
+	<text id="label" transform="matrix(1 0 0 1 14.8047 3.5557)" font-family="'DroidSans'" font-size="4.25">PTC</text>
 	
 		<rect x="7.55" y="4.523" fill="#FFFFFF" stroke="#000000" stroke-width="0.9" stroke-linecap="round" width="21.6" height="7.201"/>
 	<line fill="none" stroke="#000000" stroke-width="0.75" stroke-linecap="round" x1="10.43" y1="15.323" x2="25.549" y2="0.923"/>
 	<line fill="none" stroke="#000000" stroke-width="0.75" stroke-linecap="round" x1="25.549" y1="0.923" x2="29.15" y2="0.923"/>
 	
 		<line id="connector0pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="0.35" y1="8.124" x2="7.55" y2="8.124"/>
-	<polygon id="connector0terminal" fill="none" points="0.35,8.124 0.35,8.124 0.35,8.124 	"/>
-	<text transform="matrix(1 0 0 1 3.2617 7.0737)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">1</text>
+	<polygon id="connector0terminal" fill="none" points="0,8.499 1.006,8.499 1.006,7.78 0,7.78 	"/>
+	<text transform="matrix(1 0 0 1 3.2617 7.0732)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">1</text>
 	
 		<line id="connector1pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="36.35" y1="8.124" x2="29.15" y2="8.124"/>
-	<polygon id="connector1terminal" fill="none" points="36.35,8.124 36.35,8.124 36.35,8.124 	"/>
-	<text transform="matrix(1 0 0 1 32.063 7.0737)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">2</text>
+	<polygon id="connector1terminal" fill="none" points="36.7,8.452 35.616,8.483 35.584,7.765 36.7,7.833 	"/>
+	<text transform="matrix(1 0 0 1 32.063 7.0732)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">2</text>
 </g>
 </svg>

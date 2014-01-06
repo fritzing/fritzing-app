@@ -25,7 +25,7 @@
 	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="14.04" y1="34.056" x2="11.16" y2="32.617"/>
 	
 		<line id="connector0pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="7.56" y1="0.216" x2="7.56" y2="7.416"/>
-	<polygon id="connector0terminal" fill="none" points="7.56,0.216 7.56,0.216 7.56,0.216 	"/>
+	<polygon id="connector0terminal" fill="none" points="7.922,0 7.938,1.097 7.188,1.097 7.203,0 	"/>
 	<g transform="translate(2.9718,3.0734)">
 		<g transform="rotate(270)">
 			<text transform="matrix(1 0 0 1 -8.8265 5.452)" font-family="'DroidSans'" font-size="3.024">B</text>
@@ -33,11 +33,11 @@
 	</g>
 	
 		<line id="connector1pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="29.161" y1="21.816" x2="21.959" y2="21.816"/>
-	<polygon id="connector1terminal" fill="none" points="29.161,21.816 29.161,21.816 29.161,21.816 	"/>
+	<polygon id="connector1terminal" fill="none" points="29.375,22.191 28.297,22.191 28.328,21.488 29.375,21.472 	"/>
 	<text transform="matrix(1 0 0 1 17.4785 22.6802)" font-family="'DroidSans'" font-size="3.024">R</text>
 	
 		<line id="connector2pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="7.56" y1="43.416" x2="7.56" y2="36.216"/>
-	<rect id="connector2terminal" x="7.56" y="43.416" fill="none" width="0" height="0.002"/>
+	<polygon id="connector2terminal" fill="none" points="7.922,43.632 7.203,43.632 7.219,42.472 7.906,42.597 	"/>
 	<g transform="translate(2.9718,12.319)">
 		<g transform="rotate(270)">
 			<text transform="matrix(1 0 0 1 -21.6004 5.452)" font-family="'DroidSans'" font-size="3.024">W</text>

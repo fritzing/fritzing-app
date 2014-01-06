@@ -25,17 +25,17 @@
 	
 		<polyline id="connector0pin" fill="none" stroke="#8C8C8C" stroke-width="0.75" stroke-linecap="round" stroke-miterlimit="10" points="
 		6.12,3.48 6.12,0.35 6.12,0.35 	"/>
-	<path id="connector0terminal" fill="none" d="M6.12,0.35L6.12,0.35L6.12,0.35z"/>
+	<path id="connector0terminal" fill="none" d="M5.761,0L5.745,1.094h0.703L6.495,0H5.761z"/>
 	<text transform="matrix(1 0 0 1 7.2441 2.6328)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">1</text>
 	<g transform="translate(2.40594,0.864304)">
 		<g transform="rotate(270)">
-			<text transform="matrix(0 1 -1 0 -6.5244 2.7464)" fill="#787878" font-family="'DroidSans'" font-size="3.5">+</text>
+			<text transform="matrix(0 1 -1 0 -6.5253 2.7464)" fill="#787878" font-family="'DroidSans'" font-size="3.5">+</text>
 		</g>
 	</g>
 	
 		<polyline id="connector1pin" fill="none" stroke="#8C8C8C" stroke-width="0.75" stroke-linecap="round" stroke-miterlimit="10" points="
 		6.12,26.021 6.12,29.15 6.12,29.15 	"/>
-	<path id="connector1terminal" fill="none" d="M6.12,29.15L6.12,29.15L6.12,29.15z"/>
+	<path id="connector1terminal" fill="none" d="M6.464,29.5v-1.125H5.761V29.5H6.464z"/>
 	<text transform="matrix(1 0 0 1 7.2441 28.5156)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">2</text>
 	<g transform="translate(2.40594,11.0243)">
 		<g transform="rotate(270)">

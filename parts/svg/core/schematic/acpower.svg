@@ -2,24 +2,24 @@
 <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Layer_1" xmlns:xml="http://www.w3.org/XML/1998/namespace"
-	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="50.65px" height="89.9px"
-	 viewBox="0 0 50.65 89.9" enable-background="new 0 0 50.65 89.9" xml:space="preserve">
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="14.4px" height="28.8px"
+	 viewBox="0 0 14.4 28.8" enable-background="new 0 0 14.4 28.8" xml:space="preserve">
 <g>
 	<g id="schematic">
-		<rect id="connector0pin" x="24.22" y="0" fill="none" width="2" height="10"/>
-		<rect id="connector1pin" x="24.22" y="79.9" fill="none" width="2" height="10"/>
-		<rect id="connector0terminal" x="24.22" y="0" fill="none" width="2" height="2"/>
-		<rect id="connector1terminal" x="24.22" y="87.9" fill="none" width="2" height="2"/>
+		<rect id="connector0pin" x="6.836" y="0.25" fill="none" width="0.729" height="7.281"/>
+		<rect id="connector1pin" x="6.883" y="24.016" fill="none" width="0.666" height="4.783"/>
+		<rect id="connector0terminal" x="6.836" y="0.25" fill="none" width="0.729" height="1.456"/>
+		<rect id="connector1terminal" x="6.883" y="26.8" fill="none" width="0.666" height="2"/>
 		<g id="diagram">
 			
-				<line fill="none" stroke="#000000" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" x1="25.22" y1="88.751" x2="25.22" y2="69.001"/>
+				<line fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round" x1="7.216" y1="28.434" x2="7.216" y2="21.234"/>
 			
-				<line fill="none" stroke="#000000" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" x1="25.22" y1="21" x2="25.22" y2="1.25"/>
+				<line fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round" x1="7.216" y1="7.622" x2="7.216" y2="0.422"/>
 		</g>
 	</g>
 	
-		<circle fill="none" stroke="#000000" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" cx="25.22" cy="45" r="24"/>
-	<path fill="none" stroke="#000000" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" d="M41.108,45
-		c-1.984,2.813-3.971,5.625-7.943,5.625c-7.947,0-7.945-11.247-15.891-11.247c-3.973,0-5.959,2.812-7.945,5.624"/>
+		<circle fill="none" stroke="#000000" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round" cx="7.163" cy="14.4" r="6.663"/>
+	<path fill="none" stroke="#000000" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round" d="M11.871,14.399
+		c-0.588,0.833-1.177,1.667-2.354,1.667c-2.355,0-2.354-3.333-4.708-3.333c-1.178,0-1.766,0.833-2.354,1.667"/>
 </g>
 </svg>

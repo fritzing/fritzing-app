@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1 Basic//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-basic.dtd">
-<svg version="1.1" baseProfile="basic" id="svg2" xmlns:svg="http://www.w3.org/2000/svg"
-	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="0.27in"
-	 height="0.87in" viewBox="0 0 19.372 62.643" xml:space="preserve">
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="svg2" xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="14.4px" height="21.6px"
+	 viewBox="0 0 14.4 21.6" enable-background="new 0 0 14.4 21.6" xml:space="preserve">
 <g id="schematic">
-<line id="connector0pin" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="9.697" y1="61.644" x2="9.697" y2="44.797"/>
-<rect id="connector0terminal" x="8.698" y="61.644" width="1.999" height="0.998"/>
-	<polygon fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="18.38,1.002 
-		9.697,16.046 1.007,1.002 	"/>
 	
-		<line id="line" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="9.697" y1="1.135" x2="9.697" y2="46.19"/>
+		<line id="connector0pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="7.2" y1="21.312" x2="7.2" y2="14.4"/>
+	<rect id="connector0terminal" x="7.053" y="21.173" fill="#787878" width="0.293" height="0.427"/>
+	<polygon fill="none" stroke="#000000" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round" points="13.912,0.45 
+		7.202,12.077 0.487,0.45 	"/>
+	
+		<line id="line" fill="none" stroke="#000000" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round" x1="7.203" y1="11.57" x2="7.203" y2="15.11"/>
+	
+		<line id="line_1_" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="7.203" y1="0.45" x2="7.203" y2="11.883"/>
 </g>
 </svg>

@@ -1,56 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1 Basic//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-basic.dtd">
-<svg version="1.1" baseProfile="basic" id="svg2" xmlns:svg="http://www.w3.org/2000/svg"
-	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="0.77in"
-	 height="0.53in" viewBox="0 0 55.305 38.242" xml:space="preserve">
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="svg2" xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="36px" height="36.83px"
+	 viewBox="0 0 36 36.83" enable-background="new 0 0 36 36.83" xml:space="preserve">
 <g id="schematic">
-<rect id="connector5pin" x="44.305" y="31.108" width="9.782" height="1.896"/>
-<rect id="connector5terminal" x="54.06" y="31.588" width="0.686" height="0.866"/>
-<rect id="connector4pin" x="44.305" y="31.108" width="9.782" height="1.896"/>
-<rect id="connector4terminal" x="54.06" y="31.588" width="0.686" height="0.866"/>
-<rect id="connector3pin" x="44.305" y="31.108" width="9.782" height="1.896"/>
-<rect id="connector3terminal" x="54.06" y="31.588" width="0.686" height="0.866"/>
-<rect id="connector2pin" x="44.305" y="22.485" width="9.782" height="1.896"/>
-<rect id="connector2terminal" x="54.06" y="22.965" width="0.686" height="0.866"/>
-<rect id="connector0pin" x="44.305" y="5.24" width="9.783" height="1.893"/>
-<rect id="connector0terminal" x="54.06" y="5.787" width="0.688" height="0.867"/>
-<rect id="connector1pin" x="44.305" y="13.863" width="9.783" height="1.894"/>
-<rect id="connector1terminal" x="54.06" y="14.342" width="0.685" height="0.866"/>
-	
-		<rect x="0.557" y="1.114" fill="none" stroke="#000000" stroke-width="2.2284" stroke-linecap="round" width="36.009" height="36.015"/>
 	<g>
-		
-			<line fill="none" stroke="#000000" stroke-width="2.2284" stroke-linecap="round" x1="36.565" y1="6.186" x2="53.633" y2="6.186"/>
-		
-			<line fill="none" stroke="#000000" stroke-width="2.2284" stroke-linecap="round" x1="36.565" y1="14.809" x2="53.633" y2="14.809"/>
-		
-			<line fill="none" stroke="#000000" stroke-width="2.2284" stroke-linecap="round" x1="36.565" y1="23.432" x2="53.633" y2="23.432"/>
-		
-			<line fill="none" stroke="#000000" stroke-width="2.2284" stroke-linecap="round" x1="36.565" y1="32.055" x2="53.633" y2="32.055"/>
+		<rect id="connector0pin" x="32.222" y="7.2" fill="none" width="3.752" height="0.639"/>
+		<rect id="connector0terminal" x="35.737" y="7.23" fill="none" width="0.264" height="0.646"/>
+		<line fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="29.25" y1="7.519" x2="35.65" y2="7.519"/>
 	</g>
 	<g>
+		<rect id="connector1pin" x="32.223" y="14.4" fill="none" width="3.752" height="0.765"/>
+		<rect id="connector1terminal" x="35.738" y="14.409" fill="none" width="0.263" height="0.677"/>
+		
+			<line fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="29.251" y1="14.781" x2="35.651" y2="14.781"/>
+	</g>
+	<g>
+		<rect id="connector2pin" x="32.223" y="21.715" fill="none" width="3.752" height="0.516"/>
+		<rect id="connector2terminal" x="35.738" y="21.6" fill="none" width="0.263" height="0.676"/>
+		
+			<line fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="29.251" y1="21.973" x2="35.651" y2="21.973"/>
+	</g>
+	<g>
+		<rect id="connector5pin" x="32.223" y="28.925" width="3.752" height="0.518"/>
+		<rect id="connector5terminal" x="35.738" y="28.856" fill="none" width="0.263" height="0.584"/>
+		<rect id="connector4pin" x="32.223" y="28.8" fill="none" width="3.752" height="0.768"/>
+		<rect id="connector4terminal" x="35.738" y="28.856" fill="none" width="0.263" height="0.584"/>
+		<rect id="connector3pin" x="32.223" y="28.925" fill="none" width="3.752" height="0.518"/>
+		<rect id="connector3terminal" x="35.738" y="28.856" fill="none" width="0.263" height="0.584"/>
+		
+			<line fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="29.251" y1="29.183" x2="35.651" y2="29.183"/>
+	</g>
+	<rect x="0.45" y="0.45" fill="none" stroke="#000000" stroke-width="0.9" stroke-linecap="round" width="28.8" height="36"/>
+	<g>
 		<g>
-			<polygon points="29.851,19.524 7.424,19.524 7.424,18.636 29.851,18.636 			"/>
+			<polygon points="22.515,18.725 7.204,18.725 7.204,18.119 22.515,18.119 			"/>
 		</g>
 		<g>
-			<polygon points="29.254,17.348 32.254,19.08 29.254,20.812 			"/>
+			<polygon points="22.108,17.24 24.156,18.422 22.108,19.604 			"/>
 		</g>
 		<g>
-			<path d="M11.513,19.435v-0.709c0.994,0,2.03-1.156,3.034-2.274c1.061-1.185,2.064-2.303,3.185-2.303h3.91v0.71h-3.91
-				c-0.802,0-1.745,1.051-2.657,2.067C13.968,18.159,12.824,19.435,11.513,19.435L11.513,19.435z"/>
+			<path d="M9.997,18.664V18.18c0.678,0,1.386-0.789,2.071-1.553c0.724-0.809,1.409-1.572,2.174-1.572h2.669v0.485h-2.669
+				c-0.547,0-1.191,0.718-1.814,1.411C11.672,17.793,10.891,18.664,9.997,18.664L9.997,18.664z"/>
 		</g>
 		<g>
-			<path d="M25.478,24.012h-3.91c-1.119,0-2.122-1.119-3.185-2.303c-1.002-1.117-2.039-2.275-3.034-2.275v-0.709
-				c1.312,0,2.456,1.276,3.563,2.51c0.911,1.016,1.854,2.067,2.655,2.067h3.91V24.012L25.478,24.012z"/>
+			<path d="M19.531,21.789h-2.669c-0.764,0-1.449-0.764-2.175-1.572c-0.684-0.763-1.392-1.553-2.071-1.553V18.18
+				c0.896,0,1.677,0.871,2.433,1.713c0.622,0.693,1.266,1.412,1.813,1.412h2.669L19.531,21.789L19.531,21.789z"/>
 		</g>
 		<g>
-			<circle cx="21.641" cy="14.503" r="1.393"/>
+			<circle cx="16.91" cy="15.297" r="0.951"/>
 		</g>
 		<g>
-			<rect x="24.004" y="22.182" width="2.949" height="2.951"/>
+			<rect x="18.524" y="20.539" width="2.013" height="2.016"/>
 		</g>
 		<g>
-			<circle cx="7.475" cy="19.08" r="2.483"/>
+			<circle cx="7.24" cy="18.422" r="1.695"/>
 		</g>
 	</g>
 </g>

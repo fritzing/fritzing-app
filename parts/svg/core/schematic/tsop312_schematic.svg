@@ -20,9 +20,9 @@
 <rect id="connector1terminal" x="0.918" y="5.742" fill="none" width="0.046" height="0.001"/>
 <line id="connector0pin" fill="none" stroke="#000000" stroke-width="0.672" stroke-linecap="round" stroke-linejoin="round" x1="1.277" y1="48.264" x2="23.398" y2="48.264"/>
 <rect id="connector0terminal" x="0.918" y="48.264" fill="none" width="0.046" height="0.001"/>
-<rect id="connector8_1_" y="3.483" fill="none" width="4" height="4"/>
-<rect id="connector9_1_" x="0.851" y="24.973" fill="none" width="4" height="4"/>
-<rect id="connector10_1_" x="0.638" y="46.036" fill="none" width="4" height="4"/>
+<rect id="connector8" y="3.483" fill="none" width="4" height="4"/>
+<rect id="connector9" x="0.851" y="24.973" fill="none" width="4" height="4"/>
+<rect id="connector10" x="0.638" y="46.036" fill="none" width="4" height="4"/>
 <text transform="matrix(1 0 0 1 27.0889 8.6431)" font-family="'Droid Sans'" font-size="9">Vcc</text>
 <text transform="matrix(1 0 0 1 27.0889 29.959)" font-family="'Droid Sans'" font-size="9">DATA</text>
 <text transform="matrix(1 0 0 1 27.0889 52.1309)" font-family="'Droid Sans'" font-size="9">GND</text>

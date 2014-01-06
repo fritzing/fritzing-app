@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+<svg xmlns="http://www.w3.org/2000/svg"  width="3.2816in" xml:space="preserve" xmlns:xml="http://www.w3.org/XML/1998/namespace" x="0px" version="1.1" y="0px" height="3.97775in" viewBox="0 0 236.275 286.398" id="Layer_1" enable-background="new 0 0 236.275 286.398">
+    <g  id="schematic">
+        <text  fill="#010101" font-family="Droid Sans" id="text3703" transform="matrix(1 0 0 1 72.4443 148.4724)" font-size="18">HCMS-29xx</text>
+        <line  fill="none" stroke="#010101" id="connector1" y1="56.686" stroke-width="2.4" x1="0" y2="56.686" x2="21.261"/>
+        <rect width="23.661" x="-1.2" y="55.486" fill="none" height="2.400000000000006" stroke="none" id="connector1terminal" stroke-width="0"/>
+        <line  fill="none" stroke="#010101" id="connector2" y1="141.725" stroke-width="2.4" x1="0.003" y2="141.725" x2="21.261"/>
+        <rect width="23.658" x="-1.197" y="140.525" fill="none" height="2.399999999999977" stroke="none" id="connector2terminal" stroke-width="0"/>
+        <line  fill="none" stroke="#010101" id="connector3" y1="205.503" stroke-width="2.4" x1="0.003" y2="205.503" x2="21.261"/>
+        <rect width="23.658" x="-1.197" y="204.303" fill="none" height="2.399999999999977" stroke="none" id="connector3terminal" stroke-width="0"/>
+        <line  fill="none" stroke="#010101" id="connector4" y1="269.282" stroke-width="2.4" x1="236.276" y2="269.282" x2="215.017"/>
+        <rect width="23.65899999999999" x="213.817" y="268.082" fill="none" height="2.399999999999977" stroke="none" id="connector4terminal" stroke-width="0"/>
+        <line  fill="none" stroke="#010101" id="connector5" y1="248.022" stroke-width="2.4" x1="236.276" y2="248.022" x2="215.017"/>
+        <rect width="23.65899999999999" x="213.817" y="246.822" fill="none" height="2.399999999999977" stroke="none" id="connector5terminal" stroke-width="0"/>
+        <line  fill="none" stroke="#010101" id="connector6" y1="205.503" stroke-width="2.4" x1="236.276" y2="205.503" x2="215.017"/>
+        <rect width="23.65899999999999" x="213.817" y="204.303" fill="none" height="2.399999999999977" stroke="none" id="connector6terminal" stroke-width="0"/>
+        <line  fill="none" stroke="#010101" id="connector7" y1="184.243" stroke-width="2.4" x1="236.276" y2="184.243" x2="215.017"/>
+        <rect width="23.65899999999999" x="213.817" y="183.043" fill="none" height="2.399999999999977" stroke="none" id="connector7terminal" stroke-width="0"/>
+        <line  fill="none" stroke="#010101" id="connector8" y1="162.983" stroke-width="2.4" x1="236.276" y2="162.983" x2="215.017"/>
+        <rect width="23.65899999999999" x="213.817" y="161.783" fill="none" height="2.399999999999977" stroke="none" id="connector8terminal" stroke-width="0"/>
+        <line  fill="none" stroke="#010101" id="connector9" y1="141.724" stroke-width="2.4" x1="236.276" y2="141.724" x2="215.017"/>
+        <rect width="23.65899999999999" x="213.817" y="140.524" fill="none" height="2.399999999999977" stroke="none" id="connector9terminal" stroke-width="0"/>
+        <line  fill="none" stroke="#010101" id="connector10" y1="120.465" stroke-width="2.4" x1="236.276" y2="120.465" x2="215.017"/>
+        <rect width="23.65899999999999" x="213.817" y="119.265" fill="none" height="2.400000000000006" stroke="none" id="connector10terminal" stroke-width="0"/>
+        <line  fill="none" stroke="#010101" id="connector11" y1="99.205" stroke-width="2.4" x1="236.276" y2="99.205" x2="215.017"/>
+        <rect width="23.65899999999999" x="213.817" y="98.005" fill="none" height="2.400000000000006" stroke="none" id="connector11terminal" stroke-width="0"/>
+        <line  fill="none" stroke="#010101" id="connector12" y1="56.686" stroke-width="2.4" x1="236.276" y2="56.686" x2="215.017"/>
+        <rect width="23.65899999999999" x="213.817" y="55.486" fill="none" height="2.400000000000006" stroke="none" id="connector12terminal" stroke-width="0"/>
+        <line  fill="none" stroke="#010101" id="connector13" y1="35.426" stroke-width="2.4" x1="236.276" y2="35.426" x2="215.017"/>
+        <rect width="23.65899999999999" x="213.817" y="34.226" fill="none" height="2.400000000000006" stroke="none" id="connector13terminal" stroke-width="0"/>
+        <line  fill="none" stroke="#010101" id="connector14" y1="14.166" stroke-width="2.4" x1="236.276" y2="14.166" x2="215.017"/>
+        <rect width="23.65899999999999" x="213.817" y="12.966" fill="none" height="2.399999999999999" stroke="none" id="connector14terminal" stroke-width="0"/>
+        <text  fill="#010101" font-family="Droid Sans" id="text3705" transform="matrix(1 0 0 1 25.0835 59.615)" font-size="10">Vled</text>
+        <text  fill="#010101" font-family="Droid Sans" id="text3707" transform="matrix(1 0 0 1 25.0835 208.4353)" font-size="10">Vled</text>
+        <text  fill="#010101" font-family="Droid Sans" id="text3709" transform="matrix(1 0 0 1 25.0811 144.656)" font-size="10">Gnd led</text>
+        <text  fill="#010101" font-family="Droid Sans" id="text3711" transform="matrix(1 0 0 1 179.5127 272.2146)" font-size="10">Data In</text>
+        <text  fill="#010101" font-family="Droid Sans" id="text3713" transform="matrix(1 0 0 1 201.1436 250.9548)" font-size="10">RS</text>
+        <text  fill="#010101" font-family="Droid Sans" id="text3715" transform="matrix(1 0 0 1 188.2529 208.4343)" font-size="10">Clock</text>
+        <text  fill="#010101" font-family="Droid Sans" id="text3717" transform="matrix(1 0 0 1 187.2764 165.9148)" font-size="10">Blank</text>
+        <text  fill="#010101" font-family="Droid Sans" id="text3719" transform="matrix(1 0 0 1 167.9053 144.655)" font-size="10">Gnd Logic</text>
+        <text  fill="#010101" font-family="Droid Sans" id="text3721" transform="matrix(1 0 0 1 199.1025 123.3953)" font-size="10">Sel</text>
+        <text  fill="#010101" font-family="Droid Sans" id="text3723" transform="matrix(1 0 0 1 185.7959 102.1355)" font-size="10">Vlogic</text>
+        <text  fill="#010101" font-family="Droid Sans" id="text3725" transform="matrix(1 0 0 1 187.7295 59.614)" font-size="10">Reset</text>
+        <text  fill="#010101" font-family="Droid Sans" id="text3727" transform="matrix(1 0 0 1 200.9229 187.1746)" font-size="10">CE</text>
+        <text  fill="#010101" font-family="Droid Sans" id="text3729" transform="matrix(1 0 0 1 174.6885 17.0955)" font-size="10">DataOut</text>
+        <rect  width="192" x="22.495" y="1.2" fill="none" height="283.999" stroke="#010101" stroke-width="2.4"/>
+        <text  fill="#010101" font-family="Droid Sans" id="text3725_1_" transform="matrix(1 0 0 1 192.9893 38.3562)" font-size="10">Osc.</text>
+    </g>
+</svg>

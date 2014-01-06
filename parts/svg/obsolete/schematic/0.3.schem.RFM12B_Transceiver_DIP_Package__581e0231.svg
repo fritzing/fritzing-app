@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.0"
+   width="209.25241"
+   height="162.08464"
+   viewBox="0 0 2325.0268 1800.9404"
+   id="svg2"
+   
+   >
+  <metadata
+     id="metadata13309">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs13307" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     
+     
+     
+     
+     id="namedview13305"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     
+     
+     
+     
+     
+     
+      />
+  <g
+     id="schematic">
+    <rect
+       x="315"
+       y="14.999989"
+       width="1699.4019"
+       height="1770.9404"
+       id="rect13297"
+       style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" />
+    <text
+       id="label"
+       x="1159.7668"
+       y="216.06761"
+       font-size="235"
+       style="font-size:235px;text-anchor:middle;fill:#000000;stroke:none;font-family:Droid Sans">RFM12B</text>
+    <line
+       x1="15"
+       y1="304.41998"
+       x2="300"
+       y2="304.41998"
+       id="line13300"
+       style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" />
+    <rect
+       x="7.5000005"
+       y="289.41998"
+       width="300"
+       height="30"
+       id="connector0pin"
+       style="fill:none;stroke-width:0" />
+    <rect
+       x="142.5"
+       y="289.41998"
+       width="30"
+       height="30"
+       id="connector0terminal"
+       style="fill:none;stroke-width:0" />
+    <text
+       id="label0"
+       x="390"
+       y="350.82132"
+       font-size="130"
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">nINT/VDI</text>
+    <line
+       style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round"
+       id="line13330"
+       y2="548.10498"
+       x2="300"
+       y1="548.10498"
+       x1="15" />
+    <rect
+       style="fill:none;stroke-width:0"
+       id="connector1pin"
+       height="30"
+       width="300"
+       y="533.10498"
+       x="7.5000005" />
+    <rect
+       style="fill:none;stroke-width:0"
+       id="connector1terminal"
+       height="30"
+       width="30"
+       y="533.10498"
+       x="142.5" />
+    <text
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans"
+       font-size="130"
+       y="594.53809"
+       x="394.51328"
+       id="text13336">SDI</text>
+    <line
+       x1="15"
+       y1="787.30853"
+       x2="300"
+       y2="787.30853"
+       id="line13338"
+       style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" />
+    <rect
+       x="7.5000005"
+       y="772.30853"
+       width="300"
+       height="30"
+       id="connector2pin"
+       style="fill:none;stroke-width:0" />
+    <rect
+       x="142.5"
+       y="772.30853"
+       width="30"
+       height="30"
+       id="connector2terminal"
+       style="fill:none;stroke-width:0" />
+    <text
+       id="text13344"
+       x="394.51328"
+       y="833.74164"
+       font-size="130"
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">nSEL</text>
+    <line
+       style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round"
+       id="line13346"
+       y2="1011.6636"
+       x2="300"
+       y1="1011.6636"
+       x1="15.000001" />
+    <rect
+       style="fill:none;stroke-width:0"
+       id="connector3pin"
+       height="30"
+       width="300"
+       y="996.66357"
+       x="7.5000005" />
+    <rect
+       style="fill:none;stroke-width:0"
+       id="connector3terminal"
+       height="30"
+       width="30"
+       y="996.66357"
+       x="142.5" />
+    <text
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans"
+       font-size="130"
+       y="1045.6553"
+       x="385.48672"
+       id="text13352">nIRQ</text>
+    <line
+       x1="15.000001"
+       y1="1247.6626"
+       x2="300"
+       y2="1247.6626"
+       id="line13354"
+       style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" />
+    <rect
+       x="7.5000005"
+       y="1232.6626"
+       width="300"
+       height="30"
+       id="connector4pin"
+       style="fill:none;stroke-width:0" />
+    <rect
+       x="142.5"
+       y="1232.6626"
+       width="30"
+       height="30"
+       id="connector4terminal"
+       style="fill:none;stroke-width:0" />
+    <text
+       id="text13360"
+       x="390"
+       y="1294.0957"
+       font-size="130"
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">DCLK/CFIL/FFIT</text>
+    <line
+       style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round"
+       id="line13362"
+       y2="1486.8662"
+       x2="300"
+       y1="1486.8662"
+       x1="15.000001" />
+    <rect
+       style="fill:none;stroke-width:0"
+       id="connector5pin"
+       height="30"
+       width="300"
+       y="1471.8662"
+       x="7.5000005" />
+    <rect
+       style="fill:none;stroke-width:0"
+       id="connector5terminal"
+       height="30"
+       width="30"
+       y="1471.8662"
+       x="142.5" />
+    <text
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans"
+       font-size="130"
+       y="1533.2993"
+       x="390"
+       id="text13368">nRES</text>
+    <line
+       style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round"
+       id="line13370"
+       y2="304.41995"
+       x2="2310.0269"
+       y1="304.41995"
+       x1="2025.0269" />
+    <rect
+       style="fill:none;stroke-width:0"
+       id="connector11pin"
+       height="30"
+       width="300"
+       y="289.41995"
+       x="2017.5269" />
+    <rect
+       style="fill:none;stroke-width:0"
+       id="connector11terminal"
+       height="30"
+       width="30"
+       y="289.41998"
+       x="2167" />
+    <text
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans"
+       font-size="130"
+       y="350.82132"
+       x="1689.8502"
+       id="text13376">VDD</text>
+    <line
+       x1="2025.0269"
+       y1="548.10498"
+       x2="2310.0269"
+       y2="548.10498"
+       id="line13378"
+       style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" />
+    <rect
+       x="2017.5269"
+       y="533.10498"
+       width="300"
+       height="30"
+       id="connector10pin"
+       style="fill:none;stroke-width:0" />
+    <rect
+       x="2167"
+       y="533.10498"
+       width="30"
+       height="30"
+       id="connector10terminal"
+       style="fill:none;stroke-width:0" />
+    <text
+       id="text13384"
+       x="1712.3209"
+       y="594.53809"
+       font-size="130"
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">SCK</text>
+    <line
+       style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round"
+       id="line13386"
+       y2="787.30853"
+       x2="2310.0269"
+       y1="787.30853"
+       x1="2025.0269" />
+    <rect
+       style="fill:none;stroke-width:0"
+       id="connector9pin"
+       height="30"
+       width="300"
+       y="772.30853"
+       x="2017.5269" />
+    <rect
+       style="fill:none;stroke-width:0"
+       id="connector9terminal"
+       height="30"
+       width="30"
+       y="772.30853"
+       x="2167" />
+    <text
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans"
+       font-size="130"
+       y="833.80511"
+       x="1688.7711"
+       id="text13392">SDO</text>
+    <line
+       x1="2025.0269"
+       y1="1011.6636"
+       x2="2310.0269"
+       y2="1011.6636"
+       id="line13394"
+       style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" />
+    <rect
+       x="2017.5269"
+       y="996.66357"
+       width="300"
+       height="30"
+       id="connector8pin"
+       style="fill:none;stroke-width:0" />
+    <rect
+       x="2167"
+       y="996.66357"
+       width="30"
+       height="30"
+       id="connector8terminal"
+       style="fill:none;stroke-width:0" />
+    <text
+       id="text13400"
+       x="987.73596"
+       y="1058.0967"
+       font-size="130"
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">FSCK/DATA/nFFS</text>
+    <line
+       style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round"
+       id="line13402"
+       y2="1247.6626"
+       x2="2310.0269"
+       y1="1247.6626"
+       x1="2025.0269" />
+    <rect
+       style="fill:none;stroke-width:0"
+       id="connector7pin"
+       height="30"
+       width="300"
+       y="1232.6626"
+       x="2017.5269" />
+    <rect
+       style="fill:none;stroke-width:0"
+       id="connector7terminal"
+       height="30"
+       width="30"
+       y="1232.6626"
+       x="2167" />
+    <text
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans"
+       font-size="130"
+       y="1294.0957"
+       x="1715.8756"
+       id="text13408">CLK</text>
+    <line
+       x1="2025.0269"
+       y1="1486.8662"
+       x2="2310.0269"
+       y2="1486.8662"
+       id="line13410"
+       style="fill:none;stroke:#000000;stroke-width:30;stroke-linecap:round;stroke-linejoin:round" />
+    <rect
+       x="2017.5269"
+       y="1471.8662"
+       width="300"
+       height="30"
+       id="connector6pin"
+       style="fill:none;stroke-width:0" />
+    <rect
+       x="2167"
+       y="1471.8662"
+       width="30"
+       height="30"
+       id="connector6terminal"
+       style="fill:none;stroke-width:0" />
+    <text
+       id="text13416"
+       x="1668.2682"
+       y="1533.2993"
+       font-size="130"
+       style="font-size:130px;text-anchor:start;fill:#000000;stroke:none;font-family:Droid Sans">GND</text>
+  </g>
+</svg>

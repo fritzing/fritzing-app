@@ -19,7 +19,21 @@
 
 # assume boost libraries are installed under linux
 win32|macx {
-	INCLUDEPATH += src/lib/boost_1_55_0
+	# boost_1_54_0 is buggy
+	BOOSTS = 43 44 45 46 47 48 49 50 51 52 53 55
+	LATESTBOOST = 0
+	for(boost, BOOSTS) {
+		exists(../src/lib/boost_1_$${boost}_0) {  
+			LATESTBOOST = $$boost
+		}
+	}
+	contains(LATESTBOOST, 0) {
+		message("Please download the boost library--you can find it at http://www.boost.org/")
+		message("Note that boost 1.54 has a bug in a function that Fritzing uses, so download some other version")
+		error("Copy the boost library to .../src/lib/, so that you have .../src/lib/boost_1_xx_0")
+	}
+	message(using boost from src/lib/boost_1_$${LATESTBOOST}_0)
+	INCLUDEPATH += src/lib/boost_1_$${LATESTBOOST}_0
 }
 
 HEADERS += \

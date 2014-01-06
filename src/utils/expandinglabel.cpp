@@ -30,15 +30,11 @@ ExpandingLabel::ExpandingLabel(QWidget *parent, int minSize) : QTextEdit(parent)
 	setMinimumWidth(minSize);
 	setReadOnly(true);
 	setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-	setStyleSheet("border: 0px; background-color: transparent; margin-top: 8px; margin-bottom: 5px;");
 	setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 }
 
 void ExpandingLabel::setLabelText(const QString& theText) {
-	QTextDocument *doc = new QTextDocument(this);
-	doc->setHtml(theText);
-	setDocument(doc);
-	setToolTip(theText);
+	document()->setHtml(theText);
 	setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 	setAlignment(Qt::AlignCenter);
 	setContextMenuPolicy(Qt::NoContextMenu);
@@ -48,7 +44,6 @@ void ExpandingLabel::allTextVisible() {
 	QTextDocument *doc = document();
 	doc->setTextWidth(width());
 	int height = doc->documentLayout()->documentSize().toSize().height();
-	setStyleSheet("border: 0px; background-color: transparent; margin-top: 0px; margin-bottom: 0px;");
 	setFixedHeight(height);
 }
 

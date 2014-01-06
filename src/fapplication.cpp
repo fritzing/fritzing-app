@@ -31,12 +31,10 @@ $Date: 2013-04-19 12:51:22 +0200 (Fr, 19. Apr 2013) $
 #include "fsplashscreen.h"
 #include "version/version.h"
 #include "dialogs/prefsdialog.h"
-#include "help/helper.h"
 #include "fsvgrenderer.h"
 #include "version/versionchecker.h"
 #include "version/updatedialog.h"
 #include "itemdrag.h"
-#include "dock/viewswitcher.h"
 #include "items/wire.h"
 #include "partsbinpalette/binmanager/binmanager.h"
 #include "help/tipsandtricks.h"
@@ -67,6 +65,7 @@ $Date: 2013-04-19 12:51:22 +0200 (Fr, 19. Apr 2013) $
 #include "autoroute/panelizer.h"
 #include "sketch/sketchwidget.h"
 #include "sketch/pcbsketchwidget.h"
+#include "help/firsttimehelpdialog.h"
 
 // dependency injection :P
 #include "referencemodel/sqlitereferencemodel.h"
@@ -509,7 +508,6 @@ bool FApplication::init() {
 	ItemBase::initNames();
 	ViewLayer::initNames();
 	Connector::initNames();
-	Helper::initText();
 	BinManager::initNames();
 	PaletteModel::initNames();
 	SvgIconWidget::initNames();
@@ -535,10 +533,10 @@ FApplication::~FApplication(void)
 	ItemBase::cleanup();
 	Wire::cleanup();
 	DebugDialog::cleanup();
-	ViewSwitcher::cleanup();
 	ItemDrag::cleanup();
 	Version::cleanup();
 	TipsAndTricks::cleanup();
+	FirstTimeHelpDialog::cleanup();
 	TranslatorListModel::cleanup();
 	FolderUtils::cleanup();
 	SearchLineEdit::cleanup();
@@ -669,13 +667,18 @@ void FApplication::registerFonts() {
 	registerFont(":/resources/fonts/DroidSansMono.ttf", false);
 	registerFont(":/resources/fonts/OCRA.ttf", true);
 
-	/*	
+    // "Droid Sans" 
+    // "Droid Sans Mono" 
+		
+    /*
 		QFontDatabase database;
 		QStringList families = database.families (  );
 		foreach (QString string, families) {
 			DebugDialog::debug(string);			// should print out the name of the fonts you loaded
 		}
-	*/	
+*/
+
+
 }
 
 ReferenceModel * FApplication::loadReferenceModel(const QString & databaseName, bool fullLoad) {
@@ -1152,7 +1155,7 @@ void FApplication::registerFont(const QString &fontFile, bool reallyRegister) {
 		foreach (QString family, familyNames) {
 			InstalledFonts::InstalledFontsNameMapper.insert(family, finfo.completeBaseName());
 			InstalledFonts::InstalledFontsList << family;
-			//DebugDialog::debug("registering font family: "+family);
+			DebugDialog::debug(QString("registering font family: %1 %2").arg(family).arg(finfo.completeBaseName()));
 		}
 	}
 }
@@ -1589,7 +1592,8 @@ void FApplication::loadSomething(const QString & prevVersion) {
     // Find any previously open sketches to reload
     if (!loadPrevious && sketchesToLoad.isEmpty()) {
 		DebugDialog::debug(QString("load last open"));
-		sketchesToLoad = loadLastOpenSketch();
+        // new logic here, we no longer open the most recent sketch, since it can be reached in one click from the welcome page
+		//sketchesToLoad = loadLastOpenSketch();
 	}
 
 	MainWindow * newBlankSketch = NULL;
@@ -1616,6 +1620,8 @@ void FApplication::loadSomething(const QString & prevVersion) {
 	}
 	else if (newBlankSketch) {
 		newBlankSketch->hideTempPartsBin();
+        // new empty sketch defaults to welcome view
+        newBlankSketch->showWelcomeView();
 	}
 }
 
@@ -1694,7 +1700,6 @@ QList<MainWindow *> FApplication::recoverBackups()
     			currentRecoveredSketch->mainLoad(backupName, bundledFileName, true);
 				currentRecoveredSketch->saveAsShareable(bundledFileName, true);
 				currentRecoveredSketch->setCurrentFile(bundledFileName, true, true);
-				currentRecoveredSketch->showAllFirstTimeHelp(false);
 				recoveredSketches << currentRecoveredSketch;
 
 				/*

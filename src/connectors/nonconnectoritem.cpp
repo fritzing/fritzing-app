@@ -103,9 +103,11 @@ void NonConnectorItem::paint( QPainter * painter, const QStyleOptionGraphicsItem
 		{
 			// for parts
 			QRectF r = rect();
-			double delta = .66 * m_strokeWidth;
-			painter->setPen(pen());
-			painter->drawEllipse(r.adjusted(delta, delta, -delta, -delta));
+            if (r.width() > 0 && r.height() > 0) {
+			    double delta = .66 * m_strokeWidth;
+			    painter->setPen(pen());
+			    painter->drawEllipse(r.adjusted(delta, delta, -delta, -delta));
+            }
 		}
 	}
 	else if (!m_shape.isEmpty()) {
@@ -114,18 +116,22 @@ void NonConnectorItem::paint( QPainter * painter, const QStyleOptionGraphicsItem
 		painter->drawPath(m_shape);
 	}
 	else if (m_effectively == EffectivelyCircular) {
-		painter->setBrush(brush());  
-		painter->setPen(pen());
 		QRectF r = rect();
-		double delta = r.width() * EffectiveAdjustmentFactor;
-		painter->drawEllipse(r.adjusted(delta, delta, -delta, -delta));
+        if (r.width() > 0 && r.height() > 0) {
+		    painter->setBrush(brush());  
+		    painter->setPen(pen());
+		    double delta = r.width() * EffectiveAdjustmentFactor;
+		    painter->drawEllipse(r.adjusted(delta, delta, -delta, -delta));
+        }
 	}
 	else if (m_effectively == EffectivelyRectangular) {
-		painter->setBrush(brush());  
-		painter->setPen(pen());
 		QRectF r = rect();
-		double delta = qMin(r.width(), r.height()) * EffectiveAdjustmentFactor;
-		painter->drawRect(r.adjusted(delta, delta, -delta, -delta));
+        if (r.width() > 0 && r.height() > 0) {
+		    painter->setBrush(brush());  
+		    painter->setPen(pen());
+		    double delta = qMin(r.width(), r.height()) * EffectiveAdjustmentFactor;
+		    painter->drawRect(r.adjusted(delta, delta, -delta, -delta));
+        }
 	}
 	else {
 		QGraphicsRectItem::paint(painter, option, widget);

@@ -53,7 +53,7 @@ signals:
     void getSpinAmount(double &);
 };
 
-class PEToolView : public QWidget
+class PEToolView : public QFrame
 {
 Q_OBJECT
 public:

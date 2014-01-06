@@ -160,10 +160,6 @@
         <translation>aan Steven Noppe en Davy Uittenbogerd voor de Nederlandse vertaling, </translation>
     </message>
     <message>
-        <source>to Lionel Michel and Yvan Kloster for the French translation, </source>
-        <translation>aan Lionel Michel en Yvan Kloster voor de Franse vertaling, </translation>
-    </message>
-    <message>
         <source>to Cihan Mete Bahad&amp;#x0131;r for the Turkish translation, </source>
         <translation>aan Cihan Mete Bahadır voor de Turkse vertaling, </translation>
     </message>
@@ -178,6 +174,10 @@
     <message>
         <source>and from each purchase of a Fritzing Starter Kit or a PCB from Fritzing Fab.</source>
         <translation>en van elke aankoop van een Fritzing Starter Kit of een PCB van Fritzing Fab.</translation>
+    </message>
+    <message>
+        <source>to Lionel Michel, Yvan Kloster, Alexandre Dussart, and Roald Baudoux for the French translation, </source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -688,6 +688,10 @@ Er zijn geen banen of connectoren die elkaar overlappen of te dicht bij elkaar l
         <source>A hole in %1 may lie outside the border of the board and would be clipped.</source>
         <translation>Een gat in %1 ligt waarschijnlijk te dicht aan de rand van het bord en zal worden afgeknipt.</translation>
     </message>
+    <message>
+        <source>Connector %1 on %2 should have both copper top and bottom layers, but the svg only specifies one layer.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DRCResultsDialog</name>
@@ -785,6 +789,25 @@ Noot: Je kunt ze ook later importeren via &quot;Help&quot; &gt;&quot;Importeer o
     </message>
 </context>
 <context>
+    <name>FirstTimeHelpDialog</name>
+    <message>
+        <source>First Time Help</source>
+        <translation type="unfinished">Eerste keer - help</translation>
+    </message>
+    <message>
+        <source>&lt;br/&gt;The &lt;b&gt;Breadboard View&lt;/b&gt; is meant to look like a &lt;i&gt;real-life&lt;/i&gt; breadboard prototype.&lt;br/&gt;&lt;br/&gt;Begin by dragging a part from the Parts Bin, which is over at the top right. Then pull in more parts, connecting them by placing them on the breadboard or clicking on the connectors and dragging wires. The process is similar to how you would arrange things in the physical world. &lt;br/&gt;&lt;br/&gt;After you&apos;re finished creating your sketch in the breadboard view, try the other views. You can switch views by clicking the Tabs at the top of the window. Because different views have different purposes, parts will look different in the other views.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Welcome to the &lt;b&gt;Schematic View&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;This is a more abstract way to look at components and connections than the Breadboard View. You have the same elements as you have on your breadboard, they just look different. This representation is closer to the traditional diagrams used by engineers.&lt;br/&gt;&lt;br/&gt;After you have drawn wires between parts, you can press &amp;lt;Shift&amp;gt;-click with the mouse to create bend points and tidy up your connections. The Schematic View can help you check that you have made the right connections between components. You can also print out your schematic for documentation.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The &lt;b&gt;PCB View&lt;/b&gt; is where you layout the components will  on a physical PCB (Printed Circuit Board).&lt;br/&gt;&lt;br/&gt;PCBs can be made at home or in a small lab using DIY etching processes. They also can be sent to professional PCB manufacturing services for more precise fabrication. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;The first thing you will need is a board to place your parts on. There should already be one in your sketch, but if not, drag in the board icon from the Parts Bin. The icon matches thie image to the right: &lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/parts/svg/core/icon/rectangle_pcb.svg&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br/&gt;&lt;br/&gt;To lay out your PCB, arrange all the components so they fit nicely on the board. Then try to shift them around to minimize the length and confusion of connections. You can also resize rectangular boards. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;Once the parts are sorted out, you connect them with copper traces. You can drag out a trace from individual connections or use the autorouter to generate them. The Autoroute button is at the bottom of the window. The button matches the image to the right:&lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/images/icons/toolbarAutorouteEnabled_icon.png&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>FritzingWindow</name>
     <message>
         <source>&amp;Close Window</source>
@@ -872,21 +895,6 @@ Het is ook mogelijk om op een connector rechts te klikken en kies &apos;Maak gro
     <message>
         <source>OK and copper fill</source>
         <translation>OK en koper vulling</translation>
-    </message>
-</context>
-<context>
-    <name>Helper</name>
-    <message>
-        <source>The &lt;b&gt;Breadboard View&lt;/b&gt; is meant to look like a &lt;i&gt;real-life&lt;/i&gt; breadboard prototype.&lt;br/&gt;&lt;br/&gt;Begin by dragging a part from the Parts Bin, which is over at the top right. Then pull in more parts, connecting them by clicking on the connectors and dragging wires. The process is similar to how you would arrange things in the physical world. &lt;br/&gt;&lt;br/&gt;After you&apos;re finished creating your sketch in the breadboard view, try the other views. You can switch by clicking the other views in either the View Switcher or the Navigator on the lower right. Because different views have different purposes, parts will look different in the other views.</source>
-        <translation>De&lt;b&gt; Breadboard weergave&lt;/b&gt; is bedoeld om er uit te zien als een &lt;i&gt;echt&lt;/i&gt; breadboard prototype.&lt;br/&gt;&lt;br/&gt;Begin door een onderdeel te verslepen uit de onderdeel koffer, die rechts boven staat. Versleep dan nog meer onderdelen en verbind ze door te klikken op de aansluitingen en de draden te verslepen. Het is het zelfde proces zoals je het in het echt zou doen. &lt;br/&gt;&lt;br/&gt;Wanneer je klaar bent met je sketch in de breadboard weergave, probeer dan de andere weergaves. Je kunt schakelen tussen de andere weergaves door te klikken op de Weergave Switcher of de navigator onderaan rechts. Omdat de verschillende weergaves verschillende doelen hebben, zullen de onderdelen er ook anders uitzien.</translation>
-    </message>
-    <message>
-        <source>Welcome to the &lt;b&gt;Schematic View&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;This is a more abstract way to look at components and connections than the Breadboard View. You have the same elements as you have on your breadboard, they just look different. This representation is closer to the traditional diagrams used by engineers.&lt;br/&gt;&lt;br/&gt;You can press &amp;lt;Shift&amp;gt;-click with the mouse to create bend points and tidy up your connections. The Schematic View can help you check that you have made the right connections between components. You can also print out your schematic for documentation.</source>
-        <translation>Welkom in de &lt;b&gt;Schema weergave&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;Dit is een meer abstracte manier om de onderdelen en de aansluitingen te zien dan in de Breadboard weergave. Je hebt dezelfde elementen zoals op je breadboard, maar ze zien er gewoon anders uit. Deze weergave ligt dichter bij de traditionele diagrammen die ontwerpers gebruiken.&lt;br/&gt;&lt;br/&gt;Je kunt buigpunten maken door te &amp;lt;Shift&amp;gt;-klikken met de muis en je aansluitingen mooier maken. De schema weergave kan je helpen om te controleren of je de juiste aansluitingen gemaakt hebt tussen de onderdelen. Je kunt je schema ook uitprinten als documentatie.</translation>
-    </message>
-    <message>
-        <source>The &lt;b&gt;PCB View&lt;/b&gt; is where you design how the components will appear on a physical PCB (Printed Circuit Board).&lt;br/&gt;&lt;br/&gt;PCBs can be made at home or in a small lab using DIY etching processes. They also can be sent to professional PCB manufacturing services for more precise fabrication. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;The first thing you will need is a board to place your parts on. There should already be one beneath this widget, but if not, drag in the board icon from the parts bin (image at right). &lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/parts/svg/core/icon/rectangle_pcb.svg&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br/&gt;&lt;br/&gt;To lay out your PCB, rearrange all the components so they fit nicely on the board. Then try to shift them around to minimize the length and confusion of connections. You can also resize rectangular boards. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;Once the parts are sorted out, you connect them with copper traces. You can drag out a trace from individual connections or use the autorouter to generate them. The Autoroute button is at the bottom of the window (image at right).&lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/images/icons/toolbarAutorouteEnabled_icon.png&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</source>
-        <translation>De &lt;b&gt;PCB-Weergave&lt;/b&gt; is waar je je uiteindelijke PCB (Printed Circuit Board) maakt en alle onderdelen hun juiste plaats geeft.&lt;br&gt;&lt;br/&gt; PCB&apos;s kunnen thuis of in een klein laboratorium gemaakt worden door een doe-het-zelf ets proces. Het kan ook verstuurd worden naar een bebrijf, welke een hoge kwaliteit of grote hoeveelheden kan leveren. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt; Het eerste wat je nodig hebt is een bord om al je onderdelen op te plaatsen. Er staat hier onder al een bord voor je klaar, mocht dat niet het geval zijn, sleep dan het &apos;bord&apos; icoonje uit de koffer naar het werkgebied. (afbeelding rechts)&lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/parts/svg/core/icon/rectangle_pcb.svg&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br/&gt;&lt;br/&gt; Om je PCB te maken sleep je je onderdelen op je bord, zodat ze allemaal mooi passen. Probeer ze zo te plaatsen, dat je banen zo kort mogelijk worden en een logische weg kunnen volgen. Je kunt ook de afmetingen van rechtkoekige borden veranderen.&lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;Als alles op z&apos;n plaats staat, verbind je de aansluitingen door koperen banen. Je kunt ze handmatig voor iedere aansluiting maken of maak gebruik van de autorouter om ze automatisch te maken. De autoroute knop bevindt zich onder aan het scherm. (afbeelding rechts).&lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/images/icons/toolbarAutorouteEnabled_icon.png&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</translation>
     </message>
 </context>
 <context>
@@ -2005,10 +2013,6 @@ Wij werken er momenteel aan om dit bericht te vermijden en je te laten kiezen tu
         <translation>Eerste keer - help</translation>
     </message>
     <message>
-        <source>Show or Hide First Time Help</source>
-        <translation>Toon of verberg eerste keer - help</translation>
-    </message>
-    <message>
         <source>Check for updates...</source>
         <translation>Controleer op updates...</translation>
     </message>
@@ -2488,10 +2492,6 @@ Controleer a.u.b. alle weergaves voor potentiële fouten.</translation>
         <translation>Shift+Ctrl+D</translation>
     </message>
     <message>
-        <source>Order PCB</source>
-        <translation>Bestel PCB</translation>
-    </message>
-    <message>
         <source>Order a PCB...</source>
         <translation>Bestel een PCB...</translation>
     </message>
@@ -2823,10 +2823,6 @@ Wilt u &apos;%1&apos; converteren naar het .fzz bestandsfomaat of wilt u het als
         <translation>Standaard waarden</translation>
     </message>
     <message>
-        <source>%1 background Color</source>
-        <translation>%1 achtergrondkleur</translation>
-    </message>
-    <message>
         <source>Fritzing Files (*%1 *%2 *%3 *%4 *%5);;Fritzing (*%1);;Fritzing Shareable (*%2);;Fritzing Part (*%3);;Fritzing Bin (*%4);;Fritzing Shareable Bin (*%5)</source>
         <translation>Fritzing bestanden (*%1 *%2 *%3 *%4 *%5);;Fritzing (*%1);;Fritzing Uitwisselbaar (*%2);;Fritzing Onderdeel (*%3);;Fritzing Koffer (*%4);;Fritzing Uitwisselbare Koffer (*%5)</translation>
     </message>
@@ -2947,10 +2943,6 @@ Doorgaan en terug naar vorige versie?</translation>
         <translation>Markeer alle ongeroute aansluitingen</translation>
     </message>
     <message>
-        <source>View Switcher</source>
-        <translation>Weergave Switcher</translation>
-    </message>
-    <message>
         <source>Inspector</source>
         <translation>Inspector</translation>
     </message>
@@ -2969,10 +2961,6 @@ Doorgaan en terug naar vorige versie?</translation>
     <message>
         <source>PCB</source>
         <translation>PCB</translation>
-    </message>
-    <message>
-        <source>Navigator</source>
-        <translation>Navigator</translation>
     </message>
     <message>
         <source>Layers</source>
@@ -3259,14 +3247,6 @@ Doorgaan en terug naar vorige versie?</translation>
         <translation>Koper Vulling (%1)</translation>
     </message>
     <message>
-        <source>We strongly recommend that you update these parts to the latest version. </source>
-        <translation>We raden je ten zeerste aan om deze onderdelen  te updaten naar de laatste versie. </translation>
-    </message>
-    <message>
-        <source>This may result in some small changes to your sketch, because parts or connectors may be shifted. </source>
-        <translation>Dit kan resulteren in een kleine verandering in je sketch. Onderdelen of aansluitingen kunnen iets verplaatst zijn. </translation>
-    </message>
-    <message>
         <source>
 
 Do you want to update now?</source>
@@ -3280,6 +3260,63 @@ Wil je nu updaten?</translation>
             <numerusform>Er is %n onderdeel niet up to date in deze sketch. </numerusform>
             <numerusform>Er zijn %n onderdelen niet up to date in deze sketch. </numerusform>
         </translation>
+    </message>
+    <message>
+        <source>Click to highlight unconnected parts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fabricate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Welcome</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Dump all parts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Debug dump all parts in this view</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+5</source>
+        <translation type="unfinished">Ctrl+5</translation>
+    </message>
+    <message>
+        <source>&amp;Show Welcome</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show the welcome view</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Display First Time Help</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>
+
+Note: if you want to update later, there are options under the &apos;Part&apos; menu for dealing with outdated parts individually. </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message numerus="yes">
+        <source>We strongly recommend that you update these %n parts  to the latest version. </source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>This may result in changes to your sketch, as parts or connectors may be shifted. </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 background</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -6130,6 +6167,14 @@ Fritzing werkt nog steeds, maar je kunt geen eigenschappen van de onderdelen wij
         <source>selected color (%1)</source>
         <translation>geselecteerde kleur (%1)</translation>
     </message>
+    <message>
+        <source>Choose</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom color ...</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SketchWidget</name>
@@ -6475,141 +6520,248 @@ Noot:Je kunt dit venster ook oproepen door op de tekst van de routing status te 
         <translation>Tips en Trucs</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;body&gt;</source>
-        <translation>&lt;html&gt;&lt;body&gt;</translation>
+        <source>Fritzing Tips and Tricks</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;h3&gt;Fritzing Tips and Tricks&lt;/h3&gt;</source>
-        <translation>&lt;h3&gt;Fritzing Tips en Trucs&lt;/h3&gt;</translation>
+        <source>parts</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;ul&gt;</source>
-        <translation>&lt;ul&gt;</translation>
+        <source>If you can&apos;t find a part in the Parts Bin, the Generic IC is your friend.  Drag it onto your sketch, then use the widgets in the Inspector to: choose from among 25 different through-hole and SMD packages; change the pin label; and--for DIPs and SIPs--change the number of pins.  You can also change the pin names with the Pin Label editor</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;li&gt;Use shift-drag on a wire end or bendpoint to constrain its wire segment to an angle of 45 degrees (or some multiple of 45 degrees).  If the wire segment is connected to other wire segments, the segment you&apos;re dragging will snap to make 90 degree angles with the neighboring wire segment.&lt;/li&gt;</source>
-        <translation>&lt;li&gt;Gebruik shift-sleep om een draad of een buigpunt vast te houden op zijn draad segment met een hoek van 45° (of een vermenigvuldiging ervan). Als de draad segment aangesloten is op andere draad segmenten, dan zal het gesleepte segment zich vastzetten op een 90° hoek ten opzichte van zijn buurt segmenten.&lt;/li&gt;</translation>
+        <source>An icon in the parts bin may actually represent multiple related parts.  So when you drag an icon from the parts bin into a sketch, make sure you look at the inspector.  The inspector will display the range of choices available for you to modify a part, or swap it for a related part. The parts bin icon will also be a little &apos;stack&apos; and not just a flat icon.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;li&gt;To constrain the motion of a part to horizontal or vertical, hold down the shift key as you drag it.&lt;/li&gt;</source>
-        <translation>&lt;li&gt;Om de beweging van een onderdeel vast te zetten op horizontaal of verticaal, houd de shift-toets ingedrukt terwijl je het versleept.&lt;/li&gt;</translation>
+        <source>The Inspector Window--which lets you change the properties of parts--is only enabled for parts that are in a sketch (not for parts still in a Parts Bin).</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;li&gt;If you&apos;re having trouble selecting a part or a wire (segment), try selecting the part that&apos;s in the way and send it to the back: use the Raise and Lower functions on the Part menu or the context menu (right-click menu).&lt;/li&gt;</source>
-        <translation>&lt;li&gt;Als u problemen heeft om een onderdeel of een draad (segment) te selecteren, probeer het onderdeel te selecteren dat in de weg staat en het naar achter te verplaatsen: Gebruik de heffen en dalen functie in het Onderdelen menu of het context menu (Rechter muisknop klikken).&lt;/li&gt;</translation>
+        <source>moving and selection</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;li&gt;When you export images from Fritzing, you can choose which layers are exported. Before you choose &apos;Export...&apos;, go into the &apos;View&apos; menu and hide the layers you don&apos;t want to be visible.&lt;/li&gt;</source>
-        <translation>&lt;li&gt;Wanneer je afbeeldingen exporteert vanuit Fritzing, kunt je kiezen welke lagen je wilt exportern. Voordat je &apos;Exporteer...&quot; kiest, ga naar het &apos;Weergave&apos; menu en verberg de lagen die je niet wilt weergeven.&lt;/li&gt;</translation>
+        <source>To constrain the motion of a part to horizontal or vertical, hold down the shift key as you drag it.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;/ul&gt;</source>
-        <translation>&lt;/ul&gt;</translation>
+        <source>If you&apos;re having trouble selecting a part or a wire (segment), try selecting the part that&apos;s in the way and send it to the back: use the Raise and Lower functions on the Part menu or the context menu (right-click menu).</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>To more precisely move a selection of parts, use the arrow keys.  Shift-arrow moves by 10 units.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;li&gt;To edit a part label, double-click it, or use the text input widget in the inspector window.&lt;/li&gt;</source>
-        <translation>&lt;li&gt;Om een onderdeel label te bewerken, dubbel-klik er op, of gebruik de tekst invoer in de inspector.&lt;/li&gt;</translation>
+        <source>Click on the mouse position indicator in the status bar (at the bottom) to toggle the units from in to mm to px.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;li&gt;To add a bendpoint to a wire, double-click where you want the bendpoint.&lt;/li&gt;</source>
-        <translation>&lt;li&gt;Om een buigpunt aan aan draad toe te voegen, klik je waar je het buigpunt wilt.&lt;/li&gt;</translation>
+        <source>rotation</source>
+        <translation type="unfinished">rotatie</translation>
     </message>
     <message>
-        <source>&lt;li&gt;To delete a bendpoint from a wire, double-click it.&lt;/li&gt;</source>
-        <translation>&lt;li&gt;Dubbelklik op een buigpunt om het te verwijderen.&lt;/li&gt;</translation>
+        <source>To free-rotate a part in Breadboard or PCB view, select it, then hover your mouse near one of the corners until you see the rotate cursor. Mouse down and that corner will follow your mouse as you drag.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;li&gt;To toggle the visibility of layer in a view, go to the view menu and choose one of the view layer items.  Or open up the &lt;b&gt;Layers&lt;/b&gt; palette from the &lt;b&gt;Window&lt;/b&gt; menu.&lt;/li&gt;</source>
-        <translation>&lt;li&gt;Om lagen zichtbaar of inzichtbaar te maken, ga je naar het weergave menu en kies een van de laag onderdelen.  Of open het&lt;b&gt;Lagen&lt;/b&gt; palette via het &lt;b&gt;Venster&lt;/b&gt; menu.&lt;/li&gt;</translation>
+        <source>To free-rotate a logo text or image item in PCB view hold down the Alt (Linux: meta) key and free-rotate as usual.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;li&gt;An icon in the parts bin may actually represent multiple related parts.  So when you drag an icon from the parts bin into a sketch, make sure you look at the inspector.  The inspector will display the range of choices available for you to modify a part, or swap it for a related part. The parts bin icon will also be a little &apos;stack&apos; and not just a flat icon.&lt;/li&gt;</source>
-        <translation>&lt;li&gt;Een icoon in de onderdeel koffer kan meer/verschillende onderdelen bevatten.  Dus als je een onderdeel in een sketch sleept, kijk dan goed in de inspector.  De inspector zal een ruime keuze aan mogelijkheden weergeven om je onderdeel aan te passen, of wissel het voor een vergelijkbaar onderdeel. Het icoon van het onderdeel in de koffer zal er dan uitzien als een &apos;stapel&apos; in plaats van een plat icoon&lt;/li&gt;</translation>
+        <source>layers and views</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;li&gt;To drag a wire segment (a section of a wire between two bendpoints), drag it with the Alt (Linux: Meta) key down.  If you also hold down the shift key, the wire segment will be constrained to horizontal or vertical motion.&lt;/li&gt;</source>
-        <translation>&lt;li&gt;Om een draadsegment te verslepen (een sectie draad tussen twee buigpunten), sleep met de Alt (Linux: Meta ◆) toets ingedrukt.  Als je ook de Shift toets ingedrukt houdt, zal de draad horizontale of vertikale beweging volgen.&lt;/li&gt;</translation>
+        <source>To drag the canvas, hold down the space bar and drag with the mouse.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;li&gt;In Schematic or PCB view, if you drag from a bendpoint with the Alt (Linux: Meta) key down, you will drag out a new wire from that bendpoint.&lt;/li&gt;</source>
-        <translation>&lt;li&gt;Als je in de Schema of PBC weergave een vanaf een buigpunt een nieuwe draad wilt maken, houd je de Alt (Linux: Meta ◆) toets ingedrukt terwijl je sleept vanaf het buigpunt.&lt;/li&gt;</translation>
+        <source>To toggle the visibility of layer in a view, go to the view menu and choose one of the view layer items.  Or open up the &lt;b&gt;Layers&lt;/b&gt; palette from the &lt;b&gt;Window&lt;/b&gt; menu.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;li&gt;In Breadboard view, to drag out a wire from the end of a rubber-band leg, drag with the Alt (Linux: Meta) key down.&lt;/li&gt;</source>
-        <translation>&lt;li&gt;Om in de breadboard weergave een draad uit een buigbare poot te trekken, sleep met de Alt (Linux: Meta ◆) toets ingedrukt&lt;/li&gt;</translation>
+        <source>When you export images from Fritzing, you can choose which layers are exported. Before you choose &apos;Export...&apos;, go into the &apos;View&apos; menu and hide the layers you don&apos;t want to be visible.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;li&gt;In Breadboard view, to drag a part with rubber-band legs while keeping it connected to the breadboard, hold the Alt (Linux: Meta) key down when you start dragging.&lt;/li&gt;</source>
-        <translation>&lt;li&gt;In de Breadboard weergave kun je een onderdeel met buigbare poten verslepen, zonder dat de pootjes uit het breadboard gaan, door de Alt (Linux: Meta ◆) toets ingedrukt te douden tijdens het slepen.&lt;/li&gt;</translation>
+        <source>part labels</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;li&gt;In Breadboard view, to add a curve to a wire or rubber-band leg, drag with the Control (Mac: Command) key down.  You can set whether curvy wires are the default in Preferences.&lt;/li&gt;</source>
-        <translation>&lt;li&gt;In de Breadboard weergave, om een curve te maken in een een draad of buigbare poot, sleep met de Control (Mac: Command ⌘) toets ingedrukt.  Je kunt bij Voorkeuren aangeven of je dit als standaardinstelling wilt.&lt;/li&gt;</translation>
+        <source>To edit a part label, double-click it, or use the text input widget in the inspector window.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;li&gt;If you can&apos;t find a part in the Parts Bin, the Generic IC is your friend.  Drag it onto your sketch, then use the widgets in the Inspector to: choose from among 25 different through-hole and SMD packages; change the pin label; and--for DIPs and SIPs--change the number of pins.  You can also change the pin names with the Pin Label editor&lt;/li&gt;</source>
-        <translation>&lt;li&gt;Als je een onderdeel niet kunt vinden in de onderdelen koffer, dan is de &apos;Generic IC&apos; je best vriend.  Sleep het in je sketch en gebruik dan de voorkeuzes in de Inspector en kies uit meer dan 25 verschillende &apos;through-hole&apos; en SMD pakketten. Wijzig de pin labels en--voor de DIPs en SIPs--kun je het aantal pinnen wijzigen.  Je kunt ook de pin aanduiding wijzigen met de Pin Label Bewerker.&lt;/li&gt;</translation>
+        <source>To display different properties in a part label, as well as rotate it, or change the font, right-click the label.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;li&gt;To free-rotate a part in Breadboard or PCB view, select it, then hover your mouse near one of the corners until you see the rotate cursor. Mouse down and that corner will follow your mouse as you drag.&lt;/li&gt;</source>
-        <translation>&lt;li&gt;Om een onderdeel vrij te roteren de de Breadboard of PCB weergave, selecteer je het en ga je met je muis naar een van de hoeken van het secectievak tot je de rotatie cursor ziet. Klik op die hoek en het onderdeel zal met je muis mee bewegen.&lt;/li&gt;</translation>
+        <source>To move a part label independently from its part, select the part first--both the part and the label will be highlighted. Once the label is selected you can drag it.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;li&gt;To free-rotate a logo text or image item in PCB view hold down the Alt (Linux: meta) key and free-rotate as usual.&lt;/li&gt;</source>
-        <translatorcomment>Already added the translation for free rotation in the breadbord view. Wasn&apos;t in source text.</translatorcomment>
-        <translation>&lt;li&gt;Om een tekst, logo of afbeelding vrij te draaien in de Breadboard of PCB weergave, selecteer je het, houd de  Alt (Linux: Meta ◆) toets ingedrukt en ga je met je muis naar een van de hoeken van het secectievak tot je de rotatie cursor ziet. Klik op die hoek en het onderdeel zal met je muis mee bewegen.&lt;/li&gt;</translation>
+        <source>wires and bendpoints</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;li&gt;To display different properties in a part label, as well as rotate it, or change the font, right-click the label.&lt;/li&gt;</source>
-        <translation>&lt;li&gt;Om de eigenschappen van een onderdeel label te wijzigen, draaien of het lettertype te wijzigen, Rechts-klik op het label.&lt;/li&gt;</translation>
+        <source>To add a bendpoint to a wire, double-click where you want the bendpoint.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;li&gt;To more precisely move a selection of parts, use the arrow keys.  Shift-arrow moves by 10 units.&lt;/li&gt;</source>
-        <translation>&lt;li&gt;Voor een meer precieze verplaatsing van een selectie, gebruik je de pijltoetsen. In combinatie met de Shift toets krijg je een verplaatsing van 10 units.&lt;/li&gt;</translation>
+        <source>To delete a bendpoint from a wire, double-click it.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;li&gt;&lt;h4&gt;parts&lt;/h4&gt;</source>
-        <translation>&lt;li&gt;&lt;h4&gt;onderdelen&lt;/h4&gt;</translation>
+        <source>In Schematic or PCB view, if you drag from a bendpoint with the Alt (Linux: Meta) key down, you will drag out a new wire from that bendpoint.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;/ul&gt;&lt;/li&gt;</source>
-        <translation>&lt;/ul&gt;&lt;/li&gt;</translation>
+        <source>To drag a wire segment (a section of a wire between two bendpoints), drag it with the Alt (Linux: Meta) key down.  If you also hold down the shift key, the wire segment will be constrained to horizontal or vertical motion.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;li&gt;&lt;h4&gt;moving and selection&lt;/h4&gt;</source>
-        <translation>&lt;li&gt;&lt;h4&gt;verplaatsten en selectie&lt;/h4&gt;</translation>
+        <source>Use shift-drag on a wire end or bendpoint to constrain its wire segment to an angle of 45 degrees (or some multiple of 45 degrees).  If the wire segment is connected to other wire segments, the segment you&apos;re dragging will snap to make 90 degree angles with the neighboring wire segment.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;li&gt;&lt;h4&gt;curves and rubber band legs&lt;/h4&gt;</source>
-        <translation>&lt;li&gt;&lt;h4&gt;curves en gebogen poten&lt;/h4&gt;</translation>
+        <source>connections</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;li&gt;&lt;h4&gt;rotation&lt;/h4&gt;</source>
-        <translation>&lt;li&gt;&lt;h4&gt;roteren&lt;/h4&gt;</translation>
+        <source>To see all the connectors connected to a given connector, hold the mouse down on the connector--all the connections will be highlighted.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;li&gt;&lt;h4&gt;layers and views&lt;/h4&gt;</source>
-        <translation>&lt;li&gt;&lt;h4&gt;lagen en weergaven&lt;/h4&gt;</translation>
+        <source>pcb layout</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;li&gt;To drag the canvas, hold down the space bar and drag with the mouse.&lt;/li&gt;</source>
-        <translation>&lt;li&gt;Om het werkveld te verplaatsen, houd de spatiebalk indrukt en sleep met de muis.&lt;/li&gt;</translation>
+        <source>Always lead a trace straight out of a pin. This helps to prevent short circuits.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;li&gt;&lt;h4&gt;part labels&lt;/h4&gt;</source>
-        <translation>&lt;li&gt;&lt;h4&gt;onderdeel labels&lt;/h4&gt;</translation>
+        <source>Through-hole parts can be traced from either side of a PCB.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;li&gt;To move a part label independently from its part, select the part first--both the part and the label will be highlighted. Once the label is selected you can drag it.&lt;/li&gt;</source>
-        <translation>&lt;li&gt; Om een onderdeellabel te verplaatsen, selcteer je eerst het onderdeel-- zowel onderdeel als het label zijn hightlighted. Als je het label selecteert kun je het verplaatsen. &lt;/li&gt;</translation>
+        <source>It makes life easier to route traces horizontally on one side of a PCB and vertically on the other side.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;li&gt;&lt;h4&gt;wires and bendpoints&lt;/h4&gt;</source>
-        <translation>&lt;li&gt;&lt;h4&gt;draden en buigpunten&lt;/h4&gt;</translation>
+        <source>Route traces in 45-degree angles to reduce noise.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>If Fritzing is missing your special part and you don&apos;t want to build one by yourself, then use pinheaders as connectors and the grid to align them.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You can put your own Logo in the silkscreen of your PCB. Just use the Logo part of the core library and select your own file. SVG is the best format.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Smaller PCBs are more affortable than larger ones. Save space and money.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use copper-blocker parts to mask out areas that you want free of copper fill.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>To change trace width, select a trace then use the &lt;b&gt;width&lt;/b&gt; combo box in the Inspector. You can use the drop-down or just type in a number (from 8 to 128).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>parts editor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>examples</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Get a jump start by looking at the example circuits under File &gt; Examples.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Can&apos;t find your part? Search for it by clicking the magnifier icon in the Parts Bin and type in some keywords</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A ratsnest line (very thin &apos;wire&apos;) between connections in one view means that those connections are somehow connected in another view.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>To create a custom shape for your PCB, import an SVG file.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>To make a stylish Arduino shield in no time, switch the shape of the PCB from a rectangle to the Arduino</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>pcb production</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Have your PCB quickly and easily produced with Fritzing Fab. Hover over the &apos;Fabricate&apos; button to get a quote.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fritzing stores files for custom parts, generated parts, and for other temporary and long-term purposes in a &apos;local storage folder&apos;. On Mac and Linux this is usually ~/.config/Fritzing/. Under Windows Vista and above, it is something like C:\Users\[user name]\AppData\Roaming\Fritzing\; under Windows XP is something like C:\Documents and Settings\[user name]\Application Data\Fritzing\.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Check out Parts Editor Help under the &lt;b&gt;Help&lt;/b&gt; Menu.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Before using the Parts Editor, see whether a Generic IC, Mystery Part, or Pin Header will do the job. Once you drop one of these into your sketch, you can change the number of pins, pin spacing, and other properties.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>In the Parts Editor, to select a graphic underneath another graphic, use the mouse wheel while holding down the shift key.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You can use the Parts Editor to find the SVG file for a part&apos;s image for a given view. In the Parts Editor, click on the tab for that view, then use &lt;b&gt;Show in Folder&lt;/b&gt; under the &lt;b&gt;File&lt;/b&gt; Menu</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Do not store your custom part files in the Fritzing installation folder. If you upgrade Fritzing, these files will probably be deleted. Also, files in the Fritzing installation folder will not be saved in sketch (.fzz) files, so you won&apos;t be able to share them.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>notes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>To insert a clickable URL into a note, select some text in the note and type ctrl-l (Mac: command-l). (That&apos;s &apos;l&apos; as in the first letter of &apos;link&apos;.) To modify an existing link select the linked text and use ctrl-l (command-l) again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>local file storage</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>curves and bendable legs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>In Breadboard view, to drag a part with bendable legs while keeping it connected to the breadboard, hold the Alt (Linux: Meta) key down when you start dragging.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>In Breadboard view, to drag out a wire from the end of a bendable leg, drag with the Alt (Linux: Meta) key down.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>In Breadboard or PCB view, to add a curve to a wire or bendable leg, drag with the Control (Mac: Command) key down.  You can set whether curvy wires are the default in Preferences.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -6786,22 +6938,106 @@ Noot:Je kunt dit venster ook oproepen door op de tekst van de routing status te 
     </message>
 </context>
 <context>
-    <name>ViewSwitcher</name>
+    <name>WelcomeView</name>
     <message>
-        <source>Breadboard</source>
-        <translation>Breadboard</translation>
+        <source>Recent Sketches</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Schematic</source>
-        <translation>Schema</translation>
+        <source>New Sketch</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>PCB</source>
-        <translation>PCB</translation>
+        <source>Open Sketch</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Code</source>
-        <translation>Code</translation>
+        <source>Fab</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Shop</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fritzing CreatorKit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The Fritzing Creator Kit provides a fast, easy and entertaining introduction to the world of interactive electronics.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>order now &gt;&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Get your Creator Kit now.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fritzing Fab is an easy and affordable service for producing professional PCBs from your Fritzing sketches.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>produce your first pcb now &gt;&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Order your PCB now.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;a href=&apos;%1&apos;&gt;&lt;img src=&apos;%2&apos;/&gt;&lt;/a&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Projects</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Blog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fritzing News.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fritzing Projects.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;a href=&apos;%1&apos;&gt;&lt;img src=&apos;%2&apos; /&gt;&lt;/a&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No recent sketches found</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to reach blog.fritzing.org</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to reach friting.org/projects</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tip of the Day:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All Tips</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Next Tip</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fritzing Fab</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

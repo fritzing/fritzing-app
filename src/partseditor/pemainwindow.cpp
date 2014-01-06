@@ -307,7 +307,7 @@ ViewThing::ViewThing() {
 PEMainWindow::PEMainWindow(ReferenceModel * referenceModel, QWidget * parent)
 	: MainWindow(referenceModel, parent)
 {
-	m_viewThings.insert(ViewLayer::BreadboardView, new ViewThing);
+    m_viewThings.insert(ViewLayer::BreadboardView, new ViewThing);
 	m_viewThings.insert(ViewLayer::SchematicView, new ViewThing);
 	m_viewThings.insert(ViewLayer::PCBView, new ViewThing);
 	m_viewThings.insert(ViewLayer::IconView, new ViewThing);
@@ -437,9 +437,11 @@ void PEMainWindow::closeEvent(QCloseEvent *event)
 void PEMainWindow::initLockedFiles(bool) {
 }
 
-void PEMainWindow::initSketchWidgets()
+void PEMainWindow::initSketchWidgets(bool whatever)
 {
-    MainWindow::initSketchWidgets();
+    Q_UNUSED(whatever);
+
+    MainWindow::initSketchWidgets(false);
 
 	m_iconGraphicsView = new IconSketchWidget(ViewLayer::IconView, this);
 	initSketchWidget(m_iconGraphicsView);
@@ -489,6 +491,7 @@ void PEMainWindow::initSketchWidgets()
     m_connectorsView = new PEConnectorsView(this);
 	sketchAreaWidget = new SketchAreaWidget(m_connectorsView, this);
 	addTab(sketchAreaWidget, tr("Connectors"));
+
     connect(m_connectorsView, SIGNAL(connectorMetadataChanged(ConnectorMetadata *)), this, SLOT(connectorMetadataChanged(ConnectorMetadata *)), Qt::DirectConnection);
     connect(m_connectorsView, SIGNAL(connectorsTypeChanged(Connector::ConnectorType)), this, SLOT(connectorsTypeChanged(Connector::ConnectorType)));
     connect(m_connectorsView, SIGNAL(removedConnectors(QList<ConnectorMetadata *> &)), this, SLOT(removedConnectors(QList<ConnectorMetadata *> &)), Qt::DirectConnection);
@@ -541,6 +544,7 @@ void PEMainWindow::moreInitDock()
 
     if (m_infoView) {
         makeDock(tr("Inspector"), m_infoView, InfoViewMinHeight, InfoViewHeightDefault);
+        this -> setObjectName("PEInspector");
     }
 
     makeDock(tr("Layers"), m_layerPalette, DockMinWidth, DockMinHeight)->hide();
@@ -584,7 +588,7 @@ void PEMainWindow::createActions()
 	m_deleteBusConnectionAct = new WireAction(tr("Remove Internal Connection"), this);
 	connect(m_deleteBusConnectionAct, SIGNAL(triggered()), this, SLOT(deleteBusConnection()));
 
-    createViewMenuActions();
+    createViewMenuActions(false);
     createHelpMenuActions();
     createWindowMenuActions();
 	createActiveLayerActions();
@@ -689,6 +693,7 @@ void PEMainWindow::connectPairs() {
 
 QMenu *PEMainWindow::breadboardWireMenu() {
 	QMenu *menu = new QMenu(QObject::tr("Internal Connections"), this);
+
 	menu->addAction(m_deleteBusConnectionAct);
     connect( menu, SIGNAL(aboutToShow()), this, SLOT(updateWireMenu()));
 	return menu;
@@ -844,6 +849,8 @@ bool PEMainWindow::setInitialItem(PaletteItem * paletteItem)
 	}
 
     foreach (ViewThing * viewThing, m_viewThings.values()) {
+        if (viewThing->sketchWidget == NULL) continue;
+
         ItemBase * itemBase = originalModelPart->viewItem(viewThing->sketchWidget->viewID());
         if (itemBase == NULL) continue;
 
@@ -955,22 +962,19 @@ bool PEMainWindow::setInitialItem(PaletteItem * paletteItem)
     return true;
 }
 
-void PEMainWindow::initHelper()
-{
-}
-
 void PEMainWindow::initZoom() {
-    if (m_currentGraphicsView) {
-		ViewThing * viewThing = m_viewThings.value(m_currentGraphicsView->viewID());
-        if (!viewThing->everZoomed) {
-            viewThing->everZoomed = true;
-            m_currentGraphicsView->fitInWindow();
-        }
-		
-		if (viewThing->itemBase) {
-			m_peSvgView->setFilename(viewThing->referenceFile);
-		}
+    if (m_peToolView == NULL) return;
+    if (m_currentGraphicsView == NULL) return;
+	
+	ViewThing * viewThing = m_viewThings.value(m_currentGraphicsView->viewID());
+	if (viewThing->itemBase == NULL) return;
+			
+    if (!viewThing->everZoomed) {
+        viewThing->everZoomed = true;
+        m_currentGraphicsView->fitInWindow();
     }
+		
+	m_peSvgView->setFilename(viewThing->referenceFile);
 }
 
 void PEMainWindow::setTitle() {
@@ -986,8 +990,8 @@ void PEMainWindow::setTitle() {
 	setWindowTitle(QString("%1: %2 [%3]%4").arg(title).arg(partTitle).arg(viewName).arg(QtFunkyPlaceholder));
 }
 
-void PEMainWindow::createViewMenuActions() {
-    MainWindow::createViewMenuActions();
+void PEMainWindow::createViewMenuActions(bool showWelcome) {
+    MainWindow::createViewMenuActions(showWelcome);
 
 	m_showIconAct = new QAction(tr("Show Icon"), this);
 	m_showIconAct->setShortcut(tr("Ctrl+4"));
@@ -1783,6 +1787,8 @@ void PEMainWindow::reload(bool firstTime)
 	QList<ItemBase *> toDelete;
 
 	foreach (ViewThing * viewThing, m_viewThings.values()) {
+        if (viewThing->sketchWidget == NULL) continue;
+
 		foreach (QGraphicsItem * item, viewThing->sketchWidget->scene()->items()) {
 			ItemBase * itemBase = dynamic_cast<ItemBase *>(item);
 			if (itemBase) toDelete << itemBase;
@@ -2659,11 +2665,6 @@ void PEMainWindow::tabWidget_currentChanged(int index) {
         setTitle();
     }
     else {
-        // processeventblocker might be enough	
-		ViewThing * viewThing = m_viewThings.value(m_currentGraphicsView->viewID());
-		if (viewThing->itemBase != NULL) {
-			QTimer::singleShot(10, this, SLOT(initZoom()));
-		}
     }
 
 	updateAssignedConnectors();
@@ -2760,6 +2761,8 @@ QString PEMainWindow::getPartTitle() {
 
 void PEMainWindow::killPegi() {
     foreach (ViewThing * viewThing, m_viewThings.values()) {
+        if (viewThing->sketchWidget == NULL) continue;
+
         foreach (QGraphicsItem * item, viewThing->sketchWidget->scene()->items()) {
             PEGraphicsItem * pegi = dynamic_cast<PEGraphicsItem *>(item);
             if (pegi) delete pegi;
@@ -3217,11 +3220,15 @@ void PEMainWindow::replaceProperty(const QString & key, const QString & value, Q
 }
 
 QWidget * PEMainWindow::createTabWidget() {
-	return new QTabWidget(this);
+    QTabWidget * tabWidget = new QTabWidget(this);
+    tabWidget->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    tabWidget->setObjectName("pe_tabs");
+	return tabWidget;
 }
 
 void PEMainWindow::addTab(QWidget * widget, const QString & label) {
 	qobject_cast<QTabWidget *>(m_tabWidget)->addTab(widget, label);
+    this -> setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 }
 
 int PEMainWindow::currentTabIndex() {
@@ -3921,3 +3928,18 @@ void PEMainWindow::clickedItemCandidateSlot(QGraphicsItem * item, bool & ok) {
 void PEMainWindow::initProgrammingWidget() {
 }
 
+void PEMainWindow::initWelcomeView() {
+}
+
+void PEMainWindow::setInitialView() {
+    	// do this the first time, since the current_changed signal wasn't sent
+	int tab = 0;
+	tabWidget_currentChanged(tab+1);
+	tabWidget_currentChanged(tab);
+}
+
+void PEMainWindow::updateExportMenu() {
+    foreach (QAction * action, m_exportMenu->actions()) {
+        action->setEnabled(false);
+    }
+}

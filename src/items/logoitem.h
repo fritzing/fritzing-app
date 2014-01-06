@@ -61,6 +61,8 @@ public:
 	void addedToScene(bool temporary);
 	void setHeight(double h);
 	void paintHover(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
+    bool hasLogo();
+    QString getNewLayerFileName(const QString & newLayer);
 
 protected slots:
 	void logoEntry();

@@ -9,7 +9,7 @@
           </iconView>
         </views>
       </instance>
-   	    <instance moduleIdRef="arduino_Uno_Rev3" modelIndex="5548" path="pdb/core/arduino_Uno_Rev3.fzp">
+   	    <instance moduleIdRef="arduino_Uno_Rev3(fix)" modelIndex="5548" path="pdb/core/arduino_Uno_Rev3(fix).fzp">
           <views>
               <iconView layer="icon">
                   <geometry z="-1" x="-1" y="-1"/>
@@ -34,7 +34,7 @@
                 </iconView>
             </views>
         </instance>
-		 <instance moduleIdRef="Arduino_ADK_MEGA_2560-Rev3" modelIndex="5584" path="pdb/core/arduino_MEGA_2560-Rev3.fzp" >
+		 <instance moduleIdRef="Arduino_ADK_MEGA_2560-Rev3(fix)" modelIndex="5584" path="pdb/core/arduino_MEGA_2560-Rev3(fix).fzp" >
             <views>
                 <iconView layer="">
                     <geometry z="0" x="-1" y="-1"/>
@@ -54,7 +54,7 @@
                 </iconView>
             </views>
         </instance>
-        <instance moduleIdRef="Arduino Nano3" modelIndex="5584" path="pdb/core/Arduino Nano3.fzp">
+        <instance moduleIdRef="Arduino Nano3(fix)" modelIndex="5584" path="pdb/core/Arduino Nano3(fix).fzp">
             <views>
                 <iconView layer="">
                     <geometry z="0" x="-1" y="-1"/>
@@ -105,7 +105,7 @@
                 </iconView>
             </views>
         </instance>
-	    <instance moduleIdRef="Arduino_Micro_Rev03" modelIndex="5584" path="pdb/core/Arduino_Micro_Rev03.fzp">
+	    <instance moduleIdRef="Arduino_Micro_Rev03(fix)" modelIndex="5584" path="pdb/core/Arduino_Micro_Rev03(fix).fzp">
             <views>
                 <iconView layer="">
                     <geometry z="0" x="-1" y="-1"/>
@@ -141,7 +141,7 @@
 
 						
 		
-						<instance moduleIdRef="Arduino-Fio-v22" modelIndex="5584" path="pdb/core/Arduino-Fio-v22.fzp">
+						<instance moduleIdRef="Arduino-Fio-v22(fix)" modelIndex="5584" path="pdb/core/Arduino-Fio-v22(fix).fzp">
             <views>
                 <iconView layer="">
                     <geometry z="0" x="-1" y="-1"/>

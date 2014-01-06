@@ -63,8 +63,10 @@ LogoItem::LogoItem( ModelPart * modelPart, ViewLayer::ViewID viewID, const ViewG
 	: ResizableBoard(modelPart, viewID, viewGeometry, id, itemMenu, doLabel)
 {
 	if (LogoImageNames.count() == 0) {
-		LogoImageNames << "Made with Fritzing" << "Fritzing icon" << "OHANDA logo" << "OSHW logo";
-		Logo0ImageNames << "Made with Fritzing 0" << "Fritzing icon 0" << "OHANDA logo 0" << "OSHW logo 0";
+        // TODO: load these names from somewhere
+
+		LogoImageNames << "new Made with Fritzing" << "new Fritzing icon" << "OHANDA logo" << "OSHW logo";
+		Logo0ImageNames << "new Made with Fritzing 0" << "new Fritzing icon 0" << "OHANDA logo 0" << "OSHW logo 0";
 	}
 
     m_svgOnly = false;
@@ -78,9 +80,32 @@ LogoItem::LogoItem( ModelPart * modelPart, ViewLayer::ViewID viewID, const ViewG
 		m_logo = modelPart->properties().value("logo", "logo");
 		modelPart->setLocalProp("logo", m_logo);
 	}
+
+    if (m_modelPart->moduleID() == ModuleIDNames::LogoImageModuleIDName) {
+        m_modelPart->modelPartShared()->setModuleID("new" + ModuleIDNames::LogoImageModuleIDName);
+    }
+    else if (m_modelPart->moduleID() == ModuleIDNames::Silkscreen0LogoImageModuleIDName) {
+        m_modelPart->modelPartShared()->setModuleID("new" + ModuleIDNames::Silkscreen0LogoImageModuleIDName);
+    }
+    else if (m_modelPart->moduleID() == ModuleIDNames::Copper1LogoImageModuleIDName) {
+        m_modelPart->modelPartShared()->setModuleID("new" + ModuleIDNames::Copper1LogoImageModuleIDName);
+    }
+    else if (m_modelPart->moduleID() == ModuleIDNames::Copper0LogoImageModuleIDName) {
+        m_modelPart->modelPartShared()->setModuleID("new" + ModuleIDNames::Copper0LogoImageModuleIDName);
+    }
+    else if (m_modelPart->moduleID() == ModuleIDNames::SchematicLogoImageModuleIDName) {
+        m_modelPart->modelPartShared()->setModuleID("new" + ModuleIDNames::SchematicLogoImageModuleIDName);
+    }
+    else if (m_modelPart->moduleID() == ModuleIDNames::BreadboardLogoImageModuleIDName) {
+        m_modelPart->modelPartShared()->setModuleID("new" + ModuleIDNames::BreadboardLogoImageModuleIDName);
+    }
 }
 
 LogoItem::~LogoItem() {
+}
+
+bool LogoItem::hasLogo() {
+    return m_hasLogo;
 }
 
 QString LogoItem::getShapeForRenderer(const QString & svg) {
@@ -836,6 +861,16 @@ QString LogoItem::flipSvgAux(QString & newSvg)
 	return newSvg;
 }
 
+QString LogoItem::getNewLayerFileName(const QString & newLayerName) {
+    if (newLayerName.isEmpty()) return "";
+
+    QString lastfilename = this->prop("lastfilename");
+    if (QFile::exists(lastfilename)) return lastfilename;
+
+    DebugDialog::debug(QString("logo item image '%1' doesn't exist").arg(lastfilename));
+    return "";
+}
+
 ///////////////////////////////////////////////////////////////////////
 
 SchematicLogoItem::SchematicLogoItem( ModelPart * modelPart, ViewLayer::ViewID viewID, const ViewGeometry & viewGeometry, long id, QMenu * itemMenu, bool doLabel)
@@ -936,12 +971,14 @@ bool BreadboardLogoItem::isBottom() {
 CopperLogoItem::CopperLogoItem( ModelPart * modelPart, ViewLayer::ViewID viewID, const ViewGeometry & viewGeometry, long id, QMenu * itemMenu, bool doLabel)
 	: LogoItem(modelPart, viewID, viewGeometry, id, itemMenu, doLabel)
 {
+    // TODO: load these names from somewhere
+
 	if (Copper1ImageNames.count() == 0) {
-		Copper1ImageNames << "Fritzing icon copper1";
+		Copper1ImageNames << "new Made with Fritzing copper1" << "new Fritzing icon copper1" << "OHANDA logo copper1" << "OSHW logo copper1";
 	}
 
 	if (Copper0ImageNames.count() == 0) {
-		Copper0ImageNames << "Fritzing icon copper0";
+		Copper0ImageNames << "new Made with Fritzing copper0" << "new Fritzing icon copper0" << "OHANDA logo copper0" << "OSHW logo copper1";
 	}
 
 	m_hasLogo = (modelPart->moduleID().endsWith(ModuleIDNames::LogoTextModuleIDName));

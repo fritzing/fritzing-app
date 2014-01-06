@@ -59,13 +59,15 @@ inline bool isCustomSvg(const QString & string) {
 
 static QHash<QString, PaletteModel *> PaletteBinModels;
 
+static QIcon EmptyIcon;
+
 //////////////////////////////////////////////
 
 PartsBinPaletteWidget::PartsBinPaletteWidget(ReferenceModel *referenceModel, HtmlInfoView *infoView, WaitPushUndoStack *undoStack, BinManager* manager) :
 	QFrame(manager)
 {
     m_binLabel = NULL;
-	m_icon = NULL;
+	m_monoIcon = m_icon = NULL;
 	m_searchLineEdit = NULL;
 	m_saveQuietly = false;
 	m_fastLoaded = false;
@@ -149,6 +151,7 @@ PartsBinPaletteWidget::~PartsBinPaletteWidget() {
 	}
    
     if (m_icon) delete m_icon;
+    if (m_monoIcon) delete m_monoIcon;
 }
 
 void PartsBinPaletteWidget::cleanup() {
@@ -331,6 +334,9 @@ void PartsBinPaletteWidget::grabTitle(const QString & title, QString & iconFilen
 		painter.end();	
 		//image.save(FolderUtils::getUserDataStorePath("") + "/test icon.png");
 		m_icon = new QIcon(QPixmap::fromImage(image));
+        m_monoIcon = new QIcon(":resources/bins/icons/Custom1-mono.png");
+
+        // TODO: hack svg to make a mono icon
 	}
 	else {
         QFileInfo info(m_fileName);
@@ -346,6 +352,15 @@ void PartsBinPaletteWidget::grabTitle(const QString & title, QString & iconFilen
 		    if (file2.exists()) {
 			    m_icon = new QIcon(path);
 		    }
+        }
+
+        if (m_icon) {
+            int ix = path.lastIndexOf(".");
+            path.insert(ix, "-mono");
+            QFile file3(path);
+            if (file3.exists()) {
+                m_monoIcon = new QIcon(path);
+            }
         }
 	}
 }
@@ -825,10 +840,19 @@ bool PartsBinPaletteWidget::currentViewIsIconView() {
 }
 
 QIcon PartsBinPaletteWidget::icon() {
-	static QIcon emptyIcon;
 	if (m_icon) return *m_icon;
 
-	return emptyIcon;
+	return EmptyIcon;
+}
+
+bool PartsBinPaletteWidget::hasMonoIcon() {
+    return m_monoIcon != NULL;
+}
+
+QIcon PartsBinPaletteWidget::monoIcon() {
+	if (m_monoIcon) return *m_monoIcon;
+
+	return EmptyIcon;
 }
 
 QMenu * PartsBinPaletteWidget::combinedMenu()

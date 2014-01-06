@@ -1,11 +1,16 @@
-<?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<!-- Created with Fritzing (http://www.fritzing.org/) -->
-<svg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' version='1.2' baseProfile='tiny' x='0in' y='0in' width='0.137861in' height='0.066in' viewBox='0 0 3.50167 1.6764' >
-<g id='schematic'>
-<line class='other' x1='2.66347' y1='0.8382' x2='0.123472' y2='0.8382' stroke='#000000' stroke-width='0.1524' stroke-linecap='round'/>
-<path class='other' fill='none' d='M3.42547,0.0762 A0.762,0.762 0 1 0 3.42547,1.6002' stroke-width='0.1524' stroke='#000000' />
-<line class='pin' id='connector0pin' connectorname='1' x1='0.123472' y1='0.8382' x2='0.123472' y2='0.8382' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
-<rect class='terminal' id='connector0terminal' x='0.123472' y='0.8382' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
-<text class='text' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#8c8c8c' font-size='0.881944' x='0.123472' y='0.467784' text-anchor='middle'>1</text>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="9.926px" height="4.752px"
+	 viewBox="0 0 9.926 4.752" enable-background="new 0 0 9.926 4.752" xml:space="preserve">
+<g id="schematic">
+	<line fill="none" stroke="#000000" stroke-width="0.75" stroke-linecap="round" x1="7.55" y1="2.376" x2="6.9" y2="2.376"/>
+	<path fill="none" stroke="#000000" stroke-width="0.75" d="M9.71,0.216c-1.192,0-2.16,0.967-2.16,2.16
+		c0,1.193,0.968,2.16,2.16,2.16"/>
+	
+		<line id="connector0pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="6.807" y1="2.376" x2="0.35" y2="2.376"/>
+	<polygon id="connector0terminal" fill="none" points="0,2.735 0,2.001 1.354,1.97 1.4,2.735 	"/>
+	<text transform="matrix(1 0 0 1 1.6553 1.8896)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">1</text>
 </g>
 </svg>

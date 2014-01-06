@@ -16,7 +16,7 @@
     <description>Description: Apply 5V and be shaken by this small, but powerful vibration motor. Works great as an physical indicator without notifying anyone but the wearer. (See: http://www.sparkfun.com/products/8468)</description>
     <views>
         <iconView>
-            <layers image="breadboard/Lilypad_Vib_Motor.svg">
+            <layers image="breadboard/Lilypad_Vibe_Motor.svg">
                 <layer layerId="icon"/>
             </layers>
         </iconView>

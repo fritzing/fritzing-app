@@ -6,7 +6,7 @@
 	 height="29.52px" viewBox="0 0 72.699 29.52" enable-background="new 0 0 72.699 29.52" xml:space="preserve">
 <g id="schematic">
 	
-		<rect x="7.55" y="0.36" fill="#FFFFFF" stroke="#000000" stroke-width="0.9" stroke-linecap="round" width="57.6" height="28.801"/>
+		<rect x="7.55" y="0.36" fill="#FFFFFF" stroke="#000000" stroke-width="0.9" stroke-linecap="round" width="57.601" height="28.802"/>
 	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="18.35" y1="11.16" x2="25.55" y2="11.16"/>
 	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="25.55" y1="11.16" x2="25.55" y2="14.76"/>
 	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="25.55" y1="14.76" x2="25.55" y2="18.36"/>
@@ -33,15 +33,15 @@
 	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="65.15" y1="14.76" x2="57.95" y2="14.76"/>
 	
 		<line id="connector1pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="0.35" y1="21.96" x2="7.55" y2="21.96"/>
-	<rect id="connector1terminal" x="0.35" y="21.96" fill="none" width="0" height="0"/>
-	<text transform="matrix(1 0 0 1 3.262 20.9104)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">2</text>
+	<polygon id="connector1terminal" fill="none" points="1.016,22.302 0,22.26 0,21.677 1.058,21.677 	"/>
+	<text transform="matrix(1 0 0 1 3.2622 20.9104)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">2</text>
 	
 		<line id="connector4pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="72.35" y1="14.76" x2="65.15" y2="14.76"/>
-	<rect id="connector4terminal" x="72.35" y="14.76" fill="none" width="0" height="0"/>
-	<text transform="matrix(1 0 0 1 68.0627 13.7092)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">5</text>
+	<polygon id="connector4terminal" fill="none" points="71.412,15.135 72.699,15.135 72.699,14.479 71.412,14.51 	"/>
+	<text transform="matrix(1 0 0 1 68.0625 13.7092)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">5</text>
 	
 		<line id="connector3pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="0.35" y1="7.56" x2="7.55" y2="7.56"/>
-	<rect id="connector3terminal" x="0.35" y="7.56" fill="none" width="0" height="0"/>
-	<text transform="matrix(1 0 0 1 3.262 6.51)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">4</text>
+	<polygon id="connector3terminal" fill="none" points="1.1,7.854 0,7.916 0,7.26 1.1,7.26 	"/>
+	<text transform="matrix(1 0 0 1 3.2622 6.51)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">4</text>
 </g>
 </svg>

@@ -298,6 +298,7 @@ QRegExp MainWindow::GuidMatcher = QRegExp("[A-Fa-f0-9]{32}");
 MainWindow::MainWindow(ReferenceModel *referenceModel, QWidget * parent) :
     FritzingWindow(untitledFileName(), untitledFileCount(), fileExtension(), parent)
 {
+    m_convertedSchematic = false;
     m_rolloverQuoteDialog = NULL;
 	setCorner(Qt::BottomRightCorner, Qt::RightDockWidgetArea);
 	setDockOptions(QMainWindow::AnimatedDocks);
@@ -840,13 +841,22 @@ void MainWindow::setCurrentFile(const QString &filename, bool addToRecent, bool 
 		QSettings settings;
 		settings.setValue("lastOpenSketch",filename);
 
-        QStringList files = settings.value("lastTabList").toStringList();
-        for (int ix = files.count() - 1; ix >= 0; ix--) {
-            if (files[ix].mid(1) == filename) {
-                bool ok;
-                int lastTab = files[ix].left(1).toInt(&ok);
-                if (ok) {
-                    setCurrentTabIndex(lastTab);
+        if (m_convertedSchematic) {
+            m_convertedSchematic = false;
+            QString gridSize = QString("%1in").arg(m_schematicGraphicsView->defaultGridSizeInches());
+            m_schematicGraphicsView->setGridSize(gridSize);
+            setCurrentTabIndex(2);
+            m_schematicGraphicsView->updateWires();
+        }
+        else {
+            QStringList files = settings.value("lastTabList").toStringList();
+            for (int ix = files.count() - 1; ix >= 0; ix--) {
+                if (files[ix].mid(1) == filename) {
+                    bool ok;
+                    int lastTab = files[ix].left(1).toInt(&ok);
+                    if (ok) {
+                        setCurrentTabIndex(lastTab);
+                    }
                 }
             }
         }

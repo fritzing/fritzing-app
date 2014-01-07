@@ -795,7 +795,10 @@ bool ModelBase::onCoreList(const QString & moduleID) {
 ModelPart * ModelBase::createOldSchematicPart(ModelPart * modelPart, QString & moduleIDRef) {
     QString schematicFilename = modelPart->imageFileName(ViewLayer::SchematicView, ViewLayer::Schematic);
     if (!schematicFilename.startsWith("schematic")) {
-        return modelPart;
+        schematicFilename = modelPart->imageFileName(ViewLayer::SchematicView, ViewLayer::SchematicFrame);
+        if (!schematicFilename.startsWith("schematic")) {
+            return modelPart;
+        }
     }
 
     DebugDialog::debug("schematic " + schematicFilename);

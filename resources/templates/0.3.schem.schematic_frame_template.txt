@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" width="%1in" height="%2in" viewBox="0 0 %3 %4" >
+<g id="schematicframe">
+<rect  x="4" y="4" width="%5" height="%6" fill="none" stroke-width="8" stroke="black" />
+<rect  x="[4]" y="{4}" width="4269" height="1448" fill="none" stroke-width="8" stroke="black" />
+<text  id="descr" x="[105]" y="{220}" font-family="Droid Sans" fill="#000000" text-anchor="left" stroke="none" stroke-width="0" font-size="143.3"></text>
+<text  id="descr+" x="[105]" y="{442}" font-family="Droid Sans" fill="#000000" text-anchor="left" stroke="none" stroke-width="0" font-size="143.3"></text>
+<line x1="[0]" y1="{553}" x2="[4277]" y2="{553}" fill="none" stroke-width="8" stroke="black" />
+<text id="project label" x="[105]" y="{758}" fill="#666666" stroke="none" stroke-width="0" font-family="'Droid Sans'" font-size="143.3"></text>
+<text  id="project" x="[888]" y="{768}" font-family="Droid Sans" fill="#000000" text-anchor="left" stroke="none" stroke-width="0" font-size="191"></text>
+<line x1="[0]" y1="{853}" x2="[4277]" y2="{853}" fill="none" stroke-width="8" stroke="black" />
+<text id="filename label" x="[105]" y="{1055}" fill="#666666" stroke="none" stroke-width="0" font-family="'Droid Sans'" font-size="143.3"></text>
+<text  id="filename" x="[888]" y="{1055}" font-family="Droid Sans" fill="#000000" text-anchor="left" stroke="none" stroke-width="0" font-size="143.3"></text>
+<text  id="rev label" x="[3123]" y="{1055}" font-family="Droid Sans" fill="#666666" text-anchor="left" stroke="none" stroke-width="0" font-size="143.3"></text>
+<text  id="rev" x="[3600]" y="{1055}" font-family="Droid Sans" fill="#000000" text-anchor="left" stroke="none" stroke-width="0" font-size="143.3"></text>
+<line x1="[0]" y1="{1153}" x2="[4277]" y2="{1153}" fill="none" stroke-width="8" stroke="black" />
+<text id="date label" x="[105]" y="{1357}" font-family="Droid Sans" fill="#666666" text-anchor="left" stroke="none" stroke-width="0" font-size="143.3"></text>
+<text id="date" x="[888]" y="{1357}" font-family="Droid Sans" fill="#000000" text-anchor="left" stroke="none" stroke-width="0" font-size="143.3"></text>
+<text  id="sheet label"  x="[3123]" y="{1375}" font-family="Droid Sans" fill="#666666" text-anchor="left" stroke="none" stroke-width="0" font-size="143.3"></text>
+<text  id="sheet"  x="[3600]" y="{1375}" font-family="Droid Sans" fill="#000000" text-anchor="left" stroke="none" stroke-width="0" font-size="143.3"></text>
+</g>
+</svg>

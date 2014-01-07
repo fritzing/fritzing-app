@@ -261,6 +261,7 @@
         <file>resources/parts/svg/core/schematic/schematiclogo.svg</file>
 	
         <file>resources/parts/svg/obsolete/schematic/0.3.schem.netlabel.svg</file>
+        <file>resources/parts/svg/obsolete/schematic/0.3.schem.frame.svg</file>
 
         <file>resources/styles/fritzing.qss</file>
         <file>resources/styles/partseditor.qss</file>
@@ -307,6 +308,7 @@
         <file>resources/bins/icons/Pololu-mono.png</file>
         <file>resources/bins/icons/Temp.png</file>
         <file>resources/bins/icons/Temp-mono.png</file>
+	
         <file>resources/templates/jumper_copper0LayerTemplate.txt</file>
         <file>resources/templates/jumper_jumperwiresLayerTemplate.txt</file>
         <file>resources/templates/bom.html</file>
@@ -338,8 +340,10 @@
         <file>resources/templates/generic_male_pin_header_bread_2nd_template.txt</file>
         <file>resources/templates/generic_sip_bread_template.txt</file>
         <file>resources/templates/schematic_frame_template.txt</file>
+        <file>resources/templates/0.3.schem.schematic_frame_template.txt</file>
         <file>resources/templates/screw_terminal_bread_template.txt</file>
         <file>resources/templates/stripboards.xml</file>
+	
         <file>resources/images/icons/zoomSlider.png</file>
         <file>resources/images/icons/zoomSliderHover.png</file>
         <file>resources/images/icons/checkhover.png</file>

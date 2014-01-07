@@ -29,12 +29,14 @@ $Date: 2013-04-22 23:44:56 +0200 (Mo, 22. Apr 2013) $
 //	direct editing (eventually)
 
 #include "schematicframe.h"
+#include "partfactory.h"
 #include "../utils/graphicsutils.h"
 #include "../utils/folderutils.h"
 #include "../utils/textutils.h"
 #include "../fsvgrenderer.h"
 #include "../sketch/infographicsview.h"
 #include "../svg/svgfilesplitter.h"
+#include "../debugdialog.h"
 #include "moduleidnames.h"
 
 
@@ -56,11 +58,8 @@ $Date: 2013-04-22 23:44:56 +0200 (Mo, 22. Apr 2013) $
 #include <QTextLayout>
 #include <QTextLine>
 
-static QString SchematicTemplate = "";
-static int OriginalWidth = 0;
-static int OriginalHeight = 0;
-static int Margin = 200;
-static double FontSize = 11;
+static TemplateThing SchematicTemplate;
+static TemplateThing OldSchematicTemplate;
 
 QHash<QString, QString> FrameProps;
 static const QString DisplayFormat("dd MMM yyyy hh:mm:ss");
@@ -106,37 +105,73 @@ SchematicFrame::~SchematicFrame() {
 }
 
 void SchematicFrame::loadTemplates() {
-	if (SchematicTemplate.isEmpty()) {
-		QFile file(":/resources/templates/schematic_frame_template.txt");
-		file.open(QFile::ReadOnly);
-		SchematicTemplate = file.readAll();
-		file.close();
+	if (SchematicTemplate.svgTemplate.isEmpty()) {
+        loadTemplate(":/resources/templates/schematic_frame_template.txt", ":/resources/parts/svg/core/schematic/frame.svg", SchematicTemplate);
+        loadTemplate(":/resources/templates/0.3.schem.schematic_frame_template.txt", ":/resources/parts/svg/obsolete/schematic/0.3.schem.frame.svg", OldSchematicTemplate);
+    }
+}
 
-		QFile file2(":/resources/parts/svg/core/schematic/frame.svg");
-		file2.open(QFile::ReadOnly);
-		QString original = file2.readAll();
-		file2.close();
+void SchematicFrame::loadTemplate(const QString & tPath, const QString & fPath, TemplateThing & templateThing)
+{
+	QFile file2(fPath);
+	file2.open(QFile::ReadOnly);
+	QString original = file2.readAll();
+	file2.close();
+    templateThing.size = QSizeF(TextUtils::getViewBoxCoord(original, 2), TextUtils::getViewBoxCoord(original, 3));
+    
+    QFile file(tPath);
+	file.open(QFile::ReadOnly);
+	templateThing.svgTemplate = file.readAll();
+	file.close();
 
-		OriginalWidth = TextUtils::getViewBoxCoord(original, 2);
-		OriginalHeight = TextUtils::getViewBoxCoord(original, 3);
 
-		QString errorStr;
-		int errorLine;
-		int errorColumn;
+        /*
 
-		QDomDocument domDocument;
-		if (!domDocument.setContent(SchematicTemplate, true, &errorStr, &errorLine, &errorColumn)) {
-			return;
-		}
+        static QRegExp NumberFinder("(=['\"][\\[\\{]{0,1})(\\d+(\\.\\d){0,1})[\\]\\}]{0,1}['\"]");
+        SchematicTemplate = OldSchematicTemplate;
+        int pos = 0;
+        while (true) {
+            int ix = NumberFinder.indexIn(SchematicTemplate, pos);
+            if (ix < 0) break;
 
-		QDomElement root = domDocument.documentElement(); 
-		QDomElement descr =TextUtils::findElementWithAttribute(root, "id", "descr");
-		QString xString = descr.attribute("x");
-		xString = xString.mid(1, xString.length() - 2); // remove the brackets;
-		Margin = xString.toInt() * 2;
-		FontSize = descr.attribute("font-size").toDouble();
+            double d = NumberFinder.cap(2).toDouble();
+            QString d3 = QString("%1").arg(d / 3, 0, 'g', 5);
+            int offset = NumberFinder.cap(0).count();
+            if (SchematicTemplate.indexOf("version", ix - 7) < 0) {
+                SchematicTemplate.replace(ix + NumberFinder.cap(1).count(), NumberFinder.cap(2).count(), d3);
+                offset += d3.count() - NumberFinder.cap(2).count();
+            } 
 
+            pos = ix + offset;
+        }
+
+        DebugDialog::debug("schematic template " + SchematicTemplate);
+
+        */
+
+
+	QString errorStr;
+	int errorLine;
+	int errorColumn;
+
+	QDomDocument domDocument;
+	if (!domDocument.setContent(templateThing.svgTemplate, true, &errorStr, &errorLine, &errorColumn)) {
+		return;
 	}
+
+    QDomElement root = domDocument.documentElement();
+	QDomElement descr =TextUtils::findElementWithAttribute(root, "id", "descr");
+	QString xString = descr.attribute("x");
+	xString = xString.mid(1, xString.length() - 2); // remove the brackets;
+	templateThing.margin = xString.toInt() * 2;
+	templateThing.fontSize = descr.attribute("font-size").toDouble();
+
+    QDomNodeList nodeList = root.elementsByTagName("rect");
+    for (int i = 0; i < nodeList.count(); i++) {
+        double sw = nodeList.at(i).toElement().attribute("stroke-width").toDouble();
+        if (sw != 0) templateThing.strokeWidth = sw;
+        break;
+    }
 }
 
 QString SchematicFrame::makeLayerSvg(ViewLayer::ViewLayerID viewLayerID, double mmW, double mmH, double milsW, double milsH) 
@@ -144,7 +179,7 @@ QString SchematicFrame::makeLayerSvg(ViewLayer::ViewLayerID viewLayerID, double 
 	Q_UNUSED(mmW);
 	Q_UNUSED(mmH);
 
-	if (SchematicTemplate.isEmpty()) return "";
+	if (SchematicTemplate.svgTemplate.isEmpty()) return "";
 
 	switch (viewLayerID) {
 		case ViewLayer::SchematicFrame:
@@ -153,24 +188,25 @@ QString SchematicFrame::makeLayerSvg(ViewLayer::ViewLayerID viewLayerID, double 
 			return "";
 	}
 
+    TemplateThing & templateThing =  moduleID().contains(PartFactory::OldSchematicPrefix) ? OldSchematicTemplate : SchematicTemplate;
+
 	if (!m_wrapInitialized) {
 		m_wrapInitialized = true;
 		QFont font = m_textEdit->font();
 		font.setFamily("Droid Sans");
 		font.setWeight(QFont::Normal);
-		font.setPointSizeF(72.0 * FontSize / GraphicsUtils::StandardFritzingDPI);
+		font.setPointSizeF(72.0 * templateThing.fontSize / GraphicsUtils::StandardFritzingDPI);
 		m_textEdit->setFont(font);
-		m_textEdit->setLineWrapColumnOrWidth(GraphicsUtils::SVGDPI * (OriginalWidth - Margin) / GraphicsUtils::StandardFritzingDPI);  
+		m_textEdit->setLineWrapColumnOrWidth(GraphicsUtils::SVGDPI * (templateThing.size.width() - templateThing.margin) / GraphicsUtils::StandardFritzingDPI);  
 	}
 
-
-	if (milsW < OriginalWidth) milsW = OriginalWidth;
-	if (milsH < OriginalHeight) milsH = OriginalHeight;
-	QString svg = SchematicTemplate.arg(milsW / 1000).arg(milsH / 1000).arg(milsW).arg(milsH).arg(milsW - 8).arg(milsH - 8);
-	svg = TextUtils::incrementTemplateString(svg, 1, milsW - OriginalWidth, TextUtils::incMultiplyPinFunction, TextUtils::noCopyPinFunction, NULL);
+	if (milsW < templateThing.size.width()) milsW = templateThing.size.width();
+	if (milsH < templateThing.size.height()) milsH = templateThing.size.height();
+	QString svg = templateThing.svgTemplate.arg(milsW / 1000).arg(milsH / 1000).arg(milsW).arg(milsH).arg(milsW - templateThing.strokeWidth).arg(milsH - templateThing.strokeWidth);
+	svg = TextUtils::incrementTemplateString(svg, 1, milsW - templateThing.size.width(), TextUtils::incMultiplyPinFunction, TextUtils::noCopyPinFunction, NULL);
 	svg.replace("{", "[");
 	svg.replace("}", "]");
-	svg = TextUtils::incrementTemplateString(svg, 1, milsH - OriginalHeight, TextUtils::incMultiplyPinFunction, TextUtils::noCopyPinFunction, NULL);
+	svg = TextUtils::incrementTemplateString(svg, 1, milsH - templateThing.size.height(), TextUtils::incMultiplyPinFunction, TextUtils::noCopyPinFunction, NULL);
 	QHash<QString, QString> hash;
 	foreach (QString propp, FrameProps.keys()) {
 		hash.insert(propp, prop(propp));
@@ -194,10 +230,11 @@ QString SchematicFrame::makeLayerSvg(ViewLayer::ViewLayerID viewLayerID, double 
 		hash.insert("descr+", string);
 	}
 
-
 	QDateTime dt;
 	dt.setTime_t(modelPart()->localProp("date").toUInt());
 	hash.insert("date", dt.toString(DisplayFormat));
+
+    DebugDialog::debug("svg " + svg);
 
 	return TextUtils::convertExtendedChars(TextUtils::replaceTextElements(svg, hash));
 }
@@ -222,11 +259,13 @@ ViewLayer::ViewID SchematicFrame::theViewID() {
 }
 
 double SchematicFrame::minWidth() {
-	return OriginalWidth * GraphicsUtils::SVGDPI / GraphicsUtils::StandardFritzingDPI;
+    double w = moduleID().contains(PartFactory::OldSchematicPrefix) ? OldSchematicTemplate.size.width() : SchematicTemplate.size.width();
+	return w * GraphicsUtils::SVGDPI / GraphicsUtils::StandardFritzingDPI;
 }
 
 double SchematicFrame::minHeight() {
-	return OriginalHeight * GraphicsUtils::SVGDPI / GraphicsUtils::StandardFritzingDPI;
+    double h = moduleID().contains(PartFactory::OldSchematicPrefix) ? OldSchematicTemplate.size.height() : SchematicTemplate.size.height();
+	return h * GraphicsUtils::SVGDPI / GraphicsUtils::StandardFritzingDPI;
 }
 
 void SchematicFrame::addedToScene(bool temporary)
@@ -394,9 +433,11 @@ bool SchematicFrame::hasPartNumberProperty()
 void SchematicFrame::setInitialSize() {
 	double w = m_modelPart->localProp("width").toDouble();
 	if (w == 0) {
+        QSizeF size = moduleID().contains(PartFactory::OldSchematicPrefix) ? OldSchematicTemplate.size : SchematicTemplate.size;
+
 		// set the size so the infoGraphicsView will display the size as you drag
-		modelPart()->setLocalProp("width", 25.4 * OriginalWidth / GraphicsUtils::StandardFritzingDPI); 
-		modelPart()->setLocalProp("height", 25.4 * OriginalHeight / GraphicsUtils::StandardFritzingDPI); 
+		modelPart()->setLocalProp("width", 25.4 * size.width() / GraphicsUtils::StandardFritzingDPI); 
+		modelPart()->setLocalProp("height", 25.4 * size.height() / GraphicsUtils::StandardFritzingDPI); 
 	}
 }
 

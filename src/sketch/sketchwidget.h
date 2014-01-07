@@ -341,6 +341,7 @@ public:
     void setGridColor(QColor);
     bool everZoomed() const;
     void setEverZoomed(bool);
+    void testConnectors();
 
 protected:
     void dragEnterEvent(QDragEnterEvent *);

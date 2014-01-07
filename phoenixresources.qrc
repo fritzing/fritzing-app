@@ -233,9 +233,6 @@
         <file>resources/parts/svg/core/icon/schematic_logo.svg</file>
         <file>resources/parts/svg/core/icon/breadboard_text.svg</file>
         <file>resources/parts/svg/core/icon/breadboard_logo.svg</file>
-        <file>resources/parts/svg/core/icon/ground.svg</file>
-        <file>resources/parts/svg/core/icon/cell.svg</file>
-        <file>resources/parts/svg/core/icon/power.svg</file>
         <file>resources/parts/svg/core/icon/jumpericon.svg</file>
         <file>resources/parts/svg/core/icon/hole.svg</file>
         <file>resources/parts/svg/core/icon/via.svg</file>
@@ -259,10 +256,7 @@
         <file>resources/parts/svg/core/pcb/via.svg</file>
         <file>resources/parts/svg/core/pcb/pad.svg</file>
         <file>resources/parts/svg/core/pcb/pad0.svg</file>
-        <file>resources/parts/svg/core/schematic/ground.svg</file>
         <file>resources/parts/svg/core/schematic/netlabel.svg</file>
-        <file>resources/parts/svg/core/schematic/cell.svg</file>
-        <file>resources/parts/svg/core/schematic/power.svg</file>
         <file>resources/parts/svg/core/schematic/frame.svg</file>
         <file>resources/parts/svg/core/schematic/schematiclogo.svg</file>
 	

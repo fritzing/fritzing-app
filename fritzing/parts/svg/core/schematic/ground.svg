@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="14.4px" height="14.4px" viewBox="0 0 14.4 14.4" enable-background="new 0 0 14.4 14.4" xml:space="preserve">
+<g id="schematic">
+	<path id="connector0pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" d="M7.201,7.575v-7.2"/>
+	<rect id="connector0terminal" x="6.728" y="0" fill="none" width="0.945" height="0.953"/>
+	<path id="path4098" fill="none" stroke="#000000" stroke-width="0.9" stroke-linecap="round" d="M0.5,7.711H13.9"/>
+	<path id="path4100" fill="none" stroke="#000000" stroke-width="0.9" stroke-linecap="round" d="M2.732,10.456h8.935"/>
+	<path id="path4102" fill="none" stroke="#000000" stroke-width="0.9" stroke-linecap="round" d="M9.431,13.175H4.967"/>
+</g>
+</svg>

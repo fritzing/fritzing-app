@@ -949,6 +949,11 @@ void MainWindow::createPartMenuActions() {
 	m_dumpAllPartsAction = new QAction(tr("Dump all parts"), this);
 	m_dumpAllPartsAction->setStatusTip(tr("Debug dump all parts in this view"));
 	connect(m_dumpAllPartsAction, SIGNAL(triggered()), this, SLOT(dumpAllParts()));
+
+	m_testConnectorsAction = new QAction(tr("Test Connectors"), this);
+	m_testConnectorsAction->setStatusTip(tr("Connect all connectors to a single test part"));
+	connect(m_testConnectorsAction, SIGNAL(triggered()), this, SLOT(testConnectors()));
+
 #endif
 
 
@@ -3446,6 +3451,7 @@ QMenu *MainWindow::viewItemMenuAux(QMenu* menu) {
 	menu->addAction(m_infoViewOnHoverAction);
 	menu->addAction(m_exportNormalizedSvgAction);
 	menu->addAction(m_exportNormalizedFlattenedSvgAction);
+	menu->addAction(m_testConnectorsAction);
 #endif
 
     connect(
@@ -4478,4 +4484,10 @@ void MainWindow::updateExportMenu() {
     foreach (QAction * action, m_exportMenu->actions()) {
         action->setEnabled(enabled);
     }
+}
+
+void MainWindow::testConnectors() {
+    if (m_currentGraphicsView == NULL) return;
+
+    m_currentGraphicsView->testConnectors();
 }

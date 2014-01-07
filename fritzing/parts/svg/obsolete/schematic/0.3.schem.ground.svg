@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+         width="22.426px" height="30.349px" viewBox="0 0 22.426 30.349">
+        <g id="schematic">
+                <path id="connector0pin" fill="none" stroke="#000000" stroke-width="2.4" d="M11.214,21.26V0"/>
+                <rect id="connector0terminal" x="10.74" fill="none" width="0.945" height="0.953"/>
+                <path id="path4098" fill="none" stroke="#000000" stroke-width="2.4" d="M0,21.26h22.426"/>
+                <path id="path4100" fill="none" stroke="#000000" stroke-width="2.4" d="M3.736,25.205h14.952"/>
+                <path id="path4102" fill="none" stroke="#000000" stroke-width="2.4" d="M14.945,29.148H7.476"/>
+        </g>
+</svg>

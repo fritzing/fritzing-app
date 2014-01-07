@@ -927,6 +927,7 @@ protected:
 	QPointer<ConnectorItem> m_activeConnectorItem;
     bool m_addedToTemp;
     QString m_settingsPrefix;
+    bool m_convertedSchematic;
 
     // dock management
 	QList<FDockWidget*> m_docks;

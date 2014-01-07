@@ -407,6 +407,7 @@ protected slots:
 	void exportNormalizedSVG();
 	void exportNormalizedFlattenedSVG();
     void dumpAllParts();
+    void testConnectors();
 
 	void launchExternalProcess();
 	bool externalProcess(QString & name, QString & path, QStringList & args);
@@ -751,6 +752,7 @@ protected:
 	QAction *m_exportNormalizedSvgAction;
 	QAction *m_exportNormalizedFlattenedSvgAction;
 	QAction *m_dumpAllPartsAction;
+	QAction *m_testConnectorsAction;
     QAction *m_openInPartsEditorNewAct;
     QMenu *m_addToBinMenu;
 

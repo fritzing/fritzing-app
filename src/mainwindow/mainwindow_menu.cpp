@@ -472,8 +472,12 @@ void MainWindow::mainLoad(const QString & fileName, const QString & displayName,
         }
     }
 
+    if (m_convertedSchematic) {
+    }
+
 
     initZoom();
+
 }
 
 void MainWindow::copy() {
@@ -3555,8 +3559,17 @@ void MainWindow::oldSchematicsSlot(const QString &filename, bool & useOldSchemat
 	QFileInfo info(filename);
     FMessageBox messageBox(NULL);
 	messageBox.setWindowTitle(tr("Schematic view update"));
-	messageBox.setText(tr("With version 0.8.5, there is a new graphics standard for schematic view part images.\n\nWould you like to convert '%1' to the new standard now or open it read-only?\n").arg(info.fileName()));
-	messageBox.setInformativeText(tr("The conversion process will not modify '%1', until you save the file. It will be necessary for you to rearrange parts and connections in the schematic view, as the sizes of most part images will have changed.").arg(info.fileName()));
+	messageBox.setText(tr("There is a new graphics standard for schematic-view part images, beginning with version 0.8.6.\n\n") +
+                        tr("Would you like to convert '%1' to the new standard now or open the file read-only?\n").arg(info.fileName())
+                        );
+	messageBox.setInformativeText("<ul><li>" +  
+                                    tr("The conversion process will not modify '%1', until you save the file. ").arg(info.fileName()) +
+                                    + "</li><li>" +
+                                    tr("You will have to rearrange parts and connections in schematic view, as the sizes of most part images will have changed. Consider using the Autorouter to clean up traces. ") + 
+                                    + "</li><li>" +
+                                    tr("Note that any custom parts will not be converted. A tool for converting 'rectangular' schematic images is available in the Parts Editor.") +
+                                    + "</li></ul>"
+                                 );
 	messageBox.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
 	messageBox.setDefaultButton(QMessageBox::Yes);
 	messageBox.setIcon(QMessageBox::Question);
@@ -3568,7 +3581,8 @@ void MainWindow::oldSchematicsSlot(const QString &filename, bool & useOldSchemat
 	if (answer == QMessageBox::No) {
         useOldSchematics = true;
         this->setReadOnly(true);
-	}        
+	} 
+    else m_convertedSchematic = true;
 }
 
 void MainWindow::loadedRootSlot(const QString & fname, ModelBase *, QDomElement & root) {

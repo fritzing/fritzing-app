@@ -428,8 +428,8 @@ void PEMainWindow::closeEvent(QCloseEvent *event)
 	}
 
 	QSettings settings;
-	settings.setValue(m_settingsPrefix + "state",saveState());
-	settings.setValue(m_settingsPrefix + "geometry",saveGeometry());
+	settings.setValue(m_settingsPrefix + "state", saveState());
+	settings.setValue(m_settingsPrefix + "geometry", saveGeometry());
 
 	QMainWindow::closeEvent(event);
 }
@@ -568,6 +568,10 @@ void PEMainWindow::createFileMenuActions() {
 	m_reusePCBAct = new QAction(tr("Reuse PCB image"), this);
 	m_reusePCBAct->setStatusTip(tr("Reuse the PCB image in this view"));
 	connect(m_reusePCBAct, SIGNAL(triggered()), this, SLOT(reusePCB()));
+
+	m_convertToTenthAct = new QAction(tr("Resize old schematic"), this);
+	m_convertToTenthAct->setStatusTip(tr("Resize pre-0.8.6 'rectangular' schematic  to new 0.1 inch standard"));
+	connect(m_convertToTenthAct, SIGNAL(triggered()), this, SLOT(convertToTenth()));
 }
 
 void PEMainWindow::createActions()
@@ -610,6 +614,7 @@ void PEMainWindow::createFileMenu() {
     m_fileMenu->addAction(m_reuseBreadboardAct);
     m_fileMenu->addAction(m_reuseSchematicAct);
     m_fileMenu->addAction(m_reusePCBAct);
+    m_fileMenu->addAction(m_convertToTenthAct);
 
     //m_fileMenu->addAction(m_revertAct);
 
@@ -3637,10 +3642,11 @@ void PEMainWindow::updateFileMenu() {
 	m_reusePCBAct->setEnabled(enableAll && enabled.value(ViewLayer::PCBView));
 	*/
 
-	bool enabled = m_currentGraphicsView && m_currentGraphicsView->viewID() == ViewLayer::IconView;
+	bool enabled = m_currentGraphicsView != NULL && m_currentGraphicsView->viewID() == ViewLayer::IconView;
 	m_reuseBreadboardAct->setEnabled(enabled);
 	m_reuseSchematicAct->setEnabled(enabled);
 	m_reusePCBAct->setEnabled(enabled);
+    m_convertToTenthAct->setEnabled (m_currentGraphicsView != NULL && m_currentGraphicsView->viewID() == ViewLayer::SchematicView);
 }
 
 void PEMainWindow::setImageAttribute(QDomElement & fzpRoot, const QString & svgPath, ViewLayer::ViewID viewID)
@@ -3942,4 +3948,23 @@ void PEMainWindow::updateExportMenu() {
     foreach (QAction * action, m_exportMenu->actions()) {
         action->setEnabled(false);
     }
+}
+
+void PEMainWindow::convertToTenth() {
+    if (m_currentGraphicsView == NULL) return;
+    if (m_currentGraphicsView->viewID() != ViewLayer::SchematicView) return;
+
+    QString originalFzpPath = saveFzp();
+    QString newFzpPath = saveFzp();
+
+	ViewThing * viewThing = m_viewThings.value(m_currentGraphicsView->viewID());
+    QString originalSvgPath = viewThing->itemBase->filename();
+    QString newSvgPath = m_userPartsFolderSvgPath + makeSvgPath2(m_currentGraphicsView);
+
+    if (false) return;          // if conversion fails
+
+    QUndoCommand * parentCommand = new QUndoCommand("Convert Schematic");
+    new ChangeFzpCommand(this, originalFzpPath, newFzpPath, parentCommand);
+    new ChangeSvgCommand(this, m_currentGraphicsView, originalSvgPath, newSvgPath, parentCommand);
+    m_undoStack->waitPush(parentCommand, SketchWidget::PropChangeDelay);
 }

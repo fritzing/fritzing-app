@@ -31,7 +31,7 @@
   </iconView>
   <breadboardView>
    <layers image="schematic/frame.svg" >
-       <layer layerId="unknown" />
+       <layer layerId="schematic" />
    </layers>
   </breadboardView>
   <schematicView>
@@ -41,7 +41,7 @@
   </schematicView>
   <pcbView>
    <layers image="schematic/frame.svg" >
-   <layer layerId="unknown" />
+   <layer layerId="schematic" />
    </layers>
   </pcbView>
  </views>

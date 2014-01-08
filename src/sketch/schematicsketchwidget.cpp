@@ -330,7 +330,7 @@ void SchematicSketchWidget::setVoltage(double v, bool doEmit)
 }
 
 double SchematicSketchWidget::defaultGridSizeInches() {
-	return GraphicsUtils::StandardSchematicSeparationMils / 1000;
+	return GraphicsUtils::StandardSchematicSeparation10thinMils / 1000;
 }
 
 ViewLayer::ViewLayerID SchematicSketchWidget::getLabelViewLayerID(ItemBase *) {

@@ -342,6 +342,7 @@ public:
     bool everZoomed() const;
     void setEverZoomed(bool);
     void testConnectors();
+    void updateWires();
 
 protected:
     void dragEnterEvent(QDragEnterEvent *);

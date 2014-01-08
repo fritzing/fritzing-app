@@ -37,6 +37,10 @@ public:
     bool onefzp(QString & fzpFilePath, QString & schematicFilePath);
     void setSvgDirs(QDir & oldDir, QDir & newDir);
 
+
+signals:
+    void messageSignal(const QString & message);
+
 protected:
     void message(const QString &);
     void saveFile(const QString & content, const QString & path);

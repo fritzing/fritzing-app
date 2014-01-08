@@ -226,6 +226,7 @@ void S2S::message(const QString & msg) {
    // cout.flush();
 
 	qDebug() << msg;
+    emit messageSignal(msg);
 }
 
 void S2S::saveFile(const QString & content, const QString & path) 
@@ -260,7 +261,7 @@ bool S2S::onefzp(QString & fzpFilePath, QString & schematicFilePath) {
 
 	QDomDocument dom;
 	if (!dom.setContent(&file, true, &errorStr, &errorLine, &errorColumn)) {
-		message(QString("failed loading fzp %1, %2 line:%3 col:%4").arg(fzpFilePath).arg(errorStr).arg(errorLine).arg(errorColumn));
+		message(tr("Failed loading '%1', %2 line:%3 col:%4").arg(fzpFilePath).arg(errorStr).arg(errorLine).arg(errorColumn));
 		return false;
 	}
 
@@ -290,7 +291,7 @@ bool S2S::onefzp(QString & fzpFilePath, QString & schematicFilePath) {
         }
 
         if (schematicFileName.isEmpty()) {
-		    message(QString("schematic not found for fzp %1").arg(fzpFilePath));
+		    message(tr("Schematic not found for '%1'").arg(fzpFilePath));
             return false;
         }
 
@@ -312,7 +313,7 @@ bool S2S::onefzp(QString & fzpFilePath, QString & schematicFilePath) {
     QSvgRenderer renderer;
     bool loaded = renderer.load(schematicFilePath);
     if (!loaded) {
-		message(QString("unable to load schematic %1 for fzp %2").arg(schematicFilePath).arg(fzpFilePath));
+		message(tr("Unable to load schematic '%1' for '%2'").arg(schematicFilePath).arg(fzpFilePath));
         return false;
     }
 
@@ -323,6 +324,12 @@ bool S2S::onefzp(QString & fzpFilePath, QString & schematicFilePath) {
         qDebug() << "\tempty viewbox";
     }
     double oldUnit = lrtb(connectorLocations, viewBox);
+
+    if (qAbs(oldUnit - SchematicRectConstants::NewUnit) < (SchematicRectConstants::NewUnit / 25)) {
+		message(tr("Schematic '%1' is already using the 0.1inch standard.").arg(schematicFilePath));
+        return false;
+    }
+
     setHidden(connectorLocations);
 
     double minPinV = 0;
@@ -571,7 +578,7 @@ QList<ConnectorLocation *> S2S::initConnectors(const QDomElement & root, const Q
         QDomElement schematicView = connector.firstChildElement("views").firstChildElement("schematicView");
         QString svgID = schematicView.firstChildElement("p").attribute("svgId");
         if (svgID.isEmpty()) {
-            message(QString("missing connector %1 in %2 schematic of %3").arg(connector.attribute("id")).arg(svgFilename).arg(fzpFilename));
+            message(tr("Missing connector %1 in '%2' schematic of '%3'").arg(connector.attribute("id")).arg(svgFilename).arg(fzpFilename));
         }
         else {
             ConnectorLocation * connectorLocation = new ConnectorLocation;
@@ -747,8 +754,8 @@ double S2S::lrtb(QList<ConnectorLocation *> & connectorLocations, const QRectF &
 
     double oldUnit = biggestIndex * m_fudge;
 
-    message(QString("\tunit is roughly %1, bin:%2 pins:%3 fudge:%4").arg(oldUnit).arg(biggest).arg(totalPins).arg(m_fudge));
-    message(QString("\tl:%1 t:%2 r:%3 b:%4").arg(m_lefts.count()).arg(m_tops.count()).arg(m_rights.count()).arg(m_bottoms.count()));
+    qDebug() << QString("\tunit is roughly %1mm, bin:%2 pins:%3 fudge:%4").arg(oldUnit).arg(biggest).arg(totalPins).arg(m_fudge);
+    qDebug() << QString("\tl:%1 t:%2 r:%3 b:%4").arg(m_lefts.count()).arg(m_tops.count()).arg(m_rights.count()).arg(m_bottoms.count());
 
     return oldUnit;
 }
@@ -783,7 +790,7 @@ bool S2S::ensureTerminalPoints(const QString & fzpFilePath, const QString & svgF
     QSvgRenderer renderer;
     bool loaded = renderer.load(svgFilePath);
     if (!loaded) {
-		message(QString("unabled to load schematic %1 for fzp %2").arg(svgFilePath).arg(fzpFilePath));
+		message(tr("Uunable to load schematic '%1' for '%2'").arg(svgFilePath).arg(fzpFilePath));
         return false;
     }
 
@@ -794,7 +801,7 @@ bool S2S::ensureTerminalPoints(const QString & fzpFilePath, const QString & svgF
     QFile file(svgFilePath);
 	QDomDocument dom;
 	if (!dom.setContent(&file, true, &errorStr, &errorLine, &errorColumn)) {
-		message(QString("failed loading schematic %1, %2 line:%3 col:%4").arg(svgFilePath).arg(errorStr).arg(errorLine).arg(errorColumn));
+		message(tr("Failed loading schematic '%1', %2 line:%3 col:%4").arg(svgFilePath).arg(errorStr).arg(errorLine).arg(errorColumn));
 		return false;
 	}
 

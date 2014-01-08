@@ -111,6 +111,8 @@ public slots:
 	void smdChanged(const QString &);
 	void showing(SketchWidget *);
     void updateExportMenu();
+    void updateEditMenu();
+    void s2sMessageSlot(const QString & message);
 
 protected:
 	void closeEvent(QCloseEvent * event);

@@ -24,6 +24,7 @@
 
 #include "../../src/utils/textutils.h"
 #include "../../src/utils/schematicrectconstants.h"
+#include "../../src/utils/s2s.h"
 
 #include <limits>
 

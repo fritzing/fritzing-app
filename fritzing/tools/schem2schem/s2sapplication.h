@@ -8,9 +8,6 @@
 #include <QDomElement>
 #include <QSvgRenderer>
 
-
-#include "s2s.h"
-
 class S2SApplication : public QCoreApplication
 {
     Q_OBJECT

@@ -612,6 +612,7 @@ void PinHeader::initSpacings() {
 		Spacings.insert("2.54mm", "0.09843in (2.54mm)");
 		Spacings.insert("100mil", ShroudedSpacing);
 		Spacings.insert("150mil", "0.15in (3.81mm)");
+        Spacings.insert("0.156in", "0.156in (3.96mm)");
 		Spacings.insert("200mil", "0.2in (5.08mm)");
 	}
 }

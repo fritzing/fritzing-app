@@ -298,7 +298,7 @@ QRegExp MainWindow::GuidMatcher = QRegExp("[A-Fa-f0-9]{32}");
 MainWindow::MainWindow(ReferenceModel *referenceModel, QWidget * parent) :
     FritzingWindow(untitledFileName(), untitledFileCount(), fileExtension(), parent)
 {
-    m_convertedSchematic = false;
+    m_useOldSchematic = m_convertedSchematic = false;
     m_rolloverQuoteDialog = NULL;
 	setCorner(Qt::BottomRightCorner, Qt::RightDockWidgetArea);
 	setDockOptions(QMainWindow::AnimatedDocks);
@@ -840,6 +840,8 @@ void MainWindow::setCurrentFile(const QString &filename, bool addToRecent, bool 
 	if(setAsLastOpened) {
 		QSettings settings;
 		settings.setValue("lastOpenSketch",filename);
+
+        m_useOldSchematic = false;
 
         if (m_convertedSchematic) {
             m_convertedSchematic = false;

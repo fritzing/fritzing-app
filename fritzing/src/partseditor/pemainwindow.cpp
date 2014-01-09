@@ -588,7 +588,7 @@ void PEMainWindow::createActions()
     createEditMenuActions();
 
 	m_convertToTenthAct = new QAction(tr("Convert schematic to 0.1 inch standard"), this);
-	m_convertToTenthAct->setStatusTip(tr("Resize pre-0.8.6 'rectangular' schematic  to new 0.1 inch standard"));
+	m_convertToTenthAct->setStatusTip(tr("Convert pre-0.8.6 schematic image to new 0.1 inch standard"));
 	connect(m_convertToTenthAct, SIGNAL(triggered()), this, SLOT(convertToTenth()));
 
 	m_deleteBusConnectionAct = new WireAction(tr("Remove Internal Connection"), this);

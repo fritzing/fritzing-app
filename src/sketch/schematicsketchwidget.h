@@ -83,6 +83,7 @@ public:
     QHash<QString, QString> getAutorouterSettings();
     void setAutorouterSettings(QHash<QString, QString> &);
 	ViewLayer::ViewLayerPlacement getViewLayerPlacement(ModelPart *, QDomElement & instance, QDomElement & view, ViewGeometry &);
+    void setConvertSchematic(bool);
     
 public slots:
 	void setVoltage(double voltage, bool doEmit);
@@ -103,9 +104,11 @@ protected:
     void selectAllWires(ViewGeometry::WireFlag flag);
     bool canConnect(Wire * from, ItemBase * to);
     QString checkDroppedModuleID(const QString & moduleID);
+    void viewGeometryConversionHack(ViewGeometry &, ModelPart *);
 
 protected:
 	QTimer m_updateDotsTimer;
+    bool m_convertSchematic;
 
     static QSizeF m_jumperItemSize;
 

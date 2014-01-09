@@ -430,7 +430,9 @@ void MainWindow::mainLoad(const QString & fileName, const QString & displayName,
 	}
 
 	newIDs.clear();
+    m_schematicGraphicsView->setConvertSchematic(m_convertedSchematic);
 	m_schematicGraphicsView->loadFromModelParts(modelParts, BaseCommand::SingleView, NULL, false, NULL, false, newIDs);
+    m_schematicGraphicsView->setConvertSchematic(false);
 
 	ProcessEventBlocker::processEvents();
 	if (m_fileProgressDialog) {

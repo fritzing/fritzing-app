@@ -928,6 +928,7 @@ protected:
     bool m_addedToTemp;
     QString m_settingsPrefix;
     bool m_convertedSchematic;
+    bool m_useOldSchematic;
 
     // dock management
 	QList<FDockWidget*> m_docks;

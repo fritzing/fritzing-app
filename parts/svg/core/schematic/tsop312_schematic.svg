@@ -2,28 +2,37 @@
 <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="_x30_" xmlns:xml="http://www.w3.org/XML/1998/namespace"
-	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="81px" height="56px"
-	 viewBox="0 0 81 56" enable-background="new 0 0 81 56" xml:space="preserve">
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="37.333px" height="28.4px"
+	 viewBox="0 -0.5 37.333 28.4" enable-background="new 0 -0.5 37.333 28.4" xml:space="preserve">
 <desc  oldid="0.0" id="0.0">
 	<referenceFile  oldid="0.0.0" id="0.0.0">schematic.svg</referenceFile>
 </desc>
-<polygon id="_x30_.2" points="64.387,12.616 70.855,4.67 74.195,9.655 "/>
-<polygon id="_x30_.3" points="68.419,18.639 74.895,10.693 78.23,15.678 "/>
-<polygon id="_x30_.4" points="69.863,10.15 68.751,8.489 75.396,4.036 76.512,5.697 "/>
-<polygon id="_x30_.5" points="73.898,16.173 72.786,14.512 79.434,10.057 80.546,11.718 "/>
-<path id="_x30_.6" fill="none" stroke="#000000" stroke-width="0.2387" stroke-linecap="round" stroke-linejoin="round" d="
-	M53.292,10.261c8.259,0,14.953,6.695,14.953,14.953c0,8.259-6.694,14.953-14.953,14.953"/>
-<rect id="_x30_.7" x="23.724" y="0.119" fill="none" stroke="#000000" stroke-width="0.2387" stroke-linecap="round" stroke-linejoin="round" width="29.75" height="54.25"/>
-<line id="connector2pin" fill="none" stroke="#000000" stroke-width="0.672" stroke-linecap="round" stroke-linejoin="round" x1="1.277" y1="27.004" x2="23.398" y2="27.004"/>
-<rect id="connector2terminal" x="0.918" y="27.003" fill="none" width="0.046" height="0.001"/>
-<line id="connector1pin" fill="none" stroke="#000000" stroke-width="0.672" stroke-linecap="round" stroke-linejoin="round" x1="1.277" y1="5.743" x2="23.398" y2="5.743"/>
-<rect id="connector1terminal" x="0.918" y="5.742" fill="none" width="0.046" height="0.001"/>
-<line id="connector0pin" fill="none" stroke="#000000" stroke-width="0.672" stroke-linecap="round" stroke-linejoin="round" x1="1.277" y1="48.264" x2="23.398" y2="48.264"/>
-<rect id="connector0terminal" x="0.918" y="48.264" fill="none" width="0.046" height="0.001"/>
-<rect id="connector8" y="3.483" fill="none" width="4" height="4"/>
-<rect id="connector9" x="0.851" y="24.973" fill="none" width="4" height="4"/>
-<rect id="connector10" x="0.638" y="46.036" fill="none" width="4" height="4"/>
-<text transform="matrix(1 0 0 1 27.0889 8.6431)" font-family="'Droid Sans'" font-size="9">Vcc</text>
-<text transform="matrix(1 0 0 1 27.0889 29.959)" font-family="'Droid Sans'" font-size="9">DATA</text>
-<text transform="matrix(1 0 0 1 27.0889 52.1309)" font-family="'Droid Sans'" font-size="9">GND</text>
+<polygon id="_x30_.2" points="27.989,7.241 31.676,2.712 33.579,5.553 "/>
+<polygon id="_x30_.3" points="30.288,10.673 33.978,6.145 35.879,8.986 "/>
+<polygon id="_x30_.4" points="31.11,5.835 30.477,4.889 34.264,2.352 34.899,3.298 "/>
+<polygon id="_x30_.5" points="33.41,9.268 32.776,8.321 36.564,5.783 37.198,6.729 "/>
+<path id="_x30_.6" fill="none" stroke="#000000" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round" d="
+	M21.667,5.899c4.707,0,8.521,3.815,8.521,8.521c0,4.707-3.814,8.521-8.521,8.521"/>
+<rect id="_x30_.7" x="7.2" y="-0.05" fill="none" stroke="#000000" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round" width="14.4" height="27.499"/>
+<g>
+	
+		<line id="connector1pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round" x1="0.35" y1="6.703" x2="7.55" y2="6.703"/>
+	<polygon id="connector1terminal" fill="none" points="0,7.085 0,6.314 1.313,6.335 1.333,7.043 	"/>
+</g>
+<rect id="connector8" y="4.879" fill="none" width="4" height="0.708"/>
+<g>
+	
+		<line id="connector2pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round" x1="0.35" y1="13.9" x2="7.55" y2="13.9"/>
+	<polygon id="connector2terminal" fill="none" points="0,13.552 1.031,13.568 1.078,14.24 0,14.255 	"/>
+	<rect id="connector9" y="13.525" fill="none" width="4" height="0.75"/>
+</g>
+<g>
+	
+		<line id="connector0pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round" x1="0.35" y1="21.093" x2="7.55" y2="21.093"/>
+	<polygon id="connector0terminal" fill="none" points="0,20.751 1.313,20.767 1.297,21.47 0,21.47 	"/>
+	<rect id="connector10" y="20.725" fill="none" width="4" height="0.75"/>
+</g>
+<text transform="matrix(1 0 0 1 9.7041 7.7271)" font-family="'DroidSans'" font-size="3.5">Vcc</text>
+<text transform="matrix(1 0 0 1 9.7041 15.041)" font-family="'DroidSans'" font-size="3.5">DATA</text>
+<text transform="matrix(1 0 0 1 9.7041 22.1763)" font-family="'DroidSans'" font-size="3.5">GND</text>
 </svg>

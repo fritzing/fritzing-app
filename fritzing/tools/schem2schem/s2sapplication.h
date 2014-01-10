@@ -8,28 +8,9 @@
 #include <QDomElement>
 #include <QSvgRenderer>
 
-
-struct ConnectorLocation {
-    QString svgID;
-    QString terminalID;
-    QString name;
-    int id;
-    QRectF bounds;
-    QPointF terminalPoint;
-    bool hidden;
-    bool displayPinNumber;
-
-    enum Side {
-        Unknown,
-        Left,
-        Top,
-        Right,
-        Bottom
-    };
-};
-
 class S2SApplication : public QCoreApplication
 {
+    Q_OBJECT
 public:
     S2SApplication(int argc, char *argv[]);
     void start();
@@ -39,14 +20,6 @@ protected:
     void message(const QString &);
     bool initArguments();
     void saveFile(const QString & content, const QString & path);
-    void onefzp(QString & filename);
-    double stringWidthMM(double fontSize, const QString & string);
-    QList<ConnectorLocation *> initConnectors(const QDomElement & root, const QSvgRenderer &, const QString & fzpFilename, const QString & svgFilename);
-    double lrtb(QList<ConnectorLocation *> &, const QRectF & viewBox);
-    void setHidden(QList<ConnectorLocation *> &);
-    bool ensureTerminalPoints(const QString & fzpFilename, const QString & svgFilename, QDomElement & fzpRoot);
-    double spaceTitle(QStringList & titles, int openUnits);
-
 
 protected:
     QString m_fzpPath;
@@ -55,19 +28,8 @@ protected:
     QDir m_oldSvgDir;
     QString m_newSvgPath;
     QDir m_newSvgDir;
-    bool m_fzpzStyle;
     QString m_filePath;
-    QString m_andPath;
-    double m_minLeft;
-    double m_minTop;
-    double m_maxRight;
-    double m_maxBottom;
-    QList<ConnectorLocation *> m_lefts;
-    QList<ConnectorLocation *> m_tops;
-    QList<ConnectorLocation *> m_rights;
-    QList<ConnectorLocation *> m_bottoms;
-    QImage * m_image;
-    double m_fudge;
+    bool m_fzpzStyle;
 };
 
 

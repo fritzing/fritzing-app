@@ -42,8 +42,8 @@ QSizeF SchematicSketchWidget::m_jumperItemSize = QSizeF(0, 0);
 
 static QString SchematicTraceColor = "black";
 static const double TraceHoverStrokeFactor = 3;
-
-static const double TraceWidthMils = 33.3333;
+static const double TraceWidthMils = 9.7222;
+static const double TraceWidthMilsOld = 33.3333;
 
 bool sameGround(ConnectorItem * c1, ConnectorItem * c2) 
 {
@@ -518,3 +518,26 @@ ViewLayer::ViewLayerPlacement SchematicSketchWidget::getViewLayerPlacement(Model
     return SketchWidget::getViewLayerPlacement(modelPart, instance, view, viewGeometry);
 }
 
+
+void SchematicSketchWidget::viewGeometryConversionHack(ViewGeometry & viewGeometry, ModelPart * modelPart) {
+    if (!m_convertSchematic) return;
+    if (modelPart->itemType() == ModelPart::Wire) return;
+    if (viewGeometry.transform().isIdentity()) return;
+
+	ViewGeometry vg;
+    ItemBase * itemBase = addItemAuxTemp(modelPart, ViewLayer::NewTop, vg, 0, true, viewID(), true);
+    double rotation;
+    if (GraphicsUtils::isFlipped(viewGeometry.transform().toAffine(), rotation)) {
+        itemBase->flipItem(Qt::Horizontal);
+    }
+    itemBase->rotateItem(rotation, false);
+    itemBase->saveGeometry();
+    viewGeometry.setTransform(itemBase->getViewGeometry().transform());
+
+    foreach (ItemBase * kin, itemBase->layerKin()) delete kin;
+    delete itemBase;
+}
+
+void SchematicSketchWidget::setConvertSchematic(bool convert) {
+    m_convertSchematic = convert;
+}

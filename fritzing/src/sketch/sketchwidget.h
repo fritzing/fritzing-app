@@ -519,6 +519,7 @@ protected:
     void squashShapes(QPointF scenePos);
     void unsquashShapes();
     virtual bool updateOK(ConnectorItem *, ConnectorItem *);
+    virtual void viewGeometryConversionHack(ViewGeometry &, ModelPart *);
 
 protected:
 	static bool lessThan(int a, int b);

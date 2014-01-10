@@ -84,6 +84,9 @@ public:
     void setAutorouterSettings(QHash<QString, QString> &);
 	ViewLayer::ViewLayerPlacement getViewLayerPlacement(ModelPart *, QDomElement & instance, QDomElement & view, ViewGeometry &);
     void setConvertSchematic(bool);
+    void setOldSchematic(bool);
+    void resizeWires();
+    void resizeLabels();
     
 public slots:
 	void setVoltage(double voltage, bool doEmit);
@@ -109,6 +112,7 @@ protected:
 protected:
 	QTimer m_updateDotsTimer;
     bool m_convertSchematic;
+    bool m_oldSchematic;
 
     static QSizeF m_jumperItemSize;
 

@@ -10101,10 +10101,11 @@ void SketchWidget::testConnectors()
 
 void SketchWidget::updateWires() {
     QList<ConnectorItem *> already;
+    ViewGeometry::WireFlag traceFlag = getTraceFlag();
     foreach (QGraphicsItem * item, scene()->items()) {
         Wire * wire = dynamic_cast<Wire *>(item);
         if (wire == NULL) continue;
-        if (!wire->isTraceType(getTraceFlag())) continue;
+        if (!wire->isTraceType(traceFlag)) continue;
 
         ConnectorItem * from = wire->connector0()->firstConnectedToIsh();
         if (from != NULL) wire->connectedMoved(from, wire->connector0(), already);

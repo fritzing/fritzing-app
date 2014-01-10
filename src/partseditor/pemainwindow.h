@@ -111,6 +111,8 @@ public slots:
 	void smdChanged(const QString &);
 	void showing(SketchWidget *);
     void updateExportMenu();
+    void updateEditMenu();
+    void s2sMessageSlot(const QString & message);
 
 protected:
 	void closeEvent(QCloseEvent * event);
@@ -214,6 +216,7 @@ protected slots:
 	void reuseBreadboard();
 	void reuseSchematic();
 	void reusePCB();
+    void convertToTenth();
 	void hideOtherViews();
     void updateLayerMenu(bool resetLayout = false);
 	void updateAssignedConnectors();
@@ -239,6 +242,7 @@ protected:
     QAction * m_reuseSchematicAct;
     QAction * m_reusePCBAct;
 	QAction * m_hideOtherViewsAct;
+    QAction * m_convertToTenthAct;
 
 	QPointer<SketchAreaWidget> m_iconWidget;
 	QPointer<class IconSketchWidget> m_iconGraphicsView;

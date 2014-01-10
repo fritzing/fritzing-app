@@ -168,6 +168,7 @@ $Date: 2013-04-22 01:45:43 +0200 (Mo, 22. Apr 2013) $
 #include "../utils/graphicsutils.h"
 #include "../utils/textutils.h"
 #include "../utils/folderutils.h"
+#include "../utils/s2s.h"
 #include "../mainwindow/fdockwidget.h"
 #include "../fsvgrenderer.h"
 #include "../partsbinpalette/binmanager/binmanager.h"
@@ -428,8 +429,8 @@ void PEMainWindow::closeEvent(QCloseEvent *event)
 	}
 
 	QSettings settings;
-	settings.setValue(m_settingsPrefix + "state",saveState());
-	settings.setValue(m_settingsPrefix + "geometry",saveGeometry());
+	settings.setValue(m_settingsPrefix + "state", saveState());
+	settings.setValue(m_settingsPrefix + "geometry", saveGeometry());
 
 	QMainWindow::closeEvent(event);
 }
@@ -568,6 +569,7 @@ void PEMainWindow::createFileMenuActions() {
 	m_reusePCBAct = new QAction(tr("Reuse PCB image"), this);
 	m_reusePCBAct->setStatusTip(tr("Reuse the PCB image in this view"));
 	connect(m_reusePCBAct, SIGNAL(triggered()), this, SLOT(reusePCB()));
+
 }
 
 void PEMainWindow::createActions()
@@ -584,6 +586,10 @@ void PEMainWindow::createActions()
 	connect(m_showInOSAct, SIGNAL(triggered()), this, SLOT(showInOS()));
 
     createEditMenuActions();
+
+	m_convertToTenthAct = new QAction(tr("Convert schematic to 0.1 inch standard"), this);
+	m_convertToTenthAct->setStatusTip(tr("Convert pre-0.8.6 schematic image to new 0.1 inch standard"));
+	connect(m_convertToTenthAct, SIGNAL(triggered()), this, SLOT(convertToTenth()));
 
 	m_deleteBusConnectionAct = new WireAction(tr("Remove Internal Connection"), this);
 	connect(m_deleteBusConnectionAct, SIGNAL(triggered()), this, SLOT(deleteBusConnection()));
@@ -639,6 +645,9 @@ void PEMainWindow::createEditMenu()
     m_editMenu = menuBar()->addMenu(tr("&Edit"));
     m_editMenu->addAction(m_undoAct);
     m_editMenu->addAction(m_redoAct);
+    m_editMenu->addSeparator();
+    m_editMenu->addAction(m_convertToTenthAct);
+
     updateEditMenu();
     connect(m_editMenu, SIGNAL(aboutToShow()), this, SLOT(updateEditMenu()));
 }
@@ -3637,7 +3646,7 @@ void PEMainWindow::updateFileMenu() {
 	m_reusePCBAct->setEnabled(enableAll && enabled.value(ViewLayer::PCBView));
 	*/
 
-	bool enabled = m_currentGraphicsView && m_currentGraphicsView->viewID() == ViewLayer::IconView;
+	bool enabled = m_currentGraphicsView != NULL && m_currentGraphicsView->viewID() == ViewLayer::IconView;
 	m_reuseBreadboardAct->setEnabled(enabled);
 	m_reuseSchematicAct->setEnabled(enabled);
 	m_reusePCBAct->setEnabled(enabled);
@@ -3943,3 +3952,37 @@ void PEMainWindow::updateExportMenu() {
         action->setEnabled(false);
     }
 }
+
+void PEMainWindow::convertToTenth() {
+    if (m_currentGraphicsView == NULL) return;
+    if (m_currentGraphicsView->viewID() != ViewLayer::SchematicView) return;
+
+    QString originalFzpPath = saveFzp();
+    QString newFzpPath = saveFzp();
+
+	ViewThing * viewThing = m_viewThings.value(m_currentGraphicsView->viewID());
+    QString originalSvgPath = viewThing->itemBase->filename();
+    QString newSvgPath = m_userPartsFolderSvgPath + makeSvgPath2(m_currentGraphicsView);
+    QFile::copy(originalSvgPath, newSvgPath);
+
+    S2S s2s(false);
+    connect(&s2s, SIGNAL(messageSignal(const QString &)), this, SLOT(s2sMessageSlot(const QString &)));
+    bool result = s2s.onefzp(newFzpPath, newSvgPath);
+
+    if (!result) return;          // if conversion fails
+
+    QUndoCommand * parentCommand = new QUndoCommand("Convert Schematic");
+    new ChangeFzpCommand(this, originalFzpPath, newFzpPath, parentCommand);
+    new ChangeSvgCommand(this, m_currentGraphicsView, originalSvgPath, newSvgPath, parentCommand);
+    m_undoStack->waitPush(parentCommand, SketchWidget::PropChangeDelay);
+}
+
+void PEMainWindow::s2sMessageSlot(const QString & message) {
+    QMessageBox::information(this, "Schematic Conversion", message);
+}
+
+void PEMainWindow::updateEditMenu() {
+    MainWindow::updateEditMenu();
+    m_convertToTenthAct->setEnabled(m_currentGraphicsView != NULL && m_currentGraphicsView->viewID() == ViewLayer::SchematicView);
+}
+

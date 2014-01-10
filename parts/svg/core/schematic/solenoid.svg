@@ -9,8 +9,8 @@
 		c0-0.634-0.515-1.15-1.15-1.15c0.635,0,1.15-0.515,1.15-1.15c0-0.635-0.515-1.15-1.15-1.15c0.635,0,1.15-0.515,1.15-1.15
 		s-0.515-1.15-1.15-1.15h-0.056v-1.155"/>
 </g>
-<line id="connector0pin_3_" fill="none" stroke="#555555" stroke-width="0.7" stroke-linecap="round" x1="0.754" y1="0" x2="0.754" y2="7.2"/>
-<line id="connector0pin_4_" fill="none" stroke="#555555" stroke-width="0.7" stroke-linecap="round" x1="0.754" y1="21.611" x2="0.754" y2="28.811"/>
+<line id="connector3pin" fill="none" stroke="#555555" stroke-width="0.7" stroke-linecap="round" x1="0.754" y1="0" x2="0.754" y2="7.2"/>
+<line id="connector4pin" fill="none" stroke="#555555" stroke-width="0.7" stroke-linecap="round" x1="0.754" y1="21.611" x2="0.754" y2="28.811"/>
 <rect x="3.458" y="0.576" width="2.938" height="5.862"/>
 <g>
 	

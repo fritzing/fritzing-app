@@ -122,4 +122,14 @@
             </views>
         </connector>
     </connectors>
+        <buses>
+    <bus id="bus0">
+		<nodeMember connectorId="connector1"/>
+		<nodeMember connectorId="connector2"/>
+	</bus>
+	<bus id="bus1">
+		<nodeMember connectorId="connector3"/>
+		<nodeMember connectorId="connector4"/>
+</bus>
+</buses>
 </module>

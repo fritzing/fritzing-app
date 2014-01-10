@@ -848,6 +848,8 @@ void MainWindow::setCurrentFile(const QString &filename, bool addToRecent, bool 
             QString gridSize = QString("%1in").arg(m_schematicGraphicsView->defaultGridSizeInches());
             m_schematicGraphicsView->setGridSize(gridSize);
             setCurrentTabIndex(2);
+            m_schematicGraphicsView->resizeLabels();
+            m_schematicGraphicsView->resizeWires();
             m_schematicGraphicsView->updateWires();
         }
         else {

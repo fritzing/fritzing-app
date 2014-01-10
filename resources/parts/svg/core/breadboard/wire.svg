@@ -9,8 +9,6 @@
 
 <g id="breadboardWire" >
 <g id="breadboardRatsnest" >
-<g id="schematicWire" >
-<g id="schematicTrace" >
 <g id="ratsnest" >
 <g id="copper0" >
 <g id="copper1" >
@@ -27,6 +25,12 @@
 </g>
 </g>
 </g>
+
+
+<g id="schematicTrace" >
+<g id="schematicWire" >
+<rect x="-1" y="-1" width="2" height="2" id="connector0pin"/>
+<rect x="99.0" y="99.0"  width="2" height="2" id="connector1pin"/>
 </g>
 </g>
 </svg>

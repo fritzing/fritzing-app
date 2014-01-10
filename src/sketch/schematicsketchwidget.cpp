@@ -29,6 +29,7 @@ $Date: 2013-04-21 09:50:09 +0200 (So, 21. Apr 2013) $
 #include "../items/virtualwire.h"
 #include "../items/symbolpaletteitem.h"
 #include "../items/tracewire.h"
+#include "../items/partlabel.h"
 #include "../connectors/connectoritem.h"
 #include "../waitpushundostack.h"
 #include "../items/moduleidnames.h"
@@ -545,4 +546,29 @@ void SchematicSketchWidget::setOldSchematic(bool old) {
 
 void SchematicSketchWidget::setConvertSchematic(bool convert) {
     m_convertSchematic = convert;
+}
+
+void SchematicSketchWidget::resizeWires() {
+    double tw = getTraceWidth();
+    double sw = getWireStrokeWidth(NULL, tw);
+    foreach (QGraphicsItem * item, scene()->items()) {
+        Wire * wire = dynamic_cast<Wire *>(item);
+        if (wire == NULL) continue;
+        if (!wire->isTraceType(getTraceFlag())) continue;
+
+        wire->setWireWidth(tw, this, sw);
+    }
+}
+
+void SchematicSketchWidget::resizeLabels() {
+
+    double fontSize = getLabelFontSizeSmall();
+    foreach (QGraphicsItem * item, scene()->items()) {
+        ItemBase * itemBase = dynamic_cast<ItemBase *>(item);
+        if (itemBase == NULL) continue;
+
+        if (itemBase->hasPartLabel() && itemBase->partLabel() != NULL) {
+            itemBase->partLabel()->setFontPointSize(fontSize);
+        }
+    }
 }

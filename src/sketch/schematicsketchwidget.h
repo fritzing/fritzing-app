@@ -85,6 +85,8 @@ public:
 	ViewLayer::ViewLayerPlacement getViewLayerPlacement(ModelPart *, QDomElement & instance, QDomElement & view, ViewGeometry &);
     void setConvertSchematic(bool);
     void setOldSchematic(bool);
+    void resizeWires();
+    void resizeLabels();
     
 public slots:
 	void setVoltage(double voltage, bool doEmit);

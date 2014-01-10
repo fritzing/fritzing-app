@@ -1,28 +1,43 @@
-<?xml version='1.0' encoding='utf-8'?>
-<!-- Generator: Adobe Illustrator 13.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 14948)  -->
-<svg xmlns="http://www.w3.org/2000/svg" width="0.884944in" xml:space="preserve" xmlns:xml="http://www.w3.org/XML/1998/namespace" x="0px" version="1.2" y="0px" height="0.869639in" viewBox="0 0 63.716 62.614" baseProfile="tiny" id="svg2">
- <rect xmlns="http://www.w3.org/2000/svg" width="1.895" x="17.797" y="1.824" height="9.783" id="connector2pin"/>
- <rect xmlns="http://www.w3.org/2000/svg" width="0.867" x="18.275" y="1.14" height="0.684" id="connector2terminal"/>
- <rect xmlns="http://www.w3.org/2000/svg" width="1.893" x="17.801" y="52.541" height="9.783" id="connector0pin"/>
- <rect xmlns="http://www.w3.org/2000/svg" width="0.867" x="18.279" y="62.253" height="0.687" id="connector0terminal"/>
- <rect xmlns="http://www.w3.org/2000/svg" width="1.894" x="29.861" y="42.203" height="9.783" id="connector1pin"/>
- <rect xmlns="http://www.w3.org/2000/svg" width="0.866" x="30.409" y="51.986" height="0.684" id="connector1terminal"/>
- <g xmlns="http://www.w3.org/2000/svg" id="schematic">
-  <g xmlns="http://www.w3.org/2000/svg">
-   <polyline xmlns="http://www.w3.org/2000/svg" fill="#FFFFFF" points="18.729,1.866 18.729,19.923 22.229,21.785 14.979,25.82 22.229,29.854 14.979,33.889 22.229,37.923 14.979,41.958 18.729,44.13 18.729,62.033 " stroke="#000000" stroke-linecap="round" stroke-width="2.2284"/>
-   <polygon xmlns="http://www.w3.org/2000/svg" points="0.862,22.294 10.897,24.382 8.009,29.642 "/>
-   <polyline xmlns="http://www.w3.org/2000/svg" fill="none" points="5.927,25.103 30.803,38.76 30.803,51.686 " stroke="#000000" stroke-linecap="round" stroke-width="2.2284"/>
-  </g>
-  <g xmlns="http://www.w3.org/2000/svg">
-   <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000" stroke-linecap="round" y1="43.91" stroke-width="2.2284" x1="61.877" y2="61.814" x2="61.877"/>
-   <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000" stroke-linecap="round" y1="1.647" stroke-width="2.2284" x1="61.877" y2="19.703" x2="61.877"/>
-   <line xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000" stroke-linecap="round" y1="43.91" stroke-width="2.2" x1="61.877" y2="21.199" x2="52.299"/>
-  </g>
-  <circle xmlns="http://www.w3.org/2000/svg" cx="61.877" cy="19.703" r="2.701"/>
-  <circle xmlns="http://www.w3.org/2000/svg" cx="61.877" cy="43.909" r="2.7"/>
- </g>
- <rect xmlns="http://www.w3.org/2000/svg" width="1.894" x="60.945" y="1.604" height="9.782" id="connector4pin"/>
- <rect xmlns="http://www.w3.org/2000/svg" width="0.867" x="61.424" y="0.922" height="0.685" id="connector4terminal"/>
- <rect xmlns="http://www.w3.org/2000/svg" width="1.895" x="60.947" y="52.322" height="9.781" id="connector3pin"/>
- <rect xmlns="http://www.w3.org/2000/svg" width="0.867" x="61.427" y="62.035" height="0.688" id="connector3terminal"/>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="svg2" xmlns:xml="http://www.w3.org/XML/1998/namespace"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="37.608px"
+	 height="43.213px" viewBox="0 0 37.608 43.213" enable-background="new 0 0 37.608 43.213" xml:space="preserve">
+<g id="schematic">
+	<polyline fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="4.147,17.557 21.622,27.475 
+		21.622,37.742 	"/>
+	<polygon points="4.252,19.505 0,15.188 5.841,16.8 	"/>
+	<polyline fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" points="14.423,36 14.423,34.559 11.543,32.401 
+		18.023,28.799 11.543,25.199 18.023,21.6 11.543,18 18.023,14.401 11.543,10.8 14.423,8.64 14.423,7.2 	"/>
+	<path id="connector1terminal" fill="none" d="M21.99,43.199v-1.053l-0.672,0.016v1.037H21.99z"/>
+	
+		<line id="connector1pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" x1="21.643" y1="42.85" x2="21.643" y2="36"/>
+	
+		<line id="connector0pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" x1="14.422" y1="42.85" x2="14.422" y2="36"/>
+	<path id="connector0terminal" fill="none" d="M14.069,42.178h0.703l-0.031,1.021h-0.656L14.069,42.178z"/>
+	
+		<text transform="matrix(-1.836970e-016 -1 1 -1.836970e-016 12.1304 40.1038)" fill="#787878" font-family="'DroidSans'" font-size="2">1</text>
+	
+		<text transform="matrix(-1.836970e-016 -1 1 -1.836970e-016 20.3413 39.9397)" fill="#787878" font-family="'DroidSans'" font-size="2">3</text>
+	
+		<line id="connector2pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" x1="14.422" y1="0.35" x2="14.422" y2="7.55"/>
+	<path id="connector2terminal" fill="none" d="M14.085,0l-0.021,1.344l0.688-0.016L14.756,0H14.085z"/>
+	
+		<text transform="matrix(-1.836970e-016 -1 1 -1.836970e-016 12.1528 4.4397)" fill="#787878" font-family="'DroidSans'" font-size="2">2</text>
+	<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="36.051" y1="23.56" x2="36.051" y2="7.092"/>
+	<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="36.05" y1="35.698" x2="32.451" y2="23.098"/>
+	<circle fill="none" stroke="#000000" stroke-width="0.7" cx="36.05" cy="35.698" r="0.359"/>
+	<circle fill="none" stroke="#000000" stroke-width="0.7" cx="36.051" cy="7.092" r="0.359"/>
+	
+		<line id="connector3pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" x1="36.05" y1="42.899" x2="36.05" y2="35.698"/>
+	<polygon id="connector3terminal" fill="none" points="36.389,43.213 35.717,43.213 35.686,42.041 36.389,42.026 	"/>
+	
+		<line id="connector4pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" x1="36.051" y1="0.372" x2="36.051" y2="7.092"/>
+	<polygon id="connector4terminal" fill="none" points="35.702,1.213 35.717,0 36.405,0 36.405,1.244 	"/>
+	
+		<text transform="matrix(-4.371139e-008 -1 1 -4.371139e-008 34.8081 40.1389)" fill="#787878" font-family="'DroidSans'" font-size="2">4</text>
+	
+		<text transform="matrix(-4.371139e-008 -1 1 -4.371139e-008 34.8081 4.5681)" fill="#787878" font-family="'DroidSans'" font-size="2">5</text>
+</g>
 </svg>

@@ -430,7 +430,9 @@ void MainWindow::mainLoad(const QString & fileName, const QString & displayName,
 	}
 
 	newIDs.clear();
+    m_schematicGraphicsView->setConvertSchematic(m_convertedSchematic);
 	m_schematicGraphicsView->loadFromModelParts(modelParts, BaseCommand::SingleView, NULL, false, NULL, false, newIDs);
+    m_schematicGraphicsView->setConvertSchematic(false);
 
 	ProcessEventBlocker::processEvents();
 	if (m_fileProgressDialog) {
@@ -463,7 +465,7 @@ void MainWindow::mainLoad(const QString & fileName, const QString & displayName,
         m_programView->linkFiles(m_linkedProgramFiles, fileInfo.absoluteDir().absolutePath());
     }
 
-    if (checkObsolete) {
+    if (!m_useOldSchematic && checkObsolete) {
         if (m_pcbGraphicsView) {
             QList<ItemBase *> items = m_pcbGraphicsView->selectAllObsolete();
 	        if (items.count() > 0) {
@@ -471,10 +473,6 @@ void MainWindow::mainLoad(const QString & fileName, const QString & displayName,
             }
         }
     }
-
-    if (m_convertedSchematic) {
-    }
-
 
     initZoom();
 
@@ -3549,10 +3547,10 @@ void MainWindow::obsoleteSMDOrientationSlot() {
 }
 
 void MainWindow::oldSchematicsSlot(const QString &filename, bool & useOldSchematics) {
-    useOldSchematics = false;
+    useOldSchematics = m_convertedSchematic = m_useOldSchematic = false;
 
     if (m_readOnly) {
-        useOldSchematics = true;
+        useOldSchematics = m_useOldSchematic = true;
         return;
     }
 
@@ -3579,10 +3577,12 @@ void MainWindow::oldSchematicsSlot(const QString &filename, bool & useOldSchemat
 	QMessageBox::StandardButton answer = (QMessageBox::StandardButton) messageBox.exec();
 
 	if (answer == QMessageBox::No) {
-        useOldSchematics = true;
+        useOldSchematics = m_useOldSchematic = true;
         this->setReadOnly(true);
 	} 
-    else m_convertedSchematic = true;
+    else {
+        m_convertedSchematic = true;
+    }
 }
 
 void MainWindow::loadedRootSlot(const QString & fname, ModelBase *, QDomElement & root) {

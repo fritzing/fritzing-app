@@ -332,6 +332,7 @@ void SketchWidget::loadFromModelParts(QList<ModelPart *> & modelParts, BaseComma
 		// use a function of the model index to ensure the same parts have the same ID across views
 		long newID = ItemBase::getNextID(mp->modelIndex());
 		if (parentCommand == NULL) {
+            viewGeometryConversionHack(viewGeometry, mp);
 			ItemBase * itemBase = addItemAux(mp, viewLayerPlacement, viewGeometry, newID, true, m_viewID, false);
 			if (itemBase != NULL) {
 				if (locked) {
@@ -10110,4 +10111,7 @@ void SketchWidget::updateWires() {
         ConnectorItem * to = wire->connector1()->firstConnectedToIsh();
         if (to != NULL) wire->connectedMoved(to, wire->connector1(), already);
     }
+}
+
+void SketchWidget::viewGeometryConversionHack(ViewGeometry &, ModelPart *)  {
 }

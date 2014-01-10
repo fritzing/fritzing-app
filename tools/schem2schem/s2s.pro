@@ -13,10 +13,12 @@ CONFIG -= app_bundle
 TEMPLATE = app
 SOURCES += main.cpp \
     s2sapplication.cpp \
+    ../../src/utils/s2s.cpp \
     ../../src/utils/textutils.cpp \
     ../../src/utils/schematicrectconstants.cpp \
    
 HEADERS += s2sapplication.h \
+    ../../src/utils/s2s.h \
     ../../src/utils/textutils.h \
     ../../src/utils/schematicrectconstants.h \
 

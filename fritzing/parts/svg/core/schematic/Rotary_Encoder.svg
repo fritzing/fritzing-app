@@ -7,16 +7,16 @@
 <g id="schematic">
 	<rect x="14.75" y="0.36" fill="#FFFFFF" stroke="#000000" stroke-width="0.9" stroke-linecap="round" width="28.8" height="57.6"/>
 	
-		<line id="connector4pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="0.35" y1="29.16" x2="14.75" y2="29.16"/>
-	<rect id="connector4terminal" x="0.35" y="29.16" fill="none" width="0" height="0"/>
+		<line id="connector2pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="0.35" y1="29.16" x2="14.75" y2="29.16"/>
+	<rect id="connector2terminal" x="0.35" y="29.16" fill="none" width="0" height="0"/>
 	<text transform="matrix(1 0 0 1 6.8613 28.1101)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">5</text>
 	
-		<line id="connector2pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="57.951" y1="7.56" x2="43.55" y2="7.56"/>
-	<rect id="connector2terminal" x="57.951" y="7.56" fill="none" width="0" height="0"/>
+		<line id="connector0pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="57.951" y1="7.56" x2="43.55" y2="7.56"/>
+	<rect id="connector0terminal" x="57.951" y="7.56" fill="none" width="0" height="0"/>
 	<text transform="matrix(1 0 0 1 50.062 6.5105)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">3</text>
 	
-		<line id="connector3pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="57.951" y1="50.76" x2="43.55" y2="50.76"/>
-	<rect id="connector3terminal" x="57.951" y="50.76" fill="none" width="0" height="0"/>
+		<line id="connector1pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="57.951" y1="50.76" x2="43.55" y2="50.76"/>
+	<rect id="connector1terminal" x="57.951" y="50.76" fill="none" width="0" height="0"/>
 	<text transform="matrix(1 0 0 1 50.062 49.7097)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">4</text>
 	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="41.75" y1="7.56" x2="43.55" y2="7.56"/>
 	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="29.15" y1="7.56" x2="41.75" y2="3.96"/>

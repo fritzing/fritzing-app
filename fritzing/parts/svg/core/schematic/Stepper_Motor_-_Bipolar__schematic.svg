@@ -2,20 +2,19 @@
 <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1"
-	 id="svg2" sodipodi:version="0.32" inkscape:output_extension="org.inkscape.output.svg.inkscape" inkscape:version="0.46" sodipodi:docname="StepperMotor-Bipolar_schematic.svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:cc="http://creativecommons.org/ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns:dc="http://purl.org/dc/elements/1.1/"
-	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="51.147px"
+	xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="51.147px"
 	 height="51.301px" viewBox="0.009 0 51.147 51.301" enable-background="new 0.009 0 51.147 51.301" xml:space="preserve">
 <g id="schematic">
 	
 		<rect id="part_symbol" x="7.659" y="0.45" fill="#FFFFFF" stroke="#000000" stroke-width="0.7796" stroke-linecap="round" width="43.2" height="43.2"/>
 	<text transform="matrix(1 0 0 1 3.2336 27.6365)" fill="#787878" font-family="'DroidSans'" font-size="2">C</text>
-	<g id="g3256" transform="matrix(1.2500001,0,0,1.2500001,201.9491,375.78003)">
+	<g transform="matrix(1.2500001,0,0,1.2500001,201.9491,375.78003)">
 		<path id="path3892_2_" fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" stroke-linejoin="round" d="
 			M-155.432-277.233h4.175v-1.325c0.625,0,1.132-0.508,1.132-1.132s-0.507-1.132-1.132-1.132c0.625,0,1.132-0.506,1.132-1.132
 			c0-0.625-0.507-1.132-1.132-1.132c0.625,0,1.132-0.507,1.132-1.132s-0.507-1.132-1.132-1.132c0.625,0,1.132-0.507,1.132-1.132
 			s-0.507-1.132-1.132-1.132h-0.055v-1.137h-4.12"/>
 	</g>
-	<g id="g3256_1_" transform="matrix(1.2500001,0,0,1.2500001,201.9491,375.78003)">
+	<g transform="matrix(1.2500001,0,0,1.2500001,201.9491,375.78003)">
 		<path id="path3892_1_" fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" stroke-linejoin="round" d="
 			M-132.392-265.704v-4.175h-1.325c0-0.625-0.508-1.132-1.132-1.132c-0.625,0-1.132,0.507-1.132,1.132
 			c0-0.625-0.506-1.132-1.132-1.132c-0.625,0-1.132,0.507-1.132,1.132c0-0.625-0.507-1.132-1.132-1.132s-1.132,0.507-1.132,1.132

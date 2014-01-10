@@ -2204,7 +2204,7 @@ PCBSketchWidget {
 BreadboardSketchWidget {
 	qproperty-gridColor: rgba(0,50,100,20);
 	qproperty-ratsnestOpacity: 1.0;
-	qproperty-ratsnestWidth: 0.5;
+	qproperty-ratsnestWidth: 1.0;
 }
 
 SchematicSketchWidget {

@@ -1,35 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="11.301px" height="28.8px" viewBox="0 0 11.301 28.8" enable-background="new 0 0 11.301 28.8" xml:space="preserve">
-<g id="g3256" transform="matrix(1.2500001,0,0,1.2500001,201.9491,375.78003)">
+	 width="11.301px" height="29.6px" viewBox="0 0 11.301 29.6" enable-background="new 0 0 11.301 29.6" xml:space="preserve">
+<g id="schematic">
 	<path id="path3892_2_" fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="round" stroke-linejoin="round" d="
-		M-160.956-283.166v-1.346c0.635,0,1.206-0.516,1.206-1.15c0-0.634-0.515-1.149-1.15-1.149c0.635,0,1.15-0.514,1.15-1.149
-		c0-0.634-0.515-1.15-1.15-1.15c0.635,0,1.15-0.515,1.15-1.15c0-0.635-0.515-1.15-1.15-1.15c0.635,0,1.15-0.515,1.15-1.15
-		s-0.515-1.15-1.15-1.15h-0.056v-1.155"/>
-</g>
-<line id="connector3pin" fill="none" stroke="#555555" stroke-width="0.7" stroke-linecap="round" x1="0.754" y1="0" x2="0.754" y2="7.2"/>
-<line id="connector4pin" fill="none" stroke="#555555" stroke-width="0.7" stroke-linecap="round" x1="0.754" y1="21.611" x2="0.754" y2="28.811"/>
-<rect x="3.458" y="0.576" width="2.938" height="5.862"/>
-<g>
+		M0.755,22.223v-1.683c0.794,0,1.508-0.645,1.508-1.438s-0.644-1.437-1.438-1.437c0.793,0,1.438-0.643,1.438-1.437
+		c0-0.792-0.644-1.438-1.438-1.438c0.793,0,1.438-0.644,1.438-1.438c0-0.794-0.644-1.438-1.438-1.438
+		c0.793,0,1.438-0.644,1.438-1.438S1.619,9.042,0.826,9.042h-0.07V7.599"/>
+	<rect id="connector1terminal" x="0.485" y="27.35" fill="none" width="0.541" height="2.25"/>
 	
-		<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="square" stroke-linejoin="round" stroke-miterlimit="12" x1="3.823" y1="8.051" x2="3.823" y2="20.725"/>
+		<line id="connector0pin" fill="none" stroke="#555555" stroke-width="0.7" stroke-linecap="round" x1="0.755" y1="0.4" x2="0.755" y2="7.6"/>
+	<rect id="connector0terminal" x="0.485" fill="none" width="0.541" height="2.25"/>
 	
-		<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="square" stroke-linejoin="round" stroke-miterlimit="12" x1="6.091" y1="8.051" x2="6.091" y2="20.725"/>
-</g>
-<g>
-	<g>
-		<g>
-			
-				<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="square" stroke-linejoin="round" x1="8.368" y1="2.417" x2="8.368" y2="4.597"/>
-			<g>
-				<polygon points="7.098,2.791 8.375,0.576 9.654,2.791 				"/>
-			</g>
-			<g>
-				<polygon points="7.098,4.223 8.375,6.438 9.654,4.223 				"/>
-			</g>
-		</g>
-	</g>
+		<line id="connector1pin" fill="none" stroke="#555555" stroke-width="0.7" stroke-linecap="round" x1="0.755" y1="22.011" x2="0.755" y2="29.211"/>
+	<rect x="3.459" y="0.976" width="2.938" height="5.862"/>
+	
+		<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="square" stroke-linejoin="round" stroke-miterlimit="12" x1="3.825" y1="8.451" x2="3.825" y2="21.125"/>
+	
+		<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="square" stroke-linejoin="round" stroke-miterlimit="12" x1="6.092" y1="8.451" x2="6.092" y2="21.125"/>
+	
+		<line fill="none" stroke="#000000" stroke-width="0.45" stroke-linecap="square" stroke-linejoin="round" x1="8.369" y1="2.817" x2="8.369" y2="4.997"/>
+	<polygon points="7.099,3.191 8.376,0.976 9.655,3.191 	"/>
+	<polygon points="7.099,4.623 8.376,6.838 9.655,4.623 	"/>
 </g>
 </svg>

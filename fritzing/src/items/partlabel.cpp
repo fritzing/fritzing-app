@@ -782,7 +782,11 @@ void PartLabel::setFontSize(int action) {
 			return;
 	}
 	m_font.setPointSize(fs);
+}
 
+void PartLabel::setFontPointSize(double pointSize) {
+    m_font.setPointSize(pointSize);
+    resetSvg();
 }
 
 void PartLabel::setLabelDisplay(const QString & key) {

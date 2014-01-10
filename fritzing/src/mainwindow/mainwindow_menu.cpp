@@ -431,6 +431,7 @@ void MainWindow::mainLoad(const QString & fileName, const QString & displayName,
 
 	newIDs.clear();
     m_schematicGraphicsView->setConvertSchematic(m_convertedSchematic);
+    m_schematicGraphicsView->setOldSchematic(this->m_useOldSchematic);
 	m_schematicGraphicsView->loadFromModelParts(modelParts, BaseCommand::SingleView, NULL, false, NULL, false, newIDs);
     m_schematicGraphicsView->setConvertSchematic(false);
 

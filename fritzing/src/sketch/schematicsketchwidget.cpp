@@ -29,6 +29,7 @@ $Date: 2013-04-21 09:50:09 +0200 (So, 21. Apr 2013) $
 #include "../items/virtualwire.h"
 #include "../items/symbolpaletteitem.h"
 #include "../items/tracewire.h"
+#include "../items/partlabel.h"
 #include "../connectors/connectoritem.h"
 #include "../waitpushundostack.h"
 #include "../items/moduleidnames.h"
@@ -58,6 +59,7 @@ bool sameGround(ConnectorItem * c1, ConnectorItem * c2)
 SchematicSketchWidget::SchematicSketchWidget(ViewLayer::ViewID viewID, QWidget *parent)
     : PCBSketchWidget(viewID, parent)
 {
+    m_oldSchematic = m_convertSchematic = false;
 	m_shortName = QObject::tr("schem");
 	m_viewName = QObject::tr("Schematic View");
 	initBackgroundColor();
@@ -131,13 +133,13 @@ void SchematicSketchWidget::getBendpointWidths(Wire * wire, double width, double
 {
 	Q_UNUSED(wire);
 	bendpointWidth = -width - 1;
-	bendpoint2Width = width + 3;
+	bendpoint2Width = width + ((m_oldSchematic) ? 3 : 1);
 	negativeOffsetRect = true;
 }
 
 void SchematicSketchWidget::getLabelFont(QFont & font, QColor & color, ItemBase *) {
 	font.setFamily("Droid Sans");
-	font.setPointSize(9);
+	font.setPointSize(getLabelFontSizeSmall());
 	font.setBold(false);
 	font.setItalic(false);
 	color.setAlpha(255);
@@ -379,7 +381,7 @@ ViewGeometry::WireFlag SchematicSketchWidget::getTraceFlag() {
 }
 
 double SchematicSketchWidget::getTraceWidth() {
-	return GraphicsUtils::SVGDPI * TraceWidthMils / 1000;
+	return GraphicsUtils::SVGDPI * ((m_oldSchematic ) ? TraceWidthMilsOld : TraceWidthMils) / 1000;
 }
 
 double SchematicSketchWidget::getAutorouterTraceWidth() {
@@ -538,6 +540,35 @@ void SchematicSketchWidget::viewGeometryConversionHack(ViewGeometry & viewGeomet
     delete itemBase;
 }
 
+void SchematicSketchWidget::setOldSchematic(bool old) {
+    m_oldSchematic = old;
+}
+
 void SchematicSketchWidget::setConvertSchematic(bool convert) {
     m_convertSchematic = convert;
+}
+
+void SchematicSketchWidget::resizeWires() {
+    double tw = getTraceWidth();
+    double sw = getWireStrokeWidth(NULL, tw);
+    foreach (QGraphicsItem * item, scene()->items()) {
+        Wire * wire = dynamic_cast<Wire *>(item);
+        if (wire == NULL) continue;
+        if (!wire->isTraceType(getTraceFlag())) continue;
+
+        wire->setWireWidth(tw, this, sw);
+    }
+}
+
+void SchematicSketchWidget::resizeLabels() {
+
+    double fontSize = getLabelFontSizeSmall();
+    foreach (QGraphicsItem * item, scene()->items()) {
+        ItemBase * itemBase = dynamic_cast<ItemBase *>(item);
+        if (itemBase == NULL) continue;
+
+        if (itemBase->hasPartLabel() && itemBase->partLabel() != NULL) {
+            itemBase->partLabel()->setFontPointSize(fontSize);
+        }
+    }
 }

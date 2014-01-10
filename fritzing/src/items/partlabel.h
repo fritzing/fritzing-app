@@ -69,6 +69,7 @@ public:
     void displayTextsIf();
 	QString makeSvg(bool blackOnly, double dpi, double printerScale, bool includeTransform);
 	void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
+    void setFontPointSize(double pointSize);
 
 protected:
 	void mousePressEvent(QGraphicsSceneMouseEvent *event);

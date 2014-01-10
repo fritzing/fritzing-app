@@ -84,6 +84,7 @@ later:
 #include <stdlib.h>
 
 QVector<qreal> Wire::TheDash;
+QVector<qreal> RatDash;
 QBrush BandedBrush(QColor(255, 255, 255));
 
 
@@ -329,6 +330,9 @@ void Wire::paintBody(QPainter * painter, const QStyleOptionGraphicsItem * option
         m_pen.setCapStyle(Qt::FlatCap);
     }
 
+    if (getRatsnest()) {
+        m_pen.setDashPattern(RatDash);
+    }
 	painter->setPen(m_pen);
 	if (painterPath.isEmpty()) {
 		painter->drawLine(getPaintLine());	
@@ -1233,6 +1237,8 @@ void Wire::initNames() {
 
     TheDash.clear();
     TheDash << 10 << 8;
+    RatDash.clear();
+    RatDash << 2 << 2;
 
 	widths << 8 << 12 << 16 << 24 << 32 << 48;
     int i = 0;

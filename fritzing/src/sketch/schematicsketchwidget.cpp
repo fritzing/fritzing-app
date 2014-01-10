@@ -58,6 +58,7 @@ bool sameGround(ConnectorItem * c1, ConnectorItem * c2)
 SchematicSketchWidget::SchematicSketchWidget(ViewLayer::ViewID viewID, QWidget *parent)
     : PCBSketchWidget(viewID, parent)
 {
+    m_oldSchematic = m_convertSchematic = false;
 	m_shortName = QObject::tr("schem");
 	m_viewName = QObject::tr("Schematic View");
 	initBackgroundColor();
@@ -131,13 +132,13 @@ void SchematicSketchWidget::getBendpointWidths(Wire * wire, double width, double
 {
 	Q_UNUSED(wire);
 	bendpointWidth = -width - 1;
-	bendpoint2Width = width + 3;
+	bendpoint2Width = width + ((m_oldSchematic) ? 3 : 1);
 	negativeOffsetRect = true;
 }
 
 void SchematicSketchWidget::getLabelFont(QFont & font, QColor & color, ItemBase *) {
 	font.setFamily("Droid Sans");
-	font.setPointSize(9);
+	font.setPointSize(getLabelFontSizeSmall());
 	font.setBold(false);
 	font.setItalic(false);
 	color.setAlpha(255);
@@ -379,7 +380,7 @@ ViewGeometry::WireFlag SchematicSketchWidget::getTraceFlag() {
 }
 
 double SchematicSketchWidget::getTraceWidth() {
-	return GraphicsUtils::SVGDPI * TraceWidthMils / 1000;
+	return GraphicsUtils::SVGDPI * ((m_oldSchematic ) ? TraceWidthMilsOld : TraceWidthMils) / 1000;
 }
 
 double SchematicSketchWidget::getAutorouterTraceWidth() {
@@ -536,6 +537,10 @@ void SchematicSketchWidget::viewGeometryConversionHack(ViewGeometry & viewGeomet
 
     foreach (ItemBase * kin, itemBase->layerKin()) delete kin;
     delete itemBase;
+}
+
+void SchematicSketchWidget::setOldSchematic(bool old) {
+    m_oldSchematic = old;
 }
 
 void SchematicSketchWidget::setConvertSchematic(bool convert) {

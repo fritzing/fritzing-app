@@ -144,7 +144,7 @@ QString schematicPinText(const QString & id, const QString & signal, qreal x, qr
 
 
 QString SchematicRectConstants::simpleGetConnectorName(const QDomElement & element) {
-    return element.attribute("name");
+    return TextUtils::escapeAnd(element.attribute("name"));
 }
 
 QString SchematicRectConstants::genSchematicDIP(QList<QDomElement> & powers, QList<QDomElement> & grounds, QList<QDomElement> & lefts,

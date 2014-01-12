@@ -141,6 +141,7 @@ QString Dip::retrieveSchematicSvg(QString & svg) {
 	if (hasLocal) {
 		if (this->isDIP()) {
 			svg = makeSchematicSvg(labels);
+            //DebugDialog::debug("make dip " + svg);
 		}
 		else {
 			svg = MysteryPart::makeSchematicSvg(labels, true);

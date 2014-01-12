@@ -11,8 +11,7 @@
 <properties>
 <property name='package'>HTSSOP28</property>
 <property name='family'>Generic IC</property>
-<property name='chip label'>HTSSOP28</property>
-<property name='editable pin labels'>true</property>
+<property name='chip label'>HT SSOP28</property>
 </properties>
 <views>
 <breadboardView>

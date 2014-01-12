@@ -724,13 +724,16 @@ QStringList PaletteItem::getPinLabels(bool & hasLocal) {
 void PaletteItem::resetConnectors() {
 	if (m_viewID != ViewLayer::SchematicView) return;
 
-	QSizeF size = fsvgRenderer()->defaultSizeF();   // pixels
-	QRectF viewBox = fsvgRenderer()->viewBoxF();
+    FSvgRenderer * renderer = fsvgRenderer();
+    if (renderer == NULL) return;
+
+	QSizeF size = renderer->defaultSizeF();   // pixels
+	QRectF viewBox = renderer->viewBoxF();
 	foreach (ConnectorItem * connectorItem, cachedConnectorItems()) {
 		SvgIdLayer * svgIdLayer = connectorItem->connector()->fullPinInfo(m_viewID, m_viewLayerID);
 		if (svgIdLayer == NULL) continue;
 
-		QRectF bounds = fsvgRenderer()->boundsOnElement(svgIdLayer->m_svgId);
+		QRectF bounds = renderer->boundsOnElement(svgIdLayer->m_svgId);
 		QPointF p(bounds.left() * size.width() / viewBox.width(), bounds.top() * size.height() / viewBox.height());
 		QRectF r = connectorItem->rect();
 		r.moveTo(p.x(), p.y());

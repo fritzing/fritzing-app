@@ -31,6 +31,7 @@ $Date: 2013-04-07 12:14:50 +0200 (So, 07. Apr 2013) $
 #include "../connectors/bus.h"
 #include "../version/version.h"
 #include "../utils/folderutils.h"
+#include "../utils/textutils.h"
 #include "../items/itembase.h"
 #include "../items/partfactory.h"
 
@@ -276,7 +277,7 @@ void ModelPart::saveInstance(QXmlStreamWriter & streamWriter)
 			if (!connector->connectorLocalName().isEmpty()) {
 				streamWriter.writeStartElement("localConnector");
 				streamWriter.writeAttribute("id", connector->connectorSharedID());
-				streamWriter.writeAttribute("name", connector->connectorLocalName());
+				streamWriter.writeAttribute("name", TextUtils::stripNonValidXMLCharacters(TextUtils::escapeAnd(connector->connectorLocalName())));
 				streamWriter.writeEndElement();
 			}
 		}

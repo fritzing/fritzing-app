@@ -461,6 +461,7 @@ void ModelPartShared::copy(ModelPartShared* other) {
 	setTags(other->tags());
 	setTaxonomy(other->taxonomy());
 	setTitle(other->title());
+
 	setUri(other->uri());
 	setVersion(other->version());
     setSuperpart(other->superpart());

@@ -6,7 +6,7 @@
 <desc>Via SVG</desc>
 <g id="copper0">
 	<g id="copper1">
-		<circle id="connector0pin" fill="none" stroke="#FFC58C" stroke-width="0.75" cx="2.7" cy="2.7" r="0.992"/>
+		<circle id="connector0pin" fill="none" stroke="#f2c600" stroke-width="0.75" cx="2.7" cy="2.7" r="0.992"/>
 	</g>
 </g>
 </svg>

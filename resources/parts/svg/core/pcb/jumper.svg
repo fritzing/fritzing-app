@@ -6,8 +6,8 @@
 <desc>Jumper SVG</desc>
 <g id="copper0">
 	<g id="copper1">
-		<circle id="connector0pad" fill="none" stroke="#FFC58C" stroke-width="0.9" cx="4.752" cy="4.752" r="1.98"/>
-		<circle id="connector1pad" fill="none" stroke="#FFC58C" stroke-width="0.9" cx="26.352" cy="4.752" r="1.98"/>
+		<circle id="connector0pad" fill="none" stroke="#f2c600" stroke-width="0.9" cx="4.752" cy="4.752" r="1.98"/>
+		<circle id="connector1pad" fill="none" stroke="#f2c600" stroke-width="0.9" cx="26.352" cy="4.752" r="1.98"/>
 	</g>
 </g>
 <line id="partimage" fill="none" stroke="#6699CC" stroke-width="0.9" stroke-linecap="round" x1="4.752" y1="4.752" x2="26.352" y2="4.752"/>

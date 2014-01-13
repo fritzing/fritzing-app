@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module fritzingVersion="0.6.5b.01.02.5717" moduleId="e3afbdaad7b1e3e1408df3c505763145">
-    <version>4</version>
+    <version replacedby="SparkFun-Connectors-AVR_SPI_PROG2-PTH">4</version>
     <author>Fritzing Part-o-matic</author>
     <title>avr isp 10 pin</title>
     <label>ISP</label>
@@ -11,7 +11,7 @@
     </tags>
     <properties>
         <property name="package">THT</property>
-        <property name="family">Pin Header</property>
+        <property name="family">/obsolete/Pin Header</property>
         <property name="form">♂ (shrouded male)</property>
         <property name="part number"></property>
         <property name="pin spacing">0.1in (2.54mm)</property>

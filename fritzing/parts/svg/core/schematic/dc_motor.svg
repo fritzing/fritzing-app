@@ -17,21 +17,19 @@
 	<line fill="none" stroke="#000000" stroke-width="0.9" stroke-linecap="round" x1="9.72" y1="25.551" x2="6.12" y2="25.551"/>
 	<line fill="none" stroke="#000000" stroke-width="0.9" stroke-linecap="round" x1="6.12" y1="25.551" x2="2.52" y2="25.551"/>
 	<line fill="none" stroke="#000000" stroke-width="0.9" stroke-linecap="round" x1="2.52" y1="25.551" x2="2.52" y2="19.79"/>
-	<line fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="6.12" y1="0.35" x2="6.12" y2="3.95"/>
-	<line fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="6.12" y1="29.15" x2="6.12" y2="25.551"/>
-	<circle fill="none" stroke="#000000" stroke-width="0.9" cx="6.12" cy="14.75" r="5.76"/>
 	
-		<line id="connector0pin" fill="none" stroke="#787878" stroke-width="0.2469" stroke-linecap="round" x1="6.12" y1="0.35" x2="6.12" y2="0.35"/>
-	<path id="connector0terminal" fill="none" d="M6.495,1.078L6.448,0H5.776L5.761,1.094L6.495,1.078z"/>
+		<line id="connector0pin" fill="none" stroke="#8C8C8C" stroke-width="0.75" stroke-linecap="round" stroke-miterlimit="10" x1="6.12" y1="0.35" x2="6.12" y2="3.95"/>
+	
+		<line id="connector1pin" fill="none" stroke="#8C8C8C" stroke-width="0.75" stroke-linecap="round" stroke-miterlimit="10" x1="6.12" y1="29.15" x2="6.12" y2="25.551"/>
+	<circle fill="none" stroke="#000000" stroke-width="0.9" cx="6.12" cy="14.75" r="5.76"/>
+	<path id="connector0terminal" fill="none" d="M6.448,1.094V0H5.776L5.761,1.094H6.448z"/>
 	<text transform="matrix(1 0 0 1 7.2441 2.6348)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">1</text>
 	<g transform="translate(2.40594,0.864304)">
 		<g transform="rotate(270)">
 			<text transform="matrix(0 1 -1 0 -6.5263 2.7464)" fill="#787878" font-family="'DroidSans'" font-size="3.5">+</text>
 		</g>
 	</g>
-	
-		<line id="connector1pin" fill="none" stroke="#787878" stroke-width="0.2469" stroke-linecap="round" x1="6.12" y1="29.15" x2="6.12" y2="29.15"/>
-	<path id="connector1terminal" fill="none" d="M6.433,28.422l-0.641-0.016L5.745,29.5h0.75L6.433,28.422z"/>
+	<path id="connector1terminal" fill="none" d="M6.495,28.516h-0.75V29.5h0.75V28.516z"/>
 	<text transform="matrix(1 0 0 1 7.2441 28.5156)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">2</text>
 	<g transform="translate(2.40594,11.0243)">
 		<g transform="rotate(270)">

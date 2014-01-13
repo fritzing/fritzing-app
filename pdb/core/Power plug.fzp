@@ -40,7 +40,7 @@
                     <p layer="breadboard" svgId="connector0pin" terminalId="connector0terminal"/>
                 </breadboardView>
                 <schematicView>
-                    <p layer="schematic" svgId="connector0pin" terminalId="connector0terminal"/>
+                    <p layer="schematic" svgId="connector1pin" terminalId="connector1terminal"/>
                 </schematicView>
                 <pcbView>
                     <p layer="copper0" svgId="connector1pin"/>
@@ -54,7 +54,7 @@
                     <p layer="breadboard" svgId="connector1pin" terminalId="connector1terminal"/>
                 </breadboardView>
                 <schematicView>
-                    <p layer="schematic" svgId="connector1pin" terminalId="connector1terminal"/>
+                    <p layer="schematic" svgId="connector0pin" terminalId="connector0terminal"/>
                 </schematicView>
                 <pcbView>
                     <p layer="copper0" svgId="connector0pin"/>

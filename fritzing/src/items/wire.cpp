@@ -1264,7 +1264,9 @@ void Wire::initNames() {
 	colorNames.append(tr("green"));
 	colorNames.append(tr("grey"));
 	colorNames.append(tr("white"));
-	colorNames.append(tr("orange"));
+    colorNames.append(tr("orange"));
+    colorNames.append(tr("ochre"));
+    colorNames.append(tr("cyan"));
     colorNames.append(tr("brown"));
     colorNames.append(tr("purple"));
     colorNames.append(tr("pink"));
@@ -1277,7 +1279,9 @@ void Wire::initNames() {
 	colorTrans.insert(tr("green"), "green");
 	colorTrans.insert(tr("grey"), "grey");
 	colorTrans.insert(tr("white"), "white");
-	colorTrans.insert(tr("orange"), "orange");
+    colorTrans.insert(tr("orange"), "orange");
+    colorTrans.insert(tr("ochre"), "ochre");
+    colorTrans.insert(tr("cyan"), "cyan");
 	colorTrans.insert(tr("brown"), "brown");
     colorTrans.insert(tr("purple"), "purple");
     colorTrans.insert(tr("pink"), "pink");

@@ -102,9 +102,9 @@ public:
 	static const QString HolesColor;
 	static const QString Copper0Color;
 	static const QString Copper1Color;
-	static const QString Copper0WireColor;
-	static const QString Copper1WireColor;
-	static const QString Silkscreen1Color;
+    static const QString Copper0WireColor;
+    static const QString Copper1WireColor;
+    static const QString Silkscreen1Color;
 	static const QString Silkscreen0Color;
 	static const QString BoardColor;
 

@@ -53,7 +53,7 @@
             </views>
         </connector>
         <connector id="connector1" name="d-" type="male">
-            <description>D-</description>
+            <description>D- (white)</description>
             <views>
                 <breadboardView>
                     <p layer="breadboard" svgId="connector1pin" terminalId="connector1terminal"/>
@@ -67,7 +67,7 @@
             </views>
         </connector>
         <connector id="connector2" name="d+" type="male">
-            <description>D-</description>
+            <description>D+ (green)</description>
             <views>
                 <breadboardView>
                     <p layer="breadboard" svgId="connector2pin" terminalId="connector2terminal"/>

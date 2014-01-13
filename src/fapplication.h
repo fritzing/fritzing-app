@@ -96,7 +96,7 @@ public:
 	void finish();
 	class ReferenceModel * loadReferenceModel(const QString & databaseName, bool fullLoad);
 	void registerFonts();
-	class MainWindow * openWindowForService(bool lockFiles);
+	class MainWindow * openWindowForService(bool lockFiles, int initialTab);
     bool runAsService();
 
 public:

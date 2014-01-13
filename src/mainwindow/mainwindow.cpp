@@ -298,6 +298,7 @@ QRegExp MainWindow::GuidMatcher = QRegExp("[A-Fa-f0-9]{32}");
 MainWindow::MainWindow(ReferenceModel *referenceModel, QWidget * parent) :
     FritzingWindow(untitledFileName(), untitledFileCount(), fileExtension(), parent)
 {
+    m_initialTab = 1;
     m_rolloverQuoteDialog = NULL;
 	setCorner(Qt::BottomRightCorner, Qt::RightDockWidgetArea);
 	setDockOptions(QMainWindow::AnimatedDocks);
@@ -836,7 +837,7 @@ void MainWindow::connectPair(SketchWidget * signaller, SketchWidget * slotter)
 void MainWindow::setCurrentFile(const QString &filename, bool addToRecent, bool setAsLastOpened) {
 	setFileName(filename);
 
-	if(setAsLastOpened) {
+	if (setAsLastOpened) {
 		QSettings settings;
 		settings.setValue("lastOpenSketch",filename);
 
@@ -2326,12 +2327,13 @@ void MainWindow::addDefaultParts() {
 	m_schematicGraphicsView->addDefaultParts();
 }
 
-MainWindow * MainWindow::newMainWindow(ReferenceModel *referenceModel, const QString & displayPath, bool showProgress, bool lockFiles) {
+MainWindow * MainWindow::newMainWindow(ReferenceModel *referenceModel, const QString & displayPath, bool showProgress, bool lockFiles, int initialTab) {
     MainWindow * mw = new MainWindow(referenceModel, NULL);
 	if (showProgress) {
 		mw->showFileProgressDialog(displayPath);
 	}
 
+    if (initialTab >= 0) mw->setInitialTab(initialTab);
     mw->init(referenceModel, lockFiles);
 
 	return mw;
@@ -3041,7 +3043,7 @@ void MainWindow::setInitialView() {
     tabWidget_currentChanged(tab);
 
     // default to breadboard view
-    this->setCurrentTabIndex(1);
+    this->setCurrentTabIndex(m_initialTab);
 }
 
 void MainWindow::updateWelcomeViewRecentList(bool doEmit) {
@@ -3086,4 +3088,9 @@ int MainWindow::fireQuoteDelay() {
 
 void MainWindow::setFireQuoteDelay(int delay) {
     m_fireQuoteDelay = delay;
+}
+
+
+void MainWindow::setInitialTab(int tab) {
+    m_initialTab = tab;
 }

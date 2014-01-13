@@ -856,7 +856,7 @@ bool Panelizer::openWindows(QDomElement & boardElement, QHash<QString, QString> 
             return false;
         }
 
-		MainWindow * mainWindow = app->openWindowForService(false);
+		MainWindow * mainWindow = app->openWindowForService(false, 3);
         mainWindow->setCloseSilently(true);
 
 		FolderUtils::setOpenSaveFolderAux(fzDir.absolutePath());
@@ -880,7 +880,6 @@ bool Panelizer::openWindows(QDomElement & boardElement, QHash<QString, QString> 
 			continue;
         }
         
-		mainWindow->showPCBView();
 		foreach (QGraphicsItem * item, mainWindow->pcbView()->scene()->items()) {
 			ItemBase * itemBase = dynamic_cast<ItemBase *>(item);
 			if (itemBase == NULL) continue;
@@ -1382,7 +1381,7 @@ MainWindow * Panelizer::inscribeBoard(QDomElement & board, QHash<QString, QStrin
         return NULL;
     }
 
-	MainWindow * mainWindow = app->openWindowForService(false);
+	MainWindow * mainWindow = app->openWindowForService(false, 3);
 
 	FolderUtils::setOpenSaveFolderAux(fzDir.absolutePath());
 
@@ -1390,8 +1389,6 @@ MainWindow * Panelizer::inscribeBoard(QDomElement & board, QHash<QString, QStrin
 		writePanelizerOutput(QString("failed to load '%1'").arg(copyPath));
 		return mainWindow;
 	}
-
-	mainWindow->showPCBView();
 
     QList<ItemBase *> items = mainWindow->pcbView()->selectAllObsolete();
 	if (items.count() > 0) {

@@ -1311,8 +1311,8 @@ QRadioButton::indicator:checked:pressed  {
 
 #sketchAreaToolbar #orderFabButton{
 	color:#fff;
-	border-bottom: 5px solid #00303a;
-	background:#2e94af;
+	border-bottom: 5px solid #3a2e2a;
+	background:#5e4c49;
 	padding: 3px 0px 0px 0px;
 	height: 55px;
 	width:80px;
@@ -1321,8 +1321,8 @@ QRadioButton::indicator:checked:pressed  {
 
 #sketchAreaToolbar #orderFabButton:hover {
 	color:#fff;
-	border-bottom: 5px solid #195c6d;
-	background:#77acc2;
+	border-bottom: 5px solid #6d5e5a;
+	background:#917d78;
 	padding: 3px 0px 0px 0px;
 	height: 55px;
 	width:80px;
@@ -1331,8 +1331,8 @@ QRadioButton::indicator:checked:pressed  {
 
 	#sketchAreaToolbar #orderFabButton:pressed {
 	color:#fff;
-	border-bottom: 5px solid #195c6d;
-	background:#77acc2;
+	border-bottom: 5px solid #6d5e5a;
+	background:#917d78;
 		padding: 3px 0px 0px 0px;
 	height: 55px;
 	width:80px;

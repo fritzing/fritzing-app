@@ -42,11 +42,11 @@
 	<rect id="connector1terminal" x="7.275" y="41.272" fill="none" width="0.563" height="2.725"/>
 	
 		<line id="connector1pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="7.6" y1="43.6" x2="7.6" y2="36.401"/>
-	<text transform="matrix(1 0 0 1 9.0718 40.9946)" fill="#787878" font-family="'DroidSans'" font-size="2">3</text>
-	<text transform="matrix(1 0 0 1 17.1968 20.5566)" fill="#787878" font-family="'DroidSans'" font-size="2">2</text>
-	<text transform="matrix(1 0 0 1 9.0718 5.0439)" fill="#787878" font-family="'DroidSans'" font-size="2">1</text>
-	<text transform="matrix(1 0 0 1 3.3906 12.1865)" fill="#787878" font-family="'DroidSans'" font-size="4.5">Vcc</text>
-	<text transform="matrix(1 0 0 1 3.1406 23.186)" fill="#787878" font-family="'DroidSans'" font-size="4.5">Vout</text>
-	<text transform="matrix(1 0 0 1 2.1406 34.936)" fill="#787878" font-family="'DroidSans'" font-size="4.5">GND</text>
+	<text x="9.0718" y="40.9946" fill="#787878" font-family="'DroidSans'" font-size="2">3</text>
+	<text x="17.1968" y="20.5566" fill="#787878" font-family="'DroidSans'" font-size="2">2</text>
+	<text x="9.0718" y="5.0439" fill="#787878" font-family="'DroidSans'" font-size="2">1</text>
+	<text x="3.3906" y="12.1865" fill="#787878" font-family="'DroidSans'" font-size="4.5">Vcc</text>
+	<text x="3.1406" y="23.186" fill="#787878" font-family="'DroidSans'" font-size="4.5">Vout</text>
+	<text x="2.1406" y="34.936" fill="#787878" font-family="'DroidSans'" font-size="4.5">GND</text>
 </g>
 </svg>

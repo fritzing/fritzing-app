@@ -43,6 +43,7 @@ $Date: 2013-04-28 13:51:10 +0200 (So, 28. Apr 2013) $
 #include "../utils/textutils.h"
 #include "../utils/graphicsutils.h"
 #include "../utils/cursormaster.h"
+#include "../utils/clickablelabel.h"
 #include "../utils/familypropertycombobox.h"
 #include "../referencemodel/referencemodel.h"
 
@@ -53,6 +54,8 @@ $Date: 2013-04-28 13:51:10 +0200 (So, 28. Apr 2013) $
 #include <QSettings>
 #include <QComboBox>
 #include <QBitmap>
+#include <QApplication>
+#include <QClipboard>
 #include <qmath.h>
 
 /////////////////////////////////
@@ -1687,6 +1690,19 @@ bool ItemBase::collectExtraInfo(QWidget * parent, const QString & family, const 
 	if (prop.compare("id", Qt::CaseInsensitive) == 0) {
 		return true;
 	}
+#ifndef QT_NO_DEBUG
+    if (prop.compare("svg", Qt::CaseInsensitive) == 0 || prop.compare("fzp" , Qt::CaseInsensitive) == 0) {
+        QFileInfo fileInfo(value);
+        if (fileInfo.exists()) {
+            ClickableLabel * label = new ClickableLabel(fileInfo.completeBaseName(), parent);
+            label->setProperty("path", value);
+            label->setToolTip(value);
+            connect(label, SIGNAL(clicked()), this, SLOT(showInFolder()));
+            returnWidget = label;
+        }
+        return true;
+    }
+#endif
 
 	QString tempValue = value;
 	QStringList values = collectValues(family, prop, tempValue);
@@ -2408,4 +2424,15 @@ void ItemBase::renderOne(QDomDocument * masterDoc, QImage * image, const QRectF 
     painter.setRenderHint(QPainter::SmoothPixmapTransform, false);
 	renderer.render(&painter, renderRect);
 	painter.end();
+}
+
+void ItemBase::showInFolder() {
+    QString path = sender()->property("path").toString();
+    if (!path.isEmpty()) {
+        FolderUtils::showInFolder(path);
+        QClipboard *clipboard = QApplication::clipboard();
+	    if (clipboard != NULL) {
+		    clipboard->setText(path);
+	    }
+    }
 }

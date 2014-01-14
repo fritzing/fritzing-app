@@ -36,7 +36,7 @@
 		<color name="green" ratsnest="#25cc35"  wire="#25cc35" shadow="#00a527" />
 		<color name="grey" ratsnest=""  wire="#999999" shadow="#666666" />
 		<color name="white" ratsnest=""  wire="#ffffff" shadow="#999999" />
-		<color name="orange" ratsnest="#ef6100"  wire="#ef6100" shadow="#ad6a38" />
+		<color name="orange" ratsnest="#ff7300"  wire="#ff7300" shadow="#d65b00" />
 		<color name="ochre" ratsnest="#a37911"  wire="#a37911" shadow="#846521" />
 		<color name="cyan" ratsnest="#33ffc5"  wire="#33ffc5" shadow="#00a0c6" />
 		<color name="purple" ratsnest="#ab58a2"  wire="#ab58a2" shadow="#7a3a73" />

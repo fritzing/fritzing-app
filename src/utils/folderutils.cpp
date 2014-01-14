@@ -33,6 +33,10 @@ $Date: 2013-04-29 13:10:59 +0200 (Mo, 29. Apr 2013) $
 #include <QTextStream>
 #include <QUuid>
 #include <QCryptographicHash>
+#include <QProcess>
+#include <QDesktopServices>
+#include <QUrl>
+#include <QFileInfo>
 
 #include "../debugdialog.h"
 #ifdef QUAZIP_INSTALLED
@@ -583,4 +587,29 @@ bool FolderUtils::slamCopy(QFile & file, const QString & dest) {
 
     file.remove(dest);
     return file.copy(dest);
+}
+
+void FolderUtils::showInFolder(const QString & path)
+{
+    // http://stackoverflow.com/questions/3490336/how-to-reveal-in-finder-or-show-in-explorer-with-qt
+    // http://stackoverflow.com/questions/9581330/change-selection-in-explorer-window
+    // Mac, Windows support folder or file.
+#if defined(Q_OS_WIN)
+    const QString explorer = "explorer.exe";
+    QString param = QLatin1String("/e,/select,");
+    param += QDir::toNativeSeparators(path);
+    QProcess::startDetached(explorer, QStringList(param));
+#elif defined(Q_OS_MAC)
+    QStringList scriptArgs;
+    scriptArgs << QLatin1String("-e")
+               << QString::fromLatin1("tell application \"Finder\" to reveal POSIX file \"%1\"")
+                                     .arg(path);
+    QProcess::execute(QLatin1String("/usr/bin/osascript"), scriptArgs);
+    scriptArgs.clear();
+    scriptArgs << QLatin1String("-e")
+               << QLatin1String("tell application \"Finder\" to activate");
+    QProcess::execute("/usr/bin/osascript", scriptArgs);
+#else
+    QDesktopServices::openUrl( QUrl::fromLocalFile( QFileInfo(path).absolutePath() ) );   
+#endif
 }

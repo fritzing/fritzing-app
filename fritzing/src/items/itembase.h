@@ -300,6 +300,7 @@ public slots:
 	void hidePartLabel();
 	void partLabelChanged(const QString &newText);
 	virtual void swapEntry(const QString & text);
+    void showInFolder();
 
 public:
 	static bool zLessThan(ItemBase * & p1, ItemBase * & p2);

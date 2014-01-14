@@ -62,6 +62,7 @@ public:
 	static void makePartFolderHierarchy(const QString & prefixFolder, const QString & destFolder);
     static void copyBin(const QString & source, const QString & dest);
     static bool slamCopy(QFile &, const QString & dest);
+    static void showInFolder(const QString & path);
 
 protected:
 	FolderUtils();

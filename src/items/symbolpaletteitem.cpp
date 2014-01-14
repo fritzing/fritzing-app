@@ -661,3 +661,15 @@ bool NetLabel::isOnlyNetLabel() {
 	return true;
 }
 
+QString NetLabel::getInspectorTitle() {
+   return getLabel();
+
+}
+
+void NetLabel::setInspectorTitle(const QString & oldText, const QString & newText) {
+    InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
+    if (infoGraphicsView == NULL) return;
+
+    infoGraphicsView->setProp(this, "label", ItemBase::TranslatedPropertyNames.value("label"), oldText, newText, true);
+}
+

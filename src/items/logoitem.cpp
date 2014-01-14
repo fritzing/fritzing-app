@@ -247,7 +247,7 @@ bool LogoItem::collectExtraInfo(QWidget * parent, const QString & family, const 
 {
 	if (m_hasLogo) {
 		if (prop.compare("logo", Qt::CaseInsensitive) == 0) {
-			returnProp = tr("logo");
+			returnProp = tr("text");
 			returnValue = m_logo;
 
 			QLineEdit * edit = new QLineEdit(parent);
@@ -641,7 +641,12 @@ void LogoItem::logoEntry() {
 	QLineEdit * edit = qobject_cast<QLineEdit *>(sender());
 	if (edit == NULL) return;
 
-	if (edit->text().compare(this->logo()) == 0) return;
+    logoEntryAux(edit->text());
+}
+
+void LogoItem::logoEntryAux(const QString & text)
+{
+	if (text.compare(this->logo()) == 0) return;
 
 	// m_inLogoEntry is a hack because a focus out event was being triggered on m_widthEntry when a user hit the return key in logoentry
 	// this triggers a call to widthEntry() which causes all kinds of havoc.  (bug in version 0.7.1 and possibly earlier)
@@ -649,7 +654,7 @@ void LogoItem::logoEntry() {
 
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
 	if (infoGraphicsView != NULL) {
-		infoGraphicsView->setProp(this, "logo", tr("logo"), this->logo(), edit->text(), true);
+		infoGraphicsView->setProp(this, "logo", tr("text"), this->logo(), text, true);
 	}
 }
 
@@ -869,6 +874,18 @@ QString LogoItem::getNewLayerFileName(const QString & newLayerName) {
 
     DebugDialog::debug(QString("logo item image '%1' doesn't exist").arg(lastfilename));
     return "";
+}
+
+QString LogoItem::getInspectorTitle() {
+    if (hasLogo()) return m_logo;
+
+    return ResizableBoard::getInspectorTitle();
+}
+
+void LogoItem::setInspectorTitle(const QString & oldText, const QString & newText) {
+    if (!hasLogo()) return ResizableBoard::setInspectorTitle(oldText, newText);
+
+    logoEntryAux(newText);
 }
 
 ///////////////////////////////////////////////////////////////////////

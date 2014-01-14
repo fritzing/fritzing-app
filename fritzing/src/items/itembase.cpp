@@ -2436,3 +2436,18 @@ void ItemBase::showInFolder() {
 	    }
     }
 }
+
+QString ItemBase::getInspectorTitle() {
+    QString t = instanceTitle();
+    if (!t.isEmpty()) return t;
+
+    return title();
+}
+
+void ItemBase::setInspectorTitle(const QString & oldText, const QString & newText) {
+    InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
+    if (infoGraphicsView == NULL) return;
+
+	DebugDialog::debug(QString("set instance title to %1").arg(newText));
+	infoGraphicsView->setInstanceTitle(id(), oldText, newText, true, false);
+}

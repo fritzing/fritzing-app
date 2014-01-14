@@ -232,6 +232,8 @@ public:
     void setSquashShape(bool);
     const QPainterPath & selectionShape();
     virtual void setTransform2(const QTransform &);
+    virtual QString getInspectorTitle();
+    virtual void setInspectorTitle(const QString & oldText, const QString & newText);
 
 public:
 	virtual void getConnectedColor(ConnectorItem *, QBrush * &, QPen * &, double & opacity, double & negativePenWidth, bool & negativeOffsetRect);

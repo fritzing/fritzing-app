@@ -39,7 +39,6 @@ $Date: 2013-04-22 23:44:56 +0200 (Mo, 22. Apr 2013) $
 #include "../fsvgrenderer.h"
 #include "../utils/flineedit.h"
 #include "../items/moduleidnames.h"
-#include "../items/symbolpaletteitem.h"
 #include "../items/paletteitem.h"
 #include "../utils/clickablelabel.h"
 #include "../utils/textutils.h"
@@ -475,12 +474,7 @@ void HtmlInfoView::appendItemStuff(ItemBase * itemBase, ModelPart * modelPart, b
 
 	QString nameString;
 	if (swappingEnabled) {
-		nameString = (itemBase) ? itemBase->title() : modelPart->title();
-        // TODO: handle this elsewhere
-        SymbolPaletteItem * symbol = qobject_cast<SymbolPaletteItem *>(itemBase);
-        if (symbol != NULL && symbol->isOnlyNetLabel()) {
-            nameString = symbol->getLabel();
-        }
+		nameString = (itemBase) ? itemBase->getInspectorTitle() : modelPart->title();
 	}
 	else {
 		nameString = modelPart->description();
@@ -603,19 +597,7 @@ void HtmlInfoView::setInstanceTitle() {
 	if (!edit->isEnabled()) return;
 	if (m_currentItem == NULL) return;
 
-    InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(m_currentItem);
-    if (infoGraphicsView == NULL) return;
-
-	DebugDialog::debug(QString("set instance title to %1").arg(edit->text()));
-    if (m_currentItem->itemType() == ModelPart::Symbol) {
-        // TODO: handle this elsewhere, so htmlInfoView doesn't have to know about net labels
-        SymbolPaletteItem * symbol = qobject_cast<SymbolPaletteItem *>(m_currentItem);
-        if (symbol != NULL && symbol->isOnlyNetLabel()) {
-            infoGraphicsView->setProp(m_currentItem, "label", ItemBase::TranslatedPropertyNames.value("label"), symbol->getLabel(), edit->text(), true);
-            return;
-        }
-    }
-	infoGraphicsView->setInstanceTitle(m_currentItem->id(), m_partTitle->text(), edit->text(), true, false);
+    m_currentItem->setInspectorTitle(m_partTitle->text(), edit->text());
 }
 
 void HtmlInfoView::instanceTitleEnter() {
@@ -658,11 +640,7 @@ void HtmlInfoView::setUpTitle(ItemBase * itemBase)
 	m_lastTitleItemBase = itemBase;
     bool titleEnabled = true;
 	if (itemBase != NULL) {
-		QString title = itemBase->instanceTitle();
-        SymbolPaletteItem * symbol = qobject_cast<SymbolPaletteItem *>(itemBase);
-        if (symbol != NULL && symbol->isOnlyNetLabel()) {
-            title = symbol->getLabel();
-        }
+		QString title = itemBase->getInspectorTitle();
 		if (title.isEmpty()) {
 			// assumes a part with an empty title only comes from the parts bin palette
 			titleEnabled = false;

@@ -230,10 +230,11 @@ public:
 	QStringList newDesignRulesCheck(bool showOkMessage);
     int fireQuoteDelay();
     void setFireQuoteDelay(int);
+    void setInitialTab(int);
 
 public:
 	static void initNames();
-	static MainWindow * newMainWindow(ReferenceModel *referenceModel, const QString & displayPath, bool showProgress, bool lockFiles);
+	static MainWindow * newMainWindow(ReferenceModel *referenceModel, const QString & displayPath, bool showProgress, bool lockFiles, int initialTab);
 	static void setAutosavePeriod(int);
 	static void setAutosaveEnabled(bool);
 
@@ -929,6 +930,7 @@ protected:
     QString m_settingsPrefix;
     bool m_convertedSchematic;
     bool m_useOldSchematic;
+    int m_initialTab;
 
     // dock management
 	QList<FDockWidget*> m_docks;

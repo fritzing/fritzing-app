@@ -262,6 +262,11 @@ void MainWindow::revert() {
         return;
     }	
 
+    revertAux();
+}
+
+MainWindow * MainWindow::revertAux()
+{
     MainWindow* mw = newMainWindow( m_referenceModel, fileName(), true, true, this->currentTabIndex());
     mw->setGeometry(this->geometry());
 
@@ -282,6 +287,8 @@ void MainWindow::revert() {
 
     this->setCloseSilently(true);
     this->close();
+
+    return mw;
 }
 
 bool MainWindow::loadWhich(const QString & fileName, bool setAsLastOpened, bool addToRecent, bool checkObsolete, const QString & displayName)
@@ -3553,11 +3560,23 @@ void MainWindow::oldSchematicsSlot(const QString &filename, bool & useOldSchemat
         return;
     }
 
-	QFileInfo info(filename);
+    QMessageBox::StandardButton answer = oldSchematicMessage(filename);
+	if (answer == QMessageBox::No) {
+        useOldSchematics = m_useOldSchematic = true;
+        this->setReadOnly(true);
+	} 
+    else {
+        m_convertedSchematic = true;
+    }
+}
+
+QMessageBox::StandardButton MainWindow::oldSchematicMessage(const QString & filename)
+{
+    QFileInfo info(filename);
     FMessageBox messageBox(NULL);
 	messageBox.setWindowTitle(tr("Schematic view update"));
 	messageBox.setText(tr("There is a new graphics standard for schematic-view part images, beginning with version 0.8.6.\n\n") +
-                        tr("Would you like to convert '%1' to the new standard now or open the file read-only?\n").arg(info.fileName())
+                        tr("Would you like to convert '%1' to the new standard now or open the file read-only?\n").arg(info.fileName())                  
                         );
 	messageBox.setInformativeText("<ul><li>" +  
                                     tr("The conversion process will not modify '%1', until you save the file. ").arg(info.fileName()) +
@@ -3573,16 +3592,9 @@ void MainWindow::oldSchematicsSlot(const QString &filename, bool & useOldSchemat
 	messageBox.setWindowModality(Qt::WindowModal);
 	messageBox.setButtonText(QMessageBox::Yes, tr("Convert"));
 	messageBox.setButtonText(QMessageBox::No, tr("Read-only"));
-	QMessageBox::StandardButton answer = (QMessageBox::StandardButton) messageBox.exec();
-
-	if (answer == QMessageBox::No) {
-        useOldSchematics = m_useOldSchematic = true;
-        this->setReadOnly(true);
-	} 
-    else {
-        m_convertedSchematic = true;
-    }
+	return (QMessageBox::StandardButton) messageBox.exec();
 }
+
 
 void MainWindow::loadedRootSlot(const QString & fname, ModelBase *, QDomElement & root) {
 	if (root.isNull()) return;

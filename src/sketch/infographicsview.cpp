@@ -435,7 +435,3 @@ void InfoGraphicsView::rotateX(double degrees, bool rubberBandLegEnabled, ItemBa
     Q_UNUSED(originatingItem);
 }
 
-bool InfoGraphicsView::isOldStyleSchematic() 
-{
-    return false;
-}

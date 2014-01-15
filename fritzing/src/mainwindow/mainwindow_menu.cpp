@@ -401,8 +401,6 @@ void MainWindow::mainLoad(const QString & fileName, const QString & displayName,
 				this, SLOT(loadedRootSlot(const QString &, ModelBase *, QDomElement &)));
 	disconnect(m_sketchModel, SIGNAL(obsoleteSMDOrientationSignal()),
 				this, SLOT(obsoleteSMDOrientationSlot()));
-	disconnect(m_sketchModel, SIGNAL(oldSchematicSignal(bool &)),
-				this, SLOT(oldSchematicSlot(bool &)));
 
 	ProcessEventBlocker::processEvents();
 	if (m_fileProgressDialog) {

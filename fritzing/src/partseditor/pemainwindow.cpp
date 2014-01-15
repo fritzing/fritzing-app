@@ -193,6 +193,7 @@ $Date: 2013-04-22 01:45:43 +0200 (Mo, 22. Apr 2013) $
 #include <QDesktopServices>
 #include <QUrl>
 #include <QBuffer>
+#include <QClipboard>
 #include <limits>
 
 ////////////////////////////////////////////////////
@@ -2579,33 +2580,14 @@ void PEMainWindow::moveTerminalPoint(SketchWidget * sketchWidget, const QString 
     m_peToolView->setTerminalPointCoords(p);
 }
 
-// http://stackoverflow.com/questions/3490336/how-to-reveal-in-finder-or-show-in-explorer-with-qt
-// http://stackoverflow.com/questions/9581330/change-selection-in-explorer-window
 void PEMainWindow::showInOS(QWidget *parent, const QString &pathIn)
 {
-    // Mac, Windows support folder or file.
-#if defined(Q_OS_WIN)
-    Q_UNUSED(parent)
-    const QString explorer = "explorer.exe";
-    QString param = QLatin1String("/e,/select,");
-    param += QDir::toNativeSeparators(pathIn);
-    QProcess::startDetached(explorer, QStringList(param));
-#elif defined(Q_OS_MAC)
-    Q_UNUSED(parent)
-    QStringList scriptArgs;
-    scriptArgs << QLatin1String("-e")
-               << QString::fromLatin1("tell application \"Finder\" to reveal POSIX file \"%1\"")
-                                     .arg(pathIn);
-    QProcess::execute(QLatin1String("/usr/bin/osascript"), scriptArgs);
-    scriptArgs.clear();
-    scriptArgs << QLatin1String("-e")
-               << QLatin1String("tell application \"Finder\" to activate");
-    QProcess::execute("/usr/bin/osascript", scriptArgs);
-#else
-    QDesktopServices::openUrl( QUrl::fromLocalFile( QFileInfo(pathIn).absolutePath() ) );   
-#endif
-
-
+    Q_UNUSED(parent);
+    FolderUtils::showInFolder(pathIn);
+    QClipboard *clipboard = QApplication::clipboard();
+	if (clipboard != NULL) {
+		clipboard->setText(pathIn);
+	}
 }
 
 void PEMainWindow::showInOS() {

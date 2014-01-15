@@ -562,13 +562,18 @@ QString NetLabel::makeSvg(ViewLayer::ViewLayerID viewLayerID) {
 	QString header("<?xml version='1.0' encoding='UTF-8' standalone='no'?>\n"
 					"<svg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' version='1.2' baseProfile='tiny' \n"
 					"width='%1in' height='%2in' viewBox='0 0 %3 %4' >\n"
-					"<g id='schematic' >\n"
+					"<g id='%5' >\n"
                     );
 
     bool goLeft = (getDirection() == "left");  // direction is now obsolete; this is left over from 0.7.12 and earlier
     double offset = goLeft ? arrowWidth : 0;
 
-    QString svg = header.arg(totalWidth / 1000).arg(totalHeight / 1000).arg(totalWidth).arg(totalHeight);
+    QString svg = header.arg(totalWidth / 1000)
+            .arg(totalHeight / 1000)
+            .arg(totalWidth)
+            .arg(totalHeight)
+            .arg(ViewLayer::viewLayerXmlNameFromID(viewLayerID))
+            ;
 
     if (viewLayerID == ViewLayer::SchematicText) {
         svg += QString("<text id='label' x='%1' y='%2' fill='#000000' font-family='Droid Sans' font-size='%3'>%4</text>\n")
@@ -659,5 +664,17 @@ ItemBase::PluralType NetLabel::isPlural() {
 
 bool NetLabel::isOnlyNetLabel() {
 	return true;
+}
+
+QString NetLabel::getInspectorTitle() {
+   return getLabel();
+
+}
+
+void NetLabel::setInspectorTitle(const QString & oldText, const QString & newText) {
+    InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
+    if (infoGraphicsView == NULL) return;
+
+    infoGraphicsView->setProp(this, "label", ItemBase::TranslatedPropertyNames.value("label"), oldText, newText, true);
 }
 

@@ -1696,7 +1696,7 @@ bool ItemBase::collectExtraInfo(QWidget * parent, const QString & family, const 
     if (prop.compare("svg", Qt::CaseInsensitive) == 0 || prop.compare("fzp" , Qt::CaseInsensitive) == 0) {
         QFileInfo fileInfo(value);
         if (fileInfo.exists()) {
-            ClickableLabel * label = new ClickableLabel(fileInfo.completeBaseName(), parent);
+            ClickableLabel * label = new ClickableLabel(fileInfo.fileName(), parent);
             label->setProperty("path", value);
             label->setToolTip(value);
             connect(label, SIGNAL(clicked()), this, SLOT(showInFolder()));

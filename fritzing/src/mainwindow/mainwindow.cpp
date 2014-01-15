@@ -2427,6 +2427,17 @@ bool MainWindow::save() {
 }
 
 bool MainWindow::saveAs() {
+    bool convertSchematic = false;
+    if (m_schematicGraphicsView != NULL && m_schematicGraphicsView->isOldSchematic()) {
+		QMessageBox::StandardButton reply = QMessageBox::question(this, tr("Schematic conversion"),
+                    tr("Saving this sketch will convert it to the new schematic graphics standard. Go ahead and convert?"),
+					 QMessageBox::Yes | QMessageBox::No);
+		if (reply != QMessageBox::Yes) {
+            return false;
+        }
+        convertSchematic = true;
+    }
+
 	bool result = false;
 	if (m_fwFilename.endsWith(FritzingSketchExtension)) {
 		result = FritzingWindow::saveAs(m_fwFilename + 'z', false);
@@ -2437,6 +2448,15 @@ bool MainWindow::saveAs() {
 	if (result) {
 		QSettings settings;
 		settings.setValue("lastOpenSketch", m_fwFilename);
+        if (convertSchematic) {
+            MainWindow * mw = revertAux();
+            QString gridSize = QString("%1in").arg(m_schematicGraphicsView->defaultGridSizeInches());
+            mw->m_schematicGraphicsView->setGridSize(gridSize);
+            mw->m_schematicGraphicsView->resizeLabels();
+            mw->m_schematicGraphicsView->resizeWires();
+            mw->m_schematicGraphicsView->updateWires();
+            mw->save();
+        }
 	}
 	return result;
 }

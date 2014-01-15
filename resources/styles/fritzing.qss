@@ -81,11 +81,12 @@ LayerPalette QObject {
 }
 
 /*############ parteditor tabs ################*/
-
+#preDia_tabs,
 #pe_tabs {
 	background:#b1b1b1;
 }
 
+#preDia_tabs::pane,
 #pe_tabs::pane
 { /*the tab-window*/
 
@@ -98,6 +99,7 @@ LayerPalette QObject {
 	font-weight: regular;
 }
 
+#preDia_tabs::tab-bar,
 #pe_tabs::tab-bar 
  /*this is the complete tab-bar*/
 {
@@ -111,6 +113,7 @@ LayerPalette QObject {
 
 }
 
+#preDia_tabs QTabBar::tab,
 #pe_tabs QTabBar::tab  
 {
 	margin: 0px 10px -1px 10px;
@@ -122,6 +125,7 @@ LayerPalette QObject {
 	min-width:120px;
 }
 
+#preDia_tabs QTabBar::tab:selected,
 #pe_tabs QTabBar::tab:selected 
  /*the active tab*/
  {
@@ -135,7 +139,7 @@ LayerPalette QObject {
 	background-image: url(:/resources/images/icons/segmentedSwitcherXActiveFocus.png);
 }
 
-
+#preDia_tabs QTabBar::tab:selected:hover,
 #pe_tabs QTabBar::tab:selected:hover 
 /*the active tab hover*/
 { 
@@ -149,6 +153,7 @@ LayerPalette QObject {
 	background-image: url(:/resources/images/icons/segmentedSwitcherXActiveFocusHover.png);
 }
 
+#preDia_tabs QTabBar::tab:!selected, 
 #pe_tabs QTabBar::tab:!selected {
 /*the inactive tabs*/	
 	background-color: transparent;
@@ -160,6 +165,7 @@ LayerPalette QObject {
 	background-image: url(:/resources/images/icons/segmentedSwitcherXInactiveFocusHover.png);
 }
 
+#preDia_tabs QTabBar::tab:!selected:hover, 
  #pe_tabs QTabBar::tab:!selected:hover 
  /*the inactive tab- hover*/
  { 
@@ -173,32 +179,34 @@ LayerPalette QObject {
 	background-image: url(:/resources/images/icons/segmentedSwitcherXInactiveFocusHover.png);
 }
 
-
+#preDia_tabs QToolButton,
 #pe_tabs QToolButton {
 	background: rgba(217,217,217,200);
 	border:0px;
 }
 
-
+#preDia_tabs QToolButton::right-arrow,
 #pe_tabs QToolButton::right-arrow {
 	background-image: url(:/resources/images/icons/TabScrollArrowButtonRightNormal.png);
 	background-repeat: none;
 		background-position: center;
 }
 
+#preDia_tabs QToolButton::right-arrow:pressed,
 #pe_tabs QToolButton::right-arrow:pressed {
 	background-image: url(:/resources/images/icons/TabScrollArrowButtonRightPressed.png);
 	background-repeat: none;
 		background-position: center;
 }
 
-
+#preDia_tabs QToolButton::left-arrow,
 #pe_tabs QToolButton::left-arrow{
 		background-image: url(:/resources/images/icons/TabScrollArrowButtonLeftNormal.png);
 		background-repeat: none;
 		background-position: center;
 }
 
+#preDia_tabs QToolButton::left-arrow:pressed,
 #pe_tabs QToolButton::left-arrow:pressed{
 		background-image: url(:/resources/images/icons/TabScrollArrowButtonLeftPressed.png);
 		background-repeat: none;
@@ -878,17 +886,6 @@ background:transparent;
 	max-height:22px;
 }
 
-/*
-#blogLogoText {
-	background:#fff;
-	font-weight:regular;
-	font-family: Droid Sans;	
-	font-size:12px;
-	min-height:22px;
-	max-height:22px;
-}
-*/
-
 
 /* ----------- WC-"tip"-block  ------------- */	
 #tipFrame {
@@ -969,39 +966,7 @@ background:transparent;
 	
 	}
 	
-/* ----------- WS-"shop"-block  ------------- */	
-
-
-/*
-#shopTitleFrame {
-	border-bottom: 1px solid #c4c4c4;
-	padding: 8px 0px 8px 0px;
-	margin:0px 5px 0px 5px;
-	font-size:14px;
-	font-weight:bold;
-	min-height:18px;
-	max-height:18px;
-	background:#fff;
-}
-
-	
-#shopTitle {
-	font-size:14px;
-	font-weight:bold;
-	color:#c4c4c4;
-	margin-left:1px;
-	margin-right:2px;
-}
-
-#fabTitle {
-	font-size:14px;
-	font-weight:bold;
-	color:#c4c4c4;
-	margin-left:1px;
-	margin-right:2px;
-}
-*/
-
+/* ----------- WS-"shop+fab"-block  ------------- */	
 #shopContentFrame,
 #fabContentFrame
 {
@@ -1789,39 +1754,6 @@ HtmlInfoView QScrollBar:vertical {
         margin-right: 2px;
 }
 
-/*
-#infoViewCheckBox::indicator {
-	     image: url(:/resources/images/icons/check.png);
-
-}
-
-#infoViewCheckBox::indicator:non-exclusive:checked {
-     image: url(:/resources/images/icons/check.png);
-	 	 background-color:transparent;
-		 	border:none;
-}
-
-#infoViewCheckBox::indicator:non-exclusive:checked:selected {
-     image: url(:/resources/images/icons/checkhover.png);
-	 	 background-color:transparent;
-		 	border:none;
- }
-
-#infoViewCheckBox::indicator:non-exclusive:unchecked {  //checkbox styling
-    image: url(:/resources/images/icons/nocheck.png);
-	 	 background-color:#d9d9d9;
-		 	border:transparent;
-			
- }
- 
-#infoViewCheckBox::indicator:non-exclusive:unchecked:selected {
-     image: url(:/resources/images/icons/check.png);
-	 	 background-color:#666;
-		 	border:none;
- }
-
-*/
-
 /* Connections */
 #connectionsFrame {
         margin: 0px;
@@ -2233,3 +2165,50 @@ SearchLineEdit {
 /*############# aboutbox ################*/
 
 
+/*############# colorDialog################*/
+
+QDialog QTabWidget {
+	background-color:#d9d9d9;
+	color:#333333;
+	}
+
+QDialog QFrame {
+	background-color:transparent;
+	color:#333333;
+}
+
+QDialogButtonBox
+	{
+		padding:10px;
+				margin-top:3px;
+		margin-bottom:3px;
+		}
+
+QDialogButtonBox,	
+QPushButton {
+        font-size: 11px;
+        /*min-width: 100px;*/
+        text-align: center;
+        background: #ececec;
+        border: 1px solid #b1b1b1;
+        border-radius: 0px;
+        padding: 2px;
+		color: #323232;
+		margin-top:3px;
+		margin-bottom:3px;
+}
+
+QDialogButtonBox:hover,
+QPushButton:hover {
+        background: #fff;
+		
+}
+
+QDialogButtonBox:pressed,
+QDialogButtonBox:on,
+QPushButton:pressed,
+QPushButton:on
+{
+        background: #666;
+		color: #fff;
+}

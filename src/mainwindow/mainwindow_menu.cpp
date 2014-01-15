@@ -242,7 +242,7 @@ void MainWindow::mainLoadAux(const QString & fileName)
 
     file.close();
 
-    MainWindow* mw = newMainWindow(m_referenceModel, fileName, true, true);
+    MainWindow* mw = newMainWindow(m_referenceModel, fileName, true, true, -1);
 	mw->loadWhich(fileName, true, true, true, "");
     mw->clearFileProgressDialog();
 	closeIfEmptySketch(mw);
@@ -262,7 +262,7 @@ void MainWindow::revert() {
         return;
     }	
 
-    MainWindow* mw = newMainWindow( m_referenceModel, fileName(), true, true);
+    MainWindow* mw = newMainWindow( m_referenceModel, fileName(), true, true, this->currentTabIndex());
     mw->setGeometry(this->geometry());
 
     QFileInfo info(fileName());
@@ -2355,7 +2355,7 @@ void MainWindow::openInPartsEditorNew() {
 }
 
 void MainWindow::createNewSketch() {
-    MainWindow* mw = newMainWindow(m_referenceModel, "", true, true);
+    MainWindow* mw = newMainWindow(m_referenceModel, "", true, true, -1);
     mw->move(x()+CascadeFactorX,y()+CascadeFactorY);
 	ProcessEventBlocker::processEvents();
 
@@ -2622,7 +2622,7 @@ void MainWindow::openRecentOrExampleFile(const QString & filename, const QString
 		return;
 	}
 
-	MainWindow* mw = newMainWindow(m_referenceModel, filename, true, true);
+	MainWindow* mw = newMainWindow(m_referenceModel, filename, true, true, -1);
 	bool readOnly = m_openExampleActions.contains(actionText);
 	mw->setReadOnly(readOnly);
 	mw->loadWhich(filename, !readOnly,!readOnly,!readOnly, "");
@@ -4003,6 +4003,7 @@ void MainWindow::setGridSize()
 
 QWidget * MainWindow::createGridSizeForm(GridSizeThing * gridSizeThing)
 {
+    this->setObjectName("gridSizeDia");
 	QGroupBox * over = new QGroupBox("", this);
 
 	QVBoxLayout * vLayout = new QVBoxLayout();

@@ -31,6 +31,7 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 #include <QDomElement>
 #include <QObject>
 #include <QMatrix>
+#include <QMultiHash>
 
 class SVG2gerber : public QObject
 {
@@ -58,6 +59,8 @@ protected:
     QString m_gerber_paths;
     QString m_drill_slots;
 	QSizeF m_boardSize;
+    QMultiHash<QString, QString> m_platedApertures;
+    QMultiHash<QString, QString> m_holeApertures;
 
     double m_pathstart_x;
     double m_pathstart_y;

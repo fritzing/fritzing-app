@@ -711,9 +711,9 @@ ReferenceModel * FApplication::loadReferenceModel(const QString & databaseName, 
 	return m_referenceModel;
 }
 
-MainWindow * FApplication::openWindowForService(bool lockFiles) {
+MainWindow * FApplication::openWindowForService(bool lockFiles, int initialTab) {
 	// our MainWindows use WA_DeleteOnClose so this has to be added to the heap (via new) rather than the stack (for local vars)
-	MainWindow * mainWindow = MainWindow::newMainWindow(m_referenceModel, "", false, lockFiles);   // this is also slow
+	MainWindow * mainWindow = MainWindow::newMainWindow(m_referenceModel, "", false, lockFiles, initialTab);   // this is also slow
 	mainWindow->setReportMissingModules(false);
     mainWindow->noBackup();
 
@@ -730,7 +730,7 @@ int FApplication::serviceStartup() {
         case PortService:
             initService();
             {
-                MainWindow * sketch = MainWindow::newMainWindow(m_referenceModel, "", true, true);
+                MainWindow * sketch = MainWindow::newMainWindow(m_referenceModel, "", true, true, -1);
                 if (sketch) {
                     sketch->show();
                     sketch->clearFileProgressDialog();
@@ -799,7 +799,7 @@ void FApplication::runGerberServiceAux()
 	QStringList filenames = dir.entryList(filters, QDir::Files);
 	foreach (QString filename, filenames) {
 		QString filepath = dir.absoluteFilePath(filename);
-		MainWindow * mainWindow = openWindowForService(false);
+		MainWindow * mainWindow = openWindowForService(false, 3);
 		m_started = true;
         
 		FolderUtils::setOpenSaveFolderAux(m_outputFolder);
@@ -835,7 +835,7 @@ void FApplication::runSvgServiceAux()
 	QStringList filenames = dir.entryList(filters, QDir::Files);
 	foreach (QString filename, filenames) {
 		QString filepath = dir.absoluteFilePath(filename);
-		MainWindow * mainWindow = openWindowForService(false);
+		MainWindow * mainWindow = openWindowForService(false, -1);
 		m_started = true;
         
 		FolderUtils::setOpenSaveFolderAux(m_outputFolder);
@@ -921,7 +921,7 @@ void FApplication::runDRCService() {
 		QStringList filenames = dir.entryList(filters, QDir::Files);
 		foreach (QString filename, filenames) {
 			QString filepath = dir.absoluteFilePath(filename);
-	        MainWindow * mainWindow = openWindowForService(false);
+	        MainWindow * mainWindow = openWindowForService(false, 3);
             if (mainWindow == NULL) continue;
 
             mainWindow->setCloseSilently(true);
@@ -1168,7 +1168,7 @@ void FApplication::finish()
 }
 
 void FApplication::loadNew(QString path) {
-	MainWindow * mw = MainWindow::newMainWindow(m_referenceModel, path, true, true);
+	MainWindow * mw = MainWindow::newMainWindow(m_referenceModel, path, true, true, -1);
 	if (!mw->loadWhich(path, false, true, true, "")) {
 		mw->close();
 	}
@@ -1578,7 +1578,7 @@ void FApplication::loadSomething(const QString & prevVersion) {
 
         foreach (QString filename, m_filesToLoad) {
             DebugDialog::debug(QString("Loading non-service file %1").arg(filename));
-            MainWindow *mainWindow = MainWindow::newMainWindow(m_referenceModel, filename, true, true);
+            MainWindow *mainWindow = MainWindow::newMainWindow(m_referenceModel, filename, true, true, -1);
             mainWindow->loadWhich(filename, true, true, true, "");
             if (filename.endsWith(FritzingSketchExtension) || filename.endsWith(FritzingBundleExtension)) {
             }
@@ -1599,7 +1599,7 @@ void FApplication::loadSomething(const QString & prevVersion) {
 	MainWindow * newBlankSketch = NULL;
 	if (sketchesToLoad.isEmpty()) {
 		DebugDialog::debug(QString("create empty sketch"));
-		newBlankSketch = MainWindow::newMainWindow(m_referenceModel, "", true, true);
+		newBlankSketch = MainWindow::newMainWindow(m_referenceModel, "", true, true, -1);
 		if (newBlankSketch) {
 			// make sure to start an empty sketch with a board
 			newBlankSketch->addDefaultParts();   // do this before call to show()
@@ -1638,7 +1638,7 @@ QList<MainWindow *> FApplication::loadLastOpenSketch() {
 
     DebugDialog::debug(QString("Loading last open sketch %1").arg(lastSketchPath));
     settings.remove("lastOpenSketch");				// clear the preference, in case the load crashes
-    MainWindow *mainWindow = MainWindow::newMainWindow(m_referenceModel, lastSketchPath, true, true);
+    MainWindow *mainWindow = MainWindow::newMainWindow(m_referenceModel, lastSketchPath, true, true, -1);
     mainWindow->loadWhich(lastSketchPath, true, true, true, "");
     sketches << mainWindow;
     settings.setValue("lastOpenSketch", lastSketchPath);	// the load works, so restore the preference
@@ -1696,7 +1696,7 @@ QList<MainWindow *> FApplication::recoverBackups()
 			QString fileExt;
 			QString bundledFileName = FolderUtils::getSaveFileName(NULL, tr("Please specify an .fzz file name to save to (cancel will delete the backup)"), originalPath, tr("Fritzing (*%1)").arg(FritzingBundleExtension), &fileExt);
 			if (!bundledFileName.isEmpty()) {
-				MainWindow *currentRecoveredSketch = MainWindow::newMainWindow(m_referenceModel, originalBaseName, true, true);
+				MainWindow *currentRecoveredSketch = MainWindow::newMainWindow(m_referenceModel, originalBaseName, true, true, -1);
     			currentRecoveredSketch->mainLoad(backupName, bundledFileName, true);
 				currentRecoveredSketch->saveAsShareable(bundledFileName, true);
 				currentRecoveredSketch->setCurrentFile(bundledFileName, true, true);
@@ -1802,7 +1802,7 @@ void FApplication::runExampleService(QDir & dir) {
 		QString path = fileInfo.absoluteFilePath();
 		DebugDialog::debug("sketch file " + path);
 
-		MainWindow * mainWindow = openWindowForService(false);
+		MainWindow * mainWindow = openWindowForService(false, -1);
 		if (mainWindow == NULL) continue;
 
 		FolderUtils::setOpenSaveFolderAux(dir.absolutePath());

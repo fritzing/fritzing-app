@@ -117,6 +117,8 @@ public:
 	QString retrieveSvg(ViewLayer::ViewLayerID, QHash<QString, QString> & svgHash, bool blackOnly, double dpi, double & factor);
 	PluralType isPlural();
 	bool isOnlyNetLabel();
+    QString getInspectorTitle();
+    void setInspectorTitle(const QString & oldText, const QString & newText);
 
 protected:
     QString makeSvg(ViewLayer::ViewLayerID);

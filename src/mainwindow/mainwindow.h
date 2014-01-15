@@ -630,6 +630,8 @@ protected:
 	virtual bool activeLayerWidgetAlwaysOn();
     bool copySvg(const QString & path, QFileInfoList & svgEntryInfoList);
     void checkSwapObsolete(QList<ItemBase *> &, bool includeUpdateLaterMessage);
+    QMessageBox::StandardButton oldSchematicMessage(const QString & filename);
+    MainWindow * revertAux();
 
 protected:
 	static void removeActionsStartingAt(QMenu *menu, int start=0);

@@ -85,6 +85,7 @@ public:
 	ViewLayer::ViewLayerPlacement getViewLayerPlacement(ModelPart *, QDomElement & instance, QDomElement & view, ViewGeometry &);
     void setConvertSchematic(bool);
     void setOldSchematic(bool);
+    bool isOldSchematic();
     void resizeWires();
     void resizeLabels();
     

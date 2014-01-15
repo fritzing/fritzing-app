@@ -544,6 +544,10 @@ void SchematicSketchWidget::setOldSchematic(bool old) {
     m_oldSchematic = old;
 }
 
+bool SchematicSketchWidget::isOldSchematic() {
+    return m_oldSchematic;
+}
+
 void SchematicSketchWidget::setConvertSchematic(bool convert) {
     m_convertSchematic = convert;
 }

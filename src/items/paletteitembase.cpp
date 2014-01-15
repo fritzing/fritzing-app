@@ -512,7 +512,10 @@ void PaletteItemBase::setUpConnectors(FSvgRenderer * renderer, bool ignoreTermin
 }
 
 void PaletteItemBase::connectedMoved(ConnectorItem * from, ConnectorItem * to,  QList<ConnectorItem *> & already) {
-	if (from->connectorType() != Connector::Female) return;
+    // not sure this is necessary any longer
+    return;
+
+    if (from->connectorType() != Connector::Female) return;
 
 	// female connectors really only operate in breadboard view
 	if (m_viewID != ViewLayer::BreadboardView) return;

@@ -3950,6 +3950,7 @@ void MainWindow::setGridSize()
 
 QWidget * MainWindow::createGridSizeForm(GridSizeThing * gridSizeThing)
 {
+    this->setObjectName("gridSizeDia");
 	QGroupBox * over = new QGroupBox("", this);
 
 	QVBoxLayout * vLayout = new QVBoxLayout();

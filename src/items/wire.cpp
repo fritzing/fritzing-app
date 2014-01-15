@@ -607,58 +607,71 @@ void Wire::mouseMoveEventAux(QPointF eventPos, Qt::KeyboardModifiers modifiers) 
 	}
     allTo.remove(whichConnectorItem);
 
+    // TODO: this could all be determined once at mouse press time
+
 	if (allTo.count() == 0) {
-        // TODO: this could all be determined once in advance
+        // dragging one end of the wire
 
 		// don't allow wire to connect back to something the other end is already directly connected to
+        // an alternative would be to exclude all connectors in the net connected by the same kind of trace
 		QList<Wire *> wires;
 		QList<ConnectorItem *> ends;
 		collectChained(wires, ends);
 
-        //DebugDialog::debug("");
-        //DebugDialog::debug("________________");
-
-        // but allow to restore connections at this end (collect chained above got both ends of this wire) 
-		foreach (ConnectorItem * toConnectorItem, whichConnectorItem->connectedToItems()) {
-			ends.removeOne(toConnectorItem);
-		}
-
-        //foreach (ConnectorItem * end, ends) end->debugInfo("\t 1");
-
-        QList<ConnectorItem *> moreEnds;
+        QList<ConnectorItem *> exclude;
         foreach (ConnectorItem * end, ends) {
-            foreach (ConnectorItem * eci, end->connectedToItems()) {
-                //if (eci->attachedToItemType() != ModelPart::Wire) continue;  // don't count parts connecting directly to parts
-                moreEnds.append(eci);
-                //eci->debugInfo("\t 2");
+            exclude << end;
+            foreach (ConnectorItem * ci, end->connectedToItems()) {
+                // if there is a wire growing out of one of the excluded ends, exclude the attached end
+                exclude << ci;
+            }
+            foreach (ConnectorItem * toConnectorItem, end->connectedToItems()) {
+                if (toConnectorItem->attachedToItemType() != ModelPart::Wire) continue;
+
+                Wire * w = qobject_cast<Wire *>(toConnectorItem->attachedTo());
+                if (w->getRatsnest()) continue;
+                if (w->getTrace() != getTrace()) continue;
+
+                QList<ConnectorItem *> ends2;
+                QList<Wire *> wires2;
+                w->collectChained(wires2, ends2);
+                exclude.append(ends2);
+                foreach (ConnectorItem * e2, ends2) {
+                    foreach (ConnectorItem * ci, e2->connectedToItems()) {
+                        // if there is a wire growing out of one of the excluded ends, exclude that end of the wire
+                        exclude << ci;
+                    }
+                }
+                foreach (Wire * w2, wires2) {
+			        exclude.append(w2->cachedConnectorItems());
+		        }
             }
         }
-      
-        ends.append(moreEnds);
-        foreach (Wire * w, wires) {
-			ends << w->connector0() << w->connector1();
-            //w->connector0()->debugInfo("\t 3");
-            //w->connector0()->debugInfo("\t 4");
-		}
-        
-		ConnectorItem * originatingConnector = NULL;
-		if (otherConnectorItem && otherConnectorItem->connectionsCount() > 0) {
-			originatingConnector = otherConnectorItem->connectedToItems()[0];
-		}
+
 
         // but allow to restore connections at this end (collect chained above got both ends of this wire) 
 		foreach (ConnectorItem * toConnectorItem, whichConnectorItem->connectedToItems()) {
-			ends.removeOne(toConnectorItem);
+			if (ends.contains(toConnectorItem)) exclude.removeAll(toConnectorItem);
 		}
 
         //DebugDialog::debug("");
-        //foreach (ConnectorItem * end, ends) {
-        //    end->debugInfo("\t f");
-        //}
+        //DebugDialog::debug("__________________");
+        //foreach (ConnectorItem * end, exclude) end->debugInfo("exclude");
 
-		whichConnectorItem->findConnectorUnder(false, true, ends, true, originatingConnector);
+        ConnectorItem * originatingConnector = NULL;
+		if (otherConnectorItem) {
+			foreach (ConnectorItem * toConnectorItem, otherConnectorItem->connectedToItems()) {
+			    if (ends.contains(toConnectorItem)) {
+                    originatingConnector = toConnectorItem;
+                    break;
+                }
+		    }
+		}
+
+		whichConnectorItem->findConnectorUnder(false, true, exclude, true, originatingConnector);
 	}
     else {
+        // dragging a bendpoint
         foreach (ConnectorItem * toConnectorItem, allTo) {
             Wire * chained = qobject_cast<Wire *>(toConnectorItem->attachedTo());
             if (chained) {

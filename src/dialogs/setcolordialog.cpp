@@ -50,7 +50,6 @@ SetColorDialog::SetColorDialog(const QString & message, QColor & currentColor, Q
 	m_standardColor = standardColor;
 
 	this->setWindowTitle(tr("Set %1 Color...").arg(message));
-    this->setObjectName("colorDialogWindow");
 
 	QVBoxLayout * vLayout = new QVBoxLayout(this);
 

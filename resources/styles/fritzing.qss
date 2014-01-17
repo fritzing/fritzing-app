@@ -329,7 +329,7 @@ QScrollBar::sub-page:vertical
 /* complex property values with up and down arrows */
 
 
-
+QDialog QDoubleSpinBox,
 QDoubleSpinBox {
         background: #fff;
         font-size: 11px;
@@ -337,23 +337,31 @@ QDoubleSpinBox {
         border: none;
 		
 }
+
+QDialog QDoubleSpinBox::down-button,
 QDoubleSpinBox::down-button {
         background: #fff;
 		border: none;
 		image: url(:/resources/images/icons/spinArrowButtonDownNormal.png);
 		margin-bottom:1px;
 }
+
+QDialog QDoubleSpinBox::down-button:pressed,
 QDoubleSpinBox::down-button:pressed {
         background: #fff;
 		border: none;
 		image: url(:/resources/images/icons/spinArrowButtonDownPressed.png);
 		margin-bottom:1px;
 }
+
+QDialog QDoubleSpinBox::up-button,
 QDoubleSpinBox::up-button {
         background: #fff;
 		border-bottom: none;
 		image: url(:/resources/images/icons/spinArrowButtonUpNormal.png);
 }
+
+QDialog QDoubleSpinBox::up-button:pressed,
 DoubleSpinBox::up-button:pressed  {
         background: #fff;
 		border-bottom: none;
@@ -2167,13 +2175,18 @@ SearchLineEdit {
 
 /*############# colorDialog################*/
 
-QDialog QTabWidget {
+QDialog {
 	background-color:#d9d9d9;
 	color:#333333;
 	}
 
-QDialog QFrame {
-	background-color:transparent;
+QDialog QTabWidget {
+	background-color:#d900d9;
+	color:#333333;
+	}
+
+QDialog QFrame,
+QDialog QFrame QLabel {
 	color:#333333;
 }
 
@@ -2185,7 +2198,7 @@ QDialogButtonBox
 		}
 
 QDialogButtonBox,	
-QPushButton {
+QDialog QPushButton {
         font-size: 11px;
         /*min-width: 100px;*/
         text-align: center;
@@ -2199,15 +2212,15 @@ QPushButton {
 }
 
 QDialogButtonBox:hover,
-QPushButton:hover {
+QDialog QPushButton:hover {
         background: #fff;
 		
 }
 
 QDialogButtonBox:pressed,
 QDialogButtonBox:on,
-QPushButton:pressed,
-QPushButton:on
+QDialog QPushButton:pressed,
+QDialog QPushButton:on
 {
         background: #666;
 		color: #fff;

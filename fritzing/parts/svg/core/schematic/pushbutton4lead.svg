@@ -9,22 +9,23 @@
 	<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="7.2" y1="11.159" x2="19.8" y2="7.559"/>
 	<circle fill="none" stroke="#000000" stroke-width="0.7" cx="7.2" cy="11.159" r="0.36"/>
 	<circle fill="none" stroke="#000000" stroke-width="0.7" cx="21.6" cy="11.159" r="0.36"/>
-	<text transform="matrix(1 0 0 1 2.7612 2.7175)" fill="#787878" font-family="'DroidSans'" font-size="2">1</text>
-	<text transform="matrix(1 0 0 1 24.604 2.7175)" fill="#787878" font-family="'DroidSans'" font-size="2">2</text>
-	<text transform="matrix(1 0 0 1 2.7612 16.8425)" fill="#787878" font-family="'DroidSans'" font-size="2">1</text>
-	<text transform="matrix(1 0 0 1 24.604 16.8425)" fill="#787878" font-family="'DroidSans'" font-size="2">2</text>
+	<text transform="matrix(1 0 0 1 2.7612 2.718)" fill="#787878" font-family="'DroidSans'" font-size="2">1</text>
+	<text transform="matrix(1 0 0 1 24.604 2.718)" fill="#787878" font-family="'DroidSans'" font-size="2">2</text>
+	<text transform="matrix(1 0 0 1 2.7612 16.843)" fill="#787878" font-family="'DroidSans'" font-size="2">1</text>
+	<text transform="matrix(1 0 0 1 24.604 16.843)" fill="#787878" font-family="'DroidSans'" font-size="2">2</text>
 	<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="21.6" y1="3.96" x2="21.6" y2="18.359"/>
 	<line fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" x1="7.2" y1="3.96" x2="7.2" y2="18.359"/>
 	
-		<line id="connector0pin" fill="none" stroke="#555555" stroke-width="0.7" stroke-linecap="round" x1="0" y1="18.359" x2="7.2" y2="18.359"/>
+		<line id="connector0pin" fill="none" stroke="#555555" stroke-width="0.7" stroke-linecap="round" x1="0.322" y1="18.359" x2="7.2" y2="18.359"/>
 	
-		<line id="connector1pin" fill="none" stroke="#555555" stroke-width="0.7" stroke-linecap="round" x1="0" y1="3.96" x2="7.2" y2="3.96"/>
-	<rect id="connector0terminal" y="18.359" fill="none" width="0.001" height="0.001"/>
+		<line id="connector1pin" fill="none" stroke="#555555" stroke-width="0.7" stroke-linecap="round" x1="0.322" y1="3.96" x2="7.2" y2="3.96"/>
+	<polygon id="connector1terminal" fill="none" points="0.822,4.281 0.837,3.64 0,3.64 0,4.281 	"/>
+	<polygon id="connector0terminal" fill="none" points="0.822,18.694 0.837,18.053 0,18.053 0,18.694 	"/>
 	
-		<line id="connector3pin" fill="none" stroke="#555555" stroke-width="0.7" stroke-linecap="round" x1="28.8" y1="18.359" x2="21.6" y2="18.359"/>
-	<rect id="connector3terminal" x="28.8" y="18.359" fill="none" width="0" height="0.001"/>
-	<rect id="connector2terminal" x="28.8" y="3.942" fill="none" width="0" height="0.001"/>
+		<line id="connector3pin" fill="none" stroke="#555555" stroke-width="0.7" stroke-linecap="round" x1="28.451" y1="18.359" x2="21.6" y2="18.359"/>
+	<rect id="connector3terminal" x="27.806" y="18.006" fill="none" width="0.994" height="0.672"/>
+	<rect id="connector2terminal" x="27.712" y="3.6" fill="none" width="1.088" height="0.719"/>
 	
-		<line id="connector2pin" fill="none" stroke="#555555" stroke-width="0.7" stroke-linecap="round" x1="28.8" y1="3.96" x2="21.6" y2="3.96"/>
+		<line id="connector2pin" fill="none" stroke="#555555" stroke-width="0.7" stroke-linecap="round" x1="28.451" y1="3.96" x2="21.6" y2="3.96"/>
 </g>
 </svg>

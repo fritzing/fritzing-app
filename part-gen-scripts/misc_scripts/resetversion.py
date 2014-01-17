@@ -25,7 +25,6 @@ def main():
         return
     
     inputdir = None
-    outputdir = None
     
     for o, a in opts:
         #print o
@@ -48,7 +47,7 @@ def main():
     except:
         compression = zipfile.ZIP_STORED
 
-    for root, dirs, files in os.walk(inputDir, topdown=False):
+    for root, dirs, files in os.walk(inputdir, topdown=False):
         for fzz in files:
             if not fzz.endswith('.fzz'):
                 continue

@@ -159,11 +159,11 @@
 			<language country="de" name="H-Bridge" src="core/Fritzing Creator Kit DE+EN/creator-kit-de/Fritzing/H-Bridge.fzz"/>		
 		</sketch>
 		<sketch id="Chaserlights" >
-			<language country="en" name="Chaser lights" src="core/Fritzing Creator Kit DE+EN/creator-kit-en/Fritzing/Chaser_Lights.fzz"/>
+			<language country="en" name="Chaser lights" src="core/Fritzing Creator Kit DE+EN/creator-kit-en/Fritzing/ChaserLights.fzz"/>
 			<language country="de" name="Lauflicht" src="core/Fritzing Creator Kit DE+EN/creator-kit-de/Fritzing/Lauflicht.fzz"/>
 		</sketch>
 		<sketch id="AutomaticLightingSystem" >
-			<language country="en" name="Automatic Lighting System" src="core/Fritzing Creator Kit DE+EN/creator-kit-en/Fritzing/Automatic_Lighting_System.fzz"/>
+			<language country="en" name="Automatic Lighting System" src="core/Fritzing Creator Kit DE+EN/creator-kit-en/Fritzing/AutomaticLightingSystem.fzz"/>
 			<language country="de" name="Lichtautomatik" src="core/Fritzing Creator Kit DE+EN/creator-kit-de/Fritzing/Lichtautomatik.fzz"/>
 		</sketch>
 		<sketch id="Matrix" >
@@ -171,20 +171,20 @@
 			<language country="de" name="Matrix" src="core/Fritzing Creator Kit DE+EN/creator-kit-de/Fritzing/Matrix.fzz"/>
 		</sketch>
 		<sketch id="Nightlight" >
-			<language country="en" name="Nightlight" src="core/Fritzing Creator Kit DE+EN/creator-kit-en/Fritzing/Night_Light.fzz"/>
+			<language country="en" name="Nightlight" src="core/Fritzing Creator Kit DE+EN/creator-kit-en/Fritzing/NightLight.fzz"/>
 			<language country="de" name="Nachtlicht" src="core/Fritzing Creator Kit DE+EN/creator-kit-de/Fritzing/Nachtlicht.fzz"/>
 		</sketch>
 		<sketch id="Ping-Pong" >
-			<language country="en" name="Ping-Pong" src="core/Fritzing Creator Kit DE+EN/creator-kit-en/Fritzing/Ping_Pong.fzz"/>
-			<language country="de" name="Ping-Pong" src="core/Fritzing Creator Kit DE+EN/creator-kit-de/Fritzing/Ping-Pong.fzz"/>
+			<language country="en" name="Ping-Pong" src="core/Fritzing Creator Kit DE+EN/creator-kit-en/Fritzing/PingPong.fzz"/>
+			<language country="de" name="Ping-Pong" src="core/Fritzing Creator Kit DE+EN/creator-kit-de/Fritzing/PingPong.fzz"/>
 		</sketch>
 		<sketch id="Potentiometer" >
 			<language country="en" name="Potentiometer" src="core/Fritzing Creator Kit DE+EN/creator-kit-en/Fritzing/Potentiometer.fzz"/>
 			<language country="de" name="Potentiometer" src="core/Fritzing Creator Kit DE+EN/creator-kit-de/Fritzing/Potentiometer.fzz"/>
 		</sketch>
 		<sketch id="Processing_RGB" >
-			<language country="en" name="Processing RGB" src="core/Fritzing Creator Kit DE+EN/creator-kit-en/Fritzing/Processing_RGB.fzz"/>
-			<language country="de" name="Processing RGB" src="core/Fritzing Creator Kit DE+EN/creator-kit-de/Fritzing/Processing_RGB.fzz"/>
+			<language country="en" name="Processing RGB" src="core/Fritzing Creator Kit DE+EN/creator-kit-en/Fritzing/ProcessingRGB.fzz"/>
+			<language country="de" name="Processing RGB" src="core/Fritzing Creator Kit DE+EN/creator-kit-de/Fritzing/ProcessingRGB.fzz"/>
 		</sketch>
 		<sketch id="Servo" >
 			<language country="en" name="Servo" src="core/Fritzing Creator Kit DE+EN/creator-kit-en/Fritzing/Servo.fzz"/>	
@@ -195,8 +195,8 @@
 			<language country="de" name="Synthesizer" src="core/Fritzing Creator Kit DE+EN/creator-kit-de/Fritzing/Synthesizer.fzz"/>
 		</sketch>
 		<sketch id="TwitterSaurus" >
-			<language country="en" name="Twittersaurus" src="core/Fritzing Creator Kit DE+EN/creator-kit-en/Fritzing/Twitter_Saurus.fzz"/>
-			<language country="de" name="Twittersaurus" src="core/Fritzing Creator Kit DE+EN/creator-kit-de/Fritzing/Twitter_Saurus.fzz"/>
+			<language country="en" name="Twittersaurus" src="core/Fritzing Creator Kit DE+EN/creator-kit-en/Fritzing/TwitterSaurus.fzz"/>
+			<language country="de" name="Twittersaurus" src="core/Fritzing Creator Kit DE+EN/creator-kit-de/Fritzing/TwitterSaurus.fzz"/>
 		</sketch>
 		<sketch id="Amplification" >
 			<language country="en" name="Amplification" src="core/Fritzing Creator Kit DE+EN/creator-kit-en/Fritzing/Amplification.fzz"/>
@@ -207,7 +207,7 @@
 			<language country="de" name="Wahrsager" src="core/Fritzing Creator Kit DE+EN/creator-kit-de/Fritzing/Wahrsager.fzz"/>
 		</sketch>
 		<sketch id="MagicBoard" >
-			<language country="en" name="Magic Board" src="core/Fritzing Creator Kit DE+EN/creator-kit-en/Fritzing/Magic_Board.fzz"/>	
+			<language country="en" name="Magic Board" src="core/Fritzing Creator Kit DE+EN/creator-kit-en/Fritzing/MagicBoard.fzz"/>	
 			<language country="de" name="Zaubertafel" src="core/Fritzing Creator Kit DE+EN/creator-kit-de/Fritzing/Zaubertafel.fzz"/>	
 		</sketch>
 </sketches>

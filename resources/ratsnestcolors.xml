@@ -11,11 +11,19 @@
 			<connector name="gnd" />
 			<connector name="ground" />
 		</color>
-		<color name="yellow" ratsnest="#00a527"  wire="#fff800" shadow="#d6d63a" />
-		<color name="green" ratsnest="#25cc35"  wire="#25cc35" shadow="#00a527" />
+		<color name="yellow" ratsnest="#00a527"  wire="#fff800" shadow="#d6d63a" >
+			<obsolete name="yellow" ratsnest="#ffe24d"  wire="#ffe24d" shadow="#e6ab00" />
+			<obsolete name="yellow" ratsnest="#a09c00"  wire="#a09c00" shadow="#e6ab00" />
+		</color>
+		<color name="green" ratsnest="#25cc35"  wire="#25cc35" shadow="#00a527" >
+			<obsolete name="green" ratsnest="#47cc79"  wire="#47cc79" shadow="#00a6d3" />
+		</color>
 		<color name="grey" ratsnest=""  wire="#999999" shadow="#666666" />
 		<color name="white" ratsnest=""  wire="#ffffff" shadow="#999999" />
-		<color name="orange" ratsnest="#ef6100"  wire="#ef6100" shadow="#ad6a38" />
+		<color name="orange" ratsnest="#ef6100"  wire="#ef6100" shadow="#ad6a38" >
+			<obsolete name="orange" ratsnest="#ff7033"  wire="#ff7033" shadow="#d95821" />
+			<obsolete name="orange" ratsnest="#33ffc5"  wire="#33ffc5" shadow="#d95821" />
+		</color>
 		<color name="ochre" ratsnest="#a37911"  wire="#a37911" shadow="#846521" />
 		<color name="cyan" ratsnest="#33ffc5"  wire="#33ffc5" shadow="#00a0c6" />
 		<color name="purple" ratsnest="#ab58a2"  wire="#ab58a2" shadow="#7a3a73" />
@@ -32,15 +40,31 @@
 			<connector name="gnd" />
 			<connector name="ground" />
 		</color>
-		<color name="yellow" ratsnest="#00a527"  wire="#fff800" shadow="#d6d63a" />
-		<color name="green" ratsnest="#25cc35"  wire="#25cc35" shadow="#00a527" />
-		<color name="grey" ratsnest=""  wire="#999999" shadow="#666666" />
-		<color name="white" ratsnest=""  wire="#ffffff" shadow="#999999" />
-		<color name="orange" ratsnest="#ff7300"  wire="#ff7300" shadow="#d65b00" />
+		<color name="yellow" ratsnest="#00a527"  wire="#fff800" shadow="#d6d63a">
+			<obsolete name="yellow" ratsnest="#ffe24d"  wire="#ffe24d" shadow="#ffe24d"/>
+			<obsolete name="yellow" ratsnest="#a09c00"  wire="#a09c00" shadow="#a09c00"/>
+		</color>
+		<color name="green" ratsnest="#25cc35"  wire="#25cc35" shadow="#00a527" >
+			<obsolete name="green" ratsnest="#47cc79"  wire="#47cc79" shadow="#47cc79" />
+		</color>
+		<color name="grey" ratsnest=""  wire="#999999" shadow="#666666" >
+			<obsolete name="grey" ratsnest=""  wire="#999999"/>
+		</color>
+		<color name="white" ratsnest=""  wire="#ffffff" shadow="#999999" >
+		</color>
+		<color name="orange" ratsnest="#ff7300"  wire="#ff7300" shadow="#d65b00" >
+			<obsolete name="orange" ratsnest="#ef6100"  wire="#ef6100" shadow="#ad6a38" />
+			<obsolete name="orange" ratsnest="#ff7033"  wire="#ff7033" shadow="#ff7033"/>
+			<obsolete name="orange" ratsnest="#33ffc5"  wire="#33ffc5" shadow="#33ffc5"/>
+		</color>
 		<color name="ochre" ratsnest="#a37911"  wire="#a37911" shadow="#846521" />
 		<color name="cyan" ratsnest="#33ffc5"  wire="#33ffc5" shadow="#00a0c6" />
-		<color name="purple" ratsnest="#ab58a2"  wire="#ab58a2" shadow="#7a3a73" />
-		<color name="brown" ratsnest="#8c3b00"  wire="#8c3b00" shadow="#6c2710" />
+		<color name="purple" ratsnest="#ab58a2"  wire="#ab58a2" shadow="#7a3a73" >
+			<obsolete name="purple" ratsnest="#ab58a2"  wire="#ab58a2" shadow="#ab58a2"/>
+		</color>
+		<color name="brown" ratsnest="#8c3b00"  wire="#8c3b00" shadow="#6c2710" >
+			<obsolete name="brown" ratsnest="#8c3b00"  wire="#8c3b00" shadow="#8c3b00"/>
+		</color>
 		<color name="pink" ratsnest="#fa50e6"  wire="#fa50e6" shadow="#dc00dc" />
 	</view>	
 	<view name="pcbView" background="#333">
@@ -53,17 +77,35 @@
 			<connector name="gnd" />
 			<connector name="ground" />
 		</color>
-	<!--	<color name="yellow" ratsnest=""/>
-		<color name="grey" ratsnest=""/>
-		<color name="white" ratsnest=""/>
-		<color name="orange" ratsnest=""/> -->
-		<color name="green" ratsnest="#1fb551"/>
+		<!--	
+		<color name="yellow" ratsnest="" >
+			<obsolete name="yellow" ratsnest="#ffe24d" />
+			<obsolete name="yellow" ratsnest="#a09c00" />
+		</color>
+		<color name="grey" ratsnest="">
+		</color>
+		<color name="white" ratsnest="">
+		</color>
+		<color name="orange" ratsnest=""> 
+			<obsolete name="orange" ratsnest="#ff7033" />
+			<obsolete name="orange" ratsnest="#33ffc5" />
+		</color>
+		-->
+		<color name="green" ratsnest="#1fb551">
+			<obsolete name="green" ratsnest="#47cc79" />
+		</color>
 		<color name="ochre" ratsnest="#a37911"/>
 		<color name="cyan" ratsnest="#33ffc5"/>
-		<color name="purple" ratsnest="#ab58a2"/>
-		<color name="brown" ratsnest="#8c3b00"/>
+		<color name="purple" ratsnest="#ab58a2">
+		</color>
+		<color name="brown" ratsnest="#8c3b00">
+		</color>
 		<color name="pink" ratsnest="#fa50e6"/>
-		<color name="trace" wire="#f28a00" shadow="#ca6626" /> <!-- bottom trace color -->
-		<color name="trace1" wire="#f2c600" shadow="#f2c600" /> <!-- top trace color -->
+		<color name="trace" wire="#f28a00" shadow="#ca6626" > <!-- bottom trace color -->
+			<obsolete name="trace" wire="#F28A00" shadow="#F28A00" />
+		</color>
+		<color name="trace1" wire="#f2c600" shadow="#f2c600" > <!-- top trace color -->
+			<obsolete name="trace1" wire="#FFCB33" shadow="#FFCB33" />
+		</color>
 	</view>
 </colors>

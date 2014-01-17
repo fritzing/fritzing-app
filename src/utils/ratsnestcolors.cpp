@@ -40,7 +40,10 @@ class RatsnestColor {
 	RatsnestColor(const QDomElement &);
 	~RatsnestColor();
 
+    bool matchColor(const QString &);
+
 	friend class RatsnestColors;
+
 
 protected:
 	QString m_name;
@@ -48,6 +51,7 @@ protected:
 	QColor m_ratsnest;
 	QString m_shadow;
 	QStringList m_connectorNames;
+    QList<RatsnestColor *> m_obsoleteList;
 };
 
 //////////////////////////////////////////////////////
@@ -63,9 +67,28 @@ RatsnestColor::RatsnestColor(const QDomElement & color) {
 		m_connectorNames.append(connector.attribute("name"));
 		connector = connector.nextSiblingElement("connector");
 	}
+    QDomElement obsolete = color.firstChildElement("obsolete");
+    while (!obsolete.isNull()) {
+        m_obsoleteList << new RatsnestColor(obsolete);
+        obsolete = obsolete.nextSiblingElement("obsolete");
+    }
 }
 
 RatsnestColor::~RatsnestColor() {
+    foreach (RatsnestColor * ratsnestColor, m_obsoleteList) {
+        delete ratsnestColor;
+    }
+    m_obsoleteList.clear();
+}
+
+bool RatsnestColor::matchColor(const QString & string) {
+    if (m_wire.compare(string, Qt::CaseInsensitive) == 0) return true;
+
+    foreach (RatsnestColor * obsolete, m_obsoleteList) {
+        if (obsolete->m_wire.compare(string, Qt::CaseInsensitive) == 0) return true;
+    }
+
+    return false;
 }
 
 //////////////////////////////////////////////////////
@@ -219,24 +242,24 @@ const QString & RatsnestColors::shadowColor(ViewLayer::ViewID viewID, const QStr
 	return ratsnestColor->m_shadow;
 }
 
-QString RatsnestColors::wireColor(ViewLayer::ViewID viewID, QString & name)
+QString RatsnestColors::wireColor(ViewLayer::ViewID viewID, QString & string)
 {
 	RatsnestColors * ratsnestColors = m_viewList.value(viewID, NULL);
 	if (ratsnestColors == NULL) return ___emptyString___;
 
-	RatsnestColor * ratsnestColor = ratsnestColors->m_ratsnestColorHash.value(name.toLower(), NULL);
+	RatsnestColor * ratsnestColor = ratsnestColors->m_ratsnestColorHash.value(string.toLower(), NULL);
 	if (ratsnestColor != NULL) {
 		QString w = ratsnestColor->m_wire;
 		if (!w.isEmpty()) return w;
 	}
 
 	// reverse lookup
-	foreach (QString c, ratsnestColors->m_ratsnestColorHash.keys()) {
-		QString w = ratsnestColors->m_ratsnestColorHash.value(c)->m_wire;
-		if (w.compare(name, Qt::CaseInsensitive) == 0) {
-			name = c;
-			return w;
-		}
+	foreach (QString cname, ratsnestColors->m_ratsnestColorHash.keys()) {
+        RatsnestColor * candidate = ratsnestColors->m_ratsnestColorHash.value(cname);
+        if (candidate->matchColor(string)) {
+	        string = cname;
+			return candidate->m_wire;
+        }
 	}
 
 	return ___emptyString___;

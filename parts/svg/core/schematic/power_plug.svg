@@ -1,25 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1"
-	 id="svg2" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:cc="http://creativecommons.org/ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" sodipodi:docname="peltier_sensor.svg" sodipodi:version="0.32" inkscape:version="0.46" inkscape:output_extension="org.inkscape.output.svg.inkscape"
+	 id="svg2" xmlns:svg="http://www.w3.org/2000/svg" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" inkscape:version="0.46" sodipodi:version="0.32" sodipodi:docname="peltier_sensor.svg" inkscape:output_extension="org.inkscape.output.svg.inkscape"
 	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28.8px" height="36px"
 	 viewBox="0 0 28.8 36" enable-background="new 0 0 28.8 36" xml:space="preserve">
 <g id="schematic">
-	<polyline fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" points="7.2,13.636 
-		10.894,13.636 13.623,16.35 17.06,16.35 21.6,13.284 	"/>
-	<polyline fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" points="7.2,20.748 
-		11.81,20.748 19.977,20.748 	"/>
+	<polyline fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" points="7.55,13.636 
+		11.244,13.636 13.973,16.35 17.41,16.35 21.95,13.284 	"/>
+	<polyline fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" points="7.55,20.748 
+		12.16,20.748 20.327,20.748 	"/>
 	<polyline id="box_1_" fill="none" stroke="#000000" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round" points="
-		21.6,28.8 7.2,28.8 7.2,7.2 21.6,7.2 	"/>
-	<polygon points="10.035,14.817 8.541,16.866 9.56,17.067 8.282,19.555 10.781,16.55 9.718,16.278 	"/>
-		<line id="connector2pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="7.2" y1="20.748" x2="0" y2="20.748"/>	
-		<line id="connector0pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="7.2" y1="13.692" x2="0" y2="13.692"/>
+		21.95,28.8 7.55,28.8 7.55,7.2 21.95,7.2 	"/>
+	<polygon points="10.385,14.817 8.891,16.866 9.91,17.067 8.632,19.555 11.131,16.55 10.068,16.278 	"/>
+	<rect id="connector2terminal" y="20.438" fill="none" width="1.275" height="0.625"/>
+	<rect id="connector1terminal" y="20.438" fill="none" width="1.275" height="0.625"/>
+	<rect id="connector0terminal" y="13.379" fill="none" width="1.275" height="0.625"/>
 	
-		<line id="connector1pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="7.2" y1="20.748" x2="0" y2="20.748"/>
-	<text x="19.0347" y="25.585" fill="#787878" font-family="'Droid Sans'" font-size="4.5">-</text>
-	<text x="18.2007" y="12.1563" fill="#787878" font-family="'Droid Sans'" font-size="4.5">+</text>
+		<line id="connector2pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="7.55" y1="20.748" x2="0.35" y2="20.748"/>
 	
-
+		<line id="connector0pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="7.55" y1="13.692" x2="0.35" y2="13.692"/>
+	
+		<line id="connector1pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="7.55" y1="20.748" x2="0.35" y2="20.748"/>
+	<text transform="matrix(1 0 0 1 19.3843 25.585)" fill="#787878" font-family="'DroidSans'" font-size="4.5">-</text>
+	<text transform="matrix(1 0 0 1 18.5503 12.1563)" fill="#787878" font-family="'DroidSans'" font-size="4.5">+</text>
 </g>
 </svg>

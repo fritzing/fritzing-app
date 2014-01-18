@@ -687,6 +687,7 @@ void WelcomeView::updateRecent() {
         gotOne = true;
         QListWidgetItem * item = new QListWidgetItem(icon, finfo.fileName());
         item->setData(Qt::UserRole, finfo.absoluteFilePath());
+        item->setToolTip(finfo.absoluteFilePath());
         m_recentListWidget->addItem(item);
 	}
 

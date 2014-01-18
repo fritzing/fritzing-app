@@ -1,16 +1,13 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="31.104px" height="9.504px" viewBox="0 0 31.104 9.504" enable-background="new 0 0 31.104 9.504" xml:space="preserve">
-<desc>Jumper SVG</desc>
-<g id="copper0">
-	<g id="copper1">
-		<circle id="connector0pad" fill="none" stroke="#f2c600" stroke-width="0.9" cx="4.752" cy="4.752" r="1.98"/>
-		<circle id="connector1pad" fill="none" stroke="#f2c600" stroke-width="0.9" cx="26.352" cy="4.752" r="1.98"/>
-	</g>
-</g>
-<line id="partimage" fill="none" stroke="#6699CC" stroke-width="0.9" stroke-linecap="round" x1="4.752" y1="4.752" x2="26.352" y2="4.752"/>
-<line id="silkscreen" fill="none" stroke="#DDDDDD" stroke-width="2.4" stroke-linecap="round" x1="4.752" y1="4.752" x2="26.352" y2="4.752"/>
-<line id="silkscreen0" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" x1="4.752" y1="4.752" x2="26.352" y2="4.752"/>
+<?xml version='1.0' encoding='UTF-8'?>
+<svg width="0.432in" version="1.2" xmlns="http://www.w3.org/2000/svg" height="0.132in" viewBox="0 0 432 132" baseProfile="tiny" >
+  <desc>Jumper SVG</desc>
+  <g id="copper0" >
+  <g id="copper1" >
+    <circle fill="none" cx="66" cy="66" stroke="#f2c600" r="27.5" id="connector0pad" stroke-width="20" />
+    <circle fill="none" cx="366" cy="66" stroke="#f2c600" r="27.5" id="connector1pad" stroke-width="20" />
+  </g>
+  </g>
+  <line id="partimage" stroke-linecap="round" stroke="#6699cc" x1="66" y1="66" x2="366" y2="66" stroke-width="21" />
+  <line id="silkscreen" stroke-linecap="round" stroke="#DDDDDD" x1="66" y1="66" x2="366" y2="66" stroke-width="8" />
+  <line id="silkscreen0" stroke-linecap="round" stroke="#ffffff" x1="66" y1="66" x2="366" y2="66" stroke-width="8" />
 </svg>

@@ -162,7 +162,7 @@ protected:
 	void setNormalColor();
 	void setConnectedColor();
 	void setUnconnectedColor();
-	void setColorAux(QBrush brush, QPen pen, bool paint);
+	void setColorAux(const QBrush & brush, const QPen & pen, bool paint);
 	void setColorAux(const QColor &color, bool paint=true);
 	void mousePressEvent(QGraphicsSceneMouseEvent *event);
 	void mouseMoveEvent(QGraphicsSceneMouseEvent *event);

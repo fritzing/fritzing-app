@@ -434,7 +434,7 @@ void PCBSketchWidget::initWire(Wire * wire, int penWidth) {
 	Q_UNUSED(penWidth);
 	if (wire->getRatsnest()) return;
 
-	wire->setColorString(traceColor(wire->connector0()), 1.0);
+	wire->setColorString(traceColor(wire->connector0()), 1.0, false);
 	wire->setPenWidth(1, this, 2);
 }
 
@@ -1153,7 +1153,7 @@ void PCBSketchWidget::changeLayer(long id, double z, ViewLayer::ViewLayerID view
 	if (tw != NULL) {
 		ViewLayer::ViewLayerPlacement viewLayerPlacement = ViewLayer::specFromID(viewLayerID);
 		tw->setViewLayerPlacement(viewLayerPlacement);
-		tw->setColorString(traceColor(viewLayerPlacement), 1.0);
+		tw->setColorString(traceColor(viewLayerPlacement), 1.0, true);
 		ViewLayer * viewLayer = m_viewLayers.value(viewLayerID);
 		tw->setInactive(!viewLayer->isActive());
 		tw->setHidden(!viewLayer->visible());
@@ -1742,7 +1742,7 @@ Wire * PCBSketchWidget::createTempWireForDragging(Wire * fromWire, ModelPart * w
 	viewGeometry.setPCBTrace(true);
 	Wire * wire =  SketchWidget::createTempWireForDragging(fromWire, wireModel, connectorItem, viewGeometry, spec);
 	if (fromWire == NULL) {
-		wire->setColorString(traceColor(connectorItem), 1.0);
+		wire->setColorString(traceColor(connectorItem), 1.0, false);
 		double traceWidth = getTraceWidth();
 		double minDim = connectorItem->minDimension();
 		if (minDim < traceWidth) {
@@ -1752,7 +1752,7 @@ Wire * PCBSketchWidget::createTempWireForDragging(Wire * fromWire, ModelPart * w
 		wire->setProperty(FakeTraceProperty, true);
 	}
 	else {
-		wire->setColorString(fromWire->colorString(), fromWire->opacity());
+		wire->setColorString(fromWire->colorString(), fromWire->opacity(), false);
 		wire->setWireWidth(fromWire->width(), this, fromWire->hoverStrokeWidth());
 	}
 

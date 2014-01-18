@@ -112,31 +112,31 @@ QHash<QString, QString> ItemBase::TranslatedPropertyNames;
 QPointer<ReferenceModel> ItemBase::TheReferenceModel = NULL;
 
 QString ItemBase::PartInstanceDefaultTitle;
-const QList<ItemBase *> ItemBase::emptyList;
+const QList<ItemBase *> ItemBase::EmptyList;
 
-const QColor ItemBase::hoverColor(0,0,0);
-const double ItemBase::hoverOpacity = .20;
-const QColor ItemBase::connectorHoverColor(0,0,255);
-const double ItemBase::connectorHoverOpacity = .40;
+const QColor ItemBase::HoverColor(0,0,0);
+const double ItemBase::HoverOpacity = .20;
+const QColor ItemBase::ConnectorHoverColor(0,0,255);
+const double ItemBase::ConnectorHoverOpacity = .40;
 
 const QColor StandardConnectedColor(0, 255, 0);
 const QColor StandardUnconnectedColor(255, 0, 0);
 
-QPen ItemBase::normalPen(QColor(255,0,0));
-QPen ItemBase::hoverPen(QColor(0, 0, 255));
-QPen ItemBase::connectedPen(StandardConnectedColor);
-QPen ItemBase::unconnectedPen(StandardUnconnectedColor);
-QPen ItemBase::chosenPen(QColor(255,0,0));
-QPen ItemBase::equalPotentialPen(QColor(255,255,0));
+QPen ItemBase::NormalPen(QColor(255,0,0));
+QPen ItemBase::HoverPen(QColor(0, 0, 255));
+QPen ItemBase::ConnectedPen(StandardConnectedColor);
+QPen ItemBase::UnconnectedPen(StandardUnconnectedColor);
+QPen ItemBase::ChosenPen(QColor(255,0,0));
+QPen ItemBase::EqualPotentialPen(QColor(255,255,0));
 
-QBrush ItemBase::normalBrush(QColor(255,0,0));
-QBrush ItemBase::hoverBrush(QColor(0,0,255));
-QBrush ItemBase::connectedBrush(StandardConnectedColor);
-QBrush ItemBase::unconnectedBrush(StandardUnconnectedColor);
-QBrush ItemBase::chosenBrush(QColor(255,0,0));
-QBrush ItemBase::equalPotentialBrush(QColor(255,255,0));
+QBrush ItemBase::NormalBrush(QColor(255,0,0));
+QBrush ItemBase::HoverBrush(QColor(0,0,255));
+QBrush ItemBase::ConnectedBrush(StandardConnectedColor);
+QBrush ItemBase::UnconnectedBrush(StandardUnconnectedColor);
+QBrush ItemBase::ChosenBrush(QColor(255,0,0));
+QBrush ItemBase::EqualPotentialBrush(QColor(255,255,0));
 
-const double ItemBase::normalConnectorOpacity = 0.4;
+const double ItemBase::NormalConnectorOpacity = 0.4;
 
 static QHash<QString, QStringList> CachedValues;
 
@@ -836,12 +836,12 @@ void ItemBase::paintHover(QPainter *painter, const QStyleOptionGraphicsItem *opt
 	Q_UNUSED(option);
 	painter->save();
 	if (m_connectorHoverCount > 0 || m_connectorHoverCount2 > 0) {
-		painter->setOpacity(connectorHoverOpacity);
-		painter->fillPath(shape, QBrush(connectorHoverColor));
+		painter->setOpacity(ConnectorHoverOpacity);
+		painter->fillPath(shape, QBrush(ConnectorHoverColor));
 	}
 	else {
-		painter->setOpacity(hoverOpacity);
-		painter->fillPath(shape, QBrush(hoverColor));
+		painter->setOpacity(HoverOpacity);
+		painter->fillPath(shape, QBrush(HoverColor));
 	}
 	painter->restore();
 }
@@ -1280,7 +1280,7 @@ void ItemBase::cleanup() {
 }
 
 const QList<ItemBase *> & ItemBase::layerKin() {
-	return emptyList;
+	return EmptyList;
 }
 
 ItemBase * ItemBase::layerKinChief() {
@@ -1542,49 +1542,41 @@ bool ItemBase::hasConnections()
 	return false;
 }
 
-void ItemBase::getConnectedColor(ConnectorItem *, QBrush * &brush, QPen * &pen, double & opacity, double & negativePenWidth, bool & negativeOffsetRect) {
-	brush = &connectedBrush;
-	pen = &connectedPen;
+void ItemBase::getConnectedColor(ConnectorItem *, QBrush &brush, QPen &pen, double & opacity, double & negativePenWidth, bool & negativeOffsetRect) {
+	brush = ConnectedBrush;
+	pen = ConnectedPen;
 	opacity = 0.2;
 	negativePenWidth = 0;
 	negativeOffsetRect = true;
 }
 
-void ItemBase::getNormalColor(ConnectorItem *, QBrush * &brush, QPen * &pen, double & opacity, double & negativePenWidth, bool & negativeOffsetRect) {
-	brush = &normalBrush;
-	pen = &normalPen;
-	opacity = normalConnectorOpacity;
+void ItemBase::getNormalColor(ConnectorItem *, QBrush &brush, QPen &pen, double & opacity, double & negativePenWidth, bool & negativeOffsetRect) {
+	brush = NormalBrush;
+	pen = NormalPen;
+	opacity = NormalConnectorOpacity;
 	negativePenWidth = 0;
 	negativeOffsetRect = true;
 }
 
-void ItemBase::getUnconnectedColor(ConnectorItem *, QBrush * &brush, QPen * &pen, double & opacity, double & negativePenWidth, bool & negativeOffsetRect) {
-	brush = &unconnectedBrush;
-	pen = &unconnectedPen;
-        opacity = 0.3;
+void ItemBase::getUnconnectedColor(ConnectorItem *, QBrush &brush, QPen &pen, double & opacity, double & negativePenWidth, bool & negativeOffsetRect) {
+	brush = UnconnectedBrush;
+	pen = UnconnectedPen;
+    opacity = 0.3;
 	negativePenWidth = 0;
 	negativeOffsetRect = true;
 }
 
-void ItemBase::getChosenColor(ConnectorItem *, QBrush * &brush, QPen * &pen, double & opacity, double & negativePenWidth, bool & negativeOffsetRect) {
-	brush = &chosenBrush;
-	pen = &chosenPen;
-	opacity = normalConnectorOpacity;
+void ItemBase::getHoverColor(ConnectorItem *, QBrush &brush, QPen &pen, double & opacity, double & negativePenWidth, bool & negativeOffsetRect) {
+	brush = HoverBrush;
+	pen = HoverPen;
+	opacity = NormalConnectorOpacity;
 	negativePenWidth = 0;
 	negativeOffsetRect = true;
 }
 
-void ItemBase::getHoverColor(ConnectorItem *, QBrush * &brush, QPen * &pen, double & opacity, double & negativePenWidth, bool & negativeOffsetRect) {
-	brush = &hoverBrush;
-	pen = &hoverPen;
-	opacity = normalConnectorOpacity;
-	negativePenWidth = 0;
-	negativeOffsetRect = true;
-}
-
-void ItemBase::getEqualPotentialColor(ConnectorItem *, QBrush * &brush, QPen * &pen, double & opacity, double & negativePenWidth, bool & negativeOffsetRect) {
-	brush = &equalPotentialBrush;
-	pen = &equalPotentialPen;
+void ItemBase::getEqualPotentialColor(ConnectorItem *, QBrush &brush, QPen &pen, double & opacity, double & negativePenWidth, bool & negativeOffsetRect) {
+	brush = EqualPotentialBrush;
+	pen = EqualPotentialPen;
 	opacity = 1.0;
 	negativePenWidth = 0;
 	negativeOffsetRect = true;
@@ -1622,11 +1614,11 @@ ConnectorItem * ItemBase::rightClickedConnector() {
 }
 
 QColor ItemBase::connectedColor() {
-	return connectedPen.color();
+	return ConnectedPen.color();
 }
 
 QColor ItemBase::unconnectedColor() {
-	return unconnectedPen.color();
+	return UnconnectedPen.color();
 }
 
 QColor ItemBase::standardConnectedColor() {
@@ -1638,13 +1630,13 @@ QColor ItemBase::standardUnconnectedColor() {
 }
 
 void ItemBase::setConnectedColor(QColor & c) {
-	connectedPen.setColor(c);
-	connectedBrush.setColor(c);
+	ConnectedPen.setColor(c);
+	ConnectedBrush.setColor(c);
 }
 
 void ItemBase::setUnconnectedColor(QColor & c) {
-	unconnectedPen.setColor(c);
-	unconnectedBrush.setColor(c);
+	UnconnectedPen.setColor(c);
+	UnconnectedBrush.setColor(c);
 }
 
 QString ItemBase::translatePropertyName(const QString & key) {

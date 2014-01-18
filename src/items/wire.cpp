@@ -354,11 +354,11 @@ void Wire::paintHover(QPainter *painter, const QStyleOptionGraphicsItem *option,
 	painter->save();
 	if ((m_connectorHoverCount > 0 && !(m_dragEnd || m_dragCurve)) || m_connectorHoverCount2 > 0) {
 		painter->setOpacity(.50);
-		painter->fillPath(this->hoverShape(), QBrush(connectorHoverColor));
+		painter->fillPath(this->hoverShape(), QBrush(ConnectorHoverColor));
 	}
 	else {
-		painter->setOpacity(hoverOpacity);
-		painter->fillPath(this->hoverShape(), QBrush(hoverColor));
+		painter->setOpacity(HoverOpacity);
+		painter->fillPath(this->hoverShape(), QBrush(HoverColor));
 	}
 	painter->restore();
 }
@@ -825,7 +825,7 @@ void Wire::setColorFromElement(const QDomElement & element) {
 		op = 1.0;
 	}
 
-	setColorString(colorString, op);
+	setColorString(colorString, op, false);
 }
 
 void Wire::hoverEnterConnectorItem(QGraphicsSceneHoverEvent * event , ConnectorItem * item) {
@@ -1157,14 +1157,16 @@ void Wire::setColor(const QColor & color, double op) {
 	this->update();
 }
 
-void Wire::setShadowColor(QColor & color) {
+void Wire::setShadowColor(QColor & color, bool restore) {
 	m_shadowBrush = QBrush(color);
 	m_shadowPen.setBrush(m_shadowBrush);
 	m_bendpointPen.setBrush(m_shadowBrush);
 	m_bendpoint2Pen.setBrush(m_shadowBrush);
     QList<ConnectorItem *> visited;
-	if (m_connector0) m_connector0->restoreColor(visited);
-	if (m_connector1) m_connector1->restoreColor(visited);
+    if (restore) {
+	    if (m_connector0) m_connector0->restoreColor(visited);
+	    if (m_connector1) m_connector1->restoreColor(visited);
+    }
 	this->update();
 }
 
@@ -1195,7 +1197,7 @@ double Wire::mils() {
 	return 1000 * m_pen.widthF() / GraphicsUtils::SVGDPI;
 }
 
-void Wire::setColorString(QString colorName, double op) {
+void Wire::setColorString(QString colorName, double op, bool restore) {
 	// sets a color using the name (.e. "red")
 	// note: colorName is associated with a Fritzing color, not a Qt color
 
@@ -1215,7 +1217,7 @@ void Wire::setColorString(QString colorName, double op) {
 	}
 
 	c.setNamedColor(shadowColorString);
-	setShadowColor(c);
+	setShadowColor(c, restore);
 }
 
 QString Wire::hexString() {
@@ -1450,16 +1452,16 @@ QVariant Wire::itemChange(GraphicsItemChange change, const QVariant &value)
 void Wire::cleanup() {
 }
 
-void Wire::getConnectedColor(ConnectorItem * connectorItem, QBrush * &brush, QPen * &pen, double & opacity, double & negativePenWidth, bool & negativeOffsetRect) 
+void Wire::getConnectedColor(ConnectorItem * connectorItem, QBrush &brush, QPen &pen, double & opacity, double & negativePenWidth, bool & negativeOffsetRect) 
 {
 	connectorItem->setBigDot(false);
+	ItemBase::getConnectedColor(connectorItem, brush, pen, opacity, negativePenWidth, negativeOffsetRect);
 	int count = 0;
 	bool bendpoint = true;
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
 	if (infoGraphicsView == NULL) {
-		ItemBase::getConnectedColor(connectorItem, brush, pen, opacity, negativePenWidth, negativeOffsetRect);
 		return;
-	}
+    }
 
 	foreach (ConnectorItem * toConnectorItem, connectorItem->connectedToItems()) {
 		if (toConnectorItem->attachedToItemType() == ModelPart::Wire) {
@@ -1495,7 +1497,6 @@ void Wire::getConnectedColor(ConnectorItem * connectorItem, QBrush * &brush, QPe
 	}
 
 	if (count == 0) {
-		ItemBase::getConnectedColor(connectorItem, brush, pen, opacity, negativePenWidth, negativeOffsetRect);
 		return;
 	}
 	
@@ -1505,11 +1506,11 @@ void Wire::getConnectedColor(ConnectorItem * connectorItem, QBrush * &brush, QPe
 		//DebugDialog::debug(QString("big dot %1 %2 %3").arg(this->id()).arg(connectorItem->connectorSharedID()).arg(count));
 	//}
 
-	brush = &m_shadowBrush;
+	brush = m_shadowBrush;
 	opacity = 1.0;
 	if (count > 1) {
 		// only ever reach here when drawing a connector that is connected to more than one trace
-		pen = &m_bendpoint2Pen;
+		pen = m_bendpoint2Pen;
 		negativePenWidth = m_bendpoint2Width;
 		negativeOffsetRect = m_negativeOffsetRect;
 		connectorItem->setBigDot(true);
@@ -1517,7 +1518,7 @@ void Wire::getConnectedColor(ConnectorItem * connectorItem, QBrush * &brush, QPe
 	else {
 		negativeOffsetRect = m_negativeOffsetRect;
 		negativePenWidth = m_bendpointWidth;
-		pen = &m_bendpointPen;
+		pen = m_bendpointPen;
 	}
 }
 

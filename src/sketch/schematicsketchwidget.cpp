@@ -99,7 +99,7 @@ void SchematicSketchWidget::initWire(Wire * wire, int penWidth) {
 	}
 
 	wire->setPenWidth(getTraceWidth(), this, getTraceWidth() * TraceHoverStrokeFactor);
-	wire->setColorString("black", 1.0);
+	wire->setColorString("black", 1.0, false);
 }
 
 bool SchematicSketchWidget::autorouteTypePCB() {
@@ -438,11 +438,11 @@ Wire * SchematicSketchWidget::createTempWireForDragging(Wire * fromWire, ModelPa
 	viewGeometry.setSchematicTrace(true);
 	Wire * wire =  SketchWidget::createTempWireForDragging(fromWire, wireModel, connectorItem, viewGeometry, spec);
 	if (fromWire) {
-		wire->setColorString(fromWire->colorString(), fromWire->opacity());
+		wire->setColorString(fromWire->colorString(), fromWire->opacity(), false);
 	}
 	else {
 		wire->setProperty(PCBSketchWidget::FakeTraceProperty, true);
-		wire->setColorString(traceColor(connectorItem), 1.0);
+	    wire->setColorString(traceColor(connectorItem), 1.0, false);
 	}
 	return wire;
 }

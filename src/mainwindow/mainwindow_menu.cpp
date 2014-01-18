@@ -840,6 +840,8 @@ void MainWindow::updateRecentFileActions() {
 		m_openRecentFileActs[ix]->setText(text);
 		m_openRecentFileActs[ix]->setData(files[i]);
 		m_openRecentFileActs[ix]->setVisible(true);
+		m_openRecentFileActs[ix]->setStatusTip(files[i]);
+
 		if (++ix >= (int) MaxRecentFiles) {
 			break;
 		}

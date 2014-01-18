@@ -237,27 +237,26 @@ public:
     virtual void setInspectorTitle(const QString & oldText, const QString & newText);
 
 public:
-	virtual void getConnectedColor(ConnectorItem *, QBrush * &, QPen * &, double & opacity, double & negativePenWidth, bool & negativeOffsetRect);
-	virtual void getUnconnectedColor(ConnectorItem *, QBrush * &, QPen * &, double & opacity, double & negativePenWidth, bool & negativeOffsetRect);
-	virtual void getNormalColor(ConnectorItem *, QBrush * &, QPen * &, double & opacity, double & negativePenWidth, bool & negativeOffsetRect);
-	virtual void getChosenColor(ConnectorItem *, QBrush * &, QPen * &, double & opacity, double & negativePenWidth, bool & negativeOffsetRect);
-	virtual void getHoverColor(ConnectorItem *, QBrush * &, QPen * &, double & opacity, double & negativePenWidth, bool & negativeOffsetRect);
-	virtual void getEqualPotentialColor(ConnectorItem *, QBrush * &, QPen * &, double & opacity, double & negativePenWidth, bool & negativeOffsetRect);
+	virtual void getConnectedColor(ConnectorItem *, QBrush &, QPen &, double & opacity, double & negativePenWidth, bool & negativeOffsetRect);
+	virtual void getUnconnectedColor(ConnectorItem *, QBrush &, QPen &, double & opacity, double & negativePenWidth, bool & negativeOffsetRect);
+	virtual void getNormalColor(ConnectorItem *, QBrush &, QPen &, double & opacity, double & negativePenWidth, bool & negativeOffsetRect);
+	virtual void getHoverColor(ConnectorItem *, QBrush &, QPen &, double & opacity, double & negativePenWidth, bool & negativeOffsetRect);
+	virtual void getEqualPotentialColor(ConnectorItem *, QBrush &, QPen &, double & opacity, double & negativePenWidth, bool & negativeOffsetRect);
 
 protected:
-	static QPen normalPen;
-	static QPen hoverPen;
-	static QPen connectedPen;
-	static QPen unconnectedPen;
-	static QPen chosenPen;
-	static QPen equalPotentialPen;
-	static QBrush hoverBrush;
-	static QBrush normalBrush;
-	static QBrush connectedBrush;
-	static QBrush unconnectedBrush;
-	static QBrush chosenBrush;
-	static QBrush equalPotentialBrush;
-	static const double normalConnectorOpacity;
+	static QPen NormalPen;
+	static QPen HoverPen;
+	static QPen ConnectedPen;
+	static QPen UnconnectedPen;
+	static QPen ChosenPen;
+	static QPen EqualPotentialPen;
+	static QBrush HoverBrush;
+	static QBrush NormalBrush;
+	static QBrush ConnectedBrush;
+	static QBrush UnconnectedBrush;
+	static QBrush ChosenBrush;
+	static QBrush EqualPotentialBrush;
+	static const double NormalConnectorOpacity;
 
 public:
 	static QColor connectedColor();
@@ -386,11 +385,11 @@ public:
 	static const QString ITEMBASE_FONT_SUFFIX;
 	static QHash<QString, QString> TranslatedPropertyNames;
     static QString PartInstanceDefaultTitle;
-	static const QList<ItemBase *> emptyList;
-	const static QColor hoverColor;
-	const static double hoverOpacity;
-	const static QColor connectorHoverColor;
-	const static double connectorHoverOpacity;
+	static const QList<ItemBase *> EmptyList;
+	const static QColor HoverColor;
+	const static double HoverOpacity;
+	const static QColor ConnectorHoverColor;
+	const static double ConnectorHoverOpacity;
 
 public:
 	static void initNames();

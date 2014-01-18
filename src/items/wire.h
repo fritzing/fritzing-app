@@ -113,7 +113,7 @@ public:
 	QString colorString();
 	QString hexString();
 	QString shadowHexString();
-	void setColorString(QString, double opacity);
+	void setColorString(QString, double opacity, bool restore);
 	virtual void setColor(const QColor &, double opacity);
 	double opacity();
 	void setOpacity(double opacity);
@@ -200,11 +200,11 @@ protected:
 	void setConnector0Rect();
 	void setConnector1Rect();
 	void collectWiresAux(QList<Wire *> & wires, ConnectorItem * start);
-	void setShadowColor(QColor &);
+	void setShadowColor(QColor &, bool restore);
 	void calcNewLine(ConnectorItem * from, ConnectorItem * to, QPointF & p1, QPointF & p2);
 	void collectDirectWires(ConnectorItem * connectorItem, QList<Wire *> & wires, QList<ConnectorItem *> & junctions);
 	QVariant itemChange(GraphicsItemChange change, const QVariant &value);
-	void getConnectedColor(ConnectorItem *, QBrush * &, QPen * &, double & opacity, double & negativePenWidth, bool & negativeOffsetRect);
+	void getConnectedColor(ConnectorItem *, QBrush &, QPen &, double & opacity, double & negativePenWidth, bool & negativeOffsetRect);
 	bool connectionIsAllowed(ConnectorItem *);
 	bool releaseDrag();
 	void setIgnoreSelectionChange(bool);

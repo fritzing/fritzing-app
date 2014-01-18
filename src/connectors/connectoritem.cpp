@@ -587,43 +587,44 @@ void ConnectorItem::restoreColor(QList<ConnectorItem *> & visited)
 void ConnectorItem::setConnectedColor() {
 	if (m_attachedTo == NULL) return;
 
-	QBrush * brush = NULL;
-	QPen * pen = NULL;
+	QBrush brush;
+	QPen pen;
 	m_attachedTo->getConnectedColor(this, brush, pen, m_opacity, m_negativePenWidth, m_negativeOffsetRect);
 	//DebugDialog::debug(QString("set connected %1 %2").arg(attachedToID()).arg(pen->width()));
-	setColorAux(*brush, *pen, true);
+	setColorAux(brush, pen, true);
 }
 
 void ConnectorItem::setNormalColor() {
 	if (m_attachedTo == NULL) return;
 
-	QBrush * brush = NULL;
-	QPen * pen = NULL;
+	QBrush brush;
+	QPen pen;
 	m_attachedTo->getNormalColor(this, brush, pen, m_opacity, m_negativePenWidth, m_negativeOffsetRect);
 	//DebugDialog::debug(QString("set normal %1 %2").arg(attachedToID()).arg(pen->width()));
-	setColorAux(*brush, *pen, false);
+	setColorAux(brush, pen, false);
 }
 
 void ConnectorItem::setUnconnectedColor() {
 	if (m_attachedTo == NULL) return;
 
-	QBrush * brush = NULL;
-	QPen * pen = NULL;
+	QBrush brush;
+	QPen pen;
 	//DebugDialog::debug(QString("set unconnected %1").arg(attachedToID()) );
 	m_attachedTo->getUnconnectedColor(this, brush, pen, m_opacity, m_negativePenWidth, m_negativeOffsetRect);
-	setColorAux(*brush, *pen, true);
+	setColorAux(brush, pen, true);
 }
 
 void ConnectorItem::setHoverColor() {
 	if (m_attachedTo == NULL) return;
 
-	QBrush * brush = NULL;
-	QPen * pen = NULL;
+	QBrush brush;
+	QPen pen;
 	m_attachedTo->getHoverColor(this, brush, pen, m_opacity, m_negativePenWidth, m_negativeOffsetRect);
-	setColorAux(*brush, *pen, true);
+	setColorAux(brush, pen, true);
 }
 
-void ConnectorItem::setColorAux(QBrush brush, QPen pen, bool paint) {
+void ConnectorItem::setColorAux(const QBrush & brush, const QPen & pen, bool paint) {
+    //debugInfo(QString("setColorAux %1 %2").arg(brush.color().name()).arg(pen.color().name()));
 	m_paint = paint;
 	this->setBrush(brush);
 	this->setPen(pen);
@@ -631,10 +632,7 @@ void ConnectorItem::setColorAux(QBrush brush, QPen pen, bool paint) {
 }
 
 void ConnectorItem::setColorAux(const QColor &color, bool paint) {
-	m_paint = paint;
-	this->setBrush(QBrush(color));
-	this->setPen(QPen(color));
-	update();
+    setColorAux(QBrush(color), QPen(color), paint);
 }
 
 void ConnectorItem::mouseReleaseEvent(QGraphicsSceneMouseEvent *event) {
@@ -825,8 +823,10 @@ void ConnectorItem::mousePressEvent(QGraphicsSceneMouseEvent *event) {
 	collectEqualPotential(m_equalPotentialDisplayItems, true, ViewGeometry::NoFlag);
 	//m_equalPotentialDisplayItems.removeAt(0);									// not sure whether to leave the clicked one in or out of the list
 	QList<ConnectorItem *> visited;
+    //DebugDialog::debug("_______________________");
     foreach (ConnectorItem * connectorItem, m_equalPotentialDisplayItems) {
 		connectorItem->showEqualPotential(true, visited);
+        //connectorItem->debugInfo("display eqp");
 	}
 	
 	if (m_rubberBandLeg && this->m_attachedTo != NULL && m_attachedTo->acceptsMousePressLegEvent(this, event)) {
@@ -1542,15 +1542,16 @@ void ConnectorItem::showEqualPotential(bool show, QList<ConnectorItem *> & visit
 		return;
 	}
 
-	QBrush * brush = NULL;
-	QPen * pen = NULL;
+	QBrush brush;
+	QPen pen;
 	m_attachedTo->getEqualPotentialColor(this, brush, pen, m_opacity, m_negativePenWidth, m_negativeOffsetRect);
-	//DebugDialog::debug(QString("set normal %1 %2").arg(attachedToID()).arg(pen->width()));
-	setColorAux(*brush, *pen, true);
+	//DebugDialog::debug(QString("set eqp %1 %2 %3").arg(attachedToID()).arg(pen->width()).arg(pen->color().name()));
+	setColorAux(brush, pen, true);
 
 }
 
 void ConnectorItem::clearEqualPotentialDisplay() {
+	//DebugDialog::debug(QString("clear eqp3"));
     QList<ConnectorItem *> visited;
 	foreach (ConnectorItem * connectorItem, m_equalPotentialDisplayItems) {
 		connectorItem->restoreColor(visited);
@@ -1684,7 +1685,7 @@ void ConnectorItem::paintLeg(QPainter * painter)
 	if (m_attachedTo->inHover()) {
 		// hover highlight
 		lpen.setColor((qGray(m_legColor.rgb()) < 48) ? QColor(255, 255, 255) : QColor(0, 0, 0));
-		painter->setOpacity(ItemBase::hoverOpacity);
+		painter->setOpacity(ItemBase::HoverOpacity);
 		painter->setPen(lpen);
 
 		paintLeg(painter, hasCurves);	

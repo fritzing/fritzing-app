@@ -140,7 +140,7 @@ void BreadboardSketchWidget::initWire(Wire * wire, int penWidth) {
 		return;
 	}
 	wire->setPenWidth(penWidth - 2, this, (penWidth - 2) * WireHoverStrokeFactor);
-	wire->setColorString("blue", 1.0);
+	wire->setColorString("blue", 1.0, false);
 }
 
 const QString & BreadboardSketchWidget::traceColor(ViewLayer::ViewLayerPlacement) {

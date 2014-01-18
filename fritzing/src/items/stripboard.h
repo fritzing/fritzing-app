@@ -89,7 +89,7 @@ public:
 	void setProp(const QString & prop, const QString & value);
 	void reinitBuses(bool triggerUndo);
 	void initCutting(Stripbit *);
-	void getConnectedColor(ConnectorItem *, QBrush * &, QPen * &, double & opacity, double & negativePenWidth, bool & negativeOffsetRect);
+	void getConnectedColor(ConnectorItem *, QBrush &, QPen &, double & opacity, double & negativePenWidth, bool & negativeOffsetRect);
 	void restoreRowColors(Stripbit * stripbit);
     void swapEntry(const QString & text);
     QStringList collectValues(const QString & family, const QString & prop, QString & value);

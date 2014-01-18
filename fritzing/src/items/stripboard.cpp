@@ -661,7 +661,7 @@ void Stripboard::setProp(const QString & prop, const QString & value)
 	Perfboard::setProp(prop, value);
 }
 
-void Stripboard::getConnectedColor(ConnectorItem * ci, QBrush * &brush, QPen * &pen, double & opacity, double & negativePenWidth, bool & negativeOffsetRect) {
+void Stripboard::getConnectedColor(ConnectorItem * ci, QBrush &brush, QPen &pen, double & opacity, double & negativePenWidth, bool & negativeOffsetRect) {
 	Perfboard::getConnectedColor(ci, brush, pen, opacity, negativePenWidth, negativeOffsetRect);
 	opacity *= .66667;
 }

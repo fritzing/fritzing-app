@@ -114,7 +114,7 @@ void Board::paintHover(QPainter *painter, const QStyleOptionGraphicsItem *option
 	Q_UNUSED(option);
 	painter->save();
 	painter->setOpacity(0);
-	painter->fillPath(this->hoverShape(), QBrush(hoverColor));
+	painter->fillPath(this->hoverShape(), QBrush(HoverColor));
 	painter->restore();
 }
 

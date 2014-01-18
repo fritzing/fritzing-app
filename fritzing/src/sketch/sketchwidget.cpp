@@ -4566,7 +4566,7 @@ void SketchWidget::mousePressConnectorEvent(ConnectorItem * connectorItem, QGrap
 	m_connectorDragConnector->tempConnectTo(m_connectorDragWire->connector1(), false);
 	m_connectorDragWire->connector1()->tempConnectTo(m_connectorDragConnector, false);
 	if (!m_lastColorSelected.isEmpty()) {
-		m_connectorDragWire->setColorString(m_lastColorSelected, m_connectorDragWire->opacity());
+		m_connectorDragWire->setColorString(m_lastColorSelected, m_connectorDragWire->opacity(), false);
 	}
 }
 
@@ -6487,7 +6487,7 @@ void SketchWidget::changeWireColor(long wireId, const QString& color, double opa
 	ItemBase *item = findItem(wireId);
 	Wire* wire = qobject_cast<Wire*>(item);
 	if (wire) {
-		wire->setColorString(color, opacity);
+		wire->setColorString(color, opacity, true);
 		updateInfoView();
 	}
 }

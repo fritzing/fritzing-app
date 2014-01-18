@@ -1447,7 +1447,7 @@ QString ResizableBoard::getShapeForRenderer(const QString & svg, ViewLayer::View
     header += ">\n";
 
     header = header + xml + "\n</svg>";
-    //DebugDialog::debug(header);
+    //DebugDialog::debug("resizableBoard " + header);
 	return header;
 }
 

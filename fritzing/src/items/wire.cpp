@@ -622,6 +622,9 @@ void Wire::mouseMoveEventAux(QPointF eventPos, Qt::KeyboardModifiers modifiers) 
 		QList<ConnectorItem *> ends;
 		collectChained(wires, ends);
 
+        InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
+        //DebugDialog::debug("------------------------");
+
         QList<ConnectorItem *> exclude;
         foreach (ConnectorItem * end, ends) {
             exclude << end;
@@ -634,7 +637,9 @@ void Wire::mouseMoveEventAux(QPointF eventPos, Qt::KeyboardModifiers modifiers) 
 
                 Wire * w = qobject_cast<Wire *>(toConnectorItem->attachedTo());
                 if (w->getRatsnest()) continue;
-                if (w->getTrace() != getTrace()) continue;
+                if (!w->isTraceType(infoGraphicsView->getTraceFlag())) continue;
+
+                //w->debugInfo("what wire");
 
                 QList<ConnectorItem *> ends2;
                 QList<Wire *> wires2;

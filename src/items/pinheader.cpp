@@ -473,7 +473,7 @@ QString PinHeader::makePcbSvg(const QString & originalExpectedFileName)
 		svg = makePcbLongPadSvg(pins, expectedFileName.contains("alternating"));
 	}
 	else if (expectedFileName.contains("molex")) {
-		svg = makePcbMolexSvg(pins);
+		svg = makePcbMolexSvg(pins, spacingString);
 	}
     else {
 	    static QString pcbLayerTemplate = "";
@@ -958,11 +958,14 @@ QString PinHeader::makePcbLongPadLockSvg(int pins)
     return header.arg(totalHeight).arg(totalHeight * dpi).arg(repeats).arg(bottom).arg(betweens);
 }
 
-QString PinHeader::makePcbMolexSvg(int pins) 
+QString PinHeader::makePcbMolexSvg(int pins, const QString & spacingString) 
 {
     double dpi = 25.4;
     double originalHeight = 0.105;           // inches
     double increment = 0.1;                 // inches
+    bool ok;
+    double inc = TextUtils::convertToInches(spacingString, &ok, false);
+    if (ok) increment = inc;
 	QString header("<?xml version='1.0' encoding='utf-8'?>\n"
 					"<svg version='1.2' baseProfile='tiny' xmlns='http://www.w3.org/2000/svg' \n"
                     "x='0in' y='0in' width='0.225in' height='%1in' viewBox='0 0 5.715 %2'>\n"

@@ -1,17 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="283.465px" height="170.078px" viewBox="0 0 283.465 170.078" enable-background="new 0 0 283.465 170.078"
-	 xml:space="preserve">
+<svg version="1.2" baseProfile="tiny"  xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100mm" height="60mm" viewBox="0 0 100 60" >
 <g id="board">
-	
-		<ellipse id="boardoutline" fill="#FFFFFF" fill-opacity="0.5" stroke="#000000" stroke-width="0.2032" cx="141.732" cy="85.039" rx="141.444" ry="84.751"/>
+        <ellipse id="boardoutline" stroke-width="0.2032" stroke="#ffffff" fill="#000000" cx="50" cy="30" rx="49.8984" ry="29.8984" fill-opacity="0.5" />
 </g>
 <g id="silkscreen">
-	<ellipse fill="none" stroke="#000000" stroke-width="0.2032" cx="141.732" cy="85.039" rx="141.444" ry="84.751"/>
+        <ellipse fill="none" stroke="#000000" stroke-width="0.2032" cx="50" cy="30" rx="49.8984" ry="29.8984" />
 </g>
 <g id="silkscreen0">
-	<ellipse fill="none" stroke="#000000" stroke-width="0.2032" cx="141.732" cy="85.039" rx="141.444" ry="84.751"/>
+        <ellipse fill="none" stroke="#000000" stroke-width="0.2032" cx="50" cy="30" rx="49.8984" ry="29.8984" />
 </g>
 </svg>

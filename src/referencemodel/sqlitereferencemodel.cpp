@@ -1110,7 +1110,8 @@ QStringList SqliteReferenceModel::propValues(const QString &family, const QStrin
 
 	if(query.exec()) {
 		while(query.next()) {
-			retval << query.value(0).toString();
+            QString value = query.value(0).toString();
+            if (!value.isEmpty()) retval << value;
 		}
 	} else {
         debugExec("couldn't retrieve values", query);
@@ -1138,7 +1139,8 @@ QMultiHash<QString, QString> SqliteReferenceModel::allPropValues(const QString &
 			//for (int i = 0; i < record.count(); i++) {
 			//	DebugDialog::debug("result " + record.fieldName(i) + " " + record.value(i).toString());
 			//}
-			retval.insert(query.value(0).toString(), query.value(1).toString());
+            QString prop = query.value(0).toString();
+            if (!prop.isEmpty()) retval.insert(prop, query.value(1).toString());
 		}
 	} else {
         debugExec("couldn't retrieve values", query);

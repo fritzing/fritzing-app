@@ -1762,6 +1762,10 @@ QStringList ItemBase::collectValues(const QString & family, const QString & prop
 	}
 
 	CachedValues.insert(family + prop, values);
+    //debugInfo("cached " + prop);
+    //foreach(QString v, values) {
+    //    DebugDialog::debug("\t" + v);
+    //}
 	return values;
 }
 

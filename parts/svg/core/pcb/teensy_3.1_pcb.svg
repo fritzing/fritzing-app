@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE svg>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg xmlns="http://www.w3.org/2000/svg" width="1.43701in" x="0px" version="1.1" y="0px" gorn="0"  height="0.70275in" viewBox="0 0 103.465 50.598" xmlns:xml="http://www.w3.org/XML/1998/namespace" id="_x30_" enable-background="new 0 0 103.465 50.598" xml:space="preserve">
+    <desc  id="0.0">
+        <referenceFile  id="0.0.0">Teensy_3.0_pcb.svg</referenceFile>
+    </desc>
+    <g gorn="0.1"  id="silkscreen">
+        <path fill="none" gorn="0.1.0"  stroke="#FFFFFF" id="silkscreen" stroke-width="0.5" d="M2.835,0.799v49.209h100.063V0.799H2.835z" stroke-miterlimit="10"/>
+    </g>
+    <g gorn="0.2"  id="copper1">
+        <g gorn="0.2.0"  id="copper0">
+            <circle fill="none" cx="99.941" gorn="0.2.0.0"  cy="3.723" stroke="#F7BD13" id="connector19pin" r="1.908" stroke-width="1"/>
+            <circle fill="none" cx="92.742" gorn="0.2.0.1"  cy="3.723" stroke="#F7BD13" id="connector20pin" r="1.908" stroke-width="1"/>
+            <circle fill="none" cx="85.542" gorn="0.2.0.2"  cy="3.723" stroke="#F7BD13" id="connector21pin" r="1.908" stroke-width="1"/>
+            <circle fill="none" cx="78.342" gorn="0.2.0.3"  cy="3.723" stroke="#F7BD13" id="connector22pin" r="1.908" stroke-width="1"/>
+            <circle fill="none" cx="71.143" gorn="0.2.0.4"  cy="3.723" stroke="#F7BD13" id="connector23pin" r="1.908" stroke-width="1"/>
+            <circle fill="none" cx="63.941" gorn="0.2.0.5"  cy="3.723" stroke="#F7BD13" id="connector24pin" r="1.908" stroke-width="1"/>
+            <circle fill="none" cx="56.743" gorn="0.2.0.6"  cy="3.723" stroke="#F7BD13" id="connector25pin" r="1.908" stroke-width="1"/>
+            <circle fill="none" cx="49.542" gorn="0.2.0.7"  cy="3.723" stroke="#F7BD13" id="connector26pin" r="1.908" stroke-width="1"/>
+            <circle fill="none" cx="42.342" gorn="0.2.0.8"  cy="3.723" stroke="#F7BD13" id="connector27pin" r="1.908" stroke-width="1"/>
+            <circle fill="none" cx="35.143" gorn="0.2.0.9"  cy="3.723" stroke="#F7BD13" id="connector28pin" r="1.908" stroke-width="1"/>
+            <circle fill="none" cx="27.942" gorn="0.2.0.10"  cy="3.723" stroke="#F7BD13" id="connector29pin" r="1.908" stroke-width="1"/>
+            <circle fill="none" cx="20.742" gorn="0.2.0.11"  cy="3.723" stroke="#F7BD13" id="connector30pin" r="1.908" stroke-width="1"/>
+            <circle fill="none" cx="13.542" gorn="0.2.0.12"  cy="3.723" stroke="#F7BD13" id="connector31pin" r="1.908" stroke-width="1"/>
+            <circle fill="none" cx="6.342" gorn="0.2.0.13"  cy="3.723" stroke="#F7BD13" id="connector32pin" r="1.908" stroke-width="1"/>
+            <circle fill="none" cx="13.542" gorn="0.2.0.14"  cy="11.949" stroke="#F7BD13" id="connector36pin" r="1.908" stroke-width="1"/>
+            <circle fill="none" cx="35.149" gorn="0.2.0.15"  cy="11.949" stroke="#F7BD13" id="connector33pin" r="1.908" stroke-width="1"/>
+            <circle fill="none" cx="27.942" gorn="0.2.0.16"  cy="11.949" stroke="#F7BD13" id="connector35pin" r="1.908" stroke-width="1"/>
+            <circle fill="none" cx="99.941" gorn="0.2.0.17"  cy="46.922" stroke="#F7BD13" id="connector13pin" r="1.908" stroke-width="1"/>
+            <rect width="0,009632000000000005" x="97,528184" y="44,509184" fill="none" gorn="0.2.0.18"  height="0,009632000000000005" stroke="none" id="connector13terminal" stroke-width="0"/>
+            <circle fill="none" cx="92.742" gorn="0.2.0.19"  cy="46.922" stroke="#F7BD13" id="connector12pin" r="1.908" stroke-width="1"/>
+            <circle fill="none" cx="85.542" gorn="0.2.0.20"  cy="46.922" stroke="#F7BD13" id="connector11pin" r="1.908" stroke-width="1"/>
+            <circle fill="none" cx="78.342" gorn="0.2.0.21"  cy="46.922" stroke="#F7BD13" id="connector10pin" r="1.908" stroke-width="1"/>
+            <circle fill="none" cx="71.143" gorn="0.2.0.22"  cy="46.922" stroke="#F7BD13" id="connector9pin" r="1.908" stroke-width="1"/>
+            <circle fill="none" cx="63.941" gorn="0.2.0.23"  cy="46.922" stroke="#F7BD13" id="connector8pin" r="1.908" stroke-width="1"/>
+            <circle fill="none" cx="56.743" gorn="0.2.0.24"  cy="46.922" stroke="#F7BD13" id="connector7pin" r="1.908" stroke-width="1"/>
+            <circle fill="none" cx="49.542" gorn="0.2.0.25"  cy="46.922" stroke="#F7BD13" id="connector6pin" r="1.908" stroke-width="1"/>
+            <circle fill="none" cx="42.342" gorn="0.2.0.26"  cy="46.922" stroke="#F7BD13" id="connector5pin" r="1.908" stroke-width="1"/>
+            <circle fill="none" cx="35.143" gorn="0.2.0.27"  cy="46.922" stroke="#F7BD13" id="connector4pin" r="1.908" stroke-width="1"/>
+            <circle fill="none" cx="27.942" gorn="0.2.0.28"  cy="46.922" stroke="#F7BD13" id="connector3pin" r="1.908" stroke-width="1"/>
+            <circle fill="none" cx="20.742" gorn="0.2.0.29"  cy="46.922" stroke="#F7BD13" id="connector2pin" r="1.908" stroke-width="1"/>
+            <circle fill="none" cx="13.542" gorn="0.2.0.30"  cy="46.922" stroke="#F7BD13" id="connector1pin" r="1.908" stroke-width="1"/>
+            <circle fill="none" cx="6.342" gorn="0.2.0.31"  cy="46.922" stroke="#F7BD13" id="connector0pin" r="1.908" stroke-width="1"/>
+            <circle fill="none" cx="42.349" gorn="0.2.0.32"  cy="11.95" stroke="#F7BD13" id="connector34pin" r="1.908" stroke-width="1"/>
+            <circle fill="none" cx="99.943" gorn="0.2.0.33"  cy="32.523" stroke="#F7BD13" id="connector15pin" r="1.908" stroke-width="1"/>
+            <circle fill="none" cx="99.941" gorn="0.2.0.34"  cy="39.723" stroke="#F7BD13" id="connector14pin" r="1.908" stroke-width="1"/>
+            <circle fill="none" cx="99.943" gorn="0.2.0.35"  cy="25.323" stroke="#F7BD13" id="connector16pin" r="1.908" stroke-width="1"/>
+            <circle fill="none" cx="99.941" gorn="0.2.0.36"  cy="10.923" stroke="#F7BD13" id="connector18pin" r="1.908" stroke-width="1"/>
+            <circle fill="none" cx="99.943" gorn="0.2.0.37"  cy="18.122" stroke="#F7BD13" id="connector17pin" r="1.908" stroke-width="1"/>
+        </g>
+    </g>
+</svg>

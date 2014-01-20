@@ -1,34 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module fritzingVersion="0.6.5b.01.02.5717" moduleId="RJ45_TRXCOM">
- <version >5</version>
+<module fritzingVersion="0.6.5b.01.02.5717" moduleId="RJ45_TRXCOM_1">
+ <version replacedby='RJ45_TRXCOM'>4</version>
     <author>frank</author>
     <title>RJ45-TRXCOM</title>
     <label>TRXCOM</label>
     <date>2012-01-14</date>
     <tags/>
     <properties>
-        <property name="family">RJ</property>
+        <property name="family">//obsolete//RJ</property>
         <property name="part number">TRJ0011BANL</property>
     </properties>
     <description>RJ45 Connector with 10/100 Base-T Integrated Magnetics and 2 LED (TRJ0011BANL)</description>
     <views>
         <iconView>
-            <layers image="icon/RJ45_TRXCOM2_icon.svg">
+            <layers image="icon/RJ45_TRXCOM_icon.svg">
                 <layer layerId="icon"/>
             </layers>
         </iconView>
         <breadboardView>
-            <layers image="breadboard/RJ45_TRXCOM2_breadboard.svg">
+            <layers image="breadboard/RJ45_TRXCOM_breadboard.svg">
                 <layer layerId="breadboard"/>
             </layers>
         </breadboardView>
         <schematicView>
-            <layers image="schematic/RJ45_TRXCOM2_schematic.svg">
+            <layers image="schematic/RJ45_TRXCOM_schematic.svg">
                 <layer layerId="schematic"/>
             </layers>
         </schematicView>
         <pcbView>
-            <layers image="pcb/RJ45_TRXCOM2_pcb.svg">
+            <layers image="pcb/RJ45_TRXCOM_pcb.svg">
                 <layer layerId="silkscreen"/>
                 <layer layerId="copper0"/>
                 <layer layerId="copper1"/>
@@ -36,59 +36,14 @@
         </pcbView>
     </views>
     <connectors>
-    <connector id="connector0" type="male" name="Transmit TD+">
-            <description>(1)</description>
-            <views>
-                <breadboardView>
-                    <p layer="breadboard" svgId="connector0"/>
-                </breadboardView>
-                <schematicView>
-                    <p layer="schematic" svgId="connector0pin" terminalId="connector0terminal"/>
-                </schematicView>
-                <pcbView>
-                    <p layer="copper0" svgId="connector0"/>
-                    <p layer="copper1" svgId="connector0"/>
-                </pcbView>
-            </views>
-        </connector>
-        <connector id="connector1" type="male" name="Transmit TD-">
-            <description>(2)</description>
-            <views>
-                <breadboardView>
-                    <p layer="breadboard" svgId="connector1"/>
-                </breadboardView>
-                <schematicView>
-                    <p layer="schematic" svgId="connector1pin" terminalId="connector1terminal"/>
-                </schematicView>
-                <pcbView>
-                    <p layer="copper0" svgId="connector1"/>
-                    <p layer="copper1" svgId="connector1"/>
-                </pcbView>
-            </views>
-        </connector>
-	<connector id="connector2" type="male" name="Receive RD+">
-            <description>(3)</description>
-            <views>
-                <breadboardView>
-                    <p layer="breadboard" svgId="connector2"/>
-                </breadboardView>
-                <schematicView>
-                    <p layer="schematic" svgId="connector2pin" terminalId="connector2terminal"/>
-                </schematicView>
-                <pcbView>
-                    <p layer="copper1" svgId="connector2"/>
-                    <p layer="copper0" svgId="connector2"/>
-                </pcbView>
-            </views>
-        </connector>
-        <connector id="connector3" type="male" name="Transmit CT">
+        <connector id="connector3" type="male" name="Transmit CT"  replacedby="connector3">
             <description>(4)</description>
             <views>
                 <breadboardView>
                     <p layer="breadboard" svgId="connector3"/>
                 </breadboardView>
                 <schematicView>
-                    <p layer="schematic" svgId="connector3pin" terminalId="connector3terminal"/>
+                    <p layer="schematic" svgId="connector3" terminalId="connector3terminal"/>
                 </schematicView>
                 <pcbView>
                     <p layer="copper1" svgId="connector3"/>
@@ -96,14 +51,14 @@
                 </pcbView>
             </views>
         </connector>
-        <connector id="connector4" type="male" name="Receive CT">
+        <connector id="connector4" type="male" name="Receive CT" replacedby="connector4">
             <description>(5)</description>
             <views>
                 <breadboardView>
                     <p layer="breadboard" svgId="connector4"/>
                 </breadboardView>
                 <schematicView>
-                    <p layer="schematic" svgId="connector4pin"  terminalId="connector4terminal"/>
+                    <p layer="schematic" svgId="connector4"/>
                 </schematicView>
                 <pcbView>
                     <p layer="copper1" svgId="connector4"/>
@@ -111,14 +66,14 @@
                 </pcbView>
             </views>
         </connector>
-        <connector id="connector5" type="male" name="Receive RD-">
+        <connector id="connector5" type="male" name="Receive RD-" replacedby="connector5">
             <description>(6)</description>
             <views>
                 <breadboardView>
                     <p layer="breadboard" svgId="connector5"/>
                 </breadboardView>
                 <schematicView>
-                    <p layer="schematic" svgId="connector5pin" terminalId="connector5terminal"/>
+                    <p layer="schematic" svgId="connector5"/>
                 </schematicView>
                 <pcbView>
                     <p layer="copper1" svgId="connector5"/>
@@ -126,14 +81,14 @@
                 </pcbView>
             </views>
         </connector>
-        <connector id="connector6" type="male" name="n.c.">
+        <connector id="connector6" type="male" name="n.c." replacedby="connector6">
             <description>(7)</description>
             <views>
                 <breadboardView>
                     <p layer="breadboard" svgId="connector6"/>
                 </breadboardView>
                 <schematicView>
-                    <p layer="schematic" svgId="connector6pin" terminalId="connector6terminal"/>
+                    <p layer="schematic" svgId="connector6"/>
                 </schematicView>
                 <pcbView>
                     <p layer="copper1" svgId="connector6"/>
@@ -141,14 +96,14 @@
                 </pcbView>
             </views>
         </connector>
-        <connector id="connector7" type="male" name="CHS Ground">
+        <connector id="connector7" type="male" name="CHS Ground" replacedby="connector7">
             <description>(8)</description>
             <views>
                 <breadboardView>
                     <p layer="breadboard" svgId="connector7"/>
                 </breadboardView>
                 <schematicView>
-                    <p layer="schematic" svgId="connector7pin"  terminalId="connector7terminal"/>
+                    <p layer="schematic" svgId="connector7"/>
                 </schematicView>
                 <pcbView>
                     <p layer="copper1" svgId="connector7"/>
@@ -156,14 +111,14 @@
                 </pcbView>
             </views>
         </connector>
-        <connector id="connector8" type="male" name="Yellow Anode +">
-            <description>(13)</description>
+        <connector id="connector8" type="male" name="Yellow Anode +" replacedby="connector8">
+            <description>(9)</description>
             <views>
                 <breadboardView>
                     <p layer="breadboard" svgId="connector8"/>
                 </breadboardView>
                 <schematicView>
-                    <p layer="schematic" svgId="connector12pin"  terminalId="connector12terminal"/>
+                    <p layer="schematic" svgId="connector8" replacedby="connector12pin"/>
                 </schematicView>
                 <pcbView>
                     <p layer="copper1" svgId="connector8"/>
@@ -171,14 +126,14 @@
                 </pcbView>
             </views>
         </connector>
-        <connector id="connector9" type="male" name="Yellow Kathode -">
-            <description>(14)</description>
+        <connector id="connector9" type="male" name="Yellow Kathode -" replacedby="connector9">
+            <description>(10)</description>
             <views>
                 <breadboardView>
                     <p layer="breadboard" svgId="connector9"/>
                 </breadboardView>
                 <schematicView>
-                    <p layer="schematic" svgId="connector13pin"  terminalId="connector13terminal"/>
+                    <p layer="schematic" svgId="connector9" replacedby="connector13pin"/>
                 </schematicView>
                 <pcbView>
                     <p layer="copper1" svgId="connector9"/>
@@ -186,14 +141,14 @@
                 </pcbView>
             </views>
         </connector>
-        <connector id="connector10" type="male" name="Green Kathode -">
+        <connector id="connector10" type="male" name="Green Kathode -" replacedby="connector10">
             <description>(11)</description>
             <views>
                 <breadboardView>
                     <p layer="breadboard" svgId="connector10"/>
                 </breadboardView>
                 <schematicView>
-                    <p layer="schematic" svgId="connector10pin"  terminalId="connector10terminal"/>
+                    <p layer="schematic" svgId="connector10"/>
                 </schematicView>
                 <pcbView>
                     <p layer="copper1" svgId="connector10"/>
@@ -201,14 +156,14 @@
                 </pcbView>
             </views>
         </connector>
-        <connector id="connector11" type="male" name="Green Anode +">
+        <connector id="connector11" type="male" name="Green Anode +" replacedby="connector11">
             <description>(12)</description>
             <views>
                 <breadboardView>
                     <p layer="breadboard" svgId="connector11"/>
                 </breadboardView>
                 <schematicView>
-                    <p layer="schematic" svgId="connector11pin"  terminalId="connector11terminal"/>
+                    <p layer="schematic" svgId="connector11"/>
                 </schematicView>
                 <pcbView>
                     <p layer="copper1" svgId="connector11"/>
@@ -216,18 +171,48 @@
                 </pcbView>
             </views>
         </connector>
-        <connector id="connector12" type="male" name="Sheeld">
+        <connector id="connector12" type="male" name="Sheeld" replacedby="connector12">
             <description>Noch keine Beschreibung</description>
             <views>
                 <breadboardView>
                     <p layer="breadboard" svgId="connector12"/>
                 </breadboardView>
                 <schematicView>
-                    <p layer="schematic" svgId="connector8pin"  terminalId="connector8terminal"/>
+                    <p layer="schematic" svgId="connector12" replacedby="connector8pin"/>
                 </schematicView>
                 <pcbView>
                     <p layer="copper1" svgId="connector12"/>
                     <p layer="copper0" svgId="connector12"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector0" type="male" name="Transmit TD+" replacedby="connector0">
+            <description>(1)</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector0"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector0" />
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector0"/>
+                    <p layer="copper1" svgId="connector0"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector id="connector1" type="male" name="Transmit TD-" replacedby="connector1">
+            <description>(2)</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector1"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector1"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector1"/>
+                    <p layer="copper1" svgId="connector1"/>
                 </pcbView>
             </views>
         </connector>
@@ -238,7 +223,7 @@
                     <p layer="breadboard" svgId="connector13"/>
                 </breadboardView>
                 <schematicView>
-                    <p layer="schematic" svgId="connector9pin" terminalId="connector9terminal"/>
+                    <p layer="schematic" svgId="connector13" replacedby="connector9pin"/>
                 </schematicView>
                 <pcbView>
                     <p layer="copper1" svgId="connector13"/>
@@ -246,6 +231,20 @@
                 </pcbView>
             </views>
         </connector>
-
+        <connector id="connector2" type="male" name="Receive RD+" replacedby="connector2">
+            <description>(3)</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector2"/>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector2"/>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper1" svgId="connector2"/>
+                    <p layer="copper0" svgId="connector2"/>
+                </pcbView>
+            </views>
+        </connector>
     </connectors>
 </module>

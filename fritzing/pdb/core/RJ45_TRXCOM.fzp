@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module fritzingVersion="0.6.5b.01.02.5717" moduleId="RJ45_TRXCOM_1">
+<module fritzingVersion="0.6.5b.01.02.5717" moduleId="RJ45_TRXCOM">
+ <version >5</version>
     <author>frank</author>
     <title>RJ45-TRXCOM</title>
     <label>TRXCOM</label>
@@ -12,22 +13,22 @@
     <description>RJ45 Connector with 10/100 Base-T Integrated Magnetics and 2 LED (TRJ0011BANL)</description>
     <views>
         <iconView>
-            <layers image="icon/RJ45_TRXCOM_icon.svg">
+            <layers image="icon/RJ45_TRXCOM2_icon.svg">
                 <layer layerId="icon"/>
             </layers>
         </iconView>
         <breadboardView>
-            <layers image="breadboard/RJ45_TRXCOM_breadboard.svg">
+            <layers image="breadboard/RJ45_TRXCOM2_breadboard.svg">
                 <layer layerId="breadboard"/>
             </layers>
         </breadboardView>
         <schematicView>
-            <layers image="schematic/RJ45_TRXCOM_schematic.svg">
+            <layers image="schematic/RJ45_TRXCOM2_schematic.svg">
                 <layer layerId="schematic"/>
             </layers>
         </schematicView>
         <pcbView>
-            <layers image="pcb/RJ45_TRXCOM_pcb.svg">
+            <layers image="pcb/RJ45_TRXCOM2_pcb.svg">
                 <layer layerId="silkscreen"/>
                 <layer layerId="copper0"/>
                 <layer layerId="copper1"/>

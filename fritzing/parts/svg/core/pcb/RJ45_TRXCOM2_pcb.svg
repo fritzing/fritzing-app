@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.2" baseProfile="tiny" xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg"  x="0px" y="0px" width="0.707067in"
+	 height="0.82834in" viewBox="0 0 63.636 74.551" xml:space="preserve">
+<g id="silkscreen" transform="translate(-279.42141,-476.51535)">
+	<path id="rahmen" fill="none" stroke="#FFFFFF" stroke-width="1" d="M280.422,550.566h62.636v-73.551h-62.636V550.566z"/>
+</g>
+<g id="copper0">
+	<g id="copper1">
+		<rect id="square" stroke-width="1.5" stroke="#FF9400" fill="none" x="14.123" y="10.996" width="5.2" height="5.2" />
+		<circle id="connector0" fill="none" stroke="#FF9400" stroke-width="1.5" cx="16.672" cy="13.545" r="2.549"/>
+		<circle id="connector1" fill="none" stroke="#FF9400" stroke-width="1.5" cx="21.172" cy="4.545" r="2.549"/>
+		<circle id="connector2" fill="none" stroke="#FF9400" stroke-width="1.5" cx="25.672" cy="13.545" r="2.549"/>
+		<circle id="connector3" fill="none" stroke="#FF9400" stroke-width="1.5" cx="30.172" cy="4.545" r="2.549"/>
+		<circle id="connector4" fill="none" stroke="#FF9400" stroke-width="1.5" cx="34.671" cy="13.545" r="2.549"/>
+		<circle id="connector5" fill="none" stroke="#FF9400" stroke-width="1.5" cx="39.171" cy="4.545" r="2.549"/>
+		<circle id="connector6" fill="none" stroke="#FF9400" stroke-width="1.5" cx="43.671" cy="13.545" r="2.549"/>
+		<circle id="connector7" fill="none" stroke="#FF9400" stroke-width="1.5" cx="48.171" cy="4.545" r="2.549"/>
+		<circle id="connector12" fill="none" stroke="#FF9400" stroke-width="1.5" cx="5.431" cy="25.241" r="2.549"/>
+		<circle id="connector13" fill="none" stroke="#FF9400" stroke-width="1.5" cx="59.435" cy="25.205" r="2.549"/>
+		<circle id="connector9" fill="none" stroke="#FF9400" stroke-width="1.5" cx="19.091" cy="48.029" r="2.549"/>
+		<circle id="connector8" fill="none" stroke="#FF9400" stroke-width="1.5" cx="10.047" cy="53.404" r="2.549"/>
+		<circle id="connector11" fill="none" stroke="#FF9400" stroke-width="1.5" cx="54.855" cy="48.038" r="2.55"/>
+		<circle id="connector10" fill="none" stroke="#FF9400" stroke-width="1.5" cx="45.644" cy="53.366" r="2.55"/>
+		<circle id="nonconn0" cx="52.671" cy="36.126" r="3.997" fill="black" stroke="black" stroke-width="0" />
+		<circle id="nonconn1" cx="12.144" cy="36.076" r="3.996" fill="black" stroke="black" stroke-width="0" />
+	</g>
+</g>
+</svg>

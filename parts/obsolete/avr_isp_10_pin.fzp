@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module fritzingVersion="0.6.5b.01.02.5717" moduleId="e3afbdaad7b1e3e1408df3c505763145">
-    <version replacedby="SparkFun-Connectors-AVR_SPI_PROG2-PTH">4</version>
+    <version replacedby="AVR_SPI_PROG-PTH">4</version>
     <author>Fritzing Part-o-matic</author>
     <title>avr isp 10 pin</title>
     <label>ISP</label>
@@ -44,7 +44,7 @@
         </schematicView>
     </views>
     <connectors>
-        <connector id="connector3" type="male" name="sck">
+        <connector id="connector3" type="male" name="sck" replacedby="connector6">
             <description>sck-pin 4</description>
             <views>
                 <breadboardView>
@@ -59,7 +59,7 @@
                 </pcbView>
             </views>
         </connector>
-        <connector id="connector4" type="male" name="miso">
+        <connector id="connector4" type="male" name="miso" replacedby="connector8">
             <description>miso-pin 5</description>
             <views>
                 <breadboardView>
@@ -74,7 +74,7 @@
                 </pcbView>
             </views>
         </connector>
-        <connector id="connector5" type="male" name="gnd">
+        <connector id="connector5" type="male" name="gnd"  replacedby="connector5" >
             <description>pin 6</description>
             <views>
                 <breadboardView>
@@ -89,7 +89,7 @@
                 </pcbView>
             </views>
         </connector>
-        <connector id="connector6" type="male" name="gnd">
+        <connector id="connector6" type="male" name="gnd"  replacedby="connector7">
             <description>pin 7</description>
             <views>
                 <breadboardView>
@@ -104,7 +104,7 @@
                 </pcbView>
             </views>
         </connector>
-        <connector id="connector7" type="male" name="rxd">
+        <connector id="connector7" type="male" name="rxd" replacedby="connector5">
             <description>pin 8</description>
             <views>
                 <breadboardView>
@@ -119,7 +119,7 @@
                 </pcbView>
             </views>
         </connector>
-        <connector id="connector8" type="male" name="txd">
+        <connector id="connector8" type="male" name="txd" replacedby="connector3">
             <description>pin 9</description>
             <views>
                 <breadboardView>
@@ -134,7 +134,7 @@
                 </pcbView>
             </views>
         </connector>
-        <connector id="connector9" type="male" name="vcc">
+        <connector id="connector9" type="male" name="vcc" replacedby="connector1">
             <description>pin 10</description>
             <views>
                 <breadboardView>
@@ -149,7 +149,7 @@
                 </pcbView>
             </views>
         </connector>
-        <connector id="connector0" type="male" name="mosi">
+        <connector id="connector0" type="male" name="mosi" replacedby="connector0">
             <description>mosi-pin 1</description>
             <views>
                 <breadboardView>
@@ -164,7 +164,7 @@
                 </pcbView>
             </views>
         </connector>
-        <connector id="connector1" type="male" name="not connected">
+        <connector id="connector1" type="male" name="not connected" replacedby="connector2">
             <description>pin 2</description>
             <views>
                 <breadboardView>
@@ -179,7 +179,7 @@
                 </pcbView>
             </views>
         </connector>
-        <connector id="connector2" type="male" name="/reset">
+        <connector id="connector2" type="male" name="/reset"  replacedby="connector4">
             <description>reset-pin 3</description>
             <views>
                 <breadboardView>

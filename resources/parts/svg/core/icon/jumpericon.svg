@@ -5,10 +5,10 @@
 	 width="32.003px" height="32.003px" viewBox="0 0 32.003 32.003" enable-background="new 0 0 32.003 32.003" xml:space="preserve">
 <rect id="rect2383_2_" x="-0.026" y="-0.026" fill="#FFFFFF" stroke="#111111" stroke-width="1.9445" width="32.055" height="32.055"/>
 <desc>Jumper SVG</desc>
-<polyline fill="none" stroke="#FF9F3F" stroke-width="2" points="7.613,31.048 7.613,24.332 26.07,5.874 31.064,5.874 "/>
-<path id="path3157_1_" fill="none" stroke="#FFC58C" stroke-width="2.764" d="M11.051,6.753c0,1.898-1.538,3.438-3.438,3.438
+<polyline fill="none" stroke="#f2c600" stroke-width="2" points="7.613,31.048 7.613,24.332 26.07,5.874 31.064,5.874 "/>
+<path id="path3157_1_" fill="none" stroke="#fdde68" stroke-width="2.764" d="M11.051,6.753c0,1.898-1.538,3.438-3.438,3.438
 	c-1.897,0-3.438-1.537-3.438-3.438c0-1.898,1.54-3.438,3.438-3.438C9.513,3.314,11.051,4.854,11.051,6.753z"/>
-<path id="path3157_2_" fill="none" stroke="#FFC58C" stroke-width="2.764" d="M28.085,25.175c0,1.898-1.537,3.439-3.438,3.439
+<path id="path3157_2_" fill="none" stroke="#fdde68" stroke-width="2.764" d="M28.085,25.175c0,1.898-1.537,3.439-3.438,3.439
 	c-1.897,0-3.438-1.537-3.438-3.439c0-1.897,1.539-3.438,3.438-3.438C26.548,21.738,28.085,23.278,28.085,25.175z"/>
 <line fill="none" stroke="#999999" stroke-width="3.0034" stroke-linecap="round" stroke-linejoin="round" x1="24.648" y1="25.175" x2="22" y2="22.494"/>
 <path fill="none" stroke="#999999" stroke-width="3.0034" stroke-linecap="round" stroke-linejoin="round" d="M10.032,9.395

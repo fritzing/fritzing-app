@@ -449,7 +449,7 @@ Wire * SchematicSketchWidget::createTempWireForDragging(Wire * fromWire, ModelPa
 
 void SchematicSketchWidget::rotatePartLabels(double degrees, QTransform & transform, QPointF center, QUndoCommand * parentCommand)
 {
-	SketchWidget::rotatePartLabels(degrees, transform, center, parentCommand);
+	PCBSketchWidget::rotatePartLabels(degrees, transform, center, parentCommand);
 }
 
 void SchematicSketchWidget::loadFromModelParts(QList<ModelPart *> & modelParts, BaseCommand::CrossViewType crossViewType, QUndoCommand * parentCommand, 

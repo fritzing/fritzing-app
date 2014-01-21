@@ -3002,7 +3002,7 @@ void MainWindow::addToSketch(QList<ModelPart *> & modelParts) {
 }
 
 void MainWindow::initProgrammingWidget() {
-    return; // not yet implemented
+    return; // remove this line to add programming as a tab 
 
     m_programView = new ProgramWindow(this);
 

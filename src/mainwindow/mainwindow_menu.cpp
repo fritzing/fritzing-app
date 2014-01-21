@@ -2650,7 +2650,9 @@ void MainWindow::removeActionsStartingAt(QMenu * menu, int start) {
 }
 
 void MainWindow::hideShowProgramMenu() {
-    bool show = (m_currentGraphicsView != NULL);
+    if (m_currentWidget == NULL) return;
+
+    bool show = m_programView == NULL || m_currentWidget->contentView() != m_programView;
     if (m_viewMenu) m_viewMenu->menuAction()->setVisible(show);
     if (m_partMenu) m_partMenu->menuAction()->setVisible(show);
     if (m_fileMenu) m_fileMenu->menuAction()->setVisible(show);

@@ -12,9 +12,9 @@ usage:
     fix.py -f [from directory]
 
 
-For each fzz file in the to directory, see whether the fz specifies an ino file and if it matches the ino file name.
-Clean the pid and the path. If there is nothing or no match, see what's in the equivalent file in the from folder.
-Note that the from folder and to folder should point to the same level of hierarchy (e.g. each points to the 'sketches' folder) 
+For each fzz file in the from directory, remove all .ino files inside the fzz and <program> elements in the internal fz file.
+if the fzz has a matching .ino file (external, in the same folder) then copy the ino file inside the fzz and add a <program> element to the fz
+Afterwards you must delete the  external.ino files 
 Probably safest to make a copy of the from directory first
 """
            
@@ -50,7 +50,7 @@ def main():
     except:
         compression = zipfile.ZIP_STORED
 
-    for root, dirs, files in os.walk(toDir, topdown=False):
+    for root, dirs, files in os.walk(fromDir, topdown=False):
         for fzz in files:
             if not fzz.endswith('.fzz'):
                 continue
@@ -58,31 +58,29 @@ def main():
             #print fzz
             fzzpath = os.path.join(root, fzz)
             inopath = fzzpath.replace(".fzz", ".ino")
-            ino = os.path.basename(inoPath)
+            ino = os.path.basename(inopath)
             gotIno = os.path.isfile(inopath)
             
-            tempDir =toDir + os.sep + "___temp___"
+            tempDir =fromDir + os.sep + "___temp___"
             shutil.rmtree(tempDir, 1)
             os.mkdir(tempDir)
-
-            temp2Dir =toDir + os.sep + "___temp2___"
-            shutil.rmtree(temp2Dir, 1)
-            os.mkdir(temp2Dir)
 
             zf = zipfile.ZipFile(fzzpath)
             zf.extractall(tempDir)
             zf.close()
-            
-            fzzbase = os.path.splitext(fzz)[0]
-            
+                        
             modified = False
+            
+            print fzzpath
         
-            for fz in os.listdir(tempDir):
-                if fz.endswith(".ino"):
-                    os.path.remove(os.path.join(tempDir, fz))
+            # remove old ino files first
+            for fino in os.listdir(tempDir):
+                if fino.endswith(".ino"):
+                    print "    remove old", fino
+                    os.remove(os.path.join(tempDir, fino))
                     modified = True
-                    continue
-                    
+
+            for fz in os.listdir(tempDir):                    
                 if not fz.endswith(".fz"):
                     continue
                     
@@ -95,10 +93,11 @@ def main():
                         programs.append(ps)
                     for ps in programs:
                         fzmodified = True
+                        print "    remove old programs"
                         top.remove(ps)
                     
                     if gotIno:
-                        shutil.copyfile(inoPath, os.path.join(tempDir, ino)
+                        shutil.copyfile(inopath, os.path.join(tempDir, ino))
                         ps = ET.SubElement(top, "programs")
                         ps.set("pid", "")
                         program = ET.SubElement(ps, "program")
@@ -106,6 +105,7 @@ def main():
                         program.set("programmer", "")
                         program.text = ino
                         fzmodified = True
+                        print "    copy", ino
                     
                     if fzmodified:
                         modified = True

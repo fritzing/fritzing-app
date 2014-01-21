@@ -298,7 +298,7 @@ QRegExp MainWindow::GuidMatcher = QRegExp("[A-Fa-f0-9]{32}");
 MainWindow::MainWindow(ReferenceModel *referenceModel, QWidget * parent) :
     FritzingWindow(untitledFileName(), untitledFileCount(), fileExtension(), parent)
 {
-    m_useOldSchematic = m_convertedSchematic = false;
+    m_noSchematicConversion = m_useOldSchematic = m_convertedSchematic = false;
     m_initialTab = 1;
     m_rolloverQuoteDialog = NULL;
 	setCorner(Qt::BottomRightCorner, Qt::RightDockWidgetArea);
@@ -3124,6 +3124,9 @@ void MainWindow::setFireQuoteDelay(int delay) {
     m_fireQuoteDelay = delay;
 }
 
+void MainWindow::noSchematicConversion() {
+    m_noSchematicConversion = true;
+}
 
 void MainWindow::setInitialTab(int tab) {
     m_initialTab = tab;

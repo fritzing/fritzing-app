@@ -716,6 +716,7 @@ MainWindow * FApplication::openWindowForService(bool lockFiles, int initialTab) 
 	MainWindow * mainWindow = MainWindow::newMainWindow(m_referenceModel, "", false, lockFiles, initialTab);   // this is also slow
 	mainWindow->setReportMissingModules(false);
     mainWindow->noBackup();
+    mainWindow->noSchematicConversion();
 
 	return mainWindow;
 }

@@ -231,6 +231,7 @@ public:
     int fireQuoteDelay();
     void setFireQuoteDelay(int);
     void setInitialTab(int);
+    void noSchematicConversion();
 
 public:
 	static void initNames();
@@ -932,6 +933,7 @@ protected:
     QString m_settingsPrefix;
     bool m_convertedSchematic;
     bool m_useOldSchematic;
+    bool m_noSchematicConversion;
     int m_initialTab;
 
     // dock management

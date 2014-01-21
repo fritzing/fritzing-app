@@ -852,6 +852,7 @@ void MainWindow::setCurrentFile(const QString &filename, bool addToRecent, bool 
             m_schematicGraphicsView->resizeLabels();
             m_schematicGraphicsView->resizeWires();
             m_schematicGraphicsView->updateWires();
+            setWindowModified(true);
         }
         else {
             QStringList files = settings.value("lastTabList").toStringList();

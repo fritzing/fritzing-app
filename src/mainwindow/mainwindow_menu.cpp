@@ -3556,6 +3556,7 @@ void MainWindow::obsoleteSMDOrientationSlot() {
 
 void MainWindow::oldSchematicsSlot(const QString &filename, bool & useOldSchematics) {
     useOldSchematics = m_convertedSchematic = m_useOldSchematic = false;
+    if (m_noSchematicConversion) return;
 
     if (m_readOnly) {
         useOldSchematics = m_useOldSchematic = true;

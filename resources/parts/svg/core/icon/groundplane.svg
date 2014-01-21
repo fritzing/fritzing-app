@@ -7,7 +7,7 @@
 	<g id="groundplane">
 		<g id="groundplane1">
 			<path fill="#FFFFFF" stroke="#111111" stroke-width="1.9445" d="M-0.027-0.027v32.054h32.054V-0.027H-0.027z"/>
-			<path fill="#CBC38E" d="M0,0l8,14l-6,9l6,8l7-6l5,5l11-6l-5-2l2-8l-6-6l-5,4L0,0z"/>
+			<path fill="#fdde68" d="M0,0l8,14l-6,9l6,8l7-6l5,5l11-6l-5-2l2-8l-6-6l-5,4L0,0z"/>
 		</g>
 	</g>
 </g>

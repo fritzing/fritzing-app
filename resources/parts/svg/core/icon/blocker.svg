@@ -7,9 +7,9 @@
 	<path fill="#FFFFFF" d="M-0.027-0.027v32.054h32.054V-0.027H-0.027z"/>
 	<path fill="#111111" d="M33,33H-0.999V-0.999H33V33z M0.945,31.055h30.11V0.945H0.945V31.055z"/>
 </g>
-<path fill="#CBC38E" d="M0.997,0.977v30.189h30.087V0.977H0.997z M22.67,24.914H9.329V7.228H22.67V24.914z"/>
+<path fill="#fdde68" d="M0.997,0.977v30.189h30.087V0.977H0.997z M22.67,24.914H9.329V7.228H22.67V24.914z"/>
 <line display="none" fill="none" stroke="#568B53" x1="9.329" y1="7.228" x2="22.67" y2="24.914"/>
 <line display="none" fill="none" stroke="#568B53" x1="9.45" y1="24.975" x2="22.631" y2="7.169"/>
-<line fill="none" stroke="#CBC38E" stroke-width="2" stroke-miterlimit="10" x1="24.917" y1="4.083" x2="8.583" y2="26"/>
-<line fill="none" stroke="#CBC38E" stroke-width="2" stroke-miterlimit="10" x1="8.083" y1="5.917" x2="23.833" y2="26.417"/>
+<line fill="none" stroke="#fdde68" stroke-width="2" stroke-miterlimit="10" x1="24.917" y1="4.083" x2="8.583" y2="26"/>
+<line fill="none" stroke="#fdde68" stroke-width="2" stroke-miterlimit="10" x1="8.083" y1="5.917" x2="23.833" y2="26.417"/>
 </svg>

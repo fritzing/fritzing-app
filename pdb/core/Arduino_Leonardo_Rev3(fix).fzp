@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<module fritzingVersion='0.5.2b.02.18.4756' moduleId='Arduino_Leonardo_Rev3'>
-<version>4</version>
+<module fritzingVersion='0.5.2b.02.18.4756' moduleId='Arduino_Leonardo_Rev3(fix)'>
+<version>5</version>
 <date>2013-04-03</date>
 <author>althaus</author>
 <description>The Arduino Leonardo is a microcontroller board based on the ATmega32u4 (datasheet). It has 20 digital input/output pins (of which 7 can be used as PWM outputs and 12 as analog inputs), a 16 MHz crystal oscillator, a micro USB connection, a power jack, an ICSP header, and a reset button. It contains everything needed to support the microcontroller; simply connect it to a computer with a USB cable or power it with a AC-to-DC adapter or battery to get started.
@@ -25,7 +25,7 @@ The Leonardo differs from all preceding boards in that the ATmega32u4 has built-
 </layers>
 </breadboardView>
 <schematicView>
-<layers image='schematic/Arduino_Leonardo_Rev3_schematic.svg'>
+<layers image='schematic/Arduino_Leonardo_Rev3(fix)_schematic.svg'>
 <layer layerId='schematic'/>
 </layers>
 </schematicView>
@@ -123,8 +123,8 @@ The Leonardo differs from all preceding boards in that the ATmega32u4 has built-
 <p layer='copper0' svgId='connector83pad'/><p layer='copper1' svgId='connector83pad'/></pcbView>
 </views>
 </connector>
-<connector id='connector84' type='female' name='IOREF'>
-<description>IOREF</description><views>
+<connector id='connector84' type='female' name='n.c.'>
+<description>reserved</description><views>
 <breadboardView>
 <p layer='breadboardbreadboard' svgId='connector84pin'/></breadboardView>
 <schematicView>
@@ -365,10 +365,6 @@ The Leonardo differs from all preceding boards in that the ATmega32u4 has built-
 </connector>
 </connectors>
 <buses>
-<bus id='+5v'>
-<nodeMember connectorId='connector85'/>
-<nodeMember connectorId='connector88'/>
-</bus>
 <bus id='gnd'>
 <nodeMember connectorId='connector89'/>
 <nodeMember connectorId='connector90'/>

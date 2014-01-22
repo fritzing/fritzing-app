@@ -6,9 +6,9 @@ import getopt, sys, os, os.path, re, zipfile, shutil
 def usage():
     print """
 usage:
-    resetversion.py -f [from directory]
+    renamefz.py -f [from directory]
 
-Change the version number of the fz file in the fzz files in from directory.  Probably safest to make a copy of from directory first
+For each fzz file in the from directory, make sure the .fz name matches the .fzz name.  Probably safest to make a copy of the from directory first
 """
            
 def main():
@@ -48,7 +48,7 @@ def main():
             if not fzz.endswith('.fzz'):
                 continue
                 
-            print fzz
+            #print fzz
             fzzpath = os.path.join(root, fzz)
             
             tempDir = inputdir + os.sep + "___temp___"
@@ -59,31 +59,39 @@ def main():
             zf.extractall(tempDir)
             zf.close()
             
+            fzzbase = os.path.splitext(fzz)[0]
+            
+            renamed = False
             for fz in os.listdir(tempDir):
+                if fz.endswith(".ino"):
+                    print "got ino", fzzpath
+                    
                 if not fz.endswith(".fz"):
+                    continue
+                    
+                fzbase = os.path.splitext(fz)[0]
+            
+                if fzbase == fzzbase:
                     continue
                     
                 try: 
                     fzpath = os.path.join(tempDir, fz)
-                    infile = open(fzpath, "rb")
-                    #print "opened", fzpath
-                    xml = infile.read()
-                    infile.close()
-                    os.remove(fzpath)
-                    outfile = open(fzpath, 'wb')
-                    outfile.write( xml.replace('fritzingVersion="0.8.6', 'fritzingVersion="0.8.5'))
-                    outfile.close()   
+                    newpath = os.path.join(tempDir, fzzbase + ".fz")
+                    print "renaming", fzzpath
+                    renamed = True
+                    os.rename(fzpath, newpath)
                 except:
                     print "exception", fzpath, sys.exc_info()[0]
                     pass    
 
             # helpful examples in http://www.doughellmann.com/PyMOTW/zipfile/
 
-            os.remove(fzzpath)
-            zf = zipfile.ZipFile(fzzpath, mode='w')
-            for fn in os.listdir(tempDir):
-                zf.write(os.path.join(tempDir, fn), fn, compression)
-            zf.close()
+            if renamed:
+                os.remove(fzzpath)
+                zf = zipfile.ZipFile(fzzpath, mode='w')
+                for fn in os.listdir(tempDir):
+                    zf.write(os.path.join(tempDir, fn), fn, compression)
+                zf.close()
 
             shutil.rmtree(tempDir, 1)
 

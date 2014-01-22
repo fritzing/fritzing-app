@@ -5,6 +5,7 @@ phoenix.pro.user
 *.user
 *.user*
 
+Makefile*
 
 # no longer keep boost library in the source #
 #####################

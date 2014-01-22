@@ -39,8 +39,14 @@ win32 {
         INCLUDEPATH += $$[QT_INSTALL_PREFIX]/src/3rdparty/zlib
         DEFINES += _CRT_SECURE_NO_DEPRECATE
         DEFINES += _WINDOWS
-        LIBS += $${PWD}/SetupAPI.Lib
-     #   LIBS += advapi32.lib   # only seems necessary for QtCreator 2.5.2 and up
+	RELEASE_SCRIPT = $$(RELEASE_SCRIPT)			# environment variable set from release script	
+	isEmpty(RELEASE_SCRIPT) {
+		LIBS += $${PWD}/SetupAPI.Lib
+	}
+	!isEmpty(RELEASE_SCRIPT) {
+		LIBS += advapi32.lib   
+		LIBS += SetupAPI.lib   
+	}
 }
 macx {
         MOC_DIR = build/moc

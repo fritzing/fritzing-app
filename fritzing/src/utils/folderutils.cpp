@@ -582,6 +582,12 @@ void FolderUtils::copyBin(const QString & dest, const QString & source) {
 }
 
 bool FolderUtils::slamCopy(QFile & file, const QString & dest) {
+    QFileInfo info(file);
+    if (info.absoluteFilePath() == dest) {
+        // source = dest
+        return true;
+    }
+
     bool result = file.copy(dest);
     if (result) return result;
 

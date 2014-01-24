@@ -43,7 +43,7 @@ This is the standard AVR In Circuit Serial Programming header. Minimal, but incl
 </views>
 <connectors>
 <connector id="connector0" name="1" type="male">
-<description>1</description>
+<description>MOSI (1)</description>
 <views>
 <breadboardView>
 <p layer="breadboard" svgId="connector0pin"/>
@@ -57,7 +57,7 @@ This is the standard AVR In Circuit Serial Programming header. Minimal, but incl
 </views>
 </connector>
 <connector id="connector9" name="10" type="male">
-<description>10</description>
+<description>GND (10)</description>
 <views>
 <breadboardView>
 <p layer="breadboard" svgId="connector9pin"/>
@@ -71,7 +71,7 @@ This is the standard AVR In Circuit Serial Programming header. Minimal, but incl
 </views>
 </connector>
 <connector id="connector1" name="2" type="male">
-<description>2</description>
+<description>VTG (2)</description>
 <views>
 <breadboardView>
 <p layer="breadboard" svgId="connector1pin"/>
@@ -85,7 +85,7 @@ This is the standard AVR In Circuit Serial Programming header. Minimal, but incl
 </views>
 </connector>
 <connector id="connector2" name="3" type="male">
-<description>3</description>
+<description>NC (3)</description>
 <views>
 <breadboardView>
 <p layer="breadboard" svgId="connector2pin"/>
@@ -99,7 +99,7 @@ This is the standard AVR In Circuit Serial Programming header. Minimal, but incl
 </views>
 </connector>
 <connector id="connector3" name="4" type="male">
-<description>4</description>
+<description>GND (4)</description>
 <views>
 <breadboardView>
 <p layer="breadboard" svgId="connector3pin"/>
@@ -113,7 +113,7 @@ This is the standard AVR In Circuit Serial Programming header. Minimal, but incl
 </views>
 </connector>
 <connector id="connector4" name="5" type="male">
-<description>5</description>
+<description>RESET (5)</description>
 <views>
 <breadboardView>
 <p layer="breadboard" svgId="connector4pin"/>
@@ -127,7 +127,7 @@ This is the standard AVR In Circuit Serial Programming header. Minimal, but incl
 </views>
 </connector>
 <connector id="connector5" name="6" type="male">
-<description>6</description>
+<description>GND (6)</description>
 <views>
 <breadboardView>
 <p layer="breadboard" svgId="connector5pin"/>
@@ -141,7 +141,7 @@ This is the standard AVR In Circuit Serial Programming header. Minimal, but incl
 </views>
 </connector>
 <connector id="connector6" name="7" type="male">
-<description>7</description>
+<description>SCK (7)</description>
 <views>
 <breadboardView>
 <p layer="breadboard" svgId="connector6pin"/>
@@ -155,7 +155,7 @@ This is the standard AVR In Circuit Serial Programming header. Minimal, but incl
 </views>
 </connector>
 <connector id="connector7" name="8" type="male">
-<description>8</description>
+<description>GND (8)</description>
 <views>
 <breadboardView>
 <p layer="breadboard" svgId="connector7pin"/>
@@ -169,7 +169,7 @@ This is the standard AVR In Circuit Serial Programming header. Minimal, but incl
 </views>
 </connector>
 <connector id="connector8" name="9" type="male">
-<description>9</description>
+<description>MISO (9)</description>
 <views>
 <breadboardView>
 <p layer="breadboard" svgId="connector8pin"/>

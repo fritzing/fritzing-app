@@ -1,5 +1,9 @@
 #!/bin/bash
-# don't forget to check phoenix.pro for the ppc/x86 config
+
+echo please check phoenix.pro to make sure that none of the platforms are commented out in the line:
+echo "    CONFIG += x86_64 x86 ppc"
+
+QTBIN=/usr/local/Trolltech/Qt-4.8.5/bin
 
 tdir=`dirname $BASH_SOURCE`
 cd $tdir
@@ -9,10 +13,15 @@ currentdir=$(pwd)
 echo "current directory"
 echo $currentdir
 
+echo building fritzing
+QTBIN/qmake -o Makefile phoenix.pro
+make release
+
 deploydir=$currentdir/../deploy
 echo "deploy directory"
 echo $deploydir
 
+rm -rf $deploydir
 mkdir $deploydir
 
 git clone https://code.google.com/p/fritzing/ $deploydir
@@ -69,17 +78,12 @@ rmdir tools
 
 cd $currentdir
 
-
-phoenixdir=$currentdir/../release_build
-cp -r $phoenixdir/Fritzing.app $deploydir
-
-
-/usr/local/Trolltech/Qt-4.8.5/bin/macdeployqt $deploydir/Fritzing.app 
+echo mac deploy qt
+cp -r ./Fritzing.app $deploydir
+$QTBIN/macdeployqt $deploydir/Fritzing.app 
 cp -r $fritzingdir/* $deploydir/Fritzing.app/Contents/MacOS
 
 
-#/Users/jonathancohen/qt-everywhere-opensource-src-4.7.3/bin/macdeployqt /Users/jonathancohen/fritzing/fritzing/deploy/fritzing/Fritzing.app 
-#/Users/jonathancohen/Downloads/qt-everywhere-opensource-src-4.8.0-tp/bin/macdeployqt /Users/jonathancohen/fritzing/fritzing/deploy/fritzing/Fritzing.app 
 #/Developer/Tools/Qt/macdeployqt /Users/jonathancohen/fritzing/fritzing/deploy/fritzing/Fritzing.app 
 
 # may need this symlink to get carbon to build

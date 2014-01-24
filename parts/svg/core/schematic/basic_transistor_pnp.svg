@@ -16,14 +16,14 @@
 <line class='pin' id='connector0pin' connectorname='B' x1='0.123472' y1='5.20347' x2='2.66347' y2='5.20347' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
 <rect class='terminal' id='connector0terminal' x='0.123472' y='5.20347' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
 <text class='text' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#8c8c8c' font-size='0.881944' x='1.39347' y='4.83306' text-anchor='middle'>1</text>
-<line class='pin' id='connector2pin' connectorname='C' x1='5.20347' y1='10.2835' x2='5.20347' y2='7.74347' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
-<rect class='terminal' id='connector2terminal' x='5.20347' y='10.2835' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<line class='pin' id='connector1pin' connectorname='C' x1='5.20347' y1='10.2835' x2='5.20347' y2='7.74347' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector1terminal' x='5.20347' y='10.2835' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
 <g transform='translate(4.83306,9.01347)'><g transform='rotate(270)'>
 <text class='text' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#8c8c8c' font-size='0.881944' x='0' y='0' text-anchor='middle'>3</text>
 </g></g>
-<line class='pin' id='connector1pin' connectorname='E' x1='5.20347' y1='0.123472' x2='5.20347' y2='2.66347' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
-<rect class='terminal' id='connector1terminal' x='5.20347' y='0.123472' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
-<g transform='translate(4.83306,1.39347)'><g transform='rotate(270)'>
+<line class='pin' id='connector2pin' connectorname='E' x1='5.20347' y1='0.123472' x2='5.20347' y2='2.66347' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector2terminal' x='5.20347' y='0.123472' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<g transform='translate(4.83306,1.39347)'><g transform='rotate(270 )'>
 <text class='text' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#8c8c8c' font-size='0.881944' x='0' y='0' text-anchor='middle'>2</text>
 </g></g>
 </g>

@@ -68,7 +68,7 @@
         </connector>
         
 	<connector id="connector3" type="pad" name="R+">
-            <description>blue anode</description>
+            <description>red anode</description>
             <views>
                 <breadboardView>
                     <p layer="breadboard" svgId="connector3"/>

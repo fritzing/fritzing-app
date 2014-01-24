@@ -12,19 +12,19 @@
 	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="4.392" y1="9.71" x2="1.543" y2="12.558"/>
 	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" x1="4.752" y1="12.951" x2="1.859" y2="15.843"/>
 	
-		<line id="connector1pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="10.152" y1="21.951" x2="10.152" y2="14.75"/>
-	<rect id="connector1terminal" x="10.152" y="21.951" fill="none" width="0.001" height="0"/>
-			<line id="connector2pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="10.152" y1="21.951" x2="10.152" y2="14.75"/>
-	<rect id="connector2terminal" x="10.152" y="21.951" fill="none" width="0.001" height="0"/>
+		<line id="connector0pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="10.152" y1="21.951" x2="10.152" y2="14.75"/>
+	<rect id="connector0terminal" x="10.152" y="21.951" fill="none" width="0.001" height="0"/>
+			<line id="connector3pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="10.152" y1="21.951" x2="10.152" y2="14.75"/>
+	<rect id="connector3terminal" x="10.152" y="21.951" fill="none" width="0.001" height="0"/>
 	<g transform="translate(3.21098,6.47347)">
 		<g transform="rotate(270)">
 			<text transform="matrix(1 0 0 1 -12.5641 5.8908)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">2</text>
 		</g>
 	</g>
-	<line id="connector3pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="10.152" y1="0.35" x2="10.152" y2="7.55"/>
-	<rect id="connector3terminal" x="10.152" y="0.35" fill="none" width="0.001" height="0"/>
-		<line id="connector0pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="10.152" y1="0.35" x2="10.152" y2="7.55"/>
-	<rect id="connector0terminal" x="10.152" y="0.35" fill="none" width="0.001" height="0"/>
+	<line id="connector2pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="10.152" y1="0.35" x2="10.152" y2="7.55"/>
+	<rect id="connector2terminal" x="10.152" y="0.35" fill="none" width="0.001" height="0"/>
+		<line id="connector1pin" fill="none" stroke="#787878" stroke-width="0.75" stroke-linecap="round" x1="10.152" y1="0.35" x2="10.152" y2="7.55"/>
+	<rect id="connector1terminal" x="10.152" y="0.35" fill="none" width="0.001" height="0"/>
 	<g transform="translate(3.21098,1.39347)">
 		<g transform="rotate(270)">
 			<text transform="matrix(1 0 0 1 -3.2457 5.8908)" fill="#8C8C8C" font-family="'DroidSans'" font-size="2.5">1</text>

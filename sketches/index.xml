@@ -41,28 +41,15 @@
 		</sketch>
 		<sketch id="Countdown" >
 			<language country="en" name="Countdown (Rotary Encoder + 7 Segment Displays)" src="core/Countdown.fzz"/>
-		</sketch>
-		<!-- 
-		<sketch id="CurvyParking" >
-			<language country="en" name="Curvy Parking Assistant (Infrared)" src="core/Curvy-Parking-Assistant.fzz"/>	 		
-		</sketch>
-		-->	
+		</sketch>	
 		<sketch id="DC_motor_control" >
 			<language country="en" name="DC Motor" src="core/DC_motor_control.fzz"/>
 		</sketch>
-		<!--
-		<sketch id="EDGY-motor-control" >
-			<language country="en" name="EDGY Motor Control" src="core/EDGY-motor-control.fzz"/ 
-		<sketch id="EDGY-motor-control_two_motors" >
-			<language country="en" name="EDGY Motor Control Two Motors" src="core/EDGY-motor-control-two-motors.fzz"/>
-		<sketch id="EDGY-motor-control_stepper" >
-			<language country="en" name="EDGY Motor Control Stepper" src="core/EDGY-motor-control-stepper.fzz"/>
-		-->
 		<sketch id="Knock" >
 			<language country="en" name="Knock (Piezo)" src="core/Knock.fzz"/>
 		</sketch>
 		<sketch id="LCD" >
-			<language country="en" name="Liquid Crystal Display" src="core/LiquidCrystalDisplay.fzz"/>
+			<language country="en" name="Liquid Crystal Display" src="core/LCD.fzz"/>
 		</sketch>
 		<sketch id="LEDmatrix_simple" >
 			<language country="en" name="Simple LED Matrix" src="core/LED-Matrix_simple.fzz"/>

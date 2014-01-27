@@ -126,18 +126,18 @@ QString Pad::makeLayerSvg(ViewLayer::ViewLayerID viewLayerID, double mmW, double
 					;
 
     if (copperBlocker()) {
-        svg += QString("<line stroke='%5' stroke-width='1' x1='%1' y1='%2' x2='%3'  y2='%4'/>\n")
-                    .arg(0)
-                    .arg(0)
-                    .arg(wpx + TheOffset)
-                    .arg(hpx + TheOffset)
+        svg += QString("<line linecap='butt' stroke='%5' stroke-width='1' x1='%1' y1='%2' x2='%3'  y2='%4'/>\n")
+                    .arg(TheOffset)
+                    .arg(TheOffset)
+                    .arg(wpx)
+                    .arg(hpx)
                     .arg(blockerColor)
                    ;
-        svg += QString("<line stroke='%5' stroke-width='1' x1='%1' y1='%2' x2='%3'  y2='%4'/>\n")
-                    .arg(wpx + TheOffset)
-                    .arg(0)
-                    .arg(0)
-                    .arg(hpx + TheOffset)
+        svg += QString("<line linecap='butt' stroke='%5' stroke-width='1' x1='%1' y1='%2' x2='%3'  y2='%4'/>\n")
+                    .arg(wpx)
+                    .arg(TheOffset)
+                    .arg(TheOffset)
+                    .arg(hpx)
                     .arg(blockerColor)
                    ;
 

@@ -7,11 +7,11 @@
 <line class='other' x1='6.47347' y1='0.2032' x2='6.47347' y2='7.8232' stroke='#000000' stroke-width='0.4064' stroke-linecap='round'/>
 <line class='other' x1='7.74347' y1='2.7432' x2='7.74347' y2='5.2832' stroke='#000000' stroke-width='0.4064' stroke-linecap='round'/>
 <line class='other' x1='2.66347' y1='4.0132' x2='3.67947' y2='4.0132' stroke='#000000' stroke-width='0.1524' stroke-linecap='round'/>
-<line class='pin' id='connector1pin' connectorname='-' x1='10.2835' y1='4.0132' x2='7.74347' y2='4.0132' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
-<rect class='terminal' id='connector1terminal' x='10.2835' y='4.0132' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<line class='pin' id='connector0pin' connectorname='-' x1='10.2835' y1='4.0132' x2='7.74347' y2='4.0132' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector0terminal' x='10.2835' y='4.0132' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
 <text class='text' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#8c8c8c' font-size='0.881944' x='9.01347' y='3.64278' text-anchor='middle'>2</text>
-<line class='pin' id='connector0pin' connectorname='+' x1='0.123472' y1='4.0132' x2='2.66347' y2='4.0132' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
-<rect class='terminal' id='connector0terminal' x='0.123472' y='4.0132' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<line class='pin' id='connector1pin' connectorname='+' x1='0.123472' y1='4.0132' x2='2.66347' y2='4.0132' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector1terminal' x='0.123472' y='4.0132' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
 <text class='text' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#8c8c8c' font-size='0.881944' x='1.39347' y='3.64278' text-anchor='middle'>1</text>
 </g>
 </svg>

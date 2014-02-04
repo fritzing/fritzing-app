@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.2" baseProfile="tiny" id="Layer_1" xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="11.911px"
+	 height="5.964px" viewBox="0 0 11.911 5.964" xml:space="preserve">
+<g id="copper1">
+	<rect id="connector4pad" x="9.701" y="4.112" fill="#F7BF13" width="1.5" height="1.701"/>
+	<rect id="connector3pad" x="6.971" y="4.112" fill="#F7BF13" width="1" height="1.701"/>
+	<rect id="connector2pad" x="3.99" y="4.112" fill="#F7BF13" width="1" height="1.701"/>
+	<rect id="connector1pad" x="0.759" y="4.112" fill="#F7BF13" width="1.5" height="1.701"/>
+	<rect id="connector5pad" x="9.701" y="0.15" fill="#F7BF13" width="1.5" height="1.701"/>
+	<rect id="connector6pad" x="6.971" y="0.15" fill="#F7BF13" width="1" height="1.701"/>
+	<rect id="connector7pad" x="3.99" y="0.15" fill="#F7BF13" width="1" height="1.701"/>
+	<rect id="connector8pad" x="0.759" y="0.15" fill="#F7BF13" width="1.5" height="1.701"/>
+</g>
+<g id="silkscreen">
+	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" x1="0.406" y1="5.53" x2="0.406" y2="0.406"/>
+	<line fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" x1="11.546" y1="0.406" x2="11.546" y2="5.53"/>
+	<text transform="matrix(1 0 0 1 2.2644 3.7544)" font-family="'OCRAStd'" font-size="2">YC164</text>
+</g>
+</svg>

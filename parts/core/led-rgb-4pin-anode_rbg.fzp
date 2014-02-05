@@ -33,7 +33,7 @@ Pin order: red - com. anode - blue - green</description>
             </layers>
         </breadboardView>
         <schematicView>
-            <layers image="schematic/led-rgb-4pin-anode.svg">
+            <layers image="schematic/led-rbg-4pin-anode.svg">
                 <layer layerId="schematic"/>
             </layers>
         </schematicView>

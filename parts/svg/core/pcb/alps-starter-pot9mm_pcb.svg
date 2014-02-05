@@ -6,10 +6,9 @@
 	 viewBox="0 0 37.417 37" enable-background="new 0 0 37.417 37" xml:space="preserve">
 <g id="copper1">
 	<g id="copper0">
-		<rect id="square" x="2.944" y="9.239" fill="none" stroke="#FFBF00" width="4.176" height="4.176"/>
 		<circle id="connector0pin" fill="none" stroke="#FFBF00" cx="5.032" cy="11.327" r="2.088"/>
 		<circle id="connector1pin" fill="none" stroke="#FFBF00" cx="5.031" cy="18.527" r="2.088"/>
-		<circle id="connector2pin" fill="none" stroke="#FFBF00" cx="5.032" cy="25.727" r="2.089"/>
+		<circle id="connector2pin" fill="none" stroke="#FFBF00" cx="5.032" cy="25.728" r="2.089"/>
 		<g>
 			<circle id="noconnector" fill="none" stroke="#FFBF00" stroke-width="1.2844" cx="26.292" cy="4.548" r="3.823"/>
 			<circle id="noconnector_1_" fill="none" stroke="#FFBF00" stroke-width="1.2844" cx="26.292" cy="32.506" r="3.823"/>
@@ -19,7 +18,7 @@
 <g id="silkscreen">
 	<polyline id="_x30_.1.1.0" fill="none" stroke="#FFFFFF" stroke-width="0.9" stroke-miterlimit="10" points="31.58,2.227 
 		36.771,2.227 36.771,34.825 31.58,34.825 	"/>
-	<polyline id="_x30_.1.1.1" fill="none" stroke="#FFFFFF" stroke-width="0.9" stroke-miterlimit="10" points="20.928,34.825 
-		0.567,34.825 0.567,2.227 20.928,2.227 	"/>
+	<polyline id="_x30_.1.1.1" fill="none" stroke="#FFFFFF" stroke-width="0.9" stroke-miterlimit="10" points="20.927,34.825 
+		0.567,34.825 0.567,2.227 20.927,2.227 	"/>
 </g>
 </svg>

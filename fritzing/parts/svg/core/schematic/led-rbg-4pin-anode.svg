@@ -53,10 +53,10 @@
 	<path d="M10.224,23.39l1.439-1.438l1.08,2.521L10.224,23.39z"/>
 	<path d="M9.866,26.628l1.438-1.439l1.08,2.521L9.866,26.628z"/>
 	<g>
-		<path id="connector3pin" fill="#787878" d="M32.964,29.5c-0.193,0-0.35-0.156-0.35-0.351v-7.198c0-0.193,0.155-0.353,0.35-0.353
+		<path id="connector2pin" fill="#787878" d="M32.964,29.5c-0.193,0-0.35-0.156-0.35-0.351v-7.198c0-0.193,0.155-0.353,0.35-0.353
 			c0.193,0,0.35,0.156,0.35,0.353v7.198C33.313,29.343,33.158,29.5,32.964,29.5z"/>
-		<rect id="connector2terminal" x="18.163" y="27.167" fill="none" width="0.75" height="2.397"/>
-		<path id="connector2pin" fill="#787878" d="M18.566,29.5c-0.193,0-0.35-0.156-0.35-0.351v-7.198c0-0.193,0.157-0.353,0.35-0.353
+		<rect id="connector3terminal" x="18.163" y="27.167" fill="none" width="0.75" height="2.397"/>
+		<path id="connector3pin" fill="#787878" d="M18.566,29.5c-0.193,0-0.35-0.156-0.35-0.351v-7.198c0-0.193,0.157-0.353,0.35-0.353
 			s0.35,0.156,0.35,0.353v7.198C18.916,29.343,18.759,29.5,18.566,29.5z"/>
 		<path id="connector0pin" fill="#787878" d="M4.165,29.5c-0.193,0-0.35-0.156-0.35-0.351v-7.198c0-0.193,0.157-0.353,0.35-0.353
 			s0.35,0.156,0.35,0.353v7.198C4.515,29.343,4.359,29.5,4.165,29.5z"/>
@@ -64,10 +64,10 @@
 			s0.35,0.156,0.35,0.35v7.2C18.917,7.744,18.76,7.9,18.567,7.9z"/>
 		<rect id="connector1terminal" x="18.205" y="0" fill="none" width="0.75" height="2.398"/>
 		<rect id="connector0terminal" x="3.726" y="27.167" fill="none" width="0.75" height="2.397"/>
-		<rect id="connector3terminal" x="32.664" y="27.167" fill="none" width="0.75" height="2.397"/>
+		<rect id="connector2terminal" x="32.664" y="27.167" fill="none" width="0.75" height="2.397"/>
 	</g>
-	<text transform="matrix(1 0 0 1 34.1509 12.8435)" fill="#787878" font-family="'OCRAStd'" font-size="4.2315">B</text>
+	<text transform="matrix(1 0 0 1 20.0259 12.8435)" fill="#787878" font-family="'OCRAStd'" font-size="4.2315">B</text>
 	<text transform="matrix(1 0 0 1 5.1924 12.8435)" fill="#787878" font-family="'OCRAStd'" font-size="4.2315">R</text>
-	<text transform="matrix(1 0 0 1 20.0259 12.8435)" fill="#787878" font-family="'OCRAStd'" font-size="4.2315">G</text>
+	<text transform="matrix(1 0 0 1 34.1919 12.8435)" fill="#787878" font-family="'OCRAStd'" font-size="4.2315">G</text>
 </g>
 </svg>

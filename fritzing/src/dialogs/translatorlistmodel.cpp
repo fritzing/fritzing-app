@@ -121,6 +121,9 @@ TranslatorListModel::TranslatorListModel(QFileInfoList & fileInfoList, QObject* 
         ushort t18[] = { 0x092E,  0x0930,  0x093E,  0x0920,  0x0940, 0 };
         m_languages.insert("marathi", tr("Marathi - %1").arg(QString::fromUtf16(t18)));
 
+        ushort t19[] = {0x0443,  0x043A,  0x0440,  0x0430,  0x0457,  0x043D,  0x0441,  0x044C,  0x043A,  0x0430,  0x0020,  0x043C,  0x043E,  0x0432,  0x0430, 0};
+        m_languages.insert("ukrainian", tr("Ukrainian - %1").arg(QString::fromUtf16(t19)));
+
 
 	}
 

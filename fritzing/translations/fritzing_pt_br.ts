@@ -1243,10 +1243,6 @@ Também é possível escolher um conector como ponto de aterramento clicando com
 <context>
     <name>LogoItem</name>
     <message>
-        <source>logo</source>
-        <translation>logotipo</translation>
-    </message>
-    <message>
         <source>Unable to display</source>
         <translation>Não foi possível exibir</translation>
     </message>
@@ -1285,6 +1281,10 @@ Também é possível escolher um conector como ponto de aterramento clicando com
     <message>
         <source>because this appears to be a SVG file exported from CorelDRAW without choosing the &apos;presentation attributes&apos; setting</source>
         <translation>porque isso parece ser um arquivo SVG exportado do CorelDRAW sem escolher a configuração &apos;atributos de apresentação&apos; </translation>
+    </message>
+    <message>
+        <source>text</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3314,6 +3314,49 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
         <source>%1 background</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Schematic conversion</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Saving this sketch will convert it to the new schematic graphics standard. Go ahead and convert?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Test Connectors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Connect all connectors to a single test part</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Schematic view update</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>There is a new graphics standard for schematic-view part images, beginning with version 0.8.6.
+
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Would you like to convert &apos;%1&apos; to the new standard now or open the file read-only?
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The conversion process will not modify &apos;%1&apos;, until you save the file. </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You will have to rearrange parts and connections in schematic view, as the sizes of most part images will have changed. Consider using the Autorouter to clean up traces. </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Note that any custom parts will not be converted. A tool for converting &apos;rectangular&apos; schematic images is available in the Parts Editor.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MazeRouter</name>
@@ -4131,6 +4174,14 @@ Vá em frente e salve?</translation>
     <message>
         <source>Please enter a prefix to help you identify the part files. The names will have the form &apos;PREFIX_%1&apos;. (It is not necessary to change the prefix, since a unique suffix is always added.)</source>
         <translation>Entre com um prefixo para ajudar a indentificar os arquivos de componentes. Os nomes devem estar no formato &apos;PREFIXO_%1&apos;. (Não é necessário mudar o prefixo, já que um sufixo único é sempre adicionado.)</translation>
+    </message>
+    <message>
+        <source>Convert schematic to 0.1 inch standard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Convert pre-0.8.6 schematic image to new 0.1 inch standard</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -6076,6 +6127,37 @@ is already there, we won&apos;t add it again, right?</source>
     </message>
 </context>
 <context>
+    <name>S2S</name>
+    <message>
+        <source>Failed loading &apos;%1&apos;, %2 line:%3 col:%4</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Schematic not found for &apos;%1&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to load schematic &apos;%1&apos; for &apos;%2&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Schematic &apos;%1&apos; is already using the 0.1inch standard.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Missing connector %1 in &apos;%2&apos; schematic of &apos;%3&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Uunable to load schematic &apos;%1&apos; for &apos;%2&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Failed loading schematic &apos;%1&apos;, %2 line:%3 col:%4</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>SchematicFrame</name>
     <message>
         <source>Project</source>
@@ -6436,6 +6518,10 @@ Nota: você pode também acionar este aviso passando o mouse pelo texto de estad
         <source>Add %1 parts</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>test connectors</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SqliteReferenceModel</name>
@@ -6762,6 +6848,10 @@ Nota: você pode também acionar este aviso passando o mouse pelo texto de estad
         <source>In Breadboard or PCB view, to add a curve to a wire or bendable leg, drag with the Control (Mac: Command) key down.  You can set whether curvy wires are the default in Preferences.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>When using the Fritzing Fab Service, If there are empty areas of the PCB that you do not want filled with copper, use the copper-blocker part. This resizable part will mask out copper fill in the rectangle it covers.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>TraceWire</name>
@@ -6907,6 +6997,10 @@ Nota: você pode também acionar este aviso passando o mouse pelo texto de estad
     <message>
         <source>Marathi - %1</source>
         <translation>Marata - %1</translation>
+    </message>
+    <message>
+        <source>Ukrainian - %1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -7117,6 +7211,14 @@ Nota: você pode também acionar este aviso passando o mouse pelo texto de estad
     <message>
         <source>pink</source>
         <translation>rosa</translation>
+    </message>
+    <message>
+        <source>ochre</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>cyan</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

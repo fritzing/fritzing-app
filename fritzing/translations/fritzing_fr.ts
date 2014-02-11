@@ -1247,10 +1247,6 @@ Il est également possible de choisir un connecteur comme une graine de rempliss
 <context>
     <name>LogoItem</name>
     <message>
-        <source>logo</source>
-        <translation>logo</translation>
-    </message>
-    <message>
         <source>shape</source>
         <translation>forme</translation>
     </message>
@@ -1289,6 +1285,10 @@ Il est également possible de choisir un connecteur comme une graine de rempliss
     <message>
         <source>due to an xml problem: %1 line:%2 column:%3</source>
         <translation type="unfinished">en raison d&apos;un problème :%1 à la ligne:%2 colonne:%3</translation>
+    </message>
+    <message>
+        <source>text</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3323,6 +3323,49 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
         <source>This may result in changes to your sketch, as parts or connectors may be shifted. </source>
         <translation type="unfinished">Ceci peut produire des changements dans votre esquisse, des composants tout comme des connecteurs pouvant être décalés.</translation>
     </message>
+    <message>
+        <source>Schematic conversion</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Saving this sketch will convert it to the new schematic graphics standard. Go ahead and convert?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Test Connectors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Connect all connectors to a single test part</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Schematic view update</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>There is a new graphics standard for schematic-view part images, beginning with version 0.8.6.
+
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Would you like to convert &apos;%1&apos; to the new standard now or open the file read-only?
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The conversion process will not modify &apos;%1&apos;, until you save the file. </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You will have to rearrange parts and connections in schematic view, as the sizes of most part images will have changed. Consider using the Autorouter to clean up traces. </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Note that any custom parts will not be converted. A tool for converting &apos;rectangular&apos; schematic images is available in the Parts Editor.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MazeRouter</name>
@@ -4134,6 +4177,14 @@ Go ahead and save?</source>
     <message>
         <source>Relocate connector %1</source>
         <translation type="unfinished">Relocaliser le connecteur %1</translation>
+    </message>
+    <message>
+        <source>Convert schematic to 0.1 inch standard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Convert pre-0.8.6 schematic image to new 0.1 inch standard</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -6073,6 +6124,37 @@ Fritzing va continuer à fonctionner, mais vous n&apos;aurez pas la possibilité
     </message>
 </context>
 <context>
+    <name>S2S</name>
+    <message>
+        <source>Failed loading &apos;%1&apos;, %2 line:%3 col:%4</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Schematic not found for &apos;%1&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to load schematic &apos;%1&apos; for &apos;%2&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Schematic &apos;%1&apos; is already using the 0.1inch standard.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Missing connector %1 in &apos;%2&apos; schematic of &apos;%3&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Uunable to load schematic &apos;%1&apos; for &apos;%2&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Failed loading schematic &apos;%1&apos;, %2 line:%3 col:%4</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>SchematicFrame</name>
     <message>
         <source>of</source>
@@ -6433,6 +6515,10 @@ Remarque: vous pouvez également déclencher cet affichage en positionnant la so
         <source>Add %1 parts</source>
         <translation type="unfinished">Ajouter %1 composant(s)</translation>
     </message>
+    <message>
+        <source>test connectors</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SqliteReferenceModel</name>
@@ -6759,6 +6845,10 @@ Remarque: vous pouvez également déclencher cet affichage en positionnant la so
         <source>local file storage</source>
         <translation type="unfinished">sauvegarde locale des fichiers</translation>
     </message>
+    <message>
+        <source>When using the Fritzing Fab Service, If there are empty areas of the PCB that you do not want filled with copper, use the copper-blocker part. This resizable part will mask out copper fill in the rectangle it covers.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>TraceWire</name>
@@ -6904,6 +6994,10 @@ Remarque: vous pouvez également déclencher cet affichage en positionnant la so
     <message>
         <source>Romanian - %1</source>
         <translation type="unfinished">Roumain - %1</translation>
+    </message>
+    <message>
+        <source>Ukrainian - %1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -7113,6 +7207,14 @@ Remarque: vous pouvez également déclencher cet affichage en positionnant la so
     <message>
         <source>standard (24 mil)</source>
         <translation>standard (24 mil)</translation>
+    </message>
+    <message>
+        <source>ochre</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>cyan</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

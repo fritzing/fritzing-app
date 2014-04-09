@@ -632,6 +632,13 @@
                 </iconView>
             </views>
         </instance>	 	
+        <instance moduleIdRef="intel-arduino_galileo-(simple)" modelIndex="48" path="parts/core/intel-arduino_galileo-(simple).fzp">
+            <views>
+                <iconView layer="icon">
+                    <geometry z="-1" x="-1" y="-1"/>
+                </iconView>
+            </views>
+        </instance>  
         <instance moduleIdRef="SPARKCORE_v1" modelIndex="48" path="parts/core/SPARKCORE_v1.fzp">
             <views>
                 <iconView layer="icon">

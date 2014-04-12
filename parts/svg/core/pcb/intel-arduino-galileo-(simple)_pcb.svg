@@ -1474,6 +1474,62 @@
 			<circle id="connector88pin" fill="none" stroke="#F7BD13" cx="224.462" cy="170.475" r="1.608"/>
 			<circle id="connector89pin" fill="none" stroke="#F7BD13" cx="231.662" cy="170.475" r="1.608"/>
 			<circle id="connector90pin" fill="none" stroke="#F7BD13" cx="238.862" cy="170.475" r="1.608"/>
+
+<line x1='12.7' y1='0.123472' x2='12.7' y2='5.20347' fill='none' stroke='none' stroke-width='0' id='connector139pin' />
+
+<line x1='12.7' y1='0.123472' x2='12.7' y2='5.20347' fill='none' stroke='none' stroke-width='0' id='connector140pin' />
+
+<line x1='12.7' y1='0.123472' x2='12.7' y2='5.20347' fill='none' stroke='none' stroke-width='0' id='connector141pin' />
+
+<line x1='12.7' y1='0.123472' x2='12.7' y2='5.20347' fill='none' stroke='none' stroke-width='0' id='connector142pin' />
+
+<line x1='12.7' y1='0.123472' x2='12.7' y2='5.20347' fill='none' stroke='none' stroke-width='0' id='connector143pin' />
+
+<line x1='12.7' y1='0.123472' x2='12.7' y2='5.20347' fill='none' stroke='none' stroke-width='0' id='connector144pin' />
+
+<line x1='12.7' y1='0.123472' x2='12.7' y2='5.20347' fill='none' stroke='none' stroke-width='0' id='connector145pin' />
+
+<line x1='12.7' y1='0.123472' x2='12.7' y2='5.20347' fill='none' stroke='none' stroke-width='0' id='connector120pin' />
+
+<line x1='12.7' y1='0.123472' x2='12.7' y2='5.20347' fill='none' stroke='none' stroke-width='0' id='connector121pin' />
+
+<line x1='12.7' y1='0.123472' x2='12.7' y2='5.20347' fill='none' stroke='none' stroke-width='0' id='connector122pin' />
+
+<line x1='12.7' y1='0.123472' x2='12.7' y2='5.20347' fill='none' stroke='none' stroke-width='0' id='connector130pin' />
+
+<line x1='12.7' y1='0.123472' x2='12.7' y2='5.20347' fill='none' stroke='none' stroke-width='0' id='connector131pin' />
+
+<line x1='12.7' y1='0.123472' x2='12.7' y2='5.20347' fill='none' stroke='none' stroke-width='0' id='connector100pin' />
+
+<line x1='12.7' y1='0.123472' x2='12.7' y2='5.20347' fill='none' stroke='none' stroke-width='0' id='connector101pin' />
+
+<line x1='12.7' y1='0.123472' x2='12.7' y2='5.20347' fill='none' stroke='none' stroke-width='0' id='connector102pin' />
+
+<line x1='12.7' y1='0.123472' x2='12.7' y2='5.20347' fill='none' stroke='none' stroke-width='0' id='connector103pin' />
+
+<line x1='12.7' y1='0.123472' x2='12.7' y2='5.20347' fill='none' stroke='none' stroke-width='0' id='connector104pin' />
+
+<line x1='12.7' y1='0.123472' x2='12.7' y2='5.20347' fill='none' stroke='none' stroke-width='0' id='connector105pin' />
+
+<line x1='12.7' y1='0.123472' x2='12.7' y2='5.20347' fill='none' stroke='none' stroke-width='0' id='connector106pin' />
+
+<line x1='12.7' y1='0.123472' x2='12.7' y2='5.20347' fill='none' stroke='none' stroke-width='0' id='connector107pin' />
+
+<line x1='12.7' y1='0.123472' x2='12.7' y2='5.20347' fill='none' stroke='none' stroke-width='0' id='connector108pin' />
+
+<line x1='12.7' y1='0.123472' x2='12.7' y2='5.20347' fill='none' stroke='none' stroke-width='0' id='connector122pin' />
+
+<line x1='12.7' y1='0.123472' x2='12.7' y2='5.20347' fill='none' stroke='none' stroke-width='0' id='connector109pin' />
+
+<line x1='12.7' y1='0.123472' x2='12.7' y2='5.20347' fill='none' stroke='none' stroke-width='0' id='connector160pin' />
+
+<line x1='12.7' y1='0.123472' x2='12.7' y2='5.20347' fill='none' stroke='none' stroke-width='0' id='connector161pin' />
+
+<line x1='12.7' y1='0.123472' x2='12.7' y2='5.20347' fill='none' stroke='none' stroke-width='0' id='connector162pin' />
+
+<line x1='12.7' y1='0.123472' x2='12.7' y2='5.20347' fill='none' stroke='none' stroke-width='0' id='connector150pin' />
+
+<line x1='12.7' y1='0.123472' x2='12.7' y2='5.20347' fill='none' stroke='none' stroke-width='0' id='connector151pin' />
 		</g>
 	</g>
 </g>

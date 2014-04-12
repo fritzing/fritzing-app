@@ -61,7 +61,7 @@
     </message>
     <message>
         <source>Bryant Mairs, Uleshka Asher, and Daniel Tzschentke. </source>
-        <translation>Bryant Mairs, Uleshka Asher,et Daniel Tzschentke.</translation>
+        <translation>Bryant Mairs, Uleshka Asher et Daniel Tzschentke.</translation>
     </message>
     <message>
         <source>to Hiroshi Suzuki for the Japanese translation, </source>
@@ -133,7 +133,7 @@
     </message>
     <message>
         <source>Fritzing is made by: </source>
-        <translation type="unfinished">Fritzing est réalisé par:</translation>
+        <translation type="unfinished">Fritzing est réalisé par :</translation>
     </message>
     <message>
         <source>Zach Eveland, Dirk van Oosterbosch, </source>
@@ -226,7 +226,7 @@
     </message>
     <message>
         <source>Note: the smaller the keepout, the slower the DRC and Autorouter will run.</source>
-        <translation type="unfinished">Note: au plus la marge de sécurité est petite, au plus l&apos;exécution de la RDC et de l&apos;autoroutage sera lente.</translation>
+        <translation type="unfinished">Note : au plus la marge de sécurité est petite, au plus l&apos;exécution de la RDC et de l&apos;autoroutage sera lente.</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -535,7 +535,7 @@ Utiliser le fichier ?</translation>
     </message>
     <message>
         <source>due to an xml problem: %1 line:%2 column:%3</source>
-        <translation type="unfinished">suite à un problème XML :%1 à la ligne:%2 colonne:%3</translation>
+        <translation type="unfinished">suite à un problème XML :%1 à la ligne :%2 colonne :%3</translation>
     </message>
     <message>
         <source>Unable to load image from %1 %2</source>
@@ -681,11 +681,11 @@ Utiliser le fichier ?</translation>
     </message>
     <message>
         <source>Fritzing error: unable to render board svg.</source>
-        <translation>Erreur Fritzing: le rendu de la carte en svg et impossible.</translation>
+        <translation>Erreur Fritzing : le rendu de la carte en svg et impossible.</translation>
     </message>
     <message>
         <source>Your sketch is ready for production: there are no connectors or traces that overlap or are too close together.</source>
-        <translation type="unfinished">Votre esquisse est prête pour la production: il n&apos;existe pas de connecteurs ou de traces qui se chevauchent ou sont trop rapprochés.</translation>
+        <translation type="unfinished">Votre esquisse est prête pour la production : il n&apos;existe pas de connecteurs ou de traces qui se chevauchent ou sont trop rapprochés.</translation>
     </message>
     <message>
         <source>Connector %1 on %2 should have both copper top and bottom layers, but the svg only specifies one layer.</source>
@@ -696,7 +696,7 @@ Utiliser le fichier ?</translation>
     <name>DRCResultsDialog</name>
     <message>
         <source>Note: the list items and the red highlighting will not update as you edit your sketch--you must rerun the DRC. The highlighting will disappear when you close this dialog.</source>
-        <translation type="unfinished">Remarque: les éléments de liste et la mise en évidence rouges ne seront pas mise à jour lorsque vous modifierez votre croquis - vous devez réexécuter la RDC. La mise en évidence disparaîtra lorsque vous fermerez cette boîte de dialogue.</translation>
+        <translation type="unfinished">Remarque : les éléments de liste et la mise en évidence rouges ne seront pas mise à jour lorsque vous modifierez votre croquis - vous devez réexécuter la RDC. La mise en évidence disparaîtra lorsque vous fermerez cette boîte de dialogue.</translation>
     </message>
     <message>
         <source>DRC Results</source>
@@ -754,7 +754,7 @@ Utiliser le fichier ?</translation>
         <source>
 Note: You can import them later using the &quot;Help&quot; &gt; &quot;Import parts and bins from old version...&quot; menu action.</source>
         <translation type="unfinished">
-Remarque: vous pouvez les importer ultérieurement en utilisant la rubrique &quot;Aide&quot;&gt; &quot;Importer composants et magasins à partir d&apos;une ancienne version ...&quot; dans le menu Action.</translation>
+Remarque : vous pouvez les importer ultérieurement en utilisant la rubrique &quot;Aide&quot;&gt; &quot;Importer composants et magasins à partir d&apos;une ancienne version ...&quot; dans le menu Action.</translation>
     </message>
     <message>
         <source>Fritzing caught an exception from %1 in event %2</source>
@@ -784,7 +784,7 @@ Remarque: vous pouvez les importer ultérieurement en utilisant la rubrique &quo
     </message>
     <message>
         <source>Fritzing caught an exception from %1 in event %2: %3</source>
-        <translation type="unfinished">Fritzing a attrapé une exception de %1 dans l&apos;événement %2: %3</translation>
+        <translation type="unfinished">Fritzing a attrapé une exception de %1 dans l&apos;événement %2 : %3</translation>
     </message>
 </context>
 <context>
@@ -1233,11 +1233,11 @@ Il est également possible de choisir un connecteur comme une graine de rempliss
     </message>
     <message>
         <source>url:</source>
-        <translation>url:</translation>
+        <translation>url :</translation>
     </message>
     <message>
         <source>text:</source>
-        <translation>texte:</translation>
+        <translation>texte :</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -1284,7 +1284,7 @@ Il est également possible de choisir un connecteur comme une graine de rempliss
     </message>
     <message>
         <source>due to an xml problem: %1 line:%2 column:%3</source>
-        <translation type="unfinished">en raison d&apos;un problème :%1 à la ligne:%2 colonne:%3</translation>
+        <translation type="unfinished">en raison d&apos;un problème :%1 à la ligne :%2 colonne :%3</translation>
     </message>
     <message>
         <source>text</source>
@@ -1466,7 +1466,7 @@ Veuillez vérifier toutes les vues pour les effets secondaires possibles.</trans
     <message>
         <source>Cannot write file %1:
 %2.</source>
-        <translation type="unfinished">Impossible d&apos;écrire le fichier %1:%2.</translation>
+        <translation type="unfinished">Impossible d&apos;écrire le fichier %1 :%2.</translation>
     </message>
     <message>
         <source>Select any traces where the screen location doesn&apos;t match the actual location. Only needed for sketches autorouted with version 0.7.10 or earlier</source>
@@ -1712,7 +1712,7 @@ Continuer ou annuler?</translation>
     </message>
     <message>
         <source>Text will match part label, description, title, etc. Enter text to search for:</source>
-        <translation type="unfinished">Texte correspondant à l&apos;étiquette du composant, sa description, le titre, etc. Saisissez le texte à rechercher:</translation>
+        <translation type="unfinished">Texte correspondant à l&apos;étiquette du composant, sa description, le titre, etc. Saisissez le texte à rechercher :</translation>
     </message>
     <message>
         <source>%1 %2 %3</source>
@@ -2650,7 +2650,7 @@ Nous travaillons à éliminer ce message afin de ne vous laisser choisir que des
     </message>
     <message>
         <source>Unable to open shareable part &apos;%1&apos;: %2</source>
-        <translation type="unfinished">Impossible d&apos;ouvrir &quot;%1&quot; pour le partage du composant: %2</translation>
+        <translation type="unfinished">Impossible d&apos;ouvrir &quot;%1&quot; pour le partage du composant : %2</translation>
     </message>
     <message>
         <source>Set Ground Fill Seed</source>
@@ -2831,7 +2831,7 @@ Voulez-vous convertir &apos;%1&apos; au format . Fzz maintenant ou l&apos;ouvrir
     </message>
     <message>
         <source>Unable to open &apos;%1&apos;: %2</source>
-        <translation type="unfinished">Impossible d&apos;ouvrir &quot;%1&quot;: %2</translation>
+        <translation type="unfinished">Impossible d&apos;ouvrir &quot;%1&quot; : %2</translation>
     </message>
     <message>
         <source>Flip current selection horizontally</source>
@@ -3047,7 +3047,7 @@ Voulez-vous convertir &apos;%1&apos; au format . Fzz maintenant ou l&apos;ouvrir
     </message>
     <message>
         <source>Unable to open shareable &apos;%1&apos;: %2</source>
-        <translation type="unfinished">Impossible d&apos;ouvrir &quot;%1&quot; pour le partage de: %2</translation>
+        <translation type="unfinished">Impossible d&apos;ouvrir &quot;%1&quot; pour le partage de : %2</translation>
     </message>
     <message>
         <source>Please select a PCB--copper fill only works for one board at a time.</source>
@@ -3383,7 +3383,7 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     </message>
     <message>
         <source>round %1 of:</source>
-        <translation>%1 tour dans:</translation>
+        <translation>%1 tour dans :</translation>
     </message>
     <message>
         <source>Autorouter was cancelled.</source>
@@ -3406,7 +3406,7 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     </message>
     <message>
         <source>best so far: %1 of %2 routed</source>
-        <translation type="unfinished">meilleur résultat jusqu&apos;à présent:%1 de%2 acheminés</translation>
+        <translation type="unfinished">meilleur résultat jusqu&apos;à présent :%1 de%2 acheminés</translation>
     </message>
     <message>
         <source>Optimizing traces...</source>
@@ -3430,7 +3430,7 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     <message>
         <source>Couldn&apos;t overwrite file &apos;%1&apos;.
 Reason: %2 (errcode %3)</source>
-        <translation type="unfinished">Impossible de remplacer &quot;%1&quot;. Raison:%2 ( errcode%3)</translation>
+        <translation type="unfinished">Impossible de remplacer &quot;%1&quot;. Raison :%2 ( errcode%3)</translation>
     </message>
     <message numerus="yes">
         <source>Unable to find the following %n part(s):</source>
@@ -3487,19 +3487,19 @@ Reason: %2 (errcode %3)</source>
     </message>
     <message>
         <source>%1 Fill: please select the board you want to apply fill to.</source>
-        <translation type="unfinished">%1 Remplissage: veuillez sélectionner la carte où vous souhaitez appliquer le remplissage.</translation>
+        <translation type="unfinished">%1 Remplissage : veuillez sélectionner la carte où vous souhaitez appliquer le remplissage.</translation>
     </message>
     <message>
         <source>Fritzing error: unable to write copper fill (1).</source>
-        <translation type="unfinished">Erreur Fritzing: Ecriture du remplissage cuivre (1) impossible.</translation>
+        <translation type="unfinished">Erreur Fritzing : Ecriture du remplissage cuivre (1) impossible.</translation>
     </message>
     <message>
         <source>Fritzing error: unable to write copper fill (2).</source>
-        <translation type="unfinished">Erreur Fritzing: Ecriture du remplissage cuivre (2) impossible.</translation>
+        <translation type="unfinished">Erreur Fritzing : Ecriture du remplissage cuivre (2) impossible.</translation>
     </message>
     <message>
         <source>Copper fill: please select only the board you want to fill.</source>
-        <translation type="unfinished">Remplissage cuivre: veuillez ne sélectionner que la carte à remplir.</translation>
+        <translation type="unfinished">Remplissage cuivre : veuillez ne sélectionner que la carte à remplir.</translation>
     </message>
     <message>
         <source>so you may want to increase the keepout value by that much.
@@ -3561,7 +3561,7 @@ Reason: %2 (errcode %3)</source>
     </message>
     <message>
         <source>Fritzing error: unable to render board svg (1).</source>
-        <translation>Erreur Fritzing: rendu de la carte (1) svg impossible.</translation>
+        <translation>Erreur Fritzing : rendu de la carte (1) svg impossible.</translation>
     </message>
     <message>
         <source>10 mils is a good default choice.
@@ -3591,7 +3591,7 @@ Reason: %2 (errcode %3)</source>
     </message>
     <message>
         <source>Fritzing error: unable to render copper svg (1).</source>
-        <translation>Erreur Fritzing: impossible d&apos;effectuer le rendu cuivre svg (1).</translation>
+        <translation>Erreur Fritzing : impossible d&apos;effectuer le rendu cuivre svg (1).</translation>
     </message>
     <message>
         <source>Your sketch does not have a board yet. You cannot fabricate this sketch without a PCB part.</source>
@@ -3736,7 +3736,7 @@ Reason: %2 (errcode %3)</source>
     </message>
     <message>
         <source>See &lt;a href=&quot;http://fritzing.org/learning/tutorials/creating-custom-parts/providing-part-graphics/&quot;&gt;this explanation&lt;/a&gt;.</source>
-        <translation>Consultez cette explication:&lt;a href=&quot;http://fritzing.org/learning/tutorials/creating-custom-parts/providing-part-graphics/&quot;&gt;&lt;/a&gt;.</translation>
+        <translation>Consultez cette explication :&lt;a href=&quot;http://fritzing.org/learning/tutorials/creating-custom-parts/providing-part-graphics/&quot;&gt;&lt;/a&gt;.</translation>
     </message>
     <message>
         <source>Copy problem</source>
@@ -3786,7 +3786,7 @@ Go ahead and save?</source>
     </message>
     <message>
         <source>Unable to make a local copy of: &apos;%1&apos;</source>
-        <translation>Impossible de faire une copie de: &apos;%1&apos;</translation>
+        <translation>Impossible de faire une copie de : &apos;%1&apos;</translation>
     </message>
     <message>
         <source>Use of PNG and JPG discouraged</source>
@@ -3895,7 +3895,7 @@ Go ahead and save?</source>
         <source>This part can not be saved as-is:
 
 </source>
-        <translation type="unfinished">Ce composant ne peut pas être sauvegardé tel quel:
+        <translation type="unfinished">Ce composant ne peut pas être sauvegardé tel quel :
 
 </translation>
     </message>
@@ -3988,11 +3988,11 @@ Go ahead and save?</source>
     </message>
     <message>
         <source>There are no copper layers defined in: %1. </source>
-        <translation>Il n&apos;y a pas de couches de cuivre définies dans:%1.</translation>
+        <translation>Il n&apos;y a pas de couches de cuivre définies dans :%1.</translation>
     </message>
     <message>
         <source>Unable to parse &apos;%1&apos;: %2 line:%3 column:%4</source>
-        <translation>Impossible d&apos;analyser &apos;%1&apos;: %2 à la ligne: %3 colonne: %4</translation>
+        <translation>Impossible d&apos;analyser &apos;%1&apos; : %2 à la ligne : %3 colonne : %4</translation>
     </message>
     <message>
         <source>Metadata View</source>
@@ -4278,11 +4278,11 @@ Go ahead and save?</source>
     <name>PESvgView</name>
     <message>
         <source>width:</source>
-        <translation>largeur:</translation>
+        <translation>largeur :</translation>
     </message>
     <message>
         <source>height:</source>
-        <translation>hauteur:</translation>
+        <translation>hauteur :</translation>
     </message>
 </context>
 <context>
@@ -4678,7 +4678,7 @@ Go ahead and save?</source>
     <message>
         <source>Cannot read file %1:
 %2.</source>
-        <translation type="unfinished">Impossible de lire le fichier %1:
+        <translation type="unfinished">Impossible de lire le fichier %1 :
 %2.</translation>
     </message>
     <message>
@@ -4730,7 +4730,7 @@ Go ahead and save?</source>
 Note: this warning will not be repeated during this session.</source>
         <translation type="unfinished">Les performances du logiciel avec des Cartes à bandes de plus de 2000 trous peuvent êtres réduites. Etes-vous sûr?
 
-Remarque: cet avertissement ne sera pas répété au cours de cette session.</translation>
+Remarque : cet avertissement ne sera pas répété au cours de cette session.</translation>
     </message>
     <message>
         <source>columns</source>
@@ -4776,7 +4776,7 @@ Remarque: cet avertissement ne sera pas répété au cours de cette session.</tr
     </message>
     <message>
         <source>This checkbox sets the default behavior. You can switch back to the non-default behavior by holding down the Control key (Mac: Command key) when you drag.</source>
-        <translation>Cette case définit le comportement par défaut. Vous pouvez revenir au comportement non défini par défaut en maintenant enfoncée la touche Ctrl (Mac: touche Commande) lorsque vous faites glisser.</translation>
+        <translation>Cette case définit le comportement par défaut. Vous pouvez revenir au comportement non défini par défaut en maintenant enfoncée la touche Ctrl (Mac : touche Commande) lorsque vous faites glisser.</translation>
     </message>
     <message>
         <source>When you mouse-down and drag on a wire or the leg of a part (as opposed to a connector or a bendpoint) do you want to change the curvature of the wire (or leg) or drag out a new bendpoint?</source>
@@ -4852,7 +4852,7 @@ Alt ou la touche %1 = zoom</translation>
     </message>
     <message>
         <source>Autosave every:</source>
-        <translation>Sauvegarde automatique toutes les:</translation>
+        <translation>Sauvegarde automatique toutes les :</translation>
     </message>
     <message>
         <source>General</source>
@@ -4879,7 +4879,7 @@ Alt ou la touche %1 = zoom</translation>
     </message>
     <message>
         <source>Port:</source>
-        <translation>Port:</translation>
+        <translation>Port :</translation>
     </message>
     <message>
         <source>Select a program file to load</source>
@@ -4915,7 +4915,7 @@ Alt ou la touche %1 = zoom</translation>
     </message>
     <message>
         <source>Programmer:</source>
-        <translation type="unfinished">Programmateur:</translation>
+        <translation type="unfinished">Programmateur :</translation>
     </message>
     <message>
         <source>Fritzing is unable to find &apos;%1&apos;, please locate it</source>
@@ -5325,7 +5325,7 @@ Alt ou la touche %1 = zoom</translation>
     </message>
     <message>
         <source>&lt;b&gt;type:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;type:&lt;/b&gt;</translation>
+        <translation>&lt;b&gt;type :&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Select %1</source>
@@ -5337,7 +5337,7 @@ Alt ou la touche %1 = zoom</translation>
     </message>
     <message>
         <source>%1 layer: unable to save to &apos;%2&apos;</source>
-        <translation type="unfinished">Le calque %1: n&apos;est pas sauvegardable dans &quot;%2&quot;</translation>
+        <translation type="unfinished">Le calque %1 : n&apos;est pas sauvegardable dans &quot;%2&quot;</translation>
     </message>
     <message>
         <source>breadboard view</source>
@@ -5367,7 +5367,7 @@ Alt ou la touche %1 = zoom</translation>
         <source>Parse error (1) at line %1, column %2:
 %3
 %4</source>
-        <translation>Erreur de syntaxe (1) ligne %1, colonne %2:%3
+        <translation>Erreur de syntaxe (1) ligne %1, colonne %2 :%3
 %4</translation>
     </message>
     <message>
@@ -5397,7 +5397,7 @@ is already there, we won&apos;t add it again, right?</source>
     </message>
     <message>
         <source>Unable to parse copper: %1 %2 %3</source>
-        <translation type="unfinished">Analyse du cuivrage impossible: %1 %2 %3</translation>
+        <translation type="unfinished">Analyse du cuivrage impossible : %1 %2 %3</translation>
     </message>
     <message>
         <source>Part already in bin</source>
@@ -5405,11 +5405,11 @@ is already there, we won&apos;t add it again, right?</source>
     </message>
     <message>
         <source>Cannot autoroute: no board (or multiple boards) found</source>
-        <translation type="unfinished">Autoroutage impossible:aucune carte (ou carte multiples) trouvé</translation>
+        <translation type="unfinished">Autoroutage impossible : aucune carte (ou carte multiples) trouvée</translation>
     </message>
     <message>
         <source>Unable to save pick and place file: %2</source>
-        <translation>Impossible d&apos;enregistrer le fichier pick and place: %2</translation>
+        <translation>Impossible d&apos;enregistrer le fichier pick and place : %2</translation>
     </message>
     <message>
         <source>unable to open %1</source>
@@ -5561,7 +5561,7 @@ is already there, we won&apos;t add it again, right?</source>
     </message>
     <message>
         <source>&lt;b&gt;Name:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Nom:&lt;/b&gt;</translation>
+        <translation>&lt;b&gt;Nom :&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Breadboard</source>
@@ -5601,7 +5601,7 @@ is already there, we won&apos;t add it again, right?</source>
     </message>
     <message>
         <source>Set all to:</source>
-        <translation>Positionner tout dans:</translation>
+        <translation>Positionner tout dans :</translation>
     </message>
     <message>
         <source>unable to copy file &apos;%1&apos; to &apos;%2&apos;.</source>
@@ -5613,11 +5613,11 @@ is already there, we won&apos;t add it again, right?</source>
     </message>
     <message>
         <source>failure in svg conversion 2: %1 %2 %3</source>
-        <translation>Echec de convertion 2: %1 %2 %3</translation>
+        <translation>Echec de convertion 2 : %1 %2 %3</translation>
     </message>
     <message>
         <source>failure in svg conversion 1: %1 %2 %3</source>
-        <translation>Echec de convertion svg 1: %1 %2 %3</translation>
+        <translation>Echec de convertion svg 1 : %1 %2 %3</translation>
     </message>
     <message>
         <source>Ratsnest</source>
@@ -5653,7 +5653,7 @@ is already there, we won&apos;t add it again, right?</source>
     </message>
     <message>
         <source>File %1 already exists: it won&apos;t be overwritten</source>
-        <translation>Le fichier%1 existe déjà: il ne sera pas remplacé</translation>
+        <translation>Le fichier%1 existe déjà : il ne sera pas remplacé</translation>
     </message>
     <message>
         <source>You may need to reload the shape SVG. </source>
@@ -5695,7 +5695,7 @@ is already there, we won&apos;t add it again, right?</source>
         <source>Parse error (2) at line %1, column %2:
 %3
 %4</source>
-        <translation>Erreur de syntaxe (2) ligne %1, colonne %2:
+        <translation>Erreur de syntaxe (2) ligne %1, colonne %2 :
 %3
 %4</translation>
     </message>
@@ -5704,7 +5704,7 @@ is already there, we won&apos;t add it again, right?</source>
 %1
 %2
 %3.</source>
-        <translation>Impossible d&apos;écrire dans le fichier temporaire:
+        <translation>Impossible d&apos;écrire dans le fichier temporaire :
 %1
 %2
 %3.</translation>
@@ -5743,12 +5743,12 @@ is already there, we won&apos;t add it again, right?</source>
     </message>
     <message>
         <source>Error reading file %1: %2.</source>
-        <translation type="unfinished">Echec de lecture du fichier %1: %2.</translation>
+        <translation type="unfinished">Echec de lecture du fichier %1 : %2.</translation>
     </message>
     <message>
         <source>Cannot read file %1:
 %2.</source>
-        <translation type="unfinished">Impossible de lire le fichier %1:
+        <translation type="unfinished">Impossible de lire le fichier %1 :
 %2.</translation>
     </message>
     <message>
@@ -6057,7 +6057,7 @@ Fritzing va continuer à fonctionner, mais vous n&apos;aurez pas la possibilité
     </message>
     <message>
         <source>height: %1mm</source>
-        <translation>Hauteur: %1 mm</translation>
+        <translation>Hauteur : %1 mm</translation>
     </message>
     <message>
         <source>A6 (128x182)</source>
@@ -6097,7 +6097,7 @@ Fritzing va continuer à fonctionner, mais vous n&apos;aurez pas la possibilité
     </message>
     <message>
         <source>width: %1mm</source>
-        <translation>Largeur: %1 mm</translation>
+        <translation>Largeur : %1 mm</translation>
     </message>
     <message>
         <source>A4 (257x364)</source>
@@ -6410,7 +6410,7 @@ Fritzing va continuer à fonctionner, mais vous n&apos;aurez pas la possibilité
 Note: you can also trigger this display by mousing down on the routing status text in the status bar.</source>
         <translation>%1
 
-Remarque: vous pouvez également déclencher cet affichage en positionnant la souris sur le texte d&apos;état de routage dans la barre d&apos;état.</translation>
+Remarque : vous pouvez également déclencher cet affichage en positionnant la souris sur le texte d&apos;état de routage dans la barre d&apos;état.</translation>
     </message>
     <message>
         <source>Disconnect</source>
@@ -6538,7 +6538,7 @@ Remarque: vous pouvez également déclencher cet affichage en positionnant la so
         <source>The swapping mechanism is disabled for:
 
 </source>
-        <translation type="unfinished">Le mécanisme de permutation est désactivé pour:</translation>
+        <translation type="unfinished">Le mécanisme de permutation est désactivé pour :</translation>
     </message>
     <message>
         <source>part &apos;%1&apos; with id &apos;%2&apos;; possibly because it has no &apos;family&apos; property.</source>

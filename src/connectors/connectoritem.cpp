@@ -1498,7 +1498,7 @@ void ConnectorItem::updateTooltip() {
 
 	QList<ConnectorItem *> connectors;
 	foreach(ConnectorItem * toConnectorItem, m_connectedTo) {
-		if (!toConnectorItem->attachedToItemType() == ModelPart::Wire) {
+        if (toConnectorItem->attachedToItemType() != ModelPart::Wire) {
 			connectors.append(toConnectorItem);
 		}
 	}

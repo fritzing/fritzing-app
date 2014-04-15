@@ -715,7 +715,7 @@ void SVG2gerber::handleOblongPath(QDomElement & path, int & dcode_index) {
     // look for oblong paths
     QDomElement parent = path.parentNode().toElement();
 
-    if (!parent.attribute("id").compare("oblong") == 0) return;
+    if (parent.attribute("id").compare("oblong") != 0) return;
 
     QDomElement nextPath = path.nextSiblingElement("path");
     if (nextPath.isNull()) return;

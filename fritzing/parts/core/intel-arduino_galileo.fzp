@@ -43,7 +43,7 @@ Visit the FAQ page for further informations.</description>
             </layers>
         </pcbView>
         <iconView>
-            <layers image="breadboard/intel-arduino-galileo_breadboard.svg">
+            <layers image="icon/intel-arduino-galileo_icon.svg">
                 <layer layerId="icon"/>
             </layers>
         </iconView>

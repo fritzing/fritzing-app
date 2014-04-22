@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.2" baseProfile="tiny" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+	 x="0px" y="0px" width="242.2px" height="159.95px" viewBox="0 0 242.2 159.95" xml:space="preserve">
+<g id="board">
+	<path id="boardoutline" fill="#FFFFFF" fill-opacity="0.5" d="M0.666,0.7v158.74h240.95V0.7H0.666z"/>
+</g>
+<g id="silkscreen">
+	<rect x="0.666" y="0.7" fill="none" stroke="#444444" width="240.95" height="158.74"/>
+	<g>
+		<circle id="connector1pin" fill="none" stroke="#444444" cx="7.115" cy="7.302" r="2.477"/>
+		<circle fill="none" stroke="#444444" cx="14.319" cy="7.3" r="2.475"/>
+		<circle fill="none" stroke="#444444" cx="21.518" cy="7.3" r="2.475"/>
+		<circle fill="none" stroke="#444444" cx="28.717" cy="7.3" r="2.475"/>
+		<circle fill="none" stroke="#444444" cx="35.917" cy="7.3" r="2.475"/>
+		<circle fill="none" stroke="#444444" cx="43.118" cy="7.3" r="2.475"/>
+		<circle fill="none" stroke="#444444" cx="50.32" cy="7.3" r="2.475"/>
+		<circle fill="none" stroke="#444444" cx="57.519" cy="7.3" r="2.475"/>
+		<circle fill="none" stroke="#444444" cx="64.718" cy="7.3" r="2.475"/>
+		<circle fill="none" stroke="#444444" cx="71.918" cy="7.3" r="2.475"/>
+		<circle fill="none" stroke="#444444" cx="79.119" cy="7.264" r="2.475"/>
+		<circle fill="none" stroke="#444444" cx="86.319" cy="7.264" r="2.475"/>
+		<circle fill="none" stroke="#444444" cx="93.52" cy="7.264" r="2.475"/>
+		<circle fill="none" stroke="#444444" cx="7.115" cy="14.502" r="2.475"/>
+		<circle fill="none" stroke="#444444" cx="14.239" cy="14.502" r="2.475"/>
+		<circle fill="none" stroke="#444444" cx="21.518" cy="14.495" r="2.475"/>
+		<circle fill="none" stroke="#444444" cx="28.717" cy="14.495" r="2.475"/>
+		<circle fill="none" stroke="#444444" cx="35.917" cy="14.495" r="2.475"/>
+		<circle fill="none" stroke="#444444" cx="43.117" cy="14.495" r="2.475"/>
+		<circle fill="none" stroke="#444444" cx="50.319" cy="14.495" r="2.475"/>
+		<circle fill="none" stroke="#444444" cx="57.519" cy="14.495" r="2.475"/>
+		<circle fill="none" stroke="#444444" cx="64.718" cy="14.495" r="2.475"/>
+		<circle fill="none" stroke="#444444" cx="71.918" cy="14.495" r="2.475"/>
+		<circle fill="none" stroke="#444444" cx="79.119" cy="14.459" r="2.475"/>
+		<circle fill="none" stroke="#444444" cx="86.319" cy="14.459" r="2.475"/>
+		<circle fill="none" stroke="#444444" cx="93.52" cy="14.459" r="2.475"/>
+	</g>
+</g>
+<g id="silkscreen0">
+	<rect x="0.666" y="0.7" fill="none" stroke="#111111" width="240.95" height="158.74"/>
+	<g>
+		<circle id="connector1pin_1_" fill="none" stroke="#111111" cx="7.115" cy="7.302" r="2.477"/>
+		<circle fill="none" stroke="#111111" cx="14.319" cy="7.3" r="2.475"/>
+		<circle fill="none" stroke="#111111" cx="21.518" cy="7.3" r="2.475"/>
+		<circle fill="none" stroke="#111111" cx="28.717" cy="7.3" r="2.475"/>
+		<circle fill="none" stroke="#111111" cx="35.917" cy="7.3" r="2.475"/>
+		<circle fill="none" stroke="#111111" cx="43.118" cy="7.3" r="2.475"/>
+		<circle fill="none" stroke="#111111" cx="50.32" cy="7.3" r="2.475"/>
+		<circle fill="none" stroke="#111111" cx="57.519" cy="7.3" r="2.475"/>
+		<circle fill="none" stroke="#111111" cx="64.718" cy="7.3" r="2.475"/>
+		<circle fill="none" stroke="#111111" cx="71.918" cy="7.3" r="2.475"/>
+		<circle fill="none" stroke="#111111" cx="79.119" cy="7.264" r="2.475"/>
+		<circle fill="none" stroke="#111111" cx="86.319" cy="7.264" r="2.475"/>
+		<circle fill="none" stroke="#111111" cx="93.52" cy="7.264" r="2.475"/>
+		<circle fill="none" stroke="#111111" cx="7.115" cy="14.502" r="2.475"/>
+		<circle fill="none" stroke="#111111" cx="14.239" cy="14.502" r="2.475"/>
+		<circle fill="none" stroke="#111111" cx="21.518" cy="14.495" r="2.475"/>
+		<circle fill="none" stroke="#111111" cx="28.717" cy="14.495" r="2.475"/>
+		<circle fill="none" stroke="#111111" cx="35.917" cy="14.495" r="2.475"/>
+		<circle fill="none" stroke="#111111" cx="43.117" cy="14.495" r="2.475"/>
+		<circle fill="none" stroke="#111111" cx="50.319" cy="14.495" r="2.475"/>
+		<circle fill="none" stroke="#111111" cx="57.519" cy="14.495" r="2.475"/>
+		<circle fill="none" stroke="#111111" cx="64.718" cy="14.495" r="2.475"/>
+		<circle fill="none" stroke="#111111" cx="71.918" cy="14.495" r="2.475"/>
+		<circle fill="none" stroke="#111111" cx="79.119" cy="14.459" r="2.475"/>
+		<circle fill="none" stroke="#111111" cx="86.319" cy="14.459" r="2.475"/>
+		<circle fill="none" stroke="#111111" cx="93.52" cy="14.459" r="2.475"/>
+	</g>
+</g>
+</svg>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.2" baseProfile="tiny" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+	 x="0px" y="0px" width="152.083px" height="202.664px" viewBox="0 0 152.083 202.664" xml:space="preserve">
+<g id="board">
+	<path id="boardoutline" fill="#FFFFFF" fill-opacity="0.5" d="M145.41,65.727V0.642H0.537v201.6H145.41v-30.318l6.424-6.422l0,0
+		V72.148L145.41,65.727z"/>
+</g>
+<g id="silkscreen">
+	<path fill="none" stroke="#646464" stroke-width="0.5" stroke-miterlimit="10" d="M145.41,65.727V0.642H0.537v201.6H145.41v-30.318
+		l6.424-6.422l0,0V72.148L145.41,65.727z M131.666,196.979c-3.68,0-6.666-2.981-6.666-6.666c0-3.682,2.986-6.666,6.666-6.666
+		c3.687,0,6.668,2.984,6.668,6.666C138.333,193.995,135.351,196.979,131.666,196.979z M131.666,19.313
+		c-3.68,0-6.666-2.985-6.666-6.667c0-3.681,2.986-6.666,6.666-6.666c3.687,0,6.668,2.985,6.668,6.666
+		C138.333,16.329,135.351,19.313,131.666,19.313z"/>
+	<image width="304" height="36" xlink:href="B9FACAAA.png"  transform="matrix(0.24 0 0 0.24 5.4565 29.5483)">
+	</image>
+	<image width="246" height="36" xlink:href="B9FACAAE.png"  transform="matrix(0.24 0 0 0.24 81.6216 29.5483)">
+	</image>
+	<image width="246" height="36" xlink:href="B9FACAA9.png"  transform="matrix(0.24 0 0 0.24 31.1626 166.3447)">
+	</image>
+	<image width="186" height="36" xlink:href="B9FACAAB.png"  transform="matrix(0.24 0 0 0.24 96.1958 166.3447)">
+	</image>
+</g>
+<g id="silkscreen0">
+	<path fill="none" stroke="#989898" stroke-width="0.5" stroke-miterlimit="10" d="M145.41,65.727V0.642H0.537v201.6H145.41v-30.318
+		l6.424-6.422l0,0V72.148L145.41,65.727z M131.666,196.979c-3.68,0-6.666-2.981-6.666-6.666c0-3.682,2.986-6.666,6.666-6.666
+		c3.687,0,6.668,2.984,6.668,6.666C138.333,193.995,135.351,196.979,131.666,196.979z M131.666,19.313
+		c-3.68,0-6.666-2.985-6.666-6.667c0-3.681,2.986-6.666,6.666-6.666c3.687,0,6.668,2.985,6.668,6.666
+		C138.333,16.329,135.351,19.313,131.666,19.313z"/>
+</g>
+</svg>

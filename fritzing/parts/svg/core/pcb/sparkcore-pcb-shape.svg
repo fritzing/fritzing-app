@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.2" baseProfile="tiny" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+	 x="0px" y="0px" width="106.784px" height="58.659px" viewBox="0 0 106.784 58.659" xml:space="preserve">
+<g id="board">
+	<polygon id="boardoutline" fill="#FFFFFF" fill-opacity="0.5" points="101.311,0.512 101.311,19.692 106.229,19.695 
+		106.253,38.843 101.311,38.829 101.311,57.669 101.166,58.151 7.719,58.151 0.485,50.919 0.485,7.689 7.71,0.512 	"/>
+</g>
+<g id="silkscreen">
+	<polygon fill="none" stroke="#444444" points="101.311,0.512 101.311,19.692 106.229,19.695 106.253,38.843 101.311,38.829 
+		101.311,57.669 101.166,58.151 7.719,58.151 0.485,50.919 0.485,7.689 7.71,0.512 	"/>
+</g>
+<g id="silkscreen0">
+	<polygon fill="none" stroke="#111111" points="101.311,0.512 101.311,19.692 106.229,19.695 106.253,38.843 101.311,38.829 
+		101.311,57.669 101.166,58.151 7.719,58.151 0.485,50.919 0.485,7.689 7.71,0.512 	"/>
+</g>
+</svg>

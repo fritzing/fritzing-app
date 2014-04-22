@@ -43,7 +43,7 @@ Visit the FAQ page for further informations.</description>
             </layers>
         </pcbView>
         <iconView>
-            <layers image="breadboard/intel-arduino-galileo_breadboard.svg">
+            <layers image="icon/intel-arduino-galileo_icon.svg">
                 <layer layerId="icon"/>
             </layers>
         </iconView>
@@ -143,7 +143,7 @@ Visit the FAQ page for further informations.</description>
             <description>ICSP MISO</description>
             <views>
                 <breadboardView>
-                    <p svgId="connector39pin" layer="unknown"/>
+                    <p svgId="connector39pin" layer="breadboardbreadboard"/>
                 </breadboardView>
                 <schematicView>
                     <p svgId="connector39pin" layer="unknown" terminalId="connector39terminal"/>
@@ -157,7 +157,7 @@ Visit the FAQ page for further informations.</description>
             <description>5V</description>
             <views>
                 <breadboardView>
-                    <p svgId="connector40pin" layer="unknown"/>
+                    <p svgId="connector40pin" layer="breadboardbreadboard"/>
                 </breadboardView>
                 <schematicView>
                     <p svgId="connector40pin" layer="unknown" terminalId="connector40terminal"/>
@@ -171,7 +171,7 @@ Visit the FAQ page for further informations.</description>
             <description>ICSP SCK</description>
             <views>
                 <breadboardView>
-                    <p svgId="connector41pin" layer="unknown"/>
+                    <p svgId="connector41pin" layer="breadboardbreadboard"/>
                 </breadboardView>
                 <schematicView>
                     <p svgId="connector41pin" layer="unknown" terminalId="connector41terminal"/>
@@ -185,7 +185,7 @@ Visit the FAQ page for further informations.</description>
             <description>ICSP MOSI</description>
             <views>
                 <breadboardView>
-                    <p svgId="connector42pin" layer="unknown"/>
+                    <p svgId="connector42pin" layer="breadboardbreadboard"/>
                 </breadboardView>
                 <schematicView>
                     <p svgId="connector42pin" layer="unknown" terminalId="connector42terminal"/>
@@ -199,7 +199,7 @@ Visit the FAQ page for further informations.</description>
             <description>RESET</description>
             <views>
                 <breadboardView>
-                    <p svgId="connector43pin" layer="unknown"/>
+                    <p svgId="connector43pin" layer="breadboardbreadboard"/>
                 </breadboardView>
                 <schematicView>
                     <p svgId="connector43pin" layer="unknown" terminalId="connector43terminal"/>
@@ -213,7 +213,7 @@ Visit the FAQ page for further informations.</description>
             <description>GND</description>
             <views>
                 <breadboardView>
-                    <p svgId="connector44pin" layer="unknown"/>
+                    <p svgId="connector44pin" layer="breadboardbreadboard"/>
                 </breadboardView>
                 <schematicView>
                     <p svgId="connector44pin" layer="unknown" terminalId="connector44terminal"/>
@@ -704,11 +704,11 @@ Visit the FAQ page for further informations.</description>
                     <p svgId="connector139pin" layer="breadboardbreadboard"/>
                 </breadboardView>
                 <schematicView>
-                    <p svgId="connector139pin" layer="schematic" terminalId="connector139terminal" hybrid="yes"/>
+                    <p svgId="connector139pin" layer="unknown" terminalId="connector139terminal"/>
                 </schematicView>
                 <pcbView>
-                    <p svgId="connector139pin" layer="copper0" hybrid="yes"/>
-                    <p svgId="connector139pin" layer="copper1" hybrid="yes"/>
+                    <p svgId="connector139pin" layer="unknown"/>
+                    <p svgId="connector139pin" layer="unknown"/>
                 </pcbView>
             </views>
         </connector>
@@ -719,11 +719,11 @@ Visit the FAQ page for further informations.</description>
                     <p svgId="connector140pin" layer="breadboardbreadboard"/>
                 </breadboardView>
                 <schematicView>
-                    <p svgId="connector140pin" layer="schematic" terminalId="connector140terminal" hybrid="yes"/>
+                    <p svgId="connector140pin" layer="unknown" terminalId="connector140terminal"/>
                 </schematicView>
                 <pcbView>
-                    <p svgId="connector140pin" layer="copper0" hybrid="yes"/>
-                    <p svgId="connector140pin" layer="copper1" hybrid="yes"/>
+                    <p svgId="connector140pin" layer="unknown"/>
+                    <p svgId="connector140pin" layer="unknown"/>
                 </pcbView>
             </views>
         </connector>
@@ -734,11 +734,11 @@ Visit the FAQ page for further informations.</description>
                     <p svgId="connector141pin" layer="breadboardbreadboard"/>
                 </breadboardView>
                 <schematicView>
-                    <p svgId="connector141pin" layer="schematic" terminalId="connector141terminal" hybrid="yes"/>
+                    <p svgId="connector141pin" layer="unknown" terminalId="connector141terminal"/>
                 </schematicView>
                 <pcbView>
-                    <p svgId="connector141pin" layer="copper0" hybrid="yes"/>
-                    <p svgId="connector141pin" layer="copper1" hybrid="yes"/>
+                    <p svgId="connector141pin" layer="unknown"/>
+                    <p svgId="connector141pin" layer="unknown"/>
                 </pcbView>
             </views>
         </connector>
@@ -749,11 +749,11 @@ Visit the FAQ page for further informations.</description>
                     <p svgId="connector142pin" layer="breadboardbreadboard"/>
                 </breadboardView>
                 <schematicView>
-                    <p svgId="connector142pin" layer="schematic" terminalId="connector142terminal" hybrid="yes"/>
+                    <p svgId="connector142pin" layer="unknown" terminalId="connector142terminal"/>
                 </schematicView>
                 <pcbView>
-                    <p svgId="connector142pin" layer="copper0" hybrid="yes"/>
-                    <p svgId="connector142pin" layer="copper1" hybrid="yes"/>
+                    <p svgId="connector142pin" layer="unknown"/>
+                    <p svgId="connector142pin" layer="unknown"/>
                 </pcbView>
             </views>
         </connector>
@@ -764,11 +764,11 @@ Visit the FAQ page for further informations.</description>
                     <p svgId="connector143pin" layer="breadboardbreadboard"/>
                 </breadboardView>
                 <schematicView>
-                    <p svgId="connector143pin" layer="schematic" terminalId="connector143terminal" hybrid="yes"/>
+                    <p svgId="connector143pin" layer="unknown" terminalId="connector143terminal"/>
                 </schematicView>
                 <pcbView>
-                    <p svgId="connector143pin" layer="copper0" hybrid="yes"/>
-                    <p svgId="connector143pin" layer="copper1" hybrid="yes"/>
+                    <p svgId="connector143pin" layer="unknown"/>
+                    <p svgId="connector143pin" layer="unknown"/>
                 </pcbView>
             </views>
         </connector>
@@ -779,11 +779,11 @@ Visit the FAQ page for further informations.</description>
                     <p svgId="connector144pin" layer="breadboardbreadboard"/>
                 </breadboardView>
                 <schematicView>
-                    <p svgId="connector144pin" layer="schematic" terminalId="connector144terminal" hybrid="yes"/>
+                    <p svgId="connector144pin" layer="unknown" terminalId="connector144terminal"/>
                 </schematicView>
                 <pcbView>
-                    <p svgId="connector144pin" layer="copper0" hybrid="yes"/>
-                    <p svgId="connector144pin" layer="copper1" hybrid="yes"/>
+                    <p svgId="connector144pin" layer="unknown"/>
+                    <p svgId="connector144pin" layer="unknown"/>
                 </pcbView>
             </views>
         </connector>
@@ -794,11 +794,11 @@ Visit the FAQ page for further informations.</description>
                     <p svgId="connector145pin" layer="breadboardbreadboard"/>
                 </breadboardView>
                 <schematicView>
-                    <p svgId="connector145pin" layer="schematic" terminalId="connector145terminal" hybrid="yes"/>
+                    <p svgId="connector145pin" layer="unknown" terminalId="connector145terminal"/>
                 </schematicView>
                 <pcbView>
-                    <p svgId="connector145pin" layer="copper0" hybrid="yes"/>
-                    <p svgId="connector145pin" layer="copper1" hybrid="yes"/>
+                    <p svgId="connector145pin" layer="unknown"/>
+                    <p svgId="connector145pin" layer="unknown"/>
                 </pcbView>
             </views>
         </connector>
@@ -810,11 +810,11 @@ Visit the FAQ page for further informations.</description>
                     <p svgId="connector120pin" layer="breadboardbreadboard"/>
                 </breadboardView>
                 <schematicView>
-                    <p svgId="connector120pin" layer="schematic" terminalId="connector120terminal" hybrid="yes"/>
+                    <p svgId="connector120pin" layer="unknown" terminalId="connector120terminal"/>
                 </schematicView>
                 <pcbView>
-                    <p svgId="connector120pin" layer="copper0" hybrid="yes"/>
-                    <p svgId="connector120pin" layer="copper1" hybrid="yes"/>
+                    <p svgId="connector120pin" layer="unknown"/>
+                    <p svgId="connector120pin" layer="unknown"/>
                 </pcbView>
             </views>
         </connector>
@@ -825,11 +825,11 @@ Visit the FAQ page for further informations.</description>
                     <p svgId="connector121pin" layer="breadboardbreadboard"/>
                 </breadboardView>
                 <schematicView>
-                    <p svgId="connector121pin" layer="schematic" terminalId="connector121terminal" hybrid="yes"/>
+                    <p svgId="connector121pin" layer="unknown" terminalId="connector121terminal"/>
                 </schematicView>
                 <pcbView>
-                    <p svgId="connector121pin" layer="copper0" hybrid="yes"/>
-                    <p svgId="connector121pin" layer="copper1" hybrid="yes"/>
+                    <p svgId="connector121pin" layer="unknown"/>
+                    <p svgId="connector121pin" layer="unknown"/>
                 </pcbView>
             </views>
         </connector>
@@ -840,11 +840,11 @@ Visit the FAQ page for further informations.</description>
                     <p svgId="connector122pin" layer="breadboardbreadboard"/>
                 </breadboardView>
                 <schematicView>
-                    <p svgId="connector122pin" layer="schematic" terminalId="connector122terminal" hybrid="yes"/>
+                    <p svgId="connector122pin" layer="unknown" terminalId="connector122terminal"/>
                 </schematicView>
                 <pcbView>
-                    <p svgId="connector122pin" layer="copper0" hybrid="yes"/>
-                    <p svgId="connector122pin" layer="copper1" hybrid="yes"/>
+                    <p svgId="connector122pin" layer="unknown"/>
+                    <p svgId="connector122pin" layer="unknown"/>
                 </pcbView>
             </views>
         </connector>
@@ -855,11 +855,11 @@ Visit the FAQ page for further informations.</description>
                     <p svgId="connector130pin" layer="breadboardbreadboard"/>
                 </breadboardView>
                 <schematicView>
-                    <p svgId="connector130pin" layer="schematic" terminalId="connector130terminal" hybrid="yes"/>
+                    <p svgId="connector130pin" layer="unknown" terminalId="connector130terminal"/>
                 </schematicView>
                 <pcbView>
-                    <p svgId="connector130pin" layer="copper0" hybrid="yes"/>
-                    <p svgId="connector130pin" layer="copper1" hybrid="yes"/>
+                    <p svgId="connector130pin" layer="unknown"/>
+                    <p svgId="connector130pin" layer="unknown"/>
                 </pcbView>
             </views>
         </connector>
@@ -870,11 +870,11 @@ Visit the FAQ page for further informations.</description>
                     <p svgId="connector131pin" layer="breadboardbreadboard"/>
                 </breadboardView>
                 <schematicView>
-                    <p svgId="connector131pin" layer="schematic" terminalId="connector131terminal" hybrid="yes"/>
+                    <p svgId="connector131pin" layer="unknown" terminalId="connector131terminal"/>
                 </schematicView>
                 <pcbView>
-                    <p svgId="connector131pin" layer="copper0" hybrid="yes"/>
-                    <p svgId="connector131pin" layer="copper1" hybrid="yes"/>
+                    <p svgId="connector131pin" layer="unknown"/>
+                    <p svgId="connector131pin" layer="unknown"/>
                 </pcbView>
             </views>
         </connector>
@@ -886,11 +886,11 @@ Visit the FAQ page for further informations.</description>
                     <p svgId="connector100pin" layer="breadboardbreadboard"/>
                 </breadboardView>
                 <schematicView>
-                    <p svgId="connector100pin" layer="schematic" terminalId="connector100terminal" hybrid="yes"/>
+                    <p svgId="connector100pin" layer="unknown" terminalId="connector100terminal"/>
                 </schematicView>
                 <pcbView>
-                    <p svgId="connector100pin" layer="copper0" hybrid="yes"/>
-                    <p svgId="connector100pin" layer="copper1" hybrid="yes"/>
+                    <p svgId="connector100pin" layer="unknown"/>
+                    <p svgId="connector100pin" layer="unknown"/>
                 </pcbView>
             </views>
         </connector>
@@ -901,11 +901,11 @@ Visit the FAQ page for further informations.</description>
                     <p svgId="connector101pin" layer="breadboardbreadboard"/>
                 </breadboardView>
                 <schematicView>
-                    <p svgId="connector101pin" layer="schematic" terminalId="connector101terminal" hybrid="yes"/>
+                    <p svgId="connector101pin" layer="unknown" terminalId="connector101terminal"/>
                 </schematicView>
                 <pcbView>
-                    <p svgId="connector101pin" layer="copper0" hybrid="yes"/>
-                    <p svgId="connector101pin" layer="copper1" hybrid="yes"/>
+                    <p svgId="connector101pin" layer="unknown"/>
+                    <p svgId="connector101pin" layer="unknown"/>
                 </pcbView>
             </views>
         </connector>
@@ -916,11 +916,11 @@ Visit the FAQ page for further informations.</description>
                     <p svgId="connector102pin" layer="breadboardbreadboard"/>
                 </breadboardView>
                 <schematicView>
-                    <p svgId="connector102pin" layer="schematic" terminalId="connector102terminal" hybrid="yes"/>
+                    <p svgId="connector102pin" layer="unknown" terminalId="connector102terminal"/>
                 </schematicView>
                 <pcbView>
-                    <p svgId="connector102pin" layer="copper0" hybrid="yes"/>
-                    <p svgId="connector102pin" layer="copper1" hybrid="yes"/>
+                    <p svgId="connector102pin" layer="unknown"/>
+                    <p svgId="connector102pin" layer="unknown"/>
                 </pcbView>
             </views>
         </connector>
@@ -931,11 +931,11 @@ Visit the FAQ page for further informations.</description>
                     <p svgId="connector103pin" layer="breadboardbreadboard"/>
                 </breadboardView>
                 <schematicView>
-                    <p svgId="connector103pin" layer="schematic" terminalId="connector103terminal" hybrid="yes"/>
+                    <p svgId="connector103pin" layer="unknown" terminalId="connector103terminal"/>
                 </schematicView>
                 <pcbView>
-                    <p svgId="connector103pin" layer="copper0" hybrid="yes"/>
-                    <p svgId="connector103pin" layer="copper1" hybrid="yes"/>
+                    <p svgId="connector103pin" layer="unknown"/>
+                    <p svgId="connector103pin" layer="unknown"/>
                 </pcbView>
             </views>
         </connector>
@@ -946,11 +946,11 @@ Visit the FAQ page for further informations.</description>
                     <p svgId="connector104pin" layer="breadboardbreadboard"/>
                 </breadboardView>
                 <schematicView>
-                    <p svgId="connector104pin" layer="schematic" terminalId="connector104terminal" hybrid="yes"/>
+                    <p svgId="connector104pin" layer="unknown" terminalId="connector104terminal"/>
                 </schematicView>
                 <pcbView>
-                    <p svgId="connector104pin" layer="copper0" hybrid="yes"/>
-                    <p svgId="connector104pin" layer="copper1" hybrid="yes"/>
+                    <p svgId="connector104pin" layer="unknown"/>
+                    <p svgId="connector104pin" layer="unknown"/>
                 </pcbView>
             </views>
         </connector>
@@ -962,11 +962,11 @@ Visit the FAQ page for further informations.</description>
                     <p svgId="connector105pin" layer="breadboardbreadboard"/>
                 </breadboardView>
                 <schematicView>
-                    <p svgId="connector105pin" layer="schematic" terminalId="connector105terminal" hybrid="yes"/>
+                    <p svgId="connector105pin" layer="unknown" terminalId="connector105terminal"/>
                 </schematicView>
                 <pcbView>
-                    <p svgId="connector105pin" layer="copper0" hybrid="yes"/>
-                    <p svgId="connector105pin" layer="copper1" hybrid="yes"/>
+                    <p svgId="connector105pin" layer="unknown"/>
+                    <p svgId="connector105pin" layer="unknown"/>
                 </pcbView>
             </views>
         </connector>
@@ -978,11 +978,11 @@ Visit the FAQ page for further informations.</description>
                     <p svgId="connector106pin" layer="breadboardbreadboard"/>
                 </breadboardView>
                 <schematicView>
-                    <p svgId="connector106pin" layer="schematic" terminalId="connector106terminal" hybrid="yes"/>
+                    <p svgId="connector106pin" layer="unknown" terminalId="connector106terminal"/>
                 </schematicView>
                 <pcbView>
-                    <p svgId="connector106pin" layer="copper0" hybrid="yes"/>
-                    <p svgId="connector106pin" layer="copper1" hybrid="yes"/>
+                    <p svgId="connector106pin" layer="unknown"/>
+                    <p svgId="connector106pin" layer="unknown"/>
                 </pcbView>
             </views>
         </connector>
@@ -994,11 +994,11 @@ Visit the FAQ page for further informations.</description>
                     <p svgId="connector107pin" layer="breadboardbreadboard"/>
                 </breadboardView>
                 <schematicView>
-                    <p svgId="connector107pin" layer="schematic" terminalId="connector107terminal" hybrid="yes"/>
+                    <p svgId="connector107pin" layer="unknown" terminalId="connector107terminal"/>
                 </schematicView>
                 <pcbView>
-                    <p svgId="connector107pin" layer="copper0" hybrid="yes"/>
-                    <p svgId="connector107pin" layer="copper1" hybrid="yes"/>
+                    <p svgId="connector107pin" layer="unknown"/>
+                    <p svgId="connector107pin" layer="unknown"/>
                 </pcbView>
             </views>
         </connector>
@@ -1010,11 +1010,11 @@ Visit the FAQ page for further informations.</description>
                     <p svgId="connector108pin" layer="breadboardbreadboard"/>
                 </breadboardView>
                 <schematicView>
-                    <p svgId="connector108pin" layer="schematic" terminalId="connector108terminal" hybrid="yes"/>
+                    <p svgId="connector108pin" layer="unknown" terminalId="connector108terminal"/>
                 </schematicView>
                 <pcbView>
-                    <p svgId="connector108pin" layer="copper0" hybrid="yes"/>
-                    <p svgId="connector108pin" layer="copper1" hybrid="yes"/>
+                    <p svgId="connector108pin" layer="unknown"/>
+                    <p svgId="connector108pin" layer="unknown"/>
                 </pcbView>
             </views>
         </connector>
@@ -1026,11 +1026,11 @@ Visit the FAQ page for further informations.</description>
                     <p svgId="connector109pin" layer="breadboardbreadboard"/>
                 </breadboardView>
                 <schematicView>
-                    <p svgId="connector109pin" layer="schematic" terminalId="connector109terminal" hybrid="yes"/>
+                    <p svgId="connector109pin" layer="unknown" terminalId="connector109terminal"/>
                 </schematicView>
                 <pcbView>
-                    <p svgId="connector109pin" layer="copper0" hybrid="yes"/>
-                    <p svgId="connector109pin" layer="copper1" hybrid="yes"/>
+                    <p svgId="connector109pin" layer="unknown"/>
+                    <p svgId="connector109pin" layer="unknown"/>
                 </pcbView>
             </views>
         </connector>
@@ -1042,11 +1042,11 @@ Visit the FAQ page for further informations.</description>
                     <p svgId="connector160pin" layer="breadboardbreadboard"/>
                 </breadboardView>
                 <schematicView>
-                    <p svgId="connector160pin" layer="schematic" terminalId="connector160terminal" hybrid="yes"/>
+                    <p svgId="connector160pin" layer="unknown" terminalId="connector160terminal"/>
                 </schematicView>
                 <pcbView>
-                    <p svgId="connector160pin" layer="copper0" hybrid="yes"/>
-                    <p svgId="connector160pin" layer="copper1" hybrid="yes"/>
+                    <p svgId="connector160pin" layer="unknown"/>
+                    <p svgId="connector160pin" layer="unknown"/>
                 </pcbView>
             </views>
         </connector>
@@ -1058,11 +1058,11 @@ Visit the FAQ page for further informations.</description>
                     <p svgId="connector161pin" layer="breadboardbreadboard"/>
                 </breadboardView>
                 <schematicView>
-                    <p svgId="connector161pin" layer="schematic" terminalId="connector161terminal" hybrid="yes"/>
+                    <p svgId="connector161pin" layer="unknown" terminalId="connector161terminal"/>
                 </schematicView>
                 <pcbView>
-                    <p svgId="connector161pin" layer="copper0" hybrid="yes"/>
-                    <p svgId="connector161pin" layer="copper1" hybrid="yes"/>
+                    <p svgId="connector161pin" layer="unknown"/>
+                    <p svgId="connector161pin" layer="unknown"/>
                 </pcbView>
             </views>
         </connector>
@@ -1074,11 +1074,11 @@ Visit the FAQ page for further informations.</description>
                     <p svgId="connector162pin" layer="breadboardbreadboard"/>
                 </breadboardView>
                 <schematicView>
-                    <p svgId="connector162pin" layer="schematic" terminalId="connector162terminal" hybrid="yes"/>
+                    <p svgId="connector162pin" layer="unknown" terminalId="connector162terminal"/>
                 </schematicView>
                 <pcbView>
-                    <p svgId="connector162pin" layer="copper0" hybrid="yes"/>
-                    <p svgId="connector162pin" layer="copper1" hybrid="yes"/>
+                    <p svgId="connector162pin" layer="unknown"/>
+                    <p svgId="connector162pin" layer="unknown"/>
                 </pcbView>
             </views>
         </connector>
@@ -1089,11 +1089,11 @@ Visit the FAQ page for further informations.</description>
                     <p svgId="connector150pin" layer="breadboardbreadboard"/>
                 </breadboardView>
                 <schematicView>
-                    <p svgId="connector150pin" layer="schematic" terminalId="connector150terminal" hybrid="yes"/>
+                    <p svgId="connector150pin" layer="unknown" terminalId="connector150terminal"/>
                 </schematicView>
                 <pcbView>
-                    <p svgId="connector150pin" layer="copper0" hybrid="yes"/>
-                    <p svgId="connector150pin" layer="copper1" hybrid="yes"/>
+                    <p svgId="connector150pin" layer="unknown"/>
+                    <p svgId="connector150pin" layer="unknown"/>
                 </pcbView>
             </views>
         </connector>
@@ -1104,11 +1104,11 @@ Visit the FAQ page for further informations.</description>
                     <p svgId="connector151pin" layer="breadboardbreadboard"/>
                 </breadboardView>
                 <schematicView>
-                    <p svgId="connector151pin" layer="schematic" terminalId="connector151terminal" hybrid="yes"/>
+                    <p svgId="connector151pin" layer="unknown" terminalId="connector151terminal"/>
                 </schematicView>
                 <pcbView>
-                    <p svgId="connector151pin" layer="copper0" hybrid='yes'/>
-                    <p svgId="connector151pin" layer="copper1" hybrid="yes"/>
+                    <p svgId="connector151pin" layer="unknown"/>
+                    <p svgId="connector151pin" layer="unknown"/>
                 </pcbView>
             </views>
         </connector>

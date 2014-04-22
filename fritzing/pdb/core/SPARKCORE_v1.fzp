@@ -425,13 +425,8 @@ p, li { white-space: pre-wrap; }
    <nodeMember connectorId="connector68"/>
   </bus>
   <bus id="gnd">
-   <nodeMember connectorId="connector46"/>
-   <nodeMember connectorId="connector52"/>
-   <nodeMember connectorId="connector67"/>
-  </bus>
-  <bus id="sck">
-   <nodeMember connectorId="connector43"/>
-   <nodeMember connectorId="connector64"/>
+   <nodeMember connectorId="connector51"/>
+      <nodeMember connectorId="connector61"/>
   </bus>
   <bus id="miso">
    <nodeMember connectorId="connector41"/>
@@ -443,8 +438,8 @@ p, li { white-space: pre-wrap; }
   </bus>
   <bus id="internal1"/>
   <bus id="internal2">
-   <nodeMember connectorId="connector51"/>
-   <nodeMember connectorId="connector61"/>
+
+
   </bus>
  </buses>
  <label>U</label>

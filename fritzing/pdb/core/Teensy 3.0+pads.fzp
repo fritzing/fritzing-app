@@ -599,7 +599,7 @@ p, li { white-space: pre-wrap; }
                 </pcbView>
             </views>
         </connector>
-        <connector type="female" id="connector37" name="D24">
+        <connector type="pad" id="connector37" name="D24">
             <description>Digital I/O</description>
             <views>
                 <breadboardView>
@@ -610,11 +610,11 @@ p, li { white-space: pre-wrap; }
                 </schematicView>
                 <pcbView>
                     <p svgId="connector37pin" layer="copper0"/>
-                    <p svgId="connector37pin" layer="copper1"/>
+                    <p svgId="connector37pin" layer="unknown"/>
                 </pcbView>
             </views>
         </connector>
-        <connector type="female" id="connector38" name="D25">
+        <connector type="pad" id="connector38" name="D25">
             <description>Digital I/O</description>
             <views>
                 <breadboardView>
@@ -625,11 +625,11 @@ p, li { white-space: pre-wrap; }
                 </schematicView>
                 <pcbView>
                     <p svgId="connector38pin" layer="copper0"/>
-                    <p svgId="connector38pin" layer="copper1"/>
+                    <p svgId="connector38pin" layer="unknown"/>
                 </pcbView>
             </views>
         </connector>
-        <connector type="female" id="connector39" name="D26">
+        <connector type="pad" id="connector39" name="D26">
             <description>Digital I/O</description>
             <views>
                 <breadboardView>
@@ -640,11 +640,11 @@ p, li { white-space: pre-wrap; }
                 </schematicView>
                 <pcbView>
                     <p svgId="connector39pin" layer="copper0"/>
-                    <p svgId="connector39pin" layer="copper1"/>
+                    <p svgId="connector39pin" layer="unknown"/>
                 </pcbView>
             </views>
         </connector>
-        <connector type="female" id="connector40" name="D27">
+        <connector type="pad" id="connector40" name="D27">
             <description>Digital I/O</description>
             <views>
                 <breadboardView>
@@ -655,11 +655,11 @@ p, li { white-space: pre-wrap; }
                 </schematicView>
                 <pcbView>
                     <p svgId="connector40pin" layer="copper0"/>
-                    <p svgId="connector40pin" layer="copper1"/>
+                    <p svgId="connector40pin" layer="unknown"/>
                 </pcbView>
             </views>
         </connector>
-        <connector type="female" id="connector41" name="D28">
+        <connector type="pad" id="connector41" name="D28">
             <description>Digital I/O</description>
             <views>
                 <breadboardView>
@@ -670,11 +670,11 @@ p, li { white-space: pre-wrap; }
                 </schematicView>
                 <pcbView>
                     <p svgId="connector41pin" layer="copper0"/>
-                    <p svgId="connector41pin" layer="copper1"/>
+                    <p svgId="connector41pin" layer="unknown"/>
                 </pcbView>
             </views>
         </connector>
-        <connector type="female" id="connector42" name="D29">
+        <connector type="pad" id="connector42" name="D29">
             <description>Digital I/O</description>
             <views>
                 <breadboardView>
@@ -685,11 +685,11 @@ p, li { white-space: pre-wrap; }
                 </schematicView>
                 <pcbView>
                     <p svgId="connector42pin" layer="copper0"/>
-                    <p svgId="connector42pin" layer="copper1"/>
+                    <p svgId="connector42pin" layer="unknown"/>
                 </pcbView>
             </views>
         </connector>
-        <connector type="female" id="connector43" name="D30">
+        <connector type="pad" id="connector43" name="D30">
             <description>Digital I/O</description>
             <views>
                 <breadboardView>
@@ -700,11 +700,11 @@ p, li { white-space: pre-wrap; }
                 </schematicView>
                 <pcbView>
                     <p svgId="connector43pin" layer="copper0"/>
-                    <p svgId="connector43pin" layer="copper1"/>
+                    <p svgId="connector43pin" layer="unknown"/>
                 </pcbView>
             </views>
         </connector>
-        <connector type="female" id="connector44" name="D31">
+        <connector type="pad" id="connector44" name="D31">
             <description>Digital I/O</description>
             <views>
                 <breadboardView>
@@ -715,11 +715,11 @@ p, li { white-space: pre-wrap; }
                 </schematicView>
                 <pcbView>
                     <p svgId="connector44pin" layer="copper0"/>
-                    <p svgId="connector44pin" layer="copper1"/>
+                    <p svgId="connector44pin" layer="unknown"/>
                 </pcbView>
             </views>
         </connector>
-        <connector type="female" id="connector45" name="D32">
+        <connector type="pad" id="connector45" name="D32">
             <description>Digital I/O</description>
             <views>
                 <breadboardView>
@@ -730,11 +730,11 @@ p, li { white-space: pre-wrap; }
                 </schematicView>
                 <pcbView>
                     <p svgId="connector45pin" layer="copper0"/>
-                    <p svgId="connector45pin" layer="copper1"/>
+                    <p svgId="connector45pin" layer="unknown"/>
                 </pcbView>
             </views>
         </connector>
-        <connector type="female" id="connector46" name="D33">
+        <connector type="pad" id="connector46" name="D33">
             <description>Digital I/O</description>
             <views>
                 <breadboardView>
@@ -745,11 +745,11 @@ p, li { white-space: pre-wrap; }
                 </schematicView>
                 <pcbView>
                     <p svgId="connector46pin" layer="copper0"/>
-                    <p svgId="connector46pin" layer="copper1"/>
+                    <p svgId="connector46pin" layer="unknown"/>
                 </pcbView>
             </views>
         </connector>
-        <connector type="female" id="connector47" name="A12">
+        <connector type="pad" id="connector47" name="A12">
             <description>Analog Input</description>
             <views>
                 <breadboardView>
@@ -760,11 +760,11 @@ p, li { white-space: pre-wrap; }
                 </schematicView>
                 <pcbView>
                     <p svgId="connector47pin" layer="copper0"/>
-                    <p svgId="connector47pin" layer="copper1"/>
+                    <p svgId="connector47pin" layer="unknown"/>
                 </pcbView>
             </views>
         </connector>
-        <connector type="female" id="connector48" name="A13">
+        <connector type="pad" id="connector48" name="A13">
             <description>Analog Input</description>
             <views>
                 <breadboardView>
@@ -775,11 +775,11 @@ p, li { white-space: pre-wrap; }
                 </schematicView>
                 <pcbView>
                     <p svgId="connector48pin" layer="copper0"/>
-                    <p svgId="connector48pin" layer="copper1"/>
+                    <p svgId="connector48pin" layer="unknown"/>
                 </pcbView>
             </views>
         </connector>
-        <connector type="female" id="connector49" name="GND">
+        <connector type="pad" id="connector49" name="GND">
             <description>Ground Pad</description>
             <views>
                 <breadboardView>
@@ -790,11 +790,11 @@ p, li { white-space: pre-wrap; }
                 </schematicView>
                 <pcbView>
                     <p svgId="connector49pin" layer="copper0"/>
-                    <p svgId="connector49pin" layer="copper1"/>
+                    <p svgId="connector49pin" layer="unknown"/>
                 </pcbView>
             </views>
         </connector>
-        <connector type="female" id="connector50" name="3V3">
+        <connector type="pad" id="connector50" name="3V3">
             <description>3.3V input Voltage</description>
             <views>
                 <breadboardView>
@@ -805,7 +805,7 @@ p, li { white-space: pre-wrap; }
                 </schematicView>
                 <pcbView>
                     <p svgId="connector50pin" layer="copper0"/>
-                    <p svgId="connector50pin" layer="copper1"/>
+                    <p svgId="connector50pin" layer="unknown"/>
                 </pcbView>
             </views>
         </connector>

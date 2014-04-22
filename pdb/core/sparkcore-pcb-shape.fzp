@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?><module moduleId="sparkcore-pcb-shape">
+ <version>5</version>
+ <author>Fabian Althaus</author>
+ <title>Sparkcore Shield</title>
+ <date>2014-04-15</date>
+ <label>PCB</label>
+ <tags>
+  <tag>pcb</tag>
+  <tag>board</tag>
+  <tag>sparkcore</tag>
+  <tag>ti</tag>
+    <tag>texas instruments</tag>
+  <tag>fritzing core</tag>
+ </tags>
+ <properties>
+   <property name="layers">2</property>
+  <property name="Shape">Sparkcore Shield</property>
+  <property name="family">Plain Vanilla PCB</property>
+  <property name="filename" ></property>
+ </properties>
+ <taxonomy>discreteParts.pcb.plain.sparkcore-pcb-shape</taxonomy>
+ <description>Plain PCB Shaped to fit as Sparkcore &quot;Shield&quot;</description>
+ <views>
+  <defaultUnits>mm</defaultUnits>
+  <iconView>
+   <layers image="icon/plain_pcb.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+  <breadboardView>
+   <layers image="icon/plain_pcb.svg">
+    <layer layerId="unknown"/>
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="icon/plain_pcb.svg">
+    <layer layerId="unknown"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/sparkcore-pcb-shape.svg">
+    <layer layerId="silkscreen" sticky="true"/>
+    <layer layerId="silkscreen0" sticky="true"/>
+    <layer layerId="board" sticky="true"/>
+   </layers>
+  </pcbView>
+ </views>
+ <connectors/>
+ <buses/>
+</module>

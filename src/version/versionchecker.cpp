@@ -26,15 +26,24 @@ $Date: 2012-06-28 00:18:10 +0200 (Do, 28. Jun 2012) $
 
 // much code borrowed from Qt's rsslisting example
 
+
+
 #include "versionchecker.h"	
+
+#ifndef NO_VERSION_CHECK
+
 #include "version.h"
 #include "../debugdialog.h"
 
 #include <QUrl>
+
+#endif
 								
 VersionChecker::VersionChecker() : QObject() 
 {
-    connect(&m_http, SIGNAL(readyRead(const QHttpResponseHeader &)), 
+#ifndef NO_VERSION_CHECK
+
+    connect(&m_http, SIGNAL(readyRead(const QHttpResponseHeader &)),
 		this, SLOT(readData(const QHttpResponseHeader &)));
     connect(&m_http, SIGNAL(requestFinished(int, bool)), 
 		this, SLOT(finished(int, bool)));
@@ -42,15 +51,20 @@ VersionChecker::VersionChecker() : QObject()
 	m_depth = 0;
 	m_inSummary = m_inUpdated = m_inTitle = m_inEntry = false;
 	m_ignoreInterimVersion.ok = m_ignoreMainVersion.ok = false;
+#endif
 }
 
 VersionChecker::~VersionChecker() {
+#ifndef NO_VERSION_CHECK
 	foreach (AvailableRelease * availableRelease, m_availableReleases) {
 		delete availableRelease;
 	}
 
 	m_availableReleases.clear();
+#endif
 }
+
+#ifndef NO_VERSION_CHECK
 
 void VersionChecker::fetch()
 {
@@ -258,3 +272,5 @@ void VersionChecker::ignore(const QString & version, bool interim) {
 		Version::toVersionThing(version, m_ignoreMainVersion);
 	}
 }
+
+#endif

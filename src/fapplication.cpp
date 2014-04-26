@@ -1131,11 +1131,13 @@ int FApplication::startup()
 	if (m_progressIndex >= 0) splash.showProgress(m_progressIndex, 0.825);
 	ProcessEventBlocker::processEvents();
 
+#ifndef NO_VERSION_CHECK
 	m_updateDialog = new UpdateDialog();
 	connect(m_updateDialog, SIGNAL(enableAgainSignal(bool)), this, SLOT(enableCheckUpdates(bool)));
 	checkForUpdates(false);
 
 	if (m_progressIndex >= 0) splash.showProgress(m_progressIndex, 0.875);
+#endif
 
 	DebugDialog::debug("load something");
 	loadSomething(prevVersion);
@@ -1318,7 +1320,7 @@ struct Thing {
 };
 
 
-
+#ifndef NO_VERSION_CHECK
 void FApplication::checkForUpdates() {
 	checkForUpdates(true);
 }
@@ -1368,6 +1370,7 @@ void FApplication::enableCheckUpdates(bool enabled)
 	}
 	//DebugDialog::debug("after enable check updates");
 }
+#endif
 
 
 void FApplication::createUserDataStoreFolderStructure() {

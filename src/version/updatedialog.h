@@ -27,10 +27,15 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 #ifndef UPDATEDIALOG_H
 #define UPDATEDIALOG_H
 
+
 #include <QDialog>
 #include <QLabel>
-#include <QHttp>
 #include <QXmlStreamReader>
+
+#ifndef NO_VERSION_CHECK
+#include <QHttp>
+#endif
+
 
 class UpdateDialog : public QDialog {
 	Q_OBJECT
@@ -38,6 +43,8 @@ class UpdateDialog : public QDialog {
 public:
 	UpdateDialog(QWidget *parent = 0);
 	~UpdateDialog();
+    
+#ifndef NO_VERSION_CHECK
 
 	void setVersionChecker(class VersionChecker *);
 	void setAtUserRequest(bool);
@@ -60,7 +67,10 @@ protected:
 	class VersionChecker * m_versionChecker;
 	bool m_atUserRequest;
 	QLabel * m_feedbackLabel;
+    
+#endif
 
 };
+
 
 #endif

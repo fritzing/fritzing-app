@@ -49,10 +49,17 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 #include <QFileInfoList>
 #include <QFileInfo>
 #include <QRegExp>
-#include <QtGui>
 #include <QSettings>
 #include <QFontMetrics>
 #include <QTextStream>
+#include <QLayout>
+#include <QMenu>
+#include <QMenuBar>
+#include <QApplication>
+#include <QKeyEvent>
+#include <QCloseEvent>
+#include <QPrinter>
+#include <QPrintDialog>
 
 // Included for getSerialPort() and a few others
 #ifdef Q_OS_WIN

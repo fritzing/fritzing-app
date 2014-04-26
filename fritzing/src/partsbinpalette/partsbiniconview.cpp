@@ -24,7 +24,6 @@ $Date: 2013-03-09 08:18:59 +0100 (Sa, 09. Mrz 2013) $
 
 ********************************************************************/
 
-#include <QtGui>
 #include <QGraphicsScene>
 #include <QPoint>
 #include <QSet>

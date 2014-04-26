@@ -891,7 +891,7 @@ void MainWindow::createEditMenuActions() {
 	m_deleteAct = new QAction(tr("&Delete"), this);
 	m_deleteAct->setStatusTip(tr("Delete selection"));
 	connect(m_deleteAct, SIGNAL(triggered()), this, SLOT(doDelete()));
-	#ifdef Q_WS_MAC
+	#ifdef Q_OS_MAC
 		m_deleteAct->setShortcut(Qt::Key_Backspace);
 	#else
 		m_deleteAct->setShortcut(QKeySequence::Delete);
@@ -4108,7 +4108,7 @@ void MainWindow::openProgramWindow() {
 }
 
 void MainWindow::linkToProgramFile(const QString & filename, const QString & language, const QString & programmer, bool addLink, bool strong) {
-#ifdef Q_WS_WIN
+#ifdef Q_OS_WIN
 	Qt::CaseSensitivity sensitivity = Qt::CaseInsensitive;
 #else
 	Qt::CaseSensitivity sensitivity = Qt::CaseSensitive;

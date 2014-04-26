@@ -695,7 +695,11 @@ double TextUtils::convertToInches(const QString & string) {
 }
 
 QString TextUtils::escapeAnd(const QString & string) {
+#if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
 	QString s = Qt::escape(string);
+#else
+    QString s = string.toHtmlEscaped();
+#endif
 	s.replace('\'', "&apos;");
 	return s;
 }

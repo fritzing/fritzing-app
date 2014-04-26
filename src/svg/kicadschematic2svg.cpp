@@ -413,7 +413,7 @@ QString KicadSchematic2Svg::convertPin(const QString & line, int textOffset, boo
 	int y4 = y1;
 	QString justify = "C";
 	bool rotate = false;
-	switch (orientation.toAscii()) {
+	switch (orientation.toLatin1()) {
 		case 'D':
 			y2 = y1 + length;
 			y3 = y1 + (length / 2);

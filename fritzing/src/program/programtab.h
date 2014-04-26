@@ -41,6 +41,7 @@ $Date: 2012-06-28 00:18:10 +0200 (Do, 28. Jun 2012) $
 #include <QDialogButtonBox>
 #include <QCheckBox>
 #include <QLabel>
+#include <QPrinter>
 
 #include "programwindow.h"
 

@@ -200,9 +200,9 @@ QString Resistor::makeSvg(const QString & resistance, ViewLayer::ViewLayerID vie
 	QString moduleID = this->moduleID();
 	double ohms = TextUtils::convertFromPowerPrefix(resistance, OhmSymbol);
 	QString sohms = QString::number(ohms, 'e', 3);
-	int firstband = sohms.at(0).toAscii() - '0';
-	int secondband = sohms.at(2).toAscii() - '0';
-	int thirdband = sohms.at(3).toAscii() - '0';
+	int firstband = sohms.at(0).toLatin1() - '0';
+	int secondband = sohms.at(2).toLatin1() - '0';
+	int thirdband = sohms.at(3).toLatin1() - '0';
 	int temp = (firstband * 10) + secondband;
 	if (moduleID.contains("5Band")) {
 		temp = (temp * 10) + thirdband;

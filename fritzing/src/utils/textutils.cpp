@@ -1848,13 +1848,13 @@ void TextUtils::fixStyleAttribute(QDomElement & element, QString & style, const 
 
 QString TextUtils::getRandText() {
 	QString rand = QUuid::createUuid().toString();
-	QString randext = QCryptographicHash::hash(rand.toAscii(),QCryptographicHash::Md4).toHex();
+	QString randext = QCryptographicHash::hash(rand.toLatin1(),QCryptographicHash::Md4).toHex();
 	return randext;
 }
 
 /*QString TextUtils::getBase64RandText() {
 	QString rand = QUuid::createUuid().toString();
-	QString randext = QCryptographicHash::hash(rand.toAscii(),QCryptographicHash::Md4).toHex();
+	QString randext = QCryptographicHash::hash(rand.toLatin1(),QCryptographicHash::Md4).toHex();
 	return randext;
 }*/
 

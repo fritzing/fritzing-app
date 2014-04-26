@@ -722,7 +722,9 @@ protected:
 	// Export Menu
 	QMenu *m_exportMenu;
 	QAction *m_exportJpgAct;
+#if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
 	QAction *m_exportPsAct;
+#endif
 	QAction *m_exportPngAct;
 	QAction *m_exportPdfAct;
 	QAction *m_exportEagleAct;

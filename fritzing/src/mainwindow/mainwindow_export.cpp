@@ -962,7 +962,7 @@ void MainWindow::createExportActions() {
 	m_exportPngAct->setStatusTip(tr("Export the visible area of the current sketch as a PNG image"));
 	connect(m_exportPngAct, SIGNAL(triggered()), this, SLOT(doExport()));
 
-#if (QT_VERSION < 0x050000)
+#if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
 	m_exportPsAct = new QAction(tr("PostScript..."), this);
 	m_exportPsAct->setData(psActionType);
 	m_exportPsAct->setStatusTip(tr("Export the visible area of the current sketch as a PostScript image"));

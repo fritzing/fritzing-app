@@ -34,9 +34,7 @@ $Date: 2013-04-28 14:14:07 +0200 (So, 28. Apr 2013) $
 #include <QDebug>
 #include <QSettings>
 #include <QDesktopServices>
-
-
-
+#include <QMimeData>
 
 #include "mainwindow.h"
 #include "../debugdialog.h"
@@ -1262,9 +1260,11 @@ void MainWindow::createHelpMenuActions() {
 	m_visitFritzingDotOrgAct->setStatusTip(tr("www.fritzing.org"));
 	connect(m_visitFritzingDotOrgAct, SIGNAL(triggered(bool)), this, SLOT(visitFritzingDotOrg()));*/
 
+#ifndef NO_VERSION_CHECK
 	m_checkForUpdatesAct = new QAction(tr("Check for updates..."), this);
 	m_checkForUpdatesAct->setStatusTip(tr("Check whether a newer version of Fritzing is available for download"));
 	connect(m_checkForUpdatesAct, SIGNAL(triggered()), QApplication::instance(), SLOT(checkForUpdates()));
+#endif
 
 	m_aboutAct = new QAction(tr("&About"), this);
 	m_aboutAct->setStatusTip(tr("Show the application's about box"));
@@ -1372,7 +1372,9 @@ void MainWindow::populateExportMenu() {
 	imageMenu->addSeparator();
 	imageMenu->addAction(m_exportSvgAct);
 	imageMenu->addAction(m_exportPdfAct);
+#if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
 	imageMenu->addAction(m_exportPsAct);
+#endif
 
 	QMenu * productionMenu = m_exportMenu->addMenu(tr("for Production"));
 	productionMenu->addAction(m_exportEtchablePdfAct);
@@ -1581,7 +1583,9 @@ void MainWindow::createHelpMenu()
 	m_helpMenu->addSeparator();
     m_helpMenu->addAction(m_partsEditorHelpAct);
 	m_helpMenu->addSeparator();
+#ifndef NO_VERSION_CHECK
 	m_helpMenu->addAction(m_checkForUpdatesAct);
+#endif
 	m_helpMenu->addAction(m_importFilesFromPrevInstallAct);
 	m_helpMenu->addSeparator();
 	m_helpMenu->addAction(m_reportBugAct);

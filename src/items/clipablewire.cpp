@@ -116,7 +116,7 @@ register int	line_flag ;
 	    if ( line_flag ) goto Exit ;
 
 	    /* note that one edge has been hit by the ray's line */
-	    line_flag = TRUE ;
+	    line_flag = true;
 #endif
 	}
 

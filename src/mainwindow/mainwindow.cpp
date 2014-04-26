@@ -378,7 +378,7 @@ MainWindow::MainWindow(ReferenceModel *referenceModel, QWidget * parent) :
 
 	setAttribute(Qt::WA_DeleteOnClose, true);
 
-#ifdef Q_WS_MAC
+#ifdef Q_OS_MAC
         //setAttribute(Qt::WA_QuitOnClose, false);					// restoring this temporarily (2008.12.19)
 #endif
     m_dontClose = m_closing = false;
@@ -2882,7 +2882,7 @@ void MainWindow::initStyleSheet()
 	} else {
 		QString platformDependantStyle = "";
 		QString platformDependantStylePath;
-#ifdef Q_WS_X11
+#ifdef Q_OS_LINUX
 		if(style()->metaObject()->className()==QString("OxygenStyle")) {
 			QFile oxygenStyleSheet(QString(":/resources/styles/linux-kde-oxygen-%1.qss").arg(suffix));
 			if(oxygenStyleSheet.open(QIODevice::ReadOnly)) {
@@ -2892,11 +2892,11 @@ void MainWindow::initStyleSheet()
 		platformDependantStylePath = QString(":/resources/styles/linux-%1.qss").arg(suffix);
 #endif
 
-#ifdef Q_WS_MAC
+#ifdef Q_OS_MAC
 		platformDependantStylePath = QString(":/resources/styles/mac-%1.qss").arg(suffix);
 #endif
 
-#ifdef Q_WS_WIN
+#ifdef Q_OS_WIN
 		platformDependantStylePath = QString(":/resources/styles/win-%1.qss").arg(suffix);
 #endif
 

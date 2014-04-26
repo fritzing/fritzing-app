@@ -33,7 +33,7 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 #include "debugdialog.h"
 #include "utils/folderutils.h"
 
-#ifdef Q_WS_WIN
+#ifdef Q_OS_WIN
 #ifndef QT_NO_DEBUG
 #include "windows.h"
 #endif
@@ -82,7 +82,7 @@ int main(int argc, char *argv[])
 #define WIN_CHECK_LEAKS
 #endif
 
-#ifdef Q_WS_WIN
+#ifdef Q_OS_WIN
 	originalMsgHandler = qInstallMsgHandler(fMessageHandler);
 #ifndef QT_NO_DEBUG
 #ifdef WIN_CHECK_LEAKS

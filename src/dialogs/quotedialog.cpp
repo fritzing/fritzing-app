@@ -188,11 +188,17 @@ QuoteDialog::QuoteDialog(bool full, QWidget *parent) : QDialog(parent)
     m_tableWidget->setShowGrid(false);
 
     m_tableWidget->verticalHeader()->setVisible(false);
-    m_tableWidget->verticalHeader()->setResizeMode(QHeaderView::ResizeToContents);
-    m_tableWidget->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-
     m_tableWidget->horizontalHeader()->setVisible(false);
+    
+#if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
+    m_tableWidget->verticalHeader()->setResizeMode(QHeaderView::ResizeToContents);
     m_tableWidget->horizontalHeader()->setResizeMode(QHeaderView::ResizeToContents);
+#else
+    m_tableWidget->verticalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
+    m_tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
+#endif
+    
+    m_tableWidget->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     m_tableWidget->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
     m_tableWidget->setItemDelegate(new CustomDelegate(m_tableWidget));

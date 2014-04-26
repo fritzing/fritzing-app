@@ -67,8 +67,9 @@ AboutBox::AboutBox(QWidget *parent)
 	// Version String
 	QLabel *versionMain = new QLabel(this);
 	QString macBuildType;
-#ifdef Q_WS_MAC
-#ifdef QT_MAC_USE_COCOA
+    
+#ifdef Q_OS_MAC
+#if (QT_VERSION > 0x050000) || defined(QT_MAC_USE_COCOA)
 	macBuildType = " Cocoa";
 #else
 	macBuildType = " Carbon";

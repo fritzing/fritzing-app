@@ -24,11 +24,19 @@ $Date: 2013-04-28 14:14:07 +0200 (So, 28. Apr 2013) $
 
 ********************************************************************/
 
-#include <QtGui>
 #include <QSvgGenerator>
 #include <QColor>
 #include <QImageWriter>
 #include <QInputDialog>
+#include <QApplication>
+#include <QMenuBar>
+#include <QClipboard>
+#include <QDebug>
+#include <QSettings>
+#include <QDesktopServices>
+
+
+
 
 #include "mainwindow.h"
 #include "../debugdialog.h"

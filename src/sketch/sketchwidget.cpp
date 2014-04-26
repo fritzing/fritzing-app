@@ -24,8 +24,8 @@ $Date: 2013-04-29 07:24:08 +0200 (Mon, 29 Apr 2013) $
 
 ********************************************************************/
 
+#include <QtCore>
 
-#include <QtGui>
 #include <QGraphicsScene>
 #include <QPoint>
 #include <QPair>
@@ -43,6 +43,10 @@ $Date: 2013-04-29 07:24:08 +0200 (Mon, 29 Apr 2013) $
 #include <QApplication>
 #include <QDomElement>
 #include <QSettings>
+#include <QClipboard>
+#include <QScrollBar>
+#include <QStatusBar>
+
 #include <limits>
 
 #include "../items/partfactory.h"

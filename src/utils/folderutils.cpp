@@ -251,8 +251,13 @@ const QString FolderUtils::openSaveFolder() {
 			}
 		}
 
+#if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
 		DebugDialog::debug(QString("default save location: %1").arg(QDesktopServices::storageLocation(QDesktopServices::DocumentsLocation)));
 		return QDesktopServices::storageLocation(QDesktopServices::DocumentsLocation);
+#else
+		DebugDialog::debug(QString("default save location: %1").arg(QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)));
+		return QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation);
+#endif
 	} else {
 		return m_openSaveFolder;
 	}

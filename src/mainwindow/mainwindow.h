@@ -43,6 +43,7 @@ $Date: 2013-04-28 14:14:07 +0200 (So, 28. Apr 2013) $
 #include <QProxyStyle>
 #include <QStyle>
 #include <QStylePainter>
+#include <QPrinter>
 
 #include "fritzingwindow.h"
 #include "sketchareawidget.h"

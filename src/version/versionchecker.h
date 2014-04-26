@@ -27,13 +27,22 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 #ifndef VERSIONCHECKER_H
 #define VERSIONCHECKER_H
 
+
+#include <QObject>
+
+#ifndef NO_VERSION_CHECK
+
 #include <QHttp>
 #include <QXmlStreamReader>
 #include <QDateTime>
 
 #include "version.h"
 
+#endif
+
 // much code borrowed from Qt's rsslisting example
+
+#ifndef NO_VERSION_CHECK
 
 struct AvailableRelease {
 	bool interim;
@@ -43,6 +52,8 @@ struct AvailableRelease {
 	QDateTime dateTime;
 };
 
+#endif
+
 
 class VersionChecker : public QObject {
 	Q_OBJECT
@@ -50,6 +61,8 @@ class VersionChecker : public QObject {
 public:
 	VersionChecker();
 	~VersionChecker();
+    
+#ifndef NO_VERSION_CHECK
 
 	void setUrl(const QString & url);
 	const QList<AvailableRelease *> & availableReleases();
@@ -90,6 +103,8 @@ protected:
 	VersionThing m_ignoreMainVersion;
 	VersionThing m_ignoreInterimVersion;
 	int m_statusCode;
+#endif
 };
+
 
 #endif

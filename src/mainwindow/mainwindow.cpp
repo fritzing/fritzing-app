@@ -25,7 +25,6 @@ $Date: 2013-04-28 00:56:34 +0200 (So, 28. Apr 2013) $lo
 
 ********************************************************************/
 
-#include <QtGui>
 #include <QtXml>
 #include <QList>
 #include <QFileInfo>
@@ -44,6 +43,7 @@ $Date: 2013-04-28 00:56:34 +0200 (So, 28. Apr 2013) $lo
 #include <QShortcut>
 #include <QStyle>
 #include <QFontMetrics>
+#include <QApplication>
 
 
 #include "mainwindow.h"

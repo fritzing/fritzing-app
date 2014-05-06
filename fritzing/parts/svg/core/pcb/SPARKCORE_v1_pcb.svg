@@ -2,44 +2,40 @@
 <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1"
-	 id="Layer_1" text-rendering="geometricPrecision" image-rendering="optimizeQuality" shape-rendering="geometricPrecision" xmlns:xml="http://www.w3.org/XML/1998/namespace"
+	 id="Layer_1" shape-rendering="geometricPrecision" image-rendering="optimizeQuality" text-rendering="geometricPrecision" xmlns:xml="http://www.w3.org/XML/1998/namespace"
 	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="105.768px"
 	 height="57.672px" viewBox="0 0 105.768 57.672" enable-background="new 0 0 105.768 57.672" xml:space="preserve">
-<desc>
-	<referenceFile>sparkcore_DIP_24_700mil_pcb.svg</referenceFile>
-</desc>
 <g id="_408900848" enable-background="new    ">
-	<g id="_408899648" enable-background="new    ">
-		<path fill="none" d=""/>
-		<polygon id="_376312208" fill="none" stroke="#000000" stroke-width="0.0083" points="100.826,0.025 100.826,19.205 
-			100.826,38.342 100.826,57.182 100.681,57.664 7.234,57.664 0,50.432 0,7.202 7.225,0.025 		"/>
+	<g id="silkscreen" enable-background="new    ">
+		<polygon id="_376312208" fill="none" stroke="#000000" stroke-width="0.75" points="100.826,0.025 100.826,19.205 100.826,38.342 
+			100.826,57.182 100.681,57.664 7.234,57.664 0,50.432 0,7.202 7.225,0.025 		"/>
 	</g>
 	<g id="copper1">
 		<g id="copper0">
-			<circle id="connector55pad" fill="none" stroke="#FFBF00" stroke-width="0.016" cx="25.292" cy="54.016" r="1.869"/>
-			<circle id="connector56pad" fill="none" stroke="#FFBF00" stroke-width="0.016" cx="32.492" cy="54.016" r="1.869"/>
-			<circle id="connector54pad" fill="none" stroke="#FFBF00" stroke-width="0.016" cx="18.093" cy="54.016" r="1.869"/>
-			<circle id="connector53pad" fill="none" stroke="#FFBF00" stroke-width="0.016" cx="10.893" cy="54.016" r="1.869"/>
-			<circle id="connector57pad" fill="none" stroke="#FFBF00" stroke-width="0.016" cx="39.693" cy="54.016" r="1.869"/>
-			<circle id="connector58pad" fill="none" stroke="#FFBF00" stroke-width="0.016" cx="46.893" cy="54.016" r="1.869"/>
-			<circle id="connector59pad" fill="none" stroke="#FFBF00" stroke-width="0.016" cx="54.093" cy="54.016" r="1.869"/>
-			<circle id="connector60pad" fill="none" stroke="#FFBF00" stroke-width="0.016" cx="61.292" cy="54.016" r="1.869"/>
-			<circle id="connector61pad" fill="none" stroke="#FFBF00" stroke-width="0.016" cx="68.492" cy="54.016" r="1.869"/>
-			<circle id="connector62pad" fill="none" stroke="#FFBF00" stroke-width="0.016" cx="75.693" cy="54.016" r="1.869"/>
-			<circle id="connector63pad" fill="none" stroke="#FFBF00" stroke-width="0.016" cx="82.893" cy="54.016" r="1.869"/>
-			<circle id="connector64pad" fill="none" stroke="#FFBF00" stroke-width="0.016" cx="90.093" cy="54.016" r="1.869"/>
-			<circle id="connector44pad" fill="none" stroke="#FFBF00" stroke-width="0.016" cx="32.492" cy="3.616" r="1.868"/>
-			<circle id="connector43pad" fill="none" stroke="#FFBF00" stroke-width="0.016" cx="25.292" cy="3.616" r="1.868"/>
-			<circle id="connector42pad" fill="none" stroke="#FFBF00" stroke-width="0.016" cx="18.093" cy="3.616" r="1.868"/>
-			<circle id="connector41pad" fill="none" stroke="#FFBF00" stroke-width="0.016" cx="10.893" cy="3.616" r="1.868"/>
-			<circle id="connector45pad" fill="none" stroke="#FFBF00" stroke-width="0.016" cx="39.693" cy="3.616" r="1.868"/>
-			<circle id="connector46pad" fill="none" stroke="#FFBF00" stroke-width="0.016" cx="46.893" cy="3.616" r="1.868"/>
-			<circle id="connector47pad" fill="none" stroke="#FFBF00" stroke-width="0.016" cx="54.093" cy="3.616" r="1.868"/>
-			<circle id="connector48pad" fill="none" stroke="#FFBF00" stroke-width="0.016" cx="61.292" cy="3.616" r="1.868"/>
-			<circle id="connector50pad" fill="none" stroke="#FFBF00" stroke-width="0.016" cx="75.693" cy="3.616" r="1.868"/>
-			<circle id="connector49pad" fill="none" stroke="#FFBF00" stroke-width="0.016" cx="68.492" cy="3.616" r="1.868"/>
-			<circle id="connector51pad" fill="none" stroke="#FFBF00" stroke-width="0.016" cx="82.893" cy="3.616" r="1.868"/>
-			<circle id="connector52pad" fill="none" stroke="#FFBF00" stroke-width="0.016" cx="90.093" cy="3.616" r="1.868"/>
+			<circle id="connector55pad" fill="none" stroke="#FFBF00" stroke-width="0.8" cx="25.292" cy="54.016" r="1.869"/>
+			<circle id="connector56pad" fill="none" stroke="#FFBF00" stroke-width="0.8" cx="32.492" cy="54.016" r="1.869"/>
+			<circle id="connector54pad" fill="none" stroke="#FFBF00" stroke-width="0.8" cx="18.093" cy="54.016" r="1.869"/>
+			<circle id="connector53pad" fill="none" stroke="#FFBF00" stroke-width="0.8" cx="10.893" cy="54.016" r="1.869"/>
+			<circle id="connector57pad" fill="none" stroke="#FFBF00" stroke-width="0.8" cx="39.693" cy="54.016" r="1.869"/>
+			<circle id="connector58pad" fill="none" stroke="#FFBF00" stroke-width="0.8" cx="46.893" cy="54.016" r="1.869"/>
+			<circle id="connector59pad" fill="none" stroke="#FFBF00" stroke-width="0.8" cx="54.093" cy="54.016" r="1.869"/>
+			<circle id="connector60pad" fill="none" stroke="#FFBF00" stroke-width="0.8" cx="61.292" cy="54.016" r="1.869"/>
+			<circle id="connector61pad" fill="none" stroke="#FFBF00" stroke-width="0.8" cx="68.492" cy="54.016" r="1.869"/>
+			<circle id="connector62pad" fill="none" stroke="#FFBF00" stroke-width="0.8" cx="75.693" cy="54.016" r="1.869"/>
+			<circle id="connector63pad" fill="none" stroke="#FFBF00" stroke-width="0.8" cx="82.893" cy="54.016" r="1.869"/>
+			<circle id="connector64pad" fill="none" stroke="#FFBF00" stroke-width="0.8" cx="90.093" cy="54.016" r="1.869"/>
+			<circle id="connector44pad" fill="none" stroke="#FFBF00" stroke-width="0.8" cx="32.492" cy="3.616" r="1.868"/>
+			<circle id="connector43pad" fill="none" stroke="#FFBF00" stroke-width="0.8" cx="25.292" cy="3.616" r="1.868"/>
+			<circle id="connector42pad" fill="none" stroke="#FFBF00" stroke-width="0.8" cx="18.093" cy="3.616" r="1.868"/>
+			<circle id="connector41pad" fill="none" stroke="#FFBF00" stroke-width="0.8" cx="10.893" cy="3.616" r="1.868"/>
+			<circle id="connector45pad" fill="none" stroke="#FFBF00" stroke-width="0.8" cx="39.693" cy="3.616" r="1.868"/>
+			<circle id="connector46pad" fill="none" stroke="#FFBF00" stroke-width="0.8" cx="46.893" cy="3.616" r="1.868"/>
+			<circle id="connector47pad" fill="none" stroke="#FFBF00" stroke-width="0.8" cx="54.093" cy="3.616" r="1.868"/>
+			<circle id="connector48pad" fill="none" stroke="#FFBF00" stroke-width="0.8" cx="61.292" cy="3.616" r="1.868"/>
+			<circle id="connector50pad" fill="none" stroke="#FFBF00" stroke-width="0.8" cx="75.693" cy="3.616" r="1.868"/>
+			<circle id="connector49pad" fill="none" stroke="#FFBF00" stroke-width="0.8" cx="68.492" cy="3.616" r="1.868"/>
+			<circle id="connector51pad" fill="none" stroke="#FFBF00" stroke-width="0.8" cx="82.893" cy="3.616" r="1.868"/>
+			<circle id="connector52pad" fill="none" stroke="#FFBF00" stroke-width="0.8" cx="90.093" cy="3.616" r="1.868"/>
 		</g>
 	</g>
 </g>

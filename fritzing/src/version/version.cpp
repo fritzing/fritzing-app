@@ -210,7 +210,7 @@ QString Version::makeRequestParamsString(bool withID) {
 	QString siKernelName(QUrl::toPercentEncoding(systemInfo.kernelName()));
 	QString siKernelVersion(QUrl::toPercentEncoding(systemInfo.kernelVersion()));
 	QString siArchitecture(QUrl::toPercentEncoding(systemInfo.architectureName()));
-    QString string = QString("?version=%2&sysname=%3&kernname=%4&kernversion=%5arch=%6&sysversion=%7%8")
+    QString string = QString("?version=%2&sysname=%3&kernname=%4&kernversion=%5&arch=%6&sysversion=%7%8")
 		.arg(siVersion)
 		.arg(siSystemName)
 		.arg(siKernelName)

@@ -108,11 +108,9 @@ signals:
 public slots:
 	void preferences();
 	void preferencesAfter();
-#ifndef NO_VERSION_CHECK
 	void checkForUpdates();
 	void checkForUpdates(bool atUserRequest);
 	void enableCheckUpdates(bool enabled);
-#endif
 	void createUserDataStoreFolderStructure();
 	void changeActivation(bool activate, QWidget * originator);
 	void updateActivation();

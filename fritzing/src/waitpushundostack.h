@@ -31,9 +31,11 @@ $Date: 2012-09-23 00:54:30 +0200 (So, 23. Sep 2012) $
 #include <QTimer>
 #include <QMutex>
 #include <QFile>
+#include <QPointer>
 
 class WaitPushUndoStack : public QUndoStack
 {
+    Q_OBJECT
 public:
 	WaitPushUndoStack(QObject * parent = 0);
 	~WaitPushUndoStack();
@@ -57,6 +59,8 @@ protected:
    
  protected:
 	void clearDeadTimers();
+	void clearLiveTimers();
+	void clearTimers(QList<QTimer *> &);
 
 protected:
 	QList<QTimer *> m_deadTimers;
@@ -79,7 +83,7 @@ protected slots:
 
 protected:
 	QUndoCommand * m_command;
-	WaitPushUndoStack * m_undoStack;
+	QPointer<WaitPushUndoStack> m_undoStack;
 };
 
 

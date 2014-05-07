@@ -44,7 +44,7 @@ QString FritzingWindow::ReadOnlyPlaceholder(" [READ-ONLY] ");
 static QString ___fritzingTitle___;
 QStringList FritzingWindow::OtherKnownExtensions;
 
-FritzingWindow::FritzingWindow(const QString &untitledFileName, int &untitledFileCount, QString fileExt, QWidget * parent, Qt::WFlags f)
+FritzingWindow::FritzingWindow(const QString &untitledFileName, int &untitledFileCount, QString fileExt, QWidget * parent, Qt::WindowFlags f)
 	: QMainWindow(parent, f)
 {
 	___fritzingTitle___ = QObject::tr("Fritzing");

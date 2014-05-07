@@ -179,7 +179,7 @@ bool QuaZip::setCurrentFile(const QString& fileName, CaseSensitivity cs)
   }
   bool sens;
   if(cs==csDefault) {
-#ifdef Q_WS_WIN
+#ifdef Q_OS_WIN
     sens=false;
 #else
     sens=true;

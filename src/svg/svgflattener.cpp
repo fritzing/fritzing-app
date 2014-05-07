@@ -225,7 +225,7 @@ void SvgFlattener::rotateCommandSlot(QChar command, bool relative, QList<double>
 	QPointF point;
 
 	for (int i = 0; i < args.count(); ) {
-		switch(command.toAscii()) {
+		switch(command.toLatin1()) {
 			case 'v':
 			case 'V':
 				DebugDialog::debug("'v' and 'V' are now removed by preprocessing; shouldn't be here");

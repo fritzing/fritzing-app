@@ -24,8 +24,8 @@ $Date: 2013-04-29 07:24:08 +0200 (Mon, 29 Apr 2013) $
 
 ********************************************************************/
 
+#include <QtCore>
 
-#include <QtGui>
 #include <QGraphicsScene>
 #include <QPoint>
 #include <QPair>
@@ -43,6 +43,10 @@ $Date: 2013-04-29 07:24:08 +0200 (Mon, 29 Apr 2013) $
 #include <QApplication>
 #include <QDomElement>
 #include <QSettings>
+#include <QClipboard>
+#include <QScrollBar>
+#include <QStatusBar>
+
 #include <limits>
 
 #include "../items/partfactory.h"
@@ -2197,7 +2201,7 @@ bool SketchWidget::moveByArrow(double dx, double dy, QKeyEvent * event) {
 		QPoint cp = QCursor::pos();
 		QPoint wp = this->mapFromGlobal(cp);
 		QPointF sp = this->mapToScene(wp);
-		Wire * wire = dynamic_cast<Wire *>(scene()->itemAt(sp));
+		Wire * wire = dynamic_cast<Wire *>(scene()->itemAt(sp, QTransform()));
 		bool draggingWire = false;
 		if (wire != NULL) {
 			if (canChainWire(wire) && wire->hasConnections()) {
@@ -9823,7 +9827,7 @@ void SketchWidget::squashShapes(QPointF scenePos)
     for (; ix < itms.count(); ix++) {
         QGraphicsItem * item = itms.at(ix);
         connectorItem = dynamic_cast<ConnectorItem *>(item);
-        if (connectorItem && connectorItem->acceptsHoverEvents()) {
+        if (connectorItem && connectorItem->acceptHoverEvents()) {
             ItemBase * itemBase = connectorItem->attachedTo();
             if (itemBase->inactive()) continue;
             if (itemBase->hidden()) continue;
@@ -9833,7 +9837,7 @@ void SketchWidget::squashShapes(QPointF scenePos)
         }
 
         wire = dynamic_cast<Wire *>(item);
-        if (wire != NULL && wire->acceptsHoverEvents() && !wire->inactive() && !wire->hidden() && !wire->layerHidden()) break;
+        if (wire != NULL && wire->acceptHoverEvents() && !wire->inactive() && !wire->hidden() && !wire->layerHidden()) break;
     }
 
     if (ix == 0) {

@@ -49,13 +49,20 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 #include <QFileInfoList>
 #include <QFileInfo>
 #include <QRegExp>
-#include <QtGui>
 #include <QSettings>
 #include <QFontMetrics>
 #include <QTextStream>
+#include <QLayout>
+#include <QMenu>
+#include <QMenuBar>
+#include <QApplication>
+#include <QKeyEvent>
+#include <QCloseEvent>
+#include <QPrinter>
+#include <QPrintDialog>
 
 // Included for getSerialPort() and a few others
-#ifdef Q_WS_WIN
+#ifdef Q_OS_WIN
 #include "windows.h"
 #include <windows.h>
 #include <setupapi.h>
@@ -63,7 +70,7 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 #include <INITGUID.H>
 
 #endif
-#ifdef Q_WS_MAC
+#ifdef Q_OS_MAC
 #include <IOKit/IOKitLib.h>
 #include <IOKit/IOBSD.h>
 #include <IOKit/serial/IOSerialKeys.h>
@@ -130,7 +137,7 @@ ProgramWindow::ProgramWindow(QWidget *parent)
         qWarning("Unable to open :/resources/styles/programwindow.qss");
     } else {
         QString ss = styleSheet.readAll();
-#ifdef Q_WS_MAC
+#ifdef Q_OS_MAC
                 int paneLoc = 4;
                 int tabBarLoc = 0;
 #else
@@ -793,7 +800,7 @@ QStringList ProgramWindow::getSerialPorts() {
 	return ports;
 }
 
-#ifdef Q_WS_WIN
+#ifdef Q_OS_WIN
 
 // faster enumeration code from http://code.google.com/p/qextserialport
 
@@ -845,7 +852,7 @@ QString getDeviceProperty(HDEVINFO devInfo, PSP_DEVINFO_DATA devData, DWORD prop
 QStringList ProgramWindow::getSerialPortsAux() {
         // TODO: make this call a plugin?
     QStringList ports;
-#ifdef Q_WS_WIN
+#ifdef Q_OS_WIN
 		/*
         for (int i = 1; i < 256; i++)
         {
@@ -883,7 +890,7 @@ QStringList ProgramWindow::getSerialPortsAux() {
 
         return ports;
 #endif
-#ifdef Q_WS_MAC
+#ifdef Q_OS_MAC
                 // see http://developer.apple.com/Mac/library/documentation/DeviceDrivers/Conceptual/WorkingWSerial/WWSerial_SerialDevs/SerialDevices.html
 
         mach_port_t         masterPort;
@@ -940,7 +947,7 @@ QStringList ProgramWindow::getSerialPortsAux() {
 
         return ports;
 #endif
-#ifdef Q_WS_X11
+#ifdef Q_OS_LINUX
         QProcess * process = new QProcess(this);
         process->setProcessChannelMode(QProcess::MergedChannels);
         process->setReadChannel(QProcess::StandardOutput);

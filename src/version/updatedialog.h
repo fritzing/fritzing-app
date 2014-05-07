@@ -31,10 +31,7 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 #include <QDialog>
 #include <QLabel>
 #include <QXmlStreamReader>
-
-#ifndef NO_VERSION_CHECK
-#include <QHttp>
-#endif
+#include <QNetworkReply>
 
 
 class UpdateDialog : public QDialog {
@@ -43,8 +40,6 @@ class UpdateDialog : public QDialog {
 public:
 	UpdateDialog(QWidget *parent = 0);
 	~UpdateDialog();
-    
-#ifndef NO_VERSION_CHECK
 
 	void setVersionChecker(class VersionChecker *);
 	void setAtUserRequest(bool);
@@ -55,7 +50,7 @@ signals:
 protected slots:
 	void releasesAvailableSlot();
 	void xmlErrorSlot(QXmlStreamReader::Error errorCode);
-	void httpErrorSlot(QHttp::Error statusCode);
+    void httpErrorSlot(QNetworkReply::NetworkError);
 	void stopClose();
 
 protected:
@@ -67,8 +62,6 @@ protected:
 	class VersionChecker * m_versionChecker;
 	bool m_atUserRequest;
 	QLabel * m_feedbackLabel;
-    
-#endif
 
 };
 

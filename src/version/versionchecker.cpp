@@ -28,85 +28,66 @@ $Date: 2012-06-28 00:18:10 +0200 (Do, 28. Jun 2012) $
 
 
 
-#include "versionchecker.h"	
-
-#ifndef NO_VERSION_CHECK
-
+#include "versionchecker.h"
 #include "version.h"
 #include "../debugdialog.h"
 
 #include <QUrl>
-
-#endif
+#include <QNetworkAccessManager>
+#include <QMutexLocker>
 								
 VersionChecker::VersionChecker() : QObject() 
 {
-#ifndef NO_VERSION_CHECK
-
-    connect(&m_http, SIGNAL(readyRead(const QHttpResponseHeader &)),
-		this, SLOT(readData(const QHttpResponseHeader &)));
-    connect(&m_http, SIGNAL(requestFinished(int, bool)), 
-		this, SLOT(finished(int, bool)));
-
+    m_networkReply = NULL;
 	m_depth = 0;
 	m_inSummary = m_inUpdated = m_inTitle = m_inEntry = false;
 	m_ignoreInterimVersion.ok = m_ignoreMainVersion.ok = false;
-#endif
 }
 
 VersionChecker::~VersionChecker() {
-#ifndef NO_VERSION_CHECK
 	foreach (AvailableRelease * availableRelease, m_availableReleases) {
 		delete availableRelease;
 	}
 
 	m_availableReleases.clear();
-#endif
 }
 
-#ifndef NO_VERSION_CHECK
 
 void VersionChecker::fetch()
 {
 	DebugDialog::debug("http check new version");
-	m_statusCode = 200;
     m_xml.clear();
     QUrl url(m_urlString);
-    m_http.setHost(url.host());
-    m_connectionId = m_http.get(url.path());
+
+    QNetworkAccessManager * manager = new QNetworkAccessManager(this);
+    connect(manager, SIGNAL(finished(QNetworkReply *)), this, SLOT(finished(QNetworkReply *)));
+    QNetworkReply * reply = manager->get(QNetworkRequest(url));
+    QMutexLocker locker(&m_networkReplyLock);
+    m_networkReply = reply;
 }
 
 
-void VersionChecker::readData(const QHttpResponseHeader &resp)
-{
-	m_statusCode = resp.statusCode();
-	if (resp.statusCode() != 200) {
-        m_http.abort();
-		return;
-	}
-
-	QString temp = m_http.readAll();
-    m_xml.addData(temp);
-    parseXml();
-}
-
-
-void VersionChecker::finished(int id, bool error)
+void VersionChecker::finished(QNetworkReply * networkReply)
 {	
-	if (id != m_connectionId) {
-		return;
-	}
+    int responseCode = networkReply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
+    if (responseCode == 200) {
+        m_xml.addData(networkReply->readAll());
+        parseXml();
+        DebugDialog::debug("http check new version no error");
+        emit releasesAvailable();
+    }
+    else {
+        DebugDialog::debug(QString("http check new version error %1").arg(networkReply->errorString()));
+        emit httpError(networkReply->error());
+    }
 
-	if (error) {
-		if (m_statusCode != 200) {
-			DebugDialog::debug(QString("http check new version error %1").arg(m_http.errorString()));
-			emit httpError(m_http.error());
-			return;
-		}
-	}
+    QMutexLocker locker(&m_networkReplyLock);
+    if (networkReply == m_networkReply) {
+        m_networkReply = NULL;
+    }
 
-	DebugDialog::debug("http check new version no error");
-	emit releasesAvailable();
+    networkReply->manager()->deleteLater();
+    networkReply->deleteLater();
 }
 
 void VersionChecker::parseXml()
@@ -183,7 +164,6 @@ void VersionChecker::parseXml()
     }
     if (m_xml.error() && m_xml.error() != QXmlStreamReader::PrematureEndOfDocumentError) {
 		emit xmlError(m_xml.error());
-        m_http.abort();
 		return;
     }
 
@@ -215,12 +195,10 @@ void VersionChecker::parseEntry() {
 	Version::toVersionThing(m_currentTitle, entryVersionThing);
 	if (!entryVersionThing.ok) {
 		// older versions that don't conform, bail
-		m_http.abort();
 		return;
 	}
 
 	if (!Version::candidateGreaterThanCurrent(entryVersionThing)) {
-		m_http.abort();
 		return;
 	}
 
@@ -256,12 +234,12 @@ const QList<AvailableRelease *> & VersionChecker::availableReleases()
 }
 
 void VersionChecker::stop() {
-    disconnect(&m_http, SIGNAL(readyRead(const QHttpResponseHeader &)), 
-		this, SLOT(readData(const QHttpResponseHeader &)));
-    disconnect(&m_http, SIGNAL(requestFinished(int, bool)), 
-		this, SLOT(finished(int, bool)));
-	m_http.abort();
-
+    if (m_networkReplyLock.tryLock(1)) {
+        if (m_networkReply) {
+            m_networkReply = NULL;
+        }
+        m_networkReplyLock.unlock();
+    }
 }
 
 void VersionChecker::ignore(const QString & version, bool interim) {
@@ -273,4 +251,3 @@ void VersionChecker::ignore(const QString & version, bool interim) {
 	}
 }
 
-#endif

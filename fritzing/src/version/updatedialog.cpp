@@ -39,7 +39,6 @@ $Date: 2012-06-28 00:18:10 +0200 (Do, 28. Jun 2012) $
 								
 UpdateDialog::UpdateDialog(QWidget *parent) : QDialog(parent) 
 {
-#ifndef NO_VERSION_CHECK
 	m_versionChecker = NULL;
 
 	this->setWindowTitle(QObject::tr("Check for updates"));
@@ -60,18 +59,13 @@ UpdateDialog::UpdateDialog(QWidget *parent) : QDialog(parent)
 	vLayout->addWidget(buttonBox);
 
 	this->setLayout(vLayout);
-#endif
 }
 
 UpdateDialog::~UpdateDialog() {
-#ifndef NO_VERSION_CHECK
 	if (m_versionChecker) {
 		delete m_versionChecker;
 	}
-#endif
 }
-
-#ifndef NO_VERSION_CHECK
 
 void UpdateDialog::setAvailableReleases(const QList<AvailableRelease *> & availableReleases) 
 {
@@ -138,19 +132,18 @@ void UpdateDialog::setVersionChecker(VersionChecker * versionChecker)
 	m_versionChecker = versionChecker;
 	connect(m_versionChecker, SIGNAL(releasesAvailable()), this, SLOT(releasesAvailableSlot()));
 	connect(m_versionChecker, SIGNAL(xmlError(QXmlStreamReader::Error)), this, SLOT(xmlErrorSlot(QXmlStreamReader::Error)));
-	connect(m_versionChecker, SIGNAL(httpError(QHttp::Error)), this, SLOT(httpErrorSlot(QHttp::Error)));
+    connect(m_versionChecker, SIGNAL(httpError(QNetworkReply::NetworkError)), this, SLOT(httpErrorSlot(QNetworkReply::NetworkError)));
 	m_versionChecker->fetch();
 
+}
+
+void UpdateDialog::httpErrorSlot(QNetworkReply::NetworkError) {
+    handleError();
 }
 
 void UpdateDialog::releasesAvailableSlot() {
 	setAvailableReleases(m_versionChecker->availableReleases());
 	emit enableAgainSignal(true);
-}
-
-void UpdateDialog::httpErrorSlot(QHttp::Error  statusCode) {
-	Q_UNUSED(statusCode);
-	handleError();
 }
 
 void UpdateDialog::xmlErrorSlot(QXmlStreamReader::Error  errorCode) {
@@ -204,4 +197,3 @@ QString UpdateDialog::genTable(const QString & title, AvailableRelease * release
 			.arg(release->summary.replace("changelog:", "", Qt::CaseInsensitive));
 }
 
-#endif

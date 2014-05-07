@@ -56,7 +56,10 @@ void AutoCloseMessageBox::start() {
 	m_animationTimer.setInterval(Interval);
 	m_animationTimer.setSingleShot(false);
 	connect(&m_animationTimer, SIGNAL(timeout()), this, SLOT(moveOut()));
-	m_movingState = MovingOut;
+#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
+    m_animationTimer.setTimerType(Qt::PreciseTimer);
+#endif
+    m_movingState = MovingOut;
 	m_animationTimer.start();
 	show();
 }

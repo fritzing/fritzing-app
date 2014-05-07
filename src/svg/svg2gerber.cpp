@@ -763,7 +763,7 @@ void SVG2gerber::path2gerbCommandSlot(QChar command, bool relative, QList<double
 
     int argIndex = 0;
     while (argIndex < args.count()) {
-        switch(command.toAscii()) {
+        switch(command.toLatin1()) {
                     case 'a':
                     case 'A':
                     case 'c':

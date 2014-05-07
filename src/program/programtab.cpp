@@ -33,12 +33,14 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 #include <QFileInfoList>
 #include <QFileInfo>
 #include <QRegExp>
-#include <QtGui>
 #include <QSettings>
 #include <QFontMetrics>
 #include <QTextStream>
 #include <QMessageBox>
 #include <QSplitter>
+#include <QHBoxLayout>
+#include <QVBoxLayout>
+
 
 static const QChar Quote91Char(0x91);
 static QString UnableToProgramMessage;

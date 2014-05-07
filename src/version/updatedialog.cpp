@@ -26,6 +26,7 @@ $Date: 2012-06-28 00:18:10 +0200 (Do, 28. Jun 2012) $
 
 // much code borrowed from Qt's rsslisting example
 
+
 #include "updatedialog.h"	
 #include "version.h"
 #include "versionchecker.h"
@@ -38,6 +39,7 @@ $Date: 2012-06-28 00:18:10 +0200 (Do, 28. Jun 2012) $
 								
 UpdateDialog::UpdateDialog(QWidget *parent) : QDialog(parent) 
 {
+#ifndef NO_VERSION_CHECK
 	m_versionChecker = NULL;
 
 	this->setWindowTitle(QObject::tr("Check for updates"));
@@ -58,14 +60,18 @@ UpdateDialog::UpdateDialog(QWidget *parent) : QDialog(parent)
 	vLayout->addWidget(buttonBox);
 
 	this->setLayout(vLayout);
-
+#endif
 }
 
 UpdateDialog::~UpdateDialog() {
+#ifndef NO_VERSION_CHECK
 	if (m_versionChecker) {
 		delete m_versionChecker;
 	}
+#endif
 }
+
+#ifndef NO_VERSION_CHECK
 
 void UpdateDialog::setAvailableReleases(const QList<AvailableRelease *> & availableReleases) 
 {
@@ -197,3 +203,5 @@ QString UpdateDialog::genTable(const QString & title, AvailableRelease * release
 			.arg(release->link)
 			.arg(release->summary.replace("changelog:", "", Qt::CaseInsensitive));
 }
+
+#endif

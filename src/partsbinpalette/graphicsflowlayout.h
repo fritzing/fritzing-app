@@ -39,7 +39,7 @@ class GraphicsFlowLayout : public QGraphicsLinearLayout {
 		void setGeometry(const QRectF &rect);
 		int heightForWidth(int width);
 		void clear();
-		int indexOf(const QGraphicsWidget *item);
+		int indexOf(const QGraphicsLayoutItem *item);
 
 	protected:
 		void widgetEvent(QEvent * e);

@@ -40,7 +40,8 @@ FGraphicsScene::FGraphicsScene( QObject * parent) : QGraphicsScene(parent)
 
 void FGraphicsScene::helpEvent(QGraphicsSceneHelpEvent *helpEvent)
 {
-    QGraphicsItem * item = this->itemAt(helpEvent->scenePos());
+    // TODO: how do we get a QTransform?
+    QGraphicsItem * item = this->itemAt(helpEvent->scenePos(), QTransform());
     if (item == NULL) return;
 
     QString text;

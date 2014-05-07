@@ -24,8 +24,6 @@ $Date: 2013-03-10 16:58:25 +0100 (So, 10. Mrz 2013) $
 
 ********************************************************************/
 
-
-#include <QtGui>
 #include "graphicsflowlayout.h"
 #include "../utils/misc.h"
 
@@ -100,8 +98,7 @@ void GraphicsFlowLayout::clear() {
 	}
 }
 
-int GraphicsFlowLayout::indexOf(const QGraphicsWidget *item) {
-	Q_UNUSED(item);
+int GraphicsFlowLayout::indexOf(const QGraphicsLayoutItem *item) {
 	for(int i=0; i < count(); i++) {
 		if(itemAt(i) == item) return i;
 	}

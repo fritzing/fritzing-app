@@ -92,18 +92,18 @@ $Date: 2013-04-19 12:51:22 +0200 (Fr, 19. Apr 2013) $
 #ifdef LINUX_64
 #define PLATFORM_NAME "linux-64bit"
 #endif
-#ifdef Q_WS_WIN
+#ifdef Q_OS_WIN
 #define PLATFORM_NAME "windows"
 #endif
-#ifdef Q_WS_MAC
-#ifdef QT_MAC_USE_COCOA
+#ifdef Q_OS_MAC
+#if (QT_VERSION > 0x050000) || defined(QT_MAC_USE_COCOA)
 #define PLATFORM_NAME "mac-os-x-105"
 #else
 #define PLATFORM_NAME "mac-os-x-104"
 #endif
 #endif
 
-#ifdef Q_WS_WIN
+#ifdef Q_OS_WIN
 #ifndef QT_NO_DEBUG
 #define WIN_DEBUG
 #endif
@@ -1071,7 +1071,7 @@ int FApplication::startup()
 	if (m_progressIndex >= 0) splash.showProgress(m_progressIndex, LoadProgressStart);
 	ProcessEventBlocker::processEvents();
 
-	#ifdef Q_WS_WIN
+	#ifdef Q_OS_WIN
 		// associate .fz file with fritzing app on windows (xp only--vista is different)
 		// TODO: don't change settings if they're already set?
 		// TODO: only do this at install time?
@@ -1131,11 +1131,13 @@ int FApplication::startup()
 	if (m_progressIndex >= 0) splash.showProgress(m_progressIndex, 0.825);
 	ProcessEventBlocker::processEvents();
 
+#ifndef NO_VERSION_CHECK
 	m_updateDialog = new UpdateDialog();
 	connect(m_updateDialog, SIGNAL(enableAgainSignal(bool)), this, SLOT(enableCheckUpdates(bool)));
 	checkForUpdates(false);
 
 	if (m_progressIndex >= 0) splash.showProgress(m_progressIndex, 0.875);
+#endif
 
 	DebugDialog::debug("load something");
 	loadSomething(prevVersion);
@@ -1291,8 +1293,8 @@ void FApplication::initSplash(FSplashScreen & splash) {
 	splash.showMessage(msg1, "fhpText", Qt::AlignLeft | Qt::AlignTop);
 
 	QString macBuildType;
-#ifdef Q_WS_MAC
-#ifdef QT_MAC_USE_COCOA
+#ifdef Q_OS_MAC
+#if (QT_VERSION > 0x050000) || defined(QT_MAC_USE_COCOA)
 	macBuildType = " Cocoa";
 #else
 	macBuildType = " Carbon";
@@ -1318,7 +1320,7 @@ struct Thing {
 };
 
 
-
+#ifndef NO_VERSION_CHECK
 void FApplication::checkForUpdates() {
 	checkForUpdates(true);
 }
@@ -1368,6 +1370,7 @@ void FApplication::enableCheckUpdates(bool enabled)
 	}
 	//DebugDialog::debug("after enable check updates");
 }
+#endif
 
 
 void FApplication::createUserDataStoreFolderStructure() {

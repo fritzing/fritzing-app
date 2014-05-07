@@ -30,7 +30,7 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 #include <QHash>
 #include <QVector>
 
-#ifdef Q_WS_WIN
+#ifdef Q_OS_WIN
 #ifndef QT_NO_DEBUG
 
 #ifdef _MSC_VER // just for the MS compiler
@@ -46,7 +46,7 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 #endif
 #endif
 
-#ifdef Q_WS_WIN
+#ifdef Q_OS_WIN
 #define getenvUser() getenv("USERNAME")
 #else
 #define getenvUser() getenv("USER")

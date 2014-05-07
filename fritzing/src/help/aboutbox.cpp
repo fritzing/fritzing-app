@@ -47,7 +47,7 @@ AboutBox::AboutBox(QWidget *parent)
 {
 	singleton = this;
 	// To make the application not quit when the window closes
-	this->setAttribute(Qt::WA_QuitOnClose, FALSE);
+	this->setAttribute(Qt::WA_QuitOnClose, false);
 
 	setFixedSize(AboutWidth, 430);
 
@@ -67,8 +67,9 @@ AboutBox::AboutBox(QWidget *parent)
 	// Version String
 	QLabel *versionMain = new QLabel(this);
 	QString macBuildType;
-#ifdef Q_WS_MAC
-#ifdef QT_MAC_USE_COCOA
+    
+#ifdef Q_OS_MAC
+#if (QT_VERSION > 0x050000) || defined(QT_MAC_USE_COCOA)
 	macBuildType = " Cocoa";
 #else
 	macBuildType = " Carbon";
@@ -91,7 +92,7 @@ AboutBox::AboutBox(QWidget *parent)
 	// Link to website
 	QLabel *linkToFritzing = new QLabel(this);
 	linkToFritzing->setText(tr("<a href=\"http://www.fritzing.org\">www.fritzing.org</a>"));
-	linkToFritzing->setOpenExternalLinks(TRUE);
+	linkToFritzing->setOpenExternalLinks(true);
 	linkToFritzing->setFont(smallFont);
 	linkToFritzing->setGeometry(45, 168, 300, 18);
 	linkToFritzing->setAlignment(Qt::AlignBottom | Qt::AlignHCenter);
@@ -212,7 +213,7 @@ tr("<br /><br /><br /><br /><br /><br /><br /><br />");
 	
 
 	// auto scroll timer initialization
-	m_restartAtTop = FALSE;
+	m_restartAtTop = false;
 	m_startTime = QTime::currentTime();
 	m_autoScrollTimer = new QTimer(this);
 	connect(m_autoScrollTimer, SIGNAL(timeout()), this, SLOT(scrollCredits()));

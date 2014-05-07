@@ -67,8 +67,14 @@ RecoveryDialog::RecoveryDialog(QFileInfoList fileInfoList, QWidget *parent, Qt::
     m_recoveryList->header()->setDefaultAlignment(Qt::AlignCenter);
     m_recoveryList->header()->setDragEnabled(false);
     m_recoveryList->header()->setDragDropMode(QAbstractItemView::NoDragDrop);
+    
+#if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
     m_recoveryList->header()->setResizeMode(QHeaderView::ResizeToContents);
     m_recoveryList->header()->setMovable(false);
+#else
+    m_recoveryList->header()->setSectionResizeMode(QHeaderView::ResizeToContents);
+    m_recoveryList->header()->setSectionsMovable(false);
+#endif
 
     connect(m_recoveryList, SIGNAL(itemSelectionChanged()), this, SLOT(updateRecoverButton()));
 

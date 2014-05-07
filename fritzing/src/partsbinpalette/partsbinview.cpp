@@ -134,7 +134,7 @@ void PartsBinView::mousePressOnItem(const QPoint &dragStartPos, const QString &m
 	drag->setMimeData(mimeData);
 
 	/*
-#ifndef Q_WS_X11
+#ifndef Q_OS_LINUX
 	// transparency doesn't seem to work for linux
 	QPixmap pixmap(size);
 	pixmap.fill(Qt::transparent);

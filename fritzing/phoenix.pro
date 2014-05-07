@@ -114,7 +114,9 @@ unix {
 }
 
 ICON = resources/images/fritzing_icon.icns
-QT += core gui svg xml network sql # opengl
+
+QT += core gui svg xml network sql printsupport concurrent # opengl
+greaterThan(QT_MAJOR_VERSION, 4): DEFINES += NO_VERSION_CHECK
 
 RC_FILE = fritzing.rc
 RESOURCES += phoenixresources.qrc

@@ -170,6 +170,10 @@ SketchWidget::SketchWidget(ViewLayer::ViewID viewID, QWidget *parent, int size, 
 	m_arrowTimer.setParent(this);
 	m_arrowTimer.setInterval(AutoRepeatDelay);
 	m_arrowTimer.setSingleShot(true);
+#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
+    m_arrowTimer.setTimerType(Qt::PreciseTimer);
+    m_autoScrollTimer.setTimerType(Qt::PreciseTimer);
+#endif
 	connect(&m_arrowTimer, SIGNAL(timeout()), this, SLOT(arrowTimerTimeout()));
 	m_addDefaultParts = false;
 	m_addedDefaultPart = NULL;
@@ -6908,7 +6912,7 @@ bool SketchWidget::modifyNewWireConnections(Wire * dragWire, ConnectorItem * fro
 */
 
 void SketchWidget::setupAutoscroll(bool moving) {
-	m_autoScrollX = m_autoScrollY = 0;
+    m_autoScrollX = m_autoScrollY = 0;
 	m_autoScrollThreshold = (moving) ? MoveAutoScrollThreshold : DragAutoScrollThreshold;
 	m_autoScrollCount = 0;
 	connect(&m_autoScrollTimer, SIGNAL(timeout()), this,

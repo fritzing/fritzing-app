@@ -60,7 +60,10 @@ ZoomLabel::ZoomLabel(QWidget * parent) : QLabel(parent)
 	m_autoRepeat = m_mouseIsDown = m_mouseIsIn = m_repeated = false;
 	m_timer.setSingleShot(false);
 	m_timer.setInterval(AutoRepeatInterval);
-	connect(&m_timer, SIGNAL(timeout()), this, SLOT(repeat()));
+#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
+    m_timer.setTimerType(Qt::PreciseTimer);
+#endif
+    connect(&m_timer, SIGNAL(timeout()), this, SLOT(repeat()));
 }
 
 ZoomLabel::~ZoomLabel()

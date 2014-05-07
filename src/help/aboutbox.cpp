@@ -216,6 +216,9 @@ tr("<br /><br /><br /><br /><br /><br /><br /><br />");
 	m_restartAtTop = false;
 	m_startTime = QTime::currentTime();
 	m_autoScrollTimer = new QTimer(this);
+#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
+    m_autoScrollTimer->setTimerType(Qt::PreciseTimer);
+#endif
 	connect(m_autoScrollTimer, SIGNAL(timeout()), this, SLOT(scrollCredits()));
 }
 

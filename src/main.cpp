@@ -99,7 +99,11 @@ int main(int argc, char *argv[])
 #endif
 
 #ifdef Q_OS_WIN
+#if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
 	originalMsgHandler = qInstallMsgHandler(fMessageHandler);
+#else
+    originalMsgHandler = qInstallMessageHandler(fMessageHandler);
+#endif
 #ifndef QT_NO_DEBUG
 #ifdef WIN_CHECK_LEAKS
 	HANDLE hLogFile;

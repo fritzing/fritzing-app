@@ -60,7 +60,8 @@ TranslatorListModel::TranslatorListModel(QFileInfoList & fileInfoList, QObject* 
         m_languages.insert("polish", tr("Polish - %1").arg("Polski"));
 		m_languages.insert("swedish", tr("Swedish - %1").arg("Svenska"));
 		m_languages.insert("galician", tr("Galician - %1").arg("Galego"));
-		m_languages.insert("indonesian", tr("Indonesian - %1").arg("Bahasa Indonesia"));
+        m_languages.insert("indonesian", tr("Indonesian - %1").arg("Bahasa Indonesia"));
+        m_languages.insert("danish", tr("Danish - %1").arg("dansk"));
 
         ushort t1[] = { 0x65e5, 0x672c, 0x8a9e, 0 };
 		m_languages.insert("japanese", tr("Japanese - %1").arg(QString::fromUtf16(t1)));
@@ -133,6 +134,9 @@ TranslatorListModel::TranslatorListModel(QFileInfoList & fileInfoList, QObject* 
 
         ushort t24[] = { 0x54, 0xFC, 0x72, 0x6B, 0xE7, 0x65, 0 };
         m_languages.insert("turkish", tr("Turkish - %1").arg(QString::fromUtf16(t24)));
+
+        ushort t25[] = { 0x043C, 0x0430,  0x043A,  0x0435,  0x0434, 0x043E, 0x043D, 0x0441, 0x043A, 0x0438, 0x20, 0x0458, 0x0430, 0x0437, 0x0438, 0x043A, 0 };
+        m_languages.insert("macedonian", tr("Macedonian - %1").arg(QString::fromUtf16(t25)));
 
 	}
 

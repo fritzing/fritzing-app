@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="ja">
+<TS version="2.1" language="ja">
 <context>
     <name>AboutBox</name>
     <message>
@@ -2547,26 +2547,6 @@ Please check all views for potential side-effects.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Rotate 45° Clockwise</source>
-        <translation type="unfinished">時計方向に回転90° {45°?}</translation>
-    </message>
-    <message>
-        <source>Rotate 90° Clockwise</source>
-        <translation type="unfinished">時計方向に回転90°</translation>
-    </message>
-    <message>
-        <source>Rotate 180°</source>
-        <translation type="unfinished">回転 180°</translation>
-    </message>
-    <message>
-        <source>Rotate 90° Counter Clockwise</source>
-        <translation type="unfinished">逆時計方向に回転 90°</translation>
-    </message>
-    <message>
-        <source>Rotate 45° Counter Clockwise</source>
-        <translation type="unfinished">逆時計方向に回転 90° {45°?}</translation>
-    </message>
-    <message>
         <source>Shift+Ctrl+A</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3337,6 +3317,26 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     <message>
         <source>Note that any custom parts will not be converted. A tool for converting &apos;rectangular&apos; schematic images is available in the Parts Editor.</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rotate 45� Clockwise</source>
+        <translation type="unfinished">時計方向に回転90° {135°?} {45�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 90� Clockwise</source>
+        <translation type="unfinished">時計方向に回転90° {135°?} {90�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 180�</source>
+        <translation type="unfinished">回転 180° {180�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 90� Counter Clockwise</source>
+        <translation type="unfinished">逆時計方向に回転 90° {45°?} {90�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 45� Counter Clockwise</source>
+        <translation type="unfinished">逆時計方向に回転 90° {45°?} {45�?}</translation>
     </message>
 </context>
 <context>
@@ -4444,24 +4444,12 @@ Go ahead and save?</source>
         <translation>フォントサイズ</translation>
     </message>
     <message>
-        <source>Rotate 90° Clockwise</source>
-        <translation>時計方向に回転90°</translation>
-    </message>
-    <message>
         <source>Rotate the label by 90 degrees clockwise</source>
         <translation>ラベルを時計方向に90°回転</translation>
     </message>
     <message>
-        <source>Rotate 180°</source>
-        <translation>回転 180°</translation>
-    </message>
-    <message>
         <source>Rotate the label by 180 degrees</source>
         <translation>ラベルを時計方向に180°回転</translation>
-    </message>
-    <message>
-        <source>Rotate 90° Counter Clockwise</source>
-        <translation>逆時計方向に回転 90°</translation>
     </message>
     <message>
         <source>Flip Horizontal</source>
@@ -4532,32 +4520,16 @@ Go ahead and save?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Rotate 45° Clockwise</source>
-        <translation type="unfinished">時計方向に回転90° {45°?}</translation>
-    </message>
-    <message>
         <source>Rotate the label by 45 degrees clockwise</source>
         <translation type="unfinished">ラベルを時計方向に90°回転 {45 ?}</translation>
-    </message>
-    <message>
-        <source>Rotate 135° Clockwise</source>
-        <translation type="unfinished">時計方向に回転90° {135°?}</translation>
     </message>
     <message>
         <source>Rotate the label by 135 degrees clockwise</source>
         <translation type="unfinished">ラベルを時計方向に90°回転 {135 ?}</translation>
     </message>
     <message>
-        <source>Rotate 135° Counter Clockwise</source>
-        <translation type="unfinished">逆時計方向に回転 90° {135°?}</translation>
-    </message>
-    <message>
         <source>Rotate the label by 135 degrees counter clockwise</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Rotate 45° Counter Clockwise</source>
-        <translation type="unfinished">逆時計方向に回転 90° {45°?}</translation>
     </message>
     <message>
         <source>Rotate the label by 45 degrees counter clockwise</source>
@@ -4570,6 +4542,34 @@ Go ahead and save?</source>
     <message>
         <source>Set font size to tiny</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rotate 45� Clockwise</source>
+        <translation type="unfinished">時計方向に回転90° {135°?} {45�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 90� Clockwise</source>
+        <translation type="unfinished">時計方向に回転90° {135°?} {90�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 135� Clockwise</source>
+        <translation type="unfinished">時計方向に回転90° {135°?} {135�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 180�</source>
+        <translation type="unfinished">回転 180° {180�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 135� Counter Clockwise</source>
+        <translation type="unfinished">逆時計方向に回転 90° {45°?} {135�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 90� Counter Clockwise</source>
+        <translation type="unfinished">逆時計方向に回転 90° {45°?} {90�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 45� Counter Clockwise</source>
+        <translation type="unfinished">逆時計方向に回転 90° {45°?} {45�?}</translation>
     </message>
 </context>
 <context>
@@ -6941,6 +6941,14 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
     <message>
         <source>Ukrainian - %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Danish - %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Macedonian - %1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

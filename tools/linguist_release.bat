@@ -1,4 +1,4 @@
 cd %~dp0
 cd ..
-C:\Qt\qt-everywhere-opensource-src-4.8.5\bin\lrelease phoenix.pro
+C:\Qt\Qt5.2.1\5.2.1\msvc2012_64\bin\lrelease -removeidentical phoenix.pro
      

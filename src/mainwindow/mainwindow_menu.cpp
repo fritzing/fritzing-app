@@ -906,6 +906,9 @@ void MainWindow::createEditMenuActions() {
     m_deleteMinusAct = new QAction(tr("Delete Minus"), this);
 	m_deleteMinusAct->setStatusTip(tr("Delete selection without attached wires"));
 	connect(m_deleteMinusAct, SIGNAL(triggered()), this, SLOT(doDeleteMinus()));
+    #ifdef Q_OS_MAC
+        m_deleteMinusAct->setShortcut(Qt::Key_Backspace | Qt::AltModifier);
+    #endif
 
 	m_deleteWireAct = new WireAction(m_deleteAct);
 	m_deleteWireAct->setText(tr("&Delete Wire"));

@@ -794,7 +794,7 @@ bool SqliteReferenceModel::addPartAux(ModelPart * newModel, bool fullLoad) {
 		DebugDialog::debug("SqliteReferenceModel::addPartAux failure");
 	}
 
-	return NULL;
+    return false;
 }
 
 bool SqliteReferenceModel::addPart(ModelPart * newModel, bool update) {

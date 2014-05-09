@@ -26,7 +26,7 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 
 
 #ifndef FIRSTTIMEHELPDIALOG_H
-#define FIRSTTIMEHELPDialog_H
+#define FIRSTTIMEHELPDIALOG_H
 
 #include <QDialog>
 #include <QLabel>

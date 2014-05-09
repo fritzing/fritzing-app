@@ -83,10 +83,10 @@ void SketchToolButton::setImage(const QPixmap & pixmap) {
 	setIcon(QIcon(pixmap));
 }
 
-void SketchToolButton::setupIcons(const QString &imageName) {
+void SketchToolButton::setupIcons(const QString &imageName, bool hasStates) {
     setIconSize(QSize(37,24));
 	setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
-	AbstractStatesButton::setupIcons(imageName);
+    AbstractStatesButton::setupIcons(imageName, hasStates);
 }
 
 void SketchToolButton::updateEnabledState() {

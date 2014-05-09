@@ -732,7 +732,7 @@ void Note::handleMouseReleaseSlot(QGraphicsSceneMouseEvent * event, ResizeHandle
 	m_inResize = NULL;
 	InfoGraphicsView *infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
 	if (infoGraphicsView != NULL) {
-		infoGraphicsView->noteSizeChanged(this, m_viewGeometry.rect(), m_rect);
+        infoGraphicsView->noteSizeChanged(this, m_viewGeometry.rect().size(), m_rect.size());
 	}
 }
 

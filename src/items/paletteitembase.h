@@ -59,9 +59,9 @@ public:
 	void connectedMoved(ConnectorItem * from, ConnectorItem * to, QList<ConnectorItem *> & already);
 	bool collectFemaleConnectees(QSet<ItemBase *> & items);
 	void collectWireConnectees(QSet<class Wire *> & wires);
-	virtual bool mousePressEvent(PaletteItemBase * originalItem, QGraphicsSceneMouseEvent *event);
-	virtual void mouseMoveEvent(PaletteItemBase * originalItem, QGraphicsSceneMouseEvent *event);
-	virtual void mouseReleaseEvent(PaletteItemBase * originalItem, QGraphicsSceneMouseEvent *event);
+    virtual bool mousePressEventK(PaletteItemBase * originalItem, QGraphicsSceneMouseEvent *event);
+    virtual void mouseMoveEventK(PaletteItemBase * originalItem, QGraphicsSceneMouseEvent *event);
+    virtual void mouseReleaseEventK(PaletteItemBase * originalItem, QGraphicsSceneMouseEvent *event);
 	void mouseMoveEvent(QGraphicsSceneMouseEvent *event);
 	void mouseReleaseEvent(QGraphicsSceneMouseEvent *event);
 	void hoverEnterEvent(QGraphicsSceneHoverEvent * event );

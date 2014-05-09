@@ -49,7 +49,7 @@ public:
 	void setResistance(QString resistance, QString pinSpacing, bool force);
 	QString resistance();
 	QString pinSpacing();
-	const QString & title();
+    const QString & title();
 	bool hasCustomSVG();
 	bool canEditPart();
 	PluralType isPlural();

@@ -1236,7 +1236,7 @@ bool PCBSketchWidget::canDragWire(Wire * wire) {
 	return true;
 }
 
-void PCBSketchWidget::wireSplitSlot(Wire* wire, QPointF newPos, QPointF oldPos, QLineF oldLine) {
+void PCBSketchWidget::wireSplitSlot(Wire* wire, QPointF newPos, QPointF oldPos, const QLineF & oldLine) {
 	if (!wire->getRatsnest()) {
 		SketchWidget::wireSplitSlot(wire, newPos, oldPos, oldLine);
 	}

@@ -249,7 +249,7 @@ void SVG2gerber::convertShapes2paths(QDomNode node){
     QDomNodeList tagList = node.childNodes();
 
     //DebugDialog::debug("child nodes: " + QString::number(tagList.length()));
-    for(uint i = 0; i < tagList.length(); i++){
+    for(int i = 0; i < tagList.length(); i++){
         convertShapes2paths(tagList.item(i));
     }
 }
@@ -317,7 +317,7 @@ int SVG2gerber::allPaths2gerber(ForWhy forWhy) {
     }
 
     // circles
-    for(uint i = 0; i < circleList.length(); i++){
+    for(int i = 0; i < circleList.length(); i++){
         QDomElement circle = circleList.item(i).toElement();
 
         double centerx = circle.attribute("cx").toDouble();
@@ -396,7 +396,7 @@ int SVG2gerber::allPaths2gerber(ForWhy forWhy) {
 
     if (forWhy != ForDrill) {
         // rects
-        for(uint j = 0; j < rectList.length(); j++){
+        for(int j = 0; j < rectList.length(); j++){
             QDomElement rect = rectList.item(j).toElement();
 
             QString aperture;
@@ -477,7 +477,7 @@ int SVG2gerber::allPaths2gerber(ForWhy forWhy) {
         }
     
         // lines - NOTE: this assumes a circular aperture
-        for(uint k = 0; k < lineList.length(); k++){
+        for(int k = 0; k < lineList.length(); k++){
             QDomElement line = lineList.item(k).toElement();
 
             // Note: should be no forWhy == ForMask cases 
@@ -507,7 +507,7 @@ int SVG2gerber::allPaths2gerber(ForWhy forWhy) {
         }
 
         // polys - NOTE: assumes comma- or space- separated formatting
-        for(uint p = 0; p < polyList.length(); p++) {
+        for(int p = 0; p < polyList.length(); p++) {
                         QDomElement polygon = polyList.item(p).toElement();
                         doPoly(polygon, forWhy, true, apertureMap, current_dcode, dcode_index);
         }
@@ -518,7 +518,7 @@ int SVG2gerber::allPaths2gerber(ForWhy forWhy) {
     }
 
     // paths - NOTE: this assumes circular aperture
-    for(uint n = 0; n < pathList.length(); n++){
+    for(int n = 0; n < pathList.length(); n++){
         QDomElement path = pathList.item(n).toElement();
 
         if (forWhy == ForDrill) {

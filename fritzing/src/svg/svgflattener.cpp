@@ -43,7 +43,7 @@ void SvgFlattener::flattenChildren(QDomElement &element){
     // recurse the children
     QDomNodeList childList = element.childNodes();
 
-    for(uint i = 0; i < childList.length(); i++){
+    for(int i = 0; i < childList.length(); i++){
         QDomElement child = childList.item(i).toElement();
         flattenChildren(child);
     }
@@ -182,7 +182,7 @@ void SvgFlattener::unRotateChild(QDomElement & element, QMatrix transform) {
     // recurse the children
     QDomNodeList childList = element.childNodes();
 
-    for(uint i = 0; i < childList.length(); i++){
+    for(int i = 0; i < childList.length(); i++){
         QDomElement child = childList.item(i).toElement();
         unRotateChild(child, transform);
     }

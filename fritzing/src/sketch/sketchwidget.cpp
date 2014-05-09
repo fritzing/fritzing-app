@@ -717,7 +717,7 @@ void SketchWidget::addWireExtras(long newID, QDomElement & view, QUndoCommand * 
 	new WireExtrasCommand(this, newID, copy, copy, parentCommand);
 }
 
-void SketchWidget::setWireExtras(long newID, const QDomElement & extras)
+void SketchWidget::setWireExtras(long newID, QDomElement & extras)
 {
 	Wire * wire = qobject_cast<Wire *>(findItem(newID));
 	if (wire == NULL) return;
@@ -9497,7 +9497,7 @@ void SketchWidget::selectItems(QList<ItemBase *> startingItemBases) {
 
     if (theSame) return;
 
-    bool count = 0;
+    int count = 0;
     ItemBase * theItemBase = NULL;
     foreach(ItemBase * itemBase, itemBases) {
         if (itemBase) {

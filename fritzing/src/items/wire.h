@@ -123,7 +123,7 @@ public:
 	double width();
 	double shadowWidth();
 	double mils();
-	void setExtras(const QDomElement &, InfoGraphicsView *);
+    void setExtras(QDomElement &, InfoGraphicsView *);
 	Wire * findTraced(ViewGeometry::WireFlags flags, QList<ConnectorItem *>  & ends);
 	bool draggingEnd();
 	void simpleConnectedMoved(ConnectorItem * to);
@@ -208,7 +208,7 @@ protected:
 	bool connectionIsAllowed(ConnectorItem *);
 	bool releaseDrag();
 	void setIgnoreSelectionChange(bool);
-	virtual void setColorFromElement(const QDomElement & element);
+    virtual void setColorFromElement(QDomElement & element);
 	void checkVisibility(ConnectorItem * onMe, ConnectorItem * onIt, bool connect);
 	void setConnectorDimensionsAux(ConnectorItem *, double width, double height);
 	bool isBendpoint(ConnectorItem * connectorItem);

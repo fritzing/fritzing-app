@@ -104,7 +104,7 @@ public:
 	bool collectFemaleConnectees(QSet<ItemBase *> & items);
 	void collectWireConnectees(QSet<class Wire *> & wires);
 	void clearModelPart();
-	bool mousePressEvent(PaletteItemBase * originalItem, QGraphicsSceneMouseEvent *);
+    bool mousePressEventK(PaletteItemBase * originalItem, QGraphicsSceneMouseEvent *);
 	void resetID();
 	void slamZ(double z);
 	void resetImage(class InfoGraphicsView *);

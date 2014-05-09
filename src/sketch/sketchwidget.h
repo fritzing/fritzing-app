@@ -322,7 +322,7 @@ public:
 	void setAnyInRotation();
 	ConnectorItem * findConnectorItem(ConnectorItem * foreignConnectorItem);
 	void setGroundFillSeed(long id, const QString & connectorID, bool seed);
-	void setWireExtras(long id, const QDomElement &);
+    void setWireExtras(long id, QDomElement &);
     void resolveTemporary(bool, ItemBase *);
 	virtual bool sameElectricalLayer2(ViewLayer::ViewLayerID, ViewLayer::ViewLayerID);
 	void deleteMiddle(QSet<ItemBase *> & deletedItems, QUndoCommand * parentCommand);

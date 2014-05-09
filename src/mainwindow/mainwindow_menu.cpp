@@ -2343,7 +2343,7 @@ void MainWindow::openNewPartsEditor(PaletteItem * paletteItem)
     }
 
     PEMainWindow * peMainWindow = new PEMainWindow(m_referenceModel, NULL);
-    peMainWindow->init(m_referenceModel, NULL);
+    peMainWindow->init(m_referenceModel, false);
    if (peMainWindow->setInitialItem(paletteItem)) {   
 	    peMainWindow->show();
 	    peMainWindow->raise();

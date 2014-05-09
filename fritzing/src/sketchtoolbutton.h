@@ -52,7 +52,7 @@ class SketchToolButton : public QToolButton, public AbstractStatesButton {
 	protected:
 		QString imagePrefix();
 		void setImage(const QPixmap & pixmap);
-		void setupIcons(const QString &imageName);
+        void setupIcons(const QString &imageName, bool hasStates=true);
 
 		void actionEvent(QActionEvent *);
 		void mousePressEvent(QMouseEvent *);

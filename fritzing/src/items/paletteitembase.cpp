@@ -225,7 +225,7 @@ bool PaletteItemBase::acceptsMousePressConnectorEvent(ConnectorItem *, QGraphics
 }
 
 
-bool PaletteItemBase::mousePressEvent(PaletteItemBase * originalItem, QGraphicsSceneMouseEvent *event)
+bool PaletteItemBase::mousePressEventK(PaletteItemBase * originalItem, QGraphicsSceneMouseEvent *event)
 {
 	Q_UNUSED(originalItem);
 
@@ -263,11 +263,11 @@ bool PaletteItemBase::mousePressEvent(PaletteItemBase * originalItem, QGraphicsS
     return false;
 }
 
-void PaletteItemBase::mouseMoveEvent(PaletteItemBase *, QGraphicsSceneMouseEvent *)
+void PaletteItemBase::mouseMoveEventK(PaletteItemBase *, QGraphicsSceneMouseEvent *)
 {
 }
 
-void PaletteItemBase::mouseReleaseEvent(PaletteItemBase *, QGraphicsSceneMouseEvent *)
+void PaletteItemBase::mouseReleaseEventK(PaletteItemBase *, QGraphicsSceneMouseEvent *)
 {
 }
 

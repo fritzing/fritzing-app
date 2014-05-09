@@ -1235,7 +1235,7 @@ Wire * ConnectorItem::directlyWiredToAux(ConnectorItem * source, ConnectorItem *
 		}
 	}
 
-	return false;
+    return NULL;
 }
 
 bool ConnectorItem::isConnectedToPart() {

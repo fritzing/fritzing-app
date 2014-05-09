@@ -1340,6 +1340,28 @@ bool MainWindow::eventFilter(QObject *object, QEvent *event) {
 		ProcessEventBlocker::processEvents();
 	}
 
+#if defined(Q_OS_MAC) && (QT_VERSION >= QT_VERSION_CHECK(5, 0, 0))
+
+    // Need to process Backspace on Mac to workaround bug in Qt5
+    // See http://qt-project.org/forums/viewthread/36174
+
+    if (event->type() == QEvent::KeyPress) {
+        QKeyEvent *keyEvent = static_cast<QKeyEvent *>(event);
+
+        if (keyEvent->key() == Qt::Key_Backspace) {
+            Qt::KeyboardModifiers modifiers = keyEvent->modifiers();
+            if (modifiers == Qt::NoModifier) {
+                doDelete();
+                return true;
+            }
+            if (modifiers == Qt::AltModifier) {
+                doDeleteMinus();
+                return true;
+            }
+        }
+    }
+#endif
+
 	return QMainWindow::eventFilter(object, event);
 }
 

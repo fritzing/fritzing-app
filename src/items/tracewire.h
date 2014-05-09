@@ -64,7 +64,7 @@ public:
 
 
 protected:
-	void setColorFromElement(QDomElement & element);
+    void setColorFromElement(QDomElement & element);
 
 protected slots:
 	void widthEntry(const QString & text);

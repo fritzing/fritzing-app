@@ -136,10 +136,10 @@ void InfoGraphicsView::rotateFlipPartLabel(ItemBase * itemBase, double degrees, 
 	Q_UNUSED(flipDirection);
 }
 
-void InfoGraphicsView::noteSizeChanged(ItemBase * itemBase, const QRectF & oldRect, const QRectF & newRect) {
+void InfoGraphicsView::noteSizeChanged(ItemBase * itemBase, const QSizeF & oldSize, const QSizeF & newSize) {
 	Q_UNUSED(itemBase);
-	Q_UNUSED(oldRect);
-	Q_UNUSED(newRect);
+    Q_UNUSED(oldSize);
+    Q_UNUSED(newSize);
 }
 
 bool InfoGraphicsView::spaceBarIsPressed() {

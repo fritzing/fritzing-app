@@ -404,7 +404,7 @@ PartsBinPaletteWidget* BinManager::openBinIn(QString fileName, bool fastLoad) {
 				tr("Fritzing Bin Files (*%1 *%2);;Fritzing Bin (*%1);;Fritzing Shareable Bin (*%2)")
 				.arg(FritzingBinExtension).arg(FritzingBundledBinExtension)
 		);
-		if (fileName.isNull()) return false;
+        if (fileName.isNull()) return NULL;
 	}
 	PartsBinPaletteWidget* bin = NULL;
 	bool createNewOne = false;

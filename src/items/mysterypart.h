@@ -49,7 +49,7 @@ public:
 	void setProp(const QString & prop, const QString & value);
 	void setChipLabel(QString label, bool force);
 	QString chipLabel();
-	const QString & title();
+    const QString & title();
 	bool hasCustomSVG();
 	PluralType isPlural();
 	void addedToScene(bool temporary);

@@ -30,6 +30,8 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 #include <QHash>
 #include <QVector>
 
+#if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
+// TODO: this debugging hack seems to break in Qt 5; needs investigation
 #ifdef Q_OS_WIN
 #ifndef QT_NO_DEBUG
 
@@ -43,6 +45,7 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 #define new DEBUG_NEW
 #endif
 
+#endif
 #endif
 #endif
 

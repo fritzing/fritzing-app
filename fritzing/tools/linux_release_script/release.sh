@@ -3,6 +3,9 @@ arch_aux=`uname -m`
 
 current_dir=$(pwd)
 
+echo "don't forget to set this script's QT_HOME variable"
+echo ""
+
 if [ "$1" = "" ]
 then
   echo "Usage: $0 <need a version string such as '0.6.4b' (without the quotes)>"
@@ -32,6 +35,10 @@ fi
 compile_folder="build-$arch_aux"
 #svn export http://fritzing.googlecode.com/svn/trunk/fritzing $compile_folder
 git clone https://code.google.com/p/fritzing/ $compile_folder
+
+echo "this git checkout is only temporary until the code is pushed to the master"
+cd $compile_folder/fritzing
+git checkout -b qt5 origin/qt5
 
 cd $current_dir
 cd $compile_folder/fritzing/src/lib
@@ -70,10 +77,10 @@ if [ "$arch_aux" == 'x86_64' ] ; then
 fi
 
 cd $compile_folder
-#QT_HOME="/home/jonathan/qtsdk-2010.05/qt"
+QT_HOME="/home/jonathan/Qt/5.2.1/gcc"
 #QT_HOME="/usr"
 #QT_HOME="/home/jonathan/QtSDK/Desktop/Qt/473/gcc"
-QT_HOME="/usr/local/Trolltech/Qt-4.8.3"
+#QT_HOME="/usr/local/Trolltech/Qt-4.8.3"
 
 cd fritzing
 $QT_HOME/bin/qmake CONFIG+=release DEFINES+=$quazip
@@ -94,29 +101,21 @@ mkdir lib
 mkdir lib/imageformats
 mkdir lib/sqldrivers
 mkdir translations
+mkdir lib/platforms
 
 cd lib
 echo "copying libraries"
 
-cp $QT_HOME/lib/libQtCore.so.4 $QT_HOME/lib/libQtGui.so.4 $QT_HOME/lib/libQtNetwork.so.4 $QT_HOME/lib/libQtSql.so.4 $QT_HOME/lib/libQtSvg.so.4  $QT_HOME/lib/libQtXml.so.4 $QT_HOME/lib/libQtXmlPatterns.so.4 .
+cp $QT_HOME/lib/libicudata.so.51 $QT_HOME/lib/libicui18n.so.51 $QT_HOME/lib/libicuuc.so.51 $QT_HOME/lib/libicudata.so.5 $QT_HOME/lib/libQt5Concurrent.so.5 $QT_HOME/lib/libQt5Core.so.5 $QT_HOME/lib/libQt5DBus.so.5 $QT_HOME/lib/libQt5Gui.so.5 $QT_HOME/lib/libQt5Network.so.5 $QT_HOME/lib/libQt5PrintSupport.so.5 $QT_HOME/lib/libQt5Sql.so.5 $QT_HOME/lib/libQt5Svg.so.5  $QT_HOME/lib/libQt5Xml.so.5 $QT_HOME/lib/libQt5Widgets.so.5 $QT_HOME/lib/libQt5XmlPatterns.so.5 .
 
 mv ../Fritzing .  				     # hide the executable in the lib folder
 mv ../Fritzing.sh ../Fritzing   		# rename Fritzing.sh to Fritzing
 chmod +x ../Fritzing
 
-# libaudio seems not to be needed anymore
-# if is i368 copy the libaudio
-#if [ $arch == 'i386' ]
-#    then
-#       cp /usr/lib/libaudio.so /usr/lib/libaudio.so.2 /usr/lib/libaudio.so.2.4 .
-#       echo "copying libaudio files"
-#    else
-#        echo "skipping libaudio files"
-#fi
-
 echo "copying plugins"
 cp $QT_HOME/plugins/imageformats/libqjpeg.so imageformats
 cp $QT_HOME/plugins/sqldrivers/libqsqlite.so sqldrivers
+cp $QT_HOME/plugins/platforms/libqxcb.so platforms
 
 echo "copying translations"
 cp ../../$compile_folder/fritzing/translations/ -r ../

@@ -40,13 +40,38 @@ win32 {
         DEFINES += _CRT_SECURE_NO_DEPRECATE
         DEFINES += _WINDOWS
 	RELEASE_SCRIPT = $$(RELEASE_SCRIPT)			# environment variable set from release script	
+	
 	isEmpty(RELEASE_SCRIPT) {
-		LIBS += $${PWD}/SetupAPI.Lib
 	}
 	!isEmpty(RELEASE_SCRIPT) {
 		LIBS += advapi32.lib   
-		LIBS += SetupAPI.lib   
 	}
+	#message("target arch: $${QMAKE_TARGET.arch}")
+	contains(QMAKE_TARGET.arch, x86_64) {
+		SETUPLIBPATH = "C:/Program Files (x86)/Microsoft SDKs/Windows/v7.1A/Lib/x64"
+		RELDIR = ../../release64
+		DEBDIR = ../../debug64
+		DEFINES += WIN64
+	}
+	!contains(QMAKE_TARGET.arch, x86_64) {
+		SETUPLIBPATH = "C:/Program Files (x86)/Microsoft SDKs/Windows/v7.1A/Lib"   
+		RELDIR = ../../release32
+		DEBDIR = ../../debug32
+	}
+	message("check your SetupAPI.lib path: $${SETUPLIBPATH}/SetupAPI.Lib")
+	LIBS += $${SETUPLIBPATH}/SetupAPI.Lib
+	
+	Release:DESTDIR = $${RELDIR}
+	Release:OBJECTS_DIR = $${RELDIR}
+	Release:MOC_DIR = $${RELDIR}
+	Release:RCC_DIR = $${RELDIR}
+	Release:UI_DIR = $${RELDIR}
+
+	Debug:DESTDIR = $${DEBDIR}
+	Debug:OBJECTS_DIR = $${DEBDIR}
+	Debug:MOC_DIR = $${DEBDIR}
+	Debug:RCC_DIR = $${DEBDIR}
+	Debug:UI_DIR = $${DEBDIR}
 }
 macx {
         MOC_DIR = build/moc

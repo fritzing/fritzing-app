@@ -200,6 +200,7 @@ protected:
     bool m_panelizerCustom;
     int m_portNumber;
     FServer * m_fServer;
+    QString m_buildType;
 };
 
 

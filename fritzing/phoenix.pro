@@ -74,8 +74,22 @@ win32 {
 	Debug:UI_DIR = $${DEBDIR}
 }
 macx {
-        MOC_DIR = build/moc
-        CONFIG += x86_64 x86 # ppc
+        RELDIR = ../../release64
+        DEBDIR = ../../debug64
+        Release:DESTDIR = $${RELDIR}
+        Release:OBJECTS_DIR = $${RELDIR}
+        Release:MOC_DIR = $${RELDIR}
+        Release:RCC_DIR = $${RELDIR}
+        Release:UI_DIR = $${RELDIR}
+
+        Debug:DESTDIR = $${DEBDIR}
+        Debug:OBJECTS_DIR = $${DEBDIR}
+        Debug:MOC_DIR = $${DEBDIR}
+        Debug:RCC_DIR = $${DEBDIR}
+        Debug:UI_DIR = $${DEBDIR}
+
+
+        CONFIG += x86_64 # x86 ppc
         QMAKE_INFO_PLIST = FritzingInfo.plist
         #DEFINES += QT_NO_DEBUG   		# uncomment this for xcode
         LIBS += /usr/lib/libz.dylib

@@ -1,9 +1,9 @@
 #!/bin/bash
 
-echo please check phoenix.pro to make sure that none of the platforms are commented out in the line:
-echo "    CONFIG += x86_64 x86 ppc"
+echo please check phoenix.pro to make sure that only x86_64 exists in the line:
+echo "    CONFIG += x86_64 #x86 ppc"
 
-QTBIN=/usr/local/Trolltech/Qt-4.8.5/bin
+QTBIN=/Users/jonathancohen/Qt/5.2.1/clang_64/bin
 
 tdir=`dirname $BASH_SOURCE`
 cd $tdir
@@ -14,12 +14,14 @@ echo "current directory"
 echo $currentdir
 
 echo building fritzing
-QTBIN/qmake -o Makefile phoenix.pro
-make release
+$QTBIN/qmake -o Makefile phoenix.pro
+make release  # release is the type of build, not the 
+releasedir=$currentdir/../../release64
 
-deploydir=$currentdir/../deploy
+deploydir=$currentdir/../../deploy
 echo "deploy directory"
 echo $deploydir
+echo $releasedir
 
 rm -rf $deploydir
 mkdir $deploydir
@@ -36,50 +38,32 @@ rm $fritzingdir/translations/*.ts
 find $fritzingdir/translations -name "*.qm" -size -128c -delete
 
 echo "still more cleaning"
-cd $fritzingdir
-rm control
-cd datasheets
-rm -rf *
-cd ..
-rmdir datasheets
-rm -rf deploy*
-rm -rf fritzing.*
-rm Fritzing.1
-rm Fritzing.sh
-rm -rf Fritzing*.plist
-rm -rf linguist*
-cd part-gen-scripts
-rm -rf *
-cd ..
-rmdir part-gen-scripts
-cd not_quite_ready
-rm -rf *
-cd ..
-rmdir not_quite_ready
-rm -rf phoenix*
-cd pri
-rm -rf *
-cd ..
-rmdir pri
-cd resources
-rm -rf *
-cd ..
-rmdir resources
-rm Setup*
-cd src
-rm -rf *
-cd ..
-rmdir src
-cd tools
-rm -rf *
-cd ..
-rmdir tools
-
-
-cd $currentdir
+rm $fritzingdir/control
+rm -rf $fritzingdir/datasheets/*
+rmdir $fritzingdir/datasheets
+rm -rf $fritzingdir/deploy*
+rm -rf $fritzingdir/fritzing.*
+rm $fritzingdir/Fritzing.1
+rm $fritzingdir/Fritzing.sh
+rm -rf $fritzingdir/Fritzing*.plist
+rm -rf $fritzingdir/linguist*
+rm -rf $fritzingdir/part-gen-scripts/*
+rmdir $fritzingdir/part-gen-scripts
+rm -rf $fritzingdir/not_quite_ready/*
+rmdir $fritzingdir/not_quite_ready
+rm -rf $fritzingdir/phoenix*
+rm -rf $fritzingdir/pri/*
+rmdir $fritzingdir/pri
+rm -rf $fritzingdir/resources/*
+rmdir $fritzingdir/resources
+rm $fritzingdir/Setup*
+rm -rf $fritzingdir/src/*
+rmdir $fritzingdir/src
+rm -rf $fritzingdir/tools/*
+rmdir $fritzingdir/tools
 
 echo mac deploy qt
-cp -r ./Fritzing.app $deploydir
+cp -r $releasedir/Fritzing.app $deploydir
 $QTBIN/macdeployqt $deploydir/Fritzing.app 
 cp -r $fritzingdir/* $deploydir/Fritzing.app/Contents/MacOS
 

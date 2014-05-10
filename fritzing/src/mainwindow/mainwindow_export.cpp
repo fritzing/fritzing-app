@@ -76,7 +76,7 @@ $Date: 2013-04-22 23:44:56 +0200 (Mo, 22. Apr 2013) $
 static QString eagleActionType = ".eagle";
 static QString gerberActionType = ".gerber";
 static QString jpgActionType = ".jpg";
-#if (QT_VERSION < 0x050000)
+#if (QT_VERSION < QT_VERSION_CHECK(5, 0, 0))
 static QString psActionType = ".ps";
 #endif
 static QString pdfActionType = ".pdf";
@@ -140,7 +140,7 @@ void MainWindow::initNames()
 	fileExtFormats[svgActionType] = tr("SVG Image (*.svg)");
 	fileExtFormats[bomActionType] = tr("BoM Text File (*.html)");
     
-#if (QT_VERSION < 0x050000)
+#if (QT_VERSION < QT_VERSION_CHECK(5, 0, 0))
     OtherKnownExtensions << psActionType;
 	filePrintFormats[psActionType] = QPrinter::PostScriptFormat;
 	fileExtFormats[psActionType] = tr("PostScript (*.ps)");

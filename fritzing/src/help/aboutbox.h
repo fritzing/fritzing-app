@@ -50,12 +50,14 @@ public:
 	static void hideAbout();
 	static void showAbout();
 	static void closeAbout(); // Maybe we don't need close as a public method (we only want to hide)
+    static void initBuildType(const QString &);
 
 public slots:
 	void scrollCredits();
 
 protected:
-	static AboutBox* singleton;
+	static AboutBox* Singleton;
+    static QString BuildType;
 
 protected:
 	void closeEvent ( QCloseEvent * event );

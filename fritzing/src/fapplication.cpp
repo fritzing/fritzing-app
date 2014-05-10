@@ -66,6 +66,7 @@ $Date: 2013-04-19 12:51:22 +0200 (Fr, 19. Apr 2013) $
 #include "sketch/sketchwidget.h"
 #include "sketch/pcbsketchwidget.h"
 #include "help/firsttimehelpdialog.h"
+#include "help/aboutbox.h"
 
 // dependency injection :P
 #include "referencemodel/sqlitereferencemodel.h"
@@ -93,10 +94,14 @@ $Date: 2013-04-19 12:51:22 +0200 (Fr, 19. Apr 2013) $
 #define PLATFORM_NAME "linux-64bit"
 #endif
 #ifdef Q_OS_WIN
+#ifdef WIN64
+#define PLATFORM_NAME "windows-64bit"
+#else
 #define PLATFORM_NAME "windows"
 #endif
+#endif
 #ifdef Q_OS_MAC
-#if (QT_VERSION > 0x050000) || defined(QT_MAC_USE_COCOA)
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)) || defined(QT_MAC_USE_COCOA)
 #define PLATFORM_NAME "mac-os-x-105"
 #else
 #define PLATFORM_NAME "mac-os-x-104"
@@ -513,6 +518,17 @@ bool FApplication::init() {
 	SvgIconWidget::initNames();
 	PinHeader::initNames();
 	CursorMaster::initCursors();
+
+#ifdef Q_OS_MAC
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)) || defined(QT_MAC_USE_COCOA)
+	m_buildType = " Cocoa";
+#else
+	m_buildType = " Carbon";
+#endif
+#else
+    m_buildType = QString(PLATFORM_NAME).contains("64") ? "64" : "32";
+#endif
+    AboutBox::initBuildType(m_buildType);
 
 	return true;
 }
@@ -1290,23 +1306,15 @@ void FApplication::initSplash(FSplashScreen & splash) {
 							.arg(Version::year());
 	splash.showMessage(msg1, "fhpText", Qt::AlignLeft | Qt::AlignTop);
 
-	QString macBuildType;
-#ifdef Q_OS_MAC
-#if (QT_VERSION > 0x050000) || defined(QT_MAC_USE_COCOA)
-	macBuildType = " Cocoa";
-#else
-	macBuildType = " Carbon";
-#endif
-#endif
 	QString msg2 = QObject::tr("<font face='Lucida Grande, Tahoma, Sans Serif' size='2' color='#eaf4ed'>"
-							   "Version %1.%2.%3 (%4%5)%6"
+							   "Version %1.%2.%3 (%4%5) %6"
 							   "</font>")
 						.arg(Version::majorVersion())
 						.arg(Version::minorVersion())
 						.arg(Version::minorSubVersion())
 						.arg(Version::modifier())
 						.arg(Version::shortDate())
-						.arg(macBuildType);
+						.arg(m_buildType);
 	splash.showMessage(msg2, "versionText", Qt::AlignRight | Qt::AlignTop);
     splash.show();
 }

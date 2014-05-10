@@ -7,6 +7,15 @@ phoenix.pro.user
 *.user
 *.user*
 
+# visual studio folders and files #
+#####################
+*.sdf
+*.opensdf
+*.sln
+*.vcxproj
+*.vcxproj.*
+
+
 Makefile*
 
 # no longer keep boost library in the source #

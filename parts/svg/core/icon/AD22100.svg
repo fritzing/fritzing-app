@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.2.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16.527px"
+	 height="24.082px" viewBox="0 0 16.527 24.082" enable-background="new 0 0 16.527 24.082" xml:space="preserve">
+<rect id="connector1pin" x="0" y="22.082" fill="none" width="2.16" height="1"/>
+<rect id="connector2pin" x="7.181" y="22.082" fill="none" width="2.157" height="1"/>
+<rect id="connector3pin" x="14.367" y="22.082" fill="none" width="2.16" height="1"/>
+<line id="connector1leg" fill="none" stroke="#8C8C8C" stroke-width="2.16" stroke-linecap="round" x1="1.08" y1="24.082" x2="1.08" y2="31.259"/>
+<line id="connector2leg" fill="none" stroke="#8C8C8C" stroke-width="2.16" stroke-linecap="round" x1="8.26" y1="24.082" x2="8.26" y2="31.259"/>
+<line id="connector3leg" fill="none" stroke="#8C8C8C" stroke-width="2.16" stroke-linecap="round" x1="15.447" y1="24.082" x2="15.447" y2="31.259"/>
+<rect id="rect9506" x="7.177" y="14.73" fill="#8C8C8C" width="2.154" height="9.352"/>
+<path id="path9510" fill="#8C8C8C" d="M3.287,14.73v3.314c0,0.424-0.782,1.061-1.198,1.428c-1.022,0.891-2.088,1.816-2.088,2.99
+	v1.619h2.154c0,0,0-1,0-1.211c0-0.518,0.904-1.391,1.35-1.77c0.997-0.871,1.945-1.689,1.945-2.75V14.73H3.287L3.287,14.73z"/>
+<path id="path9514" fill="#8C8C8C" d="M13.22,14.73v3.314c0,0.424,0.779,1.061,1.197,1.428c1.027,0.891,2.089,1.816,2.089,2.99
+	v1.619h-2.151c0,0,0-1,0-1.211c0-0.518-0.904-1.391-1.353-1.77c-0.998-0.871-1.942-1.689-1.942-2.75V14.73H13.22L13.22,14.73z"/>
+<rect id="rect9553" x="1.615" y="4.659" fill="#1A1A1A" width="13.278" height="10.069"/>
+<path id="path9555" fill="#141414" d="M13.888,4.659v2.453v8.228v1.844c0.633-0.715,1.005-1.555,1.005-2.453l0,0V4.659H13.888z"/>
+<path id="path9557" fill="#242424" d="M2.621,4.659H1.616v10.069l0,0c0,0.898,0.373,1.738,1.005,2.453v-1.844V7.112V4.659z"/>
+<path id="path9559" fill="#1F1F1F" d="M1.615,4.659L1.615,4.659c0,0.899,0.373,1.74,1.005,2.453h11.276
+	c0.632-0.713,1.005-1.554,1.005-2.453l0,0H1.615z"/>
+<path id="path9561" fill="#141414" d="M8.255,0c-3.668,0-6.64,2.086-6.64,4.661h13.278C14.893,2.086,11.923,0,8.255,0z"/>
+<rect id="rect9563" x="2.621" y="7.112" width="11.276" height="10.07"/>
+<g id="ADI_Logo">
+	<rect id="_x30_.5.0" x="3.94" y="7.9" fill="#A6A395" width="3.857" height="3.587"/>
+	<polygon id="_x30_.5.1" fill="#3D3D3D" points="4.557,11.041 4.557,8.35 7.333,9.706 	"/>
+</g>
+<g id="_x30_.6" transform="matrix(0 1 -1 0 16.8022 8.6499)">
+	<text id="_x30_.6.0" transform="matrix(0 -1 1 0 2.27 8.5392)" fill="#A69595" font-family="'ArialMT'" font-size="4">AD</text>
+</g>
+<g id="_x30_.6_1_" transform="matrix(0 1 -1 0 16.8022 8.6499)">
+	<text id="_x30_.6.0_1_" transform="matrix(0 -1 1 0 6.7476 13.8625)" fill="#A69595" font-family="'ArialMT'" font-size="4">22100</text>
+</g>
+</svg>

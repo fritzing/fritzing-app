@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="_x30_" xmlns:xml="http://www.w3.org/XML/1998/namespace"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="93.637px"
+	 height="72.001px" viewBox="7.746 0.751 93.637 72.001" enable-background="new 7.746 0.751 93.637 72.001" xml:space="preserve">
+<desc  id="0.0.0" oldid="0.0">
+	<referenceFile  id="0.0.0.0" oldid="0.0.0">SSM2220_Schematic.svg</referenceFile>
+</desc>
+<g id="subpart1">
+	<line id="connector3pin" fill="none" stroke="#000000" x1="29.383" y1="61.72" x2="29.383" y2="72.712"/>
+	<rect id="connector3terminal" x="29.381" y="72.712" fill="none" width="0.002" height="0.039"/>
+	<line id="connector2pin" fill="none" stroke="#000000" x1="19.043" y1="36.926" x2="7.783" y2="36.926"/>
+	<rect id="connector2terminal" x="7.746" y="36.923" fill="none" width="0.037" height="0.002"/>
+	<line id="connector1pin" fill="none" stroke="#000000" x1="29.383" y1="11.541" x2="29.383" y2="0.958"/>
+	<rect id="connector1terminal" x="29.381" y="0.922" fill="none" width="0.002" height="0.036"/>
+	<text id="_x30_.1.11" transform="matrix(0.8074 0 0 1 23.0442 69.8206)" font-family="'ArialMT'" font-size="4">C1</text>
+	<text id="_x30_.1.16" transform="matrix(0.8074 0 0 1 22.1829 7.9514)" font-family="'ArialMT'" font-size="4">E1</text>
+	<text id="_x30_.1.16_1_" transform="matrix(0.8074 0 0 1 8.8625 42.5198)" font-family="'ArialMT'" font-size="4">B1</text>
+	<g>
+		<line fill="none" stroke="#000000" x1="19.051" y1="29.892" x2="19.051" y2="43.897"/>
+		<line fill="none" stroke="#000000" x1="29.301" y1="51.422" x2="19.051" y2="40.022"/>
+		<line fill="none" stroke="#000000" x1="29.383" y1="22.351" x2="19.051" y2="33.892"/>
+		<line fill="none" stroke="#000000" x1="29.383" y1="51.151" x2="29.383" y2="61.698"/>
+		<line fill="none" stroke="#000000" x1="29.383" y1="11.541" x2="29.383" y2="22.809"/>
+		<polygon id="_x30_.5.1" points="22.299,30.4 24.144,24.648 27.787,27.911 		"/>
+	</g>
+</g>
+<g id="subpart2">
+	<line id="connector4pin" fill="none" stroke="#A7A5A6" x1="43.522" y1="72.732" x2="43.522" y2="58.366"/>
+	<rect id="connector4terminal" x="43.52" y="72.732" fill="none" width="0.002" height="0.021"/>
+	<line id="connector5pin" fill="none" stroke="#A7A5A6" x1="65.383" y1="72.736" x2="65.383" y2="58.368"/>
+	<rect id="connector5terminal" x="65.339" y="72.747" fill="none" width="0.044" height="0.004"/>
+	<text id="_x30_.1.16_2_" transform="matrix(0.8074 0 0 1 40.783 56.3508)" fill="#A7A5A6" font-family="'ArialMT'" font-size="4">NC</text>
+	<text id="_x30_.1.16_3_" transform="matrix(0.8074 0 0 1 62.844 56.3508)" fill="#A7A5A6" font-family="'ArialMT'" font-size="4">NC</text>
+	<text id="_x30_.1.22" transform="matrix(0.9059 0 0 1 46.5359 28.0247)" font-family="'ArialMT'" font-size="4">SSM2220</text>
+</g>
+<g id="subpart3">
+	<line id="connector8pin" fill="none" stroke="#000000" x1="79.735" y1="11.741" x2="79.735" y2="0.751"/>
+	<rect id="connector8terminal" x="79.735" y="0.884" fill="none" width="0.004" height="0.073"/>
+	<line id="connector7pin" fill="none" stroke="#000000" x1="101.336" y1="36.767" x2="90.314" y2="36.767"/>
+	<rect id="connector7terminal" x="101.336" y="36.765" fill="none" width="0.047" height="0.002"/>
+	<line id="connector6pin" fill="none" stroke="#000000" x1="79.735" y1="72.706" x2="79.735" y2="62.183"/>
+	<rect id="connector6terminal" x="79.733" y="72.706" fill="none" width="0.002" height="0.045"/>
+	<text id="_x30_.1.9" transform="matrix(0.8074 0 0 1 81.5916 69.0901)" font-family="'ArialMT'" font-size="4">C2</text>
+	<text id="_x30_.1.20" transform="matrix(0.8074 0 0 1 94.5154 42.8616)" font-family="'ArialMT'" font-size="4">B2</text>
+	<line fill="none" stroke="#000000" x1="90.328" y1="43.94" x2="90.328" y2="29.69"/>
+	<g>
+		<text id="_x30_.1.19" transform="matrix(0.8074 0 0 1 82.3318 7.1516)" font-family="'ArialMT'" font-size="4">E2</text>
+		<line fill="none" stroke="#000000" x1="90.068" y1="40.065" x2="79.819" y2="51.378"/>
+		<line fill="none" stroke="#000000" x1="90.068" y1="33.69" x2="79.735" y2="22.148"/>
+		<line fill="none" stroke="#000000" x1="79.735" y1="62.165" x2="79.735" y2="51.106"/>
+		<line fill="none" stroke="#000000" x1="79.735" y1="22.607" x2="79.735" y2="11.741"/>
+		<polygon id="_x30_.5.1_1_" points="81.332,27.685 84.977,24.422 86.821,30.174 		"/>
+	</g>
+</g>
+</svg>

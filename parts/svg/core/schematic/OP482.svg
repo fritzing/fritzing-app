@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1 Tiny//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-tiny.dtd">
+<svg version="1.1" baseProfile="tiny" id="_x30_" xmlns:xml="http://www.w3.org/XML/1998/namespace"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="64.898px"
+	 height="59.845px" viewBox="0.449 3.328 64.898 59.845" xml:space="preserve">
+<desc  oldid="0.0" id="0.0.0">
+	<referenceFile  oldid="0.0.0" id="0.0.0.0">Schematic.AD584.svg</referenceFile>
+</desc>
+<line id="connector1pin" fill="none" stroke="#000000" x1="14.849" y1="11.027" x2="0.449" y2="11.027"/>
+<rect id="connector1terminal" x="0.449" y="10.956" fill="none" width="0.004" height="0.071"/>
+<line id="connector2pin" fill="none" stroke="#000000" x1="14.849" y1="18.227" x2="0.449" y2="18.227"/>
+<rect id="connector2terminal" x="0.449" y="18.224" fill="none" width="0.07" height="0.005"/>
+<line id="connector3pin" fill="none" stroke="#000000" x1="14.849" y1="25.43" x2="0.449" y2="25.43"/>
+<rect id="connector3terminal" x="0.449" y="25.43" fill="none" width="0.006" height="0.074"/>
+<line id="connector4pin" fill="none" stroke="#000000" x1="0.449" y1="32.627" x2="14.849" y2="32.627"/>
+<rect id="connector4terminal" x="0.449" y="32.588" width="0.004" height="0.039"/>
+<line id="connector11pin" fill="none" stroke="#000000" x1="65.346" y1="32.629" x2="50.944" y2="32.629"/>
+<rect id="connector11terminal" x="65.25" y="32.666" width="0.006" height="0.088"/>
+<line id="connector12pin" fill="none" stroke="#000000" x1="65.346" y1="25.43" x2="50.944" y2="25.43"/>
+<rect id="connector12terminal" x="65.25" y="25.43" width="0.006" height="0.088"/>
+<line id="connector13pin" fill="none" stroke="#000000" x1="65.348" y1="18.228" x2="50.944" y2="18.228"/>
+<polygon id="connector13terminal" fill="none" points="65.25,18.224 65.344,18.224 65.344,18.228 65.344,18.228 "/>
+<line id="connector14pin" fill="none" stroke="#000000" x1="50.944" y1="11.029" x2="65.344" y2="11.029"/>
+<polygon id="connector14terminal" fill="none" points="65.25,10.882 65.256,10.882 65.344,11.029 65.25,11.029 "/>
+<text id="_x30_.1.9" transform="matrix(0.8074 0 0 1 41.6487 27.9629)" font-family="'ArialMT'" font-size="4">+IND</text>
+<text transform="matrix(0.8074 0 0 1 16.2864 27.9629)" font-family="'ArialMT'" font-size="4">+</text>
+<text transform="matrix(0.8074 0 0 1 18.1726 27.9629)" font-family="'ArialMT'" font-size="4">I</text>
+<text transform="matrix(0.8074 0 0 1 19.0696 27.9629)" font-family="'ArialMT'" font-size="4">N</text>
+<text transform="matrix(0.8074 0 0 1 21.4021 27.9629)" font-family="'ArialMT'" font-size="4">A</text>
+<text transform="matrix(0.8074 0 0 1 16.2864 13.5625)" font-family="'ArialMT'" font-size="4">O</text>
+<text transform="matrix(0.8074 0 0 1 18.7986 13.5625)" font-family="'ArialMT'" font-size="4">U</text>
+<text transform="matrix(0.8074 0 0 1 21.1306 13.5625)" font-family="'ArialMT'" font-size="4">T</text>
+<text transform="matrix(0.8074 0 0 1 22.864 13.5625)" font-family="'ArialMT'" font-size="4">A</text>
+<text transform="matrix(0.8074 0 0 1 42.5432 20.7637)" font-family="'ArialMT'" font-size="4">-IND</text>
+<text transform="matrix(0.8074 0 0 1 16.2864 20.7637)" font-family="'ArialMT'" font-size="4">-</text>
+<text transform="matrix(0.8074 0 0 1 17.3621 20.7637)" font-family="'ArialMT'" font-size="4">I</text>
+<text transform="matrix(0.8074 0 0 1 18.259 20.7637)" font-family="'ArialMT'" font-size="4">N</text>
+<text transform="matrix(0.8074 0 0 1 20.5916 20.7637)" font-family="'ArialMT'" font-size="4">A</text>
+<text id="_x30_.1.16_2_" transform="matrix(0.8074 0 0 1 16.2864 35.1621)" font-family="'ArialMT'" font-size="4">V+</text>
+<text transform="matrix(0.8074 0 0 1 45.885 35.1621)" font-family="'ArialMT'" font-size="4">V</text>
+<text transform="matrix(0.8074 0 0 1 47.8616 35.1621)" font-family="'ArialMT'" font-size="4">-</text>
+<text id="_x30_.1.16_4_" transform="matrix(0.8074 0 0 1 40.7444 13.5625)" font-family="'ArialMT'" font-size="4">OUTD</text>
+<text id="_x30_.1.22" transform="matrix(0.9059 0 0 1 26.6863 9.5625)" font-family="'ArialMT'" font-size="4">OP482</text>
+<polygon fill="none" stroke="#000000" points="14.849,3.828 50.944,3.829 50.944,62.618 14.824,62.672 "/>
+<line id="connector5pin" fill="none" stroke="#000000" x1="14.948" y1="39.943" x2="0.548" y2="39.943"/>
+<rect id="connector5terminal" x="0.548" y="39.871" fill="none" width="0.004" height="0.072"/>
+<line id="connector6pin" fill="none" stroke="#000000" x1="14.948" y1="47.143" x2="0.548" y2="47.143"/>
+<rect id="connector6terminal" x="0.548" y="47.141" fill="none" width="0.071" height="0.004"/>
+<line id="connector7pin" fill="none" stroke="#000000" x1="14.948" y1="54.346" x2="0.548" y2="54.346"/>
+<rect id="connector7terminal" x="0.548" y="54.346" fill="none" width="0.006" height="0.074"/>
+<line id="connector8pin" fill="none" stroke="#000000" x1="65.346" y1="54.419" x2="50.944" y2="54.419"/>
+<rect id="connector8terminal" x="65.25" y="54.419" width="0.006" height="0.088"/>
+<line id="connector9pin" fill="none" stroke="#000000" x1="65.348" y1="47.217" x2="50.944" y2="47.217"/>
+<polygon id="connector9terminal" fill="none" points="65.25,47.213 65.344,47.213 65.344,47.217 65.344,47.217 "/>
+<line id="connector10pin" fill="none" stroke="#000000" x1="50.944" y1="40.02" x2="65.344" y2="40.02"/>
+<polygon id="connector10terminal" fill="none" points="65.25,39.871 65.256,39.871 65.344,40.02 65.25,40.02 "/>
+<text transform="matrix(0.8074 0 0 1 40.6526 56.2715)" font-family="'ArialMT'" font-size="4">OUTC</text>
+<text id="_x30_.1.11_1_" transform="matrix(0.8074 0 0 1 16.2893 56.2715)" font-family="'ArialMT'" font-size="4">OUTB</text>
+<text id="_x30_.1.16_7_" transform="matrix(0.8074 0 0 1 16.2893 41.8711)" font-family="'ArialMT'" font-size="4">+INB</text>
+<text transform="matrix(0.8074 0 0 1 42.5471 49.0723)" font-family="'ArialMT'" font-size="4">-INC</text>
+<text id="_x30_.1.16_6_" transform="matrix(0.8074 0 0 1 16.2893 49.0723)" font-family="'ArialMT'" font-size="4">-INB</text>
+<text transform="matrix(0.8074 0 0 1 41.7483 41.8711)" font-family="'ArialMT'" font-size="4">+INC</text>
+</svg>

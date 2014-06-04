@@ -23,6 +23,13 @@
                 </iconView>
             </views>
         </instance>  
+                    <instance moduleIdRef="arduino_Yun(rev1)" modelIndex="5548" path="pdb/core/arduino_Yun(rev1).fzp">
+          <views>
+              <iconView layer="icon">
+                  <geometry z="-1" x="-1" y="-1"/>
+              </iconView>
+          </views>
+      </instance>
 	     	    <instance moduleIdRef="Arduino_bt07" modelIndex="5548" path="pdb/core/Arduino_bt07.fzp">
           <views>
               <iconView layer="icon">

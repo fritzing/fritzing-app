@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1 Tiny//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-tiny.dtd">
+<svg version="1.1" baseProfile="tiny" id="_x30_" xmlns:xml="http://www.w3.org/XML/1998/namespace"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="72.173px"
+	 height="144.761px" viewBox="4.139 6.041 72.173 144.761" xml:space="preserve">
+<desc  oldid="0.0" id="0.0.0">
+	<referenceFile  oldid="0.0.0" id="0.0.0.0">SSM2220_Schematic.svg</referenceFile>
+</desc>
+<g id="subpart1">
+	<rect id="connector1terminal" x="76.217" y="35.254" fill="none" width="0.078" height="0.004"/>
+	<rect id="connector2terminal" x="4.139" y="20.852" fill="none" width="0.079" height="0.005"/>
+	<rect id="connector3terminal" x="4.141" y="49.654" fill="none" width="0.077" height="0.004"/>
+	<rect id="connector4terminal" x="40.218" y="63.914" fill="none" width="0.004" height="0.144"/>
+	<rect id="connector8terminal" x="40.218" y="6.45" fill="none" width="0.088" height="0.007"/>
+	<text id="_x30_.1.22" transform="matrix(0.9059 0 0 1 29.9727 30.7209)" font-family="'ArialMT'" font-size="4">ADTL082</text>
+	<line id="connector1pin" fill="none" stroke="#000000" x1="76.217" y1="35.324" x2="61.817" y2="35.257"/>
+	<line id="connector2pin" fill="none" stroke="#000000" x1="4.164" y1="20.925" x2="19.025" y2="20.925"/>
+	<line id="connector3pin" fill="none" stroke="#000000" x1="4.164" y1="49.658" x2="18.943" y2="49.658"/>
+	<line id="connector4pin" fill="none" stroke="#000000" x1="40.218" y1="64.13" x2="40.218" y2="49.658"/>
+	<line id="connector8pin" fill="none" stroke="#000000" x1="40.259" y1="20.858" x2="40.259" y2="6.462"/>
+	<text transform="matrix(0.8074 0 0 1 64.853 40.6526)" font-family="'ArialMT'" font-size="4">O</text>
+	<text transform="matrix(0.8074 0 0 1 67.3657 40.6526)" font-family="'ArialMT'" font-size="4">U</text>
+	<text transform="matrix(0.8074 0 0 1 69.6978 40.6526)" font-family="'ArialMT'" font-size="4">T</text>
+	<text transform="matrix(0.8074 0 0 1 71.4302 40.6526)" font-family="'ArialMT'" font-size="4">A</text>
+	<text id="_x30_.1.16_2_" transform="matrix(0.8074 0 0 1 42.2168 56.8567)" font-family="'ArialMT'" font-size="4">-V</text>
+	<text id="_x30_.1.16_4_" transform="matrix(0.8074 0 0 1 42.2168 15.2024)" font-family="'ArialMT'" font-size="4">+V</text>
+	<polyline id="_x30_.5.1_2_" fill="none" stroke="#000000" points="18.617,6.457 61.817,35.257 18.617,64.057 	"/>
+	<line id="_x30_.5.1" fill="none" stroke="#000000" x1="18.617" y1="64.057" x2="18.617" y2="6.457"/>
+	<line fill="none" stroke="#000000" x1="22.773" y1="23.521" x2="28.439" y2="23.521"/>
+	<line fill="none" stroke="#000000" x1="22.773" y1="45.386" x2="28.441" y2="45.386"/>
+	<line fill="none" stroke="#000000" x1="25.607" y1="48.22" x2="25.607" y2="42.552"/>
+	<text transform="matrix(1 0 0 1 5.6504 28.0569)" font-family="'MyriadPro-Regular'" font-size="4">-INA</text>
+	<text transform="matrix(1 0 0 1 5.1504 56.8567)" font-family="'MyriadPro-Regular'" font-size="4">+INA</text>
+</g>
+<g id="subpart2">
+	<rect id="connector5terminal" x="4.211" y="136.058" width="0.007" height="0.088"/>
+	<rect id="connector6terminal" x="4.213" y="107.258" width="0.005" height="0.146"/>
+	<rect id="connector7terminal" x="76.217" y="121.657" fill="none" width="0.096" height="0.004"/>
+	<line id="connector7pin" fill="none" stroke="#000000" x1="76.217" y1="121.652" x2="61.817" y2="121.585"/>
+	<line id="connector6pin" fill="none" stroke="#000000" x1="4.164" y1="107.253" x2="19.025" y2="107.253"/>
+	<line id="connector5pin" fill="none" stroke="#000000" x1="4.164" y1="135.986" x2="18.943" y2="135.986"/>
+	<text transform="matrix(0.8074 0 0 1 64.853 126.9802)" font-family="'ArialMT'" font-size="4">O</text>
+	<text transform="matrix(0.8074 0 0 1 67.3657 126.9802)" font-family="'ArialMT'" font-size="4">U</text>
+	<text transform="matrix(0.8074 0 0 1 69.6978 126.9802)" font-family="'ArialMT'" font-size="4">T</text>
+	<text transform="matrix(0.8074 0 0 1 71.4302 126.9802)" font-family="'ArialMT'" font-size="4">A</text>
+	<polyline id="_x30_.5.1_3_" fill="none" stroke="#000000" points="18.617,92.785 61.817,121.585 18.617,150.386 	"/>
+	<line id="_x30_.5.1_1_" fill="none" stroke="#000000" x1="18.617" y1="150.386" x2="18.617" y2="92.785"/>
+	<line fill="none" stroke="#000000" x1="22.773" y1="109.848" x2="28.439" y2="109.848"/>
+	<line fill="none" stroke="#000000" x1="22.773" y1="131.714" x2="28.441" y2="131.714"/>
+	<line fill="none" stroke="#000000" x1="25.607" y1="134.548" x2="25.607" y2="128.88"/>
+	<text transform="matrix(1 0 0 1 5.6504 114.3845)" font-family="'MyriadPro-Regular'" font-size="4">-INA</text>
+	<text transform="matrix(1 0 0 1 5.1504 143.1848)" font-family="'MyriadPro-Regular'" font-size="4">+INA</text>
+	<text id="_x30_.1.22_1_" transform="matrix(0.9059 0 0 1 29.9727 117.1208)" font-family="'ArialMT'" font-size="4">ADTL082</text>
+</g>
+</svg>

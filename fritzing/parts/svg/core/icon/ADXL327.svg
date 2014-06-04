@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.2.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1 Tiny//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-tiny.dtd">
+<svg version="1.1" baseProfile="tiny" id="_x30_" xmlns:xml="http://www.w3.org/XML/1998/namespace"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="57.318px"
+	 height="29.786px" viewBox="-0.023 0 57.318 29.786" xml:space="preserve">
+<desc  id="0.0">
+	<referenceFile  id="0.0.0">ADXL327_Breadboard.svg</referenceFile>
+</desc>
+<path id="_x30_.1" fill="#237B3D" d="M-0.023,0v13.403v2.98v13.402h57.318V0H-0.023L-0.023,0z"/>
+<g id="IC">
+	<rect id="_x30_.3.0" x="23.24" y="9.78" fill="#303030" width="10.789" height="10.227"/>
+	<polygon id="_x30_.3.1" fill="#1F2020" points="34.029,9.78 34.029,20.006 33.303,19.456 33.303,10.33 	"/>
+	<polygon id="_x30_.3.2" fill="#1F2020" points="23.246,9.78 23.246,20.006 24.004,19.456 24.004,10.33 	"/>
+	<polygon id="_x30_.3.3" fill="#010101" points="34.031,9.78 23.24,9.78 24.004,10.33 33.271,10.33 	"/>
+	<polygon id="_x30_.3.4" fill="#3E3E3E" points="34.029,20.006 23.246,20.006 24.004,19.456 33.271,19.456 	"/>
+	<path id="_x30_.3.5" fill="#1F2020" d="M25.67,11.122c0,0.194-0.227,0.352-0.504,0.352c-0.275,0-0.504-0.157-0.504-0.352
+		c0-0.193,0.229-0.352,0.504-0.352C25.443,10.77,25.67,10.928,25.67,11.122z"/>
+</g>
+<g id="_x30_.6" transform="matrix(0 1 -1 0 16.8022 8.6499)">
+	<text id="_x30_.6.0" transform="matrix(0 -1 1 0 5.4727 -7.5269)" fill="#A69595" font-family="'ArialMT'" font-size="2">ADXL327</text>
+</g>
+<g id="_x30_.7" transform="matrix(1 0 0 1 2.6021 22.3833)">
+	<text id="_x30_.7.0" transform="matrix(1 0 0 1 -6.103516e-005 0)" fill="#D6D8D6" font-family="'ArialMT'" font-size="5">1</text>
+</g>
+<g id="_x30_.8" transform="matrix(0 -1 1 0 26.9468 21.3833)">
+	<text id="_x30_.8.0" transform="matrix(1 0 0 1 -0.1953 12.4438)" fill="#D6D8D6" font-family="'ArialMT'" font-size="5">IC9</text>
+</g>
+<g>
+	<rect id="_x30_.4.0" x="1.743" y="23.945" fill="#403619" stroke="#9A916C" stroke-width="1.5" width="3.5" height="3.5"/>
+	<circle id="connector1pin" fill="#403619" stroke="#9A916C" stroke-width="1.5" cx="3.492" cy="25.693" r="1.75"/>
+	<circle id="connector2pin" fill="#403619" stroke="#9A916C" stroke-width="1.5" cx="10.693" cy="25.695" r="1.75"/>
+	<circle id="connector3pin" fill="#403619" stroke="#9A916C" stroke-width="1.5" cx="17.89" cy="25.695" r="1.75"/>
+	<circle id="connector4pin" fill="#403619" stroke="#9A916C" stroke-width="1.5" cx="24.993" cy="25.693" r="1.75"/>
+	<circle id="connector5pin" fill="#403619" stroke="#9A916C" stroke-width="1.5" cx="32.195" cy="25.695" r="1.75"/>
+	<circle id="connector6pin" fill="#403619" stroke="#9A916C" stroke-width="1.5" cx="39.393" cy="25.695" r="1.75"/>
+	<circle id="connector7pin" fill="#403619" stroke="#9A916C" stroke-width="1.5" cx="46.577" cy="25.691" r="1.75"/>
+	<circle id="connector8pin" fill="#403619" stroke="#9A916C" stroke-width="1.5" cx="53.775" cy="25.691" r="1.75"/>
+	<circle id="connector9pin" fill="#403619" stroke="#9A916C" stroke-width="1.5" cx="53.773" cy="4.091" r="1.75"/>
+	<circle id="connector10pin" fill="#403619" stroke="#9A916C" stroke-width="1.5" cx="46.577" cy="4.089" r="1.75"/>
+	<circle id="connector11pin" fill="#403619" stroke="#9A916C" stroke-width="1.5" cx="39.391" cy="4.095" r="1.75"/>
+	<circle id="connector12pin" fill="#403619" stroke="#9A916C" stroke-width="1.5" cx="32.195" cy="4.093" r="1.75"/>
+	<circle id="connector13pin" fill="#403619" stroke="#9A916C" stroke-width="1.5" cx="24.993" cy="4.091" r="1.75"/>
+	<circle id="connector14pin" fill="#403619" stroke="#9A916C" stroke-width="1.5" cx="17.889" cy="4.095" r="1.75"/>
+	<circle id="connector15pin" fill="#403619" stroke="#9A916C" stroke-width="1.5" cx="10.693" cy="4.093" r="1.75"/>
+	<circle id="connector16pin" fill="#403619" stroke="#9A916C" stroke-width="1.5" cx="3.492" cy="4.091" r="1.75"/>
+
+
+</g>
+</svg>

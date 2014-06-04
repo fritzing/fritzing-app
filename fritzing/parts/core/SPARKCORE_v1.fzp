@@ -416,31 +416,10 @@ p, li { white-space: pre-wrap; }
   </connector>
  </connectors>
  <buses>
-  <bus id="mosi">
-   <nodeMember connectorId="connector44"/>
-   <nodeMember connectorId="connector47"/>
-  </bus>
-  <bus id="reset">
-   <nodeMember connectorId="connector45"/>
-   <nodeMember connectorId="connector68"/>
-  </bus>
-  <bus id="gnd">
-   <nodeMember connectorId="connector51"/>
-      <nodeMember connectorId="connector61"/>
-  </bus>
-  <bus id="miso">
-   <nodeMember connectorId="connector41"/>
-   <nodeMember connectorId="connector65"/>
-  </bus>
-  <bus id="+5v">
-   <nodeMember connectorId="connector42"/>
-   <nodeMember connectorId="connector69"/>
-  </bus>
-  <bus id="internal1"/>
-  <bus id="internal2">
-
-
-  </bus>
+<bus>
+<nodeMember connectorId="connector51"/>
+<nodeMember connectorId="connector61"/>
+</bus>
  </buses>
  <label>U</label>
 </module>

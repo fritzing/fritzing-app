@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE svg>
+<!-- Generator: Adobe Illustrator 16.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg xmlns="http://www.w3.org/2000/svg"  width="0.4in" xml:space="preserve" xmlns:xml="http://www.w3.org/XML/1998/namespace" x="0px" version="1.1" y="0px" height="0.413694in" viewBox="0 0 28.8 29.786" baseProfile="tiny" id="0">
+ <desc   id="0.0">
+  <referenceFile   id="0.0.0">AD8226_Breadboard.svg</referenceFile>
+ </desc>
+ <path  fill="#237B3D"  id="0.1" d="M-0.023,0v13.403v2.98v13.402h28.847V0H-0.023L-0.023,0z"/>
+ <g   id="ICpins">
+  <rect  width="5.5" x="5.74" y="8.091" fill="#8C8C8C"  height="1.874" id="0.2.0"/>
+  <rect  width="5.5" x="5.74" y="11.997" fill="#8C8C8C"  height="1.88" id="0.2.1"/>
+  <rect  width="5.5" x="5.74" y="15.911" fill="#8C8C8C"  height="1.875" id="0.2.2"/>
+  <rect  width="5.5" x="5.74" y="19.817" fill="#8C8C8C"  height="1.879" id="0.2.3"/>
+  <rect  width="5.87" x="17.19" y="19.817" fill="#8C8C8C"  height="1.879" id="0.2.4"/>
+  <rect  width="5.87" x="17.19" y="15.911" fill="#8C8C8C"  height="1.875" id="0.2.5"/>
+  <rect  width="5.87" x="17.19" y="11.997" fill="#8C8C8C"  height="1.88" id="0.2.6"/>
+  <rect  width="5.87" x="17.19" y="8.091" fill="#8C8C8C"  height="1.874" id="0.2.7"/>
+ </g>
+ <g   id="IC">
+  <rect  width="10.698" x="9.05" y="7.623" fill="#303030"  height="14.542" id="0.3.0"/>
+  <polygon  fill="#1F2020" points="19.748,7.623 19.748,22.165 19.029,21.383 19.029,8.404 "  id="0.3.1"/>
+  <polygon  fill="#1F2020" points="9.05,7.623 9.05,22.165 9.802,21.383 9.802,8.404 "  id="0.3.2"/>
+  <polygon  fill="#010101" points="19.75,7.623 9.049,7.623 9.802,8.404 18.998,8.404 "  id="0.3.3"/>
+  <polygon  fill="#3E3E3E" points="19.748,22.165 9.051,22.165 9.803,21.383 18.996,21.383 "  id="0.3.4"/>
+  <ellipse  fill="#1F2020" cx="10.958"  cy="9.53" rx="0.5" ry="0.5" id="0.3.5"/>
+ </g>
+ <g   id="Connectors">
+  <rect  width="3.5" x="1.852" y="23.944" fill="#403619"  height="3.5" stroke="#9A916C" id="0.4.0" stroke-width="1.5"/>
+  <circle  fill="#403619" cx="3.602"  cy="25.692" stroke="#9A916C" id="connector1pin" r="1.75" stroke-width="1.5"/>
+  <circle  fill="#403619" cx="10.803"  cy="25.694" stroke="#9A916C" id="connector2pin" r="1.75" stroke-width="1.5"/>
+  <circle  fill="#403619" cx="18.001"  cy="25.694" stroke="#9A916C" id="connector3pin" r="1.75" stroke-width="1.5"/>
+  <circle  fill="#403619" cx="25.197"  cy="25.692" stroke="#9A916C" id="connector4pin" r="1.75" stroke-width="1.5"/>
+  <circle  fill="#403619" cx="25.199"  cy="4.094" stroke="#9A916C" id="connector5pin" r="1.75" stroke-width="1.5"/>
+  <circle  fill="#403619" cx="18"  cy="4.094" stroke="#9A916C" id="connector6pin" r="1.75" stroke-width="1.5"/>
+  <circle  fill="#403619" cx="10.803"  cy="4.092" stroke="#9A916C" id="connector7pin" r="1.75" stroke-width="1.5"/>
+  <circle  fill="#403619" cx="3.603"  cy="4.091" stroke="#9A916C" id="connector8pin" r="1.75" stroke-width="1.5"/>
+ </g>
+ <g   id="ADI Logo">
+  <rect  width="3.5" x="12.801" y="8.649" fill="#A6A395"  height="3.5" id="0.5.0"/>
+  <polygon  fill="#3D3D3D" points="13.236,9.21 15.861,9.21 14.539,11.727  "  id="0.5.1"/>
+ </g>
+ <g   id="0.6" transform="matrix(0 1 -1 0 16.8022 8.6499)">
+  <text  fill="#A69595" font-family="Droid Sans"  id="0.6.0" font-size="3">AD8226</text>
+ </g>
+ <g   id="0.7" transform="matrix(1 0 0 1 2.6021 22.3833)">
+  <text  fill="#D6D8D6" font-family="Droid Sans"  id="0.7.0" font-size="5">1</text>
+ </g>
+ <g   id="0.8" transform="matrix(0 -1 1 0 26.9468 21.3833)">
+  <text  fill="#D6D8D6" font-family="Droid Sans"  id="0.8.0" font-size="5">IC1</text>
+ </g>
+</svg>

@@ -16,4 +16,7 @@
   <circle fill="none" cx="237.5" cy="37.5" stroke="rgb(255, 191, 0)" r="27.5" id="connector1pin" stroke-width="20" />
  </g>
  </g>
+  <g id="keepout" />
+ <g id="soldermask" />
+ <g id="outline" />
 </svg>

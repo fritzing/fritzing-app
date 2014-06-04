@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module fritzingVersion="0.7.12b.02.13.6882" icon="ADIcon.png">
+    <title>Analog Devices</title>
+    <instances>
+        <instance moduleIdRef="AnalogDevices_AD8226ARZ" modelIndex="82260000" path="ADI_AD8226.AnalogDevices_AD8226ARZ.fzp">
+        </instance> 
+        <instance moduleIdRef="AnalogDevices_SSM2220S" modelIndex="22200000" path="ADI_SSM2220.AnalogDevices_SSM2220S.fzp">
+        </instance> 
+        <instance moduleIdRef="AnalogDevices_SSM2212RZ" modelIndex="22120000" path="ADI_SSM2212.AnalogDevices_SSM2212RZ.fzp">
+        </instance>
+        <instance moduleIdRef="AnalogDevices_ADTL082ARZ" modelIndex="00820000" path="ADI_ADTL082.AnalogDevices_ADTL082ARZ.fzp">
+        </instance>
+        <instance moduleIdRef="AnalogDevices_AD8541ARZ" modelIndex="85410000" path="ADI_AD8541.AnalogDevices_AD8541ARZ.fzp">
+        </instance>
+        <instance moduleIdRef="AnalogDevices_ADP3300ARTZ" modelIndex="33000000" path="ADI_ADP3300.AnalogDevices_ADP3300ARTZ.fzp">
+        </instance>
+        <instance moduleIdRef="AnalogDevices_AD584JNZ" modelIndex="0584000" path="ADI_AD584.AnalogDevices_AD584JNZ.fzp">
+        </instance>
+        <instance moduleIdRef="AnalogDevices_AD654JNZ" modelIndex="0654000" path="ADI_AD654.AnalogDevices_AD654JNZ.fzp">
+        </instance>
+        <instance moduleIdRef="AnalogDevices_AD8561ANZ" modelIndex="8561000" path="ADI_AD8561.AnalogDevices_AD8561ANZ.fzp">
+        </instance>
+        <instance moduleIdRef="AnalogDevices_OP27GPZ" modelIndex="0027000" path="ADI_OP27.AnalogDevices_OP27GPZ.fzp">
+        </instance>
+        <instance moduleIdRef="AnalogDevices_OP37GPZ" modelIndex="0037000" path="ADI_OP37.AnalogDevices_OP37GPZ.fzp">
+        </instance>
+        <instance moduleIdRef="AnalogDevices_OP482GPZ" modelIndex="0482000" path="ADI_OP482.AnalogDevices_OP482GPZ.fzp">
+        </instance>
+        <instance moduleIdRef="AnalogDevices_AD8210YRZ" modelIndex="82100000" path="ADI_AD8210.AnalogDevices_AD8210YRZ.fzp">
+        </instance>
+        <instance moduleIdRef="AnalogDevices_AD22151YRZ" modelIndex="22151000" path="ADI_AD22151.AnalogDevices_AD22151YRZ.fzp">
+        </instance>
+        <instance moduleIdRef="AnalogDevices_ADXL327CPZ" modelIndex="03270000" path="ADI_ADXL327.AnalogDevices_ADXL327CPZ.fzp">
+        </instance>
+        <instance moduleIdRef="AnalogDevices_ADMP504CEZ" modelIndex="05040000" path="ADI_ADMP504.AnalogDevices_ADMP504CEZ.fzp">
+        </instance>
+        <instance moduleIdRef="AnalogDevices_AD22100KTZ" modelIndex="22100000" path="ADI_AD22100.AnalogDevices_AD22100KTZ.fzp">
+        </instance>
+        <instance moduleIdRef="AnalogDevices_TMP01FPZ" modelIndex="0091000" path="ADI_TMP01.AnalogDevices_TMP01FPZ.fzp">
+        </instance>
+    </instances>
+</module>

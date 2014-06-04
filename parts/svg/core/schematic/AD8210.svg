@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1 Tiny//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-tiny.dtd">
+<svg version="1.1" baseProfile="tiny" id="_x30_" xmlns:xml="http://www.w3.org/XML/1998/namespace"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="64.898px"
+	 height="38.043px" viewBox="0.449 -2.829 64.898 38.043" xml:space="preserve">
+<desc  oldid="0.0" id="0.0.0">
+	<referenceFile  oldid="0.0.0" id="0.0.0.0">Schematic.AD584.svg</referenceFile>
+</desc>
+<line id="connector1pin" fill="none" stroke="#000000" x1="14.85" y1="4.871" x2="0.449" y2="4.871"/>
+<rect id="connector1terminal" x="0.449" y="4.799" fill="none" width="0.004" height="0.071"/>
+<line id="connector2pin" fill="none" stroke="#000000" x1="14.85" y1="12.07" x2="0.449" y2="12.07"/>
+<rect id="connector3terminal" x="0.449" y="12.067" fill="none" width="0.071" height="0.005"/>
+<line id="connector3pin" fill="none" stroke="#000000" x1="14.85" y1="19.273" x2="0.449" y2="19.273"/>
+<rect id="connector3terminal" x="0.449" y="19.273" fill="none" width="0.006" height="0.074"/>
+<line id="connector4pin" fill="none" stroke="#000000" x1="0.449" y1="26.471" x2="14.85" y2="26.471"/>
+<rect id="connector4terminal" x="0.449" y="26.432" width="0.004" height="0.039"/>
+<line id="connector5pin" fill="none" stroke="#000000" x1="65.346" y1="26.473" x2="50.944" y2="26.473"/>
+<rect id="connector5terminal" x="65.251" y="26.51" width="0.006" height="0.088"/>
+<line id="connector6pin" fill="none" stroke="#000000" x1="65.346" y1="19.273" x2="50.944" y2="19.273"/>
+<rect id="connector6terminal" x="65.251" y="19.273" width="0.006" height="0.088"/>
+<line id="connector7pin" fill="none" stroke="#000000" x1="65.348" y1="12.071" x2="50.944" y2="12.071"/>
+<rect id="connector7terminal" x="65.251" y="12.071" width="0.006" height="0.088"/>
+<line id="connector8pin" fill="none" stroke="#000000" x1="50.944" y1="4.873" x2="65.344" y2="4.873"/>
+<rect id="connector8terminal" x="65.251" y="4.873" width="0.006" height="0.088"/>
+<text id="_x30_.1.9" transform="matrix(0.8074 0 0 1 44.6497 21.8066)" font-family="'ArialMT'" font-size="4">V+</text>
+<text id="_x30_.1.11" transform="matrix(0.8074 0 0 1 16.2864 21.8066)" font-family="'ArialMT'" font-size="4">VREF2</text>
+<text id="_x30_.1.16" transform="matrix(0.8074 0 0 1 16.2864 7.4067)" font-family="'ArialMT'" font-size="4">-IN</text>
+<text transform="matrix(0.8074 0 0 1 39.0305 14.6069)" font-family="'ArialMT'" font-size="4">VREF1</text>
+<text id="_x30_.1.16_1_" transform="matrix(0.8074 0 0 1 16.2864 14.6069)" font-family="'ArialMT'" font-size="4">GND</text>
+<text id="_x30_.1.16_2_" transform="matrix(0.8074 0 0 1 16.2864 29.0059)" font-family="'ArialMT'" font-size="4">NC</text>
+<text transform="matrix(0.8074 0 0 1 41.885 29.0059)" font-family="'ArialMT'" font-size="4">O</text>
+<text transform="matrix(0.8074 0 0 1 44.3977 29.0059)" font-family="'ArialMT'" font-size="4">U</text>
+<text transform="matrix(0.8074 0 0 1 46.7297 29.0059)" font-family="'ArialMT'" font-size="4">T</text>
+<text id="_x30_.1.16_4_" transform="matrix(0.8074 0 0 1 43.7444 7.4067)" font-family="'ArialMT'" font-size="4">+IN</text>
+<text id="_x30_.1.22" transform="matrix(0.9059 0 0 1 26.6863 3.4067)" font-family="'ArialMT'" font-size="4">AD8210</text>
+<polygon fill="none" stroke="#000000" points="14.85,-2.329 50.944,-2.328 51.028,34.715 14.778,34.715 "/>
+</svg>

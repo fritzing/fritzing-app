@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.2.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="50.764px"
+	 height="23.76px" viewBox="6.836 0 50.764 23.76" enable-background="new 6.836 0 50.764 23.76" xml:space="preserve">
+<rect id="middle" x="6.836" y="2.16" fill="#303030" width="50.764" height="19.44"/>
+<rect id="top" x="6.836" y="2.16" fill="#3D3D3D" width="50.764" height="1.771"/>
+<rect id="bottom" x="6.836" y="19.829" width="50.764" height="1.771"/>
+<polygon id="right" fill="#141414" points="57.6,2.16 57.06,3.931 57.06,19.829 57.6,21.601 "/>
+<polygon id="left" fill="#1F1F1F" points="6.836,2.156 7.376,3.927 7.376,19.825 6.836,21.597 "/>
+<g>
+	<polygon id="left-upper-rect" fill="#1C1C1C" points="10.581,8.28 7.523,8.251 7.386,9.777 7.386,11.88 10.581,11.88 	"/>
+	<polygon id="left-lower-rect" fill="#383838" points="7.636,15.517 10.695,15.517 10.695,11.88 7.499,11.88 7.499,13.981 	"/>
+	<path id="slot" fill="#262626" d="M7.366,9.777v4.198c1.061-0.123,1.887-1.008,1.887-2.104C9.253,10.777,8.433,9.9,7.366,9.777z"/>
+	<path id="cover" fill="#303030" d="M7.366,3.931v4.313c1.713,0.324,3.017,1.821,3.017,3.629s-1.296,3.312-3.017,3.636v0.008h3.6
+		V3.931H7.366z"/>
+	<circle fill="#212121" cx="10.59" cy="16.947" r="1.483"/>
+</g>
+<rect id="connector7pin" x="52.92" y="20.636" fill="#8C8C8C" width="2.16" height="3.124"/>
+<rect id="connector7terminal" x="52.92" y="21.601" fill="#8C8C8C" width="2.16" height="2.159"/>
+<polygon fill="#8C8C8C" points="51.48,20.636 51.48,21.413 52.92,22.075 55.08,22.075 55.08,20.636 "/>
+<rect id="connector8pin" x="52.92" fill="#8C8C8C" width="2.16" height="3.125"/>
+<rect id="connector8terminal" x="52.92" fill="#8C8C8C" width="2.16" height="2.16"/>
+<polygon fill="#8C8C8C" points="55.08,3.125 55.08,1.685 52.92,1.685 51.48,2.347 51.48,3.125 "/>
+<rect id="connector1pin" x="9.72" y="20.636" fill="#8C8C8C" width="2.16" height="3.124"/>
+<rect id="connector1terminal" x="9.72" y="21.601" fill="#8C8C8C" width="2.16" height="2.159"/>
+<polygon id="poly1" fill="#8C8C8C" points="9.72,20.636 9.72,22.075 11.88,22.075 13.321,21.413 13.321,20.636 "/>
+<rect id="connector14pin" x="9.72" fill="#8C8C8C" width="2.16" height="3.125"/>
+<rect id="connector14terminal" x="9.72" fill="#8C8C8C" width="2.16" height="2.16"/>
+<polygon id="poly14" fill="#8C8C8C" points="13.321,3.125 13.321,2.347 11.88,1.685 9.72,1.685 9.72,3.125 "/>
+<rect id="connector2pin" x="16.92" y="20.636" fill="#8C8C8C" width="2.16" height="3.124"/>
+<rect id="connector2terminal" x="16.92" y="21.601" fill="#8C8C8C" width="2.16" height="2.159"/>
+<polygon fill="#8C8C8C" points="15.48,20.636 15.48,21.413 16.92,22.075 19.08,22.075 20.52,21.413 20.52,20.636 "/>
+<rect id="connector13pin" x="16.92" fill="#8C8C8C" width="2.16" height="3.125"/>
+<rect id="connector13terminal" x="16.92" fill="#8C8C8C" width="2.16" height="2.16"/>
+<polygon fill="#8C8C8C" points="20.52,3.125 20.52,2.347 19.08,1.685 16.92,1.685 15.48,2.347 15.48,3.125 "/>
+<rect id="connector3pin" x="24.12" y="20.636" fill="#8C8C8C" width="2.156" height="3.124"/>
+<rect id="connector3terminal" x="24.12" y="21.601" fill="#8C8C8C" width="2.156" height="2.159"/>
+<polygon fill="#8C8C8C" points="22.68,20.636 22.68,21.413 24.12,22.075 26.28,22.075 27.72,21.413 27.72,20.636 "/>
+<rect id="connector12pin" x="24.12" fill="#8C8C8C" width="2.156" height="3.125"/>
+<rect id="connector12terminal" x="24.12" fill="#8C8C8C" width="2.156" height="2.16"/>
+<polygon fill="#8C8C8C" points="27.72,3.125 27.72,2.347 26.28,1.685 24.12,1.685 22.68,2.347 22.68,3.125 "/>
+<rect id="connector4pin" x="31.32" y="20.636" fill="#8C8C8C" width="2.16" height="3.124"/>
+<rect id="connector4terminal" x="31.32" y="21.601" fill="#8C8C8C" width="2.16" height="2.159"/>
+<polygon fill="#8C8C8C" points="29.88,20.636 29.88,21.413 31.32,22.075 33.48,22.075 34.92,21.413 34.92,20.636 "/>
+<rect id="connector11pin" x="31.32" fill="#8C8C8C" width="2.16" height="3.125"/>
+<rect id="connector11terminal" x="31.32" fill="#8C8C8C" width="2.16" height="2.16"/>
+<polygon fill="#8C8C8C" points="34.92,3.125 34.92,2.347 33.48,1.685 31.32,1.685 29.88,2.347 29.88,3.125 "/>
+<rect id="connector5pin" x="38.52" y="20.636" fill="#8C8C8C" width="2.16" height="3.124"/>
+<rect id="connector5terminal" x="38.52" y="21.601" fill="#8C8C8C" width="2.16" height="2.159"/>
+<polygon fill="#8C8C8C" points="37.08,20.636 37.08,21.413 38.52,22.075 40.68,22.075 42.12,21.413 42.12,20.636 "/>
+<rect id="connector10pin" x="38.52" fill="#8C8C8C" width="2.16" height="3.125"/>
+<rect id="connector10terminal" x="38.52" fill="#8C8C8C" width="2.16" height="2.16"/>
+<polygon fill="#8C8C8C" points="42.12,3.125 42.12,2.347 40.68,1.685 38.52,1.685 37.08,2.347 37.08,3.125 "/>
+<rect id="connector6pin" x="45.72" y="20.636" fill="#8C8C8C" width="2.16" height="3.124"/>
+<rect id="connector6terminal" x="45.72" y="21.601" fill="#8C8C8C" width="2.16" height="2.159"/>
+<polygon fill="#8C8C8C" points="44.28,20.636 44.28,21.413 45.72,22.075 47.88,22.075 49.32,21.413 49.32,20.636 "/>
+<rect id="connector9pin" x="45.72" fill="#8C8C8C" width="2.16" height="3.125"/>
+<rect id="connector9terminal" x="45.72" fill="#8C8C8C" width="2.16" height="2.16"/>
+<polygon fill="#8C8C8C" points="49.32,3.125 49.32,2.347 47.88,1.685 45.72,1.685 44.28,2.347 44.28,3.125 "/>
+<g id="ADI_Logo">
+	<rect id="_x30_.5.0" x="15.534" y="7.516" fill="#A6A395" width="8.665" height="8.721"/>
+	<polygon id="_x30_.5.1" fill="#3D3D3D" points="16.921,15.147 16.921,8.609 23.155,11.906 	"/>
+</g>
+<g id="_x30_.6" transform="matrix(0 1 -1 0 16.8022 8.6499)">
+	<text id="_x30_.6.0" transform="matrix(0 -1 1 0 2.0435 -10.4149)" fill="#A69595" font-family="'ArialMT'" font-size="4">OP482</text>
+</g>
+</svg>

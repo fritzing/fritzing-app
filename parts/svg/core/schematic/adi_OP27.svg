@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1 Tiny//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-tiny.dtd">
+<svg version="1.1" baseProfile="tiny" id="_x30_" xmlns:xml="http://www.w3.org/XML/1998/namespace"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="72.157px"
+	 height="58.84px" viewBox="4.575 -0.231 72.157 58.84" xml:space="preserve">
+<desc  oldid="0.0" id="0.0.0">
+	<referenceFile  oldid="0.0.0" id="0.0.0.0">OP27_Schematic.svg</referenceFile>
+</desc>
+<rect id="connector6terminal" x="76.654" y="29.304" fill="none" width="0.078" height="0.004"/>
+<rect id="connector2terminal" x="4.575" y="14.908" fill="none" width="0.079" height="0.006"/>
+<rect id="connector3terminal" x="4.577" y="43.708" fill="none" width="0.077" height="0.004"/>
+<rect id="connector4terminal" x="55.054" y="58.107" fill="none" width="0.004" height="0.146"/>
+<rect id="connector7terminal" x="54.966" y="-0.231" fill="none" width="0.088" height="0.008"/>
+<rect id="connector1terminal" x="26.254" y="0.508" fill="none" width="0.004" height="0.038"/>
+<rect id="connector8terminal" x="40.654" y="0.508" fill="none" width="0.088" height="0.007"/>
+<g>
+	<path id="_x30_.5.1_1_" fill="none" stroke="#000000" stroke-width="2" d="M55.054,12.567"/>
+</g>
+<rect id="connector5terminal" x="67.4" y="58.107" fill="none" width="0.088" height="0.009"/>
+<line id="connector6pin" fill="none" stroke="#000000" x1="76.708" y1="29.375" x2="62.309" y2="29.308"/>
+<line id="connector2pin" fill="none" stroke="#000000" x1="4.654" y1="14.976" x2="19.516" y2="14.976"/>
+<line id="connector3pin" fill="none" stroke="#000000" x1="4.654" y1="43.709" x2="19.434" y2="43.709"/>
+<line id="connector4pin" fill="none" stroke="#000000" x1="55.108" y1="58.107" x2="55.079" y2="34.183"/>
+<line id="connector7pin" fill="none" stroke="#000000" x1="55.079" y1="24.558" x2="55.054" y2="0.513"/>
+<text transform="matrix(0.8074 0 0 1 65.3438 34.7031)" font-family="'ArialMT'" font-size="4">O</text>
+<text transform="matrix(0.8074 0 0 1 67.856 34.7031)" font-family="'ArialMT'" font-size="4">U</text>
+<text transform="matrix(0.8074 0 0 1 70.188 34.7031)" font-family="'ArialMT'" font-size="4">T</text>
+<text id="_x30_.1.16_2_" transform="matrix(0.8074 0 0 1 58.0542 45.9072)" font-family="'ArialMT'" font-size="4">-V</text>
+<text id="_x30_.1.16_4_" transform="matrix(0.8074 0 0 1 57.0542 15.2529)" font-family="'ArialMT'" font-size="4">+V</text>
+<text id="_x30_.1.22" transform="matrix(0.9059 0 0 1 33.5078 29.3076)" font-family="'ArialMT'" font-size="4">OP27</text>
+<text id="_x30_.1.16_1_" transform="matrix(0.8074 0 0 1 64.4004 47.2861)" fill="#A7A5A6" font-family="'ArialMT'" font-size="4">NC</text>
+<polyline id="_x30_.5.1_2_" fill="none" stroke="#000000" stroke-linecap="round" points="19.107,0.508 62.309,29.308 
+	19.107,58.109 "/>
+<line id="_x30_.5.1" fill="none" stroke="#000000" x1="19.107" y1="58.109" x2="19.107" y2="0.508"/>
+<line fill="none" stroke="#000000" x1="23.264" y1="17.571" x2="28.93" y2="17.571"/>
+<line fill="none" stroke="#000000" x1="23.264" y1="39.437" x2="28.932" y2="39.437"/>
+<line fill="none" stroke="#000000" x1="26.098" y1="42.271" x2="26.098" y2="36.603"/>
+<line id="connector5pin" fill="none" stroke="#A7A5A6" x1="67.5" y1="58.107" x2="67.5" y2="47.306"/>
+<text transform="matrix(1 0 0 1 6.1411 22.1074)" font-family="'MyriadPro-Regular'" font-size="4">-IN</text>
+<text transform="matrix(1 0 0 1 5.6411 50.9072)" font-family="'MyriadPro-Regular'" font-size="4">+IN</text>
+<line id="connector8pin" fill="none" stroke="#000000" x1="40.654" y1="14.902" x2="40.654" y2="0"/>
+<line id="connector1pin" fill="none" stroke="#000000" x1="26.079" y1="5.058" x2="26.154" y2="0"/>
+<text id="_x30_.1.16_3_" transform="matrix(0.8074 0 0 1 29.4541 4.7075)" font-family="'ArialMT'" font-size="4">TRIM</text>
+</svg>

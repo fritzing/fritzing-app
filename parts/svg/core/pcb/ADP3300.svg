@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns="http://www.w3.org/2000/svg"  width="0.42in" version="1.2" height="0.42in" viewBox="0 0 420 420" baseProfile="tiny" id="0">
+ <desc   id="0.0" oldid="0.0">
+  <referenceFile   id="0.0.0" oldid="0.0.0">dip_6_300mil_pcb.svg</referenceFile>
+ </desc>
+ <desc   id="0.1" oldid="0.1">Fritzing footprint SVG</desc>
+ <g   id="silkscreen">
+  <line   stroke="white" id="0.2.0" y1="10" stroke-width="10" x1="10" y2="410" x2="10"/>
+  <line   stroke="white" id="0.2.1" y1="410" stroke-width="10" x1="10" y2="410" x2="410"/>
+  <line   stroke="white" id="0.2.2" y1="410" stroke-width="10" x1="410" y2="10" x2="410"/>
+  <line   stroke="white" id="0.2.3" y1="10" stroke-width="10" x1="10" y2="10" x2="160"/>
+  <line   stroke="white" id="0.2.4" y1="10" stroke-width="10" x1="260" y2="10" x2="410"/>
+ </g>
+ <g   id="copper1">
+  <g   id="copper0">
+   <rect  width="55" x="32.5" y="32.5" fill="none"  height="55" stroke="rgb(255, 191, 0)" id="square" stroke-width="20"/>
+   <circle  fill="none" cx="60"  cy="60" stroke="rgb(255, 191, 0)" id="connector1pad" r="27.5" stroke-width="20"/>
+   <circle  fill="none" cx="360"  cy="60" stroke="rgb(255, 191, 0)" id="connector6pad" r="27.5" stroke-width="20"/>
+   <circle  fill="none" cx="60"  cy="160" stroke="rgb(255, 191, 0)" id="connector2pad" r="27.5" stroke-width="20"/>
+   <circle  fill="none" cx="360"  cy="160" stroke="rgb(255, 191, 0)" id="connector5pad" r="27.5" stroke-width="20"/>
+   <circle  fill="none" cx="60"  cy="260" stroke="rgb(255, 191, 0)" id="connector3pad" r="27.5" stroke-width="20"/>
+   <circle  fill="none" cx="360"  cy="260" stroke="rgb(255, 191, 0)" id="connector4pad" r="27.5" stroke-width="20"/>
+
+  </g>
+ </g>
+</svg>

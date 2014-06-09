@@ -24,11 +24,11 @@ IF .%2 == . (
 
 echo set the path to the qt sdk bin folder
 IF %2==64 (
-	set QTBIN=C:\Qt\qt-everywhere-opensource-src-5.2.1-64\qtbase\bin
+	set QTBIN=C:\Qt\Qt5.2.1\5.2.1\msvc2012\bin
 	set arch=""QMAKE_TARGET.arch=x86_64""
 ) ELSE (
 	IF %2==32 (
-		set QTBIN=C:\Qt\qt-everywhere-opensource-src-5.2.1-32\qtbase\bin
+		set QTBIN=C:\Qt\Qt5.2.1-32bit\5.2.1\msvc2012\bin
 		set arch=.
 	) ELSE (
 		echo second parameter--target architecture--should be either "32" for a 32-bit build or "64" for a 64-bit build

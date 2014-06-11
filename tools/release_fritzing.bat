@@ -24,7 +24,7 @@ IF .%2 == . (
 
 echo set the path to the qt sdk bin folder
 IF %2==64 (
-	set QTBIN=C:\Qt\Qt5.2.1\5.2.1\msvc2012\bin
+	set QTBIN=C:\Qt\Qt5.2.1\5.2.1\msvc2012_64\bin
 	set arch=""QMAKE_TARGET.arch=x86_64""
 ) ELSE (
 	IF %2==32 (
@@ -84,6 +84,10 @@ copy %QTBIN%\Qt5Sql.dll %DESTDIR%\deploy\Qt5Sql.dll
 copy %QTBIN%\Qt5Svg.dll %DESTDIR%\deploy\Qt5Svg.dll
 copy %QTBIN%\Qt5Widgets.dll %DESTDIR%\deploy\Qt5Widgets.dll
 copy %QTBIN%\Qt5Xml.dll %DESTDIR%\deploy\Qt5Xml.dll
+
+copy %QTBIN%\icudt51.dll %DESTDIR%\deploy\icudt51.dll
+copy %QTBIN%\icuin51.dll %DESTDIR%\deploy\icuin51.dll
+copy %QTBIN%\icuuc51.dll %DESTDIR%\deploy\icuuc51.dll
 
 copy %QTBIN%\..\plugins\imageformats\qjpeg.dll %DESTDIR%\deploy\lib\imageformats\qjpeg.dll
 copy %QTBIN%\..\plugins\sqldrivers\qsqlite.dll %DESTDIR%\deploy\lib\sqldrivers\qsqlite.dll

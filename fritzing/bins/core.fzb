@@ -675,14 +675,14 @@
                 </iconView>
             </views>
         </instance>
-                <instance moduleIdRef="chipkit_WF32" modelIndex="48" path="parts/core/chipkit_WF32.fzp">
+                <instance moduleIdRef="chipkit_WF32" modelIndex="3" path="parts/core/chipkit_WF32.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
                 </iconView>
             </views>
         </instance>
-                            <instance moduleIdRef="arduino_Yun(rev1)" modelIndex="5548" path="pdb/core/arduino_Yun(rev1).fzp">
+                            <instance moduleIdRef="arduino_Yun(rev1)" modelIndex="2" path="parts/core/arduino_Yun(rev1).fzp">
           <views>
               <iconView layer="icon">
                   <geometry z="-1" x="-1" y="-1"/>

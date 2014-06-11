@@ -40,25 +40,27 @@ win32 {
         DEFINES += _CRT_SECURE_NO_DEPRECATE
         DEFINES += _WINDOWS
 	RELEASE_SCRIPT = $$(RELEASE_SCRIPT)			# environment variable set from release script	
-	
-        isEmpty(RELEASE_SCRIPT) {
-        }
-        !isEmpty(RELEASE_SCRIPT) {
-                LIBS += $${SETUPLIBPATH}/AdvAPI32.Lib
-        }
+
         message("target arch: $${QMAKE_TARGET.arch}")
         contains(QMAKE_TARGET.arch, x86_64) {
                 SETUPLIBPATH = "C:/Program Files (x86)/Microsoft SDKs/Windows/v7.1A/Lib/x64"
                 RELDIR = ../../release64
                 DEBDIR = ../../debug64
                 DEFINES += WIN64
-        }
-        !contains(QMAKE_TARGET.arch, x86_64) {
+       }
+       !contains(QMAKE_TARGET.arch, x86_64) {
                 SETUPLIBPATH = "C:/Program Files (x86)/Microsoft SDKs/Windows/v7.1A/Lib"
-		RELDIR = ../../release32
-		DEBDIR = ../../debug32
+                RELDIR = ../../release32
+                DEBDIR = ../../debug32
         }
         message("check your SetupAPI.lib path: $${SETUPLIBPATH}/SetupAPI.Lib")
+
+        isEmpty(RELEASE_SCRIPT) {
+        }
+        !isEmpty(RELEASE_SCRIPT) {
+                LIBS += $${SETUPLIBPATH}/AdvAPI32.Lib
+        }
+
         LIBS +=  $${SETUPLIBPATH}/AdvAPI32.Lib
         LIBS +=  $${SETUPLIBPATH}/SetupAPI.Lib
 	

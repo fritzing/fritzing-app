@@ -1,0 +1,249 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module fritzingVersion="0.7.0b.02.01.5801" moduleId="d0cab10c62e1441045ed0415450e2819">
+<version replacedby="RFM12b_hope">2</version>
+    <author>red byer</author>
+    <title>RFM12b HopeRF Transceiver</title>
+    <label>RFM12b</label>
+    <date>2012-03-14</date>
+    <tags/>
+    <properties>
+        <property name="family">RFM12B Transreceiver /obsolete/</property>
+        <property name="part number"/>
+    </properties>
+    <description>RF Transceiver by Hope RF.  Well supported Arduino libraries are available.  Part is available in several frequencies (433MHz, 915MHz)...</description>
+    <views>
+        <iconView>
+            <layers image="icon/RFM12b_HopeRF_Transceiver__9c603c735b502.svg">
+                <layer layerId="icon"/>
+            </layers>
+        </iconView>
+        <breadboardView>
+            <layers image="breadboard/RFM12b_HopeRF_Transceiver__9c603c735b502.svg">
+                <layer layerId="breadboard"/>
+            </layers>
+        </breadboardView>
+        <schematicView>
+            <layers image="schematic/RFM12b_HopeRF_Transceiver__9c603c735b502.svg">
+                <layer layerId="schematic"/>
+            </layers>
+        </schematicView>
+        <pcbView>
+            <layers image="pcb/RFM12b_HopeRF_Transceiver__9c603c735b502.svg">
+                <layer layerId="copper1"/>
+                <layer layerId="silkscreen"/>
+            </layers>
+        </pcbView>
+    </views>
+    <connectors>
+        <connector type="female" id="connector3" name="4 DCLK/CFIL">
+            <description>Clock output (no FIFO) / external filter cap</description>
+            <views>
+                <breadboardView>
+                    <p svgId="connector3pin" layer="breadboard"/>
+                </breadboardView>
+                <schematicView>
+                    <p svgId="connector3pin" layer="schematic" terminalId="connector3terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p svgId="connector3pin" layer="copper0"/>
+                    <p svgId="connector3pin" layer="copper1"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector type="female" id="connector4" name="5 CLK">
+            <description>Clock output for external microcontroller</description>
+            <views>
+                <breadboardView>
+                    <p svgId="connector4pin" layer="breadboard"/>
+                </breadboardView>
+                <schematicView>
+                    <p svgId="connector4pin" layer="schematic" terminalId="connector4terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p svgId="connector4pin" layer="copper0"/>
+                    <p svgId="connector4pin" layer="copper1"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector type="female" id="connector5" name="6 nRES">
+            <description>Reset output (active low)</description>
+            <views>
+                <breadboardView>
+                    <p svgId="connector5pin" layer="breadboard"/>
+                </breadboardView>
+                <schematicView>
+                    <p svgId="connector5pin" layer="schematic" terminalId="connector5terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p svgId="connector5pin" layer="copper0"/>
+                    <p svgId="connector5pin" layer="copper1"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector type="female" id="connector6" name="7 GND">
+            <description>Power ground</description>
+            <views>
+                <breadboardView>
+                    <p svgId="connector6pin" layer="breadboard"/>
+                </breadboardView>
+                <schematicView>
+                    <p svgId="connector6pin" layer="schematic" terminalId="connector6terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p svgId="connector6pin" layer="copper0"/>
+                    <p svgId="connector6pin" layer="copper1"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector type="female" id="connector7" name="8 ANT">
+            <description>Antenna</description>
+            <views>
+                <breadboardView>
+                    <p svgId="connector7pin" layer="breadboard"/>
+                </breadboardView>
+                <schematicView>
+                    <p svgId="connector7pin" layer="schematic" terminalId="connector7terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p svgId="connector7pin" layer="copper0"/>
+                    <p svgId="connector7pin" layer="copper1"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector type="female" id="connector8" name="9 VDD">
+            <description>Positive power supply</description>
+            <views>
+                <breadboardView>
+                    <p svgId="connector8pin" layer="breadboard"/>
+                </breadboardView>
+                <schematicView>
+                    <p svgId="connector8pin" layer="schematic" terminalId="connector8terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p svgId="connector8pin" layer="copper0"/>
+                    <p svgId="connector8pin" layer="copper1"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector type="female" id="connector9" name="10 GND">
+            <description>Power ground</description>
+            <views>
+                <breadboardView>
+                    <p svgId="connector9pin" layer="breadboard"/>
+                </breadboardView>
+                <schematicView>
+                    <p svgId="connector9pin" layer="schematic" terminalId="connector9terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p svgId="connector9pin" layer="copper0"/>
+                    <p svgId="connector9pin" layer="copper1"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector type="female" id="connector10" name="11 nINT/VDI">
+            <description>Interrupt input (active low) / Valid data indicator</description>
+            <views>
+                <breadboardView>
+                    <p svgId="connector10pin" layer="breadboard"/>
+                </breadboardView>
+                <schematicView>
+                    <p svgId="connector10erminal" layer="schematic" terminalId="connector10terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p svgId="connector10pin" layer="copper0"/>
+                    <p svgId="connector10pin" layer="copper1"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector type="female" id="connector11" name="12 SDI">
+            <description>SPI data input</description>
+            <views>
+                <breadboardView>
+                    <p svgId="connector11pin" layer="breadboard"/>
+                </breadboardView>
+                <schematicView>
+                    <p svgId="connector11pin" layer="schematic" terminalId="connector11terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p svgId="connector11pin" layer="copper0"/>
+                    <p svgId="connector11pin" layer="copper1"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector type="female" id="connector12" name="13 SCK">
+            <description>SPI clock input</description>
+            <views>
+                <breadboardView>
+                    <p svgId="connector12pin" layer="breadboard"/>
+                </breadboardView>
+                <schematicView>
+                    <p svgId="connector12pin" layer="schematic" terminalId="connector12terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p svgId="connector12pin" layer="copper0"/>
+                    <p svgId="connector12pin" layer="copper1"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector type="female" id="connector0" name="1 SDO">
+            <description>Serial data output with bus hold</description>
+            <views>
+                <breadboardView>
+                    <p svgId="connector0" layer="breadboard"/>
+                </breadboardView>
+                <schematicView>
+                    <p svgId="connector0pin" layer="schematic" terminalId="connector0terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p svgId="connector0pin" layer="copper0"/>
+                    <p svgId="connector0pin" layer="copper1"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector type="female" id="connector13" name="14 nSEL">
+            <description>Chip select (active low)</description>
+            <views>
+                <breadboardView>
+                    <p svgId="connector13pin" layer="breadboard"/>
+                </breadboardView>
+                <schematicView>
+                    <p svgId="connector13pin" layer="schematic" terminalId="connector13terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p svgId="connector13pin" layer="copper0"/>
+                    <p svgId="connector13pin" layer="copper1"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector type="female" id="connector1" name="2 nIRQ">
+            <description>Interrupts request output (active low)</description>
+            <views>
+                <breadboardView>
+                    <p svgId="connector1pin" layer="breadboard"/>
+                </breadboardView>
+                <schematicView>
+                    <p svgId="connector1pin" layer="schematic" terminalId="connector1terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p svgId="connector1pin" layer="copper0"/>
+                    <p svgId="connector1pin" layer="copper1"/>
+                </pcbView>
+            </views>
+        </connector>
+        <connector type="female" id="connector2" name="3 FSK/DATA">
+            <description>Transmit FSK data input / Received data output</description>
+            <views>
+                <breadboardView>
+                    <p svgId="connector2pin" layer="breadboard"/>
+                </breadboardView>
+                <schematicView>
+                    <p svgId="connector2pin" layer="schematic" terminalId="connector2terminal"/>
+                </schematicView>
+                <pcbView>
+                    <p svgId="connector2pin" layer="copper0"/>
+                    <p svgId="connector2pin" layer="copper1"/>
+                </pcbView>
+            </views>
+        </connector>
+    </connectors>
+</module>

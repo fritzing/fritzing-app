@@ -49,8 +49,8 @@
 extern "C" {
 #endif
 
-////#include <zlib.h>
-#include <QtZlib/zlib.h>
+#include <QTzlib/zlib.h>
+
 
 #ifndef _ZLIBIOAPI_H
 #include "ioapi.h"

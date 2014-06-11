@@ -52,8 +52,8 @@ extern "C" {
 
 #ifndef _ZLIB_H
 
-// //#include <zlib.h>
-#include <QtZlib/zlib.h>
+#include <QTzlib/zlib.h>
+
 
 #endif
 

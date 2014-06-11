@@ -136,10 +136,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Version %1.%2.%3 &lt;small&gt;(%4%5 %6)%7 [Qt %8]&lt;/small&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>to Josef Dustira for the Czech translation, </source>
         <translation type="unfinished"></translation>
     </message>
@@ -177,6 +173,10 @@
     </message>
     <message>
         <source>to Lionel Michel, Yvan Kloster, Alexandre Dussart, and Roald Baudoux for the French translation, </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Version %1.%2.%3 &lt;small&gt;(%4%5 %6) %7 [Qt %8]&lt;/small&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -5553,10 +5553,6 @@ Fritzing по-прежнему работает, но вы не сможете �
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;Version %1.%2.%3 (%4%5)%6&lt;/font&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Basic</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5869,6 +5865,10 @@ Fritzing по-прежнему работает, но вы не сможете �
     </message>
     <message>
         <source>%2 ... %1 wires moved from their saved position</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;Version %1.%2.%3 (%4%5) %6&lt;/font&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

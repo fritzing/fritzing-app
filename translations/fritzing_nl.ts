@@ -136,10 +136,6 @@
         <translation>&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;</translation>
     </message>
     <message>
-        <source>Version %1.%2.%3 &lt;small&gt;(%4%5 %6)%7 [Qt %8]&lt;/small&gt;</source>
-        <translation>Versie %1.%2.%3 &lt;small&gt;(%4%5 %6)%7 [Qt %8]&lt;/small&gt;</translation>
-    </message>
-    <message>
         <source>to Josef Dustira for the Czech translation, </source>
         <translation>aan Josef Dustira voor de Tsjechische vertaling, </translation>
     </message>
@@ -177,6 +173,10 @@
     </message>
     <message>
         <source>to Lionel Michel, Yvan Kloster, Alexandre Dussart, and Roald Baudoux for the French translation, </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Version %1.%2.%3 &lt;small&gt;(%4%5 %6) %7 [Qt %8]&lt;/small&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -5587,10 +5587,6 @@ Fritzing werkt nog steeds, maar je kunt geen eigenschappen van de onderdelen wij
         <translation>Selecteer vastgezette onderdelen</translation>
     </message>
     <message>
-        <source>&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;Version %1.%2.%3 (%4%5)%6&lt;/font&gt;</source>
-        <translation>&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;Version %1.%2.%3 (%4%5)%6&lt;/font&gt;</translation>
-    </message>
-    <message>
         <source>Basic</source>
         <translation>Standaard</translation>
     </message>
@@ -5907,6 +5903,10 @@ Fritzing werkt nog steeds, maar je kunt geen eigenschappen van de onderdelen wij
     <message>
         <source>%2 ... %1 wires moved from their saved position</source>
         <translation>%2 ...%1 draden verplaatst van hun opgeslagen positie</translation>
+    </message>
+    <message>
+        <source>&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;Version %1.%2.%3 (%4%5) %6&lt;/font&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

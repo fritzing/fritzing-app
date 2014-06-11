@@ -14,8 +14,11 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
-//#include <zlib.h>
-#include <QtZlib/zlib.h>
+
+
+#include <QTzlib/zlib.h>
+
+
 #include "zip.h"
 
 #ifdef STDC

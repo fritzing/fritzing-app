@@ -36,35 +36,31 @@ win32 {
 # release build using msvc 2010 needs to use Multi-threaded (/MT) for the code generation/runtime library option
 # release build using msvc 2010 needs to add msvcrt.lib;%(IgnoreSpecificDefaultLibraries) to the linker/no default libraries option
         CONFIG -= embed_manifest_exe
-        INCLUDEPATH += $$[QT_INSTALL_PREFIX]/src/3rdparty/zlib/
-        #INCLUDEPATH += C:/Qt/4.8.4/src/3rdparty/zlib
+        #INCLUDEPATH += $$[QT_INSTALL_PREFIX]/Src/3rdparty/zlib # not nessacary since qt5 comes with zlib, use: #include <QtZlib/zlib.h>
         DEFINES += _CRT_SECURE_NO_DEPRECATE
         DEFINES += _WINDOWS
 	RELEASE_SCRIPT = $$(RELEASE_SCRIPT)			# environment variable set from release script	
 	
-	isEmpty(RELEASE_SCRIPT) {
-	}
-	!isEmpty(RELEASE_SCRIPT) {
-		LIBS += advapi32.lib   
-	}
-	#message("target arch: $${QMAKE_TARGET.arch}")
-#	contains(QMAKE_TARGET.arch, x86_64) {
-#                SETUPLIBPATH = "C:/Program Files (x86)/Microsoft SDKs/Windows/v7.1A/Lib/x64"
-#		RELDIR = ../../release64
-#		DEBDIR = ../../debug64
-#		DEFINES += WIN64
-#	}
-#	!contains(QMAKE_TARGET.arch, x86_64) {
- #               SETUPLIBPATH = "C:/Program Files (x86)/Microsoft SDKs/Windows/v7.1A/Lib"
-#		RELDIR = ../../release32
-#		DEBDIR = ../../debug32
-#	}
-
-        SETUPLIBPATH = "C:/Program Files (x86)/Microsoft SDKs/Windows/v7.1A/Lib"
-        RELDIR = ../../release32
-        DEBDIR = ../../debug32
-	message("check your SetupAPI.lib path: $${SETUPLIBPATH}/SetupAPI.Lib")
-        LIBS += C:/Program Files (x86)/Microsoft SDKs/Windows/v7.1A/Lib/SetupAPI.Lib
+        isEmpty(RELEASE_SCRIPT) {
+        }
+        !isEmpty(RELEASE_SCRIPT) {
+                LIBS += $${SETUPLIBPATH}/AdvAPI32.Lib
+        }
+        message("target arch: $${QMAKE_TARGET.arch}")
+        contains(QMAKE_TARGET.arch, x86_64) {
+                SETUPLIBPATH = "C:/Program Files (x86)/Microsoft SDKs/Windows/v7.1A/Lib/x64"
+                RELDIR = ../../release64
+                DEBDIR = ../../debug64
+                DEFINES += WIN64
+        }
+        !contains(QMAKE_TARGET.arch, x86_64) {
+                SETUPLIBPATH = "C:/Program Files (x86)/Microsoft SDKs/Windows/v7.1A/Lib"
+		RELDIR = ../../release32
+		DEBDIR = ../../debug32
+        }
+        message("check your SetupAPI.lib path: $${SETUPLIBPATH}/SetupAPI.Lib")
+        LIBS +=  $${SETUPLIBPATH}/AdvAPI32.Lib
+        LIBS +=  $${SETUPLIBPATH}/SetupAPI.Lib
 	
 	Release:DESTDIR = $${RELDIR}
 	Release:OBJECTS_DIR = $${RELDIR}

@@ -10,8 +10,11 @@
 #include <stdlib.h>
 #include <string.h>
 
-//#include <zlib.h>
-#include <QtZlib/zlib.h>
+
+
+#include <QTzlib/zlib.h>
+
+
 #include "ioapi.h"
 
 

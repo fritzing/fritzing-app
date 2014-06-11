@@ -54,7 +54,6 @@ extern "C" {
 
 #include <QTzlib/zlib.h>
 
-
 #endif
 
 #ifndef _ZLIBIOAPI_H

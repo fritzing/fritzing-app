@@ -40,7 +40,7 @@ woven in by Terry Thorsen 1/2003.
 #include <string.h>
 
 
-#include <QtZlib/zlib.h>
+#include <zlib.h>
 
 #include "unzip.h"
 

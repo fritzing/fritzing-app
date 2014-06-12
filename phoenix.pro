@@ -36,7 +36,8 @@ win32 {
 # release build using msvc 2010 needs to use Multi-threaded (/MT) for the code generation/runtime library option
 # release build using msvc 2010 needs to add msvcrt.lib;%(IgnoreSpecificDefaultLibraries) to the linker/no default libraries option
         CONFIG -= embed_manifest_exe
-        #INCLUDEPATH += $$[QT_INSTALL_PREFIX]/Src/3rdparty/zlib # not nessacary since qt5 comes with zlib, use: #include <QtZlib/zlib.h>
+        INCLUDEPATH += $$[QT_INSTALL_HEADERS]/QtZlib
+        #INCLUDEPATH += $$[QT_INSTALL_PREFIX]/Src/3rdparty/zlib # not nessacary since qt5 comes with zlib, use: #include <zlib.h>
         DEFINES += _CRT_SECURE_NO_DEPRECATE
         DEFINES += _WINDOWS
 	RELEASE_SCRIPT = $$(RELEASE_SCRIPT)			# environment variable set from release script	

@@ -95,6 +95,7 @@ macx {
         CONFIG += x86_64 # x86 ppc
         QMAKE_INFO_PLIST = FritzingInfo.plist
         #DEFINES += QT_NO_DEBUG   		# uncomment this for xcode
+        LIBS += -lz
         LIBS += /usr/lib/libz.dylib
         LIBS += /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation
         LIBS += /System/Library/Frameworks/Carbon.framework/Carbon

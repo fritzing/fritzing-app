@@ -12,7 +12,7 @@
 
 
 
-#include <QTzlib/zlib.h>
+#include <QtZlib/zlib.h>
 
 
 #include "ioapi.h"

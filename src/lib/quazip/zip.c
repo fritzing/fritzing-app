@@ -16,7 +16,7 @@
 #include <time.h>
 
 
-#include <QTzlib/zlib.h>
+#include <QtZlib/zlib.h>
 
 
 #include "zip.h"

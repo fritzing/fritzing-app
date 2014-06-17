@@ -839,7 +839,7 @@ void FApplication::initService()
 
 void FApplication::runSvgService()
 {
-
+    initService();
     runSvgServiceAux();
 }
 
@@ -852,7 +852,7 @@ void FApplication::runSvgServiceAux()
 	QStringList filenames = dir.entryList(filters, QDir::Files);
 	foreach (QString filename, filenames) {
 		QString filepath = dir.absoluteFilePath(filename);
-		MainWindow * mainWindow = openWindowForService(false, -1);
+        MainWindow * mainWindow = openWindowForService(false, -1);
 		m_started = true;
         
 		FolderUtils::setOpenSaveFolderAux(m_outputFolder);

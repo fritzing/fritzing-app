@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="es">
+<TS version="2.0" language="es">
 <context>
     <name>AboutBox</name>
     <message>
@@ -2458,29 +2458,24 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="979"/>
         <source>Rotate 45� Clockwise</source>
-        <translation type="unfinished">Girar 90° en sentido horario {45�?}</translation>
+        <translation type="obsolete">Girar 90° en sentido horario {45�?}</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="983"/>
         <source>Rotate 90� Clockwise</source>
-        <translation type="unfinished">Girar 90° en sentido horario {90�?}</translation>
+        <translation type="obsolete">Girar 90° en sentido horario {90�?}</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="987"/>
         <source>Rotate 180�</source>
-        <translation type="unfinished">Girar 180° {180�?}</translation>
+        <translation type="obsolete">Girar 180° {180�?}</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="991"/>
         <source>Rotate 90� Counter Clockwise</source>
-        <translation type="unfinished">Girar 90° en sentido antihorario {90�?}</translation>
+        <translation type="obsolete">Girar 90° en sentido antihorario {90�?}</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="995"/>
         <source>Rotate 45� Counter Clockwise</source>
-        <translation type="unfinished">Girar 90° en sentido antihorario {45�?}</translation>
+        <translation type="obsolete">Girar 90° en sentido antihorario {45�?}</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1035"/>
@@ -3321,6 +3316,31 @@ Go ahead and revert?</source>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="918"/>
         <source>Delete Wire up to bendpoints</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="979"/>
+        <source>Rotate 45° Clockwise</source>
+        <translation type="unfinished">Girar 90° en sentido horario {135�?} {45°?}</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="983"/>
+        <source>Rotate 90° Clockwise</source>
+        <translation type="unfinished">Girar 90° en sentido horario {135�?} {90°?}</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="987"/>
+        <source>Rotate 180°</source>
+        <translation type="unfinished">Girar 180° {180�?} {180°?}</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="991"/>
+        <source>Rotate 90° Counter Clockwise</source>
+        <translation type="unfinished">Girar 90° en sentido antihorario {45�?} {90°?}</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="995"/>
+        <source>Rotate 45° Counter Clockwise</source>
+        <translation type="unfinished">Girar 90° en sentido antihorario {45�?} {45°?}</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1200"/>
@@ -5642,9 +5662,19 @@ Go ahead and save?</source>
         <translation type="unfinished">Tamaño de la Fuente</translation>
     </message>
     <message>
+        <location filename="../src/items/partlabel.cpp" line="450"/>
+        <source>Rotate 45° Clockwise</source>
+        <translation type="unfinished">Girar 90° en sentido horario {135�?} {45°?}</translation>
+    </message>
+    <message>
         <location filename="../src/items/partlabel.cpp" line="452"/>
         <source>Rotate the label by 45 degrees clockwise</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/items/partlabel.cpp" line="455"/>
+        <source>Rotate 90° Clockwise</source>
+        <translation type="unfinished">Girar 90° en sentido horario {135�?} {90°?}</translation>
     </message>
     <message>
         <location filename="../src/items/partlabel.cpp" line="457"/>
@@ -5652,9 +5682,19 @@ Go ahead and save?</source>
         <translation type="unfinished">Girar la etiqueta 90 grados en sentido horario</translation>
     </message>
     <message>
+        <location filename="../src/items/partlabel.cpp" line="460"/>
+        <source>Rotate 135° Clockwise</source>
+        <translation type="unfinished">Girar 90° en sentido horario {135�?} {135°?}</translation>
+    </message>
+    <message>
         <location filename="../src/items/partlabel.cpp" line="462"/>
         <source>Rotate the label by 135 degrees clockwise</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/items/partlabel.cpp" line="465"/>
+        <source>Rotate 180°</source>
+        <translation type="unfinished">Girar 180° {180�?} {180°?}</translation>
     </message>
     <message>
         <location filename="../src/items/partlabel.cpp" line="467"/>
@@ -5662,9 +5702,19 @@ Go ahead and save?</source>
         <translation type="unfinished">Girar la etiqueta en 180 grados </translation>
     </message>
     <message>
+        <location filename="../src/items/partlabel.cpp" line="470"/>
+        <source>Rotate 135° Counter Clockwise</source>
+        <translation type="unfinished">Girar 90° en sentido antihorario {45�?} {135°?}</translation>
+    </message>
+    <message>
         <location filename="../src/items/partlabel.cpp" line="472"/>
         <source>Rotate the label by 135 degrees counter clockwise</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/items/partlabel.cpp" line="475"/>
+        <source>Rotate 90° Counter Clockwise</source>
+        <translation type="unfinished">Girar 90° en sentido antihorario {45�?} {90°?}</translation>
     </message>
     <message>
         <location filename="../src/items/partlabel.cpp" line="477"/>
@@ -5672,39 +5722,37 @@ Go ahead and save?</source>
         <translation>Girar la selección actual 90 grados en sentido antihorario</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="450"/>
-        <source>Rotate 45� Clockwise</source>
-        <translation type="unfinished">Girar 90° en sentido horario {45�?}</translation>
-    </message>
-    <message>
-        <location filename="../src/items/partlabel.cpp" line="455"/>
-        <source>Rotate 90� Clockwise</source>
-        <translation type="unfinished">Girar 90° en sentido horario {90�?}</translation>
-    </message>
-    <message>
-        <location filename="../src/items/partlabel.cpp" line="460"/>
-        <source>Rotate 135� Clockwise</source>
-        <translation type="unfinished">Girar 90° en sentido horario {135�?}</translation>
-    </message>
-    <message>
-        <location filename="../src/items/partlabel.cpp" line="465"/>
-        <source>Rotate 180�</source>
-        <translation type="unfinished">Girar 180° {180�?}</translation>
-    </message>
-    <message>
-        <location filename="../src/items/partlabel.cpp" line="470"/>
-        <source>Rotate 135� Counter Clockwise</source>
-        <translation type="unfinished">Girar 90° en sentido antihorario {135�?}</translation>
-    </message>
-    <message>
-        <location filename="../src/items/partlabel.cpp" line="475"/>
-        <source>Rotate 90� Counter Clockwise</source>
-        <translation type="unfinished">Girar 90° en sentido antihorario {90�?}</translation>
-    </message>
-    <message>
         <location filename="../src/items/partlabel.cpp" line="480"/>
+        <source>Rotate 45° Counter Clockwise</source>
+        <translation type="unfinished">Girar 90° en sentido antihorario {45�?} {45°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 45� Clockwise</source>
+        <translation type="obsolete">Girar 90° en sentido horario {45�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 90� Clockwise</source>
+        <translation type="obsolete">Girar 90° en sentido horario {90�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 135� Clockwise</source>
+        <translation type="obsolete">Girar 90° en sentido horario {135�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 180�</source>
+        <translation type="obsolete">Girar 180° {180�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 135� Counter Clockwise</source>
+        <translation type="obsolete">Girar 90° en sentido antihorario {135�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 90� Counter Clockwise</source>
+        <translation type="obsolete">Girar 90° en sentido antihorario {90�?}</translation>
+    </message>
+    <message>
         <source>Rotate 45� Counter Clockwise</source>
-        <translation type="unfinished">Girar 90° en sentido antihorario {45�?}</translation>
+        <translation type="obsolete">Girar 90° en sentido antihorario {45�?}</translation>
     </message>
     <message>
         <location filename="../src/items/partlabel.cpp" line="482"/>

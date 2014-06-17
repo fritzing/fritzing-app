@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="bn_BD">
+<TS version="2.0" language="bn_BD">
 <context>
     <name>AboutBox</name>
     <message>
@@ -2870,9 +2870,19 @@ Would you like to convert &apos;%1&apos; to the .fzz format now or open it read-
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="979"/>
+        <source>Rotate 45° Clockwise</source>
+        <translation type="unfinished">135° ক্লক ওয়াইজ ঘুরান  {135�?} {45°?}</translation>
+    </message>
+    <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="980"/>
         <source>Rotate current selection 45 degrees clockwise</source>
         <translation>45 ডিগ্রি ক্লক ওয়াইজ ঘুরা নির্বাচন </translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="983"/>
+        <source>Rotate 90° Clockwise</source>
+        <translation type="unfinished">135° ক্লক ওয়াইজ ঘুরান  {135�?} {90°?}</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="984"/>
@@ -2880,14 +2890,29 @@ Would you like to convert &apos;%1&apos; to the .fzz format now or open it read-
         <translation>90 ডিগ্রি ক্লক ওয়াইজ  নির্বািচত পার্টস ঘুরান </translation>
     </message>
     <message>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="987"/>
+        <source>Rotate 180°</source>
+        <translation type="unfinished">180° ঘুরান  {180�?} {180°?}</translation>
+    </message>
+    <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="988"/>
         <source>Rotate the selected parts by 180 degrees</source>
         <translation>180 ডিগ্রি নির্বািচত পার্টস ঘুরান </translation>
     </message>
     <message>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="991"/>
+        <source>Rotate 90° Counter Clockwise</source>
+        <translation type="unfinished">45° ক্লক ওয়াইজ বিপরিতে ঘুরান  {45�?} {90°?}</translation>
+    </message>
+    <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="992"/>
         <source>Rotate current selection 90 degrees counter clockwise</source>
         <translation>90 ডিগ্রি ক্লক ওয়াইজ বিপরিতে বর্তমান নির্বাচন ঘুরান</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="995"/>
+        <source>Rotate 45° Counter Clockwise</source>
+        <translation type="unfinished">45° ক্লক ওয়াইজ বিপরিতে ঘুরান  {45�?} {45°?}</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="996"/>
@@ -3872,29 +3897,24 @@ Would you like to convert &apos;%1&apos; to the .fzz format now or open it read-
         <translation>&amp; Ratsnest থেকে ট্রেস তৈরি করুন</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="979"/>
         <source>Rotate 45� Clockwise</source>
-        <translation type="unfinished">135° ক্লক ওয়াইজ ঘুরান  {45�?}</translation>
+        <translation type="obsolete">135° ক্লক ওয়াইজ ঘুরান  {45�?}</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="983"/>
         <source>Rotate 90� Clockwise</source>
-        <translation type="unfinished">135° ক্লক ওয়াইজ ঘুরান  {90�?}</translation>
+        <translation type="obsolete">135° ক্লক ওয়াইজ ঘুরান  {90�?}</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="987"/>
         <source>Rotate 180�</source>
-        <translation type="unfinished">180° ঘুরান  {180�?}</translation>
+        <translation type="obsolete">180° ঘুরান  {180�?}</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="991"/>
         <source>Rotate 90� Counter Clockwise</source>
-        <translation type="unfinished">45° ক্লক ওয়াইজ বিপরিতে ঘুরান  {90�?}</translation>
+        <translation type="obsolete">45° ক্লক ওয়াইজ বিপরিতে ঘুরান  {90�?}</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="995"/>
         <source>Rotate 45� Counter Clockwise</source>
-        <translation type="unfinished">45° ক্লক ওয়াইজ বিপরিতে ঘুরান  {45�?}</translation>
+        <translation type="obsolete">45° ক্লক ওয়াইজ বিপরিতে ঘুরান  {45�?}</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1287"/>
@@ -5809,9 +5829,19 @@ Go ahead and save?</source>
         <translation>ফন্ট সাইজ </translation>
     </message>
     <message>
+        <location filename="../src/items/partlabel.cpp" line="450"/>
+        <source>Rotate 45° Clockwise</source>
+        <translation type="unfinished">135° ক্লক ওয়াইজ ঘুরান  {135�?} {45°?}</translation>
+    </message>
+    <message>
         <location filename="../src/items/partlabel.cpp" line="452"/>
         <source>Rotate the label by 45 degrees clockwise</source>
         <translation>45 ডিগ্রি ক্লক ওয়াইজ লেভেল ঘুরান </translation>
+    </message>
+    <message>
+        <location filename="../src/items/partlabel.cpp" line="455"/>
+        <source>Rotate 90° Clockwise</source>
+        <translation type="unfinished">135° ক্লক ওয়াইজ ঘুরান  {135�?} {90°?}</translation>
     </message>
     <message>
         <location filename="../src/items/partlabel.cpp" line="457"/>
@@ -5819,9 +5849,19 @@ Go ahead and save?</source>
         <translation>90 ডিগ্রি ক্লক ওয়াইজ লেভেেল ঘুরান </translation>
     </message>
     <message>
+        <location filename="../src/items/partlabel.cpp" line="460"/>
+        <source>Rotate 135° Clockwise</source>
+        <translation type="unfinished">135° ক্লক ওয়াইজ ঘুরান  {135�?} {135°?}</translation>
+    </message>
+    <message>
         <location filename="../src/items/partlabel.cpp" line="462"/>
         <source>Rotate the label by 135 degrees clockwise</source>
         <translation>135  ডিগ্রি ক্লক ওয়াইজ লেভেেল ঘুরান </translation>
+    </message>
+    <message>
+        <location filename="../src/items/partlabel.cpp" line="465"/>
+        <source>Rotate 180°</source>
+        <translation type="unfinished">180° ঘুরান  {180�?} {180°?}</translation>
     </message>
     <message>
         <location filename="../src/items/partlabel.cpp" line="467"/>
@@ -5829,9 +5869,19 @@ Go ahead and save?</source>
         <translation>180 ডিগ্রি লেভেলে  ঘুরান </translation>
     </message>
     <message>
+        <location filename="../src/items/partlabel.cpp" line="470"/>
+        <source>Rotate 135° Counter Clockwise</source>
+        <translation type="unfinished">45° ক্লক ওয়াইজ বিপরিতে ঘুরান  {45�?} {135°?}</translation>
+    </message>
+    <message>
         <location filename="../src/items/partlabel.cpp" line="472"/>
         <source>Rotate the label by 135 degrees counter clockwise</source>
         <translation>135° ক্লক ওয়াইজ বিপরিতে লেভেল ঘুরান </translation>
+    </message>
+    <message>
+        <location filename="../src/items/partlabel.cpp" line="475"/>
+        <source>Rotate 90° Counter Clockwise</source>
+        <translation type="unfinished">45° ক্লক ওয়াইজ বিপরিতে ঘুরান  {45�?} {90°?}</translation>
     </message>
     <message>
         <location filename="../src/items/partlabel.cpp" line="477"/>
@@ -5839,39 +5889,37 @@ Go ahead and save?</source>
         <translation>90 ডিগ্রি ক্লক ওয়াইজ বিপরিতে ঘুরা নির্বাচন </translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="450"/>
-        <source>Rotate 45� Clockwise</source>
-        <translation type="unfinished">135° ক্লক ওয়াইজ ঘুরান  {45�?}</translation>
-    </message>
-    <message>
-        <location filename="../src/items/partlabel.cpp" line="455"/>
-        <source>Rotate 90� Clockwise</source>
-        <translation type="unfinished">135° ক্লক ওয়াইজ ঘুরান  {90�?}</translation>
-    </message>
-    <message>
-        <location filename="../src/items/partlabel.cpp" line="460"/>
-        <source>Rotate 135� Clockwise</source>
-        <translation type="unfinished">135° ক্লক ওয়াইজ ঘুরান  {135�?}</translation>
-    </message>
-    <message>
-        <location filename="../src/items/partlabel.cpp" line="465"/>
-        <source>Rotate 180�</source>
-        <translation type="unfinished">180° ঘুরান  {180�?}</translation>
-    </message>
-    <message>
-        <location filename="../src/items/partlabel.cpp" line="470"/>
-        <source>Rotate 135� Counter Clockwise</source>
-        <translation type="unfinished">45° ক্লক ওয়াইজ বিপরিতে ঘুরান  {135�?}</translation>
-    </message>
-    <message>
-        <location filename="../src/items/partlabel.cpp" line="475"/>
-        <source>Rotate 90� Counter Clockwise</source>
-        <translation type="unfinished">45° ক্লক ওয়াইজ বিপরিতে ঘুরান  {90�?}</translation>
-    </message>
-    <message>
         <location filename="../src/items/partlabel.cpp" line="480"/>
+        <source>Rotate 45° Counter Clockwise</source>
+        <translation type="unfinished">45° ক্লক ওয়াইজ বিপরিতে ঘুরান  {45�?} {45°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 45� Clockwise</source>
+        <translation type="obsolete">135° ক্লক ওয়াইজ ঘুরান  {45�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 90� Clockwise</source>
+        <translation type="obsolete">135° ক্লক ওয়াইজ ঘুরান  {90�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 135� Clockwise</source>
+        <translation type="obsolete">135° ক্লক ওয়াইজ ঘুরান  {135�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 180�</source>
+        <translation type="obsolete">180° ঘুরান  {180�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 135� Counter Clockwise</source>
+        <translation type="obsolete">45° ক্লক ওয়াইজ বিপরিতে ঘুরান  {135�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 90� Counter Clockwise</source>
+        <translation type="obsolete">45° ক্লক ওয়াইজ বিপরিতে ঘুরান  {90�?}</translation>
+    </message>
+    <message>
         <source>Rotate 45� Counter Clockwise</source>
-        <translation type="unfinished">45° ক্লক ওয়াইজ বিপরিতে ঘুরান  {45�?}</translation>
+        <translation type="obsolete">45° ক্লক ওয়াইজ বিপরিতে ঘুরান  {45�?}</translation>
     </message>
     <message>
         <location filename="../src/items/partlabel.cpp" line="482"/>

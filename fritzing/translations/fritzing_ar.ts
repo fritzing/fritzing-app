@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="ar_SA">
+<TS version="2.0" language="ar_SA">
 <context>
     <name>AboutBox</name>
     <message>
@@ -2680,6 +2680,31 @@ Would you like to convert &apos;%1&apos; to the .fzz format now or open it read-
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="979"/>
+        <source>Rotate 45° Clockwise</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="983"/>
+        <source>Rotate 90° Clockwise</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="987"/>
+        <source>Rotate 180°</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="991"/>
+        <source>Rotate 90° Counter Clockwise</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="995"/>
+        <source>Rotate 45° Counter Clockwise</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="999"/>
         <source>&amp;Flip Horizontal</source>
         <translation type="unfinished"></translation>
@@ -2832,31 +2857,6 @@ Would you like to convert &apos;%1&apos; to the .fzz format now or open it read-
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="973"/>
         <source>Connect all connectors to a single test part</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="979"/>
-        <source>Rotate 45� Clockwise</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="983"/>
-        <source>Rotate 90� Clockwise</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="987"/>
-        <source>Rotate 180�</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="991"/>
-        <source>Rotate 90� Counter Clockwise</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="995"/>
-        <source>Rotate 45� Counter Clockwise</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5675,8 +5675,18 @@ Go ahead and save?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src/items/partlabel.cpp" line="450"/>
+        <source>Rotate 45° Clockwise</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/items/partlabel.cpp" line="452"/>
         <source>Rotate the label by 45 degrees clockwise</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/items/partlabel.cpp" line="455"/>
+        <source>Rotate 90° Clockwise</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5685,8 +5695,18 @@ Go ahead and save?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src/items/partlabel.cpp" line="460"/>
+        <source>Rotate 135° Clockwise</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/items/partlabel.cpp" line="462"/>
         <source>Rotate the label by 135 degrees clockwise</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/items/partlabel.cpp" line="465"/>
+        <source>Rotate 180°</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5695,8 +5715,18 @@ Go ahead and save?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src/items/partlabel.cpp" line="470"/>
+        <source>Rotate 135° Counter Clockwise</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/items/partlabel.cpp" line="472"/>
         <source>Rotate the label by 135 degrees counter clockwise</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/items/partlabel.cpp" line="475"/>
+        <source>Rotate 90° Counter Clockwise</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5705,38 +5735,8 @@ Go ahead and save?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="450"/>
-        <source>Rotate 45� Clockwise</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/items/partlabel.cpp" line="455"/>
-        <source>Rotate 90� Clockwise</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/items/partlabel.cpp" line="460"/>
-        <source>Rotate 135� Clockwise</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/items/partlabel.cpp" line="465"/>
-        <source>Rotate 180�</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/items/partlabel.cpp" line="470"/>
-        <source>Rotate 135� Counter Clockwise</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/items/partlabel.cpp" line="475"/>
-        <source>Rotate 90� Counter Clockwise</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/items/partlabel.cpp" line="480"/>
-        <source>Rotate 45� Counter Clockwise</source>
+        <source>Rotate 45° Counter Clockwise</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

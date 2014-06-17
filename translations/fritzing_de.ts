@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="de">
+<TS version="2.0" language="de">
 <context>
     <name>AboutBox</name>
     <message>
@@ -2467,29 +2467,24 @@ Klicke auf ein Element, um seine Verbindungen im Entwurf hervorzuheben.
         <translation>Alle Verbinder mit einem einzigen Testteil verbinden</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="979"/>
         <source>Rotate 45� Clockwise</source>
-        <translation type="unfinished">Um 135° im Uhrzeigersinn drehen {45�?}</translation>
+        <translation type="obsolete">Um 135° im Uhrzeigersinn drehen {45�?}</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="983"/>
         <source>Rotate 90� Clockwise</source>
-        <translation type="unfinished">Um 135° im Uhrzeigersinn drehen {90�?}</translation>
+        <translation type="obsolete">Um 135° im Uhrzeigersinn drehen {90�?}</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="987"/>
         <source>Rotate 180�</source>
-        <translation type="unfinished">Um 180° drehen {180�?}</translation>
+        <translation type="obsolete">Um 180° drehen {180�?}</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="991"/>
         <source>Rotate 90� Counter Clockwise</source>
-        <translation type="unfinished">Um 45° gegen den Uhrzeigersinn drehen {90�?}</translation>
+        <translation type="obsolete">Um 45° gegen den Uhrzeigersinn drehen {90�?}</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="995"/>
         <source>Rotate 45� Counter Clockwise</source>
-        <translation type="unfinished">Um 45° gegen den Uhrzeigersinn drehen {45�?}</translation>
+        <translation type="obsolete">Um 45° gegen den Uhrzeigersinn drehen {45�?}</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1035"/>
@@ -3309,6 +3304,31 @@ Zurücksetzen?</translation>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2696"/>
         <source>&amp;Create trace from ratsnest</source>
         <translation>&amp;Leiterbahn aus Luftlinie erstellen</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="979"/>
+        <source>Rotate 45° Clockwise</source>
+        <translation type="unfinished">Um 135° im Uhrzeigersinn drehen {135�?} {45°?}</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="983"/>
+        <source>Rotate 90° Clockwise</source>
+        <translation type="unfinished">Um 135° im Uhrzeigersinn drehen {135�?} {90°?}</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="987"/>
+        <source>Rotate 180°</source>
+        <translation type="unfinished">Um 180° drehen {180�?} {180°?}</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="991"/>
+        <source>Rotate 90° Counter Clockwise</source>
+        <translation type="unfinished">Um 45° gegen den Uhrzeigersinn drehen {45�?} {90°?}</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="995"/>
+        <source>Rotate 45° Counter Clockwise</source>
+        <translation type="unfinished">Um 45° gegen den Uhrzeigersinn drehen {45�?} {45°?}</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2689"/>
@@ -5674,9 +5694,19 @@ Fortsetzen und speichern?</translation>
         <translation>Schriftgröße</translation>
     </message>
     <message>
+        <location filename="../src/items/partlabel.cpp" line="450"/>
+        <source>Rotate 45° Clockwise</source>
+        <translation type="unfinished">Um 135° im Uhrzeigersinn drehen {135�?} {45°?}</translation>
+    </message>
+    <message>
         <location filename="../src/items/partlabel.cpp" line="452"/>
         <source>Rotate the label by 45 degrees clockwise</source>
         <translation>Beschriftung um 45° im Uhrzeigersinn drehen</translation>
+    </message>
+    <message>
+        <location filename="../src/items/partlabel.cpp" line="455"/>
+        <source>Rotate 90° Clockwise</source>
+        <translation type="unfinished">Um 135° im Uhrzeigersinn drehen {135�?} {90°?}</translation>
     </message>
     <message>
         <location filename="../src/items/partlabel.cpp" line="457"/>
@@ -5684,9 +5714,19 @@ Fortsetzen und speichern?</translation>
         <translation>Beschriftung um 90° im Uhrzeigersinn drehen</translation>
     </message>
     <message>
+        <location filename="../src/items/partlabel.cpp" line="460"/>
+        <source>Rotate 135° Clockwise</source>
+        <translation type="unfinished">Um 135° im Uhrzeigersinn drehen {135�?} {135°?}</translation>
+    </message>
+    <message>
         <location filename="../src/items/partlabel.cpp" line="462"/>
         <source>Rotate the label by 135 degrees clockwise</source>
         <translation>Beschriftung um 135° im Uhrzeigersinn drehen</translation>
+    </message>
+    <message>
+        <location filename="../src/items/partlabel.cpp" line="465"/>
+        <source>Rotate 180°</source>
+        <translation type="unfinished">Um 180° drehen {180�?} {180°?}</translation>
     </message>
     <message>
         <location filename="../src/items/partlabel.cpp" line="467"/>
@@ -5694,9 +5734,19 @@ Fortsetzen und speichern?</translation>
         <translation>Beschriftung um 180° drehen</translation>
     </message>
     <message>
+        <location filename="../src/items/partlabel.cpp" line="470"/>
+        <source>Rotate 135° Counter Clockwise</source>
+        <translation type="unfinished">Um 45° gegen den Uhrzeigersinn drehen {45�?} {135°?}</translation>
+    </message>
+    <message>
         <location filename="../src/items/partlabel.cpp" line="472"/>
         <source>Rotate the label by 135 degrees counter clockwise</source>
         <translation>Beschriftung um 135° gegen den Uhrzeigersinn drehen</translation>
+    </message>
+    <message>
+        <location filename="../src/items/partlabel.cpp" line="475"/>
+        <source>Rotate 90° Counter Clockwise</source>
+        <translation type="unfinished">Um 45° gegen den Uhrzeigersinn drehen {45�?} {90°?}</translation>
     </message>
     <message>
         <location filename="../src/items/partlabel.cpp" line="477"/>
@@ -5704,39 +5754,37 @@ Fortsetzen und speichern?</translation>
         <translation>Auswahl um 90° gegen den Uhrzeigersinn drehen</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="450"/>
-        <source>Rotate 45� Clockwise</source>
-        <translation type="unfinished">Um 135° im Uhrzeigersinn drehen {45�?}</translation>
-    </message>
-    <message>
-        <location filename="../src/items/partlabel.cpp" line="455"/>
-        <source>Rotate 90� Clockwise</source>
-        <translation type="unfinished">Um 135° im Uhrzeigersinn drehen {90�?}</translation>
-    </message>
-    <message>
-        <location filename="../src/items/partlabel.cpp" line="460"/>
-        <source>Rotate 135� Clockwise</source>
-        <translation type="unfinished">Um 135° im Uhrzeigersinn drehen {135�?}</translation>
-    </message>
-    <message>
-        <location filename="../src/items/partlabel.cpp" line="465"/>
-        <source>Rotate 180�</source>
-        <translation type="unfinished">Um 180° drehen {180�?}</translation>
-    </message>
-    <message>
-        <location filename="../src/items/partlabel.cpp" line="470"/>
-        <source>Rotate 135� Counter Clockwise</source>
-        <translation type="unfinished">Um 45° gegen den Uhrzeigersinn drehen {135�?}</translation>
-    </message>
-    <message>
-        <location filename="../src/items/partlabel.cpp" line="475"/>
-        <source>Rotate 90� Counter Clockwise</source>
-        <translation type="unfinished">Um 45° gegen den Uhrzeigersinn drehen {90�?}</translation>
-    </message>
-    <message>
         <location filename="../src/items/partlabel.cpp" line="480"/>
+        <source>Rotate 45° Counter Clockwise</source>
+        <translation type="unfinished">Um 45° gegen den Uhrzeigersinn drehen {45�?} {45°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 45� Clockwise</source>
+        <translation type="obsolete">Um 135° im Uhrzeigersinn drehen {45�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 90� Clockwise</source>
+        <translation type="obsolete">Um 135° im Uhrzeigersinn drehen {90�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 135� Clockwise</source>
+        <translation type="obsolete">Um 135° im Uhrzeigersinn drehen {135�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 180�</source>
+        <translation type="obsolete">Um 180° drehen {180�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 135� Counter Clockwise</source>
+        <translation type="obsolete">Um 45° gegen den Uhrzeigersinn drehen {135�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 90� Counter Clockwise</source>
+        <translation type="obsolete">Um 45° gegen den Uhrzeigersinn drehen {90�?}</translation>
+    </message>
+    <message>
         <source>Rotate 45� Counter Clockwise</source>
-        <translation type="unfinished">Um 45° gegen den Uhrzeigersinn drehen {45�?}</translation>
+        <translation type="obsolete">Um 45° gegen den Uhrzeigersinn drehen {45�?}</translation>
     </message>
     <message>
         <location filename="../src/items/partlabel.cpp" line="482"/>

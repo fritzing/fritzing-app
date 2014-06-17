@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="bg_BG">
+<TS version="2.0" language="bg_BG">
 <context>
     <name>AboutBox</name>
     <message>
@@ -2628,29 +2628,24 @@ Would you like to convert &apos;%1&apos; to the .fzz format now or open it read-
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="979"/>
         <source>Rotate 45� Clockwise</source>
-        <translation type="unfinished">Завърти на 135° градуса по посока на часовниковата стрелка {45�?}</translation>
+        <translation type="obsolete">Завърти на 135° градуса по посока на часовниковата стрелка {45�?}</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="983"/>
         <source>Rotate 90� Clockwise</source>
-        <translation type="unfinished">Завърти на 135° градуса по посока на часовниковата стрелка {90�?}</translation>
+        <translation type="obsolete">Завърти на 135° градуса по посока на часовниковата стрелка {90�?}</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="987"/>
         <source>Rotate 180�</source>
-        <translation type="unfinished">Завърти на 180° {180�?}</translation>
+        <translation type="obsolete">Завърти на 180° {180�?}</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="991"/>
         <source>Rotate 90� Counter Clockwise</source>
-        <translation type="unfinished">Завърти на 45 градуса обратно на часовниковата стрелка {90�?}</translation>
+        <translation type="obsolete">Завърти на 45 градуса обратно на часовниковата стрелка {90�?}</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="995"/>
         <source>Rotate 45� Counter Clockwise</source>
-        <translation type="unfinished">Завърти на 45 градуса обратно на часовниковата стрелка {45�?}</translation>
+        <translation type="obsolete">Завърти на 45 градуса обратно на часовниковата стрелка {45�?}</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1035"/>
@@ -3359,6 +3354,31 @@ Go ahead and revert?</source>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1273"/>
         <source>Check for updates...</source>
         <translation>Провери за обновявания</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="979"/>
+        <source>Rotate 45° Clockwise</source>
+        <translation type="unfinished">Завърти на 135° градуса по посока на часовниковата стрелка {135�?} {45°?}</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="983"/>
+        <source>Rotate 90° Clockwise</source>
+        <translation type="unfinished">Завърти на 135° градуса по посока на часовниковата стрелка {135�?} {90°?}</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="987"/>
+        <source>Rotate 180°</source>
+        <translation type="unfinished">Завърти на 180° {180�?} {180°?}</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="991"/>
+        <source>Rotate 90° Counter Clockwise</source>
+        <translation type="unfinished">Завърти на 45 градуса обратно на часовниковата стрелка {45�?} {90°?}</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="995"/>
+        <source>Rotate 45° Counter Clockwise</source>
+        <translation type="unfinished">Завърти на 45 градуса обратно на часовниковата стрелка {45�?} {45°?}</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1274"/>
@@ -5685,9 +5705,19 @@ Go ahead and save?</source>
         <translation>Размер на шрифта</translation>
     </message>
     <message>
+        <location filename="../src/items/partlabel.cpp" line="450"/>
+        <source>Rotate 45° Clockwise</source>
+        <translation type="unfinished">Завърти на 135° градуса по посока на часовниковата стрелка {135�?} {45°?}</translation>
+    </message>
+    <message>
         <location filename="../src/items/partlabel.cpp" line="452"/>
         <source>Rotate the label by 45 degrees clockwise</source>
         <translation>Завърти надписа на 45 градуса по часовниковата стрелка</translation>
+    </message>
+    <message>
+        <location filename="../src/items/partlabel.cpp" line="455"/>
+        <source>Rotate 90° Clockwise</source>
+        <translation type="unfinished">Завърти на 135° градуса по посока на часовниковата стрелка {135�?} {90°?}</translation>
     </message>
     <message>
         <location filename="../src/items/partlabel.cpp" line="457"/>
@@ -5695,9 +5725,19 @@ Go ahead and save?</source>
         <translation>Завърти надписа на 90 градуса по часовниковата стрелка</translation>
     </message>
     <message>
+        <location filename="../src/items/partlabel.cpp" line="460"/>
+        <source>Rotate 135° Clockwise</source>
+        <translation type="unfinished">Завърти на 135° градуса по посока на часовниковата стрелка {135�?} {135°?}</translation>
+    </message>
+    <message>
         <location filename="../src/items/partlabel.cpp" line="462"/>
         <source>Rotate the label by 135 degrees clockwise</source>
         <translation>Завърти надписа на 135 градуса по часовниковата стрелка</translation>
+    </message>
+    <message>
+        <location filename="../src/items/partlabel.cpp" line="465"/>
+        <source>Rotate 180°</source>
+        <translation type="unfinished">Завърти на 180° {180�?} {180°?}</translation>
     </message>
     <message>
         <location filename="../src/items/partlabel.cpp" line="467"/>
@@ -5705,9 +5745,19 @@ Go ahead and save?</source>
         <translation>Завърти надписа на 180 градуса</translation>
     </message>
     <message>
+        <location filename="../src/items/partlabel.cpp" line="470"/>
+        <source>Rotate 135° Counter Clockwise</source>
+        <translation type="unfinished">Завърти на 45 градуса обратно на часовниковата стрелка {45�?} {135°?}</translation>
+    </message>
+    <message>
         <location filename="../src/items/partlabel.cpp" line="472"/>
         <source>Rotate the label by 135 degrees counter clockwise</source>
         <translation>Завърти надписа на 135 градуса обратно на часовниковата стрелка</translation>
+    </message>
+    <message>
+        <location filename="../src/items/partlabel.cpp" line="475"/>
+        <source>Rotate 90° Counter Clockwise</source>
+        <translation type="unfinished">Завърти на 45 градуса обратно на часовниковата стрелка {45�?} {90°?}</translation>
     </message>
     <message>
         <location filename="../src/items/partlabel.cpp" line="477"/>
@@ -5715,39 +5765,37 @@ Go ahead and save?</source>
         <translation>Завърти избраните части на 90 градуса обратно на часовниковата стрелка</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="450"/>
-        <source>Rotate 45� Clockwise</source>
-        <translation type="unfinished">Завърти на 135° градуса по посока на часовниковата стрелка {45�?}</translation>
-    </message>
-    <message>
-        <location filename="../src/items/partlabel.cpp" line="455"/>
-        <source>Rotate 90� Clockwise</source>
-        <translation type="unfinished">Завърти на 135° градуса по посока на часовниковата стрелка {90�?}</translation>
-    </message>
-    <message>
-        <location filename="../src/items/partlabel.cpp" line="460"/>
-        <source>Rotate 135� Clockwise</source>
-        <translation type="unfinished">Завърти на 135° градуса по посока на часовниковата стрелка {135�?}</translation>
-    </message>
-    <message>
-        <location filename="../src/items/partlabel.cpp" line="465"/>
-        <source>Rotate 180�</source>
-        <translation type="unfinished">Завърти на 180° {180�?}</translation>
-    </message>
-    <message>
-        <location filename="../src/items/partlabel.cpp" line="470"/>
-        <source>Rotate 135� Counter Clockwise</source>
-        <translation type="unfinished">Завърти на 45 градуса обратно на часовниковата стрелка {135�?}</translation>
-    </message>
-    <message>
-        <location filename="../src/items/partlabel.cpp" line="475"/>
-        <source>Rotate 90� Counter Clockwise</source>
-        <translation type="unfinished">Завърти на 45 градуса обратно на часовниковата стрелка {90�?}</translation>
-    </message>
-    <message>
         <location filename="../src/items/partlabel.cpp" line="480"/>
+        <source>Rotate 45° Counter Clockwise</source>
+        <translation type="unfinished">Завърти на 45 градуса обратно на часовниковата стрелка {45�?} {45°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 45� Clockwise</source>
+        <translation type="obsolete">Завърти на 135° градуса по посока на часовниковата стрелка {45�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 90� Clockwise</source>
+        <translation type="obsolete">Завърти на 135° градуса по посока на часовниковата стрелка {90�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 135� Clockwise</source>
+        <translation type="obsolete">Завърти на 135° градуса по посока на часовниковата стрелка {135�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 180�</source>
+        <translation type="obsolete">Завърти на 180° {180�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 135� Counter Clockwise</source>
+        <translation type="obsolete">Завърти на 45 градуса обратно на часовниковата стрелка {135�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 90� Counter Clockwise</source>
+        <translation type="obsolete">Завърти на 45 градуса обратно на часовниковата стрелка {90�?}</translation>
+    </message>
+    <message>
         <source>Rotate 45� Counter Clockwise</source>
-        <translation type="unfinished">Завърти на 45 градуса обратно на часовниковата стрелка {45�?}</translation>
+        <translation type="obsolete">Завърти на 45 градуса обратно на часовниковата стрелка {45�?}</translation>
     </message>
     <message>
         <location filename="../src/items/partlabel.cpp" line="482"/>

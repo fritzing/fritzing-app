@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="pt_PT">
+<TS version="2.0" language="pt_PT">
 <context>
     <name>AboutBox</name>
     <message>
@@ -3323,23 +3323,43 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     </message>
     <message>
         <source>Rotate 45� Clockwise</source>
-        <translation type="unfinished">Rodar 135º no sentido Horário {45�?}</translation>
+        <translation type="obsolete">Rodar 135º no sentido Horário {45�?}</translation>
     </message>
     <message>
         <source>Rotate 90� Clockwise</source>
-        <translation type="unfinished">Rodar 135º no sentido Horário {90�?}</translation>
+        <translation type="obsolete">Rodar 135º no sentido Horário {90�?}</translation>
     </message>
     <message>
         <source>Rotate 180�</source>
-        <translation type="unfinished">Rodar 180º {180�?}</translation>
+        <translation type="obsolete">Rodar 180º {180�?}</translation>
     </message>
     <message>
         <source>Rotate 90� Counter Clockwise</source>
-        <translation type="unfinished">Rodar 45º no sentido Anti-Horário {90�?}</translation>
+        <translation type="obsolete">Rodar 45º no sentido Anti-Horário {90�?}</translation>
     </message>
     <message>
         <source>Rotate 45� Counter Clockwise</source>
-        <translation type="unfinished">Rodar 45º no sentido Anti-Horário {45�?}</translation>
+        <translation type="obsolete">Rodar 45º no sentido Anti-Horário {45�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 45° Clockwise</source>
+        <translation type="unfinished">Rodar 135º no sentido Horário {135�?} {45°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 90° Clockwise</source>
+        <translation type="unfinished">Rodar 135º no sentido Horário {135�?} {90°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 180°</source>
+        <translation type="unfinished">Rodar 180º {180�?} {180°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 90° Counter Clockwise</source>
+        <translation type="unfinished">Rodar 45º no sentido Anti-Horário {45�?} {90°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 45° Counter Clockwise</source>
+        <translation type="unfinished">Rodar 45º no sentido Anti-Horário {45�?} {45°?}</translation>
     </message>
 </context>
 <context>
@@ -4552,31 +4572,59 @@ Go ahead and save?</source>
     </message>
     <message>
         <source>Rotate 45� Clockwise</source>
-        <translation type="unfinished">Rodar 135º no sentido Horário {45�?}</translation>
+        <translation type="obsolete">Rodar 135º no sentido Horário {45�?}</translation>
     </message>
     <message>
         <source>Rotate 90� Clockwise</source>
-        <translation type="unfinished">Rodar 135º no sentido Horário {90�?}</translation>
+        <translation type="obsolete">Rodar 135º no sentido Horário {90�?}</translation>
     </message>
     <message>
         <source>Rotate 135� Clockwise</source>
-        <translation type="unfinished">Rodar 135º no sentido Horário {135�?}</translation>
+        <translation type="obsolete">Rodar 135º no sentido Horário {135�?}</translation>
     </message>
     <message>
         <source>Rotate 180�</source>
-        <translation type="unfinished">Rodar 180º {180�?}</translation>
+        <translation type="obsolete">Rodar 180º {180�?}</translation>
     </message>
     <message>
         <source>Rotate 135� Counter Clockwise</source>
-        <translation type="unfinished">Rodar 45º no sentido Anti-Horário {135�?}</translation>
+        <translation type="obsolete">Rodar 45º no sentido Anti-Horário {135�?}</translation>
     </message>
     <message>
         <source>Rotate 90� Counter Clockwise</source>
-        <translation type="unfinished">Rodar 45º no sentido Anti-Horário {90�?}</translation>
+        <translation type="obsolete">Rodar 45º no sentido Anti-Horário {90�?}</translation>
     </message>
     <message>
         <source>Rotate 45� Counter Clockwise</source>
-        <translation type="unfinished">Rodar 45º no sentido Anti-Horário {45�?}</translation>
+        <translation type="obsolete">Rodar 45º no sentido Anti-Horário {45�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 45° Clockwise</source>
+        <translation type="unfinished">Rodar 135º no sentido Horário {135�?} {45°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 90° Clockwise</source>
+        <translation type="unfinished">Rodar 135º no sentido Horário {135�?} {90°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 135° Clockwise</source>
+        <translation type="unfinished">Rodar 135º no sentido Horário {135�?} {135°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 180°</source>
+        <translation type="unfinished">Rodar 180º {180�?} {180°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 135° Counter Clockwise</source>
+        <translation type="unfinished">Rodar 45º no sentido Anti-Horário {45�?} {135°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 90° Counter Clockwise</source>
+        <translation type="unfinished">Rodar 45º no sentido Anti-Horário {45�?} {90°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 45° Counter Clockwise</source>
+        <translation type="unfinished">Rodar 45º no sentido Anti-Horário {45�?} {45°?}</translation>
     </message>
 </context>
 <context>

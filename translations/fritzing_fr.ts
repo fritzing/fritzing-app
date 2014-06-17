@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="fr_FR">
+<TS version="2.0" language="fr_FR">
 <context>
     <name>AboutBox</name>
     <message>
@@ -3348,23 +3348,43 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     </message>
     <message>
         <source>Rotate 45� Clockwise</source>
-        <translation type="unfinished">Faire pivoter de 90° vers la droite {45�?}</translation>
+        <translation type="obsolete">Faire pivoter de 90° vers la droite {45�?}</translation>
     </message>
     <message>
         <source>Rotate 90� Clockwise</source>
-        <translation type="unfinished">Faire pivoter de 90° vers la droite {90�?}</translation>
+        <translation type="obsolete">Faire pivoter de 90° vers la droite {90�?}</translation>
     </message>
     <message>
         <source>Rotate 180�</source>
-        <translation type="unfinished">Faire pivoter de 180° {180�?}</translation>
+        <translation type="obsolete">Faire pivoter de 180° {180�?}</translation>
     </message>
     <message>
         <source>Rotate 90� Counter Clockwise</source>
-        <translation type="unfinished">Faire pivoter de 135° vers la gauche {90�?}</translation>
+        <translation type="obsolete">Faire pivoter de 135° vers la gauche {90�?}</translation>
     </message>
     <message>
         <source>Rotate 45� Counter Clockwise</source>
-        <translation type="unfinished">Faire pivoter de 135° vers la gauche {45�?}</translation>
+        <translation type="obsolete">Faire pivoter de 135° vers la gauche {45�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 45° Clockwise</source>
+        <translation type="unfinished">Faire pivoter de 90° vers la droite {135�?} {45°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 90° Clockwise</source>
+        <translation type="unfinished">Faire pivoter de 90° vers la droite {135�?} {90°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 180°</source>
+        <translation type="unfinished">Faire pivoter de 180° {180�?} {180°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 90° Counter Clockwise</source>
+        <translation type="unfinished">Faire pivoter de 135° vers la gauche {45�?} {90°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 45° Counter Clockwise</source>
+        <translation type="unfinished">Faire pivoter de 135° vers la gauche {45�?} {45°?}</translation>
     </message>
 </context>
 <context>
@@ -4586,31 +4606,59 @@ Go ahead and save?</source>
     </message>
     <message>
         <source>Rotate 45� Clockwise</source>
-        <translation type="unfinished">Faire pivoter de 90° vers la droite {45�?}</translation>
+        <translation type="obsolete">Faire pivoter de 90° vers la droite {45�?}</translation>
     </message>
     <message>
         <source>Rotate 90� Clockwise</source>
-        <translation type="unfinished">Faire pivoter de 90° vers la droite {90�?}</translation>
+        <translation type="obsolete">Faire pivoter de 90° vers la droite {90�?}</translation>
     </message>
     <message>
         <source>Rotate 135� Clockwise</source>
-        <translation type="unfinished">Faire pivoter de 90° vers la droite {135�?}</translation>
+        <translation type="obsolete">Faire pivoter de 90° vers la droite {135�?}</translation>
     </message>
     <message>
         <source>Rotate 180�</source>
-        <translation type="unfinished">Faire pivoter de 180° {180�?}</translation>
+        <translation type="obsolete">Faire pivoter de 180° {180�?}</translation>
     </message>
     <message>
         <source>Rotate 135� Counter Clockwise</source>
-        <translation type="unfinished">Faire pivoter de 135° vers la gauche {135�?}</translation>
+        <translation type="obsolete">Faire pivoter de 135° vers la gauche {135�?}</translation>
     </message>
     <message>
         <source>Rotate 90� Counter Clockwise</source>
-        <translation type="unfinished">Faire pivoter de 135° vers la gauche {90�?}</translation>
+        <translation type="obsolete">Faire pivoter de 135° vers la gauche {90�?}</translation>
     </message>
     <message>
         <source>Rotate 45� Counter Clockwise</source>
-        <translation type="unfinished">Faire pivoter de 135° vers la gauche {45�?}</translation>
+        <translation type="obsolete">Faire pivoter de 135° vers la gauche {45�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 45° Clockwise</source>
+        <translation type="unfinished">Faire pivoter de 90° vers la droite {135�?} {45°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 90° Clockwise</source>
+        <translation type="unfinished">Faire pivoter de 90° vers la droite {135�?} {90°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 135° Clockwise</source>
+        <translation type="unfinished">Faire pivoter de 90° vers la droite {135�?} {135°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 180°</source>
+        <translation type="unfinished">Faire pivoter de 180° {180�?} {180°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 135° Counter Clockwise</source>
+        <translation type="unfinished">Faire pivoter de 135° vers la gauche {45�?} {135°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 90° Counter Clockwise</source>
+        <translation type="unfinished">Faire pivoter de 135° vers la gauche {45�?} {90°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 45° Counter Clockwise</source>
+        <translation type="unfinished">Faire pivoter de 135° vers la gauche {45�?} {45°?}</translation>
     </message>
 </context>
 <context>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="zh_CN">
+<TS version="2.0" language="zh_CN">
 <context>
     <name>AboutBox</name>
     <message>
@@ -3339,23 +3339,43 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     </message>
     <message>
         <source>Rotate 45� Clockwise</source>
-        <translation type="unfinished">顺时针旋转135° {45�?}</translation>
+        <translation type="obsolete">顺时针旋转135° {45�?}</translation>
     </message>
     <message>
         <source>Rotate 90� Clockwise</source>
-        <translation type="unfinished">顺时针旋转135° {90�?}</translation>
+        <translation type="obsolete">顺时针旋转135° {90�?}</translation>
     </message>
     <message>
         <source>Rotate 180�</source>
-        <translation type="unfinished">旋转 180° {180�?}</translation>
+        <translation type="obsolete">旋转 180° {180�?}</translation>
     </message>
     <message>
         <source>Rotate 90� Counter Clockwise</source>
-        <translation type="unfinished">逆时针旋转45° {90�?}</translation>
+        <translation type="obsolete">逆时针旋转45° {90�?}</translation>
     </message>
     <message>
         <source>Rotate 45� Counter Clockwise</source>
-        <translation type="unfinished">逆时针旋转45° {45�?}</translation>
+        <translation type="obsolete">逆时针旋转45° {45�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 45° Clockwise</source>
+        <translation type="unfinished">顺时针旋转135° {135�?} {45°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 90° Clockwise</source>
+        <translation type="unfinished">顺时针旋转135° {135�?} {90°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 180°</source>
+        <translation type="unfinished">旋转 180° {180�?} {180°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 90° Counter Clockwise</source>
+        <translation type="unfinished">逆时针旋转45° {45�?} {90°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 45° Counter Clockwise</source>
+        <translation type="unfinished">逆时针旋转45° {45�?} {45°?}</translation>
     </message>
 </context>
 <context>
@@ -4574,31 +4594,59 @@ Go ahead and save?</source>
     </message>
     <message>
         <source>Rotate 45� Clockwise</source>
-        <translation type="unfinished">顺时针旋转135° {45�?}</translation>
+        <translation type="obsolete">顺时针旋转135° {45�?}</translation>
     </message>
     <message>
         <source>Rotate 90� Clockwise</source>
-        <translation type="unfinished">顺时针旋转135° {90�?}</translation>
+        <translation type="obsolete">顺时针旋转135° {90�?}</translation>
     </message>
     <message>
         <source>Rotate 135� Clockwise</source>
-        <translation type="unfinished">顺时针旋转135° {135�?}</translation>
+        <translation type="obsolete">顺时针旋转135° {135�?}</translation>
     </message>
     <message>
         <source>Rotate 180�</source>
-        <translation type="unfinished">旋转 180° {180�?}</translation>
+        <translation type="obsolete">旋转 180° {180�?}</translation>
     </message>
     <message>
         <source>Rotate 135� Counter Clockwise</source>
-        <translation type="unfinished">逆时针旋转45° {135�?}</translation>
+        <translation type="obsolete">逆时针旋转45° {135�?}</translation>
     </message>
     <message>
         <source>Rotate 90� Counter Clockwise</source>
-        <translation type="unfinished">逆时针旋转45° {90�?}</translation>
+        <translation type="obsolete">逆时针旋转45° {90�?}</translation>
     </message>
     <message>
         <source>Rotate 45� Counter Clockwise</source>
-        <translation type="unfinished">逆时针旋转45° {45�?}</translation>
+        <translation type="obsolete">逆时针旋转45° {45�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 45° Clockwise</source>
+        <translation type="unfinished">顺时针旋转135° {135�?} {45°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 90° Clockwise</source>
+        <translation type="unfinished">顺时针旋转135° {135�?} {90°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 135° Clockwise</source>
+        <translation type="unfinished">顺时针旋转135° {135�?} {135°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 180°</source>
+        <translation type="unfinished">旋转 180° {180�?} {180°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 135° Counter Clockwise</source>
+        <translation type="unfinished">逆时针旋转45° {45�?} {135°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 90° Counter Clockwise</source>
+        <translation type="unfinished">逆时针旋转45° {45�?} {90°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 45° Counter Clockwise</source>
+        <translation type="unfinished">逆时针旋转45° {45�?} {45°?}</translation>
     </message>
 </context>
 <context>

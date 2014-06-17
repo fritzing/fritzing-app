@@ -3,8 +3,13 @@ arch_aux=`uname -m`
 
 current_dir=$(pwd)
 
-echo "don't forget to set this script's QT_HOME variable"
 echo ""
+echo "NOTE: Don't forget to set this script's QT_HOME variable"
+echo ""
+
+QT_HOME="/home/ubuntu/Qt5.2.1/5.2.1/gcc"
+#QT_HOME="~/Qt5.2.1/5.2.1/gcc" # doesn't work for some reason
+#QT_HOME="/home/jonathan/Qt/5.2.1/gcc"
 
 if [ "$1" = "" ]
 then
@@ -36,11 +41,6 @@ compile_folder="build-$arch_aux"
 #svn export http://fritzing.googlecode.com/svn/trunk/fritzing $compile_folder
 git clone https://code.google.com/p/fritzing/ $compile_folder
 
-echo "this git checkout is only temporary until the code is pushed to the master"
-cd $compile_folder/fritzing
-git checkout -b qt5 origin/qt5
-
-cd $current_dir
 cd $compile_folder/fritzing/src/lib
 rm -rf boost*				# depend on linux boost installation 
 if [ "$quazip" == 'QUAZIP_INSTALLED' ]
@@ -77,12 +77,8 @@ if [ "$arch_aux" == 'x86_64' ] ; then
 fi
 
 cd $compile_folder
-QT_HOME="/home/jonathan/Qt/5.2.1/gcc"
-#QT_HOME="/usr"
-#QT_HOME="/home/jonathan/QtSDK/Desktop/Qt/473/gcc"
-#QT_HOME="/usr/local/Trolltech/Qt-4.8.3"
-
 cd fritzing
+echo "compliling... if this is not taking a long time, something is probably wrong"
 $QT_HOME/bin/qmake CONFIG+=release DEFINES+=$quazip
 make
 cd ..
@@ -93,7 +89,7 @@ echo "making release folder: $release_folder"
 mkdir ../$release_folder
 
 echo "copying release files"
-cp -rf fritzing/bins/ fritzing/parts/ fritzing/sketches/ fritzing/help/ fritzing/pdb/ fritzing/Fritzing fritzing/Fritzing.sh fritzing/README.txt fritzing/LICENSE.GPL2 fritzing/LICENSE.GPL3 ../$release_folder/
+cp -rf fritzing/bins/ fritzing/parts/ fritzing/sketches/ fritzing/help/ fritzing/pdb/ fritzing/Fritzing fritzing/Fritzing.sh fritzing/Fritzing.1 fritzing/fritzing.desktop fritzing/fritzing.appdata.xml fritzing/README.txt fritzing/LICENSE.GPL2 fritzing/LICENSE.GPL3 ../$release_folder/
 cd ../$release_folder
 
 echo "making library folders"
@@ -130,5 +126,5 @@ echo "cleaning up"
 rm -rf $release_folder
 rm -rf $compile_folder
 
-#echo "done!"
+echo "done!"
 

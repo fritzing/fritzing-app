@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="nl_NL" sourcelanguage="en_US">
+<TS version="2.0" language="nl_NL" sourcelanguage="en_US">
 <context>
     <name>AboutBox</name>
     <message>
@@ -3343,23 +3343,43 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     </message>
     <message>
         <source>Rotate 45� Clockwise</source>
-        <translation type="unfinished">Roteer 135° Rechtsom {45�?}</translation>
+        <translation type="obsolete">Roteer 135° Rechtsom {45�?}</translation>
     </message>
     <message>
         <source>Rotate 90� Clockwise</source>
-        <translation type="unfinished">Roteer 135° Rechtsom {90�?}</translation>
+        <translation type="obsolete">Roteer 135° Rechtsom {90�?}</translation>
     </message>
     <message>
         <source>Rotate 180�</source>
-        <translation type="unfinished">Roteer 180° {180�?}</translation>
+        <translation type="obsolete">Roteer 180° {180�?}</translation>
     </message>
     <message>
         <source>Rotate 90� Counter Clockwise</source>
-        <translation type="unfinished">Roteer 45° Linksom {90�?}</translation>
+        <translation type="obsolete">Roteer 45° Linksom {90�?}</translation>
     </message>
     <message>
         <source>Rotate 45� Counter Clockwise</source>
-        <translation type="unfinished">Roteer 45° Linksom {45�?}</translation>
+        <translation type="obsolete">Roteer 45° Linksom {45�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 45° Clockwise</source>
+        <translation type="unfinished">Roteer 135° Rechtsom {135�?} {45°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 90° Clockwise</source>
+        <translation type="unfinished">Roteer 135° Rechtsom {135�?} {90°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 180°</source>
+        <translation type="unfinished">Roteer 180° {180�?} {180°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 90° Counter Clockwise</source>
+        <translation type="unfinished">Roteer 45° Linksom {45�?} {90°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 45° Counter Clockwise</source>
+        <translation type="unfinished">Roteer 45° Linksom {45�?} {45°?}</translation>
     </message>
 </context>
 <context>
@@ -4588,31 +4608,59 @@ Doorgaan en opslaan?</translation>
     </message>
     <message>
         <source>Rotate 45� Clockwise</source>
-        <translation type="unfinished">Roteer 135° Rechtsom {45�?}</translation>
+        <translation type="obsolete">Roteer 135° Rechtsom {45�?}</translation>
     </message>
     <message>
         <source>Rotate 90� Clockwise</source>
-        <translation type="unfinished">Roteer 135° Rechtsom {90�?}</translation>
+        <translation type="obsolete">Roteer 135° Rechtsom {90�?}</translation>
     </message>
     <message>
         <source>Rotate 135� Clockwise</source>
-        <translation type="unfinished">Roteer 135° Rechtsom {135�?}</translation>
+        <translation type="obsolete">Roteer 135° Rechtsom {135�?}</translation>
     </message>
     <message>
         <source>Rotate 180�</source>
-        <translation type="unfinished">Roteer 180° {180�?}</translation>
+        <translation type="obsolete">Roteer 180° {180�?}</translation>
     </message>
     <message>
         <source>Rotate 135� Counter Clockwise</source>
-        <translation type="unfinished">Roteer 45° Linksom {135�?}</translation>
+        <translation type="obsolete">Roteer 45° Linksom {135�?}</translation>
     </message>
     <message>
         <source>Rotate 90� Counter Clockwise</source>
-        <translation type="unfinished">Roteer 45° Linksom {90�?}</translation>
+        <translation type="obsolete">Roteer 45° Linksom {90�?}</translation>
     </message>
     <message>
         <source>Rotate 45� Counter Clockwise</source>
-        <translation type="unfinished">Roteer 45° Linksom {45�?}</translation>
+        <translation type="obsolete">Roteer 45° Linksom {45�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 45° Clockwise</source>
+        <translation type="unfinished">Roteer 135° Rechtsom {135�?} {45°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 90° Clockwise</source>
+        <translation type="unfinished">Roteer 135° Rechtsom {135�?} {90°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 135° Clockwise</source>
+        <translation type="unfinished">Roteer 135° Rechtsom {135�?} {135°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 180°</source>
+        <translation type="unfinished">Roteer 180° {180�?} {180°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 135° Counter Clockwise</source>
+        <translation type="unfinished">Roteer 45° Linksom {45�?} {135°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 90° Counter Clockwise</source>
+        <translation type="unfinished">Roteer 45° Linksom {45�?} {90°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 45° Counter Clockwise</source>
+        <translation type="unfinished">Roteer 45° Linksom {45�?} {45°?}</translation>
     </message>
 </context>
 <context>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="ja">
+<TS version="2.0" language="ja">
 <context>
     <name>AboutBox</name>
     <message>
@@ -3320,23 +3320,43 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     </message>
     <message>
         <source>Rotate 45� Clockwise</source>
-        <translation type="unfinished">時計方向に回転90° {135°?} {45�?}</translation>
+        <translation type="obsolete">時計方向に回転90° {135°?} {45�?}</translation>
     </message>
     <message>
         <source>Rotate 90� Clockwise</source>
-        <translation type="unfinished">時計方向に回転90° {135°?} {90�?}</translation>
+        <translation type="obsolete">時計方向に回転90° {135°?} {90�?}</translation>
     </message>
     <message>
         <source>Rotate 180�</source>
-        <translation type="unfinished">回転 180° {180�?}</translation>
+        <translation type="obsolete">回転 180° {180�?}</translation>
     </message>
     <message>
         <source>Rotate 90� Counter Clockwise</source>
-        <translation type="unfinished">逆時計方向に回転 90° {45°?} {90�?}</translation>
+        <translation type="obsolete">逆時計方向に回転 90° {45°?} {90�?}</translation>
     </message>
     <message>
         <source>Rotate 45� Counter Clockwise</source>
-        <translation type="unfinished">逆時計方向に回転 90° {45°?} {45�?}</translation>
+        <translation type="obsolete">逆時計方向に回転 90° {45°?} {45�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 45° Clockwise</source>
+        <translation type="unfinished">時計方向に回転90° {135°?} {135�?} {45°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 90° Clockwise</source>
+        <translation type="unfinished">時計方向に回転90° {135°?} {135�?} {90°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 180°</source>
+        <translation type="unfinished">回転 180° {180�?} {180°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 90° Counter Clockwise</source>
+        <translation type="unfinished">逆時計方向に回転 90° {45°?} {45�?} {90°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 45° Counter Clockwise</source>
+        <translation type="unfinished">逆時計方向に回転 90° {45°?} {45�?} {45°?}</translation>
     </message>
 </context>
 <context>
@@ -4545,31 +4565,59 @@ Go ahead and save?</source>
     </message>
     <message>
         <source>Rotate 45� Clockwise</source>
-        <translation type="unfinished">時計方向に回転90° {135°?} {45�?}</translation>
+        <translation type="obsolete">時計方向に回転90° {135°?} {45�?}</translation>
     </message>
     <message>
         <source>Rotate 90� Clockwise</source>
-        <translation type="unfinished">時計方向に回転90° {135°?} {90�?}</translation>
+        <translation type="obsolete">時計方向に回転90° {135°?} {90�?}</translation>
     </message>
     <message>
         <source>Rotate 135� Clockwise</source>
-        <translation type="unfinished">時計方向に回転90° {135°?} {135�?}</translation>
+        <translation type="obsolete">時計方向に回転90° {135°?} {135�?}</translation>
     </message>
     <message>
         <source>Rotate 180�</source>
-        <translation type="unfinished">回転 180° {180�?}</translation>
+        <translation type="obsolete">回転 180° {180�?}</translation>
     </message>
     <message>
         <source>Rotate 135� Counter Clockwise</source>
-        <translation type="unfinished">逆時計方向に回転 90° {45°?} {135�?}</translation>
+        <translation type="obsolete">逆時計方向に回転 90° {45°?} {135�?}</translation>
     </message>
     <message>
         <source>Rotate 90� Counter Clockwise</source>
-        <translation type="unfinished">逆時計方向に回転 90° {45°?} {90�?}</translation>
+        <translation type="obsolete">逆時計方向に回転 90° {45°?} {90�?}</translation>
     </message>
     <message>
         <source>Rotate 45� Counter Clockwise</source>
-        <translation type="unfinished">逆時計方向に回転 90° {45°?} {45�?}</translation>
+        <translation type="obsolete">逆時計方向に回転 90° {45°?} {45�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 45° Clockwise</source>
+        <translation type="unfinished">時計方向に回転90° {135°?} {135�?} {45°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 90° Clockwise</source>
+        <translation type="unfinished">時計方向に回転90° {135°?} {135�?} {90°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 135° Clockwise</source>
+        <translation type="unfinished">時計方向に回転90° {135°?} {135�?} {135°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 180°</source>
+        <translation type="unfinished">回転 180° {180�?} {180°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 135° Counter Clockwise</source>
+        <translation type="unfinished">逆時計方向に回転 90° {45°?} {45�?} {135°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 90° Counter Clockwise</source>
+        <translation type="unfinished">逆時計方向に回転 90° {45°?} {45�?} {90°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 45° Counter Clockwise</source>
+        <translation type="unfinished">逆時計方向に回転 90° {45°?} {45�?} {45°?}</translation>
     </message>
 </context>
 <context>

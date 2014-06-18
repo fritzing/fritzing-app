@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2013 Fachhochschule Potsdam - http://fh-potsdam.de
+Copyright (c) 2007-2014 Fachhochschule Potsdam - http://fh-potsdam.de
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -66,6 +66,7 @@ $Date: 2013-04-19 12:51:22 +0200 (Fr, 19. Apr 2013) $
 #include "sketch/sketchwidget.h"
 #include "sketch/pcbsketchwidget.h"
 #include "help/firsttimehelpdialog.h"
+#include "help/aboutbox.h"
 
 // dependency injection :P
 #include "referencemodel/sqlitereferencemodel.h"
@@ -92,18 +93,22 @@ $Date: 2013-04-19 12:51:22 +0200 (Fr, 19. Apr 2013) $
 #ifdef LINUX_64
 #define PLATFORM_NAME "linux-64bit"
 #endif
-#ifdef Q_WS_WIN
+#ifdef Q_OS_WIN
+#ifdef WIN64
+#define PLATFORM_NAME "windows-64bit"
+#else
 #define PLATFORM_NAME "windows"
 #endif
-#ifdef Q_WS_MAC
-#ifdef QT_MAC_USE_COCOA
+#endif
+#ifdef Q_OS_MAC
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)) || defined(QT_MAC_USE_COCOA)
 #define PLATFORM_NAME "mac-os-x-105"
 #else
 #define PLATFORM_NAME "mac-os-x-104"
 #endif
 #endif
 
-#ifdef Q_WS_WIN
+#ifdef Q_OS_WIN
 #ifndef QT_NO_DEBUG
 #define WIN_DEBUG
 #endif
@@ -514,6 +519,17 @@ bool FApplication::init() {
 	PinHeader::initNames();
 	CursorMaster::initCursors();
 
+#ifdef Q_OS_MAC
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)) || defined(QT_MAC_USE_COCOA)
+	m_buildType = " Cocoa";
+#else
+	m_buildType = " Carbon";
+#endif
+#else
+    m_buildType = QString(PLATFORM_NAME).contains("64") ? "64" : "32";
+#endif
+    AboutBox::initBuildType(m_buildType);
+
 	return true;
 }
 
@@ -823,7 +839,7 @@ void FApplication::initService()
 
 void FApplication::runSvgService()
 {
-
+    initService();
     runSvgServiceAux();
 }
 
@@ -836,7 +852,7 @@ void FApplication::runSvgServiceAux()
 	QStringList filenames = dir.entryList(filters, QDir::Files);
 	foreach (QString filename, filenames) {
 		QString filepath = dir.absoluteFilePath(filename);
-		MainWindow * mainWindow = openWindowForService(false, -1);
+        MainWindow * mainWindow = openWindowForService(false, -1);
 		m_started = true;
         
 		FolderUtils::setOpenSaveFolderAux(m_outputFolder);
@@ -1071,7 +1087,7 @@ int FApplication::startup()
 	if (m_progressIndex >= 0) splash.showProgress(m_progressIndex, LoadProgressStart);
 	ProcessEventBlocker::processEvents();
 
-	#ifdef Q_WS_WIN
+	#ifdef Q_OS_WIN
 		// associate .fz file with fritzing app on windows (xp only--vista is different)
 		// TODO: don't change settings if they're already set?
 		// TODO: only do this at install time?
@@ -1290,23 +1306,15 @@ void FApplication::initSplash(FSplashScreen & splash) {
 							.arg(Version::year());
 	splash.showMessage(msg1, "fhpText", Qt::AlignLeft | Qt::AlignTop);
 
-	QString macBuildType;
-#ifdef Q_WS_MAC
-#ifdef QT_MAC_USE_COCOA
-	macBuildType = " Cocoa";
-#else
-	macBuildType = " Carbon";
-#endif
-#endif
 	QString msg2 = QObject::tr("<font face='Lucida Grande, Tahoma, Sans Serif' size='2' color='#eaf4ed'>"
-							   "Version %1.%2.%3 (%4%5)%6"
+							   "Version %1.%2.%3 (%4%5) %6"
 							   "</font>")
 						.arg(Version::majorVersion())
 						.arg(Version::minorVersion())
 						.arg(Version::minorSubVersion())
 						.arg(Version::modifier())
 						.arg(Version::shortDate())
-						.arg(macBuildType);
+						.arg(m_buildType);
 	splash.showMessage(msg2, "versionText", Qt::AlignRight | Qt::AlignTop);
     splash.show();
 }
@@ -1316,7 +1324,6 @@ struct Thing {
         ViewLayer::ViewID viewID;
         ViewLayer::ViewLayerID viewLayerID;
 };
-
 
 
 void FApplication::checkForUpdates() {

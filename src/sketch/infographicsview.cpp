@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2012 Fachhochschule Potsdam - http://fh-potsdam.de
+Copyright (c) 2007-2014 Fachhochschule Potsdam - http://fh-potsdam.de
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -136,10 +136,10 @@ void InfoGraphicsView::rotateFlipPartLabel(ItemBase * itemBase, double degrees, 
 	Q_UNUSED(flipDirection);
 }
 
-void InfoGraphicsView::noteSizeChanged(ItemBase * itemBase, const QRectF & oldRect, const QRectF & newRect) {
+void InfoGraphicsView::noteSizeChanged(ItemBase * itemBase, const QSizeF & oldSize, const QSizeF & newSize) {
 	Q_UNUSED(itemBase);
-	Q_UNUSED(oldRect);
-	Q_UNUSED(newRect);
+    Q_UNUSED(oldSize);
+    Q_UNUSED(newSize);
 }
 
 bool InfoGraphicsView::spaceBarIsPressed() {

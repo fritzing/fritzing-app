@@ -845,13 +845,13 @@
 <g id="connector5pin">
 	<rect x="0.143" y="10.751" fill="none" width="1.094" height="2"/>
 </g>
-<g id="connector4pin">
+<g id="connector2pin">
 	<rect x="0.143" y="16.421" fill="none" width="1.094" height="2"/>
 </g>
 <g id="connector3pin">
 	<rect x="0.143" y="22.09" fill="none" width="1.094" height="2"/>
 </g>
-<g id="connector2pin">
+<g id="connector4pin">
 	<rect x="0.143" y="27.76" fill="none" width="1.094" height="2"/>
 </g>
 <g id="connector1pin">

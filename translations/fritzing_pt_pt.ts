@@ -136,10 +136,6 @@
         <translation>&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;</translation>
     </message>
     <message>
-        <source>Version %1.%2.%3 &lt;small&gt;(%4%5 %6)%7 [Qt %8]&lt;/small&gt;</source>
-        <translation>Versão %1.%2.%3 &lt;small&gt;(%4%5 %6)%7 [Qt %8]&lt;/small&gt;</translation>
-    </message>
-    <message>
         <source>to Josef Dustira for the Czech translation, </source>
         <translation type="unfinished"></translation>
     </message>
@@ -177,6 +173,10 @@
     </message>
     <message>
         <source>to Lionel Michel, Yvan Kloster, Alexandre Dussart, and Roald Baudoux for the French translation, </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Version %1.%2.%3 &lt;small&gt;(%4%5 %6) %7 [Qt %8]&lt;/small&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2548,26 +2548,6 @@ Por favor verifique em todos os modos de visualização para verificar alguma mo
         <translation>Desenho exportado para Gerber</translation>
     </message>
     <message>
-        <source>Rotate 45° Clockwise</source>
-        <translation>Rodar 45º no sentido Horário</translation>
-    </message>
-    <message>
-        <source>Rotate 90° Clockwise</source>
-        <translation>Rodar 90º no sentido Horário</translation>
-    </message>
-    <message>
-        <source>Rotate 180°</source>
-        <translation>Rodar 180º</translation>
-    </message>
-    <message>
-        <source>Rotate 90° Counter Clockwise</source>
-        <translation>Rodar 90º no sentido Anti-Horário</translation>
-    </message>
-    <message>
-        <source>Rotate 45° Counter Clockwise</source>
-        <translation>Rodar 45º no sentido Anti-Horário</translation>
-    </message>
-    <message>
         <source>Shift+Ctrl+A</source>
         <translation>Shift+Ctrl+A</translation>
     </message>
@@ -3340,6 +3320,46 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     <message>
         <source>Note that any custom parts will not be converted. A tool for converting &apos;rectangular&apos; schematic images is available in the Parts Editor.</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rotate 45� Clockwise</source>
+        <translation type="obsolete">Rodar 135º no sentido Horário {45�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 90� Clockwise</source>
+        <translation type="obsolete">Rodar 135º no sentido Horário {90�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 180�</source>
+        <translation type="obsolete">Rodar 180º {180�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 90� Counter Clockwise</source>
+        <translation type="obsolete">Rodar 45º no sentido Anti-Horário {90�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 45� Counter Clockwise</source>
+        <translation type="obsolete">Rodar 45º no sentido Anti-Horário {45�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 45° Clockwise</source>
+        <translation type="unfinished">Rodar 135º no sentido Horário {135�?} {45°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 90° Clockwise</source>
+        <translation type="unfinished">Rodar 135º no sentido Horário {135�?} {90°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 180°</source>
+        <translation type="unfinished">Rodar 180º {180�?} {180°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 90° Counter Clockwise</source>
+        <translation type="unfinished">Rodar 45º no sentido Anti-Horário {45�?} {90°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 45° Counter Clockwise</source>
+        <translation type="unfinished">Rodar 45º no sentido Anti-Horário {45�?} {45°?}</translation>
     </message>
 </context>
 <context>
@@ -4451,24 +4471,12 @@ Go ahead and save?</source>
         <translation>Tamanho da letra</translation>
     </message>
     <message>
-        <source>Rotate 90° Clockwise</source>
-        <translation>Rodar 90º no sentido Horário</translation>
-    </message>
-    <message>
         <source>Rotate the label by 90 degrees clockwise</source>
         <translation>Rodar a etiqueta 90º no sentido Horário</translation>
     </message>
     <message>
-        <source>Rotate 180°</source>
-        <translation>Rodar 180º</translation>
-    </message>
-    <message>
         <source>Rotate the label by 180 degrees</source>
         <translation>Rodar a etiqueta 180 graus</translation>
-    </message>
-    <message>
-        <source>Rotate 90° Counter Clockwise</source>
-        <translation>Rodar 90º no sentido Anti-Horário</translation>
     </message>
     <message>
         <source>Flip Horizontal</source>
@@ -4539,32 +4547,16 @@ Go ahead and save?</source>
         <translation>Esconder etiqueta do componente</translation>
     </message>
     <message>
-        <source>Rotate 45° Clockwise</source>
-        <translation>Rodar 45º no sentido Horário</translation>
-    </message>
-    <message>
         <source>Rotate the label by 45 degrees clockwise</source>
         <translation>Rodar a etiqueta 45º no sentido Horário</translation>
-    </message>
-    <message>
-        <source>Rotate 135° Clockwise</source>
-        <translation>Rodar 135º no sentido Horário</translation>
     </message>
     <message>
         <source>Rotate the label by 135 degrees clockwise</source>
         <translation>Rodar a etiqueta 135º no sentido Horário</translation>
     </message>
     <message>
-        <source>Rotate 135° Counter Clockwise</source>
-        <translation>Rodar 135º no sentido Anti-Horário</translation>
-    </message>
-    <message>
         <source>Rotate the label by 135 degrees counter clockwise</source>
         <translation>Rodar a etiqueta 135º no sentido Anti-Horário</translation>
-    </message>
-    <message>
-        <source>Rotate 45° Counter Clockwise</source>
-        <translation>Rodar 45º no sentido Anti-Horário</translation>
     </message>
     <message>
         <source>Rotate the label by 45 degrees counter clockwise</source>
@@ -4577,6 +4569,62 @@ Go ahead and save?</source>
     <message>
         <source>Set font size to tiny</source>
         <translation>Definir o tamanho de letra em pequeno</translation>
+    </message>
+    <message>
+        <source>Rotate 45� Clockwise</source>
+        <translation type="obsolete">Rodar 135º no sentido Horário {45�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 90� Clockwise</source>
+        <translation type="obsolete">Rodar 135º no sentido Horário {90�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 135� Clockwise</source>
+        <translation type="obsolete">Rodar 135º no sentido Horário {135�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 180�</source>
+        <translation type="obsolete">Rodar 180º {180�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 135� Counter Clockwise</source>
+        <translation type="obsolete">Rodar 45º no sentido Anti-Horário {135�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 90� Counter Clockwise</source>
+        <translation type="obsolete">Rodar 45º no sentido Anti-Horário {90�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 45� Counter Clockwise</source>
+        <translation type="obsolete">Rodar 45º no sentido Anti-Horário {45�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 45° Clockwise</source>
+        <translation type="unfinished">Rodar 135º no sentido Horário {135�?} {45°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 90° Clockwise</source>
+        <translation type="unfinished">Rodar 135º no sentido Horário {135�?} {90°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 135° Clockwise</source>
+        <translation type="unfinished">Rodar 135º no sentido Horário {135�?} {135°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 180°</source>
+        <translation type="unfinished">Rodar 180º {180�?} {180°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 135° Counter Clockwise</source>
+        <translation type="unfinished">Rodar 45º no sentido Anti-Horário {45�?} {135°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 90° Counter Clockwise</source>
+        <translation type="unfinished">Rodar 45º no sentido Anti-Horário {45�?} {90°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 45° Counter Clockwise</source>
+        <translation type="unfinished">Rodar 45º no sentido Anti-Horário {45�?} {45°?}</translation>
     </message>
 </context>
 <context>
@@ -5550,10 +5598,6 @@ já se encontrava lá, não vais adicionar outravez, Ok?!?</translation>
         <translation>Seleccionar componentes bloqueados</translation>
     </message>
     <message>
-        <source>&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;Version %1.%2.%3 (%4%5)%6&lt;/font&gt;</source>
-        <translation>&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;Versão %1.%2.%3 (%4%5)%6&lt;/font&gt;</translation>
-    </message>
-    <message>
         <source>Basic</source>
         <translation>Básico</translation>
     </message>
@@ -5866,6 +5910,10 @@ já se encontrava lá, não vais adicionar outravez, Ok?!?</translation>
     </message>
     <message>
         <source>%2 ... %1 wires moved from their saved position</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;Version %1.%2.%3 (%4%5) %6&lt;/font&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -6957,6 +7005,14 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
     <message>
         <source>Ukrainian - %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Danish - %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Macedonian - %1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2013 Fachhochschule Potsdam - http://fh-potsdam.de
+Copyright (c) 2007-2014 Fachhochschule Potsdam - http://fh-potsdam.de
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -700,10 +700,16 @@ void ItemBase::updateConnections(ConnectorItem * connectorItem, bool includeRats
     }
 }
 
-const QString & ItemBase::title() const {
-	if (m_modelPart == NULL) return ___emptyString___;
+const QString & ItemBase::title() {
+    if (m_modelPart == NULL) return ___emptyString___;
 
-	return m_modelPart->title();
+    return m_modelPart->title();
+}
+
+const QString & ItemBase::constTitle() const {
+    if (m_modelPart == NULL) return ___emptyString___;
+
+    return m_modelPart->title();
 }
 
 const QString & ItemBase::spice() const {
@@ -1951,7 +1957,7 @@ void ItemBase::debugInfo2(const QString & msg) const
 {
 	DebugDialog::debug(QString("%1 ti:'%2' id:%3 it:'%4' vid:%9 vlid:%5 spec:%6 x:%11 y:%12 z:%10 flg:%7 gi:%8")
 		.arg(msg)
-		.arg(this->title())
+        .arg(this->constTitle())
 		.arg(this->id())
 		.arg(this->instanceTitle())
 		.arg(this->viewLayerID())

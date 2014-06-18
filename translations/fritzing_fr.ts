@@ -24,10 +24,6 @@
         <translation>&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;</translation>
     </message>
     <message>
-        <source>Version %1.%2.%3 &lt;small&gt;(%4%5 %6)%7 [Qt %8]&lt;/small&gt;</source>
-        <translation>Version %1.%2.%3 &lt;small&gt;(%4%5 %6)%7 [Qt %8]&lt;/small&gt;</translation>
-    </message>
-    <message>
         <source>Jan Sieber, Yaniv Steiner, Olaf Val, </source>
         <translation type="unfinished"></translation>
     </message>
@@ -178,6 +174,10 @@
     <message>
         <source>to Lionel Michel, Yvan Kloster, Alexandre Dussart, and Roald Baudoux for the French translation, </source>
         <translation type="unfinished"> à Lionel Michel, Yvan Kloster, Alexandre Dussart et Roald Baudoux pour la traduction française, </translation>
+    </message>
+    <message>
+        <source>Version %1.%2.%3 &lt;small&gt;(%4%5 %6) %7 [Qt %8]&lt;/small&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2098,14 +2098,6 @@ Continuer ou annuler?</translation>
         <translation type="unfinished">Aimanter le composant</translation>
     </message>
     <message>
-        <source>Rotate 45° Counter Clockwise</source>
-        <translation type="unfinished">Rotation de 45° vers la gauche</translation>
-    </message>
-    <message>
-        <source>Rotate 90° Counter Clockwise</source>
-        <translation type="unfinished">Rotation de 90° vers la gauche</translation>
-    </message>
-    <message>
         <source>Paste clipboard contents</source>
         <translation>Copier le contenu du presse-papier</translation>
     </message>
@@ -2261,10 +2253,6 @@ Continuer ou annuler?</translation>
     <message>
         <source>Bring selected object(s) to front of their layer</source>
         <translation type="unfinished">Avancer au premier plan le(s) objet(s) sélectionné(s) à l&apos;intérieur de leur calque</translation>
-    </message>
-    <message>
-        <source>Rotate 45° Clockwise</source>
-        <translation type="unfinished">Rotation de 45° vers la droite</translation>
     </message>
     <message>
         <source>Page Setup</source>
@@ -2551,10 +2539,6 @@ Nous travaillons à éliminer ce message afin de ne vous laisser choisir que des
     <message>
         <source>Export Bill of Materials (BoM)...</source>
         <translation>Exporter la nomenclature...</translation>
-    </message>
-    <message>
-        <source>Rotate 180°</source>
-        <translation type="unfinished">Rotation de 180°</translation>
     </message>
     <message>
         <source>Shift+Ctrl+0</source>
@@ -3110,10 +3094,6 @@ Voulez-vous convertir &apos;%1&apos; au format . Fzz maintenant ou l&apos;ouvrir
         <translation type="unfinished">de l&apos;arrière-plan pour la %1</translation>
     </message>
     <message>
-        <source>Rotate 90° Clockwise</source>
-        <translation type="unfinished">Rotation de 90° vers la droite</translation>
-    </message>
-    <message>
         <source>Please select the board you want to autoroute. The autorouter can only handle one board at a time.</source>
         <translation type="unfinished">Veuillez sélectionner la carte que vous souhaitez autorouter. Le routeur ne peut gérer qu&apos;une seule carte à la fois.</translation>
     </message>
@@ -3365,6 +3345,46 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     <message>
         <source>Note that any custom parts will not be converted. A tool for converting &apos;rectangular&apos; schematic images is available in the Parts Editor.</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rotate 45� Clockwise</source>
+        <translation type="obsolete">Faire pivoter de 90° vers la droite {45�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 90� Clockwise</source>
+        <translation type="obsolete">Faire pivoter de 90° vers la droite {90�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 180�</source>
+        <translation type="obsolete">Faire pivoter de 180° {180�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 90� Counter Clockwise</source>
+        <translation type="obsolete">Faire pivoter de 135° vers la gauche {90�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 45� Counter Clockwise</source>
+        <translation type="obsolete">Faire pivoter de 135° vers la gauche {45�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 45° Clockwise</source>
+        <translation type="unfinished">Faire pivoter de 90° vers la droite {135�?} {45°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 90° Clockwise</source>
+        <translation type="unfinished">Faire pivoter de 90° vers la droite {135�?} {90°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 180°</source>
+        <translation type="unfinished">Faire pivoter de 180° {180�?} {180°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 90° Counter Clockwise</source>
+        <translation type="unfinished">Faire pivoter de 135° vers la gauche {45�?} {90°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 45° Counter Clockwise</source>
+        <translation type="unfinished">Faire pivoter de 135° vers la gauche {45�?} {45°?}</translation>
     </message>
 </context>
 <context>
@@ -4541,28 +4561,8 @@ Go ahead and save?</source>
         <translation type="unfinished">Retourner l&apos;étiquette horizontalement</translation>
     </message>
     <message>
-        <source>Rotate 45° Counter Clockwise</source>
-        <translation>Faire pivoter de 45° vers la gauche</translation>
-    </message>
-    <message>
-        <source>Rotate 90° Counter Clockwise</source>
-        <translation>Faire pivoter de 90° vers la gauche</translation>
-    </message>
-    <message>
         <source>Display the value of property %1</source>
         <translation type="unfinished">Afficher les valeurs de la propriétés %1</translation>
-    </message>
-    <message>
-        <source>Rotate 135° Counter Clockwise</source>
-        <translation>Faire pivoter de 135° vers la gauche</translation>
-    </message>
-    <message>
-        <source>Rotate 45° Clockwise</source>
-        <translation>Faire pivoter de 45° vers la droite</translation>
-    </message>
-    <message>
-        <source>Rotate 135° Clockwise</source>
-        <translation>Faire pivoter de 135° vers la droite</translation>
     </message>
     <message>
         <source>Rotate the label by 45 degrees clockwise</source>
@@ -4585,10 +4585,6 @@ Go ahead and save?</source>
         <translation>Faire pivoter le label de 45 degrés vers la gauche</translation>
     </message>
     <message>
-        <source>Rotate 180°</source>
-        <translation>Faire pivoter de 180°</translation>
-    </message>
-    <message>
         <source>Edit label text</source>
         <translation type="unfinished">Modifier le texte de l&apos;étiquette</translation>
     </message>
@@ -4609,8 +4605,60 @@ Go ahead and save?</source>
         <translation type="unfinished">Texte de l&apos;étiquette :</translation>
     </message>
     <message>
+        <source>Rotate 45� Clockwise</source>
+        <translation type="obsolete">Faire pivoter de 90° vers la droite {45�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 90� Clockwise</source>
+        <translation type="obsolete">Faire pivoter de 90° vers la droite {90�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 135� Clockwise</source>
+        <translation type="obsolete">Faire pivoter de 90° vers la droite {135�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 180�</source>
+        <translation type="obsolete">Faire pivoter de 180° {180�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 135� Counter Clockwise</source>
+        <translation type="obsolete">Faire pivoter de 135° vers la gauche {135�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 90� Counter Clockwise</source>
+        <translation type="obsolete">Faire pivoter de 135° vers la gauche {90�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 45� Counter Clockwise</source>
+        <translation type="obsolete">Faire pivoter de 135° vers la gauche {45�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 45° Clockwise</source>
+        <translation type="unfinished">Faire pivoter de 90° vers la droite {135�?} {45°?}</translation>
+    </message>
+    <message>
         <source>Rotate 90° Clockwise</source>
-        <translation type="unfinished">Faire pivoter de 90° vers la droite</translation>
+        <translation type="unfinished">Faire pivoter de 90° vers la droite {135�?} {90°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 135° Clockwise</source>
+        <translation type="unfinished">Faire pivoter de 90° vers la droite {135�?} {135°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 180°</source>
+        <translation type="unfinished">Faire pivoter de 180° {180�?} {180°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 135° Counter Clockwise</source>
+        <translation type="unfinished">Faire pivoter de 135° vers la gauche {45�?} {135°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 90° Counter Clockwise</source>
+        <translation type="unfinished">Faire pivoter de 135° vers la gauche {45�?} {90°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 45° Counter Clockwise</source>
+        <translation type="unfinished">Faire pivoter de 135° vers la gauche {45�?} {45°?}</translation>
     </message>
 </context>
 <context>
@@ -5816,10 +5864,6 @@ is already there, we won&apos;t add it again, right?</source>
         <translation type="unfinished">paramètres de pad manquants</translation>
     </message>
     <message>
-        <source>&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;Version %1.%2.%3 (%4%5)%6&lt;/font&gt;</source>
-        <translation>&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;Version %1.%2.%3 (%4%5)%6&lt;/font&gt;</translation>
-    </message>
-    <message>
         <source>Send backward</source>
         <translation type="unfinished">Reculer</translation>
     </message>
@@ -5904,6 +5948,10 @@ Fritzing va continuer à fonctionner, mais vous n&apos;aurez pas la possibilité
     <message>
         <source>%2 ... %1 wires moved from their saved position</source>
         <translation type="unfinished">%2 ... %1 câbles déplacés de leur position de sauvegarde</translation>
+    </message>
+    <message>
+        <source>&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;Version %1.%2.%3 (%4%5) %6&lt;/font&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -6997,6 +7045,14 @@ Remarque : vous pouvez également déclencher cet affichage en positionnant la s
     </message>
     <message>
         <source>Ukrainian - %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Danish - %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Macedonian - %1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

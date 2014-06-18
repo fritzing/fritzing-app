@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2012 Fachhochschule Potsdam - http://fh-potsdam.de
+Copyright (c) 2007-2014 Fachhochschule Potsdam - http://fh-potsdam.de
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -104,7 +104,7 @@ public:
 	bool collectFemaleConnectees(QSet<ItemBase *> & items);
 	void collectWireConnectees(QSet<class Wire *> & wires);
 	void clearModelPart();
-	bool mousePressEvent(PaletteItemBase * originalItem, QGraphicsSceneMouseEvent *);
+    bool mousePressEventK(PaletteItemBase * originalItem, QGraphicsSceneMouseEvent *);
 	void resetID();
 	void slamZ(double z);
 	void resetImage(class InfoGraphicsView *);

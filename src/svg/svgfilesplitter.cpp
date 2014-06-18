@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2013 Fachhochschule Potsdam - http://fh-potsdam.de
+Copyright (c) 2007-2014 Fachhochschule Potsdam - http://fh-potsdam.de
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -639,7 +639,7 @@ void SvgFileSplitter::normalizeCommandSlot(QChar command, bool relative, QList<d
 
 	double d;
 	pathUserData->string.append(command);
-	switch(command.toAscii()) {
+	switch(command.toLatin1()) {
 		case 'v':
 		case 'V':
 			//DebugDialog::debug("'v' and 'V' are now removed by preprocessing; shouldn't be here");
@@ -738,7 +738,7 @@ void SvgFileSplitter::shiftCommandSlot(QChar command, bool relative, QList<doubl
 
 	double d;
 	pathUserData->string.append(command);
-	switch(command.toAscii()) {
+	switch(command.toLatin1()) {
 		case 'v':
 		case 'V':
 			//DebugDialog::debug("'v' and 'V' are now removed by preprocessing; shouldn't be here");
@@ -873,7 +873,7 @@ void SvgFileSplitter::convertHVSlot(QChar command, bool relative, QList<double> 
 	HVConvertData * data = (HVConvertData *) userData;
 
 	double x, y;
-	switch(command.toAscii()) {
+	switch(command.toLatin1()) {
 		case 'M':
 			data->path.append(command);
 			for (int i = 0; i < args.count(); i += 2) {

@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2012 Fachhochschule Potsdam - http://fh-potsdam.de
+Copyright (c) 2007-2014 Fachhochschule Potsdam - http://fh-potsdam.de
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -43,7 +43,7 @@ void SvgFlattener::flattenChildren(QDomElement &element){
     // recurse the children
     QDomNodeList childList = element.childNodes();
 
-    for(uint i = 0; i < childList.length(); i++){
+    for(int i = 0; i < childList.length(); i++){
         QDomElement child = childList.item(i).toElement();
         flattenChildren(child);
     }
@@ -182,7 +182,7 @@ void SvgFlattener::unRotateChild(QDomElement & element, QMatrix transform) {
     // recurse the children
     QDomNodeList childList = element.childNodes();
 
-    for(uint i = 0; i < childList.length(); i++){
+    for(int i = 0; i < childList.length(); i++){
         QDomElement child = childList.item(i).toElement();
         unRotateChild(child, transform);
     }
@@ -225,7 +225,7 @@ void SvgFlattener::rotateCommandSlot(QChar command, bool relative, QList<double>
 	QPointF point;
 
 	for (int i = 0; i < args.count(); ) {
-		switch(command.toAscii()) {
+		switch(command.toLatin1()) {
 			case 'v':
 			case 'V':
 				DebugDialog::debug("'v' and 'V' are now removed by preprocessing; shouldn't be here");

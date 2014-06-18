@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2014 Fritzing Team <info_at_fritzing.org> -->
+<application>
+ <id type="desktop">fritzing.desktop</id>
+ <metadata_license>CC-BY-SA-3.0</metadata_license>
+ <project_license>GPL-3.0+</project_license>
+ <name>Fritzing</name>
+ <summary>Electronic Design Tool</summary>
+ <description>
+  <p>
+    Fritzing is an open-source electronic design tool focusing on makers, hobbyists, and everyone else
+    interested in getting creative with interactive electronics. Document your electronic sketches, learn
+    from example projects, produce your own PCBs, and share with the community.
+    Fritzing differs from other tools through:
+  </p>
+  <ul>
+    <li>a real-world breadboard view that is hands-on and easy to understand</li>
+    <li>a visual component library including the Arduino, Raspberry Pi, SparkFun parts and many more</li>
+    <li>an intuitive user interface, with seamless switching between breadboard, schematic and pcb design</li>
+  </ul>
+  <p>
+    The lively community on fritzing.org exchanges projects and tips, and there is also a PCB service "Fritzing Fab"
+    that produces user designs.
+  </p>
+ </description>
+ <screenshots>
+  <screenshot type="default" width="1097" height="748">http://fritzing.org/static/img/fritzing-preview-bb.png</screenshot>
+  <screenshot width="1095" height="749">http://fritzing.org/static/img/fritzing-preview-schem.png</screenshot>
+  <screenshot width="1096" height="748">http://fritzing.org/static/img/fritzing-preview-pcb.png</screenshot>
+  <screenshot width="1097" height="747">http://fritzing.org/static/img/fritzing-preview-welcome.png</screenshot>
+ </screenshots>
+ <url type="homepage">http://www.fritzing.org</url>
+ <updatecontact>info_at_fritzing.org</updatecontact>
+</application>

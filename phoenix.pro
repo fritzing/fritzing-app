@@ -36,23 +36,67 @@ win32 {
 # release build using msvc 2010 needs to use Multi-threaded (/MT) for the code generation/runtime library option
 # release build using msvc 2010 needs to add msvcrt.lib;%(IgnoreSpecificDefaultLibraries) to the linker/no default libraries option
         CONFIG -= embed_manifest_exe
-        INCLUDEPATH += $$[QT_INSTALL_PREFIX]/src/3rdparty/zlib
+        INCLUDEPATH += $$[QT_INSTALL_HEADERS]/QtZlib
+        #INCLUDEPATH += $$[QT_INSTALL_PREFIX]/Src/3rdparty/zlib # not nessacary since qt5 comes with zlib, use: #include <zlib.h>
         DEFINES += _CRT_SECURE_NO_DEPRECATE
         DEFINES += _WINDOWS
 	RELEASE_SCRIPT = $$(RELEASE_SCRIPT)			# environment variable set from release script	
-	isEmpty(RELEASE_SCRIPT) {
-		LIBS += $${PWD}/SetupAPI.Lib
-	}
-	!isEmpty(RELEASE_SCRIPT) {
-		LIBS += advapi32.lib   
-		LIBS += SetupAPI.lib   
-	}
+
+        message("target arch: $${QMAKE_TARGET.arch}")
+        contains(QMAKE_TARGET.arch, x86_64) {
+                SETUPLIBPATH = "C:/Program Files (x86)/Microsoft SDKs/Windows/v7.1A/Lib/x64"
+                RELDIR = ../../release64
+                DEBDIR = ../../debug64
+                DEFINES += WIN64
+       }
+       !contains(QMAKE_TARGET.arch, x86_64) {
+                SETUPLIBPATH = "C:/Program Files (x86)/Microsoft SDKs/Windows/v7.1A/Lib"
+                RELDIR = ../../release32
+                DEBDIR = ../../debug32
+        }
+        message("check your SetupAPI.lib path: $${SETUPLIBPATH}/SetupAPI.Lib")
+
+        isEmpty(RELEASE_SCRIPT) {
+        }
+        !isEmpty(RELEASE_SCRIPT) {
+                LIBS += $${SETUPLIBPATH}/AdvAPI32.Lib
+        }
+
+        LIBS +=  $${SETUPLIBPATH}/AdvAPI32.Lib
+        LIBS +=  $${SETUPLIBPATH}/SetupAPI.Lib
+	
+	Release:DESTDIR = $${RELDIR}
+	Release:OBJECTS_DIR = $${RELDIR}
+	Release:MOC_DIR = $${RELDIR}
+	Release:RCC_DIR = $${RELDIR}
+	Release:UI_DIR = $${RELDIR}
+
+	Debug:DESTDIR = $${DEBDIR}
+	Debug:OBJECTS_DIR = $${DEBDIR}
+	Debug:MOC_DIR = $${DEBDIR}
+	Debug:RCC_DIR = $${DEBDIR}
+	Debug:UI_DIR = $${DEBDIR}
 }
 macx {
-        MOC_DIR = build/moc
-        CONFIG += x86_64 x86 ppc
+        RELDIR = ../../release64
+        DEBDIR = ../../debug64
+        Release:DESTDIR = $${RELDIR}
+        Release:OBJECTS_DIR = $${RELDIR}
+        Release:MOC_DIR = $${RELDIR}
+        Release:RCC_DIR = $${RELDIR}
+        Release:UI_DIR = $${RELDIR}
+
+        Debug:DESTDIR = $${DEBDIR}
+        Debug:OBJECTS_DIR = $${DEBDIR}
+        Debug:MOC_DIR = $${DEBDIR}
+        Debug:RCC_DIR = $${DEBDIR}
+        Debug:UI_DIR = $${DEBDIR}
+
+
+        CONFIG += x86_64 # x86 ppc
         QMAKE_INFO_PLIST = FritzingInfo.plist
         #DEFINES += QT_NO_DEBUG   		# uncomment this for xcode
+        LIBS += -lz
         LIBS += /usr/lib/libz.dylib
         LIBS += /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation
         LIBS += /System/Library/Frameworks/Carbon.framework/Carbon
@@ -114,7 +158,11 @@ unix {
 }
 
 ICON = resources/images/fritzing_icon.icns
+
 QT += core gui svg xml network sql # opengl
+greaterThan(QT_MAJOR_VERSION, 4) {
+    QT += printsupport concurrent
+}
 
 RC_FILE = fritzing.rc
 RESOURCES += phoenixresources.qrc

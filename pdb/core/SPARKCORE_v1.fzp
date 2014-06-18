@@ -416,10 +416,9 @@ p, li { white-space: pre-wrap; }
   </connector>
  </connectors>
  <buses>
-<bus>
+<bus id="GND">
 <nodeMember connectorId="connector51"/>
 <nodeMember connectorId="connector61"/>
 </bus>
  </buses>
- <label>U</label>
 </module>

@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2013 Fachhochschule Potsdam - http://fh-potsdam.de
+Copyright (c) 2007-2014 Fachhochschule Potsdam - http://fh-potsdam.de
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -50,24 +50,20 @@ TranslatorListModel::TranslatorListModel(QFileInfoList & fileInfoList, QObject* 
 : QAbstractListModel(parent) 
 {
 
-	if (m_languages.count() == 0) {
+    if (m_languages.count() == 0) {
         m_languages.insert("english", tr("English - %1").arg("English"));
-        m_languages.insert("french", tr("French - %1").arg("Français"));
         m_languages.insert("german", tr("German - %1").arg("Deutsch"));
-        m_languages.insert("spanish", tr("Spanish - %1").arg("Español"));
-        m_languages.insert("portuguese_portugal", tr("Portuguese (European)- %1").arg("Português (Europeu)"));
-        m_languages.insert("portuguese_brazil", tr("Portuguese (Brazilian) - %1").arg("Português (do Brasil)"));
         m_languages.insert("hungarian", tr("Hungarian - %1").arg("Magyar"));
         m_languages.insert("estonian", tr("Estonian - %1").arg("Eesti keel"));
         m_languages.insert("dutch", tr("Dutch - %1").arg("Nederlands"));
         m_languages.insert("italian", tr("Italian - %1").arg("Italiano"));
         m_languages.insert("polish", tr("Polish - %1").arg("Polski"));
-		m_languages.insert("turkish", tr("Turkish - %1").arg("Türkçe"));
 		m_languages.insert("swedish", tr("Swedish - %1").arg("Svenska"));
 		m_languages.insert("galician", tr("Galician - %1").arg("Galego"));
-		m_languages.insert("indonesian", tr("Indonesian - %1").arg("Bahasa Indonesia"));
+        m_languages.insert("indonesian", tr("Indonesian - %1").arg("Bahasa Indonesia"));
+        m_languages.insert("danish", tr("Danish - %1").arg("dansk"));
 
-		ushort t1[] = { 0x65e5, 0x672c, 0x8a9e, 0 };
+        ushort t1[] = { 0x65e5, 0x672c, 0x8a9e, 0 };
 		m_languages.insert("japanese", tr("Japanese - %1").arg(QString::fromUtf16(t1)));
 
 		ushort t2[] = { 0x0420, 0x0443, 0x0441, 0x0441, 0x043a, 0x0438, 0x0439, 0 };
@@ -124,6 +120,23 @@ TranslatorListModel::TranslatorListModel(QFileInfoList & fileInfoList, QObject* 
         ushort t19[] = {0x0443,  0x043A,  0x0440,  0x0430,  0x0457,  0x043D,  0x0441,  0x044C,  0x043A,  0x0430,  0x0020,  0x043C,  0x043E,  0x0432,  0x0430, 0};
         m_languages.insert("ukrainian", tr("Ukrainian - %1").arg(QString::fromUtf16(t19)));
 
+        ushort t20[] = { 0x46, 0x72, 0x61, 0x6E, 0xE7, 0x61, 0x69, 0x73, 0 };
+        m_languages.insert("french", tr("French - %1").arg(QString::fromUtf16(t20)));
+
+        ushort t21[] = { 0x45, 0x73, 0x70, 0x61, 0xF1, 0x6F, 0x6C, 0 };
+        m_languages.insert("spanish", tr("Spanish - %1").arg(QString::fromUtf16(t21)));
+
+        ushort t22[] = { 0x50, 0x6F, 0x72, 0x74, 0x75, 0x67, 0x75, 0xEA, 0x73, 0x20, 0x28, 0x45, 0x75, 0x72, 0x6F, 0x70, 0x65, 0x75, 0x29, 0 };
+        m_languages.insert("portuguese_portugal", tr("Portuguese (European)- %1").arg(QString::fromUtf16(t22)));
+
+        ushort t23[] = { 0x50, 0x6F, 0x72, 0x74, 0x75, 0x67, 0x75, 0xEA, 0x73, 0x20, 0x28, 0x64, 0x6F, 0x20, 0x42, 0x72, 0x61, 0x73, 0x69, 0x6C, 0x29, 0 };
+        m_languages.insert("portuguese_brazil", tr("Portuguese (Brazilian) - %1").arg(QString::fromUtf16(t23)));
+
+        ushort t24[] = { 0x54, 0xFC, 0x72, 0x6B, 0xE7, 0x65, 0 };
+        m_languages.insert("turkish", tr("Turkish - %1").arg(QString::fromUtf16(t24)));
+
+        ushort t25[] = { 0x043C, 0x0430,  0x043A,  0x0435,  0x0434, 0x043E, 0x043D, 0x0441, 0x043A, 0x0438, 0x20, 0x0458, 0x0430, 0x0437, 0x0438, 0x043A, 0 };
+        m_languages.insert("macedonian", tr("Macedonian - %1").arg(QString::fromUtf16(t25)));
 
 	}
 

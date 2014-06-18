@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2013 Fachhochschule Potsdam - http://fh-potsdam.de
+Copyright (c) 2007-2014 Fachhochschule Potsdam - http://fh-potsdam.de
 
 Fritzing is free software: you can redistribute it and/or modify
 
@@ -25,7 +25,6 @@ $Date: 2013-04-28 00:56:34 +0200 (So, 28. Apr 2013) $lo
 
 ********************************************************************/
 
-#include <QtGui>
 #include <QtXml>
 #include <QList>
 #include <QFileInfo>
@@ -44,6 +43,7 @@ $Date: 2013-04-28 00:56:34 +0200 (So, 28. Apr 2013) $lo
 #include <QShortcut>
 #include <QStyle>
 #include <QFontMetrics>
+#include <QApplication>
 
 
 #include "mainwindow.h"
@@ -378,7 +378,7 @@ MainWindow::MainWindow(ReferenceModel *referenceModel, QWidget * parent) :
 
 	setAttribute(Qt::WA_DeleteOnClose, true);
 
-#ifdef Q_WS_MAC
+#ifdef Q_OS_MAC
         //setAttribute(Qt::WA_QuitOnClose, false);					// restoring this temporarily (2008.12.19)
 #endif
     m_dontClose = m_closing = false;
@@ -1213,7 +1213,14 @@ void MainWindow::tabWidget_currentChanged(int index) {
 
 void MainWindow::setActionsIcons(int index, QList<QAction *> & actions) {
 	for (int i = 0; i < actions.count(); i++) {
-		actions[i]->setIcon(index == i ? m_dotIcon : m_emptyIcon);
+        // DebugDialog::debug(QString("setting icon %1 %2").arg(i).arg(index == i));
+        // setting the icons seems to be broken in Qt 5, so use checkMarks instead
+        // note that we used dots instead of checkMarks originally because
+        // we hoped it was clearer that the items were mutually exclusive
+        // note that using QIcon() instead of m_emptyIcon does no good
+        // (and we used the m_emptyIcon to preserve the space at the left)
+        // actions[i]->setIcon(index == i ? m_dotIcon : m_emptyIcon);
+        actions[i]->setChecked(index == i);
 	}
 }
 
@@ -1339,6 +1346,28 @@ bool MainWindow::eventFilter(QObject *object, QEvent *event) {
 		// So this call to processEvents() makes sure m_deleteAct is enabled.
 		ProcessEventBlocker::processEvents();
 	}
+
+#if defined(Q_OS_MAC) && (QT_VERSION >= QT_VERSION_CHECK(5, 0, 0))
+
+    // Need to process Backspace on Mac to workaround bug in Qt5
+    // See http://qt-project.org/forums/viewthread/36174
+
+    if (event->type() == QEvent::KeyPress) {
+        QKeyEvent *keyEvent = static_cast<QKeyEvent *>(event);
+
+        if (keyEvent->key() == Qt::Key_Backspace) {
+            Qt::KeyboardModifiers modifiers = keyEvent->modifiers();
+            if (modifiers == Qt::NoModifier) {
+                doDelete();
+                return true;
+            }
+            if (modifiers == Qt::AltModifier) {
+                doDeleteMinus();
+                return true;
+            }
+        }
+    }
+#endif
 
 	return QMainWindow::eventFilter(object, event);
 }
@@ -2040,6 +2069,7 @@ void MainWindow::enableCheckUpdates(bool enabled)
 
 void MainWindow::swapSelectedDelay(const QString & family, const QString & prop, QMap<QString, QString> & currPropsMap, ItemBase * itemBase) 
 {
+    //DebugDialog::debug("swap selected delay");
 	m_swapTimer.stop();
 	m_swapTimer.setAll(family, prop, currPropsMap, itemBase);
 	m_swapTimer.start();
@@ -2494,6 +2524,9 @@ void MainWindow::updateActiveLayerButtons() {
 	        m_viewFromButtonWidget->setVisible(true);
             m_viewFromBelowToggleAct->setChecked(viewFromBelow);
 
+            m_viewFromBelowAct->setChecked(viewFromBelow);
+            m_viewFromAboveAct->setChecked(viewFromBelow);
+
 	        m_viewFromBelowToggleAct->setEnabled(true);
 	        m_viewFromBelowAct->setEnabled(true);
 	        m_viewFromAboveAct->setEnabled(true);
@@ -2882,7 +2915,7 @@ void MainWindow::initStyleSheet()
 	} else {
 		QString platformDependantStyle = "";
 		QString platformDependantStylePath;
-#ifdef Q_WS_X11
+#ifdef Q_OS_LINUX
 		if(style()->metaObject()->className()==QString("OxygenStyle")) {
 			QFile oxygenStyleSheet(QString(":/resources/styles/linux-kde-oxygen-%1.qss").arg(suffix));
 			if(oxygenStyleSheet.open(QIODevice::ReadOnly)) {
@@ -2892,11 +2925,11 @@ void MainWindow::initStyleSheet()
 		platformDependantStylePath = QString(":/resources/styles/linux-%1.qss").arg(suffix);
 #endif
 
-#ifdef Q_WS_MAC
+#ifdef Q_OS_MAC
 		platformDependantStylePath = QString(":/resources/styles/mac-%1.qss").arg(suffix);
 #endif
 
-#ifdef Q_WS_WIN
+#ifdef Q_OS_WIN
 		platformDependantStylePath = QString(":/resources/styles/win-%1.qss").arg(suffix);
 #endif
 

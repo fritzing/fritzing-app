@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2013 Fachhochschule Potsdam - http://fh-potsdam.de
+Copyright (c) 2007-2014 Fachhochschule Potsdam - http://fh-potsdam.de
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -151,7 +151,7 @@ const QString FolderUtils::getLibraryPath()
 
 const QString FolderUtils::libraryPath() 
 {
-#ifdef Q_WS_MAC
+#ifdef Q_OS_MAC
 	// mac plugins are always in the bundle
 	return QDir::cleanPath(QCoreApplication::applicationDirPath() + "/../lib");
 #endif
@@ -161,7 +161,7 @@ const QString FolderUtils::libraryPath()
 
 const QString FolderUtils::applicationDirPath() {
 	if (m_appPath.isEmpty()) {
-#ifdef Q_WS_WIN
+#ifdef Q_OS_WIN
 		return QCoreApplication::applicationDirPath();
 #else
 		// look in standard Fritzing location (applicationDirPath and parent folders) then in standard linux locations
@@ -251,8 +251,13 @@ const QString FolderUtils::openSaveFolder() {
 			}
 		}
 
+#if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
 		DebugDialog::debug(QString("default save location: %1").arg(QDesktopServices::storageLocation(QDesktopServices::DocumentsLocation)));
 		return QDesktopServices::storageLocation(QDesktopServices::DocumentsLocation);
+#else
+		DebugDialog::debug(QString("default save location: %1").arg(QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)));
+		return QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation);
+#endif
 	} else {
 		return m_openSaveFolder;
 	}
@@ -556,7 +561,7 @@ void FolderUtils::copyBin(const QString & dest, const QString & source) {
 
     // this copy action, is not working on windows, because is a resources file
     if(!QFile(source).copy(dest)) {
-#ifdef Q_WS_WIN // may not be needed from qt 4.5.2 on
+#ifdef Q_OS_WIN // may not be needed from qt 4.5.2 on
         DebugDialog::debug("Failed to copy a file from the resources");
         QDir binsFolder = QFileInfo(dest).dir().absolutePath();
         QStringList binFiles = binsFolder.entryList(QDir::AllEntries | QDir::NoDotAndDotDot);
@@ -574,7 +579,7 @@ void FolderUtils::copyBin(const QString & dest, const QString & source) {
     QFile::setPermissions(
         dest,
         QFile::WriteOwner | QFile::WriteUser | ps
-#ifdef Q_WS_WIN
+#ifdef Q_OS_WIN
         | QFile::WriteOther | QFile::WriteGroup
 #endif
 

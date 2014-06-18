@@ -675,7 +675,7 @@
                 </iconView>
             </views>
         </instance>
-                <instance moduleIdRef="chipkit_WF32" modelIndex="48" path="parts/core/chipkit_WF32.fzp">
+        <instance moduleIdRef="chipkit_WF32" modelIndex="3" path="parts/core/chipkit_WF32.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
@@ -689,7 +689,6 @@
               </iconView>
           </views>
         </instance>
-
         <instance moduleIdRef="2c9d427b475ef8d07dc752a4362af0ae" modelIndex="48" path="parts/core/controller_wiring.fzp">
             <views>
                 <iconView layer="icon">

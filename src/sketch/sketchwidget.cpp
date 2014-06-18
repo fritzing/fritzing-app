@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2013 Fachhochschule Potsdam - http://fh-potsdam.de
+Copyright (c) 2007-2014 Fachhochschule Potsdam - http://fh-potsdam.de
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -24,8 +24,8 @@ $Date: 2013-04-29 07:24:08 +0200 (Mon, 29 Apr 2013) $
 
 ********************************************************************/
 
+#include <QtCore>
 
-#include <QtGui>
 #include <QGraphicsScene>
 #include <QPoint>
 #include <QPair>
@@ -43,6 +43,10 @@ $Date: 2013-04-29 07:24:08 +0200 (Mon, 29 Apr 2013) $
 #include <QApplication>
 #include <QDomElement>
 #include <QSettings>
+#include <QClipboard>
+#include <QScrollBar>
+#include <QStatusBar>
+
 #include <limits>
 
 #include "../items/partfactory.h"
@@ -166,6 +170,10 @@ SketchWidget::SketchWidget(ViewLayer::ViewID viewID, QWidget *parent, int size, 
 	m_arrowTimer.setParent(this);
 	m_arrowTimer.setInterval(AutoRepeatDelay);
 	m_arrowTimer.setSingleShot(true);
+#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
+    m_arrowTimer.setTimerType(Qt::PreciseTimer);
+    m_autoScrollTimer.setTimerType(Qt::PreciseTimer);
+#endif
 	connect(&m_arrowTimer, SIGNAL(timeout()), this, SLOT(arrowTimerTimeout()));
 	m_addDefaultParts = false;
 	m_addedDefaultPart = NULL;
@@ -709,7 +717,7 @@ void SketchWidget::addWireExtras(long newID, QDomElement & view, QUndoCommand * 
 	new WireExtrasCommand(this, newID, copy, copy, parentCommand);
 }
 
-void SketchWidget::setWireExtras(long newID, const QDomElement & extras)
+void SketchWidget::setWireExtras(long newID, QDomElement & extras)
 {
 	Wire * wire = qobject_cast<Wire *>(findItem(newID));
 	if (wire == NULL) return;
@@ -2197,7 +2205,7 @@ bool SketchWidget::moveByArrow(double dx, double dy, QKeyEvent * event) {
 		QPoint cp = QCursor::pos();
 		QPoint wp = this->mapFromGlobal(cp);
 		QPointF sp = this->mapToScene(wp);
-		Wire * wire = dynamic_cast<Wire *>(scene()->itemAt(sp));
+		Wire * wire = dynamic_cast<Wire *>(scene()->itemAt(sp, QTransform()));
 		bool draggingWire = false;
 		if (wire != NULL) {
 			if (canChainWire(wire) && wire->hasConnections()) {
@@ -6904,7 +6912,7 @@ bool SketchWidget::modifyNewWireConnections(Wire * dragWire, ConnectorItem * fro
 */
 
 void SketchWidget::setupAutoscroll(bool moving) {
-	m_autoScrollX = m_autoScrollY = 0;
+    m_autoScrollX = m_autoScrollY = 0;
 	m_autoScrollThreshold = (moving) ? MoveAutoScrollThreshold : DragAutoScrollThreshold;
 	m_autoScrollCount = 0;
 	connect(&m_autoScrollTimer, SIGNAL(timeout()), this,
@@ -9489,7 +9497,7 @@ void SketchWidget::selectItems(QList<ItemBase *> startingItemBases) {
 
     if (theSame) return;
 
-    bool count = 0;
+    int count = 0;
     ItemBase * theItemBase = NULL;
     foreach(ItemBase * itemBase, itemBases) {
         if (itemBase) {
@@ -9823,7 +9831,7 @@ void SketchWidget::squashShapes(QPointF scenePos)
     for (; ix < itms.count(); ix++) {
         QGraphicsItem * item = itms.at(ix);
         connectorItem = dynamic_cast<ConnectorItem *>(item);
-        if (connectorItem && connectorItem->acceptsHoverEvents()) {
+        if (connectorItem && connectorItem->acceptHoverEvents()) {
             ItemBase * itemBase = connectorItem->attachedTo();
             if (itemBase->inactive()) continue;
             if (itemBase->hidden()) continue;
@@ -9833,7 +9841,7 @@ void SketchWidget::squashShapes(QPointF scenePos)
         }
 
         wire = dynamic_cast<Wire *>(item);
-        if (wire != NULL && wire->acceptsHoverEvents() && !wire->inactive() && !wire->hidden() && !wire->layerHidden()) break;
+        if (wire != NULL && wire->acceptHoverEvents() && !wire->inactive() && !wire->hidden() && !wire->layerHidden()) break;
     }
 
     if (ix == 0) {

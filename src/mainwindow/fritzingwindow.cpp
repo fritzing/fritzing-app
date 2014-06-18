@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2012 Fachhochschule Potsdam - http://fh-potsdam.de
+Copyright (c) 2007-2014 Fachhochschule Potsdam - http://fh-potsdam.de
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -44,7 +44,7 @@ QString FritzingWindow::ReadOnlyPlaceholder(" [READ-ONLY] ");
 static QString ___fritzingTitle___;
 QStringList FritzingWindow::OtherKnownExtensions;
 
-FritzingWindow::FritzingWindow(const QString &untitledFileName, int &untitledFileCount, QString fileExt, QWidget * parent, Qt::WFlags f)
+FritzingWindow::FritzingWindow(const QString &untitledFileName, int &untitledFileCount, QString fileExt, QWidget * parent, Qt::WindowFlags f)
 	: QMainWindow(parent, f)
 {
 	___fritzingTitle___ = QObject::tr("Fritzing");

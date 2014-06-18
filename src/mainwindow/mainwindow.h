@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2013 Fachhochschule Potsdam - http://fh-potsdam.de
+Copyright (c) 2007-2014 Fachhochschule Potsdam - http://fh-potsdam.de
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -43,6 +43,7 @@ $Date: 2013-04-28 14:14:07 +0200 (So, 28. Apr 2013) $
 #include <QProxyStyle>
 #include <QStyle>
 #include <QStylePainter>
+#include <QPrinter>
 
 #include "fritzingwindow.h"
 #include "sketchareawidget.h"
@@ -721,7 +722,9 @@ protected:
 	// Export Menu
 	QMenu *m_exportMenu;
 	QAction *m_exportJpgAct;
+#if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
 	QAction *m_exportPsAct;
+#endif
 	QAction *m_exportPngAct;
 	QAction *m_exportPdfAct;
 	QAction *m_exportEagleAct;

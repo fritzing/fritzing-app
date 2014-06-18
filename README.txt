@@ -62,8 +62,8 @@ using the following steps (qmake is a tool supplied by Qt):
 	make
 	make install
 
-Fritzing requires Qt 4.6 and up, and the Qt-sqlite and Qt-jpeg plugins.
+Fritzing requires Qt 5.2.1 and up, and the Qt-sqlite and Qt-jpeg plugins.
 
 
-(c) 2007-2013 Fachhochschule Potsdam
+(c) 2007-2014 Fachhochschule Potsdam
 design.fh-potsdam.de

@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2013 Fachhochschule Potsdam - http://fh-potsdam.de
+Copyright (c) 2007-2014 Fachhochschule Potsdam - http://fh-potsdam.de
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -20,7 +20,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 							                    					
 $Revision: 9268 $:
 $Author: irascibl@gmail.com $:
-$Date: 2013-05-10 17:47:21 +0200 (Fr, 10. Mai 2013) $
+$Date: 2014-06-11 17:47:21 +0200 (We, 11. Jun 2013) $
 
 ********************************************************************/
 					
@@ -36,11 +36,11 @@ $Date: 2013-05-10 17:47:21 +0200 (Fr, 10. Mai 2013) $
 #include "../lib/qtsysteminfo/QtSystemInfo.h"
 
 QString Version::m_majorVersion("0");       
-QString Version::m_minorVersion("8");
-QString Version::m_minorSubVersion("8");
+QString Version::m_minorVersion("9");
+QString Version::m_minorSubVersion("0");
 QString Version::m_modifier("b");
 QString Version::m_svnRevision("$Revision: da4e $:");
-QString Version::m_svnDate("$Date: 2014-01-31 06:19:32 +0200 (Fr, 31 Jan 2014) $");
+QString Version::m_svnDate("$Date: 2014-06-11 06:19:32 +0200 (We, 11 Jun 2014) $");
 QString Version::m_revision;
 QString Version::m_date;
 QString Version::m_shortDate;

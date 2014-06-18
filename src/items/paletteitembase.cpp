@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2013 Fachhochschule Potsdam - http://fh-potsdam.de
+Copyright (c) 2007-2014 Fachhochschule Potsdam - http://fh-potsdam.de
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -225,7 +225,7 @@ bool PaletteItemBase::acceptsMousePressConnectorEvent(ConnectorItem *, QGraphics
 }
 
 
-bool PaletteItemBase::mousePressEvent(PaletteItemBase * originalItem, QGraphicsSceneMouseEvent *event)
+bool PaletteItemBase::mousePressEventK(PaletteItemBase * originalItem, QGraphicsSceneMouseEvent *event)
 {
 	Q_UNUSED(originalItem);
 
@@ -263,11 +263,11 @@ bool PaletteItemBase::mousePressEvent(PaletteItemBase * originalItem, QGraphicsS
     return false;
 }
 
-void PaletteItemBase::mouseMoveEvent(PaletteItemBase *, QGraphicsSceneMouseEvent *)
+void PaletteItemBase::mouseMoveEventK(PaletteItemBase *, QGraphicsSceneMouseEvent *)
 {
 }
 
-void PaletteItemBase::mouseReleaseEvent(PaletteItemBase *, QGraphicsSceneMouseEvent *)
+void PaletteItemBase::mouseReleaseEventK(PaletteItemBase *, QGraphicsSceneMouseEvent *)
 {
 }
 

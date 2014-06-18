@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2013 Fachhochschule Potsdam - http://fh-potsdam.de
+Copyright (c) 2007-2014 Fachhochschule Potsdam - http://fh-potsdam.de
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -40,7 +40,8 @@ FGraphicsScene::FGraphicsScene( QObject * parent) : QGraphicsScene(parent)
 
 void FGraphicsScene::helpEvent(QGraphicsSceneHelpEvent *helpEvent)
 {
-    QGraphicsItem * item = this->itemAt(helpEvent->scenePos());
+    // TODO: how do we get a QTransform?
+    QGraphicsItem * item = this->itemAt(helpEvent->scenePos(), QTransform());
     if (item == NULL) return;
 
     QString text;

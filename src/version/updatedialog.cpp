@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2012 Fachhochschule Potsdam - http://fh-potsdam.de
+Copyright (c) 2007-2014 Fachhochschule Potsdam - http://fh-potsdam.de
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -25,6 +25,7 @@ $Date: 2012-06-28 00:18:10 +0200 (Do, 28. Jun 2012) $
 ********************************************************************/
 
 // much code borrowed from Qt's rsslisting example
+
 
 #include "updatedialog.h"	
 #include "version.h"
@@ -58,7 +59,6 @@ UpdateDialog::UpdateDialog(QWidget *parent) : QDialog(parent)
 	vLayout->addWidget(buttonBox);
 
 	this->setLayout(vLayout);
-
 }
 
 UpdateDialog::~UpdateDialog() {
@@ -132,19 +132,18 @@ void UpdateDialog::setVersionChecker(VersionChecker * versionChecker)
 	m_versionChecker = versionChecker;
 	connect(m_versionChecker, SIGNAL(releasesAvailable()), this, SLOT(releasesAvailableSlot()));
 	connect(m_versionChecker, SIGNAL(xmlError(QXmlStreamReader::Error)), this, SLOT(xmlErrorSlot(QXmlStreamReader::Error)));
-	connect(m_versionChecker, SIGNAL(httpError(QHttp::Error)), this, SLOT(httpErrorSlot(QHttp::Error)));
+    connect(m_versionChecker, SIGNAL(httpError(QNetworkReply::NetworkError)), this, SLOT(httpErrorSlot(QNetworkReply::NetworkError)));
 	m_versionChecker->fetch();
 
+}
+
+void UpdateDialog::httpErrorSlot(QNetworkReply::NetworkError) {
+    handleError();
 }
 
 void UpdateDialog::releasesAvailableSlot() {
 	setAvailableReleases(m_versionChecker->availableReleases());
 	emit enableAgainSignal(true);
-}
-
-void UpdateDialog::httpErrorSlot(QHttp::Error  statusCode) {
-	Q_UNUSED(statusCode);
-	handleError();
 }
 
 void UpdateDialog::xmlErrorSlot(QXmlStreamReader::Error  errorCode) {
@@ -197,3 +196,4 @@ QString UpdateDialog::genTable(const QString & title, AvailableRelease * release
 			.arg(release->link)
 			.arg(release->summary.replace("changelog:", "", Qt::CaseInsensitive));
 }
+

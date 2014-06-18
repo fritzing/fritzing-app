@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2013 Fachhochschule Potsdam - http://fh-potsdam.de
+Copyright (c) 2007-2014 Fachhochschule Potsdam - http://fh-potsdam.de
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -33,12 +33,14 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 #include <QFileInfoList>
 #include <QFileInfo>
 #include <QRegExp>
-#include <QtGui>
 #include <QSettings>
 #include <QFontMetrics>
 #include <QTextStream>
 #include <QMessageBox>
 #include <QSplitter>
+#include <QHBoxLayout>
+#include <QVBoxLayout>
+
 
 static const QChar Quote91Char(0x91);
 static QString UnableToProgramMessage;

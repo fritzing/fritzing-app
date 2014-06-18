@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- Created with Fritzing (http://www.fritzing.org/) -->
+<svg xmlns="http://www.w3.org/2000/svg" width="0.503937in" x="0in" version="1.2" y="0in" gorn="0"  height="0.503937in" viewBox="0 0 12.8 12.8" id="svg2">
+    <desc >
+        <referenceFile >frode_stm32f405_64lqfp_pcb.svg</referenceFile>
+    </desc>
+    <metadata  id="metadata86">
+        <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+            <cc:Work xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:cc="http://creativecommons.org/ns#" rdf:about="">
+                <dc:format xmlns:dc="http://purl.org/dc/elements/1.1/">image/svg+xml</dc:format>
+                <dc:type xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:resource="http://purl.org/dc/dcmitype/StillImage" xmlns:dc="http://purl.org/dc/elements/1.1/"/>
+            </cc:Work>
+        </rdf:RDF>
+    </metadata>
+    <defs  id="defs84"/>
+    <g gorn="0.3"  id="copper1">
+        <rect width="0.3" x="2.5" y="11.2" fill="#F7BD13" gorn="0.3.0"  connectorname="1" height="1.6" stroke="none" id="connector0pad" stroke-linecap="round" stroke-width="0"/>
+        <rect width="0.3" x="3" y="11.2" fill="#F7BD13" gorn="0.3.1"  connectorname="2" height="1.6" stroke="none" id="connector1pad" stroke-linecap="round" stroke-width="0"/>
+        <rect width="0.3" x="3.5" y="11.2" fill="#F7BD13" gorn="0.3.2"  connectorname="3" height="1.6" stroke="none" id="connector2pad" stroke-linecap="round" stroke-width="0"/>
+        <rect width="0.3" x="4" y="11.2" fill="#F7BD13" gorn="0.3.3"  connectorname="4" height="1.6" stroke="none" id="connector3pad" stroke-linecap="round" stroke-width="0"/>
+        <rect width="0.3" x="4.5" y="11.2" fill="#F7BD13" gorn="0.3.4"  connectorname="5" height="1.6" stroke="none" id="connector4pad" stroke-linecap="round" stroke-width="0"/>
+        <rect width="0.3" x="5" y="11.2" fill="#F7BD13" gorn="0.3.5"  connectorname="6" height="1.6" stroke="none" id="connector5pad" stroke-linecap="round" stroke-width="0"/>
+        <rect width="0.3" x="5.5" y="11.2" fill="#F7BD13" gorn="0.3.6"  connectorname="7" height="1.6" stroke="none" id="connector6pad" stroke-linecap="round" stroke-width="0"/>
+        <rect width="0.3" x="6" y="11.2" fill="#F7BD13" gorn="0.3.7"  connectorname="8" height="1.6" stroke="none" id="connector7pad" stroke-linecap="round" stroke-width="0"/>
+        <rect width="0.3" x="6.5" y="11.2" fill="#F7BD13" gorn="0.3.8"  connectorname="9" height="1.6" stroke="none" id="connector8pad" stroke-linecap="round" stroke-width="0"/>
+        <rect width="0.3" x="7" y="11.2" fill="#F7BD13" gorn="0.3.9"  connectorname="10" height="1.6" stroke="none" id="connector9pad" stroke-linecap="round" stroke-width="0"/>
+        <rect width="0.3" x="7.5" y="11.2" fill="#F7BD13" gorn="0.3.10"  connectorname="11" height="1.6" stroke="none" id="connector10pad" stroke-linecap="round" stroke-width="0"/>
+        <rect width="0.3" x="8" y="11.2" fill="#F7BD13" gorn="0.3.11"  connectorname="12" height="1.6" stroke="none" id="connector11pad" stroke-linecap="round" stroke-width="0"/>
+        <rect width="0.3" x="8.5" y="11.2" fill="#F7BD13" gorn="0.3.12"  connectorname="13" height="1.6" stroke="none" id="connector12pad" stroke-linecap="round" stroke-width="0"/>
+        <rect width="0.3" x="9" y="11.2" fill="#F7BD13" gorn="0.3.13"  connectorname="14" height="1.6" stroke="none" id="connector13pad" stroke-linecap="round" stroke-width="0"/>
+        <rect width="0.3" x="9.5" y="11.2" fill="#F7BD13" gorn="0.3.14"  connectorname="15" height="1.6" stroke="none" id="connector14pad" stroke-linecap="round" stroke-width="0"/>
+        <rect width="0.3" x="10" y="11.2" fill="#F7BD13" gorn="0.3.15"  connectorname="16" height="1.6" stroke="none" id="connector15pad" stroke-linecap="round" stroke-width="0"/>
+        <rect width="1.6" x="11.2" y="10" fill="#F7BD13" gorn="0.3.16"  connectorname="17" height="0.3" stroke="none" id="connector16pad" stroke-linecap="round" stroke-width="0"/>
+        <rect width="1.6" x="11.2" y="9.5" fill="#F7BD13" gorn="0.3.17"  connectorname="18" height="0.3" stroke="none" id="connector17pad" stroke-linecap="round" stroke-width="0"/>
+        <rect width="1.6" x="11.2" y="9" fill="#F7BD13" gorn="0.3.18"  connectorname="19" height="0.3" stroke="none" id="connector18pad" stroke-linecap="round" stroke-width="0"/>
+        <rect width="1.6" x="11.2" y="8.5" fill="#F7BD13" gorn="0.3.19"  connectorname="20" height="0.3" stroke="none" id="connector19pad" stroke-linecap="round" stroke-width="0"/>
+        <rect width="1.6" x="11.2" y="8" fill="#F7BD13" gorn="0.3.20"  connectorname="21" height="0.3" stroke="none" id="connector20pad" stroke-linecap="round" stroke-width="0"/>
+        <rect width="1.6" x="11.2" y="7.5" fill="#F7BD13" gorn="0.3.21"  connectorname="22" height="0.3" stroke="none" id="connector21pad" stroke-linecap="round" stroke-width="0"/>
+        <rect width="1.6" x="11.2" y="7" fill="#F7BD13" gorn="0.3.22"  connectorname="23" height="0.3" stroke="none" id="connector22pad" stroke-linecap="round" stroke-width="0"/>
+        <rect width="1.6" x="11.2" y="6.5" fill="#F7BD13" gorn="0.3.23"  connectorname="24" height="0.3" stroke="none" id="connector23pad" stroke-linecap="round" stroke-width="0"/>
+        <rect width="1.6" x="11.2" y="6" fill="#F7BD13" gorn="0.3.24"  connectorname="25" height="0.3" stroke="none" id="connector24pad" stroke-linecap="round" stroke-width="0"/>
+        <rect width="1.6" x="11.2" y="5.5" fill="#F7BD13" gorn="0.3.25"  connectorname="26" height="0.3" stroke="none" id="connector25pad" stroke-linecap="round" stroke-width="0"/>
+        <rect width="1.6" x="11.2" y="5" fill="#F7BD13" gorn="0.3.26"  connectorname="27" height="0.3" stroke="none" id="connector26pad" stroke-linecap="round" stroke-width="0"/>
+        <rect width="1.6" x="11.2" y="4.5" fill="#F7BD13" gorn="0.3.27"  connectorname="28" height="0.3" stroke="none" id="connector27pad" stroke-linecap="round" stroke-width="0"/>
+        <rect width="1.6" x="11.2" y="4" fill="#F7BD13" gorn="0.3.28"  connectorname="29" height="0.3" stroke="none" id="connector28pad" stroke-linecap="round" stroke-width="0"/>
+        <rect width="1.6" x="11.2" y="3.5" fill="#F7BD13" gorn="0.3.29"  connectorname="30" height="0.3" stroke="none" id="connector29pad" stroke-linecap="round" stroke-width="0"/>
+        <rect width="1.6" x="11.2" y="3" fill="#F7BD13" gorn="0.3.30"  connectorname="31" height="0.3" stroke="none" id="connector30pad" stroke-linecap="round" stroke-width="0"/>
+        <rect width="1.6" x="11.2" y="2.5" fill="#F7BD13" gorn="0.3.31"  connectorname="32" height="0.3" stroke="none" id="connector31pad" stroke-linecap="round" stroke-width="0"/>
+        <rect width="0.3" x="10" y="0" fill="#F7BD13" gorn="0.3.32"  connectorname="33" height="1.6" stroke="none" id="connector32pad" stroke-linecap="round" stroke-width="0"/>
+        <rect width="0.3" x="9.5" y="0" fill="#F7BD13" gorn="0.3.33"  connectorname="34" height="1.6" stroke="none" id="connector33pad" stroke-linecap="round" stroke-width="0"/>
+        <rect width="0.3" x="9" y="0" fill="#F7BD13" gorn="0.3.34"  connectorname="35" height="1.6" stroke="none" id="connector34pad" stroke-linecap="round" stroke-width="0"/>
+        <rect width="0.3" x="8.5" y="0" fill="#F7BD13" gorn="0.3.35"  connectorname="36" height="1.6" stroke="none" id="connector35pad" stroke-linecap="round" stroke-width="0"/>
+        <rect width="0.3" x="8" y="0" fill="#F7BD13" gorn="0.3.36"  connectorname="37" height="1.6" stroke="none" id="connector36pad" stroke-linecap="round" stroke-width="0"/>
+        <rect width="0.3" x="7.5" y="0" fill="#F7BD13" gorn="0.3.37"  connectorname="38" height="1.6" stroke="none" id="connector37pad" stroke-linecap="round" stroke-width="0"/>
+        <rect width="0.3" x="7" y="0" fill="#F7BD13" gorn="0.3.38"  connectorname="39" height="1.6" stroke="none" id="connector38pad" stroke-linecap="round" stroke-width="0"/>
+        <rect width="0.3" x="6.5" y="0" fill="#F7BD13" gorn="0.3.39"  connectorname="40" height="1.6" stroke="none" id="connector39pad" stroke-linecap="round" stroke-width="0"/>
+        <rect width="0.3" x="6" y="0" fill="#F7BD13" gorn="0.3.40"  connectorname="41" height="1.6" stroke="none" id="connector40pad" stroke-linecap="round" stroke-width="0"/>
+        <rect width="0.3" x="5.5" y="0" fill="#F7BD13" gorn="0.3.41"  connectorname="42" height="1.6" stroke="none" id="connector41pad" stroke-linecap="round" stroke-width="0"/>
+        <rect width="0.3" x="5" y="0" fill="#F7BD13" gorn="0.3.42"  connectorname="43" height="1.6" stroke="none" id="connector42pad" stroke-linecap="round" stroke-width="0"/>
+        <rect width="0.3" x="4.5" y="0" fill="#F7BD13" gorn="0.3.43"  connectorname="44" height="1.6" stroke="none" id="connector43pad" stroke-linecap="round" stroke-width="0"/>
+        <rect width="0.3" x="4" y="0" fill="#F7BD13" gorn="0.3.44"  connectorname="45" height="1.6" stroke="none" id="connector44pad" stroke-linecap="round" stroke-width="0"/>
+        <rect width="0.3" x="3.5" y="0" fill="#F7BD13" gorn="0.3.45"  connectorname="46" height="1.6" stroke="none" id="connector45pad" stroke-linecap="round" stroke-width="0"/>
+        <rect width="0.3" x="3" y="0" fill="#F7BD13" gorn="0.3.46"  connectorname="47" height="1.6" stroke="none" id="connector46pad" stroke-linecap="round" stroke-width="0"/>
+        <rect width="0.3" x="2.5" y="0" fill="#F7BD13" gorn="0.3.47"  connectorname="48" height="1.6" stroke="none" id="connector47pad" stroke-linecap="round" stroke-width="0"/>
+        <rect width="1.6" x="0" y="2.5" fill="#F7BD13" gorn="0.3.48"  connectorname="49" height="0.3" stroke="none" id="connector48pad" stroke-linecap="round" stroke-width="0"/>
+        <rect width="1.6" x="0" y="3" fill="#F7BD13" gorn="0.3.49"  connectorname="50" height="0.3" stroke="none" id="connector49pad" stroke-linecap="round" stroke-width="0"/>
+        <rect width="1.6" x="0" y="3.5" fill="#F7BD13" gorn="0.3.50"  connectorname="51" height="0.3" stroke="none" id="connector50pad" stroke-linecap="round" stroke-width="0"/>
+        <rect width="1.6" x="0" y="4" fill="#F7BD13" gorn="0.3.51"  connectorname="52" height="0.3" stroke="none" id="connector51pad" stroke-linecap="round" stroke-width="0"/>
+        <rect width="1.6" x="0" y="4.5" fill="#F7BD13" gorn="0.3.52"  connectorname="53" height="0.3" stroke="none" id="connector52pad" stroke-linecap="round" stroke-width="0"/>
+        <rect width="1.6" x="0" y="5" fill="#F7BD13" gorn="0.3.53"  connectorname="54" height="0.3" stroke="none" id="connector53pad" stroke-linecap="round" stroke-width="0"/>
+        <rect width="1.6" x="0" y="5.5" fill="#F7BD13" gorn="0.3.54"  connectorname="55" height="0.3" stroke="none" id="connector54pad" stroke-linecap="round" stroke-width="0"/>
+        <rect width="1.6" x="0" y="6" fill="#F7BD13" gorn="0.3.55"  connectorname="56" height="0.3" stroke="none" id="connector55pad" stroke-linecap="round" stroke-width="0"/>
+        <rect width="1.6" x="0" y="6.5" fill="#F7BD13" gorn="0.3.56"  connectorname="57" height="0.3" stroke="none" id="connector56pad" stroke-linecap="round" stroke-width="0"/>
+        <rect width="1.6" x="0" y="7" fill="#F7BD13" gorn="0.3.57"  connectorname="58" height="0.3" stroke="none" id="connector57pad" stroke-linecap="round" stroke-width="0"/>
+        <rect width="1.6" x="0" y="7.5" fill="#F7BD13" gorn="0.3.58"  connectorname="59" height="0.3" stroke="none" id="connector58pad" stroke-linecap="round" stroke-width="0"/>
+        <rect width="1.6" x="0" y="8" fill="#F7BD13" gorn="0.3.59"  connectorname="60" height="0.3" stroke="none" id="connector59pad" stroke-linecap="round" stroke-width="0"/>
+        <rect width="1.6" x="0" y="8.5" fill="#F7BD13" gorn="0.3.60"  connectorname="61" height="0.3" stroke="none" id="connector60pad" stroke-linecap="round" stroke-width="0"/>
+        <rect width="1.6" x="0" y="9" fill="#F7BD13" gorn="0.3.61"  connectorname="62" height="0.3" stroke="none" id="connector61pad" stroke-linecap="round" stroke-width="0"/>
+        <rect width="1.6" x="0" y="9.5" fill="#F7BD13" gorn="0.3.62"  connectorname="63" height="0.3" stroke="none" id="connector62pad" stroke-linecap="round" stroke-width="0"/>
+        <rect width="1.6" x="0" y="10" fill="#F7BD13" gorn="0.3.63"  connectorname="64" height="0.3" stroke="none" id="connector63pad" stroke-linecap="round" stroke-width="0"/>
+        <g gorn="0.3.64"  id="copper0"/>
+    </g>
+    <g gorn="0.4"  id="silkscreen">
+        <line class="other" gorn="0.4.0"  stroke="#f0f0f0" stroke-linecap="round" id="line72" y1="1.69" x1="1.68" y2="1.69" stroke-width="0.2032" x2="11.11"/>
+        <line class="other" gorn="0.4.1"  stroke="#f0f0f0" stroke-linecap="round" id="line74" y1="1.69" x1="11.11" y2="11.11" stroke-width="0.2032" x2="11.11"/>
+        <line class="other" gorn="0.4.2"  stroke="#f0f0f0" stroke-linecap="round" id="line76" y1="11.11" x1="11.11" y2="11.11" stroke-width="0.2032" x2="1.68"/>
+        <line class="other" gorn="0.4.3"  stroke="#f0f0f0" stroke-linecap="round" id="line78" y1="11.11" x1="1.68" y2="1.69" stroke-width="0.2032" x2="1.68"/>
+        <circle class="other" fill="none" cx="2.6499" gorn="0.4.4"  cy="10.1501" stroke="#f0f0f0" r="0.5002" id="circle80" stroke-width="0.254"/>
+    </g>
+</svg>

@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- Created with Fritzing (http://www.fritzing.org/) -->
+<svg xmlns="http://www.w3.org/2000/svg" width="0.188976in" x="0in" version="1.2" y="0in"  height="0.188976in" viewBox="0 0 4.8 4.8" baseProfile="tiny">
+    <desc >
+        <referenceFile >sparkfun-poweric_qfn16-4x4_pcb.svg</referenceFile>
+    </desc>
+    <g gorn="0.1"  id="copper1">
+        <rect width="0.8" x="0" y="1.25" fill="#F7BD13" gorn="0.1.0"  connectorname="1" height="0.35" stroke="none" id="connector0pad" stroke-linecap="round" stroke-width="0"/>
+        <rect width="0.8" x="0" y="1.9" fill="#F7BD13" gorn="0.1.1"  connectorname="2" height="0.35" stroke="none" id="connector1pad" stroke-linecap="round" stroke-width="0"/>
+        <rect width="0.8" x="0" y="2.55" fill="#F7BD13" gorn="0.1.2"  connectorname="3" height="0.35" stroke="none" id="connector2pad" stroke-linecap="round" stroke-width="0"/>
+        <rect width="0.8" x="0" y="3.2" fill="#F7BD13" gorn="0.1.3"  connectorname="4" height="0.35" stroke="none" id="connector3pad" stroke-linecap="round" stroke-width="0"/>
+        <rect width="0.35" x="1.25" y="4" fill="#F7BD13" gorn="0.1.4"  connectorname="5" height="0.8" stroke="none" id="connector4pad" stroke-linecap="round" stroke-width="0"/>
+        <rect width="0.35" x="1.9" y="4" fill="#F7BD13" gorn="0.1.5"  connectorname="6" height="0.8" stroke="none" id="connector5pad" stroke-linecap="round" stroke-width="0"/>
+        <rect width="0.35" x="2.55" y="4" fill="#F7BD13" gorn="0.1.6"  connectorname="7" height="0.8" stroke="none" id="connector6pad" stroke-linecap="round" stroke-width="0"/>
+        <rect width="0.35" x="3.2" y="4" fill="#F7BD13" gorn="0.1.7"  connectorname="8" height="0.8" stroke="none" id="connector7pad" stroke-linecap="round" stroke-width="0"/>
+        <rect width="0.8" x="4" y="3.2" fill="#F7BD13" gorn="0.1.8"  connectorname="9" height="0.35" stroke="none" id="connector8pad" stroke-linecap="round" stroke-width="0"/>
+        <rect width="0.8" x="4" y="2.55" fill="#F7BD13" gorn="0.1.9"  connectorname="10" height="0.35" stroke="none" id="connector9pad" stroke-linecap="round" stroke-width="0"/>
+        <rect width="0.8" x="4" y="1.9" fill="#F7BD13" gorn="0.1.10"  connectorname="11" height="0.35" stroke="none" id="connector10pad" stroke-linecap="round" stroke-width="0"/>
+        <rect width="0.8" x="4" y="1.25" fill="#F7BD13" gorn="0.1.11"  connectorname="12" height="0.35" stroke="none" id="connector11pad" stroke-linecap="round" stroke-width="0"/>
+        <rect width="0.35" x="3.2" y="0" fill="#F7BD13" gorn="0.1.12"  connectorname="13" height="0.8" stroke="none" id="connector12pad" stroke-linecap="round" stroke-width="0"/>
+        <rect width="0.35" x="2.55" y="0" fill="#F7BD13" gorn="0.1.13"  connectorname="14" height="0.8" stroke="none" id="connector13pad" stroke-linecap="round" stroke-width="0"/>
+        <rect width="0.35" x="1.9" y="0" fill="#F7BD13" gorn="0.1.14"  connectorname="15" height="0.8" stroke="none" id="connector14pad" stroke-linecap="round" stroke-width="0"/>
+        <rect width="0.35" x="1.25" y="0" fill="#F7BD13" gorn="0.1.15"  connectorname="16" height="0.8" stroke="none" id="connector15pad" stroke-linecap="round" stroke-width="0"/>
+        <rect width="2.5" x="1.15" y="1.15" fill="#F7BD13" gorn="0.1.16"  connectorname="EXP" height="2.5" stroke="none" id="connector16pad" stroke-linecap="round" stroke-width="0"/>
+        <g gorn="0.1.17"  id="copper0"/>
+    </g>
+    <g gorn="0.2"  id="silkscreen">
+        <line class="other"  stroke="#f0f0f0" stroke-linecap="round" y1="0.3934" x1="0.368" y2="0.3934" stroke-width="0.2032" x2="0.9014"/>
+        <line class="other"  stroke="#f0f0f0" stroke-linecap="round" y1="0.3934" x1="0.368" y2="1.0538" stroke-width="0.2032" x2="0.368"/>
+        <line class="other"  stroke="#f0f0f0" stroke-linecap="round" y1="0.3934" x1="3.8986" y2="0.3934" stroke-width="0.2032" x2="4.432"/>
+        <line class="other"  stroke="#f0f0f0" stroke-linecap="round" y1="0.3934" x1="4.432" y2="1.0538" stroke-width="0.2032" x2="4.432"/>
+        <line class="other"  stroke="#f0f0f0" stroke-linecap="round" y1="4.432" x1="0.876" y2="4.432" stroke-width="0.2032" x2="0.3426"/>
+        <line class="other"  stroke="#f0f0f0" stroke-linecap="round" y1="4.432" x1="0.3426" y2="3.7716" stroke-width="0.2032" x2="0.3426"/>
+        <line class="other"  stroke="#f0f0f0" stroke-linecap="round" y1="4.432" x1="4.4574" y2="4.432" stroke-width="0.2032" x2="3.924"/>
+        <line class="other"  stroke="#f0f0f0" stroke-linecap="round" y1="4.432" x1="4.4574" y2="3.7716" stroke-width="0.2032" x2="4.4574"/>
+        <rect width="0.425" x="0.45" y="0.475" class="other" fill="#f0f0f0"  height="0.45" stroke="none" stroke-linecap="round" stroke-width="0"/>
+    </g>
+</svg>

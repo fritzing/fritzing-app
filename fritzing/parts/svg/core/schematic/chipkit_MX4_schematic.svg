@@ -1,699 +1,599 @@
-<?xml version='1.0' encoding='utf-8'?>
-<!DOCTYPE svg>
-<!-- Generator: Adobe Illustrator 16.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg xmlns="http://www.w3.org/2000/svg" width="4.63943in" x="0px" version="1.1" y="0px" gorn="0"  height="9.45549in" viewBox="0 0 334.039 680.795" xmlns:xml="http://www.w3.org/XML/1998/namespace" id="Layer_1" enable-background="new 0 -1 334.039 680.795" xml:space="preserve">
-    <desc >
-        <referenceFile >mx4-schematic.svg</referenceFile>
-    </desc>
-    <g  transform="translate(0,1)">
-        <g >
-            <g >
-                <g >
-                    <rect width="290.89" x="22.26" y="19.682" fill="#FFFFFF"  height="637.574" stroke="#231F20" fill-opacity="0" stroke-width="2.4" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.1"  stroke="#231F20" id="connector23pin" y1="98.212" stroke-width="2.4" x1="0" y2="98.212" x2="21.26" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.2"  stroke="#231F20" id="connector22pin" y1="119.473" stroke-width="2.4" x1="0" y2="119.473" x2="21.26" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.3"  stroke="#231F20" id="connector21pin" y1="140.732" stroke-width="2.4" x1="0" y2="140.732" x2="21.26" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.4"  stroke="#231F20" id="connector20pin" y1="161.992" stroke-width="2.4" x1="0" y2="161.992" x2="21.26" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.5"  stroke="#231F20" id="connector17pin" y1="183.252" stroke-width="2.4" x1="0" y2="183.252" x2="21.26" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.6"  stroke="#231F20" id="connector16pin" y1="204.512" stroke-width="2.4" x1="0" y2="204.512" x2="21.26" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.7"  stroke="#231F20" id="connector15pin" y1="225.771" stroke-width="2.4" x1="0" y2="225.771" x2="21.26" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.8"  stroke="#231F20" id="connector14pin" y1="247.032" stroke-width="2.4" x1="0" y2="247.032" x2="21.26" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.9"  stroke="#231F20" id="connector11pin" y1="268.292" stroke-width="2.4" x1="0" y2="268.292" x2="21.26" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.10"  stroke="#231F20" id="connector10pin" y1="289.551" stroke-width="2.4" x1="0" y2="289.551" x2="21.26" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.11"  stroke="#231F20" id="connector9pin" y1="310.811" stroke-width="2.4" x1="0" y2="310.811" x2="21.26" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.12"  stroke="#231F20" id="connector8pin" y1="332.071" stroke-width="2.4" x1="0" y2="332.071" x2="21.26" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.13"  stroke="#231F20" id="connector57pin" y1="353.331" stroke-width="2.4" x1="0" y2="353.331" x2="21.26" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.14"  stroke="#231F20" id="connector54pin" y1="374.59" stroke-width="2.4" x1="0" y2="374.59" x2="21.26" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.15"  stroke="#231F20" id="connector100pin" y1="20.26" stroke-width="2.4" x1="69.185" y2="-1" x2="69.185" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.16"  stroke="#231F20" id="connector99pin" y1="20.26" stroke-width="2.4" x1="90.445" y2="-1" x2="90.445" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.17"  stroke="#231F20" id="connector98pin" y1="20.26" stroke-width="2.4" x1="111.705" y2="-1" x2="111.705" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.18"  stroke="#231F20" id="connector101pin" y1="20.26" stroke-width="2.4" x1="47.927" y2="-1" x2="47.927" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.19"  stroke="#231F20" id="connector105pin" y1="20.26" stroke-width="2.4" x1="132.965" y2="-1" x2="132.965" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.20"  stroke="#231F20" id="connector104pin" y1="20.26" stroke-width="2.4" x1="154.225" y2="-1" x2="154.225" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.21"  stroke="#231F20" id="connector5pin" y1="20.26" stroke-width="2.4" x1="175.485" y2="-1" x2="175.485" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.22"  stroke="#231F20" id="connector4pin" y1="20.26" stroke-width="2.4" x1="196.744" y2="-1" x2="196.744" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.23"  stroke="#231F20" id="connector107pin" y1="20.26" stroke-width="2.4" x1="218.004" y2="-1" x2="218.004" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.24"  stroke="#231F20" id="connector106pin" y1="20.26" stroke-width="2.4" x1="239.264" y2="-1" x2="239.264" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.25"  stroke="#231F20" id="connector67pin" y1="679.795" stroke-width="2.4" x1="68.685" y2="658.536" x2="68.685" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.26"  stroke="#231F20" id="connector51pin" y1="679.795" stroke-width="2.4" x1="89.945" y2="658.536" x2="89.945" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.27"  stroke="#231F20" id="connector50pin" y1="679.795" stroke-width="2.4" x1="111.205" y2="658.536" x2="111.205" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.28"  stroke="#231F20" id="connector66pin" y1="679.795" stroke-width="2.4" x1="47.427" y2="658.536" x2="47.427" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.29"  stroke="#231F20" id="connector49pin" y1="679.795" stroke-width="2.4" x1="132.465" y2="658.536" x2="132.465" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.30"  stroke="#231F20" id="connector48pin" y1="679.795" stroke-width="2.4" x1="153.725" y2="658.536" x2="153.725" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.31"  stroke="#231F20" id="connector60pin" y1="679.795" stroke-width="2.4" x1="174.985" y2="658.536" x2="174.985" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.32"  stroke="#231F20" id="connector61pin" y1="679.795" stroke-width="2.4" x1="196.244" y2="658.536" x2="196.244" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.33"  stroke="#231F20" id="connector62pin" y1="679.795" stroke-width="2.4" x1="217.504" y2="658.536" x2="217.504" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.34"  stroke="#231F20" id="connector63pin" y1="679.795" stroke-width="2.4" x1="238.764" y2="658.536" x2="238.764" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.35"  stroke="#231F20" id="connector53pin" y1="679.795" stroke-width="2.4" x1="260.024" y2="658.536" x2="260.024" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.36"  stroke="#231F20" id="connector47pin" y1="679.795" stroke-width="2.4" x1="260.524" y2="658.536" x2="260.524" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.37"  stroke="#231F20" id="connector41pin" y1="679.795" stroke-width="2.4" x1="260.024" y2="658.536" x2="260.024" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.38"  stroke="#231F20" id="connector30pin" y1="679.795" stroke-width="2.4" x1="260.524" y2="658.536" x2="260.524" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.39"  stroke="#231F20" id="connector52pin" y1="679.795" stroke-width="2.4" x1="281.283" y2="658.536" x2="281.283" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.40"  stroke="#231F20" id="connector46pin" y1="679.795" stroke-width="2.4" x1="281.283" y2="658.536" x2="281.283" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.41"  stroke="#231F20" id="connector40pin" y1="679.795" stroke-width="2.4" x1="281.783" y2="658.536" x2="281.783" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.42"  stroke="#231F20" id="connector31pin" y1="679.795" stroke-width="2.4" x1="281.283" y2="658.536" x2="281.283" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.43"  stroke="#231F20" id="connector75pin" y1="395.85" stroke-width="2.4" x1="0" y2="395.85" x2="21.26" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.44"  stroke="#231F20" id="connector81pin" y1="417.11" stroke-width="2.4" x1="0" y2="417.11" x2="21.26" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.45"  stroke="#231F20" id="connector86pin" y1="438.37" stroke-width="2.4" x1="0" y2="438.37" x2="21.26" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.46"  stroke="#231F20" id="connector2pin" y1="459.63" stroke-width="2.4" x1="0" y2="459.63" x2="21.26" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.47"  stroke="#231F20" id="connector28pin" y1="480.89" stroke-width="2.4" x1="0" y2="480.89" x2="21.26" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.48"  stroke="#231F20" id="connector73pin" y1="502.15" stroke-width="2.4" x1="0" y2="502.15" x2="21.26" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.49"  stroke="#231F20" id="connector79pin" y1="523.41" stroke-width="2.4" x1="0" y2="523.41" x2="21.26" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.50"  stroke="#231F20" id="connector88pin" y1="544.669" stroke-width="2.4" x1="0" y2="544.669" x2="21.26" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.51"  stroke="#231F20" id="connector56pin" y1="565.929" stroke-width="2.4" x1="0" y2="565.929" x2="21.26" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.52"  stroke="#231F20" id="connector55pin" y1="587.189" stroke-width="2.4" x1="0" y2="587.189" x2="21.26" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.53"  stroke="#231F20" id="connector78pin" y1="608.449" stroke-width="2.4" x1="0" y2="608.449" x2="21.26" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.54"  stroke="#231F20" id="connector72pin" y1="629.708" stroke-width="2.4" x1="0" y2="629.708" x2="21.26" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.55"  stroke="#231F20" id="connector25pin" y1="56.192" stroke-width="2.4" x1="312.781" y2="56.192" x2="334.04" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.56"  stroke="#231F20" id="connector19pin" y1="56.203" stroke-width="2.4" x1="312.781" y2="56.203" x2="334.04" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.57"  stroke="#231F20" id="connector13pin" y1="56.192" stroke-width="2.4" x1="312.781" y2="56.192" x2="334.04" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.58"  stroke="#231F20" id="connector7pin" y1="56.203" stroke-width="2.4" x1="312.781" y2="56.203" x2="334.04" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.59"  stroke="#231F20" id="connector1pin" y1="56.192" stroke-width="2.4" x1="312.781" y2="56.192" x2="334.04" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.60"  stroke="#231F20" id="connector103pin" y1="20.26" stroke-width="2.4" x1="281.905" y2="-1" x2="281.905" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.61"  stroke="#231F20" id="connector97pin" y1="20.26" stroke-width="2.4" x1="281.916" y2="-1" x2="281.916" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.62"  stroke="#231F20" id="connector91pin" y1="20.26" stroke-width="2.4" x1="281.905" y2="-1" x2="281.905" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.63"  stroke="#231F20" id="connector85pin" y1="20.26" stroke-width="2.4" x1="281.916" y2="-1" x2="281.916" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.64"  stroke="#231F20" id="connector102pin" y1="20.26" stroke-width="2.4" x1="260.524" y2="-1" x2="260.524" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.65"  stroke="#231F20" id="connector96pin" y1="19.76" stroke-width="2.4" x1="260.524" y2="-1.5" x2="260.524" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.66"  stroke="#231F20" id="connector90pin" y1="20.76" stroke-width="2.4" x1="260.524" y2="-0.5" x2="260.524" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.67"  stroke="#231F20" id="connector84pin" y1="20.26" stroke-width="2.4" x1="260.524" y2="-1" x2="260.524" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.68"  stroke="#231F20" id="connector6pin" y1="77.453" stroke-width="2.4" x1="312.78" y2="77.453" x2="334.039" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.69"  stroke="#231F20" id="connector24pin" y1="78.953" stroke-width="2.4" x1="312.78" y2="78.953" x2="334.039" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.70"  stroke="#231F20" id="connector18pin" y1="78.453" stroke-width="2.4" x1="312.78" y2="78.453" x2="334.039" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.71"  stroke="#231F20" id="connector12pin" y1="78.453" stroke-width="2.4" x1="312.78" y2="78.453" x2="334.039" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.72"  stroke="#231F20" id="connector0pin" y1="78.453" stroke-width="2.4" x1="312.78" y2="78.453" x2="334.039" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.73"  stroke="#231F20" id="connector82pin" y1="55.692" stroke-width="2.4" x1="0.001" y2="55.692" x2="21.261" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.74"  stroke="#231F20" id="connector76pin" y1="55.703" stroke-width="2.4" x1="0.001" y2="55.703" x2="21.261" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.75"  stroke="#231F20" id="connector70pin" y1="55.692" stroke-width="2.4" x1="0.001" y2="55.692" x2="21.261" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.76"  stroke="#231F20" id="connector64pin" y1="55.703" stroke-width="2.4" x1="0.001" y2="55.703" x2="21.261" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.77"  stroke="#231F20" id="connector58pin" y1="55.692" stroke-width="2.4" x1="0.001" y2="55.692" x2="21.261" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.78"  stroke="#231F20" id="connector65pin" y1="76.953" stroke-width="2.4" x1="0" y2="76.953" x2="21.26" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.79"  stroke="#231F20" id="connector83pin" y1="78.453" stroke-width="2.4" x1="0" y2="78.453" x2="21.26" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.80"  stroke="#231F20" id="connector77pin" y1="77.953" stroke-width="2.4" x1="0" y2="77.953" x2="21.26" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.81"  stroke="#231F20" id="connector71pin" y1="77.953" stroke-width="2.4" x1="0" y2="77.953" x2="21.26" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.82"  stroke="#231F20" id="connector59pin" y1="77.953" stroke-width="2.4" x1="0" y2="77.953" x2="21.26" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.83"  stroke="#231F20" id="connector38pin" y1="141.232" stroke-width="2.4" x1="312.78" y2="141.232" x2="334.039" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.84"  stroke="#231F20" id="connector37pin" y1="119.971" stroke-width="2.4" x1="312.78" y2="119.971" x2="334.039" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.85"  stroke="#231F20" id="connector36pin" y1="98.711" stroke-width="2.4" x1="312.78" y2="98.711" x2="334.039" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.86"  stroke="#231F20" id="connector39pin" y1="162.492" stroke-width="2.4" x1="312.78" y2="162.492" x2="334.039" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.87"  stroke="#231F20" id="connector42pin" y1="183.752" stroke-width="2.4" x1="312.78" y2="183.752" x2="334.039" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.88"  stroke="#231F20" id="connector43pin" y1="205.012" stroke-width="2.4" x1="312.78" y2="205.012" x2="334.039" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.89"  stroke="#231F20" id="connector44pin" y1="226.271" stroke-width="2.4" x1="312.78" y2="226.271" x2="334.039" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.90"  stroke="#231F20" id="connector45pin" y1="247.532" stroke-width="2.4" x1="312.78" y2="247.532" x2="334.039" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.91"  stroke="#231F20" id="connector29pin" y1="268.792" stroke-width="2.4" x1="312.78" y2="268.792" x2="334.039" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.92"  stroke="#231F20" id="connector89pin" y1="290.051" stroke-width="2.4" x1="312.78" y2="290.051" x2="334.039" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.93"  stroke="#231F20" id="connector68pin" y1="311.311" stroke-width="2.4" x1="312.78" y2="311.311" x2="334.039" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.94"  stroke="#231F20" id="connector69pin" y1="332.571" stroke-width="2.4" x1="312.78" y2="332.571" x2="334.039" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.95"  stroke="#231F20" id="connector93pin" y1="353.83" stroke-width="2.4" x1="312.78" y2="353.83" x2="334.039" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.96"  stroke="#231F20" id="connector33pin" y1="375.089" stroke-width="2.4" x1="312.78" y2="375.089" x2="334.039" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.97"  stroke="#231F20" id="connector34pin" y1="396.35" stroke-width="2.4" x1="312.78" y2="396.35" x2="334.039" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.98"  stroke="#231F20" id="connector94pin" y1="417.61" stroke-width="2.4" x1="312.78" y2="417.61" x2="334.039" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.99"  stroke="#231F20" id="connector35pin" y1="438.87" stroke-width="2.4" x1="312.78" y2="438.87" x2="334.039" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.100"  stroke="#231F20" id="connector32pin" y1="460.13" stroke-width="2.4" x1="312.78" y2="460.13" x2="334.039" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.101"  stroke="#231F20" id="connector27pin" y1="481.39" stroke-width="2.4" x1="312.78" y2="481.39" x2="334.039" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.102"  stroke="#231F20" id="connector74pin" y1="502.65" stroke-width="2.4" x1="312.78" y2="502.65" x2="334.039" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.103"  stroke="#231F20" id="connector80pin" y1="523.91" stroke-width="2.4" x1="312.78" y2="523.91" x2="334.039" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.104"  stroke="#231F20" id="connector87pin" y1="545.169" stroke-width="2.4" x1="312.78" y2="545.169" x2="334.039" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.105"  stroke="#231F20" id="connector3pin" y1="566.429" stroke-width="2.4" x1="312.78" y2="566.429" x2="334.039" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.106"  stroke="#231F20" id="connector26pin" y1="587.689" stroke-width="2.4" x1="312.78" y2="587.689" x2="334.039" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.107"  stroke="#231F20" id="connector95pin" y1="608.949" stroke-width="2.4" x1="312.78" y2="608.949" x2="334.039" stroke-miterlimit="10"/>
-                    <line fill="none" gorn="0.1.0.0.0.108"  stroke="#231F20" id="connector92pin" y1="630.208" stroke-width="2.4" x1="312.78" y2="630.208" x2="334.039" stroke-miterlimit="10"/>
-                    <rect width="9" x="154.427" y="52.103" fill="none"  height="9"/>
-                    <rect width="8.333" x="154.76" y="72.683" fill="none"  height="9.667"/>
-                    <rect width="20.333" x="144.261" y="93.943" fill="none"  height="9.667"/>
-                    <g  transform="matrix(1 0 0 1 108.76 100.188)">
-                        <g >
-                            <g >
-                                <text font-family="DroidSans"  font-size="14">chipKITPRO MX4</text>
-                            </g>
-                        </g>
-                    </g>
-                    <rect width="19.667" x="38.094" y="24.26" fill="none"  height="9.333"/>
-                    <rect width="19.666" x="123.094" y="24.26" fill="none"  height="9.333"/>
-                    <rect width="31.333" x="77.593" y="37.259" fill="none"  height="10"/>
-                    <rect width="24" x="82.926" y="640.028" fill="none"  height="10"/>
-                    <g  transform="matrix(1 0 0 1 25.9265 58.8599)">
-                        <g >
-                            <g >
-                                <text font-family="DroidSans"  font-size="10">GND</text>
-                            </g>
-                        </g>
-                    </g>
-                    <g  transform="matrix(1 0 0 1 283.926 60.8599)">
-                        <g >
-                            <g >
-                                <text font-family="DroidSans"  font-size="10">GND</text>
-                            </g>
-                        </g>
-                    </g>
-                    <g  transform="matrix(1 0 0 1 272.7795 36.3599)">
-                        <g >
-                            <g >
-                                <text font-family="DroidSans"  font-size="10">GND</text>
-                            </g>
-                        </g>
-                    </g>
-                    <g  transform="matrix(1 0 0 1 252.2795 36.8599)">
-                        <g >
-                            <g >
-                                <text font-family="DroidSans"  font-size="10">VDD</text>
-                            </g>
-                        </g>
-                    </g>
-                    <g  transform="matrix(1 0 0 1 25.78 81.3599)">
-                        <g >
-                            <g >
-                                <text font-family="DroidSans"  font-size="10">VDD</text>
-                            </g>
-                        </g>
-                    </g>
-                    <g  transform="matrix(1 0 0 1 25.28 100.8599)">
-                        <g >
-                            <g >
-                                <text font-family="DroidSans"  font-size="10">RB0</text>
-                            </g>
-                        </g>
-                    </g>
-                    <g  transform="matrix(1 0 0 1 24.78 122.3599)">
-                        <g >
-                            <g >
-                                <text font-family="DroidSans"  font-size="10">RB1</text>
-                            </g>
-                        </g>
-                    </g>
-                    <g  transform="matrix(1 0 0 1 24.28 143.8599)">
-                        <g >
-                            <g >
-                                <text font-family="DroidSans"  font-size="10">RB2</text>
-                            </g>
-                        </g>
-                    </g>
-                    <g  transform="matrix(1 0 0 1 23.78 165.8599)">
-                        <g >
-                            <g >
-                                <text font-family="DroidSans"  font-size="10">RB3</text>
-                            </g>
-                        </g>
-                    </g>
-                    <g  transform="matrix(1 0 0 1 283.7795 79.8599)">
-                        <g >
-                            <g >
-                                <text font-family="DroidSans"  font-size="10">VDD</text>
-                            </g>
-                        </g>
-                    </g>
-                    <g  transform="matrix(1 0 0 1 285.2795 100.8599)">
-                        <g >
-                            <g >
-                                <text font-family="DroidSans"  font-size="10">RE0</text>
-                            </g>
-                        </g>
-                    </g>
-                    <g  transform="matrix(1 0 0 1 284.7795 122.3599)">
-                        <g >
-                            <g >
-                                <text font-family="DroidSans"  font-size="10">RE1</text>
-                            </g>
-                        </g>
-                    </g>
-                    <g  transform="matrix(1 0 0 1 284.2795 143.8599)">
-                        <g >
-                            <g >
-                                <text font-family="DroidSans"  font-size="10">RE2</text>
-                            </g>
-                        </g>
-                    </g>
-                    <g  transform="matrix(1 0 0 1 283.7795 165.8599)">
-                        <g >
-                            <g >
-                                <text font-family="DroidSans"  font-size="10">RE3</text>
-                            </g>
-                        </g>
-                    </g>
-                    <g  transform="matrix(1 0 0 1 23.78 187.3599)">
-                        <g >
-                            <g >
-                                <text font-family="DroidSans"  font-size="10">RB4</text>
-                            </g>
-                        </g>
-                    </g>
-                    <g  transform="matrix(1 0 0 1 24.28 398.8599)">
-                        <g >
-                            <g >
-                                <text font-family="DroidSans"  font-size="10">RC1</text>
-                            </g>
-                        </g>
-                    </g>
-                    <g  transform="matrix(1 0 0 1 23.78 420.3599)">
-                        <g >
-                            <g >
-                                <text font-family="DroidSans"  font-size="10">RC2</text>
-                            </g>
-                        </g>
-                    </g>
-                    <g  transform="matrix(1 0 0 1 23.28 442.3599)">
-                        <g >
-                            <g >
-                                <text font-family="DroidSans"  font-size="10">RC3</text>
-                            </g>
-                        </g>
-                    </g>
-                    <g  transform="matrix(1 0 0 1 23.28 463.8599)">
-                        <g >
-                            <g >
-                                <text font-family="DroidSans"  font-size="10">RC4</text>
-                            </g>
-                        </g>
-                    </g>
-                    <g  transform="matrix(1 0 0 1 24.78 207.3599)">
-                        <g >
-                            <g >
-                                <text font-family="DroidSans"  font-size="10">RB5</text>
-                            </g>
-                        </g>
-                    </g>
-                    <g  transform="matrix(1 0 0 1 25.28 229.3599)">
-                        <g >
-                            <g >
-                                <text font-family="DroidSans"  font-size="10">RB8</text>
-                            </g>
-                        </g>
-                    </g>
-                    <g  transform="matrix(1 0 0 1 24.78 250.8599)">
-                        <g >
-                            <g >
-                                <text font-family="DroidSans"  font-size="10">RB9</text>
-                            </g>
-                        </g>
-                    </g>
-                    <g  transform="matrix(1 0 0 1 24.78 272.3599)">
-                        <g >
-                            <g >
-                                <text font-family="DroidSans"  font-size="10">RB10</text>
-                            </g>
-                        </g>
-                    </g>
-                    <g  transform="matrix(1 0 0 1 24.28 293.3599)">
-                        <g >
-                            <g >
-                                <text font-family="DroidSans"  font-size="10">RB11</text>
-                            </g>
-                        </g>
-                    </g>
-                    <g  transform="matrix(1 0 0 1 24.28 313.8599)">
-                        <g >
-                            <g >
-                                <text font-family="DroidSans"  font-size="10">RB12</text>
-                            </g>
-                        </g>
-                    </g>
-                    <g  transform="matrix(1 0 0 1 23.78 335.8599)">
-                        <g >
-                            <g >
-                                <text font-family="DroidSans"  font-size="10">RB13</text>
-                            </g>
-                        </g>
-                    </g>
-                    <g  transform="matrix(1 0 0 1 23.28 355.8599)">
-                        <g >
-                            <g >
-                                <text font-family="DroidSans"  font-size="10">RB14</text>
-                            </g>
-                        </g>
-                    </g>
-                    <g  transform="matrix(1 0 0 1 22.78 376.8599)">
-                        <g >
-                            <g >
-                                <text font-family="DroidSans"  font-size="10">RB15</text>
-                            </g>
-                        </g>
-                    </g>
-                    <g  transform="matrix(1 0 0 1 283.7795 189.8599)">
-                        <g >
-                            <g >
-                                <text font-family="DroidSans"  font-size="10">RE4</text>
-                            </g>
-                        </g>
-                    </g>
-                    <g  transform="matrix(1 0 0 1 284.7795 209.8599)">
-                        <g >
-                            <g >
-                                <text font-family="DroidSans"  font-size="10">RE5</text>
-                            </g>
-                        </g>
-                    </g>
-                    <g  transform="matrix(1 0 0 1 285.2795 231.8599)">
-                        <g >
-                            <g >
-                                <text font-family="DroidSans"  font-size="10">RE6</text>
-                            </g>
-                        </g>
-                    </g>
-                    <g  transform="matrix(1 0 0 1 284.7795 253.3599)">
-                        <g >
-                            <g >
-                                <text font-family="DroidSans"  font-size="10">RE7</text>
-                            </g>
-                        </g>
-                    </g>
-                    <g  transform="matrix(1 0 0 1 284.7795 274.8599)">
-                        <g >
-                            <g >
-                                <text font-family="DroidSans"  font-size="10">RE8</text>
-                            </g>
-                        </g>
-                    </g>
-                    <g  transform="matrix(1 0 0 1 284.2795 295.8599)">
-                        <g >
-                            <g >
-                                <text font-family="DroidSans"  font-size="10">RE9</text>
-                            </g>
-                        </g>
-                    </g>
-                    <g  transform="matrix(1 0 0 1 227.7795 36.8599)">
-                        <g >
-                            <g >
-                                <text font-family="DroidSans"  font-size="10">RA15</text>
-                            </g>
-                        </g>
-                    </g>
-                    <g  transform="matrix(1 0 0 1 204.2795 36.8599)">
-                        <g >
-                            <g >
-                                <text font-family="DroidSans"  font-size="10">RA14</text>
-                            </g>
-                        </g>
-                    </g>
-                    <g  transform="matrix(1 0 0 1 181.7795 36.8599)">
-                        <g >
-                            <g >
-                                <text font-family="DroidSans"  font-size="10">RA10</text>
-                            </g>
-                        </g>
-                    </g>
-                    <g  transform="matrix(1 0 0 1 163.2795 36.8599)">
-                        <g >
-                            <g >
-                                <text font-family="DroidSans"  font-size="10">RA9</text>
-                            </g>
-                        </g>
-                    </g>
-                    <g  transform="matrix(1 0 0 1 143.7795 37.3599)">
-                        <g >
-                            <g >
-                                <text font-family="DroidSans"  font-size="10">RA7</text>
-                            </g>
-                        </g>
-                    </g>
-                    <g  transform="matrix(1 0 0 1 122.7795 37.3599)">
-                        <g >
-                            <g >
-                                <text font-family="DroidSans"  font-size="10">RA6</text>
-                            </g>
-                        </g>
-                    </g>
-                    <g  transform="matrix(1 0 0 1 102.7795 37.3599)">
-                        <g >
-                            <g >
-                                <text font-family="DroidSans"  font-size="10">RA5</text>
-                            </g>
-                        </g>
-                    </g>
-                    <g  transform="matrix(1 0 0 1 82.78 37.3599)">
-                        <g >
-                            <g >
-                                <text font-family="DroidSans"  font-size="10">RA4</text>
-                            </g>
-                        </g>
-                    </g>
-                    <g  transform="matrix(1 0 0 1 61.28 37.8599)">
-                        <g >
-                            <g >
-                                <text font-family="DroidSans"  font-size="10">RA1</text>
-                            </g>
-                        </g>
-                    </g>
-                    <g  transform="matrix(1 0 0 1 37.78 37.3599)">
-                        <g >
-                            <g >
-                                <text font-family="DroidSans"  font-size="10">RA0</text>
-                            </g>
-                        </g>
-                    </g>
-                    <g  transform="matrix(1 0 0 1 272.7795 651.6274)">
-                        <g >
-                            <g >
-                                <text font-family="DroidSans"  font-size="10">GND</text>
-                            </g>
-                        </g>
-                    </g>
-                    <g  transform="matrix(1 0 0 1 252.2795 652.1274)">
-                        <g >
-                            <g >
-                                <text font-family="DroidSans"  font-size="10">VDD</text>
-                            </g>
-                        </g>
-                    </g>
-                    <g  transform="matrix(1 0 0 1 227.7795 652.1274)">
-                        <g >
-                            <g >
-                                <text font-family="DroidSans"  font-size="10">RG15</text>
-                            </g>
-                        </g>
-                    </g>
-                    <g  transform="matrix(1 0 0 1 204.2795 652.1274)">
-                        <g >
-                            <g >
-                                <text font-family="DroidSans"  font-size="10">RG14</text>
-                            </g>
-                        </g>
-                    </g>
-                    <g  transform="matrix(1 0 0 1 181.7795 652.1274)">
-                        <g >
-                            <g >
-                                <text font-family="DroidSans"  font-size="10">RG13</text>
-                            </g>
-                        </g>
-                    </g>
-                    <g  transform="matrix(1 0 0 1 160.2795 652.1274)">
-                        <g >
-                            <g >
-                                <text font-family="DroidSans"  font-size="10">RG12</text>
-                            </g>
-                        </g>
-                    </g>
-                    <g  transform="matrix(1 0 0 1 143.7795 652.6274)">
-                        <g >
-                            <g >
-                                <text font-family="DroidSans"  font-size="10">RG9</text>
-                            </g>
-                        </g>
-                    </g>
-                    <g  transform="matrix(1 0 0 1 122.7795 652.6274)">
-                        <g >
-                            <g >
-                                <text font-family="DroidSans"  font-size="10">RG8</text>
-                            </g>
-                        </g>
-                    </g>
-                    <g  transform="matrix(1 0 0 1 102.7795 652.6274)">
-                        <g >
-                            <g >
-                                <text font-family="DroidSans"  font-size="10">RG7</text>
-                            </g>
-                        </g>
-                    </g>
-                    <g  transform="matrix(1 0 0 1 82.78 652.6274)">
-                        <g >
-                            <g >
-                                <text font-family="DroidSans"  font-size="10">RG6</text>
-                            </g>
-                        </g>
-                    </g>
-                    <g  transform="matrix(1 0 0 1 61.28 653.1274)">
-                        <g >
-                            <g >
-                                <text font-family="DroidSans"  font-size="10">RG1</text>
-                            </g>
-                        </g>
-                    </g>
-                    <g  transform="matrix(1 0 0 1 37.78 652.6274)">
-                        <g >
-                            <g >
-                                <text font-family="DroidSans"  font-size="10">RG0</text>
-                            </g>
-                        </g>
-                    </g>
-                    <g  transform="matrix(1 0 0 1 24.78 483.3599)">
-                        <g >
-                            <g >
-                                <text font-family="DroidSans"  font-size="10">RD0</text>
-                            </g>
-                        </g>
-                    </g>
-                    <g  transform="matrix(1 0 0 1 24.28 504.8599)">
-                        <g >
-                            <g >
-                                <text font-family="DroidSans"  font-size="10">RD1</text>
-                            </g>
-                        </g>
-                    </g>
-                    <g  transform="matrix(1 0 0 1 23.78 526.3599)">
-                        <g >
-                            <g >
-                                <text font-family="DroidSans"  font-size="10">RD2</text>
-                            </g>
-                        </g>
-                    </g>
-                    <g  transform="matrix(1 0 0 1 23.28 548.3599)">
-                        <g >
-                            <g >
-                                <text font-family="DroidSans"  font-size="10">RD3</text>
-                            </g>
-                        </g>
-                    </g>
-                    <g  transform="matrix(1 0 0 1 23.28 569.8599)">
-                        <g >
-                            <g >
-                                <text font-family="DroidSans"  font-size="10">RD4</text>
-                            </g>
-                        </g>
-                    </g>
-                    <g  transform="matrix(1 0 0 1 24.28 589.8599)">
-                        <g >
-                            <g >
-                                <text font-family="DroidSans"  font-size="10">RD5</text>
-                            </g>
-                        </g>
-                    </g>
-                    <g  transform="matrix(1 0 0 1 24.78 611.8599)">
-                        <g >
-                            <g >
-                                <text font-family="DroidSans"  font-size="10">RD6</text>
-                            </g>
-                        </g>
-                    </g>
-                    <g  transform="matrix(1 0 0 1 24.28 633.3599)">
-                        <g >
-                            <g >
-                                <text font-family="DroidSans"  font-size="10">RD7</text>
-                            </g>
-                        </g>
-                    </g>
-                    <g  transform="matrix(1 0 0 1 283.2795 315.8599)">
-                        <g >
-                            <g >
-                                <text font-family="DroidSans"  font-size="10">RF0</text>
-                            </g>
-                        </g>
-                    </g>
-                    <g  transform="matrix(1 0 0 1 283.7795 337.3599)">
-                        <g >
-                            <g >
-                                <text font-family="DroidSans"  font-size="10">RF1</text>
-                            </g>
-                        </g>
-                    </g>
-                    <g  transform="matrix(1 0 0 1 283.2795 359.3599)">
-                        <g >
-                            <g >
-                                <text font-family="DroidSans"  font-size="10">RF2</text>
-                            </g>
-                        </g>
-                    </g>
-                    <g  transform="matrix(1 0 0 1 283.2795 380.8599)">
-                        <g >
-                            <g >
-                                <text font-family="DroidSans"  font-size="10">RF4</text>
-                            </g>
-                        </g>
-                    </g>
-                    <g  transform="matrix(1 0 0 1 281.7795 400.8599)">
-                        <g >
-                            <g >
-                                <text font-family="DroidSans"  font-size="10">RF5</text>
-                            </g>
-                        </g>
-                    </g>
-                    <g  transform="matrix(1 0 0 1 282.7795 419.8599)">
-                        <g >
-                            <g >
-                                <text font-family="DroidSans"  font-size="10">RF8</text>
-                            </g>
-                        </g>
-                    </g>
-                    <g  transform="matrix(1 0 0 1 283.7795 484.3599)">
-                        <g >
-                            <g >
-                                <text font-family="DroidSans"  font-size="10">RD8</text>
-                            </g>
-                        </g>
-                    </g>
-                    <g  transform="matrix(1 0 0 1 283.2795 505.8599)">
-                        <g >
-                            <g >
-                                <text font-family="DroidSans"  font-size="10">RD9</text>
-                            </g>
-                        </g>
-                    </g>
-                    <g  transform="matrix(1 0 0 1 282.7795 527.3599)">
-                        <g >
-                            <g >
-                                <text font-family="DroidSans"  font-size="10">RD10</text>
-                            </g>
-                        </g>
-                    </g>
-                    <g  transform="matrix(1 0 0 1 282.2795 549.3599)">
-                        <g >
-                            <g >
-                                <text font-family="DroidSans"  font-size="10">RD11</text>
-                            </g>
-                        </g>
-                    </g>
-                    <g  transform="matrix(1 0 0 1 282.2795 570.8599)">
-                        <g >
-                            <g >
-                                <text font-family="DroidSans"  font-size="10">RD12</text>
-                            </g>
-                        </g>
-                    </g>
-                    <g  transform="matrix(1 0 0 1 283.2795 590.8599)">
-                        <g >
-                            <g >
-                                <text font-family="DroidSans"  font-size="10">RD13</text>
-                            </g>
-                        </g>
-                    </g>
-                    <g  transform="matrix(1 0 0 1 282.2795 442.3599)">
-                        <g >
-                            <g >
-                                <text font-family="DroidSans"  font-size="10">RF12</text>
-                            </g>
-                        </g>
-                    </g>
-                    <g  transform="matrix(1 0 0 1 283.2795 462.3599)">
-                        <g >
-                            <g >
-                                <text font-family="DroidSans"  font-size="10">RF13</text>
-                            </g>
-                        </g>
-                    </g>
-                    <g  transform="matrix(1 0 0 1 283.7795 612.8599)">
-                        <g >
-                            <g >
-                                <text font-family="DroidSans"  font-size="10">RD14</text>
-                            </g>
-                        </g>
-                    </g>
-                    <g  transform="matrix(1 0 0 1 283.2795 634.3599)">
-                        <g >
-                            <g >
-                                <text font-family="DroidSans"  font-size="10">RD15</text>
-                            </g>
-                        </g>
-                    </g>
-                </g>
-            </g>
-        </g>
-    </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns:xml="http://www.w3.org/XML/1998/namespace"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="129.6px" height="244.8px"
+	 viewBox="0 0 129.6 244.8" enable-background="new 0 0 129.6 244.8" xml:space="preserve">
+<g id="schematic">
+	<rect x="14.407" y="14.451" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" width="100.8" height="217.134"/>
+	<g>
+		
+			<line id="connector23pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="0.374" y1="43.273" x2="14.311" y2="43.273"/>
+		
+			<line id="connector22pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="0.374" y1="50.474" x2="14.311" y2="50.474"/>
+		
+			<line id="connector21pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="0.374" y1="57.674" x2="14.311" y2="57.674"/>
+		
+			<line id="connector20pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="0.374" y1="64.874" x2="14.311" y2="64.874"/>
+		
+			<line id="connector17pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="0.374" y1="72.074" x2="14.311" y2="72.074"/>
+		
+			<line id="connector16pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="0.374" y1="79.274" x2="14.311" y2="79.274"/>
+		
+			<line id="connector15pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="0.374" y1="86.475" x2="14.311" y2="86.475"/>
+		
+			<line id="connector14pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="0.374" y1="93.675" x2="14.311" y2="93.675"/>
+		
+			<line id="connector11pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="0.374" y1="100.875" x2="14.311" y2="100.875"/>
+		
+			<line id="connector10pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="0.374" y1="108.075" x2="14.311" y2="108.075"/>
+		
+			<line id="connector9pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="0.374" y1="115.275" x2="14.311" y2="115.275"/>
+		
+			<line id="connector8pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="0.374" y1="122.476" x2="14.311" y2="122.476"/>
+		
+			<line id="connector57pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="0.374" y1="129.675" x2="14.311" y2="129.675"/>
+		
+			<line id="connector54pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="0.374" y1="136.876" x2="14.311" y2="136.876"/>
+		
+			<line id="connector100pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="36.001" y1="14.478" x2="36.001" y2="0.494"/>
+		
+			<line id="connector99pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="43.201" y1="14.478" x2="43.201" y2="0.494"/>
+		
+			<line id="connector98pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="50.401" y1="14.478" x2="50.401" y2="0.494"/>
+		
+			<line id="connector101pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="28.811" y1="14.478" x2="28.811" y2="0.494"/>
+		
+			<line id="connector105pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="57.602" y1="14.478" x2="57.602" y2="0.494"/>
+		
+			<line id="connector104pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="64.802" y1="14.478" x2="64.802" y2="0.494"/>
+		
+			<line id="connector5pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="72.002" y1="14.478" x2="72.002" y2="0.494"/>
+		
+			<line id="connector4pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="79.202" y1="14.478" x2="79.202" y2="0.494"/>
+		
+			<line id="connector107pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="86.402" y1="14.478" x2="86.402" y2="0.494"/>
+		
+			<line id="connector106pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="93.603" y1="14.478" x2="93.603" y2="0.494"/>
+		
+			<line id="connector67pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="28.801" y1="244.397" x2="28.801" y2="231.628"/>
+		
+			<line id="connector51pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="36.001" y1="244.397" x2="36.001" y2="231.628"/>
+		
+			<line id="connector50pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="43.201" y1="244.397" x2="43.201" y2="231.628"/>
+		
+			<line id="connector66pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="21.601" y1="244.397" x2="21.601" y2="231.628"/>
+		
+			<line id="connector49pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="50.401" y1="244.397" x2="50.401" y2="231.628"/>
+		
+			<line id="connector48pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="57.602" y1="244.397" x2="57.602" y2="231.628"/>
+		
+			<line id="connector60pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="64.802" y1="244.397" x2="64.802" y2="231.628"/>
+		
+			<line id="connector61pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="72.002" y1="244.397" x2="72.002" y2="231.628"/>
+		
+			<line id="connector62pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="79.202" y1="244.397" x2="79.202" y2="231.628"/>
+		
+			<line id="connector63pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="86.402" y1="244.397" x2="86.402" y2="231.628"/>
+		
+			<line id="connector53pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="93.603" y1="244.397" x2="93.603" y2="231.628"/>
+		
+			<line id="connector47pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="93.603" y1="244.397" x2="93.603" y2="231.628"/>
+		
+			<line id="connector41pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="93.603" y1="244.397" x2="93.603" y2="231.628"/>
+		
+			<line id="connector30pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="93.603" y1="244.397" x2="93.603" y2="231.628"/>
+		
+			<line id="connector52pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="100.803" y1="244.397" x2="100.803" y2="231.628"/>
+		
+			<line id="connector46pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="100.803" y1="244.397" x2="100.803" y2="231.628"/>
+		
+			<line id="connector40pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="100.803" y1="244.397" x2="100.803" y2="231.628"/>
+		
+			<line id="connector31pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="100.803" y1="244.397" x2="100.803" y2="231.628"/>
+		
+			<line id="connector75pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="0.374" y1="144.076" x2="14.311" y2="144.076"/>
+		
+			<line id="connector81pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="0.374" y1="151.276" x2="14.311" y2="151.276"/>
+		
+			<line id="connector86pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="0.374" y1="158.477" x2="14.311" y2="158.477"/>
+		
+			<line id="connector2pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="0.374" y1="165.677" x2="14.311" y2="165.677"/>
+		
+			<line id="connector28pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="0.374" y1="172.876" x2="14.311" y2="172.876"/>
+		
+			<line id="connector73pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="0.374" y1="180.078" x2="14.311" y2="180.078"/>
+		
+			<line id="connector79pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="0.374" y1="187.277" x2="14.311" y2="187.277"/>
+		
+			<line id="connector88pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="0.374" y1="194.478" x2="14.311" y2="194.478"/>
+		
+			<line id="connector56pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="0.374" y1="201.677" x2="14.311" y2="201.677"/>
+		
+			<line id="connector55pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="0.374" y1="208.878" x2="14.311" y2="208.878"/>
+		
+			<line id="connector78pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="0.374" y1="216.078" x2="14.311" y2="216.078"/>
+		
+			<line id="connector72pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="0.374" y1="223.278" x2="14.311" y2="223.278"/>
+		
+			<line id="connector25pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="115.232" y1="28.801" x2="129.254" y2="28.801"/>
+		
+			<line id="connector19pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="115.232" y1="28.801" x2="129.254" y2="28.801"/>
+		
+			<line id="connector13pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="115.232" y1="28.801" x2="129.254" y2="28.801"/>
+		
+			<line id="connector7pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="115.232" y1="28.801" x2="129.254" y2="28.801"/>
+		
+			<line id="connector1pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="115.232" y1="28.801" x2="129.254" y2="28.801"/>
+		
+			<line id="connector103pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="108.003" y1="14.478" x2="108.003" y2="0.494"/>
+		
+			<line id="connector97pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="108.003" y1="14.478" x2="108.003" y2="0.494"/>
+		
+			<line id="connector91pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="108.003" y1="14.478" x2="108.003" y2="0.494"/>
+		
+			<line id="connector85pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="108.003" y1="14.478" x2="108.003" y2="0.494"/>
+		
+			<line id="connector102pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="100.803" y1="14.478" x2="100.803" y2="0.494"/>
+		
+			<line id="connector96pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="100.803" y1="14.478" x2="100.803" y2="0.494"/>
+		
+			<line id="connector90pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="100.803" y1="14.478" x2="100.803" y2="0.494"/>
+		
+			<line id="connector84pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="100.803" y1="14.478" x2="100.803" y2="0.494"/>
+		
+			<line id="connector6pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="115.232" y1="36.001" x2="129.253" y2="36.001"/>
+		
+			<line id="connector24pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="115.232" y1="36.001" x2="129.253" y2="36.001"/>
+		
+			<line id="connector18pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="115.232" y1="36.001" x2="129.253" y2="36.001"/>
+		
+			<line id="connector12pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="115.232" y1="36.001" x2="129.253" y2="36.001"/>
+		
+			<line id="connector0pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="115.232" y1="36.001" x2="129.253" y2="36.001"/>
+		
+			<line id="connector82pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="0.374" y1="28.873" x2="14.311" y2="28.873"/>
+		
+			<line id="connector76pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="0.374" y1="28.876" x2="14.311" y2="28.876"/>
+		
+			<line id="connector70pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="0.374" y1="28.873" x2="14.311" y2="28.873"/>
+		
+			<line id="connector64pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="0.374" y1="28.876" x2="14.311" y2="28.876"/>
+		
+			<line id="connector58pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="0.374" y1="28.873" x2="14.311" y2="28.873"/>
+		
+			<line id="connector65pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="0.374" y1="36.073" x2="14.311" y2="36.073"/>
+		
+			<line id="connector83pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="0.374" y1="36.073" x2="14.311" y2="36.073"/>
+		
+			<line id="connector77pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="0.374" y1="36.073" x2="14.311" y2="36.073"/>
+		
+			<line id="connector71pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="0.374" y1="36.073" x2="14.311" y2="36.073"/>
+		
+			<line id="connector59pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="0.374" y1="36.073" x2="14.311" y2="36.073"/>
+		
+			<line id="connector38pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="115.232" y1="57.6" x2="129.253" y2="57.6"/>
+		
+			<line id="connector37pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="115.232" y1="50.399" x2="129.253" y2="50.399"/>
+		
+			<line id="connector36pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="115.232" y1="43.199" x2="129.253" y2="43.199"/>
+		
+			<line id="connector39pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="115.232" y1="64.8" x2="129.253" y2="64.8"/>
+		
+			<line id="connector42pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="115.232" y1="72" x2="129.253" y2="72"/>
+		
+			<line id="connector43pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="115.232" y1="79.181" x2="129.253" y2="79.181"/>
+		
+			<line id="connector44pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="115.232" y1="86.402" x2="129.253" y2="86.402"/>
+		
+			<line id="connector45pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="115.232" y1="93.601" x2="129.253" y2="93.601"/>
+		
+			<line id="connector29pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="115.232" y1="100.801" x2="129.253" y2="100.801"/>
+		
+			<line id="connector89pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="115.232" y1="108.003" x2="129.253" y2="108.003"/>
+		
+			<line id="connector68pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="115.232" y1="115.201" x2="129.253" y2="115.201"/>
+		
+			<line id="connector69pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="115.232" y1="122.4" x2="129.253" y2="122.4"/>
+		
+			<line id="connector93pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="115.232" y1="129.597" x2="129.253" y2="129.597"/>
+		
+			<line id="connector33pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="115.232" y1="136.804" x2="129.253" y2="136.804"/>
+		
+			<line id="connector34pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="115.232" y1="144.001" x2="129.253" y2="144.001"/>
+		
+			<line id="connector94pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="115.232" y1="151.203" x2="129.253" y2="151.203"/>
+		
+			<line id="connector35pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="115.232" y1="158.404" x2="129.253" y2="158.404"/>
+		
+			<line id="connector32pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="115.232" y1="165.603" x2="129.253" y2="165.603"/>
+		
+			<line id="connector27pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="115.232" y1="172.805" x2="129.253" y2="172.805"/>
+		
+			<line id="connector74pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="115.232" y1="180.005" x2="129.253" y2="180.005"/>
+		
+			<line id="connector80pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="115.232" y1="187.203" x2="129.253" y2="187.203"/>
+		
+			<line id="connector87pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="115.232" y1="194.403" x2="129.253" y2="194.403"/>
+		
+			<line id="connector3pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="115.232" y1="201.604" x2="129.253" y2="201.604"/>
+		
+			<line id="connector26pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="115.232" y1="208.804" x2="129.253" y2="208.804"/>
+		
+			<line id="connector95pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="115.232" y1="216.003" x2="129.253" y2="216.003"/>
+		
+			<line id="connector92pin" fill="none" stroke="#787878" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="115.232" y1="223.205" x2="129.253" y2="223.205"/>
+	</g>
+	<g>
+		<g id="connector23terminal">
+			<path fill="none" d="M0.571,43.523H-0.42c-0.138,0-0.25-0.112-0.25-0.25s0.112-0.25,0.25-0.25h0.991
+				c0.138,0,0.25,0.112,0.25,0.25S0.709,43.523,0.571,43.523z"/>
+		</g>
+		<g id="connector22terminal">
+			<path fill="none" d="M0.571,50.724H-0.42c-0.138,0-0.25-0.112-0.25-0.25s0.112-0.25,0.25-0.25h0.991
+				c0.138,0,0.25,0.112,0.25,0.25S0.709,50.724,0.571,50.724z"/>
+		</g>
+		<g id="connector21terminal">
+			<path fill="none" d="M0.571,57.924H-0.42c-0.138,0-0.25-0.112-0.25-0.25s0.112-0.25,0.25-0.25h0.991
+				c0.138,0,0.25,0.112,0.25,0.25S0.709,57.924,0.571,57.924z"/>
+		</g>
+		<g id="connector20terminal">
+			<path fill="none" d="M0.571,65.124H-0.42c-0.138,0-0.25-0.112-0.25-0.25s0.112-0.25,0.25-0.25h0.991
+				c0.138,0,0.25,0.112,0.25,0.25S0.709,65.124,0.571,65.124z"/>
+		</g>
+		<g id="connector17terminal">
+			<path fill="none" d="M0.571,72.324H-0.42c-0.138,0-0.25-0.112-0.25-0.25s0.112-0.25,0.25-0.25h0.991
+				c0.138,0,0.25,0.112,0.25,0.25S0.709,72.324,0.571,72.324z"/>
+		</g>
+		<g id="connector16terminal">
+			<path fill="none" d="M0.571,79.524H-0.42c-0.138,0-0.25-0.112-0.25-0.25s0.112-0.25,0.25-0.25h0.991
+				c0.138,0,0.25,0.112,0.25,0.25S0.709,79.524,0.571,79.524z"/>
+		</g>
+		<g id="connector15terminal">
+			<path fill="none" d="M0.571,86.725H-0.42c-0.138,0-0.25-0.112-0.25-0.25s0.112-0.25,0.25-0.25h0.991
+				c0.138,0,0.25,0.112,0.25,0.25S0.709,86.725,0.571,86.725z"/>
+		</g>
+		<g id="connector14terminal">
+			<path fill="none" d="M0.571,93.925H-0.42c-0.138,0-0.25-0.112-0.25-0.25s0.112-0.25,0.25-0.25h0.991
+				c0.138,0,0.25,0.112,0.25,0.25S0.709,93.925,0.571,93.925z"/>
+		</g>
+		<g id="connector11terminal">
+			<path fill="none" d="M0.571,101.125H-0.42c-0.138,0-0.25-0.112-0.25-0.25s0.112-0.25,0.25-0.25h0.991
+				c0.138,0,0.25,0.112,0.25,0.25S0.709,101.125,0.571,101.125z"/>
+		</g>
+		<g id="connector10terminal">
+			<path fill="none" d="M0.571,108.325H-0.42c-0.138,0-0.25-0.112-0.25-0.25s0.112-0.25,0.25-0.25h0.991
+				c0.138,0,0.25,0.112,0.25,0.25S0.709,108.325,0.571,108.325z"/>
+		</g>
+		<g id="connector9terminal">
+			<path fill="none" d="M0.571,115.525H-0.42c-0.138,0-0.25-0.112-0.25-0.25s0.112-0.25,0.25-0.25h0.991
+				c0.138,0,0.25,0.112,0.25,0.25S0.709,115.525,0.571,115.525z"/>
+		</g>
+		<g id="connector8terminal">
+			<path fill="none" d="M0.571,122.726H-0.42c-0.138,0-0.25-0.112-0.25-0.25s0.112-0.25,0.25-0.25h0.991
+				c0.138,0,0.25,0.112,0.25,0.25S0.709,122.726,0.571,122.726z"/>
+		</g>
+		<g id="connector57terminal">
+			<path fill="none" d="M0.571,129.925H-0.42c-0.138,0-0.25-0.112-0.25-0.25s0.112-0.25,0.25-0.25h0.991
+				c0.138,0,0.25,0.112,0.25,0.25S0.709,129.925,0.571,129.925z"/>
+		</g>
+		<g id="connector54terminal">
+			<path fill="none" d="M0.571,137.126H-0.42c-0.138,0-0.25-0.112-0.25-0.25s0.112-0.25,0.25-0.25h0.991
+				c0.138,0,0.25,0.112,0.25,0.25S0.709,137.126,0.571,137.126z"/>
+		</g>
+		
+			<line id="connector100terminal" fill="none" stroke="#787878" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="36" y1="1.486" x2="36" y2="0.494"/>
+		
+			<line id="connector99terminal" fill="none" stroke="#787878" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="43.2" y1="1.486" x2="43.2" y2="0.494"/>
+		
+			<line id="connector98terminal" fill="none" stroke="#787878" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="50.4" y1="1.486" x2="50.4" y2="0.494"/>
+		
+			<line id="connector101terminal" fill="none" stroke="#787878" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="28.81" y1="1.486" x2="28.81" y2="0.494"/>
+		
+			<line id="connector105terminal" fill="none" stroke="#787878" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="57.6" y1="1.486" x2="57.6" y2="0.494"/>
+		
+			<line id="connector104terminal" fill="none" stroke="#787878" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="64.8" y1="1.486" x2="64.8" y2="0.494"/>
+		
+			<line id="connector5terminal" fill="none" stroke="#787878" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="72" y1="1.486" x2="72" y2="0.494"/>
+		
+			<line id="connector4terminal" fill="none" stroke="#787878" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="79.201" y1="1.486" x2="79.201" y2="0.494"/>
+		
+			<line id="connector107terminal" fill="none" stroke="#787878" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="86.401" y1="1.486" x2="86.401" y2="0.494"/>
+		
+			<line id="connector106terminal" fill="none" stroke="#787878" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="93.601" y1="1.486" x2="93.601" y2="0.494"/>
+		
+			<line id="connector67terminal" fill="none" stroke="#787878" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="28.802" y1="244.397" x2="28.802" y2="243.405"/>
+		
+			<line id="connector51terminal" fill="none" stroke="#787878" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="36.002" y1="244.397" x2="36.002" y2="243.405"/>
+		
+			<line id="connector50terminal" fill="none" stroke="#787878" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="43.202" y1="244.397" x2="43.202" y2="243.405"/>
+		
+			<line id="connector66terminal" fill="none" stroke="#787878" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="21.602" y1="244.397" x2="21.602" y2="243.405"/>
+		
+			<line id="connector49terminal" fill="none" stroke="#787878" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="50.402" y1="244.397" x2="50.402" y2="243.405"/>
+		
+			<line id="connector48terminal" fill="none" stroke="#787878" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="57.603" y1="244.397" x2="57.603" y2="243.405"/>
+		
+			<line id="connector60terminal" fill="none" stroke="#787878" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="64.803" y1="244.397" x2="64.803" y2="243.405"/>
+		
+			<line id="connector61terminal" fill="none" stroke="#787878" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="72.003" y1="244.397" x2="72.003" y2="243.405"/>
+		
+			<line id="connector62terminal" fill="none" stroke="#787878" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="79.203" y1="244.397" x2="79.203" y2="243.405"/>
+		
+			<line id="connector63terminal" fill="none" stroke="#787878" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="86.403" y1="244.397" x2="86.403" y2="243.405"/>
+		
+			<line id="connector53terminal" fill="none" stroke="#787878" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="93.604" y1="244.397" x2="93.604" y2="243.405"/>
+		
+			<line id="connector47terminal" fill="none" stroke="#787878" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="93.604" y1="244.397" x2="93.604" y2="243.405"/>
+		
+			<line id="connector41terminal" fill="none" stroke="#787878" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="93.604" y1="244.397" x2="93.604" y2="243.405"/>
+		
+			<line id="connector30terminal" fill="none" stroke="#787878" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="93.604" y1="244.397" x2="93.604" y2="243.405"/>
+		
+			<line id="connector52terminal" fill="none" stroke="#787878" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="100.804" y1="244.397" x2="100.804" y2="243.405"/>
+		
+			<line id="connector46terminal" fill="none" stroke="#787878" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="100.804" y1="244.397" x2="100.804" y2="243.405"/>
+		
+			<line id="connector40terminal" fill="none" stroke="#787878" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="100.804" y1="244.397" x2="100.804" y2="243.405"/>
+		
+			<line id="connector31terminal" fill="none" stroke="#787878" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="100.804" y1="244.397" x2="100.804" y2="243.405"/>
+		<g id="connector75terminal">
+			<path fill="none" d="M0.571,144.326H-0.42c-0.138,0-0.25-0.112-0.25-0.25s0.112-0.25,0.25-0.25h0.991
+				c0.138,0,0.25,0.112,0.25,0.25S0.709,144.326,0.571,144.326z"/>
+		</g>
+		<g id="connector81terminal">
+			<path fill="none" d="M0.571,151.526H-0.42c-0.138,0-0.25-0.112-0.25-0.25s0.112-0.25,0.25-0.25h0.991
+				c0.138,0,0.25,0.112,0.25,0.25S0.709,151.526,0.571,151.526z"/>
+		</g>
+		<g id="connector86terminal">
+			<path fill="none" d="M0.571,158.727H-0.42c-0.138,0-0.25-0.112-0.25-0.25s0.112-0.25,0.25-0.25h0.991
+				c0.138,0,0.25,0.112,0.25,0.25S0.709,158.727,0.571,158.727z"/>
+		</g>
+		<g id="connector2terminal">
+			<path fill="none" d="M0.571,165.927H-0.42c-0.138,0-0.25-0.112-0.25-0.25s0.112-0.25,0.25-0.25h0.991
+				c0.138,0,0.25,0.112,0.25,0.25S0.709,165.927,0.571,165.927z"/>
+		</g>
+		<g id="connector28terminal">
+			<path fill="none" d="M0.571,173.126H-0.42c-0.138,0-0.25-0.112-0.25-0.25s0.112-0.25,0.25-0.25h0.991
+				c0.138,0,0.25,0.112,0.25,0.25S0.709,173.126,0.571,173.126z"/>
+		</g>
+		<g id="connector73terminal">
+			<path fill="none" d="M0.571,180.328H-0.42c-0.138,0-0.25-0.112-0.25-0.25s0.112-0.25,0.25-0.25h0.991
+				c0.138,0,0.25,0.112,0.25,0.25S0.709,180.328,0.571,180.328z"/>
+		</g>
+		<g id="connector79terminal">
+			<path fill="none" d="M0.571,187.527H-0.42c-0.138,0-0.25-0.112-0.25-0.25s0.112-0.25,0.25-0.25h0.991
+				c0.138,0,0.25,0.112,0.25,0.25S0.709,187.527,0.571,187.527z"/>
+		</g>
+		<g id="connector88terminal">
+			<path fill="none" d="M0.571,194.728H-0.42c-0.138,0-0.25-0.112-0.25-0.25s0.112-0.25,0.25-0.25h0.991
+				c0.138,0,0.25,0.112,0.25,0.25S0.709,194.728,0.571,194.728z"/>
+		</g>
+		<g id="connector56terminal">
+			<path fill="none" d="M0.571,201.927H-0.42c-0.138,0-0.25-0.112-0.25-0.25s0.112-0.25,0.25-0.25h0.991
+				c0.138,0,0.25,0.112,0.25,0.25S0.709,201.927,0.571,201.927z"/>
+		</g>
+		<g id="connector55terminal">
+			<path fill="none" d="M0.571,209.128H-0.42c-0.138,0-0.25-0.112-0.25-0.25s0.112-0.25,0.25-0.25h0.991
+				c0.138,0,0.25,0.112,0.25,0.25S0.709,209.128,0.571,209.128z"/>
+		</g>
+		<g id="connector78terminal">
+			<path fill="none" d="M0.571,216.328H-0.42c-0.138,0-0.25-0.112-0.25-0.25s0.112-0.25,0.25-0.25h0.991
+				c0.138,0,0.25,0.112,0.25,0.25S0.709,216.328,0.571,216.328z"/>
+		</g>
+		<g id="connector72terminal">
+			<path fill="none" d="M0.571,223.528H-0.42c-0.138,0-0.25-0.112-0.25-0.25s0.112-0.25,0.25-0.25h0.991
+				c0.138,0,0.25,0.112,0.25,0.25S0.709,223.528,0.571,223.528z"/>
+		</g>
+		
+			<line id="connector25terminal" fill="none" stroke="#787878" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="128.262" y1="28.801" x2="129.254" y2="28.801"/>
+		
+			<line id="connector19terminal" fill="none" stroke="#787878" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="128.262" y1="28.801" x2="129.254" y2="28.801"/>
+		
+			<line id="connector13terminal" fill="none" stroke="#787878" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="128.262" y1="28.801" x2="129.254" y2="28.801"/>
+		
+			<line id="connector7terminal" fill="none" stroke="#787878" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="128.262" y1="28.801" x2="129.254" y2="28.801"/>
+		
+			<line id="connector1terminal" fill="none" stroke="#787878" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="128.262" y1="28.801" x2="129.254" y2="28.801"/>
+		
+			<line id="connector103terminal" fill="none" stroke="#787878" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="108.001" y1="1.486" x2="108.001" y2="0.494"/>
+		
+			<line id="connector97terminal" fill="none" stroke="#787878" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="108.001" y1="1.486" x2="108.001" y2="0.494"/>
+		
+			<line id="connector91terminal" fill="none" stroke="#787878" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="108.001" y1="1.486" x2="108.001" y2="0.494"/>
+		
+			<line id="connector85terminal" fill="none" stroke="#787878" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="108.001" y1="1.486" x2="108.001" y2="0.494"/>
+		
+			<line id="connector102terminal" fill="none" stroke="#787878" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="100.801" y1="1.486" x2="100.801" y2="0.494"/>
+		
+			<line id="connector96terminal" fill="none" stroke="#787878" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="100.801" y1="1.486" x2="100.801" y2="0.494"/>
+		
+			<line id="connector90terminal" fill="none" stroke="#787878" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="100.801" y1="1.486" x2="100.801" y2="0.494"/>
+		
+			<line id="connector84terminal" fill="none" stroke="#787878" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="100.801" y1="1.486" x2="100.801" y2="0.494"/>
+		
+			<line id="connector6terminal" fill="none" stroke="#787878" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="128.262" y1="36.001" x2="129.254" y2="36.001"/>
+		
+			<line id="connector24terminal" fill="none" stroke="#787878" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="128.262" y1="36.001" x2="129.254" y2="36.001"/>
+		
+			<line id="connector18terminal" fill="none" stroke="#787878" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="128.262" y1="36.001" x2="129.254" y2="36.001"/>
+		
+			<line id="connector12terminal" fill="none" stroke="#787878" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="128.262" y1="36.001" x2="129.254" y2="36.001"/>
+		
+			<line id="connector0terminal" fill="none" stroke="#787878" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="128.262" y1="36.001" x2="129.254" y2="36.001"/>
+		<g id="connector82terminal">
+			<path fill="none" d="M0.68,29.123h-0.991c-0.138,0-0.25-0.112-0.25-0.25s0.112-0.25,0.25-0.25H0.68c0.138,0,0.25,0.112,0.25,0.25
+				S0.819,29.123,0.68,29.123z"/>
+		</g>
+		<g id="connector76terminal">
+			<path fill="none" d="M0.68,29.126h-0.991c-0.138,0-0.25-0.112-0.25-0.25s0.112-0.25,0.25-0.25H0.68c0.138,0,0.25,0.112,0.25,0.25
+				S0.819,29.126,0.68,29.126z"/>
+		</g>
+		<g id="connector70terminal">
+			<path fill="none" d="M0.68,29.123h-0.991c-0.138,0-0.25-0.112-0.25-0.25s0.112-0.25,0.25-0.25H0.68c0.138,0,0.25,0.112,0.25,0.25
+				S0.819,29.123,0.68,29.123z"/>
+		</g>
+		<g id="connector64terminal">
+			<path fill="none" d="M0.68,29.126h-0.991c-0.138,0-0.25-0.112-0.25-0.25s0.112-0.25,0.25-0.25H0.68c0.138,0,0.25,0.112,0.25,0.25
+				S0.819,29.126,0.68,29.126z"/>
+		</g>
+		<g id="connector58terminal">
+			<path fill="none" d="M0.571,29.123H-0.42c-0.138,0-0.25-0.112-0.25-0.25s0.112-0.25,0.25-0.25h0.991
+				c0.138,0,0.25,0.112,0.25,0.25S0.709,29.123,0.571,29.123z"/>
+		</g>
+		<g id="connector65terminal">
+			<path fill="none" d="M0.571,36.323H-0.42c-0.138,0-0.25-0.112-0.25-0.25s0.112-0.25,0.25-0.25h0.991
+				c0.138,0,0.25,0.112,0.25,0.25S0.709,36.323,0.571,36.323z"/>
+		</g>
+		<g id="connector83terminal">
+			<path fill="none" d="M0.571,36.323H-0.42c-0.138,0-0.25-0.112-0.25-0.25s0.112-0.25,0.25-0.25h0.991
+				c0.138,0,0.25,0.112,0.25,0.25S0.709,36.323,0.571,36.323z"/>
+		</g>
+		<g id="connector77terminal">
+			<path fill="none" d="M0.571,36.323H-0.42c-0.138,0-0.25-0.112-0.25-0.25s0.112-0.25,0.25-0.25h0.991
+				c0.138,0,0.25,0.112,0.25,0.25S0.709,36.323,0.571,36.323z"/>
+		</g>
+		<g id="connector71terminal">
+			<path fill="none" d="M0.571,36.323H-0.42c-0.138,0-0.25-0.112-0.25-0.25s0.112-0.25,0.25-0.25h0.991
+				c0.138,0,0.25,0.112,0.25,0.25S0.709,36.323,0.571,36.323z"/>
+		</g>
+		<g id="connector59terminal">
+			<path fill="none" d="M0.571,36.323H-0.42c-0.138,0-0.25-0.112-0.25-0.25s0.112-0.25,0.25-0.25h0.991
+				c0.138,0,0.25,0.112,0.25,0.25S0.709,36.323,0.571,36.323z"/>
+		</g>
+		
+			<line id="connector38terminal" fill="none" stroke="#787878" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="128.262" y1="57.6" x2="129.254" y2="57.6"/>
+		
+			<line id="connector37terminal" fill="none" stroke="#787878" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="128.262" y1="50.399" x2="129.254" y2="50.399"/>
+		
+			<line id="connector36terminal" fill="none" stroke="#787878" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="128.262" y1="43.199" x2="129.254" y2="43.199"/>
+		
+			<line id="connector39terminal" fill="none" stroke="#787878" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="128.262" y1="64.8" x2="129.254" y2="64.8"/>
+		
+			<line id="connector42terminal" fill="none" stroke="#787878" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="128.262" y1="72" x2="129.254" y2="72"/>
+		
+			<line id="connector43terminal" fill="none" stroke="#787878" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="128.262" y1="79.181" x2="129.254" y2="79.181"/>
+		
+			<line id="connector44terminal" fill="none" stroke="#787878" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="128.262" y1="86.402" x2="129.254" y2="86.402"/>
+		
+			<line id="connector45terminal" fill="none" stroke="#787878" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="128.262" y1="93.601" x2="129.254" y2="93.601"/>
+		
+			<line id="connector29terminal" fill="none" stroke="#787878" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="128.262" y1="100.801" x2="129.254" y2="100.801"/>
+		
+			<line id="connector89terminal" fill="none" stroke="#787878" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="128.262" y1="108.003" x2="129.254" y2="108.003"/>
+		
+			<line id="connector68terminal" fill="none" stroke="#787878" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="128.262" y1="115.201" x2="129.254" y2="115.201"/>
+		
+			<line id="connector69terminal" fill="none" stroke="#787878" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="128.262" y1="122.4" x2="129.254" y2="122.4"/>
+		
+			<line id="connector93terminal" fill="none" stroke="#787878" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="128.262" y1="129.597" x2="129.254" y2="129.597"/>
+		
+			<line id="connector33terminal" fill="none" stroke="#787878" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="128.262" y1="136.804" x2="129.254" y2="136.804"/>
+		
+			<line id="connector34terminal" fill="none" stroke="#787878" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="128.262" y1="144.001" x2="129.254" y2="144.001"/>
+		
+			<line id="connector94terminal" fill="none" stroke="#787878" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="128.262" y1="151.203" x2="129.254" y2="151.203"/>
+		
+			<line id="connector35terminal" fill="none" stroke="#787878" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="128.262" y1="158.404" x2="129.254" y2="158.404"/>
+		
+			<line id="connector32terminal" fill="none" stroke="#787878" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="128.262" y1="165.603" x2="129.254" y2="165.603"/>
+		
+			<line id="connector27terminal" fill="none" stroke="#787878" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="128.262" y1="172.805" x2="129.254" y2="172.805"/>
+		
+			<line id="connector74terminal" fill="none" stroke="#787878" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="128.262" y1="180.005" x2="129.254" y2="180.005"/>
+		
+			<line id="connector80terminal" fill="none" stroke="#787878" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="128.262" y1="187.203" x2="129.254" y2="187.203"/>
+		
+			<line id="connector87terminal" fill="none" stroke="#787878" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="128.262" y1="194.403" x2="129.254" y2="194.403"/>
+		
+			<line id="connector3terminal" fill="none" stroke="#787878" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="128.262" y1="201.604" x2="129.254" y2="201.604"/>
+		
+			<line id="connector26terminal" fill="none" stroke="#787878" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="128.262" y1="208.804" x2="129.254" y2="208.804"/>
+		
+			<line id="connector95terminal" fill="none" stroke="#787878" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="128.262" y1="216.003" x2="129.254" y2="216.003"/>
+		
+			<line id="connector92terminal" fill="none" stroke="#787878" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" x1="128.262" y1="223.205" x2="129.254" y2="223.205"/>
+	</g>
+	<text transform="matrix(1 0 0 1 50.4026 41.3755)" font-family="'DroidSans'" font-size="3.5">chipKITPRO MX4</text>
+	<text transform="matrix(1 0 0 1 15.634 29.9321)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">GND</text>
+	<text transform="matrix(1 0 0 1 105.5823 30.3599)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">GND</text>
+	<text transform="matrix(1 0 0 1 104.9495 20.0288)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">GND</text>
+	<text transform="matrix(1 0 0 1 98.0461 20.1958)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">VDD</text>
+	<text transform="matrix(1 0 0 1 15.5852 37.2456)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">VDD</text>
+	<text transform="matrix(1 0 0 1 15.4177 44.1587)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">RB0</text>
+	<text transform="matrix(1 0 0 1 15.2507 51.439)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">RB1</text>
+	<text transform="matrix(1 0 0 1 15.0833 58.7192)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">RB2</text>
+	<text transform="matrix(1 0 0 1 14.9163 66.1675)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">RB3</text>
+	<text transform="matrix(1 0 0 1 105.5334 36.5054)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">VDD</text>
+	<text transform="matrix(1 0 0 1 106.0344 43.9185)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">RE0</text>
+	<text transform="matrix(1 0 0 1 105.8684 51.1987)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">RE1</text>
+	<text transform="matrix(1 0 0 1 105.7004 58.478)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">RE2</text>
+	<text transform="matrix(1 0 0 1 105.5334 65.9253)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">RE3</text>
+	<text transform="matrix(1 0 0 1 14.9163 73.4478)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">RB4</text>
+	<text transform="matrix(1 0 0 1 15.0833 145.0825)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">RC1</text>
+	<text transform="matrix(1 0 0 1 14.9163 152.3628)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">RC2</text>
+	<text transform="matrix(1 0 0 1 14.7488 159.8101)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">RC3</text>
+	<text transform="matrix(1 0 0 1 14.7488 167.0913)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">RC4</text>
+	<text transform="matrix(1 0 0 1 15.2507 80.2271)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">RB5</text>
+	<text transform="matrix(1 0 0 1 15.4177 87.6743)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">RB8</text>
+	<text transform="matrix(1 0 0 1 15.2507 94.9556)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">RB9</text>
+	<text transform="matrix(1 0 0 1 15.2507 102.2349)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">RB10</text>
+	<text transform="matrix(1 0 0 1 15.0833 109.3491)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">RB11</text>
+	<text transform="matrix(1 0 0 1 15.0833 116.2944)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">RB12</text>
+	<text transform="matrix(1 0 0 1 14.9163 123.7427)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">RB13</text>
+	<text transform="matrix(1 0 0 1 14.7488 130.521)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">RB14</text>
+	<text transform="matrix(1 0 0 1 14.5818 137.6343)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">RB15</text>
+	<text transform="matrix(1 0 0 1 105.5334 74.0425)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">RE4</text>
+	<text transform="matrix(1 0 0 1 105.8684 80.8013)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">RE5</text>
+	<text transform="matrix(1 0 0 1 106.0344 88.272)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">RE6</text>
+	<text transform="matrix(1 0 0 1 105.8684 95.5493)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">RE7</text>
+	<text transform="matrix(1 0 0 1 105.8684 102.8296)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">RE8</text>
+	<text transform="matrix(1 0 0 1 105.7004 109.9448)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">RE9</text>
+	<text transform="matrix(1 0 0 1 89.762 20.1958)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">RA15</text>
+	<text transform="matrix(1 0 0 1 81.8127 20.1958)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">RA14</text>
+	<text transform="matrix(1 0 0 1 74.1965 20.1958)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">RA10</text>
+	<text transform="matrix(1 0 0 1 67.9202 20.1958)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">RA9</text>
+	<text transform="matrix(1 0 0 1 61.3083 20.3628)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">RA7</text>
+	<text transform="matrix(1 0 0 1 54.1951 20.3628)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">RA6</text>
+	<text transform="matrix(1 0 0 1 47.4163 20.3628)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">RA5</text>
+	<text transform="matrix(1 0 0 1 40.6379 20.3628)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">RA4</text>
+	<text transform="matrix(1 0 0 1 33.3572 20.5308)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">RA1</text>
+	<text transform="matrix(1 0 0 1 25.4177 20.3628)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">RA0</text>
+	<text transform="matrix(1 0 0 1 97.9172 229.3179)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">GND</text>
+	<text transform="matrix(1 0 0 1 90.929 229.4849)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">VDD</text>
+	<text transform="matrix(1 0 0 1 82.7297 229.4849)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">RG15</text>
+	<text transform="matrix(1 0 0 1 74.7805 229.4849)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">RG14</text>
+	<text transform="matrix(1 0 0 1 67.1643 229.4849)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">RG13</text>
+	<text transform="matrix(1 0 0 1 59.884 229.4849)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">RG12</text>
+	<text transform="matrix(1 0 0 1 54.2751 229.6519)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">RG9</text>
+	<text transform="matrix(1 0 0 1 47.1619 229.6519)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">RG8</text>
+	<text transform="matrix(1 0 0 1 40.3831 229.6519)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">RG7</text>
+	<text transform="matrix(1 0 0 1 33.6047 229.6519)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">RG6</text>
+	<text transform="matrix(1 0 0 1 26.324 229.8188)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">RG1</text>
+	<text transform="matrix(1 0 0 1 18.3748 229.6519)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">RG0</text>
+	<text transform="matrix(1 0 0 1 15.2507 173.7026)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">RD0</text>
+	<text transform="matrix(1 0 0 1 15.0833 180.9829)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">RD1</text>
+	<text transform="matrix(1 0 0 1 14.9163 188.2632)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">RD2</text>
+	<text transform="matrix(1 0 0 1 14.7488 195.7124)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">RD3</text>
+	<text transform="matrix(1 0 0 1 14.7488 202.9917)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">RD4</text>
+	<text transform="matrix(1 0 0 1 15.0833 209.771)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">RD5</text>
+	<text transform="matrix(1 0 0 1 15.2507 217.2183)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">RD6</text>
+	<text transform="matrix(1 0 0 1 15.0833 224.4995)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">RD7</text>
+	<text transform="matrix(1 0 0 1 105.3665 116.7222)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">RF0</text>
+	<text transform="matrix(1 0 0 1 105.5334 124.0015)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">RF1</text>
+	<text transform="matrix(1 0 0 1 105.3665 131.4458)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">RF2</text>
+	<text transform="matrix(1 0 0 1 105.3665 138.7329)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">RF4</text>
+	<text transform="matrix(1 0 0 1 104.8645 145.5103)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">RF5</text>
+	<text transform="matrix(1 0 0 1 105.1985 151.9546)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">RF8</text>
+	<text transform="matrix(1 0 0 1 105.5334 173.7974)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">RD8</text>
+	<text transform="matrix(1 0 0 1 105.3665 181.0776)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">RD9</text>
+	<text transform="matrix(1 0 0 1 105.1985 188.3569)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">RD10</text>
+	<text transform="matrix(1 0 0 1 105.0315 195.8042)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">RD11</text>
+	<text transform="matrix(1 0 0 1 105.0315 203.0845)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">RD12</text>
+	<text transform="matrix(1 0 0 1 105.3665 209.8638)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">RD13</text>
+	<text transform="matrix(1 0 0 1 105.0315 159.5718)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">RF12</text>
+	<text transform="matrix(1 0 0 1 105.3665 166.3481)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">RF13</text>
+	<text transform="matrix(1 0 0 1 105.5334 217.311)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">RD14</text>
+	<text transform="matrix(1 0 0 1 105.3665 224.5923)" fill="#8C8C8C" font-family="'DroidSans'" font-size="3.5">RD15</text>
+</g>
 </svg>

@@ -1,0 +1,510 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- Created with Fritzing (http://www.fritzing.org/) -->
+<svg xmlns="http://www.w3.org/2000/svg" width="0.4in" x="0in" version="1.2" y="0in" gorn="0"  height="0.6in" viewBox="0 0 28.8 43.2" id="svg3983">
+    <desc >
+        <referenceFile >A4950_Motor Driver_SOICN-16_breadboard.svg</referenceFile>
+    </desc>
+    <metadata  id="metadata4232">
+        <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+            <cc:Work xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:cc="http://creativecommons.org/ns#" rdf:about="">
+                <dc:format xmlns:dc="http://purl.org/dc/elements/1.1/">image/svg+xml</dc:format>
+                <dc:type xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:resource="http://purl.org/dc/dcmitype/StillImage" xmlns:dc="http://purl.org/dc/elements/1.1/"/>
+            </cc:Work>
+        </rdf:RDF>
+    </metadata>
+    <defs  id="defs4230"/>
+    <g gorn="0.3"  id="g3985" partID="20320">
+        <g gorn="0.3.0"  id="breadboard" stroke-width="0">
+            <g gorn="0.3.0.0"  id="icon" stroke-width="0">
+                <path fill="#1F7A34" gorn="0.3.0.0.0"  stroke="none" id="path3989" stroke-width="0" d="M0,0L0,19.44A2.16,2.16,0,0,1,0,23.76L0,43.2L28.8,43.2L28.8,0L0,0z"/>
+                <g  transform="matrix(1, 0, 0, 1, 7.488, 11.052)">
+                    <g >
+                        <g >
+                            <g >
+                                <g >
+                                    <g >
+                                        <g gorn="0.3.0.0.1.0.0.0.0.0.0"  id="g3991">
+                                            <g gorn="0.3.0.0.1.0.0.0.0.0.0.0"  id="g3993" stroke-width="0">
+                                                <g  transform="matrix(0.5, 0, 0, 0.5, 3.456, 5.274)">
+                                                    <g >
+                                                        <g >
+                                                            <g >
+                                                                <g >
+                                                                    <g >
+                                                                        <g gorn="0.3.0.0.1.0.0.0.0.0.0.0.0.0.0.0.0.0.0"  id="g3995">
+                                                                            <g gorn="0.3.0.0.1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0"  id="g3997" stroke-width="0">
+                                                                                <rect width="1.728" x="0.648" y="14.832" fill="#8c8c8c" gorn="0.3.0.0.1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0"  height="6.264" stroke="none" id="rect3999" stroke-width="0"/>
+                                                                                <rect width="1.728" x="4.248" y="14.832" fill="#8c8c8c" gorn="0.3.0.0.1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.1"  height="6.264" stroke="none" id="rect4001" stroke-width="0"/>
+                                                                                <rect width="1.728" x="7.848" y="14.832" fill="#8c8c8c" gorn="0.3.0.0.1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.2"  height="6.264" stroke="none" id="rect4003" stroke-width="0"/>
+                                                                                <rect width="1.728" x="11.448" y="14.832" fill="#8c8c8c" gorn="0.3.0.0.1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.3"  height="6.264" stroke="none" id="rect4005" stroke-width="0"/>
+                                                                                <rect width="1.728" x="11.448" y="0" fill="#8c8c8c" gorn="0.3.0.0.1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.4"  height="6.264" stroke="none" id="rect4007" stroke-width="0"/>
+                                                                                <rect width="1.728" x="7.848" y="0" fill="#8c8c8c" gorn="0.3.0.0.1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.5"  height="6.264" stroke="none" id="rect4009" stroke-width="0"/>
+                                                                                <rect width="1.728" x="4.248" y="0" fill="#8c8c8c" gorn="0.3.0.0.1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.6"  height="6.264" stroke="none" id="rect4011" stroke-width="0"/>
+                                                                                <rect width="1.728" x="0.648" y="0" fill="#8c8c8c" gorn="0.3.0.0.1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.7"  height="6.264" stroke="none" id="rect4013" stroke-width="0"/>
+                                                                                <rect width="13.3908" x="0.216567" y="5.43713" fill="#303030" gorn="0.3.0.0.1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.8"  height="10.2218" stroke="none" id="rect4015" stroke-width="0"/>
+                                                                                <polygon points="0.216567,5.43713,13.6074,5.43713,12.8874,6.15713,0.936569,6.15713" fill="#1f1f1f" gorn="0.3.0.0.1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.9"  id="polygon4017" stroke-width="0"/>
+                                                                                <polygon points="0.216567,15.6588,13.6074,15.6588,12.8874,14.9388,0.936569,14.9388" fill="#1f1f1f" gorn="0.3.0.0.1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.10"  id="polygon4019" stroke-width="0"/>
+                                                                                <polygon points="0.216567,5.43713,0.216567,15.6588,0.936569,14.9388,0.936569,6.15713" fill="#000000" gorn="0.3.0.0.1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.11"  id="polygon4021" stroke-width="0"/>
+                                                                                <polygon points="13.6074,5.43713,13.6074,15.6588,12.8874,14.9388,12.8874,6.15713" fill="#3d3d3d" gorn="0.3.0.0.1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.12"  id="polygon4023" stroke-width="0"/>
+                                                                                <circle fill="#1f1f1f" cx="2.37657" gorn="0.3.0.0.1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.13"  cy="13.4988" stroke="none" r="0.72" id="circle4025" stroke-width="0" d="m 3.09657,13.4988 c 0,0.397645 -0.322355,0.72 -0.72,0.72 -0.397645,0 -0.72,-0.322355 -0.72,-0.72 0,-0.397645 0.322355,-0.72 0.72,-0.72 0.397645,0 0.72,0.322355 0.72,0.72 z"/>
+                                                                            </g>
+                                                                        </g>
+                                                                    </g>
+                                                                </g>
+                                                            </g>
+                                                        </g>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+                <text x="3.6" y="23.355" font-family="OCRA" fill="white" gorn="0.3.0.0.2"  text-anchor="start" stroke="none" id="label" stroke-width="0" font-size="4.68">SOICN-8</text>
+                <g  transform="matrix(1, 0, 0, 1, 4.572, 37.8756)">
+                    <g >
+                        <g >
+                            <g >
+                                <g >
+                                    <g >
+                                        <g gorn="0.3.0.0.3.0.0.0.0.0.0"  id="g4028">
+                                            <g gorn="0.3.0.0.3.0.0.0.0.0.0.0"  id="g4030" stroke-width="0">
+                                                <g  transform="rotate(-90)">
+                                                    <g >
+                                                        <g >
+                                                            <g >
+                                                                <g >
+                                                                    <g >
+                                                                        <g gorn="0.3.0.0.3.0.0.0.0.0.0.0.0.0.0.0.0.0.0"  id="g4032">
+                                                                            <g gorn="0.3.0.0.3.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0"  id="g4034" stroke-width="0">
+                                                                                <text x="0" y="0" font-family="OCRA" fill="white" gorn="0.3.0.0.3.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0"  text-anchor="start" stroke="none" id="text4036" stroke-width="0" font-size="3.24">1</text>
+                                                                            </g>
+                                                                        </g>
+                                                                    </g>
+                                                                </g>
+                                                            </g>
+                                                        </g>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+                <g  transform="matrix(1, 0, 0, 1, 4.572, 5.3244)">
+                    <g >
+                        <g >
+                            <g >
+                                <g >
+                                    <g >
+                                        <g gorn="0.3.0.0.4.0.0.0.0.0.0"  id="g4038">
+                                            <g gorn="0.3.0.0.4.0.0.0.0.0.0.0"  id="g4040" stroke-width="0">
+                                                <g  transform="rotate(-90)">
+                                                    <g >
+                                                        <g >
+                                                            <g >
+                                                                <g >
+                                                                    <g >
+                                                                        <g gorn="0.3.0.0.4.0.0.0.0.0.0.0.0.0.0.0.0.0.0"  id="g4042">
+                                                                            <g gorn="0.3.0.0.4.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0"  id="g4044" stroke-width="0">
+                                                                                <text x="0" y="0" font-family="OCRA" fill="white" gorn="0.3.0.0.4.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0"  text-anchor="end" stroke="none" id="text4046" stroke-width="0" font-size="3.24">8</text>
+                                                                            </g>
+                                                                        </g>
+                                                                    </g>
+                                                                </g>
+                                                            </g>
+                                                        </g>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+                <g  transform="matrix(1, 0, 0, 1, 11.772, 37.8756)">
+                    <g >
+                        <g >
+                            <g >
+                                <g >
+                                    <g >
+                                        <g gorn="0.3.0.0.5.0.0.0.0.0.0"  id="g4048">
+                                            <g gorn="0.3.0.0.5.0.0.0.0.0.0.0"  id="g4050" stroke-width="0">
+                                                <g  transform="rotate(-90)">
+                                                    <g >
+                                                        <g >
+                                                            <g >
+                                                                <g >
+                                                                    <g >
+                                                                        <g gorn="0.3.0.0.5.0.0.0.0.0.0.0.0.0.0.0.0.0.0"  id="g4052">
+                                                                            <g gorn="0.3.0.0.5.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0"  id="g4054" stroke-width="0">
+                                                                                <text x="0" y="0" font-family="OCRA" fill="white" gorn="0.3.0.0.5.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0"  text-anchor="start" stroke="none" id="text4056" stroke-width="0" font-size="3.24">2</text>
+                                                                            </g>
+                                                                        </g>
+                                                                    </g>
+                                                                </g>
+                                                            </g>
+                                                        </g>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+                <g  transform="matrix(1, 0, 0, 1, 11.772, 5.3244)">
+                    <g >
+                        <g >
+                            <g >
+                                <g >
+                                    <g >
+                                        <g gorn="0.3.0.0.6.0.0.0.0.0.0"  id="g4058">
+                                            <g gorn="0.3.0.0.6.0.0.0.0.0.0.0"  id="g4060" stroke-width="0">
+                                                <g  transform="rotate(-90)">
+                                                    <g >
+                                                        <g >
+                                                            <g >
+                                                                <g >
+                                                                    <g >
+                                                                        <g gorn="0.3.0.0.6.0.0.0.0.0.0.0.0.0.0.0.0.0.0"  id="g4062">
+                                                                            <g gorn="0.3.0.0.6.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0"  id="g4064" stroke-width="0">
+                                                                                <text x="0" y="0" font-family="OCRA" fill="white" gorn="0.3.0.0.6.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0"  text-anchor="end" stroke="none" id="text4066" stroke-width="0" font-size="3.24">7</text>
+                                                                            </g>
+                                                                        </g>
+                                                                    </g>
+                                                                </g>
+                                                            </g>
+                                                        </g>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+                <g  transform="matrix(1, 0, 0, 1, 18.972, 37.8756)">
+                    <g >
+                        <g >
+                            <g >
+                                <g >
+                                    <g >
+                                        <g gorn="0.3.0.0.7.0.0.0.0.0.0"  id="g4068">
+                                            <g gorn="0.3.0.0.7.0.0.0.0.0.0.0"  id="g4070" stroke-width="0">
+                                                <g  transform="rotate(-90)">
+                                                    <g >
+                                                        <g >
+                                                            <g >
+                                                                <g >
+                                                                    <g >
+                                                                        <g gorn="0.3.0.0.7.0.0.0.0.0.0.0.0.0.0.0.0.0.0"  id="g4072">
+                                                                            <g gorn="0.3.0.0.7.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0"  id="g4074" stroke-width="0">
+                                                                                <text x="0" y="0" font-family="OCRA" fill="white" gorn="0.3.0.0.7.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0"  text-anchor="start" stroke="none" id="text4076" stroke-width="0" font-size="3.24">3</text>
+                                                                            </g>
+                                                                        </g>
+                                                                    </g>
+                                                                </g>
+                                                            </g>
+                                                        </g>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+                <g  transform="matrix(1, 0, 0, 1, 18.972, 5.3244)">
+                    <g >
+                        <g >
+                            <g >
+                                <g >
+                                    <g >
+                                        <g gorn="0.3.0.0.8.0.0.0.0.0.0"  id="g4078">
+                                            <g gorn="0.3.0.0.8.0.0.0.0.0.0.0"  id="g4080" stroke-width="0">
+                                                <g  transform="rotate(-90)">
+                                                    <g >
+                                                        <g >
+                                                            <g >
+                                                                <g >
+                                                                    <g >
+                                                                        <g gorn="0.3.0.0.8.0.0.0.0.0.0.0.0.0.0.0.0.0.0"  id="g4082">
+                                                                            <g gorn="0.3.0.0.8.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0"  id="g4084" stroke-width="0">
+                                                                                <text x="0" y="0" font-family="OCRA" fill="white" gorn="0.3.0.0.8.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0"  text-anchor="end" stroke="none" id="text4086" stroke-width="0" font-size="3.24">6</text>
+                                                                            </g>
+                                                                        </g>
+                                                                    </g>
+                                                                </g>
+                                                            </g>
+                                                        </g>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+                <g  transform="matrix(1, 0, 0, 1, 26.172, 37.8756)">
+                    <g >
+                        <g >
+                            <g >
+                                <g >
+                                    <g >
+                                        <g gorn="0.3.0.0.9.0.0.0.0.0.0"  id="g4088">
+                                            <g gorn="0.3.0.0.9.0.0.0.0.0.0.0"  id="g4090" stroke-width="0">
+                                                <g  transform="rotate(-90)">
+                                                    <g >
+                                                        <g >
+                                                            <g >
+                                                                <g >
+                                                                    <g >
+                                                                        <g gorn="0.3.0.0.9.0.0.0.0.0.0.0.0.0.0.0.0.0.0"  id="g4092">
+                                                                            <g gorn="0.3.0.0.9.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0"  id="g4094" stroke-width="0">
+                                                                                <text x="0" y="0" font-family="OCRA" fill="white" gorn="0.3.0.0.9.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0"  text-anchor="start" stroke="none" id="text4096" stroke-width="0" font-size="3.24">4</text>
+                                                                            </g>
+                                                                        </g>
+                                                                    </g>
+                                                                </g>
+                                                            </g>
+                                                        </g>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+                <g  transform="matrix(1, 0, 0, 1, 26.172, 5.3244)">
+                    <g >
+                        <g >
+                            <g >
+                                <g >
+                                    <g >
+                                        <g gorn="0.3.0.0.10.0.0.0.0.0.0"  id="g4098">
+                                            <g gorn="0.3.0.0.10.0.0.0.0.0.0.0"  id="g4100" stroke-width="0">
+                                                <g  transform="rotate(-90)">
+                                                    <g >
+                                                        <g >
+                                                            <g >
+                                                                <g >
+                                                                    <g >
+                                                                        <g gorn="0.3.0.0.10.0.0.0.0.0.0.0.0.0.0.0.0.0.0"  id="g4102">
+                                                                            <g gorn="0.3.0.0.10.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0"  id="g4104" stroke-width="0">
+                                                                                <text x="0" y="0" font-family="OCRA" fill="white" gorn="0.3.0.0.10.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0"  text-anchor="end" stroke="none" id="text4106" stroke-width="0" font-size="3.24">5</text>
+                                                                            </g>
+                                                                        </g>
+                                                                    </g>
+                                                                </g>
+                                                            </g>
+                                                        </g>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+            <g  transform="matrix(1, 0, 0, 1, 2.45052, 38.4516)">
+                <g >
+                    <g >
+                        <g >
+                            <g >
+                                <g >
+                                    <g gorn="0.3.0.1.0.0.0.0.0.0"  id="g4108">
+                                        <g gorn="0.3.0.1.0.0.0.0.0.0.0"  id="connector0pin" stroke-width="0">
+                                            <rect width="2.29896" x="0" y="0" fill="#8D8C8C" gorn="0.3.0.1.0.0.0.0.0.0.0.0"  height="2.2968" id="rect4111" stroke-width="0"/>
+                                            <rect width="1.18398" x="0.56099" y="0.556952" fill="#8C8663" gorn="0.3.0.1.0.0.0.0.0.0.0.1"  height="1.18189" id="rect4113" stroke-width="0"/>
+                                            <polygon points="0,2.2968,0.56099,1.73785,0.56099,0.501957,0,0" fill="#B8AF82" gorn="0.3.0.1.0.0.0.0.0.0.0.2"  id="polygon4115" stroke-width="0"/>
+                                            <polygon points="1.74297,0.558951,0.56899,0.558951,0,0,2.29896,0" fill="#80795B" gorn="0.3.0.1.0.0.0.0.0.0.0.3"  id="polygon4117" stroke-width="0"/>
+                                            <polygon points="1.74297,1.73785,1.74297,0.558951,2.29896,0,2.29896,2.2968" fill="#5E5B43" gorn="0.3.0.1.0.0.0.0.0.0.0.4"  id="polygon4119" stroke-width="0"/>
+                                            <polygon points="0,2.2968,0.56699,1.73785,1.74297,1.73785,2.29896,2.2968" fill="#9A916C" gorn="0.3.0.1.0.0.0.0.0.0.0.5"  id="polygon4121" stroke-width="0"/>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+            <g  transform="matrix(1, 0, 0, 1, 2.45052, 2.4516)">
+                <g >
+                    <g >
+                        <g >
+                            <g >
+                                <g >
+                                    <g gorn="0.3.0.2.0.0.0.0.0.0"  id="g4123">
+                                        <g gorn="0.3.0.2.0.0.0.0.0.0.0"  id="connector7pin" stroke-width="0">
+                                            <rect width="2.29896" x="0" y="0" fill="#8D8C8C" gorn="0.3.0.2.0.0.0.0.0.0.0.0"  height="2.2968" id="rect4126" stroke-width="0"/>
+                                            <rect width="1.18398" x="0.56099" y="0.556952" fill="#8C8663" gorn="0.3.0.2.0.0.0.0.0.0.0.1"  height="1.18189" id="rect4128" stroke-width="0"/>
+                                            <polygon points="0,2.2968,0.56099,1.73785,0.56099,0.501957,0,0" fill="#B8AF82" gorn="0.3.0.2.0.0.0.0.0.0.0.2"  id="polygon4130" stroke-width="0"/>
+                                            <polygon points="1.74297,0.558951,0.56899,0.558951,0,0,2.29896,0" fill="#80795B" gorn="0.3.0.2.0.0.0.0.0.0.0.3"  id="polygon4132" stroke-width="0"/>
+                                            <polygon points="1.74297,1.73785,1.74297,0.558951,2.29896,0,2.29896,2.2968" fill="#5E5B43" gorn="0.3.0.2.0.0.0.0.0.0.0.4"  id="polygon4134" stroke-width="0"/>
+                                            <polygon points="0,2.2968,0.56699,1.73785,1.74297,1.73785,2.29896,2.2968" fill="#9A916C" gorn="0.3.0.2.0.0.0.0.0.0.0.5"  id="polygon4136" stroke-width="0"/>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+            <g  transform="matrix(1, 0, 0, 1, 9.65052, 38.4516)">
+                <g >
+                    <g >
+                        <g >
+                            <g >
+                                <g >
+                                    <g gorn="0.3.0.3.0.0.0.0.0.0"  id="g4138">
+                                        <g gorn="0.3.0.3.0.0.0.0.0.0.0"  id="connector1pin" stroke-width="0">
+                                            <rect width="2.29896" x="0" y="0" fill="#8D8C8C" gorn="0.3.0.3.0.0.0.0.0.0.0.0"  height="2.2968" id="rect4141" stroke-width="0"/>
+                                            <rect width="1.18398" x="0.56099" y="0.556952" fill="#8C8663" gorn="0.3.0.3.0.0.0.0.0.0.0.1"  height="1.18189" id="rect4143" stroke-width="0"/>
+                                            <polygon points="0,2.2968,0.56099,1.73785,0.56099,0.501957,0,0" fill="#B8AF82" gorn="0.3.0.3.0.0.0.0.0.0.0.2"  id="polygon4145" stroke-width="0"/>
+                                            <polygon points="1.74297,0.558951,0.56899,0.558951,0,0,2.29896,0" fill="#80795B" gorn="0.3.0.3.0.0.0.0.0.0.0.3"  id="polygon4147" stroke-width="0"/>
+                                            <polygon points="1.74297,1.73785,1.74297,0.558951,2.29896,0,2.29896,2.2968" fill="#5E5B43" gorn="0.3.0.3.0.0.0.0.0.0.0.4"  id="polygon4149" stroke-width="0"/>
+                                            <polygon points="0,2.2968,0.56699,1.73785,1.74297,1.73785,2.29896,2.2968" fill="#9A916C" gorn="0.3.0.3.0.0.0.0.0.0.0.5"  id="polygon4151" stroke-width="0"/>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+            <g  transform="matrix(1, 0, 0, 1, 9.65052, 2.4516)">
+                <g >
+                    <g >
+                        <g >
+                            <g >
+                                <g >
+                                    <g gorn="0.3.0.4.0.0.0.0.0.0"  id="g4153">
+                                        <g gorn="0.3.0.4.0.0.0.0.0.0.0"  id="connector6pin" stroke-width="0">
+                                            <rect width="2.29896" x="0" y="0" fill="#8D8C8C" gorn="0.3.0.4.0.0.0.0.0.0.0.0"  height="2.2968" id="rect4156" stroke-width="0"/>
+                                            <rect width="1.18398" x="0.56099" y="0.556952" fill="#8C8663" gorn="0.3.0.4.0.0.0.0.0.0.0.1"  height="1.18189" id="rect4158" stroke-width="0"/>
+                                            <polygon points="0,2.2968,0.56099,1.73785,0.56099,0.501957,0,0" fill="#B8AF82" gorn="0.3.0.4.0.0.0.0.0.0.0.2"  id="polygon4160" stroke-width="0"/>
+                                            <polygon points="1.74297,0.558951,0.56899,0.558951,0,0,2.29896,0" fill="#80795B" gorn="0.3.0.4.0.0.0.0.0.0.0.3"  id="polygon4162" stroke-width="0"/>
+                                            <polygon points="1.74297,1.73785,1.74297,0.558951,2.29896,0,2.29896,2.2968" fill="#5E5B43" gorn="0.3.0.4.0.0.0.0.0.0.0.4"  id="polygon4164" stroke-width="0"/>
+                                            <polygon points="0,2.2968,0.56699,1.73785,1.74297,1.73785,2.29896,2.2968" fill="#9A916C" gorn="0.3.0.4.0.0.0.0.0.0.0.5"  id="polygon4166" stroke-width="0"/>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+            <g  transform="matrix(1, 0, 0, 1, 16.8505, 38.4516)">
+                <g >
+                    <g >
+                        <g >
+                            <g >
+                                <g >
+                                    <g gorn="0.3.0.5.0.0.0.0.0.0"  id="g4168">
+                                        <g gorn="0.3.0.5.0.0.0.0.0.0.0"  id="connector2pin" stroke-width="0">
+                                            <rect width="2.29896" x="0" y="0" fill="#8D8C8C" gorn="0.3.0.5.0.0.0.0.0.0.0.0"  height="2.2968" id="rect4171" stroke-width="0"/>
+                                            <rect width="1.18398" x="0.56099" y="0.556952" fill="#8C8663" gorn="0.3.0.5.0.0.0.0.0.0.0.1"  height="1.18189" id="rect4173" stroke-width="0"/>
+                                            <polygon points="0,2.2968,0.56099,1.73785,0.56099,0.501957,0,0" fill="#B8AF82" gorn="0.3.0.5.0.0.0.0.0.0.0.2"  id="polygon4175" stroke-width="0"/>
+                                            <polygon points="1.74297,0.558951,0.56899,0.558951,0,0,2.29896,0" fill="#80795B" gorn="0.3.0.5.0.0.0.0.0.0.0.3"  id="polygon4177" stroke-width="0"/>
+                                            <polygon points="1.74297,1.73785,1.74297,0.558951,2.29896,0,2.29896,2.2968" fill="#5E5B43" gorn="0.3.0.5.0.0.0.0.0.0.0.4"  id="polygon4179" stroke-width="0"/>
+                                            <polygon points="0,2.2968,0.56699,1.73785,1.74297,1.73785,2.29896,2.2968" fill="#9A916C" gorn="0.3.0.5.0.0.0.0.0.0.0.5"  id="polygon4181" stroke-width="0"/>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+            <g  transform="matrix(1, 0, 0, 1, 16.8505, 2.4516)">
+                <g >
+                    <g >
+                        <g >
+                            <g >
+                                <g >
+                                    <g gorn="0.3.0.6.0.0.0.0.0.0"  id="g4183">
+                                        <g gorn="0.3.0.6.0.0.0.0.0.0.0"  id="connector5pin" stroke-width="0">
+                                            <rect width="2.29896" x="0" y="0" fill="#8D8C8C" gorn="0.3.0.6.0.0.0.0.0.0.0.0"  height="2.2968" id="rect4186" stroke-width="0"/>
+                                            <rect width="1.18398" x="0.56099" y="0.556952" fill="#8C8663" gorn="0.3.0.6.0.0.0.0.0.0.0.1"  height="1.18189" id="rect4188" stroke-width="0"/>
+                                            <polygon points="0,2.2968,0.56099,1.73785,0.56099,0.501957,0,0" fill="#B8AF82" gorn="0.3.0.6.0.0.0.0.0.0.0.2"  id="polygon4190" stroke-width="0"/>
+                                            <polygon points="1.74297,0.558951,0.56899,0.558951,0,0,2.29896,0" fill="#80795B" gorn="0.3.0.6.0.0.0.0.0.0.0.3"  id="polygon4192" stroke-width="0"/>
+                                            <polygon points="1.74297,1.73785,1.74297,0.558951,2.29896,0,2.29896,2.2968" fill="#5E5B43" gorn="0.3.0.6.0.0.0.0.0.0.0.4"  id="polygon4194" stroke-width="0"/>
+                                            <polygon points="0,2.2968,0.56699,1.73785,1.74297,1.73785,2.29896,2.2968" fill="#9A916C" gorn="0.3.0.6.0.0.0.0.0.0.0.5"  id="polygon4196" stroke-width="0"/>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+            <g  transform="matrix(1, 0, 0, 1, 24.0505, 38.4516)">
+                <g >
+                    <g >
+                        <g >
+                            <g >
+                                <g >
+                                    <g gorn="0.3.0.7.0.0.0.0.0.0"  id="g4198">
+                                        <g gorn="0.3.0.7.0.0.0.0.0.0.0"  id="connector3pin" stroke-width="0">
+                                            <rect width="2.29896" x="0" y="0" fill="#8D8C8C" gorn="0.3.0.7.0.0.0.0.0.0.0.0"  height="2.2968" id="rect4201" stroke-width="0"/>
+                                            <rect width="1.18398" x="0.56099" y="0.556952" fill="#8C8663" gorn="0.3.0.7.0.0.0.0.0.0.0.1"  height="1.18189" id="rect4203" stroke-width="0"/>
+                                            <polygon points="0,2.2968,0.56099,1.73785,0.56099,0.501957,0,0" fill="#B8AF82" gorn="0.3.0.7.0.0.0.0.0.0.0.2"  id="polygon4205" stroke-width="0"/>
+                                            <polygon points="1.74297,0.558951,0.56899,0.558951,0,0,2.29896,0" fill="#80795B" gorn="0.3.0.7.0.0.0.0.0.0.0.3"  id="polygon4207" stroke-width="0"/>
+                                            <polygon points="1.74297,1.73785,1.74297,0.558951,2.29896,0,2.29896,2.2968" fill="#5E5B43" gorn="0.3.0.7.0.0.0.0.0.0.0.4"  id="polygon4209" stroke-width="0"/>
+                                            <polygon points="0,2.2968,0.56699,1.73785,1.74297,1.73785,2.29896,2.2968" fill="#9A916C" gorn="0.3.0.7.0.0.0.0.0.0.0.5"  id="polygon4211" stroke-width="0"/>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+            <g  transform="matrix(1, 0, 0, 1, 24.0505, 2.4516)">
+                <g >
+                    <g >
+                        <g >
+                            <g >
+                                <g >
+                                    <g gorn="0.3.0.8.0.0.0.0.0.0"  id="g4213">
+                                        <g gorn="0.3.0.8.0.0.0.0.0.0.0"  id="connector4pin" stroke-width="0">
+                                            <rect width="2.29896" x="0" y="0" fill="#8D8C8C" gorn="0.3.0.8.0.0.0.0.0.0.0.0"  height="2.2968" id="rect4216" stroke-width="0"/>
+                                            <rect width="1.18398" x="0.56099" y="0.556952" fill="#8C8663" gorn="0.3.0.8.0.0.0.0.0.0.0.1"  height="1.18189" id="rect4218" stroke-width="0"/>
+                                            <polygon points="0,2.2968,0.56099,1.73785,0.56099,0.501957,0,0" fill="#B8AF82" gorn="0.3.0.8.0.0.0.0.0.0.0.2"  id="polygon4220" stroke-width="0"/>
+                                            <polygon points="1.74297,0.558951,0.56899,0.558951,0,0,2.29896,0" fill="#80795B" gorn="0.3.0.8.0.0.0.0.0.0.0.3"  id="polygon4222" stroke-width="0"/>
+                                            <polygon points="1.74297,1.73785,1.74297,0.558951,2.29896,0,2.29896,2.2968" fill="#5E5B43" gorn="0.3.0.8.0.0.0.0.0.0.0.4"  id="polygon4224" stroke-width="0"/>
+                                            <polygon points="0,2.2968,0.56699,1.73785,1.74297,1.73785,2.29896,2.2968" fill="#9A916C" gorn="0.3.0.8.0.0.0.0.0.0.0.5"  id="polygon4226" stroke-width="0"/>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

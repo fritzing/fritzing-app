@@ -1,147 +1,256 @@
-<?xml version='1.0' encoding='utf-8'?>
-<!DOCTYPE svg>
-<!-- Generator: Adobe Illustrator 16.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg xmlns="http://www.w3.org/2000/svg" width="4.33982in" x="0px" version="1.1" y="0px"  height="4.32596in" viewBox="0 0 312.467 311.469" xmlns:xml="http://www.w3.org/XML/1998/namespace" enable-background="new 0 0 312.467 311.469" xml:space="preserve">
-    <desc >
-        <referenceFile >mx4-pcb.svg</referenceFile>
-    </desc>
-    <g gorn="0.1"  id="silkscreen0">
-        <g >
-            <line fill="none"  stroke="#FFFFFF" y1="310.719" stroke-width="1.5" x1="0.75" y2="199.212" x2="0.75" stroke-miterlimit="10"/>
-            <line fill="none"  stroke="#FFFFFF" y1="108.165" stroke-width="1.5" x1="0.75" y2="0.75" x2="0.75" stroke-miterlimit="10"/>
-            <line fill="none"  stroke="#FFFFFF" y1="0.75" stroke-width="1.5" x1="0.75" y2="0.75" x2="311.717" stroke-miterlimit="10"/>
-            <line fill="none"  stroke="#FFFFFF" y1="0.75" stroke-width="1.5" x1="311.717" y2="310.719" x2="311.717" stroke-miterlimit="10"/>
-            <line fill="none"  stroke="#FFFFFF" y1="310.719" stroke-width="1.5" x1="311.717" y2="310.719" x2="0.75" stroke-miterlimit="10"/>
-        </g>
-    </g>
-    <g id="copper1">
-    <g gorn="0.2"  id="copper0">
-        <g >
-            <circle fill="#FFFFFF" cx="96.916" gorn="0.2.0.0"  cy="299.193" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector0pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="108.254" gorn="0.2.0.1"  cy="299.193" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector1pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="119.593" gorn="0.2.0.2"  cy="299.193" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector2pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="130.932" gorn="0.2.0.3"  cy="299.193" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector3pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="142.27" gorn="0.2.0.4"  cy="299.193" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector4pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="153.607" gorn="0.2.0.5"  cy="299.193" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector5pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="96.916" gorn="0.2.0.6"  cy="287.854" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector6pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="108.254" gorn="0.2.0.7"  cy="287.854" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector7pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="119.593" gorn="0.2.0.8"  cy="287.854" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector8pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="130.932" gorn="0.2.0.9"  cy="287.854" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector9pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="142.27" gorn="0.2.0.10"  cy="287.854" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector10pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="153.607" gorn="0.2.0.11"  cy="287.854" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector11pin" stroke-width="1.5" stroke-miterlimit="10"/>
-        </g>
-        <g >
-            <circle fill="#FFFFFF" cx="167.249" gorn="0.2.1.0"  cy="299.193" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector12pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="178.588" gorn="0.2.1.1"  cy="299.193" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector13pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="189.926" gorn="0.2.1.2"  cy="299.193" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector14pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="201.265" gorn="0.2.1.3"  cy="299.193" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector15pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="212.604" gorn="0.2.1.4"  cy="299.193" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector16pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="223.941" gorn="0.2.1.5"  cy="299.193" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector17pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="167.249" gorn="0.2.1.6"  cy="287.854" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector18pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="178.588" gorn="0.2.1.7"  cy="287.854" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector19pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="189.926" gorn="0.2.1.8"  cy="287.854" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector20pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="201.265" gorn="0.2.1.9"  cy="287.854" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector21pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="212.604" gorn="0.2.1.10"  cy="287.854" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector22pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="223.941" gorn="0.2.1.11"  cy="287.854" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector23pin" stroke-width="1.5" stroke-miterlimit="10"/>
-        </g>
-        <g >
-            <circle fill="#FFFFFF" cx="242.948" gorn="0.2.2.0"  cy="299.193" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector24pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="254.287" gorn="0.2.2.1"  cy="299.193" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector25pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="265.625" gorn="0.2.2.2"  cy="299.193" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector26pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="276.964" gorn="0.2.2.3"  cy="299.193" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector27pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="288.303" gorn="0.2.2.4"  cy="299.193" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector28pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="299.641" gorn="0.2.2.5"  cy="299.193" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector29pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="242.948" gorn="0.2.2.6"  cy="287.854" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector30pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="254.287" gorn="0.2.2.7"  cy="287.854" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector31pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="265.625" gorn="0.2.2.8"  cy="287.854" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector32pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="276.964" gorn="0.2.2.9"  cy="287.854" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector33pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="288.303" gorn="0.2.2.10"  cy="287.854" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector34pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="299.641" gorn="0.2.2.11"  cy="287.854" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector35pin" stroke-width="1.5" stroke-miterlimit="10"/>
-        </g>
-        <g >
-            <circle fill="#FFFFFF" cx="13.793" gorn="0.2.3.0"  cy="21.197" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector36pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="25.132" gorn="0.2.3.1"  cy="21.197" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector37pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="36.47" gorn="0.2.3.2"  cy="21.197" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector38pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="47.809" gorn="0.2.3.3"  cy="21.197" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector39pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="59.147" gorn="0.2.3.4"  cy="21.197" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector40pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="70.485" gorn="0.2.3.5"  cy="21.197" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector41pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="13.793" gorn="0.2.3.6"  cy="9.858" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector42pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="25.132" gorn="0.2.3.7"  cy="9.858" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector43pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="36.47" gorn="0.2.3.8"  cy="9.858" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector44pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="47.809" gorn="0.2.3.9"  cy="9.858" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector45pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="59.147" gorn="0.2.3.10"  cy="9.858" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector46pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="70.485" gorn="0.2.3.11"  cy="9.858" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector47pin" stroke-width="1.5" stroke-miterlimit="10"/>
-        </g>
-        <g >
-            <circle fill="#FFFFFF" cx="92.774" gorn="0.2.4.0"  cy="21.197" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector48pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="104.113" gorn="0.2.4.1"  cy="21.197" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector49pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="115.451" gorn="0.2.4.2"  cy="21.197" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector50pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="126.789" gorn="0.2.4.3"  cy="21.197" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector51pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="138.129" gorn="0.2.4.4"  cy="21.197" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector52pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="149.467" gorn="0.2.4.5"  cy="21.197" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector53pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="92.774" gorn="0.2.4.6"  cy="9.858" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector54pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="104.113" gorn="0.2.4.7"  cy="9.858" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector55pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="115.451" gorn="0.2.4.8"  cy="9.858" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector56pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="126.789" gorn="0.2.4.9"  cy="9.858" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector57pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="138.129" gorn="0.2.4.10"  cy="9.858" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector58pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="149.467" gorn="0.2.4.11"  cy="9.858" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector59pin" stroke-width="1.5" stroke-miterlimit="10"/>
-        </g>
-        <g >
-            <circle fill="#FFFFFF" cx="170.441" gorn="0.2.5.0"  cy="21.197" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector60pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="181.779" gorn="0.2.5.1"  cy="21.197" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector61pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="193.117" gorn="0.2.5.2"  cy="21.197" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector62pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="204.456" gorn="0.2.5.3"  cy="21.197" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector63pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="215.796" gorn="0.2.5.4"  cy="21.197" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector64pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="227.134" gorn="0.2.5.5"  cy="21.197" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector65pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="170.441" gorn="0.2.5.6"  cy="9.858" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector66pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="181.779" gorn="0.2.5.7"  cy="9.858" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector67pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="193.117" gorn="0.2.5.8"  cy="9.858" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector68pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="204.456" gorn="0.2.5.9"  cy="9.858" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector69pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="215.796" gorn="0.2.5.10"  cy="9.858" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector70pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="227.134" gorn="0.2.5.11"  cy="9.858" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector71pin" stroke-width="1.5" stroke-miterlimit="10"/>
-        </g>
-        <g >
-            <circle fill="#FFFFFF" cx="242.949" gorn="0.2.6.0"  cy="21.197" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector72pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="254.287" gorn="0.2.6.1"  cy="21.197" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector73pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="265.625" gorn="0.2.6.2"  cy="21.197" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector74pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="276.964" gorn="0.2.6.3"  cy="21.197" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector75pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="288.304" gorn="0.2.6.4"  cy="21.197" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector76pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="299.642" gorn="0.2.6.5"  cy="21.197" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector77pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="242.949" gorn="0.2.6.6"  cy="9.858" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector78pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="254.287" gorn="0.2.6.7"  cy="9.858" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector79pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="265.625" gorn="0.2.6.8"  cy="9.858" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector80pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="276.964" gorn="0.2.6.9"  cy="9.858" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector81pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="288.304" gorn="0.2.6.10"  cy="9.858" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector82pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="299.642" gorn="0.2.6.11"  cy="9.858" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector83pin" stroke-width="1.5" stroke-miterlimit="10"/>
-        </g>
-        <g >
-            <circle fill="#FFFFFF" cx="300.801" gorn="0.2.7.0"  cy="105.53" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector84pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="300.801" gorn="0.2.7.1"  cy="94.192" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector85pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="300.801" gorn="0.2.7.2"  cy="82.854" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector86pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="300.801" gorn="0.2.7.3"  cy="71.515" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector87pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="300.801" gorn="0.2.7.4"  cy="60.175" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector88pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="300.801" gorn="0.2.7.5"  cy="48.837" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector89pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="289.462" gorn="0.2.7.6"  cy="105.53" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector90pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="289.462" gorn="0.2.7.7"  cy="94.192" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector91pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="289.462" gorn="0.2.7.8"  cy="82.854" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector92pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="289.462" gorn="0.2.7.9"  cy="71.515" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector93pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="289.462" gorn="0.2.7.10"  cy="60.175" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector94pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="289.462" gorn="0.2.7.11"  cy="48.837" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector95pin" stroke-width="1.5" stroke-miterlimit="10"/>
-        </g>
-        <g >
-            <circle fill="#FFFFFF" cx="300.801" gorn="0.2.8.0"  cy="181.859" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector96pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="300.801" gorn="0.2.8.1"  cy="170.521" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector97pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="300.801" gorn="0.2.8.2"  cy="159.184" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector98pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="300.801" gorn="0.2.8.3"  cy="147.845" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector99pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="300.801" gorn="0.2.8.4"  cy="136.505" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector100pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="300.801" gorn="0.2.8.5"  cy="125.167" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector101pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="289.462" gorn="0.2.8.6"  cy="181.859" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector102pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="289.462" gorn="0.2.8.7"  cy="170.521" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector103pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="289.462" gorn="0.2.8.8"  cy="159.184" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector104pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="289.462" gorn="0.2.8.9"  cy="147.845" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector105pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="289.462" gorn="0.2.8.10"  cy="136.505" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector106pin" stroke-width="1.5" stroke-miterlimit="10"/>
-            <circle fill="#FFFFFF" cx="289.462" gorn="0.2.8.11"  cy="125.167" stroke="#F7BD13" fill-opacity="0" r="2.126" id="connector107pin" stroke-width="1.5" stroke-miterlimit="10"/>
-        </g>
-    </g>
-    </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns:xml="http://www.w3.org/XML/1998/namespace"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="310.9px"
+	 height="274.317px" viewBox="0 0 310.9 274.317" enable-background="new 0 0 310.9 274.317" xml:space="preserve">
+<g id="silkscreen">
+	<path fill="none" stroke="#FFFFFF" stroke-width="0.576" d="M0.433,273.457h309.025V0.433H0.433V273.457 M6.049,262.945
+		c-0.001-2.705,2.19-4.896,4.894-4.898c2.704,0,4.897,2.191,4.898,4.895c0,0.002,0,0.002,0,0.004c0,2.703-2.191,4.896-4.896,4.896
+		S6.05,265.65,6.049,262.945L6.049,262.945z M294.05,262.945c-0.004-2.705,2.186-4.898,4.889-4.902
+		c2.705-0.004,4.898,2.186,4.902,4.889c0,0.006,0,0.01,0,0.014c0.004,2.703-2.186,4.898-4.891,4.902
+		c-2.703,0.002-4.898-2.188-4.9-4.891C294.05,262.953,294.05,262.949,294.05,262.945z M294.05,10.945
+		c-0.004-2.704,2.186-4.898,4.889-4.902c2.705-0.003,4.898,2.186,4.902,4.89c0,0.005,0,0.009,0,0.013
+		c0.004,2.704-2.186,4.898-4.891,4.902c-2.703,0.003-4.898-2.187-4.9-4.89C294.05,10.953,294.05,10.949,294.05,10.945z
+		 M6.049,10.945c-0.001-2.704,2.19-4.896,4.894-4.897s4.897,2.19,4.898,4.895c0,0.001,0,0.002,0,0.003
+		c0,2.704-2.191,4.896-4.896,4.896c-2.704,0.001-4.896-2.191-4.896-4.895C6.049,10.946,6.049,10.945,6.049,10.945z"/>
+</g>
+<g id="copper1">
+	<g id="copper0">
+		<g>
+			
+				<circle id="connector0pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="104.545" cy="244.945" r="1.889"/>
+			
+				<circle id="connector1pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="111.746" cy="244.945" r="1.889"/>
+			
+				<circle id="connector2pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="118.945" cy="244.945" r="1.889"/>
+			
+				<circle id="connector3pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="126.146" cy="244.945" r="1.889"/>
+			
+				<circle id="connector4pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="133.345" cy="244.945" r="1.889"/>
+			
+				<circle id="connector5pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="140.546" cy="244.945" r="1.889"/>
+			
+				<circle id="connector6pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="104.545" cy="237.745" r="1.89"/>
+			
+				<circle id="connector7pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="111.746" cy="237.745" r="1.89"/>
+			
+				<circle id="connector8pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="118.945" cy="237.745" r="1.89"/>
+			
+				<circle id="connector9pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="126.146" cy="237.745" r="1.89"/>
+			
+				<circle id="connector10pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="133.345" cy="237.745" r="1.89"/>
+			
+				<circle id="connector11pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="140.546" cy="237.745" r="1.89"/>
+		</g>
+		<g>
+			
+				<circle id="connector12pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="169.345" cy="244.945" r="1.889"/>
+			
+				<circle id="connector13pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="176.544" cy="244.945" r="1.889"/>
+			
+				<circle id="connector14pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="183.745" cy="244.945" r="1.889"/>
+			
+				<circle id="connector15pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="190.944" cy="244.945" r="1.889"/>
+			
+				<circle id="connector16pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="198.146" cy="244.945" r="1.889"/>
+			
+				<circle id="connector17pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="205.337" cy="244.945" r="1.889"/>
+			
+				<circle id="connector18pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="169.345" cy="237.745" r="1.89"/>
+			
+				<circle id="connector19pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="176.544" cy="237.745" r="1.89"/>
+			
+				<circle id="connector20pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="183.745" cy="237.745" r="1.89"/>
+			
+				<circle id="connector21pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="190.944" cy="237.745" r="1.89"/>
+			
+				<circle id="connector22pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="198.146" cy="237.745" r="1.89"/>
+			
+				<circle id="connector23pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="205.337" cy="237.745" r="1.89"/>
+		</g>
+		<g>
+			
+				<circle id="connector24pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="234.146" cy="244.945" r="1.889"/>
+			
+				<circle id="connector25pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="241.345" cy="244.945" r="1.889"/>
+			
+				<circle id="connector26pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="248.544" cy="244.945" r="1.889"/>
+			
+				<circle id="connector27pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="255.745" cy="244.945" r="1.889"/>
+			
+				<circle id="connector28pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="262.946" cy="244.945" r="1.889"/>
+			
+				<circle id="connector29pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="270.165" cy="244.945" r="1.889"/>
+			
+				<circle id="connector30pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="234.146" cy="237.745" r="1.89"/>
+			
+				<circle id="connector31pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="241.345" cy="237.745" r="1.89"/>
+			
+				<circle id="connector32pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="248.544" cy="237.745" r="1.89"/>
+			
+				<circle id="connector33pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="255.745" cy="237.745" r="1.89"/>
+			
+				<circle id="connector34pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="262.946" cy="237.745" r="1.89"/>
+			
+				<circle id="connector35pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="270.165" cy="237.745" r="1.89"/>
+		</g>
+		<g>
+			
+				<circle id="connector36pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="39.745" cy="36.145" r="1.889"/>
+			
+				<circle id="connector37pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="46.945" cy="36.145" r="1.889"/>
+			
+				<circle id="connector38pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="54.146" cy="36.145" r="1.889"/>
+			
+				<circle id="connector39pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="61.346" cy="36.145" r="1.889"/>
+			
+				<circle id="connector40pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="68.54" cy="36.145" r="1.889"/>
+			
+				<circle id="connector41pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="75.739" cy="36.145" r="1.889"/>
+			
+				<circle id="connector42pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="39.745" cy="28.945" r="1.889"/>
+			
+				<circle id="connector43pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="46.945" cy="28.945" r="1.889"/>
+			
+				<circle id="connector44pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="54.146" cy="28.945" r="1.889"/>
+			
+				<circle id="connector45pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="61.346" cy="28.945" r="1.889"/>
+			
+				<circle id="connector46pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="68.54" cy="28.945" r="1.889"/>
+			
+				<circle id="connector47pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="75.739" cy="28.945" r="1.889"/>
+		</g>
+		<g>
+			
+				<circle id="connector48pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="104.545" cy="36.145" r="1.889"/>
+			
+				<circle id="connector49pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="111.746" cy="36.145" r="1.889"/>
+			
+				<circle id="connector50pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="118.945" cy="36.145" r="1.889"/>
+			
+				<circle id="connector51pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="126.146" cy="36.145" r="1.889"/>
+			
+				<circle id="connector52pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="133.346" cy="36.145" r="1.889"/>
+			
+				<circle id="connector53pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="140.546" cy="36.145" r="1.889"/>
+			
+				<circle id="connector54pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="104.545" cy="28.945" r="1.889"/>
+			
+				<circle id="connector55pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="111.746" cy="28.945" r="1.889"/>
+			
+				<circle id="connector56pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="118.945" cy="28.945" r="1.889"/>
+			
+				<circle id="connector57pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="126.146" cy="28.945" r="1.889"/>
+			
+				<circle id="connector58pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="133.346" cy="28.945" r="1.889"/>
+			
+				<circle id="connector59pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="140.546" cy="28.945" r="1.889"/>
+		</g>
+		<g>
+			
+				<circle id="connector60pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="169.345" cy="36.145" r="1.889"/>
+			
+				<circle id="connector61pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="176.544" cy="36.145" r="1.889"/>
+			
+				<circle id="connector62pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="183.747" cy="36.145" r="1.889"/>
+			
+				<circle id="connector63pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="190.944" cy="36.145" r="1.889"/>
+			
+				<circle id="connector64pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="198.146" cy="36.145" r="1.889"/>
+			
+				<circle id="connector65pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="205.345" cy="36.145" r="1.889"/>
+			
+				<circle id="connector66pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="169.345" cy="28.945" r="1.889"/>
+			
+				<circle id="connector67pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="176.544" cy="28.945" r="1.889"/>
+			
+				<circle id="connector68pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="183.747" cy="28.945" r="1.889"/>
+			
+				<circle id="connector69pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="190.944" cy="28.945" r="1.889"/>
+			
+				<circle id="connector70pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="198.146" cy="28.945" r="1.889"/>
+			
+				<circle id="connector71pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="205.345" cy="28.945" r="1.889"/>
+		</g>
+		<g>
+			
+				<circle id="connector72pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="234.146" cy="36.145" r="1.889"/>
+			
+				<circle id="connector73pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="241.345" cy="36.145" r="1.889"/>
+			
+				<circle id="connector74pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="248.544" cy="36.145" r="1.889"/>
+			
+				<circle id="connector75pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="255.745" cy="36.145" r="1.889"/>
+			
+				<circle id="connector76pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="262.944" cy="36.145" r="1.889"/>
+			
+				<circle id="connector77pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="270.144" cy="36.145" r="1.889"/>
+			
+				<circle id="connector78pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="234.146" cy="28.945" r="1.889"/>
+			
+				<circle id="connector79pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="241.345" cy="28.945" r="1.889"/>
+			
+				<circle id="connector80pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="248.544" cy="28.945" r="1.889"/>
+			
+				<circle id="connector81pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="255.745" cy="28.945" r="1.889"/>
+			
+				<circle id="connector82pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="262.944" cy="28.945" r="1.889"/>
+			
+				<circle id="connector83pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="270.144" cy="28.945" r="1.889"/>
+		</g>
+		<g>
+			
+				<circle id="connector84pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="280.944" cy="90.145" r="1.889"/>
+			
+				<circle id="connector85pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="280.944" cy="82.945" r="1.889"/>
+			
+				<circle id="connector86pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="280.944" cy="75.746" r="1.89"/>
+			
+				<circle id="connector87pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="280.944" cy="68.545" r="1.89"/>
+			
+				<circle id="connector88pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="280.944" cy="61.345" r="1.89"/>
+			
+				<circle id="connector89pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="280.944" cy="54.145" r="1.89"/>
+			
+				<circle id="connector90pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="273.745" cy="90.145" r="1.889"/>
+			
+				<circle id="connector91pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="273.745" cy="82.945" r="1.889"/>
+			
+				<circle id="connector92pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="273.745" cy="75.746" r="1.89"/>
+			
+				<circle id="connector93pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="273.745" cy="68.545" r="1.89"/>
+			
+				<circle id="connector94pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="273.745" cy="61.345" r="1.89"/>
+			
+				<circle id="connector95pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="273.745" cy="54.145" r="1.89"/>
+		</g>
+		<g>
+			
+				<circle id="connector96pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="280.944" cy="154.945" r="1.889"/>
+			
+				<circle id="connector97pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="280.944" cy="147.746" r="1.89"/>
+			
+				<circle id="connector98pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="280.944" cy="140.545" r="1.89"/>
+			
+				<circle id="connector99pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="280.944" cy="133.345" r="1.889"/>
+			
+				<circle id="connector100pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="280.944" cy="126.145" r="1.889"/>
+			
+				<circle id="connector101pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="280.944" cy="118.945" r="1.89"/>
+			
+				<circle id="connector102pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="273.745" cy="154.945" r="1.889"/>
+			
+				<circle id="connector103pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="273.745" cy="147.746" r="1.89"/>
+			
+				<circle id="connector104pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="273.745" cy="140.545" r="1.89"/>
+			
+				<circle id="connector105pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="273.745" cy="133.345" r="1.889"/>
+			
+				<circle id="connector106pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="273.745" cy="126.145" r="1.889"/>
+			
+				<circle id="connector107pin" fill="#FFFFFF" fill-opacity="0" stroke="#F7BD13" stroke-miterlimit="10" cx="273.745" cy="118.945" r="1.89"/>
+		</g>
+	</g>
+</g>
 </svg>

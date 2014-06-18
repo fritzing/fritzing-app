@@ -33,7 +33,9 @@
 <tag>D2A</tag>
 </tags>
 <properties>
-<property name='family'>DAC Breakout</property>
+<property name='family'>sparkfun</property>
+<property name='group'>breakout</property>
+<property name='variant'>DAC Breakout</property>
 </properties>
 <views>
 <breadboardView>

@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2012 Fachhochschule Potsdam - http://fh-potsdam.de
+Copyright (c) 2007-2014 Fachhochschule Potsdam - http://fh-potsdam.de
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -413,7 +413,7 @@ QString KicadSchematic2Svg::convertPin(const QString & line, int textOffset, boo
 	int y4 = y1;
 	QString justify = "C";
 	bool rotate = false;
-	switch (orientation.toAscii()) {
+	switch (orientation.toLatin1()) {
 		case 'D':
 			y2 = y1 + length;
 			y3 = y1 + (length / 2);

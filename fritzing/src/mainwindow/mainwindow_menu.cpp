@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2013 Fachhochschule Potsdam - http://fh-potsdam.de
+Copyright (c) 2007-2014 Fachhochschule Potsdam - http://fh-potsdam.de
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -24,11 +24,17 @@ $Date: 2013-04-28 14:14:07 +0200 (So, 28. Apr 2013) $
 
 ********************************************************************/
 
-#include <QtGui>
 #include <QSvgGenerator>
 #include <QColor>
 #include <QImageWriter>
 #include <QInputDialog>
+#include <QApplication>
+#include <QMenuBar>
+#include <QClipboard>
+#include <QDebug>
+#include <QSettings>
+#include <QDesktopServices>
+#include <QMimeData>
 
 #include "mainwindow.h"
 #include "../debugdialog.h"
@@ -891,7 +897,7 @@ void MainWindow::createEditMenuActions() {
 	m_deleteAct = new QAction(tr("&Delete"), this);
 	m_deleteAct->setStatusTip(tr("Delete selection"));
 	connect(m_deleteAct, SIGNAL(triggered()), this, SLOT(doDelete()));
-	#ifdef Q_WS_MAC
+	#ifdef Q_OS_MAC
 		m_deleteAct->setShortcut(Qt::Key_Backspace);
 	#else
 		m_deleteAct->setShortcut(QKeySequence::Delete);
@@ -900,6 +906,9 @@ void MainWindow::createEditMenuActions() {
     m_deleteMinusAct = new QAction(tr("Delete Minus"), this);
 	m_deleteMinusAct->setStatusTip(tr("Delete selection without attached wires"));
 	connect(m_deleteMinusAct, SIGNAL(triggered()), this, SLOT(doDeleteMinus()));
+    #ifdef Q_OS_MAC
+        m_deleteMinusAct->setShortcut(Qt::Key_Backspace | Qt::AltModifier);
+    #endif
 
 	m_deleteWireAct = new WireAction(m_deleteAct);
 	m_deleteWireAct->setText(tr("&Delete Wire"));
@@ -1165,28 +1174,33 @@ void MainWindow::createViewMenuActions(bool showWelcome) {
 		m_showWelcomeAct = new QAction(tr("&Show Welcome"), this);
 		m_showWelcomeAct->setShortcut(controls.at(controlIndex++));
 		m_showWelcomeAct->setStatusTip(tr("Show the welcome view"));
-		connect(m_showWelcomeAct, SIGNAL(triggered()), this, SLOT(showWelcomeView()));
+        m_showWelcomeAct->setCheckable(true);
+        connect(m_showWelcomeAct, SIGNAL(triggered()), this, SLOT(showWelcomeView()));
 	}
 
 	m_showBreadboardAct = new QAction(tr("&Show Breadboard"), this);
 	m_showBreadboardAct->setShortcut(controls.at(controlIndex++));
 	m_showBreadboardAct->setStatusTip(tr("Show the breadboard view"));
+    m_showBreadboardAct->setCheckable(true);
 	connect(m_showBreadboardAct, SIGNAL(triggered()), this, SLOT(showBreadboardView()));
 
 	m_showSchematicAct = new QAction(tr("&Show Schematic"), this);
 	m_showSchematicAct->setShortcut(controls.at(controlIndex++));
 	m_showSchematicAct->setStatusTip(tr("Show the schematic view"));
-	connect(m_showSchematicAct, SIGNAL(triggered()), this, SLOT(showSchematicView()));
+    m_showSchematicAct->setCheckable(true);
+    connect(m_showSchematicAct, SIGNAL(triggered()), this, SLOT(showSchematicView()));
 
 	m_showPCBAct = new QAction(tr("&Show PCB"), this);
 	m_showPCBAct->setShortcut(controls.at(controlIndex++));
 	m_showPCBAct->setStatusTip(tr("Show the PCB view"));
-	connect(m_showPCBAct, SIGNAL(triggered()), this, SLOT(showPCBView()));
+    m_showPCBAct->setCheckable(true);
+    connect(m_showPCBAct, SIGNAL(triggered()), this, SLOT(showPCBView()));
 
     if (m_programView) {
 	    m_showProgramAct = new QAction(tr("Show Code"), this);
 	    m_showProgramAct->setShortcut(controls.at(controlIndex++));
 	    m_showProgramAct->setStatusTip(tr("Show the code (programming) view"));
+        m_showProgramAct->setCheckable(true);
 	    connect(m_showProgramAct, SIGNAL(triggered()), this, SLOT(showProgramView()));
         QList<QAction *> viewMenuActions;
 		if (m_welcomeView) viewMenuActions << m_showWelcomeAct;
@@ -1195,12 +1209,14 @@ void MainWindow::createViewMenuActions(bool showWelcome) {
     }
 
 	m_showPartsBinIconViewAct = new QAction(tr("Show Parts Bin Icon View"), this);
-	m_showPartsBinIconViewAct->setStatusTip(tr("Display the parts bin in an icon view"));
+    m_showPartsBinIconViewAct->setStatusTip(tr("Display the parts bin in an icon view"));
+    m_showPartsBinIconViewAct->setCheckable(true);
 	connect(m_showPartsBinIconViewAct, SIGNAL(triggered()), this, SLOT(showPartsBinIconView()));
 
 	m_showPartsBinListViewAct = new QAction(tr("Show Parts Bin List View"), this);
 	m_showPartsBinListViewAct->setStatusTip(tr("Display the parts bin in a list view"));
-	connect(m_showPartsBinListViewAct, SIGNAL(triggered()), this, SLOT(showPartsBinListView()));
+    m_showPartsBinListViewAct->setCheckable(true);
+    connect(m_showPartsBinListViewAct, SIGNAL(triggered()), this, SLOT(showPartsBinListView()));
 
 	m_showAllLayersAct = new QAction(tr("&Show All Layers"), this);
 	m_showAllLayersAct->setStatusTip(tr("Show all the available layers for the current view"));
@@ -1364,7 +1380,9 @@ void MainWindow::populateExportMenu() {
 	imageMenu->addSeparator();
 	imageMenu->addAction(m_exportSvgAct);
 	imageMenu->addAction(m_exportPdfAct);
+#if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
 	imageMenu->addAction(m_exportPsAct);
+#endif
 
 	QMenu * productionMenu = m_exportMenu->addMenu(tr("for Production"));
 	productionMenu->addAction(m_exportEtchablePdfAct);
@@ -2335,7 +2353,7 @@ void MainWindow::openNewPartsEditor(PaletteItem * paletteItem)
     }
 
     PEMainWindow * peMainWindow = new PEMainWindow(m_referenceModel, NULL);
-    peMainWindow->init(m_referenceModel, NULL);
+    peMainWindow->init(m_referenceModel, false);
    if (peMainWindow->setInitialItem(paletteItem)) {   
 	    peMainWindow->show();
 	    peMainWindow->raise();
@@ -2796,27 +2814,32 @@ void MainWindow::createActiveLayerActions() {
 	connect(m_viewFromBelowToggleAct, SIGNAL(triggered()), this, SLOT(setViewFromBelowToggle()));
 
 	m_viewFromBelowAct = new QAction(tr("View from below"), this);
-	m_viewFromBelowAct->setStatusTip(tr("View the PCB from the bottom layers upwards"));
+    m_viewFromBelowAct->setStatusTip(tr("View the PCB from the bottom layers upwards"));
+    m_viewFromBelowAct->setCheckable(true);
 	connect(m_viewFromBelowAct, SIGNAL(triggered()), this, SLOT(setViewFromBelow()));
 
 	m_viewFromAboveAct = new QAction(tr("View from above"), this);
 	m_viewFromAboveAct->setStatusTip(tr("View the PCB from the top layers downwards"));
+    m_viewFromAboveAct->setCheckable(true);
 	connect(m_viewFromAboveAct, SIGNAL(triggered()), this, SLOT(setViewFromAbove()));
 
 	m_activeLayerBothAct = new QAction(tr("Set both copper layers clickable"), this);
 	m_activeLayerBothAct->setStatusTip(tr("Set both copper layers clickable"));
-	m_activeLayerBothAct->setShortcut(tr("Shift+Ctrl+3"));
-	connect(m_activeLayerBothAct, SIGNAL(triggered()), this, SLOT(activeLayerBoth()));
+    m_activeLayerBothAct->setShortcut(tr("Shift+Ctrl+3"));
+    m_activeLayerBothAct->setCheckable(true);
+    connect(m_activeLayerBothAct, SIGNAL(triggered()), this, SLOT(activeLayerBoth()));
 
 	m_activeLayerTopAct = new QAction(tr("Set copper top layer clickable"), this);
 	m_activeLayerTopAct->setStatusTip(tr("Set copper top layer clickable"));
-	m_activeLayerTopAct->setShortcut(tr("Shift+Ctrl+2"));
-	connect(m_activeLayerTopAct, SIGNAL(triggered()), this, SLOT(activeLayerTop()));
+    m_activeLayerTopAct->setShortcut(tr("Shift+Ctrl+2"));
+    m_activeLayerTopAct->setCheckable(true);
+    connect(m_activeLayerTopAct, SIGNAL(triggered()), this, SLOT(activeLayerTop()));
 
 	m_activeLayerBottomAct = new QAction(tr("Set copper bottom layer clickable"), this);
 	m_activeLayerBottomAct->setStatusTip(tr("Set copper bottom layer clickable"));
-	m_activeLayerBottomAct->setShortcut(tr("Shift+Ctrl+1"));
-	connect(m_activeLayerBottomAct, SIGNAL(triggered()), this, SLOT(activeLayerBottom()));
+    m_activeLayerBottomAct->setShortcut(tr("Shift+Ctrl+1"));
+    m_activeLayerBottomAct->setCheckable(true);
+    connect(m_activeLayerBottomAct, SIGNAL(triggered()), this, SLOT(activeLayerBottom()));
 }
 
 void MainWindow::activeLayerBoth() {
@@ -4108,7 +4131,7 @@ void MainWindow::openProgramWindow() {
 }
 
 void MainWindow::linkToProgramFile(const QString & filename, const QString & language, const QString & programmer, bool addLink, bool strong) {
-#ifdef Q_WS_WIN
+#ifdef Q_OS_WIN
 	Qt::CaseSensitivity sensitivity = Qt::CaseInsensitive;
 #else
 	Qt::CaseSensitivity sensitivity = Qt::CaseSensitive;

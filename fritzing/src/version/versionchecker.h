@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2012 Fachhochschule Potsdam - http://fh-potsdam.de
+Copyright (c) 2007-2014 Fachhochschule Potsdam - http://fh-potsdam.de
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -27,11 +27,15 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 #ifndef VERSIONCHECKER_H
 #define VERSIONCHECKER_H
 
-#include <QHttp>
+
+#include <QObject>
 #include <QXmlStreamReader>
 #include <QDateTime>
+#include <QNetworkReply>
+#include <QMutex>
 
 #include "version.h"
+
 
 // much code borrowed from Qt's rsslisting example
 
@@ -42,7 +46,6 @@ struct AvailableRelease {
 	QString summary;
 	QDateTime dateTime;
 };
-
 
 class VersionChecker : public QObject {
 	Q_OBJECT
@@ -57,14 +60,13 @@ public:
 	void ignore(const QString & version, bool interim);
 
 signals:
-	void httpError(QHttp::Error statusCode);
+    void httpError(QNetworkReply::NetworkError);
 	void xmlError(QXmlStreamReader::Error errorCode);
 	void releasesAvailable(); 
 
 public slots:
     void fetch();
-    void finished(int id, bool error);
-    void readData(const QHttpResponseHeader &);
+    void finished(QNetworkReply *);
 
 protected:
 	void parseXml();
@@ -73,8 +75,6 @@ protected:
 protected:
 	QString m_urlString;
     QXmlStreamReader m_xml;
-    QHttp m_http;
-    int m_connectionId;
 	QString m_version;
 	int m_depth;
 	bool m_inEntry;
@@ -89,7 +89,9 @@ protected:
 	QString m_currentSummary;
 	VersionThing m_ignoreMainVersion;
 	VersionThing m_ignoreInterimVersion;
-	int m_statusCode;
+    QNetworkReply * m_networkReply;
+    QMutex m_networkReplyLock;
 };
+
 
 #endif

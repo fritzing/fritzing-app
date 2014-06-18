@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2012 Fachhochschule Potsdam - http://fh-potsdam.de
+Copyright (c) 2007-2014 Fachhochschule Potsdam - http://fh-potsdam.de
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -401,7 +401,7 @@ void PrefsDialog::changeWheelBehavior() {
 
 void PrefsDialog::updateWheelText() {
 	QString text;
-#ifdef Q_WS_MAC
+#ifdef Q_OS_MAC
 	QString cKey = tr("Command");
 #else
 	QString cKey = tr("Control");

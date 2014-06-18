@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2012 Fachhochschule Potsdam - http://fh-potsdam.de
+Copyright (c) 2007-2014 Fachhochschule Potsdam - http://fh-potsdam.de
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -30,6 +30,7 @@ $Date: 2012-10-11 06:54:26 +0200 (Do, 11. Okt 2012) $
 #include <QMenu>
 #include <QStylePainter>
 #include <QStyleOptionTabV2>
+#include <QMimeData>
 
 #include "stacktabbar.h"
 #include "stacktabwidget.h"

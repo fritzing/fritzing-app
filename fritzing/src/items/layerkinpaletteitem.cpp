@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2012 Fachhochschule Potsdam - http://fh-potsdam.de
+Copyright (c) 2007-2014 Fachhochschule Potsdam - http://fh-potsdam.de
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -105,7 +105,7 @@ void LayerKinPaletteItem::updateConnections(bool includeRatsnest, QList<Connecto
 }
 
 void LayerKinPaletteItem::mousePressEvent(QGraphicsSceneMouseEvent *event) {
-	m_passMouseEvents = m_layerKinChief->mousePressEvent(this, event);
+    m_passMouseEvents = m_layerKinChief->mousePressEventK(this, event);
     return;
 
     //ItemBase::mousePressEvent(event);
@@ -113,7 +113,7 @@ void LayerKinPaletteItem::mousePressEvent(QGraphicsSceneMouseEvent *event) {
 
 void LayerKinPaletteItem::mouseMoveEvent(QGraphicsSceneMouseEvent *event) { 
     if (m_passMouseEvents) {
-        m_layerKinChief->mouseMoveEvent(this, event);
+        m_layerKinChief->mouseMoveEventK(this, event);
         return;
     }
 
@@ -122,7 +122,7 @@ void LayerKinPaletteItem::mouseMoveEvent(QGraphicsSceneMouseEvent *event) {
 
 void LayerKinPaletteItem::mouseReleaseEvent(QGraphicsSceneMouseEvent *event) { 
     if (m_passMouseEvents) {
-        m_layerKinChief->mouseReleaseEvent(this, event);
+        m_layerKinChief->mouseReleaseEventK(this, event);
         return;
     }
 

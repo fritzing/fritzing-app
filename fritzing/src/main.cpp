@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2012 Fachhochschule Potsdam - http://fh-potsdam.de
+Copyright (c) 2007-2014 Fachhochschule Potsdam - http://fh-potsdam.de
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -30,16 +30,23 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 #include <QtDebug>
 
 #include "fapplication.h"
+#include "version/version.h"
 #include "debugdialog.h"
 #include "utils/folderutils.h"
 
-#ifdef Q_WS_WIN
+#ifdef Q_OS_WIN
 #ifndef QT_NO_DEBUG
 #include "windows.h"
 #endif
 #endif
 
+#if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
 QtMsgHandler originalMsgHandler;
+#define ORIGINAL_MESSAGE_HANDLER(TYPE, MSG) originalMsgHandler((TYPE), (MSG))
+#else
+QtMessageHandler originalMsgHandler;
+#define ORIGINAL_MESSAGE_HANDLER(TYPE, MSG) originalMsgHandler((TYPE), context, (MSG))
+#endif
 
 void writeCrashMessage(const char * msg) {
 	QString path = FolderUtils::getUserDataStorePath("");
@@ -52,17 +59,27 @@ void writeCrashMessage(const char * msg) {
 	}
 }
 
+#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
+void writeCrashMessage(const QString & msg) {
+        writeCrashMessage(msg.toStdString().c_str());
+}
+#endif
+
+#if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
 void fMessageHandler(QtMsgType type, const char *msg)
- {
+#else
+void fMessageHandler(QtMsgType type, const QMessageLogContext &context, const QString & msg)
+#endif
+{
 	switch (type) {
 		case QtDebugMsg:
-			originalMsgHandler(type, msg);
+			ORIGINAL_MESSAGE_HANDLER(type, msg);
 			break;
 		case QtWarningMsg:
-			originalMsgHandler(type, msg);
+			ORIGINAL_MESSAGE_HANDLER(type, msg);
 			break;
 		case QtCriticalMsg:
-			originalMsgHandler(type, msg);
+			ORIGINAL_MESSAGE_HANDLER(type, msg);
 			break;
 		case QtFatalMsg:
 			{
@@ -70,7 +87,7 @@ void fMessageHandler(QtMsgType type, const char *msg)
 			}
 
 			// don't abort
-			originalMsgHandler(QtWarningMsg, msg);
+			ORIGINAL_MESSAGE_HANDLER(QtWarningMsg, msg);
 	}
  }
 
@@ -82,8 +99,12 @@ int main(int argc, char *argv[])
 #define WIN_CHECK_LEAKS
 #endif
 
-#ifdef Q_WS_WIN
+#ifdef Q_OS_WIN
+#if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
 	originalMsgHandler = qInstallMsgHandler(fMessageHandler);
+#else
+    originalMsgHandler = qInstallMessageHandler(fMessageHandler);
+#endif
 #ifndef QT_NO_DEBUG
 #ifdef WIN_CHECK_LEAKS
 	HANDLE hLogFile;
@@ -128,16 +149,34 @@ int main(int argc, char *argv[])
 		}
 		else {
 			qDebug() << "\n"
-				"usage:\n"
-				"\n"
-				"[path to Fritzing file to be loaded]*\n"
-				"[-f {path to folder containing Fritzing parts/sketches/bins/translations folders}]\n"
-				"[-geda {path to folder containing gEDA footprint (.fp) files to be converted to Fritzing SVGs}]\n"
-				"[-kicad {path to folder containing Kicad footprint (.mod) files to be converted to Fritzing SVGs}]\n"
-				"[-kicadschematic {path to folder containing Kicad schematic (.lib) files to be converted to Fritzing SVGs}]\n"
-				"[-gerber {path to folder containing fzz files to export; gerber output files will be placed in that same folder}]\n"
-				"[-svg {path to folder containing fzz files to export; gerber output files will be placed in that same folder}]\n"
-				"[-ep {external process path} [-eparg {argument passed to external process}]* -epname {name for the menu item}]\n"
+                "Fritzing version " << Version::versionString() << " , Qt version " << QT_VERSION_STR << "\n"
+                "\n"
+                "usage: fritzing [-d] [-f path] filename\n"
+                "       fritzing [-f path] -geda folder\n"
+                "       fritzing [-f path] -gerber folder\n"
+                "       fritzing [-f path] -kicad folder\n"
+                "       fritzing [-f path] -kicadschematic folder\n"
+                "       fritzing [-f path] -svg folder\n"
+                "       fritzing [-f path] -port number\n"
+                "\n"
+                "user options:\n"
+                "  d,debug            :  runs Fritzing in debug mode, providing additional debug information\n"
+                //"  drc filename       :  runs a design rule check on the given sketch file\n"
+                "  f,folder           :  path to folder containing Fritzing parts, sketches, bins, & translations folders}]\n"
+                "  geda path          :  converts all gEDA footprint (.fp) files in folder <path> to Fritzing SVGs}]\n"
+                "  g,gerber path      :  exports all sketches in folder <path> to Gerber, in the same folder\n"
+                "  h,help             :  print this help message\n"
+                "  kicad path         :  converts all Kicad footprint (.mod) files in folder <path> to Fritzing SVGs}]\n"
+                "  kicadschematic path:  converts all Kicad schematic (.lib) files in folder <path> to Fritzing SVGs}]\n"
+                "  port               :  runs Fritzing as a server process under <port>\n"
+                "  svg path           :  exports all sketches in folder <path> to SVGs of all views, in the same folder\n"
+                "\n"
+                "developer options:\n"
+                "  db path            :  rebuilds the internal parts database at the given path\n"
+                "  e,examples path    :  prepares all sketches in the folder to be included as examples\n"
+                "  ep path            :  external process at <path>\n"
+                "  eparg args         :  external process arguments\n"
+                "  epname name        :  external process menu item name\n"
 				"\n"
 				"The -geda/-kicad/-kicadschematic/-gerber/svg options all exit Fritzing after the conversion process is complete;\n"
 				"these options are mutually exclusive.\n"

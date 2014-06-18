@@ -136,10 +136,6 @@
         <translation>&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;</translation>
     </message>
     <message>
-        <source>Version %1.%2.%3 &lt;small&gt;(%4%5 %6)%7 [Qt %8]&lt;/small&gt;</source>
-        <translation>Versie %1.%2.%3 &lt;small&gt;(%4%5 %6)%7 [Qt %8]&lt;/small&gt;</translation>
-    </message>
-    <message>
         <source>to Josef Dustira for the Czech translation, </source>
         <translation>aan Josef Dustira voor de Tsjechische vertaling, </translation>
     </message>
@@ -177,6 +173,10 @@
     </message>
     <message>
         <source>to Lionel Michel, Yvan Kloster, Alexandre Dussart, and Roald Baudoux for the French translation, </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Version %1.%2.%3 &lt;small&gt;(%4%5 %6) %7 [Qt %8]&lt;/small&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2561,26 +2561,6 @@ Controleer a.u.b. alle weergaves voor potentiële fouten.</translation>
         <translation>Sketch geëexporteerd naar Gerber</translation>
     </message>
     <message>
-        <source>Rotate 45° Clockwise</source>
-        <translation>Roteer 45° Rechtsom</translation>
-    </message>
-    <message>
-        <source>Rotate 90° Clockwise</source>
-        <translation>Roteer 90° Rechtsom</translation>
-    </message>
-    <message>
-        <source>Rotate 180°</source>
-        <translation>Roteer 180°</translation>
-    </message>
-    <message>
-        <source>Rotate 90° Counter Clockwise</source>
-        <translation>Roteer 90° Linksom</translation>
-    </message>
-    <message>
-        <source>Rotate 45° Counter Clockwise</source>
-        <translation>Roteer 45° Linksom</translation>
-    </message>
-    <message>
         <source>Shift+Ctrl+A</source>
         <translation>Shift+Ctrl+A</translation>
     </message>
@@ -3360,6 +3340,46 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     <message>
         <source>Note that any custom parts will not be converted. A tool for converting &apos;rectangular&apos; schematic images is available in the Parts Editor.</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rotate 45� Clockwise</source>
+        <translation type="obsolete">Roteer 135° Rechtsom {45�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 90� Clockwise</source>
+        <translation type="obsolete">Roteer 135° Rechtsom {90�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 180�</source>
+        <translation type="obsolete">Roteer 180° {180�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 90� Counter Clockwise</source>
+        <translation type="obsolete">Roteer 45° Linksom {90�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 45� Counter Clockwise</source>
+        <translation type="obsolete">Roteer 45° Linksom {45�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 45° Clockwise</source>
+        <translation type="unfinished">Roteer 135° Rechtsom {135�?} {45°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 90° Clockwise</source>
+        <translation type="unfinished">Roteer 135° Rechtsom {135�?} {90°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 180°</source>
+        <translation type="unfinished">Roteer 180° {180�?} {180°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 90° Counter Clockwise</source>
+        <translation type="unfinished">Roteer 45° Linksom {45�?} {90°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 45° Counter Clockwise</source>
+        <translation type="unfinished">Roteer 45° Linksom {45�?} {45°?}</translation>
     </message>
 </context>
 <context>
@@ -4483,24 +4503,12 @@ Doorgaan en opslaan?</translation>
         <translation>Tekengrootte</translation>
     </message>
     <message>
-        <source>Rotate 90° Clockwise</source>
-        <translation>Roteer 90° Rechtsom</translation>
-    </message>
-    <message>
         <source>Rotate the label by 90 degrees clockwise</source>
         <translation>Roteer het label 90° rechtsom</translation>
     </message>
     <message>
-        <source>Rotate 180°</source>
-        <translation>Roteer 180°</translation>
-    </message>
-    <message>
         <source>Rotate the label by 180 degrees</source>
         <translation>Roteer de label 180°</translation>
-    </message>
-    <message>
-        <source>Rotate 90° Counter Clockwise</source>
-        <translation>Roteer 90° Linksom</translation>
     </message>
     <message>
         <source>Rotate current selection 90 degrees counter clockwise</source>
@@ -4575,32 +4583,16 @@ Doorgaan en opslaan?</translation>
         <translation>Verberg onderdeel label</translation>
     </message>
     <message>
-        <source>Rotate 45° Clockwise</source>
-        <translation>Roteer 45° Rechtsom</translation>
-    </message>
-    <message>
         <source>Rotate the label by 45 degrees clockwise</source>
         <translation>Roteer het label 45° rechtsom</translation>
-    </message>
-    <message>
-        <source>Rotate 135° Clockwise</source>
-        <translation>Roteer 135° Rechtsom</translation>
     </message>
     <message>
         <source>Rotate the label by 135 degrees clockwise</source>
         <translation>Roteer het label 135° rechtsom</translation>
     </message>
     <message>
-        <source>Rotate 135° Counter Clockwise</source>
-        <translation>Roteer 135° Linksom</translation>
-    </message>
-    <message>
         <source>Rotate the label by 135 degrees counter clockwise</source>
         <translation>Roteer het label 135° linksom</translation>
-    </message>
-    <message>
-        <source>Rotate 45° Counter Clockwise</source>
-        <translation>Roteer 45° Linksom</translation>
     </message>
     <message>
         <source>Rotate the label by 45 degrees counter clockwise</source>
@@ -4613,6 +4605,62 @@ Doorgaan en opslaan?</translation>
     <message>
         <source>Set font size to tiny</source>
         <translation>Stel een klein lettertype in</translation>
+    </message>
+    <message>
+        <source>Rotate 45� Clockwise</source>
+        <translation type="obsolete">Roteer 135° Rechtsom {45�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 90� Clockwise</source>
+        <translation type="obsolete">Roteer 135° Rechtsom {90�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 135� Clockwise</source>
+        <translation type="obsolete">Roteer 135° Rechtsom {135�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 180�</source>
+        <translation type="obsolete">Roteer 180° {180�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 135� Counter Clockwise</source>
+        <translation type="obsolete">Roteer 45° Linksom {135�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 90� Counter Clockwise</source>
+        <translation type="obsolete">Roteer 45° Linksom {90�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 45� Counter Clockwise</source>
+        <translation type="obsolete">Roteer 45° Linksom {45�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 45° Clockwise</source>
+        <translation type="unfinished">Roteer 135° Rechtsom {135�?} {45°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 90° Clockwise</source>
+        <translation type="unfinished">Roteer 135° Rechtsom {135�?} {90°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 135° Clockwise</source>
+        <translation type="unfinished">Roteer 135° Rechtsom {135�?} {135°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 180°</source>
+        <translation type="unfinished">Roteer 180° {180�?} {180°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 135° Counter Clockwise</source>
+        <translation type="unfinished">Roteer 45° Linksom {45�?} {135°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 90° Counter Clockwise</source>
+        <translation type="unfinished">Roteer 45° Linksom {45�?} {90°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 45° Counter Clockwise</source>
+        <translation type="unfinished">Roteer 45° Linksom {45�?} {45°?}</translation>
     </message>
 </context>
 <context>
@@ -5587,10 +5635,6 @@ Fritzing werkt nog steeds, maar je kunt geen eigenschappen van de onderdelen wij
         <translation>Selecteer vastgezette onderdelen</translation>
     </message>
     <message>
-        <source>&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;Version %1.%2.%3 (%4%5)%6&lt;/font&gt;</source>
-        <translation>&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;Version %1.%2.%3 (%4%5)%6&lt;/font&gt;</translation>
-    </message>
-    <message>
         <source>Basic</source>
         <translation>Standaard</translation>
     </message>
@@ -5907,6 +5951,10 @@ Fritzing werkt nog steeds, maar je kunt geen eigenschappen van de onderdelen wij
     <message>
         <source>%2 ... %1 wires moved from their saved position</source>
         <translation>%2 ...%1 draden verplaatst van hun opgeslagen positie</translation>
+    </message>
+    <message>
+        <source>&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;Version %1.%2.%3 (%4%5) %6&lt;/font&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -7001,6 +7049,14 @@ Noot:Je kunt dit venster ook oproepen door op de tekst van de routing status te 
     </message>
     <message>
         <source>Ukrainian - %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Danish - %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Macedonian - %1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

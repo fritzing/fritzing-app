@@ -1,9 +1,20 @@
+.qmake.stash
+
 # QtCreator folders and files #
 #####################
 phoenix.pro.user
 /phoenix-build-*
 *.user
 *.user*
+
+# visual studio folders and files #
+#####################
+*.sdf
+*.opensdf
+*.sln
+*.vcxproj
+*.vcxproj.*
+
 
 Makefile*
 

@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2013 Fachhochschule Potsdam - http://fh-potsdam.de
+Copyright (c) 2007-2014 Fachhochschule Potsdam - http://fh-potsdam.de
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -83,10 +83,10 @@ void SketchToolButton::setImage(const QPixmap & pixmap) {
 	setIcon(QIcon(pixmap));
 }
 
-void SketchToolButton::setupIcons(const QString &imageName) {
+void SketchToolButton::setupIcons(const QString &imageName, bool hasStates) {
     setIconSize(QSize(37,24));
 	setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
-	AbstractStatesButton::setupIcons(imageName);
+    AbstractStatesButton::setupIcons(imageName, hasStates);
 }
 
 void SketchToolButton::updateEnabledState() {

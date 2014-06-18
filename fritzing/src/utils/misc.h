@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2013 Fachhochschule Potsdam - http://fh-potsdam.de
+Copyright (c) 2007-2014 Fachhochschule Potsdam - http://fh-potsdam.de
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -30,7 +30,9 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 #include <QHash>
 #include <QVector>
 
-#ifdef Q_WS_WIN
+#if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
+// TODO: this debugging hack seems to break in Qt 5; needs investigation
+#ifdef Q_OS_WIN
 #ifndef QT_NO_DEBUG
 
 #ifdef _MSC_VER // just for the MS compiler
@@ -45,8 +47,9 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 
 #endif
 #endif
+#endif
 
-#ifdef Q_WS_WIN
+#ifdef Q_OS_WIN
 #define getenvUser() getenv("USERNAME")
 #else
 #define getenvUser() getenv("USER")

@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2013 Fachhochschule Potsdam - http://fh-potsdam.de
+Copyright (c) 2007-2014 Fachhochschule Potsdam - http://fh-potsdam.de
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -37,17 +37,18 @@ $Date: 2013-04-15 17:44:14 +0200 (Mo, 15. Apr 2013) $
 #include "../version/version.h"
 #include "../utils/expandinglabel.h"
 
-AboutBox* AboutBox::singleton = NULL;
+AboutBox* AboutBox::Singleton = NULL;
 
 static const int AboutWidth = 390;
 static const int AboutText = 210;
+QString AboutBox::BuildType;
 
 AboutBox::AboutBox(QWidget *parent)
 : QWidget(parent)
 {
-	singleton = this;
+	Singleton = this;
 	// To make the application not quit when the window closes
-	this->setAttribute(Qt::WA_QuitOnClose, FALSE);
+	this->setAttribute(Qt::WA_QuitOnClose, false);
 
 	setFixedSize(AboutWidth, 430);
 
@@ -66,22 +67,14 @@ AboutBox::AboutBox(QWidget *parent)
 
 	// Version String
 	QLabel *versionMain = new QLabel(this);
-	QString macBuildType;
-#ifdef Q_WS_MAC
-#ifdef QT_MAC_USE_COCOA
-	macBuildType = " Cocoa";
-#else
-	macBuildType = " Carbon";
-#endif
-#endif
-	versionMain->setText(tr("Version %1.%2.%3 <small>(%4%5 %6)%7 [Qt %8]</small>")
+	versionMain->setText(tr("Version %1.%2.%3 <small>(%4%5 %6) %7 [Qt %8]</small>")
 						 .arg(Version::majorVersion())
 						 .arg(Version::minorVersion())
 						 .arg(Version::minorSubVersion())
 						 .arg(Version::modifier())
 						 .arg(Version::revision())
 						 .arg(Version::date())
-						 .arg(macBuildType)
+						 .arg(BuildType)
 						 .arg(QT_VERSION_STR) );
 	versionMain->setFont(smallFont);
 	versionMain->setGeometry(45, 150, 300, 20);
@@ -91,7 +84,7 @@ AboutBox::AboutBox(QWidget *parent)
 	// Link to website
 	QLabel *linkToFritzing = new QLabel(this);
 	linkToFritzing->setText(tr("<a href=\"http://www.fritzing.org\">www.fritzing.org</a>"));
-	linkToFritzing->setOpenExternalLinks(TRUE);
+	linkToFritzing->setOpenExternalLinks(true);
 	linkToFritzing->setFont(smallFont);
 	linkToFritzing->setGeometry(45, 168, 300, 18);
 	linkToFritzing->setAlignment(Qt::AlignBottom | Qt::AlignHCenter);
@@ -212,9 +205,12 @@ tr("<br /><br /><br /><br /><br /><br /><br /><br />");
 	
 
 	// auto scroll timer initialization
-	m_restartAtTop = FALSE;
+	m_restartAtTop = false;
 	m_startTime = QTime::currentTime();
 	m_autoScrollTimer = new QTimer(this);
+#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
+    m_autoScrollTimer->setTimerType(Qt::PreciseTimer);
+#endif
 	connect(m_autoScrollTimer, SIGNAL(timeout()), this, SLOT(scrollCredits()));
 }
 
@@ -245,30 +241,34 @@ void AboutBox::scrollCredits() {
 	}
 }
 
+void AboutBox::initBuildType(const QString & buildType) {
+    BuildType = buildType;
+}
+
 void AboutBox::hideAbout() {
 	//DebugDialog::debug("the AboutBox gets a hide action triggered");
-	if (singleton != NULL) {
-		singleton->hide();
+	if (Singleton != NULL) {
+		Singleton->hide();
 	}
 }
 
 void AboutBox::showAbout() {
 	//DebugDialog::debug("the AboutBox gets a show action triggered");
-	if (singleton == NULL) {
+	if (Singleton == NULL) {
 		new AboutBox();
 	}
 
 	// scroll text now to prevent a flash of text if text was visible the last time the about box was open
-	singleton->m_expandingLabel->verticalScrollBar()->setValue(0);
+	Singleton->m_expandingLabel->verticalScrollBar()->setValue(0);
 
-	singleton->show();
+	Singleton->show();
 }
 
 void AboutBox::closeAbout() {
 	//DebugDialog::debug("the AboutBox gets a close action triggered");
 	// Note: not every close triggers this function. we better listen to closeEvent
-	if (singleton != NULL) {
-		singleton->close();
+	if (Singleton != NULL) {
+		Singleton->close();
 	}
 }
 

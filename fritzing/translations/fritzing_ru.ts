@@ -136,10 +136,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Version %1.%2.%3 &lt;small&gt;(%4%5 %6)%7 [Qt %8]&lt;/small&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>to Josef Dustira for the Czech translation, </source>
         <translation type="unfinished"></translation>
     </message>
@@ -177,6 +173,10 @@
     </message>
     <message>
         <source>to Lionel Michel, Yvan Kloster, Alexandre Dussart, and Roald Baudoux for the French translation, </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Version %1.%2.%3 &lt;small&gt;(%4%5 %6) %7 [Qt %8]&lt;/small&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2548,26 +2548,6 @@ Please check all views for potential side-effects.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Rotate 45° Clockwise</source>
-        <translation type="unfinished">Повернуть на 90° по часовой стрелке {45°?}</translation>
-    </message>
-    <message>
-        <source>Rotate 90° Clockwise</source>
-        <translation type="unfinished">Повернуть на 90° по часовой стрелке</translation>
-    </message>
-    <message>
-        <source>Rotate 180°</source>
-        <translation type="unfinished">Повернуть на 180°</translation>
-    </message>
-    <message>
-        <source>Rotate 90° Counter Clockwise</source>
-        <translation type="unfinished">Повернуть на 90 ° против часовой стрелки</translation>
-    </message>
-    <message>
-        <source>Rotate 45° Counter Clockwise</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Shift+Ctrl+A</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3342,6 +3322,46 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     <message>
         <source>Note that any custom parts will not be converted. A tool for converting &apos;rectangular&apos; schematic images is available in the Parts Editor.</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rotate 45� Clockwise</source>
+        <translation type="obsolete">Повернуть на 90° по часовой стрелке {135°?} {45�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 90� Clockwise</source>
+        <translation type="obsolete">Повернуть на 90° по часовой стрелке {135°?} {90�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 180�</source>
+        <translation type="obsolete">Повернуть на 180° {180�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 90� Counter Clockwise</source>
+        <translation type="obsolete">Повернуть на 90 ° против часовой стрелки {90�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 45� Counter Clockwise</source>
+        <translation type="obsolete">Повернуть на 90 ° против часовой стрелки {45�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 45° Clockwise</source>
+        <translation type="unfinished">Повернуть на 90° по часовой стрелке {135°?} {135�?} {45°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 90° Clockwise</source>
+        <translation type="unfinished">Повернуть на 90° по часовой стрелке {135°?} {135�?} {90°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 180°</source>
+        <translation type="unfinished">Повернуть на 180° {180�?} {180°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 90° Counter Clockwise</source>
+        <translation type="unfinished">Повернуть на 90 ° против часовой стрелки {45�?} {90°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 45° Counter Clockwise</source>
+        <translation type="unfinished">Повернуть на 90 ° против часовой стрелки {45�?} {45°?}</translation>
     </message>
 </context>
 <context>
@@ -4453,24 +4473,12 @@ Go ahead and save?</source>
         <translation>Размер шрифта</translation>
     </message>
     <message>
-        <source>Rotate 90° Clockwise</source>
-        <translation>Повернуть на 90° по часовой стрелке</translation>
-    </message>
-    <message>
         <source>Rotate the label by 90 degrees clockwise</source>
         <translation>Повернуть метку на 90° против часовой стрелки</translation>
     </message>
     <message>
-        <source>Rotate 180°</source>
-        <translation>Повернуть на 180°</translation>
-    </message>
-    <message>
         <source>Rotate the label by 180 degrees</source>
         <translation>Повернуть метку на 180 градусов</translation>
-    </message>
-    <message>
-        <source>Rotate 90° Counter Clockwise</source>
-        <translation type="unfinished">Повернуть на 90 ° против часовой стрелки</translation>
     </message>
     <message>
         <source>Rotate current selection 90 degrees counter clockwise</source>
@@ -4545,31 +4553,15 @@ Go ahead and save?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Rotate 45° Clockwise</source>
-        <translation type="unfinished">Повернуть на 90° по часовой стрелке {45°?}</translation>
-    </message>
-    <message>
         <source>Rotate the label by 45 degrees clockwise</source>
         <translation type="unfinished">Повернуть метку на 90° против часовой стрелки {45 ?}</translation>
-    </message>
-    <message>
-        <source>Rotate 135° Clockwise</source>
-        <translation type="unfinished">Повернуть на 90° по часовой стрелке {135°?}</translation>
     </message>
     <message>
         <source>Rotate the label by 135 degrees clockwise</source>
         <translation type="unfinished">Повернуть метку на 90° против часовой стрелки {135 ?}</translation>
     </message>
     <message>
-        <source>Rotate 135° Counter Clockwise</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Rotate the label by 135 degrees counter clockwise</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Rotate 45° Counter Clockwise</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4583,6 +4575,62 @@ Go ahead and save?</source>
     <message>
         <source>Set font size to tiny</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rotate 45� Clockwise</source>
+        <translation type="obsolete">Повернуть на 90° по часовой стрелке {135°?} {45�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 90� Clockwise</source>
+        <translation type="obsolete">Повернуть на 90° по часовой стрелке {135°?} {90�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 135� Clockwise</source>
+        <translation type="obsolete">Повернуть на 90° по часовой стрелке {135°?} {135�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 180�</source>
+        <translation type="obsolete">Повернуть на 180° {180�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 135� Counter Clockwise</source>
+        <translation type="obsolete">Повернуть на 90 ° против часовой стрелки {135�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 90� Counter Clockwise</source>
+        <translation type="obsolete">Повернуть на 90 ° против часовой стрелки {90�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 45� Counter Clockwise</source>
+        <translation type="obsolete">Повернуть на 90 ° против часовой стрелки {45�?}</translation>
+    </message>
+    <message>
+        <source>Rotate 45° Clockwise</source>
+        <translation type="unfinished">Повернуть на 90° по часовой стрелке {135°?} {135�?} {45°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 90° Clockwise</source>
+        <translation type="unfinished">Повернуть на 90° по часовой стрелке {135°?} {135�?} {90°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 135° Clockwise</source>
+        <translation type="unfinished">Повернуть на 90° по часовой стрелке {135°?} {135�?} {135°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 180°</source>
+        <translation type="unfinished">Повернуть на 180° {180�?} {180°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 135° Counter Clockwise</source>
+        <translation type="unfinished">Повернуть на 90 ° против часовой стрелки {45�?} {135°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 90° Counter Clockwise</source>
+        <translation type="unfinished">Повернуть на 90 ° против часовой стрелки {45�?} {90°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 45° Counter Clockwise</source>
+        <translation type="unfinished">Повернуть на 90 ° против часовой стрелки {45�?} {45°?}</translation>
     </message>
 </context>
 <context>
@@ -5553,10 +5601,6 @@ Fritzing по-прежнему работает, но вы не сможете �
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;Version %1.%2.%3 (%4%5)%6&lt;/font&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Basic</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5869,6 +5913,10 @@ Fritzing по-прежнему работает, но вы не сможете �
     </message>
     <message>
         <source>%2 ... %1 wires moved from their saved position</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;Version %1.%2.%3 (%4%5) %6&lt;/font&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -6964,6 +7012,14 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
     <message>
         <source>Ukrainian - %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Danish - %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Macedonian - %1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

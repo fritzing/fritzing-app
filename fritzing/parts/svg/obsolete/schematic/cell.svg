@@ -10,6 +10,6 @@
   <path id="connector1pin" fill="none" stroke="#000000" stroke-width="2.4" d="M12.756,15.737v10.838"/>
   <rect id="connector1terminal" x="12.355" y="25.774" width="0.801" height="0.801"/>
         <path id="path4058" fill="none" stroke="#000000" stroke-width="2.4" d="M0,10.836h25.512"/>
-        <line id="rect4060_1_" fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="square" x1="7.363" y1="15.737" x2="17.992" y2="15.737 />
+        <line id="rect4060_1_" fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="square" x1="7.363" y1="15.737" x2="17.992" y2="15.737" />
 </g>
 </svg>

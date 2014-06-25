@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.2" baseProfile="tiny" id="svg2" xmlns:svg="http://www.w3.org/2000/svg"
-	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="205.392px"
-	 height="64.957px" viewBox="0 0 205.392 64.957" xml:space="preserve">
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="svg2" xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="205.393px"
+	 height="64.957px" viewBox="0 0 205.393 64.957" enable-background="new 0 0 205.393 64.957" xml:space="preserve">
 <g id="copper0">
 	<g id="copper1">
 		<g id="connector42pin">
@@ -152,7 +153,107 @@
 	</g>
 </g>
 <g id="silkscreen">
-	<rect x="3.792" y="0.158" fill="none" stroke="#FFFFFF" stroke-width="0.75" width="201.601" height="64.799"/>
-	<polyline fill="none" stroke="#FFFFFF" stroke-width="0.75" points="3.792,42.983 0,42.971 0.01,22.417 3.792,22.421 	"/>
+	<rect x="3.792" y="0.158" fill="none" stroke="#FFFFFF" stroke-width="0.75" width="201.602" height="64.799"/>
+	<polyline fill="none" stroke="#FFFFFF" stroke-width="0.75" points="3.792,42.982 0,42.971 0.01,22.417 3.792,22.421 	"/>
+	<g>
+		
+			<text transform="matrix(6.123234e-017 -1 1 6.123234e-017 181.0378 57.2441)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">NC</text>
+		
+			<text transform="matrix(6.123234e-017 -1 1 6.123234e-017 173.8376 57.2441)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">SCK</text>
+		
+			<text transform="matrix(6.123234e-017 -1 1 6.123234e-017 166.6375 57.2441)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">MISO</text>
+		
+			<text transform="matrix(6.123234e-017 -1 1 6.123234e-017 159.4373 57.2441)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">VIN</text>
+		
+			<text transform="matrix(6.123234e-017 -1 1 6.123234e-017 152.2371 57.2441)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">GND</text>
+		
+			<text transform="matrix(6.123234e-017 -1 1 6.123234e-017 145.0369 57.2441)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">RST</text>
+		
+			<text transform="matrix(6.123234e-017 -1 1 6.123234e-017 137.8367 57.2441)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">+5V</text>
+		
+			<text transform="matrix(6.123234e-017 -1 1 6.123234e-017 130.6365 57.2441)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">USB+</text>
+		
+			<text transform="matrix(6.123234e-017 -1 1 6.123234e-017 123.4363 57.2441)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">USB-</text>
+		
+			<text transform="matrix(6.123234e-017 -1 1 6.123234e-017 116.2361 57.2441)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">A5</text>
+		
+			<text transform="matrix(6.123234e-017 -1 1 6.123234e-017 109.0359 57.2441)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">A4</text>
+		
+			<text transform="matrix(6.123234e-017 -1 1 6.123234e-017 101.8357 57.2441)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">A3</text>
+		
+			<text transform="matrix(6.123234e-017 -1 1 6.123234e-017 94.6355 57.2441)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">A2</text>
+		
+			<text transform="matrix(6.123234e-017 -1 1 6.123234e-017 87.4353 57.2441)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">A1</text>
+		
+			<text transform="matrix(6.123234e-017 -1 1 6.123234e-017 80.2351 57.2441)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">A0</text>
+		
+			<text transform="matrix(6.123234e-017 -1 1 6.123234e-017 73.0349 57.2441)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">REF</text>
+		
+			<text transform="matrix(6.123234e-017 -1 1 6.123234e-017 65.8347 57.2441)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">3V3</text>
+		
+			<text transform="matrix(6.123234e-017 -1 1 6.123234e-017 58.6345 57.2441)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">D13</text>
+		
+			<text transform="matrix(6.123234e-017 -1 1 6.123234e-017 51.4343 57.2441)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">GND</text>
+		
+			<text transform="matrix(6.123234e-017 -1 1 6.123234e-017 44.2341 57.2441)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">AR_VIN</text>
+		
+			<text transform="matrix(6.123234e-017 -1 1 6.123234e-017 37.0339 57.2441)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">TD-</text>
+		
+			<text transform="matrix(6.123234e-017 -1 1 6.123234e-017 29.8337 57.2441)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">TD+</text>
+		
+			<text transform="matrix(6.123234e-017 -1 1 6.123234e-017 22.6335 57.2441)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">RD-</text>
+		
+			<text transform="matrix(6.123234e-017 -1 1 6.123234e-017 15.4333 57.2441)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">RD+</text>
+	</g>
+	<g>
+		
+			<text transform="matrix(6.123234e-017 -1 1 6.123234e-017 181.0378 13.3242)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">NC</text>
+		
+			<text transform="matrix(6.123234e-017 -1 1 6.123234e-017 173.8376 18.7461)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">MOSI</text>
+		
+			<text transform="matrix(6.123234e-017 -1 1 6.123234e-017 166.6375 22.3613)" fill="#FFFFFF" font-family="'OCRA'" font-size="2.5">RXLED/ss</text>
+		
+			<text transform="matrix(6.123234e-017 -1 1 6.123234e-017 159.4373 13.3242)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">TX</text>
+		
+			<text transform="matrix(6.123234e-017 -1 1 6.123234e-017 152.2371 13.3242)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">RX</text>
+		
+			<text transform="matrix(6.123234e-017 -1 1 6.123234e-017 145.0369 16.0352)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">RST</text>
+		
+			<text transform="matrix(6.123234e-017 -1 1 6.123234e-017 137.8367 16.0352)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">GND</text>
+		
+			<text transform="matrix(6.123234e-017 -1 1 6.123234e-017 130.6365 13.3242)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">D2</text>
+		
+			<text transform="matrix(6.123234e-017 -1 1 6.123234e-017 123.4363 13.3242)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">D3</text>
+		
+			<text transform="matrix(6.123234e-017 -1 1 6.123234e-017 116.2361 13.3242)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">D4</text>
+		
+			<text transform="matrix(6.123234e-017 -1 1 6.123234e-017 109.0359 13.3242)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">D5</text>
+		
+			<text transform="matrix(6.123234e-017 -1 1 6.123234e-017 101.8357 13.3242)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">D6</text>
+		
+			<text transform="matrix(6.123234e-017 -1 1 6.123234e-017 94.6355 13.3242)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">D7</text>
+		
+			<text transform="matrix(6.123234e-017 -1 1 6.123234e-017 87.4353 13.3242)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">D8</text>
+		
+			<text transform="matrix(6.123234e-017 -1 1 6.123234e-017 80.2351 13.3242)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">D9</text>
+		
+			<text transform="matrix(6.123234e-017 -1 1 6.123234e-017 73.0349 16.0352)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">D10</text>
+		
+			<text transform="matrix(6.123234e-017 -1 1 6.123234e-017 65.8347 16.0352)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">D11</text>
+		
+			<text transform="matrix(6.123234e-017 -1 1 6.123234e-017 58.6345 16.0352)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">D12</text>
+		
+			<text transform="matrix(6.123234e-017 -1 1 6.123234e-017 51.4343 18.7461)" fill="#FFFFFF" font-family="'OCRA'" font-size="2.5">AR_GP6</text>
+		
+			<text transform="matrix(6.123234e-017 -1 1 6.123234e-017 44.2341 20.5537)" fill="#FFFFFF" font-family="'OCRA'" font-size="2.5">AR_GP23</text>
+		
+			<text transform="matrix(6.123234e-017 -1 1 6.123234e-017 37.0339 16.0352)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">GND</text>
+		
+			<text transform="matrix(6.123234e-017 -1 1 6.123234e-017 29.8337 16.0352)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">GND</text>
+		
+			<text transform="matrix(6.123234e-017 -1 1 6.123234e-017 22.6335 16.0352)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">GND</text>
+		
+			<text transform="matrix(6.123234e-017 -1 1 6.123234e-017 15.4333 18.7461)" fill="#FFFFFF" font-family="'OCRA'" font-size="2.5">VCC_GT</text>
+	</g>
 </g>
 </svg>

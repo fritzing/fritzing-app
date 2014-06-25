@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.2" baseProfile="tiny" id="svg2" xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="115.529px"
+	 height="64.957px" viewBox="0 0 115.529 64.957" xml:space="preserve">
+<g id="copper0">
+	<g id="copper1">
+		<g id="connector12pin">
+			<circle id="circle67" fill="none" stroke="#FF9400" stroke-width="0.9" cx="10.656" cy="61.286" r="2.005"/>
+		</g>
+		<g id="connector13pin">
+			<circle id="circle70" fill="none" stroke="#FF9400" stroke-width="0.9" cx="17.858" cy="61.286" r="2.005"/>
+		</g>
+		<g id="connector14pin">
+			<circle id="circle73" fill="none" stroke="#FF9400" stroke-width="0.9" cx="25.057" cy="61.286" r="2.005"/>
+		</g>
+		<g id="connector15pin">
+			<circle id="circle76" fill="none" stroke="#FF9400" stroke-width="0.9" cx="32.259" cy="61.286" r="2.005"/>
+		</g>
+		<g id="connector16pin">
+			<circle id="circle79" fill="none" stroke="#FF9400" stroke-width="0.9" cx="39.457" cy="61.286" r="2.005"/>
+		</g>
+		<g id="connector17pin">
+			<circle id="circle82" fill="none" stroke="#FF9400" stroke-width="0.9" cx="46.656" cy="61.286" r="2.005"/>
+		</g>
+		<g id="connector18pin">
+			<circle id="circle85" fill="none" stroke="#FF9400" stroke-width="0.9" cx="53.858" cy="61.286" r="2.005"/>
+		</g>
+		<g id="connector19pin">
+			<circle id="circle88" fill="none" stroke="#FF9400" stroke-width="0.9" cx="61.057" cy="61.286" r="2.005"/>
+		</g>
+		<g id="connector49pin">
+			<circle id="circle19" fill="none" stroke="#FF9400" stroke-width="0.9" cx="68.282" cy="61.285" r="2.004"/>
+		</g>
+		<g id="connector50pin">
+			<circle id="circle22" fill="none" stroke="#FF9400" stroke-width="0.9" cx="75.482" cy="61.285" r="2.004"/>
+		</g>
+		<g id="connector51pin">
+			<circle id="circle25" fill="none" stroke="#FF9400" stroke-width="0.9" cx="82.683" cy="61.285" r="2.004"/>
+		</g>
+		<g id="connector52pin">
+			<circle id="circle28" fill="none" stroke="#FF9400" stroke-width="0.9" cx="89.883" cy="61.285" r="2.004"/>
+		</g>
+		<g id="connector30pin">
+			<circle id="circle133" fill="none" stroke="#FF9400" stroke-width="0.9" cx="10.656" cy="3.712" r="2.005"/>
+		</g>
+		<g id="connector29pin">
+			<circle id="circle136" fill="none" stroke="#FF9400" stroke-width="0.9" cx="17.858" cy="3.712" r="2.005"/>
+		</g>
+		<g id="connector28pin">
+			<circle id="circle139" fill="none" stroke="#FF9400" stroke-width="0.9" cx="25.057" cy="3.712" r="2.005"/>
+		</g>
+		<g id="connector27pin">
+			<circle id="circle142" fill="none" stroke="#FF9400" stroke-width="0.9" cx="32.259" cy="3.712" r="2.005"/>
+		</g>
+		<g id="connector26pin">
+			<circle id="circle145" fill="none" stroke="#FF9400" stroke-width="0.9" cx="39.457" cy="3.712" r="2.005"/>
+		</g>
+		<g id="connector25pin">
+			<circle id="circle148" fill="none" stroke="#FF9400" stroke-width="0.9" cx="46.656" cy="3.712" r="2.005"/>
+		</g>
+		<g id="connector24pin">
+			<circle id="circle151" fill="none" stroke="#FF9400" stroke-width="0.9" cx="53.858" cy="3.712" r="2.005"/>
+		</g>
+		<g id="connector23pin">
+			<circle id="circle154" fill="none" stroke="#FF9400" stroke-width="0.9" cx="61.057" cy="3.712" r="2.005"/>
+		</g>
+		<g id="connector45pin">
+			<circle id="circle31" fill="none" stroke="#FF9400" stroke-width="0.9" cx="68.259" cy="3.671" r="2.005"/>
+		</g>
+		<g id="connector46pin">
+			<circle id="circle34" fill="none" stroke="#FF9400" stroke-width="0.9" cx="75.457" cy="3.671" r="2.005"/>
+		</g>
+		<g id="connector47pin">
+			<circle id="circle37" fill="none" stroke="#FF9400" stroke-width="0.9" cx="82.658" cy="3.671" r="2.005"/>
+		</g>
+		<g id="connector48pin">
+			<circle id="circle40" fill="none" stroke="#FF9400" stroke-width="0.9" cx="89.858" cy="3.671" r="2.005"/>
+		</g>
+	</g>
+</g>
+<g id="silkscreen">
+	<rect x="0" y="0.158" fill="none" stroke="#FFFFFF" stroke-width="0.75" width="115.529" height="64.799"/>
+	<g>
+		
+			<text transform="matrix(6.123234e-017 -1 1 6.123234e-017 91.1741 57.2441)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">NC</text>
+		
+			<text transform="matrix(6.123234e-017 -1 1 6.123234e-017 83.9739 57.2441)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">NC</text>
+		
+			<text transform="matrix(6.123234e-017 -1 1 6.123234e-017 76.7737 57.2441)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">NC</text>
+		
+			<text transform="matrix(6.123234e-017 -1 1 6.123234e-017 69.5735 57.2441)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">NC</text>
+		
+			<text transform="matrix(6.123234e-017 -1 1 6.123234e-017 62.3733 57.2441)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">NC</text>
+		
+			<text transform="matrix(6.123234e-017 -1 1 6.123234e-017 55.1731 57.2441)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">NC</text>
+		
+			<text transform="matrix(6.123234e-017 -1 1 6.123234e-017 47.9729 57.2441)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">+5V</text>
+		
+			<text transform="matrix(6.123234e-017 -1 1 6.123234e-017 40.7727 57.2441)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">USB+</text>
+		
+			<text transform="matrix(6.123234e-017 -1 1 6.123234e-017 33.5725 57.2441)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">USB-</text>
+		
+			<text transform="matrix(6.123234e-017 -1 1 6.123234e-017 26.3723 57.2441)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">NC</text>
+		
+			<text transform="matrix(6.123234e-017 -1 1 6.123234e-017 19.1721 57.2441)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">NC</text>
+		
+			<text transform="matrix(6.123234e-017 -1 1 6.123234e-017 11.9719 57.2441)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">NC</text>
+	</g>
+	<g>
+		
+			<text transform="matrix(6.123234e-017 -1 1 6.123234e-017 91.1741 13.3242)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">NC</text>
+		
+			<text transform="matrix(6.123234e-017 -1 1 6.123234e-017 83.9739 13.3242)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">NC</text>
+		
+			<text transform="matrix(6.123234e-017 -1 1 6.123234e-017 76.7737 13.3242)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">NC</text>
+		
+			<text transform="matrix(6.123234e-017 -1 1 6.123234e-017 69.5735 13.3242)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">NC</text>
+		
+			<text transform="matrix(6.123234e-017 -1 1 6.123234e-017 62.3733 13.3242)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">NC</text>
+		
+			<text transform="matrix(6.123234e-017 -1 1 6.123234e-017 55.1731 13.3242)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">NC</text>
+		
+			<text transform="matrix(6.123234e-017 -1 1 6.123234e-017 47.9729 16.0352)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">GND</text>
+		
+			<text transform="matrix(6.123234e-017 -1 1 6.123234e-017 40.7727 13.3242)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">NC</text>
+		
+			<text transform="matrix(6.123234e-017 -1 1 6.123234e-017 33.5725 13.3242)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">NC</text>
+		
+			<text transform="matrix(6.123234e-017 -1 1 6.123234e-017 26.3723 13.3242)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">NC</text>
+		
+			<text transform="matrix(6.123234e-017 -1 1 6.123234e-017 19.1721 13.3242)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">NC</text>
+		
+			<text transform="matrix(6.123234e-017 -1 1 6.123234e-017 11.9719 13.3242)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">NC</text>
+	</g>
+	<rect x="85.833" y="18.362" fill="#FFFFFF" width="29.696" height="28.232"/>
+	<g>
+		<circle fill="none" stroke="#FFFFFF" stroke-width="0.75" cx="3.456" cy="3.711" r="2.021"/>
+		<circle fill="none" stroke="#FFFFFF" stroke-width="0.75" cx="3.456" cy="61.285" r="2.021"/>
+		<circle fill="none" stroke="#FFFFFF" stroke-width="0.75" cx="111.457" cy="3.711" r="2.021"/>
+		<circle fill="none" stroke="#FFFFFF" stroke-width="0.75" cx="111.457" cy="61.285" r="2.021"/>
+	</g>
+</g>
+</svg>

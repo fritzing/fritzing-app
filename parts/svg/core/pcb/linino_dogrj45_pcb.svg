@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.2" baseProfile="tiny" id="svg2" xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="70.829px"
+	 height="64.957px" viewBox="0 0 70.829 64.957" xml:space="preserve">
+<g id="copper0">
+	<g id="copper1">
+		<g id="connector42pin">
+			<circle id="circle13" fill="none" stroke="#FF9400" stroke-width="0.9" cx="10.329" cy="3.712" r="2.005"/>
+		</g>
+		<g id="connector41pin">
+			<circle id="circle61" fill="none" stroke="#FF9400" stroke-width="0.9" cx="17.529" cy="3.712" r="2.005"/>
+		</g>
+		<g id="connector40pin">
+			<circle id="circle58" fill="none" stroke="#FF9400" stroke-width="0.9" cx="24.729" cy="3.712" r="2.005"/>
+		</g>
+		<g id="connector39pin">
+			<circle id="circle55" fill="none" stroke="#FF9400" stroke-width="0.9" cx="31.929" cy="3.712" r="2.005"/>
+		</g>
+		<g id="connector3pin">
+			<circle id="circle94" fill="none" stroke="#FF9400" stroke-width="0.9" cx="31.929" cy="61.286" r="2.005"/>
+		</g>
+		<g id="connector2pin">
+			<circle id="circle91" fill="none" stroke="#FF9400" stroke-width="0.9" cx="24.729" cy="61.286" r="2.005"/>
+		</g>
+		<g id="connector1pin">
+			<circle id="circle64" fill="none" stroke="#FF9400" stroke-width="0.9" cx="17.529" cy="61.286" r="2.005"/>
+		</g>
+		<g id="connector0pin">
+			<circle id="circle157" fill="none" stroke="#FF9400" stroke-width="0.9" cx="10.329" cy="61.286" r="2.005"/>
+		</g>
+	</g>
+</g>
+<g id="silkscreen">
+	<rect x="0" y="0.158" fill="none" stroke="#FFFFFF" stroke-width="0.75" width="70.829" height="64.799"/>
+	<g>
+		
+			<text transform="matrix(6.123234e-017 -1 1 6.123234e-017 33.2415 57.2441)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">TX-</text>
+		
+			<text transform="matrix(6.123234e-017 -1 1 6.123234e-017 26.0413 57.2441)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">TX+</text>
+		
+			<text transform="matrix(6.123234e-017 -1 1 6.123234e-017 18.8411 57.2441)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">RX-</text>
+		
+			<text transform="matrix(6.123234e-017 -1 1 6.123234e-017 11.6409 57.2441)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">RX+</text>
+	</g>
+	<g>
+		
+			<text transform="matrix(6.123234e-017 -1 1 6.123234e-017 33.2415 16.0352)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">GND</text>
+		
+			<text transform="matrix(6.123234e-017 -1 1 6.123234e-017 26.0413 16.0352)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">GND</text>
+		
+			<text transform="matrix(6.123234e-017 -1 1 6.123234e-017 18.8411 16.0352)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">GND</text>
+		
+			<text transform="matrix(6.123234e-017 -1 1 6.123234e-017 11.6409 18.7461)" fill="#FFFFFF" font-family="'OCRA'" font-size="2.5">VCC_CT</text>
+	</g>
+</g>
+</svg>

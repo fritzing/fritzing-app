@@ -505,6 +505,7 @@ void MainWindow::init(ReferenceModel *referenceModel, bool lockFiles) {
 
     initStyleSheet();
 
+    // TODO: fix error message on OS X: void QCocoaMenu::insertNative(QCocoaMenuItem *, QCocoaMenuItem *) Menu item is already in a menu, remove it from the other menu first before inserting
     m_breadboardGraphicsView->setItemMenu(breadboardItemMenu());
     m_breadboardGraphicsView->setWireMenu(breadboardWireMenu());
 

@@ -991,13 +991,8 @@ ItemBase * SketchWidget::findItem(long id) {
 				if (lk->id() == id) return lk;
 			}
 
-        //    if (chief->layerKin().count() == 0) {
-        //         going from layerkin in one view to non-layered part in another view
-        //        return chief;
-        //   }
-        // return NULL;
-
            return chief;
+
 		}
 	}
 

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<module fritzingVersion="0.4.4b.10.03.4492" moduleId="linino_dogrj45">
+<module fritzingVersion="0.9.0b" moduleId="linino_dogrj45">
     <author>fabian_atlthaus</author>
     <title>linino dogRJ45</title>
     <label>linino dogRJ45</label>

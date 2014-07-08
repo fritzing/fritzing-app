@@ -991,7 +991,8 @@ ItemBase * SketchWidget::findItem(long id) {
 				if (lk->id() == id) return lk;
 			}
 
-            return chief;
+           return chief;
+
 		}
 	}
 

@@ -942,9 +942,6 @@ void MainWindow::createPartMenuActions() {
 	m_openInPartsEditorNewAct->setStatusTip(tr("Open the new parts editor on an existing part"));
 	connect(m_openInPartsEditorNewAct, SIGNAL(triggered()), this, SLOT(openInPartsEditorNew()));
 
-	m_addToBinMenu = new QMenu(tr("&Add to bin..."), this);
-	m_addToBinMenu->setStatusTip(tr("Add selected part to bin"));
-
 	m_disconnectAllAct = new QAction(tr("Disconnect All Wires"), this);
 	m_disconnectAllAct->setStatusTip(tr("Disconnect all wires connected to this connector"));
 	connect(m_disconnectAllAct, SIGNAL(triggered()), this, SLOT(disconnectAll()));
@@ -1323,6 +1320,48 @@ void MainWindow::createMenus()
     createHelpMenu();
 }
 
+void MainWindow::createRotateSubmenu(QMenu * parentMenu) {
+    QMenu *rotateMenu = parentMenu->addMenu(tr("Rotate"));
+    rotateMenu->addAction(m_rotate45cwAct);
+    rotateMenu->addAction(m_rotate90cwAct);
+    rotateMenu->addAction(m_rotate180Act);
+    rotateMenu->addAction(m_rotate90ccwAct);
+    rotateMenu->addAction(m_rotate45ccwAct);
+}
+
+void MainWindow::createZOrderSubmenu(QMenu * parentMenu) {
+    QMenu *zOrderMenu = parentMenu->addMenu(tr("Raise and Lower"));
+    zOrderMenu->addAction(m_bringToFrontAct);
+    zOrderMenu->addAction(m_bringForwardAct);
+    zOrderMenu->addAction(m_sendBackwardAct);
+    zOrderMenu->addAction(m_sendToBackAct);
+}
+
+void MainWindow::createZOrderWireSubmenu(QMenu * parentMenu) {
+    QMenu *zOrderWireMenu = parentMenu->addMenu(tr("Raise and Lower"));
+    zOrderWireMenu->addAction(m_bringToFrontWireAct);
+    zOrderWireMenu->addAction(m_bringForwardWireAct);
+    zOrderWireMenu->addAction(m_sendBackwardWireAct);
+    zOrderWireMenu->addAction(m_sendToBackWireAct);
+}
+
+void MainWindow::createAlignSubmenu(QMenu * parentMenu) {
+    QMenu *alignMenu = parentMenu->addMenu(tr("Align"));
+    alignMenu->addAction(m_alignLeftAct);
+    alignMenu->addAction(m_alignHorizontalCenterAct);
+    alignMenu->addAction(m_alignRightAct);
+    alignMenu->addAction(m_alignTopAct);
+    alignMenu->addAction(m_alignVerticalCenterAct);
+    alignMenu->addAction(m_alignBottomAct);
+}
+
+void MainWindow::createAddToBinSubmenu(QMenu * parentMenu) {
+    QMenu *addToBinMenu = parentMenu->addMenu(tr("&Add to bin..."));
+    addToBinMenu->setStatusTip(tr("Add selected part to bin"));
+    QList<QAction*> acts = m_binManager->openedBinsActions(selectedModuleID());
+    addToBinMenu->addActions(acts);
+}
+
 void MainWindow::createFileMenu() {
     m_fileMenu = menuBar()->addMenu(tr("&File"));
     m_fileMenu->addAction(m_newAct);
@@ -1421,25 +1460,23 @@ void MainWindow::createPartMenu() {
     connect(m_partMenu, SIGNAL(aboutToShow()), this, SLOT(updatePartMenu()));
 
 	m_partMenu->addAction(m_openInPartsEditorNewAct);
-	m_partMenu->addSeparator();
 
+    m_partMenu->addSeparator();
     m_partMenu->addAction(m_saveBundledPart);
 
 	m_partMenu->addSeparator();
 	m_partMenu->addAction(m_flipHorizontalAct);
-	m_partMenu->addAction(m_flipVerticalAct);
-	m_rotateMenu = m_partMenu->addMenu(tr("Rotate"));
-	m_zOrderMenu = m_partMenu->addMenu(tr("Raise and Lower"));
-	m_zOrderWireMenu = new QMenu(m_zOrderMenu);
-	m_zOrderWireMenu->setTitle(m_zOrderMenu->title());
-    m_alignMenu = m_partMenu->addMenu(tr("Align"));
+    m_partMenu->addAction(m_flipVerticalAct);
+    createRotateSubmenu(m_partMenu);
+    createZOrderSubmenu(m_partMenu);
+    createZOrderWireSubmenu(m_partMenu);
+    createAlignSubmenu(m_partMenu);
 	m_partMenu->addAction(m_moveLockAct);
 	m_partMenu->addAction(m_stickyAct);
 	m_partMenu->addAction(m_selectMoveLockAct);
-
 	
 	m_partMenu->addSeparator();
-	m_partMenu->addMenu(m_addToBinMenu);
+    createAddToBinSubmenu(m_partMenu);
 	m_partMenu->addAction(m_showPartLabelAct);
 	m_partMenu->addSeparator();
 	m_partMenu->addAction(m_selectAllObsoleteAct);
@@ -1448,28 +1485,6 @@ void MainWindow::createPartMenu() {
 	m_partMenu->addSeparator();
 	m_partMenu->addAction(m_findPartInSketchAct);
 
-	m_rotateMenu->addAction(m_rotate45cwAct);
-	m_rotateMenu->addAction(m_rotate90cwAct);
-	m_rotateMenu->addAction(m_rotate180Act);
-	m_rotateMenu->addAction(m_rotate90ccwAct);
-	m_rotateMenu->addAction(m_rotate45ccwAct);
-
-	m_zOrderMenu->addAction(m_bringToFrontAct);
-	m_zOrderMenu->addAction(m_bringForwardAct);
-	m_zOrderMenu->addAction(m_sendBackwardAct);
-	m_zOrderMenu->addAction(m_sendToBackAct);
-
-	m_zOrderWireMenu->addAction(m_bringToFrontWireAct);
-	m_zOrderWireMenu->addAction(m_bringForwardWireAct);
-	m_zOrderWireMenu->addAction(m_sendBackwardWireAct);
-	m_zOrderWireMenu->addAction(m_sendToBackWireAct);
-
-	m_alignMenu->addAction(m_alignLeftAct);
-	m_alignMenu->addAction(m_alignHorizontalCenterAct);
-	m_alignMenu->addAction(m_alignRightAct);    
-    m_alignMenu->addAction(m_alignTopAct);
-	m_alignMenu->addAction(m_alignVerticalCenterAct);
-	m_alignMenu->addAction(m_alignBottomAct);
 
 #ifndef QT_NO_DEBUG
     m_partMenu->addAction(m_dumpAllPartsAction);
@@ -2002,12 +2017,6 @@ void MainWindow::updateItemMenu() {
 
 	PaletteItem *selected = qobject_cast<PaletteItem *>(itemBase);
 	bool enabled = (selCount == 1) && (selected != NULL);
-	m_addToBinMenu->setEnabled(enabled);
-	m_addToBinMenu->clear();
-	if(enabled) {
-		QList<QAction*> acts = m_binManager->openedBinsActions(selectedModuleID());
-		m_addToBinMenu->addActions(acts);
-	}
 
 	m_saveBundledPart->setEnabled(enabled && !selected->modelPart()->isCore());
 
@@ -3350,13 +3359,13 @@ bool MainWindow::isGroundFill(ItemBase * itemBase) {
 
 QMenu *MainWindow::breadboardItemMenu() {
 	QMenu *menu = new QMenu(QObject::tr("Part"), this);
-	menu->addMenu(m_rotateMenu);
+    createRotateSubmenu(menu);
 	return viewItemMenuAux(menu);
 }
 
 QMenu *MainWindow::schematicItemMenu() {
 	QMenu *menu = new QMenu(QObject::tr("Part"), this);
-	menu->addMenu(m_rotateMenu);
+    createRotateSubmenu(menu);
 	menu->addAction(m_flipHorizontalAct);
 	menu->addAction(m_flipVerticalAct);
 	return viewItemMenuAux(menu);
@@ -3364,7 +3373,7 @@ QMenu *MainWindow::schematicItemMenu() {
 
 QMenu *MainWindow::pcbItemMenu() {
 	QMenu *menu = new QMenu(QObject::tr("Part"), this);
-	menu->addMenu(m_rotateMenu);
+    createRotateSubmenu(menu);
 	menu = viewItemMenuAux(menu);
     menu->addAction(m_hidePartSilkscreenAct);
 	menu->addSeparator();
@@ -3377,7 +3386,7 @@ QMenu *MainWindow::pcbItemMenu() {
 
 QMenu *MainWindow::breadboardWireMenu() {
 	QMenu *menu = new QMenu(QObject::tr("Wire"), this);
-	menu->addMenu(m_zOrderWireMenu);
+    createZOrderWireSubmenu(menu);
 	menu->addSeparator();
 	m_breadboardWireColorMenu = menu->addMenu(tr("&Wire Color"));
 	foreach(QString colorName, Wire::colorNames) {
@@ -3408,8 +3417,8 @@ QMenu *MainWindow::breadboardWireMenu() {
 }
 
 QMenu *MainWindow::pcbWireMenu() {
-	QMenu *menu = new QMenu(QObject::tr("Wire"), this);
-	menu->addMenu(m_zOrderWireMenu);
+    QMenu *menu = new QMenu(QObject::tr("Wire"), this);
+    createZOrderWireSubmenu(menu);
 	menu->addSeparator();
 	menu->addAction(m_changeTraceLayerWireAct);	
 	menu->addAction(m_createTraceWireAct);
@@ -3433,8 +3442,8 @@ QMenu *MainWindow::pcbWireMenu() {
 }
 
 QMenu *MainWindow::schematicWireMenu() {
-	QMenu *menu = new QMenu(QObject::tr("Wire"), this);
-	menu->addMenu(m_zOrderWireMenu);
+    QMenu *menu = new QMenu(QObject::tr("Wire"), this);
+    createZOrderWireSubmenu(menu);
 	menu->addSeparator();
 	m_schematicWireColorMenu = menu->addMenu(tr("&Wire Color"));
 	foreach(QString colorName, Wire::colorNames) {
@@ -3464,7 +3473,7 @@ QMenu *MainWindow::schematicWireMenu() {
 }
 
 QMenu *MainWindow::viewItemMenuAux(QMenu* menu) {
-	menu->addMenu(m_zOrderMenu);
+    createZOrderWireSubmenu(menu);
 	menu->addAction(m_moveLockAct);
 	menu->addAction(m_stickyAct);
 	menu->addSeparator();
@@ -3478,7 +3487,7 @@ QMenu *MainWindow::viewItemMenuAux(QMenu* menu) {
 #endif
 	menu->addSeparator();
 	menu->addAction(m_openInPartsEditorNewAct);
-	menu->addMenu(m_addToBinMenu);
+    createAddToBinSubmenu(menu);
 	menu->addSeparator();
 	menu->addAction(m_showPartLabelAct);
 #ifndef QT_NO_DEBUG

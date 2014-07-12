@@ -397,7 +397,9 @@ bool SymbolPaletteItem::collectExtraInfo(QWidget * parent, const QString & famil
 
 		QDoubleValidator * validator = new QDoubleValidator(edit);
 		validator->setRange(-9999.99, 9999.99, 2);
-		validator->setNotation(QDoubleValidator::StandardNotation);
+        validator->setLocale(QLocale::C);
+        validator->setNotation(QDoubleValidator::StandardNotation);
+        validator->setLocale(QLocale::C);
 		edit->setValidator(validator);
 
 		edit->setObjectName("infoViewComboBox");

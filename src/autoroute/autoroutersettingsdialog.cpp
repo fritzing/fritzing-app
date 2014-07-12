@@ -267,6 +267,7 @@ QWidget * AutorouterSettingsDialog::createKeepoutWidget(const QString & keepoutS
 
     m_keepoutSpinBox = new QDoubleSpinBox;
     m_keepoutSpinBox->setDecimals(4);
+    m_keepoutSpinBox->setLocale(QLocale::C);
     connect(m_keepoutSpinBox, SIGNAL(valueChanged(double)), this, SLOT(keepoutEntry()));
     frameLayout->addWidget(m_keepoutSpinBox);
 

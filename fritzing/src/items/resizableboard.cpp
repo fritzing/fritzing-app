@@ -1287,6 +1287,7 @@ QFrame * ResizableBoard::setUpDimEntry(bool includeAspectRatio, bool includeReve
 	QDoubleValidator * validator = new QDoubleValidator(e1);
 	validator->setRange(0.1, 999.9, m_decimalsAfter);
 	validator->setNotation(QDoubleValidator::StandardNotation);
+    validator->setLocale(QLocale::C);
 	e1->setObjectName("infoViewLineEdit");
 	e1->setValidator(validator);
 	e1->setMaxLength(4 + m_decimalsAfter);
@@ -1299,6 +1300,7 @@ QFrame * ResizableBoard::setUpDimEntry(bool includeAspectRatio, bool includeReve
 	validator = new QDoubleValidator(e1);
 	validator->setRange(0.1, 999.9, m_decimalsAfter);
 	validator->setNotation(QDoubleValidator::StandardNotation);
+    validator->setLocale(QLocale::C);
 	e2->setObjectName("infoViewLineEdit");
 	e2->setValidator(validator);
 	e2->setMaxLength(4 + m_decimalsAfter);

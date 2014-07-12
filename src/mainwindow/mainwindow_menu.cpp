@@ -4067,11 +4067,12 @@ QWidget * MainWindow::createGridSizeForm(GridSizeThing * gridSizeThing)
 
 	gridSizeThing->lineEdit = new QLineEdit();
 	
-	gridSizeThing->lineEdit->setFixedWidth(45);
+    gridSizeThing->lineEdit->setFixedWidth(55);
 
 	gridSizeThing->validator = new QDoubleValidator(gridSizeThing->lineEdit);
-	gridSizeThing->validator->setRange(0.001, 1.0, 3);
+    gridSizeThing->validator->setRange(0.001, 1.0, 4);
 	gridSizeThing->validator->setNotation(QDoubleValidator::StandardNotation);
+    gridSizeThing->validator->setLocale(QLocale::C);
 	gridSizeThing->lineEdit->setValidator(gridSizeThing->validator);
 
 	hLayout->addWidget(gridSizeThing->lineEdit);
@@ -4089,7 +4090,7 @@ QWidget * MainWindow::createGridSizeForm(GridSizeThing * gridSizeThing)
 
 	QPushButton * pushButton = new QPushButton(this);
 	pushButton->setText(tr("Restore Default"));
-	pushButton->setMaximumWidth(115);
+    pushButton->setMaximumWidth(150);
 	vLayout->addWidget(pushButton);
 	vLayout->addSpacing(10);
 

@@ -998,6 +998,7 @@ void HtmlInfoView::makeLocationFrame() {
     m_xEdit->setObjectName("infoViewDoubleSpinBox");
     m_xEdit->setMaximumWidth(MaxSpinBoxWidth);
     m_xEdit->setMinimumWidth(MaxSpinBoxWidth);
+    m_xEdit->setLocale(QLocale::C);
     locationLayout->addWidget(m_xEdit);
 
     locationLayout->addSpacing(AfterSpinBoxWidth);
@@ -1009,6 +1010,7 @@ void HtmlInfoView::makeLocationFrame() {
     m_yEdit->setObjectName("infoViewDoubleSpinBox");
     m_yEdit->setMaximumWidth(MaxSpinBoxWidth);
     m_yEdit->setMinimumWidth(MaxSpinBoxWidth);
+    m_yEdit->setLocale(QLocale::C);
     locationLayout->addWidget(m_yEdit);
 
     locationLayout->addSpacing(3);
@@ -1046,6 +1048,7 @@ void HtmlInfoView::makeRotationFrame() {
     m_rotEdit->setObjectName("infoViewDoubleSpinBox");
     m_rotEdit->setMaximumWidth(MaxSpinBoxWidth);
     m_rotEdit->setMinimumWidth(MaxSpinBoxWidth);
+    m_rotEdit->setLocale(QLocale::C);
     rotationLayout->addWidget(m_rotEdit);
 
     rotationLayout->addSpacing(AfterSpinBoxWidth);

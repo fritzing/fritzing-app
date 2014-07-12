@@ -214,6 +214,7 @@ bool Ruler::collectExtraInfo(QWidget * parent, const QString & family, const QSt
 		QDoubleValidator * validator = new QDoubleValidator(e1);
 		validator->setRange(1.0, 20 * ((units == IndexCm) ? 2.54 : 1), 2);
 		validator->setNotation(QDoubleValidator::StandardNotation);
+        validator->setLocale(QLocale::C);
 		e1->setValidator(validator);
 		e1->setEnabled(swappingEnabled);
 		QString temp = m_modelPart->localProp("width").toString();

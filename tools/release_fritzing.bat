@@ -70,6 +70,7 @@ mkdir %DESTDIR%\deploy\platforms
 mkdir %DESTDIR%\deploy\lib
 mkdir  %DESTDIR%\deploy\lib\imageformats
 mkdir  %DESTDIR%\deploy\lib\sqldrivers
+mkdir  %DESTDIR%\deploy\lib\printsupport
 echo deploy folder ready.  any further "The system cannot find ..." messages represent significant problems with the script
 echo.
 
@@ -92,6 +93,8 @@ copy %QTBIN%\icuuc51.dll %DESTDIR%\deploy\icuuc51.dll
 copy %QTBIN%\..\plugins\imageformats\qjpeg.dll %DESTDIR%\deploy\lib\imageformats\qjpeg.dll
 copy %QTBIN%\..\plugins\sqldrivers\qsqlite.dll %DESTDIR%\deploy\lib\sqldrivers\qsqlite.dll
 copy %QTBIN%\..\plugins\platforms\qwindows.dll %DESTDIR%\deploy\platforms\qwindows.dll
+copy %QTBIN%\..\plugins\printsupport\windowsprintersupport.dll  %DESTDIR%\deploy\lib\windowsprintersupport.dll 
+
 
 echo copying bins, parts, sketches, translations, pdb, help
 echo.

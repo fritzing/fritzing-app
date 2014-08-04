@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.2" baseProfile="tiny" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+	 x="0px" y="0px" width="10.245px" height="7.795px" viewBox="0 0 10.245 7.795" xml:space="preserve">
+<g id="silkscreen">
+	<g>
+<g>
+			<line fill="none" stroke="#FFFFFF" stroke-width="0.432" stroke-linecap="round" x1="0.256" y1="3.517" x2="0.256" y2="4.267"/>
+		</g>
+	</g>
+	<line fill="none" stroke="#FFFFFF" stroke-width="0.432" stroke-linecap="round" x1="9.912" y1="3.517" x2="9.912" y2="4.267"/>
+</g>
+<g id="copper1">
+	<rect id="connector1pad" x="6.276" y="4.536" fill="#F7BD13" width="3.969" height="3.26" stroke-width="0.0"/>
+	<rect id="connector3pad" x="0.041" y="0" fill="#F7BD13" width="3.968" height="3.26" stroke-width="0.0"/>
+	<rect id="connector2pad" x="6.276" y="0" fill="#F7BD13" width="3.969" height="3.26" stroke-width="0.0"/>
+	<rect id="connector0pad" x="0.041" y="4.536" fill="#F7BD13" width="3.968" height="3.26" stroke-width="0.0"/>
+</g>
+</svg>

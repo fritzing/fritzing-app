@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- Created with Fritzing (http://www.fritzing.org/) -->
+<svg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' version='1.2' baseProfile='tiny' x='0in' y='0in' width='1.00972in' height='0.41in' viewBox='0 0 25.6469 10.414' >
+<g id='schematic'>
+<rect class='interior rect' x='5.20347' y='0.127' width='15.24' height='10.16' stroke='none' stroke-width='0' fill='#ffffff' />
+<text class='text' id='label' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#000000' font-size='1.49931' x='12.8235' y='4.40735' text-anchor='middle'>OSCILLATOR</text>
+<line class='other' x1='5.20347' y1='10.287' x2='5.20347' y2='0.127' stroke='#000000' stroke-width='0.3175' stroke-linecap='round'/>
+<line class='other' x1='5.20347' y1='0.127' x2='20.4435' y2='0.127' stroke='#000000' stroke-width='0.3175' stroke-linecap='round'/>
+<line class='other' x1='20.4435' y1='0.127' x2='20.4435' y2='10.287' stroke='#000000' stroke-width='0.3175' stroke-linecap='round'/>
+<line class='other' x1='20.4435' y1='10.287' x2='5.20347' y2='10.287' stroke='#000000' stroke-width='0.3175' stroke-linecap='round'/>
+<line class='pin' id='connector0pin' connectorname='PIN1' x1='0.123472' y1='7.747' x2='5.20347' y2='7.747' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector0terminal' x='0.123472' y='7.747' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#8c8c8c' font-size='0.881944' x='2.66347' y='7.37658' text-anchor='middle'>PIN1</text>
+<text class='text' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#787878' font-size='1.23472' x='5.9443' y='7.99394' text-anchor='start'>PIN1</text>
+<line class='pin' id='connector1pin' connectorname='GND' x1='25.5235' y1='7.747' x2='20.4435' y2='7.747' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector1terminal' x='25.5235' y='7.747' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#8c8c8c' font-size='0.881944' x='22.9835' y='7.37658' text-anchor='middle'>2</text>
+<text class='text' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#787878' font-size='1.23472' x='19.7026' y='7.99394' text-anchor='end'>GND</text>
+<line class='pin' id='connector2pin' connectorname='PIN3' x1='25.5235' y1='2.667' x2='20.4435' y2='2.667' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector2terminal' x='25.5235' y='2.667' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#8c8c8c' font-size='0.881944' x='22.9835' y='2.29658' text-anchor='middle'>3</text>
+<text class='text' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#787878' font-size='1.23472' x='19.7026' y='2.91394' text-anchor='end'>PIN 3</text>
+<line class='pin' id='connector3pin' connectorname='GND' x1='0.123472' y1='2.667' x2='5.20347' y2='2.667' stroke='#787878' stroke-width='0.246944' stroke-linecap='round'/>
+<rect class='terminal' id='connector3terminal' x='0.123472' y='2.667' width='0.0001' height='0.0001' stroke='none' stroke-width='0' fill='none'/>
+<text class='text' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#8c8c8c' font-size='0.881944' x='2.66347' y='2.29658' text-anchor='middle'>GND</text>
+<text class='text' font-family="'Droid Sans'" stroke='none' stroke-width='0' fill='#787878' font-size='1.23472' x='5.9443' y='2.91394' text-anchor='start'>GND</text>
+</g>
+</svg>

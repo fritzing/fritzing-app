@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><module moduleId="raspberrypi-b+-pcb-shape">
+ <version>5</version>
+ <author>Fabian Althaus</author>
+ <title>Raspberry Pi Shield</title>
+ <date>2014-08-13</date>
+ <label>PCB</label>
+ <tags>
+  <tag>pcb</tag>
+  <tag>board</tag>
+  <tag>raspberry pi b+</tag>
+  <tag>fritzing core</tag>
+ </tags>
+ <properties>
+   <property name="layers">2</property>
+  <property name="Shape">Raspberry Pi B+ hat</property>
+  <property name="family">Plain Vanilla PCB</property>
+  <property name="filename" ></property>
+ </properties>
+ <description>Plain PCB Shaped to fit as Raspberry Pi B+ Hat</description>
+ <views>
+  <defaultUnits>mm</defaultUnits>
+  <iconView>
+   <layers image="icon/plain_pcb.svg">
+    <layer layerId="icon"/>
+   </layers>
+  </iconView>
+  <breadboardView>
+   <layers image="icon/plain_pcb.svg">
+    <layer layerId="unknown"/>
+   </layers>
+  </breadboardView>
+  <schematicView>
+   <layers image="icon/plain_pcb.svg">
+    <layer layerId="unknown"/>
+   </layers>
+  </schematicView>
+  <pcbView>
+   <layers image="pcb/raspberrypi-b+-pcb-shape.svg">
+    <layer layerId="silkscreen" sticky="true"/>
+    <layer layerId="silkscreen0" sticky="true"/>
+    <layer layerId="board" sticky="true"/>
+   </layers>
+  </pcbView>
+ </views>
+ <connectors/>
+ <buses/>
+</module>

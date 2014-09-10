@@ -1464,6 +1464,7 @@ MainWindow * Panelizer::inscribeBoard(QDomElement & board, QHash<QString, QStrin
 
     if (drc) {
 	    foreach (ItemBase * boardItem, boards) {
+            mainWindow->pcbView()->resetKeepout();
             mainWindow->pcbView()->selectAllItems(false, false);
             boardItem->setSelected(true);
             QStringList messages = mainWindow->newDesignRulesCheck(false);

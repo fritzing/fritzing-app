@@ -7,18 +7,19 @@
 	<path id="boardoutline" fill="#FFFFFF" fill-opacity="0.5" d="M186.951,36.41V4.367l-3.566-3.566L0.805,0.8l0.001,149.701h186.147
 		v-5.827l8.441-8.441V43.545L186.951,36.41z"/>
 	
-		<rect id="pinguide1" x="65.784" y="4.605" fill="none" stroke="#666666" stroke-width="1.5" stroke-opacity="0.5" width="118.61" height="6.4"/>
-	
-		<rect id="pinguide2" x="92.428" y="141.271" fill="none" stroke="#666666" stroke-width="1.5" stroke-opacity="0.5" width="91.885" height="6.399"/>
-	
-		<rect id="usbconnector" x="1.605" y="27.595" fill="none" stroke="#666666" stroke-width="1.5" stroke-opacity="0.5" width="23.9" height="31.979"/>
+
 </g>
 <g id="silkscreen">
-	<path id="outline" fill="none" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+	<path  fill="none" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
 		M186.951,36.41V4.367l-3.566-3.566L0.805,0.8l0.001,149.701h186.147v-5.827l8.441-8.441V43.545L186.951,36.41z"/>
 </g>
 <g id="silkscreen0">
-	<path id="outline_1_" fill="none" stroke="#111111" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+	<path  fill="none" stroke="#111111" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
 		M186.951,36.41V4.367l-3.566-3.566L0.805,0.8l0.001,149.701h186.147v-5.827l8.441-8.441V43.545L186.951,36.41z"/>
+				<rect id="pinguide1" x="65.784" y="4.605" fill="none" stroke="#666666" stroke-width="0.5" stroke-opacity="0.5" width="118.61" height="6.4"/>
+	
+		<rect id="pinguide2" x="92.428" y="141.271" fill="none" stroke="#666666" stroke-width="0.5" stroke-opacity="0.5" width="91.885" height="6.399"/>
+	
+		<rect id="usbconnector" x="1.605" y="27.595" fill="none" stroke="#666666" stroke-width="0.5" stroke-opacity="0.5" width="23.9" height="31.979"/>
 </g>
 </svg>

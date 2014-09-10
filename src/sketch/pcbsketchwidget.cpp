@@ -1292,15 +1292,6 @@ double PCBSketchWidget::getKeepout() {
 	return inches * GraphicsUtils::SVGDPI;  // inches converted to pixels
 }
 
-void PCBSketchWidget::setKeepout(double mils) {
-    QString keepoutString = QString("%1in").arg(mils / 1000);
-    m_autorouterSettings.insert(DRC::KeepoutSettingName, keepoutString);
-}
-
-void PCBSketchWidget::resetKeepout() {
-    setKeepout(DRC::KeepoutDefaultMils);
-}
-
 bool PCBSketchWidget::acceptsTrace(const ViewGeometry & viewGeometry) {
 	return !viewGeometry.getSchematicTrace();
 }

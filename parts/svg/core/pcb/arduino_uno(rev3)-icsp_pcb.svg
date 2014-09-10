@@ -4,6 +4,15 @@
 	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="194.592px"
 	 height="151.2px" viewBox="0 0 194.592 151.2" xml:space="preserve">
 <g id="g4583">
+	<g id="silkscreen0">
+			<circle fill="none" stroke="#FFFFFF" stroke-opacity="0.6" cx="187.497" cy="50.887" r="4.252" stroke-width="0.25"/>
+		<circle fill="none" stroke="#FFFFFF" stroke-opacity="0.6" cx="187.497" cy="129.836" r="4.252" stroke-width="0.25"/>
+		<circle fill="none" stroke="#FFFFFF" stroke-opacity="0.6" cx="43.35" cy="7.2" r="4.252" stroke-width="0.25"/>
+		<circle fill="none" stroke="#FFFFFF" stroke-opacity="0.6" cx="38.673" cy="143.844" r="4.252" stroke-width="0.25"/>
+		<rect x="0.405" y="26.6" fill="none" stroke="#FFFFFF" stroke-opacity="0.6" width="28.347" height="34.016" stroke-width="0.25"/>
+		<rect x="0.405" y="114.081" fill="none" stroke="#FFFFFF" stroke-opacity="0.6" width="34.016" height="25.512" stroke-width="0.25"/>
+	</g>
+
 	<g id="silkscreen">
 		<path id="_x30_.1.0" fill="none" stroke="#FFFFFF" stroke-width="0.576" d="M182.808,0.288l4.313,4.304v32.276l7.183,7.172v92.526
 			l-7.183,7.172v4.351c0.159,1.396-0.841,2.66-2.231,2.824c-0.189,0.021-0.396,0.021-0.595,0H3.25
@@ -555,12 +564,7 @@
 			<text id="_x30_.1.0.92.0.0.0.0.0.0.0_2_" transform="matrix(-1.836970e-016 -1 1 -1.836970e-016 175.8896 80.5063)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">ICSP</text>
 		
 			<text id="_x30_.1.0.92.0.0.0.0.0.0.0_1_" transform="matrix(1 0 0 1 43.6597 31.5981)" fill="#FFFFFF" font-family="'OCRA'" font-size="3.75">ICSP2</text>
-		<circle fill="none" stroke="#FFFFFF" stroke-opacity="0.6" cx="187.497" cy="50.887" r="4.252"/>
-		<circle fill="none" stroke="#FFFFFF" stroke-opacity="0.6" cx="187.497" cy="129.836" r="4.252"/>
-		<circle fill="none" stroke="#FFFFFF" stroke-opacity="0.6" cx="43.35" cy="7.2" r="4.252"/>
-		<circle fill="none" stroke="#FFFFFF" stroke-opacity="0.6" cx="38.673" cy="143.844" r="4.252"/>
-		<rect x="0.405" y="26.6" fill="none" stroke="#FFFFFF" stroke-opacity="0.6" width="28.347" height="34.016"/>
-		<rect x="0.405" y="114.081" fill="none" stroke="#FFFFFF" stroke-opacity="0.6" width="34.016" height="25.512"/>
+
 	</g>
 	<g id="copper1">
 		<g id="copper0">

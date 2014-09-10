@@ -56,6 +56,8 @@ public:
 	void initWire(Wire *, int penWidth);
 	virtual bool autorouteTypePCB();
 	virtual double getKeepout();
+    void setKeepout(double mils);
+    void resetKeepout();
 	virtual const QString & traceColor(ConnectorItem *);
 	const QString & traceColor(ViewLayer::ViewLayerPlacement);
 	virtual void ensureTraceLayersVisible();

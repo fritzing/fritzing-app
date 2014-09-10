@@ -1,3 +1,3 @@
 [submodule "parts/fritzing-parts"]
-	path = parts/fritzing-parts
+	path = parts/
 	url = https://github.com/fritzing/fritzing-parts

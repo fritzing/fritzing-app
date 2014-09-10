@@ -24,8 +24,8 @@ phoenix.pro.user
 Makefile*
 
 # no longer keep boost library in the source #
-#####################
 /src/lib/boost*
+
 
 # Compiled source #
 ###################

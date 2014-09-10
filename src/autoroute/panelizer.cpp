@@ -1390,6 +1390,10 @@ MainWindow * Panelizer::inscribeBoard(QDomElement & board, QHash<QString, QStrin
 		return mainWindow;
 	}
 
+    // performance optimization
+    mainWindow->pcbView()->setGridSize("0.1in");
+    mainWindow->pcbView()->showGrid(false);
+
     QList<ItemBase *> items = mainWindow->pcbView()->selectAllObsolete();
 	if (items.count() > 0) {
         QFileInfo info(copyPath);
@@ -1464,6 +1468,7 @@ MainWindow * Panelizer::inscribeBoard(QDomElement & board, QHash<QString, QStrin
 
     if (drc) {
 	    foreach (ItemBase * boardItem, boards) {
+            mainWindow->pcbView()->resetKeepout();
             mainWindow->pcbView()->selectAllItems(false, false);
             boardItem->setSelected(true);
             QStringList messages = mainWindow->newDesignRulesCheck(false);

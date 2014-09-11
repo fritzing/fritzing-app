@@ -1,3 +1,8 @@
+*IMPORTENT: please make sure cloning recursive to get all submodules.*
+
+  ```git clone --recursive git://github.com/fritzing/fritzing-app/```
+
+
 # About fritzing #
 
 **[fritzing](http://fritzing.org)** is an open-source initiative to support designers and artists to take the step from physical prototyping to actual product. We are creating this software in the spirit of Processing and Arduino, that allows the designer / artist / researcher / hobbyist to document their Arduino-based prototype and create a PCB layout for manufacturing. The complimenting website helps to share and discuss drafts and experiences as well as to reduce manufacturing costs.

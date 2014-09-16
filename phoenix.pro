@@ -45,14 +45,14 @@ win32 {
         message("target arch: $${QMAKE_TARGET.arch}")
         contains(QMAKE_TARGET.arch, x86_64) {
                 SETUPLIBPATH = "C:/Program Files (x86)/Microsoft SDKs/Windows/v7.1A/Lib/x64"
-                RELDIR = ../../release64
-                DEBDIR = ../../debug64
+                RELDIR = ../release64
+                DEBDIR = ../debug64
                 DEFINES += WIN64
        }
        !contains(QMAKE_TARGET.arch, x86_64) {
                 SETUPLIBPATH = "C:/Program Files (x86)/Microsoft SDKs/Windows/v7.1A/Lib"
-                RELDIR = ../../release32
-                DEBDIR = ../../debug32
+                RELDIR = ../release32
+                DEBDIR = ../debug32
         }
         message("check your SetupAPI.lib path: $${SETUPLIBPATH}/SetupAPI.Lib")
 
@@ -78,8 +78,8 @@ win32 {
 	Debug:UI_DIR = $${DEBDIR}
 }
 macx {
-        RELDIR = ../../release64
-        DEBDIR = ../../debug64
+        RELDIR = ../release64
+        DEBDIR = ../debug64
         Release:DESTDIR = $${RELDIR}
         Release:OBJECTS_DIR = $${RELDIR}
         Release:MOC_DIR = $${RELDIR}

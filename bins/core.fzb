@@ -628,7 +628,7 @@
         <instance moduleIdRef="arduino_Uno_Rev3(fix)" modelIndex="48" path="parts/core/Arduino_UNO_R3(fix).fzp">
             <views>
                 <iconView layer="icon">
-                    <geometry z="-1" x="-1" y="-1"/>
+                    <geometry z="0" x="0" y="0"/>
                 </iconView>
             </views>
         </instance>	
@@ -661,6 +661,20 @@
             </views>
 		</instance>
   <instance moduleIdRef="linino_one_rev1" modelIndex="48" path="parts/core/linino_one(rev1).fzp">
+            <views>
+                <iconView layer="icon">
+                    <geometry z="-1" x="-1" y="-1"/>
+                </iconView>
+            </views>
+        </instance>
+          <instance moduleIdRef="Bean_revE" modelIndex="48" path="parts/core/Bean_revE.fzp">
+            <views>
+                <iconView layer="icon">
+                    <geometry z="-1" x="-1" y="-1"/>
+                </iconView>
+            </views>
+        </instance>
+                  <instance moduleIdRef="pinoccio" modelIndex="48" path="parts/core/pinoccio.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>

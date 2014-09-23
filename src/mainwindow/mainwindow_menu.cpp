@@ -2324,7 +2324,7 @@ void MainWindow::visitFritzingDotOrg() {
 }
 
 void MainWindow::reportBug() {
-	 QDesktopServices::openUrl(QString("http://code.google.com/p/fritzing/issues"));
+     QDesktopServices::openUrl(QString("https://github.com/fritzing/fritzing-app/issues"));
 }
 
 void MainWindow::partsEditorHelp() {

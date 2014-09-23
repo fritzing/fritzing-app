@@ -1,4 +1,6 @@
-* IMPORTENT: please make sure cloning recursive to get all submodules and add [boost 1.55 library](http://www.boost.org/users/history/version_1_55_0.html) to fritzing-app/src/lib/ *
+# A note on dependencies
+
+Please clone recursively to get all submodules and add the [boost library sources](http://www.boost.org/users/download/) to fritzing-app/src/lib/
 
   ```git clone --recursive git://github.com/fritzing/fritzing-app/```
 

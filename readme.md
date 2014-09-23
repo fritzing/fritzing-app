@@ -2,7 +2,7 @@
 
 Please clone recursively to get all submodules and add the [boost library sources](http://www.boost.org/users/download/) to fritzing-app/src/lib/
 
-  ```git clone --recursive git://github.com/fritzing/fritzing-app/```
+  ```git clone --recursive https://github.com/fritzing/fritzing-app.git```
 
 
 

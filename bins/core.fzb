@@ -674,7 +674,7 @@
                 </iconView>
             </views>
         </instance>
-                  <instance moduleIdRef="pinoccio" modelIndex="48" path="parts/core/pinoccio.fzp">
+                  <instance moduleIdRef="pinoccio_board" modelIndex="48" path="parts/core/pinoccio.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>

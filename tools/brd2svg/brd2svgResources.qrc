@@ -1,8 +1,0 @@
-<RCC>
-    <qresource prefix="/">
-	<file alias="DroidSans.ttf">../../resources/fonts/DroidSans.ttf</file>
-        <file alias="DroidSansMono.ttf">../../resources/fonts/DroidSansMono.ttf</file>
-        <file alias="DroidSans-Bold.ttf">../../resources/fonts/DroidSans-Bold.ttf</file>
-        <file alias="OCRA.ttf">../../resources/fonts/OCRA.ttf</file>
-   </qresource>
-</RCC>

@@ -181,7 +181,7 @@ void ProgramWindow::initLanguages() {
 		}
 		else {
 			QString name = Syntaxer::parseForName(fileInfo.absoluteFilePath());
-			if (!name.isEmpty() /* && !name.contains("arduino", Qt::CaseInsensitive) */) {		// Arduino is not really available      
+            if (!name.isEmpty()) {
 				m_languages.insert(name, fileInfo.absoluteFilePath());
 			}
 		}
@@ -335,7 +335,7 @@ void ProgramWindow::setup()
 
     m_programMenu = menubar->addMenu(tr("&Code"));
 
-    QMenu *languageMenu = new QMenu(tr("Select language"), this);
+    QMenu *languageMenu = new QMenu(tr("Language"), this);
     m_programMenu->addMenu(languageMenu);
 
 	QString currentLanguage = settings.value("programwindow/language", "").toString();
@@ -356,16 +356,7 @@ void ProgramWindow::setup()
 
     connect(languageMenu, SIGNAL(triggered(QAction*)), this, SLOT(setLanguage(QAction*)));
 
-    m_serialPortMenu = new QMenu(tr("Select port"), this);
-    m_programMenu->addMenu(m_serialPortMenu);
-
-    m_serialPortActionGroup = new QActionGroup(this);
-	updateSerialPorts();
-
-    connect(m_serialPortMenu, SIGNAL(triggered(QAction*)), this, SLOT(setPort(QAction*)));
-	connect(m_serialPortMenu, SIGNAL(aboutToShow()), this, SLOT(updateSerialPorts()), Qt::DirectConnection);
-
-	m_programmerMenu = new QMenu(tr("Select programmer"), this);
+    m_programmerMenu = new QMenu(tr("Programmer"), this);
     m_programMenu->addMenu(m_programmerMenu);
 
 	m_programmerActionGroup = new QActionGroup(this);
@@ -375,6 +366,19 @@ void ProgramWindow::setup()
 	}
 	
     connect(m_programmerMenu, SIGNAL(triggered(QAction*)), this, SLOT(setProgrammer(QAction*)));
+
+    m_boardMenu = new QMenu(tr("Board"), this);
+    m_programMenu->addMenu(m_boardMenu);
+    // TODO: list available microcontroller boards for this language
+
+    m_serialPortMenu = new QMenu(tr("Port"), this);
+    m_programMenu->addMenu(m_serialPortMenu);
+
+    m_serialPortActionGroup = new QActionGroup(this);
+    updateSerialPorts();
+
+    connect(m_serialPortMenu, SIGNAL(triggered(QAction*)), this, SLOT(setPort(QAction*)));
+    connect(m_serialPortMenu, SIGNAL(aboutToShow()), this, SLOT(updateSerialPorts()), Qt::DirectConnection);
 
     m_programMenu->addSeparator();
 
@@ -971,7 +975,7 @@ const QHash<QString, QString> ProgramWindow::getProgrammerNames()
 
 void ProgramWindow::initProgrammerNames()
 {
-	ProgrammerNames.insert(tr("Find file..."), LocateName);
+    ProgrammerNames.insert(tr("Locate..."), LocateName);
 
 	// TODO: eventually save a list of programmer names (a la recent files)
 

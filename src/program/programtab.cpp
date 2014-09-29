@@ -643,9 +643,8 @@ void ProgramTab::sendProgram() {
         return;
 	}
 
+    // see https://github.com/arduino/Arduino/blob/ide-1.5.x/build/shared/manpage.adoc
 	if (language.compare("arduino", Qt::CaseInsensitive) == 0) {
-        return;         // not yet implemented
-
 		QProcess * process = new QProcess(this);
 		process->setProcessChannelMode(QProcess::MergedChannels);
 		process->setReadChannel(QProcess::StandardOutput);
@@ -654,8 +653,12 @@ void ProgramTab::sendProgram() {
 		connect(process, SIGNAL(readyReadStandardOutput()), this, SLOT(programProcessReadyRead()));
 
 		QStringList args;
-		args.append(QString("--upload --verbose --board arduino:arduino:uno"));
-        QString temp = m_filename;
+        args.append(QString(" --verbose");
+        args.append(QString(" --board "));
+        args.append(QString("arduino:avr:uno"));
+        args.append(QString(" --port "));
+        args.append(m_portComboBox->currentText());
+        args.append(QString(" --upload "));
 		args.append(QDir::toNativeSeparators(m_filename));
 		m_console->setPlainText("");
 		

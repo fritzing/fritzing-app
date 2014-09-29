@@ -188,6 +188,7 @@ protected:
 	QActionGroup * m_programmerActionGroup;
 	QActionGroup * m_serialPortActionGroup;
 	QMenu * m_programmerMenu;
+    QMenu * m_boardMenu;
 	QMenu * m_serialPortMenu;
 	QStringList m_ports;				// temporary storage for linux
     QMenu * m_fileMenu;

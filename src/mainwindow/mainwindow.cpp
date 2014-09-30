@@ -3035,8 +3035,6 @@ void MainWindow::addToSketch(QList<ModelPart *> & modelParts) {
 }
 
 void MainWindow::initProgrammingWidget() {
-    return; // remove this line to add programming as a tab 
-
     m_programView = new ProgramWindow(this);
 
 	connect(m_programView, SIGNAL(linkToProgramFile(const QString &, const QString &, const QString &, bool, bool)), 

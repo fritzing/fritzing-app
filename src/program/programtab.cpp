@@ -653,7 +653,7 @@ void ProgramTab::sendProgram() {
 		connect(process, SIGNAL(readyReadStandardOutput()), this, SLOT(programProcessReadyRead()));
 
 		QStringList args;
-        args.append(QString(" --verbose");
+        args.append(QString(" --verbose"));
         args.append(QString(" --board "));
         args.append(QString("arduino:avr:uno"));
         args.append(QString(" --port "));

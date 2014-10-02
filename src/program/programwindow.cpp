@@ -915,7 +915,7 @@ QStringList ProgramWindow::getSerialPortsAux() {
             return ports;
         }
 
-        CFDictionarySetValue(classesToMatch, CFSTR(kIOSerialBSDTypeKey), CFSTR(kIOSerialBSDRS232Type));
+        CFDictionarySetValue(classesToMatch, CFSTR(kIOSerialBSDTypeKey), CFSTR(kIOSerialBSDAllTypes));
 
         kernResult = IOServiceGetMatchingServices(masterPort, classesToMatch, &matchingServices);
         if (KERN_SUCCESS != kernResult)

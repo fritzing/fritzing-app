@@ -661,6 +661,8 @@ void ProgramTab::sendProgram() {
         args.append(QString(" --upload "));
 		args.append(QDir::toNativeSeparators(m_filename));
 		m_console->setPlainText("");
+
+        // TODO: for Mac, the path is actually Arduino.app/Contents/MacOS/JavaAppLauncher
 		
         process->start(m_programmerPath, args);
         return;

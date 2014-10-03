@@ -8,19 +8,18 @@
 	background-color: #821F09;
 }
 
-#programmingWindow #footer {
+#programmingWindow #footer { /* the tab-specific menu bar */
 	padding: 5px 0px 5px 0px;
 	margin: 0px;
 	border: 0px;
-	background-color: #fff;
+	background-color: #821F09;
 }
 
-#programmingWindow #footer QLabel {  /*this is the labelcolor beside the dropdowns in the Programming Window*/
-        color: #333;
-		background:transparent;
-		padding: 0px 5px;
+#programmingWindow #footer QLabel {  /* this is the labelcolor beside the dropdowns in the Programming Window */
+    color: #333;
+	background:transparent;
+	padding: 0px 5px;
 }
-
 
 #programmingWindow QTabWidget::pane {
 	top: %1px;  	/* the value is swapped in at runtime in ProgramWindow::setup() */
@@ -89,9 +88,20 @@
 	subcontrol-position: right;
 }
 
+
+#programmingWindow #code { /* the actual code area */
+	color: #ede0ce;
+	background-color: #2b2a27;
+}
+
+#programmingWindow #splitter { /* drag handle between code and console */
+	color: #ede0ce;
+	background-color: #2b2a27;
+}
+
 #programmingWindow #console {
-	background-color: #fff;
-	color: orange; 
+	background-color: #000;
+	color: #ddd; 
 }
 
 #programmingWindow #unableToProgramLabel {

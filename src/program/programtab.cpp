@@ -149,7 +149,7 @@ ProgramTab::ProgramTab(QString & filename, QWidget *parent) : QFrame(parent)
 	m_updateEnabled = false;
 	QGridLayout *editLayout = new QGridLayout(this);
 	editLayout->setMargin(0);
-	editLayout->setSpacing(0);
+    editLayout->setSpacing(0);
 
     while (m_programWindow == NULL) {
         m_programWindow = qobject_cast<ProgramWindow *>(parent);
@@ -159,6 +159,7 @@ ProgramTab::ProgramTab(QString & filename, QWidget *parent) : QFrame(parent)
     // m_textEdit needs to be initialized before createFooter so
     // some signals get connected properly.
     m_textEdit = new QTextEdit;
+    m_textEdit->setObjectName("code");
     m_textEdit->setFontFamily("Droid Sans Mono");
     m_textEdit->setLineWrapMode(QTextEdit::NoWrap);
     QFontMetrics fm(m_textEdit->currentFont());
@@ -693,8 +694,6 @@ void ProgramTab::sendProgram() {
 		args.append(QDir::toNativeSeparators(m_filename));
 		m_console->setPlainText("");
 
-        // TODO: for Mac, the path is actually Arduino.app/Contents/MacOS/JavaAppLauncher
-        // m_programmerPath.append(QString("/Contents/MacOS/JavaAppLauncher"));
         process->start(m_programmerPath, args);
         return;
 	}

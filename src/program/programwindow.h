@@ -115,7 +115,7 @@ protected slots:
     void print();
     void updateMenu(bool programEnable, bool undoEnable, bool redoEnable,
                     bool cutEnable, bool copyEnable, 
-					const QString & language, const QString & port, 
+                    const QString & language, const QString & port, const QString & board,
 					const QString & programmer, const QString & filename);
 	void updateSerialPorts();
 	void portProcessFinished(int exitCode, QProcess::ExitStatus exitStatus);
@@ -124,6 +124,7 @@ protected slots:
     // The following methods just forward events on to the current tab
     void setLanguage(QAction*);
     void setPort(QAction*);
+    void setBoard(QAction*);
     void setProgrammer(QAction*);
 	void rename();
 	void undo();

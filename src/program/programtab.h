@@ -92,6 +92,7 @@ public:
 public slots:
     void setLanguage(const QString &);
     void setPort(const QString &);
+    void setBoard(const QString &);
     bool loadProgramFile();
 	void textChanged();
     void undo();
@@ -127,7 +128,7 @@ signals:
 	void wantToDelete(int, bool deleteFile);
     void programWindowUpdateRequest(bool programEnable, bool undoEnable, bool redoEnable,
                             bool cutEnable, bool copyEnable, const QString & language,
-                            const QString & port, const QString & programmer, const QString & filename);
+                            const QString & port, const QString & board, const QString & programmer, const QString & filename);
 
 protected:
     QFrame * createFooter();
@@ -143,6 +144,7 @@ protected:
     QPointer<SerialPortComboBox> m_portComboBox;
 	QPointer<QComboBox> m_languageComboBox;
 	QPointer<QComboBox>  m_programmerComboBox;
+    QPointer<QComboBox>  m_boardComboBox;
 	QPointer<QTextEdit> m_textEdit;
 	QPointer<QTextEdit> m_console;
 	QPointer<QTabWidget> m_tabWidget;
@@ -160,6 +162,7 @@ protected:
     bool m_canCut;
     QString m_language;
     QString m_port;
+    QString m_board;
 
 	QPointer<class Highlighter> m_highlighter;
 	QString m_filename;

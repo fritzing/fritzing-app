@@ -143,6 +143,7 @@ ProgramTab::ProgramTab(QString & filename, QWidget *parent) : QFrame(parent)
     m_canRedo = false;
     m_language = "";
     m_port = "";
+    m_board = "";
     m_filename = filename;
 
 	m_updateEnabled = false;
@@ -211,7 +212,7 @@ QFrame * ProgramTab::createFooter() {
     footerFrame->setObjectName("footer"); // Used for styling
 	footerFrame->setSizePolicy(QSizePolicy::Preferred,QSizePolicy::Fixed);
 
-    QLabel * languageLabel = new QLabel(tr("Language:"), this);
+    QLabel * languageLabel = new QLabel(tr("Language"), this);
 
 	m_languageComboBox = new QComboBox();
 	m_languageComboBox->setEditable(false);
@@ -235,7 +236,7 @@ QFrame * ProgramTab::createFooter() {
 	//m_saveButton->setSizePolicy(QSizePolicy::Fixed,QSizePolicy::Fixed);
     connect(m_saveButton, SIGNAL(clicked()), this, SLOT(save()));
 
-    QLabel * portLabel = new QLabel(tr("Port:"), this);
+    QLabel * portLabel = new QLabel(tr("Port"), this);
 
     m_portComboBox = new SerialPortComboBox();
     m_portComboBox->setEditable(false);
@@ -257,7 +258,7 @@ QFrame * ProgramTab::createFooter() {
     connect(m_programButton, SIGNAL(clicked()), this, SLOT(sendProgram()));
 	m_programButton->setEnabled(false);
 
-	QLabel * programmerLabel = new QLabel(tr("Programmer:"), this);
+    QLabel * programmerLabel = new QLabel(tr("Programmer"), this);
 
 	m_programmerComboBox = new QComboBox();
 	m_programmerComboBox->setEditable(false);
@@ -273,6 +274,22 @@ QFrame * ProgramTab::createFooter() {
 	}
 	chooseProgrammerAux(currentProgrammer, false);
 
+    QLabel * boardLabel = new QLabel(tr("Board"), this);
+
+    m_boardComboBox = new QComboBox();
+    m_boardComboBox->setEditable(false);
+    m_boardComboBox->setEnabled(true);
+    updateBoards();
+
+    QString currentBoard = settings.value("programwindow/board", "").toString();
+    if (currentBoard.isEmpty()) {
+        currentBoard = m_boardComboBox->currentText();
+    }
+    else if (!m_programWindow->getBoardNames().contains(currentBoard)) {
+        currentBoard = m_boardComboBox->currentText();
+    }
+    setBoard(currentBoard);
+
 	QHBoxLayout *footerLayout = new QHBoxLayout;
 
 	footerLayout->setMargin(0);
@@ -283,11 +300,13 @@ QFrame * ProgramTab::createFooter() {
 
     footerLayout->addSpacerItem(new QSpacerItem(5,0,QSizePolicy::Expanding,QSizePolicy::Minimum));
 
-    footerLayout->addWidget(languageLabel);
+    //footerLayout->addWidget(languageLabel);
     footerLayout->addWidget(m_languageComboBox);
-    footerLayout->addWidget(portLabel);
+    //footerLayout->addWidget(boardLabel);
+    footerLayout->addWidget(m_boardComboBox);
+    //footerLayout->addWidget(portLabel);
     footerLayout->addWidget(m_portComboBox);
-	footerLayout->addWidget(programmerLabel);
+    //footerLayout->addWidget(programmerLabel);
 	footerLayout->addWidget(m_programmerComboBox);
 	footerLayout->addWidget(m_programButton);
 
@@ -297,6 +316,7 @@ QFrame * ProgramTab::createFooter() {
     connect(m_languageComboBox, SIGNAL(currentIndexChanged(const QString &)), this, SLOT(setLanguage(const QString &)));
     connect(m_portComboBox, SIGNAL(currentIndexChanged(const QString &)), this, SLOT(setPort(const QString &)));
 	connect(m_portComboBox, SIGNAL(aboutToShow()), this, SLOT(updateSerialPorts()), Qt::DirectConnection);
+    connect(m_boardComboBox, SIGNAL(currentIndexChanged(const QString &)), this, SLOT(setBoard(const QString &)));
     connect(m_programmerComboBox, SIGNAL(activated(int)), this, SLOT(chooseProgrammerTimed(int)));
 
     QVBoxLayout * superLayout = new QVBoxLayout();
@@ -346,6 +366,16 @@ void ProgramTab::setPort(const QString & newPort) {
         updateMenu();
 		QSettings settings;
 		settings.setValue("programwindow/port", newPort);
+}
+
+void ProgramTab::setBoard(const QString & newBoard) {
+        DebugDialog::debug(QString("Setting board to %1").arg(newBoard));
+        m_board = newBoard;
+        m_boardComboBox->setCurrentIndex(m_boardComboBox->findText(newBoard));
+        m_boardComboBox->setToolTip(newBoard);
+        updateMenu();
+        QSettings settings;
+        settings.setValue("programwindow/board", newBoard);
 }
 
 bool ProgramTab::loadProgramFile() {
@@ -790,7 +820,7 @@ void ProgramTab::updateMenu() {
 
         // Emit a signal so that the ProgramWindow can update its own UI.
 		emit programWindowUpdateRequest(m_programButton ? m_programButton->isEnabled() : false, m_canUndo, m_canRedo, m_canCut, m_canCopy, 
-			m_language, m_port, m_programmerPath.isEmpty() ? ProgramWindow::LocateName : m_programmerPath, m_filename);
+            m_language, m_port, m_board, m_programmerPath.isEmpty() ? ProgramWindow::LocateName : m_programmerPath, m_filename);
 }
 
 void ProgramTab::updateProgrammerComboBox(const QString & programmer) {
@@ -825,7 +855,25 @@ void ProgramTab::updateProgrammers() {
 
 void ProgramTab::updateBoards() {
 
-    // TODO: stub
+    QString currentBoard;
+    int index = m_boardComboBox->currentIndex();
+    if (index >= 0) {
+        currentBoard = m_boardComboBox->itemData(index).toString();
+    }
+
+    while (m_boardComboBox->count() > 0) {
+        m_boardComboBox->removeItem(0);
+    }
+
+    QHash<QString, QString> boardNames = m_programWindow->getBoardNames();
+    foreach (QString name, boardNames.keys()) {
+        m_boardComboBox->addItem(name, boardNames.value(name));
+    }
+
+    if (!currentBoard.isEmpty()) {
+        m_boardComboBox->setCurrentIndex(m_boardComboBox->findData(currentBoard));
+        m_boardComboBox->setToolTip(currentBoard);
+    }
 
 }
 

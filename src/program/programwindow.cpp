@@ -381,6 +381,8 @@ void ProgramWindow::setup()
         addBoard(name, boardNames.value(name));
     }
 
+    connect(m_boardMenu, SIGNAL(triggered(QAction*)), this, SLOT(setBoard(QAction*)));
+
     m_serialPortMenu = new QMenu(tr("Port"), this);
     m_programMenu->addMenu(m_serialPortMenu);
 
@@ -575,9 +577,9 @@ ProgramTab * ProgramWindow::addTab() {
     connect(programTab, SIGNAL(wantToRename(int)), this, SLOT(tabRename(int)));
     connect(programTab, SIGNAL(wantToDelete(int, bool)), this, SLOT(tabDelete(int, bool)), Qt::DirectConnection);
     connect(programTab, 
-		SIGNAL(programWindowUpdateRequest(bool, bool, bool, bool, bool, const QString &, const QString &, const QString &, const QString &)), 
+        SIGNAL(programWindowUpdateRequest(bool, bool, bool, bool, bool, const QString &, const QString &, const QString &, const QString &, const QString &)),
 		this, 
-		SLOT(updateMenu(bool, bool, bool, bool, bool, const QString &, const QString &, const QString &, const QString &)));
+        SLOT(updateMenu(bool, bool, bool, bool, bool, const QString &, const QString &, const QString &, const QString &, const QString &)));
 	int ix = m_tabWidget->addTab(programTab, name);
     m_tabWidget->setCurrentIndex(ix);
 	UntitledIndex++;
@@ -609,7 +611,7 @@ void ProgramWindow::closeTab(int index) {
  *  - cut/copy
  */
 void ProgramWindow::updateMenu(bool programEnable, bool undoEnable, bool redoEnable, bool cutEnable, bool copyEnable, 
-							   const QString & language, const QString & port, const QString & programmer, const QString & filename) 
+                               const QString & language, const QString & port, const QString & board, const QString & programmer, const QString & filename)
 {
 	ProgramTab * programTab = currentWidget();
 	m_saveAction->setEnabled(programTab->isModified());
@@ -625,6 +627,10 @@ void ProgramWindow::updateMenu(bool programEnable, bool undoEnable, bool redoEna
     QAction *portAction = m_portActions.value(port);
     if (portAction) {
         portAction->setChecked(true);
+    }
+    QAction *boardAction = m_boardActions.value(board);
+    if (boardAction) {
+        boardAction->setChecked(true);
     }
 
 	QAction *programmerAction = NULL;
@@ -666,6 +672,10 @@ void ProgramWindow::setLanguage(QAction* action) {
 
 void ProgramWindow::setPort(QAction* action) {
     currentWidget()->setPort(action->text());
+}
+
+void ProgramWindow::setBoard(QAction* action) {
+    currentWidget()->setBoard(action->text());
 }
 
 void ProgramWindow::setProgrammer(QAction* action) {
@@ -1019,7 +1029,8 @@ const QHash<QString, QString> ProgramWindow::getBoardNames() {
 void ProgramWindow::initBoards() {
     //if (currentLanguage.compare("arduino", Qt::CaseInsensitive) == 0) {
 
-        // TODO: read from actual Arduino installation
+        // TODO: read from actual Arduino installation or our own Arduino syntax file
+        //       make tab-dependent
         // see https://github.com/arduino/Arduino/blob/ide-1.5.x/build/shared/manpage.adoc#options
 
         BoardNames.insert("Arduino UNO", "arduino:avr:uno");

@@ -683,9 +683,10 @@ void ProgramTab::sendProgram() {
 		connect(process, SIGNAL(readyReadStandardOutput()), this, SLOT(programProcessReadyRead()));
 
 		QStringList args;
-        args.append(QString("--verbose"));
+        //args.append(QString("--verbose"));
         args.append(QString("--board"));
-        args.append(QString("arduino:avr:uno"));
+        QString boardDef = m_programWindow->getBoardNames().value(m_boardComboBox->currentText());
+        args.append(boardDef);
         args.append(QString("--port"));
         args.append(m_portComboBox->currentText());
         args.append(QString("--upload"));
@@ -694,7 +695,6 @@ void ProgramTab::sendProgram() {
 
         // TODO: for Mac, the path is actually Arduino.app/Contents/MacOS/JavaAppLauncher
         // m_programmerPath.append(QString("/Contents/MacOS/JavaAppLauncher"));
-
         process->start(m_programmerPath, args);
         return;
 	}

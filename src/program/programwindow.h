@@ -89,6 +89,7 @@ public:
     QStringList getAvailableLanguages();
     Syntaxer * getSyntaxerForLanguage(QString language);
 	const QHash<QString, QString> getProgrammerNames();
+    const QHash<QString, QString> getBoardNames();
 	void loadProgramFileNew();
 	bool alreadyHasProgram(const QString &);
 	void updateLink(const QString & filename, const QString & language, const QString & programmer, bool addlink, bool strong);
@@ -152,9 +153,11 @@ protected:
 	bool prepSave(class ProgramTab *, bool saveAsFlag);
 	bool beforeClosingTab(int index, bool showCancel);
 	QAction * addProgrammer(const QString & name, const QString & path);
+    QAction * addBoard(const QString &name, const QString &path);
 	inline ProgramTab * currentWidget();
 	inline ProgramTab * indexWidget(int index);
 	void initProgrammerNames();
+    void initBoards();
 	QString getExtensionString();
 	QStringList getExtensions();
 	bool beforeClosing(bool showCancel, bool & discard); // returns true if close, false if cancel
@@ -185,7 +188,9 @@ protected:
     QHash<QString, QAction *> m_languageActions;
     QHash<QString, QAction *> m_portActions;
     QHash<QString, QAction *> m_programmerActions;
+    QHash<QString, QAction *> m_boardActions;
 	QActionGroup * m_programmerActionGroup;
+    QActionGroup * m_boardActionGroup;
 	QActionGroup * m_serialPortActionGroup;
 	QMenu * m_programmerMenu;
     QMenu * m_boardMenu;

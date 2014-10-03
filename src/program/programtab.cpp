@@ -252,7 +252,7 @@ QFrame * ProgramTab::createFooter() {
 	}
     setPort(currentPort);
 
-	m_programButton = new QPushButton(tr("Program"));
+    m_programButton = new QPushButton(tr("Upload"));
 	m_programButton->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
     connect(m_programButton, SIGNAL(clicked()), this, SLOT(sendProgram()));
 	m_programButton->setEnabled(false);
@@ -653,17 +653,18 @@ void ProgramTab::sendProgram() {
 		connect(process, SIGNAL(readyReadStandardOutput()), this, SLOT(programProcessReadyRead()));
 
 		QStringList args;
-        args.append(QString(" --verbose"));
-        args.append(QString(" --board "));
+        args.append(QString("--verbose"));
+        args.append(QString("--board"));
         args.append(QString("arduino:avr:uno"));
-        args.append(QString(" --port "));
+        args.append(QString("--port"));
         args.append(m_portComboBox->currentText());
-        args.append(QString(" --upload "));
+        args.append(QString("--upload"));
 		args.append(QDir::toNativeSeparators(m_filename));
 		m_console->setPlainText("");
 
         // TODO: for Mac, the path is actually Arduino.app/Contents/MacOS/JavaAppLauncher
-		
+        // m_programmerPath.append(QString("/Contents/MacOS/JavaAppLauncher"));
+
         process->start(m_programmerPath, args);
         return;
 	}
@@ -820,6 +821,12 @@ void ProgramTab::updateProgrammers() {
 	if (!currentProgrammer.isEmpty()) {
 		updateProgrammerComboBox(currentProgrammer);
 	}
+}
+
+void ProgramTab::updateBoards() {
+
+    // TODO: stub
+
 }
 
 void ProgramTab::updateSerialPorts() {

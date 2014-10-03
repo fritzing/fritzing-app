@@ -116,6 +116,7 @@ public slots:
 	void programProcessReadyRead();
     void updateMenu();
 	void updateSerialPorts();
+    void updateBoards();
 
 signals:
 	// TODO: since ProgramTab has m_programWindow most/all of these signals could be replaced by direct

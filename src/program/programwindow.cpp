@@ -126,6 +126,7 @@ const QString ProgramWindow::LocateName = "locate";
 QString ProgramWindow::NoSerialPortName;
 
 static QHash<QString, QString> ProgrammerNames;
+static QHash<QString, QString> BoardNames;
 
 ProgramWindow::ProgramWindow(QWidget *parent)
 	: FritzingWindow("", untitledFileCount(), "", parent)
@@ -155,6 +156,10 @@ ProgramWindow::ProgramWindow(QWidget *parent)
 	if (m_languages.count() == 0) {
 		initLanguages();
 	}
+
+    if (BoardNames.count() == 0) {
+        initBoards();
+    }
 
 	if (NoSerialPortName.isEmpty()) {
 		NoSerialPortName = tr("No ports found");
@@ -369,7 +374,12 @@ void ProgramWindow::setup()
 
     m_boardMenu = new QMenu(tr("Board"), this);
     m_programMenu->addMenu(m_boardMenu);
-    // TODO: list available microcontroller boards for this language
+
+    m_boardActionGroup = new QActionGroup(this);
+    QHash<QString, QString> boardNames = getBoardNames();
+    foreach (QString name, boardNames.keys()) {
+        addBoard(name, boardNames.value(name));
+    }
 
     m_serialPortMenu = new QMenu(tr("Port"), this);
     m_programMenu->addMenu(m_serialPortMenu);
@@ -382,8 +392,8 @@ void ProgramWindow::setup()
 
     m_programMenu->addSeparator();
 
-    m_programAction = new QAction(tr("Program"), this);
-    m_programAction->setStatusTip(tr("Load the current program onto a microcontroller"));
+    m_programAction = new QAction(tr("Upload"), this);
+    m_programAction->setStatusTip(tr("Upload the current program onto a microcontroller"));
     m_programAction->setEnabled(false);
     connect(m_programAction, SIGNAL(triggered()), this, SLOT(sendProgram()));
     m_programMenu->addAction(m_programAction);
@@ -785,6 +795,8 @@ bool ProgramWindow::prepSave(ProgramTab * programTab, bool saveAsFlag)
 QStringList ProgramWindow::getSerialPorts() {
 	QStringList ports = getSerialPortsAux();
 
+    // TODO: use QSerial for listing ports, which is available since Qt 5.1
+
 	/*
 	// on the pc, handy for testing the UI when there are no serial ports
 	ports.removeOne("COM0");
@@ -999,6 +1011,34 @@ QAction * ProgramWindow::addProgrammer(const QString & name, const QString & pat
     m_programmerActionGroup->addAction(currentAction);
 	return currentAction;
 }
+
+const QHash<QString, QString> ProgramWindow::getBoardNames() {
+    return BoardNames;
+}
+
+void ProgramWindow::initBoards() {
+    //if (currentLanguage.compare("arduino", Qt::CaseInsensitive) == 0) {
+
+        // TODO: read from actual Arduino installation
+        // see https://github.com/arduino/Arduino/blob/ide-1.5.x/build/shared/manpage.adoc#options
+
+        BoardNames.insert("Arduino UNO", "arduino:avr:uno");
+        BoardNames.insert("Arduino Mega or Mega 2560", "arduino:avr:mega");
+        BoardNames.insert("Arduino Yún", "arduino:avr:yun");
+    //}
+}
+
+QAction * ProgramWindow::addBoard(const QString & name, const QString & path)
+{
+    QAction * currentAction = new QAction(name, this);
+    currentAction->setCheckable(true);
+    currentAction->setData(path);
+    m_boardActions.insert(name, currentAction);
+    m_boardMenu->addAction(currentAction);
+    m_boardActionGroup->addAction(currentAction);
+    return currentAction;
+}
+
 
 void ProgramWindow::loadProgramFile() {
     DebugDialog::debug("loading program file");

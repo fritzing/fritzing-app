@@ -681,6 +681,13 @@
                 </iconView>
             </views>
         </instance>
+            <instance moduleIdRef="udoo_dual" modelIndex="48" path="parts/core/udoo_dual.fzp">
+            <views>
+                <iconView layer="icon">
+                    <geometry z="-1" x="-1" y="-1"/>
+                </iconView>
+            </views>
+        </instance>
 		        <instance moduleIdRef="teensy_3.1" modelIndex="48" path="parts/core/teensy_3.1.fzp">
             <views>
                 <iconView layer="icon">

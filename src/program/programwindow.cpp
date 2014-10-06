@@ -570,7 +570,7 @@ void ProgramWindow::setTitle(const QString & filename) {
  * and setting an appropriate filename.
  */
 ProgramTab * ProgramWindow::addTab() {
-    QString name = (UntitledIndex == 1) ? untitledFileName() : tr("%1 %2").arg(untitledFileName()).arg(UntitledIndex);
+    QString name = (UntitledIndex == 1) ? untitledFileName() : tr("%1%2").arg(untitledFileName()).arg(UntitledIndex);
     ProgramTab * programTab = new ProgramTab(name, m_tabWidget);
     connect(programTab, SIGNAL(wantToSave(int)), this, SLOT(tabSave(int)));
     connect(programTab, SIGNAL(wantToSaveAs(int)), this, SLOT(tabSaveAs(int)));

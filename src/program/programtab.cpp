@@ -674,7 +674,6 @@ void ProgramTab::sendProgram() {
         return;
 	}
 
-    // see https://github.com/arduino/Arduino/blob/ide-1.5.x/build/shared/manpage.adoc
 	if (language.compare("arduino", Qt::CaseInsensitive) == 0) {
 		QProcess * process = new QProcess(this);
 		process->setProcessChannelMode(QProcess::MergedChannels);
@@ -683,7 +682,23 @@ void ProgramTab::sendProgram() {
 		connect(process, SIGNAL(finished(int, QProcess::ExitStatus)), this, SLOT(programProcessFinished(int, QProcess::ExitStatus)));
 		connect(process, SIGNAL(readyReadStandardOutput()), this, SLOT(programProcessReadyRead()));
 
+        // Make sure .ino is in its own folder with same name (as required by Arduino compiler),
+        // otherwise create a subfolder and copy the file there.
+        QFileInfo fileInfo(m_filename);
+        QString tmpFilePath = fileInfo.absoluteFilePath();
+        QString dirName = fileInfo.dir().dirName();
+        QString sketchName = fileInfo.baseName();
+        if (dirName.compare(sketchName, Qt::CaseInsensitive) != 0) {
+            QString tmpSketchName(sketchName.append("_TMP"));
+            fileInfo.dir().mkdir(tmpSketchName);
+            tmpFilePath = fileInfo.absolutePath().append("/").append(tmpSketchName).append("/")
+                    .append(fileInfo.baseName().append("_TMP.").append(fileInfo.suffix()));
+            if (QFile::exists(tmpFilePath)) QFile::remove(tmpFilePath);
+            QFile::copy(fileInfo.absoluteFilePath(), tmpFilePath);
+        }
+
 		QStringList args;
+        // see https://github.com/arduino/Arduino/blob/ide-1.5.x/build/shared/manpage.adoc
         //args.append(QString("--verbose"));
         args.append(QString("--board"));
         QString boardDef = m_programWindow->getBoardNames().value(m_boardComboBox->currentText());
@@ -691,9 +706,9 @@ void ProgramTab::sendProgram() {
         args.append(QString("--port"));
         args.append(m_portComboBox->currentText());
         args.append(QString("--upload"));
-		args.append(QDir::toNativeSeparators(m_filename));
-		m_console->setPlainText("");
+        args.append(QDir::toNativeSeparators(tmpFilePath));
 
+        m_console->setPlainText("");
         process->start(m_programmerPath, args);
         return;
 	}

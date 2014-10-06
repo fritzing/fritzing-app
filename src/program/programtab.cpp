@@ -173,9 +173,6 @@ ProgramTab::ProgramTab(QString & filename, QWidget *parent) : QFrame(parent)
     connect(m_textEdit, SIGNAL(copyAvailable(bool)), this, SLOT(enableCut(bool))); // Reuse copy signal for cut
     m_highlighter = new Highlighter(m_textEdit);
 
-	QFrame * footerFrame = createFooter();
-	editLayout->addWidget(footerFrame,0,0);
-
 	QSplitter * splitter = new QSplitter;
 	splitter->setObjectName("splitter");
 	splitter->setOrientation(Qt::Vertical);
@@ -192,6 +189,9 @@ ProgramTab::ProgramTab(QString & filename, QWidget *parent) : QFrame(parent)
 
 	splitter->setStretchFactor(0, 8);
     splitter->setStretchFactor(1, 2);
+
+    QFrame * footerFrame = createFooter();
+    editLayout->addWidget(footerFrame,2,0);
 }
 
 ProgramTab::~ProgramTab()

@@ -367,6 +367,7 @@ void ProgramWindow::initMenus(QMenuBar * menubar) {
     m_programMenu->addSeparator();
 
     m_programAction = new QAction(tr("Upload"), this);
+    m_programAction->setShortcut(tr("Ctrl+U"));
     m_programAction->setStatusTip(tr("Upload the current program onto a microcontroller"));
     m_programAction->setEnabled(false);
     connect(m_programAction, SIGNAL(triggered()), this, SLOT(sendProgram()));

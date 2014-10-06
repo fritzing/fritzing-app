@@ -82,6 +82,7 @@ public:
 	~ProgramWindow();
 
 	void setup();
+    void initMenus(QMenuBar * menubar);
 	void linkFiles(const QList<LinkedFile *> &, const QString & alternativePath);
 	const QString defaultSaveFolder();
 
@@ -94,7 +95,8 @@ public:
 	bool alreadyHasProgram(const QString &);
 	void updateLink(const QString & filename, const QString & language, const QString & programmer, bool addlink, bool strong);
     void showMenus(bool);
-    void initViewMenu(QList<QAction *> &);
+    void createViewMenuActions(QList<QAction *> &);
+    void print();
 
 signals:
 	void closed();
@@ -112,7 +114,6 @@ protected slots:
     void duplicateTab();
 	void tabBeforeClosing(int, bool & ok);
     void tabDelete(int index, bool deleteFile);
-    void print();
     void updateMenu(bool programEnable, bool undoEnable, bool redoEnable,
                     bool cutEnable, bool copyEnable, 
                     const QString & language, const QString & port, const QString & board,
@@ -197,9 +198,9 @@ protected:
     QMenu * m_boardMenu;
 	QMenu * m_serialPortMenu;
 	QStringList m_ports;				// temporary storage for linux
-    QMenu * m_fileMenu;
     QMenu* m_editMenu;
     QMenu* m_viewMenu;
+    QList<QAction *> m_viewMenuActions;
     QMenu * m_programMenu;
 };
 

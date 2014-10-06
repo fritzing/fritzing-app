@@ -824,7 +824,7 @@ void MainWindow::createOpenRecentMenu() {
 }
 
 void MainWindow::updateFileMenu() {
-    m_printAct->setEnabled(m_currentGraphicsView != NULL);
+    m_printAct->setEnabled(m_currentGraphicsView != NULL || m_currentWidget->contentView() == m_programView);
 
 	updateRecentFileActions();
 	m_orderFabAct->setEnabled(true);
@@ -1202,7 +1202,7 @@ void MainWindow::createViewMenuActions(bool showWelcome) {
         QList<QAction *> viewMenuActions;
 		if (m_welcomeView) viewMenuActions << m_showWelcomeAct;
         viewMenuActions << m_showBreadboardAct << m_showSchematicAct << m_showPCBAct << m_showProgramAct;
-        m_programView->initViewMenu(viewMenuActions);
+        m_programView->createViewMenuActions(viewMenuActions);
     }
 
 	m_showPartsBinIconViewAct = new QAction(tr("Show Parts Bin Icon View"), this);
@@ -1315,6 +1315,7 @@ void MainWindow::createMenus()
     createEditMenu();
     createPartMenu();
     createViewMenu();
+    m_programView->initMenus(menuBar());
     createWindowMenu();
     createTraceMenus();
     createHelpMenu();
@@ -2680,9 +2681,9 @@ void MainWindow::hideShowProgramMenu() {
     if (m_currentWidget == NULL) return;
 
     bool show = m_programView == NULL || m_currentWidget->contentView() != m_programView;
+    //if (m_fileMenu) m_fileMenu->menuAction()->setVisible(show);
     if (m_viewMenu) m_viewMenu->menuAction()->setVisible(show);
     if (m_partMenu) m_partMenu->menuAction()->setVisible(show);
-    if (m_fileMenu) m_fileMenu->menuAction()->setVisible(show);
     if (m_editMenu) m_editMenu->menuAction()->setVisible(show);
     if (m_programView) m_programView->showMenus(!show);
 }

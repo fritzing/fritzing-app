@@ -152,6 +152,10 @@ void MainWindow::initNames()
 }
 
 void MainWindow::print() {
+    if (m_currentWidget->contentView() == m_programView) {
+        m_programView->print();
+    }
+
     if (m_currentGraphicsView == NULL) return;
 
 	#ifndef QT_NO_PRINTER

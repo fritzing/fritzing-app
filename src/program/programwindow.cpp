@@ -129,7 +129,7 @@ static QHash<QString, QString> ProgrammerNames;
 static QHash<QString, QString> BoardNames;
 
 ProgramWindow::ProgramWindow(QWidget *parent)
-	: FritzingWindow("", untitledFileCount(), "", parent)
+    : FritzingWindow("", untitledFileCount(), "", parent)
 {
     QFile styleSheet(":/resources/styles/programwindow.qss");
 
@@ -227,71 +227,10 @@ void ProgramWindow::setup()
 	}
 
 	installEventFilter(this);
+}
 
-    // Setup new menu bar for the programming window
-    QMenuBar * menubar = NULL;
-    if (parentWidget()) {
-        QMainWindow * mainWindow = qobject_cast<QMainWindow *>(parentWidget());
-        if (mainWindow) menubar = mainWindow->menuBar();
-    }
-    if (menubar == NULL) menubar = menuBar();
-
-    m_fileMenu = menubar->addMenu(tr("&File"));
-
-    QAction *currentAction = new QAction(tr("New Code File"), this);
-    currentAction->setShortcut(tr("Ctrl+N"));
-    currentAction->setStatusTip(tr("Create a new program"));
-    connect(currentAction, SIGNAL(triggered()), this, SLOT(addTab()));
-    m_fileMenu->addAction(currentAction);
-
-    currentAction = new QAction(tr("&Open Code File..."), this);
-    currentAction->setShortcut(tr("Ctrl+O"));
-    currentAction->setStatusTip(tr("Open a program"));
-    connect(currentAction, SIGNAL(triggered()), this, SLOT(loadProgramFile()));
-    m_fileMenu->addAction(currentAction);
-
-    m_fileMenu->addSeparator();
-
-    m_saveAction = new QAction(tr("&Save Code File"), this);
-    m_saveAction->setShortcut(tr("Ctrl+S"));
-    m_saveAction->setStatusTip(tr("Save the current program"));
-    connect(m_saveAction, SIGNAL(triggered()), this, SLOT(save()));
-    m_fileMenu->addAction(m_saveAction);
-
-    currentAction = new QAction(tr("Rename Code File"), this);
-    currentAction->setStatusTip(tr("Rename the current program"));
-    connect(currentAction, SIGNAL(triggered()), this, SLOT(rename()));
-    m_fileMenu->addAction(currentAction);
-
-    currentAction = new QAction(tr("Duplicate tab"), this);
-    currentAction->setStatusTip(tr("Copies the current program into a new tab"));
-    connect(currentAction, SIGNAL(triggered()), this, SLOT(duplicateTab()));
-    m_fileMenu->addAction(currentAction);
-
-    m_fileMenu->addSeparator();
-
-    currentAction = new QAction(tr("Remove tab"), this);
-    currentAction->setShortcut(tr("Ctrl+W"));
-    currentAction->setStatusTip(tr("Remove the current program from the sketch"));
-    connect(currentAction, SIGNAL(triggered()), this, SLOT(closeCurrentTab()));
-    m_fileMenu->addAction(currentAction);
-
-    m_fileMenu->addSeparator();
-
-    m_printAction = new QAction(tr("&Print..."), this);
-    m_printAction->setShortcut(tr("Ctrl+P"));
-    m_printAction->setStatusTip(tr("Print the current program"));
-    connect(m_printAction, SIGNAL(triggered()), this, SLOT(print()));
-    m_fileMenu->addAction(m_printAction);
-
-    m_fileMenu->addSeparator();
-
-    currentAction = new QAction(tr("&Quit"), this);
-    currentAction->setShortcut(tr("Ctrl+Q"));
-    currentAction->setStatusTip(tr("Quit the application"));
-    currentAction->setMenuRole(QAction::QuitRole);
-    connect(currentAction, SIGNAL(triggered()), qApp, SLOT(closeAllWindows2()));
-    m_fileMenu->addAction(currentAction);
+void ProgramWindow::initMenus(QMenuBar * menubar) {
+    QAction *currentAction;
 
     m_editMenu = menubar->addMenu(tr("&Edit"));
 
@@ -340,9 +279,42 @@ void ProgramWindow::setup()
 
     m_programMenu = menubar->addMenu(tr("&Code"));
 
+
+    currentAction = new QAction(tr("New Code File"), this);
+    currentAction->setShortcut(tr("Ctrl+N"));
+    currentAction->setStatusTip(tr("Create a new program"));
+    connect(currentAction, SIGNAL(triggered()), this, SLOT(addTab()));
+    m_programMenu->addAction(currentAction);
+
+    currentAction = new QAction(tr("&Open Code File..."), this);
+    currentAction->setShortcut(tr("Ctrl+O"));
+    currentAction->setStatusTip(tr("Open a program"));
+    connect(currentAction, SIGNAL(triggered()), this, SLOT(loadProgramFile()));
+    m_programMenu->addAction(currentAction);
+
+    m_saveAction = new QAction(tr("&Save Code File"), this);
+    m_saveAction->setShortcut(tr("Ctrl+S"));
+    m_saveAction->setStatusTip(tr("Save the current program"));
+    connect(m_saveAction, SIGNAL(triggered()), this, SLOT(save()));
+    m_programMenu->addAction(m_saveAction);
+
+    currentAction = new QAction(tr("Rename Code File"), this);
+    currentAction->setStatusTip(tr("Rename the current program"));
+    connect(currentAction, SIGNAL(triggered()), this, SLOT(rename()));
+    m_programMenu->addAction(currentAction);
+
+    currentAction = new QAction(tr("Remove tab"), this);
+    currentAction->setShortcut(tr("Ctrl+W"));
+    currentAction->setStatusTip(tr("Remove the current program from the sketch"));
+    connect(currentAction, SIGNAL(triggered()), this, SLOT(closeCurrentTab()));
+    m_programMenu->addAction(currentAction);
+
+    m_programMenu->addSeparator();
+
     QMenu *languageMenu = new QMenu(tr("Language"), this);
     m_programMenu->addMenu(languageMenu);
 
+    QSettings settings;
 	QString currentLanguage = settings.value("programwindow/language", "").toString();
 	QStringList languages = getAvailableLanguages();
     QActionGroup *languageActionGroup = new QActionGroup(this);
@@ -401,6 +373,19 @@ void ProgramWindow::setup()
     m_programMenu->addAction(m_programAction);
 
     m_viewMenu = menubar->addMenu(tr("&View"));
+    foreach (QAction * action, m_viewMenuActions) {
+        m_viewMenu->addAction(action);
+    }
+}
+
+void ProgramWindow::showMenus(bool show) {
+    if (m_editMenu) m_editMenu->menuAction()->setVisible(show);
+    if (m_programMenu) m_programMenu->menuAction()->setVisible(show);
+    if (m_viewMenu) m_viewMenu->menuAction()->setVisible(show);
+}
+
+void ProgramWindow::createViewMenuActions(QList<QAction *> & actions) {
+    m_viewMenuActions = actions;
 }
 
 void ProgramWindow::linkFiles(const QList<LinkedFile *> & linkedFiles, const QString & alternativePath) {
@@ -1205,17 +1190,3 @@ void ProgramWindow::portProcessReadyRead() {
         }
     }
 }
-
-void ProgramWindow::showMenus(bool show) {
-    if (m_fileMenu) m_fileMenu->menuAction()->setVisible(show);
-    if (m_editMenu) m_editMenu->menuAction()->setVisible(show);
-    if (m_programMenu) m_programMenu->menuAction()->setVisible(show);
-    if (m_viewMenu) m_viewMenu->menuAction()->setVisible(show);
-}
-
-void ProgramWindow::initViewMenu(QList<QAction *> & actions) {
-    foreach (QAction * action, actions) {
-        m_viewMenu->addAction(action);
-    }
-}
-

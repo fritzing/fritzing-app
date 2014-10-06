@@ -3042,7 +3042,7 @@ void MainWindow::initProgrammingWidget() {
 
 	m_programView->setup();
 
-	SketchAreaWidget * sketchAreaWidget = new SketchAreaWidget(m_programView, this);
+    SketchAreaWidget * sketchAreaWidget = new SketchAreaWidget(m_programView, this, false, false);
 	addTab(sketchAreaWidget, tr("Code"));
 }
 
@@ -3097,7 +3097,7 @@ void MainWindow::orderFabHoverLeave() {
 void MainWindow::initWelcomeView() {
     m_welcomeView = new WelcomeView(this);
     m_welcomeView->setObjectName("WelcomeView");
-	SketchAreaWidget * sketchAreaWidget = new SketchAreaWidget(m_welcomeView, this);
+    SketchAreaWidget * sketchAreaWidget = new SketchAreaWidget(m_welcomeView, this, false, false);
     addTab(sketchAreaWidget, ":/resources/images/icons/TabWidgetWelcomeActive_icon.png", tr("Welcome"), true);
 }
 

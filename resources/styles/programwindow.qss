@@ -91,11 +91,11 @@
 
 #programmingWindow #code { /* the actual code area */
 	color: #ede0ce;
-	background-color: #2b2a27;
+	background-color: #1c1a18;
 }
 
 #programmingWindow #splitter { /* drag handle between code and console */
-	color: #ede0ce;
+	color: #d7d8d8;
 	background-color: #2b2a27;
 }
 

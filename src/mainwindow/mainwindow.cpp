@@ -3043,7 +3043,7 @@ void MainWindow::initProgrammingWidget() {
 	m_programView->setup();
 
     SketchAreaWidget * sketchAreaWidget = new SketchAreaWidget(m_programView, this, false, false);
-	addTab(sketchAreaWidget, tr("Code"));
+    addTab(sketchAreaWidget, ":/resources/images/icons/TabWidgetCodeActive_icon.png", tr("Code"), true);
 }
 
 void MainWindow::orderFabHoverEnter() {

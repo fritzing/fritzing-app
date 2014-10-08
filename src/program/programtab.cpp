@@ -239,19 +239,19 @@ void ProgramTab::showEvent(QShowEvent *event) {
 
 void ProgramTab::createToolBarMenu() {
 
-    m_newButton = new SketchToolButton("New", this, m_programWindow->m_newAction);
+    m_newButton = new SketchToolButton("NewCode", this, m_programWindow->m_newAction);
     m_newButton->setText(tr("New"));
     m_newButton->setObjectName("newCodeButton");
     m_newButton->setEnabledIcon();					// seems to need this to display button icon first time
     m_leftButtonsContainer->addWidget(m_newButton);
 
-    m_openButton = new SketchToolButton("Open", this, m_programWindow->m_openAction);
+    m_openButton = new SketchToolButton("OpenCode", this, m_programWindow->m_openAction);
     m_openButton->setText(tr("New"));
     m_openButton->setObjectName("openCodeButton");
     m_openButton->setEnabledIcon();					// seems to need this to display button icon first time
     m_leftButtonsContainer->addWidget(m_openButton);
 
-    m_saveButton = new SketchToolButton("Save", this, m_programWindow->m_saveAction);
+    m_saveButton = new SketchToolButton("SaveCode", this, m_programWindow->m_saveAction);
     m_saveButton->setText(tr("New"));
     m_saveButton->setObjectName("saveCodeButton");
     m_saveButton->setEnabledIcon();					// seems to need this to display button icon first time
@@ -364,7 +364,13 @@ void ProgramTab::createToolBarMenu() {
 
     m_rightButtonsContainer->addWidget(footerFrame);
 
-    m_programButton = new SketchToolButton("Upload", this, m_programWindow->m_programAction);
+//    m_monitorButton = new SketchToolButton("MonitorCode", this, m_programWindow->m_monitorAction);
+//    m_monitorButton->setText(tr("Serial Monitor"));
+//    m_monitorButton->setObjectName("monitorCodeButton");
+//    m_monitorButton->setEnabledIcon();					// seems to need this to display button icon first time
+//    m_rightButtonsContainer->addWidget(m_monitorButton);
+
+    m_programButton = new SketchToolButton("ProgramCode", this, m_programWindow->m_programAction);
     m_programButton->setText(tr("Upload"));
     m_programButton->setObjectName("programCodeButton");
     m_programButton->setEnabledIcon();					// seems to need this to display button icon first time

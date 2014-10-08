@@ -67,16 +67,16 @@
         <file>resources/images/icons/TabWidgetCodeActive_icon.png</file>
         <file>resources/images/icons/TabWidgetCodeHover_icon.png</file>
         <file>resources/images/icons/TabWidgetSchematicActive_icon.png</file>
-        <file>resources/images/icons/TabWidgetSchematicInactive_icon.png</file>	
+        <file>resources/images/icons/TabWidgetSchematicInactive_icon.png</file>
         <file>resources/images/icons/TabWidgetSchematicHover_icon.png</file>
         <file>resources/images/icons/TabWidgetBreadboardActive_icon.png</file>
-        <file>resources/images/icons/TabWidgetBreadboardInactive_icon.png</file>	
+        <file>resources/images/icons/TabWidgetBreadboardInactive_icon.png</file>
         <file>resources/images/icons/TabWidgetBreadboardHover_icon.png</file>
         <file>resources/images/icons/TabWidgetWelcomeActive_icon.png</file>
-        <file>resources/images/icons/TabWidgetWelcomeInactive_icon.png</file>	
+        <file>resources/images/icons/TabWidgetWelcomeInactive_icon.png</file>
         <file>resources/images/icons/TabWidgetWelcomeHover_icon.png</file>
         <file>resources/images/icons/TabWidgetPcbActive_icon.png</file>
-        <file>resources/images/icons/TabWidgetPcbInactive_icon.png</file>	
+        <file>resources/images/icons/TabWidgetPcbInactive_icon.png</file>
         <file>resources/images/icons/TabWidgetPcbHover_icon.png</file>
         <file>resources/images/icons/toolbarExport_gbr_icon.png</file>
         <file>resources/images/icons/toolbarExport_gbx_icon.png</file>
@@ -136,18 +136,18 @@
         <file>resources/images/icons/segmentedSwitcherXInactiveDimmed.png</file>
         <file>resources/images/icons/segmentedSwitcherXInactiveFocus.png</file>
         <file>resources/images/icons/segmentedSwitcherXInactiveFocusHover.png</file>
-	<file>resources/images/icons/WS-new-icon.png</file>
-	<file>resources/images/icons/WS-open-icon.png</file>
-	<file>resources/images/icons/WS-fzz-icon.png</file>
-	<file>resources/images/icons/WS-blogLogo.png</file>
-	<file>resources/images/icons/WS-galleryLogo.png</file>
-	<file>resources/images/icons/WS-shopLogo.png</file>
-	<file>resources/images/icons/WS-fabLogo.png</file>
-	<file>resources/images/icons/arrowButtonUp.png</file>
+        <file>resources/images/icons/WS-new-icon.png</file>
+        <file>resources/images/icons/WS-open-icon.png</file>
+        <file>resources/images/icons/WS-fzz-icon.png</file>
+        <file>resources/images/icons/WS-blogLogo.png</file>
+        <file>resources/images/icons/WS-galleryLogo.png</file>
+        <file>resources/images/icons/WS-shopLogo.png</file>
+        <file>resources/images/icons/WS-fabLogo.png</file>
+        <file>resources/images/icons/arrowButtonUp.png</file>
         <file>resources/images/icons/arrowButtonDown.png</file>
         <file>resources/images/icons/arrowButtonLeft.png</file>
         <file>resources/images/icons/arrowButtonRight.png</file>
-	<file>resources/images/icons/toolbarShareBG_icon.png</file>
+        <file>resources/images/icons/toolbarShareBG_icon.png</file>
         <file>resources/images/icons/toolbarSharePressed_icon.png</file>
         <file>resources/images/icons/toolbarShareDisabled_icon.png</file>
         <file>resources/images/icons/toolbarShareEnabled_icon.png</file>
@@ -259,10 +259,8 @@
         <file>resources/parts/svg/core/schematic/netlabel.svg</file>
         <file>resources/parts/svg/core/schematic/frame.svg</file>
         <file>resources/parts/svg/core/schematic/schematiclogo.svg</file>
-	
         <file>resources/parts/svg/obsolete/schematic/0.3.schem.netlabel.svg</file>
         <file>resources/parts/svg/obsolete/schematic/0.3.schem.frame.svg</file>
-
         <file>resources/styles/fritzing.qss</file>
         <file>resources/styles/partseditor.qss</file>
         <file>resources/styles/newpartseditor.qss</file>
@@ -286,7 +284,7 @@
         <file>resources/bins/icons/Arduino.png</file>
         <file>resources/bins/icons/Arduino-mono.png</file>
         <file>resources/bins/icons/Core.png</file>
-	<file>resources/bins/icons/Core-mono.png</file>
+        <file>resources/bins/icons/Core-mono.png</file>
         <file>resources/bins/icons/Custom1.png</file>
         <file>resources/bins/icons/Custom1-mono.png</file>
         <file>resources/bins/icons/Mine.png</file>
@@ -301,14 +299,13 @@
         <file>resources/bins/icons/SparkFun.png</file>
         <file>resources/bins/icons/SparkFun-mono.png</file>
         <file>resources/bins/icons/Contrib.png</file>
-	<file>resources/bins/icons/Contrib-mono.png</file>
+        <file>resources/bins/icons/Contrib-mono.png</file>
         <file>resources/bins/icons/Parallax.png</file>
         <file>resources/bins/icons/Parallax-mono.png</file>
         <file>resources/bins/icons/Pololu.png</file>
         <file>resources/bins/icons/Pololu-mono.png</file>
         <file>resources/bins/icons/Temp.png</file>
         <file>resources/bins/icons/Temp-mono.png</file>
-	
         <file>resources/templates/jumper_copper0LayerTemplate.txt</file>
         <file>resources/templates/jumper_jumperwiresLayerTemplate.txt</file>
         <file>resources/templates/bom.html</file>
@@ -343,7 +340,6 @@
         <file>resources/templates/0.3.schem.schematic_frame_template.txt</file>
         <file>resources/templates/screw_terminal_bread_template.txt</file>
         <file>resources/templates/stripboards.xml</file>
-	
         <file>resources/images/icons/zoomSlider.png</file>
         <file>resources/images/icons/zoomSliderHover.png</file>
         <file>resources/images/icons/checkhover.png</file>
@@ -359,9 +355,24 @@
         <file>resources/images/icons/TabScrollArrowButtonUpPressed.png</file>
         <file>resources/images/icons/TabScrollArrowButtonDownNormal.png</file>
         <file>resources/images/icons/TabScrollArrowButtonDownPressed.png</file>
-	        <file>resources/images/icons/TabScrollArrowButtonLeftNormal.png</file>
+        <file>resources/images/icons/TabScrollArrowButtonLeftNormal.png</file>
         <file>resources/images/icons/TabScrollArrowButtonLeftPressed.png</file>
         <file>resources/images/icons/TabScrollArrowButtonRightNormal.png</file>
         <file>resources/images/icons/TabScrollArrowButtonRightPressed.png</file>
+        <file>resources/images/icons/toolbarNewCodeDisabled_icon.png</file>
+        <file>resources/images/icons/toolbarNewCodeEnabled_icon.png</file>
+        <file>resources/images/icons/toolbarNewCodePressed_icon.png</file>
+        <file>resources/images/icons/toolbarMonitorCodeDisabled_icon.png</file>
+        <file>resources/images/icons/toolbarMonitorCodeEnabled_icon.png</file>
+        <file>resources/images/icons/toolbarMonitorCodePressed_icon.png</file>
+        <file>resources/images/icons/toolbarOpenCodeDisabled_icon.png</file>
+        <file>resources/images/icons/toolbarOpenCodeEnabled_icon.png</file>
+        <file>resources/images/icons/toolbarOpenCodePressed_icon.png</file>
+        <file>resources/images/icons/toolbarProgramCodeDisabled_icon.png</file>
+        <file>resources/images/icons/toolbarProgramCodeEnabled_icon.png</file>
+        <file>resources/images/icons/toolbarProgramCodePressed_icon.png</file>
+        <file>resources/images/icons/toolbarSaveCodeDisabled_icon.png</file>
+        <file>resources/images/icons/toolbarSaveCodeEnabled_icon.png</file>
+        <file>resources/images/icons/toolbarSaveCodePressed_icon.png</file>
     </qresource>
 </RCC>

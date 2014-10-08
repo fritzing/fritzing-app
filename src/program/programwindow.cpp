@@ -60,6 +60,7 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 #include <QCloseEvent>
 #include <QPrinter>
 #include <QPrintDialog>
+#include <QtSerialPort/QSerialPortInfo>
 
 // Included for getSerialPort() and a few others
 #ifdef Q_OS_WIN
@@ -789,9 +790,11 @@ bool ProgramWindow::prepSave(ProgramTab * programTab, bool saveAsFlag)
 }
 
 QStringList ProgramWindow::getSerialPorts() {
-	QStringList ports = getSerialPortsAux();
+    QStringList ports;
 
-    // TODO: use QSerial for listing ports, which is available since Qt 5.1
+    foreach (const QSerialPortInfo &info, QSerialPortInfo::availablePorts()) {
+        ports << info.systemLocation(); //<< info.portName() << info.description();
+    }
 
 	/*
 	// on the pc, handy for testing the UI when there are no serial ports
@@ -812,169 +815,6 @@ QStringList ProgramWindow::getSerialPorts() {
 	return ports;
 }
 
-#ifdef Q_OS_WIN
-
-// faster enumeration code from http://code.google.com/p/qextserialport
-
-/* Gordon Schumacher's macros for TCHAR -> QString conversions and vice versa */
-#ifdef UNICODE
-    #define QStringToTCHAR(x)     (wchar_t*) x.utf16()
-    #define PQStringToTCHAR(x)    (wchar_t*) x->utf16()
-    #define TCHARToQString(x)     QString::fromUtf16((ushort*)(x))
-    #define TCHARToQStringN(x,y)  QString::fromUtf16((ushort*)(x),(y))
-#else
-    #define QStringToTCHAR(x)     x.local8Bit().constData()
-    #define PQStringToTCHAR(x)    x->local8Bit().constData()
-    #define TCHARToQString(x)     QString::fromLocal8Bit((x))
-    #define TCHARToQStringN(x,y)  QString::fromLocal8Bit((x),(y))
-#endif /*UNICODE*/
-
-// see http://msdn.microsoft.com/en-us/library/ms791134.aspx for list of GUID classes
-#ifndef GUID_DEVCLASS_PORTS
-    DEFINE_GUID(GUID_DEVCLASS_PORTS, 0x4D36E978, 0xE325, 0x11CE, 0xBF, 0xC1, 0x08, 0x00, 0x2B, 0xE1, 0x03, 0x18 );
-#endif
-
-QString getRegKeyValue(HKEY key, LPCTSTR property)
-{
-    DWORD size = 0;
-    DWORD type;
-    RegQueryValueEx(key, property, NULL, NULL, NULL, & size);
-    BYTE* buff = new BYTE[size];
-    QString result;
-    if( RegQueryValueEx(key, property, NULL, &type, buff, & size) == ERROR_SUCCESS )
-        result = TCHARToQString(buff);
-    RegCloseKey(key);
-    delete [] buff;
-    return result;
-}
-
-//static
-QString getDeviceProperty(HDEVINFO devInfo, PSP_DEVINFO_DATA devData, DWORD property)
-{
-    DWORD buffSize = 0;
-    SetupDiGetDeviceRegistryProperty(devInfo, devData, property, NULL, NULL, 0, & buffSize);
-    BYTE* buff = new BYTE[buffSize];
-    SetupDiGetDeviceRegistryProperty(devInfo, devData, property, NULL, buff, buffSize, NULL);
-    QString result = TCHARToQString(buff);
-    delete [] buff;
-    return result;
-}
-#endif
-
-QStringList ProgramWindow::getSerialPortsAux() {
-        // TODO: make this call a plugin?
-    QStringList ports;
-#ifdef Q_OS_WIN
-		/*
-        for (int i = 1; i < 256; i++)
-        {
-                QString port = QString("COM%1").arg(i);
-                QString sport = QString("\\\\.\\%1").arg(port);
-                HANDLE hPort = ::CreateFileA(sport.toLatin1().constData(), GENERIC_READ | GENERIC_WRITE, 0, 0, OPEN_EXISTING, 0, 0);
-                if (hPort == INVALID_HANDLE_VALUE) {
-                        DWORD dwError = GetLastError();
-                        if (dwError == ERROR_ACCESS_DENIED || dwError == ERROR_GEN_FAILURE || dwError == ERROR_SHARING_VIOLATION || dwError == ERROR_SEM_TIMEOUT) {
-                                ports.append(port);
-                        }
-                }
-                else {
-                        CloseHandle(hPort);
-                        ports.append(port);
-                }
-        }
-		*/
-
-		HDEVINFO devInfo;
-		GUID guid = GUID_DEVCLASS_PORTS;
-		if( (devInfo = SetupDiGetClassDevs(&guid, NULL, NULL, DIGCF_PRESENT)) != INVALID_HANDLE_VALUE)
-		{
-			SP_DEVINFO_DATA devInfoData;
-			devInfoData.cbSize = sizeof(SP_DEVINFO_DATA);
-			for(int i = 0; SetupDiEnumDeviceInfo(devInfo, i, &devInfoData); i++)
-			{
-				HKEY devKey = SetupDiOpenDevRegKey(devInfo, &devInfoData, DICS_FLAG_GLOBAL, 0, DIREG_DEV, KEY_READ);
-				QString value = getRegKeyValue(devKey, TEXT("PortName"));
-				ports.append(value);
-
-			}
-			SetupDiDestroyDeviceInfoList(devInfo);
-		}
-
-        return ports;
-#endif
-#ifdef Q_OS_MAC
-                // see http://developer.apple.com/Mac/library/documentation/DeviceDrivers/Conceptual/WorkingWSerial/WWSerial_SerialDevs/SerialDevices.html
-
-        mach_port_t         masterPort;
-        io_iterator_t       matchingServices;
-
-        kern_return_t kernResult = IOMasterPort(MACH_PORT_NULL, &masterPort);
-        if (KERN_SUCCESS != kernResult)
-        {
-            DebugDialog::debug(QString("IOMasterPort returned %1").arg(kernResult));
-            return ports;
-        }
-
-        // Serial devices are instances of class IOSerialBSDClient.
-        CFMutableDictionaryRef  classesToMatch = IOServiceMatching(kIOSerialBSDServiceValue);
-        if (classesToMatch == NULL)
-        {
-            DebugDialog::debug("IOServiceMatching returned a NULL dictionary.");
-            return ports;
-        }
-
-        CFDictionarySetValue(classesToMatch, CFSTR(kIOSerialBSDTypeKey), CFSTR(kIOSerialBSDAllTypes));
-
-        kernResult = IOServiceGetMatchingServices(masterPort, classesToMatch, &matchingServices);
-        if (KERN_SUCCESS != kernResult)
-        {
-            DebugDialog::debug(QString("IOServiceGetMatchingServices returned %1").arg(kernResult));
-            return ports;
-        }
-
-        io_object_t modemService;
-        while ((modemService = IOIteratorNext(matchingServices)))
-        {
-            CFTypeRef deviceFilePathAsCFString = IORegistryEntryCreateCFProperty(modemService,
-                                CFSTR(kIOCalloutDeviceKey),
-                                kCFAllocatorDefault,
-                                0);
-            if (deviceFilePathAsCFString)
-            {
-                char deviceFilePath[1024];
-                Boolean result = CFStringGetCString((CFStringRef) deviceFilePathAsCFString,
-                                            deviceFilePath,
-                                            1024,
-                                            kCFStringEncodingASCII);
-                CFRelease(deviceFilePathAsCFString);
-                if (result)
-                {
-                    ports.append(deviceFilePath);
-                }
-            }
-
-            // Release the io_service_t now that we are done with it.
-            (void) IOObjectRelease(modemService);
-        }
-
-        return ports;
-#endif
-#ifdef Q_OS_LINUX
-        QProcess * process = new QProcess(this);
-        process->setProcessChannelMode(QProcess::MergedChannels);
-        process->setReadChannel(QProcess::StandardOutput);
-
-        connect(process, SIGNAL(finished(int, QProcess::ExitStatus)), this, SLOT(portProcessFinished(int, QProcess::ExitStatus)));
-        connect(process, SIGNAL(readyReadStandardOutput()), this, SLOT(portProcessReadyRead()));
-
-        process->start("dmesg");
-        bool result = process->waitForFinished(3000);			// hate to block here, but a better approach will take some time;
-        if (!result) return ports;
-
-        return m_ports;
-#endif
-
-}
 
 const QHash<QString, QString> ProgramWindow::getProgrammerNames()
 {

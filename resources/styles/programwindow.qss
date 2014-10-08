@@ -8,17 +8,8 @@
 	background-color: #821F09;
 }
 
-#programmingWindow #footer { /* the tab-specific menu bar */
-	padding: 5px 0px 5px 0px;
-	margin: 0px;
-	border: 0px;
-	background-color: #821F09;
-}
-
-#programmingWindow #footer QLabel {  /* this is the labelcolor beside the dropdowns in the Programming Window */
-    color: #333;
-	background:transparent;
-	padding: 0px 5px;
+#programmingWindow #sketchAreaToolbar QLabel {
+	color: #ffffff;
 }
 
 #programmingWindow QTabWidget::pane {

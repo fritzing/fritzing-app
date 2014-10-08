@@ -156,7 +156,7 @@ protected:
     QPointer<QLabel> m_unableToProgramLabel;
     QPointer<QFrame> m_toolbar;
     QHBoxLayout *m_leftButtonsContainer;
-    QVBoxLayout *m_middleButtonsContainer;
+    QHBoxLayout *m_middleButtonsContainer;
     QHBoxLayout *m_rightButtonsContainer;
 	bool m_updateEnabled;
 

@@ -8,8 +8,24 @@
 	background-color: #821F09;
 }
 
-#programmingWindow #sketchAreaToolbar QLabel {
+
+#programmingWindow #toolbarSelector {
+	width: 120px;
+	min-width: 120px;
+	max-width: 120px;
+	padding: 0 10px;
+}
+
+#programmingWindow #toolbarSelector QComboBox {
+	
+}
+
+#programmingWindow #toolbarSelector QLabel {
 	color: #ffffff;
+    font-size: 11px;
+	font-family: Droid Sans;
+	font-weight: normal;
+	qproperty-alignment: AlignCenter;
 }
 
 #programmingWindow QTabWidget::pane {

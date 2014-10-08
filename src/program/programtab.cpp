@@ -259,10 +259,11 @@ void ProgramTab::createToolBarMenu() {
 
     // Language (aka Platform) selection
 
-    QFrame *languageButton = new QFrame(m_middleButtonsContainer->parentWidget());
-    QVBoxLayout *languageButtonContainer = new QVBoxLayout(languageButton);
-    languageButtonContainer->setSpacing(0);
-    languageButtonContainer->setMargin(0);
+    QFrame *languageSelector = new QFrame(m_middleButtonsContainer->parentWidget());
+    languageSelector->setObjectName("toolbarSelector");
+    QVBoxLayout *languageSelectionContainer = new QVBoxLayout(languageSelector);
+    languageSelectionContainer->setSpacing(0);
+    languageSelectionContainer->setMargin(0);
 
     QLabel * languageLabel = new QLabel(tr("Language"), this);
     m_languageComboBox = new QComboBox();
@@ -275,16 +276,17 @@ void ProgramTab::createToolBarMenu() {
         currentLanguage = m_languageComboBox->currentText();
     }
 
-    languageButtonContainer->addWidget(m_languageComboBox);
-    languageButtonContainer->addWidget(languageLabel);
-    m_middleButtonsContainer->addWidget(languageButton);
+    languageSelectionContainer->addWidget(m_languageComboBox);
+    languageSelectionContainer->addWidget(languageLabel);
+    m_rightButtonsContainer->addWidget(languageSelector);
 
     // Port selection
 
-    QFrame *portButton = new QFrame(m_middleButtonsContainer->parentWidget());
-    QVBoxLayout *portButtonContainer = new QVBoxLayout(portButton);
-    portButtonContainer->setSpacing(0);
-    portButtonContainer->setMargin(0);
+    QFrame *portSelector = new QFrame(m_middleButtonsContainer->parentWidget());
+    portSelector->setObjectName("toolbarSelector");
+    QVBoxLayout *portSelectionContainer = new QVBoxLayout(portSelector);
+    portSelectionContainer->setSpacing(0);
+    portSelectionContainer->setMargin(0);
 
     QLabel * portLabel = new QLabel(tr("Port"), this);
     m_portComboBox = new SerialPortComboBox();
@@ -302,16 +304,17 @@ void ProgramTab::createToolBarMenu() {
     }
     setPort(currentPort);
 
-    portButtonContainer->addWidget(m_portComboBox);
-    portButtonContainer->addWidget(portLabel);
-    m_middleButtonsContainer->addWidget(portButton);
+    portSelectionContainer->addWidget(m_portComboBox);
+    portSelectionContainer->addWidget(portLabel);
+    m_rightButtonsContainer->addWidget(portSelector);
 
     // Board selection
 
-    QFrame *boardButton = new QFrame(m_middleButtonsContainer->parentWidget());
-    QVBoxLayout *boardButtonContainer = new QVBoxLayout(boardButton);
-    boardButtonContainer->setSpacing(0);
-    boardButtonContainer->setMargin(0);
+    QFrame *boardSelector = new QFrame(m_middleButtonsContainer->parentWidget());
+    boardSelector->setObjectName("toolbarSelector");
+    QVBoxLayout *boardSelectionContainer = new QVBoxLayout(boardSelector);
+    boardSelectionContainer->setSpacing(0);
+    boardSelectionContainer->setMargin(0);
 
     QLabel * boardLabel = new QLabel(tr("Board"), this);
     m_boardComboBox = new QComboBox();
@@ -328,9 +331,9 @@ void ProgramTab::createToolBarMenu() {
     }
     setBoard(currentBoard);
 
-    boardButtonContainer->addWidget(m_boardComboBox);
-    boardButtonContainer->addWidget(boardLabel);
-    m_middleButtonsContainer->addWidget(boardButton);
+    boardSelectionContainer->addWidget(m_boardComboBox);
+    boardSelectionContainer->addWidget(boardLabel);
+    m_rightButtonsContainer->addWidget(boardSelector);
 
 
 

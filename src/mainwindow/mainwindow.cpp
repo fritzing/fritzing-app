@@ -3042,7 +3042,7 @@ void MainWindow::initProgrammingWidget() {
 
 	m_programView->setup();
 
-    SketchAreaWidget * sketchAreaWidget = new SketchAreaWidget(m_programView, this, false, false);
+    SketchAreaWidget * sketchAreaWidget = new SketchAreaWidget(m_programView, this, false, true);
     addTab(sketchAreaWidget, ":/resources/images/icons/TabWidgetCodeActive_icon.png", tr("Code"), true);
 }
 

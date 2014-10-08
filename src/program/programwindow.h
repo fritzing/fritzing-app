@@ -171,6 +171,10 @@ protected:
 public:
 	static const QString LocateName;
 	static QString NoSerialPortName;
+    QAction *m_newAction;
+    QAction *m_openAction;
+    QAction *m_saveAction;
+    QAction *m_programAction;
 
 protected:
 	static QHash<QString, class Syntaxer *> m_syntaxers;
@@ -180,12 +184,12 @@ protected:
 	QPointer<PTabWidget> m_tabWidget;
 	QPointer<QPushButton> m_addButton;
     QPointer<class ProgramTab> m_savingProgramTab;
-    QAction *m_programAction;
     QAction *m_undoAction;
     QAction *m_redoAction;
     QAction *m_cutAction;
     QAction *m_copyAction;
-    QAction *m_saveAction;
+    QAction *m_pasteAction;
+    QAction *m_selectAction;
     QAction *m_printAction;
     QHash<QString, QAction *> m_languageActions;
     QHash<QString, QAction *> m_portActions;

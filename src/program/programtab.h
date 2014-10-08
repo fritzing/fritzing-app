@@ -42,6 +42,9 @@ $Date: 2012-06-28 00:18:10 +0200 (Do, 28. Jun 2012) $
 #include <QCheckBox>
 #include <QLabel>
 #include <QPrinter>
+#include <QHBoxLayout>
+
+#include <src/sketchtoolbutton.h>
 
 #include "programwindow.h"
 
@@ -132,15 +135,17 @@ signals:
 
 protected:
     QFrame * createFooter();
+    void createToolBarMenu();
 	void chooseProgrammerAux(const QString & programmer, bool updateLink);
 	void updateProgrammerComboBox(const QString & programmer);
 	void enableProgramButton();
 
 protected:
-	QPointer<QPushButton> m_saveAsButton;
-	QPointer<QPushButton> m_saveButton;
+    QPointer<SketchToolButton> m_newButton;
+    QPointer<SketchToolButton> m_openButton;
+    QPointer<SketchToolButton> m_saveButton;
     QPointer<QPushButton> m_cancelCloseButton;
-	QPointer<QPushButton> m_programButton;
+    QPointer<SketchToolButton> m_programButton;
     QPointer<SerialPortComboBox> m_portComboBox;
 	QPointer<QComboBox> m_languageComboBox;
 	QPointer<QComboBox>  m_programmerComboBox;
@@ -149,6 +154,10 @@ protected:
 	QPointer<QTextEdit> m_console;
 	QPointer<QTabWidget> m_tabWidget;
     QPointer<QLabel> m_unableToProgramLabel;
+    QPointer<QFrame> m_toolbar;
+    QHBoxLayout *m_leftButtonsContainer;
+    QVBoxLayout *m_middleButtonsContainer;
+    QHBoxLayout *m_rightButtonsContainer;
 	bool m_updateEnabled;
 
     QPointer<ProgramWindow> m_programWindow;
@@ -167,7 +176,6 @@ protected:
 	QPointer<class Highlighter> m_highlighter;
 	QString m_filename;
 	QString m_programmerPath;
-
 };
 
 class DeleteDialog : public QDialog {

@@ -41,6 +41,8 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 #include <QHBoxLayout>
 #include <QVBoxLayout>
 
+#include <src/sketchtoolbutton.h>
+
 
 static const QChar Quote91Char(0x91);
 static QString UnableToProgramMessage;
@@ -190,8 +192,36 @@ ProgramTab::ProgramTab(QString & filename, QWidget *parent) : QFrame(parent)
 	splitter->setStretchFactor(0, 8);
     splitter->setStretchFactor(1, 2);
 
-    QFrame * footerFrame = createFooter();
-    editLayout->addWidget(footerFrame,2,0);
+    m_toolbar = new QFrame(this);
+    m_toolbar->setObjectName("sketchAreaToolbar");
+    m_toolbar->setFixedHeight(66);
+
+    QFrame *leftButtons = new QFrame(m_toolbar);
+    m_leftButtonsContainer = new QHBoxLayout(leftButtons);
+    m_leftButtonsContainer->setMargin(0);
+    m_leftButtonsContainer->setSpacing(0);
+
+    QFrame *middleButtons = new QFrame(m_toolbar);
+    middleButtons->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::MinimumExpanding);
+    m_middleButtonsContainer = new QVBoxLayout(middleButtons);
+    m_middleButtonsContainer->setSpacing(0);
+    m_middleButtonsContainer->setMargin(0);
+
+    QFrame *rightButtons = new QFrame(m_toolbar);
+    m_rightButtonsContainer = new QHBoxLayout(rightButtons);
+    m_rightButtonsContainer->setMargin(0);
+    m_rightButtonsContainer->setSpacing(0);
+
+    QHBoxLayout *toolbarLayout = new QHBoxLayout(m_toolbar);
+    toolbarLayout->setMargin(0);
+    toolbarLayout->setSpacing(0);
+    toolbarLayout->addWidget(leftButtons);
+    toolbarLayout->addWidget(middleButtons);
+    toolbarLayout->addWidget(rightButtons);
+
+    editLayout->addWidget(m_toolbar,2,0);
+
+    createToolBarMenu();
 }
 
 ProgramTab::~ProgramTab()
@@ -206,12 +236,31 @@ void ProgramTab::showEvent(QShowEvent *event) {
     updateMenu();
 }
 
-QFrame * ProgramTab::createFooter() {
-    QFrame * superFrame = new QFrame();
+
+void ProgramTab::createToolBarMenu() {
+
+    m_newButton = new SketchToolButton("New", this, m_programWindow->m_newAction);
+    m_newButton->setText(tr("New"));
+    m_newButton->setObjectName("newCodeButton");
+    m_newButton->setEnabledIcon();					// seems to need this to display button icon first time
+    m_leftButtonsContainer->addWidget(m_newButton);
+
+    m_openButton = new SketchToolButton("Open", this, m_programWindow->m_openAction);
+    m_openButton->setText(tr("New"));
+    m_openButton->setObjectName("openCodeButton");
+    m_openButton->setEnabledIcon();					// seems to need this to display button icon first time
+    m_leftButtonsContainer->addWidget(m_openButton);
+
+    m_saveButton = new SketchToolButton("Save", this, m_programWindow->m_saveAction);
+    m_saveButton->setText(tr("New"));
+    m_saveButton->setObjectName("saveCodeButton");
+    m_saveButton->setEnabledIcon();					// seems to need this to display button icon first time
+    m_leftButtonsContainer->addWidget(m_saveButton);
+
 
     QFrame * footerFrame = new QFrame();
     footerFrame->setObjectName("footer"); // Used for styling
-	footerFrame->setSizePolicy(QSizePolicy::Preferred,QSizePolicy::Fixed);
+    footerFrame->setSizePolicy(QSizePolicy::Preferred,QSizePolicy::Fixed);
 
     QLabel * languageLabel = new QLabel(tr("Language"), this);
 
@@ -224,18 +273,6 @@ QFrame * ProgramTab::createFooter() {
 	if (currentLanguage.isEmpty()) {
 		currentLanguage = m_languageComboBox->currentText();
 	}
-
-	QPushButton * addButton = new QPushButton(tr("New"));
-	//addButton->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
-	connect(addButton, SIGNAL(clicked()), m_programWindow, SLOT(addTab()));
-
-    QPushButton * loadButton = new QPushButton(tr("Open..."));
-	//loadButton->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
-    connect(loadButton, SIGNAL(clicked()), this, SLOT(loadProgramFile()));
-
-    m_saveButton = new QPushButton(tr("Save"));
-	//m_saveButton->setSizePolicy(QSizePolicy::Fixed,QSizePolicy::Fixed);
-    connect(m_saveButton, SIGNAL(clicked()), this, SLOT(save()));
 
     QLabel * portLabel = new QLabel(tr("Port"), this);
 
@@ -253,11 +290,6 @@ QFrame * ProgramTab::createFooter() {
 		currentPort = m_portComboBox->currentText();
 	}
     setPort(currentPort);
-
-    m_programButton = new QPushButton(tr("Upload"));
-	m_programButton->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
-    connect(m_programButton, SIGNAL(clicked()), this, SLOT(sendProgram()));
-	m_programButton->setEnabled(false);
 
     QLabel * programmerLabel = new QLabel(tr("Programmer"), this);
 
@@ -294,12 +326,7 @@ QFrame * ProgramTab::createFooter() {
 	QHBoxLayout *footerLayout = new QHBoxLayout;
 
 	footerLayout->setMargin(0);
-	footerLayout->setSpacing(5);
-    footerLayout->addWidget(addButton);
-    footerLayout->addWidget(loadButton);
-    footerLayout->addWidget(m_saveButton);
-
-    footerLayout->addSpacerItem(new QSpacerItem(5,0,QSizePolicy::Expanding,QSizePolicy::Minimum));
+    footerLayout->setSpacing(5);
 
     //footerLayout->addWidget(languageLabel);
     footerLayout->addWidget(m_languageComboBox);
@@ -320,19 +347,29 @@ QFrame * ProgramTab::createFooter() {
     connect(m_boardComboBox, SIGNAL(currentIndexChanged(const QString &)), this, SLOT(setBoard(const QString &)));
     connect(m_programmerComboBox, SIGNAL(activated(int)), this, SLOT(chooseProgrammerTimed(int)));
 
-    QVBoxLayout * superLayout = new QVBoxLayout();
-	superLayout->setMargin(0);
-	superLayout->setSpacing(0);
+
+
+//    QFrame * superFrame = new QFrame();
+//    QVBoxLayout * superLayout = new QVBoxLayout();
+//	  superLayout->setMargin(0);
+//	  superLayout->setSpacing(0);
 
     m_unableToProgramLabel = new QLabel(UnableToProgramMessage.arg(""));
     m_unableToProgramLabel->setObjectName("unableToProgramLabel");
-    superLayout->addWidget(footerFrame);
-    superLayout->addWidget(m_unableToProgramLabel);
-    superFrame->setLayout(superLayout);
+//    superLayout->addWidget(footerFrame);
+//    superLayout->addWidget(m_unableToProgramLabel);
+//    superFrame->setLayout(superLayout);
 
     setLanguage(currentLanguage, false);
 
-	return superFrame;
+    m_rightButtonsContainer->addWidget(footerFrame);
+
+    m_programButton = new SketchToolButton("Upload", this, m_programWindow->m_programAction);
+    m_programButton->setText(tr("Upload"));
+    m_programButton->setObjectName("programCodeButton");
+    m_programButton->setEnabledIcon();					// seems to need this to display button icon first time
+    m_rightButtonsContainer->addWidget(m_programButton);
+
 }
 
 void ProgramTab::setLanguage(const QString & newLanguage) {

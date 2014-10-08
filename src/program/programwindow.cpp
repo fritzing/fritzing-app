@@ -263,35 +263,35 @@ void ProgramWindow::initMenus(QMenuBar * menubar) {
     connect(m_copyAction, SIGNAL(triggered()), this, SLOT(copy()));
     m_editMenu->addAction(m_copyAction);
 
-    currentAction = new QAction(tr("&Paste"), this);
-    currentAction->setShortcut(tr("Ctrl+V"));
-    currentAction->setStatusTip(tr("Paste clipboard contents"));
+    m_pasteAction = new QAction(tr("&Paste"), this);
+    m_pasteAction->setShortcut(tr("Ctrl+V"));
+    m_pasteAction->setStatusTip(tr("Paste clipboard contents"));
     // TODO: Check clipboard status and disable appropriately here
-    connect(currentAction, SIGNAL(triggered()), this, SLOT(paste()));
-    m_editMenu->addAction(currentAction);
+    connect(m_pasteAction, SIGNAL(triggered()), this, SLOT(paste()));
+    m_editMenu->addAction(m_pasteAction);
 
     m_editMenu->addSeparator();
 
-    currentAction = new QAction(tr("&Select All"), this);
-    currentAction->setShortcut(tr("Ctrl+A"));
-    currentAction->setStatusTip(tr("Select all text"));
-    connect(currentAction, SIGNAL(triggered()), this, SLOT(selectAll()));
-    m_editMenu->addAction(currentAction);
+    m_selectAction = new QAction(tr("&Select All"), this);
+    m_selectAction->setShortcut(tr("Ctrl+A"));
+    m_selectAction->setStatusTip(tr("Select all text"));
+    connect(m_selectAction, SIGNAL(triggered()), this, SLOT(selectAll()));
+    m_editMenu->addAction(m_selectAction);
 
     m_programMenu = menubar->addMenu(tr("&Code"));
 
 
-    currentAction = new QAction(tr("New Code File"), this);
-    currentAction->setShortcut(tr("Ctrl+N"));
-    currentAction->setStatusTip(tr("Create a new program"));
-    connect(currentAction, SIGNAL(triggered()), this, SLOT(addTab()));
-    m_programMenu->addAction(currentAction);
+    m_newAction = new QAction(tr("New Code File"), this);
+    m_newAction->setShortcut(tr("Ctrl+N"));
+    m_newAction->setStatusTip(tr("Create a new program"));
+    connect(m_newAction, SIGNAL(triggered()), this, SLOT(addTab()));
+    m_programMenu->addAction(m_newAction);
 
-    currentAction = new QAction(tr("&Open Code File..."), this);
-    currentAction->setShortcut(tr("Ctrl+O"));
-    currentAction->setStatusTip(tr("Open a program"));
-    connect(currentAction, SIGNAL(triggered()), this, SLOT(loadProgramFile()));
-    m_programMenu->addAction(currentAction);
+    m_openAction = new QAction(tr("&Open Code File..."), this);
+    m_openAction->setShortcut(tr("Ctrl+O"));
+    m_openAction->setStatusTip(tr("Open a program"));
+    connect(m_openAction, SIGNAL(triggered()), this, SLOT(loadProgramFile()));
+    m_programMenu->addAction(m_openAction);
 
     m_saveAction = new QAction(tr("&Save Code File"), this);
     m_saveAction->setShortcut(tr("Ctrl+S"));
@@ -378,6 +378,8 @@ void ProgramWindow::initMenus(QMenuBar * menubar) {
     foreach (QAction * action, m_viewMenuActions) {
         m_viewMenu->addAction(action);
     }
+
+    addTab(); // the initial ProgramTab must be created after all actions are set up
 }
 
 void ProgramWindow::showMenus(bool show) {
@@ -447,7 +449,7 @@ QFrame * ProgramWindow::createCenter() {
 	m_tabWidget->setElideMode(Qt::ElideLeft);
      connect(m_tabWidget, SIGNAL(tabCloseRequested(int)), this, SLOT(closeTab(int)));
 
-	addTab();
+    //addTab();
 
 	QGridLayout *tabLayout = new QGridLayout(m_tabWidget);
 	tabLayout->setMargin(0);

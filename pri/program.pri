@@ -29,13 +29,21 @@ HEADERS += \
     src/program/programtab.h \
     src/program/programwindow.h \
     src/program/syntaxer.h \
-    src/program/trienode.h 
+    src/program/trienode.h \ 
+    src/program/platform.h \
+    src/program/platformarduino.h \
+    src/program/platformpicaxe.h \
+    src/program/platformlaunchpad.h
  
 SOURCES += \
     src/program/highlighter.cpp \
     src/program/programtab.cpp \
     src/program/programwindow.cpp \
     src/program/syntaxer.cpp \
-    src/program/trienode.cpp 
+    src/program/trienode.cpp \ 
+    src/program/platform.cpp \
+    src/program/platformarduino.cpp \
+    src/program/platformpicaxe.cpp \
+    src/program/platformlaunchpad.cpp
     
     

@@ -1,0 +1,70 @@
+/*******************************************************************
+
+Part of the Fritzing project - http://fritzing.org
+Copyright (c) 2007-2014 Fachhochschule Potsdam - http://fh-potsdam.de
+
+Fritzing is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+Fritzing is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
+
+********************************************************************/
+
+#include <QFile>
+#include <QHash>
+#include <QObject>
+#include <QString>
+#include <QStringList>
+#include <QUrl>
+
+#ifndef PLATFORM_H
+#define PLATFORM_H
+
+class Platform : public QObject
+{
+Q_OBJECT
+
+
+public:
+    Platform(const QString &name);
+    ~Platform();
+
+    virtual void upload(QString port, QString board, QString fileLocation);
+    QFile getSyntaxFile() const;
+
+    QString getCommandLocation() const;
+    void setCommandLocation(const QString &commandLocation);
+    QStringList getExtensions() const;
+    void setExtensions(const QStringList &suffixes);
+    QHash<QString, QString> getBoards() const;
+    void setBoards(const QHash<QString, QString> &boards);
+    QUrl getReferenceUrl() const;
+    void setReferenceUrl(const QUrl &referenceUrl);
+    bool canProgram() const;
+    void setCanProgram(bool canProgram);
+    QUrl getDownloadUrl() const;
+    void setDownloadUrl(const QUrl &downloadUrl);
+    QString getMinVersion() const;
+    void setMinVersion(const QString &minVersion);
+
+protected:
+    QString m_name;
+    QString m_commandLocation;
+    bool m_canProgram;
+    QStringList m_extensions;
+    QHash<QString, QString> m_boards;
+    QUrl m_referenceUrl;
+    QUrl m_downloadUrl;
+    QString m_minVersion;
+
+};
+
+#endif // PLATFORM_H

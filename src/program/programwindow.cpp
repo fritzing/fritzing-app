@@ -41,6 +41,8 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 #include "highlighter.h"
 #include "syntaxer.h"
 #include "programtab.h"
+#include "platformarduino.h"
+#include "platformpicaxe.h"
 
 #include "../debugdialog.h"
 #include "../waitpushundostack.h"
@@ -61,22 +63,6 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 #include <QPrinter>
 #include <QPrintDialog>
 #include <QtSerialPort/QSerialPortInfo>
-
-// Included for getSerialPort() and a few others
-#ifdef Q_OS_WIN
-#include "windows.h"
-#include <windows.h>
-#include <setupapi.h>
-#include <dbt.h>
-#include <INITGUID.H>
-
-#endif
-#ifdef Q_OS_MAC
-#include <IOKit/IOKitLib.h>
-#include <IOKit/IOBSD.h>
-#include <IOKit/serial/IOSerialKeys.h>
-#include <CoreFoundation/CoreFoundation.h>
-#endif
 
 
 ///////////////////////////////////////////////
@@ -122,6 +108,7 @@ void PTabWidget::tabChanged(int index) {
 
 static int UntitledIndex = 1;
 QHash<QString, QString> ProgramWindow::m_languages;
+QList<Platform *> ProgramWindow::m_platforms;
 QHash<QString, class Syntaxer *> ProgramWindow::m_syntaxers;
 const QString ProgramWindow::LocateName = "locate";
 QString ProgramWindow::NoSerialPortName;
@@ -173,25 +160,6 @@ ProgramWindow::ProgramWindow(QWidget *parent)
 
 ProgramWindow::~ProgramWindow()
 {
-}
-
-void ProgramWindow::initLanguages() {
-	QDir dir(FolderUtils::getApplicationSubFolderPath("translations"));
-	dir.cd("syntax");
-	QStringList nameFilters;
-	nameFilters << "*.xml";
-	QFileInfoList list = dir.entryInfoList(nameFilters, QDir::Files | QDir::NoSymLinks);
-	foreach (QFileInfo fileInfo, list) {
-		if (fileInfo.completeBaseName().compare("styles") == 0) {
-			Highlighter::loadStyles(fileInfo.absoluteFilePath());
-		}
-		else {
-			QString name = Syntaxer::parseForName(fileInfo.absoluteFilePath());
-            if (!name.isEmpty()) {
-				m_languages.insert(name, fileInfo.absoluteFilePath());
-			}
-		}
-	}
 }
 
 void ProgramWindow::setup()
@@ -461,21 +429,6 @@ QFrame * ProgramWindow::createCenter() {
 	mainLayout->addWidget(m_tabWidget,0,0,1,1);
 
 	return centerFrame;
-}
-
-QStringList ProgramWindow::getAvailableLanguages() {
-   return m_languages.keys();
-}
-
-Syntaxer * ProgramWindow::getSyntaxerForLanguage(QString language) {
-	Syntaxer * syntaxer = m_syntaxers.value(language, NULL);
-	if (syntaxer == NULL) {
-		syntaxer = new Syntaxer();
-		if (syntaxer->loadSyntax(m_languages.value(language))) {
-			m_syntaxers.insert(language, syntaxer);
-		}
-	}
-    return m_syntaxers.value(language, NULL);
 }
 
 void ProgramWindow::cleanUp() {
@@ -791,32 +744,41 @@ bool ProgramWindow::prepSave(ProgramTab * programTab, bool saveAsFlag)
 	return result;
 }
 
-QStringList ProgramWindow::getSerialPorts() {
-    QStringList ports;
-
-    foreach (const QSerialPortInfo &info, QSerialPortInfo::availablePorts()) {
-        ports << info.systemLocation(); //<< info.portName() << info.description();
+void ProgramWindow::initLanguages() {
+    QDir dir(FolderUtils::getApplicationSubFolderPath("translations"));
+    dir.cd("syntax");
+    QStringList nameFilters;
+    nameFilters << "*.xml";
+    QFileInfoList list = dir.entryInfoList(nameFilters, QDir::Files | QDir::NoSymLinks);
+    foreach (QFileInfo fileInfo, list) {
+        if (fileInfo.completeBaseName().compare("styles") == 0) {
+            Highlighter::loadStyles(fileInfo.absoluteFilePath());
+        }
+        else {
+            QString name = Syntaxer::parseForName(fileInfo.absoluteFilePath());
+            if (!name.isEmpty()) {
+                m_languages.insert(name, fileInfo.absoluteFilePath());
+            }
+        }
     }
 
-	/*
-	// on the pc, handy for testing the UI when there are no serial ports
-	ports.removeOne("COM0");
-	ports.removeOne("COM1");
-	ports.removeOne("COM2");
-	ports.removeOne("COM3");
-	ports.removeOne("COM4");
-	ports.removeOne("COM5");
-	ports.removeOne("COM6");
-	ports.removeOne("COM7");
-	ports.removeOne("COM8");
-	*/
-
-	if (ports.isEmpty()) {
-		ports.append(NoSerialPortName);
-	}
-	return ports;
+    m_platforms << new PlatformArduino() << new PlatformPicaxe();
 }
 
+QStringList ProgramWindow::getAvailableLanguages() {
+   return m_languages.keys();
+}
+
+Syntaxer * ProgramWindow::getSyntaxerForLanguage(QString language) {
+    Syntaxer * syntaxer = m_syntaxers.value(language, NULL);
+    if (syntaxer == NULL) {
+        syntaxer = new Syntaxer();
+        if (syntaxer->loadSyntax(m_languages.value(language))) {
+            m_syntaxers.insert(language, syntaxer);
+        }
+    }
+    return m_syntaxers.value(language, NULL);
+}
 
 const QHash<QString, QString> ProgramWindow::getProgrammerNames()
 {
@@ -959,6 +921,27 @@ QStringList ProgramWindow::getExtensions() {
 	if (pt == NULL) return QStringList();
 
 	return pt->extensions();
+}
+
+QStringList ProgramWindow::getSerialPorts() {
+    QStringList ports;
+
+    foreach (const QSerialPortInfo &info, QSerialPortInfo::availablePorts()) {
+        ports << info.systemLocation(); //<< info.portName() << info.description();
+    }
+
+    /*
+    // on the pc, handy for testing the UI when there are no serial ports
+    ports.removeOne("COM0");
+    ports.removeOne("COM1");
+    ports.removeOne("COM2");
+    ports.removeOne("COM3");
+    */
+
+    if (ports.isEmpty()) {
+        ports.append(NoSerialPortName);
+    }
+    return ports;
 }
 
 void ProgramWindow::updateSerialPorts() {

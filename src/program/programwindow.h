@@ -38,6 +38,7 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 #include <QComboBox>
 #include <QActionGroup>
 
+#include "platform.h"
 #include "syntaxer.h"
 
 #include "../mainwindow/fritzingwindow.h"
@@ -179,6 +180,7 @@ public:
 protected:
 	static QHash<QString, class Syntaxer *> m_syntaxers;
 	static QHash<QString, QString> m_languages;
+    static QList<Platform *> m_platforms;
 
 protected:
 	QPointer<PTabWidget> m_tabWidget;

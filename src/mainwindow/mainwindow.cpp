@@ -3037,8 +3037,8 @@ void MainWindow::addToSketch(QList<ModelPart *> & modelParts) {
 void MainWindow::initProgrammingWidget() {
     m_programView = new ProgramWindow(this);
 
-	connect(m_programView, SIGNAL(linkToProgramFile(const QString &, const QString &, const QString &, bool, bool)), 
-			this, SLOT(linkToProgramFile(const QString &, const QString &, const QString &, bool, bool)));
+    connect(m_programView, SIGNAL(linkToProgramFile(const QString &, Platform *, const QString &, bool, bool)),
+            this, SLOT(linkToProgramFile(const QString &, Platform *, const QString &, bool, bool)));
 
 	m_programView->setup();
 

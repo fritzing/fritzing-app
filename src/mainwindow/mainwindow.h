@@ -423,7 +423,7 @@ protected slots:
 	void dropPaste(SketchWidget *);
 
 	void openProgramWindow();
-	void linkToProgramFile(const QString & filename, const QString & language, const QString & programmer, bool addLink, bool strong);
+    void linkToProgramFile(const QString & filename, Platform * platform, const QString & programmer, bool addLink, bool strong);
 	QStringList newDesignRulesCheck();
 	void subSwapSlot(SketchWidget *, ItemBase *, const QString & newModuleID, ViewLayer::ViewLayerPlacement, long & newID, QUndoCommand * parentCommand);
 	void updateLayerMenuSlot();

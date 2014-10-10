@@ -18,9 +18,12 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 ********************************************************************/
 
+#include "syntaxer.h"
+
 #include <QFile>
 #include <QHash>
 #include <QObject>
+#include <QPointer>
 #include <QString>
 #include <QStringList>
 #include <QUrl>
@@ -38,8 +41,9 @@ public:
     ~Platform();
 
     virtual void upload(QString port, QString board, QString fileLocation);
-    QFile getSyntaxFile() const;
+    Syntaxer *getSyntaxer();
 
+    QString getName() const;
     QString getCommandLocation() const;
     void setCommandLocation(const QString &commandLocation);
     QStringList getExtensions() const;
@@ -64,6 +68,11 @@ protected:
     QUrl m_referenceUrl;
     QUrl m_downloadUrl;
     QString m_minVersion;
+
+private:
+    Syntaxer *loadSyntaxer();
+
+    QPointer<Syntaxer> m_syntaxer;
 
 };
 

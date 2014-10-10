@@ -88,12 +88,14 @@ public:
 	void updateProgrammers();
 	bool setProgrammer(const QString & path);
 	const QString & programmer();
-	const QString & language();
-	void setLanguage(const QString &, bool updateLink);
+    Platform *platform();
+    void setPlatform(const QString & newPlatformName, bool updateLink);
+    void setPlatform(Platform * newPlatform, bool updateLink);
 	void appendToConsole(const QString &);
 
 public slots:
-    void setLanguage(const QString &);
+    void setPlatform(const QString & newPlatformName);
+    void setPlatform(Platform * newPlatform);
     void setPort(const QString &);
     void setBoard(const QString &);
     bool loadProgramFile();
@@ -130,7 +132,7 @@ signals:
     void wantToRename(int);
 	void wantToDelete(int, bool deleteFile);
     void programWindowUpdateRequest(bool programEnable, bool undoEnable, bool redoEnable,
-                            bool cutEnable, bool copyEnable, const QString & language,
+                            bool cutEnable, bool copyEnable, Platform * platform,
                             const QString & port, const QString & board, const QString & programmer, const QString & filename);
 
 protected:
@@ -147,7 +149,7 @@ protected:
     QPointer<QPushButton> m_cancelCloseButton;
     QPointer<SketchToolButton> m_programButton;
     QPointer<SerialPortComboBox> m_portComboBox;
-	QPointer<QComboBox> m_languageComboBox;
+    QPointer<QComboBox> m_platformComboBox;
 	QPointer<QComboBox>  m_programmerComboBox;
     QPointer<QComboBox>  m_boardComboBox;
 	QPointer<QTextEdit> m_textEdit;
@@ -169,7 +171,7 @@ protected:
     bool m_canRedo;
     bool m_canCopy;
     bool m_canCut;
-    QString m_language;
+    QPointer<Platform> m_platform;
     QString m_port;
     QString m_board;
 

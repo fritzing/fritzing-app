@@ -54,7 +54,7 @@ struct LinkedFile {
 	Q_DECLARE_FLAGS(FileFlags, FileFlag)
 
 	QString linkedFilename;
-	QString language;
+    QString platform;
 	QString programmer;
 	FileFlags fileFlags;
 };
@@ -88,13 +88,15 @@ public:
 	const QString defaultSaveFolder();
 
     QStringList getSerialPorts();
-    QStringList getAvailableLanguages();
-    Syntaxer * getSyntaxerForLanguage(QString language);
+    QList<Platform *> getAvailablePlatforms();
+    bool hasPlatform(const QString &platformName);
+    Platform *getPlatformByName(const QString &platformName);
+    Syntaxer * getSyntaxerForPlatform(Platform platform);
 	const QHash<QString, QString> getProgrammerNames();
     const QHash<QString, QString> getBoardNames();
 	void loadProgramFileNew();
 	bool alreadyHasProgram(const QString &);
-	void updateLink(const QString & filename, const QString & language, const QString & programmer, bool addlink, bool strong);
+    void updateLink(const QString & filename, Platform *platform, const QString & programmer, bool addlink, bool strong);
     void showMenus(bool);
     void createViewMenuActions(QList<QAction *> &);
     void print();
@@ -102,7 +104,7 @@ public:
 signals:
 	void closed();
     void changeActivationSignal(bool activate, QWidget * originator);
-    void linkToProgramFile(const QString & filename, const QString & language, const QString & programmer, bool addlink, bool strong);
+    void linkToProgramFile(const QString & filename, Platform * platform, const QString & programmer, bool addlink, bool strong);
 
 protected slots:
 	void loadProgramFile();
@@ -117,14 +119,14 @@ protected slots:
     void tabDelete(int index, bool deleteFile);
     void updateMenu(bool programEnable, bool undoEnable, bool redoEnable,
                     bool cutEnable, bool copyEnable, 
-                    const QString & language, const QString & port, const QString & board,
+                    Platform * platform, const QString & port, const QString & board,
 					const QString & programmer, const QString & filename);
 	void updateSerialPorts();
 	void portProcessFinished(int exitCode, QProcess::ExitStatus exitStatus);
 	void portProcessReadyRead();
 
     // The following methods just forward events on to the current tab
-    void setLanguage(QAction*);
+    void setPlatform(QAction*);
     void setPort(QAction*);
     void setBoard(QAction*);
     void setProgrammer(QAction*);
@@ -167,7 +169,7 @@ protected:
 	QStringList getSerialPortsAux();
 
 protected:
-	static void initLanguages();
+    static void initPlatforms();
 
 public:
 	static const QString LocateName;
@@ -179,7 +181,6 @@ public:
 
 protected:
 	static QHash<QString, class Syntaxer *> m_syntaxers;
-	static QHash<QString, QString> m_languages;
     static QList<Platform *> m_platforms;
 
 protected:
@@ -193,7 +194,7 @@ protected:
     QAction *m_pasteAction;
     QAction *m_selectAction;
     QAction *m_printAction;
-    QHash<QString, QAction *> m_languageActions;
+    QHash<Platform *, QAction *> m_platformActions;
     QHash<QString, QAction *> m_portActions;
     QHash<QString, QAction *> m_programmerActions;
     QHash<QString, QAction *> m_boardActions;

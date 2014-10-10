@@ -27,6 +27,7 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 #include "programtab.h"
 #include "highlighter.h"
 #include "syntaxer.h"
+#include "platformarduino.h"
 #include "../debugdialog.h"
 #include "../utils/folderutils.h"
 
@@ -143,7 +144,7 @@ ProgramTab::ProgramTab(QString & filename, QWidget *parent) : QFrame(parent)
     m_canCut = false;
     m_canUndo = false;
     m_canRedo = false;
-    m_language = "";
+    //m_platform = NULL;
     m_port = "";
     m_board = "";
     m_filename = filename;
@@ -257,28 +258,57 @@ void ProgramTab::createToolBarMenu() {
     m_saveButton->setEnabledIcon();					// seems to need this to display button icon first time
     m_leftButtonsContainer->addWidget(m_saveButton);
 
-    // Language (aka Platform) selection
+    // Platform selection
 
-    QFrame *languageSelector = new QFrame(m_middleButtonsContainer->parentWidget());
-    languageSelector->setObjectName("toolbarSelector");
-    QVBoxLayout *languageSelectionContainer = new QVBoxLayout(languageSelector);
-    languageSelectionContainer->setSpacing(0);
-    languageSelectionContainer->setMargin(0);
+    QFrame *platformSelector = new QFrame(m_middleButtonsContainer->parentWidget());
+    platformSelector->setObjectName("toolbarSelector");
+    QVBoxLayout *platformSelectionContainer = new QVBoxLayout(platformSelector);
+    platformSelectionContainer->setSpacing(0);
+    platformSelectionContainer->setMargin(0);
 
-    QLabel * languageLabel = new QLabel(tr("Language"), this);
-    m_languageComboBox = new QComboBox();
-    m_languageComboBox->setEditable(false);
-    m_languageComboBox->setEnabled(true);
-    m_languageComboBox->addItems(m_programWindow->getAvailableLanguages());
+    QLabel * platformLabel = new QLabel(tr("Platform"), this);
+    m_platformComboBox = new QComboBox();
+    m_platformComboBox->setEditable(false);
+    m_platformComboBox->setEnabled(true);
+    foreach (Platform * platform, m_programWindow->getAvailablePlatforms()) {
+        m_platformComboBox->addItem(platform->getName());
+    }
     QSettings settings;
-    QString currentLanguage = settings.value("programwindow/language", "").toString();
-    if (currentLanguage.isEmpty()) {
-        currentLanguage = m_languageComboBox->currentText();
+    QString currentPlatform = settings.value("programwindow/platform", "").toString();
+    if (currentPlatform.isEmpty()) {
+        currentPlatform = m_platformComboBox->currentText(); // TODO
     }
 
-    languageSelectionContainer->addWidget(m_languageComboBox);
-    languageSelectionContainer->addWidget(languageLabel);
-    m_rightButtonsContainer->addWidget(languageSelector);
+    platformSelectionContainer->addWidget(m_platformComboBox);
+    platformSelectionContainer->addWidget(platformLabel);
+    m_rightButtonsContainer->addWidget(platformSelector);
+
+    // Board selection
+
+    QFrame *boardSelector = new QFrame(m_middleButtonsContainer->parentWidget());
+    boardSelector->setObjectName("toolbarSelector");
+    QVBoxLayout *boardSelectionContainer = new QVBoxLayout(boardSelector);
+    boardSelectionContainer->setSpacing(0);
+    boardSelectionContainer->setMargin(0);
+
+    QLabel * boardLabel = new QLabel(tr("Board"), this);
+    m_boardComboBox = new QComboBox();
+    m_boardComboBox->setEditable(false);
+    m_boardComboBox->setEnabled(true);
+    updateBoards();
+
+    QString currentBoard = settings.value("programwindow/board", "").toString();
+    if (currentBoard.isEmpty()) {
+        currentBoard = m_boardComboBox->currentText();
+    }
+    else if (!m_programWindow->getBoardNames().contains(currentBoard)) {
+        currentBoard = m_boardComboBox->currentText();
+    }
+    setBoard(currentBoard);
+
+    boardSelectionContainer->addWidget(m_boardComboBox);
+    boardSelectionContainer->addWidget(boardLabel);
+    m_rightButtonsContainer->addWidget(boardSelector);
 
     // Port selection
 
@@ -308,34 +338,6 @@ void ProgramTab::createToolBarMenu() {
     portSelectionContainer->addWidget(portLabel);
     m_rightButtonsContainer->addWidget(portSelector);
 
-    // Board selection
-
-    QFrame *boardSelector = new QFrame(m_middleButtonsContainer->parentWidget());
-    boardSelector->setObjectName("toolbarSelector");
-    QVBoxLayout *boardSelectionContainer = new QVBoxLayout(boardSelector);
-    boardSelectionContainer->setSpacing(0);
-    boardSelectionContainer->setMargin(0);
-
-    QLabel * boardLabel = new QLabel(tr("Board"), this);
-    m_boardComboBox = new QComboBox();
-    m_boardComboBox->setEditable(false);
-    m_boardComboBox->setEnabled(true);
-    updateBoards();
-
-    QString currentBoard = settings.value("programwindow/board", "").toString();
-    if (currentBoard.isEmpty()) {
-        currentBoard = m_boardComboBox->currentText();
-    }
-    else if (!m_programWindow->getBoardNames().contains(currentBoard)) {
-        currentBoard = m_boardComboBox->currentText();
-    }
-    setBoard(currentBoard);
-
-    boardSelectionContainer->addWidget(m_boardComboBox);
-    boardSelectionContainer->addWidget(boardLabel);
-    m_rightButtonsContainer->addWidget(boardSelector);
-
-
 
     m_programmerComboBox = new QComboBox();
     m_programmerComboBox->setEditable(false);
@@ -355,13 +357,13 @@ void ProgramTab::createToolBarMenu() {
     //footerLayout->addWidget(m_programmerComboBox);
 
 	// connect last so these signals aren't triggered during initialization
-    connect(m_languageComboBox, SIGNAL(currentIndexChanged(const QString &)), this, SLOT(setLanguage(const QString &)));
+    connect(m_platformComboBox, SIGNAL(currentIndexChanged(const QString &)), this, SLOT(setPlatform(const QString &)));
     connect(m_portComboBox, SIGNAL(currentIndexChanged(const QString &)), this, SLOT(setPort(const QString &)));
 	connect(m_portComboBox, SIGNAL(aboutToShow()), this, SLOT(updateSerialPorts()), Qt::DirectConnection);
     connect(m_boardComboBox, SIGNAL(currentIndexChanged(const QString &)), this, SLOT(setBoard(const QString &)));
     connect(m_programmerComboBox, SIGNAL(activated(int)), this, SLOT(chooseProgrammerTimed(int)));
 
-    setLanguage(currentLanguage, false);
+    setPlatform(currentPlatform, false);
 
 //    m_monitorButton = new SketchToolButton("MonitorCode", this, m_programWindow->m_monitorAction);
 //    m_monitorButton->setText(tr("Serial Monitor"));
@@ -388,28 +390,36 @@ void ProgramTab::createToolBarMenu() {
 
 }
 
-void ProgramTab::setLanguage(const QString & newLanguage) {
-	setLanguage(newLanguage, true);
+void ProgramTab::setPlatform(const QString & newPlatformName) {
+    setPlatform(m_programWindow->getPlatformByName(newPlatformName), true);
 }
 
-void ProgramTab::setLanguage(const QString & newLanguage, bool updateLink) {
-    DebugDialog::debug(QString("Setting language to %1").arg(newLanguage));
-	if (updateLink && newLanguage != m_language) {
-		m_programWindow->updateLink(m_filename, newLanguage, m_programmerPath, false, false);
+void ProgramTab::setPlatform(const QString & newPlatformName, bool updateLink) {
+    setPlatform(m_programWindow->getPlatformByName(newPlatformName), updateLink);
+}
+
+void ProgramTab::setPlatform(Platform * newPlatform) {
+    setPlatform(newPlatform, true);
+}
+
+void ProgramTab::setPlatform(Platform * newPlatform, bool updateLink) {
+    DebugDialog::debug(QString("Setting platform to %1").arg(newPlatform->getName()));
+    if (updateLink && newPlatform != m_platform) {
+        m_programWindow->updateLink(m_filename, newPlatform, m_programmerPath, false, false);
 	}
 
-    m_language = newLanguage;
-    m_languageComboBox->setCurrentIndex(m_languageComboBox->findText(newLanguage));
-    Syntaxer * syntaxer = m_programWindow->getSyntaxerForLanguage(newLanguage);
+    m_platform = newPlatform;
+    m_platformComboBox->setCurrentIndex(m_platformComboBox->findText(newPlatform->getName()));
+    Syntaxer * syntaxer = m_platform->getSyntaxer();
     m_highlighter->setSyntaxer(syntaxer);
 	m_highlighter->rehighlight();
     updateMenu();
 	QSettings settings;
-	settings.setValue("programwindow/language", newLanguage);
+    settings.setValue("programwindow/platform", newPlatform->getName());
 
     bool canProgram = (syntaxer != NULL && syntaxer->canProgram());
     //m_unableToProgramLabel->setVisible(!canProgram);
-    //m_unableToProgramLabel->setText(UnableToProgramMessage.arg(newLanguage));
+    //m_unableToProgramLabel->setText(UnableToProgramMessage.arg(newPlatform.getName()));
 }
 
 void ProgramTab::setPort(const QString & newPort) {
@@ -460,7 +470,7 @@ bool ProgramTab::loadProgramFile(const QString & fileName, const QString & altFi
 
 	QFile file(fileName);
 	if (!file.open(QFile::ReadOnly)) {
-		m_programWindow->updateLink(fileName, m_language, m_programmerPath, false, true);
+        m_programWindow->updateLink(fileName, m_platform, m_programmerPath, false, true);
 		if (!altFileName.isEmpty()) {
 			file.setFileName(altFileName);
 			if (!file.open(QFile::ReadOnly)) {
@@ -503,7 +513,7 @@ bool ProgramTab::loadProgramFile(const QString & fileName, const QString & altFi
     DebugDialog::debug("about to update link");
 
 	if (updateLink) {
-		m_programWindow->updateLink(m_filename, m_language, m_programmerPath, true, true);
+        m_programWindow->updateLink(m_filename, m_platform, m_programmerPath, true, true);
 	}
 	return true;
 }
@@ -709,8 +719,8 @@ void ProgramTab::sendProgram() {
 
 	m_programButton->setEnabled(false);
 
-	QString language = m_languageComboBox->currentText();
-	if (language.compare("picaxe", Qt::CaseInsensitive) == 0) {
+    QString platformName = m_platformComboBox->currentText();
+    if (platformName.compare("picaxe", Qt::CaseInsensitive) == 0) {
 		QProcess * process = new QProcess(this);
 		process->setProcessChannelMode(QProcess::MergedChannels);
 		process->setReadChannel(QProcess::StandardOutput);
@@ -727,7 +737,7 @@ void ProgramTab::sendProgram() {
         return;
 	}
 
-	if (language.compare("arduino", Qt::CaseInsensitive) == 0) {
+    if (platformName.compare("arduino", Qt::CaseInsensitive) == 0) {
 		QProcess * process = new QProcess(this);
 		process->setProcessChannelMode(QProcess::MergedChannels);
 		process->setReadChannel(QProcess::StandardOutput);
@@ -813,7 +823,7 @@ void ProgramTab::chooseProgrammer(const QString & programmer)
 	if (!QFileInfo(filename).exists()) {
 		filename = FolderUtils::getOpenFileName(
 							this,
-							tr("Select a programmer (executable) for %1").arg(this->m_language),
+                            tr("Select a programmer (executable) for %1").arg(this->m_platform->getName()),
 							FolderUtils::openSaveFolder(),
                             "(Programmer *)"
 							);
@@ -828,7 +838,7 @@ void ProgramTab::chooseProgrammerAux(const QString & programmer, bool updateLink
 	if (programmer == ProgramWindow::LocateName) {
 		enableProgramButton();
 		if (updateLink && !m_programmerPath.isEmpty()) {
-			m_programWindow->updateLink(m_filename, m_language, "", false, false);
+            m_programWindow->updateLink(m_filename, m_platform, "", false, false);
 		}
 
 		m_programmerPath.clear();
@@ -843,7 +853,7 @@ void ProgramTab::chooseProgrammerAux(const QString & programmer, bool updateLink
     }
 
 	if (updateLink && m_programmerPath != programmer) {
-		m_programWindow->updateLink(m_filename, m_language, programmer, false, false);
+        m_programWindow->updateLink(m_filename, m_platform, programmer, false, false);
 	}
     m_programmerPath = programmer;
 	enableProgramButton();
@@ -880,14 +890,14 @@ void ProgramTab::updateMenu() {
 //        DebugDialog::debug(QString("Redo: %1").arg(m_canRedo));
 //        DebugDialog::debug(QString("Cut: %1").arg(m_canCut));
 //        DebugDialog::debug(QString("Copy: %1").arg(m_canCopy));
-//        DebugDialog::debug(QString("Language: %1").arg(m_language));
+//        DebugDialog::debug(QString("Platform: %1").arg(m_platform.getName()));
 //        DebugDialog::debug(QString("Port: %1").arg(m_port));
 
 		enableProgramButton();
 
         // Emit a signal so that the ProgramWindow can update its own UI.
 		emit programWindowUpdateRequest(m_programButton ? m_programButton->isEnabled() : false, m_canUndo, m_canRedo, m_canCut, m_canCopy, 
-            m_language, m_port, m_board, m_programmerPath.isEmpty() ? ProgramWindow::LocateName : m_programmerPath, m_filename);
+            m_platform, m_port, m_board, m_programmerPath.isEmpty() ? ProgramWindow::LocateName : m_programmerPath, m_filename);
 }
 
 void ProgramTab::updateProgrammerComboBox(const QString & programmer) {
@@ -974,8 +984,8 @@ void ProgramTab::updateSerialPorts() {
 	enableProgramButton();
 }
 
-const QString & ProgramTab::language() {
-	return m_language;
+Platform * ProgramTab::platform() {
+    return m_platform;
 }
 
 const QString & ProgramTab::programmer() {

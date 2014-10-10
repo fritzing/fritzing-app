@@ -3557,7 +3557,7 @@ void MainWindow::startSaveInstancesSlot(const QString & fileName, ModelPart *, Q
 		streamWriter.writeAttribute("pid", settings.value("pid").toString());
 		foreach (LinkedFile * linkedFile, m_linkedProgramFiles) {
 			streamWriter.writeStartElement("program");
-			streamWriter.writeAttribute("language", linkedFile->language);
+            streamWriter.writeAttribute("platform", linkedFile->platform);
 			streamWriter.writeAttribute("programmer", linkedFile->programmer);
 			streamWriter.writeCharacters(linkedFile->linkedFilename);
 			streamWriter.writeEndElement();
@@ -3675,7 +3675,7 @@ void MainWindow::loadedRootSlot(const QString & fname, ModelBase *, QDomElement 
 				path = dir.absoluteFilePath(info.fileName());
 			}
 			linkedFile->linkedFilename = path;
-			linkedFile->language = language;
+            linkedFile->platform = language;
 			linkedFile->programmer = programmer;
 			linkedFile->fileFlags = LinkedFile::NoFlag;
 			if (sameMachine) linkedFile->fileFlags |= LinkedFile::SameMachineFlag;
@@ -4130,8 +4130,8 @@ void MainWindow::openProgramWindow() {
 	}
 
 	m_programWindow = new ProgramWindow();
-	connect(m_programWindow, SIGNAL(linkToProgramFile(const QString &, const QString &, const QString &, bool, bool)), 
-			this, SLOT(linkToProgramFile(const QString &, const QString &, const QString &, bool, bool)));
+    connect(m_programWindow, SIGNAL(linkToProgramFile(const QString &, Platform *, const QString &, bool, bool)),
+            this, SLOT(linkToProgramFile(const QString &, Platform *, const QString &, bool, bool)));
 	connect(m_programWindow, SIGNAL(changeActivationSignal(bool, QWidget *)), qApp, SLOT(changeActivation(bool, QWidget *)), Qt::DirectConnection);
 	connect(m_programWindow, SIGNAL(destroyed(QObject *)), qApp, SLOT(topLevelWidgetDestroyed(QObject *)));
 
@@ -4141,7 +4141,7 @@ void MainWindow::openProgramWindow() {
 	m_programWindow->setVisible(true);
 }
 
-void MainWindow::linkToProgramFile(const QString & filename, const QString & language, const QString & programmer, bool addLink, bool strong) {
+void MainWindow::linkToProgramFile(const QString & filename, Platform * platform, const QString & programmer, bool addLink, bool strong) {
 #ifdef Q_OS_WIN
 	Qt::CaseSensitivity sensitivity = Qt::CaseInsensitive;
 #else
@@ -4152,8 +4152,8 @@ void MainWindow::linkToProgramFile(const QString & filename, const QString & lan
 		bool gotOne = false;
 		foreach (LinkedFile * linkedFile, m_linkedProgramFiles) {
 			if (linkedFile->linkedFilename.compare(filename, sensitivity) == 0) {
-				if (linkedFile->language != language) {
-					linkedFile->language = language;
+                if (linkedFile->platform != platform->getName()) {
+                    linkedFile->platform = platform->getName();
 					this->setWindowModified(true);
 				}
 				if (linkedFile->programmer != programmer) {
@@ -4167,7 +4167,7 @@ void MainWindow::linkToProgramFile(const QString & filename, const QString & lan
 		if (!gotOne) {
 			LinkedFile * linkedFile = new LinkedFile;
 			linkedFile->linkedFilename = filename;
-			linkedFile->language = language;
+            linkedFile->platform = platform->getName();
 			linkedFile->programmer = programmer;
 			m_linkedProgramFiles.append(linkedFile);
 			this->setWindowModified(true);
@@ -4183,8 +4183,8 @@ void MainWindow::linkToProgramFile(const QString & filename, const QString & lan
 					this->setWindowModified(true);
 				}
 				else {
-					if (linkedFile->language != language) {
-						linkedFile->language = language;
+                    if (linkedFile->platform != platform->getName()) {
+                        linkedFile->platform = platform->getName();
 						this->setWindowModified(true);
 					}
 					if (linkedFile->programmer != programmer) {

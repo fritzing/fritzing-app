@@ -19,10 +19,16 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 ********************************************************************/
 
 #include "platform.h"
+#include "syntaxer.h"
+
+#include <QDir>
+
+#include <src/utils/folderutils.h>
 
 Platform::Platform(const QString &name) : QObject()
 {
     m_name = name;
+    m_syntaxer = loadSyntaxer();
 }
 
 Platform::~Platform()
@@ -30,14 +36,35 @@ Platform::~Platform()
     // nothing to do
 }
 
+QString Platform::getName() const
+{
+    return m_name;
+}
+
 void Platform::upload(QString port, QString board, QString fileLocation)
 {
     // stub
 }
 
-QFile Platform::getSyntaxFile() const
+Syntaxer * Platform::getSyntaxer() {
+    return m_syntaxer;
+}
+
+Syntaxer * Platform::loadSyntaxer()
 {
-    // TODO
+    Syntaxer * syntaxer = new Syntaxer();
+    QDir dir(FolderUtils::getApplicationSubFolderPath("translations"));
+    dir.cd("syntax");
+    QStringList nameFilters;
+    nameFilters << "*.xml";
+    QFileInfoList list = dir.entryInfoList(nameFilters, QDir::Files | QDir::NoSymLinks);
+    foreach (QFileInfo fileInfo, list) {
+        if (fileInfo.completeBaseName().compare(getName(), Qt::CaseInsensitive) == 0) {
+            syntaxer->loadSyntax(fileInfo.absoluteFilePath());
+            break;
+        }
+    }
+    return syntaxer;
 }
 
 QString Platform::getCommandLocation() const
@@ -109,12 +136,6 @@ void Platform::setMinVersion(const QString &minVersion)
 {
     m_minVersion = minVersion;
 }
-
-
-
-
-
-
 
 
 

@@ -107,7 +107,6 @@ void PTabWidget::tabChanged(int index) {
 ///////////////////////////////////////////////
 
 static int UntitledIndex = 1;
-QHash<QString, QString> ProgramWindow::m_languages;
 QList<Platform *> ProgramWindow::m_platforms;
 QHash<QString, class Syntaxer *> ProgramWindow::m_syntaxers;
 const QString ProgramWindow::LocateName = "locate";
@@ -141,8 +140,8 @@ ProgramWindow::ProgramWindow(QWidget *parent)
 		initProgrammerNames();
 	}
 
-	if (m_languages.count() == 0) {
-		initLanguages();
+    if (m_platforms.count() == 0) {
+        initPlatforms();
 	}
 
     if (BoardNames.count() == 0) {
@@ -280,27 +279,27 @@ void ProgramWindow::initMenus(QMenuBar * menubar) {
 
     m_programMenu->addSeparator();
 
-    QMenu *languageMenu = new QMenu(tr("Language"), this);
-    m_programMenu->addMenu(languageMenu);
+    QMenu *platformMenu = new QMenu(tr("Platform"), this);
+    m_programMenu->addMenu(platformMenu);
 
     QSettings settings;
-	QString currentLanguage = settings.value("programwindow/language", "").toString();
-	QStringList languages = getAvailableLanguages();
-    QActionGroup *languageActionGroup = new QActionGroup(this);
-    foreach (QString language, languages) {
-        currentAction = new QAction(language, this);
+    QString currentPlatform = settings.value("programwindow/platform", "").toString();
+    QList<Platform *> platforms = getAvailablePlatforms();
+    QActionGroup *platformActionGroup = new QActionGroup(this);
+    foreach (Platform * platform, platforms) {
+        currentAction = new QAction(platform->getName(), this);
         currentAction->setCheckable(true);
-        m_languageActions.insert(language, currentAction);
-        languageActionGroup->addAction(currentAction);
-        languageMenu->addAction(currentAction);
-		if (!currentLanguage.isEmpty()) {
-			if (language.compare(currentLanguage) == 0) {
+        m_platformActions.insert(platform, currentAction);
+        platformActionGroup->addAction(currentAction);
+        platformMenu->addAction(currentAction);
+        if (!currentPlatform.isEmpty()) {
+            if (platform->getName().compare(currentPlatform) == 0) {
 				currentAction->setChecked(true);
 			}
 		}
     }
 
-    connect(languageMenu, SIGNAL(triggered(QAction*)), this, SLOT(setLanguage(QAction*)));
+    connect(platformMenu, SIGNAL(triggered(QAction*)), this, SLOT(setPlatform(QAction*)));
 
     m_programmerMenu = new QMenu(tr("Programmer"), this);
     m_programMenu->addMenu(m_programmerMenu);
@@ -384,11 +383,11 @@ void ProgramWindow::linkFiles(const QList<LinkedFile *> & linkedFiles, const QSt
 				programTab->appendToConsole(tr("File '%1' was restored from the .fzz file; save a local copy to work with an external editor.").arg(fileInfo.fileName()));
 			}
 		}
-		if (!m_languages.value(linkedFile->language, "").isEmpty()) {
-			programTab->setLanguage(linkedFile->language, false);
+        if (hasPlatform(linkedFile->platform)) {
+            programTab->setPlatform(linkedFile->platform, false);
 		}
 		else {
-			linkedFile->language.clear();
+            linkedFile->platform.clear();
 		}
 		if (programTab->setProgrammer(linkedFile->programmer)) {
 			linkedFile->programmer.clear();
@@ -519,9 +518,9 @@ ProgramTab * ProgramWindow::addTab() {
     connect(programTab, SIGNAL(wantToRename(int)), this, SLOT(tabRename(int)));
     connect(programTab, SIGNAL(wantToDelete(int, bool)), this, SLOT(tabDelete(int, bool)), Qt::DirectConnection);
     connect(programTab, 
-        SIGNAL(programWindowUpdateRequest(bool, bool, bool, bool, bool, const QString &, const QString &, const QString &, const QString &, const QString &)),
+        SIGNAL(programWindowUpdateRequest(bool, bool, bool, bool, bool, Platform *, const QString &, const QString &, const QString &, const QString &)),
 		this, 
-        SLOT(updateMenu(bool, bool, bool, bool, bool, const QString &, const QString &, const QString &, const QString &, const QString &)));
+        SLOT(updateMenu(bool, bool, bool, bool, bool, Platform *, const QString &, const QString &, const QString &, const QString &)));
 	int ix = m_tabWidget->addTab(programTab, name);
     m_tabWidget->setCurrentIndex(ix);
 	UntitledIndex++;
@@ -541,7 +540,7 @@ void ProgramWindow::closeCurrentTab() {
 void ProgramWindow::closeTab(int index) {
         ProgramTab * pTab = indexWidget(index);
         if (pTab) {
-			emit linkToProgramFile(pTab->filename(), "", "", false, true);
+            emit linkToProgramFile(pTab->filename(), NULL, "", false, true);
                 pTab->deleteTab();
         }
 }
@@ -553,7 +552,7 @@ void ProgramWindow::closeTab(int index) {
  *  - cut/copy
  */
 void ProgramWindow::updateMenu(bool programEnable, bool undoEnable, bool redoEnable, bool cutEnable, bool copyEnable, 
-                               const QString & language, const QString & port, const QString & board, const QString & programmer, const QString & filename)
+                              Platform* platform, const QString & port, const QString & board, const QString & programmer, const QString & filename)
 {
 	ProgramTab * programTab = currentWidget();
 	m_saveAction->setEnabled(programTab->isModified());
@@ -562,7 +561,7 @@ void ProgramWindow::updateMenu(bool programEnable, bool undoEnable, bool redoEna
     m_redoAction->setEnabled(redoEnable);
     m_cutAction->setEnabled(cutEnable);
     m_copyAction->setEnabled(copyEnable);
-    QAction *lang = m_languageActions.value(language);
+    QAction *lang = m_platformActions.value(platform);
     if (lang) {
         lang->setChecked(true);
     }
@@ -608,8 +607,8 @@ void ProgramWindow::updateMenu(bool programEnable, bool undoEnable, bool redoEna
     setTitle(filename);
 }
 
-void ProgramWindow::setLanguage(QAction* action) {
-    currentWidget()->setLanguage(action->text(), true);
+void ProgramWindow::setPlatform(QAction* action) {
+    currentWidget()->setPlatform(action->text(), true);
 }
 
 void ProgramWindow::setPort(QAction* action) {
@@ -710,7 +709,7 @@ void ProgramWindow::tabRename(int index) {
 			QFile oldFile(oldFileName);
 			if (oldFile.exists()) {
 				oldFile.remove();
-				emit linkToProgramFile(oldFileName, "", "", false, true);
+                emit linkToProgramFile(oldFileName, NULL, "", false, true);
 			}
 		}
     }
@@ -739,45 +738,32 @@ bool ProgramWindow::prepSave(ProgramTab * programTab, bool saveAsFlag)
 
     if (result) {
 		programTab->setClean();
-		emit linkToProgramFile(programTab->filename(), programTab->language(), programTab->programmer(), true, true);
+        emit linkToProgramFile(programTab->filename(), programTab->platform(), programTab->programmer(), true, true);
 	}
 	return result;
 }
 
-void ProgramWindow::initLanguages() {
+void ProgramWindow::initPlatforms() {
     QDir dir(FolderUtils::getApplicationSubFolderPath("translations"));
-    dir.cd("syntax");
-    QStringList nameFilters;
-    nameFilters << "*.xml";
-    QFileInfoList list = dir.entryInfoList(nameFilters, QDir::Files | QDir::NoSymLinks);
-    foreach (QFileInfo fileInfo, list) {
-        if (fileInfo.completeBaseName().compare("styles") == 0) {
-            Highlighter::loadStyles(fileInfo.absoluteFilePath());
-        }
-        else {
-            QString name = Syntaxer::parseForName(fileInfo.absoluteFilePath());
-            if (!name.isEmpty()) {
-                m_languages.insert(name, fileInfo.absoluteFilePath());
-            }
-        }
-    }
+    Highlighter::loadStyles(dir.absolutePath().append("/syntax/styles.xml"));
 
     m_platforms << new PlatformArduino() << new PlatformPicaxe();
 }
 
-QStringList ProgramWindow::getAvailableLanguages() {
-   return m_languages.keys();
+QList<Platform *> ProgramWindow::getAvailablePlatforms() {
+    return m_platforms;
 }
 
-Syntaxer * ProgramWindow::getSyntaxerForLanguage(QString language) {
-    Syntaxer * syntaxer = m_syntaxers.value(language, NULL);
-    if (syntaxer == NULL) {
-        syntaxer = new Syntaxer();
-        if (syntaxer->loadSyntax(m_languages.value(language))) {
-            m_syntaxers.insert(language, syntaxer);
-        }
+Platform * ProgramWindow::getPlatformByName(const QString & platformName) {
+    foreach (Platform * platform, getAvailablePlatforms()) {
+        if (platform->getName().compare(platformName, Qt::CaseInsensitive) == 0)
+            return platform;
     }
-    return m_syntaxers.value(language, NULL);
+    return NULL;
+}
+
+bool ProgramWindow::hasPlatform(const QString & platformName) {
+    return getPlatformByName(platformName) != NULL;
 }
 
 const QHash<QString, QString> ProgramWindow::getProgrammerNames()
@@ -817,16 +803,13 @@ const QHash<QString, QString> ProgramWindow::getBoardNames() {
 }
 
 void ProgramWindow::initBoards() {
-    //if (currentLanguage.compare("arduino", Qt::CaseInsensitive) == 0) {
-
         // TODO: read from actual Arduino installation or our own Arduino syntax file
-        //       make tab-dependent
+        //       make platform-dependent
         // see https://github.com/arduino/Arduino/blob/ide-1.5.x/build/shared/manpage.adoc#options
 
         BoardNames.insert("Arduino UNO", "arduino:avr:uno");
         BoardNames.insert("Arduino Mega or Mega 2560", "arduino:avr:mega");
         BoardNames.insert("Arduino Yún", "arduino:avr:yun");
-    //}
 }
 
 QAction * ProgramWindow::addBoard(const QString & name, const QString & path)
@@ -981,10 +964,10 @@ void ProgramWindow::updateSerialPorts() {
 	}
 }
 
-void ProgramWindow::updateLink(const QString & filename, const QString & language, const QString & programmer, bool addlink, bool strong)
+void ProgramWindow::updateLink(const QString & filename, Platform * platform, const QString & programmer, bool addlink, bool strong)
 {
     DebugDialog::debug("updating link");
-	emit linkToProgramFile(filename, language, programmer, addlink, strong);
+    emit linkToProgramFile(filename, platform, programmer, addlink, strong);
 }
 
 void ProgramWindow::portProcessFinished(int exitCode, QProcess::ExitStatus exitStatus) {

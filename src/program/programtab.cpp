@@ -1002,11 +1002,8 @@ void ProgramTab::enableProgramButton() {
 	if (m_programmerPath.isEmpty()) {
 		enabled = false;
 	}
-	if (enabled && m_portComboBox->count() == 1) {
-		if (m_portComboBox->itemText(0).compare(ProgramWindow::NoSerialPortName) == 0) {
-            DebugDialog::debug("restore enabled please");
-			//enabled = false;
-		}
+    if (enabled && m_portComboBox->count() == 0) {
+        enabled = false;
 	}
 	if (enabled && m_textEdit->document()->isEmpty()) {
 		enabled = false;

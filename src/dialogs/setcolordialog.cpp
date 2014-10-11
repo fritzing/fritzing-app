@@ -87,14 +87,14 @@ SetColorDialog::SetColorDialog(const QString & message, QColor & currentColor, Q
 	QFrame * f3 = new QFrame();
 	QHBoxLayout * hLayout3 = new QHBoxLayout(f3);
 	QPushButton *button3 = new QPushButton(tr("Custom color ..."));
-	button3->setFixedWidth(BUTTON_WIDTH);
+//	button3->setFixedWidth(BUTTON_WIDTH);
 	connect(button3, SIGNAL(clicked()), this, SLOT(selectCustom()));
 	hLayout3->addWidget(button3);
-	m_customColorLabel = new ClickableLabel("", this);
-	connect(m_customColorLabel, SIGNAL(clicked()), this, SLOT(selectLastCustom()));
-	setCustomColor(currentColor);
-	m_customColorLabel->setMargin(MARGIN);
-	hLayout3->addWidget(m_customColorLabel);
+//	m_customColorLabel = new ClickableLabel("", this);
+//	connect(m_customColorLabel, SIGNAL(clicked()), this, SLOT(selectLastCustom()));
+    setCustomColor(currentColor);
+//	m_customColorLabel->setMargin(MARGIN);
+//	hLayout3->addWidget(m_customColorLabel);
 	vLayout->addWidget(f3);
 
 	QSpacerItem * spacerItem = new QSpacerItem( 0, 10 );
@@ -162,9 +162,9 @@ bool SetColorDialog::isPrefsColor() {
 
 void SetColorDialog::setCustomColor(const QColor & color) {
 	m_customColor = color;
-	m_customColorLabel->setText(tr("custom color (%1)").arg(color.name()));
-	m_customColorLabel->setPalette(QPalette(color));
-	m_customColorLabel->setAutoFillBackground(true);
+//	m_customColorLabel->setText(tr("custom color (%1)").arg(color.name()));
+//	m_customColorLabel->setPalette(QPalette(color));
+//	m_customColorLabel->setAutoFillBackground(true);
 }
 
 void SetColorDialog::setColor(const QColor & color) {

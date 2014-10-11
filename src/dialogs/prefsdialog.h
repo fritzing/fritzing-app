@@ -73,6 +73,7 @@ protected:
 	void initBreadboard(QWidget *, ViewInfoThing *);
 	void initSchematic(QWidget *, ViewInfoThing *);
 	void initPCB(QWidget *, ViewInfoThing *);
+    void initCode(QWidget *widget, ViewInfoThing *viewInfoThing);
 	QWidget * createCurvyForm(ViewInfoThing *);
 
 protected slots:
@@ -91,6 +92,7 @@ protected:
 	QPointer<QWidget> m_breadboard;
 	QPointer<QWidget> m_schematic;
 	QPointer<QWidget> m_pcb;
+    QPointer<QWidget> m_code;
 	QPointer<QLabel> m_wheelLabel[3];
 	QHash<QString, QString> m_settings;
 	QHash<QString, QString> m_tempSettings;
@@ -98,7 +100,7 @@ protected:
 	class TranslatorListModel * m_translatorListModel;
 	bool m_cleared;
 	int m_wheelMapping;
-	ViewInfoThing m_viewInfoThings[3];
+    ViewInfoThing m_viewInfoThings[4];
 };
 
 #endif 

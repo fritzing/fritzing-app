@@ -78,12 +78,14 @@ void PrefsDialog::initLayout(QFileInfoList & list)
 	m_breadboard = new QWidget();
 	m_schematic = new QWidget();
 	m_pcb = new QWidget();
+    m_code = new QWidget();
     m_tabWidget->setObjectName("preDia_tabs");
 
 	m_tabWidget->addTab(m_general, tr("General"));
 	m_tabWidget->addTab(m_breadboard, m_viewInfoThings[0].viewName);
 	m_tabWidget->addTab(m_schematic, m_viewInfoThings[1].viewName);
 	m_tabWidget->addTab(m_pcb, m_viewInfoThings[2].viewName);
+    m_tabWidget->addTab(m_code, m_viewInfoThings[3].viewName);
 
 	QVBoxLayout * vLayout = new QVBoxLayout();
 	vLayout->addWidget(m_tabWidget);
@@ -93,6 +95,7 @@ void PrefsDialog::initLayout(QFileInfoList & list)
 	initBreadboard(m_breadboard, &m_viewInfoThings[0]);
 	initSchematic(m_schematic, &m_viewInfoThings[1]);
 	initPCB(m_pcb, &m_viewInfoThings[2]);
+    initCode(m_code, &m_viewInfoThings[3]);
 
     QDialogButtonBox * buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
 	buttonBox->button(QDialogButtonBox::Cancel)->setText(tr("Cancel"));
@@ -149,6 +152,13 @@ void PrefsDialog::initPCB(QWidget * widget, ViewInfoThing * viewInfoThing)
 	vLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Preferred, QSizePolicy::Expanding));
 
 	widget->setLayout(vLayout);
+}
+
+void PrefsDialog::initCode(QWidget * widget, ViewInfoThing * viewInfoThing)
+{
+    QVBoxLayout * vLayout = new QVBoxLayout();
+
+    widget->setLayout(vLayout);
 }
 
 QWidget * PrefsDialog::createZoomerForm() {

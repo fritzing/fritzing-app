@@ -1234,6 +1234,7 @@ void FApplication::preferencesAfter()
 		prefsDialog.initViewInfo(ix++,  sketchWidget->viewName(), sketchWidget->getShortName(), 
 									sketchWidget->curvyWires());
 	}
+    prefsDialog.initViewInfo(ix++, tr("Code View"), tr("Code"), false);
 
 	prefsDialog.initLayout(list);
 	if (QDialog::Accepted == prefsDialog.exec()) {

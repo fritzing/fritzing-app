@@ -110,7 +110,6 @@ static int UntitledIndex = 1;
 QList<Platform *> ProgramWindow::m_platforms;
 QHash<QString, class Syntaxer *> ProgramWindow::m_syntaxers;
 const QString ProgramWindow::LocateName = "locate";
-QString ProgramWindow::NoSerialPortName;
 QString ProgramWindow::NoBoardName;
 
 static QHash<QString, QString> ProgrammerNames;
@@ -147,10 +146,6 @@ ProgramWindow::ProgramWindow(QWidget *parent)
     if (NoBoardName.isEmpty()) {
         NoBoardName = tr("No boards available");
     }
-
-	if (NoSerialPortName.isEmpty()) {
-		NoSerialPortName = tr("No ports found");
-	}
 
 	m_savingProgramTab = NULL;
 	UntitledIndex--;						// incremented by FritzingWindow
@@ -905,12 +900,9 @@ QStringList ProgramWindow::getExtensions() {
 	return pt->extensions();
 }
 
-QStringList ProgramWindow::getSerialPorts() {
-    QStringList ports;
-
-    foreach (const QSerialPortInfo &info, QSerialPortInfo::availablePorts()) {
-        ports << info.systemLocation(); //<< info.portName() << info.description();
-    }
+QList<QSerialPortInfo> ProgramWindow::getSerialPorts() {
+    QList<QSerialPortInfo> ports;
+    ports = QSerialPortInfo::availablePorts();
 
     /*
     // on the pc, handy for testing the UI when there are no serial ports
@@ -920,47 +912,39 @@ QStringList ProgramWindow::getSerialPorts() {
     ports.removeOne("COM3");
     */
 
-    if (ports.isEmpty()) {
-        ports.append(NoSerialPortName);
-    }
     return ports;
 }
 
 void ProgramWindow::updateSerialPorts() {
-	QStringList ports = getSerialPorts();
-	QStringList newPorts;
-	foreach (QString port, ports) {
-		if (m_portActions.value(port, NULL) == NULL) {
-			newPorts.append(port);
-		}
-	}
-	QStringList obsoletePorts;
-	foreach (QString port, m_portActions.keys()) {
-		if (!ports.contains(port)) {
-			obsoletePorts.append(port);
-		}
-	}
+    QList<QSerialPortInfo> ports = getSerialPorts();
 
-	foreach (QString port, newPorts) {
-        QAction * action = new QAction(port, this);
-        action->setCheckable(true);
-        m_portActions.insert(port, action);
-        m_serialPortMenu->addAction(action);
-        m_serialPortActionGroup->addAction(action);
+    m_portActions.clear();
+    foreach (QAction * action, m_serialPortActionGroup->actions())
+        m_serialPortActionGroup->removeAction(action);
+    m_serialPortMenu->clear();
+
+    foreach (QSerialPortInfo port, ports) {
+        addPort(port);
     }
+}
 
-	foreach (QString port, obsoletePorts) {
-		QAction * action = m_portActions.value(port, NULL);
-		if (action == NULL) continue;			// shouldn't happen
+QAction * ProgramWindow::addPort(QSerialPortInfo port)
+{
+    QAction * currentAction = new QAction(port.portName(), this);
+    currentAction->setCheckable(true);
+    currentAction->setData(port.systemLocation());
+    m_portActions.insert(port.portName(), currentAction);
+    m_serialPortMenu->addAction(currentAction);
+    m_serialPortActionGroup->addAction(currentAction);
+    return currentAction;
+}
 
-		if (action->isChecked()) {
-			// TODO:  what?
-		}
-
-		m_portActions.remove(port);
-		m_serialPortActionGroup->removeAction(action);
-		m_serialPortMenu->removeAction(action);
-	}
+bool ProgramWindow::hasPort(const QString & portName) {
+    foreach (QSerialPortInfo port, getSerialPorts()) {
+        if (port.portName().compare(portName) == 0)
+            return true;
+    }
+    return false;
 }
 
 void ProgramWindow::updateLink(const QString & filename, Platform * platform, const QString & programmer, bool addlink, bool strong)

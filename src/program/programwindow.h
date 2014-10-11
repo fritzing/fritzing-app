@@ -37,6 +37,7 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 #include <QTabWidget>
 #include <QComboBox>
 #include <QActionGroup>
+#include <QSerialPortInfo>
 
 #include "platform.h"
 #include "syntaxer.h"
@@ -87,12 +88,13 @@ public:
 	void linkFiles(const QList<LinkedFile *> &, const QString & alternativePath);
 	const QString defaultSaveFolder();
 
-    QStringList getSerialPorts();
+    QList<QSerialPortInfo> getSerialPorts();
     QList<Platform *> getAvailablePlatforms();
     bool hasPlatform(const QString &platformName);
     Platform *getPlatformByName(const QString &platformName);
 	const QHash<QString, QString> getProgrammerNames();
     const QMap<QString, QString> getBoards();
+    bool hasPort(const QString &portName);
 	void loadProgramFileNew();
 	bool alreadyHasProgram(const QString &);
     void updateLink(const QString & filename, Platform *platform, const QString & programmer, bool addlink, bool strong);
@@ -159,6 +161,7 @@ protected:
 	bool beforeClosingTab(int index, bool showCancel);
 	QAction * addProgrammer(const QString & name, const QString & path);
     QAction * addBoard(const QString & name, const QString & definition);
+    QAction * addPort(QSerialPortInfo port);
 	inline ProgramTab * currentWidget();
 	inline ProgramTab * indexWidget(int index);
 	void initProgrammerNames();
@@ -172,7 +175,6 @@ protected:
 
 public:
 	static const QString LocateName;
-	static QString NoSerialPortName;
     static QString NoBoardName;
     QAction *m_newAction;
     QAction *m_openAction;

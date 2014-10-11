@@ -325,14 +325,15 @@ void ProgramTab::initMenus() {
     m_portComboBox = new SerialPortComboBox();
     m_portComboBox->setEditable(false);
     m_portComboBox->setEnabled(true);
-    QStringList ports = m_programWindow->getSerialPorts();
-    m_portComboBox->addItems(ports);
+    QList<QSerialPortInfo> ports = m_programWindow->getSerialPorts();
+    foreach (const QSerialPortInfo port, ports)
+        m_portComboBox->addItem(port.portName());
 
     QString currentPort = settings.value("programwindow/port", "").toString();
     if (currentPort.isEmpty()) {
         currentPort = m_portComboBox->currentText();
     }
-    else if (!ports.contains(currentPort)) {
+    else if (m_programWindow->hasPort(currentPort)) {
         currentPort = m_portComboBox->currentText();
     }
     setPort(currentPort);
@@ -736,11 +737,11 @@ void ProgramTab::sendProgram() {
 		connect(process, SIGNAL(readyReadStandardOutput()), this, SLOT(programProcessReadyRead()));
 
 		QStringList args;
-		args.append(QString("-c%1").arg(m_portComboBox->currentText()));
+        args.append(QString("-c%1").arg(m_portComboBox->currentData().toString()));
 		args.append(m_filename);
 		m_console->setPlainText("");
 		
-        process->start(m_programmerPath, args);
+        process->start(m_programmerPath, args); // TODO: use chip-specific programmer
         return;
 	}
 
@@ -774,7 +775,7 @@ void ProgramTab::sendProgram() {
         QString boardDef = m_programWindow->getBoards().value(m_boardComboBox->currentText());
         args.append(boardDef);
         args.append(QString("--port"));
-        args.append(m_portComboBox->currentText());
+        args.append(m_portComboBox->currentData().toString());
         args.append(QString("--upload"));
         args.append(QDir::toNativeSeparators(tmpFilePath));
 
@@ -879,8 +880,6 @@ void ProgramTab::programProcessFinished(int exitCode, QProcess::ExitStatus exitS
 }
 
 void ProgramTab::programProcessReadyRead() {
-    QStringList ports;
-
 	QByteArray byteArray = qobject_cast<QProcess *>(sender())->readAllStandardOutput();
     m_console->append(byteArray);
 }
@@ -959,18 +958,18 @@ void ProgramTab::updateBoards() {
 }
 
 void ProgramTab::updateSerialPorts() {
-	QStringList ports = m_programWindow->getSerialPorts();
+    QList<QSerialPortInfo> ports = m_programWindow->getSerialPorts();
 
-	QStringList newPorts;
-	foreach (QString port, ports) {
-		if (m_portComboBox->findText(port) < 0) {
+    QList<QSerialPortInfo> newPorts;
+    foreach (QSerialPortInfo port, ports) {
+        if (m_portComboBox->findText(port.portName()) < 0) {
 			newPorts.append(port);
 		}
 	}
-	QList<int> obsoletePorts;
+    QList<int> obsoletePorts;
 	for (int i = 0; i < m_portComboBox->count(); i++) {
-		QString port = m_portComboBox->itemText(i);
-		if (!ports.contains(port)) {
+        QString portName = m_portComboBox->itemText(i);
+        if (!m_programWindow->hasPort(portName)) {
 			obsoletePorts.append(i);
 		}
 		if (i == m_portComboBox->currentIndex()) {
@@ -981,8 +980,8 @@ void ProgramTab::updateSerialPorts() {
 	for (int i = obsoletePorts.count() - 1; i >= 0; i--) {
 		m_portComboBox->removeItem(obsoletePorts.at(i));
 	}
-	foreach (QString port, newPorts) {
-		m_portComboBox->addItem(port);
+    foreach (QSerialPortInfo port, newPorts) {
+        m_portComboBox->addItem(port.portName());
 	}
 
 	enableProgramButton();

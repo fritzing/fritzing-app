@@ -7,6 +7,31 @@ PlatformPicaxe::PlatformPicaxe() : Platform(QString("PICAXE"))
     setDownloadUrl(QUrl("http://www.picaxe.com/Software/Drivers/PICAXE-Compilers/"));
     setMinVersion("2.0");
     setExtensions(QStringList() << ".bas" << ".BAS");
+
+    QMap<QString, QString> boards;
+    boards.insert("PICAXE-08", "picaxe08");
+    boards.insert("PICAXE-08M", "picaxe08m");
+    boards.insert("PICAXE-08M2", "picaxe08m2");
+    boards.insert("PICAXE-08M2LE", "picaxe08m2le");
+    boards.insert("PICAXE-14M", "picaxe14m");
+    boards.insert("PICAXE-14M2", "picaxe14m2");
+    boards.insert("PICAXE-18", "picaxe18");
+    boards.insert("PICAXE-18A", "picaxe18a");
+    boards.insert("PICAXE-18M", "picaxe18m");
+    boards.insert("PICAXE-18M2", "picaxe18m2");
+    boards.insert("PICAXE-18X", "picaxe18x");
+    boards.insert("PICAXE-20", "picaxe20");
+    boards.insert("PICAXE-20M2", "picaxe20m2");
+    boards.insert("PICAXE-20X2", "picaxe20x2");
+    boards.insert("PICAXE-28", "picaxe28");
+    boards.insert("PICAXE-28A", "picaxe28a");
+    boards.insert("PICAXE-28X", "picaxe28x");
+    boards.insert("PICAXE-28X1", "picaxe28x1");
+    boards.insert("PICAXE-28X2", "picaxe28x2");
+    boards.insert("PICAXE-40X", "picaxe28x");
+    boards.insert("PICAXE-40X1", "picaxe28x1");
+    boards.insert("PICAXE-40X2", "picaxe28x2");
+    setBoards(boards);
 }
 
 void PlatformPicaxe::upload(QString port, QString board, QString fileLocation)

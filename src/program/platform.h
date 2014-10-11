@@ -21,7 +21,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "syntaxer.h"
 
 #include <QFile>
-#include <QHash>
+#include <QMap>
 #include <QObject>
 #include <QPointer>
 #include <QString>
@@ -48,8 +48,8 @@ public:
     void setCommandLocation(const QString &commandLocation);
     QStringList getExtensions() const;
     void setExtensions(const QStringList &suffixes);
-    QHash<QString, QString> getBoards() const;
-    void setBoards(const QHash<QString, QString> &boards);
+    QMap<QString, QString> getBoards() const;
+    void setBoards(const QMap<QString, QString> &boards);
     QUrl getReferenceUrl() const;
     void setReferenceUrl(const QUrl &referenceUrl);
     bool canProgram() const;
@@ -64,7 +64,7 @@ protected:
     QString m_commandLocation;
     bool m_canProgram;
     QStringList m_extensions;
-    QHash<QString, QString> m_boards;
+    QMap<QString, QString> m_boards;
     QUrl m_referenceUrl;
     QUrl m_downloadUrl;
     QString m_minVersion;

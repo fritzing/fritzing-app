@@ -111,9 +111,9 @@ QList<Platform *> ProgramWindow::m_platforms;
 QHash<QString, class Syntaxer *> ProgramWindow::m_syntaxers;
 const QString ProgramWindow::LocateName = "locate";
 QString ProgramWindow::NoSerialPortName;
+QString ProgramWindow::NoBoardName;
 
 static QHash<QString, QString> ProgrammerNames;
-static QHash<QString, QString> BoardNames;
 
 ProgramWindow::ProgramWindow(QWidget *parent)
     : FritzingWindow("", untitledFileCount(), "", parent)
@@ -144,8 +144,8 @@ ProgramWindow::ProgramWindow(QWidget *parent)
         initPlatforms();
 	}
 
-    if (BoardNames.count() == 0) {
-        initBoards();
+    if (NoBoardName.isEmpty()) {
+        NoBoardName = tr("No boards available");
     }
 
 	if (NoSerialPortName.isEmpty()) {
@@ -279,56 +279,45 @@ void ProgramWindow::initMenus(QMenuBar * menubar) {
 
     m_programMenu->addSeparator();
 
-    QMenu *platformMenu = new QMenu(tr("Platform"), this);
-    m_programMenu->addMenu(platformMenu);
-
+    m_platformMenu = new QMenu(tr("Platform"), this);
+    m_programMenu->addMenu(m_platformMenu);
     QSettings settings;
     QString currentPlatform = settings.value("programwindow/platform", "").toString();
     QList<Platform *> platforms = getAvailablePlatforms();
-    QActionGroup *platformActionGroup = new QActionGroup(this);
+    m_platformActionGroup = new QActionGroup(this);
     foreach (Platform * platform, platforms) {
         currentAction = new QAction(platform->getName(), this);
         currentAction->setCheckable(true);
         m_platformActions.insert(platform, currentAction);
-        platformActionGroup->addAction(currentAction);
-        platformMenu->addAction(currentAction);
+        m_platformActionGroup->addAction(currentAction);
+        m_platformMenu->addAction(currentAction);
         if (!currentPlatform.isEmpty()) {
             if (platform->getName().compare(currentPlatform) == 0) {
 				currentAction->setChecked(true);
 			}
 		}
     }
-
-    connect(platformMenu, SIGNAL(triggered(QAction*)), this, SLOT(setPlatform(QAction*)));
+    connect(m_platformMenu, SIGNAL(triggered(QAction*)), this, SLOT(setPlatform(QAction*)));
 
     m_programmerMenu = new QMenu(tr("Programmer"), this);
     m_programMenu->addMenu(m_programmerMenu);
-
 	m_programmerActionGroup = new QActionGroup(this);
 	QHash<QString, QString> programmerNames = getProgrammerNames();
 	foreach (QString name, programmerNames.keys()) {
 		addProgrammer(name, programmerNames.value(name));
 	}
-	
     connect(m_programmerMenu, SIGNAL(triggered(QAction*)), this, SLOT(setProgrammer(QAction*)));
 
     m_boardMenu = new QMenu(tr("Board"), this);
     m_programMenu->addMenu(m_boardMenu);
-
     m_boardActionGroup = new QActionGroup(this);
-    QHash<QString, QString> boardNames = getBoardNames();
-    foreach (QString name, boardNames.keys()) {
-        addBoard(name, boardNames.value(name));
-    }
-
+    updateBoards();
     connect(m_boardMenu, SIGNAL(triggered(QAction*)), this, SLOT(setBoard(QAction*)));
 
     m_serialPortMenu = new QMenu(tr("Port"), this);
     m_programMenu->addMenu(m_serialPortMenu);
-
     m_serialPortActionGroup = new QActionGroup(this);
     updateSerialPorts();
-
     connect(m_serialPortMenu, SIGNAL(triggered(QAction*)), this, SLOT(setPort(QAction*)));
     connect(m_serialPortMenu, SIGNAL(aboutToShow()), this, SLOT(updateSerialPorts()), Qt::DirectConnection);
 
@@ -523,6 +512,7 @@ ProgramTab * ProgramWindow::addTab() {
         SLOT(updateMenu(bool, bool, bool, bool, bool, Platform *, const QString &, const QString &, const QString &, const QString &)));
 	int ix = m_tabWidget->addTab(programTab, name);
     m_tabWidget->setCurrentIndex(ix);
+    programTab->initMenus();
 	UntitledIndex++;
 
 	return programTab;
@@ -608,7 +598,7 @@ void ProgramWindow::updateMenu(bool programEnable, bool undoEnable, bool redoEna
 }
 
 void ProgramWindow::setPlatform(QAction* action) {
-    currentWidget()->setPlatform(action->text(), true);
+    currentWidget()->setPlatform(action->text());
 }
 
 void ProgramWindow::setPort(QAction* action) {
@@ -798,31 +788,40 @@ QAction * ProgramWindow::addProgrammer(const QString & name, const QString & pat
 	return currentAction;
 }
 
-const QHash<QString, QString> ProgramWindow::getBoardNames() {
-    return BoardNames;
+const QMap<QString, QString> ProgramWindow::getBoards() {
+    if (currentWidget() && currentWidget()->platform())
+        return currentWidget()->platform()->getBoards();
+
+    QMap<QString, QString> boards;
+    boards.insert(NoBoardName, NoBoardName);
+    return boards;
 }
 
-void ProgramWindow::initBoards() {
-        // TODO: read from actual Arduino installation or our own Arduino syntax file
-        //       make platform-dependent
-        // see https://github.com/arduino/Arduino/blob/ide-1.5.x/build/shared/manpage.adoc#options
-
-        BoardNames.insert("Arduino UNO", "arduino:avr:uno");
-        BoardNames.insert("Arduino Mega or Mega 2560", "arduino:avr:mega");
-        BoardNames.insert("Arduino Yún", "arduino:avr:yun");
-}
-
-QAction * ProgramWindow::addBoard(const QString & name, const QString & path)
+QAction * ProgramWindow::addBoard(const QString & name, const QString & definition)
 {
     QAction * currentAction = new QAction(name, this);
     currentAction->setCheckable(true);
-    currentAction->setData(path);
+    currentAction->setData(definition);
     m_boardActions.insert(name, currentAction);
     m_boardMenu->addAction(currentAction);
     m_boardActionGroup->addAction(currentAction);
     return currentAction;
 }
 
+void ProgramWindow::updateBoards() {
+    QMap<QString, QString> boards = getBoards();
+
+    m_boardActions.clear();
+    foreach (QAction * action, m_boardActionGroup->actions())
+        m_boardActionGroup->removeAction(action);
+    m_boardMenu->clear();
+
+    QMapIterator<QString, QString> i(boards);
+     while (i.hasNext()) {
+         i.next();
+         addBoard(i.key(), i.value());
+     }
+}
 
 void ProgramWindow::loadProgramFile() {
     DebugDialog::debug("loading program file");

@@ -27,7 +27,6 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 #include "programtab.h"
 #include "highlighter.h"
 #include "syntaxer.h"
-#include "platformarduino.h"
 #include "../debugdialog.h"
 #include "../utils/folderutils.h"
 
@@ -222,7 +221,7 @@ ProgramTab::ProgramTab(QString & filename, QWidget *parent) : QFrame(parent)
 
     editLayout->addWidget(m_toolbar,2,0);
 
-    createToolBarMenu();
+    //createToolBarMenu();
 }
 
 ProgramTab::~ProgramTab()
@@ -238,7 +237,7 @@ void ProgramTab::showEvent(QShowEvent *event) {
 }
 
 
-void ProgramTab::createToolBarMenu() {
+void ProgramTab::initMenus() {
 
     m_newButton = new SketchToolButton("NewCode", this, m_programWindow->m_newAction);
     m_newButton->setText(tr("New"));
@@ -283,6 +282,10 @@ void ProgramTab::createToolBarMenu() {
     platformSelectionContainer->addWidget(platformLabel);
     m_rightButtonsContainer->addWidget(platformSelector);
 
+    connect(this, SIGNAL(platformChanged(Platform *)), m_programWindow, SLOT(updateBoards()));
+    connect(this, SIGNAL(platformChanged(Platform *)), this, SLOT(updateBoards()));
+    setPlatform(currentPlatform, false);
+
     // Board selection
 
     QFrame *boardSelector = new QFrame(m_middleButtonsContainer->parentWidget());
@@ -301,7 +304,7 @@ void ProgramTab::createToolBarMenu() {
     if (currentBoard.isEmpty()) {
         currentBoard = m_boardComboBox->currentText();
     }
-    else if (!m_programWindow->getBoardNames().contains(currentBoard)) {
+    else if (!m_programWindow->getBoards().contains(currentBoard)) {
         currentBoard = m_boardComboBox->currentText();
     }
     setBoard(currentBoard);
@@ -363,8 +366,6 @@ void ProgramTab::createToolBarMenu() {
     connect(m_boardComboBox, SIGNAL(currentIndexChanged(const QString &)), this, SLOT(setBoard(const QString &)));
     connect(m_programmerComboBox, SIGNAL(activated(int)), this, SLOT(chooseProgrammerTimed(int)));
 
-    setPlatform(currentPlatform, false);
-
 //    m_monitorButton = new SketchToolButton("MonitorCode", this, m_programWindow->m_monitorAction);
 //    m_monitorButton->setText(tr("Serial Monitor"));
 //    m_monitorButton->setObjectName("monitorCodeButton");
@@ -388,6 +389,8 @@ void ProgramTab::createToolBarMenu() {
     //    superLayout->addWidget(m_unableToProgramLabel);
     //    superFrame->setLayout(superLayout);
 
+    setPlatform(currentPlatform, false);
+
 }
 
 void ProgramTab::setPlatform(const QString & newPlatformName) {
@@ -404,7 +407,8 @@ void ProgramTab::setPlatform(Platform * newPlatform) {
 
 void ProgramTab::setPlatform(Platform * newPlatform, bool updateLink) {
     DebugDialog::debug(QString("Setting platform to %1").arg(newPlatform->getName()));
-    if (updateLink && newPlatform != m_platform) {
+    bool isPlatformChanged = newPlatform != m_platform;
+    if (updateLink && isPlatformChanged) {
         m_programWindow->updateLink(m_filename, newPlatform, m_programmerPath, false, false);
 	}
 
@@ -417,9 +421,12 @@ void ProgramTab::setPlatform(Platform * newPlatform, bool updateLink) {
 	QSettings settings;
     settings.setValue("programwindow/platform", newPlatform->getName());
 
-    bool canProgram = (syntaxer != NULL && syntaxer->canProgram());
+    //bool canProgram = (syntaxer != NULL && syntaxer->canProgram());
     //m_unableToProgramLabel->setVisible(!canProgram);
     //m_unableToProgramLabel->setText(UnableToProgramMessage.arg(newPlatform.getName()));
+
+    if (updateLink && isPlatformChanged)
+        emit platformChanged(newPlatform);
 }
 
 void ProgramTab::setPort(const QString & newPort) {
@@ -764,7 +771,7 @@ void ProgramTab::sendProgram() {
         // see https://github.com/arduino/Arduino/blob/ide-1.5.x/build/shared/manpage.adoc
         //args.append(QString("--verbose"));
         args.append(QString("--board"));
-        QString boardDef = m_programWindow->getBoardNames().value(m_boardComboBox->currentText());
+        QString boardDef = m_programWindow->getBoards().value(m_boardComboBox->currentText());
         args.append(boardDef);
         args.append(QString("--port"));
         args.append(m_portComboBox->currentText());
@@ -935,23 +942,20 @@ void ProgramTab::updateBoards() {
     QString currentBoard;
     int index = m_boardComboBox->currentIndex();
     if (index >= 0) {
-        currentBoard = m_boardComboBox->itemData(index).toString();
+        currentBoard = m_boardComboBox->itemText(index);
     }
 
     while (m_boardComboBox->count() > 0) {
         m_boardComboBox->removeItem(0);
     }
 
-    QHash<QString, QString> boardNames = m_programWindow->getBoardNames();
+    QMap<QString, QString> boardNames = m_programWindow->getBoards();
     foreach (QString name, boardNames.keys()) {
         m_boardComboBox->addItem(name, boardNames.value(name));
     }
 
-    if (!currentBoard.isEmpty()) {
-        m_boardComboBox->setCurrentIndex(m_boardComboBox->findData(currentBoard));
-        m_boardComboBox->setToolTip(currentBoard);
-    }
-
+    int foundIt = m_boardComboBox->findText(currentBoard);
+    m_boardComboBox->setCurrentIndex(foundIt > -1 ? foundIt : 0);
 }
 
 void ProgramTab::updateSerialPorts() {

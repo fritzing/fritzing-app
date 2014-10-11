@@ -91,9 +91,8 @@ public:
     QList<Platform *> getAvailablePlatforms();
     bool hasPlatform(const QString &platformName);
     Platform *getPlatformByName(const QString &platformName);
-    Syntaxer * getSyntaxerForPlatform(Platform platform);
 	const QHash<QString, QString> getProgrammerNames();
-    const QHash<QString, QString> getBoardNames();
+    const QMap<QString, QString> getBoards();
 	void loadProgramFileNew();
 	bool alreadyHasProgram(const QString &);
     void updateLink(const QString & filename, Platform *platform, const QString & programmer, bool addlink, bool strong);
@@ -124,6 +123,7 @@ protected slots:
 	void updateSerialPorts();
 	void portProcessFinished(int exitCode, QProcess::ExitStatus exitStatus);
 	void portProcessReadyRead();
+    void updateBoards();
 
     // The following methods just forward events on to the current tab
     void setPlatform(QAction*);
@@ -158,11 +158,10 @@ protected:
 	bool prepSave(class ProgramTab *, bool saveAsFlag);
 	bool beforeClosingTab(int index, bool showCancel);
 	QAction * addProgrammer(const QString & name, const QString & path);
-    QAction * addBoard(const QString &name, const QString &path);
+    QAction * addBoard(const QString & name, const QString & definition);
 	inline ProgramTab * currentWidget();
 	inline ProgramTab * indexWidget(int index);
 	void initProgrammerNames();
-    void initBoards();
 	QString getExtensionString();
 	QStringList getExtensions();
 	bool beforeClosing(bool showCancel, bool & discard); // returns true if close, false if cancel
@@ -174,6 +173,7 @@ protected:
 public:
 	static const QString LocateName;
 	static QString NoSerialPortName;
+    static QString NoBoardName;
     QAction *m_newAction;
     QAction *m_openAction;
     QAction *m_saveAction;
@@ -194,14 +194,16 @@ protected:
     QAction *m_pasteAction;
     QAction *m_selectAction;
     QAction *m_printAction;
-    QHash<Platform *, QAction *> m_platformActions;
-    QHash<QString, QAction *> m_portActions;
-    QHash<QString, QAction *> m_programmerActions;
-    QHash<QString, QAction *> m_boardActions;
+    QMap<Platform *, QAction *> m_platformActions;
+    QMap<QString, QAction *> m_portActions;
+    QMap<QString, QAction *> m_programmerActions;
+    QMap<QString, QAction *> m_boardActions;
 	QActionGroup * m_programmerActionGroup;
+    QActionGroup * m_platformActionGroup;
     QActionGroup * m_boardActionGroup;
 	QActionGroup * m_serialPortActionGroup;
 	QMenu * m_programmerMenu;
+    QMenu * m_platformMenu;
     QMenu * m_boardMenu;
 	QMenu * m_serialPortMenu;
 	QStringList m_ports;				// temporary storage for linux

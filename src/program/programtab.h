@@ -92,7 +92,7 @@ public:
     void setPlatform(const QString & newPlatformName, bool updateLink);
     void setPlatform(Platform * newPlatform, bool updateLink);
 	void appendToConsole(const QString &);
-
+    void initMenus();
 public slots:
     void setPlatform(const QString & newPlatformName);
     void setPlatform(Platform * newPlatform);
@@ -131,13 +131,13 @@ signals:
 	void wantToSaveAs(int);
     void wantToRename(int);
 	void wantToDelete(int, bool deleteFile);
+    void platformChanged(Platform * newPlatform);
     void programWindowUpdateRequest(bool programEnable, bool undoEnable, bool redoEnable,
                             bool cutEnable, bool copyEnable, Platform * platform,
                             const QString & port, const QString & board, const QString & programmer, const QString & filename);
 
 protected:
     QFrame * createFooter();
-    void createToolBarMenu();
 	void chooseProgrammerAux(const QString & programmer, bool updateLink);
 	void updateProgrammerComboBox(const QString & programmer);
 	void enableProgramButton();

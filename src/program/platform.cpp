@@ -87,12 +87,12 @@ void Platform::setExtensions(const QStringList &suffixes)
     m_extensions = suffixes;
 }
 
-QHash<QString, QString> Platform::getBoards() const
+QMap<QString, QString> Platform::getBoards() const
 {
     return m_boards;
 }
 
-void Platform::setBoards(const QHash<QString, QString> &boards)
+void Platform::setBoards(const QMap<QString, QString> &boards)
 {
     m_boards = boards;
 }

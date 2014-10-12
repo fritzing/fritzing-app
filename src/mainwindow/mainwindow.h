@@ -205,6 +205,7 @@ public:
 	void setCurrentFile(const QString &fileName, bool addToRecent, bool setAsLastOpened);
 	void setReportMissingModules(bool);
 	QList<class SketchWidget *> sketchWidgets();
+    ProgramWindow * programmingWidget();
 	void setCloseSilently(bool);
 	class PCBSketchWidget * pcbView();
 	void noBackup();
@@ -962,7 +963,6 @@ public:
 	static QString BackupFolder;
     static const int DockMinWidth;
     static const int DockMinHeight;
-
 
 protected:
 	static const QString UntitledSketchName;

@@ -38,6 +38,8 @@ $Date: 2012-12-27 08:26:48 +0100 (Do, 27. Dez 2012) $
 #include <QDoubleValidator>
 #include <QPointer>
 
+#include <src/program/platform.h>
+
 
 struct ViewInfoThing
 {
@@ -59,21 +61,22 @@ public:
 	bool cleared();
 	QHash<QString, QString> & settings();
 	QHash<QString, QString> & tempSettings();
-	void initLayout(QFileInfoList & list);
+    void initLayout(QFileInfoList & languages, QList<Platform *> platforms);
 	void initViewInfo(int index, const QString & viewName, const QString & shortName, bool curvy);
 
 protected:
-	QWidget * createLanguageForm(QFileInfoList & list);
+    QWidget * createLanguageForm(QFileInfoList & languages);
 	QWidget* createOtherForm();
 	QWidget* createColorForm();
 	QWidget * createZoomerForm();
 	QWidget * createAutosaveForm();
+    QWidget *createProgrammerForm(QList<Platform *> platforms);
 	void updateWheelText();
-	void initGeneral(QWidget * general, QFileInfoList & list);
+    void initGeneral(QWidget * general, QFileInfoList & languages);
 	void initBreadboard(QWidget *, ViewInfoThing *);
 	void initSchematic(QWidget *, ViewInfoThing *);
 	void initPCB(QWidget *, ViewInfoThing *);
-    void initCode(QWidget *widget, ViewInfoThing *viewInfoThing);
+    void initCode(QWidget *widget, QList<Platform *> platforms);
 	QWidget * createCurvyForm(ViewInfoThing *);
 
 protected slots:
@@ -100,7 +103,7 @@ protected:
 	class TranslatorListModel * m_translatorListModel;
 	bool m_cleared;
 	int m_wheelMapping;
-    ViewInfoThing m_viewInfoThings[4];
+    ViewInfoThing m_viewInfoThings[3];
 };
 
 #endif 

@@ -1213,7 +1213,7 @@ void FApplication::preferencesAfter()
 	QDir dir(m_translationPath);
 	QStringList nameFilters;
 	nameFilters << "*.qm";
-    QFileInfoList list = dir.entryInfoList(nameFilters, QDir::Files | QDir::NoSymLinks);
+    QFileInfoList languages = dir.entryInfoList(nameFilters, QDir::Files | QDir::NoSymLinks);
 	QSettings settings;
 	QString language = settings.value("language").toString();
 	if (language.isEmpty()) {
@@ -1234,9 +1234,10 @@ void FApplication::preferencesAfter()
 		prefsDialog.initViewInfo(ix++,  sketchWidget->viewName(), sketchWidget->getShortName(), 
 									sketchWidget->curvyWires());
 	}
-    prefsDialog.initViewInfo(ix++, tr("Code View"), tr("Code"), false);
 
-	prefsDialog.initLayout(list);
+    QList<Platform *> platforms = mainWindow->programmingWidget()->getAvailablePlatforms();
+
+    prefsDialog.initLayout(languages, platforms);
 	if (QDialog::Accepted == prefsDialog.exec()) {
 		updatePrefs(prefsDialog);
 	}

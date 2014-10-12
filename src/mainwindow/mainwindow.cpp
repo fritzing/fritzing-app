@@ -3046,6 +3046,10 @@ void MainWindow::initProgrammingWidget() {
     addTab(sketchAreaWidget, ":/resources/images/icons/TabWidgetCodeActive_icon.png", tr("Code"), true);
 }
 
+ProgramWindow *MainWindow::programmingWidget() {
+    return m_programView;
+}
+
 void MainWindow::orderFabHoverEnter() {
     m_fireQuoteTimer.stop();
     if (!QuoteDialog::quoteSucceeded()) return;

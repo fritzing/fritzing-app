@@ -71,7 +71,7 @@ void PrefsDialog::initViewInfo(int index, const QString & viewName, const QStrin
 	m_viewInfoThings[index].curvy = curvy;
 }
 
-void PrefsDialog::initLayout(QFileInfoList & list)
+void PrefsDialog::initLayout(QFileInfoList & languages, QList<Platform *> platforms)
 {
 	m_tabWidget = new QTabWidget();
 	m_general = new QWidget();
@@ -85,17 +85,18 @@ void PrefsDialog::initLayout(QFileInfoList & list)
 	m_tabWidget->addTab(m_breadboard, m_viewInfoThings[0].viewName);
 	m_tabWidget->addTab(m_schematic, m_viewInfoThings[1].viewName);
 	m_tabWidget->addTab(m_pcb, m_viewInfoThings[2].viewName);
-    m_tabWidget->addTab(m_code, m_viewInfoThings[3].viewName);
+    m_tabWidget->addTab(m_code, tr("Code View"));
 
 	QVBoxLayout * vLayout = new QVBoxLayout();
 	vLayout->addWidget(m_tabWidget);
 
-	initGeneral(m_general, list);
+    initGeneral(m_general, languages);
 
 	initBreadboard(m_breadboard, &m_viewInfoThings[0]);
 	initSchematic(m_schematic, &m_viewInfoThings[1]);
 	initPCB(m_pcb, &m_viewInfoThings[2]);
-    initCode(m_code, &m_viewInfoThings[3]);
+
+    initCode(m_code, platforms);
 
     QDialogButtonBox * buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
 	buttonBox->button(QDialogButtonBox::Cancel)->setText(tr("Cancel"));
@@ -110,13 +111,13 @@ void PrefsDialog::initLayout(QFileInfoList & list)
 
 }
 
-void PrefsDialog::initGeneral(QWidget * widget, QFileInfoList & list)
+void PrefsDialog::initGeneral(QWidget * widget, QFileInfoList & languages)
 {
 	QVBoxLayout * vLayout = new QVBoxLayout();
 
 	// TODO: if no translation files found, don't put up the translation part of this dialog
 
-	vLayout->addWidget(createLanguageForm(list));
+    vLayout->addWidget(createLanguageForm(languages));
 	vLayout->addWidget(createColorForm());
 	vLayout->addWidget(createZoomerForm());
 	vLayout->addWidget(createAutosaveForm());
@@ -154,10 +155,10 @@ void PrefsDialog::initPCB(QWidget * widget, ViewInfoThing * viewInfoThing)
 	widget->setLayout(vLayout);
 }
 
-void PrefsDialog::initCode(QWidget * widget, ViewInfoThing * viewInfoThing)
+void PrefsDialog::initCode(QWidget * widget, QList<Platform *> platforms)
 {
     QVBoxLayout * vLayout = new QVBoxLayout();
-
+    vLayout->addWidget(createProgrammerForm(platforms));
     widget->setLayout(vLayout);
 }
 
@@ -224,13 +225,13 @@ QWidget * PrefsDialog::createAutosaveForm() {
 	return autosave;
 }
 
-QWidget * PrefsDialog::createLanguageForm(QFileInfoList & list) 
+QWidget * PrefsDialog::createLanguageForm(QFileInfoList & languages)
 {
 	QGroupBox * formGroupBox = new QGroupBox(tr("Language"));
     QVBoxLayout *layout = new QVBoxLayout();
 	
 	QComboBox* comboBox = new QComboBox(this);
-	m_translatorListModel = new TranslatorListModel(list, this);
+    m_translatorListModel = new TranslatorListModel(languages, this);
 	comboBox->setModel(m_translatorListModel);
 	comboBox->setCurrentIndex(m_translatorListModel->findIndex(m_name));
 	connect(comboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(changeLanguage(int)));
@@ -340,6 +341,32 @@ QWidget* PrefsDialog::createOtherForm()
 
 	formGroupBox->setLayout(layout);
 	return formGroupBox;
+}
+
+QWidget* PrefsDialog::createProgrammerForm(QList<Platform *> platforms) {
+    QGroupBox * formGroupBox = new QGroupBox(tr("Platforms"));
+    QHBoxLayout *layout = new QHBoxLayout();
+    layout->setSpacing(SPACING);
+
+    foreach (Platform * platform, platforms) {
+        QFrame * frame = new QFrame;
+        QHBoxLayout * hlayout = new QHBoxLayout();
+        hlayout->setMargin(0);
+        hlayout->setSpacing(0);
+        frame->setLayout(hlayout);
+
+        QLabel *platformLb = new QLabel(platform->getName());
+        hlayout->addWidget(platformLb);
+        QLineEdit * locationLE = new QLineEdit(frame);
+        hlayout->addWidget(locationLE);
+        QPushButton * locateBtn = new QPushButton(tr("..."),frame);
+        hlayout->addWidget(locateBtn);
+        //connect(locateBtn, SIGNAL(clicked()), Platform, SLOT(locateProgrammer()));
+
+        layout->addWidget(frame);
+    }
+    formGroupBox->setLayout(layout);
+    return formGroupBox;
 }
 
 void PrefsDialog::changeLanguage(int index) 

@@ -62,8 +62,9 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 #include <QCloseEvent>
 #include <QPrinter>
 #include <QPrintDialog>
-#include <QtSerialPort/QSerialPortInfo>
-
+//#include <QtSerialPort/QSerialPortInfo>
+#include <QtSerialPort/qserialportinfo.h>
+#include <QtSerialPort/qserialport.h>
 
 ///////////////////////////////////////////////
 

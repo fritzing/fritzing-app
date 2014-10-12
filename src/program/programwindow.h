@@ -37,7 +37,9 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 #include <QTabWidget>
 #include <QComboBox>
 #include <QActionGroup>
-#include <QSerialPortInfo>
+// #include <QSerialPort>
+#include <QtSerialPort/qserialportinfo.h>
+#include <QtSerialPort/qserialport.h>
 
 #include "platform.h"
 #include "syntaxer.h"

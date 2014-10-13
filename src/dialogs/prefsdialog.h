@@ -38,8 +38,7 @@ $Date: 2012-12-27 08:26:48 +0100 (Do, 27. Dez 2012) $
 #include <QDoubleValidator>
 #include <QPointer>
 
-#include <src/program/platform.h>
-
+#include "../program/platform.h"
 
 struct ViewInfoThing
 {

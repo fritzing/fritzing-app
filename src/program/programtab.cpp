@@ -41,7 +41,7 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 #include <QHBoxLayout>
 #include <QVBoxLayout>
 
-#include <src/sketchtoolbutton.h>
+#include <../../sketchtoolbutton.h>
 
 
 static const QChar Quote91Char(0x91);

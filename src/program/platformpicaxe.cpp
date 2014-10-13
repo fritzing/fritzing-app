@@ -1,5 +1,7 @@
 #include "platformpicaxe.h"
 
+#include <QProcess>
+
 PlatformPicaxe::PlatformPicaxe() : Platform(QString("PICAXE"))
 {
     setReferenceUrl(QUrl("http://www.picaxe.com/BASIC-Commands"));
@@ -32,10 +34,23 @@ PlatformPicaxe::PlatformPicaxe() : Platform(QString("PICAXE"))
     boards.insert("PICAXE-40X1", "picaxe28x1");
     boards.insert("PICAXE-40X2", "picaxe28x2");
     setBoards(boards);
+
+    setDefaultBoardName("PICAXE-08M");
 }
 
-void PlatformPicaxe::upload(QString port, QString board, QString fileLocation)
+void PlatformPicaxe::upload(QWidget *source, const QString &port, const QString &board, const QString &fileLocation)
 {
     // see http://www.picaxe.com/docs/beta_compiler.pdf
+    QProcess * process = new QProcess(this);
+    process->setProcessChannelMode(QProcess::MergedChannels);
+    process->setReadChannel(QProcess::StandardOutput);
 
+    connect(process, SIGNAL(finished(int, QProcess::ExitStatus)), source, SLOT(programProcessFinished(int, QProcess::ExitStatus)));
+    connect(process, SIGNAL(readyReadStandardOutput()), source, SLOT(programProcessReadyRead()));
+
+    QStringList args;
+    args.append(QString("-c%1").arg(port));
+    args.append(fileLocation);
+
+    process->start(getCommandLocation(), args); // TODO: use chip-specific programmer
 }

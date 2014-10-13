@@ -10,7 +10,7 @@ PlatformLaunchpad::PlatformLaunchpad() : Platform(QString("Launchpad"))
     setExtensions(QStringList() << ".txt");
 }
 
-void PlatformLaunchpad::upload(QString port, QString board, QString fileLocation)
+void PlatformLaunchpad::upload(const QString &port, const QString &board, const QString &fileLocation, QTextEdit *console)
 {
     // see http://www.ti.com/tool/msp430-flasher
     // http://processors.wiki.ti.com/index.php/MSP430_Flasher_-_Command_Line_Programmer

@@ -32,6 +32,7 @@ $Date: 2013-04-18 07:18:04 +0200 (Do, 18. Apr 2013) $
 #include "setcolordialog.h"
 #include "../sketch/zoomablegraphicsview.h"
 #include "../mainwindow/mainwindow.h"
+#include "../utils/folderutils.h"
 
 #include <QFormLayout>
 #include <QLabel>
@@ -97,6 +98,7 @@ void PrefsDialog::initLayout(QFileInfoList & languages, QList<Platform *> platfo
 	initPCB(m_pcb, &m_viewInfoThings[2]);
 
     initCode(m_code, platforms);
+    m_platforms = platforms;
 
     QDialogButtonBox * buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
 	buttonBox->button(QDialogButtonBox::Cancel)->setText(tr("Cancel"));
@@ -361,13 +363,60 @@ QWidget* PrefsDialog::createProgrammerForm(QList<Platform *> platforms) {
         hlayout->addWidget(locationLE);
         QPushButton * locateBtn = new QPushButton(tr("..."),frame);
         hlayout->addWidget(locateBtn);
-        //connect(locateBtn, SIGNAL(clicked()), Platform, SLOT(locateProgrammer()));
+        locateBtn->setProperty("platform", platform->getName());
+        connect(locateBtn, SIGNAL(clicked()), this, SLOT(chooseProgrammer()));
 
         layout->addWidget(frame);
     }
     formGroupBox->setLayout(layout);
     return formGroupBox;
 }
+
+void PrefsDialog::chooseProgrammer()
+{
+    QObject *  button = sender();
+    if (button == NULL) return;
+
+    QString platformName = sender()->property("platform").toString();
+    Platform * platform;
+    foreach (Platform *p, m_platforms) {
+        if (p->getName().compare(platformName) == 0) {
+            platform = p;
+            break;
+        }
+    }
+
+    QString filename = FolderUtils::getOpenFileName(
+                        this,
+                        tr("Select a programmer (executable) for %1").arg(platform->getName()),
+                        FolderUtils::openSaveFolder(),
+                        "(Programmer *)"
+                        );
+
+    platform->setCommandLocation(filename);
+    //chooseProgrammerAux(filename, true);
+}
+
+void PrefsDialog::chooseProgrammerAux(const QString & programmer, bool updateLink)
+{
+//    if (programmer == ProgramWindow::LocateName) {
+//        enableProgramButton();
+//        if (updateLink && !m_programmerPath.isEmpty()) {
+//            m_programWindow->updateLink(m_filename, m_platform, "", false, false);
+//        }
+
+//        m_programmerPath.clear();
+//        updateMenu();
+//        return;
+//    }
+
+//    m_programmerPath = programmer;
+//    enableProgramButton();
+//    updateMenu();
+//    QSettings settings;
+//    settings.setValue("programwindow/programmer", programmer);
+}
+
 
 void PrefsDialog::changeLanguage(int index) 
 {

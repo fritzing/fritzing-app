@@ -22,6 +22,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "syntaxer.h"
 
 #include <QDir>
+#include <QSettings>
 
 #include <src/utils/folderutils.h>
 
@@ -41,7 +42,7 @@ QString Platform::getName() const
     return m_name;
 }
 
-void Platform::upload(QString port, QString board, QString fileLocation)
+void Platform::upload(QWidget * source, const QString &port, const QString &board, const QString &fileLocation)
 {
     // stub
 }
@@ -136,6 +137,13 @@ void Platform::setMinVersion(const QString &minVersion)
 {
     m_minVersion = minVersion;
 }
+QString Platform::getDefaultBoardName() const
+{
+    return m_defaultBoardName;
+}
 
-
+void Platform::setDefaultBoardName(const QString &defaultBoardName)
+{
+    m_defaultBoardName = defaultBoardName;
+}
 

@@ -85,9 +85,6 @@ public:
     void print(QPrinter & printer);
     void setText(QString text);
     QString text();
-	void updateProgrammers();
-	bool setProgrammer(const QString & path);
-	const QString & programmer();
     Platform *platform();
     void setPlatform(const QString & newPlatformName, bool updateLink);
     void setPlatform(Platform * newPlatform, bool updateLink);
@@ -114,10 +111,7 @@ public slots:
 	void save();
     void saveAs();
     void rename();
-	void sendProgram();
-	void chooseProgrammerTimed(int);
-	void chooseProgrammerTimeout();
-	void chooseProgrammer(const QString &);
+    void sendProgram();
 	void programProcessFinished(int exitCode, QProcess::ExitStatus exitStatus);
 	void programProcessReadyRead();
     void updateMenu();
@@ -134,12 +128,10 @@ signals:
     void platformChanged(Platform * newPlatform);
     void programWindowUpdateRequest(bool programEnable, bool undoEnable, bool redoEnable,
                             bool cutEnable, bool copyEnable, Platform * platform,
-                            const QString & port, const QString & board, const QString & programmer, const QString & filename);
+                            const QString & port, const QString & board, const QString & filename);
 
 protected:
     QFrame * createFooter();
-	void chooseProgrammerAux(const QString & programmer, bool updateLink);
-	void updateProgrammerComboBox(const QString & programmer);
 	void enableProgramButton();
 
 protected:
@@ -150,7 +142,6 @@ protected:
     QPointer<SketchToolButton> m_programButton;
     QPointer<SerialPortComboBox> m_portComboBox;
     QPointer<QComboBox> m_platformComboBox;
-	QPointer<QComboBox>  m_programmerComboBox;
     QPointer<QComboBox>  m_boardComboBox;
 	QPointer<QTextEdit> m_textEdit;
 	QPointer<QTextEdit> m_console;
@@ -177,7 +168,6 @@ protected:
 
 	QPointer<class Highlighter> m_highlighter;
 	QString m_filename;
-	QString m_programmerPath;
 };
 
 class DeleteDialog : public QDialog {

@@ -26,6 +26,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QPointer>
 #include <QString>
 #include <QStringList>
+#include <QTextEdit>
 #include <QUrl>
 
 #ifndef PLATFORM_H
@@ -40,7 +41,7 @@ public:
     Platform(const QString &name);
     ~Platform();
 
-    virtual void upload(QString port, QString board, QString fileLocation);
+    virtual void upload(QWidget *source, const QString &port, const QString &board, const QString &fileLocation);
     Syntaxer *getSyntaxer();
 
     QString getName() const;
@@ -58,6 +59,8 @@ public:
     void setDownloadUrl(const QUrl &downloadUrl);
     QString getMinVersion() const;
     void setMinVersion(const QString &minVersion);
+    QString getDefaultBoardName() const;
+    void setDefaultBoardName(const QString &defaultBoardName);
 
 protected:
     QString m_name;
@@ -65,6 +68,7 @@ protected:
     bool m_canProgram;
     QStringList m_extensions;
     QMap<QString, QString> m_boards;
+    QString m_defaultBoardName;
     QUrl m_referenceUrl;
     QUrl m_downloadUrl;
     QString m_minVersion;

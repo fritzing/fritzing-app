@@ -28,13 +28,9 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 //
 // TODO
 //
-//  integrate menus
 //  integrate dirty
 //  remove old program window
 //  enable all buttons, and give error messages (i.e. where is IDE)
-//  why is locate a menu button (puts programmers on a list)
-//  locate needs to say what it is locating
-//  move all tabs up?
 
 
 #include "programwindow.h"
@@ -108,11 +104,7 @@ void PTabWidget::tabChanged(int index) {
 
 static int UntitledIndex = 1;
 QList<Platform *> ProgramWindow::m_platforms;
-QHash<QString, class Syntaxer *> ProgramWindow::m_syntaxers;
-const QString ProgramWindow::LocateName = "locate";
 QString ProgramWindow::NoBoardName;
-
-static QHash<QString, QString> ProgrammerNames;
 
 ProgramWindow::ProgramWindow(QWidget *parent)
     : FritzingWindow("", untitledFileCount(), "", parent)
@@ -134,10 +126,6 @@ ProgramWindow::ProgramWindow(QWidget *parent)
                 ss = ss.arg(paneLoc).arg(tabBarLoc);
         this->setStyleSheet(ss);
     }
-
-    if (ProgrammerNames.count() == 0) {
-		initProgrammerNames();
-	}
 
     if (m_platforms.count() == 0) {
         initPlatforms();
@@ -294,15 +282,6 @@ void ProgramWindow::initMenus(QMenuBar * menubar) {
     }
     connect(m_platformMenu, SIGNAL(triggered(QAction*)), this, SLOT(setPlatform(QAction*)));
 
-    m_programmerMenu = new QMenu(tr("Programmer"), this);
-    m_programMenu->addMenu(m_programmerMenu);
-	m_programmerActionGroup = new QActionGroup(this);
-	QHash<QString, QString> programmerNames = getProgrammerNames();
-	foreach (QString name, programmerNames.keys()) {
-		addProgrammer(name, programmerNames.value(name));
-	}
-    connect(m_programmerMenu, SIGNAL(triggered(QAction*)), this, SLOT(setProgrammer(QAction*)));
-
     m_boardMenu = new QMenu(tr("Board"), this);
     m_programMenu->addMenu(m_boardMenu);
     m_boardActionGroup = new QActionGroup(this);
@@ -372,9 +351,6 @@ void ProgramWindow::linkFiles(const QList<LinkedFile *> & linkedFiles, const QSt
 		}
 		else {
             linkedFile->platform.clear();
-		}
-		if (programTab->setProgrammer(linkedFile->programmer)) {
-			linkedFile->programmer.clear();
 		}
     }
 }
@@ -502,9 +478,9 @@ ProgramTab * ProgramWindow::addTab() {
     connect(programTab, SIGNAL(wantToRename(int)), this, SLOT(tabRename(int)));
     connect(programTab, SIGNAL(wantToDelete(int, bool)), this, SLOT(tabDelete(int, bool)), Qt::DirectConnection);
     connect(programTab, 
-        SIGNAL(programWindowUpdateRequest(bool, bool, bool, bool, bool, Platform *, const QString &, const QString &, const QString &, const QString &)),
+        SIGNAL(programWindowUpdateRequest(bool, bool, bool, bool, bool, Platform *, const QString &, const QString &, const QString &)),
 		this, 
-        SLOT(updateMenu(bool, bool, bool, bool, bool, Platform *, const QString &, const QString &, const QString &, const QString &)));
+        SLOT(updateMenu(bool, bool, bool, bool, bool, Platform *, const QString &, const QString &, const QString &)));
 	int ix = m_tabWidget->addTab(programTab, name);
     m_tabWidget->setCurrentIndex(ix);
     programTab->initMenus();
@@ -525,7 +501,7 @@ void ProgramWindow::closeCurrentTab() {
 void ProgramWindow::closeTab(int index) {
         ProgramTab * pTab = indexWidget(index);
         if (pTab) {
-            emit linkToProgramFile(pTab->filename(), NULL, "", false, true);
+            emit linkToProgramFile(pTab->filename(), NULL, false, true);
                 pTab->deleteTab();
         }
 }
@@ -537,7 +513,7 @@ void ProgramWindow::closeTab(int index) {
  *  - cut/copy
  */
 void ProgramWindow::updateMenu(bool programEnable, bool undoEnable, bool redoEnable, bool cutEnable, bool copyEnable, 
-                              Platform* platform, const QString & port, const QString & board, const QString & programmer, const QString & filename)
+                              Platform* platform, const QString & port, const QString & board, const QString & filename)
 {
 	ProgramTab * programTab = currentWidget();
 	m_saveAction->setEnabled(programTab->isModified());
@@ -559,36 +535,6 @@ void ProgramWindow::updateMenu(bool programEnable, bool undoEnable, bool redoEna
         boardAction->setChecked(true);
     }
 
-	QAction *programmerAction = NULL;
-	if (programmer == LocateName) {
-		foreach (QAction * action, m_programmerActions) {
-			if (action->data().toString() == programmer) {
-				programmerAction = action;
-				break;
-			}
-		}
-	}
-	else {
-		QFileInfo fileInfo(programmer);
-		QString name = fileInfo.fileName();
-		programmerAction = m_programmerActions.value(name);
-		if (!programmerAction) {
-			programmerAction = addProgrammer(name, programmer);
-			ProgrammerNames.insert(name, programmer);
-			for (int i = 0; i < m_tabWidget->count(); i++) {
-				ProgramTab * pt = indexWidget(i);
-				if (pt != programTab) {
-					pt->updateProgrammers();
-				}
-			}
-		}
-	}
-
-    if (programmerAction) {
-        programmerAction->setChecked(true);
-    }
-
-
     setTitle(filename);
 }
 
@@ -602,10 +548,6 @@ void ProgramWindow::setPort(QAction* action) {
 
 void ProgramWindow::setBoard(QAction* action) {
     currentWidget()->setBoard(action->text());
-}
-
-void ProgramWindow::setProgrammer(QAction* action) {
-    currentWidget()->chooseProgrammer(action->data().toString());
 }
 
 bool ProgramWindow::beforeClosing(bool showCancel, bool & discard) {
@@ -694,7 +636,7 @@ void ProgramWindow::tabRename(int index) {
 			QFile oldFile(oldFileName);
 			if (oldFile.exists()) {
 				oldFile.remove();
-                emit linkToProgramFile(oldFileName, NULL, "", false, true);
+                emit linkToProgramFile(oldFileName, NULL, false, true);
 			}
 		}
     }
@@ -723,7 +665,7 @@ bool ProgramWindow::prepSave(ProgramTab * programTab, bool saveAsFlag)
 
     if (result) {
 		programTab->setClean();
-        emit linkToProgramFile(programTab->filename(), programTab->platform(), programTab->programmer(), true, true);
+        emit linkToProgramFile(programTab->filename(), programTab->platform(), true, true);
 	}
 	return result;
 }
@@ -749,38 +691,6 @@ Platform * ProgramWindow::getPlatformByName(const QString & platformName) {
 
 bool ProgramWindow::hasPlatform(const QString & platformName) {
     return getPlatformByName(platformName) != NULL;
-}
-
-const QHash<QString, QString> ProgramWindow::getProgrammerNames()
-{
-	return ProgrammerNames;
-}
-
-void ProgramWindow::initProgrammerNames()
-{
-    ProgrammerNames.insert(tr("Locate..."), LocateName);
-
-	// TODO: eventually save a list of programmer names (a la recent files)
-
-	QSettings settings;
-	QString programmer = settings.value("programwindow/programmer", "").toString();
-	if (!programmer.isEmpty()) {
-		QFileInfo fileInfo(programmer);
-		if (fileInfo.exists()) {
-			ProgrammerNames.insert(fileInfo.fileName(), programmer);
-		}
-	}
-}
-
-QAction * ProgramWindow::addProgrammer(const QString & name, const QString & path)
-{
-    QAction * currentAction = new QAction(name, this);
-    currentAction->setCheckable(true);
-	currentAction->setData(path);
-    m_programmerActions.insert(name, currentAction);
-    m_programmerMenu->addAction(currentAction);
-    m_programmerActionGroup->addAction(currentAction);
-	return currentAction;
 }
 
 const QMap<QString, QString> ProgramWindow::getBoards() {
@@ -947,10 +857,10 @@ bool ProgramWindow::hasPort(const QString & portName) {
     return false;
 }
 
-void ProgramWindow::updateLink(const QString & filename, Platform * platform, const QString & programmer, bool addlink, bool strong)
+void ProgramWindow::updateLink(const QString & filename, Platform * platform, bool addlink, bool strong)
 {
     DebugDialog::debug("updating link");
-    emit linkToProgramFile(filename, platform, programmer, addlink, strong);
+    emit linkToProgramFile(filename, platform, addlink, strong);
 }
 
 void ProgramWindow::portProcessFinished(int exitCode, QProcess::ExitStatus exitStatus) {

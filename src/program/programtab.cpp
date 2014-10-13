@@ -342,30 +342,11 @@ void ProgramTab::initMenus() {
     portSelectionContainer->addWidget(portLabel);
     m_rightButtonsContainer->addWidget(portSelector);
 
-
-    m_programmerComboBox = new QComboBox();
-    m_programmerComboBox->setEditable(false);
-    m_programmerComboBox->setEnabled(true);
-    updateProgrammers();
-    QString currentProgrammer = ProgramWindow::LocateName;
-    QString temp = settings.value("programwindow/programmer", "").toString();
-    if (!temp.isEmpty()) {
-        QFileInfo fileInfo(temp);
-        if (fileInfo.exists()) {
-            currentProgrammer = temp;
-        }
-    }
-    chooseProgrammerAux(currentProgrammer, false);
-
-    //footerLayout->addWidget(programmerLabel);
-    //footerLayout->addWidget(m_programmerComboBox);
-
 	// connect last so these signals aren't triggered during initialization
     connect(m_platformComboBox, SIGNAL(currentIndexChanged(const QString &)), this, SLOT(setPlatform(const QString &)));
     connect(m_portComboBox, SIGNAL(currentIndexChanged(const QString &)), this, SLOT(setPort(const QString &)));
 	connect(m_portComboBox, SIGNAL(aboutToShow()), this, SLOT(updateSerialPorts()), Qt::DirectConnection);
     connect(m_boardComboBox, SIGNAL(currentIndexChanged(const QString &)), this, SLOT(setBoard(const QString &)));
-    connect(m_programmerComboBox, SIGNAL(activated(int)), this, SLOT(chooseProgrammerTimed(int)));
 
 //    m_monitorButton = new SketchToolButton("MonitorCode", this, m_programWindow->m_monitorAction);
 //    m_monitorButton->setText(tr("Serial Monitor"));
@@ -410,7 +391,7 @@ void ProgramTab::setPlatform(Platform * newPlatform, bool updateLink) {
     DebugDialog::debug(QString("Setting platform to %1").arg(newPlatform->getName()));
     bool isPlatformChanged = newPlatform != m_platform;
     if (updateLink && isPlatformChanged) {
-        m_programWindow->updateLink(m_filename, newPlatform, m_programmerPath, false, false);
+        m_programWindow->updateLink(m_filename, newPlatform, false, false);
 	}
 
     m_platform = newPlatform;
@@ -478,7 +459,7 @@ bool ProgramTab::loadProgramFile(const QString & fileName, const QString & altFi
 
 	QFile file(fileName);
 	if (!file.open(QFile::ReadOnly)) {
-        m_programWindow->updateLink(fileName, m_platform, m_programmerPath, false, true);
+        m_programWindow->updateLink(fileName, m_platform, false, true);
 		if (!altFileName.isEmpty()) {
 			file.setFileName(altFileName);
 			if (!file.open(QFile::ReadOnly)) {
@@ -521,7 +502,7 @@ bool ProgramTab::loadProgramFile(const QString & fileName, const QString & altFi
     DebugDialog::debug("about to update link");
 
 	if (updateLink) {
-        m_programWindow->updateLink(m_filename, m_platform, m_programmerPath, true, true);
+        m_programWindow->updateLink(m_filename, m_platform, true, true);
 	}
 	return true;
 }
@@ -718,169 +699,26 @@ bool ProgramTab::save(const QString & filename) {
 }
 
 void ProgramTab::sendProgram() {
-	if (m_programmerPath.isEmpty()) return;
-
 	if (isModified()) {
 		QMessageBox::information(this, QObject::tr("Fritzing"), tr("The file '%1' must be saved before it can be sent to the programmer.").arg(m_filename));
 		return;
 	}
-
 	m_programButton->setEnabled(false);
-
-    QString platformName = m_platformComboBox->currentText();
-    if (platformName.compare("picaxe", Qt::CaseInsensitive) == 0) {
-		QProcess * process = new QProcess(this);
-		process->setProcessChannelMode(QProcess::MergedChannels);
-		process->setReadChannel(QProcess::StandardOutput);
-
-		connect(process, SIGNAL(finished(int, QProcess::ExitStatus)), this, SLOT(programProcessFinished(int, QProcess::ExitStatus)));
-		connect(process, SIGNAL(readyReadStandardOutput()), this, SLOT(programProcessReadyRead()));
-
-		QStringList args;
-        args.append(QString("-c%1").arg(m_portComboBox->currentData().toString()));
-		args.append(m_filename);
-		m_console->setPlainText("");
-		
-        process->start(m_programmerPath, args); // TODO: use chip-specific programmer
-        return;
-	}
-
-    if (platformName.compare("arduino", Qt::CaseInsensitive) == 0) {
-		QProcess * process = new QProcess(this);
-		process->setProcessChannelMode(QProcess::MergedChannels);
-		process->setReadChannel(QProcess::StandardOutput);
-
-		connect(process, SIGNAL(finished(int, QProcess::ExitStatus)), this, SLOT(programProcessFinished(int, QProcess::ExitStatus)));
-		connect(process, SIGNAL(readyReadStandardOutput()), this, SLOT(programProcessReadyRead()));
-
-        // Make sure .ino is in its own folder with same name (as required by Arduino compiler),
-        // otherwise create a subfolder and copy the file there.
-        QFileInfo fileInfo(m_filename);
-        QString tmpFilePath = fileInfo.absoluteFilePath();
-        QString dirName = fileInfo.dir().dirName();
-        QString sketchName = fileInfo.baseName();
-        if (dirName.compare(sketchName, Qt::CaseInsensitive) != 0) {
-            QString tmpSketchName(sketchName.append("_TMP"));
-            fileInfo.dir().mkdir(tmpSketchName);
-            tmpFilePath = fileInfo.absolutePath().append("/").append(tmpSketchName).append("/")
-                    .append(fileInfo.baseName().append("_TMP.").append(fileInfo.suffix()));
-            if (QFile::exists(tmpFilePath)) QFile::remove(tmpFilePath);
-            QFile::copy(fileInfo.absoluteFilePath(), tmpFilePath);
-        }
-
-		QStringList args;
-        // see https://github.com/arduino/Arduino/blob/ide-1.5.x/build/shared/manpage.adoc
-        //args.append(QString("--verbose"));
-        args.append(QString("--board"));
-        QString boardDef = m_programWindow->getBoards().value(m_boardComboBox->currentText());
-        args.append(boardDef);
-        args.append(QString("--port"));
-        args.append(m_portComboBox->currentData().toString());
-        args.append(QString("--upload"));
-        args.append(QDir::toNativeSeparators(tmpFilePath));
-
-        m_console->setPlainText("");
-        process->start(m_programmerPath, args);
-        return;
-	}
-
-}
-
-void ProgramTab::chooseProgrammerTimed(int index) {
-	QTimer * timer = new QTimer(this);
-	timer->setInterval(1);
-	timer->setProperty("index", index);
-	timer->setSingleShot(true);
-	connect(timer, SIGNAL(timeout()), this, SLOT(chooseProgrammerTimeout()));
-	timer->start();
-}
-
-void ProgramTab::chooseProgrammerTimeout() {
-	QTimer * timer = qobject_cast<QTimer *>(sender());
-	if (timer == NULL) return;
-
-	int index = timer->property("index").toInt();
-	QString realname = m_programmerComboBox->itemData(index).toString();
-	if (realname == ProgramWindow::LocateName) {
-		// if "Locate..." is chosen, always trigger
-		chooseProgrammer(realname);
-	}
-	else {
-		if (m_programmerPath != realname) {
-			// only trigger if path actually changed
-			chooseProgrammer(realname);
-		}
-	}
-	timer->deleteLater();
-}
-
-bool ProgramTab::setProgrammer(const QString & path) {
-	if (QFileInfo(path).exists()) {
-		chooseProgrammerAux(path, false);
-		return true;
-	}
-	else {
-		// TODO: what?
-		return false;
-	}
-}
-
-void ProgramTab::chooseProgrammer(const QString & programmer)
-{
-	QString filename = programmer;
-	if (!QFileInfo(filename).exists()) {
-		filename = FolderUtils::getOpenFileName(
-							this,
-                            tr("Select a programmer (executable) for %1").arg(this->m_platform->getName()),
-							FolderUtils::openSaveFolder(),
-                            "(Programmer *)"
-							);
-	}
-    if (filename.isEmpty()) return;
-
-	chooseProgrammerAux(filename, true);
-}
-
-void ProgramTab::chooseProgrammerAux(const QString & programmer, bool updateLink) 
-{
-	if (programmer == ProgramWindow::LocateName) {
-		enableProgramButton();
-		if (updateLink && !m_programmerPath.isEmpty()) {
-            m_programWindow->updateLink(m_filename, m_platform, "", false, false);
-		}
-
-		m_programmerPath.clear();
-		updateProgrammerComboBox(programmer);
-		updateMenu();
-		return;
-	}
-
-    if (m_programmerComboBox->findData(programmer) < 0) {
-        QFileInfo fileInfo(programmer);
-        m_programmerComboBox->addItem(fileInfo.fileName(), programmer);
-    }
-
-	if (updateLink && m_programmerPath != programmer) {
-        m_programWindow->updateLink(m_filename, m_platform, programmer, false, false);
-	}
-    m_programmerPath = programmer;
-	enableProgramButton();
-	updateProgrammerComboBox(programmer);
-    updateMenu();
-	QSettings settings;
-	settings.setValue("programwindow/programmer", programmer);
+    m_console->setPlainText("");
+    m_platform->upload(this,
+                       m_portComboBox->currentData().toString(),
+                       m_boardComboBox->currentText(),
+                       m_filename);
 }
 
 void ProgramTab::programProcessFinished(int exitCode, QProcess::ExitStatus exitStatus) {
 	DebugDialog::debug(QString("program process finished %1 %2").arg(exitCode).arg(exitStatus));
-
 	m_programButton->setEnabled(true);
-
 	sender()->deleteLater();
 }
 
 void ProgramTab::programProcessReadyRead() {
-	QByteArray byteArray = qobject_cast<QProcess *>(sender())->readAllStandardOutput();
+    QByteArray byteArray = qobject_cast<QProcess *>(sender())->readAllStandardOutput();
     m_console->append(byteArray);
 }
 
@@ -891,7 +729,6 @@ void ProgramTab::programProcessReadyRead() {
  */
 void ProgramTab::updateMenu() {
 //        DebugDialog::debug(QString("Updating the menu for tab %1").arg(m_tabWidget->currentIndex()));
-//        DebugDialog::debug(QString("Program: %1").arg(!m_programmerPath.isEmpty()));
 //        DebugDialog::debug(QString("Undo: %1").arg(m_canUndo));
 //        DebugDialog::debug(QString("Redo: %1").arg(m_canRedo));
 //        DebugDialog::debug(QString("Cut: %1").arg(m_canCut));
@@ -903,37 +740,7 @@ void ProgramTab::updateMenu() {
 
         // Emit a signal so that the ProgramWindow can update its own UI.
 		emit programWindowUpdateRequest(m_programButton ? m_programButton->isEnabled() : false, m_canUndo, m_canRedo, m_canCut, m_canCopy, 
-            m_platform, m_port, m_board, m_programmerPath.isEmpty() ? ProgramWindow::LocateName : m_programmerPath, m_filename);
-}
-
-void ProgramTab::updateProgrammerComboBox(const QString & programmer) {
-	// don't want activate signal triggered recursively
-    bool wasBlocked = m_programmerComboBox->blockSignals(true);
-    m_programmerComboBox->setCurrentIndex(m_programmerComboBox->findData(programmer));
-    m_programmerComboBox->setToolTip(m_programmerPath);
-    m_programmerComboBox->blockSignals(wasBlocked);
-}
-
-void ProgramTab::updateProgrammers() {
-
-    QString currentProgrammer;
-    int index = m_programmerComboBox->currentIndex();
-    if (index >= 0) {
-        currentProgrammer = m_programmerComboBox->itemData(index).toString();
-    }
-
-    while (m_programmerComboBox->count() > 0) {
-        m_programmerComboBox->removeItem(0);
-    }
-
-    QHash<QString, QString> programmerNames = m_programWindow->getProgrammerNames();
-    foreach (QString name, programmerNames.keys()) {
-        m_programmerComboBox->addItem(name, programmerNames.value(name));
-    }
-
-    if (!currentProgrammer.isEmpty()) {
-        updateProgrammerComboBox(currentProgrammer);
-    }
+            m_platform, m_port, m_board, m_filename);
 }
 
 void ProgramTab::updateBoards() {
@@ -991,15 +798,11 @@ Platform * ProgramTab::platform() {
     return m_platform;
 }
 
-const QString & ProgramTab::programmer() {
-	return m_programmerPath;
-}
-
 void ProgramTab::enableProgramButton() {
 	if (m_programButton == NULL) return;
 
 	bool enabled = true;
-	if (m_programmerPath.isEmpty()) {
+    if (m_platform->getCommandLocation().isEmpty()) {
 		enabled = false;
 	}
     if (enabled && m_portComboBox->count() == 0) {

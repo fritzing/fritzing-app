@@ -56,7 +56,6 @@ struct LinkedFile {
 
 	QString linkedFilename;
     QString platform;
-	QString programmer;
 	FileFlags fileFlags;
 };
 
@@ -92,12 +91,11 @@ public:
     QList<Platform *> getAvailablePlatforms();
     bool hasPlatform(const QString &platformName);
     Platform *getPlatformByName(const QString &platformName);
-	const QHash<QString, QString> getProgrammerNames();
     const QMap<QString, QString> getBoards();
     bool hasPort(const QString &portName);
 	void loadProgramFileNew();
 	bool alreadyHasProgram(const QString &);
-    void updateLink(const QString & filename, Platform *platform, const QString & programmer, bool addlink, bool strong);
+    void updateLink(const QString & filename, Platform *platform, bool addlink, bool strong);
     void showMenus(bool);
     void createViewMenuActions(QList<QAction *> &);
     void print();
@@ -105,7 +103,7 @@ public:
 signals:
 	void closed();
     void changeActivationSignal(bool activate, QWidget * originator);
-    void linkToProgramFile(const QString & filename, Platform * platform, const QString & programmer, bool addlink, bool strong);
+    void linkToProgramFile(const QString & filename, Platform * platform, bool addlink, bool strong);
 
 protected slots:
 	void loadProgramFile();
@@ -119,9 +117,8 @@ protected slots:
 	void tabBeforeClosing(int, bool & ok);
     void tabDelete(int index, bool deleteFile);
     void updateMenu(bool programEnable, bool undoEnable, bool redoEnable,
-                    bool cutEnable, bool copyEnable, 
-                    Platform * platform, const QString & port, const QString & board,
-					const QString & programmer, const QString & filename);
+                    bool cutEnable, bool copyEnable,
+                    Platform * platform, const QString & port, const QString & board, const QString & filename);
 	void updateSerialPorts();
 	void portProcessFinished(int exitCode, QProcess::ExitStatus exitStatus);
 	void portProcessReadyRead();
@@ -131,7 +128,6 @@ protected slots:
     void setPlatform(QAction*);
     void setPort(QAction*);
     void setBoard(QAction*);
-    void setProgrammer(QAction*);
 	void rename();
 	void undo();
 	void redo();
@@ -158,13 +154,11 @@ protected:
     void setTitle(const QString & filename);
 	bool saveAsAux(const QString & fileName);
 	bool prepSave(class ProgramTab *, bool saveAsFlag);
-	bool beforeClosingTab(int index, bool showCancel);
-	QAction * addProgrammer(const QString & name, const QString & path);
+    bool beforeClosingTab(int index, bool showCancel);
     QAction * addBoard(const QString & name, const QString & definition);
     QAction * addPort(QSerialPortInfo port);
 	inline ProgramTab * currentWidget();
-	inline ProgramTab * indexWidget(int index);
-	void initProgrammerNames();
+    inline ProgramTab * indexWidget(int index);
 	QString getExtensionString();
 	QStringList getExtensions();
 	bool beforeClosing(bool showCancel, bool & discard); // returns true if close, false if cancel
@@ -182,7 +176,6 @@ public:
     QAction *m_programAction;
 
 protected:
-	static QHash<QString, class Syntaxer *> m_syntaxers;
     static QList<Platform *> m_platforms;
 
 protected:
@@ -198,13 +191,10 @@ protected:
     QAction *m_printAction;
     QMap<Platform *, QAction *> m_platformActions;
     QMap<QString, QAction *> m_portActions;
-    QMap<QString, QAction *> m_programmerActions;
     QMap<QString, QAction *> m_boardActions;
-	QActionGroup * m_programmerActionGroup;
     QActionGroup * m_platformActionGroup;
     QActionGroup * m_boardActionGroup;
-	QActionGroup * m_serialPortActionGroup;
-	QMenu * m_programmerMenu;
+    QActionGroup * m_serialPortActionGroup;
     QMenu * m_platformMenu;
     QMenu * m_boardMenu;
 	QMenu * m_serialPortMenu;

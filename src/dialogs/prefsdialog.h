@@ -78,6 +78,7 @@ protected:
 	void initPCB(QWidget *, ViewInfoThing *);
     void initCode(QWidget *widget, QList<Platform *> platforms);
 	QWidget * createCurvyForm(ViewInfoThing *);
+    void chooseProgrammerAux(const QString &programmer, bool updateLink);
 
 protected slots:
 	void changeLanguage(int);
@@ -88,6 +89,7 @@ protected slots:
 	void toggleAutosave(bool);
 	void changeAutosavePeriod(int);
 	void curvyChanged();
+    void chooseProgrammer();
 
 protected:
 	QPointer<QTabWidget> m_tabWidget;
@@ -104,6 +106,7 @@ protected:
 	bool m_cleared;
 	int m_wheelMapping;
     ViewInfoThing m_viewInfoThings[3];
+    QList<Platform *> m_platforms;
 };
 
 #endif 

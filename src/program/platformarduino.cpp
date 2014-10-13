@@ -1,5 +1,9 @@
 #include "platformarduino.h"
 
+#include <QDir>
+#include <QFileInfo>
+#include <QProcess>
+
 PlatformArduino::PlatformArduino() : Platform(QString("Arduino"))
 {
     setReferenceUrl(QUrl(QString("http://arduino.cc/en/Reference/")));
@@ -33,9 +37,43 @@ PlatformArduino::PlatformArduino() : Platform(QString("Arduino"))
     boards.insert("Arduino Due (Programming Port)", "arduino:sam:arduino_due_x_dbg");
     boards.insert("Arduino Due (Native USB Port)", "arduino:sam:arduino_due_x");
     setBoards(boards);
+
+    setDefaultBoardName("Arduino UNO");
 }
 
-void PlatformArduino::upload(QString port, QString board, QString fileLocation)
+void PlatformArduino::upload(QWidget *source, const QString &port, const QString &board, const QString &fileLocation)
 {
+    QProcess * process = new QProcess(this);
+    process->setProcessChannelMode(QProcess::MergedChannels);
+    process->setReadChannel(QProcess::StandardOutput);
 
+    connect(process, SIGNAL(finished(int, QProcess::ExitStatus)), source, SLOT(programProcessFinished(int, QProcess::ExitStatus)));
+    connect(process, SIGNAL(readyReadStandardOutput()), source, SLOT(programProcessReadyRead()));
+
+    // Make sure .ino is in its own folder with same name (as required by Arduino compiler),
+    // otherwise create a subfolder and copy the file there.
+    QFileInfo fileInfo(fileLocation);
+    QString tmpFilePath = fileInfo.absoluteFilePath();
+    QString dirName = fileInfo.dir().dirName();
+    QString sketchName = fileInfo.baseName();
+    if (dirName.compare(sketchName, Qt::CaseInsensitive) != 0) {
+        QString tmpSketchName(sketchName.append("_TMP"));
+        fileInfo.dir().mkdir(tmpSketchName);
+        tmpFilePath = fileInfo.absolutePath().append("/").append(tmpSketchName).append("/")
+                .append(fileInfo.baseName().append("_TMP.").append(fileInfo.suffix()));
+        if (QFile::exists(tmpFilePath)) QFile::remove(tmpFilePath);
+        QFile::copy(fileInfo.absoluteFilePath(), tmpFilePath);
+    }
+
+    QStringList args;
+    // see https://github.com/arduino/Arduino/blob/ide-1.5.x/build/shared/manpage.adoc
+    //args.append(QString("--verbose"));
+    args.append(QString("--board"));
+    args.append(getBoards().value(board));
+    args.append(QString("--port"));
+    args.append(port);
+    args.append(QString("--upload"));
+    args.append(QDir::toNativeSeparators(tmpFilePath));
+
+    process->start(getCommandLocation(), args);
 }

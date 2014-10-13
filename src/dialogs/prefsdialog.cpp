@@ -347,28 +347,31 @@ QWidget* PrefsDialog::createOtherForm()
 
 QWidget* PrefsDialog::createProgrammerForm(QList<Platform *> platforms) {
     QGroupBox * formGroupBox = new QGroupBox(tr("Platforms"));
-    QHBoxLayout *layout = new QHBoxLayout();
+    QVBoxLayout *layout = new QVBoxLayout();
     layout->setSpacing(SPACING);
 
     foreach (Platform * platform, platforms) {
-        QFrame * frame = new QFrame;
-        QHBoxLayout * hlayout = new QHBoxLayout();
-        hlayout->setMargin(0);
-        hlayout->setSpacing(0);
-        frame->setLayout(hlayout);
+        QFrame * locationFrame = new QFrame(formGroupBox);
+        QHBoxLayout * locationLayout = new QHBoxLayout();
+        locationLayout->setMargin(0);
+        locationLayout->setSpacing(0);
+        locationFrame->setLayout(locationLayout);
 
         QLabel *platformLb = new QLabel(platform->getName());
-        hlayout->addWidget(platformLb);
-        QLineEdit * locationLE = new QLineEdit(frame);
-        hlayout->addWidget(locationLE);
-        locationLE->setProperty("platform", platform->getName());
-        QPushButton * locateBtn = new QPushButton(tr("..."),frame);
-        hlayout->addWidget(locateBtn);
+        locationLayout->addWidget(platformLb);
+        QLineEdit * locationLE = new QLineEdit(locationFrame);
+        locationLE->setText(platform->getCommandLocation());
+        locationLayout->addWidget(locationLE);
+        m_programmerLEs.insert(platform->getName(), locationLE);
+
+        QPushButton * locateBtn = new QPushButton(tr("..."),locationFrame);
+        locationLayout->addWidget(locateBtn);
         locateBtn->setProperty("platform", platform->getName());
         connect(locateBtn, SIGNAL(clicked()), this, SLOT(chooseProgrammer()));
 
-        layout->addWidget(frame);
+        layout->addWidget(locationFrame);
     }
+
     formGroupBox->setLayout(layout);
     return formGroupBox;
 }
@@ -394,28 +397,9 @@ void PrefsDialog::chooseProgrammer()
                         "(Programmer *)"
                         );
 
+    m_programmerLEs.value(platformName)->setText(filename);
     platform->setCommandLocation(filename);
-    //chooseProgrammerAux(filename, true);
 }
-
-void PrefsDialog::chooseProgrammerAux(const QString & programmer, bool updateLink)
-{
-//    if (programmer == ProgramWindow::LocateName) {
-//        enableProgramButton();
-//        if (updateLink && !m_programmerPath.isEmpty()) {
-//            m_programWindow->updateLink(m_filename, m_platform, "", false, false);
-//        }
-
-//        m_programmerPath.clear();
-//        updateMenu();
-//        return;
-//    }
-
-//    m_programmerPath = programmer;
-//    enableProgramButton();
-//    updateMenu();
-}
-
 
 void PrefsDialog::changeLanguage(int index) 
 {

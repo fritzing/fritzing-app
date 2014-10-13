@@ -76,8 +76,7 @@ protected:
 	void initSchematic(QWidget *, ViewInfoThing *);
 	void initPCB(QWidget *, ViewInfoThing *);
     void initCode(QWidget *widget, QList<Platform *> platforms);
-	QWidget * createCurvyForm(ViewInfoThing *);
-    void chooseProgrammerAux(const QString &programmer, bool updateLink);
+    QWidget * createCurvyForm(ViewInfoThing *);
 
 protected slots:
 	void changeLanguage(int);
@@ -98,6 +97,8 @@ protected:
 	QPointer<QWidget> m_pcb;
     QPointer<QWidget> m_code;
 	QPointer<QLabel> m_wheelLabel[3];
+    QList<Platform *> m_platforms;
+    QHash<QString, QLineEdit *> m_programmerLEs;
 	QHash<QString, QString> m_settings;
 	QHash<QString, QString> m_tempSettings;
 	QString m_name;
@@ -105,7 +106,6 @@ protected:
 	bool m_cleared;
 	int m_wheelMapping;
     ViewInfoThing m_viewInfoThings[3];
-    QList<Platform *> m_platforms;
 };
 
 #endif 

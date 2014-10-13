@@ -24,7 +24,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include <QDir>
 #include <QSettings>
 
-#include <src/utils/folderutils.h>
+#include <../../utils/folderutils.h>
 
 Platform::Platform(const QString &name) : QObject()
 {

@@ -1,88 +1,65 @@
 
-#programmingWindow #header {
-	background-color: #821F09;
-	padding: 0px; padding-bottom: 0;
-}
-
+/*this is the background behind the tabs */
 #programmingWindow #center {
-	background-color: #821F09;
+	background-color: #85807e;
 }
 
+/*the main styling for the tabs in the programm-tab*/
 
-#programmingWindow #toolbarSelector {
-	width: 120px;
-	min-width: 120px;
-	max-width: 120px;
-	padding: 0 10px;
-}
-
-#programmingWindow #toolbarSelector QComboBox {
-	
-}
-
-#programmingWindow #toolbarSelector QLabel {
-	color: #ffffff;
-    font-size: 11px;
-	font-family: Droid Sans;
-	font-weight: normal;
-	qproperty-alignment: AlignCenter;
-}
-
-#programmingWindow QTabWidget::pane {
-	top: %1px;  	/* the value is swapped in at runtime in ProgramWindow::setup() */
- 	padding: 5px;
+/*this is the background around the tab-frames*/
+#programmingWindow QTabWidget::pane { 
+ 	padding: 0px;
 	margin-top: 0px;
-	border-top: none;
-	/*position: absolute;*/
+	border: 0px;
+	background: none;
 }
 
-#programmingWindow QTabWidget::tab-bar {
- 	left: 10px;
-	right: 10px;
-	top: %2px;		
-	/* the value is swapped in at runtime in ProgramWindow::setup()  */
-}
-
+/*this is the base-styleing for the tabs*/
 #programmingWindow QTabBar::tab {
-        margin-top: 0px;
-        margin-left: 3px;
-        margin-right: 3px;
+        margin-top: 5px;
+        margin-left: 8px;
+        margin-right: 0px;
         margin-bottom: 0px;
         padding-top: 2px;
         padding-bottom: 2px;
         padding-left: 6px;
         padding-right: 6px;
-        background-color: #ac6a5b;
-        border-bottom: 0px;
+        background: #5f5756;
+        border: 0px;
         min-width: 6.5em;
         min-height: 1.5em;
-
 }
 
-#programmingWindow QTabBar::tab:selected { /*the active tab*/
-	background-color: #fff;
-        border-bottom: none;
-	font-weight: bold;
-	color: #821F09;
+/*the active tab*/
+#programmingWindow QTabBar::tab:selected { 
+	background-color: #1c1a18;
+    border: none;
+	font-weight: book;
+	color: #fff;
 }
 
-#programmingWindow QTabBar::tab:!selected { /*the inactive tabs*/
-        padding-top: 0;
+/*the inactive tabs*/
+#programmingWindow QTabBar::tab:!selected { 
 		border: none;
-		color: #D1ACA4;
-		font-weight:bold;
+		color: #999999;
+		font-weight: book;
+		background-color: #5f5756;
 }
 
-#programmingWindow QTabBar::tab:!selected:hover {  /*the inactive tab- hover*/
-        background-color: #F23926;
+/*the inactive and active tab-hover-effect */
+#programmingWindow QTabBar::tab:!selected:hover
+{  
+        background-color: #474141;
 		border:none;
-		color: #fff;
-		font-weight:bold;
+		color: #c1c1c1;
+		font-weight: roman;
 }
 
+/*the "closebuttons" on the code-file-tabs*/
 #programmingWindow QTabBar::close-button {
-        image: url(:/resources/images/icons/dockWidgetCloseNormal_icon.png);
+    image: url(:/resources/images/icons/dockWidgetCloseNormal_icon.png);
 	subcontrol-position: right;
+	padding-top: 5px;
 }
 
 #programmingWindow QTabBar::close-button::hover {
@@ -96,21 +73,55 @@
 }
 
 
-#programmingWindow #code { /* the actual code area */
+/*the actual code area */
+#programmingWindow #code { 	
 	color: #ede0ce;
 	background-color: #1c1a18;
+	padding-top: 8px;
+	padding-left: 8px;
+	border: none;
 }
 
-#programmingWindow #splitter { /* drag handle between code and console */
-	color: #d7d8d8;
-	background-color: #2b2a27;
+
+/* the splitter/drag handle between code and console */
+#programmingWindow QSplitterHandle { 
+	background: #5f5453;
 }
 
+/* console output window */
 #programmingWindow #console {
-	background-color: #000;
-	color: #ddd; 
+	background-color: #85807e;
+	color: #3c3936; 
+	border: 0px;
+	padding-top: 8px;
+	padding-left: 8px;
 }
 
+
+/* toolbars at the bottom (new, open, save)*/
+#programmingWindow #toolbarSelector {
+	width: 120px;
+	min-width: 120px;
+	max-width: 120px;
+	padding: 0 10px;
+}
+
+
+/*the closed dropdown menues for platform, board, port */
+#programmingWindow #toolbarSelector QComboBox {
+	margin-top: 5px;
+}
+
+/*the text below the dropdown menus (platfom, board, port)*/
+#programmingWindow #toolbarSelector QLabel {
+	color: #ffffff;
+    font-size: 11px;
+	font-family: Droid Sans;
+	font-weight: normal;
+	qproperty-alignment: AlignCenter;
+}
+
+/*don't know-... maybe console window*/
 #programmingWindow #unableToProgramLabel {
 	color: #333;
 	background-color: #FFFFC2;
@@ -120,10 +131,7 @@
 	padding-bottom: 1px;
 }
 
-#programmingWindow{
-	background-color: #d63222;
-}
-
+/* the dropdowns */
 #programmingWindow QComboBox,
 #programmingWindow QPushButton,
 #programmingWindow QPushButton:enabled,
@@ -137,6 +145,8 @@
 	padding-left:4px;
 	padding-right:4px;
 	}
+
+
 #programmingWindow QComboBox:hover,
 #programmingWindow QPushButton:hover{
 	background-image:none;
@@ -159,6 +169,7 @@
 	height: 34px;
 	}
 	
+
 #programmingWindow QComboBox:disabled,
 #programmingWindow QPushButton:disabled{
 	background-image:none;
@@ -169,7 +180,7 @@
 	height: 34px;
 	}
 
-/* drop-down buton of the combobox */
+/* drop-down button of the combobox */
 #programmingWindow QComboBox::drop-down:button {
         background: transparent;
 		border:none;
@@ -191,6 +202,8 @@
         image: url(:/resources/images/icons/combobox-arrow.png);
 		border:none;
 }
+
+
 /* drop-down list of the combobox */
 #programmingWindow QComboBox::QAbstractItemView {
         background-color: rgb(236,236,236);
@@ -199,9 +212,47 @@
 		border:none;
 }
 
+/* not used styling 
+
+#programmingWindow QTabWidget::tab-bar {
+ 	left: 10px;
+	right: 10px;
+	top: 5px;		
+	background-color: #ff0;
+	color: #f0f;
+
+	 the value is swapped in at runtime in ProgramWindow::setup()  
+} */
+
+
+/*
+#programmingWindow #header {
+	background-color: #f0f;
+	padding: 0px; padding-bottom: 0;
+}
+*/
+/*
+
+
+
+*/
+
+
+
+
+/*
+
+
+#programmingWindow {
+	background-color: #ff0;
+}
+*/
+/*
+
+*/
 
 /*************** WINDOW MENU ***************/
-
+/*
 QMenuBar {
 	background-color: rgb(217,217,217);
 		color:rgb(51,51,51);
@@ -231,3 +282,4 @@ QMenu::hover {
 	color:rgb(51,51,51);
 
 }
+*/

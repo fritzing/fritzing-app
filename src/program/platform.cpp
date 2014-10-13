@@ -29,7 +29,8 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 Platform::Platform(const QString &name) : QObject()
 {
     m_name = name;
-    m_syntaxer = loadSyntaxer();
+    initSyntaxer();
+    initCommandLocation();
 }
 
 Platform::~Platform()
@@ -51,7 +52,7 @@ Syntaxer * Platform::getSyntaxer() {
     return m_syntaxer;
 }
 
-Syntaxer * Platform::loadSyntaxer()
+void Platform::initSyntaxer()
 {
     Syntaxer * syntaxer = new Syntaxer();
     QDir dir(FolderUtils::getApplicationSubFolderPath("translations"));
@@ -65,7 +66,12 @@ Syntaxer * Platform::loadSyntaxer()
             break;
         }
     }
-    return syntaxer;
+    m_syntaxer = syntaxer;
+}
+
+void Platform::initCommandLocation() {
+    QSettings settings;
+    m_commandLocation = settings.value(QString("programwindow/programmer.%1").arg(getName())).toString();
 }
 
 QString Platform::getCommandLocation() const

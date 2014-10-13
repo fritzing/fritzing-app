@@ -77,7 +77,8 @@ protected:
     QString m_minVersion;
 
 private:
-    Syntaxer *loadSyntaxer();
+    void initSyntaxer();
+    void initCommandLocation();
 
 private:
     QPointer<Syntaxer> m_syntaxer;

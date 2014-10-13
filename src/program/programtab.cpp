@@ -403,6 +403,8 @@ void ProgramTab::setPlatform(Platform * newPlatform, bool updateLink) {
 	QSettings settings;
     settings.setValue("programwindow/platform", newPlatform->getName());
 
+    connect(m_platform, SIGNAL(commandLocationChanged()), this, SLOT(enableProgramButton()));
+
     //bool canProgram = (syntaxer != NULL && syntaxer->canProgram());
     //m_unableToProgramLabel->setVisible(!canProgram);
     //m_unableToProgramLabel->setText(UnableToProgramMessage.arg(newPlatform.getName()));

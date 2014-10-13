@@ -76,6 +76,10 @@ QString Platform::getCommandLocation() const
 void Platform::setCommandLocation(const QString &commandLocation)
 {
     m_commandLocation = commandLocation;
+    QSettings settings;
+    settings.setValue(QString("programwindow/programmer.%1").arg(getName()), commandLocation);
+
+    emit commandLocationChanged();
 }
 
 QStringList Platform::getExtensions() const

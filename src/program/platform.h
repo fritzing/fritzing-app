@@ -62,6 +62,9 @@ public:
     QString getDefaultBoardName() const;
     void setDefaultBoardName(const QString &defaultBoardName);
 
+signals:
+    void commandLocationChanged();
+
 protected:
     QString m_name;
     QString m_commandLocation;
@@ -76,6 +79,7 @@ protected:
 private:
     Syntaxer *loadSyntaxer();
 
+private:
     QPointer<Syntaxer> m_syntaxer;
 
 };

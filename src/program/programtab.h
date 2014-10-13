@@ -62,6 +62,8 @@ signals:
 	void aboutToShow();
 };
 
+
+
 class ProgramTab : public QFrame 
 {
 	Q_OBJECT
@@ -132,7 +134,9 @@ signals:
 
 protected:
     QFrame * createFooter();
-	void enableProgramButton();
+
+protected slots:
+    void enableProgramButton();
 
 protected:
     QPointer<SketchToolButton> m_newButton;
@@ -170,6 +174,8 @@ protected:
 	QString m_filename;
 };
 
+
+
 class DeleteDialog : public QDialog {
 	Q_OBJECT
 
@@ -179,7 +185,7 @@ public:
 	bool deleteFileChecked();
 
 protected slots:
-	void buttonClicked(QAbstractButton * button);
+    void buttonClicked(QAbstractButton * button);
 
 protected:
 	QDialogButtonBox * m_buttonBox;

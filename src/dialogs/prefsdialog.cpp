@@ -361,6 +361,7 @@ QWidget* PrefsDialog::createProgrammerForm(QList<Platform *> platforms) {
         hlayout->addWidget(platformLb);
         QLineEdit * locationLE = new QLineEdit(frame);
         hlayout->addWidget(locationLE);
+        locationLE->setProperty("platform", platform->getName());
         QPushButton * locateBtn = new QPushButton(tr("..."),frame);
         hlayout->addWidget(locateBtn);
         locateBtn->setProperty("platform", platform->getName());
@@ -413,8 +414,6 @@ void PrefsDialog::chooseProgrammerAux(const QString & programmer, bool updateLin
 //    m_programmerPath = programmer;
 //    enableProgramButton();
 //    updateMenu();
-//    QSettings settings;
-//    settings.setValue("programwindow/programmer", programmer);
 }
 
 

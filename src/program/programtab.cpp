@@ -182,8 +182,7 @@ ProgramTab::ProgramTab(QString & filename, QWidget *parent) : QFrame(parent)
 
 	splitter->addWidget(m_textEdit);
 
-	m_console = new QTextEdit();
-	m_console->setLineWrapMode(QTextEdit::NoWrap);
+    m_console = new QTextEdit();
 	m_console->setObjectName("console");
 	m_console->setReadOnly(true);
 
@@ -327,7 +326,7 @@ void ProgramTab::initMenus() {
     m_portComboBox->setEnabled(true);
     QList<QSerialPortInfo> ports = m_programWindow->getSerialPorts();
     foreach (const QSerialPortInfo port, ports)
-        m_portComboBox->addItem(port.portName());
+        m_portComboBox->addItem(port.portName(), port.systemLocation());
 
     QString currentPort = settings.value("programwindow/port", "").toString();
     if (currentPort.isEmpty()) {
@@ -394,6 +393,9 @@ void ProgramTab::setPlatform(Platform * newPlatform, bool updateLink) {
         m_programWindow->updateLink(m_filename, newPlatform, false, false);
 	}
 
+    m_platform->disconnect(SIGNAL(commandLocationChanged()));
+    connect(newPlatform, SIGNAL(commandLocationChanged()), this, SLOT(enableProgramButton()));
+
     m_platform = newPlatform;
     m_platformComboBox->setCurrentIndex(m_platformComboBox->findText(newPlatform->getName()));
     Syntaxer * syntaxer = m_platform->getSyntaxer();
@@ -402,8 +404,6 @@ void ProgramTab::setPlatform(Platform * newPlatform, bool updateLink) {
     updateMenu();
 	QSettings settings;
     settings.setValue("programwindow/platform", newPlatform->getName());
-
-    connect(m_platform, SIGNAL(commandLocationChanged()), this, SLOT(enableProgramButton()));
 
     //bool canProgram = (syntaxer != NULL && syntaxer->canProgram());
     //m_unableToProgramLabel->setVisible(!canProgram);
@@ -790,7 +790,7 @@ void ProgramTab::updateSerialPorts() {
 		m_portComboBox->removeItem(obsoletePorts.at(i));
 	}
     foreach (QSerialPortInfo port, newPorts) {
-        m_portComboBox->addItem(port.portName());
+        m_portComboBox->addItem(port.portName(), port.systemLocation());
 	}
 
 	enableProgramButton();

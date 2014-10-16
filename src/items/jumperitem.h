@@ -61,9 +61,9 @@ public:
 	void saveInstanceLocation(QXmlStreamWriter & streamWriter);
 	bool hasPartNumberProperty();
 	QRectF boundingRect() const;
-	bool mousePressEvent(PaletteItemBase * originalItem, QGraphicsSceneMouseEvent *);
-	void mouseMoveEvent(PaletteItemBase * originalItem, QGraphicsSceneMouseEvent *);
-	void mouseReleaseEvent(PaletteItemBase * originalItem, QGraphicsSceneMouseEvent *);
+	bool mousePressEventK(PaletteItemBase * originalItem, QGraphicsSceneMouseEvent *);
+	void mouseMoveEventK(PaletteItemBase * originalItem, QGraphicsSceneMouseEvent *);
+	void mouseReleaseEventK(PaletteItemBase * originalItem, QGraphicsSceneMouseEvent *);
 
 protected:
 	void resize();

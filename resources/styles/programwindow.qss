@@ -6,10 +6,21 @@
 
 /*the main styling for the tabs in the programm-tab*/
 
+#programmingWindow QTabWidget::tab-bar {
+	/*top: %2px;*/
+ 	left: 10px;
+	right: 10px;
+	/*top: 5px;*/		
+	background-color: #ff0;
+	color: #f0f;
+}
+
+
 /*this is the background around the tab-frames*/
 #programmingWindow QTabWidget::pane { 
+	/*top: %1px;  	 the value is swapped in at runtime in ProgramWindow::setup() */
  	padding: 0px;
-	margin-top: 0px;
+	margin-top: 0px; 
 	border: 0px;
 	background: none;
 }
@@ -84,8 +95,11 @@
 
 
 /* the splitter/drag handle between code and console */
-#programmingWindow QSplitterHandle { 
+#programmingWindow QSplitterHandle,
+#programmingWindow #splitter { 
 	background: #5f5453;
+	background-color: #5f5453;
+	color: #5f5453;
 }
 
 /* console output window */
@@ -101,8 +115,15 @@
 /* toolbars at the bottom (new, open, save)*/
 #programmingWindow #toolbarSelector {
 	width: 120px;
-	min-width: 120px;
-	max-width: 120px;
+	min-width: 50px;
+	max-width: 190px;
+	padding: 0 10px;
+}
+
+#programmingWindow #boardSelector {
+/*	width: 120px;*/
+	min-width: 50px;
+	max-width: 160px;
 	padding: 0 10px;
 }
 
@@ -136,20 +157,18 @@
 #programmingWindow QPushButton,
 #programmingWindow QPushButton:enabled,
 #programmingWindow QPushButton:active{
-	background-image:none;
 	color: #fff;
-	background:#d63222;
+	background:#821f09;
 	font-size:12px;
 	border:none;
 	height: 34px;
-	padding-left:4px;
+	padding-left:8px;
 	padding-right:4px;
 	}
 
 
 #programmingWindow QComboBox:hover,
 #programmingWindow QPushButton:hover{
-	background-image:none;
 	color: #d9d9d9;
 	background:#f23926;
 	font-size:12px;
@@ -161,9 +180,8 @@
 
 #programmingWindow QComboBox:pressed,	
 #programmingWindow QPushButton:pressed{
-	background-image:none;
 	color: #d9d9d9;
-	background:#f23926;
+	background:#821f09;
 	font-size:12px;
 	border:none;
 	height: 34px;
@@ -172,7 +190,6 @@
 
 #programmingWindow QComboBox:disabled,
 #programmingWindow QPushButton:disabled{
-	background-image:none;
 	background:#AC6A5B;
 	color: #d1aca4;
 	font-size:12px;
@@ -182,21 +199,17 @@
 
 /* drop-down button of the combobox */
 #programmingWindow QComboBox::drop-down:button {
-        background: transparent;
-		border:none;
+      	border:none;
 }
 #programmingWindow QComboBox::drop-down:hover {
-        background: #f23926;
-		border:none;
+      	border:none;
 }
 #programmingWindow QComboBox::drop-down:on {
-        background: #f23926;
-		border:none;
+      	border:none;
 }
 
 #programmingWindow QComboBox::drop-down:selected {
-        background: #f23926;
-		border:none;
+      	border:none;
 }
 #programmingWindow QComboBox::down-arrow {
         image: url(:/resources/images/icons/combobox-arrow.png);
@@ -206,23 +219,51 @@
 
 /* drop-down list of the combobox */
 #programmingWindow QComboBox::QAbstractItemView {
-        background-color: rgb(236,236,236);
+       background-color: rgb(255,0,255);
         margin: 0px;
         padding: 0px;
 		border:none;
 }
 
+#programmingWindow QComboBox QAbstractItemView::item {
+    border-bottom: 5px solid white; margin:3px;
+}
+#programmingWindow QComboBox QAbstractItemView::item:selected {
+    border-bottom: 5px solid black; margin:3px;
+}
+
+#programmingWindow QScrollBar:vertical {               
+         border: 0px; 
+         background:rgba(255,255,255,10); 
+         width:10px;     
+         margin: 0px 0px 0px 0px; 
+     } 
+	 
+#programmingWindow QScrollBar::handle:vertical { 
+		border: 2px solid #b2b2b2;
+		border-radius: 2px;
+         background: #b2b2b2;
+         min-height: 5px; 
+      
+     }
+	 
+#programmingWindow QScrollBar::add-line:vertical { 
+         background: none; 
+         height: 1px; 
+         subcontrol-position: bottom; 
+         subcontrol-origin: margin; 
+     }
+	 
+#programmingWindow QScrollBar::sub-line:vertical { 
+         background:none; 
+         height: 1px; 
+         subcontrol-position: top; 
+         subcontrol-origin: margin; 
+     } 
+
 /* not used styling 
 
-#programmingWindow QTabWidget::tab-bar {
- 	left: 10px;
-	right: 10px;
-	top: 5px;		
-	background-color: #ff0;
-	color: #f0f;
-
-	 the value is swapped in at runtime in ProgramWindow::setup()  
-} */
+ */
 
 
 /*
@@ -251,35 +292,4 @@
 
 */
 
-/*************** WINDOW MENU ***************/
-/*
-QMenuBar {
-	background-color: rgb(217,217,217);
-		color:rgb(51,51,51);
-}
-QMenuBar::item {
-	background: rgb(217,217,217);
-	color:rgb(51,51,51);
-	background-image:none;
-}
 
-QMenu {
-	background-color: rgb(217,217,217);
-	background-image:none;
-		color:rgb(51,51,51);
-}
-
-
-QMenu::selected {
-	background-color: rgb(242,57,38);
-	background-image:none;
-		color:rgb(51,51,51);
-}
-
-QMenu::hover {
-	background-color: rgb(242,57,38);
-	background-image:none;
-	color:rgb(51,51,51);
-
-}
-*/

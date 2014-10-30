@@ -965,18 +965,15 @@ QString ResizableBoard::makeSvg(double mmW, double mmH, const QString & layerTem
     double strokeWidth = leaf.attribute("stroke-width").toDouble(&ok);
     if (!ok) return "";
 
-    static const QString plainString("%1");
-
-
     if (layerTemplate.contains("<ellipse")) {
-        leaf.setAttribute("cx", plainString.arg(mmW / 2));
-        leaf.setAttribute("cy", plainString.arg(mmH / 2));
-        leaf.setAttribute("rx", plainString.arg((mmW - strokeWidth) / 2));
-        leaf.setAttribute("ry", plainString.arg((mmH - strokeWidth) / 2));
+        leaf.setAttribute("cx", QString::number(mmW / 2));
+        leaf.setAttribute("cy", QString::number(mmH / 2));
+        leaf.setAttribute("rx", QString::number((mmW - strokeWidth) / 2));
+        leaf.setAttribute("ry", QString::number((mmH - strokeWidth) / 2));
     }
     else if (layerTemplate.contains("<rect")) {
-        leaf.setAttribute("width", plainString.arg(mmW - strokeWidth));
-        leaf.setAttribute("height", plainString.arg(mmH - strokeWidth));
+        leaf.setAttribute("width", QString::number(mmW - strokeWidth));
+        leaf.setAttribute("height", QString::number(mmH - strokeWidth));
     }
     
     return doc.toString();

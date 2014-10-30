@@ -951,7 +951,7 @@ QString ResizableBoard::makeSvg(double mmW, double mmH, const QString & layerTem
     if (!doc.setContent(layerTemplate)) return "";
 
     QDomElement root = doc.documentElement();
-    QString mmString("%1mm");
+    static const QString mmString("%1mm");
     root.setAttribute("width", mmString.arg(mmW));
     root.setAttribute("height", mmString.arg(mmH));
     root.setAttribute("viewBox", QString("0 0 %1 %2").arg(mmW).arg(mmH));
@@ -965,15 +965,18 @@ QString ResizableBoard::makeSvg(double mmW, double mmH, const QString & layerTem
     double strokeWidth = leaf.attribute("stroke-width").toDouble(&ok);
     if (!ok) return "";
 
+    static const QString plainString("%1");
+
+
     if (layerTemplate.contains("<ellipse")) {
-        leaf.setAttribute("cx", mmW / 2);
-        leaf.setAttribute("cy", mmH / 2);
-        leaf.setAttribute("rx", (mmW - strokeWidth) / 2);
-        leaf.setAttribute("ry", (mmH - strokeWidth) / 2);
+        leaf.setAttribute("cx", plainString.arg(mmW / 2));
+        leaf.setAttribute("cy", plainString.arg(mmH / 2));
+        leaf.setAttribute("rx", plainString.arg((mmW - strokeWidth) / 2));
+        leaf.setAttribute("ry", plainString.arg((mmH - strokeWidth) / 2));
     }
     else if (layerTemplate.contains("<rect")) {
-        leaf.setAttribute("width", mmW - strokeWidth);
-        leaf.setAttribute("height", mmH - strokeWidth);
+        leaf.setAttribute("width", plainString.arg(mmW - strokeWidth));
+        leaf.setAttribute("height", plainString.arg(mmH - strokeWidth));
     }
     
     return doc.toString();

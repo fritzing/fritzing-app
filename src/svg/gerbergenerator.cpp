@@ -552,7 +552,7 @@ QString GerberGenerator::clipToBoard(QString svgString, QRectF & boardRect, cons
             element.parentNode().insertAfter(newElement, element);
             newElement.setAttribute("id", QString("__%1__").arg(ix++));
             newElement.setAttribute("stroke-width", 0);
-            newElement.setAttribute("r", radius - (sw / 2));
+            newElement.setAttribute("r", QString::number(radius - (sw / 2)));
             newElement.setTagName("circle");
             newHoles.append(newElement);
         }
@@ -573,7 +573,7 @@ QString GerberGenerator::clipToBoard(QString svgString, QRectF & boardRect, cons
                 // enlarge it a little due to aliasing when the clipped portion is converted to raster and back
                 double radius = newElement.attribute("r").toDouble();
                 radius += 4;
-                newElement.setAttribute("r", radius);
+                newElement.setAttribute("r", QString::number(radius));
                 newElement.setAttribute("stroke-width", 2);
             }
         }
@@ -1032,10 +1032,10 @@ void GerberGenerator::handleDonuts(QDomElement & root1, QMultiHash<long, Connect
             path.parentNode().insertBefore(circle, path);
             circle.setAttribute("id", id);
             QPointF p = bounds.center();
-            circle.setAttribute("cx", p.x());
-            circle.setAttribute("cy", p.y());
-            circle.setAttribute("r", connectorItem->radius() * GraphicsUtils::StandardFritzingDPI / GraphicsUtils::SVGDPI);
-            circle.setAttribute("stroke-width", connectorItem->strokeWidth() * GraphicsUtils::StandardFritzingDPI / GraphicsUtils::SVGDPI);
+            circle.setAttribute("cx", QString::number(p.x()));
+            circle.setAttribute("cy", QString::number(p.y()));
+            circle.setAttribute("r", QString::number(connectorItem->radius() * GraphicsUtils::StandardFritzingDPI / GraphicsUtils::SVGDPI));
+            circle.setAttribute("stroke-width", QString::number(connectorItem->strokeWidth() * GraphicsUtils::StandardFritzingDPI / GraphicsUtils::SVGDPI));
 
         }
     }

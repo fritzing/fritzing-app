@@ -90,7 +90,7 @@ void SvgFlattener::unRotateChild(QDomElement & element, QMatrix transform) {
 			if (ok) {
                 QLineF line(0, 0, strokeWidth, 0);
                 QLineF newLine = transform.map(line);
-				element.setAttribute("stroke-width", newLine.length());
+                element.setAttribute("stroke-width", QString::number(newLine.length()));
 			}
 		}
 
@@ -128,10 +128,10 @@ void SvgFlattener::unRotateChild(QDomElement & element, QMatrix transform) {
 			QPolygonF poly = transform.map(r);
 			if (GraphicsUtils::isRect(poly)) {
 				QRectF rect = GraphicsUtils::getRect(poly);
-				element.setAttribute("x", rect.left());
-				element.setAttribute("y", rect.top());
-				element.setAttribute("width", rect.width());
-				element.setAttribute("height", rect.height());
+                element.setAttribute("x", QString::number(rect.left()));
+                element.setAttribute("y", QString::number(rect.top()));
+                element.setAttribute("width", QString::number(rect.width()));
+                element.setAttribute("height", QString::number(rect.height()));
 			}
 			else {
 				element.setTagName("polygon");
@@ -149,24 +149,24 @@ void SvgFlattener::unRotateChild(QDomElement & element, QMatrix transform) {
             float cy = element.attribute("cy").toFloat();
             float r = element.attribute("r").toFloat();
             QPointF point = transform.map(QPointF(cx,cy));
-            element.setAttribute("cx", point.x());
-            element.setAttribute("cy", point.y());
+            element.setAttribute("cx", QString::number(point.x()));
+            element.setAttribute("cy", QString::number(point.y()));
             QLineF line(0, 0, r, 0);
             QLineF newLine = transform.map(line);
-            element.setAttribute("r", newLine.length());
+            element.setAttribute("r", QString::number(newLine.length()));
         }
         else if(tag == "line") {
             float x1 = element.attribute("x1").toFloat();
             float y1 = element.attribute("y1").toFloat();
             QPointF p1 = transform.map(QPointF(x1,y1));
-            element.setAttribute("x1", p1.x());
-            element.setAttribute("y1", p1.y());
+            element.setAttribute("x1", QString::number(p1.x()));
+            element.setAttribute("y1", QString::number(p1.y()));
 
             float x2 = element.attribute("x2").toFloat();
             float y2 = element.attribute("y2").toFloat();
             QPointF p2 = transform.map(QPointF(x2,y2));
-            element.setAttribute("x2", p2.x());
-            element.setAttribute("y2", p2.y());
+            element.setAttribute("x2", QString::number(p2.x()));
+            element.setAttribute("y2", QString::number(p2.y()));
         }
 		else if (tag == "g") {
 			// no op

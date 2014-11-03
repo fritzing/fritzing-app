@@ -829,10 +829,10 @@ bool S2S::ensureTerminalPoints(const QString & fzpFilePath, const QString & svgF
                 QRectF bounds = renderer.boundsOnElement(svgID);
                 QDomElement rect = svgRoot.ownerDocument().createElement("rect");
                 connectorElement.parentNode().insertAfter(rect, connectorElement);
-                rect.setAttribute("x", bounds.left());
-                rect.setAttribute("y", bounds.top());
-                rect.setAttribute("width", bounds.width());
-                rect.setAttribute("height", bounds.height());
+                rect.setAttribute("x", QString::number(bounds.left()));
+                rect.setAttribute("y", QString::number(bounds.top()));
+                rect.setAttribute("width", QString::number(bounds.width()));
+                rect.setAttribute("height", QString::number(bounds.height()));
                 rect.setAttribute("fill", "none");
                 rect.setAttribute("stroke", "none");
                 rect.setAttribute("stroke-width", 0);

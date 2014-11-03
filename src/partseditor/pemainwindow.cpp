@@ -2533,10 +2533,10 @@ void PEMainWindow::moveTerminalPoint(SketchWidget * sketchWidget, const QString 
         terminalElement.setAttribute("stroke", "none");
         terminalElement.setAttribute("fill", "none");
         terminalElement.setAttribute("stroke-width", "0");
-        terminalElement.setAttribute("x", svgBounds.left() + cx - dx);
-        terminalElement.setAttribute("y", svgBounds.top() + cy - dy);
-        terminalElement.setAttribute("width", dx * 2);
-        terminalElement.setAttribute("height", dy * 2);
+        terminalElement.setAttribute("x", QString::number(svgBounds.left() + cx - dx));
+        terminalElement.setAttribute("y", QString::number(svgBounds.top() + cy - dy));
+        terminalElement.setAttribute("width", QString::number(dx * 2));
+        terminalElement.setAttribute("height", QString::number(dy * 2));
         if (terminalElement.attribute("gorn").isEmpty()) {
             QString gorn = svgConnectorElement.attribute("gorn");
             int ix = gorn.lastIndexOf(".");

@@ -131,7 +131,7 @@ unix {
         manpage.files += Fritzing.1
 
         icon.path = $$DATADIR/icons
-        icon.extra = install -D -m 0644 resources/images/fritzing_icon.png $(INSTALL_ROOT)$$DATADIR/icons/fritzing.png
+        icon.extra = install -D -m 0644 $$PWD/resources/images/fritzing_icon.png $(INSTALL_ROOT)$$DATADIR/icons/fritzing.png
 
         parts.path = $$PKGDATADIR
         parts.files += parts
@@ -149,7 +149,7 @@ unix {
         bins.files += bins
 
         translations.path = $$PKGDATADIR/translations
-        translations.extra = find translations -name "*.qm" -size +128c -exec cp -pr {} $(INSTALL_ROOT)$$PKGDATADIR/translations \\;
+        translations.extra = find $$PWD/translations -name "*.qm" -size +128c -exec cp -pr {} $(INSTALL_ROOT)$$PKGDATADIR/translations \\;
 
         syntax.path = $$PKGDATADIR/translations/syntax
         syntax.files += translations/syntax/*.xml

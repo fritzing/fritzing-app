@@ -531,6 +531,7 @@ protected:
 	void backupExistingFileIfExists(const QString &destFilePath);
 	void recoverBackupedFiles();
 	void resetTempFolder();
+    void saveLastTabList();
 
 	virtual QMenu *breadboardItemMenu();
 	virtual QMenu *schematicItemMenu();

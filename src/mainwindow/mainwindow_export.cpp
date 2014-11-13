@@ -829,6 +829,8 @@ void MainWindow::saveAsAuxAux(const QString & fileName) {
 
     m_programView->saveAll();
 
+    saveLastTabList();
+
 	saveAsShareable(fileName, false);
 
 	connectStartSave(false);

@@ -1284,17 +1284,22 @@ void MainWindow::closeEvent(QCloseEvent *event) {
 	settings.setValue(m_settingsPrefix + "state",saveState());
 	settings.setValue(m_settingsPrefix + "geometry",saveGeometry());
     
-	QStringList files = settings.value("lastTabList").toStringList();
+    saveLastTabList();
+
+	QMainWindow::closeEvent(event);
+}
+
+void MainWindow::saveLastTabList() {
+    QSettings settings;
+    QStringList files = settings.value("lastTabList").toStringList();
     for (int ix = files.count() - 1; ix >= 0; ix--) {
         if (files[ix].mid(1) == m_fwFilename) files.removeAt(ix);
     }
-	files.prepend(QString("%1%2").arg(this->currentTabIndex()).arg(m_fwFilename));
-	while (files.size() > MaxRecentFiles)
-		files.removeLast();
+    files.prepend(QString("%1%2").arg(this->currentTabIndex()).arg(m_fwFilename));
+    while (files.size() > MaxRecentFiles)
+        files.removeLast();
 
-	settings.setValue("lastTabList", files);
-
-	QMainWindow::closeEvent(event);
+    settings.setValue("lastTabList", files);
 }
 
 bool MainWindow::whatToDoWithAlienFiles() {

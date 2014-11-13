@@ -232,6 +232,7 @@ ProgramTab::~ProgramTab()
  */
 void ProgramTab::showEvent(QShowEvent *event) {
     QFrame::showEvent(event);
+    m_textEdit->setFocus();
     updateMenu();
 }
 

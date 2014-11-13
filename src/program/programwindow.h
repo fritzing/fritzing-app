@@ -102,6 +102,9 @@ public:
     void createViewMenuActions(QList<QAction *> &);
     void print();
 
+public slots:
+    void saveAll();
+
 signals:
 	void closed();
     void changeActivationSignal(bool activate, QWidget * originator);
@@ -112,6 +115,7 @@ protected slots:
     class ProgramTab * addTab();
     void closeCurrentTab();
     void closeTab(int index);
+    void saveCurrentTab();
     void tabSave(int);
     void tabSaveAs(int);
     void tabRename(int);

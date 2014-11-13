@@ -232,32 +232,33 @@ void ProgramWindow::initMenus(QMenuBar * menubar) {
     m_programMenu = menubar->addMenu(tr("&Code"));
 
 
-    m_newAction = new QAction(tr("New Code File"), this);
-    m_newAction->setShortcut(tr("Alt+N"));
-    m_newAction->setStatusTip(tr("Create a new program"));
+    m_newAction = new QAction(tr("&New Tab"), this);
+    m_newAction->setShortcut(tr("Alt+Ctrl+N"));
+    m_newAction->setStatusTip(tr("Create a new program tab"));
     connect(m_newAction, SIGNAL(triggered()), this, SLOT(addTab()));
     m_programMenu->addAction(m_newAction);
 
-    m_openAction = new QAction(tr("&Open Code File..."), this);
-    m_openAction->setShortcut(tr("Alt+O"));
-    m_openAction->setStatusTip(tr("Open a program"));
+    m_openAction = new QAction(tr("&Import Code..."), this);
+    m_openAction->setShortcut(tr("Alt+Ctrl+I"));
+    m_openAction->setStatusTip(tr("Import a program from a file"));
     connect(m_openAction, SIGNAL(triggered()), this, SLOT(loadProgramFile()));
     m_programMenu->addAction(m_openAction);
 
-    m_saveAction = new QAction(tr("&Save Code File"), this);
-    m_saveAction->setShortcut(tr("Alt+S"));
-    m_saveAction->setStatusTip(tr("Save the current program"));
-    connect(m_saveAction, SIGNAL(triggered()), this, SLOT(save()));
+    m_saveAction = new QAction(tr("&Save Tab"), this);
+    m_saveAction->setShortcut(tr("Alt+Ctrl+S"));
+    m_saveAction->setStatusTip(tr("Save the current program tab"));
+    connect(m_saveAction, SIGNAL(triggered()), this, SLOT(saveCurrentTab()));
     m_programMenu->addAction(m_saveAction);
 
-    currentAction = new QAction(tr("Rename Code File"), this);
-    currentAction->setStatusTip(tr("Rename the current program"));
+    currentAction = new QAction(tr("&Rename Tab"), this);
+    currentAction->setShortcut(tr("Alt+Ctrl+R"));
+    currentAction->setStatusTip(tr("Rename the current program tab"));
     connect(currentAction, SIGNAL(triggered()), this, SLOT(rename()));
     m_programMenu->addAction(currentAction);
 
-    currentAction = new QAction(tr("Remove tab"), this);
-    currentAction->setShortcut(tr("Alt+W"));
-    currentAction->setStatusTip(tr("Remove the current program from the sketch"));
+    currentAction = new QAction(tr("Close Tab"), this);
+    currentAction->setShortcut(tr("Alt+Ctrl+W"));
+    currentAction->setStatusTip(tr("Remove the current program tab from the sketch"));
     connect(currentAction, SIGNAL(triggered()), this, SLOT(closeCurrentTab()));
     m_programMenu->addAction(currentAction);
 
@@ -591,6 +592,8 @@ void ProgramWindow::print() {
 #endif
 }
 
+
+// overrides MainWindow::saveAsAux
 bool ProgramWindow::saveAsAux(const QString & fileName) {
 	if (!m_savingProgramTab) return false;
 
@@ -611,6 +614,15 @@ void ProgramWindow::tabDelete(int index, bool deleteFile) {
 		QFile file(fname);
 		file.remove();
 	}
+}
+
+void ProgramWindow::saveAll() {
+    for (int i= 0; i < m_tabWidget->count(); i++)
+        tabSave(i);
+}
+
+void ProgramWindow::saveCurrentTab() {
+    tabSave(m_tabWidget->currentIndex());
 }
 
 void ProgramWindow::tabSave(int index) {

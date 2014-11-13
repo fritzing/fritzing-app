@@ -827,6 +827,8 @@ void MainWindow::saveAsAuxAux(const QString & fileName) {
 	QString fzName = dir.absoluteFilePath(QFileInfo(fileName).completeBaseName() + FritzingSketchExtension); 
 	m_sketchModel->save(fzName, false);
 
+    m_programView->saveAll();
+
 	saveAsShareable(fileName, false);
 
 	connectStartSave(false);

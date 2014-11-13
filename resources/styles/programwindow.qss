@@ -218,47 +218,47 @@
 
 
 /* drop-down list of the combobox */
-#programmingWindow QComboBox::QAbstractItemView {
-       background-color: rgb(255,0,255);
-        margin: 0px;
-        padding: 0px;
-		border:none;
+#toolBarComboBox QAbstractItemView {
+		color: #000;
+		background-color: #ececec;
 }
 
-#programmingWindow QComboBox QAbstractItemView::item {
-    border-bottom: 5px solid white; margin:3px;
+#toolBarComboBox QAbstractItemView::item {
+		color: #000;
+    	border-bottom: 5px solid white; margin:3px;
 }
-#programmingWindow QComboBox QAbstractItemView::item:selected {
-    border-bottom: 5px solid black; margin:3px;
+#toolBarComboBox QAbstractItemView::item:selected {
+    	border-bottom: 5px solid black; margin:3px;
 }
 
+
+/* scroll bars */
 #programmingWindow QScrollBar:vertical {               
-         border: 0px; 
-         background:rgba(255,255,255,10); 
-         width:10px;     
-         margin: 0px 0px 0px 0px; 
+        border: 0px; 
+        background:rgba(255,255,255,10); 
+        width:10px;     
+        margin: 0px 0px 0px 0px; 
      } 
 	 
 #programmingWindow QScrollBar::handle:vertical { 
 		border: 2px solid #b2b2b2;
 		border-radius: 2px;
-         background: #b2b2b2;
-         min-height: 5px; 
-      
+        background: #b2b2b2;
+        min-height: 5px; 
      }
 	 
 #programmingWindow QScrollBar::add-line:vertical { 
-         background: none; 
-         height: 1px; 
-         subcontrol-position: bottom; 
-         subcontrol-origin: margin; 
+        background: none; 
+        height: 1px; 
+        subcontrol-position: bottom; 
+        subcontrol-origin: margin; 
      }
 	 
 #programmingWindow QScrollBar::sub-line:vertical { 
-         background:none; 
-         height: 1px; 
-         subcontrol-position: top; 
-         subcontrol-origin: margin; 
+        background:none; 
+        height: 1px; 
+        subcontrol-position: top; 
+        subcontrol-origin: margin; 
      } 
 
 /* not used styling 

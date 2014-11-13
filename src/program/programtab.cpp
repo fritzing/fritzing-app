@@ -267,6 +267,7 @@ void ProgramTab::initMenus() {
 
     QLabel * platformLabel = new QLabel(tr("Platform"), this);
     m_platformComboBox = new QComboBox();
+    m_platformComboBox->setObjectName("toolBarComboBox");
     m_platformComboBox->setEditable(false);
     m_platformComboBox->setEnabled(true);
     foreach (Platform * platform, m_programWindow->getAvailablePlatforms()) {
@@ -296,6 +297,7 @@ void ProgramTab::initMenus() {
 
     QLabel * boardLabel = new QLabel(tr("Board"), this);
     m_boardComboBox = new QComboBox();
+    m_boardComboBox->setObjectName("toolBarComboBox");
     m_boardComboBox->setEditable(false);
     m_boardComboBox->setEnabled(true);
     updateBoards();
@@ -323,6 +325,7 @@ void ProgramTab::initMenus() {
 
     QLabel * portLabel = new QLabel(tr("Port"), this);
     m_portComboBox = new SerialPortComboBox();
+    m_portComboBox->setObjectName("toolBarComboBox");
     m_portComboBox->setEditable(false);
     m_portComboBox->setEnabled(true);
     QList<QSerialPortInfo> ports = m_programWindow->getSerialPorts();

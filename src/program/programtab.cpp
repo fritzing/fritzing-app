@@ -401,7 +401,7 @@ void ProgramTab::setPlatform(Platform * newPlatform, bool updateLink) {
     m_platformComboBox->setCurrentIndex(m_platformComboBox->findText(newPlatform->getName()));
     Syntaxer * syntaxer = m_platform->getSyntaxer();
     m_highlighter->setSyntaxer(syntaxer);
-	m_highlighter->rehighlight();
+    m_highlighter->rehighlight();
     updateMenu();
 	QSettings settings;
     settings.setValue("programwindow/platform", newPlatform->getName());
@@ -415,23 +415,29 @@ void ProgramTab::setPlatform(Platform * newPlatform, bool updateLink) {
 }
 
 void ProgramTab::setPort(const QString & newPort) {
-        DebugDialog::debug(QString("Setting port to %1").arg(newPort));
+    DebugDialog::debug(QString("Setting port to %1").arg(newPort));
+    int ix = m_portComboBox->findText(newPort);
+    if (ix >= 0) {
         m_port = newPort;
-        m_portComboBox->setCurrentIndex(m_portComboBox->findText(newPort));
-		m_portComboBox->setToolTip(newPort);
+        m_portComboBox->setCurrentIndex(ix);
+        m_portComboBox->setToolTip(newPort);
         updateMenu();
-		QSettings settings;
-		settings.setValue("programwindow/port", newPort);
+        QSettings settings;
+        settings.setValue("programwindow/port", newPort);
+    }
 }
 
 void ProgramTab::setBoard(const QString & newBoard) {
-        DebugDialog::debug(QString("Setting board to %1").arg(newBoard));
+    DebugDialog::debug(QString("Setting board to %1").arg(newBoard));
+    int ix = m_boardComboBox->findText(newBoard);
+    if (ix >= 0) {
         m_board = newBoard;
-        m_boardComboBox->setCurrentIndex(m_boardComboBox->findText(newBoard));
+        m_boardComboBox->setCurrentIndex(ix);
         m_boardComboBox->setToolTip(newBoard);
         updateMenu();
         QSettings settings;
         settings.setValue("programwindow/board", newBoard);
+    }
 }
 
 bool ProgramTab::loadProgramFile() {
@@ -764,7 +770,10 @@ void ProgramTab::updateBoards() {
     }
 
     int foundIt = m_boardComboBox->findText(currentBoard);
-    m_boardComboBox->setCurrentIndex(foundIt > -1 ? foundIt : 0);
+    if (foundIt >= 0)
+        m_boardComboBox->setCurrentIndex(foundIt);
+    else
+        setBoard(m_platform->getDefaultBoardName());
 }
 
 void ProgramTab::updateSerialPorts() {

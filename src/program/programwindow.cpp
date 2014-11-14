@@ -315,9 +315,18 @@ void ProgramWindow::initMenus(QMenuBar * menubar) {
 }
 
 void ProgramWindow::showMenus(bool show) {
-    if (m_editMenu) m_editMenu->menuAction()->setVisible(show);
-    if (m_programMenu) m_programMenu->menuAction()->setVisible(show);
-    if (m_viewMenu) m_viewMenu->menuAction()->setVisible(show);
+    if (m_editMenu) {
+        m_editMenu->menuAction()->setVisible(show);
+        m_editMenu->menuAction()->setEnabled(show);
+    }
+    if (m_programMenu) {
+        m_programMenu->menuAction()->setVisible(show);
+        m_programMenu->menuAction()->setEnabled(show);
+    }
+    if (m_viewMenu) {
+        m_viewMenu->menuAction()->setVisible(show);
+        m_viewMenu->menuAction()->setEnabled(show);
+    }
 }
 
 void ProgramWindow::createViewMenuActions(QList<QAction *> & actions) {

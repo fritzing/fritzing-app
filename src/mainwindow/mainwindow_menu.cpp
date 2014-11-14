@@ -2682,9 +2682,18 @@ void MainWindow::hideShowProgramMenu() {
 
     bool show = m_programView == NULL || m_currentWidget->contentView() != m_programView;
     //if (m_fileMenu) m_fileMenu->menuAction()->setVisible(show);
-    if (m_viewMenu) m_viewMenu->menuAction()->setVisible(show);
-    if (m_partMenu) m_partMenu->menuAction()->setVisible(show);
-    if (m_editMenu) m_editMenu->menuAction()->setVisible(show);
+    if (m_viewMenu) {
+        m_viewMenu->menuAction()->setVisible(show);
+        m_viewMenu->menuAction()->setEnabled(show);
+    }
+    if (m_partMenu) {
+        m_partMenu->menuAction()->setVisible(show);
+        m_partMenu->menuAction()->setEnabled(show);
+    }
+    if (m_editMenu) {
+        m_editMenu->menuAction()->setVisible(show);
+        m_editMenu->menuAction()->setEnabled(show);
+    }
     if (m_programView) m_programView->showMenus(!show);
 }
 

@@ -2684,15 +2684,16 @@ void MainWindow::hideShowProgramMenu() {
     //if (m_fileMenu) m_fileMenu->menuAction()->setVisible(show);
     if (m_viewMenu) {
         m_viewMenu->menuAction()->setVisible(show);
-        m_viewMenu->menuAction()->setEnabled(show);
+        m_viewMenu->setEnabled(show);
     }
     if (m_partMenu) {
         m_partMenu->menuAction()->setVisible(show);
-        m_partMenu->menuAction()->setEnabled(show);
+        m_partMenu->setEnabled(show);
     }
     if (m_editMenu) {
         m_editMenu->menuAction()->setVisible(show);
-        m_editMenu->menuAction()->setEnabled(show);
+        m_editMenu->setEnabled(show);
+        //m_pasteAct->setEnabled(show);
     }
     if (m_programView) m_programView->showMenus(!show);
 }

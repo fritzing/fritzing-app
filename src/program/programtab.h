@@ -47,6 +47,7 @@ $Date: 2012-06-28 00:18:10 +0200 (Do, 28. Jun 2012) $
 #include <../../sketchtoolbutton.h>
 
 #include "programwindow.h"
+#include "consolewindow.h"
 
 class SerialPortComboBox : public QComboBox
 {
@@ -160,6 +161,7 @@ protected:
     QHBoxLayout *m_rightButtonsContainer;
 	bool m_updateEnabled;
 
+    QPointer<ConsoleWindow> m_monitorWindow;
     QPointer<ProgramWindow> m_programWindow;
 
     // Store the status of selected text, undo, and redo actions

@@ -79,6 +79,22 @@ ConsoleWindow::~ConsoleWindow()
     delete ui;
 }
 
+void ConsoleWindow::openSerialPort(const QString portName)
+{
+    if (portName.isEmpty()) return;
+
+    ConsoleSettings::Settings p = settings->settings();
+    p.name = portName;
+    if (serial->isOpen()) {
+        if (serial->portName().compare(portName) != 0) {
+            closeSerialPort();
+            openSerialPort();
+        }
+    } else {
+        openSerialPort();
+    }
+}
+
 void ConsoleWindow::openSerialPort()
 {
     ConsoleSettings::Settings p = settings->settings();

@@ -712,8 +712,13 @@ bool ProgramTab::save(const QString & filename) {
 }
 
 void ProgramTab::serialMonitor() {
-    ConsoleWindow * monitor = new ConsoleWindow(this);
-    monitor->show();
+    if (m_monitorWindow == NULL) {
+        m_monitorWindow = new ConsoleWindow(this);
+        m_monitorWindow->show();
+    }
+    m_monitorWindow->activateWindow();
+    m_monitorWindow->raise();
+    m_monitorWindow->openSerialPort(m_port);
 }
 
 void ProgramTab::sendProgram() {

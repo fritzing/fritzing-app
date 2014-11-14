@@ -67,6 +67,7 @@ class ConsoleWindow : public QMainWindow
 public:
     explicit ConsoleWindow(QWidget *parent = 0);
     ~ConsoleWindow();
+    void openSerialPort(const QString portName);
 
 private slots:
     void openSerialPort();

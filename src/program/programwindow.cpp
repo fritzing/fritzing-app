@@ -680,6 +680,7 @@ void ProgramWindow::tabBeforeClosing(int index, bool & ok) {
 bool ProgramWindow::prepSave(ProgramTab * programTab, bool saveAsFlag) 
 {
 	m_savingProgramTab = programTab;				// need this for the saveAsAux call
+    if (!programTab->isModified()) return false;
 
 	bool result = (saveAsFlag) 
 		? saveAs(programTab->filename(), programTab->readOnly())

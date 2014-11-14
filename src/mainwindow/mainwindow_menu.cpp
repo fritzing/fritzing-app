@@ -3566,7 +3566,7 @@ void MainWindow::startSaveInstancesSlot(const QString & fileName, ModelPart *, Q
 		streamWriter.writeAttribute("pid", settings.value("pid").toString());
 		foreach (LinkedFile * linkedFile, m_linkedProgramFiles) {
 			streamWriter.writeStartElement("program");
-            streamWriter.writeAttribute("platform", linkedFile->platform);
+            streamWriter.writeAttribute("language", linkedFile->platform);
 			streamWriter.writeCharacters(linkedFile->linkedFilename);
 			streamWriter.writeEndElement();
 		}
@@ -3662,8 +3662,7 @@ void MainWindow::loadedRootSlot(const QString & fname, ModelBase *, QDomElement 
 		QString text;
 		TextUtils::findText(program, text);
 		if (!text.isEmpty()) {
-			QString language = program.attribute("language");
-			QString programmer = program.attribute("programmer");
+            QString platform = program.attribute("language");
 			QString path;
 			if (thatPid.isEmpty()) {
 				// pre 0.7.0 relative path
@@ -3683,7 +3682,7 @@ void MainWindow::loadedRootSlot(const QString & fname, ModelBase *, QDomElement 
 				path = dir.absoluteFilePath(info.fileName());
 			}
 			linkedFile->linkedFilename = path;
-            linkedFile->platform = language;
+            linkedFile->platform = platform;
 			linkedFile->fileFlags = LinkedFile::NoFlag;
 			if (sameMachine) linkedFile->fileFlags |= LinkedFile::SameMachineFlag;
 			if (obsolete) linkedFile->fileFlags |= LinkedFile::ObsoleteFlag;

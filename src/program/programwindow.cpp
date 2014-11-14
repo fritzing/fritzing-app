@@ -299,6 +299,13 @@ void ProgramWindow::initMenus(QMenuBar * menubar) {
 
     m_programMenu->addSeparator();
 
+    m_monitorAction = new QAction(tr("Serial Monitor"), this);
+    m_monitorAction->setShortcut(tr("Ctrl+M"));
+    m_monitorAction->setStatusTip(tr("Monitor the serial port communication"));
+    m_monitorAction->setEnabled(false);
+    connect(m_monitorAction, SIGNAL(triggered()), this, SLOT(serialMonitor()));
+    m_programMenu->addAction(m_monitorAction);
+
     m_programAction = new QAction(tr("Upload"), this);
     m_programAction->setShortcut(tr("Ctrl+U"));
     m_programAction->setStatusTip(tr("Upload the current program onto a microcontroller"));
@@ -528,6 +535,7 @@ void ProgramWindow::updateMenu(bool programEnable, bool undoEnable, bool redoEna
 {
 	ProgramTab * programTab = currentWidget();
 	m_saveAction->setEnabled(programTab->isModified());
+    m_monitorAction->setEnabled(!port.isEmpty());
     m_programAction->setEnabled(programEnable);
     m_undoAction->setEnabled(undoEnable);
     m_redoAction->setEnabled(redoEnable);
@@ -792,6 +800,10 @@ void ProgramWindow::paste() {
 
 void ProgramWindow::selectAll() {
 	 currentWidget()->selectAll();
+}
+
+void ProgramWindow::serialMonitor() {
+     currentWidget()->serialMonitor();
 }
 
 void ProgramWindow::sendProgram() {

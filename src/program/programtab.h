@@ -113,6 +113,7 @@ public slots:
 	void save();
     void saveAs();
     void rename();
+    void serialMonitor();
     void sendProgram();
 	void programProcessFinished(int exitCode, QProcess::ExitStatus exitStatus);
 	void programProcessReadyRead();
@@ -137,12 +138,14 @@ protected:
 
 protected slots:
     void enableProgramButton();
+    void enableMonitorButton();
 
 protected:
     QPointer<SketchToolButton> m_newButton;
     QPointer<SketchToolButton> m_openButton;
     QPointer<SketchToolButton> m_saveButton;
     QPointer<QPushButton> m_cancelCloseButton;
+    QPointer<SketchToolButton> m_monitorButton;
     QPointer<SketchToolButton> m_programButton;
     QPointer<SerialPortComboBox> m_portComboBox;
     QPointer<QComboBox> m_platformComboBox;

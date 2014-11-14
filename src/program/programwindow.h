@@ -141,6 +141,7 @@ protected slots:
 	void copy();
 	void paste();
 	void selectAll();
+    void serialMonitor();
 	void sendProgram();
 
 protected:
@@ -179,6 +180,7 @@ public:
     QAction *m_newAction;
     QAction *m_openAction;
     QAction *m_saveAction;
+    QAction *m_monitorAction;
     QAction *m_programAction;
 
 protected:

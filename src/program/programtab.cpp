@@ -27,6 +27,7 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 #include "programtab.h"
 #include "highlighter.h"
 #include "syntaxer.h"
+#include "consolewindow.h"
 #include "../debugdialog.h"
 #include "../utils/folderutils.h"
 
@@ -351,11 +352,11 @@ void ProgramTab::initMenus() {
 	connect(m_portComboBox, SIGNAL(aboutToShow()), this, SLOT(updateSerialPorts()), Qt::DirectConnection);
     connect(m_boardComboBox, SIGNAL(currentIndexChanged(const QString &)), this, SLOT(setBoard(const QString &)));
 
-//    m_monitorButton = new SketchToolButton("MonitorCode", this, m_programWindow->m_monitorAction);
-//    m_monitorButton->setText(tr("Serial Monitor"));
-//    m_monitorButton->setObjectName("monitorCodeButton");
-//    m_monitorButton->setEnabledIcon();					// seems to need this to display button icon first time
-//    m_rightButtonsContainer->addWidget(m_monitorButton);
+    m_monitorButton = new SketchToolButton("MonitorCode", this, m_programWindow->m_monitorAction);
+    m_monitorButton->setText(tr("Serial Monitor"));
+    m_monitorButton->setObjectName("monitorCodeButton");
+    m_monitorButton->setEnabledIcon();					// seems to need this to display button icon first time
+    m_rightButtonsContainer->addWidget(m_monitorButton);
 
     m_programButton = new SketchToolButton("ProgramCode", this, m_programWindow->m_programAction);
     m_programButton->setText(tr("Upload"));
@@ -710,6 +711,11 @@ bool ProgramTab::save(const QString & filename) {
 	return result;
 }
 
+void ProgramTab::serialMonitor() {
+    ConsoleWindow * monitor = new ConsoleWindow(this);
+    monitor->show();
+}
+
 void ProgramTab::sendProgram() {
 	if (isModified()) {
 		QMessageBox::information(this, QObject::tr("Fritzing"), tr("The file '%1' must be saved before it can be sent to the programmer.").arg(m_filename));
@@ -807,10 +813,22 @@ void ProgramTab::updateSerialPorts() {
 	}
 
 	enableProgramButton();
+    enableMonitorButton();
 }
 
 Platform * ProgramTab::platform() {
     return m_platform;
+}
+
+void ProgramTab::enableMonitorButton() {
+    if (m_monitorButton == NULL) return;
+
+    bool enabled = true;
+    if (m_portComboBox->count() == 0) {
+        enabled = false;
+    }
+
+    m_monitorButton->setEnabled(enabled);
 }
 
 void ProgramTab::enableProgramButton() {

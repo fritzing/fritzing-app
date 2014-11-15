@@ -69,13 +69,15 @@ public:
     ~ConsoleWindow();
     void openSerialPort(const QString portName);
 
+protected:
+    void closeEvent(QCloseEvent *event);
+
 private slots:
     void openSerialPort();
     void closeSerialPort();
     void about();
     void writeData(const QByteArray &data);
     void readData();
-
     void handleError(QSerialPort::SerialPortError error);
 
 private:

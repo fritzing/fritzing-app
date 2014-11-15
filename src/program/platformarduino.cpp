@@ -79,7 +79,7 @@ void PlatformArduino::upload(QWidget *source, const QString &port, const QString
 
     QString command = getCommandLocation();
     if (QFile::exists(command)) {
-        if (tab) tab->appendToConsole(tr("Running %1 %2").arg(command, args.join(" ")));
+        if (tab) tab->appendToConsole(tr("Running %1 %2").arg(command).arg(args.join(" ")));
         process->start(getCommandLocation(), args);
     } else {
         if (tab) tab->appendToConsole(tr("Command not found: %1").arg(command));

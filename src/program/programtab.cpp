@@ -337,7 +337,7 @@ void ProgramTab::initMenus() {
     if (currentPort.isEmpty()) {
         currentPort = m_portComboBox->currentText();
     }
-    else if (m_programWindow->hasPort(currentPort)) {
+    else if (!m_programWindow->hasPort(currentPort)) {
         currentPort = m_portComboBox->currentText();
     }
     setPort(currentPort);
@@ -398,7 +398,7 @@ void ProgramTab::setPlatform(Platform * newPlatform, bool updateLink) {
         m_programWindow->updateLink(m_filename, newPlatform, false, false);
 	}
 
-    m_platform->disconnect(SIGNAL(commandLocationChanged()));
+    if (m_platform != NULL) m_platform->disconnect(SIGNAL(commandLocationChanged()));
     connect(newPlatform, SIGNAL(commandLocationChanged()), this, SLOT(enableProgramButton()));
 
     m_platform = newPlatform;
@@ -714,8 +714,8 @@ bool ProgramTab::save(const QString & filename) {
 void ProgramTab::serialMonitor() {
     if (m_monitorWindow == NULL) {
         m_monitorWindow = new ConsoleWindow(this);
-        m_monitorWindow->show();
     }
+    m_monitorWindow->show();
     m_monitorWindow->activateWindow();
     m_monitorWindow->raise();
     m_monitorWindow->openSerialPort(m_port);

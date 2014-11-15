@@ -167,6 +167,15 @@ void ConsoleSettings::fillPortsInfo()
     }
 }
 
+void ConsoleSettings::selectPortName(const QString portName) {
+    if (portName.isEmpty()) return;
+    int ix = ui->serialPortInfoListBox->findText(portName);
+    if (ix >= 0) {
+        currentSettings.name = portName;
+        ui->serialPortInfoListBox->setCurrentIndex(ix);
+    }
+}
+
 void ConsoleSettings::updateSettings()
 {
     currentSettings.name = ui->serialPortInfoListBox->currentText();

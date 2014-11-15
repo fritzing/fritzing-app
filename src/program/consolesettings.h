@@ -82,6 +82,7 @@ public:
     ~ConsoleSettings();
 
     Settings settings() const;
+    void selectPortName(const QString portName);
 
 private slots:
     void showPortInfo(int idx);

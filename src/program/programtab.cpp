@@ -166,7 +166,7 @@ ProgramTab::ProgramTab(QString & filename, QWidget *parent) : QFrame(parent)
     m_textEdit->setFontFamily("Droid Sans Mono");
     m_textEdit->setLineWrapMode(QTextEdit::NoWrap);
     QFontMetrics fm(m_textEdit->currentFont());
-    m_textEdit->setTabStopWidth(fm.averageCharWidth() * 4);
+    m_textEdit->setTabStopWidth(fm.averageCharWidth() * 2);
     m_textEdit->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding);
     m_textEdit->setUndoRedoEnabled(true);
     connect(m_textEdit, SIGNAL(textChanged()), this, SLOT(textChanged()));
@@ -723,8 +723,9 @@ void ProgramTab::serialMonitor() {
 
 void ProgramTab::sendProgram() {
 	if (isModified()) {
-		QMessageBox::information(this, QObject::tr("Fritzing"), tr("The file '%1' must be saved before it can be sent to the programmer.").arg(m_filename));
-		return;
+        //QMessageBox::information(this, QObject::tr("Fritzing"), tr("The file '%1' must be saved before it can be sent to the programmer.").arg(m_filename));
+        //return;
+        save();
 	}
 	m_programButton->setEnabled(false);
     m_console->setPlainText("");
@@ -738,13 +739,17 @@ void ProgramTab::programProcessFinished(int exitCode, QProcess::ExitStatus exitS
 	DebugDialog::debug(QString("program process finished %1 %2").arg(exitCode).arg(exitStatus));
 	m_programButton->setEnabled(true);
 	sender()->deleteLater();
+    if (exitCode == 0) {
+        m_console->append(tr("Upload finished."));
+    } else {
+        m_console->append(tr("Upload failed with exit code %1, %2").arg(exitCode).arg(exitStatus));
+    }
 }
 
 void ProgramTab::programProcessReadyRead() {
     QByteArray byteArray = qobject_cast<QProcess *>(sender())->readAllStandardOutput();
     m_console->append(byteArray);
 }
-
 
 /**
  * This function emits all the required signals to update the menu of its owning ProgramWindow.

@@ -75,6 +75,7 @@ ConsoleWindow::ConsoleWindow(QWidget *parent) :
 
 ConsoleWindow::~ConsoleWindow()
 {
+    if (serial->isOpen()) closeSerialPort();
     delete settings;
     delete ui;
 }

@@ -816,6 +816,8 @@ void MainWindow::saveAsAuxAux(const QString & fileName) {
 
 	connectStartSave(true);
 
+    m_programView->saveAll();
+
 	QDir dir(this->m_fzzFolder);
 	QStringList nameFilters("*" + FritzingSketchExtension);
 	QFileInfoList fileList = dir.entryInfoList(nameFilters, QDir::Files | QDir::NoSymLinks);
@@ -823,8 +825,6 @@ void MainWindow::saveAsAuxAux(const QString & fileName) {
 		QFile file(fileInfo.absoluteFilePath());
 		file.remove();
 	}
-
-    m_programView->saveAll();
 
 	QString fzName = dir.absoluteFilePath(QFileInfo(fileName).completeBaseName() + FritzingSketchExtension); 
 	m_sketchModel->save(fzName, false);

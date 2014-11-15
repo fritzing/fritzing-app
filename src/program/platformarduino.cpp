@@ -3,6 +3,7 @@
 #include <QDir>
 #include <QFileInfo>
 #include <QProcess>
+#include "programtab.h"
 
 PlatformArduino::PlatformArduino() : Platform(QString("Arduino"))
 {
@@ -46,9 +47,10 @@ void PlatformArduino::upload(QWidget *source, const QString &port, const QString
     QProcess * process = new QProcess(this);
     process->setProcessChannelMode(QProcess::MergedChannels);
     process->setReadChannel(QProcess::StandardOutput);
-
     connect(process, SIGNAL(finished(int, QProcess::ExitStatus)), source, SLOT(programProcessFinished(int, QProcess::ExitStatus)));
     connect(process, SIGNAL(readyReadStandardOutput()), source, SLOT(programProcessReadyRead()));
+
+    ProgramTab *tab = qobject_cast<ProgramTab *>(source);
 
     // Make sure .ino is in its own folder with same name (as required by Arduino compiler),
     // otherwise create a subfolder and copy the file there.
@@ -75,5 +77,11 @@ void PlatformArduino::upload(QWidget *source, const QString &port, const QString
     args.append(QString("--upload"));
     args.append(QDir::toNativeSeparators(tmpFilePath));
 
-    process->start(getCommandLocation(), args);
+    QString command = getCommandLocation();
+    if (QFile::exists(command)) {
+        if (tab) tab->appendToConsole(tr("Running %1 %2").arg(command, args.join(" ")));
+        process->start(getCommandLocation(), args);
+    } else {
+        if (tab) tab->appendToConsole(tr("Command not found: %1").arg(command));
+    }
 }

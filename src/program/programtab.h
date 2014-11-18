@@ -109,6 +109,7 @@ public slots:
     void copy();
     void enableCopy(bool enable);
     void paste();
+    void enablePaste(bool enable);
     void selectAll();
 	void deleteTab();
 	void save();
@@ -131,7 +132,7 @@ signals:
 	void wantToDelete(int, bool deleteFile);
     void platformChanged(Platform * newPlatform);
     void programWindowUpdateRequest(bool programEnable, bool undoEnable, bool redoEnable,
-                            bool cutEnable, bool copyEnable, Platform * platform,
+                            bool cutEnable, bool copyEnable, bool pasteEnable, Platform * platform,
                             const QString & port, const QString & board, const QString & filename);
 
 protected:
@@ -171,6 +172,7 @@ protected:
     bool m_canRedo;
     bool m_canCopy;
     bool m_canCut;
+    bool m_canPaste;
     QPointer<Platform> m_platform;
     QString m_port;
     QString m_board;

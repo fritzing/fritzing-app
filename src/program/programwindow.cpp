@@ -200,21 +200,21 @@ void ProgramWindow::initMenus(QMenuBar * menubar) {
     m_editMenu->addSeparator();
 
     m_cutAction = new QAction(tr("&Cut"), this);
-    m_cutAction->setShortcut(tr("Ctrl+X"));
+    m_cutAction->setShortcut(QKeySequence::Cut);
     m_cutAction->setStatusTip(tr("Cut selection"));
     m_cutAction->setEnabled(false);
     connect(m_cutAction, SIGNAL(triggered()), this, SLOT(cut()));
     m_editMenu->addAction(m_cutAction);
 
     m_copyAction = new QAction(tr("&Copy"), this);
-    m_copyAction->setShortcut(tr("Ctrl+C"));
+    m_copyAction->setShortcut(QKeySequence::Copy);
     m_copyAction->setStatusTip(tr("Copy selection"));
     m_copyAction->setEnabled(false);
     connect(m_copyAction, SIGNAL(triggered()), this, SLOT(copy()));
     m_editMenu->addAction(m_copyAction);
 
     m_pasteAction = new QAction(tr("&Paste"), this);
-    m_pasteAction->setShortcut(tr("Ctrl+V"));
+    m_pasteAction->setShortcut(QKeySequence::Paste);
     m_pasteAction->setStatusTip(tr("Paste clipboard contents"));
     // TODO: Check clipboard status and disable appropriately here
     connect(m_pasteAction, SIGNAL(triggered()), this, SLOT(paste()));
@@ -223,7 +223,7 @@ void ProgramWindow::initMenus(QMenuBar * menubar) {
     m_editMenu->addSeparator();
 
     m_selectAction = new QAction(tr("&Select All"), this);
-    m_selectAction->setShortcut(tr("Ctrl+A"));
+    m_selectAction->setShortcut(QKeySequence::SelectAll);
     m_selectAction->setStatusTip(tr("Select all text"));
     connect(m_selectAction, SIGNAL(triggered()), this, SLOT(selectAll()));
     m_editMenu->addAction(m_selectAction);
@@ -232,7 +232,7 @@ void ProgramWindow::initMenus(QMenuBar * menubar) {
 
 
     m_newAction = new QAction(tr("&New Tab"), this);
-    m_newAction->setShortcut(tr("Alt+Ctrl+N"));
+    m_newAction->setShortcut(QKeySequence::AddTab);
     m_newAction->setStatusTip(tr("Create a new program tab"));
     connect(m_newAction, SIGNAL(triggered()), this, SLOT(addTab()));
     m_programMenu->addAction(m_newAction);
@@ -324,6 +324,12 @@ void ProgramWindow::showMenus(bool show) {
     if (m_editMenu) {
         m_editMenu->menuAction()->setVisible(show);
         m_editMenu->setEnabled(show);
+        m_undoAction->setEnabled(show);
+        m_redoAction->setEnabled(show);
+        m_cutAction->setEnabled(show);
+        m_copyAction->setEnabled(show);
+        m_pasteAction->setEnabled(show);
+        m_selectAction->setEnabled(show);
     }
     if (m_programMenu) {
         m_programMenu->menuAction()->setVisible(show);
@@ -495,9 +501,9 @@ ProgramTab * ProgramWindow::addTab() {
     connect(programTab, SIGNAL(wantToRename(int)), this, SLOT(tabRename(int)));
     connect(programTab, SIGNAL(wantToDelete(int, bool)), this, SLOT(tabDelete(int, bool)), Qt::DirectConnection);
     connect(programTab, 
-        SIGNAL(programWindowUpdateRequest(bool, bool, bool, bool, bool, Platform *, const QString &, const QString &, const QString &)),
+        SIGNAL(programWindowUpdateRequest(bool, bool, bool, bool, bool, bool, Platform *, const QString &, const QString &, const QString &)),
 		this, 
-        SLOT(updateMenu(bool, bool, bool, bool, bool, Platform *, const QString &, const QString &, const QString &)));
+        SLOT(updateMenu(bool, bool, bool, bool, bool, bool, Platform *, const QString &, const QString &, const QString &)));
 	int ix = m_tabWidget->addTab(programTab, name);
     m_tabWidget->setCurrentIndex(ix);
     programTab->initMenus();
@@ -529,7 +535,7 @@ void ProgramWindow::closeTab(int index) {
  *  - undo/redo
  *  - cut/copy
  */
-void ProgramWindow::updateMenu(bool programEnable, bool undoEnable, bool redoEnable, bool cutEnable, bool copyEnable, 
+void ProgramWindow::updateMenu(bool programEnable, bool undoEnable, bool redoEnable, bool cutEnable, bool copyEnable, bool pasteEnable,
                               Platform* platform, const QString & port, const QString & board, const QString & filename)
 {
 	ProgramTab * programTab = currentWidget();
@@ -540,6 +546,7 @@ void ProgramWindow::updateMenu(bool programEnable, bool undoEnable, bool redoEna
     m_redoAction->setEnabled(redoEnable);
     m_cutAction->setEnabled(cutEnable);
     m_copyAction->setEnabled(copyEnable);
+    m_pasteAction->setEnabled(pasteEnable);
     QAction *lang = m_platformActions.value(platform);
     if (lang) {
         lang->setChecked(true);

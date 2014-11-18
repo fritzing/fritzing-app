@@ -144,6 +144,7 @@ ProgramTab::ProgramTab(QString & filename, QWidget *parent) : QFrame(parent)
     m_canCut = false;
     m_canUndo = false;
     m_canRedo = false;
+    m_canPaste = false;
     //m_platform = NULL;
     m_port = "";
     m_board = "";
@@ -583,6 +584,11 @@ void ProgramTab::paste() {
         m_textEdit->paste();
 }
 
+void ProgramTab::enablePaste(bool enable) {
+        m_canPaste = enable;
+        updateMenu();
+}
+
 void ProgramTab::selectAll() {
         m_textEdit->selectAll();
 }
@@ -761,13 +767,15 @@ void ProgramTab::updateMenu() {
 //        DebugDialog::debug(QString("Redo: %1").arg(m_canRedo));
 //        DebugDialog::debug(QString("Cut: %1").arg(m_canCut));
 //        DebugDialog::debug(QString("Copy: %1").arg(m_canCopy));
+//        DebugDialog::debug(QString("Paste: %1").arg(m_canPaste));
 //        DebugDialog::debug(QString("Platform: %1").arg(m_platform.getName()));
 //        DebugDialog::debug(QString("Port: %1").arg(m_port));
 
 		enableProgramButton();
 
         // Emit a signal so that the ProgramWindow can update its own UI.
-		emit programWindowUpdateRequest(m_programButton ? m_programButton->isEnabled() : false, m_canUndo, m_canRedo, m_canCut, m_canCopy, 
+        emit programWindowUpdateRequest(m_programButton ? m_programButton->isEnabled() : false,
+            m_canUndo, m_canRedo, m_canCut, m_canCopy, m_canPaste,
             m_platform, m_port, m_board, m_filename);
 }
 

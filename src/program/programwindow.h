@@ -123,7 +123,7 @@ protected slots:
 	void tabBeforeClosing(int, bool & ok);
     void tabDelete(int index, bool deleteFile);
     void updateMenu(bool programEnable, bool undoEnable, bool redoEnable,
-                    bool cutEnable, bool copyEnable,
+                    bool cutEnable, bool copyEnable, bool pasteEnable,
                     Platform * platform, const QString & port, const QString & board, const QString & filename);
 	void updateSerialPorts();
 	void portProcessFinished(int exitCode, QProcess::ExitStatus exitStatus);

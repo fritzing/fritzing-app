@@ -870,22 +870,22 @@ void MainWindow::createEditMenuActions() {
 	m_redoAct->setText(tr("Redo"));
 
 	m_cutAct = new QAction(tr("&Cut"), this);
-	m_cutAct->setShortcut(tr("Ctrl+X"));
+    m_cutAct->setShortcut(QKeySequence::Cut);
 	m_cutAct->setStatusTip(tr("Cut selection"));
 	connect(m_cutAct, SIGNAL(triggered()), this, SLOT(cut()));
 
 	m_copyAct = new QAction(tr("&Copy"), this);
-	m_copyAct->setShortcut(tr("Ctrl+C"));
+    m_copyAct->setShortcut(QKeySequence::Copy);
 	m_copyAct->setStatusTip(tr("Copy selection"));
 	connect(m_copyAct, SIGNAL(triggered()), this, SLOT(copy()));
 
 	m_pasteAct = new QAction(tr("&Paste"), this);
-	m_pasteAct->setShortcut(tr("Ctrl+V"));
+    m_pasteAct->setShortcut(QKeySequence::Paste);
 	m_pasteAct->setStatusTip(tr("Paste clipboard contents"));
 	connect(m_pasteAct, SIGNAL(triggered()), this, SLOT(paste()));
 
 	m_pasteInPlaceAct = new QAction(tr("Paste in Place"), this);
-	m_pasteInPlaceAct->setShortcut(tr("Ctrl+B"));
+    m_pasteInPlaceAct->setShortcut(tr("Ctrl+Shift+V"));
 	m_pasteInPlaceAct->setStatusTip(tr("Paste clipboard contents in place"));
 	connect(m_pasteInPlaceAct, SIGNAL(triggered()), this, SLOT(pasteInPlace()));
 
@@ -919,7 +919,7 @@ void MainWindow::createEditMenuActions() {
 	connect(m_deleteWireMinusAct, SIGNAL(triggered()), this, SLOT(doDeleteMinus()));
 
 	m_selectAllAct = new QAction(tr("&Select All"), this);
-	m_selectAllAct->setShortcut(tr("Ctrl+A"));
+    m_selectAllAct->setShortcut(QKeySequence::SelectAll);
 	m_selectAllAct->setStatusTip(tr("Select all elements"));
 	connect(m_selectAllAct, SIGNAL(triggered()), this, SLOT(selectAll()));
 
@@ -2693,7 +2693,11 @@ void MainWindow::hideShowProgramMenu() {
     if (m_editMenu) {
         m_editMenu->menuAction()->setVisible(show);
         m_editMenu->setEnabled(show);
-        //m_pasteAct->setEnabled(show);
+        m_copyAct->setEnabled(show);
+        m_cutAct->setEnabled(show);
+        m_selectAllAct->setEnabled(show);
+        m_undoAct->setEnabled(show);
+        m_redoAct->setEnabled(show);
     }
     if (m_programView) m_programView->showMenus(!show);
 }

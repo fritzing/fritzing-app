@@ -50,12 +50,11 @@ Console::Console(QWidget *parent)
     : QPlainTextEdit(parent)
     , localEchoEnabled(false)
 {
-    document()->setMaximumBlockCount(100);
-    QPalette p = palette();
-    p.setColor(QPalette::Base, Qt::black);
-    p.setColor(QPalette::Text, Qt::green);
-    setPalette(p);
-
+    document()->setMaximumBlockCount(1000);
+    QFont font = document()->defaultFont();
+    font.setFamily("Droid Sans Mono");
+    document()->setDefaultFont(font);
+    //setCenterOnScroll(true);
 }
 
 void Console::putData(const QByteArray &data)

@@ -27,7 +27,7 @@
    </property>
    <widget class="QMenu" name="menuCalls">
     <property name="title">
-     <string>Calls</string>
+     <string>Monitor</string>
     </property>
     <addaction name="actionConnect"/>
     <addaction name="actionDisconnect"/>
@@ -41,16 +41,8 @@
     <addaction name="actionConfigure"/>
     <addaction name="actionClear"/>
    </widget>
-   <widget class="QMenu" name="menuHelp">
-    <property name="title">
-     <string>Help</string>
-    </property>
-    <addaction name="actionAbout"/>
-    <addaction name="actionAboutQt"/>
-   </widget>
    <addaction name="menuCalls"/>
    <addaction name="menuTools"/>
-   <addaction name="menuHelp"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">

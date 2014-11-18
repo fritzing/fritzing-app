@@ -261,6 +261,15 @@
         subcontrol-origin: margin; 
      } 
 
+
+/* Serial Monitor Console */
+
+#consoleWindow QPlainTextEdit {
+	background: #222;
+	color: #eee;
+}
+
+
 /* not used styling 
 
  */

@@ -1332,7 +1332,7 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     <message numerus="yes">
         <source>%1 of %2 nets routed - %n connector(s) still to be routed</source>
         <translation>
-            <numerusform>%2個のうち%1個を配線しました - %n 個のコネクタがみ配線です</numerusform>
+            <numerusform>%2個のうち%1個を配線しました - %n 個のコネクタが未配線です</numerusform>
         </translation>
     </message>
     <message>

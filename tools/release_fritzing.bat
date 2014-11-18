@@ -24,11 +24,11 @@ IF .%2 == . (
 
 echo set the path to the qt sdk bin folder
 IF %2==64 (
-	set QTBIN=C:\Qt\Qt5.2.1\5.2.1\msvc2012_64\bin
+	set QTBIN=C:\Qt\Qt5.2.1-64bit\5.2.1\msvc2012_64\bin
 	set arch=""QMAKE_TARGET.arch=x86_64""
 ) ELSE (
 	IF %2==32 (
-		set QTBIN=C:\Qt\Qt5.2.1-32bit\5.2.1\msvc2012\bin
+		set QTBIN=C:\Qt\Qt5.2.1\5.2.1\msvc2012\bin
 		set arch=.
 	) ELSE (
 		echo second parameter--target architecture--should be either "32" for a 32-bit build or "64" for a 64-bit build
@@ -93,7 +93,7 @@ copy %QTBIN%\icuuc51.dll %DESTDIR%\deploy\icuuc51.dll
 copy %QTBIN%\..\plugins\imageformats\qjpeg.dll %DESTDIR%\deploy\lib\imageformats\qjpeg.dll
 copy %QTBIN%\..\plugins\sqldrivers\qsqlite.dll %DESTDIR%\deploy\lib\sqldrivers\qsqlite.dll
 copy %QTBIN%\..\plugins\platforms\qwindows.dll %DESTDIR%\deploy\platforms\qwindows.dll
-copy %QTBIN%\..\plugins\printsupport\windowsprintersupport.dll  %DESTDIR%\deploy\lib\windowsprintersupport.dll 
+copy %QTBIN%\..\plugins\printsupport\windowsprintersupport.dll  %DESTDIR%\deploy\lib\printsupport\windowsprintersupport.dll 
 
 
 echo copying bins, parts, sketches, translations, pdb, help

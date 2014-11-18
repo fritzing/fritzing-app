@@ -1278,8 +1278,8 @@ QString PaletteItem::hackSvgHoleSize(QDomDocument & domDocument, const QString &
         QDomElement circle = circles.at(i).toElement();
         QString id = circle.attribute("id");
         if (ConnectorFinder.indexIn(id) == 0) {
-            circle.setAttribute("r", rad);
-            circle.setAttribute("stroke-width", rt);
+            circle.setAttribute("r", QString::number(rad));
+            circle.setAttribute("stroke-width", QString::number(rt));
         }
     }
 
@@ -1292,11 +1292,11 @@ QString PaletteItem::hackSvgHoleSize(QDomDocument & domDocument, const QString &
             double oldX = rect.attribute("x").toDouble();
             double oldY = rect.attribute("y").toDouble();
 
-            rect.setAttribute("width", rad * 2);
-            rect.setAttribute("height", rad * 2);
-            rect.setAttribute("x", oldX + (oldWidth / 2) - rad);
-            rect.setAttribute("y", oldY + (oldWidth / 2) - rad);
-            rect.setAttribute("stroke-width", rt);
+            rect.setAttribute("width", QString::number(rad * 2));
+            rect.setAttribute("height", QString::number(rad * 2));
+            rect.setAttribute("x", QString::number(oldX + (oldWidth / 2) - rad));
+            rect.setAttribute("y", QString::number(oldY + (oldWidth / 2) - rad));
+            rect.setAttribute("stroke-width", QString::number(rt));
         }
     }
 

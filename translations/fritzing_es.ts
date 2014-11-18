@@ -3863,7 +3863,7 @@ Would you like to convert &apos;%1&apos; to the .fzz format now or open it read-
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1304"/>
         <source>&amp;Import parts and bins from old version...</source>
-        <translation type="unfinished">&amp;Importat partes y compartimientos de uan versión anterior...</translation>
+        <translation type="unfinished">&amp;Importat partes y compartimientos de una versión anterior...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1305"/>

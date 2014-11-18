@@ -166,13 +166,14 @@ bool JumperItem::setUpImage(ModelPart * modelPart, const LayerHash & viewLayers,
 			item->setCircular(true);
 			if (item->connectorSharedName().contains('0')) {
 				m_connector0 = item;
-				m_connectorTL = m_connector0->rect().topLeft();			
 			}
 			else if (item->connectorSharedName().contains('1')) {
 				m_connector1 = item;
-				m_connectorBR = boundingRect().bottomRight() - m_connector1->rect().bottomRight();
 			}
 		}
+
+        m_connectorTL = m_connector0->rect().topLeft();			
+		m_connectorBR = boundingRect().bottomRight() - m_connector1->rect().bottomRight();
 
 		initialResize(layerAttributes.viewID);
 	}
@@ -203,20 +204,20 @@ void JumperItem::initialResize(ViewLayer::ViewID viewID) {
 
 }
 
-bool JumperItem::mousePressEvent(PaletteItemBase * originalItem, QGraphicsSceneMouseEvent *event)
+bool JumperItem::mousePressEventK(PaletteItemBase * originalItem, QGraphicsSceneMouseEvent *event)
 {
     m_originalClickItem = originalItem;
     mousePressEvent(event);
     return (m_dragItem != NULL);
 }
 
-void JumperItem::mouseMoveEvent(PaletteItemBase * originalItem, QGraphicsSceneMouseEvent *event)
+void JumperItem::mouseMoveEventK(PaletteItemBase * originalItem, QGraphicsSceneMouseEvent *event)
 {
     Q_UNUSED(originalItem);
     mouseMoveEvent(event);
 }
 
-void JumperItem::mouseReleaseEvent(PaletteItemBase * originalItem, QGraphicsSceneMouseEvent *event)
+void JumperItem::mouseReleaseEventK(PaletteItemBase * originalItem, QGraphicsSceneMouseEvent *event)
 {
     Q_UNUSED(originalItem);
     mouseReleaseEvent(event);

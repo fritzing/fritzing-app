@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE language SYSTEM "language.dtd">
-<language name="Arduino" version="1.25" kateversion="2.4" section="Sources" extensions="*.ino;*.pde" mimetype="text/plain" priority="5" canProgram="false" >
+<language name="Arduino" version="1.25" kateversion="2.4" section="Sources" extensions="*.ino;*.pde" mimetype="text/plain" priority="5" canProgram="true" >
   <highlighting>
     <list name="keywords">
       <item> break </item>

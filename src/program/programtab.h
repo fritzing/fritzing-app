@@ -42,8 +42,12 @@ $Date: 2012-06-28 00:18:10 +0200 (Do, 28. Jun 2012) $
 #include <QCheckBox>
 #include <QLabel>
 #include <QPrinter>
+#include <QHBoxLayout>
+
+#include <../../sketchtoolbutton.h>
 
 #include "programwindow.h"
+#include "consolewindow.h"
 
 class SerialPortComboBox : public QComboBox
 {
@@ -58,6 +62,8 @@ protected:
 signals:
 	void aboutToShow();
 };
+
+
 
 class ProgramTab : public QFrame 
 {
@@ -82,16 +88,16 @@ public:
     void print(QPrinter & printer);
     void setText(QString text);
     QString text();
-	void updateProgrammers();
-	bool setProgrammer(const QString & path);
-	const QString & programmer();
-	const QString & language();
-	void setLanguage(const QString &, bool updateLink);
+    Platform *platform();
+    void setPlatform(const QString & newPlatformName, bool updateLink);
+    void setPlatform(Platform * newPlatform, bool updateLink);
 	void appendToConsole(const QString &);
-
+    void initMenus();
 public slots:
-    void setLanguage(const QString &);
+    void setPlatform(const QString & newPlatformName);
+    void setPlatform(Platform * newPlatform);
     void setPort(const QString &);
+    void setBoard(const QString &);
     bool loadProgramFile();
 	void textChanged();
     void undo();
@@ -108,14 +114,13 @@ public slots:
 	void save();
     void saveAs();
     void rename();
-	void sendProgram();
-	void chooseProgrammerTimed(int);
-	void chooseProgrammerTimeout();
-	void chooseProgrammer(const QString &);
+    void serialMonitor();
+    void sendProgram();
 	void programProcessFinished(int exitCode, QProcess::ExitStatus exitStatus);
 	void programProcessReadyRead();
     void updateMenu();
 	void updateSerialPorts();
+    void updateBoards();
 
 signals:
 	// TODO: since ProgramTab has m_programWindow most/all of these signals could be replaced by direct
@@ -124,30 +129,39 @@ signals:
 	void wantToSaveAs(int);
     void wantToRename(int);
 	void wantToDelete(int, bool deleteFile);
+    void platformChanged(Platform * newPlatform);
     void programWindowUpdateRequest(bool programEnable, bool undoEnable, bool redoEnable,
-                            bool cutEnable, bool copyEnable, const QString & language,
-                            const QString & port, const QString & programmer, const QString & filename);
+                            bool cutEnable, bool copyEnable, Platform * platform,
+                            const QString & port, const QString & board, const QString & filename);
 
 protected:
     QFrame * createFooter();
-	void chooseProgrammerAux(const QString & programmer, bool updateLink);
-	void updateProgrammerComboBox(const QString & programmer);
-	void enableProgramButton();
+
+protected slots:
+    void enableProgramButton();
+    void enableMonitorButton();
 
 protected:
-	QPointer<QPushButton> m_saveAsButton;
-	QPointer<QPushButton> m_saveButton;
+    QPointer<SketchToolButton> m_newButton;
+    QPointer<SketchToolButton> m_openButton;
+    QPointer<SketchToolButton> m_saveButton;
     QPointer<QPushButton> m_cancelCloseButton;
-	QPointer<QPushButton> m_programButton;
+    QPointer<SketchToolButton> m_monitorButton;
+    QPointer<SketchToolButton> m_programButton;
     QPointer<SerialPortComboBox> m_portComboBox;
-	QPointer<QComboBox> m_languageComboBox;
-	QPointer<QComboBox>  m_programmerComboBox;
+    QPointer<QComboBox> m_platformComboBox;
+    QPointer<QComboBox>  m_boardComboBox;
 	QPointer<QTextEdit> m_textEdit;
 	QPointer<QTextEdit> m_console;
 	QPointer<QTabWidget> m_tabWidget;
     QPointer<QLabel> m_unableToProgramLabel;
+    QPointer<QFrame> m_toolbar;
+    QHBoxLayout *m_leftButtonsContainer;
+    QHBoxLayout *m_middleButtonsContainer;
+    QHBoxLayout *m_rightButtonsContainer;
 	bool m_updateEnabled;
 
+    QPointer<ConsoleWindow> m_monitorWindow;
     QPointer<ProgramWindow> m_programWindow;
 
     // Store the status of selected text, undo, and redo actions
@@ -157,14 +171,15 @@ protected:
     bool m_canRedo;
     bool m_canCopy;
     bool m_canCut;
-    QString m_language;
+    QPointer<Platform> m_platform;
     QString m_port;
+    QString m_board;
 
 	QPointer<class Highlighter> m_highlighter;
 	QString m_filename;
-	QString m_programmerPath;
-
 };
+
+
 
 class DeleteDialog : public QDialog {
 	Q_OBJECT
@@ -175,7 +190,7 @@ public:
 	bool deleteFileChecked();
 
 protected slots:
-	void buttonClicked(QAbstractButton * button);
+    void buttonClicked(QAbstractButton * button);
 
 protected:
 	QDialogButtonBox * m_buttonBox;

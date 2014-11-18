@@ -824,7 +824,7 @@ void MainWindow::createOpenRecentMenu() {
 }
 
 void MainWindow::updateFileMenu() {
-    m_printAct->setEnabled(m_currentGraphicsView != NULL);
+    m_printAct->setEnabled(m_currentGraphicsView != NULL || m_currentWidget->contentView() == m_programView);
 
 	updateRecentFileActions();
 	m_orderFabAct->setEnabled(true);
@@ -1202,7 +1202,7 @@ void MainWindow::createViewMenuActions(bool showWelcome) {
         QList<QAction *> viewMenuActions;
 		if (m_welcomeView) viewMenuActions << m_showWelcomeAct;
         viewMenuActions << m_showBreadboardAct << m_showSchematicAct << m_showPCBAct << m_showProgramAct;
-        m_programView->initViewMenu(viewMenuActions);
+        m_programView->createViewMenuActions(viewMenuActions);
     }
 
 	m_showPartsBinIconViewAct = new QAction(tr("Show Parts Bin Icon View"), this);
@@ -1315,6 +1315,7 @@ void MainWindow::createMenus()
     createEditMenu();
     createPartMenu();
     createViewMenu();
+    m_programView->initMenus(menuBar());
     createWindowMenu();
     createTraceMenus();
     createHelpMenu();
@@ -2680,10 +2681,20 @@ void MainWindow::hideShowProgramMenu() {
     if (m_currentWidget == NULL) return;
 
     bool show = m_programView == NULL || m_currentWidget->contentView() != m_programView;
-    if (m_viewMenu) m_viewMenu->menuAction()->setVisible(show);
-    if (m_partMenu) m_partMenu->menuAction()->setVisible(show);
-    if (m_fileMenu) m_fileMenu->menuAction()->setVisible(show);
-    if (m_editMenu) m_editMenu->menuAction()->setVisible(show);
+    //if (m_fileMenu) m_fileMenu->menuAction()->setVisible(show);
+    if (m_viewMenu) {
+        m_viewMenu->menuAction()->setVisible(show);
+        m_viewMenu->setEnabled(show);
+    }
+    if (m_partMenu) {
+        m_partMenu->menuAction()->setVisible(show);
+        m_partMenu->setEnabled(show);
+    }
+    if (m_editMenu) {
+        m_editMenu->menuAction()->setVisible(show);
+        m_editMenu->setEnabled(show);
+        //m_pasteAct->setEnabled(show);
+    }
     if (m_programView) m_programView->showMenus(!show);
 }
 
@@ -3556,8 +3567,7 @@ void MainWindow::startSaveInstancesSlot(const QString & fileName, ModelPart *, Q
 		streamWriter.writeAttribute("pid", settings.value("pid").toString());
 		foreach (LinkedFile * linkedFile, m_linkedProgramFiles) {
 			streamWriter.writeStartElement("program");
-			streamWriter.writeAttribute("language", linkedFile->language);
-			streamWriter.writeAttribute("programmer", linkedFile->programmer);
+            streamWriter.writeAttribute("language", linkedFile->platform);
 			streamWriter.writeCharacters(linkedFile->linkedFilename);
 			streamWriter.writeEndElement();
 		}
@@ -3653,8 +3663,7 @@ void MainWindow::loadedRootSlot(const QString & fname, ModelBase *, QDomElement 
 		QString text;
 		TextUtils::findText(program, text);
 		if (!text.isEmpty()) {
-			QString language = program.attribute("language");
-			QString programmer = program.attribute("programmer");
+            QString platform = program.attribute("language");
 			QString path;
 			if (thatPid.isEmpty()) {
 				// pre 0.7.0 relative path
@@ -3674,8 +3683,7 @@ void MainWindow::loadedRootSlot(const QString & fname, ModelBase *, QDomElement 
 				path = dir.absoluteFilePath(info.fileName());
 			}
 			linkedFile->linkedFilename = path;
-			linkedFile->language = language;
-			linkedFile->programmer = programmer;
+            linkedFile->platform = platform;
 			linkedFile->fileFlags = LinkedFile::NoFlag;
 			if (sameMachine) linkedFile->fileFlags |= LinkedFile::SameMachineFlag;
 			if (obsolete) linkedFile->fileFlags |= LinkedFile::ObsoleteFlag;
@@ -4129,8 +4137,8 @@ void MainWindow::openProgramWindow() {
 	}
 
 	m_programWindow = new ProgramWindow();
-	connect(m_programWindow, SIGNAL(linkToProgramFile(const QString &, const QString &, const QString &, bool, bool)), 
-			this, SLOT(linkToProgramFile(const QString &, const QString &, const QString &, bool, bool)));
+    connect(m_programWindow, SIGNAL(linkToProgramFile(const QString &, Platform *, bool, bool)),
+            this, SLOT(linkToProgramFile(const QString &, Platform *, bool, bool)));
 	connect(m_programWindow, SIGNAL(changeActivationSignal(bool, QWidget *)), qApp, SLOT(changeActivation(bool, QWidget *)), Qt::DirectConnection);
 	connect(m_programWindow, SIGNAL(destroyed(QObject *)), qApp, SLOT(topLevelWidgetDestroyed(QObject *)));
 
@@ -4140,7 +4148,7 @@ void MainWindow::openProgramWindow() {
 	m_programWindow->setVisible(true);
 }
 
-void MainWindow::linkToProgramFile(const QString & filename, const QString & language, const QString & programmer, bool addLink, bool strong) {
+void MainWindow::linkToProgramFile(const QString & filename, Platform * platform, bool addLink, bool strong) {
 #ifdef Q_OS_WIN
 	Qt::CaseSensitivity sensitivity = Qt::CaseInsensitive;
 #else
@@ -4151,12 +4159,8 @@ void MainWindow::linkToProgramFile(const QString & filename, const QString & lan
 		bool gotOne = false;
 		foreach (LinkedFile * linkedFile, m_linkedProgramFiles) {
 			if (linkedFile->linkedFilename.compare(filename, sensitivity) == 0) {
-				if (linkedFile->language != language) {
-					linkedFile->language = language;
-					this->setWindowModified(true);
-				}
-				if (linkedFile->programmer != programmer) {
-					linkedFile->programmer = programmer;
+                if (linkedFile->platform != platform->getName()) {
+                    linkedFile->platform = platform->getName();
 					this->setWindowModified(true);
 				}
 				gotOne = true;
@@ -4166,8 +4170,7 @@ void MainWindow::linkToProgramFile(const QString & filename, const QString & lan
 		if (!gotOne) {
 			LinkedFile * linkedFile = new LinkedFile;
 			linkedFile->linkedFilename = filename;
-			linkedFile->language = language;
-			linkedFile->programmer = programmer;
+            linkedFile->platform = platform->getName();
 			m_linkedProgramFiles.append(linkedFile);
 			this->setWindowModified(true);
 		}
@@ -4182,14 +4185,10 @@ void MainWindow::linkToProgramFile(const QString & filename, const QString & lan
 					this->setWindowModified(true);
 				}
 				else {
-					if (linkedFile->language != language) {
-						linkedFile->language = language;
+                    if (linkedFile->platform != platform->getName()) {
+                        linkedFile->platform = platform->getName();
 						this->setWindowModified(true);
-					}
-					if (linkedFile->programmer != programmer) {
-						linkedFile->programmer = programmer;
-						this->setWindowModified(true);
-					}
+                    }
 				}
 				return;
 			}

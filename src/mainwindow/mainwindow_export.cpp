@@ -152,6 +152,10 @@ void MainWindow::initNames()
 }
 
 void MainWindow::print() {
+    if (m_currentWidget->contentView() == m_programView) {
+        m_programView->print();
+    }
+
     if (m_currentGraphicsView == NULL) return;
 
 	#ifndef QT_NO_PRINTER
@@ -812,6 +816,8 @@ void MainWindow::saveAsAuxAux(const QString & fileName) {
 
 	connectStartSave(true);
 
+    m_programView->saveAll();
+
 	QDir dir(this->m_fzzFolder);
 	QStringList nameFilters("*" + FritzingSketchExtension);
 	QFileInfoList fileList = dir.entryInfoList(nameFilters, QDir::Files | QDir::NoSymLinks);
@@ -822,6 +828,8 @@ void MainWindow::saveAsAuxAux(const QString & fileName) {
 
 	QString fzName = dir.absoluteFilePath(QFileInfo(fileName).completeBaseName() + FritzingSketchExtension); 
 	m_sketchModel->save(fzName, false);
+
+    saveLastTabList();
 
 	saveAsShareable(fileName, false);
 

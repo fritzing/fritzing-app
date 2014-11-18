@@ -161,7 +161,9 @@ ICON = resources/images/fritzing_icon.icns
 
 QT += core gui svg xml network sql # opengl
 greaterThan(QT_MAJOR_VERSION, 4) {
-    QT += printsupport concurrent
+    QT += widgets printsupport concurrent serialport
+} else {
+    include($$QTSERIALPORT_PROJECT_ROOT/src/serialport/qt4support/serialport.prf)
 }
 
 RC_FILE = fritzing.rc

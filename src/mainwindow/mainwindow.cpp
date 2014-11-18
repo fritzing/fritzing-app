@@ -1284,17 +1284,22 @@ void MainWindow::closeEvent(QCloseEvent *event) {
 	settings.setValue(m_settingsPrefix + "state",saveState());
 	settings.setValue(m_settingsPrefix + "geometry",saveGeometry());
     
-	QStringList files = settings.value("lastTabList").toStringList();
+    saveLastTabList();
+
+	QMainWindow::closeEvent(event);
+}
+
+void MainWindow::saveLastTabList() {
+    QSettings settings;
+    QStringList files = settings.value("lastTabList").toStringList();
     for (int ix = files.count() - 1; ix >= 0; ix--) {
         if (files[ix].mid(1) == m_fwFilename) files.removeAt(ix);
     }
-	files.prepend(QString("%1%2").arg(this->currentTabIndex()).arg(m_fwFilename));
-	while (files.size() > MaxRecentFiles)
-		files.removeLast();
+    files.prepend(QString("%1%2").arg(this->currentTabIndex()).arg(m_fwFilename));
+    while (files.size() > MaxRecentFiles)
+        files.removeLast();
 
-	settings.setValue("lastTabList", files);
-
-	QMainWindow::closeEvent(event);
+    settings.setValue("lastTabList", files);
 }
 
 bool MainWindow::whatToDoWithAlienFiles() {
@@ -3035,17 +3040,19 @@ void MainWindow::addToSketch(QList<ModelPart *> & modelParts) {
 }
 
 void MainWindow::initProgrammingWidget() {
-    return; // remove this line to add programming as a tab 
-
     m_programView = new ProgramWindow(this);
 
-	connect(m_programView, SIGNAL(linkToProgramFile(const QString &, const QString &, const QString &, bool, bool)), 
-			this, SLOT(linkToProgramFile(const QString &, const QString &, const QString &, bool, bool)));
+    connect(m_programView, SIGNAL(linkToProgramFile(const QString &, Platform *, bool, bool)),
+            this, SLOT(linkToProgramFile(const QString &, Platform *, bool, bool)));
 
 	m_programView->setup();
 
-	SketchAreaWidget * sketchAreaWidget = new SketchAreaWidget(m_programView, this);
-	addTab(sketchAreaWidget, tr("Code"));
+    SketchAreaWidget * sketchAreaWidget = new SketchAreaWidget(m_programView, this, false, true);
+    addTab(sketchAreaWidget, ":/resources/images/icons/TabWidgetCodeActive_icon.png", tr("Code"), true);
+}
+
+ProgramWindow *MainWindow::programmingWidget() {
+    return m_programView;
 }
 
 void MainWindow::orderFabHoverEnter() {
@@ -3099,7 +3106,7 @@ void MainWindow::orderFabHoverLeave() {
 void MainWindow::initWelcomeView() {
     m_welcomeView = new WelcomeView(this);
     m_welcomeView->setObjectName("WelcomeView");
-	SketchAreaWidget * sketchAreaWidget = new SketchAreaWidget(m_welcomeView, this);
+    SketchAreaWidget * sketchAreaWidget = new SketchAreaWidget(m_welcomeView, this, false, false);
     addTab(sketchAreaWidget, ":/resources/images/icons/TabWidgetWelcomeActive_icon.png", tr("Welcome"), true);
 }
 

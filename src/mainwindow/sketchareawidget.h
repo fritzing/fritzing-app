@@ -38,6 +38,7 @@ class SketchAreaWidget : public QFrame {
     Q_OBJECT
 public:
 	SketchAreaWidget(QWidget *contentView, QMainWindow *parent);
+    SketchAreaWidget(QWidget *contentView, QMainWindow *parent, bool hasToolBar, bool hasStatusBar);
 	virtual ~SketchAreaWidget();
 
 	QWidget* contentView();
@@ -50,6 +51,7 @@ public:
 	QFrame * toolbar();
 
 protected:
+    void init(QWidget *contentView, QMainWindow *parent, bool hasToolBar, bool hasStatusBar);
 	void createLayout();
 
 public:

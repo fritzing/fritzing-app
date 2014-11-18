@@ -35,22 +35,34 @@ const QString SketchAreaWidget::RoutingStateLabelName = "routingStateLabel";
 SketchAreaWidget::SketchAreaWidget(QWidget *contentView, QMainWindow *parent)
 	: QFrame(parent)
 {
-	m_contentView = contentView;
-	contentView->setParent(this);
+    init(contentView, parent, true, true);
+}
 
-	createLayout();
-
-	QVBoxLayout *layout = new QVBoxLayout(this);
-	layout->setMargin(0);
-	layout->setSpacing(0);
-	layout->addWidget(contentView);
-	layout->addWidget(m_toolbar);
-	layout->addWidget(m_statusBarArea);
-	m_statusBarArea->setFixedHeight(parent->statusBar()->height()*3/4);
+SketchAreaWidget::SketchAreaWidget(QWidget *contentView, QMainWindow *parent, bool hasToolBar, bool hasStatusBar)
+    : QFrame(parent)
+{
+    init (contentView, parent, hasToolBar, hasStatusBar);
 }
 
 SketchAreaWidget::~SketchAreaWidget() {
 	// TODO Auto-generated destructor stub
+}
+
+void SketchAreaWidget::init(QWidget *contentView, QMainWindow *parent, bool hasToolBar, bool hasStatusBar) {
+    m_contentView = contentView;
+    contentView->setParent(this);
+
+    createLayout();
+
+    QVBoxLayout *layout = new QVBoxLayout(this);
+    layout->setMargin(0);
+    layout->setSpacing(0);
+    layout->addWidget(contentView);
+    layout->addWidget(m_toolbar);
+    if (!hasToolBar) m_toolbar->hide();
+    layout->addWidget(m_statusBarArea);
+    if (!hasStatusBar) m_statusBarArea->hide();
+    m_statusBarArea->setFixedHeight(parent->statusBar()->height()*3/4);
 }
 
 QWidget *SketchAreaWidget::contentView() {

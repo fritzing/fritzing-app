@@ -484,14 +484,14 @@ void PEMainWindow::initSketchWidgets(bool whatever)
     }
 
     m_metadataView = new PEMetadataView(this);
-	SketchAreaWidget * sketchAreaWidget = new SketchAreaWidget(m_metadataView, this);
+    SketchAreaWidget * sketchAreaWidget = new SketchAreaWidget(m_metadataView, this, false, false);
 	addTab(sketchAreaWidget, tr("Metadata"));
     connect(m_metadataView, SIGNAL(metadataChanged(const QString &, const QString &)), this, SLOT(metadataChanged(const QString &, const QString &)), Qt::DirectConnection);
     connect(m_metadataView, SIGNAL(tagsChanged(const QStringList &)), this, SLOT(tagsChanged(const QStringList &)), Qt::DirectConnection);
     connect(m_metadataView, SIGNAL(propertiesChanged(const QHash<QString, QString> &)), this, SLOT(propertiesChanged(const QHash<QString, QString> &)), Qt::DirectConnection);
 
     m_connectorsView = new PEConnectorsView(this);
-	sketchAreaWidget = new SketchAreaWidget(m_connectorsView, this);
+    sketchAreaWidget = new SketchAreaWidget(m_connectorsView, this, false, false);
 	addTab(sketchAreaWidget, tr("Connectors"));
 
     connect(m_connectorsView, SIGNAL(connectorMetadataChanged(ConnectorMetadata *)), this, SLOT(connectorMetadataChanged(ConnectorMetadata *)), Qt::DirectConnection);

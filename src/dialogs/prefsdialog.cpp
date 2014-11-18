@@ -32,6 +32,7 @@ $Date: 2013-04-18 07:18:04 +0200 (Do, 18. Apr 2013) $
 #include "setcolordialog.h"
 #include "../sketch/zoomablegraphicsview.h"
 #include "../mainwindow/mainwindow.h"
+#include "../utils/folderutils.h"
 
 #include <QFormLayout>
 #include <QLabel>
@@ -71,28 +72,33 @@ void PrefsDialog::initViewInfo(int index, const QString & viewName, const QStrin
 	m_viewInfoThings[index].curvy = curvy;
 }
 
-void PrefsDialog::initLayout(QFileInfoList & list)
+void PrefsDialog::initLayout(QFileInfoList & languages, QList<Platform *> platforms)
 {
 	m_tabWidget = new QTabWidget();
 	m_general = new QWidget();
 	m_breadboard = new QWidget();
 	m_schematic = new QWidget();
 	m_pcb = new QWidget();
+    m_code = new QWidget();
     m_tabWidget->setObjectName("preDia_tabs");
 
 	m_tabWidget->addTab(m_general, tr("General"));
 	m_tabWidget->addTab(m_breadboard, m_viewInfoThings[0].viewName);
 	m_tabWidget->addTab(m_schematic, m_viewInfoThings[1].viewName);
 	m_tabWidget->addTab(m_pcb, m_viewInfoThings[2].viewName);
+    m_tabWidget->addTab(m_code, tr("Code View"));
 
 	QVBoxLayout * vLayout = new QVBoxLayout();
 	vLayout->addWidget(m_tabWidget);
 
-	initGeneral(m_general, list);
+    initGeneral(m_general, languages);
 
 	initBreadboard(m_breadboard, &m_viewInfoThings[0]);
 	initSchematic(m_schematic, &m_viewInfoThings[1]);
 	initPCB(m_pcb, &m_viewInfoThings[2]);
+
+    initCode(m_code, platforms);
+    m_platforms = platforms;
 
     QDialogButtonBox * buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
 	buttonBox->button(QDialogButtonBox::Cancel)->setText(tr("Cancel"));
@@ -107,13 +113,13 @@ void PrefsDialog::initLayout(QFileInfoList & list)
 
 }
 
-void PrefsDialog::initGeneral(QWidget * widget, QFileInfoList & list)
+void PrefsDialog::initGeneral(QWidget * widget, QFileInfoList & languages)
 {
 	QVBoxLayout * vLayout = new QVBoxLayout();
 
 	// TODO: if no translation files found, don't put up the translation part of this dialog
 
-	vLayout->addWidget(createLanguageForm(list));
+    vLayout->addWidget(createLanguageForm(languages));
 	vLayout->addWidget(createColorForm());
 	vLayout->addWidget(createZoomerForm());
 	vLayout->addWidget(createAutosaveForm());
@@ -149,6 +155,13 @@ void PrefsDialog::initPCB(QWidget * widget, ViewInfoThing * viewInfoThing)
 	vLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Preferred, QSizePolicy::Expanding));
 
 	widget->setLayout(vLayout);
+}
+
+void PrefsDialog::initCode(QWidget * widget, QList<Platform *> platforms)
+{
+    QVBoxLayout * vLayout = new QVBoxLayout();
+    vLayout->addWidget(createProgrammerForm(platforms));
+    widget->setLayout(vLayout);
 }
 
 QWidget * PrefsDialog::createZoomerForm() {
@@ -214,13 +227,13 @@ QWidget * PrefsDialog::createAutosaveForm() {
 	return autosave;
 }
 
-QWidget * PrefsDialog::createLanguageForm(QFileInfoList & list) 
+QWidget * PrefsDialog::createLanguageForm(QFileInfoList & languages)
 {
 	QGroupBox * formGroupBox = new QGroupBox(tr("Language"));
     QVBoxLayout *layout = new QVBoxLayout();
 	
 	QComboBox* comboBox = new QComboBox(this);
-	m_translatorListModel = new TranslatorListModel(list, this);
+    m_translatorListModel = new TranslatorListModel(languages, this);
 	comboBox->setModel(m_translatorListModel);
 	comboBox->setCurrentIndex(m_translatorListModel->findIndex(m_name));
 	connect(comboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(changeLanguage(int)));
@@ -330,6 +343,62 @@ QWidget* PrefsDialog::createOtherForm()
 
 	formGroupBox->setLayout(layout);
 	return formGroupBox;
+}
+
+QWidget* PrefsDialog::createProgrammerForm(QList<Platform *> platforms) {
+    QGroupBox * formGroupBox = new QGroupBox(tr("Platforms"));
+    QVBoxLayout *layout = new QVBoxLayout();
+    layout->setSpacing(SPACING);
+
+    foreach (Platform * platform, platforms) {
+        QFrame * locationFrame = new QFrame(formGroupBox);
+        QHBoxLayout * locationLayout = new QHBoxLayout();
+        locationLayout->setMargin(0);
+        locationLayout->setSpacing(0);
+        locationFrame->setLayout(locationLayout);
+
+        QLabel *platformLb = new QLabel(platform->getName());
+        locationLayout->addWidget(platformLb);
+        QLineEdit * locationLE = new QLineEdit(locationFrame);
+        locationLE->setText(platform->getCommandLocation());
+        locationLayout->addWidget(locationLE);
+        m_programmerLEs.insert(platform->getName(), locationLE);
+
+        QPushButton * locateBtn = new QPushButton(tr("..."),locationFrame);
+        locationLayout->addWidget(locateBtn);
+        locateBtn->setProperty("platform", platform->getName());
+        connect(locateBtn, SIGNAL(clicked()), this, SLOT(chooseProgrammer()));
+
+        layout->addWidget(locationFrame);
+    }
+
+    formGroupBox->setLayout(layout);
+    return formGroupBox;
+}
+
+void PrefsDialog::chooseProgrammer()
+{
+    QObject *  button = sender();
+    if (button == NULL) return;
+
+    QString platformName = sender()->property("platform").toString();
+    Platform * platform;
+    foreach (Platform *p, m_platforms) {
+        if (p->getName().compare(platformName) == 0) {
+            platform = p;
+            break;
+        }
+    }
+
+    QString filename = FolderUtils::getOpenFileName(
+                        this,
+                        tr("Select a programmer (executable) for %1").arg(platform->getName()),
+                        FolderUtils::openSaveFolder(),
+                        "(Programmer *)"
+                        );
+
+    m_programmerLEs.value(platformName)->setText(filename);
+    platform->setCommandLocation(filename);
 }
 
 void PrefsDialog::changeLanguage(int index) 

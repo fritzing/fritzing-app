@@ -28,19 +28,17 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 //
 // TODO
 //
-//  integrate menus
 //  integrate dirty
 //  remove old program window
 //  enable all buttons, and give error messages (i.e. where is IDE)
-//  why is locate a menu button (puts programmers on a list)
-//  locate needs to say what it is locating
-//  move all tabs up?
 
 
 #include "programwindow.h"
 #include "highlighter.h"
 #include "syntaxer.h"
 #include "programtab.h"
+#include "platformarduino.h"
+#include "platformpicaxe.h"
 
 #include "../debugdialog.h"
 #include "../waitpushundostack.h"
@@ -60,23 +58,8 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 #include <QCloseEvent>
 #include <QPrinter>
 #include <QPrintDialog>
-
-// Included for getSerialPort() and a few others
-#ifdef Q_OS_WIN
-#include "windows.h"
-#include <windows.h>
-#include <setupapi.h>
-#include <dbt.h>
-#include <INITGUID.H>
-
-#endif
-#ifdef Q_OS_MAC
-#include <IOKit/IOKitLib.h>
-#include <IOKit/IOBSD.h>
-#include <IOKit/serial/IOSerialKeys.h>
-#include <CoreFoundation/CoreFoundation.h>
-#endif
-
+#include <QtSerialPort/qserialportinfo.h>
+#include <QtSerialPort/qserialport.h>
 
 ///////////////////////////////////////////////
 
@@ -120,15 +103,11 @@ void PTabWidget::tabChanged(int index) {
 ///////////////////////////////////////////////
 
 static int UntitledIndex = 1;
-QHash<QString, QString> ProgramWindow::m_languages;
-QHash<QString, class Syntaxer *> ProgramWindow::m_syntaxers;
-const QString ProgramWindow::LocateName = "locate";
-QString ProgramWindow::NoSerialPortName;
-
-static QHash<QString, QString> ProgrammerNames;
+QList<Platform *> ProgramWindow::m_platforms;
+QString ProgramWindow::NoBoardName;
 
 ProgramWindow::ProgramWindow(QWidget *parent)
-	: FritzingWindow("", untitledFileCount(), "", parent)
+    : FritzingWindow("", untitledFileCount(), "", parent)
 {
     QFile styleSheet(":/resources/styles/programwindow.qss");
 
@@ -148,17 +127,13 @@ ProgramWindow::ProgramWindow(QWidget *parent)
         this->setStyleSheet(ss);
     }
 
-    if (ProgrammerNames.count() == 0) {
-		initProgrammerNames();
+    if (m_platforms.count() == 0) {
+        initPlatforms();
 	}
 
-	if (m_languages.count() == 0) {
-		initLanguages();
-	}
-
-	if (NoSerialPortName.isEmpty()) {
-		NoSerialPortName = tr("No ports found");
-	}
+    if (NoBoardName.isEmpty()) {
+        NoBoardName = tr("No boards available");
+    }
 
 	m_savingProgramTab = NULL;
 	UntitledIndex--;						// incremented by FritzingWindow
@@ -167,25 +142,6 @@ ProgramWindow::ProgramWindow(QWidget *parent)
 
 ProgramWindow::~ProgramWindow()
 {
-}
-
-void ProgramWindow::initLanguages() {
-	QDir dir(FolderUtils::getApplicationSubFolderPath("translations"));
-	dir.cd("syntax");
-	QStringList nameFilters;
-	nameFilters << "*.xml";
-	QFileInfoList list = dir.entryInfoList(nameFilters, QDir::Files | QDir::NoSymLinks);
-	foreach (QFileInfo fileInfo, list) {
-		if (fileInfo.completeBaseName().compare("styles") == 0) {
-			Highlighter::loadStyles(fileInfo.absoluteFilePath());
-		}
-		else {
-			QString name = Syntaxer::parseForName(fileInfo.absoluteFilePath());
-			if (!name.isEmpty() /* && !name.contains("arduino", Qt::CaseInsensitive) */) {		// Arduino is not really available      
-				m_languages.insert(name, fileInfo.absoluteFilePath());
-			}
-		}
-	}
 }
 
 void ProgramWindow::setup()
@@ -222,71 +178,10 @@ void ProgramWindow::setup()
 	}
 
 	installEventFilter(this);
+}
 
-    // Setup new menu bar for the programming window
-    QMenuBar * menubar = NULL;
-    if (parentWidget()) {
-        QMainWindow * mainWindow = qobject_cast<QMainWindow *>(parentWidget());
-        if (mainWindow) menubar = mainWindow->menuBar();
-    }
-    if (menubar == NULL) menubar = menuBar();
-
-    m_fileMenu = menubar->addMenu(tr("&File"));
-
-    QAction *currentAction = new QAction(tr("New Code File"), this);
-    currentAction->setShortcut(tr("Ctrl+N"));
-    currentAction->setStatusTip(tr("Create a new program"));
-    connect(currentAction, SIGNAL(triggered()), this, SLOT(addTab()));
-    m_fileMenu->addAction(currentAction);
-
-    currentAction = new QAction(tr("&Open Code File..."), this);
-    currentAction->setShortcut(tr("Ctrl+O"));
-    currentAction->setStatusTip(tr("Open a program"));
-    connect(currentAction, SIGNAL(triggered()), this, SLOT(loadProgramFile()));
-    m_fileMenu->addAction(currentAction);
-
-    m_fileMenu->addSeparator();
-
-    m_saveAction = new QAction(tr("&Save Code File"), this);
-    m_saveAction->setShortcut(tr("Ctrl+S"));
-    m_saveAction->setStatusTip(tr("Save the current program"));
-    connect(m_saveAction, SIGNAL(triggered()), this, SLOT(save()));
-    m_fileMenu->addAction(m_saveAction);
-
-    currentAction = new QAction(tr("Rename Code File"), this);
-    currentAction->setStatusTip(tr("Rename the current program"));
-    connect(currentAction, SIGNAL(triggered()), this, SLOT(rename()));
-    m_fileMenu->addAction(currentAction);
-
-    currentAction = new QAction(tr("Duplicate tab"), this);
-    currentAction->setStatusTip(tr("Copies the current program into a new tab"));
-    connect(currentAction, SIGNAL(triggered()), this, SLOT(duplicateTab()));
-    m_fileMenu->addAction(currentAction);
-
-    m_fileMenu->addSeparator();
-
-    currentAction = new QAction(tr("Remove tab"), this);
-    currentAction->setShortcut(tr("Ctrl+W"));
-    currentAction->setStatusTip(tr("Remove the current program from the sketch"));
-    connect(currentAction, SIGNAL(triggered()), this, SLOT(closeCurrentTab()));
-    m_fileMenu->addAction(currentAction);
-
-    m_fileMenu->addSeparator();
-
-    m_printAction = new QAction(tr("&Print..."), this);
-    m_printAction->setShortcut(tr("Ctrl+P"));
-    m_printAction->setStatusTip(tr("Print the current program"));
-    connect(m_printAction, SIGNAL(triggered()), this, SLOT(print()));
-    m_fileMenu->addAction(m_printAction);
-
-    m_fileMenu->addSeparator();
-
-    currentAction = new QAction(tr("&Quit"), this);
-    currentAction->setShortcut(tr("Ctrl+Q"));
-    currentAction->setStatusTip(tr("Quit the application"));
-    currentAction->setMenuRole(QAction::QuitRole);
-    connect(currentAction, SIGNAL(triggered()), qApp, SLOT(closeAllWindows2()));
-    m_fileMenu->addAction(currentAction);
+void ProgramWindow::initMenus(QMenuBar * menubar) {
+    QAction *currentAction;
 
     m_editMenu = menubar->addMenu(tr("&Edit"));
 
@@ -318,73 +213,130 @@ void ProgramWindow::setup()
     connect(m_copyAction, SIGNAL(triggered()), this, SLOT(copy()));
     m_editMenu->addAction(m_copyAction);
 
-    currentAction = new QAction(tr("&Paste"), this);
-    currentAction->setShortcut(tr("Ctrl+V"));
-    currentAction->setStatusTip(tr("Paste clipboard contents"));
+    m_pasteAction = new QAction(tr("&Paste"), this);
+    m_pasteAction->setShortcut(tr("Ctrl+V"));
+    m_pasteAction->setStatusTip(tr("Paste clipboard contents"));
     // TODO: Check clipboard status and disable appropriately here
-    connect(currentAction, SIGNAL(triggered()), this, SLOT(paste()));
-    m_editMenu->addAction(currentAction);
+    connect(m_pasteAction, SIGNAL(triggered()), this, SLOT(paste()));
+    m_editMenu->addAction(m_pasteAction);
 
     m_editMenu->addSeparator();
 
-    currentAction = new QAction(tr("&Select All"), this);
-    currentAction->setShortcut(tr("Ctrl+A"));
-    currentAction->setStatusTip(tr("Select all text"));
-    connect(currentAction, SIGNAL(triggered()), this, SLOT(selectAll()));
-    m_editMenu->addAction(currentAction);
+    m_selectAction = new QAction(tr("&Select All"), this);
+    m_selectAction->setShortcut(tr("Ctrl+A"));
+    m_selectAction->setStatusTip(tr("Select all text"));
+    connect(m_selectAction, SIGNAL(triggered()), this, SLOT(selectAll()));
+    m_editMenu->addAction(m_selectAction);
 
     m_programMenu = menubar->addMenu(tr("&Code"));
 
-    QMenu *languageMenu = new QMenu(tr("Select language"), this);
-    m_programMenu->addMenu(languageMenu);
 
-	QString currentLanguage = settings.value("programwindow/language", "").toString();
-	QStringList languages = getAvailableLanguages();
-    QActionGroup *languageActionGroup = new QActionGroup(this);
-    foreach (QString language, languages) {
-        currentAction = new QAction(language, this);
+    m_newAction = new QAction(tr("&New Tab"), this);
+    m_newAction->setShortcut(tr("Alt+Ctrl+N"));
+    m_newAction->setStatusTip(tr("Create a new program tab"));
+    connect(m_newAction, SIGNAL(triggered()), this, SLOT(addTab()));
+    m_programMenu->addAction(m_newAction);
+
+    m_openAction = new QAction(tr("&Import Code..."), this);
+    m_openAction->setShortcut(tr("Alt+Ctrl+I"));
+    m_openAction->setStatusTip(tr("Import a program from a file"));
+    connect(m_openAction, SIGNAL(triggered()), this, SLOT(loadProgramFile()));
+    m_programMenu->addAction(m_openAction);
+
+    m_saveAction = new QAction(tr("&Save Tab"), this);
+    m_saveAction->setShortcut(tr("Alt+Ctrl+S"));
+    m_saveAction->setStatusTip(tr("Save the current program tab"));
+    connect(m_saveAction, SIGNAL(triggered()), this, SLOT(saveCurrentTab()));
+    m_programMenu->addAction(m_saveAction);
+
+    currentAction = new QAction(tr("&Rename Tab"), this);
+    currentAction->setShortcut(tr("Alt+Ctrl+R"));
+    currentAction->setStatusTip(tr("Rename the current program tab"));
+    connect(currentAction, SIGNAL(triggered()), this, SLOT(rename()));
+    m_programMenu->addAction(currentAction);
+
+    currentAction = new QAction(tr("Close Tab"), this);
+    currentAction->setShortcut(tr("Alt+Ctrl+W"));
+    currentAction->setStatusTip(tr("Remove the current program tab from the sketch"));
+    connect(currentAction, SIGNAL(triggered()), this, SLOT(closeCurrentTab()));
+    m_programMenu->addAction(currentAction);
+
+    m_programMenu->addSeparator();
+
+    m_platformMenu = new QMenu(tr("Platform"), this);
+    m_programMenu->addMenu(m_platformMenu);
+    QSettings settings;
+    QString currentPlatform = settings.value("programwindow/platform", "").toString();
+    QList<Platform *> platforms = getAvailablePlatforms();
+    m_platformActionGroup = new QActionGroup(this);
+    foreach (Platform * platform, platforms) {
+        currentAction = new QAction(platform->getName(), this);
         currentAction->setCheckable(true);
-        m_languageActions.insert(language, currentAction);
-        languageActionGroup->addAction(currentAction);
-        languageMenu->addAction(currentAction);
-		if (!currentLanguage.isEmpty()) {
-			if (language.compare(currentLanguage) == 0) {
+        m_platformActions.insert(platform, currentAction);
+        m_platformActionGroup->addAction(currentAction);
+        m_platformMenu->addAction(currentAction);
+        if (!currentPlatform.isEmpty()) {
+            if (platform->getName().compare(currentPlatform) == 0) {
 				currentAction->setChecked(true);
 			}
 		}
     }
+    connect(m_platformMenu, SIGNAL(triggered(QAction*)), this, SLOT(setPlatform(QAction*)));
 
-    connect(languageMenu, SIGNAL(triggered(QAction*)), this, SLOT(setLanguage(QAction*)));
+    m_boardMenu = new QMenu(tr("Board"), this);
+    m_programMenu->addMenu(m_boardMenu);
+    m_boardActionGroup = new QActionGroup(this);
+    updateBoards();
+    connect(m_boardMenu, SIGNAL(triggered(QAction*)), this, SLOT(setBoard(QAction*)));
 
-    m_serialPortMenu = new QMenu(tr("Select port"), this);
+    m_serialPortMenu = new QMenu(tr("Port"), this);
     m_programMenu->addMenu(m_serialPortMenu);
-
     m_serialPortActionGroup = new QActionGroup(this);
-	updateSerialPorts();
-
+    updateSerialPorts();
     connect(m_serialPortMenu, SIGNAL(triggered(QAction*)), this, SLOT(setPort(QAction*)));
-	connect(m_serialPortMenu, SIGNAL(aboutToShow()), this, SLOT(updateSerialPorts()), Qt::DirectConnection);
-
-	m_programmerMenu = new QMenu(tr("Select programmer"), this);
-    m_programMenu->addMenu(m_programmerMenu);
-
-	m_programmerActionGroup = new QActionGroup(this);
-	QHash<QString, QString> programmerNames = getProgrammerNames();
-	foreach (QString name, programmerNames.keys()) {
-		addProgrammer(name, programmerNames.value(name));
-	}
-	
-    connect(m_programmerMenu, SIGNAL(triggered(QAction*)), this, SLOT(setProgrammer(QAction*)));
+    connect(m_serialPortMenu, SIGNAL(aboutToShow()), this, SLOT(updateSerialPorts()), Qt::DirectConnection);
 
     m_programMenu->addSeparator();
 
-    m_programAction = new QAction(tr("Program"), this);
-    m_programAction->setStatusTip(tr("Load the current program onto a microcontroller"));
+    m_monitorAction = new QAction(tr("Serial Monitor"), this);
+    m_monitorAction->setShortcut(tr("Ctrl+M"));
+    m_monitorAction->setStatusTip(tr("Monitor the serial port communication"));
+    m_monitorAction->setEnabled(false);
+    connect(m_monitorAction, SIGNAL(triggered()), this, SLOT(serialMonitor()));
+    m_programMenu->addAction(m_monitorAction);
+
+    m_programAction = new QAction(tr("Upload"), this);
+    m_programAction->setShortcut(tr("Ctrl+U"));
+    m_programAction->setStatusTip(tr("Upload the current program onto a microcontroller"));
     m_programAction->setEnabled(false);
     connect(m_programAction, SIGNAL(triggered()), this, SLOT(sendProgram()));
     m_programMenu->addAction(m_programAction);
 
     m_viewMenu = menubar->addMenu(tr("&View"));
+    foreach (QAction * action, m_viewMenuActions) {
+        m_viewMenu->addAction(action);
+    }
+
+    addTab(); // the initial ProgramTab must be created after all actions are set up
+}
+
+void ProgramWindow::showMenus(bool show) {
+    if (m_editMenu) {
+        m_editMenu->menuAction()->setVisible(show);
+        m_editMenu->setEnabled(show);
+    }
+    if (m_programMenu) {
+        m_programMenu->menuAction()->setVisible(show);
+        m_programMenu->setEnabled(show);
+    }
+    if (m_viewMenu) {
+        m_viewMenu->menuAction()->setVisible(show);
+        m_viewMenu->setEnabled(show);
+    }
+}
+
+void ProgramWindow::createViewMenuActions(QList<QAction *> & actions) {
+    m_viewMenuActions = actions;
 }
 
 void ProgramWindow::linkFiles(const QList<LinkedFile *> & linkedFiles, const QString & alternativePath) {
@@ -411,14 +363,11 @@ void ProgramWindow::linkFiles(const QList<LinkedFile *> & linkedFiles, const QSt
 				programTab->appendToConsole(tr("File '%1' was restored from the .fzz file; save a local copy to work with an external editor.").arg(fileInfo.fileName()));
 			}
 		}
-		if (!m_languages.value(linkedFile->language, "").isEmpty()) {
-			programTab->setLanguage(linkedFile->language, false);
+        if (hasPlatform(linkedFile->platform)) {
+            programTab->setPlatform(linkedFile->platform, false);
 		}
 		else {
-			linkedFile->language.clear();
-		}
-		if (programTab->setProgrammer(linkedFile->programmer)) {
-			linkedFile->programmer.clear();
+            linkedFile->platform.clear();
 		}
     }
 }
@@ -444,7 +393,7 @@ QFrame * ProgramWindow::createCenter() {
 	m_tabWidget->setElideMode(Qt::ElideLeft);
      connect(m_tabWidget, SIGNAL(tabCloseRequested(int)), this, SLOT(closeTab(int)));
 
-	addTab();
+    //addTab();
 
 	QGridLayout *tabLayout = new QGridLayout(m_tabWidget);
 	tabLayout->setMargin(0);
@@ -456,21 +405,6 @@ QFrame * ProgramWindow::createCenter() {
 	mainLayout->addWidget(m_tabWidget,0,0,1,1);
 
 	return centerFrame;
-}
-
-QStringList ProgramWindow::getAvailableLanguages() {
-   return m_languages.keys();
-}
-
-Syntaxer * ProgramWindow::getSyntaxerForLanguage(QString language) {
-	Syntaxer * syntaxer = m_syntaxers.value(language, NULL);
-	if (syntaxer == NULL) {
-		syntaxer = new Syntaxer();
-		if (syntaxer->loadSyntax(m_languages.value(language))) {
-			m_syntaxers.insert(language, syntaxer);
-		}
-	}
-    return m_syntaxers.value(language, NULL);
 }
 
 void ProgramWindow::cleanUp() {
@@ -554,18 +488,19 @@ void ProgramWindow::setTitle(const QString & filename) {
  * and setting an appropriate filename.
  */
 ProgramTab * ProgramWindow::addTab() {
-    QString name = (UntitledIndex == 1) ? untitledFileName() : tr("%1 %2").arg(untitledFileName()).arg(UntitledIndex);
+    QString name = (UntitledIndex == 1) ? untitledFileName() : tr("%1%2").arg(untitledFileName()).arg(UntitledIndex);
     ProgramTab * programTab = new ProgramTab(name, m_tabWidget);
     connect(programTab, SIGNAL(wantToSave(int)), this, SLOT(tabSave(int)));
     connect(programTab, SIGNAL(wantToSaveAs(int)), this, SLOT(tabSaveAs(int)));
     connect(programTab, SIGNAL(wantToRename(int)), this, SLOT(tabRename(int)));
     connect(programTab, SIGNAL(wantToDelete(int, bool)), this, SLOT(tabDelete(int, bool)), Qt::DirectConnection);
     connect(programTab, 
-		SIGNAL(programWindowUpdateRequest(bool, bool, bool, bool, bool, const QString &, const QString &, const QString &, const QString &)), 
+        SIGNAL(programWindowUpdateRequest(bool, bool, bool, bool, bool, Platform *, const QString &, const QString &, const QString &)),
 		this, 
-		SLOT(updateMenu(bool, bool, bool, bool, bool, const QString &, const QString &, const QString &, const QString &)));
+        SLOT(updateMenu(bool, bool, bool, bool, bool, Platform *, const QString &, const QString &, const QString &)));
 	int ix = m_tabWidget->addTab(programTab, name);
     m_tabWidget->setCurrentIndex(ix);
+    programTab->initMenus();
 	UntitledIndex++;
 
 	return programTab;
@@ -583,7 +518,7 @@ void ProgramWindow::closeCurrentTab() {
 void ProgramWindow::closeTab(int index) {
         ProgramTab * pTab = indexWidget(index);
         if (pTab) {
-			emit linkToProgramFile(pTab->filename(), "", "", false, true);
+            emit linkToProgramFile(pTab->filename(), NULL, false, true);
                 pTab->deleteTab();
         }
 }
@@ -595,16 +530,17 @@ void ProgramWindow::closeTab(int index) {
  *  - cut/copy
  */
 void ProgramWindow::updateMenu(bool programEnable, bool undoEnable, bool redoEnable, bool cutEnable, bool copyEnable, 
-							   const QString & language, const QString & port, const QString & programmer, const QString & filename) 
+                              Platform* platform, const QString & port, const QString & board, const QString & filename)
 {
 	ProgramTab * programTab = currentWidget();
 	m_saveAction->setEnabled(programTab->isModified());
+    m_monitorAction->setEnabled(!port.isEmpty());
     m_programAction->setEnabled(programEnable);
     m_undoAction->setEnabled(undoEnable);
     m_redoAction->setEnabled(redoEnable);
     m_cutAction->setEnabled(cutEnable);
     m_copyAction->setEnabled(copyEnable);
-    QAction *lang = m_languageActions.value(language);
+    QAction *lang = m_platformActions.value(platform);
     if (lang) {
         lang->setChecked(true);
     }
@@ -612,50 +548,24 @@ void ProgramWindow::updateMenu(bool programEnable, bool undoEnable, bool redoEna
     if (portAction) {
         portAction->setChecked(true);
     }
-
-	QAction *programmerAction = NULL;
-	if (programmer == LocateName) {
-		foreach (QAction * action, m_programmerActions) {
-			if (action->data().toString() == programmer) {
-				programmerAction = action;
-				break;
-			}
-		}
-	}
-	else {
-		QFileInfo fileInfo(programmer);
-		QString name = fileInfo.fileName();
-		programmerAction = m_programmerActions.value(name);
-		if (!programmerAction) {
-			programmerAction = addProgrammer(name, programmer);
-			ProgrammerNames.insert(name, programmer);
-			for (int i = 0; i < m_tabWidget->count(); i++) {
-				ProgramTab * pt = indexWidget(i);
-				if (pt != programTab) {
-					pt->updateProgrammers();
-				}
-			}
-		}
-	}
-
-    if (programmerAction) {
-        programmerAction->setChecked(true);
+    QAction *boardAction = m_boardActions.value(board);
+    if (boardAction) {
+        boardAction->setChecked(true);
     }
-
 
     setTitle(filename);
 }
 
-void ProgramWindow::setLanguage(QAction* action) {
-    currentWidget()->setLanguage(action->text(), true);
+void ProgramWindow::setPlatform(QAction* action) {
+    currentWidget()->setPlatform(action->text());
 }
 
 void ProgramWindow::setPort(QAction* action) {
     currentWidget()->setPort(action->text());
 }
 
-void ProgramWindow::setProgrammer(QAction* action) {
-    currentWidget()->chooseProgrammer(action->data().toString());
+void ProgramWindow::setBoard(QAction* action) {
+    currentWidget()->setBoard(action->text());
 }
 
 bool ProgramWindow::beforeClosing(bool showCancel, bool & discard) {
@@ -698,6 +608,8 @@ void ProgramWindow::print() {
 #endif
 }
 
+
+// overrides MainWindow::saveAsAux
 bool ProgramWindow::saveAsAux(const QString & fileName) {
 	if (!m_savingProgramTab) return false;
 
@@ -718,6 +630,15 @@ void ProgramWindow::tabDelete(int index, bool deleteFile) {
 		QFile file(fname);
 		file.remove();
 	}
+}
+
+void ProgramWindow::saveAll() {
+    for (int i= 0; i < m_tabWidget->count(); i++)
+        tabSave(i);
+}
+
+void ProgramWindow::saveCurrentTab() {
+    tabSave(m_tabWidget->currentIndex());
 }
 
 void ProgramWindow::tabSave(int index) {
@@ -744,7 +665,7 @@ void ProgramWindow::tabRename(int index) {
 			QFile oldFile(oldFileName);
 			if (oldFile.exists()) {
 				oldFile.remove();
-				emit linkToProgramFile(oldFileName, "", "", false, true);
+                emit linkToProgramFile(oldFileName, NULL, false, true);
 			}
 		}
     }
@@ -766,6 +687,7 @@ void ProgramWindow::tabBeforeClosing(int index, bool & ok) {
 bool ProgramWindow::prepSave(ProgramTab * programTab, bool saveAsFlag) 
 {
 	m_savingProgramTab = programTab;				// need this for the saveAsAux call
+    if (!programTab->isModified()) return false;
 
 	bool result = (saveAsFlag) 
 		? saveAs(programTab->filename(), programTab->readOnly())
@@ -773,227 +695,67 @@ bool ProgramWindow::prepSave(ProgramTab * programTab, bool saveAsFlag)
 
     if (result) {
 		programTab->setClean();
-		emit linkToProgramFile(programTab->filename(), programTab->language(), programTab->programmer(), true, true);
+        emit linkToProgramFile(programTab->filename(), programTab->platform(), true, true);
 	}
 	return result;
 }
 
-QStringList ProgramWindow::getSerialPorts() {
-	QStringList ports = getSerialPortsAux();
+void ProgramWindow::initPlatforms() {
+    QDir dir(FolderUtils::getApplicationSubFolderPath("translations"));
+    Highlighter::loadStyles(dir.absolutePath().append("/syntax/styles.xml"));
 
-	/*
-	// on the pc, handy for testing the UI when there are no serial ports
-	ports.removeOne("COM0");
-	ports.removeOne("COM1");
-	ports.removeOne("COM2");
-	ports.removeOne("COM3");
-	ports.removeOne("COM4");
-	ports.removeOne("COM5");
-	ports.removeOne("COM6");
-	ports.removeOne("COM7");
-	ports.removeOne("COM8");
-	*/
-
-	if (ports.isEmpty()) {
-		ports.append(NoSerialPortName);
-	}
-	return ports;
+    m_platforms << new PlatformArduino() << new PlatformPicaxe();
 }
 
-#ifdef Q_OS_WIN
-
-// faster enumeration code from http://code.google.com/p/qextserialport
-
-/* Gordon Schumacher's macros for TCHAR -> QString conversions and vice versa */
-#ifdef UNICODE
-    #define QStringToTCHAR(x)     (wchar_t*) x.utf16()
-    #define PQStringToTCHAR(x)    (wchar_t*) x->utf16()
-    #define TCHARToQString(x)     QString::fromUtf16((ushort*)(x))
-    #define TCHARToQStringN(x,y)  QString::fromUtf16((ushort*)(x),(y))
-#else
-    #define QStringToTCHAR(x)     x.local8Bit().constData()
-    #define PQStringToTCHAR(x)    x->local8Bit().constData()
-    #define TCHARToQString(x)     QString::fromLocal8Bit((x))
-    #define TCHARToQStringN(x,y)  QString::fromLocal8Bit((x),(y))
-#endif /*UNICODE*/
-
-// see http://msdn.microsoft.com/en-us/library/ms791134.aspx for list of GUID classes
-#ifndef GUID_DEVCLASS_PORTS
-    DEFINE_GUID(GUID_DEVCLASS_PORTS, 0x4D36E978, 0xE325, 0x11CE, 0xBF, 0xC1, 0x08, 0x00, 0x2B, 0xE1, 0x03, 0x18 );
-#endif
-
-QString getRegKeyValue(HKEY key, LPCTSTR property)
-{
-    DWORD size = 0;
-    DWORD type;
-    RegQueryValueEx(key, property, NULL, NULL, NULL, & size);
-    BYTE* buff = new BYTE[size];
-    QString result;
-    if( RegQueryValueEx(key, property, NULL, &type, buff, & size) == ERROR_SUCCESS )
-        result = TCHARToQString(buff);
-    RegCloseKey(key);
-    delete [] buff;
-    return result;
+QList<Platform *> ProgramWindow::getAvailablePlatforms() {
+    return m_platforms;
 }
 
-//static
-QString getDeviceProperty(HDEVINFO devInfo, PSP_DEVINFO_DATA devData, DWORD property)
-{
-    DWORD buffSize = 0;
-    SetupDiGetDeviceRegistryProperty(devInfo, devData, property, NULL, NULL, 0, & buffSize);
-    BYTE* buff = new BYTE[buffSize];
-    SetupDiGetDeviceRegistryProperty(devInfo, devData, property, NULL, buff, buffSize, NULL);
-    QString result = TCHARToQString(buff);
-    delete [] buff;
-    return result;
-}
-#endif
-
-QStringList ProgramWindow::getSerialPortsAux() {
-        // TODO: make this call a plugin?
-    QStringList ports;
-#ifdef Q_OS_WIN
-		/*
-        for (int i = 1; i < 256; i++)
-        {
-                QString port = QString("COM%1").arg(i);
-                QString sport = QString("\\\\.\\%1").arg(port);
-                HANDLE hPort = ::CreateFileA(sport.toLatin1().constData(), GENERIC_READ | GENERIC_WRITE, 0, 0, OPEN_EXISTING, 0, 0);
-                if (hPort == INVALID_HANDLE_VALUE) {
-                        DWORD dwError = GetLastError();
-                        if (dwError == ERROR_ACCESS_DENIED || dwError == ERROR_GEN_FAILURE || dwError == ERROR_SHARING_VIOLATION || dwError == ERROR_SEM_TIMEOUT) {
-                                ports.append(port);
-                        }
-                }
-                else {
-                        CloseHandle(hPort);
-                        ports.append(port);
-                }
-        }
-		*/
-
-		HDEVINFO devInfo;
-		GUID guid = GUID_DEVCLASS_PORTS;
-		if( (devInfo = SetupDiGetClassDevs(&guid, NULL, NULL, DIGCF_PRESENT)) != INVALID_HANDLE_VALUE)
-		{
-			SP_DEVINFO_DATA devInfoData;
-			devInfoData.cbSize = sizeof(SP_DEVINFO_DATA);
-			for(int i = 0; SetupDiEnumDeviceInfo(devInfo, i, &devInfoData); i++)
-			{
-				HKEY devKey = SetupDiOpenDevRegKey(devInfo, &devInfoData, DICS_FLAG_GLOBAL, 0, DIREG_DEV, KEY_READ);
-				QString value = getRegKeyValue(devKey, TEXT("PortName"));
-				ports.append(value);
-
-			}
-			SetupDiDestroyDeviceInfoList(devInfo);
-		}
-
-        return ports;
-#endif
-#ifdef Q_OS_MAC
-                // see http://developer.apple.com/Mac/library/documentation/DeviceDrivers/Conceptual/WorkingWSerial/WWSerial_SerialDevs/SerialDevices.html
-
-        mach_port_t         masterPort;
-        io_iterator_t       matchingServices;
-
-        kern_return_t kernResult = IOMasterPort(MACH_PORT_NULL, &masterPort);
-        if (KERN_SUCCESS != kernResult)
-        {
-            DebugDialog::debug(QString("IOMasterPort returned %1").arg(kernResult));
-            return ports;
-        }
-
-        // Serial devices are instances of class IOSerialBSDClient.
-        CFMutableDictionaryRef  classesToMatch = IOServiceMatching(kIOSerialBSDServiceValue);
-        if (classesToMatch == NULL)
-        {
-            DebugDialog::debug("IOServiceMatching returned a NULL dictionary.");
-            return ports;
-        }
-
-        CFDictionarySetValue(classesToMatch, CFSTR(kIOSerialBSDTypeKey), CFSTR(kIOSerialBSDRS232Type));
-
-        kernResult = IOServiceGetMatchingServices(masterPort, classesToMatch, &matchingServices);
-        if (KERN_SUCCESS != kernResult)
-        {
-            DebugDialog::debug(QString("IOServiceGetMatchingServices returned %1").arg(kernResult));
-            return ports;
-        }
-
-        io_object_t modemService;
-        while ((modemService = IOIteratorNext(matchingServices)))
-        {
-            CFTypeRef deviceFilePathAsCFString = IORegistryEntryCreateCFProperty(modemService,
-                                CFSTR(kIOCalloutDeviceKey),
-                                kCFAllocatorDefault,
-                                0);
-            if (deviceFilePathAsCFString)
-            {
-                char deviceFilePath[1024];
-                Boolean result = CFStringGetCString((CFStringRef) deviceFilePathAsCFString,
-                                            deviceFilePath,
-                                            1024,
-                                            kCFStringEncodingASCII);
-                CFRelease(deviceFilePathAsCFString);
-                if (result)
-                {
-                    ports.append(deviceFilePath);
-                }
-            }
-
-            // Release the io_service_t now that we are done with it.
-            (void) IOObjectRelease(modemService);
-        }
-
-        return ports;
-#endif
-#ifdef Q_OS_LINUX
-        QProcess * process = new QProcess(this);
-        process->setProcessChannelMode(QProcess::MergedChannels);
-        process->setReadChannel(QProcess::StandardOutput);
-
-        connect(process, SIGNAL(finished(int, QProcess::ExitStatus)), this, SLOT(portProcessFinished(int, QProcess::ExitStatus)));
-        connect(process, SIGNAL(readyReadStandardOutput()), this, SLOT(portProcessReadyRead()));
-
-        process->start("dmesg");
-        bool result = process->waitForFinished(3000);			// hate to block here, but a better approach will take some time;
-        if (!result) return ports;
-
-        return m_ports;
-#endif
-
+Platform * ProgramWindow::getPlatformByName(const QString & platformName) {
+    foreach (Platform * platform, getAvailablePlatforms()) {
+        if (platform->getName().compare(platformName, Qt::CaseInsensitive) == 0)
+            return platform;
+    }
+    return NULL;
 }
 
-const QHash<QString, QString> ProgramWindow::getProgrammerNames()
-{
-	return ProgrammerNames;
+bool ProgramWindow::hasPlatform(const QString & platformName) {
+    return getPlatformByName(platformName) != NULL;
 }
 
-void ProgramWindow::initProgrammerNames()
-{
-	ProgrammerNames.insert(tr("Find file..."), LocateName);
+const QMap<QString, QString> ProgramWindow::getBoards() {
+    if (currentWidget() && currentWidget()->platform())
+        return currentWidget()->platform()->getBoards();
 
-	// TODO: eventually save a list of programmer names (a la recent files)
-
-	QSettings settings;
-	QString programmer = settings.value("programwindow/programmer", "").toString();
-	if (!programmer.isEmpty()) {
-		QFileInfo fileInfo(programmer);
-		if (fileInfo.exists()) {
-			ProgrammerNames.insert(fileInfo.fileName(), programmer);
-		}
-	}
+    QMap<QString, QString> boards;
+    boards.insert(NoBoardName, NoBoardName);
+    return boards;
 }
 
-QAction * ProgramWindow::addProgrammer(const QString & name, const QString & path)
+QAction * ProgramWindow::addBoard(const QString & name, const QString & definition)
 {
     QAction * currentAction = new QAction(name, this);
     currentAction->setCheckable(true);
-	currentAction->setData(path);
-    m_programmerActions.insert(name, currentAction);
-    m_programmerMenu->addAction(currentAction);
-    m_programmerActionGroup->addAction(currentAction);
-	return currentAction;
+    currentAction->setData(definition);
+    m_boardActions.insert(name, currentAction);
+    m_boardMenu->addAction(currentAction);
+    m_boardActionGroup->addAction(currentAction);
+    return currentAction;
+}
+
+void ProgramWindow::updateBoards() {
+    QMap<QString, QString> boards = getBoards();
+
+    m_boardActions.clear();
+    foreach (QAction * action, m_boardActionGroup->actions())
+        m_boardActionGroup->removeAction(action);
+    m_boardMenu->clear();
+
+    QMapIterator<QString, QString> i(boards);
+     while (i.hasNext()) {
+         i.next();
+         addBoard(i.key(), i.value());
+     }
 }
 
 void ProgramWindow::loadProgramFile() {
@@ -1039,6 +801,10 @@ void ProgramWindow::selectAll() {
 	 currentWidget()->selectAll();
 }
 
+void ProgramWindow::serialMonitor() {
+     currentWidget()->serialMonitor();
+}
+
 void ProgramWindow::sendProgram() {
 	 currentWidget()->sendProgram();
 }
@@ -1078,47 +844,57 @@ QStringList ProgramWindow::getExtensions() {
 	return pt->extensions();
 }
 
-void ProgramWindow::updateSerialPorts() {
-	QStringList ports = getSerialPorts();
-	QStringList newPorts;
-	foreach (QString port, ports) {
-		if (m_portActions.value(port, NULL) == NULL) {
-			newPorts.append(port);
-		}
-	}
-	QStringList obsoletePorts;
-	foreach (QString port, m_portActions.keys()) {
-		if (!ports.contains(port)) {
-			obsoletePorts.append(port);
-		}
-	}
+QList<QSerialPortInfo> ProgramWindow::getSerialPorts() {
+    QList<QSerialPortInfo> ports;
+    ports = QSerialPortInfo::availablePorts();
 
-	foreach (QString port, newPorts) {
-        QAction * action = new QAction(port, this);
-        action->setCheckable(true);
-        m_portActions.insert(port, action);
-        m_serialPortMenu->addAction(action);
-        m_serialPortActionGroup->addAction(action);
-    }
+    /*
+    // on the pc, handy for testing the UI when there are no serial ports
+    ports.removeOne("COM0");
+    ports.removeOne("COM1");
+    ports.removeOne("COM2");
+    ports.removeOne("COM3");
+    */
 
-	foreach (QString port, obsoletePorts) {
-		QAction * action = m_portActions.value(port, NULL);
-		if (action == NULL) continue;			// shouldn't happen
-
-		if (action->isChecked()) {
-			// TODO:  what?
-		}
-
-		m_portActions.remove(port);
-		m_serialPortActionGroup->removeAction(action);
-		m_serialPortMenu->removeAction(action);
-	}
+    return ports;
 }
 
-void ProgramWindow::updateLink(const QString & filename, const QString & language, const QString & programmer, bool addlink, bool strong)
+void ProgramWindow::updateSerialPorts() {
+    QList<QSerialPortInfo> ports = getSerialPorts();
+
+    m_portActions.clear();
+    foreach (QAction * action, m_serialPortActionGroup->actions())
+        m_serialPortActionGroup->removeAction(action);
+    m_serialPortMenu->clear();
+
+    foreach (QSerialPortInfo port, ports) {
+        addPort(port);
+    }
+}
+
+QAction * ProgramWindow::addPort(QSerialPortInfo port)
+{
+    QAction * currentAction = new QAction(port.portName(), this);
+    currentAction->setCheckable(true);
+    currentAction->setData(port.systemLocation());
+    m_portActions.insert(port.portName(), currentAction);
+    m_serialPortMenu->addAction(currentAction);
+    m_serialPortActionGroup->addAction(currentAction);
+    return currentAction;
+}
+
+bool ProgramWindow::hasPort(const QString & portName) {
+    foreach (QSerialPortInfo port, getSerialPorts()) {
+        if (port.portName().compare(portName) == 0)
+            return true;
+    }
+    return false;
+}
+
+void ProgramWindow::updateLink(const QString & filename, Platform * platform, bool addlink, bool strong)
 {
     DebugDialog::debug("updating link");
-	emit linkToProgramFile(filename, language, programmer, addlink, strong);
+    emit linkToProgramFile(filename, platform, addlink, strong);
 }
 
 void ProgramWindow::portProcessFinished(int exitCode, QProcess::ExitStatus exitStatus) {
@@ -1150,17 +926,3 @@ void ProgramWindow::portProcessReadyRead() {
         }
     }
 }
-
-void ProgramWindow::showMenus(bool show) {
-    if (m_fileMenu) m_fileMenu->menuAction()->setVisible(show);
-    if (m_editMenu) m_editMenu->menuAction()->setVisible(show);
-    if (m_programMenu) m_programMenu->menuAction()->setVisible(show);
-    if (m_viewMenu) m_viewMenu->menuAction()->setVisible(show);
-}
-
-void ProgramWindow::initViewMenu(QList<QAction *> & actions) {
-    foreach (QAction * action, actions) {
-        m_viewMenu->addAction(action);
-    }
-}
-

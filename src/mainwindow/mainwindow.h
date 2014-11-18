@@ -205,6 +205,7 @@ public:
 	void setCurrentFile(const QString &fileName, bool addToRecent, bool setAsLastOpened);
 	void setReportMissingModules(bool);
 	QList<class SketchWidget *> sketchWidgets();
+    ProgramWindow * programmingWidget();
 	void setCloseSilently(bool);
 	class PCBSketchWidget * pcbView();
 	void noBackup();
@@ -423,7 +424,7 @@ protected slots:
 	void dropPaste(SketchWidget *);
 
 	void openProgramWindow();
-	void linkToProgramFile(const QString & filename, const QString & language, const QString & programmer, bool addLink, bool strong);
+    void linkToProgramFile(const QString & filename, Platform * platform, bool addLink, bool strong);
 	QStringList newDesignRulesCheck();
 	void subSwapSlot(SketchWidget *, ItemBase *, const QString & newModuleID, ViewLayer::ViewLayerPlacement, long & newID, QUndoCommand * parentCommand);
 	void updateLayerMenuSlot();
@@ -530,6 +531,7 @@ protected:
 	void backupExistingFileIfExists(const QString &destFilePath);
 	void recoverBackupedFiles();
 	void resetTempFolder();
+    void saveLastTabList();
 
 	virtual QMenu *breadboardItemMenu();
 	virtual QMenu *schematicItemMenu();
@@ -962,7 +964,6 @@ public:
 	static QString BackupFolder;
     static const int DockMinWidth;
     static const int DockMinHeight;
-
 
 protected:
 	static const QString UntitledSketchName;

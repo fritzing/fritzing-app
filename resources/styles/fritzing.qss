@@ -1212,7 +1212,7 @@ QRadioButton::indicator:checked:pressed  {
 		height:66px;
 }
 
- #sketchAreaToolbar QToolButton:disabled {   /* hover on toolbar buttons */
+ #sketchAreaToolbar QToolButton:disabled {   /* disabled toolbar buttons */
         border: none;
 		color: #ececec;
 		margin: 0px;

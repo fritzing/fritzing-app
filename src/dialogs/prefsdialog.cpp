@@ -161,6 +161,7 @@ void PrefsDialog::initCode(QWidget * widget, QList<Platform *> platforms)
 {
     QVBoxLayout * vLayout = new QVBoxLayout();
     vLayout->addWidget(createProgrammerForm(platforms));
+    vLayout->addSpacerItem(new QSpacerItem(1, 1, QSizePolicy::Preferred, QSizePolicy::Expanding));
     widget->setLayout(vLayout);
 }
 
@@ -346,19 +347,26 @@ QWidget* PrefsDialog::createOtherForm()
 }
 
 QWidget* PrefsDialog::createProgrammerForm(QList<Platform *> platforms) {
-    QGroupBox * formGroupBox = new QGroupBox(tr("Platforms"));
+    QGroupBox * formGroupBox = new QGroupBox(tr("Platform Support"));
     QVBoxLayout *layout = new QVBoxLayout();
     layout->setSpacing(SPACING);
 
     foreach (Platform * platform, platforms) {
+        QLabel *platformLb = new QLabel("");
+        platformLb->setTextFormat(Qt::RichText);
+        platformLb->setText(tr("<b>%1</b>").arg(platform->getName()));
+        layout->addWidget(platformLb);
+
         QFrame * locationFrame = new QFrame(formGroupBox);
         QHBoxLayout * locationLayout = new QHBoxLayout();
         locationLayout->setMargin(0);
         locationLayout->setSpacing(0);
         locationFrame->setLayout(locationLayout);
 
-        QLabel *platformLb = new QLabel(platform->getName());
-        locationLayout->addWidget(platformLb);
+        QLabel *locationLb = new QLabel(tr("Location:"));
+        locationLayout->addWidget(locationLb);
+        locationLayout->addSpacing(SPACING);
+
         QLineEdit * locationLE = new QLineEdit(locationFrame);
         locationLE->setText(platform->getCommandLocation());
         locationLayout->addWidget(locationLE);
@@ -370,6 +378,17 @@ QWidget* PrefsDialog::createProgrammerForm(QList<Platform *> platforms) {
         connect(locateBtn, SIGNAL(clicked()), this, SLOT(chooseProgrammer()));
 
         layout->addWidget(locationFrame);
+
+        QLabel *hintLb = new QLabel("");
+        hintLb->setTextFormat(Qt::RichText);
+        hintLb->setOpenExternalLinks(true);
+        hintLb->setText(tr("You need to have <a href='%1'>%2</a> (version %3 or newer) installed.")
+                        .arg(platform->getDownloadUrl().toString())
+                        .arg(platform->getIdeName())
+                        .arg(platform->getMinVersion()));
+        layout->addWidget(hintLb);
+
+        layout->addSpacing(SPACING);
     }
 
     formGroupBox->setLayout(layout);

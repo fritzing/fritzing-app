@@ -157,3 +157,14 @@ void Platform::setDefaultBoardName(const QString &defaultBoardName)
     m_defaultBoardName = defaultBoardName;
 }
 
+QString Platform::getIdeName() const
+{
+    return m_ideName;
+}
+
+void Platform::setIdeName(const QString &ideName)
+{
+    m_ideName = ideName;
+}
+
+

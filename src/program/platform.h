@@ -61,6 +61,8 @@ public:
     void setMinVersion(const QString &minVersion);
     QString getDefaultBoardName() const;
     void setDefaultBoardName(const QString &defaultBoardName);
+    QString getIdeName() const;
+    void setIdeName(const QString &ideName);
 
 signals:
     void commandLocationChanged();
@@ -73,6 +75,7 @@ protected:
     QMap<QString, QString> m_boards;
     QString m_defaultBoardName;
     QUrl m_referenceUrl;
+    QString m_ideName;
     QUrl m_downloadUrl;
     QString m_minVersion;
 

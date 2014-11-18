@@ -33,6 +33,7 @@ $Date: 2012-06-28 00:18:10 +0200 (Do, 28. Jun 2012) $
 #include <QPushButton>
 #include <QFrame>
 #include <QTextEdit>
+#include <QPlainTextEdit>
 #include <QProcess>
 #include <QTabWidget>
 #include <QComboBox>
@@ -153,7 +154,7 @@ protected:
     QPointer<QComboBox> m_platformComboBox;
     QPointer<QComboBox>  m_boardComboBox;
 	QPointer<QTextEdit> m_textEdit;
-	QPointer<QTextEdit> m_console;
+    QPointer<QPlainTextEdit> m_console;
 	QPointer<QTabWidget> m_tabWidget;
     QPointer<QLabel> m_unableToProgramLabel;
     QPointer<QFrame> m_toolbar;

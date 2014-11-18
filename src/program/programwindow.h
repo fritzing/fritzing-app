@@ -197,6 +197,7 @@ protected:
     QAction *m_pasteAction;
     QAction *m_selectAction;
     QAction *m_printAction;
+    QAction *m_preferencesAction;
     QMap<Platform *, QAction *> m_platformActions;
     QMap<QString, QAction *> m_portActions;
     QMap<QString, QAction *> m_boardActions;

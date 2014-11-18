@@ -228,8 +228,14 @@ void ProgramWindow::initMenus(QMenuBar * menubar) {
     connect(m_selectAction, SIGNAL(triggered()), this, SLOT(selectAll()));
     m_editMenu->addAction(m_selectAction);
 
-    m_programMenu = menubar->addMenu(tr("&Code"));
+    m_editMenu->addSeparator();
 
+    m_preferencesAction = new QAction(tr("&Preferences..."), this);
+    m_preferencesAction->setStatusTip(tr("Show the application's about box"));
+    connect(m_preferencesAction, SIGNAL(triggered()), QApplication::instance(), SLOT(preferences()));
+    m_editMenu->addAction(m_preferencesAction);
+
+    m_programMenu = menubar->addMenu(tr("&Code"));
 
     m_newAction = new QAction(tr("&New Tab"), this);
     m_newAction->setShortcut(QKeySequence::AddTab);

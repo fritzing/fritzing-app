@@ -184,9 +184,12 @@ ProgramTab::ProgramTab(QString & filename, QWidget *parent) : QFrame(parent)
 
 	splitter->addWidget(m_textEdit);
 
-    m_console = new QTextEdit();
+    m_console = new QPlainTextEdit();
 	m_console->setObjectName("console");
 	m_console->setReadOnly(true);
+    QFont font = m_console->document()->defaultFont();
+    font.setFamily("Droid Sans Mono");
+    m_console->document()->setDefaultFont(font);
 
 	splitter->addWidget(m_console);
 
@@ -728,11 +731,21 @@ void ProgramTab::serialMonitor() {
 }
 
 void ProgramTab::sendProgram() {
-	if (isModified()) {
+    const QString commandLoc = m_platform->getCommandLocation();
+    if (commandLoc.isEmpty()) {
+        m_console->setPlainText(tr("No uploader for %1 specified. Go to Preferences > Code View to configure it.").arg(m_platform->getName()));
+        return;
+    }
+    if (! QFile::exists(commandLoc)) {
+        m_console->setPlainText(tr("Uploader configured, but not found at %1").arg(commandLoc));
+        return;
+    }
+    if (isModified()) {
         //QMessageBox::information(this, QObject::tr("Fritzing"), tr("The file '%1' must be saved before it can be sent to the programmer.").arg(m_filename));
         //return;
         save();
-	}
+    }
+
 	m_programButton->setEnabled(false);
     m_console->setPlainText("");
     m_platform->upload(this,
@@ -746,15 +759,15 @@ void ProgramTab::programProcessFinished(int exitCode, QProcess::ExitStatus exitS
 	m_programButton->setEnabled(true);
 	sender()->deleteLater();
     if (exitCode == 0) {
-        m_console->append(tr("Upload finished."));
+        m_console->appendPlainText(tr("Upload finished."));
     } else {
-        m_console->append(tr("Upload failed with exit code %1, %2").arg(exitCode).arg(exitStatus));
+        m_console->appendPlainText(tr("Upload failed with exit code %1, %2").arg(exitCode).arg(exitStatus));
     }
 }
 
 void ProgramTab::programProcessReadyRead() {
     QByteArray byteArray = qobject_cast<QProcess *>(sender())->readAllStandardOutput();
-    m_console->append(byteArray);
+    m_console->appendPlainText(byteArray);
 }
 
 /**
@@ -853,6 +866,8 @@ void ProgramTab::enableProgramButton() {
 	if (m_programButton == NULL) return;
 
 	bool enabled = true;
+    // always enable, to show helpful error message if no programmer is set up
+    /*
     if (m_platform->getCommandLocation().isEmpty()) {
 		enabled = false;
 	}
@@ -862,11 +877,12 @@ void ProgramTab::enableProgramButton() {
 	if (enabled && m_textEdit->document()->isEmpty()) {
 		enabled = false;
 	}
+    */
 
 	m_programButton->setEnabled(enabled);
 }
 
 void ProgramTab::appendToConsole(const QString & text)
 {
-	m_console->append(text);
+    m_console->appendPlainText(text);
 }

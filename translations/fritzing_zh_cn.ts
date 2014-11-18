@@ -639,6 +639,216 @@ A custom board svg typically has one or two silkscreen layers and one board laye
     </message>
 </context>
 <context>
+    <name>ConsoleSettings</name>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select Parameters</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>BaudRate:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Data bits:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Parity:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stop bits:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Flow control:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select Serial Port</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Description:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Manufacturer:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Serial number:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Location:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vendor ID:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Product ID:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Additional options</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Local echo</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Description: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Manufacturer: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Serial number: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Location: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vendor Identifier: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Product Identifier: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ConsoleWindow</name>
+    <message>
+        <source>Serial Monitor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Monitor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tools</source>
+        <translation type="unfinished">工具</translation>
+    </message>
+    <message>
+        <source>&amp;About</source>
+        <translation type="unfinished">关于(&amp;A)</translation>
+    </message>
+    <message>
+        <source>About program</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alt+A</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>About Qt</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>C&amp;onnect</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Connect to serial port</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+O</source>
+        <translation type="unfinished">Ctrl+O</translation>
+    </message>
+    <message>
+        <source>&amp;Disconnect</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Disconnect from serial port</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+D</source>
+        <translation type="unfinished">Ctrl+D</translation>
+    </message>
+    <message>
+        <source>&amp;Configure</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Configure serial port</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alt+C</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>C&amp;lear</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clear data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alt+L</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Quit</source>
+        <translation type="unfinished">退出(&amp;Q)</translation>
+    </message>
+    <message>
+        <source>Ctrl+Q</source>
+        <translation type="unfinished">Ctrl+Q</translation>
+    </message>
+    <message>
+        <source>Connected to %1 : %2, %3, %4, %5, %6</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Serial port open error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Disconnected</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>About Simple Terminal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The &lt;b&gt;Simple Terminal&lt;/b&gt; example demonstrates how to use the Qt Serial Port module in modern GUI applications using Qt, with a menu bar, toolbars, and a status bar.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Critical Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>DRC</name>
     <message>
         <source>DRC was cancelled.</source>
@@ -1616,7 +1826,7 @@ We&apos;re working to avoid this message, and only let you choose between proper
     </message>
     <message>
         <source>Ctrl+X</source>
-        <translation>Ctrl+X</translation>
+        <translation type="obsolete">Ctrl+X</translation>
     </message>
     <message>
         <source>Cut selection</source>
@@ -1628,7 +1838,7 @@ We&apos;re working to avoid this message, and only let you choose between proper
     </message>
     <message>
         <source>Ctrl+C</source>
-        <translation>Ctrl+C</translation>
+        <translation type="obsolete">Ctrl+C</translation>
     </message>
     <message>
         <source>Copy selection</source>
@@ -1640,7 +1850,7 @@ We&apos;re working to avoid this message, and only let you choose between proper
     </message>
     <message>
         <source>Ctrl+V</source>
-        <translation>Ctrl+V</translation>
+        <translation type="obsolete">Ctrl+V</translation>
     </message>
     <message>
         <source>Paste clipboard contents</source>
@@ -1672,7 +1882,7 @@ We&apos;re working to avoid this message, and only let you choose between proper
     </message>
     <message>
         <source>Ctrl+A</source>
-        <translation>Ctrl+A</translation>
+        <translation type="obsolete">Ctrl+A</translation>
     </message>
     <message>
         <source>Select all elements</source>
@@ -2664,7 +2874,7 @@ Would you like to convert &apos;%1&apos; to the .fzz format now or open it read-
     </message>
     <message>
         <source>Ctrl+B</source>
-        <translation>Ctrl+B</translation>
+        <translation type="obsolete">Ctrl+B</translation>
     </message>
     <message>
         <source>Choose Ground Fill Seed(s)...</source>
@@ -3376,6 +3586,10 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     <message>
         <source>Rotate 45° Counter Clockwise</source>
         <translation type="unfinished">逆时针旋转45° {45�?} {45°?}</translation>
+    </message>
+    <message>
+        <source>Ctrl+Shift+V</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -4805,6 +5019,13 @@ Note: this warning will not be repeated during this session.</source>
     </message>
 </context>
 <context>
+    <name>PlatformArduino</name>
+    <message>
+        <source>Running %1 %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>PrefsDialog</name>
     <message>
         <source>Cancel</source>
@@ -4904,16 +5125,44 @@ shift键转换滚动轴
         <source>Curvy wires and legs</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Code View</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Platform Support</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;%1&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Location:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You need to have &lt;a href=&apos;%1&apos;&gt;%2&lt;/a&gt; (version %3 or newer) installed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select a programmer (executable) for %1</source>
+        <translation type="unfinished">为%1选择一个程序(可执行)</translation>
+    </message>
 </context>
 <context>
     <name>ProgramTab</name>
     <message>
         <source>Open...</source>
-        <translation>打开...</translation>
+        <translation type="obsolete">打开...</translation>
     </message>
     <message>
         <source>Program</source>
-        <translation>程序</translation>
+        <translation type="obsolete">程序</translation>
     </message>
     <message>
         <source>Select a program file to load</source>
@@ -4925,7 +5174,7 @@ shift键转换滚动轴
     </message>
     <message>
         <source>Language:</source>
-        <translation>语言:</translation>
+        <translation type="obsolete">语言:</translation>
     </message>
     <message>
         <source>New</source>
@@ -4937,11 +5186,11 @@ shift键转换滚动轴
     </message>
     <message>
         <source>Port:</source>
-        <translation>端口:</translation>
+        <translation type="obsolete">端口:</translation>
     </message>
     <message>
         <source>Programmer:</source>
-        <translation>程序:</translation>
+        <translation type="obsolete">程序:</translation>
     </message>
     <message>
         <source>Remove &quot;%1&quot;?</source>
@@ -4953,11 +5202,11 @@ shift键转换滚动轴
     </message>
     <message>
         <source>The file &apos;%1&apos; must be saved before it can be sent to the programmer.</source>
-        <translation>&apos;%1&apos;文件在发送给其他程序前必须保存.</translation>
+        <translation type="obsolete">&apos;%1&apos;文件在发送给其他程序前必须保存.</translation>
     </message>
     <message>
         <source>Select a programmer (executable) for %1</source>
-        <translation>为%1选择一个程序(可执行)</translation>
+        <translation type="obsolete">为%1选择一个程序(可执行)</translation>
     </message>
     <message>
         <source>Code (*.%1)</source>
@@ -4967,92 +5216,132 @@ shift键转换滚动轴
         <source>While it is possible to read and edit %1 programming files, it is not yet possible to use Fritzing to compile or upload these programs to a microcontroller.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Open</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Platform</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Board</source>
+        <translation type="unfinished">板</translation>
+    </message>
+    <message>
+        <source>Port</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Serial Monitor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Upload</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No uploader for %1 specified. Go to Preferences &gt; Code View to configure it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Uploader configured, but not found at %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Upload finished.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Upload failed with exit code %1, %2</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ProgramWindow</name>
     <message>
         <source>%1 %2</source>
-        <translation>%1 %2</translation>
+        <translation type="obsolete">%1 %2</translation>
     </message>
     <message>
         <source>No ports found</source>
-        <translation>未找到端口</translation>
+        <translation type="obsolete">未找到端口</translation>
     </message>
     <message>
         <source>&amp;File</source>
-        <translation>文件(&amp;F)</translation>
+        <translation type="obsolete">文件(&amp;F)</translation>
     </message>
     <message>
         <source>Ctrl+N</source>
-        <translation>Ctrl+N</translation>
+        <translation type="obsolete">Ctrl+N</translation>
     </message>
     <message>
         <source>Create a new program</source>
-        <translation>创建一个新程序</translation>
+        <translation type="obsolete">创建一个新程序</translation>
     </message>
     <message>
         <source>Ctrl+O</source>
-        <translation>Ctrl+O</translation>
+        <translation type="obsolete">Ctrl+O</translation>
     </message>
     <message>
         <source>Open a program</source>
-        <translation>打开一个程序</translation>
+        <translation type="obsolete">打开一个程序</translation>
     </message>
     <message>
         <source>Ctrl+S</source>
-        <translation>Ctrl+S</translation>
+        <translation type="obsolete">Ctrl+S</translation>
     </message>
     <message>
         <source>Save the current program</source>
-        <translation>保存当前程序</translation>
+        <translation type="obsolete">保存当前程序</translation>
     </message>
     <message>
         <source>Rename the current program</source>
-        <translation>重命名当前程序</translation>
+        <translation type="obsolete">重命名当前程序</translation>
     </message>
     <message>
         <source>Duplicate tab</source>
-        <translation>复制标签</translation>
+        <translation type="obsolete">复制标签</translation>
     </message>
     <message>
         <source>Copies the current program into a new tab</source>
-        <translation>复制当前的程序到新标签中</translation>
+        <translation type="obsolete">复制当前的程序到新标签中</translation>
     </message>
     <message>
         <source>Remove tab</source>
-        <translation>移除标签</translation>
+        <translation type="obsolete">移除标签</translation>
     </message>
     <message>
         <source>Ctrl+W</source>
-        <translation>Ctrl+W</translation>
+        <translation type="obsolete">Ctrl+W</translation>
     </message>
     <message>
         <source>Remove the current program from the sketch</source>
-        <translation>从程序中移除当前程序段</translation>
+        <translation type="obsolete">从程序中移除当前程序段</translation>
     </message>
     <message>
         <source>&amp;Print...</source>
-        <translation>打印(&amp;P)...</translation>
+        <translation type="obsolete">打印(&amp;P)...</translation>
     </message>
     <message>
         <source>Ctrl+P</source>
-        <translation>Ctrl+P</translation>
+        <translation type="obsolete">Ctrl+P</translation>
     </message>
     <message>
         <source>Print the current program</source>
-        <translation>打印当前程序</translation>
+        <translation type="obsolete">打印当前程序</translation>
     </message>
     <message>
         <source>&amp;Quit</source>
-        <translation>退出(&amp;Q)</translation>
+        <translation type="obsolete">退出(&amp;Q)</translation>
     </message>
     <message>
         <source>Ctrl+Q</source>
-        <translation>Ctrl+Q</translation>
+        <translation type="obsolete">Ctrl+Q</translation>
     </message>
     <message>
         <source>Quit the application</source>
-        <translation>退出程序</translation>
+        <translation type="obsolete">退出程序</translation>
     </message>
     <message>
         <source>&amp;Edit</source>
@@ -5072,7 +5361,7 @@ shift键转换滚动轴
     </message>
     <message>
         <source>Ctrl+X</source>
-        <translation>Ctrl+X</translation>
+        <translation type="obsolete">Ctrl+X</translation>
     </message>
     <message>
         <source>Cut selection</source>
@@ -5084,7 +5373,7 @@ shift键转换滚动轴
     </message>
     <message>
         <source>Ctrl+C</source>
-        <translation>Ctrl+C</translation>
+        <translation type="obsolete">Ctrl+C</translation>
     </message>
     <message>
         <source>Copy selection</source>
@@ -5096,7 +5385,7 @@ shift键转换滚动轴
     </message>
     <message>
         <source>Ctrl+V</source>
-        <translation>Ctrl+V</translation>
+        <translation type="obsolete">Ctrl+V</translation>
     </message>
     <message>
         <source>Paste clipboard contents</source>
@@ -5108,7 +5397,7 @@ shift键转换滚动轴
     </message>
     <message>
         <source>Ctrl+A</source>
-        <translation>Ctrl+A</translation>
+        <translation type="obsolete">Ctrl+A</translation>
     </message>
     <message>
         <source>Select all text</source>
@@ -5116,23 +5405,23 @@ shift键转换滚动轴
     </message>
     <message>
         <source>Select language</source>
-        <translation>选择语言</translation>
+        <translation type="obsolete">选择语言</translation>
     </message>
     <message>
         <source>Select port</source>
-        <translation>选择端口</translation>
+        <translation type="obsolete">选择端口</translation>
     </message>
     <message>
         <source>Select programmer</source>
-        <translation>选择程序</translation>
+        <translation type="obsolete">选择程序</translation>
     </message>
     <message>
         <source>Program</source>
-        <translation>程序</translation>
+        <translation type="obsolete">程序</translation>
     </message>
     <message>
         <source>Load the current program onto a microcontroller</source>
-        <translation>载入当前程序到微控制器</translation>
+        <translation type="obsolete">载入当前程序到微控制器</translation>
     </message>
     <message>
         <source>File &apos;%1&apos; was restored from the .fzz file; the local copy was not found.</source>
@@ -5141,22 +5430,6 @@ shift键转换滚动轴
     <message>
         <source>File &apos;%1&apos; was restored from the .fzz file; save a local copy to work with an external editor.</source>
         <translation>文件&apos;%1&apos;从.fzz文件中恢复了；保存了一个本地副本使用外部编辑器编辑。</translation>
-    </message>
-    <message>
-        <source>New Code File</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&amp;Open Code File...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&amp;Save Code File</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Rename Code File</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&amp;Code</source>
@@ -5175,8 +5448,112 @@ shift键转换滚动轴
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Find file...</source>
+        <source>No boards available</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Preferences...</source>
+        <translation type="unfinished">参数设置(&amp;P)...</translation>
+    </message>
+    <message>
+        <source>Show the application&apos;s about box</source>
+        <translation type="unfinished">显示程序关于对话框</translation>
+    </message>
+    <message>
+        <source>&amp;New Tab</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Create a new program tab</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Import Code...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alt+Ctrl+I</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Import a program from a file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Save Tab</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alt+Ctrl+S</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save the current program tab</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Rename Tab</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alt+Ctrl+R</source>
+        <translation type="unfinished">Alt+Ctrl+R</translation>
+    </message>
+    <message>
+        <source>Rename the current program tab</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close Tab</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alt+Ctrl+W</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove the current program tab from the sketch</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Platform</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Board</source>
+        <translation type="unfinished">板</translation>
+    </message>
+    <message>
+        <source>Port</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Serial Monitor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+M</source>
+        <translation type="unfinished">Ctrl+M</translation>
+    </message>
+    <message>
+        <source>Monitor the serial port communication</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Upload</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+U</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Upload the current program onto a microcontroller</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1%2</source>
+        <translation type="unfinished">%1%2</translation>
     </message>
 </context>
 <context>
@@ -5946,6 +6323,10 @@ Fritzing仍然在工作，但不能改变元件的属性.</translation>
         <source>&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;Version %1.%2.%3 (%4%5) %6&lt;/font&gt;</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>N/A</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>QShortcut</name>
@@ -6248,19 +6629,19 @@ Fritzing仍然在工作，但不能改变元件的属性.</translation>
     <name>SetColorDialog</name>
     <message>
         <source>Set %1 Color...</source>
-        <translation>设置 %1的颜色...</translation>
+        <translation type="obsolete">设置 %1的颜色...</translation>
     </message>
     <message>
         <source>Choose a new %1 color.</source>
-        <translation>选择新的%1 颜色.</translation>
+        <translation type="obsolete">选择新的%1 颜色.</translation>
     </message>
     <message>
         <source>current %1 color (%2)</source>
-        <translation>当前%1颜色(%2)</translation>
+        <translation type="obsolete">当前%1颜色(%2)</translation>
     </message>
     <message>
         <source>standard %1 color (%2)</source>
-        <translation>标准%1颜色(%2)</translation>
+        <translation type="obsolete">标准%1颜色(%2)</translation>
     </message>
     <message>
         <source>Make this the default %1 color</source>
@@ -6276,22 +6657,42 @@ Fritzing仍然在工作，但不能改变元件的属性.</translation>
     </message>
     <message>
         <source>Select custom %1 color</source>
-        <translation>选择自定义%1颜色</translation>
+        <translation type="obsolete">选择自定义%1颜色</translation>
     </message>
     <message>
         <source>custom color (%1)</source>
-        <translation>自定义颜色(%1)</translation>
+        <translation type="obsolete">自定义颜色(%1)</translation>
     </message>
     <message>
         <source>selected color (%1)</source>
-        <translation>已选择颜色(%1)</translation>
+        <translation type="obsolete">已选择颜色(%1)</translation>
     </message>
     <message>
-        <source>Choose</source>
+        <source>%1 Color...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Custom color ...</source>
+        <source>Choose %1 color:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reset to default</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default color (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pick custom color ...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pick custom %1 color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Current color (%1)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

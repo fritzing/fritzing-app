@@ -642,6 +642,216 @@ Een aangepast bord svg heeft normaal gesproken een of twee silkscreen lagen en e
     </message>
 </context>
 <context>
+    <name>ConsoleSettings</name>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select Parameters</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>BaudRate:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Data bits:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Parity:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stop bits:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Flow control:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select Serial Port</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Description:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Manufacturer:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Serial number:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Location:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vendor ID:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Product ID:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Additional options</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Local echo</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Description: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Manufacturer: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Serial number: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Location: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vendor Identifier: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Product Identifier: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ConsoleWindow</name>
+    <message>
+        <source>Serial Monitor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Monitor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tools</source>
+        <translation type="unfinished">Gereedschappen</translation>
+    </message>
+    <message>
+        <source>&amp;About</source>
+        <translation type="unfinished">&amp;Over Fritzing</translation>
+    </message>
+    <message>
+        <source>About program</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alt+A</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>About Qt</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>C&amp;onnect</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Connect to serial port</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+O</source>
+        <translation type="unfinished">Ctrl+O</translation>
+    </message>
+    <message>
+        <source>&amp;Disconnect</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Disconnect from serial port</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+D</source>
+        <translation type="unfinished">Ctrl+D</translation>
+    </message>
+    <message>
+        <source>&amp;Configure</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Configure serial port</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alt+C</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>C&amp;lear</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clear data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alt+L</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Quit</source>
+        <translation type="unfinished">&amp;Afsluiten</translation>
+    </message>
+    <message>
+        <source>Ctrl+Q</source>
+        <translation type="unfinished">Ctrl+Q</translation>
+    </message>
+    <message>
+        <source>Connected to %1 : %2, %3, %4, %5, %6</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Serial port open error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Disconnected</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>About Simple Terminal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The &lt;b&gt;Simple Terminal&lt;/b&gt; example demonstrates how to use the Qt Serial Port module in modern GUI applications using Qt, with a menu bar, toolbars, and a status bar.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Critical Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>DRC</name>
     <message>
         <source>DRC was cancelled.</source>
@@ -1638,7 +1848,7 @@ Wij werken er momenteel aan om dit bericht te vermijden en je te laten kiezen tu
     </message>
     <message>
         <source>Ctrl+X</source>
-        <translation>Ctrl+X</translation>
+        <translation type="obsolete">Ctrl+X</translation>
     </message>
     <message>
         <source>Cut selection</source>
@@ -1650,7 +1860,7 @@ Wij werken er momenteel aan om dit bericht te vermijden en je te laten kiezen tu
     </message>
     <message>
         <source>Ctrl+C</source>
-        <translation>Ctrl+C</translation>
+        <translation type="obsolete">Ctrl+C</translation>
     </message>
     <message>
         <source>Copy selection</source>
@@ -1662,7 +1872,7 @@ Wij werken er momenteel aan om dit bericht te vermijden en je te laten kiezen tu
     </message>
     <message>
         <source>Ctrl+V</source>
-        <translation>Ctrl+V</translation>
+        <translation type="obsolete">Ctrl+V</translation>
     </message>
     <message>
         <source>Paste clipboard contents</source>
@@ -1694,7 +1904,7 @@ Wij werken er momenteel aan om dit bericht te vermijden en je te laten kiezen tu
     </message>
     <message>
         <source>Ctrl+A</source>
-        <translation>Ctrl+A</translation>
+        <translation type="obsolete">Ctrl+A</translation>
     </message>
     <message>
         <source>Select all elements</source>
@@ -2664,7 +2874,7 @@ Wilt u &apos;%1&apos; converteren naar het .fzz bestandsfomaat of wilt u het als
     </message>
     <message>
         <source>Ctrl+B</source>
-        <translation>Ctrl+B</translation>
+        <translation type="obsolete">Ctrl+B</translation>
     </message>
     <message>
         <source>Choose Ground Fill Seed(s)...</source>
@@ -3380,6 +3590,10 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     <message>
         <source>Rotate 45° Counter Clockwise</source>
         <translation type="unfinished">Roteer 45° Linksom {45�?} {45°?}</translation>
+    </message>
+    <message>
+        <source>Ctrl+Shift+V</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -4818,6 +5032,13 @@ Noot: Deze waarschuling zal de rest van deze sessie van Fritzing niet meer getoo
     </message>
 </context>
 <context>
+    <name>PlatformArduino</name>
+    <message>
+        <source>Running %1 %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>PrefsDialog</name>
     <message>
         <source>Cancel</source>
@@ -4915,16 +5136,44 @@ De shift toets wisselt de as</translation>
         <source>Curvy wires and legs</source>
         <translation>Gebogen draden en poten</translation>
     </message>
+    <message>
+        <source>Code View</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Platform Support</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;%1&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Location:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You need to have &lt;a href=&apos;%1&apos;&gt;%2&lt;/a&gt; (version %3 or newer) installed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select a programmer (executable) for %1</source>
+        <translation type="unfinished">Selecteer een programmer (uitvoerbaar) voor %1</translation>
+    </message>
 </context>
 <context>
     <name>ProgramTab</name>
     <message>
         <source>Open...</source>
-        <translation>Open...</translation>
+        <translation type="obsolete">Open...</translation>
     </message>
     <message>
         <source>Program</source>
-        <translation>Programmeer</translation>
+        <translation type="obsolete">Programmeer</translation>
     </message>
     <message>
         <source>Select a program file to load</source>
@@ -4936,7 +5185,7 @@ De shift toets wisselt de as</translation>
     </message>
     <message>
         <source>Language:</source>
-        <translation>Taal:</translation>
+        <translation type="obsolete">Taal:</translation>
     </message>
     <message>
         <source>New</source>
@@ -4948,11 +5197,11 @@ De shift toets wisselt de as</translation>
     </message>
     <message>
         <source>Port:</source>
-        <translation>Poort:</translation>
+        <translation type="obsolete">Poort:</translation>
     </message>
     <message>
         <source>Programmer:</source>
-        <translation>Programmer:</translation>
+        <translation type="obsolete">Programmer:</translation>
     </message>
     <message>
         <source>Remove &quot;%1&quot;?</source>
@@ -4964,11 +5213,11 @@ De shift toets wisselt de as</translation>
     </message>
     <message>
         <source>The file &apos;%1&apos; must be saved before it can be sent to the programmer.</source>
-        <translation>Het bestand &apos;%1&apos; moet opgeslagen worden voordat het naar de programmer verzonden kan worden.</translation>
+        <translation type="obsolete">Het bestand &apos;%1&apos; moet opgeslagen worden voordat het naar de programmer verzonden kan worden.</translation>
     </message>
     <message>
         <source>Select a programmer (executable) for %1</source>
-        <translation>Selecteer een programmer (uitvoerbaar) voor %1</translation>
+        <translation type="obsolete">Selecteer een programmer (uitvoerbaar) voor %1</translation>
     </message>
     <message>
         <source>Code (*.%1)</source>
@@ -4978,92 +5227,132 @@ De shift toets wisselt de as</translation>
         <source>While it is possible to read and edit %1 programming files, it is not yet possible to use Fritzing to compile or upload these programs to a microcontroller.</source>
         <translation>Hoewel het mogelijk is om %1 programmeer bestanden te openen en aan te passen, is het nog niet mogelijk om met Fritzing deze bestanden te compileren of te uploaden op een microcontroller.</translation>
     </message>
+    <message>
+        <source>Open</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Platform</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Board</source>
+        <translation type="unfinished">Bord</translation>
+    </message>
+    <message>
+        <source>Port</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Serial Monitor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Upload</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No uploader for %1 specified. Go to Preferences &gt; Code View to configure it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Uploader configured, but not found at %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Upload finished.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Upload failed with exit code %1, %2</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ProgramWindow</name>
     <message>
         <source>%1 %2</source>
-        <translation>%1 %2</translation>
+        <translation type="obsolete">%1 %2</translation>
     </message>
     <message>
         <source>No ports found</source>
-        <translation>Geen poorten gevonden</translation>
+        <translation type="obsolete">Geen poorten gevonden</translation>
     </message>
     <message>
         <source>&amp;File</source>
-        <translation>&amp;Bestand</translation>
+        <translation type="obsolete">&amp;Bestand</translation>
     </message>
     <message>
         <source>Ctrl+N</source>
-        <translation>Ctrl+N</translation>
+        <translation type="obsolete">Ctrl+N</translation>
     </message>
     <message>
         <source>Create a new program</source>
-        <translation>Maak een nieuw programma</translation>
+        <translation type="obsolete">Maak een nieuw programma</translation>
     </message>
     <message>
         <source>Ctrl+O</source>
-        <translation>Ctrl+O</translation>
+        <translation type="obsolete">Ctrl+O</translation>
     </message>
     <message>
         <source>Open a program</source>
-        <translation>Open een programma</translation>
+        <translation type="obsolete">Open een programma</translation>
     </message>
     <message>
         <source>Ctrl+S</source>
-        <translation>Ctrl+S</translation>
+        <translation type="obsolete">Ctrl+S</translation>
     </message>
     <message>
         <source>Save the current program</source>
-        <translation>Sla het huidige programma op</translation>
+        <translation type="obsolete">Sla het huidige programma op</translation>
     </message>
     <message>
         <source>Rename the current program</source>
-        <translation>Hernoem het huidige programma</translation>
+        <translation type="obsolete">Hernoem het huidige programma</translation>
     </message>
     <message>
         <source>Duplicate tab</source>
-        <translation>Dupliceer tabblad</translation>
+        <translation type="obsolete">Dupliceer tabblad</translation>
     </message>
     <message>
         <source>Copies the current program into a new tab</source>
-        <translation>Kopieert het huidige programma in een nieuw tabblad</translation>
+        <translation type="obsolete">Kopieert het huidige programma in een nieuw tabblad</translation>
     </message>
     <message>
         <source>Remove tab</source>
-        <translation>Verwijder tabblad</translation>
+        <translation type="obsolete">Verwijder tabblad</translation>
     </message>
     <message>
         <source>Ctrl+W</source>
-        <translation>Ctrl+W</translation>
+        <translation type="obsolete">Ctrl+W</translation>
     </message>
     <message>
         <source>Remove the current program from the sketch</source>
-        <translation>Verwijder het huidige programma uit de sketch</translation>
+        <translation type="obsolete">Verwijder het huidige programma uit de sketch</translation>
     </message>
     <message>
         <source>&amp;Print...</source>
-        <translation>&amp;Afdrukken...</translation>
+        <translation type="obsolete">&amp;Afdrukken...</translation>
     </message>
     <message>
         <source>Ctrl+P</source>
-        <translation>Ctrl+P</translation>
+        <translation type="obsolete">Ctrl+P</translation>
     </message>
     <message>
         <source>Print the current program</source>
-        <translation>Druk het huidige programma af</translation>
+        <translation type="obsolete">Druk het huidige programma af</translation>
     </message>
     <message>
         <source>&amp;Quit</source>
-        <translation>&amp;Afsluiten</translation>
+        <translation type="obsolete">&amp;Afsluiten</translation>
     </message>
     <message>
         <source>Ctrl+Q</source>
-        <translation>Ctrl+Q</translation>
+        <translation type="obsolete">Ctrl+Q</translation>
     </message>
     <message>
         <source>Quit the application</source>
-        <translation>Applicatie afsluiten</translation>
+        <translation type="obsolete">Applicatie afsluiten</translation>
     </message>
     <message>
         <source>&amp;Edit</source>
@@ -5083,7 +5372,7 @@ De shift toets wisselt de as</translation>
     </message>
     <message>
         <source>Ctrl+X</source>
-        <translation>Ctrl+X</translation>
+        <translation type="obsolete">Ctrl+X</translation>
     </message>
     <message>
         <source>Cut selection</source>
@@ -5095,7 +5384,7 @@ De shift toets wisselt de as</translation>
     </message>
     <message>
         <source>Ctrl+C</source>
-        <translation>Ctrl+C</translation>
+        <translation type="obsolete">Ctrl+C</translation>
     </message>
     <message>
         <source>Copy selection</source>
@@ -5107,7 +5396,7 @@ De shift toets wisselt de as</translation>
     </message>
     <message>
         <source>Ctrl+V</source>
-        <translation>Ctrl+V</translation>
+        <translation type="obsolete">Ctrl+V</translation>
     </message>
     <message>
         <source>Paste clipboard contents</source>
@@ -5119,7 +5408,7 @@ De shift toets wisselt de as</translation>
     </message>
     <message>
         <source>Ctrl+A</source>
-        <translation>Ctrl+A</translation>
+        <translation type="obsolete">Ctrl+A</translation>
     </message>
     <message>
         <source>Select all text</source>
@@ -5127,23 +5416,23 @@ De shift toets wisselt de as</translation>
     </message>
     <message>
         <source>Select language</source>
-        <translation>Selecteer taal</translation>
+        <translation type="obsolete">Selecteer taal</translation>
     </message>
     <message>
         <source>Select port</source>
-        <translation>Selecteer poort</translation>
+        <translation type="obsolete">Selecteer poort</translation>
     </message>
     <message>
         <source>Select programmer</source>
-        <translation>Selecteer programmer</translation>
+        <translation type="obsolete">Selecteer programmer</translation>
     </message>
     <message>
         <source>Program</source>
-        <translation>Programmeer</translation>
+        <translation type="obsolete">Programmeer</translation>
     </message>
     <message>
         <source>Load the current program onto a microcontroller</source>
-        <translation>Laad het huidige prgramma naar een microcontroller</translation>
+        <translation type="obsolete">Laad het huidige prgramma naar een microcontroller</translation>
     </message>
     <message>
         <source>File &apos;%1&apos; was restored from the .fzz file; the local copy was not found.</source>
@@ -5155,19 +5444,19 @@ De shift toets wisselt de as</translation>
     </message>
     <message>
         <source>New Code File</source>
-        <translation>Nieuw Code Bestand</translation>
+        <translation type="obsolete">Nieuw Code Bestand</translation>
     </message>
     <message>
         <source>&amp;Open Code File...</source>
-        <translation>&amp;Open Code Bestand...</translation>
+        <translation type="obsolete">&amp;Open Code Bestand...</translation>
     </message>
     <message>
         <source>&amp;Save Code File</source>
-        <translation>&amp;Opslaan Code Bestand</translation>
+        <translation type="obsolete">&amp;Opslaan Code Bestand</translation>
     </message>
     <message>
         <source>Rename Code File</source>
-        <translation>Hernoem Code Bestand</translation>
+        <translation type="obsolete">Hernoem Code Bestand</translation>
     </message>
     <message>
         <source>&amp;Code</source>
@@ -5187,7 +5476,115 @@ De shift toets wisselt de as</translation>
     </message>
     <message>
         <source>Find file...</source>
-        <translation>Zoek bestand...</translation>
+        <translation type="obsolete">Zoek bestand...</translation>
+    </message>
+    <message>
+        <source>No boards available</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Preferences...</source>
+        <translation type="unfinished">&amp;Eigenschappen...</translation>
+    </message>
+    <message>
+        <source>Show the application&apos;s about box</source>
+        <translation type="unfinished">Toon de applicatie about venster</translation>
+    </message>
+    <message>
+        <source>&amp;New Tab</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Create a new program tab</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Import Code...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alt+Ctrl+I</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Import a program from a file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Save Tab</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alt+Ctrl+S</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save the current program tab</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Rename Tab</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alt+Ctrl+R</source>
+        <translation type="unfinished">Alt+Ctrl+R</translation>
+    </message>
+    <message>
+        <source>Rename the current program tab</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close Tab</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alt+Ctrl+W</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove the current program tab from the sketch</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Platform</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Board</source>
+        <translation type="unfinished">Bord</translation>
+    </message>
+    <message>
+        <source>Port</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Serial Monitor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+M</source>
+        <translation type="unfinished">Ctrl+M</translation>
+    </message>
+    <message>
+        <source>Monitor the serial port communication</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Upload</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+U</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Upload the current program onto a microcontroller</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1%2</source>
+        <translation type="unfinished">%1%2</translation>
     </message>
 </context>
 <context>
@@ -5956,6 +6353,10 @@ Fritzing werkt nog steeds, maar je kunt geen eigenschappen van de onderdelen wij
         <source>&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;Version %1.%2.%3 (%4%5) %6&lt;/font&gt;</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>N/A</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>QShortcut</name>
@@ -6259,19 +6660,19 @@ Fritzing werkt nog steeds, maar je kunt geen eigenschappen van de onderdelen wij
     <name>SetColorDialog</name>
     <message>
         <source>Set %1 Color...</source>
-        <translation>Stel %1 kleur in...</translation>
+        <translation type="obsolete">Stel %1 kleur in...</translation>
     </message>
     <message>
         <source>Choose a new %1 color.</source>
-        <translation>Kies een nieuw %1 kleur.</translation>
+        <translation type="obsolete">Kies een nieuw %1 kleur.</translation>
     </message>
     <message>
         <source>current %1 color (%2)</source>
-        <translation>huidige %1 kleur (%2)</translation>
+        <translation type="obsolete">huidige %1 kleur (%2)</translation>
     </message>
     <message>
         <source>standard %1 color (%2)</source>
-        <translation>standaard %1 kleur (%2)</translation>
+        <translation type="obsolete">standaard %1 kleur (%2)</translation>
     </message>
     <message>
         <source>Make this the default %1 color</source>
@@ -6287,22 +6688,42 @@ Fritzing werkt nog steeds, maar je kunt geen eigenschappen van de onderdelen wij
     </message>
     <message>
         <source>Select custom %1 color</source>
-        <translation>Selecteer aangepaste kleur %1</translation>
+        <translation type="obsolete">Selecteer aangepaste kleur %1</translation>
     </message>
     <message>
         <source>custom color (%1)</source>
-        <translation>Aangepaste kleur (%1)</translation>
+        <translation type="obsolete">Aangepaste kleur (%1)</translation>
     </message>
     <message>
         <source>selected color (%1)</source>
-        <translation>geselecteerde kleur (%1)</translation>
+        <translation type="obsolete">geselecteerde kleur (%1)</translation>
     </message>
     <message>
-        <source>Choose</source>
+        <source>%1 Color...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Custom color ...</source>
+        <source>Choose %1 color:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reset to default</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default color (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pick custom color ...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pick custom %1 color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Current color (%1)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

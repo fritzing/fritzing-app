@@ -642,6 +642,216 @@ Utiliser le fichier ?</translation>
     </message>
 </context>
 <context>
+    <name>ConsoleSettings</name>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select Parameters</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>BaudRate:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Data bits:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Parity:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stop bits:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Flow control:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select Serial Port</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Description:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Manufacturer:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Serial number:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Location:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vendor ID:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Product ID:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Additional options</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Local echo</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Description: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Manufacturer: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Serial number: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Location: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vendor Identifier: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Product Identifier: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ConsoleWindow</name>
+    <message>
+        <source>Serial Monitor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Monitor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tools</source>
+        <translation type="unfinished">Outils</translation>
+    </message>
+    <message>
+        <source>&amp;About</source>
+        <translation type="unfinished">&amp;À propos</translation>
+    </message>
+    <message>
+        <source>About program</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alt+A</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>About Qt</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>C&amp;onnect</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Connect to serial port</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+O</source>
+        <translation type="unfinished">Ctrl+O</translation>
+    </message>
+    <message>
+        <source>&amp;Disconnect</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Disconnect from serial port</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+D</source>
+        <translation type="unfinished">Ctrl+D</translation>
+    </message>
+    <message>
+        <source>&amp;Configure</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Configure serial port</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alt+C</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>C&amp;lear</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clear data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alt+L</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Quit</source>
+        <translation type="unfinished">&amp;Quitter</translation>
+    </message>
+    <message>
+        <source>Ctrl+Q</source>
+        <translation type="unfinished">Ctrl+Q</translation>
+    </message>
+    <message>
+        <source>Connected to %1 : %2, %3, %4, %5, %6</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Serial port open error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Disconnected</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>About Simple Terminal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The &lt;b&gt;Simple Terminal&lt;/b&gt; example demonstrates how to use the Qt Serial Port module in modern GUI applications using Qt, with a menu bar, toolbars, and a status bar.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Critical Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>DRC</name>
     <message>
         <source>No traces or connectors to check</source>
@@ -1907,15 +2117,15 @@ Continuer ou annuler ?</translation>
     </message>
     <message>
         <source>Ctrl+A</source>
-        <translation>Ctrl+A</translation>
+        <translation type="obsolete">Ctrl+A</translation>
     </message>
     <message>
         <source>Ctrl+B</source>
-        <translation>Ctrl+B</translation>
+        <translation type="obsolete">Ctrl+B</translation>
     </message>
     <message>
         <source>Ctrl+C</source>
-        <translation>Ctrl+C</translation>
+        <translation type="obsolete">Ctrl+C</translation>
     </message>
     <message>
         <source>Ctrl+D</source>
@@ -1947,11 +2157,11 @@ Continuer ou annuler ?</translation>
     </message>
     <message>
         <source>Ctrl+V</source>
-        <translation>Ctrl+V</translation>
+        <translation type="obsolete">Ctrl+V</translation>
     </message>
     <message>
         <source>Ctrl+X</source>
-        <translation>Ctrl+X</translation>
+        <translation type="obsolete">Ctrl+X</translation>
     </message>
     <message>
         <source>Ctrl+[</source>
@@ -2684,9 +2894,12 @@ Nous travaillons à éliminer ce message afin de ne vous laisser choisir que des
         <source>Show the code (programming) view</source>
         <translation type="unfinished">Afficher la vue de code (programmation)</translation>
     </message>
-    <message>
+    <message numerus="yes">
         <source>%1 of %2 nets routed - %n connector(s) still to be routed</source>
-        <translation>%1 sur %2 connexions ont été routées - %n connecteur(s) restant(s) à router</translation>
+        <translation type="unfinished">
+            <numerusform>%1 sur %2 connexions ont été routées - %n connecteur(s) restant(s) à router</numerusform>
+            <numerusform></numerusform>
+        </translation>
     </message>
     <message>
         <source>Online Tutorials</source>
@@ -3386,6 +3599,10 @@ Note : si vous voulez faire la mise à jour plus tard, des options sont disponib
     <message>
         <source>Rotate 45° Counter Clockwise</source>
         <translation type="unfinished">Tourner de 45° vers la gauche</translation>
+    </message>
+    <message>
+        <source>Ctrl+Shift+V</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -4818,6 +5035,13 @@ Remarque : cet avertissement ne sera pas répété au cours de cette session.</t
     </message>
 </context>
 <context>
+    <name>PlatformArduino</name>
+    <message>
+        <source>Running %1 %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>PrefsDialog</name>
     <message>
         <source>OK</source>
@@ -4915,6 +5139,34 @@ Alt ou %1 = zoom</translation>
         <source>Curvy vs. straight wires</source>
         <translation type="unfinished">Câbles courbes plutôt que droits</translation>
     </message>
+    <message>
+        <source>Code View</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Platform Support</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;%1&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Location:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You need to have &lt;a href=&apos;%1&apos;&gt;%2&lt;/a&gt; (version %3 or newer) installed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select a programmer (executable) for %1</source>
+        <translation type="unfinished">Sélectionnez un programmeur (exécutable) pour %1</translation>
+    </message>
 </context>
 <context>
     <name>ProgramTab</name>
@@ -4928,7 +5180,7 @@ Alt ou %1 = zoom</translation>
     </message>
     <message>
         <source>Port:</source>
-        <translation>Port :</translation>
+        <translation type="obsolete">Port :</translation>
     </message>
     <message>
         <source>Select a program file to load</source>
@@ -4944,7 +5196,7 @@ Alt ou %1 = zoom</translation>
     </message>
     <message>
         <source>Language:</source>
-        <translation type="unfinished">Langage :</translation>
+        <translation type="obsolete">Langage :</translation>
     </message>
     <message>
         <source>Are you sure you want to remove &quot;%1&quot; from the sketch?</source>
@@ -4952,19 +5204,19 @@ Alt ou %1 = zoom</translation>
     </message>
     <message>
         <source>Open...</source>
-        <translation>Ouvrir...</translation>
+        <translation type="obsolete">Ouvrir...</translation>
     </message>
     <message>
         <source>Select a programmer (executable) for %1</source>
-        <translation>Sélectionnez un programmeur (exécutable) pour %1</translation>
+        <translation type="obsolete">Sélectionnez un programmeur (exécutable) pour %1</translation>
     </message>
     <message>
         <source>Program</source>
-        <translation>Programmeur</translation>
+        <translation type="obsolete">Programmeur</translation>
     </message>
     <message>
         <source>Programmer:</source>
-        <translation type="unfinished">Programmateur :</translation>
+        <translation type="obsolete">Programmateur :</translation>
     </message>
     <message>
         <source>Fritzing is unable to find &apos;%1&apos;, please locate it</source>
@@ -4972,11 +5224,51 @@ Alt ou %1 = zoom</translation>
     </message>
     <message>
         <source>The file &apos;%1&apos; must be saved before it can be sent to the programmer.</source>
-        <translation type="unfinished">Le fichier &apos;%1&apos; doit être enregistré avant qu&apos;il puisse être envoyé au programmateur.</translation>
+        <translation type="obsolete">Le fichier &apos;%1&apos; doit être enregistré avant qu&apos;il puisse être envoyé au programmateur.</translation>
     </message>
     <message>
         <source>While it is possible to read and edit %1 programming files, it is not yet possible to use Fritzing to compile or upload these programs to a microcontroller.</source>
         <translation type="unfinished">Bien qu&apos;il soit possible de lire et de modifier les fichiers de programmation %1, Fritzing n&apos;est pas encore utilisable pour compiler ou téléverser ces programmes vers un microcontrôleur.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Platform</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Board</source>
+        <translation type="unfinished">Plaque</translation>
+    </message>
+    <message>
+        <source>Port</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Serial Monitor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Upload</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No uploader for %1 specified. Go to Preferences &gt; Code View to configure it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Uploader configured, but not found at %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Upload finished.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Upload failed with exit code %1, %2</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -4995,7 +5287,7 @@ Alt ou %1 = zoom</translation>
     </message>
     <message>
         <source>%1 %2</source>
-        <translation>%1 %2</translation>
+        <translation type="obsolete">%1 %2</translation>
     </message>
     <message>
         <source>&amp;Code</source>
@@ -5011,11 +5303,11 @@ Alt ou %1 = zoom</translation>
     </message>
     <message>
         <source>&amp;File</source>
-        <translation>&amp;Fichier</translation>
+        <translation type="obsolete">&amp;Fichier</translation>
     </message>
     <message>
         <source>&amp;Quit</source>
-        <translation>&amp;Quitter</translation>
+        <translation type="obsolete">&amp;Quitter</translation>
     </message>
     <message>
         <source>&amp;View</source>
@@ -5027,15 +5319,15 @@ Alt ou %1 = zoom</translation>
     </message>
     <message>
         <source>Open a program</source>
-        <translation>Ouvrir un programme</translation>
+        <translation type="obsolete">Ouvrir un programme</translation>
     </message>
     <message>
         <source>Save the current program</source>
-        <translation>Sauvegarder le programme en cours</translation>
+        <translation type="obsolete">Sauvegarder le programme en cours</translation>
     </message>
     <message>
         <source>Copies the current program into a new tab</source>
-        <translation type="unfinished">Copier le programme actuel dans un nouvel onglet</translation>
+        <translation type="obsolete">Copier le programme actuel dans un nouvel onglet</translation>
     </message>
     <message>
         <source>Code Window - %1</source>
@@ -5043,11 +5335,11 @@ Alt ou %1 = zoom</translation>
     </message>
     <message>
         <source>Rename Code File</source>
-        <translation type="unfinished">Renommer le fichier de code</translation>
+        <translation type="obsolete">Renommer le fichier de code</translation>
     </message>
     <message>
         <source>&amp;Save Code File</source>
-        <translation type="unfinished">&amp;Sauvegarder le fichier de code</translation>
+        <translation type="obsolete">&amp;Sauvegarder le fichier de code</translation>
     </message>
     <message>
         <source>&amp;Paste</source>
@@ -5059,63 +5351,63 @@ Alt ou %1 = zoom</translation>
     </message>
     <message>
         <source>Duplicate tab</source>
-        <translation type="unfinished">Dupliquer l&apos;onglet</translation>
+        <translation type="obsolete">Dupliquer l&apos;onglet</translation>
     </message>
     <message>
         <source>Print the current program</source>
-        <translation>Imprimer le programme en cours</translation>
+        <translation type="obsolete">Imprimer le programme en cours</translation>
     </message>
     <message>
         <source>No ports found</source>
-        <translation type="unfinished">Aucun port détecté</translation>
+        <translation type="obsolete">Aucun port détecté</translation>
     </message>
     <message>
         <source>Remove the current program from the sketch</source>
-        <translation type="unfinished">Supprimer le programme actuel du croquis</translation>
+        <translation type="obsolete">Supprimer le programme actuel du croquis</translation>
     </message>
     <message>
         <source>Ctrl+A</source>
-        <translation>Ctrl+A</translation>
+        <translation type="obsolete">Ctrl+A</translation>
     </message>
     <message>
         <source>Ctrl+C</source>
-        <translation>Ctrl+C</translation>
+        <translation type="obsolete">Ctrl+C</translation>
     </message>
     <message>
         <source>Ctrl+N</source>
-        <translation>Ctrl+N</translation>
+        <translation type="obsolete">Ctrl+N</translation>
     </message>
     <message>
         <source>Ctrl+O</source>
-        <translation>Ctrl+O</translation>
+        <translation type="obsolete">Ctrl+O</translation>
     </message>
     <message>
         <source>Ctrl+P</source>
-        <translation>Ctrl+P</translation>
+        <translation type="obsolete">Ctrl+P</translation>
     </message>
     <message>
         <source>Ctrl+Q</source>
-        <translation>Ctrl+Q</translation>
+        <translation type="obsolete">Ctrl+Q</translation>
     </message>
     <message>
         <source>Ctrl+S</source>
-        <translation>Ctrl+S</translation>
+        <translation type="obsolete">Ctrl+S</translation>
     </message>
     <message>
         <source>Ctrl+V</source>
-        <translation>Ctrl+V</translation>
+        <translation type="obsolete">Ctrl+V</translation>
     </message>
     <message>
         <source>Ctrl+W</source>
-        <translation>Ctrl+W</translation>
+        <translation type="obsolete">Ctrl+W</translation>
     </message>
     <message>
         <source>Ctrl+X</source>
-        <translation>Ctrl+X</translation>
+        <translation type="obsolete">Ctrl+X</translation>
     </message>
     <message>
         <source>Select programmer</source>
-        <translation type="unfinished">Sélection du programmateur</translation>
+        <translation type="obsolete">Sélection du programmateur</translation>
     </message>
     <message>
         <source>Copy selection</source>
@@ -5123,7 +5415,7 @@ Alt ou %1 = zoom</translation>
     </message>
     <message>
         <source>Quit the application</source>
-        <translation>Quitter le programme</translation>
+        <translation type="obsolete">Quitter le programme</translation>
     </message>
     <message>
         <source>Code Window</source>
@@ -5135,11 +5427,11 @@ Alt ou %1 = zoom</translation>
     </message>
     <message>
         <source>Remove tab</source>
-        <translation type="unfinished">Supprimer l&apos;onglet</translation>
+        <translation type="obsolete">Supprimer l&apos;onglet</translation>
     </message>
     <message>
         <source>Select language</source>
-        <translation type="unfinished">Sélectionner la langue</translation>
+        <translation type="obsolete">Sélectionner la langue</translation>
     </message>
     <message>
         <source>File &apos;%1&apos; was restored from the .fzz file; the local copy was not found.</source>
@@ -5147,11 +5439,11 @@ Alt ou %1 = zoom</translation>
     </message>
     <message>
         <source>Program</source>
-        <translation>Programme</translation>
+        <translation type="obsolete">Programme</translation>
     </message>
     <message>
         <source>Find file...</source>
-        <translation>Rechercher un fichier...</translation>
+        <translation type="obsolete">Rechercher un fichier...</translation>
     </message>
     <message>
         <source>Cut selection</source>
@@ -5159,19 +5451,19 @@ Alt ou %1 = zoom</translation>
     </message>
     <message>
         <source>Rename the current program</source>
-        <translation>Renommer le programme actuel</translation>
+        <translation type="obsolete">Renommer le programme actuel</translation>
     </message>
     <message>
         <source>&amp;Print...</source>
-        <translation>&amp;Imprimer...</translation>
+        <translation type="obsolete">&amp;Imprimer...</translation>
     </message>
     <message>
         <source>Select port</source>
-        <translation>Sélection du port</translation>
+        <translation type="obsolete">Sélection du port</translation>
     </message>
     <message>
         <source>&amp;Open Code File...</source>
-        <translation type="unfinished">&amp;Ouvrir le fichier de code...</translation>
+        <translation type="obsolete">&amp;Ouvrir le fichier de code...</translation>
     </message>
     <message>
         <source>&amp;Select All</source>
@@ -5179,15 +5471,123 @@ Alt ou %1 = zoom</translation>
     </message>
     <message>
         <source>Load the current program onto a microcontroller</source>
-        <translation type="unfinished">Charger le programme en cours sur un microcontrôleur</translation>
+        <translation type="obsolete">Charger le programme en cours sur un microcontrôleur</translation>
     </message>
     <message>
         <source>Create a new program</source>
-        <translation>Créer un nouveau programme</translation>
+        <translation type="obsolete">Créer un nouveau programme</translation>
     </message>
     <message>
         <source>New Code File</source>
-        <translation type="unfinished">Nouveau fichier de code</translation>
+        <translation type="obsolete">Nouveau fichier de code</translation>
+    </message>
+    <message>
+        <source>No boards available</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Preferences...</source>
+        <translation type="unfinished">&amp;Préférences...</translation>
+    </message>
+    <message>
+        <source>Show the application&apos;s about box</source>
+        <translation type="unfinished">Montrer &quot;À propos&quot;</translation>
+    </message>
+    <message>
+        <source>&amp;New Tab</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Create a new program tab</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Import Code...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alt+Ctrl+I</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Import a program from a file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Save Tab</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alt+Ctrl+S</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save the current program tab</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Rename Tab</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alt+Ctrl+R</source>
+        <translation type="unfinished">Alt+Ctrl+R</translation>
+    </message>
+    <message>
+        <source>Rename the current program tab</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close Tab</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alt+Ctrl+W</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove the current program tab from the sketch</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Platform</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Board</source>
+        <translation type="unfinished">Plaque</translation>
+    </message>
+    <message>
+        <source>Port</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Serial Monitor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+M</source>
+        <translation type="unfinished">Ctrl+M</translation>
+    </message>
+    <message>
+        <source>Monitor the serial port communication</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Upload</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+U</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Upload the current program onto a microcontroller</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1%2</source>
+        <translation type="unfinished">%1%2</translation>
     </message>
 </context>
 <context>
@@ -5954,6 +6354,10 @@ Fritzing va continuer à fonctionner, mais vous n&apos;aurez pas la possibilité
         <source>&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;Version %1.%2.%3 (%4%5) %6&lt;/font&gt;</source>
         <translation>&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;Version %1.%2.%3 (%4%5) %6&lt;/font&gt;</translation>
     </message>
+    <message>
+        <source>N/A</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>QShortcut</name>
@@ -6261,15 +6665,15 @@ Fritzing va continuer à fonctionner, mais vous n&apos;aurez pas la possibilité
     </message>
     <message>
         <source>Select custom %1 color</source>
-        <translation type="unfinished">Sélectionner une couleur personnalisée %1</translation>
+        <translation type="obsolete">Sélectionner une couleur personnalisée %1</translation>
     </message>
     <message>
         <source>custom color (%1)</source>
-        <translation type="unfinished">couleur personnalisée (%1)</translation>
+        <translation type="obsolete">couleur personnalisée (%1)</translation>
     </message>
     <message>
         <source>Set %1 Color...</source>
-        <translation type="unfinished">Sélection de la couleur %1...</translation>
+        <translation type="obsolete">Sélection de la couleur %1...</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -6277,15 +6681,15 @@ Fritzing va continuer à fonctionner, mais vous n&apos;aurez pas la possibilité
     </message>
     <message>
         <source>Choose a new %1 color.</source>
-        <translation type="unfinished">Choisir une nouvelle couleur %1.</translation>
+        <translation type="obsolete">Choisir une nouvelle couleur %1.</translation>
     </message>
     <message>
         <source>selected color (%1)</source>
-        <translation type="unfinished">couleur sélectionnée (%1)</translation>
+        <translation type="obsolete">couleur sélectionnée (%1)</translation>
     </message>
     <message>
         <source>current %1 color (%2)</source>
-        <translation type="unfinished">couleur actuelle de %1 (%2)</translation>
+        <translation type="obsolete">couleur actuelle de %1 (%2)</translation>
     </message>
     <message>
         <source>Make this the default %1 color</source>
@@ -6293,15 +6697,43 @@ Fritzing va continuer à fonctionner, mais vous n&apos;aurez pas la possibilité
     </message>
     <message>
         <source>standard %1 color (%2)</source>
-        <translation type="unfinished">couleur standard %1 (%2)</translation>
+        <translation type="obsolete">couleur standard %1 (%2)</translation>
     </message>
     <message>
         <source>Choose</source>
-        <translation type="unfinished">Choisir</translation>
+        <translation type="obsolete">Choisir</translation>
     </message>
     <message>
         <source>Custom color ...</source>
-        <translation type="unfinished">Personnalisée</translation>
+        <translation type="obsolete">Personnalisée</translation>
+    </message>
+    <message>
+        <source>%1 Color...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose %1 color:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reset to default</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default color (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pick custom color ...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pick custom %1 color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Current color (%1)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

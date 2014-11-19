@@ -415,9 +415,10 @@ void PrefsDialog::chooseProgrammer()
                         FolderUtils::openSaveFolder(),
                         "(Programmer *)"
                         );
-
-    m_programmerLEs.value(platformName)->setText(filename);
-    platform->setCommandLocation(filename);
+    if (!filename.isEmpty()) {
+        m_programmerLEs.value(platformName)->setText(filename);
+        platform->setCommandLocation(filename);
+    }
 }
 
 void PrefsDialog::changeLanguage(int index) 

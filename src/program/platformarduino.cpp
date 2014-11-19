@@ -51,8 +51,6 @@ void PlatformArduino::upload(QWidget *source, const QString &port, const QString
     connect(process, SIGNAL(finished(int, QProcess::ExitStatus)), source, SLOT(programProcessFinished(int, QProcess::ExitStatus)));
     connect(process, SIGNAL(readyReadStandardOutput()), source, SLOT(programProcessReadyRead()));
 
-    ProgramTab *tab = qobject_cast<ProgramTab *>(source);
-
     // Make sure .ino is in its own folder with same name (as required by Arduino compiler),
     // otherwise create a subfolder and copy the file there.
     QFileInfo fileInfo(fileLocation);
@@ -78,6 +76,7 @@ void PlatformArduino::upload(QWidget *source, const QString &port, const QString
     args.append(QString("--upload"));
     args.append(QDir::toNativeSeparators(tmpFilePath));
 
+    ProgramTab *tab = qobject_cast<ProgramTab *>(source);
     if (tab)
         tab->appendToConsole(tr("Running %1 %2").arg(getCommandLocation()).arg(args.join(" ")));
     process->start(getCommandLocation(), args);

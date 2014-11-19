@@ -1,6 +1,10 @@
 #include "platformpicaxe.h"
 
 #include <QProcess>
+#include <QFileInfo>
+#include <QSettings>
+
+#include "programtab.h"
 
 PlatformPicaxe::PlatformPicaxe() : Platform(QString("PICAXE"))
 {
@@ -49,9 +53,15 @@ void PlatformPicaxe::upload(QWidget *source, const QString &port, const QString 
     connect(process, SIGNAL(finished(int, QProcess::ExitStatus)), source, SLOT(programProcessFinished(int, QProcess::ExitStatus)));
     connect(process, SIGNAL(readyReadStandardOutput()), source, SLOT(programProcessReadyRead()));
 
+    QFileInfo cmdFileInfo(getCommandLocation());
+    QString cmd(cmdFileInfo.absoluteDir().absolutePath().append("/").append(getBoards().value(board)));
+
     QStringList args;
     args.append(QString("-c%1").arg(port));
     args.append(fileLocation);
 
-    process->start(getCommandLocation(), args); // TODO: use chip-specific programmer
+    ProgramTab *tab = qobject_cast<ProgramTab *>(source);
+    if (tab)
+        tab->appendToConsole(tr("Running %1 %2").arg(cmd).arg(args.join(" ")));
+    process->start(cmd, args);
 }

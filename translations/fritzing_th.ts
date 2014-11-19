@@ -833,15 +833,15 @@ A custom board svg typically has one or two silkscreen layers and one board laye
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>About Simple Terminal</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>The &lt;b&gt;Simple Terminal&lt;/b&gt; example demonstrates how to use the Qt Serial Port module in modern GUI applications using Qt, with a menu bar, toolbars, and a status bar.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Critical Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>About Serial Monitor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This terminal displays the serial communication on the selected port, usually between your computer and the connected microcontroller.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -4915,6 +4915,13 @@ Note: this warning will not be repeated during this session.</source>
     </message>
 </context>
 <context>
+    <name>PlatformPicaxe</name>
+    <message>
+        <source>Running %1 %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>PrefsDialog</name>
     <message>
         <source>Cancel</source>
@@ -7136,6 +7143,14 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
     <message>
         <source>Macedonian - %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Serbian - %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Urdu - %1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

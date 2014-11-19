@@ -839,15 +839,15 @@ Um svg de placa personalizada tipicamente tem uma ou mais camadas de impressão 
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>About Simple Terminal</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>The &lt;b&gt;Simple Terminal&lt;/b&gt; example demonstrates how to use the Qt Serial Port module in modern GUI applications using Qt, with a menu bar, toolbars, and a status bar.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Critical Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>About Serial Monitor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This terminal displays the serial communication on the selected port, usually between your computer and the connected microcontroller.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -5035,6 +5035,13 @@ Nota: este aviso não será repetido durante essa sessão.</translation>
     </message>
 </context>
 <context>
+    <name>PlatformPicaxe</name>
+    <message>
+        <source>Running %1 %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>PrefsDialog</name>
     <message>
         <source>Cancel</source>
@@ -7477,6 +7484,14 @@ Nota: você pode também acionar este aviso passando o mouse pelo texto de estad
     </message>
     <message>
         <source>Macedonian - %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Serbian - %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Urdu - %1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

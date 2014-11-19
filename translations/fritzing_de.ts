@@ -796,117 +796,117 @@ Trotzdem diese Datei benutzen?</translation>
     <message>
         <location filename="../src/program/consolesettings.ui" line="14"/>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Einstellungen</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.ui" line="20"/>
         <source>Select Parameters</source>
-        <translation type="unfinished"></translation>
+        <translation>Parameter</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.ui" line="26"/>
         <source>BaudRate:</source>
-        <translation type="unfinished"></translation>
+        <translation>Baud-Rate</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.ui" line="36"/>
         <source>Data bits:</source>
-        <translation type="unfinished"></translation>
+        <translation>Daten-Bits</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.ui" line="46"/>
         <source>Parity:</source>
-        <translation type="unfinished"></translation>
+        <translation>Parity</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.ui" line="56"/>
         <source>Stop bits:</source>
-        <translation type="unfinished"></translation>
+        <translation>Stop-Bits</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.ui" line="66"/>
         <source>Flow control:</source>
-        <translation type="unfinished"></translation>
+        <translation>Flusskontrolle</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.ui" line="79"/>
         <source>Select Serial Port</source>
-        <translation type="unfinished"></translation>
+        <translation>Serieller Port</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.ui" line="88"/>
         <source>Description:</source>
-        <translation type="unfinished"></translation>
+        <translation>Beschreibung</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.ui" line="95"/>
         <source>Manufacturer:</source>
-        <translation type="unfinished"></translation>
+        <translation>Hersteller</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.ui" line="102"/>
         <source>Serial number:</source>
-        <translation type="unfinished"></translation>
+        <translation>Seriennr.</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.ui" line="109"/>
         <source>Location:</source>
-        <translation type="unfinished"></translation>
+        <translation>Pfad</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.ui" line="116"/>
         <source>Vendor ID:</source>
-        <translation type="unfinished"></translation>
+        <translation>Anbieter-ID</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.ui" line="123"/>
         <source>Product ID:</source>
-        <translation type="unfinished"></translation>
+        <translation>Produkt-ID</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.ui" line="148"/>
         <source>Apply</source>
-        <translation type="unfinished"></translation>
+        <translation>Anwenden</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.ui" line="157"/>
         <source>Additional options</source>
-        <translation type="unfinished"></translation>
+        <translation>Weitere Optionen</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.ui" line="163"/>
         <source>Local echo</source>
-        <translation type="unfinished"></translation>
+        <translation>Lokales Echo</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.cpp" line="89"/>
         <source>Description: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Beschreibung: %1</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.cpp" line="90"/>
         <source>Manufacturer: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Hersteller: %1</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.cpp" line="91"/>
         <source>Serial number: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Seriennummer: %1</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.cpp" line="92"/>
         <source>Location: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Pfad: %1</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.cpp" line="93"/>
         <source>Vendor Identifier: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Anbieter-ID: %1</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.cpp" line="94"/>
         <source>Product Identifier: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Produkt-ID: %1</translation>
     </message>
 </context>
 <context>
@@ -914,142 +914,142 @@ Trotzdem diese Datei benutzen?</translation>
     <message>
         <location filename="../src/program/consolewindow.ui" line="14"/>
         <source>Serial Monitor</source>
-        <translation type="unfinished"></translation>
+        <translation>Serieller Monitor</translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.ui" line="30"/>
         <source>Monitor</source>
-        <translation type="unfinished"></translation>
+        <translation>Monitor</translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.ui" line="39"/>
         <source>Tools</source>
-        <translation type="unfinished">Werkzeuge</translation>
+        <translation>Werkzeuge</translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.ui" line="62"/>
         <source>&amp;About</source>
-        <translation type="unfinished">&amp;Über Fritzing</translation>
+        <translation>&amp;Über</translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.ui" line="65"/>
         <source>About program</source>
-        <translation type="unfinished"></translation>
+        <translation>Über dieses Programm</translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.ui" line="68"/>
         <source>Alt+A</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+Ü</translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.ui" line="73"/>
         <source>About Qt</source>
-        <translation type="unfinished"></translation>
+        <translation>Über Qt</translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.ui" line="78"/>
         <source>C&amp;onnect</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Verbinden</translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.ui" line="81"/>
         <source>Connect to serial port</source>
-        <translation type="unfinished"></translation>
+        <translation>Mit dem seriellen Port verbinden</translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.ui" line="84"/>
         <source>Ctrl+O</source>
-        <translation type="unfinished">Strg+O</translation>
+        <translation>Strg+O</translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.ui" line="89"/>
         <source>&amp;Disconnect</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Trennen</translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.ui" line="92"/>
         <source>Disconnect from serial port</source>
-        <translation type="unfinished"></translation>
+        <translation>Verbindung zum seriellen Port trennen</translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.ui" line="95"/>
         <source>Ctrl+D</source>
-        <translation type="unfinished">Strg+D</translation>
+        <translation>Strg+D</translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.ui" line="100"/>
         <source>&amp;Configure</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Optionen</translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.ui" line="103"/>
         <source>Configure serial port</source>
-        <translation type="unfinished"></translation>
+        <translation>Konfiguration des seriellen Ports </translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.ui" line="106"/>
         <source>Alt+C</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+O</translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.ui" line="111"/>
         <source>C&amp;lear</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Leeren</translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.ui" line="114"/>
         <source>Clear data</source>
-        <translation type="unfinished"></translation>
+        <translation>Ausgabe leeren</translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.ui" line="117"/>
         <source>Alt+L</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+L</translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.ui" line="126"/>
         <source>&amp;Quit</source>
-        <translation type="unfinished">&amp;Beenden</translation>
+        <translation>&amp;Beenden</translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.ui" line="129"/>
         <source>Ctrl+Q</source>
-        <translation type="unfinished">Strg+Q</translation>
+        <translation>Strg+B</translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.cpp" line="150"/>
         <source>Connected to %1 : %2, %3, %4, %5, %6</source>
-        <translation type="unfinished"></translation>
+        <translation>Verbunden mit %1 : %2, %3, %4, %5, %6</translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.cpp" line="154"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Fehler</translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.cpp" line="156"/>
         <source>Serial port open error</source>
-        <translation type="unfinished"></translation>
+        <translation>Fehler beim Öffnen des seriellen Ports</translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.cpp" line="167"/>
         <source>Disconnected</source>
-        <translation type="unfinished"></translation>
+        <translation>Verbindung getrennt</translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.cpp" line="172"/>
-        <source>About Simple Terminal</source>
-        <translation type="unfinished"></translation>
+        <source>About Serial Monitor</source>
+        <translation>Über den Seriellen Monitor</translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.cpp" line="173"/>
-        <source>The &lt;b&gt;Simple Terminal&lt;/b&gt; example demonstrates how to use the Qt Serial Port module in modern GUI applications using Qt, with a menu bar, toolbars, and a status bar.</source>
-        <translation type="unfinished"></translation>
+        <source>This terminal displays the serial communication on the selected port, usually between your computer and the connected microcontroller.</source>
+        <translation>Dieses Terminal zeigt die serielle Kommunikation auf dem ausgewählten Port an, die zwischen Deinem Computer und dem verbundenen Mikrocontroller stattfindet.</translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.cpp" line="192"/>
         <source>Critical Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Kritischer Fehler</translation>
     </message>
 </context>
 <context>
@@ -3566,7 +3566,7 @@ Zurücksetzen?</translation>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="888"/>
         <source>Ctrl+Shift+V</source>
-        <translation type="unfinished"></translation>
+        <translation>Str+Umschalt+V</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="976"/>
@@ -6334,9 +6334,17 @@ Hinweis: Diese Warnung wird nur einmal angezeigt.</translation>
 <context>
     <name>PlatformArduino</name>
     <message>
-        <location filename="../src/program/platformarduino.cpp" line="82"/>
+        <location filename="../src/program/platformarduino.cpp" line="81"/>
         <source>Running %1 %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Starte %1 %2</translation>
+    </message>
+</context>
+<context>
+    <name>PlatformPicaxe</name>
+    <message>
+        <location filename="../src/program/platformpicaxe.cpp" line="65"/>
+        <source>Running %1 %2</source>
+        <translation>Starte %1 %2</translation>
     </message>
 </context>
 <context>
@@ -6347,12 +6355,12 @@ Hinweis: Diese Warnung wird nur einmal angezeigt.</translation>
         <translation>Verhalten des Mausrads</translation>
     </message>
     <message>
-        <location filename="../src/dialogs/prefsdialog.cpp" line="493"/>
+        <location filename="../src/dialogs/prefsdialog.cpp" line="494"/>
         <source>Command</source>
         <translation>Cmd</translation>
     </message>
     <message>
-        <location filename="../src/dialogs/prefsdialog.cpp" line="495"/>
+        <location filename="../src/dialogs/prefsdialog.cpp" line="496"/>
         <source>Control</source>
         <translation>Strg</translation>
     </message>
@@ -6374,7 +6382,7 @@ Hinweis: Diese Warnung wird nur einmal angezeigt.</translation>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="89"/>
         <source>Code View</source>
-        <translation type="unfinished"></translation>
+        <translation>Code-Ansicht</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="105"/>
@@ -6420,45 +6428,45 @@ Hinweis: Diese Warnung wird nur einmal angezeigt.</translation>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="350"/>
         <source>Platform Support</source>
-        <translation type="unfinished"></translation>
+        <translation>Plattform-Unterstützung</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="357"/>
         <source>&lt;b&gt;%1&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;%1&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="366"/>
         <source>Location:</source>
-        <translation type="unfinished"></translation>
+        <translation>Pfad:</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="375"/>
         <source>...</source>
-        <translation type="unfinished"></translation>
+        <translation>...</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="385"/>
         <source>You need to have &lt;a href=&apos;%1&apos;&gt;%2&lt;/a&gt; (version %3 or newer) installed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Du benötigst &lt;a href=&apos;%1&apos;&gt;%2&lt;/a&gt; (Version %3 oder neuer).</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="414"/>
         <source>Select a programmer (executable) for %1</source>
-        <translation type="unfinished">Wähle einen Programmierer (ausführbare Datei) für %1</translation>
+        <translation>Wähle einen Programmierer (ausführbare Datei) für %1</translation>
     </message>
     <message>
-        <location filename="../src/dialogs/prefsdialog.cpp" line="445"/>
+        <location filename="../src/dialogs/prefsdialog.cpp" line="446"/>
         <source>Connected Highlight</source>
         <translation>Verbunden</translation>
     </message>
     <message>
-        <location filename="../src/dialogs/prefsdialog.cpp" line="461"/>
+        <location filename="../src/dialogs/prefsdialog.cpp" line="462"/>
         <source>Unconnected Highlight</source>
         <translation>Nicht verbunden</translation>
     </message>
     <message>
-        <location filename="../src/dialogs/prefsdialog.cpp" line="501"/>
+        <location filename="../src/dialogs/prefsdialog.cpp" line="502"/>
         <source>no keys down = scroll
 shift key swaps scroll axis
 Alt or %1 key = zoom</source>
@@ -6467,7 +6475,7 @@ Mausrad + Umschalt-Taste = horizontaler Bildlauf
 Mausrad + Alt- oder %1-Taste = Zoom</translation>
     </message>
     <message>
-        <location filename="../src/dialogs/prefsdialog.cpp" line="504"/>
+        <location filename="../src/dialogs/prefsdialog.cpp" line="505"/>
         <source>no keys down = zoom
 Alt or %1 key = scroll
 shift key swaps scroll axis</source>
@@ -6476,22 +6484,22 @@ Mausrad + Alt- oder %1-Taste = vertikaler Bildlauf
 Mausrad + Alt + Umschalt-Taste = horizontaler Bildlauf</translation>
     </message>
     <message>
-        <location filename="../src/dialogs/prefsdialog.cpp" line="524"/>
+        <location filename="../src/dialogs/prefsdialog.cpp" line="525"/>
         <source>Curvy vs. straight wires</source>
         <translation>Gebogene vs. gerade Drähte</translation>
     </message>
     <message>
-        <location filename="../src/dialogs/prefsdialog.cpp" line="527"/>
+        <location filename="../src/dialogs/prefsdialog.cpp" line="528"/>
         <source>When you mouse-down and drag on a wire or the leg of a part (as opposed to a connector or a bendpoint) do you want to change the curvature of the wire (or leg) or drag out a new bendpoint?</source>
         <translation>Wenn Du mit der Maus an einem Draht oder Bauteilbeinchen ziehst, möchtest Du die Biegung ändern oder einen Knick hinzufügen?</translation>
     </message>
     <message>
-        <location filename="../src/dialogs/prefsdialog.cpp" line="532"/>
+        <location filename="../src/dialogs/prefsdialog.cpp" line="533"/>
         <source>This checkbox sets the default behavior. You can switch back to the non-default behavior by holding down the Control key (Mac: Command key) when you drag.</source>
         <translation>Dies ist die Standardeinstellung. Du kannst immer das jeweils andere Verhalten erzielen, wenn Du beim Ziehen die &quot;Strg&quot;-Taste (Mac: Cmd) gedrückt hältst. </translation>
     </message>
     <message>
-        <location filename="../src/dialogs/prefsdialog.cpp" line="539"/>
+        <location filename="../src/dialogs/prefsdialog.cpp" line="540"/>
         <source>Curvy wires and legs</source>
         <translation>Gebogene Drähte und Beinchen</translation>
     </message>
@@ -6528,7 +6536,7 @@ Mausrad + Alt + Umschalt-Taste = horizontaler Bildlauf</translation>
     <message>
         <location filename="../src/program/programtab.cpp" line="254"/>
         <source>Open</source>
-        <translation type="unfinished"></translation>
+        <translation>Öffnen</translation>
     </message>
     <message>
         <location filename="../src/program/programtab.cpp" line="260"/>
@@ -6546,27 +6554,27 @@ Mausrad + Alt + Umschalt-Taste = horizontaler Bildlauf</translation>
     <message>
         <location filename="../src/program/programtab.cpp" line="273"/>
         <source>Platform</source>
-        <translation type="unfinished"></translation>
+        <translation>Plattform</translation>
     </message>
     <message>
         <location filename="../src/program/programtab.cpp" line="303"/>
         <source>Board</source>
-        <translation type="unfinished">Leiterplatten</translation>
+        <translation>Produkt</translation>
     </message>
     <message>
         <location filename="../src/program/programtab.cpp" line="331"/>
         <source>Port</source>
-        <translation type="unfinished"></translation>
+        <translation>Port</translation>
     </message>
     <message>
         <location filename="../src/program/programtab.cpp" line="360"/>
         <source>Serial Monitor</source>
-        <translation type="unfinished"></translation>
+        <translation>Serieller Monitor</translation>
     </message>
     <message>
         <location filename="../src/program/programtab.cpp" line="366"/>
         <source>Upload</source>
-        <translation type="unfinished"></translation>
+        <translation>Hochladen</translation>
     </message>
     <message>
         <location filename="../src/program/programtab.cpp" line="486"/>
@@ -6591,22 +6599,22 @@ Mausrad + Alt + Umschalt-Taste = horizontaler Bildlauf</translation>
     <message>
         <location filename="../src/program/programtab.cpp" line="736"/>
         <source>No uploader for %1 specified. Go to Preferences &gt; Code View to configure it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Es wurde noch kein Programmierer für %1 angegeben. Gehe zu Einstellungen &gt; Code-Ansicht, um diesen zu konfigurieren.</translation>
     </message>
     <message>
         <location filename="../src/program/programtab.cpp" line="740"/>
         <source>Uploader configured, but not found at %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Programmierer ist konfiguriert, aber konnte hier nicht gefunden werden: %1</translation>
     </message>
     <message>
         <location filename="../src/program/programtab.cpp" line="762"/>
         <source>Upload finished.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hochladen beendet.</translation>
     </message>
     <message>
         <location filename="../src/program/programtab.cpp" line="764"/>
         <source>Upload failed with exit code %1, %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Hochladen fehlgeschlagen. (Fehler-Code %1, %2)</translation>
     </message>
     <message>
         <source>The file &apos;%1&apos; must be saved before it can be sent to the programmer.</source>
@@ -6718,7 +6726,7 @@ Mausrad + Alt + Umschalt-Taste = horizontaler Bildlauf</translation>
     <message>
         <location filename="../src/program/programwindow.cpp" line="135"/>
         <source>No boards available</source>
-        <translation type="unfinished"></translation>
+        <translation>Keine Produkte verfügbar</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="186"/>
@@ -6794,12 +6802,12 @@ Mausrad + Alt + Umschalt-Taste = horizontaler Bildlauf</translation>
     <message>
         <location filename="../src/program/programwindow.cpp" line="233"/>
         <source>&amp;Preferences...</source>
-        <translation type="unfinished">&amp;Einstellungen...</translation>
+        <translation>&amp;Einstellungen...</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="234"/>
         <source>Show the application&apos;s about box</source>
-        <translation type="unfinished">Zeige Informationen über Fritzing an</translation>
+        <translation>Zeige Informationen über Fritzing an</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="238"/>
@@ -6809,117 +6817,117 @@ Mausrad + Alt + Umschalt-Taste = horizontaler Bildlauf</translation>
     <message>
         <location filename="../src/program/programwindow.cpp" line="240"/>
         <source>&amp;New Tab</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Neuer Tab</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="242"/>
         <source>Create a new program tab</source>
-        <translation type="unfinished"></translation>
+        <translation>Öffne ein neues Code-Tab.</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="246"/>
         <source>&amp;Import Code...</source>
-        <translation type="unfinished"></translation>
+        <translation>Code &amp;importieren...</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="247"/>
         <source>Alt+Ctrl+I</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+Ctrl+I</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="248"/>
         <source>Import a program from a file</source>
-        <translation type="unfinished"></translation>
+        <translation>Importiere Code aus einer externen Datei</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="252"/>
         <source>&amp;Save Tab</source>
-        <translation type="unfinished"></translation>
+        <translation>Tab &amp;speichern</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="253"/>
         <source>Alt+Ctrl+S</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+Ctrl+S</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="254"/>
         <source>Save the current program tab</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktuellen Code-Tab speichern</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="258"/>
         <source>&amp;Rename Tab</source>
-        <translation type="unfinished"></translation>
+        <translation>Tab um&amp;benennen</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="259"/>
         <source>Alt+Ctrl+R</source>
-        <translation type="unfinished">Alt+Strg+R</translation>
+        <translation>Alt+Strg+B</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="260"/>
         <source>Rename the current program tab</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktuellen Code-Tab umbenennen</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="264"/>
         <source>Close Tab</source>
-        <translation type="unfinished"></translation>
+        <translation>Tab schließen</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="265"/>
         <source>Alt+Ctrl+W</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+Ctrl+W</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="266"/>
         <source>Remove the current program tab from the sketch</source>
-        <translation type="unfinished"></translation>
+        <translation>Entfernt den aktuelle Code von diesem Entwurf</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="272"/>
         <source>Platform</source>
-        <translation type="unfinished"></translation>
+        <translation>Plattform</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="292"/>
         <source>Board</source>
-        <translation type="unfinished">Leiterplatten</translation>
+        <translation>Produkt</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="298"/>
         <source>Port</source>
-        <translation type="unfinished"></translation>
+        <translation>Port</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="307"/>
         <source>Serial Monitor</source>
-        <translation type="unfinished"></translation>
+        <translation>Serieller Monitor</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="308"/>
         <source>Ctrl+M</source>
-        <translation type="unfinished">Strg+M</translation>
+        <translation>Strg+M</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="309"/>
         <source>Monitor the serial port communication</source>
-        <translation type="unfinished"></translation>
+        <translation>Serielle Kommunikation überwachen</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="314"/>
         <source>Upload</source>
-        <translation type="unfinished"></translation>
+        <translation>Hochladen</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="315"/>
         <source>Ctrl+U</source>
-        <translation type="unfinished"></translation>
+        <translation>Strg+U</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="316"/>
         <source>Upload the current program onto a microcontroller</source>
-        <translation type="unfinished"></translation>
+        <translation>Lädt den aktuellen Code auf einen angeschlossen Mikrocontroller</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="490"/>
@@ -6934,7 +6942,7 @@ Mausrad + Alt + Umschalt-Taste = horizontaler Bildlauf</translation>
     <message>
         <location filename="../src/program/programwindow.cpp" line="503"/>
         <source>%1%2</source>
-        <translation type="unfinished">%1%2</translation>
+        <translation>%1%2</translation>
     </message>
     <message>
         <source>Find file...</source>
@@ -8383,27 +8391,27 @@ im Sortiment. Nicht erneut hinzufügen?</translation>
     <message>
         <location filename="../src/dialogs/setcolordialog.cpp" line="52"/>
         <source>%1 Color...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1-Farbe...</translation>
     </message>
     <message>
         <location filename="../src/dialogs/setcolordialog.cpp" line="56"/>
         <source>Choose %1 color:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1-Farbe wählen: </translation>
     </message>
     <message>
         <location filename="../src/dialogs/setcolordialog.cpp" line="69"/>
         <source>Reset to default</source>
-        <translation type="unfinished"></translation>
+        <translation>Zurücksetzen</translation>
     </message>
     <message>
         <location filename="../src/dialogs/setcolordialog.cpp" line="73"/>
         <source>Default color (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Standard-Fabe (%1)</translation>
     </message>
     <message>
         <location filename="../src/dialogs/setcolordialog.cpp" line="83"/>
         <source>Pick custom color ...</source>
-        <translation type="unfinished"></translation>
+        <translation>Eigene Farbe wählen...</translation>
     </message>
     <message>
         <location filename="../src/dialogs/setcolordialog.cpp" line="96"/>
@@ -8423,12 +8431,12 @@ im Sortiment. Nicht erneut hinzufügen?</translation>
     <message>
         <location filename="../src/dialogs/setcolordialog.cpp" line="132"/>
         <source>Pick custom %1 color</source>
-        <translation type="unfinished"></translation>
+        <translation>Eigene Farbe wählen</translation>
     </message>
     <message>
         <location filename="../src/dialogs/setcolordialog.cpp" line="151"/>
         <source>Current color (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktuelle Farbe (%1)</translation>
     </message>
     <message>
         <source>Select custom %1 color</source>
@@ -9270,6 +9278,16 @@ Beachte: Du kannst diese Anzeige auch aufrufen, indem Du den Routing-Status in d
         <location filename="../src/dialogs/translatorlistmodel.cpp" line="139"/>
         <source>Macedonian - %1</source>
         <translation>Mazedonisch - %1</translation>
+    </message>
+    <message>
+        <location filename="../src/dialogs/translatorlistmodel.cpp" line="142"/>
+        <source>Serbian - %1</source>
+        <translation>Serbisch - %1</translation>
+    </message>
+    <message>
+        <location filename="../src/dialogs/translatorlistmodel.cpp" line="145"/>
+        <source>Urdu - %1</source>
+        <translation>Urdu - %1</translation>
     </message>
     <message>
         <location filename="../src/dialogs/translatorlistmodel.cpp" line="59"/>

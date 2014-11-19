@@ -1034,12 +1034,12 @@ Use the file?</source>
     </message>
     <message>
         <location filename="../src/program/consolewindow.cpp" line="172"/>
-        <source>About Simple Terminal</source>
+        <source>About Serial Monitor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.cpp" line="173"/>
-        <source>The &lt;b&gt;Simple Terminal&lt;/b&gt; example demonstrates how to use the Qt Serial Port module in modern GUI applications using Qt, with a menu bar, toolbars, and a status bar.</source>
+        <source>This terminal displays the serial communication on the selected port, usually between your computer and the connected microcontroller.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6306,7 +6306,15 @@ Note: this warning will not be repeated during this session.</source>
 <context>
     <name>PlatformArduino</name>
     <message>
-        <location filename="../src/program/platformarduino.cpp" line="82"/>
+        <location filename="../src/program/platformarduino.cpp" line="81"/>
+        <source>Running %1 %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PlatformPicaxe</name>
+    <message>
+        <location filename="../src/program/platformpicaxe.cpp" line="65"/>
         <source>Running %1 %2</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6339,22 +6347,22 @@ Note: this warning will not be repeated during this session.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/dialogs/prefsdialog.cpp" line="493"/>
+        <location filename="../src/dialogs/prefsdialog.cpp" line="494"/>
         <source>Command</source>
         <translation>Príkaz</translation>
     </message>
     <message>
-        <location filename="../src/dialogs/prefsdialog.cpp" line="495"/>
+        <location filename="../src/dialogs/prefsdialog.cpp" line="496"/>
         <source>Control</source>
         <translation>Riadenie</translation>
     </message>
     <message>
-        <location filename="../src/dialogs/prefsdialog.cpp" line="527"/>
+        <location filename="../src/dialogs/prefsdialog.cpp" line="528"/>
         <source>When you mouse-down and drag on a wire or the leg of a part (as opposed to a connector or a bendpoint) do you want to change the curvature of the wire (or leg) or drag out a new bendpoint?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/dialogs/prefsdialog.cpp" line="532"/>
+        <location filename="../src/dialogs/prefsdialog.cpp" line="533"/>
         <source>This checkbox sets the default behavior. You can switch back to the non-default behavior by holding down the Control key (Mac: Command key) when you drag.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6430,17 +6438,17 @@ Note: this warning will not be repeated during this session.</source>
         <translation type="unfinished">Vyberte programátor (spustiteľný) pre %1</translation>
     </message>
     <message>
-        <location filename="../src/dialogs/prefsdialog.cpp" line="445"/>
+        <location filename="../src/dialogs/prefsdialog.cpp" line="446"/>
         <source>Connected Highlight</source>
         <translation>Zvýraznenie prepojených</translation>
     </message>
     <message>
-        <location filename="../src/dialogs/prefsdialog.cpp" line="461"/>
+        <location filename="../src/dialogs/prefsdialog.cpp" line="462"/>
         <source>Unconnected Highlight</source>
         <translation>Zvýraznenie neprepojených</translation>
     </message>
     <message>
-        <location filename="../src/dialogs/prefsdialog.cpp" line="501"/>
+        <location filename="../src/dialogs/prefsdialog.cpp" line="502"/>
         <source>no keys down = scroll
 shift key swaps scroll axis
 Alt or %1 key = zoom</source>
@@ -6449,7 +6457,7 @@ klávesa SHIFT prepne posun osy
 Klávesa Alt alebo klávesa %1 = zväčšenie</translation>
     </message>
     <message>
-        <location filename="../src/dialogs/prefsdialog.cpp" line="504"/>
+        <location filename="../src/dialogs/prefsdialog.cpp" line="505"/>
         <source>no keys down = zoom
 Alt or %1 key = scroll
 shift key swaps scroll axis</source>
@@ -6458,12 +6466,12 @@ klávesa SHIFT přepne posun osy
 Klávesa Alt alebo klávesa %1 = posunúť</translation>
     </message>
     <message>
-        <location filename="../src/dialogs/prefsdialog.cpp" line="524"/>
+        <location filename="../src/dialogs/prefsdialog.cpp" line="525"/>
         <source>Curvy vs. straight wires</source>
         <translation>Krivky vs. rovné prepojky</translation>
     </message>
     <message>
-        <location filename="../src/dialogs/prefsdialog.cpp" line="539"/>
+        <location filename="../src/dialogs/prefsdialog.cpp" line="540"/>
         <source>Curvy wires and legs</source>
         <translation type="unfinished"></translation>
     </message>
@@ -9231,6 +9239,16 @@ Note: you can also trigger this display by mousing down on the routing status te
     <message>
         <location filename="../src/dialogs/translatorlistmodel.cpp" line="139"/>
         <source>Macedonian - %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/dialogs/translatorlistmodel.cpp" line="142"/>
+        <source>Serbian - %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/dialogs/translatorlistmodel.cpp" line="145"/>
+        <source>Urdu - %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

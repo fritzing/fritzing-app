@@ -37,10 +37,10 @@ $Date: 2014-06-11 17:47:21 +0200 (We, 11. Jun 2013) $
 
 QString Version::m_majorVersion("0");       
 QString Version::m_minorVersion("9");
-QString Version::m_minorSubVersion("0");
+QString Version::m_minorSubVersion("1");
 QString Version::m_modifier("b");
-QString Version::m_svnRevision("$Revision: da4e $:");
-QString Version::m_svnDate("$Date: 2014-06-11 06:19:32 +0200 (We, 11 Jun 2014) $");
+QString Version::m_gitCommit("8d2d5970658f0bed09c661c9ea9a515b5f40f44c");
+QString Version::m_gitDate("2014-11-19 13:13:28");
 QString Version::m_revision;
 QString Version::m_date;
 QString Version::m_shortDate;
@@ -57,15 +57,12 @@ Version::Version() {
 		m_modifiers << "a" << "b" << "rc" << "";
 	}
 
-	m_revision = "";
-	QStringList strings = m_svnRevision.split(" ", QString::SkipEmptyParts);
-	if (strings.size() >= 2) {
-		m_revision = strings[1];
-	}
+    m_revision = m_gitCommit;
 
-	strings = m_svnDate.split(" ", QString::SkipEmptyParts);
+    QStringList strings;
+    strings = m_gitDate.split(" ", QString::SkipEmptyParts);
 	if (strings.size() >= 2) {
-		m_date = strings[1];
+        m_date = strings[0];
 		strings = m_date.split("-", QString::SkipEmptyParts);
 		if (strings.size() >= 3) {
 			m_shortDate = strings[1] + "." + strings[2];

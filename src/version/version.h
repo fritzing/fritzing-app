@@ -68,11 +68,11 @@ protected:
 	static QString m_majorVersion;
 	static QString m_minorVersion;
 	static QString m_minorSubVersion;
-	static QString m_svnRevision;
+    static QString m_gitCommit;
 	static QString m_revision;
 	static QString m_modifier;
 	static QString m_versionString;
-	static QString m_svnDate;
+    static QString m_gitDate;
 	static QString m_date;
 	static QString m_shortDate;
 	static QString m_year;

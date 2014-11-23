@@ -6559,7 +6559,7 @@ Mausrad + Alt + Umschalt-Taste = horizontaler Bildlauf</translation>
     <message>
         <location filename="../src/program/programtab.cpp" line="303"/>
         <source>Board</source>
-        <translation>Produkt</translation>
+        <translation>Board</translation>
     </message>
     <message>
         <location filename="../src/program/programtab.cpp" line="331"/>
@@ -6726,7 +6726,7 @@ Mausrad + Alt + Umschalt-Taste = horizontaler Bildlauf</translation>
     <message>
         <location filename="../src/program/programwindow.cpp" line="135"/>
         <source>No boards available</source>
-        <translation>Keine Produkte verfügbar</translation>
+        <translation>Keine Boards verfügbar</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="186"/>
@@ -6892,7 +6892,7 @@ Mausrad + Alt + Umschalt-Taste = horizontaler Bildlauf</translation>
     <message>
         <location filename="../src/program/programwindow.cpp" line="292"/>
         <source>Board</source>
-        <translation>Produkt</translation>
+        <translation>Board</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="298"/>

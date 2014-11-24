@@ -197,6 +197,27 @@
 			<language country="en" name="Magic Board" src="core/Fritzing Creator Kit DE+EN/creator-kit-en/Fritzing/MagicBoard.fzz"/>	
 			<language country="de" name="Zaubertafel" src="core/Fritzing Creator Kit DE+EN/creator-kit-de/Fritzing/Zaubertafel.fzz"/>	
 		</sketch>
+		<sketch id="Workshop01" >
+			<language country="en" name="01 Blink" src="core/Fritzing Workshop/Workshop_01_Blink.fzz"/>
+		</sketch>
+		<sketch id="Workshop02" >
+			<language country="en" name="02 Flip-Flop" src="core/Fritzing Workshop/Workshop_02_FlipFlop.fzz"/>
+		</sketch>
+		<sketch id="Workshop03" >
+			<language country="en" name="03 Flip-Flop + Button" src="core/Fritzing Workshop/Workshop_03_FlipFlop-w-Button.fzz"/>
+		</sketch>
+		<sketch id="Workshop04" >
+			<language country="en" name="04 Fade LED" src="core/Fritzing Workshop/Workshop_04_Fade-LED.fzz"/>
+		</sketch>
+		<sketch id="Workshop05" >
+			<language country="en" name="05 Potentiometer" src="core/Fritzing Workshop/Workshop_05_Potentiometer.fzz"/>
+		</sketch>
+		<sketch id="Workshop06" >
+			<language country="en" name="06 Automatic Lighting" src="core/Fritzing Workshop/Workshop_06_Automatic-Lightning.fzz"/>
+		</sketch>
+		<sketch id="Workshop07" >
+			<language country="en" name="07 Servo" src="core/Fritzing Workshop/Workshop_07_Servo.fzz"/>
+		</sketch>
 </sketches>
 	<categories>
 		<category> 
@@ -416,6 +437,17 @@
 				<language country="en" name="Get your own Fritzing Starter Kit" href="http://fritzing.org/shop/starter-kit/" />
 				<language country="de" name="Erhalten Sie Ihre eigene Fritzing Starter Kit" href="http://fritzing.org/shop/starter-kit/" />
 			</url>
+		</category>
+		<category> 
+			<language country="en" name="Fritzing Workshop"/>
+			<language country="de" name="Fritzing Workshop"/>
+			<sketch id="Workshop01"/>
+			<sketch id="Workshop02"/>
+			<sketch id="Workshop03"/>
+			<sketch id="Workshop04"/>
+			<sketch id="Workshop05"/>
+			<sketch id="Workshop06"/>
+			<sketch id="Workshop07"/>
 		</category>
 	
 		<!--

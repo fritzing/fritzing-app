@@ -1,9 +1,9 @@
 #include "platformarduino.h"
+#include "programtab.h"
 
 #include <QDir>
 #include <QFileInfo>
 #include <QProcess>
-#include "programtab.h"
 
 PlatformArduino::PlatformArduino() : Platform(QString("Arduino"))
 {

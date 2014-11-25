@@ -21,10 +21,10 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #include "platform.h"
 #include "syntaxer.h"
 
+#include "../utils/folderutils.h"
+
 #include <QDir>
 #include <QSettings>
-
-#include <../../utils/folderutils.h>
 
 Platform::Platform(const QString &name) : QObject()
 {

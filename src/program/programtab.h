@@ -45,10 +45,10 @@ $Date: 2012-06-28 00:18:10 +0200 (Do, 28. Jun 2012) $
 #include <QPrinter>
 #include <QHBoxLayout>
 
-#include <../../sketchtoolbutton.h>
-
 #include "programwindow.h"
 #include "consolewindow.h"
+
+#include "../sketchtoolbutton.h"
 
 class SerialPortComboBox : public QComboBox
 {

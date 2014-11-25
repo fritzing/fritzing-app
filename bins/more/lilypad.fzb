@@ -9,7 +9,7 @@
           </iconView>
         </views>
       </instance>
-	  		<instance moduleIdRef="LilyPad_Arduino_USB" modelIndex="5584" path="pdb/core/LilyPad_Arduino_USB.fzp">
+	  		<instance moduleIdRef="LilyPad_Arduino_USB" modelIndex="5584" path="LilyPad_Arduino_USB.fzp">
             <views>
                 <iconView layer="">
                     <geometry z="0" x="-1" y="-1"/>
@@ -19,7 +19,7 @@
                 </iconView>
             </views>
         </instance>	
-						<instance moduleIdRef="LilyPad-Simple-v25" modelIndex="5584" path="pdb/core/LilyPad-Simple-v25.fzp">
+						<instance moduleIdRef="LilyPad-Simple-v25" modelIndex="5584" path="LilyPad-Simple-v25.fzp">
             <views>
                 <iconView layer="">
                     <geometry z="0" x="-1" y="-1"/>
@@ -29,7 +29,7 @@
                 </iconView>
             </views>
         </instance>	
-						<instance moduleIdRef="Arduino Lilypad" modelIndex="5584" path="pdb/core/Mainboard-v18.fzp">
+						<instance moduleIdRef="Arduino Lilypad" modelIndex="5584" path="Mainboard-v18.fzp">
             <views>
                 <iconView layer="">
                     <geometry z="0" x="-1" y="-1"/>
@@ -46,7 +46,7 @@
           </iconView>
         </views>
       </instance>
-		  		<instance moduleIdRef="LilyPad Battery-Connect-v11" modelIndex="5584" path="pdb/core/LilyPad Battery-Connect-v11.fzp">
+		  		<instance moduleIdRef="LilyPad Battery-Connect-v11" modelIndex="5584" path="LilyPad Battery-Connect-v11.fzp">
             <views>
                 <iconView layer="">
                     <geometry z="0" x="-1" y="-1"/>
@@ -56,7 +56,7 @@
                 </iconView>
             </views>
         </instance>	
-						<instance moduleIdRef="LilyPad Coincell-Battery-v17" modelIndex="5584" path="pdb/core/LilyPad Coincell-Battery-v17.fzp">
+						<instance moduleIdRef="LilyPad Coincell-Battery-v17" modelIndex="5584" path="LilyPad Coincell-Battery-v17.fzp">
             <views>
                 <iconView layer="">
                     <geometry z="0" x="-1" y="-1"/>
@@ -66,7 +66,7 @@
                 </iconView>
             </views>
         </instance>	
-						<instance moduleIdRef="LilyPad SimplePower-v13" modelIndex="5584" path="pdb/core/LilyPad SimplePower-v13.fzp">
+						<instance moduleIdRef="LilyPad SimplePower-v13" modelIndex="5584" path="LilyPad SimplePower-v13.fzp">
             <views>
                 <iconView layer="">
                     <geometry z="0" x="-1" y="-1"/>
@@ -76,7 +76,7 @@
                 </iconView>
             </views>
         </instance>	  
-	  		  		<instance moduleIdRef="LilyPad_LED-v14" modelIndex="5584" path="pdb/core/LilyPad_LED-v14.fzp">
+	  		  		<instance moduleIdRef="LilyPad_LED-v14" modelIndex="5584" path="LilyPad_LED-v14.fzp">
             <views>
                 <iconView layer="">
                     <geometry z="0" x="-1" y="-1"/>
@@ -86,7 +86,7 @@
                 </iconView>
             </views>
         </instance>	
-						<instance moduleIdRef="Lilypad_PowerSupply-v18" modelIndex="5584" path="pdb/core/Lilypad_PowerSupply-v18.fzp">
+						<instance moduleIdRef="Lilypad_PowerSupply-v18" modelIndex="5584" path="Lilypad_PowerSupply-v18.fzp">
             <views>
                 <iconView layer="">
                     <geometry z="0" x="-1" y="-1"/>
@@ -96,7 +96,7 @@
                 </iconView>
             </views>
         </instance>	
-						<instance moduleIdRef="LilyPad-Accelerometer-v17" modelIndex="5584" path="pdb/core/LilyPad-Accelerometer-v17.fzp">
+						<instance moduleIdRef="LilyPad-Accelerometer-v17" modelIndex="5584" path="LilyPad-Accelerometer-v17.fzp">
             <views>
                 <iconView layer="">
                     <geometry z="0" x="-1" y="-1"/>
@@ -106,7 +106,7 @@
                 </iconView>
             </views>
         </instance>	 
-			  		  		<instance moduleIdRef="LilyPad-Button-v12" modelIndex="5584" path="pdb/core/LilyPad-Button-v12.fzp">
+			  		  		<instance moduleIdRef="LilyPad-Button-v12" modelIndex="5584" path="LilyPad-Button-v12.fzp">
             <views>
                 <iconView layer="">
                     <geometry z="0" x="-1" y="-1"/>
@@ -116,7 +116,7 @@
                 </iconView>
             </views>
         </instance>	
-						<instance moduleIdRef="LilyPad-Light Sensor-v13" modelIndex="5584" path="pdb/core/LilyPad-Light Sensor-v13.fzp">
+						<instance moduleIdRef="LilyPad-Light Sensor-v13" modelIndex="5584" path="LilyPad-Light Sensor-v13.fzp">
             <views>
                 <iconView layer="">
                     <geometry z="0" x="-1" y="-1"/>
@@ -126,7 +126,7 @@
                 </iconView>
             </views>
         </instance>	
-						<instance moduleIdRef="LilyPad-slide-switch13" modelIndex="5584" path="pdb/core/LilyPad-slide-switch13.fzp">
+						<instance moduleIdRef="LilyPad-slide-switch13" modelIndex="5584" path="LilyPad-slide-switch13.fzp">
             <views>
                 <iconView layer="">
                     <geometry z="0" x="-1" y="-1"/>
@@ -136,7 +136,7 @@
                 </iconView>
             </views>
         </instance>	 
-			  		  		<instance moduleIdRef="LilyPad-Temp-v12" modelIndex="5584" path="pdb/core/LilyPad-Temp-v12.fzp">
+			  		  		<instance moduleIdRef="LilyPad-Temp-v12" modelIndex="5584" path="LilyPad-Temp-v12.fzp">
             <views>
                 <iconView layer="">
                     <geometry z="0" x="-1" y="-1"/>
@@ -146,7 +146,7 @@
                 </iconView>
             </views>
         </instance>	
-						<instance moduleIdRef="PowerSupply-Lipo-v15" modelIndex="5584" path="pdb/core/PowerSupply-Lipo-v15.fzp">
+						<instance moduleIdRef="PowerSupply-Lipo-v15" modelIndex="5584" path="PowerSupply-Lipo-v15.fzp">
             <views>
                 <iconView layer="">
                     <geometry z="0" x="-1" y="-1"/>
@@ -157,7 +157,7 @@
             </views>
         </instance>	
 		
-								<instance moduleIdRef="Buzzer-v15" modelIndex="5584" path="pdb/core/Buzzer-v15.fzp">
+								<instance moduleIdRef="Buzzer-v15" modelIndex="5584" path="Buzzer-v15.fzp">
             <views>
                 <iconView layer="">
                     <geometry z="0" x="-1" y="-1"/>
@@ -167,7 +167,7 @@
                 </iconView>
             </views>
         </instance>	
-		<instance moduleIdRef="Tricolor-LED v16" modelIndex="5584" path="pdb/core/Tricolor-LED v16.fzp">
+		<instance moduleIdRef="Tricolor-LED v16" modelIndex="5584" path="Tricolor-LED v16.fzp">
             <views>
                 <iconView layer="">
                     <geometry z="0" x="-1" y="-1"/>
@@ -177,7 +177,7 @@
                 </iconView>
             </views>
         </instance>	
-			<instance moduleIdRef="LilyPad Vibe Motor" modelIndex="5584" path="pdb/core/LilyPad Vibe Motor.fzp">
+			<instance moduleIdRef="LilyPad Vibe Motor" modelIndex="5584" path="LilyPad Vibe Motor.fzp">
             <views>
                 <iconView layer="">
                     <geometry z="0" x="-1" y="-1"/>

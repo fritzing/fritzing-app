@@ -10,7 +10,7 @@ phoenix.pro.user
 
 # FritzingTools folder
 #####################
-/tools
+#/tools
 
 # visual studio folders and files #
 #####################

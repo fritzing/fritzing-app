@@ -5,6 +5,7 @@ current_dir=$(pwd)
 
 echo ""
 echo "NOTE: Don't forget to set this script's QT_HOME variable"
+echo "NOTE: Execute this script from outside the fritzing-app folder"
 echo ""
 
 QT_HOME="/home/ubuntu/Qt5.2.1/5.2.1/gcc"
@@ -39,9 +40,9 @@ fi
 
 compile_folder="build-$arch_aux"
 #svn export http://fritzing.googlecode.com/svn/trunk/fritzing $compile_folder
-git clone https://code.google.com/p/fritzing/ $compile_folder
+git clone --recursive https://github.com/fritzing/fritzing-app $compile_folder
 
-cd $compile_folder/fritzing/src/lib
+cd $compile_folder/src/lib
 rm -rf boost*				# depend on linux boost installation 
 if [ "$quazip" == 'QUAZIP_INSTALLED' ]
 then
@@ -57,18 +58,10 @@ if [ "$arch_aux" == 'x86_64' ] ; then
 	arch='AMD64'
 	# only creates the source tarball, when running on the 64 platform
 	tarball_folder="fritzing-$relname.source"
-	cp -rf $compile_folder/fritzing $tarball_folder
-	rm -rf $tarball_folder/SetupAPI.Lib
-	rm -rf $tarball_folder/deploy_fritzing.bat
-	rm -rf $tarball_folder/FritzingInfo.plist
-	rm -rf $tarball_folder/datasheets
-	rm -rf $tarball_folder/not_quite_ready
-	rm -rf $tarball_folder/part-gen-scripts
-	rm -rf $tarball_folder/tools/artreeno
-	rm -rf $tarball_folder/tools/fixfz
-	rm -rf $tarball_folder/tools/gerb-merge
-	rm -rf $tarball_folder/tools/qlalr
 	echo "making source tarball: $tarball_folder"
+	cp -rf $compile_folder $tarball_folder
+	rm -rf $tarball_folder/FritzingInfo.plist
+	rm -rf $tarball_folder/tools/fixfz
 	tar -cjf ./$tarball_folder.tar.bz2 $tarball_folder
 	rm -rf $tarball_folder
 	echo "done with source tarball: $tarball_folder"
@@ -77,11 +70,9 @@ if [ "$arch_aux" == 'x86_64' ] ; then
 fi
 
 cd $compile_folder
-cd fritzing
 echo "compliling... if this is not taking a long time, something is probably wrong"
 $QT_HOME/bin/qmake CONFIG+=release DEFINES+=$quazip
 make
-cd ..
 
 release_folder="fritzing-$relname.linux.$arch"
 
@@ -89,8 +80,14 @@ echo "making release folder: $release_folder"
 mkdir ../$release_folder
 
 echo "copying release files"
-cp -rf fritzing/bins/ fritzing/parts/ fritzing/sketches/ fritzing/help/ fritzing/pdb/ fritzing/Fritzing fritzing/Fritzing.sh fritzing/Fritzing.1 fritzing/fritzing.desktop fritzing/fritzing.appdata.xml fritzing/README.txt fritzing/LICENSE.GPL2 fritzing/LICENSE.GPL3 ../$release_folder/
+cp -rf bins/ parts/ sketches/ help/ pdb/ Fritzing Fritzing.sh Fritzing.1 fritzing.desktop fritzing.rc fritzing.appdata.xml readme.md LICENSE.CC-BY-SA LICENSE.GPL2 LICENSE.GPL3 ../$release_folder/
 cd ../$release_folder
+
+echo "move parts into pdb folder - TEMPORARY WORKAROUND"
+mv parts/contrib/* pdb/contrib/
+mv parts/core/* pdb/core/
+mv parts/obsolete/* pdb/obsolete/
+mv parts/user/* pdb/user/
 
 echo "making library folders"
 mkdir lib
@@ -114,9 +111,10 @@ cp $QT_HOME/plugins/sqldrivers/libqsqlite.so sqldrivers
 cp $QT_HOME/plugins/platforms/libqxcb.so platforms
 
 echo "copying translations"
-cp ../../$compile_folder/fritzing/translations/ -r ../
+cp ../../$compile_folder/translations/ -r ../
 rm ../translations/*.ts  			# remove translation xml files, since we only need the binaries in the release
 find ../translations -name "*.qm" -size -128c -delete   # delete empty translation binaries
+
 cd ../../
 
 echo "compressing...."

@@ -30,6 +30,8 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 #include "consolewindow.h"
 #include "../debugdialog.h"
 #include "../utils/folderutils.h"
+#include "../sketchtoolbutton.h"
+
 
 #include <QFileInfoList>
 #include <QFileInfo>
@@ -41,9 +43,6 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 #include <QSplitter>
 #include <QHBoxLayout>
 #include <QVBoxLayout>
-
-#include <../../sketchtoolbutton.h>
-
 
 static const QChar Quote91Char(0x91);
 static QString UnableToProgramMessage;

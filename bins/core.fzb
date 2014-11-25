@@ -17,21 +17,21 @@
           </iconView>
         </views>
       </instance>
-        <instance moduleIdRef="100milCeramicCapacitorModuleID" modelIndex="5" path="parts/core/capacitor_ceramic_100mil.fzp">
+        <instance moduleIdRef="100milCeramicCapacitorModuleID" modelIndex="5" path="capacitor_ceramic_100mil.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
                 </iconView>
             </views>
         </instance>
-        <instance moduleIdRef="100milTantalumCapacitorModuleID" modelIndex="6" path="parts/core/capacitor_tantalum_100mil.fzp">
+        <instance moduleIdRef="100milTantalumCapacitorModuleID" modelIndex="6" path="capacitor_tantalum_100mil.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
                 </iconView>
             </views>
         </instance>
-        <instance moduleIdRef="SmallElectrolyticCapacitorModuleID" modelIndex="7" path="parts/core/capacitor_electrolytic_small.fzp">
+        <instance moduleIdRef="SmallElectrolyticCapacitorModuleID" modelIndex="7" path="capacitor_electrolytic_small.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
@@ -39,22 +39,14 @@
             </views>
         </instance>
 		
-        <instance moduleIdRef="56bed03878064b8286b71d5240035138InductorModuleID" modelIndex="8" path="parts/core/inductor.fzp">
+        <instance moduleIdRef="56bed03878064b8286b71d5240035138InductorModuleID" modelIndex="8" path="inductor.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
                 </iconView>
             </views>
         </instance>
-        <instance moduleIdRef="3254CBFC44diode" modelIndex="9" path="parts/core/diode_1N4001_300mil.fzp">
-            <views>
-                <iconView layer="icon">
-                    <geometry z="-1" x="-1" y="-1"/>
-                </iconView>
-            </views>
-        </instance>
-	
-        <instance moduleIdRef="2244EBEC21e" modelIndex="10" path="parts/core/transistor_signal_PNP_TO92_EBC.fzp">
+        <instance moduleIdRef="3254CBFC44diode" modelIndex="9" path="diode_1N4001_300mil.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
@@ -62,14 +54,22 @@
             </views>
         </instance>
 	
-        <instance moduleIdRef="NPN-to92-ebc" modelIndex="11" path="parts/core/transistor_signal_NPN_TO92_EBC.fzp">
+        <instance moduleIdRef="2244EBEC21e" modelIndex="10" path="transistor_signal_PNP_TO92_EBC.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
                 </iconView>
             </views>
         </instance>
-        <instance moduleIdRef="1001ABDC27" modelIndex="12" path="parts/core/basic_fet_p.fzp">
+	
+        <instance moduleIdRef="NPN-to92-ebc" modelIndex="11" path="transistor_signal_NPN_TO92_EBC.fzp">
+            <views>
+                <iconView layer="icon">
+                    <geometry z="-1" x="-1" y="-1"/>
+                </iconView>
+            </views>
+        </instance>
+        <instance moduleIdRef="1001ABDC27" modelIndex="12" path="basic_fet_p.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
@@ -77,7 +77,7 @@
             </views>
         </instance>
 	<!--
-        <instance moduleIdRef="1001ABDC04" modelIndex="12" path="parts/core/basic_fet_n.fzp">
+        <instance moduleIdRef="1001ABDC04" modelIndex="12" path="basic_fet_n.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
@@ -85,7 +85,7 @@
             </views>
         </instance>
 	-->
-        <instance moduleIdRef="mystery_part_sip_3_100mil" modelIndex="47" path="parts/core/mystery_part_3.fzp">
+        <instance moduleIdRef="mystery_part_sip_3_100mil" modelIndex="47" path="mystery_part_3.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
@@ -101,147 +101,147 @@
         </views>
       </instance>
 	
-        <instance moduleIdRef="3234DBDC00PotentiometerModuleID" modelIndex="13" path="parts/core/basic_poti.fzp">
+        <instance moduleIdRef="3234DBDC00PotentiometerModuleID" modelIndex="13" path="basic_poti.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
                 </iconView>
             </views>
         </instance>
-        <instance moduleIdRef="alps-starter-pot9mm" modelIndex="14" path="parts/core/alps-starter-pot9mm.fzp">
+        <instance moduleIdRef="alps-starter-pot9mm" modelIndex="14" path="alps-starter-pot9mm.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
                 </iconView>
             </views>
         </instance>
-        <instance moduleIdRef="3b1a8578c21940dfe27253a7b57c81f5PotentiometerModuleID" modelIndex="14" path="parts/core/pot-slider.fzp">
+        <instance moduleIdRef="3b1a8578c21940dfe27253a7b57c81f5PotentiometerModuleID" modelIndex="14" path="pot-slider.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
                 </iconView>
             </views>
         </instance>
-       <instance moduleIdRef="c7acdd26c5e6355cb2e7e05c0aa975c0PotentiometerModuleID" modelIndex="14" path="parts/core/AD5206 Digital Potentiometer.fzp">
+       <instance moduleIdRef="c7acdd26c5e6355cb2e7e05c0aa975c0PotentiometerModuleID" modelIndex="14" path="AD5206 Digital Potentiometer.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
                 </iconView>
             </views>
         </instance>
-       <instance moduleIdRef="trimmer_3_1_vVariableCapacitorModuleID" modelIndex="14" path="parts/core/trimmer_3_1_v.fzp">
+       <instance moduleIdRef="trimmer_3_1_vVariableCapacitorModuleID" modelIndex="14" path="trimmer_3_1_v.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
                 </iconView>
             </views>
         </instance>
-       <instance moduleIdRef="ALPS_STEC12E07" modelIndex="14" path="parts/core/Rotary_Encoder.fzp">
+       <instance moduleIdRef="ALPS_STEC12E07" modelIndex="14" path="Rotary_Encoder.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
                 </iconView>
             </views>
         </instance>
-        <instance moduleIdRef="20A9BBEE34_ST-2leadbutton-horizon" modelIndex="15" path="parts/core/pushbutton_2_horizontal.fzp">
+        <instance moduleIdRef="20A9BBEE34_ST-2leadbutton-horizon" modelIndex="15" path="pushbutton_2_horizontal.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
                 </iconView>
             </views>
         </instance>
-        <instance moduleIdRef="20A9BBEE34_ST" modelIndex="16" path="parts/core/pushbutton_4_horizontal.fzp">
+        <instance moduleIdRef="20A9BBEE34_ST" modelIndex="16" path="pushbutton_4_horizontal.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
                 </iconView>
             </views>
         </instance>
-        <instance moduleIdRef="1238DBDC00-toggle-switch" modelIndex="17" path="parts/core/basic-toggle-switch.fzp">
+        <instance moduleIdRef="1238DBDC00-toggle-switch" modelIndex="17" path="basic-toggle-switch.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
                 </iconView>
             </views>
         </instance>
-        <instance moduleIdRef="d206ca0d70364191f0b3fd30d5e53c5d" modelIndex="18" path="parts/core/Tilt switch.fzp">
+        <instance moduleIdRef="d206ca0d70364191f0b3fd30d5e53c5d" modelIndex="18" path="Tilt switch.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
                 </iconView>
             </views>
         </instance>
-        <instance moduleIdRef="1000ABDD10011" modelIndex="19" path="parts/core/basic_fsr.fzp">
+        <instance moduleIdRef="1000ABDD10011" modelIndex="19" path="basic_fsr.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
                 </iconView>
             </views>
         </instance>
-       <instance moduleIdRef="fa3e296736059e8c25d88ac262af999a" modelIndex="19" path="parts/core/Basic Force Sensing Resistor (FSR).fzp">
+       <instance moduleIdRef="fa3e296736059e8c25d88ac262af999a" modelIndex="19" path="Basic Force Sensing Resistor (FSR).fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
                 </iconView>
             </views>
         </instance>
-        <instance moduleIdRef="2010BBCD20113" modelIndex="20" path="parts/core/LDR_photocell_300mil.fzp">
+        <instance moduleIdRef="2010BBCD20113" modelIndex="20" path="LDR_photocell_300mil.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
                 </iconView>
             </views>
         </instance>
-        <instance moduleIdRef="beab33bd7feee277622ef76dd6e79e4d" modelIndex="20" path="parts/core/infrared_proximity_sensor.fzp">
+        <instance moduleIdRef="beab33bd7feee277622ef76dd6e79e4d" modelIndex="20" path="infrared_proximity_sensor.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
                 </iconView>
             </views>
         </instance>
-        <instance moduleIdRef="ADXL335_v13" modelIndex="20" path="parts/core/ADXL335_v13.fzp">
+        <instance moduleIdRef="ADXL335_v13" modelIndex="20" path="ADXL335_v13.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
                 </iconView>
             </views>
         </instance>
-        <instance moduleIdRef="LM35_THT" modelIndex="21" path="parts/core/lm35.fzp">
+        <instance moduleIdRef="LM35_THT" modelIndex="21" path="lm35.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
                 </iconView>
             </views>
         </instance>
-       <instance moduleIdRef="ad901601e6d29266846fc9e4568504b6" modelIndex="21" path="parts/core/Barometric Pressure Sensor.fzp">
+       <instance moduleIdRef="ad901601e6d29266846fc9e4568504b6" modelIndex="21" path="Barometric Pressure Sensor.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
                 </iconView>
             </views>
         </instance>
-        <instance moduleIdRef="c0e65b2d0c9003507cf4a3222e995a45" modelIndex="22" path="parts/core/reedSwitch_500mil.fzp">
+        <instance moduleIdRef="c0e65b2d0c9003507cf4a3222e995a45" modelIndex="22" path="reedSwitch_500mil.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
                 </iconView>
             </views>
         </instance>
-        <instance moduleIdRef="6d07f5eae4523283f5da4171f9c54e25" modelIndex="23" path="parts/core/Antenna.fzp">
+        <instance moduleIdRef="6d07f5eae4523283f5da4171f9c54e25" modelIndex="23" path="Antenna.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
                 </iconView>
             </views>
         </instance>
-        <instance moduleIdRef="a975d1270bd55d6fc3916947793f1a57" modelIndex="31" path="parts/core/rfid-reader.fzp">
+        <instance moduleIdRef="a975d1270bd55d6fc3916947793f1a57" modelIndex="31" path="rfid-reader.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
                 </iconView>
             </views>
         </instance>
-        <instance moduleIdRef="Humidity_and_Temperature_Sensor_RHT03_6" modelIndex="31" path="parts/core/Humidity_and_Temperature_Sensor_RHT03.fzp">
+        <instance moduleIdRef="Humidity_and_Temperature_Sensor_RHT03_6" modelIndex="31" path="Humidity_and_Temperature_Sensor_RHT03.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
@@ -259,21 +259,21 @@
         </views>
       </instance>
       
-        <instance moduleIdRef="5mmColorLEDModuleID" modelIndex="24" path="parts/core/LED-generic-5mm.fzp">
+        <instance moduleIdRef="5mmColorLEDModuleID" modelIndex="24" path="LED-generic-5mm.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
                 </iconView>
             </views>
         </instance>
-        <instance moduleIdRef="d4d5af9700923b8a114f57961f29a8a0" modelIndex="24" path="parts/core/led-rgb-4pin-cathode.fzp">
+        <instance moduleIdRef="d4d5af9700923b8a114f57961f29a8a0" modelIndex="24" path="led-rgb-4pin-cathode.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
                 </iconView>
             </views>
         </instance>
-	<instance moduleIdRef="AnodeLEDSuperfluxModuleID" modelIndex="24" path="parts/core/led_flux_blue_anode.fzp">
+	<instance moduleIdRef="AnodeLEDSuperfluxModuleID" modelIndex="24" path="led_flux_blue_anode.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
@@ -281,7 +281,7 @@
             </views>
         </instance>
 
-	<instance moduleIdRef="Prolight RGB 3 Watt Star" modelIndex="24" path="parts/core/LED_Prolight_RGB.fzp">
+	<instance moduleIdRef="Prolight RGB 3 Watt Star" modelIndex="24" path="LED_Prolight_RGB.fzp">
 	    <views>
 		<iconView layer="icon">
 		    <geometry z="-1" x="-1" y="-1"/>
@@ -289,7 +289,7 @@
 	    </views>
 	</instance>
 
-        <instance moduleIdRef="7segment10an" modelIndex="24" path="parts/core/7segment_9,9_an.fzp">
+        <instance moduleIdRef="7segment10an" modelIndex="24" path="7segment_9,9_an.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
@@ -297,7 +297,7 @@
             </views>
         </instance>
 
-	<instance moduleIdRef="LED_Matrix_Kingbright_TA07-11" modelIndex="24" path="parts/core/LED_Matrix_Kingbright_TA07-11.fzp">
+	<instance moduleIdRef="LED_Matrix_Kingbright_TA07-11" modelIndex="24" path="LED_Matrix_Kingbright_TA07-11.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
@@ -305,77 +305,77 @@
             </views>
         </instance>
 
-        <instance moduleIdRef="LCD-GDM1602K" modelIndex="24" path="parts/core/lcd-GDM1602K.fzp">
+        <instance moduleIdRef="LCD-GDM1602K" modelIndex="24" path="lcd-GDM1602K.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
                 </iconView>
             </views>
         </instance>
-        <instance moduleIdRef="GLCD128x64" modelIndex="24" path="parts/core/GLCD 128x64.fzp">
+        <instance moduleIdRef="GLCD128x64" modelIndex="24" path="GLCD 128x64.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
                 </iconView>
             </views>
         </instance>
-        <instance moduleIdRef="8abf6496b5d466c7a1893c17a296a676" modelIndex="25" path="parts/core/piezo sensor.fzp">
+        <instance moduleIdRef="8abf6496b5d466c7a1893c17a296a676" modelIndex="25" path="piezo sensor.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
                 </iconView>
             </views>
         </instance>
-        <instance moduleIdRef="5c5090e231dbe30e6bd4b9e2e7949902" modelIndex="25" path="parts/core/loudspeaker.fzp">
+        <instance moduleIdRef="5c5090e231dbe30e6bd4b9e2e7949902" modelIndex="25" path="loudspeaker.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
                 </iconView>
             </views>
         </instance>
-        <instance moduleIdRef="415c9d899a1e7de6c023ea0731bab117" modelIndex="25" path="parts/core/microphone.fzp">
+        <instance moduleIdRef="415c9d899a1e7de6c023ea0731bab117" modelIndex="25" path="microphone.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
                 </iconView>
             </views>
         </instance>
-        <instance moduleIdRef="1000FADF10011leg" modelIndex="26" path="parts/core/dc_motor.fzp">
+        <instance moduleIdRef="1000FADF10011leg" modelIndex="26" path="dc_motor.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
                 </iconView>
             </views>
         </instance>
-			  <instance moduleIdRef="EDGY_motor_control" modelIndex="26" path="parts/core/EDGY_motor_control.fzp">
+			  <instance moduleIdRef="EDGY_motor_control" modelIndex="26" path="EDGY_motor_control.fzp">
 			      <views>
 			          <iconView layer="icon">
 			              <geometry z="-1" x="-1" y="-1"/>
 			          </iconView>
 			      </views>
 			  </instance>
-        <instance moduleIdRef="3234DBDC80leg" modelIndex="27" path="parts/core/servo.fzp">
+        <instance moduleIdRef="3234DBDC80leg" modelIndex="27" path="servo.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
                 </iconView>
             </views>
         </instance>
-        <instance moduleIdRef="7d0bc366bcac9395c747f3a92e2ff843leg" modelIndex="28" path="parts/core/stepper_motor_bipolar.fzp">
+        <instance moduleIdRef="7d0bc366bcac9395c747f3a92e2ff843leg" modelIndex="28" path="stepper_motor_bipolar.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
                 </iconView>
             </views>
         </instance>
-        <instance moduleIdRef="9f2b90fcf9c65c9bc09d570e3442069e" modelIndex="28" path="parts/core/solenoid.fzp">
+        <instance moduleIdRef="9f2b90fcf9c65c9bc09d570e3442069e" modelIndex="28" path="solenoid.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
                 </iconView>
             </views>
         </instance>
-		<instance moduleIdRef="045cef49a96039c64e7363608e127209" modelIndex="1000" path="parts/core/Dual_VNH2SP30_Motor_Driver.fzp">
+		<instance moduleIdRef="045cef49a96039c64e7363608e127209" modelIndex="1000" path="Dual_VNH2SP30_Motor_Driver.fzp">
             <views>
                 <iconView layer="">
                     <geometry z="0" x="-1" y="-1"/>
@@ -385,21 +385,21 @@
                 </iconView>
             </views>
         </instance>
-        <instance moduleIdRef="1099ABDE24_ST_relay" modelIndex="29" path="parts/core/basic-relay.fzp">
+        <instance moduleIdRef="1099ABDE24_ST_relay" modelIndex="29" path="basic-relay.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
                 </iconView>
             </views>
         </instance>
-        <instance moduleIdRef="71d4db74a3a0ec43d9303ddffee7361b" modelIndex="29" path="parts/core/DIP_Relay_D31A.fzp">
+        <instance moduleIdRef="71d4db74a3a0ec43d9303ddffee7361b" modelIndex="29" path="DIP_Relay_D31A.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
                 </iconView>
             </views>
         </instance>
-        <instance moduleIdRef="93d4585be720f3982141f4d032f44c8e" modelIndex="30" path="parts/core/peltier element.fzp">
+        <instance moduleIdRef="93d4585be720f3982141f4d032f44c8e" modelIndex="30" path="peltier element.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
@@ -416,28 +416,28 @@
         </views>
       </instance>
 
-      <instance moduleIdRef="4f6dc41d6d2f66341ea506cdaf0e797e_2" modelIndex="37" path="parts/core/Textile Analog Pressure Sensor.fzp">
+      <instance moduleIdRef="4f6dc41d6d2f66341ea506cdaf0e797e_2" modelIndex="37" path="Textile Analog Pressure Sensor.fzp">
         <views>
           <iconView layer="icon">
             <geometry z="-1" x="-1" y="-1"></geometry>
           </iconView>
         </views>
       </instance>
-      <instance moduleIdRef="ab15a34dfcf83e23a26e83fe8a5a4dac_2" modelIndex="37" path="parts/core/Textile Potentiometer.fzp">
+      <instance moduleIdRef="ab15a34dfcf83e23a26e83fe8a5a4dac_2" modelIndex="37" path="Textile Potentiometer.fzp">
         <views>
           <iconView layer="icon">
             <geometry z="-1" x="-1" y="-1"></geometry>
           </iconView>
         </views>
       </instance>
-      <instance moduleIdRef="4d1eb8f243c1aba7afe676122ea516cc_2" modelIndex="37" path="parts/core/Textile Pushbutton.fzp">
+      <instance moduleIdRef="4d1eb8f243c1aba7afe676122ea516cc_2" modelIndex="37" path="Textile Pushbutton.fzp">
         <views>
           <iconView layer="icon">
             <geometry z="-1" x="-1" y="-1"></geometry>
           </iconView>
         </views>
       </instance>
-      <instance moduleIdRef="fa46ea3312d60697b8e907a5c75db23d_2" modelIndex="37" path="parts/core/Textile Stretch Sensor.fzp">
+      <instance moduleIdRef="fa46ea3312d60697b8e907a5c75db23d_2" modelIndex="37" path="Textile Stretch Sensor.fzp">
         <views>
           <iconView layer="icon">
             <geometry z="-1" x="-1" y="-1"></geometry>
@@ -454,56 +454,56 @@
         </views>
       </instance>
 
-      <instance moduleIdRef="generic_ic_dip_8_300mil" modelIndex="37" path="parts/core/generic_ic_dip_8_300mil.fzp">
+      <instance moduleIdRef="generic_ic_dip_8_300mil" modelIndex="37" path="generic_ic_dip_8_300mil.fzp">
         <views>
           <iconView layer="icon">
             <geometry z="-1" x="-1" y="-1"></geometry>
           </iconView>
         </views>
       </instance>
-        <instance moduleIdRef="8e4b4f3e54f56b3f712afc6a8e6a8a71" modelIndex="32" path="parts/core/atmega168.fzp">
+        <instance moduleIdRef="8e4b4f3e54f56b3f712afc6a8e6a8a71" modelIndex="32" path="atmega168.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
                 </iconView>
             </views>
         </instance>
-        <instance moduleIdRef="a59353bd0db0225dc22770e292c622f3" modelIndex="33" path="parts/core/lm358.fzp">
+        <instance moduleIdRef="a59353bd0db0225dc22770e292c622f3" modelIndex="33" path="lm358.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
                 </iconView>
             </views>
         </instance>
-        <instance moduleIdRef="1001AAAB555Timer" modelIndex="34" path="parts/core/555timer.fzp">
+        <instance moduleIdRef="1001AAAB555Timer" modelIndex="34" path="555timer.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
                 </iconView>
             </views>
         </instance>
-        <instance moduleIdRef="1001AAACOptocoupler" modelIndex="35" path="parts/core/optocoupler.fzp">
+        <instance moduleIdRef="1001AAACOptocoupler" modelIndex="35" path="optocoupler.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
                 </iconView>
             </views>
         </instance>
-        <instance moduleIdRef="a4f38a10-dd92-11dd-a3e2-001f5b3a17a4" modelIndex="36" path="parts/core/h-bridge.fzp">
+        <instance moduleIdRef="a4f38a10-dd92-11dd-a3e2-001f5b3a17a4" modelIndex="36" path="h-bridge.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
                 </iconView>
             </views>
         </instance>
-      <instance moduleIdRef="1a7828b6466fac9fd042221e931124c4" modelIndex="36" path="parts/core/74HC595.fzp">
+      <instance moduleIdRef="1a7828b6466fac9fd042221e931124c4" modelIndex="36" path="74HC595.fzp">
         <views>
           <iconView layer="icon">
             <geometry z="-1" x="-1" y="-1"/>
           </iconView>
         </views>
       </instance>
-	<instance moduleIdRef="HEF4094" modelIndex="36" path="parts/core/HEF4094.fzp">
+	<instance moduleIdRef="HEF4094" modelIndex="36" path="HEF4094.fzp">
         <views>
           <iconView layer="icon">
             <geometry z="-1" x="-1" y="-1"/>
@@ -559,14 +559,14 @@
           </iconView>
         </views>
       </instance>
-        <instance moduleIdRef="CrystalModuleID" modelIndex="38" path="parts/core/crystal.fzp">
+        <instance moduleIdRef="CrystalModuleID" modelIndex="38" path="crystal.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
                 </iconView>
             </views>
         </instance>
-        <instance moduleIdRef="37asdf3c843a2127a0e499f8a0b3ef6aCrystalModuleID" modelIndex="38" path="parts/core/resonator-3pin.fzp">
+        <instance moduleIdRef="37asdf3c843a2127a0e499f8a0b3ef6aCrystalModuleID" modelIndex="38" path="resonator-3pin.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
@@ -583,28 +583,28 @@
         </views>
       </instance>
 	
-        <instance moduleIdRef="1000AFDF10011leg" modelIndex="39" path="parts/core/battery-AA.fzp">
+        <instance moduleIdRef="1000AFDF10011leg" modelIndex="39" path="battery-AA.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
                 </iconView>
             </views>
         </instance>
-        <instance moduleIdRef="d8f570d723ea4d14f9b61b34575a9699" modelIndex="40" path="parts/core/Power plug.fzp">
+        <instance moduleIdRef="d8f570d723ea4d14f9b61b34575a9699" modelIndex="40" path="Power plug.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
                 </iconView>
             </views>
         </instance>
-        <instance moduleIdRef="1238DBDC00-voltage-reg_7805" modelIndex="41" path="parts/core/voltage_regulator_7805.fzp">
+        <instance moduleIdRef="1238DBDC00-voltage-reg_7805" modelIndex="41" path="voltage_regulator_7805.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
                 </iconView>
             </views>
         </instance>
-       <instance moduleIdRef="fuse_with_handler_cff5" modelIndex="41" path="parts/core/Fuse_with_Handler.fzp">
+       <instance moduleIdRef="fuse_with_handler_cff5" modelIndex="41" path="Fuse_with_Handler.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
@@ -625,140 +625,140 @@
         </views>
       </instance>
        
-        <instance moduleIdRef="arduino_Uno_Rev3(fix)" modelIndex="48" path="parts/core/Arduino_UNO_R3(fix).fzp">
+        <instance moduleIdRef="arduino_Uno_Rev3(fix)" modelIndex="48" path="Arduino_UNO_R3(fix).fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="0" x="0" y="0"/>
                 </iconView>
             </views>
         </instance>	
-        <instance moduleIdRef="Raspberry Pi B+" modelIndex="48" path="parts/core/Raspberry_Pi_B+.fzp">
+        <instance moduleIdRef="Raspberry Pi B+" modelIndex="48" path="Raspberry_Pi_B+.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
                 </iconView>
             </views>
         </instance> 	
-         <instance moduleIdRef="ti_launchpad-rev1.5" modelIndex="48" path="parts/core/TI Launchpad MSP430G2.fzp">
+         <instance moduleIdRef="ti_launchpad-rev1.5" modelIndex="48" path="TI Launchpad MSP430G2.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
                 </iconView>
             </views>
         </instance>
-        <instance moduleIdRef="intel-arduino_galileo-(simple)" modelIndex="48" path="parts/core/intel-arduino_galileo-(simple).fzp">
+        <instance moduleIdRef="intel-arduino_galileo-(simple)" modelIndex="48" path="intel-arduino_galileo-(simple).fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
                 </iconView>
             </views>
         </instance>  
-        <instance moduleIdRef="SPARKCORE_v1" modelIndex="48" path="parts/core/SPARKCORE_v1.fzp">
+        <instance moduleIdRef="SPARKCORE_v1" modelIndex="48" path="SPARKCORE_v1.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
                 </iconView>
             </views>
 		</instance>
-  <instance moduleIdRef="linino_one_rev1" modelIndex="48" path="parts/core/linino_one(rev1).fzp">
+  <instance moduleIdRef="linino_one_rev1" modelIndex="48" path="linino_one(rev1).fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
                 </iconView>
             </views>
         </instance>
-          <instance moduleIdRef="Bean_revE" modelIndex="48" path="parts/core/Bean_revE.fzp">
+          <instance moduleIdRef="Bean_revE" modelIndex="48" path="Bean_revE.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
                 </iconView>
             </views>
         </instance>
-                  <instance moduleIdRef="pinoccio_board" modelIndex="48" path="parts/core/pinoccio.fzp">
+                  <instance moduleIdRef="pinoccio_board" modelIndex="48" path="pinoccio.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
                 </iconView>
             </views>
         </instance>
-            <instance moduleIdRef="udoo_dual" modelIndex="48" path="parts/core/udoo_dual.fzp">
+            <instance moduleIdRef="udoo_dual" modelIndex="48" path="udoo_dual.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
                 </iconView>
             </views>
         </instance>
-		        <instance moduleIdRef="teensy_3.1" modelIndex="48" path="parts/core/teensy_3.1.fzp">
+		        <instance moduleIdRef="teensy_3.1" modelIndex="48" path="teensy_3.1.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
                 </iconView>
             </views>
         </instance>
-        <instance moduleIdRef="Adafruit_Atmega32u4_Breakout" modelIndex="48" path="parts/core/Adafruit_Atmega32u4_Breakout.fzp">
+        <instance moduleIdRef="Adafruit_Atmega32u4_Breakout" modelIndex="48" path="Adafruit_Atmega32u4_Breakout.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
                 </iconView>
             </views>
         </instance>
-        <instance moduleIdRef="chipkit_WF32" modelIndex="3" path="parts/core/chipkit_WF32.fzp">
+        <instance moduleIdRef="chipkit_WF32" modelIndex="3" path="chipkit_WF32.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
                 </iconView>
             </views>
         </instance>
-        <instance moduleIdRef="arduino_Yun(rev1)" modelIndex="1" path="parts/core/arduino_Yun(rev1).fzp">
+        <instance moduleIdRef="arduino_Yun(rev1)" modelIndex="1" path="arduino_Yun(rev1).fzp">
           <views>
               <iconView layer="icon">
                   <geometry z="-1" x="-1" y="-1"/>
               </iconView>
           </views>
         </instance>
-        <instance moduleIdRef="2c9d427b475ef8d07dc752a4362af0ae" modelIndex="48" path="parts/core/controller_wiring.fzp">
+        <instance moduleIdRef="2c9d427b475ef8d07dc752a4362af0ae" modelIndex="48" path="controller_wiring.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
                 </iconView>
             </views>
         </instance>
-        <instance moduleIdRef="81591c6c31ccf12f0f3ccec5f150df2d" modelIndex="48" path="parts/core/usbadapter_wiring.fzp">
+        <instance moduleIdRef="81591c6c31ccf12f0f3ccec5f150df2d" modelIndex="48" path="usbadapter_wiring.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
                 </iconView>
             </views>
         </instance>
-        <instance moduleIdRef="346b613c666d64fc5ac622407ace7130" modelIndex="48" path="parts/core/controller_mbed.fzp">
+        <instance moduleIdRef="346b613c666d64fc5ac622407ace7130" modelIndex="48" path="controller_mbed.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
                 </iconView>
             </views>
         </instance>
-        <instance moduleIdRef="760832bc79fe1f34e99f420ad872a0b8" modelIndex="48" path="parts/core/BASIC_Stamp_2.fzp">
+        <instance moduleIdRef="760832bc79fe1f34e99f420ad872a0b8" modelIndex="48" path="BASIC_Stamp_2.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
                 </iconView>
             </views>
         </instance>
-        <instance moduleIdRef="d30f97b6fbe1asdad59ea7f0d636a7a" modelIndex="48" path="parts/core/controller_propeller_d40.fzp">
+        <instance moduleIdRef="d30f97b6fbe1asdad59ea7f0d636a7a" modelIndex="48" path="controller_propeller_d40.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
                 </iconView>
             </views>
         </instance>
-        <instance moduleIdRef="RevEd_PICAXE_08" modelIndex="48" path="parts/core/PICAXE_08.fzp">
+        <instance moduleIdRef="RevEd_PICAXE_08" modelIndex="48" path="PICAXE_08.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
                 </iconView>
             </views>
         </instance>
-        <instance moduleIdRef="c4256c251d53ee723058f86aa6d016a2" modelIndex="48" path="parts/core/gogoboard 4.0.fzp">
+        <instance moduleIdRef="c4256c251d53ee723058f86aa6d016a2" modelIndex="48" path="gogoboard 4.0.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
@@ -766,7 +766,7 @@
             </views>
         </instance>
 
-        <instance moduleIdRef="jlpcb-128" modelIndex="48" path="parts/core/jlpcb-128.fzp">
+        <instance moduleIdRef="jlpcb-128" modelIndex="48" path="jlpcb-128.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
@@ -782,7 +782,7 @@
         </views>
       </instance>
       
-      <instance moduleIdRef="generic_female_pin_header_2_100mil" modelIndex="45" path="parts/core/generic_female_pin_header_2_100mil.fzp">
+      <instance moduleIdRef="generic_female_pin_header_2_100mil" modelIndex="45" path="generic_female_pin_header_2_100mil.fzp">
         <views>
           <iconView layer="icon">
             <geometry z="-1" x="-1" y="-1"></geometry>
@@ -790,7 +790,7 @@
         </views>
       </instance>
       
-      <instance moduleIdRef="generic_shrouded_pin_header_10_100mil" modelIndex="45" path="parts/core/generic_shrouded_pin_header_10_100mil.fzp">
+      <instance moduleIdRef="generic_shrouded_pin_header_10_100mil" modelIndex="45" path="generic_shrouded_pin_header_10_100mil.fzp">
         <views>
           <iconView layer="icon">
             <geometry z="-1" x="-1" y="-1"></geometry>
@@ -798,84 +798,84 @@
         </views>
       </instance>
 
-      <instance moduleIdRef="screw_terminal_2_3.5mm" modelIndex="46" path="parts/core/screw_terminal_2_3.5mm.fzp">
+      <instance moduleIdRef="screw_terminal_2_3.5mm" modelIndex="46" path="screw_terminal_2_3.5mm.fzp">
         <views>
           <iconView layer="icon">
             <geometry z="-1" x="-1" y="-1"></geometry>
           </iconView>
         </views>
       </instance>
-      <instance moduleIdRef="DB25F" modelIndex="46" path="parts/core/DB25F.fzp">
+      <instance moduleIdRef="DB25F" modelIndex="46" path="DB25F.fzp">
         <views>
           <iconView layer="icon">
             <geometry z="-1" x="-1" y="-1"></geometry>
           </iconView>
         </views>
       </instance>
-        <instance moduleIdRef="5e3b9f7a14a1627168e700bfc9a03b3c" modelIndex="43" path="parts/core/USB connector.fzp">
+        <instance moduleIdRef="5e3b9f7a14a1627168e700bfc9a03b3c" modelIndex="43" path="USB connector.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
                 </iconView>
             </views>
         </instance>
-        <instance moduleIdRef="c04a5dd707ca537800655cb3aa4b2048" modelIndex="44" path="parts/core/din-5_midi_connector.fzp">
+        <instance moduleIdRef="c04a5dd707ca537800655cb3aa4b2048" modelIndex="44" path="din-5_midi_connector.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
                 </iconView>
             </views>
         </instance>
-        <instance moduleIdRef="stereo-jack-3_5mm" modelIndex="44" path="parts/core/stereo-jack-3_5mm.fzp">
+        <instance moduleIdRef="stereo-jack-3_5mm" modelIndex="44" path="stereo-jack-3_5mm.fzp">
             <views>
                 <iconView layer="icon"> 
                     <geometry z="-1" x="-1" y="-1"/> 
                 </iconView>
             </views>
         </instance>
-        <instance moduleIdRef="15719464aa8d63048081b2444ea6d39c" modelIndex="44" path="parts/core/microSD-socket-molex-502774-0891.fzp">
+        <instance moduleIdRef="15719464aa8d63048081b2444ea6d39c" modelIndex="44" path="microSD-socket-molex-502774-0891.fzp">
             <views>
                 <iconView layer="icon"> 
                     <geometry z="-1" x="-1" y="-1"/> 
                 </iconView>
             </views>
         </instance>
-        <instance moduleIdRef="1a4bfb87a0f0fd2c59be43f3497d72e6" modelIndex="42" path="parts/core/xbee.fzp">
+        <instance moduleIdRef="1a4bfb87a0f0fd2c59be43f3497d72e6" modelIndex="42" path="xbee.fzp">
             <views>
                 <iconView layer="icon">
                   <geometry z="-1" x="-1" y="-1"/>
                 </iconView>
             </views>
         </instance>
-	<instance moduleIdRef="Shield_Eth06-PoE" modelIndex="48" path="parts/core/Shield_Eth06-PoE.fzp">
+	<instance moduleIdRef="Shield_Eth06-PoE" modelIndex="48" path="Shield_Eth06-PoE.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
                 </iconView>
             </views>
         </instance>
-	<instance moduleIdRef="WIZ820io" modelIndex="48" path="parts/core/WIZ820io.fzp">
+	<instance moduleIdRef="WIZ820io" modelIndex="48" path="WIZ820io.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
                 </iconView>
             </views>
         </instance>
-	<instance moduleIdRef="proto_shield_v6MEGA" modelIndex="48" path="parts/core/proto_shield_v6MEGA.fzp">
+	<instance moduleIdRef="proto_shield_v6MEGA" modelIndex="48" path="proto_shield_v6MEGA.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
                 </iconView>
             </views>
         </instance>
-	<instance moduleIdRef="jlpcb-104" modelIndex="48" path="parts/core/jlpcb-104.fzp">
+	<instance moduleIdRef="jlpcb-104" modelIndex="48" path="jlpcb-104.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
                 </iconView>
             </views>
         </instance>
-	<instance moduleIdRef="jlpcb-089" modelIndex="48" path="parts/core/jlpcb-089.fzp">
+	<instance moduleIdRef="jlpcb-089" modelIndex="48" path="jlpcb-089.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
@@ -891,21 +891,21 @@
         </views>
       </instance>
 
-        <instance moduleIdRef="Breadboard-RSR03MB102-ModuleID" modelIndex="49" path="parts/core/breadboard.fzp">
+        <instance moduleIdRef="Breadboard-RSR03MB102-ModuleID" modelIndex="49" path="breadboard.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
                 </iconView>
             </views>
         </instance>        
-	<instance moduleIdRef="30.20PerfboardModuleID" modelIndex="49" path="parts/core/30.20PerboardModuleID.fzp">
+	<instance moduleIdRef="30.20PerfboardModuleID" modelIndex="49" path="30.20PerboardModuleID.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
                 </iconView>
             </views>
         </instance>
-	<instance moduleIdRef="30.20Stripboard2ModuleID" modelIndex="49" path="parts/core/30.20StripboardModuleID.fzp">
+	<instance moduleIdRef="30.20Stripboard2ModuleID" modelIndex="49" path="30.20StripboardModuleID.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>

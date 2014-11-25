@@ -16,9 +16,6 @@
               </iconView>
           </views>
       </instance>
-<<<<<<< HEAD
-      <instance moduleIdRef="arduino_Yun(rev1)" modelIndex="2" path="parts/core/arduino_Yun(rev1).fzp">
-=======
          <instance moduleIdRef="intel-arduino_galileo-(simple)" modelIndex="48" path="intel-arduino_galileo-(simple).fzp">
             <views>
                 <iconView layer="icon">
@@ -26,8 +23,7 @@
                 </iconView>
             </views>
         </instance>  
-                    <instance moduleIdRef="arduino_Yun(rev1)" modelIndex="2" path="arduino_Yun(rev1).fzp">
->>>>>>> 31717db7811d25fa3ba1ea4de3621f9868516b71
+        <instance moduleIdRef="arduino_Yun(rev1)" modelIndex="2" path="arduino_Yun(rev1).fzp">
           <views>
               <iconView layer="icon">
                   <geometry z="-1" x="-1" y="-1"/>

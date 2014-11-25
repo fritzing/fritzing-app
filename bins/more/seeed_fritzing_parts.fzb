@@ -9,10 +9,10 @@
           </iconView>
         </views>
       </instance>
-        <instance moduleIdRef="arch_pro_v1" modelIndex="5922" path="contrib/seeed_arch_pro_v1.fzp">
+        <instance moduleIdRef="arch_pro_v1" modelIndex="5922" path="seeed_arch_pro_v1.fzp">
             <views/>
         </instance>
-        <instance moduleIdRef="arch_v1.1" modelIndex="5923" path="contrib/seeed_arch_v1.1.fzp">
+        <instance moduleIdRef="arch_v1.1" modelIndex="5923" path="seeed_arch_v1.1.fzp">
             <views/>
         </instance>
                       <instance moduleIdRef="__spacer__" modelIndex="3" path="Seeeduino">
@@ -22,7 +22,7 @@
           </iconView>
         </views>
       </instance>   
-        <instance moduleIdRef="seeeduino_v3" modelIndex="5925" path="contrib/seeed_seeeduino_v3.fzp">
+        <instance moduleIdRef="seeeduino_v3" modelIndex="5925" path="seeed_seeeduino_v3.fzp">
             <views/>
         </instance>
         <instance moduleIdRef="__spacer__" modelIndex="3" path="Grove (sensors + acurators)">
@@ -32,31 +32,31 @@
           </iconView>
         </views>
       </instance>  
-        <instance moduleIdRef="grove_oled_128x96" modelIndex="5924" path="contrib/seeed_grove_oled_128x96.fzp">
+        <instance moduleIdRef="grove_oled_128x96" modelIndex="5924" path="seeed_grove_oled_128x96.fzp">
             <views/>
         </instance>
-        <instance moduleIdRef="grove_light_sensor" modelIndex="5927" path="contrib/seeed_grove_light_sensor.fzp">
+        <instance moduleIdRef="grove_light_sensor" modelIndex="5927" path="seeed_grove_light_sensor.fzp">
             <views/>
         </instance>
-        <instance moduleIdRef="grove_temperature_sensor" modelIndex="5928" path="contrib/seeed_grove_temperature_sensor.fzp">
+        <instance moduleIdRef="grove_temperature_sensor" modelIndex="5928" path="seeed_grove_temperature_sensor.fzp">
             <views/>
         </instance>
-        <instance moduleIdRef="grove_infrared_receiver" modelIndex="5929" path="contrib/seeed_grove_infrared_receiver.fzp">
+        <instance moduleIdRef="grove_infrared_receiver" modelIndex="5929" path="seeed_grove_infrared_receiver.fzp">
             <views/>
         </instance>
-        <instance moduleIdRef="grove_infrared_emitter" modelIndex="5930" path="contrib/seeed_grove_infrared_emitter.fzp">
+        <instance moduleIdRef="grove_infrared_emitter" modelIndex="5930" path="seeed_grove_infrared_emitter.fzp">
             <views/>
         </instance>
-        <instance moduleIdRef="grove_buzz" modelIndex="5932" path="contrib/seeed_grove_buzz.fzp">
+        <instance moduleIdRef="grove_buzz" modelIndex="5932" path="seeed_grove_buzz.fzp">
             <views/>
         </instance>
-        <instance moduleIdRef="grove_button" modelIndex="5940" path="contrib/seeed_grove_button.fzp">
+        <instance moduleIdRef="grove_button" modelIndex="5940" path="seeed_grove_button.fzp">
             <views/>
         </instance>
-        <instance moduleIdRef="grove_3axis_digital_accelerometer_16g" modelIndex="6148" path="contrib/seeed_grove_3axis_digital_accelerometer_16g.fzp">
+        <instance moduleIdRef="grove_3axis_digital_accelerometer_16g" modelIndex="6148" path="seeed_grove_3axis_digital_accelerometer_16g.fzp">
             <views/>
         </instance>
-        <instance moduleIdRef="grove_4digit_display" modelIndex="6149" path="contrib/seeed_grove_4digit_display.fzp">
+        <instance moduleIdRef="grove_4digit_display" modelIndex="6149" path="seeed_grove_4digit_display.fzp">
             <views/>
         </instance>
                 <instance moduleIdRef="__spacer__" modelIndex="3" path="Shields">

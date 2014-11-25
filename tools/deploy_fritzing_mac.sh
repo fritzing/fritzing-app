@@ -4,54 +4,63 @@ QTBIN=/Users/andre/Qt5.2.1/5.2.1/clang_64/bin
 tdir=`dirname $BASH_SOURCE`
 cd $tdir
 cd ..
-currentdir=$(pwd)
+workingdir=$(pwd)
 
-echo "current directory"
-echo $currentdir
+echo "current working directory"
+echo $workingdir
 
-echo building fritzing
+echo "building fritzing from working directory"
 $QTBIN/qmake -o Makefile phoenix.pro
 make release  # release is the type of build
-releasedir=$currentdir/../release64
+builddir=$workingdir/../release64
+echo "build directory"
+echo $builddir
 
-deploydir=$currentdir/../deploy-src
-echo "deploy directory"
-echo $deploydir
-echo $releasedir
+deploysrcdir=$workingdir/../deploy-src
+echo "deploy src directory"
+echo $deploysrcdir
 
-rm -rf $deploydir
-mkdir $deploydir
+rm -rf $deploysrcdir
+mkdir $deploysrcdir
 
-git clone --recursive https://github.com/fritzing/fritzing-app/ $deploydir
+git clone --recursive https://github.com/fritzing/fritzing-app/ $deploysrcdir
 
-fritzingdir=$currentdir/../deploy-app
-echo "fritzing directory"
-echo $fritzingdir
+deployappdir=$workingdir/../deploy-app
+echo "deploy app directory"
+echo $deployappdir
 
+rm -rf $deployappdir
+mkdir $deployappdir
+
+echo "moving parts to pdb - TEMPORARY WORKAROUND"
+mv $deploysrcdir/parts/contrib/* $deploysrcdir/pdb/contrib/
+mv $deploysrcdir/parts/core/* $deploysrcdir/pdb/core/
+mv $deploysrcdir/parts/obsolete/* $deploysrcdir/pdb/obsolete/
+mv $deploysrcdir/parts/user/* $deploysrcdir/pdb/user/
 
 echo "removing translations"
-rm $fritzingdir/translations/*.ts
-find $fritzingdir/translations -name "*.qm" -size -128c -delete
+rm $deploysrcdir/translations/*.ts
+find $deploysrcdir/translations -name "*.qm" -size -128c -delete
 
 echo "still more cleaning"
-rm $fritzingdir/control
-rm -rf $fritzingdir/deploy*
-rm -rf $fritzingdir/fritzing.*
-rm $fritzingdir/Fritzing.1
-rm $fritzingdir/Fritzing.sh
-rm -rf $fritzingdir/Fritzing*.plist
-rm -rf $fritzingdir/linguist*
-rm -rf $fritzingdir/phoenix*
-rm -rf $fritzingdir/pri/*
-rmdir $fritzingdir/pri
-rm -rf $fritzingdir/resources/*
-rmdir $fritzingdir/resources
-rm -rf $fritzingdir/src/*
-rmdir $fritzingdir/src
-rm -rf $fritzingdir/tools/*
-rmdir $fritzingdir/tools
+rm $deploysrcdir/control
+rm -rf $deploysrcdir/deploy*
+rm -rf $deploysrcdir/fritzing.*
+rm $deploysrcdir/Fritzing.1
+rm $deploysrcdir/Fritzing.sh
+rm -rf $deploysrcdir/Fritzing*.plist
+rm -rf $deploysrcdir/linguist*
+rm -rf $deploysrcdir/phoenix*
+rm -rf $deploysrcdir/pri/*
+rmdir $deploysrcdir/pri
+rm -rf $deploysrcdir/resources/*
+rmdir $deploysrcdir/resources
+rm -rf $deploysrcdir/src/*
+rmdir $deploysrcdir/src
+rm -rf $deploysrcdir/tools/*
+rmdir $deploysrcdir/tools
 
-echo mac deploy qt
-cp -r $releasedir/Fritzing.app $deploydir
-$QTBIN/macdeployqt $deploydir/Fritzing.app
-cp -r $fritzingdir/* $deploydir/Fritzing.app/Contents/MacOS
+echo "mac deploy qt"
+cp -r $builddir/Fritzing.app $deployappdir
+$QTBIN/macdeployqt $deployappdir/Fritzing.app
+cp -r $deploysrcdir/* $deployappdir/Fritzing.app/Contents/MacOS

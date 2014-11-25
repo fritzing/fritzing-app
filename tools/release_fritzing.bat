@@ -55,7 +55,7 @@ set RELEASE_SCRIPT="release_script"
 echo building fritzing
 nmake release
 
-set DESTDIR=..\..\release%2
+set DESTDIR=..\release%2
 set RELEASE_NAME=%DESTDIR%\forzip\fritzing.%1.%2.pc
 
 echo setting up deploy folder. ignore any "The system cannot find ..." messages
@@ -85,6 +85,8 @@ copy %QTBIN%\Qt5Sql.dll %DESTDIR%\deploy\Qt5Sql.dll
 copy %QTBIN%\Qt5Svg.dll %DESTDIR%\deploy\Qt5Svg.dll
 copy %QTBIN%\Qt5Widgets.dll %DESTDIR%\deploy\Qt5Widgets.dll
 copy %QTBIN%\Qt5Xml.dll %DESTDIR%\deploy\Qt5Xml.dll
+copy %QTBIN%\Qt5SerialPort.dll %DESTDIR%\deploy\Qt5SerialPort.dll
+
 
 copy %QTBIN%\icudt51.dll %DESTDIR%\deploy\icudt51.dll
 copy %QTBIN%\icuin51.dll %DESTDIR%\deploy\icuin51.dll
@@ -94,7 +96,7 @@ copy %QTBIN%\..\plugins\imageformats\qjpeg.dll %DESTDIR%\deploy\lib\imageformats
 copy %QTBIN%\..\plugins\sqldrivers\qsqlite.dll %DESTDIR%\deploy\lib\sqldrivers\qsqlite.dll
 copy %QTBIN%\..\plugins\platforms\qwindows.dll %DESTDIR%\deploy\platforms\qwindows.dll
 copy %QTBIN%\..\plugins\printsupport\windowsprintersupport.dll  %DESTDIR%\deploy\lib\printsupport\windowsprintersupport.dll 
-
+copy %QTBIN%\..\plugins\platforms\qwindows.dll %DESTDIR%\deploy\platforms\qwindows.dll
 
 echo copying bins, parts, sketches, translations, pdb, help
 echo.

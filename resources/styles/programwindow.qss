@@ -104,7 +104,7 @@
 
 /* console output window */
 #programmingWindow #console {
-	background-color: #85807e;
+	background-color: #8c8686;
 	color: #3c3936; 
 	border: 0px;
 	padding-top: 8px;

@@ -646,14 +646,7 @@
                 </iconView>
             </views>
         </instance>
-        <instance moduleIdRef="intel-arduino_galileo-(simple)" modelIndex="48" path="intel-arduino_galileo-(simple).fzp">
-            <views>
-                <iconView layer="icon">
-                    <geometry z="-1" x="-1" y="-1"/>
-                </iconView>
-            </views>
-        </instance>  
-        <instance moduleIdRef="SPARKCORE_v1" modelIndex="48" path="SPARKCORE_v1.fzp">
+           <instance moduleIdRef="SPARKCORE_v1" modelIndex="48" path="SPARKCORE_v1.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
@@ -681,6 +674,7 @@
                 </iconView>
             </views>
         </instance>
+
             <instance moduleIdRef="udoo_dual" modelIndex="48" path="udoo_dual.fzp">
             <views>
                 <iconView layer="icon">
@@ -688,6 +682,20 @@
                 </iconView>
             </views>
         </instance>
+         <instance moduleIdRef="intel_edison_minibreakout" modelIndex="48" path="intel_edison_minibreakout.fzp">
+            <views>
+                <iconView layer="icon">
+                    <geometry z="-1" x="-1" y="-1"/>
+                </iconView>
+            </views>
+        </instance>
+        <instance moduleIdRef="intel-arduino_galileo_gen2-(simple)" modelIndex="48" path="intel-arduino_galileo_gen2-simple.fzp">
+            <views>
+                <iconView layer="icon">
+                    <geometry z="-1" x="-1" y="-1"/>
+                </iconView>
+            </views>
+        </instance>  
 		        <instance moduleIdRef="teensy_3.1" modelIndex="48" path="teensy_3.1.fzp">
             <views>
                 <iconView layer="icon">
@@ -696,6 +704,13 @@
             </views>
         </instance>
         <instance moduleIdRef="Adafruit_Atmega32u4_Breakout" modelIndex="48" path="Adafruit_Atmega32u4_Breakout.fzp">
+            <views>
+                <iconView layer="icon">
+                    <geometry z="-1" x="-1" y="-1"/>
+                </iconView>
+            </views>
+        </instance>
+                <instance moduleIdRef="Netduino_plus_2" modelIndex="48" path="Netduinoplus2.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>

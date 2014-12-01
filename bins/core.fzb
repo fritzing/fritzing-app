@@ -611,12 +611,6 @@
                 </iconView>
             </views>
         </instance>
-	
-	
-	
-	
-	
-	
       <instance moduleIdRef="__spacer__" modelIndex="3" path="Microcontroller">
         <views>
           <iconView layer="icon">
@@ -632,13 +626,7 @@
                 </iconView>
             </views>
         </instance>	
-        <instance moduleIdRef="Raspberry Pi B+" modelIndex="48" path="Raspberry_Pi_B+.fzp">
-            <views>
-                <iconView layer="icon">
-                    <geometry z="-1" x="-1" y="-1"/>
-                </iconView>
-            </views>
-        </instance> 	
+
          <instance moduleIdRef="ti_launchpad-rev1.5" modelIndex="48" path="TI Launchpad MSP430G2.fzp">
             <views>
                 <iconView layer="icon">
@@ -653,13 +641,7 @@
                 </iconView>
             </views>
 		</instance>
-  <instance moduleIdRef="linino_one_rev1" modelIndex="48" path="linino_one(rev1).fzp">
-            <views>
-                <iconView layer="icon">
-                    <geometry z="-1" x="-1" y="-1"/>
-                </iconView>
-            </views>
-        </instance>
+
           <instance moduleIdRef="Bean_revE" modelIndex="48" path="Bean_revE.fzp">
             <views>
                 <iconView layer="icon">
@@ -675,20 +657,14 @@
             </views>
         </instance>
 
-            <instance moduleIdRef="udoo_dual" modelIndex="48" path="udoo_dual.fzp">
-            <views>
-                <iconView layer="icon">
-                    <geometry z="-1" x="-1" y="-1"/>
-                </iconView>
-            </views>
-        </instance>
-         <instance moduleIdRef="intel_edison_minibreakout" modelIndex="48" path="intel_edison_minibreakout.fzp">
-            <views>
-                <iconView layer="icon">
-                    <geometry z="-1" x="-1" y="-1"/>
-                </iconView>
-            </views>
-        </instance>
+        <instance moduleIdRef="bareconductive_touchboard" modelIndex="1">
+          <views>
+              <iconView layer="icon">
+                  <geometry z="-1" x="-1" y="-1"/>
+              </iconView>
+          </views>
+            </instance>
+
         <instance moduleIdRef="intel-arduino_galileo_gen2-(simple)" modelIndex="48" path="intel-arduino_galileo_gen2-simple.fzp">
             <views>
                 <iconView layer="icon">
@@ -724,13 +700,14 @@
                 </iconView>
             </views>
         </instance>
-        <instance moduleIdRef="arduino_Yun(rev1)" modelIndex="1" path="arduino_Yun(rev1).fzp">
+                <instance moduleIdRef="blueIOT_Rc1-final" modelIndex="1">
           <views>
               <iconView layer="icon">
                   <geometry z="-1" x="-1" y="-1"/>
               </iconView>
           </views>
         </instance>
+
         <instance moduleIdRef="2c9d427b475ef8d07dc752a4362af0ae" modelIndex="48" path="controller_wiring.fzp">
             <views>
                 <iconView layer="icon">
@@ -789,6 +766,52 @@
             </views>
         </instance>
 		
+
+      <instance moduleIdRef="__spacer__" modelIndex="3" path="Computer">
+        <views>
+          <iconView layer="icon">
+            <geometry z="-1" x="-1" y="-1"></geometry>
+          </iconView>
+        </views>
+                <instance moduleIdRef="Raspberry Pi B+" modelIndex="48" path="Raspberry_Pi_B+.fzp">
+            <views>
+                <iconView layer="icon">
+                    <geometry z="-1" x="-1" y="-1"/>
+                </iconView>
+            </views>
+        </instance>     
+      </instance>
+               <instance moduleIdRef="arduino_Yun(rev1)" modelIndex="1" path="arduino_Yun(rev1).fzp">
+          <views>
+              <iconView layer="icon">
+                  <geometry z="-1" x="-1" y="-1"/>
+              </iconView>
+          </views>
+        </instance>
+          <instance moduleIdRef="intelEdison-HiroseDF40" modelIndex="5548" path="intelEdison-HiroseDF40.fzp">
+            <views>
+                <iconView layer="icon">
+                    <geometry z="-1" x="-1" y="-1"/>
+                </iconView>
+            </views>
+        </instance>
+  <instance moduleIdRef="linino_one_rev1" modelIndex="48" path="linino_one(rev1).fzp">
+            <views>
+                <iconView layer="icon">
+                    <geometry z="-1" x="-1" y="-1"/>
+                </iconView>
+            </views>
+        </instance>
+        
+            <instance moduleIdRef="udoo_dual" modelIndex="48" path="udoo_dual.fzp">
+            <views>
+                <iconView layer="icon">
+                    <geometry z="-1" x="-1" y="-1"/>
+                </iconView>
+            </views>
+        </instance>
+
+
 		<instance moduleIdRef="__spacer__" modelIndex="3" path="Connection">
         <views>
           <iconView layer="icon">

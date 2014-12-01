@@ -744,6 +744,9 @@ void ProgramTab::sendProgram() {
         //return;
         save();
     }
+    if (m_monitorWindow != NULL) {
+        m_monitorWindow->closeSerialPort(m_portComboBox->currentText());
+    }
 
 	m_programButton->setEnabled(false);
     m_console->setPlainText("");

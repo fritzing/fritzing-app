@@ -109,8 +109,7 @@ ConsoleWindow::~ConsoleWindow()
 
 void ConsoleWindow::closeEvent(QCloseEvent *event)
  {
-    if (serial->isOpen())
-        closeSerialPort();
+     closeSerialPort();
      QSettings settings;
      settings.setValue("consolewindow/geometry", saveGeometry());
      settings.setValue("consolewindow/tate", saveState());
@@ -157,14 +156,24 @@ void ConsoleWindow::openSerialPort()
     }
 }
 
+void ConsoleWindow::closeSerialPort(const QString portName)
+{
+    if (portName.isEmpty()) return;
+    if (portName.compare(serial->portName()) == 0) {
+        closeSerialPort();
+    }
+}
+
 void ConsoleWindow::closeSerialPort()
 {
-    serial->close();
-    console->setEnabled(false);
-    ui->actionConnect->setEnabled(true);
-    ui->actionDisconnect->setEnabled(false);
-    ui->actionConfigure->setEnabled(true);
-    ui->statusBar->showMessage(tr("Disconnected"));
+    if (serial->isOpen()) {
+        serial->close();
+        console->setEnabled(false);
+        ui->actionConnect->setEnabled(true);
+        ui->actionDisconnect->setEnabled(false);
+        ui->actionConfigure->setEnabled(true);
+        ui->statusBar->showMessage(tr("Disconnected"));
+    }
 }
 
 void ConsoleWindow::about()

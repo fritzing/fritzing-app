@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE language SYSTEM "language.dtd">
-<language name="PICAXE" version="0.01" kateversion="2.3" section="Sources" extensions="*.bas;*.BAS" priority="10" mimetype="text/x-picaxe" author="PICAXE Technical Support (picaxe@rev-ed.co.uk)" license="GPL" canProgram="true">
+<language name="PICAXE" version="0.01" kateversion="2.3" section="Sources" extensions="*.bas;*.BAS" priority="10" mimetype="text/x-picaxe" author="PICAXE Technical Support (picaxe@rev-ed.co.uk)" license="GPL">
   <highlighting>
     <list name="preproc">
       <item> #com </item>

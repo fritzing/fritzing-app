@@ -68,6 +68,7 @@ public:
     explicit ConsoleWindow(QWidget *parent = 0);
     ~ConsoleWindow();
     void openSerialPort(const QString portName);
+    void closeSerialPort(const QString portName);
 
 protected:
     void closeEvent(QCloseEvent *event);

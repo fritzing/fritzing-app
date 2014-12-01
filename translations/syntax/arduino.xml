@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE language SYSTEM "language.dtd">
-<language name="Arduino" version="1.25" kateversion="2.4" section="Sources" extensions="*.ino;*.pde" mimetype="text/plain" priority="5" canProgram="true" >
+<language name="Arduino" version="1.25" kateversion="2.4" section="Sources" extensions="*.ino" mimetype="text/plain" priority="5">
   <highlighting>
     <list name="keywords">
       <item> break </item>
@@ -170,7 +170,7 @@
     <contexts>
       <context attribute="Normal Text" lineEndContext="#stay" name="Normal">
         <DetectSpaces />
-	<RegExpr attribute="Preprocessor" context="Outscoped" String="#\s*if\s+0" beginRegion="Outscoped" firstNonSpace="true" />
+	      <RegExpr attribute="Preprocessor" context="Outscoped" String="#\s*if\s+0" beginRegion="Outscoped" firstNonSpace="true" />
         <DetectChar attribute="Preprocessor" context="Preprocessor" char="#" firstNonSpace="true" />
         <StringDetect attribute="Region Marker" context="Region Marker" String="//BEGIN" beginRegion="Region1" firstNonSpace="true" />
         <StringDetect attribute="Region Marker" context="Region Marker" String="//END" endRegion="Region1" firstNonSpace="true" />
@@ -178,7 +178,7 @@
         <keyword attribute="Keyword" context="#stay" String="keyword1"/>
         <keyword attribute="Data Types" context="#stay" String="types"/>
         <keyword attribute="Constant" context="#stay" String="constant"/>      
-	<keyword attribute="Functions" context="#stay" String="keyword2-3"/>
+	      <keyword attribute="Functions" context="#stay" String="keyword2-3"/>
         <DetectIdentifier />
         <DetectChar attribute="Symbol" context="#stay" char="{" beginRegion="Brace1" />
         <DetectChar attribute="Symbol" context="#stay" char="}" endRegion="Brace1" />
@@ -187,6 +187,7 @@
         </Float>
         <HlCOct attribute="Octal" context="#stay"/>
         <HlCHex attribute="Hex" context="#stay"/>
+        <Int attribute="Number" context="#stay"/>
         <Int attribute="Decimal" context="#stay" >
           <StringDetect attribute="Decimal" context="#stay" String="ULL" insensitive="TRUE"/>
           <StringDetect attribute="Decimal" context="#stay" String="LUL" insensitive="TRUE"/>
@@ -259,7 +260,8 @@
     <itemDatas>
       <itemData name="Normal Text"  defStyleNum="dsNormal"/>
       <itemData name="Keyword"      defStyleNum="dsKeyword"/>
-      <itemData name="Data Types"    defStyleNum="dsDataType"/>
+      <itemData name="Data Types"   defStyleNum="dsDataType"/>
+      <itemData name="Number"       defStyleNum="dsDecVal"/>
       <itemData name="Decimal"      defStyleNum="dsDecVal"/>
       <itemData name="Octal"        defStyleNum="dsBaseN"/>
       <itemData name="Hex"          defStyleNum="dsBaseN"/>

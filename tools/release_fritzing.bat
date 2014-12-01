@@ -109,17 +109,32 @@ xcopy /q .\bins %DESTDIR%\deploy\bins /E  /I
 
 xcopy /q .\sketches %DESTDIR%\deploy\sketches /E  /I
 
-xcopy /q .\parts %DESTDIR%\deploy\parts /E  /I
+move .\parts\core\*.* .\pdb\core\
+move .\parts\obsolete\*.* .\pdb\obsolete\
+move .\parts\contrib\*.* .\pdb\contrib\
+move .\parts\user\*.* .\pdb\user\
 
+xcopy /q .\parts %DESTDIR%\deploy\parts /E  /I
 xcopy /q .\pdb %DESTDIR%\deploy\pdb /E  /I
+
+move .\pdb\core\*.* .\parts\core\
+move .\pdb\obsolete\*.* .\parts\obsolete\
+move .\pdb\user\*.* .\parts\user\
+move .\pdb\contrib\*.* .\parts\contrib\
+xcopy /q .\parts\core\placeholder.txt .\pdb\core\
+xcopy /q .\parts\core\placeholder.txt .\pdb\obsolete\
+xcopy /q .\parts\core\placeholder.txt .\pdb\user\
+xcopy /q .\parts\core\placeholder.txt .\pdb\contrib\
+
 xcopy /q .\help %DESTDIR%\deploy\help /E  /I
 copy .\README.txt %DESTDIR%\deploy\README.txt
 copy .\LICENSE.GPL2 %DESTDIR%\deploy\LICENSE.GPL2
 copy .\LICENSE.GPL3 %DESTDIR%\deploy\LICENSE.GPL3
 copy .\LICENSE.CC-BY-SA %DESTDIR%\deploy\LICENSE.CC-BY-SA
-
 echo removing empty translation files
 echo.
+
+
 
 del %DESTDIR%\deploy\translations\*.ts
 
@@ -152,3 +167,5 @@ echo create zip file
 FOR /F %%i IN ("%DESTDIR%\forzip") DO SET SRC=%%~fi
 FOR /F %%i IN ("%DESTDIR%\fritzing.%1.%2.pc.zip") DO SET DEST=%%~fi
 CScript .\tools\zip.vbs %SRC% %DEST%
+
+

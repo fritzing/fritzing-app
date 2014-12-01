@@ -231,6 +231,13 @@
   </iconView>
     </views>
 </instance>
+<instance moduleIdRef="Button-LED-Breakout-v10" modelIndex="20" path="Button-LED-Breakout-v10.fzp">
+    <views>
+  <iconView layer="icon">
+      <geometry z="-1" x="-1" y="-1"/>
+  </iconView>
+    </views>
+</instance>
   <instance moduleIdRef="ADXL345-BreakoutBoard-v13">
    <views>
     <iconView layer="icon">
@@ -372,6 +379,27 @@
           </iconView>
         </views>
    </instance>
+        <instance moduleIdRef="TB6612FNG Breakout v11">
+   <views>
+    <iconView layer="icon">
+     <geometry x="-1" y="-1" z="-1"/>
+    </iconView>
+   </views>
+  </instance>
+    <instance moduleIdRef="TRRS_Breakout-v10">
+   <views>
+    <iconView layer="icon">
+     <geometry x="-1" y="-1" z="-1"/>
+    </iconView>
+   </views>
+  </instance>
+      <instance moduleIdRef="PowerCell-v13">
+   <views>
+    <iconView layer="icon">
+     <geometry x="-1" y="-1" z="-1"/>
+    </iconView>
+   </views>
+  </instance>
   <instance moduleIdRef="10x2-Epaper-Breakout-Board-v11">
    <views>
     <iconView layer="icon">

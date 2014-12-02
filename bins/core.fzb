@@ -773,6 +773,7 @@
             <geometry z="-1" x="-1" y="-1"></geometry>
           </iconView>
         </views>
+        </instance>
                 <instance moduleIdRef="Raspberry Pi B+" modelIndex="48" path="Raspberry_Pi_B+.fzp">
             <views>
                 <iconView layer="icon">
@@ -780,7 +781,6 @@
                 </iconView>
             </views>
         </instance>     
-      </instance>
                <instance moduleIdRef="arduino_Yun(rev1)" modelIndex="1" path="arduino_Yun(rev1).fzp">
           <views>
               <iconView layer="icon">

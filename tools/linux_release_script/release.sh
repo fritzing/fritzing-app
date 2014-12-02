@@ -99,7 +99,7 @@ mkdir lib/platforms
 cd lib
 echo "copying libraries"
 
-cp $QT_HOME/lib/libicudata.so.51 $QT_HOME/lib/libicui18n.so.51 $QT_HOME/lib/libicuuc.so.51 $QT_HOME/lib/libicudata.so.5 $QT_HOME/lib/libQt5Concurrent.so.5 $QT_HOME/lib/libQt5Core.so.5 $QT_HOME/lib/libQt5DBus.so.5 $QT_HOME/lib/libQt5Gui.so.5 $QT_HOME/lib/libQt5Network.so.5 $QT_HOME/lib/libQt5PrintSupport.so.5 $QT_HOME/lib/libQt5Sql.so.5 $QT_HOME/lib/libQt5Svg.so.5  $QT_HOME/lib/libQt5Xml.so.5 $QT_HOME/lib/libQt5Widgets.so.5 $QT_HOME/lib/libQt5XmlPatterns.so.5 .
+cp $QT_HOME/lib/libicudata.so.51 $QT_HOME/lib/libicui18n.so.51 $QT_HOME/lib/libicuuc.so.51 $QT_HOME/lib/libicudata.so.5 $QT_HOME/lib/libQt5Concurrent.so.5 $QT_HOME/lib/libQt5Core.so.5 $QT_HOME/lib/libQt5DBus.so.5 $QT_HOME/lib/libQt5Gui.so.5 $QT_HOME/lib/libQt5Network.so.5 $QT_HOME/lib/libQt5SerialPort.so.5 $QT_HOME/lib/libQt5PrintSupport.so.5 $QT_HOME/lib/libQt5Sql.so.5 $QT_HOME/lib/libQt5Svg.so.5  $QT_HOME/lib/libQt5Xml.so.5 $QT_HOME/lib/libQt5Widgets.so.5 $QT_HOME/lib/libQt5XmlPatterns.so.5 .
 
 mv ../Fritzing .  				     # hide the executable in the lib folder
 mv ../Fritzing.sh ../Fritzing   		# rename Fritzing.sh to Fritzing

@@ -9,8 +9,8 @@ echo "NOTE: Execute this script from outside the fritzing-app folder"
 echo ""
 
 QT_HOME="/home/ubuntu/Qt5.2.1/5.2.1/gcc"
+#QT_HOME="/home/vuser/Qt5.2.1/5.2.1/gcc_64" # 64bit version
 #QT_HOME="~/Qt5.2.1/5.2.1/gcc" # doesn't work for some reason
-#QT_HOME="/home/jonathan/Qt/5.2.1/gcc"
 
 if [ "$1" = "" ]
 then

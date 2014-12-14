@@ -8,7 +8,7 @@
         <translation> Jonathan Cohen, Marcus Paeschke, Omer Yosha, </translation>
     </message>
     <message>
-        <source>to Yuelin and Ninjia  for the Chinese (Simplified) translation, </source>
+        <source>to Yuelin and Ninjia for the Chinese (Simplified) translation, </source>
         <translation> à Yuelin et Ninjia pour la traduction en Chinois (simplifié),</translation>
     </message>
     <message>
@@ -165,19 +165,19 @@
     </message>
     <message>
         <source>Version %1.%2.%3 &lt;small&gt;(%4%5 %6) %7 [Qt %8]&lt;/small&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Version %1.%2.%3 &lt;small&gt;(%4%5 %6) %7 [Qt %8]&lt;/small&gt;</translation>
     </message>
     <message>
         <source>&lt;a href=&quot;http://www.fritzing.org&quot;&gt;www.fritzing.org&lt;/a&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;a href=&quot;http://www.fritzing.org&quot;&gt;www.fritzing.org&lt;/a&gt;</translation>
     </message>
     <message>
         <source>Jan Sieber, Yaniv Steiner, Olaf Val, </source>
-        <translation type="unfinished"></translation>
+        <translation>Jan Sieber, Yaniv Steiner, Olaf Val,</translation>
     </message>
     <message>
         <source>&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;</translation>
     </message>
 </context>
 <context>
@@ -222,7 +222,7 @@
     </message>
     <message>
         <source>Note: the smaller the keepout, the slower the DRC and Autorouter will run.</source>
-        <translation>Note : au plus la marge de sécurité est petite, au plus l&apos;exécution de la RDC et de l&apos;autoroutage sera lente.</translation>
+        <translation>Note : plus la marge de sécurité est petite, plus l&apos;exécution de la RDC et de l&apos;autoroutage sera lente.</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -250,7 +250,7 @@
     </message>
     <message>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation>OK</translation>
     </message>
 </context>
 <context>
@@ -268,7 +268,7 @@
         <translation>Composants</translation>
     </message>
     <message>
-        <source>Do you really want to delete bin &apos;%1&apos;?  This action cannot be undone.</source>
+        <source>Do you really want to delete bin &apos;%1&apos;? This action cannot be undone.</source>
         <translation>Voullez-vous vraiment supprimer le jeu &quot;%1&quot; ? Cette action est irréversible.</translation>
     </message>
     <message>
@@ -445,11 +445,11 @@
     </message>
     <message>
         <source>Fritzing Bin Files (*%1 *%2);;Fritzing Bin (*%1);;Fritzing Shareable Bin (*%2)</source>
-        <translation type="unfinished"></translation>
+        <translation>Fichiers Bin Fritzing (*%1 *%2);;Fritzing Bin (*%1);;Fichiers Bin partageable (*%2)</translation>
     </message>
     <message>
         <source>Fritzing Files (*%1 *%2 *%3);;Fritzing Part (*%1);;Fritzing Bin (*%2);;Fritzing Shareable Bin (*%3)</source>
-        <translation type="unfinished"></translation>
+        <translation>Fichiers Fritzing (*%1 *%2 *%3);;Composants Fritzing (*%1);;Fritzing Bin (*%2);;Fichiers partageables Fritzing (*%3)</translation>
     </message>
 </context>
 <context>
@@ -480,7 +480,7 @@
     </message>
     <message>
         <source>Before actual PCB production we recommend that you test your custom shape by using the &apos;File &gt; Export for Production &gt; Extended Gerber&apos; option. </source>
-        <translation>Avant la production d&apos;un véritable circuit imprimé nous vous recommandons de tester votre forme personnalisée en utilisant l&apos;option &quot;Exporter &gt; pour la production &gt; Gerber étendu&quot;.</translation>
+        <translation>Avant la production d&apos;un véritable circuit imprimé nous vous recommandons de tester votre création personnalisée en utilisant l&apos;option &apos;Fichier &gt; Exporter pour la production &gt; Gerber étendu&apos;.</translation>
     </message>
     <message>
         <source>it is because Fritzing requires that you make cutouts using a shape &apos;subtraction&apos; or &apos;difference&apos; operation in your vector graphics editor.</source>
@@ -503,11 +503,9 @@
     </message>
     <message>
         <source>
-
 A custom board svg typically has one or two silkscreen layers and one board layer.
 </source>
         <translation>
-
 Une carte svg personnalisée a généralement un ou deux calques de sérigraphie et un calque carte.
 </translation>
     </message>
@@ -555,7 +553,6 @@ Utiliser le fichier ?</translation>
     </message>
     <message>
         <source>Have a look at the circle_pcb.svg file in your Fritzing installation folder at parts/svg/core/pcb/.
-
 </source>
         <translation>Jetez un œil sur le fichier circle_pcb.svg dans votre dossier d&apos;installation Fritzing composants/svg/core/pcb/.
 </translation>
@@ -594,7 +591,7 @@ Utiliser le fichier ?</translation>
     </message>
     <message>
         <source>Images</source>
-        <translation type="unfinished"></translation>
+        <translation>Images</translation>
     </message>
 </context>
 <context>
@@ -645,210 +642,211 @@ Utiliser le fichier ?</translation>
     <name>ConsoleSettings</name>
     <message>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Réglages</translation>
     </message>
     <message>
         <source>Select Parameters</source>
-        <translation type="unfinished"></translation>
+        <translation>Paramètres de sélection</translation>
     </message>
     <message>
         <source>BaudRate:</source>
-        <translation type="unfinished"></translation>
+        <translation>Vitesse de transmission:</translation>
     </message>
     <message>
         <source>Data bits:</source>
-        <translation type="unfinished"></translation>
+        <translation>Bits de donnée:</translation>
     </message>
     <message>
         <source>Parity:</source>
-        <translation type="unfinished"></translation>
+        <translation>Parité:</translation>
     </message>
     <message>
         <source>Stop bits:</source>
-        <translation type="unfinished"></translation>
+        <translation>Bits d&apos;arrêt:</translation>
     </message>
     <message>
         <source>Flow control:</source>
-        <translation type="unfinished"></translation>
+        <translation>Contrôle de flux:</translation>
     </message>
     <message>
         <source>Select Serial Port</source>
-        <translation type="unfinished"></translation>
+        <translation>Sélectionnez le port série</translation>
     </message>
     <message>
         <source>Description:</source>
-        <translation type="unfinished"></translation>
+        <translation>Description:</translation>
     </message>
     <message>
         <source>Manufacturer:</source>
-        <translation type="unfinished"></translation>
+        <translation>Fabricant:</translation>
     </message>
     <message>
         <source>Serial number:</source>
-        <translation type="unfinished"></translation>
+        <translation>Numéro de serie:</translation>
     </message>
     <message>
         <source>Location:</source>
-        <translation type="unfinished"></translation>
+        <translation>Localisation:</translation>
     </message>
     <message>
         <source>Vendor ID:</source>
-        <translation type="unfinished"></translation>
+        <translation>ID du fournisseur:</translation>
     </message>
     <message>
         <source>Product ID:</source>
-        <translation type="unfinished"></translation>
+        <translation>ID du produit:</translation>
     </message>
     <message>
         <source>Apply</source>
-        <translation type="unfinished"></translation>
+        <translation>Appliquer</translation>
     </message>
     <message>
         <source>Additional options</source>
-        <translation type="unfinished"></translation>
+        <translation>Options supplémentaires</translation>
     </message>
     <message>
         <source>Local echo</source>
-        <translation type="unfinished"></translation>
+        <translation>Echo local</translation>
     </message>
     <message>
         <source>Description: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Déscription: %1</translation>
     </message>
     <message>
         <source>Manufacturer: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Fabricant: %1</translation>
     </message>
     <message>
         <source>Serial number: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Nr de série: %1</translation>
     </message>
     <message>
         <source>Location: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Emplacement: %1</translation>
     </message>
     <message>
         <source>Vendor Identifier: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Identifiant du vendeur: %1</translation>
     </message>
     <message>
         <source>Product Identifier: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Identification du produit: %1</translation>
     </message>
 </context>
 <context>
     <name>ConsoleWindow</name>
     <message>
         <source>Serial Monitor</source>
-        <translation type="unfinished"></translation>
+        <translation>Moniteur de série</translation>
     </message>
     <message>
         <source>Monitor</source>
-        <translation type="unfinished"></translation>
+        <translation>Moniteur</translation>
     </message>
     <message>
         <source>Tools</source>
-        <translation type="unfinished">Outils</translation>
+        <translation>Outils</translation>
     </message>
     <message>
         <source>&amp;About</source>
-        <translation type="unfinished">&amp;À propos</translation>
+        <translation>&amp;À propos</translation>
     </message>
     <message>
         <source>About program</source>
-        <translation type="unfinished"></translation>
+        <translation>A propos du programme</translation>
     </message>
     <message>
         <source>Alt+A</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+A</translation>
     </message>
     <message>
         <source>About Qt</source>
-        <translation type="unfinished"></translation>
+        <translation>A propos de Qt</translation>
     </message>
     <message>
         <source>C&amp;onnect</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>&amp;Connection</translatorcomment>
+        <translation>Connection</translation>
     </message>
     <message>
         <source>Connect to serial port</source>
-        <translation type="unfinished"></translation>
+        <translation>Connection au port série</translation>
     </message>
     <message>
         <source>Ctrl+O</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+O</translation>
     </message>
     <message>
         <source>&amp;Disconnect</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Déconnection</translation>
     </message>
     <message>
         <source>Disconnect from serial port</source>
-        <translation type="unfinished"></translation>
+        <translation>Déconnection du port série</translation>
     </message>
     <message>
         <source>Ctrl+D</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+D</translation>
     </message>
     <message>
         <source>&amp;Configure</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Configuration</translation>
     </message>
     <message>
         <source>Configure serial port</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuration du port série</translation>
     </message>
     <message>
         <source>Alt+C</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+C</translation>
     </message>
     <message>
         <source>C&amp;lear</source>
-        <translation type="unfinished"></translation>
+        <translation>E&amp;ffacer</translation>
     </message>
     <message>
         <source>Clear data</source>
-        <translation type="unfinished"></translation>
+        <translation>Effacer les données</translation>
     </message>
     <message>
         <source>Alt+L</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+L</translation>
     </message>
     <message>
         <source>&amp;Quit</source>
-        <translation type="unfinished">&amp;Quitter</translation>
+        <translation>&amp;Quitter</translation>
     </message>
     <message>
         <source>Ctrl+Q</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Q</translation>
     </message>
     <message>
         <source>Connected to %1 : %2, %3, %4, %5, %6</source>
-        <translation type="unfinished"></translation>
+        <translation>Connecté à %1 : %2, %3, %4, %5, %6</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Erreur</translation>
     </message>
     <message>
         <source>Serial port open error</source>
-        <translation type="unfinished"></translation>
+        <translation>Erreur d&apos;ouverture du port série</translation>
     </message>
     <message>
         <source>Disconnected</source>
-        <translation type="unfinished"></translation>
+        <translation>Déconnecté</translation>
     </message>
     <message>
         <source>About Serial Monitor</source>
-        <translation type="unfinished"></translation>
+        <translation>À propos du moniteur serie</translation>
     </message>
     <message>
         <source>This terminal displays the serial communication on the selected port, usually between your computer and the connected microcontroller.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ce terminal affiche la communication série sur le port sélectionné, généralement entre votre ordinateur et le microcontrôleur connecté.</translation>
     </message>
     <message>
         <source>Critical Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Erreur critique</translation>
     </message>
 </context>
 <context>
@@ -895,11 +893,11 @@ Utiliser le fichier ?</translation>
     </message>
     <message>
         <source>Fritzing</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing</translation>
     </message>
     <message>
         <source>Connector %1 on %2 should have both copper top and bottom layers, but the svg only specifies one layer.</source>
-        <translation type="unfinished"></translation>
+        <translation>Le connecteur %1 sur %2 devrait avoir les deux couches cuivrées, mais le svg ne spécifie qu&apos;une couche.</translation>
     </message>
 </context>
 <context>
@@ -994,13 +992,13 @@ Remarque : vous pouvez les importer ultérieurement en utilisant la rubrique &qu
     </message>
     <message>
         <source>Fritzing (*%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing (*%1)</translation>
     </message>
 </context>
 <context>
     <name>FirstTimeHelpDialog</name>
     <message>
-        <source>The &lt;b&gt;PCB View&lt;/b&gt; is where you layout the components will  on a physical PCB (Printed Circuit Board).&lt;br/&gt;&lt;br/&gt;PCBs can be made at home or in a small lab using DIY etching processes. They also can be sent to professional PCB manufacturing services for more precise fabrication. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;The first thing you will need is a board to place your parts on. There should already be one in your sketch, but if not, drag in the board icon from the Parts Bin. The icon matches thie image to the right: &lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/parts/svg/core/icon/rectangle_pcb.svg&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br/&gt;&lt;br/&gt;To lay out your PCB, arrange all the components so they fit nicely on the board. Then try to shift them around to minimize the length and confusion of connections. You can also resize rectangular boards. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;Once the parts are sorted out, you connect them with copper traces. You can drag out a trace from individual connections or use the autorouter to generate them. The Autoroute button is at the bottom of the window. The button matches the image to the right:&lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/images/icons/toolbarAutorouteEnabled_icon.png&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</source>
+        <source>The &lt;b&gt;PCB View&lt;/b&gt; is where you layout the components will on a physical PCB (Printed Circuit Board).&lt;br/&gt;&lt;br/&gt;PCBs can be made at home or in a small lab using DIY etching processes. They also can be sent to professional PCB manufacturing services for more precise fabrication. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;The first thing you will need is a board to place your parts on. There should already be one in your sketch, but if not, drag in the board icon from the Parts Bin. The icon matches thie image to the right: &lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/parts/svg/core/icon/rectangle_pcb.svg&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br/&gt;&lt;br/&gt;To lay out your PCB, arrange all the components so they fit nicely on the board. Then try to shift them around to minimize the length and confusion of connections. You can also resize rectangular boards. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;Once the parts are sorted out, you connect them with copper traces. You can drag out a trace from individual connections or use the autorouter to generate them. The Autoroute button is at the bottom of the window. The button matches the image to the right:&lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/images/icons/toolbarAutorouteEnabled_icon.png&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</source>
         <translation>La vue du &lt;b&gt;Circuit imprimé&lt;/b&gt; est l&apos;endroit où vous placez les composants sur un circuit imprimé physique.&lt;br/&gt;&lt;br/&gt;Les circuits imprimés peuvent être réalisés chez soi ou dans un petit labo en employant des procédés amateurs. Ils peuvent aussi être envoyés à des services professionnels de réalisation de circuits imprimés en vue d&apos;une fabrication plus précise.&lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;La première chose dont vous aurez besoin est une plaque sur laquelle placer vos composants. Il devrait toujours y en avoir une dans votre esquisse, sinon faites glisser l&apos;icône correspondante depuis le magasin de composants. L&apos;icône correspond à cette image à droite : &lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/parts/svg/core/icon/rectangle_pcb.svg&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br/&gt;&lt;br/&gt; Pour élaborer votre circuit imprimé, disposez les composants de telle sorte qu&apos;ils tiennent bien dans l&apos;espace de la plaque. Ensuite essayez de les déplacer afin de réduire les longueurs des connexions et d&apos;éliminer toute possibilité de confusion. Vous pouvez aussi redimensionner les plaques rectangulaires. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;Une fois les composants triés, vous les reliez par des pistes en cuivre. Vous pouvez tracer des pistes à partir de connexions individuelles ou bien utiliser l&apos;autoroutage pour les créer automatiquement. Le bouton Autoroutage est en bas de la fenêtre. L&apos;apparence du bouton est semblable à celle de l&apos;image située à droite : &lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/images/icons/toolbarAutorouteEnabled_icon.png&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</translation>
     </message>
     <message>
@@ -1020,7 +1018,7 @@ Remarque : vous pouvez les importer ultérieurement en utilisant la rubrique &qu
     <name>FritzingWindow</name>
     <message>
         <source>Save</source>
-        <translation>Enregistrer</translation>
+        <translation>Sauvegarder</translation>
     </message>
     <message>
         <source>Do you want to save the changes you made in the document &quot;%1&quot;?</source>
@@ -1060,15 +1058,15 @@ Remarque : vous pouvez les importer ultérieurement en utilisant la rubrique &qu
     </message>
     <message>
         <source>Ctrl+W</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+W</translation>
     </message>
     <message>
         <source>%1 - %2</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 - %2</translation>
     </message>
     <message>
         <source>Ctrl+D</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+D</translation>
     </message>
 </context>
 <context>
@@ -1086,12 +1084,12 @@ Click an item to highlight its connections in the sketch.
 
 It is also possible to choose a connector as a ground fill seed by right-clicking a connector and choosing the &apos;Set Ground Fill Seed&apos; context menu option.</source>
         <translation>La différence entre un &apos;remplissage de masse&apos; et un simple &apos;remplissage en cuivre&apos; est que dans un &apos;remplissage de masse&apos; la zone remplie comprend des pistes et des connecteurs qui sont connectés à des connecteurs dits de &apos;masse&apos;. Les connecteurs de masse sont généralement étiquetés &quot;GND&quot; ou &apos;masse&apos;, mais parfois ce n&apos;est pas le cas. Il se peut aussi qu&apos;il y ait des réseaux multiples avec un seul connecteur de masse, et vous pourriez vouloir ne pourvoir qu&apos;un seul réseau d&apos;un remplissage.
-
-Cette boîte de dialogue ne recueille que des connecteurs étiquetés &quot;GND&quot; ou &apos;masse&apos;, ainsi que des connecteurs déjà choisi comme semences.
+        
+Cette boîte de dialogue recueille uniquement les connecteurs étiquetés &quot;GND&quot; ou &apos;masse&apos;, ainsi que des connecteurs déjà choisi comme point de départ.
 
 Cliquez sur un élément pour mettre en évidence ses liens dans l&apos;esquisse.
 
-Il est également possible de choisir un connecteur comme une graine de remplissage de masse en effectuant un clic-droite sur un connecteur et en choisissant l&apos;option &quot;Définir semences des masses lors du remplissage &quot; du menu contextuel.</translation>
+Il est également possible de choisir un connecteur comme point de départ du remplissage de masse en effectuant un clic-droit sur un connecteur et en sélectionant l&apos;option &quot;Définir comme point de départ des masses lors du remplissage &quot; dand le menu contextuel.</translation>
     </message>
     <message>
         <source>OK and ground fill</source>
@@ -1103,7 +1101,7 @@ Il est également possible de choisir un connecteur comme une graine de rempliss
     </message>
     <message>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation>OK</translation>
     </message>
 </context>
 <context>
@@ -1208,23 +1206,23 @@ Il est également possible de choisir un connecteur comme une graine de rempliss
     </message>
     <message>
         <source>conn.</source>
-        <translation type="unfinished"></translation>
+        <translation>conn.</translation>
     </message>
     <message>
         <source>type</source>
-        <translation type="unfinished"></translation>
+        <translation>type</translation>
     </message>
     <message>
         <source>(autoroutable)</source>
-        <translation type="unfinished"></translation>
+        <translation>(autoroutable)</translation>
     </message>
     <message>
         <source>v. %1 %2</source>
-        <translation type="unfinished"></translation>
+        <translation>v. %1 %2</translation>
     </message>
     <message>
         <source>rotation</source>
-        <translation type="unfinished"></translation>
+        <translation>rotation</translation>
     </message>
 </context>
 <context>
@@ -1399,19 +1397,19 @@ Il est également possible de choisir un connecteur comme une graine de rempliss
     </message>
     <message>
         <source>type</source>
-        <translation type="unfinished"></translation>
+        <translation>type</translation>
     </message>
     <message>
         <source>inductance</source>
-        <translation type="unfinished"></translation>
+        <translation>inductance</translation>
     </message>
     <message>
         <source>version</source>
-        <translation type="unfinished"></translation>
+        <translation>version</translation>
     </message>
     <message>
         <source>date</source>
-        <translation type="unfinished"></translation>
+        <translation>date</translation>
     </message>
 </context>
 <context>
@@ -1422,7 +1420,7 @@ Il est également possible de choisir un connecteur comme une graine de rempliss
     </message>
     <message>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation>OK</translation>
     </message>
 </context>
 <context>
@@ -1448,7 +1446,7 @@ Il est également possible de choisir un connecteur comme une graine de rempliss
     </message>
     <message>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation>OK</translation>
     </message>
 </context>
 <context>
@@ -1495,7 +1493,7 @@ Il est également possible de choisir un connecteur comme une graine de rempliss
     </message>
     <message>
         <source>text</source>
-        <translation type="unfinished"></translation>
+        <translation>texte</translation>
     </message>
 </context>
 <context>
@@ -1720,7 +1718,7 @@ Toutes vos composants sont à jour.</translation>
     </message>
     <message>
         <source>Set copper bottom layer clickable</source>
-        <translation>Rendre uniquement sélectionnable la couche de cuivre inférieure de la carte</translation>
+        <translation>Les deux face du circuits imprimé sont modifiables</translation>
     </message>
     <message>
         <source>&amp;Show Breadboard</source>
@@ -1744,7 +1742,7 @@ Toutes vos composants sont à jour.</translation>
     </message>
     <message>
         <source>&amp;Open Recent Files</source>
-        <translation>&amp;Ouvrir les fichiers récents</translation>
+        <translation>&amp;Ouvrir un fichier récent</translation>
     </message>
     <message>
         <source>Move selected traces to the other side of the board (note: the &apos;first&apos; trace will be moved and the rest will follow to the same side)</source>
@@ -1760,11 +1758,11 @@ Toutes vos composants sont à jour.</translation>
     </message>
     <message>
         <source>If a &quot;sticky&quot; part is moved, parts on top of it are also moved</source>
-        <translation>Si un composant &quot;collant&quot; est déplacé, les pièces au dessus de celui-ci seront également déplacées</translation>
+        <translation>Si un composant &quot;aimanté&quot; est déplacé, les pièces au dessus de celui-ci seront également déplacées</translation>
     </message>
     <message>
         <source>View the PCB from the bottom layers upwards</source>
-        <translation>Afficher le circuit imprimé vu de la face inférieure et orienté vers le haut</translation>
+        <translation>Afficher le circuit imprimé (vue de dessous)</translation>
     </message>
     <message>
         <source>Please select a PCB. DRC only works on one board at a time.</source>
@@ -1812,10 +1810,8 @@ Toutes vos composants sont à jour.</translation>
     </message>
     <message>
         <source>This operation can not be undone--you will lose all of your changes.
-
 Go ahead and revert?</source>
         <translation>Cette opération ne peut être annulée - vous perdrez toutes vos modifications.
-
 Continuer ou annuler?</translation>
     </message>
     <message>
@@ -1851,7 +1847,7 @@ Continuer ou annuler?</translation>
         <translation>Face supérieure</translation>
     </message>
     <message numerus="yes">
-        <source>We strongly recommend that you update these %n parts  to the latest version. </source>
+        <source>We strongly recommend that you update these %n parts to the latest version. </source>
         <translation>
             <numerusform>Nous vous recommandons fortement de mettre à jour ce composant %n avec la version la plus récente.</numerusform>
             <numerusform>Nous vous recommandons fortement de mettre à jour ces composants %n avec leur version la plus récente.</numerusform>
@@ -1918,16 +1914,8 @@ Continuer ou annuler?</translation>
         <translation>MainWindow :: Le remplissage du menu grâce à l&apos;index: n&apos;a pas pu charger l&apos;exemple avec l&apos;id = &apos;%1&apos;</translation>
     </message>
     <message utf8="true">
-        <source>Rotate 90� Counter Clockwise</source>
-        <translation type="obsolete">Faire pivoter de 135° vers la gauche {90�?}</translation>
-    </message>
-    <message>
         <source>Select All &quot;Don&apos;t Autoroute&quot; Traces</source>
         <translation>Sélectionner toutes les pistes &quot;non autoroutées&quot;</translation>
-    </message>
-    <message utf8="true">
-        <source>Rotate 45� Counter Clockwise</source>
-        <translation type="obsolete">Faire pivoter de 135° vers la gauche {45�?}</translation>
     </message>
     <message>
         <source>Align Vertical Center</source>
@@ -1954,12 +1942,12 @@ Continuer ou annuler?</translation>
         <translation>Aligner sur la grille</translation>
     </message>
     <message>
-        <source>Your sketch does not have a board yet!  Please add a PCB in order to export to Gerber.</source>
+        <source>Your sketch does not have a board yet! Please add a PCB in order to export to Gerber.</source>
         <translation>Votre esquisse ne comporte pas encore de carte ! Veuillez ajouter un circuit imprimé afin de pouvoir l&apos;exporter vers Gerber.</translation>
     </message>
     <message>
         <source>Etchable (PDF)...</source>
-        <translation>Créer en (PDF)...</translation>
+        <translation>Format (PDF)...</translation>
     </message>
     <message>
         <source>File &apos;%1&apos; not found</source>
@@ -1995,11 +1983,11 @@ Continuer ou annuler?</translation>
     </message>
     <message>
         <source>View from Above</source>
-        <translation>Vue du Dessus</translation>
+        <translation>Vue du Dessous</translation>
     </message>
     <message>
         <source>View from Below</source>
-        <translation>Vue du Dessous</translation>
+        <translation>Vue du Dessus</translation>
     </message>
     <message>
         <source>Sketch exported</source>
@@ -2027,24 +2015,24 @@ Continuer ou annuler?</translation>
     </message>
     <message>
         <source>Export for PCB</source>
-        <translation>Export circ.impr.</translation>
+        <translation>Créer le Typon</translation>
     </message>
     <message>
         <source>loading %1 (schematic)</source>
-        <translation>chargement %1 (schématique)</translation>
+        <translation>chargement de %1 (schéma)</translation>
     </message>
     <message>
         <source>Export the visible area of the current sketch as a PNG image</source>
-        <translation>Exporter la zone visible de l&apos;esquisse actuelle sous forme d&apos;une image PNG</translation>
+        <translation>Exporter la zone visible de l&apos;esquisse en cours au format PNG</translation>
     </message>
     <message>
         <source>Export the visible area of the current sketch as a JPG image</source>
-        <translation>Exporter la zone visible de l&apos;esquisse actuelle comme image JPG</translation>
+        <translation>Exporter la zone visible de l&apos;esquisse en cours au format JPG</translation>
     </message>
     <message>
-        <source>Cannot read file  1 %1:
+        <source>Cannot read file 1 %1:
 %2.</source>
-        <translation>Impossible de lire le fichier  1 %1:
+        <translation>Impossible de lire le fichier 1 %1:
 %2.</translation>
     </message>
     <message>
@@ -2113,11 +2101,11 @@ Continuer ou annuler?</translation>
     </message>
     <message>
         <source>Tidy selected wires</source>
-        <translation>Ranger les fils sélectionnés</translation>
+        <translation>Réorganiser les fils sélectionnés</translation>
     </message>
     <message>
         <source>How much would it could to produce a PCB from this sketch with Fritzing Fab</source>
-        <translation>Combien cela pourrait coûter de produire un CI à partir de cette esquisse avec Fritzing Fab</translation>
+        <translation>Combien cela pourrait coûter pour produire un CI à partir de cette esquisse avec Fritzing Fab</translation>
     </message>
     <message>
         <source>Delete Wire up to bendpoints</source>
@@ -2161,7 +2149,7 @@ Continuer ou annuler?</translation>
     </message>
     <message>
         <source>Export the visible area of the current sketch as a PDF image</source>
-        <translation>Exporter la zone visible de l&apos;esquisse actuelle sous forme d&apos;une image PDF</translation>
+        <translation>Exporter la zone visible de l&apos;esquisse actuelle au format PDF</translation>
     </message>
     <message>
         <source>Choose a folder for exporting</source>
@@ -2177,7 +2165,7 @@ Continuer ou annuler?</translation>
     </message>
     <message>
         <source>Online Parts Reference</source>
-        <translation>Catalogue en ligne des composants</translation>
+        <translation>Catalogue des composants en ligne</translation>
     </message>
     <message>
         <source>&amp;Actual Size</source>
@@ -2189,14 +2177,14 @@ Continuer ou annuler?</translation>
     </message>
     <message>
         <source>as Image</source>
-        <translation>comme Image</translation>
+        <translation>En fichier Image</translation>
     </message>
     <message>
         <source>Both Layers</source>
         <translation>Double couche</translation>
     </message>
     <message>
-        <source>Your sketch does not have a board yet!  Please add a PCB in order to use ground or copper fill.</source>
+        <source>Your sketch does not have a board yet! Please add a PCB in order to use ground or copper fill.</source>
         <translation>Votre esquisse ne comporte pas encore de carte ! Veuillez ajouter un circuit imprimé afin d&apos;utiliser le remplissage de masse ou en cuivre.</translation>
     </message>
     <message>
@@ -2253,7 +2241,6 @@ Continuer ou annuler?</translation>
     </message>
     <message>
         <source>
-
 Do you want to update now?</source>
         <translation>Voulez-vous mettre à jour maintenant ?</translation>
     </message>
@@ -2323,11 +2310,11 @@ Do you want to update now?</source>
     </message>
     <message>
         <source>Show Code</source>
-        <translation>Afficher le code</translation>
+        <translation>Afficher la fenêtre de codage</translation>
     </message>
     <message>
         <source>bottom</source>
-        <translation>couche inférieure</translation>
+        <translation>Face inférieure</translation>
     </message>
     <message>
         <source>Select All CopperFill</source>
@@ -2346,14 +2333,6 @@ Do you want to update now?</source>
     <message>
         <source>Print the current view</source>
         <translation>Imprimer la vue actuelle</translation>
-    </message>
-    <message utf8="true">
-        <source>Rotate 90� Clockwise</source>
-        <translation type="obsolete">Faire pivoter de 90° vers la droite {90�?}</translation>
-    </message>
-    <message utf8="true">
-        <source>Rotate 45� Clockwise</source>
-        <translation type="obsolete">Faire pivoter de 90° vers la droite {45�?}</translation>
     </message>
     <message>
         <source>copperfill</source>
@@ -2479,8 +2458,8 @@ Do you want to update now?</source>
         <translation>Afficher le magasin de composants sous forme de liste</translation>
     </message>
     <message>
-        <source>Your sketch does not have a board yet!  Please add a PCB in order to use the autorouter.</source>
-        <translation>Votre esquisse ne comporte pas encore de carte ! Veuillez  ajouter un circuit imprimé pour utiliser l&apos;autoroutage.</translation>
+        <source>Your sketch does not have a board yet! Please add a PCB in order to use the autorouter.</source>
+        <translation>Votre esquisse ne comporte pas encore de carte ! Veuillez ajouter un circuit imprimé pour utiliser l&apos;autoroutage.</translation>
     </message>
     <message>
         <source>Highlights any parts that are too close together for safe board production</source>
@@ -2628,7 +2607,7 @@ Do you want to update now?</source>
     </message>
     <message>
         <source>Set both copper layers clickable</source>
-        <translation>Rendre cliquable les deux couches de cuivre</translation>
+        <translation>Seul la face supérieur du circuit imprimé est modifiable</translation>
     </message>
     <message>
         <source>&amp;About Qt</source>
@@ -2707,10 +2686,6 @@ Nous travaillons à éliminer ce message afin de ne vous laisser choisir que des
         <source>Online Projects Gallery</source>
         <translation>Galerie des projets en ligne</translation>
     </message>
-    <message utf8="true">
-        <source>Rotate 180�</source>
-        <translation type="obsolete">Faire pivoter de 180° {180�?}</translation>
-    </message>
     <message>
         <source>Export Bill of Materials (BoM)...</source>
         <translation>Exporter la nomenclature...</translation>
@@ -2777,7 +2752,7 @@ Nous travaillons à éliminer ce message afin de ne vous laisser choisir que des
     </message>
     <message>
         <source>Set Ground Fill Seed</source>
-        <translation>Définir la graine du remplissage des masses</translation>
+        <translation>Point de départ du remplissage des masses</translation>
     </message>
     <message>
         <source>&amp;Export</source>
@@ -2801,7 +2776,7 @@ Nous travaillons à éliminer ce message afin de ne vous laisser choisir que des
     </message>
     <message>
         <source>Set copper top layer clickable</source>
-        <translation>Rendre cliquable uniquement la couche de cuivre supérieure de la carte</translation>
+        <translation>Seul la face inférieur du circuit imprimé est modifiable</translation>
     </message>
     <message>
         <source>throw test exception</source>
@@ -2826,8 +2801,8 @@ Nous travaillons à éliminer ce message afin de ne vous laisser choisir que des
     <message numerus="yes">
         <source>%1 of %2 nets routed - %n connector(s) still to be routed</source>
         <translation>
-            <numerusform>%1 des %2 réseaux a été routé - %n connecteur(s) doivent êtres reliés</numerusform>
-            <numerusform>%1 des %2 réseaux ont été routé - %n connecteur(s) doivent êtres reliés</numerusform>
+            <numerusform>%1 réseau sur %2 a été routé - %n connecteur doit être relié</numerusform>
+            <numerusform>%1 réseaux sur %2 ont été routés - %n connecteurs doivent êtres reliés</numerusform>
         </translation>
     </message>
     <message>
@@ -2880,11 +2855,9 @@ Nous travaillons à éliminer ce message afin de ne vous laisser choisir que des
     </message>
     <message>
         <source>The .fz file format has been deprecated.
-
 Would you like to convert &apos;%1&apos; to the .fzz format now or open it read-only?
 </source>
         <translation>Le format de fichier .Fz a été rendu obsolète.
-
 Voulez-vous convertir &apos;%1&apos; au format . Fzz maintenant ou l&apos;ouvrir en lecture seule?
 </translation>
     </message>
@@ -2906,11 +2879,11 @@ Voulez-vous convertir &apos;%1&apos; au format . Fzz maintenant ou l&apos;ouvrir
     </message>
     <message>
         <source>No connections to route</source>
-        <translation>Pas de connexion à relier</translation>
+        <translation>Aucune connexion à relier</translation>
     </message>
     <message>
         <source>View the PCB from the top layers downwards</source>
-        <translation>Afficher la face supérieure du circuit imprimé et orientée vers le bas</translation>
+        <translation>Afficher le circuit imprimé (vue de dessus)</translation>
     </message>
     <message>
         <source>Copper Fill</source>
@@ -3010,7 +2983,7 @@ Voulez-vous convertir &apos;%1&apos; au format . Fzz maintenant ou l&apos;ouvrir
     </message>
     <message>
         <source>Undo History</source>
-        <translation>Historique d&apos;annulation</translation>
+        <translation>Historique des actions</translation>
     </message>
     <message>
         <source>Save a Bill of Materials (BoM)/Shopping List as text</source>
@@ -3045,7 +3018,7 @@ Voulez-vous convertir &apos;%1&apos; au format . Fzz maintenant ou l&apos;ouvrir
         <translation>Avancée de la vérification des règles de conception (RDC)...</translation>
     </message>
     <message>
-        <source>The copper top (copper 1) layer is not available on a one-sided board.  Please switch the board to double-sided or choose the copper bottom (copper 0) layer.</source>
+        <source>The copper top (copper 1) layer is not available on a one-sided board. Please switch the board to double-sided or choose the copper bottom (copper 0) layer.</source>
         <translation>Le cuivre de la face supérieure (cuivre 1) n&apos;est pas disponible sur une carte à une seule face. Veuillez trasnformer la carte en double face ou sélectionner le cuivre de la face inférieure (cuivre 0) .</translation>
     </message>
     <message>
@@ -3066,7 +3039,7 @@ Voulez-vous convertir &apos;%1&apos; au format . Fzz maintenant ou l&apos;ouvrir
     </message>
     <message>
         <source>Clear ground fill seeds--enable copper fill only.</source>
-        <translation>Réinitialiser le remplissage des masses--autoriser le remplissage en cuivre uniquement.</translation>
+        <translation>Annuler le remplissage des masses--autoriser le remplissage en cuivre uniquement.</translation>
     </message>
     <message>
         <source>Remove the copper fill</source>
@@ -3078,7 +3051,7 @@ Voulez-vous convertir &apos;%1&apos; au format . Fzz maintenant ou l&apos;ouvrir
     </message>
     <message>
         <source>for Production</source>
-        <translation>pour la Production</translation>
+        <translation>Pour la création d&apos;un typon</translation>
     </message>
     <message>
         <source>Align Left</source>
@@ -3098,7 +3071,7 @@ Voulez-vous convertir &apos;%1&apos; au format . Fzz maintenant ou l&apos;ouvrir
     </message>
     <message>
         <source>Clear Ground Fill Seeds</source>
-        <translation>Réinitialiser le remplissage des masses</translation>
+        <translation>Annuler le remplissage des masses</translation>
     </message>
     <message>
         <source>Exporting...</source>
@@ -3106,7 +3079,7 @@ Voulez-vous convertir &apos;%1&apos; au format . Fzz maintenant ou l&apos;ouvrir
     </message>
     <message>
         <source>Send Backward</source>
-        <translation>Reculer</translation>
+        <translation>Revenir en arrière</translation>
     </message>
     <message>
         <source>Display the parts bin in an icon view</source>
@@ -3214,14 +3187,10 @@ Voulez-vous convertir &apos;%1&apos; au format . Fzz maintenant ou l&apos;ouvrir
     </message>
     <message>
         <source>There are no unrouted connections in this view.</source>
-        <translation>Il n&apos;y a pas de connexion non routée dans cette vue.</translation>
+        <translation>Il y a aucune connexion non routée dans cette vue.</translation>
     </message>
     <message>
-        <source>Alt+Shift+Ctrl+R</source>
-        <translation type="obsolete">Faire tourner dans le sens anti-horlogique</translation>
-    </message>
-    <message>
-        <source>Your sketch does not have a board yet!  Please add a PCB in order to remove copper fill.</source>
+        <source>Your sketch does not have a board yet! Please add a PCB in order to remove copper fill.</source>
         <translation>Votrre esquisse ne comporte pas encore de carte ! Veuillez ajouter un circuit imprimé afin d&apos;éliminer le remplissage de cuivre.</translation>
     </message>
     <message>
@@ -3250,7 +3219,7 @@ Voulez-vous convertir &apos;%1&apos; au format . Fzz maintenant ou l&apos;ouvrir
     </message>
     <message>
         <source>Etchable (SVG)...</source>
-        <translation>Créer en (SVG)...</translation>
+        <translation>Format (SVG)...</translation>
     </message>
     <message>
         <source>Select All Traces</source>
@@ -3270,7 +3239,7 @@ Voulez-vous convertir &apos;%1&apos; au format . Fzz maintenant ou l&apos;ouvrir
     </message>
     <message>
         <source>Unrouted connections</source>
-        <translation>Connexions non routées</translation>
+        <translation>Connexions non reliées</translation>
     </message>
     <message>
         <source>Convert the bendpoint to a via</source>
@@ -3299,282 +3268,282 @@ Voulez-vous convertir &apos;%1&apos; au format . Fzz maintenant ou l&apos;ouvrir
     <message>
         <source>Ctrl+R</source>
         <comment>Rotate Clockwise</comment>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+R</translation>
     </message>
     <message>
         <source>Alt+Ctrl+R</source>
         <comment>Rotate Clockwise</comment>
-        <translation type="unfinished"></translation>
+        <translation>Alt+Ctrl+R</translation>
     </message>
     <message>
         <source>Meta+Ctrl+R</source>
         <comment>Rotate Clockwise</comment>
-        <translation type="unfinished"></translation>
+        <translation>Meta+Ctrl+R</translation>
     </message>
     <message>
         <source>Shift+Ctrl+R</source>
         <comment>Rotate Counterclockwise</comment>
-        <translation type="unfinished"></translation>
+        <translation>Shift+Ctrl+R</translation>
     </message>
     <message>
         <source>Alt+Shift+Ctrl+R</source>
         <comment>Rotate Counterclockwise</comment>
-        <translation type="unfinished">Faire tourner dans le sens anti-horlogique</translation>
+        <translation>Alt+Shift+Ctrl+R</translation>
     </message>
     <message>
         <source>Meta+Shift+Ctrl+R</source>
         <comment>Rotate Counterclockwise</comment>
-        <translation type="unfinished"></translation>
+        <translation>Meta+Shift+Ctrl+R</translation>
     </message>
     <message>
         <source>Shift+Ctrl+Tab</source>
         <comment>Toggle Active Layer</comment>
-        <translation type="unfinished"></translation>
+        <translation>Shift+Ctrl+Tab</translation>
     </message>
     <message>
         <source>Fritzing</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing</translation>
     </message>
     <message>
         <source>%1 - [%2]</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 - [%2]</translation>
     </message>
     <message>
         <source>Schematic conversion</source>
-        <translation type="unfinished"></translation>
+        <translation>Conversion schematique</translation>
     </message>
     <message>
         <source>Saving this sketch will convert it to the new schematic graphics standard. Go ahead and convert?</source>
-        <translation type="unfinished"></translation>
+        <translation>Sauvegarder cette esquisse, elle sera converti selon la nouvelle norme graphique schématiques. Continuer et convertir?</translation>
     </message>
     <message>
         <source>Fritzing (*%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing (*%1)</translation>
     </message>
     <message>
         <source>%1 %2 %3</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 %2 %3</translation>
     </message>
     <message>
         <source>Code</source>
-        <translation type="unfinished"></translation>
+        <translation>Code</translation>
     </message>
     <message>
         <source>PDF (*.pdf)</source>
-        <translation type="unfinished"></translation>
+        <translation>PDF (*.pdf)</translation>
     </message>
     <message>
         <source>SVG Image (*.svg)</source>
-        <translation type="unfinished"></translation>
+        <translation>SVG Image (*.svg)</translation>
     </message>
     <message>
         <source>PostScript (*.ps)</source>
-        <translation type="unfinished"></translation>
+        <translation>PostScript (*.ps)</translation>
     </message>
     <message>
         <source>Ctrl+S</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+S</translation>
     </message>
     <message>
         <source>Shift+Ctrl+S</source>
-        <translation type="unfinished"></translation>
+        <translation>Shift+Ctrl+S</translation>
     </message>
     <message>
         <source>JPG...</source>
-        <translation type="unfinished"></translation>
+        <translation>JPG...</translation>
     </message>
     <message>
         <source>PNG...</source>
-        <translation type="unfinished"></translation>
+        <translation>PNG...</translation>
     </message>
     <message>
         <source>PostScript...</source>
-        <translation type="unfinished"></translation>
+        <translation>PostScript...</translation>
     </message>
     <message>
         <source>PDF...</source>
-        <translation type="unfinished"></translation>
+        <translation>PDF...</translation>
     </message>
     <message>
         <source>SVG...</source>
-        <translation type="unfinished"></translation>
+        <translation>SVG...</translation>
     </message>
     <message>
         <source>SPICE Netlist...</source>
-        <translation type="unfinished"></translation>
+        <translation>SPICE Netlist...</translation>
     </message>
     <message>
         <source>Eagle...</source>
-        <translation type="unfinished"></translation>
+        <translation>Eagle...</translation>
     </message>
     <message>
         <source>Ctrl+P</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+P</translation>
     </message>
     <message>
         <source>Ctrl+O</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+O</translation>
     </message>
     <message>
         <source>Ctrl+Q</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Q</translation>
     </message>
     <message>
         <source>&amp;%1 %2</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;%1 %2</translation>
     </message>
     <message>
         <source>Ctrl+Shift+V</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Shift+V</translation>
     </message>
     <message>
         <source>Ctrl+D</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+D</translation>
     </message>
     <message>
         <source>Test Connectors</source>
-        <translation type="unfinished"></translation>
+        <translation>Teste des connecteurs</translation>
     </message>
     <message>
         <source>Connect all connectors to a single test part</source>
-        <translation type="unfinished"></translation>
+        <translation>Connecter tout les connecteurs pour effectuer un teste des composants</translation>
     </message>
     <message>
         <source>Rotate 45° Clockwise</source>
-        <translation type="unfinished">Faire pivoter de 90° vers la droite {45�?} {45°?}</translation>
+        <translation>Faire pivoter de 45° vers la droite</translation>
     </message>
     <message>
         <source>Rotate 90° Clockwise</source>
-        <translation type="unfinished">Faire pivoter de 90° vers la droite {45�?} {90°?}</translation>
+        <translation>Faire pivoter de 90° vers la droite</translation>
     </message>
     <message>
         <source>Rotate 180°</source>
-        <translation type="unfinished">Faire pivoter de 180° {180�?} {180°?}</translation>
+        <translation>Faire pivoter de 180°</translation>
     </message>
     <message>
         <source>Rotate 90° Counter Clockwise</source>
-        <translation type="unfinished">Faire pivoter de 135° vers la gauche {135�?} {90°?}</translation>
+        <translation>Faire pivoter de 90° vers la gauche</translation>
     </message>
     <message>
         <source>Rotate 45° Counter Clockwise</source>
-        <translation type="unfinished">Faire pivoter de 135° vers la gauche {135�?} {45°?}</translation>
+        <translation>Faire pivoter de 45° vers la gauche</translation>
     </message>
     <message>
         <source>Shift+Ctrl+]</source>
-        <translation type="unfinished"></translation>
+        <translation>Shift+Ctrl+]</translation>
     </message>
     <message>
         <source>Ctrl+]</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+]</translation>
     </message>
     <message>
         <source>Ctrl+[</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+[</translation>
     </message>
     <message>
         <source>Shift+Ctrl+[</source>
-        <translation type="unfinished"></translation>
+        <translation>Shift+Ctrl+[</translation>
     </message>
     <message>
         <source>Ctrl++</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl++</translation>
     </message>
     <message>
         <source>Ctrl+=</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+=</translation>
     </message>
     <message>
         <source>Ctrl+-</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+-</translation>
     </message>
     <message>
         <source>Ctrl+0</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+0</translation>
     </message>
     <message>
         <source>Shift+Ctrl+0</source>
-        <translation type="unfinished"></translation>
+        <translation>Shift+Ctrl+0</translation>
     </message>
     <message>
         <source>Ctrl+1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+1</translation>
     </message>
     <message>
         <source>Ctrl+2</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+2</translation>
     </message>
     <message>
         <source>Ctrl+3</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+3</translation>
     </message>
     <message>
         <source>Ctrl+4</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+4</translation>
     </message>
     <message>
         <source>Ctrl+5</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+5</translation>
     </message>
     <message>
         <source>Ctrl+M</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+M</translation>
     </message>
     <message>
         <source>Ctrl+?</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+?</translation>
     </message>
     <message>
         <source>Shift+Ctrl+3</source>
-        <translation type="unfinished"></translation>
+        <translation>Shift+Ctrl+3</translation>
     </message>
     <message>
         <source>Shift+Ctrl+2</source>
-        <translation type="unfinished"></translation>
+        <translation>Shift+Ctrl+2</translation>
     </message>
     <message>
         <source>Shift+Ctrl+1</source>
-        <translation type="unfinished"></translation>
+        <translation>Shift+Ctrl+1</translation>
     </message>
     <message>
         <source>Schematic view update</source>
-        <translation type="unfinished"></translation>
+        <translation>Rafraichir la vue schématique</translation>
     </message>
     <message>
         <source>There is a new graphics standard for schematic-view part images, beginning with version 0.8.6.
-
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Il y a une nouvelle norme graphique pour les images de la vue schématique de la pièce, depuis la version 0.8.6.
+</translation>
     </message>
     <message>
         <source>Would you like to convert &apos;%1&apos; to the new standard now or open the file read-only?
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Voulez-vous convertir &apos;%1&apos; selon la nouvelle norme maintenant ou ouvrir le fichier en lecture seule?</translation>
     </message>
     <message>
         <source>The conversion process will not modify &apos;%1&apos;, until you save the file. </source>
-        <translation type="unfinished"></translation>
+        <translation>Le processus de conversion ne modifiera pas &apos;%1&apos;, jusqu&apos;à ce que vous enregistrez le fichier.</translation>
     </message>
     <message>
         <source>You will have to rearrange parts and connections in schematic view, as the sizes of most part images will have changed. Consider using the Autorouter to clean up traces. </source>
-        <translation type="unfinished"></translation>
+        <translation>Vous allez devoir réorganiser les pièces et les connexions en vue schématique, car la taille de la plupart des images des pièces auront changées. Pensez à utiliser l&apos;Autorouter pour nettoyer des traces.</translation>
     </message>
     <message>
         <source>Note that any custom parts will not be converted. A tool for converting &apos;rectangular&apos; schematic images is available in the Parts Editor.</source>
-        <translation type="unfinished"></translation>
+        <translation>Notez que toutes les pièces personnalisées ne seront pas convertis. Un outil pour convertir des images schématiques est disponible dans l&apos;éditeur de pièces.</translation>
     </message>
     <message>
         <source>
-
 Note: if you want to update later, there are options under the &apos;Part&apos; menu for dealing with outdated parts individually. </source>
-        <translation type="unfinished"></translation>
+        <translation>
+Remarque: si vous souhaitez mettre à jour plus tard, il existe des options dans le menu &apos;Pièces&apos; pour traiter les pièces obsolètes individuellement.</translation>
     </message>
     <message>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation>OK</translation>
     </message>
     <message>
         <source>mm</source>
-        <translation type="unfinished"></translation>
+        <translation>mm</translation>
     </message>
 </context>
 <context>
@@ -3691,7 +3660,6 @@ Reason: %2 (errcode %3)</source>
     </message>
     <message>
         <source>Please designate one or more ground fill seeds before doing a ground fill.
-
 </source>
         <translation>Veuillez désigner un ou plusieurs masses avant d&apos;effectuer le remplissage des masses.</translation>
     </message>
@@ -3715,7 +3683,7 @@ Reason: %2 (errcode %3)</source>
         <source>so you may want to increase the keepout value by that much.
 
 </source>
-        <translation>de sorte que vous pourriez vouloir augmenter la valeur de la marge de sécurité d&apos;autant.
+        <translation>donc vous pouvez augmenter la valeur de la marge de sécurité minimum d&apos;autant.
 
 </translation>
     </message>
@@ -3741,12 +3709,12 @@ Reason: %2 (errcode %3)</source>
     </message>
     <message>
         <source>Ground</source>
-        <translation>Masse</translation>
+        <translation>masse</translation>
     </message>
     <message>
         <source>Note that due to aliasing, distances may be too short by up to 2 mils
 </source>
-        <translation>Notez qu&apos;en raison de l&apos;aliasing, les distances peuvent être trop courtes d&apos;une distance allant jusquà 2 mils
+        <translation>Notez qu&apos;en raison de l&apos;aliasing, les distances peuvent êtres réduite de 0.054mm
 </translation>
     </message>
     <message>
@@ -3758,7 +3726,7 @@ Reason: %2 (errcode %3)</source>
         <translation>Impossible de convertir ce point de connexion/articulation en connexion traversante car elle est reliée à un composant qui est uniquement sur la couche de cuivre inférieure et un autre composant qui est uniquement sur la couche supérieure.</translation>
     </message>
     <message>
-        <source>Your sketch does not have a board yet!  Please add a PCB in order to use copper fill.</source>
+        <source>Your sketch does not have a board yet! Please add a PCB in order to use copper fill.</source>
         <translation>Votre croquis ne comporte pas encore de carte ! Veuillez ajouter un circuit imprimé afin de pouvoir utiliser le remplissage de cuivre.</translation>
     </message>
     <message>
@@ -3773,11 +3741,21 @@ Reason: %2 (errcode %3)</source>
         <source>10 mils is a good default choice.
 
 </source>
-        <translation>10 mm est un bon choix par défaut.</translation>
+        <translation>10 mm est un bon choix par défaut.
+
+</translation>
     </message>
     <message>
         <source>Enter keepout value:</source>
         <translation>Entrez la valeur de la marge de sécurité :</translation>
+    </message>
+    <message>
+        <source>OK</source>
+        <translation>OK</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Annuler</translation>
     </message>
     <message>
         <source>Sorry, http://fab.fritzing.org is not responding to the quote request. Please check your network connection and/or try again later.</source>
@@ -3786,10 +3764,6 @@ Reason: %2 (errcode %3)</source>
     <message>
         <source>Click this connector to drag out a new trace.</source>
         <translation>Cliquer sur ce connecteur pour établir une nouvelle piste.</translation>
-    </message>
-    <message>
-        <source>Your sketch does not have a board yet!  Please add a PCB in order to use this selection operation.</source>
-        <translation>Votre croquis ne comporte pas encore de carte ! Veuillez ajouter un circuit imprimé pour pouvoir utiliser cette opération de sélection.</translation>
     </message>
     <message>
         <source>Unable to create copper fill--probably the part wasn&apos;t dropped onto the PCB.</source>
@@ -3815,12 +3789,13 @@ Reason: %2 (errcode %3)</source>
         <source>Keepout is in mils (.001 inches).
 
 </source>
-        <translation>Positions interdites &gt; (0.0254 mm).
+        <translation>Valeur recommandée 10=(2.54 mm).
+
 </translation>
     </message>
     <message>
         <source>Fritzing</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing</translation>
     </message>
 </context>
 <context>
@@ -3850,7 +3825,7 @@ Reason: %2 (errcode %3)</source>
     </message>
     <message>
         <source>Save</source>
-        <translation>Enregistrer</translation>
+        <translation>Sauvegarder</translation>
     </message>
     <message>
         <source>&amp;Edit</source>
@@ -3933,7 +3908,7 @@ Reason: %2 (errcode %3)</source>
         <translation>Rendre visible uniquement cette vue</translation>
     </message>
     <message>
-        <source>Unable to write svg to  %1</source>
+        <source>Unable to write svg to %1</source>
         <translation>Impossible d&apos;écrire en svg dans %1</translation>
     </message>
     <message>
@@ -3978,7 +3953,6 @@ Reason: %2 (errcode %3)</source>
     </message>
     <message>
         <source>
-
 Go ahead and save?</source>
         <translation>Poursuivre et sauvegarder?</translation>
     </message>
@@ -4087,10 +4061,8 @@ Go ahead and save?</source>
     </message>
     <message>
         <source>This part can not be saved as-is:
-
 </source>
         <translation>Ce composant ne peut pas être sauvegardé tel quel :
-
 </translation>
     </message>
     <message>
@@ -4142,15 +4114,13 @@ Go ahead and save?</source>
         <translation>Vos modifications seront perdues si vous ne les enregistrez pas.</translation>
     </message>
     <message>
-        <source>Unable to parse fzp file  %1</source>
+        <source>Unable to parse fzp file %1</source>
         <translation>Impossible d&apos;analyser le fichier fzp %1</translation>
     </message>
     <message>
-        <source>Unable to load image file &apos;%1&apos;: 
-
+        <source>Unable to load image file &apos;%1&apos;:
 %2</source>
         <translation>Impossible de charger le fichier d&apos;images &apos;%1&apos;
-
 %2</translation>
     </message>
     <message>
@@ -4167,7 +4137,7 @@ Go ahead and save?</source>
     </message>
     <message>
         <source>The &apos;family&apos; property can not be blank.</source>
-        <translation>La  propriété &quot;famille&quot; ne peut pas rester vide.</translation>
+        <translation>La propriété &quot;famille&quot; ne peut pas rester vide.</translation>
     </message>
     <message numerus="yes">
         <source>This part has %n unassigned connectors </source>
@@ -4294,10 +4264,8 @@ Go ahead and save?</source>
     </message>
     <message>
         <source>You can safely make changes to Schematic or PCB view.
-
 </source>
         <translation> Vous pouvez faire en toute sécurité les modifications au schéma ou de la vue du circuit imprimé.
-
 </translation>
     </message>
     <message>
@@ -4370,31 +4338,32 @@ Go ahead and save?</source>
     </message>
     <message>
         <source>SVG</source>
-        <translation type="unfinished"></translation>
+        <translation>SVG</translation>
     </message>
     <message>
         <source>Convert schematic to 0.1 inch standard</source>
-        <translation type="unfinished"></translation>
+        <translation>Convertir le schéma au standard 0.254 mm</translation>
     </message>
     <message>
         <source>Convert pre-0.8.6 schematic image to new 0.1 inch standard</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>Convertir l&apos;image du schéma version antérieur à 0.8.6 vers la nouvelle norme au standard 0.254 mm</translatorcomment>
+        <translation></translation>
     </message>
     <message>
         <source>Ctrl+4</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+4</translation>
     </message>
     <message>
         <source>Ctrl+5</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+5</translation>
     </message>
     <message>
         <source>Ctrl+6</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+6</translation>
     </message>
     <message>
         <source>Image &amp; Footprint Files (%1 %2 %3 %4 %5);;SVG Files (%1);;JPEG Files (%2);;PNG Files (%3);;gEDA Footprint Files (%4);;Kicad Module Files (%5)</source>
-        <translation type="unfinished"></translation>
+        <translation>Image &amp; Fichiers Footprint (%1 %2 %3 %4 %5);;Fichiers SVG (%1);;Fichiers JPEG (%2);;Fichiers PNG (%3);;Fichiers gEDA Footprint (%4);;Fichiers Kicad Module (%5)</translation>
     </message>
 </context>
 <context>
@@ -4473,15 +4442,15 @@ Go ahead and save?</source>
     </message>
     <message>
         <source>Date</source>
-        <translation type="unfinished"></translation>
+        <translation>Date</translation>
     </message>
     <message>
         <source>Description</source>
-        <translation type="unfinished"></translation>
+        <translation>Déscription</translation>
     </message>
     <message>
         <source>URL</source>
-        <translation type="unfinished"></translation>
+        <translation>URL</translation>
     </message>
 </context>
 <context>
@@ -4579,15 +4548,15 @@ Go ahead and save?</source>
     </message>
     <message>
         <source>N</source>
-        <translation type="unfinished"></translation>
+        <translation>N</translation>
     </message>
     <message>
         <source>S</source>
-        <translation type="unfinished"></translation>
+        <translation>S</translation>
     </message>
     <message>
         <source>E</source>
-        <translation type="unfinished"></translation>
+        <translation>E</translation>
     </message>
 </context>
 <context>
@@ -4628,7 +4597,7 @@ Go ahead and save?</source>
         <translation>Diamètre du trou</translation>
     </message>
     <message>
-        <source>Label mismatch.  Nothing was saved.</source>
+        <source>Label mismatch. Nothing was saved.</source>
         <translation>Inadéquation de l&apos;étiquette. Rien n&apos;a été enregistré.</translation>
     </message>
     <message>
@@ -4657,15 +4626,15 @@ Go ahead and save?</source>
     </message>
     <message>
         <source>Fritzing</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing</translation>
     </message>
     <message>
         <source>in</source>
-        <translation type="unfinished">dans</translation>
+        <translation>pouce</translation>
     </message>
     <message>
         <source>mm</source>
-        <translation type="unfinished"></translation>
+        <translation>mm</translation>
     </message>
 </context>
 <context>
@@ -4716,19 +4685,11 @@ Go ahead and save?</source>
     </message>
     <message>
         <source>Set label for %1</source>
-        <translation>Définir l&apos;étiquette pour %1</translation>
+        <translation>Modifier l&apos;étiquette de %1</translation>
     </message>
     <message>
         <source>Rotate the label by 135 degrees clockwise</source>
         <translation>Faire pivoter le label de 135 degrés vers la droite</translation>
-    </message>
-    <message utf8="true">
-        <source>Rotate 90� Counter Clockwise</source>
-        <translation type="obsolete">Faire pivoter de 135° vers la gauche {90�?}</translation>
-    </message>
-    <message utf8="true">
-        <source>Rotate 45� Counter Clockwise</source>
-        <translation type="obsolete">Faire pivoter de 135° vers la gauche {45�?}</translation>
     </message>
     <message>
         <source>Rotate the label by 135 degrees counter clockwise</source>
@@ -4737,10 +4698,6 @@ Go ahead and save?</source>
     <message>
         <source>Display the text of the label</source>
         <translation>Afficher le texte de l&apos;étiquette</translation>
-    </message>
-    <message utf8="true">
-        <source>Rotate 135� Clockwise</source>
-        <translation type="obsolete">Faire pivoter de 90° vers la droite {135�?}</translation>
     </message>
     <message>
         <source>Flip/Rotate</source>
@@ -4766,14 +4723,6 @@ Go ahead and save?</source>
         <source>Display the value of property %1</source>
         <translation>Afficher les valeurs de la propriétés %1</translation>
     </message>
-    <message utf8="true">
-        <source>Rotate 90� Clockwise</source>
-        <translation type="obsolete">Faire pivoter de 90° vers la droite {90�?}</translation>
-    </message>
-    <message utf8="true">
-        <source>Rotate 45� Clockwise</source>
-        <translation type="obsolete">Faire pivoter de 90° vers la droite {45�?}</translation>
-    </message>
     <message>
         <source>Rotate the label by 45 degrees clockwise</source>
         <translation>Faire pivoter le label de 45 degrés vers la droite</translation>
@@ -4793,14 +4742,6 @@ Go ahead and save?</source>
     <message>
         <source>Rotate the label by 45 degrees counter clockwise</source>
         <translation>Faire pivoter le label de 45 degrés vers la gauche</translation>
-    </message>
-    <message utf8="true">
-        <source>Rotate 180�</source>
-        <translation type="obsolete">Faire pivoter de 180° {180�?}</translation>
-    </message>
-    <message utf8="true">
-        <source>Rotate 135� Counter Clockwise</source>
-        <translation type="obsolete">Faire pivoter de 135° vers la gauche {135�?}</translation>
     </message>
     <message>
         <source>Edit label text</source>
@@ -4824,38 +4765,38 @@ Go ahead and save?</source>
     </message>
     <message>
         <source>Rotate 45° Clockwise</source>
-        <translation type="unfinished">Faire pivoter de 90° vers la droite {45�?} {45°?}</translation>
+        <translation>Faire pivoter de 45° vers la droite</translation>
     </message>
     <message>
         <source>Rotate 90° Clockwise</source>
-        <translation type="unfinished">Faire pivoter de 90° vers la droite {45�?} {90°?}</translation>
+        <translation>Faire pivoter de 90° vers la droite</translation>
     </message>
     <message>
         <source>Rotate 135° Clockwise</source>
-        <translation type="unfinished">Faire pivoter de 90° vers la droite {45�?} {135°?}</translation>
+        <translation>Faire pivoter de 135° vers la droite</translation>
     </message>
     <message>
         <source>Rotate 180°</source>
-        <translation type="unfinished">Faire pivoter de 180° {180�?} {180°?}</translation>
+        <translation>Faire pivoter de 180°</translation>
     </message>
     <message>
         <source>Rotate 135° Counter Clockwise</source>
-        <translation type="unfinished">Faire pivoter de 135° vers la gauche {135�?} {135°?}</translation>
+        <translation>Faire pivoter de 135° vers la gauche</translation>
     </message>
     <message>
         <source>Rotate 90° Counter Clockwise</source>
-        <translation type="unfinished">Faire pivoter de 135° vers la gauche {135�?} {90°?}</translation>
+        <translation>Faire pivoter de 90° vers la gauche</translation>
     </message>
     <message>
         <source>Rotate 45° Counter Clockwise</source>
-        <translation type="unfinished">Faire pivoter de 135° vers la gauche {135�?} {45°?}</translation>
+        <translation>Faire pivoter de 45° vers la gauche</translation>
     </message>
 </context>
 <context>
     <name>PartsBinPaletteWidget</name>
     <message>
         <source>Save</source>
-        <translation>Enregistrer</translation>
+        <translation>Sauvegarder</translation>
     </message>
     <message>
         <source>Specify a file name</source>
@@ -4929,11 +4870,11 @@ Go ahead and save?</source>
     </message>
     <message>
         <source>Fritzing</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing</translation>
     </message>
     <message>
         <source>Ctrl+D</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+D</translation>
     </message>
 </context>
 <context>
@@ -4964,10 +4905,8 @@ Go ahead and save?</source>
     </message>
     <message>
         <source>Performance of perfboards and stripboards with more than approximately 2000 holes can be slow. Are you sure ?
-
 Note: this warning will not be repeated during this session.</source>
         <translation>Les performances du logiciel avec des Cartes à bandes de plus de 2000 trous peuvent êtres réduites. Etes-vous sûr?
-
 Remarque : cet avertissement ne sera pas répété au cours de cette session.</translation>
     </message>
     <message>
@@ -4983,7 +4922,7 @@ Remarque : cet avertissement ne sera pas répété au cours de cette session.</t
     </message>
     <message>
         <source>Save</source>
-        <translation>Enregistrer</translation>
+        <translation>Sauvegarder</translation>
     </message>
     <message>
         <source>Undo</source>
@@ -5010,14 +4949,14 @@ Remarque : cet avertissement ne sera pas répété au cours de cette session.</t
     <name>PlatformArduino</name>
     <message>
         <source>Running %1 %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Exécuter %1 %2</translation>
     </message>
 </context>
 <context>
     <name>PlatformPicaxe</name>
     <message>
         <source>Running %1 %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Exécuter %1 %2</translation>
     </message>
 </context>
 <context>
@@ -5112,39 +5051,39 @@ Alt ou la touche %1 = zoom</translation>
     </message>
     <message>
         <source>Code View</source>
-        <translation type="unfinished"></translation>
+        <translation>Editeur de code</translation>
     </message>
     <message>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation>OK</translation>
     </message>
     <message>
         <source>minutes</source>
-        <translation type="unfinished"></translation>
+        <translation>minutes</translation>
     </message>
     <message>
         <source>Platform Support</source>
-        <translation type="unfinished"></translation>
+        <translation>Plateforme d&apos;asistance</translation>
     </message>
     <message>
         <source>&lt;b&gt;%1&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;%1&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Location:</source>
-        <translation type="unfinished"></translation>
+        <translation>Emplacement:</translation>
     </message>
     <message>
         <source>...</source>
-        <translation type="unfinished"></translation>
+        <translation>...</translation>
     </message>
     <message>
         <source>You need to have &lt;a href=&apos;%1&apos;&gt;%2&lt;/a&gt; (version %3 or newer) installed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vous devez avoir &lt;a href=&apos;%1&apos;&gt;%2&lt;/a&gt; (version %3 ou supérieur) installé.</translation>
     </message>
     <message>
         <source>Select a programmer (executable) for %1</source>
-        <translation type="unfinished">Sélectionnez un programmeur (exécutable) pour %1</translation>
+        <translation>Sélectionnez un programmeur (exécutable) pour %1</translation>
     </message>
 </context>
 <context>
@@ -5155,11 +5094,7 @@ Alt ou la touche %1 = zoom</translation>
     </message>
     <message>
         <source>Save</source>
-        <translation>Enregistrer</translation>
-    </message>
-    <message>
-        <source>Port:</source>
-        <translation type="obsolete">Port :</translation>
+        <translation>Sauvegarder</translation>
     </message>
     <message>
         <source>Select a program file to load</source>
@@ -5170,36 +5105,12 @@ Alt ou la touche %1 = zoom</translation>
         <translation>Supprimer &quot;%1&quot;?</translation>
     </message>
     <message>
-        <source>Language:</source>
-        <translation type="obsolete">Langage :</translation>
-    </message>
-    <message>
         <source>Are you sure you want to remove &quot;%1&quot; from the sketch?</source>
         <translation></translation>
     </message>
     <message>
-        <source>Open...</source>
-        <translation type="obsolete">Ouvrir...</translation>
-    </message>
-    <message>
-        <source>Select a programmer (executable) for %1</source>
-        <translation type="obsolete">Sélectionnez un programmeur (exécutable) pour %1</translation>
-    </message>
-    <message>
-        <source>Program</source>
-        <translation type="obsolete">Programmeur</translation>
-    </message>
-    <message>
-        <source>Programmer:</source>
-        <translation type="obsolete">Programmateur :</translation>
-    </message>
-    <message>
         <source>Fritzing is unable to find &apos;%1&apos;, please locate it</source>
         <translation>Fritzing est incapable de trouver &quot;%1&quot;, veuillez le localiser</translation>
-    </message>
-    <message>
-        <source>The file &apos;%1&apos; must be saved before it can be sent to the programmer.</source>
-        <translation type="obsolete">Le fichier &apos;%1&apos; doit être enregistré avant qu&apos;il puisse être envoyé au programmateur.</translation>
     </message>
     <message>
         <source>While it is possible to read and edit %1 programming files, it is not yet possible to use Fritzing to compile or upload these programs to a microcontroller.</source>
@@ -5207,47 +5118,47 @@ Alt ou la touche %1 = zoom</translation>
     </message>
     <message>
         <source>Open</source>
-        <translation type="unfinished"></translation>
+        <translation>Ouvrir</translation>
     </message>
     <message>
         <source>Platform</source>
-        <translation type="unfinished"></translation>
+        <translation>Plateforme</translation>
     </message>
     <message>
         <source>Board</source>
-        <translation type="unfinished">Plaque</translation>
+        <translation>Carte</translation>
     </message>
     <message>
         <source>Port</source>
-        <translation type="unfinished"></translation>
+        <translation>Port</translation>
     </message>
     <message>
         <source>Serial Monitor</source>
-        <translation type="unfinished"></translation>
+        <translation>Moniteur série</translation>
     </message>
     <message>
         <source>Upload</source>
-        <translation type="unfinished"></translation>
+        <translation>Charger</translation>
     </message>
     <message>
         <source>Code (*.%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Code (*.%1)</translation>
     </message>
     <message>
         <source>No uploader for %1 specified. Go to Preferences &gt; Code View to configure it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Aucun téléchargeur pour %1 n&apos;a été spécifié. Ouvrez le menu Edition&gt; Préférences&gt; Editeur de code, pour le configurer.</translation>
     </message>
     <message>
         <source>Uploader configured, but not found at %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Téléchargeur configuré, mais introuvable dans %1</translation>
     </message>
     <message>
         <source>Upload finished.</source>
-        <translation type="unfinished"></translation>
+        <translation>Chargement terminé.</translation>
     </message>
     <message>
         <source>Upload failed with exit code %1, %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Chargement échoué, code de sortie %1,%2</translation>
     </message>
 </context>
 <context>
@@ -5273,14 +5184,6 @@ Alt ou la touche %1 = zoom</translation>
         <translation>&amp;Édition</translation>
     </message>
     <message>
-        <source>&amp;File</source>
-        <translation type="obsolete">&amp;Fichier</translation>
-    </message>
-    <message>
-        <source>&amp;Quit</source>
-        <translation type="obsolete">&amp;Quitter</translation>
-    </message>
-    <message>
         <source>&amp;View</source>
         <translation>&amp;Vue</translation>
     </message>
@@ -5289,28 +5192,8 @@ Alt ou la touche %1 = zoom</translation>
         <translation>Sélectionner l&apos;ensemble du texte</translation>
     </message>
     <message>
-        <source>Open a program</source>
-        <translation type="obsolete">Ouvrir un programme</translation>
-    </message>
-    <message>
-        <source>Save the current program</source>
-        <translation type="obsolete">Sauvegarder le programme en cours</translation>
-    </message>
-    <message>
-        <source>Copies the current program into a new tab</source>
-        <translation type="obsolete">Copier le programme actuel dans un nouvel onglet</translation>
-    </message>
-    <message>
         <source>Code Window - %1</source>
         <translation>Fenêtre de code - %1</translation>
-    </message>
-    <message>
-        <source>Rename Code File</source>
-        <translation type="obsolete">Renommer le fichier de code</translation>
-    </message>
-    <message>
-        <source>&amp;Save Code File</source>
-        <translation type="obsolete">&amp;Sauvegarder le fichier de code</translation>
     </message>
     <message>
         <source>&amp;Paste</source>
@@ -5321,32 +5204,8 @@ Alt ou la touche %1 = zoom</translation>
         <translation>Le fichier &quot;%1&quot; a été restauré à partir du fichier fzz;. Enregistrer une copie locale pour travailler avec un éditeur externe.</translation>
     </message>
     <message>
-        <source>Duplicate tab</source>
-        <translation type="obsolete">Dupliquer l&apos;onglet</translation>
-    </message>
-    <message>
-        <source>Print the current program</source>
-        <translation type="obsolete">Imprimer le programme en cours</translation>
-    </message>
-    <message>
-        <source>No ports found</source>
-        <translation type="obsolete">Aucun port détecté</translation>
-    </message>
-    <message>
-        <source>Remove the current program from the sketch</source>
-        <translation type="obsolete">Supprimer le programme actuel de l&apos;esquisse</translation>
-    </message>
-    <message>
-        <source>Select programmer</source>
-        <translation type="obsolete">Sélection du programmateur</translation>
-    </message>
-    <message>
         <source>Copy selection</source>
         <translation>Copier la sélection</translation>
-    </message>
-    <message>
-        <source>Quit the application</source>
-        <translation type="obsolete">Quitter le programme</translation>
     </message>
     <message>
         <source>Code Window</source>
@@ -5357,172 +5216,128 @@ Alt ou la touche %1 = zoom</translation>
         <translation>Copier le contenu du presse-papier</translation>
     </message>
     <message>
-        <source>Remove tab</source>
-        <translation type="obsolete">Supprimer l&apos;onglet</translation>
-    </message>
-    <message>
-        <source>Select language</source>
-        <translation type="obsolete">Sélectionner la langue</translation>
-    </message>
-    <message>
         <source>File &apos;%1&apos; was restored from the .fzz file; the local copy was not found.</source>
         <translation>Le fichier &quot;%1&quot; a été restaurée à partir du fichier fzz;. La copie locale n&apos;a pas été trouvé.</translation>
-    </message>
-    <message>
-        <source>Program</source>
-        <translation type="obsolete">Programme</translation>
-    </message>
-    <message>
-        <source>Find file...</source>
-        <translation type="obsolete">Rechercher un fichier...</translation>
     </message>
     <message>
         <source>Cut selection</source>
         <translation>Couper la sélection</translation>
     </message>
     <message>
-        <source>Rename the current program</source>
-        <translation type="obsolete">Renommer le programme actuel</translation>
-    </message>
-    <message>
-        <source>&amp;Print...</source>
-        <translation type="obsolete">&amp;Imprimer...</translation>
-    </message>
-    <message>
-        <source>Select port</source>
-        <translation type="obsolete">Sélection du port</translation>
-    </message>
-    <message>
-        <source>&amp;Open Code File...</source>
-        <translation type="obsolete">&amp;Ouvrir le fichier de code...</translation>
-    </message>
-    <message>
         <source>&amp;Select All</source>
         <translation>&amp;Tout sélectionner</translation>
     </message>
     <message>
-        <source>Load the current program onto a microcontroller</source>
-        <translation type="obsolete">Charger le programme en cours sur un microcontrôleur</translation>
-    </message>
-    <message>
-        <source>Create a new program</source>
-        <translation type="obsolete">Créer un nouveau programme</translation>
-    </message>
-    <message>
-        <source>New Code File</source>
-        <translation type="obsolete">Nouveau fichier de code</translation>
-    </message>
-    <message>
         <source>No boards available</source>
-        <translation type="unfinished"></translation>
+        <translation>Aucune carte disponnible</translation>
     </message>
     <message>
         <source>&amp;Preferences...</source>
-        <translation type="unfinished">&amp;Préférences...</translation>
+        <translation>&amp;Préférences...</translation>
     </message>
     <message>
         <source>Show the application&apos;s about box</source>
-        <translation type="unfinished">Montrer &quot;À propos&quot;</translation>
+        <translation>Afficher &quot;À propos&quot;</translation>
     </message>
     <message>
         <source>&amp;Code</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Code</translation>
     </message>
     <message>
         <source>&amp;New Tab</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Nouvelle onglet</translation>
     </message>
     <message>
         <source>Create a new program tab</source>
-        <translation type="unfinished"></translation>
+        <translation>Créer un nouvel onglet programme</translation>
     </message>
     <message>
         <source>&amp;Import Code...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Importer un code...</translation>
     </message>
     <message>
         <source>Alt+Ctrl+I</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+Ctrl+I</translation>
     </message>
     <message>
         <source>Import a program from a file</source>
-        <translation type="unfinished"></translation>
+        <translation>Importer un programme depuis un fichier</translation>
     </message>
     <message>
         <source>&amp;Save Tab</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Enregistrer l&apos;onglet</translation>
     </message>
     <message>
         <source>Alt+Ctrl+S</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+Ctrl+S</translation>
     </message>
     <message>
         <source>Save the current program tab</source>
-        <translation type="unfinished"></translation>
+        <translation>Sauvegarder l&apos;onglet du programme actuel</translation>
     </message>
     <message>
         <source>&amp;Rename Tab</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Renomer l&apos;onglet</translation>
     </message>
     <message>
         <source>Alt+Ctrl+R</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+Ctrl+R</translation>
     </message>
     <message>
         <source>Rename the current program tab</source>
-        <translation type="unfinished"></translation>
+        <translation>Renommer l&apos;onglet programme actuel</translation>
     </message>
     <message>
         <source>Close Tab</source>
-        <translation type="unfinished"></translation>
+        <translation>Fermer l&apos;onglet</translation>
     </message>
     <message>
         <source>Alt+Ctrl+W</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+Ctrl+W</translation>
     </message>
     <message>
         <source>Remove the current program tab from the sketch</source>
-        <translation type="unfinished"></translation>
+        <translation>Supprimer l&apos;onglet du programme actuel de l&apos;esquisse</translation>
     </message>
     <message>
         <source>Platform</source>
-        <translation type="unfinished"></translation>
+        <translation>Plateforme</translation>
     </message>
     <message>
         <source>Board</source>
-        <translation type="unfinished">Plaque</translation>
+        <translation>Carte</translation>
     </message>
     <message>
         <source>Port</source>
-        <translation type="unfinished"></translation>
+        <translation>Port</translation>
     </message>
     <message>
         <source>Serial Monitor</source>
-        <translation type="unfinished"></translation>
+        <translation>Moniteur série</translation>
     </message>
     <message>
         <source>Ctrl+M</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+M</translation>
     </message>
     <message>
         <source>Monitor the serial port communication</source>
-        <translation type="unfinished"></translation>
+        <translation>Surveiller la communication du port série</translation>
     </message>
     <message>
         <source>Upload</source>
-        <translation type="unfinished"></translation>
+        <translation>Chargement</translation>
     </message>
     <message>
         <source>Ctrl+U</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+U</translation>
     </message>
     <message>
         <source>Upload the current program onto a microcontroller</source>
-        <translation type="unfinished"></translation>
+        <translation>Téléchargez le programme en cours sur un microcontrôleur</translation>
     </message>
     <message>
         <source>%1%2</source>
-        <translation type="unfinished"></translation>
+        <translation>%1%2</translation>
     </message>
 </context>
 <context>
@@ -5565,7 +5380,7 @@ Alt ou la touche %1 = zoom</translation>
     </message>
     <message>
         <source>Board</source>
-        <translation>Plaque</translation>
+        <translation>Plaque CI</translation>
     </message>
     <message>
         <source>Internal Connections</source>
@@ -5645,7 +5460,7 @@ Alt ou la touche %1 = zoom</translation>
     </message>
     <message>
         <source>Copper Bottom Trace</source>
-        <translation>Cuivrer les pistes de la face inférieure</translation>
+        <translation>Pistes cuivrées de la face inférieure</translation>
     </message>
     <message>
         <source>No parts found.</source>
@@ -5777,7 +5592,7 @@ is already there, we won&apos;t add it again, right?</source>
     </message>
     <message>
         <source>Copper Top Trace</source>
-        <translation>Cuivrer la face supérieure</translation>
+        <translation>Pistes cuivrées de la face supérieure</translation>
     </message>
     <message>
         <source>exported drill file is empty</source>
@@ -5877,7 +5692,7 @@ is already there, we won&apos;t add it again, right?</source>
     </message>
     <message>
         <source>Copper Top</source>
-        <translation>Cuivre - face supérieure</translation>
+        <translation>Pastilles cuivre - face supérieure</translation>
     </message>
     <message>
         <source>Bring forward</source>
@@ -6197,7 +6012,7 @@ is already there, we won&apos;t add it again, right?</source>
     </message>
     <message>
         <source>Copper Bottom</source>
-        <translation>Cuivre - face Inférieure</translation>
+        <translation>Pastille cuivre - face Inférieure</translation>
     </message>
     <message>
         <source>Sorry, Fritzing can&apos;t yet handle both pins and pads together (in %1 in %2)</source>
@@ -6239,59 +6054,59 @@ Fritzing va continuer à fonctionner, mais vous n&apos;aurez pas la possibilité
     </message>
     <message>
         <source>Fritzing</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing</translation>
     </message>
     <message>
         <source>&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;Version %1.%2.%3 (%4%5) %6&lt;/font&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;Version %1.%2.%3 (%4%5) %6&lt;/font&gt;</translation>
     </message>
     <message>
         <source>mm</source>
-        <translation type="unfinished"></translation>
+        <translation>mm</translation>
     </message>
     <message>
         <source>in</source>
-        <translation type="unfinished">dans</translation>
+        <translation>pouce</translation>
     </message>
     <message>
         <source>ICs</source>
-        <translation type="unfinished"></translation>
+        <translation>ICs</translation>
     </message>
     <message>
         <source>LilyPad</source>
-        <translation type="unfinished"></translation>
+        <translation>LilyPad</translation>
     </message>
     <message>
         <source>Pad</source>
-        <translation type="unfinished"></translation>
+        <translation>Pad</translation>
     </message>
     <message>
         <source>ii</source>
-        <translation type="unfinished"></translation>
+        <translation>ii</translation>
     </message>
     <message>
         <source>&lt;b&gt;id:&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;id:&lt;/b&gt;</translation>
     </message>
     <message>
         <source>N/A</source>
-        <translation type="unfinished"></translation>
+        <translation>N/A</translation>
     </message>
     <message>
         <source>bb</source>
-        <translation type="unfinished"></translation>
+        <translation>bb</translation>
     </message>
     <message>
         <source>%1 %2,%3 %4</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 %2,%3 %4</translation>
     </message>
     <message>
         <source>%1 %2 %3</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 %2 %3</translation>
     </message>
     <message>
         <source>Notes</source>
-        <translation type="unfinished"></translation>
+        <translation>Notes</translation>
     </message>
 </context>
 <context>
@@ -6299,29 +6114,33 @@ Fritzing va continuer à fonctionner, mais vous n&apos;aurez pas la possibilité
     <message>
         <source>Ctrl</source>
         <comment>for naming shortcut keys on menu items</comment>
-        <translation type="unfinished"></translation>
+        <translatorcomment>Pour nommer les touches racourcis dans les éléments su menu </translatorcomment>
+        <translation>Ctrl</translation>
     </message>
     <message>
         <source>Alt</source>
         <comment>for naming shortcut keys on menu items</comment>
-        <translation type="unfinished"></translation>
+        <translatorcomment>Pour nommer les touches racourcis dans les éléments su menu </translatorcomment>
+        <translation>Alt</translation>
     </message>
     <message>
         <source>Shift</source>
         <comment>for naming shortcut keys on menu items</comment>
-        <translation type="unfinished"></translation>
+        <translatorcomment>Pour nommer les touches racourcis dans les éléments su menu </translatorcomment>
+        <translation>Shift</translation>
     </message>
     <message>
         <source>Meta</source>
         <comment>for naming shortcut keys on menu items</comment>
-        <translation type="unfinished"></translation>
+        <translatorcomment>Pour nommer les touches racourcis dans les éléments su menu </translatorcomment>
+        <translation>Meta</translation>
     </message>
 </context>
 <context>
     <name>QuoteDialog</name>
     <message>
         <source>Price</source>
-        <translation>Prix</translation>
+        <translation>Total</translation>
     </message>
     <message>
         <source>Order your PCB from Fritzing Fab</source>
@@ -6329,7 +6148,7 @@ Fritzing va continuer à fonctionner, mais vous n&apos;aurez pas la possibilité
     </message>
     <message>
         <source>Copies</source>
-        <translation>Exemplaires</translation>
+        <translation>Nbr d&apos;éxemplaires</translation>
     </message>
     <message>
         <source>Please note that prices do not include shipping,&lt;br /&gt;</source>
@@ -6362,8 +6181,8 @@ Fritzing va continuer à fonctionner, mais vous n&apos;aurez pas la possibilité
     <message numerus="yes">
         <source>The total area of the %n PCB(s) in this sketch is</source>
         <translation>
-            <numerusform>La surface totale du circuit imprimé %n dans cette esquisse est de</numerusform>
-            <numerusform>La surface totale des circuits imprimés %n dans cette esquisse est de</numerusform>
+            <numerusform>La surface totale du circuit imprimé dans cette esquisse est de</numerusform>
+            <numerusform>La surface totale des %n circuits imprimés dans cette esquisse est de</numerusform>
         </translation>
     </message>
     <message>
@@ -6372,7 +6191,7 @@ Fritzing va continuer à fonctionner, mais vous n&apos;aurez pas la possibilité
     </message>
     <message>
         <source> %1 cm%3 (%2 in%3).&lt;br /&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 cm%3 (%2 pouce%3).&lt;br /&gt;</translation>
     </message>
 </context>
 <context>
@@ -6477,31 +6296,31 @@ Fritzing va continuer à fonctionner, mais vous n&apos;aurez pas la possibilité
     </message>
     <message>
         <source>A0 (1030x1456)</source>
-        <translation type="unfinished"></translation>
+        <translation>A0 (1030x1456)</translation>
     </message>
     <message>
         <source>A1 (728x1030)</source>
-        <translation type="unfinished"></translation>
+        <translation>A1 (728x1030)</translation>
     </message>
     <message>
         <source>A2 (515x728)</source>
-        <translation type="unfinished"></translation>
+        <translation>A2 (515x728)</translation>
     </message>
     <message>
         <source>A3 (364x515)</source>
-        <translation type="unfinished"></translation>
+        <translation>A3 (364x515)</translation>
     </message>
     <message>
         <source>A4 (257x364)</source>
-        <translation type="unfinished"></translation>
+        <translation>A4 (257x364)</translation>
     </message>
     <message>
         <source>A5 (182x257)</source>
-        <translation type="unfinished"></translation>
+        <translation>A5 (182x257)</translation>
     </message>
     <message>
         <source>A6 (128x182)</source>
-        <translation type="unfinished"></translation>
+        <translation>A6 (128x182)</translation>
     </message>
 </context>
 <context>
@@ -6515,31 +6334,31 @@ Fritzing va continuer à fonctionner, mais vous n&apos;aurez pas la possibilité
     <name>S2S</name>
     <message>
         <source>Failed loading &apos;%1&apos;, %2 line:%3 col:%4</source>
-        <translation type="unfinished"></translation>
+        <translation>Erreur lors du chargement de &apos;%1&apos;,%2 ligne:%3 col:%4</translation>
     </message>
     <message>
         <source>Schematic not found for &apos;%1&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>Schéma non trouvé pour &apos;%1&apos;</translation>
     </message>
     <message>
         <source>Unable to load schematic &apos;%1&apos; for &apos;%2&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>Impossible de charger le schéma &apos;%1&apos; pour &apos;%2&apos;</translation>
     </message>
     <message>
         <source>Schematic &apos;%1&apos; is already using the 0.1inch standard.</source>
-        <translation type="unfinished"></translation>
+        <translation>Le schéma &apos;%1&apos; utilise déja le standard 0.254mm.</translation>
     </message>
     <message>
         <source>Missing connector %1 in &apos;%2&apos; schematic of &apos;%3&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>Connecteur %1 dans&apos;%2&apos; le schéma &apos;%3&apos;</translation>
     </message>
     <message>
         <source>Uunable to load schematic &apos;%1&apos; for &apos;%2&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>Impossiblle de charger le schéma &apos;%1&apos; de &apos;%2&apos;</translation>
     </message>
     <message>
         <source>Failed loading schematic &apos;%1&apos;, %2 line:%3 col:%4</source>
-        <translation type="unfinished"></translation>
+        <translation>Echec du chargement du schéma &apos;%1&apos;,%2 ligne:%3 col:%4</translation>
     </message>
 </context>
 <context>
@@ -6574,11 +6393,11 @@ Fritzing va continuer à fonctionner, mais vous n&apos;aurez pas la possibilité
     </message>
     <message>
         <source>Date</source>
-        <translation type="unfinished"></translation>
+        <translation>Date</translation>
     </message>
     <message>
         <source>date</source>
-        <translation type="unfinished"></translation>
+        <translation>date</translation>
     </message>
 </context>
 <context>
@@ -6595,80 +6414,44 @@ Fritzing va continuer à fonctionner, mais vous n&apos;aurez pas la possibilité
 <context>
     <name>SetColorDialog</name>
     <message>
-        <source>Select custom %1 color</source>
-        <translation type="obsolete">Sélectionner une couleur personnalisée %1</translation>
-    </message>
-    <message>
-        <source>custom color (%1)</source>
-        <translation type="obsolete">Couleur personnalisée (%1)</translation>
-    </message>
-    <message>
-        <source>Set %1 Color...</source>
-        <translation type="obsolete">Paramétrage de la couleur %1...</translation>
-    </message>
-    <message>
         <source>Cancel</source>
         <translation>Annuler</translation>
     </message>
     <message>
-        <source>Choose a new %1 color.</source>
-        <translation type="obsolete">Sélectionner une nouvelle couleur %1.</translation>
-    </message>
-    <message>
-        <source>selected color (%1)</source>
-        <translation type="obsolete">Couleur sélectionnée (%1)</translation>
-    </message>
-    <message>
-        <source>current %1 color (%2)</source>
-        <translation type="obsolete">Couleur actuelle %1, nouvelle (%2)</translation>
-    </message>
-    <message>
         <source>Make this the default %1 color</source>
-        <translation>Faire %1 la couleur par défaut</translation>
-    </message>
-    <message>
-        <source>standard %1 color (%2)</source>
-        <translation type="obsolete">couleur standard %1, nouvelle couleur (%2)</translation>
-    </message>
-    <message>
-        <source>Choose</source>
-        <translation type="obsolete">Sélectionner</translation>
-    </message>
-    <message>
-        <source>Custom color ...</source>
-        <translation type="obsolete">Couleur personalisée</translation>
+        <translation>Utlisier cette couleur par défaut %1 </translation>
     </message>
     <message>
         <source>%1 Color...</source>
-        <translation type="unfinished"></translation>
+        <translation>Couleur %1...</translation>
     </message>
     <message>
         <source>Choose %1 color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Sélection de la couleur %1 :</translation>
     </message>
     <message>
         <source>Reset to default</source>
-        <translation type="unfinished"></translation>
+        <translation>Valeur par défaut</translation>
     </message>
     <message>
         <source>Default color (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Couleur par défaut (%1)</translation>
     </message>
     <message>
         <source>Pick custom color ...</source>
-        <translation type="unfinished"></translation>
+        <translation>Sélectionnez une couleur personnalisée ...</translation>
     </message>
     <message>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation>OK</translation>
     </message>
     <message>
         <source>Pick custom %1 color</source>
-        <translation type="unfinished"></translation>
+        <translation>Couleur personalisée %1</translation>
     </message>
     <message>
         <source>Current color (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Couleur utilisée (%1)</translation>
     </message>
 </context>
 <context>
@@ -6763,7 +6546,7 @@ Fritzing va continuer à fonctionner, mais vous n&apos;aurez pas la possibilité
     </message>
     <message>
         <source>Unrouted connections are highlighted in yellow.</source>
-        <translation>Les connexions non routées sont en jaune.</translation>
+        <translation>Les connexions non reliées sont en jaune.</translation>
     </message>
     <message>
         <source>Rotate</source>
@@ -6822,7 +6605,7 @@ Fritzing va continuer à fonctionner, mais vous n&apos;aurez pas la possibilité
 Note: you can also trigger this display by mousing down on the routing status text in the status bar.</source>
         <translation>%1
 
-Remarque : vous pouvez également déclencher cet affichage en positionnant la souris sur le texte d&apos;état de routage dans la barre d&apos;état.</translation>
+Remarque: vous pouvez également déclencher cet affichage en positionnant la souris sur le texte d&apos;état de routage dans la barre d&apos;état.</translation>
     </message>
     <message>
         <source>Disconnect</source>
@@ -6869,7 +6652,7 @@ Remarque : vous pouvez également déclencher cet affichage en positionnant la s
     </message>
     <message>
         <source>Change image from %1 to %2</source>
-        <translation>Modifier l&apos;image de%1 en %2</translation>
+        <translation>Modifier l&apos;image de %1 en %2</translation>
     </message>
     <message>
         <source>Flip %2 (%1)</source>
@@ -6921,19 +6704,19 @@ Remarque : vous pouvez également déclencher cet affichage en positionnant la s
     </message>
     <message>
         <source>Unrouted connections</source>
-        <translation>Connexions non routées</translation>
+        <translation>Connexions non reliées</translation>
     </message>
     <message>
         <source>%1 %2</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 %2</translation>
     </message>
     <message>
         <source>Fritzing</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing</translation>
     </message>
     <message>
         <source>test connectors</source>
-        <translation type="unfinished"></translation>
+        <translation>Tester les connecteurs </translation>
     </message>
 </context>
 <context>
@@ -6952,7 +6735,6 @@ Remarque : vous pouvez également déclencher cet affichage en positionnant la s
     </message>
     <message>
         <source>The swapping mechanism is disabled for:
-
 </source>
         <translation>Le mécanisme de permutation est désactivé pour :</translation>
     </message>
@@ -7058,7 +6840,7 @@ Remarque : vous pouvez également déclencher cet affichage en positionnant la s
     </message>
     <message>
         <source>To free-rotate a part in Breadboard or PCB view, select it, then hover your mouse near one of the corners until you see the rotate cursor. Mouse down and that corner will follow your mouse as you drag.</source>
-        <translation>Pour faire tourner librement un composant dans les vues  de la platine d&apos;essai ou du circuit imprimé, sélectionnnez-le, ensuite faites passer le pointeur de la souris près d&apos;un de ses coins jusqu&apos;à ce que le curseur de rotation apparaisse. Enfoncez le bouton de la souris et ce coin suivra en tournant les déplacements de la souris.</translation>
+        <translation>Pour faire tourner librement un composant dans les vues de la platine d&apos;essai ou du circuit imprimé, sélectionnnez-le, ensuite faites passer le pointeur de la souris près d&apos;un de ses coins jusqu&apos;à ce que le curseur de rotation apparaisse. Enfoncez le bouton de la souris et ce coin suivra en tournant les déplacements de la souris.</translation>
     </message>
     <message>
         <source>Tips and Tricks</source>
@@ -7098,7 +6880,7 @@ Remarque : vous pouvez également déclencher cet affichage en positionnant la s
     </message>
     <message>
         <source>To add a bendpoint to a wire, double-click where you want the bendpoint.</source>
-        <translation>Pour ajouter un point de connexion/articulation dans un câble, faites un double-clic  à l&apos;endroit souhaité.sur le câble.</translation>
+        <translation>Pour ajouter un point de connexion/articulation dans un câble, faites un double-clic à l&apos;endroit souhaité.sur le câble.</translation>
     </message>
     <message>
         <source>To insert a clickable URL into a note, select some text in the note and type ctrl-l (Mac: command-l). (That&apos;s &apos;l&apos; as in the first letter of &apos;link&apos;.) To modify an existing link select the linked text and use ctrl-l (command-l) again.</source>
@@ -7130,7 +6912,11 @@ Remarque : vous pouvez également déclencher cet affichage en positionnant la s
     </message>
     <message>
         <source>Can&apos;t find your part? Search for it by clicking the magnifier icon in the Parts Bin and type in some keywords</source>
-        <translation>Vous ne trouvez pas un composant ? Recherchez-le en cliquant sur l&apos;icône en forme de loupe dans le Magasin de Composants et tapez quelques mots-clés</translation>
+        <translation>Vous ne trouvez pas un composant ? Recherchez-le en cliquant sur l&apos;icône en forme de loupe dans le Magasin de Composants en tapant quelques mots-clés</translation>
+    </message>
+    <message>
+        <source>If you can&apos;t find a part in the Parts Bin, the Generic IC is your friend.  Drag it onto your sketch, then use the widgets in the Inspector to: choose from among 25 different through-hole and SMD packages; change the pin label; and--for DIPs and SIPs--change the number of pins.  You can also change the pin names with the Pin Label editor</source>
+        <translation>Si vous ne pouvez pas trouver un composant dans le magazin de pièces, l&apos;IC Générique est votre ami. Faites-le glisser sur votre esquisse, puis utiliser les widgets dans l&apos;Inspecteur pour: choisir parmi 25 différents trou traversant et Packages SMD; modifiez l&apos;étiquette des broches; et pour les DIP et SIP modifier le nombre de broches. Vous pouvez également modifier les noms des broches avec l&apos;éditeur d&apos;étiquette de broches </translation>
     </message>
     <message>
         <source>If Fritzing is missing your special part and you don&apos;t want to build one by yourself, then use pinheaders as connectors and the grid to align them.</source>
@@ -7149,10 +6935,6 @@ Remarque : vous pouvez également déclencher cet affichage en positionnant la s
         <translation>La présence d&apos;un fil volant (&quot;fil&quot; très fin) entre connexions dans une vue signifie que ces connexions sont d&apos;une manière ou d&apos;une autre reliées dans une autre vue.</translation>
     </message>
     <message>
-        <source>If you can&apos;t find a part in the Parts Bin, the Generic IC is your friend.  Drag it onto your sketch, then use the widgets in the Inspector to: choose from among 25 different through-hole and SMD packages; change the pin label; and--for DIPs and SIPs--change the number of pins.  You can also change the pin names with the Pin Label editor</source>
-        <translation>Si vous ne pouvez trouver un composant dans le Magasin de Composants, le circuit intégré générique (Generic IC) est votre ami. Faites-le glisser dans votre esquisse, ensuite utilisez les widgets de l&apos;Inspecteur pour choisir parmi 25 formats différents en montage traversant ou de surface ; modifiez les noms des broches ; et - pour les boîtiers DIL/DIP ou SIP - modifiez le nombre de broches. Vous pouvez aussi changer les noms des broches avec l&apos;éditeur de noms de broches (Pin Label editor)</translation>
-    </message>
-    <message>
         <source>Do not store your custom part files in the Fritzing installation folder. If you upgrade Fritzing, these files will probably be deleted. Also, files in the Fritzing installation folder will not be saved in sketch (.fzz) files, so you won&apos;t be able to share them.</source>
         <translation>Ne sauvegardez pas vos fichiers de composants personnalisés dans le dossier d&apos;installation Fritzing. Si vous mettez Fritzing à jour, ces fichiers seront probablement supprimés. De même, les fichiers se trouvant dans le dossier d&apos;installation de Fritzing ne seront pas sauvés dans les fichiers d&apos;esquisse (.fzz), ce qui vous empêchera de les partager.</translation>
     </message>
@@ -7166,7 +6948,7 @@ Remarque : vous pouvez également déclencher cet affichage en positionnant la s
     </message>
     <message>
         <source>Use shift-drag on a wire end or bendpoint to constrain its wire segment to an angle of 45 degrees (or some multiple of 45 degrees).  If the wire segment is connected to other wire segments, the segment you&apos;re dragging will snap to make 90 degree angles with the neighboring wire segment.</source>
-        <translation>Utiliser majuscule + déplacement sur l&apos;extrémité d&apos;un câble ou sur un point de connexion/articulation pour contraindre son segment de câble à un angle de 45 degrés (ou correspondant ç un multiple de 45°). Si le segment de câble est connecté à d&apos;autres segments de câble, le segment que vous déplacez va s&apos;aligner de manière à former des angles de 90 degrés avec les segments voisins.</translation>
+        <translation>Utiliser MAJ+déplacement sur l&apos;extrémité d&apos;un câble ou sur un point de connexion/articulation pour contraindre son segment de câble à un angle de 45 degrés (ou correspondant à un multiple de 45°). Si le segment de câble est connecté à d&apos;autres segments de câble, le segment que vous ferrez glissé s&apos;accrocheras pour faire angles de 90 degrés avec le segment du fil voisin.</translation>
     </message>
     <message>
         <source>layers and views</source>
@@ -7175,6 +6957,10 @@ Remarque : vous pouvez également déclencher cet affichage en positionnant la s
     <message>
         <source>To drag the canvas, hold down the space bar and drag with the mouse.</source>
         <translation>Pour déplacer le canevas, maintenez la barre d&apos;espacement enfoncée et déplacez la souris.</translation>
+    </message>
+    <message>
+        <source>To toggle the visibility of layer in a view, go to the view menu and choose one of the view layer items.  Or open up the &lt;b&gt;Layers&lt;/b&gt; palette from the &lt;b&gt;Window&lt;/b&gt; menu.</source>
+        <translation>Pour modifier l&apos;angle de vue d&apos;un calque, allez dans le menu Affichage et sélectionnez l&apos;un des éléments. Ou ouvrez la palette &lt;b&gt;Calques&lt;/b&gt; dans le menu &lt;b&gt;Fenêtre&lt;/b&gt;.</translation>
     </message>
     <message>
         <source>local file storage</source>
@@ -7198,11 +6984,7 @@ Remarque : vous pouvez également déclencher cet affichage en positionnant la s
     </message>
     <message>
         <source>To more precisely move a selection of parts, use the arrow keys.  Shift-arrow moves by 10 units.</source>
-        <translation>Pour déplacer avec plus de précision une sélection de composants, employez les touches avec flèches. En les combinant avec la touche majuscule, le déplacement est de 10 unités.</translation>
-    </message>
-    <message>
-        <source>To toggle the visibility of layer in a view, go to the view menu and choose one of the view layer items.  Or open up the &lt;b&gt;Layers&lt;/b&gt; palette from the &lt;b&gt;Window&lt;/b&gt; menu.</source>
-        <translation>Pour faire apparaître ou disparaître un calque dans une vue, allez dans le menu Vue et choisissez un des calques. Vous pouvez aussi ouvrir la palette &lt;b&gt;Calques&lt;/b&gt; depuis le menu &lt;b&gt; Fenêtre&lt;/b&gt;.</translation>
+        <translation>Pour déplacer une sélection de composants avec plus de précision, employez les touches avec flèches. En les combinant avec la touche majuscule, le déplacement est de 10 unités.</translation>
     </message>
     <message>
         <source>If you&apos;re having trouble selecting a part or a wire (segment), try selecting the part that&apos;s in the way and send it to the back: use the Raise and Lower functions on the Part menu or the context menu (right-click menu).</source>
@@ -7242,7 +7024,7 @@ Remarque : vous pouvez également déclencher cet affichage en positionnant la s
     </message>
     <message>
         <source>An icon in the parts bin may actually represent multiple related parts.  So when you drag an icon from the parts bin into a sketch, make sure you look at the inspector.  The inspector will display the range of choices available for you to modify a part, or swap it for a related part. The parts bin icon will also be a little &apos;stack&apos; and not just a flat icon.</source>
-        <translation>Une icône dans le magasin de composants peut en réalité représenter de multiples composants relatifs. Dès lors, lorsque vous faites glisser une icône dans une esquisse, assurez-vous de regarder l&apos;Inspecteur. L&apos;Inspecteur affichera les choix accessibles pour modifier un composant ou le remplacer par un autre. Le jeu de composants sera aussi représenté sous forme d&apos;une petite &quot;pile&quot; et pas juste par une icône plate.</translation>
+        <translation>Une icône dans le magazin de composants peut effectivement représenter de multiple composants apparentés. Ainsi, lorsque vous faites glisser une icône du magazin de composants dans une esquisse, assurez-vous de bien regarder l&apos;inspecteur. L&apos;inspecteur affiche la gamme de choix disponibles pour vous puissiez modifier le composant ou l&apos;échanger contre un composant correspondant. L&apos;icône dans le magazin pourra elle aussi être modifiée.</translation>
     </message>
     <message>
         <source>Through-hole parts can be traced from either side of a PCB.</source>
@@ -7258,11 +7040,11 @@ Remarque : vous pouvez également déclencher cet affichage en positionnant la s
     </message>
     <message>
         <source>rotation</source>
-        <translation type="unfinished"></translation>
+        <translation>rotation</translation>
     </message>
     <message>
         <source>When using the Fritzing Fab Service, If there are empty areas of the PCB that you do not want filled with copper, use the copper-blocker part. This resizable part will mask out copper fill in the rectangle it covers.</source>
-        <translation type="unfinished"></translation>
+        <translation>Lorsque vous utilisez le service Fab Fritzing, Si il ya des zones vides sur la carte que vous ne voulez pas rempli de cuivre, utiliser le bloqueur. Cette partie redimensionnable  sera masquer du remplissage cuivre dans le rectangle qu&apos;il couvre.</translation>
     </message>
 </context>
 <context>
@@ -7344,7 +7126,7 @@ Remarque : vous pouvez également déclencher cet affichage en positionnant la s
     </message>
     <message>
         <source>Galician - %1</source>
-        <translation>Galicien  - %1</translation>
+        <translation>Galicien - %1</translation>
     </message>
     <message>
         <source>Greek - %1</source>
@@ -7372,7 +7154,7 @@ Remarque : vous pouvez également déclencher cet affichage en positionnant la s
     </message>
     <message>
         <source>Estonian - %1</source>
-        <translation>Estonien  - %1</translation>
+        <translation>Estonien - %1</translation>
     </message>
     <message>
         <source>Hebrew - %1</source>
@@ -7400,35 +7182,35 @@ Remarque : vous pouvez également déclencher cet affichage en positionnant la s
     </message>
     <message>
         <source>Danish - %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Dannois -%1</translation>
     </message>
     <message>
         <source>Hindi - %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Hindi - %1</translation>
     </message>
     <message>
         <source>Bengali - %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Bengali - %1</translation>
     </message>
     <message>
         <source>Marathi - %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Marathi - %1</translation>
     </message>
     <message>
         <source>Ukrainian - %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukrainien - %1</translation>
     </message>
     <message>
         <source>Macedonian - %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Macedonien - %1</translation>
     </message>
     <message>
         <source>Serbian - %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Serbe - %1</translation>
     </message>
     <message>
         <source>Urdu - %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Urdu - %1</translation>
     </message>
 </context>
 <context>
@@ -7490,7 +7272,7 @@ Remarque : vous pouvez également déclencher cet affichage en positionnant la s
     </message>
     <message>
         <source>Open Sketch</source>
-        <translation>Ouvrir Esquisse</translation>
+        <translation>Ouvrir une esquisse éxistante</translation>
     </message>
     <message>
         <source>Recent Sketches</source>
@@ -7538,27 +7320,27 @@ Remarque : vous pouvez également déclencher cet affichage en positionnant la s
     </message>
     <message>
         <source>Fab</source>
-        <translation type="unfinished"></translation>
+        <translation>Fab</translation>
     </message>
     <message>
         <source>Fritzing CreatorKit</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing CreatorKit</translation>
     </message>
     <message>
         <source>Fritzing Fab</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing Fab</translation>
     </message>
     <message>
         <source>&lt;a href=&apos;%1&apos;&gt;&lt;img src=&apos;%2&apos;/&gt;&lt;/a&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;a href=&apos;%1&apos;&gt;&lt;img src=&apos;%2&apos;/&gt;&lt;/a&gt;</translation>
     </message>
     <message>
         <source>Blog</source>
-        <translation type="unfinished"></translation>
+        <translation>Blog</translation>
     </message>
     <message>
         <source>&lt;a href=&apos;%1&apos;&gt;&lt;img src=&apos;%2&apos; /&gt;&lt;/a&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;a href=&apos;%1&apos;&gt;&lt;img src=&apos;%2&apos; /&gt;&lt;/a&gt;</translation>
     </message>
 </context>
 <context>
@@ -7633,26 +7415,26 @@ Remarque : vous pouvez également déclencher cet affichage en positionnant la s
     </message>
     <message>
         <source>standard (24 mil)</source>
-        <translation type="unfinished"></translation>
+        <translation>standard (24 mil)</translation>
     </message>
     <message>
         <source>orange</source>
-        <translation type="unfinished"></translation>
+        <translation>orange</translation>
     </message>
     <message>
         <source>ochre</source>
-        <translation type="unfinished"></translation>
+        <translation>ocre</translation>
     </message>
     <message>
         <source>cyan</source>
-        <translation type="unfinished"></translation>
+        <translation>cyan</translation>
     </message>
 </context>
 <context>
     <name>ZoomSlider</name>
     <message>
         <source>%</source>
-        <translation type="unfinished"></translation>
+        <translation>%</translation>
     </message>
 </context>
 </TS>

@@ -777,7 +777,7 @@
                 </iconView>
             </views>
         </instance>
-        <instance moduleIdRef="arduino_Yun(rev1)" modelIndex="1" path="arduino_Yun(rev1).fzp">
+        <instance moduleIdRef="arduino_Yun(rev1)_v1" modelIndex="1" path="arduino_Yun(rev1)_v1.fzp">
           <views>
               <iconView layer="icon">
                   <geometry z="-1" x="-1" y="-1"/>

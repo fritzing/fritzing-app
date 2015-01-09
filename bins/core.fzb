@@ -690,7 +690,14 @@
                 </iconView>
             </views>
         </instance>
-        <instance moduleIdRef="blueIOT_Rc1-final" modelIndex="1">
+        <instance moduleIdRef="blueIOT_Rc1-final" modelIndex="1" path="blueIOT_Rc1-final.fzp">>
+          <views>
+              <iconView layer="icon">
+                  <geometry z="-1" x="-1" y="-1"/>
+              </iconView>
+          </views>
+        </instance>
+        <instance moduleIdRef="dquidio" modelIndex="1" path="dquidio.fzp">>
           <views>
               <iconView layer="icon">
                   <geometry z="-1" x="-1" y="-1"/>

@@ -704,6 +704,13 @@
               </iconView>
           </views>
         </instance>
+        <instance moduleIdRef="sodaq_mbili_rev4 (4)" modelIndex="1" path="sodaq_mbili_rev4 (4).fzp">>
+          <views>
+              <iconView layer="icon">
+                  <geometry z="-1" x="-1" y="-1"/>
+              </iconView>
+          </views>
+        </instance>
         <instance moduleIdRef="2c9d427b475ef8d07dc752a4362af0ae" modelIndex="48" path="controller_wiring.fzp">
             <views>
                 <iconView layer="icon">

@@ -52,7 +52,7 @@ const int HtmlInfoView::STANDARD_ICON_IMG_WIDTH = 32;
 const int HtmlInfoView::STANDARD_ICON_IMG_HEIGHT = 32;
 const int IconSpace = 0;
 
-static const int MaxSpinBoxWidth = 55;
+static const int MaxSpinBoxWidth = 60;
 static const int AfterSpinBoxWidth = 5;
 
 /////////////////////////////////////
@@ -1016,7 +1016,7 @@ void HtmlInfoView::makeLocationFrame() {
     locationLayout->addSpacing(3);
 
 	m_unitsLabel = new ClickableLabel("px", this);
-    m_unitsLabel->setObjectName("infoViewSpinBoxLabel");
+    m_unitsLabel->setObjectName("infoViewSpinBoxLabelValue");
     m_unitsLabel->setCursor(Qt::PointingHandCursor);
     locationLayout->addWidget(m_unitsLabel);
 
@@ -1054,7 +1054,7 @@ void HtmlInfoView::makeRotationFrame() {
     rotationLayout->addSpacing(AfterSpinBoxWidth);
 
 	QLabel * label = new QLabel(tr("degrees"), this);
-    label->setObjectName("infoViewSpinBoxLabel");
+    label->setObjectName("infoViewSpinBoxLabelValue");
     rotationLayout->addWidget(label);
 
     rotationLayout->addSpacerItem(new QSpacerItem(1,1, QSizePolicy::Expanding));

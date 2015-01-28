@@ -1616,16 +1616,10 @@ HtmlInfoView QScrollBar:vertical {
 
 #infoViewSpinBoxLabel {
         font-size: 11px;
-        color: #d9d9d9;
-		font-weight: normal;
-}
-
-#infoViewSpinBoxLabelValue{
-        font-size: 11px;
         color: #000000;
-
 		font-weight: normal;
 }
+
 
 
 #infoViewComboBox {

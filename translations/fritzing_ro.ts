@@ -280,22 +280,23 @@
     <message>
         <location filename="../src/autoroute/autoroutersettingsdialog.cpp" line="252"/>
         <source>Keepout</source>
-        <translation>Distanță</translation>
+        <translatorcomment>Keepouts - zonă restricționare nu trebuie confundată cu stratul de restricționare. (restrict layer) vedeți: http://dangerousprototypes.com/2012/08/08/how-to-eagle-keepout-and-restrict-layers/ </translatorcomment>
+        <translation>Zonă restricționare</translation>
     </message>
     <message>
         <location filename="../src/autoroute/autoroutersettingsdialog.cpp" line="255"/>
         <source>&lt;b&gt;Keepout&lt;/b&gt; is the minimum distance between copper elements on different nets.</source>
-        <translation>&lt;b&gt;Distanța&lt;/b&gt; este distanța minimă dintre elementele de cupru pe rețele diferite.</translation>
+        <translation>&lt;b&gt;Zonă restricționare&lt;/b&gt; este distanța minimă dintre elementele de cupru pe rețele diferite.</translation>
     </message>
     <message>
         <location filename="../src/autoroute/autoroutersettingsdialog.cpp" line="259"/>
         <source>A keepout of 0.01 inch (0.254 mm) is a good default.</source>
-        <translation>O distanță de 0,01 inch (0.254 mm) este bună ca implicită.</translation>
+        <translation>O zonă de restricționare de 0,01 inch (0.254 mm) este bună ca implicită.</translation>
     </message>
     <message>
         <location filename="../src/autoroute/autoroutersettingsdialog.cpp" line="262"/>
         <source>Note: the smaller the keepout, the slower the DRC and Autorouter will run.</source>
-        <translation>Notificare: cu cât este mai mică distanța, cu atât DRC și Autotrasarea va rula mai lent.</translation>
+        <translation>Notificare: cu cât este mai mică zona de restricționare, cu atât DRC și Autotrasarea va rula mai lent.</translation>
     </message>
     <message>
         <location filename="../src/autoroute/autoroutersettingsdialog.cpp" line="301"/>
@@ -318,7 +319,7 @@
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="111"/>
         <source>Parts</source>
-        <translation>Părți</translation>
+        <translation>Componente</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="374"/>
@@ -338,7 +339,7 @@
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="402"/>
         <source>Select a Fritzing Parts Bin file to open</source>
-        <translation>Selectați un fișier cutie părți Fritzing de deschis</translation>
+        <translation>Selectați un fișier cutie componente Fritzing de deschis</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="914"/>
@@ -358,7 +359,7 @@
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="991"/>
         <source>Load a Fritzing part (.fzpz), or a Fritzing parts bin (.fzb, .fzbz)</source>
-        <translation>Încarcă o parte Fritzing (.fzpz), sau o cutie părți Fritzing (.fzb, .fzbz)</translation>
+        <translation>Încarcă o componentă Fritzing (.fzpz), sau o cutie componente Fritzing (.fzb, .fzbz)</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="994"/>
@@ -368,7 +369,7 @@
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="995"/>
         <source>Create a new parts bin</source>
-        <translation>Crează o cutie părți nouă</translation>
+        <translation>Crează o cutie componente nouă</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="998"/>
@@ -378,7 +379,7 @@
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="999"/>
         <source>Close parts bin</source>
-        <translation>Închide cutia părților</translation>
+        <translation>Închide cutia componentelor</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1002"/>
@@ -388,7 +389,7 @@
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1003"/>
         <source>Delete parts bin</source>
-        <translation>Șterge cutia părților</translation>
+        <translation>Șterge cutia componentelor</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1006"/>
@@ -398,7 +399,7 @@
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1007"/>
         <source>Save parts bin</source>
-        <translation>Salvează cutia părților</translation>
+        <translation>Salvează cutia componentelor</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1010"/>
@@ -408,7 +409,7 @@
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1011"/>
         <source>Save parts bin as...</source>
-        <translation>Salvează cutia părților ca...</translation>
+        <translation>Salvează cutia componentelor ca...</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1014"/>
@@ -418,7 +419,7 @@
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1015"/>
         <source>Save parts bin in compressed format...</source>
-        <translation>Salvează cutia părți în format comprimat...</translation>
+        <translation>Salvează cutia componentelor în format comprimat...</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1018"/>
@@ -428,7 +429,7 @@
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1019"/>
         <source>Rename parts bin...</source>
-        <translation>Redenumește cutia părților...</translation>
+        <translation>Redenumește cutia componentelor...</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1022"/>
@@ -438,7 +439,7 @@
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1023"/>
         <source>Copy all the parts in the bin to a sketch</source>
-        <translation>Copiază toate părțile din cutie într-o schiță</translation>
+        <translation>Copiază toate componentele din cutie într-o schiță</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1026"/>
@@ -448,7 +449,7 @@
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1027"/>
         <source>Copy all loaded parts to the sketch</source>
-        <translation>Copiază toate părțile încărcate în schiță</translation>
+        <translation>Copiază toate componentele încărcate în schiță</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1030"/>
@@ -458,22 +459,22 @@
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1032"/>
         <source>Display parts as a list</source>
-        <translation>Afișează părțile ca o listă</translation>
+        <translation>Afișează componentele ca o listă</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1035"/>
         <source>Show Bin in Icon View</source>
-        <translation>Arată cutia în vizualizare miniatură</translation>
+        <translation>Arată cutia în vizualizare pictogramă</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1037"/>
         <source>Display parts as icons</source>
-        <translation>Afișează părțile ca miniaturi</translation>
+        <translation>Afișează componentele ca pictograme</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1058"/>
         <source>Edit Part (new parts editor)...</source>
-        <translation>Editare parte (editor părți noi)...</translation>
+        <translation>Editare componentă (editor componente noi)...</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1059"/>
@@ -578,7 +579,7 @@ O placă personalizată tipic svg are unul sau două straturi serigrafice și un
         <source>Have a look at the circle_pcb.svg file in your Fritzing installation folder at parts/svg/core/pcb/.
 
 </source>
-        <translation>Consultați fișierul circle_pcb.svg în dosarul de instalare Fritzing la părți/svg/core/pcb/.
+        <translation>Consultați fișierul circle_pcb.svg în dosarul de instalare Fritzing la componente/svg/core/pcb/.
 
 </translation>
     </message>
@@ -1201,14 +1202,14 @@ Se utilizează fișierul?</translation>
         <location filename="../src/fapplication.cpp" line="1665"/>
         <source>Do you want to import parts and bins that you have created with earlier versions of Fritzing?
 </source>
-        <translation>Doriți să importați părți și cuti pe care le-ați creat cu versiunile anterioare de Fritzing?</translation>
+        <translation>Doriți să importați componente și cuti pe care le-ați creat cu versiunile anterioare de Fritzing?</translation>
     </message>
     <message>
         <location filename="../src/fapplication.cpp" line="1666"/>
         <source>
 Note: You can import them later using the &quot;Help&quot; &gt; &quot;Import parts and bins from old version...&quot; menu action.</source>
         <translation>
-Notă: Le puteți importa mai târziu utilizând acțiunea meniu &quot;Ajutor&quot; &gt; &quot;Importare părți și cuti din versiunile vechi...&quot;.</translation>
+Notă: Le puteți importa mai târziu utilizând acțiunea meniu &quot;Ajutor&quot; &gt; &quot;Importare componente și cuti din versiunile vechi...&quot;.</translation>
     </message>
     <message>
         <location filename="../src/fapplication.cpp" line="1672"/>
@@ -1241,17 +1242,17 @@ Notă: Le puteți importa mai târziu utilizând acțiunea meniu &quot;Ajutor&qu
     <message>
         <location filename="../src/help/firsttimehelpdialog.cpp" line="88"/>
         <source>&lt;br/&gt;The &lt;b&gt;Breadboard View&lt;/b&gt; is meant to look like a &lt;i&gt;real-life&lt;/i&gt; breadboard prototype.&lt;br/&gt;&lt;br/&gt;Begin by dragging a part from the Parts Bin, which is over at the top right. Then pull in more parts, connecting them by placing them on the breadboard or clicking on the connectors and dragging wires. The process is similar to how you would arrange things in the physical world. &lt;br/&gt;&lt;br/&gt;After you&apos;re finished creating your sketch in the breadboard view, try the other views. You can switch views by clicking the Tabs at the top of the window. Because different views have different purposes, parts will look different in the other views.</source>
-        <translation>&lt;br/&gt; &lt;b&gt;Vizualizare placă de testare&lt;/b&gt; este destinată să arate ca o placă prototip din &lt;i&gt;viața reală&lt;/i&gt;.&lt;br/&gt;&lt;br/&gt;Începeți prin tragerea unei piese din coșul pieselor, care este pe partea dreaptă sus. Apoi trageți în mai multe părți, conectându-le prin plasarea lor pe placa de testare sau apăsând pe conectori și trăgând fire. Procesul este asemănător cu modul în care ați aranja lucrurile în lumea fizică. &lt;br/&gt;&lt;br/&gt;După ce ați terminat cu creearea schiței în vizualizare placă de testare, încercați alte vizualizări. Puteți comuta vizualizărileapăsând filele din partea de sus a ferestrei. Fiindcă diferite vizualizări au diferite întrebuințări, piesele vor arăta diferit în alte vizualizări.</translation>
+        <translation>&lt;br/&gt; &lt;b&gt;Vizualizare placă testare&lt;/b&gt; este destinată să arate ca o placă prototip din &lt;i&gt;viața reală&lt;/i&gt;.&lt;br/&gt;&lt;br/&gt;Începeți prin tragerea unei componente din coșul componentelor, care este pe partea dreaptă sus. Apoi trageți în mai multe părți, conectându-le prin plasarea lor pe placa de testare sau apăsând pe conectori și trăgând fire. Procesul este asemănător cu modul în care ați aranja lucrurile în lumea fizică. &lt;br/&gt;&lt;br/&gt;După ce ați terminat cu crearea schiței în vizualizare placă de testare, încercați alte vizualizări. Puteți comuta vizualizările apăsând filele din partea de sus a ferestrei. Fiindcă diferite vizualizări au diferite întrebuințări, componentele vor arăta diferit în alte vizualizări.</translation>
     </message>
     <message>
         <location filename="../src/help/firsttimehelpdialog.cpp" line="101"/>
         <source>Welcome to the &lt;b&gt;Schematic View&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;This is a more abstract way to look at components and connections than the Breadboard View. You have the same elements as you have on your breadboard, they just look different. This representation is closer to the traditional diagrams used by engineers.&lt;br/&gt;&lt;br/&gt;After you have drawn wires between parts, you can press &amp;lt;Shift&amp;gt;-click with the mouse to create bend points and tidy up your connections. The Schematic View can help you check that you have made the right connections between components. You can also print out your schematic for documentation.</source>
-        <translation>Bine ați venit la &lt;b&gt;Vizualizare schemă&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;Acesta este o cale mai abstractă de a vedea componentele și conectorii decât Vizualizare placă testare. Aveți aceleași elemente pe care le aveți pe placa de testare, doar că arată diferit. Această reprezentare este mai aproape de schemele tradiționale utilizate de ingineri.&lt;br/&gt;&lt;br/&gt;După ce ați desenat fire între părți, puteți apăsa &amp;lt;Shift&amp;gt;-clic cu mausul pentru a crea bend-points și a pune în ordine conexiunile. Vizualizare schemă vă poate ajuta să verificați dacă ați făcut conexiuni corecte între componente. Puteți și tipări schema pentru documentare.</translation>
+        <translation>Bine ați venit la &lt;b&gt;Vizualizare schemă&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;Aceasta este o cale mai abstractă de a vedea componentele și conectorii decât Vizualizare placă testare. Aveți aceleași elemente pe care le aveți pe placa de testare, doar că arată diferit. Această reprezentare este mai aproape de schemele tradiționale utilizate de ingineri.&lt;br/&gt;&lt;br/&gt;După ce ați desenat fire între părți, puteți apăsa &amp;lt;Shift&amp;gt;-clic cu mausul pentru a crea bend-points și a pune în ordine conexiunile. Vizualizare schemă vă poate ajuta să verificați dacă ați făcut conexiuni corecte între componente. Puteți și tipări schema pentru documentare.</translation>
     </message>
     <message>
         <location filename="../src/help/firsttimehelpdialog.cpp" line="113"/>
         <source>The &lt;b&gt;PCB View&lt;/b&gt; is where you layout the components will  on a physical PCB (Printed Circuit Board).&lt;br/&gt;&lt;br/&gt;PCBs can be made at home or in a small lab using DIY etching processes. They also can be sent to professional PCB manufacturing services for more precise fabrication. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;The first thing you will need is a board to place your parts on. There should already be one in your sketch, but if not, drag in the board icon from the Parts Bin. The icon matches thie image to the right: &lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/parts/svg/core/icon/rectangle_pcb.svg&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br/&gt;&lt;br/&gt;To lay out your PCB, arrange all the components so they fit nicely on the board. Then try to shift them around to minimize the length and confusion of connections. You can also resize rectangular boards. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;Once the parts are sorted out, you connect them with copper traces. You can drag out a trace from individual connections or use the autorouter to generate them. The Autoroute button is at the bottom of the window. The button matches the image to the right:&lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/images/icons/toolbarAutorouteEnabled_icon.png&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</source>
-        <translation>&lt;b&gt;Vizualizare PCB&lt;/b&gt; este unde amplasați componentele pe o PCB fizică (Placă Circuit Imprimat-PCB).&lt;br/&gt;&lt;br/&gt;PCB-urile pot fi făcute acasă sau într-un mic laborator utilizând procese de gravare DIY. De asemenea pot fi trimise unui serviciu profesional de fabricare PCB pentru o fabricare mai precisă. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;Primul lucru de care aveți nevoie este o placă pe care să plasați componentele. Ar trebui să fie deja una în schița dumneavoastră, dar dacă nu este, trageți miniatura plăcii din cutia părților. Miniatura se aseamănă cu această imagine din dreapta: &lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/parts/svg/core/icon/rectangle_pcb.svg&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br/&gt;&lt;br/&gt; Pentru amplasarea PCB, aranjați toate componentele astfel încât acestea să se potrivească bine pe placă. Apoi încercați să le deplasați împrejur pentru micșorarea lungimii și confuziei conectorilor. Puteți deasemenea să redimensionați plăcile dreptunghiulare. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;Odată ce părțile sunt sortate, le conectați cu trasee de cupru. Puteți trasa un traseu de la conexiunile individuale sau utilizați autotrasarea pentru a le genera. Butonul de autotrasare este în partea de sus a ferestrei. Putonul se potrivește cu imaginea din dreapta:&lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resurse/imagini/miniaturi/toolbarAutorouteEnabled_icon.png&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</translation>
+        <translation>&lt;b&gt;Vizualizare PCB&lt;/b&gt; este unde amplasați componentele pe o PCB fizică (Placă Circuit Imprimat-PCB).&lt;br/&gt;&lt;br/&gt;PCB-urile pot fi făcute acasă sau într-un mic laborator utilizând procese de gravare DIY. De asemenea pot fi trimise unui serviciu profesional de fabricare PCB pentru o fabricare mai precisă. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;Primul lucru de care aveți nevoie este o placă pe care să plasați componentele. Ar trebui să fie deja una în schița dumneavoastră, dar dacă nu este, trageți pictograma plăcii din cutia componentelor. Pictograma se aseamănă cu această imagine din dreapta: &lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/parts/svg/core/icon/rectangle_pcb.svg&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br/&gt;&lt;br/&gt; Pentru amplasarea PCB, aranjați toate componentele astfel încât acestea să se potrivească bine pe placă. Apoi încercați să le deplasați împrejur pentru micșorarea lungimii și confuziei conectorilor. Puteți deasemenea să redimensionați plăcile dreptunghiulare. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;Odată ce componentele sunt sortate, le conectați cu trasee de cupru. Puteți trasa un traseu de la conexiunile individuale sau utilizați autotrasarea pentru a le genera. Butonul de autotrasare este în partea de sus a ferestrei. Butonul se potrivește cu imaginea din dreapta:&lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resurse/imagini/miniaturi/toolbarAutorouteEnabled_icon.png&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</translation>
     </message>
 </context>
 <context>
@@ -1952,7 +1953,7 @@ notificare</translation>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="913"/>
         <source>Click to highlight unconnected parts</source>
-        <translation>Apăsați pentru a evidenția părțile neconectate</translation>
+        <translation>Apăsați pentru a evidenția componentele neconectate</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="960"/>
@@ -2071,7 +2072,7 @@ notificare</translation>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1830"/>
         <source>MainWindow::moveToPartsFolder mainwindow missing</source>
-        <translation>Fereastraprincipală::mutăladosarulpărților lipsește fereastra principală</translation>
+        <translation>Fereastraprincipală::mutăladosarulcomponentelor lipsește fereastra principală</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1845"/>
@@ -2081,7 +2082,7 @@ notificare</translation>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1904"/>
         <source>Do you want to keep the imported parts?</source>
-        <translation>Doriți să păstrați părțile importate?</translation>
+        <translation>Doriți să păstrați componentele importate?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1968"/>
@@ -2097,9 +2098,9 @@ notificare</translation>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1974"/>
         <source>Routing completed using %n jumper part(s)</source>
         <translation>
-            <numerusform>Trasarea s-a finalizat utilizând %n parte jumper</numerusform>
-            <numerusform>Trasarea s-a finalizat utilizând %n părți jumper</numerusform>
-            <numerusform>Trasarea s-a finalizat utilizând %n de părți jumper</numerusform>
+            <numerusform>Trasarea s-a finalizat utilizând %n componenta jumper</numerusform>
+            <numerusform>Trasarea s-a finalizat utilizând %n componente jumper</numerusform>
+            <numerusform>Trasarea s-a finalizat utilizând %n de componente jumper</numerusform>
         </translation>
     </message>
     <message numerus="yes">
@@ -2136,13 +2137,13 @@ notificare</translation>
         <location filename="../src/mainwindow/mainwindow.cpp" line="2185"/>
         <source>No part with those characteristics.
 We&apos;re working to avoid this message, and only let you choose between properties that do exist</source>
-        <translation>Nici o parte cu aceste caracteristici.
+        <translation>Nici o componentă cu aceste caracteristici.
 Lucrăm pentru a evita acest mesaj și permisiunea de a alege între proprietăți care nu există</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="2197"/>
         <source>No exactly matching part found; Fritzing chose the closest match.</source>
-        <translation>Nu s-a găsit partea potrivită perfect; Fritzing alege cea mai apropiată potrivire.</translation>
+        <translation>Nu s-a găsit componenta potrivită perfect; Fritzing alege cea mai apropiată potrivire.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="2234"/>
@@ -2351,7 +2352,7 @@ Lucrăm pentru a evita acest mesaj și permisiunea de a alege între proprietă�
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="360"/>
         <source>directly loading parts</source>
-        <translation>încărcare directă părți</translation>
+        <translation>încărcare directă componente</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="390"/>
@@ -2361,7 +2362,7 @@ Lucrăm pentru a evita acest mesaj și permisiunea de a alege între proprietă�
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="421"/>
         <source>loading %1 (breadboard)</source>
-        <translation>se încarcă %1 (placa testare)</translation>
+        <translation>se încarcă %1 (placă testare)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="430"/>
@@ -2502,7 +2503,7 @@ Lucrăm pentru a evita acest mesaj și permisiunea de a alege între proprietă�
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="990"/>
         <source>List of parts (&amp;Bill of Materials)...</source>
-        <translation>Lista părților (&amp;Factura de materiale)...</translation>
+        <translation>Lista componentelor (&amp;Factura de materiale)...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="992"/>
@@ -2786,7 +2787,7 @@ Lucrăm pentru a evita acest mesaj și permisiunea de a alege între proprietă�
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1361"/>
         <source>Add selected part to bin</source>
-        <translation>Adaugă partea selectată la cutie</translation>
+        <translation>Adaugă componenta selectată la cutie</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="945"/>
@@ -2811,7 +2812,7 @@ Lucrăm pentru a evita acest mesaj și permisiunea de a alege între proprietă�
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="958"/>
         <source>Export 1000 dpi SVG of this part in this view</source>
-        <translation>Exportă SVG 1000 dpi a acestei părți în această vizualizare</translation>
+        <translation>Exportă SVG 1000 dpi a acestei componente în această vizualizare</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="961"/>
@@ -2821,17 +2822,17 @@ Lucrăm pentru a evita acest mesaj și permisiunea de a alege între proprietă�
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="962"/>
         <source>Export 1000 dpi Flattened SVG of this part in this view</source>
-        <translation>Exportă 1000dpi SVG aplatizat a acestei părți în această vizualizare</translation>
+        <translation>Exportă 1000dpi SVG aplatizat a acestei componente în această vizualizare</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="981"/>
         <source>Rotate the selected parts by 90 degrees clockwise</source>
-        <translation>Rotește părțile selectate cu 90 de grade în sens orar</translation>
+        <translation>Rotește componentele selectate cu 90 de grade în sens orar</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="985"/>
         <source>Rotate the selected parts by 180 degrees</source>
-        <translation>Rotește părțile selectate cu 180 de grade</translation>
+        <translation>Rotește componentele selectate cu 180 de grade</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="989"/>
@@ -2969,22 +2970,22 @@ Doriți să convertiți &apos;%1&apos; la formatul .fzz acum sau îl deschideți
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1056"/>
         <source>Lock Part</source>
-        <translation>Blochează partea</translation>
+        <translation>Blochează componentă</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1057"/>
         <source>Prevent a part from being moved</source>
-        <translation>Previne o parte să fie mutată</translation>
+        <translation>Previne o componentă să fie mutată</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1066"/>
         <source>Select All Locked Parts</source>
-        <translation>Selectați toate părțile blocate</translation>
+        <translation>Selectați toate componentele blocate</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1067"/>
         <source>Select all parts that can&apos;t be moved</source>
-        <translation>Selectați toate părțile care nu pot fi mutate</translation>
+        <translation>Selectați toate componentele care nu pot fi mutate</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1218"/>
@@ -3009,7 +3010,7 @@ Doriți să convertiți &apos;%1&apos; la formatul .fzz acum sau îl deschideți
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1070"/>
         <source>&amp;Show part label</source>
-        <translation>&amp;Arată eticheta părții</translation>
+        <translation>&amp;Arată eticheta componentei</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="888"/>
@@ -3034,12 +3035,12 @@ Doriți să convertiți &apos;%1&apos; la formatul .fzz acum sau îl deschideți
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="965"/>
         <source>Dump all parts</source>
-        <translation>Depozitează toate părțile</translation>
+        <translation>Depozitează toate componentele</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="966"/>
         <source>Debug dump all parts in this view</source>
-        <translation>Depanează depozitarea tuturor părților în această fereastră</translation>
+        <translation>Depanează depozitarea tuturor componentelor în această fereastră</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="976"/>
@@ -3074,7 +3075,7 @@ Doriți să convertiți &apos;%1&apos; la formatul .fzz acum sau îl deschideți
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1075"/>
         <source>Export selected part</source>
-        <translation>Exportă partea selectată</translation>
+        <translation>Exportă componenta selectată</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1078"/>
@@ -3121,13 +3122,13 @@ Doriți să convertiți &apos;%1&apos; la formatul .fzz acum sau îl deschideți
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1094"/>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1095"/>
         <source>Select outdated parts</source>
-        <translation>Selectați părțile expirate</translation>
+        <translation>Selectează componentele expirate</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1098"/>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1099"/>
         <source>Update selected parts</source>
-        <translation>Actualizează părțile selectate</translation>
+        <translation>Actualizează componentele selectate</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1106"/>
@@ -3313,7 +3314,7 @@ Doriți să convertiți &apos;%1&apos; la formatul .fzz acum sau îl deschideți
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2823"/>
         <source>Set autorouting parameters including keepout...</source>
-        <translation>Configurează parametri de autotrasare inclusiv distanța...</translation>
+        <translation>Configurează parametri de autotrasare inclusiv zona de restricționare...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3047"/>
@@ -3348,12 +3349,12 @@ Doriți să actualizați acum?</translation>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1178"/>
         <source>&amp;Show Breadboard</source>
-        <translation>&amp;Arată placa testare</translation>
+        <translation>&amp;Arată placă testare</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="168"/>
         <source>Fritzing Files (*%1 *%2 *%3 *%4 *%5);;Fritzing (*%1);;Fritzing Shareable (*%2);;Fritzing Part (*%3);;Fritzing Bin (*%4);;Fritzing Shareable Bin (*%5)</source>
-        <translation>Fișiere Fritzing (*%1 *%2 *%3 *%4 *%5);;Fritzing (*%1);;Partajabile Fritzing (*%2);;Parte Fritzing (*%3);;Cutie Fritzing (*%4);;Cutie partajabilă Fritzing (*%5)</translation>
+        <translation>Fișiere Fritzing (*%1 *%2 *%3 *%4 *%5);;Fritzing (*%1);;Partajabile Fritzing (*%2);;Componentă Fritzing (*%3);;Cutie Fritzing (*%4);;Cutie partajabilă Fritzing (*%5)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="260"/>
@@ -3372,7 +3373,7 @@ Continuați și inversați?</translation>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="642"/>
         <source>Open a Fritzing sketch (.fzz, .fz), or load a Fritzing part (.fzpz), or a Fritzing parts bin (.fzb, .fzbz)</source>
-        <translation>Deschide o schiță Fritzing (.fzz, .fz), sau încarcă o parte Fritzing (.fzpz), sau o cutie părți Fritzing (.fzb, .fzbz)</translation>
+        <translation>Deschide o schiță Fritzing (.fzz, .fz), sau încarcă o componentă Fritzing (.fzpz), sau o cutie componente Fritzing (.fzb, .fzbz)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="645"/>
@@ -3392,12 +3393,12 @@ Continuați și inversați?</translation>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="941"/>
         <source>Edit (new parts editor)</source>
-        <translation>Editare (editor părți noi)</translation>
+        <translation>Editare (editor componente noi)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="942"/>
         <source>Open the new parts editor on an existing part</source>
-        <translation>Deschide editorul părți noi pe o parte existentă</translation>
+        <translation>Deschide editorul componente noi pe o componentă existentă</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1032"/>
@@ -3467,22 +3468,22 @@ Continuați și inversați?</translation>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1062"/>
         <source>If a &quot;sticky&quot; part is moved, parts on top of it are also moved</source>
-        <translation>Dacă o parte &quot;lipicioasă&quot; este mutată, sunt mutate și părțile de deasupra acesteia</translation>
+        <translation>Dacă o componentă &quot;lipicioasă&quot; este mutată, sunt mutate și componentele de deasupra acesteia</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1071"/>
         <source>Show/hide the label for the selected parts</source>
-        <translation>Arată/ascunde eticheta pentru părțile selectate</translation>
+        <translation>Arată/ascunde eticheta pentru componentele selectate</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1102"/>
         <source>Find part in sketch...</source>
-        <translation>Găsește parte în schiță...</translation>
+        <translation>Găsește componentă în schiță...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1103"/>
         <source>Search for parts in a sketch by matching text</source>
-        <translation>Caută părți într-o schiță potrivind textul</translation>
+        <translation>Caută componente într-o schiță potrivind textul</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1110"/>
@@ -3533,7 +3534,7 @@ Continuați și inversați?</translation>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1180"/>
         <source>Show the breadboard view</source>
-        <translation>Arată vizualizarea plăcii testare</translation>
+        <translation>Arată vizualizarea placă testare</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1184"/>
@@ -3573,22 +3574,22 @@ Continuați și inversați?</translation>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1208"/>
         <source>Show Parts Bin Icon View</source>
-        <translation>Arată vizualizare miniaturi cutie părți</translation>
+        <translation>Arată vizualizare pictogramă cutie componente</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1209"/>
         <source>Display the parts bin in an icon view</source>
-        <translation>Afișază cutia părților într-o vizualizare miniatură</translation>
+        <translation>Afișează cutia componentelor într-o vizualizare pictogramă</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1213"/>
         <source>Show Parts Bin List View</source>
-        <translation>Arată vizualizare listă cutie părți</translation>
+        <translation>Arată vizualizare listă cutie componente</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1214"/>
         <source>Display the parts bin in a list view</source>
-        <translation>Afișază cutia părților într-o vizualizare listă</translation>
+        <translation>Afișează cutia componentelor într-o vizualizare listă</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1229"/>
@@ -3648,12 +3649,12 @@ Continuați și inversați?</translation>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1262"/>
         <source>Online Parts Reference</source>
-        <translation>Referință părți online</translation>
+        <translation>Referință componente online</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1263"/>
         <source>Open Parts Reference</source>
-        <translation>Deschide referința părților</translation>
+        <translation>Deschide referința componentelor</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1283"/>
@@ -3673,7 +3674,7 @@ Continuați și inversați?</translation>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="970"/>
         <source>Connect all connectors to a single test part</source>
-        <translation>Conectează toți conectorii la o singură parte test</translation>
+        <translation>Conectează toți conectorii la o singură componentă test</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1271"/>
@@ -3693,12 +3694,12 @@ Continuați și inversați?</translation>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1280"/>
         <source>Display some handy Fritzing tips and tricks</source>
-        <translation>Afișază unele sfaturi și trucuri Fritzing utile</translation>
+        <translation>Afișează unele sfaturi și trucuri Fritzing utile</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1284"/>
         <source>Display First Time Help</source>
-        <translation>Afișază ajutor prima pornire</translation>
+        <translation>Afișează ajutor prima pornire</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1287"/>
@@ -3729,22 +3730,22 @@ Continuați și inversați?</translation>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1301"/>
         <source>&amp;Import parts and bins from old version...</source>
-        <translation>&amp;Importă părți și cuti din versiunea veche...</translation>
+        <translation>&amp;Importă componente și cuti din versiunea veche...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1302"/>
         <source>Import parts and bins from previous installation</source>
-        <translation>Importă părți și cuti din instalarea anterioară</translation>
+        <translation>Importă componente și cuti din instalarea anterioară</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1305"/>
         <source>Parts Editor Help</source>
-        <translation>Ajutor editor părți</translation>
+        <translation>Ajutor editor componente</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1306"/>
         <source>Display Parts Editor help in a browser</source>
-        <translation>Afișază ajutorul pentru editorul părților într-un navigator</translation>
+        <translation>Afișează ajutorul pentru editorul componentelor într-un navigator</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1367"/>
@@ -3769,7 +3770,7 @@ Continuați și inversați?</translation>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1460"/>
         <source>&amp;Part</source>
-        <translation>&amp;Parte</translation>
+        <translation>&amp;Componentă</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1334"/>
@@ -3828,12 +3829,12 @@ Continuați și inversați?</translation>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1879"/>
         <source>Hide part label</source>
-        <translation>Ascunde eticheta părții</translation>
+        <translation>Ascunde eticheta componentei</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1879"/>
         <source>Show part label</source>
-        <translation>Arată eticheta părții</translation>
+        <translation>Arată eticheta componentei</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1947"/>
@@ -3878,7 +3879,7 @@ Continuați și inversați?</translation>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2252"/>
         <source>It doesn&apos;t seem to be possible to automatically determine the actual physical size of the monitor, so &apos;actual size&apos; as currently implemented is only a guess. Your best bet would be to drag out a ruler part, then place a real (physical) ruler on top and zoom until they match up.</source>
-        <translation>Se pare că nu este posibil să fie determinată automat dimensiunea fizică actuală a monitorului, astfel &apos;dimensiunea actuală&apos; ca implementată curent este doar o aproximare. ,Cea mai bună alegere va fi să trageți o parte riglă, apoi plasați o riglă reală (fizică) deasupra și acționați zoom-ul până ce acestea se potrivesc.</translation>
+        <translation>Se pare că nu este posibil să fie determinată automat dimensiunea fizică actuală a monitorului, astfel &apos;dimensiunea actuală&apos; ca implementată curent este doar o aproximare. ,Cea mai bună alegere va fi să trageți o componentă riglă, apoi plasați o riglă reală (fizică) deasupra și acționați zoom-ul până ce acestea se potrivesc.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2469"/>
@@ -3903,7 +3904,7 @@ Continuați și inversați?</translation>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2807"/>
         <source>Set Ground Fill Keepout...</source>
-        <translation>Configurați distanța planului de masă...</translation>
+        <translation>Configurați zona de restricționare a planului de masă...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2808"/>
@@ -3918,7 +3919,7 @@ Continuați și inversați?</translation>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2814"/>
         <source>Highlights any parts that are too close together for safe board production</source>
-        <translation>Evidențiați orice părți care sunt prea apropiate una de cealaltă pentru producția plăcii în siguranță</translation>
+        <translation>Evidențiază orice componente care sunt prea apropiate una de cealaltă pentru producția plăcii în siguranță</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2826"/>
@@ -3977,7 +3978,7 @@ Continuați și inversați?</translation>
         <source>There is a new graphics standard for schematic-view part images, beginning with version 0.8.6.
 
 </source>
-        <translation>Este un nou standard grafic pentru vizualizare schemă imagini parte, începând cu versiunea 0.8.6.
+        <translation>Este un nou standard grafic pentru vizualizare schemă imagini componentă, începând cu versiunea 0.8.6.
 
 </translation>
     </message>
@@ -3997,12 +3998,12 @@ Continuați și inversați?</translation>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3635"/>
         <source>You will have to rearrange parts and connections in schematic view, as the sizes of most part images will have changed. Consider using the Autorouter to clean up traces. </source>
-        <translation>Va trebui să rearanjați părțile și conexiunile în vizualizarea schemă, ca dimensiunea celor mai multe imagini părți vor avea modificări. Luați în considerare utilizarea trasării automate pentru a curăța traseele. </translation>
+        <translation>Va trebui să rearanjați componentele și conexiunile în vizualizarea schemă, ca dimensiunea celor mai multe imagini componente vor avea modificări. Luați în considerare utilizarea trasării automate pentru a curăța traseele. </translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3637"/>
         <source>Note that any custom parts will not be converted. A tool for converting &apos;rectangular&apos; schematic images is available in the Parts Editor.</source>
-        <translation>Rețineți că unele părți personalizate nu vor fi convertite. O unealtă pentru convertire &apos;dreptunghiulară&apos; a imaginilor schemelor este disponibilă în Editorul părților.</translation>
+        <translation>Rețineți că unele componente personalizate nu vor fi convertite. O unealtă pentru convertire &apos;dreptunghiulară&apos; a imaginilor schemelor este disponibilă în Editorul componentelor.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3874"/>
@@ -4011,30 +4012,30 @@ Continuați și inversați?</translation>
 Note: if you want to update later, there are options under the &apos;Part&apos; menu for dealing with outdated parts individually. </source>
         <translation>
 
-Notificare:dacă doriți să actualizați mai târziu, sunt opțiuni sub meniul &apos;Părți&apos; pentru lucrul cu părți învechite individual. </translation>
+Notificare:dacă doriți să actualizați mai târziu, sunt opțiuni sub meniul &apos;Componente&apos; pentru lucrul cu componente învechite individual. </translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3879"/>
         <source>There are %n outdated part(s) in this sketch. </source>
         <translation>
-            <numerusform>Este %n parte învechită în această schiță. </numerusform>
-            <numerusform>Sunt %n părți învechite în această schiță. </numerusform>
-            <numerusform>Sunt %n de părți învechite în această schiță. </numerusform>
+            <numerusform>Este %n componentă învechită în această schiță. </numerusform>
+            <numerusform>Sunt %n componente învechite în această schiță. </numerusform>
+            <numerusform>Sunt %n de componente învechite în această schiță. </numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3880"/>
         <source>We strongly recommend that you update these %n parts  to the latest version. </source>
         <translation>
-            <numerusform>Vă recomandăm să actualizați această %n parte  la ultima versiune. </numerusform>
-            <numerusform>Vă recomandăm să actualizați aceste %n părți  la ultima versiune. </numerusform>
-            <numerusform>Vă recomandăm să actualizați aceste %n de părți  la ultima versiune. </numerusform>
+            <numerusform>Vă recomandăm să actualizați această %n componentă  la ultima versiune. </numerusform>
+            <numerusform>Vă recomandăm să actualizați aceste %n componente  la ultima versiune. </numerusform>
+            <numerusform>Vă recomandăm să actualizați aceste %n de componente  la ultima versiune. </numerusform>
         </translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3881"/>
         <source>This may result in changes to your sketch, as parts or connectors may be shifted. </source>
-        <translation>Aceasta poate rezulta în modificări aduse schiței, ca părți sau conectori pot fi mutați. </translation>
+        <translation>Aceasta poate rezulta în modificări aduse schiței, componente sau conectori pot fi mutați. </translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4445"/>
@@ -4049,7 +4050,7 @@ Notificare:dacă doriți să actualizați mai târziu, sunt opțiuni sub meniul 
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4479"/>
         <source>Text will match part label, description, title, etc. Enter text to search for:</source>
-        <translation>Textul se va potrivi cu eticheta părții, descrierea, titlul, etc. Introduceți textul de căutat:</translation>
+        <translation>Textul se va potrivi cu eticheta componentei, descrierea, titlul, etc. Introduceți textul de căutat:</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4517"/>
@@ -4059,7 +4060,7 @@ Notificare:dacă doriți să actualizați mai târziu, sunt opțiuni sub meniul 
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4517"/>
         <source>No parts matched search term &apos;%1&apos;.</source>
-        <translation>Nici o parte nu se potrivește cu termenul căutat &apos;%1&apos;.</translation>
+        <translation>Nici o componentă nu se potrivește cu termenul căutat &apos;%1&apos;.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2729"/>
@@ -4114,7 +4115,7 @@ Notificare:dacă doriți să actualizați mai târziu, sunt opțiuni sub meniul 
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2771"/>
         <source>Select all jumper item parts</source>
-        <translation>Selectați toate părțile element jumper</translation>
+        <translation>Selectați toate componentele element jumper</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2774"/>
@@ -4124,7 +4125,7 @@ Notificare:dacă doriți să actualizați mai târziu, sunt opțiuni sub meniul 
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2775"/>
         <source>Select all via parts</source>
-        <translation>Selectează toate părțile via</translation>
+        <translation>Selectează toate componentele via</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2818"/>
@@ -4226,7 +4227,7 @@ Notificare:dacă doriți să actualizați mai târziu, sunt opțiuni sub meniul 
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1040"/>
         <source>This will soon provide an export of your Fritzing sketch to the EAGLE layout software. If you&apos;d like to have more exports to your favourite EDA tool, please let us know, or contribute.</source>
-        <translation type="unfinished"></translation>
+        <translation>Aceasta va asigura în curând un export al schiței Fritzing la aplicația cu aspect EAGLE. Dacă doriți să aveți mai multe exporturi către unealta EDA favorită, anunțați-ne, sau contribuiți.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1104"/>
@@ -4270,7 +4271,7 @@ Notificare:dacă doriți să actualizați mai târziu, sunt opțiuni sub meniul 
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2737"/>
         <source>Move selected traces to the other side of the board (note: the &apos;first&apos; trace will be moved and the rest will follow to the same side)</source>
-        <translation>Mută traseele selectate pe cealaltă parte a plăcii (notificare: &apos;first&apos; traseu va fi mutat iar restul îl va urma pe aceiași pistă)</translation>
+        <translation>Mută traseele selectate pe cealaltă parte a plăcii (notificare: &apos;primul&apos; traseu va fi mutat iar restul îl va urma pe aceiași pistă)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2746"/>
@@ -4413,7 +4414,7 @@ Notificare:dacă doriți să actualizați mai târziu, sunt opțiuni sub meniul 
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3230"/>
         <source>You will have to restart Fritzing in order to use the imported parts</source>
-        <translation>Trebuie să reporniți Fritzing pentru a utiliza părțile importate</translation>
+        <translation>Trebuie să reporniți Fritzing pentru a utiliza componentele importate</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3292"/>
@@ -4450,25 +4451,25 @@ Notificare:dacă doriți să actualizați mai târziu, sunt opțiuni sub meniul 
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3864"/>
         <source>No outdated parts found.
 All your parts are up-to-date.</source>
-        <translation>Nu s-au găsit părți învechite.
-Toate părțile sunt actualizate.</translation>
+        <translation>Nu s-au găsit componente învechite.
+Toate componentele sunt actualizate.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3878"/>
         <source>Outdated parts</source>
-        <translation>Părți învechite</translation>
+        <translation>Componente învechite</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4007"/>
         <source>Successfully updated %1 part(s).
 Please check all views for potential side-effects.</source>
-        <translation>S-au actualizat cu succes %1 parte(ți).
+        <translation>S-au actualizat cu succes %1 componentă(e).
 Verificați toate vizualizările pentru potențiale efecte secundare.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4002"/>
         <source>Update %1 part(s)</source>
-        <translation>Actualizează %1 parte(ți)</translation>
+        <translation>Actualizează %1 componentă(e)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_dock.cpp" line="68"/>
@@ -4582,9 +4583,9 @@ Verificați toate vizualizările pentru potențiale efecte secundare.</translati
         <location filename="../src/model/modelbase.cpp" line="379"/>
         <source>Unable to find the following %n part(s):</source>
         <translation>
-            <numerusform>Nu se poate găsi următoarea %n parte:</numerusform>
-            <numerusform>Nu se pot găsi următoarele %n părți:</numerusform>
-            <numerusform>Nu se pot găsi următoarele %n de părți:</numerusform>
+            <numerusform>Nu se poate găsi următoarea %n componentă:</numerusform>
+            <numerusform>Nu se pot găsi următoarele %n componente:</numerusform>
+            <numerusform>Nu se pot găsi următoarele %n de componente:</numerusform>
         </translation>
     </message>
     <message>
@@ -4749,12 +4750,12 @@ Motivul: %2 (cod eroare %3)</translation>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="1639"/>
         <source>Unable to create copper fill--probably the part wasn&apos;t dropped onto the PCB.</source>
-        <translation>Nu se poate crea umplerea cu cupru--posibil că partea nu a fost trasă pe PCB.</translation>
+        <translation>Nu se poate crea umplerea cu cupru--posibil că piesa nu a fost trasă pe PCB.</translation>
     </message>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="1696"/>
         <source>Unable to create copper fill--possibly the part was dropped onto another part or wire rather than the actual PCB.</source>
-        <translation>Nu se poate crea umplerea cu cupru--posibil că partea a fost trasă pe o altă parte sau fir mai degrabă decât pe actuala PCB.</translation>
+        <translation>Nu se poate crea umplerea cu cupru--posibil că piesa a fost trasă pe o altă parte sau fir mai degrabă decât pe actuala PCB.</translation>
     </message>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="2076"/>
@@ -4770,7 +4771,7 @@ Motivul: %2 (cod eroare %3)</translation>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="2422"/>
         <source>Unable to convert this via to a bendpoint because it is connected to a part that is only on the bottom layer and another part that is only on the top layer.</source>
-        <translation>Nu se poate converti acest via la un bendpoint fiindcă este conectat la o parte care este numai pe stratul de dedesubt și o altă parte care este numai pe stratul de deasupra.</translation>
+        <translation>Nu se poate converti acest via la un bendpoint fiindcă este conectat la o componentă care este numai pe stratul de dedesubt și o altă componentă care este numai pe stratul de deasupra.</translation>
     </message>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="2681"/>
@@ -4801,14 +4802,16 @@ Motivul: %2 (cod eroare %3)</translation>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="2844"/>
         <source>Enter Keepout</source>
-        <translation type="unfinished"></translation>
+        <translation>Introduceți zona de restricționare</translation>
     </message>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="2845"/>
         <source>Keepout is in mils (.001 inches).
 
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Zona de restricționare este în mils (.001 inches).
+
+</translation>
     </message>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="2846"/>
@@ -4821,7 +4824,9 @@ Motivul: %2 (cod eroare %3)</translation>
         <source>so you may want to increase the keepout value by that much.
 
 </source>
-        <translation type="unfinished"></translation>
+        <translation>astfel poate doriți să măriți valoarea zonei de restricționare cu atât de mult.
+
+</translation>
     </message>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="2848"/>
@@ -4835,7 +4840,7 @@ Motivul: %2 (cod eroare %3)</translation>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="2849"/>
         <source>Enter keepout value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Introduceți valoarea zonei de restricționare:</translation>
     </message>
 </context>
 <context>
@@ -4843,7 +4848,7 @@ Motivul: %2 (cod eroare %3)</translation>
     <message>
         <location filename="../src/partseditor/peconnectorsview.cpp" line="59"/>
         <source>This is where you edit the connector metadata for the part</source>
-        <translation>Aici este locul unde editați metadata conectorului pentru parte</translation>
+        <translation>Aici este locul unde editați metadata conectorului pentru componentă</translation>
     </message>
     <message>
         <location filename="../src/partseditor/peconnectorsview.cpp" line="65"/>
@@ -4875,7 +4880,7 @@ Motivul: %2 (cod eroare %3)</translation>
         <location filename="../src/partseditor/pemainwindow.cpp" line="3439"/>
         <location filename="../src/partseditor/pemainwindow.cpp" line="3793"/>
         <source>Parts Editor</source>
-        <translation>Editor părți</translation>
+        <translation>Editor componente</translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="539"/>
@@ -4915,12 +4920,12 @@ Motivul: %2 (cod eroare %3)</translation>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="3797"/>
         <source>Exiting the Parts Editor now is fine, as long as you remember to finish the assignments later.</source>
-        <translation>Este în regulă să ieșiți dun editorul părților acum, cât timp vă reamintiți sarcinile mai târziu.</translation>
+        <translation>Este în regulă să ieșiți din editorul componentelor acum, cât timp vă reamintiți să terminați sarcinile mai târziu.</translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="451"/>
         <source>Icon</source>
-        <translation>Miniatură</translation>
+        <translation>Pictogramă</translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="488"/>
@@ -4962,7 +4967,7 @@ Motivul: %2 (cod eroare %3)</translation>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="996"/>
         <source>Icon View</source>
-        <translation>Vizualizare miniatură</translation>
+        <translation>Vizualizare pictogramă</translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="997"/>
@@ -4977,7 +4982,7 @@ Motivul: %2 (cod eroare %3)</translation>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="1006"/>
         <source>Show Icon</source>
-        <translation>Arată miniatura</translation>
+        <translation>Arată pictogramă</translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="1007"/>
@@ -4987,7 +4992,7 @@ Motivul: %2 (cod eroare %3)</translation>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="1008"/>
         <source>Show the icon view</source>
-        <translation>Arată vizualizarea miniaturii</translation>
+        <translation>Arată vizualizarea pictogramei</translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="1012"/>
@@ -5037,7 +5042,7 @@ Motivul: %2 (cod eroare %3)</translation>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="1528"/>
         <source>Image &amp; Footprint Files (%1 %2 %3 %4 %5);;SVG Files (%1);;JPEG Files (%2);;PNG Files (%3);;gEDA Footprint Files (%4);;Kicad Module Files (%5)</source>
-        <translation type="unfinished"></translation>
+        <translation>Fișiere imagine și amprentă (%1 %2 %3 %4 %5);;Fișiere SVG (%1);;Fișiere JPEG (%2);;Fișiere PNG (%3);;Fișiere amprentă gEDA (%4);;Fișiere modul Kicad (%5)</translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="1533"/>
@@ -5062,7 +5067,7 @@ Motivul: %2 (cod eroare %3)</translation>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="1599"/>
         <source>You may use a PNG or JPG image to construct your part, but it is better to use an SVG. </source>
-        <translation>Puteți utiliza o imagine PNG sau JPG pentru a construi partea, dar este cel mai bine să utilizați un SVG. </translation>
+        <translation>Puteți utiliza o imagine PNG sau JPG pentru a construi componenta, dar este cel mai bine să utilizați un SVG. </translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="1600"/>
@@ -5072,7 +5077,7 @@ Motivul: %2 (cod eroare %3)</translation>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="1601"/>
         <source>so for Fritzing parts it is best to use PNG and JPG only as placeholders.</source>
-        <translation>astfel pentru părțile Fritzing este cel mai bine să utilizați PNG și JPG numai ca înlocuitori.</translation>
+        <translation>astfel pentru componentele Fritzing este cel mai bine să utilizați PNG și JPG numai ca înlocuitori.</translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="1604"/>
@@ -5091,7 +5096,7 @@ Motivul: %2 (cod eroare %3)</translation>
         <location filename="../src/partseditor/pemainwindow.cpp" line="991"/>
         <location filename="../src/partseditor/pemainwindow.cpp" line="2935"/>
         <source>Fritzing (New) Parts Editor</source>
-        <translation>Editor părți (nou) Fritzing</translation>
+        <translation>Editor componente (nou) Fritzing</translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="1011"/>
@@ -5195,7 +5200,7 @@ Motivul: %2 (cod eroare %3)</translation>
         <source>This part can not be saved as-is:
 
 </source>
-        <translation>Această parte nu poate fi salvată cum este:
+        <translation>Această componentă nu poate fi salvată cum este:
 
 </translation>
     </message>
@@ -5207,21 +5212,25 @@ Motivul: %2 (cod eroare %3)</translation>
     <message numerus="yes">
         <location filename="../src/partseditor/pemainwindow.cpp" line="3794"/>
         <source>This part has %n unassigned connectors </source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>Această componentă are %n conector neatribuit </numerusform>
+            <numerusform>Această componentă are %n conectoare neatribuite </numerusform>
+            <numerusform>Această componentă are %n de conectoare neatribuite </numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <location filename="../src/partseditor/pemainwindow.cpp" line="3795"/>
         <source>across %n views. </source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>peste %n vizualizare. </numerusform>
+            <numerusform>peste %n de vizualizări. </numerusform>
+            <numerusform>peste %n vizualizări. </numerusform>
         </translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="3796"/>
         <source>Until all connectors are assigned to SVG elements, the part will not work correctly. </source>
-        <translation>Până ce toți conectorii nu sunt atribuiți elementelor SVG, partea nu va funcționa corect. </translation>
+        <translation>Până ce toți conectorii nu sunt atribuiți elementelor SVG, componenta nu va funcționa corect. </translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="552"/>
@@ -5236,7 +5245,7 @@ Motivul: %2 (cod eroare %3)</translation>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="563"/>
         <source>Reuse the breadboard image in this view</source>
-        <translation>Reutilizează imaginea plăcii testare în această vizualizare</translation>
+        <translation>Reutilizează imaginea placă testare în această vizualizare</translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="566"/>
@@ -5266,12 +5275,12 @@ Motivul: %2 (cod eroare %3)</translation>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="1022"/>
         <source>The part will only be visible in this view and icon view</source>
-        <translation>Partea va fi vizibilă numai în această vizualizare și vizualizarea miniaturii</translation>
+        <translation>Componenta va fi vizibilă numai în această vizualizare și vizualizare pictogramă</translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="1350"/>
         <source>This version of the new Parts Editor can not deal with separate copper0 and copper1 layers in &apos;%1&apos;. </source>
-        <translation type="unfinished"></translation>
+        <translation>Această versiune a noului Editor Componente nu poate lucra cu straturile cupru0 și cupru1 în &apos;%1&apos;. </translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="1351"/>
@@ -5296,7 +5305,7 @@ Motivul: %2 (cod eroare %3)</translation>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="1641"/>
         <source>&lt;br/&gt;&lt;br/&gt;This will not be a problem in the next release of the Parts Editor, </source>
-        <translation>&lt;br/&gt;&lt;br/&gt;Aceasta nu va mai fi o problemă în următoarea versiune a editorului părților, </translation>
+        <translation>&lt;br/&gt;&lt;br/&gt;Aceasta nu va mai fi o problemă în următoarea versiune a editorului componentelor, </translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="1642"/>
@@ -5316,7 +5325,7 @@ Motivul: %2 (cod eroare %3)</translation>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="1703"/>
         <source>no footprints found in %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Nu s-au găsit amprente în %1</translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="2037"/>
@@ -5341,7 +5350,7 @@ Motivul: %2 (cod eroare %3)</translation>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="581"/>
         <source>Open a file to use as the image for this view of the part.</source>
-        <translation>Deschide un fișier de utilizat ca imagine pentru această vizualizare a părții.</translation>
+        <translation>Deschide un fișier de utilizat ca imagine pentru această vizualizare a componentei.</translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="591"/>
@@ -5356,12 +5365,12 @@ Motivul: %2 (cod eroare %3)</translation>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="627"/>
         <source>Save as new part</source>
-        <translation>Salvează ca parte nouă</translation>
+        <translation>Salvează ca o componentă nouă</translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="628"/>
         <source>Make a copy of the part and save it in the &apos;My Parts&apos; Bin</source>
-        <translation>Fă o copie a părții și salveaz-o în cutia &apos;Părțilr mele&apos;</translation>
+        <translation>Fă o copie a componentei și salveaz-o în cutia &apos;Componentele mele&apos;</translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="631"/>
@@ -5376,17 +5385,17 @@ Motivul: %2 (cod eroare %3)</translation>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="835"/>
         <source>This part has bendable legs. </source>
-        <translation>Această parte are picioare flexibile. </translation>
+        <translation>Această componentă are picioare flexibile. </translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="836"/>
         <source>This version of the Parts Editor does not yet support editing bendable legs, and the legs may not be displayed correctly in breadboard view . </source>
-        <translation>Această versiune a editorului parte nu suportă încă editarea picioarelor flexibile, iar picioarele pot să nu fie afișate corect în vizualizare placă testare . </translation>
+        <translation>Această versiune a editorului componente nu suportă încă editarea picioarelor flexibile, iar picioarele pot să nu fie afișate corect în vizualizare placă testare . </translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="837"/>
         <source>If you make changes to breadboard view, or change connector metadata, the legs may no longer work. </source>
-        <translation>Dacă faceți modificări vizualizării placă de testare, sau modificați metadatele conectorilor, picioarele nu vor mai funcționa. </translation>
+        <translation>Dacă faceți modificări vizualizării placă testare, sau modificați metadatele conectorilor, picioarele nu vor mai funcționa. </translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="838"/>
@@ -5405,7 +5414,7 @@ Motivul: %2 (cod eroare %3)</translation>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="872"/>
         <source>Unable to load &apos;%1&apos;. Please close the parts editor without saving and try again.</source>
-        <translation>Nu se poate încărca &apos;%1&apos;. Închideți editorul părților fără să salvați și încercați dinn nou.</translation>
+        <translation>Nu se poate încărca &apos;%1&apos;. Închideți editorul componentelor fără să salvați și încercați din nou.</translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="1618"/>
@@ -5420,7 +5429,7 @@ Motivul: %2 (cod eroare %3)</translation>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="2144"/>
         <source>Please enter a prefix to help you identify the part files. The names will have the form &apos;PREFIX_%1&apos;. (It is not necessary to change the prefix, since a unique suffix is always added.)</source>
-        <translation type="unfinished"></translation>
+        <translation>Introduceți un prefix care să vă ajute să identificați fișierele componente. Numele va avea forma &apos;PREFIX_%1&apos;. (nu este necesar să modificați prefixul, întrucât este adăugat întotdeauna un suffix unic.)</translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="2173"/>
@@ -5430,12 +5439,12 @@ Motivul: %2 (cod eroare %3)</translation>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="2176"/>
         <source>The open sketch &apos;%1&apos; uses the part you are editing. </source>
-        <translation>Schița deschisă &apos;%1&apos; utilizează părți pe care le-ați editat. </translation>
+        <translation>Schița deschisă &apos;%1&apos; utilizează componenta pe care-ați editat-o. </translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="2177"/>
         <source>Saving this part will make a change to the sketch that cannot be undone.</source>
-        <translation>Salvând aceste părți se va efectua o modificare schiței care nu mai poate fi anulată.</translation>
+        <translation>Salvând această componentă se va efectua o modificare schiței care nu mai poate fi anulată.</translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="2180"/>
@@ -5455,7 +5464,7 @@ Motivul: %2 (cod eroare %3)</translation>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="2185"/>
         <source>Saving this part will make a change to these sketches that cannot be undone.</source>
-        <translation>Salvând această parte se va efectua o modificare acestei schițe care nu poate fi anulată.</translation>
+        <translation>Salvând această componentă se va efectua o modificare acestei schițe care nu poate fi anulată.</translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="2188"/>
@@ -5499,7 +5508,7 @@ Continuați și salvați?</translation>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="2731"/>
         <source>Do you want to save the changes you made in the part &quot;%1&quot;?</source>
-        <translation>Doriți să salvați modificările pe care le-ați efectual în partea &quot;%1&quot;?</translation>
+        <translation>Doriți să salvați modificările pe care le-ați efectual în componenta &quot;%1&quot;?</translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="2732"/>
@@ -5509,7 +5518,7 @@ Continuați și salvați?</translation>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="2736"/>
         <source>untitled part</source>
-        <translation>parte fără titlu</translation>
+        <translation>componentă fără titlu</translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="2771"/>
@@ -5519,7 +5528,7 @@ Continuați și salvați?</translation>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="2826"/>
         <source>Unable to create new connector--you may have to start over.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nu se poate creea noul conector--va trebui să-l începeți peste.</translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="2859"/>
@@ -5572,12 +5581,12 @@ Continuați și salvați?</translation>
     <message>
         <location filename="../src/partseditor/pemetadataview.cpp" line="199"/>
         <source>This is where you edit the metadata for the part ...</source>
-        <translation>Aici este unde editați metadata pentru partea ...</translation>
+        <translation>Aici este unde editați metadata pentru componenta ...</translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemetadataview.cpp" line="210"/>
         <source>Set the part&apos;s title</source>
-        <translation>Configurați titlul părții</translation>
+        <translation>Configurați titlul componentei</translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemetadataview.cpp" line="211"/>
@@ -5587,7 +5596,7 @@ Continuați și salvați?</translation>
     <message>
         <location filename="../src/partseditor/pemetadataview.cpp" line="217"/>
         <source>Set the part&apos;s date</source>
-        <translation>Configurați data părții</translation>
+        <translation>Configurați data componentei</translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemetadataview.cpp" line="219"/>
@@ -5597,7 +5606,7 @@ Continuați și salvați?</translation>
     <message>
         <location filename="../src/partseditor/pemetadataview.cpp" line="225"/>
         <source>Set the part&apos;s author</source>
-        <translation>Configurați autorul părții</translation>
+        <translation>Configurați autorul componentei</translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemetadataview.cpp" line="226"/>
@@ -5607,7 +5616,7 @@ Continuați și salvați?</translation>
     <message>
         <location filename="../src/partseditor/pemetadataview.cpp" line="233"/>
         <source>Set the part&apos;s description--you can use simple html (as defined by Qt&apos;s Rich Text)</source>
-        <translation>Configurați descrierea părții--puteți utiliza html simplu (cum este definit de textul formatat Qt)</translation>
+        <translation>Configurați descrierea componentei--puteți utiliza html simplu (cum este definit de textul formatat Qt)</translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemetadataview.cpp" line="234"/>
@@ -5617,7 +5626,7 @@ Continuați și salvați?</translation>
     <message>
         <location filename="../src/partseditor/pemetadataview.cpp" line="240"/>
         <source>Set the default part label prefix</source>
-        <translation>Configurați prefixul implicit pentru eticheta părții</translation>
+        <translation>Configurați prefixul implicit pentru eticheta componentei</translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemetadataview.cpp" line="241"/>
@@ -5627,7 +5636,7 @@ Continuați și salvați?</translation>
     <message>
         <location filename="../src/partseditor/pemetadataview.cpp" line="247"/>
         <source>Set the part&apos;s url if it is described on a web page</source>
-        <translation>Configurați URL-ul părții dacă este descrisă pe o pagină web</translation>
+        <translation>Configurați URL-ul componentei dacă este descrisă pe o pagină web</translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemetadataview.cpp" line="248"/>
@@ -5637,7 +5646,7 @@ Continuați și salvați?</translation>
     <message>
         <location filename="../src/partseditor/pemetadataview.cpp" line="254"/>
         <source>Set the part&apos;s family--what other parts is this part related to</source>
-        <translation>Configurați familia părții--cu ce alte părți este această parte în legătură</translation>
+        <translation>Configurați familia componentelor--cu ce alte componente este această componentă în legătură</translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemetadataview.cpp" line="255"/>
@@ -5647,7 +5656,7 @@ Continuați și salvați?</translation>
     <message>
         <location filename="../src/partseditor/pemetadataview.cpp" line="261"/>
         <source>Set the part&apos;s variant--this makes it unique from all other parts in the same family</source>
-        <translation>Configurați varianta părții--aceasta o face unică față de alte părți în aceiași familie</translation>
+        <translation>Configurați varianta componentei--aceasta o face unică față de alte componente în aceiași familie</translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemetadataview.cpp" line="262"/>
@@ -5657,7 +5666,7 @@ Continuați și salvați?</translation>
     <message>
         <location filename="../src/partseditor/pemetadataview.cpp" line="266"/>
         <source>Set the part&apos;s properties</source>
-        <translation>Configurați proprietățile părții</translation>
+        <translation>Configurați proprietățile componentei</translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemetadataview.cpp" line="268"/>
@@ -5667,7 +5676,7 @@ Continuați și salvați?</translation>
     <message>
         <location filename="../src/partseditor/pemetadataview.cpp" line="272"/>
         <source>Set the part&apos;s tags</source>
-        <translation>Configurați eticheta părții</translation>
+        <translation>Configurați eticheta componentei</translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemetadataview.cpp" line="274"/>
@@ -5708,7 +5717,7 @@ Continuați și salvați?</translation>
     <message>
         <location filename="../src/partseditor/petoolview.cpp" line="116"/>
         <source>Controls for setting the terminal point for a connector. The terminal point is where a wire will attach to the connector. You can also drag the crosshair of the current connector</source>
-        <translation type="unfinished"></translation>
+        <translation>Controale pentru configurarea punctului terminal. Punctul terminal este unde un fir va fi atașat conectorului. Puteți de asemenea să trageți firul conectorului curent</translation>
     </message>
     <message>
         <location filename="../src/partseditor/petoolview.cpp" line="125"/>
@@ -5803,7 +5812,7 @@ Continuați și salvați?</translation>
     <message>
         <location filename="../src/partseditor/petoolview.cpp" line="450"/>
         <source>Use the cursor location and mouse wheel to navigate to the SVG element which you want to assign to the current connector, then mouse down to select it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Utilizați locația curentă și rotița mausului pentru a naviga la elementul SVG pe care doriți să-l atribuiți conectorului curent, apoi coborâți mausul pentru a-l selecta.</translation>
     </message>
 </context>
 <context>
@@ -5862,12 +5871,12 @@ Continuați și salvați?</translation>
     <message>
         <location filename="../src/items/paletteitem.cpp" line="603"/>
         <source>Unable to proceed; unable to find top level view.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nu se poate proceda; nu se poate găsi vizualizarea părții de sus.</translation>
     </message>
     <message>
         <location filename="../src/items/paletteitem.cpp" line="614"/>
         <source>Unable to proceed; part connectors do no have standard IDs.</source>
-        <translation>Nu se poate proceda; conectorii părții nu au ID-uri standard.</translation>
+        <translation>Nu se poate proceda; conectorii componentei nu au ID-uri standard.</translation>
     </message>
     <message>
         <location filename="../src/items/paletteitem.cpp" line="638"/>
@@ -5902,7 +5911,7 @@ Continuați și salvați?</translation>
     <message>
         <location filename="../src/items/paletteitem.cpp" line="982"/>
         <source>Ring Thickness</source>
-        <translation type="unfinished"></translation>
+        <translation>Cotele inelului</translation>
     </message>
 </context>
 <context>
@@ -5925,12 +5934,12 @@ Continuați și salvați?</translation>
     <message>
         <location filename="../src/items/partlabel.cpp" line="439"/>
         <source>Hide part label</source>
-        <translation>Ascunde eticheta părții</translation>
+        <translation>Ascunde eticheta componentei</translation>
     </message>
     <message>
         <location filename="../src/items/partlabel.cpp" line="443"/>
         <source>Display Values</source>
-        <translation>Afișază valorile</translation>
+        <translation>Afișează valorile</translation>
     </message>
     <message>
         <location filename="../src/items/partlabel.cpp" line="444"/>
@@ -6080,12 +6089,12 @@ Continuați și salvați?</translation>
     <message>
         <location filename="../src/items/partlabel.cpp" line="521"/>
         <source>Display the text of the label</source>
-        <translation>Afișază textul etichetei</translation>
+        <translation>Afișează textul etichetei</translation>
     </message>
     <message>
         <location filename="../src/items/partlabel.cpp" line="532"/>
         <source>Display the value of property %1</source>
-        <translation>Afișază valoarea proprietății %1</translation>
+        <translation>Afișează valoarea proprietății %1</translation>
     </message>
     <message>
         <location filename="../src/items/partlabel.cpp" line="731"/>
@@ -6186,22 +6195,22 @@ Continuați și salvați?</translation>
     <message>
         <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="700"/>
         <source>Do you really want to add the selected part to the bin?</source>
-        <translation>Sigur doriți să adăugați partea selectată la cutie?</translation>
+        <translation>Sigur doriți să adăugați componenta selectată la cutie?</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="885"/>
         <source>Change icon color...</source>
-        <translation>Schimbă culoarea miniaturii...</translation>
+        <translation>Schimbă culoarea pictogramei...</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="886"/>
         <source>Change the color of the icon for this bin.</source>
-        <translation>Schimbă culoarea miniaturii pentru această cutie.</translation>
+        <translation>Schimbă culoarea pictogramei pentru această cutie.</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="897"/>
         <source>Select a color for this icon</source>
-        <translation>Selectați o culoare pentru această miniatură</translation>
+        <translation>Selectați o culoare pentru această pictogramă</translation>
     </message>
 </context>
 <context>
@@ -6444,12 +6453,12 @@ tasta shift schimbată derulare axială</translation>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="525"/>
         <source>Curvy vs. straight wires</source>
-        <translation type="unfinished"></translation>
+        <translation>fire curbate vs. drepte</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="528"/>
         <source>When you mouse-down and drag on a wire or the leg of a part (as opposed to a connector or a bendpoint) do you want to change the curvature of the wire (or leg) or drag out a new bendpoint?</source>
-        <translation type="unfinished"></translation>
+        <translation>Când mausul coboară și trage de un fir sau de un pin al unei componente (spre deosebire de un conector sau bendpoint) doriți să modificați curbura firului (sau a pinului) sau să trasați un nou bendpoint?</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="533"/>
@@ -6890,7 +6899,7 @@ tasta shift schimbată derulare axială</translation>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3382"/>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3390"/>
         <source>Part</source>
-        <translation>Parte</translation>
+        <translation>Componentă</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3403"/>
@@ -6950,12 +6959,12 @@ tasta shift schimbată derulare axială</translation>
     <message>
         <location filename="../src/model/palettemodel.cpp" line="100"/>
         <source>Parts folder not found.</source>
-        <translation>Dosarul părților nu s-a găsit.</translation>
+        <translation>Dosarul componentelor nu s-a găsit.</translation>
     </message>
     <message>
         <location filename="../src/model/palettemodel.cpp" line="110"/>
         <source>No parts found.</source>
-        <translation>Nu s-au găsit părțile.</translation>
+        <translation>Nu s-au găsit componente.</translation>
     </message>
     <message>
         <location filename="../src/model/palettemodel.cpp" line="257"/>
@@ -6969,7 +6978,7 @@ tasta shift schimbată derulare axială</translation>
     <message>
         <location filename="../src/model/palettemodel.cpp" line="379"/>
         <source>The part &apos;%1&apos; at &apos;%2&apos; does not have a unique module id &apos;%3&apos;.</source>
-        <translation>Partea &apos;%1&apos; la &apos;%2&apos; nu are un id modul unic &apos;%3&apos;.</translation>
+        <translation>Componenta &apos;%1&apos; la &apos;%2&apos; nu are un id modul unic &apos;%3&apos;.</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/partsbinview.cpp" line="43"/>
@@ -7014,7 +7023,7 @@ tasta shift schimbată derulare axială</translation>
     <message>
         <location filename="../src/partsbinpalette/partsbinview.cpp" line="54"/>
         <source>Shields</source>
-        <translation>Ecrane</translation>
+        <translation type="unfinished">Plăci de extensie</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/partsbinview.cpp" line="55"/>
@@ -7034,13 +7043,13 @@ tasta shift schimbată derulare axială</translation>
     <message>
         <location filename="../src/partsbinpalette/partsbinview.cpp" line="223"/>
         <source>Part already in bin</source>
-        <translation>Partea este deja în cutie</translation>
+        <translation>Componenta este deja în cutie</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/partsbinview.cpp" line="223"/>
         <source>The part that you have just added,
 is already there, we won&apos;t add it again, right?</source>
-        <translation>Partea pe care tocmai ați adăugat-o,
+        <translation>Componenta pe care tocmai ați adăugat-o,
 este deja acolo, nu dorim să o adăugăm iară, corect?</translation>
     </message>
     <message>
@@ -7075,7 +7084,7 @@ este deja acolo, nu dorim să o adăugăm iară, corect?</translation>
         <source>Sorry, we have a problem with the swapping mechanism.
 Fritzing still works, but you won&apos;t be able to change parts properties.</source>
         <translation>Regretăm, avem o problemă cu mecanismul de schimbare.
-Fritzing continuă să funcționeze, dar nu veți putea să modificați proprietățile părților.</translation>
+Fritzing continuă să funcționeze, dar nu veți putea să modificați proprietățile componentelor.</translation>
     </message>
     <message>
         <location filename="../src/sketch/breadboardsketchwidget.cpp" line="42"/>
@@ -7201,12 +7210,12 @@ Fritzing continuă să funcționeze, dar nu veți putea să modificați propriet
     <message>
         <location filename="../src/sketch/sketchwidget.cpp" line="8179"/>
         <source>Select outdated parts</source>
-        <translation>Selectați părțile învechite</translation>
+        <translation>Selectați componentele învechite</translation>
     </message>
     <message>
         <location filename="../src/sketch/sketchwidget.cpp" line="8194"/>
         <source>Select locked parts</source>
-        <translation>Selectați părțile blocate</translation>
+        <translation>Selectați componentele blocate</translation>
     </message>
     <message>
         <location filename="../src/svg/gedaelement2svg.cpp" line="57"/>
@@ -7228,17 +7237,18 @@ Fritzing continuă să funcționeze, dar nu veți putea să modificați propriet
     <message>
         <location filename="../src/svg/gedaelement2svg.cpp" line="153"/>
         <source>Sorry, Fritzing can&apos;t yet handle both pins and pads together (in %1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Regretăm, Fritzing nu poate încă manipula pini și pad-uri împreună (în %1)</translation>
     </message>
     <message>
         <location filename="../src/svg/gedaelement2svg.cpp" line="234"/>
         <source>bad pin argument count</source>
-        <translation type="unfinished"></translation>
+        <translation>număr argument pin greșit</translation>
     </message>
     <message>
         <location filename="../src/svg/gedaelement2svg.cpp" line="309"/>
         <source>bad pad argument count</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>pad : A flat area on a track of a printed circuit or on the edge of an integrated circuit to which wires or component leads can be attached to make an electrical connection.</translatorcomment>
+        <translation>număr de argumente pad incorecte</translation>
     </message>
     <message>
         <location filename="../src/svg/gedaelement2svg.cpp" line="541"/>
@@ -7266,7 +7276,7 @@ Fritzing continuă să funcționeze, dar nu veți putea să modificați propriet
     <message>
         <location filename="../src/svg/kicadmodule2svg.cpp" line="255"/>
         <source>Sorry, Fritzing can&apos;t yet handle both pins and pads together (in %1 in %2)</source>
-        <translation type="unfinished"></translation>
+        <translation>Regretăm, Fritzing nu poate încă manipula pini și pad-uri împreună (în %1 în %2)</translation>
     </message>
     <message>
         <location filename="../src/svg/kicadmodule2svg.cpp" line="416"/>
@@ -7276,22 +7286,26 @@ Fritzing continuă să funcționeze, dar nu veți putea să modificați propriet
     <message>
         <location filename="../src/svg/kicadmodule2svg.cpp" line="446"/>
         <source>pad missing drill</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>pad : A flat area on a track of a printed circuit or on the edge of an integrated circuit to which wires or component leads can be attached to make an electrical connection.</translatorcomment>
+        <translation>lipsesc găurile pad-ului</translation>
     </message>
     <message>
         <location filename="../src/svg/kicadmodule2svg.cpp" line="449"/>
         <source>pad missing attributes</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>pad : A flat area on a track of a printed circuit or on the edge of an integrated circuit to which wires or component leads can be attached to make an electrical connection.</translatorcomment>
+        <translation>lipsesc atributele pad-ului</translation>
     </message>
     <message>
         <location filename="../src/svg/kicadmodule2svg.cpp" line="452"/>
         <source>pad missing position</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>pad : A flat area on a track of a printed circuit or on the edge of an integrated circuit to which wires or component leads can be attached to make an electrical connection.</translatorcomment>
+        <translation>lipsește poziția pad-ului</translation>
     </message>
     <message>
         <location filename="../src/svg/kicadmodule2svg.cpp" line="455"/>
         <source>pad missing shape</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>pad : A flat area on a track of a printed circuit or on the edge of an integrated circuit to which wires or component leads can be attached to make an electrical connection.</translatorcomment>
+        <translation>lipsește forma pad-ului</translation>
     </message>
     <message>
         <location filename="../src/svg/kicadmodule2svg.cpp" line="460"/>
@@ -7301,17 +7315,17 @@ Fritzing continuă să funcționeze, dar nu veți putea să modificați propriet
     <message>
         <location filename="../src/svg/kicadmodule2svg.cpp" line="468"/>
         <source>drill missing params</source>
-        <translation type="unfinished"></translation>
+        <translation>lipsesc parametrii găurilor</translation>
     </message>
     <message>
         <location filename="../src/svg/kicadmodule2svg.cpp" line="477"/>
         <source>drill offset not implemented</source>
-        <translation type="unfinished"></translation>
+        <translation>nu este implementată compensarea găurilor</translation>
     </message>
     <message>
         <location filename="../src/svg/kicadmodule2svg.cpp" line="483"/>
         <source>drill missing ellipse params</source>
-        <translation type="unfinished"></translation>
+        <translation>lipsesc parametrii eliptici ai găurilor</translation>
     </message>
     <message>
         <location filename="../src/svg/kicadmodule2svg.cpp" line="491"/>
@@ -7326,22 +7340,22 @@ Fritzing continuă să funcționeze, dar nu veți putea să modificați propriet
     <message>
         <location filename="../src/svg/kicadmodule2svg.cpp" line="524"/>
         <source>Sorry, can&apos;t handle pad type %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Regretăm, nu se poate manipula pad-ul de tip %1</translation>
     </message>
     <message>
         <location filename="../src/svg/kicadmodule2svg.cpp" line="529"/>
         <source>pad shape missing params</source>
-        <translation type="unfinished"></translation>
+        <translation>lipsesc parametrii formei pad-ului</translation>
     </message>
     <message>
         <location filename="../src/svg/kicadmodule2svg.cpp" line="551"/>
         <source>pad shape size is invalid</source>
-        <translation type="unfinished"></translation>
+        <translation>dimensiunea formei pad-ului nu este validă</translation>
     </message>
     <message>
         <location filename="../src/svg/kicadmodule2svg.cpp" line="559"/>
         <source>trapezoidal pads not implemented</source>
-        <translation type="unfinished"></translation>
+        <translation>nu este implementat pad-ul trapezoidal</translation>
     </message>
     <message>
         <location filename="../src/svg/kicadmodule2svg.cpp" line="565"/>
@@ -7361,7 +7375,7 @@ Fritzing continuă să funcționeze, dar nu veți putea să modificați propriet
     <message>
         <location filename="../src/svg/kicadmodule2svg.cpp" line="595"/>
         <source>unable to handle pad shape %1</source>
-        <translation type="unfinished"></translation>
+        <translation>nu se poate manipula forma pad-ului %1</translation>
     </message>
     <message>
         <location filename="../src/svg/kicadschematic2svg.cpp" line="100"/>
@@ -7371,7 +7385,7 @@ Fritzing continuă să funcționeze, dar nu veți putea să modificați propriet
     <message>
         <location filename="../src/svg/kicadschematic2svg.cpp" line="112"/>
         <source>schematic part %1 not found in %2</source>
-        <translation>partea schemei %1 nu s-a găsit în %2</translation>
+        <translation>componenta schemei %1 nu s-a găsit în %2</translation>
     </message>
     <message>
         <location filename="../src/svg/kicadschematic2svg.cpp" line="120"/>
@@ -7423,12 +7437,12 @@ Fritzing continuă să funcționeze, dar nu veți putea să modificați propriet
     <message>
         <location filename="../src/viewlayer.cpp" line="183"/>
         <source>icon view</source>
-        <translation>vizualizare miniatură</translation>
+        <translation>vizualizare pictogramă</translation>
     </message>
     <message>
         <location filename="../src/viewlayer.cpp" line="184"/>
         <source>breadboard view</source>
-        <translation>vizualizare placa testare</translation>
+        <translation>vizualizare placă testare</translation>
     </message>
     <message>
         <location filename="../src/viewlayer.cpp" line="185"/>
@@ -7443,7 +7457,7 @@ Fritzing continuă să funcționeze, dar nu veți putea să modificați propriet
     <message>
         <location filename="../src/viewlayer.cpp" line="125"/>
         <source>Icon</source>
-        <translation>miniatură</translation>
+        <translation>Pictogramă</translation>
     </message>
     <message>
         <location filename="../src/viewlayer.cpp" line="126"/>
@@ -7454,7 +7468,7 @@ Fritzing continuă să funcționeze, dar nu veți putea să modificați propriet
         <location filename="../src/viewlayer.cpp" line="127"/>
         <location filename="../src/viewlayer.cpp" line="135"/>
         <source>Parts</source>
-        <translation>Părți</translation>
+        <translation>Componente</translation>
     </message>
     <message>
         <location filename="../src/viewlayer.cpp" line="128"/>
@@ -7466,7 +7480,7 @@ Fritzing continuă să funcționeze, dar nu veți putea să modificați propriet
         <location filename="../src/viewlayer.cpp" line="129"/>
         <location filename="../src/viewlayer.cpp" line="139"/>
         <source>Part Labels</source>
-        <translation>Etichete parte</translation>
+        <translation>Etichete componentă</translation>
     </message>
     <message>
         <location filename="../src/viewlayer.cpp" line="130"/>
@@ -7513,7 +7527,7 @@ Fritzing continuă să funcționeze, dar nu veți putea să modificați propriet
     <message>
         <location filename="../src/viewlayer.cpp" line="145"/>
         <source>Silkscreen Top (Part Labels)</source>
-        <translation>Serigrafia sus (etichete părți)</translation>
+        <translation>Serigrafia sus (etichete componentă)</translation>
     </message>
     <message>
         <location filename="../src/viewlayer.cpp" line="146"/>
@@ -7553,12 +7567,12 @@ Fritzing continuă să funcționeze, dar nu veți putea să modificați propriet
     <message>
         <location filename="../src/viewlayer.cpp" line="154"/>
         <source>Silkscreen Bottom (Part Labels)</source>
-        <translation>Serigrafia jos (etichete părți)</translation>
+        <translation>Serigrafia jos (etichete componentă)</translation>
     </message>
     <message>
         <location filename="../src/viewlayer.cpp" line="158"/>
         <source>Part Image</source>
-        <translation>Imagine parte</translation>
+        <translation>Imagine componentă</translation>
     </message>
     <message>
         <location filename="../src/viewlayer.cpp" line="166"/>
@@ -7608,7 +7622,7 @@ Fritzing continuă să funcționeze, dar nu veți putea să modificați propriet
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="245"/>
         <source>exported drill file is empty</source>
-        <translation type="unfinished"></translation>
+        <translation>fișierul găurilor exportat este gol</translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="280"/>
@@ -7628,12 +7642,12 @@ Fritzing continuă să funcționeze, dar nu veți putea să modificați propriet
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="914"/>
         <source>Unable to save pick and place file: %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Nu se poate salva alegerea și locul fișierului: %2</translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="223"/>
         <source>silk export failure</source>
-        <translation type="unfinished"></translation>
+        <translation>a eșuat exportul stratului serigrafic</translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="192"/>
@@ -7643,12 +7657,12 @@ Fritzing continuă să funcționeze, dar nu veți putea să modificați propriet
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="207"/>
         <source>silk layer %1 export is empty</source>
-        <translation type="unfinished"></translation>
+        <translation>stratul serigrafic %1 exportat este gol</translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="262"/>
         <source>drill export failure</source>
-        <translation type="unfinished"></translation>
+        <translation>a eșuat exportul găurilor</translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="286"/>
@@ -7668,7 +7682,7 @@ Fritzing continuă să funcționeze, dar nu veți putea să modificați propriet
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="862"/>
         <source>Fritzing requires that you make cutouts using a shape &apos;subtraction&apos; or &apos;difference&apos; operation in your vector graphics editor.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing are nevoie să efectuați decupaje utilizând o formă &apos;scădere&apos; sau &apos;diferență&apos; operație în editorul dumneavoastră de grafică vectorială.</translation>
     </message>
     <message>
         <location filename="../src/svg/gerbergenerator.cpp" line="294"/>
@@ -7724,7 +7738,7 @@ Fritzing continuă să funcționeze, dar nu veți putea să modificați propriet
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="286"/>
         <source>Icon View</source>
-        <translation>Vizualizare miniatură</translation>
+        <translation>Vizualizare pictogramă</translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="705"/>
@@ -7764,7 +7778,7 @@ Fritzing continuă să funcționeze, dar nu veți putea să modificați propriet
     <message>
         <location filename="../src/partsbinpalette/partsbinpalettewidget.cpp" line="534"/>
         <source>Fritzing cannot load the parts bin</source>
-        <translation>Fritzing nu poate încărca cutia părților</translation>
+        <translation>Fritzing nu poate încărca cutia componentelor</translation>
     </message>
     <message>
         <location filename="../src/partseditor/peconnectorsview.cpp" line="81"/>
@@ -7775,12 +7789,13 @@ Fritzing continuă să funcționeze, dar nu veți putea să modificați propriet
         <location filename="../src/partseditor/peconnectorsview.cpp" line="100"/>
         <location filename="../src/partseditor/peutils.cpp" line="177"/>
         <source>Pad</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>Pad : A flat area on a track of a printed circuit or on the edge of an integrated circuit to which wires or component leads can be attached to make an electrical connection.</translatorcomment>
+        <translation>Pad</translation>
     </message>
     <message>
         <location filename="../src/autoroute/drc.cpp" line="114"/>
         <source>Part %1 &apos;%2&apos;</source>
-        <translation>Partea %1 &apos;%2&apos;</translation>
+        <translation>Componenta %1 &apos;%2&apos;</translation>
     </message>
     <message>
         <location filename="../src/autoroute/autoroutersettingsdialog.cpp" line="70"/>
@@ -8217,7 +8232,7 @@ Fritzing continuă să funcționeze, dar nu veți putea să modificați propriet
     <message>
         <location filename="../src/sketch/sketchwidget.cpp" line="737"/>
         <source>loading part</source>
-        <translation>se încarcă partea</translation>
+        <translation>se încarcă componentă</translation>
     </message>
     <message>
         <location filename="../src/sketch/sketchwidget.cpp" line="741"/>
@@ -8439,18 +8454,18 @@ Fritzing continuă să funcționeze, dar nu veți putea să modificați propriet
         <location filename="../src/sketch/sketchwidget.cpp" line="7171"/>
         <source>show %n part label(s)</source>
         <translation>
-            <numerusform>arată %n eticheta părții</numerusform>
-            <numerusform>arată %n etichete părți</numerusform>
-            <numerusform>arată %n de etichete părți</numerusform>
+            <numerusform>arată %n eticheta componentei</numerusform>
+            <numerusform>arată %n etichete componentă</numerusform>
+            <numerusform>arată %n de etichete componentă</numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <location filename="../src/sketch/sketchwidget.cpp" line="7174"/>
         <source>hide %n part label(s)</source>
         <translation>
-            <numerusform>ascunde %n eticheta părții</numerusform>
-            <numerusform>ascunde %n etichete părți</numerusform>
-            <numerusform>ascunde %n de etichete părți</numerusform>
+            <numerusform>ascunde %n eticheta componentei</numerusform>
+            <numerusform>ascunde %n etichete componentă</numerusform>
+            <numerusform>ascunde %n de etichete componentă</numerusform>
         </translation>
     </message>
     <message>
@@ -8538,12 +8553,12 @@ Notificare: puteți deasemenea să declanșați acest afișaj prin trecerea maus
     <message>
         <location filename="../src/sketch/sketchwidget.cpp" line="9433"/>
         <source>Part &apos;%1&apos; not found in sketch</source>
-        <translation>Partea &apos;%1&apos; nu a fost găsită în schiță</translation>
+        <translation>Componenta &apos;%1&apos; nu a fost găsită în schiță</translation>
     </message>
     <message>
         <location filename="../src/sketch/sketchwidget.cpp" line="9445"/>
         <source>Add %1 parts</source>
-        <translation>Adaugă %1 părți</translation>
+        <translation>Adaugă %1 componente</translation>
     </message>
     <message>
         <location filename="../src/sketch/sketchwidget.cpp" line="9507"/>
@@ -8566,7 +8581,7 @@ Notificare: puteți deasemenea să declanșați acest afișaj prin trecerea maus
     <message>
         <location filename="../src/referencemodel/sqlitereferencemodel.cpp" line="142"/>
         <source>and %1 other parts</source>
-        <translation>și %1 alte părți</translation>
+        <translation>și %1 alte componente</translation>
     </message>
     <message>
         <location filename="../src/referencemodel/sqlitereferencemodel.cpp" line="159"/>
@@ -8576,12 +8591,12 @@ Notificare: puteți deasemenea să declanșați acest afișaj prin trecerea maus
     <message>
         <location filename="../src/referencemodel/sqlitereferencemodel.cpp" line="921"/>
         <source>property &apos;%1&apos; in part &apos;%2&apos; with id &apos;%3&apos;.</source>
-        <translation>proprietatea &apos;%1&apos; în partea &apos;%2&apos; cu id &apos;%3&apos;.</translation>
+        <translation>proprietatea &apos;%1&apos; în componenta &apos;%2&apos; cu id &apos;%3&apos;.</translation>
     </message>
     <message>
         <location filename="../src/referencemodel/sqlitereferencemodel.cpp" line="952"/>
         <source>part &apos;%1&apos; with id &apos;%2&apos;; possibly because it has no &apos;family&apos; property.</source>
-        <translation>partea &apos;%1&apos; cu id &apos;%2&apos;; este posibil fiindcă nu are &apos;familie&apos; proprietăți.</translation>
+        <translation>componenta &apos;%1&apos; cu id &apos;%2&apos;; este posibil fiindcă nu are &apos;familie&apos; proprietăți.</translation>
     </message>
 </context>
 <context>
@@ -8659,7 +8674,7 @@ Notificare: puteți deasemenea să declanșați acest afișaj prin trecerea maus
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="75"/>
         <source>Fritzing stores files for custom parts, generated parts, and for other temporary and long-term purposes in a &apos;local storage folder&apos;. On Mac and Linux this is usually ~/.config/Fritzing/. Under Windows Vista and above, it is something like C:\Users\[user name]\AppData\Roaming\Fritzing\; under Windows XP is something like C:\Documents and Settings\[user name]\Application Data\Fritzing\.</source>
-        <translation>Fritzing depozitează fișierele pentru părțile personalizate, părțile generate și pentru alte întrebuințări temporare și de durată într-un &apos;dosar depozitare locală&apos;. Pe Mac și Linux acesta este de obicei ~/.config/Fritzing/. Sub Windows Vista și următoarele este ceva gen C:\Users\[user name]\AppData\Roaming\Fritzing\; sub Windows XP este ceva gen C:\Documents and Settings\[user name]\Application Data\Fritzing\.</translation>
+        <translation>Fritzing depozitează fișierele pentru componentele personalizate, componentele generate și pentru alte întrebuințări temporare și de durată într-un &apos;dosar depozitare locală&apos;. Pe Mac și Linux acesta este de obicei ~/.config/Fritzing/. Sub Windows Vista și următoarele este ceva gen C:\Users\[user name]\AppData\Roaming\Fritzing\; sub Windows XP este ceva gen C:\Documents and Settings\[user name]\Application Data\Fritzing\.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="81"/>
@@ -8674,27 +8689,27 @@ Notificare: puteți deasemenea să declanșați acest afișaj prin trecerea maus
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="86"/>
         <source>parts</source>
-        <translation>părți</translation>
+        <translation>componente</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="87"/>
         <source>Can&apos;t find your part? Search for it by clicking the magnifier icon in the Parts Bin and type in some keywords</source>
-        <translation>Nu puteți găsi partea? Căutați-o apăsând miniatura lupă în cutia părților și tastați unele cuvinte cheie</translation>
+        <translation>Nu puteți găsi componenta? Căutați-o apăsând pictograma lupă în cutia componentelor și tastați unele cuvinte cheie</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="88"/>
         <source>If you can&apos;t find a part in the Parts Bin, the Generic IC is your friend.  Drag it onto your sketch, then use the widgets in the Inspector to: choose from among 25 different through-hole and SMD packages; change the pin label; and--for DIPs and SIPs--change the number of pins.  You can also change the pin names with the Pin Label editor</source>
-        <translation>Dacă nu puteți găsi o parte în Cutia părților, Generic IC vă este de ajutor.  Trageți-l pe schiță, apoi utilizați controalele în inspector pentru: alegeți dintre 25 de găuri diferite și pachete SMD; modificarea etichetei pinului; și--pentru DIP-uri și SIP-uri--modificați numărul pinilor.  Puteți deasemenea schimba numele pinilor cu editorul Etichetă Pin</translation>
+        <translation>Dacă nu puteți găsi o componentă în Cutia componentelor, Generic IC vă este de ajutor.  Trageți-l pe schiță, apoi utilizați controalele în inspector pentru: alegeți dintre 25 de găuri diferite și pachete SMD; modificarea etichetei pinului; și--pentru DIP-uri și SIP-uri--modificați numărul pinilor.  Puteți de asemenea schimba numele pinilor cu editorul Etichetă Pin</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="89"/>
         <source>An icon in the parts bin may actually represent multiple related parts.  So when you drag an icon from the parts bin into a sketch, make sure you look at the inspector.  The inspector will display the range of choices available for you to modify a part, or swap it for a related part. The parts bin icon will also be a little &apos;stack&apos; and not just a flat icon.</source>
-        <translation></translation>
+        <translation>O pictogramă în cutia componentelor poate reprezenta actual mai multe componente asociate.  Astfel când trageți o pictogramă într-o schiță, asigurați-vă că ați consultat inspectorul.  Inspectorul va afișa limitele alegerilor disponibile pentru modificarea unei componente, sau schimbați la o componentă asociată. Pictograma cutiei componentelor va fi de asemenea un pic &apos;îngrămădită&apos; nu doar ca o pictogramă plată.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="90"/>
         <source>The Inspector Window--which lets you change the properties of parts--is only enabled for parts that are in a sketch (not for parts still in a Parts Bin).</source>
-        <translation>Fereastra inspector--care vă permite să modificați proprietățile părților--este activată numai pentru părțile care sunt într-o schiță (nu pentru părțile aflate într-o cutie părți).</translation>
+        <translation>Fereastra inspector--care vă permite să modificați proprietățile componentelor--este activată numai pentru componentele care sunt într-o schiță (nu pentru componentele aflate într-o cutie componente).</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="94"/>
@@ -8704,17 +8719,17 @@ Notificare: puteți deasemenea să declanșați acest afișaj prin trecerea maus
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="95"/>
         <source>To constrain the motion of a part to horizontal or vertical, hold down the shift key as you drag it.</source>
-        <translation>Pentru a constrânge mișcarea a unei părți orizontal sau vertical, țineți apăsat tasta shift în timp ce trageți.</translation>
+        <translation>Pentru a constrânge mișcarea unei componente orizontal sau vertical, țineți apăsat tasta shift în timp ce trageți.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="96"/>
         <source>If you&apos;re having trouble selecting a part or a wire (segment), try selecting the part that&apos;s in the way and send it to the back: use the Raise and Lower functions on the Part menu or the context menu (right-click menu).</source>
-        <translation>Dacă aveți probleme la selectarea unei părți sau a unui fir (segment), încercați selectarea părții care este în cale și trimiteți-o înapoi:utilizați funcțiile Ridică și Micșorează în meniul părților sau meniul contextual (click dreapta).</translation>
+        <translation>Dacă aveți probleme la selectarea unei componente sau a unui fir (segment), încercați selectarea componentei care este în cale și trimiteți-o înapoi:utilizați funcțiile Ridică și Micșorează în meniul componentelor sau meniul contextual (click dreapta).</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="97"/>
         <source>To more precisely move a selection of parts, use the arrow keys.  Shift-arrow moves by 10 units.</source>
-        <translation>Pentru a muta cu mai mare precizie o selecție de părți, utilizați tastele săgeți.  Shift-săgeată mută cu 10 unități.</translation>
+        <translation>Pentru a muta cu mai mare precizie o selecție de componente, utilizați tastele săgeți.  Shift-săgeată mută cu 10 unități.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="98"/>
@@ -8729,7 +8744,7 @@ Notificare: puteți deasemenea să declanșați acest afișaj prin trecerea maus
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="110"/>
         <source>To free-rotate a part in Breadboard or PCB view, select it, then hover your mouse near one of the corners until you see the rotate cursor. Mouse down and that corner will follow your mouse as you drag.</source>
-        <translation>Pentru a roti liber o parte în vizualizare Placă testare sau PCB, selectați-o, apoi planați mausul lângă unul dintre colțuri până ce vedeți că se rotește cursorul. Coborâți mausul iar acel colț va urma mausul după cum trageți.</translation>
+        <translation>Pentru a roti liber o componentă în vizualizare Placă testare sau PCB, selectați-o, apoi planați mausul lângă unul dintre colțuri până ce vedeți că se rotește cursorul. Coborâți mausul iar acel colț va urma mausul după cum trageți.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="111"/>
@@ -8744,7 +8759,7 @@ Notificare: puteți deasemenea să declanșați acest afișaj prin trecerea maus
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="116"/>
         <source>To drag the canvas, hold down the space bar and drag with the mouse.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pentru a trage canavaua, țineți apăsată bara de spațiu și trageți cu mausul.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="117"/>
@@ -8759,22 +8774,22 @@ Notificare: puteți deasemenea să declanșați acest afișaj prin trecerea maus
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="122"/>
         <source>part labels</source>
-        <translation>etichete parte</translation>
+        <translation>etichete componentă</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="123"/>
         <source>To edit a part label, double-click it, or use the text input widget in the inspector window.</source>
-        <translation>Pentru a edita o etichetă a unei părți, dați dublu-click pe ea, sau utilizați controlul intrare text în fereastra inspector.</translation>
+        <translation>Pentru a edita etichetă unei componente, dați dublu-click pe ea, sau utilizați controlul intrare text în fereastra inspector.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="124"/>
         <source>To display different properties in a part label, as well as rotate it, or change the font, right-click the label.</source>
-        <translation>Pentru a afișa proprietăți diferite în eticheta unei părți, precum și rotirea acesteia, sau schimbarea fontului, dați click-dreapta pe etichetă.</translation>
+        <translation>Pentru a afișa proprietăți diferite în eticheta unei componente, precum și rotirea acesteia, sau schimbarea fontului, dați click-dreapta pe etichetă.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="125"/>
         <source>To move a part label independently from its part, select the part first--both the part and the label will be highlighted. Once the label is selected you can drag it.</source>
-        <translation>Pentru a muta eticheta părții independent de partea sa, selectați întâi partea--atât partea cât și eticheta vor fi evidențiate. Odată ce eticheta este selectată o puteți trage.</translation>
+        <translation>Pentru a muta eticheta componentei independent de partea sa, selectați întâi componenta--atât componenta cât și eticheta vor fi evidențiate. Odată ce eticheta este selectată o puteți trage.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="129"/>
@@ -8799,7 +8814,7 @@ Notificare: puteți deasemenea să declanșați acest afișaj prin trecerea maus
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="133"/>
         <source>To drag a wire segment (a section of a wire between two bendpoints), drag it with the Alt (Linux: Meta) key down.  If you also hold down the shift key, the wire segment will be constrained to horizontal or vertical motion.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pentru a trage un segment de fir (o secțiune a unui fir între două bendpoint-uri), trăgeți-le cu tasta Alt (Linux: Meta) apăsată.  Dacă veți apăsa tasta Shift, segmentul de fir va fi limitat doar la mișcare orizontală sau verticală.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="134"/>
@@ -8819,27 +8834,27 @@ Notificare: puteți deasemenea să declanșați acest afișaj prin trecerea maus
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="145"/>
         <source>Check out Parts Editor Help under the &lt;b&gt;Help&lt;/b&gt; Menu.</source>
-        <translation>Consultați ajutor editor părți din &lt;b&gt;Ajutor&lt;/b&gt; Meniu.</translation>
+        <translation>Consultați ajutor editor componente din &lt;b&gt;Ajutor&lt;/b&gt; Meniu.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="146"/>
         <source>Before using the Parts Editor, see whether a Generic IC, Mystery Part, or Pin Header will do the job. Once you drop one of these into your sketch, you can change the number of pins, pin spacing, and other properties.</source>
-        <translation type="unfinished"></translation>
+        <translation>Înainte să utilizați editorul componentelor, vedeți dacă Generic IC, Mystery Part, sau Pin Header va face sarcina. Odată ce trageți unele dintre acestea în schiță, puteți modifica numărul pinilor, distanța între pini și alte proprietăți.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="147"/>
         <source>In the Parts Editor, to select a graphic underneath another graphic, use the mouse wheel while holding down the shift key.</source>
-        <translation>În editorul părților, pentru a selecta un grafic sub un alt grafic, utilizați rotița mausului în timp ce țineți apăsată tasta Shift.</translation>
+        <translation>În editorul componentelor, pentru a selecta un grafic sub un alt grafic, utilizați rotița mausului în timp ce țineți apăsată tasta Shift.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="148"/>
         <source>You can use the Parts Editor to find the SVG file for a part&apos;s image for a given view. In the Parts Editor, click on the tab for that view, then use &lt;b&gt;Show in Folder&lt;/b&gt; under the &lt;b&gt;File&lt;/b&gt; Menu</source>
-        <translation type="unfinished"></translation>
+        <translation>Puteți utiliza Editorul componentelor pentru a găsi fișierul SVG pentru imaginea unei componente pentru o vizualizare dată. În editorul componentelor, apăsați pe fila pentru acea vizualizare, apoi utilizați &lt;b&gt;Arată în dosar&lt;/b&gt; din meniul &lt;b&gt;Fișier&lt;/b&gt; </translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="150"/>
         <source>Do not store your custom part files in the Fritzing installation folder. If you upgrade Fritzing, these files will probably be deleted. Also, files in the Fritzing installation folder will not be saved in sketch (.fzz) files, so you won&apos;t be able to share them.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nu depozitați fișierele parte personalizate în dosarul de instalare Fritzing. Dacă veți actualiza Fritzing, aceste fișiere probabil vor fi șterse. De asemenea, fișierele din dosarul de instalare Fritzing nu vor fi salvate în fișiere schiță (.fzz), astfel nu veți putea să le partajați.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="170"/>
@@ -8849,7 +8864,7 @@ Notificare: puteți deasemenea să declanșați acest afișaj prin trecerea maus
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="171"/>
         <source>When using the Fritzing Fab Service, If there are empty areas of the PCB that you do not want filled with copper, use the copper-blocker part. This resizable part will mask out copper fill in the rectangle it covers.</source>
-        <translation type="unfinished"></translation>
+        <translation>Când utilizați serviciul Fritzing Fab, Dacă sunt zone goale pe PCB pe care nu doriți să le umpleți cu cupru, utilizați componenta blocare cupru. Această componentă redimensionabilă va masca umplerea cu cupru în dreptunghiul care acoperă.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="175"/>
@@ -8859,7 +8874,7 @@ Notificare: puteți deasemenea să declanșați acest afișaj prin trecerea maus
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="176"/>
         <source>To insert a clickable URL into a note, select some text in the note and type ctrl-l (Mac: command-l). (That&apos;s &apos;l&apos; as in the first letter of &apos;link&apos;.) To modify an existing link select the linked text and use ctrl-l (command-l) again.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pentru a introduce un URL adresabil într-o notificare, selectați un text în notificare și tastați ctrl-l (Mac: command-l). (Acest &apos;l&apos; ca în prima literă din &apos;link&apos;.) Pentru a modifica un link existent selectați textul aferent link-ului și utilizați ctrl-l (command-l) din nou.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="180"/>
@@ -8879,12 +8894,12 @@ Notificare: puteți deasemenea să declanșați acest afișaj prin trecerea maus
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="103"/>
         <source>In Breadboard view, to drag a part with bendable legs while keeping it connected to the breadboard, hold the Alt (Linux: Meta) key down when you start dragging.</source>
-        <translation type="unfinished"></translation>
+        <translation>În vizualizare Placă testare, pentru a trage o componentă cu picioare flexibile păstrând-o conectată la placa de testare, țineți tasta Alt apăsată (Linux: Meta) când începeți tragerea.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="104"/>
         <source>In Breadboard view, to drag out a wire from the end of a bendable leg, drag with the Alt (Linux: Meta) key down.</source>
-        <translation type="unfinished"></translation>
+        <translation>În vizualizare Placă testare, pentru a trasa un fir de la terminația unui picior flexibil, trageți cu tasta Alt apăsată(Linux: Meta).</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="105"/>
@@ -8899,7 +8914,7 @@ Notificare: puteți deasemenea să declanșați acest afișaj prin trecerea maus
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="156"/>
         <source>Through-hole parts can be traced from either side of a PCB.</source>
-        <translation type="unfinished"></translation>
+        <translation>Prin gaură, componentele pot fi trase de pe o altă față a unui PCB.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="157"/>
@@ -8929,7 +8944,7 @@ Notificare: puteți deasemenea să declanșați acest afișaj prin trecerea maus
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="164"/>
         <source>To make a stylish Arduino shield in no time, switch the shape of the PCB from a rectangle to the Arduino</source>
-        <translation type="unfinished"></translation>
+        <translation>Pentru a face o placă de extensie Arduino stilată ca niciodată, comutați forma PCB de la dreptunghiular la Arduino</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="168"/>
@@ -8944,7 +8959,7 @@ Notificare: puteți deasemenea să declanșați acest afișaj prin trecerea maus
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="161"/>
         <source>Use copper-blocker parts to mask out areas that you want free of copper fill.</source>
-        <translation>Utilizațiblocare-cupru părți pentru a masca zona pe care o doriți sî nu fie umplută cu cupru.</translation>
+        <translation>Utilizați componente blocare-cupru pentru a masca zona pe care doriți să nu fie umplută cu cupru.</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="140"/>
@@ -8960,7 +8975,7 @@ Notificare: puteți deasemenea să declanșați acest afișaj prin trecerea maus
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="144"/>
         <source>parts editor</source>
-        <translation>editor părți</translation>
+        <translation>editor componente</translation>
     </message>
 </context>
 <context>

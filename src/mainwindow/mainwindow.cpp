@@ -709,9 +709,9 @@ void MainWindow::connectPairs() {
 	succeeded =  succeeded && connect(qApp, SIGNAL(spaceBarIsPressedSignal(bool)), m_schematicGraphicsView, SLOT(spaceBarIsPressedSlot(bool)));
 	succeeded =  succeeded && connect(qApp, SIGNAL(spaceBarIsPressedSignal(bool)), m_pcbGraphicsView, SLOT(spaceBarIsPressedSlot(bool)));
 
-	succeeded =  succeeded && connect(m_pcbGraphicsView, SIGNAL(cursorLocationSignal(double, double)), this, SLOT(cursorLocationSlot(double, double)));
-	succeeded =  succeeded && connect(m_breadboardGraphicsView, SIGNAL(cursorLocationSignal(double, double)), this, SLOT(cursorLocationSlot(double, double)));
-	succeeded =  succeeded && connect(m_schematicGraphicsView, SIGNAL(cursorLocationSignal(double, double)), this, SLOT(cursorLocationSlot(double, double)));
+	succeeded =  succeeded && connect(m_pcbGraphicsView, SIGNAL(cursorLocationSignal(double, double, double, double)), this, SLOT(cursorLocationSlot(double, double, double, double)));
+	succeeded =  succeeded && connect(m_breadboardGraphicsView, SIGNAL(cursorLocationSignal(double, double, double, double)), this, SLOT(cursorLocationSlot(double, double, double, double)));
+	succeeded =  succeeded && connect(m_schematicGraphicsView, SIGNAL(cursorLocationSignal(double, double, double, double)), this, SLOT(cursorLocationSlot(double, double, double, double)));
 
 	succeeded =  succeeded && connect(m_breadboardGraphicsView, SIGNAL(filenameIfSignal(QString &)), this, SLOT(filenameIfSlot(QString &)), Qt::DirectConnection);
 	succeeded =  succeeded && connect(m_pcbGraphicsView, SIGNAL(filenameIfSignal(QString &)), this, SLOT(filenameIfSlot(QString &)), Qt::DirectConnection);
@@ -2746,11 +2746,15 @@ void MainWindow::boardDeletedSlot()
 	activeLayerBottom();
 }
 
-void MainWindow::cursorLocationSlot(double xinches, double yinches)
+void MainWindow::cursorLocationSlot(double xinches, double yinches, double width, double height)
 {
 	if (m_locationLabel) {
 		QString units;
-		double x, y;
+		double x, y, w, h;
+		QHash<QString, int> precision;
+		precision["mm"] = 1;
+		precision["px"] = 0;
+		precision["in"] = 3;
 
 		m_locationLabel->setProperty("location", QSizeF(xinches, xinches));
 
@@ -2758,22 +2762,37 @@ void MainWindow::cursorLocationSlot(double xinches, double yinches)
 			units = "mm";
 			x = xinches * 25.4;
 			y = yinches * 25.4;
+			w = width * 25.4;
+			h = height * 25.4;
 		}
 		else if (m_locationLabelUnits.compare("px") == 0) {
 			units = "px";
 			x = xinches * GraphicsUtils::SVGDPI;
 			y = yinches * GraphicsUtils::SVGDPI;
+			w = width * GraphicsUtils::SVGDPI;
+			h = height * GraphicsUtils::SVGDPI;
 		}
 		else {
 			units = "in";
 			x = xinches;
 			y = yinches;
+			w = width;
+			h = height;
 		}
 
-		m_locationLabel->setText(tr("%1 %2 %3")
-			.arg(x, 0, 'f', 3)
-			.arg(y, 0, 'f', 3)
-			.arg(units) );
+		if ( w*h == 0.0) {
+			m_locationLabel->setText(tr("(x,y)=(%1, %2) %3")
+				.arg(x, 0, 'f', precision[units])
+				.arg(y, 0, 'f', precision[units])
+				.arg(units) );
+		} else {
+			m_locationLabel->setText(tr("(x, y)=(%1, %2)\t(width, height)=(%3, %4) %5")
+				.arg(x, 0, 'f', precision[units])
+				.arg(y, 0, 'f', precision[units])
+				.arg(w, 0, 'f', precision[units])
+				.arg(h, 0, 'f', precision[units])
+				.arg(units) );
+		}
 	}
 }
 
@@ -2799,7 +2818,7 @@ void MainWindow::locationLabelClicked()
 			cursorLocationSlot(size.width(), size.height());
 		}
 		else {
-			cursorLocationSlot(0, 0);
+			cursorLocationSlot(0.0, 0.0);
 		}
 	}
 		

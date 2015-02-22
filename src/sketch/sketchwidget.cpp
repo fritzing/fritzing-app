@@ -3004,7 +3004,20 @@ void SketchWidget::mouseMoveEvent(QMouseEvent *event) {
 	if (m_movingByArrow) return;
 
 	QPointF scenePos = mapToScene(event->pos());
-	emit cursorLocationSignal(scenePos.x() / GraphicsUtils::SVGDPI, scenePos.y() / GraphicsUtils::SVGDPI);
+
+	double posx = scenePos.x() / GraphicsUtils::SVGDPI;
+	double posy = scenePos.y() / GraphicsUtils::SVGDPI;
+
+	if ( event->buttons() & (Qt::LeftButton | Qt::RightButton ) ) {
+		QRectF selectionRect = this->scene()->selectionArea().boundingRect();
+		double width = selectionRect.width() / GraphicsUtils::SVGDPI;
+		double height = selectionRect.height() / GraphicsUtils::SVGDPI;
+		emit cursorLocationSignal(posx, posy, width, height);
+		//DebugDialog::debug(QString("pos= %1,%2  size= %3 %4").arg(posx).arg(posy).arg(width).arg(height));
+	} else {
+		emit cursorLocationSignal(posx, posy);
+		//DebugDialog::debug(QString("pos= %1,%2").arg(posx).arg(posy));
+	}
 
 	if (m_dragBendpointWire != NULL) {
 		Wire * tempWire = m_dragBendpointWire;

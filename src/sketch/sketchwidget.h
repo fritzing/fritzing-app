@@ -558,7 +558,7 @@ signals:
 	void deleteTracesSignal(QSet<ItemBase *> & deletedItems, QHash<ItemBase *, SketchWidget *> & otherDeletedItems, QList<long> & deletedIDs, bool isForeign, QUndoCommand * parentCommand);
 	void makeDeleteItemCommandPrepSignal(ItemBase * itemBase, bool foreign, QUndoCommand * parentCommand);
 	void makeDeleteItemCommandFinalSignal(ItemBase * itemBase, bool foreign, QUndoCommand * parentCommand);
-	void cursorLocationSignal(double xinches, double yinches);
+	void cursorLocationSignal(double xinches, double yinches, double width=0.0, double height=0.0);
 	void ratsnestConnectSignal(long id, const QString & connectorID, bool connect, bool doEmit);
 	void updatePartLabelInstanceTitleSignal(long itemID);
 	void filenameIfSignal(QString & filename);

@@ -711,6 +711,13 @@
               </iconView>
           </views>
         </instance>
+        <instance moduleIdRef="RaspIO_Duino" modelIndex="48" path="RaspIO_Duino.fzp">
+            <views>
+                <iconView layer="icon">
+                    <geometry z="-1" x="-1" y="-1"/>
+                </iconView>
+            </views>
+        </instance>
         <instance moduleIdRef="2c9d427b475ef8d07dc752a4362af0ae" modelIndex="48" path="controller_wiring.fzp">
             <views>
                 <iconView layer="icon">

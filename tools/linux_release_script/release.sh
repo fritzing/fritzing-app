@@ -41,8 +41,10 @@ fi
 compile_folder="build-$arch_aux"
 #svn export http://fritzing.googlecode.com/svn/trunk/fritzing $compile_folder
 git clone --recursive https://github.com/fritzing/fritzing-app $compile_folder
-
-cd $compile_folder/src/lib
+cd $compile_folder/parts
+git submodule update --init --recursive
+cd ..
+cd src/lib
 rm -rf boost*				# depend on linux boost installation 
 if [ "$quazip" == 'QUAZIP_INSTALLED' ]
 then

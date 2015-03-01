@@ -43,6 +43,7 @@ compile_folder="build-$arch_aux"
 git clone --recursive https://github.com/fritzing/fritzing-app $compile_folder
 cd $compile_folder/parts
 git submodule update --init --recursive
+git checkout master
 cd ..
 cd src/lib
 rm -rf boost*				# depend on linux boost installation 

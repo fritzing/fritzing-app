@@ -37,7 +37,7 @@ $Date: 2014-06-11 17:47:21 +0200 (We, 11. Jun 2013) $
 
 QString Version::m_majorVersion("0");       
 QString Version::m_minorVersion("9");
-QString Version::m_minorSubVersion("1");
+QString Version::m_minorSubVersion("2");
 QString Version::m_modifier("b");
 QString Version::m_gitCommit("8d2d5970658f0bed09c661c9ea9a515b5f40f44c");
 QString Version::m_gitDate("2014-11-19 13:13:28");

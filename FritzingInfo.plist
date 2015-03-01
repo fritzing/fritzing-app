@@ -3,7 +3,7 @@
 <!-- 
 *************************************************
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-08 Fachhochschule Potsdam - http://fh-potsdam.de
+Copyright (c) 2007-15 Fachhochschule Potsdam - http://fh-potsdam.de
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -33,9 +33,9 @@ $Date: 2009-01-03 18:55:48 +0100 (Sat, 03 Jan 2009) $
 	<key>CFBundleExecutable</key>
 	<string>Fritzing</string>
 	<key>CFBundleGetInfoString</key>
-	<string>Fritzing 0.9.1</string>
+        <string>Fritzing 0.9.2</string>
 	<key>CFBundleShortVersionString</key>
-	<string>0.9.1</string>
+        <string>0.9.2</string>
 	<key>CFBundleVersion</key>
 	<string>bda4e</string>
 	<key>CFBundleIconFile</key>

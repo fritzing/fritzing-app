@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="tr_TR">
+<TS version="2.1" language="tr_TR">
 <context>
     <name>AboutBox</name>
     <message>
@@ -1014,37 +1014,37 @@ Dosya kullanılsın mı?</translation>
         <translation type="unfinished">Ctrl+Q</translation>
     </message>
     <message>
-        <location filename="../src/program/consolewindow.cpp" line="150"/>
+        <location filename="../src/program/consolewindow.cpp" line="149"/>
         <source>Connected to %1 : %2, %3, %4, %5, %6</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/program/consolewindow.cpp" line="154"/>
+        <location filename="../src/program/consolewindow.cpp" line="153"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/program/consolewindow.cpp" line="156"/>
+        <location filename="../src/program/consolewindow.cpp" line="155"/>
         <source>Serial port open error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/program/consolewindow.cpp" line="167"/>
+        <location filename="../src/program/consolewindow.cpp" line="175"/>
         <source>Disconnected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/program/consolewindow.cpp" line="172"/>
+        <location filename="../src/program/consolewindow.cpp" line="181"/>
         <source>About Serial Monitor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/program/consolewindow.cpp" line="173"/>
+        <location filename="../src/program/consolewindow.cpp" line="182"/>
         <source>This terminal displays the serial communication on the selected port, usually between your computer and the connected microcontroller.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/program/consolewindow.cpp" line="192"/>
+        <location filename="../src/program/consolewindow.cpp" line="201"/>
         <source>Critical Error</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1141,17 +1141,17 @@ Dosya kullanılsın mı?</translation>
 <context>
     <name>DeleteDialog</name>
     <message>
-        <location filename="../src/program/programtab.cpp" line="91"/>
+        <location filename="../src/program/programtab.cpp" line="90"/>
         <source>Also delete the file</source>
         <translation>Ayrıca dosyayı sil</translation>
     </message>
     <message>
-        <location filename="../src/program/programtab.cpp" line="100"/>
+        <location filename="../src/program/programtab.cpp" line="99"/>
         <source>Remove</source>
         <translation>Kaldır</translation>
     </message>
     <message>
-        <location filename="../src/program/programtab.cpp" line="101"/>
+        <location filename="../src/program/programtab.cpp" line="100"/>
         <source>Don&apos;t remove</source>
         <translation>Kaldırma</translation>
     </message>
@@ -2205,17 +2205,22 @@ We&apos;re working to avoid this message, and only let you choose between proper
         <translation>Bu görünümde yönlendirilmemiş bir bağlantı yok.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="2773"/>
-        <source>%1 %2 %3</source>
-        <translation>%1 %2 %3</translation>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="2784"/>
+        <source>(x,y)=(%1, %2) %3</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="3051"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="2789"/>
+        <source>(x, y)=(%1, %2)	(width, height)=(%3, %4) %5</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="3070"/>
         <source>Code</source>
         <translation>Kod</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="3110"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="3129"/>
         <source>Welcome</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2667,10 +2672,6 @@ We&apos;re working to avoid this message, and only let you choose between proper
         <translation>&amp;Kes</translation>
     </message>
     <message>
-        <source>Ctrl+X</source>
-        <translation type="obsolete">Ctrl+X</translation>
-    </message>
-    <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="874"/>
         <source>Cut selection</source>
         <translation>Seçimi kes</translation>
@@ -2681,10 +2682,6 @@ We&apos;re working to avoid this message, and only let you choose between proper
         <translation>&amp;Kopyala</translation>
     </message>
     <message>
-        <source>Ctrl+C</source>
-        <translation type="obsolete">Ctrl+C</translation>
-    </message>
-    <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="879"/>
         <source>Copy selection</source>
         <translation>Seçimi kopyala</translation>
@@ -2693,10 +2690,6 @@ We&apos;re working to avoid this message, and only let you choose between proper
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="882"/>
         <source>&amp;Paste</source>
         <translation>&amp;Yapıştır</translation>
-    </message>
-    <message>
-        <source>Ctrl+V</source>
-        <translation type="obsolete">Ctrl+V</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="884"/>
@@ -2742,10 +2735,6 @@ We&apos;re working to avoid this message, and only let you choose between proper
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="921"/>
         <source>&amp;Select All</source>
         <translation>&amp;Tümünü Seç</translation>
-    </message>
-    <message>
-        <source>Ctrl+A</source>
-        <translation type="obsolete">Ctrl+A</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="923"/>
@@ -3049,31 +3038,6 @@ Would you like to convert &apos;%1&apos; to the .fzz format now or open it read-
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="966"/>
         <source>Debug dump all parts in this view</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="976"/>
-        <source>Rotate 45° Clockwise</source>
-        <translation type="unfinished">Saat yönünde 135 derece döndür {135�?} {45°?}</translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="980"/>
-        <source>Rotate 90° Clockwise</source>
-        <translation type="unfinished">Saat yönünde 135 derece döndür {135�?} {90°?}</translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="984"/>
-        <source>Rotate 180°</source>
-        <translation type="unfinished">180 derece döndür {180�?} {180°?}</translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="988"/>
-        <source>Rotate 90° Counter Clockwise</source>
-        <translation type="unfinished">Saat yönünün tersine 45 derece döndür {45�?} {90°?}</translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="992"/>
-        <source>Rotate 45° Counter Clockwise</source>
-        <translation type="unfinished">Saat yönünün tersine 45 derece döndür {45�?} {45°?}</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1074"/>
@@ -3389,10 +3353,6 @@ Devam et ve geri döndür?</translation>
         <translation>Çizimi tekrar yükle</translation>
     </message>
     <message>
-        <source>Ctrl+B</source>
-        <translation type="obsolete">Ctrl+B</translation>
-    </message>
-    <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="914"/>
         <source>&amp;Delete Wire</source>
         <translation>&amp;Kabloyu Sil</translation>
@@ -3685,24 +3645,29 @@ Devam et ve geri döndür?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="976"/>
         <source>Rotate 45� Clockwise</source>
-        <translation type="obsolete">Saat yönünde 135 derece döndür {45�?}</translation>
+        <translation type="unfinished">Saat yönünde 135 derece döndür {45�?}</translation>
     </message>
     <message>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="980"/>
         <source>Rotate 90� Clockwise</source>
-        <translation type="obsolete">Saat yönünde 135 derece döndür {90�?}</translation>
+        <translation type="unfinished">Saat yönünde 135 derece döndür {90�?}</translation>
     </message>
     <message>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="984"/>
         <source>Rotate 180�</source>
-        <translation type="obsolete">180 derece döndür {180�?}</translation>
+        <translation type="unfinished">180 derece döndür {180�?}</translation>
     </message>
     <message>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="988"/>
         <source>Rotate 90� Counter Clockwise</source>
-        <translation type="obsolete">Saat yönünün tersine 45 derece döndür {90�?}</translation>
+        <translation type="unfinished">Saat yönünün tersine 45 derece döndür {90�?}</translation>
     </message>
     <message>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="992"/>
         <source>Rotate 45� Counter Clockwise</source>
-        <translation type="obsolete">Saat yönünün tersine 45 derece döndür {45�?}</translation>
+        <translation type="unfinished">Saat yönünün tersine 45 derece döndür {45�?}</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1271"/>
@@ -5958,19 +5923,9 @@ Devam et ve kaydet?</translation>
         <translation>Karakter boyutu</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="450"/>
-        <source>Rotate 45° Clockwise</source>
-        <translation type="unfinished">Saat yönünde 135 derece döndür {135�?} {45°?}</translation>
-    </message>
-    <message>
         <location filename="../src/items/partlabel.cpp" line="452"/>
         <source>Rotate the label by 45 degrees clockwise</source>
         <translation>Etiketi saat yönünde 45 derece döndür</translation>
-    </message>
-    <message>
-        <location filename="../src/items/partlabel.cpp" line="455"/>
-        <source>Rotate 90° Clockwise</source>
-        <translation type="unfinished">Saat yönünde 135 derece döndür {135�?} {90°?}</translation>
     </message>
     <message>
         <location filename="../src/items/partlabel.cpp" line="457"/>
@@ -5978,19 +5933,9 @@ Devam et ve kaydet?</translation>
         <translation>Etiketi saat yönünde 90 derece döndür</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="460"/>
-        <source>Rotate 135° Clockwise</source>
-        <translation type="unfinished">Saat yönünde 135 derece döndür {135�?} {135°?}</translation>
-    </message>
-    <message>
         <location filename="../src/items/partlabel.cpp" line="462"/>
         <source>Rotate the label by 135 degrees clockwise</source>
         <translation>Etiketi saat yönünde 135 derece döndür</translation>
-    </message>
-    <message>
-        <location filename="../src/items/partlabel.cpp" line="465"/>
-        <source>Rotate 180°</source>
-        <translation type="unfinished">180 derece döndür {180�?} {180°?}</translation>
     </message>
     <message>
         <location filename="../src/items/partlabel.cpp" line="467"/>
@@ -5998,19 +5943,9 @@ Devam et ve kaydet?</translation>
         <translation>Etiketi 180 derece döndür</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="470"/>
-        <source>Rotate 135° Counter Clockwise</source>
-        <translation type="unfinished">Saat yönünün tersine 45 derece döndür {45�?} {135°?}</translation>
-    </message>
-    <message>
         <location filename="../src/items/partlabel.cpp" line="472"/>
         <source>Rotate the label by 135 degrees counter clockwise</source>
         <translation>Etiketi saat yönünün tersine 135 derece döndür</translation>
-    </message>
-    <message>
-        <location filename="../src/items/partlabel.cpp" line="475"/>
-        <source>Rotate 90° Counter Clockwise</source>
-        <translation type="unfinished">Saat yönünün tersine 45 derece döndür {45�?} {90°?}</translation>
     </message>
     <message>
         <location filename="../src/items/partlabel.cpp" line="477"/>
@@ -6018,37 +5953,39 @@ Devam et ve kaydet?</translation>
         <translation>Mevcut seçimi saat yönünün tersine 90 derece döndür</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="480"/>
-        <source>Rotate 45° Counter Clockwise</source>
-        <translation type="unfinished">Saat yönünün tersine 45 derece döndür {45�?} {45°?}</translation>
-    </message>
-    <message>
+        <location filename="../src/items/partlabel.cpp" line="450"/>
         <source>Rotate 45� Clockwise</source>
-        <translation type="obsolete">Saat yönünde 135 derece döndür {45�?}</translation>
+        <translation type="unfinished">Saat yönünde 135 derece döndür {45�?}</translation>
     </message>
     <message>
+        <location filename="../src/items/partlabel.cpp" line="455"/>
         <source>Rotate 90� Clockwise</source>
-        <translation type="obsolete">Saat yönünde 135 derece döndür {90�?}</translation>
+        <translation type="unfinished">Saat yönünde 135 derece döndür {90�?}</translation>
     </message>
     <message>
+        <location filename="../src/items/partlabel.cpp" line="460"/>
         <source>Rotate 135� Clockwise</source>
-        <translation type="obsolete">Saat yönünde 135 derece döndür {135�?}</translation>
+        <translation type="unfinished">Saat yönünde 135 derece döndür {135�?}</translation>
     </message>
     <message>
+        <location filename="../src/items/partlabel.cpp" line="465"/>
         <source>Rotate 180�</source>
-        <translation type="obsolete">180 derece döndür {180�?}</translation>
+        <translation type="unfinished">180 derece döndür {180�?}</translation>
     </message>
     <message>
+        <location filename="../src/items/partlabel.cpp" line="470"/>
         <source>Rotate 135� Counter Clockwise</source>
-        <translation type="obsolete">Saat yönünün tersine 45 derece döndür {135�?}</translation>
+        <translation type="unfinished">Saat yönünün tersine 45 derece döndür {135�?}</translation>
     </message>
     <message>
+        <location filename="../src/items/partlabel.cpp" line="475"/>
         <source>Rotate 90� Counter Clockwise</source>
-        <translation type="obsolete">Saat yönünün tersine 45 derece döndür {90�?}</translation>
+        <translation type="unfinished">Saat yönünün tersine 45 derece döndür {90�?}</translation>
     </message>
     <message>
+        <location filename="../src/items/partlabel.cpp" line="480"/>
         <source>Rotate 45� Counter Clockwise</source>
-        <translation type="obsolete">Saat yönünün tersine 45 derece döndür {45�?}</translation>
+        <translation type="unfinished">Saat yönünün tersine 45 derece döndür {45�?}</translation>
     </message>
     <message>
         <location filename="../src/items/partlabel.cpp" line="482"/>
@@ -6508,222 +6445,98 @@ shift tuşu ilerleme eksenini değiştirir</translation>
 <context>
     <name>ProgramTab</name>
     <message>
-        <location filename="../src/program/programtab.cpp" line="126"/>
+        <location filename="../src/program/programtab.cpp" line="125"/>
         <source>While it is possible to read and edit %1 programming files, it is not yet possible to use Fritzing to compile or upload these programs to a microcontroller.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Language:</source>
-        <translation type="obsolete">Dil:</translation>
-    </message>
-    <message>
-        <location filename="../src/program/programtab.cpp" line="248"/>
+        <location filename="../src/program/programtab.cpp" line="247"/>
         <source>New</source>
         <translation>Yeni</translation>
     </message>
     <message>
-        <source>Open...</source>
-        <translation type="obsolete">Aç...</translation>
-    </message>
-    <message>
-        <location filename="../src/program/programtab.cpp" line="260"/>
+        <location filename="../src/program/programtab.cpp" line="259"/>
         <source>Save</source>
         <translation>Kaydet</translation>
     </message>
     <message>
-        <source>Port:</source>
-        <translation type="obsolete">Port:</translation>
-    </message>
-    <message>
-        <source>Program</source>
-        <translation type="obsolete">Program</translation>
-    </message>
-    <message>
-        <source>Programmer:</source>
-        <translation type="obsolete">Programcı:</translation>
-    </message>
-    <message>
-        <location filename="../src/program/programtab.cpp" line="254"/>
+        <location filename="../src/program/programtab.cpp" line="253"/>
         <source>Open</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/program/programtab.cpp" line="273"/>
+        <location filename="../src/program/programtab.cpp" line="272"/>
         <source>Platform</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/program/programtab.cpp" line="303"/>
+        <location filename="../src/program/programtab.cpp" line="302"/>
         <source>Board</source>
         <translation type="unfinished">Board</translation>
     </message>
     <message>
-        <location filename="../src/program/programtab.cpp" line="331"/>
+        <location filename="../src/program/programtab.cpp" line="330"/>
         <source>Port</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/program/programtab.cpp" line="360"/>
+        <location filename="../src/program/programtab.cpp" line="359"/>
         <source>Serial Monitor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/program/programtab.cpp" line="366"/>
+        <location filename="../src/program/programtab.cpp" line="365"/>
         <source>Upload</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/program/programtab.cpp" line="459"/>
+        <location filename="../src/program/programtab.cpp" line="458"/>
         <source>Select a program file to load</source>
         <translation>Yüklemek için bir program dosyası seçin</translation>
     </message>
     <message>
-        <location filename="../src/program/programtab.cpp" line="486"/>
+        <location filename="../src/program/programtab.cpp" line="485"/>
         <source>Fritzing is unable to find &apos;%1&apos;, please locate it</source>
         <translation>Fritzing &apos;%1&apos;&apos;i bulamıyor, lütfen onu yerleştirin</translation>
     </message>
     <message>
-        <location filename="../src/program/programtab.cpp" line="488"/>
+        <location filename="../src/program/programtab.cpp" line="487"/>
         <source>Code (*.%1)</source>
         <translation>Kod (* %1)</translation>
     </message>
     <message>
-        <location filename="../src/program/programtab.cpp" line="607"/>
+        <location filename="../src/program/programtab.cpp" line="606"/>
         <source>Remove &quot;%1&quot;?</source>
         <translation>&quot;%1&quot;&apos;i çıkar?</translation>
     </message>
     <message>
-        <location filename="../src/program/programtab.cpp" line="608"/>
+        <location filename="../src/program/programtab.cpp" line="607"/>
         <source>Are you sure you want to remove &quot;%1&quot; from the sketch?</source>
         <translation>&quot;%1&quot;&apos;i çizimden çıkarmak istediğinize emin misiniz?</translation>
     </message>
     <message>
-        <location filename="../src/program/programtab.cpp" line="736"/>
+        <location filename="../src/program/programtab.cpp" line="735"/>
         <source>No uploader for %1 specified. Go to Preferences &gt; Code View to configure it.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/program/programtab.cpp" line="740"/>
+        <location filename="../src/program/programtab.cpp" line="739"/>
         <source>Uploader configured, but not found at %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/program/programtab.cpp" line="762"/>
+        <location filename="../src/program/programtab.cpp" line="764"/>
         <source>Upload finished.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/program/programtab.cpp" line="764"/>
+        <location filename="../src/program/programtab.cpp" line="766"/>
         <source>Upload failed with exit code %1, %2</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>The file &apos;%1&apos; must be saved before it can be sent to the programmer.</source>
-        <translation type="obsolete">&apos;%1&apos; dosyasının programcıya gönderilebilmesi için önce kaydedilmesi gereklidir.</translation>
-    </message>
-    <message>
-        <source>Select a programmer (executable) for %1</source>
-        <translation type="obsolete">%1 için bir programcı (yürütülebilir/.exe) seç</translation>
     </message>
 </context>
 <context>
     <name>ProgramWindow</name>
-    <message>
-        <source>No ports found</source>
-        <translation type="obsolete">Herhani bir port bulunamadı</translation>
-    </message>
-    <message>
-        <source>&amp;File</source>
-        <translation type="obsolete">&amp;Dosya</translation>
-    </message>
-    <message>
-        <source>New Code File</source>
-        <translation type="obsolete">Yeni Kod Dosyası</translation>
-    </message>
-    <message>
-        <source>Ctrl+N</source>
-        <translation type="obsolete">Ctrl+N</translation>
-    </message>
-    <message>
-        <source>Create a new program</source>
-        <translation type="obsolete">Yeni bir program oluştur</translation>
-    </message>
-    <message>
-        <source>&amp;Open Code File...</source>
-        <translation type="obsolete">&amp;Kod Dosyasını Aç...</translation>
-    </message>
-    <message>
-        <source>Ctrl+O</source>
-        <translation type="obsolete">Ctrl+O</translation>
-    </message>
-    <message>
-        <source>Open a program</source>
-        <translation type="obsolete">Bir program aç</translation>
-    </message>
-    <message>
-        <source>&amp;Save Code File</source>
-        <translation type="obsolete">&amp;Kod Dosyasını Kaydet</translation>
-    </message>
-    <message>
-        <source>Ctrl+S</source>
-        <translation type="obsolete">Ctrl+S</translation>
-    </message>
-    <message>
-        <source>Save the current program</source>
-        <translation type="obsolete">Mevcut programı kaydet</translation>
-    </message>
-    <message>
-        <source>Rename Code File</source>
-        <translation type="obsolete">Kod Dosyasını Yeniden Adlandır</translation>
-    </message>
-    <message>
-        <source>Rename the current program</source>
-        <translation type="obsolete">Mevcut programı yeniden adlandır</translation>
-    </message>
-    <message>
-        <source>Duplicate tab</source>
-        <translation type="obsolete">Sekmeyi çoğalt</translation>
-    </message>
-    <message>
-        <source>Copies the current program into a new tab</source>
-        <translation type="obsolete">Mevcut programı yeni bir sekmeye kopyalar</translation>
-    </message>
-    <message>
-        <source>Remove tab</source>
-        <translation type="obsolete">Sekmeyi kaldır</translation>
-    </message>
-    <message>
-        <source>Ctrl+W</source>
-        <translation type="obsolete">Ctrl+W</translation>
-    </message>
-    <message>
-        <source>Remove the current program from the sketch</source>
-        <translation type="obsolete">Mevcut programı çizimden kaldır</translation>
-    </message>
-    <message>
-        <source>&amp;Print...</source>
-        <translation type="obsolete">&amp;Yazdır...</translation>
-    </message>
-    <message>
-        <source>Ctrl+P</source>
-        <translation type="obsolete">Ctrl+P</translation>
-    </message>
-    <message>
-        <source>Print the current program</source>
-        <translation type="obsolete">Mevcut programı yazdır</translation>
-    </message>
-    <message>
-        <source>&amp;Quit</source>
-        <translation type="obsolete">&amp;Çık</translation>
-    </message>
-    <message>
-        <source>Ctrl+Q</source>
-        <translation type="obsolete">Ctrl+Q</translation>
-    </message>
-    <message>
-        <source>Quit the application</source>
-        <translation type="obsolete">Uygulamayı kapat</translation>
-    </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="135"/>
         <source>No boards available</source>
@@ -6750,10 +6563,6 @@ shift tuşu ilerleme eksenini değiştirir</translation>
         <translation>&amp;Kes</translation>
     </message>
     <message>
-        <source>Ctrl+X</source>
-        <translation type="obsolete">Ctrl+X</translation>
-    </message>
-    <message>
         <location filename="../src/program/programwindow.cpp" line="204"/>
         <source>Cut selection</source>
         <translation>Seçimi kes</translation>
@@ -6762,10 +6571,6 @@ shift tuşu ilerleme eksenini değiştirir</translation>
         <location filename="../src/program/programwindow.cpp" line="209"/>
         <source>&amp;Copy</source>
         <translation>&amp;Kopyala</translation>
-    </message>
-    <message>
-        <source>Ctrl+C</source>
-        <translation type="obsolete">Ctrl+C</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="211"/>
@@ -6778,10 +6583,6 @@ shift tuşu ilerleme eksenini değiştirir</translation>
         <translation>&amp;Yapıştır</translation>
     </message>
     <message>
-        <source>Ctrl+V</source>
-        <translation type="obsolete">Ctrl+V</translation>
-    </message>
-    <message>
         <location filename="../src/program/programwindow.cpp" line="218"/>
         <source>Paste clipboard contents</source>
         <translation>Panodaki ögeleri yapıştır</translation>
@@ -6790,10 +6591,6 @@ shift tuşu ilerleme eksenini değiştirir</translation>
         <location filename="../src/program/programwindow.cpp" line="225"/>
         <source>&amp;Select All</source>
         <translation>&amp;Tümünü Seç</translation>
-    </message>
-    <message>
-        <source>Ctrl+A</source>
-        <translation type="obsolete">Ctrl+A</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="227"/>
@@ -6946,30 +6743,6 @@ shift tuşu ilerleme eksenini değiştirir</translation>
         <translation type="unfinished">%1%2</translation>
     </message>
     <message>
-        <source>Find file...</source>
-        <translation type="obsolete">Dosya bul...</translation>
-    </message>
-    <message>
-        <source>Select language</source>
-        <translation type="obsolete">Dil Seç</translation>
-    </message>
-    <message>
-        <source>Select port</source>
-        <translation type="obsolete">Port seç</translation>
-    </message>
-    <message>
-        <source>Select programmer</source>
-        <translation type="obsolete">Programcı seç</translation>
-    </message>
-    <message>
-        <source>Program</source>
-        <translation type="obsolete">Program</translation>
-    </message>
-    <message>
-        <source>Load the current program onto a microcontroller</source>
-        <translation type="obsolete">Mevcut programı bir mikroişlemciye yükle</translation>
-    </message>
-    <message>
         <location filename="../src/program/programwindow.cpp" line="321"/>
         <source>&amp;View</source>
         <translation>&amp;Göster</translation>
@@ -6983,10 +6756,6 @@ shift tuşu ilerleme eksenini değiştirir</translation>
         <location filename="../src/program/programwindow.cpp" line="375"/>
         <source>File &apos;%1&apos; was restored from the .fzz file; save a local copy to work with an external editor.</source>
         <translation>&apos;%1&apos; dosyası .fzz dosyasından restore edilmiş; harici bir düzenleyici ile çalışmak için yerel bir kopya kaydedin.</translation>
-    </message>
-    <message>
-        <source>%1 %2</source>
-        <translation type="obsolete">%1 %2</translation>
     </message>
 </context>
 <context>
@@ -7347,74 +7116,74 @@ Fritzing hala çalışıyor ancak elemanın özelliklerini değiştiremeyeceksin
         <translation>%1: %2 dosyasını okuma hatası.</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3607"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3620"/>
         <source>%1 %2,%3 %4</source>
         <translation>%1 %2,%3 %4</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3636"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3649"/>
         <source>Change leg of %1,%2</source>
         <translation>%1,%2&apos;nin ayaklarını değiştir</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3794"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3807"/>
         <source>%1 %2 %3</source>
         <translation>%1 %2 %3</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="4062"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="4075"/>
         <source>%1 Layer</source>
         <translation>%1 Katmanı</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="4286"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="4303"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="4299"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="4316"/>
         <source>Bring forward</source>
         <translation>İlerlet</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="4295"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="4308"/>
         <source>Send backward</source>
         <translation>Gerilet</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="4312"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="4325"/>
         <source>Bring to front</source>
         <translation>Öne Çıkar</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="5582"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="5595"/>
         <source>Split Wire</source>
         <translation>Kabloyu Böl</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="5643"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="5656"/>
         <source>Join Wire</source>
         <translation>Kabloları Birleştir</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7899"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7912"/>
         <source>Trace wires</source>
         <translation>Hat kablolar</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7902"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7915"/>
         <source>Ratsnest wires</source>
         <translation>Yumak kablolar</translation>
     </message>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="2233"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7904"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7917"/>
         <source>Select all %1</source>
         <translation>Tüm %1&apos;i seç</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="8179"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="8192"/>
         <source>Select outdated parts</source>
         <translation>Zamanı geçmiş elemanları seç</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="8194"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="8207"/>
         <source>Select locked parts</source>
         <translation>Kilitli parçaları seç</translation>
     </message>
@@ -8373,22 +8142,6 @@ Fritzing hala çalışıyor ancak elemanın özelliklerini değiştiremeyeceksin
 <context>
     <name>SetColorDialog</name>
     <message>
-        <source>Set %1 Color...</source>
-        <translation type="obsolete">%1 Rengini Ayarla...</translation>
-    </message>
-    <message>
-        <source>Choose a new %1 color.</source>
-        <translation type="obsolete">Yeni bir %1 rengi seç.</translation>
-    </message>
-    <message>
-        <source>current %1 color (%2)</source>
-        <translation type="obsolete">mevcut %1 rengi (%2)</translation>
-    </message>
-    <message>
-        <source>standard %1 color (%2)</source>
-        <translation type="obsolete">standart %1 rengi (%2)</translation>
-    </message>
-    <message>
         <location filename="../src/dialogs/setcolordialog.cpp" line="52"/>
         <source>%1 Color...</source>
         <translation type="unfinished"></translation>
@@ -8438,18 +8191,6 @@ Fritzing hala çalışıyor ancak elemanın özelliklerini değiştiremeyeceksin
         <source>Current color (%1)</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <source>Select custom %1 color</source>
-        <translation type="obsolete">Özel %1 rengi seç</translation>
-    </message>
-    <message>
-        <source>custom color (%1)</source>
-        <translation type="obsolete">özel renk (%1)</translation>
-    </message>
-    <message>
-        <source>selected color (%1)</source>
-        <translation type="obsolete">seçili renk (%1)</translation>
-    </message>
 </context>
 <context>
     <name>SketchWidget</name>
@@ -8494,77 +8235,77 @@ Fritzing hala çalışıyor ancak elemanın özelliklerini değiştiremeyeceksin
         <translation>Seçim</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3319"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3332"/>
         <source>Move %2 (%1)</source>
         <translation>%2&apos;yi taşı (%1)</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3322"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3335"/>
         <source>Move %2 items (%1)</source>
         <translation>%2 öğelerini taşı (%1)</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3504"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9510"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3517"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9523"/>
         <source>Select %1</source>
         <translation>%1&apos;i seç</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3507"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9513"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3520"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9526"/>
         <source>Select %1 items</source>
         <translation>%1 öğelerini seç</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3595"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3778"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3608"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3791"/>
         <source>Disconnect</source>
         <translation>Bağlantıyı Kes</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3786"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3799"/>
         <source>Change</source>
         <translation>Değiştir</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3603"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3790"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3616"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3803"/>
         <source>Connect</source>
         <translation>Bağla</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3604"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3791"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3617"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3804"/>
         <source>to %1</source>
         <translation>%1&apos;e</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3844"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3857"/>
         <source>Create and connect wire</source>
         <translation>Kablo oluştur ve bağla</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="4601"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="4614"/>
         <source>Rotate %2 (%1)</source>
         <translation>%2&apos;yi Döndür (%1)</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="5871"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="5884"/>
         <source>Note text change</source>
         <translation>Not metni değişimi</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7136"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7149"/>
         <source>Rotate</source>
         <translation>Dödür</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7136"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7149"/>
         <source>Flip</source>
         <translation>Çevir</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="5743"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="5756"/>
         <source>Double-click</source>
         <translation>Çift-tık</translation>
     </message>
@@ -8574,194 +8315,194 @@ Fritzing hala çalışıyor ancak elemanın özelliklerini değiştiremeyeceksin
         <translation>Yumağı sil</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3596"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3609"/>
         <source>from %1</source>
         <translation>%1&apos;den</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3599"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3612"/>
         <source>Move leg of</source>
         <translatorcomment>there is no special of word in turkish its used as suffix generally</translatorcomment>
         <translation>Ayağını taşı</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3659"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3672"/>
         <source>Change leg curvature for %1.</source>
         <translation>%1 için ayak eğikliğini değiştir.</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3685"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3698"/>
         <source>Change leg bendpoint for %1.</source>
         <translation>%1 için ayak esnetme noktasını değiştir.</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3969"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3982"/>
         <source>Fritzing</source>
         <translation>Fritzing</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3969"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3982"/>
         <source>This seems like an attempt to create a trace across layers. This circumstance should not arise: please contact the developers.</source>
         <translation>Bu katmanlar arası bir hat oluşturma girişimi gibi görünüyor. Bu durumlar ortaya çıkmamalı: lütfen geliştiricilerle iletişime geçin.</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3976"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3989"/>
         <source>Create and connect %1</source>
         <translation>%1 oluştur ve bağla</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3976"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3989"/>
         <source>wire</source>
         <translation>kablo</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3976"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3989"/>
         <source>trace</source>
         <translation>hat</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="4787"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="4800"/>
         <source>Flip %2 (%1)</source>
         <translation>%2&apos;yi çevir (%1)</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="5743"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="5756"/>
         <source>Drag or double-click</source>
         <translation>Sürükle ya da çift-tıkla</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="5744"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="5757"/>
         <source>or alt-drag to move the segment</source>
         <translation>ya da parçayı sürüklemek için alt-sürükle</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="5809"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="5822"/>
         <source>Double-click to delete this bend point</source>
         <translation>Bu esnetme noktasını silmek için çift tıkla</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="5897"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="5910"/>
         <source>Change %1 label to &apos;%2&apos;</source>
         <translation>%1 etiketini &apos;%2&apos;&apos;ye çevir</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="6409"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="6422"/>
         <source>Change %1 color from %2 to %3</source>
         <translation>%1 rengini %2&apos;den %3&apos;e çevir</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="6415"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="6428"/>
         <source>Change color of %1 wires to %2</source>
         <translation>%1 kablolarının rengini %2&apos;ye çevir</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="6461"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="6474"/>
         <source>Change %1 width from %2 to %3</source>
         <translation>%1 genişliğini %2&apos;den %3&apos;e çevir</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="6467"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="6480"/>
         <source>Change width of %1 wires to %2</source>
         <translation>%1 kablolarının genişliğini %2&apos;ye çevir</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7129"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7142"/>
         <source>Move label &apos;%1&apos;</source>
         <translation>&apos;%1&apos; etiketini taşı</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7136"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7149"/>
         <source>%1 label &apos;%2&apos;</source>
         <translation>%1 etiketi &apos;%2&apos;</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/sketch/sketchwidget.cpp" line="7171"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7184"/>
         <source>show %n part label(s)</source>
         <translation>
             <numerusform>%n eleman etiket(ler)ini göster</numerusform>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/sketch/sketchwidget.cpp" line="7174"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7187"/>
         <source>hide %n part label(s)</source>
         <translation>
             <numerusform>%n eleman etiket(ler)ini gizle</numerusform>
         </translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7715"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7728"/>
         <source>Resize ruler to %1 %2</source>
         <translation>Cetveli %1&apos;e %2 tekrar ölçeklendir</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="10037"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="10050"/>
         <source>test connectors</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7188"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7201"/>
         <source>Resize Note</source>
         <translation>Notu Tekrar Ölçeklendir</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7584"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7597"/>
         <source>Change Resistance from %1 to %2</source>
         <translation>Direnç değerini %1&apos;den %2&apos;ye değiştir</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7608"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7617"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7621"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7630"/>
         <source>Change %1 from %2 to %3</source>
         <translation>%1&apos;i %2&apos;den %3&apos;e değiştir</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7738"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="8623"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7751"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="8636"/>
         <source>Resize board to %1 %2</source>
         <translation>Board&apos;u %1&apos;e %2 tekrardan ölçeklendir</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7795"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7808"/>
         <source>Create wire from Ratsnest</source>
         <translation>Yumaktan kablo oluştur</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7993"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="8006"/>
         <source>Disconnect all wires from %1</source>
         <translation>%1&apos;den tüm kablo bağlantılarını kes</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7996"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="8009"/>
         <source>Disconnect all wires from %1 items</source>
         <translation>%1 öğelerinden tüm kablo bağlantılarını kes</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="8274"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="8287"/>
         <source>Change image from %1 to %2</source>
         <translation>Resmi %1&apos;den %2&apos;ye değiştir</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9084"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9097"/>
         <source>change pin labels</source>
         <translation>pin etiketlerini değiştir</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9383"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9396"/>
         <source>Unrouted connections are highlighted in yellow.</source>
         <translation>Yönlendirilmemiş bağlantılar sarı ile vurgulanmıştır.</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9384"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9397"/>
         <source>There are no unrouted connections</source>
         <translation>Yönlendirilmemiş bağlantı yok</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9385"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9398"/>
         <source>Unrouted connections</source>
         <translation>Yönlendirilmemiş bağlantılar</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9386"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9399"/>
         <source>%1
 
 Note: you can also trigger this display by mousing down on the routing status text in the status bar.</source>
@@ -8770,17 +8511,17 @@ Note: you can also trigger this display by mousing down on the routing status te
 Not:Bu görüntüyü fareyi durum çubuğundaki yönlendirme durumu metni üzerinde aşağı kaydırarak da tetikleyebilirsiniz.</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9433"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9446"/>
         <source>Part &apos;%1&apos; not found in sketch</source>
         <translation>&apos;%1&apos; elemanı çizimde bulunamadı</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9445"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9458"/>
         <source>Add %1 parts</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9507"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9520"/>
         <source>Deselect all</source>
         <translation>Tümünü seçmeyi bırak</translation>
     </message>

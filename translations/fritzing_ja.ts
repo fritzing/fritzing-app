@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="ja">
+<TS version="2.1" language="ja">
 <context>
     <name>AboutBox</name>
     <message>
@@ -1722,10 +1722,6 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
         <translation>切り取り(&amp;C)</translation>
     </message>
     <message>
-        <source>Ctrl+X</source>
-        <translation type="obsolete">Ctrl+X</translation>
-    </message>
-    <message>
         <source>Cut selection</source>
         <translation>選択された範囲を切り取り</translation>
     </message>
@@ -1734,20 +1730,12 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
         <translation>コピー (&amp;C)</translation>
     </message>
     <message>
-        <source>Ctrl+C</source>
-        <translation type="obsolete">Ctrl+C</translation>
-    </message>
-    <message>
         <source>Copy selection</source>
         <translation>選択範囲をコピー</translation>
     </message>
     <message>
         <source>&amp;Paste</source>
         <translation>貼り付け(&amp;P)</translation>
-    </message>
-    <message>
-        <source>Ctrl+V</source>
-        <translation type="obsolete">Ctrl+V</translation>
     </message>
     <message>
         <source>Paste clipboard contents</source>
@@ -1776,10 +1764,6 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     <message>
         <source>&amp;Select All</source>
         <translation>すべて選択(&amp;S)</translation>
-    </message>
-    <message>
-        <source>Ctrl+A</source>
-        <translation type="obsolete">Ctrl+A</translation>
     </message>
     <message>
         <source>Select all elements</source>
@@ -2681,10 +2665,6 @@ Please check all views for potential side-effects.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>%1 %2 %3</source>
-        <translation type="unfinished">%1 %2 %3</translation>
-    </message>
-    <message>
         <source>Shift+Ctrl+D</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3526,46 +3506,34 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     </message>
     <message>
         <source>Rotate 45� Clockwise</source>
-        <translation type="obsolete">時計方向に回転90° {135°?} {45�?}</translation>
+        <translation type="unfinished">時計方向に回転90° {135°?} {45�?}</translation>
     </message>
     <message>
         <source>Rotate 90� Clockwise</source>
-        <translation type="obsolete">時計方向に回転90° {135°?} {90�?}</translation>
+        <translation type="unfinished">時計方向に回転90° {135°?} {90�?}</translation>
     </message>
     <message>
         <source>Rotate 180�</source>
-        <translation type="obsolete">回転 180° {180�?}</translation>
+        <translation type="unfinished">回転 180° {180�?}</translation>
     </message>
     <message>
         <source>Rotate 90� Counter Clockwise</source>
-        <translation type="obsolete">逆時計方向に回転 90° {45°?} {90�?}</translation>
+        <translation type="unfinished">逆時計方向に回転 90° {45°?} {90�?}</translation>
     </message>
     <message>
         <source>Rotate 45� Counter Clockwise</source>
-        <translation type="obsolete">逆時計方向に回転 90° {45°?} {45�?}</translation>
-    </message>
-    <message>
-        <source>Rotate 45° Clockwise</source>
-        <translation type="unfinished">時計方向に回転90° {135°?} {135�?} {45°?}</translation>
-    </message>
-    <message>
-        <source>Rotate 90° Clockwise</source>
-        <translation type="unfinished">時計方向に回転90° {135°?} {135�?} {90°?}</translation>
-    </message>
-    <message>
-        <source>Rotate 180°</source>
-        <translation type="unfinished">回転 180° {180�?} {180°?}</translation>
-    </message>
-    <message>
-        <source>Rotate 90° Counter Clockwise</source>
-        <translation type="unfinished">逆時計方向に回転 90° {45°?} {45�?} {90°?}</translation>
-    </message>
-    <message>
-        <source>Rotate 45° Counter Clockwise</source>
-        <translation type="unfinished">逆時計方向に回転 90° {45°?} {45�?} {45°?}</translation>
+        <translation type="unfinished">逆時計方向に回転 90° {45°?} {45�?}</translation>
     </message>
     <message>
         <source>Ctrl+Shift+V</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>(x,y)=(%1, %2) %3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>(x, y)=(%1, %2)	(width, height)=(%3, %4) %5</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -4775,59 +4743,31 @@ Go ahead and save?</source>
     </message>
     <message>
         <source>Rotate 45� Clockwise</source>
-        <translation type="obsolete">時計方向に回転90° {135°?} {45�?}</translation>
+        <translation type="unfinished">時計方向に回転90° {135°?} {45�?}</translation>
     </message>
     <message>
         <source>Rotate 90� Clockwise</source>
-        <translation type="obsolete">時計方向に回転90° {135°?} {90�?}</translation>
+        <translation type="unfinished">時計方向に回転90° {135°?} {90�?}</translation>
     </message>
     <message>
         <source>Rotate 135� Clockwise</source>
-        <translation type="obsolete">時計方向に回転90° {135°?} {135�?}</translation>
+        <translation type="unfinished">時計方向に回転90° {135°?} {135�?}</translation>
     </message>
     <message>
         <source>Rotate 180�</source>
-        <translation type="obsolete">回転 180° {180�?}</translation>
+        <translation type="unfinished">回転 180° {180�?}</translation>
     </message>
     <message>
         <source>Rotate 135� Counter Clockwise</source>
-        <translation type="obsolete">逆時計方向に回転 90° {45°?} {135�?}</translation>
+        <translation type="unfinished">逆時計方向に回転 90° {45°?} {135�?}</translation>
     </message>
     <message>
         <source>Rotate 90� Counter Clockwise</source>
-        <translation type="obsolete">逆時計方向に回転 90° {45°?} {90�?}</translation>
+        <translation type="unfinished">逆時計方向に回転 90° {45°?} {90�?}</translation>
     </message>
     <message>
         <source>Rotate 45� Counter Clockwise</source>
-        <translation type="obsolete">逆時計方向に回転 90° {45°?} {45�?}</translation>
-    </message>
-    <message>
-        <source>Rotate 45° Clockwise</source>
-        <translation type="unfinished">時計方向に回転90° {135°?} {135�?} {45°?}</translation>
-    </message>
-    <message>
-        <source>Rotate 90° Clockwise</source>
-        <translation type="unfinished">時計方向に回転90° {135°?} {135�?} {90°?}</translation>
-    </message>
-    <message>
-        <source>Rotate 135° Clockwise</source>
-        <translation type="unfinished">時計方向に回転90° {135°?} {135�?} {135°?}</translation>
-    </message>
-    <message>
-        <source>Rotate 180°</source>
-        <translation type="unfinished">回転 180° {180�?} {180°?}</translation>
-    </message>
-    <message>
-        <source>Rotate 135° Counter Clockwise</source>
-        <translation type="unfinished">逆時計方向に回転 90° {45°?} {45�?} {135°?}</translation>
-    </message>
-    <message>
-        <source>Rotate 90° Counter Clockwise</source>
-        <translation type="unfinished">逆時計方向に回転 90° {45°?} {45�?} {90°?}</translation>
-    </message>
-    <message>
-        <source>Rotate 45° Counter Clockwise</source>
-        <translation type="unfinished">逆時計方向に回転 90° {45°?} {45�?} {45°?}</translation>
+        <translation type="unfinished">逆時計方向に回転 90° {45°?} {45�?}</translation>
     </message>
 </context>
 <context>
@@ -5198,46 +5138,6 @@ shift key swaps scroll axis</source>
 <context>
     <name>ProgramWindow</name>
     <message>
-        <source>%1 %2</source>
-        <translation type="obsolete">%1 %2</translation>
-    </message>
-    <message>
-        <source>&amp;File</source>
-        <translation type="obsolete">ファイル(&amp;F)</translation>
-    </message>
-    <message>
-        <source>Ctrl+O</source>
-        <translation type="obsolete">Ctrl+O</translation>
-    </message>
-    <message>
-        <source>Ctrl+S</source>
-        <translation type="obsolete">Ctrl+S</translation>
-    </message>
-    <message>
-        <source>Ctrl+W</source>
-        <translation type="obsolete">Ctrl+W</translation>
-    </message>
-    <message>
-        <source>&amp;Print...</source>
-        <translation type="obsolete">印刷(&amp;P) ...</translation>
-    </message>
-    <message>
-        <source>Ctrl+P</source>
-        <translation type="obsolete">Ctrl+P</translation>
-    </message>
-    <message>
-        <source>&amp;Quit</source>
-        <translation type="obsolete">終了(&amp;Q)</translation>
-    </message>
-    <message>
-        <source>Ctrl+Q</source>
-        <translation type="obsolete">Ctrl+Q</translation>
-    </message>
-    <message>
-        <source>Quit the application</source>
-        <translation type="obsolete">アプリケーションを終了(</translation>
-    </message>
-    <message>
         <source>&amp;Edit</source>
         <translation type="unfinished">編集(&amp;E)</translation>
     </message>
@@ -5254,20 +5154,12 @@ shift key swaps scroll axis</source>
         <translation type="unfinished">切り取り(&amp;C)</translation>
     </message>
     <message>
-        <source>Ctrl+X</source>
-        <translation type="obsolete">Ctrl+X</translation>
-    </message>
-    <message>
         <source>Cut selection</source>
         <translation type="unfinished">選択された範囲を切り取り</translation>
     </message>
     <message>
         <source>&amp;Copy</source>
         <translation type="unfinished">コピー (&amp;C)</translation>
-    </message>
-    <message>
-        <source>Ctrl+C</source>
-        <translation type="obsolete">Ctrl+C</translation>
     </message>
     <message>
         <source>Copy selection</source>
@@ -5278,20 +5170,12 @@ shift key swaps scroll axis</source>
         <translation type="unfinished">貼り付け(&amp;P)</translation>
     </message>
     <message>
-        <source>Ctrl+V</source>
-        <translation type="obsolete">Ctrl+V</translation>
-    </message>
-    <message>
         <source>Paste clipboard contents</source>
         <translation type="unfinished">クリップボードの内容を貼り付け</translation>
     </message>
     <message>
         <source>&amp;Select All</source>
         <translation type="unfinished">すべて選択(&amp;S)</translation>
-    </message>
-    <message>
-        <source>Ctrl+A</source>
-        <translation type="obsolete">Ctrl+A</translation>
     </message>
     <message>
         <source>Select all text</source>
@@ -6497,22 +6381,6 @@ is already there, we won&apos;t add it again, right?</source>
 <context>
     <name>SetColorDialog</name>
     <message>
-        <source>Set %1 Color...</source>
-        <translation type="obsolete">%1 の色を設定 ...</translation>
-    </message>
-    <message>
-        <source>Choose a new %1 color.</source>
-        <translation type="obsolete">%1 の新しい色を選ぶ.</translation>
-    </message>
-    <message>
-        <source>current %1 color (%2)</source>
-        <translation type="obsolete">現在の%1の色(%2)</translation>
-    </message>
-    <message>
-        <source>standard %1 color (%2)</source>
-        <translation type="obsolete">標準 %1 色 (%2)</translation>
-    </message>
-    <message>
         <source>Make this the default %1 color</source>
         <translation>この %1 の色をデフォルトにする</translation>
     </message>
@@ -6523,18 +6391,6 @@ is already there, we won&apos;t add it again, right?</source>
     <message>
         <source>OK</source>
         <translation>OK</translation>
-    </message>
-    <message>
-        <source>Select custom %1 color</source>
-        <translation type="obsolete">カスタムカラー %1 を選択</translation>
-    </message>
-    <message>
-        <source>custom color (%1)</source>
-        <translation type="obsolete">カスタムカラー(%1)</translation>
-    </message>
-    <message>
-        <source>selected color (%1)</source>
-        <translation type="obsolete">選択色 (%1)</translation>
     </message>
     <message>
         <source>%1 Color...</source>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="ru_RU">
+<TS version="2.1" language="ru_RU">
 <context>
     <name>AboutBox</name>
     <message>
@@ -1820,10 +1820,6 @@ We&apos;re working to avoid this message, and only let you choose between proper
         <translation>Вырезать(&amp;C)</translation>
     </message>
     <message>
-        <source>Ctrl+X</source>
-        <translation type="obsolete">Ctrl+X</translation>
-    </message>
-    <message>
         <source>Cut selection</source>
         <translation>Вырезать выделенное</translation>
     </message>
@@ -1832,20 +1828,12 @@ We&apos;re working to avoid this message, and only let you choose between proper
         <translation>Скопировать(&amp;C)</translation>
     </message>
     <message>
-        <source>Ctrl+C</source>
-        <translation type="obsolete">Ctrl+C</translation>
-    </message>
-    <message>
         <source>Copy selection</source>
         <translation>Копировать выделенное</translation>
     </message>
     <message>
         <source>&amp;Paste</source>
         <translation>Вставить(&amp;P)</translation>
-    </message>
-    <message>
-        <source>Ctrl+V</source>
-        <translation type="obsolete">Ctrl+V</translation>
     </message>
     <message>
         <source>Paste clipboard contents</source>
@@ -1874,10 +1862,6 @@ We&apos;re working to avoid this message, and only let you choose between proper
     <message>
         <source>&amp;Select All</source>
         <translation>Выделить всё (&amp;S)</translation>
-    </message>
-    <message>
-        <source>Ctrl+A</source>
-        <translation type="obsolete">Ctrl+A</translation>
     </message>
     <message>
         <source>Select all elements</source>
@@ -2680,10 +2664,6 @@ Please check all views for potential side-effects.</source>
     <message>
         <source>Select all via parts</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>%1 %2 %3</source>
-        <translation type="unfinished">%1 %2 %3</translation>
     </message>
     <message>
         <source>Shift+Ctrl+D</source>
@@ -3531,46 +3511,34 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     </message>
     <message>
         <source>Rotate 45� Clockwise</source>
-        <translation type="obsolete">Повернуть на 90° по часовой стрелке {135°?} {45�?}</translation>
+        <translation type="unfinished">Повернуть на 90° по часовой стрелке {135°?} {45�?}</translation>
     </message>
     <message>
         <source>Rotate 90� Clockwise</source>
-        <translation type="obsolete">Повернуть на 90° по часовой стрелке {135°?} {90�?}</translation>
+        <translation type="unfinished">Повернуть на 90° по часовой стрелке {135°?} {90�?}</translation>
     </message>
     <message>
         <source>Rotate 180�</source>
-        <translation type="obsolete">Повернуть на 180° {180�?}</translation>
+        <translation type="unfinished">Повернуть на 180° {180�?}</translation>
     </message>
     <message>
         <source>Rotate 90� Counter Clockwise</source>
-        <translation type="obsolete">Повернуть на 90 ° против часовой стрелки {90�?}</translation>
+        <translation type="unfinished">Повернуть на 90 ° против часовой стрелки {90�?}</translation>
     </message>
     <message>
         <source>Rotate 45� Counter Clockwise</source>
-        <translation type="obsolete">Повернуть на 90 ° против часовой стрелки {45�?}</translation>
-    </message>
-    <message>
-        <source>Rotate 45° Clockwise</source>
-        <translation type="unfinished">Повернуть на 90° по часовой стрелке {135°?} {135�?} {45°?}</translation>
-    </message>
-    <message>
-        <source>Rotate 90° Clockwise</source>
-        <translation type="unfinished">Повернуть на 90° по часовой стрелке {135°?} {135�?} {90°?}</translation>
-    </message>
-    <message>
-        <source>Rotate 180°</source>
-        <translation type="unfinished">Повернуть на 180° {180�?} {180°?}</translation>
-    </message>
-    <message>
-        <source>Rotate 90° Counter Clockwise</source>
-        <translation type="unfinished">Повернуть на 90 ° против часовой стрелки {45�?} {90°?}</translation>
-    </message>
-    <message>
-        <source>Rotate 45° Counter Clockwise</source>
-        <translation type="unfinished">Повернуть на 90 ° против часовой стрелки {45�?} {45°?}</translation>
+        <translation type="unfinished">Повернуть на 90 ° против часовой стрелки {45�?}</translation>
     </message>
     <message>
         <source>Ctrl+Shift+V</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>(x,y)=(%1, %2) %3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>(x, y)=(%1, %2)	(width, height)=(%3, %4) %5</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -4788,59 +4756,31 @@ Go ahead and save?</source>
     </message>
     <message>
         <source>Rotate 45� Clockwise</source>
-        <translation type="obsolete">Повернуть на 90° по часовой стрелке {135°?} {45�?}</translation>
+        <translation type="unfinished">Повернуть на 90° по часовой стрелке {135°?} {45�?}</translation>
     </message>
     <message>
         <source>Rotate 90� Clockwise</source>
-        <translation type="obsolete">Повернуть на 90° по часовой стрелке {135°?} {90�?}</translation>
+        <translation type="unfinished">Повернуть на 90° по часовой стрелке {135°?} {90�?}</translation>
     </message>
     <message>
         <source>Rotate 135� Clockwise</source>
-        <translation type="obsolete">Повернуть на 90° по часовой стрелке {135°?} {135�?}</translation>
+        <translation type="unfinished">Повернуть на 90° по часовой стрелке {135°?} {135�?}</translation>
     </message>
     <message>
         <source>Rotate 180�</source>
-        <translation type="obsolete">Повернуть на 180° {180�?}</translation>
+        <translation type="unfinished">Повернуть на 180° {180�?}</translation>
     </message>
     <message>
         <source>Rotate 135� Counter Clockwise</source>
-        <translation type="obsolete">Повернуть на 90 ° против часовой стрелки {135�?}</translation>
+        <translation type="unfinished">Повернуть на 90 ° против часовой стрелки {135�?}</translation>
     </message>
     <message>
         <source>Rotate 90� Counter Clockwise</source>
-        <translation type="obsolete">Повернуть на 90 ° против часовой стрелки {90�?}</translation>
+        <translation type="unfinished">Повернуть на 90 ° против часовой стрелки {90�?}</translation>
     </message>
     <message>
         <source>Rotate 45� Counter Clockwise</source>
-        <translation type="obsolete">Повернуть на 90 ° против часовой стрелки {45�?}</translation>
-    </message>
-    <message>
-        <source>Rotate 45° Clockwise</source>
-        <translation type="unfinished">Повернуть на 90° по часовой стрелке {135°?} {135�?} {45°?}</translation>
-    </message>
-    <message>
-        <source>Rotate 90° Clockwise</source>
-        <translation type="unfinished">Повернуть на 90° по часовой стрелке {135°?} {135�?} {90°?}</translation>
-    </message>
-    <message>
-        <source>Rotate 135° Clockwise</source>
-        <translation type="unfinished">Повернуть на 90° по часовой стрелке {135°?} {135�?} {135°?}</translation>
-    </message>
-    <message>
-        <source>Rotate 180°</source>
-        <translation type="unfinished">Повернуть на 180° {180�?} {180°?}</translation>
-    </message>
-    <message>
-        <source>Rotate 135° Counter Clockwise</source>
-        <translation type="unfinished">Повернуть на 90 ° против часовой стрелки {45�?} {135°?}</translation>
-    </message>
-    <message>
-        <source>Rotate 90° Counter Clockwise</source>
-        <translation type="unfinished">Повернуть на 90 ° против часовой стрелки {45�?} {90°?}</translation>
-    </message>
-    <message>
-        <source>Rotate 45° Counter Clockwise</source>
-        <translation type="unfinished">Повернуть на 90 ° против часовой стрелки {45�?} {45°?}</translation>
+        <translation type="unfinished">Повернуть на 90 ° против часовой стрелки {45�?}</translation>
     </message>
 </context>
 <context>
@@ -5211,46 +5151,6 @@ shift key swaps scroll axis</source>
 <context>
     <name>ProgramWindow</name>
     <message>
-        <source>%1 %2</source>
-        <translation type="obsolete">%1 %2</translation>
-    </message>
-    <message>
-        <source>&amp;File</source>
-        <translation type="obsolete">Файл (&amp;F)</translation>
-    </message>
-    <message>
-        <source>Ctrl+O</source>
-        <translation type="obsolete">Ctrl+O</translation>
-    </message>
-    <message>
-        <source>Ctrl+S</source>
-        <translation type="obsolete">Ctrl+S</translation>
-    </message>
-    <message>
-        <source>Ctrl+W</source>
-        <translation type="obsolete">Ctrl+W</translation>
-    </message>
-    <message>
-        <source>&amp;Print...</source>
-        <translation type="obsolete">Печать(&amp;P)...</translation>
-    </message>
-    <message>
-        <source>Ctrl+P</source>
-        <translation type="obsolete">Ctrl+P</translation>
-    </message>
-    <message>
-        <source>&amp;Quit</source>
-        <translation type="obsolete">Выход(&amp;Q)</translation>
-    </message>
-    <message>
-        <source>Ctrl+Q</source>
-        <translation type="obsolete">Ctrl+Q</translation>
-    </message>
-    <message>
-        <source>Quit the application</source>
-        <translation type="obsolete">Выход из программы</translation>
-    </message>
-    <message>
         <source>&amp;Edit</source>
         <translation type="unfinished">Редактировать(&amp;E)</translation>
     </message>
@@ -5267,20 +5167,12 @@ shift key swaps scroll axis</source>
         <translation type="unfinished">Вырезать(&amp;C)</translation>
     </message>
     <message>
-        <source>Ctrl+X</source>
-        <translation type="obsolete">Ctrl+X</translation>
-    </message>
-    <message>
         <source>Cut selection</source>
         <translation type="unfinished">Вырезать выделенное</translation>
     </message>
     <message>
         <source>&amp;Copy</source>
         <translation type="unfinished">Скопировать(&amp;C)</translation>
-    </message>
-    <message>
-        <source>Ctrl+C</source>
-        <translation type="obsolete">Ctrl+C</translation>
     </message>
     <message>
         <source>Copy selection</source>
@@ -5291,20 +5183,12 @@ shift key swaps scroll axis</source>
         <translation type="unfinished">Вставить(&amp;P)</translation>
     </message>
     <message>
-        <source>Ctrl+V</source>
-        <translation type="obsolete">Ctrl+V</translation>
-    </message>
-    <message>
         <source>Paste clipboard contents</source>
         <translation type="unfinished">Вставить содержимое буфера обмена</translation>
     </message>
     <message>
         <source>&amp;Select All</source>
         <translation type="unfinished">Выделить всё (&amp;S)</translation>
-    </message>
-    <message>
-        <source>Ctrl+A</source>
-        <translation type="obsolete">Ctrl+A</translation>
     </message>
     <message>
         <source>Select all text</source>
@@ -6514,22 +6398,6 @@ Fritzing по-прежнему работает, но вы не сможете �
 <context>
     <name>SetColorDialog</name>
     <message>
-        <source>Set %1 Color...</source>
-        <translation type="obsolete">Выбрать %1 цвет...</translation>
-    </message>
-    <message>
-        <source>Choose a new %1 color.</source>
-        <translation type="obsolete">выбрать новый %1 цвет.</translation>
-    </message>
-    <message>
-        <source>current %1 color (%2)</source>
-        <translation type="obsolete">текущий %1 цвет (%2)</translation>
-    </message>
-    <message>
-        <source>standard %1 color (%2)</source>
-        <translation type="obsolete">стандартный %1 цвет (%2)</translation>
-    </message>
-    <message>
         <source>Make this the default %1 color</source>
         <translation>Сделать %1 цветом по-умолчанию</translation>
     </message>
@@ -6540,18 +6408,6 @@ Fritzing по-прежнему работает, но вы не сможете �
     <message>
         <source>OK</source>
         <translation>Принять</translation>
-    </message>
-    <message>
-        <source>Select custom %1 color</source>
-        <translation type="obsolete">Выбрать другой %1 цвет</translation>
-    </message>
-    <message>
-        <source>custom color (%1)</source>
-        <translation type="obsolete">другой цвет (%1)</translation>
-    </message>
-    <message>
-        <source>selected color (%1)</source>
-        <translation type="obsolete">выбраный цвет (%1)</translation>
     </message>
     <message>
         <source>%1 Color...</source>

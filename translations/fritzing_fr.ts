@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="fr_FR">
+<TS version="2.1" language="fr_FR">
 <context>
     <name>AboutBox</name>
     <message>
@@ -1917,17 +1917,17 @@ Continuer ou annuler?</translation>
         <source>MainWindow::populateMenuWithIndex: couldn&apos;t load example with id=&apos;%1&apos;</source>
         <translation>MainWindow :: Le remplissage du menu grâce à l&apos;index: n&apos;a pas pu charger l&apos;exemple avec l&apos;id = &apos;%1&apos;</translation>
     </message>
-    <message utf8="true">
+    <message>
         <source>Rotate 90� Counter Clockwise</source>
-        <translation type="obsolete">Faire pivoter de 135° vers la gauche {90�?}</translation>
+        <translation type="unfinished">Faire pivoter de 135° vers la gauche {90�?}</translation>
     </message>
     <message>
         <source>Select All &quot;Don&apos;t Autoroute&quot; Traces</source>
         <translation>Sélectionner toutes les pistes &quot;non autoroutées&quot;</translation>
     </message>
-    <message utf8="true">
+    <message>
         <source>Rotate 45� Counter Clockwise</source>
-        <translation type="obsolete">Faire pivoter de 135° vers la gauche {45�?}</translation>
+        <translation type="unfinished">Faire pivoter de 135° vers la gauche {45�?}</translation>
     </message>
     <message>
         <source>Align Vertical Center</source>
@@ -2347,13 +2347,13 @@ Do you want to update now?</source>
         <source>Print the current view</source>
         <translation>Imprimer la vue actuelle</translation>
     </message>
-    <message utf8="true">
+    <message>
         <source>Rotate 90� Clockwise</source>
-        <translation type="obsolete">Faire pivoter de 90° vers la droite {90�?}</translation>
+        <translation type="unfinished">Faire pivoter de 90° vers la droite {90�?}</translation>
     </message>
-    <message utf8="true">
+    <message>
         <source>Rotate 45� Clockwise</source>
-        <translation type="obsolete">Faire pivoter de 90° vers la droite {45�?}</translation>
+        <translation type="unfinished">Faire pivoter de 90° vers la droite {45�?}</translation>
     </message>
     <message>
         <source>copperfill</source>
@@ -2707,9 +2707,9 @@ Nous travaillons à éliminer ce message afin de ne vous laisser choisir que des
         <source>Online Projects Gallery</source>
         <translation>Galerie des projets en ligne</translation>
     </message>
-    <message utf8="true">
+    <message>
         <source>Rotate 180�</source>
-        <translation type="obsolete">Faire pivoter de 180° {180�?}</translation>
+        <translation type="unfinished">Faire pivoter de 180° {180�?}</translation>
     </message>
     <message>
         <source>Export Bill of Materials (BoM)...</source>
@@ -3217,10 +3217,6 @@ Voulez-vous convertir &apos;%1&apos; au format . Fzz maintenant ou l&apos;ouvrir
         <translation>Il n&apos;y a pas de connexion non routée dans cette vue.</translation>
     </message>
     <message>
-        <source>Alt+Shift+Ctrl+R</source>
-        <translation type="obsolete">Faire tourner dans le sens anti-horlogique</translation>
-    </message>
-    <message>
         <source>Your sketch does not have a board yet!  Please add a PCB in order to remove copper fill.</source>
         <translation>Votrre esquisse ne comporte pas encore de carte ! Veuillez ajouter un circuit imprimé afin d&apos;éliminer le remplissage de cuivre.</translation>
     </message>
@@ -3352,10 +3348,6 @@ Voulez-vous convertir &apos;%1&apos; au format . Fzz maintenant ou l&apos;ouvrir
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>%1 %2 %3</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Code</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3438,26 +3430,6 @@ Voulez-vous convertir &apos;%1&apos; au format . Fzz maintenant ou l&apos;ouvrir
     <message>
         <source>Connect all connectors to a single test part</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Rotate 45° Clockwise</source>
-        <translation type="unfinished">Faire pivoter de 90° vers la droite {45�?} {45°?}</translation>
-    </message>
-    <message>
-        <source>Rotate 90° Clockwise</source>
-        <translation type="unfinished">Faire pivoter de 90° vers la droite {45�?} {90°?}</translation>
-    </message>
-    <message>
-        <source>Rotate 180°</source>
-        <translation type="unfinished">Faire pivoter de 180° {180�?} {180°?}</translation>
-    </message>
-    <message>
-        <source>Rotate 90° Counter Clockwise</source>
-        <translation type="unfinished">Faire pivoter de 135° vers la gauche {135�?} {90°?}</translation>
-    </message>
-    <message>
-        <source>Rotate 45° Counter Clockwise</source>
-        <translation type="unfinished">Faire pivoter de 135° vers la gauche {135�?} {45°?}</translation>
     </message>
     <message>
         <source>Shift+Ctrl+]</source>
@@ -3574,6 +3546,14 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     </message>
     <message>
         <source>mm</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>(x,y)=(%1, %2) %3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>(x, y)=(%1, %2)	(width, height)=(%3, %4) %5</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -4722,13 +4702,13 @@ Go ahead and save?</source>
         <source>Rotate the label by 135 degrees clockwise</source>
         <translation>Faire pivoter le label de 135 degrés vers la droite</translation>
     </message>
-    <message utf8="true">
+    <message>
         <source>Rotate 90� Counter Clockwise</source>
-        <translation type="obsolete">Faire pivoter de 135° vers la gauche {90�?}</translation>
+        <translation type="unfinished">Faire pivoter de 135° vers la gauche {90�?}</translation>
     </message>
-    <message utf8="true">
+    <message>
         <source>Rotate 45� Counter Clockwise</source>
-        <translation type="obsolete">Faire pivoter de 135° vers la gauche {45�?}</translation>
+        <translation type="unfinished">Faire pivoter de 135° vers la gauche {45�?}</translation>
     </message>
     <message>
         <source>Rotate the label by 135 degrees counter clockwise</source>
@@ -4738,9 +4718,9 @@ Go ahead and save?</source>
         <source>Display the text of the label</source>
         <translation>Afficher le texte de l&apos;étiquette</translation>
     </message>
-    <message utf8="true">
+    <message>
         <source>Rotate 135� Clockwise</source>
-        <translation type="obsolete">Faire pivoter de 90° vers la droite {135�?}</translation>
+        <translation type="unfinished">Faire pivoter de 90° vers la droite {135�?}</translation>
     </message>
     <message>
         <source>Flip/Rotate</source>
@@ -4766,13 +4746,13 @@ Go ahead and save?</source>
         <source>Display the value of property %1</source>
         <translation>Afficher les valeurs de la propriétés %1</translation>
     </message>
-    <message utf8="true">
+    <message>
         <source>Rotate 90� Clockwise</source>
-        <translation type="obsolete">Faire pivoter de 90° vers la droite {90�?}</translation>
+        <translation type="unfinished">Faire pivoter de 90° vers la droite {90�?}</translation>
     </message>
-    <message utf8="true">
+    <message>
         <source>Rotate 45� Clockwise</source>
-        <translation type="obsolete">Faire pivoter de 90° vers la droite {45�?}</translation>
+        <translation type="unfinished">Faire pivoter de 90° vers la droite {45�?}</translation>
     </message>
     <message>
         <source>Rotate the label by 45 degrees clockwise</source>
@@ -4794,13 +4774,13 @@ Go ahead and save?</source>
         <source>Rotate the label by 45 degrees counter clockwise</source>
         <translation>Faire pivoter le label de 45 degrés vers la gauche</translation>
     </message>
-    <message utf8="true">
+    <message>
         <source>Rotate 180�</source>
-        <translation type="obsolete">Faire pivoter de 180° {180�?}</translation>
+        <translation type="unfinished">Faire pivoter de 180° {180�?}</translation>
     </message>
-    <message utf8="true">
+    <message>
         <source>Rotate 135� Counter Clockwise</source>
-        <translation type="obsolete">Faire pivoter de 135° vers la gauche {135�?}</translation>
+        <translation type="unfinished">Faire pivoter de 135° vers la gauche {135�?}</translation>
     </message>
     <message>
         <source>Edit label text</source>
@@ -4821,34 +4801,6 @@ Go ahead and save?</source>
     <message>
         <source>Label text:</source>
         <translation>Texte de l&apos;étiquette :</translation>
-    </message>
-    <message>
-        <source>Rotate 45° Clockwise</source>
-        <translation type="unfinished">Faire pivoter de 90° vers la droite {45�?} {45°?}</translation>
-    </message>
-    <message>
-        <source>Rotate 90° Clockwise</source>
-        <translation type="unfinished">Faire pivoter de 90° vers la droite {45�?} {90°?}</translation>
-    </message>
-    <message>
-        <source>Rotate 135° Clockwise</source>
-        <translation type="unfinished">Faire pivoter de 90° vers la droite {45�?} {135°?}</translation>
-    </message>
-    <message>
-        <source>Rotate 180°</source>
-        <translation type="unfinished">Faire pivoter de 180° {180�?} {180°?}</translation>
-    </message>
-    <message>
-        <source>Rotate 135° Counter Clockwise</source>
-        <translation type="unfinished">Faire pivoter de 135° vers la gauche {135�?} {135°?}</translation>
-    </message>
-    <message>
-        <source>Rotate 90° Counter Clockwise</source>
-        <translation type="unfinished">Faire pivoter de 135° vers la gauche {135�?} {90°?}</translation>
-    </message>
-    <message>
-        <source>Rotate 45° Counter Clockwise</source>
-        <translation type="unfinished">Faire pivoter de 135° vers la gauche {135�?} {45°?}</translation>
     </message>
 </context>
 <context>
@@ -5158,10 +5110,6 @@ Alt ou la touche %1 = zoom</translation>
         <translation>Enregistrer</translation>
     </message>
     <message>
-        <source>Port:</source>
-        <translation type="obsolete">Port :</translation>
-    </message>
-    <message>
         <source>Select a program file to load</source>
         <translation>Sélectionnez un fichier de programme à charger</translation>
     </message>
@@ -5170,36 +5118,12 @@ Alt ou la touche %1 = zoom</translation>
         <translation>Supprimer &quot;%1&quot;?</translation>
     </message>
     <message>
-        <source>Language:</source>
-        <translation type="obsolete">Langage :</translation>
-    </message>
-    <message>
         <source>Are you sure you want to remove &quot;%1&quot; from the sketch?</source>
         <translation></translation>
     </message>
     <message>
-        <source>Open...</source>
-        <translation type="obsolete">Ouvrir...</translation>
-    </message>
-    <message>
-        <source>Select a programmer (executable) for %1</source>
-        <translation type="obsolete">Sélectionnez un programmeur (exécutable) pour %1</translation>
-    </message>
-    <message>
-        <source>Program</source>
-        <translation type="obsolete">Programmeur</translation>
-    </message>
-    <message>
-        <source>Programmer:</source>
-        <translation type="obsolete">Programmateur :</translation>
-    </message>
-    <message>
         <source>Fritzing is unable to find &apos;%1&apos;, please locate it</source>
         <translation>Fritzing est incapable de trouver &quot;%1&quot;, veuillez le localiser</translation>
-    </message>
-    <message>
-        <source>The file &apos;%1&apos; must be saved before it can be sent to the programmer.</source>
-        <translation type="obsolete">Le fichier &apos;%1&apos; doit être enregistré avant qu&apos;il puisse être envoyé au programmateur.</translation>
     </message>
     <message>
         <source>While it is possible to read and edit %1 programming files, it is not yet possible to use Fritzing to compile or upload these programs to a microcontroller.</source>
@@ -5273,14 +5197,6 @@ Alt ou la touche %1 = zoom</translation>
         <translation>&amp;Édition</translation>
     </message>
     <message>
-        <source>&amp;File</source>
-        <translation type="obsolete">&amp;Fichier</translation>
-    </message>
-    <message>
-        <source>&amp;Quit</source>
-        <translation type="obsolete">&amp;Quitter</translation>
-    </message>
-    <message>
         <source>&amp;View</source>
         <translation>&amp;Vue</translation>
     </message>
@@ -5289,28 +5205,8 @@ Alt ou la touche %1 = zoom</translation>
         <translation>Sélectionner l&apos;ensemble du texte</translation>
     </message>
     <message>
-        <source>Open a program</source>
-        <translation type="obsolete">Ouvrir un programme</translation>
-    </message>
-    <message>
-        <source>Save the current program</source>
-        <translation type="obsolete">Sauvegarder le programme en cours</translation>
-    </message>
-    <message>
-        <source>Copies the current program into a new tab</source>
-        <translation type="obsolete">Copier le programme actuel dans un nouvel onglet</translation>
-    </message>
-    <message>
         <source>Code Window - %1</source>
         <translation>Fenêtre de code - %1</translation>
-    </message>
-    <message>
-        <source>Rename Code File</source>
-        <translation type="obsolete">Renommer le fichier de code</translation>
-    </message>
-    <message>
-        <source>&amp;Save Code File</source>
-        <translation type="obsolete">&amp;Sauvegarder le fichier de code</translation>
     </message>
     <message>
         <source>&amp;Paste</source>
@@ -5321,32 +5217,8 @@ Alt ou la touche %1 = zoom</translation>
         <translation>Le fichier &quot;%1&quot; a été restauré à partir du fichier fzz;. Enregistrer une copie locale pour travailler avec un éditeur externe.</translation>
     </message>
     <message>
-        <source>Duplicate tab</source>
-        <translation type="obsolete">Dupliquer l&apos;onglet</translation>
-    </message>
-    <message>
-        <source>Print the current program</source>
-        <translation type="obsolete">Imprimer le programme en cours</translation>
-    </message>
-    <message>
-        <source>No ports found</source>
-        <translation type="obsolete">Aucun port détecté</translation>
-    </message>
-    <message>
-        <source>Remove the current program from the sketch</source>
-        <translation type="obsolete">Supprimer le programme actuel de l&apos;esquisse</translation>
-    </message>
-    <message>
-        <source>Select programmer</source>
-        <translation type="obsolete">Sélection du programmateur</translation>
-    </message>
-    <message>
         <source>Copy selection</source>
         <translation>Copier la sélection</translation>
-    </message>
-    <message>
-        <source>Quit the application</source>
-        <translation type="obsolete">Quitter le programme</translation>
     </message>
     <message>
         <source>Code Window</source>
@@ -5357,60 +5229,16 @@ Alt ou la touche %1 = zoom</translation>
         <translation>Copier le contenu du presse-papier</translation>
     </message>
     <message>
-        <source>Remove tab</source>
-        <translation type="obsolete">Supprimer l&apos;onglet</translation>
-    </message>
-    <message>
-        <source>Select language</source>
-        <translation type="obsolete">Sélectionner la langue</translation>
-    </message>
-    <message>
         <source>File &apos;%1&apos; was restored from the .fzz file; the local copy was not found.</source>
         <translation>Le fichier &quot;%1&quot; a été restaurée à partir du fichier fzz;. La copie locale n&apos;a pas été trouvé.</translation>
-    </message>
-    <message>
-        <source>Program</source>
-        <translation type="obsolete">Programme</translation>
-    </message>
-    <message>
-        <source>Find file...</source>
-        <translation type="obsolete">Rechercher un fichier...</translation>
     </message>
     <message>
         <source>Cut selection</source>
         <translation>Couper la sélection</translation>
     </message>
     <message>
-        <source>Rename the current program</source>
-        <translation type="obsolete">Renommer le programme actuel</translation>
-    </message>
-    <message>
-        <source>&amp;Print...</source>
-        <translation type="obsolete">&amp;Imprimer...</translation>
-    </message>
-    <message>
-        <source>Select port</source>
-        <translation type="obsolete">Sélection du port</translation>
-    </message>
-    <message>
-        <source>&amp;Open Code File...</source>
-        <translation type="obsolete">&amp;Ouvrir le fichier de code...</translation>
-    </message>
-    <message>
         <source>&amp;Select All</source>
         <translation>&amp;Tout sélectionner</translation>
-    </message>
-    <message>
-        <source>Load the current program onto a microcontroller</source>
-        <translation type="obsolete">Charger le programme en cours sur un microcontrôleur</translation>
-    </message>
-    <message>
-        <source>Create a new program</source>
-        <translation type="obsolete">Créer un nouveau programme</translation>
-    </message>
-    <message>
-        <source>New Code File</source>
-        <translation type="obsolete">Nouveau fichier de code</translation>
     </message>
     <message>
         <source>No boards available</source>
@@ -6595,48 +6423,12 @@ Fritzing va continuer à fonctionner, mais vous n&apos;aurez pas la possibilité
 <context>
     <name>SetColorDialog</name>
     <message>
-        <source>Select custom %1 color</source>
-        <translation type="obsolete">Sélectionner une couleur personnalisée %1</translation>
-    </message>
-    <message>
-        <source>custom color (%1)</source>
-        <translation type="obsolete">Couleur personnalisée (%1)</translation>
-    </message>
-    <message>
-        <source>Set %1 Color...</source>
-        <translation type="obsolete">Paramétrage de la couleur %1...</translation>
-    </message>
-    <message>
         <source>Cancel</source>
         <translation>Annuler</translation>
     </message>
     <message>
-        <source>Choose a new %1 color.</source>
-        <translation type="obsolete">Sélectionner une nouvelle couleur %1.</translation>
-    </message>
-    <message>
-        <source>selected color (%1)</source>
-        <translation type="obsolete">Couleur sélectionnée (%1)</translation>
-    </message>
-    <message>
-        <source>current %1 color (%2)</source>
-        <translation type="obsolete">Couleur actuelle %1, nouvelle (%2)</translation>
-    </message>
-    <message>
         <source>Make this the default %1 color</source>
         <translation>Faire %1 la couleur par défaut</translation>
-    </message>
-    <message>
-        <source>standard %1 color (%2)</source>
-        <translation type="obsolete">couleur standard %1, nouvelle couleur (%2)</translation>
-    </message>
-    <message>
-        <source>Choose</source>
-        <translation type="obsolete">Sélectionner</translation>
-    </message>
-    <message>
-        <source>Custom color ...</source>
-        <translation type="obsolete">Couleur personalisée</translation>
     </message>
     <message>
         <source>%1 Color...</source>

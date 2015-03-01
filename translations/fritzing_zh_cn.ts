@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="zh_CN">
+<TS version="2.1" language="zh_CN">
 <context>
     <name>AboutBox</name>
     <message>
@@ -1825,10 +1825,6 @@ We&apos;re working to avoid this message, and only let you choose between proper
         <translation>剪切(&amp;C)</translation>
     </message>
     <message>
-        <source>Ctrl+X</source>
-        <translation type="obsolete">Ctrl+X</translation>
-    </message>
-    <message>
         <source>Cut selection</source>
         <translation>剪切选择</translation>
     </message>
@@ -1837,20 +1833,12 @@ We&apos;re working to avoid this message, and only let you choose between proper
         <translation>复制(&amp;C)</translation>
     </message>
     <message>
-        <source>Ctrl+C</source>
-        <translation type="obsolete">Ctrl+C</translation>
-    </message>
-    <message>
         <source>Copy selection</source>
         <translation>复制选择</translation>
     </message>
     <message>
         <source>&amp;Paste</source>
         <translation>粘贴(&amp;P)</translation>
-    </message>
-    <message>
-        <source>Ctrl+V</source>
-        <translation type="obsolete">Ctrl+V</translation>
     </message>
     <message>
         <source>Paste clipboard contents</source>
@@ -1879,10 +1867,6 @@ We&apos;re working to avoid this message, and only let you choose between proper
     <message>
         <source>&amp;Select All</source>
         <translation>全选(&amp;S)</translation>
-    </message>
-    <message>
-        <source>Ctrl+A</source>
-        <translation type="obsolete">Ctrl+A</translation>
     </message>
     <message>
         <source>Select all elements</source>
@@ -2687,10 +2671,6 @@ Please check all views for potential side-effects.</source>
         <translation>选择所有via元件</translation>
     </message>
     <message>
-        <source>%1 %2 %3</source>
-        <translation>%1 %2 %3</translation>
-    </message>
-    <message>
         <source>Shift+Ctrl+D</source>
         <translation>Shift+Ctrl+D</translation>
     </message>
@@ -2871,10 +2851,6 @@ Would you like to convert &apos;%1&apos; to the .fzz format now or open it read-
     <message>
         <source>Fill empty regions of the copper layer--fill will include all traces connected to the seeds</source>
         <translation>填充覆铜层的空区域--填充将包含所有连接至种子的导线</translation>
-    </message>
-    <message>
-        <source>Ctrl+B</source>
-        <translation type="obsolete">Ctrl+B</translation>
     </message>
     <message>
         <source>Choose Ground Fill Seed(s)...</source>
@@ -3549,46 +3525,34 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     </message>
     <message>
         <source>Rotate 45� Clockwise</source>
-        <translation type="obsolete">顺时针旋转135° {45�?}</translation>
+        <translation type="unfinished">顺时针旋转135° {45�?}</translation>
     </message>
     <message>
         <source>Rotate 90� Clockwise</source>
-        <translation type="obsolete">顺时针旋转135° {90�?}</translation>
+        <translation type="unfinished">顺时针旋转135° {90�?}</translation>
     </message>
     <message>
         <source>Rotate 180�</source>
-        <translation type="obsolete">旋转 180° {180�?}</translation>
+        <translation type="unfinished">旋转 180° {180�?}</translation>
     </message>
     <message>
         <source>Rotate 90� Counter Clockwise</source>
-        <translation type="obsolete">逆时针旋转45° {90�?}</translation>
+        <translation type="unfinished">逆时针旋转45° {90�?}</translation>
     </message>
     <message>
         <source>Rotate 45� Counter Clockwise</source>
-        <translation type="obsolete">逆时针旋转45° {45�?}</translation>
-    </message>
-    <message>
-        <source>Rotate 45° Clockwise</source>
-        <translation type="unfinished">顺时针旋转135° {135�?} {45°?}</translation>
-    </message>
-    <message>
-        <source>Rotate 90° Clockwise</source>
-        <translation type="unfinished">顺时针旋转135° {135�?} {90°?}</translation>
-    </message>
-    <message>
-        <source>Rotate 180°</source>
-        <translation type="unfinished">旋转 180° {180�?} {180°?}</translation>
-    </message>
-    <message>
-        <source>Rotate 90° Counter Clockwise</source>
-        <translation type="unfinished">逆时针旋转45° {45�?} {90°?}</translation>
-    </message>
-    <message>
-        <source>Rotate 45° Counter Clockwise</source>
-        <translation type="unfinished">逆时针旋转45° {45�?} {45°?}</translation>
+        <translation type="unfinished">逆时针旋转45° {45�?}</translation>
     </message>
     <message>
         <source>Ctrl+Shift+V</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>(x,y)=(%1, %2) %3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>(x, y)=(%1, %2)	(width, height)=(%3, %4) %5</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -4808,59 +4772,31 @@ Go ahead and save?</source>
     </message>
     <message>
         <source>Rotate 45� Clockwise</source>
-        <translation type="obsolete">顺时针旋转135° {45�?}</translation>
+        <translation type="unfinished">顺时针旋转135° {45�?}</translation>
     </message>
     <message>
         <source>Rotate 90� Clockwise</source>
-        <translation type="obsolete">顺时针旋转135° {90�?}</translation>
+        <translation type="unfinished">顺时针旋转135° {90�?}</translation>
     </message>
     <message>
         <source>Rotate 135� Clockwise</source>
-        <translation type="obsolete">顺时针旋转135° {135�?}</translation>
+        <translation type="unfinished">顺时针旋转135° {135�?}</translation>
     </message>
     <message>
         <source>Rotate 180�</source>
-        <translation type="obsolete">旋转 180° {180�?}</translation>
+        <translation type="unfinished">旋转 180° {180�?}</translation>
     </message>
     <message>
         <source>Rotate 135� Counter Clockwise</source>
-        <translation type="obsolete">逆时针旋转45° {135�?}</translation>
+        <translation type="unfinished">逆时针旋转45° {135�?}</translation>
     </message>
     <message>
         <source>Rotate 90� Counter Clockwise</source>
-        <translation type="obsolete">逆时针旋转45° {90�?}</translation>
+        <translation type="unfinished">逆时针旋转45° {90�?}</translation>
     </message>
     <message>
         <source>Rotate 45� Counter Clockwise</source>
-        <translation type="obsolete">逆时针旋转45° {45�?}</translation>
-    </message>
-    <message>
-        <source>Rotate 45° Clockwise</source>
-        <translation type="unfinished">顺时针旋转135° {135�?} {45°?}</translation>
-    </message>
-    <message>
-        <source>Rotate 90° Clockwise</source>
-        <translation type="unfinished">顺时针旋转135° {135�?} {90°?}</translation>
-    </message>
-    <message>
-        <source>Rotate 135° Clockwise</source>
-        <translation type="unfinished">顺时针旋转135° {135�?} {135°?}</translation>
-    </message>
-    <message>
-        <source>Rotate 180°</source>
-        <translation type="unfinished">旋转 180° {180�?} {180°?}</translation>
-    </message>
-    <message>
-        <source>Rotate 135° Counter Clockwise</source>
-        <translation type="unfinished">逆时针旋转45° {45�?} {135°?}</translation>
-    </message>
-    <message>
-        <source>Rotate 90° Counter Clockwise</source>
-        <translation type="unfinished">逆时针旋转45° {45�?} {90°?}</translation>
-    </message>
-    <message>
-        <source>Rotate 45° Counter Clockwise</source>
-        <translation type="unfinished">逆时针旋转45° {45�?} {45°?}</translation>
+        <translation type="unfinished">逆时针旋转45° {45�?}</translation>
     </message>
 </context>
 <context>
@@ -5164,24 +5100,12 @@ shift键转换滚动轴
 <context>
     <name>ProgramTab</name>
     <message>
-        <source>Open...</source>
-        <translation type="obsolete">打开...</translation>
-    </message>
-    <message>
-        <source>Program</source>
-        <translation type="obsolete">程序</translation>
-    </message>
-    <message>
         <source>Select a program file to load</source>
         <translation>选择载入一个程序文件</translation>
     </message>
     <message>
         <source>Fritzing is unable to find &apos;%1&apos;, please locate it</source>
         <translation>Fritzing找不到&apos;%1&apos;,请定位它</translation>
-    </message>
-    <message>
-        <source>Language:</source>
-        <translation type="obsolete">语言:</translation>
     </message>
     <message>
         <source>New</source>
@@ -5192,28 +5116,12 @@ shift键转换滚动轴
         <translation>保存</translation>
     </message>
     <message>
-        <source>Port:</source>
-        <translation type="obsolete">端口:</translation>
-    </message>
-    <message>
-        <source>Programmer:</source>
-        <translation type="obsolete">程序:</translation>
-    </message>
-    <message>
         <source>Remove &quot;%1&quot;?</source>
         <translation>移除&quot;%1&quot;?</translation>
     </message>
     <message>
         <source>Are you sure you want to remove &quot;%1&quot; from the sketch?</source>
         <translation>确定从程序中移除&quot;%1&quot;?</translation>
-    </message>
-    <message>
-        <source>The file &apos;%1&apos; must be saved before it can be sent to the programmer.</source>
-        <translation type="obsolete">&apos;%1&apos;文件在发送给其他程序前必须保存.</translation>
-    </message>
-    <message>
-        <source>Select a programmer (executable) for %1</source>
-        <translation type="obsolete">为%1选择一个程序(可执行)</translation>
     </message>
     <message>
         <source>Code (*.%1)</source>
@@ -5267,90 +5175,6 @@ shift键转换滚动轴
 <context>
     <name>ProgramWindow</name>
     <message>
-        <source>%1 %2</source>
-        <translation type="obsolete">%1 %2</translation>
-    </message>
-    <message>
-        <source>No ports found</source>
-        <translation type="obsolete">未找到端口</translation>
-    </message>
-    <message>
-        <source>&amp;File</source>
-        <translation type="obsolete">文件(&amp;F)</translation>
-    </message>
-    <message>
-        <source>Ctrl+N</source>
-        <translation type="obsolete">Ctrl+N</translation>
-    </message>
-    <message>
-        <source>Create a new program</source>
-        <translation type="obsolete">创建一个新程序</translation>
-    </message>
-    <message>
-        <source>Ctrl+O</source>
-        <translation type="obsolete">Ctrl+O</translation>
-    </message>
-    <message>
-        <source>Open a program</source>
-        <translation type="obsolete">打开一个程序</translation>
-    </message>
-    <message>
-        <source>Ctrl+S</source>
-        <translation type="obsolete">Ctrl+S</translation>
-    </message>
-    <message>
-        <source>Save the current program</source>
-        <translation type="obsolete">保存当前程序</translation>
-    </message>
-    <message>
-        <source>Rename the current program</source>
-        <translation type="obsolete">重命名当前程序</translation>
-    </message>
-    <message>
-        <source>Duplicate tab</source>
-        <translation type="obsolete">复制标签</translation>
-    </message>
-    <message>
-        <source>Copies the current program into a new tab</source>
-        <translation type="obsolete">复制当前的程序到新标签中</translation>
-    </message>
-    <message>
-        <source>Remove tab</source>
-        <translation type="obsolete">移除标签</translation>
-    </message>
-    <message>
-        <source>Ctrl+W</source>
-        <translation type="obsolete">Ctrl+W</translation>
-    </message>
-    <message>
-        <source>Remove the current program from the sketch</source>
-        <translation type="obsolete">从程序中移除当前程序段</translation>
-    </message>
-    <message>
-        <source>&amp;Print...</source>
-        <translation type="obsolete">打印(&amp;P)...</translation>
-    </message>
-    <message>
-        <source>Ctrl+P</source>
-        <translation type="obsolete">Ctrl+P</translation>
-    </message>
-    <message>
-        <source>Print the current program</source>
-        <translation type="obsolete">打印当前程序</translation>
-    </message>
-    <message>
-        <source>&amp;Quit</source>
-        <translation type="obsolete">退出(&amp;Q)</translation>
-    </message>
-    <message>
-        <source>Ctrl+Q</source>
-        <translation type="obsolete">Ctrl+Q</translation>
-    </message>
-    <message>
-        <source>Quit the application</source>
-        <translation type="obsolete">退出程序</translation>
-    </message>
-    <message>
         <source>&amp;Edit</source>
         <translation>编辑(&amp;E)</translation>
     </message>
@@ -5367,20 +5191,12 @@ shift键转换滚动轴
         <translation>剪切(&amp;C)</translation>
     </message>
     <message>
-        <source>Ctrl+X</source>
-        <translation type="obsolete">Ctrl+X</translation>
-    </message>
-    <message>
         <source>Cut selection</source>
         <translation>剪切选择</translation>
     </message>
     <message>
         <source>&amp;Copy</source>
         <translation>复制(&amp;C)</translation>
-    </message>
-    <message>
-        <source>Ctrl+C</source>
-        <translation type="obsolete">Ctrl+C</translation>
     </message>
     <message>
         <source>Copy selection</source>
@@ -5391,10 +5207,6 @@ shift键转换滚动轴
         <translation>粘贴(&amp;P)</translation>
     </message>
     <message>
-        <source>Ctrl+V</source>
-        <translation type="obsolete">Ctrl+V</translation>
-    </message>
-    <message>
         <source>Paste clipboard contents</source>
         <translation>粘贴剪切板内容</translation>
     </message>
@@ -5403,32 +5215,8 @@ shift键转换滚动轴
         <translation>全选(&amp;S)</translation>
     </message>
     <message>
-        <source>Ctrl+A</source>
-        <translation type="obsolete">Ctrl+A</translation>
-    </message>
-    <message>
         <source>Select all text</source>
         <translation>选择所有文本</translation>
-    </message>
-    <message>
-        <source>Select language</source>
-        <translation type="obsolete">选择语言</translation>
-    </message>
-    <message>
-        <source>Select port</source>
-        <translation type="obsolete">选择端口</translation>
-    </message>
-    <message>
-        <source>Select programmer</source>
-        <translation type="obsolete">选择程序</translation>
-    </message>
-    <message>
-        <source>Program</source>
-        <translation type="obsolete">程序</translation>
-    </message>
-    <message>
-        <source>Load the current program onto a microcontroller</source>
-        <translation type="obsolete">载入当前程序到微控制器</translation>
     </message>
     <message>
         <source>File &apos;%1&apos; was restored from the .fzz file; the local copy was not found.</source>
@@ -6635,22 +6423,6 @@ Fritzing仍然在工作，但不能改变元件的属性.</translation>
 <context>
     <name>SetColorDialog</name>
     <message>
-        <source>Set %1 Color...</source>
-        <translation type="obsolete">设置 %1的颜色...</translation>
-    </message>
-    <message>
-        <source>Choose a new %1 color.</source>
-        <translation type="obsolete">选择新的%1 颜色.</translation>
-    </message>
-    <message>
-        <source>current %1 color (%2)</source>
-        <translation type="obsolete">当前%1颜色(%2)</translation>
-    </message>
-    <message>
-        <source>standard %1 color (%2)</source>
-        <translation type="obsolete">标准%1颜色(%2)</translation>
-    </message>
-    <message>
         <source>Make this the default %1 color</source>
         <translation>设置为默认的%1颜色</translation>
     </message>
@@ -6661,18 +6433,6 @@ Fritzing仍然在工作，但不能改变元件的属性.</translation>
     <message>
         <source>OK</source>
         <translation>确定</translation>
-    </message>
-    <message>
-        <source>Select custom %1 color</source>
-        <translation type="obsolete">选择自定义%1颜色</translation>
-    </message>
-    <message>
-        <source>custom color (%1)</source>
-        <translation type="obsolete">自定义颜色(%1)</translation>
-    </message>
-    <message>
-        <source>selected color (%1)</source>
-        <translation type="obsolete">已选择颜色(%1)</translation>
     </message>
     <message>
         <source>%1 Color...</source>

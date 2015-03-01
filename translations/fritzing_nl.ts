@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="nl_NL" sourcelanguage="en_US">
+<TS version="2.1" language="nl_NL" sourcelanguage="en_US">
 <context>
     <name>AboutBox</name>
     <message>
@@ -1847,10 +1847,6 @@ Wij werken er momenteel aan om dit bericht te vermijden en je te laten kiezen tu
         <translation>&amp;Knippen</translation>
     </message>
     <message>
-        <source>Ctrl+X</source>
-        <translation type="obsolete">Ctrl+X</translation>
-    </message>
-    <message>
         <source>Cut selection</source>
         <translation>Knip selectie</translation>
     </message>
@@ -1859,20 +1855,12 @@ Wij werken er momenteel aan om dit bericht te vermijden en je te laten kiezen tu
         <translation>&amp;Kopiëren</translation>
     </message>
     <message>
-        <source>Ctrl+C</source>
-        <translation type="obsolete">Ctrl+C</translation>
-    </message>
-    <message>
         <source>Copy selection</source>
         <translation>Kopieer selectie</translation>
     </message>
     <message>
         <source>&amp;Paste</source>
         <translation>&amp;Plakken</translation>
-    </message>
-    <message>
-        <source>Ctrl+V</source>
-        <translation type="obsolete">Ctrl+V</translation>
     </message>
     <message>
         <source>Paste clipboard contents</source>
@@ -1901,10 +1889,6 @@ Wij werken er momenteel aan om dit bericht te vermijden en je te laten kiezen tu
     <message>
         <source>&amp;Select All</source>
         <translation>&amp;Alles selecteren</translation>
-    </message>
-    <message>
-        <source>Ctrl+A</source>
-        <translation type="obsolete">Ctrl+A</translation>
     </message>
     <message>
         <source>Select all elements</source>
@@ -2694,10 +2678,6 @@ Controleer a.u.b. alle weergaves voor potentiële fouten.</translation>
         <translation>Selecteer alle via onderdelen</translation>
     </message>
     <message>
-        <source>%1 %2 %3</source>
-        <translation>%1 %2 %3</translation>
-    </message>
-    <message>
         <source>Shift+Ctrl+D</source>
         <translation>Shift+Ctrl+D</translation>
     </message>
@@ -2871,10 +2851,6 @@ Wilt u &apos;%1&apos; converteren naar het .fzz bestandsfomaat of wilt u het als
     <message>
         <source>Fill empty regions of the copper layer--fill will include all traces connected to the seeds</source>
         <translation>Vul lege gebieden van de koperlaag--Vulling zal alle banen verbonden met seeds omvatten</translation>
-    </message>
-    <message>
-        <source>Ctrl+B</source>
-        <translation type="obsolete">Ctrl+B</translation>
     </message>
     <message>
         <source>Choose Ground Fill Seed(s)...</source>
@@ -3553,46 +3529,34 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     </message>
     <message>
         <source>Rotate 45� Clockwise</source>
-        <translation type="obsolete">Roteer 135° Rechtsom {45�?}</translation>
+        <translation type="unfinished">Roteer 135° Rechtsom {45�?}</translation>
     </message>
     <message>
         <source>Rotate 90� Clockwise</source>
-        <translation type="obsolete">Roteer 135° Rechtsom {90�?}</translation>
+        <translation type="unfinished">Roteer 135° Rechtsom {90�?}</translation>
     </message>
     <message>
         <source>Rotate 180�</source>
-        <translation type="obsolete">Roteer 180° {180�?}</translation>
+        <translation type="unfinished">Roteer 180° {180�?}</translation>
     </message>
     <message>
         <source>Rotate 90� Counter Clockwise</source>
-        <translation type="obsolete">Roteer 45° Linksom {90�?}</translation>
+        <translation type="unfinished">Roteer 45° Linksom {90�?}</translation>
     </message>
     <message>
         <source>Rotate 45� Counter Clockwise</source>
-        <translation type="obsolete">Roteer 45° Linksom {45�?}</translation>
-    </message>
-    <message>
-        <source>Rotate 45° Clockwise</source>
-        <translation type="unfinished">Roteer 135° Rechtsom {135�?} {45°?}</translation>
-    </message>
-    <message>
-        <source>Rotate 90° Clockwise</source>
-        <translation type="unfinished">Roteer 135° Rechtsom {135�?} {90°?}</translation>
-    </message>
-    <message>
-        <source>Rotate 180°</source>
-        <translation type="unfinished">Roteer 180° {180�?} {180°?}</translation>
-    </message>
-    <message>
-        <source>Rotate 90° Counter Clockwise</source>
-        <translation type="unfinished">Roteer 45° Linksom {45�?} {90°?}</translation>
-    </message>
-    <message>
-        <source>Rotate 45° Counter Clockwise</source>
-        <translation type="unfinished">Roteer 45° Linksom {45�?} {45°?}</translation>
+        <translation type="unfinished">Roteer 45° Linksom {45�?}</translation>
     </message>
     <message>
         <source>Ctrl+Shift+V</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>(x,y)=(%1, %2) %3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>(x, y)=(%1, %2)	(width, height)=(%3, %4) %5</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -4822,59 +4786,31 @@ Doorgaan en opslaan?</translation>
     </message>
     <message>
         <source>Rotate 45� Clockwise</source>
-        <translation type="obsolete">Roteer 135° Rechtsom {45�?}</translation>
+        <translation type="unfinished">Roteer 135° Rechtsom {45�?}</translation>
     </message>
     <message>
         <source>Rotate 90� Clockwise</source>
-        <translation type="obsolete">Roteer 135° Rechtsom {90�?}</translation>
+        <translation type="unfinished">Roteer 135° Rechtsom {90�?}</translation>
     </message>
     <message>
         <source>Rotate 135� Clockwise</source>
-        <translation type="obsolete">Roteer 135° Rechtsom {135�?}</translation>
+        <translation type="unfinished">Roteer 135° Rechtsom {135�?}</translation>
     </message>
     <message>
         <source>Rotate 180�</source>
-        <translation type="obsolete">Roteer 180° {180�?}</translation>
+        <translation type="unfinished">Roteer 180° {180�?}</translation>
     </message>
     <message>
         <source>Rotate 135� Counter Clockwise</source>
-        <translation type="obsolete">Roteer 45° Linksom {135�?}</translation>
+        <translation type="unfinished">Roteer 45° Linksom {135�?}</translation>
     </message>
     <message>
         <source>Rotate 90� Counter Clockwise</source>
-        <translation type="obsolete">Roteer 45° Linksom {90�?}</translation>
+        <translation type="unfinished">Roteer 45° Linksom {90�?}</translation>
     </message>
     <message>
         <source>Rotate 45� Counter Clockwise</source>
-        <translation type="obsolete">Roteer 45° Linksom {45�?}</translation>
-    </message>
-    <message>
-        <source>Rotate 45° Clockwise</source>
-        <translation type="unfinished">Roteer 135° Rechtsom {135�?} {45°?}</translation>
-    </message>
-    <message>
-        <source>Rotate 90° Clockwise</source>
-        <translation type="unfinished">Roteer 135° Rechtsom {135�?} {90°?}</translation>
-    </message>
-    <message>
-        <source>Rotate 135° Clockwise</source>
-        <translation type="unfinished">Roteer 135° Rechtsom {135�?} {135°?}</translation>
-    </message>
-    <message>
-        <source>Rotate 180°</source>
-        <translation type="unfinished">Roteer 180° {180�?} {180°?}</translation>
-    </message>
-    <message>
-        <source>Rotate 135° Counter Clockwise</source>
-        <translation type="unfinished">Roteer 45° Linksom {45�?} {135°?}</translation>
-    </message>
-    <message>
-        <source>Rotate 90° Counter Clockwise</source>
-        <translation type="unfinished">Roteer 45° Linksom {45�?} {90°?}</translation>
-    </message>
-    <message>
-        <source>Rotate 45° Counter Clockwise</source>
-        <translation type="unfinished">Roteer 45° Linksom {45�?} {45°?}</translation>
+        <translation type="unfinished">Roteer 45° Linksom {45�?}</translation>
     </message>
 </context>
 <context>
@@ -5175,24 +5111,12 @@ De shift toets wisselt de as</translation>
 <context>
     <name>ProgramTab</name>
     <message>
-        <source>Open...</source>
-        <translation type="obsolete">Open...</translation>
-    </message>
-    <message>
-        <source>Program</source>
-        <translation type="obsolete">Programmeer</translation>
-    </message>
-    <message>
         <source>Select a program file to load</source>
         <translation>Selecteer een bestand om te laden</translation>
     </message>
     <message>
         <source>Fritzing is unable to find &apos;%1&apos;, please locate it</source>
         <translation>Fritzing is niet in staat &apos;%1&apos; te vinden</translation>
-    </message>
-    <message>
-        <source>Language:</source>
-        <translation type="obsolete">Taal:</translation>
     </message>
     <message>
         <source>New</source>
@@ -5203,28 +5127,12 @@ De shift toets wisselt de as</translation>
         <translation>Opslaan</translation>
     </message>
     <message>
-        <source>Port:</source>
-        <translation type="obsolete">Poort:</translation>
-    </message>
-    <message>
-        <source>Programmer:</source>
-        <translation type="obsolete">Programmer:</translation>
-    </message>
-    <message>
         <source>Remove &quot;%1&quot;?</source>
         <translation>&quot;%1&quot; verwijderen?</translation>
     </message>
     <message>
         <source>Are you sure you want to remove &quot;%1&quot; from the sketch?</source>
         <translation>Weet je zeker dat je &quot;%1&quot; uit de sketch wilt verwijderen?</translation>
-    </message>
-    <message>
-        <source>The file &apos;%1&apos; must be saved before it can be sent to the programmer.</source>
-        <translation type="obsolete">Het bestand &apos;%1&apos; moet opgeslagen worden voordat het naar de programmer verzonden kan worden.</translation>
-    </message>
-    <message>
-        <source>Select a programmer (executable) for %1</source>
-        <translation type="obsolete">Selecteer een programmer (uitvoerbaar) voor %1</translation>
     </message>
     <message>
         <source>Code (*.%1)</source>
@@ -5278,90 +5186,6 @@ De shift toets wisselt de as</translation>
 <context>
     <name>ProgramWindow</name>
     <message>
-        <source>%1 %2</source>
-        <translation type="obsolete">%1 %2</translation>
-    </message>
-    <message>
-        <source>No ports found</source>
-        <translation type="obsolete">Geen poorten gevonden</translation>
-    </message>
-    <message>
-        <source>&amp;File</source>
-        <translation type="obsolete">&amp;Bestand</translation>
-    </message>
-    <message>
-        <source>Ctrl+N</source>
-        <translation type="obsolete">Ctrl+N</translation>
-    </message>
-    <message>
-        <source>Create a new program</source>
-        <translation type="obsolete">Maak een nieuw programma</translation>
-    </message>
-    <message>
-        <source>Ctrl+O</source>
-        <translation type="obsolete">Ctrl+O</translation>
-    </message>
-    <message>
-        <source>Open a program</source>
-        <translation type="obsolete">Open een programma</translation>
-    </message>
-    <message>
-        <source>Ctrl+S</source>
-        <translation type="obsolete">Ctrl+S</translation>
-    </message>
-    <message>
-        <source>Save the current program</source>
-        <translation type="obsolete">Sla het huidige programma op</translation>
-    </message>
-    <message>
-        <source>Rename the current program</source>
-        <translation type="obsolete">Hernoem het huidige programma</translation>
-    </message>
-    <message>
-        <source>Duplicate tab</source>
-        <translation type="obsolete">Dupliceer tabblad</translation>
-    </message>
-    <message>
-        <source>Copies the current program into a new tab</source>
-        <translation type="obsolete">Kopieert het huidige programma in een nieuw tabblad</translation>
-    </message>
-    <message>
-        <source>Remove tab</source>
-        <translation type="obsolete">Verwijder tabblad</translation>
-    </message>
-    <message>
-        <source>Ctrl+W</source>
-        <translation type="obsolete">Ctrl+W</translation>
-    </message>
-    <message>
-        <source>Remove the current program from the sketch</source>
-        <translation type="obsolete">Verwijder het huidige programma uit de sketch</translation>
-    </message>
-    <message>
-        <source>&amp;Print...</source>
-        <translation type="obsolete">&amp;Afdrukken...</translation>
-    </message>
-    <message>
-        <source>Ctrl+P</source>
-        <translation type="obsolete">Ctrl+P</translation>
-    </message>
-    <message>
-        <source>Print the current program</source>
-        <translation type="obsolete">Druk het huidige programma af</translation>
-    </message>
-    <message>
-        <source>&amp;Quit</source>
-        <translation type="obsolete">&amp;Afsluiten</translation>
-    </message>
-    <message>
-        <source>Ctrl+Q</source>
-        <translation type="obsolete">Ctrl+Q</translation>
-    </message>
-    <message>
-        <source>Quit the application</source>
-        <translation type="obsolete">Applicatie afsluiten</translation>
-    </message>
-    <message>
         <source>&amp;Edit</source>
         <translation>&amp;Wijzig</translation>
     </message>
@@ -5378,20 +5202,12 @@ De shift toets wisselt de as</translation>
         <translation>&amp;Knippen</translation>
     </message>
     <message>
-        <source>Ctrl+X</source>
-        <translation type="obsolete">Ctrl+X</translation>
-    </message>
-    <message>
         <source>Cut selection</source>
         <translation>Knip selectie</translation>
     </message>
     <message>
         <source>&amp;Copy</source>
         <translation>&amp;Kopiëren</translation>
-    </message>
-    <message>
-        <source>Ctrl+C</source>
-        <translation type="obsolete">Ctrl+C</translation>
     </message>
     <message>
         <source>Copy selection</source>
@@ -5402,10 +5218,6 @@ De shift toets wisselt de as</translation>
         <translation>&amp;Plakken</translation>
     </message>
     <message>
-        <source>Ctrl+V</source>
-        <translation type="obsolete">Ctrl+V</translation>
-    </message>
-    <message>
         <source>Paste clipboard contents</source>
         <translation>Plak klembord inhoud</translation>
     </message>
@@ -5414,32 +5226,8 @@ De shift toets wisselt de as</translation>
         <translation>&amp;Alles selecteren</translation>
     </message>
     <message>
-        <source>Ctrl+A</source>
-        <translation type="obsolete">Ctrl+A</translation>
-    </message>
-    <message>
         <source>Select all text</source>
         <translation>Selecteer alle tekst</translation>
-    </message>
-    <message>
-        <source>Select language</source>
-        <translation type="obsolete">Selecteer taal</translation>
-    </message>
-    <message>
-        <source>Select port</source>
-        <translation type="obsolete">Selecteer poort</translation>
-    </message>
-    <message>
-        <source>Select programmer</source>
-        <translation type="obsolete">Selecteer programmer</translation>
-    </message>
-    <message>
-        <source>Program</source>
-        <translation type="obsolete">Programmeer</translation>
-    </message>
-    <message>
-        <source>Load the current program onto a microcontroller</source>
-        <translation type="obsolete">Laad het huidige prgramma naar een microcontroller</translation>
     </message>
     <message>
         <source>File &apos;%1&apos; was restored from the .fzz file; the local copy was not found.</source>
@@ -5448,22 +5236,6 @@ De shift toets wisselt de as</translation>
     <message>
         <source>File &apos;%1&apos; was restored from the .fzz file; save a local copy to work with an external editor.</source>
         <translation>Bestand &apos;%1&apos; is hersteld vanuit het .fzz bestand; sla een lokale kopie op om met een externe bewerker te werken.</translation>
-    </message>
-    <message>
-        <source>New Code File</source>
-        <translation type="obsolete">Nieuw Code Bestand</translation>
-    </message>
-    <message>
-        <source>&amp;Open Code File...</source>
-        <translation type="obsolete">&amp;Open Code Bestand...</translation>
-    </message>
-    <message>
-        <source>&amp;Save Code File</source>
-        <translation type="obsolete">&amp;Opslaan Code Bestand</translation>
-    </message>
-    <message>
-        <source>Rename Code File</source>
-        <translation type="obsolete">Hernoem Code Bestand</translation>
     </message>
     <message>
         <source>&amp;Code</source>
@@ -5480,10 +5252,6 @@ De shift toets wisselt de as</translation>
     <message>
         <source>Code Window - %1</source>
         <translation>Code Venster - %1</translation>
-    </message>
-    <message>
-        <source>Find file...</source>
-        <translation type="obsolete">Zoek bestand...</translation>
     </message>
     <message>
         <source>No boards available</source>
@@ -6666,22 +6434,6 @@ Fritzing werkt nog steeds, maar je kunt geen eigenschappen van de onderdelen wij
 <context>
     <name>SetColorDialog</name>
     <message>
-        <source>Set %1 Color...</source>
-        <translation type="obsolete">Stel %1 kleur in...</translation>
-    </message>
-    <message>
-        <source>Choose a new %1 color.</source>
-        <translation type="obsolete">Kies een nieuw %1 kleur.</translation>
-    </message>
-    <message>
-        <source>current %1 color (%2)</source>
-        <translation type="obsolete">huidige %1 kleur (%2)</translation>
-    </message>
-    <message>
-        <source>standard %1 color (%2)</source>
-        <translation type="obsolete">standaard %1 kleur (%2)</translation>
-    </message>
-    <message>
         <source>Make this the default %1 color</source>
         <translation>Maak van deze de standaard %1 kleur</translation>
     </message>
@@ -6692,18 +6444,6 @@ Fritzing werkt nog steeds, maar je kunt geen eigenschappen van de onderdelen wij
     <message>
         <source>OK</source>
         <translation>OK</translation>
-    </message>
-    <message>
-        <source>Select custom %1 color</source>
-        <translation type="obsolete">Selecteer aangepaste kleur %1</translation>
-    </message>
-    <message>
-        <source>custom color (%1)</source>
-        <translation type="obsolete">Aangepaste kleur (%1)</translation>
-    </message>
-    <message>
-        <source>selected color (%1)</source>
-        <translation type="obsolete">geselecteerde kleur (%1)</translation>
     </message>
     <message>
         <source>%1 Color...</source>

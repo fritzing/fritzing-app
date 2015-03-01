@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="et_EE" sourcelanguage="en_US">
+<TS version="2.1" language="et_EE" sourcelanguage="en_US">
 <context>
     <name>AboutBox</name>
     <message>
@@ -1012,37 +1012,37 @@ Use the file?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/program/consolewindow.cpp" line="150"/>
+        <location filename="../src/program/consolewindow.cpp" line="149"/>
         <source>Connected to %1 : %2, %3, %4, %5, %6</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/program/consolewindow.cpp" line="154"/>
+        <location filename="../src/program/consolewindow.cpp" line="153"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/program/consolewindow.cpp" line="156"/>
+        <location filename="../src/program/consolewindow.cpp" line="155"/>
         <source>Serial port open error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/program/consolewindow.cpp" line="167"/>
+        <location filename="../src/program/consolewindow.cpp" line="175"/>
         <source>Disconnected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/program/consolewindow.cpp" line="172"/>
+        <location filename="../src/program/consolewindow.cpp" line="181"/>
         <source>About Serial Monitor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/program/consolewindow.cpp" line="173"/>
+        <location filename="../src/program/consolewindow.cpp" line="182"/>
         <source>This terminal displays the serial communication on the selected port, usually between your computer and the connected microcontroller.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/program/consolewindow.cpp" line="192"/>
+        <location filename="../src/program/consolewindow.cpp" line="201"/>
         <source>Critical Error</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1139,17 +1139,17 @@ Use the file?</source>
 <context>
     <name>DeleteDialog</name>
     <message>
-        <location filename="../src/program/programtab.cpp" line="91"/>
+        <location filename="../src/program/programtab.cpp" line="90"/>
         <source>Also delete the file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/program/programtab.cpp" line="100"/>
+        <location filename="../src/program/programtab.cpp" line="99"/>
         <source>Remove</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/program/programtab.cpp" line="101"/>
+        <location filename="../src/program/programtab.cpp" line="100"/>
         <source>Don&apos;t remove</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1998,11 +1998,6 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
         <source>There are no unrouted connections in this view.</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="2773"/>
-        <source>%1 %2 %3</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message numerus="yes">
         <location filename="../src/mainwindow/mainwindow.cpp" line="1977"/>
         <source>%1 of %2 nets routed - %n connector(s) still to be routed</source>
@@ -2196,12 +2191,22 @@ We&apos;re working to avoid this message, and only let you choose between proper
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="3051"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="2784"/>
+        <source>(x,y)=(%1, %2) %3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="2789"/>
+        <source>(x, y)=(%1, %2)	(width, height)=(%3, %4) %5</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="3070"/>
         <source>Code</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="3110"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="3129"/>
         <source>Welcome</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3294,6 +3299,31 @@ Go ahead and revert?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="976"/>
+        <source>Rotate 45� Clockwise</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="980"/>
+        <source>Rotate 90� Clockwise</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="984"/>
+        <source>Rotate 180�</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="988"/>
+        <source>Rotate 90� Counter Clockwise</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="992"/>
+        <source>Rotate 45� Counter Clockwise</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1168"/>
         <source>Ctrl+5</source>
         <translation type="unfinished"></translation>
@@ -3941,31 +3971,6 @@ Would you like to convert &apos;%1&apos; to the .fzz format now or open it read-
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1270"/>
         <source>Check for updates...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="976"/>
-        <source>Rotate 45° Clockwise</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="980"/>
-        <source>Rotate 90° Clockwise</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="984"/>
-        <source>Rotate 180°</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="988"/>
-        <source>Rotate 90° Counter Clockwise</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="992"/>
-        <source>Rotate 45° Counter Clockwise</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5877,18 +5882,8 @@ Go ahead and save?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="450"/>
-        <source>Rotate 45° Clockwise</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/items/partlabel.cpp" line="452"/>
         <source>Rotate the label by 45 degrees clockwise</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/items/partlabel.cpp" line="455"/>
-        <source>Rotate 90° Clockwise</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5897,18 +5892,8 @@ Go ahead and save?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="460"/>
-        <source>Rotate 135° Clockwise</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/items/partlabel.cpp" line="462"/>
         <source>Rotate the label by 135 degrees clockwise</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/items/partlabel.cpp" line="465"/>
-        <source>Rotate 180°</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5917,18 +5902,8 @@ Go ahead and save?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="470"/>
-        <source>Rotate 135° Counter Clockwise</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/items/partlabel.cpp" line="472"/>
         <source>Rotate the label by 135 degrees counter clockwise</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/items/partlabel.cpp" line="475"/>
-        <source>Rotate 90° Counter Clockwise</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5937,8 +5912,38 @@ Go ahead and save?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src/items/partlabel.cpp" line="450"/>
+        <source>Rotate 45� Clockwise</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/items/partlabel.cpp" line="455"/>
+        <source>Rotate 90� Clockwise</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/items/partlabel.cpp" line="460"/>
+        <source>Rotate 135� Clockwise</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/items/partlabel.cpp" line="465"/>
+        <source>Rotate 180�</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/items/partlabel.cpp" line="470"/>
+        <source>Rotate 135� Counter Clockwise</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/items/partlabel.cpp" line="475"/>
+        <source>Rotate 90� Counter Clockwise</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/items/partlabel.cpp" line="480"/>
-        <source>Rotate 45° Counter Clockwise</source>
+        <source>Rotate 45� Counter Clockwise</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6392,92 +6397,92 @@ shift key swaps scroll axis</source>
 <context>
     <name>ProgramTab</name>
     <message>
-        <location filename="../src/program/programtab.cpp" line="459"/>
+        <location filename="../src/program/programtab.cpp" line="458"/>
         <source>Select a program file to load</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/program/programtab.cpp" line="126"/>
+        <location filename="../src/program/programtab.cpp" line="125"/>
         <source>While it is possible to read and edit %1 programming files, it is not yet possible to use Fritzing to compile or upload these programs to a microcontroller.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/program/programtab.cpp" line="248"/>
+        <location filename="../src/program/programtab.cpp" line="247"/>
         <source>New</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/program/programtab.cpp" line="254"/>
+        <location filename="../src/program/programtab.cpp" line="253"/>
         <source>Open</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/program/programtab.cpp" line="260"/>
+        <location filename="../src/program/programtab.cpp" line="259"/>
         <source>Save</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/program/programtab.cpp" line="273"/>
+        <location filename="../src/program/programtab.cpp" line="272"/>
         <source>Platform</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/program/programtab.cpp" line="303"/>
+        <location filename="../src/program/programtab.cpp" line="302"/>
         <source>Board</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/program/programtab.cpp" line="331"/>
+        <location filename="../src/program/programtab.cpp" line="330"/>
         <source>Port</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/program/programtab.cpp" line="360"/>
+        <location filename="../src/program/programtab.cpp" line="359"/>
         <source>Serial Monitor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/program/programtab.cpp" line="366"/>
+        <location filename="../src/program/programtab.cpp" line="365"/>
         <source>Upload</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/program/programtab.cpp" line="486"/>
+        <location filename="../src/program/programtab.cpp" line="485"/>
         <source>Fritzing is unable to find &apos;%1&apos;, please locate it</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/program/programtab.cpp" line="488"/>
+        <location filename="../src/program/programtab.cpp" line="487"/>
         <source>Code (*.%1)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/program/programtab.cpp" line="607"/>
+        <location filename="../src/program/programtab.cpp" line="606"/>
         <source>Remove &quot;%1&quot;?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/program/programtab.cpp" line="608"/>
+        <location filename="../src/program/programtab.cpp" line="607"/>
         <source>Are you sure you want to remove &quot;%1&quot; from the sketch?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/program/programtab.cpp" line="736"/>
+        <location filename="../src/program/programtab.cpp" line="735"/>
         <source>No uploader for %1 specified. Go to Preferences &gt; Code View to configure it.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/program/programtab.cpp" line="740"/>
+        <location filename="../src/program/programtab.cpp" line="739"/>
         <source>Uploader configured, but not found at %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/program/programtab.cpp" line="762"/>
+        <location filename="../src/program/programtab.cpp" line="764"/>
         <source>Upload finished.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/program/programtab.cpp" line="764"/>
+        <location filename="../src/program/programtab.cpp" line="766"/>
         <source>Upload failed with exit code %1, %2</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7043,69 +7048,69 @@ Fritzing still works, but you won&apos;t be able to change parts properties.</so
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3607"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3620"/>
         <source>%1 %2,%3 %4</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3636"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3649"/>
         <source>Change leg of %1,%2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3794"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3807"/>
         <source>%1 %2 %3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="4062"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="4075"/>
         <source>%1 Layer</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="4286"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="4303"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="4299"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="4316"/>
         <source>Bring forward</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="4295"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="4308"/>
         <source>Send backward</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="4312"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="4325"/>
         <source>Bring to front</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="5582"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="5595"/>
         <source>Split Wire</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="5643"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="5656"/>
         <source>Join Wire</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7899"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7912"/>
         <source>Trace wires</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7902"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7915"/>
         <source>Ratsnest wires</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="2233"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7904"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7917"/>
         <source>Select all %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="8194"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="8207"/>
         <source>Select locked parts</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7264,7 +7269,7 @@ Fritzing still works, but you won&apos;t be able to change parts properties.</so
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="8179"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="8192"/>
         <source>Select outdated parts</source>
         <translation type="unfinished"></translation>
     </message>
@@ -8169,72 +8174,72 @@ Fritzing still works, but you won&apos;t be able to change parts properties.</so
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3319"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3332"/>
         <source>Move %2 (%1)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3322"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3335"/>
         <source>Move %2 items (%1)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3504"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9510"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3517"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9523"/>
         <source>Select %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3507"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9513"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3520"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9526"/>
         <source>Select %1 items</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3595"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3778"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3608"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3791"/>
         <source>Disconnect</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3786"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3799"/>
         <source>Change</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3603"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3790"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3616"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3803"/>
         <source>Connect</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3604"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3791"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3617"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3804"/>
         <source>to %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3844"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3857"/>
         <source>Create and connect wire</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="4601"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="4614"/>
         <source>Rotate %2 (%1)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7136"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7149"/>
         <source>Rotate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7136"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7149"/>
         <source>Flip</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="5743"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="5756"/>
         <source>Double-click</source>
         <translation type="unfinished"></translation>
     </message>
@@ -8244,196 +8249,196 @@ Fritzing still works, but you won&apos;t be able to change parts properties.</so
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3596"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3609"/>
         <source>from %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3599"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3612"/>
         <source>Move leg of</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3659"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3672"/>
         <source>Change leg curvature for %1.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3685"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3698"/>
         <source>Change leg bendpoint for %1.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3969"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3982"/>
         <source>Fritzing</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3969"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3982"/>
         <source>This seems like an attempt to create a trace across layers. This circumstance should not arise: please contact the developers.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3976"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3989"/>
         <source>Create and connect %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3976"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3989"/>
         <source>wire</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3976"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3989"/>
         <source>trace</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="4787"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="4800"/>
         <source>Flip %2 (%1)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="5743"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="5756"/>
         <source>Drag or double-click</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="5744"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="5757"/>
         <source>or alt-drag to move the segment</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="5809"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="5822"/>
         <source>Double-click to delete this bend point</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="5871"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="5884"/>
         <source>Note text change</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="5897"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="5910"/>
         <source>Change %1 label to &apos;%2&apos;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="6409"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="6422"/>
         <source>Change %1 color from %2 to %3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="6415"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="6428"/>
         <source>Change color of %1 wires to %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="6461"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="6474"/>
         <source>Change %1 width from %2 to %3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="6467"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="6480"/>
         <source>Change width of %1 wires to %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7129"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7142"/>
         <source>Move label &apos;%1&apos;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7136"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7149"/>
         <source>%1 label &apos;%2&apos;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7188"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7201"/>
         <source>Resize Note</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7584"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7597"/>
         <source>Change Resistance from %1 to %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7608"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7617"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7621"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7630"/>
         <source>Change %1 from %2 to %3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7738"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="8623"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7751"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="8636"/>
         <source>Resize board to %1 %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7795"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7808"/>
         <source>Create wire from Ratsnest</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="8274"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="8287"/>
         <source>Change image from %1 to %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9084"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9097"/>
         <source>change pin labels</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9383"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9396"/>
         <source>Unrouted connections are highlighted in yellow.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9384"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9397"/>
         <source>There are no unrouted connections</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9385"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9398"/>
         <source>Unrouted connections</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9386"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9399"/>
         <source>%1
 
 Note: you can also trigger this display by mousing down on the routing status text in the status bar.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9433"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9446"/>
         <source>Part &apos;%1&apos; not found in sketch</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9445"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9458"/>
         <source>Add %1 parts</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9507"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9520"/>
         <source>Deselect all</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="10037"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="10050"/>
         <source>test connectors</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7993"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="8006"/>
         <source>Disconnect all wires from %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/sketch/sketchwidget.cpp" line="7171"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7184"/>
         <source>show %n part label(s)</source>
         <translation type="unfinished">
             <numerusform></numerusform>
@@ -8441,7 +8446,7 @@ Note: you can also trigger this display by mousing down on the routing status te
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/sketch/sketchwidget.cpp" line="7174"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7187"/>
         <source>hide %n part label(s)</source>
         <translation type="unfinished">
             <numerusform></numerusform>
@@ -8449,12 +8454,12 @@ Note: you can also trigger this display by mousing down on the routing status te
         </translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7715"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7728"/>
         <source>Resize ruler to %1 %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7996"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="8009"/>
         <source>Disconnect all wires from %1 items</source>
         <translation type="unfinished"></translation>
     </message>

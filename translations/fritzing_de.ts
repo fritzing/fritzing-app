@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="de">
+<TS version="2.1" language="de">
 <context>
     <name>AboutBox</name>
     <message>
@@ -1017,37 +1017,37 @@ Trotzdem diese Datei benutzen?</translation>
         <translation>Strg+B</translation>
     </message>
     <message>
-        <location filename="../src/program/consolewindow.cpp" line="150"/>
+        <location filename="../src/program/consolewindow.cpp" line="149"/>
         <source>Connected to %1 : %2, %3, %4, %5, %6</source>
         <translation>Verbunden mit %1 : %2, %3, %4, %5, %6</translation>
     </message>
     <message>
-        <location filename="../src/program/consolewindow.cpp" line="154"/>
+        <location filename="../src/program/consolewindow.cpp" line="153"/>
         <source>Error</source>
         <translation>Fehler</translation>
     </message>
     <message>
-        <location filename="../src/program/consolewindow.cpp" line="156"/>
+        <location filename="../src/program/consolewindow.cpp" line="155"/>
         <source>Serial port open error</source>
         <translation>Fehler beim Öffnen des seriellen Ports</translation>
     </message>
     <message>
-        <location filename="../src/program/consolewindow.cpp" line="167"/>
+        <location filename="../src/program/consolewindow.cpp" line="175"/>
         <source>Disconnected</source>
         <translation>Verbindung getrennt</translation>
     </message>
     <message>
-        <location filename="../src/program/consolewindow.cpp" line="172"/>
+        <location filename="../src/program/consolewindow.cpp" line="181"/>
         <source>About Serial Monitor</source>
         <translation>Über den Seriellen Monitor</translation>
     </message>
     <message>
-        <location filename="../src/program/consolewindow.cpp" line="173"/>
+        <location filename="../src/program/consolewindow.cpp" line="182"/>
         <source>This terminal displays the serial communication on the selected port, usually between your computer and the connected microcontroller.</source>
         <translation>Dieses Terminal zeigt die serielle Kommunikation auf dem ausgewählten Port an, die zwischen Deinem Computer und dem verbundenen Mikrocontroller stattfindet.</translation>
     </message>
     <message>
-        <location filename="../src/program/consolewindow.cpp" line="192"/>
+        <location filename="../src/program/consolewindow.cpp" line="201"/>
         <source>Critical Error</source>
         <translation>Kritischer Fehler</translation>
     </message>
@@ -1144,17 +1144,17 @@ Trotzdem diese Datei benutzen?</translation>
 <context>
     <name>DeleteDialog</name>
     <message>
-        <location filename="../src/program/programtab.cpp" line="91"/>
+        <location filename="../src/program/programtab.cpp" line="90"/>
         <source>Also delete the file</source>
         <translation>Auch die Datei löschen</translation>
     </message>
     <message>
-        <location filename="../src/program/programtab.cpp" line="100"/>
+        <location filename="../src/program/programtab.cpp" line="99"/>
         <source>Remove</source>
         <translation>Entfernen</translation>
     </message>
     <message>
-        <location filename="../src/program/programtab.cpp" line="101"/>
+        <location filename="../src/program/programtab.cpp" line="100"/>
         <source>Don&apos;t remove</source>
         <translation>Nicht entfernen</translation>
     </message>
@@ -1992,11 +1992,6 @@ Klicke auf ein Element, um seine Verbindungen im Entwurf hervorzuheben.
         <translation>Es gibt keine ungerouteten Verbindungen in dieser Ansicht.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="2773"/>
-        <source>%1 %2 %3</source>
-        <translation>%1 %2 %3</translation>
-    </message>
-    <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1998"/>
         <source>%1 - [%2]</source>
         <translation>%1 - [%2]</translation>
@@ -2165,12 +2160,22 @@ Klicke auf ein Element, um seine Verbindungen im Entwurf hervorzuheben.
         <translation>&apos;%1&apos; wird gesichert</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="3051"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="2784"/>
+        <source>(x,y)=(%1, %2) %3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="2789"/>
+        <source>(x, y)=(%1, %2)	(width, height)=(%3, %4) %5</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="3070"/>
         <source>Code</source>
         <translation>Code</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow/mainwindow.cpp" line="3110"/>
+        <location filename="../src/mainwindow/mainwindow.cpp" line="3129"/>
         <source>Welcome</source>
         <translation>Willkommen</translation>
     </message>
@@ -2552,10 +2557,6 @@ Klicke auf ein Element, um seine Verbindungen im Entwurf hervorzuheben.
         <translation>&amp;Ausschneiden</translation>
     </message>
     <message>
-        <source>Ctrl+X</source>
-        <translation type="obsolete">Strg+X</translation>
-    </message>
-    <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="874"/>
         <source>Cut selection</source>
         <translation>Auswahl ausschneiden</translation>
@@ -2566,10 +2567,6 @@ Klicke auf ein Element, um seine Verbindungen im Entwurf hervorzuheben.
         <translation>&amp;Kopieren</translation>
     </message>
     <message>
-        <source>Ctrl+C</source>
-        <translation type="obsolete">Strg+C</translation>
-    </message>
-    <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="879"/>
         <source>Copy selection</source>
         <translation>Auswahl kopieren</translation>
@@ -2578,10 +2575,6 @@ Klicke auf ein Element, um seine Verbindungen im Entwurf hervorzuheben.
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="882"/>
         <source>&amp;Paste</source>
         <translation>&amp;Einfügen</translation>
-    </message>
-    <message>
-        <source>Ctrl+V</source>
-        <translation type="obsolete">Strg+V</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="884"/>
@@ -2627,10 +2620,6 @@ Klicke auf ein Element, um seine Verbindungen im Entwurf hervorzuheben.
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="921"/>
         <source>&amp;Select All</source>
         <translation>&amp;Alles auswählen</translation>
-    </message>
-    <message>
-        <source>Ctrl+A</source>
-        <translation type="obsolete">Strg+A</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="923"/>
@@ -2724,24 +2713,29 @@ Klicke auf ein Element, um seine Verbindungen im Entwurf hervorzuheben.
         <translation>Alle Verbinder mit einem einzigen Testteil verbinden</translation>
     </message>
     <message>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="976"/>
         <source>Rotate 45� Clockwise</source>
-        <translation type="obsolete">Um 135° im Uhrzeigersinn drehen {45�?}</translation>
+        <translation type="unfinished">Um 135° im Uhrzeigersinn drehen {45�?}</translation>
     </message>
     <message>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="980"/>
         <source>Rotate 90� Clockwise</source>
-        <translation type="obsolete">Um 135° im Uhrzeigersinn drehen {90�?}</translation>
+        <translation type="unfinished">Um 135° im Uhrzeigersinn drehen {90�?}</translation>
     </message>
     <message>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="984"/>
         <source>Rotate 180�</source>
-        <translation type="obsolete">Um 180° drehen {180�?}</translation>
+        <translation type="unfinished">Um 180° drehen {180�?}</translation>
     </message>
     <message>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="988"/>
         <source>Rotate 90� Counter Clockwise</source>
-        <translation type="obsolete">Um 45° gegen den Uhrzeigersinn drehen {90�?}</translation>
+        <translation type="unfinished">Um 45° gegen den Uhrzeigersinn drehen {90�?}</translation>
     </message>
     <message>
+        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="992"/>
         <source>Rotate 45� Counter Clockwise</source>
-        <translation type="obsolete">Um 45° gegen den Uhrzeigersinn drehen {45�?}</translation>
+        <translation type="unfinished">Um 45° gegen den Uhrzeigersinn drehen {45�?}</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1032"/>
@@ -3232,10 +3226,6 @@ Zurücksetzen?</translation>
         <translation>Entwurf erneut laden</translation>
     </message>
     <message>
-        <source>Ctrl+B</source>
-        <translation type="obsolete">Strg+B</translation>
-    </message>
-    <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="914"/>
         <source>&amp;Delete Wire</source>
         <translation>Draht &amp;entfernen</translation>
@@ -3567,31 +3557,6 @@ Zurücksetzen?</translation>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="888"/>
         <source>Ctrl+Shift+V</source>
         <translation>Str+Umschalt+V</translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="976"/>
-        <source>Rotate 45° Clockwise</source>
-        <translation>Um 45° im Uhrzeigersinn drehen</translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="980"/>
-        <source>Rotate 90° Clockwise</source>
-        <translation>Um 90° im Uhrzeigersinn drehen</translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="984"/>
-        <source>Rotate 180°</source>
-        <translation>Um 180° drehen</translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="988"/>
-        <source>Rotate 90° Counter Clockwise</source>
-        <translation>Um 90° gegen den Uhrzeigersinn drehen</translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow/mainwindow_menu.cpp" line="992"/>
-        <source>Rotate 45° Counter Clockwise</source>
-        <translation>Um 45° gegen den Uhrzeigersinn drehen</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2713"/>
@@ -5958,19 +5923,9 @@ Fortsetzen und speichern?</translation>
         <translation>Schriftgröße</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="450"/>
-        <source>Rotate 45° Clockwise</source>
-        <translation>Um 45° im Uhrzeigersinn drehen</translation>
-    </message>
-    <message>
         <location filename="../src/items/partlabel.cpp" line="452"/>
         <source>Rotate the label by 45 degrees clockwise</source>
         <translation>Beschriftung um 45° im Uhrzeigersinn drehen</translation>
-    </message>
-    <message>
-        <location filename="../src/items/partlabel.cpp" line="455"/>
-        <source>Rotate 90° Clockwise</source>
-        <translation>Um 90° im Uhrzeigersinn drehen</translation>
     </message>
     <message>
         <location filename="../src/items/partlabel.cpp" line="457"/>
@@ -5978,19 +5933,9 @@ Fortsetzen und speichern?</translation>
         <translation>Beschriftung um 90° im Uhrzeigersinn drehen</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="460"/>
-        <source>Rotate 135° Clockwise</source>
-        <translation>Um 135° im Uhrzeigersinn drehen</translation>
-    </message>
-    <message>
         <location filename="../src/items/partlabel.cpp" line="462"/>
         <source>Rotate the label by 135 degrees clockwise</source>
         <translation>Beschriftung um 135° im Uhrzeigersinn drehen</translation>
-    </message>
-    <message>
-        <location filename="../src/items/partlabel.cpp" line="465"/>
-        <source>Rotate 180°</source>
-        <translation>Um 180° drehen</translation>
     </message>
     <message>
         <location filename="../src/items/partlabel.cpp" line="467"/>
@@ -5998,19 +5943,9 @@ Fortsetzen und speichern?</translation>
         <translation>Beschriftung um 180° drehen</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="470"/>
-        <source>Rotate 135° Counter Clockwise</source>
-        <translation>Um 135° gegen den Uhrzeigersinn drehen</translation>
-    </message>
-    <message>
         <location filename="../src/items/partlabel.cpp" line="472"/>
         <source>Rotate the label by 135 degrees counter clockwise</source>
         <translation>Beschriftung um 135° gegen den Uhrzeigersinn drehen</translation>
-    </message>
-    <message>
-        <location filename="../src/items/partlabel.cpp" line="475"/>
-        <source>Rotate 90° Counter Clockwise</source>
-        <translation>Um 90° gegen den Uhrzeigersinn drehen</translation>
     </message>
     <message>
         <location filename="../src/items/partlabel.cpp" line="477"/>
@@ -6018,37 +5953,39 @@ Fortsetzen und speichern?</translation>
         <translation>Auswahl um 90° gegen den Uhrzeigersinn drehen</translation>
     </message>
     <message>
-        <location filename="../src/items/partlabel.cpp" line="480"/>
-        <source>Rotate 45° Counter Clockwise</source>
-        <translation>Um 45° gegen den Uhrzeigersinn drehen</translation>
-    </message>
-    <message>
+        <location filename="../src/items/partlabel.cpp" line="450"/>
         <source>Rotate 45� Clockwise</source>
-        <translation type="obsolete">Um 135° im Uhrzeigersinn drehen {45�?}</translation>
+        <translation type="unfinished">Um 135° im Uhrzeigersinn drehen {45�?}</translation>
     </message>
     <message>
+        <location filename="../src/items/partlabel.cpp" line="455"/>
         <source>Rotate 90� Clockwise</source>
-        <translation type="obsolete">Um 135° im Uhrzeigersinn drehen {90�?}</translation>
+        <translation type="unfinished">Um 135° im Uhrzeigersinn drehen {90�?}</translation>
     </message>
     <message>
+        <location filename="../src/items/partlabel.cpp" line="460"/>
         <source>Rotate 135� Clockwise</source>
-        <translation type="obsolete">Um 135° im Uhrzeigersinn drehen {135�?}</translation>
+        <translation type="unfinished">Um 135° im Uhrzeigersinn drehen {135�?}</translation>
     </message>
     <message>
+        <location filename="../src/items/partlabel.cpp" line="465"/>
         <source>Rotate 180�</source>
-        <translation type="obsolete">Um 180° drehen {180�?}</translation>
+        <translation type="unfinished">Um 180° drehen {180�?}</translation>
     </message>
     <message>
+        <location filename="../src/items/partlabel.cpp" line="470"/>
         <source>Rotate 135� Counter Clockwise</source>
-        <translation type="obsolete">Um 45° gegen den Uhrzeigersinn drehen {135�?}</translation>
+        <translation type="unfinished">Um 45° gegen den Uhrzeigersinn drehen {135�?}</translation>
     </message>
     <message>
+        <location filename="../src/items/partlabel.cpp" line="475"/>
         <source>Rotate 90� Counter Clockwise</source>
-        <translation type="obsolete">Um 45° gegen den Uhrzeigersinn drehen {90�?}</translation>
+        <translation type="unfinished">Um 45° gegen den Uhrzeigersinn drehen {90�?}</translation>
     </message>
     <message>
+        <location filename="../src/items/partlabel.cpp" line="480"/>
         <source>Rotate 45� Counter Clockwise</source>
-        <translation type="obsolete">Um 45° gegen den Uhrzeigersinn drehen {45�?}</translation>
+        <translation type="unfinished">Um 45° gegen den Uhrzeigersinn drehen {45�?}</translation>
     </message>
     <message>
         <location filename="../src/items/partlabel.cpp" line="482"/>
@@ -6507,222 +6444,98 @@ Mausrad + Alt + Umschalt-Taste = horizontaler Bildlauf</translation>
 <context>
     <name>ProgramTab</name>
     <message>
-        <source>Open...</source>
-        <translation type="obsolete">Öffnen...</translation>
-    </message>
-    <message>
-        <location filename="../src/program/programtab.cpp" line="459"/>
+        <location filename="../src/program/programtab.cpp" line="458"/>
         <source>Select a program file to load</source>
         <translation>Programmdatei auswählen</translation>
     </message>
     <message>
-        <source>Program</source>
-        <translation type="obsolete">Programmieren</translation>
-    </message>
-    <message>
-        <location filename="../src/program/programtab.cpp" line="126"/>
+        <location filename="../src/program/programtab.cpp" line="125"/>
         <source>While it is possible to read and edit %1 programming files, it is not yet possible to use Fritzing to compile or upload these programs to a microcontroller.</source>
         <translation>Während das Einlesen und Bearbeiten von %1-Programmierdateien möglich ist, ist es momentan leider noch nicht möglich, dieses Programm direkt in Fritzing zu kompilieren oder auf einen Mikrocontroller hochzuladen.</translation>
     </message>
     <message>
-        <source>Language:</source>
-        <translation type="obsolete">Sprache:</translation>
-    </message>
-    <message>
-        <location filename="../src/program/programtab.cpp" line="248"/>
+        <location filename="../src/program/programtab.cpp" line="247"/>
         <source>New</source>
         <translation>Neu</translation>
     </message>
     <message>
-        <location filename="../src/program/programtab.cpp" line="254"/>
+        <location filename="../src/program/programtab.cpp" line="253"/>
         <source>Open</source>
         <translation>Öffnen</translation>
     </message>
     <message>
-        <location filename="../src/program/programtab.cpp" line="260"/>
+        <location filename="../src/program/programtab.cpp" line="259"/>
         <source>Save</source>
         <translation>Speichern</translation>
     </message>
     <message>
-        <source>Port:</source>
-        <translation type="obsolete">Anschluss:</translation>
-    </message>
-    <message>
-        <source>Programmer:</source>
-        <translation type="obsolete">Programmierer:</translation>
-    </message>
-    <message>
-        <location filename="../src/program/programtab.cpp" line="273"/>
+        <location filename="../src/program/programtab.cpp" line="272"/>
         <source>Platform</source>
         <translation>Plattform</translation>
     </message>
     <message>
-        <location filename="../src/program/programtab.cpp" line="303"/>
+        <location filename="../src/program/programtab.cpp" line="302"/>
         <source>Board</source>
         <translation>Board</translation>
     </message>
     <message>
-        <location filename="../src/program/programtab.cpp" line="331"/>
+        <location filename="../src/program/programtab.cpp" line="330"/>
         <source>Port</source>
         <translation>Port</translation>
     </message>
     <message>
-        <location filename="../src/program/programtab.cpp" line="360"/>
+        <location filename="../src/program/programtab.cpp" line="359"/>
         <source>Serial Monitor</source>
         <translation>Serieller Monitor</translation>
     </message>
     <message>
-        <location filename="../src/program/programtab.cpp" line="366"/>
+        <location filename="../src/program/programtab.cpp" line="365"/>
         <source>Upload</source>
         <translation>Hochladen</translation>
     </message>
     <message>
-        <location filename="../src/program/programtab.cpp" line="486"/>
+        <location filename="../src/program/programtab.cpp" line="485"/>
         <source>Fritzing is unable to find &apos;%1&apos;, please locate it</source>
         <translation>Fritzing kann &apos;%1&apos; nicht finden, bitte mache es ausfindig</translation>
     </message>
     <message>
-        <location filename="../src/program/programtab.cpp" line="488"/>
+        <location filename="../src/program/programtab.cpp" line="487"/>
         <source>Code (*.%1)</source>
         <translation>Code (*.%1)</translation>
     </message>
     <message>
-        <location filename="../src/program/programtab.cpp" line="607"/>
+        <location filename="../src/program/programtab.cpp" line="606"/>
         <source>Remove &quot;%1&quot;?</source>
         <translation>&quot;%1&quot; entfernen?</translation>
     </message>
     <message>
-        <location filename="../src/program/programtab.cpp" line="608"/>
+        <location filename="../src/program/programtab.cpp" line="607"/>
         <source>Are you sure you want to remove &quot;%1&quot; from the sketch?</source>
         <translation>Möchtest Du wirklich &quot;%1&quot; aus dem Entwurf entfernen?</translation>
     </message>
     <message>
-        <location filename="../src/program/programtab.cpp" line="736"/>
+        <location filename="../src/program/programtab.cpp" line="735"/>
         <source>No uploader for %1 specified. Go to Preferences &gt; Code View to configure it.</source>
         <translation>Es wurde noch kein Programmierer für %1 angegeben. Gehe zu Einstellungen &gt; Code-Ansicht, um diesen zu konfigurieren.</translation>
     </message>
     <message>
-        <location filename="../src/program/programtab.cpp" line="740"/>
+        <location filename="../src/program/programtab.cpp" line="739"/>
         <source>Uploader configured, but not found at %1</source>
         <translation>Programmierer ist konfiguriert, aber konnte hier nicht gefunden werden: %1</translation>
     </message>
     <message>
-        <location filename="../src/program/programtab.cpp" line="762"/>
+        <location filename="../src/program/programtab.cpp" line="764"/>
         <source>Upload finished.</source>
         <translation>Hochladen beendet.</translation>
     </message>
     <message>
-        <location filename="../src/program/programtab.cpp" line="764"/>
+        <location filename="../src/program/programtab.cpp" line="766"/>
         <source>Upload failed with exit code %1, %2</source>
         <translation>Hochladen fehlgeschlagen. (Fehler-Code %1, %2)</translation>
-    </message>
-    <message>
-        <source>The file &apos;%1&apos; must be saved before it can be sent to the programmer.</source>
-        <translation type="obsolete">Die Datei &apos;%1&apos; muss gespeichert werden, bevor sie programmiert werden kann.</translation>
-    </message>
-    <message>
-        <source>Select a programmer (executable) for %1</source>
-        <translation type="obsolete">Wähle einen Programmierer (ausführbare Datei) für %1</translation>
     </message>
 </context>
 <context>
     <name>ProgramWindow</name>
-    <message>
-        <source>No ports found</source>
-        <translation type="obsolete">Keine Anschlüsse gefunden</translation>
-    </message>
-    <message>
-        <source>&amp;File</source>
-        <translation type="obsolete">&amp;Datei</translation>
-    </message>
-    <message>
-        <source>New Code File</source>
-        <translation type="obsolete">Neue Code-Datei</translation>
-    </message>
-    <message>
-        <source>Ctrl+N</source>
-        <translation type="obsolete">Strg+N</translation>
-    </message>
-    <message>
-        <source>Create a new program</source>
-        <translation type="obsolete">Neues Programm erstellen</translation>
-    </message>
-    <message>
-        <source>&amp;Open Code File...</source>
-        <translation type="obsolete">&amp;Öffne Code-Datei...</translation>
-    </message>
-    <message>
-        <source>Ctrl+O</source>
-        <translation type="obsolete">Strg+O</translation>
-    </message>
-    <message>
-        <source>Open a program</source>
-        <translation type="obsolete">Ein Programm öffnen</translation>
-    </message>
-    <message>
-        <source>&amp;Save Code File</source>
-        <translation type="obsolete">&amp;Speichere Code-Datei</translation>
-    </message>
-    <message>
-        <source>Ctrl+S</source>
-        <translation type="obsolete">Strg+S</translation>
-    </message>
-    <message>
-        <source>Save the current program</source>
-        <translation type="obsolete">Aktuelles Programm speichern</translation>
-    </message>
-    <message>
-        <source>Rename Code File</source>
-        <translation type="obsolete">Umbenennen</translation>
-    </message>
-    <message>
-        <source>Rename the current program</source>
-        <translation type="obsolete">Aktuelles Programm umbenennen</translation>
-    </message>
-    <message>
-        <source>Duplicate tab</source>
-        <translation type="obsolete">Tab duplizieren</translation>
-    </message>
-    <message>
-        <source>Copies the current program into a new tab</source>
-        <translation type="obsolete">Kopiert das aktuelle Programm in ein neues Tab</translation>
-    </message>
-    <message>
-        <source>Remove tab</source>
-        <translation type="obsolete">Tab entfernen</translation>
-    </message>
-    <message>
-        <source>Ctrl+W</source>
-        <translation type="obsolete">Strg+W</translation>
-    </message>
-    <message>
-        <source>Remove the current program from the sketch</source>
-        <translation type="obsolete">Entfernt das aktuelle Programm von diesem Entwurf</translation>
-    </message>
-    <message>
-        <source>&amp;Print...</source>
-        <translation type="obsolete">&amp;Drucken...</translation>
-    </message>
-    <message>
-        <source>Ctrl+P</source>
-        <translation type="obsolete">Strg+P</translation>
-    </message>
-    <message>
-        <source>Print the current program</source>
-        <translation type="obsolete">Aktuelles Programm drucken</translation>
-    </message>
-    <message>
-        <source>&amp;Quit</source>
-        <translation type="obsolete">&amp;Beenden</translation>
-    </message>
-    <message>
-        <source>Ctrl+Q</source>
-        <translation type="obsolete">Strg+Q</translation>
-    </message>
-    <message>
-        <source>Quit the application</source>
-        <translation type="obsolete">Programmierer beenden</translation>
-    </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="135"/>
         <source>No boards available</source>
@@ -6749,10 +6562,6 @@ Mausrad + Alt + Umschalt-Taste = horizontaler Bildlauf</translation>
         <translation>&amp;Ausschneiden</translation>
     </message>
     <message>
-        <source>Ctrl+X</source>
-        <translation type="obsolete">Strg+X</translation>
-    </message>
-    <message>
         <location filename="../src/program/programwindow.cpp" line="204"/>
         <source>Cut selection</source>
         <translation>Auswahl ausschneiden</translation>
@@ -6761,10 +6570,6 @@ Mausrad + Alt + Umschalt-Taste = horizontaler Bildlauf</translation>
         <location filename="../src/program/programwindow.cpp" line="209"/>
         <source>&amp;Copy</source>
         <translation>&amp;Kopieren</translation>
-    </message>
-    <message>
-        <source>Ctrl+C</source>
-        <translation type="obsolete">Strg+C</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="211"/>
@@ -6777,10 +6582,6 @@ Mausrad + Alt + Umschalt-Taste = horizontaler Bildlauf</translation>
         <translation>&amp;Einfügen</translation>
     </message>
     <message>
-        <source>Ctrl+V</source>
-        <translation type="obsolete">Strg+V</translation>
-    </message>
-    <message>
         <location filename="../src/program/programwindow.cpp" line="218"/>
         <source>Paste clipboard contents</source>
         <translation>Inhalte aus der Zwischenablage einfügen</translation>
@@ -6789,10 +6590,6 @@ Mausrad + Alt + Umschalt-Taste = horizontaler Bildlauf</translation>
         <location filename="../src/program/programwindow.cpp" line="225"/>
         <source>&amp;Select All</source>
         <translation>&amp;Alles auswählen</translation>
-    </message>
-    <message>
-        <source>Ctrl+A</source>
-        <translation type="obsolete">Strg+A</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="227"/>
@@ -6945,30 +6742,6 @@ Mausrad + Alt + Umschalt-Taste = horizontaler Bildlauf</translation>
         <translation>%1%2</translation>
     </message>
     <message>
-        <source>Find file...</source>
-        <translation type="obsolete">Datei finden...</translation>
-    </message>
-    <message>
-        <source>Select language</source>
-        <translation type="obsolete">Programmiersprache auswählen</translation>
-    </message>
-    <message>
-        <source>Select port</source>
-        <translation type="obsolete">Anschluss auswählen</translation>
-    </message>
-    <message>
-        <source>Select programmer</source>
-        <translation type="obsolete">Programmierer auswählen</translation>
-    </message>
-    <message>
-        <source>Program</source>
-        <translation type="obsolete">Programmieren</translation>
-    </message>
-    <message>
-        <source>Load the current program onto a microcontroller</source>
-        <translation type="obsolete">Lädt das aktuelle Programm auf einen angeschlossen Mikrocontroller</translation>
-    </message>
-    <message>
         <location filename="../src/program/programwindow.cpp" line="321"/>
         <source>&amp;View</source>
         <translation>&amp;Ansicht</translation>
@@ -6982,10 +6755,6 @@ Mausrad + Alt + Umschalt-Taste = horizontaler Bildlauf</translation>
         <location filename="../src/program/programwindow.cpp" line="375"/>
         <source>File &apos;%1&apos; was restored from the .fzz file; save a local copy to work with an external editor.</source>
         <translation>Die Datei &apos;%1&apos; wurde aus der .fzz-Datei wiederhergestellt. Speicher eine lokale Kopie, um sie mit einem externen Editor zu bearbeiten.</translation>
-    </message>
-    <message>
-        <source>%1 %2</source>
-        <translation type="obsolete">%1 %2</translation>
     </message>
 </context>
 <context>
@@ -7230,53 +6999,53 @@ Mausrad + Alt + Umschalt-Taste = horizontaler Bildlauf</translation>
         <translation>Fehler beim lesen der Datei %1: %2.</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3607"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3620"/>
         <source>%1 %2,%3 %4</source>
         <translation>%1 %2,%3 %4</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3636"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3649"/>
         <source>Change leg of %1,%2</source>
         <translation>Ändere Beinchen von %1,%2</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3794"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3807"/>
         <source>%1 %2 %3</source>
         <translation>%1 %2 %3</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="4062"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="4075"/>
         <source>%1 Layer</source>
         <translation>%1-Ebene</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="4286"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="4303"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="4299"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="4316"/>
         <source>Bring forward</source>
         <translation>Schrittweise nach vorne bringen</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="4295"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="4308"/>
         <source>Send backward</source>
         <translation>Schrittweise nach hinten senden</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="4312"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="4325"/>
         <source>Bring to front</source>
         <translation>Nach vorne bringen</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="5582"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="5595"/>
         <source>Split Wire</source>
         <translation>Draht aufteilen</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="5643"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="5656"/>
         <source>Join Wire</source>
         <translation>Draht verbinden</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="8194"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="8207"/>
         <source>Select locked parts</source>
         <translation>Alle gesperrten Bauteile auswählen</translation>
     </message>
@@ -7439,18 +7208,18 @@ Versuche, Fritzing neu zu starten. Falls das Problem bestehen bleibt, wende Dich
         <translation>Notizen</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7899"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7912"/>
         <source>Trace wires</source>
         <translation>Leiterbahnen</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7902"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7915"/>
         <source>Ratsnest wires</source>
         <translation>Luftlinien</translation>
     </message>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="2233"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7904"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7917"/>
         <source>Select all %1</source>
         <translation>Alles auswählen %1</translation>
     </message>
@@ -7552,7 +7321,7 @@ im Sortiment. Nicht erneut hinzufügen?</translation>
         <translation>Dateifortschritt...</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="8179"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="8192"/>
         <source>Select outdated parts</source>
         <translation>Veraltete Bauteile auswählen</translation>
     </message>
@@ -8365,30 +8134,6 @@ im Sortiment. Nicht erneut hinzufügen?</translation>
 <context>
     <name>SetColorDialog</name>
     <message>
-        <source>Set %1 Color...</source>
-        <translation type="obsolete">Farbe %1 festlegen...</translation>
-    </message>
-    <message>
-        <source>Choose a new %1 color.</source>
-        <translation type="obsolete">Wähle eine neue %1-Farbe.</translation>
-    </message>
-    <message>
-        <source>Choose</source>
-        <translation type="obsolete">Auswahl</translation>
-    </message>
-    <message>
-        <source>current %1 color (%2)</source>
-        <translation type="obsolete">Aktuelle %1-Farbe (%2)</translation>
-    </message>
-    <message>
-        <source>standard %1 color (%2)</source>
-        <translation type="obsolete">Standard %1-Farbe (%2)</translation>
-    </message>
-    <message>
-        <source>Custom color ...</source>
-        <translation type="obsolete">Benutzerdefinierte Farbe ...</translation>
-    </message>
-    <message>
         <location filename="../src/dialogs/setcolordialog.cpp" line="52"/>
         <source>%1 Color...</source>
         <translation type="unfinished">%1-Farbe...</translation>
@@ -8438,18 +8183,6 @@ im Sortiment. Nicht erneut hinzufügen?</translation>
         <source>Current color (%1)</source>
         <translation>Aktuelle Farbe (%1)</translation>
     </message>
-    <message>
-        <source>Select custom %1 color</source>
-        <translation type="obsolete">Eigene Farbe für %1 wählen</translation>
-    </message>
-    <message>
-        <source>custom color (%1)</source>
-        <translation type="obsolete">Eigene Farbe (%1)</translation>
-    </message>
-    <message>
-        <source>selected color (%1)</source>
-        <translation type="obsolete">Ausgewählte Farbe(%1)</translation>
-    </message>
 </context>
 <context>
     <name>SketchWidget</name>
@@ -8489,72 +8222,72 @@ im Sortiment. Nicht erneut hinzufügen?</translation>
         <translation>%1 hinzufügen</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3319"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3332"/>
         <source>Move %2 (%1)</source>
         <translation>%2 verschieben (%1)</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3322"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3335"/>
         <source>Move %2 items (%1)</source>
         <translation>%2 Elemente verschieben (%1)</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3504"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9510"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3517"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9523"/>
         <source>Select %1</source>
         <translation> %1 auswählen</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3507"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9513"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3520"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9526"/>
         <source>Select %1 items</source>
         <translation>%1 Elemente auswählen</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3595"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3778"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3608"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3791"/>
         <source>Disconnect</source>
         <translation>Trennen</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3786"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3799"/>
         <source>Change</source>
         <translation>Ändere</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3603"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3790"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3616"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3803"/>
         <source>Connect</source>
         <translation>Verbinde</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3604"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3791"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3617"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3804"/>
         <source>to %1</source>
         <translation>mit %1</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3844"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3857"/>
         <source>Create and connect wire</source>
         <translation>Draht erstellen und verbinden</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="4601"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="4614"/>
         <source>Rotate %2 (%1)</source>
         <translation>Drehen %2 (%1)</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7136"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7149"/>
         <source>Rotate</source>
         <translation>Drehen</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7136"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7149"/>
         <source>Flip</source>
         <translation>Umdrehen</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="5743"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="5756"/>
         <source>Double-click</source>
         <translation>Doppelklicken</translation>
     </message>
@@ -8564,149 +8297,149 @@ im Sortiment. Nicht erneut hinzufügen?</translation>
         <translation>Luftlinie entfernen</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3596"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3609"/>
         <source>from %1</source>
         <translation>von %1</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3599"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3612"/>
         <source>Move leg of</source>
         <translation>Verschiebe Beinchen von</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3659"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3672"/>
         <source>Change leg curvature for %1.</source>
         <translation>Beinchenbiegung für %1 ändern.</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3685"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3698"/>
         <source>Change leg bendpoint for %1.</source>
         <translation>Beinchenbiegepunkt für %1 ändern.</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3969"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3982"/>
         <source>Fritzing</source>
         <translation>Fritzing</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3969"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3982"/>
         <source>This seems like an attempt to create a trace across layers. This circumstance should not arise: please contact the developers.</source>
         <translation>Dies scheint ein Versuch zur Erzeugung einer Leiterbahn quer durch Ebenen zu sein. Dieser Umstand sollte nicht eintreten: Bitte kontaktiere die Entwickler.</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3976"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3989"/>
         <source>Create and connect %1</source>
         <translation>%1 erstellen und verbinden</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3976"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3989"/>
         <source>wire</source>
         <translation>Draht</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="3976"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="3989"/>
         <source>trace</source>
         <translation>Leiterbahn</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="4787"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="4800"/>
         <source>Flip %2 (%1)</source>
         <translation>Umdrehen %2 (%1)</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="5743"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="5756"/>
         <source>Drag or double-click</source>
         <translation>Ziehen oder doppelklicken</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="5744"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="5757"/>
         <source>or alt-drag to move the segment</source>
         <translation>oder Alt+Ziehen um ein Segment zu bewegen</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="5871"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="5884"/>
         <source>Note text change</source>
         <translation>Änderung der Notiz</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="6409"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="6422"/>
         <source>Change %1 color from %2 to %3</source>
         <translation>Farbe %1 von %2 nach %3 ändern</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="6415"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="6428"/>
         <source>Change color of %1 wires to %2</source>
         <translation>Farbe von %1 Drähten nach %2 ändern</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7715"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7728"/>
         <source>Resize ruler to %1 %2</source>
         <translation>Größes des Lineals nach %1 %2 ändern</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="10037"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="10050"/>
         <source>test connectors</source>
         <translation>Verbinder prüfen</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7584"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7597"/>
         <source>Change Resistance from %1 to %2</source>
         <translation>Wert des Widerstands von %1 nacg %2 ändern</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7608"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7617"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7621"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7630"/>
         <source>Change %1 from %2 to %3</source>
         <translation>%1 von %2 nach %3 ändern</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7738"/>
-        <location filename="../src/sketch/sketchwidget.cpp" line="8623"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7751"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="8636"/>
         <source>Resize board to %1 %2</source>
         <translation>Größe anpassen auf %1 %2</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7795"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7808"/>
         <source>Create wire from Ratsnest</source>
         <translation>Draht aus Luftlinie erstellen</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7993"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="8006"/>
         <source>Disconnect all wires from %1</source>
         <translation>Alle Drähte zu %1 trennen</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7996"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="8009"/>
         <source>Disconnect all wires from %1 items</source>
         <translation>Alle Drähte zu %1 Elementen lösen</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="8274"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="8287"/>
         <source>Change image from %1 to %2</source>
         <translation>Bild von %1 nach %2 ändern</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9084"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9097"/>
         <source>change pin labels</source>
         <translation>Kontaktbezeichnungen ändern</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9383"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9396"/>
         <source>Unrouted connections are highlighted in yellow.</source>
         <translation>Ungeroutete Verbindungen werden in gelb hervorgehoben.</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9384"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9397"/>
         <source>There are no unrouted connections</source>
         <translation>Es gibt keine ungerouteten Verbindungen</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9385"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9398"/>
         <source>Unrouted connections</source>
         <translation>Noch nicht geroutete Verbindungen</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9386"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9399"/>
         <source>%1
 
 Note: you can also trigger this display by mousing down on the routing status text in the status bar.</source>
@@ -8715,37 +8448,37 @@ Note: you can also trigger this display by mousing down on the routing status te
 Beachte: Du kannst diese Anzeige auch aufrufen, indem Du den Routing-Status in der Statusleiste unten anklickst und gedrückt hältst.</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9433"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9446"/>
         <source>Part &apos;%1&apos; not found in sketch</source>
         <translation>Bauteil &apos;%1&apos; konnte in diesem Entwurf nicht gefunden werden</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9445"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9458"/>
         <source>Add %1 parts</source>
         <translation>%1 Bauteile hinzufügen</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="9507"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="9520"/>
         <source>Deselect all</source>
         <translation>Auswahl zurücksetzen</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="5897"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="5910"/>
         <source>Change %1 label to &apos;%2&apos;</source>
         <translation>Beschriftung von &apos;%1&apos; nach &apos;%2&apos; ändern</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="5809"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="5822"/>
         <source>Double-click to delete this bend point</source>
         <translation>Doppelklicken, um diesen Biegepunkt zu entfernen</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7129"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7142"/>
         <source>Move label &apos;%1&apos;</source>
         <translation>Bezeichnung &apos;%1&apos; verschieben</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7136"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7149"/>
         <source>%1 label &apos;%2&apos;</source>
         <translation>%1 Bezeichnung &apos;%2&apos;</translation>
     </message>
@@ -8755,7 +8488,7 @@ Beachte: Du kannst diese Anzeige auch aufrufen, indem Du den Routing-Status in d
         <translation>Auswahl</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/sketch/sketchwidget.cpp" line="7171"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7184"/>
         <source>show %n part label(s)</source>
         <translation>
             <numerusform>Blende Bauteil-Beschriftung ein</numerusform>
@@ -8763,7 +8496,7 @@ Beachte: Du kannst diese Anzeige auch aufrufen, indem Du den Routing-Status in d
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/sketch/sketchwidget.cpp" line="7174"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7187"/>
         <source>hide %n part label(s)</source>
         <translation>
             <numerusform>Blende Bauteil-Beschriftung aus</numerusform>
@@ -8771,17 +8504,17 @@ Beachte: Du kannst diese Anzeige auch aufrufen, indem Du den Routing-Status in d
         </translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="7188"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="7201"/>
         <source>Resize Note</source>
         <translation>Notizgröße ändern</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="6461"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="6474"/>
         <source>Change %1 width from %2 to %3</source>
         <translation>Breite %1 von %2 nach %3 ändern</translation>
     </message>
     <message>
-        <location filename="../src/sketch/sketchwidget.cpp" line="6467"/>
+        <location filename="../src/sketch/sketchwidget.cpp" line="6480"/>
         <source>Change width of %1 wires to %2</source>
         <translation>Breite von %1 Bahn(en) nach %2 ändern</translation>
     </message>

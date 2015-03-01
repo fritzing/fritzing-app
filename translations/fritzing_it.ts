@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="it_IT" sourcelanguage="en_US">
+<TS version="2.1" language="it_IT" sourcelanguage="en_US">
 <context>
     <name>AboutBox</name>
     <message>
@@ -2666,10 +2666,6 @@ Please check all views for potential side-effects.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>%1 %2 %3</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Shift+Ctrl+D</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3512,27 +3508,35 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Rotate 45° Clockwise</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Rotate 90° Clockwise</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Rotate 180°</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Rotate 90° Counter Clockwise</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Rotate 45° Counter Clockwise</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Ctrl+Shift+V</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>(x,y)=(%1, %2) %3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>(x, y)=(%1, %2)	(width, height)=(%3, %4) %5</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rotate 45� Clockwise</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rotate 90� Clockwise</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rotate 180�</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rotate 90� Counter Clockwise</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rotate 45� Counter Clockwise</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -4744,31 +4748,31 @@ Go ahead and save?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Rotate 45° Clockwise</source>
+        <source>Rotate 45� Clockwise</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Rotate 90° Clockwise</source>
+        <source>Rotate 90� Clockwise</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Rotate 135° Clockwise</source>
+        <source>Rotate 135� Clockwise</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Rotate 180°</source>
+        <source>Rotate 180�</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Rotate 135° Counter Clockwise</source>
+        <source>Rotate 135� Counter Clockwise</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Rotate 90° Counter Clockwise</source>
+        <source>Rotate 90� Counter Clockwise</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Rotate 45° Counter Clockwise</source>
+        <source>Rotate 45� Counter Clockwise</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -5139,26 +5143,6 @@ shift key swaps scroll axis</source>
 </context>
 <context>
     <name>ProgramWindow</name>
-    <message>
-        <source>&amp;File</source>
-        <translation type="obsolete">&amp;File</translation>
-    </message>
-    <message>
-        <source>Ctrl+W</source>
-        <translation type="obsolete">Ctrl+W</translation>
-    </message>
-    <message>
-        <source>&amp;Print...</source>
-        <translation type="obsolete">&amp;Stampa...</translation>
-    </message>
-    <message>
-        <source>&amp;Quit</source>
-        <translation type="obsolete">&amp;Esci</translation>
-    </message>
-    <message>
-        <source>Quit the application</source>
-        <translation type="obsolete">Esci dall&apos;applicazione</translation>
-    </message>
     <message>
         <source>&amp;Edit</source>
         <translation type="unfinished">&amp;Modifica</translation>

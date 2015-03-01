@@ -4344,12 +4344,12 @@ Notificare:dacă doriți să actualizați mai târziu, sunt opțiuni sub meniul 
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2794"/>
         <source>Choose Ground Fill Seed(s)...</source>
-        <translation>Alegeți umplere plan(uri) de masă...</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2798"/>
         <source>Set Ground Fill Seed</source>
-        <translation>Configurați umplerea planului de masă</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2799"/>
@@ -4359,12 +4359,12 @@ Notificare:dacă doriți să actualizați mai târziu, sunt opțiuni sub meniul 
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2803"/>
         <source>Clear Ground Fill Seeds</source>
-        <translation>Curăță umplerea planurilor de masă</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2804"/>
         <source>Clear ground fill seeds--enable copper fill only.</source>
-        <translation>Curăță umplerea planurilor de masă--activează doar umplerea cu cupru.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2815"/>
@@ -7028,8 +7028,7 @@ tasta shift schimbată derulare axială</translation>
     <message>
         <location filename="../src/partsbinpalette/partsbinview.cpp" line="54"/>
         <source>Shields</source>
-        <translatorcomment>Module de extensie Arduino</translatorcomment>
-        <translation>Plăci de extensie</translation>
+        <translation type="unfinished">Plăci de extensie</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/partsbinview.cpp" line="55"/>
@@ -7714,12 +7713,12 @@ Fritzing continuă să funcționeze, dar nu veți putea să modificați propriet
     <message>
         <location filename="../src/commands.cpp" line="2060"/>
         <source>Set Ground Fill Seed</source>
-        <translation>Configurați umplerea planului de masă</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/dialogs/groundfillseeddialog.cpp" line="46"/>
         <source>Ground Fill Seed Editor</source>
-        <translation>Editor umplere plan de masă</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/autoroute/panelizer.cpp" line="1380"/>
@@ -8825,7 +8824,7 @@ Notificare: puteți deasemenea să declanșați acest afișaj prin trecerea maus
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="134"/>
         <source>Use shift-drag on a wire end or bendpoint to constrain its wire segment to an angle of 45 degrees (or some multiple of 45 degrees).  If the wire segment is connected to other wire segments, the segment you&apos;re dragging will snap to make 90 degree angles with the neighboring wire segment.</source>
-        <translation>Utilizați tasta shift și trageți pe un fir sau bendpoint pentru a constrânge segmentul său de firla un unghi de 45 de grade (sau multiplu de 45 de grade).  Dacă segmentul de fir este conectat la alte segmente de fir, segmentul pe care îl trageți va sări pentru a face unghiuri de 90 de grade cu segmentul de fir învecinat.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="138"/>
@@ -8910,12 +8909,12 @@ Notificare: puteți deasemenea să declanșați acest afișaj prin trecerea maus
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="105"/>
         <source>In Breadboard or PCB view, to add a curve to a wire or bendable leg, drag with the Control (Mac: Command) key down.  You can set whether curvy wires are the default in Preferences.</source>
-        <translation>În vizualizare PCB sau Placă testare, pentru a adăuga o curbăunui fir sau picior flexibil, trageți cu tasta Ctrl apăsată (Mac: Command).  Puteți configura dacă curbarea fișierelor este implicită în preferințe.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="155"/>
         <source>Always lead a trace straight out of a pin. This helps to prevent short circuits.</source>
-        <translation>Întotdeauna duceți un traseu drept dintr-un pin. Aceasta ajută la prevenirea scurtcircuitelor.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="156"/>
@@ -8935,7 +8934,7 @@ Notificare: puteți deasemenea să declanșați acest afișaj prin trecerea maus
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="159"/>
         <source>If Fritzing is missing your special part and you don&apos;t want to build one by yourself, then use pinheaders as connectors and the grid to align them.</source>
-        <translation>Dacă vă lipsește din Fritzing componenta specială și nu doriți să o creați, atunci utilizați conectorii PTH drept conectori și grila pentru aliniere.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="160"/>

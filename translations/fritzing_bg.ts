@@ -1010,7 +1010,7 @@ Use the file?</source>
     <message>
         <location filename="../src/program/consolewindow.ui" line="126"/>
         <source>&amp;Quit</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Изход</translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.ui" line="129"/>

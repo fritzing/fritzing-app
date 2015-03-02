@@ -462,15 +462,15 @@ QWidget * WelcomeView::initShop() {
     QVBoxLayout * frameLayout = new QVBoxLayout;
     zeroMargin(frameLayout);
 
-    QWidget * headerFrame = createHeaderFrame(tr("Fab"), "Fab", tr("Shop"), "Shop", m_inactiveHeaderLabelColor,  m_activeHeaderLabelColor, m_fabLabel, m_shopLabel);
+    QWidget * headerFrame = createHeaderFrame( tr("Shop"), "Shop", tr("Fab"), "Fab", m_inactiveHeaderLabelColor,  m_activeHeaderLabelColor, m_shopLabel, m_fabLabel);
     frameLayout->addWidget(headerFrame);
 
-    m_shopUberFrame = createShopContentFrame(":/resources/images/welcome_kit.png", 
+    m_shopUberFrame = createShopContentFrame(":/resources/images/welcome_kit.png",
                                                 tr("Fritzing CreatorKit"), 
-                                                tr("The Fritzing Creator Kit provides a fast, easy and entertaining introduction to the world of interactive electronics."),
+                                                tr("The Fritzing Creator Kit is out of Stock. For Updates please visit the fritzing.blog"),
                                                 "http://creatorkit.fritzing.org/",
-                                                tr("order now >>"),
-                                                tr("Get your Creator Kit now."),
+                                                tr(""),
+                                                tr(""),
                                                 ":/resources/images/icons/WS-shopLogo.png",
                                                 "#f5a400"
                                                 );
@@ -489,7 +489,7 @@ QWidget * WelcomeView::initShop() {
 
     frame->setLayout(frameLayout);
 
-    clickBlog("shop");
+    clickBlog("fab");
 
     return frame;
 }

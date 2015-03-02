@@ -55,8 +55,8 @@
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="134"/>
-        <source>Jenny Chowdhury, Lionel Michel, Jannis Leidel, </source>
-        <translation></translation>
+        <source>Jenny Chowdhury, Lionel Michel, Fabian Althaus, Jannis Leidel, </source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="135"/>
@@ -585,12 +585,12 @@ Ein eigenes Platinen-SVG hat üblicherweise eine oder zwei Siebdruckebenen (&quo
     <message>
         <location filename="../src/items/resizableboard.cpp" line="129"/>
         <source>one layer (single-sided)</source>
-        <translation>Eine Ebene (einseitig)</translation>
+        <translation>eine Ebene (einseitig)</translation>
     </message>
     <message>
         <location filename="../src/items/resizableboard.cpp" line="132"/>
         <source>two layers (double-sided)</source>
-        <translation>Zwei Ebenen (zweiseitig)</translation>
+        <translation>zwei Ebenen (zweiseitig)</translation>
     </message>
     <message>
         <location filename="../src/items/resizableboard.cpp" line="214"/>
@@ -801,67 +801,67 @@ Trotzdem diese Datei benutzen?</translation>
     <message>
         <location filename="../src/program/consolesettings.ui" line="20"/>
         <source>Select Parameters</source>
-        <translation>Parameter</translation>
+        <translation>Parameter auswählen</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.ui" line="26"/>
         <source>BaudRate:</source>
-        <translation>Baud-Rate</translation>
+        <translation>Baudrate:</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.ui" line="36"/>
         <source>Data bits:</source>
-        <translation>Daten-Bits</translation>
+        <translation>Datenbits:</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.ui" line="46"/>
         <source>Parity:</source>
-        <translation>Parity</translation>
+        <translation>Parität:</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.ui" line="56"/>
         <source>Stop bits:</source>
-        <translation>Stop-Bits</translation>
+        <translation>Stoppbits:</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.ui" line="66"/>
         <source>Flow control:</source>
-        <translation>Flusskontrolle</translation>
+        <translation>Flusskontrolle:</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.ui" line="79"/>
         <source>Select Serial Port</source>
-        <translation>Serieller Port</translation>
+        <translation>Seriellen Port auswählen</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.ui" line="88"/>
         <source>Description:</source>
-        <translation>Beschreibung</translation>
+        <translation>Beschreibung:</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.ui" line="95"/>
         <source>Manufacturer:</source>
-        <translation>Hersteller</translation>
+        <translation>Hersteller:</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.ui" line="102"/>
         <source>Serial number:</source>
-        <translation>Seriennr.</translation>
+        <translation>Seriennummer:</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.ui" line="109"/>
         <source>Location:</source>
-        <translation>Pfad</translation>
+        <translation>Pfad:</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.ui" line="116"/>
         <source>Vendor ID:</source>
-        <translation>Anbieter-ID</translation>
+        <translation>Anbieterkennung:</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.ui" line="123"/>
         <source>Product ID:</source>
-        <translation>Produkt-ID</translation>
+        <translation>Produktkennung:</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.ui" line="148"/>
@@ -901,12 +901,12 @@ Trotzdem diese Datei benutzen?</translation>
     <message>
         <location filename="../src/program/consolesettings.cpp" line="93"/>
         <source>Vendor Identifier: %1</source>
-        <translation>Anbieter-ID: %1</translation>
+        <translation>Anbieterbezeichner: %1</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.cpp" line="94"/>
         <source>Product Identifier: %1</source>
-        <translation>Produkt-ID: %1</translation>
+        <translation>Produktbezeichner: %1</translation>
     </message>
 </context>
 <context>
@@ -1062,7 +1062,7 @@ Trotzdem diese Datei benutzen?</translation>
     <message>
         <location filename="../src/autoroute/drc.cpp" line="272"/>
         <source>Your sketch is ready for production: there are no connectors or traces that overlap or are too close together.</source>
-        <translation>Dein Entwurf ist bereit für die Produktion! Es konnten keine Leiterbahnen oder Bauteile gefunden werden, die zu nah sind oder sich überlappen.</translation>
+        <translation>Dein Entwurf ist bereit für die Produktion! Es konnten keine Verbinder oder Leiterbahnen gefunden werden, die zu nah sind oder sich überlappen.</translation>
     </message>
     <message>
         <location filename="../src/autoroute/drc.cpp" line="275"/>
@@ -1974,7 +1974,7 @@ Klicke auf ein Element, um seine Verbindungen im Entwurf hervorzuheben.
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1968"/>
         <source>No connections to route</source>
-        <translation>Keine Verbindungen zu routen</translation>
+        <translation>Keine Verbindungen zum Routen</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1971"/>
@@ -1984,7 +1984,7 @@ Klicke auf ein Element, um seine Verbindungen im Entwurf hervorzuheben.
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="2733"/>
         <source>Unrouted connections</source>
-        <translation>Noch nicht geroutete Verbindungen</translation>
+        <translation>Ungeroutete Verbindungen</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="2734"/>
@@ -3002,7 +3002,7 @@ Klicke auf ein Element, um seine Verbindungen im Entwurf hervorzuheben.
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2808"/>
         <source>Set the minimum distance between ground fill and traces or connectors</source>
-        <translation>Minimaler Abstand zwischen Massefüllung und benachbarten Leiterbahnen und Anschlüssen</translation>
+        <translation>Minimaler Abstand zwischen Massefüllung und benachbarten Leiterbahnen und Verbindern</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2813"/>
@@ -3137,7 +3137,7 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3881"/>
         <source>This may result in changes to your sketch, as parts or connectors may be shifted. </source>
-        <translation type="unfinished"></translation>
+        <translation>Dies kann zu Änderungen am Entwurf führen, Bauteile oder Verbinder können verschoben sein. </translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3946"/>
@@ -3601,7 +3601,7 @@ Zurücksetzen?</translation>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2743"/>
         <source>Highlight all unrouted connectors</source>
-        <translation>Alle nicht gerouteten Verbindungen hervorheben</translation>
+        <translation>Alle nicht gerouteten Verbinder hervorheben</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2750"/>
@@ -4014,7 +4014,7 @@ Möchtest Du &apos;%1&apos; in das neue .fzz-Format umwandel, oder sie nur im Le
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1199"/>
         <source>Show the code (programming) view</source>
-        <translation>Zeige den Programmcode an</translation>
+        <translation>(Programmier-)Code-Ansicht anzeigen</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1229"/>
@@ -4318,8 +4318,8 @@ Möchtest Du &apos;%1&apos; in das neue .fzz-Format umwandel, oder sie nur im Le
         <location filename="../src/mainwindow/mainwindow.cpp" line="1977"/>
         <source>%1 of %2 nets routed - %n connector(s) still to be routed</source>
         <translation>
-            <numerusform>%1 von %2 Netzen geroutet - %n Verbindung noch zu routen</numerusform>
-            <numerusform>%1 von %2 Netzen geroutet - %n Verbindungen noch zu routen</numerusform>
+            <numerusform>%1 von %2 Netzen geroutet - %n Verbinder noch zu routen</numerusform>
+            <numerusform>%1 von %2 Netzen geroutet - %n Verbinder noch zu routen</numerusform>
         </translation>
     </message>
     <message>
@@ -4627,7 +4627,7 @@ Ursache: %2 (Fehlercode %3)</translation>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="340"/>
         <source>Click this connector to drag out a new trace.</source>
-        <translation>Diese Verbindung anklicken und ziehen, um eine neue Leiterbahn zu erzeugen.</translation>
+        <translation type="unfinished">Diesen Verbinder anklicken und ziehen, um eine neue Leiterbahn zu erzeugen.</translation>
     </message>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="1081"/>
@@ -4788,7 +4788,7 @@ Ursache: %2 (Fehlercode %3)</translation>
         <source>Keepout is in mils (.001 inches).
 
 </source>
-        <translation>Abstand in mils (0.001 Zoll).
+        <translation>Abstand in tausendstel Zoll (0.001 Zoll).
 
 </translation>
     </message>
@@ -4796,7 +4796,8 @@ Ursache: %2 (Fehlercode %3)</translation>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="2846"/>
         <source>Note that due to aliasing, distances may be too short by up to 2 mils
 </source>
-        <translation>Beachte dass durch die Kantenglättung der Abstand um ca. 2 mils kleiner werden kann,</translation>
+        <translation>Beachten Sie, dass durch die Kantenglättung der Abstand um ca. 2 tausendstel Zoll kleiner werden kann
+</translation>
     </message>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="2847"/>
@@ -4810,7 +4811,9 @@ Ursache: %2 (Fehlercode %3)</translation>
         <source>10 mils is a good default choice.
 
 </source>
-        <translation>10 mils sind ein guter Standardwert.</translation>
+        <translation>10 tausendstel Zoll sind ein guter Standardwert.
+
+</translation>
     </message>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="2849"/>
@@ -4828,7 +4831,7 @@ Ursache: %2 (Fehlercode %3)</translation>
     <message>
         <location filename="../src/partseditor/peconnectorsview.cpp" line="65"/>
         <source>number of connectors:</source>
-        <translation>Anzahl der Verbindungen:</translation>
+        <translation>Anzahl der Verbinder:</translation>
     </message>
     <message>
         <location filename="../src/partseditor/peconnectorsview.cpp" line="114"/>
@@ -4911,7 +4914,7 @@ Ursache: %2 (Fehlercode %3)</translation>
         <location filename="../src/partseditor/pemainwindow.cpp" line="495"/>
         <location filename="../src/partseditor/pemainwindow.cpp" line="535"/>
         <source>Connectors</source>
-        <translation>Verbindungen</translation>
+        <translation>Verbinder</translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="585"/>
@@ -4982,7 +4985,7 @@ Ursache: %2 (Fehlercode %3)</translation>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="1016"/>
         <source>Show Connectors</source>
-        <translation>Verbindungen anzeigen</translation>
+        <translation>Verbinder anzeigen</translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="1017"/>
@@ -5847,7 +5850,7 @@ Fortsetzen und speichern?</translation>
     <message>
         <location filename="../src/items/paletteitem.cpp" line="614"/>
         <source>Unable to proceed; part connectors do no have standard IDs.</source>
-        <translation>Fortfahren nicht möglich; Bauteilverbindungen haben keine Standardkennungen.</translation>
+        <translation>Fortfahren nicht möglich; Bauteilverbinder haben keine Standardkennungen.</translation>
     </message>
     <message>
         <location filename="../src/items/paletteitem.cpp" line="638"/>
@@ -6516,7 +6519,7 @@ Mausrad + Alt + Umschalt-Taste = horizontaler Bildlauf</translation>
     <message>
         <location filename="../src/program/programtab.cpp" line="735"/>
         <source>No uploader for %1 specified. Go to Preferences &gt; Code View to configure it.</source>
-        <translation>Es wurde noch kein Programmierer für %1 angegeben. Gehe zu Einstellungen &gt; Code-Ansicht, um diesen zu konfigurieren.</translation>
+        <translation>Es wurde noch kein Programmierer für %1 angegeben. Gehen Sie zu Einstellungen &gt; Code-Ansicht, um diesen zu konfigurieren.</translation>
     </message>
     <message>
         <location filename="../src/program/programtab.cpp" line="739"/>
@@ -6531,7 +6534,7 @@ Mausrad + Alt + Umschalt-Taste = horizontaler Bildlauf</translation>
     <message>
         <location filename="../src/program/programtab.cpp" line="766"/>
         <source>Upload failed with exit code %1, %2</source>
-        <translation>Hochladen fehlgeschlagen. (Fehler-Code %1, %2)</translation>
+        <translation>Hochladen fehlgeschlagen mit Fehlercode %1, %2</translation>
     </message>
 </context>
 <context>
@@ -6619,7 +6622,7 @@ Mausrad + Alt + Umschalt-Taste = horizontaler Bildlauf</translation>
     <message>
         <location filename="../src/program/programwindow.cpp" line="242"/>
         <source>Create a new program tab</source>
-        <translation>Öffne ein neues Code-Tab.</translation>
+        <translation>Neues Code-Tab erstellen</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="246"/>
@@ -6863,12 +6866,12 @@ Mausrad + Alt + Umschalt-Taste = horizontaler Bildlauf</translation>
     <message>
         <location filename="../src/autoroute/mazerouter/mazerouter.cpp" line="664"/>
         <source>No connections (on the PCB) to route.</source>
-        <translation>Keine Verbindungen (auf der Leiterplatte) zu routen.</translation>
+        <translation>Keine Verbindungen (auf der Leiterplatte) zum Routen.</translation>
     </message>
     <message>
         <location filename="../src/autoroute/mazerouter/mazerouter.cpp" line="664"/>
         <source>No connections to route.</source>
-        <translation>Keine Verbindungen zu routen.</translation>
+        <translation>Keine Verbindungen zum Routen.</translation>
     </message>
     <message>
         <location filename="../src/viewlayer.cpp" line="183"/>
@@ -7757,12 +7760,12 @@ im Sortiment. Nicht erneut hinzufügen?</translation>
     <message>
         <location filename="../src/autoroute/autoroutersettingsdialog.cpp" line="70"/>
         <source>Autorouter Settings</source>
-        <translation>Autoruter-Einstellungen</translation>
+        <translation>Autorouter-Einstellungen</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.cpp" line="149"/>
         <source>N/A</source>
-        <translation type="unfinished"></translation>
+        <translation>N/V</translation>
     </message>
 </context>
 <context>
@@ -8136,12 +8139,12 @@ im Sortiment. Nicht erneut hinzufügen?</translation>
     <message>
         <location filename="../src/dialogs/setcolordialog.cpp" line="52"/>
         <source>%1 Color...</source>
-        <translation type="unfinished">%1-Farbe...</translation>
+        <translation>%1-Farbe...</translation>
     </message>
     <message>
         <location filename="../src/dialogs/setcolordialog.cpp" line="56"/>
         <source>Choose %1 color:</source>
-        <translation type="unfinished">%1-Farbe wählen: </translation>
+        <translation>%1-Farbe auswählen:</translation>
     </message>
     <message>
         <location filename="../src/dialogs/setcolordialog.cpp" line="69"/>
@@ -8176,7 +8179,7 @@ im Sortiment. Nicht erneut hinzufügen?</translation>
     <message>
         <location filename="../src/dialogs/setcolordialog.cpp" line="132"/>
         <source>Pick custom %1 color</source>
-        <translation>Eigene Farbe wählen</translation>
+        <translation>Eigene %1 -Farbe auswählen</translation>
     </message>
     <message>
         <location filename="../src/dialogs/setcolordialog.cpp" line="151"/>
@@ -8384,7 +8387,7 @@ im Sortiment. Nicht erneut hinzufügen?</translation>
     <message>
         <location filename="../src/sketch/sketchwidget.cpp" line="7597"/>
         <source>Change Resistance from %1 to %2</source>
-        <translation>Wert des Widerstands von %1 nacg %2 ändern</translation>
+        <translation>Wert des Widerstands von %1 nach %2 ändern</translation>
     </message>
     <message>
         <location filename="../src/sketch/sketchwidget.cpp" line="7621"/>
@@ -8436,7 +8439,7 @@ im Sortiment. Nicht erneut hinzufügen?</translation>
     <message>
         <location filename="../src/sketch/sketchwidget.cpp" line="9398"/>
         <source>Unrouted connections</source>
-        <translation>Noch nicht geroutete Verbindungen</translation>
+        <translation>Ungeroutete Verbindungen</translation>
     </message>
     <message>
         <location filename="../src/sketch/sketchwidget.cpp" line="9399"/>
@@ -9412,7 +9415,7 @@ Beachte: Du kannst diese Anzeige auch aufrufen, indem Du den Routing-Status in d
     <message>
         <location filename="../src/items/wire.cpp" line="1604"/>
         <source>Banded</source>
-        <translation>gestreift</translation>
+        <translation>Gestreift</translation>
     </message>
 </context>
 <context>

@@ -40,10 +40,6 @@
         <translation>Mariano Crowe, Johannes Landstorfer, </translation>
     </message>
     <message>
-        <source>Jenny Chowdhury, Lionel Michel, Jannis Leidel, </source>
-        <translation>Jenny Chowdhury, Lionel Michel, Jannis Leidel, </translation>
-    </message>
-    <message>
         <source>Bryant Mairs, Uleshka Asher, and Daniel Tzschentke. </source>
         <translation>Bryant Mairs, Uleshka Asher, and Daniel Tzschentke. </translation>
     </message>
@@ -177,6 +173,10 @@
     </message>
     <message>
         <source>Version %1.%2.%3 &lt;small&gt;(%4%5 %6) %7 [Qt %8]&lt;/small&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Jenny Chowdhury, Lionel Michel, Fabian Althaus, Jannis Leidel, </source>
         <translation type="unfinished"></translation>
     </message>
 </context>

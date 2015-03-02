@@ -40,10 +40,6 @@
         <translation> à Vladimir Savinov pour la traduction en russe,</translation>
     </message>
     <message>
-        <source>Jenny Chowdhury, Lionel Michel, Jannis Leidel, </source>
-        <translation> Jenny Chowdhury, Lionel Michel, Jannis Leidel,</translation>
-    </message>
-    <message>
         <source>Michaela Vieser and Julia Werner.</source>
         <translation> Michaela Vieser et Julia Werner.</translation>
     </message>
@@ -177,6 +173,10 @@
     </message>
     <message>
         <source>&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Jenny Chowdhury, Lionel Michel, Fabian Althaus, Jannis Leidel, </source>
         <translation type="unfinished"></translation>
     </message>
 </context>

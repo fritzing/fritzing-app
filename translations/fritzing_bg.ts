@@ -55,8 +55,8 @@
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="134"/>
-        <source>Jenny Chowdhury, Lionel Michel, Jannis Leidel, </source>
-        <translation></translation>
+        <source>Jenny Chowdhury, Lionel Michel, Fabian Althaus, Jannis Leidel, </source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="135"/>

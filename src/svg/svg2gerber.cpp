@@ -100,7 +100,7 @@ int SVG2gerber::renderGerber(bool doubleSided, const QString & mainLayerName, Fo
 
         // NOTE: this currently forces a 1 mil grid
         // format coordinates to drop leading zeros with 2,3 digits
-        m_gerber_header += "%FSLAX23Y23*%\n";
+        m_gerber_header += "%FSLAX26Y26*%\n";
 
         // set units to inches
         m_gerber_header += "%MOIN*%\n";
@@ -843,12 +843,12 @@ void SVG2gerber::path2gerbCommandSlot(QChar command, bool relative, QList<double
 
 int SVG2gerber::flipx(double x)
 {
-    return qRound(x);
+    return qRound(x * 1000);
 }
 
 int SVG2gerber::flipy(double y)
 {
-    return qRound(m_boardSize.height() - y);
+    return qRound((m_boardSize.height() - y) * 1000);
 }
 
 double SVG2gerber::flipxNoRound(double x)

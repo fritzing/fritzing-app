@@ -306,6 +306,14 @@ QImage * GroundPlaneGenerator::generateGroundPlaneAux(GPGParams & params, double
 		return nullptr;
 	}
 
+	QDomDocument boardDoc;
+	QString errorStr;
+	int errorLine;
+	int errorColumn;
+	boardDoc.setContent(boardByteArray, &errorStr, &errorLine, &errorColumn);
+	QDomElement boardRoot = boardDoc.documentElement();
+	SvgFileSplitter::forceStrokeWidth(boardRoot, 2 * params.keepoutMils, "#000000", true, false);
+	boardByteArray = boardDoc.toByteArray(0);
 
 	//QFile file0("testGroundFillBoard.svg");
 	//file0.open(QIODevice::WriteOnly);
@@ -321,9 +329,6 @@ QImage * GroundPlaneGenerator::generateGroundPlaneAux(GPGParams & params, double
 	}
 	*/
 
-	QString errorStr;
-	int errorLine;
-	int errorColumn;
 	QDomDocument doc;
 	doc.setContent(params.svg, &errorStr, &errorLine, &errorColumn);
 	QDomElement root = doc.documentElement();
@@ -361,7 +366,6 @@ QImage * GroundPlaneGenerator::generateGroundPlaneAux(GPGParams & params, double
 	image->save(FolderUtils::getTopLevelUserDataStorePath() + "/testGroundFillBoard.png");
 #endif
 
-	DRC::extendBorder(BORDERINCHES * params.res, image);
 	GraphicsUtils::drawBorder(image, BORDERINCHES * params.res);
 
 	QImage boardImage = image->copy();

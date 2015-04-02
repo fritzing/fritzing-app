@@ -1246,9 +1246,21 @@ void SvgFileSplitter::forceStrokeWidth(QDomElement & element, double delta, cons
 	double sw = element.attribute("stroke-width").toDouble(&ok);
 	if (!ok) sw = 0;
 
-	element.setAttribute("stroke-width", QString::number(qMax(0, sw + delta)));
+	double newStroke = qMax(0, sw + delta);
+	element.setAttribute("stroke-width", QString::number(newStroke));
+	element.setAttribute("stroke-linejoin", "round");
+	element.setAttribute("stroke-linecap", "round");
 	element.setAttribute("stroke", stroke);
 	if (fill) element.setAttribute("fill", stroke);
+	if (element.tagName() == "circle") {
+		double radius = element.attribute("r").toDouble(&ok);
+		if (!ok) radius = 0;
+		if (newStroke >= radius * 2) {
+			element.setAttribute("r", QString::number(radius + (delta + sw) / 2));
+			element.setAttribute("stroke-width", "none");
+			element.setAttribute("fill", stroke);
+		}
+	}
 
 	if (recurse) {
 		QDomElement child = element.firstChildElement();

@@ -295,37 +295,20 @@ QImage * GroundPlaneGenerator::generateGroundPlaneAux(GPGParams & params, double
     if (!SvgFileSplitter::changeColors(params.boardSvg, tempColor, params.exceptions, boardByteArray)) {
 		return NULL;
 	}
+    QDomDocument boardDoc;
+    QString errorStr;
+    int errorLine;
+    int errorColumn;
+    boardDoc.setContent(boardByteArray, &errorStr, &errorLine, &errorColumn);
+    QDomElement boardRoot = boardDoc.documentElement();
+    SvgFileSplitter::forceStrokeWidth(boardRoot, 2 * params.keepoutMils, "#000000", true, false);
+	boardByteArray = boardDoc.toByteArray(0);
 
-	
-	//QFile file0("testGroundFillBoard.svg");
-	//file0.open(QIODevice::WriteOnly);
-	//QTextStream out0(&file0);
-	//out0 << boardByteArray;
-	//file0.close();
-	
-
-    /*
-    QByteArray copperByteArray;
-    if (!SvgFileSplitter::changeStrokeWidth(params.svg, m_strokeWidthIncrement, false, true, copperByteArray)) {
-		return NULL;
-	}
-    */
-
-	QString errorStr;
-	int errorLine;
-	int errorColumn;
     QDomDocument doc;
     doc.setContent(params.svg, &errorStr, &errorLine, &errorColumn);
     QDomElement root = doc.documentElement();
     SvgFileSplitter::forceStrokeWidth(root, 2 * params.keepoutMils, "#000000", true, true);
     QByteArray copperByteArray = doc.toByteArray(0);
-	
-	//QFile file1("testGroundFillCopper.svg");
-	//file1.open(QIODevice::WriteOnly);
-	//QTextStream out1(&file1);
-	//out1 << copperByteArray;
-	//file1.close();
-	
 
 	double svgWidth = params.res * qMax(params.boardImageSize.width(), params.copperImageSize.width()) / GraphicsUtils::SVGDPI;
 	double svgHeight = params.res * qMax(params.boardImageSize.height(), params.copperImageSize.height()) / GraphicsUtils::SVGDPI;
@@ -351,36 +334,9 @@ QImage * GroundPlaneGenerator::generateGroundPlaneAux(GPGParams & params, double
 	image->save(FolderUtils::getUserDataStorePath("") + "/testGroundFillBoard.png");
 #endif
 
-    DRC::extendBorder(BORDERINCHES * params.res, image);
     GraphicsUtils::drawBorder(image, BORDERINCHES * params.res);
 
     QImage boardImage = image->copy();
-
-    /*
-	for (double m = 0; m < BORDERINCHES; m += (1.0 / params.res)) {   // 1 mm
-		QList<QPoint> points;
-		collectBorderPoints(*image, points);
-
-#ifndef QT_NO_DEBUG
-
-		// for debugging
-		//double pixelFactor = GraphicsUtils::StandardFritzingDPI / res;
-		//QPolygon polygon;
-		//foreach(QPoint p, points) {
-		//	polygon.append(QPoint(p.x() * pixelFactor, p.y() * pixelFactor));
-		//}
-
-		//QList<QPolygon> polygons;
-		//polygons.append(polygon);
-		//QPointF offset;
-		//this
-		//QString pSvg = makePolySvg(polygons, res, bWidth, bHeight, pixelFactor, "#ffffff", false,  NULL, QSizeF(0,0), 0, QPointF(0, 0));
-		
-#endif
-
-		foreach (QPoint p, points) image->setPixel(p, 0);
-	}
-    */
 
 #ifndef QT_NO_DEBUG
 	image->save(FolderUtils::getUserDataStorePath("") + "/testGroundFillBoardBorder.png");
@@ -393,13 +349,12 @@ QImage * GroundPlaneGenerator::generateGroundPlaneAux(GPGParams & params, double
 	DebugDialog::debug("copperbounds", bounds);
 	renderer2.render(&painter, bounds);
 	painter.end();
-
+    
 #ifndef QT_NO_DEBUG
 	image->save(FolderUtils::getUserDataStorePath("") + "/testGroundFillCopper.png");
 #endif
 
-	emit postImageSignal(this, image, &boardImage, params.board, &rects);	
-
+	emit postImageSignal(this, image, &boardImage, params.board, &rects);
 	return image;
 }
 

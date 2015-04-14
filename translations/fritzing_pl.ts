@@ -1876,7 +1876,7 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
         <location filename="../src/mainwindow/mainwindow.cpp" line="1024"/>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="931"/>
         <source>Add a note</source>
-        <translation type="unfinished"></translation>
+        <translation>Dodaj notatke</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1119"/>
@@ -1887,7 +1887,7 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1309"/>
         <source>Save %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Zapisz %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1415"/>
@@ -2164,7 +2164,7 @@ We&apos;re working to avoid this message, and only let you choose between proper
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="2411"/>
         <source>Loading...</source>
-        <translation type="unfinished"></translation>
+        <translation>Wczytuję...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="2417"/>
@@ -2204,7 +2204,7 @@ We&apos;re working to avoid this message, and only let you choose between proper
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="3129"/>
         <source>Welcome</source>
-        <translation type="unfinished"></translation>
+        <translation>Witamy</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1646"/>
@@ -2277,7 +2277,7 @@ We&apos;re working to avoid this message, and only let you choose between proper
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="320"/>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4046"/>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="355"/>
@@ -2366,7 +2366,7 @@ We&apos;re working to avoid this message, and only let you choose between proper
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="635"/>
         <source>New</source>
-        <translation type="unfinished"></translation>
+        <translation>Nowy</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="636"/>
@@ -2381,7 +2381,7 @@ We&apos;re working to avoid this message, and only let you choose between proper
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="640"/>
         <source>&amp;Open...</source>
-        <translation type="unfinished"></translation>
+        <translation>Otwórz</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="641"/>
@@ -2407,7 +2407,7 @@ We&apos;re working to avoid this message, and only let you choose between proper
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="954"/>
         <source>&amp;Save As...</source>
-        <translation type="unfinished"></translation>
+        <translation>Zapisz jako...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="955"/>
@@ -2567,7 +2567,7 @@ We&apos;re working to avoid this message, and only let you choose between proper
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1030"/>
         <source>&amp;Print...</source>
-        <translation type="unfinished"></translation>
+        <translation>Drukuj</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1031"/>
@@ -2577,7 +2577,7 @@ We&apos;re working to avoid this message, and only let you choose between proper
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1032"/>
         <source>Print the current view</source>
-        <translation type="unfinished"></translation>
+        <translation>Drukuj aktualne okno</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="660"/>
@@ -2597,7 +2597,7 @@ We&apos;re working to avoid this message, and only let you choose between proper
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="670"/>
         <source>&amp;Quit</source>
-        <translation type="unfinished"></translation>
+        <translation>Wyjdź</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="671"/>
@@ -2612,7 +2612,7 @@ We&apos;re working to avoid this message, and only let you choose between proper
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="679"/>
         <source>&amp;Open Example</source>
-        <translation type="unfinished"></translation>
+        <translation>Otwórz przykad</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="707"/>
@@ -2627,7 +2627,7 @@ We&apos;re working to avoid this message, and only let you choose between proper
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="811"/>
         <source>&amp;Open Recent Files</source>
-        <translation type="unfinished"></translation>
+        <translation>Otwórz ostatnio urzywane</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="845"/>
@@ -2638,7 +2638,7 @@ We&apos;re working to avoid this message, and only let you choose between proper
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="864"/>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="866"/>
         <source>Undo</source>
-        <translation type="unfinished"></translation>
+        <translation>Cofnij</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="868"/>
@@ -2649,17 +2649,17 @@ We&apos;re working to avoid this message, and only let you choose between proper
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="872"/>
         <source>&amp;Cut</source>
-        <translation type="unfinished"></translation>
+        <translation>Wytnij</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="874"/>
         <source>Cut selection</source>
-        <translation type="unfinished"></translation>
+        <translation>Wytnij zaznaczone</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="877"/>
         <source>&amp;Copy</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopiuj</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="879"/>
@@ -2669,7 +2669,7 @@ We&apos;re working to avoid this message, and only let you choose between proper
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="882"/>
         <source>&amp;Paste</source>
-        <translation type="unfinished"></translation>
+        <translation>Wklej</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="884"/>
@@ -2704,7 +2704,7 @@ We&apos;re working to avoid this message, and only let you choose between proper
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="897"/>
         <source>&amp;Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Skasuj</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="898"/>
@@ -2714,7 +2714,7 @@ We&apos;re working to avoid this message, and only let you choose between proper
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="921"/>
         <source>&amp;Select All</source>
-        <translation type="unfinished"></translation>
+        <translation>Zaznacz wszystko</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="923"/>
@@ -2724,12 +2724,12 @@ We&apos;re working to avoid this message, and only let you choose between proper
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="926"/>
         <source>&amp;Deselect</source>
-        <translation type="unfinished"></translation>
+        <translation>Odznacz</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="927"/>
         <source>Deselect</source>
-        <translation type="unfinished"></translation>
+        <translation>Odznacz</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="930"/>
@@ -2740,7 +2740,7 @@ We&apos;re working to avoid this message, and only let you choose between proper
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="934"/>
         <source>&amp;Preferences...</source>
-        <translation type="unfinished"></translation>
+        <translation>Ustawienia</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="935"/>
@@ -3261,7 +3261,7 @@ Would you like to convert &apos;%1&apos; to the .fzz format now or open it read-
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1140"/>
         <source>&amp;Actual Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktualny tozmiar</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1141"/>
@@ -3757,7 +3757,7 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4517"/>
         <source>Search</source>
-        <translation type="unfinished"></translation>
+        <translation>Szukaj</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4517"/>
@@ -3898,7 +3898,7 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1229"/>
         <source>&amp;Minimize</source>
-        <translation type="unfinished"></translation>
+        <translation>Zmniejsz</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1230"/>
@@ -3918,7 +3918,7 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1249"/>
         <source>Online Tutorials</source>
-        <translation type="unfinished"></translation>
+        <translation>Kurs online</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1250"/>
@@ -3978,7 +3978,7 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1274"/>
         <source>&amp;About</source>
-        <translation type="unfinished"></translation>
+        <translation>O Fritzing...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1279"/>
@@ -3993,7 +3993,7 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1287"/>
         <source>&amp;About Qt</source>
-        <translation type="unfinished"></translation>
+        <translation>O QT...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1288"/>
@@ -4029,7 +4029,7 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1367"/>
         <source>&amp;File</source>
-        <translation type="unfinished">Plik</translation>
+        <translation>Plik</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1385"/>
@@ -4039,7 +4039,7 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1417"/>
         <source>as Image</source>
-        <translation type="unfinished"></translation>
+        <translation>jako obraz</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1427"/>
@@ -4049,7 +4049,7 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1460"/>
         <source>&amp;Part</source>
-        <translation type="unfinished">Element</translation>
+        <translation>Element</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1334"/>
@@ -4212,12 +4212,12 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2082"/>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Skasuj</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2469"/>
         <source>Page Setup</source>
-        <translation type="unfinished"></translation>
+        <translation>Ustawienia strony</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2474"/>
@@ -4446,7 +4446,7 @@ Please check all views for potential side-effects.</source>
     <message>
         <location filename="../src/mainwindow/mainwindow_dock.cpp" line="73"/>
         <source>Layers</source>
-        <translation type="unfinished"></translation>
+        <translation>Warstwy</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_dock.cpp" line="201"/>

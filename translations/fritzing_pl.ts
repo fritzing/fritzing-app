@@ -305,12 +305,12 @@
     <message>
         <location filename="../src/autoroute/autoroutersettingsdialog.cpp" line="103"/>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <location filename="../src/autoroute/autoroutersettingsdialog.cpp" line="104"/>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation>OK</translation>
     </message>
 </context>
 <context>
@@ -318,7 +318,7 @@
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="111"/>
         <source>Parts</source>
-        <translation type="unfinished"></translation>
+        <translation>Elementy</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="374"/>
@@ -343,7 +343,7 @@
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="914"/>
         <source>Searching...</source>
-        <translation type="unfinished"></translation>
+        <translation>Szukam...</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="988"/>
@@ -483,7 +483,7 @@
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1060"/>
         <source>Remove Part</source>
-        <translation type="unfinished"></translation>
+        <translation>Usuń element</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1061"/>
@@ -1251,7 +1251,7 @@ Note: You can import them later using the &quot;Help&quot; &gt; &quot;Import par
     <message>
         <location filename="../src/mainwindow/fritzingwindow.cpp" line="73"/>
         <source>&amp;Close Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Zamknij okno</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/fritzingwindow.cpp" line="74"/>
@@ -1276,7 +1276,7 @@ Note: You can import them later using the &quot;Help&quot; &gt; &quot;Import par
     <message>
         <location filename="../src/mainwindow/fritzingwindow.cpp" line="243"/>
         <source>Save &quot;%1&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>Zapisz %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/fritzingwindow.cpp" line="244"/>
@@ -1291,22 +1291,22 @@ Note: You can import them later using the &quot;Help&quot; &gt; &quot;Import par
     <message>
         <location filename="../src/mainwindow/fritzingwindow.cpp" line="224"/>
         <source>Save...</source>
-        <translation type="unfinished"></translation>
+        <translation>Zapisz</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/fritzingwindow.cpp" line="227"/>
         <source>Save</source>
-        <translation type="unfinished"></translation>
+        <translation>Zapisz</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/fritzingwindow.cpp" line="229"/>
         <source>Don&apos;t Save</source>
-        <translation type="unfinished"></translation>
+        <translation>Nie zapisuj</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/fritzingwindow.cpp" line="231"/>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/fritzingwindow.cpp" line="235"/>
@@ -1735,12 +1735,12 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     <message>
         <location filename="../src/partseditor/kicadmoduledialog.cpp" line="62"/>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <location filename="../src/partseditor/kicadmoduledialog.cpp" line="63"/>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation>OK</translation>
     </message>
 </context>
 <context>
@@ -1748,7 +1748,7 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     <message>
         <location filename="../src/dock/layerpalette.cpp" line="73"/>
         <source>show all layers</source>
-        <translation type="unfinished"></translation>
+        <translation>pokarz wszystkie warstwy</translation>
     </message>
 </context>
 <context>
@@ -1756,22 +1756,22 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     <message>
         <location filename="../src/items/note.cpp" line="169"/>
         <source>url:</source>
-        <translation type="unfinished"></translation>
+        <translation>url:</translation>
     </message>
     <message>
         <location filename="../src/items/note.cpp" line="174"/>
         <source>text:</source>
-        <translation type="unfinished"></translation>
+        <translation>tekst:</translation>
     </message>
     <message>
         <location filename="../src/items/note.cpp" line="181"/>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <location filename="../src/items/note.cpp" line="182"/>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation>OK</translation>
     </message>
 </context>
 <context>
@@ -1780,12 +1780,12 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
         <location filename="../src/items/logoitem.cpp" line="250"/>
         <location filename="../src/items/logoitem.cpp" line="657"/>
         <source>text</source>
-        <translation type="unfinished"></translation>
+        <translation>tekst</translation>
     </message>
     <message>
         <location filename="../src/items/logoitem.cpp" line="274"/>
         <source>shape</source>
-        <translation type="unfinished"></translation>
+        <translation>kształt</translation>
     </message>
     <message>
         <location filename="../src/items/logoitem.cpp" line="349"/>
@@ -2159,7 +2159,7 @@ We&apos;re working to avoid this message, and only let you choose between proper
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="2402"/>
         <source>loading %1</source>
-        <translation type="unfinished"></translation>
+        <translation>wczytuję %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="2411"/>
@@ -2336,7 +2336,7 @@ We&apos;re working to avoid this message, and only let you choose between proper
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="303"/>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2656"/>
         <source>File &apos;%1&apos; not found</source>
-        <translation type="unfinished"></translation>
+        <translation>Nie znaleziono plink %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="360"/>
@@ -2356,12 +2356,12 @@ We&apos;re working to avoid this message, and only let you choose between proper
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="430"/>
         <source>loading %1 (pcb)</source>
-        <translation type="unfinished"></translation>
+        <translation>wczytuję %1 (pcb)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="440"/>
         <source>loading %1 (schematic)</source>
-        <translation type="unfinished"></translation>
+        <translation>wczytuję %1 (schemat)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="635"/>
@@ -2689,7 +2689,7 @@ We&apos;re working to avoid this message, and only let you choose between proper
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="892"/>
         <source>&amp;Duplicate</source>
-        <translation type="unfinished"></translation>
+        <translation>Powiel</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="893"/>
@@ -2735,7 +2735,7 @@ We&apos;re working to avoid this message, and only let you choose between proper
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="930"/>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3085"/>
         <source>Add Note</source>
-        <translation type="unfinished"></translation>
+        <translation>Dodaj notatkę</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="934"/>
@@ -2983,7 +2983,7 @@ Would you like to convert &apos;%1&apos; to the .fzz format now or open it read-
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1056"/>
         <source>Lock Part</source>
-        <translation type="unfinished"></translation>
+        <translation>Zablokuj element</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1057"/>
@@ -3261,12 +3261,12 @@ Would you like to convert &apos;%1&apos; to the .fzz format now or open it read-
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1140"/>
         <source>&amp;Actual Size</source>
-        <translation>Aktualny tozmiar</translation>
+        <translation>Aktualny rozmiar</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1141"/>
         <source>Actual (real world physical) size</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktualny (realny) rozmiar</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1144"/>
@@ -3408,7 +3408,7 @@ Would you like to convert &apos;%1&apos; to the .fzz format now or open it read-
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2251"/>
         <source>Actual Size</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktualny rozmiar</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2252"/>
@@ -3685,7 +3685,7 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4047"/>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation>OK</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4070"/>
@@ -3747,7 +3747,7 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4478"/>
         <source>Enter Text</source>
-        <translation type="unfinished"></translation>
+        <translation>Wpisz tekst</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4479"/>
@@ -3968,7 +3968,7 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1270"/>
         <source>Check for updates...</source>
-        <translation type="unfinished"></translation>
+        <translation>Sprawdź aktualizacje...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1271"/>
@@ -4092,7 +4092,7 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1879"/>
         <source>Hide part label</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ukryj etykiete elementu</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1879"/>
@@ -4538,7 +4538,7 @@ Please check all views for potential side-effects.</source>
     <message>
         <location filename="../src/model/modelbase.cpp" line="455"/>
         <source>File save failed!</source>
-        <translation type="unfinished"></translation>
+        <translation>Nie udało się zapisać pliku!</translation>
     </message>
     <message>
         <location filename="../src/model/modelbase.cpp" line="456"/>
@@ -4573,7 +4573,7 @@ Reason: %2 (errcode %3)</source>
     <message>
         <location filename="../src/items/note.cpp" line="218"/>
         <source>[write your note here]</source>
-        <translation type="unfinished"></translation>
+        <translation>[dodaj tutaj swoją notatkę]</translation>
     </message>
 </context>
 <context>
@@ -5398,12 +5398,12 @@ Go ahead and save?</source>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="2195"/>
         <source>Save</source>
-        <translation type="unfinished"></translation>
+        <translation>Zapisz</translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="2196"/>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="2443"/>
@@ -5423,7 +5423,7 @@ Go ahead and save?</source>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="2730"/>
         <source>Save &quot;%1&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>Zapisz %1</translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="2731"/>
@@ -5609,12 +5609,12 @@ Go ahead and save?</source>
     <message>
         <location filename="../src/partseditor/pesvgview.cpp" line="70"/>
         <source>width:</source>
-        <translation type="unfinished"></translation>
+        <translation>szerokość</translation>
     </message>
     <message>
         <location filename="../src/partseditor/pesvgview.cpp" line="76"/>
         <source>height:</source>
-        <translation type="unfinished"></translation>
+        <translation>wysokość</translation>
     </message>
 </context>
 <context>
@@ -6246,7 +6246,7 @@ Note: this warning will not be repeated during this session.</source>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="105"/>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation>OK</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="169"/>
@@ -6296,7 +6296,7 @@ Note: this warning will not be repeated during this session.</source>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="257"/>
         <source>Colors</source>
-        <translation type="unfinished"></translation>
+        <translation>Kolory</translation>
     </message>
     <message>
         <location filename="../src/dialogs/prefsdialog.cpp" line="272"/>
@@ -7843,12 +7843,12 @@ Fritzing still works, but you won&apos;t be able to change parts properties.</so
     <message>
         <location filename="../src/items/resistor.cpp" line="136"/>
         <source>Resistor</source>
-        <translation type="unfinished"></translation>
+        <translation>Opornik</translation>
     </message>
     <message>
         <location filename="../src/items/resistor.cpp" line="263"/>
         <source>resistance</source>
-        <translation type="unfinished"></translation>
+        <translation>opór</translation>
     </message>
     <message>
         <location filename="../src/items/resistor.cpp" line="280"/>
@@ -7965,7 +7965,7 @@ Fritzing still works, but you won&apos;t be able to change parts properties.</so
     <message>
         <location filename="../src/items/ruler.cpp" line="210"/>
         <source>width</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">szerokość</translation>
     </message>
 </context>
 <context>
@@ -8011,17 +8011,17 @@ Fritzing still works, but you won&apos;t be able to change parts properties.</so
     <message>
         <location filename="../src/items/schematicframe.cpp" line="72"/>
         <source>Project</source>
-        <translation type="unfinished"></translation>
+        <translation>Projekt</translation>
     </message>
     <message>
         <location filename="../src/items/schematicframe.cpp" line="73"/>
         <source>Filename</source>
-        <translation type="unfinished"></translation>
+        <translation>Nazwa pliku</translation>
     </message>
     <message>
         <location filename="../src/items/schematicframe.cpp" line="74"/>
         <source>Date</source>
-        <translation type="unfinished"></translation>
+        <translation>Data</translation>
     </message>
     <message>
         <location filename="../src/items/schematicframe.cpp" line="75"/>
@@ -8046,7 +8046,7 @@ Fritzing still works, but you won&apos;t be able to change parts properties.</so
     <message>
         <location filename="../src/items/schematicframe.cpp" line="464"/>
         <source>date</source>
-        <translation type="unfinished"></translation>
+        <translation>data</translation>
     </message>
     <message>
         <location filename="../src/items/schematicframe.cpp" line="486"/>
@@ -8082,12 +8082,12 @@ Fritzing still works, but you won&apos;t be able to change parts properties.</so
     <message>
         <location filename="../src/dialogs/setcolordialog.cpp" line="69"/>
         <source>Reset to default</source>
-        <translation type="unfinished"></translation>
+        <translation>Przywróć ustawienia domyślne</translation>
     </message>
     <message>
         <location filename="../src/dialogs/setcolordialog.cpp" line="73"/>
         <source>Default color (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Kolor domyślny (%1)</translation>
     </message>
     <message>
         <location filename="../src/dialogs/setcolordialog.cpp" line="83"/>
@@ -8102,12 +8102,12 @@ Fritzing still works, but you won&apos;t be able to change parts properties.</so
     <message>
         <location filename="../src/dialogs/setcolordialog.cpp" line="102"/>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <location filename="../src/dialogs/setcolordialog.cpp" line="103"/>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation>OK</translation>
     </message>
     <message>
         <location filename="../src/dialogs/setcolordialog.cpp" line="132"/>
@@ -8117,7 +8117,7 @@ Fritzing still works, but you won&apos;t be able to change parts properties.</so
     <message>
         <location filename="../src/dialogs/setcolordialog.cpp" line="151"/>
         <source>Current color (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktualny kolor (%1)</translation>
     </message>
 </context>
 <context>
@@ -9261,49 +9261,49 @@ Note: you can also trigger this display by mousing down on the routing status te
         <location filename="../src/items/wire.cpp" line="1265"/>
         <location filename="../src/items/wire.cpp" line="1280"/>
         <source>blue</source>
-        <translation type="unfinished"></translation>
+        <translation>niebieski</translation>
     </message>
     <message>
         <location filename="../src/items/wire.cpp" line="1266"/>
         <location filename="../src/items/wire.cpp" line="1281"/>
         <source>red</source>
-        <translation type="unfinished"></translation>
+        <translation>czerwony</translation>
     </message>
     <message>
         <location filename="../src/items/wire.cpp" line="1267"/>
         <location filename="../src/items/wire.cpp" line="1282"/>
         <source>black</source>
-        <translation type="unfinished"></translation>
+        <translation>czarny</translation>
     </message>
     <message>
         <location filename="../src/items/wire.cpp" line="1268"/>
         <location filename="../src/items/wire.cpp" line="1283"/>
         <source>yellow</source>
-        <translation type="unfinished"></translation>
+        <translation>żółty</translation>
     </message>
     <message>
         <location filename="../src/items/wire.cpp" line="1269"/>
         <location filename="../src/items/wire.cpp" line="1284"/>
         <source>green</source>
-        <translation type="unfinished"></translation>
+        <translation>zielony</translation>
     </message>
     <message>
         <location filename="../src/items/wire.cpp" line="1270"/>
         <location filename="../src/items/wire.cpp" line="1285"/>
         <source>grey</source>
-        <translation type="unfinished"></translation>
+        <translation>szary</translation>
     </message>
     <message>
         <location filename="../src/items/wire.cpp" line="1271"/>
         <location filename="../src/items/wire.cpp" line="1286"/>
         <source>white</source>
-        <translation type="unfinished"></translation>
+        <translation>biały</translation>
     </message>
     <message>
         <location filename="../src/items/wire.cpp" line="1272"/>
         <location filename="../src/items/wire.cpp" line="1287"/>
         <source>orange</source>
-        <translation type="unfinished"></translation>
+        <translation>pomaranczowy</translation>
     </message>
     <message>
         <location filename="../src/items/wire.cpp" line="1273"/>
@@ -9327,18 +9327,18 @@ Note: you can also trigger this display by mousing down on the routing status te
         <location filename="../src/items/wire.cpp" line="1276"/>
         <location filename="../src/items/wire.cpp" line="1291"/>
         <source>purple</source>
-        <translation type="unfinished"></translation>
+        <translation>fioletowy</translation>
     </message>
     <message>
         <location filename="../src/items/wire.cpp" line="1277"/>
         <location filename="../src/items/wire.cpp" line="1292"/>
         <source>pink</source>
-        <translation type="unfinished"></translation>
+        <translation>różowy</translation>
     </message>
     <message>
         <location filename="../src/items/wire.cpp" line="1580"/>
         <source>color</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">kolor</translation>
     </message>
     <message>
         <location filename="../src/items/wire.cpp" line="1604"/>

@@ -230,6 +230,7 @@ include(pri/sketch.pri)
 include(pri/translations.pri)
 include(pri/program.pri)
 include(pri/qtsysteminfo.pri)
+include(pri/clipper.pri)
 
 !contains(DEFINES, QUAZIP_INSTALLED) {
         include(pri/quazip.pri)
@@ -241,6 +242,9 @@ contains(DEFINES, QUAZIP_INSTALLED) {
 
 TARGET = Fritzing
 TEMPLATE = app
+
+DISTFILES += \
+    clipper.pri
 
 
 message("libs $$LIBS")

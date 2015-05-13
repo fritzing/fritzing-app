@@ -27,29 +27,18 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 #ifndef SVG2GERBER_H
 #define SVG2GERBER_H
 
-#include <QString>
-#include <QDomElement>
-#include <QObject>
-#include <QMatrix>
-#include <QMultiHash>
-
-class SVG2gerber : public QObject
-{
-    Q_OBJECT
-
-public:
-    SVG2gerber();
-
-public:
-	enum ForWhy {
-		ForCopper,
-		ForSilk,
-		ForOutline,
-		ForMask,
-		ForDrill,
-        ForPasteMask
-	};
-
+namespace SVG2gerber {
+enum ForWhy {
+    ForCopper,
+    ForSilk,
+    ForOutline,
+    ForMask,
+    ForDrill,
+    ForPasteMask
 };
+
+}
+
+
 
 #endif // SVG2GERBER_H

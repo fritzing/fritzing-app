@@ -1412,6 +1412,8 @@ bool PCBSketchWidget::groundFill(bool fillGroundTraces, ViewLayer::ViewLayerID v
 	}
 
 
+	QList<GroundFillSeed> groundSeedsCopper1;
+	QList<GroundFillSeed> groundSeedsCopper0;
 	QList<ConnectorItem *> seeds;
 	if (fillGroundTraces) {
 		bool gotTrueSeeds = collectGroundFillSeeds(seeds, false);
@@ -1423,10 +1425,26 @@ bool PCBSketchWidget::groundFill(bool fillGroundTraces, ViewLayer::ViewLayerID v
 		}
 
 		ConnectorItem::collectEqualPotential(seeds, true, ViewGeometry::NoFlag);
-		//foreach (ConnectorItem * seed, seeds) {
-		//    seed->debugInfo("seed");
-		//}
 		m_groundFillSeeds = &seeds;
+		QRectF boardRect = board->sceneBoundingRect();
+		foreach(ConnectorItem * seed, seeds) {
+			if (seed->attachedToItemType() == ModelPart::Wire) continue;
+			if (!seed->attachedTo()->isEverVisible()) continue;
+			seed->debugInfo("seed");
+
+			QRectF r = seed->sceneBoundingRect();
+			double x1 = (r.left() - boardRect.left()) / boardRect.width();
+			double x2 = (r.right() - boardRect.left()) / boardRect.width();
+			double y1 = (r.top() - boardRect.top()) / boardRect.height();
+			double y2 = (r.bottom() - boardRect.top()) / boardRect.height();
+			double w = x2 - x1;
+			double h = y2 - y1;
+			GroundFillSeed packagedSeed(QRectF(x1, y1, w, h));
+			if(seed->attachedToViewLayerID() == ViewLayer::Copper0)
+				groundSeedsCopper0.append(packagedSeed);
+			if(seed->attachedToViewLayerID() == ViewLayer::Copper1)
+				groundSeedsCopper1.append(packagedSeed);
+		}
 	}
 
 	LayerList viewLayerIDs;
@@ -1487,14 +1505,8 @@ bool PCBSketchWidget::groundFill(bool fillGroundTraces, ViewLayer::ViewLayerID v
 		gpg0.setLayerName("groundplane");
 		gpg0.setStrokeWidthIncrement(StrokeWidthIncrement);
 		gpg0.setMinRunSize(10, 10);
-		if (fillGroundTraces) {
-			connect(&gpg0, SIGNAL(postImageSignal(GroundPlaneGenerator *, QImage *, QImage *, QGraphicsItem *, QList<QRectF> *)),
-			        this, SLOT(postImageSlot(GroundPlaneGenerator *, QImage *, QImage *, QGraphicsItem *, QList<QRectF> *)),
-			        Qt::DirectConnection);
-		}
-
-		bool result = gpg0.generateGroundPlane(boardSvg, boardImageRect.size(), svg0, copperImageRect.size(), exceptions, board, GraphicsUtils::StandardFritzingDPI / 2.0  /* 2 MIL */,
-		                                       ViewLayer::Copper0Color, getKeepoutMils());
+		bool result = gpg0.generateGroundPlane(boardSvg, boardImageRect.size(), svg0, copperImageRect.size(), exceptions, board, GraphicsUtils::StandardFritzingDPI * 30,
+												ViewLayer::Copper0Color, getKeepoutMils(), groundSeedsCopper0);
 		if (result == false) {
 			QMessageBox::critical(this, tr("Fritzing"), tr("Fritzing error: unable to write copper fill (1)."));
 			return false;
@@ -1506,13 +1518,7 @@ bool PCBSketchWidget::groundFill(bool fillGroundTraces, ViewLayer::ViewLayerID v
 		gpg1.setLayerName("groundplane1");
 		gpg1.setStrokeWidthIncrement(StrokeWidthIncrement);
 		gpg1.setMinRunSize(10, 10);
-		if (fillGroundTraces) {
-			connect(&gpg1, SIGNAL(postImageSignal(GroundPlaneGenerator *, QImage *, QImage *, QGraphicsItem *, QList<QRectF> *)),
-			        this, SLOT(postImageSlot(GroundPlaneGenerator *, QImage *, QImage *, QGraphicsItem *, QList<QRectF> *)),
-			        Qt::DirectConnection);
-		}
-		bool result = gpg1.generateGroundPlane(boardSvg, boardImageRect.size(), svg1, copperImageRect.size(), exceptions, board, GraphicsUtils::StandardFritzingDPI / 2.0  /* 2 MIL */,
-		                                       ViewLayer::Copper1Color, getKeepoutMils());
+		bool result = gpg1.generateGroundPlane(boardSvg, boardImageRect.size(), svg1, copperImageRect.size(), exceptions, board, GraphicsUtils::StandardFritzingDPI * 30, ViewLayer::Copper1Color, getKeepoutMils(), groundSeedsCopper1);
 		if (result == false) {
 			QMessageBox::critical(this, tr("Fritzing"), tr("Fritzing error: unable to write copper fill (2)."));
 			return false;
@@ -1618,8 +1624,8 @@ QString PCBSketchWidget::generateCopperFillUnit(ItemBase * itemBase, QPointF whe
 	gpg.setStrokeWidthIncrement(StrokeWidthIncrement);
 	gpg.setLayerName(gpLayerName);
 	gpg.setMinRunSize(10, 10);
-	bool result = gpg.generateGroundPlaneUnit(boardSvg, boardImageRect.size(), svg, copperImageRect.size(), exceptions, board, GraphicsUtils::StandardFritzingDPI / 2.0  /* 2 MIL */,
-	              color, whereToStart, getKeepoutMils());
+	bool result = gpg.generateGroundPlaneUnit(boardSvg, boardImageRect.size(), svg, copperImageRect.size(), exceptions, board, GraphicsUtils::StandardFritzingDPI * 10,
+												color, whereToStart, getKeepoutMils());
 
 	if (result == false || gpg.newSVGs().count() < 1) {
 		QMessageBox::critical(this, tr("Fritzing"), tr("Unable to create copper fill--possibly the part was dropped onto another part or wire rather than the actual PCB."));
@@ -1829,88 +1835,6 @@ bool PCBSketchWidget::canConnectSeed(QRectF boardRect,
 	return (!hasNeighbor(connectorItem, viewLayerID, check));
 }
 
-void PCBSketchWidget::postImageSlot(GroundPlaneGenerator * gpg, QImage * copperImage, QImage * boardImage, QGraphicsItem * board, QList<QRectF> * rects) {
-
-	if (m_groundFillSeeds == nullptr) return;
-
-	ViewLayer::ViewLayerID viewLayerID = (gpg->layerName() == "groundplane") ? ViewLayer::Copper0 : ViewLayer::Copper1;
-
-	QRectF boardRect = board->sceneBoundingRect();
-
-	Q_FOREACH (ConnectorItem * connectorItem, *m_groundFillSeeds) {
-		if (connectorItem->attachedToViewLayerID() != viewLayerID) continue;
-		if (connectorItem->attachedToItemType() == ModelPart::Wire) continue;
-		if (!connectorItem->attachedTo()->isEverVisible()) continue;
-
-		//connectorItem->debugInfo("post image b");
-		QRectF r = connectorItem->sceneBoundingRect();
-
-		double x1 = (r.left() - boardRect.left()) * copperImage->width() / boardRect.width();
-		double x2 = (r.right() - boardRect.left()) * copperImage->width() / boardRect.width();
-		double y1 = (r.top() - boardRect.top()) * copperImage->height() / boardRect.height();
-		double y2 = (r.bottom() - boardRect.top()) * copperImage->height() / boardRect.height();
-		double w = x2 - x1;
-		double h = y2 - y1;
-
-		double cw = w / 4;
-		double ch = h / 4;
-		double cx = (x1 + x2) /2;
-		double cy = (y1 + y2) /2;
-
-		double rad = qFloor(connectorItem->calcClipRadius() * copperImage->width() / boardRect.width());
-
-		double borderl = qMax(0.0, x1 - w);
-		double borderr = qMin(x2 + w, copperImage->width());
-		double bordert = qMax(0.0, y1 - h);
-		double borderb = qMin(y2 + h, copperImage->height());
-
-		// check left, up, right, down for groundplane, and if it's there draw to it from the connector
-		for (int y = y1; y > bordert; y--) {
-			if (((copperImage->pixel(cx, y) & 0xffffff) != 0u) || (boardImage->pixel(cx, y) == 0xff000000)) {
-				QRectF s(cx - cw, y - 1, cw + cw, cy - y - rad);
-				if (canConnectSeed(boardRect, copperImage, connectorItem, viewLayerID, s)) {
-					rects->append(s);
-				}
-				break;
-			}
-		}
-
-
-		for (int y = y2; y < borderb; y++) {
-			if (((copperImage->pixel(cx, y) & 0xffffff) != 0u) || (boardImage->pixel(cx, y) == 0xff000000)) {
-				QRectF s(cx - cw, cy + rad, cw + cw, y - cy - rad);
-				if (canConnectSeed(boardRect, copperImage, connectorItem, viewLayerID, s)) {
-					rects->append(s);
-				}
-				break;
-			}
-		}
-
-
-		for (int x = x1; x > borderl; x--) {
-			if (((copperImage->pixel(x, cy) & 0xffffff) != 0u) || (boardImage->pixel(x, cy) == 0xff000000)) {
-				QRectF s(x - 1, cy - ch, cx - x - rad, ch + ch);
-				if (canConnectSeed(boardRect, copperImage, connectorItem, viewLayerID, s)) {
-					rects->append(s);
-				}
-				break;
-			}
-		}
-
-		for (int x = x2; x < borderr; x++) {
-			if (((copperImage->pixel(x, cy) & 0xffffff) != 0u) || (boardImage->pixel(x, cy) == 0xff000000)) {
-				QRectF s(cx + rad, cy - ch, x - cx - rad, ch + ch);
-				if (canConnectSeed(boardRect, copperImage, connectorItem, viewLayerID, s)) {
-					rects->append(s);
-				}
-				break;
-			}
-		}
-
-		DebugDialog::debug(QString("x1:%1 y1:%2 x2:%3 y2:%4").arg(x1).arg(y1).arg(x2).arg(y2));
-	}
-}
-
 bool PCBSketchWidget::hasNeighbor(ConnectorItem * connectorItem, ViewLayer::ViewLayerID viewLayerID, const QRectF & r)
 {
 	Q_FOREACH (QGraphicsItem * item, scene()->items(r)) {
@@ -2068,7 +1992,7 @@ bool PCBSketchWidget::collectGroundFillSeeds(QList<ConnectorItem *> & seeds, boo
 		if (connectorItem == nullptr) continue;
 		if (connectorItem->attachedToItemType() == ModelPart::CopperFill) continue;
 
-		if (connectorItem->isGroundFillSeed()) {
+	if (connectorItem->isGroundFillSeed()) {
 			trueSeeds.append(connectorItem);
 			continue;
 		}

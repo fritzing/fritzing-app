@@ -31,18 +31,17 @@ $Date: 2013-04-06 23:14:37 +0200 (Sa, 06. Apr 2013) $
 
 #include "../viewlayer.h"
 #include "svg2gerber.h"
+#include "../items/itembase.h"
+#include "../sketch/pcbsketchwidget.h"
 
 class GerberGenerator
 {
 
 public:
 	static void exportToGerber(const QString & prefix, const QString & exportDir, class ItemBase * board, class PCBSketchWidget *, bool displayMessageBoxes);
-	static QString clipToBoard(QString svgString, QRectF & boardRect, const QString & layerName, SVG2gerber::ForWhy, const QString & clipString, bool displayMessageBoxes, QMultiHash<long, class ConnectorItem *> & treatAsCircle);
-	static QString clipToBoard(QString svgString, ItemBase * board, const QString & layerName, SVG2gerber::ForWhy, const QString & clipString, bool displayMessageBoxes, QMultiHash<long, class ConnectorItem *> & treatAsCircle);
-	static int doEnd(const QString & svg, int boardLayers, const QString & layerName, SVG2gerber::ForWhy forWhy, QSizeF svgSize, 
-						const QString & exportDir, const QString & prefix, const QString & suffix, bool displayMessageBoxes);
 	static QString cleanOutline(const QString & svgOutline);
-
+    static void exportFile(const QString & svg, int boardLayers, const QString & layerName, SVG2gerber::ForWhy forWhy, QSizeF svgSize,
+            const QString & exportDir, const QString & prefix, const QString & suffix, bool displayMessageBoxes);
 public:
 	static const QString SilkTopSuffix;
 	static const QString SilkBottomSuffix;
@@ -67,14 +66,10 @@ protected:
 	static int doCopper(ItemBase * board, PCBSketchWidget * sketchWidget, LayerList & viewLayerIDs, const QString & copperName, const QString & copperSuffix, const QString & filename, const QString & exportDir, bool displayMessageBoxes);
 	static int doDrill(ItemBase * board, PCBSketchWidget * sketchWidget, const QString & filename, const QString & exportDir, bool displayMessageBoxes);
 	static void displayMessage(const QString & message, bool displayMessageBoxes);
-	static bool saveEnd(const QString & layerName, const QString & exportDir, const QString & prefix, const QString & suffix, bool displayMessageBoxes, SVG2gerber & gerber);
-    static void mergeOutlineElement(QImage & image, QRectF & target, double res, QDomDocument & document, QString & svgString, int ix, const QString & layerName);
-    static QString makePath(QImage & image, double unit, const QString & colorString);
-    static bool dealWithMultipleContours(QDomElement & root, bool displayMessageBoxes);
     static void exportPickAndPlace(const QString & prefix, const QString & exportDir, ItemBase * board, PCBSketchWidget * sketchWidget, bool displayMessageBoxes);
-    static void handleDonuts(QDomElement & root1, QMultiHash<long, ConnectorItem *> & treatAsCircle);
     static QString renderTo(const LayerList &, ItemBase * board, PCBSketchWidget * sketchWidget, bool & empty);
 
+    static void svgToExcellon(QString const &filename, QString const &exportDir,const QString &svgDrill);
 };
 
 #endif // GERBERGENERATOR_H

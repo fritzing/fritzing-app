@@ -98,7 +98,8 @@ public:
               physicalWidth(physicalWidth_),
               physicalHeight(physicalHeight_),
               sendEverythingToClipper(layerType_ == SolderMask || layerType_ == Outline),
-              clipperPaths() {
+              clipperPaths(),
+              apertureIndex(11) {
     }
 
     virtual void drawEllipse(const QRectF &r) override;
@@ -210,7 +211,7 @@ private:
     LayerType layerType;
     double physicalWidth;
     double physicalHeight;
-    int apertureIndex = 11;
+    int apertureIndex;
     bool sendEverythingToClipper;
 };
 

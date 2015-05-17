@@ -49,7 +49,7 @@ struct GPGParams {
 	QString color;
 	double keepoutMils;
 	QList<GroundFillSeed> seeds;
-	QPointF *seedPoint = NULL;
+	QPointF *seedPoint;
 };
 
 class GroundPlaneGenerator : public QObject

@@ -855,7 +855,7 @@ void GerberGenerator::svgToExcellon(QString const &filename, QString const &expo
     QFile f(exportDir + "/" + filename+ "_drill.txt");
     f.open(QIODevice::WriteOnly);
     QTextStream fs(&f);
-    fs << excellonHeader.join("") << excellonBody.join("");
+    fs << excellonHeader.join("") << "%\n" << excellonBody.join("");
     f.close();
 }
 

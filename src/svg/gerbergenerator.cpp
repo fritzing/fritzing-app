@@ -135,11 +135,11 @@ public:
     }
 
     struct RectAperture {
-        RectAperture(int id_):id(id_){}
-        double w = 0;
-        double h = 0;
-        double holeX = 0;
-        double holeY = 0;
+        RectAperture(int id_):id(id_), w(0), h(0), holeX(0), holeY(0) {}
+        double w;
+        double h;
+        double holeX;
+        double holeY;
         int id;
 
         void toDefinition(QTextStream &stream) const{
@@ -159,10 +159,10 @@ public:
     };
 
     struct RoundAperture {
-        RoundAperture(int id_):id(id_){}
+        RoundAperture(int id_):id(id_), diameter(0), holeX(0), holeY(0) {}
         double diameter;
-        double holeX = 0;
-        double holeY = 0;
+        double holeX;
+        double holeY;
         int id;
 
         void toDefinition(QTextStream &stream) const{
@@ -377,6 +377,23 @@ protected:
     }
 };
 ////////////////////////////////////////////
+
+#if QT_VERSION < 0x050300
+    //stolen from Qt 5.3
+    static inline uint hash(const uchar *p, int len, uint seed) Q_DECL_NOTHROW
+    {
+        uint h = seed;
+        for (int i = 0; i < len; ++i)
+            h = 31 * h + p[i];
+        return h;
+    }
+
+    //stolen from Qt 5.3
+    uint qHash(double key, uint seed) Q_DECL_NOTHROW
+    {
+        return key != 0.0  ? hash(reinterpret_cast<const uchar *>(&key), sizeof(key), seed) : seed;
+    }
+#endif
 uint qHash(const GerberPaintEngine::RectAperture &key) {
     return qHash(key.w) ^ qHash(key.h) ^ qHash(key.holeX) ^ qHash(key.holeY);
 }

@@ -466,22 +466,22 @@ void GerberPaintEngine::collectFile(QTextStream &output, bool mirrorX) {
     }
 
     QList<RoundAperture> roundAperturesDefs = roundApertures.uniqueKeys();
-    for(QList<RoundAperture>::iterator i = roundAperturesDefs.begin(); i != roundAperturesDefs.end(); ++i){
+    for(QList<RoundAperture>::iterator i = roundAperturesDefs.begin(); i != roundAperturesDefs.end(); ++i) {
         i->toDefinition(output);
     }
 
     QList<RectAperture> rectAperturesDefs = rectApertures.uniqueKeys();
-    for(QList<RectAperture>::iterator i = rectAperturesDefs.begin(); i != rectAperturesDefs.end(); ++i){
+    for(QList<RectAperture>::iterator i = rectAperturesDefs.begin(); i != rectAperturesDefs.end(); ++i) {
         i->toDefinition(output);
     }
 
     if (regions.size()) {
         if (layerType != Outline) {
-            output << "G36*\n";
             for (int i = 0; i < regions.size(); i++) {
                 GerberRegion r = regions[i];
                 if (r.lightPolarity)
                     output << "%LPC*%\n";
+                output << "G36*\n";
                 for (size_t j = 0; j < r.polygon.size(); j++)
                     xyd(output, r.polygon[j].X, r.polygon[j].Y, j == 0 ? 2 : 1, mirrorX);
                 if (r.lightPolarity)

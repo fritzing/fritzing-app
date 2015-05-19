@@ -798,8 +798,8 @@ static void dumpHoles(QStringList &excellonHeader,QStringList &excellonBody, con
         excellonBody << "T" << QString::number(holeIndex) << "\n";
         for(QSet<QPointF>::const_iterator it2 = it->begin(); it2 != it->end(); ++it2)
             excellonBody
-                    << "X" << QString::number(qRound(it2->x() * 10000))
-                    << "Y" << QString::number(qRound((height - it2->y())* 10000)) << "\n";
+                    << "X" << QString("%1").arg(qRound(it2->x() * 10000), 6, 10, QChar('0'))
+                    << "Y" << QString("%1").arg(qRound((height - it2->y()) * 10000), 6, 10, QChar('0')) << "\n";
         holeIndex++;
     }
 }

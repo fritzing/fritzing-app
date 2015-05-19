@@ -378,7 +378,7 @@ protected:
 };
 ////////////////////////////////////////////
 
-#if QT_VERSION < 0x050300
+#if QT_VERSION < QT_VERSION_CHECK(5, 3, 0)
     //stolen from Qt 5.3
     static inline uint hash(const uchar *p, int len, uint seed) Q_DECL_NOTHROW
     {

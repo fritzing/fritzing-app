@@ -38,6 +38,7 @@ bool fillNotStroke(QDomElement & element, SVG2gerber::ForWhy forWhy) {
     if (forWhy == SVG2gerber::ForMask) return true;
 
     QString fill = element.attribute("fill");
+    if (fill.isEmpty() && forWhy == SVG2gerber::ForSilk) return true;
     if (fill.isEmpty()) return false;
     if (fill.compare("none") == 0) return false;
 
@@ -192,6 +193,43 @@ void SVG2gerber::normalizeSVG(){
 
 }
 
+/*
+ a very first try to transform svg polygons to paths
+
+void SVG2gerber::polyToPath(noPoly){
+
+        QDomElement polygon = m_SVGDom.elementsByTagName("polygon");
+        QString points = polygon.attribute("points");
+        QStringList pointList = points.split(QRegExp("\\s+|,"), QString::SkipEmptyParts);
+
+        QString pointString;
+
+        double startx = pointList.at(0).toDouble();
+        double starty = pointList.at(1).toDouble();
+
+        // try to convert to SVG PATH before Exporting
+        QString pathData = pointString += "M"+ QString::number(flipx(startx))+","+ QString::number(flipy(starty))+"L"+ "D02*\n";
+
+
+        ####example for svg polygon to path with raphael
+
+var polys = document.querySelectorAll('polygon,polyline');
+[].forEach.call(polys,convertPolyToPath);
+
+function convertPolyToPath(poly){
+  var svgNS = poly.ownerSVGElement.namespaceURI;
+  var path = document.createElementNS(svgNS,'path');
+  var points = poly.getAttribute('points').split(/\s+|,/);
+  var x0=points.shift(), y0=points.shift();
+  var pathdata = 'M'+x0+','+y0+'L'+points.join(' ');
+  if (poly.tagName=='polygon') pathdata+='z';
+  path.setAttribute('d',pathdata);
+  poly.parentNode.replaceChild(path,poly);
+}
+    }
+}
+*/
+
 void SVG2gerber::convertShapes2paths(QDomNode node){
     // I'm a leaf node.  make me a path
     //TODO: this should strip svg: namspaces
@@ -200,7 +238,7 @@ void SVG2gerber::convertShapes2paths(QDomNode node){
         QDomElement element = node.toElement();
         QDomElement path;
 
-        //DebugDialog::debug("converting child to path: " + tag);
+       DebugDialog::debug("converting child to path: " + tag);
 
         if(tag=="polygon"){
             path = element;
@@ -511,7 +549,7 @@ int SVG2gerber::allPaths2gerber(ForWhy forWhy) {
                         QDomElement polygon = polyList.item(p).toElement();
                         doPoly(polygon, forWhy, true, apertureMap, current_dcode, dcode_index);
         }
-                for(int p = 0; p < polyLineList.length(); p++) {
+        for(int p = 0; p < polyLineList.length(); p++) {
                         QDomElement polygon = polyLineList.item(p).toElement();
                         doPoly(polygon, forWhy, false, apertureMap, current_dcode, dcode_index);
         }

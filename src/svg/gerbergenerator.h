@@ -40,8 +40,7 @@ class GerberGenerator
 public:
 	static void exportToGerber(const QString & prefix, const QString & exportDir, class ItemBase * board, class PCBSketchWidget *, bool displayMessageBoxes);
 	static QString cleanOutline(const QString & svgOutline);
-    static void exportFile(const QString & svg, int boardLayers, const QString & layerName, SVG2gerber::ForWhy forWhy, QSizeF svgSize,
-            const QString & exportDir, const QString & prefix, const QString & suffix, bool displayMessageBoxes);
+    static void exportFile(const QString &svg, const QString &layerName, SVG2gerber::ForWhy forWhy, const QString &exportDir, const QString &prefix, const QString &suffix);
 public:
 	static const QString SilkTopSuffix;
 	static const QString SilkBottomSuffix;
@@ -60,14 +59,10 @@ public:
 
 
 protected:
-	static int doSilk(LayerList silkLayerIDs, const QString & silkName, const QString & gerberSuffix, ItemBase * board, PCBSketchWidget * sketchWidget, const QString & filename, const QString & exportDir, bool displayMessageBoxes, const QString & clipString);
-	static int doMask(LayerList maskLayerIDs, const QString & maskName, const QString & gerberSuffix, ItemBase * board, PCBSketchWidget * sketchWidget, const QString & filename, const QString & exportDir, bool displayMessageBoxes, QString & clipString);
-	static int doPasteMask(LayerList maskLayerIDs, const QString & maskName, const QString & gerberSuffix, ItemBase * board, PCBSketchWidget * sketchWidget, const QString & filename, const QString & exportDir, bool displayMessageBoxes);
-	static int doCopper(ItemBase * board, PCBSketchWidget * sketchWidget, LayerList & viewLayerIDs, const QString & copperName, const QString & copperSuffix, const QString & filename, const QString & exportDir, bool displayMessageBoxes);
-	static int doDrill(ItemBase * board, PCBSketchWidget * sketchWidget, const QString & filename, const QString & exportDir, bool displayMessageBoxes);
+    static int doDrill(ItemBase *board, PCBSketchWidget *sketchWidget, const QString &filename, const QString &exportDir);
 	static void displayMessage(const QString & message, bool displayMessageBoxes);
     static void exportPickAndPlace(const QString & prefix, const QString & exportDir, ItemBase * board, PCBSketchWidget * sketchWidget, bool displayMessageBoxes);
-    static QString renderTo(const LayerList &, ItemBase * board, PCBSketchWidget * sketchWidget, bool & empty);
+    static QString renderTo(const LayerList &, ItemBase *board, PCBSketchWidget *sketchWidget);
 
     static void svgToExcellon(QString const &filename, QString const &exportDir,const QString &svgDrill);
 };

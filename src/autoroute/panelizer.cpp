@@ -400,10 +400,9 @@ void Panelizer::panelize(FApplication * app, const QString & panelFilename, bool
 
 			QString suffix = layerThingList.at(i).suffix;
 			DebugDialog::debug("converting " + prefix + " " + suffix);
-			QSizeF svgSize(planePair->panelWidth, planePair->panelHeight);
 			SVG2gerber::ForWhy forWhy = layerThingList.at(i).forWhy;
 			if (forWhy == SVG2gerber::ForMask || forWhy == SVG2gerber::ForPasteMask) forWhy = SVG2gerber::ForCopper;
-            GerberGenerator::exportFile(planePair->svgs.at(i), 2, layerThingList.at(i).name, forWhy, svgSize * GraphicsUtils::StandardFritzingDPI, gerberDir.absolutePath(), prefix, suffix, false);
+            GerberGenerator::exportFile(planePair->svgs.at(i), layerThingList.at(i).name, forWhy, gerberDir.absolutePath(), prefix, suffix);
 			DebugDialog::debug("after converting " + prefix + " " + suffix);
 		}
 

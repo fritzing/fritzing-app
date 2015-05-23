@@ -27,6 +27,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 
 #include <clipper.hpp>
 #include <QPaintEngine>
+#include <fstream>
 
 inline ClipperLib::JoinType qtToClipperJoinType(Qt::PenJoinStyle style) {
 	switch (style) {
@@ -75,29 +76,32 @@ inline ClipperLib::PolyFillType qtToClipperFillType(QPaintEngine::PolygonDrawMod
 	return ClipperLib::pftNonZero;
 }
 
-inline ClipperLib::Path polygonToClipper(QPolygonF poly, const QMatrix &matrix = QMatrix()) {
+inline ClipperLib::Path pointsToClipper(const QPointF *points, int pointCount, QMatrix matrix = QMatrix()) {
 	ClipperLib::Path clipperPath;
-			foreach(QPointF p, poly) {
-			const QPointF p2 = matrix.map(p);
-			clipperPath << ClipperLib::IntPoint((ClipperLib::cInt) (p2.x()), (ClipperLib::cInt) (p2.y()));
-		}
+	for (int i = 0; i < pointCount; i++) {
+		const QPointF p2 = matrix.map(points[i]);
+		clipperPath << ClipperLib::IntPoint((ClipperLib::cInt) (p2.x()), (ClipperLib::cInt) (p2.y()));
+	}
 	return clipperPath;
+}
+
+inline ClipperLib::Path polygonToClipper(QPolygonF poly, const QMatrix &matrix = QMatrix()) {
+    return pointsToClipper(poly.data(), poly.size(), matrix);
 }
 
 inline ClipperLib::Paths polygonsToClipper(QList<QPolygonF> polys, const QMatrix &matrix = QMatrix()) {
 	ClipperLib::Paths paths;
-			foreach(QPolygonF poly, polys) {
-			paths << polygonToClipper(poly, matrix);
-		}
+	for (int i = 0; i < polys.size(); i++) {
+		paths << polygonToClipper(polys[i], matrix);
+	}
 	return paths;
 }
 
-inline QString clipperPathsToSVG(ClipperLib::Paths &paths, double clipperDPI, bool withSVGElement = true) {
+inline QRectF boundingBox(ClipperLib::Paths paths) {
 	int minX = std::numeric_limits<int>::max();
 	int minY = std::numeric_limits<int>::max();
 	int maxX = std::numeric_limits<int>::min();
 	int maxY = std::numeric_limits<int>::min();
-
 	for (size_t i = 0; i < paths.size(); i++) {
 		for (size_t j = 0; j < paths[i].size(); j++) {
 			ClipperLib::IntPoint pt = paths[i][j];
@@ -107,19 +111,21 @@ inline QString clipperPathsToSVG(ClipperLib::Paths &paths, double clipperDPI, bo
 			maxY = std::max(maxY, (int) pt.Y);
 		}
 	}
+	return QRectF(minX, minY, maxX - minX, maxY - minY);
+}
 
-	double xSpan = (maxX - minX) / clipperDPI;
-	double ySpan = (maxY - minY) / clipperDPI;
+inline QString clipperPathsToSVG(ClipperLib::Paths &paths, double clipperDPI, bool withSVGElement = true) {
+	QRectF bounds = boundingBox(paths);
 	QStringList pSvg;
 
 	if (withSVGElement)
-		pSvg << TextUtils::makeSVGHeader(1, clipperDPI, xSpan, ySpan);
+		pSvg << TextUtils::makeSVGHeader(1, clipperDPI, bounds.width() / clipperDPI, bounds.height() / clipperDPI);
 	pSvg << QString("<path fill='black' stroke='none' stroke-width='0' d='");
 	for (size_t i = 0; i < paths.size(); i++) {
 		for (size_t j = 0; j < paths[i].size(); j++) {
 			ClipperLib::IntPoint pt = paths[i][j];
 			pSvg << QString(j == 0 ? "M" : "L");
-			pSvg << QString("%1,%2 ").arg(pt.X - minX).arg(pt.Y - minY);
+			pSvg << QString("%1,%2 ").arg(pt.X - bounds.left()).arg(pt.Y - bounds.top());
 		}
 		pSvg << "Z";
 	}
@@ -127,6 +133,11 @@ inline QString clipperPathsToSVG(ClipperLib::Paths &paths, double clipperDPI, bo
 	if (withSVGElement)
 		pSvg << "</svg>\n";
 	return pSvg.join("");
+}
+
+inline void clipperPathsToSVGFile(ClipperLib::Paths &paths, double clipperDPI, QString fileName) {
+    std::ofstream file(fileName.toStdString().c_str());
+    file << clipperPathsToSVG(paths, clipperDPI).toStdString();
 }
 
 inline QString imageToSVGPath(QImage &image, double res) {
@@ -138,16 +149,15 @@ inline QString imageToSVGPath(QImage &image, double res) {
 		int startIndex = 0;
 		for (int i = 0; i < image.width(); i++) {
 			bool pix = qGray(image.pixel(i, j)) != 0;
-			if (pix != previousPix || i == image.width() - 1)
-				if (pix) {
-					ClipperLib::Path span;
-					span << ClipperLib::IntPoint(startIndex, j) << ClipperLib::IntPoint(i + 1, j)
-							<< ClipperLib::IntPoint(i + 1, j + 1) << ClipperLib::IntPoint(startIndex, j + 1);
-					lineSpans << span;
-					startIndex = 0;
-				} else {
-					startIndex = i;
-				}
+			if (pix != previousPix || i == image.width() - 1) if (pix) {
+				ClipperLib::Path span;
+				span << ClipperLib::IntPoint(startIndex, j) << ClipperLib::IntPoint(i + 1, j)
+						<< ClipperLib::IntPoint(i + 1, j + 1) << ClipperLib::IntPoint(startIndex, j + 1);
+				lineSpans << span;
+				startIndex = 0;
+			} else {
+				startIndex = i;
+			}
 			previousPix = pix;
 		}
 	}
@@ -155,7 +165,7 @@ inline QString imageToSVGPath(QImage &image, double res) {
 	cp.AddPaths(vectorized, ClipperLib::ptClip, true);
 	ClipperLib::Paths result;
 	cp.Execute(ClipperLib::ctUnion, result, ClipperLib::pftNonZero, ClipperLib::pftNonZero);
-	return clipperPathsToSVG(result, res , false);
+	return clipperPathsToSVG(result, res, false);
 }
 
 #endif // CLIPPERHELPERS_H

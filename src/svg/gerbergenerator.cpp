@@ -136,6 +136,10 @@ public:
         return User;
     }
 
+    Paths getOutline() {
+        return outline;
+    }
+
     void setLayerType(LayerType layerType_) {
         if (layerType == Outline)
             outline.swap(clipperPaths);
@@ -795,11 +799,12 @@ void GerberGenerator::exportToGerber(const QString & prefix, const QString & exp
     collectGerberFile(device.gerberPaintEngine(), exportDir, prefix, SilkTopSuffix, false);
 
     painter.end();
-    doDrill(board, sketchWidget, prefix, exportDir);
+    doDrill(board, sketchWidget, prefix, exportDir, device.gerberPaintEngine()->getOutline());
 }
 
 void GerberGenerator::exportFile(const QString &svg, const QString &layerName, SVG2gerber::ForWhy forWhy, const QString &exportDir,
         const QString &prefix, const QString &suffix) {
+
     switch(forWhy){
 
         case SVG2gerber::ForCopper:
@@ -814,8 +819,10 @@ void GerberGenerator::exportFile(const QString &svg, const QString &layerName, S
         case SVG2gerber::ForMask:
             svgToGerberFile(svg, GerberPaintEngine::SolderMask, exportDir, prefix, suffix);
             break;
-        case SVG2gerber::ForDrill:
-            GerberGenerator::svgToExcellon(prefix, exportDir, svg);
+        case SVG2gerber::ForDrill: {
+            Paths paths;
+            GerberGenerator::svgToExcellon(prefix, exportDir, svg, paths);
+        }
             break;
         case SVG2gerber::ForPasteMask:
             svgToGerberFile(svg, GerberPaintEngine::PasteStencil, exportDir, prefix, suffix);
@@ -835,29 +842,40 @@ static QDomDocument extractHoles(bool plated, QString svgDrill) {
     return holesDocument;
 }
 
-static void dumpHoles(QStringList &excellonHeader,QStringList &excellonBody, const QMap<double, QSet<QPointF> > holes, int holeIndex, double height) {
+static bool pointInPolygon(Paths &paths, IntPoint point) {
+    for(int i = 0; i < paths.size(); i++)
+        if (Orientation(paths[i]) != (PointInPolygon(point, paths[i])==1))
+            return false;
+    return true;
+}
+
+static void dumpHoles(QStringList &excellonHeader,QStringList &excellonBody, const QMap<double, QSet<QPointF> > holes, int holeIndex, double height, const Paths &outline) {
+    ClipperOffset co;
+    co.AddPaths(outline, jtRound, etClosedPolygon);
     for (QMap<double, QSet<QPointF> >::const_iterator it = holes.begin(); it != holes.end(); ++it) {
+        Paths offsetOutline;
+        co.Execute(offsetOutline, -it.key() / 2.0 * dpi);
         excellonHeader << "T" << QString::number(holeIndex) << "C" << QString::number(it.key()) << "\n";
         excellonBody << "T" << QString::number(holeIndex) << "\n";
         for(QSet<QPointF>::const_iterator it2 = it->begin(); it2 != it->end(); ++it2)
-            excellonBody
-                    << "X" << QString("%1").arg(qRound(it2->x() * 10000), 6, 10, QChar('0'))
-                    << "Y" << QString("%1").arg(qRound((height - it2->y()) * 10000), 6, 10, QChar('0')) << "\n";
+            if (pointInPolygon(offsetOutline, IntPoint((cInt) (it2->x() * dpi), (cInt) (it2->y() * dpi))))
+                excellonBody
+                        << "X" << QString("%1").arg(qRound(it2->x() * 10000), 6, 10, QChar('0'))
+                        << "Y" << QString("%1").arg(qRound((height - it2->y()) * 10000), 6, 10, QChar('0')) << "\n";
         holeIndex++;
     }
 }
 
-
-int GerberGenerator::doDrill(ItemBase *board, PCBSketchWidget *sketchWidget, const QString &filename, const QString &exportDir)
+int GerberGenerator::doDrill(ItemBase *board, PCBSketchWidget *sketchWidget, const QString &filename, const QString &exportDir, const Paths &outline)
 {
     LayerList drillLayerIDs;
     drillLayerIDs << ViewLayer::drillLayers();
     QString svgDrill = renderTo(drillLayerIDs, board, sketchWidget);
-    svgToExcellon(filename, exportDir, svgDrill);
+    svgToExcellon(filename, exportDir, svgDrill, outline);
     return 0;
 }
 
-void GerberGenerator::svgToExcellon(QString const &filename, QString const &exportDir,const QString &svgDrill) {
+void GerberGenerator::svgToExcellon(QString const &filename, QString const &exportDir,const QString &svgDrill, const Paths &outline) {
     QSizeF svgSize = TextUtils::parseForWidthAndHeight(svgDrill);
     QDomDocument platedHolesDocument = extractHoles(true, svgDrill);
     QDomDocument nonPlatedHolesDocument = extractHoles(false, svgDrill);
@@ -886,8 +904,8 @@ void GerberGenerator::svgToExcellon(QString const &filename, QString const &expo
 
     excellonHeader << "M48\n";
     excellonHeader << "INCH\n";
-    dumpHoles(excellonHeader, excellonBody, nonPlatedHoles, initialHoleIndex, svgSize.height());
-    dumpHoles(excellonHeader, excellonBody, platedHoles, initialPlatedIndex, svgSize.height());
+    dumpHoles(excellonHeader, excellonBody, nonPlatedHoles, initialHoleIndex, svgSize.height(), outline);
+    dumpHoles(excellonHeader, excellonBody, platedHoles, initialPlatedIndex, svgSize.height(), outline);
     excellonBody << "T00\nM30\n";
     QFile f(exportDir + "/" + filename+ "_drill.txt");
     f.open(QIODevice::WriteOnly);

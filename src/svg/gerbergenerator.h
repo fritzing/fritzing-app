@@ -29,10 +29,10 @@ $Date: 2013-04-06 23:14:37 +0200 (Sa, 06. Apr 2013) $
 
 #include <QString>
 
-#include "../viewlayer.h"
 #include "svg2gerber.h"
 #include "../items/itembase.h"
 #include "../sketch/pcbsketchwidget.h"
+#include "../lib/clipper/clipper.hpp"
 
 class GerberGenerator
 {
@@ -59,12 +59,12 @@ public:
 
 
 protected:
-    static int doDrill(ItemBase *board, PCBSketchWidget *sketchWidget, const QString &filename, const QString &exportDir);
+    static int doDrill(ItemBase *board, PCBSketchWidget *sketchWidget, const QString &filename, const QString &exportDir, const ClipperLib::Paths &outline);
 	static void displayMessage(const QString & message, bool displayMessageBoxes);
     static void exportPickAndPlace(const QString & prefix, const QString & exportDir, ItemBase * board, PCBSketchWidget * sketchWidget, bool displayMessageBoxes);
     static QString renderTo(const LayerList &, ItemBase *board, PCBSketchWidget *sketchWidget);
 
-    static void svgToExcellon(QString const &filename, QString const &exportDir,const QString &svgDrill);
+    static void svgToExcellon(QString const &filename, QString const &exportDir,const QString &svgDrill, const ClipperLib::Paths &outline);
 };
 
 #endif // GERBERGENERATOR_H

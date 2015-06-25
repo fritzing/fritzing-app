@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="cs_CZ">
+<TS version="2.0" language="cs_CZ">
 <context>
     <name>AboutBox</name>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="70"/>
         <source>Version %1.%2.%3 &lt;small&gt;(%4%5 %6) %7 [Qt %8]&lt;/small&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Verze %1.%2.%3 &lt;small&gt;(%4%5 %6) %7 [Qt %8]&lt;/small&gt;</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="86"/>
@@ -56,7 +56,7 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="134"/>
         <source>Jenny Chowdhury, Lionel Michel, Fabian Althaus, Jannis Leidel, </source>
-        <translation type="unfinished"></translation>
+        <translation>Jenny Chowdhury, Lionel Michel, Fabian Althaus, Jannis Leidel, </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="135"/>
@@ -136,7 +136,7 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="156"/>
         <source>to Steven Noppe and Davy Uittenbogerd for the Dutch translation, </source>
-        <translation type="unfinished"></translation>
+        <translation>Stevenu Noppovi a Davymu Uittenbogerdovi za jejich Holandský překlad</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="157"/>
@@ -151,32 +151,32 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="159"/>
         <source>to &amp;#313;ubom&amp;iacute;r Ducho&amp;#328; for the Slovak translation, </source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;#313;ubom&amp;iacute;ru Ducho&amp;#328;ovi za Slovenský překlad, </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="160"/>
         <source>to Alexander Kaltsas for the Greek translation, </source>
-        <translation type="unfinished"></translation>
+        <translation>Alexandru Kaltsasovi za Řecký překlad, </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="161"/>
         <source>to Lionel Michel, Yvan Kloster, Alexandre Dussart, and Roald Baudoux for the French translation, </source>
-        <translation type="unfinished"></translation>
+        <translation>Lioneli Michelovi, Yvanu Klosterovi, Alexandru Dussartovi, a Roaldu Baudouxovi za Francouský překlad, </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="162"/>
         <source>to Cihan Mete Bahad&amp;#x0131;r for the Turkish translation, </source>
-        <translation type="unfinished"></translation>
+        <translation>Cihan Mete Bahad&amp;#x0131;rovi za Turecký překlad, </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="163"/>
         <source>to Nikolay Stankov for the Bulgarian translation, </source>
-        <translation type="unfinished"></translation>
+        <translation>Nikolayi Stankovovi za Bulharský překlad, </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="165"/>
         <source>and to Arthur Zanona, Nuno Pessanha Santos, Leandro Nunes, and Gabriel Ferreira for the Portuguese (Brazilian) translation. </source>
-        <translation type="unfinished"></translation>
+        <translation>a Arthurovi Zanonanovi, Nuno Pessanha Santosovi, Leandro Nunesovi, a Gabrieli Ferreirovi za Portugalský (Brazilský) překlad. </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="169"/>
@@ -201,7 +201,7 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="173"/>
         <source>and from each purchase of a Fritzing Starter Kit or a PCB from Fritzing Fab.</source>
-        <translation type="unfinished"></translation>
+        <translation>a z každého zakoupeného Fritzing Starter Kitu nebo vyrobené DPS z Fritzing Laboratoří.</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="177"/>
@@ -252,7 +252,7 @@
     <message>
         <location filename="../src/autoroute/autorouter.cpp" line="346"/>
         <source>Routing canceled! Now cleaning up...</source>
-        <translation type="unfinished"></translation>
+        <translation>Routing zrušen! Obnovuji původní rozložení...</translation>
     </message>
 </context>
 <context>
@@ -280,22 +280,22 @@
     <message>
         <location filename="../src/autoroute/autoroutersettingsdialog.cpp" line="252"/>
         <source>Keepout</source>
-        <translation type="unfinished"></translation>
+        <translation>Mezera</translation>
     </message>
     <message>
         <location filename="../src/autoroute/autoroutersettingsdialog.cpp" line="255"/>
         <source>&lt;b&gt;Keepout&lt;/b&gt; is the minimum distance between copper elements on different nets.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Mezera&lt;/b&gt;je minimální vzdálenost mezi měděnými spoji (v různých mřížkách).</translation>
     </message>
     <message>
         <location filename="../src/autoroute/autoroutersettingsdialog.cpp" line="259"/>
         <source>A keepout of 0.01 inch (0.254 mm) is a good default.</source>
-        <translation type="unfinished"></translation>
+        <translation>Doporučená velikost mezery je 0.01 palce (0.254 mm).</translation>
     </message>
     <message>
         <location filename="../src/autoroute/autoroutersettingsdialog.cpp" line="262"/>
         <source>Note: the smaller the keepout, the slower the DRC and Autorouter will run.</source>
-        <translation type="unfinished"></translation>
+        <translation>Poznámka: Čím menší mezera, tím  bude DRC routování pomalejší.</translation>
     </message>
     <message>
         <location filename="../src/autoroute/autoroutersettingsdialog.cpp" line="301"/>
@@ -343,7 +343,7 @@
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="914"/>
         <source>Searching...</source>
-        <translation type="unfinished"></translation>
+        <translation>Vyhledávání...</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="988"/>
@@ -353,12 +353,12 @@
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="990"/>
         <source>Import...</source>
-        <translation type="unfinished"></translation>
+        <translation>Importování...</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="991"/>
         <source>Load a Fritzing part (.fzpz), or a Fritzing parts bin (.fzb, .fzbz)</source>
-        <translation type="unfinished"></translation>
+        <translation>Načíst Fritzing součástku (.fzpz). nebo Fritzing zásobník součástek (.fzb, .fzbz)</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="994"/>
@@ -433,22 +433,22 @@
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1022"/>
         <source>Copy to Sketch</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopírovat do Návrhu</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1023"/>
         <source>Copy all the parts in the bin to a sketch</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopírovat všechny součástky ze zásobníku do návrhu</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1026"/>
         <source>Copy all to Sketch</source>
-        <translation type="unfinished"></translation>
+        <translation>Zkopírovat vše do návrhu</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1027"/>
         <source>Copy all loaded parts to the sketch</source>
-        <translation type="unfinished"></translation>
+        <translation>Zkopírovat všechny načtené součástky do návrhu</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1030"/>
@@ -473,7 +473,7 @@
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1058"/>
         <source>Edit Part (new parts editor)...</source>
-        <translation type="unfinished"></translation>
+        <translation>Upravit součástku (editor nových součástek)...</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1059"/>
@@ -488,7 +488,7 @@
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1061"/>
         <source>Find Part in Sketch</source>
-        <translation type="unfinished"></translation>
+        <translation>Najít součástku v návrhu</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1104"/>
@@ -523,12 +523,12 @@
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1233"/>
         <source>Remove from Bin</source>
-        <translation type="unfinished"></translation>
+        <translation>Odstranit ze zásobníku</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1233"/>
         <source>Unable to remove part &apos;%1&apos;--it is in use in a sketch</source>
-        <translation type="unfinished"></translation>
+        <translation>Nelze odstranit součástku &apos;%1&apos;-- právě se používá v návrhu</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1239"/>
@@ -538,17 +538,17 @@
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1240"/>
         <source>Do you really want to remove &apos;%1&apos; from the bin? This operation cannot be undone.</source>
-        <translation type="unfinished"></translation>
+        <translation>Opravdu chcete odstranit &apos;%1&apos; ze zásobníku ? Tuto operaci nelze vzít zpět.</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1337"/>
         <source>Select a Fritzing File to Open</source>
-        <translation type="unfinished">Vybrat soubor Fritzing pro otevření</translation>
+        <translation>Vybrat soubor Fritzing k otevření</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1339"/>
         <source>Fritzing Files (*%1 *%2 *%3);;Fritzing Part (*%1);;Fritzing Bin (*%2);;Fritzing Shareable Bin (*%3)</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing Soubory (*%1 *%2 *%3);;Fritzing Součástky (*%1);;Fritzing Zásobník(*%2);;Fritzing sdílitelný Zásobník (*%3)</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="404"/>
@@ -693,8 +693,6 @@ A custom board svg typically has one or two silkscreen layers and one board laye
         <source>&lt;b&gt;The custom shape has %n cutouts.&lt;/b&gt;</source>
         <translation type="unfinished">
             <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
         </translation>
     </message>
     <message>
@@ -739,7 +737,7 @@ Use the file?</source>
     <message>
         <location filename="../src/items/logoitem.cpp" line="1134"/>
         <source>shape</source>
-        <translation type="unfinished">tvar</translation>
+        <translation>tvar</translation>
     </message>
 </context>
 <context>
@@ -748,17 +746,17 @@ Use the file?</source>
         <location filename="../src/items/logoitem.cpp" line="944"/>
         <location filename="../src/items/logoitem.cpp" line="967"/>
         <source>color</source>
-        <translation type="unfinished">barva</translation>
+        <translation>barva</translation>
     </message>
     <message>
         <location filename="../src/items/logoitem.cpp" line="947"/>
         <source>Set text color</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavit barvu textu</translation>
     </message>
     <message>
         <location filename="../src/items/logoitem.cpp" line="961"/>
         <source>Select text color</source>
-        <translation type="unfinished"></translation>
+        <translation>Vybrat barvu textu</translation>
     </message>
 </context>
 <context>
@@ -766,7 +764,7 @@ Use the file?</source>
     <message>
         <location filename="../src/items/capacitor.cpp" line="67"/>
         <source>Select from the dropdown, or type in a %1 value</source>
-        <translation type="unfinished"></translation>
+        <translation>Vyberte z uvedených možností, nebo zadejte hodnotu %1</translation>
     </message>
 </context>
 <context>
@@ -792,117 +790,117 @@ Use the file?</source>
     <message>
         <location filename="../src/program/consolesettings.ui" line="14"/>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavení</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.ui" line="20"/>
         <source>Select Parameters</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavení Parametrů</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.ui" line="26"/>
         <source>BaudRate:</source>
-        <translation type="unfinished"></translation>
+        <translation>Rychlost:</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.ui" line="36"/>
         <source>Data bits:</source>
-        <translation type="unfinished"></translation>
+        <translation>Datové bity:</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.ui" line="46"/>
         <source>Parity:</source>
-        <translation type="unfinished"></translation>
+        <translation>Parita:</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.ui" line="56"/>
         <source>Stop bits:</source>
-        <translation type="unfinished"></translation>
+        <translation>Stop bity:</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.ui" line="66"/>
         <source>Flow control:</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.ui" line="79"/>
         <source>Select Serial Port</source>
-        <translation type="unfinished"></translation>
+        <translation>Výběr Sériového Portu</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.ui" line="88"/>
         <source>Description:</source>
-        <translation type="unfinished"></translation>
+        <translation>Popisek:</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.ui" line="95"/>
         <source>Manufacturer:</source>
-        <translation type="unfinished"></translation>
+        <translation>Výrobce:</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.ui" line="102"/>
         <source>Serial number:</source>
-        <translation type="unfinished"></translation>
+        <translation>Sériové číslo:</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.ui" line="109"/>
         <source>Location:</source>
-        <translation type="unfinished"></translation>
+        <translation>Umístění:</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.ui" line="116"/>
         <source>Vendor ID:</source>
-        <translation type="unfinished"></translation>
+        <translation>Vendor ID:</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.ui" line="123"/>
         <source>Product ID:</source>
-        <translation type="unfinished"></translation>
+        <translation>Product ID:</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.ui" line="148"/>
         <source>Apply</source>
-        <translation type="unfinished"></translation>
+        <translation>Potvrdit</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.ui" line="157"/>
         <source>Additional options</source>
-        <translation type="unfinished"></translation>
+        <translation>Další nastavení</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.ui" line="163"/>
         <source>Local echo</source>
-        <translation type="unfinished"></translation>
+        <translation>Local echo</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.cpp" line="89"/>
         <source>Description: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Popisek: %1</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.cpp" line="90"/>
         <source>Manufacturer: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Výrobce: %1</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.cpp" line="91"/>
         <source>Serial number: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Sériové číslo: %1</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.cpp" line="92"/>
         <source>Location: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Umístění: %1</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.cpp" line="93"/>
         <source>Vendor Identifier: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Vendor Identifier: %1</translation>
     </message>
     <message>
         <location filename="../src/program/consolesettings.cpp" line="94"/>
         <source>Product Identifier: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Product Identifier: %1</translation>
     </message>
 </context>
 <context>
@@ -910,142 +908,142 @@ Use the file?</source>
     <message>
         <location filename="../src/program/consolewindow.ui" line="14"/>
         <source>Serial Monitor</source>
-        <translation type="unfinished"></translation>
+        <translation>Sériový Monitor</translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.ui" line="30"/>
         <source>Monitor</source>
-        <translation type="unfinished"></translation>
+        <translation>Monitor</translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.ui" line="39"/>
         <source>Tools</source>
-        <translation type="unfinished">Nástroje</translation>
+        <translation>Nástroje</translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.ui" line="62"/>
         <source>&amp;About</source>
-        <translation type="unfinished">&amp;O programu</translation>
+        <translation>&amp;O programu</translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.ui" line="65"/>
         <source>About program</source>
-        <translation type="unfinished"></translation>
+        <translation>O programu</translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.ui" line="68"/>
         <source>Alt+A</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+A</translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.ui" line="73"/>
         <source>About Qt</source>
-        <translation type="unfinished"></translation>
+        <translation>O Qt</translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.ui" line="78"/>
         <source>C&amp;onnect</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Připojit se</translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.ui" line="81"/>
         <source>Connect to serial port</source>
-        <translation type="unfinished"></translation>
+        <translation>Připojí se k sériovému portu</translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.ui" line="84"/>
         <source>Ctrl+O</source>
-        <translation type="unfinished">Ctrl+O</translation>
+        <translation>Ctrl+O</translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.ui" line="89"/>
         <source>&amp;Disconnect</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Odpojit se</translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.ui" line="92"/>
         <source>Disconnect from serial port</source>
-        <translation type="unfinished"></translation>
+        <translation>Odpojí se od sériového portu</translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.ui" line="95"/>
         <source>Ctrl+D</source>
-        <translation type="unfinished">Ctrl+D</translation>
+        <translation>Ctrl+D</translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.ui" line="100"/>
         <source>&amp;Configure</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Nastavení</translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.ui" line="103"/>
         <source>Configure serial port</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavení sériového portu</translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.ui" line="106"/>
         <source>Alt+C</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+C</translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.ui" line="111"/>
         <source>C&amp;lear</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Vymazat okno</translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.ui" line="114"/>
         <source>Clear data</source>
-        <translation type="unfinished"></translation>
+        <translation>Vymaže aktuální okno</translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.ui" line="117"/>
         <source>Alt+L</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+L</translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.ui" line="126"/>
         <source>&amp;Quit</source>
-        <translation type="unfinished">&amp;Ukončit</translation>
+        <translation>&amp;Ukončit</translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.ui" line="129"/>
         <source>Ctrl+Q</source>
-        <translation type="unfinished">Ctrl+Q</translation>
+        <translation>Ctrl+Q</translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.cpp" line="149"/>
         <source>Connected to %1 : %2, %3, %4, %5, %6</source>
-        <translation type="unfinished"></translation>
+        <translation>Připojeno k %1 : %2, %3, %4, %5, %6</translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.cpp" line="153"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Chyba</translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.cpp" line="155"/>
         <source>Serial port open error</source>
-        <translation type="unfinished"></translation>
+        <translation>Při otevírání sériového portu došlo k chybě</translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.cpp" line="175"/>
         <source>Disconnected</source>
-        <translation type="unfinished"></translation>
+        <translation>Odpojeno</translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.cpp" line="181"/>
         <source>About Serial Monitor</source>
-        <translation type="unfinished"></translation>
+        <translation>O Sériovém Monitoru</translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.cpp" line="182"/>
         <source>This terminal displays the serial communication on the selected port, usually between your computer and the connected microcontroller.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tento Terminál zobrazuje sériovou komunikaci na vybraném portu, obvykle mezi vaším počítačem a připojeným mikrokontrolérem.</translation>
     </message>
     <message>
         <location filename="../src/program/consolewindow.cpp" line="201"/>
         <source>Critical Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Kritická chyba</translation>
     </message>
 </context>
 <context>
@@ -1180,7 +1178,7 @@ Use the file?</source>
     <message>
         <location filename="../src/fapplication.cpp" line="1550"/>
         <source>Fritzing caught an exception from %1 in event %2: %3</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing zachytil vyjímku z %1 v události %2: %3</translation>
     </message>
     <message>
         <location filename="../src/fapplication.cpp" line="1553"/>
@@ -1231,7 +1229,7 @@ Pozn.: Můžete importovat později, s použitím položky &quot;Nápověda&quot
     <message>
         <location filename="../src/help/firsttimehelpdialog.cpp" line="43"/>
         <source>First Time Help</source>
-        <translation type="unfinished">První nápověda</translation>
+        <translation>První nápověda</translation>
     </message>
     <message>
         <location filename="../src/help/firsttimehelpdialog.cpp" line="88"/>
@@ -1400,17 +1398,17 @@ Je také možné zvolit konektory jako výplň země kliknutím pravým tlačít
     <message>
         <location filename="../src/infoview/htmlinfoview.cpp" line="966"/>
         <source>Change the locked state of the part in this view. A locked part can&apos;t be moved.</source>
-        <translation type="unfinished"></translation>
+        <translation>Změní uzamčený stav této součástky v tomto pohledu. S uzamčenou součástkou nelze hýbat.</translation>
     </message>
     <message>
         <location filename="../src/infoview/htmlinfoview.cpp" line="972"/>
         <source>Sticky</source>
-        <translation type="unfinished"></translation>
+        <translation>Zachytit</translation>
     </message>
     <message>
         <location filename="../src/infoview/htmlinfoview.cpp" line="974"/>
         <source>Change the &quot;sticky&quot; state of the part in this view. When a sticky part is moved, objects on top of it also move.</source>
-        <translation type="unfinished"></translation>
+        <translation>Změní součástku na přichycující. Když je přichycující součástka posunuta, objekty na jejím vrchu se s ní automaticky pohnou taktéž.</translation>
     </message>
     <message>
         <location filename="../src/infoview/htmlinfoview.cpp" line="273"/>
@@ -1420,12 +1418,12 @@ Je také možné zvolit konektory jako výplň země kliknutím pravým tlačít
     <message>
         <location filename="../src/infoview/htmlinfoview.cpp" line="233"/>
         <source>Placement</source>
-        <translation type="unfinished"></translation>
+        <translation>Umístění</translation>
     </message>
     <message>
         <location filename="../src/infoview/htmlinfoview.cpp" line="243"/>
         <source>pcb layer</source>
-        <translation type="unfinished"></translation>
+        <translation>vrstva DPS</translation>
     </message>
     <message>
         <location filename="../src/infoview/htmlinfoview.cpp" line="285"/>
@@ -1484,27 +1482,27 @@ Je také možné zvolit konektory jako výplň země kliknutím pravým tlačít
     <message>
         <location filename="../src/infoview/htmlinfoview.cpp" line="730"/>
         <source>v. %1 %2</source>
-        <translation type="unfinished">v. %1 %2</translation>
+        <translation>v. %1 %2</translation>
     </message>
     <message>
         <location filename="../src/infoview/htmlinfoview.cpp" line="730"/>
         <source>obsolete</source>
-        <translation type="unfinished"></translation>
+        <translation>zastaralé</translation>
     </message>
     <message>
         <location filename="../src/infoview/htmlinfoview.cpp" line="984"/>
         <source>location</source>
-        <translation type="unfinished"></translation>
+        <translation>pozice</translation>
     </message>
     <message>
         <location filename="../src/infoview/htmlinfoview.cpp" line="1034"/>
         <source>rotation</source>
-        <translation type="unfinished"></translation>
+        <translation>rotace</translation>
     </message>
     <message>
         <location filename="../src/infoview/htmlinfoview.cpp" line="1056"/>
         <source>degrees</source>
-        <translation type="unfinished"></translation>
+        <translation>stupně</translation>
     </message>
 </context>
 <context>
@@ -1688,37 +1686,37 @@ Je také možné zvolit konektory jako výplň země kliknutím pravým tlačít
     <message>
         <location filename="../src/items/itembase.cpp" line="314"/>
         <source>banded</source>
-        <translation type="unfinished"></translation>
+        <translation>pruhovaný</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="315"/>
         <source>top</source>
-        <translation type="unfinished"></translation>
+        <translation>vrchní</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="316"/>
         <source>bottom</source>
-        <translation type="unfinished"></translation>
+        <translation>spodní</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="317"/>
         <source>copper bottom</source>
-        <translation type="unfinished"></translation>
+        <translation>měděná spodní</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="318"/>
         <source>copper top</source>
-        <translation type="unfinished"></translation>
+        <translation>měděná vrchní</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="319"/>
         <source>silkscreen bottom</source>
-        <translation type="unfinished"></translation>
+        <translation>popisková spodní</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="320"/>
         <source>silkscreen top</source>
-        <translation type="unfinished"></translation>
+        <translation>popisková vrchní</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="326"/>
@@ -1733,7 +1731,7 @@ Je také možné zvolit konektory jako výplň země kliknutím pravým tlačít
     <message>
         <location filename="../src/items/itembase.cpp" line="1404"/>
         <source>file for %1 %2 not found</source>
-        <translation type="unfinished"></translation>
+        <translation>soubor pro %1 %2 nenalezen</translation>
     </message>
     <message>
         <location filename="../src/items/itembase.cpp" line="1507"/>
@@ -1791,7 +1789,7 @@ Je také možné zvolit konektory jako výplň země kliknutím pravým tlačít
         <location filename="../src/items/logoitem.cpp" line="250"/>
         <location filename="../src/items/logoitem.cpp" line="657"/>
         <source>text</source>
-        <translation type="unfinished"></translation>
+        <translation>text</translation>
     </message>
     <message>
         <location filename="../src/items/logoitem.cpp" line="274"/>
@@ -1801,37 +1799,37 @@ Je také možné zvolit konektory jako výplň země kliknutím pravým tlačít
     <message>
         <location filename="../src/items/logoitem.cpp" line="349"/>
         <source>due to a rendering error</source>
-        <translation type="unfinished"></translation>
+        <translation>kvůli chybě renderingu</translation>
     </message>
     <message>
         <location filename="../src/items/logoitem.cpp" line="363"/>
         <source>because the svg is empty</source>
-        <translation type="unfinished"></translation>
+        <translation>protože soubor svg je prázdný</translation>
     </message>
     <message>
         <location filename="../src/items/logoitem.cpp" line="368"/>
         <source>because this appears to be a SVG file exported from CorelDRAW without choosing the &apos;presentation attributes&apos; setting</source>
-        <translation type="unfinished"></translation>
+        <translation>protože se zdá že tento SVG soubor byl exportován z CorelDRAW bez vybrané možnosti &apos;zobrazení vlastností&apos;</translation>
     </message>
     <message>
         <location filename="../src/items/logoitem.cpp" line="382"/>
         <source>due to an xml problem: %1 line:%2 column:%3</source>
-        <translation type="unfinished"></translation>
+        <translation>kvůli problému s XML:%1 řádek:%2 sloupec:%3</translation>
     </message>
     <message>
         <location filename="../src/items/logoitem.cpp" line="388"/>
         <source>because the file has no root element</source>
-        <translation type="unfinished"></translation>
+        <translation>protože soubor nemá root element</translation>
     </message>
     <message>
         <location filename="../src/items/logoitem.cpp" line="393"/>
         <source>because the file has no &lt;svg&gt; element</source>
-        <translation type="unfinished"></translation>
+        <translation>protože soubor nemá žádný &lt;svg&gt; element</translation>
     </message>
     <message>
         <location filename="../src/items/logoitem.cpp" line="431"/>
         <source>for unknown reasons--possibly the image file is corrupted</source>
-        <translation type="unfinished"></translation>
+        <translation>z neznámých důvodů--pravděpodobně je soubor s obrázkem poškozen</translation>
     </message>
     <message>
         <location filename="../src/items/logoitem.cpp" line="448"/>
@@ -1903,7 +1901,7 @@ Je také možné zvolit konektory jako výplň země kliknutím pravým tlačít
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1415"/>
         <source>Unable to open &apos;%1&apos;: %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Nelze otevřít &apos;%1&apos;:%2</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1755"/>
@@ -2001,12 +1999,12 @@ Je také možné zvolit konektory jako výplň země kliknutím pravým tlačít
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="2733"/>
         <source>Unrouted connections</source>
-        <translation type="unfinished"></translation>
+        <translation>Nezroutované propojky</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="2734"/>
         <source>There are no unrouted connections in this view.</source>
-        <translation type="unfinished"></translation>
+        <translation>Již zde nejsou žádné nezroutované propojky.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow/mainwindow.cpp" line="1977"/>
@@ -2062,22 +2060,22 @@ Je také možné zvolit konektory jako výplň země kliknutím pravým tlačít
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="913"/>
         <source>Click to highlight unconnected parts</source>
-        <translation type="unfinished"></translation>
+        <translation>Klikněte ke zvýraznění nepřipojených součástek</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="960"/>
         <source>Fabricate</source>
-        <translation type="unfinished"></translation>
+        <translation>Vyrobit</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1007"/>
         <source>View from Above</source>
-        <translation type="unfinished"></translation>
+        <translation>Pohled Zhora</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1014"/>
         <source>View from Below</source>
-        <translation type="unfinished"></translation>
+        <translation>Pohled Zespoda</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1035"/>
@@ -2092,27 +2090,27 @@ Je také možné zvolit konektory jako výplň země kliknutím pravým tlačít
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1658"/>
         <source>Unable to open shareable &apos;%1&apos;: %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Nelze otevřít sdílitelný &apos;%1&apos;: %2</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1701"/>
         <source>Unable to open shareable part &apos;%1&apos;: %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Nelze otevřít sdílitelnou součástku &apos;%1&apos;: %2</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1726"/>
         <source>Unable to load part from &apos;%1&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>Nelze načíst součástku z &apos;%1&apos;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1830"/>
         <source>MainWindow::moveToPartsFolder mainwindow missing</source>
-        <translation type="unfinished"></translation>
+        <translation>MainWindow::moveToPartsFolder hlavní okno chybí</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1845"/>
         <source>There is already a part with id &apos;%1&apos; loaded into Fritzing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Součástka s id &apos;%1&apos; je již načtena programem Fritzing.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="1998"/>
@@ -2150,12 +2148,12 @@ Pracujeme na potlačení této zprávy a nyní Vám nezbývá, než zvolit mezi 
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="2234"/>
         <source>Change to single layer pcb</source>
-        <translation type="unfinished"></translation>
+        <translation>Změnit na jednostrannou desku DPS</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="2234"/>
         <source>Change to two layer pcb</source>
-        <translation type="unfinished"></translation>
+        <translation>Změnit na oboustrannou desku DPS</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="2267"/>
@@ -2165,7 +2163,7 @@ Pracujeme na potlačení této zprávy a nyní Vám nezbývá, než zvolit mezi 
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="2302"/>
         <source>Change image to %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Změnit obrázek na %2</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="2364"/>
@@ -2190,12 +2188,12 @@ Pracujeme na potlačení této zprávy a nyní Vám nezbývá, než zvolit mezi 
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="2468"/>
         <source>Schematic conversion</source>
-        <translation type="unfinished"></translation>
+        <translation>Konverze schématu</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="2469"/>
         <source>Saving this sketch will convert it to the new schematic graphics standard. Go ahead and convert?</source>
-        <translation type="unfinished"></translation>
+        <translation>Uložení tohoto návrhu, jej převede na nový grafický standart (schématu). Pokračovat a převést ?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="2584"/>
@@ -2205,22 +2203,22 @@ Pracujeme na potlačení této zprávy a nyní Vám nezbývá, než zvolit mezi 
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="2784"/>
         <source>(x,y)=(%1, %2) %3</source>
-        <translation type="unfinished"></translation>
+        <translation>(x,y)=(%1, %2) %3</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="2789"/>
         <source>(x, y)=(%1, %2)	(width, height)=(%3, %4) %5</source>
-        <translation type="unfinished"></translation>
+        <translation>(x, y)=(%1, %2)	(šířka, výška)=(%3, %4) %5</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="3070"/>
         <source>Code</source>
-        <translation type="unfinished"></translation>
+        <translation>Kód</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="3129"/>
         <source>Welcome</source>
-        <translation type="unfinished"></translation>
+        <translation>Uvítací obrazovka</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="1646"/>
@@ -2266,12 +2264,12 @@ Pracujeme na potlačení této zprávy a nyní Vám nezbývá, než zvolit mezi 
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="189"/>
         <source>Your sketch does not have a board yet! Please add a PCB in order to export etchable.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ve vašem návrhu ještě není žádná  DPS deska! Prosím přidejte ji ,poté budete moci exportovat leptatelné návrhy.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="194"/>
         <source>Etchable export can only handle one board at a time--please select the board you want to export.</source>
-        <translation type="unfinished"></translation>
+        <translation>Můžete exportovat jen jednu leptatelnou desku DPS-- prosím vyberte desku DPS kterou chcete exportovat.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_export.cpp" line="203"/>
@@ -3079,27 +3077,27 @@ Would you like to convert &apos;%1&apos; to the .fzz format now or open it read-
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="976"/>
         <source>Rotate 45� Clockwise</source>
-        <translation type="unfinished">Otočit o 135° doprava {45�?}</translation>
+        <translation>Otočit o 45° doprava</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="980"/>
         <source>Rotate 90� Clockwise</source>
-        <translation type="unfinished">Otočit o 135° doprava {90�?}</translation>
+        <translation>Otočit o 90° doprava</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="984"/>
         <source>Rotate 180�</source>
-        <translation type="unfinished">Otočit o 180° {180�?}</translation>
+        <translation>Otočit o 180°</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="988"/>
         <source>Rotate 90� Counter Clockwise</source>
-        <translation type="unfinished">Otočit o 45° doleva {90�?}</translation>
+        <translation>Otočit o 90° doleva</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="992"/>
         <source>Rotate 45� Counter Clockwise</source>
-        <translation type="unfinished">Otočit o 45° doleva {45�?}</translation>
+        <translation>Otočit o 45° doleva</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1032"/>
@@ -3207,12 +3205,12 @@ Would you like to convert &apos;%1&apos; to the .fzz format now or open it read-
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1102"/>
         <source>Find part in sketch...</source>
-        <translation type="unfinished"></translation>
+        <translation>Vyhledat součástku v návrhu...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1103"/>
         <source>Search for parts in a sketch by matching text</source>
-        <translation type="unfinished"></translation>
+        <translation>Hledat součástky v návrhu dle zadaného textu</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1106"/>
@@ -3322,42 +3320,42 @@ Would you like to convert &apos;%1&apos; to the .fzz format now or open it read-
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1159"/>
         <source>Set Grid Size...</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavit velikost mřížky...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1160"/>
         <source>Set the size of the grid in this view</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastaví velikost mřížky v tomto náhledu</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1163"/>
         <source>Set Background Color...</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavit barvu pozadí...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1164"/>
         <source>Set the background color of this view</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastaví barvu pozadí v tomto náhledu</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1168"/>
         <source>Ctrl+4</source>
-        <translation type="unfinished">Ctrl+4</translation>
+        <translation>Ctrl+4</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1168"/>
         <source>Ctrl+5</source>
-        <translation type="unfinished">Ctrl+5</translation>
+        <translation>Ctrl+5</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1171"/>
         <source>&amp;Show Welcome</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Zobrazit Uvítací obrazovku</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1173"/>
         <source>Show the welcome view</source>
-        <translation type="unfinished"></translation>
+        <translation>Zobrazí Uvítací obrazovku</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1284"/>
@@ -3591,7 +3589,7 @@ Would you like to convert &apos;%1&apos; to the .fzz format now or open it read-
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3055"/>
         <source>vias</source>
-        <translation type="unfinished"></translation>
+        <translation> propojovací díry</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3196"/>
@@ -3678,16 +3676,12 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
         <source>There are %n outdated part(s) in this sketch. </source>
         <translation type="unfinished">
             <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3880"/>
         <source>We strongly recommend that you update these %n parts  to the latest version. </source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
             <numerusform></numerusform>
         </translation>
     </message>
@@ -3706,32 +3700,32 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4047"/>
         <source>OK</source>
-        <translation type="unfinished">OK</translation>
+        <translation>OK</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4070"/>
         <source>Set the grid size for %1.</source>
-        <translation type="unfinished">Nastaví velikost mřížky pro %1.</translation>
+        <translation>Nastaví velikost mřížky pro %1.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4077"/>
         <source>Grid Size:</source>
-        <translation type="unfinished">Velikost mřížky:</translation>
+        <translation>Velikost mřížky:</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4092"/>
         <source>in</source>
-        <translation type="unfinished">palce</translation>
+        <translation>palce</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4095"/>
         <source>mm</source>
-        <translation type="unfinished">mm</translation>
+        <translation>mm</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4104"/>
         <source>Restore Default</source>
-        <translation type="unfinished">Obnovit výchozí</translation>
+        <translation>Obnovit výchozí</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="4222"/>
@@ -3788,7 +3782,7 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1178"/>
         <source>&amp;Show Breadboard</source>
-        <translation>&amp;Zobrazit montážní desku</translation>
+        <translation>&amp;Zobrazit Montážní desku</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="168"/>
@@ -3818,33 +3812,33 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1082"/>
         <source>Convert Bendpoint to Via</source>
-        <translation type="unfinished"></translation>
+        <translation>Změnit zlomový bod na propojovací díru</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1083"/>
         <source>Convert the bendpoint to a via</source>
-        <translation type="unfinished"></translation>
+        <translation>Změní zlomový bod na propojovací díru</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1086"/>
         <source>Convert Via to Bendpoint</source>
-        <translation type="unfinished"></translation>
+        <translation>Změnit propojovací díru na zlomový bod</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1087"/>
         <source>Convert the via to a bendpoint</source>
-        <translation type="unfinished"></translation>
+        <translation>Změní propojovací díru na zlomový bod</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1110"/>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1947"/>
         <source>Hide part silkscreen</source>
-        <translation type="unfinished"></translation>
+        <translation>Skrýt schématickou značku</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1111"/>
         <source>Hide/show the silkscreen layer for only this part</source>
-        <translation type="unfinished"></translation>
+        <translation>Skrýt/Ukázat schématickou značku pouze pro tuto součástku</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1168"/>
@@ -3854,12 +3848,12 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1180"/>
         <source>Show the breadboard view</source>
-        <translation>Zobrazí pohled na montážní desku</translation>
+        <translation>Zobrazí Montážní desku</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1184"/>
         <source>&amp;Show Schematic</source>
-        <translation>&amp;Zobrazit schéma</translation>
+        <translation>&amp;Zobrazit Schéma</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1168"/>
@@ -3869,7 +3863,7 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1186"/>
         <source>Show the schematic view</source>
-        <translation>Zobrazí pohled na schéma</translation>
+        <translation>Zobrazí Schéma</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1190"/>
@@ -3884,7 +3878,7 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="888"/>
         <source>Ctrl+Shift+V</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Shift+V</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1192"/>
@@ -3894,12 +3888,12 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1197"/>
         <source>Show Code</source>
-        <translation type="unfinished"></translation>
+        <translation>Zobrazit Kód</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1199"/>
         <source>Show the code (programming) view</source>
-        <translation type="unfinished"></translation>
+        <translation>Zobrazí programovací kód</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1208"/>
@@ -4118,17 +4112,17 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1879"/>
         <source>Hide part label</source>
-        <translation type="unfinished">Skrýt popisek součástky</translation>
+        <translation>Skrýt popisek součástky</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1879"/>
         <source>Show part label</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukázat popisek součástky</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1947"/>
         <source>Show part silkscreen</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukázat schématickou značku</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2713"/>
@@ -4178,7 +4172,7 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2730"/>
         <source>When autorouting, do not rip up this trace wire, via, or jumper item</source>
-        <translation>Při autoroutingu se nezničí tento propojovací spoj, průchod, nebo propojku</translation>
+        <translation>Při autoroutingu se nezničí tento propojovací spoj, propojovací díra, nebo propojka</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2736"/>
@@ -4449,7 +4443,7 @@ Zkontrolujte, všechny pohledy pro potenciální vedlejší účinky.</translati
     <message>
         <location filename="../src/mainwindow/mainwindow_dock.cpp" line="68"/>
         <source>Inspector</source>
-        <translation type="unfinished">Inspektor</translation>
+        <translation>Inspektor</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_dock.cpp" line="70"/>
@@ -4459,22 +4453,22 @@ Zkontrolujte, všechny pohledy pro potenciální vedlejší účinky.</translati
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="595"/>
         <source>Breadboard</source>
-        <translation type="unfinished">Montážní deska</translation>
+        <translation>Montážní deska</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="604"/>
         <source>Schematic</source>
-        <translation type="unfinished">Schéma</translation>
+        <translation>Schéma</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="613"/>
         <source>PCB</source>
-        <translation type="unfinished">PCB</translation>
+        <translation>PCB</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_dock.cpp" line="73"/>
         <source>Layers</source>
-        <translation type="unfinished">Vrstvy</translation>
+        <translation>Vrstvy</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_dock.cpp" line="201"/>
@@ -4497,8 +4491,8 @@ Zkontrolujte, všechny pohledy pro potenciální vedlejší účinky.</translati
     <message numerus="yes">
         <location filename="../src/autoroute/mazerouter/mazerouter.cpp" line="780"/>
         <source> with %n vias</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
+        <translation>
+            <numerusform> s %n propojovacími děrami</numerusform>
             <numerusform></numerusform>
             <numerusform></numerusform>
         </translation>
@@ -4507,7 +4501,7 @@ Zkontrolujte, všechny pohledy pro potenciální vedlejší účinky.</translati
         <location filename="../src/autoroute/mazerouter/mazerouter.cpp" line="783"/>
         <location filename="../src/autoroute/mazerouter/mazerouter.cpp" line="827"/>
         <source>round %1 of:</source>
-        <translation type="unfinished">kolo %1 z:</translation>
+        <translation>kolo %1 z:</translation>
     </message>
     <message>
         <location filename="../src/autoroute/mazerouter/mazerouter.cpp" line="814"/>
@@ -4744,17 +4738,17 @@ Důvod: %2 (chyb.kód %3)</translation>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="2422"/>
         <source>Unable to convert this via to a bendpoint because it is connected to a part that is only on the bottom layer and another part that is only on the top layer.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nelze změnit tuto  propojovací díru na zlomový bod protože je připojena k součástce která se nachází pouze na spodní vrstvě a další součástka je pouze na vrchní vrstvě.</translation>
     </message>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="2681"/>
         <source>Show part silkscreen</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukázat schématickou značku</translation>
     </message>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="2681"/>
         <source>Hide part silkscreen</source>
-        <translation type="unfinished"></translation>
+        <translation>Skrýt schématickou značku</translation>
     </message>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="2695"/>
@@ -5177,16 +5171,12 @@ Důvod: %2 (chyb.kód %3)</translation>
         <source>This part has %n unassigned connectors </source>
         <translation type="unfinished">
             <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <location filename="../src/partseditor/pemainwindow.cpp" line="3795"/>
         <source>across %n views. </source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
             <numerusform></numerusform>
         </translation>
     </message>
@@ -5943,37 +5933,37 @@ Go ahead and save?</source>
     <message>
         <location filename="../src/items/partlabel.cpp" line="450"/>
         <source>Rotate 45� Clockwise</source>
-        <translation type="unfinished">Otočit o 135° doprava {45�?}</translation>
+        <translation>Otočit o 45° doprava</translation>
     </message>
     <message>
         <location filename="../src/items/partlabel.cpp" line="455"/>
         <source>Rotate 90� Clockwise</source>
-        <translation type="unfinished">Otočit o 135° doprava {90�?}</translation>
+        <translation>Otočit o 90° doprava</translation>
     </message>
     <message>
         <location filename="../src/items/partlabel.cpp" line="460"/>
         <source>Rotate 135� Clockwise</source>
-        <translation type="unfinished">Otočit o 135° doprava {135�?}</translation>
+        <translation>Otočit o 135° doprava</translation>
     </message>
     <message>
         <location filename="../src/items/partlabel.cpp" line="465"/>
         <source>Rotate 180�</source>
-        <translation type="unfinished">Otočit o 180° {180�?}</translation>
+        <translation>Otočit o 180°</translation>
     </message>
     <message>
         <location filename="../src/items/partlabel.cpp" line="470"/>
         <source>Rotate 135� Counter Clockwise</source>
-        <translation type="unfinished">Otočit o 45° doleva {135�?}</translation>
+        <translation>Otočit o 135° doleva</translation>
     </message>
     <message>
         <location filename="../src/items/partlabel.cpp" line="475"/>
         <source>Rotate 90� Counter Clockwise</source>
-        <translation type="unfinished">Otočit o 45° doleva {90�?}</translation>
+        <translation>Otočit o 90° doleva</translation>
     </message>
     <message>
         <location filename="../src/items/partlabel.cpp" line="480"/>
         <source>Rotate 45� Counter Clockwise</source>
-        <translation type="unfinished">Otočit o 45° doleva {45�?}</translation>
+        <translation>Otočit o 45° doleva</translation>
     </message>
     <message>
         <location filename="../src/items/partlabel.cpp" line="482"/>
@@ -6262,7 +6252,7 @@ Poznámka: Během této relace se již toto varování nebude opakovat.</transla
     <message>
         <location filename="../src/program/platformarduino.cpp" line="81"/>
         <source>Running %1 %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Běží %1 %2</translation>
     </message>
 </context>
 <context>
@@ -6270,7 +6260,7 @@ Poznámka: Během této relace se již toto varování nebude opakovat.</transla
     <message>
         <location filename="../src/program/platformpicaxe.cpp" line="65"/>
         <source>Running %1 %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Běží %1 %2</translation>
     </message>
 </context>
 <context>
@@ -6435,7 +6425,7 @@ Klávesa Alt nebo klávesa %1 = posunout</translation>
     <message>
         <location filename="../src/program/programtab.cpp" line="125"/>
         <source>While it is possible to read and edit %1 programming files, it is not yet possible to use Fritzing to compile or upload these programs to a microcontroller.</source>
-        <translation type="unfinished"></translation>
+        <translation>Zatímco je možné číst a upravovat %1 programovacích souborů, ještě stále není možné použít Fritzing ke kompilaci nebo k nahrání těchto programů do mikrokontrolérů.</translation>
     </message>
     <message>
         <location filename="../src/program/programtab.cpp" line="247"/>
@@ -6445,7 +6435,7 @@ Klávesa Alt nebo klávesa %1 = posunout</translation>
     <message>
         <location filename="../src/program/programtab.cpp" line="253"/>
         <source>Open</source>
-        <translation type="unfinished"></translation>
+        <translation>Otevřít</translation>
     </message>
     <message>
         <location filename="../src/program/programtab.cpp" line="259"/>
@@ -6455,27 +6445,27 @@ Klávesa Alt nebo klávesa %1 = posunout</translation>
     <message>
         <location filename="../src/program/programtab.cpp" line="272"/>
         <source>Platform</source>
-        <translation type="unfinished"></translation>
+        <translation>Platforma</translation>
     </message>
     <message>
         <location filename="../src/program/programtab.cpp" line="302"/>
         <source>Board</source>
-        <translation type="unfinished">Deska</translation>
+        <translation>Deska</translation>
     </message>
     <message>
         <location filename="../src/program/programtab.cpp" line="330"/>
         <source>Port</source>
-        <translation type="unfinished"></translation>
+        <translation>Port</translation>
     </message>
     <message>
         <location filename="../src/program/programtab.cpp" line="359"/>
         <source>Serial Monitor</source>
-        <translation type="unfinished"></translation>
+        <translation>Sériový Monitor</translation>
     </message>
     <message>
         <location filename="../src/program/programtab.cpp" line="365"/>
         <source>Upload</source>
-        <translation type="unfinished"></translation>
+        <translation>Nahrát</translation>
     </message>
     <message>
         <location filename="../src/program/programtab.cpp" line="458"/>
@@ -6490,7 +6480,7 @@ Klávesa Alt nebo klávesa %1 = posunout</translation>
     <message>
         <location filename="../src/program/programtab.cpp" line="487"/>
         <source>Code (*.%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Kód (*.%1)</translation>
     </message>
     <message>
         <location filename="../src/program/programtab.cpp" line="606"/>
@@ -6515,12 +6505,12 @@ Klávesa Alt nebo klávesa %1 = posunout</translation>
     <message>
         <location filename="../src/program/programtab.cpp" line="764"/>
         <source>Upload finished.</source>
-        <translation type="unfinished"></translation>
+        <translation>Program byl úspěšně nahrán.</translation>
     </message>
     <message>
         <location filename="../src/program/programtab.cpp" line="766"/>
         <source>Upload failed with exit code %1, %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Nahrávání skončilo chybou %1, %2</translation>
     </message>
 </context>
 <context>
@@ -6528,7 +6518,7 @@ Klávesa Alt nebo klávesa %1 = posunout</translation>
     <message>
         <location filename="../src/program/programwindow.cpp" line="135"/>
         <source>No boards available</source>
-        <translation type="unfinished"></translation>
+        <translation>Žádné desky nejsou dostupné</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="186"/>
@@ -6588,152 +6578,152 @@ Klávesa Alt nebo klávesa %1 = posunout</translation>
     <message>
         <location filename="../src/program/programwindow.cpp" line="233"/>
         <source>&amp;Preferences...</source>
-        <translation type="unfinished">&amp;Předvolby...</translation>
+        <translation>&amp;Předvolby...</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="234"/>
         <source>Show the application&apos;s about box</source>
-        <translation type="unfinished">Zobrazí okno O programu</translation>
+        <translation>Zobrazí okno O programu</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="238"/>
         <source>&amp;Code</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Kód</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="240"/>
         <source>&amp;New Tab</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Nová Záložka</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="242"/>
         <source>Create a new program tab</source>
-        <translation type="unfinished"></translation>
+        <translation>Vytvoří novou záložku s programem</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="246"/>
         <source>&amp;Import Code...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Importovat Kód...</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="247"/>
         <source>Alt+Ctrl+I</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+Ctrl+I</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="248"/>
         <source>Import a program from a file</source>
-        <translation type="unfinished"></translation>
+        <translation>Importuje program ze souboru</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="252"/>
         <source>&amp;Save Tab</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Uložit Záložku</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="253"/>
         <source>Alt+Ctrl+S</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+Ctrl+S</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="254"/>
         <source>Save the current program tab</source>
-        <translation type="unfinished"></translation>
+        <translation>Uloží aktuální programovou záložku</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="258"/>
         <source>&amp;Rename Tab</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Přejmenovat Záložku</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="259"/>
         <source>Alt+Ctrl+R</source>
-        <translation type="unfinished">Alt+Ctrl+R</translation>
+        <translation>Alt+Ctrl+R</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="260"/>
         <source>Rename the current program tab</source>
-        <translation type="unfinished"></translation>
+        <translation>Přejmenuje aktuální programovou záložku</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="264"/>
         <source>Close Tab</source>
-        <translation type="unfinished"></translation>
+        <translation>Zavřít Záložku</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="265"/>
         <source>Alt+Ctrl+W</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+Ctrl+W</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="266"/>
         <source>Remove the current program tab from the sketch</source>
-        <translation type="unfinished"></translation>
+        <translation>Odstraní aktuální programovou záložku z návrhu</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="272"/>
         <source>Platform</source>
-        <translation type="unfinished"></translation>
+        <translation>Platforma</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="292"/>
         <source>Board</source>
-        <translation type="unfinished">Deska</translation>
+        <translation>Deska</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="298"/>
         <source>Port</source>
-        <translation type="unfinished"></translation>
+        <translation>Port</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="307"/>
         <source>Serial Monitor</source>
-        <translation type="unfinished"></translation>
+        <translation>Sériový Monitor</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="308"/>
         <source>Ctrl+M</source>
-        <translation type="unfinished">Ctrl+M</translation>
+        <translation>Ctrl+M</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="309"/>
         <source>Monitor the serial port communication</source>
-        <translation type="unfinished"></translation>
+        <translation>Sledovat komunikaci na sériovém portu</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="314"/>
         <source>Upload</source>
-        <translation type="unfinished"></translation>
+        <translation>Nahrát</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="315"/>
         <source>Ctrl+U</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+U</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="316"/>
         <source>Upload the current program onto a microcontroller</source>
-        <translation type="unfinished"></translation>
+        <translation>Nahraje aktuální program do mikrokontroléru</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="490"/>
         <source>Code Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Okno s Kódem</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="494"/>
         <source>Code Window - %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Okno s Kódem - %1</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="503"/>
         <source>%1%2</source>
-        <translation type="unfinished">%1%2</translation>
+        <translation>%1%2</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="321"/>
         <source>&amp;View</source>
-        <translation type="unfinished">&amp;Zobrazení</translation>
+        <translation>&amp;Zobrazení</translation>
     </message>
     <message>
         <location filename="../src/program/programwindow.cpp" line="372"/>
@@ -7075,12 +7065,12 @@ Fritzing stále funguje, ale nebudete moci změnit vlastnosti Součástek.</tran
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="2298"/>
         <source>Convert to Via</source>
-        <translation type="unfinished"></translation>
+        <translation>Změnit na propojovací díru</translation>
     </message>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="2429"/>
         <source>Convert Via to Bendpoint</source>
-        <translation type="unfinished"></translation>
+        <translation>Změnit propojovací díru na zlomový bod</translation>
     </message>
     <message>
         <location filename="../src/sketch/schematicsketchwidget.cpp" line="63"/>
@@ -7432,7 +7422,7 @@ Fritzing stále funguje, ale nebudete moci změnit vlastnosti Součástek.</tran
     <message>
         <location filename="../src/viewlayer.cpp" line="136"/>
         <source>Text</source>
-        <translation type="unfinished"></translation>
+        <translation>Text</translation>
     </message>
     <message>
         <location filename="../src/viewlayer.cpp" line="143"/>
@@ -7833,8 +7823,6 @@ Fritzing stále funguje, ale nebudete moci změnit vlastnosti Součástek.</tran
         <source>The total area of the %n PCB(s) in this sketch is</source>
         <translation type="unfinished">
             <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
         </translation>
     </message>
     <message>
@@ -7911,7 +7899,7 @@ Fritzing stále funguje, ale nebudete moci změnit vlastnosti Součástek.</tran
     <message>
         <location filename="../src/items/resistor.cpp" line="280"/>
         <source>You can either type in a resistance value, or select one from the drop down. Format nnn.dP where P is one of &apos;umkMG&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>Můžete zadat hodnotu odporu , nebo vybrat jednu z uvedených možností. Format nnn.dP where P is one of &apos;umkMG&apos;</translation>
     </message>
 </context>
 <context>
@@ -7944,78 +7932,78 @@ Fritzing stále funguje, ale nebudete moci změnit vlastnosti Součástek.</tran
     <message>
         <location filename="../src/items/resizableboard.cpp" line="1335"/>
         <source>keep aspect ratio</source>
-        <translation type="unfinished"></translation>
+        <translation>zachovat proporce</translation>
     </message>
     <message>
         <location filename="../src/items/resizableboard.cpp" line="1349"/>
         <source>Revert</source>
-        <translation type="unfinished"></translation>
+        <translation>Obrátit</translation>
     </message>
     <message>
         <location filename="../src/items/resizableboard.cpp" line="1363"/>
         <source>size</source>
-        <translation type="unfinished">velikost</translation>
+        <translation>velikost</translation>
     </message>
     <message>
         <location filename="../src/items/resizableboard.cpp" line="1371"/>
         <location filename="../src/items/resizableboard.cpp" line="1482"/>
         <source>custom</source>
-        <translation type="unfinished">vlastní</translation>
+        <translation>vlastní</translation>
     </message>
     <message>
         <location filename="../src/items/resizableboard.cpp" line="1492"/>
         <source>A0 (1030x1456)</source>
-        <translation type="unfinished"></translation>
+        <translation>A0 (1030x1456)</translation>
     </message>
     <message>
         <location filename="../src/items/resizableboard.cpp" line="1492"/>
         <source>A1 (728x1030)</source>
-        <translation type="unfinished"></translation>
+        <translation>A1 (728x1030)</translation>
     </message>
     <message>
         <location filename="../src/items/resizableboard.cpp" line="1492"/>
         <source>A2 (515x728)</source>
-        <translation type="unfinished"></translation>
+        <translation>A2 (515x728)</translation>
     </message>
     <message>
         <location filename="../src/items/resizableboard.cpp" line="1492"/>
         <source>A3 (364x515)</source>
-        <translation type="unfinished"></translation>
+        <translation>A3 (364x515)</translation>
     </message>
     <message>
         <location filename="../src/items/resizableboard.cpp" line="1492"/>
         <source>A4 (257x364)</source>
-        <translation type="unfinished"></translation>
+        <translation>A4 (257x364)</translation>
     </message>
     <message>
         <location filename="../src/items/resizableboard.cpp" line="1492"/>
         <source>A5 (182x257)</source>
-        <translation type="unfinished"></translation>
+        <translation>A5 (182x257)</translation>
     </message>
     <message>
         <location filename="../src/items/resizableboard.cpp" line="1492"/>
         <source>A6 (128x182)</source>
-        <translation type="unfinished"></translation>
+        <translation>A6 (128x182)</translation>
     </message>
     <message>
         <location filename="../src/items/resizableboard.cpp" line="1493"/>
         <source>Letter (8.5x11)</source>
-        <translation type="unfinished"></translation>
+        <translation>Dopis (8.5x11)</translation>
     </message>
     <message>
         <location filename="../src/items/resizableboard.cpp" line="1493"/>
         <source>Legal (8.5x14)</source>
-        <translation type="unfinished"></translation>
+        <translation>Legal (8.5x14)</translation>
     </message>
     <message>
         <location filename="../src/items/resizableboard.cpp" line="1493"/>
         <source>Ledger (17x11)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ledger (17x11)</translation>
     </message>
     <message>
         <location filename="../src/items/resizableboard.cpp" line="1493"/>
         <source>Tabloid (11x17)</source>
-        <translation type="unfinished"></translation>
+        <translation>Tabloid (11x17)</translation>
     </message>
 </context>
 <context>
@@ -8094,7 +8082,7 @@ Fritzing stále funguje, ale nebudete moci změnit vlastnosti Součástek.</tran
     <message>
         <location filename="../src/items/schematicframe.cpp" line="315"/>
         <source>shape</source>
-        <translation type="unfinished">tvar</translation>
+        <translation>tvar</translation>
     </message>
     <message>
         <location filename="../src/items/schematicframe.cpp" line="367"/>
@@ -8117,7 +8105,7 @@ Fritzing stále funguje, ale nebudete moci změnit vlastnosti Součástek.</tran
     <message>
         <location filename="../src/sketch/schematicsketchwidget.cpp" line="266"/>
         <source>Change label from %1 to %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Změna popisku z %1 na %2</translation>
     </message>
     <message>
         <location filename="../src/sketch/schematicsketchwidget.cpp" line="311"/>
@@ -8405,8 +8393,6 @@ Fritzing stále funguje, ale nebudete moci změnit vlastnosti Součástek.</tran
         <source>show %n part label(s)</source>
         <translation type="unfinished">
             <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
         </translation>
     </message>
     <message numerus="yes">
@@ -8414,14 +8400,12 @@ Fritzing stále funguje, ale nebudete moci změnit vlastnosti Součástek.</tran
         <source>hide %n part label(s)</source>
         <translation type="unfinished">
             <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
         </translation>
     </message>
     <message>
         <location filename="../src/sketch/sketchwidget.cpp" line="7728"/>
         <source>Resize ruler to %1 %2</source>
-        <translation type="unfinished">Změnit velikost pravítka %1 %2</translation>
+        <translation>Změnit velikost pravítka %1 %2</translation>
     </message>
     <message>
         <location filename="../src/sketch/sketchwidget.cpp" line="10050"/>
@@ -8448,7 +8432,7 @@ Fritzing stále funguje, ale nebudete moci změnit vlastnosti Součástek.</tran
         <location filename="../src/sketch/sketchwidget.cpp" line="7751"/>
         <location filename="../src/sketch/sketchwidget.cpp" line="8636"/>
         <source>Resize board to %1 %2</source>
-        <translation type="unfinished">Změnit velikost desky na %1 %2</translation>
+        <translation>Změnit velikost desky na %1 %2</translation>
     </message>
     <message>
         <location filename="../src/sketch/sketchwidget.cpp" line="7808"/>
@@ -8609,7 +8593,7 @@ Note: you can also trigger this display by mousing down on the routing status te
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="45"/>
         <source>Fritzing Tips and Tricks</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing Tipy a Triky</translation>
     </message>
     <message>
         <location filename="../src/help/tipsandtricks.cpp" line="58"/>
@@ -8990,7 +8974,7 @@ Note: you can also trigger this display by mousing down on the routing status te
     <message>
         <location filename="../src/dialogs/translatorlistmodel.cpp" line="64"/>
         <source>Danish - %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Dánština - %1</translation>
     </message>
     <message>
         <location filename="../src/dialogs/translatorlistmodel.cpp" line="70"/>
@@ -9000,37 +8984,37 @@ Note: you can also trigger this display by mousing down on the routing status te
     <message>
         <location filename="../src/dialogs/translatorlistmodel.cpp" line="112"/>
         <source>Persian - %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Perština - %1</translation>
     </message>
     <message>
         <location filename="../src/dialogs/translatorlistmodel.cpp" line="115"/>
         <source>Slovenian - %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Slovinština - %1</translation>
     </message>
     <message>
         <location filename="../src/dialogs/translatorlistmodel.cpp" line="118"/>
         <source>Marathi - %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Maráthština - %1</translation>
     </message>
     <message>
         <location filename="../src/dialogs/translatorlistmodel.cpp" line="121"/>
         <source>Ukrainian - %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukrajinština - %1</translation>
     </message>
     <message>
         <location filename="../src/dialogs/translatorlistmodel.cpp" line="139"/>
         <source>Macedonian - %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Makedonština - %1</translation>
     </message>
     <message>
         <location filename="../src/dialogs/translatorlistmodel.cpp" line="142"/>
         <source>Serbian - %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Srbština - %1</translation>
     </message>
     <message>
         <location filename="../src/dialogs/translatorlistmodel.cpp" line="145"/>
         <source>Urdu - %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Urdština - %1</translation>
     </message>
     <message>
         <location filename="../src/dialogs/translatorlistmodel.cpp" line="59"/>
@@ -9120,12 +9104,12 @@ Note: you can also trigger this display by mousing down on the routing status te
     <message>
         <location filename="../src/dialogs/translatorlistmodel.cpp" line="106"/>
         <source>Slovak - %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Slovenština - %1</translation>
     </message>
     <message>
         <location filename="../src/dialogs/translatorlistmodel.cpp" line="109"/>
         <source>Bengali - %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Bengálština - %1</translation>
     </message>
 </context>
 <context>
@@ -9166,127 +9150,127 @@ Note: you can also trigger this display by mousing down on the routing status te
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="379"/>
         <source>Recent Sketches</source>
-        <translation type="unfinished"></translation>
+        <translation>Nedávné Soubory</translation>
     </message>
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="412"/>
         <source>New Sketch</source>
-        <translation type="unfinished"></translation>
+        <translation>Nový Návrh</translation>
     </message>
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="420"/>
         <source>Open Sketch</source>
-        <translation type="unfinished"></translation>
+        <translation>Otevřít Návrh</translation>
     </message>
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="465"/>
         <source>Fab</source>
-        <translation type="unfinished"></translation>
+        <translation>Laboratoř</translation>
     </message>
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="465"/>
         <source>Shop</source>
-        <translation type="unfinished"></translation>
+        <translation>Obchod</translation>
     </message>
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="469"/>
         <source>Fritzing CreatorKit</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing CreatorKit</translation>
     </message>
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="470"/>
         <source>The Fritzing Creator Kit provides a fast, easy and entertaining introduction to the world of interactive electronics.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing CreatorKit umožňuje rychlé, snadné a zábavné uvedení do světa interaktivní elektroniky.</translation>
     </message>
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="472"/>
         <source>order now &gt;&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>objednat nyní &gt;&gt;</translation>
     </message>
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="473"/>
         <source>Get your Creator Kit now.</source>
-        <translation type="unfinished"></translation>
+        <translation>Získejte váš CreatorKit již nyní.</translation>
     </message>
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="480"/>
         <source>Fritzing Fab</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing Laboratoř</translation>
     </message>
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="481"/>
         <source>Fritzing Fab is an easy and affordable service for producing professional PCBs from your Fritzing sketches.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing Laboratoř je jednoduchá a spolehlivá služba k profesionální výrobě DPS z  vašich Fritzing návrhů.</translation>
     </message>
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="483"/>
         <source>produce your first pcb now &gt;&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>vyrobte si vlastní DPS již nyní &gt;&gt;</translation>
     </message>
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="484"/>
         <source>Order your PCB now.</source>
-        <translation type="unfinished"></translation>
+        <translation>Objednat DPS již teď.</translation>
     </message>
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="561"/>
         <source>&lt;a href=&apos;%1&apos;&gt;&lt;img src=&apos;%2&apos;/&gt;&lt;/a&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;a href=&apos;%1&apos;&gt;&lt;img src=&apos;%2&apos;/&gt;&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="580"/>
         <source>Projects</source>
-        <translation type="unfinished"></translation>
+        <translation>Projekty</translation>
     </message>
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="580"/>
         <source>Blog</source>
-        <translation type="unfinished"></translation>
+        <translation>Blog</translation>
     </message>
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="583"/>
         <source>Fritzing News.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing Novinky.</translation>
     </message>
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="588"/>
         <source>Fritzing Projects.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing Projekty.</translation>
     </message>
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="655"/>
         <source>&lt;a href=&apos;%1&apos;&gt;&lt;img src=&apos;%2&apos; /&gt;&lt;/a&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;a href=&apos;%1&apos;&gt;&lt;img src=&apos;%2&apos; /&gt;&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="696"/>
         <source>No recent sketches found</source>
-        <translation type="unfinished"></translation>
+        <translation>Žádné nedávné soubory</translation>
     </message>
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="735"/>
         <source>Unable to reach blog.fritzing.org</source>
-        <translation type="unfinished"></translation>
+        <translation>Nelze se připojit k blog.fritzing.org</translation>
     </message>
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="735"/>
         <source>Unable to reach friting.org/projects</source>
-        <translation type="unfinished"></translation>
+        <translation>Nelze se připojit k friting.org/projects</translation>
     </message>
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="942"/>
         <source>Tip of the Day:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tip dne:</translation>
     </message>
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="969"/>
         <source>All Tips</source>
-        <translation type="unfinished"></translation>
+        <translation>Všechny Tipy</translation>
     </message>
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="977"/>
         <source>Next Tip</source>
-        <translation type="unfinished"></translation>
+        <translation>Další Tip</translation>
     </message>
 </context>
 <context>
@@ -9294,12 +9278,12 @@ Note: you can also trigger this display by mousing down on the routing status te
     <message>
         <location filename="../src/items/wire.cpp" line="1250"/>
         <source>super fine (8 mil)</source>
-        <translation type="unfinished"></translation>
+        <translation>super tenká (8 mil)</translation>
     </message>
     <message>
         <location filename="../src/items/wire.cpp" line="1251"/>
         <source>extra thin (12 mil)</source>
-        <translation type="unfinished"></translation>
+        <translation>extra tenká (12 mil)</translation>
     </message>
     <message>
         <location filename="../src/items/wire.cpp" line="1254"/>
@@ -9373,13 +9357,13 @@ Note: you can also trigger this display by mousing down on the routing status te
         <location filename="../src/items/wire.cpp" line="1273"/>
         <location filename="../src/items/wire.cpp" line="1288"/>
         <source>ochre</source>
-        <translation type="unfinished"></translation>
+        <translation>okrová</translation>
     </message>
     <message>
         <location filename="../src/items/wire.cpp" line="1274"/>
         <location filename="../src/items/wire.cpp" line="1289"/>
         <source>cyan</source>
-        <translation type="unfinished"></translation>
+        <translation>azurová</translation>
     </message>
     <message>
         <location filename="../src/items/wire.cpp" line="1275"/>
@@ -9397,7 +9381,7 @@ Note: you can also trigger this display by mousing down on the routing status te
         <location filename="../src/items/wire.cpp" line="1277"/>
         <location filename="../src/items/wire.cpp" line="1292"/>
         <source>pink</source>
-        <translation type="unfinished"></translation>
+        <translation>růžová</translation>
     </message>
     <message>
         <location filename="../src/items/wire.cpp" line="1580"/>
@@ -9407,7 +9391,7 @@ Note: you can also trigger this display by mousing down on the routing status te
     <message>
         <location filename="../src/items/wire.cpp" line="1604"/>
         <source>Banded</source>
-        <translation type="unfinished"></translation>
+        <translation>Pruhovaný</translation>
     </message>
 </context>
 <context>

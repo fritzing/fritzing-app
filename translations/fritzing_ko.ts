@@ -777,7 +777,7 @@ Use the file?</source>
     <message>
         <location filename="../src/connectors/connectoritem.cpp" line="2564"/>
         <source>Straighten curve</source>
-        <translation>곡손을 펴기</translation>
+        <translation>곡선을 펴기</translation>
     </message>
     <message>
         <location filename="../src/connectors/connectoritem.cpp" line="2586"/>

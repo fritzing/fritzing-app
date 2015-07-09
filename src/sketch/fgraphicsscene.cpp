@@ -85,7 +85,7 @@ bool FGraphicsScene::displayHandles() {
     return m_displayHandles;
 }
 
-QList<ItemBase *> FGraphicsScene::lockedItems() {
+QList<ItemBase *> FGraphicsScene::lockedSelectedItems() {
     QList<ItemBase *> items;
     foreach (QGraphicsItem * gitem,  this->selectedItems()) {
         ItemBase *itemBase = dynamic_cast<ItemBase *>(gitem);

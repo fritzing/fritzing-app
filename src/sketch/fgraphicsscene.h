@@ -43,7 +43,7 @@ public:
 	QPointF lastContextMenuPos();
     void setDisplayHandles(bool);
     bool displayHandles();
-    QList<ItemBase *> lockedItems();
+    QList<ItemBase *> lockedSelectedItems();
 
 protected:
 	QPointF m_lastContextMenuPos;

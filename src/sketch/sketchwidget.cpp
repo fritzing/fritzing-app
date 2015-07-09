@@ -9714,7 +9714,7 @@ void SketchWidget::alignItems(Qt::Alignment alignment) {
 
     // If locked items are included, use them as the basis for finding
     // the bounding box wherein remaining (unlocked) items will be aligned
-    QList<ItemBase *> lockedItems = qobject_cast<FGraphicsScene *>(this->scene())->lockedItems();
+    QList<ItemBase *> lockedItems = qobject_cast<FGraphicsScene *>(this->scene())->lockedSelectedItems();
     QList<ItemBase *> boundingItems = lockedItems.count() > 0 ?
         lockedItems : m_savedItems.values();
 

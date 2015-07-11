@@ -2026,25 +2026,25 @@ void SketchWidget::dropEvent(QDropEvent *event)
 
 		ConnectorItem::clearEqualPotentialDisplay();
 		if (event->source() == this) {
+            // Item was dragged from this same window/view
 			checkMoved(false);
 			m_savedItems.clear();
 			m_savedWires.clear();
 		}
 		else {
+            // Item was dragged from another window
 			SketchWidget * other = dynamic_cast<SketchWidget *>(event->source());
 			if (other == NULL) {
 				throw "drag and drop from unknown source";
 			}
 
 			ItemBase * ref = other->m_moveReferenceItem;
-			QPointF originalPos = ref->getViewGeometry().loc();
 			other->copyDrop();
 			QPointF startLocal = other->mapFromGlobal(QPoint(other->m_mousePressGlobalPos.x(), other->m_mousePressGlobalPos.y()));
 			QPointF sceneLocal = other->mapToScene(startLocal.x(), startLocal.y());
-			QPointF offset = sceneLocal - originalPos;
-			m_pasteOffset = this->mapToScene(event->pos()) - offset - originalPos;
+			m_pasteOffset = this->mapToScene(event->pos()) - sceneLocal;
 
-			DebugDialog::debug(QString("other %1 %2, event %3 %4")
+			DebugDialog::debug(QString("drop from other (%1, %2), event (%3, %4)")
 				.arg(startLocal.x()).arg(startLocal.y())
 				.arg(event->pos().x()).arg(event->pos().y())
 			);

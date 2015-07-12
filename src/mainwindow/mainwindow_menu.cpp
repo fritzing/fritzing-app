@@ -1339,7 +1339,7 @@ void MainWindow::createZOrderSubmenu(QMenu * parentMenu) {
 }
 
 void MainWindow::createZOrderWireSubmenu(QMenu * parentMenu) {
-    QMenu *zOrderWireMenu = parentMenu->addMenu(tr("Raise and Lower"));
+    QMenu *zOrderWireMenu = parentMenu->addMenu(tr("Raise and Lower Wire"));
     zOrderWireMenu->addAction(m_bringToFrontWireAct);
     zOrderWireMenu->addAction(m_bringForwardWireAct);
     zOrderWireMenu->addAction(m_sendBackwardWireAct);

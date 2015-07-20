@@ -30,6 +30,7 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 #include <QGraphicsScene>
 #include <QPainter>
 #include <QGraphicsSceneHelpEvent>
+#include "../items/itembase.h"
 
 class FGraphicsScene : public QGraphicsScene
 {
@@ -42,6 +43,7 @@ public:
 	QPointF lastContextMenuPos();
     void setDisplayHandles(bool);
     bool displayHandles();
+    QList<ItemBase *> lockedSelectedItems();
 
 protected:
 	QPointF m_lastContextMenuPos;

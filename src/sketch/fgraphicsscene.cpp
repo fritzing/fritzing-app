@@ -84,3 +84,15 @@ void FGraphicsScene::setDisplayHandles(bool displayHandles) {
 bool FGraphicsScene::displayHandles() {
     return m_displayHandles;
 }
+
+QList<ItemBase *> FGraphicsScene::lockedSelectedItems() {
+    QList<ItemBase *> items;
+    foreach (QGraphicsItem * gitem,  this->selectedItems()) {
+        ItemBase *itemBase = dynamic_cast<ItemBase *>(gitem);
+        if (itemBase == NULL) continue;
+        if (itemBase->moveLock()) {
+            items.append(itemBase);
+        }
+    }
+    return items;
+}

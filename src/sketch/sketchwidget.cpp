@@ -9712,6 +9712,14 @@ void SketchWidget::alignItems(Qt::Alignment alignment) {
 
     foreach (Wire * w, unsavedSet) m_savedItems.remove(w->id());
 
+    // If locked items are included, use them as the basis for finding
+    // the bounding box wherein remaining (unlocked) items will be aligned
+    QList<ItemBase *> lockedItems = qobject_cast<FGraphicsScene *>(this->scene())->lockedSelectedItems();
+    QList<ItemBase *> boundingItems = lockedItems.count() > 0 ?
+        lockedItems : m_savedItems.values();
+
+    if (boundingItems.count() < 1 || m_savedItems.count() < 2) return;
+
     int count = 0;
     double left = std::numeric_limits<int>::max();
     double top = std::numeric_limits<int>::max();
@@ -9719,7 +9727,7 @@ void SketchWidget::alignItems(Qt::Alignment alignment) {
     double bottom = std::numeric_limits<int>::min();
     double hcTotal = 0;
     double vcTotal = 0;
-    foreach (ItemBase * itemBase, m_savedItems) {
+    foreach (ItemBase * itemBase, boundingItems) {
         QRectF r = itemBase->sceneBoundingRect();
         if (r.left() < left) left = r.left();
         if (r.right() > right) right = r.right();
@@ -9731,7 +9739,10 @@ void SketchWidget::alignItems(Qt::Alignment alignment) {
         vcTotal += center.y();
     }
 
-    if (count < 2) return;
+    if (count < 1) {
+        DebugDialog::debug("no items for alignment bounding box");
+        return;
+    }
 
     hcTotal /= count;
     vcTotal /= count;

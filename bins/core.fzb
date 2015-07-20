@@ -136,7 +136,7 @@
                 </iconView>
             </views>
         </instance>
-       <instance moduleIdRef="ALPS_STEC12E07" modelIndex="14" path="Rotary_Encoder.fzp">
+       <instance moduleIdRef="alps_stec12e07_fix" modelIndex="14" path="Rotary_Encoder_fix.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>
@@ -634,7 +634,7 @@
                 </iconView>
             </views>
         </instance>
-        <instance moduleIdRef="SPARKCORE_v1" modelIndex="48" path="SPARKCORE_v1.fzp">
+        <instance moduleIdRef="SPARKCORE_v1_fix" modelIndex="48" path="SPARKCORE_v1_fix.fzp">
             <views>
                 <iconView layer="icon">
                     <geometry z="-1" x="-1" y="-1"/>

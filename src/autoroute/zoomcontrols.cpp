@@ -49,7 +49,7 @@ ZoomButton::ZoomButton(QBoxLayout::Direction dir, ZoomButton::ZoomType type, Zoo
 
 void ZoomButton::zoom() {
 	int inOrOut = m_type == ZoomButton::ZoomIn? 1: -1;
-	m_owner->relativeZoom(inOrOut*m_step, QPoint());
+	m_owner->relativeZoom(inOrOut*m_step, false);
 	m_owner->ensureFixedToBottomRightItems();
 }
 

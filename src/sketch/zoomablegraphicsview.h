@@ -31,59 +31,52 @@ $Date: 2013-04-21 09:50:09 +0200 (So, 21. Apr 2013) $
 #include <QMenu>
 #include <QHash>
 #include <QList>
-#include <QTimer>
 
 
 class ZoomableGraphicsView : public QGraphicsView
 {
-    Q_OBJECT
+	Q_OBJECT
 
 public:
-    ZoomableGraphicsView(QWidget* parent = 0);
+	ZoomableGraphicsView(QWidget* parent = 0);
 
-    void relativeZoom(double step, QPoint viewCenterPos);
+    void relativeZoom(double step, bool centerToCursor);
     void absoluteZoom(double percent);
-    double currentZoom();
-    void setAcceptWheelEvents(bool);
-    virtual void ensureFixedToBottomRightItems() {}
+ 	double currentZoom();
+	void setAcceptWheelEvents(bool);
+	virtual void ensureFixedToBottomRightItems() {}
     bool viewFromBelow();
     virtual void setViewFromBelow(bool);
 
-    static const int MinScaleValue;
     static const int MaxScaleValue;
+	
+public:	
+	enum WheelMapping {
+		ScrollPrimary,
+		ZoomPrimary,
+		WheelMappingCount
+	};
 
-public: 
-    enum WheelMapping {
-        ScrollPrimary,
-        ZoomPrimary,
-        WheelMappingCount
-    };
-
-    static WheelMapping wheelMapping();
-    static void setWheelMapping(WheelMapping);
+	static WheelMapping wheelMapping();
+	static void setWheelMapping(WheelMapping);
 
 signals:
-    void zoomChanged(double zoom);
-    void zoomOutOfRange(double zoom);
-    void wheelSignal();
-
-protected slots:
-    void unstickModifiers();
+	void zoomChanged(double zoom);
+	void zoomOutOfRange(double zoom);
+	void wheelSignal();
 
 protected:
-    virtual void wheelEvent(QWheelEvent* event);
+	virtual void wheelEvent(QWheelEvent* event);
 
 protected:
-    double m_scaleValue;
-    int m_maxScaleValue;
-    int m_minScaleValue;
-    bool m_acceptWheelEvents;
+	double m_scaleValue;
+	int m_maxScaleValue;
+	int m_minScaleValue;
+	bool m_acceptWheelEvents;
     bool m_viewFromBelow;
-    int m_initialModifiers;
-    QTimer *m_stuckModifierTimer;
 
 protected:
-    static WheelMapping m_wheelMapping;
+	static WheelMapping m_wheelMapping;
 };
 
 #endif

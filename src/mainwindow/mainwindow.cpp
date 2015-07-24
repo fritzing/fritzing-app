@@ -3168,11 +3168,11 @@ void MainWindow::initZoom() {
         parts = true;
         break;
     }
-
+			
     if (parts) {
         m_currentGraphicsView->fitInWindow();
     }
-
+		
     m_currentGraphicsView->setEverZoomed(true);
 }
 

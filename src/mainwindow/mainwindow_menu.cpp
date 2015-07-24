@@ -973,23 +973,23 @@ void MainWindow::createPartMenuActions() {
 #endif
 
 
-	m_rotate45cwAct = new QAction(tr("Rotate 45\x00B0 Clockwise"), this);
+	m_rotate45cwAct = new QAction(tr("Rotate 45\u00B0 Clockwise"), this);
 	m_rotate45cwAct->setStatusTip(tr("Rotate current selection 45 degrees clockwise"));
 	connect(m_rotate45cwAct, SIGNAL(triggered()), this, SLOT(rotate45cw()));
 
-	m_rotate90cwAct = new QAction(tr("Rotate 90\x00B0 Clockwise"), this);
+	m_rotate90cwAct = new QAction(tr("Rotate 90\u00B0 Clockwise"), this);
 	m_rotate90cwAct->setStatusTip(tr("Rotate the selected parts by 90 degrees clockwise"));
 	connect(m_rotate90cwAct, SIGNAL(triggered()), this, SLOT(rotate90cw()));
 
-	m_rotate180Act = new QAction(tr("Rotate 180\x00B0"), this);
+	m_rotate180Act = new QAction(tr("Rotate 180\u00B0"), this);
 	m_rotate180Act->setStatusTip(tr("Rotate the selected parts by 180 degrees"));
 	connect(m_rotate180Act, SIGNAL(triggered()), this, SLOT(rotate180()));
 
-	m_rotate90ccwAct = new QAction(tr("Rotate 90\x00B0 Counter Clockwise"), this);
+	m_rotate90ccwAct = new QAction(tr("Rotate 90\u00B0 Counter Clockwise"), this);
 	m_rotate90ccwAct->setStatusTip(tr("Rotate current selection 90 degrees counter clockwise"));
 	connect(m_rotate90ccwAct, SIGNAL(triggered()), this, SLOT(rotate90ccw()));
 
-	m_rotate45ccwAct = new QAction(tr("Rotate 45\x00B0 Counter Clockwise"), this);
+	m_rotate45ccwAct = new QAction(tr("Rotate 45\u00B0 Counter Clockwise"), this);
 	m_rotate45ccwAct->setStatusTip(tr("Rotate current selection 45 degrees counter clockwise"));
 	connect(m_rotate45ccwAct, SIGNAL(triggered()), this, SLOT(rotate45ccw()));
 

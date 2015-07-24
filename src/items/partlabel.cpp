@@ -447,37 +447,37 @@ void PartLabel::initMenu()
 	bool include45 = (m_owner != NULL) && (m_owner->viewID() == ViewLayer::PCBView);
 
 	if (include45) {
-		QAction *rotate45cwAct = rlmenu->addAction(tr("Rotate 45\x00B0 Clockwise"));
+		QAction *rotate45cwAct = rlmenu->addAction(tr("Rotate 45\u00B0 Clockwise"));
 		rotate45cwAct->setData(QVariant(PartLabelRotate45CW));
 		rotate45cwAct->setStatusTip(tr("Rotate the label by 45 degrees clockwise"));
 	}
 
-    QAction *rotate90cwAct = rlmenu->addAction(tr("Rotate 90\x00B0 Clockwise"));
+    QAction *rotate90cwAct = rlmenu->addAction(tr("Rotate 90\u00B0 Clockwise"));
 	rotate90cwAct->setData(QVariant(PartLabelRotate90CW));
 	rotate90cwAct->setStatusTip(tr("Rotate the label by 90 degrees clockwise"));
 
 	if (include45) {
-		QAction *rotate135cwAct = rlmenu->addAction(tr("Rotate 135\x00B0 Clockwise"));
+		QAction *rotate135cwAct = rlmenu->addAction(tr("Rotate 135\u00B0 Clockwise"));
 		rotate135cwAct->setData(QVariant(PartLabelRotate135CW));
 		rotate135cwAct->setStatusTip(tr("Rotate the label by 135 degrees clockwise"));
 	}
 
- 	QAction *rotate180Act = rlmenu->addAction(tr("Rotate 180\x00B0"));
+ 	QAction *rotate180Act = rlmenu->addAction(tr("Rotate 180\u00B0"));
 	rotate180Act->setData(QVariant(PartLabelRotate180));
 	rotate180Act->setStatusTip(tr("Rotate the label by 180 degrees"));
   
 	if (include45) {
-		QAction *rotate135ccwAct = rlmenu->addAction(tr("Rotate 135\x00B0 Counter Clockwise"));
+		QAction *rotate135ccwAct = rlmenu->addAction(tr("Rotate 135\u00B0 Counter Clockwise"));
 		rotate135ccwAct->setData(QVariant(PartLabelRotate135CCW));
 		rotate135ccwAct->setStatusTip(tr("Rotate the label by 135 degrees counter clockwise"));
 	}
 
-	QAction *rotate90ccwAct = rlmenu->addAction(tr("Rotate 90\x00B0 Counter Clockwise"));
+	QAction *rotate90ccwAct = rlmenu->addAction(tr("Rotate 90\u00B0 Counter Clockwise"));
 	rotate90ccwAct->setData(QVariant(PartLabelRotate90CCW));
 	rotate90ccwAct->setStatusTip(tr("Rotate current selection 90 degrees counter clockwise"));
 		
 	if (include45) {
-		QAction *rotate45ccwAct = rlmenu->addAction(tr("Rotate 45\x00B0 Counter Clockwise"));
+		QAction *rotate45ccwAct = rlmenu->addAction(tr("Rotate 45\u00B0 Counter Clockwise"));
 		rotate45ccwAct->setData(QVariant(PartLabelRotate45CCW));
 		rotate45ccwAct->setStatusTip(tr("Rotate the label by 45 degrees counter clockwise"));
 	}

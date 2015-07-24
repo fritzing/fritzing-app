@@ -612,7 +612,7 @@ protected:
     virtual void createHelpMenu();
     virtual void createRotateSubmenu(QMenu * parentMenu);
     virtual void createZOrderSubmenu(QMenu * parentMenu);
-    virtual void createZOrderWireSubmenu(QMenu * parentMenu);
+  //  virtual void createZOrderWireSubmenu(QMenu * parentMenu);
     virtual void createAlignSubmenu(QMenu * parentMenu);
     virtual void createAddToBinSubmenu(QMenu * parentMenu);
 	virtual void populateExportMenu();

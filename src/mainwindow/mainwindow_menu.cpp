@@ -1001,29 +1001,29 @@ void MainWindow::createPartMenuActions() {
 	m_flipVerticalAct->setStatusTip(tr("Flip current selection vertically"));
 	connect(m_flipVerticalAct, SIGNAL(triggered()), this, SLOT(flipVertical()));
 
-	m_bringToFrontAct = new QAction(tr("Bring to Front"), this);
-	m_bringToFrontAct->setShortcut(tr("Shift+Ctrl+]"));
+    m_bringToFrontAct = new QAction(tr("Bring to Front"), this);
+    m_bringToFrontAct->setShortcut(tr("Shift+Ctrl+]"));
     m_bringToFrontAct->setStatusTip(tr("Bring selected object(s) to front of their layer"));
     connect(m_bringToFrontAct, SIGNAL(triggered()), this, SLOT(bringToFront()));
 	m_bringToFrontWireAct = new WireAction(m_bringToFrontAct);
     connect(m_bringToFrontWireAct, SIGNAL(triggered()), this, SLOT(bringToFront()));
 
-	m_bringForwardAct = new QAction(tr("Bring Forward"), this);
-	m_bringForwardAct->setShortcut(tr("Ctrl+]"));
+    m_bringForwardAct = new QAction(tr("Bring Forward"), this);
+    m_bringForwardAct->setShortcut(tr("Ctrl+]"));
     m_bringForwardAct->setStatusTip(tr("Bring selected object(s) forward in their layer"));
     connect(m_bringForwardAct, SIGNAL(triggered()), this, SLOT(bringForward()));
 	m_bringForwardWireAct = new WireAction(m_bringForwardAct);
     connect(m_bringForwardWireAct, SIGNAL(triggered()), this, SLOT(bringForward()));
 
-	m_sendBackwardAct = new QAction(tr("Send Backward"), this);
-	m_sendBackwardAct->setShortcut(tr("Ctrl+["));
+    m_sendBackwardAct = new QAction(tr("Send Backward"), this);
+    m_sendBackwardAct->setShortcut(tr("Ctrl+["));
     m_sendBackwardAct->setStatusTip(tr("Send selected object(s) back in their layer"));
     connect(m_sendBackwardAct, SIGNAL(triggered()), this, SLOT(sendBackward()));
 	m_sendBackwardWireAct = new WireAction(m_sendBackwardAct);
     connect(m_sendBackwardWireAct, SIGNAL(triggered()), this, SLOT(sendBackward()));
 
-	m_sendToBackAct = new QAction(tr("Send to Back"), this);
-	m_sendToBackAct->setShortcut(tr("Shift+Ctrl+["));
+    m_sendToBackAct = new QAction(tr("Send to Back"), this);
+    m_sendToBackAct->setShortcut(tr("Shift+Ctrl+["));
     m_sendToBackAct->setStatusTip(tr("Send selected object(s) to the back of their layer"));
     connect(m_sendToBackAct, SIGNAL(triggered()), this, SLOT(sendToBack()));
 	m_sendToBackWireAct = new WireAction(m_sendToBackAct);
@@ -1338,6 +1338,7 @@ void MainWindow::createZOrderSubmenu(QMenu * parentMenu) {
     zOrderMenu->addAction(m_sendToBackAct);
 }
 
+/*
 void MainWindow::createZOrderWireSubmenu(QMenu * parentMenu) {
     QMenu *zOrderWireMenu = parentMenu->addMenu(tr("Raise and Lower"));
     zOrderWireMenu->addAction(m_bringToFrontWireAct);
@@ -1345,7 +1346,7 @@ void MainWindow::createZOrderWireSubmenu(QMenu * parentMenu) {
     zOrderWireMenu->addAction(m_sendBackwardWireAct);
     zOrderWireMenu->addAction(m_sendToBackWireAct);
 }
-
+*/
 void MainWindow::createAlignSubmenu(QMenu * parentMenu) {
     QMenu *alignMenu = parentMenu->addMenu(tr("Align"));
     alignMenu->addAction(m_alignLeftAct);
@@ -1470,7 +1471,7 @@ void MainWindow::createPartMenu() {
     m_partMenu->addAction(m_flipVerticalAct);
     createRotateSubmenu(m_partMenu);
     createZOrderSubmenu(m_partMenu);
-    createZOrderWireSubmenu(m_partMenu);
+    //createZOrderWireSubmenu(m_partMenu);
     createAlignSubmenu(m_partMenu);
 	m_partMenu->addAction(m_moveLockAct);
 	m_partMenu->addAction(m_stickyAct);
@@ -3401,7 +3402,8 @@ QMenu *MainWindow::pcbItemMenu() {
 
 QMenu *MainWindow::breadboardWireMenu() {
 	QMenu *menu = new QMenu(QObject::tr("Wire"), this);
-    createZOrderWireSubmenu(menu);
+ //   createZOrderWireSubmenu(menu);
+    createZOrderSubmenu(menu);
 	menu->addSeparator();
 	m_breadboardWireColorMenu = menu->addMenu(tr("&Wire Color"));
 	foreach(QString colorName, Wire::colorNames) {
@@ -3433,8 +3435,9 @@ QMenu *MainWindow::breadboardWireMenu() {
 
 QMenu *MainWindow::pcbWireMenu() {
     QMenu *menu = new QMenu(QObject::tr("Wire"), this);
-    createZOrderWireSubmenu(menu);
-	menu->addSeparator();
+   // createZOrderWireSubmenu(menu);
+    createZOrderSubmenu(menu);
+    menu->addSeparator();
 	menu->addAction(m_changeTraceLayerWireAct);	
 	menu->addAction(m_createTraceWireAct);
 	menu->addAction(m_excludeFromAutorouteWireAct);
@@ -3458,7 +3461,8 @@ QMenu *MainWindow::pcbWireMenu() {
 
 QMenu *MainWindow::schematicWireMenu() {
     QMenu *menu = new QMenu(QObject::tr("Wire"), this);
-    createZOrderWireSubmenu(menu);
+   // createZOrderWireSubmenu(menu);
+    createZOrderSubmenu(menu);
 	menu->addSeparator();
 	m_schematicWireColorMenu = menu->addMenu(tr("&Wire Color"));
 	foreach(QString colorName, Wire::colorNames) {
@@ -3488,7 +3492,8 @@ QMenu *MainWindow::schematicWireMenu() {
 }
 
 QMenu *MainWindow::viewItemMenuAux(QMenu* menu) {
-    createZOrderWireSubmenu(menu);
+  //  createZOrderWireSubmenu(menu);
+    createZOrderSubmenu(menu);
 	menu->addAction(m_moveLockAct);
 	menu->addAction(m_stickyAct);
 	menu->addSeparator();

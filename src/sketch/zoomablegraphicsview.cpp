@@ -95,8 +95,8 @@ void ZoomableGraphicsView::wheelEvent(QWheelEvent* event) {
     if (m_stuckModifierTimer->isActive()) {
         m_stuckModifierTimer->stop();
     }
-    // 100 msec wait after wheel events should suffice
-    m_stuckModifierTimer->start(100);
+    // 200 msec wait after wheel events should suffice
+    m_stuckModifierTimer->start(200);
 #else
     m_initialModifiers = event->modifiers();
 #endif

@@ -4337,8 +4337,8 @@ double SketchWidget::fitInWindow() {
 		itemsRect |= itemBase->sceneBoundingRect();
 	}
 
-    static const double borderFactor = 0.03;
-    itemsRect.adjust(-itemsRect.width() * borderFactor, -itemsRect.height() * borderFactor, itemsRect.width() * borderFactor, itemsRect.height() * borderFactor);
+	static const double borderFactor = 0.03;
+	itemsRect.adjust(-itemsRect.width() * borderFactor, -itemsRect.height() * borderFactor, itemsRect.width() * borderFactor, itemsRect.height() * borderFactor);
 
 	QRectF viewRect = rect();
 
@@ -4347,20 +4347,21 @@ double SketchWidget::fitInWindow() {
 	double wRelation = (viewRect.width() - this->verticalScrollBar()->width() - 5)  / itemsRect.width();
 	double hRelation = (viewRect.height() - this->horizontalScrollBar()->height() - 5) / itemsRect.height();
 
-	//DebugDialog::debug(QString("scen rect: w%1 h%2").arg(itemsRect.width()).arg(itemsRect.height()));
-	//DebugDialog::debug(QString("view rect: w%1 h%2").arg(viewRect.width()).arg(viewRect.height()));
-	//DebugDialog::debug(QString("relations (v/s): w%1 h%2").arg(wRelation).arg(hRelation));
+	// DebugDialog::debug(QString("scen rect: x%1 y%2 w%3 h%4").arg(itemsRect.left()).arg(itemsRect.top()).arg(itemsRect.width()).arg(itemsRect.height()));
+	// DebugDialog::debug(QString("view rect: x%1 y%2 w%3 h%4").arg(viewRect.left()).arg(viewRect.top()).arg(viewRect.width()).arg(viewRect.height()));
+	// DebugDialog::debug(QString("relations (v/s): w%1 h%2").arg(wRelation).arg(hRelation));
 
+	double newScaleValue;
 	if(wRelation < hRelation) {
-		m_scaleValue = (wRelation * 100);
+		newScaleValue = (wRelation * 100);
 	} else {
-		m_scaleValue = (hRelation * 100);
+		newScaleValue = (hRelation * 100);
 	}
 
+	this->absoluteZoom(newScaleValue);
 	this->centerOn(itemsRect.center());
-	this->absoluteZoom(m_scaleValue);
 
-	return m_scaleValue;
+	return newScaleValue;
 }
 
 bool SketchWidget::startZChange(QList<ItemBase *> & bases) {

@@ -7199,7 +7199,7 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
     <message>
         <source>Checking...</source>
-        <translation>ontrollo...</translation>
+        <translation>Controllo...</translation>
     </message>
     <message>
         <source>Sorry, unable to retrieve update info</source>

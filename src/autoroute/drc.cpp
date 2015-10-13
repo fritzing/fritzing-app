@@ -292,7 +292,7 @@ QStringList DRC::start(bool showOkMessage, double keepoutMils) {
         }
         else {
             DRCResultsDialog * dialog = new DRCResultsDialog(message, messages, collidingThings, m_displayItem, m_displayImage, m_sketchWidget, m_sketchWidget->window());
-            dialog->exec();
+            dialog->show();
         }
     }
     else {}

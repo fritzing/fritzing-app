@@ -1918,16 +1918,8 @@ Continuer ou annuler?</translation>
         <translation>MainWindow :: Le remplissage du menu grâce à l&apos;index: n&apos;a pas pu charger l&apos;exemple avec l&apos;id = &apos;%1&apos;</translation>
     </message>
     <message>
-        <source>Rotate 90� Counter Clockwise</source>
-        <translation type="unfinished">Faire pivoter de 135° vers la gauche {90�?}</translation>
-    </message>
-    <message>
         <source>Select All &quot;Don&apos;t Autoroute&quot; Traces</source>
         <translation>Sélectionner toutes les pistes &quot;non autoroutées&quot;</translation>
-    </message>
-    <message>
-        <source>Rotate 45� Counter Clockwise</source>
-        <translation type="unfinished">Faire pivoter de 135° vers la gauche {45�?}</translation>
     </message>
     <message>
         <source>Align Vertical Center</source>
@@ -2348,14 +2340,6 @@ Do you want to update now?</source>
         <translation>Imprimer la vue actuelle</translation>
     </message>
     <message>
-        <source>Rotate 90� Clockwise</source>
-        <translation type="unfinished">Faire pivoter de 90° vers la droite {90�?}</translation>
-    </message>
-    <message>
-        <source>Rotate 45� Clockwise</source>
-        <translation type="unfinished">Faire pivoter de 90° vers la droite {45�?}</translation>
-    </message>
-    <message>
         <source>copperfill</source>
         <translation>remplissage cuivre</translation>
     </message>
@@ -2706,10 +2690,6 @@ Nous travaillons à éliminer ce message afin de ne vous laisser choisir que des
     <message>
         <source>Online Projects Gallery</source>
         <translation>Galerie des projets en ligne</translation>
-    </message>
-    <message>
-        <source>Rotate 180�</source>
-        <translation type="unfinished">Faire pivoter de 180° {180�?}</translation>
     </message>
     <message>
         <source>Export Bill of Materials (BoM)...</source>
@@ -3555,6 +3535,26 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     <message>
         <source>(x, y)=(%1, %2)	(width, height)=(%3, %4) %5</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rotate 45° Clockwise</source>
+        <translation type="unfinished">Faire pivoter de 90° vers la droite {45�?} {45°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 90° Clockwise</source>
+        <translation type="unfinished">Faire pivoter de 90° vers la droite {45�?} {90°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 180°</source>
+        <translation type="unfinished">Faire pivoter de 180° {180�?} {180°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 90° Counter Clockwise</source>
+        <translation type="unfinished">Faire pivoter de 135° vers la gauche {135�?} {90°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 45° Counter Clockwise</source>
+        <translation type="unfinished">Faire pivoter de 135° vers la gauche {135�?} {45°?}</translation>
     </message>
 </context>
 <context>
@@ -4703,24 +4703,12 @@ Go ahead and save?</source>
         <translation>Faire pivoter le label de 135 degrés vers la droite</translation>
     </message>
     <message>
-        <source>Rotate 90� Counter Clockwise</source>
-        <translation type="unfinished">Faire pivoter de 135° vers la gauche {90�?}</translation>
-    </message>
-    <message>
-        <source>Rotate 45� Counter Clockwise</source>
-        <translation type="unfinished">Faire pivoter de 135° vers la gauche {45�?}</translation>
-    </message>
-    <message>
         <source>Rotate the label by 135 degrees counter clockwise</source>
         <translation>Faire pivoter le label de 135 degrés vers la gauche</translation>
     </message>
     <message>
         <source>Display the text of the label</source>
         <translation>Afficher le texte de l&apos;étiquette</translation>
-    </message>
-    <message>
-        <source>Rotate 135� Clockwise</source>
-        <translation type="unfinished">Faire pivoter de 90° vers la droite {135�?}</translation>
     </message>
     <message>
         <source>Flip/Rotate</source>
@@ -4747,14 +4735,6 @@ Go ahead and save?</source>
         <translation>Afficher les valeurs de la propriétés %1</translation>
     </message>
     <message>
-        <source>Rotate 90� Clockwise</source>
-        <translation type="unfinished">Faire pivoter de 90° vers la droite {90�?}</translation>
-    </message>
-    <message>
-        <source>Rotate 45� Clockwise</source>
-        <translation type="unfinished">Faire pivoter de 90° vers la droite {45�?}</translation>
-    </message>
-    <message>
         <source>Rotate the label by 45 degrees clockwise</source>
         <translation>Faire pivoter le label de 45 degrés vers la droite</translation>
     </message>
@@ -4775,14 +4755,6 @@ Go ahead and save?</source>
         <translation>Faire pivoter le label de 45 degrés vers la gauche</translation>
     </message>
     <message>
-        <source>Rotate 180�</source>
-        <translation type="unfinished">Faire pivoter de 180° {180�?}</translation>
-    </message>
-    <message>
-        <source>Rotate 135� Counter Clockwise</source>
-        <translation type="unfinished">Faire pivoter de 135° vers la gauche {135�?}</translation>
-    </message>
-    <message>
         <source>Edit label text</source>
         <translation>Modifier le texte de l&apos;étiquette</translation>
     </message>
@@ -4801,6 +4773,34 @@ Go ahead and save?</source>
     <message>
         <source>Label text:</source>
         <translation>Texte de l&apos;étiquette :</translation>
+    </message>
+    <message>
+        <source>Rotate 45° Clockwise</source>
+        <translation type="unfinished">Faire pivoter de 90° vers la droite {45�?} {45°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 90° Clockwise</source>
+        <translation type="unfinished">Faire pivoter de 90° vers la droite {45�?} {90°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 135° Clockwise</source>
+        <translation type="unfinished">Faire pivoter de 90° vers la droite {45�?} {135°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 180°</source>
+        <translation type="unfinished">Faire pivoter de 180° {180�?} {180°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 135° Counter Clockwise</source>
+        <translation type="unfinished">Faire pivoter de 135° vers la gauche {135�?} {135°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 90° Counter Clockwise</source>
+        <translation type="unfinished">Faire pivoter de 135° vers la gauche {135�?} {90°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 45° Counter Clockwise</source>
+        <translation type="unfinished">Faire pivoter de 135° vers la gauche {135�?} {45°?}</translation>
     </message>
 </context>
 <context>
@@ -7265,10 +7265,6 @@ Remarque : vous pouvez également déclencher cet affichage en positionnant la s
         <translation>Impossible d&apos;accéder au site fritzing.org/projects</translation>
     </message>
     <message>
-        <source>order now &gt;&gt;</source>
-        <translation>Commander maintenant &gt;&gt;</translation>
-    </message>
-    <message>
         <source>All Tips</source>
         <translation>Toutes les astuces</translation>
     </message>
@@ -7297,20 +7293,12 @@ Remarque : vous pouvez également déclencher cet affichage en positionnant la s
         <translation>Aucune esquisse récente trouvée</translation>
     </message>
     <message>
-        <source>Get your Creator Kit now.</source>
-        <translation>Obtenez votre Creator Kit maintenant.</translation>
-    </message>
-    <message>
         <source>Projects</source>
         <translation>Projets</translation>
     </message>
     <message>
         <source>Fritzing Projects.</source>
         <translation>Projets Fritzing.</translation>
-    </message>
-    <message>
-        <source>The Fritzing Creator Kit provides a fast, easy and entertaining introduction to the world of interactive electronics.</source>
-        <translation>Le Fritzing Creator Kit constitue une introduction rapide, facile et amusante au monde de l&apos;électronique interactive.</translation>
     </message>
     <message>
         <source>Tip of the Day:</source>
@@ -7350,6 +7338,10 @@ Remarque : vous pouvez également déclencher cet affichage en positionnant la s
     </message>
     <message>
         <source>&lt;a href=&apos;%1&apos;&gt;&lt;img src=&apos;%2&apos; /&gt;&lt;/a&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The Fritzing Creator Kit is out of Stock. For Updates please visit the fritzing.blog</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

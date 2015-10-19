@@ -3507,23 +3507,23 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Rotate 45� Clockwise</source>
+        <source>Rotate 45° Clockwise</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Rotate 90� Clockwise</source>
+        <source>Rotate 90° Clockwise</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Rotate 180�</source>
+        <source>Rotate 180°</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Rotate 90� Counter Clockwise</source>
+        <source>Rotate 90° Counter Clockwise</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Rotate 45� Counter Clockwise</source>
+        <source>Rotate 45° Counter Clockwise</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -4731,31 +4731,31 @@ Go ahead and save?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Rotate 45� Clockwise</source>
+        <source>Rotate 45° Clockwise</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Rotate 90� Clockwise</source>
+        <source>Rotate 90° Clockwise</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Rotate 135� Clockwise</source>
+        <source>Rotate 135° Clockwise</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Rotate 180�</source>
+        <source>Rotate 180°</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Rotate 135� Counter Clockwise</source>
+        <source>Rotate 135° Counter Clockwise</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Rotate 90� Counter Clockwise</source>
+        <source>Rotate 90° Counter Clockwise</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Rotate 45� Counter Clockwise</source>
+        <source>Rotate 45° Counter Clockwise</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -7212,18 +7212,6 @@ Note: you can also trigger this display by mousing down on the routing status te
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>The Fritzing Creator Kit provides a fast, easy and entertaining introduction to the world of interactive electronics.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>order now &gt;&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Get your Creator Kit now.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Fritzing Fab is an easy and affordable service for producing professional PCBs from your Fritzing sketches.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7285,6 +7273,10 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
     <message>
         <source>Fritzing Fab</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The Fritzing Creator Kit is out of Stock. For Updates please visit the fritzing.blog</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -3505,26 +3505,6 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Rotate 45� Clockwise</source>
-        <translation type="unfinished">時計方向に回転90° {135°?} {45�?}</translation>
-    </message>
-    <message>
-        <source>Rotate 90� Clockwise</source>
-        <translation type="unfinished">時計方向に回転90° {135°?} {90�?}</translation>
-    </message>
-    <message>
-        <source>Rotate 180�</source>
-        <translation type="unfinished">回転 180° {180�?}</translation>
-    </message>
-    <message>
-        <source>Rotate 90� Counter Clockwise</source>
-        <translation type="unfinished">逆時計方向に回転 90° {45°?} {90�?}</translation>
-    </message>
-    <message>
-        <source>Rotate 45� Counter Clockwise</source>
-        <translation type="unfinished">逆時計方向に回転 90° {45°?} {45�?}</translation>
-    </message>
-    <message>
         <source>Ctrl+Shift+V</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3535,6 +3515,26 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     <message>
         <source>(x, y)=(%1, %2)	(width, height)=(%3, %4) %5</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rotate 45° Clockwise</source>
+        <translation type="unfinished">時計方向に回転90° {135°?} {135�?} {45°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 90° Clockwise</source>
+        <translation type="unfinished">時計方向に回転90° {135°?} {135�?} {90°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 180°</source>
+        <translation type="unfinished">回転 180° {180�?} {180°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 90° Counter Clockwise</source>
+        <translation type="unfinished">逆時計方向に回転 90° {45°?} {45�?} {90°?}</translation>
+    </message>
+    <message>
+        <source>Rotate 45° Counter Clockwise</source>
+        <translation type="unfinished">逆時計方向に回転 90° {45°?} {45�?} {45°?}</translation>
     </message>
 </context>
 <context>
@@ -4742,32 +4742,32 @@ Go ahead and save?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Rotate 45� Clockwise</source>
-        <translation type="unfinished">時計方向に回転90° {135°?} {45�?}</translation>
+        <source>Rotate 45° Clockwise</source>
+        <translation type="unfinished">時計方向に回転90° {135°?} {135�?} {45°?}</translation>
     </message>
     <message>
-        <source>Rotate 90� Clockwise</source>
-        <translation type="unfinished">時計方向に回転90° {135°?} {90�?}</translation>
+        <source>Rotate 90° Clockwise</source>
+        <translation type="unfinished">時計方向に回転90° {135°?} {135�?} {90°?}</translation>
     </message>
     <message>
-        <source>Rotate 135� Clockwise</source>
-        <translation type="unfinished">時計方向に回転90° {135°?} {135�?}</translation>
+        <source>Rotate 135° Clockwise</source>
+        <translation type="unfinished">時計方向に回転90° {135°?} {135�?} {135°?}</translation>
     </message>
     <message>
-        <source>Rotate 180�</source>
-        <translation type="unfinished">回転 180° {180�?}</translation>
+        <source>Rotate 180°</source>
+        <translation type="unfinished">回転 180° {180�?} {180°?}</translation>
     </message>
     <message>
-        <source>Rotate 135� Counter Clockwise</source>
-        <translation type="unfinished">逆時計方向に回転 90° {45°?} {135�?}</translation>
+        <source>Rotate 135° Counter Clockwise</source>
+        <translation type="unfinished">逆時計方向に回転 90° {45°?} {45�?} {135°?}</translation>
     </message>
     <message>
-        <source>Rotate 90� Counter Clockwise</source>
-        <translation type="unfinished">逆時計方向に回転 90° {45°?} {90�?}</translation>
+        <source>Rotate 90° Counter Clockwise</source>
+        <translation type="unfinished">逆時計方向に回転 90° {45°?} {45�?} {90°?}</translation>
     </message>
     <message>
-        <source>Rotate 45� Counter Clockwise</source>
-        <translation type="unfinished">逆時計方向に回転 90° {45°?} {45�?}</translation>
+        <source>Rotate 45° Counter Clockwise</source>
+        <translation type="unfinished">逆時計方向に回転 90° {45°?} {45�?} {45°?}</translation>
     </message>
 </context>
 <context>
@@ -7230,18 +7230,6 @@ Note: you can also trigger this display by mousing down on the routing status te
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>The Fritzing Creator Kit provides a fast, easy and entertaining introduction to the world of interactive electronics.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>order now &gt;&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Get your Creator Kit now.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Fritzing Fab is an easy and affordable service for producing professional PCBs from your Fritzing sketches.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7303,6 +7291,10 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
     <message>
         <source>Fritzing Fab</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The Fritzing Creator Kit is out of Stock. For Updates please visit the fritzing.blog</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

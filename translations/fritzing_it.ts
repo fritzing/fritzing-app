@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="it_IT" sourcelanguage="en_US">
+<TS version="2.0" language="it_IT" sourcelanguage="en_US">
 <context>
     <name>AboutBox</name>
     <message>
@@ -575,7 +575,6 @@ A custom board svg typically has one or two silkscreen layers and one board laye
     <message numerus="yes">
         <source>&lt;b&gt;The custom shape has %n cutouts.&lt;/b&gt;</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
             <numerusform></numerusform>
         </translation>
     </message>
@@ -2498,7 +2497,6 @@ Please check all views for potential side-effects.</source>
         <source>Routing completed using %n jumper part(s)</source>
         <translation type="unfinished">
             <numerusform></numerusform>
-            <numerusform></numerusform>
         </translation>
     </message>
     <message>
@@ -3404,7 +3402,6 @@ Do you want to update now?</source>
         <source>There are %n outdated part(s) in this sketch. </source>
         <translation type="unfinished">
             <numerusform></numerusform>
-            <numerusform></numerusform>
         </translation>
     </message>
     <message>
@@ -3452,7 +3449,6 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     <message numerus="yes">
         <source>We strongly recommend that you update these %n parts  to the latest version. </source>
         <translation type="unfinished">
-            <numerusform></numerusform>
             <numerusform></numerusform>
         </translation>
     </message>
@@ -3562,7 +3558,6 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
         <source> with %n vias</source>
         <translation type="unfinished">
             <numerusform></numerusform>
-            <numerusform></numerusform>
         </translation>
     </message>
     <message>
@@ -3608,7 +3603,6 @@ Reason: %2 (errcode %3)</source>
     <message numerus="yes">
         <source>Unable to find the following %n part(s):</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
             <numerusform></numerusform>
         </translation>
     </message>
@@ -4189,13 +4183,11 @@ Go ahead and save?</source>
         <source>This part has %n unassigned connectors </source>
         <translation type="unfinished">
             <numerusform></numerusform>
-            <numerusform></numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <source>across %n views. </source>
         <translation type="unfinished">
-            <numerusform></numerusform>
             <numerusform></numerusform>
         </translation>
     </message>
@@ -6145,7 +6137,6 @@ is already there, we won&apos;t add it again, right?</source>
         <source>The total area of the %n PCB(s) in this sketch is</source>
         <translation type="unfinished">
             <numerusform></numerusform>
-            <numerusform></numerusform>
         </translation>
     </message>
     <message>
@@ -6669,13 +6660,11 @@ Note: you can also trigger this display by mousing down on the routing status te
         <source>show %n part label(s)</source>
         <translation type="unfinished">
             <numerusform></numerusform>
-            <numerusform></numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <source>hide %n part label(s)</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
             <numerusform></numerusform>
         </translation>
     </message>
@@ -6730,7 +6719,6 @@ Note: you can also trigger this display by mousing down on the routing status te
     <message numerus="yes">
         <source>%1 %n strip(s)</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
             <numerusform></numerusform>
         </translation>
     </message>
@@ -7199,7 +7187,7 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
     <message>
         <source>Checking...</source>
-        <translation>ontrollo...</translation>
+        <translation>Controllo...</translation>
     </message>
     <message>
         <source>Sorry, unable to retrieve update info</source>
@@ -7207,11 +7195,11 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
     <message>
         <source>A new main release is available for downloading:</source>
-        <translation type="unfinished"></translation>
+        <translation>Una nuova release principale è disponibile per il download:</translation>
     </message>
     <message>
         <source>A new interim release is available for downloading:</source>
-        <translation type="unfinished"></translation>
+        <translation>Una nuova release intermedia è disponibile per il download:</translation>
     </message>
 </context>
 <context>

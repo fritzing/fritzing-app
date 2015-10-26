@@ -80,8 +80,8 @@
         <translation>ao  Gianluca Urgese pela tradução para Italiano, </translation>
     </message>
     <message>
-        <source>to Nuno Pessanha Santos for the Portuguese (European) translation, </source>
-        <translation>ao Nuno Pessanha Santos pela tradução para Português (Europeu), </translation>
+        <source>to Bruno Ramalhete and to Nuno Pessanha Santos for the Portuguese (European) translation, </source>
+        <translation>ao Bruno Ramalhete e ao Nuno Pessanha Santos pela tradução para Português (Europeu), </translation>
     </message>
     <message>
         <source>to Yuelin and Ninjia  for the Chinese (Simplified) translation, </source>
@@ -156,7 +156,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>and to Arthur Zanona, Nuno Pessanha Santos, Leandro Nunes, and Gabriel Ferreira for the Portuguese (Brazilian) translation. </source>
+        <source>and to Arthur Zanona, Bruno Ramalhete, Nuno Pessanha Santos, Leandro Nunes, and Gabriel Ferreira for the Portuguese (Brazilian) translation. </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -397,59 +397,59 @@
     </message>
     <message>
         <source>Searching...</source>
-        <translation type="unfinished"></translation>
+        <translation>A procurar...</translation>
     </message>
     <message>
         <source>Import...</source>
-        <translation type="unfinished"></translation>
+        <translation>Importar...</translation>
     </message>
     <message>
         <source>Load a Fritzing part (.fzpz), or a Fritzing parts bin (.fzb, .fzbz)</source>
-        <translation type="unfinished"></translation>
+        <translation>Carregar uma parte do Fritzing (.fzpz), ou um binário de partesFritzing (.fzb, .fzbz)
     </message>
     <message>
         <source>Select a Fritzing File to Open</source>
-        <translation type="unfinished">Seleccione um ficheiron Fritzing para abrir</translation>
+        <translation>Seleccione um ficheiro Fritzing para abrir</translation>
     </message>
     <message>
         <source>Fritzing Files (*%1 *%2 *%3);;Fritzing Part (*%1);;Fritzing Bin (*%2);;Fritzing Shareable Bin (*%3)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ficheiros Fritzing (*%1 *%2 *%3);;Parte Fritzing (*%1);;Binário Fritzing (*%2);;Binário Partilhávl Fritzing (*%3)</translation>
     </message>
     <message>
         <source>Edit Part (new parts editor)...</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar Parte (editor novas partes)</translation>
     </message>
     <message>
         <source>Find Part in Sketch</source>
-        <translation type="unfinished"></translation>
+        <translation>Encontrar partes no Esboço</translation>
     </message>
     <message>
         <source>Remove from Bin</source>
-        <translation type="unfinished"></translation>
+        <translation>Remover do Binário</translation>
     </message>
     <message>
         <source>Unable to remove part &apos;%1&apos;--it is in use in a sketch</source>
-        <translation type="unfinished"></translation>
+        <translation>Incapaz de remover a parte &apos;%1&apos;--está em uso no esboço</translation>
     </message>
     <message>
         <source>Do you really want to remove &apos;%1&apos; from the bin? This operation cannot be undone.</source>
-        <translation type="unfinished"></translation>
+        <translation>Queres mesmo remover &apos;%1&apos; do binário? Esta operação não pode ser desfeita.</translation>
     </message>
     <message>
         <source>Copy to Sketch</source>
-        <translation type="unfinished"></translation>
+        <translation>Copiar para o Esboço</translation>
     </message>
     <message>
         <source>Copy all the parts in the bin to a sketch</source>
-        <translation type="unfinished"></translation>
+        <translation>Copiar todas as partes no binário para um esboço</translation>
     </message>
     <message>
         <source>Copy all to Sketch</source>
-        <translation type="unfinished"></translation>
+        <translation>Copiar tudo para o Esboço</translation>
     </message>
     <message>
         <source>Copy all loaded parts to the sketch</source>
-        <translation type="unfinished"></translation>
+        <translation>Copiar todas as partes carregadas para o Esboço</translation>
     </message>
 </context>
 <context>
@@ -463,98 +463,99 @@
         <translation>duas camadas (face dupla)</translation>
     </message>
     <message>
-        <source>Have a look at the circle_pcb.svg file in your Fritzing installation folder at parts/svg/core/pcb/.
+        <source>Have a look at the circle_pcb.svg file in your Fritzing installation folder at parts/svg/core/pcb/.</source>
+        <translation>Dá uma olhadela no ficheiro circle_pcb.svg no teu directório de instalação Fritzing em parts/svg/core/pcb/.</translation>
 
-</source>
-        <translation type="unfinished"></translation>
+
     </message>
     <message>
         <source>image file</source>
-        <translation type="unfinished">ficheiro de imagem</translation>
+        <translation>ficheiro de imagem</translation>
     </message>
     <message>
         <source>load image file</source>
-        <translation type="unfinished">Carregar ficheiro de imagem</translation>
+        <translation>Carregar ficheiro de imagem</translation>
     </message>
     <message>
         <source>Images</source>
-        <translation type="unfinished">Imagens</translation>
+        <translation>Imagens</translation>
     </message>
     <message>
         <source>Select an image file to load</source>
-        <translation type="unfinished">Seleccione um ficheiro de imagem para carregar</translation>
+        <translation>Seleccione um ficheiro de imagem para carregar</translation>
     </message>
     <message>
         <source>due to an xml problem: %1 line:%2 column:%3</source>
-        <translation type="unfinished"></translation>
+        <translation>devido a um problema no xml: %1 line:%2 column:%3</translation>
     </message>
     <message>
         <source>because the xml is not correctly formatted</source>
-        <translation type="unfinished"></translation>
+        <translation>porque o xml não está correctamente formatado</translation>
     </message>
     <message>
         <source>the &lt;board&gt; element contains no shape elements</source>
-        <translation type="unfinished"></translation>
+        <translation>o &lt;board&gt; elemento não contém efeitos de formas</translation>
     </message>
     <message>
         <source>because there are multiple &lt;board&gt; layers</source>
-        <translation type="unfinished"></translation>
+        <translation>porque há múltiplas &lt;board&gt; camadas</translation>
     </message>
     <message>
         <source>because there are multiple &lt;silkscreen&gt; layers</source>
-        <translation type="unfinished"></translation>
+        <translation>porque há múltiplas &lt;silkscreen&gt; camadas</translation>
     </message>
     <message>
         <source>because there is no &lt;board&gt; layer</source>
-        <translation type="unfinished"></translation>
+        <translation>porque não tem &lt;board&gt; camada</translation>
     </message>
     <message>
         <source>the svg contains no shape elements</source>
-        <translation type="unfinished"></translation>
+        <translation>o svg não contém elementos de forma</translation>
     </message>
     <message>
         <source>but the pcb itself will have no silkscreen layer</source>
-        <translation type="unfinished"></translation>
+        <translation>mas o pcb em si não tem camada de serigrafia</translation>
     </message>
     <message>
         <source>the svg doesn&apos;t fit the custom board format</source>
-        <translation type="unfinished"></translation>
+        <translation>o svg não encaixa no habitual formato de placa</translation>
     </message>
     <message>
         <source>Unable to load</source>
-        <translation type="unfinished">Não foi possível carregar</translation>
+        <translation>Não foi possível carregar</translation>
     </message>
     <message>
         <source>Unable to load image from %1 %2</source>
-        <translation type="unfinished">Não foi possível carregar a imagem do %1 %2</translation>
+        <translation>Não foi possível carregar a imagem do %1 %2</translation>
     </message>
     <message>
         <source>Can load, but</source>
-        <translation type="unfinished"></translation>
+        <translation>Pode carregar, mas</translation>
     </message>
     <message>
         <source>The image from %1 can be loaded, but %2
 Use the file?</source>
-        <translation type="unfinished"></translation>
+        <translation>A imagem de %1 pode ser carregada, mas %2
+Usar o ficheiro?</translation>
     </message>
     <message>
         <source>
 
 A custom board svg typically has one or two silkscreen layers and one board layer.
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Uma placa habitual svg tipicamente tem uma ou duas camadas de serigrafia e uma camada de placa</translation>
     </message>
     <message>
         <source>because there are multiple &lt;silkscreen0&gt; layers</source>
-        <translation type="unfinished"></translation>
+        <translation>porque há múltiplas &lt;silkscreen0&gt; camadas</translation>
     </message>
     <message>
         <source>&lt;b&gt;The custom shape has been loaded, and you will see the new board shortly.&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;A forma habitual foi carregada, e podes ver a nova placa.&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;</translation>
     </message>
     <message>
         <source>Before actual PCB production we recommend that you test your custom shape by using the &apos;File &gt; Export for Production &gt; Extended Gerber&apos; option. </source>
-        <translation type="unfinished"></translation>
+        <translationAntes da produção PCB actual nós recomendamos que testes a forma customizada usando a opção &apos; Ficheiro &gt; Exportar para Produção &gt; Gerber Extendido&apos;</translation>
     </message>
     <message>
         <source>Check the resulting contour file with a Gerber-viewer application to make sure the shape came out as expected.&lt;br/&gt;&lt;br/&gt;</source>

@@ -177,7 +177,7 @@ public:
 	QAction *raiseWindowAction();
 	QSizeGrip *sizeGrip();
 	QStatusBar *realStatusBar();
-	void enableCheckUpdates(bool enabled);
+    void enableCheckUpdates(bool enabled);
 
 	void getPartsEditorNewAnd(ItemBase * fromItem);
 	void addDefaultParts();

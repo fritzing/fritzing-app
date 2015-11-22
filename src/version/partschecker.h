@@ -24,51 +24,53 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 
 ********************************************************************/
 
-#ifndef UPDATEDIALOG_H
-#define UPDATEDIALOG_H
+#ifndef PARTSCHECKER_H
+#define PARTSCHECKER_H
 
+#include <QObject>
+#include <QNetworkAccessManager>
 
-#include <QDialog>
-#include <QLabel>
-#include <QXmlStreamReader>
-#include <QNetworkReply>
-
-#include "partschecker.h"
-
-class UpdateDialog : public QDialog {
-	Q_OBJECT
-
+class PartsChecker : public QObject
+{
+    Q_OBJECT
 public:
-	UpdateDialog(QWidget *parent = 0);
-	~UpdateDialog();
+    explicit PartsChecker(QObject *parent = 0);
 
-	void setVersionChecker(class VersionChecker *);
-	void setAtUserRequest(bool);
+    void start();
+    void stop();
+
+protected:
+    enum State {
+        READING_COMMITS,
+        READING_ONE_COMMIT,
+        READING_FILE,
+    };
+
+    QMutex m_managersLock;
+    QMutex m_listsLock;
+    PartsChecker::State m_state;
+    QSet<QString> m_shas;
+    QSet<QString> m_fileNames;
+    bool m_keepGoing;
+    QList<QNetworkAccessManager *> m_networkAccessManagers;
+
 
 signals:
-    void enableAgainSignal(bool enable);
+    void httpError(QString);
+    void jsonError(QString);
 
 protected slots:
-	void releasesAvailableSlot();
-	void xmlErrorSlot(QXmlStreamReader::Error errorCode);
-    void httpErrorSlot(QNetworkReply::NetworkError);
-    void jsonPartsErrorSlot(QString error);
-    void httpPartsErrorSlot(QString error);
-	void stopClose();
+    void requestFinished(QNetworkReply * networkReply);
+    void readSha();
+    void readFile();
 
 protected:
-	void setAvailableReleases(const QList<struct AvailableRelease *> & availableReleases); 
-    void handleError();
-    void handlePartsError(const QString & error);
-    QString genTable(const QString & title, struct AvailableRelease *);
-
-protected:
-	class VersionChecker * m_versionChecker;
-    PartsChecker * m_partsChecker;
-	bool m_atUserRequest;
-	QLabel * m_feedbackLabel;
+    void startState(PartsChecker::State state, const QString & urlString);
+    QString lastDate();
+    void readCommits(bool keepGoing, const QJsonDocument & jsonDocument);
+    void readCommit(bool keepGoing, const QJsonDocument & jsonDocument);
+    void readFile(bool keepGoing, const QJsonDocument & jsonDocument);
 
 };
 
-
-#endif
+#endif // PARTSCHECKER_H

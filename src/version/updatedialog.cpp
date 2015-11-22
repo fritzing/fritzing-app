@@ -40,6 +40,7 @@ $Date: 2012-06-28 00:18:10 +0200 (Do, 28. Jun 2012) $
 UpdateDialog::UpdateDialog(QWidget *parent) : QDialog(parent) 
 {
 	m_versionChecker = NULL;
+    m_partsChecker = NULL;
 
 	this->setWindowTitle(QObject::tr("Check for updates"));
 
@@ -125,9 +126,16 @@ void UpdateDialog::setVersionChecker(VersionChecker * versionChecker)
 	if (m_versionChecker != NULL) {
 		m_versionChecker->stop();
 		delete m_versionChecker;
+        m_versionChecker = NULL;
 	}
 
-	m_feedbackLabel->setText(tr("Checking..."));
+    if (m_partsChecker != NULL) {
+        m_partsChecker->stop();
+        delete m_partsChecker;
+        m_partsChecker = NULL;
+    }
+
+    m_feedbackLabel->setText(tr("Checking for a new release..."));
 
 	m_versionChecker = versionChecker;
 	connect(m_versionChecker, SIGNAL(releasesAvailable()), this, SLOT(releasesAvailableSlot()));
@@ -137,13 +145,23 @@ void UpdateDialog::setVersionChecker(VersionChecker * versionChecker)
 
 }
 
-void UpdateDialog::httpErrorSlot(QNetworkReply::NetworkError) {
-    handleError();
+void UpdateDialog::releasesAvailableSlot() {
+    bool available = m_versionChecker->availableReleases().count() > 0;
+    setAvailableReleases(m_versionChecker->availableReleases());
+    if (!available) {
+        m_feedbackLabel->setText(tr("Checking for new parts..."));
+        m_partsChecker = new PartsChecker;
+        connect(m_partsChecker, SIGNAL(jsonError(QString)), this, SLOT(jsonPartsErrorSlot(QString)));
+        connect(m_partsChecker, SIGNAL(httpError(QString)), this, SLOT(httpPartsErrorSlot(QString)));
+        m_partsChecker->start();
+    }
+    else {
+        emit enableAgainSignal(true);
+    }
 }
 
-void UpdateDialog::releasesAvailableSlot() {
-	setAvailableReleases(m_versionChecker->availableReleases());
-	emit enableAgainSignal(true);
+void UpdateDialog::httpErrorSlot(QNetworkReply::NetworkError) {
+    handleError();
 }
 
 void UpdateDialog::xmlErrorSlot(QXmlStreamReader::Error  errorCode) {
@@ -154,14 +172,24 @@ void UpdateDialog::xmlErrorSlot(QXmlStreamReader::Error  errorCode) {
 void UpdateDialog::handleError() 
 {
 	DebugDialog::debug("handle error");
-	if (m_atUserRequest) {
-		m_feedbackLabel->setText(tr("Sorry, unable to retrieve update info")); 
-	}
-	else {
-		// automatic update check: don't bother the user
-	}
-	emit enableAgainSignal(true);
+    m_feedbackLabel->setText(tr("Sorry, unable to retrieve update info"));
+    emit enableAgainSignal(true);
 	DebugDialog::debug("handle error done");
+}
+
+void UpdateDialog::httpPartsErrorSlot(QString error) {
+    handlePartsError(error);
+}
+
+void UpdateDialog::jsonPartsErrorSlot(QString error) {
+    handlePartsError(error);
+}
+
+void UpdateDialog::handlePartsError(const QString & error) {
+
+    DebugDialog::debug("handle error " + error);
+    m_feedbackLabel->setText(tr("Sorry, unable to retrieve parts update info"));
+    emit enableAgainSignal(true);
 }
 
 void UpdateDialog::setAtUserRequest(bool atUserRequest) 
@@ -171,6 +199,7 @@ void UpdateDialog::setAtUserRequest(bool atUserRequest)
 
 void UpdateDialog::stopClose() {
 	m_versionChecker->stop();
+    if (m_partsChecker) m_partsChecker->stop();
 	this->close();
 }
 

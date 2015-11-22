@@ -473,7 +473,6 @@ bool FApplication::init() {
 	}
 
 	m_started = false;
-	m_updateDialog = NULL;
 	m_lastTopmostWindow = NULL;
 
 	connect(&m_activationTimer, SIGNAL(timeout()), this, SLOT(updateActivation()));
@@ -539,11 +538,11 @@ FApplication::~FApplication(void)
 		
 	clearModels();
 
-	if (m_updateDialog) {
-		delete m_updateDialog;
-	}
+    if (m_updateDialog) {
+        delete m_updateDialog;
+    }
 
-	FSvgRenderer::cleanup();
+    FSvgRenderer::cleanup();
 	ViewLayer::cleanup();
 	ViewLayer::cleanup();
 	ItemBase::cleanup();
@@ -1148,7 +1147,7 @@ int FApplication::startup()
 	ProcessEventBlocker::processEvents();
 
 	m_updateDialog = new UpdateDialog();
-	connect(m_updateDialog, SIGNAL(enableAgainSignal(bool)), this, SLOT(enableCheckUpdates(bool)));
+    connect(m_updateDialog, SIGNAL(enableAgainSignal(bool)), this, SLOT(enableCheckUpdates(bool)));
 	checkForUpdates(false);
 
 	if (m_progressIndex >= 0) splash.showProgress(m_progressIndex, 0.875);
@@ -1334,9 +1333,7 @@ void FApplication::checkForUpdates() {
 
 void FApplication::checkForUpdates(bool atUserRequest)
 {
-	if (atUserRequest) {
-		enableCheckUpdates(false);
-	}
+    enableCheckUpdates(false);
 
 	VersionChecker * versionChecker = new VersionChecker();
 
@@ -1377,7 +1374,6 @@ void FApplication::enableCheckUpdates(bool enabled)
 	}
 	//DebugDialog::debug("after enable check updates");
 }
-
 
 void FApplication::createUserDataStoreFolderStructure() {
 	// make sure that the folder structure for parts and bins, exists

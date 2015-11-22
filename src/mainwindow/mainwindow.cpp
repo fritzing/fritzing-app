@@ -329,7 +329,7 @@ MainWindow::MainWindow(ReferenceModel *referenceModel, QWidget * parent) :
 	m_welcomeView = NULL;
 	m_windowMenuSeparator = NULL;
 	m_schematicWireColorMenu = m_breadboardWireColorMenu = NULL;
-	m_checkForUpdatesAct = NULL;
+    m_checkForUpdatesAct = NULL;
 	m_fileProgressDialog = NULL;
 	m_currentGraphicsView = NULL;
 	m_comboboxChanged = false;
@@ -2066,11 +2066,10 @@ void MainWindow::resizeEvent(QResizeEvent * event) {
 
 void MainWindow::enableCheckUpdates(bool enabled)
 {
-	if (m_checkForUpdatesAct != NULL) {
-		m_checkForUpdatesAct->setEnabled(enabled);
-	}
+    if (m_checkForUpdatesAct != NULL) {
+        m_checkForUpdatesAct->setEnabled(enabled);
+    }
 }
-
 
 void MainWindow::swapSelectedDelay(const QString & family, const QString & prop, QMap<QString, QString> & currPropsMap, ItemBase * itemBase) 
 {

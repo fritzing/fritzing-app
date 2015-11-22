@@ -1267,11 +1267,11 @@ void MainWindow::createHelpMenuActions() {
 	m_visitFritzingDotOrgAct->setStatusTip(tr("www.fritzing.org"));
 	connect(m_visitFritzingDotOrgAct, SIGNAL(triggered(bool)), this, SLOT(visitFritzingDotOrg()));*/
 
-	m_checkForUpdatesAct = new QAction(tr("Check for updates..."), this);
-	m_checkForUpdatesAct->setStatusTip(tr("Check whether a newer version of Fritzing is available for download"));
-	connect(m_checkForUpdatesAct, SIGNAL(triggered()), QApplication::instance(), SLOT(checkForUpdates()));
+    m_checkForUpdatesAct = new QAction(tr("Check for updates..."), this);
+    m_checkForUpdatesAct->setStatusTip(tr("Check whether a newer version of Fritzing is available for download"));
+    connect(m_checkForUpdatesAct, SIGNAL(triggered()), QApplication::instance(), SLOT(checkForUpdates()));
 
-	m_aboutAct = new QAction(tr("&About"), this);
+    m_aboutAct = new QAction(tr("&About"), this);
 	m_aboutAct->setStatusTip(tr("Show the application's about box"));
 	connect(m_aboutAct, SIGNAL(triggered()), this, SLOT(about()));
 	m_aboutAct->setMenuRole(QAction::AboutRole);
@@ -1608,8 +1608,8 @@ void MainWindow::createHelpMenu()
 	m_helpMenu->addSeparator();
     m_helpMenu->addAction(m_partsEditorHelpAct);
 	m_helpMenu->addSeparator();
-	m_helpMenu->addAction(m_checkForUpdatesAct);
-	m_helpMenu->addAction(m_importFilesFromPrevInstallAct);
+    m_helpMenu->addAction(m_checkForUpdatesAct);
+    m_helpMenu->addAction(m_importFilesFromPrevInstallAct);
 	m_helpMenu->addSeparator();
 	m_helpMenu->addAction(m_reportBugAct);
 	m_helpMenu->addAction(m_enableDebugAct);

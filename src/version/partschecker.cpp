@@ -57,8 +57,7 @@ void PartsChecker::start() {
 
 void PartsChecker::stop() {
     m_listsLock.lock();
-    m_shas.clear();
-    m_fileNames.clear();
+    m_commits.clear();
     m_listsLock.unlock();
 
     // don't need to delete here since it's done in networkFinished()
@@ -126,25 +125,21 @@ void PartsChecker::startState(PartsChecker::State state, const QString & urlStri
 }
 
 void PartsChecker::readSha() {
-    QString sha;
-    int fileNameCount = 0;
+    Commit commit;
     int shaCount = 0;
     m_listsLock.lock();
-    if (m_shas.count() > 0) {
-        sha = m_shas.values().first();
-        m_shas.remove(sha);
+    shaCount = m_commits.count();
+    if (m_commits.count() > 0) {
+        commit = m_commits.takeFirst();
     }
-    shaCount = m_shas.count();
-    fileNameCount = m_fileNames.count();
     m_listsLock.unlock();
-    if (sha.isEmpty()) {
-        if (fileNameCount > 0) {
-            QTimer::singleShot(s_delayTime, Qt::CoarseTimer, this, SLOT(readFile()));
-        }
+    if (shaCount == 0) {
+        // we got through the whole list
         return;
     }
 
-    DebugDialog::debug("reading sha " + sha + " files:" + QString::number(fileNameCount) + " shas:" + QString::number(shaCount));
+    m_currentCommit = commit;
+    DebugDialog::debug("reading sha " + commit.sha + " shas:" + QString::number(shaCount));
     QString urlString = QString("https://api.github.com/repos/fritzing/fritzing-parts/commits/%1").arg(sha);
     startState(READING_ONE_COMMIT, urlString);
 }
@@ -187,14 +182,44 @@ void PartsChecker::readCommits(bool keepGoing, const QJsonDocument & jsonDocumen
     m_listsLock.lock();
     foreach (const QJsonValue & jsonValue, jsonDocument.array()) {
         QJsonObject jsonObject = jsonValue.toObject();
-        if (!jsonObject.isEmpty()) {
-            QString sha = jsonObject["sha"].toString();
-            if (!sha.isEmpty()) {
-                m_shas.insert(sha);
-            }
+        if (jsonObject.isEmpty()) continue;
+
+        QString sha = jsonObject["sha"].toString();
+        if (sha.isEmpty()) {
+            emit jsonError("Unexpected Commit format (1)");
+            return;
         }
+
+        QJsonObject commitObj = jsonObject["commit"].toObject();
+        if (commitObj.isEmpty()) {
+            emit jsonError("Unexpected Commit format (2)");
+            return;
+        }
+
+        QJsonObject authorObj = commitObj["author"].toObject();
+        if (authorObj.isEmpty()) {
+            authorObj = commitObj["committer"].toObject();
+        }
+        if (authorObj.isEmpty()) {
+            emit jsonError("Unexpected Commit format (3)");
+            return;
+        }
+
+        QString date = authorObj["date"].toString();
+        if (date.isEmpty()) {
+            emit jsonError("Unexpected Commit format (4)");
+            return;
+        }
+
+        Commit commit;
+        commit.date = date;
+        commit.sha = sha;
+        m_commits << commit;
+
     }
-    shaCount = m_shas.count();
+    // commits are probably in git log (reverse) order, but sort anyway
+    qSort(m_commits.begin(), m_commits.end(), Commit::lessThan);
+    shaCount = m_commits.count();
     m_listsLock.unlock();
     if (keepGoing && shaCount > 0) {
         // give github some delay

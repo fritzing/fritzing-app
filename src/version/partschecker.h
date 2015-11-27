@@ -30,6 +30,17 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 #include <QObject>
 #include <QNetworkAccessManager>
 
+struct Commit {
+    QString sha;
+    QString date;
+    QStringList fileNamesToDo;
+    QStringList fileNamesDone;
+
+    bool lessThan(const Commit & a, const Commit & b) {
+        return a.date < b.date;
+    }
+};
+
 class PartsChecker : public QObject
 {
     Q_OBJECT
@@ -49,8 +60,9 @@ protected:
     QMutex m_managersLock;
     QMutex m_listsLock;
     PartsChecker::State m_state;
-    QSet<QString> m_shas;
-    QSet<QString> m_fileNames;
+    QList<Commit> m_commitsToDo;
+    QList<Commit> m_commitsDone;
+    Commit m_currentCommit;
     bool m_keepGoing;
     QList<QNetworkAccessManager *> m_networkAccessManagers;
 

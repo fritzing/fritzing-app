@@ -20,9 +20,10 @@
 # assume boost libraries are installed under linux
 win32|macx {
 	# boost_1_54_0 is buggy
-        BOOSTS = 43 44 45 46 47 48 49 50 51 52 53 55 56 57 58 59 60 61 62 63 64 65
+        BOOSTS = 43 44 45 46 47 48 49 50 51 52 53 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99
 	LATESTBOOST = 0
-	for(boost, BOOSTS) {
+        for(boost, BOOSTS) {
+                # message("checking boost $$boost")
 		exists(../src/lib/boost_1_$${boost}_0) {  
 			LATESTBOOST = $$boost
 		}

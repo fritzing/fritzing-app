@@ -86,6 +86,7 @@ $Date: 2013-04-19 12:51:22 +0200 (Fr, 19. Apr 2013) $
 #include <QNetworkAccessManager>
 #include <QNetworkRequest>
 #include <QMultiHash>
+#include <QTemporaryFile>
 
 #ifdef LINUX_32
 #define PLATFORM_NAME "linux-32bit"
@@ -283,6 +284,59 @@ void FServerThread::writeResponse(QTcpSocket * socket, int code, const QString &
     socket->disconnectFromHost();
     socket->waitForDisconnected();
     socket->deleteLater();
+}
+
+////////////////////////////////////////////////////
+
+RegenerateDatabaseThread::RegenerateDatabaseThread(const QString & dbFileName, FileProgressDialog * fileProgressDialog, ReferenceModel * referenceModel) {
+    m_dbFileName = dbFileName;
+    m_referenceModel = referenceModel;
+    m_fileProgressDialog = fileProgressDialog;
+}
+
+const QString RegenerateDatabaseThread::error() const {
+    return m_error;
+}
+
+FileProgressDialog * RegenerateDatabaseThread::fileProgressDialog() const {
+    return m_fileProgressDialog;
+}
+
+ReferenceModel * RegenerateDatabaseThread::referenceModel() const {
+    return m_referenceModel;
+}
+
+void RegenerateDatabaseThread::run() {
+    QTemporaryFile file("XXXXXX.db");
+    QString fileName;
+    if (file.open()) {
+        fileName = file.fileName();
+        file.close();
+    }
+    else {
+        m_error = tr("Unable to open temporary file");
+        return;
+    }
+
+    bool ok = ((FApplication *) qApp)->loadReferenceModel(fileName, true, m_referenceModel);
+    if (!ok) {
+        m_error = tr("Database failure");
+        return;
+    }
+
+    if (QFile::exists(m_dbFileName)) {
+        ok = QFile::remove(m_dbFileName);
+        if (!ok) {
+            m_error = tr("Unable to remove original db file %1").arg(m_dbFileName);
+            return;
+        }
+    }
+
+    ok = QFile::copy(fileName, m_dbFileName);
+    if (!ok) {
+        m_error = tr("Unable to copy database file %1").arg(m_dbFileName);
+        return;
+    }
 }
 
 ////////////////////////////////////////////////////
@@ -707,25 +761,29 @@ void FApplication::registerFonts() {
 
 }
 
-ReferenceModel * FApplication::loadReferenceModel(const QString & databaseName, bool fullLoad) {
-	m_referenceModel = new CurrentReferenceModel();	
-	ItemBase::setReferenceModel(m_referenceModel);
-	connect(m_referenceModel, SIGNAL(loadedPart(int, int)), this, SLOT(loadedPart(int, int)));
+bool FApplication::loadReferenceModel(const QString & databaseName, bool fullLoad) {
+    m_referenceModel = new CurrentReferenceModel();
+    ItemBase::setReferenceModel(m_referenceModel);
+    connect(m_referenceModel, SIGNAL(loadedPart(int, int)), this, SLOT(loadedPart(int, int)));
+    return loadReferenceModel(databaseName, fullLoad, m_referenceModel);
+}
 
+bool FApplication::loadReferenceModel(const QString & databaseName, bool fullLoad, ReferenceModel * referenceModel)
+{
     QDir dir = FolderUtils::getPartsSubFolder("");
     QString dbPath = dir.absoluteFilePath("parts.db");
     QFileInfo info(dbPath);
     bool dbExists = info.exists();
 
-	bool ok = m_referenceModel->loadAll(databaseName, fullLoad, dbExists);		// loads local parts, resource parts, and any other parts in files not in the db--these part override db parts with the same moduleID
+    bool ok = referenceModel->loadAll(databaseName, fullLoad, dbExists);		// loads local parts, resource parts, and any other parts in files not in the db--these part override db parts with the same moduleID
     if (ok && databaseName.isEmpty()) {
         QFile file(dir.absoluteFilePath("parts.db"));
         if (file.exists()) {
-            m_referenceModel->loadFromDB(dbPath);
+            referenceModel->loadFromDB(dbPath);
         }
     }
 
-	return m_referenceModel;
+    return ok;
 }
 
 MainWindow * FApplication::openWindowForService(bool lockFiles, int initialTab) {
@@ -1953,4 +2011,53 @@ void FApplication::doCommand(const QString & command, const QString & params, QS
 	}
 }
 
+void FApplication::regeneratePartsDatabase() {
+    FMessageBox messageBox(NULL);
+    messageBox.setWindowTitle(tr("Regenerate parts database?"));
+    messageBox.setText(tr("Regenerating the parts database will take some minutes and you will have to restart Fritzing\n\n") +
+                        tr("Would you like to regenerate the parts database?\n")
+                        );
+    messageBox.setInformativeText("This option is a last resort in case Fritzing's is more-or-less unable to display parts. "
+                                  "You may be better off downloading the latest Fritzing release.");
+    messageBox.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
+    messageBox.setDefaultButton(QMessageBox::Yes);
+    messageBox.setIcon(QMessageBox::Question);
+    messageBox.setWindowModality(Qt::WindowModal);
+    messageBox.setButtonText(QMessageBox::Yes, tr("Regenerate"));
+    messageBox.setButtonText(QMessageBox::No, tr("Cancel"));
+    if ((QMessageBox::StandardButton) messageBox.exec() != QMessageBox::Yes) {
+        return;
+    }
 
+    ReferenceModel * referenceModel = new CurrentReferenceModel();
+    FileProgressDialog * fileProgressDialog = new FileProgressDialog(tr("Regenerating parts database..."), 0, NULL);
+    // these don't seem very accurate (i.e. when progress is at 100%, there is still a lot of work pending)
+    // so we are leaving progress indeterminate at present
+    //connect(referenceModel, SIGNAL(partsToLoad(int)), fileProgressDialog, SLOT(setMaximum(int)));
+    //connect(referenceModel, SIGNAL(loadedPart(int,int)), fileProgressDialog, SLOT(setValue(int)));
+
+    QDir dir = FolderUtils::getPartsSubFolder("");
+    QString dbPath = dir.absoluteFilePath("parts.db");
+    RegenerateDatabaseThread *thread = new RegenerateDatabaseThread(dbPath, fileProgressDialog, referenceModel);
+    connect(thread, SIGNAL(finished()), this, SLOT(regenerateDatabaseFinished()));
+    FMessageBox::BlockMessages = true;
+    thread->start();
+}
+
+void FApplication::regenerateDatabaseFinished() {
+   RegenerateDatabaseThread * thread = qobject_cast<RegenerateDatabaseThread *>(sender());
+   if (thread == NULL) return;
+
+   if (thread->error().isEmpty()) {
+        QTimer::singleShot(50, Qt::PreciseTimer, this, SLOT(quit()));
+   }
+   else {
+       thread->referenceModel()->deleteLater();
+       QMessageBox::warning(NULL, QObject::tr("Regenerate database failed"), thread->error());
+   }
+
+   thread->fileProgressDialog()->close();
+   thread->fileProgressDialog()->deleteLater();
+
+   thread->deleteLater();
+}

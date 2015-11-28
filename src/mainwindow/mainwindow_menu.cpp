@@ -1103,14 +1103,13 @@ void MainWindow::createPartMenuActions() {
     m_findPartInSketchAct->setStatusTip(tr("Search for parts in a sketch by matching text"));
 	connect(m_findPartInSketchAct, SIGNAL(triggered()), this, SLOT(findPartInSketch()));
 
-    m_openProgramWindowAct = new QAction(tr("Open programming window"), this);
-    m_openProgramWindowAct->setStatusTip(tr("Open microcontroller programming window"));
-	connect(m_openProgramWindowAct, SIGNAL(triggered()), this, SLOT(openProgramWindow()));
-
 	m_hidePartSilkscreenAct = new QAction(tr("Hide part silkscreen"), this);
 	m_hidePartSilkscreenAct->setStatusTip(tr("Hide/show the silkscreen layer for only this part"));
 	connect(m_hidePartSilkscreenAct, SIGNAL(triggered()), this, SLOT(hidePartSilkscreen()));
 
+    m_regeneratePartsDatabaseAct = new QAction(tr("Regenerate parts database ..."), this);
+    m_regeneratePartsDatabaseAct->setStatusTip(tr("Regenerate the parts database (should only be used if your parts database is broken)"));
+    connect(m_regeneratePartsDatabaseAct, SIGNAL(triggered()), qApp, SLOT(regeneratePartsDatabase()));
 
 }
 
@@ -1243,6 +1242,10 @@ void MainWindow::createWindowMenuActions() {
     m_toggleDebuggerOutputAct = new QAction(tr("Debugger Output"), this);
     m_toggleDebuggerOutputAct->setCheckable(true);
    	connect(m_toggleDebuggerOutputAct, SIGNAL(triggered(bool)), this, SLOT(toggleDebuggerOutput(bool)));
+
+    m_openProgramWindowAct = new QAction(tr("Open programming window"), this);
+    m_openProgramWindowAct->setStatusTip(tr("Open microcontroller programming window"));
+    connect(m_openProgramWindowAct, SIGNAL(triggered()), this, SLOT(openProgramWindow()));
 }
 
 void MainWindow::createHelpMenuActions() {
@@ -1492,6 +1495,8 @@ void MainWindow::createPartMenu() {
     m_partMenu->addAction(m_dumpAllPartsAction);
 #endif
 
+    m_partMenu->addSeparator();
+    m_partMenu->addAction(m_regeneratePartsDatabaseAct);
 }
 
 void MainWindow::createViewMenu()
@@ -4563,3 +4568,4 @@ void MainWindow::testConnectors() {
 
     m_currentGraphicsView->testConnectors();
 }
+

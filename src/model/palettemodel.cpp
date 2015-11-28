@@ -160,6 +160,8 @@ void PaletteModel::loadParts(bool dbExists) {
 	    countParts(dir3, nameFilters, totalPartCount);
     }
 
+    emit partsToLoad(totalPartCount);
+
 	int loadingPart = 0;
     if (m_fullLoad || !dbExists) {
         loadPartsAux(dir1, nameFilters, loadingPart, totalPartCount);

@@ -800,6 +800,8 @@ protected:
 	QAction *m_hideAllLayersAct;
 
     QAction *m_hidePartSilkscreenAct;
+    QAction *m_regeneratePartsDatabaseAct;
+
 
     // View Menu
     QMenu *m_viewMenu;

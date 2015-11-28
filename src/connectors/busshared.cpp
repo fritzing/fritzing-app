@@ -28,6 +28,7 @@ $Date: 2012-08-17 11:16:43 +0200 (Fr, 17. Aug 2012) $
 #include "connectorshared.h"
 #include "../debugdialog.h"
 #include "connectoritem.h"
+#include "../utils/textutils.h"
 
 BusShared::BusShared(const QString & id)
 {
@@ -53,7 +54,10 @@ void BusShared::initConnector(QDomElement & connector, const QHash<QString, QPoi
 				
 	ConnectorShared * connectorShared = connectorHash.value(id);
 	if (connectorShared == NULL) {
-		DebugDialog::debug(QString("no connector is found for bus nodeMember %1").arg(id));
+        QDomDocument document = connector.ownerDocument();
+        DebugDialog::debug(QString("no connector is found for bus nodeMember %1 in %2")
+                           .arg(id)
+                           .arg(TextUtils::elementToString(document.documentElement())));
 		return;
 	}
 		

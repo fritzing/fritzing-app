@@ -122,6 +122,7 @@ public:
     static QString findAnchor(const QDomElement & text);
     static double getStrokeWidth(QDomElement &, double defaultValue);
     static void resplit(QStringList & names, const QString & split);
+    static QString elementToString(const QDomElement &);
 
 public:
 	static const QRegExp FindWhitespace;

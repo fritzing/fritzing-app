@@ -1921,3 +1921,14 @@ void TextUtils::resplit(QStringList & names, const QString & split) {
     names.append(result);
 }
 
+QString TextUtils::elementToString(const QDomElement & element) {
+    QString string = "<";
+    string += element.tagName();
+    QDomNamedNodeMap attributes = element.attributes();
+    for (int i = 0; i < attributes.count(); i++) {
+        QDomNode attribute = attributes.item(i);
+        string += QString(" %1='%2'").arg(attribute.nodeName()).arg(attribute.nodeValue());
+    }
+    string +="/>";
+    return string;
+}

@@ -1424,10 +1424,9 @@ void MainWindow::exportSpiceNetlist() {
     QString incl = ".include";
     if (output.contains(incl, Qt::CaseInsensitive)) {
         QStringList lines = output.split("\n");
-        QList<QDir *> paths;
-        paths << FolderUtils::getApplicationSubFolder("pdb");
-        paths << FolderUtils::getApplicationSubFolder("parts");
-        paths << new QDir(FolderUtils::getUserDataStorePath("parts"));
+        QList<QDir > paths;
+        paths << FolderUtils::getPartsSubFolder("");
+        paths << QDir(FolderUtils::getUserDataStorePath("parts"));
 
         QString output2;
         foreach (QString line, lines) {
@@ -1442,9 +1441,9 @@ void MainWindow::exportSpiceNetlist() {
             QString filename = temp.trimmed();
             
             bool gotOne = false;
-            foreach (QDir * dir, paths) {
+            foreach (QDir dir, paths) {
                 foreach (QString folder, ModelPart::possibleFolders()) {
-                    QDir sub(*dir);
+                    QDir sub(dir);
                     sub.cd(folder);
                     sub.cd("spicemodels");
                     if (QFile::exists(sub.absoluteFilePath(filename))) {
@@ -1463,7 +1462,6 @@ void MainWindow::exportSpiceNetlist() {
         }
 
         output = output2;
-        foreach (QDir * dir, paths) delete dir;
     }
 
     output += ".TRAN 1ms 100ms\n";

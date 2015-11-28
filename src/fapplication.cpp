@@ -337,14 +337,25 @@ bool FApplication::init() {
 
 		if (i + 1 >= m_arguments.length()) continue;
 
-		if ((m_arguments[i].compare("-f", Qt::CaseInsensitive) == 0) ||
-			(m_arguments[i].compare("-folder", Qt::CaseInsensitive) == 0)||
-			(m_arguments[i].compare("--folder", Qt::CaseInsensitive) == 0))
-		{
-			FolderUtils::setApplicationPath(m_arguments[i + 1]);
-			// delete these so we don't try to process them as files later
-			toRemove << i << i + 1;
-		}
+        if ((m_arguments[i].compare("-f", Qt::CaseInsensitive) == 0) ||
+            (m_arguments[i].compare("-folder", Qt::CaseInsensitive) == 0)||
+            (m_arguments[i].compare("--folder", Qt::CaseInsensitive) == 0))
+        {
+            FolderUtils::setApplicationPath(m_arguments[i + 1]);
+            // delete these so we don't try to process them as files later
+            toRemove << i << i + 1;
+        }
+
+        if ((m_arguments[i].compare("-pp", Qt::CaseInsensitive) == 0) ||
+            (m_arguments[i].compare("-pa", Qt::CaseInsensitive) == 0) ||
+            (m_arguments[i].compare("-parts", Qt::CaseInsensitive) == 0) ||
+            (m_arguments[i].compare("--parts", Qt::CaseInsensitive) == 0) ||
+            (m_arguments[i].compare("--partsparent", Qt::CaseInsensitive) == 0))
+        {
+            FolderUtils::setPartsPath(m_arguments[i + 1]);
+            // delete these so we don't try to process them as files later
+            toRemove << i << i + 1;
+        }
 
 		if ((m_arguments[i].compare("-geda", Qt::CaseInsensitive) == 0) ||
 			(m_arguments[i].compare("--geda", Qt::CaseInsensitive) == 0)) {
@@ -701,27 +712,18 @@ ReferenceModel * FApplication::loadReferenceModel(const QString & databaseName, 
 	ItemBase::setReferenceModel(m_referenceModel);
 	connect(m_referenceModel, SIGNAL(loadedPart(int, int)), this, SLOT(loadedPart(int, int)));
 
-    bool dbExists = false;
-    QDir * dir = FolderUtils::getApplicationSubFolder("parts");
-    QString dbPath;
-    if (dir) {
-        dbPath = dir->absoluteFilePath("parts.db");
-        QFileInfo info(dbPath);
-        dbExists = info.exists();
-    }
+    QDir dir = FolderUtils::getPartsSubFolder("");
+    QString dbPath = dir.absoluteFilePath("parts.db");
+    QFileInfo info(dbPath);
+    bool dbExists = info.exists();
 
 	bool ok = m_referenceModel->loadAll(databaseName, fullLoad, dbExists);		// loads local parts, resource parts, and any other parts in files not in the db--these part override db parts with the same moduleID
     if (ok && databaseName.isEmpty()) {
-        if (dir == NULL) {
-        }
-        else {
-            QFile file(dir->absoluteFilePath("parts.db"));
-            if (file.exists()) {
-                m_referenceModel->loadFromDB(dbPath);
-            }
+        QFile file(dir.absoluteFilePath("parts.db"));
+        if (file.exists()) {
+            m_referenceModel->loadFromDB(dbPath);
         }
     }
-    delete dir;
 
 	return m_referenceModel;
 }
@@ -877,28 +879,10 @@ void FApplication::runDatabaseService()
 	createUserDataStoreFolderStructure();
 
     DebugDialog::setEnabled(true);
-    QDir * parent = FolderUtils::getApplicationSubFolder("pdb");
-    QFileInfoList dirs = parent->entryInfoList(QDir::AllDirs | QDir::NoDotAndDotDot | QDir::NoSymLinks);
-    delete parent;
 
-    QStringList nameFilters;
-    nameFilters << ("*" + FritzingPartExtension);
-    foreach (QFileInfo dirInfo, dirs) {
-        if (!dirInfo.isDir()) continue;
-
-        QDir dir(dirInfo.absoluteFilePath());
-        QFileInfoList files = dir.entryInfoList(nameFilters, QDir::Files | QDir::NoSymLinks);
-        foreach (QFileInfo fileInfo, files) {
-            QString path = fileInfo.absoluteFilePath();
-            QString newPath = path;
-            newPath.replace("/pdb/", "/parts/");
-            QFile::rename(path, newPath);
-        }
-    }
-
-
-    QFile::remove(m_outputFolder);
-	loadReferenceModel(m_outputFolder, true);  // m_outputFolder is actually a full path ending in ".db"
+    QString partsDB = m_outputFolder;  // m_outputFolder is actually a full path ending in ".db"
+    QFile::remove(partsDB);
+    loadReferenceModel(partsDB, true);
 }
 
 void FApplication::runGedaService() {

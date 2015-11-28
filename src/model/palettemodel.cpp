@@ -94,15 +94,9 @@ PaletteModel::~PaletteModel()
 }
 
 void PaletteModel::initParts(bool dbExists) {
-	QDir * dir = FolderUtils::getApplicationSubFolder("parts");
-	if (dir == NULL) {
-	    FMessageBox::information(NULL, QObject::tr("Fritzing"),
-	                             QObject::tr("Parts folder not found.") );
-		return;
-	}
+    QDir dir = FolderUtils::getPartsSubFolder("");
 
-	FritzingContribPath = dir->absoluteFilePath("contrib");
-	delete dir;
+    FritzingContribPath = dir.absoluteFilePath("contrib");
 
 	loadParts(dbExists);
 	if (m_root == NULL) {
@@ -153,11 +147,12 @@ void PaletteModel::loadParts(bool dbExists) {
 	int totalPartCount = 0;
 	emit loadedPart(0, totalPartCount);
 
-	QDir * dir1 = FolderUtils::getApplicationSubFolder("parts");
-	if (dir1 != NULL) {
-		countParts(*dir1, nameFilters, totalPartCount);
+    QDir dir1 = FolderUtils::getPartsSubFolder("");
+    if (m_fullLoad || !dbExists) {
+        // otherwise these will already be in the database
+        countParts(dir1, nameFilters, totalPartCount);
 	}
-	QDir dir2(FolderUtils::getUserDataStorePath("parts"));
+    QDir dir2(FolderUtils::getUserDataStorePath(""));
 	countParts(dir2, nameFilters, totalPartCount);
 
 	QDir dir3(":/resources/parts");
@@ -166,10 +161,9 @@ void PaletteModel::loadParts(bool dbExists) {
     }
 
 	int loadingPart = 0;
-	if (dir1 != NULL) {
-		loadPartsAux(*dir1, nameFilters, loadingPart, totalPartCount);
-		delete dir1;
-	}
+    if (m_fullLoad || !dbExists) {
+        loadPartsAux(dir1, nameFilters, loadingPart, totalPartCount);
+    }
 
 	loadPartsAux(dir2, nameFilters, loadingPart, totalPartCount);
 

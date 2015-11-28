@@ -234,12 +234,8 @@ bool SqliteReferenceModel::loadFromDB(QSqlDatabase & keep_db, QSqlDatabase & db)
         if (!path.startsWith(ResourcePath)) {        // not the resources path
             path = partsDir.absoluteFilePath(path);
             if (QFileInfo(path).exists()) {
-                // assume this is a later version of the fzp so load it later via xml
                 CoreList << moduleID;
-                continue;
             }
-
-            path.replace("/parts/", "/pdb/");
         }
 
 		ModelPart * modelPart = new ModelPart();
@@ -526,6 +522,12 @@ bool SqliteReferenceModel::createConnection(const QString & databaseName, bool f
 		bool result = createParts(m_database, fullLoad);
 
         QSqlQuery query;
+        result = query.exec("CREATE TABLE lastcommit (\n"
+            "id INTEGER PRIMARY KEY NOT NULL,\n"
+            "sha TEXT NOT NULL"
+        ")");
+        debugError(result, query);
+
         result = query.exec("CREATE TABLE viewimages (\n"
 			"id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,\n"
 			"viewid INTEGER NOT NULL,\n"                     // ViewLayer::ViewID
@@ -859,16 +861,11 @@ bool SqliteReferenceModel::insertPart(ModelPart * modelPart, bool fullLoad) {
 	query.bindValue(":family", properties.value("family").toLower().trimmed());
     if (fullLoad) {
         QString path = modelPart->path();
-        QString prefix = FolderUtils::getApplicationSubFolderPath("parts");
+        QString prefix = FolderUtils::getPartsSubFolderPath("");
 
         if (path.startsWith(ResourcePath)) {
         }
         else if (path.startsWith(prefix)) {
-            // copy the fzp away so it's not consulted at normal load time
-            QString newPath = path;
-            newPath.replace("/parts/", "/pdb/");
-            QFile::remove(newPath);
-            QFile::rename(path, newPath);
             path = path.mid(prefix.count() + 1);  // + 1 to remove the beginning "/"
         }
         else {
@@ -1268,7 +1265,7 @@ bool SqliteReferenceModel::createProperties(QSqlDatabase & db) {
 }
 
 bool SqliteReferenceModel::createParts(QSqlDatabase & db, bool fullLoad) 
-{
+{  
     QString extra;
     if (fullLoad) {
         extra = "version TEXT,\n"

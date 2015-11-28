@@ -38,12 +38,15 @@ class FolderUtils
 {
 
 public:
-	static QDir *getApplicationSubFolder(QString);
-	static QString getApplicationSubFolderPath(QString);
-	static QString getUserDataStorePath(QString folder = ___emptyString___);
+    static QDir getApplicationSubFolder(QString);
+    static QString getApplicationSubFolderPath(QString);
+    static QDir getPartsSubFolder(QString);
+    static QString getPartsSubFolderPath(QString);
+    static QString getUserDataStorePath(QString folder = ___emptyString___);
 	static const QStringList & getUserDataStoreFolders();
 	static bool createFolderAnCdIntoIt(QDir &dir, QString newFolder);
 	static bool setApplicationPath(const QString & path);
+    static bool setPartsPath(const QString & path);
 	static const QString getLibraryPath();
 	static QString getOpenFileName( QWidget * parent = 0, const QString & caption = QString(), const QString & dir = QString(), const QString & filter = QString(), QString * selectedFilter = 0, QFileDialog::Options options = 0 );
 	static QStringList getOpenFileNames( QWidget * parent = 0, const QString & caption = QString(), const QString & dir = QString(), const QString & filter = QString(), QString * selectedFilter = 0, QFileDialog::Options options = 0 );
@@ -69,9 +72,11 @@ protected:
 	~FolderUtils();
 
 	const QStringList & userDataStoreFolders();
-	bool setApplicationPath2(const QString & path);
-	const QString applicationDirPath();
+    bool setApplicationPath2(const QString & path);
+    bool setPartsPath2(const QString & path);
+    const QString applicationDirPath();
 	const QString libraryPath();
+    QDir getPartsSubFolder2(QString);
 
 protected:
 	static FolderUtils* singleton;
@@ -80,6 +85,7 @@ protected:
 protected:
 	QStringList m_folders;
 	QString m_appPath;
+    QString m_partsPath;
 };
 
 #endif

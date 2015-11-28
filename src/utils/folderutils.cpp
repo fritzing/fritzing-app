@@ -68,7 +68,7 @@ FolderUtils::~FolderUtils() {
 }
 
 // finds a subfolder of the application directory searching backward up the tree
-QDir * FolderUtils::getApplicationSubFolder(QString search) {
+QDir  FolderUtils::getApplicationSubFolder(QString search) {
 	if (singleton == NULL) {
 		singleton = new FolderUtils();
 	}
@@ -76,14 +76,14 @@ QDir * FolderUtils::getApplicationSubFolder(QString search) {
 	QString path = singleton->applicationDirPath();
     path += "/" + search;
 	//DebugDialog::debug(QString("path %1").arg(path) );
-    QDir* dir= new QDir(path);
-    while (!dir->exists()) {
+    QDir dir(path);
+    while (!dir.exists()) {
     	// if we're running from the debug or release folder, go up one to find things
-    	dir->cdUp();
-		dir->cdUp();
-    	if (dir->isRoot()) return NULL;   // didn't find the search folder
+        dir.cdUp();
+        dir.cdUp();
+        if (dir.isRoot()) return NULL;   // didn't find the search folder
 
-		dir->setPath(dir->absolutePath() + "/" + search);
+        dir.setPath(dir.absolutePath() + "/" + search);
    	}
 
    	return dir;
@@ -94,13 +94,49 @@ QString FolderUtils::getApplicationSubFolderPath(QString search) {
 		singleton = new FolderUtils();
 	}
 
-	QDir * dir = getApplicationSubFolder(search);
-	if (dir == NULL) return "";
-
-	QString result = dir->path();
-	delete dir;
-	return result;
+    QDir dir = getApplicationSubFolder(search);
+    return dir.path();
 }
+
+QString FolderUtils::getPartsSubFolderPath(QString search) {
+    if (singleton == NULL) {
+        singleton = new FolderUtils();
+    }
+
+    QDir dir = getPartsSubFolder(search);
+    return dir.path();
+}
+
+QDir FolderUtils::getPartsSubFolder(QString search) {
+    if (singleton == NULL) {
+        singleton = new FolderUtils();
+    }
+
+    return singleton->getPartsSubFolder2(search);
+}
+
+QDir FolderUtils::getPartsSubFolder2(QString search) {
+    if (m_partsPath.isEmpty()) {
+        QDir dir = getApplicationSubFolder("fritzing-parts");
+        if (dir.exists()) {
+            m_partsPath = dir.absolutePath();
+        }
+        else {
+            QDir dir = getApplicationSubFolder("parts");
+            if (dir.exists()) {
+                m_partsPath = dir.absolutePath();
+            }
+        }
+    }
+
+
+    QString path = search.isEmpty() ? m_partsPath : m_partsPath + "/" + search;
+    //DebugDialog::debug(QString("path %1").arg(path) );
+    QDir dir(path);
+
+    return dir;
+}
+
 
 QString FolderUtils::getUserDataStorePath(QString folder) {
 	QString settingsFile = QSettings(QSettings::IniFormat,QSettings::UserScope,"Fritzing","Fritzing").fileName();
@@ -123,13 +159,22 @@ bool FolderUtils::createFolderAnCdIntoIt(QDir &dir, QString newFolder) {
 	return true;
 }
 
-bool FolderUtils::setApplicationPath(const QString & path) 
+bool FolderUtils::setApplicationPath(const QString & path)
 {
-	if (singleton == NULL) {
-		singleton = new FolderUtils();
-	}
+    if (singleton == NULL) {
+        singleton = new FolderUtils();
+    }
 
-	return singleton->setApplicationPath2(path);
+    return singleton->setApplicationPath2(path);
+}
+
+bool FolderUtils::setPartsPath(const QString & path)
+{
+    if (singleton == NULL) {
+        singleton = new FolderUtils();
+    }
+
+    return singleton->setPartsPath2(path);
 }
 
 void FolderUtils::cleanup() {
@@ -162,7 +207,7 @@ const QString FolderUtils::libraryPath()
 const QString FolderUtils::applicationDirPath() {
 	if (m_appPath.isEmpty()) {
 #ifdef Q_OS_WIN
-		return QCoreApplication::applicationDirPath();
+        m_appPath = QCoreApplication::applicationDirPath();
 #else
 		// look in standard Fritzing location (applicationDirPath and parent folders) then in standard linux locations
 		QStringList candidates;
@@ -188,9 +233,9 @@ const QString FolderUtils::applicationDirPath() {
 		foreach (QString candidate, candidates) {
             //DebugDialog::debug(QString("candidate:%1").arg(candidate));
 			QDir dir(candidate);
-            if (!dir.exists("parts")) continue;
+            if (!dir.exists("translations")) continue;
 
-            if (dir.exists("bins")) {
+            if (dir.exists("help")) {
 				m_appPath = candidate;
 				return m_appPath;
 			}
@@ -206,13 +251,22 @@ const QString FolderUtils::applicationDirPath() {
 	return m_appPath;
 }
 
-bool FolderUtils::setApplicationPath2(const QString & path) 
+bool FolderUtils::setApplicationPath2(const QString & path)
 {
-	QDir dir(path);
-	if (!dir.exists()) return false;
+    QDir dir(path);
+    if (!dir.exists()) return false;
 
-	m_appPath = path;
-	return true;
+    m_appPath = path;
+    return true;
+}
+
+bool FolderUtils::setPartsPath2(const QString & path)
+{
+    QDir dir(path);
+    if (!dir.exists()) return false;
+
+    m_partsPath = path;
+    return true;
 }
 
 const QStringList & FolderUtils::userDataStoreFolders() {

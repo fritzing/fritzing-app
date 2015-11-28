@@ -30,16 +30,6 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 #include <QObject>
 #include <QNetworkAccessManager>
 
-struct Commit {
-    QString sha;
-    QString date;
-    QStringList fileNamesToDo;
-    QStringList fileNamesDone;
-
-    bool lessThan(const Commit & a, const Commit & b) {
-        return a.date < b.date;
-    }
-};
 
 class PartsChecker : public QObject
 {
@@ -51,37 +41,14 @@ public:
     void stop();
 
 protected:
-    enum State {
-        READING_COMMITS,
-        READING_ONE_COMMIT,
-        READING_FILE,
-    };
-
-    QMutex m_managersLock;
-    QMutex m_listsLock;
-    PartsChecker::State m_state;
-    QList<Commit> m_commitsToDo;
-    QList<Commit> m_commitsDone;
-    Commit m_currentCommit;
-    bool m_keepGoing;
-    QList<QNetworkAccessManager *> m_networkAccessManagers;
-
 
 signals:
-    void httpError(QString);
-    void jsonError(QString);
 
 protected slots:
-    void requestFinished(QNetworkReply * networkReply);
-    void readSha();
-    void readFile();
+
 
 protected:
-    void startState(PartsChecker::State state, const QString & urlString);
-    QString lastDate();
-    void readCommits(bool keepGoing, const QJsonDocument & jsonDocument);
-    void readCommit(bool keepGoing, const QJsonDocument & jsonDocument);
-    void readFile(bool keepGoing, const QJsonDocument & jsonDocument);
+
 
 };
 

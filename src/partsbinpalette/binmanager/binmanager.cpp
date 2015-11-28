@@ -80,10 +80,10 @@ BinLocation::Location BinLocation::findLocation(const QString & filename)
 	if (filename.startsWith(FolderUtils::getUserDataStorePath("bins"))) {
 		return BinLocation::User;
 	}
-	else if (filename.startsWith(FolderUtils::getApplicationSubFolderPath("bins") + "/more")) {
+    else if (filename.startsWith(FolderUtils::getPartsSubFolderPath("bins") + "/more")) {
 		return BinLocation::More;
 	}
-	else if (filename.startsWith(FolderUtils::getApplicationSubFolderPath("bins"))) {
+    else if (filename.startsWith(FolderUtils::getPartsSubFolderPath("bins"))) {
 		return BinLocation::App;
 	}
 
@@ -192,7 +192,7 @@ void BinManager::registerBin(PartsBinPaletteWidget* bin) {
 	    else if (bin->fileName().compare(m_tempPartsBinLocation) == 0) {
 		    bin->setAllowsChanges(false);
 	    }
-	    else if (bin->fileName().contains(FolderUtils::getApplicationSubFolderPath("bins"))) {
+        else if (bin->fileName().contains(FolderUtils::getPartsSubFolderPath("bins"))) {
 		    bin->setAllowsChanges(false);
 	    }
     }
@@ -794,7 +794,7 @@ void BinManager::findAllBins(QList<BinLocation *> & locations)
 	QDir userBinsDir(FolderUtils::getUserDataStorePath("bins"));
 	findBins(userBinsDir, locations, BinLocation::User);
 
-	QDir dir(FolderUtils::getApplicationSubFolderPath("bins"));
+    QDir dir(FolderUtils::getPartsSubFolderPath("bins"));
 	dir.cd("more");
 	findBins(dir, locations, BinLocation::More);
 }
@@ -897,8 +897,8 @@ void BinManager::initNames() {
     BinManager::MyPartsBinTemplateLocation =":/resources/bins/my_parts.fzb";
     BinManager::SearchBinLocation = FolderUtils::getUserDataStorePath("bins")+"/search.fzb";
     BinManager::SearchBinTemplateLocation =":/resources/bins/search.fzb";
-	BinManager::ContribPartsBinLocation = FolderUtils::getApplicationSubFolderPath("bins")+"/contribParts.fzb";
-    BinManager::CorePartsBinLocation = FolderUtils::getApplicationSubFolderPath("bins")+"/core.fzb";
+    BinManager::ContribPartsBinLocation = FolderUtils::getPartsSubFolderPath("bins")+"/contribParts.fzb";
+    BinManager::CorePartsBinLocation = FolderUtils::getPartsSubFolderPath("bins")+"/core.fzb";
     BinManager::TempPartsBinTemplateLocation =":/resources/bins/temp.fzb";
 
 	StandardBinIcons.insert(BinManager::MyPartsBinLocation, "Mine.png");

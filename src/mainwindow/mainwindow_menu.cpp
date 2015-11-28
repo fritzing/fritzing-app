@@ -2330,8 +2330,8 @@ void MainWindow::reportBug() {
 }
 
 void MainWindow::partsEditorHelp() {
-	QDir * dir = FolderUtils::getApplicationSubFolder("help");
-	QString path = dir->absoluteFilePath("parts_editor_help.html");
+    QDir dir = FolderUtils::getApplicationSubFolder("help");
+    QString path = dir.absoluteFilePath("parts_editor_help.html");
 	if (QFileInfo(path).exists()) {
 		QDesktopServices::openUrl(QString("file:///%1").arg(path));
 	}

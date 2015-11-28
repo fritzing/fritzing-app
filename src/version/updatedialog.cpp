@@ -151,8 +151,6 @@ void UpdateDialog::releasesAvailableSlot() {
     if (!available) {
         m_feedbackLabel->setText(tr("Checking for new parts..."));
         m_partsChecker = new PartsChecker;
-        connect(m_partsChecker, SIGNAL(jsonError(QString)), this, SLOT(jsonPartsErrorSlot(QString)));
-        connect(m_partsChecker, SIGNAL(httpError(QString)), this, SLOT(httpPartsErrorSlot(QString)));
         m_partsChecker->start();
     }
     else {

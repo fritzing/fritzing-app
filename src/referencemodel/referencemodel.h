@@ -44,7 +44,7 @@ class ReferenceModel : public PaletteModel {
 		virtual ModelPart * addPart(QString newPartPath, bool addToReference, bool updateIdAlreadyExists) = 0;
 		virtual bool updatePart(ModelPart * newModel) = 0;
 
-		virtual bool swapEnabled() = 0;
+        virtual bool swapEnabled() const = 0;
 		virtual QString partTitle(const QString & moduleID) = 0;
 		virtual void recordProperty(const QString &name, const QString &value) = 0;
 		virtual QString retrieveModuleIdWith(const QString &family, const QString &propertyName, bool closestMatch) = 0;
@@ -52,6 +52,8 @@ class ReferenceModel : public PaletteModel {
 		virtual QStringList propValues(const QString &family, const QString &propName, bool distinct) = 0;
 		virtual QMultiHash<QString, QString> allPropValues(const QString &family, const QString &propName) = 0;
 		virtual bool lastWasExactMatch() = 0;
+        virtual void setSha(const QString & sha) = 0;
+        virtual const QString & sha() const = 0;
 
 };
 

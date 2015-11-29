@@ -187,6 +187,7 @@ protected:
     QList<MainWindow *> orderedTopLevelMainWindows();
 	void cleanFzzs();
     void initServer();
+    QString getSha(const QString & dbPath);
 
 	enum ServiceType {
 		PanelizerService = 1,

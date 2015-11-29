@@ -153,6 +153,29 @@ greaterThan(QT_MAJOR_VERSION, 4) {
 RC_FILE = fritzing.rc
 RESOURCES += phoenixresources.qrc
 
+# Fritzing is now using libgit2
+LIBGIT2INCLUDE = ../libgit2/include
+exists($$LIBGIT2INCLUDE/git2.h) {
+    message("found libgit2 include path")
+}
+else {
+    error("libgit2 include path not found in $$LIBGIT2INCLUDE")
+}
+INCLUDEPATH += ../libgit2/include
+LIBGIT2LIB = ../libgit2-build
+win32 {
+    exists($$LIBGIT2LIB/git2.lib) {
+        message("found libgit2 library")
+    }
+    else {
+        error("libgit2 library not found in $$LIBGIT2LIB")
+    }
+
+    LIBS += -L$$LIBGIT2LIB -lgit2
+}
+else {
+}
+
 include(pri/kitchensink.pri)
 include(pri/mainwindow.pri)
 include(pri/partsbinpalette.pri)

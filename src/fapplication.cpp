@@ -88,6 +88,8 @@ $Date: 2013-04-19 12:51:22 +0200 (Fr, 19. Apr 2013) $
 #include <QMultiHash>
 #include <QTemporaryFile>
 
+#include <git2.h>
+
 #ifdef LINUX_32
 #define PLATFORM_NAME "linux-32bit"
 #endif
@@ -774,6 +776,18 @@ bool FApplication::loadReferenceModel(const QString & databaseName, bool fullLoa
     QString dbPath = dir.absoluteFilePath("parts.db");
     QFileInfo info(dbPath);
     bool dbExists = info.exists();
+
+    QString sha;
+    if (fullLoad) {
+        git_libgit2_init();
+        sha = getSha(dir.absolutePath());
+        git_libgit2_shutdown();
+        if (sha.isEmpty()) {
+            return false;
+        }
+
+        referenceModel->setSha(sha);
+    }
 
     bool ok = referenceModel->loadAll(databaseName, fullLoad, dbExists);		// loads local parts, resource parts, and any other parts in files not in the db--these part override db parts with the same moduleID
     if (ok && databaseName.isEmpty()) {
@@ -2012,7 +2026,7 @@ void FApplication::doCommand(const QString & command, const QString & params, QS
 }
 
 void FApplication::regeneratePartsDatabase() {
-    FMessageBox messageBox(NULL);
+    QMessageBox messageBox(NULL);
     messageBox.setWindowTitle(tr("Regenerate parts database?"));
     messageBox.setText(tr("Regenerating the parts database will take some minutes and you will have to restart Fritzing\n\n") +
                         tr("Would you like to regenerate the parts database?\n")
@@ -2060,4 +2074,32 @@ void FApplication::regenerateDatabaseFinished() {
    thread->fileProgressDialog()->deleteLater();
 
    thread->deleteLater();
+}
+
+QString FApplication::getSha(const QString & dbPath) {
+
+    QString sha;
+    git_repository * repository = NULL;
+    int result = git_repository_open(&repository, dbPath.toUtf8().constData());
+    if (result) {
+        FMessageBox::warning(NULL, tr("Rgenerating parts database"), tr("Unable to find parts git repository"));
+        return sha;
+    }
+
+    git_oid oid;  /* the SHA1 for last commit */
+
+    /* resolve HEAD into a SHA1 */
+    result = git_reference_name_to_id( &oid, repository, "HEAD" );
+    if (result) {
+        FMessageBox::warning(NULL, tr("Rgenerating parts database"), tr("Unable to find parts git repository HEAD"));
+    }
+    else {
+        char buffer[64];
+        git_oid_tostr(buffer, sizeof(buffer), &oid);
+        sha = QString(buffer);
+    }
+
+    git_repository_free(repository);
+
+    return sha;
 }

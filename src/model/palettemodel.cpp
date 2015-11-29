@@ -153,7 +153,10 @@ void PaletteModel::loadParts(bool dbExists) {
         countParts(dir1, nameFilters, totalPartCount);
 	}
     QDir dir2(FolderUtils::getUserDataStorePath(""));
-	countParts(dir2, nameFilters, totalPartCount);
+    if (!m_fullLoad) {
+        // don't include local parts
+        countParts(dir2, nameFilters, totalPartCount);
+    }
 
 	QDir dir3(":/resources/parts");
     if (m_fullLoad || !dbExists) {
@@ -167,7 +170,9 @@ void PaletteModel::loadParts(bool dbExists) {
         loadPartsAux(dir1, nameFilters, loadingPart, totalPartCount);
     }
 
-	loadPartsAux(dir2, nameFilters, loadingPart, totalPartCount);
+    if (!m_fullLoad) {
+        loadPartsAux(dir2, nameFilters, loadingPart, totalPartCount);
+    }
 
     if (m_fullLoad || !dbExists) {
         // otherwise these will already be in the database

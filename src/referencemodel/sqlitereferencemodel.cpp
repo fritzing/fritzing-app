@@ -113,7 +113,7 @@ bool SqliteReferenceModel::loadAll(const QString & databaseName, bool fullLoad, 
 	int tries = 0;
     m_keepGoing = true;
 	while(!m_swappingEnabled && tries < MAX_CONN_TRIES && m_keepGoing) {
-		createConnection(databaseName, fullLoad);
+        createDatabase(databaseName, fullLoad);
 		if(!m_swappingEnabled) {
 			deleteConnection();
 		}
@@ -477,6 +477,14 @@ bool SqliteReferenceModel::loadFromDB(QSqlDatabase & keep_db, QSqlDatabase & db)
         }
     }
 
+    query = db.exec("SELECT sha FROM lastcommit where id=0");
+    debugError(query.isActive(), query);
+    if (query.isActive()) {
+        if (query.next()) {
+            m_sha = query.value(0).toString();
+        }
+    }
+
     if (m_root == NULL) {
         m_root = new ModelPart();
     }
@@ -507,7 +515,7 @@ void SqliteReferenceModel::initParts(bool dbExists) {
 	m_init = false;
 }
 
-bool SqliteReferenceModel::createConnection(const QString & databaseName, bool fullLoad) {
+bool SqliteReferenceModel::createDatabase(const QString & databaseName, bool fullLoad) {
 	m_swappingEnabled = true;
 	m_database = QSqlDatabase::addDatabase("QSQLITE");
 	m_database.setDatabaseName(databaseName.isEmpty() ? ":memory:" : databaseName);
@@ -606,10 +614,18 @@ bool SqliteReferenceModel::createConnection(const QString & databaseName, bool f
         debugError(result, query);
 
         if (fullLoad) {
+            QSqlQuery query;
+            query.prepare("INSERT INTO lastcommit(id, sha) VALUES (:id, :sha)");
+            query.bindValue(":id", 0);
+            query.bindValue(":sha", m_sha);
+            result = query.exec();
+            debugError(result, query);
+
 		    foreach(ModelPart* mp, m_partHash.values()) {
 			    mp->initConnectors(false);
-            }
+            }                      
 		}
+
 		foreach(ModelPart* mp, m_partHash.values()) {
 			addPartAux(mp, fullLoad);
 		}
@@ -1154,7 +1170,7 @@ void SqliteReferenceModel::recordProperty(const QString &name, const QString &va
 	m_recordedProperties.insert(name,value);
 }
 
-bool SqliteReferenceModel::swapEnabled() {
+bool SqliteReferenceModel::swapEnabled() const {
 	return m_swappingEnabled;
 }
 
@@ -1357,3 +1373,10 @@ void SqliteReferenceModel::createMoreIndexes(QSqlDatabase & db)
     debugError(query.isActive(), query);
 }
 
+void SqliteReferenceModel::setSha(const QString & sha) {
+    m_sha = sha;
+}
+
+const QString & SqliteReferenceModel::sha() const {
+    return m_sha;
+}

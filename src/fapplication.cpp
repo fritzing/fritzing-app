@@ -2287,7 +2287,7 @@ bool FApplication::diffParent(git_commit * commit, git_tree * tree, const QStrin
 
 bool FApplication::updateParts(const QString & repoPath, ReferenceModel * referenceModel, const CommitPathActionList & commitPathActionList) {
     static int updatePartsCount = 0;
-    QString dt = QDateTime::currentDateTime().toString("yyyyMMddhhmmsszzz");
+    QString dt = QDateTime::currentDateTime().toString("yyyyMMdd_hhmmss_zzz");
 
     git_repository * repository = NULL;
     int result = git_repository_open(&repository, repoPath.toUtf8().constData());
@@ -2307,9 +2307,10 @@ bool FApplication::updateParts(const QString & repoPath, ReferenceModel * refere
     git_commit * commit = NULL;
     git_reference * reference = NULL;
     git_checkout_options checkout_options = GIT_CHECKOUT_OPTIONS_INIT;
-    checkout_options.checkout_strategy = GIT_CHECKOUT_SAFE;
+    checkout_options.checkout_strategy = GIT_CHECKOUT_FORCE;
     foreach (CommitPathAction commitPathAction, commitPathActionList) {
-        QString branchName = QString("branch%1_%2").arg(dt).arg(updatePartsCount++);
+        QString branchName = QString("b%1_%2").arg(dt).arg(updatePartsCount++);
+        QString fullBranchName = "refs/heads/" + branchName;
 
         git_oid oid;
         result = git_oid_fromstr(&oid, commitPathAction.sha.toUtf8().constData());
@@ -2347,10 +2348,9 @@ bool FApplication::updateParts(const QString & repoPath, ReferenceModel * refere
             break;
         }
 
-        // must also reset HEAD
-        result = git_checkout_head(repository, &checkout_options);
+        result = git_repository_set_head(repository, fullBranchName.toUtf8().constData());
         if (result) {
-            FMessageBox::warning(NULL, tr("Regenerating parts database"), tr("Branch failure (4)"));
+            FMessageBox::warning(NULL, tr("Regenerating parts database"), tr("Branch failure (3)"));
             break;
         }
 
@@ -2361,6 +2361,13 @@ bool FApplication::updateParts(const QString & repoPath, ReferenceModel * refere
             FMessageBox::warning(NULL, tr("Regenerating parts database"), tr("Unfortunately the parts database is broken. Please download the fritzing application again: www.fritzing.org"));
             break;
         }
+
+        result = git_repository_set_head(repository, "refs/heads/master");
+        if (result) {
+            FMessageBox::warning(NULL, tr("Regenerating parts database"), tr("Branch failure (3)"));
+            break;
+        }
+
 
         git_branch_delete(reference);
         git_reference_free(reference);

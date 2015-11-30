@@ -21,13 +21,13 @@ HEADERS += \
 	src/version/updatedialog.h \
 	src/version/version.h \
 	src/version/versionchecker.h \
-    $$PWD/../src/version/partschecker.h
+        src/version/partschecker.h
 
 SOURCES += \
 	src/version/updatedialog.cpp \
     	src/version/version.cpp \
     	src/version/versionchecker.cpp \ 
-    $$PWD/../src/version/partschecker.cpp
+        src/version/partschecker.cpp
 
 FORMS +=
 

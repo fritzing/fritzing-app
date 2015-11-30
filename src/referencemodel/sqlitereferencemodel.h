@@ -64,12 +64,13 @@ class SqliteReferenceModel : public ReferenceModel {
 		bool lastWasExactMatch();
         void setSha(const QString & sha);
         const QString & sha() const;
+        void updateParts(const QString &path, const CommitPathAction &);
+
 
 	protected:
 		void initParts(bool dbExists);
         void killParts();
 
-	protected:
 		bool addPartAux(ModelPart * newModel, bool fullLoad);
 
 		QString closestMatchId(const QString &family, const QMultiHash<QString, QString> &properties, const QString &propertyName, const QString &propertyValue);
@@ -97,6 +98,14 @@ class SqliteReferenceModel : public ReferenceModel {
         bool insertSubpartConnector(const ConnectorShared * cs, qulonglong id);
         void createIndexes();
         void createMoreIndexes(QSqlDatabase &);
+        bool removeViewImages(qulonglong partId);
+        bool removeConnectors(qulonglong partId);
+        bool removeBuses(qulonglong partId);
+        bool removeSchematicSubparts(qulonglong partId);
+        bool removeTags(qulonglong partId);
+        bool removex(qulonglong id, const QString & tableName, const QString & idName);
+        bool removePart(const QString & moduleId);
+        bool removePartFromDataBase(const QString & moduleId);
 
 protected:
 		volatile bool m_swappingEnabled;

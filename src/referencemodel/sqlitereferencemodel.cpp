@@ -31,6 +31,8 @@ $Date: 2013-04-07 12:14:50 +0200 (So, 07. Apr 2013) $
 #include <QMessageBox>
 #include <QVector>
 #include <QSqlResult>
+#include <QSqlDriver>
+#include <QDebug>
 #include <limits>
 
 #include "sqlitereferencemodel.h"
@@ -41,6 +43,8 @@ $Date: 2013-04-07 12:14:50 +0200 (So, 07. Apr 2013) $
 #include "../connectors/busshared.h"
 #include "../utils/folderutils.h"
 #include "../utils/fmessagebox.h"
+#include "../lib/sqlite3/sqlite3.h"
+#include "../utils/textutils.h"
 
 
 #define MAX_CONN_TRIES 3
@@ -830,6 +834,25 @@ ModelPart * SqliteReferenceModel::addPart(QString newPartPath, bool addToReferen
 	return PaletteModel::addPart(newPartPath, addToReference, updateIdAlreadyExists);
 }
 
+bool SqliteReferenceModel::removePart(const QString &moduleId) {
+    m_partHash.remove(moduleId);
+    return removePartFromDataBase(moduleId);
+}
+
+bool SqliteReferenceModel::removePartFromDataBase(const QString & moduleId) {
+    qulonglong partId = this->partId(moduleId);
+    if(partId == NO_ID) return false;
+
+    removePart(partId);
+    removeProperties(partId);
+    removeViewImages(partId);
+    removeConnectors(partId);
+    removeBuses(partId);
+    removeSchematicSubparts(partId);
+    removeTags(partId);
+
+    return true;
+}
 
 ModelPart * SqliteReferenceModel::reloadPart(const QString & path, const QString & moduleID) {
     m_partHash.remove(moduleID);
@@ -840,13 +863,9 @@ ModelPart * SqliteReferenceModel::reloadPart(const QString & path, const QString
 	return modelPart;
 }
 
-
 bool SqliteReferenceModel::updatePart(ModelPart * newModel) {
 	if(m_swappingEnabled) {
-		qulonglong partId = this->partId(newModel->moduleID());
-		if(partId != NO_ID) {
-			removePart(partId);
-			removeProperties(partId);
+        if (removePartFromDataBase(newModel->moduleID())) {
 			return addPartAux(newModel, false);
 		} else {
 			return false;
@@ -854,7 +873,6 @@ bool SqliteReferenceModel::updatePart(ModelPart * newModel) {
 	} else {
 		return false;
 	}
-
 }
 
 bool SqliteReferenceModel::insertPart(ModelPart * modelPart, bool fullLoad) {
@@ -1163,8 +1181,6 @@ QMultiHash<QString, QString> SqliteReferenceModel::allPropValues(const QString &
 	return retval;
 }
 
-
-
 void SqliteReferenceModel::recordProperty(const QString &name, const QString &value) {
 	DebugDialog::debug(QString("RECORDING PROPERTY %1:%2").arg(name).arg(value));
 	m_recordedProperties.insert(name,value);
@@ -1202,53 +1218,11 @@ qulonglong SqliteReferenceModel::partId(QString moduleID) {
 }
 
 bool SqliteReferenceModel::removePart(qulonglong partId) {
-	bool result = true;
-
-	QSqlQuery query;
-	query.prepare(
-		"DELETE FROM parts \n"
-		"WHERE id = :id "
-	);
-	query.bindValue(":id",partId);
-
-	if(query.exec()) {
-		result = true;
-	} else {
-		DebugDialog::debug(
-			"SQLITE: couldn't delete part\n"
-			"\t "+query.lastQuery()+"\n"
-			"\t ERROR DRIVER: "+query.lastError().driverText()+"\n"
-			"\t ERROR DB: "+query.lastError().databaseText()+"\n"
-		);
-		result = false;
-	}
-
-	return result;
+    return removex(partId, "parts", "id");
 }
 
 bool SqliteReferenceModel::removeProperties(qulonglong partId) {
-	bool result = true;
-
-	QSqlQuery query;
-	query.prepare(
-		"DELETE FROM properties \n"
-		"WHERE part_id = :id "
-	);
-	query.bindValue(":id",partId);
-
-	if(query.exec()) {
-		result = true;
-	} else {
-		DebugDialog::debug(
-			"SQLITE: couldn't delete properties \n"
-			"\t "+query.lastQuery()+"\n"
-			"\t ERROR DRIVER: "+query.lastError().driverText()+"\n"
-			"\t ERROR DB: "+query.lastError().databaseText()+"\n"
-		);
-		result = false;
-	}
-
-	return result;
+    return removex(partId, "properties", "part_id");
 }
 
 QString SqliteReferenceModel::partTitle(const QString & moduleID) {
@@ -1379,4 +1353,105 @@ void SqliteReferenceModel::setSha(const QString & sha) {
 
 const QString & SqliteReferenceModel::sha() const {
     return m_sha;
+}
+
+bool SqliteReferenceModel::removeViewImages(qulonglong partId) {
+    return removex(partId, "viewimages", "part_id");
+}
+
+bool SqliteReferenceModel::removeConnectors(qulonglong partId) {
+    QSqlQuery query;
+    query.prepare("SELECT id from connectors WHERE part_id = :id");
+    query.bindValue(":id",partId);
+    if (query.exec()) {
+        while (query.next()) {
+            qulonglong cid = query.value(0).toULongLong();
+            removex(cid, "connectorlayers", "connector_id");
+        }
+    }
+
+
+    return removex(partId, "connectors", "part_id");
+}
+
+bool SqliteReferenceModel::removeBuses(qulonglong partId) {
+    QSqlQuery query;
+    query.prepare("SELECT id from buses WHERE part_id = :id");
+    query.bindValue(":id",partId);
+    if (query.exec()) {
+        while (query.next()) {
+            qulonglong bid = query.value(0).toULongLong();
+            removex(bid, "busmembers", "bus_id");
+        }
+    }
+
+    return removex(partId, "buses", "part_id");
+}
+
+bool SqliteReferenceModel::removeSchematicSubparts(qulonglong partId) {
+    return removex(partId, "schematic_subparts", "part_id");
+}
+
+
+bool SqliteReferenceModel::removeTags(qulonglong partId) {
+    return removex(partId, "tags", "part_id");
+}
+
+bool SqliteReferenceModel::removex(qulonglong id, const QString & tableName, const QString & idName) {
+    bool result = true;
+
+    QSqlQuery query;
+    query.prepare(QString("DELETE FROM %1 WHERE %2 = :id").arg(tableName).arg(idName));
+    query.bindValue(":id", id);
+
+    if(query.exec()) {
+        result = true;
+    } else {
+        DebugDialog::debug(
+            "SQLITE: couldn't delete from " + tableName + "\n"
+            "\t "+query.lastQuery()+"\n"
+            "\t ERROR DRIVER: "+query.lastError().driverText()+"\n"
+            "\t ERROR DB: "+query.lastError().databaseText()+"\n"
+        );
+        result = false;
+    }
+
+    return result;
+}
+
+
+void SqliteReferenceModel::updateParts(const QString & path, const CommitPathAction & commitPathAction) {
+
+    /*
+    QVariant v = m_database.driver()->handle();
+    if (v.isValid() && qstrcmp(v.typeName(), "sqlite3*") == 0) {
+        // v.data() returns a pointer to the handle
+        sqlite3 *handle = *static_cast<sqlite3 **>(v.data());
+        if (handle != 0) { // check that it is not NULL
+            const char * message = sqlite3_errmsg(handle);
+            qDebug() << "testing sqlite3" << message;
+        }
+    }
+    */
+
+    QDir dir(path);
+    foreach (PathAction pathAction, commitPathAction.pathActions) {
+        if (!pathAction.path.endsWith(".fzp")) continue;
+
+        QString fzpPath = dir.absoluteFilePath(pathAction.path);
+        QString moduleId = TextUtils::parseForModuleID(fzpPath);
+        if (moduleId.isEmpty()) continue;
+
+        switch (pathAction.action) {
+        case PathAction::ADD_ACTION:
+            addPart(fzpPath, true, false);
+            break;
+        case PathAction::MODIFY_ACTION:
+            reloadPart(fzpPath, moduleId);
+            break;
+        case PathAction::DELETE_ACTION:
+            removePart(moduleId);
+            break;
+        }
+    }
 }

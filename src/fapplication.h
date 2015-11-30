@@ -41,8 +41,9 @@ $Date: 2013-03-26 14:00:34 +0100 (Di, 26. Mrz 2013) $
 #include <QNetworkReply>
 #include <QNetworkAccessManager>
 
+#include "referencemodel/referencemodel.h"
+
 class FileProgressDialog;
-class ReferenceModel;
 
 class FServer : public QTcpServer
 {
@@ -105,6 +106,7 @@ protected:
     ReferenceModel * m_referenceModel;
 };
 
+////////////////////////////////////////////////////
 
 
 class FApplication : public QApplication
@@ -187,7 +189,12 @@ protected:
     QList<MainWindow *> orderedTopLevelMainWindows();
 	void cleanFzzs();
     void initServer();
-    QString getSha(const QString & dbPath);
+    QString getSha(const QString & repoPath);
+    bool walkRevUntil(const QString & repoPath, const QString &sha, CommitPathActionList &commitPathActionList);
+    bool walkRevUntil(struct git_repository * repository, const QString &sha, CommitPathActionList &commitPathActionList);
+    void walkRevUntil(struct git_repository *repository, struct git_revwalk *revwalk, const QString &sha, CommitPathActionList &commitPathActionList);
+    bool diffParent(struct git_commit * commit, struct git_tree * tree, const QString &sha, CommitPathAction &commitPathAction, int pix);
+    bool updateParts(const QString &repoPath, ReferenceModel * referenceModel, const CommitPathActionList & commitPathActionList);
 
 	enum ServiceType {
 		PanelizerService = 1,

@@ -87,6 +87,7 @@ $Date: 2013-04-19 12:51:22 +0200 (Fr, 19. Apr 2013) $
 #include <QNetworkRequest>
 #include <QMultiHash>
 #include <QTemporaryFile>
+#include <time.h>
 
 #include <git2.h>
 
@@ -119,6 +120,7 @@ $Date: 2013-04-19 12:51:22 +0200 (Fr, 19. Apr 2013) $
 
 static const double LoadProgressStart = 0.085;
 static const double LoadProgressEnd = 0.6;
+
 
 ////////////////////////////////////////////////////
 
@@ -794,6 +796,15 @@ bool FApplication::loadReferenceModel(const QString & databaseName, bool fullLoa
         QFile file(dir.absoluteFilePath("parts.db"));
         if (file.exists()) {
             referenceModel->loadFromDB(dbPath);
+            if (!referenceModel->sha().isEmpty()) {
+                CommitPathActionList commitPathActionList;
+                git_libgit2_init();
+                walkRevUntil(dir.absolutePath(), referenceModel->sha(), commitPathActionList);
+                if (commitPathActionList.count()) {
+                    updateParts(dir.absolutePath(), referenceModel, commitPathActionList);
+                }
+                git_libgit2_shutdown();
+            }
         }
     }
 
@@ -2076,13 +2087,13 @@ void FApplication::regenerateDatabaseFinished() {
    thread->deleteLater();
 }
 
-QString FApplication::getSha(const QString & dbPath) {
+QString FApplication::getSha(const QString & repoPath) {
 
     QString sha;
     git_repository * repository = NULL;
-    int result = git_repository_open(&repository, dbPath.toUtf8().constData());
+    int result = git_repository_open(&repository, repoPath.toUtf8().constData());
     if (result) {
-        FMessageBox::warning(NULL, tr("Rgenerating parts database"), tr("Unable to find parts git repository"));
+        FMessageBox::warning(NULL, tr("Regenerating parts database"), tr("Unable to find parts git repository"));
         return sha;
     }
 
@@ -2091,7 +2102,7 @@ QString FApplication::getSha(const QString & dbPath) {
     /* resolve HEAD into a SHA1 */
     result = git_reference_name_to_id( &oid, repository, "HEAD" );
     if (result) {
-        FMessageBox::warning(NULL, tr("Rgenerating parts database"), tr("Unable to find parts git repository HEAD"));
+        FMessageBox::warning(NULL, tr("Regenerating parts database"), tr("Unable to find parts git repository HEAD"));
     }
     else {
         char buffer[64];
@@ -2102,4 +2113,265 @@ QString FApplication::getSha(const QString & dbPath) {
     git_repository_free(repository);
 
     return sha;
+}
+
+bool FApplication::walkRevUntil(const QString & repoPath, const QString & sha, CommitPathActionList & commitPathActionList) {
+    git_repository * repository = NULL;
+    int result = git_repository_open(&repository, repoPath.toUtf8().constData());
+    if (result) {
+        return false;
+    }
+
+    bool ok = walkRevUntil(repository, sha, commitPathActionList);
+
+    git_repository_free(repository);
+    return ok;
+}
+
+bool FApplication::walkRevUntil(git_repository * repository, const QString & sha, CommitPathActionList & commitPathActionList) {
+    git_revwalk *revwalk = NULL;
+    int result = git_revwalk_new(&revwalk, repository);
+    if (result) {
+        return false;
+    }
+
+    bool ok = true;
+    result = git_revwalk_push_head(revwalk);
+    if (result) {
+        ok = false;
+    }
+    else {
+        git_revwalk_sorting(revwalk, GIT_SORT_TIME);
+        walkRevUntil(repository, revwalk, sha, commitPathActionList);
+    }
+
+    git_revwalk_free(revwalk);
+    return ok;
+}
+
+QString gitTimeToString(const git_time & time)
+{
+    char sign;
+    int offset, hours, minutes;
+    time_t t;
+
+    offset = time.offset;
+    if (offset < 0) {
+        sign = '-';
+        offset = -offset;
+    } else {
+        sign = '+';
+    }
+
+    hours   = offset / 60;
+    minutes = offset % 60;
+
+    t = (time_t) time.time + (time.offset * 60);
+
+    QDateTime dateTime = QDateTime::fromTime_t(t);
+
+    return QString("%1 %2%3%4")
+            .arg(dateTime.toString(Qt::ISODate))
+            .arg(sign)
+            .arg(hours, 2, 10, QChar('0'))
+            .arg(minutes, 2, 10, QChar('0'));
+}
+
+void FApplication::walkRevUntil(git_repository *repository, git_revwalk *revwalk, const QString & sha, CommitPathActionList & commitPathActionList)
+{
+    git_oid oid;
+    git_commit *commit = NULL;
+
+    for (; !git_revwalk_next(&oid, revwalk); git_commit_free(commit)) {
+        CommitPathAction commitPathAction;
+
+        char buffer[64];
+        git_oid_tostr(buffer, sizeof(buffer), &oid);
+        commitPathAction.sha = QString(buffer);
+        qDebug() << "sha" << commitPathAction.sha;
+        if (commitPathAction.sha.startsWith(sha)) {
+            // we have reached the commit marked in the database
+            break;
+        }
+
+        int result = git_commit_lookup(&commit, repository, &oid);
+        if (result) {
+            // what to do here?
+            continue;
+        }
+
+        const git_signature *signature = git_commit_author(commit);
+        QString timeString;
+        if (signature != NULL) {
+            timeString = gitTimeToString(signature->when);
+        }
+
+        qDebug() << "\t" << timeString << git_commit_summary(commit);
+
+        git_tree *tree;
+        result = git_commit_tree(&tree, commit);
+        if (result) {
+            // what to do here?
+        }
+        else {
+            int parentCount = (int) git_commit_parentcount(commit);
+            for (int pix = 0; pix < parentCount; pix++) {
+                diffParent(commit, tree, sha, commitPathAction, pix);
+            }
+
+            if (commitPathAction.pathActions.count()) {
+                // reverse the order so older commits come first
+                commitPathActionList.prepend(commitPathAction);
+            }
+
+            git_tree_free(tree);
+        }
+    }
+}
+
+bool FApplication::diffParent(git_commit * commit, git_tree * tree, const QString & sha, CommitPathAction & commitPathAction, int pix)
+{
+    git_commit * parentCommit = NULL;
+    int result = git_commit_parent(&parentCommit, commit, (size_t) pix);
+    if (result) return false;
+
+    git_tree * parentTree;
+    result = git_commit_tree(&parentTree, parentCommit);
+    if (result == 0) {
+        git_diff * diff;
+        result = git_diff_tree_to_tree(&diff, git_commit_owner(commit), parentTree, tree, NULL);
+        if (result == 0) {
+            int deltaCount = (int) git_diff_num_deltas(diff);
+            for (int dix = 0; dix < deltaCount; dix++) {
+                const git_diff_delta * delta = git_diff_get_delta(diff, (size_t) dix);
+
+                if (strcmp(delta->old_file.path, delta->new_file.path) != 0) {
+                    qDebug() << "different paths" << sha;
+                    continue;
+                }
+
+                PathAction pathAction;
+                pathAction.path = delta->new_file.path;
+                if (!pathAction.path.endsWith(".fzp")) {
+                    // only fzp files update the database
+                    continue;
+                }
+
+                switch (delta->status) {
+                case GIT_DELTA_ADDED:
+                    pathAction.action = PathAction::ADD_ACTION;
+                    break;
+                case GIT_DELTA_DELETED:
+                    pathAction.action = PathAction::DELETE_ACTION;
+                    break;
+                case GIT_DELTA_MODIFIED:
+                    pathAction.action = PathAction::MODIFY_ACTION;
+                    break;
+                default:
+                    qDebug() << "unhandled status" << delta->status << sha;
+                    continue;
+                }
+
+                qDebug() << "\t" << pathAction.action << pathAction.path;
+                commitPathAction.pathActions << pathAction;
+            }
+
+            git_diff_free(diff);
+        }
+        git_tree_free(parentTree);
+    }
+    git_commit_free(parentCommit);
+
+    return true;
+}
+
+bool FApplication::updateParts(const QString & repoPath, ReferenceModel * referenceModel, const CommitPathActionList & commitPathActionList) {
+    static int updatePartsCount = 0;
+    QString dt = QDateTime::currentDateTime().toString("yyyyMMddhhmmsszzz");
+
+    git_repository * repository = NULL;
+    int result = git_repository_open(&repository, repoPath.toUtf8().constData());
+    if (result) {
+        FMessageBox::warning(NULL, tr("Regenerating parts database"), tr("Unable to find parts git repository"));
+        return false;
+    }
+
+    git_object *master_treeish = NULL;
+    result = git_revparse_single(&master_treeish, repository, "master");
+    if (result) {
+        FMessageBox::warning(NULL, tr("Regenerating parts database"), tr("Unable to find master branch"));
+        git_repository_free(repository);
+        return false;
+    }
+
+    git_commit * commit = NULL;
+    git_reference * reference = NULL;
+    git_checkout_options checkout_options = GIT_CHECKOUT_OPTIONS_INIT;
+    checkout_options.checkout_strategy = GIT_CHECKOUT_SAFE;
+    foreach (CommitPathAction commitPathAction, commitPathActionList) {
+        QString branchName = QString("branch%1_%2").arg(dt).arg(updatePartsCount++);
+
+        git_oid oid;
+        result = git_oid_fromstr(&oid, commitPathAction.sha.toUtf8().constData());
+        if (result) {
+            FMessageBox::warning(NULL, tr("Regenerating parts database"), tr("Commit failure (1)"));
+            break;
+        }
+
+        result = git_commit_lookup(&commit, repository, &oid);
+        if (result) {
+            FMessageBox::warning(NULL, tr("Regenerating parts database"), tr("Commit failure (2)"));
+            break;
+        }
+
+        result = git_branch_create(&reference, repository, branchName.toUtf8().constData(), commit, true);
+        if (result) {
+            FMessageBox::warning(NULL, tr("Regenerating parts database"), tr("Branch failure (1)"));
+            break;
+        }
+
+        git_commit_free(commit);
+        commit = NULL;
+
+        git_object *treeish = NULL;
+        result = git_revparse_single(&treeish, repository, branchName.toUtf8().constData());
+        if (result) {
+            FMessageBox::warning(NULL, tr("Regenerating parts database"), tr("Branch failure (2)"));
+            break;
+        }
+
+        result = git_checkout_tree(repository, treeish, &checkout_options);
+        git_object_free(treeish);
+        if (result) {
+            FMessageBox::warning(NULL, tr("Regenerating parts database"), tr("Branch failure (3)"));
+            break;
+        }
+
+        // must also reset HEAD
+        result = git_checkout_head(repository, &checkout_options);
+        if (result) {
+            FMessageBox::warning(NULL, tr("Regenerating parts database"), tr("Branch failure (4)"));
+            break;
+        }
+
+        referenceModel->updateParts(repoPath, commitPathAction);
+
+        result = git_checkout_tree(repository, master_treeish, &checkout_options);
+        if (result) {
+            FMessageBox::warning(NULL, tr("Regenerating parts database"), tr("Unfortunately the parts database is broken. Please download the fritzing application again: www.fritzing.org"));
+            break;
+        }
+
+        git_branch_delete(reference);
+        git_reference_free(reference);
+        reference = NULL;
+
+    }
+
+    git_object_free(master_treeish);
+    git_commit_free(commit);
+    git_reference_free(reference);
+    git_repository_free(repository);
+
+    return (result == 0);
 }

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+#set $ipins = int($pins)
+#set $widthin = (0.1 * ($ipins - 1)) + 0.060022
+#set $width = $widthin * 100
+#set $heightin = 0.27586
+#set $height = $heightin * 100
+#set $halfheight = ($height / 2.0) + 1.5
+<svg version="1.2" baseProfile="tiny" id="svg2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+	 width="${widthin}in" height="${heightin}in" viewBox="0 0 ${width} ${height}" xml:space="preserve">
+
+<g id="breadboard">
+ <rect width="${width}" x="0" y="0" height="24.17675" fill="#000000" id="upper" stroke-width="0" />
+ <rect width="${width}" x="0" y="22" fill="#404040" height="3.096" id="lower" stroke-width="0" />
+
+ <text id="label" x="2.5894" y="13" fill="#e6e6e6" stroke="none" font-family="Droid Sans" text-anchor="start" font-size="7.3" >${label}</text>
+
+  <circle fill="#8C8C8C" cx="${width - 5}" cy="5" r="3" stroke-width="0" />
+  <text x="${width - 5}" y="6.7" font-family="Droid Sans" text-anchor="middle" font-weight="bold" stroke-width="0" font-size="5.5" >?</text>
+
+
+  #for $pin in range($ipins)
+        #set $pinx = 1.87 + ($pin * 10.0)
+        <rect id="connector${pin}terminal" x="${pinx}" y="${height - 2}" fill="#8C8C8C" width="2.3" height="2.0"/>
+        <rect id="connector${pin}pin" x="${pinx}" y="${height - 4.25}" fill="#8C8C8C" width="2.3" height="4.25"/>
+  #end for
+        
+
+</g>
+</svg>

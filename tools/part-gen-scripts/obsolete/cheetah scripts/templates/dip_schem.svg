@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+#set $ipins = int($pins)
+#set $height = 330 + (($ipins / 2) * 300)
+#set $width = 1830
+<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" width="${width / 1000.0}in" height="${height / 1000.0}in" viewBox="0 0 ${width} ${height}" >
+<g id="schematic" >
+  <rect x="315" y="15" fill="none" width="${width - 600 - 30}" height="${height - 30}" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="30" />
+  <text id="label" x="${width / 2.0}" y="465" font-family="Droid Sans" stroke="none" fill="#000000" text-anchor="middle" font-size="235" >${label}</text>
+  #for $pin in range($ipins / 2)
+  #set $incpin = $pin + 1
+  #set $ly = 15 + ($incpin * 300)
+  <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="30" x1="15" y1="${ly}" x2="300" y2="${ly}"  />
+  <rect x="0" y="${300 * incpin}" fill="none" width="300" height="30" id="connector${pin}pin" stroke-width="0" />
+  <rect x="0" y="${300 * incpin}" fill="none" width="30" height="30" id="connector${pin}terminal" stroke-width="0" />
+  <text id="label${pin}" x="390" y="${(300 * incpin) + 50}" font-family="Droid Sans" stroke="none" fill="#000000" text-anchor="start" font-size="130" >${pin + 1}</text>
+
+  <line fill="none" stroke="#000000" stroke-linejoin="round" stroke-linecap="round" stroke-width="30" x1="${width - 315}" y1="${ly}" x2="${width - 15}" y2="${ly}"  />
+  <rect x="${width - 300}" y="${300 * incpin}" fill="none" width="300" height="30" id="connector${ipins - 1 - pin}pin" stroke-width="0" />
+  <rect x="${width}" y="${300 * incpin}" fill="none" width="30" height="30" id="connector${ipins - 1 - pin}terminal" stroke-width="0" />
+  <text id="label${ipins - 1 - pin}" x="${width - 390}" y="${(300 * incpin) + 50}" font-family="Droid Sans" stroke="none" fill="#000000" text-anchor="end" font-size="130" >${ipins - pin}</text>
+  #end for
+</g>
+</svg>

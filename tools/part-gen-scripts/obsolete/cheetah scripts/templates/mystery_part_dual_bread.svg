@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+#set $ipins = int($pins)
+#set $halfpins = $ipins / 2
+#set $widthin = (0.1 * ($halfpins - 1)) + 0.060022
+#set $width = $widthin * 100
+#set $heightin = float($pitch) + 0.02
+#set $height = $heightin * 100
+#set $halfheight = ($height / 2.0) + 1.5
+#set $toppinheight = 2.5
+#set $dt = (0 if $pitch != '0.1' else 2)
+#set $h2 = (($height / 2.0) if $pitch != '0.1' else 8.0 )   
+<svg version="1.2" baseProfile="tiny" id="svg2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+	 width="${widthin}in" height="${heightin}in" viewBox="0 0 ${width} ${height}" xml:space="preserve">
+
+<g id="breadboard">
+
+  #for $pin in range($halfpins)
+        #set $pinx = 1.87 + ($pin * 10.0)
+        <rect id="connector${ipins - pin - 1}terminal" x="${pinx}" y="1" fill="#8C8C8C" width="2.3" height="0"/>
+        <rect id="connector${ipins - pin - 1}pin" x="${pinx}" y="0" fill="#8C8C8C" width="2.3" height="${toppinheight + 1}"/>
+  #end for
+
+ <rect width="${width}" x="0" y="${toppinheight}" height="${height - 5.5}" fill="#000000" id="upper" stroke-width="0" />
+ <rect width="${width}" x="0" y="${height - 5.5}" fill="#404040" height="3.096" id="lower" stroke-width="0" />
+
+ <text id="label" x="2.5894" y="${h2}" fill="#e6e6e6" stroke="none" font-family="Droid Sans" text-anchor="start" font-size="7.3" >${label}</text>
+
+  <circle fill="#8C8C8C" cx="${width - 5}" cy="${toppinheight + 5 - dt}" r="3" stroke-width="0" />
+  <text x="${width - 5}" y="${toppinheight + 6.7 - dt}" font-family="Droid Sans" text-anchor="middle" font-weight="bold" stroke-width="0" font-size="5.5" >?</text>
+
+
+  #for $pin in range($halfpins)
+        #set $pinx = 1.87 + ($pin * 10.0)
+        <rect id="connector${pin}terminal" x="${pinx}" y="${height - 1}" fill="#8C8C8C" width="2.3" height="0"/>
+        <rect id="connector${pin}pin" x="${pinx}" y="${height - 4.25}" fill="#8C8C8C" width="2.3" height="4.25"/>
+  #end for
+        
+
+</g>
+</svg>

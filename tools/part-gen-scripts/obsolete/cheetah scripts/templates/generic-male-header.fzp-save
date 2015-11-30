@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+#set $fpitch = float($pitch)
+#set $mils = int($fpitch * 1000)
+<module fritzingVersion="0.2.2.b.03.04.2550" moduleId="$uuid">
+    <version>2</version>
+    <author>Fritzing Part-o-matic</author>
+    <title>Generic male header - $pins pins</title>
+    <label>J</label>
+    <date>$date</date>
+    <tags></tags>
+    <properties>
+        <property name="family">Pin Header</property>
+        <property name="Pins">$pins</property>
+        <property name="Form">&#9794; (male)</property>
+        <property name="Pin Spacing">${fpitch}in (${25.4 * fpitch}mm)</property>
+    </properties>
+    <description>Generic male header</description>
+    <views>
+        <iconView>
+            <layers image="icon/generic_male_header.svg">
+                <layer layerId="icon"></layer>
+            </layers>
+        </iconView>
+        <breadboardView>
+#set $bread_suffix = '_'+$bread_unique if not $gen_to_core else ''
+            <layers image="breadboard/generic_male_pin_header_${pins}_${mils}mil_bread.svg">
+                <layer layerId="breadboard"></layer>
+            </layers>
+        </breadboardView>
+        <schematicView fliphorizontal="true" >
+#set $schem_suffix = '_'+$schem_unique if not $gen_to_core else ''
+            <layers image="schematic/generic_male_pin_header_${pins}_${mils}mil_schem.svg">
+                <layer layerId="schematic"></layer>
+            </layers>
+        </schematicView>
+        <pcbView>
+            <layers image="pcb/jumper_${pins}_${mils}mil_pcb.svg">
+                <layer layerId="copper0"></layer>
+                <layer layerId="silkscreen"></layer>
+            </layers>
+        </pcbView>
+    </views>
+    <connectors>
+#for $pin in range(int($pins))
+  #set $pindex = $pin + 1
+        <connector id="connector$pin" type="male" name="pin$pindex">
+            <description>Pin $pindex</description>
+            <views>
+                <breadboardView>
+                    <p layer="breadboard" svgId="connector${pin}pin" terminalId="connector${pin}terminal"></p>
+                </breadboardView>
+                <schematicView>
+                    <p layer="schematic" svgId="connector${pin}pin" terminalId="connector${pin}terminal"></p>
+                </schematicView>
+                <pcbView>
+                    <p layer="copper0" svgId="connector${pin}pin"></p>
+                </pcbView>
+            </views>
+        </connector>
+#end for
+    </connectors>
+</module>

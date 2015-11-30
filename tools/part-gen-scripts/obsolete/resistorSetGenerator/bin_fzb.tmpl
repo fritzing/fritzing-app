@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module fritzingVersion="0.1.b.12.12.1810">
+    <title>$title</title>
+    <instances>
+#for $r in $resistors
+        <instance moduleIdRef="$r.moduleID" path="$r.filepath">
+            <views>
+                <iconView layer="icon">
+                    <geometry z="-1" x="-1" y="-1"></geometry>
+                </iconView>
+            </views>
+        </instance>
+#end for
+    </instances>
+</module>

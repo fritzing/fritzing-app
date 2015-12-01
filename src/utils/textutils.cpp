@@ -41,6 +41,7 @@ $Date: 2013-04-22 23:44:56 +0200 (Mo, 22. Apr 2013) $
 #include <QUrl>
 #include <QUuid>
 #include <QCryptographicHash>
+#include <QDebug>
 
 #include <qmath.h>
 #include <qnumeric.h>
@@ -1651,16 +1652,16 @@ QSizeF TextUtils::parseForWidthAndHeight(const QString & svg)
     return parseForWidthAndHeight(svg, viewBox, false);
 }
 
-QString TextUtils::parseForModuleID(const QString & fzp)
+QString TextUtils::parseForModuleID(const QString & fzpXmlString)
 {
-	QXmlStreamReader streamReader(fzp);
+    QXmlStreamReader streamReader(fzpXmlString);
     streamReader.setNamespaceProcessing(false);
 
-	while (!streamReader.atEnd()) {
+    while (!streamReader.atEnd()) {
         switch (streamReader.readNext()) {
             case QXmlStreamReader::StartElement:
-			    if (streamReader.name().toString().compare("module") == 0) {
-				    return streamReader.attributes().value("moduleId").toString();
+                if (streamReader.name().toString().compare("module") == 0) {
+                    return streamReader.attributes().value("moduleId").toString();
                 }
                 break;
             default:
@@ -1669,6 +1670,32 @@ QString TextUtils::parseForModuleID(const QString & fzp)
     }
 
     return "";
+}
+
+QString TextUtils::parseFileForModuleID(const QString & fzpPath)
+{
+    QString moduleId;
+    QFile file(fzpPath);
+    if (!file.open(QFile::ReadOnly)) return moduleId;
+
+    QXmlStreamReader streamReader(&file);
+    streamReader.setNamespaceProcessing(false);
+
+    while (!streamReader.atEnd()) {
+        switch (streamReader.readNext()) {
+            case QXmlStreamReader::StartElement:
+                if (streamReader.name().toString().compare("module") == 0) {
+                    file.close();
+                    return streamReader.attributes().value("moduleId").toString();
+                }
+                break;
+            default:
+                break;
+        }
+    }
+
+    file.close();
+    return moduleId;
 }
 
 QSizeF TextUtils::parseForWidthAndHeight(const QString & svg, QRectF & viewBox, bool getViewBox)

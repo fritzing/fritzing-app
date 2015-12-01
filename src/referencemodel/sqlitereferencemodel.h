@@ -64,8 +64,6 @@ class SqliteReferenceModel : public ReferenceModel {
 		bool lastWasExactMatch();
         void setSha(const QString & sha);
         const QString & sha() const;
-        void updateParts(const QString &path, const CommitPathAction &);
-
 
 	protected:
 		void initParts(bool dbExists);

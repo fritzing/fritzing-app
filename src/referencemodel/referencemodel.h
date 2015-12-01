@@ -30,24 +30,6 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 
 #include "../model/palettemodel.h"
 
-struct PathAction {
-    enum Action {
-        ADD_ACTION,
-        MODIFY_ACTION,
-        DELETE_ACTION
-    };
-
-    QString path;
-    Action action;
-};
-
-struct CommitPathAction {
-    QString sha;
-    QList<PathAction> pathActions;
-};
-
-typedef QList<CommitPathAction> CommitPathActionList;
-
 class ReferenceModel : public PaletteModel {
 	Q_OBJECT
 	public:
@@ -72,7 +54,6 @@ class ReferenceModel : public PaletteModel {
 		virtual bool lastWasExactMatch() = 0;
         virtual void setSha(const QString & sha) = 0;
         virtual const QString & sha() const = 0;
-        virtual void updateParts(const QString &path, const CommitPathAction &) = 0;
 
 };
 

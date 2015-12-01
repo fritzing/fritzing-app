@@ -43,7 +43,6 @@ $Date: 2013-04-07 12:14:50 +0200 (So, 07. Apr 2013) $
 #include "../connectors/busshared.h"
 #include "../utils/folderutils.h"
 #include "../utils/fmessagebox.h"
-#include "../lib/sqlite3/sqlite3.h"
 #include "../utils/textutils.h"
 
 
@@ -172,6 +171,18 @@ bool SqliteReferenceModel::loadFromDB(const QString & databaseName)
 {
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE", "temporary");
 	db.setDatabaseName(databaseName);
+
+    /*
+    QVariant v = m_database.driver()->handle();
+    if (v.isValid() && qstrcmp(v.typeName(), "sqlite3*") == 0) {
+        // v.data() returns a pointer to the handle
+        sqlite3 *handle = *static_cast<sqlite3 **>(v.data());
+        if (handle != 0) { // check that it is not NULL
+            const char * message = sqlite3_errmsg(handle);
+            qDebug() << "testing sqlite3" << message;
+        }
+    }
+    */
 
     m_swappingEnabled = loadFromDB(m_database, db);
     if (db.isOpen()) db.close();
@@ -1419,39 +1430,3 @@ bool SqliteReferenceModel::removex(qulonglong id, const QString & tableName, con
     return result;
 }
 
-
-void SqliteReferenceModel::updateParts(const QString & path, const CommitPathAction & commitPathAction) {
-
-    /*
-    QVariant v = m_database.driver()->handle();
-    if (v.isValid() && qstrcmp(v.typeName(), "sqlite3*") == 0) {
-        // v.data() returns a pointer to the handle
-        sqlite3 *handle = *static_cast<sqlite3 **>(v.data());
-        if (handle != 0) { // check that it is not NULL
-            const char * message = sqlite3_errmsg(handle);
-            qDebug() << "testing sqlite3" << message;
-        }
-    }
-    */
-
-    QDir dir(path);
-    foreach (PathAction pathAction, commitPathAction.pathActions) {
-        if (!pathAction.path.endsWith(".fzp")) continue;
-
-        QString fzpPath = dir.absoluteFilePath(pathAction.path);
-        QString moduleId = TextUtils::parseForModuleID(fzpPath);
-        if (moduleId.isEmpty()) continue;
-
-        switch (pathAction.action) {
-        case PathAction::ADD_ACTION:
-            addPart(fzpPath, true, false);
-            break;
-        case PathAction::MODIFY_ACTION:
-            reloadPart(fzpPath, moduleId);
-            break;
-        case PathAction::DELETE_ACTION:
-            removePart(moduleId);
-            break;
-        }
-    }
-}

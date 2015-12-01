@@ -1835,12 +1835,7 @@ QList<ModelPart*> MainWindow::moveToPartsFolder(QDir &unzipDir, MainWindow* mw, 
     QList<QFileInfo> partEntryInfoList = unzipDir.entryInfoList(namefilters);
 
     if (importingSinglePart && partEntryInfoList.count() > 0) {
-        // TODO use a stream reader
-        QFile file(partEntryInfoList[0].absoluteFilePath());
-        file.open(QFile::ReadOnly);
-        QString fzp = file.readAll();
-        file.close();
-        QString moduleID = TextUtils::parseForModuleID(fzp);
+        QString moduleID = TextUtils::parseFileForModuleID(partEntryInfoList[0].absoluteFilePath());
         if (!moduleID.isEmpty() && m_referenceModel->retrieveModelPart(moduleID) != NULL) {
             throw tr("There is already a part with id '%1' loaded into Fritzing.").arg(moduleID);
         }

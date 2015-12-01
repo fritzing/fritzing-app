@@ -27,8 +27,6 @@
 HEADERS += \
     src/referencemodel/sqlitereferencemodel.h \
     src/referencemodel/referencemodel.h \
-    src/lib/sqlite3/sqlite3.h
 
 SOURCES += \
     src/referencemodel/sqlitereferencemodel.cpp \
-    src/lib/sqlite3/sqlite3.c

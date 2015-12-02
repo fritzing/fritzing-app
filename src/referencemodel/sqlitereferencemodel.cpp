@@ -923,7 +923,7 @@ bool SqliteReferenceModel::insertPart(ModelPart * modelPart, bool fullLoad) {
             }
 
             if (bail) {
-                DebugDialog::debug(QString("part path not in parts:%1").arg(path));
+                DebugDialog::debug(QString("part path not in parts:%1 %2 %3").arg(path).arg(prefix).arg(fullLoad));
                 return true;
             }
         }

@@ -164,6 +164,13 @@ else {
 INCLUDEPATH += ../libgit2/include
 LIBGIT2LIB = ../libgit2-build
 win32 {
+    contains(QMAKE_TARGET.arch, x86_64) {
+            LIBGIT2LIB = $${LIBGIT2LIB}64
+    }
+    !contains(QMAKE_TARGET.arch, x86_64) {
+            LIBGIT2LIB = $${LIBGIT2LIB}32
+    }
+
     exists($$LIBGIT2LIB/git2.lib) {
         message("found libgit2 library")
     }

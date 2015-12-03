@@ -8,9 +8,12 @@ echo "NOTE: Don't forget to set this script's QT_HOME variable"
 echo "NOTE: Execute this script from outside the fritzing-app folder"
 echo ""
 
-QT_HOME="/home/ubuntu/Qt5.2.1/5.2.1/gcc"
+QT_HOME="/home/jonathan/Qt/5.5/gcc_64"
 #QT_HOME="/home/vuser/Qt5.2.1/5.2.1/gcc_64" # 64bit version
 #QT_HOME="~/Qt5.2.1/5.2.1/gcc" # doesn't work for some reason
+
+#define boost_PATH if BOOST is not installed, but you have simply downloaded BOOST
+BOOST_PATH=/home/jonathan/fritzing/github/fritzing-app/src/lib/boost_1_59_0
 
 if [ "$1" = "" ]
 then
@@ -19,13 +22,19 @@ then
 fi
 
 
-PKG_OK=$(dpkg-query -W --showformat='${Status}\n' libboost-dev)
-if [ "`expr index "$PKG_OK" installed`" -gt 0 ]
+if [ -d "$BOOST_PATH" ]
 then
-  echo "using installed boost library"
+    echo "using boost from $BOOST_PATH"
 else
-  echo "please install libboost-dev"
-  exit
+    PKG_OK=$(dpkg-query -W --showformat='${Status}\n' libboost-dev)
+    if [ "`expr index "$PKG_OK" installed`" -gt 0 ]
+    then
+        echo "using installed boost library: WARNING BOOST 1.54 HAS A BUG THAT BREAKS FRITZING"
+    else
+        echo "please install libboost-dev or set BOOST_PATH script variable"
+        echo
+        exit
+    fi
 fi
 
 PKG_OK=$(dpkg-query -W --showformat='${Status}\n' libquazip-dev)
@@ -39,14 +48,19 @@ else
 fi
 
 compile_folder="build-$arch_aux"
-#svn export http://fritzing.googlecode.com/svn/trunk/fritzing $compile_folder
-git clone --recursive https://github.com/fritzing/fritzing-app $compile_folder
-cd $compile_folder/parts
-git submodule update --init --recursive
-git checkout master
-cd ..
+git clone https://github.com/fritzing/fritzing-app $compile_folder
+cd $compile_folder
+
+if [ -d "$BOOST_PATH" ]
+then
+    cp -r $BOOST_PATH/ ./src/lib
+fi
+
+echo "remove git checkout download-new-parts and restore git clone --depth 1"
+git checkout download-new-parts
+
 cd src/lib
-rm -rf boost*				# depend on linux boost installation 
+
 if [ "$quazip" == 'QUAZIP_INSTALLED' ]
 then
   rm -rf quazip*
@@ -54,21 +68,11 @@ fi
 
 cd $current_dir
 
-#let's define some variables that we'll need to in the future
+#let's define some variables that we'll need to use in the future
 relname=$1  #`date +%Y.%m.%d`
 
 if [ "$arch_aux" == 'x86_64' ] ; then
 	arch='AMD64'
-	# only creates the source tarball, when running on the 64 platform
-	tarball_folder="fritzing-$relname.source"
-	echo "making source tarball: $tarball_folder"
-	cp -rf $compile_folder $tarball_folder
-	rm -rf $tarball_folder/FritzingInfo.plist
-	rm -rf $tarball_folder/tools/fixfz
-	tar -cjf ./$tarball_folder.tar.bz2 $tarball_folder
-	rm -rf $tarball_folder
-	echo "done with source tarball: $tarball_folder"
-
 	else arch='i386'
 fi
 
@@ -83,14 +87,10 @@ echo "making release folder: $release_folder"
 mkdir ../$release_folder
 
 echo "copying release files"
-cp -rf bins/ parts/ sketches/ help/ pdb/ Fritzing Fritzing.sh Fritzing.1 fritzing.desktop fritzing.rc fritzing.appdata.xml readme.md LICENSE.CC-BY-SA LICENSE.GPL2 LICENSE.GPL3 ../$release_folder/
+cp -rf  sketches/ help/ Fritzing Fritzing.sh Fritzing.1 fritzing.desktop fritzing.rc fritzing.appdata.xml readme.md LICENSE.CC-BY-SA LICENSE.GPL2 LICENSE.GPL3 ../$release_folder/
 cd ../$release_folder
 
-echo "move parts into pdb folder - TEMPORARY WORKAROUND"
-mv parts/contrib/* pdb/contrib/
-mv parts/core/* pdb/core/
-mv parts/obsolete/* pdb/obsolete/
-mv parts/user/* pdb/user/
+git clone --depth 1 https://github.com/fritzing/fritzing-parts.git
 
 echo "making library folders"
 mkdir lib
@@ -102,11 +102,7 @@ mkdir lib/platforms
 cd lib
 echo "copying libraries"
 
-cp $QT_HOME/lib/libicudata.so.51 $QT_HOME/lib/libicui18n.so.51 $QT_HOME/lib/libicuuc.so.51 $QT_HOME/lib/libicudata.so.5 $QT_HOME/lib/libQt5Concurrent.so.5 $QT_HOME/lib/libQt5Core.so.5 $QT_HOME/lib/libQt5DBus.so.5 $QT_HOME/lib/libQt5Gui.so.5 $QT_HOME/lib/libQt5Network.so.5 $QT_HOME/lib/libQt5SerialPort.so.5 $QT_HOME/lib/libQt5PrintSupport.so.5 $QT_HOME/lib/libQt5Sql.so.5 $QT_HOME/lib/libQt5Svg.so.5  $QT_HOME/lib/libQt5Xml.so.5 $QT_HOME/lib/libQt5Widgets.so.5 $QT_HOME/lib/libQt5XmlPatterns.so.5 .
-
-mv ../Fritzing .  				     # hide the executable in the lib folder
-mv ../Fritzing.sh ../Fritzing   		# rename Fritzing.sh to Fritzing
-chmod +x ../Fritzing
+cp $QT_HOME/lib/libicudata.so.* $QT_HOME/lib/libicui18n.so.* $QT_HOME/lib/libicuuc.so.* $QT_HOME/lib/libQt5Concurrent.so.5 $QT_HOME/lib/libQt5Core.so.5 $QT_HOME/lib/libQt5DBus.so.5 $QT_HOME/lib/libQt5Gui.so.5 $QT_HOME/lib/libQt5Network.so.5 $QT_HOME/lib/libQt5SerialPort.so.5 $QT_HOME/lib/libQt5PrintSupport.so.5 $QT_HOME/lib/libQt5Sql.so.5 $QT_HOME/lib/libQt5Svg.so.5  $QT_HOME/lib/libQt5Xml.so.5 $QT_HOME/lib/libQt5Widgets.so.5 $QT_HOME/lib/libQt5XmlPatterns.so.5 .
 
 echo "copying plugins"
 cp $QT_HOME/plugins/imageformats/libqjpeg.so imageformats
@@ -118,7 +114,21 @@ cp ../../$compile_folder/translations/ -r ../
 rm ../translations/*.ts  			# remove translation xml files, since we only need the binaries in the release
 find ../translations -name "*.qm" -size -128c -delete   # delete empty translation binaries
 
+mv ../Fritzing .  				# hide the executable in the lib folder
+mv ../Fritzing.sh ../Fritzing   		# rename Fritzing.sh to Fritzing
+chmod +x ../Fritzing
+
+PWD=$(pwd)
+WD=$(dirname $PWD)
+echo "working dir $WD"
+
+LD_LIBRARY_PATH="$PWD"
+export LD_LIBRARY_PATH
+./Fritzing -db "$WD/fritzing-parts/parts.db" -pp "$WD/fritzing-parts" -f "$WD"
+
 cd ../../
+
+exit
 
 echo "compressing...."
 tar -cjf ./$release_folder.tar.bz2 $release_folder

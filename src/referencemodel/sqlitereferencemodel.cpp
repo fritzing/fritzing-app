@@ -207,8 +207,17 @@ bool SqliteReferenceModel::loadFromDB(QSqlDatabase & keep_db, QSqlDatabase & db)
     if (!opened) {
         return false;
     }
+
+    m_sha = "";
+    QSqlQuery  query = db.exec("SELECT sha FROM lastcommit where id=0");
+    debugError(query.isActive(), query);
+    if (query.isActive()) {
+        if (query.next()) {
+            m_sha = query.value(0).toString();
+        }
+    }
  
-    QSqlQuery query = db.exec("SELECT COUNT(*) FROM parts");
+    query = db.exec("SELECT COUNT(*) FROM parts");
     debugError(query.isActive(), query);
     if (!query.isActive() || !query.next()) return false;
 
@@ -489,14 +498,6 @@ bool SqliteReferenceModel::loadFromDB(QSqlDatabase & keep_db, QSqlDatabase & db)
                     modelPart->modelPartShared()->addSubpart(subModelPart->modelPartShared());
                 }
             }
-        }
-    }
-
-    query = db.exec("SELECT sha FROM lastcommit where id=0");
-    debugError(query.isActive(), query);
-    if (query.isActive()) {
-        if (query.next()) {
-            m_sha = query.value(0).toString();
         }
     }
 

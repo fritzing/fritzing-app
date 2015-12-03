@@ -154,21 +154,35 @@ RC_FILE = fritzing.rc
 RESOURCES += phoenixresources.qrc
 
 # Fritzing is now using libgit2
+
 LIBGIT2INCLUDE = ../libgit2/include
 exists($$LIBGIT2INCLUDE/git2.h) {
     message("found libgit2 include path")
 }
 else {
+    message("Fritzing now uses libgit2")
+    message("Build it from the repo at https://github.com/libgit2")
+    message("Your copy of the libgit2 repo should be at the same directory level as fritzing-app")
+    message("As of linux 14.04 apt-get install libgit2-dev is too out of date")
+    message("On windows, cmake--the build tool for libgit2--doesn't quite work with the usual defaults")
+    message("You must use the visual studio command prompt for 32-bit or 64-bit architecture, then:")
+    message("   mkdir build32 (build64)")
+    message("   cd build32 (build64)")
+    message("   cmake.exe -G \"Visual Studio 12 2013\" ..")
+    message("   cmake.exe --build .  --config Release")
+
     error("libgit2 include path not found in $$LIBGIT2INCLUDE")
 }
-INCLUDEPATH += ../libgit2/include
-LIBGIT2LIB = ../libgit2-build
+
+INCLUDEPATH += $$LIBGIT2INCLUDE
+
+
 win32 {
     contains(QMAKE_TARGET.arch, x86_64) {
-            LIBGIT2LIB = $${LIBGIT2LIB}64
+            LIBGIT2LIB = ../libgit2/build64/Release
     }
     !contains(QMAKE_TARGET.arch, x86_64) {
-            LIBGIT2LIB = $${LIBGIT2LIB}32
+            LIBGIT2LIB = ../libgit2/build32/Release
     }
 
     exists($$LIBGIT2LIB/git2.lib) {
@@ -177,11 +191,21 @@ win32 {
     else {
         error("libgit2 library not found in $$LIBGIT2LIB")
     }
+}
 
-    LIBS += -L$$LIBGIT2LIB -lgit2
+!win32 {
+    LIBGIT2LIB = ../libgit2/build
+    exists($$LIBGIT2LIB/libgit2.so) {
+        message("found libgit2 library")
+    }
+    else {
+        error("libgit2 library not found in $$LIBGIT2LIB")
+    }
+
 }
-else {
-}
+
+LIBS += -L$$LIBGIT2LIB -lgit2
+
 
 include(pri/kitchensink.pri)
 include(pri/mainwindow.pri)

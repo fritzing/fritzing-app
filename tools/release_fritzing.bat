@@ -57,13 +57,15 @@ echo.
 cd /d %~dp0
 cd ..
 
-set LIBGIT2=%~dp0..\..\libgit2-build%2
+set LIBGIT2=%~dp0..\..\libgit2\build%2
 
 rem set environment variable for qmake phoenix.pro
 set RELEASE_SCRIPT="release_script"	
 
 
 %QMAKE% -o Makefile phoenix.pro %arch%
+
+exit /b
 echo building fritzing
 nmake release
 
@@ -130,9 +132,9 @@ copy .\readme.md %DESTDIR%\deploy\readme.md
 copy .\LICENSE.GPL2 %DESTDIR%\deploy\LICENSE.GPL2
 copy .\LICENSE.GPL3 %DESTDIR%\deploy\LICENSE.GPL3
 copy .\LICENSE.CC-BY-SA %DESTDIR%\deploy\LICENSE.CC-BY-SA
+
 echo removing empty translation files
 echo.
-
 del %DESTDIR%\deploy\translations\*.ts
 
 set CURRENTDIR=%cd%

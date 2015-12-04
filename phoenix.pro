@@ -32,6 +32,7 @@
 
 
 CONFIG += debug_and_release
+
 win32 {
 # release build using msvc 2010 needs to use Multi-threaded (/MT) for the code generation/runtime library option
 # release build using msvc 2010 needs to add msvcrt.lib;%(IgnoreSpecificDefaultLibraries) to the linker/no default libraries option
@@ -157,36 +158,32 @@ RESOURCES += phoenixresources.qrc
 
 LIBGIT2INCLUDE = ../libgit2/include
 exists($$LIBGIT2INCLUDE/git2.h) {
-    message("found libgit2 include path")
+    message("found libgit2 include path at $$LIBGIT2INCLUDE")
 }
 else {
     message("Fritzing now uses libgit2")
     message("Build it from the repo at https://github.com/libgit2")
     message("Your copy of the libgit2 repo should be at the same directory level as fritzing-app")
     message("As of linux 14.04 apt-get install libgit2-dev is too out of date")
-    message("On windows, cmake--the build tool for libgit2--doesn't quite work with the usual defaults")
-    message("You must use the visual studio command prompt for 32-bit or 64-bit architecture, then:")
-    message("   mkdir build32 (build64)")
-    message("   cd build32 (build64)")
-    message("   cmake.exe -G \"Visual Studio 12 2013\" ..")
-    message("   cmake.exe --build .  --config Release")
+    message("On windows, cmake--the build tool for libgit2--doesn't work from the VS command-line with the usual defaults")
+    message("So easiest to build the library using QtCreator")
+    message("but redirect the Qt default build locations to libgit2/build32 and libgit2/build64")
 
     error("libgit2 include path not found in $$LIBGIT2INCLUDE")
 }
 
 INCLUDEPATH += $$LIBGIT2INCLUDE
 
-
 win32 {
     contains(QMAKE_TARGET.arch, x86_64) {
-            LIBGIT2LIB = ../libgit2/build64/Release
+            LIBGIT2LIB = ../libgit2/build64
     }
-    !contains(QMAKE_TARGET.arch, x86_64) {
-            LIBGIT2LIB = ../libgit2/build32/Release
+    else {
+            LIBGIT2LIB = ../libgit2/build32
     }
 
     exists($$LIBGIT2LIB/git2.lib) {
-        message("found libgit2 library")
+        message("found libgit2 library in $$LIBGIT2LIB")
     }
     else {
         error("libgit2 library not found in $$LIBGIT2LIB")
@@ -196,7 +193,7 @@ win32 {
 !win32 {
     LIBGIT2LIB = ../libgit2/build
     exists($$LIBGIT2LIB/libgit2.so) {
-        message("found libgit2 library")
+        message("found libgit2 library in $$LIBGIT2LIB")
     }
     else {
         error("libgit2 library not found in $$LIBGIT2LIB")
@@ -205,7 +202,6 @@ win32 {
 }
 
 LIBS += -L$$LIBGIT2LIB -lgit2
-
 
 include(pri/kitchensink.pri)
 include(pri/mainwindow.pri)
@@ -241,3 +237,4 @@ TARGET = Fritzing
 TEMPLATE = app
 
 
+message("libs $$LIBS")

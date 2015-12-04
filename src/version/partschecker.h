@@ -27,29 +27,13 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 #ifndef PARTSCHECKER_H
 #define PARTSCHECKER_H
 
-#include <QObject>
-#include <QNetworkAccessManager>
+#include <QString>
 
-
-class PartsChecker : public QObject
+class PartsChecker
 {
-    Q_OBJECT
 public:
-    explicit PartsChecker(QObject *parent = 0);
-
-    void start();
-    void stop();
-
-protected:
-
-signals:
-
-protected slots:
-
-
-protected:
-
-
+    static QString getSha(const QString & repoPath);
+    static bool newPartsAvailable(const QString &repoPath, const QString &shaFromDataBase, bool atUserRequest);
 };
 
 #endif // PARTSCHECKER_H

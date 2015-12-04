@@ -154,7 +154,7 @@ void PaletteModel::loadParts(bool dbExists) {
 	}
     QDir dir2(FolderUtils::getUserDataStorePath(""));
     if (!m_fullLoad) {
-        // don't include local parts
+        // don't include local parts when doing full load
         countParts(dir2, nameFilters, totalPartCount);
     }
 

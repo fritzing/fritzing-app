@@ -32,8 +32,7 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 #include <QLabel>
 #include <QXmlStreamReader>
 #include <QNetworkReply>
-
-#include "partschecker.h"
+#include <QDialogButtonBox>
 
 class UpdateDialog : public QDialog {
 	Q_OBJECT
@@ -44,6 +43,7 @@ public:
 
 	void setVersionChecker(class VersionChecker *);
 	void setAtUserRequest(bool);
+    void setRepoPath(const QString & repoPath, const QString & shaFromDataBase);
 
 signals:
     void enableAgainSignal(bool enable);
@@ -55,19 +55,21 @@ protected slots:
     void jsonPartsErrorSlot(QString error);
     void httpPartsErrorSlot(QString error);
 	void stopClose();
+    void getParts();
 
 protected:
-	void setAvailableReleases(const QList<struct AvailableRelease *> & availableReleases); 
+    bool setAvailableReleases(const QList<struct AvailableRelease *> & availableReleases);
     void handleError();
     void handlePartsError(const QString & error);
     QString genTable(const QString & title, struct AvailableRelease *);
 
 protected:
 	class VersionChecker * m_versionChecker;
-    PartsChecker * m_partsChecker;
 	bool m_atUserRequest;
 	QLabel * m_feedbackLabel;
-
+    QDialogButtonBox * m_buttonBox;
+    QString m_repoPath;
+    QString m_shaFromDataBase;
 };
 
 

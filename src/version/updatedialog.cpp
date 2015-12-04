@@ -31,16 +31,15 @@ $Date: 2012-06-28 00:18:10 +0200 (Do, 28. Jun 2012) $
 #include "version.h"
 #include "versionchecker.h"
 #include "../debugdialog.h"
+#include "partschecker.h"
 
 #include <QVBoxLayout>
-#include <QDialogButtonBox>
 #include <QPushButton>
 #include <QSettings>
 								
 UpdateDialog::UpdateDialog(QWidget *parent) : QDialog(parent) 
 {
 	m_versionChecker = NULL;
-    m_partsChecker = NULL;
 
 	this->setWindowTitle(QObject::tr("Check for updates"));
 
@@ -52,12 +51,14 @@ UpdateDialog::UpdateDialog(QWidget *parent) : QDialog(parent)
 
 	vLayout->addWidget(m_feedbackLabel);
 
-    QDialogButtonBox * buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok);
-	buttonBox->button(QDialogButtonBox::Ok)->setText(tr("Close"));
+    m_buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
+    m_buttonBox->button(QDialogButtonBox::Cancel)->setText(tr("Close"));
+    m_buttonBox->button(QDialogButtonBox::Ok)->setText(tr("Get parts"));
 
-    connect(buttonBox, SIGNAL(accepted()), this, SLOT(stopClose()));
+    connect(m_buttonBox, SIGNAL(rejected()), this, SLOT(stopClose()));
+    connect(m_buttonBox, SIGNAL(accepted()), this, SLOT(getParts()));
 
-	vLayout->addWidget(buttonBox);
+    vLayout->addWidget(m_buttonBox);
 
 	this->setLayout(vLayout);
 }
@@ -68,7 +69,7 @@ UpdateDialog::~UpdateDialog() {
 	}
 }
 
-void UpdateDialog::setAvailableReleases(const QList<AvailableRelease *> & availableReleases) 
+bool UpdateDialog::setAvailableReleases(const QList<AvailableRelease *> & availableReleases)
 {
 	AvailableRelease * interimRelease = NULL;
 	AvailableRelease * mainRelease = NULL;
@@ -90,10 +91,9 @@ void UpdateDialog::setAvailableReleases(const QList<AvailableRelease *> & availa
 		if (m_atUserRequest) {
 			m_feedbackLabel->setText(tr("No new versions found."));
 		}
-		return;
+        return false;
 	}
 
-	QSettings settings;
 	QString style;
 	QFile css(":/resources/styles/updatedialog.css");
 	if (css.open(QIODevice::ReadOnly)) {
@@ -103,7 +103,8 @@ void UpdateDialog::setAvailableReleases(const QList<AvailableRelease *> & availa
 
 	QString text = QString("<html><head><style type='text/css'>%1</style></head><body>").arg(style);
 			
-	if (mainRelease) {
+    QSettings settings;
+    if (mainRelease) {
 		text += genTable(tr("A new main release is available for downloading:"), mainRelease);
 		settings.setValue("lastMainVersionChecked", mainRelease->versionString);
 	}
@@ -116,8 +117,7 @@ void UpdateDialog::setAvailableReleases(const QList<AvailableRelease *> & availa
 
 	m_feedbackLabel->setText(text);
 
-	this->show();
-
+    return true;
 }
 
 
@@ -129,12 +129,7 @@ void UpdateDialog::setVersionChecker(VersionChecker * versionChecker)
         m_versionChecker = NULL;
 	}
 
-    if (m_partsChecker != NULL) {
-        m_partsChecker->stop();
-        delete m_partsChecker;
-        m_partsChecker = NULL;
-    }
-
+    m_buttonBox->button(QDialogButtonBox::Ok)->setVisible(false);
     m_feedbackLabel->setText(tr("Checking for a new release..."));
 
 	m_versionChecker = versionChecker;
@@ -146,16 +141,27 @@ void UpdateDialog::setVersionChecker(VersionChecker * versionChecker)
 }
 
 void UpdateDialog::releasesAvailableSlot() {
-    bool available = m_versionChecker->availableReleases().count() > 0;
-    setAvailableReleases(m_versionChecker->availableReleases());
+    bool available = setAvailableReleases(m_versionChecker->availableReleases());
+    if (available) {
+        this->show();
+        return;
+    }
+
+    m_feedbackLabel->setText(tr("Checking for new parts..."));
+
+    available = PartsChecker::newPartsAvailable(m_repoPath, m_shaFromDataBase, m_atUserRequest);
     if (!available) {
-        m_feedbackLabel->setText(tr("Checking for new parts..."));
-        m_partsChecker = new PartsChecker;
-        m_partsChecker->start();
-    }
-    else {
+        m_feedbackLabel->setText(tr("No new releases or new parts found"));
         emit enableAgainSignal(true);
+        return;
     }
+
+    m_feedbackLabel->setText(tr("There are new parts available."
+                               "Would you like Fritzing to download and install them?\n\n"
+                               "Note: this may take a few minutes "
+                               "and you will have to restart Fritzing."));
+    m_buttonBox->button(QDialogButtonBox::Ok)->setVisible(true);
+    this->show();
 }
 
 void UpdateDialog::httpErrorSlot(QNetworkReply::NetworkError) {
@@ -197,8 +203,8 @@ void UpdateDialog::setAtUserRequest(bool atUserRequest)
 
 void UpdateDialog::stopClose() {
 	m_versionChecker->stop();
-    if (m_partsChecker) m_partsChecker->stop();
 	this->close();
+    emit enableAgainSignal(true);
 }
 
 QString UpdateDialog::genTable(const QString & title, AvailableRelease * release) {
@@ -224,3 +230,11 @@ QString UpdateDialog::genTable(const QString & title, AvailableRelease * release
 			.arg(release->summary.replace("changelog:", "", Qt::CaseInsensitive));
 }
 
+void UpdateDialog::setRepoPath(const QString & repoPath, const QString & shaFromDataBase) {
+    m_repoPath = repoPath;
+    m_shaFromDataBase = shaFromDataBase;
+}
+
+void UpdateDialog::getParts() {
+
+}

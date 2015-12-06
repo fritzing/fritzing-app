@@ -91,9 +91,9 @@ class RegenerateDatabaseThread : public QThread
 {
     Q_OBJECT
 public:
-    RegenerateDatabaseThread(const QString & dbFileName, FileProgressDialog *fileProgressDialog, ReferenceModel *referenceModel);
+    RegenerateDatabaseThread(const QString & dbFileName, QDialog *progressDialog, ReferenceModel *referenceModel);
     const QString error() const;
-    FileProgressDialog * fileProgressDialog() const;
+    QDialog * progressDialog() const;
     ReferenceModel * referenceModel() const;
 
 protected:
@@ -102,7 +102,7 @@ protected:
 protected:
     QString m_dbFileName;
     QString m_error;
-    FileProgressDialog * m_fileProgressDialog;
+    QDialog * m_progressDialog;
     ReferenceModel * m_referenceModel;
 };
 
@@ -152,6 +152,7 @@ public slots:
     void doCommand(const QString & command, const QString & params, QString & result, int & status);
     void regeneratePartsDatabase();
     void regenerateDatabaseFinished();
+    void installNewParts();
 
 
 protected:
@@ -189,6 +190,8 @@ protected:
     QList<MainWindow *> orderedTopLevelMainWindows();
 	void cleanFzzs();
     void initServer();
+    void regeneratePartsDatabaseAux(QDialog * progressDialog);
+
 
 	enum ServiceType {
 		PanelizerService = 1,

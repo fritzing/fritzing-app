@@ -36,6 +36,8 @@ $Date: 2012-06-28 00:18:10 +0200 (Do, 28. Jun 2012) $
 #include <QPushButton>
 #include <QSettings>
 #include <QApplication>
+#include <QTimer>
+#include <QCloseEvent>
 
 
 static const int s_maxProgress = 1000;
@@ -43,6 +45,8 @@ static const int s_maxProgress = 1000;
 UpdateDialog::UpdateDialog(QWidget *parent) : QDialog(parent) 
 {
 	m_versionChecker = NULL;
+    m_doQuit = false;
+    m_doClose = true;
 
 	this->setWindowTitle(QObject::tr("Check for updates"));
 
@@ -142,7 +146,7 @@ void UpdateDialog::setVersionChecker(VersionChecker * versionChecker)
     m_progressBar->setValue(0);
     m_buttonBox->button(QDialogButtonBox::Ok)->setVisible(false);
     m_feedbackLabel->setText(tr("Checking for a new release..."));
-    m_buttonBox->setEnabled(true);
+    m_buttonBox->setEnabled(false);
 
 	m_versionChecker = versionChecker;
 	connect(m_versionChecker, SIGNAL(releasesAvailable()), this, SLOT(releasesAvailableSlot()));
@@ -155,16 +159,43 @@ void UpdateDialog::setVersionChecker(VersionChecker * versionChecker)
 void UpdateDialog::releasesAvailableSlot() {
     bool available = setAvailableReleases(m_versionChecker->availableReleases());
     if (available) {
-        this->show();
+        m_buttonBox->setEnabled(true);
+        if (!this->isVisible()) {
+            this->exec();
+        }
+        return;
+    }
+
+    bool canWrite = false;
+    QDir repoDir(m_repoPath);
+    QFile permissionTest(repoDir.absoluteFilePath("test.txt"));
+    if (permissionTest.open(QFile::WriteOnly)) {
+        qint64 count = permissionTest.write("a");
+        permissionTest.close();
+        permissionTest.remove();
+        if (count > 0) {
+            QFile db(repoDir.absoluteFilePath("parts.db"));
+            if (db.open(QFile::Append)) {
+                canWrite = true;
+                db.close();
+            }
+        }
+    }
+    if (!canWrite) {
+        m_feedbackLabel->setText(tr("Fritzing is unable to check for and update new parts. "
+                                    "If you want this functionality, please set write permission on the folder '%1'."
+                                    ));
+        m_buttonBox->setEnabled(true);
         return;
     }
 
     m_feedbackLabel->setText(tr("Checking for new parts..."));
-
+    m_doClose = false;
     available = PartsChecker::newPartsAvailable(m_repoPath, m_shaFromDataBase, m_atUserRequest, m_remoteSha);
+    m_doClose = true;
     if (!available) {
         m_feedbackLabel->setText(tr("No new releases or new parts found"));
-        emit enableAgainSignal(true);
+        m_buttonBox->setEnabled(true);
         return;
     }
 
@@ -173,7 +204,10 @@ void UpdateDialog::releasesAvailableSlot() {
                                "Note: this may take a few minutes "
                                "and you will have to restart Fritzing."));
     m_buttonBox->button(QDialogButtonBox::Ok)->setVisible(true);
-    this->show();
+    m_buttonBox->setEnabled(true);
+    if (!this->isVisible()) {
+        this->exec();
+    }
 }
 
 void UpdateDialog::httpErrorSlot(QNetworkReply::NetworkError) {
@@ -215,8 +249,20 @@ void UpdateDialog::setAtUserRequest(bool atUserRequest)
 
 void UpdateDialog::stopClose() {
 	m_versionChecker->stop();
-	this->close();
+    this->close();
     emit enableAgainSignal(true);
+}
+
+void UpdateDialog::closeEvent(QCloseEvent * event) {
+    if (!m_doClose) {
+        event->ignore();
+        return;
+    }
+
+    if (m_doQuit) {
+        QTimer::singleShot(1, Qt::PreciseTimer, qApp, SLOT(quit()));
+    }
+    QDialog::closeEvent(event);
 }
 
 QString UpdateDialog::genTable(const QString & title, AvailableRelease * release) {
@@ -248,22 +294,27 @@ void UpdateDialog::setRepoPath(const QString & repoPath, const QString & shaFrom
 }
 
 void UpdateDialog::updateParts() {
+    m_doClose = false;
+    m_buttonBox->setDisabled(true);
     m_progressBar->setValue(0);
     m_progressBar->setVisible(true);
-    m_buttonBox->setDisabled(true);
+    m_feedbackLabel->setText(tr("Downloading new parts..."));
 
     bool result = PartsChecker::updateParts(m_repoPath, m_remoteSha, this);
-    m_buttonBox->setEnabled(true);
     m_buttonBox->button(QDialogButtonBox::Ok)->setVisible(false);
-    m_progressBar->setVisible(false);
     if (!result) {
+        m_doClose = true;
+        m_progressBar->setVisible(false);
+        m_buttonBox->setEnabled(true);
         m_feedbackLabel->setText(tr("Sorry, unable to download new parts"));
         return;
     }
 
-
-
-
+    m_feedbackLabel->setText(tr("Installing new parts. This may take a few minutes..."));
+    m_progressBar->setValue(0);
+    m_progressBar->setMinimum(0);
+    m_progressBar->setMaximum(0);
+    emit installNewParts();
 }
 
 void UpdateDialog::updateProgress(double progress) {
@@ -271,3 +322,19 @@ void UpdateDialog::updateProgress(double progress) {
     qApp->processEvents();
 }
 
+void UpdateDialog::installFinished(const QString & error) {
+    m_progressBar->setVisible(false);
+    m_buttonBox->setEnabled(true);
+    if (error.isEmpty()) {
+        m_feedbackLabel->setText(tr("New parts successfully installed.\n"
+                                    "Fritzing must be restarted, so the 'Close' button will close Fritzing.\n"
+                                    "The new parts will be available when you run Fritzing again."));
+    }
+    else {
+        m_feedbackLabel->setText(tr("Sorry, unable to install new parts: %1\n"
+                                    "Fritzing must nevertheless be restarted, "
+                                    "so the 'Close' button will close Fritzing.\n").arg(error));
+    }
+
+    m_doQuit = m_doClose = true;
+}

@@ -126,6 +126,7 @@ bool SqliteReferenceModel::loadAll(const QString & databaseName, bool fullLoad, 
 	 * the same family and providing exactly the same properties set
 	 */
 
+    DebugDialog::debug("referenceModel::loadAll completed");
 	if (!m_swappingEnabled) {
         noSwappingMessage();
 	}

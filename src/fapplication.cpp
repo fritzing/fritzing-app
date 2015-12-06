@@ -291,18 +291,18 @@ void FServerThread::writeResponse(QTcpSocket * socket, int code, const QString &
 
 ////////////////////////////////////////////////////
 
-RegenerateDatabaseThread::RegenerateDatabaseThread(const QString & dbFileName, FileProgressDialog * fileProgressDialog, ReferenceModel * referenceModel) {
+RegenerateDatabaseThread::RegenerateDatabaseThread(const QString & dbFileName, QDialog * progressDialog, ReferenceModel * referenceModel) {
     m_dbFileName = dbFileName;
     m_referenceModel = referenceModel;
-    m_fileProgressDialog = fileProgressDialog;
+    m_progressDialog = progressDialog;
 }
 
 const QString RegenerateDatabaseThread::error() const {
     return m_error;
 }
 
-FileProgressDialog * RegenerateDatabaseThread::fileProgressDialog() const {
-    return m_fileProgressDialog;
+QDialog * RegenerateDatabaseThread::progressDialog() const {
+    return m_progressDialog;
 }
 
 ReferenceModel * RegenerateDatabaseThread::referenceModel() const {
@@ -1204,7 +1204,8 @@ int FApplication::startup()
 	m_updateDialog = new UpdateDialog();
     m_updateDialog->setRepoPath(FolderUtils::getPartsSubFolderPath(""), m_referenceModel->sha());
     connect(m_updateDialog, SIGNAL(enableAgainSignal(bool)), this, SLOT(enableCheckUpdates(bool)));
-	checkForUpdates(false);
+    connect(m_updateDialog, SIGNAL(installNewParts()), this, SLOT(installNewParts()));
+    checkForUpdates(false);
 
 	if (m_progressIndex >= 0) splash.showProgress(m_progressIndex, 0.875);
 
@@ -1415,7 +1416,7 @@ void FApplication::checkForUpdates(bool atUserRequest)
 	m_updateDialog->setVersionChecker(versionChecker);
 
 	if (atUserRequest) {
-		m_updateDialog->show();
+        m_updateDialog->exec();
 	}
 }
 
@@ -2022,7 +2023,7 @@ void FApplication::doCommand(const QString & command, const QString & params, QS
 			status = 500;
 			result = "local zip failure";
 		}
-	}
+    }
 }
 
 void FApplication::regeneratePartsDatabase() {
@@ -2043,16 +2044,20 @@ void FApplication::regeneratePartsDatabase() {
         return;
     }
 
-    ReferenceModel * referenceModel = new CurrentReferenceModel();
     FileProgressDialog * fileProgressDialog = new FileProgressDialog(tr("Regenerating parts database..."), 0, NULL);
     // these don't seem very accurate (i.e. when progress is at 100%, there is still a lot of work pending)
     // so we are leaving progress indeterminate at present
     //connect(referenceModel, SIGNAL(partsToLoad(int)), fileProgressDialog, SLOT(setMaximum(int)));
     //connect(referenceModel, SIGNAL(loadedPart(int,int)), fileProgressDialog, SLOT(setValue(int)));
 
+    regeneratePartsDatabaseAux(fileProgressDialog);
+}
+
+void FApplication::regeneratePartsDatabaseAux(QDialog * progressDialog) {
+    ReferenceModel * referenceModel = new CurrentReferenceModel();
     QDir dir = FolderUtils::getPartsSubFolder("");
     QString dbPath = dir.absoluteFilePath("parts.db");
-    RegenerateDatabaseThread *thread = new RegenerateDatabaseThread(dbPath, fileProgressDialog, referenceModel);
+    RegenerateDatabaseThread *thread = new RegenerateDatabaseThread(dbPath, progressDialog, referenceModel);
     connect(thread, SIGNAL(finished()), this, SLOT(regenerateDatabaseFinished()));
     FMessageBox::BlockMessages = true;
     thread->start();
@@ -2062,17 +2067,28 @@ void FApplication::regenerateDatabaseFinished() {
    RegenerateDatabaseThread * thread = qobject_cast<RegenerateDatabaseThread *>(sender());
    if (thread == NULL) return;
 
-   if (thread->error().isEmpty()) {
-        QTimer::singleShot(50, Qt::PreciseTimer, this, SLOT(quit()));
+   QDialog * progressDialog = thread->progressDialog();
+   if (progressDialog == m_updateDialog) {
+       m_updateDialog->installFinished(thread->error());
    }
    else {
-       thread->referenceModel()->deleteLater();
-       QMessageBox::warning(NULL, QObject::tr("Regenerate database failed"), thread->error());
-   }
+       if (thread->error().isEmpty()) {
+            QTimer::singleShot(50, Qt::PreciseTimer, this, SLOT(quit()));
+       }
+       else {
+           thread->referenceModel()->deleteLater();
+           QMessageBox::warning(NULL, QObject::tr("Regenerate database failed"), thread->error());
+       }
 
-   thread->fileProgressDialog()->close();
-   thread->fileProgressDialog()->deleteLater();
+       if (progressDialog) {
+           thread->progressDialog()->close();
+           thread->progressDialog()->deleteLater();
+       }
+   }
 
    thread->deleteLater();
 }
 
+void FApplication::installNewParts() {
+    regeneratePartsDatabaseAux(m_updateDialog);
+}

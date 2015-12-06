@@ -48,9 +48,11 @@ public:
 	void setAtUserRequest(bool);
     void setRepoPath(const QString & repoPath, const QString & shaFromDataBase);
     void updateProgress(double progress);
+    void installFinished(const QString & error);
 
 signals:
     void enableAgainSignal(bool enable);
+    void installNewParts();
 
 protected slots:
 	void releasesAvailableSlot();
@@ -66,6 +68,7 @@ protected:
     void handleError();
     void handlePartsError(const QString & error);
     QString genTable(const QString & title, struct AvailableRelease *);
+    void closeEvent(QCloseEvent *);
 
 protected:
 	class VersionChecker * m_versionChecker;
@@ -76,6 +79,8 @@ protected:
     QLabel * m_feedbackLabel;
     QDialogButtonBox * m_buttonBox;
     QProgressBar * m_progressBar;
+    bool m_doQuit;
+    bool m_doClose;
 };
 
 

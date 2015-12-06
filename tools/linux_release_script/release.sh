@@ -67,7 +67,7 @@ echo "cleaning translations"
 rm ./translations/*.ts  			# remove translation xml files, since we only need the binaries in the release
 find ./translations -name "*.qm" -size -128c -delete   # delete empty translation binaries
 
-git clone --depth 1 https://github.com/fritzing/fritzing-parts.git
+git clone https://github.com/fritzing/fritzing-parts.git
 
 echo "making library folders"
 mkdir lib

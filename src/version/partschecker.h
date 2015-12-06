@@ -29,11 +29,21 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 
 #include <QString>
 
+class PartsCheckerUpdateInterface {
+public:
+    // progress ranges from 0 to 1
+    virtual void updateProgress(double progress) = 0;
+};
+
 class PartsChecker
 {
 public:
     static QString getSha(const QString & repoPath);
-    static bool newPartsAvailable(const QString &repoPath, const QString &shaFromDataBase, bool atUserRequest);
+    static bool newPartsAvailable(const QString &repoPath, const QString &shaFromDataBase, bool atUserRequest, QString &remoteSha);
+    static bool updateParts(const QString & repoPath, const QString & remoteSha, PartsCheckerUpdateInterface *);
+
+protected:
+    static int doMerge(struct git_repository * repository, const QString & remoteSha);
 };
 
 #endif // PARTSCHECKER_H

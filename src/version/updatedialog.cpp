@@ -31,11 +31,14 @@ $Date: 2012-06-28 00:18:10 +0200 (Do, 28. Jun 2012) $
 #include "version.h"
 #include "versionchecker.h"
 #include "../debugdialog.h"
-#include "partschecker.h"
 
 #include <QVBoxLayout>
 #include <QPushButton>
 #include <QSettings>
+#include <QApplication>
+
+
+static const int s_maxProgress = 1000;
 								
 UpdateDialog::UpdateDialog(QWidget *parent) : QDialog(parent) 
 {
@@ -51,12 +54,18 @@ UpdateDialog::UpdateDialog(QWidget *parent) : QDialog(parent)
 
 	vLayout->addWidget(m_feedbackLabel);
 
+    m_progressBar = new QProgressBar();
+    m_progressBar->setMinimum(0);
+    m_progressBar->setMaximum(s_maxProgress);
+
+    vLayout->addWidget(m_progressBar);
+
     m_buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
     m_buttonBox->button(QDialogButtonBox::Cancel)->setText(tr("Close"));
-    m_buttonBox->button(QDialogButtonBox::Ok)->setText(tr("Get parts"));
+    m_buttonBox->button(QDialogButtonBox::Ok)->setText(tr("Update parts"));
 
     connect(m_buttonBox, SIGNAL(rejected()), this, SLOT(stopClose()));
-    connect(m_buttonBox, SIGNAL(accepted()), this, SLOT(getParts()));
+    connect(m_buttonBox, SIGNAL(accepted()), this, SLOT(updateParts()));
 
     vLayout->addWidget(m_buttonBox);
 
@@ -129,8 +138,11 @@ void UpdateDialog::setVersionChecker(VersionChecker * versionChecker)
         m_versionChecker = NULL;
 	}
 
+    m_progressBar->setVisible(false);
+    m_progressBar->setValue(0);
     m_buttonBox->button(QDialogButtonBox::Ok)->setVisible(false);
     m_feedbackLabel->setText(tr("Checking for a new release..."));
+    m_buttonBox->setEnabled(true);
 
 	m_versionChecker = versionChecker;
 	connect(m_versionChecker, SIGNAL(releasesAvailable()), this, SLOT(releasesAvailableSlot()));
@@ -149,7 +161,7 @@ void UpdateDialog::releasesAvailableSlot() {
 
     m_feedbackLabel->setText(tr("Checking for new parts..."));
 
-    available = PartsChecker::newPartsAvailable(m_repoPath, m_shaFromDataBase, m_atUserRequest);
+    available = PartsChecker::newPartsAvailable(m_repoPath, m_shaFromDataBase, m_atUserRequest, m_remoteSha);
     if (!available) {
         m_feedbackLabel->setText(tr("No new releases or new parts found"));
         emit enableAgainSignal(true);
@@ -235,6 +247,27 @@ void UpdateDialog::setRepoPath(const QString & repoPath, const QString & shaFrom
     m_shaFromDataBase = shaFromDataBase;
 }
 
-void UpdateDialog::getParts() {
+void UpdateDialog::updateParts() {
+    m_progressBar->setValue(0);
+    m_progressBar->setVisible(true);
+    m_buttonBox->setDisabled(true);
+
+    bool result = PartsChecker::updateParts(m_repoPath, m_remoteSha, this);
+    m_buttonBox->setEnabled(true);
+    m_buttonBox->button(QDialogButtonBox::Ok)->setVisible(false);
+    m_progressBar->setVisible(false);
+    if (!result) {
+        m_feedbackLabel->setText(tr("Sorry, unable to download new parts"));
+        return;
+    }
+
+
+
 
 }
+
+void UpdateDialog::updateProgress(double progress) {
+    m_progressBar->setValue(progress * s_maxProgress);
+    qApp->processEvents();
+}
+

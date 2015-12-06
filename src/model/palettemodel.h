@@ -84,6 +84,10 @@ protected:
 
 public:
 	static void initNames();
+    static void setFzpOverrideFolder(const QString &);
+
+protected:
+    static QString s_fzpOverrideFolder;
 
 };
 #endif

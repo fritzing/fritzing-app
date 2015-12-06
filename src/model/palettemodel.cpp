@@ -44,6 +44,8 @@ $Date: 2013-04-29 13:10:59 +0200 (Mo, 29. Apr 2013) $
 static bool JustAppendAllPartsInstances = false;
 static bool FirstTime = true;
 
+QString PaletteModel::s_fzpOverrideFolder;
+
 const static QString InstanceTemplate(
         		"\t\t<instance moduleIdRef=\"%1\" path=\"%2\">\n"
 				"\t\t\t<views>\n"
@@ -137,35 +139,38 @@ void PaletteModel::loadParts(bool dbExists) {
 	emit loadedPart(0, totalPartCount);
 
     QDir dir1 = FolderUtils::getPartsSubFolder("");
+    QDir dir2(FolderUtils::getUserDataStorePath(""));
+    QDir dir3(":/resources/parts");
+    QDir dir4(s_fzpOverrideFolder);
+
     if (m_fullLoad || !dbExists) {
         // otherwise these will already be in the database
         countParts(dir1, nameFilters, totalPartCount);
-	}
-    QDir dir2(FolderUtils::getUserDataStorePath(""));
+        countParts(dir3, nameFilters, totalPartCount);
+    }
+
     if (!m_fullLoad) {
         // don't include local parts when doing full load
         countParts(dir2, nameFilters, totalPartCount);
-    }
-
-	QDir dir3(":/resources/parts");
-    if (m_fullLoad || !dbExists) {
-	    countParts(dir3, nameFilters, totalPartCount);
+        if (!s_fzpOverrideFolder.isEmpty()) {
+            countParts(dir4, nameFilters, totalPartCount);
+        }
     }
 
     emit partsToLoad(totalPartCount);
 
 	int loadingPart = 0;
     if (m_fullLoad || !dbExists) {
+        // otherwise these will already be in the database
         loadPartsAux(dir1, nameFilters, loadingPart, totalPartCount);
+        loadPartsAux(dir3, nameFilters, loadingPart, totalPartCount);
     }
 
     if (!m_fullLoad) {
         loadPartsAux(dir2, nameFilters, loadingPart, totalPartCount);
-    }
-
-    if (m_fullLoad || !dbExists) {
-        // otherwise these will already be in the database
-	    loadPartsAux(dir3, nameFilters, loadingPart, totalPartCount);  
+        if (!s_fzpOverrideFolder.isEmpty()) {
+            loadPartsAux(dir4, nameFilters, loadingPart, totalPartCount);
+        }
     }
 
 	if (FirstTime) {
@@ -667,4 +672,8 @@ QList<ModelPart *> PaletteModel::allParts() {
         if (!modelPart->isObsolete()) modelParts.append(modelPart);
     }
     return modelParts;
+}
+
+void PaletteModel::setFzpOverrideFolder(const QString & fzpOverrideFolder) {
+    s_fzpOverrideFolder = fzpOverrideFolder;
 }

@@ -414,7 +414,21 @@ bool FApplication::init() {
             toRemove << i << i + 1;
         }
 
-		if ((m_arguments[i].compare("-geda", Qt::CaseInsensitive) == 0) ||
+        if ((m_arguments[i].compare("-ov", Qt::CaseInsensitive) == 0) ||
+            (m_arguments[i].compare("-ow", Qt::CaseInsensitive) == 0) ||
+            (m_arguments[i].compare("-of", Qt::CaseInsensitive) == 0) ||
+            (m_arguments[i].compare("--ov", Qt::CaseInsensitive) == 0) ||
+            (m_arguments[i].compare("--ow", Qt::CaseInsensitive) == 0) ||
+            (m_arguments[i].compare("--of", Qt::CaseInsensitive) == 0) ||
+            (m_arguments[i].compare("--overridefolder", Qt::CaseInsensitive) == 0)
+           )
+        {
+            PaletteModel::setFzpOverrideFolder(m_arguments[i + 1]);
+            // delete these so we don't try to process them as files later
+            toRemove << i << i + 1;
+        }
+
+        if ((m_arguments[i].compare("-geda", Qt::CaseInsensitive) == 0) ||
 			(m_arguments[i].compare("--geda", Qt::CaseInsensitive) == 0)) {
 			m_serviceType = GedaService;
 			m_outputFolder = m_arguments[i + 1];

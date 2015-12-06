@@ -182,9 +182,9 @@ void UpdateDialog::releasesAvailableSlot() {
         }
     }
     if (!canWrite) {
-        m_feedbackLabel->setText(tr("Fritzing is unable to check for and update new parts. "
-                                    "If you want this functionality, please set write permission on the folder '%1'."
-                                    ));
+        m_feedbackLabel->setText(tr("Fritzing is unable to check for--and update--new parts. "
+                                    "If you want this functionality, please enable write permission on the folder '%1'."
+                                    ).arg(m_repoPath));
         m_buttonBox->setEnabled(true);
         return;
     }

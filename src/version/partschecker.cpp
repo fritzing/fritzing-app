@@ -118,6 +118,7 @@ QString PartsChecker::getSha(const QString & repoPath) {
 
     QString sha;
     git_repository * repository = NULL;
+    char buffer[GIT_OID_HEXSZ + 1] = {0};
 
     git_libgit2_init();
 
@@ -136,7 +137,6 @@ QString PartsChecker::getSha(const QString & repoPath) {
         goto cleanup;
     }
 
-    char buffer[GIT_OID_HEXSZ + 1] = {0};
     git_oid_fmt(buffer, &oid);
     sha = QString(buffer);
 
@@ -359,11 +359,14 @@ int PartsChecker::doMerge(git_repository * repository, const QString & remoteSha
         goto cleanup;
     }
 
-    const git_oid * head_oid = git_reference_target(head_reference);
-    error = git_commit_lookup(&head_commit, repository, head_oid);
-    if (error) {
-        DebugDialog::debug("head lookup failed");
-        goto cleanup;
+    {
+        // put initialization in scope due to compiler complaints
+        const git_oid * head_oid = git_reference_target(head_reference);
+        error = git_commit_lookup(&head_commit, repository, head_oid);
+        if (error) {
+            DebugDialog::debug("head lookup failed");
+            goto cleanup;
+        }
     }
 
     git_oid new_commit_id;

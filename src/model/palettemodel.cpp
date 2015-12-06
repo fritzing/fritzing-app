@@ -41,14 +41,8 @@ $Date: 2013-04-29 13:10:59 +0200 (Mo, 29. Apr 2013) $
 #include "../items/moduleidnames.h"
 #include "../items/partfactory.h"
 
-bool PaletteModel::CreateTempPartsBinFile = true;
-
 static bool JustAppendAllPartsInstances = false;
 static bool FirstTime = true;
-
-QString PaletteModel::ContribPartsBinFilePath;
-
-static QString FritzingContribPath;
 
 const static QString InstanceTemplate(
         		"\t\t<instance moduleIdRef=\"%1\" path=\"%2\">\n"
@@ -94,10 +88,6 @@ PaletteModel::~PaletteModel()
 }
 
 void PaletteModel::initParts(bool dbExists) {
-    QDir dir = FolderUtils::getPartsSubFolder("");
-
-    FritzingContribPath = dir.absoluteFilePath("contrib");
-
 	loadParts(dbExists);
 	if (m_root == NULL) {
 	    FMessageBox::information(NULL, QObject::tr("Fritzing"),
@@ -106,7 +96,6 @@ void PaletteModel::initParts(bool dbExists) {
 }
 
 void PaletteModel::initNames() {
-	ContribPartsBinFilePath = FolderUtils::getUserDataStorePath("bins")+"/contribParts" + FritzingBinExtension;
 }
 
 ModelPart * PaletteModel::retrieveModelPart(const QString & moduleID) {

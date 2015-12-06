@@ -82,12 +82,6 @@ protected:
 	void countParts(QDir & dir, QStringList & nameFilters, int & partCount);
     ModelPart * makeSubpart(ModelPart * originalModelPart, const QDomElement & originalSubparth);
 
-protected:
-	static bool CreateContribPartsBinFile;
-	static QString ContribPartsBinFilePath;
-	static bool CreateTempPartsBinFile;
-	static QString TempPartsBinFilePath;
-
 public:
 	static void initNames();
 

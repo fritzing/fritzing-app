@@ -165,6 +165,7 @@ else {
     message("Build it from the repo at https://github.com/libgit2")
     message("Your copy of the libgit2 repo should be at the same directory level as fritzing-app")
     message("As of linux 14.04 apt-get install libgit2-dev is too out of date")
+    message("Under linux, make sure libgit has ssl support (e.g. ubuntu: sudo apt-get install libssl-dev) before running cmake")
     message("On windows, cmake--the build tool for libgit2--doesn't work from the VS command-line with the usual defaults")
     message("So easiest to build the library using QtCreator")
     message("but redirect the Qt default build locations to libgit2/build32 and libgit2/build64")

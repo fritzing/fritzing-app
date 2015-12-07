@@ -75,7 +75,7 @@ bool PartsChecker::newPartsAvailable(const QString &repoPath, const QString & sh
      * Connect to the remote and call the printing function for
      * each of the remote references.
      */
-    error = git_remote_connect(remote, GIT_DIRECTION_FETCH, &callbacks, NULL);
+    error = git_remote_connect(remote, GIT_DIRECTION_FETCH, &callbacks);
     if (error) {
         DebugDialog::debug("unable to connect to repo " + repoPath);
         goto cleanup;

@@ -163,12 +163,7 @@ exists($$LIBGIT2INCLUDE/git2.h) {
 else {
     message("Fritzing now uses libgit2")
     message("Build it from the repo at https://github.com/libgit2")
-    message("Your copy of the libgit2 repo should be at the same directory level as fritzing-app")
-    message("As of linux 14.04 apt-get install libgit2-dev is too out of date")
-    message("Under linux, make sure libgit has ssl support (e.g. ubuntu: sudo apt-get install libssl-dev) before running cmake")
-    message("On windows, cmake--the build tool for libgit2--doesn't work from the VS command-line with the usual defaults")
-    message("So easiest to build the library using QtCreator")
-    message("but redirect the Qt default build locations to libgit2/build32 and libgit2/build64")
+    message("See https://github.com/fritzing/fritzing-app/wiki for details.")
 
     error("libgit2 include path not found in $$LIBGIT2INCLUDE")
 }
@@ -191,15 +186,26 @@ win32 {
     }
 }
 
-!win32 {
+unix {
     LIBGIT2LIB = ../libgit2/build
-    exists($$LIBGIT2LIB/libgit2.so) {
-        message("found libgit2 library in $$LIBGIT2LIB")
+    macx {
+        exists($$LIBGIT2LIB/libgit2.dylib) {
+            message("found libgit2 library in $$LIBGIT2LIB")
+            #LIBS += -lgit2
+            #LIBS += $$LIBGIT2LIB/libgit2.dylib
+        }
+        else {
+            error("libgit2 library not found in $$LIBGIT2LIB")
+        }
     }
-    else {
-        error("libgit2 library not found in $$LIBGIT2LIB")
+    !macx {
+        exists($$LIBGIT2LIB/libgit2.so) {
+            message("found libgit2 library in $$LIBGIT2LIB")
+        }
+        else {
+            error("libgit2 library not found in $$LIBGIT2LIB")
+        }
     }
-
 }
 
 LIBS += -L$$LIBGIT2LIB -lgit2

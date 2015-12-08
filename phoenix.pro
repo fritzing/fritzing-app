@@ -154,14 +154,15 @@ greaterThan(QT_MAJOR_VERSION, 4) {
 RC_FILE = fritzing.rc
 RESOURCES += phoenixresources.qrc
 
-# Fritzing is now using libgit2
+
+# Fritzing is using libgit2 since version 0.9.3
 
 LIBGIT2INCLUDE = ../libgit2/include
 exists($$LIBGIT2INCLUDE/git2.h) {
     message("found libgit2 include path at $$LIBGIT2INCLUDE")
 }
 else {
-    message("Fritzing now uses libgit2")
+    message("Fritzing requires libgit2")
     message("Build it from the repo at https://github.com/libgit2")
     message("See https://github.com/fritzing/fritzing-app/wiki for details.")
 
@@ -191,8 +192,6 @@ unix {
     macx {
         exists($$LIBGIT2LIB/libgit2.dylib) {
             message("found libgit2 library in $$LIBGIT2LIB")
-            #LIBS += -lgit2
-            #LIBS += $$LIBGIT2LIB/libgit2.dylib
         }
         else {
             error("libgit2 library not found in $$LIBGIT2LIB")

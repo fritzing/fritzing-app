@@ -75,11 +75,18 @@ void Ruler::resizeMM(double magnitude, double unitsFlag, const LayerHash & viewL
 	double newW = TextUtils::convertToInches(QString::number(magnitude) + units);
 	if (w == newW) return;
 
+    // save local prop incase render fails so we can revert back to orignal.
+    QString orignalProp = m_modelPart->localProp("width").toString();
+
+    // set local prop so makeSvg has the current mag and units.
+    modelPart()->setLocalProp("width", QVariant(QString::number(magnitude) + units));
+
 	QString s = makeSvg(newW);
 
 	bool result = resetRenderer(s);
-	if (result) {
-        modelPart()->setLocalProp("width", QVariant(QString::number(magnitude) + units));
+    if (!result) {
+        // if render error restore orginal prop
+        modelPart()->setLocalProp("width", QVariant(orignalProp));
 	}
 	//	DebugDialog::debug(QString("fast load result %1 %2").arg(result).arg(s));
 
@@ -109,86 +116,136 @@ QString Ruler::retrieveSvg(ViewLayer::ViewLayerID viewLayerID, QHash<QString, QS
 }
 
 QString Ruler::makeSvg(double inches) {
-	double cm = 1 / 2.54;
-	double offset = 0.125;
-	double mmW = inches * 25.4;
-	QString svg = TextUtils::makeSVGHeader(GraphicsUtils::SVGDPI, GraphicsUtils::StandardFritzingDPI, (inches + offset + offset) * GraphicsUtils::SVGDPI, GraphicsUtils::SVGDPI);
-	svg += "<g font-family='Droid Sans' text-anchor='middle' font-size='100' stroke-width='1' stroke='black'>";
-	int counter = 0;
-	for (int i = 0; i <= qCeil(mmW); i++) {
-		double h = cm / 4;
-		double x = (offset + (i / 25.4)) * GraphicsUtils::StandardFritzingDPI;
-		if (i % 10 == 0) {
-			h = cm / 2;
-			double y = (h + .1) * GraphicsUtils::StandardFritzingDPI;
-			svg += QString("<text x='%1' y='%2'>%3</text>")
-					.arg(x)
-					.arg(y)
-					.arg(QString::number(counter++));
-			if (counter == 1) {
-				svg += QString("<text x='%1' y='%2'>cm</text>").arg(x + 103).arg(y);
-			}
-		}
-		else if (i % 5 == 0) {
-			h = 3 * cm / 8;
-		}
-		svg += QString("<line x1='%1' y1='0' x2='%1' y2='%2' />\n")
-			.arg(x)
-			.arg(h * GraphicsUtils::StandardFritzingDPI);
-	}
-	counter = 0;
-	for (int i = 0; i <= inches * 16; i++) {
-		double h = 0.125;
-		double x = (offset + (i / 16.0)) * GraphicsUtils::StandardFritzingDPI;
-		if (i % 16 == 0) {
-			h = .125 +  (3.0 / 16);
-			double y = 1000 - ((h + .015) * GraphicsUtils::StandardFritzingDPI);
-			svg += QString("<text x='%1' y='%2'>%3</text>")
-					.arg(x)
-					.arg(y)
-					.arg(QString::number(counter++));
-			if (counter == 1) {
-				svg += QString("<text x='%1' y='%2'>in</text>").arg(x + 81).arg(y);
-			}
-		}
-		else if (i % 8 == 0) {
-			h = .125 +  (2.0 / 16);
-		}
-		else if (i % 4 == 0) {
-			h = .125 +  (1.0 / 16);
-		}
-		svg += QString("<line x1='%1' y1='%2' x2='%1' y2='1000' />\n")
-			.arg(x)
-			.arg(1000 - (h * GraphicsUtils::StandardFritzingDPI));
-	}
+    const double cm = 1 / 2.54;
+    const double offset = 0.125;
+    const double mmW = inches * 25.4;// 1/10 centimeter constant
+    const double mmmW = inches * 254;// 1/100 centimeter constant
 
-	for (int i = 0; i <= inches * 10; i++) {
-		double x = (offset + (i / 10.0)) * GraphicsUtils::StandardFritzingDPI;
-		double h = .125 + (3.0 / 16);
-		double h2 = h - (cm / 4);
-		if (i % 10 != 0) {
-			if (i % 5 == 0) {
-				h2 = .125 +  (2.0 / 16);
-			}
-			svg += QString("<line x1='%1' y1='%2' x2='%1' y2='%3' />\n")
-				.arg(x)
-				.arg(1000 - (h * GraphicsUtils::StandardFritzingDPI))
-				.arg(1000 - (h2 * GraphicsUtils::StandardFritzingDPI));
-		}
-	}
+    // get units
+    int units = m_modelPart->localProp("width").toString().contains("cm") ? IndexCm : IndexIn;
 
-    svg += QString("<line x1='%1' y1='%2' x2='%3' y2='%2' stroke-width='1' stroke='black' />\n")
-        .arg(offset * GraphicsUtils::StandardFritzingDPI)
-        .arg((GraphicsUtils::StandardFritzingDPI / 2) - 40)
-        .arg((inches + offset) * GraphicsUtils::StandardFritzingDPI);
-	svg += "<g font-size='40'>\n";
-	svg += QString("<text x='%1' y='%2'>1/10</text>").arg((GraphicsUtils::StandardFritzingDPI * offset / 2.0) + 7).arg(780);
-	svg += QString("<text x='%1' y='%2'>1/16</text>").arg((GraphicsUtils::StandardFritzingDPI * offset / 2.0) + 7).arg(990);
-	svg += "</g>";
+    QString svg = TextUtils::makeSVGHeader(GraphicsUtils::SVGDPI, GraphicsUtils::StandardFritzingDPI, (inches + offset + offset) * GraphicsUtils::SVGDPI, GraphicsUtils::SVGDPI/2);
+    int counter;
 
+    if (units == IndexCm) {
+        counter = 0;
+        svg += "<g font-family='Droid Sans' text-anchor='middle' font-size='100' stroke-width='1' style='stroke: rgb(100,100,100)'>";
 
-	svg += "</g></svg>";
-	return svg;
+        // 1/100 centimeter spacing
+        for (int i = 0; i <= qCeil(mmmW); i++) {
+            double h = cm / 12;
+            double h2 = h - (cm / 12);
+            double x = (offset + ((double)i / 254)) * GraphicsUtils::StandardFritzingDPI;
+            if (i % 5 == 0) {
+                h = cm / 6;
+            }
+            if  (i % 10 != 0 ) {
+                svg += QString("<line x1='%1' y1='0' x2='%1' y2='%2' />\n")
+                        .arg(x)
+                        .arg(h * GraphicsUtils::StandardFritzingDPI);
+                // Uncomment if you want 1/100cm scale on both sides.
+                /*svg += QString("<line x1='%1' y1='%2' x2='%1' y2='%3' />\n")
+                        .arg(x)
+                        .arg((GraphicsUtils::StandardFritzingDPI/2)-(h * GraphicsUtils::StandardFritzingDPI))
+                        .arg((GraphicsUtils::StandardFritzingDPI/2)-(h2 * GraphicsUtils::StandardFritzingDPI));*/
+            }
+        }
+        svg += "</g>";
+
+        svg += "<g font-family='Droid Sans' text-anchor='middle' font-size='100' stroke-width='1' stroke='black'>";
+
+        counter = 0;
+        // centimeters and millimeters spacing and text
+        for (int i = 0; i <= qCeil(mmW); i++) {
+            double h = cm / 4;
+            double h2 = h - (cm / 4);
+            double x = (offset + (i / 25.4)) * GraphicsUtils::StandardFritzingDPI;
+            if (i % 10 == 0) {
+                h = cm / 2;
+                double y = (GraphicsUtils::StandardFritzingDPI/4)+35;//(h + .101) * GraphicsUtils::StandardFritzingDPI;
+                svg += QString("<text x='%1' y='%2'>%3</text>")
+                        .arg(x)
+                        .arg(y)
+                        .arg(QString::number(counter++));
+                if (counter == 1) {
+                    svg += QString("<text x='%1' y='%2'>cm</text>").arg(x + 103).arg(y);
+                }
+            }
+            else if (i % 5 == 0) {
+                h = 3 * cm / 8;
+            }
+            svg += QString("<line x1='%1' y1='0' x2='%1' y2='%2' />\n")
+                    .arg(x)
+                    .arg(h * GraphicsUtils::StandardFritzingDPI);
+
+            svg += QString("<line x1='%1' y1='%2' x2='%1' y2='%3' />\n")
+                    .arg(x)
+                    .arg((GraphicsUtils::StandardFritzingDPI/2)-(h * GraphicsUtils::StandardFritzingDPI))
+                    .arg((GraphicsUtils::StandardFritzingDPI/2)-(h2 * GraphicsUtils::StandardFritzingDPI));
+        }
+        svg += "<g font-size='40'>\n";
+        svg += QString("<text x='%1' y='%2'>1/100</text>").arg((GraphicsUtils::StandardFritzingDPI * offset / 2.0) + 7).arg(30);
+        svg += "</g>";
+    }
+    else {
+        svg += "<g font-family='Droid Sans' text-anchor='middle' font-size='100' stroke-width='1' stroke='black'>";
+        counter = 0;
+
+        // 1/16, 1/8, 1/4, & 1 inch spacing and text
+        for (int i = 0; i <= inches * 16; i++) {
+            double h = 0.085;
+            double x = (offset + (i / 16.0)) * GraphicsUtils::StandardFritzingDPI;
+            if (i % 16 == 0) {
+
+                // I wonder if QT compiler would see that this is just a constant, and not perform the runtime math?
+                // If not calculating out the value could save some cycles:)
+                h = 0.196875;//.125 + (1.15 / 16);
+
+                double y = (GraphicsUtils::StandardFritzingDPI/4)+35;//(h + .101) * GraphicsUtils::StandardFritzingDPI;
+                svg += QString("<text x='%1' y='%2'>%3</text>")
+                        .arg(x)
+                        .arg(y)
+                        .arg(QString::number(counter++));
+                if (counter == 1) {
+                    svg += QString("<text x='%1' y='%2'>in</text>").arg(x + 103).arg(y);
+                }
+            }
+            else if (i % 8 == 0) {
+                h = 0.17812;//.125 +  (.85 / 16);
+            }
+            else if (i % 4 == 0) {
+                h = 0.14062;//.125 +  (.25 / 16);
+            }
+
+            svg += QString("<line x1='%1' y1='0' x2='%1' y2='%2' />\n")
+                    .arg(x)
+                    .arg(h * GraphicsUtils::StandardFritzingDPI);
+
+            svg += QString("<line x1='%1' y1='%2' x2='%1' y2='%3' />\n")
+                    .arg(x)
+                    .arg((GraphicsUtils::StandardFritzingDPI/2)-(h * GraphicsUtils::StandardFritzingDPI))
+                    .arg((GraphicsUtils::StandardFritzingDPI/2));
+        }
+
+        // 1/10 inch spacing and text
+        for (int i = 0; i <= inches * 10; i++) {
+            double x = (offset + (i / 10.0)) * GraphicsUtils::StandardFritzingDPI;
+            double h = .125 + (.9 / 16);
+            double h2 = h - (cm / 6);
+            if (i % 10 != 0 && i % 5 != 0) {
+                svg += QString("<line x1='%1' y1='%2' x2='%1' y2='%3' />\n")
+                        .arg(x)
+                        .arg((h * GraphicsUtils::StandardFritzingDPI))
+                        .arg((h2 * GraphicsUtils::StandardFritzingDPI));
+            }
+        }
+        svg += "<g font-size='40'>\n";
+        svg += QString("<text x='%1' y='%2'>1/16</text>").arg((GraphicsUtils::StandardFritzingDPI * offset / 2.0) + 7).arg(30);
+        svg += QString("<text x='%1' y='%2'>1/10</text>").arg((GraphicsUtils::StandardFritzingDPI * offset / 2.0) + 7).arg(140);
+        svg += "</g>";
+    }
+    svg += "</g></svg>";
+    return svg;
 }
 
 bool Ruler::hasCustomSVG() {
@@ -284,15 +341,39 @@ void Ruler::widthEntry() {
 
 void Ruler::unitsEntry(const QString & units) {
 	double inches = TextUtils::convertToInches(prop("width"));
+
+    // save local prop incase render fails so we can revert back to orignal.
+    QString orignalProp = m_modelPart->localProp("width").toString();
+
 	if (units == "in") {
+        // set local prop so makeSvg has the current width and units.
         modelPart()->setLocalProp("width", QVariant(QString::number(inches) + "in"));
-		m_widthEditor->setText(QString::number(inches));
-		m_widthValidator->setTop(20);
+
+        QString s = makeSvg(inches);
+        bool result = resetRenderer(s);
+        if (result) {
+            m_widthEditor->setText(QString::number(inches));
+            m_widthValidator->setTop(20);
+        }
+        else {
+            // if render error restore orginal prop
+            modelPart()->setLocalProp("width", QVariant(orignalProp));
+        }
 	}
 	else {
+        // set local prop so makeSvg has the current width and units.
         modelPart()->setLocalProp("width", QVariant(QString::number(inches * 2.54) + "cm"));
-		m_widthEditor->setText(QString::number(inches * 2.54));
-		m_widthValidator->setTop(20 * 2.54);
+
+        QString s = makeSvg(inches);
+        bool result = resetRenderer(s);
+        if (result) {
+            m_widthEditor->setText(QString::number(inches * 2.54));
+            m_widthValidator->setTop(20 * 2.54);
+        }
+        else {
+            // if render error restore orginal prop
+            modelPart()->setLocalProp("width", QVariant(orignalProp));
+        }
 	}
 	DefaultWidth = prop("width");
 }

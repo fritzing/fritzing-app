@@ -854,11 +854,16 @@ void MainWindow::saveAsShareable(const QString & path, bool saveModel)
 	
 		saveParts.insert(itemBase->moduleID(), itemBase->modelPart());
 	}
-	saveBundledNonAtomicEntity(filename, FritzingBundleExtension, this, saveParts.values(), false, m_fzzFolder, saveModel, true);
+	if(alreadyHasExtension(filename, FritzingSketchExtension)) {
+		saveBundledNonAtomicEntity(filename, FritzingSketchExtension, this, saveParts.values(), false, m_fzzFolder, saveModel, true);
+	} else {
+		saveBundledNonAtomicEntity(filename, FritzingBundleExtension, this, saveParts.values(), false, m_fzzFolder, saveModel, true);
+	}
 
 }
 
 void MainWindow::saveBundledNonAtomicEntity(QString &filename, const QString &extension, Bundler *bundler, const QList<ModelPart*> &partsToSave, bool askForFilename, const QString & destFolderPath, bool saveModel, bool deleteLeftovers) {
+	bool result;
 	QStringList names;
 
 	QString fileExt;
@@ -889,13 +894,19 @@ void MainWindow::saveBundledNonAtomicEntity(QString &filename, const QString &ex
 	}
 
 	QString aux = QFileInfo(bundledFileName).fileName();
-	QString destSketchPath = // remove the last "z" from the extension
-							 destFolder.path()+"/"+aux.left(aux.size()-1);
+	QString destSketchPath;
+	if (fritzingBundleExtensions().contains(extension)) {
+		destSketchPath = // remove the last "z" from the extension
+				 destFolder.path()+"/"+aux.left(aux.size()-1);
+	} else {
+		destSketchPath = destFolder.path()+"/"+aux;
+        }
 	DebugDialog::debug("saving entity temporarily to "+destSketchPath);
 
     QStringList skipSuffixes;
 
-	if (extension.compare(FritzingBundleExtension) == 0) {
+	if (extension.compare(FritzingBundleExtension) == 0 || \
+	    extension.compare(FritzingSketchExtension) == 0 ) {
 		for (int i = 0; i < m_linkedProgramFiles.count(); i++) {
 			LinkedFile * linkedFile = m_linkedProgramFiles.at(i);
 			QFileInfo fileInfo(linkedFile->linkedFilename);
@@ -930,7 +941,13 @@ void MainWindow::saveBundledNonAtomicEntity(QString &filename, const QString &ex
 
 	ProcessEventBlocker::processEvents();
 
-	if(!FolderUtils::createZipAndSaveTo(destFolder, bundledFileName, skipSuffixes)) {
+	if (fritzingBundleExtensions().contains(extension)) {
+		result = FolderUtils::createZipAndSaveTo(destFolder, bundledFileName, skipSuffixes);
+        } else {
+		result = FolderUtils::createFZAndSaveTo(destFolder, bundledFileName, skipSuffixes);
+        }
+
+	if(!result) {
 		QMessageBox::warning(
 			this,
 			tr("Fritzing"),

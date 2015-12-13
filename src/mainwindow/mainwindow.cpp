@@ -2475,12 +2475,7 @@ bool MainWindow::saveAs() {
     }
 
 	bool result = false;
-	if (m_fwFilename.endsWith(FritzingSketchExtension)) {
-		result = FritzingWindow::saveAs(m_fwFilename + 'z', false);
-	}
-	else {
-		result = FritzingWindow::saveAs();
-	}
+	result = FritzingWindow::saveAs();
 	if (result) {
 		QSettings settings;
 		settings.setValue("lastOpenSketch", m_fwFilename);
@@ -2676,12 +2671,14 @@ bool MainWindow::hasLinkedProgramFiles(const QString & filename, QStringList & l
 }
 
 QString MainWindow::getExtensionString() {
-	return tr("Fritzing (*%1)").arg(fileExtension());
+	return tr("Fritzing (*%1)").arg(FritzingBundleExtension) + ";;" + \
+	       tr("Fritzing uncompressed (*%1)").arg(FritzingSketchExtension);
 }
 
 QStringList MainWindow::getExtensions() {
 	QStringList extensions;
-	extensions.append(fileExtension());
+	extensions.append(FritzingBundleExtension);
+	extensions.append(FritzingSketchExtension);
 	return extensions;
 }
 

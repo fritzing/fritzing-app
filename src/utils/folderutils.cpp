@@ -341,15 +341,51 @@ void FolderUtils::rmdir(QDir & dir) {
 }
 
 
-bool shouldFakeCompression(const QString &filepath) {
-	return true;
+bool FolderUtils::createFZAndSaveTo(const QDir &dirToCompress, const QString &filepath, const QStringList & skipSuffixes) {
+	DebugDialog::debug("saveASfz "+dirToCompress.path()+" into "+filepath);
+
+	QFileInfoList files=dirToCompress.entryInfoList();
+	QFile inFile;
 	
+	char c;
+
+	QString currFolderBU = QDir::currentPath();
+	QDir::setCurrent(dirToCompress.path());
+	foreach(QFileInfo file, files) {
+		if(!file.isFile()||file.fileName()==filepath) continue;
+		if (file.fileName().contains(LockManager::LockedFileName)) continue;
+
+        bool skip = false;
+        foreach (QString suffix, skipSuffixes) {
+            if (file.fileName().endsWith(suffix)) {
+                skip = true;
+                break;
+            }
+        }
+        if (skip) continue;
+
+		inFile.setFileName(file.fileName());
+
+		if(!inFile.open(QIODevice::ReadOnly)) {
+			qWarning("inFile.open(): %s", inFile.errorString().toLocal8Bit().constData());
+			return false;
+		}
+		QString destination = QFileInfo(filepath).dir().filePath(inFile.fileName());
+		if (QFileInfo(destination).exists())
+			QFile::remove(destination);
+		DebugDialog::debug("Destination " + destination);
+		inFile.copy(destination);
+
+		inFile.close();
+	}
+	QDir::setCurrent(currFolderBU);
+
+	return true;
 }
+
 
 bool FolderUtils::createZipAndSaveTo(const QDir &dirToCompress, const QString &filepath, const QStringList & skipSuffixes) {
 	DebugDialog::debug("zipping "+dirToCompress.path()+" into "+filepath);
-
-	bool fakeCompression = shouldFakeCompression(filepath);
 
 	QString tempZipFile = QDir::temp().path()+"/"+TextUtils::getRandText()+".zip";
 	DebugDialog::debug("temp file: "+tempZipFile);
@@ -361,13 +397,12 @@ bool FolderUtils::createZipAndSaveTo(const QDir &dirToCompress, const QString &f
 
 	QFileInfoList files=dirToCompress.entryInfoList();
 	QFile inFile;
-	
+	QuaZipFile outFile(&zip);
 	char c;
 
 	QString currFolderBU = QDir::currentPath();
 	QDir::setCurrent(dirToCompress.path());
 	foreach(QFileInfo file, files) {
-		DebugDialog::debug("Examining " + file.fileName());
 		if(!file.isFile()||file.fileName()==filepath) continue;
 		if (file.fileName().contains(LockManager::LockedFileName)) continue;
 
@@ -389,32 +424,21 @@ bool FolderUtils::createZipAndSaveTo(const QDir &dirToCompress, const QString &f
 			qWarning("inFile.open(): %s", inFile.errorString().toLocal8Bit().constData());
 			return false;
 		}
-		if (!fakeCompression) {
-			QuaZipFile outFile(&zip);
-			if (!outFile.open(QIODevice::WriteOnly, QuaZipNewInfo(inFile.fileName(), inFile.fileName()))) {
-				qWarning("outFile.open(): %d", outFile.getZipError());
-				return false;
-			}
-
-			while (inFile.getChar(&c) && outFile.putChar(c)) {}
-
-			if (outFile.getZipError() != UNZ_OK) {
-				qWarning("outFile.putChar(): %d", outFile.getZipError());
-				return false;
-			}
-			outFile.close();
-			if (outFile.getZipError() != UNZ_OK) {
-				qWarning("outFile.close(): %d", outFile.getZipError());
-				return false;
-			}
+		if(!outFile.open(QIODevice::WriteOnly, QuaZipNewInfo(inFile.fileName(), inFile.fileName()))) {
+			qWarning("outFile.open(): %d", outFile.getZipError());
+			return false;
 		}
-		else {
-			QString destination = QFileInfo(filepath).dir().filePath(inFile.fileName());
-			if (QFileInfo(destination).exists())
-				QFile::remove(destination);
-			DebugDialog::debug("Destination " + destination);
-			inFile.copy(destination);
-			
+
+		while(inFile.getChar(&c)&&outFile.putChar(c)){}
+
+		if(outFile.getZipError()!=UNZ_OK) {
+			qWarning("outFile.putChar(): %d", outFile.getZipError());
+			return false;
+		}
+		outFile.close();
+		if(outFile.getZipError()!=UNZ_OK) {
+			qWarning("outFile.close(): %d", outFile.getZipError());
+			return false;
 		}
 		inFile.close();
 	}
@@ -425,173 +449,124 @@ bool FolderUtils::createZipAndSaveTo(const QDir &dirToCompress, const QString &f
 		// if we're here the usr has already accepted to overwrite
 		QFile::remove(filepath);
 	}
-	if (fakeCompression) {
-		QFile fzzFile(filepath);
-		fzzFile.open(QIODevice::WriteOnly);
-		fzzFile.write("This file needs to be opened with the special version of Fritzing that allows uncompressed files.\n");
+	QFile file(tempZipFile);
+	FolderUtils::slamCopy(file, filepath);
+	file.remove();
 
-		foreach(QFileInfo file, files) {
-			DebugDialog::debug("Examining " + file.fileName());
-			if (!file.isFile() || file.fileName() == filepath) continue;
-			if (file.fileName().contains(LockManager::LockedFileName)) continue;
-
-			bool skip = false;
-			foreach(QString suffix, skipSuffixes) {
-				if (file.fileName().endsWith(suffix)) {
-					skip = true;
-					break;
-				}
-			}
-			if (!skip) {
-				fzzFile.write(file.fileName().toLocal8Bit());
-				fzzFile.write("\n");
-			}
-		}
-		fzzFile.close();
-	}
-	else {
-		QFile file(tempZipFile);
-		FolderUtils::slamCopy(file, filepath);
-		file.remove();
-
-		if (zip.getZipError() != 0) {
-			qWarning("zip.close(): %d", zip.getZipError());
-			return false;
-		}
+	if(zip.getZipError()!=0) {
+		qWarning("zip.close(): %d", zip.getZipError());
+		return false;
 	}
 	return true;
 }
+
 
 
 bool FolderUtils::unzipTo(const QString &filepath, const QString &dirToDecompress, QString & error) {
     static QChar badCharacters[] = { '\\', '/', ':', '*', '?', '"', '<', '>', '|' };
     static QChar underscore('_');
 
-	bool fakeCompression = shouldFakeCompression(filepath);
-	if (fakeCompression) {
-		QFile fzz(filepath);
-		fzz.open(QIODevice::ReadOnly);
-		auto message = fzz.readLine();
-		QByteArray fileToCopy;
-		while ((fileToCopy = fzz.readLine()).length() > 0) {
-			fileToCopy = fileToCopy.remove(fileToCopy.length() - 1, 1);//Remove \n
-			QString sourcePath = QFileInfo(filepath).dir().filePath(fileToCopy);
-
-			QFile source(sourcePath);
-			QDir destDir(dirToDecompress);
-			QString destFilename = destDir.filePath(fileToCopy);
-			DebugDialog::debug("Copying file " + sourcePath + " to " + destFilename);
-			if (QFileInfo(destFilename).exists())
-				QFile::remove(destFilename);
-			if (!source.copy(destFilename)) {
-				error = QString("Copy failed ");
-				DebugDialog::debug(error);
-				return false;
-			}
-		}
+	QuaZip zip(filepath);
+	if(!zip.open(QuaZip::mdUnzip)) {
+        error = QString("zip.open(): %d").arg(zip.getZipError());
+		DebugDialog::debug(error);
+		return false;
 	}
-	else {
-		QuaZip zip(filepath);
-		if (!zip.open(QuaZip::mdUnzip)) {
-			error = QString("zip.open(): %d").arg(zip.getZipError());
+
+	zip.setFileNameCodec("IBM866");
+	DebugDialog::debug(QString("unzipping %1 entries from %2").arg(zip.getEntriesCount()).arg(filepath));
+	QuaZipFileInfo info;
+	QuaZipFile file(&zip);
+	QFile out;
+	QString name;
+	char c;
+	for(bool more=zip.goToFirstFile(); more; more=zip.goToNextFile()) {
+		if(!zip.getCurrentFileInfo(&info)) {
+			error = QString("getCurrentFileInfo(): %d\n").arg(zip.getZipError());
 			DebugDialog::debug(error);
 			return false;
 		}
 
-		zip.setFileNameCodec("IBM866");
-		DebugDialog::debug(QString("unzipping %1 entries from %2").arg(zip.getEntriesCount()).arg(filepath));
-		QuaZipFileInfo info;
-		QuaZipFile file(&zip);
-		QFile out;
-		QString name;
-		char c;
-		for (bool more = zip.goToFirstFile(); more; more = zip.goToNextFile()) {
-			if (!zip.getCurrentFileInfo(&info)) {
-				error = QString("getCurrentFileInfo(): %d\n").arg(zip.getZipError());
-				DebugDialog::debug(error);
-				return false;
-			}
+		if(!file.open(QIODevice::ReadOnly)) {
+			error = QString("file.open(): %d").arg(file.getZipError());
+			DebugDialog::debug(error);
+			return false;
+		}
+		name=file.getActualFileName();
+		if(file.getZipError()!=UNZ_OK) {
+			error = QString("file.getFileName(): %d").arg(file.getZipError());
+			DebugDialog::debug(error);
+			return false;
+		}
 
-			if (!file.open(QIODevice::ReadOnly)) {
-				error = QString("file.open(): %d").arg(file.getZipError());
-				DebugDialog::debug(error);
-				return false;
-			}
-			name = file.getActualFileName();
-			if (file.getZipError() != UNZ_OK) {
-				error = QString("file.getFileName(): %d").arg(file.getZipError());
-				DebugDialog::debug(error);
-				return false;
-			}
+		out.setFileName(dirToDecompress+"/"+name);
+		// this will fail if "name" contains subdirectories, but we don't mind that
+		if(!out.open(QIODevice::WriteOnly)) {
+            for (int i = 0; i < name.length(); i++) {
+                if (name[i].unicode() < 32) {
+                    name.replace(i, 1, &underscore, 1);
+                }
+                else for (unsigned int j = 0; j < (sizeof(badCharacters) / sizeof(QChar)); j++) {
+                    if (name[i] == badCharacters[j]) {
+                        name.replace(i, 1, &underscore, 1);
+                        break;
+                    }
+                }
+            }
+            out.setFileName(dirToDecompress+"/"+name);
+            if(!out.open(QIODevice::WriteOnly)) {
+                error = QString("out.open(): %s").arg(out.errorString().toLocal8Bit().constData());
+			    DebugDialog::debug(error);
+			    return false;
+            }
+		}
 
-			out.setFileName(dirToDecompress + "/" + name);
-			// this will fail if "name" contains subdirectories, but we don't mind that
-			if (!out.open(QIODevice::WriteOnly)) {
-				for (int i = 0; i < name.length(); i++) {
-					if (name[i].unicode() < 32) {
-						name.replace(i, 1, &underscore, 1);
-					}
-					else for (unsigned int j = 0; j < (sizeof(badCharacters) / sizeof(QChar)); j++) {
-						if (name[i] == badCharacters[j]) {
-							name.replace(i, 1, &underscore, 1);
-							break;
-						}
-					}
-				}
-				out.setFileName(dirToDecompress + "/" + name);
-				if (!out.open(QIODevice::WriteOnly)) {
-					error = QString("out.open(): %s").arg(out.errorString().toLocal8Bit().constData());
-					DebugDialog::debug(error);
-					return false;
-				}
-			}
-
-			// Slow like hell (on GNU/Linux at least), but it is not my fault.
-			// Not ZIP/UNZIP package's fault either.
-			// The slowest thing here is out.putChar(c).
-			// TODO: now that out.putChar has been replaced with a buffered write, is it still slow under Linux?
+		// Slow like hell (on GNU/Linux at least), but it is not my fault.
+		// Not ZIP/UNZIP package's fault either.
+		// The slowest thing here is out.putChar(c).
+		// TODO: now that out.putChar has been replaced with a buffered write, is it still slow under Linux?
 
 #define BUFFERSIZE 1024
-			char buffer[BUFFERSIZE];
-			int ix = 0;
-			while (file.getChar(&c)) {
-				buffer[ix++] = c;
-				if (ix == BUFFERSIZE) {
-					out.write(buffer, ix);
-					ix = 0;
-				}
-			}
-			if (ix > 0) {
+		char buffer[BUFFERSIZE];
+		int ix = 0;
+		while(file.getChar(&c)) {
+			buffer[ix++] = c;
+			if (ix == BUFFERSIZE) {
 				out.write(buffer, ix);
-			}
-
-			out.close();
-			if (file.getZipError() != UNZ_OK) {
-				error = QString("file.getFileName(): %d").arg(file.getZipError());
-				DebugDialog::debug(error);
-				return false;
-			}
-			if (!file.atEnd()) {
-				error = "read all but not EOF";
-				DebugDialog::debug(error);
-				return false;
-			}
-			file.close();
-			if (file.getZipError() != UNZ_OK) {
-				error = QString("file.close(): %d").arg(file.getZipError());
-				DebugDialog::debug(error);
-				return false;
+				ix = 0;
 			}
 		}
-		zip.close();
-		if (zip.getZipError() != UNZ_OK) {
-			error = QString("zip.close(): %d").arg(zip.getZipError());
+		if (ix > 0) {
+			out.write(buffer, ix);
+		}
+
+		out.close();
+		if(file.getZipError()!=UNZ_OK) {
+			error = QString("file.getFileName(): %d").arg(file.getZipError());
 			DebugDialog::debug(error);
 			return false;
 		}
+		if(!file.atEnd()) {
+			error = "read all but not EOF";
+			DebugDialog::debug(error);
+			return false;
+		}
+		file.close();
+		if(file.getZipError()!=UNZ_OK) {
+			error = QString("file.close(): %d").arg(file.getZipError());
+			DebugDialog::debug(error);
+			return false;
+		}
+	}
+	zip.close();
+	if(zip.getZipError()!=UNZ_OK) {
+		error = QString("zip.close(): %d").arg(zip.getZipError());
+		DebugDialog::debug(error);
+		return false;
 	}
 	return true;
 }
+
 
 void FolderUtils::collectFiles(const QDir & parent, QStringList & filters, QStringList & files, bool recursive)
 {

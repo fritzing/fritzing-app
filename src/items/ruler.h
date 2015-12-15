@@ -58,7 +58,7 @@ public:
 
 public slots:
 	void widthEntry();
-	void unitsEntry(const QString &);
+    void unitsEntry();
 
 protected:
 	QString makeSvg(double inches);
@@ -66,7 +66,7 @@ protected:
 	
 protected:
 	QPointer<QLineEdit> m_widthEditor;
-	QPointer<QComboBox> m_unitsEditor;
+    QPointer<QRadioButton> m_unitsEditor;
 	QPointer<QDoubleValidator> m_widthValidator;
 };
 

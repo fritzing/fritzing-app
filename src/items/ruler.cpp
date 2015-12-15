@@ -263,61 +263,73 @@ bool Ruler::collectExtraInfo(QWidget * parent, const QString & family, const QSt
 {
 	bool result = PaletteItem::collectExtraInfo(parent, family, prop, value, swappingEnabled, returnProp, returnValue, returnWidget, hide);
 
-	if (prop.compare("width", Qt::CaseInsensitive) == 0) {
-		returnProp = tr("width");
+    if (prop.compare("width", Qt::CaseInsensitive) == 0) {
+        returnProp = tr("width");
 
-		int units = m_modelPart->localProp("width").toString().contains("cm") ? IndexCm : IndexIn;
-		QLineEdit * e1 = new QLineEdit();
-		QDoubleValidator * validator = new QDoubleValidator(e1);
-		validator->setRange(1.0, 20 * ((units == IndexCm) ? 2.54 : 1), 2);
-		validator->setNotation(QDoubleValidator::StandardNotation);
+        int units = m_modelPart->localProp("width").toString().contains("cm") ? IndexCm : IndexIn;
+        QLineEdit * e1 = new QLineEdit();
+        QDoubleValidator * validator = new QDoubleValidator(e1);
+        validator->setRange(1.0, 20 * ((units == IndexCm) ? 2.54 : 1), 2);
+        validator->setNotation(QDoubleValidator::StandardNotation);
         validator->setLocale(QLocale::C);
-		e1->setValidator(validator);
-		e1->setEnabled(swappingEnabled);
-		QString temp = m_modelPart->localProp("width").toString();
-		temp.chop(2);
-		e1->setText(temp);
-		e1->setObjectName("infoViewLineEdit");	
+        e1->setValidator(validator);
+        e1->setEnabled(swappingEnabled);
+        QString temp = m_modelPart->localProp("width").toString();
+        temp.chop(2);
+        e1->setText(temp);
+        e1->setObjectName("infoViewLineEdit");
         e1->setMaximumWidth(80);
 
-		m_widthEditor = e1;
-		m_widthValidator = validator;
+        m_widthEditor = e1;
+        m_widthValidator = validator;
 
-		QComboBox * comboBox = new QComboBox(parent);
-		comboBox->setEditable(false);
-		comboBox->setEnabled(swappingEnabled);
-		comboBox->addItem("cm");
-		comboBox->addItem("in");
-		comboBox->setCurrentIndex(units);
-		m_unitsEditor = comboBox;
-		comboBox->setObjectName("infoViewComboBox");	
-        comboBox->setMinimumWidth(60);
+        // Radio Buttons
+        QRadioButton *radioCm = new QRadioButton(tr("&cm"));
+        QRadioButton *radioIn = new QRadioButton(tr("&in"));
 
+        // set radio button object names
+        radioCm->setObjectName("cm");
+        radioIn->setObjectName("in");
 
-		QHBoxLayout * hboxLayout = new QHBoxLayout();
-		hboxLayout->setAlignment(Qt::AlignLeft);
-		hboxLayout->setContentsMargins(0, 0, 0, 0);
-		hboxLayout->setSpacing(0);
-		hboxLayout->setMargin(0);
+        // update pointer and set checked
+        if (units == IndexIn) {
+            radioIn->setChecked(true);
+            m_unitsEditor = radioIn;
+        }
+        else {
+            radioCm->setChecked(true);
+            m_unitsEditor = radioCm;
+        }
 
+        // spacer to keep radio buttons together when resizing Inspector Window
+        QSpacerItem *item = new QSpacerItem(1,1, QSizePolicy::Expanding, QSizePolicy::Fixed);
 
-		hboxLayout->addWidget(e1);
-		hboxLayout->addWidget(comboBox);
+        QHBoxLayout * hboxLayout = new QHBoxLayout();
+        hboxLayout->setAlignment(Qt::AlignRight);
+        hboxLayout->setContentsMargins(0, 0, 0, 0);
+        hboxLayout->setSpacing(5);
+        hboxLayout->setMargin(0);
 
-		QFrame * frame = new QFrame();
-		frame->setLayout(hboxLayout);
-		frame->setObjectName("infoViewPartFrame");
+        hboxLayout->addWidget(e1);
+        hboxLayout->addWidget(radioCm);
+        hboxLayout->addWidget(radioIn);
+        hboxLayout->addSpacerItem(item);
 
-		connect(e1, SIGNAL(editingFinished()), this, SLOT(widthEntry()));
-		connect(comboBox, SIGNAL(currentIndexChanged(const QString &)), this, SLOT(unitsEntry(const QString &)));
+        QFrame * frame = new QFrame();
+        frame->setLayout(hboxLayout);
+        frame->setObjectName("infoViewPartFrame");
+
+        connect(e1, SIGNAL(editingFinished()), this, SLOT(widthEntry()));
+        connect(radioCm, SIGNAL(clicked()), this, SLOT(unitsEntry()));
+        connect(radioIn, SIGNAL(clicked()), this, SLOT(unitsEntry()));
 
         returnValue = temp + QString::number(units);
-		returnWidget = frame;
+        returnWidget = frame;
 
-		return true;
-	}
+        return true;
+    }
 
-	return result;
+    return result;
 }
 
 void Ruler::widthEntry() {
@@ -333,14 +345,24 @@ void Ruler::widthEntry() {
 
 	InfoGraphicsView * infoGraphicsView = InfoGraphicsView::getInfoGraphicsView(this);
 	if (infoGraphicsView != NULL) {
-		int units = (m_unitsEditor->currentText() == "cm") ? IndexCm : IndexIn;
-		DefaultWidth = edit->text() + m_unitsEditor->currentText();
-		infoGraphicsView->resizeBoard(edit->text().toDouble(), units, false);
+        // get current object units
+        int units = (m_unitsEditor->objectName() == "cm") ? IndexCm : IndexIn;
+        DefaultWidth = edit->text() + m_unitsEditor->objectName();
+        infoGraphicsView->resizeBoard(edit->text().toDouble(), units, false);
 	}
 }
 
-void Ruler::unitsEntry(const QString & units) {
-	double inches = TextUtils::convertToInches(prop("width"));
+void Ruler::unitsEntry() {
+    // get clicked object
+    QRadioButton * obj = qobject_cast<QRadioButton *>(sender());
+    if (obj == NULL) return;
+
+    // update pointer
+    m_unitsEditor = obj;
+
+    QString units = obj->objectName();
+
+    double inches = TextUtils::convertToInches(prop("width"));
 
     // save local prop incase render fails so we can revert back to orignal.
     QString orignalProp = m_modelPart->localProp("width").toString();

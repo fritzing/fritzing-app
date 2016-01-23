@@ -182,11 +182,11 @@ Wire::~Wire() {
 	}
 }
 
-FSvgRenderer * Wire::setUp(ViewLayer::ViewLayerID viewLayerID, const LayerHash &  viewLayers, InfoGraphicsView * infoGraphicsView) {
+FSvgRenderer * Wire::setUp(ViewLayer::ViewLayerID viewLayerID, const LayerHash &  viewLayers, InfoGraphicsView * infoGraphicsView, bool checkForReversedWires) {
 	ItemBase::setViewLayerID(viewLayerID, viewLayers);
 	FSvgRenderer * svgRenderer = setUpConnectors(m_modelPart, m_viewID);
 	if (svgRenderer != NULL) {
-		initEnds(m_viewGeometry, svgRenderer->viewBox(), infoGraphicsView);
+        initEnds(m_viewGeometry, svgRenderer->viewBox(), infoGraphicsView, checkForReversedWires);
         //debugCompare(this);
 	}
 	setZValue(this->z());
@@ -216,7 +216,7 @@ void Wire::moveItem(ViewGeometry & viewGeometry) {
 	this->setLine(viewGeometry.line());
 }
 
-void Wire::initEnds(const ViewGeometry & vg, QRectF defaultRect, InfoGraphicsView * infoGraphicsView) {
+void Wire::initEnds(const ViewGeometry & vg, QRectF defaultRect, InfoGraphicsView * infoGraphicsView, bool checkForReversedWires) {
 	double penWidth = 1;
 	foreach (ConnectorItem * item, cachedConnectorItems()) {
         if (item->connectorSharedID().endsWith("0")) {
@@ -239,12 +239,16 @@ void Wire::initEnds(const ViewGeometry & vg, QRectF defaultRect, InfoGraphicsVie
 		this->setLine(defaultRect.left(), defaultRect.top(), defaultRect.right(), defaultRect.bottom());
 	}
 	else {
-		this->setLine(vg.line());
+        this->setLine(vg.line());
 	}
 
 	setConnector0Rect();
 	setConnector1Rect();
 	m_viewGeometry.setLine(this->line());
+
+    if (checkForReversedWires) {
+
+    }
 	
    	QBrush brush(QColor(0, 0, 0));
 	QPen pen(brush, penWidth, Qt::SolidLine, Qt::RoundCap);

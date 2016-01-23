@@ -200,7 +200,7 @@ public:
 	void noteChanged(ItemBase *, const QString & oldText, const QString &newtext, QSizeF oldSize, QSizeF newSize);
 
 	void setInfoViewOnHover(bool infoViewOnHover);
-	virtual ItemBase * addItemAux(ModelPart *, ViewLayer::ViewLayerPlacement, const ViewGeometry &, long id, bool doConnectors, ViewLayer::ViewID, bool temporary);
+    virtual ItemBase * addItemAux(ModelPart *, ViewLayer::ViewLayerPlacement, const ViewGeometry &, long id, bool doConnectors, ViewLayer::ViewID, bool temporary, bool checkForCrossedWires);
 	ItemBase * addItemAuxTemp(ModelPart *, ViewLayer::ViewLayerPlacement, const ViewGeometry &, long id, bool doConnectors, ViewLayer::ViewID, bool temporary);
 
     bool swappingEnabled(ItemBase *);

@@ -42,7 +42,7 @@ QList<QString> ModelBase::CoreList;
 
 ModelBase::ModelBase( bool makeRoot )
 {
-    m_useOldSchematics = false;
+    m_checkForReversedWires = m_useOldSchematics = false;
 	m_reportMissingModules = true;
 	m_referenceModel = NULL;
 	m_root = NULL;
@@ -141,9 +141,14 @@ bool ModelBase::loadFromFile(const QString & fileName, ModelBase * referenceMode
 	    versionThingRats.minorSubVersion = 13;
 	    checkForObsoleteSMDOrientation = !Version::greaterThan(versionThingRats, versionThingFz);
         // with version 0.8.6 we get a new schematic template
-	    versionThingRats.minorVersion = 8;
-	    versionThingRats.minorSubVersion = 5;
-	    checkForOldSchematics = !Version::greaterThan(versionThingRats, versionThingFz);
+        versionThingRats.minorVersion = 8;
+        versionThingRats.minorSubVersion = 5;
+        checkForOldSchematics = !Version::greaterThan(versionThingRats, versionThingFz);
+        // with version 0.9.3 we don't have to worry about reversed wires
+        versionThingRats.minorVersion = 9;
+        versionThingRats.minorSubVersion = 2;
+        m_checkForReversedWires = !Version::greaterThan(versionThingRats, versionThingFz);
+
 	}
     
 	ModelPartSharedRoot * modelPartSharedRoot = this->rootModelPartShared();
@@ -877,3 +882,6 @@ ModelPart * ModelBase::createOldSchematicPartAux(ModelPart * modelPart, const QS
     return oldModelPart;
 }
 
+bool ModelBase::checkForCrossedWires() {
+    return m_checkForReversedWires;
+}

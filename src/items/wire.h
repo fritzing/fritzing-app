@@ -90,7 +90,7 @@ public:
 	ConnectorItem * otherConnector(ConnectorItem *);
 	ConnectorItem * connector0();
 	ConnectorItem * connector1();
-	virtual class FSvgRenderer * setUp(ViewLayer::ViewLayerID viewLayerID, const LayerHash & viewLayers, class InfoGraphicsView *);
+    virtual class FSvgRenderer * setUp(ViewLayer::ViewLayerID viewLayerID, const LayerHash & viewLayers, class InfoGraphicsView *, bool checkForReversedWires);
 	void findConnectorsUnder();
 	void collectChained(QList<Wire *> &, QList<ConnectorItem *> & ends);
 	void collectWires(QList<Wire *> & wires);
@@ -186,7 +186,7 @@ protected:
 	void dragCurve(QPointF eventPos, Qt::KeyboardModifiers);
 	void mousePressEvent(QGraphicsSceneMouseEvent *event);
 	void paintHover(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget); 
-	void initEnds(const ViewGeometry &, QRectF defaultRect, class InfoGraphicsView *);
+    void initEnds(const ViewGeometry &, QRectF defaultRect, class InfoGraphicsView *, bool checkForReversedWires);
 	void connectionChange(ConnectorItem * onMe, ConnectorItem * onIt, bool connect);
 	void mousePressConnectorEvent(ConnectorItem *, QGraphicsSceneMouseEvent *);
 	void mouseDoubleClickConnectorEvent(ConnectorItem *);

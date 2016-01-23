@@ -337,11 +337,12 @@ void SketchWidget::loadFromModelParts(QList<ModelPart *> & modelParts, BaseComma
 		
 		ViewLayer::ViewLayerPlacement viewLayerPlacement = getViewLayerPlacement(mp, instance, view, viewGeometry);
 
+        bool checkForReversedWires = m_sketchModel->checkForCrossedWires();
 		// use a function of the model index to ensure the same parts have the same ID across views
 		long newID = ItemBase::getNextID(mp->modelIndex());
 		if (parentCommand == NULL) {
             viewGeometryConversionHack(viewGeometry, mp);
-			ItemBase * itemBase = addItemAux(mp, viewLayerPlacement, viewGeometry, newID, true, m_viewID, false);
+            ItemBase * itemBase = addItemAux(mp, viewLayerPlacement, viewGeometry, newID, true, m_viewID, false, checkForReversedWires);
 			if (itemBase != NULL) {
 				if (locked) {
 					itemBase->setMoveLock(true);
@@ -771,7 +772,7 @@ ItemBase * SketchWidget::addItem(ModelPart * modelPart, ViewLayer::ViewLayerPlac
 		}
 		if (modelPart == NULL) return NULL;
 	
-		newItem = addItemAux(modelPart, viewLayerPlacement, viewGeometry, id, true, m_viewID, false);
+        newItem = addItemAux(modelPart, viewLayerPlacement, viewGeometry, id, true, m_viewID, false, false);
 	}
 
 	if (crossViewType == BaseCommand::CrossView) {
@@ -788,10 +789,10 @@ ItemBase * SketchWidget::addItemAuxTemp(ModelPart * modelPart, ViewLayer::ViewLa
 	modelPart = m_sketchModel->addModelPart(m_sketchModel->root(), modelPart);
 	if (modelPart == NULL) return NULL;   // this is very fucked up
 
-	return addItemAux(modelPart, viewLayerPlacement, viewGeometry, id, doConnectors, viewID, temporary);
+    return addItemAux(modelPart, viewLayerPlacement, viewGeometry, id, doConnectors, viewID, temporary, false);
 }
 
-ItemBase * SketchWidget::addItemAux(ModelPart * modelPart, ViewLayer::ViewLayerPlacement viewLayerPlacement, const ViewGeometry & viewGeometry, long id, bool doConnectors, ViewLayer::ViewID viewID, bool temporary)
+ItemBase * SketchWidget::addItemAux(ModelPart * modelPart, ViewLayer::ViewLayerPlacement viewLayerPlacement, const ViewGeometry & viewGeometry, long id, bool doConnectors, ViewLayer::ViewID viewID, bool temporary, bool checkForCrossedWires)
 {
 	if (viewID == ViewLayer::UnknownView) {
 		viewID = m_viewID;
@@ -820,7 +821,7 @@ ItemBase * SketchWidget::addItemAux(ModelPart * modelPart, ViewLayer::ViewLayerP
 			descr = "wire";
 		}
 
-		wire->setUp(getWireViewLayerID(viewGeometry, wire->viewLayerPlacement()), m_viewLayers, this);
+        wire->setUp(getWireViewLayerID(viewGeometry, wire->viewLayerPlacement()), m_viewLayers, this, checkForCrossedWires);
 		setWireVisible(wire);
 		wire->updateConnectors();
 
@@ -3463,7 +3464,7 @@ void SketchWidget::itemAddedSlot(ModelPart * modelPart, ItemBase *, ViewLayer::V
 		placePartDroppedInOtherView(modelPart, viewLayerPlacement, viewGeometry, id, dropOrigin);
 	}
 	else {
-		addItemAux(modelPart, viewLayerPlacement, viewGeometry, id, true, m_viewID, false);
+        addItemAux(modelPart, viewLayerPlacement, viewGeometry, id, true, m_viewID, false, false);
 	}
 }
 
@@ -3475,7 +3476,7 @@ ItemBase * SketchWidget::placePartDroppedInOtherView(ModelPart * modelPart, View
 	QPointF dp = viewGeometry.loc() - from;
 	ViewGeometry vg(viewGeometry);
 	vg.setLoc(to + dp);
-	ItemBase * itemBase = addItemAux(modelPart, viewLayerPlacement, vg, id, true, m_viewID, false);
+    ItemBase * itemBase = addItemAux(modelPart, viewLayerPlacement, vg, id, true, m_viewID, false, false);
 	if (m_alignToGrid && (itemBase != NULL)) {
 		alignOneToGrid(itemBase);
 	}

@@ -10146,8 +10146,7 @@ void SketchWidget::viewGeometryConversionHack(ViewGeometry &, ModelPart *)  {
 }
 
 void SketchWidget::checkForReversedWires() {
-    // so far, could even set sMaxDifference much smaller
-    static const double sMaxDifference = 0.05;
+    static const double sMaxDifference = 1.5;
 
     ViewGeometry::WireFlag traceFlag = getTraceFlag();
     QList<Wire *> toReverse;
@@ -10161,27 +10160,27 @@ void SketchWidget::checkForReversedWires() {
         ConnectorItem * w1 = wire->connector1();
         ConnectorItem* to1 = w1->firstConnectedToIsh();
 
+        double totalDistance = 0;
         if (to0) {
             QPointF to0pos = to0->sceneAdjustedTerminalPoint(NULL);
             QPointF w0pos = w0->sceneAdjustedTerminalPoint(NULL);
-            if ((to0pos - w0pos).manhattanLength() > sMaxDifference) {
-                toReverse << wire;
-                continue;
-            }
+            totalDistance += (to0pos - w0pos).manhattanLength();
         }
         if (to1) {
             QPointF to1pos = to1->sceneAdjustedTerminalPoint(NULL);
             QPointF w1pos = w1->sceneAdjustedTerminalPoint(NULL);
-            if ((to1pos - w1pos).manhattanLength() > sMaxDifference) {
-                toReverse << wire;
-                continue;
-            }
+            totalDistance += (to1pos - w1pos).manhattanLength();
+        }
+        if (totalDistance > sMaxDifference) {
+            toReverse << wire;
+            wire->debugInfo(QString("reversing d:%1").arg(totalDistance));
+            continue;
         }
     }
 
     Bezier newBezier;
     foreach (Wire * wire, toReverse) {
-        wire->debugInfo("reversing");
+
         QPointF p = wire->pos();
         QLineF line = wire->line();
         QPointF p2 = line.p2() + p;

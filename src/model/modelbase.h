@@ -53,7 +53,7 @@ public:
 	ModelPart * genFZP(const QString & moduleID, ModelBase * referenceModel);
 	const QString & fritzingVersion();
     void setReferenceModel(ModelBase *);
-    bool checkForCrossedWires();
+    bool checkForReversedWires();
 
 public:
     static bool onCoreList(const QString & moduleID);

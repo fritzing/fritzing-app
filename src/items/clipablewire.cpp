@@ -155,9 +155,9 @@ const QLineF & ClipableWire::getPaintLine() {
 	}
 
 	QLineF originalLine = this->line();
-    qDebug() << "line" << originalLine.p1() + pos() << originalLine.p2() + pos() << pos();
+    //qDebug() << "line" << originalLine.p1() + pos() << originalLine.p2() + pos() << pos();
 	if (m_cachedOriginalLine == originalLine) {
-        qDebug() << "  cachedline a" << m_cachedLine.p1() + pos() << m_cachedLine.p2() + pos() << pos();
+        // qDebug() << "  cachedline a" << m_cachedLine.p1() + pos() << m_cachedLine.p2() + pos() << pos();
         return m_cachedLine;
 	}
 
@@ -191,24 +191,26 @@ const QLineF & ClipableWire::getPaintLine() {
 
     QPointF p1 = originalLine.p1();
     QPointF p2 = originalLine.p2();
-    if (this->viewID() == ViewLayer::PCBView) {
-        qDebug() << "before" << "p1:" <<  p1 << "p2:" << p2 << "pos:" << pos() << "pp1:" << pos() + p1 << "pp2:" << pos() + p2;
-        m_connector0->debugInfo("  c0");
-        m_connector1->debugInfo("  c1");
-        if (to0) to0->debugInfo("  to0");
-        if (to1) to1->debugInfo("  to1");
-    }
-	// does to0 always go with p1?
+
+    //if (this->viewID() == ViewLayer::PCBView) {
+    //    qDebug() << "before" << "p1:" <<  p1 << "p2:" << p2 << "pos:" << pos() << "pp1:" << pos() + p1 << "pp2:" << pos() + p2;
+    //    m_connector0->debugInfo("  c0");
+    //    m_connector1->debugInfo("  c1");
+    //    if (to0) to0->debugInfo("  to0");
+    //    if (to1) to1->debugInfo("  to1");
+    //}
+
     calcClip(p1, p2, to0, to1);
-    if (this->viewID() == ViewLayer::PCBView) {
-        qDebug() << "after" << p1 << p2 << this->pos();
-        if (to0) to0->debugInfo("  to0");
-        if (to1) to1->debugInfo("  to1");
-    }
+
+    //if (this->viewID() == ViewLayer::PCBView) {
+    //    qDebug() << "after" << p1 << p2 << this->pos();
+    //    if (to0) to0->debugInfo("  to0");
+    //    if (to1) to1->debugInfo("  to1");
+    //}
 
 	m_cachedOriginalLine = originalLine;
 	m_cachedLine.setPoints(p1, p2);
-    qDebug() << "  cachedline b" << m_cachedLine.p1() + pos() << m_cachedLine.p2() + pos() << pos();
+    //qDebug() << "  cachedline b" << m_cachedLine.p1() + pos() << m_cachedLine.p2() + pos() << pos();
     return m_cachedLine;
 
 }
@@ -223,32 +225,32 @@ void ClipableWire::setClipEnds(bool clipEnds ) {
 void ClipableWire::calcClip(QPointF & p1, QPointF & p2, ConnectorItem * c1, ConnectorItem * c2) {
 
 	if (c1 != NULL && c2 != NULL && c1->isEffectivelyCircular() && c2->isEffectivelyCircular()) {
-        qDebug() << "clause 1" << p1 << p2 << c1->calcClipRadius() + (m_pen.width() / 2.0) << c2->calcClipRadius() + (m_pen.width() / 2.0);
-        c1->debugInfo("  c1");
-        c2->debugInfo("  c2");
+        //qDebug() << "clause 1" << p1 << p2 << c1->calcClipRadius() + (m_pen.width() / 2.0) << c2->calcClipRadius() + (m_pen.width() / 2.0);
+        //c1->debugInfo("  c1");
+        //c2->debugInfo("  c2");
 		GraphicsUtils::shortenLine(p1, p2, c1->calcClipRadius() + (m_pen.width() / 2.0), c2->calcClipRadius() + (m_pen.width() / 2.0));
 		return;
 	}
 
 	if (c1 != NULL && c1->isEffectivelyCircular()) {
-        qDebug() << "clause 2" << p1 << p2 << c1->calcClipRadius() + (m_pen.width() / 2.0) << 0;
-        c1->debugInfo("  c1");
+        //qDebug() << "clause 2" << p1 << p2 << c1->calcClipRadius() + (m_pen.width() / 2.0) << 0;
+        //c1->debugInfo("  c1");
         GraphicsUtils::shortenLine(p1, p2, c1->calcClipRadius() + (m_pen.width() / 2.0), 0);
 		p2 = findIntersection(c2, p2);
 		return;
 	}
 
 	if (c2 != NULL && c2->isEffectivelyCircular()) {
-        qDebug() << "clause 3" << p1 << p2 << 0 << c2->calcClipRadius() + (m_pen.width() / 2.0);
-        c2->debugInfo("  c2");
+        //qDebug() << "clause 3" << p1 << p2 << 0 << c2->calcClipRadius() + (m_pen.width() / 2.0);
+        //c2->debugInfo("  c2");
         GraphicsUtils::shortenLine(p1, p2, 0, c2->calcClipRadius() + (m_pen.width() / 2.0));
 		p1 = findIntersection(c1, p1);
 		return;
 	}
 
-    qDebug() << "clause 4" << p1 << p2;
-    if (c1) c1->debugInfo("  c1");
-    if (c2) c2->debugInfo("  c2");
+    //qDebug() << "clause 4" << p1 << p2;
+    //if (c1) c1->debugInfo("  c1");
+    //if (c2) c2->debugInfo("  c2");
 
 	p1 = findIntersection(c1, p1);
 	p2 = findIntersection(c2, p2);

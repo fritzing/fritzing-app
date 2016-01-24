@@ -337,12 +337,11 @@ void SketchWidget::loadFromModelParts(QList<ModelPart *> & modelParts, BaseComma
 		
 		ViewLayer::ViewLayerPlacement viewLayerPlacement = getViewLayerPlacement(mp, instance, view, viewGeometry);
 
-        bool checkForReversedWires = m_sketchModel->checkForCrossedWires();
 		// use a function of the model index to ensure the same parts have the same ID across views
 		long newID = ItemBase::getNextID(mp->modelIndex());
 		if (parentCommand == NULL) {
             viewGeometryConversionHack(viewGeometry, mp);
-            ItemBase * itemBase = addItemAux(mp, viewLayerPlacement, viewGeometry, newID, true, m_viewID, false, checkForReversedWires);
+            ItemBase * itemBase = addItemAux(mp, viewLayerPlacement, viewGeometry, newID, true, m_viewID, false);
 			if (itemBase != NULL) {
 				if (locked) {
 					itemBase->setMoveLock(true);
@@ -772,7 +771,7 @@ ItemBase * SketchWidget::addItem(ModelPart * modelPart, ViewLayer::ViewLayerPlac
 		}
 		if (modelPart == NULL) return NULL;
 	
-        newItem = addItemAux(modelPart, viewLayerPlacement, viewGeometry, id, true, m_viewID, false, false);
+        newItem = addItemAux(modelPart, viewLayerPlacement, viewGeometry, id, true, m_viewID, false);
 	}
 
 	if (crossViewType == BaseCommand::CrossView) {
@@ -789,10 +788,10 @@ ItemBase * SketchWidget::addItemAuxTemp(ModelPart * modelPart, ViewLayer::ViewLa
 	modelPart = m_sketchModel->addModelPart(m_sketchModel->root(), modelPart);
 	if (modelPart == NULL) return NULL;   // this is very fucked up
 
-    return addItemAux(modelPart, viewLayerPlacement, viewGeometry, id, doConnectors, viewID, temporary, false);
+    return addItemAux(modelPart, viewLayerPlacement, viewGeometry, id, doConnectors, viewID, temporary);
 }
 
-ItemBase * SketchWidget::addItemAux(ModelPart * modelPart, ViewLayer::ViewLayerPlacement viewLayerPlacement, const ViewGeometry & viewGeometry, long id, bool doConnectors, ViewLayer::ViewID viewID, bool temporary, bool checkForCrossedWires)
+ItemBase * SketchWidget::addItemAux(ModelPart * modelPart, ViewLayer::ViewLayerPlacement viewLayerPlacement, const ViewGeometry & viewGeometry, long id, bool doConnectors, ViewLayer::ViewID viewID, bool temporary)
 {
 	if (viewID == ViewLayer::UnknownView) {
 		viewID = m_viewID;
@@ -821,7 +820,7 @@ ItemBase * SketchWidget::addItemAux(ModelPart * modelPart, ViewLayer::ViewLayerP
 			descr = "wire";
 		}
 
-        wire->setUp(getWireViewLayerID(viewGeometry, wire->viewLayerPlacement()), m_viewLayers, this, checkForCrossedWires);
+        wire->setUp(getWireViewLayerID(viewGeometry, wire->viewLayerPlacement()), m_viewLayers, this);
 		setWireVisible(wire);
 		wire->updateConnectors();
 
@@ -3464,7 +3463,7 @@ void SketchWidget::itemAddedSlot(ModelPart * modelPart, ItemBase *, ViewLayer::V
 		placePartDroppedInOtherView(modelPart, viewLayerPlacement, viewGeometry, id, dropOrigin);
 	}
 	else {
-        addItemAux(modelPart, viewLayerPlacement, viewGeometry, id, true, m_viewID, false, false);
+        addItemAux(modelPart, viewLayerPlacement, viewGeometry, id, true, m_viewID, false);
 	}
 }
 
@@ -3476,7 +3475,7 @@ ItemBase * SketchWidget::placePartDroppedInOtherView(ModelPart * modelPart, View
 	QPointF dp = viewGeometry.loc() - from;
 	ViewGeometry vg(viewGeometry);
 	vg.setLoc(to + dp);
-    ItemBase * itemBase = addItemAux(modelPart, viewLayerPlacement, vg, id, true, m_viewID, false, false);
+    ItemBase * itemBase = addItemAux(modelPart, viewLayerPlacement, vg, id, true, m_viewID, false);
 	if (m_alignToGrid && (itemBase != NULL)) {
 		alignOneToGrid(itemBase);
 	}
@@ -10144,4 +10143,67 @@ void SketchWidget::updateWires() {
 }
 
 void SketchWidget::viewGeometryConversionHack(ViewGeometry &, ModelPart *)  {
+}
+
+void SketchWidget::checkForReversedWires() {
+    // so far, could even set sMaxDifference much smaller
+    static const double sMaxDifference = 0.05;
+
+    ViewGeometry::WireFlag traceFlag = getTraceFlag();
+    QList<Wire *> toReverse;
+    foreach (QGraphicsItem * item, scene()->items()) {
+        Wire * wire = dynamic_cast<Wire *>(item);
+        if (wire == NULL) continue;
+        if (!wire->isTraceType(traceFlag)) continue;
+
+        ConnectorItem * w0 = wire->connector0();
+        ConnectorItem* to0 = w0->firstConnectedToIsh();
+        ConnectorItem * w1 = wire->connector1();
+        ConnectorItem* to1 = w1->firstConnectedToIsh();
+
+        if (to0) {
+            QPointF to0pos = to0->sceneAdjustedTerminalPoint(NULL);
+            QPointF w0pos = w0->sceneAdjustedTerminalPoint(NULL);
+            if ((to0pos - w0pos).manhattanLength() > sMaxDifference) {
+                toReverse << wire;
+                continue;
+            }
+        }
+        if (to1) {
+            QPointF to1pos = to1->sceneAdjustedTerminalPoint(NULL);
+            QPointF w1pos = w1->sceneAdjustedTerminalPoint(NULL);
+            if ((to1pos - w1pos).manhattanLength() > sMaxDifference) {
+                toReverse << wire;
+                continue;
+            }
+        }
+    }
+
+    Bezier newBezier;
+    foreach (Wire * wire, toReverse) {
+        wire->debugInfo("reversing");
+        QPointF p = wire->pos();
+        QLineF line = wire->line();
+        QPointF p2 = line.p2() + p;
+        QPointF p1 = line.p1() + p;
+        bool isCurved = wire->isCurved();
+        if (isCurved) {
+            const Bezier * bezier = wire->curve();
+            QPointF cp0 = bezier->cp0() + p;
+            QPointF cp1 = bezier->cp1() + p;
+            QPointF ep0 = bezier->endpoint0() + p;
+            QPointF ep1 = bezier->endpoint1() + p;
+            newBezier.set_endpoints(ep1 - p2, ep0 - p2);
+            newBezier.set_cp0(cp1 - p2);
+            newBezier.set_cp1(cp0 - p2);
+        }
+        wire->setLineAnd(QLineF(p2 - p2, p1 - p2), p2, true);
+        wire->setConnector0Rect();
+        if (isCurved) {
+            wire->changeCurve(&newBezier);
+        }
+        else {
+            wire->update();
+        }
+    }
 }

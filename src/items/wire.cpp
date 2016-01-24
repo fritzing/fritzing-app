@@ -182,11 +182,11 @@ Wire::~Wire() {
 	}
 }
 
-FSvgRenderer * Wire::setUp(ViewLayer::ViewLayerID viewLayerID, const LayerHash &  viewLayers, InfoGraphicsView * infoGraphicsView, bool checkForReversedWires) {
+FSvgRenderer * Wire::setUp(ViewLayer::ViewLayerID viewLayerID, const LayerHash &  viewLayers, InfoGraphicsView * infoGraphicsView) {
 	ItemBase::setViewLayerID(viewLayerID, viewLayers);
 	FSvgRenderer * svgRenderer = setUpConnectors(m_modelPart, m_viewID);
 	if (svgRenderer != NULL) {
-        initEnds(m_viewGeometry, svgRenderer->viewBox(), infoGraphicsView, checkForReversedWires);
+        initEnds(m_viewGeometry, svgRenderer->viewBox(), infoGraphicsView);
         //debugCompare(this);
 	}
 	setZValue(this->z());
@@ -216,16 +216,16 @@ void Wire::moveItem(ViewGeometry & viewGeometry) {
 	this->setLine(viewGeometry.line());
 }
 
-void Wire::initEnds(const ViewGeometry & vg, QRectF defaultRect, InfoGraphicsView * infoGraphicsView, bool checkForReversedWires) {
+void Wire::initEnds(const ViewGeometry & vg, QRectF defaultRect, InfoGraphicsView * infoGraphicsView) {
 	double penWidth = 1;
 	foreach (ConnectorItem * item, cachedConnectorItems()) {
         if (item->connectorSharedID().endsWith("0")) {
             penWidth = item->rect().width();
             m_connector0 = item;
-            item->debugInfo("connector 0");
+            //item->debugInfo("connector 0");
         }
         else {
-            item->debugInfo("connector 1");
+            //item->debugInfo("connector 1");
 			m_connector1 = item;
 		}
 	}
@@ -245,10 +245,6 @@ void Wire::initEnds(const ViewGeometry & vg, QRectF defaultRect, InfoGraphicsVie
 	setConnector0Rect();
 	setConnector1Rect();
 	m_viewGeometry.setLine(this->line());
-
-    if (checkForReversedWires) {
-
-    }
 	
    	QBrush brush(QColor(0, 0, 0));
 	QPen pen(brush, penWidth, Qt::SolidLine, Qt::RoundCap);

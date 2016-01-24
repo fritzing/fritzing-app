@@ -90,7 +90,7 @@ public:
 	ConnectorItem * otherConnector(ConnectorItem *);
 	ConnectorItem * connector0();
 	ConnectorItem * connector1();
-    virtual class FSvgRenderer * setUp(ViewLayer::ViewLayerID viewLayerID, const LayerHash & viewLayers, class InfoGraphicsView *, bool checkForReversedWires);
+    virtual class FSvgRenderer * setUp(ViewLayer::ViewLayerID viewLayerID, const LayerHash & viewLayers, class InfoGraphicsView *);
 	void findConnectorsUnder();
 	void collectChained(QList<Wire *> &, QList<ConnectorItem *> & ends);
 	void collectWires(QList<Wire *> & wires);
@@ -163,6 +163,8 @@ public:
     bool banded();
     void setBanded(bool);
 	void setProp(const QString & prop, const QString & value);
+    void setConnector0Rect();
+    void setConnector1Rect();
 
 protected slots:
 	void colorEntry(const QString & text);
@@ -186,7 +188,7 @@ protected:
 	void dragCurve(QPointF eventPos, Qt::KeyboardModifiers);
 	void mousePressEvent(QGraphicsSceneMouseEvent *event);
 	void paintHover(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget); 
-    void initEnds(const ViewGeometry &, QRectF defaultRect, class InfoGraphicsView *, bool checkForReversedWires);
+    void initEnds(const ViewGeometry &, QRectF defaultRect, class InfoGraphicsView *);
 	void connectionChange(ConnectorItem * onMe, ConnectorItem * onIt, bool connect);
 	void mousePressConnectorEvent(ConnectorItem *, QGraphicsSceneMouseEvent *);
 	void mouseDoubleClickConnectorEvent(ConnectorItem *);
@@ -197,8 +199,6 @@ protected:
 	bool acceptsMouseReleaseConnectorEvent(ConnectorItem *, QGraphicsSceneMouseEvent *);
  	virtual class FSvgRenderer * setUpConnectors(class ModelPart *, ViewLayer::ViewID);
 	void collectChained(ConnectorItem * connectorItem, QList<Wire *> & chained, QList<ConnectorItem *> & ends);
-	void setConnector0Rect();
-	void setConnector1Rect();
 	void collectWiresAux(QList<Wire *> & wires, ConnectorItem * start);
 	void setShadowColor(QColor &, bool restore);
 	void calcNewLine(ConnectorItem * from, ConnectorItem * to, QPointF & p1, QPointF & p2);

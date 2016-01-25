@@ -10146,8 +10146,6 @@ void SketchWidget::viewGeometryConversionHack(ViewGeometry &, ModelPart *)  {
 }
 
 void SketchWidget::checkForReversedWires() {
-    static const double sMaxDifference = 1.5;
-
     ViewGeometry::WireFlag traceFlag = getTraceFlag();
     QList<Wire *> toReverse;
     foreach (QGraphicsItem * item, scene()->items()) {
@@ -10160,27 +10158,37 @@ void SketchWidget::checkForReversedWires() {
         ConnectorItem * w1 = wire->connector1();
         ConnectorItem* to1 = w1->firstConnectedToIsh();
 
+        QPointF p = wire->pos();
+        QLineF line = wire->line();
+        QPointF p2 = line.p2() + p;
+        QPointF p1 = line.p1() + p;
+        QLineF newLine(p2 - p2, p1 - p2);
+
         double totalDistance = 0;
+        double totalReverseDistance = 0;
         if (to0) {
             QPointF to0pos = to0->sceneAdjustedTerminalPoint(NULL);
             QPointF w0pos = w0->sceneAdjustedTerminalPoint(NULL);
             totalDistance += (to0pos - w0pos).manhattanLength();
+            QPointF w0revPos = p2 + wire->connector0Rect(newLine).center();
+            totalReverseDistance += (to0pos - w0revPos).manhattanLength();
         }
         if (to1) {
             QPointF to1pos = to1->sceneAdjustedTerminalPoint(NULL);
             QPointF w1pos = w1->sceneAdjustedTerminalPoint(NULL);
             totalDistance += (to1pos - w1pos).manhattanLength();
+            QPointF w1revPos = p2 + wire->connector1Rect(newLine).center();
+            totalReverseDistance += (to1pos - w1revPos).manhattanLength();
         }
-        if (totalDistance > sMaxDifference) {
+        if (totalDistance > totalReverseDistance) {
             toReverse << wire;
-            wire->debugInfo(QString("reversing d:%1").arg(totalDistance));
+            wire->debugInfo(QString("reversing d:%1 %2,").arg(totalDistance).arg(totalReverseDistance));
             continue;
         }
     }
 
     Bezier newBezier;
     foreach (Wire * wire, toReverse) {
-
         QPointF p = wire->pos();
         QLineF line = wire->line();
         QPointF p2 = line.p2() + p;

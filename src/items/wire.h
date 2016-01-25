@@ -165,6 +165,8 @@ public:
 	void setProp(const QString & prop, const QString & value);
     void setConnector0Rect();
     void setConnector1Rect();
+    QRectF connector0Rect(const QLineF & line);
+    QRectF connector1Rect(const QLineF & line);
 
 protected slots:
 	void colorEntry(const QString & text);

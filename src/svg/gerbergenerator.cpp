@@ -28,6 +28,17 @@ $Date: 2013-04-21 09:50:09 +0200 (So, 21. Apr 2013) $
 #include <QFileDialog>
 #include <QSvgRenderer>
 #include <qmath.h>
+#include <set>
+#include <utility>
+#include <QDebug>
+#include <QPaintEngine>
+#include <cmath>
+#include <QVector>
+
+#include <QPaintDevice>
+#include <QMultiHash>
+#include <fstream>
+
 
 #include "gerbergenerator.h"
 #include "../debugdialog.h"
@@ -41,9 +52,11 @@ $Date: 2013-04-21 09:50:09 +0200 (So, 21. Apr 2013) $
 #include "../utils/textutils.h"
 #include "../utils/folderutils.h"
 #include "../version/version.h"
+#include "../lib/clipper/clipper.hpp"
+#include "clipperhelpers.h"
 
-static const QRegExp AaCc("[aAcCqQtTsS]");
-static const QRegExp MFinder("([mM])\\s*([0-9.]*)[\\s,]*([0-9.]*)");
+using namespace ClipperLib;
+
 const QRegExp GerberGenerator::MultipleZs("z\\s*[^\\s]");
 
 const QString GerberGenerator::SilkTopSuffix = "_silkTop.gto";
@@ -58,31 +71,656 @@ const QString GerberGenerator::DrillSuffix = "_drill.txt";
 const QString GerberGenerator::OutlineSuffix = "_contour.gm1";
 const QString GerberGenerator::MagicBoardOutlineID = "boardoutline";
 
-const double GerberGenerator::MaskClearanceMils = 5;	
+const double GerberGenerator::MaskClearanceMils = 5;
+static const int dpi = 10000;
+static const int gerberDecimals = 6;
 
+class GerberPaintDevice;
+class GerberPaintEngine : public QPaintEngine {
+public:
+    enum LayerType {
+        Copper,
+        SilkScreen,
+        SolderMask,
+        PasteStencil,
+        Outline
+    };
+public:
+    GerberPaintEngine(LayerType layerType_, double physicalWidth_, double physicalHeight_)
+            : QPaintEngine((QPaintEngine::PaintEngineFeatures) (QPaintEngine::AllFeatures
+                    & ~QPaintEngine::PatternBrush
+                    & ~QPaintEngine::PerspectiveTransform
+                    & ~QPaintEngine::ConicalGradientFill
+                    & ~QPaintEngine::PorterDuff)),
+              regions(),
+              roundApertures(),
+              layerType(layerType_),
+              physicalWidth(physicalWidth_),
+              physicalHeight(physicalHeight_),
+              sendEverythingToClipper(layerType_ == SolderMask || layerType_ == Outline),
+              clipperPaths(),
+              solderMask(),
+              outline(),
+              apertureIndex(11) {
+    }
+
+    virtual void drawEllipse(const QRectF &r) override;
+
+    virtual void drawRects(const QRectF *rects, int rectCount) override;
+
+    virtual void drawPolygon(const QPointF *points, int pointCount, PolygonDrawMode mode) override;
+
+    virtual void drawPath(const QPainterPath &path) override;
+
+    virtual bool begin(QPaintDevice *pdev) {
+        return true;
+    }
+
+    virtual bool end() {
+        return true;
+    }
+
+    void collectFile(QTextStream &output, bool mirrorX = false);
+    bool isEmpty() {
+        return clipperPaths.size() == 0 && roundApertures.size() == 0 && rectApertures.size() == 0;
+    }
+
+    virtual void updateState(const QPaintEngineState &state) {
+    };
+
+    virtual void drawPixmap(const QRectF &r, const QPixmap &pm, const QRectF &sr){
+        qWarning("drawPixmap");
+    };
+
+    virtual Type type() const{
+        return User;
+    }
+
+    Paths getOutline() {
+        return outline;
+    }
+
+    void setLayerType(LayerType layerType_) {
+        if (layerType == Outline)
+            outline.swap(clipperPaths);
+        if (layerType == SolderMask) {
+            solderMask.clear();
+            Clipper cp;
+            cp.AddPaths(outline, ptSubject, true);
+            cp.AddPaths(clipperPaths, ptClip, true);
+            cp.Execute(ctDifference, solderMask, pftNonZero, pftNonZero);
+        }
+        clipperPaths.clear();
+        regions.clear();
+        roundApertures.clear();
+        rectApertures.clear();
+        layerType = layerType_;
+        sendEverythingToClipper = layerType_ == SolderMask || layerType_ == Outline || layerType_ == SilkScreen;
+    }
+
+    struct RectAperture {
+        RectAperture(int id_):id(id_), w(0), h(0), holeX(0), holeY(0) {}
+        double w;
+        double h;
+        double holeX;
+        double holeY;
+        int id;
+
+        void toDefinition(QTextStream &stream) const{
+            stream << "%ADD" << QString::number(id) << "R," << QString::number(w) << "X" << QString::number(h);
+            if (holeX) {
+                stream << "X" << QString::number(holeX) ;
+                if (holeY)
+                    stream << "X" << QString::number(holeY);
+            }
+            stream << "*%\n";
+        }
+
+        bool operator==(const RectAperture &e2) const
+        {
+            return w == e2.w && h == e2.h && holeX == e2.holeX && holeY == e2.holeY;
+        }
+    };
+
+    struct RoundAperture {
+        RoundAperture(int id_):id(id_), diameter(0), holeX(0), holeY(0) {}
+        double diameter;
+        double holeX;
+        double holeY;
+        int id;
+
+        void toDefinition(QTextStream &stream) const{
+            stream << "%ADD" << QString::number(id) << "C," << QString::number(diameter);
+            // don't be fooled, in gerber "X" is a separator, not an axis name.
+            if (holeX) {
+                stream << "X" << QString::number(holeX) ;
+                if (holeY)
+                    stream << "X" << QString::number(holeY);
+            }
+             stream << "*%\n";
+        }
+
+        bool operator==(const RoundAperture &e2) const
+        {
+            return diameter == e2.diameter && holeX == e2.holeX && holeY == e2.holeY;
+        }
+    };
+
+    struct GerberRegion {
+        GerberRegion(Path polygon_, bool lightPolarity_):polygon(polygon_), lightPolarity(lightPolarity_) {
+        }
+        Path polygon;
+        bool lightPolarity;
+    };
+
+protected:
+    void xyd(QTextStream &stream, double x, double y, int d=3, bool mirrorX = false) {
+        const double gerberFactor = std::pow(10.0, gerberDecimals) / dpi;
+
+        double h = physicalHeight * dpi;
+        double xInDPI = mirrorX ? (physicalWidth * dpi - x) : x;
+        stream << "X" << QString::number(qRound(xInDPI * gerberFactor))
+                << "Y" << QString::number(qRound((h - y) * gerberFactor))
+                << "D0" << QString::number(d) << "*\n";
+    }
+    int nextId() {
+        return apertureIndex++;
+    }
+
+    bool wouldBeClipped(QPolygonF polygon, double penWidth) {
+        double adjustmentFactor = penWidth / 2 * dpi;
+        QRectF bounds = polygon.boundingRect().adjusted(adjustmentFactor, adjustmentFactor, adjustmentFactor, adjustmentFactor);
+        Clipper cp;
+        Paths extraMeat;
+        Path path = polygonToClipper(QMatrix().map(bounds));
+        cp.AddPath(path, ptSubject, true);
+        if (layerType == SilkScreen && solderMask.size())
+            cp.AddPaths(solderMask, ptClip, true);
+        else
+            cp.AddPaths(outline, ptClip, true);
+        cp.Execute(ctDifference, extraMeat, pftNonZero, pftNonZero);
+        return extraMeat.size() != 0;
+    }
+
+    void accumulateClipper(Paths &paths) {
+        Clipper cp;
+        Paths clipped;
+        if (layerType == SilkScreen && solderMask.size()){
+            cp.AddPaths(paths, ptSubject, true);
+            cp.AddPaths(solderMask, ptClip, true);
+            cp.Execute(ctIntersection, clipped, pftNonZero, pftNonZero);
+        } else {
+            if (layerType != Outline && outline.size()) {
+                cp.AddPaths(outline, ptSubject, true);
+                cp.AddPaths(paths, ptClip, true);
+                cp.Execute(ctIntersection, clipped, pftNonZero, pftNonZero);
+            } else
+                clipped = paths;
+        }
+        clipperPaths.insert(clipperPaths.end(), clipped.begin(), clipped.end());
+    }
+
+private:
+    QList<GerberRegion> regions;
+    Paths outline;
+    Paths solderMask;
+    Paths clipperPaths;
+    QMultiHash<RoundAperture, QList<QPointF> > roundApertures;
+    QMultiHash<RectAperture, QPointF> rectApertures;
+    LayerType layerType;
+    double physicalWidth;
+    double physicalHeight;
+    int apertureIndex;
+    bool sendEverythingToClipper;
+};
+
+class GerberPaintDevice : public QPaintDevice {
+
+public:
+    GerberPaintDevice(double physicalWidth_, double physicalHeight_, GerberPaintEngine::LayerType layerType_)
+            : QPaintDevice()
+            , physicalWidth(physicalWidth_)
+            , physicalHeight(physicalHeight_)
+            , gerberEngine(layerType_, physicalWidth_, physicalHeight_)
+            , gerberEnginePtr(&gerberEngine) {
+    }
+
+    virtual QPaintEngine *paintEngine() const {
+        return gerberEnginePtr;
+    };
+    GerberPaintEngine *gerberPaintEngine() {
+        return gerberEnginePtr;
+    }
+
+    double physicalWidth;
+    double physicalHeight;
+private:
+    GerberPaintEngine gerberEngine;
+    GerberPaintEngine *gerberEnginePtr;
+protected:
+    virtual int metric(QPaintDevice::PaintDeviceMetric metric) const {
+        switch(metric) {
+            case PdmWidth:
+                return (int) (dpi * physicalWidth);
+            case PdmHeight:
+                return (int) (dpi * physicalHeight);
+            case PdmDepth:
+                return 1;
+            case PdmNumColors:
+                return 2;
+            case PdmDpiX:
+                return dpi;
+            case PdmDpiY:
+                return dpi;
+            case PdmDevicePixelRatio:
+                return 1;
+            default:
+                qWarning("GerberPaintDevice::metric() - metric %d unknown", metric);
+                return 0;
+        }
+    }
+};
+class HolePaintDevice;
+
+class HolePaintEngine : public QPaintEngine {
+
+public:
+    HolePaintEngine()
+            : QPaintEngine((QPaintEngine::PaintEngineFeatures) (QPaintEngine::AllFeatures
+                    & ~QPaintEngine::Antialiasing
+                    & ~QPaintEngine::PainterPaths
+                    & ~QPaintEngine::PatternBrush
+                    & ~QPaintEngine::PerspectiveTransform
+                    & ~QPaintEngine::ConicalGradientFill
+                    & ~QPaintEngine::PorterDuff)) {
+
+    };
+    virtual bool begin(QPaintDevice *pdev) {
+        return true;
+    }
+
+    virtual bool end() {
+        return true;
+    }
+
+    virtual void updateState(const QPaintEngineState &state) {
+    }
+
+    virtual void drawPixmap(const QRectF &r, const QPixmap &pm, const QRectF &sr) {
+    }
+
+    virtual QPaintEngine::Type type() const {
+        return User;
+    }
+
+    virtual void drawEllipse(const QRectF &r) override;
+
+    virtual void drawPolygon(const QPointF *points, int pointCount, QPaintEngine::PolygonDrawMode mode) override {
+        //pass
+    }
+};
+
+class HolePaintDevice : public QPaintDevice {
+public:
+    HolePaintDevice(double physicalWidth_, double physicalHeight_)
+            :physicalWidth(physicalWidth_)
+            , physicalHeight(physicalHeight_)
+            , holePaintEngine(new HolePaintEngine())
+            , holes(){
+    };
+
+    ~HolePaintDevice() {
+        delete holePaintEngine;
+    }
+
+    QPaintEngine *paintEngine() const {
+        return holePaintEngine;
+    }
+
+    void addHole(QPointF center, double diameter) {
+        //in the SVG, the same hole could be declared as various diameter circles, so we only keep the biggest diameter for each center
+        QHash<QPointF, double>::iterator previousDiameter = centerToDiameter.find(center);
+        if (previousDiameter != centerToDiameter.end()) {
+            if (*previousDiameter < diameter) {
+                holes.find(diameter)->remove(center);
+            } else
+                return;
+        }
+        centerToDiameter.insert(center, diameter);
+        QMap<double, QSet<QPointF> >::iterator set = holes.find(diameter);
+        if (set != holes.end())
+            set->insert(center);
+        else {
+            QSet<QPointF> newSet;
+            newSet.insert(center);
+            holes.insert(diameter, newSet);
+        }
+    }
+
+    QMap<double, QSet<QPointF> > getHoles() {
+        return holes;
+    }
+    void clearHoles() {
+        holes.clear();
+        centerToDiameter.clear();
+    }
+
+private:
+    HolePaintEngine *holePaintEngine;
+    double physicalWidth;
+    double physicalHeight;
+    QMap<double, QSet<QPointF> > holes;
+    QHash<QPointF, double> centerToDiameter;
+protected:
+    virtual int metric(QPaintDevice::PaintDeviceMetric metric) const {
+        switch(metric) {
+            case PdmWidth:
+                return (int) (dpi * physicalWidth);
+            case PdmHeight:
+                return (int) (dpi * physicalHeight);
+            case PdmDepth:
+                return 1;
+            case PdmNumColors:
+                return 2;
+            case PdmDpiX:
+                return dpi;
+            case PdmDpiY:
+                return dpi;
+            case PdmDevicePixelRatio:
+                return 1;
+            default:
+                qWarning("GerberPaintDevice::metric() - metric %d unknown", metric);
+                return 0;
+        }
+    }
+};
 ////////////////////////////////////////////
 
-bool pixelsCollide(QImage * image1, QImage * image2, int x1, int y1, int x2, int y2) {
-	for (int y = y1; y < y2; y++) {
-		for (int x = x1; x < x2; x++) {
-			QRgb p1 = image1->pixel(x, y);
-			if (p1 == 0xffffffff) continue;
+#if QT_VERSION < QT_VERSION_CHECK(5, 3, 0)
+    //stolen from Qt 5.3
+    static inline uint hash(const uchar *p, int len, uint seed) Q_DECL_NOTHROW
+    {
+        uint h = seed;
+        for (int i = 0; i < len; ++i)
+            h = 31 * h + p[i];
+        return h;
+    }
 
-			QRgb p2 = image2->pixel(x, y);
-			if (p2 == 0xffffffff) continue;
+    //stolen from Qt 5.3
+    uint qHash(double key, uint seed) Q_DECL_NOTHROW
+    {
+        return key != 0.0  ? hash(reinterpret_cast<const uchar *>(&key), sizeof(key), seed) : seed;
+    }
+#endif
+uint qHash(const GerberPaintEngine::RectAperture &key) {
+    return qHash(key.w) ^ qHash(key.h) ^ qHash(key.holeX) ^ qHash(key.holeY);
+}
+uint qHash(const GerberPaintEngine::RoundAperture &key) {
+    return qHash(key.diameter) ^ qHash(key.holeX) ^ qHash(key.holeY);
+}
+uint qHash(const QPointF &key) {
+    return qHash(key.x()) ^ qHash(key.y());
+}
+void HolePaintEngine::drawEllipse(const QRectF &r) {
+    if (r.width() != r.height())
+        return;
+    QPointF center = state->matrix().map(r.center());
+    double diameter = r.width();
+    if (state->pen().style() != Qt::NoPen != state->pen().widthF() != 0){
+        diameter -= state->pen().widthF();
+    }
+    diameter /= GraphicsUtils::StandardFritzingDPI;
+    HolePaintDevice *device = dynamic_cast<HolePaintDevice *>(paintDevice());
+    device->addHole(center / dpi, diameter);
+}
 
-			//DebugDialog::debug(QString("p1:%1 p2:%2").arg(p1, 0, 16).arg(p2, 0, 16));
+// we collect the polygon hierarchy from outside to inside
+// to give gerber the correct order: the big polygon, then its holes, then the smaller polygons that go in the holes etc.
+static void recursivelyCollectPolygons(PolyNode *currentNode, QList<GerberPaintEngine::GerberRegion> &regions) {
+    for (int i = 0; i < currentNode->ChildCount(); i++) {
+        PolyNode *child = currentNode->Childs[i];
+        regions.append(GerberPaintEngine::GerberRegion(child->Contour, false));
+        for (int j = 0; j < child->ChildCount(); j++) {
+            regions.append(GerberPaintEngine::GerberRegion(child->Childs[j]->Contour, true));
+            recursivelyCollectPolygons(child->Childs[j], regions);
+        }
+    }
+}
 
-			return true;
-		}
-	}
+void GerberPaintEngine::collectFile(QTextStream &output, bool mirrorX) {
+    output << "%ASAXBY*%\n"
+            << QString("%FSLAX2%1Y2%2*%\n").arg(gerberDecimals).arg(gerberDecimals)
+            << "%MOIN*%\n"
+            << "%OFA0B0*%\n"
+            << "%SFA1.0B1.0*%\n"
+            << "G01*\n";
+    PolyTree result;
+    if (layerType == SolderMask) {
+        Paths unions;
+        Clipper cp;
+        cp.AddPaths(clipperPaths, ptSubject, true);
+        cp.Execute(ctUnion, unions, pftNonZero, pftNonZero);
 
-	return false;
+        ClipperOffset co;
+        co.AddPaths(unions, jtRound, etClosedPolygon);
+        co.Execute(result, GerberGenerator::MaskClearanceMils / 1000.0 * dpi );
+    } else {
+        Clipper cp;
+        cp.AddPaths(clipperPaths, ptSubject, true);
+        cp.Execute(ctUnion, result, pftNonZero, pftNonZero);
+    }
+    clipperPaths.clear();
+    ClosedPathsFromPolyTree(result, clipperPaths);
+    recursivelyCollectPolygons(&result, regions);
+    if (layerType == Outline) {
+        RoundAperture a(nextId());
+        a.diameter = 0;
+        for (int i = 0; i < regions.size(); i++) {
+            GerberRegion r = regions[i];
+            QList<QPointF> list;
+            for (size_t j = 0; j < r.polygon.size(); j++)
+                list << QPointF(r.polygon[j].X, r.polygon[j].Y);
+            list << QPointF(r.polygon[0].X, r.polygon[0].Y);
+            roundApertures.insert(a, list);
+        }
+    }
+    QList<RoundAperture> roundAperturesDefs = roundApertures.uniqueKeys();
+    for(QList<RoundAperture>::iterator i = roundAperturesDefs.begin(); i != roundAperturesDefs.end(); ++i) {
+        i->toDefinition(output);
+    }
+    QList<RectAperture> rectAperturesDefs = rectApertures.uniqueKeys();
+    for(QList<RectAperture>::iterator i = rectAperturesDefs.begin(); i != rectAperturesDefs.end(); ++i) {
+        i->toDefinition(output);
+    }
+    if (regions.size()) {
+        if (layerType != Outline) {
+            for (int i = 0; i < regions.size(); i++) {
+                GerberRegion r = regions[i];
+                if (r.lightPolarity)
+                    output << "%LPC*%\n";
+                output << "G36*\n";
+                for (size_t j = 0; j < r.polygon.size(); j++)
+                    xyd(output, r.polygon[j].X, r.polygon[j].Y, j == 0 ? 2 : 1, mirrorX);
+                if (r.lightPolarity)
+                    output << "%LPD*%\n";
+            }
+            output << "G37*\n";
+        }
+    }
+    for(QList<RoundAperture>::iterator i = roundAperturesDefs.begin(); i != roundAperturesDefs.end(); ++i) {
+        output << "D" << QString::number(i->id) << "*\n";
+        for(QMultiHash<RoundAperture, QList<QPointF> >::iterator j = roundApertures.find(*i); j != roundApertures.end() && j.key() == *i; ++j) {
+            const QList<QPointF> &pointList = j.value();
+            if (pointList.size() == 1)
+                xyd(output, pointList[0].x(), pointList[0].y(), 3, mirrorX);
+            else
+                for (int k = 0; k < pointList.size(); k++)
+                    xyd(output, pointList[k].x(), pointList[k].y(), k == 0 ? 2 : 1, mirrorX);
+        }
+    }
+    for(QList<RectAperture>::iterator i = rectAperturesDefs.begin(); i != rectAperturesDefs.end(); ++i) {
+        output << "D" << QString::number(i->id) << "*\n";
+        for(QMultiHash<RectAperture, QPointF>::iterator j = rectApertures.find(*i); j != rectApertures.end(); ++j)
+            xyd(output, j.value().x(), j.value().y(), 3, mirrorX);
+    }
+    output << "M02*\n";
+}
+
+
+void GerberPaintEngine::drawPath(const QPainterPath &path) {
+    bool hasPen = state->pen().style() != Qt::NoPen;
+    bool hasBrush = state->brush().style() != Qt::NoBrush;
+    QList<QPolygonF> polygons = path.toSubpathPolygons();
+    if (hasBrush) {
+        Paths paths = polygonsToClipper(polygons, state->matrix());
+        accumulateClipper(paths);
+    }
+    if (hasPen && state->pen().widthF() != 0)
+        for(int i = 0; i < polygons.size(); i++){
+            QPolygonF poly = polygons[i];
+            PolygonDrawMode drawMode = poly.isClosed() ? (path.fillRule() == Qt::OddEvenFill ? QPaintEngine::OddEvenMode : QPaintEngine::WindingMode) : QPaintEngine::PolylineMode;
+            drawPolygon(poly.data(), poly.size(), drawMode);
+        }
+}
+
+void GerberPaintEngine::drawPolygon(const QPointF *points, int pointCount, QPaintEngine::PolygonDrawMode mode) {
+    bool hasPen = state->pen().style() != Qt::NoPen && state->pen().widthF() != 0.0;
+    bool hasBrush = state->brush().style() != Qt::NoBrush;
+    if (!(hasPen || hasBrush))
+        return;
+    if (!sendEverythingToClipper && mode == QPaintEngine::PolylineMode) {
+        QList<QPointF> list;
+        double penwidth = state->pen().widthF() / GraphicsUtils::StandardFritzingDPI;
+        for (int i = 0; i < pointCount; i++)
+            list << (state->matrix().map(points[i]));
+        if (!wouldBeClipped(QPolygonF(QVector<QPointF>::fromList(list)), penwidth)) {
+            RoundAperture a(nextId());
+            a.diameter = penwidth;
+            roundApertures.insert(a, list);
+            return;
+        }
+    }
+    Path path(pointsToClipper(points, pointCount, state->matrix()));
+    Paths result;
+    ClipperOffset co;
+    co.AddPath(path, qtToClipperJoinType(state->pen().joinStyle()), qtToClipperEndType(state->pen().capStyle(), mode == QPaintEngine::PolylineMode, hasBrush));
+    co.Execute(result, hasPen ? state->pen().widthF() / 2 / GraphicsUtils::StandardFritzingDPI * dpi : 0);
+    accumulateClipper(result);
+}
+
+void GerberPaintEngine::drawEllipse(const QRectF &r) {
+    bool hasPen = state->pen().style() != Qt::NoPen;
+    bool hasBrush = state->brush().style() != Qt::NoBrush;
+    if (!(hasPen || hasBrush))
+        return;
+    if (layerType == GerberPaintEngine::SolderMask){
+        painter()->save();
+        painter()->setBrush(Qt::black);
+    }
+    if (sendEverythingToClipper || r.width() != r.height())
+       QPaintEngine::drawEllipse(r);
+    else {
+        RoundAperture a(nextId());
+        double penwidth = hasPen ? state->pen().widthF() : 0;
+        a.diameter = (r.width() + penwidth) / GraphicsUtils::StandardFritzingDPI;
+        if (layerType == GerberPaintEngine::Copper || layerType == GerberPaintEngine::SilkScreen) {
+            qreal holeSize = r.width() - penwidth;
+            //this happens when the pen.widthF is larger than the circle diameter
+            if (holeSize < 0)
+                holeSize = 0;
+            a.holeX = hasBrush ? 0 : holeSize / GraphicsUtils::StandardFritzingDPI;
+        }
+        if (wouldBeClipped(state->matrix().map(r), penwidth))
+            QPaintEngine::drawEllipse(r);
+        else
+            roundApertures.insert(a, QList<QPointF>() << state->matrix().map(r.center()));
+    }
+    if (layerType == GerberPaintEngine::SolderMask)
+        painter()->restore();
+}
+
+static double roundOnGrid(double value, double gridSize) {
+    return round(value * gridSize) / gridSize;
+}
+
+void GerberPaintEngine::drawRects(const QRectF *rects, int rectCount) {
+    bool hasPen = state->pen().style() != Qt::NoPen;
+    bool hasBrush = state->brush().style() != Qt::NoBrush;
+    if (!(hasPen || hasBrush))
+        return;
+    if (layerType == GerberPaintEngine::SolderMask){
+        //paint the holes in solder mask
+        painter()->save();
+        painter()->setBrush(Qt::black);
+    }
+    if (sendEverythingToClipper)
+         QPaintEngine::drawRects(rects, rectCount);
+    else {
+        double penWidth = hasPen ? state->pen().widthF() / GraphicsUtils::StandardFritzingDPI : 0;
+        for (int i = 0; i < rectCount; i++) {
+            const QPolygonF poly  = state->matrix().map(rects[i]);
+            //now check is the polygon is still aligned with the axes by checking if one edge is the same length as a bounding rectangle edge
+            const QRectF rect = poly.boundingRect();
+            const QPointF edge = poly[0] - poly[1];
+            const double edgeL = edge.x() * edge.x() + edge.y() * edge.y();
+            const double wSq = rect.width() * rect.width();
+            const double hSq = rect.height() * rect.height();
+            // we use relative difference because the matrix computation might have scatered the resolution
+            if ((wSq && fabs((edgeL - wSq) / wSq) < 1 / dpi / 20) || (hSq && fabs((edgeL - hSq) / hSq) < 1 / dpi / 20)) {
+                RectAperture a(nextId());
+                const double gridResolution = dpi * 10;
+                a.w = roundOnGrid(rect.width() / dpi + penWidth, gridResolution);
+                a.h = roundOnGrid(rect.height() / dpi + penWidth, gridResolution);
+                if (layerType == GerberPaintEngine::Copper || layerType == GerberPaintEngine::SilkScreen) {
+                    if (!hasBrush) {
+                        a.holeX = roundOnGrid(rect.width() / dpi - penWidth, gridResolution);
+                        a.holeY = roundOnGrid(rect.height() / dpi - penWidth, gridResolution);
+                    }
+                }
+                if (wouldBeClipped(poly, penWidth))
+                    QPaintEngine::drawRects(rects + i, 1);
+                else
+                    rectApertures.insert(a, rect.center());
+            } else
+                QPaintEngine::drawRects(rects + i, 1);
+        }
+    }
+    if (layerType == GerberPaintEngine::SolderMask)
+        painter()->restore();
 }
 
 ////////////////////////////////////////////
 
-void GerberGenerator::exportToGerber(const QString & prefix, const QString & exportDir, ItemBase * board, PCBSketchWidget * sketchWidget, bool displayMessageBoxes) 
+void collectGerberFile(GerberPaintEngine *engine, const QString &exportDir, const QString &prefix, const QString &suffix, bool mirrorX = false) {
+    if (engine->isEmpty())
+        return;
+    QString outname = exportDir + "/" +  prefix + suffix;
+    QFile file(outname);
+    file.open(QIODevice::WriteOnly);
+    QTextStream out(&file);
+    engine->collectFile(out);
+    file.close();
+    if (mirrorX) {
+        QFile file2(exportDir + "/" +  prefix + "_mirror" + suffix);
+        file2.open(QIODevice::WriteOnly);
+        QTextStream out2(&file2);
+        engine->collectFile(out2, true);
+        file2.close();
+    }
+}
+
+void svgToGerberFile(const QString &svg, GerberPaintEngine::LayerType layerType, const QString &exportDir, const QString &prefix, const QString &suffix, bool mirrorX = false) {
+    QSizeF svgSize = TextUtils::parseForWidthAndHeight(svg);
+    GerberPaintDevice device(svgSize.width(), svgSize.height(), layerType);
+    QSvgRenderer renderer(svg.toUtf8());
+    QPainter painter;
+    painter.begin(&device);
+    renderer.render(&painter);
+    painter.end();
+    collectGerberFile(device.gerberPaintEngine(), exportDir, prefix, suffix, mirrorX);
+}
+
+void GerberGenerator::exportToGerber(const QString & prefix, const QString & exportDir, ItemBase * board, PCBSketchWidget * sketchWidget, bool displayMessageBoxes)
 {
 	if (board == NULL) {
         int boardCount;
@@ -99,267 +737,181 @@ void GerberGenerator::exportToGerber(const QString & prefix, const QString & exp
 
     exportPickAndPlace(prefix, exportDir, board, sketchWidget, displayMessageBoxes);
 
-	LayerList viewLayerIDs = ViewLayer::copperLayers(ViewLayer::NewBottom);
-	int copperInvalidCount = doCopper(board, sketchWidget, viewLayerIDs, "Copper0", CopperBottomSuffix, prefix, exportDir, displayMessageBoxes);
- 
-    if (sketchWidget->boardLayers() == 2) {
-		viewLayerIDs = ViewLayer::copperLayers(ViewLayer::NewTop);
-		copperInvalidCount += doCopper(board, sketchWidget, viewLayerIDs, "Copper1", CopperTopSuffix, prefix, exportDir, displayMessageBoxes);
-	}
-
-	LayerList maskLayerIDs = ViewLayer::maskLayers(ViewLayer::NewBottom);
-	QString maskBottom, maskTop;
-	int maskInvalidCount = doMask(maskLayerIDs, "Mask0", MaskBottomSuffix, board, sketchWidget, prefix, exportDir, displayMessageBoxes, maskBottom);
-
-	if (sketchWidget->boardLayers() == 2) {
-		maskLayerIDs = ViewLayer::maskLayers(ViewLayer::NewTop);
-		maskInvalidCount += doMask(maskLayerIDs, "Mask1", MaskTopSuffix, board, sketchWidget, prefix, exportDir, displayMessageBoxes, maskTop);
-	}
-
-	maskLayerIDs = ViewLayer::maskLayers(ViewLayer::NewBottom);
-	int pasteMaskInvalidCount = doPasteMask(maskLayerIDs, "PasteMask0", PasteMaskBottomSuffix, board, sketchWidget, prefix, exportDir, displayMessageBoxes);
-
-	if (sketchWidget->boardLayers() == 2) {
-		maskLayerIDs = ViewLayer::maskLayers(ViewLayer::NewTop);
-		pasteMaskInvalidCount += doPasteMask(maskLayerIDs, "PasteMask1", PasteMaskTopSuffix, board, sketchWidget, prefix, exportDir, displayMessageBoxes);
-	}
-
-    LayerList silkLayerIDs = ViewLayer::silkLayers(ViewLayer::NewTop);
-	int silkInvalidCount = doSilk(silkLayerIDs, "Silk1", SilkTopSuffix, board, sketchWidget, prefix, exportDir, displayMessageBoxes, maskTop);
-    silkLayerIDs = ViewLayer::silkLayers(ViewLayer::NewBottom);
-	silkInvalidCount += doSilk(silkLayerIDs, "Silk0", SilkBottomSuffix, board, sketchWidget, prefix, exportDir, displayMessageBoxes, maskBottom);
-
     // now do it for the outline/contour
     LayerList outlineLayerIDs = ViewLayer::outlineLayers();
-    bool empty;
-    QString svgOutline = renderTo(outlineLayerIDs, board, sketchWidget, empty);
-    if (empty || svgOutline.isEmpty()) {
+    QString svgOutline = renderTo(outlineLayerIDs, board, sketchWidget);
+    if (svgOutline.isEmpty()) {
         displayMessage(QObject::tr("outline is empty"), displayMessageBoxes);
         return;
     }
 
-	svgOutline = cleanOutline(svgOutline);
-    // at this point svgOutline must be a single element; a path element may contain cutouts
-    QMultiHash<long, ConnectorItem *> treatAsCircle;
-	svgOutline = clipToBoard(svgOutline, board, "board", SVG2gerber::ForOutline, "", displayMessageBoxes, treatAsCircle);
-	QSizeF svgSize = TextUtils::parseForWidthAndHeight(svgOutline);
+    QSizeF svgSize = TextUtils::parseForWidthAndHeight(svgOutline);
+    GerberPaintDevice device(svgSize.width(), svgSize.height(), GerberPaintEngine::Outline);
+    QPainter painter;
+    painter.begin(&device);
 
-    // create outline gerber from svg
-    SVG2gerber outlineGerber;
-	int outlineInvalidCount = outlineGerber.convert(svgOutline, sketchWidget->boardLayers() == 2, "contour", SVG2gerber::ForOutline, svgSize * GraphicsUtils::StandardFritzingDPI);
-	
-	//DebugDialog::debug(QString("outline output: %1").arg(outlineGerber.getGerber()));
-	saveEnd("contour", exportDir, prefix, OutlineSuffix, displayMessageBoxes, outlineGerber);
+    //outline
+    device.gerberPaintEngine()->setLayerType(GerberPaintEngine::Outline);
+    svgOutline = cleanOutline(svgOutline);
+    QSvgRenderer(svgOutline.toUtf8()).render(&painter);
+    collectGerberFile(device.gerberPaintEngine(), exportDir, prefix, OutlineSuffix);
 
-	doDrill(board, sketchWidget, prefix, exportDir, displayMessageBoxes);
+    //copper Bottom
+    device.gerberPaintEngine()->setLayerType(GerberPaintEngine::Copper);
+    QSvgRenderer(renderTo(ViewLayer::copperLayers(ViewLayer::NewBottom), board, sketchWidget).toUtf8()).render(&painter);
+    collectGerberFile(device.gerberPaintEngine(), exportDir, prefix, CopperBottomSuffix, true);
 
-	if (outlineInvalidCount > 0 || silkInvalidCount > 0 || copperInvalidCount > 0 || maskInvalidCount || pasteMaskInvalidCount) {
-		QString s;
-		if (outlineInvalidCount > 0) s += QObject::tr("the board outline layer, ");
-		if (silkInvalidCount > 0) s += QObject::tr("silkscreen layer(s), ");
-		if (copperInvalidCount > 0) s += QObject::tr("copper layer(s), ");
-		if (maskInvalidCount > 0) s += QObject::tr("mask layer(s), ");
-		if (pasteMaskInvalidCount > 0) s += QObject::tr("paste mask layer(s), ");
-		s.chop(2);
-		displayMessage(QObject::tr("Unable to translate svg curves in %1").arg(s), displayMessageBoxes);
-	}
+    //copper Top
+    device.gerberPaintEngine()->setLayerType(GerberPaintEngine::Copper);
+    QSvgRenderer(renderTo(ViewLayer::copperLayers(ViewLayer::NewTop), board, sketchWidget).toUtf8()).render(&painter);
+    collectGerberFile(device.gerberPaintEngine(), exportDir, prefix, CopperTopSuffix, false);
 
+    //solder mask Bottom
+    QList<ItemBase *> copperLogoItems;
+    sketchWidget->hideCopperLogoItems(copperLogoItems);
+    device.gerberPaintEngine()->setLayerType(GerberPaintEngine::SolderMask);
+    QSvgRenderer(renderTo(ViewLayer::maskLayers(ViewLayer::NewBottom), board, sketchWidget).toUtf8()).render(&painter);
+    collectGerberFile(device.gerberPaintEngine(), exportDir, prefix, MaskBottomSuffix, true);
+    sketchWidget->restoreCopperLogoItems(copperLogoItems);
+
+    //solder paste stencil Bottom
+    collectGerberFile(device.gerberPaintEngine(), exportDir, prefix, PasteMaskBottomSuffix, true);
+
+    //silk screen Bottom
+    device.gerberPaintEngine()->setLayerType(GerberPaintEngine::SilkScreen);
+    QSvgRenderer(renderTo(ViewLayer::silkLayers(ViewLayer::NewBottom), board, sketchWidget).toUtf8()).render(&painter);
+    collectGerberFile(device.gerberPaintEngine(), exportDir, prefix, SilkBottomSuffix, true);
+
+    //solder mask Top
+    QList<ItemBase *> copperLogoItemsTop;
+    sketchWidget->hideCopperLogoItems(copperLogoItemsTop);
+    device.gerberPaintEngine()->setLayerType(GerberPaintEngine::SolderMask);
+    QSvgRenderer(renderTo(ViewLayer::maskLayers(ViewLayer::NewTop), board, sketchWidget).toUtf8()).render(&painter);
+    collectGerberFile(device.gerberPaintEngine(), exportDir, prefix, MaskTopSuffix, false);
+    sketchWidget->restoreCopperLogoItems(copperLogoItemsTop);
+
+    //solder paste stencil Top
+    collectGerberFile(device.gerberPaintEngine(), exportDir, prefix, PasteMaskTopSuffix, false);
+
+    //silk screen Top
+    device.gerberPaintEngine()->setLayerType(GerberPaintEngine::SilkScreen);
+    QSvgRenderer(renderTo(ViewLayer::silkLayers(ViewLayer::NewTop), board, sketchWidget).toUtf8()).render(&painter);
+    collectGerberFile(device.gerberPaintEngine(), exportDir, prefix, SilkTopSuffix, false);
+
+    painter.end();
+    doDrill(board, sketchWidget, prefix, exportDir, device.gerberPaintEngine()->getOutline());
 }
 
-int GerberGenerator::doCopper(ItemBase * board, PCBSketchWidget * sketchWidget, LayerList & viewLayerIDs, const QString & copperName, const QString & copperSuffix, const QString & filename, const QString & exportDir, bool displayMessageBoxes) 
-{
-    bool empty;
-	QString svg = renderTo(viewLayerIDs, board, sketchWidget, empty);
-	if (empty || svg.isEmpty()) {
-		displayMessage(QObject::tr("%1 layer export is empty.").arg(copperName), displayMessageBoxes);
-		return 0;
-	}
-    
-    QMultiHash<long, ConnectorItem *> treatAsCircle;
-    foreach (QGraphicsItem * item, sketchWidget->scene()->collidingItems(board)) {
-        ConnectorItem * connectorItem = dynamic_cast<ConnectorItem *>(item);
-        if (connectorItem == NULL) continue;
-        if (!connectorItem->isPath()) continue;
-        if (connectorItem->radius() == 0) continue;
+void GerberGenerator::exportFile(const QString &svg, const QString &layerName, SVG2gerber::ForWhy forWhy, const QString &exportDir,
+        const QString &prefix, const QString &suffix) {
 
-        treatAsCircle.insert(connectorItem->attachedToID(), connectorItem);
-    }
+    switch(forWhy){
 
-	QSizeF svgSize = TextUtils::parseForWidthAndHeight(svg);
-
-	svg = clipToBoard(svg, board, copperName, SVG2gerber::ForCopper, "", displayMessageBoxes, treatAsCircle);
-	if (svg.isEmpty()) {
-		displayMessage(QObject::tr("%1 layer export is empty (case 2).").arg(copperName), displayMessageBoxes);
-		return 0;
-	}
-
-	return doEnd(svg, sketchWidget->boardLayers(), copperName, SVG2gerber::ForCopper, svgSize * GraphicsUtils::StandardFritzingDPI, exportDir, filename, copperSuffix, displayMessageBoxes);
-}
-
-
-int GerberGenerator::doSilk(LayerList silkLayerIDs, const QString & silkName, const QString & gerberSuffix, ItemBase * board, PCBSketchWidget * sketchWidget, const QString & filename, const QString & exportDir, bool displayMessageBoxes, const QString & clipString) 
-{
-
-	bool empty;
-	QString svgSilk = renderTo(silkLayerIDs, board, sketchWidget, empty);
-    if (empty || svgSilk.isEmpty()) {
-        if (silkLayerIDs.contains(ViewLayer::Silkscreen1)) {
-		    displayMessage(QObject::tr("silk layer %1 export is empty").arg(silkName), displayMessageBoxes);
+        case SVG2gerber::ForCopper:
+            svgToGerberFile(svg, GerberPaintEngine::Copper, exportDir, prefix, suffix);
+            break;
+        case SVG2gerber::ForSilk:
+            svgToGerberFile(svg, GerberPaintEngine::SilkScreen, exportDir, prefix, suffix);
+            break;
+        case SVG2gerber::ForOutline:
+            svgToGerberFile(svg, GerberPaintEngine::Outline, exportDir, prefix, suffix);
+            break;
+        case SVG2gerber::ForMask:
+            svgToGerberFile(svg, GerberPaintEngine::SolderMask, exportDir, prefix, suffix);
+            break;
+        case SVG2gerber::ForDrill: {
+            Paths paths;
+            GerberGenerator::svgToExcellon(prefix, exportDir, svg, paths);
         }
-        return 0;
+            break;
+        case SVG2gerber::ForPasteMask:
+            svgToGerberFile(svg, GerberPaintEngine::PasteStencil, exportDir, prefix, suffix);
+            break;
     }
-
-	//QFile f(silkName + "original.svg");
-	//f.open(QFile::WriteOnly);
-	//QTextStream fs(&f);
-	//fs << svgSilk;
-	//f.close();
-
-	QSizeF svgSize = TextUtils::parseForWidthAndHeight(svgSilk);
-
-    QMultiHash<long, ConnectorItem *> treatAsCircle;
-	svgSilk = clipToBoard(svgSilk, board, silkName, SVG2gerber::ForSilk, clipString, displayMessageBoxes, treatAsCircle);
-	if (svgSilk.isEmpty()) {
-		displayMessage(QObject::tr("silk export failure"), displayMessageBoxes);
-		return 0;
-	}
-
-	//QFile f2(silkName + "clipped.svg");
-	//f2.open(QFile::WriteOnly);
-	//QTextStream fs2(&f2);
-	//fs2 << svgSilk;
-	//f2.close();
-
-	return doEnd(svgSilk, sketchWidget->boardLayers(), silkName, SVG2gerber::ForSilk, svgSize * GraphicsUtils::StandardFritzingDPI, exportDir, filename, gerberSuffix, displayMessageBoxes);
 }
 
+static QDomDocument extractHoles(bool plated, QString svgDrill) {
+    QDomDocument holesDocument = QDomDocument("svg");
+    holesDocument.setContent(svgDrill);
+    QDomNodeList circleList = holesDocument.elementsByTagName("circle");
+    for(int i =circleList.count() - 1; i >=0 ; i--) {
+        QDomElement node = circleList.item(i).toElement();
+        if (plated == (node.attribute("id").contains(FSvgRenderer::NonConnectorName) && node.attribute("stroke-width").toDouble() == 0))
+            node.parentNode().removeChild(node);
+    }
+    return holesDocument;
+}
 
-int GerberGenerator::doDrill(ItemBase * board, PCBSketchWidget * sketchWidget, const QString & filename, const QString & exportDir, bool displayMessageBoxes) 
+static bool pointInPolygon(Paths &paths, IntPoint point) {
+    for(int i = 0; i < paths.size(); i++)
+        if (Orientation(paths[i]) != (PointInPolygon(point, paths[i])==1))
+            return false;
+    return true;
+}
+
+static void dumpHoles(QStringList &excellonHeader,QStringList &excellonBody, const QMap<double, QSet<QPointF> > holes, int holeIndex, double height, const Paths &outline) {
+    ClipperOffset co;
+    co.AddPaths(outline, jtRound, etClosedPolygon);
+    for (QMap<double, QSet<QPointF> >::const_iterator it = holes.begin(); it != holes.end(); ++it) {
+        Paths offsetOutline;
+        co.Execute(offsetOutline, -it.key() / 2.0 * dpi);
+        excellonHeader << "T" << QString::number(holeIndex) << "C" << QString::number(it.key()) << "\n";
+        excellonBody << "T" << QString::number(holeIndex) << "\n";
+        for(QSet<QPointF>::const_iterator it2 = it->begin(); it2 != it->end(); ++it2)
+            if (pointInPolygon(offsetOutline, IntPoint((cInt) (it2->x() * dpi), (cInt) (it2->y() * dpi))))
+                excellonBody
+                        << "X" << QString("%1").arg(qRound(it2->x() * 10000), 6, 10, QChar('0'))
+                        << "Y" << QString("%1").arg(qRound((height - it2->y()) * 10000), 6, 10, QChar('0')) << "\n";
+        holeIndex++;
+    }
+}
+
+int GerberGenerator::doDrill(ItemBase *board, PCBSketchWidget *sketchWidget, const QString &filename, const QString &exportDir, const Paths &outline)
 {
     LayerList drillLayerIDs;
     drillLayerIDs << ViewLayer::drillLayers();
-
-	bool empty;
-	QString svgDrill = renderTo(drillLayerIDs, board, sketchWidget, empty);
-    if (empty || svgDrill.isEmpty()) {
-		displayMessage(QObject::tr("exported drill file is empty"), displayMessageBoxes);
-        return 0;
-    }
-
-	QSizeF svgSize = TextUtils::parseForWidthAndHeight(svgDrill);
-    QMultiHash<long, ConnectorItem *> treatAsCircle;
-    foreach (QGraphicsItem * item, sketchWidget->scene()->collidingItems(board)) {
-        ConnectorItem * connectorItem = dynamic_cast<ConnectorItem *>(item);
-        if (connectorItem == NULL) continue;
-        if (!connectorItem->isPath()) continue;
-        if (connectorItem->radius() == 0) continue;
-
-        treatAsCircle.insert(connectorItem->attachedToID(), connectorItem);
-    }
-
-	svgDrill = clipToBoard(svgDrill, board, "Copper0", SVG2gerber::ForDrill, "", displayMessageBoxes, treatAsCircle);
-	if (svgDrill.isEmpty()) {
-		displayMessage(QObject::tr("drill export failure"), displayMessageBoxes);
-		return 0;
-	}
-
-	return doEnd(svgDrill, sketchWidget->boardLayers(), "drill", SVG2gerber::ForDrill, svgSize * GraphicsUtils::StandardFritzingDPI, exportDir, filename, DrillSuffix, displayMessageBoxes);
+    QString svgDrill = renderTo(drillLayerIDs, board, sketchWidget);
+    svgToExcellon(filename, exportDir, svgDrill, outline);
+    return 0;
 }
 
-int GerberGenerator::doMask(LayerList maskLayerIDs, const QString &maskName, const QString & gerberSuffix, ItemBase * board, PCBSketchWidget * sketchWidget, const QString & filename, const QString & exportDir, bool displayMessageBoxes, QString & clipString) 
-{
-	// don't want these in the mask laqyer
-	QList<ItemBase *> copperLogoItems;
-	sketchWidget->hideCopperLogoItems(copperLogoItems);
+void GerberGenerator::svgToExcellon(QString const &filename, QString const &exportDir,const QString &svgDrill, const Paths &outline) {
+    QSizeF svgSize = TextUtils::parseForWidthAndHeight(svgDrill);
+    QDomDocument platedHolesDocument = extractHoles(true, svgDrill);
+    QDomDocument nonPlatedHolesDocument = extractHoles(false, svgDrill);
 
-	bool empty;
-	QString svgMask = renderTo(maskLayerIDs, board, sketchWidget, empty);
-	sketchWidget->restoreCopperLogoItems(copperLogoItems);
+    HolePaintDevice device(svgSize.width(),  svgSize.height());
+    QSvgRenderer platedRenderer(platedHolesDocument.toByteArray());
+    QSvgRenderer nonPlatedRenderer(nonPlatedHolesDocument.toByteArray());
+    QPainter painter;
+    painter.begin(&device);
+    platedRenderer.render(&painter);
+    QMap<double, QSet<QPointF> > platedHoles = device.getHoles();
+    device.clearHoles();
+    nonPlatedRenderer.render(&painter);
+    QMap<double, QSet<QPointF> > nonPlatedHoles = device.getHoles();
+    device.clearHoles();
+    painter.end();
 
-    if (empty || svgMask.isEmpty()) {
-		displayMessage(QObject::tr("exported mask layer %1 is empty").arg(maskName), displayMessageBoxes);
-        return 0;
-    }
+    QStringList excellonHeader;
+    QStringList excellonBody;
 
-	svgMask = TextUtils::expandAndFill(svgMask, "black", MaskClearanceMils * 2);
-	if (svgMask.isEmpty()) {
-		displayMessage(QObject::tr("%1 mask export failure (2)").arg(maskName), displayMessageBoxes);
-		return 0;
-	}
+    int initialHoleIndex = 1;
+    int initialPlatedIndex = std::max(101, nonPlatedHoles.size() + 1);
 
-	QSizeF svgSize = TextUtils::parseForWidthAndHeight(svgMask);
-    QMultiHash<long, ConnectorItem *> treatAsCircle;
-	svgMask = clipToBoard(svgMask, board, maskName, SVG2gerber::ForCopper, "", displayMessageBoxes, treatAsCircle);
-	if (svgMask.isEmpty()) {
-		displayMessage(QObject::tr("mask export failure"), displayMessageBoxes);
-		return 0;
-	}
+    excellonHeader << QString("; NON-PLATED HOLES START AT T%1\n").arg(initialHoleIndex);
+    excellonHeader << QString("; THROUGH (PLATED) HOLES START AT T%1\n").arg(initialPlatedIndex);
 
-	clipString = svgMask;
-
-	return doEnd(svgMask, sketchWidget->boardLayers(), maskName, SVG2gerber::ForCopper, svgSize * GraphicsUtils::StandardFritzingDPI, exportDir, filename, gerberSuffix, displayMessageBoxes);
-}
-
-int GerberGenerator::doPasteMask(LayerList maskLayerIDs, const QString &maskName, const QString & gerberSuffix, ItemBase * board, PCBSketchWidget * sketchWidget, const QString & filename, const QString & exportDir, bool displayMessageBoxes) 
-{
-	// don't want these in the mask laqyer
-	QList<ItemBase *> copperLogoItems;
-	sketchWidget->hideCopperLogoItems(copperLogoItems);
-	QList<ItemBase *> holes;
-	sketchWidget->hideHoles(holes);
-
-	bool empty;
-	QString svgMask = renderTo(maskLayerIDs, board, sketchWidget, empty);
-	sketchWidget->restoreCopperLogoItems(copperLogoItems);
-	sketchWidget->restoreCopperLogoItems(holes);
-
-    if (empty || svgMask.isEmpty()) {
-		displayMessage(QObject::tr("exported paste mask layer is empty"), displayMessageBoxes);
-        return 0;
-    }
-
-    svgMask = sketchWidget->makePasteMask(svgMask, board, GraphicsUtils::StandardFritzingDPI, maskLayerIDs);
-    if (svgMask.isEmpty()) return 0;
-
-	QSizeF svgSize = TextUtils::parseForWidthAndHeight(svgMask);
-    QMultiHash<long, ConnectorItem *> treatAsCircle;
-	svgMask = clipToBoard(svgMask, board, maskName, SVG2gerber::ForCopper, "", displayMessageBoxes, treatAsCircle);
-	if (svgMask.isEmpty()) {
-		displayMessage(QObject::tr("mask export failure"), displayMessageBoxes);
-		return 0;
-	}
-
-	return doEnd(svgMask, sketchWidget->boardLayers(), maskName, SVG2gerber::ForCopper, svgSize * GraphicsUtils::StandardFritzingDPI, exportDir, filename, gerberSuffix, displayMessageBoxes);
-}
-
-int GerberGenerator::doEnd(const QString & svg, int boardLayers, const QString & layerName, SVG2gerber::ForWhy forWhy, QSizeF svgSize, 
-							const QString & exportDir, const QString & prefix, const QString & suffix, bool displayMessageBoxes)
-{
-    // create mask gerber from svg
-    SVG2gerber gerber;
-	int invalidCount = gerber.convert(svg, boardLayers == 2, layerName, forWhy, svgSize);
-
-	saveEnd(layerName, exportDir, prefix, suffix, displayMessageBoxes, gerber);
-
-	return invalidCount;
-}
-
-bool GerberGenerator::saveEnd(const QString & layerName, const QString & exportDir, const QString & prefix, const QString & suffix, bool displayMessageBoxes, SVG2gerber & gerber)
-{
-
-    QString outname = exportDir + "/" +  prefix + suffix;
-    QFile out(outname);
-	if (!out.open(QIODevice::WriteOnly | QIODevice::Text)) {
-		displayMessage(QObject::tr("%1 layer: unable to save to '%2'").arg(layerName).arg(outname), displayMessageBoxes);
-		return false;
-	}
-
-    QTextStream stream(&out);
-    stream << gerber.getGerber();
-	stream.flush();
-	out.close();
-	return true;
-
+    excellonHeader << "M48\n";
+    excellonHeader << "INCH\n";
+    dumpHoles(excellonHeader, excellonBody, nonPlatedHoles, initialHoleIndex, svgSize.height(), outline);
+    dumpHoles(excellonHeader, excellonBody, platedHoles, initialPlatedIndex, svgSize.height(), outline);
+    excellonBody << "T00\nM30\n";
+    QFile f(exportDir + "/" + filename+ "_drill.txt");
+    f.open(QIODevice::WriteOnly);
+    QTextStream fs(&f);
+    fs << excellonHeader.join("") << "%\n" << excellonBody.join("");
+    f.close();
 }
 
 void GerberGenerator::displayMessage(const QString & message, bool displayMessageBoxes) {
@@ -370,362 +922,6 @@ void GerberGenerator::displayMessage(const QString & message, bool displayMessag
 	}
 
 	DebugDialog::debug(message);
-}
-
-QString GerberGenerator::clipToBoard(QString svgString, ItemBase * board, const QString & layerName, SVG2gerber::ForWhy forWhy, const QString & clipString, bool displayMessageBoxes, QMultiHash<long, ConnectorItem *> & treatAsCircle) {
-	QRectF source = board->sceneBoundingRect();
-	source.moveTo(0, 0);
-	return clipToBoard(svgString, source, layerName, forWhy, clipString, displayMessageBoxes, treatAsCircle);
-}
-
-QString GerberGenerator::clipToBoard(QString svgString, QRectF & boardRect, const QString & layerName, SVG2gerber::ForWhy forWhy, const QString & clipString, bool displayMessageBoxes, QMultiHash<long, ConnectorItem *> & treatAsCircle) {
-	// document 1 will contain svg that is easy to convert to gerber
-	QDomDocument domDocument1;
-	QString errorStr;
-	int errorLine;
-	int errorColumn;
-	bool result = domDocument1.setContent(svgString, &errorStr, &errorLine, &errorColumn);
-	if (!result) {
-		return "";
-	}
-
-	QDomElement root1 = domDocument1.documentElement();
-	if (root1.firstChildElement().isNull()) {
-		return "";
-	}
-
-    if (forWhy != SVG2gerber::ForDrill) {
-        QDomNodeList nodeList = root1.elementsByTagName("circle"); 
-        QList<QDomElement> justHoles;
-        for (int i = 0; i < nodeList.count(); i++) {
-            QDomElement circle = nodeList.at(i).toElement();
-            if (circle.attribute("id").contains(FSvgRenderer::NonConnectorName)) {
-                double sw = circle.attribute("stroke-width").toDouble();
-                if (sw == 0) {
-                    justHoles << circle;
-                }
-            }
-        }
-        foreach (QDomElement circle, justHoles) {
-            circle.setTagName("g");
-        }
-    }
-
-    handleDonuts(root1, treatAsCircle);
-
-    bool multipleContours = false;
-    if (forWhy == SVG2gerber::ForOutline) { 
-        multipleContours = dealWithMultipleContours(root1, displayMessageBoxes);
-    }
-
-	// document 2 will contain svg that must be rasterized for gerber conversion
-	QDomDocument domDocument2 = domDocument1.cloneNode(true).toDocument();
-
-	bool anyConverted = false;
-    if (TextUtils::squashElement(domDocument1, "text", "", QRegExp())) {
-        anyConverted = true; 
-	}
-
-	// gerber can't handle ellipses that are rotated, so cull them all
-    if (TextUtils::squashElement(domDocument1, "ellipse", "", QRegExp())) {
-		anyConverted = true;
-    }
-
-    if (TextUtils::squashElement(domDocument1, "rect", "rx", QRegExp())) {
-		anyConverted = true;
-    }
-
-    if (TextUtils::squashElement(domDocument1, "rect", "ry", QRegExp())) {
-		anyConverted = true;
-    }
-
-	// gerber can't handle paths with curves
-    if (TextUtils::squashElement(domDocument1, "path", "d", AaCc)) {
-		anyConverted = true;
-    }
-
-	// gerber can't handle multiple subpaths if there are intersections
-    if (TextUtils::squashElement(domDocument1, "path", "d", MultipleZs)) {
-		anyConverted = true;
-    }
-
-    if (TextUtils::squashElement(domDocument1, "image", "", QRegExp())) {
-		anyConverted = true;
-    }
-
-    // can't handle scaled paths very well. There is probably a deeper bug that needs to be chased down.
-    // is this only necessary for contour view?
-    QDomNodeList nodeList = root1.elementsByTagName("path"); 
-    for (int i = 0; i < nodeList.count(); i++) {
-        QDomNode parent = nodeList.at(i);
-        while (!parent.isNull()) {
-            QString transformString = parent.toElement().attribute("transform");
-            if (!transformString.isNull()) {
-                QMatrix matrix = TextUtils::transformStringToMatrix(transformString);
-                QTransform transform(matrix);
-                if (transform.isScaling()) {
-                    nodeList.at(i).toElement().setTagName("g");
-                    anyConverted = true;
-                    break;
-                }
-
-            }
-
-            parent = parent.parentNode();
-        }
-    }
-
-	QVector <QDomElement> leaves1;
-	int transformCount1 = 0;
-    QDomElement e1 = domDocument1.documentElement();
-    TextUtils::collectLeaves(e1, transformCount1, leaves1);
-
-	QVector <QDomElement> leaves2;
-	int transformCount2 = 0;
-    QDomElement e2 = domDocument2.documentElement();
-    TextUtils::collectLeaves(e2, transformCount2, leaves2);
-
-	double res = GraphicsUtils::StandardFritzingDPI;
-	// convert from pixel dpi to StandardFritzingDPI
-	QRectF sourceRes(boardRect.left() * res / GraphicsUtils::SVGDPI, boardRect.top() * res / GraphicsUtils::SVGDPI, 
-					 boardRect.width() * res / GraphicsUtils::SVGDPI, boardRect.height() * res / GraphicsUtils::SVGDPI);
-	int twidth = sourceRes.width();
-	int theight = sourceRes.height();
-	QSize imgSize(twidth + 2, theight + 2);
-	QRectF target(0, 0, twidth, theight);
-
-	QImage * clipImage = NULL;
-	if (!clipString.isEmpty()) {
-		clipImage = new QImage(imgSize, QImage::Format_Mono);
-		clipImage->fill(0xffffffff);
-		clipImage->setDotsPerMeterX(res * GraphicsUtils::InchesPerMeter);
-		clipImage->setDotsPerMeterY(res * GraphicsUtils::InchesPerMeter);
-
-		QXmlStreamReader reader(clipString);
-		QSvgRenderer renderer(&reader);		
-		QPainter painter;
-		painter.begin(clipImage);
-		renderer.render(&painter, target);
-		painter.end();
-
-#ifndef QT_NO_DEBUG
-        clipImage->save(FolderUtils::getUserDataStorePath("") + "/clip.png");
-#endif
-
-	}
-
-	svgString = TextUtils::removeXMLEntities(domDocument1.toString());
-
-    QList<QDomElement> possibleHoles;
-	QXmlStreamReader reader(svgString);
-	QSvgRenderer renderer(&reader);
-	bool anyClipped = false;
-    if (forWhy != SVG2gerber::ForOutline) { 
-	    for (int i = 0; i < transformCount1; i++) {
-		    QString n = QString::number(i);
-		    QRectF bounds = renderer.boundsOnElement(n);
-		    QMatrix m = renderer.matrixForElement(n);
-		    QDomElement element = leaves1.at(i);
-		    QRectF mBounds = m.mapRect(bounds);
-		    if (mBounds.left() < sourceRes.left() - 0.1|| mBounds.top() < sourceRes.top() - 0.1 || mBounds.right() > sourceRes.right() + 0.1 || mBounds.bottom() > sourceRes.bottom() + 0.1) {
-			    if (element.tagName() == "circle") {
-                    possibleHoles.append(element);
-                }               
-                // element is outside of bounds--squash it so it will be clipped
-			    // we don't care if the board shape is irregular
-			    // since anything printed between the shape and the bounding rectangle 
-			    // will be physically clipped when the board is cut out
-			    element.setTagName("g");
-			    anyClipped = anyConverted = true;
-		    }	
-	    }
-    }
-
-
-    if (possibleHoles.count() > 0) {
-        QList<QDomElement> newHoles;
-        int ix = 0;
-        foreach (QDomElement element, possibleHoles) {
-            QDomElement newElement = element.cloneNode(false).toElement();
-            double radius = element.attribute("r").toDouble();
-            double sw = element.attribute("stroke-width").toDouble();
-            element.parentNode().insertAfter(newElement, element);
-            newElement.setAttribute("id", QString("__%1__").arg(ix++));
-            newElement.setAttribute("stroke-width", 0);
-            newElement.setAttribute("r", QString::number(radius - (sw / 2)));
-            newElement.setTagName("circle");
-            newHoles.append(newElement);
-        }
-
-	    QSvgRenderer renderer(domDocument1.toByteArray());
-        for (int i = newHoles.count() - 1; i >= 0; i--) {
-            QString id = QString("__%1__").arg(i);
-		    QRectF bounds = renderer.boundsOnElement(id);
-		    QMatrix m = renderer.matrixForElement(id);
-		    QDomElement newElement = newHoles.at(i);
-		    QRectF mBounds = m.mapRect(bounds);
-		    if (mBounds.left() < sourceRes.left() - 0.1 || mBounds.top() < sourceRes.top() - 0.1 || mBounds.right() > sourceRes.right() + 0.1 || mBounds.bottom() > sourceRes.bottom() + 0.1) {
-                // hole is still clipped
-                newHoles.removeAt(i);
-                newElement.parentNode().removeChild(newElement);
-            }
-            else {
-                // enlarge it a little due to aliasing when the clipped portion is converted to raster and back
-                double radius = newElement.attribute("r").toDouble();
-                radius += 4;
-                newElement.setAttribute("r", QString::number(radius));
-                newElement.setAttribute("stroke-width", 2);
-            }
-        }
-    }
-
-	if (clipImage) {
-		QImage another(imgSize, QImage::Format_Mono);
-		another.fill(0xffffffff);
-		another.setDotsPerMeterX(res * GraphicsUtils::InchesPerMeter);
-		another.setDotsPerMeterY(res * GraphicsUtils::InchesPerMeter);
-
-		svgString = TextUtils::removeXMLEntities(domDocument1.toString());
-		QXmlStreamReader reader(svgString);
-		QSvgRenderer renderer(&reader);
-		QPainter painter;
-		painter.begin(&another);
-		renderer.render(&painter, target);
-		painter.end();
-
-		for (int i = 0; i < transformCount1; i++) {
-			QDomElement element = leaves1.at(i);
-			if (element.tagName().compare("g") == 0) {
-				// element is already converted to raster space, we'll clip it later
-				continue;
-			}
-
-			QString n = QString::number(i);
-			QRectF bounds = renderer.boundsOnElement(n);
-			QMatrix m = renderer.matrixForElement(n);
-			QRectF mBounds = m.mapRect(bounds);
-
-			int x1 = qFloor(qMax(0.0, mBounds.left() - sourceRes.left()));          // atmel compiler fails without cast
-			int x2 = qCeil(qMin(sourceRes.width(), mBounds.right() - sourceRes.left()));
-			int y1 = qFloor(qMax(0.0, mBounds.top() - sourceRes.top()));            // atmel compiler fails without cast
-			int y2 = qCeil(qMin(sourceRes.height(), mBounds.bottom() - sourceRes.top()));
-			
-			if (pixelsCollide(&another, clipImage, x1, y1, x2, y2)) {
-				element.setTagName("g");
-				anyClipped = anyConverted = true;
-			}
-		}
-	}
-
-	if (anyClipped) {
-		// svg has been changed by clipping process so get the string again
-		svgString = TextUtils::removeXMLEntities(domDocument1.toString());
-	}
-
-    if (anyConverted) {
-		for (int i = 0; i < transformCount1; i++) {
-			QDomElement element1 = leaves1.at(i);
-			if (element1.tagName().compare("g") != 0) {
-				// document 1 element svg can be directly converted to gerber
-				// so remove it from document 2
-				QDomElement element2 = leaves2.at(i);
-				element2.setTagName("g");
-			}
-		}
-		
-
-		// expand the svg to fill the space of the image
-		QDomElement root2 = domDocument2.documentElement();
-		root2.setAttribute("width", QString("%1px").arg(twidth));
-		root2.setAttribute("height", QString("%1px").arg(theight));
-		if (boardRect.x() != 0 || boardRect.y() != 0) {
-			QString viewBox = root2.attribute("viewBox");
-			QStringList coords = viewBox.split(" ", QString::SkipEmptyParts);
-			coords[0] = QString::number(sourceRes.left());
-			coords[1] = QString::number(sourceRes.top());
-			root2.setAttribute("viewBox", coords.join(" "));
-		}
-
-		QStringList exceptions;
-		exceptions << "none" << "";
-		QString toColor("#000000");
-		SvgFileSplitter::changeColors(root2, toColor, exceptions);
-
-        QImage image(imgSize, QImage::Format_Mono);
-		image.setDotsPerMeterX(res * GraphicsUtils::InchesPerMeter);
-		image.setDotsPerMeterY(res * GraphicsUtils::InchesPerMeter);
-
-        if (forWhy == SVG2gerber::ForOutline) {		
-            QDomNodeList paths = root2.elementsByTagName("path");
-            if (paths.count() == 0) {
-                // some non-path element makes up the outline
-                mergeOutlineElement(image, target, res, domDocument2, svgString, 0, layerName);
-            }
-            else {
-                for (int p = 0; p < paths.count(); p++) {
-                    QDomElement path = paths.at(p).toElement();
-                    path.setTagName("g");
-                }
-                for (int p = 0; p < paths.count(); p++) {
-                    QDomElement path = paths.at(p).toElement();
-                    path.setTagName("path");
-                    if (p > 0) {
-                        paths.at(p - 1).toElement().setTagName("g");
-                    }
-                    mergeOutlineElement(image, target, res, domDocument2, svgString, p, layerName);
-                }
-            }
-		}
-        else {
-		    image.fill(0xffffffff);
-		    QByteArray svg = TextUtils::removeXMLEntities(domDocument2.toString()).toUtf8();
-		    QSvgRenderer renderer(svg);
-		    QPainter painter;
-		    painter.begin(&image);
-		    renderer.render(&painter, target);
-		    painter.end();
-		    image.invertPixels();				// need white pixels on a black background for GroundPlaneGenerator
-
-    #ifndef QT_NO_DEBUG
-		    image.save(FolderUtils::getUserDataStorePath("") + "/preclip_output.png");
-    #endif
-
-		    if (clipImage != NULL) {
-			    // can this be done with a single blt using composition mode
-			    // if not, grab a scanline instead of testing every pixel
-			    for (int y = 0; y < theight; y++) {
-				    for (int x = 0; x < twidth; x++) {
-					    if (clipImage->pixel(x, y) != 0xffffffff) {
-						    image.setPixel(x, y, 0);
-					    }
-				    }
-			    }
-		    }
-
-    #ifndef QT_NO_DEBUG
-		    image.save(FolderUtils::getUserDataStorePath("") + "/output.png");
-    #endif
-
-            QString path = makePath(image, res / GraphicsUtils::StandardFritzingDPI, "#000000");
-            svgString.replace("</svg>", path + "</svg>");
-
-            /*
-
-		    GroundPlaneGenerator gpg;
-		    gpg.setLayerName(layerName);
-		    gpg.setMinRunSize(1, 1);
-			gpg.scanImage(image, image.width(), image.height(), GraphicsUtils::StandardFritzingDPI / res, GraphicsUtils::StandardFritzingDPI, "#000000", false, false, QSizeF(0, 0), 0, sourceRes.topLeft());
-		    if (gpg.newSVGs().count() > 0) {
-                svgString = gpg.mergeSVGs(svgString, "");
-		    }
-
-            */
-		}
-	}
-
-	if (clipImage) delete clipImage;
-
-    return QString(svgString);
 }
 
 QString GerberGenerator::cleanOutline(const QString & outlineSvg)
@@ -764,134 +960,8 @@ QString GerberGenerator::cleanOutline(const QString & outlineSvg)
 	return outlineSvg;
 }
 
-void GerberGenerator::mergeOutlineElement(QImage & image, QRectF & target, double res, QDomDocument & document, QString & svgString, int ix, const QString & layerName) {
-    
-    image.fill(0xffffffff);
-	QByteArray svg = TextUtils::removeXMLEntities(document.toString()).toUtf8();
 
-	QSvgRenderer renderer(svg);
-	QPainter painter;
-	painter.begin(&image);
-	renderer.render(&painter, target);
-	painter.end();
-	image.invertPixels();				// need white pixels on a black background for GroundPlaneGenerator
-
-    #ifndef QT_NO_DEBUG
-		image.save(QString("%2/output%1.png").arg(ix).arg(FolderUtils::getUserDataStorePath("")));
-    #else
-        Q_UNUSED(ix);
-    #endif
-
-	GroundPlaneGenerator gpg;
-	gpg.setLayerName(layerName);
-	gpg.setMinRunSize(1, 1);
-    gpg.scanOutline(image, image.width(), image.height(), GraphicsUtils::StandardFritzingDPI / res, GraphicsUtils::StandardFritzingDPI, "#000000", false, false, QSizeF(0, 0), 0);
-	if (gpg.newSVGs().count() > 0) {
-        svgString = gpg.mergeSVGs(svgString, "");
-	}
-}
-
-QString GerberGenerator::makePath(QImage & image, double unit, const QString & colorString) 
-{
-    double halfUnit = unit / 2;
-    QString paths;
-    int lineCount = 0;
-    for (int y = 0; y < image.height(); y++) {
-		bool inWhite = false;
-		int whiteStart = 0;
-		for (int x = 0; x < image.width(); x++) {
-			QRgb current = image.pixel(x, y);
-			if (inWhite) {
-				if (current == 0xffffffff) {			
-					// another white pixel, keep moving
-					continue;
-				}
-
-				// got black: close up this segment;
-				inWhite = false;
-                paths += QString("M%1,%2L%3,%2 ").arg(whiteStart + halfUnit).arg(y + halfUnit).arg(x - 1 + halfUnit);
-                if (++lineCount == 10) {
-                    lineCount = 0;
-                    paths += "\n";
-                }
-			}
-			else {
-				if (current != 0xffffffff) {				
-					// another black pixel, keep moving
-					continue;
-				}
-
-				inWhite = true;
-				whiteStart = x;
-			}
-		}
-	}
-
-    QString path = QString("<path fill='none' stroke='%1' stroke-width='%2' stroke-linecap='square' d='").arg(colorString).arg(unit);
-    return path + paths + "' />\n";
-}
-
-bool GerberGenerator::dealWithMultipleContours(QDomElement & root, bool displayMessageBoxes) {
-    bool multipleContours = false;
-    bool contoursOK = true;
-
-    // split path into multiple contours
-    QDomNodeList paths = root.elementsByTagName("path");
-    // should only be one
-    for (int p = 0; p < paths.count() && contoursOK; p++) {
-        QDomElement path = paths.at(p).toElement();
-        QString originalPath = path.attribute("d", "").trimmed();
-        if (MultipleZs.indexIn(originalPath) < 0) continue;
-
-        multipleContours = true;
-        QStringList subpaths = path.attribute("d").split("z", QString::SkipEmptyParts);
-        foreach (QString subpath, subpaths) {
-            if (!subpath.trimmed().startsWith("m", Qt::CaseInsensitive)) {
-                contoursOK = false;
-                break;
-            }
-        }
-    }
-
-    if (!multipleContours) return false;
-
-    if (!contoursOK) {
-        QString msg =
-            QObject::tr("Fritzing is unable to process the cutouts in this custom PCB shape. ") +
-            QObject::tr("You may need to reload the shape SVG. ") +
-            QObject::tr("Fritzing requires that you make cutouts using a shape 'subtraction' or 'difference' operation in your vector graphics editor.");
-        displayMessage(msg, displayMessageBoxes);
-        return false;
-    }
-
-    for (int p = 0; p < paths.count(); p++) {
-        QDomElement path = paths.at(p).toElement();
-        QString originalPath = path.attribute("d", "").trimmed();
-        if (MultipleZs.indexIn(originalPath) >= 0) {
-            QStringList subpaths = path.attribute("d").split("z", QString::SkipEmptyParts);
-            QString priorM;
-            MFinder.indexIn(subpaths.at(0).trimmed());
-            priorM += MFinder.cap(1) + MFinder.cap(2) + "," + MFinder.cap(3) + " ";
-            for (int i = 1; i < subpaths.count(); i++) {
-                QDomElement newPath = path.cloneNode(true).toElement();
-                QString z = ((i < subpaths.count() - 1) || originalPath.endsWith("z", Qt::CaseInsensitive)) ? "z" : "";
-                QString d = subpaths.at(i).trimmed() + z;
-                MFinder.indexIn(d);
-                if (d.startsWith("m", Qt::CaseSensitive)) {
-                    d = priorM + d;    
-                }
-                priorM += MFinder.cap(1) + MFinder.cap(2) + "," + MFinder.cap(3) + " ";
-                newPath.setAttribute("d",  d);
-                path.parentNode().appendChild(newPath);
-            }
-            path.setAttribute("d", subpaths.at(0) + "z");
-        }
-    }
-
-    return true;
-}
-
-void GerberGenerator::exportPickAndPlace(const QString & prefix, const QString & exportDir, ItemBase * board, PCBSketchWidget * sketchWidget, bool displayMessageBoxes) 
+void GerberGenerator::exportPickAndPlace(const QString & prefix, const QString & exportDir, ItemBase * board, PCBSketchWidget * sketchWidget, bool displayMessageBoxes)
 {
     QPointF bottomLeft = board->sceneBoundingRect().bottomLeft();
     QSet<ItemBase *> itemBases;
@@ -907,7 +977,7 @@ void GerberGenerator::exportPickAndPlace(const QString & prefix, const QString &
 
         itemBases.insert(itemBase->layerKinChief());
     }
-    
+
     QString outname = exportDir + "/" + prefix + "_pnp.txt";
     QFile out(outname);
 	if (!out.open(QIODevice::WriteOnly | QIODevice::Text)) {
@@ -971,77 +1041,7 @@ void GerberGenerator::exportPickAndPlace(const QString & prefix, const QString &
     out.close();
 }
 
-void GerberGenerator::handleDonuts(QDomElement & root1, QMultiHash<long, ConnectorItem *> & treatAsCircle) {
-    // most of this would not be necessary if we cached cleaned SVGs
-
-    static const QString unique("%%%%%%%%%%%%%%%%%%%%%%%%_________________________________%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
-
-    QDomNodeList nodeList = root1.elementsByTagName("path"); 
-    if (treatAsCircle.count() > 0) {
-        QStringList ids;
-        foreach (ConnectorItem * connectorItem, treatAsCircle.values()) {
-            ItemBase * itemBase = connectorItem->attachedTo();
-            SvgIdLayer * svgIdLayer = connectorItem->connector()->fullPinInfo(itemBase->viewID(), itemBase->viewLayerID());
-            DebugDialog::debug(QString("treat as circle %1").arg(svgIdLayer->m_svgId));
-            ids << svgIdLayer->m_svgId;
-        }
-
-        for (int n = 0; n < nodeList.count(); n++) {
-            QDomElement path = nodeList.at(n).toElement();
-            QString id = path.attribute("id");
-            if (id.isEmpty()) continue;
-
-            DebugDialog::debug(QString("checking for %1").arg(id));
-            if (!ids.contains(id)) continue;
-
-            QString pid;
-            ConnectorItem * connectorItem = NULL;
-            for (QDomElement parent = path.parentNode().toElement(); !parent.isNull(); parent = parent.parentNode().toElement()) {
-                pid = parent.attribute("partID");
-                if (pid.isEmpty()) continue;
-
-                QList<ConnectorItem *> connectorItems = treatAsCircle.values(pid.toLong());
-                if (connectorItems.count() == 0) break;
-
-                foreach (ConnectorItem * candidate, connectorItems) {
-                    ItemBase * itemBase = candidate->attachedTo();
-                    SvgIdLayer * svgIdLayer = candidate->connector()->fullPinInfo(itemBase->viewID(), itemBase->viewLayerID());
-                    if (svgIdLayer->m_svgId == id) {
-                        connectorItem = candidate;
-                        break;
-                    }
-                }
-
-                if (connectorItem) break;
-            }
-            if (connectorItem == NULL) continue;
-
-            //QString string;
-            //QTextStream stream(&string);
-            //path.save(stream, 0);
-            //DebugDialog::debug("path " + string);
-
-            connectorItem->debugInfo("make path");
-            path.setAttribute("id", unique);
-            QSvgRenderer renderer;
-            renderer.load(root1.ownerDocument().toByteArray());
-            QRectF bounds = renderer.boundsOnElement(unique);
-            path.removeAttribute("id");
-
-            QDomElement circle = root1.ownerDocument().createElement("circle");
-            path.parentNode().insertBefore(circle, path);
-            circle.setAttribute("id", id);
-            QPointF p = bounds.center();
-            circle.setAttribute("cx", QString::number(p.x()));
-            circle.setAttribute("cy", QString::number(p.y()));
-            circle.setAttribute("r", QString::number(connectorItem->radius() * GraphicsUtils::StandardFritzingDPI / GraphicsUtils::SVGDPI));
-            circle.setAttribute("stroke-width", QString::number(connectorItem->strokeWidth() * GraphicsUtils::StandardFritzingDPI / GraphicsUtils::SVGDPI));
-
-        }
-    }
-}
-
-QString GerberGenerator::renderTo(const LayerList & layers, ItemBase * board, PCBSketchWidget * sketchWidget, bool & empty) {
+QString GerberGenerator::renderTo(const LayerList &layers, ItemBase *board, PCBSketchWidget *sketchWidget) {
     RenderThing renderThing;
     renderThing.printerScale = GraphicsUtils::SVGDPI;
     renderThing.blackOnly = true;
@@ -1049,6 +1049,5 @@ QString GerberGenerator::renderTo(const LayerList & layers, ItemBase * board, PC
     renderThing.hideTerminalPoints = true;
     renderThing.selectedItems = renderThing.renderBlocker = false;
 	QString svg = sketchWidget->renderToSVG(renderThing, board, layers);
-    empty = renderThing.empty;
     return svg;
 }

@@ -419,11 +419,11 @@ bool GraphUtils::chooseRatsnestGraph(const QList<ConnectorItem *> * partConnecto
 
 	    prim_minimum_spanning_tree(g, &p[0]);
 
-	    for (std::size_t i = 0; i != p.size(); ++i) {
+        for (std::size_t i = 0; i != p.size(); ++i) {
 		    if (i == p[i]) continue;
-		    if (reverseWeights[i][p[i]] == 0) continue;
+            if (reverseWeights[(int) i][(int) p[i]] == 0) continue;
 
-		    result.insert(temp[i], temp[p[i]]);
+            result.insert(temp[(int) i], temp[(int) p[i]]);
 	    }
         retval = true;
     }

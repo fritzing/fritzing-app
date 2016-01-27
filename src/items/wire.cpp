@@ -186,7 +186,7 @@ FSvgRenderer * Wire::setUp(ViewLayer::ViewLayerID viewLayerID, const LayerHash &
 	ItemBase::setViewLayerID(viewLayerID, viewLayers);
 	FSvgRenderer * svgRenderer = setUpConnectors(m_modelPart, m_viewID);
 	if (svgRenderer != NULL) {
-		initEnds(m_viewGeometry, svgRenderer->viewBox(), infoGraphicsView);
+        initEnds(m_viewGeometry, svgRenderer->viewBox(), infoGraphicsView);
         //debugCompare(this);
 	}
 	setZValue(this->z());
@@ -217,25 +217,21 @@ void Wire::moveItem(ViewGeometry & viewGeometry) {
 }
 
 void Wire::initEnds(const ViewGeometry & vg, QRectF defaultRect, InfoGraphicsView * infoGraphicsView) {
-	bool gotOne = false;
-	bool gotTwo = false;
 	double penWidth = 1;
 	foreach (ConnectorItem * item, cachedConnectorItems()) {
-		// check the name or is order good enough?
-
-		if (gotOne) {
-			gotTwo = true;
+        if (item->connectorSharedID().endsWith("0")) {
+            penWidth = item->rect().width();
+            m_connector0 = item;
+            //item->debugInfo("connector 0");
+        }
+        else {
+            //item->debugInfo("connector 1");
 			m_connector1 = item;
-			break;
-		}
-		else {
-			penWidth = item->rect().width();
-			m_connector0 = item;
-			gotOne = true;
 		}
 	}
 
-	if (!gotTwo) {
+    if (m_connector0 == NULL || m_connector1 == NULL) {
+        // should never happen
 		return;
 	}
 
@@ -243,7 +239,7 @@ void Wire::initEnds(const ViewGeometry & vg, QRectF defaultRect, InfoGraphicsVie
 		this->setLine(defaultRect.left(), defaultRect.top(), defaultRect.right(), defaultRect.bottom());
 	}
 	else {
-		this->setLine(vg.line());
+        this->setLine(vg.line());
 	}
 
 	setConnector0Rect();
@@ -688,6 +684,21 @@ void Wire::mouseMoveEventAux(QPointF eventPos, Qt::KeyboardModifiers modifiers) 
             }
         }
     }
+}
+
+QRectF Wire::connector0Rect(const QLineF & line) {
+    QRectF rect = m_connector0->rect();
+    rect.moveTo(0 - (rect.width()  / 2.0),
+                0 - (rect.height()  / 2.0) );
+    return rect;
+}
+
+QRectF Wire::connector1Rect(const QLineF & line) {
+
+    QRectF rect = m_connector1->rect();
+    rect.moveTo(line.dx() - (rect.width()  / 2.0),
+                line.dy() - (rect.height()  / 2.0) );
+    return rect;
 }
 
 void Wire::setConnector0Rect() {

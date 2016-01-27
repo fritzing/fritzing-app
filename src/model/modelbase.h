@@ -53,6 +53,7 @@ public:
 	ModelPart * genFZP(const QString & moduleID, ModelBase * referenceModel);
 	const QString & fritzingVersion();
     void setReferenceModel(ModelBase *);
+    bool checkForReversedWires();
 
 public:
     static bool onCoreList(const QString & moduleID);
@@ -84,6 +85,7 @@ protected:
 	bool m_reportMissingModules;
 	QString m_fritzingVersion;
     bool m_useOldSchematics;
+    bool m_checkForReversedWires;
 
 protected:
     static QList<QString> CoreList;

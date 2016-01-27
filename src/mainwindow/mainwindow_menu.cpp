@@ -446,6 +446,12 @@ void MainWindow::mainLoad(const QString & fileName, const QString & displayName,
 	m_schematicGraphicsView->loadFromModelParts(modelParts, BaseCommand::SingleView, NULL, false, NULL, false, newIDs);
     m_schematicGraphicsView->setConvertSchematic(false);
 
+    if (m_sketchModel->checkForReversedWires()) {
+        m_pcbGraphicsView->checkForReversedWires();
+        m_schematicGraphicsView->checkForReversedWires();
+        m_breadboardGraphicsView->checkForReversedWires();
+    }
+
 	ProcessEventBlocker::processEvents();
 	if (m_fileProgressDialog) {
 		m_fileProgressDialog->setValue(198);

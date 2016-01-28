@@ -32,6 +32,7 @@
 
 
 CONFIG += debug_and_release
+
 win32 {
 # release build using msvc 2010 needs to use Multi-threaded (/MT) for the code generation/runtime library option
 # release build using msvc 2010 needs to add msvcrt.lib;%(IgnoreSpecificDefaultLibraries) to the linker/no default libraries option
@@ -123,9 +124,6 @@ unix {
         parts.path = $$PKGDATADIR
         parts.files += parts
 
-        pdb.path = $$PKGDATADIR
-        pdb.files += pdb
-
         help.path = $$PKGDATADIR
         help.files += help
 
@@ -141,7 +139,7 @@ unix {
         syntax.path = $$PKGDATADIR/translations/syntax
         syntax.files += translations/syntax/*.xml
 
-        INSTALLS += target desktop manpage icon parts sketches bins translations syntax pdb help
+        INSTALLS += target desktop manpage icon parts sketches bins translations syntax help
 }
 
 ICON = resources/images/fritzing_icon.icns
@@ -155,6 +153,61 @@ greaterThan(QT_MAJOR_VERSION, 4) {
 
 RC_FILE = fritzing.rc
 RESOURCES += phoenixresources.qrc
+
+
+# Fritzing is using libgit2 since version 0.9.3
+
+LIBGIT2INCLUDE = ../libgit2/include
+exists($$LIBGIT2INCLUDE/git2.h) {
+    message("found libgit2 include path at $$LIBGIT2INCLUDE")
+}
+else {
+    message("Fritzing requires libgit2")
+    message("Build it from the repo at https://github.com/libgit2")
+    message("See https://github.com/fritzing/fritzing-app/wiki for details.")
+
+    error("libgit2 include path not found in $$LIBGIT2INCLUDE")
+}
+
+INCLUDEPATH += $$LIBGIT2INCLUDE
+
+win32 {
+    contains(QMAKE_TARGET.arch, x86_64) {
+            LIBGIT2LIB = ../libgit2/build64
+    }
+    else {
+            LIBGIT2LIB = ../libgit2/build32
+    }
+
+    exists($$LIBGIT2LIB/git2.lib) {
+        message("found libgit2 library in $$LIBGIT2LIB")
+    }
+    else {
+        error("libgit2 library not found in $$LIBGIT2LIB")
+    }
+}
+
+unix {
+    LIBGIT2LIB = ../libgit2/build
+    macx {
+        exists($$LIBGIT2LIB/libgit2.dylib) {
+            message("found libgit2 library in $$LIBGIT2LIB")
+        }
+        else {
+            error("libgit2 library not found in $$LIBGIT2LIB")
+        }
+    }
+    !macx {
+        exists($$LIBGIT2LIB/libgit2.so) {
+            message("found libgit2 library in $$LIBGIT2LIB")
+        }
+        else {
+            error("libgit2 library not found in $$LIBGIT2LIB")
+        }
+    }
+}
+
+LIBS += -L$$LIBGIT2LIB -lgit2
 
 include(pri/kitchensink.pri)
 include(pri/mainwindow.pri)
@@ -190,3 +243,4 @@ TARGET = Fritzing
 TEMPLATE = app
 
 
+message("libs $$LIBS")

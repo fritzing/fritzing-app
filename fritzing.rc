@@ -11,7 +11,7 @@ IDI_ICON1               ICON    DISCARDABLE     "resources/images/fritzing_icon.
 #define VER_COMPANYNAME_STR         "Fritzing"
 #define VER_FILEDESCRIPTION_STR     "Fritzing"
 #define VER_INTERNALNAME_STR        "Fritzing"
-#define VER_LEGALCOPYRIGHT_STR      "Copyright © 2007-2014 Fritzing"
+#define VER_LEGALCOPYRIGHT_STR      "Copyright © 2007-2016 Fritzing"
 #define VER_LEGALTRADEMARKS1_STR    "All Rights Reserved"
 #define VER_LEGALTRADEMARKS2_STR    VER_LEGALTRADEMARKS1_STR
 #define VER_ORIGINALFILENAME_STR    "Fritzing.exe"

@@ -1,66 +1,53 @@
 #!/bin/bash
-QTBIN=/Users/andre/Qt5.2.1/5.2.1/clang_64/bin
+QTBIN=/Users/andre/Qt/5.5/clang_64/bin
 
-tdir=`dirname $BASH_SOURCE`
-cd $tdir
+toolsdir=`dirname $BASH_SOURCE`
+cd $toolsdir
 cd ..
 workingdir=$(pwd)
 
-echo "current working directory"
+echo ">> working directory"
 echo $workingdir
 
-echo "building fritzing from working directory"
-$QTBIN/qmake -o Makefile phoenix.pro
-make release  # release is the type of build
-builddir=$workingdir/../release64
-echo "build directory"
+deploydir=$workingdir/../deploy-app
+echo ">> deploy directory"
+echo $deploydir
+rm -rf $deploydir
+mkdir $deploydir
+
+builddir=$workingdir/../release64  # this is pre-defined by Qt
+echo ">> build directory"
 echo $builddir
 
-deploysrcdir=$workingdir/../deploy-src
-echo "deploy src directory"
-echo $deploysrcdir
+echo ">> building fritzing from working directory"
+$QTBIN/qmake -o Makefile phoenix.pro
+make release  # release is the type of build
+cp -r $builddir/Fritzing.app $deploydir
 
-rm -rf $deploysrcdir
-mkdir $deploysrcdir
+echo ">> add .app dependencies"
+cd $deploydir
+$QTBIN/macdeployqt Fritzing.app
 
-git clone --recursive https://github.com/fritzing/fritzing-app/ $deploysrcdir
+supportdir=$deploydir/Fritzing.app/Contents/MacOS
+echo ">> support directory"
+echo $supportdir
 
-deployappdir=$workingdir/../deploy-app
-echo "deploy app directory"
-echo $deployappdir
+echo ">> copy support files"
+cd $workingdir
+cp -rf sketches help translations readme.md LICENSE.CC-BY-SA LICENSE.GPL2 LICENSE.GPL3 $supportdir/
 
-rm -rf $deployappdir
-mkdir $deployappdir
+echo ">> clean translations"
+cd $supportdir
+rm ./translations/*.ts  			# remove translation xml files, since we only need the binaries in the release
+find ./translations -name "*.qm" -size -128c -delete   # delete empty translation binaries
 
-echo "moving parts to pdb - TEMPORARY WORKAROUND"
-mv $deploysrcdir/parts/contrib/* $deploysrcdir/pdb/contrib/
-mv $deploysrcdir/parts/core/* $deploysrcdir/pdb/core/
-mv $deploysrcdir/parts/obsolete/* $deploysrcdir/pdb/obsolete/
-mv $deploysrcdir/parts/user/* $deploysrcdir/pdb/user/
+echo ">> clone parts repository"
+git clone https://github.com/fritzing/fritzing-parts.git
+echo ">> build parts database and run fritzing"
+./Fritzing -db "fritzing-parts/parts.db"  # -pp "fritzing-parts" -f "."
 
-echo "removing translations"
-rm $deploysrcdir/translations/*.ts
-find $deploysrcdir/translations -name "*.qm" -size -128c -delete
+echo ">> launch Fritzing"
+cd $deploydir
+open Fritzing.app
 
-echo "still more cleaning"
-rm $deploysrcdir/control
-rm -rf $deploysrcdir/deploy*
-rm -rf $deploysrcdir/fritzing.*
-rm $deploysrcdir/Fritzing.1
-rm $deploysrcdir/Fritzing.sh
-rm -rf $deploysrcdir/Fritzing*.plist
-rm -rf $deploysrcdir/linguist*
-rm -rf $deploysrcdir/phoenix*
-rm -rf $deploysrcdir/pri/*
-rmdir $deploysrcdir/pri
-rm -rf $deploysrcdir/resources/*
-rmdir $deploysrcdir/resources
-rm -rf $deploysrcdir/src/*
-rmdir $deploysrcdir/src
-rm -rf $deploysrcdir/tools/*
-rmdir $deploysrcdir/tools
-
-echo "mac deploy qt"
-cp -r $builddir/Fritzing.app $deployappdir
-$QTBIN/macdeployqt $deployappdir/Fritzing.app
-cp -r $deploysrcdir/* $deployappdir/Fritzing.app/Contents/MacOS
+echo ">> done!"

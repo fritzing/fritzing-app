@@ -817,7 +817,7 @@ ModelPart * ModelBase::createOldSchematicPart(ModelPart * modelPart, QString & m
 
     int ix = schematicFilename.indexOf("/");
     schematicFilename.insert(ix + 1, PartFactory::OldSchematicPrefix);
-    QString oldSvgPath = FolderUtils::getApplicationSubFolderPath("parts") + "/svg/obsolete/"+ schematicFilename;
+    QString oldSvgPath = FolderUtils::getPartsSubFolderPath("") + "/svg/obsolete/"+ schematicFilename;
     oldModelPart = createOldSchematicPartAux(modelPart, oldModuleIDRef, schematicFilename, oldSvgPath);
     if (oldModelPart) {
         moduleIDRef = oldModuleIDRef;

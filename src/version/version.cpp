@@ -39,8 +39,8 @@ QString Version::m_majorVersion("0");
 QString Version::m_minorVersion("9");
 QString Version::m_minorSubVersion("3");
 QString Version::m_modifier("b");
-QString Version::m_gitCommit("8d2d5970658f0bed09c661c9ea9a515b5f40f44c");
-QString Version::m_gitDate("2014-11-19 13:13:28");
+QString Version::m_gitCommit("125f93353d48f6e80ddb6968cd25899a227d8b8c");
+QString Version::m_gitDate("2015-03-17T14:36:55Z");  // want standard ISO form
 QString Version::m_revision;
 QString Version::m_date;
 QString Version::m_shortDate;
@@ -60,7 +60,7 @@ Version::Version() {
     m_revision = m_gitCommit;
 
     QStringList strings;
-    strings = m_gitDate.split(" ", QString::SkipEmptyParts);
+    strings = m_gitDate.split("T", QString::SkipEmptyParts);
 	if (strings.size() >= 2) {
         m_date = strings[0];
 		strings = m_date.split("-", QString::SkipEmptyParts);
@@ -95,6 +95,10 @@ const QString & Version::modifier() {
 
 const QString & Version::versionString() {
 	return m_versionString;
+}
+
+const QString & Version::fullDate() {
+    return m_gitDate;
 }
 
 const QString & Version::date() {

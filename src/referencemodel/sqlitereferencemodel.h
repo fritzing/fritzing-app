@@ -52,7 +52,7 @@ class SqliteReferenceModel : public ReferenceModel {
 		bool updatePart(ModelPart * newModel);
 		ModelPart * addPart(QString newPartPath, bool addToReference, bool updateIdAlreadyExists);
 
-		bool swapEnabled();
+        bool swapEnabled() const;
 		bool containsModelPart(const QString & moduleID);
 
 		QString partTitle(const QString & moduleID);
@@ -62,12 +62,13 @@ class SqliteReferenceModel : public ReferenceModel {
 		QString retrieveModuleIdWith(const QString &family, const QString &propertyName, bool closestMatch);
 		QString retrieveModuleId(const QString &family, const QMultiHash<QString /*name*/, QString /*value*/> &properties, const QString &propertyName, bool closestMatch);
 		bool lastWasExactMatch();
+        void setSha(const QString & sha);
+        const QString & sha() const;
 
 	protected:
 		void initParts(bool dbExists);
         void killParts();
 
-	protected:
 		bool addPartAux(ModelPart * newModel, bool fullLoad);
 
 		QString closestMatchId(const QString &family, const QMultiHash<QString, QString> &properties, const QString &propertyName, const QString &propertyValue);
@@ -75,7 +76,7 @@ class SqliteReferenceModel : public ReferenceModel {
 		QString getClosestMatch(const QString &family, const QMultiHash<QString, QString> &properties, QStringList possibleMatches);
 		int countPropsInCommon(const QString &family, const QMultiHash<QString, QString> &properties, const ModelPart *part2);
 
-		bool createConnection(const QString & databaseName, bool fullLoad);
+        bool createDatabase(const QString & databaseName, bool fullLoad);
 		void deleteConnection();
 		bool insertPart(ModelPart *, bool fullLoad);
 		bool insertProperty(const QString & name, const QString & value, qulonglong id, bool showInLabel);
@@ -95,6 +96,14 @@ class SqliteReferenceModel : public ReferenceModel {
         bool insertSubpartConnector(const ConnectorShared * cs, qulonglong id);
         void createIndexes();
         void createMoreIndexes(QSqlDatabase &);
+        bool removeViewImages(qulonglong partId);
+        bool removeConnectors(qulonglong partId);
+        bool removeBuses(qulonglong partId);
+        bool removeSchematicSubparts(qulonglong partId);
+        bool removeTags(qulonglong partId);
+        bool removex(qulonglong id, const QString & tableName, const QString & idName);
+        bool removePart(const QString & moduleId);
+        bool removePartFromDataBase(const QString & moduleId);
 
 protected:
 		volatile bool m_swappingEnabled;
@@ -103,6 +112,7 @@ protected:
 		bool m_init;
         QSqlDatabase m_database;
 		QMultiHash<QString /*name*/, QString /*value*/> m_recordedProperties;
+        QString m_sha;
 };
 
 #endif /* SQLITEREFERENCEMODEL_H_ */

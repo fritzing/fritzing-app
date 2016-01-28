@@ -177,7 +177,7 @@ public:
 	QAction *raiseWindowAction();
 	QSizeGrip *sizeGrip();
 	QStatusBar *realStatusBar();
-	void enableCheckUpdates(bool enabled);
+    void enableCheckUpdates(bool enabled);
 
 	void getPartsEditorNewAnd(ItemBase * fromItem);
 	void addDefaultParts();
@@ -800,6 +800,8 @@ protected:
 	QAction *m_hideAllLayersAct;
 
     QAction *m_hidePartSilkscreenAct;
+    QAction *m_regeneratePartsDatabaseAct;
+
 
     // View Menu
     QMenu *m_viewMenu;

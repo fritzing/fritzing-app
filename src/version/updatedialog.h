@@ -32,9 +32,12 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 #include <QLabel>
 #include <QXmlStreamReader>
 #include <QNetworkReply>
+#include <QDialogButtonBox>
+#include <QProgressBar>
 
+#include "partschecker.h"
 
-class UpdateDialog : public QDialog {
+class UpdateDialog : public QDialog, public PartsCheckerUpdateInterface {
 	Q_OBJECT
 
 public:
@@ -43,26 +46,41 @@ public:
 
 	void setVersionChecker(class VersionChecker *);
 	void setAtUserRequest(bool);
+    void setRepoPath(const QString & repoPath, const QString & shaFromDataBase);
+    void updateProgress(double progress);
+    void installFinished(const QString & error);
 
 signals:
-	void enableAgainSignal(bool enable);
+    void enableAgainSignal(bool enable);
+    void installNewParts();
 
 protected slots:
 	void releasesAvailableSlot();
 	void xmlErrorSlot(QXmlStreamReader::Error errorCode);
     void httpErrorSlot(QNetworkReply::NetworkError);
+    void jsonPartsErrorSlot(QString error);
+    void httpPartsErrorSlot(QString error);
 	void stopClose();
+    void updateParts();
 
 protected:
-	void setAvailableReleases(const QList<struct AvailableRelease *> & availableReleases); 
-	void handleError();
-	QString genTable(const QString & title, struct AvailableRelease *);
+    bool setAvailableReleases(const QList<struct AvailableRelease *> & availableReleases);
+    void handleError();
+    void handlePartsError(const QString & error);
+    QString genTable(const QString & title, struct AvailableRelease *);
+    void closeEvent(QCloseEvent *);
 
 protected:
 	class VersionChecker * m_versionChecker;
 	bool m_atUserRequest;
-	QLabel * m_feedbackLabel;
-
+    QString m_repoPath;
+    QString m_shaFromDataBase;
+    QString m_remoteSha;
+    QLabel * m_feedbackLabel;
+    QDialogButtonBox * m_buttonBox;
+    QProgressBar * m_progressBar;
+    bool m_doQuit;
+    bool m_doClose;
 };
 
 

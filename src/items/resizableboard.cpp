@@ -279,7 +279,7 @@ QStringList & Board::getNewImageNames() {
 void Board::fileNameEntry(const QString & filename) {
 	foreach (QString name, getImageNames()) {
 		if (filename.compare(name) == 0) {
-			QString f = FolderUtils::getApplicationSubFolderPath("parts") + "/svg/core/pcb/" + filename + ".svg";
+            QString f = FolderUtils::getPartsSubFolderPath("") + "/svg/core/pcb/" + filename + ".svg";
 			prepLoadImageAux(f, false);
 			return;
 		}

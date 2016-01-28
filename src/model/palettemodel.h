@@ -73,6 +73,7 @@ signals:
 	void loadedPart(int i, int total);
     void incSearch();
     void addSearchMaximum(int);
+    void partsToLoad(int total);
 
 protected:
 	virtual void initParts(bool dbExists);
@@ -81,14 +82,12 @@ protected:
 	void countParts(QDir & dir, QStringList & nameFilters, int & partCount);
     ModelPart * makeSubpart(ModelPart * originalModelPart, const QDomElement & originalSubparth);
 
-protected:
-	static bool CreateContribPartsBinFile;
-	static QString ContribPartsBinFilePath;
-	static bool CreateTempPartsBinFile;
-	static QString TempPartsBinFilePath;
-
 public:
 	static void initNames();
+    static void setFzpOverrideFolder(const QString &);
+
+protected:
+    static QString s_fzpOverrideFolder;
 
 };
 #endif

@@ -1109,14 +1109,13 @@ void MainWindow::createPartMenuActions() {
     m_findPartInSketchAct->setStatusTip(tr("Search for parts in a sketch by matching text"));
 	connect(m_findPartInSketchAct, SIGNAL(triggered()), this, SLOT(findPartInSketch()));
 
-    m_openProgramWindowAct = new QAction(tr("Open programming window"), this);
-    m_openProgramWindowAct->setStatusTip(tr("Open microcontroller programming window"));
-	connect(m_openProgramWindowAct, SIGNAL(triggered()), this, SLOT(openProgramWindow()));
-
 	m_hidePartSilkscreenAct = new QAction(tr("Hide part silkscreen"), this);
 	m_hidePartSilkscreenAct->setStatusTip(tr("Hide/show the silkscreen layer for only this part"));
 	connect(m_hidePartSilkscreenAct, SIGNAL(triggered()), this, SLOT(hidePartSilkscreen()));
 
+    m_regeneratePartsDatabaseAct = new QAction(tr("Regenerate parts database ..."), this);
+    m_regeneratePartsDatabaseAct->setStatusTip(tr("Regenerate the parts database (should only be used if your parts database is broken)"));
+    connect(m_regeneratePartsDatabaseAct, SIGNAL(triggered()), qApp, SLOT(regeneratePartsDatabase()));
 
 }
 
@@ -1249,6 +1248,10 @@ void MainWindow::createWindowMenuActions() {
     m_toggleDebuggerOutputAct = new QAction(tr("Debugger Output"), this);
     m_toggleDebuggerOutputAct->setCheckable(true);
    	connect(m_toggleDebuggerOutputAct, SIGNAL(triggered(bool)), this, SLOT(toggleDebuggerOutput(bool)));
+
+    m_openProgramWindowAct = new QAction(tr("Open programming window"), this);
+    m_openProgramWindowAct->setStatusTip(tr("Open microcontroller programming window"));
+    connect(m_openProgramWindowAct, SIGNAL(triggered()), this, SLOT(openProgramWindow()));
 }
 
 void MainWindow::createHelpMenuActions() {
@@ -1273,11 +1276,11 @@ void MainWindow::createHelpMenuActions() {
 	m_visitFritzingDotOrgAct->setStatusTip(tr("www.fritzing.org"));
 	connect(m_visitFritzingDotOrgAct, SIGNAL(triggered(bool)), this, SLOT(visitFritzingDotOrg()));*/
 
-	m_checkForUpdatesAct = new QAction(tr("Check for updates..."), this);
-	m_checkForUpdatesAct->setStatusTip(tr("Check whether a newer version of Fritzing is available for download"));
-	connect(m_checkForUpdatesAct, SIGNAL(triggered()), QApplication::instance(), SLOT(checkForUpdates()));
+    m_checkForUpdatesAct = new QAction(tr("Check for updates..."), this);
+    m_checkForUpdatesAct->setStatusTip(tr("Check whether a newer version of Fritzing is available for download"));
+    connect(m_checkForUpdatesAct, SIGNAL(triggered()), QApplication::instance(), SLOT(checkForUpdates()));
 
-	m_aboutAct = new QAction(tr("&About"), this);
+    m_aboutAct = new QAction(tr("&About"), this);
 	m_aboutAct->setStatusTip(tr("Show the application's about box"));
 	connect(m_aboutAct, SIGNAL(triggered()), this, SLOT(about()));
 	m_aboutAct->setMenuRole(QAction::AboutRole);
@@ -1498,6 +1501,8 @@ void MainWindow::createPartMenu() {
     m_partMenu->addAction(m_dumpAllPartsAction);
 #endif
 
+    m_partMenu->addSeparator();
+    m_partMenu->addAction(m_regeneratePartsDatabaseAct);
 }
 
 void MainWindow::createViewMenu()
@@ -1614,8 +1619,8 @@ void MainWindow::createHelpMenu()
 	m_helpMenu->addSeparator();
     m_helpMenu->addAction(m_partsEditorHelpAct);
 	m_helpMenu->addSeparator();
-	m_helpMenu->addAction(m_checkForUpdatesAct);
-	m_helpMenu->addAction(m_importFilesFromPrevInstallAct);
+    m_helpMenu->addAction(m_checkForUpdatesAct);
+    m_helpMenu->addAction(m_importFilesFromPrevInstallAct);
 	m_helpMenu->addSeparator();
 	m_helpMenu->addAction(m_reportBugAct);
 	m_helpMenu->addAction(m_enableDebugAct);
@@ -2336,8 +2341,8 @@ void MainWindow::reportBug() {
 }
 
 void MainWindow::partsEditorHelp() {
-	QDir * dir = FolderUtils::getApplicationSubFolder("help");
-	QString path = dir->absoluteFilePath("parts_editor_help.html");
+    QDir dir = FolderUtils::getApplicationSubFolder("help");
+    QString path = dir.absoluteFilePath("parts_editor_help.html");
 	if (QFileInfo(path).exists()) {
 		QDesktopServices::openUrl(QString("file:///%1").arg(path));
 	}
@@ -4569,3 +4574,4 @@ void MainWindow::testConnectors() {
 
     m_currentGraphicsView->testConnectors();
 }
+

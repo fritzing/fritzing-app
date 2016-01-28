@@ -40,20 +40,21 @@ struct VersionThing {
 class Version {
 
 public:
-	static const QString & majorVersion();
-	static const QString & minorVersion();
-	static const QString & minorSubVersion();
-	static const QString & modifier();
-	static const QString & revision();
+    static const QString & majorVersion();
+    static const QString & minorVersion();
+    static const QString & minorSubVersion();
+    static const QString & modifier();
+    static const QString & revision();
 	static const QString & versionString();
-	static const QString & date();
-	static const QString & shortDate();
-	static const QString & year();
-	static bool candidateGreaterThanCurrent(const VersionThing &);
-	static bool greaterThan(const VersionThing & myVersionThing, const VersionThing & yourVersionThing);
-	static bool greaterThan(const QString & myVersionStr, const QString & yourVersionStr);
-	static bool modifierGreaterThan(const QString & myReleaseModifier, const QString & yourReleaseModifier);
-	static void toVersionThing(const QString & candidate, VersionThing & versionThing);
+    static const QString & date();
+    static const QString & fullDate();
+    static const QString & shortDate();
+    static const QString & year();
+    static bool candidateGreaterThanCurrent(const VersionThing &);
+    static bool greaterThan(const VersionThing & myVersionThing, const VersionThing & yourVersionThing);
+    static bool greaterThan(const QString & myVersionStr, const QString & yourVersionStr);
+    static bool modifierGreaterThan(const QString & myReleaseModifier, const QString & yourReleaseModifier);
+    static void toVersionThing(const QString & candidate, VersionThing & versionThing);
 	static void cleanup();
     static QString makeRequestParamsString(bool withID);
 

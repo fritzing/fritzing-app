@@ -329,7 +329,7 @@ MainWindow::MainWindow(ReferenceModel *referenceModel, QWidget * parent) :
 	m_welcomeView = NULL;
 	m_windowMenuSeparator = NULL;
 	m_schematicWireColorMenu = m_breadboardWireColorMenu = NULL;
-	m_checkForUpdatesAct = NULL;
+    m_checkForUpdatesAct = NULL;
 	m_fileProgressDialog = NULL;
 	m_currentGraphicsView = NULL;
 	m_comboboxChanged = false;
@@ -1835,12 +1835,7 @@ QList<ModelPart*> MainWindow::moveToPartsFolder(QDir &unzipDir, MainWindow* mw, 
     QList<QFileInfo> partEntryInfoList = unzipDir.entryInfoList(namefilters);
 
     if (importingSinglePart && partEntryInfoList.count() > 0) {
-        // TODO use a stream reader
-        QFile file(partEntryInfoList[0].absoluteFilePath());
-        file.open(QFile::ReadOnly);
-        QString fzp = file.readAll();
-        file.close();
-        QString moduleID = TextUtils::parseForModuleID(fzp);
+        QString moduleID = TextUtils::parseFileForModuleID(partEntryInfoList[0].absoluteFilePath());
         if (!moduleID.isEmpty() && m_referenceModel->retrieveModelPart(moduleID) != NULL) {
             throw tr("There is already a part with id '%1' loaded into Fritzing.").arg(moduleID);
         }
@@ -2066,11 +2061,10 @@ void MainWindow::resizeEvent(QResizeEvent * event) {
 
 void MainWindow::enableCheckUpdates(bool enabled)
 {
-	if (m_checkForUpdatesAct != NULL) {
-		m_checkForUpdatesAct->setEnabled(enabled);
-	}
+    if (m_checkForUpdatesAct != NULL) {
+        m_checkForUpdatesAct->setEnabled(enabled);
+    }
 }
-
 
 void MainWindow::swapSelectedDelay(const QString & family, const QString & prop, QMap<QString, QString> & currPropsMap, ItemBase * itemBase) 
 {

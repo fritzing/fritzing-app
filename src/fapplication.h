@@ -41,6 +41,10 @@ $Date: 2013-03-26 14:00:34 +0100 (Di, 26. Mrz 2013) $
 #include <QNetworkReply>
 #include <QNetworkAccessManager>
 
+#include "referencemodel/referencemodel.h"
+
+class FileProgressDialog;
+
 class FServer : public QTcpServer
 {
     Q_OBJECT
@@ -79,7 +83,31 @@ protected:
 protected:
    static QMutex m_busy;
 
- };
+};
+
+////////////////////////////////////////////////////
+
+class RegenerateDatabaseThread : public QThread
+{
+    Q_OBJECT
+public:
+    RegenerateDatabaseThread(const QString & dbFileName, QDialog *progressDialog, ReferenceModel *referenceModel);
+    const QString error() const;
+    QDialog * progressDialog() const;
+    ReferenceModel * referenceModel() const;
+
+protected:
+    void run() Q_DECL_OVERRIDE;
+
+protected:
+    QString m_dbFileName;
+    QString m_error;
+    QDialog * m_progressDialog;
+    ReferenceModel * m_referenceModel;
+};
+
+////////////////////////////////////////////////////
+
 
 class FApplication : public QApplication
 {
@@ -94,8 +122,9 @@ public:
 	int startup();
 	int serviceStartup();
 	void finish();
-	class ReferenceModel * loadReferenceModel(const QString & databaseName, bool fullLoad);
-	void registerFonts();
+    bool loadReferenceModel(const QString & databaseName, bool fullLoad);
+    bool loadReferenceModel(const QString & databaseName, bool fullLoad, ReferenceModel * referenceModel);
+    void registerFonts();
 	class MainWindow * openWindowForService(bool lockFiles, int initialTab);
     bool runAsService();
 
@@ -108,10 +137,10 @@ signals:
 public slots:
 	void preferences();
 	void preferencesAfter();
-	void checkForUpdates();
-	void checkForUpdates(bool atUserRequest);
-	void enableCheckUpdates(bool enabled);
-	void createUserDataStoreFolderStructure();
+    void checkForUpdates();
+    void checkForUpdates(bool atUserRequest);
+    void enableCheckUpdates(bool enabled);
+    void createUserDataStoreFolderStructure();
 	void changeActivation(bool activate, QWidget * originator);
 	void updateActivation();
 	void topLevelWidgetDestroyed(QObject *);
@@ -121,6 +150,10 @@ public slots:
 	void gotOrderFab(QNetworkReply *);
     void newConnection(int socketDescriptor);
     void doCommand(const QString & command, const QString & params, QString & result, int & status);
+    void regeneratePartsDatabase();
+    void regenerateDatabaseFinished();
+    void installNewParts();
+
 
 protected:
     bool eventFilter(QObject *obj, QEvent *event);
@@ -157,6 +190,8 @@ protected:
     QList<MainWindow *> orderedTopLevelMainWindows();
 	void cleanFzzs();
     void initServer();
+    void regeneratePartsDatabaseAux(QDialog * progressDialog);
+
 
 	enum ServiceType {
 		PanelizerService = 1,
@@ -177,7 +212,7 @@ protected:
 	bool m_spaceBarIsPressed;
 	bool m_mousePressed;
 	QTranslator m_translator;
-	class ReferenceModel * m_referenceModel;
+    ReferenceModel * m_referenceModel;
 	bool m_started;
 	QStringList m_filesToLoad;
 	QString m_libPath;

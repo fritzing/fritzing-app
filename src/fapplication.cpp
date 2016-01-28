@@ -67,6 +67,7 @@ $Date: 2013-04-19 12:51:22 +0200 (Fr, 19. Apr 2013) $
 #include "sketch/pcbsketchwidget.h"
 #include "help/firsttimehelpdialog.h"
 #include "help/aboutbox.h"
+#include "version/partschecker.h"
 
 // dependency injection :P
 #include "referencemodel/sqlitereferencemodel.h"
@@ -86,6 +87,8 @@ $Date: 2013-04-19 12:51:22 +0200 (Fr, 19. Apr 2013) $
 #include <QNetworkAccessManager>
 #include <QNetworkRequest>
 #include <QMultiHash>
+#include <QTemporaryFile>
+#include <time.h>
 
 #ifdef LINUX_32
 #define PLATFORM_NAME "linux-32bit"
@@ -116,6 +119,7 @@ $Date: 2013-04-19 12:51:22 +0200 (Fr, 19. Apr 2013) $
 
 static const double LoadProgressStart = 0.085;
 static const double LoadProgressEnd = 0.6;
+
 
 ////////////////////////////////////////////////////
 
@@ -287,6 +291,59 @@ void FServerThread::writeResponse(QTcpSocket * socket, int code, const QString &
 
 ////////////////////////////////////////////////////
 
+RegenerateDatabaseThread::RegenerateDatabaseThread(const QString & dbFileName, QDialog * progressDialog, ReferenceModel * referenceModel) {
+    m_dbFileName = dbFileName;
+    m_referenceModel = referenceModel;
+    m_progressDialog = progressDialog;
+}
+
+const QString RegenerateDatabaseThread::error() const {
+    return m_error;
+}
+
+QDialog * RegenerateDatabaseThread::progressDialog() const {
+    return m_progressDialog;
+}
+
+ReferenceModel * RegenerateDatabaseThread::referenceModel() const {
+    return m_referenceModel;
+}
+
+void RegenerateDatabaseThread::run() {
+    QTemporaryFile file("XXXXXX.db");
+    QString fileName;
+    if (file.open()) {
+        fileName = file.fileName();
+        file.close();
+    }
+    else {
+        m_error = tr("Unable to open temporary file");
+        return;
+    }
+
+    bool ok = ((FApplication *) qApp)->loadReferenceModel(fileName, true, m_referenceModel);
+    if (!ok) {
+        m_error = tr("Database failure");
+        return;
+    }
+
+    if (QFile::exists(m_dbFileName)) {
+        ok = QFile::remove(m_dbFileName);
+        if (!ok) {
+            m_error = tr("Unable to remove original db file %1").arg(m_dbFileName);
+            return;
+        }
+    }
+
+    ok = QFile::copy(fileName, m_dbFileName);
+    if (!ok) {
+        m_error = tr("Unable to copy database file %1").arg(m_dbFileName);
+        return;
+    }
+}
+
+////////////////////////////////////////////////////
+
 FApplication::FApplication( int & argc, char ** argv) : QApplication(argc, argv)
 {
     m_fServer = NULL;
@@ -337,16 +394,41 @@ bool FApplication::init() {
 
 		if (i + 1 >= m_arguments.length()) continue;
 
-		if ((m_arguments[i].compare("-f", Qt::CaseInsensitive) == 0) ||
-			(m_arguments[i].compare("-folder", Qt::CaseInsensitive) == 0)||
-			(m_arguments[i].compare("--folder", Qt::CaseInsensitive) == 0))
-		{
-			FolderUtils::setApplicationPath(m_arguments[i + 1]);
-			// delete these so we don't try to process them as files later
-			toRemove << i << i + 1;
-		}
+        if ((m_arguments[i].compare("-f", Qt::CaseInsensitive) == 0) ||
+            (m_arguments[i].compare("-folder", Qt::CaseInsensitive) == 0)||
+            (m_arguments[i].compare("--folder", Qt::CaseInsensitive) == 0))
+        {
+            FolderUtils::setApplicationPath(m_arguments[i + 1]);
+            // delete these so we don't try to process them as files later
+            toRemove << i << i + 1;
+        }
 
-		if ((m_arguments[i].compare("-geda", Qt::CaseInsensitive) == 0) ||
+        if ((m_arguments[i].compare("-pp", Qt::CaseInsensitive) == 0) ||
+            (m_arguments[i].compare("-pa", Qt::CaseInsensitive) == 0) ||
+            (m_arguments[i].compare("-parts", Qt::CaseInsensitive) == 0) ||
+            (m_arguments[i].compare("--parts", Qt::CaseInsensitive) == 0) ||
+            (m_arguments[i].compare("--partsparent", Qt::CaseInsensitive) == 0))
+        {
+            FolderUtils::setPartsPath(m_arguments[i + 1]);
+            // delete these so we don't try to process them as files later
+            toRemove << i << i + 1;
+        }
+
+        if ((m_arguments[i].compare("-ov", Qt::CaseInsensitive) == 0) ||
+            (m_arguments[i].compare("-ow", Qt::CaseInsensitive) == 0) ||
+            (m_arguments[i].compare("-of", Qt::CaseInsensitive) == 0) ||
+            (m_arguments[i].compare("--ov", Qt::CaseInsensitive) == 0) ||
+            (m_arguments[i].compare("--ow", Qt::CaseInsensitive) == 0) ||
+            (m_arguments[i].compare("--of", Qt::CaseInsensitive) == 0) ||
+            (m_arguments[i].compare("--overridefolder", Qt::CaseInsensitive) == 0)
+           )
+        {
+            PaletteModel::setFzpOverrideFolder(m_arguments[i + 1]);
+            // delete these so we don't try to process them as files later
+            toRemove << i << i + 1;
+        }
+
+        if ((m_arguments[i].compare("-geda", Qt::CaseInsensitive) == 0) ||
 			(m_arguments[i].compare("--geda", Qt::CaseInsensitive) == 0)) {
 			m_serviceType = GedaService;
 			m_outputFolder = m_arguments[i + 1];
@@ -473,7 +555,6 @@ bool FApplication::init() {
 	}
 
 	m_started = false;
-	m_updateDialog = NULL;
 	m_lastTopmostWindow = NULL;
 
 	connect(&m_activationTimer, SIGNAL(timeout()), this, SLOT(updateActivation()));
@@ -539,11 +620,11 @@ FApplication::~FApplication(void)
 		
 	clearModels();
 
-	if (m_updateDialog) {
-		delete m_updateDialog;
-	}
+    if (m_updateDialog) {
+        delete m_updateDialog;
+    }
 
-	FSvgRenderer::cleanup();
+    FSvgRenderer::cleanup();
 	ViewLayer::cleanup();
 	ViewLayer::cleanup();
 	ItemBase::cleanup();
@@ -697,34 +778,39 @@ void FApplication::registerFonts() {
 
 }
 
-ReferenceModel * FApplication::loadReferenceModel(const QString & databaseName, bool fullLoad) {
-	m_referenceModel = new CurrentReferenceModel();	
-	ItemBase::setReferenceModel(m_referenceModel);
-	connect(m_referenceModel, SIGNAL(loadedPart(int, int)), this, SLOT(loadedPart(int, int)));
+bool FApplication::loadReferenceModel(const QString & databaseName, bool fullLoad) {
+    m_referenceModel = new CurrentReferenceModel();
+    ItemBase::setReferenceModel(m_referenceModel);
+    connect(m_referenceModel, SIGNAL(loadedPart(int, int)), this, SLOT(loadedPart(int, int)));
+    return loadReferenceModel(databaseName, fullLoad, m_referenceModel);
+}
 
-    bool dbExists = false;
-    QDir * dir = FolderUtils::getApplicationSubFolder("parts");
-    QString dbPath;
-    if (dir) {
-        dbPath = dir->absoluteFilePath("parts.db");
-        QFileInfo info(dbPath);
-        dbExists = info.exists();
+bool FApplication::loadReferenceModel(const QString & databaseName, bool fullLoad, ReferenceModel * referenceModel)
+{
+    QDir dir = FolderUtils::getPartsSubFolder("");
+    QString dbPath = dir.absoluteFilePath("parts.db");
+    QFileInfo info(dbPath);
+    bool dbExists = info.exists();
+
+    QString sha;
+    if (fullLoad) {
+        sha = PartsChecker::getSha(dir.absolutePath());
+        if (sha.isEmpty()) {
+            return false;
+        }
+
+        referenceModel->setSha(sha);
     }
 
-	bool ok = m_referenceModel->loadAll(databaseName, fullLoad, dbExists);		// loads local parts, resource parts, and any other parts in files not in the db--these part override db parts with the same moduleID
+    bool ok = referenceModel->loadAll(databaseName, fullLoad, dbExists);		// loads local parts, resource parts, and any other parts in files not in the db--these part override db parts with the same moduleID
     if (ok && databaseName.isEmpty()) {
-        if (dir == NULL) {
-        }
-        else {
-            QFile file(dir->absoluteFilePath("parts.db"));
-            if (file.exists()) {
-                m_referenceModel->loadFromDB(dbPath);
-            }
+        QFile file(dir.absoluteFilePath("parts.db"));
+        if (file.exists()) {
+            referenceModel->loadFromDB(dbPath);
         }
     }
-    delete dir;
 
-	return m_referenceModel;
+    return ok;
 }
 
 MainWindow * FApplication::openWindowForService(bool lockFiles, int initialTab) {
@@ -878,28 +964,10 @@ void FApplication::runDatabaseService()
 	createUserDataStoreFolderStructure();
 
     DebugDialog::setEnabled(true);
-    QDir * parent = FolderUtils::getApplicationSubFolder("pdb");
-    QFileInfoList dirs = parent->entryInfoList(QDir::AllDirs | QDir::NoDotAndDotDot | QDir::NoSymLinks);
-    delete parent;
 
-    QStringList nameFilters;
-    nameFilters << ("*" + FritzingPartExtension);
-    foreach (QFileInfo dirInfo, dirs) {
-        if (!dirInfo.isDir()) continue;
-
-        QDir dir(dirInfo.absoluteFilePath());
-        QFileInfoList files = dir.entryInfoList(nameFilters, QDir::Files | QDir::NoSymLinks);
-        foreach (QFileInfo fileInfo, files) {
-            QString path = fileInfo.absoluteFilePath();
-            QString newPath = path;
-            newPath.replace("/pdb/", "/parts/");
-            QFile::rename(path, newPath);
-        }
-    }
-
-
-    QFile::remove(m_outputFolder);
-	loadReferenceModel(m_outputFolder, true);  // m_outputFolder is actually a full path ending in ".db"
+    QString partsDB = m_outputFolder;  // m_outputFolder is actually a full path ending in ".db"
+    QFile::remove(partsDB);
+    loadReferenceModel(partsDB, true);
 }
 
 void FApplication::runGedaService() {
@@ -1148,8 +1216,10 @@ int FApplication::startup()
 	ProcessEventBlocker::processEvents();
 
 	m_updateDialog = new UpdateDialog();
-	connect(m_updateDialog, SIGNAL(enableAgainSignal(bool)), this, SLOT(enableCheckUpdates(bool)));
-	checkForUpdates(false);
+    m_updateDialog->setRepoPath(FolderUtils::getPartsSubFolderPath(""), m_referenceModel->sha());
+    connect(m_updateDialog, SIGNAL(enableAgainSignal(bool)), this, SLOT(enableCheckUpdates(bool)));
+    connect(m_updateDialog, SIGNAL(installNewParts()), this, SLOT(installNewParts()));
+    checkForUpdates(false);
 
 	if (m_progressIndex >= 0) splash.showProgress(m_progressIndex, 0.875);
 
@@ -1334,9 +1404,7 @@ void FApplication::checkForUpdates() {
 
 void FApplication::checkForUpdates(bool atUserRequest)
 {
-	if (atUserRequest) {
-		enableCheckUpdates(false);
-	}
+    enableCheckUpdates(false);
 
 	VersionChecker * versionChecker = new VersionChecker();
 
@@ -1362,7 +1430,7 @@ void FApplication::checkForUpdates(bool atUserRequest)
 	m_updateDialog->setVersionChecker(versionChecker);
 
 	if (atUserRequest) {
-		m_updateDialog->show();
+        m_updateDialog->exec();
 	}
 }
 
@@ -1377,7 +1445,6 @@ void FApplication::enableCheckUpdates(bool enabled)
 	}
 	//DebugDialog::debug("after enable check updates");
 }
-
 
 void FApplication::createUserDataStoreFolderStructure() {
 	// make sure that the folder structure for parts and bins, exists
@@ -1970,7 +2037,72 @@ void FApplication::doCommand(const QString & command, const QString & params, QS
 			status = 500;
 			result = "local zip failure";
 		}
-	}
+    }
 }
 
+void FApplication::regeneratePartsDatabase() {
+    QMessageBox messageBox(NULL);
+    messageBox.setWindowTitle(tr("Regenerate parts database?"));
+    messageBox.setText(tr("Regenerating the parts database will take some minutes and you will have to restart Fritzing\n\n") +
+                        tr("Would you like to regenerate the parts database?\n")
+                        );
+    messageBox.setInformativeText("This option is a last resort in case Fritzing's is more-or-less unable to display parts. "
+                                  "You may be better off downloading the latest Fritzing release.");
+    messageBox.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
+    messageBox.setDefaultButton(QMessageBox::Yes);
+    messageBox.setIcon(QMessageBox::Question);
+    messageBox.setWindowModality(Qt::WindowModal);
+    messageBox.setButtonText(QMessageBox::Yes, tr("Regenerate"));
+    messageBox.setButtonText(QMessageBox::No, tr("Cancel"));
+    if ((QMessageBox::StandardButton) messageBox.exec() != QMessageBox::Yes) {
+        return;
+    }
 
+    FileProgressDialog * fileProgressDialog = new FileProgressDialog(tr("Regenerating parts database..."), 0, NULL);
+    // these don't seem very accurate (i.e. when progress is at 100%, there is still a lot of work pending)
+    // so we are leaving progress indeterminate at present
+    //connect(referenceModel, SIGNAL(partsToLoad(int)), fileProgressDialog, SLOT(setMaximum(int)));
+    //connect(referenceModel, SIGNAL(loadedPart(int,int)), fileProgressDialog, SLOT(setValue(int)));
+
+    regeneratePartsDatabaseAux(fileProgressDialog);
+}
+
+void FApplication::regeneratePartsDatabaseAux(QDialog * progressDialog) {
+    ReferenceModel * referenceModel = new CurrentReferenceModel();
+    QDir dir = FolderUtils::getPartsSubFolder("");
+    QString dbPath = dir.absoluteFilePath("parts.db");
+    RegenerateDatabaseThread *thread = new RegenerateDatabaseThread(dbPath, progressDialog, referenceModel);
+    connect(thread, SIGNAL(finished()), this, SLOT(regenerateDatabaseFinished()));
+    FMessageBox::BlockMessages = true;
+    thread->start();
+}
+
+void FApplication::regenerateDatabaseFinished() {
+   RegenerateDatabaseThread * thread = qobject_cast<RegenerateDatabaseThread *>(sender());
+   if (thread == NULL) return;
+
+   QDialog * progressDialog = thread->progressDialog();
+   if (progressDialog == m_updateDialog) {
+       m_updateDialog->installFinished(thread->error());
+   }
+   else {
+       if (thread->error().isEmpty()) {
+            QTimer::singleShot(50, Qt::PreciseTimer, this, SLOT(quit()));
+       }
+       else {
+           thread->referenceModel()->deleteLater();
+           QMessageBox::warning(NULL, QObject::tr("Regenerate database failed"), thread->error());
+       }
+
+       if (progressDialog) {
+           thread->progressDialog()->close();
+           thread->progressDialog()->deleteLater();
+       }
+   }
+
+   thread->deleteLater();
+}
+
+void FApplication::installNewParts() {
+    regeneratePartsDatabaseAux(m_updateDialog);
+}

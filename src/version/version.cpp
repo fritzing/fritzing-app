@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2015 Fachhochschule Potsdam - http://fh-potsdam.de
+Copyright (c) 2007-2016 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -39,8 +39,8 @@ QString Version::m_majorVersion("0");
 QString Version::m_minorVersion("9");
 QString Version::m_minorSubVersion("3");
 QString Version::m_modifier("b");
-QString Version::m_gitCommit("125f93353d48f6e80ddb6968cd25899a227d8b8c");
-QString Version::m_gitDate("2015-03-17T14:36:55Z");  // want standard ISO form
+QString Version::m_gitCommit("c14606e062d20225b274942d588389e6fe6bc240");
+QString Version::m_gitDate("2016-01-28T14:36:55Z");  // want standard ISO form
 QString Version::m_revision;
 QString Version::m_date;
 QString Version::m_shortDate;

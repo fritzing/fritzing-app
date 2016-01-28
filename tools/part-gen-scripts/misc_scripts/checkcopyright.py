@@ -2,7 +2,7 @@
 #    checkcopyright.py -d <directory> 
 #    
 #    <directory> is a folder, with subfolders, containing .cpp and .h files.  
-#    update Copyright (c) 2007-xxxx Fachhochschule Potsdam
+#    update Copyright (c) 2007-xxxx Fritzing
 
 import getopt, sys, os, re, time
     
@@ -12,7 +12,7 @@ usage:
     checkcopyright.py -d <directory> 
     
     <directory> is a folder, with subfolders, containing .cpp and .h files.  
-    update Copyright (c) 2007-xxxx Fachhochschule Potsdam
+    update Copyright (c) 2007-xxxx Fritzing
     
     """
     
@@ -55,11 +55,11 @@ def main():
                     year = ttuple[0]
                     txt = infile.read();
                     infile.close();
-                    pattern = 'Copyright \(c\) (\d\d\d\d)-(\d\d\d\d) Fachhochschule Potsdam'
+                    pattern = 'Copyright \(c\) (\d\d\d\d)-(\d\d\d\d) Fritzing'
                     m = re.search(pattern, txt)
                     if (m):
                         if (year > int(m.group(2))):
-                            newtxt = re.sub(pattern, 'Copyright (c) ' + m.group(1) + '-' + str(year) + ' Fachhochschule Potsdam', txt)
+                            newtxt = re.sub(pattern, 'Copyright (c) ' + m.group(1) + '-' + str(year) + ' Fritzing', txt)
                             print "{0} {1} {2}".format(path, year, m.group(2))     
                             #print "{0}".format(newtxt[:150])
                             infile = open(path, "w")

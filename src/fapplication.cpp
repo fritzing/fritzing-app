@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2014 Fachhochschule Potsdam - http://fh-potsdam.de
+Copyright (c) 2007-2016 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -1363,20 +1363,18 @@ void FApplication::updatePrefs(PrefsDialog & prefsDialog)
 }
 
 void FApplication::initSplash(FSplashScreen & splash) {
-	QPixmap logo(":/resources/images/splash/fhp_logo_small.png");
 	QPixmap progress(":/resources/images/splash/splash_progressbar.png");
 
 	m_progressIndex = splash.showPixmap(progress, "progress");
 	if (m_progressIndex >= 0) splash.showProgress(m_progressIndex, 0);
 
 	// put this above the progress indicator
-	splash.showPixmap(logo, "fhpLogo");
 
 	QString msg1 = QObject::tr("<font face='Lucida Grande, Tahoma, Sans Serif' size='2' color='#eaf4ed'>"
-							   "&#169; 2007-%1 Fachhochschule Potsdam"
+                               "&#169; 2007-%1 Fritzing"
 							   "</font>")
-							.arg(Version::year());
-	splash.showMessage(msg1, "fhpText", Qt::AlignLeft | Qt::AlignTop);
+                            .arg(Version::year());
+    splash.showMessage(msg1, "fritzingText", Qt::AlignLeft | Qt::AlignTop);
 
 	QString msg2 = QObject::tr("<font face='Lucida Grande, Tahoma, Sans Serif' size='2' color='#eaf4ed'>"
 							   "Version %1.%2.%3 (%4%5) %6"

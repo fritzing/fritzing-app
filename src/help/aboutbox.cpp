@@ -1,7 +1,7 @@
 /*******************************************************************
 
 Part of the Fritzing project - http://fritzing.org
-Copyright (c) 2007-2014 Fachhochschule Potsdam - http://fh-potsdam.de
+Copyright (c) 2007-2016 Fritzing
 
 Fritzing is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -104,18 +104,11 @@ AboutBox::AboutBox(QWidget *parent)
 	CC->setPixmap(cc);
 	CC->setGeometry(30, this->height() - cc.height(), cc.width(), cc.height());
 
-	QLabel *FHP = new QLabel(this);
-	QPixmap fhp(":/resources/images/aboutbox_FHP.png");
-	FHP->setPixmap(fhp);
-	FHP->setGeometry(360 - fhp.width(), this->height() - fhp.height(), fhp.width(), fhp.height());
-
-	int w = qMax(fhp.width(), cc.width());
-
-	QLabel *copyrightFHP = new QLabel(this);
-	copyrightFHP->setText(tr("<b>2007-%1 Fachhochschule Potsdam</b>").arg(Version::year()));
-	copyrightFHP->setFont(extraSmallFont);
-	copyrightFHP->setGeometry(30 + w, 414, AboutWidth - 30 - 30 - w - w, 16);
-    copyrightFHP->setAlignment(Qt::AlignBottom | Qt::AlignHCenter);
+    QLabel *copyrightFritzing = new QLabel(this);
+    copyrightFritzing->setText(tr("<b>2007-%1 Fritzing</b>").arg(Version::year()));
+    copyrightFritzing->setFont(extraSmallFont);
+    copyrightFritzing->setGeometry(30, 414, AboutWidth - 30 - 30, 16);
+    copyrightFritzing->setAlignment(Qt::AlignBottom | Qt::AlignHCenter);
 
 
 	// Scrolling Credits Text

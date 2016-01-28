@@ -641,276 +641,276 @@ A custom board svg typically has one or two silkscreen layers and one board laye
     <name>ConsoleSettings</name>
     <message>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Preferências</translation>
     </message>
     <message>
         <source>Select Parameters</source>
-        <translation type="unfinished"></translation>
+        <translation>Parâmetros</translation>
     </message>
     <message>
         <source>BaudRate:</source>
-        <translation type="unfinished"></translation>
+        <translation>BaudRate:</translation>
     </message>
     <message>
         <source>Data bits:</source>
-        <translation type="unfinished"></translation>
+        <translation>Bits de dados:</translation>
     </message>
     <message>
         <source>Parity:</source>
-        <translation type="unfinished"></translation>
+        <translation>Paridade:</translation>
     </message>
     <message>
         <source>Stop bits:</source>
-        <translation type="unfinished"></translation>
+        <translation>Bits de paragem:</translation>
     </message>
     <message>
         <source>Flow control:</source>
-        <translation type="unfinished"></translation>
+        <translation>Controlo de Fluxo:</translation>
     </message>
     <message>
         <source>Select Serial Port</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecione a Porta Série</translation>
     </message>
     <message>
         <source>Description:</source>
-        <translation type="unfinished"></translation>
+        <translation>Descrição</translation>
     </message>
     <message>
         <source>Manufacturer:</source>
-        <translation type="unfinished"></translation>
+        <translation>Fabricante:</translation>
     </message>
     <message>
         <source>Serial number:</source>
-        <translation type="unfinished"></translation>
+        <translation>Número de Série:</translation>
     </message>
     <message>
         <source>Location:</source>
-        <translation type="unfinished"></translation>
+        <translation>Localização:</translation>
     </message>
     <message>
         <source>Vendor ID:</source>
-        <translation type="unfinished"></translation>
+        <translation>ID Fornecedor:</translation>
     </message>
     <message>
         <source>Product ID:</source>
-        <translation type="unfinished"></translation>
+        <translation>ID Produto:</translation>
     </message>
     <message>
         <source>Apply</source>
-        <translation type="unfinished"></translation>
+        <translation>Aplicar</translation>
     </message>
     <message>
         <source>Additional options</source>
-        <translation type="unfinished"></translation>
+        <translation>Opções Adicionais</translation>
     </message>
     <message>
         <source>Local echo</source>
-        <translation type="unfinished"></translation>
+        <translation>Eco Local</translation>
     </message>
     <message>
         <source>Description: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Descrição: %1</translation>
     </message>
     <message>
         <source>Manufacturer: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Fabricante: %1</translation>
     </message>
     <message>
         <source>Serial number: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Número de Série: %1</translation>
     </message>
     <message>
         <source>Location: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Localização: %1</translation>
     </message>
     <message>
         <source>Vendor Identifier: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Identificação de Fornecedor: %1</translation>
     </message>
     <message>
         <source>Product Identifier: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Identificação de Produto: %1</translation>
     </message>
 </context>
 <context>
     <name>ConsoleWindow</name>
     <message>
         <source>Serial Monitor</source>
-        <translation type="unfinished"></translation>
+        <translation>Monitor Série</translation>
     </message>
     <message>
         <source>Monitor</source>
-        <translation type="unfinished"></translation>
+        <translation>Monitor</translation>
     </message>
     <message>
         <source>Tools</source>
-        <translation type="unfinished">Ferramentas</translation>
+        <translation>Ferramentas</translation>
     </message>
     <message>
         <source>&amp;About</source>
-        <translation type="unfinished">&amp;Acerca</translation>
+        <translation>&amp;Acerca</translation>
     </message>
     <message>
         <source>About program</source>
-        <translation type="unfinished"></translation>
+        <translation>Acerca do programa</translation>
     </message>
     <message>
         <source>Alt+A</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+A</translation>
     </message>
     <message>
         <source>About Qt</source>
-        <translation type="unfinished"></translation>
+        <translation>Acerca do Qt</translation>
     </message>
     <message>
         <source>C&amp;onnect</source>
-        <translation type="unfinished"></translation>
+        <translation>L&amp;igar</translation>
     </message>
     <message>
         <source>Connect to serial port</source>
-        <translation type="unfinished"></translation>
+        <translation>Ligar à porta série</translation>
     </message>
     <message>
         <source>Ctrl+O</source>
-        <translation type="unfinished">Ctrl+O</translation>
+        <translation>Ctrl+O</translation>
     </message>
     <message>
         <source>&amp;Disconnect</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Desligar</translation>
     </message>
     <message>
         <source>Disconnect from serial port</source>
-        <translation type="unfinished"></translation>
+        <translation>Desligar à porta série</translation>
     </message>
     <message>
         <source>Ctrl+D</source>
-        <translation type="unfinished">Ctrl+D</translation>
+        <translation>Ctrl+D</translation>
     </message>
     <message>
         <source>&amp;Configure</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Configurar</translation>
     </message>
     <message>
         <source>Configure serial port</source>
-        <translation type="unfinished"></translation>
+        <translation>Configurar a porta série</translation>
     </message>
     <message>
         <source>Alt+C</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+C</translation>
     </message>
     <message>
         <source>C&amp;lear</source>
-        <translation type="unfinished"></translation>
+        <translation>L&amp;impar</translation>
     </message>
     <message>
         <source>Clear data</source>
-        <translation type="unfinished"></translation>
+        <translation>Limpar dados</translation>
     </message>
     <message>
         <source>Alt+L</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+L</translation>
     </message>
     <message>
         <source>&amp;Quit</source>
-        <translation type="unfinished">&amp;Sair</translation>
+        <translation>&amp;Sair</translation>
     </message>
     <message>
         <source>Ctrl+Q</source>
-        <translation type="unfinished">Ctrl+Q</translation>
+        <translation>Ctrl+Q</translation>
     </message>
     <message>
         <source>Connected to %1 : %2, %3, %4, %5, %6</source>
-        <translation type="unfinished"></translation>
+        <translation>Ligado a %1 : %2, %3, %4, %5, %6</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Erro</translation>
     </message>
     <message>
         <source>Serial port open error</source>
-        <translation type="unfinished"></translation>
+        <translation>Erro na porta série</translation>
     </message>
     <message>
         <source>Disconnected</source>
-        <translation type="unfinished"></translation>
+        <translation>Desligado</translation>
     </message>
     <message>
         <source>Critical Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Erro Crítico</translation>
     </message>
     <message>
         <source>About Serial Monitor</source>
-        <translation type="unfinished"></translation>
+        <translation>Acerca do Monitor de Série</translation>
     </message>
     <message>
         <source>This terminal displays the serial communication on the selected port, usually between your computer and the connected microcontroller.</source>
-        <translation type="unfinished"></translation>
+        <translation>Este terminal mostra a comunicação série na porta selecionada, atualmente entre o teu computador e o microcontrolador selecionado.</translation>
     </message>
 </context>
 <context>
     <name>DRC</name>
     <message>
         <source>DRC was cancelled.</source>
-        <translation type="unfinished"></translation>
+        <translation>DRC foi cancelado.</translation>
     </message>
     <message>
         <source>Your sketch is ready for production: there are no connectors or traces that overlap or are too close together.</source>
-        <translation type="unfinished">O teu desenho está pronto para produção: não existem pistas ou ligações incorrectas ou demasiado próximas.</translation>
+        <translation>O teu desenho está pronto para produção: não existem pistas ou ligações incorrectas ou demasiado próximas.</translation>
     </message>
     <message>
         <source>The areas on your board highlighted in red are connectors and traces which may overlap or be too close together. </source>
-        <translation type="unfinished"></translation>
+        <translation>As áreas sublinhadas a vermelho na tua placa são conetores e traços que podem sobrepor ou estarem muito juntas.</translation>
     </message>
     <message>
         <source>Reposition them and run the DRC again to find more problems</source>
-        <translation type="unfinished"></translation>
+        <translation>Reposicioná-las e correr o DRC outra vez para encontrar mais problemas</translation>
     </message>
     <message>
         <source>Fritzing error: unable to render board svg.</source>
-        <translation type="unfinished"></translation>
+        <translation>Erro Fritzing: incapaz de renderizar o svg da placa.</translation>
     </message>
     <message>
         <source>No traces or connectors to check</source>
-        <translation type="unfinished"></translation>
+        <translation>Sem traços ou conectores para verificar</translation>
     </message>
     <message>
         <source>Unexpected SVG rendering failure--contact fritzing.org</source>
-        <translation type="unfinished"></translation>
+        <translation>Falha inesperada na renderização SVG--contacte fritzing.org</translation>
     </message>
     <message>
         <source>Fritzing</source>
-        <translation type="unfinished">Fritzing</translation>
+        <translation>Fritzing</translation>
     </message>
     <message>
         <source>%1 is overlapping (%2 layer)</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 sobrepõe (%2 layer)</translation>
     </message>
     <message>
         <source>Too close to a border (%1 layer)</source>
-        <translation type="unfinished"></translation>
+        <translation>Muito perto de uma fronteira (%1 layer)</translation>
     </message>
     <message>
         <source>A hole in %1 may lie outside the border of the board and would be clipped.</source>
-        <translation type="unfinished"></translation>
+        <translation>Um orifício no %1 pode pairar fora da fronteira da placa e irá ser cortado.</translation>
     </message>
     <message>
         <source>Connector %1 on %2 should have both copper top and bottom layers, but the svg only specifies one layer.</source>
-        <translation type="unfinished"></translation>
+        <translation>Conector %1 no %2 deve ter cobre nas camadas de cima e baixo, mas o svg só especifica uma camada.</translation>
     </message>
 </context>
 <context>
     <name>DRCResultsDialog</name>
     <message>
         <source>DRC Results</source>
-        <translation type="unfinished"></translation>
+        <translation>Resultados DRC</translation>
     </message>
     <message>
         <source>Note: the list items and the red highlighting will not update as you edit your sketch--you must rerun the DRC. The highlighting will disappear when you close this dialog.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nota: os itens listados e o vermelho realçado não irão atualizar ao editar o seu esboço--tem que re-correr o DRC. O realçado irá desaparecer quando fechar este diálogo.</translation>
     </message>
     <message>
         <source>Click on an item in the list to highlight of overlap it refers to.</source>
-        <translation type="unfinished"></translation>
+        <translation>Clique num item na lista para realçar a sobreposição a que refere.</translation>
     </message>
 </context>
 <context>
@@ -981,22 +981,22 @@ Nota: Pode importar posteriormente usando o menu de acção &quot;Ajuda&quot; -&
     </message>
     <message>
         <source>Please specify an .fzz file name to save to (cancel will delete the backup)</source>
-        <translation type="unfinished"></translation>
+        <translation>Por favor especifique um nome no ficheiro .fzz para guardar (cancelar vai eliminar o backup)</translation>
     </message>
     <message>
         <source>Fritzing (*%1)</source>
-        <translation type="unfinished">Fritzing (*%1)</translation>
+        <translation>Fritzing (*%1)</translation>
     </message>
     <message>
         <source>Fritzing caught an exception from %1 in event %2: %3</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing encontrou uma exceção de %1 no evento %2: %3</translation>
     </message>
 </context>
 <context>
     <name>FirstTimeHelpDialog</name>
     <message>
         <source>First Time Help</source>
-        <translation type="unfinished">Ajuda na primeira vez</translation>
+        <translation>Ajuda na primeira vez</translation>
     </message>
     <message>
         <source>&lt;br/&gt;The &lt;b&gt;Breadboard View&lt;/b&gt; is meant to look like a &lt;i&gt;real-life&lt;/i&gt; breadboard prototype.&lt;br/&gt;&lt;br/&gt;Begin by dragging a part from the Parts Bin, which is over at the top right. Then pull in more parts, connecting them by placing them on the breadboard or clicking on the connectors and dragging wires. The process is similar to how you would arrange things in the physical world. &lt;br/&gt;&lt;br/&gt;After you&apos;re finished creating your sketch in the breadboard view, try the other views. You can switch views by clicking the Tabs at the top of the window. Because different views have different purposes, parts will look different in the other views.</source>
@@ -1080,19 +1080,19 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">Cancelar</translation>
+        <translation>Cancelar</translation>
     </message>
     <message>
         <source>OK</source>
-        <translation type="unfinished">OK</translation>
+        <translation>OK</translation>
     </message>
     <message>
         <source>OK and ground fill</source>
-        <translation type="unfinished"></translation>
+        <translation>OK e preencher com terra</translation>
     </message>
     <message>
         <source>OK and copper fill</source>
-        <translation type="unfinished"></translation>
+        <translation>OK e preencher com cobre</translation>
     </message>
 </context>
 <context>
@@ -1129,7 +1129,7 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     </message>
     <message>
         <source>(autoroutable)</source>
-        <translation></translation>
+        <translation>(autoroteável)</translation>
     </message>
     <message>
         <source>Wire</source>
@@ -1173,19 +1173,19 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     </message>
     <message>
         <source>Ratsnest wire</source>
-        <translation type="unfinished"></translation>
+        <translation>Fio ninho-de-ratos</translation>
     </message>
     <message>
         <source>Change the locked state of the part in this view. A locked part can&apos;t be moved.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mudar o estado bloqueado da parte nesta vista. Uma parte bloqueada não pode ser movida.</translation>
     </message>
     <message>
         <source>Sticky</source>
-        <translation type="unfinished"></translation>
+        <translation>Pegajoso</translation>
     </message>
     <message>
         <source>Change the &quot;sticky&quot; state of the part in this view. When a sticky part is moved, objects on top of it also move.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mudar o estado &quot;pegajoso&quot; da parte nesta vista. Quando uma parte pegajosa é movida, objetos no topo dela também movem.</translation>
     </message>
     <message>
         <source>v. %1 %2</source>
@@ -1193,27 +1193,27 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     </message>
     <message>
         <source>obsolete</source>
-        <translation type="unfinished"></translation>
+        <translation>obsoleto</translation>
     </message>
     <message>
         <source>Placement</source>
-        <translation type="unfinished"></translation>
+        <translation>Fixação</translation>
     </message>
     <message>
         <source>pcb layer</source>
-        <translation type="unfinished"></translation>
+        <translation>camada pcb</translation>
     </message>
     <message>
         <source>location</source>
-        <translation type="unfinished"></translation>
+        <translation>localização</translation>
     </message>
     <message>
         <source>rotation</source>
-        <translation type="unfinished"></translation>
+        <translation>rotação</translation>
     </message>
     <message>
         <source>degrees</source>
-        <translation type="unfinished"></translation>
+        <translation>graus</translation>
     </message>
 </context>
 <context>
@@ -1372,35 +1372,35 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     </message>
     <message>
         <source>file for %1 %2 not found</source>
-        <translation type="unfinished"></translation>
+        <translation>ficheiro para %1 %2 não encontrado</translation>
     </message>
     <message>
         <source>banded</source>
-        <translation type="unfinished"></translation>
+        <translation>unido</translation>
     </message>
     <message>
         <source>top</source>
-        <translation type="unfinished"></translation>
+        <translation>superior</translation>
     </message>
     <message>
         <source>bottom</source>
-        <translation type="unfinished"></translation>
+        <translation>inferior</translation>
     </message>
     <message>
         <source>copper bottom</source>
-        <translation type="unfinished"></translation>
+        <translation>cobre inferior</translation>
     </message>
     <message>
         <source>copper top</source>
-        <translation type="unfinished"></translation>
+        <translation>cobre superior</translation>
     </message>
     <message>
         <source>silkscreen bottom</source>
-        <translation type="unfinished"></translation>
+        <translation>serigrafia inferior</translation>
     </message>
     <message>
         <source>silkscreen top</source>
-        <translation type="unfinished"></translation>
+        <translation>serigrafia superior</translation>
     </message>
 </context>
 <context>
@@ -1456,35 +1456,35 @@ It is also possible to choose a connector as a ground fill seed by right-clickin
     </message>
     <message>
         <source>due to a rendering error</source>
-        <translation type="unfinished"></translation>
+        <translation>devido a um erro de renderização</translation>
     </message>
     <message>
         <source>because the svg is empty</source>
-        <translation type="unfinished"></translation>
+        <translation>porque o svg está vazio</translation>
     </message>
     <message>
         <source>due to an xml problem: %1 line:%2 column:%3</source>
-        <translation type="unfinished"></translation>
+        <translation>devido a um problema xml: %1 linha:%2 coluna:%3</translation>
     </message>
     <message>
         <source>because the file has no root element</source>
-        <translation type="unfinished"></translation>
+        <translation>porque o ficheiro não tem um elemento raíz</translation>
     </message>
     <message>
         <source>because the file has no &lt;svg&gt; element</source>
-        <translation type="unfinished"></translation>
+        <translation>porque o ficheiro não tem elemento &lt;svg&gt;</translation>
     </message>
     <message>
         <source>for unknown reasons--possibly the image file is corrupted</source>
-        <translation type="unfinished"></translation>
+        <translation>por razões desconhecidas--possivelmente o ficheiro de imagem está corrupto</translation>
     </message>
     <message>
         <source>because this appears to be a SVG file exported from CorelDRAW without choosing the &apos;presentation attributes&apos; setting</source>
-        <translation type="unfinished"></translation>
+        <translation>porque isto parece ser um ficheiro SVG exportado do CorelDRAW sem escolher a definição &apos;atributos de apresentação&apos;</translation>
     </message>
     <message>
         <source>text</source>
-        <translation type="unfinished"></translation>
+        <translation>texto</translation>
     </message>
 </context>
 <context>
@@ -2703,36 +2703,43 @@ Por favor verifique em todos os modos de visualização para verificar alguma mo
         <source>Ctrl+R</source>
         <comment>Rotate Clockwise</comment>
         <translation>Ctrl+R</translation>
+        <comment>Rotação em Relógio</comment>
     </message>
     <message>
         <source>Alt+Ctrl+R</source>
         <comment>Rotate Clockwise</comment>
         <translation>Alt+Ctrl+R</translation>
+        <comment>Rotação em Relógio</comment>
     </message>
     <message>
         <source>Meta+Ctrl+R</source>
         <comment>Rotate Clockwise</comment>
         <translation>Meta+Ctrl+R</translation>
+        <comment>Rotação em Relógio</comment>
     </message>
     <message>
         <source>Shift+Ctrl+R</source>
         <comment>Rotate Counterclockwise</comment>
         <translation>Shift+Ctrl+R</translation>
+        <comment>Rotação em Contrarelógio</comment>
     </message>
     <message>
         <source>Alt+Shift+Ctrl+R</source>
         <comment>Rotate Counterclockwise</comment>
         <translation>Alt+Shift+Ctrl+R</translation>
+        <comment>Rotação em Contrarelógio</comment>
     </message>
     <message>
         <source>Meta+Shift+Ctrl+R</source>
         <comment>Rotate Counterclockwise</comment>
         <translation>Meta+Shift+Ctrl+R</translation>
+        <comment>Rotação em Contrarelógio</comment>
     </message>
     <message>
         <source>Shift+Ctrl+Tab</source>
         <comment>Toggle Active Layer</comment>
         <translation>Shift+Ctrl+Tab</translation>
+        <comment>Alternar Camada Ativa</comment>
     </message>
     <message>
         <source>Sketch exported to Gerber</source>
@@ -2915,39 +2922,39 @@ Would you like to convert &apos;%1&apos; to the .fzz format now or open it read-
     </message>
     <message>
         <source>Sticky</source>
-        <translation type="unfinished"></translation>
+        <translation>Pegajoso</translation>
     </message>
     <message>
         <source>If a &quot;sticky&quot; part is moved, parts on top of it are also moved</source>
-        <translation type="unfinished"></translation>
+        <translation>Se uma parte &quot;pegajosa&quot; é movida, partes em cima dela serão também movidas</translation>
     </message>
     <message>
         <source>Set Grid Size...</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecione o tamanho da Grelha...</translation>
     </message>
     <message>
         <source>Set the size of the grid in this view</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecione o tamanho da grelha nesta vista</translation>
     </message>
     <message>
         <source>Set Background Color...</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecione a Cor de Fundo...</translation>
     </message>
     <message>
         <source>Set the background color of this view</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecione a cor de fundo nesta vista</translation>
     </message>
     <message>
         <source>jumpers</source>
-        <translation type="unfinished"></translation>
+        <translation>jumpers</translation>
     </message>
     <message>
         <source>copperfill</source>
-        <translation type="unfinished"></translation>
+        <translation>preenchimento de cobre</translation>
     </message>
     <message>
         <source>vias</source>
-        <translation type="unfinished"></translation>
+        <translation>vias</translation>
     </message>
     <message>
         <source>OK</source>

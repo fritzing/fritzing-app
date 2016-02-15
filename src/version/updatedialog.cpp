@@ -66,7 +66,7 @@ UpdateDialog::UpdateDialog(QWidget *parent) : QDialog(parent)
     vLayout->addWidget(m_progressBar);
 
     m_buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
-    m_buttonBox->button(QDialogButtonBox::Cancel)->setText(tr("Ignore"));
+    m_buttonBox->button(QDialogButtonBox::Cancel)->setText(tr("Close"));
     m_buttonBox->button(QDialogButtonBox::Ok)->setText(tr("Update parts"));
 
     connect(m_buttonBox, SIGNAL(rejected()), this, SLOT(stopClose()));
@@ -201,10 +201,11 @@ void UpdateDialog::releasesAvailableSlot() {
     }
 
     m_feedbackLabel->setText(tr("<p><b>There is a parts library update available!</b></p>"
-                               "<p>See the <a href='https://github.com/fritzing/fritzing-parts/compare/%1...master'>list of changes.</a> "
-                               "Would you like Fritzing to download and install them?</p>"
+                               "<p>Would you like Fritzing to download and install them now?<br/>"
+                               "See the <a href='https://github.com/fritzing/fritzing-parts/compare/%1...master'>list of changes here.</a></p>"
                                "<p>Note: this may take a moment "
-                               "and you will have to restart Fritzing.</p>").arg(m_shaFromDataBase));
+                               "and you will have to restart Fritzing.<br/>"
+                               "You can also update later via the <i>Help &rarr; Check for Updates</i> menu.</p>").arg(m_shaFromDataBase));
     m_buttonBox->button(QDialogButtonBox::Ok)->setVisible(true);
     m_buttonBox->setEnabled(true);
     if (!this->isVisible()) {

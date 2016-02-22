@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="it_IT" sourcelanguage="en_US">
+<TS version="2.1" language="it_IT" sourcelanguage="en_US">
 <context>
     <name>AboutBox</name>
     <message>
@@ -10,10 +10,6 @@
     <message>
         <source>&lt;b&gt;GNU GPL v3 on the code and CreativeCommons:BY-SA on the rest</source>
         <translation>&lt;b&gt;GNU GPL v3 sul codice e CreativeCommons:BY-SA su tutto il resto</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;2007-%1 Fachhochschule Potsdam&lt;/b&gt;</source>
-        <translation>&lt;b&gt;2007-%1 Fachhochschule Potsdam&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Fritzing is made by: </source>
@@ -177,6 +173,10 @@
     </message>
     <message>
         <source>Jenny Chowdhury, Lionel Michel, Fabian Althaus, Jannis Leidel, </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;2007-%1 Fritzing&lt;/b&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -575,6 +575,7 @@ A custom board svg typically has one or two silkscreen layers and one board laye
     <message numerus="yes">
         <source>&lt;b&gt;The custom shape has %n cutouts.&lt;/b&gt;</source>
         <translation type="unfinished">
+            <numerusform></numerusform>
             <numerusform></numerusform>
         </translation>
     </message>
@@ -986,6 +987,33 @@ Note: You can import them later using the &quot;Help&quot; &gt; &quot;Import par
     </message>
     <message>
         <source>Fritzing caught an exception from %1 in event %2: %3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Regenerate parts database?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Regenerating the parts database will take some minutes and you will have to restart Fritzing
+
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Would you like to regenerate the parts database?
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Regenerate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">Annulla</translation>
+    </message>
+    <message>
+        <source>Regenerating parts database...</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2497,6 +2525,7 @@ Please check all views for potential side-effects.</source>
         <source>Routing completed using %n jumper part(s)</source>
         <translation type="unfinished">
             <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
     <message>
@@ -3402,6 +3431,7 @@ Do you want to update now?</source>
         <source>There are %n outdated part(s) in this sketch. </source>
         <translation type="unfinished">
             <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
     <message>
@@ -3449,6 +3479,7 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     <message numerus="yes">
         <source>We strongly recommend that you update these %n parts  to the latest version. </source>
         <translation type="unfinished">
+            <numerusform></numerusform>
             <numerusform></numerusform>
         </translation>
     </message>
@@ -3535,6 +3566,14 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
         <source>Rotate 45° Counter Clockwise</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Regenerate parts database ...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Regenerate the parts database (should only be used if your parts database is broken)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MazeRouter</name>
@@ -3557,6 +3596,7 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     <message numerus="yes">
         <source> with %n vias</source>
         <translation type="unfinished">
+            <numerusform></numerusform>
             <numerusform></numerusform>
         </translation>
     </message>
@@ -3603,6 +3643,7 @@ Reason: %2 (errcode %3)</source>
     <message numerus="yes">
         <source>Unable to find the following %n part(s):</source>
         <translation type="unfinished">
+            <numerusform></numerusform>
             <numerusform></numerusform>
         </translation>
     </message>
@@ -4183,11 +4224,13 @@ Go ahead and save?</source>
         <source>This part has %n unassigned connectors </source>
         <translation type="unfinished">
             <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <source>across %n views. </source>
         <translation type="unfinished">
+            <numerusform></numerusform>
             <numerusform></numerusform>
         </translation>
     </message>
@@ -5323,10 +5366,6 @@ shift key swaps scroll axis</source>
         <translation></translation>
     </message>
     <message>
-        <source>&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;&amp;#169; 2007-%1 Fachhochschule Potsdam&lt;/font&gt;</source>
-        <translation>&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;&amp;#169; 2007-%1 Fachhochschule Potsdam&lt;/font&gt;</translation>
-    </message>
-    <message>
         <source>The file &apos;%1&apos; is read-only; please use a different filename.</source>
         <translation>Il file &apos;%1&apos; è in sola lettura: usa un file differente.</translation>
     </message>
@@ -5713,10 +5752,6 @@ is already there, we won&apos;t add it again, right?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Parts folder not found.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Select %1</source>
         <translation type="unfinished">Seleziona %1</translation>
     </message>
@@ -6079,6 +6114,26 @@ is already there, we won&apos;t add it again, right?</source>
         <source>N/A</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;&amp;#169; 2007-%1 Fritzing&lt;/font&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Regenerate database failed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Regenerating parts database</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to find parts git repository</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to find parts git repository HEAD</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>QShortcut</name>
@@ -6137,6 +6192,7 @@ is already there, we won&apos;t add it again, right?</source>
         <source>The total area of the %n PCB(s) in this sketch is</source>
         <translation type="unfinished">
             <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
     <message>
@@ -6188,6 +6244,25 @@ is already there, we won&apos;t add it again, right?</source>
     </message>
     <message>
         <source>&lt;p&gt;&lt;b&gt;Fritzing may have crashed, but some of the changes to the following files may be recovered.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;The date and time each file was backed-up is displayed. If the file was saved, that date and time is also listed for comparison.&lt;/p&gt;&lt;p&gt;The original files are still on your disk, if they were ever saved. You can choose whether to overwrite the original file after you load its recovery file.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Select any files you want to recover from the list below.&lt;/b&gt;&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>RegenerateDatabaseThread</name>
+    <message>
+        <source>Unable to open temporary file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Database failure</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to remove original db file %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to copy database file %1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -6294,6 +6369,14 @@ is already there, we won&apos;t add it again, right?</source>
     <message>
         <source>width</source>
         <translation type="unfinished">larghezza</translation>
+    </message>
+    <message>
+        <source>&amp;cm</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;in</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -6660,11 +6743,13 @@ Note: you can also trigger this display by mousing down on the routing status te
         <source>show %n part label(s)</source>
         <translation type="unfinished">
             <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <source>hide %n part label(s)</source>
         <translation type="unfinished">
+            <numerusform></numerusform>
             <numerusform></numerusform>
         </translation>
     </message>
@@ -6719,6 +6804,7 @@ Note: you can also trigger this display by mousing down on the routing status te
     <message numerus="yes">
         <source>%1 %n strip(s)</source>
         <translation type="unfinished">
+            <numerusform></numerusform>
             <numerusform></numerusform>
         </translation>
     </message>
@@ -7182,24 +7268,68 @@ Note: you can also trigger this display by mousing down on the routing status te
         <translation>Chiudi</translation>
     </message>
     <message>
-        <source>No new versions found.</source>
-        <translation>Nessuna nuova versione trovata.</translation>
-    </message>
-    <message>
-        <source>Checking...</source>
-        <translation>Controllo...</translation>
-    </message>
-    <message>
-        <source>Sorry, unable to retrieve update info</source>
-        <translation>Spiacente, non riesco a trovare aggiornamenti</translation>
-    </message>
-    <message>
         <source>A new main release is available for downloading:</source>
         <translation>Una nuova release principale è disponibile per il download:</translation>
     </message>
     <message>
         <source>A new interim release is available for downloading:</source>
         <translation>Una nuova release intermedia è disponibile per il download:</translation>
+    </message>
+    <message>
+        <source>Update parts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;p&gt;No new versions found.&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;p&gt;Checking for new releases...&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;p&gt;Fritzing is unable to check for--and update--new parts.&lt;br/&gt;If you want this functionality, please enable write permission on this folder:&lt;br/&gt; &apos;%1&apos;.&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;p&gt;Checking for new parts...&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;p&gt;No new releases or new parts found&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;p&gt;&lt;b&gt;There is a parts library update available!&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Would you like Fritzing to download and install them now?&lt;br/&gt;See the &lt;a href=&apos;https://github.com/fritzing/fritzing-parts/compare/%1...master&apos;&gt;list of changes here.&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Note: this may take a moment and you will have to restart Fritzing.&lt;br/&gt;You can also update later via the &lt;i&gt;Help &amp;rarr; Check for Updates&lt;/i&gt; menu.&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;p&gt;Sorry, unable to retrieve update info&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;p&gt;Sorry, unable to retrieve parts update info&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;p&gt;Downloading new parts...&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;p&gt;Sorry, unable to download new parts&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;p&gt;Installing new parts. This may take a few minutes...&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;p&gt;New parts successfully installed!&lt;/p&gt;&lt;p&gt;Fritzing must be restarted, so the &apos;Close&apos; button will close Fritzing.&lt;br/&gt;The new parts will be available when you run Fritzing again.&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;p&gt;Sorry, unable to install new parts: %1&lt;br/&gt;Fritzing must nevertheless be restarted, so the &apos;Close&apos; button will close Fritzing.&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

@@ -12,10 +12,6 @@
         <translation>&lt;b&gt;GNU GPL v3 -on the code and CreativeCommons:BY-SA on the rest</translation>
     </message>
     <message>
-        <source>&lt;b&gt;2007-%1 Fachhochschule Potsdam&lt;/b&gt;</source>
-        <translation>&lt;b&gt;2007-%1 Fachhochschule Potsdam&lt;/b&gt;</translation>
-    </message>
-    <message>
         <source>Fritzing is made by: </source>
         <translation>Fritzing is gemaakt door: </translation>
     </message>
@@ -177,6 +173,10 @@
     </message>
     <message>
         <source>Jenny Chowdhury, Lionel Michel, Fabian Althaus, Jannis Leidel, </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;2007-%1 Fritzing&lt;/b&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -995,6 +995,33 @@ Noot: Je kunt ze ook later importeren via &quot;Help&quot; &gt;&quot;Importeer o
     </message>
     <message>
         <source>Fritzing caught an exception from %1 in event %2: %3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Regenerate parts database?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Regenerating the parts database will take some minutes and you will have to restart Fritzing
+
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Would you like to regenerate the parts database?
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Regenerate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">Annuleren</translation>
+    </message>
+    <message>
+        <source>Regenerating parts database...</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -3559,6 +3586,14 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
         <source>Rotate 45° Counter Clockwise</source>
         <translation type="unfinished">Roteer 45° Linksom {45�?} {45°?}</translation>
     </message>
+    <message>
+        <source>Regenerate parts database ...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Regenerate the parts database (should only be used if your parts database is broken)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MazeRouter</name>
@@ -5377,10 +5412,6 @@ De shift toets wisselt de as</translation>
         <translation>Fritzing</translation>
     </message>
     <message>
-        <source>&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;&amp;#169; 2007-%1 Fachhochschule Potsdam&lt;/font&gt;</source>
-        <translation>&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;&amp;#169; 2007-%1 Fachhochschule Potsdam&lt;/font&gt;</translation>
-    </message>
-    <message>
         <source>The file &apos;%1&apos; is read-only; please use a different filename.</source>
         <translation>Het bestand &apos;%1&apos; is alleen-lezen; Specifiëer a.u.b. een andere bestandsnaam.</translation>
     </message>
@@ -5763,10 +5794,6 @@ Fritzing werkt nog steeds, maar je kunt geen eigenschappen van de onderdelen wij
         <translation>Niet mogelijk om koper %1 %2 %3 te analyseren</translation>
     </message>
     <message>
-        <source>Parts folder not found.</source>
-        <translation>Onderdelen folder niet gevonden.</translation>
-    </message>
-    <message>
         <source>Select %1</source>
         <translation>Selecteer %1</translation>
     </message>
@@ -6132,6 +6159,26 @@ Fritzing werkt nog steeds, maar je kunt geen eigenschappen van de onderdelen wij
         <source>N/A</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;&amp;#169; 2007-%1 Fritzing&lt;/font&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Regenerate database failed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Regenerating parts database</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to find parts git repository</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to find parts git repository HEAD</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>QShortcut</name>
@@ -6246,6 +6293,25 @@ Fritzing werkt nog steeds, maar je kunt geen eigenschappen van de onderdelen wij
     </message>
 </context>
 <context>
+    <name>RegenerateDatabaseThread</name>
+    <message>
+        <source>Unable to open temporary file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Database failure</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to remove original db file %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to copy database file %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>Resistor</name>
     <message>
         <source>resistance</source>
@@ -6348,6 +6414,14 @@ Fritzing werkt nog steeds, maar je kunt geen eigenschappen van de onderdelen wij
     <message>
         <source>width</source>
         <translation>breedte</translation>
+    </message>
+    <message>
+        <source>&amp;cm</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;in</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -7243,10 +7317,6 @@ Noot:Je kunt dit venster ook oproepen door op de tekst van de routing status te 
         <translation>Sluiten</translation>
     </message>
     <message>
-        <source>No new versions found.</source>
-        <translation>Geen nieuwe versie gevonden.</translation>
-    </message>
-    <message>
         <source>A new main release is available for downloading:</source>
         <translation>Een nieuwe algemene release is beschikbaar om te downloaden :</translation>
     </message>
@@ -7255,12 +7325,60 @@ Noot:Je kunt dit venster ook oproepen door op de tekst van de routing status te 
         <translation>een nieuwe test release is beschikbaar om te downloaden :</translation>
     </message>
     <message>
-        <source>Checking...</source>
-        <translation>Controleren...</translation>
+        <source>Update parts</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Sorry, unable to retrieve update info</source>
-        <translation>Excuseer, niet mogelijk om de update info af te halen</translation>
+        <source>&lt;p&gt;No new versions found.&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;p&gt;Checking for new releases...&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;p&gt;Fritzing is unable to check for--and update--new parts.&lt;br/&gt;If you want this functionality, please enable write permission on this folder:&lt;br/&gt; &apos;%1&apos;.&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;p&gt;Checking for new parts...&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;p&gt;No new releases or new parts found&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;p&gt;&lt;b&gt;There is a parts library update available!&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Would you like Fritzing to download and install them now?&lt;br/&gt;See the &lt;a href=&apos;https://github.com/fritzing/fritzing-parts/compare/%1...master&apos;&gt;list of changes here.&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Note: this may take a moment and you will have to restart Fritzing.&lt;br/&gt;You can also update later via the &lt;i&gt;Help &amp;rarr; Check for Updates&lt;/i&gt; menu.&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;p&gt;Sorry, unable to retrieve update info&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;p&gt;Sorry, unable to retrieve parts update info&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;p&gt;Downloading new parts...&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;p&gt;Sorry, unable to download new parts&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;p&gt;Installing new parts. This may take a few minutes...&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;p&gt;New parts successfully installed!&lt;/p&gt;&lt;p&gt;Fritzing must be restarted, so the &apos;Close&apos; button will close Fritzing.&lt;br/&gt;The new parts will be available when you run Fritzing again.&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;p&gt;Sorry, unable to install new parts: %1&lt;br/&gt;Fritzing must nevertheless be restarted, so the &apos;Close&apos; button will close Fritzing.&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

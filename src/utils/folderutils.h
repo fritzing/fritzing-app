@@ -44,7 +44,7 @@ public:
     static QString getPartsSubFolderPath(QString);
     static QString getUserDataStorePath(QString folder = ___emptyString___);
 	static const QStringList & getUserDataStoreFolders();
-	static bool createFolderAnCdIntoIt(QDir &dir, QString newFolder);
+	static bool createFolderAndCdIntoIt(QDir &dir, QString newFolder);
 	static bool setApplicationPath(const QString & path);
     static bool setPartsPath(const QString & path);
 	static const QString getLibraryPath();

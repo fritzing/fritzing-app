@@ -152,7 +152,7 @@ const QStringList & FolderUtils::getUserDataStoreFolders() {
 	return singleton->userDataStoreFolders();
 }
 
-bool FolderUtils::createFolderAnCdIntoIt(QDir &dir, QString newFolder) {
+bool FolderUtils::createFolderAndCdIntoIt(QDir &dir, QString newFolder) {
 	if(!dir.mkdir(newFolder)) return false;
 	if(!dir.cd(newFolder)) return false;
 

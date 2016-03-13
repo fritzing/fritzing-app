@@ -881,7 +881,7 @@ void MainWindow::saveBundledNonAtomicEntity(QString &filename, const QString &ex
 	QString dirToRemove;
 	if (destFolderPath.isEmpty()) {
 		destFolder = QDir::temp();
-		FolderUtils::createFolderAnCdIntoIt(destFolder, TextUtils::getRandText());
+		FolderUtils::createFolderAndCdIntoIt(destFolder, TextUtils::getRandText());
 		dirToRemove = destFolder.path();
 	}
 	else {

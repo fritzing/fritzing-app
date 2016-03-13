@@ -409,7 +409,7 @@ bool FApplication::init() {
             (m_arguments[i].compare("--parts", Qt::CaseInsensitive) == 0) ||
             (m_arguments[i].compare("--partsparent", Qt::CaseInsensitive) == 0))
         {
-            FolderUtils::setPartsPath(m_arguments[i + 1]);
+            FolderUtils::setAppPartsPath(m_arguments[i + 1]);
             // delete these so we don't try to process them as files later
             toRemove << i << i + 1;
         }
@@ -787,7 +787,7 @@ bool FApplication::loadReferenceModel(const QString & databaseName, bool fullLoa
 
 bool FApplication::loadReferenceModel(const QString & databaseName, bool fullLoad, ReferenceModel * referenceModel)
 {
-    QDir dir = FolderUtils::getPartsSubFolder("");
+    QDir dir = FolderUtils::getAppPartsSubFolder("");
     QString dbPath = dir.absoluteFilePath("parts.db");
     QFileInfo info(dbPath);
     bool dbExists = info.exists();
@@ -1216,7 +1216,7 @@ int FApplication::startup()
 	ProcessEventBlocker::processEvents();
 
 	m_updateDialog = new UpdateDialog();
-    m_updateDialog->setRepoPath(FolderUtils::getPartsSubFolderPath(""), m_referenceModel->sha());
+    m_updateDialog->setRepoPath(FolderUtils::getAppPartsSubFolderPath(""), m_referenceModel->sha());
     connect(m_updateDialog, SIGNAL(enableAgainSignal(bool)), this, SLOT(enableCheckUpdates(bool)));
     connect(m_updateDialog, SIGNAL(installNewParts()), this, SLOT(installNewParts()));
     checkForUpdates(false);
@@ -2067,7 +2067,7 @@ void FApplication::regeneratePartsDatabase() {
 
 void FApplication::regeneratePartsDatabaseAux(QDialog * progressDialog) {
     ReferenceModel * referenceModel = new CurrentReferenceModel();
-    QDir dir = FolderUtils::getPartsSubFolder("");
+    QDir dir = FolderUtils::getAppPartsSubFolder("");
     QString dbPath = dir.absoluteFilePath("parts.db");
     RegenerateDatabaseThread *thread = new RegenerateDatabaseThread(dbPath, progressDialog, referenceModel);
     connect(thread, SIGNAL(finished()), this, SLOT(regenerateDatabaseFinished()));

@@ -908,7 +908,7 @@ bool SqliteReferenceModel::insertPart(ModelPart * modelPart, bool fullLoad) {
 	query.bindValue(":family", properties.value("family").toLower().trimmed());
     if (fullLoad) {
         QString path = modelPart->path();
-        QString prefix = FolderUtils::getPartsSubFolderPath("");
+        QString prefix = FolderUtils::getAppPartsSubFolderPath("");
 
         if (path.startsWith(ResourcePath)) {
         }

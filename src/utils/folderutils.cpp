@@ -98,16 +98,16 @@ QString FolderUtils::getApplicationSubFolderPath(QString search) {
     return dir.path();
 }
 
-QString FolderUtils::getPartsSubFolderPath(QString search) {
+QString FolderUtils::getAppPartsSubFolderPath(QString search) {
     if (singleton == NULL) {
         singleton = new FolderUtils();
     }
 
-    QDir dir = getPartsSubFolder(search);
+    QDir dir = getAppPartsSubFolder(search);
     return dir.path();
 }
 
-QDir FolderUtils::getPartsSubFolder(QString search) {
+QDir FolderUtils::getAppPartsSubFolder(QString search) {
     if (singleton == NULL) {
         singleton = new FolderUtils();
     }
@@ -168,7 +168,7 @@ bool FolderUtils::setApplicationPath(const QString & path)
     return singleton->setApplicationPath2(path);
 }
 
-bool FolderUtils::setPartsPath(const QString & path)
+bool FolderUtils::setAppPartsPath(const QString & path)
 {
     if (singleton == NULL) {
         singleton = new FolderUtils();

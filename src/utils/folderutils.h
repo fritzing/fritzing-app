@@ -40,13 +40,13 @@ class FolderUtils
 public:
     static QDir getApplicationSubFolder(QString);
     static QString getApplicationSubFolderPath(QString);
-    static QDir getPartsSubFolder(QString);
-    static QString getPartsSubFolderPath(QString);
+    static QDir getAppPartsSubFolder(QString);
+    static QString getAppPartsSubFolderPath(QString);
     static QString getUserDataStorePath(QString folder = ___emptyString___);
 	static const QStringList & getUserDataStoreFolders();
 	static bool createFolderAndCdIntoIt(QDir &dir, QString newFolder);
 	static bool setApplicationPath(const QString & path);
-    static bool setPartsPath(const QString & path);
+    static bool setAppPartsPath(const QString & path);
 	static const QString getLibraryPath();
 	static QString getOpenFileName( QWidget * parent = 0, const QString & caption = QString(), const QString & dir = QString(), const QString & filter = QString(), QString * selectedFilter = 0, QFileDialog::Options options = 0 );
 	static QStringList getOpenFileNames( QWidget * parent = 0, const QString & caption = QString(), const QString & dir = QString(), const QString & filter = QString(), QString * selectedFilter = 0, QFileDialog::Options options = 0 );

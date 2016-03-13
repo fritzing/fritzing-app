@@ -77,7 +77,7 @@ BinLocation::Location BinLocation::fromString(const QString & locationString) {
 BinLocation::Location BinLocation::findLocation(const QString & filename) 
 {
 
-	if (filename.startsWith(FolderUtils::getUserDataStorePath("bins"))) {
+    if (filename.startsWith(FolderUtils::getUserBinsPath())) {
 		return BinLocation::User;
 	}
     else if (filename.startsWith(FolderUtils::getAppPartsSubFolderPath("bins") + "/more")) {
@@ -116,7 +116,7 @@ BinManager::BinManager(class ReferenceModel *referenceModel, class HtmlInfoView 
 	m_referenceModel = referenceModel;
 	m_infoView = infoView;
 	m_undoStack = undoStack;
-	m_defaultSaveFolder = FolderUtils::getUserDataStorePath("bins");
+    m_defaultSaveFolder = FolderUtils::getUserBinsPath();
 	m_mainWindow = parent;
 	m_currentBin = NULL;
 
@@ -791,7 +791,7 @@ void BinManager::findAllBins(QList<BinLocation *> & locations)
 	getBinTitle(location->path, location->title, icon);
 	locations.append(location);
 
-	QDir userBinsDir(FolderUtils::getUserDataStorePath("bins"));
+    QDir userBinsDir(FolderUtils::getUserBinsPath());
 	findBins(userBinsDir, locations, BinLocation::User);
 
     QDir dir(FolderUtils::getAppPartsSubFolderPath("bins"));
@@ -893,9 +893,9 @@ MainWindow* BinManager::mainWindow() {
 }
 
 void BinManager::initNames() {
-    BinManager::MyPartsBinLocation = FolderUtils::getUserDataStorePath("bins")+"/my_parts.fzb";
+    BinManager::MyPartsBinLocation = FolderUtils::getUserBinsPath()+"/my_parts.fzb";
     BinManager::MyPartsBinTemplateLocation =":/resources/bins/my_parts.fzb";
-    BinManager::SearchBinLocation = FolderUtils::getUserDataStorePath("bins")+"/search.fzb";
+    BinManager::SearchBinLocation = FolderUtils::getUserBinsPath()+"/search.fzb";
     BinManager::SearchBinTemplateLocation =":/resources/bins/search.fzb";
     BinManager::ContribPartsBinLocation = FolderUtils::getAppPartsSubFolderPath("bins")+"/contribParts.fzb";
     BinManager::CorePartsBinLocation = FolderUtils::getAppPartsSubFolderPath("bins")+"/core.fzb";
@@ -1300,7 +1300,7 @@ void BinManager::copyFilesToContrib(ModelPart * mp, QWidget * originator) {
 	QFileInfo info(path);
 	QFile fzp(path);
 	
-	QString parts = FolderUtils::getUserDataStorePath("parts");
+    QString parts = FolderUtils::getUserPartsPath();
     FolderUtils::slamCopy(fzp, parts + "/contrib/" + info.fileName());
 	QString prefix = parts + "/svg/contrib/";
 

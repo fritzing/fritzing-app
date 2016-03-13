@@ -509,7 +509,7 @@ QString GerberGenerator::clipToBoard(QString svgString, QRectF & boardRect, cons
 		painter.end();
 
 #ifndef QT_NO_DEBUG
-        clipImage->save(FolderUtils::getUserDataStorePath("") + "/clip.png");
+        clipImage->save(FolderUtils::getTopLevelUserDataStorePath() + "/clip.png");
 #endif
 
 	}
@@ -687,7 +687,7 @@ QString GerberGenerator::clipToBoard(QString svgString, QRectF & boardRect, cons
 		    image.invertPixels();				// need white pixels on a black background for GroundPlaneGenerator
 
     #ifndef QT_NO_DEBUG
-		    image.save(FolderUtils::getUserDataStorePath("") + "/preclip_output.png");
+            image.save(FolderUtils::getTopLevelUserDataStorePath() + "/preclip_output.png");
     #endif
 
 		    if (clipImage != NULL) {
@@ -703,7 +703,7 @@ QString GerberGenerator::clipToBoard(QString svgString, QRectF & boardRect, cons
 		    }
 
     #ifndef QT_NO_DEBUG
-		    image.save(FolderUtils::getUserDataStorePath("") + "/output.png");
+            image.save(FolderUtils::getTopLevelUserDataStorePath() + "/output.png");
     #endif
 
             QString path = makePath(image, res / GraphicsUtils::StandardFritzingDPI, "#000000");
@@ -777,7 +777,7 @@ void GerberGenerator::mergeOutlineElement(QImage & image, QRectF & target, doubl
 	image.invertPixels();				// need white pixels on a black background for GroundPlaneGenerator
 
     #ifndef QT_NO_DEBUG
-		image.save(QString("%2/output%1.png").arg(ix).arg(FolderUtils::getUserDataStorePath("")));
+        image.save(QString("%2/output%1.png").arg(ix).arg(FolderUtils::getTopLevelUserDataStorePath()));
     #else
         Q_UNUSED(ix);
     #endif

@@ -250,7 +250,6 @@ signals:
 public slots:
 	void ensureClosable();
 	ModelPart* loadBundledPart(const QString &fileName, bool addToBin);
-	void importFilesFromPrevInstall();
 	void acceptAlienFiles();
 	void statusMessage(QString message, int timeout);
     void showPCBView();
@@ -886,7 +885,6 @@ protected:
     QAction *m_aboutQtAct;
     QAction *m_reportBugAct;
 	QAction *m_enableDebugAct;
-    QAction *m_importFilesFromPrevInstallAct;
 	QAction *m_partsEditorHelpAct;
     QAction *m_tipsAndTricksAct;
     QAction *m_firstTimeHelpAct;

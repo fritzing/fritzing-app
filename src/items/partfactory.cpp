@@ -223,7 +223,7 @@ QString PartFactory::getSvgFilename(ModelPart * modelPart, const QString & baseN
 {
 	QStringList tempPaths;
 	QString postfix = "/"+ SvgFilesDir +"/%1/"+ baseName;
-    QString userStore = FolderUtils::getUserDataStorePath("parts")+postfix;
+    QString userStore = FolderUtils::getUserPartsPath()+postfix;
     QString pfPath = PartFactory::folderPath() + postfix;
 	if(!modelPart->path().isEmpty()) {
         QString path = modelPart->path();

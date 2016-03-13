@@ -1307,10 +1307,6 @@ void MainWindow::createHelpMenuActions() {
 	m_enableDebugAct->setChecked(DebugDialog::enabled());
 	connect(m_enableDebugAct, SIGNAL(triggered()), this, SLOT(enableDebug()));
 
-	m_importFilesFromPrevInstallAct = new QAction(tr("&Import parts and bins from old version..."), this);
-	m_importFilesFromPrevInstallAct->setStatusTip(tr("Import parts and bins from previous installation"));
-	connect(m_importFilesFromPrevInstallAct, SIGNAL(triggered()), this, SLOT(importFilesFromPrevInstall()));
-
 	m_partsEditorHelpAct = new QAction(tr("Parts Editor Help"), this);
 	m_partsEditorHelpAct->setStatusTip(tr("Display Parts Editor help in a browser"));
 	connect(m_partsEditorHelpAct, SIGNAL(triggered(bool)), this, SLOT(partsEditorHelp()));
@@ -1620,7 +1616,6 @@ void MainWindow::createHelpMenu()
     m_helpMenu->addAction(m_partsEditorHelpAct);
 	m_helpMenu->addSeparator();
     m_helpMenu->addAction(m_checkForUpdatesAct);
-    m_helpMenu->addAction(m_importFilesFromPrevInstallAct);
 	m_helpMenu->addSeparator();
 	m_helpMenu->addAction(m_reportBugAct);
 	m_helpMenu->addAction(m_enableDebugAct);
@@ -3192,54 +3187,6 @@ void MainWindow::flattenCurve()
 	m_currentGraphicsView->flattenCurve(bendpointAction->lastHoverEnterItem(),
 										bendpointAction->lastHoverEnterConnectorItem(),
 										bendpointAction->lastLocation());
-}
-
-
-void MainWindow::importFilesFromPrevInstall() {
-	QString prevInstallPath = QFileDialog::getExistingDirectory(
-			this,
-			tr("Please choose the previous Fritzing folder..."),
-            QDir::homePath(),
-            QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
-	if(prevInstallPath.isNull()) return;
-	if(!QFileInfo(prevInstallPath+"/parts").exists()) {
-		FMessageBox::critical(
-			this, QObject::tr("Fritzing"),
-			tr("The folder \"%1\" isn't a Fritzing installation folder").arg(prevInstallPath));
-		return;
-	}
-
-	QString userDataPath = FolderUtils::getUserDataStorePath();
-
-	// replicate dirs
-	QStringList foldersToCopy = FolderUtils::getUserDataStoreFolders();
-	foreach(QString folder, foldersToCopy) {
-        FolderUtils::replicateDir(QDir(prevInstallPath+folder), QDir(userDataPath+folder));
-	}
-
-	// cleanup old bins
-	QDir dataStoreBins(userDataPath);
-	dataStoreBins.cd("bins");
-	QStringList binsToRemove;
-	binsToRemove
-		<< "allParts.fzb" << "artreenoBin.fzb"
-		<< "E6SetBin.fzb" << "pin_headers.fzb";
-	foreach(QString binToRemove, binsToRemove) {
-		dataStoreBins.remove(binToRemove);
-	}
-
-	// make sure to add the old my_parts.fzp to the folder
-	QString myPartsBinRelPath = "/bins/my_parts.fzb";
-	QFile myOldPartsBinFile(prevInstallPath+myPartsBinRelPath);
-	if(myOldPartsBinFile.exists()) {
-		QDateTime now = QDateTime::currentDateTime();
-		QString newNamePostfix = QString("__imported_on__%1.fzb").arg(now.toString("yyyy-MM-dd_hh-mm-ss"));
-		FolderUtils::slamCopy(myOldPartsBinFile, userDataPath+myPartsBinRelPath.replace(".fzb",newNamePostfix));
-	}
-
-	FMessageBox::information(
-		this, QObject::tr("Fritzing"),
-		tr("You will have to restart Fritzing in order to use the imported parts"));
 }
 
 void MainWindow::tidyWires() {

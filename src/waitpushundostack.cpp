@@ -57,7 +57,7 @@ WaitPushUndoStack::WaitPushUndoStack(QObject * parent) :
 {
     m_temporary = NULL;
 #ifndef QT_NO_DEBUG
-    QString path = FolderUtils::getUserDataStorePath("");
+    QString path = FolderUtils::getTopLevelUserDataStorePath();
     path += "/undostack.txt";
 
 	m_file.setFileName(path);

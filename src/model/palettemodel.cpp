@@ -139,7 +139,7 @@ void PaletteModel::loadParts(bool dbExists) {
 	emit loadedPart(0, totalPartCount);
 
     QDir dir1 = FolderUtils::getAppPartsSubFolder("");
-    QDir dir2(FolderUtils::getUserDataStorePath(""));
+    QDir dir2(FolderUtils::getUserPartsPath());
     QDir dir3(":/resources/parts");
     QDir dir4(s_fzpOverrideFolder);
 

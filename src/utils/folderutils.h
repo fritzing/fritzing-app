@@ -42,9 +42,11 @@ public:
     static QString getApplicationSubFolderPath(QString);
     static QDir getAppPartsSubFolder(QString);
     static QString getAppPartsSubFolderPath(QString);
-    static QString getUserDataStorePath(QString folder = ___emptyString___);
-	static const QStringList & getUserDataStoreFolders();
-	static bool createFolderAndCdIntoIt(QDir &dir, QString newFolder);
+    static QString getTopLevelUserDataStorePath();
+    static QString getTopLevelDocumentsPath();
+    static QString getUserBinsPath();
+    static QString getUserPartsPath();
+    static bool createFolderAndCdIntoIt(QDir &dir, QString newFolder);
 	static bool setApplicationPath(const QString & path);
     static bool setAppPartsPath(const QString & path);
 	static const QString getLibraryPath();
@@ -66,6 +68,7 @@ public:
     static void copyBin(const QString & source, const QString & dest);
     static bool slamCopy(QFile &, const QString & dest);
     static void showInFolder(const QString & path);
+    static void createUserDataStoreFolders();
 
 protected:
 	FolderUtils();
@@ -76,15 +79,16 @@ protected:
     bool setPartsPath2(const QString & path);
     const QString applicationDirPath();
 	const QString libraryPath();
-    QDir getPartsSubFolder2(QString);
+    QDir getAppPartsSubFolder2(QString);
 
 protected:
 	static FolderUtils* singleton;
 	static QString m_openSaveFolder;
 
 protected:
-	QStringList m_folders;
-	QString m_appPath;
+    QStringList m_userFolders;
+    QStringList m_documentFolders;
+    QString m_appPath;
     QString m_partsPath;
 };
 

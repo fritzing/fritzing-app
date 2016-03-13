@@ -396,7 +396,7 @@ void SchematicTextLayerKinPaletteItem::renderText(QImage & image, QDomElement & 
 	painter.end();
 
 #ifndef QT_NO_DEBUG
-	image.save(FolderUtils::getUserDataStorePath("") + "/renderText.png");
+    image.save(FolderUtils::getTopLevelUserDataStorePath() + "/renderText.png");
 #endif
 
     viewBox = renderer.viewBoxF();

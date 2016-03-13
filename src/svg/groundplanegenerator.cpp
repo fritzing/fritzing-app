@@ -88,7 +88,7 @@ bool GroundPlaneGenerator::getBoardRects(const QByteArray & boardByteArray, QGra
 	painter.end();
 
 #ifndef QT_NO_DEBUG
-	image.save(FolderUtils::getUserDataStorePath("") + "/getBoardRects.png");
+    image.save(FolderUtils::getTopLevelUserDataStorePath() + "/getBoardRects.png");
 #endif
 
 	QColor keepaway(255,255,255);
@@ -115,7 +115,7 @@ bool GroundPlaneGenerator::getBoardRects(const QByteArray & boardByteArray, QGra
 	painter.end();
 
 #ifndef QT_NO_DEBUG
-	image2.save(FolderUtils::getUserDataStorePath("") + "/getBoardRects2.png");
+    image2.save(FolderUtils::getTopLevelUserDataStorePath() + "/getBoardRects2.png");
 #endif
 
 	scanLines(image2, bWidth, bHeight, rects);
@@ -232,7 +232,7 @@ bool GroundPlaneGenerator::generateGroundPlaneUnit(const QString & boardSvg, QSi
 	}
 
 #ifndef QT_NO_DEBUG
-	image->save(FolderUtils::getUserDataStorePath("") + "/testGroundPlaneUnit3.png");
+    image->save(FolderUtils::getTopLevelUserDataStorePath() + "/testGroundPlaneUnit3.png");
 #endif
 
 	scanImage(*image, bWidth, bHeight, GraphicsUtils::StandardFritzingDPI / res, res, color, true, true, QSizeF(.05, .05), 1 / GraphicsUtils::SVGDPI, QPointF(0,0));
@@ -348,7 +348,7 @@ QImage * GroundPlaneGenerator::generateGroundPlaneAux(GPGParams & params, double
 	painter.end();
 
 #ifndef QT_NO_DEBUG
-	image->save(FolderUtils::getUserDataStorePath("") + "/testGroundFillBoard.png");
+    image->save(FolderUtils::getTopLevelUserDataStorePath() + "/testGroundFillBoard.png");
 #endif
 
     DRC::extendBorder(BORDERINCHES * params.res, image);
@@ -383,7 +383,7 @@ QImage * GroundPlaneGenerator::generateGroundPlaneAux(GPGParams & params, double
     */
 
 #ifndef QT_NO_DEBUG
-	image->save(FolderUtils::getUserDataStorePath("") + "/testGroundFillBoardBorder.png");
+    image->save(FolderUtils::getTopLevelUserDataStorePath() + "/testGroundFillBoardBorder.png");
 #endif
 	
 	QSvgRenderer renderer2(copperByteArray);
@@ -395,7 +395,7 @@ QImage * GroundPlaneGenerator::generateGroundPlaneAux(GPGParams & params, double
 	painter.end();
 
 #ifndef QT_NO_DEBUG
-	image->save(FolderUtils::getUserDataStorePath("") + "/testGroundFillCopper.png");
+    image->save(FolderUtils::getTopLevelUserDataStorePath() + "/testGroundFillCopper.png");
 #endif
 
 	emit postImageSignal(this, image, &boardImage, params.board, &rects);	

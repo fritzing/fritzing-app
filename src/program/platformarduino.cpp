@@ -15,7 +15,7 @@ PlatformArduino::PlatformArduino() : Platform(QString("Arduino"))
     setExtensions(QStringList() << ".ino" << ".pde");
 
     QMap<QString, QString> boards;
-    // https://github.com/arduino/Arduino/blob/ide-1.5.x/hardware/arduino/avr/boards.txt
+    // https://github.com/arduino/Arduino/blob/master/hardware/arduino/avr/boards.txt
     boards.insert("Arduino UNO", "arduino:avr:uno");
     boards.insert("Arduino Yún", "arduino:avr:yun");
     boards.insert("Arduino Mega/2560", "arduino:avr:mega");
@@ -35,9 +35,12 @@ PlatformArduino::PlatformArduino() : Platform(QString("Arduino"))
     boards.insert("Arduino NG or older", "arduino:avr:atmegang");
     boards.insert("Arduino Robot Control", "arduino:avr:robotControl");
     boards.insert("Arduino Robot Motor", "arduino:avr:robotMotor");
-    // https://github.com/arduino/Arduino/blob/ide-1.5.x/hardware/arduino/sam/boards.txt
+    boards.insert("Arduino Gemma", "arduino:avr:gemma");
+    // https://github.com/arduino/Arduino/blob/master/hardware/arduino/sam/boards.txt
     boards.insert("Arduino Due (Programming Port)", "arduino:sam:arduino_due_x_dbg");
     boards.insert("Arduino Due (Native USB Port)", "arduino:sam:arduino_due_x");
+    // Note: Edison, Galileo, 101 are programmed via Arduino IDE Add-ons,
+    //       not sure if the command line is supported for them
     setBoards(boards);
 
     setDefaultBoardName("Arduino UNO");

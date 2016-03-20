@@ -129,6 +129,7 @@ int main(int argc, char *argv[])
 	int result = 0;
 	try {
 		//QApplication::setGraphicsSystem("raster");
+        QGuiApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 		FApplication * app = new FApplication(argc, argv);
 		if (app->init()) {
 			//DebugDialog::setDebugLevel(DebugDialog::Error);

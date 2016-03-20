@@ -29,16 +29,33 @@ IF .%2 == . (
 	EXIT /B
 )
 
+IF .%3 == . (
+	echo third parameter--visual studio version--is missing, should be "2012", "2013", "2015"
+	EXIT /B
+)
+
 echo add the path for your git installation if it's not already there
-set PATH=%PATH%;"C:\Users\jonathan\AppData\Local\Programs\Git\bin";"C:\Users\jonathan\AppData\Local\Programs\Git\cmd"
+set PATH=%PATH%;"C:\Program Files (x86)\Git\bin";
 
 echo set the path to the qt sdk bin folder
 IF %2==64 (
-        set QTBIN=C:\Qt2\5.5\msvc2013_64\bin
+	IF %3==2012 (
+    	set QTBIN=C:\Qt\5.6\msvc2012_64\bin
+    ) ELSE IF %3==2013 (
+    	set QTBIN=C:\Qt\5.6\msvc2013_64\bin
+    ) ELSE IF %3==2015 (
+    	set QTBIN=C:\Qt\5.6\msvc2015_64\bin
+    )
 	set arch=""QMAKE_TARGET.arch=x86_64""
 ) ELSE (
 	IF %2==32 (
-                set QTBIN=C:\Qt-32bit\5.5\msvc2013\bin
+		IF %3==2012 (
+	    	set QTBIN=C:\Qt\5.6\msvc2012\bin
+	    ) ELSE IF %3==2013 (
+	    	set QTBIN=C:\Qt\5.6\msvc2013\bin
+	    ) ELSE IF %3==2015 (
+	    	set QTBIN=C:\Qt\5.6\msvc2015\bin
+	    )
 		set arch=.
 	) ELSE (
 		echo second parameter--target architecture--should be either "32" for a 32-bit build or "64" for a 64-bit build
@@ -65,7 +82,6 @@ set RELEASE_SCRIPT="release_script"
 
 %QMAKE% -o Makefile phoenix.pro %arch%
 
-exit /b
 echo building fritzing
 nmake release
 
@@ -154,15 +170,22 @@ IF %2==32 (
 )
 
 echo copying vc redist files
-echo you may have to rename these based on your version of visual studio: 2012 is "110"; 2013 is "120"
 IF %2==32 (
 	set XFOLDER=x86
 ) ELSE (
 	set XFOLDER=x64
 )
 
-copy  "%VCINSTALLDIR%redist\%XFOLDER%\Microsoft.VC120.CRT\msvcp120.dll" %DESTDIR%\deploy\msvcp120.dll
-copy  "%VCINSTALLDIR%redist\%XFOLDER%\Microsoft.VC120.CRT\msvcr120.dll" %DESTDIR%\deploy\msvcr120.dll
+IF %3==2012 (
+    copy  "%VCINSTALLDIR%redist\%XFOLDER%\Microsoft.VC140.CRT\msvcp110.dll" %DESTDIR%\deploy\msvcp110.dll
+    copy  "%VCINSTALLDIR%redist\%XFOLDER%\Microsoft.VC140.CRT\msvcr110.dll" %DESTDIR%\deploy\msvcr110.dll
+) ELSE IF %3==2013 (
+    copy  "%VCINSTALLDIR%redist\%XFOLDER%\Microsoft.VC140.CRT\msvcp120.dll" %DESTDIR%\deploy\msvcp120.dll
+    copy  "%VCINSTALLDIR%redist\%XFOLDER%\Microsoft.VC140.CRT\msvcr120.dll" %DESTDIR%\deploy\msvcr120.dll
+) ELSE IF %3==2015 (
+    copy  "%VCINSTALLDIR%redist\%XFOLDER%\Microsoft.VC140.CRT\msvcp140.dll" %DESTDIR%\deploy\msvcp140.dll
+	copy  "%VCINSTALLDIR%redist\%XFOLDER%\Microsoft.VC140.CRT\vcruntime140.dll" %DESTDIR%\deploy\vcruntime140.dll
+)
 
 echo run fritzing to create parts.db
 %DESTDIR%\deploy\Fritzing.exe -pp %DESTDIR%\deploy\fritzing-parts -db %DESTDIR%\deploy\fritzing-parts\parts.db
@@ -175,4 +198,4 @@ FOR /F %%i IN ("%DESTDIR%\forzip") DO SET SRC=%%~fi
 FOR /F %%i IN ("%DESTDIR%\fritzing.%1.%2.pc.zip") DO SET DEST=%%~fi
 CScript .\tools\zip.vbs %SRC% %DEST%
 
-
+echo done

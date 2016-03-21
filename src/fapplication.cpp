@@ -1175,7 +1175,11 @@ int FApplication::startup()
 
     createUserDataStoreFolderStructure();
 
+    ProcessEventBlocker::processEvents();
+
 	loadReferenceModel("", false);
+
+    ProcessEventBlocker::processEvents();
 
 	QString prevVersion;
 	{
@@ -1212,17 +1216,6 @@ int FApplication::startup()
 	if (m_progressIndex >= 0) splash.showProgress(m_progressIndex, 0.65);
 	ProcessEventBlocker::processEvents();
 
-	if (m_progressIndex >= 0) splash.showProgress(m_progressIndex, 0.825);
-	ProcessEventBlocker::processEvents();
-
-	m_updateDialog = new UpdateDialog();
-    m_updateDialog->setRepoPath(FolderUtils::getPartsSubFolderPath(""), m_referenceModel->sha());
-    connect(m_updateDialog, SIGNAL(enableAgainSignal(bool)), this, SLOT(enableCheckUpdates(bool)));
-    connect(m_updateDialog, SIGNAL(installNewParts()), this, SLOT(installNewParts()));
-    checkForUpdates(false);
-
-	if (m_progressIndex >= 0) splash.showProgress(m_progressIndex, 0.875);
-
 	DebugDialog::debug("load something");
 	loadSomething(prevVersion);
 	m_started = true;
@@ -1230,7 +1223,15 @@ int FApplication::startup()
 	if (m_progressIndex >= 0) splash.showProgress(m_progressIndex, 0.99);
 	ProcessEventBlocker::processEvents();
 
+    splash.hide();
 	m_splash = NULL;
+
+    m_updateDialog = new UpdateDialog();
+    m_updateDialog->setRepoPath(FolderUtils::getPartsSubFolderPath(""), m_referenceModel->sha());
+    connect(m_updateDialog, SIGNAL(enableAgainSignal(bool)), this, SLOT(enableCheckUpdates(bool)));
+    connect(m_updateDialog, SIGNAL(installNewParts()), this, SLOT(installNewParts()));
+    checkForUpdates();//false);
+
 	return 0;
 }
 
@@ -1664,6 +1665,8 @@ void FApplication::loadSomething(const QString & prevVersion) {
         }
 	}
 
+    ProcessEventBlocker::processEvents();
+
     // Find any previously open sketches to reload
     if (!loadPrevious && sketchesToLoad.isEmpty()) {
 		DebugDialog::debug(QString("load last open"));
@@ -1682,6 +1685,7 @@ void FApplication::loadSomething(const QString & prevVersion) {
 		}
 	}
 
+    ProcessEventBlocker::processEvents();
 	DebugDialog::debug(QString("finish up sketch loading"));
 
     // Finish loading the sketches and show them to the user
@@ -1689,6 +1693,8 @@ void FApplication::loadSomething(const QString & prevVersion) {
 		sketch->show();
 		sketch->clearFileProgressDialog();
 	}
+
+    ProcessEventBlocker::processEvents();
 
 	if (loadPrevious) {
 		doLoadPrevious(newBlankSketch);

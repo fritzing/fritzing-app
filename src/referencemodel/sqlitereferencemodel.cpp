@@ -145,7 +145,7 @@ bool SqliteReferenceModel::loadAll(const QString & databaseName, bool fullLoad, 
             }
             message += "\n" + tr("and %1 other parts").arg(FailurePartMessages.count() - 4);
         }
-	    FMessageBox::warning(NULL, QObject::tr("Oops!"), message, QMessageBox::Ok);   
+        FMessageBox::warning(QApplication::activeWindow(), QObject::tr("Oops!"), message, QMessageBox::Ok);
     }
     else if (FailurePropertyMessages.count() > 0) {
         QString message = tr("The swapping mechanism is disabled for:\n\n");
@@ -162,7 +162,7 @@ bool SqliteReferenceModel::loadAll(const QString & databaseName, bool fullLoad, 
             }
             message += "\n" + tr("and %1 other properties").arg(FailurePropertyMessages.count() - 4);
         }
-	    FMessageBox::warning(NULL, QObject::tr("Oops!"), message, QMessageBox::Ok);   
+        FMessageBox::warning(QApplication::activeWindow(), QObject::tr("Oops!"), message, QMessageBox::Ok);
     }
     return m_swappingEnabled;
 

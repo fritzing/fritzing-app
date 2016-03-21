@@ -1177,7 +1177,7 @@ int FApplication::startup()
 
     ProcessEventBlocker::processEvents();
 
-	loadReferenceModel("", false);
+    loadReferenceModel("", false);
 
     ProcessEventBlocker::processEvents();
 
@@ -1230,7 +1230,7 @@ int FApplication::startup()
     m_updateDialog->setRepoPath(FolderUtils::getPartsSubFolderPath(""), m_referenceModel->sha());
     connect(m_updateDialog, SIGNAL(enableAgainSignal(bool)), this, SLOT(enableCheckUpdates(bool)));
     connect(m_updateDialog, SIGNAL(installNewParts()), this, SLOT(installNewParts()));
-    checkForUpdates();//false);
+    checkForUpdates(false);
 
 	return 0;
 }
@@ -1386,7 +1386,14 @@ void FApplication::initSplash(FSplashScreen & splash) {
 						.arg(Version::modifier())
 						.arg(Version::shortDate())
 						.arg(m_buildType);
-	splash.showMessage(msg2, "versionText", Qt::AlignRight | Qt::AlignTop);
+    splash.showMessage(msg2, "versionText", Qt::AlignRight | Qt::AlignTop);
+
+#ifdef Q_OS_MAC
+            // remove the splash screen flag on OS-X as workaround for the reported bug
+            // https://bugreports.qt.io/browse/QTBUG-49576
+            splash.setWindowFlags(splash.windowFlags() & (~Qt::SplashScreen));
+#endif
+
     splash.show();
 }
 

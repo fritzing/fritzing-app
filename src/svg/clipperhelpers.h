@@ -24,7 +24,7 @@ along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
 #ifndef CLIPPERHELPERS_H
 #define CLIPPERHELPERS_H
 
-
+#include <limits>
 #include "../lib/clipper/clipper.hpp"
 #include <QPaintEngine>
 #include <fstream>

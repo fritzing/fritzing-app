@@ -49,7 +49,7 @@ $Date: 2013-03-26 15:03:18 +0100 (Di, 26. Mrz 2013) $
 #include <qmath.h>
 #include <limits>
 #include <QtConcurrentRun>
-
+#include <boost/shared_ptr.hpp>
 
 using namespace ClipperLib;
 
@@ -161,6 +161,28 @@ private:
 QString GroundPlaneGenerator::ConnectorName = "connector0pad";
 void saveClipperPathsToFile(Paths &paths, double clipperDPI, QString filename);
 
+boost::shared_ptr<QPainterPathStroker> strokerFromPen(const QPen& pen) {
+    /* For backwards compatibility with QT < 5.3. Returns a shared_ptr because QPainterPathStroker
+       is uncopyable
+    */
+#if QT_VERSION >= QT_VERSION_CHECK(5, 3, 0)
+    return boost::shared_ptr<QPainterPathStroker>(new QPainterPathStroker(pen));
+#else
+    boost::shared_ptr<QPainterPathStroker> ret = boost::shared_ptr<QPainterPathStroker>(new QPainterPathStroker());
+    ret->setWidth(pen.widthF());
+    ret->setCapStyle(pen.capStyle());
+    ret->setJoinStyle(pen.joinStyle());
+    ret->setMiterLimit(pen.miterLimit());
+    ret->setDashOffset(pen.dashOffset());
+    if (pen.style() == Qt::CustomDashLine) {
+        ret->setDashPattern(pen.dashPattern());
+    } else {
+        ret->setDashPattern(pen.style());
+    }
+    return ret;
+#endif
+}
+
 void GroundPlanePaintEngine::drawPath(const QPainterPath &path) {
     bool hasPen = state->pen().style() != Qt::NoPen;
     bool hasBrush = state->brush().style() != Qt::NoBrush;
@@ -175,7 +197,7 @@ void GroundPlanePaintEngine::drawPath(const QPainterPath &path) {
         cp.Execute(ctUnion, clipperPaths, pftNonZero, pftNonZero);
     }
     if (hasPen && state->pen().widthF() != 0) {
-        QPainterPath stroke = QPainterPathStroker(state->pen()).createStroke(path);
+        QPainterPath stroke = strokerFromPen(state->pen())->createStroke(path);
         Paths strokePath = polygonsToClipper(stroke.toFillPolygons(), state->matrix());
         Clipper cp;
         cp.AddPaths(clipperPaths, ptSubject, true);

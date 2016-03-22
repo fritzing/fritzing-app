@@ -447,7 +447,7 @@ protected:
     }
 
     //stolen from Qt 5.3
-    uint qHash(double key, uint seed) Q_DECL_NOTHROW
+    uint qHash(double key, uint seed=0) Q_DECL_NOTHROW
     {
         return key != 0.0  ? hash(reinterpret_cast<const uchar *>(&key), sizeof(key), seed) : seed;
     }

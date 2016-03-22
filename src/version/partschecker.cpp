@@ -75,7 +75,12 @@ bool PartsChecker::newPartsAvailable(const QString &repoPath, const QString & sh
      * Connect to the remote and call the printing function for
      * each of the remote references.
      */
+#if LIBGIT2_VER_MINOR > 23
+    error = git_remote_connect(remote, GIT_DIRECTION_FETCH, &callbacks, NULL);
+#else
     error = git_remote_connect(remote, GIT_DIRECTION_FETCH, &callbacks);
+#endif
+
     if (error) {
         DebugDialog::debug("unable to connect to repo " + repoPath);
         goto cleanup;
@@ -395,4 +400,3 @@ cleanup:
 
     return error;
 }
-

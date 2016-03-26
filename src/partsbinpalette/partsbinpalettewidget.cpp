@@ -122,7 +122,7 @@ PartsBinPaletteWidget::PartsBinPaletteWidget(ReferenceModel *referenceModel, Htm
 	setObjectName("partsBinContainer");
 	toIconView();
 
-	m_defaultSaveFolder = FolderUtils::getUserDataStorePath("bins");
+    m_defaultSaveFolder = FolderUtils::getUserBinsPath();
 	m_untitledFileName = tr("Untitled Bin");
 
 	connect(m_listView, SIGNAL(currentRowChanged(int)), m_iconView, SLOT(setSelected(int)));
@@ -648,7 +648,7 @@ void PartsBinPaletteWidget::removePart(const QString & moduleID, const QString &
 	// remove the model part from the model last, as this deletes it,
 	// and the removePart calls above still need the modelpart
 	m_model->removePart(moduleID);
-    if (path.contains(FolderUtils::getUserDataStorePath())) {
+    if (path.contains(FolderUtils::getUserPartsPath())) {
         m_removed << path;
     }
 }

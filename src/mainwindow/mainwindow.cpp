@@ -1647,7 +1647,7 @@ bool MainWindow::copySvg(const QString & path, QFileInfoList & svgEntryInfoList)
 bool MainWindow::loadBundledNonAtomicEntity(const QString &fileName, Bundler* bundler, bool addToBin, bool dontAsk) {
 	QDir destFolder = QDir::temp();
 
-	FolderUtils::createFolderAnCdIntoIt(destFolder, TextUtils::getRandText());
+	FolderUtils::createFolderAndCdIntoIt(destFolder, TextUtils::getRandText());
 	QString unzipDirPath = destFolder.path();
 
     QString error;
@@ -1665,7 +1665,7 @@ bool MainWindow::loadBundledNonAtomicEntity(const QString &fileName, Bundler* bu
 	QDir unzipDir(unzipDirPath);
 
 	if (bundler->preloadBundledAux(unzipDir, dontAsk)) {
-		QList<ModelPart*> mps = moveToPartsFolder(unzipDir,this,addToBin,true,FolderUtils::getUserDataStorePath("parts"), "contrib", false);
+        QList<ModelPart*> mps = moveToPartsFolder(unzipDir,this,addToBin,true,FolderUtils::getUserPartsPath(), "contrib", false);
 		// the bundled itself
 		bundler->loadBundledAux(unzipDir,mps);
 	}
@@ -1690,7 +1690,7 @@ void MainWindow::loadBundledPartFromWeb() {
 ModelPart* MainWindow::loadBundledPart(const QString &fileName, bool addToBin) {
 	QDir destFolder = QDir::temp();
 
-	FolderUtils::createFolderAnCdIntoIt(destFolder, TextUtils::getRandText());
+	FolderUtils::createFolderAndCdIntoIt(destFolder, TextUtils::getRandText());
 	QString unzipDirPath = destFolder.path();
 
     QString error;
@@ -1707,7 +1707,7 @@ ModelPart* MainWindow::loadBundledPart(const QString &fileName, bool addToBin) {
 
     QList<ModelPart*> mps;
     try {
-	    mps = moveToPartsFolder(unzipDir, this, addToBin, true, FolderUtils::getUserDataStorePath("parts"), "user", true);
+        mps = moveToPartsFolder(unzipDir, this, addToBin, true, FolderUtils::getUserPartsPath(), "user", true);
     }
     catch (const QString & msg) {
 		FMessageBox::warning(
@@ -1766,7 +1766,7 @@ void MainWindow::saveBundledPart(const QString &moduleId) {
 
 	QDir destFolder = QDir::temp();
 
-	FolderUtils::createFolderAnCdIntoIt(destFolder, TextUtils::getRandText());
+	FolderUtils::createFolderAndCdIntoIt(destFolder, TextUtils::getRandText());
 	QString dirToRemove = destFolder.path();
 
 	QString aux = QFileInfo(bundledFileName).fileName();
@@ -1921,7 +1921,7 @@ void MainWindow::backupExistingFileIfExists(const QString &destFilePath) {
 	if(QFileInfo(destFilePath).exists()) {
 		if(m_tempDir.path() == ".") {
 			m_tempDir = QDir::temp();
-			FolderUtils::createFolderAnCdIntoIt(m_tempDir, TextUtils::getRandText());
+			FolderUtils::createFolderAndCdIntoIt(m_tempDir, TextUtils::getRandText());
 			DebugDialog::debug("debug folder for overwritten files: "+m_tempDir.path());
 		}
 

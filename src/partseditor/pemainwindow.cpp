@@ -322,8 +322,8 @@ PEMainWindow::PEMainWindow(ReferenceModel * referenceModel, QWidget * parent)
     m_guid = TextUtils::getRandText();
     m_prefix = "prefix0000";
     m_fileIndex = 0;
-	m_userPartsFolderPath = FolderUtils::getUserDataStorePath("parts")+"/user/";
-	m_userPartsFolderSvgPath = FolderUtils::getUserDataStorePath("parts")+"/svg/user/";
+    m_userPartsFolderPath = FolderUtils::getUserPartsPath()+"/user/";
+    m_userPartsFolderSvgPath = FolderUtils::getUserPartsPath()+"/svg/user/";
     m_peToolView = NULL;
     m_peSvgView = NULL;
     m_connectorsView = NULL;

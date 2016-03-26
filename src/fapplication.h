@@ -140,7 +140,7 @@ public slots:
     void checkForUpdates();
     void checkForUpdates(bool atUserRequest);
     void enableCheckUpdates(bool enabled);
-    void createUserDataStoreFolderStructure();
+    void createUserDataStoreFolderStructures();
 	void changeActivation(bool activate, QWidget * originator);
 	void updateActivation();
 	void topLevelWidgetDestroyed(QObject *);

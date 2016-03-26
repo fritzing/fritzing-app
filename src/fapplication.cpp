@@ -409,7 +409,7 @@ bool FApplication::init() {
             (m_arguments[i].compare("--parts", Qt::CaseInsensitive) == 0) ||
             (m_arguments[i].compare("--partsparent", Qt::CaseInsensitive) == 0))
         {
-            FolderUtils::setPartsPath(m_arguments[i + 1]);
+            FolderUtils::setAppPartsPath(m_arguments[i + 1]);
             // delete these so we don't try to process them as files later
             toRemove << i << i + 1;
         }
@@ -787,7 +787,7 @@ bool FApplication::loadReferenceModel(const QString & databaseName, bool fullLoa
 
 bool FApplication::loadReferenceModel(const QString & databaseName, bool fullLoad, ReferenceModel * referenceModel)
 {
-    QDir dir = FolderUtils::getPartsSubFolder("");
+    QDir dir = FolderUtils::getAppPartsSubFolder("");
     QString dbPath = dir.absoluteFilePath("parts.db");
     QFileInfo info(dbPath);
     bool dbExists = info.exists();
@@ -918,7 +918,7 @@ void FApplication::runGerberServiceAux()
 
 void FApplication::initService() 
 {
-	createUserDataStoreFolderStructure();
+    createUserDataStoreFolderStructures();
 	registerFonts();
 	loadReferenceModel("", false);
 }
@@ -961,7 +961,7 @@ void FApplication::runSvgServiceAux()
 
 void FApplication::runDatabaseService()
 {
-	createUserDataStoreFolderStructure();
+    createUserDataStoreFolderStructures();
 
     DebugDialog::setEnabled(true);
 
@@ -1173,7 +1173,7 @@ int FApplication::startup()
 
 	cleanFzzs();
 
-    createUserDataStoreFolderStructure();
+    createUserDataStoreFolderStructures();
 
     ProcessEventBlocker::processEvents();
 
@@ -1227,7 +1227,7 @@ int FApplication::startup()
 	m_splash = NULL;
 
     m_updateDialog = new UpdateDialog();
-    m_updateDialog->setRepoPath(FolderUtils::getPartsSubFolderPath(""), m_referenceModel->sha());
+    m_updateDialog->setRepoPath(FolderUtils::getAppPartsSubFolderPath(""), m_referenceModel->sha());
     connect(m_updateDialog, SIGNAL(enableAgainSignal(bool)), this, SLOT(enableCheckUpdates(bool)));
     connect(m_updateDialog, SIGNAL(installNewParts()), this, SLOT(installNewParts()));
     checkForUpdates(false);
@@ -1452,22 +1452,11 @@ void FApplication::enableCheckUpdates(bool enabled)
 	//DebugDialog::debug("after enable check updates");
 }
 
-void FApplication::createUserDataStoreFolderStructure() {
-	// make sure that the folder structure for parts and bins, exists
-	QString userDataStorePath = FolderUtils::getUserDataStorePath();
-	QDir dataStore(userDataStorePath);
-	QStringList dataFolders = FolderUtils::getUserDataStoreFolders();
-	foreach(QString folder, dataFolders) {
-		if(!QFileInfo(dataStore.absolutePath()+folder).exists()) {
-			QString folderaux = folder.startsWith("/")? folder.remove(0,1): folder;
-			dataStore.mkpath(folder);
-		}
-	}
-
+void FApplication::createUserDataStoreFolderStructures() {
+    FolderUtils::createUserDataStoreFolders();
     FolderUtils::copyBin(BinManager::MyPartsBinLocation, BinManager::MyPartsBinTemplateLocation);
     FolderUtils::copyBin(BinManager::SearchBinLocation, BinManager::SearchBinTemplateLocation);
 	PartFactory::initFolder();
-
 }
 
 
@@ -1632,14 +1621,16 @@ bool FApplication::notify(QObject *receiver, QEvent *e)
 }
 
 void FApplication::loadSomething(const QString & prevVersion) {
-    // At this point we're trying to determine what sketches to load which are from one of the following sources:
+    // At this point we're trying to determine what sketches to load from one of the following sources:
     // Only one of these sources will actually provide sketches to load and they're listed in order of priority:
 
     //		We found sketch backups to recover
-	//		there's a previous version (open an empty sketch)
-	//		files were double-clicked
-    //		The last opened sketch
+    //		Files were double-clicked
+    //		The last opened sketch (obsolete)
     //		A new blank sketch
+
+
+    Q_UNUSED(prevVersion);
 
 	initFilesToLoad();   // sets up m_filesToLoad from the command line on PC and Linux; mac uses a FileOpen event instead
 
@@ -1648,14 +1639,8 @@ void FApplication::loadSomething(const QString & prevVersion) {
 	DebugDialog::debug("checking for backups");
     QList<MainWindow*> sketchesToLoad = recoverBackups();
 
-	bool loadPrevious = false;
-	if (sketchesToLoad.isEmpty()) {
-		loadPrevious = !prevVersion.isEmpty() && Version::greaterThan(prevVersion, Version::FirstVersionWithDetachedUserData);
-	}
 
-	DebugDialog::debug(QString("load previous %1").arg(loadPrevious));
-
-	if (!loadPrevious && sketchesToLoad.isEmpty()) {
+    if (sketchesToLoad.isEmpty()) {
 		// Check for double-clicked files to load
 		DebugDialog::debug(QString("check files to load %1").arg(m_filesToLoad.count()));
 
@@ -1675,10 +1660,11 @@ void FApplication::loadSomething(const QString & prevVersion) {
     ProcessEventBlocker::processEvents();
 
     // Find any previously open sketches to reload
-    if (!loadPrevious && sketchesToLoad.isEmpty()) {
-		DebugDialog::debug(QString("load last open"));
+    if (sketchesToLoad.isEmpty()) {
         // new logic here, we no longer open the most recent sketch, since it can be reached in one click from the welcome page
-		//sketchesToLoad = loadLastOpenSketch();
+
+        // DebugDialog::debug(QString("load last open"));
+        //sketchesToLoad = loadLastOpenSketch();
 	}
 
 	MainWindow * newBlankSketch = NULL;
@@ -1701,12 +1687,7 @@ void FApplication::loadSomething(const QString & prevVersion) {
 		sketch->clearFileProgressDialog();
 	}
 
-    ProcessEventBlocker::processEvents();
-
-	if (loadPrevious) {
-		doLoadPrevious(newBlankSketch);
-	}
-	else if (newBlankSketch) {
+    if (newBlankSketch) {
 		newBlankSketch->hideTempPartsBin();
         // new empty sketch defaults to welcome view
         newBlankSketch->showWelcomeView();
@@ -1731,29 +1712,6 @@ QList<MainWindow *> FApplication::loadLastOpenSketch() {
     sketches << mainWindow;
     settings.setValue("lastOpenSketch", lastSketchPath);	// the load works, so restore the preference
 	return sketches;
-}
-
-void FApplication::doLoadPrevious(MainWindow * sketchWindow) {
-	// Here we check if files need to be imported from an earlier version.
-    // This should be done before any files are loaded as it requires a restart.
-    // As this can generate UI it should come after the splash screen has closed.
-
-    FMessageBox messageBox(sketchWindow);
-    messageBox.setWindowTitle(tr("Import files from previous version?"));
-    messageBox.setText(tr("Do you want to import parts and bins that you have created with earlier versions of Fritzing?\n"));
-    messageBox.setInformativeText(tr("\nNote: You can import them later using the \"Help\" > \"Import parts and bins "
-									"from old version...\" menu action."));
-    messageBox.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
-    messageBox.setDefaultButton(QMessageBox::Cancel);
-    messageBox.setIcon(QMessageBox::Question);
-    messageBox.setWindowModality(Qt::WindowModal);
-    messageBox.setButtonText(QMessageBox::Ok, tr("Import"));
-    messageBox.setButtonText(QMessageBox::Cancel, tr("Do not import now"));
-    QMessageBox::StandardButton answer = (QMessageBox::StandardButton) messageBox.exec();
-
-    if(answer == QMessageBox::Ok) {
-		 sketchWindow->importFilesFromPrevInstall();
-    }
 }
 
 QList<MainWindow *> FApplication::recoverBackups()
@@ -2080,7 +2038,7 @@ void FApplication::regeneratePartsDatabase() {
 
 void FApplication::regeneratePartsDatabaseAux(QDialog * progressDialog) {
     ReferenceModel * referenceModel = new CurrentReferenceModel();
-    QDir dir = FolderUtils::getPartsSubFolder("");
+    QDir dir = FolderUtils::getAppPartsSubFolder("");
     QString dbPath = dir.absoluteFilePath("parts.db");
     RegenerateDatabaseThread *thread = new RegenerateDatabaseThread(dbPath, progressDialog, referenceModel);
     connect(thread, SIGNAL(finished()), this, SLOT(regenerateDatabaseFinished()));

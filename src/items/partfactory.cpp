@@ -223,7 +223,7 @@ QString PartFactory::getSvgFilename(ModelPart * modelPart, const QString & baseN
 {
 	QStringList tempPaths;
 	QString postfix = "/"+ SvgFilesDir +"/%1/"+ baseName;
-    QString userStore = FolderUtils::getUserDataStorePath("parts")+postfix;
+    QString userStore = FolderUtils::getUserPartsPath()+postfix;
     QString pfPath = PartFactory::folderPath() + postfix;
 	if(!modelPart->path().isEmpty()) {
         QString path = modelPart->path();
@@ -231,7 +231,7 @@ QString PartFactory::getSvgFilename(ModelPart * modelPart, const QString & baseN
 		dir.cdUp();									// lop off the filename
 		dir.cdUp();									// parts root
 		tempPaths << dir.absolutePath() + postfix;
-        tempPaths << FolderUtils::getPartsSubFolderPath("")+postfix;    // some svgs may still be in the fritzing parts folder, though the other svgs are in the user folder
+        tempPaths << FolderUtils::getAppPartsSubFolderPath("")+postfix;    // some svgs may still be in the fritzing parts folder, though the other svgs are in the user folder
         if (tempPaths.at(0).compare(userStore) != 0) {
             tempPaths << userStore;
         }
@@ -245,7 +245,7 @@ QString PartFactory::getSvgFilename(ModelPart * modelPart, const QString & baseN
     } 
 	else {
         DebugDialog::debug("modelPart with no path--this shouldn't happen");
-        tempPaths << FolderUtils::getPartsSubFolderPath("")+postfix;
+        tempPaths << FolderUtils::getAppPartsSubFolderPath("")+postfix;
 		tempPaths << userStore;
 	}
 	tempPaths << ":resources/parts/svg/%1/" + baseName;
@@ -419,7 +419,7 @@ QString PartFactory::getSvgFilename(const QString & fileName)
 }
 
 bool PartFactory::svgFileExists(const QString & expectedFileName, QString & path) {
-    QString p = FolderUtils::getPartsSubFolderPath("") + "/"+ SvgFilesDir + "/core/";
+    QString p = FolderUtils::getAppPartsSubFolderPath("") + "/"+ SvgFilesDir + "/core/";
 	if (QFileInfo(p + expectedFileName).exists()) {
         path = expectedFileName;
         return true;
@@ -446,7 +446,7 @@ QString PartFactory::getSvgFilenameAux(const QString & expectedFileName, GenSvg 
 
 bool PartFactory::fzpFileExists(const QString & moduleID, QString & path) {
     QString expectedFileName = moduleID + FritzingPartExtension;
-    path = FolderUtils::getPartsSubFolderPath("") + "/core/" + expectedFileName;
+    path = FolderUtils::getAppPartsSubFolderPath("") + "/core/" + expectedFileName;
 	if (QFileInfo(path).exists()) {
         path = expectedFileName;
         return true;

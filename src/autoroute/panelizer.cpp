@@ -329,7 +329,7 @@ void Panelizer::panelize(FApplication * app, const QString & panelFilename, bool
 	board = boards.firstChildElement("board");
 	if (!checkBoards(board, fzzFilePaths)) return;
 
-	app->createUserDataStoreFolderStructure();
+    app->createUserDataStoreFolderStructures();
 	app->registerFonts();
 	app->loadReferenceModel("", false);
 
@@ -1327,7 +1327,7 @@ void Panelizer::inscribe(FApplication * app, const QString & panelFilename, bool
 	board = boards.firstChildElement("board");
 	if (!checkBoards(board, fzzFilePaths)) return;
 
-	app->createUserDataStoreFolderStructure();
+    app->createUserDataStoreFolderStructures();
 	app->registerFonts();
 	app->loadReferenceModel("", false);
 

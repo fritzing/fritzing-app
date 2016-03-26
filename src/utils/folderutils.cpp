@@ -54,14 +54,16 @@ QString FolderUtils::m_openSaveFolder = "";
 
 FolderUtils::FolderUtils() {
 	m_openSaveFolder = ___emptyString___;
-	m_folders 
-		<< "/bins" 
-		<< "/partfactory"
-		<< "/parts/user" << "/parts/contrib"
-		<< "/parts/svg/user/icon" << "/parts/svg/user/breadboard" << "/parts/svg/user/schematic" << "/parts/svg/user/pcb"
-		<< "/parts/svg/contrib/icon" << "/parts/svg/contrib/breadboard" << "/parts/svg/contrib/schematic" << "/parts/svg/contrib/pcb"
-		<< "/backup" 
-		<< "/fzz";
+    m_userFolders
+        << "partfactory"
+        << "backup"
+        << "fzz";
+    m_documentFolders
+        << "bins"
+        << "parts/user" << "parts/contrib"
+        << "parts/svg/user/icon" << "parts/svg/user/breadboard" << "parts/svg/user/schematic" << "parts/svg/user/pcb"
+        << "parts/svg/contrib/icon" << "parts/svg/contrib/breadboard" << "parts/svg/contrib/schematic" << "parts/svg/contrib/pcb";
+
 }
 
 FolderUtils::~FolderUtils() {
@@ -98,24 +100,24 @@ QString FolderUtils::getApplicationSubFolderPath(QString search) {
     return dir.path();
 }
 
-QString FolderUtils::getPartsSubFolderPath(QString search) {
+QString FolderUtils::getAppPartsSubFolderPath(QString search) {
     if (singleton == NULL) {
         singleton = new FolderUtils();
     }
 
-    QDir dir = getPartsSubFolder(search);
+    QDir dir = getAppPartsSubFolder(search);
     return dir.path();
 }
 
-QDir FolderUtils::getPartsSubFolder(QString search) {
+QDir FolderUtils::getAppPartsSubFolder(QString search) {
     if (singleton == NULL) {
         singleton = new FolderUtils();
     }
 
-    return singleton->getPartsSubFolder2(search);
+    return singleton->getAppPartsSubFolder2(search);
 }
 
-QDir FolderUtils::getPartsSubFolder2(QString search) {
+QDir FolderUtils::getAppPartsSubFolder2(QString search) {
     if (m_partsPath.isEmpty()) {
         QDir dir = getApplicationSubFolder("fritzing-parts");
         if (dir.exists()) {
@@ -137,22 +139,28 @@ QDir FolderUtils::getPartsSubFolder2(QString search) {
     return dir;
 }
 
-
-QString FolderUtils::getUserDataStorePath(QString folder) {
-	QString settingsFile = QSettings(QSettings::IniFormat,QSettings::UserScope,"Fritzing","Fritzing").fileName();
-	return QFileInfo(settingsFile).dir()
-        .absolutePath()+(folder.isEmpty()?"":QString("/")+folder);
+QString FolderUtils::getTopLevelUserDataStorePath() {
+    QString path = QSettings(QSettings::IniFormat,QSettings::UserScope,"Fritzing","Fritzing").fileName();
+    return QFileInfo(path).dir().absolutePath();
 }
 
-const QStringList & FolderUtils::getUserDataStoreFolders() {
-	if (singleton == NULL) {
-		singleton = new FolderUtils();
-	}
-
-	return singleton->userDataStoreFolders();
+QString FolderUtils::getTopLevelDocumentsPath() {
+    // must add a fritzing subfolder
+    QDir dir(QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation));
+    return dir.absoluteFilePath("Fritzing");
 }
 
-bool FolderUtils::createFolderAnCdIntoIt(QDir &dir, QString newFolder) {
+QString FolderUtils::getUserBinsPath() {
+    QDir dir(getTopLevelDocumentsPath());
+    return dir.absoluteFilePath("bins");
+}
+
+QString FolderUtils::getUserPartsPath() {
+    QDir dir(getTopLevelDocumentsPath());
+    return dir.absoluteFilePath("parts");
+}
+
+bool FolderUtils::createFolderAndCdIntoIt(QDir &dir, QString newFolder) {
 	if(!dir.mkdir(newFolder)) return false;
 	if(!dir.cd(newFolder)) return false;
 
@@ -168,7 +176,7 @@ bool FolderUtils::setApplicationPath(const QString & path)
     return singleton->setApplicationPath2(path);
 }
 
-bool FolderUtils::setPartsPath(const QString & path)
+bool FolderUtils::setAppPartsPath(const QString & path)
 {
     if (singleton == NULL) {
         singleton = new FolderUtils();
@@ -269,10 +277,6 @@ bool FolderUtils::setPartsPath2(const QString & path)
     return true;
 }
 
-const QStringList & FolderUtils::userDataStoreFolders() {
-	return m_folders;
-}
-
 void FolderUtils::setOpenSaveFolder(const QString& path) {
 	setOpenSaveFolderAux(path);
 	QSettings settings;
@@ -305,13 +309,8 @@ const QString FolderUtils::openSaveFolder() {
 			}
 		}
 
-#if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
-		DebugDialog::debug(QString("default save location: %1").arg(QDesktopServices::storageLocation(QDesktopServices::DocumentsLocation)));
-		return QDesktopServices::storageLocation(QDesktopServices::DocumentsLocation);
-#else
-		DebugDialog::debug(QString("default save location: %1").arg(QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)));
-		return QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation);
-#endif
+        return getTopLevelDocumentsPath();
+
 	} else {
 		return m_openSaveFolder;
 	}
@@ -351,7 +350,7 @@ bool FolderUtils::isEmptyFileName(const QString &fileName, const QString &untitl
 }
 
 void FolderUtils::replicateDir(QDir srcDir, QDir targDir) {
-	// copy all files from srcDir source to tagDir
+    // copy all files from srcDir source to targDir
 	QStringList files = srcDir.entryList(QDir::AllEntries | QDir::NoDotAndDotDot);
 	for(int i=0; i < files.size(); i++) {
 		QFile tempFile(srcDir.path() + "/" +files.at(i));
@@ -594,8 +593,6 @@ void FolderUtils::collectFiles(const QDir & parent, QStringList & filters, QStri
     }
 }
 
-
-
 void FolderUtils::makePartFolderHierarchy(const QString & prefixFolder, const QString & destFolder) {
 	QDir dir(prefixFolder);
 
@@ -677,4 +674,49 @@ void FolderUtils::showInFolder(const QString & path)
 #else
     QDesktopServices::openUrl( QUrl::fromLocalFile( QFileInfo(path).absolutePath() ) );   
 #endif
+}
+
+void FolderUtils::createUserDataStoreFolders() {
+    // make sure that the folder structure for parts and bins, exists
+
+    if (singleton == NULL) {
+        singleton = new FolderUtils();
+    }
+
+    QDir userDataStore(getTopLevelUserDataStorePath());
+    foreach(QString folder, singleton->m_userFolders) {
+        QString path = userDataStore.absoluteFilePath(folder);
+        if(!QFileInfo(path).exists()) {
+            userDataStore.mkpath(folder);
+        }
+    }
+
+    QDir documents(getTopLevelDocumentsPath());
+    QStringList documentFolders(singleton->m_documentFolders);
+    documentFolders << "sketches";
+    foreach(QString folder, documentFolders) {
+        QString path = documents.absoluteFilePath(folder);
+        if(!QFileInfo(path).exists()) {
+            documents.mkpath(folder);
+        }
+    }
+
+    // in older versions of Fritzing, local parts and bins were in userDataStore
+    // copy these into the new locations
+    QList<QDir> toRemove;
+    QStringList folders;
+    folders << "bins" << "parts";
+    foreach(QString folder, folders ) {
+        QDir source(userDataStore.absoluteFilePath(folder));
+        QDir target(documents.absoluteFilePath(folder));
+        if (source.exists()) {
+            replicateDir(source, target);
+            toRemove << source;
+        }
+    }
+
+    // now remove the obsolete locations
+    foreach (QDir dir, toRemove) {
+        rmdir(dir);
+    }
 }

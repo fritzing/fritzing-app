@@ -94,7 +94,8 @@ void LockManager::touchFiles() {
 
 void LockManager::initLockedFiles(const QString & prefix, QString & folder, QHash<QString, LockedFile *> & lockedFiles, long touchFrequency) {
 	// first create our own unique folder and lock it
-	QDir backupDir(FolderUtils::getUserDataStorePath(prefix));
+    QDir backupDir(FolderUtils::getTopLevelUserDataStorePath());
+    backupDir.cd(prefix);
 	QString lockedSubfolder = TextUtils::getRandText();
 	backupDir.mkdir(lockedSubfolder);
 	folder = backupDir.absoluteFilePath(lockedSubfolder);
@@ -148,7 +149,8 @@ void LockManager::releaseLockedFiles(const QString & folder, QHash<QString, Lock
 
 void LockManager::checkLockedFiles(const QString & prefix, QFileInfoList & backupList, QHash<QString, LockedFile *> & lockedFiles, bool recurse, long touchFrequency)
 {
-	QDir backupDir(FolderUtils::getUserDataStorePath(prefix));
+    QDir backupDir(FolderUtils::getTopLevelUserDataStorePath());
+    backupDir.cd(prefix);
 	QFileInfoList dirList = backupDir.entryInfoList(QDir::AllDirs | QDir::NoDotAndDotDot | QDir::Hidden | QDir::NoSymLinks);
 	foreach (QFileInfo dirInfo, dirList) {
 		QDir dir(dirInfo.filePath());

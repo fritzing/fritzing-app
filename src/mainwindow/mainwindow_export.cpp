@@ -881,7 +881,7 @@ void MainWindow::saveBundledNonAtomicEntity(QString &filename, const QString &ex
 	QString dirToRemove;
 	if (destFolderPath.isEmpty()) {
 		destFolder = QDir::temp();
-		FolderUtils::createFolderAnCdIntoIt(destFolder, TextUtils::getRandText());
+		FolderUtils::createFolderAndCdIntoIt(destFolder, TextUtils::getRandText());
 		dirToRemove = destFolder.path();
 	}
 	else {
@@ -1425,8 +1425,8 @@ void MainWindow::exportSpiceNetlist() {
     if (output.contains(incl, Qt::CaseInsensitive)) {
         QStringList lines = output.split("\n");
         QList<QDir > paths;
-        paths << FolderUtils::getPartsSubFolder("");
-        paths << QDir(FolderUtils::getUserDataStorePath("parts"));
+        paths << FolderUtils::getAppPartsSubFolder("");
+        paths << QDir(FolderUtils::getUserPartsPath());
 
         QString output2;
         foreach (QString line, lines) {

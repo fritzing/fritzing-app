@@ -278,7 +278,7 @@ QStringList DRC::start(bool showOkMessage, double keepoutMils) {
     }
 
 #ifndef QT_NO_DEBUG
-	m_displayImage->save(FolderUtils::getUserDataStorePath("") + "/testDRCDisplay.png");
+    m_displayImage->save(FolderUtils::getTopLevelUserDataStorePath() + "/testDRCDisplay.png");
 #endif
 
     emit wantBothVisible();
@@ -542,8 +542,8 @@ bool DRC::startAux(QString & message, QStringList & messages, QList<CollidingThi
                 if (pixelsCollide(m_plusImage, m_minusImage, m_displayImage, l, t, r, b, 1 /* 0x80ff0000 */, atPixels)) {
 
                     #ifndef QT_NO_DEBUG
-	                    m_plusImage->save(FolderUtils::getUserDataStorePath("") + QString("/collidePlus%1_%2.png").arg(viewLayerPlacement).arg(index));
-	                    m_minusImage->save(FolderUtils::getUserDataStorePath("") + QString("/collideMinus%1_%2.png").arg(viewLayerPlacement).arg(index));
+                        m_plusImage->save(FolderUtils::getTopLevelUserDataStorePath() + QString("/collidePlus%1_%2.png").arg(viewLayerPlacement).arg(index));
+                        m_minusImage->save(FolderUtils::getTopLevelUserDataStorePath() + QString("/collideMinus%1_%2.png").arg(viewLayerPlacement).arg(index));
                     #endif
 
                     CollidingThing * collidingThing = findItemsAt(atPixels, m_board, viewLayerIDs, keepoutMils, dpi, false, equ);
@@ -607,7 +607,7 @@ bool DRC::makeBoard(QImage * image, QRectF & sourceRes) {
     // board should be white, borders should be black
 
 #ifndef QT_NO_DEBUG
-	image->save(FolderUtils::getUserDataStorePath("") + "/testDRCBoard.png");
+    image->save(FolderUtils::getTopLevelUserDataStorePath() + "/testDRCBoard.png");
 #endif
 
     return true;
@@ -638,7 +638,7 @@ void DRC::splitNet(QDomDocument * masterDoc, QList<ConnectorItem *> & equi, QIma
     }
 
     #ifndef QT_NO_DEBUG
-	    plusImage->save(FolderUtils::getUserDataStorePath("") + QString("/splitNetPlus%1_%2.png").arg(viewLayerPlacement).arg(index));
+        plusImage->save(FolderUtils::getTopLevelUserDataStorePath() + QString("/splitNetPlus%1_%2.png").arg(viewLayerPlacement).arg(index));
     #else
         Q_UNUSED(viewLayerPlacement);
         Q_UNUSED(index);
@@ -660,7 +660,7 @@ void DRC::splitNet(QDomDocument * masterDoc, QList<ConnectorItem *> & equi, QIma
 
     ItemBase::renderOne(masterDoc, minusImage, sourceRes);
     #ifndef QT_NO_DEBUG
-	    minusImage->save(FolderUtils::getUserDataStorePath("") + QString("/splitNetMinus%1_%2.png").arg(viewLayerPlacement).arg(index));
+        minusImage->save(FolderUtils::getTopLevelUserDataStorePath() + QString("/splitNetMinus%1_%2.png").arg(viewLayerPlacement).arg(index));
     #endif
 
      // master doc restored to original state

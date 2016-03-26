@@ -49,7 +49,7 @@ QtMessageHandler originalMsgHandler;
 #endif
 
 void writeCrashMessage(const char * msg) {
-	QString path = FolderUtils::getUserDataStorePath("");
+    QString path = FolderUtils::getTopLevelUserDataStorePath();
 	path += "/fritzingcrash.txt";
 	QFile file(path);
 	if (file.open(QIODevice::Append | QIODevice::Text)) {
@@ -108,7 +108,7 @@ int main(int argc, char *argv[])
 #ifndef QT_NO_DEBUG
 #ifdef WIN_CHECK_LEAKS
 	HANDLE hLogFile;
-    QString path = FolderUtils::getUserDataStorePath("") + "/fritzing_leak_log.txt";
+    QString path = FolderUtils::getTopLevelUserDataStorePath() + "/fritzing_leak_log.txt";
     std::wstring wstr = path.toStdWString();
     LPCWSTR ptr = wstr.c_str();
 	hLogFile = CreateFile(ptr, GENERIC_WRITE,

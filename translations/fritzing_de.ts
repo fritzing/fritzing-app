@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="de">
+<TS version="2.0" language="de">
 <context>
     <name>AboutBox</name>
     <message>
@@ -21,7 +21,7 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="108"/>
         <source>&lt;b&gt;2007-%1 Fritzing&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;2007-%1 Fritzing&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="121"/>
@@ -56,7 +56,7 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="127"/>
         <source>Jenny Chowdhury, Lionel Michel, Fabian Althaus, Jannis Leidel, </source>
-        <translation type="unfinished"></translation>
+        <translation>Jenny Chowdhury, Lionel Michel, Fabian Althaus, Jannis Leidel, </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="128"/>
@@ -1232,35 +1232,36 @@ Hinweis: Du kannst sie nachträglich importieren, indem Du &quot;Hilfe&quot; &gt
     <message>
         <location filename="../src/fapplication.cpp" line="2043"/>
         <source>Regenerate parts database?</source>
-        <translation type="unfinished"></translation>
+        <translation>Neuerstellung der Bauteil-Datenbank</translation>
     </message>
     <message>
         <location filename="../src/fapplication.cpp" line="2044"/>
         <source>Regenerating the parts database will take some minutes and you will have to restart Fritzing
 
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Die Neuerstellung der Bauteil-Datenbank wird einige Minuten dauern und erfordert einen Neustart von Fritzing
+</translation>
     </message>
     <message>
         <location filename="../src/fapplication.cpp" line="2045"/>
         <source>Would you like to regenerate the parts database?
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Willst Du die Datenbank neu erstellen lassen?</translation>
     </message>
     <message>
         <location filename="../src/fapplication.cpp" line="2053"/>
         <source>Regenerate</source>
-        <translation type="unfinished"></translation>
+        <translation>Neu erstellen</translation>
     </message>
     <message>
         <location filename="../src/fapplication.cpp" line="2054"/>
         <source>Cancel</source>
-        <translation type="unfinished">Abbrechen</translation>
+        <translation>Abbrechen</translation>
     </message>
     <message>
         <location filename="../src/fapplication.cpp" line="2059"/>
         <source>Regenerating parts database...</source>
-        <translation type="unfinished"></translation>
+        <translation>Bauteil-Datenbank wird neu erstellt...</translation>
     </message>
 </context>
 <context>
@@ -1365,13 +1366,13 @@ This dialog collects only connectors labeled &apos;GND&apos; or &apos;ground&apo
 Click an item to highlight its connections in the sketch.
 
 It is also possible to choose a connector as a ground fill seed by right-clicking a connector and choosing the &apos;Set Ground Fill Seed&apos; context menu option.</source>
-        <translation type="unfinished">Der Unterschied zwischen einer &quot;Massefüllung&quot; und einer einfachen &quot;Kupferfüllung&quot; besteht darin, dass bei einer Massefüllung die gefüllte Fläche Leiterbahnen und Verbinder beinhaltet, welche mit dem &quot;Masse&quot;-Verbinder verbunden sind. Masseverbinder sind in der Regel mit &quot;GND&quot; oder &quot;ground&quot; gekennzeichnet, aber manchmal ist dies nicht der Fall. Es kann auch sein, dass es mehrere Netze mit einem Masseverbinder gibt und Du nur eines der Netze gefüllt haben willst.
+        <translation>Der Unterschied zwischen einer &quot;Massefüllung&quot; und einer einfachen &quot;Kupferfüllung&quot; besteht darin, dass bei einer Massefüllung die gefüllte Fläche Leiterbahnen und Verbinder beinhaltet, welche mit dem &quot;Masse&quot;-Verbinder verbunden sind. Masseverbinder sind in der Regel mit &quot;GND&quot; oder &quot;ground&quot; gekennzeichnet, aber manchmal ist dies nicht der Fall. Es kann auch sein, dass es mehrere Netze mit einem Masseverbinder gibt und Du nur eines der Netze gefüllt haben willst.
 
-Dieser Dialog sammelt nur Verbinder mit der Bezeichnung &quot;GND&quot; oder &quot;ground&quot;, sowie bereits als Saat ausgewählte Verbinder.
+Dieser Dialog sammelt nur Verbinder mit der Bezeichnung &quot;GND&quot; oder &quot;ground&quot;, sowie bereits als &quot;Saat&quot; ausgewählte Verbinder.
 
 Klicke auf ein Element, um seine Verbindungen im Entwurf hervorzuheben.
 
-</translation>
+Du kannst auch per rechten Mausklick einen Verbinder als &quot;Saat&quot; für die Massefüllung setzen. </translation>
     </message>
     <message>
         <location filename="../src/dialogs/groundfillseeddialog.cpp" line="90"/>
@@ -2195,12 +2196,12 @@ Klicke auf ein Element, um seine Verbindungen im Entwurf hervorzuheben.
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="2778"/>
         <source>(x,y)=(%1, %2) %3</source>
-        <translation type="unfinished"></translation>
+        <translation>(x,y)=(%1, %2) %3</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="2783"/>
         <source>(x, y)=(%1, %2)	(width, height)=(%3, %4) %5</source>
-        <translation type="unfinished"></translation>
+        <translation>(x, y)=(%1, %2)	(Breite, Höhe)=(%3, %4) %5</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="3064"/>
@@ -2865,12 +2866,12 @@ Klicke auf ein Element, um seine Verbindungen im Entwurf hervorzuheben.
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1116"/>
         <source>Regenerate parts database ...</source>
-        <translation type="unfinished"></translation>
+        <translation>Bauteil-Datenbank neu erstellen...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1117"/>
         <source>Regenerate the parts database (should only be used if your parts database is broken)</source>
-        <translation type="unfinished"></translation>
+        <translation>Gesamte Bauteil-Datenbank neu erstellen (nur verwenden, falls diese fehlerhaft ist)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1173"/>
@@ -2990,12 +2991,12 @@ Klicke auf ein Element, um seine Verbindungen im Entwurf hervorzuheben.
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2806"/>
         <source>Choose Ground Fill Seed(s)...</source>
-        <translation type="unfinished"></translation>
+        <translation>Saat für Massefüllung wählen...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2810"/>
         <source>Set Ground Fill Seed</source>
-        <translation type="unfinished"></translation>
+        <translation>Als Saat für Massefüllung setzen</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2811"/>
@@ -3005,12 +3006,12 @@ Klicke auf ein Element, um seine Verbindungen im Entwurf hervorzuheben.
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2815"/>
         <source>Clear Ground Fill Seeds</source>
-        <translation type="unfinished"></translation>
+        <translation>Massefüllung-Saat zurücksetzen</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2816"/>
         <source>Clear ground fill seeds--enable copper fill only.</source>
-        <translation type="unfinished"></translation>
+        <translation>Saat für Massefüllung zurücksetzen und normale Kupferfüllung aktivieren</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2819"/>
@@ -3122,12 +3123,12 @@ Klicke auf ein Element, um seine Verbindungen im Entwurf hervorzuheben.
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3651"/>
         <source>You will have to rearrange parts and connections in schematic view, as the sizes of most part images will have changed. Consider using the Autorouter to clean up traces. </source>
-        <translation type="unfinished"></translation>
+        <translation>Du musst die Schaltplan-Ansicht neu aufräumen, da die Größen vieler Bauteile angepasst wurden. </translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3653"/>
         <source>Note that any custom parts will not be converted. A tool for converting &apos;rectangular&apos; schematic images is available in the Parts Editor.</source>
-        <translation type="unfinished"></translation>
+        <translation>Beachte dass Deine eigenen Bauteile nicht konvertiert werden.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3890"/>
@@ -3579,27 +3580,27 @@ Zurücksetzen?</translation>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="982"/>
         <source>Rotate 45° Clockwise</source>
-        <translation type="unfinished">Um 135° im Uhrzeigersinn drehen {135�?} {45°?}</translation>
+        <translation>Um 45° drehen</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="986"/>
         <source>Rotate 90° Clockwise</source>
-        <translation type="unfinished">Um 135° im Uhrzeigersinn drehen {135�?} {90°?}</translation>
+        <translation>Um 90° drehen</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="990"/>
         <source>Rotate 180°</source>
-        <translation type="unfinished">Um 180° drehen {180�?} {180°?}</translation>
+        <translation>Um 180° drehen</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="994"/>
         <source>Rotate 90° Counter Clockwise</source>
-        <translation type="unfinished">Um 45° gegen den Uhrzeigersinn drehen {45�?} {90°?}</translation>
+        <translation>Um 90° drehen (gegen den Uhrzeigersinn)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="998"/>
         <source>Rotate 45° Counter Clockwise</source>
-        <translation type="unfinished">Um 45° gegen den Uhrzeigersinn drehen {45�?} {45°?}</translation>
+        <translation>Um 45° drehen (gegen den Uhrzeigersinn)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="2725"/>
@@ -4669,7 +4670,7 @@ Ursache: %2 (Fehlercode %3)</translation>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="340"/>
         <source>Click this connector to drag out a new trace.</source>
-        <translation type="unfinished">Diesen Verbinder anklicken und ziehen, um eine neue Leiterbahn zu erzeugen.</translation>
+        <translation>Diesen Verbinder klicken und ziehen, um eine neue Leiterbahn zu erstellen.</translation>
     </message>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="1081"/>
@@ -4731,7 +4732,7 @@ Ursache: %2 (Fehlercode %3)</translation>
         <source>Please designate one or more ground fill seeds before doing a ground fill.
 
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Wähle zunächst ein oder mehrere Verbinder als &quot;Saat&quot; für die Massefüllung aus.</translation>
     </message>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="296"/>
@@ -4781,7 +4782,7 @@ Ursache: %2 (Fehlercode %3)</translation>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="2076"/>
         <source>Clear ground fill seeds</source>
-        <translation type="unfinished"></translation>
+        <translation>Massefüllung-Saat zurücksetzen</translation>
     </message>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="2215"/>
@@ -5328,7 +5329,7 @@ Ursache: %2 (Fehlercode %3)</translation>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="1642"/>
         <source>but for now please modify the file according to the instructions in the link.</source>
-        <translation type="unfinished"></translation>
+        <translation>aber folge vorerst den Anleitungen im Link.</translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="1677"/>
@@ -5368,7 +5369,7 @@ Ursache: %2 (Fehlercode %3)</translation>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="581"/>
         <source>Open a file to use as the image for this view of the part.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wähle eine Datei für die Darstellung dieser Ansicht</translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="591"/>
@@ -5970,7 +5971,7 @@ Fortsetzen und speichern?</translation>
     <message>
         <location filename="../src/items/partlabel.cpp" line="450"/>
         <source>Rotate 45° Clockwise</source>
-        <translation type="unfinished">Um 135° im Uhrzeigersinn drehen {135�?} {45°?}</translation>
+        <translation>Um 45° drehen</translation>
     </message>
     <message>
         <location filename="../src/items/partlabel.cpp" line="452"/>
@@ -5980,7 +5981,7 @@ Fortsetzen und speichern?</translation>
     <message>
         <location filename="../src/items/partlabel.cpp" line="455"/>
         <source>Rotate 90° Clockwise</source>
-        <translation type="unfinished">Um 135° im Uhrzeigersinn drehen {135�?} {90°?}</translation>
+        <translation>Um 90° drehen</translation>
     </message>
     <message>
         <location filename="../src/items/partlabel.cpp" line="457"/>
@@ -5990,7 +5991,7 @@ Fortsetzen und speichern?</translation>
     <message>
         <location filename="../src/items/partlabel.cpp" line="460"/>
         <source>Rotate 135° Clockwise</source>
-        <translation type="unfinished">Um 135° im Uhrzeigersinn drehen {135�?} {135°?}</translation>
+        <translation>Um 135° drehen</translation>
     </message>
     <message>
         <location filename="../src/items/partlabel.cpp" line="462"/>
@@ -6000,7 +6001,7 @@ Fortsetzen und speichern?</translation>
     <message>
         <location filename="../src/items/partlabel.cpp" line="465"/>
         <source>Rotate 180°</source>
-        <translation type="unfinished">Um 180° drehen {180�?} {180°?}</translation>
+        <translation>Um 180° drehen</translation>
     </message>
     <message>
         <location filename="../src/items/partlabel.cpp" line="467"/>
@@ -6010,7 +6011,7 @@ Fortsetzen und speichern?</translation>
     <message>
         <location filename="../src/items/partlabel.cpp" line="470"/>
         <source>Rotate 135° Counter Clockwise</source>
-        <translation type="unfinished">Um 45° gegen den Uhrzeigersinn drehen {45�?} {135°?}</translation>
+        <translation>Um 45° drehen (gegen den Uhrzeigersinn)</translation>
     </message>
     <message>
         <location filename="../src/items/partlabel.cpp" line="472"/>
@@ -6020,7 +6021,7 @@ Fortsetzen und speichern?</translation>
     <message>
         <location filename="../src/items/partlabel.cpp" line="475"/>
         <source>Rotate 90° Counter Clockwise</source>
-        <translation type="unfinished">Um 45° gegen den Uhrzeigersinn drehen {45�?} {90°?}</translation>
+        <translation>Um 90° drehen (gegen den Uhrzeigersinn)</translation>
     </message>
     <message>
         <location filename="../src/items/partlabel.cpp" line="477"/>
@@ -6030,7 +6031,7 @@ Fortsetzen und speichern?</translation>
     <message>
         <location filename="../src/items/partlabel.cpp" line="480"/>
         <source>Rotate 45° Counter Clockwise</source>
-        <translation type="unfinished">Um 45° gegen den Uhrzeigersinn drehen {45�?} {45°?}</translation>
+        <translation>Um 45° drehen (gegen den Uhrzeigersinn)</translation>
     </message>
     <message>
         <location filename="../src/items/partlabel.cpp" line="482"/>
@@ -6937,7 +6938,7 @@ Mausrad + Alt + Umschalt-Taste = horizontaler Bildlauf</translation>
     <message>
         <location filename="../src/fapplication.cpp" line="1373"/>
         <source>&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;&amp;#169; 2007-%1 Fritzing&lt;/font&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;&amp;#169; 2007-%1 Fritzing&lt;/font&gt;</translation>
     </message>
     <message>
         <location filename="../src/fapplication.cpp" line="1379"/>
@@ -6947,7 +6948,7 @@ Mausrad + Alt + Umschalt-Taste = horizontaler Bildlauf</translation>
     <message>
         <location filename="../src/fapplication.cpp" line="2092"/>
         <source>Regenerate database failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Neuerstellung der Datenbank fehlgeschlagen</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3388"/>
@@ -7710,12 +7711,12 @@ im Sortiment. Nicht erneut hinzufügen?</translation>
     <message>
         <location filename="../src/commands.cpp" line="2060"/>
         <source>Set Ground Fill Seed</source>
-        <translation type="unfinished"></translation>
+        <translation>Saat für Massefüllung setzen</translation>
     </message>
     <message>
         <location filename="../src/dialogs/groundfillseeddialog.cpp" line="46"/>
         <source>Ground Fill Seed Editor</source>
-        <translation type="unfinished"></translation>
+        <translation>Auswahl der Massefüllung-Saat</translation>
     </message>
     <message>
         <location filename="../src/autoroute/panelizer.cpp" line="1380"/>
@@ -7812,17 +7813,17 @@ im Sortiment. Nicht erneut hinzufügen?</translation>
         <location filename="../src/version/partschecker.cpp" line="127"/>
         <location filename="../src/version/partschecker.cpp" line="136"/>
         <source>Regenerating parts database</source>
-        <translation type="unfinished"></translation>
+        <translation>Bauteil-Datenbank wird neu erstellt</translation>
     </message>
     <message>
         <location filename="../src/version/partschecker.cpp" line="127"/>
         <source>Unable to find parts git repository</source>
-        <translation type="unfinished"></translation>
+        <translation>Git-repository konnte nicht gefunden werden</translation>
     </message>
     <message>
         <location filename="../src/version/partschecker.cpp" line="136"/>
         <source>Unable to find parts git repository HEAD</source>
-        <translation type="unfinished"></translation>
+        <translation>Git-repository HEAD konnte nicht gefunden werden</translation>
     </message>
 </context>
 <context>
@@ -7966,22 +7967,22 @@ im Sortiment. Nicht erneut hinzufügen?</translation>
     <message>
         <location filename="../src/fapplication.cpp" line="320"/>
         <source>Unable to open temporary file</source>
-        <translation type="unfinished"></translation>
+        <translation>Temporäre Datei konnte nicht geöffnet werden</translation>
     </message>
     <message>
         <location filename="../src/fapplication.cpp" line="326"/>
         <source>Database failure</source>
-        <translation type="unfinished"></translation>
+        <translation>Datenbank-Fehler</translation>
     </message>
     <message>
         <location filename="../src/fapplication.cpp" line="333"/>
         <source>Unable to remove original db file %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ursprüngliche Datenbank-Datei %1 konnte nicht entfernt werden</translation>
     </message>
     <message>
         <location filename="../src/fapplication.cpp" line="340"/>
         <source>Unable to copy database file %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Datenbank-Datei %1 konnte nicht kopiert werden</translation>
     </message>
 </context>
 <context>
@@ -8116,12 +8117,12 @@ im Sortiment. Nicht erneut hinzufügen?</translation>
     <message>
         <location filename="../src/items/ruler.cpp" line="287"/>
         <source>&amp;cm</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;cm</translation>
     </message>
     <message>
         <location filename="../src/items/ruler.cpp" line="288"/>
         <source>&amp;in</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;in</translation>
     </message>
 </context>
 <context>
@@ -9236,12 +9237,12 @@ Beachte: Du kannst diese Anzeige auch aufrufen, indem Du den Routing-Status in d
     <message>
         <location filename="../src/version/updatedialog.cpp" line="70"/>
         <source>Update parts</source>
-        <translation type="unfinished"></translation>
+        <translation>Bauteile aktualisieren</translation>
     </message>
     <message>
         <location filename="../src/version/updatedialog.cpp" line="106"/>
         <source>&lt;p&gt;No new versions found.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;Keine neue Verion gefunden.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/version/updatedialog.cpp" line="122"/>
@@ -9256,62 +9257,62 @@ Beachte: Du kannst diese Anzeige auch aufrufen, indem Du den Routing-Status in d
     <message>
         <location filename="../src/version/updatedialog.cpp" line="149"/>
         <source>&lt;p&gt;Checking for new releases...&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Suche nach Updates...</translation>
     </message>
     <message>
         <location filename="../src/version/updatedialog.cpp" line="186"/>
         <source>&lt;p&gt;Fritzing is unable to check for--and update--new parts.&lt;br/&gt;If you want this functionality, please enable write permission on this folder:&lt;br/&gt; &apos;%1&apos;.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;Fritzing konnte nicht aktualisiert werden.&lt;br/&gt;Hierfür benötigt Fritzing Schreibzugriff auf diesen Ordner:&lt;br/&gt; &apos;%1&apos;.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/version/updatedialog.cpp" line="193"/>
         <source>&lt;p&gt;Checking for new parts...&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;Suche nach aktualisierten Bauteilen...&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/version/updatedialog.cpp" line="198"/>
         <source>&lt;p&gt;No new releases or new parts found&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;Keine Updates gefunden.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/version/updatedialog.cpp" line="203"/>
         <source>&lt;p&gt;&lt;b&gt;There is a parts library update available!&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Would you like Fritzing to download and install them now?&lt;br/&gt;See the &lt;a href=&apos;https://github.com/fritzing/fritzing-parts/compare/%1...master&apos;&gt;list of changes here.&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Note: this may take a moment and you will have to restart Fritzing.&lt;br/&gt;You can also update later via the &lt;i&gt;Help &amp;rarr; Check for Updates&lt;/i&gt; menu.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;&lt;b&gt;Neue Bauteil-Bibliothek verfügbar!&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Soll Fritzing diese nun herunterladen und installieren?&lt;br/&gt;Siehe die &lt;a href=&apos;https://github.com/fritzing/fritzing-parts/compare/%1...master&apos;&gt;Liste der Änderungen hier.&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Hinweis: Dies kann einen Moment dauern und Fritzing muss danach neu gestartet werden.&lt;br/&gt;Du kannst das Update auch später manuell durchführen über das &lt;i&gt;Hilfe &amp;rarr; Suche nach Updates&lt;/i&gt; Menü.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/version/updatedialog.cpp" line="228"/>
         <source>&lt;p&gt;Sorry, unable to retrieve update info&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;Es konnten keine Update-Informationen geladen werden&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/version/updatedialog.cpp" line="244"/>
         <source>&lt;p&gt;Sorry, unable to retrieve parts update info&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;Es konnten keine Bauteil-Update-Informationen geladen werden&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/version/updatedialog.cpp" line="304"/>
         <source>&lt;p&gt;Downloading new parts...&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;Lade aktualisierte Bauteile...&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/version/updatedialog.cpp" line="312"/>
         <source>&lt;p&gt;Sorry, unable to download new parts&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;Es konnten keine Bauteil-Updates heruntergeladen werden&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/version/updatedialog.cpp" line="316"/>
         <source>&lt;p&gt;Installing new parts. This may take a few minutes...&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;Aktualisierte Bauteile werden installier. Dies kann einen Moment dauern...&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/version/updatedialog.cpp" line="332"/>
         <source>&lt;p&gt;New parts successfully installed!&lt;/p&gt;&lt;p&gt;Fritzing must be restarted, so the &apos;Close&apos; button will close Fritzing.&lt;br/&gt;The new parts will be available when you run Fritzing again.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;Bauteile erfolgreich aktualisiert!&lt;/p&gt;&lt;p&gt;Fritzing muss nun neu gestartet werden. Durch einen Klick auf &lt;em&gt;Schließen&lt;/em&gt; wird Fritzing beendet.&lt;br/&gt;Die neuen Bauteile sind beim nächsten Start verfügbar.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/version/updatedialog.cpp" line="337"/>
         <source>&lt;p&gt;Sorry, unable to install new parts: %1&lt;br/&gt;Fritzing must nevertheless be restarted, so the &apos;Close&apos; button will close Fritzing.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;Die Bauteile konnten nicht aktualisiert werden: %1&lt;br/&gt;Fritzing muss trotzdem neu gestartet werden. Ein Klick auf &lt;em&gt;Schließen&lt;/em&gt; beendet Fritzing.&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
@@ -9349,7 +9350,7 @@ Beachte: Du kannst diese Anzeige auch aufrufen, indem Du den Routing-Status in d
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="470"/>
         <source>The Fritzing Creator Kit is out of Stock. For Updates please visit the fritzing.blog</source>
-        <translation type="unfinished"></translation>
+        <translation>Das Fritzing Creator Kit ist momentan nicht verfügbar. Besuche den Fritzing Blog für Updates.</translation>
     </message>
     <message>
         <location filename="../src/sketch/welcomeview.cpp" line="480"/>

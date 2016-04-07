@@ -27,6 +27,7 @@ $Date: 2013-04-29 13:10:59 +0200 (Mo, 29. Apr 2013) $
 #include "folderutils.h"
 #include "lockmanager.h"
 #include "textutils.h"
+#include "fmessagebox.h"
 #include <QDesktopServices>
 #include <QCoreApplication>
 #include <QSettings>
@@ -693,7 +694,6 @@ void FolderUtils::createUserDataStoreFolders() {
 
     QDir documents(getTopLevelDocumentsPath());
     QStringList documentFolders(singleton->m_documentFolders);
-    documentFolders << "sketches";
     foreach(QString folder, documentFolders) {
         QString path = documents.absoluteFilePath(folder);
         if(!QFileInfo(path).exists()) {
@@ -702,21 +702,35 @@ void FolderUtils::createUserDataStoreFolders() {
     }
 
     // in older versions of Fritzing, local parts and bins were in userDataStore
-    // copy these into the new locations
     QList<QDir> toRemove;
     QStringList folders;
     folders << "bins" << "parts";
+    bool foundOld = false;
     foreach(QString folder, folders ) {
-        QDir source(userDataStore.absoluteFilePath(folder));
-        QDir target(documents.absoluteFilePath(folder));
-        if (source.exists()) {
-            replicateDir(source, target);
-            toRemove << source;
-        }
+        foundOld || QFileInfo(userDataStore.absoluteFilePath(folder)).exists();
     }
 
-    // now remove the obsolete locations
-    foreach (QDir dir, toRemove) {
-        rmdir(dir);
+    if (foundOld) {
+        // inform user about the move
+        FMessageBox::information(NULL, QCoreApplication::translate("FolderUtils", "Moving your custom parts"),
+            QCoreApplication::translate("FolderUtils", "<p>Your custom-made parts and bins are moved from the hidden "
+               "app data folder to your fritzing documents folder at <br/><br/><em>%1</em><br/><br/>"
+               "This way we hope to make it easier for you to find and edit them manually.</p>")
+               .arg(documents.absolutePath()));
+
+        // copy these into the new locations
+        foreach(QString folder, folders ) {
+            QDir source(userDataStore.absoluteFilePath(folder));
+            QDir target(documents.absoluteFilePath(folder));
+            if (source.exists()) {
+                replicateDir(source, target);
+                toRemove << source;
+            }
+        }
+
+        // now remove the obsolete locations
+        foreach (QDir dir, toRemove) {
+            rmdir(dir);
+        }
     }
 }

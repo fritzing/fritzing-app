@@ -394,6 +394,50 @@ void FolderUtils::rmdir(QDir & dir) {
 	dir.rmdir(dir.path());
 }
 
+
+bool FolderUtils::createFZAndSaveTo(const QDir &dirToCompress, const QString &filepath, const QStringList & skipSuffixes) {
+	DebugDialog::debug("saveASfz "+dirToCompress.path()+" into "+filepath);
+
+	QFileInfoList files=dirToCompress.entryInfoList();
+	QFile inFile;
+	
+	char c;
+
+	QString currFolderBU = QDir::currentPath();
+	QDir::setCurrent(dirToCompress.path());
+	foreach(QFileInfo file, files) {
+		if(!file.isFile()||file.fileName()==filepath) continue;
+		if (file.fileName().contains(LockManager::LockedFileName)) continue;
+
+        bool skip = false;
+        foreach (QString suffix, skipSuffixes) {
+            if (file.fileName().endsWith(suffix)) {
+                skip = true;
+                break;
+            }
+        }
+        if (skip) continue;
+
+		inFile.setFileName(file.fileName());
+
+		if(!inFile.open(QIODevice::ReadOnly)) {
+			qWarning("inFile.open(): %s", inFile.errorString().toLocal8Bit().constData());
+			return false;
+		}
+		QString destination = QFileInfo(filepath).dir().filePath(inFile.fileName());
+		if (QFileInfo(destination).exists())
+			QFile::remove(destination);
+		DebugDialog::debug("Destination " + destination);
+		inFile.copy(destination);
+
+		inFile.close();
+	}
+	QDir::setCurrent(currFolderBU);
+
+	return true;
+}
+
+
 bool FolderUtils::createZipAndSaveTo(const QDir &dirToCompress, const QString &filepath, const QStringList & skipSuffixes) {
 	DebugDialog::debug("zipping "+dirToCompress.path()+" into "+filepath);
 
@@ -469,6 +513,7 @@ bool FolderUtils::createZipAndSaveTo(const QDir &dirToCompress, const QString &f
 	}
 	return true;
 }
+
 
 
 bool FolderUtils::unzipTo(const QString &filepath, const QString &dirToDecompress, QString & error) {
@@ -575,6 +620,7 @@ bool FolderUtils::unzipTo(const QString &filepath, const QString &dirToDecompres
 	}
 	return true;
 }
+
 
 void FolderUtils::collectFiles(const QDir & parent, QStringList & filters, QStringList & files, bool recursive)
 {

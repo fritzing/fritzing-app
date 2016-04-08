@@ -60,6 +60,7 @@ public:
 	static void rmdir(const QString &dirPath);
 	static void rmdir(QDir & dir);
 	static bool createZipAndSaveTo(const QDir &dirToCompress, const QString &filename, const QStringList & skipSuffixes);
+	static bool createFZAndSaveTo(const QDir &dirToCompress, const QString &filename, const QStringList & skipSuffixes);
 	static bool unzipTo(const QString &filepath, const QString &dirToDecompress, QString & error);
 	static void replicateDir(QDir srcDir, QDir targDir);
 	static void cleanup();

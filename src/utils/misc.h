@@ -81,11 +81,11 @@ static const QString ResourcePath(":/resources/");
 bool isParent(QObject * candidateParent, QObject * candidateChild);
 
 static const QString FritzingSketchExtension(".fz");
+static const QString FritzingBundleExtension(".fzz");
 static const QString FritzingBinExtension(".fzb");
 static const QString FritzingBundledBinExtension(".fzbz");
 static const QString FritzingPartExtension(".fzp");
 static const QString FritzingBundledPartExtension(".fzpz");
-static const QString FritzingBundleExtension(".fzz");
 
 inline double qMin(float f, double d) {
     return qMin((double) f, d);
@@ -104,6 +104,7 @@ inline double qMax(double d, float f) {
 }
 
 const QStringList & fritzingExtensions();
+const QStringList & fritzingBundleExtensions();
 
 static const QString FemaleSymbolString = QString("%1").arg(QChar(0x2640));
 static const QString MaleSymbolString = QString("%1").arg(QChar(0x2642));

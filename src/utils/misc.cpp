@@ -33,18 +33,32 @@ $Date: 2012-07-18 15:52:11 +0200 (Mi, 18. Jul 2012) $
 #include <QTextStream>
 #include <QSet>
 
-static QStringList ___fritzingExtensions___;
+static QStringList p_fritzingExtensions;
+static QStringList p_fritzingBundleExtensions;
 
-const QStringList & fritzingExtensions() {
-	if (___fritzingExtensions___.count() == 0) {
-		___fritzingExtensions___
+static inline void initializeExtensionList() {
+	if (p_fritzingExtensions.count() == 0) {
+		p_fritzingExtensions
 			<< FritzingSketchExtension << FritzingBinExtension
 			<< FritzingPartExtension
 			<< FritzingBundleExtension << FritzingBundledPartExtension
 			<< FritzingBundledBinExtension;
+                p_fritzingBundleExtensions
+			<< FritzingBundleExtension 
+                        << FritzingBundledPartExtension
+			<< FritzingBundledBinExtension;
 	}
+        return;
+}
 
-	return ___fritzingExtensions___;
+const QStringList & fritzingExtensions() {
+	initializeExtensionList();
+	return p_fritzingExtensions;
+}
+
+const QStringList & fritzingBundleExtensions() {
+	initializeExtensionList();
+	return p_fritzingBundleExtensions;
 }
 
 bool isParent(QObject * candidateParent, QObject * candidateChild) {

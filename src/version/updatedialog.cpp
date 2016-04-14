@@ -30,6 +30,7 @@ $Date: 2012-06-28 00:18:10 +0200 (Do, 28. Jun 2012) $
 #include "updatedialog.h"	
 #include "version.h"
 #include "versionchecker.h"
+#include "modfiledialog.h"
 #include "../debugdialog.h"
 
 #include <QVBoxLayout>
@@ -38,9 +39,11 @@ $Date: 2012-06-28 00:18:10 +0200 (Do, 28. Jun 2012) $
 #include <QApplication>
 #include <QTimer>
 #include <QCloseEvent>
+#include <QMessageBox>
 
 
 static const int s_maxProgress = 1000;
+static QString sUpdatePartsMessage;
 								
 UpdateDialog::UpdateDialog(QWidget *parent) : QDialog(parent) 
 {
@@ -49,6 +52,13 @@ UpdateDialog::UpdateDialog(QWidget *parent) : QDialog(parent)
     m_doClose = true;
 
 	this->setWindowTitle(QObject::tr("Check for updates"));
+    if (sUpdatePartsMessage.isEmpty()) {
+        sUpdatePartsMessage = tr("<p><b>There is a parts library update available!</b></p>"
+                                   "<p>Would you like Fritzing to download and install the update now?<br/>"
+                                   "See the <a href='https://github.com/fritzing/fritzing-parts/compare/%1...master'>list of changes here.</a></p>"
+                                   "<p>Note: the update may take some minutes and you will have to restart Fritzing.<br/>"
+                                   "You can also update later via the <i>Help &rarr; Check for Updates</i> menu.</p>");
+    }
 
 	QVBoxLayout * vLayout = new QVBoxLayout(this);
 
@@ -145,6 +155,7 @@ void UpdateDialog::setVersionChecker(VersionChecker * versionChecker)
 
     m_progressBar->setVisible(false);
     m_progressBar->setValue(0);
+    // hide the update button, since it is only available under certain circumstances
     m_buttonBox->button(QDialogButtonBox::Ok)->setVisible(false);
     m_feedbackLabel->setText(tr("<p>Checking for new releases...</p>"));
     m_buttonBox->setEnabled(false);
@@ -161,6 +172,7 @@ void UpdateDialog::releasesAvailableSlot() {
     bool available = setAvailableReleases(m_versionChecker->availableReleases());
     if (available) {
         m_buttonBox->setEnabled(true);
+        m_buttonBox->button(QDialogButtonBox::Ok)->setVisible(true);
         if (!this->isVisible()) {
             this->exec();
         }
@@ -187,30 +199,96 @@ void UpdateDialog::releasesAvailableSlot() {
                                     "If you want this functionality, please enable write permission on this folder:<br/> '%1'.</p>"
                                     ).arg(m_repoPath));
         m_buttonBox->setEnabled(true);
+        m_buttonBox->button(QDialogButtonBox::Ok)->setVisible(false);
+        if (!this->isVisible()) {
+            // we are doing the parts check silently, so enable manual update by sending signal
+            // otherwise manual update is enabled by closing the dialog
+            emit enableAgainSignal(true);
+        }
         return;
     }
 
     m_feedbackLabel->setText(tr("<p>Checking for new parts...</p>"));
     m_doClose = false;
-    available = PartsChecker::newPartsAvailable(m_repoPath, m_shaFromDataBase, m_atUserRequest, m_remoteSha);
+    m_partsCheckerResult.reset();
+    available = PartsChecker::newPartsAvailable(m_repoPath, m_shaFromDataBase, m_atUserRequest, m_remoteSha, m_partsCheckerResult);
     m_doClose = true;
     if (!available) {
-        m_feedbackLabel->setText(tr("<p>No new releases or new parts found</p>"));
+        m_buttonBox->button(QDialogButtonBox::Ok)->setVisible(false);
         m_buttonBox->setEnabled(true);
+        if (m_partsCheckerResult.errorMessage.isEmpty()) {
+            m_feedbackLabel->setText(tr("<p>No new releases or new parts found</p>"));
+        }
+        else {
+            m_feedbackLabel->setText(m_partsCheckerResult.errorMessage);
+        }
+        if (!this->isVisible()) {
+            // we are doing the parts check silently, so enable manual update by sending signal
+            // otherwise manual update is enabled by closing the dialog
+            emit enableAgainSignal(true);
+        }
         return;
     }
 
-    m_feedbackLabel->setText(tr("<p><b>There is a parts library update available!</b></p>"
-                               "<p>Would you like Fritzing to download and install them now?<br/>"
-                               "See the <a href='https://github.com/fritzing/fritzing-parts/compare/%1...master'>list of changes here.</a></p>"
-                               "<p>Note: this may take a moment "
-                               "and you will have to restart Fritzing.<br/>"
-                               "You can also update later via the <i>Help &rarr; Check for Updates</i> menu.</p>").arg(m_shaFromDataBase));
-    m_buttonBox->button(QDialogButtonBox::Ok)->setVisible(true);
+    switch (m_partsCheckerResult.partsCheckerError) {
+        case PARTS_CHECKER_ERROR_NONE:
+            m_feedbackLabel->setText(sUpdatePartsMessage.arg(m_shaFromDataBase));
+            m_buttonBox->button(QDialogButtonBox::Ok)->setVisible(true);
+            break;
+        case PARTS_CHECKER_ERROR_REMOTE:
+        case PARTS_CHECKER_ERROR_LOCAL_DAMAGE:
+        case PARTS_CHECKER_ERROR_USED_GIT:
+            m_feedbackLabel->setText(m_partsCheckerResult.errorMessage);
+            break;
+        case PARTS_CHECKER_ERROR_LOCAL_MODS:
+            // pop up secondary dialog listing the files
+            {
+                ModFileDialog modFileDialog(this->parentWidget());
+                modFileDialog.setText(m_partsCheckerResult.errorMessage);
+                modFileDialog.addList(tr("New files:"), m_partsCheckerResult.untrackedFiles);
+                modFileDialog.addList(tr("Modified Files:"), m_partsCheckerResult.changedFiles);
+                connect(&modFileDialog, SIGNAL(cleanRepo(ModFileDialog *)),
+                        this, SLOT(onCleanRepo(ModFileDialog *)));
+
+                int result = modFileDialog.exec();
+                if (result == QDialog::Rejected) {
+                    if (this->isVisible()) {
+                        this->hide();
+                    }
+                    // we are doing the parts check silently, so enable manual update by sending signal
+                    // otherwise manual update is enabled by closing the dialog
+                    emit enableAgainSignal(true);
+                    return;
+                }
+
+                // if we got here, then cleaning the repo worked and we can proceed to the update
+            }
+            break;
+    }
+
     m_buttonBox->setEnabled(true);
     if (!this->isVisible()) {
         this->exec();
     }
+}
+
+void UpdateDialog::onCleanRepo(ModFileDialog * modFileDialog) {
+    if (!PartsChecker::cleanRepo(m_repoPath, m_partsCheckerResult)) {
+        QMessageBox::warning(this->parentWidget(),
+                             "Update Parts",
+                             tr("Fritzing was unable to clean the files, so the update cannot proceed. "
+                                "You may have to reinstall Fritzing."));
+
+        // we are doing the parts check silently, so enable manual update by sending signal
+        // otherwise manual update is enabled by closing the dialog
+        emit enableAgainSignal(true);
+        modFileDialog->done(QDialog::Rejected);
+        return;
+    }
+
+    modFileDialog->done(QDialog::Accepted);
+    m_feedbackLabel->setText(sUpdatePartsMessage.arg(m_shaFromDataBase));
+    m_buttonBox->button(QDialogButtonBox::Ok)->setVisible(true);
 }
 
 void UpdateDialog::httpErrorSlot(QNetworkReply::NetworkError) {
@@ -313,7 +391,7 @@ void UpdateDialog::updateParts() {
         return;
     }
 
-    m_feedbackLabel->setText(tr("<p>Installing new parts. This may take a few minutes...</p>"));
+    m_feedbackLabel->setText(tr("<p>Installing new parts. This may take a few minutes. Please do not interrupt the process, as your parts folder could be damaged.</p>"));
     m_progressBar->setValue(0);
     m_progressBar->setMinimum(0);
     m_progressBar->setMaximum(0);

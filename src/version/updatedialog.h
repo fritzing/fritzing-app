@@ -34,6 +34,7 @@ $Date: 2013-02-26 16:26:03 +0100 (Di, 26. Feb 2013) $
 #include <QNetworkReply>
 #include <QDialogButtonBox>
 #include <QProgressBar>
+#include <QListWidget>
 
 #include "partschecker.h"
 
@@ -62,6 +63,7 @@ protected slots:
     void httpPartsErrorSlot(QString error);
 	void stopClose();
     void updateParts();
+    void onCleanRepo(class ModFileDialog *modFileDialog);
 
 protected:
     bool setAvailableReleases(const QList<struct AvailableRelease *> & availableReleases);
@@ -79,6 +81,7 @@ protected:
     QLabel * m_feedbackLabel;
     QDialogButtonBox * m_buttonBox;
     QProgressBar * m_progressBar;
+    PartsCheckerResult m_partsCheckerResult;
     bool m_doQuit;
     bool m_doClose;
 };

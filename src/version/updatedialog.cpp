@@ -276,7 +276,7 @@ void UpdateDialog::onCleanRepo(ModFileDialog * modFileDialog) {
     if (!PartsChecker::cleanRepo(m_repoPath, m_partsCheckerResult)) {
         QMessageBox::warning(this->parentWidget(),
                              "Update Parts",
-                             tr("Fritzing was unable to clean the files, so the update cannot proceed. "
+                             tr("Fritzing was unable to clean the files, so the update cannot proceed.<br/>"
                                 "You may have to reinstall Fritzing."));
 
         // we are doing the parts check silently, so enable manual update by sending signal
@@ -391,7 +391,7 @@ void UpdateDialog::updateParts() {
         return;
     }
 
-    m_feedbackLabel->setText(tr("<p>Installing new parts. This may take a few minutes. Please do not interrupt the process, as your parts folder could be damaged.</p>"));
+    m_feedbackLabel->setText(tr("<p>Installing new parts. This may take a few minutes.<br/>Please do not interrupt the process, as your parts folder could be damaged.</p>"));
     m_progressBar->setValue(0);
     m_progressBar->setMinimum(0);
     m_progressBar->setMaximum(0);

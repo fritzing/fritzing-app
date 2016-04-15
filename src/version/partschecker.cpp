@@ -73,7 +73,8 @@ bool PartsChecker::newPartsAvailable(const QString &repoPath, const QString & sh
     if (sBoilerPlate1.isEmpty()) {
         sBoilerPlate1 = "<p>Fritzing cannot update the parts folder automatically.</p>";
         sBoilerPlate2 = sBoilerPlate1 +
-                              "<p>If you used git to make changes, use git to update.</p>"
+                              "<p>If you used git to make changes, use git to update and then regenerate the database<br/>"
+                              "by selecting <i>Part > Regenerate parts database...</i>.</p>"
                               "<p>If you did not use git to make changes, then you may need to reinstall Fritzing.</p>";
 
         sNotInMasterBranch = QObject::tr("The parts folder '%1' has been changed--it is not in the master branch (%2). %3");

@@ -18,16 +18,19 @@
 # ********************************************************************/
 
 HEADERS += \
+        src/version/modfiledialog.h \
 	src/version/updatedialog.h \
 	src/version/version.h \
 	src/version/versionchecker.h \
         src/version/partschecker.h
 
 SOURCES += \
+        src/version/modfiledialog.cpp \
 	src/version/updatedialog.cpp \
     	src/version/version.cpp \
     	src/version/versionchecker.cpp \ 
         src/version/partschecker.cpp
 
-FORMS +=
+FORMS += \
+    src/version/modfiledialog.ui
 

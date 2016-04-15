@@ -794,6 +794,9 @@ bool FApplication::loadReferenceModel(const QString & databaseName, bool fullLoa
 
     QString sha;
     if (fullLoad) {
+        // fullLoad == true means we are creating the parts database
+        // so get the sha for last commit of the parts folder and store it in the database
+        // this sha will be used to determine whether the user's parts folder can be updated from the remote repo
         sha = PartsChecker::getSha(dir.absolutePath());
         if (sha.isEmpty()) {
             return false;
@@ -802,7 +805,8 @@ bool FApplication::loadReferenceModel(const QString & databaseName, bool fullLoa
         referenceModel->setSha(sha);
     }
 
-    bool ok = referenceModel->loadAll(databaseName, fullLoad, dbExists);		// loads local parts, resource parts, and any other parts in files not in the db--these part override db parts with the same moduleID
+    // loads local parts, resource parts, and any other parts in files not in the db--these part override db parts with the same moduleID
+    bool ok = referenceModel->loadAll(databaseName, fullLoad, dbExists);
     if (ok && databaseName.isEmpty()) {
         QFile file(dir.absoluteFilePath("parts.db"));
         if (file.exists()) {

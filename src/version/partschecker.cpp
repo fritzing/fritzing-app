@@ -182,6 +182,7 @@ bool PartsChecker::checkIfClean(const QString & repoPath,
 
     git_reference *head = NULL;
     git_reference * resolved_head = NULL;
+    git_ref_t ref_type;
     QString branchName;
     bool result = false;
     git_status_list *status_list = NULL;
@@ -216,7 +217,7 @@ bool PartsChecker::checkIfClean(const QString & repoPath,
     }
 
     errorNumber++;
-    git_ref_t ref_type = git_reference_type(head);
+    ref_type = git_reference_type(head);
     if (ref_type == GIT_REF_SYMBOLIC) {
         error = git_reference_resolve(&resolved_head, head);
         if (error) {

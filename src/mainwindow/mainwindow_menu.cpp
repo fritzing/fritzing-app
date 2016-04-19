@@ -1942,7 +1942,9 @@ void MainWindow::updatePartMenu() {
 	// TODO: only enable if there is an obsolete part in the sketch
 	m_selectAllObsoleteAct->setEnabled(true);
 	m_swapObsoleteAct->setEnabled(itemCount.obsoleteCount > 0);
+
     m_findPartInSketchAct->setEnabled(m_currentGraphicsView != NULL);
+    m_regeneratePartsDatabaseAct->setEnabled(true);
 	m_openProgramWindowAct->setEnabled(true);
 }
 

@@ -953,36 +953,12 @@ Utiliser le fichier ?</translation>
         <translation>Erreur dans Fritzing</translation>
     </message>
     <message>
-        <source>Do not import now</source>
-        <translation>Ne pas importer maintenant</translation>
-    </message>
-    <message>
-        <source>
-Note: You can import them later using the &quot;Help&quot; &gt; &quot;Import parts and bins from old version...&quot; menu action.</source>
-        <translation>
-Remarque : vous pouvez les importer ultérieurement en utilisant la rubrique &quot;Aide&quot;&gt; &quot;Importer composants et magasins à partir d&apos;une ancienne version ...&quot; dans le menu Action.</translation>
-    </message>
-    <message>
         <source>Fritzing caught an exception from %1 in event %2</source>
         <translation>Fritzing a intercepté une exception %1 dans l&apos;évènement %2</translation>
     </message>
     <message>
-        <source>Import</source>
-        <translation>Importation</translation>
-    </message>
-    <message>
         <source>Fritzing caught an exception %1 from %2 in event %3</source>
         <translation>Fritzing a intercepté une exception %1 à partir de %2 dans l&apos;évènement %3</translation>
-    </message>
-    <message>
-        <source>Do you want to import parts and bins that you have created with earlier versions of Fritzing?
-</source>
-        <translation>Voulez-vous importer des composants et magasins que vous avez créés avec des versions antérieures de Fritzing?
-</translation>
-    </message>
-    <message>
-        <source>Import files from previous version?</source>
-        <translation>Importer un fichier depuis une ancienne version?</translation>
     </message>
     <message>
         <source>Fritzing caught an exception from %1 in event %2: %3</source>
@@ -1041,6 +1017,17 @@ Remarque : vous pouvez les importer ultérieurement en utilisant la rubrique &qu
     <message>
         <source>Welcome to the &lt;b&gt;Schematic View&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;This is a more abstract way to look at components and connections than the Breadboard View. You have the same elements as you have on your breadboard, they just look different. This representation is closer to the traditional diagrams used by engineers.&lt;br/&gt;&lt;br/&gt;After you have drawn wires between parts, you can press &amp;lt;Shift&amp;gt;-click with the mouse to create bend points and tidy up your connections. The Schematic View can help you check that you have made the right connections between components. You can also print out your schematic for documentation.</source>
         <translation>Bienvenue dans la &lt;b&gt;vue schématique.&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;Il s&apos;agit d&apos;une manière plus abstraite de considérer les composants et les connexions que dans la vue de la platine d&apos;essai. Vous disposez des mêmes éléments que ceux de la platine d&apos;essai, ils ont simplement un aspect différent. Cette représentation est plus proche des diagrammes habituellement employés par les ingénieurs.&lt;br/&gt;&lt;br/&gt; Après avoir dessiné des câbles entre les composants, vous pouvez utiliser la commande &amp;lt;Majuscule&amp;gt;-clic avec la souris pour créer des points de connexion/basculement et mettre de l&apos;ordre dans vos connexions. La vue schématique peut vous aider à vérifier que vous avez établi les bonnes connexions entre composants. Il vous est également possible d&apos;imprimer votre schéma à fin de documentation.</translation>
+    </message>
+</context>
+<context>
+    <name>FolderUtils</name>
+    <message>
+        <source>Moving your custom parts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;p&gt;Your custom-made parts and bins are moved from the hidden app data folder to your fritzing documents folder at &lt;br/&gt;&lt;br/&gt;&lt;em&gt;%1&lt;/em&gt;&lt;br/&gt;&lt;br/&gt;This way we hope to make it easier for you to find and edit them manually.&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1596,10 +1583,6 @@ Il est également possible de choisir un connecteur comme une graine de rempliss
         <translation>Aligner par le bas</translation>
     </message>
     <message>
-        <source>&amp;Import parts and bins from old version...</source>
-        <translation>&amp;Importer des composants et jeux depuis une ancienne version...</translation>
-    </message>
-    <message>
         <source>&amp;Copy</source>
         <translation>&amp;Copier</translation>
     </message>
@@ -1668,10 +1651,6 @@ Il est également possible de choisir un connecteur comme une graine de rempliss
         <translation>Reculer à l&apos;arrière-plan</translation>
     </message>
     <message>
-        <source>Import parts and bins from previous installation</source>
-        <translation>Importer des composants et jeux d&apos;une précédente version </translation>
-    </message>
-    <message>
         <source>top and bottom</source>
         <translation>supérieur(e) et inférieur(e)</translation>
     </message>
@@ -1692,10 +1671,6 @@ Veuillez vérifier toutes les vues pour les effets secondaires possibles.</trans
     <message>
         <source>Bring selected object(s) forward in their layer</source>
         <translation>Mettre tout les élément sélectionnez en surbrillance dans le calque</translation>
-    </message>
-    <message>
-        <source>The conversion process will not modify &apos;%1&apos;.</source>
-        <translation>Le processus de conversion ne va pas modifier &apos;%1&apos;.</translation>
     </message>
     <message>
         <source>Cannot write file %1:
@@ -1870,10 +1845,6 @@ Continuer ou annuler?</translation>
         <translation>Supprimer la sélection sans les fils connectés</translation>
     </message>
     <message>
-        <source>Please specify an .fzz file name to save &apos;%1&apos; to</source>
-        <translation>S&apos;il vous plaît spécifier un nom de fichier (.Fzz) pour enregistrer &apos;%1&apos;</translation>
-    </message>
-    <message>
         <source>Top Layer</source>
         <translation>Face supérieure</translation>
     </message>
@@ -2025,10 +1996,6 @@ Continuer ou annuler?</translation>
         <translation>Esquisse exportée</translation>
     </message>
     <message>
-        <source>The folder &quot;%1&quot; isn&apos;t a Fritzing installation folder</source>
-        <translation>Le dossier &quot;%1&quot;,n&apos;est pas un dossier d&apos;installation Fritzing</translation>
-    </message>
-    <message>
         <source>Fill empty regions of the copper layer--fill will include all traces connected to the seeds</source>
         <translation>Remplissage les régions vides de la couche de cuivre - le remplissage comprendra toutes les pistes liées aux points</translation>
     </message>
@@ -2073,10 +2040,6 @@ Continuer ou annuler?</translation>
     <message>
         <source>Ground Fill</source>
         <translation>Remplissage du plan de masse</translation>
-    </message>
-    <message>
-        <source>You will have to restart Fritzing in order to use the imported parts</source>
-        <translation>Vous devrez redémarrer Fritzing afin d&apos;utiliser les composants importés</translation>
     </message>
     <message>
         <source>Open a Fritzing sketch (.fzz, .fz), or load a Fritzing part (.fzpz), or a Fritzing parts bin (.fzb, .fzbz)</source>
@@ -2886,16 +2849,6 @@ Nous travaillons à éliminer ce message afin de ne vous laisser choisir que des
         <translation>Voulez-vous garder les composants importés?</translation>
     </message>
     <message>
-        <source>The .fz file format has been deprecated.
-
-Would you like to convert &apos;%1&apos; to the .fzz format now or open it read-only?
-</source>
-        <translation>Le format de fichier .Fz a été rendu obsolète.
-
-Voulez-vous convertir &apos;%1&apos; au format . Fzz maintenant ou l&apos;ouvrir en lecture seule?
-</translation>
-    </message>
-    <message>
         <source>&amp;Window</source>
         <translation>&amp;Fenêtre</translation>
     </message>
@@ -3184,10 +3137,6 @@ Voulez-vous convertir &apos;%1&apos; au format . Fzz maintenant ou l&apos;ouvrir
         <translation>Vous trouverez ici prochainement un module de d&apos;export de schéma Fritzing vers logiciel de CAD EAGLE. Si vous souhaitez d&apos;autres modules d&apos;export vers votre logiciel de CAD d&apos;électronique favori, faites-le nous savoir ou participez directement à sa conception.</translation>
     </message>
     <message>
-        <source>Please choose the previous Fritzing folder...</source>
-        <translation>Veuillez choisir le dossier Fritzing précédent ...</translation>
-    </message>
-    <message>
         <source>Set Grid Size...</source>
         <translation>Définir la taille de la grille...</translation>
     </message>
@@ -3290,10 +3239,6 @@ Voulez-vous convertir &apos;%1&apos; au format . Fzz maintenant ou l&apos;ouvrir
     <message>
         <source>Align Top</source>
         <translation>Aligner le haut</translation>
-    </message>
-    <message>
-        <source>the .fz file format is obsolete</source>
-        <translation>Le format de fichier .fz est obsolète</translation>
     </message>
     <message>
         <source>Show Parts Bin Icon View</source>
@@ -3591,6 +3536,10 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
         <source>Regenerate the parts database (should only be used if your parts database is broken)</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Fritzing uncompressed (*%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MazeRouter</name>
@@ -3644,6 +3593,29 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     <message>
         <source>Use best so far...</source>
         <translation>Utilisez le meilleur à ce jour...</translation>
+    </message>
+</context>
+<context>
+    <name>ModFileDialog</name>
+    <message>
+        <source>Modified files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>decision</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fritzing can proceed with the update, but the set of files listed below must first be cleaned (removed or reset). It may take a few minutes. &lt;p&gt;Do you want to proceed with cleaning these files?&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clean files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Now cleaning files. Please don&apos;t interrupt the process.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -6168,6 +6140,50 @@ Fritzing va continuer à fonctionner, mais vous n&apos;aurez pas la possibilité
         <source>Unable to find parts git repository HEAD</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>The parts folder &apos;%1&apos; has been changed--it is not in the master branch (%2). %3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The parts folder &apos;%1&apos; may have been damaged (%2). %3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The parts folder &apos;%1&apos; has been changed (%2). %3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>There are new or modified files in the parts folder &apos;%1&apos;. These changes will be discarded by the update.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>There are unreadable files in the parts folder &apos;%1&apos;. %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to open parts folder &apos;%1&apos; for update. %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Parts folder repo &apos;%1&apos; is empty. %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to determine network site for &apos;%1&apos;. %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to access network site for &apos;%1&apos;. %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to retrieve network references for &apos;%1&apos;. %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to retrieve master network reference for &apos;%1&apos;. %2</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>QShortcut</name>
@@ -7336,10 +7352,6 @@ Remarque : vous pouvez également déclencher cet affichage en positionnant la s
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;p&gt;&lt;b&gt;There is a parts library update available!&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Would you like Fritzing to download and install them now?&lt;br/&gt;See the &lt;a href=&apos;https://github.com/fritzing/fritzing-parts/compare/%1...master&apos;&gt;list of changes here.&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Note: this may take a moment and you will have to restart Fritzing.&lt;br/&gt;You can also update later via the &lt;i&gt;Help &amp;rarr; Check for Updates&lt;/i&gt; menu.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>&lt;p&gt;Sorry, unable to retrieve update info&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7356,15 +7368,31 @@ Remarque : vous pouvez également déclencher cet affichage en positionnant la s
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;p&gt;Installing new parts. This may take a few minutes...&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>&lt;p&gt;New parts successfully installed!&lt;/p&gt;&lt;p&gt;Fritzing must be restarted, so the &apos;Close&apos; button will close Fritzing.&lt;br/&gt;The new parts will be available when you run Fritzing again.&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&lt;p&gt;Sorry, unable to install new parts: %1&lt;br/&gt;Fritzing must nevertheless be restarted, so the &apos;Close&apos; button will close Fritzing.&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;p&gt;&lt;b&gt;There is a parts library update available!&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Would you like Fritzing to download and install the update now?&lt;br/&gt;See the &lt;a href=&apos;https://github.com/fritzing/fritzing-parts/compare/%1...master&apos;&gt;list of changes here.&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Note: the update may take some minutes and you will have to restart Fritzing.&lt;br/&gt;You can also update later via the &lt;i&gt;Help &amp;rarr; Check for Updates&lt;/i&gt; menu.&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New files:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Modified Files:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fritzing was unable to clean the files, so the update cannot proceed.&lt;br/&gt;You may have to reinstall Fritzing.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;p&gt;Installing new parts. This may take a few minutes.&lt;br/&gt;Please do not interrupt the process, as your parts folder could be damaged.&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

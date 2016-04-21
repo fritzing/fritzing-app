@@ -405,7 +405,7 @@
     </message>
     <message>
         <source>Load a Fritzing part (.fzpz), or a Fritzing parts bin (.fzb, .fzbz)</source>
-        <translation>Carregar uma parte do Fritzing (.fzpz), ou um binário de partesFritzing (.fzb, .fzbz)
+        <translation>Carregar uma parte do Fritzing (.fzpz), ou um binário de partes Fritzing (.fzb, .fzbz)</translation>
     </message>
     <message>
         <source>Select a Fritzing File to Open</source>
@@ -555,7 +555,7 @@ A custom board svg typically has one or two silkscreen layers and one board laye
     </message>
     <message>
         <source>Before actual PCB production we recommend that you test your custom shape by using the &apos;File &gt; Export for Production &gt; Extended Gerber&apos; option. </source>
-        <translationAntes da produção PCB actual nós recomendamos que testes a forma customizada usando a opção &apos; Ficheiro &gt; Exportar para Produção &gt; Gerber Extendido&apos;</translation>
+        <translation>Antes da produção PCB actual nós recomendamos que testes a forma customizada usando a opção &apos; Ficheiro &gt; Exportar para Produção &gt; Gerber Extendido&apos;</translation>
     </message>
     <message>
         <source>Check the resulting contour file with a Gerber-viewer application to make sure the shape came out as expected.&lt;br/&gt;&lt;br/&gt;</source>
@@ -4155,7 +4155,7 @@ Go ahead and save?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Unable to load image file &apos;%1&apos;: 
+        <source>Unable to load image file &apos;%1&apos;:
 
 %2</source>
         <translation type="unfinished"></translation>

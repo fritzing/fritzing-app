@@ -946,18 +946,6 @@ A custom board svg typically has one or two silkscreen layers and one board laye
 <context>
     <name>FApplication</name>
     <message>
-        <source>Import files from previous version?</source>
-        <translation>从早期版本导入?</translation>
-    </message>
-    <message>
-        <source>Import</source>
-        <translation>导入</translation>
-    </message>
-    <message>
-        <source>Do not import now</source>
-        <translation>现在导入么</translation>
-    </message>
-    <message>
         <source>Fritzing failure</source>
         <translation>Fritzing 出错了</translation>
     </message>
@@ -968,18 +956,6 @@ A custom board svg typically has one or two silkscreen layers and one board laye
     <message>
         <source>Fritzing caught an exception %1 from %2 in event %3</source>
         <translation>Fritzing 在event %3 中获得了一个 %2的%1意外</translation>
-    </message>
-    <message>
-        <source>Do you want to import parts and bins that you have created with earlier versions of Fritzing?
-</source>
-        <translation>你想要导入使用早期版本的Fritzing创建的元件和元件库么?
-</translation>
-    </message>
-    <message>
-        <source>
-Note: You can import them later using the &quot;Help&quot; &gt; &quot;Import parts and bins from old version...&quot; menu action.</source>
-        <translation>
-提示：你可以在稍后使用&quot;帮助&quot;&gt;&quot;从早期版本中导入元件和元件库&quot;菜单导入他们.</translation>
     </message>
     <message>
         <source>Please specify an .fzz file name to save to (cancel will delete the backup)</source>
@@ -1037,6 +1013,17 @@ Note: You can import them later using the &quot;Help&quot; &gt; &quot;Import par
     </message>
     <message>
         <source>The &lt;b&gt;PCB View&lt;/b&gt; is where you layout the components will  on a physical PCB (Printed Circuit Board).&lt;br/&gt;&lt;br/&gt;PCBs can be made at home or in a small lab using DIY etching processes. They also can be sent to professional PCB manufacturing services for more precise fabrication. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;The first thing you will need is a board to place your parts on. There should already be one in your sketch, but if not, drag in the board icon from the Parts Bin. The icon matches thie image to the right: &lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/parts/svg/core/icon/rectangle_pcb.svg&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br/&gt;&lt;br/&gt;To lay out your PCB, arrange all the components so they fit nicely on the board. Then try to shift them around to minimize the length and confusion of connections. You can also resize rectangular boards. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;Once the parts are sorted out, you connect them with copper traces. You can drag out a trace from individual connections or use the autorouter to generate them. The Autoroute button is at the bottom of the window. The button matches the image to the right:&lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/images/icons/toolbarAutorouteEnabled_icon.png&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>FolderUtils</name>
+    <message>
+        <source>Moving your custom parts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;p&gt;Your custom-made parts and bins are moved from the hidden app data folder to your fritzing documents folder at &lt;br/&gt;&lt;br/&gt;&lt;em&gt;%1&lt;/em&gt;&lt;br/&gt;&lt;br/&gt;This way we hope to make it easier for you to find and edit them manually.&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2216,14 +2203,6 @@ We&apos;re working to avoid this message, and only let you choose between proper
         <translation>报告在Fritzing中发现的bug</translation>
     </message>
     <message>
-        <source>&amp;Import parts and bins from old version...</source>
-        <translation>从旧版本中导入元件和元件库(&amp;I)...</translation>
-    </message>
-    <message>
-        <source>Import parts and bins from previous installation</source>
-        <translation>从之前安装的版本中中导入元件和元件库</translation>
-    </message>
-    <message>
         <source>&amp;File</source>
         <translation>文件(&amp;F)</translation>
     </message>
@@ -2322,14 +2301,6 @@ We&apos;re working to avoid this message, and only let you choose between proper
     <message>
         <source>Remove Bendpoint</source>
         <translation>移除拐点</translation>
-    </message>
-    <message>
-        <source>Please choose the previous Fritzing folder...</source>
-        <translation>请选择上层Fritzing文件夹...</translation>
-    </message>
-    <message>
-        <source>You will have to restart Fritzing in order to use the imported parts</source>
-        <translation>使用导入的元件必须重新启动Fritzing</translation>
     </message>
     <message>
         <source>Remove copper fill</source>
@@ -2818,34 +2789,12 @@ Please check all views for potential side-effects.</source>
         <translation>未找到草稿&apos;%1&apos;</translation>
     </message>
     <message>
-        <source>the .fz file format is obsolete</source>
-        <translation>.fz文件格式已经被停止使用了</translation>
-    </message>
-    <message>
-        <source>The .fz file format has been deprecated.
-
-Would you like to convert &apos;%1&apos; to the .fzz format now or open it read-only?
-</source>
-        <translation>.fz文件格式已经不在建议使用了。
-
-你现在想转换&apos;%1&apos;为.fzz格式或者以只读格式打开它么?
-</translation>
-    </message>
-    <message>
-        <source>The conversion process will not modify &apos;%1&apos;.</source>
-        <translation>转换处理过程不会改变&apos;%1&apos;。</translation>
-    </message>
-    <message>
         <source>Convert</source>
         <translation>转换</translation>
     </message>
     <message>
         <source>Read-only</source>
         <translation>只读</translation>
-    </message>
-    <message>
-        <source>Please specify an .fzz file name to save &apos;%1&apos; to</source>
-        <translation>请为&apos;%1&apos;指定一个.fzz的文件名</translation>
     </message>
     <message>
         <source>&amp;Routing</source>
@@ -3174,10 +3123,6 @@ Go ahead and revert?</source>
     <message>
         <source>Display Parts Editor help in a browser</source>
         <translation>在浏览器中显示元件编辑器帮助</translation>
-    </message>
-    <message>
-        <source>The folder &quot;%1&quot; isn&apos;t a Fritzing installation folder</source>
-        <translation>文件夹&quot;%1&quot;不是Fritzing安装文件夹</translation>
     </message>
     <message>
         <source>Design Rules Check (DRC)</source>
@@ -3590,6 +3535,10 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
         <source>Regenerate the parts database (should only be used if your parts database is broken)</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Fritzing uncompressed (*%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MazeRouter</name>
@@ -3641,6 +3590,29 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     </message>
     <message>
         <source>Optimizing traces...</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ModFileDialog</name>
+    <message>
+        <source>Modified files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>decision</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fritzing can proceed with the update, but the set of files listed below must first be cleaned (removed or reset). It may take a few minutes. &lt;p&gt;Do you want to proceed with cleaning these files?&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clean files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Now cleaning files. Please don&apos;t interrupt the process.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -6169,6 +6141,50 @@ Fritzing仍然在工作，但不能改变元件的属性.</translation>
         <source>Unable to find parts git repository HEAD</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>The parts folder &apos;%1&apos; has been changed--it is not in the master branch (%2). %3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The parts folder &apos;%1&apos; may have been damaged (%2). %3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The parts folder &apos;%1&apos; has been changed (%2). %3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>There are new or modified files in the parts folder &apos;%1&apos;. These changes will be discarded by the update.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>There are unreadable files in the parts folder &apos;%1&apos;. %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to open parts folder &apos;%1&apos; for update. %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Parts folder repo &apos;%1&apos; is empty. %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to determine network site for &apos;%1&apos;. %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to access network site for &apos;%1&apos;. %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to retrieve network references for &apos;%1&apos;. %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to retrieve master network reference for &apos;%1&apos;. %2</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>QShortcut</name>
@@ -7336,10 +7352,6 @@ Note: you can also trigger this display by mousing down on the routing status te
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;p&gt;&lt;b&gt;There is a parts library update available!&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Would you like Fritzing to download and install them now?&lt;br/&gt;See the &lt;a href=&apos;https://github.com/fritzing/fritzing-parts/compare/%1...master&apos;&gt;list of changes here.&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Note: this may take a moment and you will have to restart Fritzing.&lt;br/&gt;You can also update later via the &lt;i&gt;Help &amp;rarr; Check for Updates&lt;/i&gt; menu.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>&lt;p&gt;Sorry, unable to retrieve update info&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7356,15 +7368,31 @@ Note: you can also trigger this display by mousing down on the routing status te
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;p&gt;Installing new parts. This may take a few minutes...&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>&lt;p&gt;New parts successfully installed!&lt;/p&gt;&lt;p&gt;Fritzing must be restarted, so the &apos;Close&apos; button will close Fritzing.&lt;br/&gt;The new parts will be available when you run Fritzing again.&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&lt;p&gt;Sorry, unable to install new parts: %1&lt;br/&gt;Fritzing must nevertheless be restarted, so the &apos;Close&apos; button will close Fritzing.&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;p&gt;&lt;b&gt;There is a parts library update available!&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Would you like Fritzing to download and install the update now?&lt;br/&gt;See the &lt;a href=&apos;https://github.com/fritzing/fritzing-parts/compare/%1...master&apos;&gt;list of changes here.&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Note: the update may take some minutes and you will have to restart Fritzing.&lt;br/&gt;You can also update later via the &lt;i&gt;Help &amp;rarr; Check for Updates&lt;/i&gt; menu.&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New files:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Modified Files:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fritzing was unable to clean the files, so the update cannot proceed.&lt;br/&gt;You may have to reinstall Fritzing.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;p&gt;Installing new parts. This may take a few minutes.&lt;br/&gt;Please do not interrupt the process, as your parts folder could be damaged.&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

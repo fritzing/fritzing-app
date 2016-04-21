@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="de">
+<TS version="2.0" language="de">
 <context>
     <name>AboutBox</name>
     <message>
@@ -1264,12 +1264,12 @@ Trotzdem diese Datei benutzen?</translation>
     <message>
         <location filename="../src/utils/folderutils.cpp" line="761"/>
         <source>Moving your custom parts</source>
-        <translation type="unfinished"></translation>
+        <translation>Eigene Bauteile werden verschoben</translation>
     </message>
     <message>
         <location filename="../src/utils/folderutils.cpp" line="762"/>
         <source>&lt;p&gt;Your custom-made parts and bins are moved from the hidden app data folder to your fritzing documents folder at &lt;br/&gt;&lt;br/&gt;&lt;em&gt;%1&lt;/em&gt;&lt;br/&gt;&lt;br/&gt;This way we hope to make it easier for you to find and edit them manually.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;Deine selbst erstellten Bauteile werden jetzt von dem verborgenen &quot;App Data&quot;-Ordner in Deinen Fritzing Dokumenten-Ordner verschoben: &lt;br/&gt;&lt;br/&gt;&lt;em&gt;%1&lt;/em&gt;&lt;br/&gt;&lt;br/&gt;So wird es für Dich einfacher, die zugehörigen Dateien zu finden und ggf. manuell zu bearbeiten.&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
@@ -2180,7 +2180,7 @@ Du kannst auch per rechten Mausklick einen Verbinder als &quot;Saat&quot; für d
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="2669"/>
         <source>Fritzing uncompressed (*%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing unkomprimiert (*%1)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow.cpp" line="2775"/>
@@ -3123,7 +3123,9 @@ Du kannst auch per rechten Mausklick einen Verbinder als &quot;Saat&quot; für d
         <source>
 
 Note: if you want to update later, there are options under the &apos;Part&apos; menu for dealing with outdated parts individually. </source>
-        <translation type="unfinished"></translation>
+        <translation>
+
+Hinweis: Wenn Du das Update später durchführen möchtest, gibt es im &apos;Bauteile&apos;-Menü spezielle Funktionen, um mit veralteten Bauteilen umzugehen. </translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="3816"/>
@@ -4543,27 +4545,27 @@ We&apos;re working to avoid this message, and only let you choose between proper
     <message>
         <location filename="../src/version/modfiledialog.ui" line="14"/>
         <source>Modified files</source>
-        <translation type="unfinished"></translation>
+        <translation>Veränderte Dateien</translation>
     </message>
     <message>
         <location filename="../src/version/modfiledialog.ui" line="27"/>
         <source>decision</source>
-        <translation type="unfinished"></translation>
+        <translation>Entscheidung</translation>
     </message>
     <message>
         <location filename="../src/version/modfiledialog.cpp" line="11"/>
         <source>Fritzing can proceed with the update, but the set of files listed below must first be cleaned (removed or reset). It may take a few minutes. &lt;p&gt;Do you want to proceed with cleaning these files?&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing kann mit dem Update fortfahren, jedoch müssen zunächst die aufgelisteten Dateien zurückgesetzt werden.&lt;p&gt;Möchtest Du damit fortfahren?&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/version/modfiledialog.cpp" line="15"/>
         <source>Clean files</source>
-        <translation type="unfinished"></translation>
+        <translation>Dateien bereinigen</translation>
     </message>
     <message>
         <location filename="../src/version/modfiledialog.cpp" line="42"/>
         <source>Now cleaning files. Please don&apos;t interrupt the process.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dateien werden bereinigt. Bitte nicht unterbrechen.</translation>
     </message>
 </context>
 <context>
@@ -4756,7 +4758,7 @@ Ursache: %2 (Fehlercode %3)</translation>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="2422"/>
         <source>Unable to convert this via to a bendpoint because it is connected to a part that is only on the bottom layer and another part that is only on the top layer.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dieses Via konnte nicht in einen Biegepunkt konvertiert werden, da es mit Bauteilen auf der Ober- und Unterseite verbunden ist.</translation>
     </message>
     <message>
         <location filename="../src/sketch/pcbsketchwidget.cpp" line="2681"/>
@@ -5342,7 +5344,7 @@ Ursache: %2 (Fehlercode %3)</translation>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="592"/>
         <source>Convert pre-0.8.6 schematic image to new 0.1 inch standard</source>
-        <translation type="unfinished"></translation>
+        <translation>Symbolbild mit altem Standard zum neuen 0.1&quot;-Standard kovertieren</translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="627"/>
@@ -5377,14 +5379,15 @@ Ursache: %2 (Fehlercode %3)</translation>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="837"/>
         <source>If you make changes to breadboard view, or change connector metadata, the legs may no longer work. </source>
-        <translation type="unfinished"></translation>
+        <translation>Wenn Du Änderungen an der Steckplatinen-Ansicht vornimmst, oder Verbindungs-Metadaten änderst, kann es sein dass die biegbaren Bauteilbeine nicht mehr funktionieren.</translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="838"/>
         <source>You can safely make changes to Schematic or PCB view.
 
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Du kannst problemlos Änderungen an der Schaltplan- und Leiterplatten-Ansicht vornehmen.
+</translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="839"/>
@@ -5409,7 +5412,8 @@ Ursache: %2 (Fehlercode %3)</translation>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="2144"/>
         <source>Please enter a prefix to help you identify the part files. The names will have the form &apos;PREFIX_%1&apos;. (It is not necessary to change the prefix, since a unique suffix is always added.)</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;Wähle einen Präfix, um die Dateien einfacher zu indentifizieren.&lt;br/&gt;Die Dateinamen werden die Form &apos;PREFIX_%1&apos; haben.&lt;br/&gt;
+(Es ist nicht notwendig den Vorschlag zu verändern, da automatisch eine einmalige Endung hinzugefügt wird.)&lt;/p&gt;  </translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="2173"/>
@@ -7773,57 +7777,57 @@ im Sortiment. Nicht erneut hinzufügen?</translation>
     <message>
         <location filename="../src/version/partschecker.cpp" line="80"/>
         <source>The parts folder &apos;%1&apos; has been changed--it is not in the master branch (%2). %3</source>
-        <translation type="unfinished"></translation>
+        <translation>Der Bauteil-Ordner &apos;%1&apos; wurde geändert - er befindet sich nicht im Zweig &apos;master&apos; (%2). %3</translation>
     </message>
     <message>
         <location filename="../src/version/partschecker.cpp" line="81"/>
         <source>The parts folder &apos;%1&apos; may have been damaged (%2). %3</source>
-        <translation type="unfinished"></translation>
+        <translation>Der Bauteil-Ordner &apos;%1&apos; könnte beschädigt worden sein (%2). %3</translation>
     </message>
     <message>
         <location filename="../src/version/partschecker.cpp" line="82"/>
         <source>The parts folder &apos;%1&apos; has been changed (%2). %3</source>
-        <translation type="unfinished"></translation>
+        <translation>Der Bauteil-Ordner &apos;%1&apos; wurde bearbeitet (%2). %3</translation>
     </message>
     <message>
         <location filename="../src/version/partschecker.cpp" line="83"/>
         <source>There are new or modified files in the parts folder &apos;%1&apos;. These changes will be discarded by the update.</source>
-        <translation type="unfinished"></translation>
+        <translation>Es befinden sich neue oder geänderte Dateien im Bauteil-Ordner &apos;%1&apos;. Diese Änderungen werden durch das Update zurückgesetzt.</translation>
     </message>
     <message>
         <location filename="../src/version/partschecker.cpp" line="84"/>
         <source>There are unreadable files in the parts folder &apos;%1&apos;. %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Es befinden sich nicht lesbare Dateien im Bauteil-Ordner &apos;%1&apos;. %2</translation>
     </message>
     <message>
         <location filename="../src/version/partschecker.cpp" line="103"/>
         <source>Unable to open parts folder &apos;%1&apos; for update. %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Der Bauteil-Ordner &apos;%1&apos; konnte für das Update nicht geöffnet werden. %2</translation>
     </message>
     <message>
         <location filename="../src/version/partschecker.cpp" line="109"/>
         <source>Parts folder repo &apos;%1&apos; is empty. %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Das Bauteil-Ordner repository &apos;%1&apos; ist leer. %2</translation>
     </message>
     <message>
         <location filename="../src/version/partschecker.cpp" line="117"/>
         <source>Unable to determine network site for &apos;%1&apos;. %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Der Netzwerkort für &apos;%1&apos; konnte nicht gefunden werden. %2</translation>
     </message>
     <message>
         <location filename="../src/version/partschecker.cpp" line="127"/>
         <source>Unable to access network site for &apos;%1&apos;. %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Es konnte keine Verbindung zum Netzwerkort für &apos;%1&apos; hergestellt werden. %2</translation>
     </message>
     <message>
         <location filename="../src/version/partschecker.cpp" line="137"/>
         <source>Unable to retrieve network references for &apos;%1&apos;. %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Es konnten keine Netzwerk-Referenzen für &apos;%1&apos; gefunden werden. %2</translation>
     </message>
     <message>
         <location filename="../src/version/partschecker.cpp" line="163"/>
         <source>Unable to retrieve master network reference for &apos;%1&apos;. %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Es konnte keine &apos;master&apos;-Netzwerkreferenz für &apos;%1&apos; gefunden werden. %2</translation>
     </message>
     <message>
         <location filename="../src/version/partschecker.cpp" line="430"/>
@@ -9248,7 +9252,7 @@ Beachte: Du kannst diese Anzeige auch aufrufen, indem Du den Routing-Status in d
     <message>
         <location filename="../src/version/updatedialog.cpp" line="56"/>
         <source>&lt;p&gt;&lt;b&gt;There is a parts library update available!&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Would you like Fritzing to download and install the update now?&lt;br/&gt;See the &lt;a href=&apos;https://github.com/fritzing/fritzing-parts/compare/%1...master&apos;&gt;list of changes here.&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Note: the update may take some minutes and you will have to restart Fritzing.&lt;br/&gt;You can also update later via the &lt;i&gt;Help &amp;rarr; Check for Updates&lt;/i&gt; menu.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;&lt;b&gt;Es ist ein Bauteil-Update verfügbar!&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Soll Fritzing dieses jetzt herunterladen und installieren?&lt;br/&gt;Siehe die &lt;a href=&apos;https://github.com/fritzing/fritzing-parts/compare/%1...master&apos;&gt;Liste der Änderungen hier.&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Hinweis: Das Update kann ein paar Minuten dauern und Fritzing muss danach neu gestartet werden.&lt;br/&gt;Du kannst das Update auch später manuell starten per &lt;i&gt;Hilfe &amp;rarr; Nach Updates suchen&lt;/i&gt;.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/version/updatedialog.cpp" line="79"/>
@@ -9298,22 +9302,22 @@ Beachte: Du kannst diese Anzeige auch aufrufen, indem Du den Routing-Status in d
     <message>
         <location filename="../src/version/updatedialog.cpp" line="248"/>
         <source>New files:</source>
-        <translation type="unfinished"></translation>
+        <translation>Neue Dateien:</translation>
     </message>
     <message>
         <location filename="../src/version/updatedialog.cpp" line="249"/>
         <source>Modified Files:</source>
-        <translation type="unfinished"></translation>
+        <translation>Veränderte Dateien:</translation>
     </message>
     <message>
         <location filename="../src/version/updatedialog.cpp" line="279"/>
         <source>Fritzing was unable to clean the files, so the update cannot proceed.&lt;br/&gt;You may have to reinstall Fritzing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Das Update kann nicht fortgesetzt werden, da Fritzing nicht alle Änderungen zurücksetzen konnte.&lt;br/&gt;Vielleicht musst Du Fritzing neu installieren.</translation>
     </message>
     <message>
         <location filename="../src/version/updatedialog.cpp" line="394"/>
         <source>&lt;p&gt;Installing new parts. This may take a few minutes.&lt;br/&gt;Please do not interrupt the process, as your parts folder could be damaged.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;Bauteil-Updates werden installiert. Dies kann ein paar Minuten daueren.&lt;br/&gt;Bitte diesen Prozess nicht unterbrechen, da Dein Bauteil-Ordner beschädigt werden könnte.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/version/updatedialog.cpp" line="306"/>

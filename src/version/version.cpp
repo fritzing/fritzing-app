@@ -11,47 +11,47 @@ the Free Software Foundation, either version 3 of the License, or
 Fritzing is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty ofswap
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.		
+GNU General Public License for more details.
 
-You should have received a copy of the GNU General Public License           
-along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.	
-	 			
+You should have received a copy of the GNU General Public License
+along with Fritzing.  If not, see <http://www.gnu.org/licenses/>.
+
 *********************************************************************
-							                    					
+
 $Revision: 9268 $:
 $Author: irascibl@gmail.com $:
 $Date: 2014-06-11 17:47:21 +0200 (We, 11. Jun 2013) $
 
 ********************************************************************/
-					
+
 #include "version.h"
-											
+
 #include <QString>
 #include <QStringList>
 #include <QSettings>
 #include <QUrl>
-			
-#include "../debugdialog.h"                
-#include "../utils/textutils.h"                
+
+#include "../debugdialog.h"
+#include "../utils/textutils.h"
 #include "../lib/qtsysteminfo/QtSystemInfo.h"
 
-QString Version::m_majorVersion("0");       
+QString Version::m_majorVersion("0");
 QString Version::m_minorVersion("9");
 QString Version::m_minorSubVersion("3");
 QString Version::m_modifier("b");
-QString Version::m_gitCommit("c14606e062d20225b274942d588389e6fe6bc240");
-QString Version::m_gitDate("2016-01-28T14:36:55Z");  // want standard ISO form
+QString Version::m_gitCommit("5c895d327c44a3114e5fcc9d8260daf0cbb52806");
+QString Version::m_gitDate("2016-04-19T21:25:37Z");  // want standard ISO form
 QString Version::m_revision;
 QString Version::m_date;
 QString Version::m_shortDate;
 QString Version::m_versionString;
 QString Version::m_year;
-QStringList Version::m_modifiers;      
+QStringList Version::m_modifiers;
 
-Version * Version::m_singleton = new Version();		
+Version * Version::m_singleton = new Version();
 
-QString Version::FirstVersionWithDetachedUserData = "0.3.1b.05.26.3016";    
-			
+QString Version::FirstVersionWithDetachedUserData = "0.3.1b.05.26.3016";
+
 Version::Version() {
 	if (m_modifiers.count() == 0) {
 		m_modifiers << "a" << "b" << "rc" << "";
@@ -121,7 +121,7 @@ bool Version::candidateGreaterThanCurrent(const VersionThing & candidateVersionT
 	myVersionThing.minorSubVersion = minorSubVersion().toInt();
 	myVersionThing.releaseModifier = modifier();
 
-	return greaterThan(myVersionThing, candidateVersionThing); 
+	return greaterThan(myVersionThing, candidateVersionThing);
 }
 
 bool Version::greaterThan(const QString & myVersionStr, const QString & yourVersionStr) {

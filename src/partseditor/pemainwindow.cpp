@@ -2141,7 +2141,9 @@ bool PEMainWindow::saveAs(bool overWrite)
     QString prefix = QInputDialog::getText(
 		    this,
 		    tr("Filename prefix"),
-		    tr("Please enter a prefix to help you identify the part files. The names will have the form 'PREFIX_%1'. (It is not necessary to change the prefix, since a unique suffix is always added.)").arg(m_guid),
+            tr("<p>Please enter a prefix to help you identify the part files.<br/>"
+               "The file names will have the form 'PREFIX_%1'.<br/>"
+               "(It is not necessary to change the proposed prefix, since a unique suffix is always added.)</p>").arg(m_guid),
 		    QLineEdit::Normal,
 		    m_prefix,
 		    &ok

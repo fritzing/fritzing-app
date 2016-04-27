@@ -1,5 +1,5 @@
 #!/bin/bash
-QTBIN=/Users/andre/Qt/5.5/clang_64/bin
+QTBIN=/Users/andre/Qt/5.6/clang_64/bin
 
 toolsdir=`dirname $BASH_SOURCE`
 cd $toolsdir

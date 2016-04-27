@@ -14,7 +14,7 @@ echo "      Execute this script from outside the fritzing-app folder"
 echo "      But script now operates from fritzing-app folder, rather than cloning a new one and operating from there"
 echo ""
 
-QT_HOME="/home/jonathan/Qt/5.5/gcc_64"
+QT_HOME="/home/username/Qt/5.6/gcc_64"
 #QT_HOME="/home/vuser/Qt5.2.1/5.2.1/gcc_64" # 64bit version
 #QT_HOME="~/Qt5.2.1/5.2.1/gcc" # doesn't work for some reason
 
@@ -59,7 +59,7 @@ echo "making release folder: $release_folder"
 mkdir $release_folder
 
 echo "copying release files"
-cp -rf  sketches/ help/ translations/ Fritzing.sh Fritzing.1 fritzing.desktop fritzing.rc fritzing.appdata.xml readme.md LICENSE.CC-BY-SA LICENSE.GPL2 LICENSE.GPL3 $release_folder/
+cp -rf  sketches/ help/ translations/ fritzing.sh Fritzing.1 fritzing.desktop fritzing.rc fritzing.appdata.xml readme.md LICENSE.CC-BY-SA LICENSE.GPL2 LICENSE.GPL3 $release_folder/
 mv Fritzing $release_folder/
 cd $release_folder
 echo "cleaning translations"
@@ -105,4 +105,3 @@ echo "cleaning up"
 rm -rf $release_folder
 
 echo "done!"
-

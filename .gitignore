@@ -4,6 +4,9 @@
 #####################
 phoenix.pro.user
 /phoenix-build-*
+/release*
+/build*
+/debug*
 *.user
 *.user*
 

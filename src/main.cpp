@@ -129,7 +129,7 @@ int main(int argc, char *argv[])
 	int result = 0;
 	try {
 		//QApplication::setGraphicsSystem("raster");
-#if QT_VERSION > QT_VERSION_CHECK(5, 5, 0)
+#if QT_VERSION >= QT_VERSION_CHECK(5, 6, 0)
 		QGuiApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 #endif
 		FApplication * app = new FApplication(argc, argv);

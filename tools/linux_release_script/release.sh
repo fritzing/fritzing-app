@@ -14,8 +14,8 @@ echo "      Execute this script from outside the fritzing-app folder"
 echo "      But script now operates from fritzing-app folder, rather than cloning a new one and operating from there"
 echo ""
 
-QT_HOME="/home/ubuntu/qt5.6"
-#QT_HOME="/home/vuser/Qt5.2.1/5.2.1/gcc_64" # 64bit version
+QT_HOME="/home/andre/Qt/5.5/gcc"
+#QT_HOME="/home/username/Qt/5.6/gcc_64" # 64bit version
 #QT_HOME="~/Qt5.2.1/5.2.1/gcc" # doesn't work for some reason
 
 if [ "$1" = "" ]
@@ -78,7 +78,7 @@ mkdir lib/platforms
 cd lib
 echo "copying qt libraries"
 
-cp $QT_HOME/lib/libicudata.so.* $QT_HOME/lib/libicui18n.so.* $QT_HOME/lib/libicuuc.so.* $QT_HOME/lib/libQt5Concurrent.so.5 $QT_HOME/lib/libQt5Core.so.5 $QT_HOME/lib/libQt5DBus.so.5 $QT_HOME/lib/libQt5Gui.so.5 $QT_HOME/lib/libQt5Network.so.5 $QT_HOME/lib/libQt5SerialPort.so.5 $QT_HOME/lib/libQt5PrintSupport.so.5 $QT_HOME/lib/libQt5Sql.so.5 $QT_HOME/lib/libQt5Svg.so.5  $QT_HOME/lib/libQt5Xml.so.5 $QT_HOME/lib/libQt5Widgets.so.5 $QT_HOME/lib/libQt5XmlPatterns.so.5 .
+cp -d $QT_HOME/lib/libicudata.so* $QT_HOME/lib/libicui18n.so* $QT_HOME/lib/libicuuc.so.* $QT_HOME/lib/libQt5Concurrent.so* $QT_HOME/lib/libQt5Core.so* $QT_HOME/lib/libQt5DBus.so* $QT_HOME/lib/libQt5Gui.so* $QT_HOME/lib/libQt5Network.so* $QT_HOME/lib/libQt5SerialPort.so* $QT_HOME/lib/libQt5PrintSupport.so* $QT_HOME/lib/libQt5Sql.so* $QT_HOME/lib/libQt5Svg.so* $QT_HOME/lib/libQt5Xml.so* $QT_HOME/lib/libQt5Widgets.so* $QT_HOME/lib/libQt5XmlPatterns.so* $QT_HOME/lib/libQt5XcbQpa.so* .
 
 echo "copying qt plugins"
 cp $QT_HOME/plugins/imageformats/libqjpeg.so imageformats
@@ -86,7 +86,7 @@ cp $QT_HOME/plugins/sqldrivers/libqsqlite.so sqldrivers
 cp $QT_HOME/plugins/platforms/libqxcb.so platforms
 
 echo "copying libgit2"
-cp $app_folder/../libgit2/build/libgit2.so* .
+cp -d $app_folder/../libgit2/build/libgit2.so* .
 
 mv ../Fritzing .  				# hide the executable in the lib folder
 mv ../Fritzing.sh ../Fritzing   		# rename Fritzing.sh to Fritzing

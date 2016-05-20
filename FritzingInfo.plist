@@ -55,6 +55,8 @@ $Date: 2009-01-03 18:55:48 +0100 (Sat, 03 Jan 2009) $
 			</array>
 			<key>CFBundleTypeName</key>
 			<string>Fritzing sketch</string>
+			<key>CFBundleTypeIconFile</key>
+			<string>mac_fz_icon.icns</string>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>LSTypeIsPackage</key>
@@ -69,6 +71,8 @@ $Date: 2009-01-03 18:55:48 +0100 (Sat, 03 Jan 2009) $
 			</array>
 			<key>CFBundleTypeName</key>
 			<string>Fritzing shareable sketch</string>
+			<key>CFBundleTypeIconFile</key>
+			<string>mac_fzz_icon.icns</string>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>LSTypeIsPackage</key>
@@ -83,6 +87,8 @@ $Date: 2009-01-03 18:55:48 +0100 (Sat, 03 Jan 2009) $
 			</array>
 			<key>CFBundleTypeName</key>
 			<string>Fritzing bin</string>
+			<key>CFBundleTypeIconFile</key>
+			<string>mac_fzb_icon.icns</string>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>LSTypeIsPackage</key>
@@ -97,6 +103,8 @@ $Date: 2009-01-03 18:55:48 +0100 (Sat, 03 Jan 2009) $
       </array>
       <key>CFBundleTypeName</key>
       <string>Fritzing part</string>
+      <key>CFBundleTypeIconFile</key>
+      <string>mac_fzp_icon.icns</string>
       <key>CFBundleTypeRole</key>
       <string>Editor</string>
       <key>LSTypeIsPackage</key>
@@ -111,6 +119,8 @@ $Date: 2009-01-03 18:55:48 +0100 (Sat, 03 Jan 2009) $
       </array>
       <key>CFBundleTypeName</key>
       <string>Fritzing module</string>
+      <key>CFBundleTypeIconFile</key>
+      <string>mac_fzm_icon.icns</string>
       <key>CFBundleTypeRole</key>
       <string>Editor</string>
       <key>LSTypeIsPackage</key>
@@ -125,6 +135,8 @@ $Date: 2009-01-03 18:55:48 +0100 (Sat, 03 Jan 2009) $
       </array>
       <key>CFBundleTypeName</key>
       <string>Fritzing bundled part</string>
+      <key>CFBundleTypeIconFile</key>
+      <string>mac_fzpz_icon.icns</string>
       <key>CFBundleTypeRole</key>
       <string>Editor</string>
       <key>LSTypeIsPackage</key>

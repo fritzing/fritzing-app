@@ -4333,15 +4333,15 @@ Go ahead and save?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Please enter a prefix to help you identify the part files. The names will have the form &apos;PREFIX_%1&apos;. (It is not necessary to change the prefix, since a unique suffix is always added.)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Convert schematic to 0.1 inch standard</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Convert pre-0.8.6 schematic image to new 0.1 inch standard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;p&gt;Please enter a prefix to help you identify the part files.&lt;br/&gt;The file names will have the form &apos;PREFIX_%1&apos;.&lt;br/&gt;(It is not necessary to change the proposed prefix, since a unique suffix is always added.)&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

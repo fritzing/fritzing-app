@@ -3960,10 +3960,6 @@ Reason: %2 (errcode %3)</source>
         <translation>Modifier dans %1</translation>
     </message>
     <message>
-        <source>Please enter a prefix to help you identify the part files. The names will have the form &apos;PREFIX_%1&apos;. (It is not necessary to change the prefix, since a unique suffix is always added.)</source>
-        <translation>Veuillez entrer un préfixe pour vous aider à identifier les fichiers de composants. Les noms auront la forme &apos;PREFIX_%1&apos;. (Il n&apos;est pas nécessaire de changer le préfixe puisqu&apos;un suffixe unique est toujours ajouté.)</translation>
-    </message>
-    <message>
         <source>
 
 Go ahead and save?</source>
@@ -4381,6 +4377,10 @@ Go ahead and save?</source>
     </message>
     <message>
         <source>Image &amp; Footprint Files (%1 %2 %3 %4 %5);;SVG Files (%1);;JPEG Files (%2);;PNG Files (%3);;gEDA Footprint Files (%4);;Kicad Module Files (%5)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;p&gt;Please enter a prefix to help you identify the part files.&lt;br/&gt;The file names will have the form &apos;PREFIX_%1&apos;.&lt;br/&gt;(It is not necessary to change the proposed prefix, since a unique suffix is always added.)&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

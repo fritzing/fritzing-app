@@ -4864,11 +4864,11 @@ Neden: &apos;%2&apos; (hatakodu %3)</translation>
         <location filename="../src/partseditor/pemainwindow.cpp" line="882"/>
         <location filename="../src/partseditor/pemainwindow.cpp" line="949"/>
         <location filename="../src/partseditor/pemainwindow.cpp" line="956"/>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="2771"/>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="2826"/>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="3032"/>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="3439"/>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="3793"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="2773"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="2828"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="3034"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="3441"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="3795"/>
         <source>Parts Editor</source>
         <translation>Parça Düzenleyici</translation>
     </message>
@@ -4908,7 +4908,7 @@ Neden: &apos;%2&apos; (hatakodu %3)</translation>
         <translation>Çalışmaya devam et</translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="3797"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="3799"/>
         <source>Exiting the Parts Editor now is fine, as long as you remember to finish the assignments later.</source>
         <translation>Atamaları daha sonra bitirmeye hatırlarsanız, şimdi Eleman Düzenleyici&apos;den çıkabilirsiniz.</translation>
     </message>
@@ -5084,7 +5084,7 @@ Neden: &apos;%2&apos; (hatakodu %3)</translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="991"/>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="2935"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="2937"/>
         <source>Fritzing (New) Parts Editor</source>
         <translation>Fritzin (Yeni) Eleman Düzenleyici</translation>
     </message>
@@ -5199,22 +5199,27 @@ Neden: &apos;%2&apos; (hatakodu %3)</translation>
         <source>Do you want to keep working or close without saving?</source>
         <translation>Çalışmaya devam etmek istiyor musunuz yoksa kaydetmeden çıkacak mısınız?</translation>
     </message>
+    <message>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="2144"/>
+        <source>&lt;p&gt;Please enter a prefix to help you identify the part files.&lt;br/&gt;The file names will have the form &apos;PREFIX_%1&apos;.&lt;br/&gt;(It is not necessary to change the proposed prefix, since a unique suffix is always added.)&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
     <message numerus="yes">
-        <location filename="../src/partseditor/pemainwindow.cpp" line="3794"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="3796"/>
         <source>This part has %n unassigned connectors </source>
         <translation>
             <numerusform>Bu elemanın %n atanmamış konnektörü var </numerusform>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/partseditor/pemainwindow.cpp" line="3795"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="3797"/>
         <source>across %n views. </source>
         <translation>
             <numerusform>%n görünüm genelinde. </numerusform>
         </translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="3796"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="3798"/>
         <source>Until all connectors are assigned to SVG elements, the part will not work correctly. </source>
         <translation>Tüm bağlantılar SVG nesnesine atanana kadar parça doğru olarak çalışmayacak. </translation>
     </message>
@@ -5413,47 +5418,42 @@ Neden: &apos;%2&apos; (hatakodu %3)</translation>
         <translation>Dosya adı ön eki</translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="2144"/>
-        <source>Please enter a prefix to help you identify the part files. The names will have the form &apos;PREFIX_%1&apos;. (It is not necessary to change the prefix, since a unique suffix is always added.)</source>
-        <translation>Lütfen parça dosyalarını tanımlamanıza yardımcı olacak bir ön ek girin.Dosya isimleri &apos;ÖNEK_%1&apos; biçiminde olacaktır. (Benzersiz bir son ek her zaman ekleneceğinden ön eki değiştirmeniz gerekmeyecektir.)</translation>
-    </message>
-    <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="2173"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="2175"/>
         <source>Sketch Change Warning</source>
         <translation>Çizim Değişikliği Uyarısı</translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="2176"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="2178"/>
         <source>The open sketch &apos;%1&apos; uses the part you are editing. </source>
         <translation>Açık olan çizim &apos;%1&apos; şu an da düzenlemekte olduğunuz elemanı içermekte. </translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="2177"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="2179"/>
         <source>Saving this part will make a change to the sketch that cannot be undone.</source>
         <translation>Bu elemanı kaydetmek çizimde telafi edilemeyecek bir değişikliğe yol açacaktır.</translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="2180"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="2182"/>
         <source>The open sketches </source>
         <translation>Açık çizimler </translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="2182"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="2184"/>
         <source>&apos;%1&apos;, </source>
         <translation>&apos;%1&apos;, </translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="2184"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="2186"/>
         <source>and &apos;%1&apos; </source>
         <translation>ve &apos;%1&apos; </translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="2185"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="2187"/>
         <source>Saving this part will make a change to these sketches that cannot be undone.</source>
         <translation>Bu elemanı kaydetmek bu çizimlerde telafisi olmayan değişikliklere yol açacaktır.</translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="2188"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="2190"/>
         <source>
 
 Go ahead and save?</source>
@@ -5462,102 +5462,102 @@ Go ahead and save?</source>
 Devam edip kaydedilsin mi?</translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="2195"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="2197"/>
         <source>Save</source>
         <translation>Kaydet</translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="2196"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="2198"/>
         <source>Cancel</source>
         <translation>İptal</translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="2443"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="2445"/>
         <source>Move terminal point</source>
         <translation>Uç noktasını hareket ettir</translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="2709"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="2711"/>
         <source>Remove connector</source>
         <translation>Konnektörü çıkart</translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="2712"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="2714"/>
         <source>Remove %1 connectors</source>
         <translation>%1 konnektörlerini çıkar</translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="2730"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="2732"/>
         <source>Save &quot;%1&quot;</source>
         <translation>&quot;%1&quot; olarak kaydet</translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="2731"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="2733"/>
         <source>Do you want to save the changes you made in the part &quot;%1&quot;?</source>
         <translation>&quot;%1&quot; üzerinde yaptığınız değişiklikleri kaydetmek istiyor musunuz?</translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="2732"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="2734"/>
         <source>Your changes will be lost if you don&apos;t save them.</source>
         <translation>Değişiklikleriniz onları kaydetmezseniz kaybolacak.</translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="2736"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="2738"/>
         <source>untitled part</source>
         <translation>isimsiz parça</translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="2771"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="2773"/>
         <source>Unable to load fzp from %1</source>
         <translation>fzp %1 üzerinden yüklenemiyor</translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="2826"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="2828"/>
         <source>Unable to create new connector--you may have to start over.</source>
         <translation>Yeni bir bağlayıcı oluşturulamıyor--yeniden başlamanız gerekebilir.</translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="2859"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="2861"/>
         <source>Add connector</source>
         <translation>Bağlayıcı ekle</translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="2862"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="2864"/>
         <source>Add %1 connectors</source>
         <translation>%1 bağlayıcı ekle</translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="3051"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="3053"/>
         <source>Remove internal connection from &apos;%1&apos;</source>
         <translation>&apos;%1&apos; üzerinden iç bağlantıyı çıkar</translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="3396"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="3398"/>
         <source>Change all connectors to %1</source>
         <translation>Tüm bağlayıcıları %1 haline getir</translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="3439"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="3441"/>
         <source>Unable to parse &apos;%1&apos;</source>
         <translation>&apos;%1&apos; ayrıştırılamadı</translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="3490"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="3492"/>
         <source>Change to %1</source>
         <translation>%1 olarak değiştir</translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="3731"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="3733"/>
         <source>Make only %1 view visible</source>
         <translation>Sadece %1 görünsün</translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="3032"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="3034"/>
         <source>Internal connections are very messed up.</source>
         <translation>İç bağlantılar oldukça karışık.</translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="3097"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="3099"/>
         <source>Add internal connection from &apos;%1&apos; to &apos;%2&apos;</source>
         <translation>&apos;%1&apos; ile &apos;%2&apos; arasına bir iç bağlantı ekle</translation>
     </message>

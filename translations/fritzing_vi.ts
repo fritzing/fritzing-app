@@ -4855,11 +4855,11 @@ Nguyên nhân: %2 (mã lỗi:%3)</translation>
         <location filename="../src/partseditor/pemainwindow.cpp" line="882"/>
         <location filename="../src/partseditor/pemainwindow.cpp" line="949"/>
         <location filename="../src/partseditor/pemainwindow.cpp" line="956"/>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="2771"/>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="2826"/>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="3032"/>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="3439"/>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="3793"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="2773"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="2828"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="3034"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="3441"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="3795"/>
         <source>Parts Editor</source>
         <translation>Chỉnh sửa linh kiện</translation>
     </message>
@@ -4899,7 +4899,7 @@ Nguyên nhân: %2 (mã lỗi:%3)</translation>
         <translation>Tiếp tục làm việc </translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="3797"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="3799"/>
         <source>Exiting the Parts Editor now is fine, as long as you remember to finish the assignments later.</source>
         <translation>Thoát khỏi Trình biên tập Linh kiện ngay bây giờ cũng tốt, miễn là bạn nhớ để hoàn thành các bài tập sau đó.</translation>
     </message>
@@ -5075,7 +5075,7 @@ Nguyên nhân: %2 (mã lỗi:%3)</translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="991"/>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="2935"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="2937"/>
         <source>Fritzing (New) Parts Editor</source>
         <translation>Trình biên tập Linh kiện Fritzing (sản phẩm mới)</translation>
     </message>
@@ -5190,22 +5190,27 @@ Nguyên nhân: %2 (mã lỗi:%3)</translation>
         <source>Do you want to keep working or close without saving?</source>
         <translation>Bạn có muốn tiếp tục làm việc hoặc đóng mà không cần lưu lại?</translation>
     </message>
+    <message>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="2144"/>
+        <source>&lt;p&gt;Please enter a prefix to help you identify the part files.&lt;br/&gt;The file names will have the form &apos;PREFIX_%1&apos;.&lt;br/&gt;(It is not necessary to change the proposed prefix, since a unique suffix is always added.)&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
     <message numerus="yes">
-        <location filename="../src/partseditor/pemainwindow.cpp" line="3794"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="3796"/>
         <source>This part has %n unassigned connectors </source>
         <translation>
             <numerusform>Linh kiện này có %n kết nối không xác định</numerusform>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/partseditor/pemainwindow.cpp" line="3795"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="3797"/>
         <source>across %n views. </source>
         <translation>
             <numerusform>qua %n lượt xem. </numerusform>
         </translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="3796"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="3798"/>
         <source>Until all connectors are assigned to SVG elements, the part will not work correctly. </source>
         <translation>Cho đến khi tất cả kết nối được chỉ định cho các thành phần SVG, linh kiện sẽ không làm việc một cách chính xác.</translation>
     </message>
@@ -5404,47 +5409,42 @@ Nguyên nhân: %2 (mã lỗi:%3)</translation>
         <translation>Tiền tố tên tập tin</translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="2144"/>
-        <source>Please enter a prefix to help you identify the part files. The names will have the form &apos;PREFIX_%1&apos;. (It is not necessary to change the prefix, since a unique suffix is always added.)</source>
-        <translation>Vui lòng nhập một tiền tố để giúp bạn xác định các tập tin linh kiện. Các tên này sẽ có hình thức &apos;Tiền tố_ %1&apos;. (Không cần thiết để thay đổi tiền tố, vì một hậu tố duy nhất luôn luôn được thêm.)</translation>
-    </message>
-    <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="2173"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="2175"/>
         <source>Sketch Change Warning</source>
         <translation>Cảnh báo Thay đổi Sketch</translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="2176"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="2178"/>
         <source>The open sketch &apos;%1&apos; uses the part you are editing. </source>
         <translation>sketch đang mở &apos;%1&apos; sử dụng linh kiện mà bạn đang chỉnh sửa.</translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="2177"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="2179"/>
         <source>Saving this part will make a change to the sketch that cannot be undone.</source>
         <translation>Lưu linh kiện này sẽ khiến thay đổi sketch và không thể hoàn tác lại được.</translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="2180"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="2182"/>
         <source>The open sketches </source>
         <translation>Các sketch đang mở</translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="2182"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="2184"/>
         <source>&apos;%1&apos;, </source>
         <translation>&apos;%1&apos;, </translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="2184"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="2186"/>
         <source>and &apos;%1&apos; </source>
         <translation>và &apos;%1&apos; </translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="2185"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="2187"/>
         <source>Saving this part will make a change to these sketches that cannot be undone.</source>
         <translation>Lưu linh kiện này sẽ làm một thay đổi đối với những sketch này mà không thể được hoàn tác.</translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="2188"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="2190"/>
         <source>
 
 Go ahead and save?</source>
@@ -5453,102 +5453,102 @@ Go ahead and save?</source>
 Tiếp tục và lưu lại?</translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="2195"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="2197"/>
         <source>Save</source>
         <translation>Lưu</translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="2196"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="2198"/>
         <source>Cancel</source>
         <translation>Hủy bỏ</translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="2443"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="2445"/>
         <source>Move terminal point</source>
         <translation>Di chuyển điểm cuối</translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="2709"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="2711"/>
         <source>Remove connector</source>
         <translation>Gỡ bỏ kết nối</translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="2712"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="2714"/>
         <source>Remove %1 connectors</source>
         <translation>Gỡ bỏ %1 kết nối</translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="2730"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="2732"/>
         <source>Save &quot;%1&quot;</source>
         <translation>Lưu &quot;%1&quot;</translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="2731"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="2733"/>
         <source>Do you want to save the changes you made in the part &quot;%1&quot;?</source>
         <translation>Bạn có muốn lưu những thay đổi mà bạn đã thực hiện trong linh kiện &quot;%1&quot; không?</translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="2732"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="2734"/>
         <source>Your changes will be lost if you don&apos;t save them.</source>
         <translation>Các thay đổi của bạn sẽ bị mất nếu bạn không lưu chúng lại.</translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="2736"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="2738"/>
         <source>untitled part</source>
         <translation>linh kiện chưa đặt tên</translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="2771"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="2773"/>
         <source>Unable to load fzp from %1</source>
         <translation>Không thể tải fzp từ %1</translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="2826"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="2828"/>
         <source>Unable to create new connector--you may have to start over.</source>
         <translation>Không thể tạo kết nối mới - bạn có thể phải bắt đầu lại.</translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="2859"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="2861"/>
         <source>Add connector</source>
         <translation>Thêm kết nối</translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="2862"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="2864"/>
         <source>Add %1 connectors</source>
         <translation>Thêm %1 kết nối</translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="3051"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="3053"/>
         <source>Remove internal connection from &apos;%1&apos;</source>
         <translation>Loại bỏ kết nối nội bộ từ &apos;%1&apos;</translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="3396"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="3398"/>
         <source>Change all connectors to %1</source>
         <translation>Thay đổi tất cả kết nối với %1</translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="3439"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="3441"/>
         <source>Unable to parse &apos;%1&apos;</source>
         <translation>Không thể phân tích cú pháp &apos;%1&apos;</translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="3490"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="3492"/>
         <source>Change to %1</source>
         <translation>Thay đổi sang %1</translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="3731"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="3733"/>
         <source>Make only %1 view visible</source>
         <translation>Thiết lập chỉ kiểu xem %1 là có thể nhìn thấy</translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="3032"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="3034"/>
         <source>Internal connections are very messed up.</source>
         <translation>Các kết nối nội bộ rất lộn xộn.</translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="3097"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="3099"/>
         <source>Add internal connection from &apos;%1&apos; to &apos;%2&apos;</source>
         <translation>Thêm kết nối nội bộ từ &apos;% 1&apos; đến &apos;%2&apos;</translation>
     </message>

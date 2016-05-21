@@ -4884,11 +4884,11 @@ Motivul: %2 (cod eroare %3)</translation>
         <location filename="../src/partseditor/pemainwindow.cpp" line="882"/>
         <location filename="../src/partseditor/pemainwindow.cpp" line="949"/>
         <location filename="../src/partseditor/pemainwindow.cpp" line="956"/>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="2771"/>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="2826"/>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="3032"/>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="3439"/>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="3793"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="2773"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="2828"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="3034"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="3441"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="3795"/>
         <source>Parts Editor</source>
         <translation>Editor componente</translation>
     </message>
@@ -4928,7 +4928,7 @@ Motivul: %2 (cod eroare %3)</translation>
         <translation>Păstrați lucrul</translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="3797"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="3799"/>
         <source>Exiting the Parts Editor now is fine, as long as you remember to finish the assignments later.</source>
         <translation>Este în regulă să ieșiți din editorul componentelor acum, cât timp vă reamintiți să terminați sarcinile mai târziu.</translation>
     </message>
@@ -5104,7 +5104,7 @@ Motivul: %2 (cod eroare %3)</translation>
     </message>
     <message>
         <location filename="../src/partseditor/pemainwindow.cpp" line="991"/>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="2935"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="2937"/>
         <source>Fritzing (New) Parts Editor</source>
         <translation>Editor componente (nou) Fritzing</translation>
     </message>
@@ -5219,8 +5219,13 @@ Motivul: %2 (cod eroare %3)</translation>
         <source>Do you want to keep working or close without saving?</source>
         <translation>Doriți să continuați lucrul sau închideți fără salvare?</translation>
     </message>
+    <message>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="2144"/>
+        <source>&lt;p&gt;Please enter a prefix to help you identify the part files.&lt;br/&gt;The file names will have the form &apos;PREFIX_%1&apos;.&lt;br/&gt;(It is not necessary to change the proposed prefix, since a unique suffix is always added.)&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
     <message numerus="yes">
-        <location filename="../src/partseditor/pemainwindow.cpp" line="3794"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="3796"/>
         <source>This part has %n unassigned connectors </source>
         <translation>
             <numerusform>Această componentă are %n conector neatribuit </numerusform>
@@ -5229,7 +5234,7 @@ Motivul: %2 (cod eroare %3)</translation>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/partseditor/pemainwindow.cpp" line="3795"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="3797"/>
         <source>across %n views. </source>
         <translation>
             <numerusform>peste %n vizualizare. </numerusform>
@@ -5238,7 +5243,7 @@ Motivul: %2 (cod eroare %3)</translation>
         </translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="3796"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="3798"/>
         <source>Until all connectors are assigned to SVG elements, the part will not work correctly. </source>
         <translation>Până ce toți conectorii nu sunt atribuiți elementelor SVG, componenta nu va funcționa corect. </translation>
     </message>
@@ -5437,47 +5442,42 @@ Motivul: %2 (cod eroare %3)</translation>
         <translation>Prefix nume fișier</translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="2144"/>
-        <source>Please enter a prefix to help you identify the part files. The names will have the form &apos;PREFIX_%1&apos;. (It is not necessary to change the prefix, since a unique suffix is always added.)</source>
-        <translation>Introduceți un prefix care să vă ajute să identificați fișierele componente. Numele va avea forma &apos;PREFIX_%1&apos;. (nu este necesar să modificați prefixul, întrucât este adăugat întotdeauna un suffix unic.)</translation>
-    </message>
-    <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="2173"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="2175"/>
         <source>Sketch Change Warning</source>
         <translation>Atenționare modificare schiță</translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="2176"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="2178"/>
         <source>The open sketch &apos;%1&apos; uses the part you are editing. </source>
         <translation>Schița deschisă &apos;%1&apos; utilizează componenta pe care-ați editat-o. </translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="2177"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="2179"/>
         <source>Saving this part will make a change to the sketch that cannot be undone.</source>
         <translation>Salvând această componentă se va efectua o modificare schiței care nu mai poate fi anulată.</translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="2180"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="2182"/>
         <source>The open sketches </source>
         <translation>Schițele deschise </translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="2182"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="2184"/>
         <source>&apos;%1&apos;, </source>
         <translation>&apos;%1&apos;, </translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="2184"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="2186"/>
         <source>and &apos;%1&apos; </source>
         <translation>și &apos;%1&apos; </translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="2185"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="2187"/>
         <source>Saving this part will make a change to these sketches that cannot be undone.</source>
         <translation>Salvând această componentă se va efectua o modificare acestei schițe care nu poate fi anulată.</translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="2188"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="2190"/>
         <source>
 
 Go ahead and save?</source>
@@ -5486,102 +5486,102 @@ Go ahead and save?</source>
 Continuați și salvați?</translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="2195"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="2197"/>
         <source>Save</source>
         <translation>Salvează</translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="2196"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="2198"/>
         <source>Cancel</source>
         <translation>Anulare</translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="2443"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="2445"/>
         <source>Move terminal point</source>
         <translation>Mută punctul terminal</translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="2709"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="2711"/>
         <source>Remove connector</source>
         <translation>Elimină conector</translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="2712"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="2714"/>
         <source>Remove %1 connectors</source>
         <translation>Elimină %1 conectori</translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="2730"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="2732"/>
         <source>Save &quot;%1&quot;</source>
         <translation>Salvează &quot;%1&quot;</translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="2731"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="2733"/>
         <source>Do you want to save the changes you made in the part &quot;%1&quot;?</source>
         <translation>Doriți să salvați modificările pe care le-ați efectual în componenta &quot;%1&quot;?</translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="2732"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="2734"/>
         <source>Your changes will be lost if you don&apos;t save them.</source>
         <translation>Modificările vor fi pierdute dacă nu le salvați.</translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="2736"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="2738"/>
         <source>untitled part</source>
         <translation>componentă fără titlu</translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="2771"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="2773"/>
         <source>Unable to load fzp from %1</source>
         <translation>Nu se poate încărca fzp de la %1</translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="2826"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="2828"/>
         <source>Unable to create new connector--you may have to start over.</source>
         <translation>Nu se poate creea noul conector--va trebui să-l începeți peste.</translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="2859"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="2861"/>
         <source>Add connector</source>
         <translation>Adaugă conector</translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="2862"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="2864"/>
         <source>Add %1 connectors</source>
         <translation>Adaugă %1 conectori</translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="3051"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="3053"/>
         <source>Remove internal connection from &apos;%1&apos;</source>
         <translation>Elimină conexiunea internă de la &apos;%1&apos;</translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="3396"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="3398"/>
         <source>Change all connectors to %1</source>
         <translation>Schimbă toți conectorii la %1</translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="3439"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="3441"/>
         <source>Unable to parse &apos;%1&apos;</source>
         <translation>Nu se poate analiza &apos;%1&apos;</translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="3490"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="3492"/>
         <source>Change to %1</source>
         <translation>Schimbă la %1</translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="3731"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="3733"/>
         <source>Make only %1 view visible</source>
         <translation>Fă numai vizualizarea %1 vizibilă</translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="3032"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="3034"/>
         <source>Internal connections are very messed up.</source>
         <translation>Conexiunile interne sunt foarte încurcate.</translation>
     </message>
     <message>
-        <location filename="../src/partseditor/pemainwindow.cpp" line="3097"/>
+        <location filename="../src/partseditor/pemainwindow.cpp" line="3099"/>
         <source>Add internal connection from &apos;%1&apos; to &apos;%2&apos;</source>
         <translation>Adaugă conexiune internă de la &apos;%1&apos; la &apos;%2&apos;</translation>
     </message>

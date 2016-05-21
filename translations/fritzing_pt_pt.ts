@@ -12,10 +12,6 @@
         <translation>&lt;b&gt;GNU GPL v3 para o código e CreativeCommons:BY-SA para o resto</translation>
     </message>
     <message>
-        <source>&lt;b&gt;2007-%1 Fachhochschule Potsdam&lt;/b&gt;</source>
-        <translation>&lt;b&gt;2007-%1 Fachhochschule Potsdam&lt;/b&gt;</translation>
-    </message>
-    <message>
         <source>Fritzing is made by: </source>
         <translation>Fritzing foi desenvolvido por:</translation>
     </message>
@@ -78,10 +74,6 @@
     <message>
         <source>to Gianluca Urgese for the Italian translation, </source>
         <translation>ao  Gianluca Urgese pela tradução para Italiano, </translation>
-    </message>
-    <message>
-        <source>to Bruno Ramalhete and to Nuno Pessanha Santos for the Portuguese (European) translation, </source>
-        <translation>ao Bruno Ramalhete e ao Nuno Pessanha Santos pela tradução para Português (Europeu), </translation>
     </message>
     <message>
         <source>to Yuelin and Ninjia  for the Chinese (Simplified) translation, </source>
@@ -156,10 +148,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>and to Arthur Zanona, Bruno Ramalhete, Nuno Pessanha Santos, Leandro Nunes, and Gabriel Ferreira for the Portuguese (Brazilian) translation. </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>to Nikolay Stankov for the Bulgarian translation, </source>
         <translation type="unfinished"></translation>
     </message>
@@ -177,6 +165,18 @@
     </message>
     <message>
         <source>Jenny Chowdhury, Lionel Michel, Fabian Althaus, Jannis Leidel, </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;2007-%1 Fritzing&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>to Nuno Pessanha Santos for the Portuguese (European) translation, </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>and to Arthur Zanona, Nuno Pessanha Santos, Leandro Nunes, and Gabriel Ferreira for the Portuguese (Brazilian) translation. </source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -463,12 +463,6 @@
         <translation>duas camadas (face dupla)</translation>
     </message>
     <message>
-        <source>Have a look at the circle_pcb.svg file in your Fritzing installation folder at parts/svg/core/pcb/.</source>
-        <translation>Dá uma olhadela no ficheiro circle_pcb.svg no teu directório de instalação Fritzing em parts/svg/core/pcb/.</translation>
-
-
-    </message>
-    <message>
         <source>image file</source>
         <translation>ficheiro de imagem</translation>
     </message>
@@ -590,6 +584,12 @@ A custom board svg typically has one or two silkscreen layers and one board laye
     </message>
     <message>
         <source>it is because Fritzing requires that you make cutouts using a shape &apos;subtraction&apos; or &apos;difference&apos; operation in your vector graphics editor.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Have a look at the circle_pcb.svg file in your Fritzing installation folder at parts/svg/core/pcb/.
+
+</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -945,18 +945,6 @@ A custom board svg typically has one or two silkscreen layers and one board laye
 <context>
     <name>FApplication</name>
     <message>
-        <source>Import files from previous version?</source>
-        <translation>Importar ficheiros de uma versão anterior?</translation>
-    </message>
-    <message>
-        <source>Import</source>
-        <translation>Importar</translation>
-    </message>
-    <message>
-        <source>Do not import now</source>
-        <translation>Não importar agora</translation>
-    </message>
-    <message>
         <source>Fritzing failure</source>
         <translation>Falha no Fritzing</translation>
     </message>
@@ -969,17 +957,6 @@ A custom board svg typically has one or two silkscreen layers and one board laye
         <translation>Fritzing gerou uma excessão %1 de %2 no evento %3</translation>
     </message>
     <message>
-        <source>Do you want to import parts and bins that you have created with earlier versions of Fritzing?
-</source>
-        <translation>Gostaria de importar peças e compartimentos criados com versões anteriores do Fritzing?</translation>
-    </message>
-    <message>
-        <source>
-Note: You can import them later using the &quot;Help&quot; &gt; &quot;Import parts and bins from old version...&quot; menu action.</source>
-        <translation>
-Nota: Pode importar posteriormente usando o menu de acção &quot;Ajuda&quot; -&gt; &quot;Importar peças e compartimentos de versões antigas...&quot;.</translation>
-    </message>
-    <message>
         <source>Please specify an .fzz file name to save to (cancel will delete the backup)</source>
         <translation>Por favor especifique um nome no ficheiro .fzz para guardar (cancelar vai eliminar o backup)</translation>
     </message>
@@ -990,6 +967,33 @@ Nota: Pode importar posteriormente usando o menu de acção &quot;Ajuda&quot; -&
     <message>
         <source>Fritzing caught an exception from %1 in event %2: %3</source>
         <translation>Fritzing encontrou uma exceção de %1 no evento %2: %3</translation>
+    </message>
+    <message>
+        <source>Regenerate parts database?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Regenerating the parts database will take some minutes and you will have to restart Fritzing
+
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Would you like to regenerate the parts database?
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Regenerate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">Cancelar</translation>
+    </message>
+    <message>
+        <source>Regenerating parts database...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1008,6 +1012,17 @@ Nota: Pode importar posteriormente usando o menu de acção &quot;Ajuda&quot; -&
     </message>
     <message>
         <source>The &lt;b&gt;PCB View&lt;/b&gt; is where you layout the components will  on a physical PCB (Printed Circuit Board).&lt;br/&gt;&lt;br/&gt;PCBs can be made at home or in a small lab using DIY etching processes. They also can be sent to professional PCB manufacturing services for more precise fabrication. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;The first thing you will need is a board to place your parts on. There should already be one in your sketch, but if not, drag in the board icon from the Parts Bin. The icon matches thie image to the right: &lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/parts/svg/core/icon/rectangle_pcb.svg&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br/&gt;&lt;br/&gt;To lay out your PCB, arrange all the components so they fit nicely on the board. Then try to shift them around to minimize the length and confusion of connections. You can also resize rectangular boards. &lt;br/&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;Once the parts are sorted out, you connect them with copper traces. You can drag out a trace from individual connections or use the autorouter to generate them. The Autoroute button is at the bottom of the window. The button matches the image to the right:&lt;/td&gt;&lt;td&gt;&lt;img src=&quot;:resources/images/icons/toolbarAutorouteEnabled_icon.png&quot; /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>FolderUtils</name>
+    <message>
+        <source>Moving your custom parts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;p&gt;Your custom-made parts and bins are moved from the hidden app data folder to your fritzing documents folder at &lt;br/&gt;&lt;br/&gt;&lt;em&gt;%1&lt;/em&gt;&lt;br/&gt;&lt;br/&gt;This way we hope to make it easier for you to find and edit them manually.&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2223,28 +2238,12 @@ Estamos a trabalhar para evitar esta mensagem, e apenas deixar-te escolher entre
         <translation>Adicionar o componente seleccionado ao compartimento</translation>
     </message>
     <message>
-        <source>&amp;Import parts and bins from old version...</source>
-        <translation>&amp;Importar componentes e compartimentos de uma versão anterior...</translation>
-    </message>
-    <message>
-        <source>Import parts and bins from previous installation</source>
-        <translation>Importar componentes e compartimentos de uma instalação anterior</translation>
-    </message>
-    <message>
         <source>Tidy Wires</source>
         <translation>Fios organizados</translation>
     </message>
     <message>
         <source>Tidy selected wires</source>
         <translation>Fios seleccionados organizados</translation>
-    </message>
-    <message>
-        <source>Please choose the previous Fritzing folder...</source>
-        <translation>Por favor seleccione a pasta do Frtizing anterior...</translation>
-    </message>
-    <message>
-        <source>You will have to restart Fritzing in order to use the imported parts</source>
-        <translation>Vais ter de reiniciar o Fritzing para utilizar os componentes importados</translation>
     </message>
     <message>
         <source>&amp;Wire Color</source>
@@ -2700,48 +2699,6 @@ Por favor verifique em todos os modos de visualização para verificar alguma mo
 </translation>
     </message>
     <message>
-        <source>Ctrl+R</source>
-        <comment>Rotate Clockwise</comment>
-        <translation>Ctrl+R</translation>
-        <comment>Rotação em Relógio</comment>
-    </message>
-    <message>
-        <source>Alt+Ctrl+R</source>
-        <comment>Rotate Clockwise</comment>
-        <translation>Alt+Ctrl+R</translation>
-        <comment>Rotação em Relógio</comment>
-    </message>
-    <message>
-        <source>Meta+Ctrl+R</source>
-        <comment>Rotate Clockwise</comment>
-        <translation>Meta+Ctrl+R</translation>
-        <comment>Rotação em Relógio</comment>
-    </message>
-    <message>
-        <source>Shift+Ctrl+R</source>
-        <comment>Rotate Counterclockwise</comment>
-        <translation>Shift+Ctrl+R</translation>
-        <comment>Rotação em Contrarelógio</comment>
-    </message>
-    <message>
-        <source>Alt+Shift+Ctrl+R</source>
-        <comment>Rotate Counterclockwise</comment>
-        <translation>Alt+Shift+Ctrl+R</translation>
-        <comment>Rotação em Contrarelógio</comment>
-    </message>
-    <message>
-        <source>Meta+Shift+Ctrl+R</source>
-        <comment>Rotate Counterclockwise</comment>
-        <translation>Meta+Shift+Ctrl+R</translation>
-        <comment>Rotação em Contrarelógio</comment>
-    </message>
-    <message>
-        <source>Shift+Ctrl+Tab</source>
-        <comment>Toggle Active Layer</comment>
-        <translation>Shift+Ctrl+Tab</translation>
-        <comment>Alternar Camada Ativa</comment>
-    </message>
-    <message>
         <source>Sketch exported to Gerber</source>
         <translation>Desenho exportado para Gerber</translation>
     </message>
@@ -2786,30 +2743,11 @@ Por favor verifique em todos os modos de visualização para verificar alguma mo
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>the .fz file format is obsolete</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>The .fz file format has been deprecated.
-
-Would you like to convert &apos;%1&apos; to the .fzz format now or open it read-only?
-</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>The conversion process will not modify &apos;%1&apos;.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Convert</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Read-only</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Please specify an .fzz file name to save &apos;%1&apos; to</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3139,10 +3077,6 @@ Go ahead and revert?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>The folder &quot;%1&quot; isn&apos;t a Fritzing installation folder</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Design Rules Check (DRC)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3388,11 +3322,11 @@ Go ahead and revert?</source>
     </message>
     <message>
         <source>bottom</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">inferior</translation>
     </message>
     <message>
         <source>top</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">superior</translation>
     </message>
     <message>
         <source>Ground Fill (%1)</source>
@@ -3547,6 +3481,53 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
         <source>Rotate 45° Counter Clockwise</source>
         <translation type="unfinished">Rodar 45º no sentido Anti-Horário {45�?} {45°?}</translation>
     </message>
+    <message>
+        <source>Ctrl+R</source>
+        <comment>Rotate Clockwise</comment>
+        <translation type="unfinished">Ctrl+R</translation>
+    </message>
+    <message>
+        <source>Alt+Ctrl+R</source>
+        <comment>Rotate Clockwise</comment>
+        <translation type="unfinished">Alt+Ctrl+R</translation>
+    </message>
+    <message>
+        <source>Meta+Ctrl+R</source>
+        <comment>Rotate Clockwise</comment>
+        <translation type="unfinished">Meta+Ctrl+R</translation>
+    </message>
+    <message>
+        <source>Shift+Ctrl+R</source>
+        <comment>Rotate Counterclockwise</comment>
+        <translation type="unfinished">Shift+Ctrl+R</translation>
+    </message>
+    <message>
+        <source>Alt+Shift+Ctrl+R</source>
+        <comment>Rotate Counterclockwise</comment>
+        <translation type="unfinished">Alt+Shift+Ctrl+R</translation>
+    </message>
+    <message>
+        <source>Meta+Shift+Ctrl+R</source>
+        <comment>Rotate Counterclockwise</comment>
+        <translation type="unfinished">Meta+Shift+Ctrl+R</translation>
+    </message>
+    <message>
+        <source>Shift+Ctrl+Tab</source>
+        <comment>Toggle Active Layer</comment>
+        <translation type="unfinished">Shift+Ctrl+Tab</translation>
+    </message>
+    <message>
+        <source>Fritzing uncompressed (*%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Regenerate parts database ...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Regenerate the parts database (should only be used if your parts database is broken)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MazeRouter</name>
@@ -3560,7 +3541,7 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     </message>
     <message>
         <source>Unexpected SVG rendering failure--contact fritzing.org</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Falha inesperada na renderização SVG--contacte fritzing.org</translation>
     </message>
     <message>
         <source>best so far: %1 of %2 routed</source>
@@ -3599,6 +3580,29 @@ Note: if you want to update later, there are options under the &apos;Part&apos; 
     </message>
     <message>
         <source>Optimizing traces...</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ModFileDialog</name>
+    <message>
+        <source>Modified files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>decision</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fritzing can proceed with the update, but the set of files listed below must first be cleaned (removed or reset). It may take a few minutes. &lt;p&gt;Do you want to proceed with cleaning these files?&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clean files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Now cleaning files. Please don&apos;t interrupt the process.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -4155,12 +4159,6 @@ Go ahead and save?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Unable to load image file &apos;%1&apos;:
-
-%2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Remove internal connection from &apos;%1&apos;</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4347,15 +4345,21 @@ Go ahead and save?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Please enter a prefix to help you identify the part files. The names will have the form &apos;PREFIX_%1&apos;. (It is not necessary to change the prefix, since a unique suffix is always added.)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Convert schematic to 0.1 inch standard</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Convert pre-0.8.6 schematic image to new 0.1 inch standard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to load image file &apos;%1&apos;: 
+
+%2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;p&gt;Please enter a prefix to help you identify the part files.&lt;br/&gt;The file names will have the form &apos;PREFIX_%1&apos;.&lt;br/&gt;(It is not necessary to change the proposed prefix, since a unique suffix is always added.)&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -5064,7 +5068,7 @@ tecla shift troca o eixo de scroll</translation>
     </message>
     <message>
         <source>Location:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Localização:</translation>
     </message>
     <message>
         <source>...</source>
@@ -5131,7 +5135,7 @@ tecla shift troca o eixo de scroll</translation>
     </message>
     <message>
         <source>Serial Monitor</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Monitor Série</translation>
     </message>
     <message>
         <source>Upload</source>
@@ -5306,7 +5310,7 @@ tecla shift troca o eixo de scroll</translation>
     </message>
     <message>
         <source>Serial Monitor</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Monitor Série</translation>
     </message>
     <message>
         <source>Ctrl+M</source>
@@ -5342,10 +5346,6 @@ tecla shift troca o eixo de scroll</translation>
     <message>
         <source>Fritzing</source>
         <translation>Fritzing</translation>
-    </message>
-    <message>
-        <source>&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;&amp;#169; 2007-%1 Fachhochschule Potsdam&lt;/font&gt;</source>
-        <translation></translation>
     </message>
     <message>
         <source>The file &apos;%1&apos; is read-only; please use a different filename.</source>
@@ -5734,10 +5734,6 @@ já se encontrava lá, não vais adicionar outravez, Ok?!?</translation>
         <translation>Impossível de analisar o cobre: %1 %2 %3</translation>
     </message>
     <message>
-        <source>Parts folder not found.</source>
-        <translation>Pasta dos componentes não encontrada.</translation>
-    </message>
-    <message>
         <source>Select %1</source>
         <translation>Seleccionar %1</translation>
     </message>
@@ -6100,6 +6096,70 @@ já se encontrava lá, não vais adicionar outravez, Ok?!?</translation>
         <source>N/A</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>&lt;font face=&apos;Lucida Grande, Tahoma, Sans Serif&apos; size=&apos;2&apos; color=&apos;#eaf4ed&apos;&gt;&amp;#169; 2007-%1 Fritzing&lt;/font&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Regenerate database failed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The parts folder &apos;%1&apos; has been changed--it is not in the master branch (%2). %3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The parts folder &apos;%1&apos; may have been damaged (%2). %3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The parts folder &apos;%1&apos; has been changed (%2). %3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>There are new or modified files in the parts folder &apos;%1&apos;. These changes will be discarded by the update.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>There are unreadable files in the parts folder &apos;%1&apos;. %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to open parts folder &apos;%1&apos; for update. %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Parts folder repo &apos;%1&apos; is empty. %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to determine network site for &apos;%1&apos;. %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to access network site for &apos;%1&apos;. %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to retrieve network references for &apos;%1&apos;. %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to retrieve master network reference for &apos;%1&apos;. %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Regenerating parts database</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to find parts git repository</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to find parts git repository HEAD</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>QShortcut</name>
@@ -6214,6 +6274,25 @@ já se encontrava lá, não vais adicionar outravez, Ok?!?</translation>
     </message>
 </context>
 <context>
+    <name>RegenerateDatabaseThread</name>
+    <message>
+        <source>Unable to open temporary file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Database failure</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to remove original db file %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to copy database file %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>Resistor</name>
     <message>
         <source>resistance</source>
@@ -6316,6 +6395,14 @@ já se encontrava lá, não vais adicionar outravez, Ok?!?</translation>
     <message>
         <source>width</source>
         <translation>largura</translation>
+    </message>
+    <message>
+        <source>&amp;cm</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;in</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -6827,7 +6914,7 @@ Note: you can also trigger this display by mousing down on the routing status te
     </message>
     <message>
         <source>rotation</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">rotação</translation>
     </message>
     <message>
         <source>To free-rotate a part in Breadboard or PCB view, select it, then hover your mouse near one of the corners until you see the rotate cursor. Mouse down and that corner will follow your mouse as you drag.</source>
@@ -7207,24 +7294,80 @@ Note: you can also trigger this display by mousing down on the routing status te
         <translation>Fechar</translation>
     </message>
     <message>
-        <source>No new versions found.</source>
-        <translation>Não existem novas versões disponíveis.</translation>
-    </message>
-    <message>
-        <source>Checking...</source>
-        <translation>A verificar...</translation>
-    </message>
-    <message>
-        <source>Sorry, unable to retrieve update info</source>
-        <translation>Desculpa, não pude obter informação de actualizações disponíveis</translation>
-    </message>
-    <message>
         <source>A new main release is available for downloading:</source>
         <translation>Uma nova versão do Fritzing  encontra-se disponível para download:</translation>
     </message>
     <message>
         <source>A new interim release is available for downloading:</source>
         <translation>Uma nova versão intercalar está disponível para download:</translation>
+    </message>
+    <message>
+        <source>&lt;p&gt;&lt;b&gt;There is a parts library update available!&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Would you like Fritzing to download and install the update now?&lt;br/&gt;See the &lt;a href=&apos;https://github.com/fritzing/fritzing-parts/compare/%1...master&apos;&gt;list of changes here.&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Note: the update may take some minutes and you will have to restart Fritzing.&lt;br/&gt;You can also update later via the &lt;i&gt;Help &amp;rarr; Check for Updates&lt;/i&gt; menu.&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Update parts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;p&gt;No new versions found.&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;p&gt;Checking for new releases...&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;p&gt;Fritzing is unable to check for--and update--new parts.&lt;br/&gt;If you want this functionality, please enable write permission on this folder:&lt;br/&gt; &apos;%1&apos;.&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;p&gt;Checking for new parts...&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;p&gt;No new releases or new parts found&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New files:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Modified Files:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fritzing was unable to clean the files, so the update cannot proceed.&lt;br/&gt;You may have to reinstall Fritzing.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;p&gt;Sorry, unable to retrieve update info&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;p&gt;Sorry, unable to retrieve parts update info&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;p&gt;Downloading new parts...&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;p&gt;Sorry, unable to download new parts&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;p&gt;Installing new parts. This may take a few minutes.&lt;br/&gt;Please do not interrupt the process, as your parts folder could be damaged.&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;p&gt;New parts successfully installed!&lt;/p&gt;&lt;p&gt;Fritzing must be restarted, so the &apos;Close&apos; button will close Fritzing.&lt;br/&gt;The new parts will be available when you run Fritzing again.&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;p&gt;Sorry, unable to install new parts: %1&lt;br/&gt;Fritzing must nevertheless be restarted, so the &apos;Close&apos; button will close Fritzing.&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

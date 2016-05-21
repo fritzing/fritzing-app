@@ -144,6 +144,12 @@ unix {
 
 ICON = resources/images/fritzing_icon.icns
 
+macx {
+    FILE_ICONS.files = resources/images/mac_fz_icon.icns resources/images/mac_fzz_icon.icns resources/images/mac_fzb_icon.icns resources/images/mac_fzp_icon.icns resources/images/mac_fzm_icon.icns resources/images/mac_fzpz_icon.icns
+    FILE_ICONS.path = Contents/Resources
+    QMAKE_BUNDLE_DATA += FILE_ICONS
+}
+
 QT += core gui svg xml network sql # opengl
 greaterThan(QT_MAJOR_VERSION, 4) {
     QT += widgets printsupport concurrent serialport

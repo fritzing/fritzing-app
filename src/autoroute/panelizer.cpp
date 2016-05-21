@@ -1458,8 +1458,8 @@ MainWindow * Panelizer::inscribeBoard(QDomElement & board, QHash<QString, QStrin
         }
     }
 
-	if (filled) { 
-		mainWindow->saveAsShareable(copyPath, true);
+    if (filled) {
+        mainWindow->saveAsAux(copyPath);
 		DebugDialog::debug(QString("%1 filled:%2").arg(copyPath).arg(filled));
 	}
 

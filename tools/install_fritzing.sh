@@ -1,5 +1,20 @@
 #!/bin/sh
+#
+# this is a rought begin of a linux install script for fritzing
+# with icon setup for *.fzz files and assignment to fritzing application
+# the script needs to be improved and need some more file-copy in the release-script for linux
+# to serve the mime-files and the icons files. 
+#
+# the script needs to sit in the fritzing home folder 
+# and needs an icon folder with the following files:
+# linux_fzz_icon.png
+# linux_fzz_icon128.png
+# linux_fzz_icon.icon
+# x-fritzing.xml
+#
+
 APPDIR=$(dirname "$0")
+
 
 echo $APPDIR
 cd $APPDIR

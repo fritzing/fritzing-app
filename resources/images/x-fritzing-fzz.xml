@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <mime-info xmlns='http://www.freedesktop.org/standards/shared-mime-info'>
-<mime-type type="mimetypes/x-fritzing">  
+<mime-type type="mimetypes/x-fritzing-fzz">  
 <comment>Fritzing Sketch</comment>
-<generic-icon name="x-fritzing"/>
+<generic-icon name="x-fritzing-fzz"/>
 <glob pattern="*.fzz"/>
 </mime-type>
 </mime-info>

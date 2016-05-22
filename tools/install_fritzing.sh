@@ -24,6 +24,8 @@ if [ ! -f ~/.mime.types ]; then
 	echo "mimetypes/x-fritzing-fzz 	fritzing" >> ~/.mime.types
 fi
 
+# add a mime type for the fritzing-fzz
+echo "mimetypes/x-fritzing-fzz 	fritzing" >> ~/.mime.types
 
 echo $APPDIR
 cd $APPDIR
@@ -32,7 +34,7 @@ pwd
 # install fritzing into mime user directory
 xdg-mime install --mode user 'icons/x-fritzing-fzz.xml'
 
-# set the mime default programm to the desktop-file
+# set the mime default programm to the fritzing.desktop-file
 xdg-mime default 'fritzing.desktop' mimetypes/x-fritzing-fzz
 
 # install the image-fiels into the user mime system with specified size

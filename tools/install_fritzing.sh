@@ -12,28 +12,37 @@
 # linux_fzz_icon.icon
 # x-fritzing.xml
 #
-
+#!/bin/bash
 APPDIR=$(dirname "$0")
+
+# check if user .mime.types fill exists, otherwise
+# create it
+
+if [ ! -f ~/.mime.types ]; then
+	echo "file does not exists and is going to be created"
+	touch ~/.mime.types
+	echo "mimetypes/x-fritzing-fzz 	fritzing" >> ~/.mime.types
+fi
 
 
 echo $APPDIR
 cd $APPDIR
 pwd
 
+# install fritzing into mime user directory
+xdg-mime install --mode user 'icons/x-fritzing-fzz.xml'
+
 # set the mime default programm to the desktop-file
-xdg-mime default 'fritzing.desktop' mimetypes/x-fritzing
+xdg-mime default 'fritzing.desktop' mimetypes/x-fritzing-fzz
 
 # install the image-fiels into the user mime system with specified size
 # ~/.local/share/icons/hicolor/*size*
-
 # 128x128
-xdg-icon-resource install --context mimetypes --size 128 'icons/linux_fzz_icon128.png' application-x-fritzing
-
+xdg-icon-resource install --mode user --context mimetypes --size 128 'icons/linux_fzz_icon128.png' mimetypes-x-fritzing-fzz
 # 256x256
-xdg-icon-resource install --context mimetypes --size 256 'icons/linux_fzz_icon.png' application-x-fritzing
-
+xdg-icon-resource install --mode user --context mimetypes --size 256 'icons/linux_fzz_icon.png' mimetypes-x-fritzing-fzz
 # install fritzing into mime user directory
-xdg-mime install --mode user 'icons/x-fritzing.xml'
+xdg-mime install --mode user 'icons/x-fritzing-fzz.xml'
 
 # update the user mime-database to enable the new icons
 update-mime-database ~/.local/share/mime

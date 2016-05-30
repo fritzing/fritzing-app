@@ -26,7 +26,7 @@ cp -r $builddir/Fritzing.app $deploydir
 
 echo ">> add .app dependencies"
 cd $deploydir
-$QTBIN/macdeployqt Fritzing.app
+$QTBIN/macdeployqt Fritzing.app -verbose=2
 
 supportdir=$deploydir/Fritzing.app/Contents/MacOS
 echo ">> support directory"

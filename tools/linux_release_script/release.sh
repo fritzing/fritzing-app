@@ -11,35 +11,30 @@ current_dir=$(pwd)
 echo ""
 echo "NOTE: Don't forget to set this script's QT_HOME variable"
 echo "      Execute this script from outside the fritzing-app folder"
-echo "      But script now operates from fritzing-app folder, rather than cloning a new one and operating from there"
 echo ""
 
-QT_HOME="/home/andre/Qt/5.5/gcc"
-#QT_HOME="/home/username/Qt/5.6/gcc_64" # 64bit version
-#QT_HOME="~/Qt5.2.1/5.2.1/gcc" # doesn't work for some reason
+if [ "$arch_aux" == 'x86_64' ] ; then
+	arch='AMD64'
+  QT_HOME="/home/andre/Qt/5.6/gcc_64"
+else
+  arch='i386'
+  QT_HOME="/home/andre/Qt/5.5/gcc"
+fi
 
-if [ "$1" = "" ]
-then
+if [ "$1" = "" ] ; then
   echo "Usage: $0 <need a version string such as '0.6.4b' (without the quotes)>"
   exit
+else
+  relname=$1  #`date +%Y.%m.%d`
 fi
 
 PKG_OK=$(dpkg-query -W --showformat='${Status}\n' libquazip-dev)
 quazip='QUAZIP_LIB'
-if [ "`expr index "$PKG_OK" installed`" -gt 0 ]
-then
+if [ "`expr index "$PKG_OK" installed`" -gt 0 ] ; then
   quazip='QUAZIP_INSTALLED'
   echo "using installed quazip"
 else
   echo "using src/lib/quazip"
-fi
-
-#let's define some variables that we'll need to use in the future
-relname=$1  #`date +%Y.%m.%d`
-
-if [ "$arch_aux" == 'x86_64' ] ; then
-	arch='AMD64'
-	else arch='i386'
 fi
 
 app_folder=$(dirname $script_folder)
@@ -53,8 +48,6 @@ make
 
 release_name=fritzing-$relname.linux.$arch
 release_folder="$current_dir/$release_name"
-echo "release folder $release_folder"
-
 echo "making release folder: $release_folder"
 mkdir $release_folder
 
@@ -71,7 +64,6 @@ echo "cleaning translations"
 rm ./translations/*.ts  			# remove translation xml files, since we only need the binaries in the release
 find ./translations -name "*.qm" -size -128c -delete   # delete empty translation binaries
 
-echo "cloning fritzing-parts"
 git clone https://github.com/fritzing/fritzing-parts.git
 
 echo "making library folders"
@@ -82,7 +74,6 @@ mkdir lib/platforms
 
 cd lib
 echo "copying qt libraries"
-
 cp -d $QT_HOME/lib/libicudata.so* $QT_HOME/lib/libicui18n.so* $QT_HOME/lib/libicuuc.so.* $QT_HOME/lib/libQt5Concurrent.so* $QT_HOME/lib/libQt5Core.so* $QT_HOME/lib/libQt5DBus.so* $QT_HOME/lib/libQt5Gui.so* $QT_HOME/lib/libQt5Network.so* $QT_HOME/lib/libQt5SerialPort.so* $QT_HOME/lib/libQt5PrintSupport.so* $QT_HOME/lib/libQt5Sql.so* $QT_HOME/lib/libQt5Svg.so* $QT_HOME/lib/libQt5Xml.so* $QT_HOME/lib/libQt5Widgets.so* $QT_HOME/lib/libQt5XmlPatterns.so* $QT_HOME/lib/libQt5XcbQpa.so* .
 
 echo "copying qt plugins"

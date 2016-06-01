@@ -40,7 +40,7 @@ win32 {
         INCLUDEPATH += $$[QT_INSTALL_HEADERS]/QtZlib
         DEFINES += _CRT_SECURE_NO_DEPRECATE
         DEFINES += _WINDOWS
-	RELEASE_SCRIPT = $$(RELEASE_SCRIPT)			# environment variable set from release script	
+	RELEASE_SCRIPT = $$(RELEASE_SCRIPT)			# environment variable set from release script
 
         message("target arch: $${QMAKE_TARGET.arch}")
         contains(QMAKE_TARGET.arch, x86_64) {
@@ -52,7 +52,7 @@ win32 {
                 RELDIR = ../release32
                 DEBDIR = ../debug32
         }
-	
+
 	Release:DESTDIR = $${RELDIR}
 	Release:OBJECTS_DIR = $${RELDIR}
 	Release:MOC_DIR = $${RELDIR}
@@ -142,10 +142,10 @@ unix {
         INSTALLS += target desktop manpage icon parts sketches bins translations syntax help
 }
 
-ICON = resources/images/fritzing_icon.icns
+ICON = resources/system_icons/macosx/fritzing_icon.icns
 
 macx {
-    FILE_ICONS.files = resources/images/mac_fz_icon.icns resources/images/mac_fzz_icon.icns resources/images/mac_fzb_icon.icns resources/images/mac_fzp_icon.icns resources/images/mac_fzm_icon.icns resources/images/mac_fzpz_icon.icns
+    FILE_ICONS.files = resources/system_icons/macosx/mac_fz_icon.icns resources/system_icons/macosx/mac_fzz_icon.icns resources/system_icons/macosx/mac_fzb_icon.icns resources/system_icons/macosx/mac_fzp_icon.icns resources/system_icons/macosx/mac_fzm_icon.icns resources/system_icons/macosx/mac_fzpz_icon.icns
     FILE_ICONS.path = Contents/Resources
     QMAKE_BUNDLE_DATA += FILE_ICONS
 }
@@ -250,5 +250,3 @@ TEMPLATE = app
 
 
 message("libs $$LIBS")
-
-

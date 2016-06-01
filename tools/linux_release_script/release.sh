@@ -59,14 +59,19 @@ echo "making release folder: $release_folder"
 mkdir $release_folder
 
 echo "copying release files"
-cp -rf  sketches/ help/ translations/ Fritzing.sh Fritzing.1 fritzing.desktop fritzing.rc fritzing.appdata.xml readme.md LICENSE.CC-BY-SA LICENSE.GPL2 LICENSE.GPL3 $release_folder/
+cp -rf sketches/ help/ translations/ Fritzing.sh Fritzing.1 fritzing.desktop fritzing.rc fritzing.appdata.xml install_fritzing.sh readme.md LICENSE.CC-BY-SA LICENSE.GPL2 LICENSE.GPL3 $release_folder/
+mkdir $release_folder/icons
+cp resources/system_icons/linux/* $release_folder/icons/
 mv Fritzing $release_folder/
-cd $release_folder
-echo "cleaning translations"
+chmod +x $release_folder/install_fritzing.sh
 
+cd $release_folder
+
+echo "cleaning translations"
 rm ./translations/*.ts  			# remove translation xml files, since we only need the binaries in the release
 find ./translations -name "*.qm" -size -128c -delete   # delete empty translation binaries
 
+echo "cloning fritzing-parts"
 git clone https://github.com/fritzing/fritzing-parts.git
 
 echo "making library folders"

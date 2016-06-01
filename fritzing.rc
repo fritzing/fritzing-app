@@ -1,4 +1,4 @@
-IDI_ICON1               ICON    DISCARDABLE     "resources/images/fritzing_icon.ico"
+IDI_ICON1               ICON    DISCARDABLE     "resources/system_icons/win/fritzing_icon.ico"
 
 #include <windows.h>
 

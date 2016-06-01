@@ -63,12 +63,15 @@ cp -rf sketches/ help/ translations/ Fritzing.sh Fritzing.1 fritzing.desktop fri
 mkdir $release_folder/icons
 cp resources/system_icons/linux/* $release_folder/icons/
 mv Fritzing $release_folder/
-cd $release_folder
-echo "cleaning translations"
+chmod +x $release_folder/install_fritzing.sh
 
+cd $release_folder
+
+echo "cleaning translations"
 rm ./translations/*.ts  			# remove translation xml files, since we only need the binaries in the release
 find ./translations -name "*.qm" -size -128c -delete   # delete empty translation binaries
 
+echo "cloning fritzing-parts"
 git clone https://github.com/fritzing/fritzing-parts.git
 
 echo "making library folders"

@@ -3,7 +3,7 @@ echo off
 echo .
 echo you must start this script from the Visual Studio Command Line Window
 echo find this under the start menu at (depending on your version of Visual Studio):
-echo     All Programs / Microsoft Visual Studio 2012 / Visual Studio Tools / Developer Command Prompt 
+echo     All Programs / Microsoft Visual Studio 2012 / Visual Studio Tools / Developer Command Prompt
 echo for the 64-bit build, use the 64-bit prompt:
 echo     All Programs / Microsoft Visual Studio 2012 / Visual Studio Tools / VS2012 x64 Cross Tools Command Prompt
 echo.
@@ -59,7 +59,7 @@ IF %2==64 (
 		set arch=.
 	) ELSE (
 		echo second parameter--target architecture--should be either "32" for a 32-bit build or "64" for a 64-bit build
-		EXIT /B	
+		EXIT /B
 	)
 )
 
@@ -77,7 +77,7 @@ cd ..
 set LIBGIT2=%~dp0..\..\libgit2\build%2
 
 rem set environment variable for qmake phoenix.pro
-set RELEASE_SCRIPT="release_script"	
+set RELEASE_SCRIPT="release_script"
 
 
 %QMAKE% -o Makefile phoenix.pro %arch%
@@ -128,7 +128,7 @@ xcopy /q %QTBIN%\icu*.dll %DESTDIR%\deploy /E  /I
 copy %QTBIN%\..\plugins\imageformats\qjpeg.dll %DESTDIR%\deploy\lib\imageformats\qjpeg.dll
 copy %QTBIN%\..\plugins\sqldrivers\qsqlite.dll %DESTDIR%\deploy\lib\sqldrivers\qsqlite.dll
 copy %QTBIN%\..\plugins\platforms\qwindows.dll %DESTDIR%\deploy\platforms\qwindows.dll
-copy %QTBIN%\..\plugins\printsupport\windowsprintersupport.dll  %DESTDIR%\deploy\lib\printsupport\windowsprintersupport.dll 
+copy %QTBIN%\..\plugins\printsupport\windowsprintersupport.dll  %DESTDIR%\deploy\lib\printsupport\windowsprintersupport.dll
 
 echo copying git2.dll from %LIBGIT2%
 copy %LIBGIT2%\git2.dll  %DESTDIR%\deploy\git2.dll
@@ -177,11 +177,11 @@ IF %2==32 (
 )
 
 IF %3==2012 (
-    copy  "%VCINSTALLDIR%redist\%XFOLDER%\Microsoft.VC140.CRT\msvcp110.dll" %DESTDIR%\deploy\msvcp110.dll
-    copy  "%VCINSTALLDIR%redist\%XFOLDER%\Microsoft.VC140.CRT\msvcr110.dll" %DESTDIR%\deploy\msvcr110.dll
+    copy  "%VCINSTALLDIR%redist\%XFOLDER%\Microsoft.VC110.CRT\msvcp110.dll" %DESTDIR%\deploy\msvcp110.dll
+    copy  "%VCINSTALLDIR%redist\%XFOLDER%\Microsoft.VC110.CRT\msvcr110.dll" %DESTDIR%\deploy\msvcr110.dll
 ) ELSE IF %3==2013 (
-    copy  "%VCINSTALLDIR%redist\%XFOLDER%\Microsoft.VC140.CRT\msvcp120.dll" %DESTDIR%\deploy\msvcp120.dll
-    copy  "%VCINSTALLDIR%redist\%XFOLDER%\Microsoft.VC140.CRT\msvcr120.dll" %DESTDIR%\deploy\msvcr120.dll
+    copy  "%VCINSTALLDIR%redist\%XFOLDER%\Microsoft.VC120.CRT\msvcp120.dll" %DESTDIR%\deploy\msvcp120.dll
+    copy  "%VCINSTALLDIR%redist\%XFOLDER%\Microsoft.VC120.CRT\msvcr120.dll" %DESTDIR%\deploy\msvcr120.dll
 ) ELSE IF %3==2015 (
     copy  "%VCINSTALLDIR%redist\%XFOLDER%\Microsoft.VC140.CRT\msvcp140.dll" %DESTDIR%\deploy\msvcp140.dll
 	copy  "%VCINSTALLDIR%redist\%XFOLDER%\Microsoft.VC140.CRT\vcruntime140.dll" %DESTDIR%\deploy\vcruntime140.dll

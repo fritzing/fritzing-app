@@ -12,28 +12,6 @@ PACKAGESDIR="${MIMEDIR}/packages"
 
 APPDIR=$(dirname "$0")
 
-# check if user .mime.types file exists, otherwise create it
-if [ ! -f ~/.mime.types ]
-then
-	echo "creating user mime.types file"
-	touch ~/.mime.types
-fi
-
-# add MIME types for fritzing file formats
-grep -q application/x-fritzing ~/.mime.types
-if [ $? -eq 0 ]
-then
-	echo "fritzing mime types already registered"
-else
-	echo "application/x-fritzing-fz 	fritzing" >> ~/.mime.types
-	echo "application/x-fritzing-fzz 	fritzing" >> ~/.mime.types
-	echo "application/x-fritzing-fzp 	fritzing" >> ~/.mime.types
-	echo "application/x-fritzing-fzpz 	fritzing" >> ~/.mime.types
-	echo "application/x-fritzing-fzb 	fritzing" >> ~/.mime.types
-	echo "application/x-fritzing-fzbz 	fritzing" >> ~/.mime.types
-	echo "application/x-fritzing-fzm 	fritzing" >> ~/.mime.types
-fi
-
 cd $APPDIR
 
 # install fritzing into user MIME packages directory

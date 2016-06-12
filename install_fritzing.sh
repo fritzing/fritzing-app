@@ -49,23 +49,19 @@ xdg-mime default 'fritzing.desktop' application/x-fritzing-fzm
 
 # install image-files into user mime system with specified size
 # ~/.local/share/icons/hicolor/*size*
-xdg-icon-resource install --mode user --context mimetypes --size 128 'icons/fz_icon128.png' application-x-fritzing-fz
-xdg-icon-resource install --mode user --context mimetypes --size 256 'icons/fz_icon256.png' application-x-fritzing-fz
-xdg-icon-resource install --mode user --context mimetypes --size 128 'icons/fzz_icon128.png' application-x-fritzing-fzz
-xdg-icon-resource install --mode user --context mimetypes --size 256 'icons/fzz_icon256.png' application-x-fritzing-fzz
-xdg-icon-resource install --mode user --context mimetypes --size 128 'icons/fzp_icon128.png' application-x-fritzing-fzp
-xdg-icon-resource install --mode user --context mimetypes --size 256 'icons/fzp_icon256.png' application-x-fritzing-fzp
-xdg-icon-resource install --mode user --context mimetypes --size 128 'icons/fzpz_icon128.png' application-x-fritzing-fzpz
-xdg-icon-resource install --mode user --context mimetypes --size 256 'icons/fzpz_icon256.png' application-x-fritzing-fzpz
-xdg-icon-resource install --mode user --context mimetypes --size 128 'icons/fzb_icon128.png' application-x-fritzing-fzb
-xdg-icon-resource install --mode user --context mimetypes --size 256 'icons/fzb_icon256.png' application-x-fritzing-fzb
-xdg-icon-resource install --mode user --context mimetypes --size 128 'icons/fzbz_icon128.png' application-x-fritzing-fzbz
-xdg-icon-resource install --mode user --context mimetypes --size 256 'icons/fzbz_icon256.png' application-x-fritzing-fzbz
-xdg-icon-resource install --mode user --context mimetypes --size 128 'icons/fzm_icon128.png' application-x-fritzing-fzm
-xdg-icon-resource install --mode user --context mimetypes --size 256 'icons/fzm_icon256.png' application-x-fritzing-fzm
+ICON_SIZES="128 256"
+FILE_EXTENSIONS="fz fzz fzb fzbz fzp fzpz fzm"
+for size in ${ICON_SIZES}; do
+	for extension in ${FILE_EXTENSIONS}; do
+		xdg-icon-resource install --noupdate --mode user --context mimetypes \
+			--size ${size} "icons/${extension}_icon${size}.png" \
+			"application-x-fritzing-${extension}"
+	done
+done
 
 # update user databases
 update-desktop-database ~/.local/share/applications
 update-mime-database ~/.local/share/mime
+xdg-icon-resource forceupdate --mode user
 
 echo "installed fritzing system icons"

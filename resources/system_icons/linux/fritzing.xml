@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mime-info xmlns='http://www.freedesktop.org/standards/shared-mime-info'>
+<mime-type type="application/x-fritzing-fzb">  
+<comment>Fritzing Parts Bin</comment>
+<glob pattern="*.fzb"/>
+</mime-type>
+<mime-type type="application/x-fritzing-fzbz">
+<comment>Fritzing Parts Bin Bundle</comment>
+<glob pattern="*.fzbz"/>
+</mime-type>
+<mime-type type="application/x-fritzing-fzm">
+<comment>Fritzing Module</comment>
+<glob pattern="*.fzm"/>
+</mime-type>
+<mime-type type="application/x-fritzing-fzp">
+<comment>Fritzing Part Definition</comment>
+<glob pattern="*.fzp"/>
+</mime-type>
+<mime-type type="application/x-fritzing-fzpz">
+<comment>Fritzing Part Bundle</comment>
+<glob pattern="*.fzpz"/>
+</mime-type>
+<mime-type type="application/x-fritzing-fz">
+<comment>Fritzing Sketch</comment>
+<glob pattern="*.fz"/>
+</mime-type>
+<mime-type type="application/x-fritzing-fzz">
+<comment>Fritzing Sketch Bundle</comment>
+<glob pattern="*.fzz"/>
+</mime-type>
+</mime-info>

@@ -115,6 +115,9 @@ unix {
         desktop.path = $$DATADIR/applications
         desktop.files += fritzing.desktop
 
+        mimedb.path = $$DATADIR/mime/packages
+        mimedb.files += resources/system_icons/linux/fritzing.xml
+
         manpage.path = $$DATADIR/man/man1
         manpage.files += Fritzing.1
 
@@ -139,7 +142,7 @@ unix {
         syntax.path = $$PKGDATADIR/translations/syntax
         syntax.files += translations/syntax/*.xml
 
-        INSTALLS += target desktop manpage icon parts sketches bins translations syntax help
+        INSTALLS += target desktop mimedb manpage icon parts sketches bins translations syntax help
 }
 
 ICON = resources/system_icons/macosx/fritzing_icon.icns

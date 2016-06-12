@@ -37,14 +37,9 @@ cd $APPDIR
 mkdir -p "${PACKAGESDIR}"
 cp icons/fritzing.xml "${PACKAGESDIR}" || exit 1
 
-# set the default application to fritzing.desktop
-xdg-mime default 'fritzing.desktop' application/x-fritzing-fz
-xdg-mime default 'fritzing.desktop' application/x-fritzing-fzz
-xdg-mime default 'fritzing.desktop' application/x-fritzing-fzp
-xdg-mime default 'fritzing.desktop' application/x-fritzing-fzpz
-xdg-mime default 'fritzing.desktop' application/x-fritzing-fzb
-xdg-mime default 'fritzing.desktop' application/x-fritzing-fzbz
-xdg-mime default 'fritzing.desktop' application/x-fritzing-fzm
+# install fritzing desktop entry for user (includes mime associations)
+desktop-file-edit --set-key=Exec --set-value="$(pwd)/Fritzing" fritzing.desktop
+xdg-desktop-menu install --novendor --mode user fritzing.desktop
 
 # install image-files into user mime system with specified size
 # ~/.local/share/icons/hicolor/*size*

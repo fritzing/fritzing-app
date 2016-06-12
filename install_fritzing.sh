@@ -41,8 +41,12 @@ cp icons/fritzing.xml "${PACKAGESDIR}" || exit 1
 desktop-file-edit --set-key=Exec --set-value="$(pwd)/Fritzing" fritzing.desktop
 xdg-desktop-menu install --novendor --mode user fritzing.desktop
 
-# install image-files into user mime system with specified size
+# install image-files into user hicolor theme with specified size
 # ~/.local/share/icons/hicolor/*size*
+#    /apps
+xdg-icon-resource install --noupdate --novendor --mode user --context apps \
+	--size 256 icons/fritzing_icon.png fritzing
+#    /mimetypes
 ICON_SIZES="128 256"
 FILE_EXTENSIONS="fz fzz fzb fzbz fzp fzpz fzm"
 for size in ${ICON_SIZES}; do

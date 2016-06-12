@@ -3,6 +3,10 @@
 # this is a rough beginning of a linux install script for fritzing
 # sets up document icons and file associations using mime types
 
+APPLICATIONSDIR="${HOME}/.local/share/applications"
+MIMEDIR="${HOME}/.local/share/mime"
+PACKAGESDIR="${MIMEDIR}/packages"
+
 APPDIR=$(dirname "$0")
 
 # check if user .mime.types file exists, otherwise create it
@@ -29,14 +33,9 @@ fi
 
 cd $APPDIR
 
-# install fritzing into mime user directory
-xdg-mime install --mode user 'icons/x-fritzing-fz.xml'
-xdg-mime install --mode user 'icons/x-fritzing-fzz.xml'
-xdg-mime install --mode user 'icons/x-fritzing-fzp.xml'
-xdg-mime install --mode user 'icons/x-fritzing-fzpz.xml'
-xdg-mime install --mode user 'icons/x-fritzing-fzb.xml'
-xdg-mime install --mode user 'icons/x-fritzing-fzbz.xml'
-xdg-mime install --mode user 'icons/x-fritzing-fzm.xml'
+# install fritzing into user mime packages directory
+mkdir -p "${PACKAGESDIR}"
+cp icons/fritzing.xml "${PACKAGESDIR}" || exit 1
 
 # set the default application to fritzing.desktop
 xdg-mime default 'fritzing.desktop' application/x-fritzing-fz
@@ -60,8 +59,8 @@ for size in ${ICON_SIZES}; do
 done
 
 # update user databases
-update-desktop-database ~/.local/share/applications
-update-mime-database ~/.local/share/mime
+update-desktop-database "${APPLICATIONSDIR}"
+update-mime-database "${MIMEDIR}"
 xdg-icon-resource forceupdate --mode user
 
 echo "installed fritzing system icons"

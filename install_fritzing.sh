@@ -1,7 +1,10 @@
 #!/bin/sh
 #
 # this is a rough beginning of a linux install script for fritzing
-# sets up document icons and file associations using mime types
+# sets up document icons and file associations using MIME types
+#
+# first ensure fritzing is unpacked in its final destination
+# and then run this script
 
 APPLICATIONSDIR="${HOME}/.local/share/applications"
 MIMEDIR="${HOME}/.local/share/mime"
@@ -16,7 +19,7 @@ then
 	touch ~/.mime.types
 fi
 
-# add mime types for fritzing file formats
+# add MIME types for fritzing file formats
 grep -q application/x-fritzing ~/.mime.types
 if [ $? -eq 0 ]
 then
@@ -33,11 +36,11 @@ fi
 
 cd $APPDIR
 
-# install fritzing into user mime packages directory
+# install fritzing into user MIME packages directory
 mkdir -p "${PACKAGESDIR}"
 cp icons/fritzing.xml "${PACKAGESDIR}" || exit 1
 
-# install fritzing desktop entry for user (includes mime associations)
+# install fritzing desktop entry for user (includes MIME associations)
 desktop-file-edit --set-key=Exec --set-value="$(pwd)/Fritzing" fritzing.desktop
 xdg-desktop-menu install --novendor --mode user fritzing.desktop
 

@@ -42,7 +42,7 @@ rm ./translations/*.ts  			# remove translation xml files, since we only need th
 find ./translations -name "*.qm" -size -128c -delete   # delete empty translation binaries
 
 echo ">> clone parts repository"
-git clone https://github.com/fritzing/fritzing-parts.git
+git clone --depth 2 https://github.com/fritzing/fritzing-parts.git
 echo ">> build parts database and run fritzing"
 ./Fritzing -db "fritzing-parts/parts.db"  # -pp "fritzing-parts" -f "."
 

@@ -98,7 +98,9 @@ unix {
         } else {
             DEFINES += LINUX_32
         }
-        LIBS += -lz
+        !contains(DEFINES, QUAZIP_INSTALLED) {
+            LIBS += -lz
+        }
     }
 
         isEmpty(PREFIX) {
@@ -244,8 +246,8 @@ include(pri/qtsysteminfo.pri)
         include(pri/quazip.pri)
 }
 contains(DEFINES, QUAZIP_INSTALLED) {
-        INCLUDEPATH += /usr/include/quazip /usr/include/minizip
-        LIBS += -lquazip -lminizip
+        INCLUDEPATH += /usr/include/quazip
+        LIBS += -lquazip
 }
 
 TARGET = Fritzing

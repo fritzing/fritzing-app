@@ -151,8 +151,8 @@ int main(int argc, char *argv[])
 			app->finish();
 		}
 		else {
-			qDebug() << "\n"
-                "Fritzing version " << Version::versionString() << " , Qt version " << QT_VERSION_STR << "\n"
+			qDebug() <<
+                "Fritzing version" << Version::versionString() << "- Qt version" << QT_VERSION_STR << "\n"
                 "\n"
                 "usage: fritzing [-d] [-f path] filename\n"
                 "       fritzing [-f path] -geda folder\n"
@@ -191,8 +191,7 @@ int main(int argc, char *argv[])
 				"The -ep option creates a menu item to launch an external process,\n"
 				"and puts the standard output of that process into a dialog window in Fritzing.\n"
 				"The process path follows the -ep argument; the name of the menu item follows the -epname argument;\n"
-				"and any arguments to pass to the external process are provided in the -eparg argments.\n"
-				"\n";
+				"and any arguments to pass to the external process are provided in the -eparg argments.";
 		}
 		delete app;
 	}

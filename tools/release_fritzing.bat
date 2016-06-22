@@ -157,7 +157,7 @@ set CURRENTDIR=%cd%
 cd %DESTDIR%
 cd deploy
 
-git clone https://github.com/fritzing/fritzing-parts.git
+git clone --depth 2 https://github.com/fritzing/fritzing-parts.git
 
 del/s placeholder.txt
 cd translations

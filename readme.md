@@ -4,7 +4,7 @@ The Fritzing application is an Electronic Design Automation software with a low 
 
 * For more information on Fritzing and its related activities, visit [http://fritzing.org](http://fritzing.org). There you can also [download](http://fritzing.org/download) the latest releases for all platforms and get help on getting started.
 
-* To report a problem or suggest improvements, use the [issue tracker](https://github.com/fritzing/fritzing-app/issues) or the [user forums](http://fritzing.org/forum)
+* To report a problem or suggest improvements, use the [issue tracker](https://github.com/fritzing/fritzing-app/issues) or the [user forum](http://forum.fritzing.org)
 
 * If you would like to help with the development, please take a look at the [developer instructions](https://github.com/fritzing/fritzing-app/wiki). This includes information about how to compile and run the Fritzing app in a few steps.
 

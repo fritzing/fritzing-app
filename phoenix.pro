@@ -46,8 +46,7 @@ win32 {
         RELDIR = ../release64
         DEBDIR = ../debug64
         DEFINES += WIN64
-    }
-    !contains(QMAKE_TARGET.arch, x86_64) {
+    } else {
         RELDIR = ../release32
         DEBDIR = ../debug32
     }
@@ -169,8 +168,7 @@ RESOURCES += phoenixresources.qrc
 LIBGIT2INCLUDE = ../libgit2/include
 exists($$LIBGIT2INCLUDE/git2.h) {
     message("found libgit2 include path at $$LIBGIT2INCLUDE")
-}
-else {
+} else {
     message("Fritzing requires libgit2")
     message("Build it from the repo at https://github.com/libgit2")
     message("See https://github.com/fritzing/fritzing-app/wiki for details.")
@@ -183,15 +181,13 @@ INCLUDEPATH += $$LIBGIT2INCLUDE
 win32 {
     contains(QMAKE_TARGET.arch, x86_64) {
         LIBGIT2LIB = ../libgit2/build64
-    }
-    else {
+    } else {
         LIBGIT2LIB = ../libgit2/build32
     }
 
     exists($$LIBGIT2LIB/git2.lib) {
         message("found libgit2 library in $$LIBGIT2LIB")
-    }
-    else {
+    } else {
         error("libgit2 library not found in $$LIBGIT2LIB")
     }
 }
@@ -201,16 +197,13 @@ unix {
     macx {
         exists($$LIBGIT2LIB/libgit2.dylib) {
             message("found libgit2 library in $$LIBGIT2LIB")
-        }
-        else {
+        } else {
             error("libgit2 library not found in $$LIBGIT2LIB")
         }
-    }
-    !macx {
+    } else {
         exists($$LIBGIT2LIB/libgit2.so) {
             message("found libgit2 library in $$LIBGIT2LIB")
-        }
-        else {
+        } else {
             error("libgit2 library not found in $$LIBGIT2LIB")
         }
     }
@@ -240,12 +233,11 @@ include(pri/translations.pri)
 include(pri/program.pri)
 include(pri/qtsysteminfo.pri)
 
-!contains(DEFINES, QUAZIP_INSTALLED) {
-    include(pri/quazip.pri)
-}
 contains(DEFINES, QUAZIP_INSTALLED) {
     INCLUDEPATH += /usr/include/quazip
     LIBS += -lquazip
+} else {
+    include(pri/quazip.pri)
 }
 
 TARGET = Fritzing

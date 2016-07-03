@@ -54,6 +54,9 @@ else
   arch='i386'
 fi
 
+# not building for installation into filesystem
+sed -i 's:PKGDATADIR=\\\\\\"\$\$PKGDATADIR\\\\\\"::' phoenix.pro || exit 1
+
 quazip='QUAZIP_LIB'
 echo "using src/lib/quazip"
 

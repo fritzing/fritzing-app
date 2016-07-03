@@ -19,6 +19,9 @@ builddir=$workingdir/../release64  # this is pre-defined by Qt
 echo ">> build directory"
 echo "$builddir"
 
+# not building for installation into filesystem
+sed -i 's:PKGDATADIR=\\\\\\"\$\$PKGDATADIR\\\\\\"::' phoenix.pro || exit 1
+
 echo ">> building fritzing from working directory"
 $QTBIN/qmake -o Makefile phoenix.pro
 make "-j$(sysctl -n machdep.cpu.thread_count)" release  # release is the type of build

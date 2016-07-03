@@ -118,6 +118,23 @@ QDir FolderUtils::getAppPartsSubFolder(QString search) {
 
 QDir FolderUtils::getAppPartsSubFolder2(QString search) {
 	if (m_partsPath.isEmpty()) {
+#ifdef PKGDATADIR
+		QStringList candidates;
+		candidates.append(QDir::homePath() + "/.local/share/fritzing");
+		candidates.append("/usr/local/share/fritzing");
+		candidates.append(m_appPath);
+		foreach (const QString &candidate, candidates) {
+			QList<QDir> dirList;
+			dirList.append(QDir(candidate + "/fritzing-parts"));
+			dirList.append(QDir(candidate + "/parts"));
+			foreach (const QDir &dir, dirList) {
+				m_partsPath = dir.absolutePath();
+				if (dir.exists()) {
+					goto setpath;
+				}
+			}
+		}
+#else
 		QDir dir = getApplicationSubFolder("fritzing-parts");
 		if (dir.exists()) {
 			m_partsPath = dir.absolutePath();
@@ -128,9 +145,10 @@ QDir FolderUtils::getAppPartsSubFolder2(QString search) {
 				m_partsPath = dir.absolutePath();
 			}
 		}
+#endif
 	}
 
-
+setpath:
 	QString path = search.isEmpty() ? m_partsPath : m_partsPath + "/" + search;
 	//DebugDialog::debug(QString("path %1").arg(path) );
 	QDir dir(path);

@@ -233,6 +233,10 @@ include(pri/translations.pri)
 include(pri/program.pri)
 include(pri/qtsysteminfo.pri)
 
+!contains(DEFINES, BOOST_INSTALLED) {
+    include(pri/boostdetect.pri)
+}
+
 contains(DEFINES, QUAZIP_INSTALLED) {
     INCLUDEPATH += /usr/include/quazip
     LIBS += -lquazip

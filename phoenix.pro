@@ -1,7 +1,7 @@
 # /*******************************************************************
 #
 # Part of the Fritzing project - http://fritzing.org
-# Copyright (c) 2007-08 Fritzing
+# Copyright (c) 2007-16 Fritzing
 #
 # Fritzing is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -31,6 +31,10 @@
 # QTPLUGIN  += qjpeg qsqlite
 
 CONFIG += debug_and_release
+
+unix:!macx {
+    CONFIG += link_pkgconfig
+}
 
 win32 {
 # release build using msvc 2010 needs to use Multi-threaded (/MT) for the code generation/runtime library option
@@ -164,52 +168,11 @@ RC_FILE = fritzing.rc
 RESOURCES += phoenixresources.qrc
 
 # Fritzing is using libgit2 since version 0.9.3
-
-LIBGIT2INCLUDE = ../libgit2/include
-exists($$LIBGIT2INCLUDE/git2.h) {
-    message("found libgit2 include path at $$LIBGIT2INCLUDE")
+packagesExist(libgit2) {
+    PKGCONFIG += libgit2
 } else {
-    message("Fritzing requires libgit2")
-    message("Build it from the repo at https://github.com/libgit2")
-    message("See https://github.com/fritzing/fritzing-app/wiki for details.")
-
-    error("libgit2 include path not found in $$LIBGIT2INCLUDE")
+    include(pri/libgit2detect.pri)
 }
-
-INCLUDEPATH += $$LIBGIT2INCLUDE
-
-win32 {
-    contains(QMAKE_TARGET.arch, x86_64) {
-        LIBGIT2LIB = ../libgit2/build64
-    } else {
-        LIBGIT2LIB = ../libgit2/build32
-    }
-
-    exists($$LIBGIT2LIB/git2.lib) {
-        message("found libgit2 library in $$LIBGIT2LIB")
-    } else {
-        error("libgit2 library not found in $$LIBGIT2LIB")
-    }
-}
-
-unix {
-    LIBGIT2LIB = ../libgit2/build
-    macx {
-        exists($$LIBGIT2LIB/libgit2.dylib) {
-            message("found libgit2 library in $$LIBGIT2LIB")
-        } else {
-            error("libgit2 library not found in $$LIBGIT2LIB")
-        }
-    } else {
-        exists($$LIBGIT2LIB/libgit2.so) {
-            message("found libgit2 library in $$LIBGIT2LIB")
-        } else {
-            error("libgit2 library not found in $$LIBGIT2LIB")
-        }
-    }
-}
-
-LIBS += -L$$LIBGIT2LIB -lgit2
 
 include(pri/kitchensink.pri)
 include(pri/mainwindow.pri)

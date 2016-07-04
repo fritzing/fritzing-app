@@ -36,6 +36,8 @@ unix:!macx {
     CONFIG += link_pkgconfig
 }
 
+load(configure)
+
 win32 {
 # release build using msvc 2010 needs to use Multi-threaded (/MT) for the code generation/runtime library option
 # release build using msvc 2010 needs to add msvcrt.lib;%(IgnoreSpecificDefaultLibraries) to the linker/no default libraries option
@@ -195,10 +197,6 @@ include(pri/sketch.pri)
 include(pri/translations.pri)
 include(pri/program.pri)
 include(pri/qtsysteminfo.pri)
-
-!contains(DEFINES, BOOST_INSTALLED) {
-    include(pri/boostdetect.pri)
-}
 
 contains(DEFINES, QUAZIP_INSTALLED) {
     INCLUDEPATH += /usr/include/quazip

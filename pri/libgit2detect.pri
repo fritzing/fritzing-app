@@ -13,7 +13,7 @@
 # along with Fritzing. If not, see <http://www.gnu.org/licenses/>.
 # ********************************************************************
 
-LIBGIT2INCLUDE = ../libgit2/include
+LIBGIT2INCLUDE = $$_PRO_FILE_PWD_/../libgit2/include
 exists($$LIBGIT2INCLUDE/git2.h) {
     message("found libgit2 include path at $$LIBGIT2INCLUDE")
 } else {
@@ -41,7 +41,7 @@ win32 {
 }
 
 unix {
-    LIBGIT2LIB = ../libgit2/build
+    LIBGIT2LIB = $$_PRO_FILE_PWD_/../libgit2/build
     macx {
         exists($$LIBGIT2LIB/libgit2.dylib) {
             message("found libgit2 library in $$LIBGIT2LIB")

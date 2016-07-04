@@ -29,14 +29,12 @@ for(boost, BOOSTS) {
 contains(LATESTBOOST, 0) {
     unix {
         !macx {
-            BOOSTINFO = $$system(dpkg -s libboost-dev | grep 'Version')
-            BADVERSION = $$find(BOOSTINFO, 1\.54)
+            BOOSTVERSION = $$system(ldconfig -p | grep libboost_filesystem.so | grep -o 1\...\.0 | head -n1)
+            BADVERSION = $$find(BOOSTVERSION, 1\.54)
             !isEmpty(BADVERSION) {
                 message("Boost 1.54 has a bug in a function that Fritzing uses, so download or install some other version")
                 error("Easiest to copy the boost library to .../src/lib/, so that you have .../src/lib/boost_1_xx_0")
-            }
-            isEmpty(BADVERSION) {
-                BOOSTVERSION = $$find(BOOSTINFO, 1\...\.0)
+            } else {
                 !isEmpty(BOOSTVERSION) {
                     LATESTBOOST = installed
                     message("using installed BOOST library")

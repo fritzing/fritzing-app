@@ -200,7 +200,6 @@ include(pri/program.pri)
 include(pri/qtsysteminfo.pri)
 
 contains(DEFINES, QUAZIP_INSTALLED) {
-    INCLUDEPATH += /usr/include/quazip
     LIBS += -lquazip
 } else {
     include(pri/quazip.pri)

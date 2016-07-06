@@ -102,7 +102,7 @@ unix {
         } else {
             DEFINES += LINUX_32
         }
-        !contains(DEFINES, QUAZIP_INSTALLED) {
+        isEmpty(SYSTEM_QUAZIP) {
             LIBS += -lz
         }
     }
@@ -199,10 +199,16 @@ include(pri/translations.pri)
 include(pri/program.pri)
 include(pri/qtsysteminfo.pri)
 
-contains(DEFINES, QUAZIP_INSTALLED) {
-    LIBS += -lquazip
-} else {
+isEmpty(SYSTEM_QUAZIP) {
     include(pri/quazip.pri)
+} else {
+    qtCompileTest(quazip)
+    !config_quazip {
+        error("Requested system QuaZIP but it could not be found")
+    }
+    message("using installed QuaZIP library")
+    DEFINES += QUAZIP_INSTALLED
+    LIBS += -lquazip
 }
 
 TARGET = Fritzing

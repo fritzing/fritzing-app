@@ -29,9 +29,9 @@ else
 fi
 
 PKG_OK=$(dpkg-query -W --showformat='${Status}\n' libquazip-dev)
-quazip='QUAZIP_LIB'
+quazip=
 if [ "`expr index "$PKG_OK" installed`" -gt 0 ] ; then
-  quazip='QUAZIP_INSTALLED'
+  quazip=1
   echo "using installed quazip"
 else
   echo "using src/lib/quazip"
@@ -43,7 +43,7 @@ cd $app_folder
 echo "appfolder $app_folder"
 
 echo "compiling... if this is not taking a long time, something is probably wrong"
-$QT_HOME/bin/qmake CONFIG+=release DEFINES+=$quazip
+$QT_HOME/bin/qmake CONFIG+=release SYSTEM_QUAZIP=$quazip
 make
 
 release_name=fritzing-$relname.linux.$arch

@@ -47,7 +47,7 @@ win32 {
     DEFINES += _WINDOWS
     RELEASE_SCRIPT = $$(RELEASE_SCRIPT)    # environment variable set from release script
 
-    message("target arch: $${QMAKE_TARGET.arch}")
+    !build_pass:message("target arch: $${QMAKE_TARGET.arch}")
     contains(QMAKE_TARGET.arch, x86_64) {
         RELDIR = ../release64
         DEBDIR = ../debug64
@@ -171,7 +171,7 @@ RESOURCES += phoenixresources.qrc
 
 # Fritzing is using libgit2 since version 0.9.3
 packagesExist(libgit2) {
-    message("using installed libgit2 library")
+    !build_pass:message("using installed libgit2 library")
     PKGCONFIG += libgit2
 } else {
     include(pri/libgit2detect.pri)
@@ -206,7 +206,7 @@ isEmpty(SYSTEM_QUAZIP) {
     !config_quazip {
         error("Requested system QuaZIP but it could not be found")
     }
-    message("using installed QuaZIP library")
+    !build_pass:message("using installed QuaZIP library")
     DEFINES += QUAZIP_INSTALLED
     LIBS += -lquazip
 }
@@ -214,4 +214,4 @@ isEmpty(SYSTEM_QUAZIP) {
 TARGET = Fritzing
 TEMPLATE = app
 
-message("libs $$LIBS")
+!build_pass:message("libs $$LIBS")

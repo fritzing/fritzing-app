@@ -30,7 +30,7 @@ contains(LATESTBOOST, 0) {
     qtCompileTest(boost)
     config_boost {
         LATESTBOOST = installed
-        message("using installed Boost library")
+        !build_pass:message("using installed Boost library")
     } else {
         message("Boost 1.54 has a bug in a function that Fritzing uses, so download or install some other version")
         error("Easiest to copy the Boost library to .../src/lib/, so that you have .../src/lib/boost_1_xx_0")
@@ -38,7 +38,7 @@ contains(LATESTBOOST, 0) {
 }
 
 !contains(LATESTBOOST, installed) {
-    message("using Boost from src/lib/boost_1_$${LATESTBOOST}_0")
+    !build_pass:message("using Boost from src/lib/boost_1_$${LATESTBOOST}_0")
     INCLUDEPATH += src/lib/boost_1_$${LATESTBOOST}_0
 }
 

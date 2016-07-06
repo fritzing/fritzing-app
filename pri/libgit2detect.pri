@@ -15,7 +15,7 @@
 
 LIBGIT2INCLUDE = $$_PRO_FILE_PWD_/../libgit2/include
 exists($$LIBGIT2INCLUDE/git2.h) {
-    message("found libgit2 include path at $$LIBGIT2INCLUDE")
+    !build_pass:message("found libgit2 include path at $$LIBGIT2INCLUDE")
 } else {
     message("Fritzing requires libgit2")
     message("Build it from the repo at https://github.com/libgit2")
@@ -34,7 +34,7 @@ win32 {
     }
 
     exists($$LIBGIT2LIB/git2.lib) {
-        message("found libgit2 library in $$LIBGIT2LIB")
+        !build_pass:message("found libgit2 library in $$LIBGIT2LIB")
     } else {
         error("libgit2 library not found in $$LIBGIT2LIB")
     }
@@ -44,13 +44,13 @@ unix {
     LIBGIT2LIB = $$_PRO_FILE_PWD_/../libgit2/build
     macx {
         exists($$LIBGIT2LIB/libgit2.dylib) {
-            message("found libgit2 library in $$LIBGIT2LIB")
+            !build_pass:message("found libgit2 library in $$LIBGIT2LIB")
         } else {
             error("libgit2 library not found in $$LIBGIT2LIB")
         }
     } else {
         exists($$LIBGIT2LIB/libgit2.so) {
-            message("found libgit2 library in $$LIBGIT2LIB")
+            !build_pass:message("found libgit2 library in $$LIBGIT2LIB")
         } else {
             error("libgit2 library not found in $$LIBGIT2LIB")
         }

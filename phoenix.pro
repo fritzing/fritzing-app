@@ -171,6 +171,7 @@ RESOURCES += phoenixresources.qrc
 
 # Fritzing is using libgit2 since version 0.9.3
 packagesExist(libgit2) {
+    message("using installed libgit2 library")
     PKGCONFIG += libgit2
 } else {
     include(pri/libgit2detect.pri)

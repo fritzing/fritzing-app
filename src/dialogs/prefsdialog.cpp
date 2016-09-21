@@ -204,10 +204,9 @@ QWidget * PrefsDialog::createAutosaveForm() {
 	zhlayout->setSpacing(SPACING);
 
 	QCheckBox * box = new QCheckBox(tr("Autosave every:"));
+	box->setFixedWidth(FORMLABELWIDTH);
 	box->setChecked(MainWindow::AutosaveEnabled);
 	zhlayout->addWidget(box);
-
-	zhlayout->addSpacerItem(new QSpacerItem(0,0,QSizePolicy::Expanding));
 
 	QSpinBox * spinBox = new QSpinBox;
 	spinBox->setMinimum(1);
@@ -218,6 +217,8 @@ QWidget * PrefsDialog::createAutosaveForm() {
 
 	QLabel * label = new QLabel(tr("minutes"));
 	zhlayout->addWidget(label);
+
+	zhlayout->addSpacerItem(new QSpacerItem(0,0,QSizePolicy::Expanding));
 
 	autosave->setLayout(zhlayout);
 
@@ -338,7 +339,6 @@ QWidget* PrefsDialog::createOtherForm()
     layout->addLayout(vlayout);
 
 	QPushButton * clear = new QPushButton(QObject::tr("Clear Settings"), this);
-	clear->setMaximumWidth(220);
 	connect(clear, SIGNAL(clicked()), this, SLOT(clear()));
 
 	layout->addWidget(clear);	

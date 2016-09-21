@@ -314,6 +314,7 @@ QWidget* PrefsDialog::createOtherForm()
     vlayout->setSpacing(0);
 
     QLabel * clearLabel = new QLabel(QObject::tr("Clear all saved settings and close this dialog immediately."));
+    clearLabel->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
     clearLabel->setWordWrap(true);
     clearLabel->setFixedWidth(FORMLABELWIDTH);
     vlayout->addWidget(clearLabel);
@@ -321,6 +322,7 @@ QWidget* PrefsDialog::createOtherForm()
     vlayout->addSpacing(SPACING);
 
     clearLabel = new QLabel(QObject::tr("This action does not delete any files; it restores settings to their default values."));
+    clearLabel->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
     clearLabel->setWordWrap(true);
     clearLabel->setFixedWidth(FORMLABELWIDTH);
     vlayout->addWidget(clearLabel);
@@ -328,6 +330,7 @@ QWidget* PrefsDialog::createOtherForm()
     vlayout->addSpacing(SPACING);
 
     clearLabel = new QLabel(QObject::tr("There is no undo for this action, and no further warning!!!!"));
+    clearLabel->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
     clearLabel->setWordWrap(true);
     clearLabel->setFixedWidth(FORMLABELWIDTH);
     vlayout->addWidget(clearLabel);

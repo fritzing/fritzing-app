@@ -117,9 +117,9 @@ void PrefsDialog::initGeneral(QWidget * widget, QFileInfoList & languages)
 {
 	QVBoxLayout * vLayout = new QVBoxLayout();
 
-	// TODO: if no translation files found, don't put up the translation part of this dialog
-
-    vLayout->addWidget(createLanguageForm(languages));
+	if (languages.size() > 1) {
+		vLayout->addWidget(createLanguageForm(languages));
+	}
 	vLayout->addWidget(createColorForm());
 	vLayout->addWidget(createZoomerForm());
 	vLayout->addWidget(createAutosaveForm());

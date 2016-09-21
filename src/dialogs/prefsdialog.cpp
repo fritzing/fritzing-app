@@ -309,7 +309,6 @@ QWidget* PrefsDialog::createOtherForm()
     QHBoxLayout *layout = new QHBoxLayout();
     layout->setSpacing(SPACING);
 
-    QFrame * frame = new QFrame;
     QVBoxLayout * vlayout = new QVBoxLayout();
     vlayout->setMargin(0);
     vlayout->setSpacing(0);
@@ -333,8 +332,7 @@ QWidget* PrefsDialog::createOtherForm()
     clearLabel->setFixedWidth(FORMLABELWIDTH);
     vlayout->addWidget(clearLabel);
 
-    frame->setLayout(vlayout);
-    layout->addWidget(frame);
+    layout->addLayout(vlayout);
 
 	QPushButton * clear = new QPushButton(QObject::tr("Clear Settings"), this);
 	clear->setMaximumWidth(220);

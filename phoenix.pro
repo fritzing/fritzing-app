@@ -36,6 +36,19 @@ unix:!macx {
     CONFIG += link_pkgconfig
 }
 
+macx {
+    # Support for pkg-config is disabled by default in the Qt package for mac
+    # However, it can be installed with macPorts/Brew etc.
+    # So check if it exists, and re-enable if it does.
+
+    PKG_CONFIG_BIN = $$system(which pkg-config)
+
+    !isEmpty(PKG_CONFIG_BIN) {
+        QT_CONFIG -= no-pkg-config
+        CONFIG += link_pkgconfig
+    }
+}
+
 load(configure)
 
 win32 {

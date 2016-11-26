@@ -2,8 +2,8 @@
 Name=Fritzing
 GenericName=Fritzing
 Comment=Electronic Design Automation software
-Exec=Fritzing
-Icon=fritzing
+Exec=fritzing
+Icon=/usr/share/icons/fritzing_icon.png
 Terminal=false
 Type=Application
 Categories=Development;IDE;Electronics;X-EDA;X-PCB;

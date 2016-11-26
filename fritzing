@@ -1,0 +1,4 @@
+#!/bin/sh
+
+cd ~/.fritzing-0.9.3b
+./Fritzing

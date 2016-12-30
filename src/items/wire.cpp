@@ -1988,9 +1988,13 @@ QColor Wire::colorForLength() {
         return color();
     }
     qreal length = m_line.length();
-    int wireLength = qCeil(.111 * length); // I have no idea what units this is in
-    if (wireLength > 0 && wireLength <= lengthColorTrans.count()) {
-        return lengthColorTrans[wireLength - 1];
+    qint32 wireLength = qRound(.111 * length); // I have no idea what units this is in
+    if (wireLength < 1) {
+        wireLength = 1;
+    }
+    wireLength -= 1;
+    if (wireLength < lengthColorTrans.count()) {
+        return lengthColorTrans[wireLength];
     }
 
     return color();

@@ -33,6 +33,7 @@ $Date: 2013-04-21 09:50:09 +0200 (So, 21. Apr 2013) $
 #include "../waitpushundostack.h"
 
 #include <QScrollBar>
+#include <QSettings>
 
 static const double WireHoverStrokeFactor = 4.0;
 
@@ -42,6 +43,13 @@ BreadboardSketchWidget::BreadboardSketchWidget(ViewLayer::ViewID viewID, QWidget
 	m_shortName = QObject::tr("bb");
 	m_viewName = QObject::tr("Breadboard View");
 	initBackgroundColor();
+
+    m_colorWiresByLength = false;
+    QSettings settings;
+    QString colorWiresByLength = settings.value(QString("%1ColorWiresByLength").arg(getShortName())).toString();
+    if (!colorWiresByLength.isEmpty()) {
+        m_colorWiresByLength = (colorWiresByLength.compare("1") == 0);
+    }
 }
 
 void BreadboardSketchWidget::setWireVisible(Wire * wire)
@@ -141,6 +149,7 @@ void BreadboardSketchWidget::initWire(Wire * wire, int penWidth) {
 	}
 	wire->setPenWidth(penWidth - 2, this, (penWidth - 2) * WireHoverStrokeFactor);
 	wire->setColorString("blue", 1.0, false);
+    wire->colorByLength(m_colorWiresByLength);
 }
 
 const QString & BreadboardSketchWidget::traceColor(ViewLayer::ViewLayerPlacement) {
@@ -247,3 +256,22 @@ void BreadboardSketchWidget::getBendpointWidths(Wire * wire, double width, doubl
 	bendpoint2Width = bendpointWidth = -1;
 	negativeOffsetRect = true;
 }
+
+void BreadboardSketchWidget::colorWiresByLength(bool colorByLength) {
+    m_colorWiresByLength = colorByLength;
+    QSettings settings;
+    settings.setValue(QString("%1ColorWiresByLength").arg(viewName()), colorByLength);
+
+    QList<Wire *> wires;
+    QList<Wire *> visited;
+    foreach (QGraphicsItem * item, scene()->items()) {
+        Wire * wire = dynamic_cast<Wire *>(item);
+        if (wire == NULL) continue;
+        wire->colorByLength(colorByLength);
+    }
+}
+
+bool BreadboardSketchWidget::coloringWiresByLength() {
+    return m_colorWiresByLength;
+}
+

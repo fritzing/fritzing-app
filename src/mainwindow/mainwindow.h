@@ -302,6 +302,7 @@ protected slots:
     void showGrid();
     void setGridSize();
     void setBackgroundColor();
+    void colorWiresByLength();
     void showBreadboardView();
     void showSchematicView();
     void showProgramView();
@@ -814,6 +815,7 @@ protected:
     QAction *m_showGridAct;
     QAction *m_setGridSizeAct;
     QAction *m_setBackgroundColorAct;
+    QAction *m_colorWiresByLengthAct;
     QAction *m_showWelcomeAct;
     QAction *m_showBreadboardAct;
     QAction *m_showSchematicAct;

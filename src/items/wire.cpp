@@ -51,6 +51,7 @@ later:
 
 #include "wire.h"
 
+#include <qmath.h>
 #include <QLineF>
 #include <QPen>
 #include <QRadialGradient>
@@ -92,6 +93,7 @@ QHash<QString, QString> Wire::colorTrans;
 QStringList Wire::colorNames;
 QHash<int, QString> Wire::widthTrans;
 QList<int> Wire::widths;
+QList<QColor> Wire::lengthColorTrans;
 double Wire::STANDARD_TRACE_WIDTH;
 double Wire::HALF_STANDARD_TRACE_WIDTH;
 double Wire::THIN_TRACE_WIDTH;
@@ -153,6 +155,7 @@ Wire::Wire( ModelPart * modelPart, ViewLayer::ViewID viewID,  const ViewGeometry
 	: ItemBase(modelPart, viewID, viewGeometry, id, itemMenu)
 {
     m_banded = false;
+    m_colorByLength = false;
 	m_bezier = NULL;
 	m_displayBendpointCursor = m_canHaveCurve = true;
 	m_hoverStrokeWidth = DefaultHoverStrokeWidth;
@@ -329,8 +332,14 @@ void Wire::paintBody(QPainter * painter, const QStyleOptionGraphicsItem * option
     if (getRatsnest()) {
         m_pen.setDashPattern(RatDash);
     }
-	painter->setPen(m_pen);
-	if (painterPath.isEmpty()) {
+
+    QColor realColor = color();
+    if (coloredByLength()) {
+        m_pen.setColor(colorForLength());
+    }
+
+    painter->setPen(m_pen);
+    if (painterPath.isEmpty()) {
 		painter->drawLine(getPaintLine());	
 	}
 	else {
@@ -340,6 +349,10 @@ void Wire::paintBody(QPainter * painter, const QStyleOptionGraphicsItem * option
     if (m_banded) {
         m_pen.setStyle(Qt::SolidLine);
         m_pen.setCapStyle(Qt::RoundCap);
+    }
+
+    if (coloredByLength()) {
+        m_pen.setColor(realColor);
     }
 }
 
@@ -1301,6 +1314,19 @@ void Wire::initNames() {
 	colorTrans.insert(tr("brown"), "brown");
     colorTrans.insert(tr("purple"), "purple");
     colorTrans.insert(tr("pink"), "pink");
+
+    // List of standard breadboard jumper colors, as seen in various kits
+    lengthColorTrans.append(QColor(192, 192, 192)); // 100 mil -> silver (no insulator)
+    lengthColorTrans.append(QColor(209, 0, 0)); // 200mil -> red
+    lengthColorTrans.append(QColor(255, 102, 34)); // 300mil -> orange
+    lengthColorTrans.append(QColor(255, 218, 33)); // 400mil -> yellow
+    lengthColorTrans.append(QColor(51, 221, 0)); // 500mil -> green
+    lengthColorTrans.append(QColor(17, 51, 204)); // 600mil -> blue
+    lengthColorTrans.append(QColor(75, 0, 130)); // 700mil -> purple
+    lengthColorTrans.append(QColor(169, 169, 169)); // 800mil -> gray
+    lengthColorTrans.append(QColor(245, 245, 245)); // 900mil -> white
+    lengthColorTrans.append(QColor(139, 69, 19)); // 1000mil -> brown
+
 }
 
 bool Wire::hasFlag(ViewGeometry::WireFlag flag)
@@ -1954,5 +1980,28 @@ void Wire::setProp(const QString & prop, const QString & value) {
 	}
 
 	ItemBase::setProp(prop, value);
+}
+
+QColor Wire::colorForLength() {
+    // No point in recoloring bent breadboard wires
+    if (m_bezier) {
+        return color();
+    }
+    qreal length = m_line.length();
+    int wireLength = qCeil(.111 * length); // I have no idea what units this is in
+    if (wireLength > 0 && wireLength <= lengthColorTrans.count()) {
+        return lengthColorTrans[wireLength - 1];
+    }
+
+    return color();
+}
+
+bool Wire::coloredByLength() {
+    return m_colorByLength;
+}
+
+void Wire::colorByLength(bool colorByLength) {
+    m_colorByLength = colorByLength;
+    update();
 }
 

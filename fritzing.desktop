@@ -2,7 +2,7 @@
 Name=Fritzing
 GenericName=Fritzing
 Comment=Electronic Design Automation software
-Exec=Fritzing
+Exec=Fritzing %F
 Icon=fritzing
 Terminal=false
 Type=Application

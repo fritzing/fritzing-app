@@ -2,6 +2,7 @@
 Name=Fritzing
 GenericName=Fritzing
 Comment=Electronic Design Automation software
+Comment[fi]=Suunnittele elektronisia kytkentöjä ja piirilevyjä
 Comment[ru]=Программа проектирования электроники
 Exec=Fritzing %F
 Icon=fritzing

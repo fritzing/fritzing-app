@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2014-2017 Fritzing Team <info_AT_fritzing.org> -->
+<component type="desktop">
+ <id>org.fritzing.Fritzing.desktop</id>
+ <metadata_license>CC-BY-SA-3.0</metadata_license>
+ <project_license>GPL-3.0+</project_license>
+ <name>Fritzing</name>
+ <summary>Electronic Design Tool</summary>
+ <description>
+  <p>
+    Fritzing is an open-source electronic design tool focusing on makers, hobbyists, and everyone else
+    interested in getting creative with interactive electronics. Document your electronic sketches, learn
+    from example projects, produce your own PCBs, and share with the community.
+    Fritzing differs from other tools through:
+  </p>
+  <ul>
+    <li>A real-world breadboard view that is hands-on and easy to understand</li>
+    <li>A visual component library including the Arduino, Raspberry Pi, SparkFun parts and many more</li>
+    <li>An intuitive user interface, with seamless switching between breadboard, schematic and pcb design</li>
+  </ul>
+  <p>
+    The lively community on fritzing.org exchanges projects and tips, and there is also a PCB service "Fritzing Fab"
+    that produces user designs.
+  </p>
+ </description>
+ <screenshots>
+  <screenshot type="default">
+   <image>http://fritzing.org/static/img/fritzing-preview-bb.png</image>
+  </screenshot>
+  <screenshot>
+   <image>http://fritzing.org/static/img/fritzing-preview-schem.png</image>
+  </screenshot>
+  <screenshot>
+   <image>http://fritzing.org/static/img/fritzing-preview-pcb.png</image>
+  </screenshot>
+  <screenshot>
+   <image>http://fritzing.org/static/img/fritzing-preview-welcome.png</image>
+  </screenshot>
+ </screenshots>
+ <url type="homepage">http://fritzing.org/</url>
+ <url type="bugtracker">https://github.com/fritzing/fritzing-app/issues</url>
+ <url type="faq">http://fritzing.org/faq/</url>
+ <url type="help">http://fritzing.org/learning/</url>
+ <url type="donation">http://fritzing.org/shop/donations/</url>
+ <url type="translate">http://fritzing.org/support-us/language-translation/</url>
+ <releases>
+  <release version="0.9.3b" date="2016-06-01"/>
+ </releases>
+ <provides>
+  <binary>Fritzing</binary>
+ </provides>
+ <translation type="qt">fritzing</translation>
+ <update_contact>info_AT_fritzing.org</update_contact>
+</component>

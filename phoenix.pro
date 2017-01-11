@@ -122,6 +122,9 @@ unix {
     desktop.path = $$DATADIR/applications
     desktop.files += org.fritzing.Fritzing.desktop
 
+    appdata.path = $$DATADIR/metainfo
+    appdata.files += org.fritzing.Fritzing.appdata.xml
+
     mimedb.path = $$DATADIR/mime/packages
     mimedb.files += resources/system_icons/linux/fritzing.xml
 
@@ -154,7 +157,7 @@ unix {
     syntax.path = $$PKGDATADIR/translations/syntax
     syntax.files += translations/syntax/*.xml
 
-    INSTALLS += target desktop mimedb manpage icon parts sketches bins translations syntax help
+    INSTALLS += target desktop appdata mimedb manpage icon parts sketches bins translations syntax help
 }
 
 ICON = resources/system_icons/macosx/fritzing_icon.icns

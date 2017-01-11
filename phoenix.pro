@@ -120,7 +120,7 @@ unix {
     target.path = $$BINDIR
 
     desktop.path = $$DATADIR/applications
-    desktop.files += fritzing.desktop
+    desktop.files += org.fritzing.Fritzing.desktop
 
     mimedb.path = $$DATADIR/mime/packages
     mimedb.files += resources/system_icons/linux/fritzing.xml

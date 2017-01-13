@@ -22,7 +22,6 @@
 		<color name="white" ratsnest=""  wire="#ffffff" shadow="#999999" />
 		<color name="orange" ratsnest="#ef6100"  wire="#ef6100" shadow="#ad6a38" >
 			<obsolete name="orange" ratsnest="#ff7033"  wire="#ff7033" shadow="#d95821" />
-			<obsolete name="orange" ratsnest="#33ffc5"  wire="#33ffc5" shadow="#d95821" />
 		</color>
 		<color name="ochre" ratsnest="#a37911"  wire="#a37911" shadow="#846521" />
 		<color name="cyan" ratsnest="#33ffc5"  wire="#33ffc5" shadow="#00a0c6" />
@@ -55,7 +54,6 @@
 		<color name="orange" ratsnest="#ff7300"  wire="#ff7300" shadow="#d65b00" >
 			<obsolete name="orange" ratsnest="#ef6100"  wire="#ef6100" shadow="#ad6a38" />
 			<obsolete name="orange" ratsnest="#ff7033"  wire="#ff7033" shadow="#ff7033"/>
-			<obsolete name="orange" ratsnest="#33ffc5"  wire="#33ffc5" shadow="#33ffc5"/>
 		</color>
 		<color name="ochre" ratsnest="#a37911"  wire="#a37911" shadow="#846521" />
 		<color name="cyan" ratsnest="#33ffc5"  wire="#33ffc5" shadow="#00a0c6" />
@@ -88,7 +86,6 @@
 		</color>
 		<color name="orange" ratsnest=""> 
 			<obsolete name="orange" ratsnest="#ff7033" />
-			<obsolete name="orange" ratsnest="#33ffc5" />
 		</color>
 		-->
 		<color name="green" ratsnest="#1fb551">

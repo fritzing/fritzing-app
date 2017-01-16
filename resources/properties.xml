@@ -5,6 +5,74 @@
 	<menuItem value="NTC" />
 	<menuItem value="PTC" />
 </property>
+  <property name="capacitance5mm" symbol="F" minValue="0.000000000001" maxValue=".0047" defaultValue=".0000000001" numeric="yes" editable="yes" >	
+	<suffix suffix="CapacitorModuleID" />
+	<menuItem value="0.000000000100" />
+	<menuItem value="0.000000000150" />
+	<menuItem value="0.000000000220" />
+	<menuItem value="0.000000000330" />
+	<menuItem value="0.000000000470" />
+	<menuItem value="0.000000000680" />
+	<menuItem value="0.000000001000" />
+	<menuItem value="0.000000001500" />
+	<menuItem value="0.000000002200" />
+	<menuItem value="0.000000003300" />
+	<menuItem value="0.000000004700" />
+	<menuItem value="0.000000006800" />
+	<menuItem value="0.000000010000" />
+	<menuItem value="0.000000015000" />
+	<menuItem value="0.000000022000" />
+	<menuItem value="0.000000033000" />
+	<menuItem value="0.000000047000" />
+	<menuItem value="0.000000068000" />
+</property>
+  <property name="capacitance7.5mm" symbol="F" minValue="0.000000000001" maxValue=".0047" defaultValue=".00000001" numeric="yes" editable="yes" >	
+	<suffix suffix="CapacitorModuleID" />
+	<menuItem value="0.000000010000" />
+	<menuItem value="0.000000015000" />
+	<menuItem value="0.000000022000" />
+	<menuItem value="0.000000033000" />
+	<menuItem value="0.000000047000" />
+	<menuItem value="0.000000068000" />
+	<menuItem value="0.000000100000" />
+	<menuItem value="0.000000150000" />
+	<menuItem value="0.000000220000" />
+	<menuItem value="0.000000330000" />
+	<menuItem value="0.000000470000" />
+	<menuItem value="0.000000680000" />
+	<menuItem value="0.000001000000" />
+	<menuItem value="0.000001500000" />
+</property>
+  <property name="capacitance10mm" symbol="F" minValue="0.000000000001" maxValue=".0047" defaultValue=".0000022" numeric="yes" editable="yes" >	
+	<suffix suffix="CapacitorModuleID" />
+	<menuItem value="0.000002200000" />
+	<menuItem value="0.000003300000" />
+</property>
+  <property name="capacitance15mm" symbol="F" minValue="0.000000000001" maxValue=".0047" defaultValue=".0000047" numeric="yes" editable="yes" >	
+	<suffix suffix="CapacitorModuleID" />
+	<menuItem value="0.000004700000" />
+	<menuItem value="0.000006800000" />
+</property>
+  <property name="capacitance22.5mm" symbol="F" minValue="0.000000000001" maxValue=".0047" defaultValue=".00001" numeric="yes" editable="yes" >	
+	<suffix suffix="CapacitorModuleID" />
+	<menuItem value="0.000010000000" />
+	<menuItem value="0.000015000000" />
+</property>
+
+  <property name="capacitance27.5mm" symbol="F" minValue="0.000000000001" maxValue=".0047" defaultValue=".000022" numeric="yes" editable="yes" >	
+	<suffix suffix="CapacitorModuleID" />
+	<menuItem value="0.000022000000" />
+	<menuItem value="0.000033000000" />
+	<menuItem value="0.000047000000" />
+	<menuItem value="0.000068000000" />
+</property>
+  <property name="capacitance37.5mm" symbol="F" minValue="0.000000000001" maxValue=".0047" defaultValue=".0000001" numeric="yes" editable="yes" >	
+	<suffix suffix="CapacitorModuleID" />
+	<menuItem value="0.000100000000" />
+	<menuItem value="0.000150000000" />
+	<menuItem value="0.000220000000" />
+</property>
+
 
   <property name="capacitance" symbol="F" minValue="0.000000000001" maxValue=".0047" defaultValue=".0000001" numeric="yes" editable="yes" >	
 	<suffix suffix="CapacitorModuleID" />
@@ -44,6 +112,17 @@
 	<menuItem value="35" />
 	<menuItem value="50" />
 	<menuItem value="100" />
+</property>
+
+<property name="voltageHigh" symbol="V" minValue="5" maxValue="500" defaultValue="35" numeric="yes" editable="yes">
+ 	<suffix suffix="CapacitorModuleID"/>
+	<menuItem value="63" />
+	<menuItem value="100" />
+	<menuItem value="250" />
+	<menuItem value="400" />
+	<menuItem value="630" />
+	<menuItem value="800" />
+	<menuItem value="1000" />
 </property>
 
 <property name="voltage" symbol="V" minValue="0" maxValue="1000" defaultValue="5" numeric="yes" editable="yes">

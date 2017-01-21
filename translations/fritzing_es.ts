@@ -26,57 +26,57 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="122"/>
         <source>Prof. Reto Wettach, Andr&amp;eacute; Kn&amp;ouml;rig, Myriel Milicevic, </source>
-        <translation type="unfinished"></translation>
+        <translation>Prof. Reto Wettach, Andr&amp;eacute; Kn&amp;ouml;rig, Myriel Milicevic, </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="123"/>
         <source>Zach Eveland, Dirk van Oosterbosch, </source>
-        <translation type="unfinished"></translation>
+        <translation>Zach Eveland, Dirk van Oosterbosch, </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="124"/>
         <source>Jonathan Cohen, Marcus Paeschke, Omer Yosha, </source>
-        <translation type="unfinished"></translation>
+        <translation>Jonathan Cohen, Marcus Paeschke, Omer Yosha, </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="125"/>
         <source>Travis Robertson, Stefan Hermann, Brendan Howell, </source>
-        <translation type="unfinished"></translation>
+        <translation>Travis Robertson, Stefan Hermann, Brendan Howell, </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="126"/>
         <source>Mariano Crowe, Johannes Landstorfer, </source>
-        <translation type="unfinished"></translation>
+        <translation>Mariano Crowe, Johannes Landstorfer, </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="127"/>
         <source>Jenny Chowdhury, Lionel Michel, Fabian Althaus, Jannis Leidel, </source>
-        <translation type="unfinished"></translation>
+        <translation>Jenny Chowdhury, Lionel Michel, Fabian Althaus, Jannis Leidel, </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="128"/>
         <source>Bryant Mairs, Uleshka Asher, and Daniel Tzschentke. </source>
-        <translation type="unfinished">Bryant Mairs, Uleshka Asher, y Daniel Tzschentke. </translation>
+        <translation>Bryant Mairs, Uleshka Asher y Daniel Tzschentke. </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="132"/>
         <source>Special thanks goes out to: </source>
-        <translation type="unfinished">Especial gracias sale a: </translation>
+        <translation>Un agradecimiento especial a: </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="133"/>
         <source>Jussi &amp;Auml;ngeslev&amp;auml;, Massimo Banzi, Ayah Bdeir, </source>
-        <translation type="unfinished"></translation>
+        <translation>Jussi &amp;Auml;ngeslev&amp;auml;, Massimo Banzi, Ayah Bdeir, </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="134"/>
         <source>Durrell Bishop, David Cuartielles, Fabian Hemmert, </source>
-        <translation type="unfinished"></translation>
+        <translation>Durrell Bishop, David Cuartielles, Fabian Hemmert, </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="135"/>
         <source>Gero Herkenrath, Jeff Hoefs, Tom Hulbert, </source>
-        <translation type="unfinished"></translation>
+        <translation>Gero Herkenrath, Jeff Hoefs, Tom Hulbert, </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="136"/>
@@ -101,12 +101,12 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="143"/>
         <source>to Gianluca Urgese for the Italian translation, </source>
-        <translation type="unfinished">A Gianluca Urgese para la traducción italiana, </translation>
+        <translation>a Gianluca Urgese por la traducción italiana, </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="144"/>
         <source>to Nuno Pessanha Santos for the Portuguese (European) translation, </source>
-        <translation type="unfinished">A Nuno Pessanha Santos para el portugués (europeo) traducción, </translation>
+        <translation>a Nuno Pessanha Santos por la traducción a portugués (europeo), </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="108"/>
@@ -116,77 +116,77 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="145"/>
         <source>to Yuelin and Ninjia  for the Chinese (Simplified) translation, </source>
-        <translation type="unfinished"></translation>
+        <translation>a Yuelin y Ninjia por la traducción a Chino (Simplificado),</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="146"/>
         <source>to Hiroshi Suzuki for the Japanese translation, </source>
-        <translation type="unfinished">A Hiroshi Suzuki para la traducción japonesa, </translation>
+        <translation>a Hiroshi Suzuki por la traducción japonesa, </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="147"/>
         <source>to Robert Lee for the Chinese (Traditional) translation, </source>
-        <translation type="unfinished">A Robert Lee para el chino (Tradicional) traducción, </translation>
+        <translation>a Robert Lee por la traducción a chino (Tradicional), </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="148"/>
         <source>to Vladimir Savinov for the Russian translation, </source>
-        <translation type="unfinished">A Vladimir Savinov para la traducción rusa, </translation>
+        <translation>a Vladimir Savinov por la traducción rusa, </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="149"/>
         <source>to Steven Noppe and Davy Uittenbogerd for the Dutch translation, </source>
-        <translation type="unfinished">A Steven Noppe y Davy Uittenbogerd para la traducción holandesa, </translation>
+        <translation>a Steven Noppe y Davy Uittenbogerd por la traducción holandesa, </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="150"/>
         <source>to Josef Dustira for the Czech translation, </source>
-        <translation type="unfinished">A Josef Dustira para la traducción checa, </translation>
+        <translation>a Josef Dustira por la traducción checa, </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="151"/>
         <source>to Jinbuhm Kim for the Korean translation, </source>
-        <translation type="unfinished">A Jinbuhm Kim para la traducción coreana, </translation>
+        <translation>a Jinbuhm Kim por la traducción coreana, </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="152"/>
         <source>to &amp;#313;ubom&amp;iacute;r Ducho&amp;#328; for the Slovak translation, </source>
-        <translation type="unfinished">A &amp;#313;*ubom&amp;*iacute;R Ducho&amp;#328; para la traducción de eslovaco, </translation>
+        <translation>a &amp;#313;*ubom&amp;*iacute;R Ducho&amp;#328; por la traducción en eslovaco, </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="153"/>
         <source>to Alexander Kaltsas for the Greek translation, </source>
-        <translation type="unfinished">A Alexander Kaltsas para la traducción griega, </translation>
+        <translation>a Alexander Kaltsas por la traducción griega, </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="154"/>
         <source>to Lionel Michel, Yvan Kloster, Alexandre Dussart, and Roald Baudoux for the French translation, </source>
-        <translation type="unfinished">A Lionel Michel, Yvan Kloster, Alexandre Dussart, y Roald Baudoux para la traducción francesa, </translation>
+        <translation>a Lionel Michel, Yvan Kloster, Alexandre Dussart y a Roald Baudoux por la traducción francesa, </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="155"/>
         <source>to Cihan Mete Bahad&amp;#x0131;r for the Turkish translation, </source>
-        <translation type="unfinished">A *Cihan Mete Bahad&amp;#x0131;r para la traducción turca, </translation>
+        <translation>a Cihan Mete Bahad&amp;#x0131;r por la traducción turca, </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="156"/>
         <source>to Nikolay Stankov for the Bulgarian translation, </source>
-        <translation type="unfinished">A Nikolay Stankov para la traducción búlgara, </translation>
+        <translation>a Nikolay Stankov por la traducción búlgara, </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="158"/>
         <source>and to Arthur Zanona, Nuno Pessanha Santos, Leandro Nunes, and Gabriel Ferreira for the Portuguese (Brazilian) translation. </source>
-        <translation type="unfinished">Y a Arthur Zanona, Nuno Pessanha Santos, Leandro Nunes, y Gabriel Ferreira para el portugués (brasileño) traducción. </translation>
+        <translation>y a Arthur Zanona, Nuno Pessanha Santos, Leandro Nunes y a Gabriel Ferreira por la traducción portuguesa (brasileña). </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="162"/>
         <source>Fritzing is made possible with funding from the </source>
-        <translation type="unfinished">Fritzing Está hecho posible con financiar del </translation>
+        <translation>Fritzing existe gracias a la financiación de </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="163"/>
         <source>MWFK Brandenburg, the sponsorship of the Design </source>
-        <translation type="unfinished">MWFK Brandenburg, el patrocinio del Diseño </translation>
+        <translation>MWFK Brandenburg, patrocinadores del Diseño </translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="164"/>
@@ -201,7 +201,7 @@
     <message>
         <location filename="../src/help/aboutbox.cpp" line="166"/>
         <source>and from each purchase of a Fritzing Starter Kit or a PCB from Fritzing Fab.</source>
-        <translation type="unfinished">Y de cada compra de un Fritzing Starter Kit o un PCB de Fritzing Fab.</translation>
+        <translation>y por cada compra de un Kit de iniciación a Fritzing o un PCB de Fritzing Fab.</translation>
     </message>
     <message>
         <location filename="../src/help/aboutbox.cpp" line="170"/>
@@ -234,7 +234,7 @@
     <message>
         <location filename="../src/autoroute/autorouteprogressdialog.cpp" line="142"/>
         <source>Best So Far</source>
-        <translation type="unfinished">Mejor hasta ahora</translation>
+        <translation>Mejor hasta ahora</translation>
     </message>
     <message>
         <location filename="../src/autoroute/autorouteprogressdialog.cpp" line="148"/>
@@ -252,7 +252,7 @@
     <message>
         <location filename="../src/autoroute/autorouter.cpp" line="346"/>
         <source>Routing canceled! Now cleaning up...</source>
-        <translation type="unfinished">¡Encaminado de cancelado! limpiando...</translation>
+        <translation>¡Enrutamiento cancelado! Limpiando...</translation>
     </message>
 </context>
 <context>
@@ -260,52 +260,52 @@
     <message>
         <location filename="../src/autoroute/autoroutersettingsdialog.cpp" line="75"/>
         <source>Production type</source>
-        <translation type="unfinished">Tipo de producción</translation>
+        <translation>Tipo de producción</translation>
     </message>
     <message>
         <location filename="../src/autoroute/autoroutersettingsdialog.cpp" line="79"/>
         <source>homebrew</source>
-        <translation type="unfinished">casero</translation>
+        <translation>casera</translation>
     </message>
     <message>
         <location filename="../src/autoroute/autoroutersettingsdialog.cpp" line="82"/>
         <source>professional</source>
-        <translation type="unfinished">profesional</translation>
+        <translation>profesional</translation>
     </message>
     <message>
         <location filename="../src/autoroute/autoroutersettingsdialog.cpp" line="85"/>
         <source>custom</source>
-        <translation type="unfinished">personalizado</translation>
+        <translation>personalizada</translation>
     </message>
     <message>
         <location filename="../src/autoroute/autoroutersettingsdialog.cpp" line="252"/>
         <source>Keepout</source>
-        <translation type="unfinished">Distancia minima</translation>
+        <translation>Separación</translation>
     </message>
     <message>
         <location filename="../src/autoroute/autoroutersettingsdialog.cpp" line="255"/>
         <source>&lt;b&gt;Keepout&lt;/b&gt; is the minimum distance between copper elements on different nets.</source>
-        <translation type="unfinished">es la distancia mínima entre elementos de cobre sobre redes diferentes.</translation>
+        <translation>&lt;b&gt;Separación&lt;/b&gt; es la distancia mínima entre los elementos de cobre de las diferentes redes.</translation>
     </message>
     <message>
         <location filename="../src/autoroute/autoroutersettingsdialog.cpp" line="259"/>
         <source>A keepout of 0.01 inch (0.254 mm) is a good default.</source>
-        <translation type="unfinished">un valor de 0.01 pulgadas (0.254 mm) es una buena base.</translation>
+        <translation>una separación de 0.01 pulgadas (0.254 mm) es un buen comienzo.</translation>
     </message>
     <message>
         <location filename="../src/autoroute/autoroutersettingsdialog.cpp" line="262"/>
         <source>Note: the smaller the keepout, the slower the DRC and Autorouter will run.</source>
-        <translation type="unfinished">Nota: el más pequeño el mantener afuera, el más lento el DRC y autorouteado correrá.</translation>
+        <translation>Nota: cuanto más pequeña sea la separación, más lento irán el DRC y el Autoenrutador.</translation>
     </message>
     <message>
         <location filename="../src/autoroute/autoroutersettingsdialog.cpp" line="301"/>
         <source>Trace width</source>
-        <translation type="unfinished">Ancho de los caminos</translation>
+        <translation>Ancho de los trazos</translation>
     </message>
     <message>
         <location filename="../src/autoroute/autoroutersettingsdialog.cpp" line="103"/>
         <source>Cancel</source>
-        <translation type="unfinished">Cancelar</translation>
+        <translation>Cancelar</translation>
     </message>
     <message>
         <location filename="../src/autoroute/autoroutersettingsdialog.cpp" line="104"/>
@@ -323,12 +323,12 @@
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="374"/>
         <source>BinManager::setDirtyTab: Couldn&apos;t set the bin &apos;%1&apos; as dirty</source>
-        <translation type="unfinished">BinManager::setdirtyTab: No se pude colocar en la compartimiento &apos;%1&apos; esta sucio</translation>
+        <translation type="unfinished">BinManager::setdirtyTab: No se pudo marcar el compartimento &apos;%1&apos; como borrador</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="384"/>
         <source>BinManager::updateTitle: Couldn&apos;t set the bin &apos;%1&apos; as dirty</source>
-        <translation type="unfinished">BinManager::updateTitle: No se puso el componente &apos;%1&apos; esta sucio</translation>
+        <translation>BinManager::updateTitle: No se pudo marcar el compartimento &apos;%1&apos; como borrador</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="391"/>
@@ -338,7 +338,7 @@
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="402"/>
         <source>Select a Fritzing Parts Bin file to open</source>
-        <translation>Selecciona un archivo de compartimento de componentes Fritzing que abrir</translation>
+        <translation>Selecciona un archivo de compartimento de componentes Fritzing para abrir</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="404"/>
@@ -423,32 +423,32 @@
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1015"/>
         <source>Save parts bin in compressed format...</source>
-        <translation type="unfinished">Salvar componente de componentes en formato comprimido...</translation>
+        <translation>Guardar compartimento de componentes en formato comprimido...</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1018"/>
         <source>Rename Bin...</source>
-        <translation type="unfinished">Rebautiza Componente...</translation>
+        <translation>Renombrar compartimento...</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1019"/>
         <source>Rename parts bin...</source>
-        <translation type="unfinished">Rebautiza componente de componentes...</translation>
+        <translation>Renombrar compartimento de componentes...</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1022"/>
         <source>Copy to Sketch</source>
-        <translation type="unfinished">Copia a Esquemático</translation>
+        <translation>Copiar a esquemático</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1023"/>
         <source>Copy all the parts in the bin to a sketch</source>
-        <translation type="unfinished">Copia todas las componentes en el componente a un esquemático</translation>
+        <translation>Copiar todos los componentes del compartimento a un esquemático</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1026"/>
         <source>Copy all to Sketch</source>
-        <translation type="unfinished">Copiar todo al Esquemático</translation>
+        <translation>Copiar todos al esquemático</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1027"/>
@@ -488,27 +488,27 @@
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1060"/>
         <source>Remove Part</source>
-        <translation type="unfinished">Saca Componente</translation>
+        <translation>Eliminar componente</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1061"/>
         <source>Find Part in Sketch</source>
-        <translation type="unfinished">Encuentra Componente en Esquemático</translation>
+        <translation>Encontrar componente en el esquemático</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1104"/>
         <source>Delete bin</source>
-        <translation type="unfinished">Elimina componente</translation>
+        <translation>Eliminar compartimento</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1105"/>
         <source>Do you really want to delete bin &apos;%1&apos;?  This action cannot be undone.</source>
-        <translation type="unfinished"></translation>
+        <translation>¿Quieres borrar el compartimento &apos;%1&apos;? Esta acción no puede deshacerse.</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1339"/>
         <source>Fritzing Files (*%1 *%2 *%3);;Fritzing Part (*%1);;Fritzing Bin (*%2);;Fritzing Shareable Bin (*%3)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivos Fritzing (*%1 *%2 *%3);;Componente Fritzing (*%1);;Fritzing Bin (*%2);;Compartimento compartible Fritzing (*%3)</translation>
     </message>
     <message>
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="1155"/>
@@ -559,7 +559,7 @@
         <location filename="../src/partsbinpalette/binmanager/binmanager.cpp" line="497"/>
         <source>Cannot set a NULL bin as the current one</source>
         <translatorcomment>current one (actual)??</translatorcomment>
-        <translation type="unfinished">No se puede colocar una compartimiento NULO como actual</translation>
+        <translation>No se puede establecer un compartimento NULO como el actual</translation>
     </message>
 </context>
 <context>
@@ -627,42 +627,42 @@ El svg de una placa personalizada tiene una o dos capas de pantalla serigráfica
     <message>
         <location filename="../src/items/resizableboard.cpp" line="366"/>
         <source>the &lt;board&gt; element contains no shape elements</source>
-        <translation type="unfinished">El elemento &lt;board&gt; no contiene ninguno elementos de forma</translation>
+        <translation>el elemento &lt;placa&gt; no contiene elementos de forma</translation>
     </message>
     <message>
         <location filename="../src/items/resizableboard.cpp" line="376"/>
         <source>because there are multiple &lt;board&gt; layers</source>
-        <translation type="unfinished">Porque  hay múltiple capas &lt;placa&gt;</translation>
+        <translation>porque hay múltiples capas de &lt;placa&gt;</translation>
     </message>
     <message>
         <location filename="../src/items/resizableboard.cpp" line="381"/>
         <source>because there are multiple &lt;silkscreen&gt; layers</source>
-        <translation type="unfinished">Porque hay múltiples capas &lt;silkscreen&gt;</translation>
+        <translation>porque hay múltiples capas de &lt;pantalla serigráfica&gt;</translation>
     </message>
     <message>
         <location filename="../src/items/resizableboard.cpp" line="386"/>
         <source>because there are multiple &lt;silkscreen0&gt; layers</source>
-        <translation type="unfinished">Porque hay múltiple capas &lt;silkscreen0&gt;</translation>
+        <translation>porque hay múltiples capas de &lt;pantalla serigráfica&gt;</translation>
     </message>
     <message>
         <location filename="../src/items/resizableboard.cpp" line="391"/>
         <source>because there is no &lt;board&gt; layer</source>
-        <translation type="unfinished">Porque hay no capa &lt;board&gt;</translation>
+        <translation>porque hay no capa &lt;placa&gt;</translation>
     </message>
     <message>
         <location filename="../src/items/resizableboard.cpp" line="396"/>
         <source>the svg contains no shape elements</source>
-        <translation type="unfinished">El svg contiene ningún elementos de forma</translation>
+        <translation>el svg no contiene elementos de forma</translation>
     </message>
     <message>
         <location filename="../src/items/resizableboard.cpp" line="401"/>
         <source>but the pcb itself will have no silkscreen layer</source>
-        <translation type="unfinished">Pero el pcb él tendrá ningún silkscreen capa</translation>
+        <translation>pero el pcb en si no tendrá capa de pantalla serigráfica</translation>
     </message>
     <message>
         <location filename="../src/items/resizableboard.cpp" line="406"/>
         <source>the svg doesn&apos;t fit the custom board format</source>
-        <translation type="unfinished">El svg no contiene el formato de placa</translation>
+        <translation>el svg no se ajusta al formato de placa personalizada</translation>
     </message>
     <message>
         <location filename="../src/items/resizableboard.cpp" line="438"/>
@@ -1122,7 +1122,7 @@ Usan el archivo?</translation>
     <message>
         <location filename="../src/autoroute/drc.cpp" line="147"/>
         <source>DRC Results</source>
-        <translation type="unfinished">DRC Resultados</translation>
+        <translation>Resultados del DRC</translation>
     </message>
     <message>
         <location filename="../src/autoroute/drc.cpp" line="155"/>
@@ -1140,7 +1140,7 @@ Usan el archivo?</translation>
     <message>
         <location filename="../src/debugdialog.cpp" line="72"/>
         <source>for debugging</source>
-        <translation>para Depurar</translation>
+        <translation>para depurar</translation>
     </message>
 </context>
 <context>
@@ -1148,17 +1148,17 @@ Usan el archivo?</translation>
     <message>
         <location filename="../src/program/programtab.cpp" line="90"/>
         <source>Also delete the file</source>
-        <translation type="unfinished">También eliminar el archivo</translation>
+        <translation>También eliminar el archivo</translation>
     </message>
     <message>
         <location filename="../src/program/programtab.cpp" line="99"/>
         <source>Remove</source>
-        <translation type="unfinished">Remover</translation>
+        <translation>Eliminar</translation>
     </message>
     <message>
         <location filename="../src/program/programtab.cpp" line="100"/>
         <source>Don&apos;t remove</source>
-        <translation type="unfinished">No quita</translation>
+        <translation>No eliminar</translation>
     </message>
 </context>
 <context>
@@ -1196,45 +1196,45 @@ Usan el archivo?</translation>
     <message>
         <location filename="../src/fapplication.cpp" line="1747"/>
         <source>Please specify an .fzz file name to save to (cancel will delete the backup)</source>
-        <translation type="unfinished">Complacer especificar un .fzz Nombre de archivo para salvar a (cancela eliminará la copia de seguridad)</translation>
+        <translation>Por favor, especifica un archivo .fzz en el que guardar (cancelar eliminará la copia de seguridad)</translation>
     </message>
     <message>
         <location filename="../src/fapplication.cpp" line="1747"/>
         <source>Fritzing (*%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Fritzing (*%1)</translation>
     </message>
     <message>
         <location filename="../src/fapplication.cpp" line="2018"/>
         <source>Regenerate parts database?</source>
-        <translation type="unfinished"></translation>
+        <translation>¿Volver a generar la base de datos de componentes?</translation>
     </message>
     <message>
         <location filename="../src/fapplication.cpp" line="2019"/>
         <source>Regenerating the parts database will take some minutes and you will have to restart Fritzing
 
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Volver a generar la base de datos de componentes tardará algunos minutos y después tendrs que reiniciar Fritzing</translation>
     </message>
     <message>
         <location filename="../src/fapplication.cpp" line="2020"/>
         <source>Would you like to regenerate the parts database?
 </source>
-        <translation type="unfinished"></translation>
+        <translation>¿Quieres volver a generar la base de datos de componentes?</translation>
     </message>
     <message>
         <location filename="../src/fapplication.cpp" line="2028"/>
         <source>Regenerate</source>
-        <translation type="unfinished"></translation>
+        <translation>Volver a generar</translation>
     </message>
     <message>
         <location filename="../src/fapplication.cpp" line="2029"/>
         <source>Cancel</source>
-        <translation type="unfinished">Cancelar</translation>
+        <translation>Cancelar</translation>
     </message>
     <message>
         <location filename="../src/fapplication.cpp" line="2034"/>
         <source>Regenerating parts database...</source>
-        <translation type="unfinished"></translation>
+        <translation>Volviendo a generar la base de datos de componentes...</translation>
     </message>
 </context>
 <context>
@@ -1266,7 +1266,7 @@ Usan el archivo?</translation>
     <message>
         <location filename="../src/utils/folderutils.cpp" line="761"/>
         <source>Moving your custom parts</source>
-        <translation type="unfinished"></translation>
+        <translation>Moviendo tus componentes personalizados</translation>
     </message>
     <message>
         <location filename="../src/utils/folderutils.cpp" line="762"/>
@@ -1289,7 +1289,7 @@ Usan el archivo?</translation>
     <message>
         <location filename="../src/mainwindow/fritzingwindow.cpp" line="75"/>
         <source>Close the current sketch</source>
-        <translation>Cerrar el bosquejo actual</translation>
+        <translation>Cerrar el esquemático actual</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/fritzingwindow.cpp" line="80"/>
@@ -1334,7 +1334,7 @@ Usan el archivo?</translation>
     <message>
         <location filename="../src/mainwindow/fritzingwindow.cpp" line="245"/>
         <source>Your changes will be lost if you don&apos;t save them.</source>
-        <translation>Los cambios se perderan si no se guardan.</translation>
+        <translation>Los cambios se perderán si no se guardan.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/fritzingwindow.cpp" line="231"/>
@@ -1364,12 +1364,12 @@ Es también posible de escoger un conector como tierra llena semilla por correct
     <message>
         <location filename="../src/dialogs/groundfillseeddialog.cpp" line="90"/>
         <source>Cancel</source>
-        <translation type="unfinished">Cancelar</translation>
+        <translation>Cancelar</translation>
     </message>
     <message>
         <location filename="../src/dialogs/groundfillseeddialog.cpp" line="94"/>
         <source>OK</source>
-        <translation type="unfinished">Aceptar</translation>
+        <translation>Aceptar</translation>
     </message>
     <message>
         <location filename="../src/dialogs/groundfillseeddialog.cpp" line="123"/>
@@ -1387,7 +1387,7 @@ Es también posible de escoger un conector como tierra llena semilla por correct
     <message>
         <location filename="../src/items/hole.cpp" line="289"/>
         <source>hole size</source>
-        <translation type="unfinished">Tamaño del hoyo</translation>
+        <translation>Tamaño del agujero</translation>
     </message>
 </context>
 <context>
@@ -1400,12 +1400,12 @@ Es también posible de escoger un conector como tierra llena semilla por correct
     <message>
         <location filename="../src/infoview/htmlinfoview.cpp" line="316"/>
         <source>name</source>
-        <translation>Nombre</translation>
+        <translation>nombre</translation>
     </message>
     <message>
         <location filename="../src/infoview/htmlinfoview.cpp" line="323"/>
         <source>type</source>
-        <translation>Tipo</translation>
+        <translation>tipo</translation>
     </message>
     <message>
         <location filename="../src/infoview/htmlinfoview.cpp" line="428"/>
@@ -1420,7 +1420,7 @@ Es también posible de escoger un conector como tierra llena semilla por correct
     <message>
         <location filename="../src/infoview/htmlinfoview.cpp" line="435"/>
         <source>Trace wire %1</source>
-        <translation type="unfinished">Trace cable %1</translation>
+        <translation>Trazar el cable %1</translation>
     </message>
     <message>
         <location filename="../src/infoview/htmlinfoview.cpp" line="296"/>
@@ -2769,27 +2769,27 @@ Es también posible de escoger un conector como tierra llena semilla por correct
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1018"/>
         <source>Align Right</source>
-        <translation type="unfinished">Alinea Bien</translation>
+        <translation>Alinear a la derecha</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1019"/>
         <source>Align selected items at the right</source>
-        <translation type="unfinished">Alinea seleccionó elementos en el correctos</translation>
+        <translation>Alinear objetos seleccionados a la derecha</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1022"/>
         <source>Align Top</source>
-        <translation type="unfinished">Alinea Superior</translation>
+        <translation>Alinear arriba</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1023"/>
         <source>Align selected items at the top</source>
-        <translation type="unfinished">Alinea seleccionó elementos en la componente superior</translation>
+        <translation>Alinear arriba los elementos seleccionados</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1026"/>
         <source>Align Vertical Center</source>
-        <translation type="unfinished">Alinea Centro Vertical</translation>
+        <translation>Alinear en el centro vertical</translation>
     </message>
     <message>
         <location filename="../src/mainwindow/mainwindow_menu.cpp" line="1027"/>
